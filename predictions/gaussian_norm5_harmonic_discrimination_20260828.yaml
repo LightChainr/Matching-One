@@ -1,6 +1,7 @@
 version: 1
 frozen_at: 2026-08-28
 status: preregistered_before_child_runs
+claim_level: C0
 source_checkpoint: 6d2d68a62b433e337b97eadaf1870cb58e2f7666
 related_issue: 57
 purpose: parameter_free_spin4_versus_spin12_Gaussian_multiplier_test
@@ -19,6 +20,9 @@ lineages:
   - id: N65_to_N325
     parent:
       N: 65
+      translation_group:
+        smith_invariants: [1, 65]
+        cyclic: true
       first: [8, 1]
       second: [7, 4]
     multiplier: [2, -1]
@@ -27,12 +31,18 @@ lineages:
       second: [18, 1]
     child_canonical_lineage:
       N: 325
+      translation_group:
+        smith_invariants: [1, 325]
+        cyclic: true
       first: [17, 6]
       second: [18, 1]
 
   - id: N85_to_N425
     parent:
       N: 85
+      translation_group:
+        smith_invariants: [1, 85]
+        cyclic: true
       first: [9, 2]
       second: [7, 6]
     multiplier: [2, 1]
@@ -41,6 +51,9 @@ lineages:
       second: [8, 19]
     child_canonical_lineage:
       N: 425
+      translation_group:
+        smith_invariants: [1, 425]
+        cyclic: true
       first: [16, 13]
       second: [19, 8]
 
