@@ -1,0 +1,179 @@
+version: 1
+frozen_at: 2026-08-28
+status: conditional_exact_cft_identity_and_pre_target_geometry_prediction
+claim_level:
+  ordinary_cft_descendant_identity: exact_given_inputs
+  lattice_matching_identification: C0
+purpose: >-
+  Record the exact torus Ward fingerprint of the repository thermal level-4
+  spin-4 quasiprimary, and freeze the geometry-only consequences of approaching
+  the equianharmonic torus with integer square-lattice Pell periods. This does
+  not alter any existing Issue #57 norm-5 scoring order or target.
+
+inputs:
+  c: '0'
+  thermal_h: '5/8'
+  thermal_hbar: '5/8'
+  level2_null_relation: 'L_-2 phi = (2/3) L_-1^2 phi'
+  q4_repository_normalization: 'Q4 = 40 L_-2^2 - 60 L_-3 L_-1 - 9 L_-4'
+  q4_bulk_dimension: '21/4'
+  q4_spin: 4
+
+ward_reduction:
+  define_C: 'C = <L_-4 phi>'
+  torus_Ward: 'C = (g2*h/20) <phi> = (g2/32) <phi>'
+  translation_invariance: '<L_-1 Psi> = 0'
+  derived:
+    L_minus3_L_minus1: '<L_-3 L_-1 phi> = -2 C'
+    L_minus2_squared: '<L_-2^2 phi> = (4/3) C'
+    q4_over_C: '493/3'
+  exact_ratio:
+    expression: '<Q4 phi>/<phi> = (493/96) g2(tau)'
+    coefficient_numerator: 493
+    coefficient_denominator: 96
+  scope: >-
+    Exact for the ordinary Virasoro primary module with the declared null vector
+    and Q4 normalization. A logarithmic/Jordan extension can modify the torus
+    Ward structure and must be treated separately.
+
+potts_energy_anchor:
+  reference: 'Roux-Ribault-Jacobsen arXiv:2604.24491'
+  field: 'V^d_<1,2>'
+  one_block_solution: true
+  chiral_block_general: 'eta(tau)^(2 Delta_(1,2))'
+  percolation_Delta: '5/8'
+  percolation_chiral_block: 'eta(tau)^(5/4)'
+
+elliptic_point:
+  omega: 'exp(i*pi/3) = 1/2 + i*sqrt(3)/2'
+  exact_zero:
+    g2: 0
+    E4: 0
+  q4_one_point: 0
+  interpretation: >-
+    Exact annihilation of this ordinary Q4 torus one-point fingerprint. Applying
+    the zero to the measured matching residual additionally assumes the lattice
+    observable couples to the same scalar-background spin-4 response.
+
+pell_integer_periods:
+  period_u: '[2b, 0]'
+  period_v: '[b, a]'
+  tau: '1/2 + i*a/(2b)'
+  site_count_N: '2ab'
+  fixed_defect_equation: 'a^2 - 3 b^2 = D'
+  exact_difference: 'tau-omega = i*D/[2 b (a+sqrt(3)b)]'
+  asymptotic:
+    N_times_tau_minus_omega: 'i D/2'
+    ramanujan_identity: '(1/(2*pi*i)) E4_prime = (E2*E4-E6)/3'
+    E4_prime_at_omega: '-(2*pi*i/3) E6(omega)'
+    N_times_E4: '(pi*D/3) E6(omega)'
+  standard_q_series_constants:
+    E6_omega: '2.8815411007909456230708348069682397'
+    pi_over_3_E6_omega: '3.0175427844206269053201813440632788'
+  geometry_rows:
+    - a: 5
+      b: 3
+      D: -2
+      N: 30
+      E4: '-0.217005339961345530835557206783'
+      N_E4: '-6.51016019884036592506671620349'
+    - a: 7
+      b: 4
+      D: 1
+      N: 56
+      E4: '0.0527808750147650836929076691856'
+      N_E4: '2.95572900082684468680282947439'
+    - a: 19
+      b: 11
+      D: -2
+      N: 418
+      E4: '-0.0145179091920255362182033297345'
+      N_E4: '-6.06848604226667413920899182901'
+    - a: 26
+      b: 15
+      D: 1
+      N: 780
+      E4: '0.00386292016315336617388415026928'
+      N_E4: '3.01307772725962561562963721004'
+    - a: 71
+      b: 41
+      D: -2
+      N: 5822
+      E4: '-0.00103701130037871681893740097619'
+      N_E4: '-6.0374797908048893198535484834'
+    - a: 97
+      b: 56
+      D: 1
+      N: 10864
+      E4: '0.000277726626463677567957873044364'
+      N_E4: '3.01722206990139309829433275397'
+
+conditional_matching_shape_model:
+  model: 'DeltaM_H4(N,tau) = C_lattice * N^(-13/8) * E4(tau)'
+  role: >-
+    Strong lattice-to-CFT shape hypothesis. C_lattice is unknown but common for
+    a fixed microscopic convention; amplitude-free ratios are therefore testable.
+  square_torus_residual_exponent_in_N: '-13/8'
+  pell_extra_shape_exponent_in_N: '-1'
+  pell_H4_residual_exponent_in_N: '-21/8'
+  thermal_slope_exponent_in_N: '3/8'
+  pell_H4_root_component_exponent_in_N: '-3'
+  pell_H4_root_component_exponent_in_L: '-6'
+  asymptotic_cross_family_target:
+    expression: >-
+      [N_Dminus2^(21/8) DeltaM_Dminus2] /
+      [N_Dplus1^(21/8) DeltaM_Dplus1] -> -2
+    target: '-2'
+  moderate_pair:
+    D_minus2:
+      a: 19
+      b: 11
+      N: 418
+      E4: '-0.0145179091920255362182033297345'
+    D_plus1:
+      a: 26
+      b: 15
+      N: 780
+      E4: '0.00386292016315336617388415026928'
+    finite_N_scaled_N21over8_ratio:
+      expression: '(418*E4_418)/(780*E4_780)'
+      target: '-2.0140489558737853'
+    finite_N_raw_DeltaM_ratio:
+      expression: '(418/780)^(-13/8) * E4_418/E4_780'
+      target: '-10.356919847162752'
+    note: >-
+      Score signed observables with a declared channel/orientation convention.
+      The finite-N E4 ratio is stronger than replacing it by the asymptotic -2.
+
+spin12_interpretation:
+  role_in_issue57: empirical_same_radial_angular_alias
+  do_not_change_issue57_frozen_score: true
+  thermal_family_bound:
+    minimum_descendant_level_for_spin12: 12
+    minimum_dimension: '53/4'
+  standard_nondiagonal_loop_spectrum_at_Q1:
+    beta_squared: '2/3'
+    dimension_formula: 'x(r,s) = -1/12 + r^2/3 + 3 s^2/4'
+    spin: 'r*s'
+    fixed_spin_lower_bound: 'x >= |spin| - 1/12'
+    spin12_lower_bound: '143/12'
+    nearby_allowed_minimum: 'x=12'
+  consequence: >-
+    A norm-5 win for a same-N^-13/8 H12 sign should be treated as strong
+    evidence against the ordinary local thermal-Q4 identification, not merely as
+    replacement of one peer local operator by another.
+
+recommended_validation_order:
+  - keep_issue57_norm5_primary_scoring_unchanged
+  - score_frozen_145_to_290_fullcurve_before_new_shape_production
+  - independently_verify_493_over_96_Ward_reduction
+  - derive_matching_topological_observable_coupling_to_Q4_or_defect_sector
+  - exact_geometry_and_channel_gate_for_Pell_periods
+  - moderate_N_418_780_shape_pilot_if_theory_gate_survives
+
+forbidden_interpretations:
+  - claim_total_root_L_minus6_without_bounding_surviving_sectors
+  - treat_same_radial_H12_as_an_ordinary_x_21_over_4_local_primary
+  - change_issue57_targets_or_scoring_order_after_this_note
+  - fit_a_free_Pell_shape_exponent_before_scoring_the_E4_geometry_target
+  - compare_cross_family_signs_without_typed_channel_and_orientation_metadata
