@@ -20,6 +20,8 @@ class MatchingGaloisCertificateTests(unittest.TestCase):
             ("diamond", 2): "S_8",
             ("diamond", 3): "S_18",
             ("gaussian-3-1", 0): "S_10",
+            ("gaussian-3-2", 0): "S_13",
+            ("gaussian-4-1", 0): "S_17",
         }
         observed = {}
         for case in CASES:
