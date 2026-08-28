@@ -71,6 +71,28 @@ class ThresholdRankOrientationMCTests(unittest.TestCase):
             self.assertEqual(metadata["designs"][0]["first"], first)
             self.assertEqual(metadata["designs"][0]["second"], second)
 
+    def test_frozen_norm5_designs_are_available(self) -> None:
+        for n, first, second in (
+            (325, [17, 6], [18, 1]),
+            (425, [16, 13], [19, 8]),
+        ):
+            prefix = Path(self.temporary.name) / f"norm5_n{n}"
+            subprocess.run(
+                [
+                    str(self.binary),
+                    "--samples", "4", "--batches", "2", "--n", str(n),
+                    "--seed", "57", "--threads", "1",
+                    "--output-prefix", str(prefix),
+                ],
+                check=True,
+            )
+            metadata = json.loads(
+                Path(str(prefix) + ".metadata.json").read_text(encoding="utf-8")
+            )
+            self.assertEqual(metadata["designs"][0]["N"], n)
+            self.assertEqual(metadata["designs"][0]["first"], first)
+            self.assertEqual(metadata["designs"][0]["second"], second)
+
     def test_cpp_matches_python_and_is_thread_reproducible(self) -> None:
         first_prefix = Path(self.temporary.name) / "first"
         second_prefix = Path(self.temporary.name) / "second"
