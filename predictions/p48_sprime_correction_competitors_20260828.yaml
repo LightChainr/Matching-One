@@ -1,0 +1,69 @@
+schema: p48-sprime-correction-competitors-v1
+status: frozen-before-N185-N265-target-reveal
+purpose: >-
+  Prospectively score the retrospective P48 drift in the scaled derivative
+  channel y_N = N^(5/4) P4[S'] without retuning on N=145,170 or on the new
+  N=185,265 full-curve targets.
+source:
+  result: results/server-20260828/P48-retrospective
+  training_sizes: [65, 85, 130]
+  excluded_known_sizes: [145, 170]
+  prospective_target_sizes: [185, 265]
+  covariance: full synchronized-jackknife covariance among the three training y_N values
+training_values:
+  - {N: 65, value: 1.8272614651936119, se: 0.09525662041126166}
+  - {N: 85, value: 2.055214465644394, se: 0.11783977052667213}
+  - {N: 130, value: 2.7021154484851513, se: 0.3173933022722408}
+training_covariance:
+  - [0.009073823732175192, 0.0010081292690864222, 0.0063885369893694095]
+  - [0.0010081292690864222, 0.013886211517778748, -0.0027633088174404117]
+  - [0.0063885369893694095, -0.0027633088174404117, 0.10073850832727799]
+models:
+  baseline_constant:
+    formula: y_N = A
+    provenance: original frozen P48 pure-power law
+    amplitude: 1.9434247576878727
+    amplitude_se: 0.0766048795577632
+  log_jordan:
+    formula: y_N = A + B*log(N/100)
+    motivation: rank-2 logarithmic/Jordan correction in the c=0 thermal sector
+    fit_method: two-parameter GLS on N=65,85,130 only
+    A: 2.2764144236775126
+    B: 1.092329622789324
+    parameter_covariance:
+      - [0.016685143836369678, 0.03548323531678466]
+      - [0.035483235316784656, 0.11639817390049005]
+    training_chi_square: 0.3370198172203594
+    targets:
+      185: {mean: 2.9483999207703566, source_fit_se: 0.3231005705113109}
+      265: {mean: 3.34095478762237, source_fit_se: 0.4431673354383646}
+    target_prediction_covariance:
+      - [0.10439397866473461, 0.14287923991105259]
+      - [0.14287923991105259, 0.19639728719954]
+  analytic_Lminus2:
+    formula: y_N = A + B/N
+    motivation: ordinary relative L^-2 = N^-1 correction to the leading N^-5/4 derivative law
+    fit_method: two-parameter GLS on N=65,85,130 only
+    A: 3.1528570990005758
+    B: -88.03321330713636
+    parameter_covariance:
+      - [0.15495924527324048, -10.852160862974227]
+      - [-10.852160862974227, 789.9165248521779]
+    training_chi_square: 0.7769331896255112
+    targets:
+      185: {mean: 2.6770018919349736, source_fit_se: 0.24641162774047082}
+      265: {mean: 2.8206562940679856, source_fit_se: 0.2903523906239357}
+    target_prediction_covariance:
+      - [0.06071869028570837, 0.07145989058713698]
+      - [0.07145989058713698, 0.08430451074103454]
+scoring_order:
+  - baseline_constant
+  - log_jordan
+  - analytic_Lminus2
+  - zero_effect
+  - free_exponent_or_additional_terms
+rules:
+  - Do not use N=145 or N=170 to refit these competitors; they remain retrospective heldout diagnostics only.
+  - Do not alter coefficients after N=185 or N=265 target statistics are visible.
+  - Score target sampling covariance together with the committed source-fit prediction covariance.
+  - Treat this artifact as a derivative-channel discriminator, not evidence for a logarithmic LCFT assignment by itself.
