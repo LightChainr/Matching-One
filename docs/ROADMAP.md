@@ -1,129 +1,165 @@
 # Roadmap
 
-This roadmap orders work by information value, reproducibility risk, and dependency. It is deliberately narrower than the full issue list.
+This roadmap orders work by information value, reproducibility risk, and dependency. It is deliberately narrower than the full issue list. `docs/STATUS.md` is the claim ledger; this file is the execution order.
 
-## Phase 0 — Repository control and integration
+## Phase 0 — Repository control and canonicalization
 
-### G0. Governance baseline
+### G0. Governance baseline — integrated
 
-- Merge README, governance, contribution, reproducibility, security, templates, and CI.
-- Require pull requests and passing CI for `main` through a repository ruleset.
-- Keep `docs/STATUS.md` as the canonical claim ledger.
+Completed on `main`:
 
-### G1. Unroll the foundational stack
+- governance, contribution, reproducibility, security, citation, templates, and CI;
+- foundational research program from PR #15;
+- exact matching/orientation reference layer from PR #18.
 
-Integrate in ancestry-preserving order:
+Remaining hosting task: enable the `main` ruleset and require the four CI jobs described in #52. Until then the repository has policy-level protection but not GitHub-enforced branch protection.
 
-1. PR #15 into `main`;
-2. retarget PR #18 to `main`, verify the reduced diff, then merge;
-3. retarget the active server/research layer only after its base is canonical.
+### G1. Curate the server archive — #59
 
-Do not squash stacked scientific commits when their identities appear in predictions or result provenance.
+PR #21 is a provenance archive, not a branch to merge wholesale into `main`.
 
-### G2. Separate executable logic from bulk evidence
+Canonicalize it in reviewable layers:
 
-For the PR #21 layer, prefer reviewable boundaries:
+1. production source and tests;
+2. compact machine-readable archive manifest;
+3. bounded immutable result families with checksums/reproduction contracts;
+4. small claim/decision PRs only after their evidence is canonical.
 
-- source, tests, protocols, and small exact vectors;
-- immutable raw result archive and manifests;
-- narrative conclusions and claim-ledger update.
+Preserve historical commit/source hashes, failed/null results, and old working-tree runs. Do not rewrite them to match current conclusions.
 
-If one historical PR must retain all files, add a compact manifest and generated/raw/source classification before merging.
+### G2. Keep stacked research gates explicit
+
+- PR #46 is a draft until covariance contracts are hardened.
+- PR #56 is a draft frozen decision layer blocked by #46/#39 and later canonical archive import.
+- Obsolete stacked PRs should be closed as superseded only after their retained evidence is reachable from canonical manifests.
 
 ## Phase 1 — Reproducibility closure
 
-### R0. Cross-size covariance audit
+### R0. Harden cross-size covariance — PR #46
 
-Complete PR #46 and commit the generated audit outputs. Report both full-covariance and diagonal scores when they differ. Do not silently replace the historical analysis.
+Before merge:
 
-### R1. Freeze the RNG policy
+- enforce equal batch/sample weights in the core audit or implement a mathematically correct weighted estimator;
+- validate covariance SPD/rank/conditioning in the scorer itself;
+- define finite-batch score semantics/calibration rather than treating an estimated-covariance quadratic form as automatically asymptotic chi-square;
+- add exact diagonal/correlated/near-singular/unequal-sample synthetic regressions;
+- replay the archive from the current server head and regenerate checksums.
 
-Resolve #39 before new threshold-rank production:
+Historical full-covariance and diagonal diagnostics remain preserved regardless of the outcome.
 
-- choose explicit `N` domain separation, or
-- retain deliberate coupling and propagate full cross-size covariance.
+### R1. Freeze the RNG and provenance policy — #39
 
-The choice must be frozen before model scoring.
+For new threshold-rank production:
 
-### R2. Clean-checkout replay
+- domain-separate distinct `N` by default, or deliberately couple them under a preregistered covariance plan;
+- record full git commit, source SHA-256, executable SHA-256, compiler flags, dirty-tree state, seed/counter domains, and batch layout;
+- preserve deterministic test vectors and thread-count invariance.
 
-Re-run the fixed-`p` and threshold-rank confirmation matrices from clean committed source. Record full commit, source hash, executable hash, compiler flags, dirty-tree state, RNG domains, and checksums. Preserve the original runs as historical evidence.
+Do not choose the RNG/coupling policy after inspecting the model score it favors.
 
-### R3. Canonical literature/data manifest
+### R2. Clean-checkout replay — #39
 
-Complete #4 before further PSLQ or last-digit claims. Represent each published sequence and threshold estimate separately with exact provenance and transcription checks.
+Replay the required fixed-`p` and threshold-rank confirmation matrices from clean committed source. Preserve historical runs as separate artifacts. Compatibility analysis must distinguish scientific changes from provenance-only corrections.
 
-## Phase 2 — Prospective empirical tests
+### R3. Canonical literature/data manifest — #4
 
-### E0. Angular-normalized root amplitude
+Complete #4 before further last-digit claims or integer-relation searches. Represent each published sequence and estimate separately with exact provenance and transcription checks. Issue #1 is P2 and blocked by this work.
 
-Run #45 on the primary `N=65,85` sizes using fresh threshold-rank statistics. Score the frozen amplitude before fitting correction models.
+## Phase 2 — Prospective finite-size tests
 
-### E1. Unused held-out sizes
+### E0. Angular-normalized root amplitude — completed branch evidence
 
-Execute #43 at `N=185,265` with pilot-powered sample counts and fresh domains. Score frozen `Delta M` and matching-even predictions before using secondary sizes or flexible alternatives.
+Issue #45 is completed on the server archive: the frozen `A_p=-N^2 DeltaRoot/DeltaCos4` target was tested at `N=65,85`. Treat it as provisional branch evidence until imported under #59; do not rerun merely to improve significance.
 
-### E2. Exact parity controls
+### E1. Full-curve Gaussian semigroup/root tests — #49/#50
 
-Prioritize low-cost, discriminating controls:
+Use clean threshold-rank sufficient statistics to test, in exact lineage order:
 
-- square-bond self-dual control (#42);
-- C4 self-matching site triangulation (#44).
+```text
+DeltaM_(2N) / DeltaM_N       = -2^(-13/8)
+mean(M')_(2N) / mean(M')_N   =  2^(3/8)
+DeltaRoot_(2N) / DeltaRoot_N = -1/4
+```
 
-These test the proposed parity mechanism more directly than simply adding target-lattice sizes.
+Include the third `145 -> 290` lineage. Preserve full covariance and the local closure diagnostic. Pure-power residuals are primary; logarithmic/Jordan alternatives are secondary and preregistered.
 
-### E3. Paired motif controls
+### E2. Unused held-out sizes — #43
 
-Test #40 on the actual same-`N` orientation difference. Promote controls only if fresh-sample variance per wall time improves at multiple declared sizes.
+Score the frozen `N=185,265` predictions before using secondary sizes or fitting extra radial terms. Sample count may be pilot-powered, but target signs/models and stopping rules must remain frozen.
 
-## Phase 3 — Theory and universality
+### E3. Paired same-N motif controls — #40
 
-### T0. Operator-sector discrimination
+Evaluate exact zero-mean paired controls on the actual orientation-difference target. Promote them only if fresh-sample variance per wall time improves at multiple declared sizes. Single-geometry gains do not satisfy this gate.
 
-Only after Phase 1 and the prospective Phase 2 tests:
+### E4. H4 versus higher odd harmonics — #55/#57
 
-- project matching parity, thermal parity, and spin-4 components from full curves;
-- compare pure power, logarithmic companion, free exponent, and competing sectors;
-- require an independent amplitude/sign/geometry prediction.
+Before expensive four-angle `N=1105` work, use the cheaper prospective Gaussian designs that distinguish H4 from H12 by sign/leverage. Score pure H4 first, then declared H12/H8/mixed alternatives.
 
-This is the gate for upgrading #37 from a candidate to a C4 interpretation.
+### E5. Exact parity controls — #42/#44/#48
 
-### T1. Scaling-function controls
+Use square-bond self-duality, the C4 self-matching site triangulation, and the derivative-parity spectrum to test matching/duality parity rather than merely accumulating target-lattice size points.
 
-Complete same-modulus exact-threshold controls (#25) before interpreting `kappa_3`, higher derivatives, or an analytic profile. Preserve the full standardized profile, not only one ratio.
+These are prerequisites for any C4 operator-level promotion.
 
-### T2. Algebraic and rigorous routes
+## Phase 3 — Theory and correction-spectrum discrimination
 
-Keep bounded exact-polynomial/GCD work and rigorous gadget bounds as independent tracks. They must state finite search bounds and may not imply transcendence from finite data.
+### T0. LCFT/operator identification — #37
+
+Only after Phase 1 and the prospective Phase 2 discriminators:
+
+- project matching parity, thermal parity, and lattice-spin sectors from full curves;
+- compare pure power, logarithmic companion, free exponent, and competing operators;
+- require at least one prediction not used to identify the candidate.
+
+An algebraically allowed `x=21/4, s=4` quasiprimary is not itself evidence that the lattice observable couples uniquely to it.
+
+### T1. Post-leading correction spectrum — #47/#58
+
+Interpret held-out correction exponents structurally rather than by numerical proximity:
+
+- `q=2` / accelerated `w=6`: conditional even-scalar mixing;
+- `q=4` / `w=8`: nonlinear `T4*I4^2`, with an H12 sideband expectation;
+- `q=6` / `w=10`: next ordinary thermal spin-4 quasiprimary;
+- stable `q=3` / `w=7`: evidence for additional/logarithmic/nonminimal structure, not an automatic “next descendant.”
+
+### T2. Scaling-function controls — #25/#54
+
+Complete same-modulus exact-threshold controls before interpreting `kappa_3`, higher derivatives, or an analytic profile. Preserve the full standardized profile and covariance, not one near-rational number.
+
+### T3. Algebraic and rigorous tracks
+
+Bounded exact-polynomial/GCD work and rigorous gadget bounds remain independent tracks. They must state finite search/certification bounds and may not imply transcendence from finite data.
 
 ## Resource policy
 
 CPU is the default for current confirmation and analysis work. GPU or high-memory rental requires:
 
-- a validated CPU oracle;
+- a validated CPU/exact oracle;
 - measured bottlenecks;
-- a power/information model;
-- a frozen output contract;
-- an end-to-end gain, not only kernel throughput.
+- a frozen sufficient-statistic output contract;
+- a power/information model for the actual scientific statistic;
+- CPU/GPU equality on deterministic vectors where applicable;
+- a meaningful end-to-end gain, not only kernel throughput.
 
 ## Work explicitly deferred
 
-Until the above gates pass, do not prioritize:
+Until upstream gates pass, do not prioritize:
 
 - broad PSLQ searches against an unsettled decimal interval;
-- a large four-angle campaign solely to rescue the spin-4 model;
+- N=1105 multi-angle production before cheaper H4/H12 discriminators;
 - large-Pell fixed-parameter scans;
 - GPU production for work already cheap on CPU;
-- transfer-matrix frontier extension without published state/memory profiling;
+- transfer-matrix frontier extension without measured state/memory profiling;
 - new conjecture branches that duplicate an existing issue without a sharper discriminator.
 
-## Completion criterion
+## Paper-oriented release criterion
 
-The project is ready for a paper-oriented release when:
+The project is ready for a paper-oriented research release when:
 
-1. canonical source and result archives are integrated to `main`;
+1. canonical production source and the required result families are integrated to `main` under #59;
 2. CI and repository protection are active;
 3. literature data have a provenance-complete manifest;
-4. clean replay and covariance policy are complete;
-5. at least one prospective unused-size or exact-control test has been scored;
-6. the claim ledger clearly separates finite-size evidence from asymptotic interpretation.
+4. clean replay and covariance/RNG policy are complete;
+5. at least one prospective unused-size/harmonic/root test and one exact parity control have been scored;
+6. the claim ledger clearly separates finite-size C3 evidence from asymptotic/operator C4 interpretation;
+7. release manifests make all reported figures/tables reconstructible from canonical artifacts.
