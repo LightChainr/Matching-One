@@ -18,19 +18,23 @@
 | Claim | Level | Evidence | Current interpretation |
 |---|---:|---|---|
 | Primitive same-`N` Gaussian tori have a nonzero orientation-dependent matching signal | C3 | P31 | Independent-seed confirmation at five frozen sizes |
-| The central matching-odd `DeltaM` sector is compatible with `DeltaCos4*N^-13/8` | C3 | P31/P32/P37/P50/P43 | Survives old holdouts, three Gaussian lineages, and prospective new N=185/265 geometries |
-| On N=185/265 the x=21/4 H4-like `DeltaM` law beats zero and the x=17/4 adversary | C3 | P43 / PR #108 | `3.046/2` versus `29.409/2` and `30.246/2` |
-| Leading angular harmonic is uniquely H4 | C2 | current data | Not established: `1+i` cannot separate H4 from H12/H20; #57 is the main discriminator |
-| Local residual-to-root conversion satisfies `-DeltaRoot*mean(M')/DeltaM ~= 1` | C3 | P35/P45 | Root movement is locally explained by the measured residual and slope |
-| Bare finite-size center-slope ratio equals exactly `2^(3/8)` at current sizes | C2 negative | P49 | False at 100M precision; a small finite-size correction is resolved |
-| Frozen matching-even `DeltaS ~ +N^-1` assignment is correct | C3 negative | P43 | Prospectively falsified: N=185 and N=265 are both strongly negative |
-| Pure `P4[S'] ~ N^-5/4` is sufficient | C3 negative | P48/P43 | Prospectively falsified on new geometries |
-| Corrected nonzero `P4[S']` channel exists | C3 | P43/#72 | Both predeclared log and analytic `1/N` corrections survive; mechanism not uniquely selected |
-| Exact C4 self-matching symmetry forces the whole finite matching polynomial to vanish | C5 negative control | #82 | False: the central antisymmetry is exact, but the polynomial is not identically zero |
+| Central matching-odd `DeltaM` is compatible with `DeltaCos4*N^-13/8` | C3 | P31/P32/P37/P50/P43 | Survives old holdouts, three Gaussian lineages, and prospective N=185/265 geometries |
+| N=185/265 x=21/4 H4-like `DeltaM` beats zero and x=17/4 | C3 | P43 / PR #108 | `3.046/2` versus `29.409/2` and `30.246/2` |
+| Intrinsic-center `P4[S] ~ N^-1` transfers to N=185/265 | C3 | P48 + prospective score | `1.139/2`, zero `112.540/2` |
+| Intrinsic-center `P4[D] ~ N^-13/8` transfers to N=185/265 | C3 | P48 + prospective score | `0.281/2`, zero `29.408/2` |
+| Intrinsic-center `P4[D'] ~ N^-5/8` transfers to N=185/265 | C3 | P48 + prospective score | `0.088/2`, zero `59.393/2` |
+| Pure `P4[S'] ~ N^-5/4` is sufficient | C3 negative | P48/P43 | Prospectively falsified: `52.716/2` |
+| Corrected nonzero `P4[S']` channel exists | C3 | P43/#72 | Both predeclared log and analytic `1/N` corrections survive |
+| Issue #43 registered positive DeltaS score is a valid test of cross/even | protocol negative | P43 audit | No: source was `either/even`, target was `cross/even`; original `240.247/2` is a channel-contract failure |
+| Exact cross/either map repairs the Issue #43 source channel without target fit | diagnostic | P31/P43 audit | `DeltaS_cross=-DeltaS_either`; repaired diagnostic `0.570/2`; not a retroactive preregistered pass |
+| Leading angular harmonic is uniquely H4 | C2 | current data | Not established; #57 norm-5 is the main discriminator |
+| Local residual-to-root conversion satisfies `-DeltaRoot*mean(M')/DeltaM ~= 1` | C3 | P35/P45 | Root movement is locally explained by residual and slope |
+| Bare finite-size center-slope ratio equals exactly `2^(3/8)` | C2 negative | P49 | False at current precision; finite-size correction resolved |
+| Exact C4 self-matching symmetry forces the whole finite polynomial to vanish | C5 negative control | #82 | False; central antisymmetry is exact but polynomial is not identically zero |
 
 ## Key prospective numbers
 
-### N=185/265 matching-odd central sector
+### Matching-odd central sector
 
 ```text
 N=185 DeltaM = +1.36830e-4 +/- 3.42352e-5
@@ -41,30 +45,42 @@ zero:       chi2 = 29.40938 / 2
 x=17/4:     chi2 = 30.24613 / 2
 ```
 
-This is the strongest new-geometry evidence for the current central odd-sector radial law.
+This is the strongest new-geometry evidence for the central odd-sector radial law.
 
-### N=185/265 matching-even central sector
+### Intrinsic-center P48 four-channel score
+
+Frozen source amplitudes use only N=65,85,130. N=185/265 are independent target geometries and no target amplitude is fit.
 
 ```text
-N=185 DeltaS = -6.08154e-5 +/- 8.08957e-6
-N=265 DeltaS = -7.02495e-5 +/- 9.38562e-6
-
-frozen positive N^-1: chi2 = 240.24721 / 2
-zero:                  chi2 = 112.53891 / 2
+P4[S]   ~ N^-1:     chi2 =  1.13878 / 2
+P4[D]   ~ N^-13/8:  chi2 =  0.28085 / 2
+P4[D']  ~ N^-5/8:   chi2 =  0.08761 / 2
+P4[S']  ~ N^-5/4:   chi2 = 52.71634 / 2
 ```
 
-The simple two-sector conjunction is therefore rejected even though its odd component survives.
+Only `S'` is a clear pure-law failure.
 
-### N=185/265 P4[S'] correction score
+### S-prime correction score
 
 ```text
-pure N^-5/4:  chi2 = 52.71634 / 2
-rank-2/log:    chi2 =  1.20360 / 2
-analytic 1/N:  chi2 =  0.86221 / 2
+rank-2/log:    chi2 = 1.20360 / 2
+analytic 1/N:  chi2 = 0.86221 / 2
 zero:          chi2 = 1278.55524 / 2
 ```
 
-Both fixed correction models remain viable. The smaller descriptive statistic is not a license to reorder preregistered chronology.
+Both fixed correction models remain viable; descriptive chi-square does not select the mechanism or reorder the frozen chronology.
+
+### Issue #43 registered DeltaS contract audit
+
+The frozen artifact sourced P31 `either/even`, while target production/scoring uses rank-2 `cross/even`.
+
+```text
+original registered positive score: chi2 = 240.24721 / 2
+exact source-channel map: DeltaS_cross = -DeltaS_either
+protocol-repair diagnostic: chi2 = 0.57003 / 2
+```
+
+The original score remains a failed preregistration artifact. The repaired value is a lower-status post-reveal protocol diagnostic with zero target refits. It prevents the original failure from being misinterpreted as physical falsification of cross/even N^-1 scaling.
 
 ### Earlier orientation/root evidence
 
@@ -94,47 +110,46 @@ bare slope chi2 = 6412.89 / 2
 
 ## Current interpretation
 
-The project should no longer describe the data as one successful pure two-spin-4 model.
-
-A better evidence-respecting decomposition is:
+The evidence now supports a more coherent picture than the first reading of P43 suggested:
 
 1. **robust matching-odd central sector** — strong finite-size/prospective support for an H4-like `N^-13/8` law;
-2. **unresolved matching-even central sector** — the original positive `N^-1` assignment is falsified in sign;
-3. **corrected derivative sector** — `S'` is nonzero, but a pure `N^-5/4` law is insufficient and at least one finite-size correction is required;
-4. **operator theory remains conditional** — matching/OPE parity and a unique LCFT identification are not established.
+2. **intrinsic-center parity structure largely survives** — `S`, `D`, and `D'` pure laws transfer to new geometries;
+3. **specific derivative correction problem** — `S'` is nonzero but its pure `N^-5/4` law fails and requires finite-size correction;
+4. **fixed-coordinate channel bookkeeping matters** — the registered P43 even score mixed an `either/even` source with a `cross/even` target; preserve the failed artifact but do not promote its `240/2` score into a physical sector falsification;
+5. **operator theory remains conditional** — unique H4 and a local matching/OPE automorphism are not established.
 
 ## Open interpretations
 
 | Interpretation | Level | What would move it forward |
 |---|---:|---|
-| H4 is the unique leading odd harmonic | C2 | Norm-5 H4-vs-H12 test #57 |
-| `13/8` is the unique asymptotic radial exponent | C2/C3 | Norm-5 transfer and additional full-curve lineages; current new-geometry evidence strongly supports it over the tested range |
-| Minimal relative-`1/N` slope correction explains the P49 drift | C0/C2 | Frozen 145->290 full-curve score #50 |
-| Matching-even `S` sign reversal is a preasymptotic crossing rather than a different operator sector | C0 | Existing-data signed-sequence analysis #48, then reuse #50/#57 |
-| `S'` correction is ordinary q=2 versus logarithmic/Jordan | C0/C2 | Reuse #50/#57 multiplier/full-curve data; no new N=185/265 run |
-| `x=21/4` thermal-family spin-4 field is the continuum mechanism | C0/C2 | Unique harmonic, radial competitors, parity controls, and corrected derivative structure |
-| Matching/complement extends to a local RG/OPE parity automorphism | C0 | #61 plus exact controls; empirical S/D parity is a weaker statement |
-| `V_<1,4>` explains historical post-`L^-7` behavior | C0 | Axis-annihilator experiment; keep conditional until empirical q=3 discrimination |
+| H4 is the unique leading odd harmonic | C2 | Norm-5 H4-vs-H12 #57 |
+| `13/8` is the unique asymptotic radial exponent | C2/C3 | Norm-5 transfer and additional full-curve lineages |
+| Minimal relative-`1/N` slope correction explains P49 drift | C0/C2 | Frozen 145->290 full-curve score #50 |
+| `S'` correction is ordinary q=2 versus logarithmic/Jordan | C0/C2 | #50/#57 multiplier/full-curve reuse |
+| Fixed-coordinate cross/either even observables transport cleanly to intrinsic-center P48 `S` | C0 | #48 thermal-coordinate/channel audit using existing curves |
+| `x=21/4` thermal-family spin-4 field is the continuum mechanism | C0/C2 | Unique harmonic, radial competitors, parity controls, corrected derivative structure |
+| Matching/complement extends to a local RG/OPE parity automorphism | C0 | #61 plus exact controls |
+| `V_<1,4>` explains historical post-`L^-7` behavior | C0 | Axis-annihilator q=3 discrimination |
 | Simple PSLQ/algebraic form gives `p_c` | C0 | Low-priority bounded search after provenance constraints |
 
 ## Execution priorities
 
-When compute/attention is scarce:
+1. **#57 norm-5 N=325/425** — H4-vs-H12 plus radial/correction multiplier leverage. Pilot first, production size from measured power.
+2. **#50 N=145->290 full curve** — test the frozen slope correction and induced root prediction on a third lineage.
+3. **#48 zero-extra-compute S-prime / coordinate audit** — distinguish q=2 versus log/Jordan and relate fixed-coordinate cross/either observables to intrinsic-center projectors before requesting another run.
+4. Tier-B axis-annihilator/exact-zero/control work may continue only when it does not displace the above.
 
-1. **#57 norm-5 N=325/425** — highest-information H4-vs-H12 and radial/correction multiplier test. Start with a small threshold-rank variance pilot, then set production size from measured power.
-2. **#50 N=145->290 full curve** — test the already-frozen slope correction and induced root prediction on a third lineage.
-3. **#48 zero-extra-compute even/derivative analysis** — explain the `DeltaS` sign reversal and corrected `S'` sequence using existing N=65..265 curves before asking for another run.
-4. **Tier-B axis-annihilator/exact-zero/control work** may continue in parallel only when it does not displace the above.
-
-N=1105 remains gated behind #57/#50. More N=185/265 replicas are not a priority; the 500M prospective run is already decisive for the present questions.
+More N=185/265 replicas are not a priority. N=1105 remains gated behind #57/#50.
 
 ## Engineering status
 
 - Huawei archive and production tools: canonical on `main`.
-- P33 covariance diagnostics: canonical; historical cross-size correlations are modest and not a global blocker.
-- N=185/265 and N=325/425 threshold-rank production: supported on `main`.
-- Issue #43 primary/secondary scorers and P48 frozen correction chain: canonical.
+- P33 covariance diagnostics: canonical; historical cross-size correlations modest.
+- N=185/265 and N=325/425 threshold-rank production: supported.
+- Issue #43 primary/secondary scorers and channel-map audit: canonical or in active integration.
+- P48 pure-law/correction scoring chain: canonical or in active integration.
 - Exact N=1105 projector/minimality and C4 self-matching control: canonical.
+- Axis-annihilator Tier-B engine/scorer: canonical.
 - CI covers Python 3.9/3.11/3.13 and C++17.
 
 ## Explicit non-claims
@@ -144,7 +159,8 @@ The project does **not** currently claim:
 - a closed form or new exact value for square-site `p_c`;
 - proof that `13/8` is the unique asymptotic exponent;
 - proof that H4 is the unique harmonic;
-- a successful pure matching-even `N^-1` law;
+- that the original Issue #43 positive DeltaS preregistration passed;
+- that its `240/2` failure physically falsifies the matching-even cross sector;
 - a successful pure `P4[S'] ~ N^-5/4` law;
 - an exact bare `2^(3/8)` finite-size slope ratio;
 - a unique q=2 versus Jordan correction mechanism;
