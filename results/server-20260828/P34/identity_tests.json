@@ -1,0 +1,1682 @@
+{
+  "schema": "P34 Euler/motif exact identities v1",
+  "identity": "C_black - C_white = q + V - E + F0",
+  "equal_mean_form": "D_cluster = q + (V-Np) - (E-2Np^2) + (F0-Np^4)",
+  "passed": true,
+  "exhaustive_identities": [
+    {
+      "name": "axis",
+      "N": 4,
+      "L": 2,
+      "physical_period": "((2, 0), (0, 2))",
+      "configurations": 16,
+      "q_values": [
+        -1,
+        0,
+        1
+      ],
+      "residual_histogram": {
+        "0": 16
+      },
+      "identity_failures": 0,
+      "wrapping_not_identical": 0,
+      "passed": true
+    },
+    {
+      "name": "axis",
+      "N": 9,
+      "L": 3,
+      "physical_period": "((3, 0), (0, 3))",
+      "configurations": 512,
+      "q_values": [
+        -1,
+        0,
+        1
+      ],
+      "residual_histogram": {
+        "0": 512
+      },
+      "identity_failures": 0,
+      "wrapping_not_identical": 0,
+      "passed": true
+    },
+    {
+      "name": "gaussian-2-1",
+      "N": 5,
+      "L": 0,
+      "physical_period": "((2, -1), (1, 2))",
+      "configurations": 32,
+      "q_values": [
+        -1,
+        0,
+        1
+      ],
+      "residual_histogram": {
+        "0": 32
+      },
+      "identity_failures": 0,
+      "wrapping_not_identical": 0,
+      "passed": true
+    },
+    {
+      "name": "diamond",
+      "N": 8,
+      "L": 2,
+      "physical_period": "((2, -2), (2, 2))",
+      "configurations": 256,
+      "q_values": [
+        -1,
+        0,
+        1
+      ],
+      "residual_histogram": {
+        "0": 256
+      },
+      "identity_failures": 0,
+      "wrapping_not_identical": 0,
+      "passed": true
+    }
+  ],
+  "conditional_means": [
+    {
+      "name": "axis",
+      "N": 4,
+      "path3_x_three_distinct": false,
+      "path3_y_three_distinct": false,
+      "failures": [],
+      "passed": true,
+      "by_K": [
+        {
+          "K": 0,
+          "configurations": 1,
+          "motifs": {
+            "V": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "E": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "F0": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_pos": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_neg": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "corners": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            }
+          }
+        },
+        {
+          "K": 1,
+          "configurations": 4,
+          "motifs": {
+            "V": {
+              "sum": 4,
+              "mean": 1.0,
+              "expected_mean": 1.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "E": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "F0": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_pos": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_neg": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "corners": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            }
+          }
+        },
+        {
+          "K": 2,
+          "configurations": 6,
+          "motifs": {
+            "V": {
+              "sum": 12,
+              "mean": 2.0,
+              "expected_mean": 2.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "E": {
+              "sum": 8,
+              "mean": 1.3333333333333333,
+              "expected_mean": 1.3333333333333333,
+              "zero_conditional_mean_of_centered": true
+            },
+            "F0": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_pos": {
+              "sum": 4,
+              "mean": 0.6666666666666666,
+              "expected_mean": 0.6666666666666666,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_neg": {
+              "sum": 4,
+              "mean": 0.6666666666666666,
+              "expected_mean": 0.6666666666666666,
+              "zero_conditional_mean_of_centered": true
+            },
+            "corners": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            }
+          }
+        },
+        {
+          "K": 3,
+          "configurations": 4,
+          "motifs": {
+            "V": {
+              "sum": 12,
+              "mean": 3.0,
+              "expected_mean": 3.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "E": {
+              "sum": 16,
+              "mean": 4.0,
+              "expected_mean": 4.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "F0": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_pos": {
+              "sum": 8,
+              "mean": 2.0,
+              "expected_mean": 2.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_neg": {
+              "sum": 8,
+              "mean": 2.0,
+              "expected_mean": 2.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "corners": {
+              "sum": 16,
+              "mean": 4.0,
+              "expected_mean": 4.0,
+              "zero_conditional_mean_of_centered": true
+            }
+          }
+        },
+        {
+          "K": 4,
+          "configurations": 1,
+          "motifs": {
+            "V": {
+              "sum": 4,
+              "mean": 4.0,
+              "expected_mean": 4.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "E": {
+              "sum": 8,
+              "mean": 8.0,
+              "expected_mean": 8.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "F0": {
+              "sum": 4,
+              "mean": 4.0,
+              "expected_mean": 4.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_pos": {
+              "sum": 4,
+              "mean": 4.0,
+              "expected_mean": 4.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_neg": {
+              "sum": 4,
+              "mean": 4.0,
+              "expected_mean": 4.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "corners": {
+              "sum": 16,
+              "mean": 16.0,
+              "expected_mean": 16.0,
+              "zero_conditional_mean_of_centered": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "axis",
+      "N": 9,
+      "path3_x_three_distinct": true,
+      "path3_y_three_distinct": true,
+      "failures": [],
+      "passed": true,
+      "by_K": [
+        {
+          "K": 0,
+          "configurations": 1,
+          "motifs": {
+            "V": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "E": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "F0": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_pos": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_neg": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_x": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_y": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "corners": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            }
+          }
+        },
+        {
+          "K": 1,
+          "configurations": 9,
+          "motifs": {
+            "V": {
+              "sum": 9,
+              "mean": 1.0,
+              "expected_mean": 1.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "E": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "F0": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_pos": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_neg": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_x": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_y": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "corners": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            }
+          }
+        },
+        {
+          "K": 2,
+          "configurations": 36,
+          "motifs": {
+            "V": {
+              "sum": 72,
+              "mean": 2.0,
+              "expected_mean": 2.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "E": {
+              "sum": 18,
+              "mean": 0.5,
+              "expected_mean": 0.5,
+              "zero_conditional_mean_of_centered": true
+            },
+            "F0": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_pos": {
+              "sum": 9,
+              "mean": 0.25,
+              "expected_mean": 0.25,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_neg": {
+              "sum": 9,
+              "mean": 0.25,
+              "expected_mean": 0.25,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_x": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_y": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "corners": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            }
+          }
+        },
+        {
+          "K": 3,
+          "configurations": 84,
+          "motifs": {
+            "V": {
+              "sum": 252,
+              "mean": 3.0,
+              "expected_mean": 3.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "E": {
+              "sum": 126,
+              "mean": 1.5,
+              "expected_mean": 1.5,
+              "zero_conditional_mean_of_centered": true
+            },
+            "F0": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_pos": {
+              "sum": 63,
+              "mean": 0.75,
+              "expected_mean": 0.75,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_neg": {
+              "sum": 63,
+              "mean": 0.75,
+              "expected_mean": 0.75,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_x": {
+              "sum": 9,
+              "mean": 0.10714285714285714,
+              "expected_mean": 0.10714285714285714,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_y": {
+              "sum": 9,
+              "mean": 0.10714285714285714,
+              "expected_mean": 0.10714285714285714,
+              "zero_conditional_mean_of_centered": true
+            },
+            "corners": {
+              "sum": 36,
+              "mean": 0.42857142857142855,
+              "expected_mean": 0.42857142857142855,
+              "zero_conditional_mean_of_centered": true
+            }
+          }
+        },
+        {
+          "K": 4,
+          "configurations": 126,
+          "motifs": {
+            "V": {
+              "sum": 504,
+              "mean": 4.0,
+              "expected_mean": 4.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "E": {
+              "sum": 378,
+              "mean": 3.0,
+              "expected_mean": 3.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "F0": {
+              "sum": 9,
+              "mean": 0.07142857142857142,
+              "expected_mean": 0.07142857142857142,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_pos": {
+              "sum": 189,
+              "mean": 1.5,
+              "expected_mean": 1.5,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_neg": {
+              "sum": 189,
+              "mean": 1.5,
+              "expected_mean": 1.5,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_x": {
+              "sum": 54,
+              "mean": 0.42857142857142855,
+              "expected_mean": 0.42857142857142855,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_y": {
+              "sum": 54,
+              "mean": 0.42857142857142855,
+              "expected_mean": 0.42857142857142855,
+              "zero_conditional_mean_of_centered": true
+            },
+            "corners": {
+              "sum": 216,
+              "mean": 1.7142857142857142,
+              "expected_mean": 1.7142857142857142,
+              "zero_conditional_mean_of_centered": true
+            }
+          }
+        },
+        {
+          "K": 5,
+          "configurations": 126,
+          "motifs": {
+            "V": {
+              "sum": 630,
+              "mean": 5.0,
+              "expected_mean": 5.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "E": {
+              "sum": 630,
+              "mean": 5.0,
+              "expected_mean": 5.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "F0": {
+              "sum": 45,
+              "mean": 0.35714285714285715,
+              "expected_mean": 0.35714285714285715,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_pos": {
+              "sum": 315,
+              "mean": 2.5,
+              "expected_mean": 2.5,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_neg": {
+              "sum": 315,
+              "mean": 2.5,
+              "expected_mean": 2.5,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_x": {
+              "sum": 135,
+              "mean": 1.0714285714285714,
+              "expected_mean": 1.0714285714285714,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_y": {
+              "sum": 135,
+              "mean": 1.0714285714285714,
+              "expected_mean": 1.0714285714285714,
+              "zero_conditional_mean_of_centered": true
+            },
+            "corners": {
+              "sum": 540,
+              "mean": 4.285714285714286,
+              "expected_mean": 4.285714285714286,
+              "zero_conditional_mean_of_centered": true
+            }
+          }
+        },
+        {
+          "K": 6,
+          "configurations": 84,
+          "motifs": {
+            "V": {
+              "sum": 504,
+              "mean": 6.0,
+              "expected_mean": 6.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "E": {
+              "sum": 630,
+              "mean": 7.5,
+              "expected_mean": 7.5,
+              "zero_conditional_mean_of_centered": true
+            },
+            "F0": {
+              "sum": 90,
+              "mean": 1.0714285714285714,
+              "expected_mean": 1.0714285714285714,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_pos": {
+              "sum": 315,
+              "mean": 3.75,
+              "expected_mean": 3.75,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_neg": {
+              "sum": 315,
+              "mean": 3.75,
+              "expected_mean": 3.75,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_x": {
+              "sum": 180,
+              "mean": 2.142857142857143,
+              "expected_mean": 2.142857142857143,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_y": {
+              "sum": 180,
+              "mean": 2.142857142857143,
+              "expected_mean": 2.142857142857143,
+              "zero_conditional_mean_of_centered": true
+            },
+            "corners": {
+              "sum": 720,
+              "mean": 8.571428571428571,
+              "expected_mean": 8.571428571428571,
+              "zero_conditional_mean_of_centered": true
+            }
+          }
+        },
+        {
+          "K": 7,
+          "configurations": 36,
+          "motifs": {
+            "V": {
+              "sum": 252,
+              "mean": 7.0,
+              "expected_mean": 7.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "E": {
+              "sum": 378,
+              "mean": 10.5,
+              "expected_mean": 10.5,
+              "zero_conditional_mean_of_centered": true
+            },
+            "F0": {
+              "sum": 90,
+              "mean": 2.5,
+              "expected_mean": 2.5,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_pos": {
+              "sum": 189,
+              "mean": 5.25,
+              "expected_mean": 5.25,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_neg": {
+              "sum": 189,
+              "mean": 5.25,
+              "expected_mean": 5.25,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_x": {
+              "sum": 135,
+              "mean": 3.75,
+              "expected_mean": 3.75,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_y": {
+              "sum": 135,
+              "mean": 3.75,
+              "expected_mean": 3.75,
+              "zero_conditional_mean_of_centered": true
+            },
+            "corners": {
+              "sum": 540,
+              "mean": 15.0,
+              "expected_mean": 15.0,
+              "zero_conditional_mean_of_centered": true
+            }
+          }
+        },
+        {
+          "K": 8,
+          "configurations": 9,
+          "motifs": {
+            "V": {
+              "sum": 72,
+              "mean": 8.0,
+              "expected_mean": 8.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "E": {
+              "sum": 126,
+              "mean": 14.0,
+              "expected_mean": 14.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "F0": {
+              "sum": 45,
+              "mean": 5.0,
+              "expected_mean": 5.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_pos": {
+              "sum": 63,
+              "mean": 7.0,
+              "expected_mean": 7.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_neg": {
+              "sum": 63,
+              "mean": 7.0,
+              "expected_mean": 7.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_x": {
+              "sum": 54,
+              "mean": 6.0,
+              "expected_mean": 6.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_y": {
+              "sum": 54,
+              "mean": 6.0,
+              "expected_mean": 6.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "corners": {
+              "sum": 216,
+              "mean": 24.0,
+              "expected_mean": 24.0,
+              "zero_conditional_mean_of_centered": true
+            }
+          }
+        },
+        {
+          "K": 9,
+          "configurations": 1,
+          "motifs": {
+            "V": {
+              "sum": 9,
+              "mean": 9.0,
+              "expected_mean": 9.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "E": {
+              "sum": 18,
+              "mean": 18.0,
+              "expected_mean": 18.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "F0": {
+              "sum": 9,
+              "mean": 9.0,
+              "expected_mean": 9.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_pos": {
+              "sum": 9,
+              "mean": 9.0,
+              "expected_mean": 9.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_neg": {
+              "sum": 9,
+              "mean": 9.0,
+              "expected_mean": 9.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_x": {
+              "sum": 9,
+              "mean": 9.0,
+              "expected_mean": 9.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_y": {
+              "sum": 9,
+              "mean": 9.0,
+              "expected_mean": 9.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "corners": {
+              "sum": 36,
+              "mean": 36.0,
+              "expected_mean": 36.0,
+              "zero_conditional_mean_of_centered": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "gaussian-2-1",
+      "N": 5,
+      "path3_x_three_distinct": true,
+      "path3_y_three_distinct": true,
+      "failures": [],
+      "passed": true,
+      "by_K": [
+        {
+          "K": 0,
+          "configurations": 1,
+          "motifs": {
+            "V": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "E": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "F0": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_pos": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_neg": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_x": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_y": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "corners": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            }
+          }
+        },
+        {
+          "K": 1,
+          "configurations": 5,
+          "motifs": {
+            "V": {
+              "sum": 5,
+              "mean": 1.0,
+              "expected_mean": 1.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "E": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "F0": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_pos": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_neg": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_x": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_y": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "corners": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            }
+          }
+        },
+        {
+          "K": 2,
+          "configurations": 10,
+          "motifs": {
+            "V": {
+              "sum": 20,
+              "mean": 2.0,
+              "expected_mean": 2.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "E": {
+              "sum": 10,
+              "mean": 1.0,
+              "expected_mean": 1.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "F0": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_pos": {
+              "sum": 5,
+              "mean": 0.5,
+              "expected_mean": 0.5,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_neg": {
+              "sum": 5,
+              "mean": 0.5,
+              "expected_mean": 0.5,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_x": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_y": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "corners": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            }
+          }
+        },
+        {
+          "K": 3,
+          "configurations": 10,
+          "motifs": {
+            "V": {
+              "sum": 30,
+              "mean": 3.0,
+              "expected_mean": 3.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "E": {
+              "sum": 30,
+              "mean": 3.0,
+              "expected_mean": 3.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "F0": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_pos": {
+              "sum": 15,
+              "mean": 1.5,
+              "expected_mean": 1.5,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_neg": {
+              "sum": 15,
+              "mean": 1.5,
+              "expected_mean": 1.5,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_x": {
+              "sum": 5,
+              "mean": 0.5,
+              "expected_mean": 0.5,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_y": {
+              "sum": 5,
+              "mean": 0.5,
+              "expected_mean": 0.5,
+              "zero_conditional_mean_of_centered": true
+            },
+            "corners": {
+              "sum": 20,
+              "mean": 2.0,
+              "expected_mean": 2.0,
+              "zero_conditional_mean_of_centered": true
+            }
+          }
+        },
+        {
+          "K": 4,
+          "configurations": 5,
+          "motifs": {
+            "V": {
+              "sum": 20,
+              "mean": 4.0,
+              "expected_mean": 4.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "E": {
+              "sum": 30,
+              "mean": 6.0,
+              "expected_mean": 6.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "F0": {
+              "sum": 5,
+              "mean": 1.0,
+              "expected_mean": 1.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_pos": {
+              "sum": 15,
+              "mean": 3.0,
+              "expected_mean": 3.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_neg": {
+              "sum": 15,
+              "mean": 3.0,
+              "expected_mean": 3.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_x": {
+              "sum": 10,
+              "mean": 2.0,
+              "expected_mean": 2.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_y": {
+              "sum": 10,
+              "mean": 2.0,
+              "expected_mean": 2.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "corners": {
+              "sum": 40,
+              "mean": 8.0,
+              "expected_mean": 8.0,
+              "zero_conditional_mean_of_centered": true
+            }
+          }
+        },
+        {
+          "K": 5,
+          "configurations": 1,
+          "motifs": {
+            "V": {
+              "sum": 5,
+              "mean": 5.0,
+              "expected_mean": 5.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "E": {
+              "sum": 10,
+              "mean": 10.0,
+              "expected_mean": 10.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "F0": {
+              "sum": 5,
+              "mean": 5.0,
+              "expected_mean": 5.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_pos": {
+              "sum": 5,
+              "mean": 5.0,
+              "expected_mean": 5.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_neg": {
+              "sum": 5,
+              "mean": 5.0,
+              "expected_mean": 5.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_x": {
+              "sum": 5,
+              "mean": 5.0,
+              "expected_mean": 5.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_y": {
+              "sum": 5,
+              "mean": 5.0,
+              "expected_mean": 5.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "corners": {
+              "sum": 20,
+              "mean": 20.0,
+              "expected_mean": 20.0,
+              "zero_conditional_mean_of_centered": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "diamond",
+      "N": 8,
+      "path3_x_three_distinct": true,
+      "path3_y_three_distinct": true,
+      "failures": [],
+      "passed": true,
+      "by_K": [
+        {
+          "K": 0,
+          "configurations": 1,
+          "motifs": {
+            "V": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "E": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "F0": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_pos": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_neg": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_x": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_y": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "corners": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            }
+          }
+        },
+        {
+          "K": 1,
+          "configurations": 8,
+          "motifs": {
+            "V": {
+              "sum": 8,
+              "mean": 1.0,
+              "expected_mean": 1.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "E": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "F0": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_pos": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_neg": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_x": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_y": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "corners": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            }
+          }
+        },
+        {
+          "K": 2,
+          "configurations": 28,
+          "motifs": {
+            "V": {
+              "sum": 56,
+              "mean": 2.0,
+              "expected_mean": 2.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "E": {
+              "sum": 16,
+              "mean": 0.5714285714285714,
+              "expected_mean": 0.5714285714285714,
+              "zero_conditional_mean_of_centered": true
+            },
+            "F0": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_pos": {
+              "sum": 8,
+              "mean": 0.2857142857142857,
+              "expected_mean": 0.2857142857142857,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_neg": {
+              "sum": 8,
+              "mean": 0.2857142857142857,
+              "expected_mean": 0.2857142857142857,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_x": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_y": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "corners": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            }
+          }
+        },
+        {
+          "K": 3,
+          "configurations": 56,
+          "motifs": {
+            "V": {
+              "sum": 168,
+              "mean": 3.0,
+              "expected_mean": 3.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "E": {
+              "sum": 96,
+              "mean": 1.7142857142857142,
+              "expected_mean": 1.7142857142857142,
+              "zero_conditional_mean_of_centered": true
+            },
+            "F0": {
+              "sum": 0,
+              "mean": 0.0,
+              "expected_mean": 0.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_pos": {
+              "sum": 48,
+              "mean": 0.8571428571428571,
+              "expected_mean": 0.8571428571428571,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_neg": {
+              "sum": 48,
+              "mean": 0.8571428571428571,
+              "expected_mean": 0.8571428571428571,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_x": {
+              "sum": 8,
+              "mean": 0.14285714285714285,
+              "expected_mean": 0.14285714285714285,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_y": {
+              "sum": 8,
+              "mean": 0.14285714285714285,
+              "expected_mean": 0.14285714285714285,
+              "zero_conditional_mean_of_centered": true
+            },
+            "corners": {
+              "sum": 32,
+              "mean": 0.5714285714285714,
+              "expected_mean": 0.5714285714285714,
+              "zero_conditional_mean_of_centered": true
+            }
+          }
+        },
+        {
+          "K": 4,
+          "configurations": 70,
+          "motifs": {
+            "V": {
+              "sum": 280,
+              "mean": 4.0,
+              "expected_mean": 4.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "E": {
+              "sum": 240,
+              "mean": 3.4285714285714284,
+              "expected_mean": 3.4285714285714284,
+              "zero_conditional_mean_of_centered": true
+            },
+            "F0": {
+              "sum": 8,
+              "mean": 0.11428571428571428,
+              "expected_mean": 0.11428571428571428,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_pos": {
+              "sum": 120,
+              "mean": 1.7142857142857142,
+              "expected_mean": 1.7142857142857142,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_neg": {
+              "sum": 120,
+              "mean": 1.7142857142857142,
+              "expected_mean": 1.7142857142857142,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_x": {
+              "sum": 40,
+              "mean": 0.5714285714285714,
+              "expected_mean": 0.5714285714285714,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_y": {
+              "sum": 40,
+              "mean": 0.5714285714285714,
+              "expected_mean": 0.5714285714285714,
+              "zero_conditional_mean_of_centered": true
+            },
+            "corners": {
+              "sum": 160,
+              "mean": 2.2857142857142856,
+              "expected_mean": 2.2857142857142856,
+              "zero_conditional_mean_of_centered": true
+            }
+          }
+        },
+        {
+          "K": 5,
+          "configurations": 56,
+          "motifs": {
+            "V": {
+              "sum": 280,
+              "mean": 5.0,
+              "expected_mean": 5.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "E": {
+              "sum": 320,
+              "mean": 5.714285714285714,
+              "expected_mean": 5.714285714285714,
+              "zero_conditional_mean_of_centered": true
+            },
+            "F0": {
+              "sum": 32,
+              "mean": 0.5714285714285714,
+              "expected_mean": 0.5714285714285714,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_pos": {
+              "sum": 160,
+              "mean": 2.857142857142857,
+              "expected_mean": 2.857142857142857,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_neg": {
+              "sum": 160,
+              "mean": 2.857142857142857,
+              "expected_mean": 2.857142857142857,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_x": {
+              "sum": 80,
+              "mean": 1.4285714285714286,
+              "expected_mean": 1.4285714285714286,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_y": {
+              "sum": 80,
+              "mean": 1.4285714285714286,
+              "expected_mean": 1.4285714285714286,
+              "zero_conditional_mean_of_centered": true
+            },
+            "corners": {
+              "sum": 320,
+              "mean": 5.714285714285714,
+              "expected_mean": 5.714285714285714,
+              "zero_conditional_mean_of_centered": true
+            }
+          }
+        },
+        {
+          "K": 6,
+          "configurations": 28,
+          "motifs": {
+            "V": {
+              "sum": 168,
+              "mean": 6.0,
+              "expected_mean": 6.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "E": {
+              "sum": 240,
+              "mean": 8.571428571428571,
+              "expected_mean": 8.571428571428571,
+              "zero_conditional_mean_of_centered": true
+            },
+            "F0": {
+              "sum": 48,
+              "mean": 1.7142857142857142,
+              "expected_mean": 1.7142857142857142,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_pos": {
+              "sum": 120,
+              "mean": 4.285714285714286,
+              "expected_mean": 4.285714285714286,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_neg": {
+              "sum": 120,
+              "mean": 4.285714285714286,
+              "expected_mean": 4.285714285714286,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_x": {
+              "sum": 80,
+              "mean": 2.857142857142857,
+              "expected_mean": 2.857142857142857,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_y": {
+              "sum": 80,
+              "mean": 2.857142857142857,
+              "expected_mean": 2.857142857142857,
+              "zero_conditional_mean_of_centered": true
+            },
+            "corners": {
+              "sum": 320,
+              "mean": 11.428571428571429,
+              "expected_mean": 11.428571428571429,
+              "zero_conditional_mean_of_centered": true
+            }
+          }
+        },
+        {
+          "K": 7,
+          "configurations": 8,
+          "motifs": {
+            "V": {
+              "sum": 56,
+              "mean": 7.0,
+              "expected_mean": 7.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "E": {
+              "sum": 96,
+              "mean": 12.0,
+              "expected_mean": 12.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "F0": {
+              "sum": 32,
+              "mean": 4.0,
+              "expected_mean": 4.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_pos": {
+              "sum": 48,
+              "mean": 6.0,
+              "expected_mean": 6.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_neg": {
+              "sum": 48,
+              "mean": 6.0,
+              "expected_mean": 6.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_x": {
+              "sum": 40,
+              "mean": 5.0,
+              "expected_mean": 5.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_y": {
+              "sum": 40,
+              "mean": 5.0,
+              "expected_mean": 5.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "corners": {
+              "sum": 160,
+              "mean": 20.0,
+              "expected_mean": 20.0,
+              "zero_conditional_mean_of_centered": true
+            }
+          }
+        },
+        {
+          "K": 8,
+          "configurations": 1,
+          "motifs": {
+            "V": {
+              "sum": 8,
+              "mean": 8.0,
+              "expected_mean": 8.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "E": {
+              "sum": 16,
+              "mean": 16.0,
+              "expected_mean": 16.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "F0": {
+              "sum": 8,
+              "mean": 8.0,
+              "expected_mean": 8.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_pos": {
+              "sum": 8,
+              "mean": 8.0,
+              "expected_mean": 8.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "nnn_neg": {
+              "sum": 8,
+              "mean": 8.0,
+              "expected_mean": 8.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_x": {
+              "sum": 8,
+              "mean": 8.0,
+              "expected_mean": 8.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "path3_y": {
+              "sum": 8,
+              "mean": 8.0,
+              "expected_mean": 8.0,
+              "zero_conditional_mean_of_centered": true
+            },
+            "corners": {
+              "sum": 32,
+              "mean": 32.0,
+              "expected_mean": 32.0,
+              "zero_conditional_mean_of_centered": true
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

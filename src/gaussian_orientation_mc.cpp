@@ -305,6 +305,129 @@ Channels classify_bfs_reference(const Geometry& geometry,
     return output;
 }
 
+int component_count(const std::vector<std::uint8_t>& active, HomologyUnionFind& union_find) {
+    int count = 0;
+    for (int vertex = 0; vertex < static_cast<int>(active.size()); ++vertex) {
+        if (active[vertex] && union_find.find(vertex).root == vertex) ++count;
+    }
+    return count;
+}
+
+struct SiteMotifs {
+    int V = 0;
+    int E = 0;
+    int F0 = 0;
+    int nnn_pos = 0;
+    int nnn_neg = 0;
+    int path3_x = 0;
+    int path3_y = 0;
+    int corners = 0;
+};
+
+SiteMotifs count_site_motifs(const std::vector<std::uint8_t>& active, const Geometry& geometry) {
+    SiteMotifs motifs;
+    const int n = geometry.n;
+    const int a = geometry.a;
+    const int b = geometry.b;
+    for (int i = 0; i < n; ++i) motifs.V += active[i];
+    for (const Edge& edge : geometry.primal_edges) {
+        if (active[edge.i] && active[edge.j]) ++motifs.E;
+    }
+    for (int i = 0; i < n; ++i) {
+        const int ix = positive_mod(i + a, n);
+        const int iy = positive_mod(i + b, n);
+        const int ixy = positive_mod(i + a + b, n);
+        const int ixmy = positive_mod(i + (a - b), n);
+        const int ixx = positive_mod(i + a + a, n);
+        const int iyy = positive_mod(i + b + b, n);
+        const int s0 = active[i];
+        const int s1 = active[ix];
+        const int s2 = active[iy];
+        const int s3 = active[ixy];
+        if (s0 && s1 && s2 && s3) ++motifs.F0;
+        if (s0 && active[ixy]) ++motifs.nnn_pos;
+        if (s0 && active[ixmy]) ++motifs.nnn_neg;
+        if (i != ix && i != ixx && ix != ixx && s0 && s1 && active[ixx]) ++motifs.path3_x;
+        if (i != iy && i != iyy && iy != iyy && s0 && s2 && active[iyy]) ++motifs.path3_y;
+        motifs.corners += (s0 && s1 && s2) + (s0 && s1 && s3) + (s0 && s2 && s3) + (s1 && s2 && s3);
+    }
+    return motifs;
+}
+
+constexpr int kEulerObs = 18;
+double falling_ratio(int occupied, int n, int order) {
+    if (order <= 0 || occupied < order || n < order) return 0.0;
+    double value = 1.0;
+    for (int i = 0; i < order; ++i) {
+        value *= static_cast<double>(occupied - i) / static_cast<double>(n - i);
+    }
+    return value;
+}
+
+const std::array<const char*, kEulerObs> kEulerNames = {
+    "q", "C_black", "C_white", "V", "E", "F0",
+    "nnn_pos", "nnn_neg", "path3_x", "path3_y", "corners",
+    "E_mc", "F0_mc", "nnn_pos_mc", "nnn_neg_mc",
+    "path3_x_mc", "path3_y_mc", "corners_mc",
+};
+
+struct EulerGeometryAccum {
+    std::array<double, kEulerObs> sum{};
+    std::array<std::array<double, kEulerObs>, kEulerObs> gram{};
+    double wrapping_l1 = 0.0;
+    double identity_l1 = 0.0;
+};
+
+void accumulate_euler(EulerGeometryAccum& acc, const std::array<double, kEulerObs>& values,
+                      double wrapping_l1, double identity_l1) {
+    for (int i = 0; i < kEulerObs; ++i) {
+        acc.sum[i] += values[i];
+        for (int j = 0; j < kEulerObs; ++j) acc.gram[i][j] += values[i] * values[j];
+    }
+    acc.wrapping_l1 += wrapping_l1;
+    acc.identity_l1 += identity_l1;
+}
+
+std::array<double, kEulerObs> pack_euler(int q, int c_black, int c_white,
+                                        const SiteMotifs& motifs, int n) {
+    const double k2 = falling_ratio(motifs.V, n, 2);
+    const double k3 = falling_ratio(motifs.V, n, 3);
+    const double k4 = falling_ratio(motifs.V, n, 4);
+    return {
+        static_cast<double>(q),
+        static_cast<double>(c_black),
+        static_cast<double>(c_white),
+        static_cast<double>(motifs.V),
+        static_cast<double>(motifs.E),
+        static_cast<double>(motifs.F0),
+        static_cast<double>(motifs.nnn_pos),
+        static_cast<double>(motifs.nnn_neg),
+        static_cast<double>(motifs.path3_x),
+        static_cast<double>(motifs.path3_y),
+        static_cast<double>(motifs.corners),
+        static_cast<double>(motifs.E) - 2.0 * n * k2,
+        static_cast<double>(motifs.F0) - n * k4,
+        static_cast<double>(motifs.nnn_pos) - n * k2,
+        static_cast<double>(motifs.nnn_neg) - n * k2,
+        static_cast<double>(motifs.path3_x) - n * k3,
+        static_cast<double>(motifs.path3_y) - n * k3,
+        static_cast<double>(motifs.corners) - 4.0 * n * k3,
+    };
+}
+
+double wrapping_spread(const Channels& primal, const Channels& matching) {
+    const int q0 = static_cast<int>(channel_value(primal, 0)) -
+                   static_cast<int>(channel_value(matching, 0));
+    double spread = 0.0;
+    for (std::size_t channel = 1; channel < kChannelNames.size(); ++channel) {
+        const int q = static_cast<int>(channel_value(primal, channel)) -
+                      static_cast<int>(channel_value(matching, channel));
+        spread += std::abs(q - q0);
+    }
+    return spread;
+}
+
+
 std::uint64_t splitmix64(std::uint64_t value) {
     value += 0x9e3779b97f4a7c15ULL;
     value = (value ^ (value >> 30)) * 0xbf58476d1ce4e5b9ULL;
@@ -356,6 +479,14 @@ void self_test() {
                     throw std::runtime_error("matching-channel configuration identity failed");
                 }
             }
+            const int c_black = component_count(active, primal);
+            const int c_white = component_count(complement, matching);
+            const SiteMotifs motifs = count_site_motifs(active, geometry);
+            const int residual = (c_black - c_white) - (
+                reference_difference + motifs.V - motifs.E + motifs.F0);
+            if (residual != 0) {
+                throw std::runtime_error("Euler cluster identity failed");
+            }
         }
     }
     const double value = counter_uniform(17, 65, 23, 5);
@@ -364,7 +495,7 @@ void self_test() {
         throw std::runtime_error("counter RNG regression failed");
     }
     std::cout << "self-test passed: exhaustive N=5,13 union-find/BFS and matching channels; "
-                 "cyclic labels; counter RNG\n";
+                 "Euler identity; cyclic labels; counter RNG\n";
 }
 
 struct Options {
@@ -378,6 +509,7 @@ struct Options {
     std::string git_commit = "unknown";
     std::filesystem::path output_prefix;
     bool self_test = false;
+    bool euler_motifs = false;
 };
 
 [[noreturn]] void usage(const char* program, int status) {
@@ -393,6 +525,7 @@ struct Options {
         << "  --git-commit SHA     provenance string recorded in metadata\n"
         << "  --output-prefix PATH writes PATH.batches.csv and PATH.metadata.json\n"
         << "  --self-test           exhaustive reference checks and exit\n"
+        << "  --euler-motifs        also write Euler/motif batch moments JSONL\n"
         << "  --help                show this help\n";
     std::exit(status);
 }
@@ -424,6 +557,7 @@ Options parse_options(int argc, char** argv) {
         else if (arg == "--git-commit") options.git_commit = next();
         else if (arg == "--output-prefix") options.output_prefix = next();
         else if (arg == "--self-test") options.self_test = true;
+        else if (arg == "--euler-motifs") options.euler_motifs = true;
         else if (arg == "--help") usage(argv[0], 0);
         else throw std::invalid_argument("unknown option: " + arg);
     }
@@ -477,8 +611,43 @@ std::string utc_now() {
     return out.str();
 }
 
+void write_euler_geometry(std::ostream& out, const char* label, int a, int b,
+                         const EulerGeometryAccum& acc) {
+    out << "\"" << label << "\": {\"a\": " << a << ", \"b\": " << b << ", \"sum\": [";
+    for (int i = 0; i < kEulerObs; ++i) {
+        if (i) out << ", ";
+        out << std::setprecision(17) << acc.sum[i];
+    }
+    out << "], \"gram\": [";
+    for (int i = 0; i < kEulerObs; ++i) {
+        if (i) out << ", ";
+        out << "[";
+        for (int j = 0; j < kEulerObs; ++j) {
+            if (j) out << ", ";
+            out << std::setprecision(17) << acc.gram[i][j];
+        }
+        out << "]";
+    }
+    out << "], \"wrapping_l1\": " << std::setprecision(17) << acc.wrapping_l1
+        << ", \"identity_l1\": " << acc.identity_l1 << "}";
+}
+
+void fill_euler(EulerGeometryAccum& acc, const Geometry& geometry,
+                const std::vector<std::uint8_t>& black,
+                const std::vector<std::uint8_t>& white,
+                const Channels& primal, const Channels& matching,
+                HomologyUnionFind& primal_uf, HomologyUnionFind& matching_uf) {
+    const int q = static_cast<int>(primal.either) - static_cast<int>(matching.either);
+    const int c_black = component_count(black, primal_uf);
+    const int c_white = component_count(white, matching_uf);
+    const SiteMotifs motifs = count_site_motifs(black, geometry);
+    const int residual = (c_black - c_white) - (q + motifs.V - motifs.E + motifs.F0);
+    accumulate_euler(acc, pack_euler(q, c_black, c_white, motifs, geometry.n),
+                     wrapping_spread(primal, matching), std::abs(residual));
+}
+
 void run_design(const PairDesign& design, const Options& options,
-                std::ofstream& batches_file) {
+                std::ofstream& batches_file, std::ofstream* motif_file) {
     const Geometry first = make_geometry(design.a1, design.b1);
     const Geometry second = make_geometry(design.a2, design.b2);
     if (first.n != design.n || second.n != design.n) {
@@ -486,6 +655,8 @@ void run_design(const PairDesign& design, const Options& options,
     }
     const std::uint64_t per_batch = options.samples / options.batches;
     std::vector<BatchCounts> counts(options.batches);
+    std::vector<EulerGeometryAccum> euler_first(options.euler_motifs ? options.batches : 0);
+    std::vector<EulerGeometryAccum> euler_second(options.euler_motifs ? options.batches : 0);
 
 #ifdef _OPENMP
     if (options.threads > 0) omp_set_num_threads(options.threads);
@@ -516,6 +687,10 @@ void run_design(const PairDesign& design, const Options& options,
                 local.sums[2][channel] += channel_value(sp, channel);
                 local.sums[3][channel] += channel_value(sm, channel);
             }
+            if (options.euler_motifs) {
+                fill_euler(euler_first[batch], first, black, white, fp, fm, f_primal, f_matching);
+                fill_euler(euler_second[batch], second, black, white, sp, sm, s_primal, s_matching);
+            }
         }
         counts[batch] = local;
     }
@@ -531,6 +706,24 @@ void run_design(const PairDesign& design, const Options& options,
     for (int batch = 0; batch < options.batches; ++batch) {
         for (std::size_t channel = 0; channel < kChannelNames.size(); ++channel) {
             write_row(batch, channel);
+        }
+    }
+    if (motif_file != nullptr) {
+        const std::uint64_t per_batch = options.samples / options.batches;
+        for (int batch = 0; batch < options.batches; ++batch) {
+            *motif_file << "{\"n\": " << design.n << ", \"batch\": " << batch
+                        << ", \"samples\": " << per_batch
+                        << ", \"p_ref\": " << std::setprecision(17) << options.p_ref
+                        << ", \"names\": [";
+            for (int i = 0; i < kEulerObs; ++i) {
+                if (i) *motif_file << ", ";
+                *motif_file << "\"" << kEulerNames[i] << "\"";
+            }
+            *motif_file << "], ";
+            write_euler_geometry(*motif_file, "first", design.a1, design.b1, euler_first[batch]);
+            *motif_file << ", ";
+            write_euler_geometry(*motif_file, "second", design.a2, design.b2, euler_second[batch]);
+            *motif_file << "}\n";
         }
     }
     std::cout << "completed N=" << design.n << " pair (" << design.a1 << ',' << design.b1
@@ -552,13 +745,22 @@ int run(int argc, char** argv) {
     if (!batches_file) throw std::runtime_error("cannot open batch output");
     batches_file << "n,batch,samples,p_ref,channel,a1,b1,a2,b2,first_primal_sum,"
                     "first_matching_sum,second_primal_sum,second_matching_sum\n";
+    const std::filesystem::path motif_path = options.output_prefix.string() + ".motifs.jsonl";
+    std::ofstream motif_file;
+    if (options.euler_motifs) {
+        motif_file.open(motif_path);
+        if (!motif_file) throw std::runtime_error("cannot open motif output");
+    }
     const auto started = std::chrono::steady_clock::now();
     for (const PairDesign& design : kDesigns) {
         if (options.only_n == 0 || options.only_n == design.n) {
-            run_design(design, options, batches_file);
+            run_design(design, options, batches_file,
+                       options.euler_motifs ? &motif_file : nullptr);
         }
     }
     batches_file.close();
+    if (options.euler_motifs) motif_file.close();
+
     const double seconds = std::chrono::duration<double>(
         std::chrono::steady_clock::now() - started).count();
 
@@ -593,6 +795,11 @@ int run(int argc, char** argv) {
              << "  \"coupling\": \"same cyclic labels j in Z/NZ share U_j across representations\",\n"
              << "  \"channels\": [\"cross\", \"both\", \"either\", "
                 "\"direction_0\", \"direction_1\"],\n"
+             << "  \"euler_motifs\": " << (options.euler_motifs ? "true" : "false") << ",\n"
+             << "  \"euler_observable_names\": [\"q\", \"C_black\", \"C_white\", \"V\", \"E\", \"F0\", "
+                "\"nnn_pos\", \"nnn_neg\", \"path3_x\", \"path3_y\", \"corners\", "
+                "\"E_mc\", \"F0_mc\", \"nnn_pos_mc\", \"nnn_neg_mc\", "
+                "\"path3_x_mc\", \"path3_y_mc\", \"corners_mc\"],\n"
              << "  \"elapsed_seconds\": " << seconds << ",\n"
              << "  \"designs\": [\n";
     bool first_row = true;
@@ -609,7 +816,9 @@ int run(int argc, char** argv) {
                  << ", \"cos4_second\": " << second.cos4 << "}";
     }
     metadata << "\n  ]\n}\n";
-    std::cout << "wrote " << batch_path << "\nwrote " << metadata_path << '\n';
+    std::cout << "wrote " << batch_path << "\nwrote " << metadata_path;
+    if (options.euler_motifs) std::cout << "\nwrote " << motif_path;
+    std::cout << '\n';
     return 0;
 }
 

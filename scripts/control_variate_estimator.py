@@ -9,6 +9,11 @@ freeze them, and apply them to an evaluation set to avoid adaptive bias.
 The implementation uses only the Python standard library so it can serve as a
 small CPU/server reference.  A diagonal ridge is introduced only when asked
 for or when the sample covariance is singular at machine precision.
+
+Wrapping-difference channels that are configuration-level identical must not
+be GLS-combined: :class:`DuplicateChannelError` is raised instead of using
+ridge to invent a pseudo-inverse.  Euler/motif controls use a separate
+zero-mean OLS path (:class:`FrozenControlVariate`).
 """
 
 from __future__ import annotations
@@ -34,6 +39,59 @@ def _validate_rows(rows: Sequence[Sequence[float]]) -> int:
     if any(not math.isfinite(float(value)) for row in rows for value in row):
         raise ValueError("all channel values must be finite")
     return width
+
+
+class DuplicateChannelError(ValueError):
+    """Equal-mean GLS was asked to combine configuration-identical channels."""
+
+
+def duplicate_column_groups(
+    rows: Sequence[Sequence[float]],
+    names: Sequence[str],
+    *,
+    atol: float = 0.0,
+) -> tuple[tuple[str, ...], ...]:
+    """Return groups of column names that agree on every row."""
+
+    width = _validate_rows(rows)
+    if len(names) != width:
+        raise ValueError("name count does not match column count")
+    if len(set(names)) != len(names):
+        raise ValueError("channel names must be unique")
+    groups: list[list[int]] = []
+    assigned = [False] * width
+    for i in range(width):
+        if assigned[i]:
+            continue
+        group = [i]
+        assigned[i] = True
+        for j in range(i + 1, width):
+            if assigned[j]:
+                continue
+            if all(
+                math.isclose(float(row[i]), float(row[j]), rel_tol=0.0, abs_tol=atol)
+                for row in rows
+            ):
+                group.append(j)
+                assigned[j] = True
+        groups.append(group)
+    return tuple(tuple(names[index] for index in group) for group in groups)
+
+
+def require_no_duplicate_channels(
+    rows: Sequence[Sequence[float]],
+    names: Sequence[str],
+    *,
+    atol: float = 0.0,
+) -> None:
+    """Reject GLS over duplicate wrapping (or any identical) channels."""
+
+    duplicates = [group for group in duplicate_column_groups(rows, names, atol=atol) if len(group) > 1]
+    if duplicates:
+        pretty = "; ".join("(" + ", ".join(group) + ")" for group in duplicates)
+        raise DuplicateChannelError(
+            "duplicate channels detected and rejected (do not GLS them): " + pretty
+        )
 
 
 def sample_covariance(rows: Sequence[Sequence[float]]) -> Matrix:
@@ -156,6 +214,7 @@ class FrozenEstimator:
         width = _validate_rows(pilot_rows)
         if len(channel_names) != width:
             raise ValueError("channel name count does not match pilot data")
+        require_no_duplicate_channels(pilot_rows, channel_names)
         covariance = sample_covariance(pilot_rows)
         weights, applied_ridge = minimum_variance_weights(covariance, ridge)
         return cls(
@@ -295,6 +354,155 @@ def _read_csv(path: Path, channels: Sequence[str]) -> list[list[float]]:
         if missing:
             raise ValueError(f"{path}: missing columns {missing}")
         return [[float(row[channel]) for channel in channels] for row in reader]
+
+
+
+def _column(rows: Sequence[Sequence[float]], index: int) -> list[float]:
+    return [float(row[index]) for row in rows]
+
+
+def _sample_covariance_with_target(
+    control_rows: Sequence[Sequence[float]], target: Sequence[float]
+) -> tuple[Matrix, list[float]]:
+    width = _validate_rows(control_rows)
+    if len(target) != len(control_rows):
+        raise ValueError("target length does not match control rows")
+    if any(not math.isfinite(float(value)) for value in target):
+        raise ValueError("target values must be finite")
+    covariance = sample_covariance(control_rows)
+    control_means = [
+        math.fsum(float(row[j]) for row in control_rows) / len(control_rows)
+        for j in range(width)
+    ]
+    target_mean = math.fsum(float(value) for value in target) / len(target)
+    cross = [0.0] * width
+    for j in range(width):
+        cross[j] = math.fsum(
+            (float(row[j]) - control_means[j]) * (float(value) - target_mean)
+            for row, value in zip(control_rows, target)
+        ) / (len(control_rows) - 1)
+    return covariance, cross
+
+
+def invertibility_test(matrix: Matrix) -> None:
+    _solve(matrix, [1.0] * len(matrix))
+
+
+def greedy_full_rank_indices(control_rows: Sequence[Sequence[float]]) -> list[int]:
+    """Add columns left to right, skipping those that make covariance singular."""
+
+    width = _validate_rows(control_rows)
+    selected: list[int] = []
+    for index in range(width):
+        trial = selected + [index]
+        trial_rows = [[float(row[j]) for j in trial] for row in control_rows]
+        try:
+            invertibility_test(sample_covariance(trial_rows))
+        except ArithmeticError:
+            continue
+        selected = trial
+    if not selected:
+        raise ArithmeticError("no full-rank control subset")
+    return selected
+
+
+@dataclass(frozen=True)
+class FrozenControlVariate:
+    """Pilot-frozen OLS control-variate estimator of a scalar target.
+
+    The estimator is ``target - beta · (controls - analytic_means)``.  Analytic
+    control means keep the estimator unbiased; sample means are not substituted.
+    Duplicate wrapping channels are not valid controls and are rejected.
+    """
+
+    target_name: str
+    control_names: tuple[str, ...]
+    dropped_controls: tuple[str, ...]
+    weights: tuple[float, ...]
+    analytic_control_means: tuple[float, ...]
+    pilot_control_covariance: tuple[tuple[float, ...], ...]
+    pilot_cross_covariance: tuple[float, ...]
+
+    @classmethod
+    def fit(
+        cls,
+        target_name: str,
+        control_names: Sequence[str],
+        target: Sequence[float],
+        control_rows: Sequence[Sequence[float]],
+        analytic_means: Sequence[float],
+    ) -> "FrozenControlVariate":
+        if not control_names:
+            raise ValueError("at least one control is required")
+        width = _validate_rows(control_rows)
+        if len(control_names) != width or len(analytic_means) != width:
+            raise ValueError("control names/means do not match control rows")
+        if len(set(control_names)) != len(control_names):
+            raise ValueError("control names must be unique")
+        require_no_duplicate_channels(control_rows, control_names)
+        selected = greedy_full_rank_indices(control_rows)
+        dropped = tuple(
+            name for index, name in enumerate(control_names) if index not in selected
+        )
+        reduced_rows = [[float(row[j]) for j in selected] for row in control_rows]
+        covariance, cross = _sample_covariance_with_target(reduced_rows, target)
+        weights = _solve(covariance, cross)
+        means = tuple(float(analytic_means[j]) for j in selected)
+        names = tuple(control_names[j] for j in selected)
+        return cls(
+            target_name,
+            names,
+            dropped,
+            tuple(weights),
+            means,
+            tuple(tuple(row) for row in covariance),
+            tuple(cross),
+        )
+
+    def adjusted_values(
+        self, target: Sequence[float], control_rows: Sequence[Sequence[float]],
+        control_names: Sequence[str],
+    ) -> list[float]:
+        index = {name: i for i, name in enumerate(control_names)}
+        try:
+            columns = [index[name] for name in self.control_names]
+        except KeyError as exc:
+            raise ValueError("evaluation is missing a frozen control") from exc
+        if len(target) != len(control_rows):
+            raise ValueError("target length does not match control rows")
+        values = []
+        for y, row in zip(target, control_rows):
+            correction = math.fsum(
+                weight * (float(row[column]) - mean)
+                for weight, column, mean in zip(
+                    self.weights, columns, self.analytic_control_means
+                )
+            )
+            values.append(float(y) - correction)
+        return values
+
+    def evaluate(
+        self,
+        target: Sequence[float],
+        control_rows: Sequence[Sequence[float]],
+        control_names: Sequence[str],
+    ) -> dict[str, object]:
+        values = self.adjusted_values(target, control_rows, control_names)
+        if len(values) < 2:
+            raise ValueError("at least two rows are required")
+        mean = math.fsum(values) / len(values)
+        variance = math.fsum((value - mean) ** 2 for value in values) / (len(values) - 1)
+        return {
+            "samples": len(values),
+            "target_name": self.target_name,
+            "control_names": list(self.control_names),
+            "dropped_controls": list(self.dropped_controls),
+            "weights": list(self.weights),
+            "analytic_control_means": list(self.analytic_control_means),
+            "mean": mean,
+            "sample_variance": variance,
+            "standard_error": math.sqrt(variance / len(values)),
+        }
 
 
 def main() -> int:
