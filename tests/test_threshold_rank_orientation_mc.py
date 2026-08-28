@@ -49,6 +49,28 @@ class ThresholdRankOrientationMCTests(unittest.TestCase):
         self.assertIn("N=5 all permutations", completed.stdout)
         self.assertIn("Python-compatible", completed.stdout)
 
+    def test_frozen_issue43_designs_are_available(self) -> None:
+        for n, first, second in (
+            (185, [13, 4], [11, 8]),
+            (265, [16, 3], [12, 11]),
+        ):
+            prefix = Path(self.temporary.name) / f"n{n}"
+            subprocess.run(
+                [
+                    str(self.binary),
+                    "--samples", "4", "--batches", "2", "--n", str(n),
+                    "--seed", "43", "--threads", "1",
+                    "--output-prefix", str(prefix),
+                ],
+                check=True,
+            )
+            metadata = json.loads(
+                Path(str(prefix) + ".metadata.json").read_text(encoding="utf-8")
+            )
+            self.assertEqual(metadata["designs"][0]["N"], n)
+            self.assertEqual(metadata["designs"][0]["first"], first)
+            self.assertEqual(metadata["designs"][0]["second"], second)
+
     def test_cpp_matches_python_and_is_thread_reproducible(self) -> None:
         first_prefix = Path(self.temporary.name) / "first"
         second_prefix = Path(self.temporary.name) / "second"

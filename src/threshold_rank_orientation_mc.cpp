@@ -70,6 +70,8 @@ const std::vector<PairDesign> kDesigns = {
     {130, 11, 3, 9, 7},
     {145, 12, 1, 9, 8},
     {170, 13, 1, 11, 7},
+    {185, 13, 4, 11, 8},
+    {265, 16, 3, 12, 11},
 };
 
 int positive_mod(int value, int modulus) {
@@ -386,7 +388,7 @@ struct Options {
         << "  --seed S             unsigned 64-bit seed (default 20260828)\n"
         << "  --replica-offset K   first sample counter (default 0)\n"
         << "  --threads T          OpenMP threads; 0 uses runtime default\n"
-        << "  --n N                only N=65,85,130,145,170 (default all)\n"
+        << "  --n N                only N=65,85,130,145,170,185,265 (default all)\n"
         << "  --git-commit SHA     provenance string\n"
         << "  --output-prefix PATH writes .hist.csv, .moments.csv, .metadata.json\n"
         << "  --self-test           exact tiny regression and exit\n";
@@ -431,7 +433,7 @@ Options parse_options(int argc, char** argv) {
     if (options.threads < 0) throw std::invalid_argument("threads must be nonnegative");
     if (options.only_n != 0 && std::none_of(kDesigns.begin(), kDesigns.end(),
             [&](const PairDesign& design) { return design.n == options.only_n; })) {
-        throw std::invalid_argument("--n must be one of 65,85,130,145,170");
+        throw std::invalid_argument("--n must be one of 65,85,130,145,170,185,265");
     }
     if (options.replica_offset > std::numeric_limits<std::uint64_t>::max() - options.samples) {
         throw std::invalid_argument("replica counter range overflows uint64");

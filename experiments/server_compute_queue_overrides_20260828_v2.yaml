@@ -1,0 +1,99 @@
+version: 2
+updated: 2026-08-28
+supersedes:
+  - experiments/server_compute_queue.yaml
+  - experiments/server_compute_queue_overrides_20260828.yaml
+coordination_issue: 23
+theory_issue: 37
+
+mandatory_before_merge:
+  - id: precision_read_order
+    target_pr: 21
+    status: still_unfixed_at_last_check
+    action: set_mpmath_dps_before_parsing_decimal_CSV_and_regenerate_summary
+
+changes:
+  - id: C02
+    status: operator_hypothesis_sharpened
+    exact_algebra_result: >-
+      At c=0,h=5/8 the level-2 null state is L_-2-(2/3)L_-1^2.
+      After quotienting its null submodule, a unique non-null level-4
+      quasiprimary direction remains. One representative is
+      Q4=40 L_-2^2-60 L_-3 L_-1-9 L_-4, with L1 Q4=0.
+      The associated bulk descendants have x=21/4 and spin +/-4.
+    interpretation: >-
+      Algebra establishes existence, not coupling or matching parity. Test whether
+      the measured matching-odd thermal-even spin-4 sector is controlled by this
+      thermal-family descendant, allowing logarithmic mixing.
+    required_models:
+      - 'A*L^(-13/4)'
+      - 'L^(-13/4)*(A+B*log(L))'
+      - 'A*L^(-omega) with omega trained without held-out sizes'
+      - 'multi-sector model including L^-2 only where parity permits'
+    reference_files:
+      - notes/thermal-level4-spin4-candidate.md
+      - scripts/virasoro_level4_candidate.py
+
+  - id: C05
+    priority: P0
+    status: highest_information_compute_task
+    add_outputs:
+      - P4_of_primal_curve
+      - P4_of_matching_curve
+      - P4_of_matching_even_curve
+      - P4_of_matching_odd_curve
+      - thermal_even_odd_projection_at_frozen_u_values
+    frozen_u_rule: >-
+      Choose a small set of u values on pilot/training sizes only, then freeze.
+      Define p_minus,p_plus by direction-averaged Mbar(p_minus)=-u and
+      Mbar(p_plus)=+u. Never tune u on held-out sizes to improve exponent fits.
+    primary_test: 'P4[D]_thermal_even at center/near-center versus exponent 13/4 and log alternative'
+    secondary_test: 'search for allowed L^-2 spin-4 sector without assuming matching-even dominance'
+
+  - id: C10
+    status: design_corrected
+    remove_canonical_CRN_pair:
+      N: 169
+      reps: [[13,0],[12,5]]
+      reason: >-
+        Equal area/modulus but non-isomorphic finite translation groups:
+        Z_13 x Z_13 versus cyclic Z_169. May be used with independent sampling,
+        but not as a canonical same-cyclic-label CRN pair.
+    primitive_same_N_magic_confirmations:
+      - N: 565
+        reps: [[23,6],[22,9]]
+        cos4_approx: [0.522744,0.017521]
+      - N: 985
+        reps: [[27,16],[29,12]]
+        cos4_approx: [-0.538810,0.001436]
+    gate: >-
+      Do not run these large confirmation sizes before C05 resolves the thermal
+      parity decomposition at N=65,85,145. The L^-13/4 residual is already small.
+
+  - id: C01_confirmation
+    status: prefer_replication_over_larger_fixed_p
+    actions:
+      - independent_seed_replication_N65_N85
+      - retain_N145_as_weak_confirmation
+      - do_not_prioritize_N205_or_N425_fixed_p_before_C05
+    reason: >-
+      Under the current amplitude estimate the direct fixed-p L^-13/4 signal at
+      larger N becomes rapidly underpowered; full-curve sufficient statistics
+      provide more information per simulation.
+
+  - id: C03
+    status: wrapping_only_GLS_invalid
+    replacement: Euler_motif_controls
+    note: >-
+      Configuration-level matching differences for cross/both/either/directions
+      are identical on the tested complementary tori. Do not spend server time
+      estimating a rank-one wrapping-only covariance matrix.
+
+execution_order:
+  - fix_precision_read_order_on_PR21
+  - C05_threshold_rank_full_curve
+  - C03_Euler_motif_controls_in_parallel
+  - C04_triangular_or_second_exact_pc_control
+  - independent_N65_N85_replication
+  - C02_operator_and_thermal_parity_tests
+  - C10_magic_angle_confirmation_if_supported

@@ -69,7 +69,9 @@ def predict(
     )
 
 
-def ensemble(rows: Sequence[Observation], cutoff: int, targets: Sequence[int]) -> list[list[mp.mpf]]:
+def ensemble(
+    rows: Sequence[Observation], cutoff: int, targets: Sequence[int]
+) -> list[list[mp.mpf]]:
     model_predictions: list[list[mp.mpf]] = []
     for n_min, powers in SELECTED_MODELS:
         training = [row for row in rows if n_min <= row.n <= cutoff]
@@ -88,7 +90,7 @@ def mean(values: Sequence[mp.mpf]) -> mp.mpf:
 
 def linear_extrapolation(xs: Sequence[int], ys: Sequence[mp.mpf], target: int) -> mp.mpf:
     if len(xs) != len(ys):
-        raise ValueError("x and y lengths differ")
+        raise ValueError("x and y sequences must have equal length")
     x_mean = mean([mp.mpf(x) for x in xs])
     y_mean = mean(list(ys))
     denominator = mp.fsum((mp.mpf(x) - x_mean) ** 2 for x in xs)
@@ -183,12 +185,12 @@ def render_yaml(path: Path, rows: Sequence[Observation]) -> str:
             ]
         )
         if len(SELECTED_MODELS) != len(model_values):
-            raise ValueError("model metadata and prediction lengths differ")
+            raise RuntimeError("model metadata and prediction counts differ")
         for (n_min, powers), value in zip(SELECTED_MODELS, model_values):
-            model_label = f"nmin={n_min};powers={','.join(map(str, powers))}"
+            model_name = f"nmin={n_min};powers={','.join(map(str, powers))}"
             lines.extend(
                 [
-                    f"      - model: {q(model_label)}",
+                    f"      - model: {q(model_name)}",
                     f"        value: {q(number(value))}",
                 ]
             )

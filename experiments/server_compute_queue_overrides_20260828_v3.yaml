@@ -1,0 +1,158 @@
+version: 3
+updated: 2026-08-28
+supersedes:
+  - experiments/server_compute_queue.yaml
+  - experiments/server_compute_queue_overrides_20260828.yaml
+  - experiments/server_compute_queue_overrides_20260828_v2.yaml
+coordination_issue: 23
+
+completed_or_closed:
+  precision_read_order:
+    status: fixed_on_server_PR21
+    evidence: >-
+      summarize_finite_size_grid.py now selects dps, sets mp.mp.dps, then parses
+      decimal CSV strings; corrected summary/report regenerated and regression-tested.
+  C00_general_period_topology:
+    status: complete
+  wrapping_only_GLS:
+    status: closed_negative
+    result: 'exactly 1.0x because matching wrapping-difference channels are configuration-identical'
+  C07_Pade_stage_A:
+    status: complete_negative
+    result: 'Padé does not cure positive increasing width-19--21 residual drift'
+
+confirmed_evidence:
+  matching_function_H4:
+    model: 'DeltaM = A_M * DeltaCos4 * N^(-13/8)'
+    A_M: '0.7885 +/- 0.0352'
+    common_amplitude_chi_square: '1.53/4'
+    independent_100M_sizes: [65,85,130,145,170]
+    frozen_heldout_challenge: 'fixed 13/8 heldout chi-square 1.058 vs zero 37.32'
+    alternatives_not_needed_at_current_precision:
+      - log_correction
+      - free_exponent
+      - H8
+      - one_power_radial_correction
+  matching_even_H4:
+    model: 'DeltaS = A_I * DeltaCos4 * N^(-1)'
+    channel: either
+    A_I_diagnostic: '0.01060 +/- 0.00094'
+    diagonal_common_amplitude_chi_square: '4.66/4'
+    note: >-
+      High-stat P31 data support a nonzero matching-even L^-2 spin-4 sector even
+      though it was not amplitude-dominant at the earlier 30M discovery stage.
+  thermal_parity:
+    status: central_matching_odd_signal_is_thermal_even
+    evidence: >-
+      P33 symmetric p_ref +/- 0.001 reconstruction leaves the central orientation
+      amplitude in the even component; the odd component agrees with delta-p times DeltaM_prime.
+  amplitude_closure:
+    status: confirmed
+    result: 'C=-Delta p* mean(M_prime)/DeltaM in [0.99984,1.00031] across five sizes'
+    slope_metric: 'B=N^(-3/8) mean(M_prime) stable about 1.7514 -> 1.7462'
+
+current_theory_model:
+  name: two_spin4_duality_parity_projector
+  note: notes/two-spin4-duality-parity-projector.md
+  sector_identity_candidate:
+    matching_parity: even
+    spin: 4
+    x: 4
+    expected: 'S4 ~ L^-2 = N^-1'
+  sector_thermal_candidate:
+    matching_parity: odd
+    spin: 4
+    x: '21/4'
+    expected: 'D4 ~ L^-13/4 = N^-13/8'
+    virasoro_checks:
+      - scripts/virasoro_level4_candidate.py
+      - scripts/virasoro_level4_nonredundant.py
+  caveat: >-
+    CFT-family identification and matching/duality parity are not proved. c=0
+    logarithmic mixing and competing operators remain explicit alternatives.
+
+root_amplitude_rule:
+  correct_invariant: '-N^2 * DeltaRoot / DeltaCos4'
+  not_primary: 'bare N^2 * DeltaRoot across different orientation pairs'
+  reason: >-
+    If DeltaM=A_M DeltaCos4 N^-13/8 and M_prime=B N^3/8, then the root amplitude
+    tends to A_M/B only after division by DeltaCos4.
+  rough_prediction_from_current_amplitudes: 'A_p ~ A_M/B ~ 0.451'
+  next: use_higher_stat_threshold_rank_batches_to_score_angular_normalized_A_p
+
+active_P0_queue:
+  - id: P38_prospective_gaussian_doubling
+    issue: 38
+    status: ready
+    prediction: 'lineage DeltaM(2N)/DeltaM(N) = -2^(-13/8)'
+    sizes: [[65,130],[85,170]]
+    requirement: >-
+      Use a fresh seed/counter interval created after issue #38. Existing P31
+      data are only a post-hoc compatibility check and cannot count as the acceptance run.
+
+  - id: P43_new_heldout_two_sector
+    issue: 43
+    status: frozen_predictions_ready
+    artifact: predictions/two_spin4_heldout_20260828.yaml
+    primary_sizes: [185,265]
+    secondary_size: 290
+    requirement: score_fixed_predictions_before_any_refit
+
+  - id: P42_selfdual_square_bond_parity_control
+    issue: 42
+    status: implementation_needed
+    purpose: >-
+      Test whether a self-dual C4 critical model retains the duality-even L^-2
+      anisotropy while suppressing the central duality-odd thermal-family spin-4 sector.
+
+  - id: C05_high_stat_threshold_rank
+    issue: 26
+    status: Cpp_engine_validated_10M_pilot_complete
+    current_throughput: '10M paired permutations x five sizes in 65.2 sec on 16-core ARM'
+    next_outputs:
+      - high_stat_thermal_even_odd_P4_curves
+      - angular_normalized_root_amplitude_A_p
+      - batch_covariance_for_two_sector_model
+    note: >-
+      Do not spend production statistics on bare N^2 root-gap constancy; preserve
+      DeltaCos4 normalization and full rank histograms.
+
+  - id: C03_Euler_motif_controls
+    issue: 20
+    status: mixed_gate
+    results: 'variance reduction L=8,12,16: 2.319x, 1.852x, 1.665x'
+    gpu_gate: closed_under_multiple_size_2x_rule
+    action: retain_controls_in_CPU_threshold_rank_pipeline_but_do_not_use_as_GPU_justification_alone
+
+  - id: C04_kappa3_controls
+    issue: 25
+    status: controls_implemented_candidate_inconclusive
+    result: >-
+      square-bond and triangular-site exact-pc controls validate machinery but do
+      not establish kappa3=-5/3 or a unique correction exponent.
+    priority: below_two_spin4_tests
+
+hardware:
+  GPU_5090:
+    status: not_required_yet
+    reason: >-
+      Current C++ CPU throughput is sufficient for the highest-information
+      prospective tests; the multi-size Euler/motif >=2x variance gate is not met.
+    reconsider_when:
+      - prospective_two_spin4_tests_pass_and_far_larger_statistics_are_required
+      - full_threshold_density_tail_campaign_requires_many_more_samples
+
+integration:
+  server_PR21:
+    status: needs_replay_or_rebase_onto_latest_research_branch
+    note: >-
+      PR21 currently contains valid third-wave results but the research base has
+      advanced with theory notes, frozen predictions and new P0 issues.
+
+execution_order:
+  - P38_fresh_seed_doubling
+  - P43_N185_N265_heldout
+  - P42_square_bond_selfdual_control
+  - C05_high_stat_angular_normalized_root_and_thermal_parity
+  - C03_controls_as_optional_variance_layer
+  - C04_kappa3_only_after_two_spin4_branch_is_resolved
