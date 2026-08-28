@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Exact Galois-group certificates for the finite matching polynomials reached so far.
 
-For selected exact axis/diamond square-site matching polynomials we combine:
+For selected exact square-site matching polynomials we combine:
 
-1. an existing irreducibility-over-Q certificate (hence transitive Galois group);
+1. an irreducibility-over-Q certificate (hence transitive Galois group);
 2. a squarefree finite-field factorization with cycle type containing one
    2-cycle and one large prime cycle;
 3. an elementary permutation-group argument.
@@ -103,6 +103,17 @@ CASES = [
         ],
         "large_prime_cycle": 13,
     },
+    {
+        "geometry": "gaussian-3-1",
+        "L": 0,
+        "factor_prime": 13,
+        "factors": [
+            [3, 1],
+            [2, 4, 1],
+            [1, 2, 5, 1, 4, 0, 9, 1],
+        ],
+        "large_prime_cycle": 7,
+    },
 ]
 
 
@@ -130,18 +141,39 @@ def lcm(values: Iterable[int]) -> int:
     return result
 
 
+def _gaussian_3_1_coefficients() -> list[int]:
+    payload = json.loads(
+        (
+            ROOT
+            / "results"
+            / "exact-axis-l5-frontier"
+            / "gaussian_3_1_target.json"
+        ).read_text(encoding="utf-8")
+    )
+    geometry = payload["geometry"]
+    if geometry["a"] != 3 or geometry["b"] != 1 or geometry["N"] != 10:
+        raise RuntimeError("unexpected Gaussian target metadata")
+    return [int(value) for value in payload["power_coefficients_ascending"]]
+
+
 def source_coefficients(geometry: str, L: int) -> list[int]:
     if geometry == "axis":
         return load_axis_coefficients()[L]
     if geometry == "diamond":
         return load_diamond_coefficients()[L]
+    if geometry == "gaussian-3-1":
+        return _gaussian_3_1_coefficients()
     raise ValueError(geometry)
 
 
 def irreducibility_prime(geometry: str, L: int) -> int:
     if geometry == "axis":
         return AXIS_IRREDUCIBILITY_PRIMES[L]
-    return DIAMOND_IRREDUCIBILITY_PRIMES[L]
+    if geometry == "diamond":
+        return DIAMOND_IRREDUCIBILITY_PRIMES[L]
+    if geometry == "gaussian-3-1":
+        return 31
+    raise ValueError(geometry)
 
 
 def certify_case(case: dict[str, object]) -> dict[str, object]:
@@ -205,6 +237,7 @@ def certify_case(case: dict[str, object]) -> dict[str, object]:
         "N": n,
         "integer_degree": n,
         "irreducible_over_Q": True,
+        "irreducibility_prime": irreducibility_prime(geometry, L),
         "transitive_galois_action": True,
         "factorization_prime": q,
         "factorization_squarefree": True,
