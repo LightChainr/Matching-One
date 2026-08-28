@@ -1,0 +1,172 @@
+{
+  "elapsed_seconds": 16.37525454198476,
+  "evaluation": {
+    "equal_orderstat_average": {
+      "child_parent_correlation": 0.0018300907590268298,
+      "child_parent_covariance": 0.0004349399380478546,
+      "mean": -0.005640165745697219,
+      "variance": 0.5832279695601859,
+      "variance_difference_se": 0.0009847002373050905,
+      "variance_difference_vs_independent": -0.0010517484710130594,
+      "variance_difference_z": -1.0680899944651838,
+      "variance_gain_vs_independent": 1.0018042252142174,
+      "variance_ratio_vs_independent": 0.9981990241518182
+    },
+    "independent_baseline": {
+      "mean": -0.005580960651170968,
+      "variance": 0.5842802441685031,
+      "variance_ratio_vs_independent": 1.0
+    },
+    "single_order_fields": [
+      {
+        "child_parent_correlation": -0.0007266483972976739,
+        "child_parent_covariance": -0.0003557806704929885,
+        "mean": -0.0052119297656802585,
+        "order": 1,
+        "variance": 0.5836904994972402,
+        "variance_difference_se": 0.0012257483655457797,
+        "variance_difference_vs_independent": -0.0005894497989273618,
+        "variance_difference_z": -0.480889728671922,
+        "variance_ratio_vs_independent": 0.9989906475922317
+      },
+      {
+        "child_parent_correlation": -0.042527705428963114,
+        "child_parent_covariance": -0.02074530499609526,
+        "mean": -0.005494417548930311,
+        "order": 2,
+        "variance": 0.5820150863760843,
+        "variance_difference_se": 0.001267469436481136,
+        "variance_difference_vs_independent": -0.0022640252135225757,
+        "variance_difference_z": -1.7862562586188813,
+        "variance_ratio_vs_independent": 0.9961231655271139
+      },
+      {
+        "child_parent_correlation": 0.03508990690893433,
+        "child_parent_covariance": 0.01661223788706818,
+        "mean": -0.0054452631267532985,
+        "order": 3,
+        "variance": 0.5850356325665229,
+        "variance_difference_se": 0.0012246536491133588,
+        "variance_difference_vs_independent": 0.0007550107038207788,
+        "variance_difference_z": 0.6165095775180204,
+        "variance_ratio_vs_independent": 1.0012928528827718
+      },
+      {
+        "child_parent_correlation": 0.004954089749101096,
+        "child_parent_covariance": 0.002338692315946667,
+        "mean": -0.006420584468714936,
+        "order": 4,
+        "variance": 0.583862676111039,
+        "variance_difference_se": 0.0012436629898933491,
+        "variance_difference_vs_independent": -0.0004173592734353081,
+        "variance_difference_z": -0.3355887220468778,
+        "variance_ratio_vs_independent": 0.9992853291521805
+      },
+      {
+        "child_parent_correlation": 0.0088195892597668,
+        "child_parent_covariance": 0.004324855153812674,
+        "mean": -0.005628633818407303,
+        "order": 5,
+        "variance": 0.5840760551915983,
+        "variance_difference_se": 0.0012372310976662834,
+        "variance_difference_vs_independent": -0.00020408688241637578,
+        "variance_difference_z": -0.16495453662725817,
+        "variance_ratio_vs_independent": 0.9996505290415982
+      }
+    ],
+    "trained_orderstat_average": {
+      "child_parent_correlation": 0.0001352852552554841,
+      "child_parent_covariance": 0.00016801795426147682,
+      "mean": -0.004880863357558793,
+      "variance": 0.5874821401954762,
+      "variance_difference_se": 0.0023498061117373987,
+      "variance_difference_vs_independent": 0.003200295078959634,
+      "variance_difference_z": 1.3619400609156647,
+      "variance_gain_vs_independent": 0.9945497985250962,
+      "variance_ratio_vs_independent": 1.005480068954804
+    }
+  },
+  "evaluation_parent_mean_span": 0.029508047665655967,
+  "evaluation_parent_means": [
+    0.011115325114936094,
+    0.0042186796526887385,
+    0.005418733753281156,
+    -0.018392722550719873,
+    0.000941929008116944
+  ],
+  "evaluation_samples": 2000,
+  "frozen_raw_h4_ratio": -0.04096017183954247,
+  "lineage": {
+    "child": [
+      [
+        17,
+        6
+      ],
+      [
+        18,
+        1
+      ]
+    ],
+    "cover_degree": 5,
+    "cover_units": [
+      11,
+      4
+    ],
+    "direction_maps": [
+      {
+        "+x": "-x",
+        "+y": "+y"
+      },
+      {
+        "+x": "+x",
+        "+y": "+y"
+      }
+    ],
+    "homology_matrices": [
+      [
+        [
+          -2,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      [
+        [
+          2,
+          1
+        ],
+        [
+          -1,
+          2
+        ]
+      ]
+    ],
+    "parent": [
+      [
+        8,
+        1
+      ],
+      [
+        7,
+        4
+      ]
+    ]
+  },
+  "p_ref": 0.59274605079,
+  "samples": 4000,
+  "schema": "norm5 cover order-statistic coupling pilot v1",
+  "seed": 2026086701,
+  "status": "method pilot; not a physics score or production evidence",
+  "train_samples": 2000,
+  "trained_weights": [
+    1.4508592666618056,
+    -0.5852665010798836,
+    -1.0648689405414218,
+    -0.5265600386901643,
+    1.7258362136496646
+  ],
+  "weight_sum": 1.0000000000000004
+}
