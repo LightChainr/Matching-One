@@ -1,9 +1,9 @@
-version: 1
+version: 2
 updated: 2026-08-29
 purpose: >
-  Registry connecting project-level documents, frozen predictions, immutable
-  evidence archives, historical snapshots, and unmerged frontier work. Status
-  here describes repository integration, not scientific truth.
+  Registry connecting canonical documents, frozen predictions, immutable evidence,
+  topic derivations, historical protocols and currently unmerged frontier work.
+  Integration status here is distinct from scientific claim level.
 
 status_vocabulary:
   canonical_current: current mainline navigation or project-level claim document
@@ -11,9 +11,9 @@ status_vocabulary:
   immutable_result: committed raw/derived evidence archive
   topic_derivation: focused mathematical or theoretical argument
   historical_snapshot: accurate record of an earlier project state
-  superseded_protocol: retained protocol or queue no longer used as the current execution entry point
+  superseded_protocol: retained protocol/queue no longer used as current execution entrypoint
   frontier_open: unmerged PR/branch; do not cite as canonical main evidence
-  negative_result: retained failed hypothesis, method gate, or underpowered campaign
+  negative_result: retained failed hypothesis, method gate or underpowered campaign
 
 canonical_documents:
   - path: README.md
@@ -64,10 +64,26 @@ frozen_predictions:
     status: frozen_prediction
     issue: 57
     role: norm5_H4_H12_raw_contrast
+  - path: predictions/norm5_harmonic_primary_scorer_20260828.yaml
+    status: frozen_prediction
+    issue: 57
+    role: frozen_norm5_primary_score_kernel_contract
+  - path: predictions/norm5_harmonic_semantic_gate_20260829.yaml
+    status: frozen_prediction
+    issue: 57
+    role: pre_target_typed_norm5_primary_semantics
   - path: predictions/gaussian_normalized_p4_multiplier_spectrum_20260828.yaml
     status: frozen_prediction
     issue: 64
     role: normalized_P4_multiplier_spectrum
+  - path: predictions/intrinsic_functional_cocycle_scorer_20260828.yaml
+    status: frozen_prediction
+    issues: [48, 57, 119, 125, 138]
+    role: frozen_intrinsic_fullcurve_q2_Jordan_kernel_contract
+  - path: predictions/intrinsic_functional_cocycle_semantic_gate_20260829.yaml
+    status: frozen_prediction
+    issues: [48, 57, 146]
+    role: pre_target_typed_fullcurve_semantics
   - path: predictions/p48_sprime_scoring_manifest_20260828.yaml
     status: frozen_prediction
     issue: 48
@@ -88,6 +104,13 @@ frozen_predictions:
     status: frozen_prediction
     issue: 50
     role: third_lineage_slope_and_root_correction
+  - path: predictions/c4_self_matching_n26_beta_targets_20260828.json
+    status: frozen_prediction
+    issue: 115
+    role: completed_N26_Beta5_Beta7_exact_targets
+  - path: predictions/reliability_signature_tomography_20260828.yaml
+    status: frozen_prediction
+    role: future_exact_N26_activation_signature_tomography_contract
   - path: predictions/hexagonal_pell_spin_filter_20260828.yaml
     status: frozen_prediction
     role: gated_modular_shape_test
@@ -98,7 +121,7 @@ frozen_predictions:
   - path: predictions/wrapping_channel_audit_20260828.json
     status: frozen_prediction
     issue: 146
-    role: semantic_map_audit_and_blockers
+    role: semantic_map_audit
 
 evidence_archives:
   - id: P31
@@ -125,10 +148,14 @@ evidence_archives:
     path: results/server-20260828/P45-root-amplitude
     status: immutable_result
     role: angular_normalized_root_score
-  - id: P48
+  - id: P48_RETROSPECTIVE
     path: results/server-20260828/P48-retrospective
     status: immutable_result
     role: derivative_sector_development_history
+  - id: P48_NEW_GEOMETRY
+    path: results/server-20260828/P48-new-geometry-score
+    status: immutable_result
+    role: prospective_N185_N265_four_channel_score
   - id: P49
     path: results/server-20260828/P49-fullcurve-doubling-100m
     status: immutable_result
@@ -137,6 +164,14 @@ evidence_archives:
     path: results/server-20260828/P50-third-lineage
     status: immutable_result
     role: third_fixed_coordinate_lineage
+  - id: SELFMATCHING_TANGENT_N10
+    path: results/local-20260828/P44-self-matching-tangent
+    status: immutable_result
+    role: exact_two_sublattice_tangent_archive
+  - id: N26_BETA
+    path: results/local-20260828/P115-n26-self-matching-exact
+    status: negative_result
+    role: exact_frozen_Beta5_Beta7_falsification
   - id: SERVER_REPORT
     path: results/server-20260828/REPORT.md
     status: historical_snapshot
@@ -162,7 +197,7 @@ topic_derivations:
   - path: notes/matching-involution-rg-selection-rule.md
     status: topic_derivation
     role: RG_parity_scaling_argument
-    caveat: stronger_local_involution_requires_independent_bridge
+    caveat: exact_finite_tangent_now_exists_but_large_N_action_remains_open
   - path: notes/matching-thermal-parity-derivative-spectrum.md
     status: topic_derivation
     role: derivative_selection_rule_and_original_frozen_powers
@@ -170,6 +205,21 @@ topic_derivations:
   - path: notes/topological-threshold-distribution.md
     status: topic_derivation
     role: threshold_CDF_and_rank_distribution_interpretation
+  - path: notes/pivotal-russo-finite-volume.md
+    status: topic_derivation
+    role: exact_finite_matching_slope_pivotal_identity
+  - path: notes/c4-self-matching-tangent-improvement.md
+    status: topic_derivation
+    role: exact_microscopic_self_matching_tangent
+  - path: notes/reliability-signature-threshold-tomography.md
+    status: topic_derivation
+    role: finite_activation_signature_framework
+  - path: notes/selfdual-beta-minimal-degree-theorem.md
+    status: topic_derivation
+    role: exact_minimal_degree_selfdual_Beta_theorem
+  - path: notes/n26-central-jet-signature-trap.md
+    status: topic_derivation
+    role: post_reveal_N26_profile_vs_central_jet_diagnostic
   - path: notes/q-derivative-potts-bridge.md
     status: topic_derivation
     role: FK_Potts_cluster_fugacity_program
@@ -207,9 +257,12 @@ historical_protocols:
 channel_semantics:
   implementation: scripts/wrapping_channels.py
   audit: predictions/wrapping_channel_audit_20260828.json
+  primary_norm5_entrypoint: scripts/score_norm5_harmonic_primary_typed.py
+  fullcurve_norm5_entrypoint: scripts/score_intrinsic_functional_cocycle_typed.py
   rule: >
-    A scorer may compare channel-bearing values only when descriptors are
-    identical or map_observable returns an exact registered transform.
+    A scorer may compare channel-bearing values only when descriptors are identical
+    or map_observable returns a registered exact transform. Size-local P4
+    normalization is not a raw angular sign transported between sizes.
   required_fields:
     - topology_channel
     - combination
@@ -219,30 +272,6 @@ channel_semantics:
     - quantity
 
 frontier_open_as_of_2026_08_29:
-  - pr: 169
-    state: frontier_open
-    role: exact_Russo_pivotal_regression
-    affects_tracks: [A, B, F]
-  - pr: 167
-    state: frontier_open
-    role: exact_self_matching_score_function_oracle
-    affects_tracks: [A, F]
-  - pr: 163
-    state: frontier_open
-    role: norm5_primary_H4_H12_scorer
-    affects_tracks: [C, G]
-  - pr: 162
-    state: frontier_open
-    role: reliability_signature_threshold_tomography
-    affects_tracks: [B, H]
-  - pr: 157
-    state: frontier_open
-    role: intrinsic_full_curve_q2_Jordan_cocycle_scorer
-    affects_tracks: [E, G]
-  - pr: 152
-    state: frontier_open
-    role: exact_N26_frozen_Beta_falsification
-    affects_tracks: [H]
   - pr: 151
     state: frontier_open
     role: stronger_Q4_Pell_modular_shape_program
@@ -256,15 +285,19 @@ frontier_open_as_of_2026_08_29:
     state: frontier_open
     role: general_period_norm4_threshold_rank_backend
     affects_tracks: [B, E, G]
-  - pr: 148
+  - pr: 143
     state: frontier_open
-    role: exact_self_matching_tangent_family
-    affects_tracks: [A, F]
+    role: CM_Jordan_and_intrinsic_functional_research_program
+    affects_tracks: [E, F, G]
   - pr: 142
     state: frontier_open
     role: retrospective_matrix_Gaussian_semigroup_discovery
     affects_tracks: [E, G]
     evidence_boundary: post_reveal_model_development
+  - pr: 141
+    state: frontier_open
+    role: early_CM_elliptic_annihilator_freeze
+    affects_tracks: [F, G]
   - pr: 139
     state: frontier_open
     role: maximin_Gaussian_isogeny_design
@@ -274,20 +307,70 @@ frontier_open_as_of_2026_08_29:
     role: graph_cover_order_statistic_CRN_pilot
     affects_tracks: [B, G]
     evidence_boundary: negative_method_result
+  - pr: 117
+    state: frontier_open
+    role: V13_V14_post_L7_conditional_theory
+    affects_tracks: [D, F]
   - pr: 84
     state: frontier_open
     role: exact_axis_L5_and_Galois_frontier
     affects_tracks: [H]
 
+canonical_integration_history:
+  - pr: 166
+    role: canonical_roadmap_channel_correction
+  - pr: 170
+    role: research_map_ledgers_and_typed_channel_layer
+  - pr: 171
+    role: prospective_P48_new_geometry_score
+  - pr: 172
+    role: typed_norm5_primary_score_gate
+  - pr: 173
+    role: typed_norm5_fullcurve_score_gate
+  - pr: 174
+    role: exact_Russo_pivotal_oracle
+  - pr: 175
+    role: exact_self_matching_tangent_and_score_function_oracle
+  - pr: 176
+    role: exact_N26_Beta_falsification
+  - pr: 177
+    role: reliability_signature_threshold_tomography
+
+superseded_active_paths_closed:
+  - pr: 168
+    superseded_by: 170
+  - pr: 128
+    superseded_by: [134, 170]
+  - pr: 135
+    superseded_by: [134, 170]
+  - pr: 137
+    superseded_by: [171, 170]
+  - pr: 110
+    superseded_by: 117
+  - pr: 163
+    superseded_by: 172
+  - pr: 157
+    superseded_by: 173
+  - pr: 169
+    superseded_by: 174
+  - pr: 148
+    superseded_by: 175
+  - pr: 167
+    superseded_by: 175
+  - pr: 152
+    superseded_by: 176
+  - pr: 162
+    superseded_by: 177
+
 integration_notes:
   - >
-    PR #166 was merged before this registry was created so ROADMAP no longer
-    carries the superseded physical sign-reversal interpretation.
+    Canonical current documents state the latest evidence while immutable result
+    archives preserve the chronology that produced it.
   - >
-    The type-safe channel semantics from PR #168 are incorporated into this
-    organization branch because #168 diverged from main after the ROADMAP merge.
+    Closed superseded PRs remain provenance; branch deletion is not required for
+    scientific organization.
   - >
-    Frontier PR entries are integration status only; scientific claim levels
+    Frontier PR entries are integration status only. Scientific claim levels
     remain governed by docs/STATUS.md and chronology.
 
 directory_contract:
