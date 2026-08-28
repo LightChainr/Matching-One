@@ -140,6 +140,101 @@ class GaussianPredictionArtifactTests(unittest.TestCase):
             )
             self.assertLess(abs(reported - target), mp.mpf("1e-29"))
 
+    def test_norm5_radial_competitors_match_exact_formula(self) -> None:
+        frozen = load_yaml("gaussian_norm5_radial_competitors_20260828.yaml")
+        self.assertEqual(frozen["claim_level"], "C0")
+        angular = -mp.mpf(14) / 25
+        expected = {
+            "x21_over_4_thermal_level4": Fraction(13, 8),
+            "x14_over_3_V13_parity_failure": Fraction(4, 3),
+            "x17_over_4_W22_log_leakage": Fraction(9, 8),
+        }
+        for name, alpha in expected.items():
+            model = frozen["models"][name]
+            self.assertEqual(Fraction(model["exponent_alpha_in_N"]), alpha)
+            target = angular * mp.power(
+                5, -mp.mpf(alpha.numerator) / alpha.denominator
+            )
+            reported = mp.mpf(model["deltaM_child_over_parent"])
+            self.assertLess(abs(reported - target), mp.mpf("1e-48"))
+
+        primary = frozen["models"]["x21_over_4_thermal_level4"]
+        self.assertEqual(
+            primary["full_curve_if_run"]["root_gap_child_over_parent_expression"],
+            "-14/625",
+        )
+        self.assertEqual(
+            mp.mpf(str(primary["full_curve_if_run"]["root_gap_child_over_parent"])),
+            -mp.mpf(14) / 625,
+        )
+
+    def test_cross_norm_residual_transfer_artifact_matches_formula(self) -> None:
+        frozen = load_yaml("gaussian_norm2_norm5_residual_transfer_20260828.yaml")
+        self.assertEqual(frozen["claim_level"], "C0")
+        alpha = mp.mpf(13) / 8
+        r2 = -mp.mpf(1)
+        r5 = -mp.mpf(14) / 25
+
+        log_expected = (
+            r5 * mp.power(5, -alpha) * mp.log(5)
+            / (r2 * mp.power(2, -alpha) * mp.log(2))
+        )
+        log_reported = mp.mpf(
+            frozen["transfer_laws"]["logarithmic_Jordan_rank2"]["E5_over_E2"]
+        )
+        self.assertLess(abs(log_reported - log_expected), mp.mpf("1e-48"))
+
+        for q_length, key in (
+            (2, "relative_length_q2"),
+            (3, "relative_length_q3"),
+            (4, "relative_length_q4"),
+            (6, "relative_length_q6"),
+        ):
+            beta = mp.mpf(q_length) / 2
+            expected = (
+                r5
+                * mp.power(5, -alpha)
+                * (mp.power(5, -beta) - 1)
+                / (
+                    r2
+                    * mp.power(2, -alpha)
+                    * (mp.power(2, -beta) - 1)
+                )
+            )
+            reported = mp.mpf(frozen["transfer_laws"][key]["E5_over_E2"])
+            self.assertLess(abs(reported - expected), mp.mpf("1e-48"))
+
+        for size in ("N65", "N85"):
+            source = frozen["source_norm2_residuals"][size]
+            e2 = mp.mpf(source["E2"])
+            se2 = mp.mpf(source["E2_standard_error"])
+            for key, factor in (
+                ("logarithmic_Jordan_rank2", log_expected),
+                *(
+                    (
+                        name,
+                        mp.mpf(frozen["transfer_laws"][name]["E5_over_E2"]),
+                    )
+                    for name in (
+                        "relative_length_q2",
+                        "relative_length_q3",
+                        "relative_length_q4",
+                        "relative_length_q6",
+                    )
+                ),
+            ):
+                target = frozen["transfer_laws"][key]["prospective_E5_from_source"][
+                    size
+                ]
+                self.assertLess(
+                    abs(mp.mpf(target["mean"]) - factor * e2),
+                    mp.mpf("1e-34"),
+                )
+                self.assertLess(
+                    abs(mp.mpf(target["source_only_standard_error"]) - factor * se2),
+                    mp.mpf("1e-34"),
+                )
+
 
 if __name__ == "__main__":
     unittest.main()
