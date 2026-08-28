@@ -1,4 +1,6 @@
 // Discovery-stage paired Monte Carlo for the square-site matching function.
+// Boolean wrapping uses the C00 HomologyUnionFind `either` channel (shared
+// with gaussian_orientation_mc.cpp).  There is no second DSU.
 //
 // This deliberately uses a narrow, fixed-p common-random-number design rather
 // than a full Newman-Ziff implementation.  It is intended to establish whether
@@ -11,6 +13,8 @@
 //   ./pell_matching_mc --axis 17 --diamond 12 --samples 10000 --batches 20
 //       --p-ref 0.59274605 --h 0.001 --seed 20260828 --threads 16
 //       --output-prefix results/pell/a17_d12
+
+#include "homology_union_find.hpp"
 
 #include <algorithm>
 #include <chrono>
@@ -45,99 +49,12 @@ struct Geometry {
     int L;
     int n;
     double physical_period;
+    matching::PeriodMatrix period;
     std::vector<Edge> primal_edges;
     std::vector<Edge> matching_edges;
 };
 
-class WrapUnionFind {
-  public:
-    explicit WrapUnionFind(int n)
-        : parent_(n), size_(n), delta_x_(n), delta_y_(n), wrap_(n) {
-        reset();
-    }
-
-    void reset() {
-        std::iota(parent_.begin(), parent_.end(), 0);
-        std::fill(size_.begin(), size_.end(), 1);
-        std::fill(delta_x_.begin(), delta_x_.end(), 0);
-        std::fill(delta_y_.begin(), delta_y_.end(), 0);
-        std::fill(wrap_.begin(), wrap_.end(), false);
-    }
-
-    struct FindResult {
-        int root;
-        int dx;
-        int dy;
-    };
-
-    FindResult find(int x) {
-        int node = x;
-        int total_x = 0;
-        int total_y = 0;
-        while (parent_[node] != node) {
-            total_x += delta_x_[node];
-            total_y += delta_y_[node];
-            node = parent_[node];
-        }
-        const int root = node;
-
-        node = x;
-        int remaining_x = total_x;
-        int remaining_y = total_y;
-        while (parent_[node] != node) {
-            const int next = parent_[node];
-            const int step_x = delta_x_[node];
-            const int step_y = delta_y_[node];
-            parent_[node] = root;
-            delta_x_[node] = remaining_x;
-            delta_y_[node] = remaining_y;
-            remaining_x -= step_x;
-            remaining_y -= step_y;
-            node = next;
-        }
-        return {root, total_x, total_y};
-    }
-
-    void add_edge(int i, int j, int edge_dx, int edge_dy) {
-        const FindResult fi = find(i);
-        const FindResult fj = find(j);
-        // Required position(root_j) - position(root_i).
-        const int root_dx = fi.dx + edge_dx - fj.dx;
-        const int root_dy = fi.dy + edge_dy - fj.dy;
-
-        if (fi.root == fj.root) {
-            if (root_dx != 0 || root_dy != 0) {
-                wrap_[fi.root] = true;
-            }
-            return;
-        }
-
-        if (size_[fi.root] >= size_[fj.root]) {
-            parent_[fj.root] = fi.root;
-            delta_x_[fj.root] = root_dx;
-            delta_y_[fj.root] = root_dy;
-            size_[fi.root] += size_[fj.root];
-            wrap_[fi.root] = wrap_[fi.root] || wrap_[fj.root];
-        } else {
-            parent_[fi.root] = fj.root;
-            delta_x_[fi.root] = -root_dx;
-            delta_y_[fi.root] = -root_dy;
-            size_[fj.root] += size_[fi.root];
-            wrap_[fj.root] = wrap_[fi.root] || wrap_[fj.root];
-        }
-    }
-
-    bool component_wraps(int x) {
-        return wrap_[find(x).root];
-    }
-
-  private:
-    std::vector<int> parent_;
-    std::vector<int> size_;
-    std::vector<int> delta_x_;
-    std::vector<int> delta_y_;
-    std::vector<std::uint8_t> wrap_;
-};
+using HomologyUnionFind = matching::HomologyUnionFind;
 
 Geometry axis_geometry(int L) {
     if (L < 2) {
@@ -147,7 +64,7 @@ Geometry axis_geometry(int L) {
     if (n64 > std::numeric_limits<int>::max()) {
         throw std::invalid_argument("axis geometry is too large for 32-bit site ids");
     }
-    Geometry g{"axis", L, static_cast<int>(n64), static_cast<double>(L), {}, {}};
+    Geometry g{"axis", L, static_cast<int>(n64), static_cast<double>(L), matching::PeriodMatrix::diagonal(L, L), {}, {}};
     g.primal_edges.reserve(2 * g.n);
     g.matching_edges.reserve(4 * g.n);
     auto id = [L](int x, int y) { return x + L * y; };
@@ -176,7 +93,7 @@ Geometry diamond_geometry(int L) {
         throw std::invalid_argument("diamond geometry is too large for 32-bit site ids");
     }
     const int period = 2 * L;
-    Geometry g{"diamond", L, static_cast<int>(n64), std::sqrt(2.0) * L, {}, {}};
+    Geometry g{"diamond", L, static_cast<int>(n64), std::sqrt(2.0) * L, matching::PeriodMatrix::diagonal(period, period), {}, {}};
     std::vector<int> ids(static_cast<std::size_t>(period) * period, -1);
     std::vector<std::pair<int, int>> coords;
     coords.reserve(g.n);
@@ -218,24 +135,19 @@ Geometry diamond_geometry(int L) {
 }
 
 bool wraps(const std::vector<std::uint8_t>& active, const std::vector<Edge>& edges,
-           WrapUnionFind& uf) {
+           HomologyUnionFind& uf) {
     uf.reset();
     for (const Edge& edge : edges) {
         if (active[edge.i] && active[edge.j]) {
             uf.add_edge(edge.i, edge.j, edge.dx, edge.dy);
         }
     }
-    for (int i = 0; i < static_cast<int>(active.size()); ++i) {
-        if (active[i] && uf.component_wraps(i)) {
-            return true;
-        }
-    }
-    return false;
+    return uf.either();
 }
 
 int matching_observable(const Geometry& geometry, const std::vector<double>& uniforms,
                         double p, std::vector<std::uint8_t>& active,
-                        WrapUnionFind& primal_uf, WrapUnionFind& matching_uf) {
+                        HomologyUnionFind& primal_uf, HomologyUnionFind& matching_uf) {
     active.resize(geometry.n);
     for (int i = 0; i < geometry.n; ++i) {
         active[i] = uniforms[i] < p;
@@ -268,7 +180,7 @@ std::vector<long long> exact_power_coefficients(const Geometry& geometry) {
     }
     std::vector<long long> bernstein(geometry.n + 1, 0);
     std::vector<std::uint8_t> black(geometry.n), white(geometry.n);
-    WrapUnionFind primal_uf(geometry.n), matching_uf(geometry.n);
+    HomologyUnionFind primal_uf(geometry.n, geometry.period), matching_uf(geometry.n, geometry.period);
     const std::uint64_t configurations = 1ULL << geometry.n;
     for (std::uint64_t mask = 0; mask < configurations; ++mask) {
         for (int i = 0; i < geometry.n; ++i) {
@@ -322,7 +234,7 @@ void self_test() {
     if (first != counter_uniform(17, 23, 5) || !(first >= 0.0 && first < 1.0)) {
         throw std::runtime_error("counter RNG reproducibility regression failed");
     }
-    std::cout << "self-test passed: axis L=2,3; diamond L=2; counter RNG\n";
+    std::cout << "self-test passed: axis L=2,3; diamond L=2; counter RNG; C00 homology either\n";
 }
 
 struct Options {
@@ -480,8 +392,8 @@ int main(int argc, char** argv) {
                 const int max_n = std::max(axis.n, diamond.n);
                 std::vector<double> uniforms(max_n);
                 std::vector<std::uint8_t> axis_active(axis.n), diamond_active(diamond.n);
-                WrapUnionFind axis_primal(axis.n), axis_matching(axis.n);
-                WrapUnionFind diamond_primal(diamond.n), diamond_matching(diamond.n);
+                HomologyUnionFind axis_primal(axis.n, axis.period), axis_matching(axis.n, axis.period);
+                HomologyUnionFind diamond_primal(diamond.n, diamond.period), diamond_matching(diamond.n, diamond.period);
 
 #pragma omp for schedule(static)
                 for (std::uint64_t offset = 0; offset < per_batch; ++offset) {

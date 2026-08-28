@@ -1,0 +1,76 @@
+{
+  "model_S": "matching-even orientation difference ~ C * N^{-1} * Delta cos(4 theta) (L^{-2})",
+  "model_M": "matching-odd D_N ~ A4 * N^{-13/8} * Delta cos(4 theta)",
+  "z_target": 3.0,
+  "primary_channel": "both",
+  "from_eval": {
+    "site_65": {
+      "N": 65,
+      "samples": 2000000,
+      "D_S": -0.00021974999999999079,
+      "D_S_batch_se": 0.0002759851910119377,
+      "z_S": -0.7962383749441307,
+      "D_M_either": 0.0007694999999999785,
+      "D_M_batch_se": 0.00045981831366198166,
+      "z_M": 1.6734870646445106,
+      "A4_M_either": {
+        "mean": 0.4984218336404524,
+        "batch_se": 0.29783429114603244
+      },
+      "A4_S_times_N": {
+        "mean": -0.010477229817707894,
+        "batch_se": 0.013158408521120378
+      },
+      "replica_var_S": 0.1347310767099375
+    },
+    "site_85": {
+      "N": 85,
+      "samples": 2000000,
+      "D_S": -0.0005577499999999957,
+      "D_S_batch_se": 0.0003422115525673069,
+      "z_S": -1.629839775471333,
+      "D_M_either": 0.00021450000000000635,
+      "D_M_batch_se": 0.0004367990474975161,
+      "z_M": 0.49107249942257747,
+      "A4_M_either": {
+        "mean": 0.18370391977591305,
+        "batch_se": 0.37408716633881844
+      },
+      "A4_S_times_N": {
+        "mean": -0.029733352322048386,
+        "batch_se": 0.018243113691006715
+      },
+      "replica_var_S": 0.1362688139149375
+    }
+  },
+  "stop_gate": "stop_no_C02_site_unresolved_bond_pass",
+  "bond_scaled_amplitude_N_dPrimal_over_dcos4": {
+    "N65_both": {
+      "mean": -0.28836,
+      "batch_se": 0.0138
+    },
+    "N85_both": {
+      "mean": -0.25964,
+      "batch_se": 0.0228
+    },
+    "N65_either": {
+      "mean": 0.10682,
+      "batch_se": 0.0191
+    },
+    "N85_either": {
+      "mean": 0.1196,
+      "batch_se": 0.0169
+    },
+    "note": "bond primal wrapping; matching-graph bond is nearly always wrapping at p=1/2 so its orientation difference is ~0"
+  },
+  "site_sensitivity": {
+    "N65_3sigma_abs_S_both": 0.000828,
+    "N85_3sigma_abs_S_both": 0.001027,
+    "naive_O1_L^{-2}_N65_S": 0.021,
+    "exclusion": "an O(1) times L^{-2} times Delta cos4 matching-even site amplitude is excluded by tens of sigma at N=65",
+    "D_M_either_SE_N65": 0.00046,
+    "D_M_either_SE_N85": 0.000437,
+    "samples_for_z3_if_true_DS_equals_0.001": 1371168.0
+  },
+  "recommendation": "Do not spend further C01 samples on larger N for site matching-even; the discovery sizes already rule out the large L^{-2} S4 that motivated the CPU scan. Bond angular physics is resolved and can be reused as a positive control. C02 production is not started because site S is unresolved."
+}

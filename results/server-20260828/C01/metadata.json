@@ -1,0 +1,200 @@
+{
+  "queue_id": "C01",
+  "title": "Same-N Gaussian orientation discovery",
+  "source_commit": "08c4079798cc37913c6a7de3c97bc8d1c6bda16a",
+  "source_branch": "agent/c01-gaussian-orientation",
+  "base_commit_c00": "08c4079798cc37913c6a7de3c97bc8d1c6bda16a",
+  "issues": [
+    22,
+    23
+  ],
+  "machine": "cursor (Linux x86_64 KVM, Intel Xeon, 8 cores, 15 GiB RAM)",
+  "hostname": "cursor",
+  "os_kernel": "Linux cursor 6.12.94+ #1 SMP PREEMPT_DYNAMIC Tue Jul 28 22:00:48 UTC 2026 x86_64",
+  "os_pretty": "Debian GNU/Linux 13 (trixie)",
+  "compiler_or_interpreter": "CPython 3.13.5; g++ (Debian 14.2.0-19) 14.2.0",
+  "dependency_versions": {
+    "python": "3.13.5",
+    "g++": "g++ (Debian 14.2.0-19) 14.2.0",
+    "openmp": true,
+    "mpmath": "1.4.1"
+  },
+  "rng_algorithm_if_stochastic": "Philox4x32-10 counter uniform (Random123 KAT). key=(seed_lo, seed_hi); ctr=(index, replica_lo, replica_hi, stream); stream 0 = site occupation by cyclic vertex; stream 1 = bond occupation by packed (src, dx, dy). U in [0,1) from 53 high bits of the first two 32-bit words.",
+  "rng_seed_or_counter_ranges": {
+    "site_seed": 20260828,
+    "bond_seed": 20260829,
+    "pilot_replicas": [
+      0,
+      200000
+    ],
+    "eval_replica_begin": 1000000,
+    "eval_samples_default": 2000000,
+    "note": "pilot replicas are disjoint from evaluation replicas; same seed, different counters"
+  },
+  "sample_counts": {
+    "pilot_per_discovery_pair": 200000,
+    "evaluation_N65_site": 2000000,
+    "evaluation_N85_site": 2000000,
+    "evaluation_N65_bond": 2000000,
+    "evaluation_N85_bond": 2000000,
+    "evaluation_N145_site": null,
+    "evaluation_N205_site": null
+  },
+  "wall_time": {
+    "seconds": 25.488272007998603,
+    "utc_start": "2026-08-28T10:46:24Z",
+    "utc_end": "2026-08-28T10:46:49Z",
+    "asia_shanghai_start": "2026-08-28 18:46:24",
+    "asia_shanghai_end": "2026-08-28 18:46:49"
+  },
+  "thread_or_gpu_configuration": {
+    "threads": 8,
+    "gpu": false,
+    "openmp": true
+  },
+  "frozen_coupling": {
+    "65": {
+      "t": 1,
+      "reason": "minimum replica variance of matching-even S_either",
+      "shortlist": [
+        1,
+        4
+      ],
+      "replica_var_S_either": {
+        "1": 0.10708931937499999,
+        "4": 0.10776142877499997
+      },
+      "z_S_either": {
+        "1": 1.1442211678773269,
+        "4": 1.5979134570602704
+      }
+    },
+    "85": {
+      "t": 1,
+      "reason": "minimum replica variance of matching-even S_either",
+      "shortlist": [
+        1,
+        3
+      ],
+      "replica_var_S_either": {
+        "1": 0.10890374319375001,
+        "3": 0.1090922399
+      },
+      "z_S_either": {
+        "1": -0.09353025598333248,
+        "3": 0.7045594096093396
+      }
+    },
+    "145": {
+      "t": 1,
+      "reason": "canonical t=1 within 5% of minimum S_either replica variance",
+      "shortlist": [
+        1,
+        8
+      ],
+      "replica_var_S_either": {
+        "1": 0.11180382277500002,
+        "8": 0.11165874774374998
+      },
+      "z_S_either": {
+        "1": -1.6273477109336647,
+        "8": 0.06944305880225507
+      }
+    }
+  },
+  "frozen_primary_channel": "both",
+  "p_ref": 0.59274605079,
+  "complement": 0.40725394921,
+  "bond_pc": 0.5,
+  "stop_gate": "stop_no_C02_site_unresolved_bond_pass",
+  "continue_to_C02": false,
+  "unittest_pass": true,
+  "signed_effects": {
+    "site_65": {
+      "D_M": {
+        "mean": 0.0007694999999999785,
+        "batch_se": 0.00045981831366198166,
+        "jackknife_se": 0.0004598183136619816,
+        "replica_var": 0.72061390786975,
+        "replica_se": 0.000600255740443084,
+        "z_batch": 1.6734870646445106,
+        "n": 2000000.0,
+        "n_batch": 20.0
+      },
+      "A4_M": {
+        "mean": 0.4984218336404524,
+        "batch_se": 0.29783429114603244
+      },
+      "D_S": {
+        "mean": -0.00021974999999999079,
+        "batch_se": 0.0002759851910119377,
+        "jackknife_se": 0.0002759851910119377,
+        "replica_var": 0.1347310767099375,
+        "replica_se": 0.00025954872058048896,
+        "z_batch": -0.7962383749441307,
+        "n": 2000000.0,
+        "n_batch": 20.0
+      },
+      "A4_S_times_N": {
+        "mean": -0.010477229817707894,
+        "batch_se": 0.013158408521120378
+      }
+    },
+    "site_85": {
+      "D_M": {
+        "mean": 0.00021450000000000635,
+        "batch_se": 0.0004367990474975161,
+        "jackknife_se": 0.0004367990474975161,
+        "replica_var": 0.7610624539897497,
+        "replica_se": 0.0006168721318027544,
+        "z_batch": 0.49107249942257747,
+        "n": 2000000.0,
+        "n_batch": 20.0
+      },
+      "A4_M": {
+        "mean": 0.18370391977591305,
+        "batch_se": 0.37408716633881844
+      },
+      "D_S": {
+        "mean": -0.0005577499999999957,
+        "batch_se": 0.0003422115525673069,
+        "jackknife_se": 0.00034221155256730683,
+        "replica_var": 0.1362688139149375,
+        "replica_se": 0.0002610256825629784,
+        "z_batch": -1.629839775471333,
+        "n": 2000000.0,
+        "n_batch": 20.0
+      },
+      "A4_S_times_N": {
+        "mean": -0.029733352322048386,
+        "batch_se": 0.018243113691006715
+      }
+    }
+  },
+  "bond_control": {
+    "N65_primal_delta": {
+      "mean": -0.006047999999999998,
+      "batch_se": 0.0002904276338889161,
+      "jackknife_se": 0.00029042763388891613,
+      "replica_var": 0.34270342169600004,
+      "replica_se": 0.00041394650723010096,
+      "z_batch": -20.824464666173128,
+      "n": 2000000.0,
+      "n_batch": 20.0
+    },
+    "N85_primal_delta": {
+      "mean": -0.0048705,
+      "batch_se": 0.0004278283442050841,
+      "jackknife_se": 0.0004278283442050841,
+      "replica_var": 0.34974877822975003,
+      "replica_se": 0.0004181798525932054,
+      "z_batch": -11.384238716229783,
+      "n": 2000000.0,
+      "n_batch": 20.0
+    }
+  },
+  "c00_results_intact": true,
+  "torus_homology_rewritten": false,
+  "bond_control_pass": true,
+  "site_discovery_resolved": false
+}

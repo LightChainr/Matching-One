@@ -1,0 +1,23 @@
+{
+  "engine": "gaussian_orientation_mc_c01_v1",
+  "design": "same-N Gaussian CRN orientation scan",
+  "mode": "site",
+  "N": 65,
+  "rep1": [8, 1],
+  "rep2": [7, 4],
+  "period_matrix_1": [[8, -1], [1, 8]],
+  "period_matrix_2": [[7, -4], [4, 7]],
+  "t_values": [1,4],
+  "coupling": "U_j^{(1)}=U_j; U_j^{(2)}=U_{t j mod N}",
+  "p": 0.59274605078999998,
+  "samples": 200000,
+  "batches": 20,
+  "seed": 20260828,
+  "replica_begin": 0,
+  "replica_end": 200000,
+  "rng": "Philox4x32-10 counter uniform; key=(seed_lo, seed_hi); ctr=(index, replica_lo, replica_hi, stream); stream 0 site, stream 1 bond",
+  "compiler": "14.2.0",
+  "threads": 8,
+  "openmp": true,
+  "elapsed_seconds": 0.34540745299999998
+}

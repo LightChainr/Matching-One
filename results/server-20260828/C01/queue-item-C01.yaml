@@ -1,0 +1,71 @@
+  - id: C01
+    priority: P0
+    status: ready_after_C00
+    title: Same-N Gaussian orientation discovery
+    issue: 22
+    depends_on: [C00]
+    frozen_target:
+      p_ref: '0.592746050790'
+      complement: '0.407253949210'
+      note: >-
+        p_ref is a discovery coordinate, not a threshold assertion. Same-N
+        orientation differences are the primary quantity so common thermal
+        displacement largely cancels.
+    geometries:
+      discovery_pairs:
+        - N: 65
+          reps: [[8,1],[7,4]]
+        - N: 85
+          reps: [[9,2],[7,6]]
+        - N: 145
+          reps: [[12,1],[9,8]]
+      confirmation_pairs:
+        - N: 205
+          reps: [[14,3],[13,6]]
+        - N: 425
+          reps: [[19,8],[16,13]]
+      multi_angle_if_discovery_passes:
+        N: 1105
+        reps: [[33,4],[32,9],[31,12],[24,23]]
+    coupling:
+      representation: cyclic_Z_mod_N
+      vertex_label: 'j = a*x + b*y mod N'
+      default: same_U_j
+      optional_relabel: 'j -> t*j mod N, gcd(t,N)=1'
+      selection: >-
+        Choose a bounded shortlist using graph-only step overlap or an
+        independent pilot. Freeze t before evaluation and retain the entire
+        pilot shortlist/results.
+    observables_required:
+      primal:
+        - cross
+        - both
+        - either
+        - direction_0
+        - direction_1
+      matching:
+        - cross
+        - both
+        - either
+        - direction_0
+        - direction_1
+      derived:
+        - M_primal_minus_matching
+        - covariance_across_orientations
+    sample_plan:
+      pilot_per_pair: 200000
+      evaluation_N65: 2000000
+      evaluation_N85: 2000000
+      N145_and_later: power_from_previous_effect_and_covariance
+    controls:
+      - square_bond_exact_pc_half_with_same_geometry_engine
+    outputs:
+      - long_form_channel_means.csv
+      - covariance_matrices.json
+      - coupling_pilot.json
+      - effect_power_budget.json
+    stop_gate: >-
+      If neither N=65 nor N=85 resolves a reproducible orientation effect in
+      the larger single/matching-even sector and the exact control also shows
+      no angular signal, stop before increasing N and debug/reassess geometry.
+

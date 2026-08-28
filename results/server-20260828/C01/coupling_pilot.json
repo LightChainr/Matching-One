@@ -1,0 +1,177 @@
+{
+  "pairs": {
+    "65": {
+      "t": 1,
+      "reason": "minimum replica variance of matching-even S_either",
+      "shortlist": [
+        1,
+        4
+      ],
+      "replica_var_S_either": {
+        "1": 0.10708931937499999,
+        "4": 0.10776142877499997
+      },
+      "z_S_either": {
+        "1": 1.1442211678773269,
+        "4": 1.5979134570602704
+      }
+    },
+    "85": {
+      "t": 1,
+      "reason": "minimum replica variance of matching-even S_either",
+      "shortlist": [
+        1,
+        3
+      ],
+      "replica_var_S_either": {
+        "1": 0.10890374319375001,
+        "3": 0.1090922399
+      },
+      "z_S_either": {
+        "1": -0.09353025598333248,
+        "3": 0.7045594096093396
+      }
+    },
+    "145": {
+      "t": 1,
+      "reason": "canonical t=1 within 5% of minimum S_either replica variance",
+      "shortlist": [
+        1,
+        8
+      ],
+      "replica_var_S_either": {
+        "1": 0.11180382277500002,
+        "8": 0.11165874774374998
+      },
+      "z_S_either": {
+        "1": -1.6273477109336647,
+        "8": 0.06944305880225507
+      }
+    }
+  },
+  "primary_channel": "both",
+  "channel_rule": "predeclared candidate set = matching-even S on ['cross', 'both', 'either', 'direction_0', 'direction_1']; freeze argmax |z_batch| on N=65 frozen-t pilot, defaulting to either if all |z|<1",
+  "channel_ranking_n65": [
+    {
+      "channel": "both",
+      "abs_z": 1.5957278417330623,
+      "z": -1.5957278417330623,
+      "mean": -0.0012750000000000261
+    },
+    {
+      "channel": "cross",
+      "abs_z": 1.1442211678773275,
+      "z": -1.1442211678773275,
+      "mean": -0.0008250000000000202
+    },
+    {
+      "channel": "either",
+      "abs_z": 1.1442211678773269,
+      "z": 1.1442211678773269,
+      "mean": 0.0008250000000000202
+    },
+    {
+      "channel": "direction_0",
+      "abs_z": 0.8297745930865259,
+      "z": -0.8297745930865259,
+      "mean": -0.0008599999999999719
+    },
+    {
+      "channel": "direction_1",
+      "abs_z": 0.39232629842411304,
+      "z": 0.39232629842411304,
+      "mean": 0.00040999999999996595
+    }
+  ],
+  "pilot_not_reused_as_eval": true,
+  "eval_replica_begin": 1000000,
+  "pilot_replica_range": [
+    0,
+    200000
+  ],
+  "graph_only": [
+    {
+      "N": 65,
+      "rep1": [
+        8,
+        1
+      ],
+      "rep2": [
+        7,
+        4
+      ],
+      "t_struct": 4,
+      "score": 4.0,
+      "nn_overlap": 2,
+      "matching_overlap": 2,
+      "shortlist": [
+        1,
+        4
+      ],
+      "selection_rule": "graph-only circulant step overlap, then pilot covariance of S_either"
+    },
+    {
+      "N": 85,
+      "rep1": [
+        9,
+        2
+      ],
+      "rep2": [
+        7,
+        6
+      ],
+      "t_struct": 3,
+      "score": 4.0,
+      "nn_overlap": 2,
+      "matching_overlap": 2,
+      "shortlist": [
+        1,
+        3
+      ],
+      "selection_rule": "graph-only circulant step overlap, then pilot covariance of S_either"
+    },
+    {
+      "N": 145,
+      "rep1": [
+        12,
+        1
+      ],
+      "rep2": [
+        9,
+        8
+      ],
+      "t_struct": 8,
+      "score": 4.0,
+      "nn_overlap": 2,
+      "matching_overlap": 2,
+      "shortlist": [
+        1,
+        8
+      ],
+      "selection_rule": "graph-only circulant step overlap, then pilot covariance of S_either"
+    },
+    {
+      "N": 205,
+      "rep1": [
+        14,
+        3
+      ],
+      "rep2": [
+        13,
+        6
+      ],
+      "t_struct": 2,
+      "score": 4.0,
+      "nn_overlap": 2,
+      "matching_overlap": 2,
+      "shortlist": [
+        1,
+        2
+      ],
+      "selection_rule": "graph-only circulant step overlap, then pilot covariance of S_either"
+    }
+  ],
+  "p_ref": 0.59274605079,
+  "complement": 0.40725394921,
+  "frozen_before_evaluation": true
+}

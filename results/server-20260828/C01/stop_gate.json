@@ -1,0 +1,56 @@
+{
+  "primary_channel": "both",
+  "z_threshold": 3.0,
+  "site_matching_even_resolved": false,
+  "bond_primal_angular_resolved": true,
+  "continue_to_C02": false,
+  "decision": "stop_no_C02_site_unresolved_bond_pass",
+  "note": "Site matching-even Delta S is consistent with zero at |z|<2 for every homology channel at N=65 and N=85 (2e6 eval replicas). Square-bond primal wrapping on the same engine shows a large orientation signal (|z|=20.8 at N=65, |z|=11.4 at N=85 on frozen channel both). Geometry is therefore validated; the site matching-even null is not an implementation failure. Do not increase N: an O(1) L^{-2} site S4 would already have been seen at N=65. Do not start C02 production.",
+  "site_65_S": {
+    "mean": -0.00021974999999999079,
+    "batch_se": 0.0002759851910119377,
+    "jackknife_se": 0.0002759851910119377,
+    "replica_var": 0.1347310767099375,
+    "replica_se": 0.00025954872058048896,
+    "z_batch": -0.7962383749441307,
+    "n": 2000000.0,
+    "n_batch": 20.0
+  },
+  "site_85_S": {
+    "mean": -0.0005577499999999957,
+    "batch_se": 0.0003422115525673069,
+    "jackknife_se": 0.00034221155256730683,
+    "replica_var": 0.1362688139149375,
+    "replica_se": 0.0002610256825629784,
+    "z_batch": -1.629839775471333,
+    "n": 2000000.0,
+    "n_batch": 20.0
+  },
+  "bond_65_primal_delta": {
+    "mean": -0.006047999999999998,
+    "batch_se": 0.0002904276338889161,
+    "jackknife_se": 0.00029042763388891613,
+    "replica_var": 0.34270342169600004,
+    "replica_se": 0.00041394650723010096,
+    "z_batch": -20.824464666173128,
+    "n": 2000000.0,
+    "n_batch": 20.0
+  },
+  "bond_85_primal_delta": {
+    "mean": -0.0048705,
+    "batch_se": 0.0004278283442050841,
+    "jackknife_se": 0.0004278283442050841,
+    "replica_var": 0.34974877822975003,
+    "replica_se": 0.0004181798525932054,
+    "z_batch": -11.384238716229783,
+    "n": 2000000.0,
+    "n_batch": 20.0
+  },
+  "skipped": [
+    "N=145 evaluation",
+    "N=205/425/1105 confirmation"
+  ],
+  "bond_control": "PASS",
+  "site_discovery": "FAIL_to_resolve",
+  "increase_N": false
+}

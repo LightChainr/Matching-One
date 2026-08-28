@@ -1,0 +1,8 @@
+# C01 commands. Working directory: /workspace/Matching-One-c00
+# Started 2026-08-28 18:46:24 Asia/Shanghai (2026-08-28T10:46:24Z UTC)
+g++ -O3 -std=c++17 -fopenmp src/gaussian_orientation_mc.cpp -o build/gaussian_orientation_mc
+g++ -O3 -std=c++17 -fopenmp src/pell_matching_mc.cpp -o build/pell_matching_mc
+./build/gaussian_orientation_mc --self-test
+./build/pell_matching_mc --self-test
+python3 -m unittest tests.test_torus_homology tests.test_gaussian_orientation_mc tests.test_pell_matching_mc -v
+python3 scripts/run_c01_protocol.py
