@@ -1,0 +1,62 @@
+{
+  "queue_id": "MERGE_BLOCKER_PRECISION",
+  "title": "Set mpmath dps before parsing finite-size CSV decimals",
+  "target_pr": 21,
+  "priority": "P0",
+  "status": "required_before_merge",
+  "source_commit": "107ddc948c8ae8e5c8a30549c9b123ac9be091b7",
+  "source_branch": "agent/pr21-precision-fix",
+  "base_branch": "server/huawei-analysis-20260828",
+  "override_contract": "experiments/server_compute_queue_overrides_20260828.yaml on research/second-wave-20260828 @ 25dd9c93bbff1d300609307b19e30b3427a6f603",
+  "issues": [
+    21,
+    23
+  ],
+  "machine": "cursor (Linux x86_64 KVM, Intel Xeon, 8 cores, 15 GiB RAM)",
+  "hostname": "cursor",
+  "os_kernel": "Linux cursor 6.12.94+ #1 SMP PREEMPT_DYNAMIC Tue Jul 28 22:00:48 UTC 2026 x86_64 GNU/Linux",
+  "os_pretty": "Debian GNU/Linux 13 (trixie)",
+  "compiler_or_interpreter": "CPython 3.13.5 [GCC 14.2.0]",
+  "dependency_versions": {
+    "python": "3.13.5",
+    "mpmath": "1.4.1",
+    "note": "Huawei 54-grid raw JSON was produced on Python 3.9.9 / mpmath 1.3.0; this item only re-parses original decimal CSV strings and refits the already-selected model."
+  },
+  "rng_algorithm_if_stochastic": "none; deterministic mpmath QR fit",
+  "rng_seed_or_counter_ranges": "n/a",
+  "sample_counts": {
+    "grid_jobs_reused": 54,
+    "csv_widths": 21,
+    "final_tail_widths": 3,
+    "selection_dps": 160
+  },
+  "wall_time": {
+    "seconds": 0.11511796299964772,
+    "utc_start": "2026-08-28T10:55:55Z",
+    "utc_end": "2026-08-28T10:55:55Z",
+    "asia_shanghai_start": "2026-08-28 18:55:55",
+    "asia_shanghai_end": "2026-08-28 18:55:55",
+    "unittest_asia_shanghai": "2026-08-28 18:55:36"
+  },
+  "thread_or_gpu_configuration": {
+    "threads": 1,
+    "gpu": false,
+    "note": "single-thread CPU refit of the training-only selected configuration; 54-grid jobs were not recomputed"
+  },
+  "original_csv": "data/jacobsen_2015_square_site_cylinder.csv",
+  "original_csv_sha256": "d73191d771e5ca7d95a6a2f6dc36c444f40eacbe7819804c442497222d562210",
+  "raw_grid_dir": "results/server-20260828/issue-5-grid/raw",
+  "superseded_summary": "results/server-20260828/issue-5-summary.json",
+  "superseded_copy": "results/server-20260828/MERGE_BLOCKER_PRECISION/issue-5-summary.superseded.json",
+  "new_summary": "results/server-20260828/MERGE_BLOCKER_PRECISION/issue-5-summary.json",
+  "regression_test": "tests/test_finite_size_toolchain.py::HighPrecisionCsvParseTests.test_csv_mpf_matches_value_parsed_after_high_dps",
+  "regression_test_result": "PASS",
+  "old_intercept": "0.59274605094603179333564156705784225",
+  "new_intercept": "0.59274605094603206266439366806726549",
+  "intercept_delta": "2.69328752101009423240000000000e-16",
+  "scientific_conclusion_changed": false,
+  "selected_model": "4,6,8,10,12",
+  "selected_min_train": 8,
+  "selected_holdout": 2,
+  "c05_touched": false
+}

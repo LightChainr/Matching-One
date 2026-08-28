@@ -1,0 +1,11 @@
+# MERGE_BLOCKER_PRECISION commands (run from repository root)
+# Working directory: /workspace/Matching-One-pr21
+# Branch: agent/pr21-precision-fix  (from origin/server/huawei-analysis-20260828 @ 107ddc9)
+
+python3 -m unittest tests.test_finite_size_toolchain -v
+
+python3 scripts/summarize_finite_size_grid.py \
+    data/jacobsen_2015_square_site_cylinder.csv \
+    --raw-dir results/server-20260828/issue-5-grid/raw \
+    --output results/server-20260828/MERGE_BLOCKER_PRECISION/issue-5-summary.json \
+    --final-tail 3

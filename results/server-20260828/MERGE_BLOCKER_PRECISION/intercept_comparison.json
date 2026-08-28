@@ -1,0 +1,33 @@
+{
+  "old_intercept": "0.59274605094603179333564156705784225",
+  "new_intercept": "0.59274605094603206266439366806726549",
+  "delta": "2.69328752101009423240000000000e-16",
+  "abs_delta": "2.69328752101009423240000000000e-16",
+  "old_rmse": "1.37757634316490834900236301831e-11",
+  "new_rmse": "1.37758612509855313720848457635e-11",
+  "old_max_absolute_error": "1.93747352745549669121056497529e-11",
+  "new_max_absolute_error": "1.93748706392088330942548115319e-11",
+  "selected_model_unchanged": true,
+  "selected_min_train_unchanged": true,
+  "selected_holdout_unchanged": true,
+  "selection_dps": 160,
+  "new_input": "data/jacobsen_2015_square_site_cylinder.csv",
+  "wall_seconds": 0.11511796299964772,
+  "utc_start": "2026-08-28T10:55:55Z",
+  "utc_end": "2026-08-28T10:55:55Z",
+  "asia_shanghai_start": "2026-08-28 18:55:55",
+  "asia_shanghai_end": "2026-08-28 18:55:55",
+  "stdout": "selected model=4,6,8,10,12 n_min=8 holdout=2 dps=160\nfinal-tail RMSE: 1.37758612509855313720848457635e-11\nresults/server-20260828/MERGE_BLOCKER_PRECISION/issue-5-summary.json\n",
+  "stderr": "",
+  "command": [
+    "/usr/bin/python3",
+    "scripts/summarize_finite_size_grid.py",
+    "data/jacobsen_2015_square_site_cylinder.csv",
+    "--raw-dir",
+    "results/server-20260828/issue-5-grid/raw",
+    "--output",
+    "results/server-20260828/MERGE_BLOCKER_PRECISION/issue-5-summary.json",
+    "--final-tail",
+    "3"
+  ]
+}

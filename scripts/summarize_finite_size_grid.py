@@ -40,18 +40,33 @@ class Candidate:
     source: str
 
 
-def load_observations(path: Path) -> list[Observation]:
-    rows: list[Observation] = []
+def load_decimal_rows(path: Path) -> list[tuple[int, str]]:
+    """Return (n, original decimal string) pairs without mpmath conversion."""
+    rows: list[tuple[int, str]] = []
     with path.open(newline="", encoding="utf-8") as handle:
         reader = csv.DictReader(handle)
         if reader.fieldnames is None or not {"n", "value"}.issubset(reader.fieldnames):
             raise ValueError("CSV must contain n and value columns")
         for row in reader:
-            rows.append(Observation(int(row["n"]), mp.mpf(row["value"])))
-    rows.sort(key=lambda row: row.n)
-    if not rows or len({row.n for row in rows}) != len(rows):
+            rows.append((int(row["n"]), str(row["value"]).strip()))
+    rows.sort(key=lambda item: item[0])
+    if not rows or len({n for n, _value in rows}) != len(rows):
         raise ValueError("input must contain unique observations")
     return rows
+
+
+def observations_from_decimals(rows: Sequence[tuple[int, str]]) -> list[Observation]:
+    """Parse decimal strings at the current mp.mp.dps."""
+    return [Observation(n, mp.mpf(value)) for n, value in rows]
+
+
+def load_observations(path: Path) -> list[Observation]:
+    """Parse CSV values at the current mpmath working precision.
+
+    Callers that need a specific working precision must set ``mp.mp.dps``
+    before invoking this function. Lost digits cannot be recovered later.
+    """
+    return observations_from_decimals(load_decimal_rows(path))
 
 
 def parse_model(text: str) -> tuple[int, ...]:
@@ -211,16 +226,19 @@ def summarize(
     selection_dps: Optional[int],
     min_validation_folds: int,
 ) -> dict[str, Any]:
-    observations = load_observations(csv_path)
-    if final_tail <= 0 or final_tail >= len(observations):
-        raise ValueError("final-tail must be positive and smaller than the dataset")
-    cutoff = observations[-final_tail - 1].n
+    # Grid JSON ``dps`` fields determine working precision. CSV decimals must
+    # not be converted to mpf until that precision is set; default mpmath dps
+    # would round away digits that cannot be recovered later.
     payloads = load_grid_payloads(raw_dir)
     available_dps = sorted({int(payload["dps"]) for _path, payload in payloads})
     chosen_dps = max(available_dps) if selection_dps is None else selection_dps
     if chosen_dps not in available_dps:
         raise ValueError(f"selection dps {chosen_dps} is not present in grid outputs")
     mp.mp.dps = chosen_dps
+    observations = observations_from_decimals(load_decimal_rows(csv_path))
+    if final_tail <= 0 or final_tail >= len(observations):
+        raise ValueError("final-tail must be positive and smaller than the dataset")
+    cutoff = observations[-final_tail - 1].n
     candidates = candidates_from_payloads(
         payloads,
         cutoff=cutoff,
