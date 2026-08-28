@@ -1,0 +1,1 @@
+The Pell-hexagonal prediction artifact freezes only symmetry/modular scaling hypotheses. It contains no observed target values and must be scored before any free-exponent rescue model if this campaign is run.
