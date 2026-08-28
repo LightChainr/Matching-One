@@ -12,7 +12,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = ROOT / "scripts" / "preregister_width_predictions.py"
-DATA = ROOT / "data" / "jacobsen_2015_square_site_cylinder.csv"
+DATA_RELATIVE = Path("data/jacobsen_2015_square_site_cylinder.csv")
 FROZEN = ROOT / "predictions" / "polynomial_widths_22_24.yaml"
 
 
@@ -25,7 +25,7 @@ class PreregisteredPredictionTests(unittest.TestCase):
                 [
                     sys.executable,
                     str(SCRIPT),
-                    str(DATA),
+                    str(DATA_RELATIVE),
                     "--output",
                     str(output),
                     "--dps",
