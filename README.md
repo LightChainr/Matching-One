@@ -97,6 +97,11 @@ The execution order is intentionally short:
 3. **Use existing full curves harder before simulating more.** Priority analyses include the prequential evidence ledger (#95), pivotal/Russo bridge (#100), intrinsic quantile-center spectroscopy (#101), multi-u thermal response (#119), and a joint operator-mixing treatment (#125).
 4. **Choose later expensive geometry by information gain — #102.** Do not default to a larger N.
 
+In parallel, the general integer-period engine now supports the noncyclic
+norm-4 children N=260/340 for the direct `T4=T2^2` radial-curvature and Smith-
+quotient universality check; see
+[`notes/general-period-threshold-rank-backend.md`](notes/general-period-threshold-rank-backend.md).
+
 Parallel theory/control routes are tracked in the post-P43 frontier map: FK/Potts torus sectors, four-arm anisotropy, torus-modulus spectroscopy, exactly-critical isoradial controls, Euler/Betti identities, universal amplitude ratios, exact self-matching Beta-family tests, and finite-polynomial Galois certificates.
 
 The exact N=1105 four-angle projector, axis-annihilator work, complex-zero maps, kappa3, rigorous-bound feasibility, and PSLQ are secondary/gated tracks.

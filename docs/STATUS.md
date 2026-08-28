@@ -151,6 +151,10 @@ Exact/theory controls (#103/#106/#111/#114/#115/#118/#121) may proceed in parall
 
 - Huawei archive and production tools: canonical on `main`.
 - N=185/265 and N=325/425 threshold-rank production: supported on `main`.
+- General integer-period threshold ranks: N=260/340 norm-4 Smith
+  `(2,130)/(2,170)` pairs supported by the standalone HNF-coordinate backend;
+  exact contract and benchmark are in
+  `notes/general-period-threshold-rank-backend.md`.
 - Issue #43 primary/secondary scorers and P48 frozen correction chain: canonical.
 - Cross/either Issue #43 protocol erratum: canonical via PR #134.
 - Exact N=1105 projector/minimality and C4 self-matching control: canonical.
