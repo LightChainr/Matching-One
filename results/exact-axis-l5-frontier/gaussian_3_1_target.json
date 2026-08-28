@@ -1,0 +1,18 @@
+{
+  "schema": "matching-one/exact-gaussian-matching-polynomial/v1",
+  "provenance": "independent exhaustive derivation; repository enumerator regression must reproduce before claim integration",
+  "geometry": {
+    "a": 3,
+    "b": 1,
+    "N": 10,
+    "period_matrix": [[3,-1],[1,3]],
+    "configurations": 1024
+  },
+  "channel": "either",
+  "primal_wrap_counts_by_occupancy": [0,0,0,0,20,140,200,120,45,10,1],
+  "matching_complement_wrap_counts_by_occupancy": [1,10,45,240,330,292,200,40,0,0,0],
+  "bernstein_sums": [-1,-10,-45,-120,-310,-152,0,80,45,10,1],
+  "power_coefficients_ascending": [-1,0,0,0,20,-140,310,-400,270,-90,12],
+  "degree": 10,
+  "warning": "THIS FILE IS A FROZEN EXPECTED VECTOR UNTIL tests/test_exact_gaussian_matching_polynomial.py recomputes it from the canonical integer-period topology engine."
+}
