@@ -48,9 +48,7 @@ Invariance of the common fixed-point description then requires
 \boxed{T\epsilon=-\epsilon}
 \]
 
-(up to normalization and possible logarithmic triangular mixing discussed below).
-
-Thus the thermal primary belongs to the matching-odd sector.
+for the bottom thermal scaling field.  Thus the thermal primary belongs to the matching-odd sector.
 
 ## 3. Every ordinary thermal descendant inherits odd parity
 
@@ -153,37 +151,77 @@ It follows instead from two percolation-specific ingredients:
 
 If #48 violates the derivative parity pattern, the assumption is falsified even if the center exponents remain numerically accurate.
 
-## 7. LCFT/Jordan caveat
+## 7. LCFT/Jordan block: an involution cannot shear a single rank-2 block
 
-At `Q=1` the thermal Kac field belongs to a logarithmic structure.  The matching involution need not be diagonal on the full Jordan block.  A generic triangular action could be
+At `Q=1` the thermal Kac field belongs to a logarithmic structure.  Logarithmic finite-size amplitudes therefore remain possible, but the involution itself is more constrained than a generic triangular matrix.
+
+Consider one rank-2 Jordan block of `L_0`,
 
 \[
-T\epsilon=-\epsilon,
-\qquad
-T\tilde\epsilon=-\tilde\epsilon+c\epsilon,
+L_0=hI+N,\qquad N^2=0,\quad N\neq0.
 \]
 
-for a logarithmic partner `epsilon_tilde`.
+If `T` commutes with `L_0`, then on this indecomposable block its commutant has the form
 
-Because `T^2=1`, the allowed triangular structure is constrained, but it can generate logarithmic finite-size amplitudes without changing the odd parity of the bottom thermal field.  Virasoro descendants inherit the corresponding triangular/Jordan action.
+\[
+T=aI+bN
+\]
+
+(up to basis conventions).  Imposing the exact involution condition
+
+\[
+T^2=I
+\]
+
+gives
+
+\[
+a^2=1,\qquad 2ab=0.
+\]
+
+Over characteristic zero, `a=+/-1` and therefore
+
+\[
+\boxed{b=0.}
+\]
+
+So an involution commuting with `L_0` cannot act as
+
+`partner -> +/- partner + c * bottom`
+
+with nonzero `c` inside a single isolated rank-2 Jordan block.  The two Jordan partners share the same matching parity on that block.
+
+This is important: logarithmic scaling does **not** by itself destroy the matching-parity selection rule.
+
+More complicated mixing can still occur if there are several isomorphic/degenerate indecomposable blocks on which `T` acts nontrivially in the multiplicity space.  That possibility has to respect `T^2=1` and the conformal commutant and should be treated explicitly rather than assumed.
+
+## 8. Why logarithmic finite-size terms are still allowed
+
+Even when `T` acts as `+/- I` on one Jordan block, the non-diagonal action of `L_0` itself produces logarithms under scale evolution.  Therefore a matching-odd thermal logarithmic multiplet can still generate
+
+\[
+L^{-13/4}(A+B\log L+\cdots)
+\]
+
+while every term remains in the same matching-odd sector.
 
 Consequences:
 
-- pure-power descendant parity is robust for the bottom field;
-- `L^{-13/4}(A+B\log L)` remains theoretically admissible;
-- Gaussian doubling residuals and #48 derivative channels are useful probes of a nontrivial Jordan contribution.
+- parity alternation in #48 is more robust than the no-log amplitude law;
+- a nonzero Gaussian-doubling residual can still diagnose a logarithmic/Jordan amplitude;
+- such a residual should not be interpreted as matching-parity violation unless the crossed `S/D` derivative rules also fail.
 
-A full LCFT treatment must identify the matching action on the complete indecomposable module rather than only on the ordinary Kac quotient.
+A full LCFT treatment must identify both the indecomposable module and any multiplicity-space action of the matching involution.
 
-## 8. Claim boundary
+## 9. Claim boundary
 
 The following is now a coherent **mechanism deduction**, not yet a theorem:
 
-> If the microscopic matching/complement map induces a coordinate-blind involution of the common percolation fixed point that commutes with Virasoro generators, then identity-family descendants are matching-even and thermal-family descendants are matching-odd.  The proposed x=21/4 spin-4 thermal quasiprimary therefore has precisely the parity required to control the central matching residual.
+> If the microscopic matching/complement map induces a coordinate-blind involution of the common percolation fixed point that commutes with Virasoro generators, then identity-family descendants are matching-even and thermal-family descendants are matching-odd.  The proposed x=21/4 spin-4 thermal quasiprimary therefore has precisely the parity required to control the central matching residual.  Within a single LCFT Jordan block, the same assumptions force the whole block to carry one matching parity rather than a triangularly sheared action.
 
 What would promote this further:
 
 - an explicit FK/Temperley-Lieb realization of `T` in the scaling state space;
 - the derivative-parity predictions of #48 passing prospectively;
 - self-matching/self-dual controls (#42/#44) showing the expected parity projection;
-- a consistent action on the Q=1 logarithmic module.
+- a consistent identification of the Q=1 indecomposable module and any multiplicity-space action.
