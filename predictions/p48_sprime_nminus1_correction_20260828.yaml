@@ -1,0 +1,33 @@
+format_version: 1
+status: frozen_before_N185_N265_target_scoring
+channel: P4_S_prime
+primary_law_unchanged: N^-5/4
+correction_model: "P4[Sprime] = N^(-5/4) * (A + B/N)"
+source:
+  data: P48-retrospective
+  training_N: [65, 85, 130]
+  covariance: synchronized_cross_size_GLS
+  A: 3.152857099000578
+  B: -88.03321330713617
+  se_A: 0.393648631743133
+  se_B: 28.105453649642055
+predictions:
+  185:
+    scaled_N_5_over_4: 2.6770018919349767
+    scaled_source_se: 0.24641162774047082
+    P4_S_prime: 0.003923593601402982
+    P4_S_prime_source_se: 0.00036115741599830305
+  265:
+    scaled_N_5_over_4: 2.8206562940679882
+    scaled_source_se: 0.2903523906239357
+    P4_S_prime: 0.0026381095543789495
+    P4_S_prime_source_se: 0.0002715614154949255
+scoring_order:
+  - original_issue_48_pure_power_package
+  - derivative_operator_ratio_competitors
+  - this_fixed_relative_1_over_N_correction_for_Sprime
+  - logarithmic_or_mixed_or_free_exponent_models
+notes:
+  - source uncertainties exclude prospective target sampling variance
+  - preserve full target and cross-channel covariance
+  - old N145_N170 agreement is retrospective design evidence only
