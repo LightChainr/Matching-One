@@ -126,7 +126,9 @@ def compute(
     max_abs = max(abs(weight) for weight in weights)
     weighted = None
     if values is not None:
-        weighted = mp.fsum(weight * value for weight, value in zip(weights, values, strict=True))
+        if len(weights) != len(values):
+            raise RuntimeError("weight and value counts differ")
+        weighted = mp.fsum(weight * value for weight, value in zip(weights, values))
 
     return Result(
         sizes=list(sizes),
@@ -177,7 +179,9 @@ def main() -> int:
     print("sizes:", " ".join(map(str, result.sizes)))
     print("cancel exponents:", ", ".join(result.cancel_exponents) or "none")
     print("weights:")
-    for size, weight in zip(result.sizes, result.weights, strict=True):
+    if len(result.sizes) != len(result.weights):
+        raise RuntimeError("size and weight counts differ")
+    for size, weight in zip(result.sizes, result.weights):
         print(f"  L={size}: {weight}")
     print("constraint residuals:", ", ".join(result.residuals))
     print("L1 noise factor:", result.l1_norm)
