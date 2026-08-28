@@ -90,6 +90,10 @@ const std::vector<PairDesign> kDesigns = {
     {130, 11, 3, 9, 7},
     {145, 12, 1, 9, 8},
     {170, 13, 1, 11, 7},
+    {185, 13, 4, 11, 8},
+    {265, 16, 3, 12, 11},
+    // Keep the prospective third doubling pair in Gaussian-lineage order.
+    {290, 13, 11, 17, 1},
 };
 
 int positive_mod(int value, int modulus) {
@@ -573,7 +577,8 @@ Options parse_options(int argc, char** argv) {
     if (options.threads < 0) throw std::invalid_argument("threads must be nonnegative");
     if (options.only_n != 0 && std::none_of(kDesigns.begin(), kDesigns.end(),
             [&](const PairDesign& design) { return design.n == options.only_n; })) {
-        throw std::invalid_argument("--n must be one of 65, 85, 130, 145, 170");
+        throw std::invalid_argument(
+            "--n must be one of 65, 85, 130, 145, 170, 185, 265, 290");
     }
     if (options.replica_offset > std::numeric_limits<std::uint64_t>::max() - options.samples) {
         throw std::invalid_argument("replica counter range overflows uint64");

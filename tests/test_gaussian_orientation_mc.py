@@ -59,6 +59,32 @@ class GaussianOrientationMCTest(unittest.TestCase):
         self.assertEqual(metadata["designs"][0]["first"], [13, 1])
         self.assertEqual(metadata["designs"][0]["second"], [11, 7])
 
+    def test_prospective_designs_preserve_frozen_order(self) -> None:
+        expected = {
+            185: ([13, 4], [11, 8]),
+            265: ([16, 3], [12, 11]),
+            # Issue #50 scores the N=290 target in Gaussian-lineage order.
+            290: ([13, 11], [17, 1]),
+        }
+        for n, (first, second) in expected.items():
+            with self.subTest(n=n):
+                prefix = Path(self.temp.name) / f"n{n}"
+                subprocess.run(
+                    [
+                        str(self.binary),
+                        "--samples", "20", "--batches", "2", "--n", str(n),
+                        "--seed", "23", "--threads", "1",
+                        "--output-prefix", str(prefix),
+                    ],
+                    check=True,
+                )
+                metadata = json.loads(
+                    prefix.with_suffix(".metadata.json").read_text(encoding="utf-8")
+                )
+                self.assertEqual(metadata["designs"][0]["N"], n)
+                self.assertEqual(metadata["designs"][0]["first"], first)
+                self.assertEqual(metadata["designs"][0]["second"], second)
+
     def test_reproducible_batches_and_sector_analysis(self) -> None:
         first = Path(self.temp.name) / "first"
         second = Path(self.temp.name) / "second"
