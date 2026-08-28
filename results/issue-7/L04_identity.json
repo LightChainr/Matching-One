@@ -1,0 +1,47 @@
+{
+  "L": 4,
+  "N": 16,
+  "degree": 16,
+  "coefficients": ["-1", "0", "0", "0", "8", "0", "32", "-64", "172", "-704", "1104", "-608", "-56", "128", "16", "-32", "6"],
+  "max_coefficient_bit_length": 11,
+  "wrapping_convention": {
+    "h": "horizontal (nonzero x winding)",
+    "c": "vertical/column (nonzero y winding)",
+    "e": "either (H or V)",
+    "b": "both (H and V)"
+  },
+  "cluster_form": "M_L(p) = N_L(p) - Nhat_L(1-p) - L^2 (p - 2 p^2 + p^4)",
+  "identities": {
+    "H": {
+      "identity": "R_G^H(p) - R_Gstar^H(1-p)",
+      "status": "PASS",
+      "first_mismatching_coefficient": null,
+      "coefficients": ["-1", "0", "0", "0", "8", "0", "32", "-64", "172", "-704", "1104", "-608", "-56", "128", "16", "-32", "6"],
+      "residual": ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]
+    },
+    "V": {
+      "identity": "R_G^V(p) - R_Gstar^V(1-p)",
+      "status": "PASS",
+      "first_mismatching_coefficient": null,
+      "coefficients": ["-1", "0", "0", "0", "8", "0", "32", "-64", "172", "-704", "1104", "-608", "-56", "128", "16", "-32", "6"],
+      "residual": ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]
+    },
+    "E": {
+      "identity": "R_G^E(p) - R_Gstar^E(1-p)",
+      "status": "PASS",
+      "first_mismatching_coefficient": null,
+      "coefficients": ["-1", "0", "0", "0", "8", "0", "32", "-64", "172", "-704", "1104", "-608", "-56", "128", "16", "-32", "6"],
+      "residual": ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]
+    },
+    "B": {
+      "identity": "R_G^B(p) - R_Gstar^B(1-p)",
+      "status": "PASS",
+      "first_mismatching_coefficient": null,
+      "coefficients": ["-1", "0", "0", "0", "8", "0", "32", "-64", "172", "-704", "1104", "-608", "-56", "128", "16", "-32", "6"],
+      "residual": ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]
+    }
+  },
+  "euler_mismatches": 0,
+  "identity": "PASS",
+  "first_mismatching_coefficient": null
+}
