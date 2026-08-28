@@ -147,7 +147,18 @@ def _variance(values: Sequence[float]) -> float:
 
 
 def _covariance(first: Sequence[float], second: Sequence[float]) -> float:
-    return statistics.covariance(first, second)
+    if len(first) != len(second) or len(first) < 2:
+        raise ValueError("covariance requires equal-length samples of size >=2")
+    first_mean = statistics.mean(first)
+    second_mean = statistics.mean(second)
+    return sum(
+        (left - first_mean) * (right - second_mean)
+        for left, right in zip(first, second)
+    ) / (len(first) - 1)
+
+
+def _correlation(first: Sequence[float], second: Sequence[float]) -> float:
+    return _covariance(first, second) / math.sqrt(_variance(first) * _variance(second))
 
 
 def _solve(matrix: Sequence[Sequence[float]], rhs: Sequence[float]) -> list[float]:
@@ -389,9 +400,7 @@ def run_pilot(samples: int, train_samples: int, seed: int) -> tuple[dict, list[d
                 "variance_ratio_vs_independent": _variance(equal) / baseline_variance,
                 "variance_gain_vs_independent": baseline_variance / _variance(equal),
                 "child_parent_covariance": _covariance(evaluation_child, equal_parent),
-                "child_parent_correlation": statistics.correlation(
-                    evaluation_child, equal_parent
-                ),
+                "child_parent_correlation": _correlation(evaluation_child, equal_parent),
                 **_paired_variance_comparison(equal, baseline),
             },
             "trained_orderstat_average": {
@@ -400,7 +409,7 @@ def run_pilot(samples: int, train_samples: int, seed: int) -> tuple[dict, list[d
                 "variance_ratio_vs_independent": _variance(trained) / baseline_variance,
                 "variance_gain_vs_independent": baseline_variance / _variance(trained),
                 "child_parent_covariance": _covariance(evaluation_child, trained_parent),
-                "child_parent_correlation": statistics.correlation(
+                "child_parent_correlation": _correlation(
                     evaluation_child, trained_parent
                 ),
                 **_paired_variance_comparison(trained, baseline),
@@ -415,7 +424,7 @@ def run_pilot(samples: int, train_samples: int, seed: int) -> tuple[dict, list[d
                     "child_parent_covariance": _covariance(
                         evaluation_child, parent_values[order][train_samples:]
                     ),
-                    "child_parent_correlation": statistics.correlation(
+                    "child_parent_correlation": _correlation(
                         evaluation_child, parent_values[order][train_samples:]
                     ),
                     **_paired_variance_comparison(values, baseline),
