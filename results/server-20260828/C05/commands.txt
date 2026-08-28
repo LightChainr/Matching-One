@@ -1,0 +1,2 @@
+PYTHONDONTWRITEBYTECODE=1 python3 scripts/threshold_rank_nz.py --geometry axis --L 8 --samples 100000 --seed 20260828 --counter-start 0 --output-dir results/server-20260828/C05/axis_L8_pilot
+python3 scripts/analyze_threshold_ranks.py --input-dir results/server-20260828/C05/axis_L8_pilot --p 0.592746050790 --dps 50 --json results/server-20260828/C05/axis_L8_pilot/derived_summary.json

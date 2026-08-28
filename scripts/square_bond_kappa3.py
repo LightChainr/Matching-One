@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Exact and CPU Monte Carlo kappa_3 control for square bond percolation.
+"""Exact and CPU Monte Carlo kappa_3 controls at p=1/2.
 
 The configuration observable is the difference between the event that open
 primal bonds wrap a square torus and the event that closed dual bonds wrap the
@@ -7,10 +7,17 @@ dual torus.  Its expectation is the finite-volume matching function.  At the
 exact threshold p=1/2, ``kappa3_half_score`` converts one Bernoulli ensemble
 into estimates of the first and third derivatives without finite differences.
 
+The second supported control is triangular-lattice site percolation on the
+natural 60-degree rhombic torus.  It uses quotient-coordinate periods
+``(L,0),(0,L)`` in the triangular basis and undirected neighbour steps
+``(1,0),(0,1),(1,-1)``.  The lattice is self-matching, so its observable is
+black-site wrapping minus complementary white-site wrapping on the same graph.
+
 Monte Carlo work is divided into independently seeded blocks.  The block
 seeds, rather than worker scheduling, determine the random stream, so changing
-``--workers`` does not change the output.  The same blocks provide a
-delete-one-block jackknife estimate of the ratio uncertainty.
+``--workers`` does not change the sampled blocks or numerical estimates.  The
+same blocks provide a delete-one-block jackknife estimate of the ratio
+uncertainty.
 """
 
 from __future__ import annotations
@@ -33,6 +40,9 @@ from torus_homology import HomologyUnionFind
 
 
 MASK64 = (1 << 64) - 1
+SQUARE_BOND_MODEL = "square_bond_square_torus"
+TRIANGULAR_SITE_MODEL = "triangular_site_rhombic_torus"
+MODEL_CHOICES = (SQUARE_BOND_MODEL, TRIANGULAR_SITE_MODEL)
 
 
 @dataclass(frozen=True)
@@ -41,6 +51,16 @@ class BondPair:
 
     primal: tuple[int, int, int, int]
     dual: tuple[int, int, int, int]
+
+
+@dataclass(frozen=True)
+class SiteEdge:
+    """One lifted nearest-neighbour edge of the triangular lattice."""
+
+    i: int
+    j: int
+    dx: int
+    dy: int
 
 
 @dataclass(frozen=True)
@@ -104,6 +124,32 @@ def square_bond_pairs(length: int) -> tuple[BondPair, ...]:
     return tuple(pairs)
 
 
+def triangular_site_edges(length: int) -> tuple[SiteEdge, ...]:
+    """Return a triangular lattice on a natural 60-degree rhombic torus.
+
+    Coordinates are coefficients of the two 60-degree triangular-lattice
+    basis vectors.  One orientation from each of the three undirected edge
+    families is retained.  For L=2, distinct lifted edges can connect the same
+    quotient vertices; keeping those periodic images is required for correct
+    homology detection.
+    """
+
+    if length < 2:
+        raise ValueError("L must be at least 2")
+    steps = ((1, 0), (0, 1), (1, -1))
+    return tuple(
+        SiteEdge(
+            i=_vertex_id(length, x, y),
+            j=_vertex_id(length, x + dx, y + dy),
+            dx=dx,
+            dy=dy,
+        )
+        for y in range(length)
+        for x in range(length)
+        for dx, dy in steps
+    )
+
+
 def _has_wrapping(union_find: HomologyUnionFind) -> bool:
     return any(
         union_find.parent[root] == root and bool(union_find.basis[root])
@@ -125,22 +171,87 @@ def wrapping_difference(length: int, mask: int, pairs: Sequence[BondPair]) -> in
     return int(_has_wrapping(primal)) - int(_has_wrapping(dual))
 
 
+def triangular_wrapping_difference(
+    length: int, mask: int, edges: Sequence[SiteEdge]
+) -> int:
+    """Return black-site wrapping minus complementary white-site wrapping."""
+
+    vertex_count = length * length
+    black = HomologyUnionFind(vertex_count, (length, length))
+    white = HomologyUnionFind(vertex_count, (length, length))
+    for edge in edges:
+        black_i = bool((mask >> edge.i) & 1)
+        black_j = bool((mask >> edge.j) & 1)
+        if black_i and black_j:
+            black.add_edge(edge.i, edge.j, edge.dx, edge.dy)
+        elif not black_i and not black_j:
+            white.add_edge(edge.i, edge.j, edge.dx, edge.dy)
+    return int(_has_wrapping(black)) - int(_has_wrapping(white))
+
+
+def _geometry_metadata(model: str, length: int) -> dict[str, object]:
+    if model == SQUARE_BOND_MODEL:
+        return {
+            "torus_shape": "90_degree_square",
+            "period_basis_lattice_coordinates": [[length, 0], [0, length]],
+            "edge_convention": (
+                "2*L^2 horizontal/vertical primal bonds, each paired with its "
+                "crossing complementary dual bond"
+            ),
+            "observable": "open_primal_wrap_minus_closed_dual_wrap",
+        }
+    if model == TRIANGULAR_SITE_MODEL:
+        return {
+            "torus_shape": "60_degree_rhombus",
+            "period_basis_lattice_coordinates": [[length, 0], [0, length]],
+            "edge_convention": (
+                "triangular basis with positive undirected steps "
+                "(1,0),(0,1),(1,-1); periodic lifted duplicates retained"
+            ),
+            "observable": "black_site_wrap_minus_complementary_white_site_wrap",
+        }
+    raise ValueError(f"unsupported model {model!r}")
+
+
+def _configuration_setup(model: str, length: int) -> tuple[int, object]:
+    if model == SQUARE_BOND_MODEL:
+        pairs = square_bond_pairs(length)
+        return len(pairs), pairs
+    if model == TRIANGULAR_SITE_MODEL:
+        edges = triangular_site_edges(length)
+        return length * length, edges
+    raise ValueError(f"unsupported model {model!r}")
+
+
+def _configuration_observable(
+    model: str, length: int, mask: int, geometry: object
+) -> int:
+    if model == SQUARE_BOND_MODEL:
+        return wrapping_difference(length, mask, geometry)  # type: ignore[arg-type]
+    if model == TRIANGULAR_SITE_MODEL:
+        return triangular_wrapping_difference(  # type: ignore[arg-type]
+            length, mask, geometry
+        )
+    raise ValueError(f"unsupported model {model!r}")
+
+
 def _fraction_text(value: Fraction) -> str:
     return f"{value.numerator}/{value.denominator}"
 
 
-def exact_estimate(length: int) -> dict[str, object]:
+def exact_estimate(
+    length: int, model: str = SQUARE_BOND_MODEL
+) -> dict[str, object]:
     """Exhaustively enumerate a tiny square torus at p=1/2."""
 
-    pairs = square_bond_pairs(length)
-    bond_count = len(pairs)
-    if bond_count > 24:
+    variable_count, geometry = _configuration_setup(model, length)
+    if variable_count > 24:
         raise ValueError(
-            f"exact enumeration for L={length} requires 2^{bond_count} states; "
-            "the safety limit is 24 bonds"
+            f"exact enumeration for {model} L={length} requires "
+            f"2^{variable_count} states; the safety limit is 24 variables"
         )
 
-    configuration_count = 1 << bond_count
+    configuration_count = 1 << variable_count
     d_sum = 0
     d2_sum = 0
     first_sum = 0
@@ -150,9 +261,9 @@ def exact_estimate(length: int) -> dict[str, object]:
     first_third_sum = 0
     for mask in range(configuration_count):
         occupied = bin(mask).count("1")
-        observable = wrapping_difference(length, mask, pairs)
-        first = first_score(bond_count, occupied) * observable
-        third = third_weight(bond_count, occupied) * observable
+        observable = _configuration_observable(model, length, mask, geometry)
+        first = first_score(variable_count, occupied) * observable
+        third = third_weight(variable_count, occupied) * observable
         d_sum += observable
         d2_sum += observable * observable
         first_sum += first
@@ -175,12 +286,16 @@ def exact_estimate(length: int) -> dict[str, object]:
         Fraction(first_third_sum, configuration_count)
         - first_derivative * third_derivative
     )
+    first_score_variance = population_variance(first_sum, first2_sum)
+    third_score_variance = population_variance(third_sum, third2_sum)
     return {
-        "model": "square_bond_square_torus",
+        "model": model,
         "mode": "exact",
         "L": length,
         "vertices": length * length,
-        "bernoulli_variables": bond_count,
+        "bernoulli_variables": variable_count,
+        "p": 0.5,
+        "exact_threshold": "1/2",
         "configurations": configuration_count,
         "mean_observable": float(Fraction(d_sum, configuration_count)),
         "first_derivative": float(first_derivative),
@@ -193,11 +308,16 @@ def exact_estimate(length: int) -> dict[str, object]:
             "kappa3": _fraction_text(kappa3),
         },
         "per_configuration_score_variance": {
-            "first": float(population_variance(first_sum, first2_sum)),
-            "third": float(population_variance(third_sum, third2_sum)),
+            "first": float(first_score_variance),
+            "third": float(third_score_variance),
             "first_third_covariance": float(covariance),
         },
+        "per_configuration_score_covariance_matrix": [
+            [float(first_score_variance), float(covariance)],
+            [float(covariance), float(third_score_variance)],
+        ],
         "jackknife": None,
+        **_geometry_metadata(model, length),
     }
 
 
@@ -208,20 +328,19 @@ def _splitmix64(value: int) -> int:
     return (value ^ (value >> 31)) & MASK64
 
 
-def _simulate_block(task: tuple[int, int, int]) -> BlockSums:
-    length, samples, seed = task
-    pairs = square_bond_pairs(length)
-    bond_count = len(pairs)
+def _simulate_block(task: tuple[str, int, int, int]) -> BlockSums:
+    model, length, samples, seed = task
+    variable_count, geometry = _configuration_setup(model, length)
     rng = random.Random(seed)
     d_sum = d2_sum = 0
     first_sum = first2_sum = 0
     third_sum = third2_sum = first_third_sum = 0
     for _ in range(samples):
-        mask = rng.getrandbits(bond_count)
+        mask = rng.getrandbits(variable_count)
         occupied = bin(mask).count("1")
-        observable = wrapping_difference(length, mask, pairs)
-        first = first_score(bond_count, occupied) * observable
-        third = third_weight(bond_count, occupied) * observable
+        observable = _configuration_observable(model, length, mask, geometry)
+        first = first_score(variable_count, occupied) * observable
+        third = third_weight(variable_count, occupied) * observable
         d_sum += observable
         d2_sum += observable * observable
         first_sum += first
@@ -307,8 +426,9 @@ def monte_carlo_estimate(
     blocks: int,
     seed: int,
     workers: int,
+    model: str = SQUARE_BOND_MODEL,
 ) -> dict[str, object]:
-    """Estimate square-bond kappa_3 with independent reproducible blocks."""
+    """Estimate exact-threshold kappa_3 with reproducible independent blocks."""
 
     if samples <= 0:
         raise ValueError("samples must be positive")
@@ -316,11 +436,11 @@ def monte_carlo_estimate(
         raise ValueError("samples must be divisible by at least two blocks")
     if workers <= 0:
         raise ValueError("workers must be positive")
-    square_bond_pairs(length)  # Validate before creating worker processes.
+    variable_count, _geometry = _configuration_setup(model, length)
 
     per_block = samples // blocks
     tasks = [
-        (length, per_block, _splitmix64(seed + block_index))
+        (model, length, per_block, _splitmix64(seed + block_index))
         for block_index in range(blocks)
     ]
     if workers == 1:
@@ -346,15 +466,18 @@ def monte_carlo_estimate(
         total.observable_sum, total.observable_square_sum, samples
     )
     return {
-        "model": "square_bond_square_torus",
+        "model": model,
         "mode": "monte_carlo",
         "L": length,
         "vertices": length * length,
-        "bernoulli_variables": 2 * length * length,
+        "bernoulli_variables": variable_count,
+        "p": 0.5,
+        "exact_threshold": "1/2",
         "samples": samples,
         "blocks": blocks,
+        "workers": workers,
         "seed": seed,
-        "block_seeds": [task[2] for task in tasks],
+        "block_seeds": [task[3] for task in tasks],
         "mean_observable": total.observable_sum / samples,
         "mean_observable_standard_error": math.sqrt(observable_variance / samples),
         "first_derivative": first_mean,
@@ -364,14 +487,21 @@ def monte_carlo_estimate(
         "third_derivative_variance": third_variance / samples,
         "third_derivative_standard_error": math.sqrt(third_variance / samples),
         "first_third_score_covariance": covariance,
+        "derivative_estimator_covariance": covariance / samples,
+        "derivative_estimator_covariance_matrix": [
+            [first_variance / samples, covariance / samples],
+            [covariance / samples, third_variance / samples],
+        ],
         "kappa3": kappa3,
         "jackknife": _jackknife(total, block_results),
         "block_sums": [asdict(block) for block in block_results],
+        **_geometry_metadata(model, length),
     }
 
 
 def _parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--model", choices=MODEL_CHOICES, default=SQUARE_BOND_MODEL)
     parser.add_argument("--mode", choices=("exact", "monte-carlo"), required=True)
     parser.add_argument("--sizes", nargs="+", type=int, required=True, metavar="L")
     parser.add_argument("--samples", type=int, default=10000)
@@ -390,7 +520,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     results: list[dict[str, object]] = []
     for length in args.sizes:
         if args.mode == "exact":
-            results.append(exact_estimate(length))
+            results.append(exact_estimate(length, args.model))
         else:
             geometry_seed = _splitmix64(args.seed + length * 1_000_003)
             results.append(
@@ -400,6 +530,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
                     args.blocks,
                     geometry_seed,
                     args.workers,
+                    args.model,
                 )
             )
 
@@ -409,10 +540,9 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         "random_generator": "Python random.Random (MT19937), independent SplitMix64 block seeds",
         "python": platform.python_version(),
         "platform": platform.platform(),
-        "implemented_models": ["square_bond_square_torus"],
+        "implemented_models": list(MODEL_CHOICES),
         "unimplemented_models": [
             "union_jack_site_square_torus",
-            "triangular_site_rhombic_torus",
         ],
         "results": results,
     }

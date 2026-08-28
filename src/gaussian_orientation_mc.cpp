@@ -5,6 +5,7 @@
 // Two representations of the same N use identical counter-keyed occupancies.
 
 #include <algorithm>
+#include <array>
 #include <chrono>
 #include <cmath>
 #include <cstdint>
@@ -43,9 +44,27 @@ struct Winding {
 };
 
 struct Channels {
+    bool direction_0 = false;
+    bool direction_1 = false;
     bool either = false;
+    bool both = false;
     bool cross = false;
 };
+
+const std::array<const char*, 5> kChannelNames = {
+    "cross", "both", "either", "direction_0", "direction_1",
+};
+
+bool channel_value(const Channels& channels, std::size_t index) {
+    switch (index) {
+        case 0: return channels.cross;
+        case 1: return channels.both;
+        case 2: return channels.either;
+        case 3: return channels.direction_0;
+        case 4: return channels.direction_1;
+        default: throw std::logic_error("invalid channel index");
+    }
+}
 
 struct Geometry {
     int n;
@@ -165,7 +184,9 @@ class HomologyUnionFind {
         basis_[fj.root].clear();
     }
 
-    int rank(int x) { return static_cast<int>(basis_[find(x).root].size()); }
+    const std::vector<Winding>& component_basis(int x) {
+        return basis_[find(x).root];
+    }
 
   private:
     int n_;
@@ -213,11 +234,17 @@ Channels classify(const std::vector<std::uint8_t>& active, const std::vector<Edg
     Channels output;
     for (int vertex = 0; vertex < static_cast<int>(active.size()); ++vertex) {
         if (!active[vertex]) continue;
-        const int rank = union_find.rank(vertex);
-        output.either = output.either || rank > 0;
-        output.cross = output.cross || rank == 2;
-        if (output.cross) break;
+        const std::vector<Winding>& basis = union_find.component_basis(vertex);
+        output.cross = output.cross || basis.size() == 2;
+        for (const Winding winding : basis) {
+            output.direction_0 = output.direction_0 || winding.x != 0;
+            output.direction_1 = output.direction_1 || winding.y != 0;
+        }
     }
+    output.either = output.direction_0 || output.direction_1;
+    // Deliberately configuration-level: the two directions may occur in
+    // distinct rank-one components.  Cross remains a rank-two component event.
+    output.both = output.direction_0 && output.direction_1;
     return output;
 }
 
@@ -265,9 +292,14 @@ Channels classify_bfs_reference(const Geometry& geometry,
                 }
             }
         }
-        output.either = output.either || !basis.empty();
         output.cross = output.cross || basis.size() == 2;
+        for (const Winding winding : basis) {
+            output.direction_0 = output.direction_0 || winding.x != 0;
+            output.direction_1 = output.direction_1 || winding.y != 0;
+        }
     }
+    output.either = output.direction_0 || output.direction_1;
+    output.both = output.direction_0 && output.direction_1;
     return output;
 }
 
@@ -296,16 +328,31 @@ void self_test() {
         }
         HomologyUnionFind primal(geometry.n, a, b), matching(geometry.n, a, b);
         const std::uint64_t configurations = 1ULL << geometry.n;
-        std::vector<std::uint8_t> active(geometry.n);
+        std::vector<std::uint8_t> active(geometry.n), complement(geometry.n);
         for (std::uint64_t mask = 0; mask < configurations; ++mask) {
-            for (int site = 0; site < geometry.n; ++site) active[site] = (mask >> site) & 1U;
+            for (int site = 0; site < geometry.n; ++site) {
+                active[site] = (mask >> site) & 1U;
+                complement[site] = !active[site];
+            }
             const Channels p = classify(active, geometry.primal_edges, primal);
             const Channels p_ref = classify_bfs_reference(geometry, active, geometry.primal_edges);
             const Channels m = classify(active, geometry.matching_edges, matching);
             const Channels m_ref = classify_bfs_reference(geometry, active, geometry.matching_edges);
-            if (p.either != p_ref.either || p.cross != p_ref.cross ||
-                m.either != m_ref.either || m.cross != m_ref.cross) {
+            if (p.direction_0 != p_ref.direction_0 || p.direction_1 != p_ref.direction_1 ||
+                p.either != p_ref.either || p.both != p_ref.both || p.cross != p_ref.cross ||
+                m.direction_0 != m_ref.direction_0 || m.direction_1 != m_ref.direction_1 ||
+                m.either != m_ref.either || m.both != m_ref.both || m.cross != m_ref.cross) {
                 throw std::runtime_error("union-find/BFS exact configuration mismatch");
+            }
+            const Channels white_matching = classify(complement, geometry.matching_edges, matching);
+            const int reference_difference = static_cast<int>(channel_value(p, 0)) -
+                                             static_cast<int>(channel_value(white_matching, 0));
+            for (std::size_t channel = 1; channel < kChannelNames.size(); ++channel) {
+                const int difference = static_cast<int>(channel_value(p, channel)) -
+                                       static_cast<int>(channel_value(white_matching, channel));
+                if (difference != reference_difference) {
+                    throw std::runtime_error("matching-channel configuration identity failed");
+                }
             }
         }
     }
@@ -314,13 +361,14 @@ void self_test() {
     if (value != counter_uniform(17, 65, 23, 5) || !(value >= 0.0 && value < 1.0)) {
         throw std::runtime_error("counter RNG regression failed");
     }
-    std::cout << "self-test passed: exhaustive N=5,13 union-find/BFS; cyclic labels; counter RNG\n";
+    std::cout << "self-test passed: exhaustive N=5,13 union-find/BFS and matching channels; "
+                 "cyclic labels; counter RNG\n";
 }
 
 struct Options {
     std::uint64_t samples = 200000;
     int batches = 40;
-    double p_ref = 0.59274605;
+    double p_ref = 0.592746050790;
     std::uint64_t seed = 20260828;
     int threads = 0;
     int only_n = 0;
@@ -335,7 +383,7 @@ struct Options {
     out << "Usage: " << program << " [options]\n"
         << "  --samples N          replicas per same-N pair (default 200000)\n"
         << "  --batches B          equal batches (default 40)\n"
-        << "  --p-ref P            frozen site probability (default 0.59274605)\n"
+        << "  --p-ref P            frozen site probability (default 0.592746050790)\n"
         << "  --seed S             unsigned 64-bit seed (default 20260828)\n"
         << "  --replica-offset K   first RNG replica counter (default 0)\n"
         << "  --threads T          OpenMP threads; 0 uses runtime default\n"
@@ -399,14 +447,8 @@ Options parse_options(int argc, char** argv) {
 
 struct BatchCounts {
     std::uint64_t samples = 0;
-    std::uint64_t first_primal_either = 0;
-    std::uint64_t first_matching_either = 0;
-    std::uint64_t second_primal_either = 0;
-    std::uint64_t second_matching_either = 0;
-    std::uint64_t first_primal_cross = 0;
-    std::uint64_t first_matching_cross = 0;
-    std::uint64_t second_primal_cross = 0;
-    std::uint64_t second_matching_cross = 0;
+    // estimator order: first primal, first matching, second primal, second matching.
+    std::array<std::array<std::uint64_t, 5>, 4> sums{};
 };
 
 std::string json_escape(const std::string& value) {
@@ -466,31 +508,28 @@ void run_design(const PairDesign& design, const Options& options,
             const Channels fm = classify(white, first.matching_edges, f_matching);
             const Channels sp = classify(black, second.primal_edges, s_primal);
             const Channels sm = classify(white, second.matching_edges, s_matching);
-            local.first_primal_either += fp.either;
-            local.first_matching_either += fm.either;
-            local.second_primal_either += sp.either;
-            local.second_matching_either += sm.either;
-            local.first_primal_cross += fp.cross;
-            local.first_matching_cross += fm.cross;
-            local.second_primal_cross += sp.cross;
-            local.second_matching_cross += sm.cross;
+            for (std::size_t channel = 0; channel < kChannelNames.size(); ++channel) {
+                local.sums[0][channel] += channel_value(fp, channel);
+                local.sums[1][channel] += channel_value(fm, channel);
+                local.sums[2][channel] += channel_value(sp, channel);
+                local.sums[3][channel] += channel_value(sm, channel);
+            }
         }
         counts[batch] = local;
     }
 
-    auto write_row = [&](int batch, const char* channel, std::uint64_t fp,
-                         std::uint64_t fm, std::uint64_t sp, std::uint64_t sm) {
+    auto write_row = [&](int batch, std::size_t channel) {
+        const BatchCounts& row = counts[batch];
         batches_file << design.n << ',' << batch << ',' << counts[batch].samples << ','
-                     << std::setprecision(17) << options.p_ref << ',' << channel << ','
+                     << std::setprecision(17) << options.p_ref << ',' << kChannelNames[channel] << ','
                      << design.a1 << ',' << design.b1 << ',' << design.a2 << ',' << design.b2
-                     << ',' << fp << ',' << fm << ',' << sp << ',' << sm << '\n';
+                     << ',' << row.sums[0][channel] << ',' << row.sums[1][channel]
+                     << ',' << row.sums[2][channel] << ',' << row.sums[3][channel] << '\n';
     };
     for (int batch = 0; batch < options.batches; ++batch) {
-        const BatchCounts& row = counts[batch];
-        write_row(batch, "either", row.first_primal_either, row.first_matching_either,
-                  row.second_primal_either, row.second_matching_either);
-        write_row(batch, "cross", row.first_primal_cross, row.first_matching_cross,
-                  row.second_primal_cross, row.second_matching_cross);
+        for (std::size_t channel = 0; channel < kChannelNames.size(); ++channel) {
+            write_row(batch, channel);
+        }
     }
     std::cout << "completed N=" << design.n << " pair (" << design.a1 << ',' << design.b1
               << ")/ (" << design.a2 << ',' << design.b2 << ") samples=" << options.samples
@@ -550,7 +589,8 @@ int run(int argc, char** argv) {
              << options.replica_offset + options.samples << ",\n"
              << "  \"rng\": \"stateless SplitMix64-derived mapping (seed,N,replica,cyclic-site)\",\n"
              << "  \"coupling\": \"same cyclic labels j in Z/NZ share U_j across representations\",\n"
-             << "  \"channels\": [\"either\", \"cross\"],\n"
+             << "  \"channels\": [\"cross\", \"both\", \"either\", "
+                "\"direction_0\", \"direction_1\"],\n"
              << "  \"elapsed_seconds\": " << seconds << ",\n"
              << "  \"designs\": [\n";
     bool first_row = true;

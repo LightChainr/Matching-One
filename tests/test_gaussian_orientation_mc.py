@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import csv
 import json
 import os
 from pathlib import Path
@@ -39,6 +40,7 @@ class GaussianOrientationMCTest(unittest.TestCase):
             [str(self.binary), "--self-test"], check=True, text=True, capture_output=True
         )
         self.assertIn("exhaustive N=5,13", completed.stdout)
+        self.assertIn("matching channels", completed.stdout)
 
     def test_reproducible_batches_and_sector_analysis(self) -> None:
         first = Path(self.temp.name) / "first"
@@ -64,20 +66,25 @@ class GaussianOrientationMCTest(unittest.TestCase):
 
         analysis_json = Path(self.temp.name) / "analysis.json"
         analysis_csv = Path(self.temp.name) / "analysis.csv"
+        covariance_json = Path(self.temp.name) / "covariance.json"
+        frozen_weights = Path(self.temp.name) / "frozen_weights.json"
         subprocess.run(
             [
                 sys.executable, str(ROOT / "scripts" / "analyze_gaussian_orientation_mc.py"),
                 "--batches", str(first) + ".batches.csv",
                 "--metadata", str(first) + ".metadata.json",
                 "--json", str(analysis_json), "--csv", str(analysis_csv),
+                "--covariance-json", str(covariance_json),
+                "--freeze-gls", str(frozen_weights),
             ],
             check=True,
         )
         payload = json.loads(analysis_json.read_text(encoding="utf-8"))
         summaries = payload["summaries"]
-        self.assertEqual(len(summaries), 10)  # two channels x five sectors
+        channels = ("cross", "both", "either", "direction_0", "direction_1")
+        self.assertEqual(len(summaries), 25)  # five channels x five sectors
         by_key = {(row["channel"], row["sector"]): row for row in summaries}
-        for channel in ("either", "cross"):
+        for channel in channels:
             odd = by_key[(channel, "odd")]
             matching_function = by_key[(channel, "matching_function")]
             self.assertAlmostEqual(
@@ -88,6 +95,77 @@ class GaussianOrientationMCTest(unittest.TestCase):
                 matching_function["difference_batch_se"],
                 2 * odd["difference_batch_se"],
             )
+        with Path(str(first) + ".batches.csv").open(newline="", encoding="utf-8") as handle:
+            batch_rows = list(csv.DictReader(handle))
+        self.assertEqual({row["channel"] for row in batch_rows}, set(channels))
+        by_batch = {}
+        for row in batch_rows:
+            by_batch.setdefault(int(row["batch"]), []).append(row)
+        for rows in by_batch.values():
+            first_differences = {
+                int(row["first_primal_sum"]) - int(row["first_matching_sum"])
+                for row in rows
+            }
+            second_differences = {
+                int(row["second_primal_sum"]) - int(row["second_matching_sum"])
+                for row in rows
+            }
+            self.assertEqual(len(first_differences), 1)
+            self.assertEqual(len(second_differences), 1)
+
+        covariance = json.loads(covariance_json.read_text(encoding="utf-8"))["by_N"]["65"]
+        self.assertEqual(len(covariance["raw_orientation_channel_matrix"]["labels"]), 20)
+        self.assertEqual(len(covariance["orientation_sector_effect_matrix"]["labels"]), 25)
+        frozen = json.loads(frozen_weights.read_text(encoding="utf-8"))
+        self.assertEqual(frozen["channel_names"], list(channels))
+        self.assertAlmostEqual(sum(frozen["by_N"]["65"]["weights"]), 1.0)
+        self.assertTrue(frozen["by_N"]["65"]["all_D_channels_identical_batchwise"])
+        self.assertEqual(frozen["by_N"]["65"]["weights"], [0.2] * 5)
+
+        overlap = subprocess.run(
+            [
+                sys.executable, str(ROOT / "scripts" / "analyze_gaussian_orientation_mc.py"),
+                "--batches", str(first) + ".batches.csv",
+                "--metadata", str(first) + ".metadata.json",
+                "--json", str(Path(self.temp.name) / "overlap_analysis.json"),
+                "--csv", str(Path(self.temp.name) / "overlap_sectors.csv"),
+                "--frozen-gls", str(frozen_weights),
+                "--evaluation-json", str(Path(self.temp.name) / "overlap_eval.json"),
+                "--evaluation-csv", str(Path(self.temp.name) / "overlap_eval.csv"),
+            ],
+            text=True,
+            capture_output=True,
+        )
+        self.assertNotEqual(overlap.returncode, 0)
+        self.assertIn("overlap the pilot", overlap.stderr)
+
+        evaluation = Path(self.temp.name) / "evaluation"
+        evaluation_common = list(common)
+        evaluation_common += ["--replica-offset", "400"]
+        subprocess.run(
+            [str(self.binary), *evaluation_common, "--output-prefix", str(evaluation)],
+            check=True,
+        )
+        evaluation_json = Path(self.temp.name) / "evaluation.json"
+        evaluation_csv = Path(self.temp.name) / "evaluation.csv"
+        subprocess.run(
+            [
+                sys.executable, str(ROOT / "scripts" / "analyze_gaussian_orientation_mc.py"),
+                "--batches", str(evaluation) + ".batches.csv",
+                "--metadata", str(evaluation) + ".metadata.json",
+                "--json", str(Path(self.temp.name) / "evaluation_analysis.json"),
+                "--csv", str(Path(self.temp.name) / "evaluation_sectors.csv"),
+                "--frozen-gls", str(frozen_weights),
+                "--evaluation-json", str(evaluation_json),
+                "--evaluation-csv", str(evaluation_csv),
+            ],
+            check=True,
+        )
+        evaluated = json.loads(evaluation_json.read_text(encoding="utf-8"))["by_N"]["65"]
+        self.assertEqual(evaluated["target"], "orientation_difference")
+        ratio = evaluated["estimators"]["equal_weight"]["variance_reduction_vs_optimized"]
+        self.assertAlmostEqual(ratio, 1.0, places=10)
+        self.assertTrue(evaluation_csv.exists())
         self.assertTrue(analysis_csv.exists())
 
 

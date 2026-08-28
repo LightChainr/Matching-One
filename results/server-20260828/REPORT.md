@@ -40,15 +40,21 @@ validation span:    3.8416220260837e-11
 The frozen fit then predicted widths 19--21 with:
 
 ```text
-final-tail RMSE:          1.3775763431649e-11
-maximum absolute error:   1.9374735274555e-11
-training-only intercept:  0.59274605094603179333564156705784225
+final-tail RMSE:          1.3775861250986e-11
+maximum absolute error:   1.9374870639209e-11
+training-only intercept:  0.59274605094603206266439366806726549
 ```
 
 This is an out-of-sample finite-width prediction result, not a statistical
 confidence interval for the infinite-lattice threshold. The full selection
 record is `issue-5-summary.json`; all 54 raw JSON files, logs, and the run
 manifest are under `issue-5-grid/`.
+
+The final summary was regenerated after fixing a precision-ordering defect:
+the selected 160-digit precision is now activated before decimal CSV strings
+are parsed into `mp.mpf`. Model selection and the scientific conclusion are
+unchanged. The corrected intercept is higher by `2.6933e-16`; repository
+history preserves the superseded output.
 
 ## Exact matching checks
 
@@ -196,8 +202,30 @@ A weighted fixed-`L^-3/2` fit on `L=4,6,8,12` predicts the held-out `L=16`
 point within `1.55` standard errors. Fitting all five Monte Carlo sizes gives
 an intercept near `-1.649 +/- 0.023` from statistical errors alone, so `-5/3`
 is retained but neither established nor sharply tested. Union-jack and
-triangular-site controls remain explicitly unimplemented; no universality or
-rational-value claim is made from the square-bond sequence alone.
+other controls remained unimplemented in this first sequence; no universality
+or rational-value claim is made from the square-bond sequence alone.
 
-The final combined local and ARM-server regression suite contains 30 tests;
-all 30 passed.
+## Master-queue C01--C07 follow-up
+
+- **C01/C02:** the five prescribed wrapping channels are now retained with
+  full covariance. A fresh non-overlapping 2-million evaluation at `N=65,85`
+  is compatible with the earlier 30-million matching-function signal, but the
+  proposed matching-even dominance is not supported and held-out multi-angle
+  confirmation remains necessary.
+- **C03:** all five matching-odd channels are identical configuration by
+  configuration. Frozen GLS weights give exactly `1.0x` variance reduction at
+  `N=65,85`; this GPU gate fails for a structural reason, not lack of samples.
+- **C04:** a triangular-site self-matching `p=1/2` control now passes exact
+  `L=2,3,4` regressions. A 300,000-replica sequence through `L=32` validates
+  the derivative pipeline but does not determine the correction exponent or
+  establish `kappa3=-5/3`.
+- **C05:** the threshold-rank reference freezes `K_minus/K_plus` conventions,
+  reconstructs `M`, `M'`, and the root from integer histograms, and completed
+  an axis `L=8`, 100,000-permutation ARM pilot. Its 83.85-second runtime makes
+  a C++/GPU port preferable before multi-size production.
+- **C07:** leakage-safe Stage A selected polynomial `F` degree 4 with
+  `n_min=9`. Padé `[2/2]` was worse; both retained the positive, increasing
+  signed errors at widths 19--21. Rational corrections did not cure the drift.
+
+The final local and Python 3.9/AArch64 server regression suites each contain
+42 tests; all 42 passed in both environments.

@@ -101,8 +101,8 @@ class ReferenceRegressionTests(unittest.TestCase):
                 self.assertEqual(new_channels.max_rank, old_channels.max_rank)
                 self.assertEqual(new_channels.cross, old_channels.cross)
 
-    def test_axis_l2_exhaustive_regression(self) -> None:
-        self._compare_reference(axis_geometry(2), axis_integer_torus(2))
+    def test_axis_l3_exhaustive_regression(self) -> None:
+        self._compare_reference(axis_geometry(3), axis_integer_torus(3))
 
     def test_diamond_l2_exhaustive_regression(self) -> None:
         self._compare_reference(diamond_geometry(2), diamond_integer_torus(2))

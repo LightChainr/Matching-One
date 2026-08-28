@@ -16,8 +16,12 @@ import math
 from pathlib import Path
 from typing import Dict, List, Tuple
 
+from control_variate_estimator import minimum_variance_weights, sample_covariance
+
 
 BatchKey = Tuple[int, str, int]
+CHANNELS = ("cross", "both", "either", "direction_0", "direction_1")
+SECTORS = ("primal", "matching", "even", "odd", "matching_function")
 
 
 def mean_se(values: List[float]) -> Tuple[float, float]:
@@ -50,7 +54,7 @@ def read_rows(path: Path) -> Tuple[Dict[BatchKey, Dict[str, int]], Dict[int, Tup
             n = int(raw["n"])
             batch = int(raw["batch"])
             channel = raw["channel"]
-            if channel not in ("either", "cross"):
+            if channel not in CHANNELS:
                 raise ValueError("unknown channel: " + channel)
             key = (n, channel, batch)
             if key in rows:
@@ -77,10 +81,22 @@ def read_rows(path: Path) -> Tuple[Dict[BatchKey, Dict[str, int]], Dict[int, Tup
     if not rows:
         raise ValueError("batch CSV is empty")
     for n in designs:
-        for channel in ("either", "cross"):
+        expected_batches = None
+        for channel in CHANNELS:
             batches = sorted(key[2] for key in rows if key[:2] == (n, channel))
             if len(batches) < 2 or batches != list(range(len(batches))):
                 raise ValueError("batches must be a complete zero-based range")
+            if expected_batches is None:
+                expected_batches = batches
+            elif batches != expected_batches:
+                raise ValueError("channels do not contain identical batch ids")
+        sample_sizes = {
+            rows[(n, channel, batch)]["samples"]
+            for channel in CHANNELS
+            for batch in expected_batches or []
+        }
+        if len(sample_sizes) != 1:
+            raise ValueError("GLS/covariance analysis requires equal batch sizes")
     return rows, designs
 
 
@@ -104,9 +120,9 @@ def analyze(rows: Dict[BatchKey, Dict[str, int]], designs: Dict[int, Tuple[int, 
         delta_cos4 = cos4(a1, b1) - cos4(a2, b2)
         if delta_cos4 == 0:
             raise ValueError("orientation pair has zero delta cos(4 theta)")
-        for channel in ("either", "cross"):
+        for channel in CHANNELS:
             keys = sorted((key for key in rows if key[:2] == (n, channel)), key=lambda key: key[2])
-            for sector in ("primal", "matching", "even", "odd", "matching_function"):
+            for sector in SECTORS:
                 first_batches: List[float] = []
                 second_batches: List[float] = []
                 difference_batches: List[float] = []
@@ -163,12 +179,278 @@ def write_csv(path: Path, rows: List[Dict[str, object]]) -> None:
             writer.writerow(flat)
 
 
+def batch_ids(rows: Dict[BatchKey, Dict[str, int]], n: int) -> List[int]:
+    return sorted(key[2] for key in rows if key[:2] == (n, CHANNELS[0]))
+
+
+def correlation_matrix(covariance: List[List[float]]) -> List[List[object]]:
+    output: List[List[object]] = []
+    for i, row in enumerate(covariance):
+        output_row: List[object] = []
+        for j, value in enumerate(row):
+            denominator = math.sqrt(max(covariance[i][i], 0.0) * max(covariance[j][j], 0.0))
+            if denominator:
+                output_row.append(max(-1.0, min(1.0, value / denominator)))
+            else:
+                output_row.append(None)
+        output.append(output_row)
+    return output
+
+
+def matrix_payload(labels: List[str], vectors: List[List[float]]) -> Dict[str, object]:
+    covariance = sample_covariance(vectors)
+    return {
+        "labels": labels,
+        "batch_count": len(vectors),
+        "unit": "covariance of equal-size batch means",
+        "covariance": covariance,
+        "correlation": correlation_matrix(covariance),
+    }
+
+
+def covariance_payload(
+    rows: Dict[BatchKey, Dict[str, int]],
+    designs: Dict[int, Tuple[int, int, int, int]],
+) -> Dict[str, object]:
+    by_n: Dict[str, object] = {}
+    for n in sorted(designs):
+        batches = batch_ids(rows, n)
+        raw_labels = [
+            orientation + "_" + estimator + "_" + channel
+            for channel in CHANNELS
+            for orientation in ("first", "second")
+            for estimator in ("primal", "matching")
+        ]
+        raw_vectors: List[List[float]] = []
+        effect_labels = [
+            "delta_" + sector + "_" + channel
+            for channel in CHANNELS
+            for sector in SECTORS
+        ]
+        effect_vectors: List[List[float]] = []
+        for batch in batches:
+            raw_vector: List[float] = []
+            effect_vector: List[float] = []
+            for channel in CHANNELS:
+                row = rows[(n, channel, batch)]
+                first = sector_values(row, "first")
+                second = sector_values(row, "second")
+                raw_vector.extend([
+                    first["primal"], first["matching"],
+                    second["primal"], second["matching"],
+                ])
+                effect_vector.extend([first[sector] - second[sector] for sector in SECTORS])
+            raw_vectors.append(raw_vector)
+            effect_vectors.append(effect_vector)
+        by_n[str(n)] = {
+            "raw_orientation_channel_matrix": matrix_payload(raw_labels, raw_vectors),
+            "orientation_sector_effect_matrix": matrix_payload(effect_labels, effect_vectors),
+        }
+    return {
+        "analysis": "joint covariance/correlation of paired batch means",
+        "channels": list(CHANNELS),
+        "by_N": by_n,
+    }
+
+
+def gls_rows(
+    rows: Dict[BatchKey, Dict[str, int]], n: int, target: str
+) -> List[List[float]]:
+    output: List[List[float]] = []
+    for batch in batch_ids(rows, n):
+        vector: List[float] = []
+        for channel in CHANNELS:
+            row = rows[(n, channel, batch)]
+            first = sector_values(row, "first")["odd"]
+            second = sector_values(row, "second")["odd"]
+            if target == "first":
+                vector.append(first)
+            elif target == "second":
+                vector.append(second)
+            else:
+                vector.append(first - second)
+        output.append(vector)
+    return output
+
+
+def freeze_gls(
+    rows: Dict[BatchKey, Dict[str, int]],
+    designs: Dict[int, Tuple[int, int, int, int]],
+    metadata: Dict[str, object],
+    source: Path,
+    target: str,
+) -> Dict[str, object]:
+    by_n: Dict[str, object] = {}
+    for n in sorted(designs):
+        pilot = gls_rows(rows, n, target)
+        covariance = sample_covariance(pilot)
+        max_spread = max(max(row) - min(row) for row in pilot)
+        scale = max(1.0, max(abs(value) for row in pilot for value in row))
+        identical = max_spread <= 1e-14 * scale
+        if identical:
+            # The exact matching-channel identity makes every sum-one vector
+            # equally efficient.  Freeze the symmetric representative rather
+            # than report solver noise as an empirical optimization.
+            weights = [1.0 / len(CHANNELS)] * len(CHANNELS)
+            ridge = 0.0
+            best_index = 0
+        else:
+            weights, ridge = minimum_variance_weights(covariance)
+            best_index = min(range(len(CHANNELS)), key=lambda index: covariance[index][index])
+        by_n[str(n)] = {
+            "weights": weights,
+            "applied_diagonal_ridge": ridge,
+            "pilot_best_single_channel": CHANNELS[best_index],
+            "all_D_channels_identical_batchwise": identical,
+            "maximum_pilot_channel_spread": max_spread,
+            "pilot_covariance": covariance,
+            "pilot_correlation": correlation_matrix(covariance),
+            "pilot_batch_count": len(pilot),
+        }
+    return {
+        "schema": "pilot-frozen equal-mean D-channel GLS weights v1",
+        "target": target,
+        "channel_names": list(CHANNELS),
+        "source_batches": str(source),
+        "pilot_rng": {
+            "seed": metadata.get("seed"),
+            "replica_counter_first": metadata.get("replica_counter_first"),
+            "replica_counter_last_exclusive": metadata.get("replica_counter_last_exclusive"),
+        },
+        "by_N": by_n,
+    }
+
+
+def sample_variance(values: List[float]) -> float:
+    mean = math.fsum(values) / len(values)
+    return math.fsum((value - mean) ** 2 for value in values) / (len(values) - 1)
+
+
+def combine(vectors: List[List[float]], weights: List[float]) -> List[float]:
+    return [math.fsum(value * weight for value, weight in zip(row, weights)) for row in vectors]
+
+
+def validate_independent_evaluation(
+    frozen: Dict[str, object], metadata: Dict[str, object]
+) -> None:
+    pilot_rng = frozen.get("pilot_rng")
+    if not isinstance(pilot_rng, dict):
+        raise ValueError("frozen weights lack pilot RNG provenance")
+    if pilot_rng.get("seed") != metadata.get("seed"):
+        return
+    pilot_first = pilot_rng.get("replica_counter_first")
+    pilot_last = pilot_rng.get("replica_counter_last_exclusive")
+    evaluation_first = metadata.get("replica_counter_first")
+    evaluation_last = metadata.get("replica_counter_last_exclusive")
+    if not all(isinstance(value, int) for value in (
+        pilot_first, pilot_last, evaluation_first, evaluation_last
+    )):
+        raise ValueError("cannot verify pilot/evaluation RNG counter separation")
+    if max(pilot_first, evaluation_first) < min(pilot_last, evaluation_last):
+        raise ValueError("evaluation RNG counters overlap the pilot used to freeze GLS weights")
+
+
+def evaluate_gls(
+    rows: Dict[BatchKey, Dict[str, int]],
+    designs: Dict[int, Tuple[int, int, int, int]],
+    metadata: Dict[str, object],
+    frozen: Dict[str, object],
+) -> Tuple[Dict[str, object], List[Dict[str, object]]]:
+    validate_independent_evaluation(frozen, metadata)
+    if frozen.get("channel_names") != list(CHANNELS):
+        raise ValueError("frozen GLS channel order does not match analyzer")
+    target = frozen.get("target")
+    if target not in ("first", "second", "orientation_difference"):
+        raise ValueError("frozen GLS target is invalid")
+    frozen_by_n = frozen.get("by_N")
+    if not isinstance(frozen_by_n, dict):
+        raise ValueError("frozen weights lack by_N entries")
+    output_rows: List[Dict[str, object]] = []
+    by_n: Dict[str, object] = {}
+    for n in sorted(designs):
+        entry = frozen_by_n.get(str(n))
+        if not isinstance(entry, dict):
+            raise ValueError("frozen weights do not contain N=" + str(n))
+        weights = entry.get("weights")
+        if not isinstance(weights, list) or len(weights) != len(CHANNELS):
+            raise ValueError("invalid frozen weight vector for N=" + str(n))
+        weights = [float(value) for value in weights]
+        if not math.isclose(math.fsum(weights), 1.0, rel_tol=1e-10, abs_tol=1e-10):
+            raise ValueError("frozen weights do not sum to one")
+        vectors = gls_rows(rows, n, target)
+        optimized = combine(vectors, weights)
+        equal = combine(vectors, [1.0 / len(CHANNELS)] * len(CHANNELS))
+        best_name = entry.get("pilot_best_single_channel")
+        if best_name not in CHANNELS:
+            raise ValueError("invalid pilot-frozen best single channel")
+        series: List[Tuple[str, List[float]]] = [
+            ("optimized_gls", optimized),
+            ("equal_weight", equal),
+            ("pilot_best_single_" + str(best_name), [row[CHANNELS.index(best_name)] for row in vectors]),
+        ]
+        series.extend(("single_" + channel, [row[index] for row in vectors])
+                      for index, channel in enumerate(CHANNELS))
+        optimized_variance = sample_variance(optimized)
+        n_rows: Dict[str, object] = {
+            "target": target,
+            "weights": weights,
+            "evaluation_batch_count": len(vectors),
+            "evaluation_covariance": sample_covariance(vectors),
+        }
+        estimates: Dict[str, object] = {}
+        for name, values in series:
+            mean = math.fsum(values) / len(values)
+            variance = sample_variance(values)
+            ratio = variance / optimized_variance if optimized_variance > 0 else None
+            result = {
+                "N": n,
+                "target": target,
+                "estimator": name,
+                "mean": mean,
+                "batch_mean_variance": variance,
+                "variance_of_overall_mean": variance / len(values),
+                "variance_reduction_vs_optimized": ratio,
+            }
+            output_rows.append(result)
+            estimates[name] = result
+        n_rows["estimators"] = estimates
+        by_n[str(n)] = n_rows
+    return {
+        "analysis": "independent evaluation of pilot-frozen equal-mean D-channel GLS weights",
+        "frozen_source_batches": frozen.get("source_batches"),
+        "evaluation_rng": {
+            "seed": metadata.get("seed"),
+            "replica_counter_first": metadata.get("replica_counter_first"),
+            "replica_counter_last_exclusive": metadata.get("replica_counter_last_exclusive"),
+        },
+        "by_N": by_n,
+    }, output_rows
+
+
+def write_evaluation_csv(path: Path, rows: List[Dict[str, object]]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=list(rows[0]), lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--batches", type=Path, required=True)
     parser.add_argument("--metadata", type=Path, required=True)
     parser.add_argument("--json", type=Path, required=True)
-    parser.add_argument("--csv", type=Path, required=True)
+    parser.add_argument("--csv", type=Path, required=True, help="long-form sector_effects CSV")
+    parser.add_argument("--covariance-json", type=Path)
+    gls = parser.add_mutually_exclusive_group()
+    gls.add_argument("--freeze-gls", type=Path, help="write pilot-frozen D-channel weights")
+    gls.add_argument("--frozen-gls", type=Path, help="evaluate weights frozen on independent data")
+    parser.add_argument(
+        "--gls-target", choices=("first", "second", "orientation_difference"),
+        default="orientation_difference",
+    )
+    parser.add_argument("--evaluation-json", type=Path)
+    parser.add_argument("--evaluation-csv", type=Path)
     args = parser.parse_args()
 
     with args.metadata.open(encoding="utf-8") as handle:
@@ -195,13 +477,34 @@ def main() -> int:
         "caveats": [
             "batch standard errors quantify Monte Carlo noise, not finite-size systematic error",
             "a resolved matching-even harmonic is required before interpreting a null matching-odd difference",
-            "either and cross are separate prespecified wrapping conventions, not independent replicas",
+            "the five wrapping channels are simultaneous observables, not independent replicas",
         ],
         "summaries": summaries,
     }
     args.json.parent.mkdir(parents=True, exist_ok=True)
     args.json.write_text(json.dumps(payload, indent=2), encoding="utf-8")
     write_csv(args.csv, summaries)
+    if args.covariance_json:
+        args.covariance_json.parent.mkdir(parents=True, exist_ok=True)
+        args.covariance_json.write_text(
+            json.dumps(covariance_payload(rows, designs), indent=2) + "\n",
+            encoding="utf-8",
+        )
+    if args.freeze_gls:
+        frozen = freeze_gls(rows, designs, metadata, args.batches, args.gls_target)
+        args.freeze_gls.parent.mkdir(parents=True, exist_ok=True)
+        args.freeze_gls.write_text(json.dumps(frozen, indent=2) + "\n", encoding="utf-8")
+    if args.frozen_gls:
+        if not args.evaluation_json or not args.evaluation_csv:
+            parser.error("--frozen-gls requires --evaluation-json and --evaluation-csv")
+        with args.frozen_gls.open(encoding="utf-8") as handle:
+            frozen = json.load(handle)
+        if not isinstance(frozen, dict):
+            raise ValueError("frozen weights must contain an object")
+        evaluation, evaluation_rows = evaluate_gls(rows, designs, metadata, frozen)
+        args.evaluation_json.parent.mkdir(parents=True, exist_ok=True)
+        args.evaluation_json.write_text(json.dumps(evaluation, indent=2) + "\n", encoding="utf-8")
+        write_evaluation_csv(args.evaluation_csv, evaluation_rows)
 
     for row in summaries:
         if row["sector"] not in ("even", "matching_function"):
@@ -215,6 +518,13 @@ def main() -> int:
         )
     print("wrote " + str(args.json))
     print("wrote " + str(args.csv))
+    if args.covariance_json:
+        print("wrote " + str(args.covariance_json))
+    if args.freeze_gls:
+        print("wrote " + str(args.freeze_gls))
+    if args.frozen_gls:
+        print("wrote " + str(args.evaluation_json))
+        print("wrote " + str(args.evaluation_csv))
     return 0
 
 

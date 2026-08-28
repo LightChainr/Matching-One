@@ -211,16 +211,19 @@ def summarize(
     selection_dps: Optional[int],
     min_validation_folds: int,
 ) -> dict[str, Any]:
-    observations = load_observations(csv_path)
-    if final_tail <= 0 or final_tail >= len(observations):
-        raise ValueError("final-tail must be positive and smaller than the dataset")
-    cutoff = observations[-final_tail - 1].n
     payloads = load_grid_payloads(raw_dir)
     available_dps = sorted({int(payload["dps"]) for _path, payload in payloads})
     chosen_dps = max(available_dps) if selection_dps is None else selection_dps
     if chosen_dps not in available_dps:
         raise ValueError(f"selection dps {chosen_dps} is not present in grid outputs")
+    # Decimal strings must be parsed only after the selected arithmetic
+    # precision is active. Increasing mp.dps after mp.mpf construction cannot
+    # restore digits rounded at the default precision.
     mp.mp.dps = chosen_dps
+    observations = load_observations(csv_path)
+    if final_tail <= 0 or final_tail >= len(observations):
+        raise ValueError("final-tail must be positive and smaller than the dataset")
+    cutoff = observations[-final_tail - 1].n
     candidates = candidates_from_payloads(
         payloads,
         cutoff=cutoff,

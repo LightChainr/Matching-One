@@ -1,0 +1,133 @@
+{
+  "analysis": "independent evaluation of pilot-frozen equal-mean D-channel GLS weights",
+  "frozen_source_batches": "results/server-20260828/C01/pilot/all.batches.csv",
+  "evaluation_rng": {
+    "seed": 20260828,
+    "replica_counter_first": 200000,
+    "replica_counter_last_exclusive": 2200000
+  },
+  "by_N": {
+    "65": {
+      "target": "orientation_difference",
+      "weights": [
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "evaluation_batch_count": 40,
+      "evaluation_covariance": [
+        [
+          3.845344615384623e-06,
+          3.845344615384613e-06,
+          3.845344615384617e-06,
+          3.84534461538462e-06,
+          3.845344615384629e-06
+        ],
+        [
+          3.845344615384613e-06,
+          3.845344615384604e-06,
+          3.845344615384608e-06,
+          3.8453446153846106e-06,
+          3.84534461538462e-06
+        ],
+        [
+          3.845344615384617e-06,
+          3.845344615384608e-06,
+          3.845344615384612e-06,
+          3.845344615384615e-06,
+          3.845344615384624e-06
+        ],
+        [
+          3.84534461538462e-06,
+          3.8453446153846106e-06,
+          3.845344615384615e-06,
+          3.845344615384617e-06,
+          3.845344615384627e-06
+        ],
+        [
+          3.845344615384629e-06,
+          3.84534461538462e-06,
+          3.845344615384624e-06,
+          3.845344615384627e-06,
+          3.845344615384636e-06
+        ]
+      ],
+      "estimators": {
+        "optimized_gls": {
+          "N": 65,
+          "target": "orientation_difference",
+          "estimator": "optimized_gls",
+          "mean": 0.0006780000000000002,
+          "batch_mean_variance": 3.845344615384619e-06,
+          "variance_of_overall_mean": 9.613361538461548e-08,
+          "variance_reduction_vs_optimized": 1.0
+        },
+        "equal_weight": {
+          "N": 65,
+          "target": "orientation_difference",
+          "estimator": "equal_weight",
+          "mean": 0.0006780000000000002,
+          "batch_mean_variance": 3.845344615384619e-06,
+          "variance_of_overall_mean": 9.613361538461548e-08,
+          "variance_reduction_vs_optimized": 1.0
+        },
+        "pilot_best_single_cross": {
+          "N": 65,
+          "target": "orientation_difference",
+          "estimator": "pilot_best_single_cross",
+          "mean": 0.0006780000000000001,
+          "batch_mean_variance": 3.845344615384623e-06,
+          "variance_of_overall_mean": 9.613361538461558e-08,
+          "variance_reduction_vs_optimized": 1.000000000000001
+        },
+        "single_cross": {
+          "N": 65,
+          "target": "orientation_difference",
+          "estimator": "single_cross",
+          "mean": 0.0006780000000000001,
+          "batch_mean_variance": 3.845344615384623e-06,
+          "variance_of_overall_mean": 9.613361538461558e-08,
+          "variance_reduction_vs_optimized": 1.000000000000001
+        },
+        "single_both": {
+          "N": 65,
+          "target": "orientation_difference",
+          "estimator": "single_both",
+          "mean": 0.000677999999999998,
+          "batch_mean_variance": 3.845344615384604e-06,
+          "variance_of_overall_mean": 9.61336153846151e-08,
+          "variance_reduction_vs_optimized": 0.999999999999996
+        },
+        "single_either": {
+          "N": 65,
+          "target": "orientation_difference",
+          "estimator": "single_either",
+          "mean": 0.0006780000000000091,
+          "batch_mean_variance": 3.845344615384612e-06,
+          "variance_of_overall_mean": 9.61336153846153e-08,
+          "variance_reduction_vs_optimized": 0.9999999999999982
+        },
+        "single_direction_0": {
+          "N": 65,
+          "target": "orientation_difference",
+          "estimator": "single_direction_0",
+          "mean": 0.0006779999999999952,
+          "batch_mean_variance": 3.845344615384617e-06,
+          "variance_of_overall_mean": 9.613361538461544e-08,
+          "variance_reduction_vs_optimized": 0.9999999999999996
+        },
+        "single_direction_1": {
+          "N": 65,
+          "target": "orientation_difference",
+          "estimator": "single_direction_1",
+          "mean": 0.000677999999999998,
+          "batch_mean_variance": 3.845344615384636e-06,
+          "variance_of_overall_mean": 9.61336153846159e-08,
+          "variance_reduction_vs_optimized": 1.0000000000000044
+        }
+      }
+    }
+  }
+}

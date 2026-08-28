@@ -1,10 +1,12 @@
 from __future__ import annotations
 
 import json
+import mpmath as mp
 import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 
 REPOSITORY = Path(__file__).resolve().parents[1]
@@ -101,6 +103,54 @@ class TrainingOnlySummaryTests(unittest.TestCase):
             self.assertLessEqual(result["selected"]["validation_test_max"], 8)
             self.assertEqual(result["final_tail_score"]["training_n_max"], 8)
             self.assertEqual(result["withheld_widths"], [9, 10])
+
+    def test_decimal_input_is_parsed_after_selected_precision(self) -> None:
+        long_decimal = "0.59274605079210000000000000000012345678901234567890"
+        with tempfile.TemporaryDirectory() as directory:
+            base = Path(directory)
+            csv_path = base / "sequence.csv"
+            csv_path.write_text(
+                "n,value\n"
+                + "\n".join(
+                    "{},{}".format(n, long_decimal if n == 6 else "0.5")
+                    for n in range(1, 7)
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            raw_dir = base / "raw"
+            raw_dir.mkdir()
+            payload = {
+                "dps": 100,
+                "min_train": 1,
+                "holdout": 1,
+                "folds": [
+                    self.fold("4", 2, 3, "1e-5", "0.5"),
+                    self.fold("4", 3, 4, "2e-5", "0.50001"),
+                ],
+            }
+            (raw_dir / "run.json").write_text(json.dumps(payload), encoding="utf-8")
+
+            captured: dict[int, mp.mpf] = {}
+            original_loader = summary.load_observations
+
+            def capture_loader(path: Path) -> list[summary.Observation]:
+                self.assertEqual(mp.mp.dps, 100)
+                observations = original_loader(path)
+                captured.update({row.n: row.value for row in observations})
+                return observations
+
+            mp.mp.dps = 15
+            with mock.patch.object(summary, "load_observations", side_effect=capture_loader):
+                summary.summarize(
+                    csv_path=csv_path,
+                    raw_dir=raw_dir,
+                    final_tail=1,
+                    selection_dps=None,
+                    min_validation_folds=2,
+                )
+            mp.mp.dps = 100
+            self.assertEqual(captured[6], mp.mpf(long_decimal))
 
 
 if __name__ == "__main__":

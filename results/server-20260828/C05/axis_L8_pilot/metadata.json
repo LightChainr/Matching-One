@@ -1,0 +1,67 @@
+{
+  "format_version": 1,
+  "geometry": "axis",
+  "N": 64,
+  "period_matrix_row_major": [
+    [
+      8,
+      0
+    ],
+    [
+      0,
+      8
+    ]
+  ],
+  "period_matrix_convention": "columns are the two lifted period vectors",
+  "primal_forward_vectors": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      0
+    ]
+  ],
+  "matching_forward_vectors": [
+    [
+      -1,
+      1
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      1
+    ]
+  ],
+  "channel": "cross_rank_2_single_component",
+  "off_by_one_convention": {
+    "K_plus": "first k in 1..N where B_k primal-cross-wraps",
+    "K_minus": "first k in 1..N where W_k matching-cross no longer wraps",
+    "reverse_conversion": "K_minus = N - reverse_white_first_cross_rank + 1"
+  },
+  "sample_count": 100000,
+  "rng": {
+    "algorithm": "counter-derived SplitMix64 streams + unbiased Fisher-Yates",
+    "seed_u64": 20260828,
+    "sample_counter_start_inclusive": 0,
+    "sample_counter_stop_exclusive": 100000
+  },
+  "first_second_joint_integer_moments": {
+    "sum_K_minus": 3559763,
+    "sum_K_plus": 4110408,
+    "sum_K_minus_squared": 128388413,
+    "sum_K_plus_squared": 170382060,
+    "sum_K_minus_times_K_plus": 146980907,
+    "sum_gap": 550645,
+    "sum_gap_squared": 4808659
+  },
+  "elapsed_seconds": 83.8498251480014
+}
