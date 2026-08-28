@@ -1,0 +1,18 @@
+{
+  "schema": "matching-one/local-exact-run-metadata/v1",
+  "issue": 115,
+  "date": "2026-08-28",
+  "geometry": {"a": 5, "b": 1, "N": 26, "channel": "either"},
+  "configurations_per_run": 67108864,
+  "runs": [
+    {"threads": 10, "role": "primary"},
+    {"threads": 1, "role": "independent_reproduction"}
+  ],
+  "base_main_commit": "fd6cfb6bfb8f57fd8960707c3c10e02b4a8ca1b4",
+  "pre_target_freeze_commit": "1add3384598da2ce749a429af3b55c7a4ebc20a0",
+  "enumerator_source_commit": "68f6d81daea30475b58bd109625e044260d7f547",
+  "prediction_artifact": "predictions/c4_self_matching_n26_beta_targets_20260828.json",
+  "prediction_artifact_sha256": "ec195f8f18826b9b6342708c3411680871f05eb01f12edca5d57d386b20587d6",
+  "generalized_beta_fit_performed": false,
+  "result": "BOTH_FROZEN_LAWS_FAILED_STOP_NO_GENERALIZED_BETA_FIT"
+}

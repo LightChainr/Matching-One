@@ -1,0 +1,182 @@
+{
+  "all_frozen_hypotheses_pass": false,
+  "exact_structure_after_fixed_scoring": {
+    "F_bernstein_numerator_at_first_support": 78,
+    "F_first_nonzero_occupation": 5,
+    "M_bernstein_integer_coefficients": [
+      -1,
+      -26,
+      -325,
+      -2600,
+      -14950,
+      -65624,
+      -227292,
+      -631540,
+      -1414335,
+      -2536768,
+      -3567343,
+      -3729856,
+      -2444442,
+      0,
+      2444442,
+      3729856,
+      3567343,
+      2536768,
+      1414335,
+      631540,
+      227292,
+      65624,
+      14950,
+      2600,
+      325,
+      26,
+      1
+    ],
+    "M_bernstein_vector_sha256": "32930e6e63c2d0ee22070390068d1ca86ec4a2465da43154e05febe4296dfdc8",
+    "M_coefficients_anti_palindromic": true,
+    "M_identical_across_all_five_wrapping_channels": true,
+    "M_power_coefficients_ascending": [
+      -1,
+      0,
+      0,
+      0,
+      0,
+      156,
+      -338,
+      260,
+      -260,
+      -338,
+      1144,
+      3536,
+      -13702,
+      15628,
+      -3016,
+      -10088,
+      11492,
+      -5798,
+      1482,
+      -156
+    ],
+    "M_power_degree": 19,
+    "M_power_factorization_over_Q": "-(2*p - 1)*(78*p**18 - 702*p**17 + 2548*p**16 - 4472*p**15 + 2808*p**14 + 2912*p**13 - 6358*p**12 + 3672*p**11 + 68*p**10 - 538*p**9 - 100*p**8 + 80*p**7 - 90*p**6 + 124*p**5 - 16*p**4 - 8*p**3 - 4*p**2 - 2*p - 1)",
+    "frozen_target_F_numerators_at_same_occupation": {
+      "antipodal_orbit_majority": 0,
+      "geometry_shortest_support": 126
+    },
+    "raw_direction_wrap_counts_at_first_support": {
+      "direction_0": 78,
+      "direction_1": 78
+    },
+    "raw_either_wrap_count_at_first_support": 156
+  },
+  "generalized_beta_fit_performed": false,
+  "hypothesis_scores": [
+    {
+      "beta_parameters": [
+        5,
+        5
+      ],
+      "difference_power_factorization_over_Q": "-2*p**5*(p - 1)**5*(2*p - 1)*(39*p**8 - 156*p**7 + 104*p**6 + 234*p**5 - 221*p**4 - 130*p**3 + 45*p**2 + 85*p + 48)",
+      "differences_observed_minus_target": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        -96,
+        -1514,
+        -10940,
+        -47510,
+        -136318,
+        -266266,
+        -345904,
+        -256542,
+        0,
+        256542,
+        345904,
+        266266,
+        136318,
+        47510,
+        10940,
+        1514,
+        96,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "differing_coefficient_count": 16,
+      "exact_pass": false,
+      "first_difference": {
+        "observed": -65624,
+        "observed_minus_target": -96,
+        "occupation_k": 5,
+        "target": -65528
+      },
+      "name": "geometry_shortest_support",
+      "target_power_degree": 9
+    },
+    {
+      "beta_parameters": [
+        7,
+        7
+      ],
+      "difference_power_factorization_over_Q": "-26*p**5*(p - 1)**5*(2*p - 1)*(3*p**8 - 12*p**7 + 8*p**6 + 18*p**5 - 17*p**4 - 10*p**3 + 39*p**2 - 29*p - 6)",
+      "differences_observed_minus_target": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        156,
+        2938,
+        22828,
+        100750,
+        285194,
+        542906,
+        687128,
+        500214,
+        0,
+        -500214,
+        -687128,
+        -542906,
+        -285194,
+        -100750,
+        -22828,
+        -2938,
+        -156,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "differing_coefficient_count": 16,
+      "exact_pass": false,
+      "first_difference": {
+        "observed": -65624,
+        "observed_minus_target": 156,
+        "occupation_k": 5,
+        "target": -65780
+      },
+      "name": "antipodal_orbit_majority",
+      "target_power_degree": 13
+    }
+  ],
+  "independent_reproduction_identical": true,
+  "inputs": {
+    "prediction": "predictions/c4_self_matching_n26_beta_targets_20260828.json",
+    "prediction_sha256": "ec195f8f18826b9b6342708c3411680871f05eb01f12edca5d57d386b20587d6",
+    "primary": "results/local-20260828/P115-n26-self-matching-exact/raw/n26_threads10.json",
+    "primary_sha256": "f10c1d31e0821a6f32e29409089e0a488535aa412173c92a64d3855b8e1259d0",
+    "reproduction": "results/local-20260828/P115-n26-self-matching-exact/raw/n26_threads1.json",
+    "reproduction_sha256": "a1d7e1343ea91a3c11bf6c8d42646d19f339c606137dc37fd22973c4e8f06e74"
+  },
+  "protocol_conclusion": "BOTH_FROZEN_LAWS_FAILED_STOP_NO_GENERALIZED_BETA_FIT",
+  "schema": "matching-one/c4-self-matching-n26-score/v1",
+  "scoring_order": [
+    "geometry_shortest_support",
+    "antipodal_orbit_majority"
+  ]
+}
