@@ -1,0 +1,17 @@
+{
+  "off_by_one_convention": {
+    "K_plus": "smallest black occupation k at which primal CROSS wrapping is true; K_plus=N+1 if never",
+    "K_minus": "N-m_star+1 where m_star is first matching occupation (reverse perm) with CROSS wrapping; K_minus=0 if white never wraps",
+    "beta": "T|K=k ~ Beta(k, N+1-k) for k=1..N; K=0 => T=0; K=N+1 => T not in [0,1)",
+    "matching_function": "M(p)=P(K_plus<=m)-P(K_minus>m), m~Binomial(N,p)",
+    "channel": "cross; either is diagnostic only, not a second M replication"
+  },
+  "rng_kat": {"status": "PASS"},
+  "exhaustive": {
+    "axis_L2": {"status": "PASS", "N": 4, "permutations": 24, "Kminus_le_Kplus": 24, "Kminus_gt_Kplus": 0, "reconstruct_subset_ak": true, "power_max_abs_err": 1.540126048647192e-16, "derivative_p05_ok": true, "a_k_cross": [-1, -4, -2, 4, 1]},
+    "axis_L3": {"status": "PASS", "N": 9, "permutations": 362880, "Kminus_le_Kplus": 362880, "Kminus_gt_Kplus": 0, "reconstruct_subset_ak": true, "power_max_abs_err": 1.665334536937735e-16, "derivative_p05_ok": true, "a_k_cross": [-1, -9, -36, -78, -90, -36, 36, 36, 9, 1]},
+    "gaussian_2_1": {"status": "PASS", "N": 5, "permutations": 120, "Kminus_le_Kplus": 120, "Kminus_gt_Kplus": 0, "reconstruct_subset_ak": true, "power_max_abs_err": 0, "derivative_p05_ok": true, "a_k_cross": [-1, -5, -10, 0, 5, 1]}
+  },
+  "axis_L4": {"status": "PASS", "subset_vs_published_power_max_abs": 2.997602166487923e-15, "mc_replicas": 20000, "max_meanD_abs_err": 0.003748351648351633, "Kminus_gt_Kplus": 0},
+  "overall": "PASS"
+}

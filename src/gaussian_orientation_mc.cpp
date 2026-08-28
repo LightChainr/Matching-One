@@ -4,6 +4,8 @@
 // (a,b),(-b,a), N=a^2+b^2 and cyclic vertex label j=a*x+b*y (mod N).
 // Two representations of the same N use identical counter-keyed occupancies.
 
+#include "homology_union_find.hpp"
+
 #include <algorithm>
 #include <chrono>
 #include <cmath>
@@ -35,11 +37,6 @@ struct Edge {
     int j;
     int dx;
     int dy;
-};
-
-struct Winding {
-    std::int64_t x = 0;
-    std::int64_t y = 0;
 };
 
 struct Channels {
@@ -76,21 +73,14 @@ int positive_mod(int value, int modulus) {
     return value < 0 ? value + modulus : value;
 }
 
-Winding primitive(Winding value) {
-    const auto divisor = std::gcd(std::llabs(value.x), std::llabs(value.y));
-    if (divisor == 0) return value;
-    value.x /= divisor;
-    value.y /= divisor;
-    if (value.x < 0 || (value.x == 0 && value.y < 0)) {
-        value.x = -value.x;
-        value.y = -value.y;
-    }
-    return value;
-}
+using matching::HomologyUnionFind;
+using matching::PeriodMatrix;
+using matching::Winding;
+using matching::primitive_winding;
 
 void extend_basis(std::vector<Winding>& basis, Winding value) {
     if ((value.x == 0 && value.y == 0) || basis.size() == 2) return;
-    value = primitive(value);
+    value = primitive_winding(value);
     if (basis.empty()) {
         basis.push_back(value);
         return;
@@ -98,85 +88,6 @@ void extend_basis(std::vector<Winding>& basis, Winding value) {
     const Winding first = basis.front();
     if (first.x * value.y != first.y * value.x) basis.push_back(value);
 }
-
-class HomologyUnionFind {
-  public:
-    HomologyUnionFind(int n, int a, int b)
-        : n_(n), a_(a), b_(b), parent_(n), size_(n), delta_x_(n), delta_y_(n),
-          basis_(n) {
-        reset();
-    }
-
-    void reset() {
-        std::iota(parent_.begin(), parent_.end(), 0);
-        std::fill(size_.begin(), size_.end(), 1);
-        std::fill(delta_x_.begin(), delta_x_.end(), 0);
-        std::fill(delta_y_.begin(), delta_y_.end(), 0);
-        for (auto& basis : basis_) basis.clear();
-    }
-
-    struct FindResult {
-        int root;
-        std::int64_t dx;
-        std::int64_t dy;
-    };
-
-    FindResult find(int x) {
-        if (parent_[x] == x) return {x, 0, 0};
-        const int old_parent = parent_[x];
-        const FindResult up = find(old_parent);
-        delta_x_[x] += up.dx;
-        delta_y_[x] += up.dy;
-        parent_[x] = up.root;
-        return {up.root, delta_x_[x], delta_y_[x]};
-    }
-
-    Winding period_coordinates(std::int64_t dx, std::int64_t dy) const {
-        // Inverse of [[a,-b],[b,a]] applied exactly to (dx,dy).
-        const std::int64_t num0 = static_cast<std::int64_t>(a_) * dx +
-                                  static_cast<std::int64_t>(b_) * dy;
-        const std::int64_t num1 = -static_cast<std::int64_t>(b_) * dx +
-                                  static_cast<std::int64_t>(a_) * dy;
-        if (num0 % n_ != 0 || num1 % n_ != 0) {
-            throw std::logic_error("closed displacement is not in the Gaussian period lattice");
-        }
-        return {num0 / n_, num1 / n_};
-    }
-
-    void add_edge(const Edge& edge) {
-        FindResult fi = find(edge.i);
-        FindResult fj = find(edge.j);
-        std::int64_t root_dx = fi.dx + edge.dx - fj.dx;
-        std::int64_t root_dy = fi.dy + edge.dy - fj.dy;
-        if (fi.root == fj.root) {
-            extend_basis(basis_[fi.root], period_coordinates(root_dx, root_dy));
-            return;
-        }
-        if (size_[fi.root] < size_[fj.root]) {
-            std::swap(fi, fj);
-            root_dx = -root_dx;
-            root_dy = -root_dy;
-        }
-        parent_[fj.root] = fi.root;
-        delta_x_[fj.root] = root_dx;
-        delta_y_[fj.root] = root_dy;
-        size_[fi.root] += size_[fj.root];
-        for (const Winding winding : basis_[fj.root]) extend_basis(basis_[fi.root], winding);
-        basis_[fj.root].clear();
-    }
-
-    int rank(int x) { return static_cast<int>(basis_[find(x).root].size()); }
-
-  private:
-    int n_;
-    int a_;
-    int b_;
-    std::vector<int> parent_;
-    std::vector<int> size_;
-    std::vector<std::int64_t> delta_x_;
-    std::vector<std::int64_t> delta_y_;
-    std::vector<std::vector<Winding>> basis_;
-};
 
 Geometry make_geometry(int a, int b) {
     if (a <= 0 || b < 0 || std::gcd(a, b) != 1) {
@@ -208,17 +119,12 @@ Channels classify(const std::vector<std::uint8_t>& active, const std::vector<Edg
                   HomologyUnionFind& union_find) {
     union_find.reset();
     for (const Edge& edge : edges) {
-        if (active[edge.i] && active[edge.j]) union_find.add_edge(edge);
+        if (active[edge.i] && active[edge.j]) {
+            union_find.add_edge(edge.i, edge.j, edge.dx, edge.dy);
+        }
     }
-    Channels output;
-    for (int vertex = 0; vertex < static_cast<int>(active.size()); ++vertex) {
-        if (!active[vertex]) continue;
-        const int rank = union_find.rank(vertex);
-        output.either = output.either || rank > 0;
-        output.cross = output.cross || rank == 2;
-        if (output.cross) break;
-    }
-    return output;
+    const auto channels = union_find.channels();
+    return Channels{channels.either, channels.cross};
 }
 
 // A deliberately independent lifted-coordinate traversal used only by --self-test.
@@ -294,7 +200,7 @@ void self_test() {
             positive_mod(a * (-b) + b * a, geometry.n) != 0) {
             throw std::runtime_error("cyclic label period regression failed");
         }
-        HomologyUnionFind primal(geometry.n, a, b), matching(geometry.n, a, b);
+        HomologyUnionFind primal(geometry.n, PeriodMatrix::gaussian(a, b)), matching(geometry.n, PeriodMatrix::gaussian(a, b));
         const std::uint64_t configurations = 1ULL << geometry.n;
         std::vector<std::uint8_t> active(geometry.n);
         for (std::uint64_t mask = 0; mask < configurations; ++mask) {
@@ -451,10 +357,10 @@ void run_design(const PairDesign& design, const Options& options,
         BatchCounts local;
         local.samples = per_batch;
         std::vector<std::uint8_t> black(design.n), white(design.n);
-        HomologyUnionFind f_primal(design.n, first.a, first.b);
-        HomologyUnionFind f_matching(design.n, first.a, first.b);
-        HomologyUnionFind s_primal(design.n, second.a, second.b);
-        HomologyUnionFind s_matching(design.n, second.a, second.b);
+        HomologyUnionFind f_primal(design.n, PeriodMatrix::gaussian(first.a, first.b));
+        HomologyUnionFind f_matching(design.n, PeriodMatrix::gaussian(first.a, first.b));
+        HomologyUnionFind s_primal(design.n, PeriodMatrix::gaussian(second.a, second.b));
+        HomologyUnionFind s_matching(design.n, PeriodMatrix::gaussian(second.a, second.b));
         const std::uint64_t begin = options.replica_offset +
                                     static_cast<std::uint64_t>(batch) * per_batch;
         for (std::uint64_t replica = begin; replica < begin + per_batch; ++replica) {

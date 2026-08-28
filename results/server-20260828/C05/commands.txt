@@ -1,0 +1,10 @@
+# C05/P33 commands
+g++ -O3 -std=c++17 -fopenmp src/newman_ziff_cpu.cpp -o build/newman_ziff_cpu
+./build/newman_ziff_cpu --exact-tests --outdir results/server-20260828/C05
+./build/newman_ziff_cpu --pair 8,1 7,4 --samples 2000000 --batches 40 --threads 8 --seed 3222274049 --outdir results/server-20260828/C05
+./build/newman_ziff_cpu --pair 9,2 7,6 --samples 2000000 --batches 40 --threads 8 --seed 3222274049 --outdir results/server-20260828/C05
+./build/newman_ziff_cpu --pair 11,3 9,7 --samples 2000000 --batches 40 --threads 8 --seed 3222274049 --outdir results/server-20260828/C05
+./build/newman_ziff_cpu --pair 12,1 9,8 --samples 2000000 --batches 40 --threads 8 --seed 3222274049 --outdir results/server-20260828/C05
+./build/newman_ziff_cpu --pair 13,1 11,7 --samples 2000000 --batches 40 --threads 8 --seed 3222274049 --outdir results/server-20260828/C05
+g++ -O3 -std=c++17 src/analyze_c05.cpp -o build/analyze_c05
+./build/analyze_c05 results/server-20260828/C05

@@ -1,0 +1,51 @@
+{
+  "queue_id": "C05",
+  "program": "P33 thermal-coordinate tomography from threshold ranks",
+  "source_commit": "107ddc948c8ae8e5c8a30549c9b123ac9be091b7",
+  "source_branch": "agent/c05-threshold-rank-nz",
+  "machine": "cursor Linux 8 cores / 16 GB, no GPU",
+  "os_kernel": "Linux 6.12.94+",
+  "compiler_or_interpreter": "g++ 14.2.0 C++17 OpenMP",
+  "dependency_versions": {
+    "g++": "14.2.0",
+    "libgomp": "gcc-14",
+    "homology": "src/homology_union_find.hpp (C00 adj(P)/det(P))",
+    "rng": "Philox4x32-10 (issue-9 counter_rng.hpp)"
+  },
+  "rng_algorithm_if_stochastic": "Philox4x32-10",
+  "rng_seed_or_counter_ranges": {
+    "global_seed": 3222274049,
+    "key": ["global_seed", "batch_id"],
+    "ctr": ["draw_counter", "replica_id", "stream_id=0", 0],
+    "batch_begin": 0,
+    "batches": 40,
+    "replicas_per_batch": 50000,
+    "stream": "shared Fisher-Yates permutation of cyclic labels (CRN same_U_j)"
+  },
+  "sample_counts": {
+    "exact_axis_L2_perms": 24,
+    "exact_axis_L3_perms": 362880,
+    "exact_gaussian_2_1_perms": 120,
+    "exact_axis_L4_mc": 20000,
+    "production_per_same_N_pair": 2000000
+  },
+  "sizes_orientations": [
+    {"N": 65, "reps": [[8,1],[7,4]], "samples": 2000000, "wall_s": 2.52095},
+    {"N": 85, "reps": [[9,2],[7,6]], "samples": 2000000, "wall_s": 3.20492},
+    {"N": 130, "reps": [[11,3],[9,7]], "samples": 2000000, "wall_s": 4.96339},
+    {"N": 145, "reps": [[12,1],[9,8]], "samples": 2000000, "wall_s": 5.16},
+    {"N": 170, "reps": [[13,1],[11,7]], "samples": 2000000, "wall_s": 6.06612}
+  ],
+  "wall_time": {
+    "exact_tests_s": 0.286,
+    "production_pairs_s": 21.916,
+    "analysis_s": 3.1,
+    "note": "pair wall times are CRN two-orientation Newman-Ziff; Asia/Shanghai labels on git timestamps"
+  },
+  "thread_or_gpu_configuration": "OpenMP 8 threads, no GPU",
+  "channel": "cross",
+  "exact_tests": "PASS",
+  "P4D_thermal_even_like_L_m13_4": false,
+  "axis_L8_to_32_production": "not run (P33 same-N Gaussian prioritized)",
+  "N1105": "not started"
+}
