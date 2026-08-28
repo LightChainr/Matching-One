@@ -15,6 +15,10 @@ from audit_threshold_rank_covariance import (  # noqa: E402
     covariance_of_mean,
     jackknife_pseudovalues,
 )
+from validate_threshold_rank_covariance_archive import validate_archive  # noqa: E402
+
+
+ARCHIVE = ROOT / "results" / "server-20260828" / "P33-cross-size-covariance"
 
 
 class ThresholdRankCrossSizeCovarianceTests(unittest.TestCase):
@@ -87,6 +91,21 @@ class ThresholdRankCrossSizeCovarianceTests(unittest.TestCase):
         del records[(85, "second", 1)]
         with self.assertRaisesRegex(ValueError, "aligned batch ids"):
             _orientation_batches(records)
+
+    def test_committed_archive_has_stable_design_and_positive_covariance(self) -> None:
+        result = validate_archive(
+            ARCHIVE / "batch_metrics.csv",
+            ARCHIVE / "summary.json",
+            1e12,
+        )
+        batch = result["batch_contract"]
+        self.assertEqual(batch["sizes"], [65, 85, 130, 145, 170])
+        self.assertEqual(batch["batch_count"], 100)
+        self.assertEqual(batch["samples_per_size_batch"], 100000)
+        root = result["summary_contract"]["metric_covariance_diagnostics"][
+            "root_gap"
+        ]
+        self.assertLess(root["infinity_norm_condition"], 10.0)
 
 
 if __name__ == "__main__":
