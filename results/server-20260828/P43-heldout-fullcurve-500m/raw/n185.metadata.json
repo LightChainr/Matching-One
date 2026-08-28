@@ -1,0 +1,27 @@
+{
+  "engine": "same-N Gaussian threshold-rank Newman-Ziff",
+  "generated_utc": "2026-08-28T14:01:36Z",
+  "git_commit": "302464c3a08bdf74a8cea079a50cfebd7fc8843f",
+  "command": "/workspace/issue43-build-302464c/threshold_rank_orientation_mc --samples 500000000 --batches 100 --seed 2026104301 --replica-offset 7000000000 --threads 8 --n 185 --git-commit 302464c3a08bdf74a8cea079a50cfebd7fc8843f --output-prefix /workspace/issue43-results-20260828/n185",
+  "compiler": "10.3.1",
+  "openmp": true,
+  "threads_requested": 8,
+  "samples_per_pair": 500000000,
+  "batches": 100,
+  "seed": 2026104301,
+  "replica_counter_first": 7000000000,
+  "replica_counter_last_exclusive": 7500000000,
+  "rng": "counter-derived SplitMix64 stream plus unbiased Fisher-Yates",
+  "coupling": "same cyclic permutation shared by same-N orientations",
+  "channel": "rank-2 cross wrapping",
+  "K_plus": "first black primal cross rank, 1-based",
+  "K_minus": "first black rank after white matching cross is lost; N-r+1",
+  "sparse_joint_histogram": false,
+  "per_batch_joint_moments": true,
+  "elapsed_seconds": 1834.252394722,
+  "designs": [
+    {"N": 185, "first": [13,4], "second": [11,8]}
+  ],
+  "histogram_csv": "/workspace/issue43-results-20260828/n185.hist.csv",
+  "moments_csv": "/workspace/issue43-results-20260828/n185.moments.csv"
+}
