@@ -1,22 +1,22 @@
 from __future__ import annotations
 
 from fractions import Fraction
+import json
 from pathlib import Path
 import unittest
 
 import mpmath as mp
-import yaml
 
 
 ROOT = Path(__file__).resolve().parents[1]
-ARTIFACT = ROOT / "predictions" / "gaussian_normalized_p4_multiplier_spectrum_20260828.yaml"
+ARTIFACT = ROOT / "predictions" / "gaussian_normalized_p4_multiplier_spectrum_20260828.json"
 
 
 class GaussianNormalizedP4MultiplierSpectrumTests(unittest.TestCase):
     def setUp(self) -> None:
         mp.mp.dps = 80
         with ARTIFACT.open(encoding="utf-8") as handle:
-            self.frozen = yaml.safe_load(handle)
+            self.frozen = json.load(handle)
 
     def test_pure_h4_normalized_projectors_have_positive_radial_ratio(self) -> None:
         exponents = {
