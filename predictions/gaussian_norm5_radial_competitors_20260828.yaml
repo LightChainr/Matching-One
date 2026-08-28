@@ -1,6 +1,9 @@
 version: 1
-frozen_date: 2026-08-28
+frozen_at: 2026-08-28
 status: preregistered_before_N325_N425_target_runs
+claim_level: C0
+source_checkpoint: 4bbbe90180a9960dfae613b47548897ae1defa8b
+related_issue: 57
 purpose: >-
   Separate parameter-free parent/child ratio competitors for the norm-5
   Gaussian experiment. This file does not modify the primary H4/H8/H12
@@ -50,9 +53,9 @@ models:
     deltaM_child_over_parent: '-0.065497997335968199867352036867089470239083169426263'
     interpretation: >-
       V_<1,3> level-4 spin4 is a generic-Q singlet candidate but is predicted
-      matching-even under the proposed interchiral OPE automorphism. A win in
-      the matching-function channel would therefore signal parity failure or
-      mixing, not merely a different exponent.
+      matching-even only under the stronger interchiral/OPE matching hypothesis
+      isolated in Issue #61. A win in the matching-function channel would
+      therefore signal parity failure or mixing, not merely a different exponent.
 
   x17_over_4_W22_log_leakage:
     role: Q1_logarithmic_leakage_competitor
