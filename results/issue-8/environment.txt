@@ -1,0 +1,90 @@
+Fri Aug 28 09:42:56 UTC 2026
+Linux cursor 6.12.94+ #1 SMP PREEMPT_DYNAMIC Tue Jul 28 22:00:48 UTC 2026 x86_64 GNU/Linux
+
+Architecture:                            x86_64
+CPU op-mode(s):                          32-bit, 64-bit
+Address sizes:                           46 bits physical, 57 bits virtual
+Byte Order:                              Little Endian
+CPU(s):                                  8
+On-line CPU(s) list:                     0-7
+Vendor ID:                               GenuineIntel
+Model name:                              Intel(R) Xeon(R) Processor
+CPU family:                              6
+Model:                                   207
+Thread(s) per core:                      1
+Core(s) per socket:                      8
+Socket(s):                               1
+Stepping:                                2
+BogoMIPS:                                4800.00
+Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc pebs bts rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq dtes64 vmx ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch cpuid_fault ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves avx_vnni avx512_bf16 wbnoinvd arat vnmi avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid bus_lock_detect cldemote movdiri movdir64b fsrm md_clear serialize tsxldtrk amx_bf16 avx512_fp16 amx_tile amx_int8 flush_l1d arch_capabilities
+Virtualization:                          VT-x
+Hypervisor vendor:                       KVM
+Virtualization type:                     full
+L1d cache:                               384 KiB (8 instances)
+L1i cache:                               256 KiB (8 instances)
+L2 cache:                                16 MiB (8 instances)
+L3 cache:                                320 MiB (1 instance)
+NUMA node(s):                            1
+NUMA node0 CPU(s):                       0-7
+Vulnerability Gather data sampling:      Not affected
+Vulnerability Indirect target selection: Not affected
+Vulnerability Itlb multihit:             Not affected
+Vulnerability L1tf:                      Not affected
+Vulnerability Mds:                       Not affected
+Vulnerability Meltdown:                  Not affected
+Vulnerability Mmio stale data:           Not affected
+Vulnerability Reg file data sampling:    Not affected
+Vulnerability Retbleed:                  Not affected
+Vulnerability Spec rstack overflow:      Not affected
+Vulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl
+Vulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:                Mitigation; Enhanced / Automatic IBRS; IBPB conditional; PBRSB-eIBRS SW sequence; BHI BHI_DIS_S
+Vulnerability Srbds:                     Not affected
+Vulnerability Tsa:                       Not affected
+Vulnerability Tsx async abort:           Mitigation; TSX disabled
+Vulnerability Vmscape:                   Not affected
+
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi       2.6Gi       8.1Gi        22Mi       5.3Gi        13Gi
+Swap:             0B          0B          0B
+
+python: 3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]
+platform: Linux-6.12.94+-x86_64-with-glibc2.41
+mpmath: 1.4.1
+mp.dps: 80
+git_branch: agent/issue-8-matched-cancellation
+git_head: e7cdd91fdb468f4ea5c8d11f9939838f99b0af0e
+git_status:
+?? results/issue-8/
+?? scripts/__pycache__/
+?? scripts/matched_cancellation_audit.py
+
+pip freeze:
+bcrypt==4.2.0
+certifi==2025.1.31
+chardet==5.2.0
+charset-normalizer==3.4.2
+cryptography==43.0.0
+Deprecated==1.2.18
+gyp-next==0.16.2
+idna==3.10
+jwcrypto==1.5.6
+mpmath==1.4.1
+numpy==2.2.4
+packaging==25.0
+redis==6.1.0
+requests==2.32.3
+typing_extensions==4.13.2
+urllib3==2.3.0
+websockify==0.12.0
+wheel==0.46.1
+wrapt==1.15.0
+
+issue-7 microcanonical files read:
+  L02_microcanonical.csv: L=2 n_k=5 k_max=4 columns=k,configuration_count,sum_clusters_G,sum_clusters_Gstar_complement,wrap_H_G,wrap_V_G,wrap_E_G,wrap_B_G,wrap_H_Gstar,wrap_V_Gstar,wrap_E_Gstar,wrap_B_Gstar
+  L03_microcanonical.csv: L=3 n_k=10 k_max=9 columns=k,configuration_count,sum_clusters_G,sum_clusters_Gstar_complement,wrap_H_G,wrap_V_G,wrap_E_G,wrap_B_G,wrap_H_Gstar,wrap_V_Gstar,wrap_E_Gstar,wrap_B_Gstar
+  L04_microcanonical.csv: L=4 n_k=17 k_max=16 columns=k,configuration_count,sum_clusters_G,sum_clusters_Gstar_complement,wrap_H_G,wrap_V_G,wrap_E_G,wrap_B_G,wrap_H_Gstar,wrap_V_Gstar,wrap_E_Gstar,wrap_B_Gstar
+  L05_microcanonical.csv: L=5 n_k=26 k_max=25 columns=k,configuration_count,sum_clusters_G,sum_clusters_Gstar_complement,wrap_H_G,wrap_V_G,wrap_E_G,wrap_B_G,wrap_H_Gstar,wrap_V_Gstar,wrap_E_Gstar,wrap_B_Gstar
+
+issue-9 inputs: root_sequence.csv, roots_by_batch.csv, microcanonical_L*.csv
+no Monte Carlo was run for Issue #8
