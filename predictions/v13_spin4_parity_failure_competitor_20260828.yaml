@@ -1,53 +1,31 @@
-version: 1
+version: 2
 frozen_date: 2026-08-28
-purpose: adversarial_test_of_interchiral_matching_parity_on_issue_43
-status: competitor_only_do_not_modify_original_issue43_primary
-theory:
-  family: 'Potts diagonal singlet R_<1,3>'
-  primary_weights: ['1/3','1/3']
-  primary_dimension: '2/3'
-  level4_spin4_dimension: '14/3'
-  conformal_spin: '+/-4'
-  expected_matching_parity_under_fusion_automorphism: even
-  physical_interpretation: >-
-    Under the proposed matching/OPE automorphism this field should be projected
-    out of central D=M/2 and may only contribute to matching-even S. The model
-    below is intentionally frozen as a parity-failure adversary: if it predicts
-    future D data better than x=21/4, the interchiral parity mechanism fails or
-    requires additional mixing.
-finite_size_law_if_it_leaks_into_D:
-  delta_M: 'A_13diag * DeltaCos4 * N^(-4/3)'
-  root_bias: 'proportional to L^(-41/12) after division by M_prime~L^(3/4)'
-source_fit:
-  data: results/server-20260828/P31/pooled_deltaM_with_covariance.csv
-  sizes: [65,85,130,145,170]
-  covariance_approximation: diagonal_pooled_size_errors
-  amplitude_A13diag: '0.21908248310960696'
-  amplitude_source_se: '0.009828197789383443'
-  retrospective_fit_chi_square: '5.673744681942523'
-  retrospective_degrees_of_freedom: 4
-  warning: >-
-    This is retrospective because the competitor was identified after P31/P32.
-    Prospective N=185/265 scoring is the clean test.
-targets:
-  - N: 185
-    first: [13,4]
-    second: [11,8]
-    delta_cos4: '1.1780861943024106'
-    predicted_delta_M: '0.0002448437843402022'
-    source_amplitude_only_se: '0.00001098386829399201'
-    original_issue43_x21_prediction_for_reference: '0.00019223156676869253'
-  - N: 265
-    first: [16,3]
-    second: [12,11]
-    delta_cos4: '1.7224635101459596'
-    predicted_delta_M: '0.00022169872033579832'
-    source_amplitude_only_se: '0.000009945564073341857'
-    original_issue43_x21_prediction_for_reference: '0.0001567390401230751'
-scoring_rules:
-  - score_original_issue43_x21_N13_8_prediction_first
-  - score_fixed_V13_N4_3_parity_failure_competitor_second
-  - score_fixed_x17_N9_8_competitor_third
-  - score_zero_effect
-  - only_after_fixed_scores_fit_mixtures_logs_or_free_exponents
-  - do_not_refit_any_source_amplitude_on_N185_or_N265_before_score
+invalidated_date: 2026-08-28
+status: INVALIDATED_DO_NOT_SCORE
+purpose: provenance_tombstone_for_wrong_kac_branch_exploration
+original_commit_preserved_in_history: true
+invalid_reason: >-
+  The original artifact used the dual/tricritical Kac polynomial
+  ((3r-2s)^2-1)/24 while labeling R_<1,3> as a field of the critical Potts
+  branch. For critical Potts percolation Q=1, beta^2=2/3 and the correct
+  convention is ((2r-3s)^2-1)/24. Therefore V_<1,3> has h=2, x=4, not h=1/3,
+  x=2/3, and there is no critical-Potts V13 level-4 x=14/3 / N^-4/3 target of
+  the form frozen in version 1.
+scientific_effect: >-
+  None of the N=185/N=265 target data had been produced when this invalidation
+  was committed. The erroneous N^-4/3 model must not enter prospective scoring,
+  model selection, or evidence counts. Repository history retains the exact
+  original prediction and the correction timing.
+corrected_interpretation:
+  thermal_generator: 'V_<1,2>, h=5/8, x=5/4, matching-odd under the working involution'
+  V_1_3: 'h=2, x=4 second-thermal scalar; matching-even from V12 x V12 fusion under the OPE-automorphism assumption'
+  possible_role: >-
+    V_<1,3> can provide the matching-even scalar x=4 sector invoked in the
+    post-leading/composite correction analysis (#58). It is not the discarded
+    N^-4/3 central matching-odd competitor.
+replacement_scoring_order_for_issue_43:
+  - original_x21_H4_N13_8_prediction
+  - fixed_x17_W22_N9_8_adversarial_competitor
+  - zero_effect
+  - then_declared_H12_mixed_log_or_free_models
+reference_note: notes/critical-potts-kac-convention-correction.md
