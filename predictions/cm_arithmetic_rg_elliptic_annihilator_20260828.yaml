@@ -1,0 +1,181 @@
+version: 1
+frozen_at: 2026-08-28
+status: speculative_pre_target
+claim_level: C0
+purpose: >-
+  Freeze two high-risk consequences of the CM/arithmetic-RG proposal before
+  N650/N850 or Pell-to-hexagonal target data exist: a Q=2,5,10 semigroup
+  plaquette discriminator for P4[S'] corrections and a modular elliptic-point
+  H4 annihilator prediction.
+research_note: notes/cm-hecke-modular-annihilator.md
+
+cm_semigroup:
+  continuum_modulus: i
+  endomorphism_ring: Z[i]
+  leading_character: >-
+    chi_(s,alpha)(h)=Norm(h)^(-alpha)*(h/abs(h))^s
+  interpretation: >-
+    Pure finite-size scaling sectors are conjectured to transform as
+    multiplicative Gaussian-semigroup eigencharacters. Rank-2 logarithmic
+    partners are conjectured to extend the character by a nilpotent Jordan
+    factor proportional to log Norm(h).
+
+p48_sprime_plaquette:
+  observable:
+    raw: "P4[S']"
+    scaled: "Y_N=N^(5/4)*P4[S']"
+  source_artifact: predictions/p48_sprime_multiplier_correction_discrimination_20260828.yaml
+  multipliers:
+    Q2:
+      h: [1, 1]
+      norm: 2
+    Q5_N65_lineage:
+      h: [2, -1]
+      norm: 5
+    Q5_N85_lineage:
+      h: [2, 1]
+      norm: 5
+    Q10_N65_lineage:
+      h: [3, 1]
+      norm: 10
+      factorization: "(1+i)*(2-i)"
+    Q10_N85_lineage:
+      h: [1, 3]
+      norm: 10
+      factorization: "(1+i)*(2+i)"
+  commuting_squares:
+    - parent_N: 65
+      nodes: [65, 130, 325, 650]
+      paths:
+        - [65, 130, 650]
+        - [65, 325, 650]
+    - parent_N: 85
+      nodes: [85, 170, 425, 850]
+      paths:
+        - [85, 170, 850]
+        - [85, 425, 850]
+  statistic:
+    definition: "K_N=Y_(10N)-Y_(5N)-Y_(2N)+Y_N"
+    role: primary_semigroup_curvature
+  frozen_models:
+    pure:
+      scaled_equation: "Y_N=A"
+      K_prediction: 0.0
+    jordan_log:
+      scaled_equation: "Y_N=A+B*log(N)"
+      K_prediction: 0.0
+      reason: "log(10N)-log(5N)-log(2N)+log(N)=0"
+    q2_analytic:
+      scaled_equation: "Y_N=A+B/N"
+      source_B: -90.59560328584558
+      source_var_B: 540.1590397230893
+      K_formula: "K_N=(2/5)*B/N"
+      predictions:
+        N65:
+          mean: -0.5575114048359728
+          source_fit_se: 0.14302351886348388
+        N85:
+          mean: -0.4263322507569204
+          source_fit_se: 0.10937092618972297
+  scoring_contract:
+    - reconstruct all four Y values with aligned covariance where streams are coupled
+    - score K directly rather than subtracting separately rounded ratios
+    - combine source-fit uncertainty with target covariance
+    - do not use N650/N850 outcomes to change the P48 chronological model order
+    - treat K approximately zero as evidence for semigroup-flat pure/log behavior, not by itself proof of LCFT
+
+elliptic_point_annihilator:
+  elliptic_modulus: "omega=1/2+i*sqrt(3)/2"
+  modular_fact:
+    form: E4
+    weight: 4
+    zero_order_at_omega: 1
+  strong_assumptions:
+    - dominant_matching_odd_residual_is_spin4_thermal_family
+    - thermal_spin4_torus_descendant_closes_in_the_same_one_dimensional_modular_sector_as_the_Potts_energy_block
+    - descendant_to_primary_shape_ratio_is_holomorphic_full_level_weight4
+    - no_lower_surviving_sector_dominates_after_H4_suppression
+  implied_shape_law: "A4(tau) proportional to E4(tau)"
+  generic_exponents:
+    matching_residual_in_N: "-13/8"
+    center_slope_in_N: "+3/8"
+    root_bias_in_N: "-2"
+    root_bias_in_L: "-4"
+  pell_family:
+    periods: "u=(2b,0), v=(b,a)"
+    modulus: "tau=1/2+i*a/(2b)"
+    site_count: "N=2ab"
+    pell_defect: "D=a^2-3b^2"
+    approach: "tau-omega=i*D/[2b(a+sqrt(3)b)]=O(N^-1)"
+    asymptotic: "N*Im(tau-omega) -> D/2"
+  elliptic_zero_prediction:
+    H4_shape_factor_in_N: "-1"
+    matching_residual_in_N: "-21/8"
+    root_bias_in_N: "-3"
+    root_bias_in_L: "-6"
+    key_discriminator: >-
+      A genuine spin-12 sector is allowed by the hexagonal stabilizer and need
+      not inherit the E4 zero, so persistence of the old N^-13/8 law near omega
+      is a direct higher-harmonic/other-sector warning.
+  geometry_proxies:
+    - a: 5
+      b: 3
+      D: -2
+      N: 30
+      im_tau: 0.8333333333333333
+      E4_proxy: -0.2170053399613454
+      N_times_E4_proxy: -6.510160198840362
+    - a: 7
+      b: 4
+      D: 1
+      N: 56
+      im_tau: 0.875
+      E4_proxy: 0.052780875014764916
+      N_times_E4_proxy: 2.9557290008268353
+    - a: 19
+      b: 11
+      D: -2
+      N: 418
+      im_tau: 0.8636363636363636
+      E4_proxy: -0.014517909192025114
+      N_times_E4_proxy: -6.068486042266498
+    - a: 26
+      b: 15
+      D: 1
+      N: 780
+      im_tau: 0.8666666666666667
+      E4_proxy: 0.0038629201631539267
+      N_times_E4_proxy: 3.013077727260063
+    - a: 71
+      b: 41
+      D: -2
+      N: 5822
+      im_tau: 0.8658536585365854
+      E4_proxy: -0.0010370113003790316
+      N_times_E4_proxy: -6.037479790806722
+    - a: 97
+      b: 56
+      D: 1
+      N: 10864
+      im_tau: 0.8660714285714286
+      E4_proxy: 0.00027772662646396995
+      N_times_E4_proxy: 3.0172220699045695
+  proxy_definition: >-
+    E4_proxy uses the normalized q-series E4(tau)=1+240*sum_{n>=1}
+    sigma_3(n)*exp(2*pi*i*n*tau). It is a geometry-only diagnostic, not a
+    percolation amplitude and not fitted to target data.
+  primary_sign_test:
+    D_plus_1: positive_E4_side
+    D_minus_2: negative_E4_side
+    asymptotic_ratio_expectation: "(N E4)_(D=-2)/(N E4)_(D=+1) -> -2"
+  falsifiers:
+    - no_H4_suppression_when_tau_approaches_omega
+    - leading_shape_residual_does_not_reverse_between_opposite_Pell_defects
+    - H4_suppresses_but_not_with_the_simple_zero_order_after_integer_geometry_corrections_are_controlled
+    - a_lower_surviving_sector_prevents_the_predicted_N^-3_root_bias
+
+chronology_guard:
+  - this artifact must not modify the already frozen Issue_43 or Issue_57 primary scores
+  - N650_N850 are new semigroup-closure targets and should be powered only after N325_N425 outcomes and variance estimates are reported
+  - Pell elliptic-point results must be scored against this geometry/exponent structure before adding a flexible modular-shape fit
+  - failure is to be preserved as a scientific result rather than repaired by changing the elliptic point or Pell family after reveal
