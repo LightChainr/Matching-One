@@ -1,8 +1,27 @@
-version: 1
+version: 2
 updated: 2026-08-28
 purpose: >-
-  Updated execution order after identifying fixed-N Gaussian-integer orientation
-  tomography and an L^-3/2 correction mechanism for kappa_3.
+  Execution order after PR #21 showed that large Pell fixed-p scans are
+  severely underpowered for the proposed L^-4 orientation root gap. Discovery
+  now uses same-N Gaussian-integer tori and larger matching-even orientation
+  signals before spending statistics on the small matching-odd residue.
+
+server_evidence:
+  pr21:
+    blind_finite_width:
+      statement: >-
+        A powers 4,6,8,10,12 model selected using widths <=18 predicted widths
+        19-21 at ~1e-11 absolute scale, but all three signed errors were positive
+        and increased with width. Treat this as strong local prediction with
+        systematic infinite-limit drift, not as a 1e-11 threshold determination.
+    pell_fixed_p:
+      statement: >-
+        Pairs (17,12), (41,29), (99,70) did not resolve an orientation root gap.
+        Their observed standard errors are much larger than an L^-4 signal with
+        amplitude calibrated from exact tiny systems. This is a power-analysis
+        negative result, not a falsification of the angular hypothesis.
+    action: >-
+      Do not spend further discovery compute on L~40-100 Pell fixed-p scans.
 
 priorities:
   - id: S0
@@ -12,10 +31,16 @@ priorities:
       cpu_cores: 8
       ram_gb: 16
       gpu: false
+    implementation:
+      period_representation: integer_2x2_matrix
+      requirement: >-
+        Do not assume axis-aligned periods. Convert closed lifted displacement
+        vectors to period-basis windings using the exact adjugate/determinant.
     outputs:
       - validated quotient by arbitrary 2x2 integer period matrix
       - winding subgroup / homology rank classifier
       - axis and diamond regression equality with existing reference implementation
+      - Gaussian circulant/reference cross-check
     acceptance:
       - exhaustive tiny-size matching identities pass
       - period-basis winding classifications are invariant under unimodular basis changes
@@ -37,22 +62,51 @@ priorities:
         - {N: 425, reps: [[19,8],[16,13]]}
       multi_angle:
         - {N: 1105, reps: [[33,4],[32,9],[31,12],[24,23]]}
-      spin4_zero_approximants:
-        - [5,2]
-        - [12,5]
-        - [29,12]
-    outputs:
+    coupling:
+      canonical: same_vertex_labels_Z_N
+      optional: >-
+        Freeze a unit multiplier j->t*j mod N using graph-only step-overlap or
+        an independent pilot before production.
+    discovery_observables:
+      - primal wrapping orientation difference
+      - matching-lattice wrapping orientation difference
+      - matching-even orientation sector S=(R_G+R_hat)/2
+      - matching-odd orientation sector D=(R_G-R_hat)/2
+    target_observables:
       - same-N M differences at frozen p_ref
       - root differences
-      - cos4theta normalized amplitudes
-      - fixed-N angular Fourier fits
+      - fixed-N angular Fourier coefficients
+    hypotheses:
+      - leading scalar angular law contains constant + cos(4 theta)
+      - matching-even spin-4 sector is substantially larger than matching-odd residue
+      - D4/S4 decreases with system size if matching projects out leading anisotropy
     acceptance:
       - cos4theta sign pattern reproduced at >=3 same-N pairs
-      - normalized amplitude collapse improves with N
-      - pi/8 approximants suppress leading amplitude
+      - matching-even angular signal is resolved before interpreting null M differences
+      - fixed-N multi-angle data predict held-out orientations
       - square-bond exact-threshold control agrees qualitatively
     gpu_gate: >-
-      Rent/use GPU only after CPU data show a reproducible orientation harmonic.
+      Rent/use GPU only after CPU data show a reproducible orientation harmonic
+      and a measured variance model justifies the larger run.
+
+  - id: S1b
+    priority: P0
+    title: Small Pell cross-check and power calibration
+    depends_on: [S0]
+    resources:
+      cpu_cores: 8
+      ram_gb: 16
+      gpu: false
+    geometries:
+      - [7,5]
+      - [17,12]
+    outputs:
+      - root-gap standard error versus sample count
+      - direct comparison with orientation_power_budget.py
+      - empirical covariance decay of the paired observable
+    acceptance:
+      - no claim from significance alone
+      - use as an independent check on Gaussian tomography, not the primary discovery path
 
   - id: S2
     priority: P0
@@ -94,22 +148,48 @@ priorities:
 
   - id: S4
     priority: P1
-    title: Full standardized matching crossover profile
-    depends_on: [S2]
+    title: Threshold-rank Newman-Ziff and full matching crossover distribution
+    depends_on: [S0]
     resources:
       cpu_cores: 8
       ram_gb: 16
       gpu: high_benefit_after_reference
     outputs:
-      - microcanonical curves
+      - K_minus and K_plus histograms for cross wrapping
+      - joint threshold-gap statistics
+      - beta-mixture reconstruction of M_L(p)
       - standardized rho(z)=M'(z)/2 profile
       - cross-model profile distances
       - kappa3/kappa5 fingerprint
     acceptance:
+      - exact small-system canonical curve reproduced from rank histograms
       - profile collapse across at least two microscopic realizations of the same torus shape
       - bootstrap/covariance propagated through standardization
 
   - id: S5
+    priority: P1
+    title: Matching-channel covariance projection
+    depends_on: [S0]
+    resources:
+      cpu_cores: 8
+      ram_gb: 16
+      gpu: optional_after_cpu_gate
+    channels:
+      - cross
+      - both
+      - either
+      - direction_0
+      - direction_1
+      - cluster_number_if_available
+    outputs:
+      - pilot covariance and correlation matrices
+      - frozen GLS/control-variate weights
+      - evaluation-set variance ratios against best single channel
+    acceptance:
+      - advance to production optimization only if variance reduction is stable out of sample
+      - prefer >=2x variance reduction or a reproducible near-null covariance direction
+
+  - id: S6
     priority: P1
     title: Long-cylinder Potts-Q derivative bridge
     resources:
@@ -123,3 +203,21 @@ priorities:
       - feasibility assessment for TBA/NLIE computation
     acceptance:
       - numerical cylinder limit stable before analytic matching is attempted
+
+  - id: S7
+    priority: P2
+    title: Rational finite-width extrapolation challenge
+    resources:
+      cpu_cores: 8
+      ram_gb: 8
+      gpu: false
+    purpose: >-
+      Test whether p_n=pc+n^-4 F(n^-2) is more predictively represented by a
+      low-order rational F than by increasingly high polynomial truncations.
+    rules:
+      - model order selected only on widths below a frozen cutoff
+      - score signed and absolute withheld finite-width errors
+      - do not interpret a better finite-width score as a threshold confidence interval
+    acceptance:
+      - rational model must remove systematic signed drift on multiple withheld blocks
+      - improvement must survive changing the training cutoff
