@@ -41,6 +41,7 @@ from matched_torus_reference import (
     axis_geometry,
     cluster_stats,
     diamond_geometry,
+    popcount,
 )
 
 
@@ -53,7 +54,7 @@ def bernstein_counts(geometry: Geometry) -> list[int]:
 
     counts = [0] * (geometry.n + 1)
     for mask in range(1 << geometry.n):
-        k = mask.bit_count()
+        k = popcount(mask)
         black = [bool((mask >> i) & 1) for i in range(geometry.n)]
         _nb, black_wrap = cluster_stats(black, geometry.primal_edges)
 

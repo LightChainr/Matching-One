@@ -220,6 +220,12 @@ def matching_polynomial(p: mp.mpf) -> mp.mpf:
     return p - 2 * p**2 + p**4
 
 
+def popcount(value: int) -> int:
+    """Return the number of set bits on Python 3.9 and newer."""
+
+    return bin(value).count("1")
+
+
 def configuration_observables(
     geometry: Geometry, active: list[bool]
 ) -> tuple[int, int, bool, bool]:
@@ -241,7 +247,7 @@ def exact_check(geometry: Geometry, p: mp.mpf) -> dict[str, mp.mpf | int | str]:
     wrapping_difference = mp.mpf(0)
 
     for mask in range(1 << geometry.n):
-        occupied = mask.bit_count()
+        occupied = popcount(mask)
         weight = p**occupied * q ** (geometry.n - occupied)
         active = [bool((mask >> i) & 1) for i in range(geometry.n)]
         nb, nw, wb, ww = configuration_observables(geometry, active)
