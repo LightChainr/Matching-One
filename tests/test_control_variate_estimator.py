@@ -11,6 +11,7 @@ sys.path.insert(0, str(SCRIPTS))
 
 from control_variate_estimator import (  # noqa: E402
     FrozenEstimator,
+    FrozenZeroMeanControls,
     minimum_variance_weights,
     sample_covariance,
 )
@@ -61,6 +62,23 @@ class MinimumVarianceTests(unittest.TestCase):
         estimator = FrozenEstimator.fit(("a", "b"), [[0.0, 1.0], [1.0, 0.0]])
         with self.assertRaisesRegex(ValueError, "at least two rows"):
             estimator.evaluate([[1.0, 1.0]])
+
+    def test_frozen_zero_mean_control_regression(self) -> None:
+        controls = []
+        targets = []
+        for first in (-1.0, 1.0):
+            for second in (-1.0, 1.0):
+                for noise in (-1.0, 1.0):
+                    controls.append([first, second])
+                    targets.append(3.0 * first - 2.0 * second + 0.5 * noise)
+        estimator = FrozenZeroMeanControls.fit(
+            ("first", "second"), targets, controls
+        )
+        self.assertAlmostEqual(estimator.coefficients[0], -3.0)
+        self.assertAlmostEqual(estimator.coefficients[1], 2.0)
+        result = estimator.evaluate(targets, controls)
+        self.assertAlmostEqual(result["mean"], 0.0)
+        self.assertLess(result["sample_variance"], 0.3)
 
 
 if __name__ == "__main__":

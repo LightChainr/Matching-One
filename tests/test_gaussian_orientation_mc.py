@@ -42,6 +42,23 @@ class GaussianOrientationMCTest(unittest.TestCase):
         self.assertIn("exhaustive N=5,13", completed.stdout)
         self.assertIn("matching channels", completed.stdout)
 
+    def test_frozen_confirmation_designs_include_new_sizes(self) -> None:
+        prefix = Path(self.temp.name) / "n170"
+        subprocess.run(
+            [
+                str(self.binary), "--samples", "20", "--batches", "2",
+                "--n", "170", "--seed", "19", "--threads", "1",
+                "--git-commit", "test-sha", "--output-prefix", str(prefix),
+            ],
+            check=True,
+        )
+        metadata = json.loads(
+            Path(str(prefix) + ".metadata.json").read_text(encoding="utf-8")
+        )
+        self.assertEqual(metadata["designs"][0]["N"], 170)
+        self.assertEqual(metadata["designs"][0]["first"], [13, 1])
+        self.assertEqual(metadata["designs"][0]["second"], [11, 7])
+
     def test_reproducible_batches_and_sector_analysis(self) -> None:
         first = Path(self.temp.name) / "first"
         second = Path(self.temp.name) / "second"
@@ -67,6 +84,7 @@ class GaussianOrientationMCTest(unittest.TestCase):
         analysis_json = Path(self.temp.name) / "analysis.json"
         analysis_csv = Path(self.temp.name) / "analysis.csv"
         covariance_json = Path(self.temp.name) / "covariance.json"
+        delta_m_csv = Path(self.temp.name) / "delta_M_by_size_seed.csv"
         frozen_weights = Path(self.temp.name) / "frozen_weights.json"
         subprocess.run(
             [
@@ -75,6 +93,7 @@ class GaussianOrientationMCTest(unittest.TestCase):
                 "--metadata", str(first) + ".metadata.json",
                 "--json", str(analysis_json), "--csv", str(analysis_csv),
                 "--covariance-json", str(covariance_json),
+                "--delta-m-csv", str(delta_m_csv),
                 "--freeze-gls", str(frozen_weights),
             ],
             check=True,
@@ -114,6 +133,13 @@ class GaussianOrientationMCTest(unittest.TestCase):
             self.assertEqual(len(second_differences), 1)
 
         covariance = json.loads(covariance_json.read_text(encoding="utf-8"))["by_N"]["65"]
+        with delta_m_csv.open(newline="", encoding="utf-8") as handle:
+            delta_rows = list(csv.DictReader(handle))
+        self.assertEqual(len(delta_rows), 1)
+        self.assertEqual(delta_rows[0]["row_id"], "65:17")
+        self.assertEqual(delta_rows[0]["N"], "65")
+        self.assertEqual(delta_rows[0]["seed"], "17")
+        self.assertAlmostEqual(float(delta_rows[0]["delta_M"]), 0.04)
         self.assertEqual(len(covariance["raw_orientation_channel_matrix"]["labels"]), 20)
         self.assertEqual(len(covariance["orientation_sector_effect_matrix"]["labels"]), 25)
         frozen = json.loads(frozen_weights.read_text(encoding="utf-8"))

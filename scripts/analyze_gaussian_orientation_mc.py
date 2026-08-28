@@ -179,6 +179,49 @@ def write_csv(path: Path, rows: List[Dict[str, object]]) -> None:
             writer.writerow(flat)
 
 
+def write_delta_m_csv(
+    path: Path, rows: List[Dict[str, object]], metadata: Dict[str, object]
+) -> None:
+    """Write the frozen P31/P32 interface: one matching-function row per N/seed."""
+
+    selected = [
+        row for row in rows
+        if row["channel"] == "either" and row["sector"] == "matching_function"
+    ]
+    if not selected:
+        raise ValueError("analysis contains no either/matching_function summaries")
+    fields = [
+        "row_id", "N", "seed", "delta_M", "delta_M_se", "delta_cos4",
+        "a1", "b1", "a2", "b2", "samples_per_pair", "batches", "p_ref",
+        "replica_counter_first", "replica_counter_last_exclusive",
+    ]
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fields, lineterminator="\n")
+        writer.writeheader()
+        for row in selected:
+            first = row["first_rep"]
+            second = row["second_rep"]
+            n = int(row["N"])
+            seed = str(metadata.get("seed", "unknown"))
+            writer.writerow({
+                "row_id": "{}:{}".format(n, seed),
+                "N": n,
+                "seed": seed,
+                "delta_M": row["difference_first_minus_second"],
+                "delta_M_se": row["difference_batch_se"],
+                "delta_cos4": row["delta_cos4_first_minus_second"],
+                "a1": first[0], "b1": first[1], "a2": second[0], "b2": second[1],
+                "samples_per_pair": metadata.get("samples_per_pair"),
+                "batches": metadata.get("batches"),
+                "p_ref": metadata.get("p_ref"),
+                "replica_counter_first": metadata.get("replica_counter_first"),
+                "replica_counter_last_exclusive": metadata.get(
+                    "replica_counter_last_exclusive"
+                ),
+            })
+
+
 def batch_ids(rows: Dict[BatchKey, Dict[str, int]], n: int) -> List[int]:
     return sorted(key[2] for key in rows if key[:2] == (n, CHANNELS[0]))
 
@@ -441,6 +484,10 @@ def main() -> int:
     parser.add_argument("--metadata", type=Path, required=True)
     parser.add_argument("--json", type=Path, required=True)
     parser.add_argument("--csv", type=Path, required=True, help="long-form sector_effects CSV")
+    parser.add_argument(
+        "--delta-m-csv", type=Path,
+        help="write the one-row-per-size frozen P31/P32 matching-function interface",
+    )
     parser.add_argument("--covariance-json", type=Path)
     gls = parser.add_mutually_exclusive_group()
     gls.add_argument("--freeze-gls", type=Path, help="write pilot-frozen D-channel weights")
@@ -484,6 +531,8 @@ def main() -> int:
     args.json.parent.mkdir(parents=True, exist_ok=True)
     args.json.write_text(json.dumps(payload, indent=2), encoding="utf-8")
     write_csv(args.csv, summaries)
+    if args.delta_m_csv:
+        write_delta_m_csv(args.delta_m_csv, summaries, metadata)
     if args.covariance_json:
         args.covariance_json.parent.mkdir(parents=True, exist_ok=True)
         args.covariance_json.write_text(
@@ -520,6 +569,8 @@ def main() -> int:
     print("wrote " + str(args.csv))
     if args.covariance_json:
         print("wrote " + str(args.covariance_json))
+    if args.delta_m_csv:
+        print("wrote " + str(args.delta_m_csv))
     if args.freeze_gls:
         print("wrote " + str(args.freeze_gls))
     if args.frozen_gls:

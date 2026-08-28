@@ -229,3 +229,35 @@ or rational-value claim is made from the square-bond sequence alone.
 
 The final local and Python 3.9/AArch64 server regression suites each contain
 42 tests; all 42 passed in both environments.
+
+## Third-wave confirmation follow-up
+
+- **P31:** a new independent 100-million-replica seed at each of
+  `N=65,85,130,145,170` reproduced the prescribed sign at every size.  The new
+  N=65 and N=85 signals are 16.0 and 11.2 standard errors.  Pooling seeds
+  within size gives a common scaled amplitude `A4=0.7885 +/- 0.0352`, with
+  chi-square `1.53/4` across all five sizes.
+- **P32:** the frozen training/held-out challenge selected the simple fixed
+  `13/8` model on held-out performance: chi-square `1.058` for the three
+  held-out seed rows, versus `37.32` for a zero-effect model.  Power, logarithmic,
+  H4+H8, and free-exponent alternatives did not improve prediction.  The H8
+  coefficient is `-0.0345 +/- 0.0542` and is not resolved.
+- **P33:** the C++ threshold-rank engine now retains orientation/batch
+  `K_minus/K_plus` histograms and joint moments for all five pairs.  A
+  10-million-per-size ARM pilot completed in 65.2 seconds.  Central amplitudes
+  and root gaps have the predicted signs, and symmetric thermal offsets leave
+  the central orientation amplitude intact.  The held-out `N^-2` root-gap
+  scaling gate is not yet met (`chi-square=7.40` for two held-out rows).
+- **P34:** the exact Euler identity and fixed-K hypergeometric centering pass
+  on three tiny periodic quotients.  Pilot-frozen Euler/motif controls reduce
+  variance by `2.319x`, `1.852x`, and `1.665x` at axis `L=8,12,16`; the
+  multiple-size 2x GPU gate therefore remains closed.
+- **P35:** same-batch amplitude closure gives
+  `C=-Delta p* mean(M')/Delta M` between `0.99984` and `1.00031` at all five
+  sizes, with delete-one-batch errors at the `2e-5--1.4e-4` level.  Direct and
+  linearized root gaps agree; the remaining root-scaling failure is radial
+  drift, not nonlinear root conversion.
+
+The expanded local suite contains 53 tests before final integration additions;
+all passed.  Detailed reports and machine-readable outputs are under `P31/`,
+`P32-radial-challenge/`, `P33/`, `P35-amplitude-closure/`, and `C03-euler/`.

@@ -87,7 +87,9 @@ struct PairDesign {
 const std::vector<PairDesign> kDesigns = {
     {65, 8, 1, 7, 4},
     {85, 9, 2, 7, 6},
+    {130, 11, 3, 9, 7},
     {145, 12, 1, 9, 8},
+    {170, 13, 1, 11, 7},
 };
 
 int positive_mod(int value, int modulus) {
@@ -387,7 +389,7 @@ struct Options {
         << "  --seed S             unsigned 64-bit seed (default 20260828)\n"
         << "  --replica-offset K   first RNG replica counter (default 0)\n"
         << "  --threads T          OpenMP threads; 0 uses runtime default\n"
-        << "  --n N                run only prescribed N=65,85,or145 (default all)\n"
+        << "  --n N                run only one frozen confirmation size (default all)\n"
         << "  --git-commit SHA     provenance string recorded in metadata\n"
         << "  --output-prefix PATH writes PATH.batches.csv and PATH.metadata.json\n"
         << "  --self-test           exhaustive reference checks and exit\n"
@@ -437,7 +439,7 @@ Options parse_options(int argc, char** argv) {
     if (options.threads < 0) throw std::invalid_argument("threads must be nonnegative");
     if (options.only_n != 0 && std::none_of(kDesigns.begin(), kDesigns.end(),
             [&](const PairDesign& design) { return design.n == options.only_n; })) {
-        throw std::invalid_argument("--n must be one of 65, 85, 145");
+        throw std::invalid_argument("--n must be one of 65, 85, 130, 145, 170");
     }
     if (options.replica_offset > std::numeric_limits<std::uint64_t>::max() - options.samples) {
         throw std::invalid_argument("replica counter range overflows uint64");

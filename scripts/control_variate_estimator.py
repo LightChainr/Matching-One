@@ -180,6 +180,114 @@ class FrozenEstimator:
         }
 
 
+@dataclass(frozen=True)
+class FrozenZeroMeanControls:
+    """Pilot-frozen coefficients for a target plus exact zero-mean controls.
+
+    Unlike :class:`FrozenEstimator`, the columns do not have equal means and
+    their coefficients need not sum to one.  If ``Z`` has known expectation
+    zero, ``target + beta^T Z`` remains unbiased for every fixed ``beta``.
+    """
+
+    control_names: tuple[str, ...]
+    coefficients: tuple[float, ...]
+    pilot_covariance: tuple[tuple[float, ...], ...]
+    applied_ridge: float
+
+    @classmethod
+    def fit(
+        cls,
+        control_names: Sequence[str],
+        pilot_targets: Sequence[float],
+        pilot_controls: Sequence[Sequence[float]],
+        ridge: float = 0.0,
+    ) -> "FrozenZeroMeanControls":
+        if len(set(control_names)) != len(control_names) or not control_names:
+            raise ValueError("control names must be nonempty and unique")
+        width = _validate_rows(pilot_controls)
+        if len(control_names) != width:
+            raise ValueError("control name count does not match pilot data")
+        if len(pilot_targets) != len(pilot_controls):
+            raise ValueError("pilot target/control row counts differ")
+        if any(not math.isfinite(float(value)) for value in pilot_targets):
+            raise ValueError("pilot targets must be finite")
+        if ridge < 0 or not math.isfinite(ridge):
+            raise ValueError("ridge must be a finite nonnegative number")
+
+        joint_rows = [
+            [float(target)] + [float(value) for value in controls]
+            for target, controls in zip(pilot_targets, pilot_controls)
+        ]
+        covariance = sample_covariance(joint_rows)
+        control_covariance = [row[1:] for row in covariance[1:]]
+        target_covariance = [covariance[index][0] for index in range(1, width + 1)]
+        scale = math.fsum(
+            abs(control_covariance[index][index]) for index in range(width)
+        ) / width
+        if scale == 0.0:
+            scale = 1.0
+        applied = ridge
+        for attempt in range(9):
+            trial = [row[:] for row in control_covariance]
+            for index in range(width):
+                trial[index][index] += applied
+            try:
+                solution = _solve(trial, target_covariance)
+                coefficients = [-value for value in solution]
+                if any(not math.isfinite(value) for value in coefficients):
+                    raise ArithmeticError("nonfinite control coefficient")
+                return cls(
+                    tuple(control_names),
+                    tuple(coefficients),
+                    tuple(tuple(row) for row in covariance),
+                    applied,
+                )
+            except ArithmeticError:
+                if ridge > 0:
+                    raise
+                applied = scale * 1e-12 * (10**attempt)
+        raise ArithmeticError("could not regularize control covariance matrix")
+
+    def adjusted_values(
+        self,
+        targets: Sequence[float],
+        controls: Sequence[Sequence[float]],
+    ) -> list[float]:
+        width = _validate_rows(controls)
+        if width != len(self.coefficients):
+            raise ValueError("control count does not match frozen coefficients")
+        if len(targets) != len(controls):
+            raise ValueError("target/control row counts differ")
+        return [
+            float(target)
+            + math.fsum(
+                coefficient * float(value)
+                for coefficient, value in zip(self.coefficients, row)
+            )
+            for target, row in zip(targets, controls)
+        ]
+
+    def evaluate(
+        self,
+        targets: Sequence[float],
+        controls: Sequence[Sequence[float]],
+    ) -> dict[str, object]:
+        adjusted = self.adjusted_values(targets, controls)
+        mean = math.fsum(adjusted) / len(adjusted)
+        variance = math.fsum((value - mean) ** 2 for value in adjusted) / (
+            len(adjusted) - 1
+        )
+        return {
+            "samples": len(adjusted),
+            "control_names": list(self.control_names),
+            "coefficients": list(self.coefficients),
+            "applied_ridge": self.applied_ridge,
+            "mean": mean,
+            "sample_variance": variance,
+            "standard_error": math.sqrt(variance / len(adjusted)),
+        }
+
+
 def _read_csv(path: Path, channels: Sequence[str]) -> list[list[float]]:
     with path.open(newline="", encoding="utf-8") as handle:
         reader = csv.DictReader(handle)
