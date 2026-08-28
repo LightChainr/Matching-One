@@ -1,0 +1,39 @@
+schema_version: 1
+status: preregistered_numerical_hardening_before_axis_pair_production
+claim_level: C0
+related_issue: 47
+related_pr: 98
+purpose: >-
+  Replace only the numerical linear-algebra entry point of the V14 adjacent-axis
+  analysis after CI exposed severe design-column scale separation. Scientific
+  models, q candidates, p_ref, train/heldout split, RNG policy and sample-count
+  rule are unchanged.
+
+supersedes_field:
+  artifact: experiments/v14_axis_annihilator_20260828.yaml
+  old_analysis: scripts/score_axis_pair_annihilator.py
+  new_analysis: scripts/score_axis_pair_annihilator_stable.py
+
+reason: >-
+  The physical design matrices contain columns such as [1,L^-w] and
+  [Delta L^-q, Delta L^4] whose magnitudes differ by many orders. Forming normal
+  equations directly can trigger a false numerical-singularity guard even on
+  exact synthetic data. The stable entry point rescales each design column to
+  O(1), solves the identical weighted least-squares problem, then transforms
+  coefficients and covariance back to the original physical basis.
+
+invariants:
+  q_candidate_order: [3, 2, 4, 6, 1.5]
+  p_ref: '0.592746050790'
+  train_upper_L: [10,11,12,13,14,15,16,17,18,19,20]
+  heldout_upper_L: [21,22,23,24,25,26,27,28,29,30,31,32]
+  target_rng_domains: distinct_seed_per_pair
+  primary_statistic: F_shape
+  secondary_statistic: accelerated_root
+  no_target_refit: true
+
+acceptance:
+  - exact q3 synthetic F-shape is recovered after scaling
+  - exact w7 synthetic root sequence is recovered after scaling
+  - wrong q/w controls remain discriminated
+  - returned coefficients and covariance are expressed in the original unscaled basis
