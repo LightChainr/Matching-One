@@ -1,0 +1,838 @@
+{
+  "schema": "P34 frozen Euler/motif OLS weights v1",
+  "pilot_fraction": 0.2,
+  "by_N": {
+    "65": {
+      "first": {
+        "euler_canonical": {
+          "centering": "canonical",
+          "control_names": [
+            "V",
+            "E",
+            "F0"
+          ],
+          "dropped_controls": [],
+          "weights": [
+            -0.13679284230859096,
+            0.17160300438613454,
+            -0.16930733626556285
+          ],
+          "analytic_control_means": [
+            38.52849330135,
+            45.67522449452836,
+            8.023946663944475
+          ],
+          "eval_mean_q": 0.00059375,
+          "eval_mean_D_cluster": 0.0029595292338870927,
+          "eval_mean_adjusted": 0.0012189289043725109,
+          "eval_var_q": 0.6267016808380386,
+          "eval_var_D_cluster": 5.04460077512597,
+          "eval_var_adjusted": 0.2759373542800342,
+          "best_single": "q",
+          "best_single_variance": 0.6267016808380386,
+          "variance_reduction_vs_q": 2.2711737686737123,
+          "variance_reduction_vs_D_cluster": 18.28168856763942,
+          "variance_reduction_vs_best_single": 2.2711737686737123,
+          "identity_l1_eval": 0.0,
+          "wrapping_l1_eval": 0.0
+        },
+        "euler_microcanonical": {
+          "centering": "microcanonical",
+          "control_names": [
+            "V",
+            "E_mc",
+            "F0_mc"
+          ],
+          "dropped_controls": [],
+          "weights": [
+            0.12908420111658467,
+            0.1694358104323035,
+            -0.16880914171009492
+          ],
+          "analytic_control_means": [
+            38.52849330135,
+            0.0,
+            0.0
+          ],
+          "eval_mean_q": 0.00059375,
+          "eval_mean_D_cluster": 0.0029595292338870927,
+          "eval_mean_adjusted": 0.0012220458135518025,
+          "eval_var_q": 0.6267016808380386,
+          "eval_var_D_cluster": 5.04460077512597,
+          "eval_var_adjusted": 0.2780798222583054,
+          "best_single": "q",
+          "best_single_variance": 0.6267016808380386,
+          "variance_reduction_vs_q": 2.253675494138881,
+          "variance_reduction_vs_D_cluster": 18.14083716739467,
+          "variance_reduction_vs_best_single": 2.253675494138881,
+          "identity_l1_eval": 0.0,
+          "wrapping_l1_eval": 0.0
+        },
+        "euler_plus_motifs_canonical": {
+          "centering": "canonical",
+          "control_names": [
+            "V",
+            "E",
+            "F0",
+            "nnn_pos",
+            "nnn_neg",
+            "path3_x",
+            "path3_y",
+            "corners"
+          ],
+          "dropped_controls": [],
+          "weights": [
+            -0.1133041707375226,
+            0.09326636782145131,
+            -0.23394267617598255,
+            -0.0024899672644728248,
+            -0.0007468014665487077,
+            0.04287115499934484,
+            0.04385981135562017,
+            0.030484531043818985
+          ],
+          "analytic_control_means": [
+            38.52849330135,
+            45.67522449452836,
+            8.023946663944475,
+            22.83761224726418,
+            22.83761224726418,
+            13.536904469039179,
+            13.536904469039179,
+            54.147617876156716
+          ],
+          "eval_mean_q": 0.00059375,
+          "eval_mean_D_cluster": 0.0029595292338870927,
+          "eval_mean_adjusted": 0.0013411446492154488,
+          "eval_var_q": 0.6267016808380386,
+          "eval_var_D_cluster": 5.04460077512597,
+          "eval_var_adjusted": 0.2652202762274002,
+          "best_single": "q",
+          "best_single_variance": 0.6267016808380386,
+          "variance_reduction_vs_q": 2.3629478475495733,
+          "variance_reduction_vs_D_cluster": 19.020418977321036,
+          "variance_reduction_vs_best_single": 2.3629478475495733,
+          "identity_l1_eval": 0.0,
+          "wrapping_l1_eval": 0.0
+        },
+        "euler_plus_motifs_microcanonical": {
+          "centering": "microcanonical",
+          "control_names": [
+            "V",
+            "E_mc",
+            "F0_mc",
+            "nnn_pos_mc",
+            "nnn_neg_mc",
+            "path3_x_mc",
+            "path3_y_mc",
+            "corners_mc"
+          ],
+          "dropped_controls": [],
+          "weights": [
+            0.1290852153465253,
+            0.08487782161049959,
+            -0.23397670751278973,
+            -0.005191812823996302,
+            -0.0033916596432092133,
+            0.044806413030797784,
+            0.045727807524716696,
+            0.03338719290001118
+          ],
+          "analytic_control_means": [
+            38.52849330135,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "eval_mean_q": 0.00059375,
+          "eval_mean_D_cluster": 0.0029595292338870927,
+          "eval_mean_adjusted": 0.0012992305062171892,
+          "eval_var_q": 0.6267016808380386,
+          "eval_var_D_cluster": 5.04460077512597,
+          "eval_var_adjusted": 0.2672860692931584,
+          "best_single": "q",
+          "best_single_variance": 0.6267016808380386,
+          "variance_reduction_vs_q": 2.3446851625876333,
+          "variance_reduction_vs_D_cluster": 18.873414497308012,
+          "variance_reduction_vs_best_single": 2.3446851625876333,
+          "identity_l1_eval": 0.0,
+          "wrapping_l1_eval": 0.0
+        }
+      },
+      "second": {
+        "euler_canonical": {
+          "centering": "canonical",
+          "control_names": [
+            "V",
+            "E",
+            "F0"
+          ],
+          "dropped_controls": [],
+          "weights": [
+            -0.13336297755598256,
+            0.17049326858034453,
+            -0.16999706177806784
+          ],
+          "analytic_control_means": [
+            38.52849330135,
+            45.67522449452836,
+            8.023946663944475
+          ],
+          "eval_mean_q": -0.00133375,
+          "eval_mean_D_cluster": 0.0028720292338872966,
+          "eval_mean_adjusted": -0.00039185727864350086,
+          "eval_var_q": 0.6266227543893805,
+          "eval_var_D_cluster": 5.0311197812434765,
+          "eval_var_adjusted": 0.27549888050767646,
+          "best_single": "q",
+          "best_single_variance": 0.6266227543893805,
+          "variance_reduction_vs_q": 2.274501998827253,
+          "variance_reduction_vs_D_cluster": 18.26185199726534,
+          "variance_reduction_vs_best_single": 2.274501998827253,
+          "identity_l1_eval": 0.0,
+          "wrapping_l1_eval": 0.0
+        },
+        "euler_microcanonical": {
+          "centering": "microcanonical",
+          "control_names": [
+            "V",
+            "E_mc",
+            "F0_mc"
+          ],
+          "dropped_controls": [],
+          "weights": [
+            0.1293032916609082,
+            0.1683306974583528,
+            -0.1693585607824213
+          ],
+          "analytic_control_means": [
+            38.52849330135,
+            0.0,
+            0.0
+          ],
+          "eval_mean_q": -0.00133375,
+          "eval_mean_D_cluster": 0.0028720292338872966,
+          "eval_mean_adjusted": -0.0003963135425779341,
+          "eval_var_q": 0.6266227543893805,
+          "eval_var_D_cluster": 5.0311197812434765,
+          "eval_var_adjusted": 0.27766065526987604,
+          "best_single": "q",
+          "best_single_variance": 0.6266227543893805,
+          "variance_reduction_vs_q": 2.256793472522515,
+          "variance_reduction_vs_D_cluster": 18.119671209280305,
+          "variance_reduction_vs_best_single": 2.256793472522515,
+          "identity_l1_eval": 0.0,
+          "wrapping_l1_eval": 0.0
+        },
+        "euler_plus_motifs_canonical": {
+          "centering": "canonical",
+          "control_names": [
+            "V",
+            "E",
+            "F0",
+            "nnn_pos",
+            "nnn_neg",
+            "path3_x",
+            "path3_y",
+            "corners"
+          ],
+          "dropped_controls": [],
+          "weights": [
+            -0.11854494727906036,
+            0.09967431285240672,
+            -0.2253970900416989,
+            0.0018168394038102532,
+            0.0013318271354764537,
+            0.04264597466716514,
+            0.04372951493038838,
+            0.024739476798540057
+          ],
+          "analytic_control_means": [
+            38.52849330135,
+            45.67522449452836,
+            8.023946663944475,
+            22.83761224726418,
+            22.83761224726418,
+            13.536904469039179,
+            13.536904469039179,
+            54.147617876156716
+          ],
+          "eval_mean_q": -0.00133375,
+          "eval_mean_D_cluster": 0.0028720292338872966,
+          "eval_mean_adjusted": -0.0001694886732035532,
+          "eval_var_q": 0.6266227543893805,
+          "eval_var_D_cluster": 5.0311197812434765,
+          "eval_var_adjusted": 0.2655559436865869,
+          "best_single": "q",
+          "best_single_variance": 0.6266227543893805,
+          "variance_reduction_vs_q": 2.3596638271027746,
+          "variance_reduction_vs_D_cluster": 18.94561165304317,
+          "variance_reduction_vs_best_single": 2.3596638271027746,
+          "identity_l1_eval": 0.0,
+          "wrapping_l1_eval": 0.0
+        },
+        "euler_plus_motifs_microcanonical": {
+          "centering": "microcanonical",
+          "control_names": [
+            "V",
+            "E_mc",
+            "F0_mc",
+            "nnn_pos_mc",
+            "nnn_neg_mc",
+            "path3_x_mc",
+            "path3_y_mc",
+            "corners_mc"
+          ],
+          "dropped_controls": [],
+          "weights": [
+            0.12912598276762743,
+            0.09154205868963619,
+            -0.2252236123799146,
+            -0.000539042627461888,
+            -0.0010781872152318163,
+            0.04473681502810066,
+            0.04579897368914498,
+            0.027458770060783847
+          ],
+          "analytic_control_means": [
+            38.52849330135,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "eval_mean_q": -0.00133375,
+          "eval_mean_D_cluster": 0.0028720292338872966,
+          "eval_mean_adjusted": -0.00019647263618180624,
+          "eval_var_q": 0.6266227543893805,
+          "eval_var_D_cluster": 5.0311197812434765,
+          "eval_var_adjusted": 0.26761868626505336,
+          "best_single": "q",
+          "best_single_variance": 0.6266227543893805,
+          "variance_reduction_vs_q": 2.341476087244388,
+          "variance_reduction_vs_D_cluster": 18.79958328567753,
+          "variance_reduction_vs_best_single": 2.341476087244388,
+          "identity_l1_eval": 0.0,
+          "wrapping_l1_eval": 0.0
+        }
+      },
+      "orientation_difference": {
+        "euler_canonical": {
+          "control_names": [
+            "E",
+            "F0"
+          ],
+          "dropped_controls": [
+            "V"
+          ],
+          "weights": [
+            0.054489975108022726,
+            0.13751971869312807
+          ],
+          "eval_batch_var_delta_q": 3.887217307692308e-05,
+          "eval_batch_var_delta_D_cluster": 0.00028628586538461537,
+          "eval_batch_var_adjusted": 5.2787161854726204e-05,
+          "variance_reduction_vs_best_single": 0.7363944510580412,
+          "best_single": "delta_q"
+        },
+        "euler_microcanonical": {
+          "control_names": [
+            "E_mc",
+            "F0_mc"
+          ],
+          "dropped_controls": [
+            "V"
+          ],
+          "weights": [
+            0.05448997510803059,
+            0.13751971869309634
+          ],
+          "eval_batch_var_delta_q": 3.887217307692308e-05,
+          "eval_batch_var_delta_D_cluster": 0.00028628586538461537,
+          "eval_batch_var_adjusted": 5.278716185472061e-05,
+          "variance_reduction_vs_best_single": 0.7363944510581192,
+          "best_single": "delta_q"
+        },
+        "euler_plus_motifs_canonical": {
+          "control_names": [
+            "E",
+            "F0",
+            "nnn_pos",
+            "nnn_neg",
+            "path3_x",
+            "path3_y",
+            "corners"
+          ],
+          "dropped_controls": [
+            "V"
+          ],
+          "weights": [
+            -1.2078671806698857,
+            -1.7865569216939363,
+            -0.8036998692076041,
+            -1.1211455533658792,
+            -0.37774416432818364,
+            0.1348636358527659,
+            1.1200594046463113
+          ],
+          "eval_batch_var_delta_q": 3.887217307692308e-05,
+          "eval_batch_var_delta_D_cluster": 0.00028628586538461537,
+          "eval_batch_var_adjusted": 0.00020439709283578012,
+          "variance_reduction_vs_best_single": 0.19017967691034804,
+          "best_single": "delta_q"
+        },
+        "euler_plus_motifs_microcanonical": {
+          "control_names": [
+            "E_mc",
+            "F0_mc",
+            "nnn_pos_mc",
+            "nnn_neg_mc",
+            "path3_x_mc",
+            "path3_y_mc",
+            "corners_mc"
+          ],
+          "dropped_controls": [
+            "V"
+          ],
+          "weights": [
+            -1.2078671806683103,
+            -1.786556921691717,
+            -0.8036998692070334,
+            -1.1211455533650612,
+            -0.37774416432846447,
+            0.13486363585215738,
+            1.1200594046453325
+          ],
+          "eval_batch_var_delta_q": 3.887217307692308e-05,
+          "eval_batch_var_delta_D_cluster": 0.00028628586538461537,
+          "eval_batch_var_adjusted": 0.00020439709283558323,
+          "variance_reduction_vs_best_single": 0.19017967691053123,
+          "best_single": "delta_q"
+        }
+      }
+    },
+    "85": {
+      "first": {
+        "euler_canonical": {
+          "centering": "canonical",
+          "control_names": [
+            "V",
+            "E",
+            "F0"
+          ],
+          "dropped_controls": [],
+          "weights": [
+            -0.11526287947914192,
+            0.14489530018823665,
+            -0.14331295190427673
+          ],
+          "analytic_control_means": [
+            50.38341431715,
+            59.72913972361401,
+            10.492853329773544
+          ],
+          "eval_mean_q": 0.00164,
+          "eval_mean_D_cluster": -0.003385423309532065,
+          "eval_mean_adjusted": 0.0006161916373409633,
+          "eval_var_q": 0.6257230925538657,
+          "eval_var_D_cluster": 7.058134416361771,
+          "eval_var_adjusted": 0.29735526466132584,
+          "best_single": "q",
+          "best_single_variance": 0.6257230925538657,
+          "variance_reduction_vs_q": 2.104294649925018,
+          "variance_reduction_vs_D_cluster": 23.73636943808836,
+          "variance_reduction_vs_best_single": 2.104294649925018,
+          "identity_l1_eval": 0.0,
+          "wrapping_l1_eval": 0.0
+        },
+        "euler_microcanonical": {
+          "centering": "microcanonical",
+          "control_names": [
+            "V",
+            "E_mc",
+            "F0_mc"
+          ],
+          "dropped_controls": [],
+          "weights": [
+            0.10890071486142766,
+            0.14352340797243296,
+            -0.14284073537758263
+          ],
+          "analytic_control_means": [
+            50.38341431715,
+            0.0,
+            0.0
+          ],
+          "eval_mean_q": 0.00164,
+          "eval_mean_D_cluster": -0.003385423309532065,
+          "eval_mean_adjusted": 0.0006119836461492111,
+          "eval_var_q": 0.6257230925538657,
+          "eval_var_D_cluster": 7.058134416361771,
+          "eval_var_adjusted": 0.2988249171823798,
+          "best_single": "q",
+          "best_single_variance": 0.6257230925538657,
+          "variance_reduction_vs_q": 2.093945506465153,
+          "variance_reduction_vs_D_cluster": 23.619631464848787,
+          "variance_reduction_vs_best_single": 2.093945506465153,
+          "identity_l1_eval": 0.0,
+          "wrapping_l1_eval": 0.0
+        },
+        "euler_plus_motifs_canonical": {
+          "centering": "canonical",
+          "control_names": [
+            "V",
+            "E",
+            "F0",
+            "nnn_pos",
+            "nnn_neg",
+            "path3_x",
+            "path3_y",
+            "corners"
+          ],
+          "dropped_controls": [],
+          "weights": [
+            -0.0993245813660078,
+            0.08136264942175614,
+            -0.19559931768561886,
+            0.0003505521576063625,
+            -0.0002075536315046568,
+            0.03674273654758763,
+            0.03640288371243975,
+            0.02395619508362973
+          ],
+          "analytic_control_means": [
+            50.38341431715,
+            59.72913972361401,
+            10.492853329773544,
+            29.864569861807006,
+            29.864569861807006,
+            17.70210584412816,
+            17.70210584412816,
+            70.80842337651264
+          ],
+          "eval_mean_q": 0.00164,
+          "eval_mean_D_cluster": -0.003385423309532065,
+          "eval_mean_adjusted": 0.0005615617676801392,
+          "eval_var_q": 0.6257230925538657,
+          "eval_var_D_cluster": 7.058134416361771,
+          "eval_var_adjusted": 0.28775175713892254,
+          "best_single": "q",
+          "best_single_variance": 0.6257230925538657,
+          "variance_reduction_vs_q": 2.1745239673785046,
+          "variance_reduction_vs_D_cluster": 24.5285536621561,
+          "variance_reduction_vs_best_single": 2.1745239673785046,
+          "identity_l1_eval": 0.0,
+          "wrapping_l1_eval": 0.0
+        },
+        "euler_plus_motifs_microcanonical": {
+          "centering": "microcanonical",
+          "control_names": [
+            "V",
+            "E_mc",
+            "F0_mc",
+            "nnn_pos_mc",
+            "nnn_neg_mc",
+            "path3_x_mc",
+            "path3_y_mc",
+            "corners_mc"
+          ],
+          "dropped_controls": [],
+          "weights": [
+            0.10891062482709656,
+            0.07614940889079846,
+            -0.19549440220744668,
+            -0.001150017324815282,
+            -0.001688666682894132,
+            0.03810113221734899,
+            0.03775020965411231,
+            0.025697142994331682
+          ],
+          "analytic_control_means": [
+            50.38341431715,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "eval_mean_q": 0.00164,
+          "eval_mean_D_cluster": -0.003385423309532065,
+          "eval_mean_adjusted": 0.0005812683257098998,
+          "eval_var_q": 0.6257230925538657,
+          "eval_var_D_cluster": 7.058134416361771,
+          "eval_var_adjusted": 0.2891734466783061,
+          "best_single": "q",
+          "best_single_variance": 0.6257230925538657,
+          "variance_reduction_vs_q": 2.1638331587545716,
+          "variance_reduction_vs_D_cluster": 24.40796171791549,
+          "variance_reduction_vs_best_single": 2.1638331587545716,
+          "identity_l1_eval": 0.0,
+          "wrapping_l1_eval": 0.0
+        }
+      },
+      "second": {
+        "euler_canonical": {
+          "centering": "canonical",
+          "control_names": [
+            "V",
+            "E",
+            "F0"
+          ],
+          "dropped_controls": [],
+          "weights": [
+            -0.1117928646247801,
+            0.14290563305842224,
+            -0.14208274164490856
+          ],
+          "analytic_control_means": [
+            50.38341431715,
+            59.72913972361401,
+            10.492853329773544
+          ],
+          "eval_mean_q": 7.125e-05,
+          "eval_mean_D_cluster": -0.005796673309531819,
+          "eval_mean_adjusted": -0.0010613680015163986,
+          "eval_var_q": 0.6257595271228464,
+          "eval_var_D_cluster": 7.06702556155539,
+          "eval_var_adjusted": 0.2976910130461547,
+          "best_single": "q",
+          "best_single_variance": 0.6257595271228464,
+          "variance_reduction_vs_q": 2.1020437288976113,
+          "variance_reduction_vs_D_cluster": 23.739465593002976,
+          "variance_reduction_vs_best_single": 2.1020437288976113,
+          "identity_l1_eval": 0.0,
+          "wrapping_l1_eval": 0.0
+        },
+        "euler_microcanonical": {
+          "centering": "microcanonical",
+          "control_names": [
+            "V",
+            "E_mc",
+            "F0_mc"
+          ],
+          "dropped_controls": [],
+          "weights": [
+            0.10867944159343197,
+            0.1415055206606765,
+            -0.14157654717966112
+          ],
+          "analytic_control_means": [
+            50.38341431715,
+            0.0,
+            0.0
+          ],
+          "eval_mean_q": 7.125e-05,
+          "eval_mean_D_cluster": -0.005796673309531819,
+          "eval_mean_adjusted": -0.0010695093811198138,
+          "eval_var_q": 0.6257595271228464,
+          "eval_var_D_cluster": 7.06702556155539,
+          "eval_var_adjusted": 0.299158220906913,
+          "best_single": "q",
+          "best_single_variance": 0.6257595271228464,
+          "variance_reduction_vs_q": 2.0917343512266697,
+          "variance_reduction_vs_D_cluster": 23.62303646589203,
+          "variance_reduction_vs_best_single": 2.0917343512266697,
+          "identity_l1_eval": 0.0,
+          "wrapping_l1_eval": 0.0
+        },
+        "euler_plus_motifs_canonical": {
+          "centering": "canonical",
+          "control_names": [
+            "V",
+            "E",
+            "F0",
+            "nnn_pos",
+            "nnn_neg",
+            "path3_x",
+            "path3_y",
+            "corners"
+          ],
+          "dropped_controls": [],
+          "weights": [
+            -0.08756879914871006,
+            0.07579223246187772,
+            -0.1974680202761028,
+            -0.002924474657775289,
+            -0.0032505529825815754,
+            0.03582392203637396,
+            0.03523241064050873,
+            0.02692003765470313
+          ],
+          "analytic_control_means": [
+            50.38341431715,
+            59.72913972361401,
+            10.492853329773544,
+            29.864569861807006,
+            29.864569861807006,
+            17.70210584412816,
+            17.70210584412816,
+            70.80842337651264
+          ],
+          "eval_mean_q": 7.125e-05,
+          "eval_mean_D_cluster": -0.005796673309531819,
+          "eval_mean_adjusted": -0.0010944406834548942,
+          "eval_var_q": 0.6257595271228464,
+          "eval_var_D_cluster": 7.06702556155539,
+          "eval_var_adjusted": 0.28822292760377966,
+          "best_single": "q",
+          "best_single_variance": 0.6257595271228464,
+          "variance_reduction_vs_q": 2.171095590226877,
+          "variance_reduction_vs_D_cluster": 24.519303930152418,
+          "variance_reduction_vs_best_single": 2.171095590226877,
+          "identity_l1_eval": 0.0,
+          "wrapping_l1_eval": 0.0
+        },
+        "euler_plus_motifs_microcanonical": {
+          "centering": "microcanonical",
+          "control_names": [
+            "V",
+            "E_mc",
+            "F0_mc",
+            "nnn_pos_mc",
+            "nnn_neg_mc",
+            "path3_x_mc",
+            "path3_y_mc",
+            "corners_mc"
+          ],
+          "dropped_controls": [],
+          "weights": [
+            0.1087015052650047,
+            0.07042076119896239,
+            -0.197334494570615,
+            -0.0045549988639082065,
+            -0.0048947525100528026,
+            0.03714171123785843,
+            0.03653538926987661,
+            0.028716172558040463
+          ],
+          "analytic_control_means": [
+            50.38341431715,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "eval_mean_q": 7.125e-05,
+          "eval_mean_D_cluster": -0.005796673309531819,
+          "eval_mean_adjusted": -0.0010664841539226987,
+          "eval_var_q": 0.6257595271228464,
+          "eval_var_D_cluster": 7.06702556155539,
+          "eval_var_adjusted": 0.2895949099939738,
+          "best_single": "q",
+          "best_single_variance": 0.6257595271228464,
+          "variance_reduction_vs_q": 2.1608098261667235,
+          "variance_reduction_vs_D_cluster": 24.403141483745166,
+          "variance_reduction_vs_best_single": 2.1608098261667235,
+          "identity_l1_eval": 0.0,
+          "wrapping_l1_eval": 0.0
+        }
+      },
+      "orientation_difference": {
+        "euler_canonical": {
+          "control_names": [
+            "E",
+            "F0"
+          ],
+          "dropped_controls": [
+            "V"
+          ],
+          "weights": [
+            0.15161660334750035,
+            -0.18846050554718066
+          ],
+          "eval_batch_var_delta_q": 3.436342147435898e-05,
+          "eval_batch_var_delta_D_cluster": 0.00021858083173076923,
+          "eval_batch_var_adjusted": 2.8418471850874658e-05,
+          "variance_reduction_vs_best_single": 1.209193149254482,
+          "best_single": "delta_q"
+        },
+        "euler_microcanonical": {
+          "control_names": [
+            "E_mc",
+            "F0_mc"
+          ],
+          "dropped_controls": [
+            "V"
+          ],
+          "weights": [
+            0.15161660334753108,
+            -0.18846050554721558
+          ],
+          "eval_batch_var_delta_q": 3.436342147435898e-05,
+          "eval_batch_var_delta_D_cluster": 0.00021858083173076923,
+          "eval_batch_var_adjusted": 2.8418471850874628e-05,
+          "variance_reduction_vs_best_single": 1.2091931492544834,
+          "best_single": "delta_q"
+        },
+        "euler_plus_motifs_canonical": {
+          "control_names": [
+            "E",
+            "F0",
+            "nnn_pos",
+            "nnn_neg",
+            "path3_x",
+            "path3_y",
+            "corners"
+          ],
+          "dropped_controls": [
+            "V"
+          ],
+          "weights": [
+            -1.458402986092692,
+            -5.975149962050006,
+            -4.506609020563911,
+            -1.772384339300546,
+            -1.736615243860892,
+            -1.0022653622131144,
+            3.3942988239594487
+          ],
+          "eval_batch_var_delta_q": 3.436342147435898e-05,
+          "eval_batch_var_delta_D_cluster": 0.00021858083173076923,
+          "eval_batch_var_adjusted": 0.004862192498764462,
+          "variance_reduction_vs_best_single": 0.0070674744949096755,
+          "best_single": "delta_q"
+        },
+        "euler_plus_motifs_microcanonical": {
+          "control_names": [
+            "E_mc",
+            "F0_mc",
+            "nnn_pos_mc",
+            "nnn_neg_mc",
+            "path3_x_mc",
+            "path3_y_mc",
+            "corners_mc"
+          ],
+          "dropped_controls": [
+            "V"
+          ],
+          "weights": [
+            -1.4584029860848169,
+            -5.975149962031766,
+            -4.506609020549503,
+            -1.7723843392946623,
+            -1.7366152438567286,
+            -1.0022653622100963,
+            3.394298823947936
+          ],
+          "eval_batch_var_delta_q": 3.436342147435898e-05,
+          "eval_batch_var_delta_D_cluster": 0.00021858083173076923,
+          "eval_batch_var_adjusted": 0.004862192498737185,
+          "variance_reduction_vs_best_single": 0.007067474494949324,
+          "best_single": "delta_q"
+        }
+      }
+    }
+  }
+}

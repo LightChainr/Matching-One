@@ -214,7 +214,14 @@ or rational-value claim is made from the square-bond sequence alone.
   confirmation remains necessary.
 - **C03:** all five matching-odd channels are identical configuration by
   configuration. Frozen GLS weights give exactly `1.0x` variance reduction at
-  `N=65,85`; this GPU gate fails for a structural reason, not lack of samples.
+  `N=65,85`; this wrapping-only GPU gate fails for a structural reason, not
+  lack of samples. That negative result is retained as provenance.
+- **P34:** Euler and local-motif controls replace wrapping GLS. The identity
+  `C_black-C_white=q+V-E+F0` holds on exhaustive tiny tori. Duplicate wrapping
+  channels are rejected rather than GLS-combined. Pilot-frozen OLS on
+  occupancy, NN edges, faces and short motifs yields about `2.34x` / `2.16x`
+  variance reduction versus `q` at `N=65` / `N=85` on 800,000 fresh replicas.
+  The redesigned `>=2x` GPU gate passes; GPU was not started. See `P34/`.
 - **C04:** a triangular-site self-matching `p=1/2` control now passes exact
   `L=2,3,4` regressions. A 300,000-replica sequence through `L=32` validates
   the derivative pipeline but does not determine the correction exponent or
