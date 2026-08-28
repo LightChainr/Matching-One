@@ -91,7 +91,8 @@ def enumerate_exact(a: int = 3, b: int = 1) -> dict[str, object]:
 
     full_mask = (1 << n) - 1
     for mask, black in enumerate(cache):
-        k = mask.bit_count()
+        # ``int.bit_count`` starts in Python 3.10; CI also supports 3.9.
+        k = bin(mask).count("1")
         white = cache[full_mask ^ mask]
         rotated_mask = 0
         for vertex, target in enumerate(rotation):
