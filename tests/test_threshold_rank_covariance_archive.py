@@ -46,7 +46,9 @@ class ThresholdRankCovarianceArchiveTests(unittest.TestCase):
         changed_geometry = copy.deepcopy(rows)
         changed_geometry[5]["a1"] = "7"
         changed_geometry[5]["b1"] = "4"
-        with self.assertRaisesRegex(ValueError, "Gaussian norm|changes geometry"):
+        with self.assertRaisesRegex(
+            ValueError, "Gaussian norm|changes geometry|identical orientations"
+        ):
             validate_batch_rows(changed_geometry)
 
     def test_covariance_contract_rejects_indefinite_or_ill_conditioned_input(self) -> None:
