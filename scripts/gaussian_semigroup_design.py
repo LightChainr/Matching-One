@@ -15,9 +15,10 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 from dataclasses import dataclass
 from fractions import Fraction
-from typing import Dict, List
+from typing import Dict, List, Tuple
 
 
 @dataclass(frozen=True)
@@ -28,6 +29,30 @@ class Gaussian:
     @property
     def norm(self) -> int:
         return self.a * self.a + self.b * self.b
+
+    @property
+    def content(self) -> int:
+        """Return gcd(|a|,|b|), the first Smith invariant of the torus."""
+
+        return math.gcd(abs(self.a), abs(self.b))
+
+    def smith_invariants(self) -> Tuple[int, int]:
+        """Return invariants of Z^2 / <(a,b),(-b,a)>.
+
+        The quotient is ``Z/d1 x Z/d2`` with ``d1=gcd(a,b)`` and
+        ``d1*d2=N``.  It is cyclic exactly when ``d1=1``.  Recording this
+        prevents equal-area designs from silently comparing different finite
+        translation groups.
+        """
+
+        if self.norm == 0:
+            raise ValueError("zero Gaussian integer does not define a torus")
+        d1 = self.content
+        return d1, self.norm // d1
+
+    @property
+    def cyclic_translation_group(self) -> bool:
+        return self.smith_invariants()[0] == 1
 
     def multiply(self, other: "Gaussian") -> "Gaussian":
         return Gaussian(
@@ -87,14 +112,43 @@ def fraction_payload(value: Fraction) -> Dict[str, object]:
 
 
 def orientation_payload(value: Gaussian) -> Dict[str, object]:
+    smith = value.smith_invariants()
     return {
         "pair": value.as_pair(),
         "N": value.norm,
+        "translation_group": {
+            "smith_invariants": list(smith),
+            "cyclic": smith[0] == 1,
+        },
         "cos4": fraction_payload(value.cos4m(1)),
         "cos8": fraction_payload(value.cos4m(2)),
         "cos12": fraction_payload(value.cos4m(3)),
         "sin4_raw": fraction_payload(value.sin4()),
     }
+
+
+def _same_translation_group(first: Gaussian, second: Gaussian, label: str) -> None:
+    if first.smith_invariants() != second.smith_invariants():
+        raise ValueError(
+            "{} orientations have different finite translation groups: {} versus {}".format(
+                label, first.smith_invariants(), second.smith_invariants()
+            )
+        )
+
+
+def _target_expression(
+    angular_ratio: Fraction,
+    norm_ratio: int,
+    alpha_num: int,
+    alpha_den: int,
+) -> str:
+    return "({}/{})*{}^(-{}/{})".format(
+        angular_ratio.numerator,
+        angular_ratio.denominator,
+        norm_ratio,
+        alpha_num,
+        alpha_den,
+    )
 
 
 def lineage_payload(
@@ -107,6 +161,7 @@ def lineage_payload(
 ) -> Dict[str, object]:
     if first.norm != second.norm:
         raise ValueError("the two parent orientations must have the same norm")
+    _same_translation_group(first, second, "parent")
     if multiplier.norm == 0:
         raise ValueError("multiplier must be nonzero")
     if alpha_den <= 0:
@@ -116,8 +171,12 @@ def lineage_payload(
     child_second_raw = second.multiply(multiplier)
     if child_first_raw.norm != child_second_raw.norm:
         raise AssertionError("Gaussian multiplication did not preserve paired norm")
+    _same_translation_group(child_first_raw, child_second_raw, "child")
 
     radial_factor = multiplier.norm ** (-alpha_num / alpha_den)
+    radial_expression = "{}^(-{}/{})".format(
+        multiplier.norm, alpha_num, alpha_den
+    )
     harmonic_predictions: Dict[str, object] = {}
     for m in (1, 2, 3):
         parent_delta = first.cos4m(m) - second.cos4m(m)
@@ -127,6 +186,7 @@ def lineage_payload(
                 "parent_delta": fraction_payload(parent_delta),
                 "child_delta": fraction_payload(child_delta),
                 "angular_ratio": None,
+                "target_expression": None,
                 "target_delta_M_ratio": None,
             }
             continue
@@ -135,6 +195,14 @@ def lineage_payload(
             "parent_delta": fraction_payload(parent_delta),
             "child_delta": fraction_payload(child_delta),
             "angular_ratio": fraction_payload(angular_ratio),
+            "target_expression": _target_expression(
+                angular_ratio,
+                multiplier.norm,
+                alpha_num,
+                alpha_den,
+            ),
+            # This float is a display convenience.  The symbolic expression
+            # and exact rational angular ratio are the frozen definition.
             "target_delta_M_ratio": radial_factor * float(angular_ratio),
         }
 
@@ -150,11 +218,18 @@ def lineage_payload(
             "first_canonical": orientation_payload(child_first_raw.canonical_d4()),
             "second_canonical": orientation_payload(child_second_raw.canonical_d4()),
         },
+        "pair_translation_group_contract": {
+            "parent_smith_invariants": list(first.smith_invariants()),
+            "child_smith_invariants": list(child_first_raw.smith_invariants()),
+            "parent_pair_matches": True,
+            "child_pair_matches": True,
+        },
         "radial_exponent_in_N": {
             "numerator": alpha_num,
             "denominator": alpha_den,
         },
         "norm_ratio": multiplier.norm,
+        "radial_factor_expression": radial_expression,
         "harmonic_predictions": harmonic_predictions,
         "formula": "q^(-alpha) * DeltaCos(4m)_child / DeltaCos(4m)_parent",
     }
@@ -192,7 +267,7 @@ def default_catalog() -> Dict[str, object]:
         ("221_x_5_minus", Gaussian(14, 5), Gaussian(11, 10), Gaussian(2, -1)),
     ]
     return {
-        "schema_version": 2,
+        "schema_version": 3,
         "purpose": "outcome-free exact Gaussian semigroup design",
         "doubling_lineages": doubling_lineages,
         "norm5_harmonic_discrimination": norm5_lineages,
