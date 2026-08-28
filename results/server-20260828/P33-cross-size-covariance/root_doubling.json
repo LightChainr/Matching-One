@@ -1,0 +1,93 @@
+{
+  "format_version": 1,
+  "source_summary_format_version": 2,
+  "root_gap_method": "delete_one_jackknife_pseudovalues",
+  "full_cross_size_covariance": {
+    "target_ratio": -0.25,
+    "lineage_order_note": "N=130 and N=170 stored orientation order is reversed from 1+i genealogy",
+    "lineages": [
+      {
+        "parent_N": 65,
+        "child_N": 130,
+        "parent_stored_root_gap": -8.55353032987927e-05,
+        "child_stored_root_gap": -4.147850071973728e-05,
+        "child_lineage_root_gap": 4.147850071973728e-05,
+        "observed_ratio": -0.48492843445991185,
+        "ratio_se_delta_method": 0.262368057159159,
+        "target_ratio": -0.25,
+        "fixed_prediction_residual": 2.0094674895039103e-05,
+        "residual_se": 2.133111943058559e-05,
+        "residual_z": 0.9420356470474958
+      },
+      {
+        "parent_N": 85,
+        "child_N": 170,
+        "parent_stored_root_gap": -7.887012940016666e-05,
+        "child_stored_root_gap": -4.8639657913680464e-05,
+        "child_lineage_root_gap": 4.8639657913680464e-05,
+        "observed_ratio": -0.6167056943306813,
+        "ratio_se_delta_method": 0.26841324712178766,
+        "target_ratio": -0.25,
+        "fixed_prediction_residual": 2.89221255636388e-05,
+        "residual_se": 1.754248006346863e-05,
+        "residual_z": 1.648690804207766
+      }
+    ],
+    "residual_covariance": [
+      [
+        4.55016656161906e-10,
+        1.823557321475078e-11
+      ],
+      [
+        1.823557321475078e-11,
+        3.0773860677719435e-10
+      ]
+    ],
+    "joint_residual_chi_square": 3.462461214294036,
+    "joint_degrees_of_freedom": 2
+  },
+  "diagonal_cross_size_covariance": {
+    "target_ratio": -0.25,
+    "lineage_order_note": "N=130 and N=170 stored orientation order is reversed from 1+i genealogy",
+    "lineages": [
+      {
+        "parent_N": 65,
+        "child_N": 130,
+        "parent_stored_root_gap": -8.55353032987927e-05,
+        "child_stored_root_gap": -4.147850071973728e-05,
+        "child_lineage_root_gap": 4.147850071973728e-05,
+        "observed_ratio": -0.48492843445991185,
+        "ratio_se_delta_method": 0.2893054987851225,
+        "target_ratio": -0.25,
+        "fixed_prediction_residual": 2.0094674895039103e-05,
+        "residual_se": 2.2606829236576015e-05,
+        "residual_z": 0.8888763074534818
+      },
+      {
+        "parent_N": 85,
+        "child_N": 170,
+        "parent_stored_root_gap": -7.887012940016666e-05,
+        "child_stored_root_gap": -4.8639657913680464e-05,
+        "child_lineage_root_gap": 4.8639657913680464e-05,
+        "observed_ratio": -0.6167056943306813,
+        "ratio_se_delta_method": 0.27405922077385436,
+        "target_ratio": -0.25,
+        "fixed_prediction_residual": 2.89221255636388e-05,
+        "residual_se": 1.776124773251633e-05,
+        "residual_z": 1.6283836585810207
+      }
+    ],
+    "residual_covariance": [
+      [
+        5.110687281317081e-10,
+        0.0
+      ],
+      [
+        0.0,
+        3.154619210158165e-10
+      ]
+    ],
+    "joint_residual_chi_square": 3.4417344294858467,
+    "joint_degrees_of_freedom": 2
+  }
+}
