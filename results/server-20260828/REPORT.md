@@ -102,6 +102,30 @@ is another possible variance-reduction target.
 The batch aggregates, provenance metadata, jackknife analyses, and flat metric
 CSVs are under `pell/`.
 
+### Small-Pell power-calibration follow-up
+
+After the first campaign established that the large pairs were underpowered,
+the omitted `(7,5)` pair was run twice with independent seeds and 5,000,000
+replicas per run. The orientation root gaps were
+
+```text
+seed 202608280705:  +4.6267e-4 +/- 5.06e-5
+seed 202608290705:  +4.0417e-4 +/- 5.10e-5
+inverse-variance pool: +4.3365e-4 +/- 3.59e-5
+```
+
+The pooled signal is about 12 standard errors from zero and is compatible
+between seeds. Repeating the first seed with the finite-difference step reduced
+from `0.001` to `0.0005` changed the gap by only `7.9e-7`, far below its sampling
+error.
+
+Combining this discovery point with the exact `(3,2)` root gap gives a
+two-point effective exponent of about `4.23`; the `(7,5)` gap times the fourth
+power of the mean physical length is about `1.06`. Tiny systems are not an
+asymptotic fit, but both numbers agree closely with the preregistered `L^-4`
+power budget. This supports using `(7,5)` as a positive power-calibration
+cross-check while retaining same-N tomography as the cleaner primary test.
+
 ## Validation and scope
 
 - 15 Python/C++ integration and exact-regression tests passed on the server.
@@ -113,3 +137,67 @@ CSVs are under `pell/`.
   not have exactly equal means.
 - The C++ kernel is deliberately a bounded discovery engine, not a completed
   Newman--Ziff implementation.
+
+## Server-priorities v2 follow-up
+
+The follow-up programs were run from base commit `fad82a0` with the new S0--S2
+source files present in the working tree; those files are committed in this
+pull request immediately after the run. The raw same-N metadata preserves the
+base SHA and records this source-state qualification explicitly.
+
+### S0: arbitrary integer-period topology
+
+The general reference engine now represents a torus by any nonsingular integer
+`2 x 2` period matrix. Closed lifted displacements are converted to period-basis
+windings with exact adjugate/determinant arithmetic. Axis, diamond, Gaussian
+circulant, and unimodular basis-change regressions pass; exhaustive det-5 tests
+leave homology rank and either/cross wrapping invariant under the basis change.
+
+### S1: same-N Gaussian orientation tomography
+
+A C++17/OpenMP engine measured the prescribed same-N pairs with shared
+counter-based random fields. A 2,000,000-replica pilot was followed by a frozen
+30,000,000-replica production seed. For the `either` wrapping convention, the
+production matching-function differences (first orientation minus second) are:
+
+| N | representations | difference | batch SE | z | `N^(13/8) difference / delta cos(4 theta)` |
+|---:|---|---:|---:|---:|---:|
+| 65 | `(8,1)` / `(7,4)` | `+1.00377e-3` | `1.68e-4` | `5.96` | `0.650` |
+| 85 | `(9,2)` / `(7,6)` | `+7.60333e-4` | `1.58e-4` | `4.80` | `0.651` |
+| 145 | `(12,1)` / `(9,8)` | `+3.28667e-4` | `1.95e-4` | `1.68` | `0.557` |
+
+All three signs agree with `delta cos(4 theta)`, and the first two normalized
+amplitudes are nearly identical. The third is statistically weaker but
+compatible. This is substantially cleaner than the large-Pell fixed-p scan and
+supports continued same-N angular testing.
+
+The production matching-even differences were much less stable (`z=4.19,
+0.18,1.66`) and did not show the proposed clean dominance over the matching-odd
+sector. Thus the working claim that the even spin-4 signal must be larger is
+not supported by this run; it should not be used as a gate for interpreting the
+resolved matching-function differences without further controls.
+
+### S2: square-bond exact-threshold kappa3 control
+
+The `p=1/2` score estimator was checked by exact enumeration and then run with
+1,000,000 independent samples per size:
+
+| L | method | kappa3 | jackknife SE |
+|---:|---|---:|---:|
+| 2 | exact | `-1.1705532693` | -- |
+| 3 | exact | `-1.4555871991` | -- |
+| 4 | Monte Carlo | `-1.56230` | `0.01483` |
+| 6 | Monte Carlo | `-1.60727` | `0.02169` |
+| 8 | Monte Carlo | `-1.57106` | `0.02584` |
+| 12 | Monte Carlo | `-1.65012` | `0.03406` |
+| 16 | Monte Carlo | `-1.68356` | `0.03909` |
+
+A weighted fixed-`L^-3/2` fit on `L=4,6,8,12` predicts the held-out `L=16`
+point within `1.55` standard errors. Fitting all five Monte Carlo sizes gives
+an intercept near `-1.649 +/- 0.023` from statistical errors alone, so `-5/3`
+is retained but neither established nor sharply tested. Union-jack and
+triangular-site controls remain explicitly unimplemented; no universality or
+rational-value claim is made from the square-bond sequence alone.
+
+The final combined local and ARM-server regression suite contains 30 tests;
+all 30 passed.

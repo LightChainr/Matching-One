@@ -1,0 +1,583 @@
+// Discovery-scale same-N Gaussian-integer orientation tomography.
+//
+// Primitive (a,b) represents the exact square torus with periods
+// (a,b),(-b,a), N=a^2+b^2 and cyclic vertex label j=a*x+b*y (mod N).
+// Two representations of the same N use identical counter-keyed occupancies.
+
+#include <algorithm>
+#include <chrono>
+#include <cmath>
+#include <cstdint>
+#include <cstdlib>
+#include <ctime>
+#include <filesystem>
+#include <fstream>
+#include <iomanip>
+#include <iostream>
+#include <limits>
+#include <numeric>
+#include <queue>
+#include <sstream>
+#include <stdexcept>
+#include <string>
+#include <tuple>
+#include <utility>
+#include <vector>
+
+#ifdef _OPENMP
+#include <omp.h>
+#endif
+
+namespace {
+
+struct Edge {
+    int i;
+    int j;
+    int dx;
+    int dy;
+};
+
+struct Winding {
+    std::int64_t x = 0;
+    std::int64_t y = 0;
+};
+
+struct Channels {
+    bool either = false;
+    bool cross = false;
+};
+
+struct Geometry {
+    int n;
+    int a;
+    int b;
+    double theta;
+    double cos4;
+    std::vector<Edge> primal_edges;
+    std::vector<Edge> matching_edges;
+};
+
+struct PairDesign {
+    int n;
+    int a1;
+    int b1;
+    int a2;
+    int b2;
+};
+
+const std::vector<PairDesign> kDesigns = {
+    {65, 8, 1, 7, 4},
+    {85, 9, 2, 7, 6},
+    {145, 12, 1, 9, 8},
+};
+
+int positive_mod(int value, int modulus) {
+    value %= modulus;
+    return value < 0 ? value + modulus : value;
+}
+
+Winding primitive(Winding value) {
+    const auto divisor = std::gcd(std::llabs(value.x), std::llabs(value.y));
+    if (divisor == 0) return value;
+    value.x /= divisor;
+    value.y /= divisor;
+    if (value.x < 0 || (value.x == 0 && value.y < 0)) {
+        value.x = -value.x;
+        value.y = -value.y;
+    }
+    return value;
+}
+
+void extend_basis(std::vector<Winding>& basis, Winding value) {
+    if ((value.x == 0 && value.y == 0) || basis.size() == 2) return;
+    value = primitive(value);
+    if (basis.empty()) {
+        basis.push_back(value);
+        return;
+    }
+    const Winding first = basis.front();
+    if (first.x * value.y != first.y * value.x) basis.push_back(value);
+}
+
+class HomologyUnionFind {
+  public:
+    HomologyUnionFind(int n, int a, int b)
+        : n_(n), a_(a), b_(b), parent_(n), size_(n), delta_x_(n), delta_y_(n),
+          basis_(n) {
+        reset();
+    }
+
+    void reset() {
+        std::iota(parent_.begin(), parent_.end(), 0);
+        std::fill(size_.begin(), size_.end(), 1);
+        std::fill(delta_x_.begin(), delta_x_.end(), 0);
+        std::fill(delta_y_.begin(), delta_y_.end(), 0);
+        for (auto& basis : basis_) basis.clear();
+    }
+
+    struct FindResult {
+        int root;
+        std::int64_t dx;
+        std::int64_t dy;
+    };
+
+    FindResult find(int x) {
+        if (parent_[x] == x) return {x, 0, 0};
+        const int old_parent = parent_[x];
+        const FindResult up = find(old_parent);
+        delta_x_[x] += up.dx;
+        delta_y_[x] += up.dy;
+        parent_[x] = up.root;
+        return {up.root, delta_x_[x], delta_y_[x]};
+    }
+
+    Winding period_coordinates(std::int64_t dx, std::int64_t dy) const {
+        // Inverse of [[a,-b],[b,a]] applied exactly to (dx,dy).
+        const std::int64_t num0 = static_cast<std::int64_t>(a_) * dx +
+                                  static_cast<std::int64_t>(b_) * dy;
+        const std::int64_t num1 = -static_cast<std::int64_t>(b_) * dx +
+                                  static_cast<std::int64_t>(a_) * dy;
+        if (num0 % n_ != 0 || num1 % n_ != 0) {
+            throw std::logic_error("closed displacement is not in the Gaussian period lattice");
+        }
+        return {num0 / n_, num1 / n_};
+    }
+
+    void add_edge(const Edge& edge) {
+        FindResult fi = find(edge.i);
+        FindResult fj = find(edge.j);
+        std::int64_t root_dx = fi.dx + edge.dx - fj.dx;
+        std::int64_t root_dy = fi.dy + edge.dy - fj.dy;
+        if (fi.root == fj.root) {
+            extend_basis(basis_[fi.root], period_coordinates(root_dx, root_dy));
+            return;
+        }
+        if (size_[fi.root] < size_[fj.root]) {
+            std::swap(fi, fj);
+            root_dx = -root_dx;
+            root_dy = -root_dy;
+        }
+        parent_[fj.root] = fi.root;
+        delta_x_[fj.root] = root_dx;
+        delta_y_[fj.root] = root_dy;
+        size_[fi.root] += size_[fj.root];
+        for (const Winding winding : basis_[fj.root]) extend_basis(basis_[fi.root], winding);
+        basis_[fj.root].clear();
+    }
+
+    int rank(int x) { return static_cast<int>(basis_[find(x).root].size()); }
+
+  private:
+    int n_;
+    int a_;
+    int b_;
+    std::vector<int> parent_;
+    std::vector<int> size_;
+    std::vector<std::int64_t> delta_x_;
+    std::vector<std::int64_t> delta_y_;
+    std::vector<std::vector<Winding>> basis_;
+};
+
+Geometry make_geometry(int a, int b) {
+    if (a <= 0 || b < 0 || std::gcd(a, b) != 1) {
+        throw std::invalid_argument("Gaussian representation requires a>0, b>=0, gcd(a,b)=1");
+    }
+    const std::int64_t n64 = static_cast<std::int64_t>(a) * a +
+                             static_cast<std::int64_t>(b) * b;
+    if (n64 > std::numeric_limits<int>::max()) throw std::invalid_argument("N is too large");
+    const int n = static_cast<int>(n64);
+    const double theta = std::atan2(static_cast<double>(b), static_cast<double>(a));
+    Geometry geometry{n, a, b, theta, std::cos(4.0 * theta), {}, {}};
+    geometry.primal_edges.reserve(2 * n);
+    geometry.matching_edges.reserve(4 * n);
+    const std::vector<std::tuple<int, int, int>> steps = {
+        {a, 1, 0}, {b, 0, 1}, {a + b, 1, 1}, {a - b, 1, -1},
+    };
+    for (int i = 0; i < n; ++i) {
+        for (std::size_t index = 0; index < steps.size(); ++index) {
+            const auto [residue, dx, dy] = steps[index];
+            const Edge edge{i, positive_mod(i + residue, n), dx, dy};
+            if (index < 2) geometry.primal_edges.push_back(edge);
+            geometry.matching_edges.push_back(edge);
+        }
+    }
+    return geometry;
+}
+
+Channels classify(const std::vector<std::uint8_t>& active, const std::vector<Edge>& edges,
+                  HomologyUnionFind& union_find) {
+    union_find.reset();
+    for (const Edge& edge : edges) {
+        if (active[edge.i] && active[edge.j]) union_find.add_edge(edge);
+    }
+    Channels output;
+    for (int vertex = 0; vertex < static_cast<int>(active.size()); ++vertex) {
+        if (!active[vertex]) continue;
+        const int rank = union_find.rank(vertex);
+        output.either = output.either || rank > 0;
+        output.cross = output.cross || rank == 2;
+        if (output.cross) break;
+    }
+    return output;
+}
+
+// A deliberately independent lifted-coordinate traversal used only by --self-test.
+Channels classify_bfs_reference(const Geometry& geometry,
+                                const std::vector<std::uint8_t>& active,
+                                const std::vector<Edge>& edges) {
+    std::vector<std::vector<std::tuple<int, int, int>>> adjacency(geometry.n);
+    for (const Edge& edge : edges) {
+        adjacency[edge.i].push_back({edge.j, edge.dx, edge.dy});
+        adjacency[edge.j].push_back({edge.i, -edge.dx, -edge.dy});
+    }
+    std::vector<std::uint8_t> visited(geometry.n, 0);
+    std::vector<std::int64_t> lift_x(geometry.n, 0), lift_y(geometry.n, 0);
+    Channels output;
+    for (int start = 0; start < geometry.n; ++start) {
+        if (!active[start] || visited[start]) continue;
+        std::queue<int> pending;
+        std::vector<Winding> basis;
+        visited[start] = 1;
+        pending.push(start);
+        while (!pending.empty()) {
+            const int i = pending.front();
+            pending.pop();
+            for (const auto [j, dx, dy] : adjacency[i]) {
+                if (!active[j]) continue;
+                const std::int64_t candidate_x = lift_x[i] + dx;
+                const std::int64_t candidate_y = lift_y[i] + dy;
+                if (!visited[j]) {
+                    visited[j] = 1;
+                    lift_x[j] = candidate_x;
+                    lift_y[j] = candidate_y;
+                    pending.push(j);
+                } else {
+                    const std::int64_t cycle_x = candidate_x - lift_x[j];
+                    const std::int64_t cycle_y = candidate_y - lift_y[j];
+                    const std::int64_t num0 = static_cast<std::int64_t>(geometry.a) * cycle_x +
+                                              static_cast<std::int64_t>(geometry.b) * cycle_y;
+                    const std::int64_t num1 = -static_cast<std::int64_t>(geometry.b) * cycle_x +
+                                              static_cast<std::int64_t>(geometry.a) * cycle_y;
+                    if (num0 % geometry.n || num1 % geometry.n) {
+                        throw std::logic_error("BFS reference found a nonperiod cycle");
+                    }
+                    extend_basis(basis, {num0 / geometry.n, num1 / geometry.n});
+                }
+            }
+        }
+        output.either = output.either || !basis.empty();
+        output.cross = output.cross || basis.size() == 2;
+    }
+    return output;
+}
+
+std::uint64_t splitmix64(std::uint64_t value) {
+    value += 0x9e3779b97f4a7c15ULL;
+    value = (value ^ (value >> 30)) * 0xbf58476d1ce4e5b9ULL;
+    value = (value ^ (value >> 27)) * 0x94d049bb133111ebULL;
+    return value ^ (value >> 31);
+}
+
+double counter_uniform(std::uint64_t seed, int n, std::uint64_t replica, int site) {
+    // N separates designs; the two representations of one N share every U_j.
+    const std::uint64_t key = seed ^ splitmix64(static_cast<std::uint64_t>(n)) ^
+                              splitmix64(replica + 0xd1b54a32d192ed03ULL) ^
+                              splitmix64(static_cast<std::uint64_t>(site) +
+                                         0x94d049bb133111ebULL);
+    return static_cast<double>(splitmix64(key) >> 11) * 0x1.0p-53;
+}
+
+void self_test() {
+    for (const auto [a, b] : std::vector<std::pair<int, int>>{{2, 1}, {3, 2}}) {
+        const Geometry geometry = make_geometry(a, b);
+        if (positive_mod(a * a + b * b, geometry.n) != 0 ||
+            positive_mod(a * (-b) + b * a, geometry.n) != 0) {
+            throw std::runtime_error("cyclic label period regression failed");
+        }
+        HomologyUnionFind primal(geometry.n, a, b), matching(geometry.n, a, b);
+        const std::uint64_t configurations = 1ULL << geometry.n;
+        std::vector<std::uint8_t> active(geometry.n);
+        for (std::uint64_t mask = 0; mask < configurations; ++mask) {
+            for (int site = 0; site < geometry.n; ++site) active[site] = (mask >> site) & 1U;
+            const Channels p = classify(active, geometry.primal_edges, primal);
+            const Channels p_ref = classify_bfs_reference(geometry, active, geometry.primal_edges);
+            const Channels m = classify(active, geometry.matching_edges, matching);
+            const Channels m_ref = classify_bfs_reference(geometry, active, geometry.matching_edges);
+            if (p.either != p_ref.either || p.cross != p_ref.cross ||
+                m.either != m_ref.either || m.cross != m_ref.cross) {
+                throw std::runtime_error("union-find/BFS exact configuration mismatch");
+            }
+        }
+    }
+    const double value = counter_uniform(17, 65, 23, 5);
+    (void)counter_uniform(17, 85, 999, 7);
+    if (value != counter_uniform(17, 65, 23, 5) || !(value >= 0.0 && value < 1.0)) {
+        throw std::runtime_error("counter RNG regression failed");
+    }
+    std::cout << "self-test passed: exhaustive N=5,13 union-find/BFS; cyclic labels; counter RNG\n";
+}
+
+struct Options {
+    std::uint64_t samples = 200000;
+    int batches = 40;
+    double p_ref = 0.59274605;
+    std::uint64_t seed = 20260828;
+    int threads = 0;
+    int only_n = 0;
+    std::uint64_t replica_offset = 0;
+    std::string git_commit = "unknown";
+    std::filesystem::path output_prefix;
+    bool self_test = false;
+};
+
+[[noreturn]] void usage(const char* program, int status) {
+    std::ostream& out = status == 0 ? std::cout : std::cerr;
+    out << "Usage: " << program << " [options]\n"
+        << "  --samples N          replicas per same-N pair (default 200000)\n"
+        << "  --batches B          equal batches (default 40)\n"
+        << "  --p-ref P            frozen site probability (default 0.59274605)\n"
+        << "  --seed S             unsigned 64-bit seed (default 20260828)\n"
+        << "  --replica-offset K   first RNG replica counter (default 0)\n"
+        << "  --threads T          OpenMP threads; 0 uses runtime default\n"
+        << "  --n N                run only prescribed N=65,85,or145 (default all)\n"
+        << "  --git-commit SHA     provenance string recorded in metadata\n"
+        << "  --output-prefix PATH writes PATH.batches.csv and PATH.metadata.json\n"
+        << "  --self-test           exhaustive reference checks and exit\n"
+        << "  --help                show this help\n";
+    std::exit(status);
+}
+
+template <typename T>
+T parse_number(const std::string& text, const std::string& option) {
+    std::istringstream input(text);
+    T value{};
+    input >> value;
+    if (!input || !input.eof()) throw std::invalid_argument("invalid value for " + option);
+    return value;
+}
+
+Options parse_options(int argc, char** argv) {
+    Options options;
+    for (int i = 1; i < argc; ++i) {
+        const std::string arg = argv[i];
+        auto next = [&]() -> std::string {
+            if (++i >= argc) usage(argv[0], 2);
+            return argv[i];
+        };
+        if (arg == "--samples") options.samples = parse_number<std::uint64_t>(next(), arg);
+        else if (arg == "--batches") options.batches = parse_number<int>(next(), arg);
+        else if (arg == "--p-ref") options.p_ref = parse_number<double>(next(), arg);
+        else if (arg == "--seed") options.seed = parse_number<std::uint64_t>(next(), arg);
+        else if (arg == "--replica-offset") options.replica_offset = parse_number<std::uint64_t>(next(), arg);
+        else if (arg == "--threads") options.threads = parse_number<int>(next(), arg);
+        else if (arg == "--n") options.only_n = parse_number<int>(next(), arg);
+        else if (arg == "--git-commit") options.git_commit = next();
+        else if (arg == "--output-prefix") options.output_prefix = next();
+        else if (arg == "--self-test") options.self_test = true;
+        else if (arg == "--help") usage(argv[0], 0);
+        else throw std::invalid_argument("unknown option: " + arg);
+    }
+    if (options.self_test) return options;
+    if (options.output_prefix.empty()) throw std::invalid_argument("--output-prefix is required");
+    if (options.samples == 0 || options.batches < 2 ||
+        options.samples % static_cast<std::uint64_t>(options.batches) != 0) {
+        throw std::invalid_argument("samples must be positive and divisible by batches>=2");
+    }
+    if (!(options.p_ref > 0.0 && options.p_ref < 1.0)) {
+        throw std::invalid_argument("p-ref must lie strictly between zero and one");
+    }
+    if (options.threads < 0) throw std::invalid_argument("threads must be nonnegative");
+    if (options.only_n != 0 && std::none_of(kDesigns.begin(), kDesigns.end(),
+            [&](const PairDesign& design) { return design.n == options.only_n; })) {
+        throw std::invalid_argument("--n must be one of 65, 85, 145");
+    }
+    if (options.replica_offset > std::numeric_limits<std::uint64_t>::max() - options.samples) {
+        throw std::invalid_argument("replica counter range overflows uint64");
+    }
+    return options;
+}
+
+struct BatchCounts {
+    std::uint64_t samples = 0;
+    std::uint64_t first_primal_either = 0;
+    std::uint64_t first_matching_either = 0;
+    std::uint64_t second_primal_either = 0;
+    std::uint64_t second_matching_either = 0;
+    std::uint64_t first_primal_cross = 0;
+    std::uint64_t first_matching_cross = 0;
+    std::uint64_t second_primal_cross = 0;
+    std::uint64_t second_matching_cross = 0;
+};
+
+std::string json_escape(const std::string& value) {
+    std::ostringstream out;
+    for (const char ch : value) {
+        if (ch == '\\' || ch == '"') out << '\\' << ch;
+        else if (ch == '\n') out << "\\n";
+        else out << ch;
+    }
+    return out.str();
+}
+
+std::string utc_now() {
+    const std::time_t value = std::chrono::system_clock::to_time_t(
+        std::chrono::system_clock::now());
+    std::tm tm{};
+#ifdef _WIN32
+    gmtime_s(&tm, &value);
+#else
+    gmtime_r(&value, &tm);
+#endif
+    std::ostringstream out;
+    out << std::put_time(&tm, "%Y-%m-%dT%H:%M:%SZ");
+    return out.str();
+}
+
+void run_design(const PairDesign& design, const Options& options,
+                std::ofstream& batches_file) {
+    const Geometry first = make_geometry(design.a1, design.b1);
+    const Geometry second = make_geometry(design.a2, design.b2);
+    if (first.n != design.n || second.n != design.n) {
+        throw std::logic_error("prescribed same-N design is inconsistent");
+    }
+    const std::uint64_t per_batch = options.samples / options.batches;
+    std::vector<BatchCounts> counts(options.batches);
+
+#ifdef _OPENMP
+    if (options.threads > 0) omp_set_num_threads(options.threads);
+#endif
+#pragma omp parallel for schedule(static)
+    for (int batch = 0; batch < options.batches; ++batch) {
+        BatchCounts local;
+        local.samples = per_batch;
+        std::vector<std::uint8_t> black(design.n), white(design.n);
+        HomologyUnionFind f_primal(design.n, first.a, first.b);
+        HomologyUnionFind f_matching(design.n, first.a, first.b);
+        HomologyUnionFind s_primal(design.n, second.a, second.b);
+        HomologyUnionFind s_matching(design.n, second.a, second.b);
+        const std::uint64_t begin = options.replica_offset +
+                                    static_cast<std::uint64_t>(batch) * per_batch;
+        for (std::uint64_t replica = begin; replica < begin + per_batch; ++replica) {
+            for (int site = 0; site < design.n; ++site) {
+                black[site] = counter_uniform(options.seed, design.n, replica, site) < options.p_ref;
+                white[site] = !black[site];
+            }
+            const Channels fp = classify(black, first.primal_edges, f_primal);
+            const Channels fm = classify(white, first.matching_edges, f_matching);
+            const Channels sp = classify(black, second.primal_edges, s_primal);
+            const Channels sm = classify(white, second.matching_edges, s_matching);
+            local.first_primal_either += fp.either;
+            local.first_matching_either += fm.either;
+            local.second_primal_either += sp.either;
+            local.second_matching_either += sm.either;
+            local.first_primal_cross += fp.cross;
+            local.first_matching_cross += fm.cross;
+            local.second_primal_cross += sp.cross;
+            local.second_matching_cross += sm.cross;
+        }
+        counts[batch] = local;
+    }
+
+    auto write_row = [&](int batch, const char* channel, std::uint64_t fp,
+                         std::uint64_t fm, std::uint64_t sp, std::uint64_t sm) {
+        batches_file << design.n << ',' << batch << ',' << counts[batch].samples << ','
+                     << std::setprecision(17) << options.p_ref << ',' << channel << ','
+                     << design.a1 << ',' << design.b1 << ',' << design.a2 << ',' << design.b2
+                     << ',' << fp << ',' << fm << ',' << sp << ',' << sm << '\n';
+    };
+    for (int batch = 0; batch < options.batches; ++batch) {
+        const BatchCounts& row = counts[batch];
+        write_row(batch, "either", row.first_primal_either, row.first_matching_either,
+                  row.second_primal_either, row.second_matching_either);
+        write_row(batch, "cross", row.first_primal_cross, row.first_matching_cross,
+                  row.second_primal_cross, row.second_matching_cross);
+    }
+    std::cout << "completed N=" << design.n << " pair (" << design.a1 << ',' << design.b1
+              << ")/ (" << design.a2 << ',' << design.b2 << ") samples=" << options.samples
+              << '\n';
+}
+
+int run(int argc, char** argv) {
+    const Options options = parse_options(argc, argv);
+    if (options.self_test) {
+        self_test();
+        return 0;
+    }
+    const auto parent = options.output_prefix.parent_path();
+    if (!parent.empty()) std::filesystem::create_directories(parent);
+    const std::filesystem::path batch_path = options.output_prefix.string() + ".batches.csv";
+    const std::filesystem::path metadata_path = options.output_prefix.string() + ".metadata.json";
+    std::ofstream batches_file(batch_path);
+    if (!batches_file) throw std::runtime_error("cannot open batch output");
+    batches_file << "n,batch,samples,p_ref,channel,a1,b1,a2,b2,first_primal_sum,"
+                    "first_matching_sum,second_primal_sum,second_matching_sum\n";
+    const auto started = std::chrono::steady_clock::now();
+    for (const PairDesign& design : kDesigns) {
+        if (options.only_n == 0 || options.only_n == design.n) {
+            run_design(design, options, batches_file);
+        }
+    }
+    batches_file.close();
+    const double seconds = std::chrono::duration<double>(
+        std::chrono::steady_clock::now() - started).count();
+
+    std::ostringstream command;
+    for (int i = 0; i < argc; ++i) {
+        if (i) command << ' ';
+        command << argv[i];
+    }
+    std::ofstream metadata(metadata_path);
+    if (!metadata) throw std::runtime_error("cannot open metadata output");
+    metadata << "{\n"
+             << "  \"engine\": \"same-N Gaussian site-orientation discovery\",\n"
+             << "  \"generated_utc\": \"" << utc_now() << "\",\n"
+             << "  \"git_commit\": \"" << json_escape(options.git_commit) << "\",\n"
+             << "  \"command\": \"" << json_escape(command.str()) << "\",\n"
+             << "  \"compiler\": \"" << json_escape(__VERSION__) << "\",\n"
+             << "  \"openmp\": "
+#ifdef _OPENMP
+             << "true,\n"
+#else
+             << "false,\n"
+#endif
+             << "  \"threads_requested\": " << options.threads << ",\n"
+             << "  \"samples_per_pair\": " << options.samples << ",\n"
+             << "  \"batches\": " << options.batches << ",\n"
+             << "  \"p_ref\": " << std::setprecision(17) << options.p_ref << ",\n"
+             << "  \"seed\": " << options.seed << ",\n"
+             << "  \"replica_counter_first\": " << options.replica_offset << ",\n"
+             << "  \"replica_counter_last_exclusive\": "
+             << options.replica_offset + options.samples << ",\n"
+             << "  \"rng\": \"stateless SplitMix64-derived mapping (seed,N,replica,cyclic-site)\",\n"
+             << "  \"coupling\": \"same cyclic labels j in Z/NZ share U_j across representations\",\n"
+             << "  \"channels\": [\"either\", \"cross\"],\n"
+             << "  \"elapsed_seconds\": " << seconds << ",\n"
+             << "  \"designs\": [\n";
+    bool first_row = true;
+    for (const PairDesign& design : kDesigns) {
+        if (options.only_n != 0 && options.only_n != design.n) continue;
+        const Geometry first = make_geometry(design.a1, design.b1);
+        const Geometry second = make_geometry(design.a2, design.b2);
+        if (!first_row) metadata << ",\n";
+        first_row = false;
+        metadata << "    {\"N\": " << design.n << ", \"first\": [" << design.a1 << ','
+                 << design.b1 << "], \"second\": [" << design.a2 << ',' << design.b2
+                 << "], \"theta_first\": " << first.theta << ", \"theta_second\": "
+                 << second.theta << ", \"cos4_first\": " << first.cos4
+                 << ", \"cos4_second\": " << second.cos4 << "}";
+    }
+    metadata << "\n  ]\n}\n";
+    std::cout << "wrote " << batch_path << "\nwrote " << metadata_path << '\n';
+    return 0;
+}
+
+}  // namespace
+
+int main(int argc, char** argv) {
+    try {
+        return run(argc, argv);
+    } catch (const std::exception& error) {
+        std::cerr << "error: " << error.what() << '\n';
+        return 2;
+    }
+}
