@@ -1,0 +1,18 @@
+{
+  "schema": "synthetic orientation model red-team v1",
+  "provenance": {
+    "design": "P31/P32 same-N Gaussian orientation sizes and pairs",
+    "standard_errors": "P31 pooled_deltaM_with_covariance.csv at commit 7f86f9c",
+    "scoring_split": "P32 frozen training sizes 65,85,130 and held-out sizes 145,170"
+  },
+  "reference_amplitude_h4": 0.7885,
+  "reference_N": 100.0,
+  "default_admixture_fraction": 0.5,
+  "observations": [
+    {"N": 65, "first": [8, 1], "second": [7, 4], "standard_error": 0.0000707, "split": "train"},
+    {"N": 85, "first": [9, 2], "second": [7, 6], "standard_error": 0.0000783, "split": "train"},
+    {"N": 130, "first": [11, 3], "second": [9, 7], "standard_error": 0.0000895, "split": "train"},
+    {"N": 145, "first": [12, 1], "second": [9, 8], "standard_error": 0.0000771, "split": "heldout"},
+    {"N": 170, "first": [13, 1], "second": [11, 7], "standard_error": 0.0000920, "split": "heldout"}
+  ]
+}

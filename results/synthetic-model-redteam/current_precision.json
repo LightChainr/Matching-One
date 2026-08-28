@@ -1,0 +1,539 @@
+{
+  "schema": "synthetic orientation model red-team result v1",
+  "config": "experiments/synthetic_model_redteam_current.json",
+  "provenance": {
+    "design": "P31/P32 same-N Gaussian orientation sizes and pairs",
+    "standard_errors": "P31 pooled_deltaM_with_covariance.csv at commit 7f86f9c",
+    "scoring_split": "P32 frozen training sizes 65,85,130 and held-out sizes 145,170"
+  },
+  "models": [
+    "H4",
+    "H12",
+    "H4+H12",
+    "two_radial_powers",
+    "log_Jordan",
+    "ordinary_correction"
+  ],
+  "runs": [
+    {
+      "replicates_per_truth": 10000,
+      "seed": 2026082801,
+      "noise_scale_relative_to_current_se": 1.0,
+      "admixture_fraction_in_covariance_norm": 0.5,
+      "truth_coefficients": {
+        "H4": [
+          0.7885
+        ],
+        "H12": [
+          1.3749173750968953
+        ],
+        "H4+H12": [
+          0.7885,
+          0.6874586875484476
+        ],
+        "two_radial_powers": [
+          0.7885,
+          0.04379142291493231
+        ],
+        "log_Jordan": [
+          0.7885,
+          1.0702630918805047
+        ],
+        "ordinary_correction": [
+          0.7885,
+          29.008583831691368
+        ]
+      },
+      "confusion_counts": {
+        "heldout_chi_square": {
+          "H4": {
+            "H4": 3028,
+            "H12": 0,
+            "H4+H12": 3307,
+            "two_radial_powers": 2578,
+            "log_Jordan": 235,
+            "ordinary_correction": 852
+          },
+          "H12": {
+            "H4": 0,
+            "H12": 5014,
+            "H4+H12": 4970,
+            "two_radial_powers": 5,
+            "log_Jordan": 6,
+            "ordinary_correction": 5
+          },
+          "H4+H12": {
+            "H4": 0,
+            "H12": 0,
+            "H4+H12": 9289,
+            "two_radial_powers": 242,
+            "log_Jordan": 137,
+            "ordinary_correction": 332
+          },
+          "two_radial_powers": {
+            "H4": 1449,
+            "H12": 0,
+            "H4+H12": 2967,
+            "two_radial_powers": 3709,
+            "log_Jordan": 411,
+            "ordinary_correction": 1464
+          },
+          "log_Jordan": {
+            "H4": 0,
+            "H12": 0,
+            "H4+H12": 413,
+            "two_radial_powers": 4110,
+            "log_Jordan": 2364,
+            "ordinary_correction": 3113
+          },
+          "ordinary_correction": {
+            "H4": 1287,
+            "H12": 0,
+            "H4+H12": 2897,
+            "two_radial_powers": 3243,
+            "log_Jordan": 464,
+            "ordinary_correction": 2109
+          }
+        },
+        "predictive_deviance": {
+          "H4": {
+            "H4": 8905,
+            "H12": 0,
+            "H4+H12": 476,
+            "two_radial_powers": 305,
+            "log_Jordan": 67,
+            "ordinary_correction": 247
+          },
+          "H12": {
+            "H4": 0,
+            "H12": 9341,
+            "H4+H12": 649,
+            "two_radial_powers": 3,
+            "log_Jordan": 1,
+            "ordinary_correction": 6
+          },
+          "H4+H12": {
+            "H4": 0,
+            "H12": 0,
+            "H4+H12": 9238,
+            "two_radial_powers": 165,
+            "log_Jordan": 140,
+            "ordinary_correction": 457
+          },
+          "two_radial_powers": {
+            "H4": 5579,
+            "H12": 0,
+            "H4+H12": 1173,
+            "two_radial_powers": 1409,
+            "log_Jordan": 403,
+            "ordinary_correction": 1436
+          },
+          "log_Jordan": {
+            "H4": 0,
+            "H12": 0,
+            "H4+H12": 364,
+            "two_radial_powers": 3493,
+            "log_Jordan": 2508,
+            "ordinary_correction": 3635
+          },
+          "ordinary_correction": {
+            "H4": 3865,
+            "H12": 0,
+            "H4+H12": 1546,
+            "two_radial_powers": 1441,
+            "log_Jordan": 552,
+            "ordinary_correction": 2596
+          }
+        }
+      },
+      "confusion_rates": {
+        "heldout_chi_square": {
+          "H4": {
+            "H4": 0.3028,
+            "H12": 0.0,
+            "H4+H12": 0.3307,
+            "two_radial_powers": 0.2578,
+            "log_Jordan": 0.0235,
+            "ordinary_correction": 0.0852
+          },
+          "H12": {
+            "H4": 0.0,
+            "H12": 0.5014,
+            "H4+H12": 0.497,
+            "two_radial_powers": 0.0005,
+            "log_Jordan": 0.0006,
+            "ordinary_correction": 0.0005
+          },
+          "H4+H12": {
+            "H4": 0.0,
+            "H12": 0.0,
+            "H4+H12": 0.9289,
+            "two_radial_powers": 0.0242,
+            "log_Jordan": 0.0137,
+            "ordinary_correction": 0.0332
+          },
+          "two_radial_powers": {
+            "H4": 0.1449,
+            "H12": 0.0,
+            "H4+H12": 0.2967,
+            "two_radial_powers": 0.3709,
+            "log_Jordan": 0.0411,
+            "ordinary_correction": 0.1464
+          },
+          "log_Jordan": {
+            "H4": 0.0,
+            "H12": 0.0,
+            "H4+H12": 0.0413,
+            "two_radial_powers": 0.411,
+            "log_Jordan": 0.2364,
+            "ordinary_correction": 0.3113
+          },
+          "ordinary_correction": {
+            "H4": 0.1287,
+            "H12": 0.0,
+            "H4+H12": 0.2897,
+            "two_radial_powers": 0.3243,
+            "log_Jordan": 0.0464,
+            "ordinary_correction": 0.2109
+          }
+        },
+        "predictive_deviance": {
+          "H4": {
+            "H4": 0.8905,
+            "H12": 0.0,
+            "H4+H12": 0.0476,
+            "two_radial_powers": 0.0305,
+            "log_Jordan": 0.0067,
+            "ordinary_correction": 0.0247
+          },
+          "H12": {
+            "H4": 0.0,
+            "H12": 0.9341,
+            "H4+H12": 0.0649,
+            "two_radial_powers": 0.0003,
+            "log_Jordan": 0.0001,
+            "ordinary_correction": 0.0006
+          },
+          "H4+H12": {
+            "H4": 0.0,
+            "H12": 0.0,
+            "H4+H12": 0.9238,
+            "two_radial_powers": 0.0165,
+            "log_Jordan": 0.014,
+            "ordinary_correction": 0.0457
+          },
+          "two_radial_powers": {
+            "H4": 0.5579,
+            "H12": 0.0,
+            "H4+H12": 0.1173,
+            "two_radial_powers": 0.1409,
+            "log_Jordan": 0.0403,
+            "ordinary_correction": 0.1436
+          },
+          "log_Jordan": {
+            "H4": 0.0,
+            "H12": 0.0,
+            "H4+H12": 0.0364,
+            "two_radial_powers": 0.3493,
+            "log_Jordan": 0.2508,
+            "ordinary_correction": 0.3635
+          },
+          "ordinary_correction": {
+            "H4": 0.3865,
+            "H12": 0.0,
+            "H4+H12": 0.1546,
+            "two_radial_powers": 0.1441,
+            "log_Jordan": 0.0552,
+            "ordinary_correction": 0.2596
+          }
+        }
+      },
+      "correct_selection_rate": {
+        "heldout_chi_square": {
+          "H4": 0.3028,
+          "H12": 0.5014,
+          "H4+H12": 0.9289,
+          "two_radial_powers": 0.3709,
+          "log_Jordan": 0.2364,
+          "ordinary_correction": 0.2109
+        },
+        "predictive_deviance": {
+          "H4": 0.8905,
+          "H12": 0.9341,
+          "H4+H12": 0.9238,
+          "two_radial_powers": 0.1409,
+          "log_Jordan": 0.2508,
+          "ordinary_correction": 0.2596
+        }
+      },
+      "H4_nonrejection_rate_at_5pct": {
+        "H4": 0.9498,
+        "H12": 0.0,
+        "H4+H12": 0.0,
+        "two_radial_powers": 0.7953,
+        "log_Jordan": 0.0002,
+        "ordinary_correction": 0.6769
+      }
+    },
+    {
+      "replicates_per_truth": 10000,
+      "seed": 2026082802,
+      "noise_scale_relative_to_current_se": 0.5,
+      "admixture_fraction_in_covariance_norm": 0.5,
+      "truth_coefficients": {
+        "H4": [
+          0.7885
+        ],
+        "H12": [
+          1.3749173750968953
+        ],
+        "H4+H12": [
+          0.7885,
+          0.6874586875484476
+        ],
+        "two_radial_powers": [
+          0.7885,
+          0.04379142291493231
+        ],
+        "log_Jordan": [
+          0.7885,
+          1.0702630918805047
+        ],
+        "ordinary_correction": [
+          0.7885,
+          29.008583831691368
+        ]
+      },
+      "confusion_counts": {
+        "heldout_chi_square": {
+          "H4": {
+            "H4": 3034,
+            "H12": 0,
+            "H4+H12": 3240,
+            "two_radial_powers": 2557,
+            "log_Jordan": 259,
+            "ordinary_correction": 910
+          },
+          "H12": {
+            "H4": 0,
+            "H12": 5014,
+            "H4+H12": 4986,
+            "two_radial_powers": 0,
+            "log_Jordan": 0,
+            "ordinary_correction": 0
+          },
+          "H4+H12": {
+            "H4": 0,
+            "H12": 0,
+            "H4+H12": 9986,
+            "two_radial_powers": 4,
+            "log_Jordan": 7,
+            "ordinary_correction": 3
+          },
+          "two_radial_powers": {
+            "H4": 239,
+            "H12": 0,
+            "H4+H12": 2027,
+            "two_radial_powers": 4741,
+            "log_Jordan": 821,
+            "ordinary_correction": 2172
+          },
+          "log_Jordan": {
+            "H4": 0,
+            "H12": 0,
+            "H4+H12": 4,
+            "two_radial_powers": 3346,
+            "log_Jordan": 4662,
+            "ordinary_correction": 1988
+          },
+          "ordinary_correction": {
+            "H4": 153,
+            "H12": 0,
+            "H4+H12": 2326,
+            "two_radial_powers": 2698,
+            "log_Jordan": 1047,
+            "ordinary_correction": 3776
+          }
+        },
+        "predictive_deviance": {
+          "H4": {
+            "H4": 8963,
+            "H12": 0,
+            "H4+H12": 474,
+            "two_radial_powers": 255,
+            "log_Jordan": 74,
+            "ordinary_correction": 234
+          },
+          "H12": {
+            "H4": 0,
+            "H12": 9308,
+            "H4+H12": 692,
+            "two_radial_powers": 0,
+            "log_Jordan": 0,
+            "ordinary_correction": 0
+          },
+          "H4+H12": {
+            "H4": 0,
+            "H12": 0,
+            "H4+H12": 9986,
+            "two_radial_powers": 4,
+            "log_Jordan": 5,
+            "ordinary_correction": 5
+          },
+          "two_radial_powers": {
+            "H4": 1115,
+            "H12": 0,
+            "H4+H12": 1469,
+            "two_radial_powers": 3256,
+            "log_Jordan": 1034,
+            "ordinary_correction": 3126
+          },
+          "log_Jordan": {
+            "H4": 0,
+            "H12": 0,
+            "H4+H12": 3,
+            "two_radial_powers": 3056,
+            "log_Jordan": 4766,
+            "ordinary_correction": 2175
+          },
+          "ordinary_correction": {
+            "H4": 433,
+            "H12": 0,
+            "H4+H12": 1927,
+            "two_radial_powers": 1786,
+            "log_Jordan": 1133,
+            "ordinary_correction": 4721
+          }
+        }
+      },
+      "confusion_rates": {
+        "heldout_chi_square": {
+          "H4": {
+            "H4": 0.3034,
+            "H12": 0.0,
+            "H4+H12": 0.324,
+            "two_radial_powers": 0.2557,
+            "log_Jordan": 0.0259,
+            "ordinary_correction": 0.091
+          },
+          "H12": {
+            "H4": 0.0,
+            "H12": 0.5014,
+            "H4+H12": 0.4986,
+            "two_radial_powers": 0.0,
+            "log_Jordan": 0.0,
+            "ordinary_correction": 0.0
+          },
+          "H4+H12": {
+            "H4": 0.0,
+            "H12": 0.0,
+            "H4+H12": 0.9986,
+            "two_radial_powers": 0.0004,
+            "log_Jordan": 0.0007,
+            "ordinary_correction": 0.0003
+          },
+          "two_radial_powers": {
+            "H4": 0.0239,
+            "H12": 0.0,
+            "H4+H12": 0.2027,
+            "two_radial_powers": 0.4741,
+            "log_Jordan": 0.0821,
+            "ordinary_correction": 0.2172
+          },
+          "log_Jordan": {
+            "H4": 0.0,
+            "H12": 0.0,
+            "H4+H12": 0.0004,
+            "two_radial_powers": 0.3346,
+            "log_Jordan": 0.4662,
+            "ordinary_correction": 0.1988
+          },
+          "ordinary_correction": {
+            "H4": 0.0153,
+            "H12": 0.0,
+            "H4+H12": 0.2326,
+            "two_radial_powers": 0.2698,
+            "log_Jordan": 0.1047,
+            "ordinary_correction": 0.3776
+          }
+        },
+        "predictive_deviance": {
+          "H4": {
+            "H4": 0.8963,
+            "H12": 0.0,
+            "H4+H12": 0.0474,
+            "two_radial_powers": 0.0255,
+            "log_Jordan": 0.0074,
+            "ordinary_correction": 0.0234
+          },
+          "H12": {
+            "H4": 0.0,
+            "H12": 0.9308,
+            "H4+H12": 0.0692,
+            "two_radial_powers": 0.0,
+            "log_Jordan": 0.0,
+            "ordinary_correction": 0.0
+          },
+          "H4+H12": {
+            "H4": 0.0,
+            "H12": 0.0,
+            "H4+H12": 0.9986,
+            "two_radial_powers": 0.0004,
+            "log_Jordan": 0.0005,
+            "ordinary_correction": 0.0005
+          },
+          "two_radial_powers": {
+            "H4": 0.1115,
+            "H12": 0.0,
+            "H4+H12": 0.1469,
+            "two_radial_powers": 0.3256,
+            "log_Jordan": 0.1034,
+            "ordinary_correction": 0.3126
+          },
+          "log_Jordan": {
+            "H4": 0.0,
+            "H12": 0.0,
+            "H4+H12": 0.0003,
+            "two_radial_powers": 0.3056,
+            "log_Jordan": 0.4766,
+            "ordinary_correction": 0.2175
+          },
+          "ordinary_correction": {
+            "H4": 0.0433,
+            "H12": 0.0,
+            "H4+H12": 0.1927,
+            "two_radial_powers": 0.1786,
+            "log_Jordan": 0.1133,
+            "ordinary_correction": 0.4721
+          }
+        }
+      },
+      "correct_selection_rate": {
+        "heldout_chi_square": {
+          "H4": 0.3034,
+          "H12": 0.5014,
+          "H4+H12": 0.9986,
+          "two_radial_powers": 0.4741,
+          "log_Jordan": 0.4662,
+          "ordinary_correction": 0.3776
+        },
+        "predictive_deviance": {
+          "H4": 0.8963,
+          "H12": 0.9308,
+          "H4+H12": 0.9986,
+          "two_radial_powers": 0.3256,
+          "log_Jordan": 0.4766,
+          "ordinary_correction": 0.4721
+        }
+      },
+      "H4_nonrejection_rate_at_5pct": {
+        "H4": 0.9487,
+        "H12": 0.0,
+        "H4+H12": 0.0,
+        "two_radial_powers": 0.314,
+        "log_Jordan": 0.0,
+        "ordinary_correction": 0.1071
+      }
+    }
+  ]
+}
