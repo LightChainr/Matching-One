@@ -1,0 +1,1 @@
+This experiment is intentionally gated behind the active norm-5 campaign. It is an independent torus-modulus discriminator based on the hexagonal automorphism, not a reason to postpone Issue #57. See predictions/hexagonal_pell_spin_filter_20260828.yaml.
