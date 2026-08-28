@@ -29,6 +29,27 @@ F(p)=\frac{1+M(p)}2
 
 is exactly Beta(3,3) on this finite quotient.
 
+## Persistent self-matching factor
+
+The same polynomial factors over `Q` as
+
+\[
+\boxed{
+M_{10}(p)=(2p-1)
+\left(6p^4-12p^3+4p^2+2p+1\right).
+}
+\]
+
+The linear factor is structural, not an N=10 accident. For any finite self-matching quotient whose matching observable obeys the exact complement antisymmetry
+
+\[
+M(1-p)=-M(p),
+\]
+
+one has `M(1/2)=0`; hence every rational-coefficient polynomial representation contains the factor `2p-1`.
+
+This provides the positive algebraic control required by the finite-factor/GCD program: an exact self-matching mechanism produces a persistent physical linear factor, whereas the square-site axis/diamond target polynomials certified so far are irreducible over `Q` and do not contain a bounded-degree physical factor.
+
 Immediate exact consequences at the self-matching center `p=1/2` are
 
 \[
@@ -50,6 +71,7 @@ These values are finite-size control constants, not universal limits and not evi
 - threshold-rank CDF semantics;
 - analytic derivatives at the center;
 - `kappa_3` / `kappa_5` code paths;
-- self-matching central parity.
+- self-matching central parity;
+- recovery of the exact persistent self-matching factor `2p-1`.
 
-`tests/test_c4_self_matching_exact.py` recomputes this identity from the exhaustive integer coefficients without using floating-point special functions.
+`tests/test_c4_self_matching_exact.py` recomputes the polynomial identity from the exhaustive integer coefficients without using floating-point special functions.
