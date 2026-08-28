@@ -1,163 +1,241 @@
-version: 1
+version: 2
 updated: 2026-08-28
 supersedes_fields_in: experiments/server_compute_queue.yaml
+supersedes_previous_override: experiments/server_compute_queue_overrides_20260828.yaml
 coordination_issue: 23
-reason: >-
-  Latest server results and review expose two required corrections: the finite-size
-  summary still loads decimal inputs before setting mpmath precision, and the
-  wrapping-only matching differences are configuration-level identical rather
-  than merely equal-mean control-variate channels. Same-N production also
-  resolves a matching-odd cos(4 theta) signal, so C02 must no longer assume
-  matching-even dominance.
+source_checkpoint: 28fd1d872f97a83c6ddd59bde996dae2343d3c77
+purpose: >-
+  Advance the queue after C00, C01 discovery/evaluation, C04 triangular Stage A,
+  C05 threshold-rank reference, C07 Stage A, and the precision-ordering fix.
+  Preserve completed/null results and direct new compute to confirmation rather
+  than repeating discovery runs.
 
-overrides:
+completed_or_closed:
   - id: MERGE_BLOCKER_PRECISION
-    priority: P0
-    target_pr: 21
-    status: required_before_merge
-    problem: >-
-      scripts/summarize_finite_size_grid.py currently calls load_observations()
-      before mp.mp.dps is set to chosen_dps. mp.mpf conversion therefore occurs
-      at the default precision and lost digits cannot be recovered later.
-    required_change:
-      - load grid payloads and determine chosen_dps first
-      - set mp.mp.dps = chosen_dps
-      - only then parse decimal CSV strings into mp.mpf
-      - rerun summary and report from original decimal strings
-      - preserve old output as superseded provenance if practical
-    regression_test: >-
-      Use a CSV value with more than 30 non-binary-friendly decimal digits and
-      assert exact agreement with an mp.mpf constructed after setting high dps.
-    scientific_note: >-
-      The correction is about 2.7e-16 in the reported intercept and does not
-      change the current scientific conclusion, but it is mandatory for a claim
-      of high-precision input handling.
+    status: completed_on_28fd1d8
+    issue: 32
+    evidence:
+      - selected mpmath precision is applied before CSV parsing
+      - long-decimal regression passes
+      - final-tail summary and report are regenerated
+      - corrected intercept is 0.59274605094603206266439366806726549
 
   - id: C00
-    status: completed_on_PR21
+    status: completed
     evidence: >-
-      General nonsingular integer 2x2 period matrices, exact adjugate/determinant
-      winding coordinates, Gaussian/circulant regressions and unimodular basis
-      invariance are implemented and the combined suite passes.
+      General integer 2x2 period matrices, exact adjugate/determinant winding,
+      Gaussian/circulant regressions, and unimodular basis invariance pass.
 
-  - id: C01
-    status: discovery_passed
-    evidence:
-      - 'N=65 matching-function orientation difference: +1.00377e-3 +/- 1.68e-4'
-      - 'N=85 matching-function orientation difference: +7.60333e-4 +/- 1.58e-4'
-      - 'N=145 matching-function orientation difference: +3.28667e-4 +/- 1.95e-4'
-      - 'N^(13/8) DeltaM / Delta cos4theta approximately 0.650, 0.651, 0.557'
-    next:
-      - independent production seed at N=65 and N=85
-      - add at least one held-out same-N orientation pair
-      - after C05, replace fixed-p-only analysis by full thermal-coordinate scan
+  - id: C03_wrapping_only
+    status: closed_negative
+    issue: 20
+    evidence: >-
+      All declared matching-difference wrapping channels are identical
+      configuration by configuration on exhaustive controls; GLS variance
+      reduction is exactly 1.0x.
+    replacement_issue: 34
 
-  - id: C02
-    status: hypothesis_revised
-    old_hypothesis_rejected_as_gate: >-
-      Do not require the matching-even sector S4 to dominate D4. The latest
-      N=65,85,145 production does not show stable matching-even dominance,
-      while the matching-function/matching-odd orientation signal is resolved
-      at N=65 and N=85.
-    primary_question: >-
-      Determine matching parity, rotation harmonic, thermal parity and size
-      exponent jointly, rather than assigning spin-4 to the matching-even sector
-      in advance.
-    angular_projectors:
-      P4: '(X(theta1)-X(theta2))/(cos(4theta1)-cos(4theta2))'
-      P0: '(cos(4theta1)*X(theta2)-cos(4theta2)*X(theta1))/(cos(4theta1)-cos(4theta2))'
-    scaling_models_to_compare_blindly:
-      - 'P4[M] ~ A*N^(-13/8)'
-      - 'P4[M] ~ A*N^(-1)'
-      - 'P4[M] ~ A*N^(-13/8)*(1+B*log(N))'
-      - 'free exponent on training sizes, scored on held-out sizes/orientations'
-    operator_candidate: >-
-      A matching-odd spin-4 correction with x=21/4 is a high-value conjecture
-      because L^(2-x)=L^(-13/4) and division by M_prime~L^(3/4) yields an
-      L^-4 root shift. A possible CFT origin is a level-4 spin +/-4 descendant or
-      quasiprimary in the thermal h=hbar=5/8 family. Treat this as conjectural;
-      c=0 logarithmic/null-vector structure must be checked before identification.
-
-  - id: C03
-    status: redesign_required
-    invalidate_old_channels: >-
-      Do not run GLS over D_cross, D_both, D_either, D_direction_0 and
-      D_direction_1 as if they were distinct equal-mean estimators. Exact tiny
-      torus tests show these differences are configuration-level identical on
-      the complementary periodic construction, hence wrapping-only covariance is
-      rank one and no variance reduction is possible.
-    new_title: Euler and motif control-variate hierarchy
-    base_random_variable: 'q in {-1,0,+1}, the common wrapping-difference topology variable'
-    canonical_controls:
-      - 'Z_V = V - N*p'
-      - 'Z_E = E - 2*N*p^2 for square NN edges'
-      - 'Z_F = F0 - N*p^4 for occupied elementary square faces'
-      - 'additional local motif counts with analytically known means'
-    identity: >-
-      D_N = q + Z_V - Z_E + Z_F for the square-site Euler/matching relation,
-      subject to exact convention verification on the implemented quotient.
-    microcanonical_centering:
-      - 'E[E | K=k] = 2*N*(k)_2/(N)_2'
-      - 'E[F0 | K=k] = N*(k)_4/(N)_4'
-    method: >-
-      Estimate coefficients on an independent pilot or by cross-fitting, freeze
-      them, and evaluate q plus centered Euler/motif controls on fresh replicas.
-    acceptance:
-      - exact zero-mean/control identities on exhaustive tiny systems
-      - variance reduction on fresh evaluation data
-      - no ridge-induced pseudo-information from duplicate wrapping channels
-
-  - id: C04
-    status: partial
-    completed:
-      - square_bond_exact_and_MC_control
+  - id: C07_stage_A
+    status: completed
+    issue: 27
     result: >-
-      A fixed L^-3/2 correction fit is compatible with the held-out L=16 point;
-      an all-size statistical-only intercept near -1.649 +/- 0.023 retains but
-      does not establish -5/3.
-    still_required:
-      - triangular-site self-matching exact-pc control
-      - second microscopic realization before universality claim
-      - higher statistics / threshold-rank estimator before sharp rational test
+      Degree-four polynomial F with n_min=9 has held-out RMSE 5.6943e-12;
+      admissible Pade families are worse and do not remove positive drift.
+    next: C07_stage_B_after_widths_22_24
 
-  - id: C05
+active_queue:
+  - id: C05_cpp
     priority: P0
-    status: immediate_next_core_task
-    reason: >-
-      Threshold-rank Newman-Ziff is now required not only for profile work but
-      for a thermal-even/odd decomposition of the resolved angular signal.
-    extra_required_outputs:
-      - per-orientation K_minus and K_plus batch histograms
-      - joint orientation coupling aggregates
-      - reconstructable R_G(p), R_hat(p), S(p), D(p), and P4 of each
-    thermal_projection_protocol: >-
-      From the direction-averaged matching function Mbar_N(p), choose frozen u
-      values and solve Mbar_N(p_minus)=-u, Mbar_N(p_plus)=+u. For X4=P4[X], form
-      X4_even(u)=(X4(p_plus)+X4(p_minus))/2 and
-      X4_odd(u)=(X4(p_plus)-X4(p_minus))/2. This defines a near-center reflection
-      without requiring the final digits of pc.
-    target_tests:
-      - 'Does P4[D]_thermal_even at u=0 scale near L^-13/4?'
-      - 'Does any P4[S]_thermal_even component scale near L^-2?'
-      - 'Do logarithmic alternatives improve held-out prediction?'
+    title: Deterministic C++/OpenMP threshold-rank engine
+    issue: 26
+    depends_on: [C00]
+    status: immediate_core_task
+    frozen_contract:
+      K_plus: first_1_based_black_primal_cross_rank
+      K_minus: first_rank_white_matching_cross_is_lost
+      reverse_rule: K_minus_equals_N_minus_reverse_first_cross_plus_1
+      require: K_minus_le_K_plus
+    requirements:
+      - reproduce declared Python test permutations bit for bit
+      - reproduce exact tiny marginal and joint histograms
+      - reconstruct M, M_prime, and root identically at high precision
+      - counter-range concatenation equals one contiguous run
+      - thread scheduling does not affect output
+      - store integer marginal histograms, sparse joint counts, and batch moments
+    benchmark_against:
+      - Python threshold-rank reference
+      - PR21 three-point fixed-p engine on uncertainty per wall time
+    first_production_after_validation:
+      - {N: 65, reps: [[8,1],[7,4]]}
+      - {N: 85, reps: [[9,2],[7,6]]}
+      - {N: 130, reps: [[11,3],[9,7]]}
+      - {N: 145, reps: [[12,1],[9,8]]}
+      - {N: 170, reps: [[13,1],[11,7]]}
+    gpu_gate: >-
+      Port to GPU only after the C++ contract passes and information per wall
+      time is measured; the histogram schema must remain unchanged.
 
-  - id: C10
-    status: promoted_to_control_after_C05
-    add_same_N_magic_pair:
+  - id: C01_confirmation
+    priority: P0
+    title: Clean-checkout same-N orientation confirmation
+    issue: 22
+    status: ready_in_parallel_with_C05_cpp
+    frozen_probability: '0.592746050790'
+    frozen_orientation_order: first_minus_second
+    source_requirement: clean_committed_checkout
+    geometries:
+      - {N: 65, first: [8,1], second: [7,4]}
+      - {N: 85, first: [9,2], second: [7,6]}
+      - {N: 130, first: [11,3], second: [9,7]}
+      - {N: 145, first: [12,1], second: [9,8]}
+      - {N: 170, first: [13,1], second: [11,7]}
+    sampling:
+      seed: new_and_independent
+      counters: disjoint_from_all_existing_campaigns
+      minimum_batches: 100
+      initial_target_per_pair: 100000000
+      rule: power_adjust_only_from_prespecified_pilot_or_existing_variance
+    primary_outputs:
+      - delta_M_by_size_and_seed.csv
+      - A4_equals_N_13_over_8_deltaM_over_deltaCos4.csv
+      - cross_campaign_compatibility.json
+      - covariance_and_CRN_gain.json
+    forbidden:
+      - drop_or_add_sizes_after_viewing_z_scores
+      - treat cross_and_either_matching_differences_as_independent_evidence
+      - change_orientation_order_after_viewing_signs
+
+  - id: C02_radial_thermal_confirmation
+    priority: P0
+    title: Blind radial and thermal-parity test of the angular signal
+    issue: 22
+    depends_on: [C01_confirmation, C05_cpp]
+    training_sizes: [65,85,130]
+    heldout_sizes: [145,170]
+    radial_models:
+      - 'deltaM=A*deltaCos4*N^(-13/8)'
+      - 'deltaM=deltaCos4*N^(-13/8)*(A+B*N^(-omega/2)); omega selected on training only from [1,2,3]'
+      - 'deltaM=deltaCos4*N^(-13/8)*(A+B*log(N))'
+      - 'deltaM=A*deltaCos4*N^(-alpha); alpha selected on training only'
+    thermal_projection: >-
+      From the orientation-averaged matching curve choose frozen levels u and
+      solve Mbar(p_minus)=-u, Mbar(p_plus)=+u. For X4=P4[X], report
+      X4_even=(X4(p_plus)+X4(p_minus))/2 and
+      X4_odd=(X4(p_plus)-X4(p_minus))/2.
+    tests:
+      - central matching-odd amplitude persists after thermal reflection
+      - orientation root gap is compatible with N^-2 on held-out sizes
+      - logarithmic alternatives are scored out of sample
+    acceptance: >-
+      An exponent/operator claim requires held-out success; agreement of N=65
+      and N=85 alone is insufficient.
+
+  - id: C03_euler_motif
+    priority: P0
+    title: Euler and local-motif control variates
+    issue: 34
+    depends_on: [C00]
+    base_identity: 'D_N=q+(V-Np)-(E-2*N*p^2)+(F0-N*p^4)'
+    controls:
+      - occupied_site_count
+      - occupied_NN_edge_count
+      - occupied_elementary_face_count
+      - frozen_local_motif_orbits_with_exact_means
+    microcanonical_centering:
+      E_given_K: '2*N*(K)_2/(N)_2'
+      F0_given_K: 'N*(K)_4/(N)_4'
+    protocol:
+      pilot_fraction: 0.2
+      evaluation_fraction: 0.8
+      weights: pilot_frozen_or_cross_fitted
+      baseline: best_single_estimator
+    acceptance:
+      - exhaustive identity and exact zero conditional means
+      - fresh-sample variance reduction
+      - no duplicate wrapping pseudo-controls
+    gpu_gate: variance_reduction_at_least_2x_at_multiple_sizes
+
+  - id: C04_same_modulus_controls
+    priority: P0
+    title: Same-modulus kappa3 control
+    issue: 25
+    status: triangular_rhombus_stage_A_complete_but_not_shape_matched
+    completed:
+      - square_bond_tau_i_exact_and_MC
+      - triangular_site_tau_exp_i_pi_over_3_exact_and_MC
+    scientific_constraint: >-
+      Kappa3 is torus-shape dependent. Do not fit a common universal intercept
+      across tau=i and tau=exp(i*pi/3) as a fixed-shape test.
+    next_primary:
+      model: union_jack_site_self_matching
+      modulus: tau_i
+      exact_pc: '1/2'
+    next_secondary:
+      - continue triangular rhombus as its own fixed-modulus sequence with powered samples
+      - or implement square-bond at the same 60-degree modulus
+    requirements:
+      - exhaustive tiny regression
+      - sample counts powered by derivative-score variance
+      - covariance-aware M_prime/M_third ratio
+      - fixed L^-3/2 versus held-out free-exponent comparison
+      - coordinate-free parametric M(U) invariant
+    forbidden:
+      - universality claim from unlike torus moduli
+      - constant sample counts at increasing L after underpower is observed
+
+  - id: C10_magic_holdout
+    priority: P1
+    title: Near-pi-over-8 held-out geometry
+    issue: 22
+    depends_on: [C02_radial_thermal_confirmation]
+    case:
       N: 169
-      reps: [[13,0],[12,5]]
-      purpose: >-
-        Same N compares an axis orientation with a rational approximation close
-        to theta=pi/8 where a pure cos4theta amplitude vanishes. Use only after
-        angular and thermal projectors are frozen; do not tune the zero on this
-        held-out pair.
+      geometries: [[13,0],[12,5]]
+    caveat: >-
+      (13,0) has Smith group Z_13 x Z_13 while primitive (12,5) has Z_169.
+      They share N and continuum square shape but not a canonical cyclic label.
+    requirements:
+      - use general period-matrix engine
+      - report Smith normal form and coupling convention
+      - do not tune the magic angle on this held-out case
 
-execution_order_after_override:
-  - MERGE_BLOCKER_PRECISION
-  - C05
-  - C03_redesigned_in_parallel
-  - C04_remaining_exact_controls
-  - C01_independent_replication
-  - C02_thermal_rotation_decomposition
-  - C10_same_N_magic_holdout
-  - C06_and_C07_when_width_22_24_provenance_is_available
+  - id: C07_stage_B
+    priority: P1
+    title: Widths 22-24 frozen reveal and extrapolation challenge
+    issues: [6,27]
+    blocked_on: provenance_complete_primary_source_values_22_24
+    rules:
+      - score existing frozen prediction artifact before any retuning
+      - use n_le_21 only for Stage-B selection
+      - retain polynomial and Pade failures
+      - co-primary metrics are RMSE and signed residual trend
+
+  - id: C12_operator_identification
+    priority: P1
+    title: Matching-odd spin-4 operator selection rules
+    issue: 12
+    depends_on: [C02_radial_thermal_confirmation]
+    hypothesis:
+      spin: 4
+      scaling_dimension: '21/4'
+      candidate: level_four_thermal_family_descendant_or_quasiprimary
+      logarithmic_partner_allowed: true
+    inputs:
+      - angular harmonic
+      - radial exponent scores
+      - thermal parity
+      - modulus/aspect-ratio dependence_later
+    deliverable: >-
+      Derive or reject the selection-rule explanation for why lower x=4
+      anisotropy sectors cancel from the matching difference and what first
+      matching-odd sector can shift the root.
+
+execution_order:
+  - C05_cpp
+  - C01_confirmation_in_parallel
+  - C03_euler_motif_in_parallel
+  - C04_same_modulus_controls
+  - C02_radial_thermal_confirmation
+  - C10_magic_holdout
+  - C07_stage_B_when_unblocked
+  - C12_operator_identification
