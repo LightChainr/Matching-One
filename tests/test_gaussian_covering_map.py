@@ -13,6 +13,7 @@ from gaussian_covering_map import (  # noqa: E402
     GaussianPair,
     canonical_cover,
     covering_units,
+    det,
 )
 
 
@@ -38,8 +39,10 @@ class GaussianCoveringMapTests(unittest.TestCase):
                 self.assertEqual(len(candidates), 4)
                 cover = canonical_cover(parent, child)
                 self.assertEqual(cover.degree, degree)
+                self.assertEqual(abs(det(cover.homology_matrix())), degree)
                 cover.verify_partition()
                 cover.verify_edges()
+                cover.verify_homology()
 
     def test_each_fiber_has_one_label_per_parent_residue_class(self) -> None:
         cover = canonical_cover(GaussianPair(8, 1), GaussianPair(17, 6))
@@ -69,14 +72,30 @@ class GaussianCoveringMapTests(unittest.TestCase):
         }
         self.assertEqual(coordinates, expected)
 
-    def test_all_d4_covering_units_preserve_primal_and_matching_edges(self) -> None:
+    def test_all_d4_covering_units_preserve_edges_and_homology_degree(self) -> None:
         parent = GaussianPair(8, 1)
         child = GaussianPair(17, 6)
         for t in covering_units(parent, child):
             cover = CoveringMap(parent, child, t)
             self.assertEqual(len(set(cover.direction_map().values())), 2)
+            self.assertEqual(abs(det(cover.direction_matrix())), 1)
+            self.assertEqual(abs(det(cover.homology_matrix())), 5)
             cover.verify_partition()
             cover.verify_edges()
+            cover.verify_homology()
+
+    def test_global_winding_map_is_not_just_the_local_d4_direction_map(self) -> None:
+        cover = canonical_cover(GaussianPair(8, 1), GaussianPair(9, 7))
+        # For the canonical minimal t=28, local lattice directions are a D4
+        # reflection, but child fundamental torus cycles map to combinations
+        # of parent cycles. This guards against treating directional wrapping
+        # classes as if they transformed only by the local D4 map.
+        self.assertEqual(cover.t, 28)
+        self.assertEqual(cover.direction_matrix(), ((-1, 0), (0, 1)))
+        self.assertEqual(cover.homology_matrix(), ((-1, 1), (1, 1)))
+        self.assertEqual(cover.map_winding((1, 0)), (-1, 1))
+        self.assertEqual(cover.map_winding((0, 1)), (1, 1))
+        self.assertEqual(abs(det(cover.homology_matrix())), 2)
 
 
 if __name__ == "__main__":
