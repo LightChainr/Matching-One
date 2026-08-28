@@ -1,94 +1,120 @@
 # Matching One
 
-Matching One is an open computational research program on the square-lattice site-percolation threshold and the exact relation to its matching lattice.
+Matching One is a computational research project on square-lattice site percolation, its matching-lattice identity, and the finite-size structure behind the threshold.
+
+The exact structural anchor is
 
 \[
 p_c^{\mathrm{site}}(\mathbb Z^2)
 + p_c^{\mathrm{site}}(\mathrm{NN+NNN}) = 1.
 \]
 
-Numerical estimates place the square-site threshold near `0.59274605079`. The project does **not** treat a rounded estimate as a definition, and it does not claim a known closed form. Published high-precision estimates and finite-size sequences are tracked as method-specific results with provenance; canonical reconciliation is issue #4.
+## What we currently observe
 
-## Scientific direction
+The strongest current numerical evidence is an orientation-dependent finite-size sector on primitive Gaussian tori.
 
-The project has moved beyond guessing combinations of familiar constants. Its main research direction is the finite-size structure of the exact matching observable, including orientation dependence, matching parity, threshold-rank reconstruction, and possible spin-4 correction sectors.
+1. **Independent five-size confirmation.** With 100 million paired replicas per size, the frozen same-`N` orientation differences at `N=65,85,130,145,170` all have the sign predicted by `Delta cos(4 theta)`. The corresponding z-scores are `16.03, 11.23, 5.22, 5.27, 2.58`; the pooled scaled amplitude is
 
-The current server/research archive contains finite-size evidence for:
+   ```text
+   A4 = N^(13/8) DeltaM / DeltaCos4
+      = 0.7885 +/- 0.0352.
+   ```
 
-- a nonzero same-area, same-shape orientation effect on primitive Gaussian tori;
-- the sign expected from the tested `cos(4 theta)` design;
-- independent-seed reproduction over five prescribed sizes;
-- held-out support for a `cos(4 theta) N^(-13/8)` law over the current size range;
-- local linear closure between the matching residual, its slope, and the finite-size root shift;
-- two prospective Gaussian `1+i` lineages compatible with the no-fit doubling ratio `-2^(-13/8)`.
+2. **Two parameter-free Gaussian-doubling tests.** Multiplication by `1+i` doubles `N` and rotates the microscopic square lattice by `pi/4`. The frozen prediction
 
-These observations do **not** establish a unique asymptotic exponent, unique H4 harmonic, an `x=21/4` logarithmic-CFT operator identification, an exact value of `p_c`, or a closed form. Clean-source replay, covariance hardening, canonical archive import, prospective harmonic/root tests, and exact parity controls remain active gates.
+   ```text
+   DeltaM(2N) / DeltaM(N) = -2^(-13/8) = -0.3242098887...
+   ```
 
-The repository-wide claim ledger is [`docs/STATUS.md`](docs/STATUS.md).
+   gives fresh observed ratios
 
-## Canonical repository policy
+   ```text
+   65 -> 130: -0.31382 +/- 0.0908
+   85 -> 170: -0.34095 +/- 0.1118.
+   ```
 
-`main` is the reviewed integration line. It currently contains the governance/CI baseline and the foundational research methods integrated from PR #15 and PR #18.
+3. **A third prospective lineage also passes.** For the independently frozen `145 -> 290` lineage,
 
-A research branch, issue, server directory, or pull-request description is evidence and working history; it becomes canonical only through reviewable integration to `main` under [`GOVERNANCE.md`](GOVERNANCE.md) and [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md).
+   ```text
+   DeltaM_290 = -0.000160648 +/- 0.000040542
+   frozen target = -0.0001376564 +/- 0.000024997.
+   ```
 
-The large Huawei server campaign is intentionally preserved in PR #21 / `server/huawei-analysis-20260828`. It is **not** to be bulk-merged into `main`. Issue #59 governs a curated import of production source/tests, archive manifests, and bounded immutable result families. PR #46 (cross-size covariance infrastructure) and PR #56 (post-doubling decision layer) are currently drafts pending their P0 dependencies.
+4. **The residual moves the finite matching root in the expected way.** Threshold-rank reconstructions give
 
-GitHub Actions checks `main` and pull requests across Python 3.9/3.11/3.13 plus C++17 build/self-tests. Hosting-side protection of `main` is still tracked by issue #52.
+   ```text
+   -DeltaRoot * mean(M') / DeltaM ~= 1
+   ```
 
-## Exact and reference quantities
+   across the tested sizes. A clean high-stat root-amplitude test gives `A_p=0.4203 +/- 0.0216` at `N=65` and `0.3949 +/- 0.0308` at `N=85`, against the frozen prediction `0.4510 +/- 0.0201`.
 
-| Quantity | Status |
-|---|---|
-| Square-site `p_c` | numerical, method-dependent; no known closed form |
-| NN+NNN matching-site `p_c` | exactly `1 - p_c` |
-| Square-bond `p_c` | exactly `1/2` |
-| Triangular-site `p_c` | exactly `1/2` |
+The numerical archive, production scripts, exact checks, failed models, and raw sufficient statistics are now on `main` under `results/server-20260828/`.
 
-`constants/pc.yaml` records reference values; until #4 is complete it must not be interpreted as an adjudication of disputed last digits. Broad PSLQ/constant search is P2 and blocked by #4 under issue #1.
+## Working interpretation
 
-## Layout
+A compact working law is
+
+\[
+\Delta M_N
+\approx A\,\Delta\cos(4\theta)\,N^{-13/8}
+\]
+
+with Gaussian-integer multiplication acting simultaneously on the radial scale and microscopic orientation.
+
+The evidence is strongest for an **odd square-harmonic orientation sector with approximately `N^-13/8` radial behavior**. It is not yet enough to say that the leading harmonic is uniquely H4 rather than H12/H20/etc., or that the corresponding continuum field has been uniquely identified as the proposed `x=21/4` LCFT operator.
+
+For the current integrated research view, see [`notes/SYNTHESIS-20260828.md`](notes/SYNTHESIS-20260828.md). The more formal claim ledger remains [`docs/STATUS.md`](docs/STATUS.md).
+
+## Next three experiments
+
+The project is currently optimized around three discriminators:
+
+1. **Full-curve Gaussian doubling triptych** (#49/#50): test `DeltaM`, slope, and root ratios on the three exact lineages, including the parameter-free root target `-1/4`.
+2. **Norm-5 H4 versus H12 test** (#57): use a Gaussian multiplier for which the two harmonic hypotheses predict different signs/magnitudes.
+3. **Exact parity control** (#44, then #42/#48): separate generic square-lattice anisotropy from the matching-odd sector using self-matching/self-dual controls and derivative parity.
+
+Prospective `N=185,265`, paired motif controls, finite-width annihilators, and kappa3 work continue in parallel when they do not displace those three tests.
+
+## What this does not claim
+
+Numerical estimates place the infinite square-site threshold near `0.59274605079`, but the project does not treat a rounded estimate as a definition and does not claim a known closed form. Published last digits are method-dependent and are tracked in `data/literature_threshold_sources.json`.
+
+Likewise, the current orientation results do not yet prove:
+
+- a unique asymptotic exponent;
+- a unique H4 harmonic;
+- an `x=21/4` LCFT operator identification;
+- universality of the proposed derivative invariants;
+- an exact expression for `p_c`.
+
+Those are research questions, not merge blockers for exploratory code and data.
+
+## Repository layout
 
 ```text
-constants/      reference values and provenance notes
-data/           canonical source datasets when integrated
-notes/          theory, derivations, negative results, and research decisions
-scripts/        reproducible analysis and reference checks
-experiments/    frozen protocols and computation queues
-predictions/    preregistered prediction artifacts
-results/        immutable result archives when curated onto main
-tests/          regression and scientific-contract tests
-docs/           governance, status, and roadmap
+constants/      reference values and exact relations
+data/           literature/source datasets and provenance
+notes/          synthesis, theory, derivations, and negative results
+scripts/        analysis, exact checks, and experiment tooling
+experiments/    frozen protocols and compute queues
+predictions/    preregistered numerical predictions
+results/        raw/derived research result archives
+tests/          smoke, regression, and exact-contract tests
+docs/           status, roadmap, and project governance
+src/            production C++ simulation engines
 ```
 
-Not every directory present on a research/server branch is already canonical on `main`; consult `docs/STATUS.md` and issue #59 for integration status.
+## Research workflow
 
-## Local checks
+This is an exploratory mathematics/computational-physics repository, not a production service. Useful code and result archives should enter `main` quickly once they are understandable and the relevant tests run. Stronger scientific language is controlled by evidence level rather than by keeping exploratory work off the main branch.
 
-Install the declared Python dependencies when needed, then run the integrated unit/regression suite:
+For local checks:
 
 ```bash
 python3 -m unittest discover -s tests -p 'test_*.py' -v
 ```
 
-A minimal numerical smoke check is:
-
-```bash
-python3 scripts/compare_candidates.py
-```
-
-Production result families must additionally follow the clean-checkout, source/binary hash, RNG-domain, batch, checksum, and raw-sufficient-statistic requirements in `REPRODUCIBILITY.md`.
-
-## Working principles
-
-1. Prefer lattice-native identities, exact controls, and falsifiable predictions over numerology.
-2. Freeze models, geometry/order conventions, RNG domains, and held-out data before scoring.
-3. Preserve failed models, null results, raw sufficient statistics, and provenance.
-4. Separate finite-size observations from asymptotic, universal, or operator-level interpretation.
-5. Treat topology, RNG, covariance, and threshold-rank code as high-risk and require independent/exact checks.
-6. Use expensive hardware only after a CPU oracle, power calculation, and information-per-wall-time benchmark.
-
-See [`CONTRIBUTING.md`](CONTRIBUTING.md) before opening a research pull request.
+See [`GOVERNANCE.md`](GOVERNANCE.md) for the lightweight evidence levels and [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md) for how to preserve expensive run provenance.
 
 ## License
 

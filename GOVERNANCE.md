@@ -1,154 +1,136 @@
 # Governance
 
-This document defines how Matching One turns exploratory work into canonical code, data, and scientific claims.
+Matching One is an exploratory computational-mathematics project. Governance exists to keep evidence understandable and reversible, not to make research wait for product-style process.
 
-## 1. Canonical repository state
+## 1. Default mode: fast research integration
 
-`main` is the reviewed integration line. A branch, issue, notebook, server directory, or pull-request description is evidence and working history, but it is not canonical until merged to `main`.
+`main` is the shared research line.
 
-Direct commits and force-pushes to `main` are prohibited by policy. Changes should arrive through pull requests and pass the repository checks. Repository rules should enforce this policy when the hosting integration permits it.
+The maintainer may merge exploratory code, notes, protocols, and result archives once they are understandable and the relevant tests/checks run. External approval is **not** required for ordinary exploratory work in a solo-maintainer repository.
 
-Research branches should be short-lived and named by purpose:
+Large result archives may be merged in one PR when splitting them would mostly create administrative work. Code and data may live in the same PR when their relationship is easier to audit that way.
 
-- `research/<topic>` for theory, experiments, and analysis;
-- `fix/<topic>` for defects and corrections;
-- `governance/<topic>` for repository policy and maintenance;
-- `archive/<topic>` only for immutable historical imports.
+The main distinction is not “merged versus unmerged.” It is **how strong a scientific claim the evidence supports**.
 
-A stacked research branch must identify its parent PR. Once the stack is integrated, obsolete PRs should be closed as superseded rather than left indefinitely ambiguous.
+Use branches when they help isolate work, not because every small research step needs ceremony. Avoid force-rewriting published numerical history; ordinary follow-up commits and explicit corrections are preferred.
 
-## 2. Roles
+## 2. Scientific claim levels
 
-### Maintainer
+Every important conclusion should fit one of these levels.
 
-The repository owner is the final maintainer for operational decisions. The maintainer may merge, close, revert, or archive work, but scientific claim upgrades remain subject to the evidence requirements below.
+| Level | Meaning |
+|---|---|
+| C0 | hypothesis, conjecture, design, or theory candidate |
+| C1 | method/control validated by exact identity, oracle, or deterministic regression |
+| C2 | exploratory numerical signal; analysis may still be adaptive |
+| C3 | reproduced/frozen finite-size numerical result, e.g. independent seed or prospective/held-out test |
+| C4 | asymptotic/mechanistic interpretation supported by multiple discriminating tests |
+| C5 | rigorous result or independently checkable certificate/proof |
 
-### Contributor
+A result can be on `main` at C0, C1, or C2. Merging exploratory work is not a claim upgrade.
 
-A contributor proposes code, data, theory, experiments, or documentation and is responsible for the provenance and tests of that contribution.
+The current project-wide summary lives in `docs/STATUS.md`; the execution-facing synthesis lives in the latest `notes/SYNTHESIS-*.md`.
 
-### Independent reviewer
+## 3. What actually needs review rigor
 
-For high-impact numerical or theoretical claims, an independent reviewer should verify the reasoning, implementation, or reconstruction without relying solely on the author's execution path. Independence may mean a separate implementation, derivation, seed/counter range, machine, or data transcription.
+### Exploratory notes and scripts
 
-## 3. Scientific claim levels
+Usually enough:
 
-Every result report and claim-bearing PR should state one of these levels.
+- purpose is clear;
+- script runs or compiles;
+- output is labeled exploratory;
+- no existing frozen result is silently overwritten.
 
-| Level | Name | Minimum meaning |
-|---|---|---|
-| C0 | Proposal | Hypothesis, design, or conjecture; no empirical support required |
-| C1 | Validated method/control | Exact identity, regression vector, oracle agreement, or implementation contract has passed declared controls |
-| C2 | Exploratory signal | Effect observed in a non-final or discovery analysis; model and sample choices may still be adaptive |
-| C3 | Confirmed finite-size result | Independent seed or implementation plus a frozen or held-out test supports the declared finite-size statement |
-| C4 | Asymptotic/mechanistic interpretation | Multiple sizes/geometries and discriminating alternatives support an asymptotic exponent, universality class, or operator mechanism |
-| C5 | Rigorous result | A proof or independently checkable certificate establishes the statement under explicit assumptions |
+A smoke test is preferred for numerical scripts. It does not need exhaustive coverage before the script can be useful.
 
-A higher level must not be inferred from sample size alone. In particular, C3 evidence does not automatically establish a C4 exponent or operator identification.
+### Expensive numerical runs
 
-The current project-wide status is recorded in `docs/STATUS.md`. A claim-level upgrade requires a dedicated PR that updates the ledger and links the supporting artifacts.
+Preserve enough information that the run can be understood later:
 
-## 4. Change classes and review gates
+- source commit or source hash;
+- command/configuration;
+- RNG seed/counter convention when stochastic;
+- sample/batch count;
+- raw sufficient statistics or the most reusable aggregates;
+- a short report saying what passed and what failed.
 
-### Documentation-only changes
+For expensive or decisive tests, preregistering the sign/model/geometry before looking at the target is strongly preferred.
 
-Required:
+### High-risk numerical machinery
 
-- no change to numerical artifacts or scientific meaning unless declared;
-- links and terminology checked;
-- CI passes.
+Topology, homology, RNG, threshold-rank reconstruction, covariance propagation, and exact polynomial code deserve stronger checks because a bug can contaminate many downstream experiments.
 
-### Code changes
+Aim for one independent/exact reference or a deterministic regression where practical. This is a priority, not a reason to freeze all downstream exploration until every edge case is formalized.
 
-Required:
+### C4/C5 or paper-facing claims
 
-- regression tests for the changed contract;
-- deterministic behavior where promised;
-- no silent change to frozen conventions, geometry order, units, or RNG domains;
-- performance claims supported by end-to-end measurements;
-- C++ production paths checked against a Python or exact oracle where feasible.
+This is where independent review matters most.
 
-Topology, homology, RNG, threshold-rank, and covariance code are high-risk. A new implementation of one of these components should be checked against a structurally independent reference, not only against itself.
+Before calling an exponent/operator/universality mechanism established, seek at least one of:
 
-### Experiment protocols
+- independent implementation;
+- genuinely new prospective geometry/size;
+- exact control model;
+- independent collaborator review;
+- analytic derivation/certificate.
 
-A production experiment must declare before evaluation:
+External review is recommended for paper-facing C4/C5 claims, but it is not a merge prerequisite for ordinary research progress.
 
-- hypothesis and competing models;
-- geometry/size set and orientation order;
-- training, pilot, evaluation, and held-out partitions;
-- RNG domain, seed/counter policy, and batch structure;
-- primary statistic and covariance model;
-- power or sensitivity target;
-- stopping rule and acceptance/falsification criteria;
-- required raw sufficient statistics and metadata.
+## 4. PR and branch practice
 
-A pilot may select sample size or frozen variance-reduction weights. It must not select them from whether the point estimate looks favorable.
+Use the smallest workflow that keeps the work legible.
 
-### Result archives
+Good patterns include:
 
-Required:
+- one small PR for a focused analysis change;
+- one combined code+result PR for a tightly coupled experiment;
+- one large archival PR for a coherent compute campaign;
+- direct follow-up commits on a research branch when several experiments share the same engine.
 
-- immutable raw sufficient statistics or exact source data;
-- source commit and source-file hash;
-- executable hash for production binaries;
-- environment, compiler/interpreter, dependency versions, and commands;
-- seed/counter ranges and batching;
-- checksums;
-- analysis code and a concise `REPORT.md`;
-- positive, negative, and failed-model results.
+Avoid maintaining deep stacks of PRs after their base work is already integrated. Retarget or merge them onto `main` and close superseded coordination PRs.
 
-Previously published result files must not be overwritten. Corrections use a new directory or append-only correction record that links the superseded artifact.
+Merge commits are appropriate when provenance ancestry matters. Squash is fine for documentation/governance cleanup. Rebase is optional, not a policy goal.
 
-### Scientific conclusions
+## 5. Results and corrections
 
-A conclusion PR must separate:
+Negative results, failed models, and underpowered experiments are useful evidence. Keep them.
 
-1. direct observations;
-2. model-dependent deductions;
-3. asymptotic or theoretical interpretation;
-4. known failure modes and unresolved alternatives.
+When an error or interpretation change is found:
 
-The PR must not use words such as “proved,” “exact,” “universal,” or “confirmed” beyond the applicable claim level.
+1. preserve the old artifact;
+2. add a correction or replacement result;
+3. state what changed and why;
+4. downgrade a claim in `docs/STATUS.md` if the old conclusion no longer holds.
 
-## 5. Pull-request policy
+Do not spend time engineering a correction workflow more elaborate than the scientific risk requires.
 
-Prefer one logical change per PR. Code/protocol changes and bulk result imports should normally be separate so that executable logic can be reviewed without thousands of generated lines.
+## 6. Statistical discipline without bureaucracy
 
-A large result PR must provide a compact manifest and must identify which files are source, generated, raw, derived, and narrative. Generated plots should be reproducible from committed data.
+For confirmatory experiments, prefer:
 
-Merging uses the method appropriate to the history:
+- frozen target/sign/model before the target run;
+- held-out or prospective data when available;
+- full covariance when it materially changes the conclusion;
+- reporting effect sizes and uncertainties, not only p-values;
+- keeping flexible/free-exponent models secondary to parameter-free tests.
 
-- merge commits for an intentional stacked branch whose ancestry must be preserved;
-- squash merge for a self-contained governance or maintenance PR;
-- rebase only when commit identity is not part of provenance.
+For exploratory work, approximate diagnostics are acceptable if clearly labeled. A covariance or finite-sample refinement should block a strong quantitative claim only when it could realistically change that claim; it should not block qualitative exploration that is robust to the issue.
 
-## 6. Decisions, corrections, and reversals
+## 7. Current project operating principle
 
-Scientific disagreement is resolved by adding discriminating tests, not by deleting inconvenient outputs. Negative results and failed gates remain first-class artifacts.
+Scientific language should remain conservative; engineering integration should be fast.
 
-When an error is found:
+In practice:
 
-1. open or update an issue describing the affected scope;
-2. preserve the original artifact;
-3. add a corrected artifact and compatibility analysis;
-4. downgrade the claim in `docs/STATUS.md` if required;
-5. identify whether the cause was code, data, covariance, provenance, interpretation, or documentation.
+- put useful evidence on `main`;
+- mark whether it is exploratory, reproduced, or prospective;
+- keep the strongest three next discriminators visible in the synthesis note;
+- avoid spawning a new branch/note/issue unless it creates a sharper test;
+- spend process effort in proportion to the scientific consequence of being wrong.
 
-A revert is preferred to an opaque history rewrite.
+## 8. Releases
 
-## 7. Releases
+A paper-oriented or archival release should contain a claim-ledger snapshot, source/result hashes, major limitations, and enough information to reconstruct the reported tables/figures.
 
-A research release should contain:
-
-- a claim ledger snapshot;
-- a data and result manifest with hashes;
-- tested source and dependency information;
-- known limitations;
-- a citation record.
-
-A release tag does not itself raise a scientific claim level.
-
-## 8. Governance changes
-
-Changes to this document require a pull request. Material changes to claim levels, reproducibility requirements, or merge policy should explain their effect on existing work.
+A release tag does not itself upgrade a claim.
