@@ -1,211 +1,363 @@
-version: 1
+version: 3
 updated: 2026-08-28
 source_server_branch: server/huawei-analysis-20260828
-source_server_commit: 28fd1d872f97a83c6ddd59bde996dae2343d3c77
+source_server_commit: 6d2d68a62b433e337b97eadaf1870cb58e2f7666
 base_queue: experiments/post-server-third-wave.yaml
-status: authoritative_overrides_after_full_server_review
+status: authoritative_overrides_after_parameter_free_doubling
 
-interpretation:
-  resolved:
-    - small_Pell_7_5_orientation_root_gap
-    - same_N_matching_function_signal_at_N65_N85
-    - arbitrary_integer_period_topology_reference
-    - threshold_rank_reference_contract
-    - precision_ordering_fix
-  compatible_but_underpowered:
-    - same_N_N145_matching_function_signal
-    - kappa3_minus_five_thirds_candidate
-  rejected_or_completed_negative:
+scientific_state:
+  confirmed_on_tested_finite_sizes:
+    - nonzero_same_N_orientation_effect
+    - prescribed_DeltaCos4_sign_at_N_65_85_130_145_170
+    - independent_seed_compatibility
+    - stage_1_heldout_H4_fixed_13_over_8_success
+    - parameter_free_N_to_2N_sign_and_13_over_8_relation_at_two_lineages
+    - odd_harmonic_parity_under_pi_over_4_rotation
+  passed_diagnostics:
+    - Cpp_threshold_rank_exact_oracle_and_thread_reproducibility
+    - central_orientation_amplitude_survives_thermal_reflection
+    - local_residual_to_root_conversion_is_linear
+    - single_geometry_Euler_motif_controls_are_nontrivial
+  open:
+    - existing_P33_cross_size_covariance_audit
+    - clean_threshold_rank_production_replay
+    - explicit_cross_size_RNG_policy
+    - full_curve_thermal_even_doubling_relation
+    - parameter_free_root_gap_ratio_minus_one_quarter
+    - asymptotic_13_over_8_uniqueness
+    - H4_versus_H12_bound
+    - general_heldout_N_minus_2_root_gap_scaling
+    - paired_orientation_variance_reduction
+    - same_modulus_kappa3_universality
+    - x_21_over_4_operator_identification
+  rejected_or_closed_negative:
     - matching_even_sector_must_dominate
-    - wrapping_only_GLS_variance_reduction
+    - wrapping_only_GLS_can_reduce_variance
     - Pade_stage_A_cures_signed_width_drift
-  caution:
-    - triangular_rhombus_and_square_torus_kappa3_limits_are_shape_dependent
-    - either_and_cross_matching_differences_are_duplicate_topology_views
+    - local_root_nonlinearity_explains_radial_drift
+    - even_m_harmonic_dominance_in_the_doubling_lineages
 
-completed_queue_items:
-  - id: precision_fix
-    issue: 32
-    state: completed
-  - id: wrapping_only_GLS
-    issue: 20
-    state: completed_negative
-    replacement_issue: 34
-  - id: matching_even_dominance_scan
-    issue: 24
-    state: completed_negative
-  - id: Pade_stage_A
-    issue: 27
-    state: completed_negative
-    remaining: stage_B_after_widths_22_24_reveal
+checkpoint_results:
+  P31:
+    state: passed_statistically_with_partial_clean_replay_from_P37
+    samples_per_size: 100000000
+    sizes: [65, 85, 130, 145, 170]
+    common_A4: 0.7885
+    common_A4_se: 0.0352
+    common_A4_chi_square: 1.53
+    common_A4_dof: 4
+  P32_stage_1:
+    state: passed
+    training_sizes: [65, 85, 130]
+    heldout_sizes: [145, 170]
+    fixed_H4_13_over_8_chi_square: 1.058
+    zero_effect_chi_square: 37.32
+    A8: -0.0345
+    A8_se: 0.0542
+  P33_pilot:
+    state: correctness_and_throughput_passed_production_open
+    samples_per_size: 10000000
+    elapsed_seconds_all_five_sizes: 65.2
+    root_gap_heldout_chi_square: 7.40
+    root_gap_gate: failed
+  P34_single_geometry:
+    state: useful_but_multiple_size_gate_failed
+    variance_reduction:
+      L8: 2.319
+      L12: 1.852
+      L16: 1.665
+  P35_stage_A:
+    state: local_linearity_passed_radial_closure_open
+    C_range: [0.99984, 1.00031]
+  P37_fixed_p_doubling:
+    state: passed
+    preregistration_commit: ceb7a578eaface6f6882278c567b4d893014f59c
+    execution_source_commit: 80fbdd1e9a380a87a3c56dec7795ceebb0ada23e
+    seed: 2026100101
+    counter_range: [2000000000, 2100000000]
+    samples_per_size: 100000000
+    batches: 100
+    target_ratio: -0.3242098886627524
+    lineages:
+      - parent_N: 65
+        child_N: 130
+        observed_ratio: -0.3138166617560401
+        ratio_se: 0.09077115540985811
+        residual_z: 0.11414737066034734
+      - parent_N: 85
+        child_N: 170
+        observed_ratio: -0.34095491352158414
+        ratio_se: 0.11182104560067174
+        residual_z: -0.15024437752686698
+    joint_residual_chi_square: 0.03445
+    joint_residual_dof: 2
+    interpretation: >-
+      Supports odd-m square-lattice harmonic parity and the no-fit 13/8
+      magnitude relation at two exact Gaussian doubling lineages. Does not
+      distinguish H4 from H12 or establish the root ratio.
+
+provenance_and_covariance_corrections:
+  issue: 39
+  priority: P0
+  fixed_p_status:
+    clean_P37_sizes: [65, 85, 130, 170]
+    still_required:
+      - executable_sha256_and_dirty_tree_record_for_P37
+      - clean_source_N145_replay
+      - per_seed_P31_P37_compatibility_table
+    forbidden: rerun_clean_P37_sizes_only_to_satisfy_old_wording
+  threshold_rank_findings:
+    - P33_metadata_records_working_tree_source
+    - threshold_rank_permutation_stream_does_not_mix_N
+    - threshold_rank_output_lacks_full_cross_orientation_rank_moments
+  required_policy:
+    source:
+      - clean_checkout
+      - full_git_commit
+      - source_sha256
+      - executable_sha256
+      - compiler_and_flags
+      - dirty_tree_false
+    cross_size_RNG_choose_before_production:
+      - domain_separate_by_N_or_seed_domain
+      - or_retain_coupling_and_use_full_cross_size_batch_covariance
+    preservation:
+      - never_overwrite_existing_runs
+      - report_each_seed_before_pooling
 
 active_queue:
-  - id: Q40
+  - id: R49
     priority: P0
-    title: Independent same-N confirmation
-    issue: 22
+    title: Audit existing P33 cross-size covariance
+    pull_request: 46
     depends_on: []
-    frozen_probability: '0.592746050790'
-    orientation_order: first_minus_second
-    geometries:
-      - {N: 65, first: [8,1], second: [7,4]}
-      - {N: 85, first: [9,2], second: [7,6]}
-      - {N: 130, first: [11,3], second: [9,7]}
-      - {N: 145, first: [12,1], second: [9,8]}
-      - {N: 170, first: [13,1], second: [11,7]}
-    production:
-      samples_per_pair: 100000000
+    input: results/server-20260828/P33/p33_all_sizes_arm_10m.hist.csv
+    outputs:
+      - batch_metrics
+      - full_cross_size_covariance
+      - covariance_aware_deltaM_challenge_inputs
+      - full_vs_diagonal_A_M_score
+      - root_jackknife_pseudovalues
+      - full_vs_diagonal_A_p_score
+    rule: report_full_and_diagonal_results_without_replacing_either
+
+  - id: R50
+    priority: P0
+    title: Complete clean provenance and freeze threshold-rank RNG policy
+    issue: 39
+    depends_on: [R49]
+    remaining_fixed_p:
+      sizes: [145]
+      samples: powered_before_run
       minimum_batches: 100
-      seed: independent_of_all_existing_runs
+      probability: '0.592746050790'
+      seed: new_independent
       counters: disjoint
-      coupling: same_cyclic_U_j
-    required_outputs:
-      - per_seed_deltaM.csv
-      - pooled_deltaM_with_covariance.csv
-      - A4_N_scaled.csv
-      - seed_compatibility.json
-      - per_pair_power_budget.json
-    stop_rule: >-
-      Do not drop a prescribed size by observed z score. Commit each seed
-      separately before pooling.
+    threshold_rank_replay:
+      sizes: [65, 85, 130, 145, 170]
+      minimum_samples_per_size: 100000000
+      minimum_batches: 100
+    acceptance:
+      - clean_source_and_binary_provenance
+      - deterministic_thread_equality
+      - Python_oracle_exact_agreement
+      - explicit_cross_size_covariance_policy
+      - compatibility_with_existing_P31_P33_P37
 
-  - id: Q41
+  - id: R51
     priority: P0
-    title: C++ threshold-rank production port
+    title: Production paired threshold-rank sufficient statistics
     issue: 26
-    depends_on: []
-    oracle: Python_threshold_rank_reference
-    frozen_conventions:
-      K_plus: first_1_based_black_cross_rank
-      K_minus: first_rank_white_matching_cross_absent
+    depends_on: [R50]
+    frozen_rank_convention:
+      K_plus: first_1_based_black_primal_cross_rank
+      K_minus: first_black_rank_after_white_matching_cross_is_lost
       reverse_mapping: K_minus_equals_N_minus_reverse_rank_plus_1
-    required_statistics:
-      - integer_Kminus_hist_by_batch
-      - integer_Kplus_hist_by_batch
-      - integer_sample_count
-      - joint_first_second_moments
-      - sparse_joint_hist_if_affordable
-      - RNG_counter_ranges
-    validation:
-      - exact_tiny_polynomial_reconstruction
-      - M_and_Mprime_match_Python_oracle
-      - root_match_Python_oracle
-      - Kminus_le_Kplus_every_sample
-      - scheduling_independent_counter_RNG
-    benchmark:
-      sizes: [8,12,16]
-      report:
-        - permutations_per_second
-        - sites_per_second
-        - bytes_per_batch_output
-        - variance_per_wall_time
-    production_target: same_N_orientations_from_Q40
+    required_batch_outputs:
+      - integer_Kminus_hist_by_orientation
+      - integer_Kplus_hist_by_orientation
+      - within_orientation_joint_rank_moments
+      - cross_orientation_rank_moments
+      - aligned_cross_size_batch_ids_if_coupled
+      - exact_RNG_counter_ranges
+    derived_outputs:
+      - DeltaM_full_thermal_window
+      - orientation_slopes
+      - direct_roots_and_root_gap
+      - covariance_aware_jackknife
+      - profile_and_kappa_statistics
 
-  - id: Q42
+  - id: R52
     priority: P0
-    title: Matching residual / derivative / root-gap amplitude closure
+    title: Full-curve Gaussian doubling and root-ratio test
+    issue: 49
+    depends_on: [R51]
+    lineages:
+      - {parent_N: 65, child_N: 130}
+      - {parent_N: 85, child_N: 170}
+    thermal_levels_u: [0.0, 0.025, 0.050]
+    no_fit_predictions:
+      matching_even_amplitude_ratio: '-2^(-13/8)'
+      center_slope_ratio: '2^(3/8)'
+      root_gap_ratio: '-1/4'
+      finite_slope_corrected_root_ratio: '-2^(-13/8)*Mprime_parent/Mprime_child'
+    requirements:
+      - exact_lineage_order
+      - full_two_lineage_covariance
+      - delete_one_jackknife_for_roots_and_ratios
+      - report_thermal_odd_component_as_diagnostic
+    acceptance:
+      - frozen_u_residuals_pass
+      - raw_or_finite_slope_corrected_root_ratio_predicts_heldout_lineages
+      - clean_provenance_and_covariance
+
+  - id: R53
+    priority: P0
+    title: General radial amplitude and root-gap challenge
     issue: 35
-    depends_on: [Q40,Q41]
-    definitions:
-      A_M: 'N^(13/8)*DeltaM/DeltaCos4'
-      B: 'N^(-3/8)*mean(Mprime)'
-      A_p: '-N^2*DeltaRoot/DeltaCos4'
-      closure: '-DeltaRoot*mean(Mprime)/DeltaM'
-    primary_prediction:
-      - 'A_p = A_M / B'
-      - 'closure -> 1'
-    diagnostics:
-      - orientation_slope_difference
-      - direct_vs_linearized_root
-      - quadratic_root_correction
-      - covariance_propagated_batchwise
-    train_sizes: [65,85,130]
-    heldout_sizes: [145,170]
+    depends_on: [R51]
+    training_sizes: [65, 85, 130]
+    heldout_sizes: [145, 170]
+    primary_model: 'DeltaRoot=-(A4/B_N)*DeltaCos4*N^(-2)'
+    alternatives:
+      - one_training_selected_inverse_power_correction
+      - logarithmic_amplitude_correction
+      - free_root_gap_exponent_training_only
+    interpretation_rule: >-
+      C approximately one establishes local linear conversion only. It does not
+      count as a radial exponent score.
 
-  - id: Q43
+  - id: R54
     priority: P0
-    title: Joint angular-radial harmonic challenge
+    title: Stage-2 angular-radial harmonic challenge
     issue: 36
-    depends_on: [Q40]
-    primary_exponent: '13/8'
-    design_columns:
-      - DeltaCos4
-      - DeltaCos8
-    training_sizes: [65,85,130]
-    heldout_sizes: [145,170]
+    depends_on: [R50]
+    existing_training_sizes: [65, 85, 130, 145, 170]
+    new_training_extension:
+      N: 185
+      first: [13, 4]
+      second: [11, 8]
+    new_heldout:
+      - {N: 221, first: [14, 5], second: [11, 10]}
+      - {N: 265, first: [16, 3], second: [12, 11]}
+    sample_rule: >-
+      Power the final count from existing covariance before viewing new outputs;
+      effects near 1e-4 are expected to require several hundred million paired
+      replicas per size.
     model_order:
-      - fixed_13_8_cos4
-      - fixed_13_8_cos4_plus_one_power_correction
-      - fixed_13_8_cos4_log_amplitude
-      - fixed_13_8_cos4_plus_cos8
-      - free_alpha_cos4_training_only
-    second_stage_candidate_sizes:
-      - {N: 185, first: [13,4], second: [11,8]}
-      - {N: 221, first: [14,5], second: [11,10]}
-      - {N: 265, first: [16,3], second: [12,11]}
-    gate_to_N1105: heldout_cos4_success
+      - fixed_13_over_8_H4
+      - fixed_13_over_8_H4_plus_one_power_correction
+      - fixed_13_over_8_H4_log_amplitude
+      - fixed_13_over_8_H4_plus_H8
+      - fixed_13_over_8_H4_plus_H12
+      - free_alpha_H4_training_only
+    harmonic_parity_rule: >-
+      P37 excludes dominance by even-m harmonics at the two doubling lineages,
+      but odd-m H12 remains a required falsification alternative.
+    gate_to_N1105: both_new_heldout_sizes_and_R52_retain_H4_advantage
 
-  - id: Q44
+  - id: R55
     priority: P0
-    title: Euler and local-motif control variates
-    issue: 34
-    depends_on: [Q41]
-    exact_identity: >-
-      D_cluster = q + (V-Np) - (E-2Np^2) + (F0-Np^4).
-    initial_basis:
-      - centered_occupied_site_count
-      - centered_occupied_NN_edge_count
-      - centered_fully_occupied_face_count
-      - frozen_2x2_pattern_orbits
-    microcanonical_means:
-      E_given_K: '2*N*(K)_2/(N)_2'
-      F0_given_K: 'N*(K)_4/(N)_4'
-    protocol:
-      pilot_fraction: 0.2
-      evaluation_fraction: 0.8
-      weights: pilot_frozen_or_cross_fitted
-    acceptance: variance_reduction_at_least_2x_vs_best_single_at_multiple_sizes
-
-  - id: Q45
-    priority: P1
-    title: Same-modulus kappa3 universality control
-    issue: 25
+    title: Paired same-N motif controls
+    issue: 40
     depends_on: []
+    exact_controls:
+      - NN_edge_count_difference
+      - elementary_face_count_difference
+      - equal_multiplicity_motif_orbit_differences
+    protocol:
+      - exact_fixed_K_zero_mean_checks
+      - independent_pilot_and_evaluation
+      - compare_against_unadjusted_paired_DeltaM
+    production_gate: at_least_2x_variance_reduction_at_multiple_sizes
+
+  - id: R56
+    priority: P1
+    title: Continue single-geometry Euler/motif development
+    issue: 34
+    state: multiple_size_2x_gate_not_met
+    direction:
+      - microcanonical_incremental_controls
+      - only_prespecified_new_motifs
+      - no_duplicate_wrapping_channels
+
+  - id: R57
+    priority: P1
+    title: Same-modulus exact-threshold kappa3 control
+    issue: 25
     rule: >-
-      Do not fit a common limiting kappa3 across different torus moduli. The
-      triangular 60-degree rhombus and square torus are separate shape
-      functions unless an explicit modular relation is derived.
-    required_next_control:
-      - exact_threshold_or_self_matching_realization
-      - square_macroscopic_torus_modulus
-      - observable_normalization_matched_to_target
+      Do not pool square and 60-degree rhombic torus limits as one fixed-shape
+      universal invariant.
+    next_control:
+      - exact_or_self_matching_threshold
+      - square_macroscopic_modulus
+      - target_matched_observable_normalization
       - exact_tiny_regressions
-    analysis:
-      - fixed_L_minus_3_over_2
-      - one_declared_subleading_term
-      - free_exponent_training_only
-      - coordinate_free_profile_comparison
     candidate_limit: '-5/3 retained, not established'
 
-  - id: Q46
+  - id: R58
     priority: P1
-    title: Stage-B finite-width reveal
-    issues: [6,27]
-    status: blocked_on_primary_source_widths_22_24
+    title: Matching-odd operator selection
+    issue: 12
+    depends_on: [R52, R53, R54]
+    candidate:
+      leading_harmonic: spin_4
+      scaling_dimension: '21/4'
+      possible_origin: level_four_thermal_family_descendant_or_quasiprimary
+      logarithmic_partner_allowed: true
+    required_alternatives:
+      - H12_and_other_odd_m_harmonics
+      - lower_matching_odd_fields
+    acceptance:
+      - numerical_root_and_harmonic_gates_pass
+      - lower_matching_odd_sectors_excluded_by_selection_rule
+      - modulus_dependence_is_consistent
+
+  - id: R59
+    priority: P1
+    title: Widths 22-24 reveal and Stage-B extrapolation
+    issues: [6, 27]
+    status: blocked_on_primary_source_table
     rule: no_post_reveal_retuning
 
+statistical_rules:
+  - retain_every_prespecified_size_lineage_level_and_seed
+  - report_each_seed_before_pooling
+  - preserve_lineage_order_separately_from_display_order
+  - never_treat_wrapping_conventions_as_independent_replications
+  - use_full_covariance_for_deliberately_coupled_sizes
+  - use_jackknife_pseudovalues_for_nonlinear_root_estimators
+  - keep_failed_and_ill_conditioned_models
+  - distinguish_local_Taylor_closure_from_cross_size_root_evidence
+  - distinguish_odd_m_harmonic_parity_from_unique_spin_4_identification
+  - do_not_promote_x_21_over_4_before_R52_R53_R54_pass
+
 hardware_gate:
-  cpu_current_use:
-    - Q40_independent_confirmation
-    - Q41_reference_and_benchmark
-    - Q43_training_analysis
-  gpu_authorized_only_after:
-    - Q41_CPU_GPU_exact_regression
-    - measured_information_per_wall_time
-  preferred_gpu_payload:
-    - threshold_rank_histograms
-    - same_N_orientation_pairs
-    - per_batch_integer_aggregates
-  forbidden_first_use:
-    - large_Pell_three_point_fixed_p_scan
-    - N1105_multi_angle_before_Q43_heldout_success
+  current_CPU_tasks:
+    - R49_existing_covariance_audit
+    - R50_remaining_fixed_p_and_rank_replay
+    - R51_threshold_rank_production
+    - R54_stage_2_pairs
+    - R55_paired_motif_pilot
+  GPU_authorized_only_after:
+    - clean_CPU_oracle
+    - CPU_GPU_exact_equality
+    - end_to_end_information_per_wall_time_benchmark
+    - measured_need_beyond_current_CPU
+  forbidden_first_uses:
+    - large_Pell_three_point_scan
+    - N1105_before_R52_and_R54
+    - dense_probability_grid_instead_of_rank_statistics
+
+execution_order:
+  - R49
+  - R50
+  - R51
+  - R52
+  - R53
+  - R54
+  - R55_in_parallel
+  - R56
+  - R57
+  - R58_after_gates
+  - R59_when_unblocked
