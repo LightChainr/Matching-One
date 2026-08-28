@@ -1,0 +1,53 @@
+version: 1
+frozen_date: 2026-08-28
+purpose: adversarial_test_of_interchiral_matching_parity_on_issue_43
+status: competitor_only_do_not_modify_original_issue43_primary
+theory:
+  family: 'Potts diagonal singlet R_<1,3>'
+  primary_weights: ['1/3','1/3']
+  primary_dimension: '2/3'
+  level4_spin4_dimension: '14/3'
+  conformal_spin: '+/-4'
+  expected_matching_parity_under_fusion_automorphism: even
+  physical_interpretation: >-
+    Under the proposed matching/OPE automorphism this field should be projected
+    out of central D=M/2 and may only contribute to matching-even S. The model
+    below is intentionally frozen as a parity-failure adversary: if it predicts
+    future D data better than x=21/4, the interchiral parity mechanism fails or
+    requires additional mixing.
+finite_size_law_if_it_leaks_into_D:
+  delta_M: 'A_13diag * DeltaCos4 * N^(-4/3)'
+  root_bias: 'proportional to L^(-41/12) after division by M_prime~L^(3/4)'
+source_fit:
+  data: results/server-20260828/P31/pooled_deltaM_with_covariance.csv
+  sizes: [65,85,130,145,170]
+  covariance_approximation: diagonal_pooled_size_errors
+  amplitude_A13diag: '0.21908248310960696'
+  amplitude_source_se: '0.009828197789383443'
+  retrospective_fit_chi_square: '5.673744681942523'
+  retrospective_degrees_of_freedom: 4
+  warning: >-
+    This is retrospective because the competitor was identified after P31/P32.
+    Prospective N=185/265 scoring is the clean test.
+targets:
+  - N: 185
+    first: [13,4]
+    second: [11,8]
+    delta_cos4: '1.1780861943024106'
+    predicted_delta_M: '0.0002448437843402022'
+    source_amplitude_only_se: '0.00001098386829399201'
+    original_issue43_x21_prediction_for_reference: '0.00019223156676869253'
+  - N: 265
+    first: [16,3]
+    second: [12,11]
+    delta_cos4: '1.7224635101459596'
+    predicted_delta_M: '0.00022169872033579832'
+    source_amplitude_only_se: '0.000009945564073341857'
+    original_issue43_x21_prediction_for_reference: '0.0001567390401230751'
+scoring_rules:
+  - score_original_issue43_x21_N13_8_prediction_first
+  - score_fixed_V13_N4_3_parity_failure_competitor_second
+  - score_fixed_x17_N9_8_competitor_third
+  - score_zero_effect
+  - only_after_fixed_scores_fit_mixtures_logs_or_free_exponents
+  - do_not_refit_any_source_amplitude_on_N185_or_N265_before_score
