@@ -1,0 +1,98 @@
+version: 1
+frozen_at: 2026-08-28
+status: preregistered_before_target_run
+source_checkpoint: 6d2d68a62b433e337b97eadaf1870cb58e2f7666
+related_issue: 50
+purpose: third_independent_parameter_free_Gaussian_doubling_lineage
+
+observable:
+  name: matching_function_orientation_difference
+  definition: M_first_minus_M_second
+  thermal_coordinate:
+    primary: p_ref_0.592746050790
+    later_full_curve: intrinsic_orientation_average_center
+  lineage_order_controls_sign: true
+
+parent:
+  N: 145
+  first: [12, 1]
+  second: [9, 8]
+  exact_cos4:
+    first: {numerator: 19873, denominator: 21025}
+    second: {numerator: -20447, denominator: 21025}
+  exact_delta_cos4:
+    numerator: 8064
+    denominator: 4205
+
+multiplier:
+  gaussian_integer: [1, 1]
+  norm: 2
+  angle: pi_over_4
+
+child:
+  N: 290
+  raw_lineage:
+    first: [11, 13]
+    second: [1, 17]
+  canonical_D4_representatives:
+    first: [13, 11]
+    second: [17, 1]
+  exact_cos4:
+    first: {numerator: -19873, denominator: 21025}
+    second: {numerator: 20447, denominator: 21025}
+  exact_delta_cos4_lineage:
+    numerator: -8064
+    denominator: 4205
+  display_order_warning: >-
+    A production file may choose the reverse canonical display order. The
+    scored difference must be converted back to the lineage order above.
+
+primary_prediction:
+  radial_exponent_in_N:
+    numerator: 13
+    denominator: 8
+  expression: DeltaM_290_over_DeltaM_145_equals_minus_2_power_minus_13_over_8
+  target_decimal: -0.32420988866275241648343852944811278995883628735624
+  fitted_parameters: 0
+
+linked_full_curve_predictions:
+  mean_Mprime_ratio:
+    expression: 2_power_3_over_8
+    target_decimal: 1.2968395546510096659337541177924511598353451494250
+  root_gap_ratio:
+    expression: minus_one_quarter
+    target_decimal: -0.25
+  closure:
+    expression: minus_DeltaRoot_times_mean_Mprime_over_DeltaM
+    target: 1
+
+statistical_contract:
+  seed: fresh_after_this_artifact
+  counters: disjoint_from_all_prior_runs
+  minimum_batches: 100
+  samples: pilot_powered_then_frozen
+  covariance:
+    - preserve_parent_child_batch_alignment_if_deliberately_coupled
+    - otherwise_use_domain_separated_streams
+    - report_full_and_diagonal_scores
+  primary_score:
+    residual: DeltaM_290_plus_2_power_minus_13_over_8_times_DeltaM_145
+    use_full_covariance: true
+  scoring_order:
+    - frozen_pure_power_residual
+    - zero_effect_benchmark
+    - one_shared_logarithmic_increment_if_residuals_are_coherent
+    - only_then_free_power_or_other_corrections
+
+forbidden:
+  - change_lineage_order_after_viewing_result
+  - alter_exponent_or_target_ratio
+  - drop_parent_or_child_by_significance
+  - use_N290_to_rescue_the_N185_N265_heldout_test
+  - pool_retrospective_and_prospective_scores_without_separate_reporting
+
+generator:
+  script: scripts/gaussian_semigroup_design.py
+  command: >-
+    python3 scripts/gaussian_semigroup_design.py lineage
+    --first 12 1 --second 9 8 --multiplier 1 1 --alpha 13 8

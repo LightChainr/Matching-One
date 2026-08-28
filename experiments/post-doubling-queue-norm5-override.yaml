@@ -1,0 +1,58 @@
+version: 1
+updated: 2026-08-28
+extends: experiments/post-doubling-queue-20260828.yaml
+reason: >-
+  The completed norm-2 doubling test selects odd square harmonics but cannot
+  distinguish H4 from H12. Norm-5 Gaussian multipliers give opposite-sign,
+  parameter-free H4/H12 predictions at N=325 and N=425.
+
+insert_after: PAIREDCV40
+queue_item:
+  id: NORM57
+  priority: P0
+  title: Norm-5 parameter-free H4 versus H12 discriminator
+  issue: 57
+  prediction_artifact: predictions/gaussian_norm5_harmonic_discrimination_20260828.yaml
+  depends_on: [CLEAN39, PAIREDCV40]
+  lineages:
+    - parent:
+        N: 65
+        first: [8, 1]
+        second: [7, 4]
+      multiplier: [2, -1]
+      child:
+        N: 325
+        first: [17, 6]
+        second: [18, 1]
+    - parent:
+        N: 85
+        first: [9, 2]
+        second: [7, 6]
+      multiplier: [2, 1]
+      child:
+        N: 425
+        first: [16, 13]
+        second: [19, 8]
+  frozen_same_exponent_targets:
+    H4: -0.0409601718395424651545981135715
+    H8: -0.123348631768222166494132604870
+    H12: 0.110035405629746878391312372298
+  primary_score: H4_no_fit_parent_child_residuals
+  scoring_order:
+    - H4
+    - H12
+    - H8
+    - zero_effect
+    - shared_H4_H12_mixture
+  power_gate:
+    candidate_replicas_per_child:
+      - 500000000
+      - 1000000000
+      - 2000000000
+      - 4000000000
+    freeze_from_pilot_before_production: true
+  forbidden:
+    - separate_free_radial_exponents_in_primary_test
+    - change_lineage_order
+    - drop_child_by_significance
+    - use_N290_as_rescue_for_N185_N265

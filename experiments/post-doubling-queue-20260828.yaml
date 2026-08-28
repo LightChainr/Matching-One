@@ -1,0 +1,264 @@
+version: 1
+updated: 2026-08-28
+source_checkpoint: 6d2d68a62b433e337b97eadaf1870cb58e2f7666
+status: post_doubling_confirmation_queue
+supersedes:
+  - experiments/post-server-third-wave-overrides-20260828.yaml
+  - the execution order in PR 41
+coordination:
+  result_pr: 21
+  covariance_pr: 46
+  completed_doubling_issue: 38
+  semigroup_issue: 50
+
+scientific_state:
+  supported:
+    - nonzero_same_N_orientation_effect
+    - independent_seed_reproduction_at_N_65_85_130_145_170
+    - heldout_preference_for_DeltaCos4_times_N_minus_13_over_8
+    - local_linear_conversion_from_DeltaM_to_root_gap
+    - prospective_no_fit_Gaussian_doubling_ratio_on_two_lineages
+  not_yet_established:
+    - unique_asymptotic_radial_exponent
+    - exclusion_of_odd_higher_harmonics_such_as_cos12
+    - full_curve_root_ratio_minus_one_quarter
+    - logarithmic_partner_absence
+    - microscopic_matching_parity_of_the_x_21_over_4_field
+    - paired_orientation_control_variate_gain
+    - N_1105_multi_angle_closure
+
+completed:
+  - id: P31
+    result: independent_fixed_p_confirmation
+    sizes: [65, 85, 130, 145, 170]
+    pooled_A4: 0.7885
+    pooled_A4_se: 0.0352
+    common_amplitude_chi_square: 1.53
+    dof: 4
+
+  - id: P32_stage1
+    result: heldout_H4_pass
+    training_sizes: [65, 85, 130]
+    heldout_sizes: [145, 170]
+    H4_heldout_chi_square: 1.058
+    zero_effect_chi_square: 37.32
+    A8: -0.0345
+    A8_se: 0.0542
+
+  - id: P35_local_closure
+    result: pass
+    statistic: minus_DeltaRoot_times_mean_Mprime_over_DeltaM
+    observed_range: [0.99984, 1.00031]
+    scope: local_linearity_not_radial_exponent
+
+  - id: P37_fixed_p_doubling
+    issue: 38
+    status: completed
+    target: minus_2_power_minus_13_over_8
+    target_decimal: -0.32420988866275241648
+    lineages:
+      - {parent_N: 65, child_N: 130, ratio: -0.31382, se: 0.0908}
+      - {parent_N: 85, child_N: 170, ratio: -0.34095, se: 0.1118}
+    joint_chi_square: 0.03445
+    dof: 2
+
+  - id: P34_individual_geometry
+    result: fresh_sample_variance_gain
+    ratios:
+      N65: 2.34
+      N85: 2.16
+    caveat: orientation_difference_OLS_overfit_and_is_excluded
+
+immediate_queue:
+  - id: COV46
+    priority: P0
+    title: Execute and harden cross_size covariance audit
+    pull_request: 46
+    requirements:
+      - assert_equal_samples_per_aligned_batch_or_use_weights
+      - report_covariance_eigenvalues_condition_number_effective_rank
+      - stable_cholesky_or_SVD_pseudoinverse
+      - bootstrap_or_finite_batch_calibration
+      - exact_synthetic_full_vs_diagonal_regression
+      - commit_existing_P33_audit_outputs
+    decision_gate: choose_RNG_policy_for_issue_39_only_after_results
+
+  - id: CLEAN39
+    priority: P0
+    title: Clean checkout replay and explicit RNG domain policy
+    issue: 39
+    depends_on: [COV46]
+    requirements:
+      - clean_git_commit
+      - source_SHA256
+      - executable_SHA256
+      - compiler_and_flags
+      - dirty_tree_false
+      - frozen_domain_separated_or_deliberately_coupled_streams
+      - full_cross_size_covariance_if_coupled
+      - expanded_cross_orientation_rank_moments
+
+  - id: FULL49
+    priority: P0
+    title: Full_curve Gaussian doubling triptych
+    issue: 49
+    depends_on: [CLEAN39]
+    lineages:
+      - [65, 130]
+      - [85, 170]
+    frozen_thermal_levels: [0.0, 0.025, 0.05]
+    primary_predictions:
+      DeltaM_ratio: minus_2_power_minus_13_over_8
+      mean_Mprime_ratio: 2_power_3_over_8
+      root_gap_ratio: -0.25
+    required_alternative:
+      root_ratio_with_measured_finite_slope
+    harmonic_caveat:
+      sign_flip_selects: odd_m_harmonics
+      next_explicit_alternative: cos12
+
+  - id: ROOT45
+    priority: P0
+    title: High_stat angular_normalized root amplitude
+    issue: 45
+    depends_on: [CLEAN39]
+    frozen_statistic: minus_N_squared_DeltaRoot_over_DeltaCos4
+    frozen_target: 0.4510066
+    primary_sizes: [65, 85]
+    secondary_sizes: [130, 145, 170]
+    required_covariance: full_delete_one_jackknife
+
+  - id: SEMI50_A
+    priority: P0
+    title: Third prospective Gaussian doubling lineage
+    issue: 50
+    prediction_artifact: predictions/gaussian_doubling_third_lineage_20260828.yaml
+    depends_on: [CLEAN39]
+    parent:
+      N: 145
+      first: [12, 1]
+      second: [9, 8]
+    child_lineage:
+      N: 290
+      first: [13, 11]
+      second: [17, 1]
+    target_ratio: minus_2_power_minus_13_over_8
+    no_post_reveal_refit: true
+
+  - id: PARITY48
+    priority: P0
+    title: Four_channel derivative parity spectrum
+    issue: 48
+    depends_on: [CLEAN39]
+    frozen_predictions:
+      P4_S: N_minus_1
+      P4_D_prime: N_minus_5_over_8
+      P4_D: N_minus_13_over_8
+      P4_S_prime: N_minus_5_over_4
+    primary_target: linked_selection_rule_not_four_independent_fits
+
+  - id: HELDOUT43
+    priority: P0
+    title: Prospective heldout two_spin4 test
+    issue: 43
+    primary_sizes: [185, 265]
+    secondary_rescue_forbidden: 290
+    frozen_outputs:
+      - DeltaS
+      - DeltaM
+    order:
+      - score_frozen_signed_means
+      - score_zero_effect
+      - only_then_score_H8_H12_log_free_exponent
+
+  - id: PAIREDCV40
+    priority: P0
+    title: Paired same_N exact motif controls
+    issue: 40
+    parallel_with: [FULL49, HELDOUT43]
+    target: paired_DeltaM_and_root_variance
+    acceptance:
+      - at_least_2x_on_multiple_sizes
+      - or_stable_interpretable_near_null_direction
+    forbidden:
+      - reuse_overfit_orientation_OLS_basis
+      - empirical_recentering_on_evaluation_sample
+
+controls:
+  - id: CONTROL44
+    priority: P0
+    title: C4 self_matching site triangulation
+    issue: 44
+    target:
+      matching_odd_center: exactly_zero
+      ordinary_spin4: N_minus_1
+
+  - id: CONTROL42
+    priority: P0
+    title: Self_dual square_bond parity projector
+    issue: 42
+    target:
+      duality_even_spin4: L_minus_2
+      duality_odd_thermal_spin4: zero_or_strongly_suppressed
+
+  - id: KAPPA25
+    priority: P1
+    title: Same_modulus kappa3 controls
+    issue: 25
+    constraint: never_pool_different_torus_moduli_as_one_limit
+
+downstream:
+  - id: POSTL7_47
+    priority: P1
+    title: Modern threshold_rank annihilator exponent challenge
+    issue: 47
+    depends_on: [CLEAN39]
+    candidate_root_exponents: [5.5, 6, 7, 8, 10]
+    selection: training_only
+    target: heldout_finite_L_prediction
+
+  - id: THEORY37
+    priority: P1
+    title: LCFT x_21_over_4 operator identification
+    issue: 37
+    depends_on: [FULL49, PARITY48, CONTROL44]
+    required:
+      - matching_parity_derivation
+      - log_or_no_log_test
+      - competing_operator_inventory
+      - independent_prediction
+
+  - id: SEMI50_D
+    priority: P1
+    title: N1105 Gaussian_prime commuting_square
+    issue: 50
+    blocked_on:
+      - clean_covariance_policy
+      - paired_control_gain
+      - prospective_power_calculation
+      - CPU_GPU_exact_equality_if_GPU
+    orientations:
+      - [33, 4]
+      - [32, 9]
+      - [31, 12]
+      - [24, 23]
+    primary_analysis: parameter_free_parent_child_edge_predictions
+    forbidden:
+      - use_as_first_GPU_workload
+      - fit_many_harmonics_without_holdout
+
+hardware:
+  fixed_p:
+    device: current_16_core_CPU
+    reason: hundred_million_scale_runs_complete_in_minutes
+  threshold_rank:
+    device: CPU_first
+    GPU_gate:
+      - clean_CPU_provenance
+      - exact_CPU_GPU_agreement
+      - unchanged_integer_histogram_schema
+      - at_least_5x_end_to_end_speedup_or_CPU_impractical
+  forbidden_GPU_first_tasks:
+    - large_Pell_scan
+    - fixed_p_confirmation
+    - N1105_before_power_gate

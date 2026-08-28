@@ -1,0 +1,90 @@
+version: 1
+updated: 2026-08-28
+source_checkpoint: 4bbbe90180a9960dfae613b47548897ae1defa8b
+extends:
+  - experiments/post-doubling-queue-20260828.yaml
+  - experiments/post-doubling-queue-norm5-override.yaml
+purpose: absorb_P45_and_P33_covariance_results_without_changing_frozen_predictions
+
+newly_completed:
+  - id: ROOT45
+    issue: 45
+    status: completed
+    frozen_target: 0.4510066187069702
+    frozen_target_se: 0.02013371335254959
+    primary_results:
+      N65: {A_p: 0.4203381, se: 0.0215723}
+      N85: {A_p: 0.3949486, se: 0.0307810}
+    frozen_chi_square: 2.42667
+    dof: 2
+    zero_effect_chi_square: 461.28
+    mechanism_check:
+      N65: {direct: 0.4203381, A_M_over_B: 0.4203053}
+      N85: {direct: 0.3949486, A_M_over_B: 0.3949832}
+    interpretation: >-
+      The angular-normalized root amplitude passes. Bare N^2 DeltaRoot was not
+      an invariant because DeltaCos4 changes with the orientation pair.
+
+  - id: COV46_empirical
+    pull_request: 46
+    status: empirical_audit_complete_tool_hardening_pending
+    max_abs_observed_correlation_approx: 0.22
+    scores:
+      A_M:
+        full_covariance_chi_square: 5.530015183913106
+        diagonal_chi_square: 5.273346940077849
+        dof: 2
+      A_p:
+        full_covariance_chi_square: 5.5515929352417235
+        diagonal_chi_square: 5.292880163846318
+        dof: 2
+      root_doubling:
+        full_covariance_chi_square: 3.46246
+        diagonal_chi_square: 3.44173
+        dof: 2
+    conclusion: >-
+      Cross-size covariance is measurable but does not materially change the
+      low-stat P33 radial or root conclusions. The old tension was not created
+      by the diagonal approximation.
+    hardening_still_required:
+      - common_batch_weight_assertion_or_explicit_weights
+      - covariance_eigenstructure_condition_number_effective_rank
+      - stable_Cholesky_or_SVD_pseudoinverse
+      - finite_batch_or_bootstrap_calibration
+      - exact_synthetic_full_vs_diagonal_regression
+
+rng_policy:
+  within_same_N_orientation_pair: shared_random_field
+  across_distinct_N_default: domain_separated
+  deliberate_cross_N_coupling:
+    allowed_only_if:
+      - prespecified_pilot_shows_target_variance_gain
+      - aligned_batches_preserved
+      - full_covariance_reported
+    suitable_targets:
+      - Gaussian_parent_child_residual
+      - full_curve_root_doubling_residual
+
+engine_ready:
+  source_commit: 4bbbe90180a9960dfae613b47548897ae1defa8b
+  prospective_pairs:
+    - {N: 185, first: [13,4], second: [11,8], purpose: heldout_H4}
+    - {N: 265, first: [16,3], second: [12,11], purpose: heldout_H4}
+    - {N: 290, first: [13,11], second: [17,1], purpose: third_doubling_lineage}
+  not_yet_added:
+    - {N: 325, first: [17,6], second: [18,1], gate: norm5_power_and_controls}
+    - {N: 425, first: [16,13], second: [19,8], gate: norm5_power_and_controls}
+
+revised_execution_order:
+  - COV46_hardening
+  - CLEAN39_remaining_contract
+  - FULL49
+  - HELDOUT43
+  - SEMI50_A
+  - PAIREDCV40
+  - NORM57
+  - PARITY48
+  - CONTROL42_and_CONTROL44
+  - POSTL7_47
+  - THEORY37
+  - SEMI50_D_after_all_gates
