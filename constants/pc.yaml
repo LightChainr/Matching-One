@@ -1,0 +1,23 @@
+# Square-lattice site percolation threshold and exact relatives.
+# Do not treat rounded values as definitions.
+
+square_site:
+  pc: "0.59274605079210"
+  uncertainty: "2e-14"
+  source: "Jacobsen 2015, graph polynomials / transfer matrix"
+  note: "No known closed form."
+
+matching_site:
+  pc: "0.40725394920790"
+  relation: "pc_square_site + pc_matching_site = 1"
+  lattice: "square with nearest + next-nearest neighbors (8-neighbor / king move)"
+
+square_bond:
+  pc: "1/2"
+  exact: true
+  source: "Harris-Kesten"
+
+triangular_site:
+  pc: "1/2"
+  exact: true
+  source: "self-matching"
