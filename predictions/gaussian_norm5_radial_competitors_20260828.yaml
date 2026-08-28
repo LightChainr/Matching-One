@@ -1,0 +1,89 @@
+version: 1
+frozen_date: 2026-08-28
+status: preregistered_before_N325_N425_target_runs
+purpose: >-
+  Separate parameter-free parent/child ratio competitors for the norm-5
+  Gaussian experiment. This file does not modify the primary H4/H8/H12
+  artifact. It tests radial H4 alternatives identified before N=325/425
+  production outcomes are observed.
+
+lineages:
+  - name: N65_to_N325
+    parent_N: 65
+    child_N: 325
+    multiplier: [2, -1]
+    parent_first: [8, 1]
+    parent_second: [7, 4]
+    child_first: [17, 6]
+    child_second: [18, 1]
+  - name: N85_to_N425
+    parent_N: 85
+    child_N: 425
+    multiplier: [2, 1]
+    parent_first: [9, 2]
+    parent_second: [7, 6]
+    child_first: [16, 13]
+    child_second: [19, 8]
+
+common_exact_H4_angular_ratio:
+  expression: '-14/25'
+  numerator: -14
+  denominator: 25
+
+models:
+  x21_over_4_thermal_level4:
+    role: original_primary_H4_radial_model
+    scaling_dimension_x: '21/4'
+    exponent_alpha_in_N: '13/8'
+    ratio_expression: '(-14/25)*5^(-13/8)'
+    deltaM_child_over_parent: '-0.040960171839542465154598113571494955606802379298563'
+    full_curve_if_run:
+      mean_slope_child_over_parent_expression: '5^(3/8)'
+      root_gap_child_over_parent_expression: '-14/625'
+      root_gap_child_over_parent: '-0.0224'
+
+  x14_over_3_V13_parity_failure:
+    role: matching_parity_failure_competitor
+    scaling_dimension_x: '14/3'
+    exponent_alpha_in_N: '4/3'
+    ratio_expression: '(-14/25)*5^(-4/3)'
+    deltaM_child_over_parent: '-0.065497997335968199867352036867089470239083169426263'
+    interpretation: >-
+      V_<1,3> level-4 spin4 is a generic-Q singlet candidate but is predicted
+      matching-even under the proposed interchiral OPE automorphism. A win in
+      the matching-function channel would therefore signal parity failure or
+      mixing, not merely a different exponent.
+
+  x17_over_4_W22_log_leakage:
+    role: Q1_logarithmic_leakage_competitor
+    scaling_dimension_x: '17/4'
+    exponent_alpha_in_N: '9/8'
+    ratio_expression: '(-14/25)*5^(-9/8)'
+    deltaM_child_over_parent: '-0.091589728603289560512387709283985252608368880807330'
+    interpretation: >-
+      W(2,2) is not a generic-Q singlet perturbation; retain only as an
+      adversarial Q=1 logarithmic-mixing competitor.
+
+scoring_order:
+  - original_primary_H4_ratio_from_predictions_gaussian_norm5_harmonic_discrimination_20260828_yaml
+  - x14_over_3_V13_parity_failure
+  - x17_over_4_W22_log_leakage
+  - H12_and_H8_pure_harmonic_adversaries_from_original_norm5_artifact
+  - zero_effect
+  - only_then_mixtures_logs_or_free_exponents
+
+rules:
+  - do_not_modify_the_original_norm5_harmonic_prediction_artifact
+  - preserve_exact_lineage_order
+  - score_both_lineages_jointly_with_parent_child_covariance
+  - do_not_refit_any_exponent_or_parent_amplitude_before_fixed_ratio_scores
+  - retain_failures_and_all_batch_aggregates
+
+notes:
+  - >-
+    The three H4 alternatives all predict the same negative child sign but
+    materially different magnitudes. The H12 same-exponent adversary predicts
+    the opposite child sign and remains a separate angular test.
+  - >-
+    For the primary x=21/4 H4 model, combining the norm-5 residual ratio with
+    mean(M') ~ N^(3/8) gives the exact full-curve root-gap ratio -14/625.
