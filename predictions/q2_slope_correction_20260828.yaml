@@ -1,51 +1,58 @@
-schema: q2-slope-correction-v1
-status: frozen-before-N185-N265-and-N290-fullcurve-target-reveal
+schema: q2-slope-correction-source-stress-test-v2
+status: rejected-on-source-lineage-consistency-before-target-reveal
 purpose: >-
-  Test whether the statistically resolved finite-size correction to the
-  orientation-averaged thermal slope is consistent with a leading relative
-  L^-2 = N^-1 correction, as expected from an x=4 scalar sector.
+  Preserve the attempted common relative L^-2 correction to the thermal slope
+  and its pre-target rejection. Do not use the earlier OLS extrapolations as
+  prospective targets for N=185,265,290.
 source:
   canonical_main_commit: 204a3eb42862a23e7a3520695be44f5fda97bd65
-  clean_fullcurve_sizes: [65, 85, 130, 170]
-observable: B_N = mean(M_prime)_N / N^(3/8)
-source_values:
-  65: 1.7512890878020688
-  85: 1.7495627626834398
-  130: 1.7474322063690306
-  170: 1.7462413111920059
-model:
-  formula: B_N = B_inf + b/N
-  fit_type: unweighted OLS on the four clean full-curve point estimates
+  clean_fullcurve_lineages: [65->130, 85->170]
+  bare_slope_target: 2^(3/8)
+  bare_slope_residual_covariance:
+    - [1.8113537612458743e-07, -9.654902376062175e-09]
+    - [-9.654902376062175e-09, 1.7865418074359005e-07]
+observations:
+  65->130:
+    parent_slope: 8.379157434038998
+    child_slope: 10.842491563759214
+    observed_ratio: 1.2939835119594856
+    implied_t_if_B_equals_Binf_times_1plus_t_over_N: 0.2875669201807282
+    implied_t_se_delta_method: 0.005136796
+  85->170:
+    parent_slope: 9.256815842345812
+    child_slope: 11.981814832961861
+    observed_ratio: 1.294377573998004
+    implied_t_if_B_equals_Binf_times_1plus_t_over_N: 0.3239659875358454
+    implied_t_se_delta_method: 0.006031313
+source_consistency_test:
+  model: B_N = B_inf * (1 + t/N)
+  best_common_t: 0.3030273986618563
+  covariance_weighted_chi_square: 20.048699085941042
+  degrees_of_freedom: 1
+  individual_t_difference_z: -4.477394938793546
+  conclusion: common single-parameter q2 correction rejected by the clean source lineages
+superseded_ols_exploration:
+  note: >-
+    The earlier unweighted four-point OLS fit looked visually good but ignored
+    the very small correlated full-curve errors. Its N185/N265/N290 forecasts
+    are retained here only for provenance and must not be scored as frozen
+    predictions.
   B_inf: 1.74327171
   b: 0.52643524
-  t_equal_b_over_Binf: 0.3019811766358482
-  residuals:
-    65: -8.16231125e-05
-    85: 9.76997014e-05
-    130: 1.10997311e-04
-    170: -1.27073900e-04
-  residual_variance_df2: 2.2337871597321202e-08
-  parameter_covariance_ols:
-    - [4.82582320e-08, -4.19151194e-06]
-    - [-4.19151194e-06, 4.11699618e-04]
-prospective_B_targets:
-  185: {mean: 1.7461173031007646, model_fit_se: 0.00012236746557876582}
-  265: {mean: 1.7452582552821630, model_fit_se: 0.00014995585594515743}
-  290: {mean: 1.7450870011372910, model_fit_se: 0.00015571323395227510}
-third_doubling_lineage_145_to_290:
-  formula: slope_ratio = 2^(3/8) * (1+t/290)/(1+t/145)
-  slope_ratio: 1.295491943519179
-  model_fit_se: 5.19923902353554e-05
-  induced_root_ratio_if_DeltaM_ratio_is_minus_2pow_minus13_8:
-    mean: -0.250260057798617
-    model_fit_se_from_slope_only: 1.0043766501582775e-05
+  N185: 1.7461173031007646
+  N265: 1.7452582552821630
+  N290: 1.7450870011372910
+next_models:
+  - B_N = B_inf + (b + c*log(N))/N
+  - B_N = B_inf + b/N + c/N^2
+  - direct correction models fit/scored inside synchronized full-curve jackknife
 rules:
-  - This is a secondary correction model; the original no-correction 2^(3/8) slope law remains preserved as the historical primary null.
-  - Do not refit B_inf or b on N=185,265,290 before scoring these predictions.
-  - The OLS covariance is a model-scatter diagnostic, not a substitute for target jackknife covariance.
-  - If the N^-1 model fails prospectively, retain the observed slope correction and test log/Jordan or higher correction structures rather than forcing this form.
+  - Do not score the superseded OLS forecasts against N185/N265/N290.
+  - Preserve the original bare 2^(3/8) slope null as the historical primary test.
+  - Any replacement correction model must be frozen before its target lineage is revealed and must use the full synchronized covariance.
+  - The failure of a common q2 slope coefficient does not invalidate the q2 correction already frozen for the distinct P4[S'] observable; different observables can have different correction amplitudes.
 interpretation: >-
-  A prospective pass would support, but not prove, a common q=2 scalar
-  correction behind both the slope drift and the surviving P48 S-prime q=2
-  model. At c=0 the identity module contains logarithmic structure involving
-  TbarT, so q=2 and logarithmic corrections need not be mutually exclusive.
+  The resolved slope correction is more structured than a single universal
+  1/N multiplier. A logarithmically enhanced q2 term is particularly natural
+  at c=0, but it remains a hypothesis until a covariance-aware model is frozen
+  and tested prospectively.
