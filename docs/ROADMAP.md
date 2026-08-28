@@ -37,13 +37,12 @@ This tests whether the small slope correction resolved in the first two clean no
 
 ### A3. Even/derivative correction analysis — #48
 
-The prospective N=185/265 result falsified the old positive `P4[S] ~ N^-1` sign assignment and the pure `P4[S'] ~ N^-5/4` law.
+The prospective N=185/265 result supports the matching-odd law, is compatible with the frozen matching-even `P4[S] ~ N^-1` amplitude after the exact either-to-cross channel conversion, and falsifies the pure `P4[S'] ~ N^-5/4` law.
 
 Before new compute, use existing N=65..265 curves to:
 
 - reconstruct signed normalized S/D derivative sequences under the corrected P4 convention;
-- verify the S sign reversal directly from raw primal/matching curves;
-- test simple finite-size crossing/correction forms for S;
+- enforce and record the exact channel map `DeltaS_cross = -DeltaS_either` before scoring;
 - retain q=2 and log/Jordan as the first S-prime correction models;
 - examine cross-channel covariance.
 
@@ -56,14 +55,15 @@ Reuse A1/A2 as fresh data before commissioning a dedicated new run.
 Completed and closed.
 
 ```text
-DeltaM x=21/4 H4: 3.046 / 2
-DeltaM zero:       29.409 / 2
-DeltaM x=17/4:     30.246 / 2
+DeltaM x=21/4 H4:             3.046 / 2
+DeltaM zero:                  29.409 / 2
+DeltaM x=17/4:                30.246 / 2
 
-DeltaS positive N^-1: 240.247 / 2
+DeltaS unconverted mismatch: 240.247 / 2  (historical, invalid channel comparison)
+DeltaS corrected cross score:  0.5700315436 / 2
 ```
 
-Interpretation: the odd law survives and strengthens; the simple even companion law fails in sign. Do not rerun these sizes merely to rescue the old conjunction.
+Interpretation: the odd law survives and strengthens. The matching-even amplitude also survives after the exact `either -> cross` channel map, without a target refit. This empirical compatibility does not establish the identity-family operator assignment. Do not rerun these sizes merely to repeat the corrected no-fit gate.
 
 ## Tier B — useful parallel work
 
@@ -123,7 +123,7 @@ The synthetic red-team shows that new multipliers/sizes are more useful for mech
 
 ## Deprioritized
 
-- more N=185/265 replicas for the failed conjunction;
+- more N=185/265 replicas merely to repeat the corrected no-fit gate;
 - another free-exponent fit on N=65..170;
 - N=1105 before norm 5;
 - broad PSLQ;
@@ -138,5 +138,5 @@ Rewrite the synthesis around whichever branch survives:
 1. norm-5 H4 passes and third-lineage correction predicts -> move toward paper-level odd-sector mechanism analysis;
 2. H12 sign wins -> rebuild the angular interpretation while retaining the empirical odd semigroup structure;
 3. odd law survives but slope/root correction fails -> expand the finite-size thermal-metric model;
-4. even-sector sign/correction becomes coherent -> rebuild a corrected multi-sector theory;
-5. no compact even-sector model survives -> present the robust odd sector separately rather than forcing a unified operator story.
+4. even-sector channel mapping and derivative corrections remain coherent -> build a channel-safe multi-sector theory;
+5. no compact derivative-correction model survives -> present the robust central sectors separately rather than forcing a unified operator story.
