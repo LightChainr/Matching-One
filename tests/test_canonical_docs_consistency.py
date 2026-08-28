@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Guard the canonical claim documents against known protocol regressions."""
+"""Guard the canonical claim documents against known protocol/status regressions."""
 
 from __future__ import annotations
 
@@ -44,6 +44,40 @@ class CanonicalDocsConsistencyTest(unittest.TestCase):
             with self.subTest(document=name):
                 self.assertIn("#57", document)
                 self.assertIn("#50", document)
+
+    def test_n26_beta_experiment_is_recorded_as_completed(self) -> None:
+        for name, document in self.documents.items():
+            with self.subTest(document=name):
+                self.assertIn("Beta(5,5)", document)
+                self.assertIn("Beta(7,7)", document)
+                self.assertIn("N=26", document)
+
+        stale_future_phrases = (
+            "falsify/extend the exact N=10 `Beta(3,3)` threshold law on N=26 (#115)",
+            "Pre-frozen N=26 exact falsification #115",
+            "N=10 self-matching `Beta(3,3)` extends to a finite exact family",
+        )
+        for name, document in self.documents.items():
+            for phrase in stale_future_phrases:
+                with self.subTest(document=name, phrase=phrase):
+                    self.assertNotIn(phrase, document)
+
+    def test_russo_pivotal_progress_is_visible_everywhere(self) -> None:
+        for name, document in self.documents.items():
+            with self.subTest(document=name):
+                self.assertIn("Russo", document)
+                self.assertIn("pivotal", document.lower())
+
+    def test_norm5_typed_entrypoints_exist(self) -> None:
+        required = (
+            "scripts/score_norm5_harmonic_primary_typed.py",
+            "scripts/score_intrinsic_functional_cocycle_typed.py",
+            "predictions/norm5_harmonic_semantic_gate_20260829.yaml",
+            "predictions/intrinsic_functional_cocycle_semantic_gate_20260829.yaml",
+        )
+        for relative in required:
+            with self.subTest(path=relative):
+                self.assertTrue((ROOT / relative).is_file(), relative)
 
 
 if __name__ == "__main__":
