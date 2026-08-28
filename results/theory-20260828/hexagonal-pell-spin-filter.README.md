@@ -1,0 +1,1 @@
+Generated theory artifact for `scripts/hexagonal_pell_spin_filter.py`. No square-site target data are contained here. The numerical E4 values are deterministic q-series evaluations used to freeze the Pell shape sequence and expected modular suppression before any dedicated production run.
