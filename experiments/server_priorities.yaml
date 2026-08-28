@@ -1,0 +1,125 @@
+version: 1
+updated: 2026-08-28
+purpose: >-
+  Updated execution order after identifying fixed-N Gaussian-integer orientation
+  tomography and an L^-3/2 correction mechanism for kappa_3.
+
+priorities:
+  - id: S0
+    priority: P0
+    title: General integer-period torus topology engine
+    resources:
+      cpu_cores: 8
+      ram_gb: 16
+      gpu: false
+    outputs:
+      - validated quotient by arbitrary 2x2 integer period matrix
+      - winding subgroup / homology rank classifier
+      - axis and diamond regression equality with existing reference implementation
+    acceptance:
+      - exhaustive tiny-size matching identities pass
+      - period-basis winding classifications are invariant under unimodular basis changes
+
+  - id: S1
+    priority: P0
+    title: Fixed-N Gaussian orientation tomography
+    depends_on: [S0]
+    resources:
+      cpu_cores: 8
+      ram_gb: 16
+      gpu: optional_after_cpu_gate
+    geometries:
+      same_n_pairs:
+        - {N: 65, reps: [[8,1],[7,4]]}
+        - {N: 85, reps: [[9,2],[7,6]]}
+        - {N: 145, reps: [[12,1],[9,8]]}
+        - {N: 205, reps: [[14,3],[13,6]]}
+        - {N: 425, reps: [[19,8],[16,13]]}
+      multi_angle:
+        - {N: 1105, reps: [[33,4],[32,9],[31,12],[24,23]]}
+      spin4_zero_approximants:
+        - [5,2]
+        - [12,5]
+        - [29,12]
+    outputs:
+      - same-N M differences at frozen p_ref
+      - root differences
+      - cos4theta normalized amplitudes
+      - fixed-N angular Fourier fits
+    acceptance:
+      - cos4theta sign pattern reproduced at >=3 same-N pairs
+      - normalized amplitude collapse improves with N
+      - pi/8 approximants suppress leading amplitude
+      - square-bond exact-threshold control agrees qualitatively
+    gpu_gate: >-
+      Rent/use GPU only after CPU data show a reproducible orientation harmonic.
+
+  - id: S2
+    priority: P0
+    title: Exact-threshold kappa3 controls
+    resources:
+      cpu_cores: 8
+      ram_gb: 16
+      gpu: optional
+    models:
+      - square_bond_square_torus
+      - union_jack_site_square_torus
+      - triangular_site_rhombic_torus
+    outputs:
+      - kappa3_L
+      - score-estimator variance
+      - fixed L^-3/2 extrapolation
+      - free-exponent held-out comparison
+    acceptance:
+      - exact tiny systems reproduced
+      - same-shape models extrapolate consistently
+      - no rational-value conclusion before held-out model checks
+
+  - id: S3
+    priority: P0
+    title: Square-site kappa3 and parametric M(U) curve
+    depends_on: [S2]
+    resources:
+      cpu_cores: 8
+      ram_gb: 16
+      gpu: optional_after_controls
+    outputs:
+      - kappa3_L
+      - kappa5_L if stable
+      - parametric M versus wrapping observable U
+      - comparison of p-coordinate and coordinate-free finite-size corrections
+    hypothesis: >-
+      A leading L^-3/2 term in p-derivative kappa3 is partly due to nonlinear
+      thermal-coordinate contamination and may be reduced in the parametric M(U) curve.
+
+  - id: S4
+    priority: P1
+    title: Full standardized matching crossover profile
+    depends_on: [S2]
+    resources:
+      cpu_cores: 8
+      ram_gb: 16
+      gpu: high_benefit_after_reference
+    outputs:
+      - microcanonical curves
+      - standardized rho(z)=M'(z)/2 profile
+      - cross-model profile distances
+      - kappa3/kappa5 fingerprint
+    acceptance:
+      - profile collapse across at least two microscopic realizations of the same torus shape
+      - bootstrap/covariance propagated through standardization
+
+  - id: S5
+    priority: P1
+    title: Long-cylinder Potts-Q derivative bridge
+    resources:
+      cpu_cores: 8
+      ram_gb: 16
+      gpu: false
+    outputs:
+      - aspect-ratio dependence kappa3(r)
+      - r-to-infinity numerical extrapolation
+      - field-theory notation map between cluster-number derivatives and Q/t derivatives
+      - feasibility assessment for TBA/NLIE computation
+    acceptance:
+      - numerical cylinder limit stable before analytic matching is attempted
