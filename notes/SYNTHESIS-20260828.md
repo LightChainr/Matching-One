@@ -4,7 +4,7 @@ This is the execution-facing synthesis of Matching One after the N=185/265 prosp
 
 ## Current thesis
 
-The strongest current finite-size picture is a **two-parity orientation structure with a corrected derivative spectrum**, not the sign-reversed even-sector interpretation originally written after #108.
+The strongest current finite-size picture is a **two-parity orientation structure with one specifically corrected derivative channel**.
 
 ```text
 matching-odd central sector
@@ -15,13 +15,14 @@ matching-odd central sector
 matching-even central sector
     -> compatible with the frozen N^-1 amplitude after exact either->cross channel conversion
 
-S-prime derivative sector
-    -> decisively nonzero
-    -> pure N^-5/4 fails prospectively
-    -> q=2 and Jordan-log corrections both remain live
+intrinsic-center P48 spectrum on new geometries
+    P4[S]  ~ N^-1      -> survives
+    P4[D]  ~ N^-13/8   -> survives
+    P4[D'] ~ N^-5/8    -> survives
+    P4[S'] ~ N^-5/4    -> pure law fails; correction required
 ```
 
-The main scientific uncertainty is now operator/correction identification, not existence of the leading orientation signal.
+The main scientific uncertainty is now operator/correction identification, not existence of the leading orientation signal or broad empirical parity structure.
 
 ## Strongest evidence
 
@@ -56,9 +57,9 @@ x=17/4:          chi2 = 30.24613 / 2
 
 This is the strongest genuinely new-geometry support for the current matching-odd law. H4 itself is still not unique because odd higher harmonics remain possible until norm-5 spectroscopy.
 
-### 3. Matching-even N=185/265 also agrees after the exact channel map
+### 3. Matching-even central N=185/265 agrees after the exact channel map
 
-The initially published #108 interpretation said the even sector reversed sign. A post-reveal protocol audit found that the frozen source and target statistics were different wrapping channels:
+The initially published #108 interpretation said the even sector reversed sign. A protocol audit found that the frozen source and target statistics were different wrapping channels:
 
 - frozen amplitude: P31 `either/even`;
 - target threshold rank: `cross/even`.
@@ -92,9 +93,24 @@ z = +0.667, -0.119.
 
 No target fit is introduced. PR #134 adds the exact regression and erratum while preserving the original #108 artifacts.
 
-This correction restores empirical consistency of the matching-even `N^-1` amplitude over the new geometries. It does **not** prove the identity-family `x=4` operator assignment or a local OPE automorphism.
+This restores empirical consistency of the matching-even `N^-1` amplitude over the new geometries. It does **not** prove the identity-family `x=4` operator assignment or a local OPE automorphism.
 
-### 4. Root movement remains tied to the measured residual
+### 4. Prospective intrinsic-center P48 parity score
+
+The same N=185/265 full curves are independent target geometries for the P48 amplitudes frozen from N=65,85,130. Scoring with zero target refits gives
+
+```text
+P4[S]   ~ N^-1:     chi2 =  1.13878 / 2   zero = 112.53974 / 2
+P4[D]   ~ N^-13/8:  chi2 =  0.28085 / 2   zero =  29.40844 / 2
+P4[D']  ~ N^-5/8:   chi2 =  0.08761 / 2   zero =  59.39319 / 2
+P4[S']  ~ N^-5/4:   chi2 = 52.71634 / 2   zero = 1278.55524 / 2
+```
+
+Thus `S`, `D`, and `D'` pure laws all transfer to genuinely new geometries. `S'` is the unique clear pure-law failure among these four intrinsic-center channels.
+
+This is distinct from the Issue #43 fixed-coordinate cross/either erratum: the P48 score uses intrinsic-center projectors and their own frozen amplitudes. Together, the two analyses strengthen the empirical parity picture rather than merely repairing a sign mistake.
+
+### 5. Root movement remains tied to the measured residual
 
 Threshold-rank reconstructions give
 
@@ -104,11 +120,11 @@ Threshold-rank reconstructions give
 
 on the tested systems, and P45 passes an angular-normalized root-amplitude test. The finite matching root therefore moves through the expected local residual/slope mechanism.
 
-### 5. The derivative sector exposes real subleading physics/statistics
+### 6. The derivative sector exposes real subleading physics/statistics
 
 Clean 100M full curves resolve that the bare center-slope multiplier is not exactly `2^(3/8)` at current N. The discrepancy is only about 0.2% but statistically decisive, so finite-size thermal-metric corrections are measurable.
 
-On the genuinely new N=185/265 geometries,
+For the one prospective pure-law failure, `S'`, the N=185/265 scores are
 
 ```text
 pure P4[S'] ~ N^-5/4: chi2 = 52.71634 / 2
@@ -131,7 +147,7 @@ The `13/8` law is now difficult to dismiss over the tested range, but finite-siz
 
 ### q=2 versus Jordan correction
 
-The new N=185/265 data rule out the pure S-prime law but do not distinguish the two frozen corrected forms. Further information should come from thermal-coordinate shape, new multipliers/moduli, or joint-channel constraints—not model proliferation.
+The new N=185/265 data rule out the pure `S'` law but do not distinguish the two frozen corrected forms. Further information should come from thermal-coordinate shape, new multipliers/moduli, or joint-channel constraints—not model proliferation.
 
 ### Continuum meaning of matching parity
 
@@ -168,6 +184,7 @@ This determines whether the small but decisive P49 slope drift has a predictive 
 
 Highest-value zero/low-compute analyses:
 
+- S-prime correction and fixed-coordinate/intrinsic-center mapping #48;
 - prequential evidence ledger #95;
 - pivotal/Russo bridge #100;
 - intrinsic quantile-center spectroscopy #101;
@@ -197,6 +214,7 @@ Higher-risk routes—discrete holomorphic defects, correlated hyperedge self-dua
 Do not spend major effort on:
 
 - interpreting a wrapping-channel sign without naming the channel;
+- treating `S'` correction as failure of the entire P48 parity spectrum;
 - adding another correction exponent after every residual;
 - broad PSLQ searches;
 - N=1105 before cheaper norm-5/new-geometry tests;
@@ -206,6 +224,6 @@ Do not spend major effort on:
 
 ## Current project thesis
 
-> Square-site/matching finite-size corrections contain reproducible matching-odd and matching-even orientation sectors once exact wrapping-channel semantics are aligned. The central matching-odd residual is compatible with an odd-square-harmonic `N^-13/8` law across independent seeds, exact Gaussian transformations and prospective new geometries, and it moves the finite root through the expected residual/slope mechanism. The matching-even central amplitude also survives the N=185/265 prospective block after the exact either-to-cross channel conversion. The remaining hard questions are whether the leading harmonic is genuinely H4, whether the `x=21/4` thermal-family interpretation is correct, and which subleading mechanism explains the prospectively failed pure S-prime law and finite-size slope drift.
+> Square-site/matching finite-size corrections contain reproducible matching-odd and matching-even orientation sectors once exact wrapping-channel semantics are aligned. The central matching-odd residual is compatible with an odd-square-harmonic `N^-13/8` law across independent seeds, exact Gaussian transformations and prospective new geometries, and it moves the finite root through the expected residual/slope mechanism. The matching-even central amplitude also survives the N=185/265 prospective block after exact either-to-cross conversion. Independently, the intrinsic-center P48 pure laws for `S`, `D`, and `D'` all transfer to the same new geometries; `S'` is the one clear pure-law failure and requires finite-size correction. The remaining hard questions are whether the leading harmonic is genuinely H4, whether the `x=21/4` thermal-family interpretation is correct, and which subleading mechanism explains the `S'` and slope corrections.
 
 That is the line to optimize around until norm-5 or the third full-curve lineage breaks it.
