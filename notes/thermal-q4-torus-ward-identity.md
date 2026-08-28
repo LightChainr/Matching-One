@@ -324,8 +324,8 @@ A direct q-series evaluation gives:
 | `(7,4)` | +1 | 56 | +0.0527808750147651 | +2.95572900083 |
 | `(19,11)` | -2 | 418 | -0.0145179091920255 | -6.06848604227 |
 | `(26,15)` | +1 | 780 | +0.00386292016315337 | +3.01307772726 |
-| `(71,41)` | -2 | 5822 | -0.00103701130037872 | -6.03747979080 |
-| `(97,56)` | +1 | 10864 | +0.000277726626463678 | +3.01722206990 |
+| `(71,41)` | -2 | 5822 | -0.0010370113003787168 | -6.03747979080 |
+| `(97,56)` | +1 | 10864 | +0.00027772662646367757 | +3.01722206990 |
 
 ### 6.1 Robust asymptotic cross-family target
 
@@ -458,7 +458,7 @@ Thus a standard local non-diagonal spin-12 primary obeys
  x\ge 143/12\approx11.9167,
 \]
 
-with allowed half-integer-r states reaching `x=12` near the continuous optimum. Again this is nowhere near `21/4=5.25`.
+and the Potts spectrum contains an allowed example `r=4,s=3` with `x=12`, close to the continuous lower bound. Again this is nowhere near `21/4=5.25`.
 
 Therefore:
 
@@ -470,7 +470,7 @@ This interpretation does **not** change the frozen Issue #57 scoring order or ta
 
 ## 9. Research assessment and recommended order
 
-My assessment after the N=185/265 result and the cross/either erratum is:
+My assessment after the N=185/N=265 result and the cross/either erratum is:
 
 1. **The matching-odd orientation sector is no longer a discovery-stage signal.** It has enough independent support that the main question is operator identification and representation structure.
 2. **The strongest missing theory bridge is now observable identification.** Exponent arithmetic alone is no longer the bottleneck. We need to show how the matching observable/topological projector couples to the thermal `Q4` torus sector.
