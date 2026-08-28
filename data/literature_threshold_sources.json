@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "scope": "square-lattice independent site-percolation threshold and finite-size estimators",
+  "policy": {
+    "rounded_estimate_is_definition": false,
+    "combine_inconsistent_intervals": false,
+    "primary_source_required_for_canonical_digits": true,
+    "notes": "Method-specific estimates are retained separately. Parenthetical uncertainties are recorded as quoted by each source and are not automatically interpreted as mutually comparable statistical confidence intervals."
+  },
+  "sources": [
+    {
+      "id": "jacobsen_2015_eigenvalue_identity",
+      "citation": "Jesper Lykke Jacobsen, Critical points of Potts and O(N) models from eigenvalue identities in periodic Temperley-Lieb algebras, J. Phys. A 48 (2015) 454003.",
+      "doi": "10.1088/1751-8113/48/45/454003",
+      "arxiv": "1507.03027",
+      "source_status": "primary_verified",
+      "model": "square-lattice independent site percolation",
+      "estimator_family": "eigenvalue identity between topological transfer-matrix sectors",
+      "geometry": "n x infinity semi-infinite cylinder with periodic transverse direction",
+      "finite_size_range": {"n_min": 1, "n_max": 21},
+      "data_file": "data/jacobsen_2015_square_site_cylinder.csv",
+      "data_transcription": "Table 2; decimal strings retained as printed",
+      "content_sha256": "d73191d771e5ca7d95a6a2f6dc36c444f40eacbe7819804c442497222d562210",
+      "quoted_estimates": [
+        {
+          "value_text": "0.59274605079210(2)",
+          "central_value": "0.59274605079210",
+          "quoted_uncertainty": "2e-14",
+          "status": "historical_high_precision_estimate_challenged_in_2024",
+          "source_location": "paper abstract/conclusion extrapolation"
+        }
+      ]
+    },
+    {
+      "id": "mertens_2022_exact_spanning",
+      "citation": "Stephan Mertens, Exact site-percolation probability on the square lattice, J. Phys. A 55 (2022) 334002.",
+      "doi": "10.1088/1751-8121/ac4195",
+      "arxiv": "2109.12102",
+      "license": "CC BY 4.0",
+      "source_status": "primary_verified",
+      "model": "square-lattice independent site percolation",
+      "estimator_family": "exact finite-square spanning probability",
+      "geometry": "finite n x n square; spanning in one direction",
+      "definitions": {
+        "p_med": "R_n,n(p_med) = 1/2",
+        "p_cell": "R_n,n(p_cell) = R_(n-1),(n-1)(p_cell)"
+      },
+      "finite_size_range": {"n_min": 1, "n_max": 24},
+      "data_file": "data/mertens_2022_square_site_estimators.csv",
+      "data_transcription": "p_med from Table 4 and p_cell from Table 5; paper states all displayed decimals are exact",
+      "content_sha256": "dc6e1ed72836d1f27981bd6a4df89dfe71b8ae7d7258e59b8a33ac63a5b57d55",
+      "quoted_estimates": [
+        {
+          "estimator": "p_med",
+          "value_text": "0.592746050786(3)",
+          "central_value": "0.592746050786",
+          "quoted_uncertainty": "3e-12",
+          "source_location": "Eq. (22a)"
+        },
+        {
+          "estimator": "p_cell",
+          "value_text": "0.59274605060(8)",
+          "central_value": "0.59274605060",
+          "quoted_uncertainty": "8e-11",
+          "source_location": "Eq. (22b)"
+        }
+      ]
+    },
+    {
+      "id": "yang_zhou_2024_comment",
+      "citation": "Yi Yang and Shuigeng Zhou, Comment on 'Critical points of Potts and O(N) models from eigenvalue identities in periodic Temperley-Lieb algebras', J. Phys. A 57 (2024) 258001.",
+      "doi": "10.1088/1751-8121/ad4d2c",
+      "source_status": "primary_abstract_verified_table_pending",
+      "model": "square-lattice independent site percolation",
+      "estimator_family": "exact helical h(n) and extended cylindrical eigenvalue estimator p_c(n)",
+      "geometry": "n x infinity helical and cylindrical square lattices",
+      "finite_size_range": {"n_max": 24},
+      "data_file": null,
+      "data_transcription": "pending primary-source transcription of the n<=24 tables; do not infer missing rows from plots or secondary sources",
+      "quoted_estimates": [
+        {
+          "value_text": "0.5927460507896(1)",
+          "central_value": "0.5927460507896",
+          "quoted_uncertainty": "1e-13",
+          "status": "authors' corrected estimate",
+          "source_location": "publisher-preview abstract; primary source verified"
+        }
+      ]
+    },
+    {
+      "id": "jacobsen_2024_reply",
+      "citation": "Jesper Lykke Jacobsen, Reply to Comment on 'Critical points of Potts and O(N) models from eigenvalue identities in periodic Temperley-Lieb algebras', J. Phys. A 57 (2024) 258002.",
+      "doi": "10.1088/1751-8121/ad4d33",
+      "source_status": "primary_page1_verified_full_text_pending",
+      "model": "square-lattice independent site percolation",
+      "estimator_family": "reanalysis/rejoinder for cylindrical eigenvalue-identity finite-size sequence",
+      "geometry": "n x infinity cylindrical square lattice",
+      "data_file": null,
+      "verified_primary_content": "page 1 confirms the finite-size form p_c(n)=p_c+A1*n^-Delta1+A2*n^-Delta2+A3*n^-Delta3+... and discusses Delta1=4, Delta2 approximately 6, Delta3 approximately 8",
+      "pending": [
+        "transcribe the final numerical estimate from the primary full text",
+        "record the exact fit window/model used for that estimate"
+      ],
+      "secondary_index_note": "Secondary compilations currently attribute 0.59274605079016(1) to this reply. This number is deliberately not promoted to quoted_estimates until checked against the primary full text."
+    }
+  ],
+  "open_provenance_tasks": [
+    "Transcribe and checksum the Yang-Zhou 2024 h(n) and cylindrical p_c(n) tables through n=24 from a primary full-text copy.",
+    "Verify the Jacobsen 2024 Reply final estimate and fit specification against the primary full text.",
+    "Add any earlier estimator sequence used in a current analysis only when exact source location and estimator definition are recorded."
+  ]
+}
