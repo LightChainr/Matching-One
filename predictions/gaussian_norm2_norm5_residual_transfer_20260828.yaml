@@ -1,4 +1,4 @@
-version: 1
+version: 2
 frozen_at: 2026-08-28
 status: preregistered_before_N325_N425_target_runs
 claim_level: C0
@@ -18,7 +18,7 @@ leading_model:
   norm5_H4_angular_ratio: '-14/25'
 
 residual_definition:
-  general: 'E_Q = DeltaM_(Q*N) - r_Q * Q^(-13/8) * DeltaM_N'
+  general: 'E_Q = DeltaM_(Q*N) - r4_Q * Q^(-13/8) * DeltaM_N'
   norm2: 'E_2 = DeltaM_(2N) + 2^(-13/8) * DeltaM_N'
   norm5: 'E_5 = DeltaM_(5N) - (-14/25)*5^(-13/8)*DeltaM_N'
   note: >-
@@ -50,7 +50,7 @@ transfer_laws:
         source_only_standard_error: '0.0000299992953041741114600667192349'
 
   relative_length_q2:
-    interpretation: 'relative central correction L^-2; accelerated-root w=6'
+    interpretation: 'same-H4 relative correction L^-2; accelerated-root w=6'
     relative_exponent_in_N_beta: '1'
     E5_over_E2: '0.202141505348838012941217492289102222603673210723435619564157'
     prospective_E5_from_source:
@@ -62,7 +62,7 @@ transfer_laws:
         source_only_standard_error: '0.0000206719891939664146506506075251'
 
   relative_length_q3:
-    interpretation: 'relative central correction L^-3; historical accelerated-root w=7'
+    interpretation: 'same-H4 relative correction L^-3; historical accelerated-root w=7'
     relative_exponent_in_N_beta: '3/2'
     E5_over_E2: '0.177954970284005812017041073797504008746407926678314832016965'
     prospective_E5_from_source:
@@ -74,7 +74,10 @@ transfer_laws:
         source_only_standard_error: '0.0000181985546034953828552846868137'
 
   relative_length_q4:
-    interpretation: 'nonlinear T4*I4^2 candidate; accelerated-root w=8'
+    interpretation: >-
+      Pure/same-H4 relative L^-4 phenomenological correction; accelerated-root
+      w=8. Do NOT identify this transfer factor with T4*I4^2, because the cubic
+      spin-4 product also carries an H12 sideband under norm-5 rotation.
     relative_exponent_in_N_beta: '2'
     E5_over_E2: '0.161713204279070410352973993831281778082938568578748495651326'
     prospective_E5_from_source:
@@ -85,8 +88,38 @@ transfer_laws:
         mean: '-0.00000248468011895168376296829567849'
         source_only_standard_error: '0.00001653759135517313172052048602'
 
+  nonlinear_T4_I4_squared_aligned:
+    interpretation: >-
+      Simplest aligned cubic nonlinear anisotropy. Angular structure is
+      cos(4theta)^3 = [3 cos(4theta)+cos(12theta)]/4, so the norm-5 transfer is
+      lineage-dependent. This is a concrete q=4 mechanism distinct from the
+      pure-H4 q=4 phenomenological model above.
+    relative_exponent_in_N_beta: '2'
+    norm2_cubic_angular_ratio: '-1'
+    lineages:
+      N65_to_N325:
+        parent_cube_difference_definition: 'cos4(8,1)^3 - cos4(7,4)^3'
+        child_cube_difference_definition: 'cos4(17,6)^3 - cos4(18,1)^3'
+        norm5_cubic_angular_ratio_exact: '-4819038182/4157078125'
+        E5_over_E2: '0.154503047110307485888084137277565542897254902549205170573141'
+        prospective_E5_from_source:
+          mean: '0.0000017440112186840506712124046869756639'
+          source_only_standard_error: '0.000015278593003017698723676209225120316'
+      N85_to_N425:
+        parent_cube_difference_definition: 'cos4(9,2)^3 - cos4(7,6)^3'
+        child_cube_difference_definition: 'cos4(16,13)^3 - cos4(19,8)^3'
+        norm5_cubic_angular_ratio_exact: '-131132632526/192645765625'
+        E5_over_E2: '0.160260997522890848799308758133694368215000944591649071712203'
+        prospective_E5_from_source:
+          mean: '-0.0000024623673506667894854465796483725896'
+          source_only_standard_error: '0.000016389081516387954776152974328388128'
+    caveat: >-
+      The literal cubic angular relation is a conditional prediction of the
+      simplest aligned monomial. General response tensors or additional fields
+      can change the H4/H12 coefficient relation.
+
   relative_length_q6:
-    interpretation: 'next ordinary thermal spin-4 quasiprimary; accelerated-root w=10'
+    interpretation: 'same-H4 next ordinary thermal spin-4 quasiprimary; accelerated-root w=10'
     relative_exponent_in_N_beta: '3'
     E5_over_E2: '0.143231695218605220598348394536278146302031303598320096148317'
     prospective_E5_from_source:
@@ -97,11 +130,16 @@ transfer_laws:
         mean: '-0.0000022007166767857770472004904581'
         source_only_standard_error: '0.0000146475809145819166667467161892'
 
-formula_for_power_transfer: >-
-  For a relative correction C*N^(-beta),
-  E_Q = r_Q*Q^(-alpha)*C*N^(-alpha-beta)*(Q^(-beta)-1).
-  Therefore E5/E2 is fixed by the two multiplier norms and angular ratios;
-  no correction amplitude is fitted.
+formula_for_same_harmonic_power_transfer: >-
+  For a relative same-H4 correction C*N^(-beta),
+  E_Q = r4_Q*Q^(-alpha)*C*N^(-alpha-beta)*(Q^(-beta)-1).
+  Therefore E5/E2 is fixed by the two multiplier norms and H4 angular ratios.
+
+formula_for_general_subleading_harmonic: >-
+  If a subleading angular function f has multiplier ratio rf_Q rather than the
+  leading H4 ratio r4_Q, then
+  E_Q = C*N^(-alpha-beta)*Q^(-alpha)*(rf_Q*Q^(-beta)-r4_Q)*f_parent.
+  This must be used for nonlinear H4/H12 mixtures such as T4*I4^2.
 
 scoring_order_after_primary_norm5_harmonic_score:
   - pure_leading_power_residual_zero
@@ -109,6 +147,7 @@ scoring_order_after_primary_norm5_harmonic_score:
   - relative_length_q2
   - relative_length_q3
   - relative_length_q4
+  - nonlinear_T4_I4_squared_aligned
   - relative_length_q6
   - only_then_free_beta_or_multi_correction_models
 
@@ -118,3 +157,4 @@ rules:
   - propagate_source_E2_uncertainty_and_fresh_E5_sampling_covariance
   - if_all_fixed_residual_models_are_underpowered_report_a_power_limit_not_a_winner
   - do_not_interpret_q3_as_2_times_omega_3_over_2_without_an_operator_derivation
+  - never_apply_a_pure_H4_transfer_factor_to_a_known_H4_H12_composite_without_recomputing_its_angular_ratio
