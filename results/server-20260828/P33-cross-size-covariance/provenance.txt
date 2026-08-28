@@ -1,0 +1,6 @@
+source_commit=07cfc3d2b9cc99401c669bfd54528a80107d9d2c
+python=Python 3.9.25
+mpmath=1.4.1
+
+python scripts/audit_threshold_rank_covariance.py --histograms results/server-20260828/P33/p33_all_sizes_arm_10m.hist.csv --p 0.592746050790 --training-sizes 65,85,130 --heldout-sizes 145,170 --seed-label p33-working-tree-10m --output-dir results/server-20260828/P33-cross-size-covariance
+python scripts/score_threshold_rank_root_doubling.py --summary results/server-20260828/P33-cross-size-covariance/summary.json --json results/server-20260828/P33-cross-size-covariance/root_doubling.json --csv results/server-20260828/P33-cross-size-covariance/root_doubling.csv --report results/server-20260828/P33-cross-size-covariance/ROOT_DOUBLING_REPORT.md
