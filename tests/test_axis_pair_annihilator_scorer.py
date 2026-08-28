@@ -8,7 +8,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from score_axis_pair_annihilator import fit_f_shape, fit_root_power  # noqa: E402
+from score_axis_pair_annihilator_stable import fit_f_shape, fit_root_power  # noqa: E402
 
 
 class AxisPairAnnihilatorScorerTests(unittest.TestCase):
