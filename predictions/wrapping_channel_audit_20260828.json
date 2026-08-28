@@ -25,10 +25,7 @@
         "normalization": "raw",
         "quantity": "orientation_contrast"
       },
-      "expected_transform": {
-        "scale": -1.0,
-        "offset": 0.0
-      }
+      "expected_transform": {"scale": -1.0, "offset": 0.0}
     },
     {
       "id": "p48_cross_even_normalized_identity",
@@ -51,10 +48,7 @@
         "normalization": "angular_normalized",
         "quantity": "orientation_contrast"
       },
-      "expected_transform": {
-        "scale": 1.0,
-        "offset": 0.0
-      }
+      "expected_transform": {"scale": 1.0, "offset": 0.0}
     },
     {
       "id": "issue57_norm5_fixed_p_raw_deltaM",
@@ -79,17 +73,59 @@
         "normalization": "raw",
         "quantity": "orientation_contrast"
       },
-      "expected_transform": {
-        "scale": 1.0,
-        "offset": 0.0
-      },
+      "expected_transform": {"scale": 1.0, "offset": 0.0},
       "exact_identity": "D_either = D_cross"
     },
     {
       "id": "issue57_norm5_full_curve_projectors",
-      "status": "blocked_before_scoring",
-      "prediction_artifact": "predictions/gaussian_normalized_p4_multiplier_spectrum_20260828.yaml",
-      "reason": "raw and angular-normalized rules are distinct; the full-curve target scorer must explicitly declare the cross/either/both and even/odd descriptors before scoring"
+      "status": "registered",
+      "frozen_kernel_contract": "predictions/intrinsic_functional_cocycle_scorer_20260828.yaml",
+      "semantic_manifest": "predictions/intrinsic_functional_cocycle_semantic_gate_20260829.yaml",
+      "scorer": "scripts/score_intrinsic_functional_cocycle_typed.py",
+      "primitive_descriptors": {
+        "Mbar_center": {
+          "channel": "cross",
+          "combination": "odd",
+          "coordinate": "p",
+          "orientation_order": "none",
+          "normalization": "raw",
+          "quantity": "value"
+        },
+        "P4_S": {
+          "channel": "cross",
+          "combination": "even",
+          "coordinate": "p",
+          "orientation_order": "first_minus_second",
+          "normalization": "angular_normalized",
+          "quantity": "orientation_contrast"
+        },
+        "P4_D": {
+          "channel": "cross",
+          "combination": "odd",
+          "coordinate": "p",
+          "orientation_order": "first_minus_second",
+          "normalization": "angular_normalized",
+          "quantity": "orientation_contrast"
+        },
+        "P4_S_prime": {
+          "channel": "cross",
+          "combination": "even",
+          "coordinate": "p",
+          "orientation_order": "first_minus_second",
+          "normalization": "angular_normalized",
+          "quantity": "orientation_contrast"
+        },
+        "P4_D_prime": {
+          "channel": "cross",
+          "combination": "odd",
+          "coordinate": "p",
+          "orientation_order": "first_minus_second",
+          "normalization": "angular_normalized",
+          "quantity": "orientation_contrast"
+        }
+      },
+      "expected_transform": {"scale": 1.0, "offset": 0.0},
+      "semantic_rule": "same cross-channel primitive descriptor at every N; size-local P4 normalization occurs before cocycle comparison"
     }
   ]
 }

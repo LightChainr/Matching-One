@@ -121,13 +121,28 @@ class WrappingChannelMapTests(unittest.TestCase):
             if row["status"] != "registered":
                 continue
             registered += 1
-            transform = map_observable(
-                ObservableDescriptor.from_dict(row["source_descriptor"]),
-                ObservableDescriptor.from_dict(row["target_descriptor"]),
-            )
-            self.assertEqual(transform.scale, row["expected_transform"]["scale"])
-            self.assertEqual(transform.offset, row["expected_transform"]["offset"])
-        self.assertGreaterEqual(registered, 2)
+            if "source_descriptor" in row and "target_descriptor" in row:
+                transform = map_observable(
+                    ObservableDescriptor.from_dict(row["source_descriptor"]),
+                    ObservableDescriptor.from_dict(row["target_descriptor"]),
+                )
+                self.assertEqual(transform.scale, row["expected_transform"]["scale"])
+                self.assertEqual(transform.offset, row["expected_transform"]["offset"])
+                continue
+
+            primitives = row.get("primitive_descriptors")
+            if not isinstance(primitives, dict) or not primitives:
+                self.fail(
+                    f"registered audit row {row.get('id')} lacks a supported descriptor schema"
+                )
+            expected = row["expected_transform"]
+            for name, primitive in primitives.items():
+                with self.subTest(audit=row.get("id"), primitive=name):
+                    descriptor_value = ObservableDescriptor.from_dict(primitive)
+                    transform = map_observable(descriptor_value, descriptor_value)
+                    self.assertEqual(transform.scale, expected["scale"])
+                    self.assertEqual(transform.offset, expected["offset"])
+        self.assertGreaterEqual(registered, 4)
 
 
 if __name__ == "__main__":
