@@ -101,20 +101,34 @@ Parallel theory/control routes are tracked in the post-P43 frontier map: FK/Pott
 
 The exact N=1105 four-angle projector, axis-annihilator work, complex-zero maps, kappa3, rigorous-bound feasibility, and PSLQ are secondary/gated tracks.
 
+## Research navigation
+
+The repository now separates current claims, research relationships, immutable evidence, and historical snapshots explicitly:
+
+- [`docs/STATUS.md`](docs/STATUS.md) — authoritative current claim ledger.
+- [`docs/RESEARCH-MAP.md`](docs/RESEARCH-MAP.md) — how the scientific tracks and evidence blocks fit together.
+- [`notes/SYNTHESIS-20260828.md`](notes/SYNTHESIS-20260828.md) — execution-facing scientific synthesis.
+- [`docs/ROADMAP.md`](docs/ROADMAP.md) — active discriminators and information-gain priorities.
+- [`analysis/research_ledger.yaml`](analysis/research_ledger.yaml) — machine-readable questions, evidence blocks, analysis queue, and new-compute queue.
+- [`analysis/artifact_registry.yaml`](analysis/artifact_registry.yaml) — machine-readable status of predictions, result archives, topic notes, historical protocols, and frontier PRs.
+
+Old result reports, wave notes, and compute queues are preserved as provenance. Their presence does not make them competing current status documents.
+
 ## Repository
 
-The numerical archive, production source, exact checks, failed/null models, raw sufficient statistics, and protocol errata live on `main`. The execution-facing synthesis is [`notes/SYNTHESIS-20260828.md`](notes/SYNTHESIS-20260828.md); the claim ledger is [`docs/STATUS.md`](docs/STATUS.md).
+The numerical archive, production source, exact checks, failed/null models, raw sufficient statistics, and protocol errata live on `main`.
 
 ```text
 constants/      reference values and exact relations
 data/           literature datasets and provenance
+docs/           canonical status, research map, and roadmap
+analysis/       machine-readable research/evidence/artifact indexes
 notes/          synthesis, theory, derivations, negative results
-scripts/        analysis and exact checks
-experiments/    frozen protocols
+scripts/        analysis, scorers, and exact checks
+experiments/    frozen and historical protocols
 predictions/    preregistered predictions
-results/        raw and derived research archives
+results/        immutable raw and derived research archives
 tests/          smoke, regression, exact-contract tests
-docs/           status and roadmap
 src/            production C++ engines
 ```
 
