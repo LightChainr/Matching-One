@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "frozen_at": "2026-08-28",
+  "status": "corrected_C0_definition_after_PR73_before_norm5_targets",
+  "claim_level": "C0",
+  "related_issues": [48, 57, 64],
+  "source_result": "PR_73",
+  "purpose": "Separate Gaussian-multiplier laws for raw orientation contrasts from normalized P4 projectors. The H4 angular factor cancels in normalized P4 and must not be counted twice.",
+  "conventions": {
+    "raw_contrast": {
+      "definition": "DeltaX_N = X(theta_first)-X(theta_second)",
+      "pure_H4_law": "DeltaX_N = A * DeltaCos4_N * N^(-alpha)",
+      "multiplier_law": "DeltaX_QN/DeltaX_N = r4(h) * Q^(-alpha)"
+    },
+    "normalized_P4": {
+      "definition": "P4_N[X] = DeltaX_N / DeltaCos4_N",
+      "pure_H4_law": "P4_N[X] = A * N^(-alpha)",
+      "multiplier_law": "P4_QN/P4_N = Q^(-alpha)",
+      "warning": "The angular ratio r4 cancels exactly for a pure H4 field. Multiplying normalized P4 by r4 again double-counts the rotation sign."
+    }
+  },
+  "channel_exponents_in_N": {
+    "P4_S": "1",
+    "P4_Dprime": "5/8",
+    "P4_D": "13/8",
+    "P4_Sprime": "5/4"
+  },
+  "norm2": {
+    "multiplier": [1, 1],
+    "Q": 2,
+    "raw_H4_angular_ratio": "-1",
+    "normalized_pure_H4_child_over_parent": {
+      "P4_S": {"expression": "2^(-1)", "decimal": "0.5"},
+      "P4_Dprime": {"expression": "2^(-5/8)", "decimal": "0.6484197773255048329668770588962255799176725747124827564"},
+      "P4_D": {"expression": "2^(-13/8)", "decimal": "0.3242098886627524164834385294481127899588362873562413782"},
+      "P4_Sprime": {"expression": "2^(-5/4)", "decimal": "0.4204482076268572715155627381166074475200171311783922554"}
+    },
+    "raw_pure_H4_child_over_parent": {
+      "P4_D_equivalent_raw_DeltaM": "-2^(-13/8)"
+    }
+  },
+  "norm5": {
+    "multipliers": [[2, -1], [2, 1]],
+    "Q": 5,
+    "raw_H4_angular_ratio": "-14/25",
+    "raw_H12_angular_ratio": "23506/15625",
+    "normalized_H12_over_H4_angular_ratio": {
+      "exact": "-1679/625",
+      "decimal": "-2.6864"
+    },
+    "normalized_pure_H4_child_over_parent": {
+      "P4_S": {"expression": "5^(-1)", "decimal": "0.2"},
+      "P4_Dprime": {"expression": "5^(-5/8)", "decimal": "0.3657158199959148674517688711740621036321641008800269273"},
+      "P4_D": {"expression": "5^(-13/8)", "decimal": "0.07314316399918297349035377423481242072643282017600538547"},
+      "P4_Sprime": {"expression": "5^(-5/4)", "decimal": "0.1337480609952844048006466146517295872776070383304955130"}
+    },
+    "normalized_same_radial_H12_adversary": {
+      "P4_D": {"expression": "(-1679/625)*5^(-13/8)", "decimal": "-0.1964917957674051399844863791044000870394891281208208675"},
+      "P4_Sprime": {"expression": "(-1679/625)*5^(-5/4)", "decimal": "-0.3593007910577320250564570656004063632625635477710431460"}
+    },
+    "raw_contrast_reference": {
+      "H4_D": "(-14/25)*5^(-13/8)",
+      "H12_D": "(23506/15625)*5^(-13/8)",
+      "note": "These raw ratios are the quantities frozen by Issue 57 for DeltaM and remain unchanged by the normalized-P4 correction."
+    }
+  },
+  "thermal_H4_radial_adversaries": {
+    "rule": "For any candidate still assumed to be H4, normalized P4 removes the angular factor. If central D scales as N^(-alpha_D), then S-prime scales with exponent alpha_D-3/8 and both multiplier ratios are positive.",
+    "x21_over_4": {"D_alpha": "13/8", "Sprime_alpha": "5/4"},
+    "x14_over_3_V13_parity_failure": {
+      "D_alpha": "4/3",
+      "Sprime_alpha": "23/24",
+      "norm2_Sprime_ratio": "0.51465111832174601439118590038696099818514642110709",
+      "norm5_Sprime_ratio": "0.21387190896262372953260198153501090838747694648629"
+    },
+    "x17_over_4_W22_log_leakage": {
+      "D_alpha": "9/8",
+      "Sprime_alpha": "3/4",
+      "norm2_Sprime_ratio": "0.59460355750136053335874998528023795764648604623191",
+      "norm5_Sprime_ratio": "0.29906975624424410838237979882818267907269195152294"
+    }
+  },
+  "scoring_contract": [
+    "use_fixed_residuals_not_unstable_ratios_as_primary_statistics",
+    "recompute_intrinsic_center_and_projectors_inside_each_delete_one_replicate",
+    "preserve_raw_and_normalized_conventions_as_distinct_metrics",
+    "score_pure_H4_before_H12_or_radial_adversaries",
+    "do_not_modify_issue57_raw_DeltaM_predictions"
+  ]
+}
