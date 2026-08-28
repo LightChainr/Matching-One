@@ -19,6 +19,7 @@ class MatchingGaloisCertificateTests(unittest.TestCase):
             ("axis", 5): "S_25",
             ("diamond", 2): "S_8",
             ("diamond", 3): "S_18",
+            ("gaussian-3-1", 0): "S_10",
         }
         observed = {}
         for case in CASES:
@@ -34,7 +35,9 @@ class MatchingGaloisCertificateTests(unittest.TestCase):
                 row["large_prime_cycle"],
                 row["maximum_nontrivial_block_size_or_count"],
             )
-            self.assertTrue(all(factor["irreducible_mod_prime"] for factor in row["factors"]))
+            self.assertTrue(
+                all(factor["irreducible_mod_prime"] for factor in row["factors"])
+            )
         self.assertEqual(observed, expected)
 
     def test_cycle_types_isolate_transposition(self) -> None:
