@@ -1,15 +1,35 @@
-version: 2
+version: 3
 frozen_at: 2026-08-28
-status: preregistered_before_clean_norm2_fullcurve_result_and_N325_N425_runs
+status: corrected_before_N325_N425_targets
 claim_level: C0
 source_checkpoint: 7f86f9c58e529e3d6107bb5d81f374f90d31f98d
+correction_trigger: PR_73_clean_fullcurve_definition_audit
 related_issue: 64
 source_parity_issue: 48
 purpose: >-
   Parameter-free Gaussian-multiplier eigenvalue test of the four frozen
-  matching-parity derivative channels. Old P33 outcomes at the norm-2 sizes
-  exist, so norm-2 is a fresh-seed confirmation/replication rather than a
-  geometry-blind held-out test. Norm-5 targets remain prospective.
+  matching-parity derivative channels. Version 3 corrects a definition error
+  in versions 1-2: the H4 angular sign belongs to an unnormalized exact-lineage
+  contrast DeltaX, but cancels in the normalized projector
+  P4[X]=DeltaX/DeltaCos4 because DeltaCos4 transforms by the same factor.
+  No exponent or amplitude is changed by this correction. Norm-5 targets remain
+  prospective.
+
+observable_conventions:
+  raw_exact_lineage_contrast:
+    definition: 'DeltaX = X(first)-X(second) in Gaussian genealogy order'
+    pure_H4_multiplier: 'DeltaX_child/DeltaX_parent = r4 * Q^(-alpha)'
+    note: 'r4 carries the angular sign and is negative for the frozen norm-2/norm-5 lineages.'
+  normalized_P4_projector:
+    definition: 'P4[X] = DeltaX / DeltaCos4, with each size using its own DeltaCos4'
+    pure_H4_multiplier: 'P4_child/P4_parent = Q^(-alpha)'
+    derivation: >-
+      DeltaX_child=r4*Q^(-alpha)*DeltaX_parent and
+      DeltaCos4_child=r4*DeltaCos4_parent, so r4 cancels exactly.
+  warning: >-
+    Never apply r4 a second time to an already-normalized P4 projector. Raw
+    matching-function/root contrasts in Issues 49/50/57 still retain their
+    angular sign.
 
 channel_models:
   identity_even_S:
@@ -32,9 +52,9 @@ channel_models:
 thermal_radial_competitor_rule:
   statement: >-
     If a competing matching-odd H4 field has central-D exponent alpha_D in N,
-    its first thermal derivative S-prime has exponent alpha_D-3/8. Therefore
-    the central and derivative Gaussian multiplier ratios form a linked no-fit
-    test; do not fit an independent derivative exponent for the competitor.
+    its first thermal derivative S-prime has exponent alpha_D-3/8. For
+    normalized P4 projectors both parent/child multipliers are positive
+    Q^(-alpha); do not fit an independent derivative exponent.
   candidates:
     x21_over_4:
       role: primary_thermal_level4_candidate
@@ -45,8 +65,8 @@ thermal_radial_competitor_rule:
       central_D_alpha_N: '4/3'
       Sprime_alpha_N: '23/24'
       theory_guard: >-
-        The matching-odd assignment is deliberately adversarial and would
-        signal failure/mixing of the stronger parity hypothesis in Issue #61.
+        A matching-odd observation would signal failure/mixing of the stronger
+        parity hypothesis in Issue #61.
     x17_over_4_W22:
       role: Q1_logarithmic_leakage_adversary
       central_D_alpha_N: '9/8'
@@ -55,77 +75,111 @@ thermal_radial_competitor_rule:
 norm2:
   multiplier: [1, 1]
   norm_ratio: 2
-  exact_H4_angular_ratio: '-1'
+  exact_H4_angular_ratio_for_raw_contrast: '-1'
   lineages:
     - {parent_N: 65, child_N: 130}
     - {parent_N: 85, child_N: 170}
     - {parent_N: 145, child_N: 290, role: after_fullcurve_N290_exists}
-  fixed_child_over_parent:
+  normalized_P4_child_over_parent:
     identity_even_S:
-      expression: '-2^(-1)'
-      decimal: '-0.5'
+      expression: '2^(-1)'
+      decimal: '0.5'
     identity_even_Dprime:
-      expression: '-2^(-5/8)'
-      decimal: '-0.6484197773255048329668770588962255799176725747124827564'
+      expression: '2^(-5/8)'
+      decimal: '0.6484197773255048329668770588962255799176725747124827564'
     thermal_odd_D:
-      expression: '-2^(-13/8)'
-      decimal: '-0.3242098886627524164834385294481127899588362873562413782'
+      expression: '2^(-13/8)'
+      decimal: '0.3242098886627524164834385294481127899588362873562413782'
     thermal_odd_Sprime:
-      expression: '-2^(-5/4)'
-      decimal: '-0.4204482076268572715155627381166074475200171311783922554'
-  thermal_radial_adversaries:
+      expression: '2^(-5/4)'
+      decimal: '0.4204482076268572715155627381166074475200171311783922554'
+  raw_H4_contrast_child_over_parent:
+    thermal_odd_D: '-2^(-13/8)'
+  normalized_P4_thermal_radial_adversaries:
     x14_over_3_V13:
-      D_expression: '-2^(-4/3)'
-      Sprime_expression: '-2^(-23/24)'
-      Sprime_decimal: '-0.51465111832174601439118590038696099818514642110709'
+      D_expression: '2^(-4/3)'
+      D_decimal: '0.3968502629920498686879264098180770650978733319749632525'
+      Sprime_expression: '2^(-23/24)'
+      Sprime_decimal: '0.51465111832174601439118590038696099818514642110709'
     x17_over_4_W22:
-      D_expression: '-2^(-9/8)'
-      Sprime_expression: '-2^(-3/4)'
-      Sprime_decimal: '-0.59460355750136053335874998528023795764648604623191'
+      D_expression: '2^(-9/8)'
+      D_decimal: '0.4585020216023356158717707973970722140193275832184198749'
+      Sprime_expression: '2^(-3/4)'
+      Sprime_decimal: '0.59460355750136053335874998528023795764648604623191'
 
 norm5:
   multipliers: [[2, -1], [2, 1]]
   norm_ratio: 5
-  exact_H4_angular_ratio: '-14/25'
+  exact_H4_angular_ratio_for_raw_contrast: '-14/25'
   lineages:
     - {parent_N: 65, child_N: 325}
     - {parent_N: 85, child_N: 425}
-  fixed_child_over_parent:
+  normalized_P4_child_over_parent:
     identity_even_S:
-      expression: '(-14/25)*5^(-1)'
-      decimal: '-0.112'
+      expression: '5^(-1)'
+      decimal: '0.2'
     identity_even_Dprime:
-      expression: '(-14/25)*5^(-5/8)'
-      decimal: '-0.2048008591977123257729905678574747780340118964928150793'
+      expression: '5^(-5/8)'
+      decimal: '0.3657158199959148674517688711740621036321641008800269273'
+    thermal_odd_D:
+      expression: '5^(-13/8)'
+      decimal: '0.07314316399918297349035377423481242072643282017600538547'
+    thermal_odd_Sprime:
+      expression: '5^(-5/4)'
+      decimal: '0.1337480609952844048006466146517295872776070383304955130'
+  raw_H4_contrast_child_over_parent:
     thermal_odd_D:
       expression: '(-14/25)*5^(-13/8)'
       decimal: '-0.04096017183954246515459811357149495560680237929856301586'
-    thermal_odd_Sprime:
-      expression: '(-14/25)*5^(-5/4)'
-      decimal: '-0.07489891415735926668836210420496856887545994146507748725'
-  thermal_radial_adversaries:
+  normalized_P4_thermal_radial_adversaries:
     x14_over_3_V13:
-      D_expression: '(-14/25)*5^(-4/3)'
-      Sprime_expression: '(-14/25)*5^(-23/24)'
-      Sprime_decimal: '-0.11976826901906928853825710965960610869698709003232'
+      D_expression: '5^(-4/3)'
+      D_decimal: '0.1169607095285146426202714944055169111412199454040412017'
+      Sprime_expression: '5^(-23/24)'
+      Sprime_decimal: '0.21387190896262372953260287439215376553033408934343'
     x17_over_4_W22:
-      D_expression: '(-14/25)*5^(-9/8)'
-      Sprime_expression: '(-14/25)*5^(-3/4)'
-      Sprime_decimal: '-0.16747906349677670069413268734378230028070749285285'
+      D_expression: '5^(-9/8)'
+      D_decimal: '0.1635530867915885009149780522928308082292301442988027184'
+      Sprime_expression: '5^(-3/4)'
+      Sprime_decimal: '0.29906975624424414348329409218367800281840980866580'
 
-norm5_same_radial_H12_adversary_for_thermal_rows:
+norm5_same_radial_H12_adversary_for_normalized_thermal_P4:
+  exact_H4_angular_ratio: '-14/25'
   exact_H12_angular_ratio: '23506/15625'
+  normalized_angular_ratio_H12_over_H4: '-1679/625'
   note: >-
-    This is a model-independent same-radial-exponent H12 alias for the thermal
-    D/Sprime rows, not an ordinary x=21/4 thermal-family spin-12 descendant.
+    A pure H12 contrast divided by DeltaCos4 does not cancel angular factors;
+    its normalized parent/child multiplier is
+    (r12/r4)*5^(-alpha)=(-1679/625)*5^(-alpha). This preserves the useful
+    opposite-sign H4/H12 discrimination in normalized P4 thermal channels.
   thermal_odd_D:
-    expression: '(23506/15625)*5^(-13/8)'
+    expression: '(-1679/625)*5^(-13/8)'
+    decimal: '-0.19647793010452894737691277918348770771944832359215'
   thermal_odd_Sprime:
-    expression: '(23506/15625)*5^(-5/4)'
+    expression: '(-1679/625)*5^(-5/4)'
+    decimal: '-0.35923779397013579049741754457928794527727310469610'
+
+norm2_clean_replication_result_from_PR73:
+  status: observed_after_original_freeze_before_this_correction
+  convention: normalized_P4
+  note: >-
+    This result diagnosed the sign-definition error. It is not used to change
+    any exponent. Positive normalized multipliers give the meaningful scores.
+  channel_chi_square_over_2dof:
+    identity_even_S: '0.05872'
+    thermal_odd_D: '4.44798'
+    identity_even_Dprime: '4.68483'
+    thermal_odd_Sprime: '39.98173'
+  joint_chi_square_over_8dof: '76.96645'
+  negative_normalized_sign_control_chi_square_over_8dof: '5595.34'
+  interpretation: >-
+    The clean seed reproduces the specific S-prime radial drift; it does not
+    indicate a generic sign/parity failure. Norm-5 remains the prospective
+    harmonic/radial multiplier test.
 
 primary_statistics:
   type: fixed_residual_not_ratio
-  definition: 'R_X = X_child - fixed_ratio_X * X_parent'
+  definition: 'R_X = P4_child - fixed_positive_ratio_X * P4_parent'
   rationale: >-
     Residuals remain stable when a parent channel is weak; raw ratios are
     descriptive only.
@@ -138,17 +192,19 @@ intrinsic_coordinate_rule:
     full-sample center fixed in the jackknife.
 
 scoring_order:
-  - four_fixed_H4_channel_residuals_individually
-  - joint_four_channel_omnibus
+  - corrected_four_normalized_H4_channel_residuals_individually
+  - corrected_joint_four_channel_omnibus
   - zero_effect_and_sign_only_benchmarks
   - thermal_x14_and_x17_linked_D_plus_Sprime_adversaries_after_primary_x21_score
   - norm5_thermal_H12_adversary_after_primary_H4_score
   - only_then_channel_specific_correction_or_Jordan_models_already_frozen_elsewhere
 
 rules:
-  - exact_Gaussian_genealogy_order
+  - exact_Gaussian_genealogy_order_for_raw_contrasts
+  - size_local_DeltaCos4_for_normalized_projectors
   - no_channel_dropped_by_observed_parent_significance
   - no_independent_derivative_exponent_fit_for_a_fixed_central_radial_competitor
   - norm2_is_replication_not_new_geometry_holdout
-  - norm5_is_prospective_if_target_runs_postdate_this_artifact
+  - norm5_is_prospective_if_target_runs_postdate_this_corrected_artifact
+  - preserve_original_erroneous_artifact_in_git_history_and_document_correction
   - preserve_all_batch_sufficient_statistics_and_failed_scores
