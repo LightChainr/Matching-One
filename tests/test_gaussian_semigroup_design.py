@@ -25,6 +25,14 @@ class GaussianSemigroupDesignTests(unittest.TestCase):
             value.cos4m(3), 4 * value.cos4() ** 3 - 3 * value.cos4()
         )
 
+    def test_smith_invariants_distinguish_equal_area_translation_groups(self) -> None:
+        self.assertEqual(Gaussian(13, 0).smith_invariants(), (13, 13))
+        self.assertFalse(Gaussian(13, 0).cyclic_translation_group)
+        self.assertEqual(Gaussian(12, 5).smith_invariants(), (1, 169))
+        self.assertTrue(Gaussian(12, 5).cyclic_translation_group)
+        with self.assertRaisesRegex(ValueError, "different finite translation groups"):
+            lineage_payload(Gaussian(13, 0), Gaussian(12, 5), Gaussian(1, 1))
+
     def test_doubling_reverses_H4_delta(self) -> None:
         payload = lineage_payload(
             Gaussian(8, 1), Gaussian(7, 4), Gaussian(1, 1)
@@ -36,11 +44,21 @@ class GaussianSemigroupDesignTests(unittest.TestCase):
         self.assertEqual(prediction["child_delta"]["denominator"], 845)
         self.assertEqual(prediction["angular_ratio"]["numerator"], -1)
         self.assertEqual(prediction["angular_ratio"]["denominator"], 1)
+        self.assertEqual(prediction["target_expression"], "(-1/1)*2^(-13/8)")
+        self.assertEqual(payload["radial_factor_expression"], "2^(-13/8)")
         self.assertEqual(
             payload["child"]["first_canonical"]["pair"], [9, 7]
         )
         self.assertEqual(
             payload["child"]["second_canonical"]["pair"], [11, 3]
+        )
+        self.assertEqual(
+            payload["pair_translation_group_contract"]["parent_smith_invariants"],
+            [1, 65],
+        )
+        self.assertEqual(
+            payload["pair_translation_group_contract"]["child_smith_invariants"],
+            [1, 130],
         )
 
     def test_third_doubling_lineage(self) -> None:
@@ -68,6 +86,10 @@ class GaussianSemigroupDesignTests(unittest.TestCase):
                 (-14, 25),
             )
             self.assertEqual(
+                predictions["H4"]["target_expression"],
+                "(-14/25)*5^(-13/8)",
+            )
+            self.assertEqual(
                 (
                     predictions["H8"]["angular_ratio"]["numerator"],
                     predictions["H8"]["angular_ratio"]["denominator"],
@@ -81,6 +103,21 @@ class GaussianSemigroupDesignTests(unittest.TestCase):
                 ),
                 (23506, 15625),
             )
+
+    def test_catalog_designs_preserve_translation_group_within_every_pair(self) -> None:
+        catalog = default_catalog()
+        self.assertEqual(catalog["schema_version"], 3)
+        for section in (
+            "doubling_lineages",
+            "norm5_harmonic_discrimination",
+            "N1105_edges",
+        ):
+            for edge in catalog[section].values():
+                contract = edge["pair_translation_group_contract"]
+                self.assertTrue(contract["parent_pair_matches"])
+                self.assertTrue(contract["child_pair_matches"])
+                self.assertEqual(contract["parent_smith_invariants"][0], 1)
+                self.assertEqual(contract["child_smith_invariants"][0], 1)
 
     def test_N1105_catalog_has_four_orientations(self) -> None:
         catalog = default_catalog()
