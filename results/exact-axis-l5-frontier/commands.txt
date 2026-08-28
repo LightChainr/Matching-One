@@ -1,0 +1,34 @@
+# Base commit: 9c97541ae5cd5abd3e3ea16f05fab97cbbc1ae00 (PR #78)
+
+# Compile the bounded C++17 frontier kernel.
+clang++ -std=c++17 -O3 -DNDEBUG -pthread \
+  scripts/exact_axis_matching_polynomial.cpp \
+  -o results/exact-axis-l5-frontier/bin/exact_axis_matching_polynomial
+
+# Exact L=1..4 coefficient regression against the Python oracle.
+python3 -m unittest discover -s tests \
+  -p 'test_exact_axis_matching_polynomial_cpp.py' -v
+
+# Exhaust all 2^25 axis-L=5 masks on the local 10-core Apple Silicon host.
+/usr/bin/time -lp \
+  results/exact-axis-l5-frontier/bin/exact_axis_matching_polynomial \
+  --L 5 --threads 10 \
+  --json results/exact-axis-l5-frontier/raw/axis_L5_cpp.json
+
+# A separate single-thread run reproduced all primal, matching, Bernstein,
+# and power-basis coefficient arrays exactly (10.0742 seconds kernel time).
+results/exact-axis-l5-frontier/bin/exact_axis_matching_polynomial \
+  --L 5 --threads 1 \
+  --json /private/tmp/axis-L5-one-thread-verification.json
+
+# Score the three frozen PR-78 predictions without refitting.
+python3 scripts/score_axis_l5_zero_predictions.py \
+  --polynomial results/exact-axis-l5-frontier/raw/axis_L5_cpp.json \
+  --pilot results/exact-zero-map-pilot/zero_map.json \
+  --dps 100 \
+  --json results/exact-axis-l5-frontier/score.json \
+  --csv results/exact-axis-l5-frontier/roots.csv \
+  --markdown results/exact-axis-l5-frontier/REPORT.md
+
+# Full branch test suite.
+python3 -m unittest discover -s tests -p 'test*.py' -v
