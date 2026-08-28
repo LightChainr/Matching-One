@@ -1,0 +1,131 @@
+{
+  "all_pass": true,
+  "axis_L3": {
+    "counts": {
+      "d0": 175,
+      "d1": 175,
+      "rank0": 259,
+      "rank1": 162,
+      "rank2": 91
+    },
+    "pass": true,
+    "pr21": {
+      "d0": 175,
+      "d1": 175,
+      "rank0": 259,
+      "rank1": 162,
+      "rank2": 91
+    }
+  },
+  "axis_L3_via_general_period_matrix": {
+    "counts": {
+      "d0": 175,
+      "d1": 175,
+      "rank0": 259,
+      "rank1": 162,
+      "rank2": 91
+    },
+    "pass": true,
+    "pr21": {
+      "d0": 175,
+      "d1": 175,
+      "rank0": 259,
+      "rank1": 162,
+      "rank2": 91
+    }
+  },
+  "basis_change_axis_L3": {
+    "n_config_edge_set_checks": 8192,
+    "n_det_minus_1": 5,
+    "n_det_plus_1": 3,
+    "n_unimodular_matrices": 8,
+    "pass": true,
+    "rng": "random.Random (Mersenne Twister)",
+    "seed": 20260828
+  },
+  "basis_change_diamond_L2": {
+    "n_config_edge_set_checks": 4096,
+    "n_det_minus_1": 5,
+    "n_det_plus_1": 3,
+    "n_unimodular_matrices": 8,
+    "pass": true,
+    "rng": "random.Random (Mersenne Twister)",
+    "seed": 20260828
+  },
+  "basis_change_gaussian_2_1": {
+    "n_config_edge_set_checks": 768,
+    "n_det_minus_1": 5,
+    "n_det_plus_1": 7,
+    "n_unimodular_matrices": 12,
+    "pass": true,
+    "rng": "random.Random (Mersenne Twister)",
+    "seed": 20260828
+  },
+  "diamond_L2": {
+    "counts": {
+      "d0": 81,
+      "d1": 81,
+      "rank0": 143,
+      "rank1": 68,
+      "rank2": 45
+    },
+    "pass": true,
+    "pr21": {
+      "d0": 81,
+      "d1": 81,
+      "rank0": 143,
+      "rank1": 68,
+      "rank2": 45
+    }
+  },
+  "diamond_L2_xy_embedding": {
+    "counts": {
+      "d0": 81,
+      "d1": 81,
+      "rank0": 143,
+      "rank1": 68,
+      "rank2": 45
+    },
+    "pass": true,
+    "pr21": {
+      "d0": 81,
+      "d1": 81,
+      "rank0": 143,
+      "rank1": 68,
+      "rank2": 45
+    }
+  },
+  "gaussian_2_1": {
+    "N": 5,
+    "counts": {
+      "d0": 11,
+      "d1": 11,
+      "rank0": 16,
+      "rank1": 10,
+      "rank2": 6
+    },
+    "expected": {
+      "d0": 11,
+      "d1": 11,
+      "rank0": 16,
+      "rank1": 10,
+      "rank2": 6
+    },
+    "pass": true,
+    "period_matrix": [
+      [
+        2,
+        -1
+      ],
+      [
+        1,
+        2
+      ]
+    ]
+  },
+  "generator_relative_channels_are_basis_dependent": {
+    "note": "direction_0/direction_1/both are generator-relative and are not invariant under shears. Rank, either and cross are.",
+    "pass": true
+  },
+  "wall_time_seconds_regressions": 0.37293437699918286
+}

@@ -1,0 +1,51 @@
+{
+  "queue_id": "C00",
+  "title": "General 2x2 integer-period torus homology engine",
+  "source_commit": "fad82a0fc044c377993c9a0d59aabd772b92fa7c",
+  "source_branch": "agent/c00-general-homology",
+  "base_branch": "server/huawei-analysis-20260828",
+  "pr21_sha": "fad82a0fc044c377993c9a0d59aabd772b92fa7c",
+  "issues": [
+    22,
+    23
+  ],
+  "machine": "cursor (Linux x86_64 KVM, Intel Xeon, 8 cores, 15 GiB RAM)",
+  "hostname": "cursor",
+  "os_kernel": "Linux cursor 6.12.94+ #1 SMP PREEMPT_DYNAMIC Tue Jul 28 22:00:48 UTC 2026 x86_64 GNU/Linux",
+  "os_pretty": "Debian GNU/Linux 13 (trixie)",
+  "compiler_or_interpreter": "CPython 3.13.5 [GCC 14.2.0]; gcc (Debian 14.2.0-19) 14.2.0 present but unused for C00",
+  "dependency_versions": {
+    "python": "3.13.5",
+    "mpmath": "1.4.1",
+    "note": "homology engine uses the Python standard library plus the in-repo geometry/homology modules; mpmath is imported by matched_torus_reference but not required for the C00 stop-gate counts"
+  },
+  "rng_algorithm_if_stochastic": "random.Random (Mersenne Twister) for unimodular-matrix generation only; exhaustive enumerations are deterministic",
+  "rng_seed_or_counter_ranges": "20260828 for all basis-change regressions",
+  "sample_counts": {
+    "axis_L3_configs": 512,
+    "diamond_L2_configs": 256,
+    "gaussian_2_1_configs": 32,
+    "basis_change_unimodular_matrices_axis": 8,
+    "basis_change_unimodular_matrices_diamond": 8,
+    "basis_change_unimodular_matrices_gaussian": 12
+  },
+  "wall_time": {
+    "seconds": 3.299483299255371,
+    "utc_start": "2026-08-28T10:29:59Z",
+    "utc_end": "2026-08-28T10:30:03Z",
+    "asia_shanghai_start": "2026-08-28 18:29:59",
+    "asia_shanghai_end": "2026-08-28 18:30:03",
+    "regression_kernel_seconds": 0.37293437699918286
+  },
+  "thread_or_gpu_configuration": {
+    "threads": 1,
+    "gpu": false,
+    "note": "single-thread CPU exact enumeration; C01 production data was not started"
+  },
+  "stop_gate": "all exhaustive and basis-invariance tests PASS",
+  "c01_started": false,
+  "pr21_axis_diamond_match": true,
+  "negative_results": [
+    "direction_0/direction_1/both are generator-relative and fail invariance under shears; this is required behaviour, not a bug. Rank, either and cross remain invariant."
+  ]
+}

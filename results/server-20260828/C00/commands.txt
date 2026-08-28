@@ -1,0 +1,7 @@
+# C00 commands (run from repository root)
+# Working directory: /workspace/Matching-One-c00
+# Branch: agent/c00-general-homology  (from origin/server/huawei-analysis-20260828 @ fad82a0)
+
+python3 -m unittest tests.test_torus_homology -v
+python3 -m unittest discover -s tests -v
+python3 scripts/run_c00_homology_engine.py --json results/server-20260828/C00/regression.json

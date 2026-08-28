@@ -1,0 +1,30 @@
+id: C00
+priority: P0
+status: ready
+title: General 2x2 integer-period torus and homology engine
+issue: 22
+depends_on: []
+purpose: >-
+  Generalize the PR #21 homology implementation from axis/diamond scalar
+  periods to an arbitrary integer 2x2 period matrix, so all later Gaussian,
+  sheared and modular tori share one correctness path.
+requirements:
+  - period matrix P with nonzero integer determinant
+  - exact winding coefficients via adjugate(P)/det(P), never floating inversion
+  - rank-0/rank-1/rank-2 winding subgroup tracking
+  - generator-relative directional channels
+  - invariance under unimodular period-basis changes
+  - axis and diamond results exactly reproduce existing regressions
+tests:
+  - exhaustive axis L=3
+  - exhaustive diamond L=2
+  - at least one small non-axis Gaussian quotient
+  - random basis-change regression with determinant +/-1 transformations
+outputs:
+  - reusable general topology module
+  - exact regression JSON
+  - state/edge convention documentation
+stop_gate: >-
+  Do not start C01 production data until all exhaustive and basis-invariance
+  tests pass.
+source_queue: experiments/server_compute_queue.yaml on research/second-wave-20260828

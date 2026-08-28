@@ -1,0 +1,204 @@
+python3 -m unittest tests.test_torus_homology -v
+test_axis_l3_exhaustive_channels (tests.test_torus_homology.ExactTinyGeometryTests.test_axis_l3_exhaustive_channels) ... ok
+test_axis_via_general_integer_period_matrix (tests.test_torus_homology.ExactTinyGeometryTests.test_axis_via_general_integer_period_matrix) ... ok
+test_diamond_l2_exhaustive_channels (tests.test_torus_homology.ExactTinyGeometryTests.test_diamond_l2_exhaustive_channels) ... ok
+test_diamond_xy_matches_uv_embedding (tests.test_torus_homology.ExactTinyGeometryTests.test_diamond_xy_matches_uv_embedding) ... ok
+test_gaussian_2_1_exhaustive_channels (tests.test_torus_homology.ExactTinyGeometryTests.test_gaussian_2_1_exhaustive_channels) ... ok
+test_cyclic_labels_and_winding_map (tests.test_torus_homology.GaussianCirculantAgreementTests.test_cyclic_labels_and_winding_map) ... ok
+test_adjugate_winding_is_exact_for_nondiagonal_matrix (tests.test_torus_homology.HomologyUnionFindTests.test_adjugate_winding_is_exact_for_nondiagonal_matrix) ... ok
+test_diagonal_tuple_matches_explicit_matrix (tests.test_torus_homology.HomologyUnionFindTests.test_diagonal_tuple_matches_explicit_matrix) ... ok
+test_rank_and_primitive_spiral_direction (tests.test_torus_homology.HomologyUnionFindTests.test_rank_and_primitive_spiral_direction) ... ok
+test_rejects_cycle_outside_period_lattice (tests.test_torus_homology.HomologyUnionFindTests.test_rejects_cycle_outside_period_lattice) ... ok
+test_axis_l3_random_basis_change (tests.test_torus_homology.UnimodularBasisChangeTests.test_axis_l3_random_basis_change) ... ok
+test_diamond_l2_random_basis_change (tests.test_torus_homology.UnimodularBasisChangeTests.test_diamond_l2_random_basis_change) ... ok
+test_gaussian_2_1_random_basis_change (tests.test_torus_homology.UnimodularBasisChangeTests.test_gaussian_2_1_random_basis_change) ... ok
+test_shear_changes_generator_relative_channels_but_not_rank (tests.test_torus_homology.UnimodularBasisChangeTests.test_shear_changes_generator_relative_channels_but_not_rank) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.566s
+
+OK
+python3 -m unittest discover -s tests -v
+test_covariance_and_pilot_frozen_evaluation (test_control_variate_estimator.MinimumVarianceTests.test_covariance_and_pilot_frozen_evaluation) ... ok
+test_known_diagonal_solution (test_control_variate_estimator.MinimumVarianceTests.test_known_diagonal_solution) ... ok
+test_large_covariance_does_not_use_absolute_normalizer_cutoff (test_control_variate_estimator.MinimumVarianceTests.test_large_covariance_does_not_use_absolute_normalizer_cutoff) ... ok
+test_requires_independent_evaluation_sample_size (test_control_variate_estimator.MinimumVarianceTests.test_requires_independent_evaluation_sample_size) ... ok
+test_singular_covariance_is_regularized (test_control_variate_estimator.MinimumVarianceTests.test_singular_covariance_is_regularized) ... ok
+test_tiny_covariance_uses_relative_pivot_tolerance (test_control_variate_estimator.MinimumVarianceTests.test_tiny_covariance_uses_relative_pivot_tolerance) ... ok
+test_default_grid_has_all_54_unique_jobs (test_finite_size_toolchain.GridRunnerTests.test_default_grid_has_all_54_unique_jobs) ... ok
+test_resume_requires_matching_metadata_and_causal_folds (test_finite_size_toolchain.GridRunnerTests.test_resume_requires_matching_metadata_and_causal_folds) ... ok
+test_final_tail_cannot_affect_selection (test_finite_size_toolchain.TrainingOnlySummaryTests.test_final_tail_cannot_affect_selection) ... ok
+test_exact_self_test (test_pell_matching_mc.PellMatchingMCTest.test_exact_self_test) ... ok
+test_simulation_is_reproducible_and_analyzable (test_pell_matching_mc.PellMatchingMCTest.test_simulation_is_reproducible_and_analyzable) ... completed batch 1/4
+completed batch 2/4
+completed batch 3/4
+completed batch 4/4
+wrote "/tmp/tmp60a1qxbn/run_a.batches.csv"
+wrote "/tmp/tmp60a1qxbn/run_a.metadata.json"
+elapsed_seconds=0.000809964
+completed batch 1/4
+completed batch 2/4
+completed batch 3/4
+completed batch 4/4
+wrote "/tmp/tmp60a1qxbn/run_b.batches.csv"
+wrote "/tmp/tmp60a1qxbn/run_b.metadata.json"
+elapsed_seconds=0.000796203
+axis_linear_root: 0.598108108108 +/- 0.00426
+diamond_linear_root: 0.610540540541 +/- 0.00338
+orientation_root_gap_diamond_minus_axis: 0.0124324324324 +/- 0.0044
+simple_mean_root: 0.604324324324 +/- 0.00315
+L4_weighted_root: 0.603595526561 +/- 0.00323
+wrote /tmp/tmp60a1qxbn/analysis.json
+wrote /tmp/tmp60a1qxbn/analysis.csv
+ok
+test_axis_l3_exhaustive_channels (test_torus_homology.ExactTinyGeometryTests.test_axis_l3_exhaustive_channels) ... ok
+test_axis_via_general_integer_period_matrix (test_torus_homology.ExactTinyGeometryTests.test_axis_via_general_integer_period_matrix) ... ok
+test_diamond_l2_exhaustive_channels (test_torus_homology.ExactTinyGeometryTests.test_diamond_l2_exhaustive_channels) ... ok
+test_diamond_xy_matches_uv_embedding (test_torus_homology.ExactTinyGeometryTests.test_diamond_xy_matches_uv_embedding) ... ok
+test_gaussian_2_1_exhaustive_channels (test_torus_homology.ExactTinyGeometryTests.test_gaussian_2_1_exhaustive_channels) ... ok
+test_cyclic_labels_and_winding_map (test_torus_homology.GaussianCirculantAgreementTests.test_cyclic_labels_and_winding_map) ... ok
+test_adjugate_winding_is_exact_for_nondiagonal_matrix (test_torus_homology.HomologyUnionFindTests.test_adjugate_winding_is_exact_for_nondiagonal_matrix) ... ok
+test_diagonal_tuple_matches_explicit_matrix (test_torus_homology.HomologyUnionFindTests.test_diagonal_tuple_matches_explicit_matrix) ... ok
+test_rank_and_primitive_spiral_direction (test_torus_homology.HomologyUnionFindTests.test_rank_and_primitive_spiral_direction) ... ok
+test_rejects_cycle_outside_period_lattice (test_torus_homology.HomologyUnionFindTests.test_rejects_cycle_outside_period_lattice) ... ok
+test_axis_l3_random_basis_change (test_torus_homology.UnimodularBasisChangeTests.test_axis_l3_random_basis_change) ... ok
+test_diamond_l2_random_basis_change (test_torus_homology.UnimodularBasisChangeTests.test_diamond_l2_random_basis_change) ... ok
+test_gaussian_2_1_random_basis_change (test_torus_homology.UnimodularBasisChangeTests.test_gaussian_2_1_random_basis_change) ... ok
+test_shear_changes_generator_relative_channels_but_not_rank (test_torus_homology.UnimodularBasisChangeTests.test_shear_changes_generator_relative_channels_but_not_rank) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 2.077s
+
+OK
+python3 scripts/run_c00_homology_engine.py --json results/server-20260828/C00/regression.json
+{
+  "all_pass": true,
+  "axis_L3": {
+    "counts": {
+      "d0": 175,
+      "d1": 175,
+      "rank0": 259,
+      "rank1": 162,
+      "rank2": 91
+    },
+    "pass": true,
+    "pr21": {
+      "d0": 175,
+      "d1": 175,
+      "rank0": 259,
+      "rank1": 162,
+      "rank2": 91
+    }
+  },
+  "axis_L3_via_general_period_matrix": {
+    "counts": {
+      "d0": 175,
+      "d1": 175,
+      "rank0": 259,
+      "rank1": 162,
+      "rank2": 91
+    },
+    "pass": true,
+    "pr21": {
+      "d0": 175,
+      "d1": 175,
+      "rank0": 259,
+      "rank1": 162,
+      "rank2": 91
+    }
+  },
+  "basis_change_axis_L3": {
+    "n_config_edge_set_checks": 8192,
+    "n_det_minus_1": 5,
+    "n_det_plus_1": 3,
+    "n_unimodular_matrices": 8,
+    "pass": true,
+    "rng": "random.Random (Mersenne Twister)",
+    "seed": 20260828
+  },
+  "basis_change_diamond_L2": {
+    "n_config_edge_set_checks": 4096,
+    "n_det_minus_1": 5,
+    "n_det_plus_1": 3,
+    "n_unimodular_matrices": 8,
+    "pass": true,
+    "rng": "random.Random (Mersenne Twister)",
+    "seed": 20260828
+  },
+  "basis_change_gaussian_2_1": {
+    "n_config_edge_set_checks": 768,
+    "n_det_minus_1": 5,
+    "n_det_plus_1": 7,
+    "n_unimodular_matrices": 12,
+    "pass": true,
+    "rng": "random.Random (Mersenne Twister)",
+    "seed": 20260828
+  },
+  "diamond_L2": {
+    "counts": {
+      "d0": 81,
+      "d1": 81,
+      "rank0": 143,
+      "rank1": 68,
+      "rank2": 45
+    },
+    "pass": true,
+    "pr21": {
+      "d0": 81,
+      "d1": 81,
+      "rank0": 143,
+      "rank1": 68,
+      "rank2": 45
+    }
+  },
+  "diamond_L2_xy_embedding": {
+    "counts": {
+      "d0": 81,
+      "d1": 81,
+      "rank0": 143,
+      "rank1": 68,
+      "rank2": 45
+    },
+    "pass": true,
+    "pr21": {
+      "d0": 81,
+      "d1": 81,
+      "rank0": 143,
+      "rank1": 68,
+      "rank2": 45
+    }
+  },
+  "gaussian_2_1": {
+    "N": 5,
+    "counts": {
+      "d0": 11,
+      "d1": 11,
+      "rank0": 16,
+      "rank1": 10,
+      "rank2": 6
+    },
+    "expected": {
+      "d0": 11,
+      "d1": 11,
+      "rank0": 16,
+      "rank1": 10,
+      "rank2": 6
+    },
+    "pass": true,
+    "period_matrix": [
+      [
+        2,
+        -1
+      ],
+      [
+        1,
+        2
+      ]
+    ]
+  },
+  "generator_relative_channels_are_basis_dependent": {
+    "note": "direction_0/direction_1/both are generator-relative and are not invariant under shears. Rank, either and cross are.",
+    "pass": true
+  },
+  "wall_time_seconds_regressions": 0.37293437699918286
+}

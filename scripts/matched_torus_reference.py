@@ -2,14 +2,21 @@
 """Reference checker for the finite square/matching-lattice identity.
 
 This is intentionally a correctness-first implementation, not a production
-Monte Carlo kernel. It supports two periodic quotients of Z^2:
+Monte Carlo kernel. It supports periodic quotients of Z^2 given by a 2x2
+integer period matrix P with nonzero determinant.  Two named special cases
+recover the PR #21 regressions:
 
 axis:
-    periods (L, 0), (0, L), N=L^2 sites.
+    columns (L, 0), (0, L), N=L^2 sites.
 
 diamond:
-    periods (L, L), (-L, L), N=2 L^2 sites. The two periods have physical
-    length sqrt(2) L and are rotated by pi/4 relative to the lattice axes.
+    stored in u=x+y, v=y-x coordinates with diagonal periods 2L, which is
+    equivalent to xy periods (L, L), (-L, L).  N=2 L^2 sites.  The two
+    periods have physical length sqrt(2) L and are rotated by pi/4 relative
+    to the lattice axes.
+
+General and Gaussian quotients use the same homology engine: windings are
+the exact integer solution of P w = d via adj(P)/det(P).
 
 For black sites use nearest-neighbour square connectivity. For the white
 complement use the NN+NNN matching lattice. The program checks
@@ -33,7 +40,17 @@ import math
 import random
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Iterable
+from typing import Iterable, Sequence
+
+from torus_homology import (
+    PeriodMatrix,
+    coerce_period_matrix,
+    determinant,
+    fundamental_domain_sites,
+    gaussian_period_matrix,
+    reduce_by_period_matrix,
+    winding_coefficients,
+)
 
 import mpmath as mp
 
@@ -54,6 +71,7 @@ class Geometry:
     primal_edges: tuple[Edge, ...]
     matching_edges: tuple[Edge, ...]
     physical_period: str
+    period_matrix: PeriodMatrix
 
     @property
     def n(self) -> int:
@@ -132,6 +150,23 @@ def _make_edges(
     return tuple(edges)
 
 
+def _make_edges_period_matrix(
+    coordinates: Sequence[tuple[int, int]],
+    ids: dict[tuple[int, int], int],
+    period_matrix: PeriodMatrix,
+    vectors: Iterable[tuple[int, int]],
+) -> tuple[Edge, ...]:
+    """Build cover-displaced edges on an arbitrary integer-period torus."""
+
+    matrix = coerce_period_matrix(period_matrix)
+    edges: list[Edge] = []
+    for i, (x, y) in enumerate(coordinates):
+        for dx, dy in vectors:
+            target = reduce_by_period_matrix(x + dx, y + dy, matrix)
+            edges.append(Edge(i=i, j=ids[target], dx=dx, dy=dy))
+    return tuple(edges)
+
+
 def axis_geometry(L: int) -> Geometry:
     if L <= 0:
         raise ValueError("L must be positive")
@@ -157,6 +192,7 @@ def axis_geometry(L: int) -> Geometry:
         primal_edges=primal,
         matching_edges=matching,
         physical_period=f"{L}",
+        period_matrix=((L, 0), (0, L)),
     )
 
 
@@ -197,6 +233,80 @@ def diamond_geometry(L: int) -> Geometry:
         coordinates=tuple(coordinates),
         primal_edges=primal,
         matching_edges=matching,
+        physical_period=f"sqrt(2)*{L}",
+        period_matrix=((2 * L, 0), (0, 2 * L)),
+    )
+
+
+PRIMAL_VECTORS = ((1, 0), (0, 1))
+MATCHING_VECTORS = ((1, 0), (0, 1), (1, 1), (1, -1))
+
+
+def integer_period_geometry(
+    period_matrix: PeriodMatrix,
+    *,
+    name: str = "integer",
+    L: int | None = None,
+    physical_period: str | None = None,
+) -> Geometry:
+    """Square/matching-lattice quotient by an arbitrary 2x2 integer period matrix.
+
+    Sites are the unique Z^2 points of the half-open parallelogram of P.
+    Each stored edge keeps its unreduced lattice step as the universal-cover
+    displacement; the destination index is the reduced representative.
+    """
+
+    matrix = coerce_period_matrix(period_matrix)
+    det = determinant(matrix)
+    coordinates = list(fundamental_domain_sites(matrix))
+    ids = {coordinate: i for i, coordinate in enumerate(coordinates)}
+    primal = _make_edges_period_matrix(coordinates, ids, matrix, PRIMAL_VECTORS)
+    matching = _make_edges_period_matrix(coordinates, ids, matrix, MATCHING_VECTORS)
+    if L is None:
+        L = abs(det)
+    if physical_period is None:
+        physical_period = f"|detP|={abs(det)}"
+    return Geometry(
+        name=name,
+        L=L,
+        coordinates=tuple(coordinates),
+        primal_edges=primal,
+        matching_edges=matching,
+        physical_period=physical_period,
+        period_matrix=matrix,
+    )
+
+
+def gaussian_geometry(a: int, b: int) -> Geometry:
+    """Primitive or non-primitive Gaussian square torus with columns (a,b), (-b,a)."""
+
+    if a <= 0 or b < 0:
+        raise ValueError("require a>0 and b>=0")
+    matrix = gaussian_period_matrix(a, b)
+    n = abs(determinant(matrix))
+    if n == 0:
+        raise ValueError("Gaussian period matrix must have nonzero determinant")
+    if winding_coefficients(a, b, matrix) != (1, 0):
+        raise RuntimeError("generator 0 does not have winding (1, 0)")
+    if winding_coefficients(-b, a, matrix) != (0, 1):
+        raise RuntimeError("generator 1 does not have winding (0, 1)")
+    return integer_period_geometry(
+        matrix,
+        name="gaussian",
+        L=n,
+        physical_period=f"sqrt({n})",
+    )
+
+
+def diamond_xy_geometry(L: int) -> Geometry:
+    """Diamond torus in original xy coordinates, periods (L,L) and (-L,L)."""
+
+    if L <= 0:
+        raise ValueError("L must be positive")
+    return integer_period_geometry(
+        ((L, -L), (L, L)),
+        name="diamond-xy",
+        L=L,
         physical_period=f"sqrt(2)*{L}",
     )
 
