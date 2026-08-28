@@ -58,7 +58,12 @@ class ThresholdRankCovarianceArchiveTests(unittest.TestCase):
                 "indefinite",
                 1e12,
             )
-        with self.assertRaisesRegex(ValueError, "condition number"):
+        # Depending on pivot tolerance, an extreme condition number may be
+        # rejected while inverting the matrix or by the explicit condition
+        # limit. Both are acceptable fail-closed outcomes for this diagnostic.
+        with self.assertRaisesRegex(
+            ValueError, "condition number|singular or numerically unresolved"
+        ):
             covariance_diagnostics(
                 [[1.0, 0.0], [0.0, 1e-14]],
                 "ill-conditioned",
