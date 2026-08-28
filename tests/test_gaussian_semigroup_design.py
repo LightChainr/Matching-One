@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from collections import Counter
 from fractions import Fraction
 from pathlib import Path
 import sys
@@ -14,6 +15,11 @@ from gaussian_semigroup_design import (  # noqa: E402
     default_catalog,
     lineage_payload,
 )
+
+
+def _ratio(prediction):
+    payload = prediction["angular_ratio"]
+    return Fraction(payload["numerator"], payload["denominator"])
 
 
 class GaussianSemigroupDesignTests(unittest.TestCase):
@@ -104,6 +110,33 @@ class GaussianSemigroupDesignTests(unittest.TestCase):
                 (23506, 15625),
             )
 
+    def test_angular_ratios_compose_exactly_under_gaussian_multiplication(self) -> None:
+        first = Gaussian(8, 1)
+        second = Gaussian(7, 4)
+        multiplier_1 = Gaussian(1, 1)
+        multiplier_2 = Gaussian(2, -1)
+
+        first_step = lineage_payload(first, second, multiplier_1)
+        intermediate_first = first.multiply(multiplier_1)
+        intermediate_second = second.multiply(multiplier_1)
+        second_step = lineage_payload(
+            intermediate_first, intermediate_second, multiplier_2
+        )
+        direct = lineage_payload(
+            first, second, multiplier_1.multiply(multiplier_2)
+        )
+
+        self.assertEqual(
+            direct["norm_ratio"],
+            first_step["norm_ratio"] * second_step["norm_ratio"],
+        )
+        for harmonic in ("H4", "H8", "H12"):
+            self.assertEqual(
+                _ratio(direct["harmonic_predictions"][harmonic]),
+                _ratio(first_step["harmonic_predictions"][harmonic])
+                * _ratio(second_step["harmonic_predictions"][harmonic]),
+            )
+
     def test_catalog_designs_preserve_translation_group_within_every_pair(self) -> None:
         catalog = default_catalog()
         self.assertEqual(catalog["schema_version"], 3)
@@ -130,6 +163,25 @@ class GaussianSemigroupDesignTests(unittest.TestCase):
         self.assertEqual(
             orientations,
             {(33, 4), (32, 9), (31, 12), (24, 23)},
+        )
+
+    def test_N1105_commuting_diagram_has_three_genealogies_per_orientation(self) -> None:
+        catalog = default_catalog()
+        multiplicity = Counter()
+        for edge in catalog["N1105_edges"].values():
+            multiplicity[tuple(edge["child"]["first_canonical"]["pair"])] += 1
+            multiplicity[tuple(edge["child"]["second_canonical"]["pair"])] += 1
+
+        self.assertEqual(
+            multiplicity,
+            Counter(
+                {
+                    (33, 4): 3,
+                    (32, 9): 3,
+                    (31, 12): 3,
+                    (24, 23): 3,
+                }
+            ),
         )
 
 
