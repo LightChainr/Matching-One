@@ -22,9 +22,11 @@ covariance_contract:
     estimator: aligned_delete_one_jackknife
   target_groups:
     - sizes: [325]
+      reason: disjoint_counter_intervals
+      estimator: within_run_delete_one_jackknife
     - sizes: [425]
-    reason: disjoint_counter_intervals
-    estimator: within_run_delete_one_jackknife
+      reason: disjoint_counter_intervals
+      estimator: within_run_delete_one_jackknife
   propagation: exact_linear_residual_map
   diagonal_sensitivity: required
   warning: equal_batch_labels_do_not_imply_cross_run_covariance
