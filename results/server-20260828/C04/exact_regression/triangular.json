@@ -1,0 +1,163 @@
+{
+  "estimator": "p=1/2 Bernoulli score with wrapping-difference observable",
+  "implemented_models": [
+    "square_bond_square_torus",
+    "triangular_site_rhombic_torus"
+  ],
+  "platform": "Linux-5.10.0-182.0.0.95.r3582_286.hce2.aarch64-aarch64-with-glibc2.34",
+  "python": "3.9.9",
+  "random_generator": "Python random.Random (MT19937), independent SplitMix64 block seeds",
+  "results": [
+    {
+      "L": 2,
+      "bernoulli_variables": 4,
+      "configurations": 16,
+      "edge_convention": "triangular basis with positive undirected steps (1,0),(0,1),(1,-1); periodic lifted duplicates retained",
+      "exact": {
+        "first_derivative": "3/1",
+        "kappa3": "-8/9",
+        "mean_observable": "0/1",
+        "third_derivative": "-24/1"
+      },
+      "exact_threshold": "1/2",
+      "first_derivative": 3.0,
+      "jackknife": null,
+      "kappa3": -0.8888888888888888,
+      "mean_observable": 0.0,
+      "mode": "exact",
+      "model": "triangular_site_rhombic_torus",
+      "observable": "black_site_wrap_minus_complementary_white_site_wrap",
+      "p": 0.5,
+      "per_configuration_score_covariance_matrix": [
+        [
+          7.0,
+          72.0
+        ],
+        [
+          72.0,
+          8640.0
+        ]
+      ],
+      "per_configuration_score_variance": {
+        "first": 7.0,
+        "first_third_covariance": 72.0,
+        "third": 8640.0
+      },
+      "period_basis_lattice_coordinates": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "third_derivative": -24.0,
+      "torus_shape": "60_degree_rhombus",
+      "vertices": 4
+    },
+    {
+      "L": 3,
+      "bernoulli_variables": 9,
+      "configurations": 512,
+      "edge_convention": "triangular basis with positive undirected steps (1,0),(0,1),(1,-1); periodic lifted duplicates retained",
+      "exact": {
+        "first_derivative": "261/64",
+        "kappa3": "-2424832/1975509",
+        "mean_observable": "0/1",
+        "third_derivative": "-333/4"
+      },
+      "exact_threshold": "1/2",
+      "first_derivative": 4.078125,
+      "jackknife": null,
+      "kappa3": -1.227446698547058,
+      "mean_observable": 0.0,
+      "mode": "exact",
+      "model": "triangular_site_rhombic_torus",
+      "observable": "black_site_wrap_minus_complementary_white_site_wrap",
+      "p": 0.5,
+      "per_configuration_score_covariance_matrix": [
+        [
+          16.837646484375,
+          542.00390625
+        ],
+        [
+          542.00390625,
+          169757.4375
+        ]
+      ],
+      "per_configuration_score_variance": {
+        "first": 16.837646484375,
+        "first_third_covariance": 542.00390625,
+        "third": 169757.4375
+      },
+      "period_basis_lattice_coordinates": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "third_derivative": -83.25,
+      "torus_shape": "60_degree_rhombus",
+      "vertices": 9
+    },
+    {
+      "L": 4,
+      "bernoulli_variables": 16,
+      "configurations": 65536,
+      "edge_convention": "triangular basis with positive undirected steps (1,0),(0,1),(1,-1); periodic lifted duplicates retained",
+      "exact": {
+        "first_derivative": "5147/1024",
+        "kappa3": "-186000605184/136352311523",
+        "mean_observable": "0/1",
+        "third_derivative": "-22173/128"
+      },
+      "exact_threshold": "1/2",
+      "first_derivative": 5.0263671875,
+      "jackknife": null,
+      "kappa3": -1.3641177263989785,
+      "mean_observable": 0.0,
+      "mode": "exact",
+      "model": "triangular_site_rhombic_torus",
+      "observable": "black_site_wrap_minus_complementary_white_site_wrap",
+      "p": 0.5,
+      "per_configuration_score_covariance_matrix": [
+        [
+          31.56375789642334,
+          1758.325309753418
+        ],
+        [
+          1758.325309753418,
+          1134061.5580444336
+        ]
+      ],
+      "per_configuration_score_variance": {
+        "first": 31.56375789642334,
+        "first_third_covariance": 1758.325309753418,
+        "third": 1134061.5580444336
+      },
+      "period_basis_lattice_coordinates": [
+        [
+          4,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "third_derivative": -173.2265625,
+      "torus_shape": "60_degree_rhombus",
+      "vertices": 16
+    }
+  ],
+  "schema_version": 1,
+  "unimplemented_models": [
+    "union_jack_site_square_torus"
+  ]
+}

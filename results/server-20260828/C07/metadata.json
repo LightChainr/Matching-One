@@ -1,0 +1,18 @@
+{
+  "queue_id": "C07",
+  "stage": "A",
+  "source_branch": "server/huawei-analysis-20260828",
+  "source_base_commit": "107ddc948c8ae8e5c8a30549c9b123ac9be091b7",
+  "source_state_note": "The rational audit source and these results were added in the working tree immediately after the base commit and are committed together in this pull request.",
+  "input": "data/jacobsen_2015_square_site_cylinder.csv",
+  "knowledge_cutoff": 18,
+  "heldout_targets": [19, 20, 21],
+  "precision_decimal_digits": 100,
+  "selection_rules": ["median rolling RMSE", "worst rolling RMSE"],
+  "minimum_validation_folds": 2,
+  "host": "Apple arm64",
+  "os_kernel": "Darwin 25.5.0",
+  "interpreter": "Python 3.13.7",
+  "dependencies": {"mpmath": "1.4.1"},
+  "stochastic": false
+}

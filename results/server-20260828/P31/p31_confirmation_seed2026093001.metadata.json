@@ -1,0 +1,26 @@
+{
+  "engine": "same-N Gaussian site-orientation discovery",
+  "generated_utc": "2026-08-28T11:18:10Z",
+  "git_commit": "34b1824",
+  "command": "build/gaussian_orientation_mc --samples 100000000 --batches 100 --p-ref 0.592746050790 --seed 2026093001 --replica-offset 1000000000 --threads 16 --git-commit 34b1824 --output-prefix results/p31_confirmation_seed2026093001",
+  "compiler": "10.3.1",
+  "openmp": true,
+  "threads_requested": 16,
+  "samples_per_pair": 100000000,
+  "batches": 100,
+  "p_ref": 0.59274605078999998,
+  "seed": 2026093001,
+  "replica_counter_first": 1000000000,
+  "replica_counter_last_exclusive": 1100000000,
+  "rng": "stateless SplitMix64-derived mapping (seed,N,replica,cyclic-site)",
+  "coupling": "same cyclic labels j in Z/NZ share U_j across representations",
+  "channels": ["cross", "both", "either", "direction_0", "direction_1"],
+  "elapsed_seconds": 525.78075283400005,
+  "designs": [
+    {"N": 65, "first": [8,1], "second": [7,4], "theta_first": 0.12435499454676144, "theta_second": 0.51914611424652291, "cos4_first": 0.87881656804733732, "cos4_second": -0.48449704142011818},
+    {"N": 85, "first": [9,2], "second": [7,6], "theta_first": 0.21866894587394195, "theta_second": 0.70862627212767026, "cos4_first": 0.64124567474048444, "cos4_second": -0.95321799307958477},
+    {"N": 130, "first": [11,3], "second": [9,7], "theta_first": 0.26625204915092537, "theta_second": 0.66104316885068692, "cos4_first": 0.48449704142011829, "cos4_second": -0.87881656804733732},
+    {"N": 145, "first": [12,1], "second": [9,8], "theta_first": 0.083141231888441233, "theta_second": 0.72664234068172562, "cos4_first": 0.94520808561236624, "cos4_second": -0.97250891795481564},
+    {"N": 170, "first": [13,1], "second": [11,7], "theta_first": 0.076771891269778042, "theta_second": 0.56672921752350636, "cos4_first": 0.95321799307958477, "cos4_second": -0.64124567474048444}
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "queue_id": "P34",
+  "title": "Euler and motif control variates (replace wrapping GLS)",
+  "supersedes": "C03 wrapping-only GLS",
+  "source_commit": "28fd1d872f97a83c6ddd59bde996dae2343d3c77",
+  "source_branch": "agent/p34-euler-motif",
+  "source_base_commit": "28fd1d872f97a83c6ddd59bde996dae2343d3c77",
+  "source_state_note": "P34 Euler/motif source was present in the working tree during the run and is committed with these results.",
+  "machine": "8-core Intel Xeon (KVM), 16 GiB RAM, x86_64, no GPU",
+  "os_kernel": "Debian GNU/Linux 13 (trixie), Linux 6.12.94+",
+  "compiler_or_interpreter": {
+    "cxx": "14.2.0",
+    "python": "3.13.5",
+    "openmp": true
+  },
+  "dependency_versions": {
+    "mpmath": "1.4.1"
+  },
+  "rng_algorithm_if_stochastic": "stateless SplitMix64-derived mapping (seed,N,replica,cyclic-site)",
+  "rng_seed_or_counter_ranges": {
+    "seed": 20260834,
+    "replica_counter_first": 0,
+    "replica_counter_last_exclusive": 1000000,
+    "note": "same counter range is independent across N because the counter key includes N"
+  },
+  "sample_counts": {
+    "exhaustive": {
+      "axis_L2": 16,
+      "axis_L3": 512,
+      "gaussian-2-1": 32,
+      "diamond_L2": 256
+    },
+    "mc_per_size": 1000000,
+    "pilot_replicas": 200000,
+    "evaluation_replicas": 800000,
+    "batches": 50,
+    "pilot_fraction": 0.2
+  },
+  "wall_time": {
+    "N65_seconds": 2.054179043,
+    "N85_seconds": 2.64622114,
+    "mc_total_seconds": 4.700400183,
+    "timezone": "times above are process elapsed; generated_utc is UTC"
+  },
+  "thread_or_gpu_configuration": {
+    "openmp_threads": 8,
+    "gpu": false,
+    "gpu_started": false
+  },
+  "p_ref": "0.592746050790",
+  "identity_status": "PASS",
+  "gpu_gate": {
+    "threshold": 2.0,
+    "started_gpu": false,
+    "per_geometry": [
+      {
+        "N": 65,
+        "geometry": "first",
+        "a": 8,
+        "b": 1,
+        "vr_vs_best_single": 2.3446851625876333,
+        "passes_2x": true
+      },
+      {
+        "N": 65,
+        "geometry": "second",
+        "a": 7,
+        "b": 4,
+        "vr_vs_best_single": 2.341476087244388,
+        "passes_2x": true
+      },
+      {
+        "N": 85,
+        "geometry": "first",
+        "a": 9,
+        "b": 2,
+        "vr_vs_best_single": 2.1638331587545716,
+        "passes_2x": true
+      },
+      {
+        "N": 85,
+        "geometry": "second",
+        "a": 7,
+        "b": 6,
+        "vr_vs_best_single": 2.1608098261667235,
+        "passes_2x": true
+      }
+    ],
+    "sizes_with_vr_at_least_2x": [
+      65,
+      85
+    ],
+    "gate_pass": true
+  }
+}

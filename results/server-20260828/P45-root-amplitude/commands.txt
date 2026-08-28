@@ -1,0 +1,6 @@
+g++ -O3 -std=c++17 -fopenmp src/threshold_rank_orientation_mc.cpp -o /workspace/rootamp-build-6d2d68a/threshold_rank_orientation_mc
+
+# Run concurrently for N=65 and N=85 with eight threads per process.
+/workspace/rootamp-build-6d2d68a/threshold_rank_orientation_mc --samples 100000000 --batches 100 --seed 2026104501 --replica-offset 5000000000 --threads 8 --n N --git-commit 6d2d68a62b433e337b97eadaf1870cb58e2f7666 --output-prefix /workspace/rootamp-results-20260828/nN
+
+python3 scripts/score_angular_root_amplitude.py --histograms results/server-20260828/P45-root-amplitude/n65.hist.csv results/server-20260828/P45-root-amplitude/n85.hist.csv --moments results/server-20260828/P45-root-amplitude/n65.moments.csv results/server-20260828/P45-root-amplitude/n85.moments.csv --metadata results/server-20260828/P45-root-amplitude/n65.metadata.json results/server-20260828/P45-root-amplitude/n85.metadata.json --p 0.592746050790 --dps 80 --prediction 0.4510066187069702 --prediction-se 0.02013371335254959 --source-commit 6d2d68a62b433e337b97eadaf1870cb58e2f7666 --source-sha256 251d1e7a74cb778ad38a11c6d5b79e86dc79701c0fff077af7f7bbf5109deefa --binary-sha256 1f918e8cd51f3ff8a5ec88eee6aac3a358d70da98086d18803bc583064901cbf --json results/server-20260828/P45-root-amplitude/score.json --csv results/server-20260828/P45-root-amplitude/score.csv
