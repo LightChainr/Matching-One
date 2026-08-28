@@ -1,0 +1,135 @@
+version: 1
+frozen_at: 2026-08-28
+status: frozen_before_N325_N425_targets
+claim_level: C0
+issue: 138
+related_issues: [48, 57, 64]
+purpose: >-
+  Use the same-parent norm-2 and norm-5 Gaussian descendants to discriminate
+  the functional form of the scaled P4[S'] correction without fitting the
+  leading amplitude or correction amplitude. This artifact is complementary
+  to p48_sprime_multiplier_correction_discrimination_20260828.yaml: that
+  artifact transfers source-fitted A/B models, while this one eliminates A/B
+  analytically and tests only the scale-cocycle shape.
+
+observable:
+  name: P4_S_prime
+  definition: "P4[S'] = DeltaS' / DeltaCos4 at each size"
+  leading_exponent_alpha_in_N: '5/4'
+  scaled_observable: "Y(N) = N^(5/4) * P4[S'](N)"
+  note: >-
+    The size-local P4 normalization removes the H4 angular transfer factor.
+    The statistic below therefore compares only the radial/correction form.
+
+lineages:
+  - parent_N: 65
+    norm2_child_N: 130
+    norm2_multiplier: [1, 1]
+    norm5_child_N: 325
+    norm5_multiplier: [2, -1]
+  - parent_N: 85
+    norm2_child_N: 170
+    norm2_multiplier: [1, 1]
+    norm5_child_N: 425
+    norm5_multiplier: [2, 1]
+
+statistic:
+  conceptual_ratio: >-
+    C_5_given_2(N) = (Y(5N)-Y(N)) / (Y(2N)-Y(N)).
+  preferred_linear_residual: >-
+    R_c(N) = (Y(5N)-Y(N)) - c*(Y(2N)-Y(N))
+           = Y(5N) - c*Y(2N) + (c-1)*Y(N).
+  covariance: >-
+    Score the linear residual with the full covariance of the three Y values.
+    Do not form a literal ratio as the primary statistic when the norm-2
+    increment is noisy.
+
+models:
+  q2_ordinary_rg:
+    chronology: first_correction_model
+    equation: "Y(N)=A+C*N^(-1)"
+    relative_length_q: '2'
+    beta_in_N: '1'
+    c_exact: '8/5'
+    c_decimal: '1.6'
+  jordan_rank2:
+    chronology: second_correction_model
+    equation: "Y(N)=A+B*log(N)"
+    c_exact: 'log(5)/log(2)'
+    c_decimal: '2.3219280948873623478703194294893901758648313930246'
+  generic_percolation_q3over2:
+    chronology: secondary_literature_motivated_adversary
+    equation: "Y(N)=A+C*N^(-3/4)"
+    relative_length_q: '3/2'
+    beta_in_N: '3/4'
+    c_exact: '(5^(-3/4)-1)/(2^(-3/4)-1)'
+    c_decimal: '1.7289994935219695'
+    motivation: >-
+      Xu et al. (Phys. Rev. E 111, 034108, 2025) derive the percolation
+      cluster-size correction exponent Omega=72/91. Combining with fractal
+      dimension D=91/48 gives a length correction omega=D*Omega=3/2. This
+      does not assert that the field couples to P4[S']; it is a fixed
+      leakage adversary if a generic percolation correction enters this sector.
+  q1:
+    relative_length_q: '1'
+    beta_in_N: '1/2'
+    c_decimal: '1.8873308393395039'
+  q3:
+    relative_length_q: '3'
+    beta_in_N: '3/2'
+    c_decimal: '1.4085575941618267'
+  q4:
+    relative_length_q: '4'
+    beta_in_N: '2'
+    c_decimal: '1.28'
+  q6:
+    relative_length_q: '6'
+    beta_in_N: '3'
+    c_decimal: '1.1337142857142857'
+
+scoring_order:
+  - >-
+    Preserve the existing P48 chronology on N185/N265; this artifact does not
+    reorder the pure/zero/q2/Jordan primary score there.
+  - >-
+    For the new semigroup-curvature statistic after N325/N425 reveal, report
+    q=2 first, then rank-2 Jordan, then the q=3/2 literature adversary and
+    other fixed powers.
+  - >-
+    Use both parent triples N=65 and N=85 and retain their covariance-aware
+    residual vector. Do not drop a lineage by observed significance.
+  - >-
+    Only after all frozen residuals are reported may a free beta or a mixture
+    of power and logarithm be fit to these same points.
+
+optional_norm10_extension:
+  purpose: >-
+    If N/2N/5N curvature remains ambiguous, a norm-10 product child turns the
+    scale test into a mixed-difference/Jordan-rank diagnostic.
+  multipliers:
+    example_product: "(1+i)*(2-i)=3+i"
+    Q: 10
+  suggested_children:
+    - [65, 650]
+    - [85, 850]
+  mixed_difference: >-
+    H_2_5 Y(N) = Y(10N)-Y(5N)-Y(2N)+Y(N).
+  predictions:
+    pure_eigenfield: '0'
+    rank2_jordan_A_plus_B_logN: '0'
+    ordinary_power_A_plus_C_N_minus_beta: >-
+      C*N^(-beta)*(1-2^(-beta))*(1-5^(-beta))
+    rank3_jordan_A_plus_B_logN_plus_C_logN_squared: >-
+      2*C*log(2)*log(5)
+
+claim_guard:
+  - >-
+    A pass of the Jordan curvature supports a logarithmic scale cocycle in
+    this projected derivative channel; it does not by itself identify the
+    microscopic logarithmic partner or prove the full x=21/4 operator label.
+  - >-
+    A pass of q=2 supports the functional form of the already-frozen ordinary
+    correction without proving a unique scalar correction operator.
+  - >-
+    Failure of both is scientifically useful and motivates a mixture/higher-
+    rank generalized-eigenvector model under a new preregistration.
