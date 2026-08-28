@@ -1,0 +1,539 @@
+version: 1
+updated: 2026-08-29
+purpose: >
+  Machine-readable research map for questions, evidence blocks, analysis that can
+  reuse existing data, and experiments that require new production. This ledger
+  does not replace docs/STATUS.md as the authoritative claim ledger.
+
+canonical_views:
+  overview: README.md
+  claim_ledger: docs/STATUS.md
+  research_map: docs/RESEARCH-MAP.md
+  execution_synthesis: notes/SYNTHESIS-20260828.md
+  roadmap: docs/ROADMAP.md
+  artifact_registry: analysis/artifact_registry.yaml
+  reproducibility: REPRODUCIBILITY.md
+  governance: GOVERNANCE.md
+
+status_vocabulary:
+  exact: finite identity, exact arithmetic, or deterministic theorem/check
+  observed: direct numerical observation with declared uncertainty
+  predictive: frozen, held-out, or independently reproduced finite-size evidence
+  mechanism_candidate: interpretation supported by several facts but not uniquely identified
+  negative_result: frozen or bounded hypothesis failed, or method failed a declared gate
+  analysis_ready: required data already exist; no major new simulation is required
+  new_compute: requires a new target run or exact enumeration
+  gated: do not start production until named prerequisites are satisfied
+  historical_snapshot: accurate record of an earlier project state
+  frontier_open: work exists on an unmerged PR/branch and is not canonical main evidence
+
+research_tracks:
+  - id: A
+    name: exact_matching_and_topology
+    question: What is exactly true before asymptotic or continuum interpretation?
+    state: exact
+    core_paths:
+      - scripts/integer_period_torus.py
+      - scripts/matched_torus_reference.py
+      - scripts/gaussian_circulant_geometry.py
+      - src
+    strongest_statements:
+      - level: exact
+        statement: Square-site and matching-site critical thresholds obey the exact complement relation.
+      - level: exact
+        statement: Finite torus wrapping/complement identities constrain cross/either channel maps.
+      - level: exact
+        statement: Integer-period homology classification supplies rank-0/rank-1/rank-2 topology oracles.
+    evidence:
+      - E_MATCHING_IDENTITY
+      - E_EXACT_TOPOLOGY
+      - E_CHANNEL_ERRATUM
+    open_questions:
+      - configuration-level Euler/Betti lift of the matching identity
+      - continuum meaning of empirical pair-exchange parity
+    analysis_now:
+      - issue: 111
+        task: configuration_level_euler_betti_identity
+    new_compute:
+      - issue: 44
+        task: C4_self_matching_control
+        gate: exact tiny quotient first
+
+  - id: B
+    name: threshold_rank_and_statistics
+    question: What reusable statistics should expensive simulation preserve?
+    state: predictive
+    core_paths:
+      - src/threshold_rank_orientation_mc.cpp
+      - scripts/analyze_threshold_ranks.py
+      - scripts/analyze_threshold_rank_orientation.py
+      - scripts/audit_threshold_rank_covariance.py
+    strongest_statements:
+      - level: exact
+        statement: K_minus/K_plus histograms reconstruct the cross-channel matching curve under the frozen rank convention.
+      - level: observed
+        statement: Per-batch sufficient statistics support full covariance-aware roots, slopes, and derivative projectors.
+    evidence:
+      - E_THRESHOLD_RANK
+      - E_P35
+      - E_P49
+    open_questions:
+      - full standardized threshold distribution
+      - joint K_minus/K_plus gap scaling
+      - prequential covariance across derived observables
+    analysis_now:
+      - issue: 95
+        task: prequential_evidence_ledger
+      - issue: 101
+        task: intrinsic_quantile_center_spectroscopy
+      - issue: 119
+        task: multi_u_response
+      - issue: 122
+        task: standardized_threshold_distribution
+
+  - id: C
+    name: gaussian_orientation_central_odd
+    question: Is the orientation-dependent central matching signal real and predictive?
+    state: predictive
+    strongest_statements:
+      - level: predictive
+        statement: Same-N Gaussian orientation differences are reproducibly nonzero.
+      - level: predictive
+        statement: The tested central matching-odd data are compatible with DeltaCos4*N^(-13/8).
+    evidence:
+      - E_P31
+      - E_P32
+      - E_P37
+      - E_P50A
+      - E_P43
+    not_established:
+      - H4 is the unique leading harmonic
+      - 13/8 is the unique asymptotic exponent
+      - the continuum field is uniquely the thermal level-4 quasiprimary
+    new_compute:
+      - issue: 57
+        task: norm5_H4_H12_discriminator
+        priority: 1
+
+  - id: D
+    name: gaussian_semigroup_root_and_metric
+    question: How does the central sector transform under Gaussian multiplication and move the finite root?
+    state: predictive
+    strongest_statements:
+      - level: predictive
+        statement: Fresh norm-2 lineages are compatible with the no-fit raw DeltaM multiplier.
+      - level: predictive
+        statement: Local root movement is explained by -DeltaM/mean(Mprime).
+      - level: negative_result
+        statement: The bare finite-size slope ratio is not exactly 2^(3/8) at current high precision.
+    evidence:
+      - E_P35
+      - E_P37
+      - E_P45
+      - E_P49
+      - E_P50A
+    open_questions:
+      - predictive form of the finite-size center-slope correction
+      - correction spectrum in Gaussian semigroup residuals
+    new_compute:
+      - issue: 50
+        task: N145_to_N290_full_curve
+        priority: 2
+
+  - id: E
+    name: matching_parity_and_derivatives
+    question: Do S/D and thermal derivatives expose linked finite-size sectors?
+    state: predictive
+    strongest_statements:
+      - level: predictive
+        statement: Matching-even central N^-1 amplitude is compatible with N185/N265 after exact either-to-cross conversion.
+      - level: predictive
+        statement: Intrinsic-center S, D, and D-prime pure laws survive the new geometry block.
+      - level: negative_result
+        statement: Pure P4[Sprime]~N^-5/4 fails prospectively while the channel is decisively nonzero.
+    evidence:
+      - E_CHANNEL_ERRATUM
+      - E_P43
+      - E_SPRIME
+    live_models:
+      - analytic_relative_1_over_N_correction
+      - rank2_Jordan_log_correction
+    analysis_now:
+      - issue: 101
+        task: intrinsic_thermal_coordinate
+      - issue: 119
+        task: multi_u_functional_response
+      - issue: 125
+        task: joint_operator_mixing
+    new_compute:
+      - issue: 57
+        task: reuse_norm5_full_curves_for_derivatives
+      - issue: 154
+        task: norm4_dyadic_q2_vs_Jordan
+        state: gated
+
+  - id: F
+    name: continuum_operator_identification
+    question: What continuum field or probability object produces the measured sector?
+    state: mechanism_candidate
+    strongest_statements:
+      - level: exact
+        statement: A non-null c=0,h=5/8 level-4 quasiprimary with bulk x=21/4 and spin +/-4 exists in the ordinary Virasoro quotient.
+      - level: exact
+        statement: In the stated normalization its torus one-point ratio is proportional to g2/E4.
+      - level: mechanism_candidate
+        statement: The measured central odd law has the dimension/spin expected from this thermal-Q4 candidate.
+    evidence:
+      - E_VIRASORO_Q4
+      - E_TORUS_E4
+      - E_P43
+    missing_bridges:
+      - lattice matching observable to continuum matrix element
+      - matching/RG tangent parity
+      - exclusion of competing nonlocal or logarithmic sectors
+    analysis_now:
+      - issue: 100
+        task: pivotal_Russo_bridge
+      - issue: 114
+        task: FK_Potts_torus_sector_bridge
+      - issue: 121
+        task: four_arm_anisotropy
+      - issue: 61
+        task: RG_tangent_matching_action
+
+  - id: G
+    name: CM_isogeny_and_modular_shape
+    question: Do multiplier composition and torus shape provide representation-level fingerprints?
+    state: mechanism_candidate
+    strongest_statements:
+      - level: exact
+        statement: Gaussian multiplication defines exact finite torus covers with deterministic scale/rotation arithmetic.
+      - level: exact
+        statement: The ordinary thermal-Q4 torus one-point has an E4 zero at the hexagonal elliptic modulus.
+    evidence:
+      - E_P37
+      - E_TORUS_E4
+    analysis_now:
+      - issue: 102
+        task: information_optimal_Gaussian_design
+      - issue: 138
+        task: multiplicative_Jordan_discriminator
+      - issue: 145
+        task: Gaussian_isogeny_action
+      - issue: 103
+        task: torus_modulus_spectroscopy
+    new_compute:
+      - issue: 159
+        task: operational_Pell_H4_filter
+        state: gated
+        gate: explicit lattice H4 projector plus channel semantics plus cheaper target scores
+      - issue: 74
+        task: N1105_four_angle_campaign
+        state: gated
+        gate: norm5 and cheaper discriminators first
+
+  - id: H
+    name: exact_finite_algebra_and_reliability
+    question: What exact finite combinatorial/algebraic structure exists independently of the continuum story?
+    state: exact
+    strongest_statements:
+      - level: exact
+        statement: Small finite matching polynomials and roots are exactly enumerable for bounded tori.
+      - level: negative_result
+        statement: The global complex-zero imaginary-RMS prediction failed at the exact L5 target.
+      - level: mechanism_candidate
+        statement: Finite activation/reliability signatures may provide a common language for threshold ranks and exact controls.
+    evidence:
+      - E_EXACT_POLYNOMIALS
+      - E_COMPLEX_ZERO_NEGATIVE
+    analysis_now:
+      - issue: 113
+        task: local_matching_zero_analysis
+      - issue: 144
+        task: surface_topological_polynomial
+    frontier:
+      - pr: 84
+        task: L5_exact_and_Galois_frontier
+      - pr: 152
+        task: N26_frozen_Beta_falsification
+      - pr: 162
+        task: reliability_signature_tomography
+
+  - id: I
+    name: threshold_value_and_literature
+    question: What can be responsibly inferred about the numerical square-site threshold itself?
+    state: observed
+    strongest_statements:
+      - level: exact
+        statement: A rounded decimal is not the definition of p_c.
+      - level: observed
+        statement: Published estimates are method-specific and should not be collapsed without an explicit model.
+      - level: negative_result
+        statement: Good next-width prediction does not guarantee an unbiased infinite-width intercept.
+    evidence:
+      - E_LITERATURE_PROVENANCE
+      - E_FINITE_WIDTH_AUDIT
+      - E_PADE_NEGATIVE
+    analysis_now:
+      - issue: 4
+        task: complete_primary_source_provenance
+    new_compute:
+      - issue: 6
+        task: widths_22_24_frozen_challenge
+        state: gated
+        gate: provenance-complete target transcription first
+
+evidence_blocks:
+  - id: E_MATCHING_IDENTITY
+    status: exact
+    role: structural_anchor
+    paths:
+      - REPRODUCIBILITY.md
+      - scripts/matched_torus_reference.py
+
+  - id: E_EXACT_TOPOLOGY
+    status: exact
+    role: topology_oracle
+    paths:
+      - scripts/integer_period_torus.py
+      - tests/test_integer_period_torus.py
+
+  - id: E_THRESHOLD_RANK
+    status: exact
+    role: reusable_sufficient_statistics
+    paths:
+      - src/threshold_rank_orientation_mc.cpp
+      - scripts/analyze_threshold_ranks.py
+
+  - id: E_P31
+    status: predictive
+    role: independent_seed_same_N_confirmation
+    paths:
+      - results/server-20260828/P31
+    supports:
+      - reproducible orientation signal
+      - common scaled central odd amplitude
+
+  - id: E_P32
+    status: predictive
+    role: heldout_radial_challenge
+    paths:
+      - results/server-20260828/P32-radial-challenge
+    supports:
+      - fixed 13/8 model over tested holdouts
+
+  - id: E_P35
+    status: predictive
+    role: residual_root_closure
+    paths:
+      - results/server-20260828/P35-amplitude-closure
+    supports:
+      - local DeltaRoot approximately equals -DeltaM/mean(Mprime)
+
+  - id: E_P37
+    status: predictive
+    role: prospective_norm2_Gaussian_lineages
+    paths:
+      - results/server-20260828/P37-doubling
+    supports:
+      - no-fit Gaussian sign and magnitude transfer
+
+  - id: E_P45
+    status: predictive
+    role: angular_normalized_root_amplitude
+    paths:
+      - results/server-20260828/P45-root-amplitude
+
+  - id: E_P49
+    status: predictive
+    role: clean_full_curve_norm2
+    paths:
+      - results/server-20260828/P49-fullcurve-doubling-100m
+    supports:
+      - central full-curve compatibility
+      - resolved finite-size slope correction
+
+  - id: E_P50A
+    status: predictive
+    role: prospective_third_fixed_coordinate_lineage
+    paths:
+      - results/server-20260828/P50-third-lineage
+
+  - id: E_P43
+    status: predictive
+    role: N185_N265_new_geometry_block
+    paths:
+      - results/server-20260828/P43-heldout-fullcurve-500m
+    supports:
+      - odd x21_over_4_like model beats zero and x17_over_4
+      - intrinsic-center S D Dprime laws survive
+      - Sprime pure law fails
+
+  - id: E_CHANNEL_ERRATUM
+    status: exact
+    role: Issue43_source_target_semantics_correction
+    paths:
+      - notes/issue43-cross-either-channel-map-erratum.md
+      - scripts/score_issue43_cross_either_correction.py
+      - predictions/wrapping_channel_audit_20260828.json
+    supports:
+      - DeltaS_cross equals minus DeltaS_either for the registered contrast
+      - corrected no-refit even-sector score is compatible
+
+  - id: E_SPRIME
+    status: negative_result
+    role: prospective_derivative_correction_discriminator
+    paths:
+      - predictions/p48_sprime_scoring_manifest_20260828.yaml
+      - results/server-20260828/P43-heldout-fullcurve-500m
+    supports:
+      - nonzero Sprime
+      - pure N^-5/4 insufficient
+      - q2 and Jordan/log remain viable
+
+  - id: E_VIRASORO_Q4
+    status: exact
+    role: ordinary_Virasoro_candidate
+    paths:
+      - notes/thermal-level4-spin4-candidate.md
+      - scripts/virasoro_level4_candidate.py
+
+  - id: E_TORUS_E4
+    status: exact
+    role: ordinary_Q4_torus_shape_fingerprint
+    paths:
+      - notes/thermal-level4-torus-onepoint-E4.md
+      - scripts/derive_thermal_level4_torus_e4.py
+
+  - id: E_EXACT_POLYNOMIALS
+    status: exact
+    role: bounded_finite_matching_algebra
+    paths:
+      - results/exact_small_matching_polynomials.md
+      - scripts/exact_matching_polynomial.py
+
+  - id: E_COMPLEX_ZERO_NEGATIVE
+    status: negative_result
+    role: exact_L5_global_zero_forecast_failure
+    paths:
+      - results/exact-zero-map-pilot
+
+  - id: E_LITERATURE_PROVENANCE
+    status: observed
+    role: source_specific_threshold_evidence
+    paths:
+      - data/literature_threshold_sources.json
+      - constants/pc.yaml
+
+  - id: E_FINITE_WIDTH_AUDIT
+    status: observed
+    role: blind_rolling_origin_extrapolation_audit
+    paths:
+      - scripts/finite_size_audit.py
+      - results/server-20260828/issue-5-summary.json
+
+  - id: E_PADE_NEGATIVE
+    status: negative_result
+    role: rational_extrapolation_stage_A
+    paths:
+      - scripts/rational_finite_size_audit.py
+
+analysis_queue:
+  - issue: 95
+    name: prequential_evidence_ledger
+    state: analysis_ready
+    reason: existing prospective blocks need chronology-safe joint scoring
+  - issue: 101
+    name: intrinsic_quantile_center
+    state: analysis_ready
+    reason: existing full curves already contain the needed intrinsic levels
+  - issue: 119
+    name: multi_u_thermal_response
+    state: analysis_ready
+    reason: frozen u grid already exists
+  - issue: 125
+    name: joint_operator_mixing
+    state: analysis_ready
+    reason: four channel vector should be modeled jointly rather than as independent fits
+  - issue: 100
+    name: pivotal_Russo_bridge
+    state: analysis_ready
+    reason: exact finite-volume regression is the first step; continuum interpretation remains separate
+  - issue: 122
+    name: standardized_threshold_distribution
+    state: analysis_ready
+    reason: threshold-rank histograms preserve the full curve
+  - issue: 113
+    name: local_exact_zero_analysis
+    state: analysis_ready
+    reason: existing exact roots are sufficient for the first local test
+  - issue: 118
+    name: universal_amplitude_ratios
+    state: analysis_ready
+    reason: derive dimensionless combinations before requesting new production
+
+new_compute_queue:
+  - rank: 1
+    issue: 57
+    name: norm5_H4_H12
+    state: new_compute
+    primary_discriminator: H4 versus H12 sign and multiplier structure
+  - rank: 2
+    issue: 50
+    name: N145_to_N290_full_curve
+    state: new_compute
+    primary_discriminator: frozen finite-size slope/root correction on a third lineage
+  - rank: 3
+    issue: 155
+    name: self_matching_RG_tangent
+    state: gated
+    primary_discriminator: thermal direction versus matching-odd irrelevant tangent
+  - rank: 4
+    issue: 154
+    name: norm4_dyadic_closure
+    state: gated
+    primary_discriminator: q2 versus rank2 Jordan
+    gate: variance and information-per-CPU pilot
+  - rank: 5
+    issue: 159
+    name: Pell_hexagonal_H4_filter
+    state: gated
+    primary_discriminator: independent torus-shape H4 fingerprint
+    gate: operational lattice projector and typed channel semantics
+  - rank: 6
+    issue: 74
+    name: N1105_four_angle
+    state: gated
+    primary_discriminator: H0 H4 H8 H12 decomposition
+    gate: cheaper norm5 and lineage tests first
+
+negative_results:
+  - id: NR_LARGE_PELL
+    statement: Large-Pell fixed-p scans were underpowered for the target orientation gap.
+    preserve_under: results/server-20260828/pell
+  - id: NR_WRAPPING_GLS
+    statement: Wrapping-only GLS gave 1x gain because relevant matching-difference channels are configuration-identical.
+    preserve_under: results/server-20260828/C03-euler
+  - id: NR_PADE
+    statement: Padé/rational Stage A did not cure the positive increasing finite-width residual drift.
+    preserve_under: results/server-20260828
+  - id: NR_BARE_SLOPE
+    statement: Bare finite-size center-slope ratio equal to exactly 2^(3/8) is rejected at current precision.
+    preserve_under: results/server-20260828/P49-fullcurve-doubling-100m
+  - id: NR_SPRIME_PURE
+    statement: Pure P4[Sprime]~N^-5/4 fails prospectively on N185/N265.
+    preserve_under: results/server-20260828/P43-heldout-fullcurve-500m
+  - id: NR_COMPLEX_ZERO_RMS
+    statement: The frozen global complex-zero imaginary-RMS prediction failed at exact L5.
+    preserve_under: results/exact-zero-map-pilot
+  - id: NR_GRAPH_COVER_CRN
+    statement: Exact graph-cover order-statistic CRN did not meet the variance-reduction promotion gate.
+    frontier_pr: 130
+
+maintenance_rules:
+  - Preserve frozen predictions and old result artifacts after interpretation changes.
+  - Add an evidence block before upgrading a project-level claim.
+  - Do not count multiple derived views of one random block as independent evidence.
+  - Compare channel-bearing observables only through identical typed descriptors or a registered exact map.
+  - Prefer a new geometry, multiplier, observable, or control over adding an unconstrained fit parameter.
+  - Mark old queues and syntheses as historical snapshots instead of deleting them.

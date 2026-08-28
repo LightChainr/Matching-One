@@ -1,0 +1,72 @@
+{
+  "schema": "wrapping-channel semantic audit v1",
+  "status": "protocol layer added after PR #134; frozen artifacts are not rewritten",
+  "records": [
+    {
+      "id": "issue43_even_cross_either_correction",
+      "status": "registered",
+      "prediction_artifact": "predictions/two_spin4_heldout_20260828.yaml",
+      "prediction_artifact_sha256": "a370e79a10854341fac3ee75e8c518dbf3533e8c077cba2c2ec1018178144f44",
+      "target_artifact": "results/server-20260828/P43-heldout-fullcurve-500m/analysis/primary_score.json",
+      "scorer": "scripts/score_issue43_cross_either_correction.py",
+      "source_descriptor": {
+        "channel": "either",
+        "combination": "even",
+        "coordinate": "p",
+        "orientation_order": "first_minus_second",
+        "normalization": "raw",
+        "quantity": "orientation_contrast"
+      },
+      "target_descriptor": {
+        "channel": "cross",
+        "combination": "even",
+        "coordinate": "p",
+        "orientation_order": "first_minus_second",
+        "normalization": "raw",
+        "quantity": "orientation_contrast"
+      },
+      "expected_transform": {
+        "scale": -1.0,
+        "offset": 0.0
+      }
+    },
+    {
+      "id": "p48_cross_even_normalized_identity",
+      "status": "registered",
+      "prediction_artifact": "predictions/p48_sprime_scoring_manifest_20260828.yaml",
+      "scorer": "scripts/score_p48_sprime_prospective.py",
+      "source_descriptor": {
+        "channel": "cross",
+        "combination": "even",
+        "coordinate": "p",
+        "orientation_order": "first_minus_second",
+        "normalization": "angular_normalized",
+        "quantity": "orientation_contrast"
+      },
+      "target_descriptor": {
+        "channel": "cross",
+        "combination": "even",
+        "coordinate": "p",
+        "orientation_order": "first_minus_second",
+        "normalization": "angular_normalized",
+        "quantity": "orientation_contrast"
+      },
+      "expected_transform": {
+        "scale": 1.0,
+        "offset": 0.0
+      }
+    },
+    {
+      "id": "issue57_norm5_fixed_p_raw_deltaM",
+      "status": "blocked_before_scoring",
+      "prediction_artifact": "predictions/gaussian_norm5_harmonic_discrimination_20260828.yaml",
+      "reason": "the frozen artifact names a raw matching-function contrast but does not declare its topology channel; the future target scorer must add explicit source and target descriptors before scoring"
+    },
+    {
+      "id": "issue57_norm5_full_curve_projectors",
+      "status": "blocked_before_scoring",
+      "prediction_artifact": "predictions/gaussian_normalized_p4_multiplier_spectrum_20260828.yaml",
+      "reason": "raw and angular-normalized rules are distinct, but future target artifacts must still declare cross/either/both and even/odd descriptors explicitly"
+    }
+  ]
+}
