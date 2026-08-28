@@ -5,26 +5,12 @@ For selected exact square-site matching polynomials we combine:
 
 1. an irreducibility-over-Q certificate (hence transitive Galois group);
 2. a squarefree finite-field factorization with cycle type containing one
-   2-cycle and one large prime cycle;
+   2-cycle and one large odd prime cycle;
 3. an elementary permutation-group argument.
 
 The modular factorization is verified here without CAS factorization: the
 prespecified monic factors must multiply to the monic reduction of the source
 polynomial and each factor is checked irreducible by Rabin's criterion.
-
-Group argument used by the generated certificate:
-
-- Dedekind/Frobenius gives an element with the recorded squarefree factor-degree
-  cycle type.
-- A suitable odd power kills the other odd cycles and leaves a transposition.
-- A suitable power kills the other cycles and leaves the large prime cycle r.
-- Since r exceeds both the size and number of blocks for every nontrivial block
-  system of degree n, that r-cycle rules out imprimitivity.
-- In a primitive permutation group, the conjugates of one transposition form a
-  connected graph; their edge transpositions generate S_n. Hence G=S_n.
-
-This proves full symmetric Galois groups for the listed finite polynomials. It
-makes no statement about the infinite-volume threshold.
 """
 from __future__ import annotations
 
@@ -49,72 +35,34 @@ from certify_diamond_matching_irreducibility import (
 
 
 CASES = [
-    {
-        "geometry": "axis",
-        "L": 3,
-        "factor_prime": 13,
-        "factors": [
-            [10, 8, 1],
-            [1, 7, 6, 8, 6, 10, 7, 1],
-        ],
-        "large_prime_cycle": 7,
-    },
-    {
-        "geometry": "axis",
-        "L": 4,
-        "factor_prime": 331,
-        "factors": [
-            [86, 1],
-            [41, 211, 1],
-            [201, 265, 256, 33, 121, 57, 63, 292, 194, 71, 180, 223, 139, 1],
-        ],
-        "large_prime_cycle": 13,
-    },
-    {
-        "geometry": "axis",
-        "L": 5,
-        "factor_prime": 863,
-        "factors": [
-            [765, 412, 1],
-            [568, 204, 247, 336, 420, 774, 317, 72, 668, 606, 158, 413,
-             59, 665, 507, 502, 162, 695, 627, 431, 28, 732, 401, 1],
-        ],
-        "large_prime_cycle": 23,
-    },
-    {
-        "geometry": "diamond",
-        "L": 2,
-        "factor_prime": 127,
-        "factors": [
-            [121, 1],
-            [72, 64, 1],
-            [61, 90, 99, 108, 69, 1],
-        ],
-        "large_prime_cycle": 5,
-    },
-    {
-        "geometry": "diamond",
-        "L": 3,
-        "factor_prime": 241,
-        "factors": [
-            [111, 131, 1],
-            [211, 237, 102, 1],
-            [152, 212, 67, 59, 22, 66, 160, 232, 19, 168, 114, 144, 240, 1],
-        ],
-        "large_prime_cycle": 13,
-    },
-    {
-        "geometry": "gaussian-3-1",
-        "L": 0,
-        "factor_prime": 13,
-        "factors": [
-            [3, 1],
-            [2, 4, 1],
-            [1, 2, 5, 1, 4, 0, 9, 1],
-        ],
-        "large_prime_cycle": 7,
-    },
+    {"geometry":"axis","L":3,"factor_prime":13,
+     "factors":[[10,8,1],[1,7,6,8,6,10,7,1]],"large_prime_cycle":7},
+    {"geometry":"axis","L":4,"factor_prime":331,
+     "factors":[[86,1],[41,211,1],[201,265,256,33,121,57,63,292,194,71,180,223,139,1]],
+     "large_prime_cycle":13},
+    {"geometry":"axis","L":5,"factor_prime":863,
+     "factors":[[765,412,1],[568,204,247,336,420,774,317,72,668,606,158,413,59,665,507,502,162,695,627,431,28,732,401,1]],
+     "large_prime_cycle":23},
+    {"geometry":"diamond","L":2,"factor_prime":127,
+     "factors":[[121,1],[72,64,1],[61,90,99,108,69,1]],"large_prime_cycle":5},
+    {"geometry":"diamond","L":3,"factor_prime":241,
+     "factors":[[111,131,1],[211,237,102,1],[152,212,67,59,22,66,160,232,19,168,114,144,240,1]],
+     "large_prime_cycle":13},
+    {"geometry":"gaussian-3-1","L":0,"factor_prime":13,
+     "factors":[[3,1],[2,4,1],[1,2,5,1,4,0,9,1]],"large_prime_cycle":7},
+    {"geometry":"gaussian-3-2","L":0,"factor_prime":31,
+     "factors":[[13,1],[24,1],[25,1],[6,12,1],[15,17,12,1],[3,10,28,9,7,1]],
+     "large_prime_cycle":5},
+    {"geometry":"gaussian-4-1","L":0,"factor_prime":71,
+     "factors":[[19,1],[39,52,1],[5,21,39,1],[30,23,0,21,56,6,67,42,0,64,32,1]],
+     "large_prime_cycle":11},
 ]
+
+GAUSSIAN_METADATA = {
+    "gaussian-3-1": (3, 1, 10, "gaussian_3_1_target.json", 31),
+    "gaussian-3-2": (3, 2, 13, "gaussian_3_2_target.json", 11),
+    "gaussian-4-1": (4, 1, 17, "gaussian_4_1_target.json", 11),
+}
 
 
 def product_mod(factors: Iterable[list[int]], prime: int) -> list[int]:
@@ -141,18 +89,16 @@ def lcm(values: Iterable[int]) -> int:
     return result
 
 
-def _gaussian_3_1_coefficients() -> list[int]:
+def _gaussian_coefficients(geometry: str) -> list[int]:
+    a, b, n, filename, _ = GAUSSIAN_METADATA[geometry]
     payload = json.loads(
-        (
-            ROOT
-            / "results"
-            / "exact-axis-l5-frontier"
-            / "gaussian_3_1_target.json"
-        ).read_text(encoding="utf-8")
+        (ROOT / "results" / "exact-axis-l5-frontier" / filename).read_text(
+            encoding="utf-8"
+        )
     )
-    geometry = payload["geometry"]
-    if geometry["a"] != 3 or geometry["b"] != 1 or geometry["N"] != 10:
-        raise RuntimeError("unexpected Gaussian target metadata")
+    metadata = payload["geometry"]
+    if metadata["a"] != a or metadata["b"] != b or metadata["N"] != n:
+        raise RuntimeError(f"unexpected Gaussian target metadata for {geometry}")
     return [int(value) for value in payload["power_coefficients_ascending"]]
 
 
@@ -161,8 +107,8 @@ def source_coefficients(geometry: str, L: int) -> list[int]:
         return load_axis_coefficients()[L]
     if geometry == "diamond":
         return load_diamond_coefficients()[L]
-    if geometry == "gaussian-3-1":
-        return _gaussian_3_1_coefficients()
+    if geometry in GAUSSIAN_METADATA:
+        return _gaussian_coefficients(geometry)
     raise ValueError(geometry)
 
 
@@ -171,8 +117,8 @@ def irreducibility_prime(geometry: str, L: int) -> int:
         return AXIS_IRREDUCIBILITY_PRIMES[L]
     if geometry == "diamond":
         return DIAMOND_IRREDUCIBILITY_PRIMES[L]
-    if geometry == "gaussian-3-1":
-        return 31
+    if geometry in GAUSSIAN_METADATA:
+        return GAUSSIAN_METADATA[geometry][4]
     raise ValueError(geometry)
 
 
@@ -198,19 +144,17 @@ def certify_case(case: dict[str, object]) -> dict[str, object]:
         result = rabin_irreducible(factor, q)
         if not result["irreducible"]:
             raise AssertionError(f"certificate factor reducible: {geometry} L={L} mod {q}")
-        factor_rows.append(
-            {
-                "degree": len(factor) - 1,
-                "monic_factor_ascending": factor,
-                "irreducible_mod_prime": True,
-            }
-        )
+        factor_rows.append({
+            "degree": len(factor)-1,
+            "monic_factor_ascending": factor,
+            "irreducible_mod_prime": True,
+        })
 
     degrees = sorted(row["degree"] for row in factor_rows)
     if degrees.count(2) != 1:
         raise AssertionError("cycle type must contain exactly one 2-cycle")
     if any(degree % 2 == 0 for degree in degrees if degree != 2):
-        raise AssertionError("non-2 cycle lengths must be odd so an odd power isolates transposition")
+        raise AssertionError("non-2 cycle lengths must be odd")
 
     long_cycle = int(case["large_prime_cycle"])
     if long_cycle not in degrees:
@@ -237,7 +181,7 @@ def certify_case(case: dict[str, object]) -> dict[str, object]:
         "N": n,
         "integer_degree": n,
         "irreducible_over_Q": True,
-        "irreducibility_prime": irreducibility_prime(geometry, L),
+        "irreducibility_prime": irreducibility_prime(geometry,L),
         "transitive_galois_action": True,
         "factorization_prime": q,
         "factorization_squarefree": True,
@@ -259,26 +203,17 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--json", type=Path)
     args = parser.parse_args()
-
     certificates = [certify_case(case) for case in CASES]
     payload = {
-        "schema": "matching-one/finite-matching-galois-certificate/v1",
-        "argument": (
-            "Q-irreducible => transitive; squarefree modular cycle type supplies a "
-            "transposition and a large prime cycle; large cycle excludes every "
-            "proper block system; primitive + transposition => full symmetric group."
-        ),
-        "certificates": certificates,
+        "schema":"matching-one/finite-matching-galois-certificate/v1",
+        "argument":"Q-irreducible => transitive; squarefree modular cycle type supplies a transposition and large prime cycle; large cycle excludes every proper block system; primitive + transposition => full symmetric group.",
+        "certificates":certificates,
     }
     for row in certificates:
-        print(
-            f"{row['geometry']} L={row['L']} degree={row['integer_degree']} "
-            f"mod={row['factorization_prime']} cycle_type={row['factor_degrees']} "
-            f"G={row['galois_group']}"
-        )
+        print(f"{row['geometry']} degree={row['integer_degree']} mod={row['factorization_prime']} cycle_type={row['factor_degrees']} G={row['galois_group']}")
     if args.json:
-        args.json.parent.mkdir(parents=True, exist_ok=True)
-        args.json.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+        args.json.parent.mkdir(parents=True,exist_ok=True)
+        args.json.write_text(json.dumps(payload,indent=2)+"\n",encoding="utf-8")
     return 0
 
 
