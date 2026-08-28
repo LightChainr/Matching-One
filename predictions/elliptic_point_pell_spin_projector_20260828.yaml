@@ -1,0 +1,131 @@
+version: 1
+frozen_at: 2026-08-28
+status: C0_design_before_target_runs
+related_issues: [103, 138, 57]
+purpose: >-
+  Test whether the leading square-lattice anisotropy behaves as a first-order
+  continuum spin-4 response by approaching the hexagonal torus elliptic point
+  along exact Pell subsequences. The hexagonal stabilizer allows square-lattice
+  spin classes only when s is a multiple of 12, so H4/H8-like first-order
+  responses must vanish while H12 is allowed.
+
+hexagonal_modulus:
+  representative: '-1/2 + i*sqrt(3)/2'
+  torus_rotation_angle: 'pi/3'
+  scalar_response_selection_rule: 's mod 6 = 0'
+  square_lattice_spin_rule: 's mod 4 = 0'
+  combined_allowed_square_spin_rule: 's mod 12 = 0'
+  consequences:
+    H4: forced_zero_at_exact_elliptic_point
+    H8: forced_zero_at_exact_elliptic_point
+    H12: allowed
+    H16: forced_zero_at_exact_elliptic_point
+    H20: forced_zero_at_exact_elliptic_point
+    H24: allowed
+
+pell_geometry:
+  periods: 'v1=(2q,0), v2=(-q,p)'
+  modulus: 'tau=-1/2 + i*p/(2q)'
+  site_count: 'N=2*p*q'
+  pell_equation: 'p^2-3*q^2=eta'
+  eta_values: [1, -2]
+  signed_shape_error: 'delta = Im(tau)-sqrt(3)/2 = eta/[2*q*(p+sqrt(3)*q)]'
+  exact_scaled_shape_error: 'N*delta = eta*p/(p+sqrt(3)*q)'
+  asymptotic_scaled_shape_error:
+    eta_plus_1: '1/2'
+    eta_minus_2: '-1'
+  recurrence: 'p_next+q_next*sqrt(3)=(2+sqrt(3))*(p+q*sqrt(3))'
+
+subsequences:
+  eta_plus_1:
+    - {p: 7, q: 4, N: 56}
+    - {p: 26, q: 15, N: 780}
+    - {p: 97, q: 56, N: 10864}
+    - {p: 362, q: 209, N: 151316}
+  eta_minus_2:
+    - {p: 5, q: 3, N: 30}
+    - {p: 19, q: 11, N: 418}
+    - {p: 71, q: 41, N: 5822}
+    - {p: 265, q: 153, N: 81090}
+
+simple_zero_model:
+  shape_response: 'F4(tau_hex+dtau)=K*dtau+Kbar*dtaubar+O(|dtau|^2)'
+  generic_radial_law: 'X(N)=A*N^(-alpha)*F4(tau_N)'
+  pell_law: 'X(N) ~ Atilde*N^(-(alpha+1))'
+  side_normalized_collapse: 'A_hex(N)=N^alpha*X(N)/delta_N -> common constant'
+  side_amplitude_limit: 'N^(alpha+1)*X(N) -> C*eta/2'
+  asymptotic_side_ratio: 'A_eta_plus_1 / A_eta_minus_2 = -1/2'
+
+candidate_sectors:
+  matching_even_identity_H4:
+    x: '4'
+    alpha_in_N_generic: '1'
+    generic_law: 'N^-1 = L^-2'
+    pell_simple_zero_law: 'N^-2 = L^-4'
+  matching_odd_thermal_H4:
+    x: '21/4'
+    alpha_in_N_generic: '13/8'
+    generic_central_law: 'N^-13/8 = L^-13/4'
+    pell_simple_zero_central_law: 'N^-21/8 = L^-21/4'
+    thermal_slope: 'N^3/8'
+    generic_root_law: 'N^-2 = L^-4'
+    pell_simple_zero_root_law: 'N^-3 = L^-6'
+  H12_same_radial_alias:
+    elliptic_point_status: allowed
+    prediction: >-
+      No mandatory extra N^-1 from the hexagonal stabilizer. If the current
+      signal is dominated by a genuine H12/multiple-of-12 response, the
+      leading radial power should remain unsuppressed along the Pell sequence.
+
+primary_control:
+  model: square_bond_percolation
+  pc: '1/2 exact'
+  observable_requirement: >-
+    Use a modular-invariant scalar torus topology observable such as cross or
+    nontrivial/either wrapping, with its continuum critical value
+    R_infinity(tau) computed independently from Pinson/Ziff-type formulas.
+  finite_size_residual: 'E_N=R_N(1/2;tau_N)-R_infinity(tau_N)'
+  scoring_order:
+    - 'generic away-from-hex N^-1 anisotropy baseline'
+    - 'Pell H4 model E_N proportional to delta_N*N^-1'
+    - 'two-sided collapse N*E_N/delta_N -> one common amplitude'
+    - 'N^2*E_N side-amplitude ratio -> -1/2'
+    - 'only afterward fit free zero order or additional spin sectors'
+
+square_site_followup:
+  central_residual_primary: 'M_N proportional to delta_N*N^-13/8'
+  central_residual_H12_adversary: 'unsuppressed N^-13/8'
+  root_primary: 'N^-3'
+  root_unsuppressed_adversary: 'N^-2'
+  collapse_variables:
+    central: 'N^(13/8)*M_N/delta_N'
+    root: 'N^2*DeltaRoot_N/delta_N'
+
+interpretation:
+  h4_pass: >-
+    Extra N^-1 suppression, opposite-side sign, and two-sided normalized
+    collapse support a first-order spin-4 torus response and independently
+    strengthen the H4 interpretation of the root-moving sector.
+  h12_like: >-
+    No elliptic-point acceleration with otherwise stable radial scaling favors
+    a multiple-of-12 angular sector over H4.
+  control_only_passes: >-
+    If square bond shows the modular zero but square-site matching does not,
+    infer that another scalar/matching-odd field dominates after H4 removal.
+  faster_than_simple_zero: >-
+    Treat as evidence for an additional symmetry/zero of the linear shape
+    derivative; do not retune the simple-zero exponent after target reveal.
+
+claim_guard:
+  - >-
+    The stabilizer selection rule applies to scalar/topological continuum
+    response sectors. Direction-specific winding observables can transform in
+    a nontrivial modular representation and should not be used as the primary
+    scalar test without resolving that representation.
+  - >-
+    The simple-zero order is a frozen generic hypothesis, not a theorem that
+    the linear coefficient is nonzero.
+  - >-
+    A logarithmic Jordan partner with the same spin is also suppressed by the
+    elliptic-point spin rule; this experiment does not by itself discriminate
+    ordinary versus Jordan radial mixing.
