@@ -241,8 +241,9 @@ def validate_summary(
     summary: Mapping[str, object],
     max_condition: float,
 ) -> Dict[str, object]:
-    if summary.get("format_version") != 2:
-        raise ValueError("summary format_version must be 2")
+    format_version = summary.get("format_version")
+    if format_version not in (2, 3):
+        raise ValueError("summary format_version must be 2 or 3")
     raw_sizes = summary.get("sizes")
     if not isinstance(raw_sizes, list) or not raw_sizes:
         raise ValueError("summary sizes must be a nonempty list")
@@ -357,13 +358,99 @@ def validate_summary(
             diagnostics["heldout_dof"] = dof
             audit_reports[metric][mode] = diagnostics
 
+    hardening = {
+        "summary_format_version": format_version,
+        "equal_batch_weight_asserted": False,
+        "coupling_validated": False,
+        "stable_inverse_declared": False,
+        "finite_batch_calibration_present": False,
+    }
+    if format_version == 3:
+        weight = summary.get("equal_batch_weight_contract")
+        if not isinstance(weight, dict) or weight.get("asserted") is not True:
+            raise ValueError("format 3 must assert the equal-batch-weight contract")
+        if int(weight.get("samples_per_batch", 0)) <= 0:
+            raise ValueError("format 3 samples_per_batch must be positive")
+        coupling = summary.get("coupling_contract")
+        if not isinstance(coupling, dict) or coupling.get("validated") is not True:
+            raise ValueError("format 3 must contain a validated coupling contract")
+        for key in (
+            "rng",
+            "seed",
+            "replica_counter_first",
+            "replica_counter_last_exclusive",
+            "samples_per_batch",
+        ):
+            if key not in coupling:
+                raise ValueError("coupling contract missing {}".format(key))
+        numerics = summary.get("score_numerics")
+        if not isinstance(numerics, dict):
+            raise ValueError("format 3 must declare score numerics")
+        if "cholesky" not in str(numerics.get("inverse", "")) and "svd" not in str(
+            numerics.get("inverse", "")
+        ):
+            raise ValueError("format 3 must declare a Cholesky or SVD inverse")
+        if numerics.get("heldout_chi_square_kind") != "plugin_asymptotic":
+            raise ValueError("format 3 must label the chi-square as plugin/asymptotic")
+        for metric, modes in audits.items():
+            for mode, raw in modes.items():
+                if raw.get("heldout_chi_square_kind") != "plugin_asymptotic":
+                    raise ValueError(
+                        "{} {} must label the plug-in chi-square".format(metric, mode)
+                    )
+                eigen = raw.get("heldout_residual_eigenstructure")
+                if not isinstance(eigen, dict) or "eigenvalues" not in eigen:
+                    raise ValueError(
+                        "{} {} is missing residual eigenstructure".format(metric, mode)
+                    )
+                if "eigenvalue_truncation_sensitivity" not in raw:
+                    raise ValueError(
+                        "{} {} is missing truncation sensitivity".format(metric, mode)
+                    )
+                calibration = raw.get("finite_batch_calibration")
+                if not isinstance(calibration, dict):
+                    raise ValueError(
+                        "{} {} is missing finite-batch calibration".format(metric, mode)
+                    )
+                if "hotelling" not in calibration:
+                    raise ValueError(
+                        "{} {} is missing Hotelling calibration".format(metric, mode)
+                    )
+                if mode == "full_covariance" and "bootstrap" not in calibration:
+                    raise ValueError(
+                        "{} full covariance is missing bootstrap calibration".format(
+                            metric
+                        )
+                    )
+                solver = raw.get("score_solver")
+                if solver not in ("cholesky", "svd_pseudoinverse"):
+                    raise ValueError(
+                        "{} {} score_solver must be cholesky or svd_pseudoinverse".format(
+                            metric, mode
+                        )
+                    )
+            for name, raw_metric in raw_metrics.items():
+                eigen = raw_metric.get("eigenstructure")
+                if not isinstance(eigen, dict) or "eigenvalues" not in eigen:
+                    raise ValueError("metric {} is missing eigenstructure".format(name))
+        hardening.update(
+            {
+                "equal_batch_weight_asserted": True,
+                "coupling_validated": True,
+                "stable_inverse_declared": True,
+                "finite_batch_calibration_present": True,
+            }
+        )
+
     return {
         "format_version": 1,
+        "summary_format_version": format_version,
         "sizes": sizes,
         "batch_count": batch_count,
         "max_condition_allowed": max_condition,
         "metric_covariance_diagnostics": metric_reports,
         "heldout_residual_diagnostics": audit_reports,
+        "hardening_gates": hardening,
     }
 
 

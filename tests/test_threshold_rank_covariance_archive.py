@@ -58,7 +58,7 @@ class ThresholdRankCovarianceArchiveTests(unittest.TestCase):
                 "indefinite",
                 1e12,
             )
-        with self.assertRaisesRegex(ValueError, "condition number"):
+        with self.assertRaisesRegex(ValueError, "condition number|singular"):
             covariance_diagnostics(
                 [[1.0, 0.0], [0.0, 1e-14]],
                 "ill-conditioned",

@@ -1,0 +1,1861 @@
+{
+  "format_version": 3,
+  "p": "0.59274605079",
+  "sizes": [
+    65,
+    85,
+    130,
+    145,
+    170
+  ],
+  "batch_count": 100,
+  "equal_batch_weight_contract": {
+    "estimator": "unweighted_equal_batch_mean",
+    "asserted": true,
+    "samples_per_batch": 100000
+  },
+  "coupling_contract": {
+    "seed_label": "p33-working-tree-10m",
+    "validated": true,
+    "engine": "same-N Gaussian threshold-rank Newman-Ziff",
+    "rng": "counter-derived SplitMix64 stream plus unbiased Fisher-Yates",
+    "seed": 2026093303,
+    "replica_counter_first": 4000000000,
+    "replica_counter_last_exclusive": 4010000000,
+    "batches": 100,
+    "samples_per_pair": 10000000,
+    "samples_per_batch": 100000,
+    "sizes": [
+      65,
+      85,
+      130,
+      145,
+      170
+    ],
+    "design_sizes": [
+      65,
+      85,
+      130,
+      145,
+      170
+    ],
+    "coupling": "same cyclic permutation shared by same-N orientations",
+    "shared_rng_schema": true,
+    "shared_seed": true,
+    "shared_counter_ranges": true,
+    "per_batch_counter_range_formula": "replica_counter_first + batch * samples_per_batch",
+    "per_batch_counter_ranges": [
+      {
+        "batch": 0,
+        "replica_counter_first": 4000000000,
+        "replica_counter_last_exclusive": 4000100000
+      },
+      {
+        "batch": 1,
+        "replica_counter_first": 4000100000,
+        "replica_counter_last_exclusive": 4000200000
+      },
+      {
+        "batch": 2,
+        "replica_counter_first": 4000200000,
+        "replica_counter_last_exclusive": 4000300000
+      },
+      {
+        "batch": 3,
+        "replica_counter_first": 4000300000,
+        "replica_counter_last_exclusive": 4000400000
+      },
+      {
+        "batch": 4,
+        "replica_counter_first": 4000400000,
+        "replica_counter_last_exclusive": 4000500000
+      },
+      {
+        "batch": 5,
+        "replica_counter_first": 4000500000,
+        "replica_counter_last_exclusive": 4000600000
+      },
+      {
+        "batch": 6,
+        "replica_counter_first": 4000600000,
+        "replica_counter_last_exclusive": 4000700000
+      },
+      {
+        "batch": 7,
+        "replica_counter_first": 4000700000,
+        "replica_counter_last_exclusive": 4000800000
+      },
+      {
+        "batch": 8,
+        "replica_counter_first": 4000800000,
+        "replica_counter_last_exclusive": 4000900000
+      },
+      {
+        "batch": 9,
+        "replica_counter_first": 4000900000,
+        "replica_counter_last_exclusive": 4001000000
+      },
+      {
+        "batch": 10,
+        "replica_counter_first": 4001000000,
+        "replica_counter_last_exclusive": 4001100000
+      },
+      {
+        "batch": 11,
+        "replica_counter_first": 4001100000,
+        "replica_counter_last_exclusive": 4001200000
+      },
+      {
+        "batch": 12,
+        "replica_counter_first": 4001200000,
+        "replica_counter_last_exclusive": 4001300000
+      },
+      {
+        "batch": 13,
+        "replica_counter_first": 4001300000,
+        "replica_counter_last_exclusive": 4001400000
+      },
+      {
+        "batch": 14,
+        "replica_counter_first": 4001400000,
+        "replica_counter_last_exclusive": 4001500000
+      },
+      {
+        "batch": 15,
+        "replica_counter_first": 4001500000,
+        "replica_counter_last_exclusive": 4001600000
+      },
+      {
+        "batch": 16,
+        "replica_counter_first": 4001600000,
+        "replica_counter_last_exclusive": 4001700000
+      },
+      {
+        "batch": 17,
+        "replica_counter_first": 4001700000,
+        "replica_counter_last_exclusive": 4001800000
+      },
+      {
+        "batch": 18,
+        "replica_counter_first": 4001800000,
+        "replica_counter_last_exclusive": 4001900000
+      },
+      {
+        "batch": 19,
+        "replica_counter_first": 4001900000,
+        "replica_counter_last_exclusive": 4002000000
+      },
+      {
+        "batch": 20,
+        "replica_counter_first": 4002000000,
+        "replica_counter_last_exclusive": 4002100000
+      },
+      {
+        "batch": 21,
+        "replica_counter_first": 4002100000,
+        "replica_counter_last_exclusive": 4002200000
+      },
+      {
+        "batch": 22,
+        "replica_counter_first": 4002200000,
+        "replica_counter_last_exclusive": 4002300000
+      },
+      {
+        "batch": 23,
+        "replica_counter_first": 4002300000,
+        "replica_counter_last_exclusive": 4002400000
+      },
+      {
+        "batch": 24,
+        "replica_counter_first": 4002400000,
+        "replica_counter_last_exclusive": 4002500000
+      },
+      {
+        "batch": 25,
+        "replica_counter_first": 4002500000,
+        "replica_counter_last_exclusive": 4002600000
+      },
+      {
+        "batch": 26,
+        "replica_counter_first": 4002600000,
+        "replica_counter_last_exclusive": 4002700000
+      },
+      {
+        "batch": 27,
+        "replica_counter_first": 4002700000,
+        "replica_counter_last_exclusive": 4002800000
+      },
+      {
+        "batch": 28,
+        "replica_counter_first": 4002800000,
+        "replica_counter_last_exclusive": 4002900000
+      },
+      {
+        "batch": 29,
+        "replica_counter_first": 4002900000,
+        "replica_counter_last_exclusive": 4003000000
+      },
+      {
+        "batch": 30,
+        "replica_counter_first": 4003000000,
+        "replica_counter_last_exclusive": 4003100000
+      },
+      {
+        "batch": 31,
+        "replica_counter_first": 4003100000,
+        "replica_counter_last_exclusive": 4003200000
+      },
+      {
+        "batch": 32,
+        "replica_counter_first": 4003200000,
+        "replica_counter_last_exclusive": 4003300000
+      },
+      {
+        "batch": 33,
+        "replica_counter_first": 4003300000,
+        "replica_counter_last_exclusive": 4003400000
+      },
+      {
+        "batch": 34,
+        "replica_counter_first": 4003400000,
+        "replica_counter_last_exclusive": 4003500000
+      },
+      {
+        "batch": 35,
+        "replica_counter_first": 4003500000,
+        "replica_counter_last_exclusive": 4003600000
+      },
+      {
+        "batch": 36,
+        "replica_counter_first": 4003600000,
+        "replica_counter_last_exclusive": 4003700000
+      },
+      {
+        "batch": 37,
+        "replica_counter_first": 4003700000,
+        "replica_counter_last_exclusive": 4003800000
+      },
+      {
+        "batch": 38,
+        "replica_counter_first": 4003800000,
+        "replica_counter_last_exclusive": 4003900000
+      },
+      {
+        "batch": 39,
+        "replica_counter_first": 4003900000,
+        "replica_counter_last_exclusive": 4004000000
+      },
+      {
+        "batch": 40,
+        "replica_counter_first": 4004000000,
+        "replica_counter_last_exclusive": 4004100000
+      },
+      {
+        "batch": 41,
+        "replica_counter_first": 4004100000,
+        "replica_counter_last_exclusive": 4004200000
+      },
+      {
+        "batch": 42,
+        "replica_counter_first": 4004200000,
+        "replica_counter_last_exclusive": 4004300000
+      },
+      {
+        "batch": 43,
+        "replica_counter_first": 4004300000,
+        "replica_counter_last_exclusive": 4004400000
+      },
+      {
+        "batch": 44,
+        "replica_counter_first": 4004400000,
+        "replica_counter_last_exclusive": 4004500000
+      },
+      {
+        "batch": 45,
+        "replica_counter_first": 4004500000,
+        "replica_counter_last_exclusive": 4004600000
+      },
+      {
+        "batch": 46,
+        "replica_counter_first": 4004600000,
+        "replica_counter_last_exclusive": 4004700000
+      },
+      {
+        "batch": 47,
+        "replica_counter_first": 4004700000,
+        "replica_counter_last_exclusive": 4004800000
+      },
+      {
+        "batch": 48,
+        "replica_counter_first": 4004800000,
+        "replica_counter_last_exclusive": 4004900000
+      },
+      {
+        "batch": 49,
+        "replica_counter_first": 4004900000,
+        "replica_counter_last_exclusive": 4005000000
+      },
+      {
+        "batch": 50,
+        "replica_counter_first": 4005000000,
+        "replica_counter_last_exclusive": 4005100000
+      },
+      {
+        "batch": 51,
+        "replica_counter_first": 4005100000,
+        "replica_counter_last_exclusive": 4005200000
+      },
+      {
+        "batch": 52,
+        "replica_counter_first": 4005200000,
+        "replica_counter_last_exclusive": 4005300000
+      },
+      {
+        "batch": 53,
+        "replica_counter_first": 4005300000,
+        "replica_counter_last_exclusive": 4005400000
+      },
+      {
+        "batch": 54,
+        "replica_counter_first": 4005400000,
+        "replica_counter_last_exclusive": 4005500000
+      },
+      {
+        "batch": 55,
+        "replica_counter_first": 4005500000,
+        "replica_counter_last_exclusive": 4005600000
+      },
+      {
+        "batch": 56,
+        "replica_counter_first": 4005600000,
+        "replica_counter_last_exclusive": 4005700000
+      },
+      {
+        "batch": 57,
+        "replica_counter_first": 4005700000,
+        "replica_counter_last_exclusive": 4005800000
+      },
+      {
+        "batch": 58,
+        "replica_counter_first": 4005800000,
+        "replica_counter_last_exclusive": 4005900000
+      },
+      {
+        "batch": 59,
+        "replica_counter_first": 4005900000,
+        "replica_counter_last_exclusive": 4006000000
+      },
+      {
+        "batch": 60,
+        "replica_counter_first": 4006000000,
+        "replica_counter_last_exclusive": 4006100000
+      },
+      {
+        "batch": 61,
+        "replica_counter_first": 4006100000,
+        "replica_counter_last_exclusive": 4006200000
+      },
+      {
+        "batch": 62,
+        "replica_counter_first": 4006200000,
+        "replica_counter_last_exclusive": 4006300000
+      },
+      {
+        "batch": 63,
+        "replica_counter_first": 4006300000,
+        "replica_counter_last_exclusive": 4006400000
+      },
+      {
+        "batch": 64,
+        "replica_counter_first": 4006400000,
+        "replica_counter_last_exclusive": 4006500000
+      },
+      {
+        "batch": 65,
+        "replica_counter_first": 4006500000,
+        "replica_counter_last_exclusive": 4006600000
+      },
+      {
+        "batch": 66,
+        "replica_counter_first": 4006600000,
+        "replica_counter_last_exclusive": 4006700000
+      },
+      {
+        "batch": 67,
+        "replica_counter_first": 4006700000,
+        "replica_counter_last_exclusive": 4006800000
+      },
+      {
+        "batch": 68,
+        "replica_counter_first": 4006800000,
+        "replica_counter_last_exclusive": 4006900000
+      },
+      {
+        "batch": 69,
+        "replica_counter_first": 4006900000,
+        "replica_counter_last_exclusive": 4007000000
+      },
+      {
+        "batch": 70,
+        "replica_counter_first": 4007000000,
+        "replica_counter_last_exclusive": 4007100000
+      },
+      {
+        "batch": 71,
+        "replica_counter_first": 4007100000,
+        "replica_counter_last_exclusive": 4007200000
+      },
+      {
+        "batch": 72,
+        "replica_counter_first": 4007200000,
+        "replica_counter_last_exclusive": 4007300000
+      },
+      {
+        "batch": 73,
+        "replica_counter_first": 4007300000,
+        "replica_counter_last_exclusive": 4007400000
+      },
+      {
+        "batch": 74,
+        "replica_counter_first": 4007400000,
+        "replica_counter_last_exclusive": 4007500000
+      },
+      {
+        "batch": 75,
+        "replica_counter_first": 4007500000,
+        "replica_counter_last_exclusive": 4007600000
+      },
+      {
+        "batch": 76,
+        "replica_counter_first": 4007600000,
+        "replica_counter_last_exclusive": 4007700000
+      },
+      {
+        "batch": 77,
+        "replica_counter_first": 4007700000,
+        "replica_counter_last_exclusive": 4007800000
+      },
+      {
+        "batch": 78,
+        "replica_counter_first": 4007800000,
+        "replica_counter_last_exclusive": 4007900000
+      },
+      {
+        "batch": 79,
+        "replica_counter_first": 4007900000,
+        "replica_counter_last_exclusive": 4008000000
+      },
+      {
+        "batch": 80,
+        "replica_counter_first": 4008000000,
+        "replica_counter_last_exclusive": 4008100000
+      },
+      {
+        "batch": 81,
+        "replica_counter_first": 4008100000,
+        "replica_counter_last_exclusive": 4008200000
+      },
+      {
+        "batch": 82,
+        "replica_counter_first": 4008200000,
+        "replica_counter_last_exclusive": 4008300000
+      },
+      {
+        "batch": 83,
+        "replica_counter_first": 4008300000,
+        "replica_counter_last_exclusive": 4008400000
+      },
+      {
+        "batch": 84,
+        "replica_counter_first": 4008400000,
+        "replica_counter_last_exclusive": 4008500000
+      },
+      {
+        "batch": 85,
+        "replica_counter_first": 4008500000,
+        "replica_counter_last_exclusive": 4008600000
+      },
+      {
+        "batch": 86,
+        "replica_counter_first": 4008600000,
+        "replica_counter_last_exclusive": 4008700000
+      },
+      {
+        "batch": 87,
+        "replica_counter_first": 4008700000,
+        "replica_counter_last_exclusive": 4008800000
+      },
+      {
+        "batch": 88,
+        "replica_counter_first": 4008800000,
+        "replica_counter_last_exclusive": 4008900000
+      },
+      {
+        "batch": 89,
+        "replica_counter_first": 4008900000,
+        "replica_counter_last_exclusive": 4009000000
+      },
+      {
+        "batch": 90,
+        "replica_counter_first": 4009000000,
+        "replica_counter_last_exclusive": 4009100000
+      },
+      {
+        "batch": 91,
+        "replica_counter_first": 4009100000,
+        "replica_counter_last_exclusive": 4009200000
+      },
+      {
+        "batch": 92,
+        "replica_counter_first": 4009200000,
+        "replica_counter_last_exclusive": 4009300000
+      },
+      {
+        "batch": 93,
+        "replica_counter_first": 4009300000,
+        "replica_counter_last_exclusive": 4009400000
+      },
+      {
+        "batch": 94,
+        "replica_counter_first": 4009400000,
+        "replica_counter_last_exclusive": 4009500000
+      },
+      {
+        "batch": 95,
+        "replica_counter_first": 4009500000,
+        "replica_counter_last_exclusive": 4009600000
+      },
+      {
+        "batch": 96,
+        "replica_counter_first": 4009600000,
+        "replica_counter_last_exclusive": 4009700000
+      },
+      {
+        "batch": 97,
+        "replica_counter_first": 4009700000,
+        "replica_counter_last_exclusive": 4009800000
+      },
+      {
+        "batch": 98,
+        "replica_counter_first": 4009800000,
+        "replica_counter_last_exclusive": 4009900000
+      },
+      {
+        "batch": 99,
+        "replica_counter_first": 4009900000,
+        "replica_counter_last_exclusive": 4010000000
+      }
+    ],
+    "metadata_path": "results/server-20260828/P33/p33_all_sizes_arm_10m.metadata.json"
+  },
+  "nonlinear_estimator": {
+    "root_gap_method": "delete_one_jackknife_pseudovalues",
+    "by_N": {
+      "65": {
+        "full_estimate": -8.553498364436135e-05,
+        "bias_corrected_estimate": -8.55353032987927e-05,
+        "bias_correction": -3.1965443134237756e-10,
+        "delete_one_count": 100
+      },
+      "85": {
+        "full_estimate": -7.887040891822935e-05,
+        "bias_corrected_estimate": -7.887012940016666e-05,
+        "bias_correction": 2.7951806269425374e-10,
+        "delete_one_count": 100
+      },
+      "130": {
+        "full_estimate": -4.1478308148125924e-05,
+        "bias_corrected_estimate": -4.147850071973728e-05,
+        "bias_correction": -1.9257161135350677e-10,
+        "delete_one_count": 100
+      },
+      "145": {
+        "full_estimate": -5.668267644583162e-05,
+        "bias_corrected_estimate": -5.668206868513916e-05,
+        "bias_correction": 6.077606924602646e-10,
+        "delete_one_count": 100
+      },
+      "170": {
+        "full_estimate": -4.863967433909071e-05,
+        "bias_corrected_estimate": -4.8639657913680464e-05,
+        "bias_correction": 1.6425410246615358e-11,
+        "delete_one_count": 100
+      }
+    }
+  },
+  "metrics": {
+    "delta_M": {
+      "batch_field": "delta_M",
+      "means": {
+        "65": 0.0007165348935773727,
+        "85": 0.0007303001530936115,
+        "130": 0.00044969161193581767,
+        "145": 0.0006400700889027388,
+        "170": 0.0005827972568741277
+      },
+      "standard_errors": {
+        "65": 0.0002029568131432706,
+        "85": 0.00020229115110938063,
+        "130": 0.00023614101929673138,
+        "145": 0.00020927340623399179,
+        "170": 0.00020248818052159012
+      },
+      "covariance_of_means": [
+        [
+          4.119146800127247e-08,
+          5.876353602264557e-09,
+          1.018386615659038e-08,
+          3.4029682688840476e-09,
+          -6.730410891680027e-09
+        ],
+        [
+          5.876353602264557e-09,
+          4.092170981715827e-08,
+          -1.8439831301180519e-09,
+          1.3325537703834474e-09,
+          1.710880217075913e-09
+        ],
+        [
+          1.018386615659038e-08,
+          -1.8439831301180519e-09,
+          5.576258099449926e-08,
+          1.0892075145509168e-08,
+          -1.0204513470939285e-09
+        ],
+        [
+          3.4029682688840476e-09,
+          1.3325537703834474e-09,
+          1.0892075145509168e-08,
+          4.379535855677735e-08,
+          -2.265603996983366e-09
+        ],
+        [
+          -6.730410891680027e-09,
+          1.710880217075913e-09,
+          -1.0204513470939285e-09,
+          -2.265603996983366e-09,
+          4.1001463250944075e-08
+        ]
+      ],
+      "correlation_of_batch_values": [
+        [
+          1.0,
+          0.14312892203238006,
+          0.2124895684216962,
+          0.08011986732564044,
+          -0.16377147700181593
+        ],
+        [
+          0.14312892203238006,
+          1.0,
+          -0.038601894932351666,
+          0.03147703475557263,
+          0.04176793851433608
+        ],
+        [
+          0.2124895684216962,
+          -0.038601894932351666,
+          1.0,
+          0.22040688271331427,
+          -0.021341315772203193
+        ],
+        [
+          0.08011986732564044,
+          0.03147703475557263,
+          0.22040688271331427,
+          1.0,
+          -0.05346508739209135
+        ],
+        [
+          -0.16377147700181593,
+          0.04176793851433608,
+          -0.021341315772203193,
+          -0.05346508739209135,
+          1.0
+        ]
+      ],
+      "eigenstructure": {
+        "eigenvalues": [
+          2.859883076727666e-08,
+          3.8491260803165555e-08,
+          4.245408589509108e-08,
+          4.57203865888562e-08,
+          6.74080165662619e-08
+        ],
+        "relative_cutoff": 1e-12,
+        "absolute_cutoff": 6.74080165662619e-20,
+        "effective_rank": 5,
+        "dimension": 5,
+        "minimum_eigenvalue": 2.859883076727666e-08,
+        "maximum_eigenvalue": 6.74080165662619e-08,
+        "condition_number": 2.35702001647534,
+        "condition_number_infinite": false,
+        "truncated_eigenvalue_count": 0,
+        "negative_eigenvalue_count": 0,
+        "solver": null
+      }
+    },
+    "root_gap": {
+      "batch_field": "root_gap_jackknife_pseudovalue",
+      "means": {
+        "65": -8.55353032987927e-05,
+        "85": -7.887012940016666e-05,
+        "130": -4.147850071973728e-05,
+        "145": -5.668206868513916e-05,
+        "170": -4.8639657913680464e-05
+      },
+      "standard_errors": {
+        "65": 2.422075736687393e-05,
+        "85": 2.185092074690076e-05,
+        "130": 2.1780803708028015e-05,
+        "145": 1.8533058492482322e-05,
+        "170": 1.690031064575021e-05
+      },
+      "covariance_of_means": [
+        [
+          5.866450874249777e-10,
+          7.580867808560285e-11,
+          1.1210414393960396e-10,
+          3.5920607812670105e-11,
+          -6.701991764532355e-11
+        ],
+        [
+          7.580867808560285e-11,
+          4.774627374873381e-10,
+          -1.8353403167581545e-11,
+          1.2756972455857678e-11,
+          1.544662847724428e-11
+        ],
+        [
+          1.1210414393960396e-10,
+          -1.8353403167581545e-11,
+          4.744034101676469e-10,
+          8.895634018751953e-11,
+          -7.845799368825672e-12
+        ],
+        [
+          3.5920607812670105e-11,
+          1.2756972455857678e-11,
+          8.895634018751953e-11,
+          3.4347425708577105e-10,
+          -1.675753607452283e-11
+        ],
+        [
+          -6.701991764532355e-11,
+          1.544662847724428e-11,
+          -7.845799368825672e-12,
+          -1.675753607452283e-11,
+          2.8562049992285786e-10
+        ]
+      ],
+      "correlation_of_batch_values": [
+        [
+          1.0,
+          0.1432390601366808,
+          0.21250054410776986,
+          0.08002190043765224,
+          -0.16372744447652507
+        ],
+        [
+          0.1432390601366808,
+          1.0,
+          -0.03856319086211097,
+          0.0315014670373158,
+          0.041828209223038676
+        ],
+        [
+          0.21250054410776986,
+          -0.03856319086211097,
+          1.0,
+          0.22037174442119933,
+          -0.021314179045131408
+        ],
+        [
+          0.08002190043765224,
+          0.0315014670373158,
+          0.22037174442119933,
+          1.0,
+          -0.053501798216857945
+        ],
+        [
+          -0.16372744447652507,
+          0.041828209223038676,
+          -0.021314179045131408,
+          -0.053501798216857945,
+          1.0
+        ]
+      ],
+      "eigenstructure": {
+        "eigenvalues": [
+          2.5627464350773624e-10,
+          3.040417600851333e-10,
+          4.0699062660053746e-10,
+          5.0320314044895e-10,
+          6.970958214462348e-10
+        ],
+        "relative_cutoff": 1e-12,
+        "absolute_cutoff": 6.970958214462348e-22,
+        "effective_rank": 5,
+        "dimension": 5,
+        "minimum_eigenvalue": 2.5627464350773624e-10,
+        "maximum_eigenvalue": 6.970958214462348e-10,
+        "condition_number": 2.720112344728289,
+        "condition_number_infinite": false,
+        "truncated_eigenvalue_count": 0,
+        "negative_eigenvalue_count": 0,
+        "solver": null
+      }
+    },
+    "mean_M_prime": {
+      "batch_field": "mean_M_prime",
+      "means": {
+        "65": 8.379671857334957,
+        "85": 9.257971691098222,
+        "130": 10.841613054570116,
+        "145": 11.292251660411829,
+        "170": 11.981465570562152
+      },
+      "standard_errors": {
+        "65": 0.0006574455687474973,
+        "85": 0.0009463519520460764,
+        "130": 0.0010364501622928987,
+        "145": 0.001090338046248786,
+        "170": 0.0011290600446516024
+      },
+      "covariance_of_means": [
+        [
+          4.3223467586572026e-07,
+          7.308692929736823e-08,
+          -2.2209450146739506e-08,
+          -3.4533332030693737e-08,
+          1.9061217132940608e-07
+        ],
+        [
+          7.308692929736823e-08,
+          8.955820171414193e-07,
+          6.343662674655e-10,
+          -1.820711762031836e-07,
+          2.461292586217648e-08
+        ],
+        [
+          -2.2209450146739506e-08,
+          6.343662674655e-10,
+          1.0742289389169762e-06,
+          2.1414638065900325e-08,
+          9.568959083996497e-08
+        ],
+        [
+          -3.4533332030693737e-08,
+          -1.820711762031836e-07,
+          2.1414638065900325e-08,
+          1.18883705509762e-06,
+          -4.947247780868908e-08
+        ],
+        [
+          1.9061217132940608e-07,
+          2.461292586217648e-08,
+          9.568959083996497e-08,
+          -4.947247780868908e-08,
+          1.2747765844286785e-06
+        ]
+      ],
+      "correlation_of_batch_values": [
+        [
+          1.0,
+          0.117470070889827,
+          -0.03259339351983675,
+          -0.048174533202652,
+          0.2567874456606357
+        ],
+        [
+          0.117470070889827,
+          1.0,
+          0.0006467537791250562,
+          -0.1764523102750015,
+          0.023035281425302045
+        ],
+        [
+          -0.03259339351983675,
+          0.0006467537791250562,
+          1.0,
+          0.01894964804591949,
+          0.08177098606952435
+        ],
+        [
+          -0.048174533202652,
+          -0.1764523102750015,
+          0.01894964804591949,
+          1.0,
+          -0.04018698797727118
+        ],
+        [
+          0.2567874456606357,
+          0.023035281425302045,
+          0.08177098606952435,
+          -0.04018698797727118,
+          1.0
+        ]
+      ],
+      "eigenstructure": {
+        "eigenvalues": [
+          3.8006314108483224e-07,
+          8.139288475476788e-07,
+          1.0397715002721732e-06,
+          1.2522356957724609e-06,
+          1.3796600867732686e-06
+        ],
+        "relative_cutoff": 1e-12,
+        "absolute_cutoff": 1.3796600867732686e-18,
+        "effective_rank": 5,
+        "dimension": 5,
+        "minimum_eigenvalue": 3.8006314108483224e-07,
+        "maximum_eigenvalue": 1.3796600867732686e-06,
+        "condition_number": 3.6300812618535945,
+        "condition_number_infinite": false,
+        "truncated_eigenvalue_count": 0,
+        "negative_eigenvalue_count": 0,
+        "solver": null
+      }
+    },
+    "A_M": {
+      "batch_field": "A_M",
+      "means": {
+        "65": 0.46411518586642037,
+        "85": 0.6254498868822465,
+        "130": 0.8984149375607228,
+        "145": 1.0855904579377234,
+        "170": 1.539509483496766
+      },
+      "standard_errors": {
+        "65": 0.13145952820882967,
+        "85": 0.1732479132623481,
+        "130": 0.4717735743251486,
+        "145": 0.3549380245172932,
+        "170": 0.5348900849001782
+      },
+      "covariance_of_means": [
+        [
+          0.01728160755688808,
+          0.003259773929264314,
+          0.013178418486786072,
+          0.0037383918273593015,
+          -0.011515820391408348
+        ],
+        [
+          0.003259773929264314,
+          0.030014839449758086,
+          -0.003155079069165989,
+          0.001935594385621231,
+          0.003870576012504736
+        ],
+        [
+          0.013178418486786072,
+          -0.003155079069165989,
+          0.2225703054315265,
+          0.03690721637305419,
+          -0.005385417165347191
+        ],
+        [
+          0.0037383918273593015,
+          0.001935594385621231,
+          0.03690721637305419,
+          0.12598100124823863,
+          -0.010150498151240545
+        ],
+        [
+          -0.011515820391408348,
+          0.003870576012504736,
+          -0.005385417165347191,
+          -0.010150498151240545,
+          0.28610740292451986
+        ]
+      ],
+      "correlation_of_batch_values": [
+        [
+          1.0,
+          0.1431289220323801,
+          0.21248956842169622,
+          0.08011986732564046,
+          -0.16377147700181596
+        ],
+        [
+          0.1431289220323801,
+          1.0,
+          -0.03860189493235168,
+          0.031477034755572654,
+          0.04176793851433606
+        ],
+        [
+          0.21248956842169622,
+          -0.03860189493235168,
+          1.0,
+          0.22040688271331424,
+          -0.021341315772203162
+        ],
+        [
+          0.08011986732564046,
+          0.031477034755572654,
+          0.22040688271331424,
+          1.0,
+          -0.05346508739209133
+        ],
+        [
+          -0.16377147700181596,
+          0.04176793851433606,
+          -0.021341315772203162,
+          -0.05346508739209133,
+          1.0
+        ]
+      ],
+      "eigenstructure": {
+        "eigenvalues": [
+          0.015099393924156452,
+          0.030707797366575678,
+          0.11325174449251123,
+          0.2343732987794543,
+          0.2885229220482336
+        ],
+        "relative_cutoff": 1e-12,
+        "absolute_cutoff": 2.885229220482336e-13,
+        "effective_rank": 5,
+        "dimension": 5,
+        "minimum_eigenvalue": 0.015099393924156452,
+        "maximum_eigenvalue": 0.2885229220482336,
+        "condition_number": 19.10824523801887,
+        "condition_number_infinite": false,
+        "truncated_eigenvalue_count": 0,
+        "negative_eigenvalue_count": 0,
+        "solver": null
+      }
+    },
+    "B": {
+      "batch_field": "B",
+      "means": {
+        "65": 1.7513966050449201,
+        "85": 1.7497812211653792,
+        "130": 1.7472906212691859,
+        "145": 1.7468979994812677,
+        "170": 1.7461904093512315
+      },
+      "standard_errors": {
+        "65": 0.0001374096691027688,
+        "85": 0.00017886303064586134,
+        "130": 0.0001670396867027026,
+        "145": 0.00016867400842896676,
+        "170": 0.0001645503056317532
+      },
+      "covariance_of_means": [
+        [
+          1.8881417162932415e-08,
+          2.8871218250520156e-09,
+          -7.481118616376599e-10,
+          -1.1165623376312953e-09,
+          5.80617035893371e-09
+        ],
+        [
+          2.8871218250520156e-09,
+          3.1991983731822336e-08,
+          1.9323207920819662e-11,
+          -5.323485798523715e-09,
+          6.77973627979215e-10
+        ],
+        [
+          -7.481118616376599e-10,
+          1.9323207920819662e-11,
+          2.790225693373704e-08,
+          5.339111378626571e-10,
+          2.2475926072517833e-09
+        ],
+        [
+          -1.1165623376312953e-09,
+          -5.323485798523715e-09,
+          5.339111378626571e-10,
+          2.845092111949515e-08,
+          -1.1154043041218853e-09
+        ],
+        [
+          5.80617035893371e-09,
+          6.77973627979215e-10,
+          2.2475926072517833e-09,
+          -1.1154043041218853e-09,
+          2.7076803083503395e-08
+        ]
+      ],
+      "correlation_of_batch_values": [
+        [
+          1.0,
+          0.11747007088981634,
+          -0.032593393519838365,
+          -0.04817453320263986,
+          0.2567874456606353
+        ],
+        [
+          0.11747007088981634,
+          1.0,
+          0.0006467537791200348,
+          -0.17645231027500244,
+          0.02303528142529086
+        ],
+        [
+          -0.032593393519838365,
+          0.0006467537791200348,
+          1.0,
+          0.018949648045913748,
+          0.08177098606953026
+        ],
+        [
+          -0.04817453320263986,
+          -0.17645231027500244,
+          0.018949648045913748,
+          1.0,
+          -0.040186987977262396
+        ],
+        [
+          0.2567874456606353,
+          0.02303528142529086,
+          0.08177098606953026,
+          -0.040186987977262396,
+          1.0
+        ]
+      ],
+      "eigenstructure": {
+        "eigenvalues": [
+          1.532957356070066e-08,
+          2.466372901831471e-08,
+          2.6903390743438146e-08,
+          3.0487125103164084e-08,
+          3.691956360587273e-08
+        ],
+        "relative_cutoff": 1e-12,
+        "absolute_cutoff": 3.6919563605872734e-20,
+        "effective_rank": 5,
+        "dimension": 5,
+        "minimum_eigenvalue": 1.532957356070066e-08,
+        "maximum_eigenvalue": 3.691956360587273e-08,
+        "condition_number": 2.408388169421803,
+        "condition_number_infinite": false,
+        "truncated_eigenvalue_count": 0,
+        "negative_eigenvalue_count": 0,
+        "solver": null
+      }
+    },
+    "A_p": {
+      "batch_field": "A_p_jackknife_pseudovalue",
+      "means": {
+        "65": 0.26507962212639086,
+        "85": 0.35738455282287973,
+        "130": 0.514178584659903,
+        "145": 0.6214371004106819,
+        "170": 0.8816043551667765
+      },
+      "standard_errors": {
+        "65": 0.0750617460020927,
+        "85": 0.09901317012271585,
+        "130": 0.27000066610459555,
+        "145": 0.20318824627389306,
+        "170": 0.3063217980563592
+      },
+      "covariance_of_means": [
+        [
+          0.0056342657128826785,
+          0.0010645672231885722,
+          0.004306689328932628,
+          0.001220467180721915,
+          -0.0037645931535935195
+        ],
+        [
+          0.0010645672231885722,
+          0.00980360785774987,
+          -0.0010309337632353867,
+          0.0006337563547654923,
+          0.0012686450809725927
+        ],
+        [
+          0.004306689328932628,
+          -0.0010309337632353867,
+          0.0729003596969253,
+          0.01208980586099178,
+          -0.0017628337142792916
+        ],
+        [
+          0.001220467180721915,
+          0.0006337563547654923,
+          0.01208980586099178,
+          0.04128546342386022,
+          -0.0033300048312213146
+        ],
+        [
+          -0.0037645931535935195,
+          0.0012686450809725927,
+          -0.0017628337142792916,
+          -0.0033300048312213146,
+          0.0938330439644809
+        ]
+      ],
+      "correlation_of_batch_values": [
+        [
+          1.0,
+          0.1432390601366808,
+          0.21250054410776983,
+          0.08002190043765225,
+          -0.1637274444765251
+        ],
+        [
+          0.1432390601366808,
+          1.0,
+          -0.03856319086211096,
+          0.031501467037315795,
+          0.04182820922303868
+        ],
+        [
+          0.21250054410776983,
+          -0.03856319086211096,
+          1.0,
+          0.2203717444211993,
+          -0.02131417904513141
+        ],
+        [
+          0.08002190043765225,
+          0.031501467037315795,
+          0.2203717444211993,
+          1.0,
+          -0.05350179821685795
+        ],
+        [
+          -0.1637274444765251,
+          0.04182820922303868,
+          -0.02131417904513141,
+          -0.05350179821685795,
+          1.0
+        ]
+      ],
+      "eigenstructure": {
+        "eigenvalues": [
+          0.004923128775870246,
+          0.010029309806841526,
+          0.0371128049164181,
+          0.07677124796585648,
+          0.09462024919091261
+        ],
+        "relative_cutoff": 1e-12,
+        "absolute_cutoff": 9.462024919091261e-14,
+        "effective_rank": 5,
+        "dimension": 5,
+        "minimum_eigenvalue": 0.004923128775870246,
+        "maximum_eigenvalue": 0.09462024919091261,
+        "condition_number": 19.21953568524863,
+        "condition_number_infinite": false,
+        "truncated_eigenvalue_count": 0,
+        "negative_eigenvalue_count": 0,
+        "solver": null
+      }
+    }
+  },
+  "constant_amplitude_audits": {
+    "A_M": {
+      "full_covariance": {
+        "training_sizes": [
+          65,
+          85,
+          130
+        ],
+        "heldout_sizes": [
+          145,
+          170
+        ],
+        "amplitude": 0.529772851874458,
+        "amplitude_se": 0.11111938296684953,
+        "training_weights": [
+          0.6318749798676582,
+          0.3451685063480102,
+          0.022956513784331643
+        ],
+        "heldout_observed": [
+          1.0855904579377234,
+          1.539509483496766
+        ],
+        "heldout_residuals": [
+          0.5558176060632654,
+          1.009736631622308
+        ],
+        "heldout_residual_covariance": [
+          [
+            0.13057339150909225,
+            0.0043836438550816335
+          ],
+          [
+            0.0043836438550816335,
+            0.3105832966763106
+          ]
+        ],
+        "heldout_chi_square": 5.530015183913106,
+        "heldout_chi_square_kind": "plugin_asymptotic",
+        "heldout_dof": 2,
+        "score_solver": "cholesky",
+        "training_covariance_eigenstructure": {
+          "eigenvalues": [
+            0.015608367467352587,
+            0.030800837793039763,
+            0.22345754717778032
+          ],
+          "relative_cutoff": 1e-12,
+          "absolute_cutoff": 2.2345754717778033e-13,
+          "effective_rank": 3,
+          "dimension": 3,
+          "minimum_eigenvalue": 0.015608367467352587,
+          "maximum_eigenvalue": 0.22345754717778032,
+          "condition_number": 14.316522701376538,
+          "condition_number_infinite": false,
+          "truncated_eigenvalue_count": 0,
+          "negative_eigenvalue_count": 0,
+          "solver": "cholesky"
+        },
+        "heldout_residual_eigenstructure": {
+          "eigenvalues": [
+            0.13046670320748655,
+            0.31068998497791633
+          ],
+          "relative_cutoff": 1e-12,
+          "absolute_cutoff": 3.106899849779163e-13,
+          "effective_rank": 2,
+          "dimension": 2,
+          "minimum_eigenvalue": 0.13046670320748655,
+          "maximum_eigenvalue": 0.31068998497791633,
+          "condition_number": 2.3813737707759297,
+          "condition_number_infinite": false,
+          "truncated_eigenvalue_count": 0,
+          "negative_eigenvalue_count": 0,
+          "solver": "cholesky"
+        },
+        "eigenvalue_truncation_sensitivity": [
+          {
+            "relative_cutoff": 0.0,
+            "absolute_cutoff": 0.0,
+            "effective_rank": 2,
+            "plugin_chi_square": 5.530015183913105
+          },
+          {
+            "relative_cutoff": 1e-14,
+            "absolute_cutoff": 3.1068998497791632e-15,
+            "effective_rank": 2,
+            "plugin_chi_square": 5.530015183913105
+          },
+          {
+            "relative_cutoff": 1e-12,
+            "absolute_cutoff": 3.106899849779163e-13,
+            "effective_rank": 2,
+            "plugin_chi_square": 5.530015183913105
+          },
+          {
+            "relative_cutoff": 1e-10,
+            "absolute_cutoff": 3.106899849779164e-11,
+            "effective_rank": 2,
+            "plugin_chi_square": 5.530015183913105
+          },
+          {
+            "relative_cutoff": 1e-08,
+            "absolute_cutoff": 3.1068998497791635e-09,
+            "effective_rank": 2,
+            "plugin_chi_square": 5.530015183913105
+          },
+          {
+            "relative_cutoff": 1e-06,
+            "absolute_cutoff": 3.106899849779163e-07,
+            "effective_rank": 2,
+            "plugin_chi_square": 5.530015183913105
+          }
+        ],
+        "gauss_jordan_crosscheck_chi_square": 5.530015183913106,
+        "finite_batch_calibration": {
+          "batch_count": 100,
+          "plugin_chi_square": 5.530015183913106,
+          "plugin_chi_square_kind": "asymptotic_known_covariance",
+          "plugin_chi_square_survival": 0.06297562123801986,
+          "hotelling": {
+            "applicable": true,
+            "t_square": 5.530015183913106,
+            "f_statistic": 2.73707822234083,
+            "df": [
+              2,
+              98
+            ],
+            "f_survival": 0.0697131769457846,
+            "plugin_chi_square_survival": 0.06297562123801986,
+            "note": "finite-batch calibration of the plug-in quadratic form; not a paper-facing p-value"
+          },
+          "bootstrap": {
+            "replicates_requested": 2000,
+            "replicates_used": 2000,
+            "failures": 0,
+            "seed": 20260828,
+            "mean": 8.000386484799487,
+            "quantiles": {
+              "0.5": 6.918013539285823,
+              "0.9": 15.928476485741756,
+              "0.95": 18.70015385924968,
+              "0.99": 24.96558798038845
+            },
+            "observed_plugin_chi_square": 5.530015183913106,
+            "observed_survival": 0.616,
+            "diagonal_only": false,
+            "note": "uncentered batch bootstrap of the held-out plug-in chi-square, measuring sampling variability around the observed sample; not a null p-value and not paper-facing"
+          }
+        }
+      },
+      "diagonal_covariance": {
+        "training_sizes": [
+          65,
+          85,
+          130
+        ],
+        "heldout_sizes": [
+          145,
+          170
+        ],
+        "amplitude": 0.5406918473187048,
+        "amplitude_se": 0.10223537922177721,
+        "training_weights": [
+          0.6048090566930285,
+          0.34823017401496836,
+          0.04696076929200317
+        ],
+        "heldout_observed": [
+          1.0855904579377234,
+          1.539509483496766
+        ],
+        "heldout_residuals": [
+          0.5448986106190186,
+          0.9988176361780612
+        ],
+        "heldout_residual_covariance": [
+          [
+            0.13643307401285923,
+            0.010452072764620596
+          ],
+          [
+            0.010452072764620596,
+            0.29655947568914043
+          ]
+        ],
+        "heldout_chi_square": 5.2733469400778485,
+        "heldout_chi_square_kind": "plugin_asymptotic",
+        "heldout_dof": 2,
+        "score_solver": "cholesky",
+        "training_covariance_eigenstructure": {
+          "eigenvalues": [
+            0.01728160755688808,
+            0.030014839449758086,
+            0.2225703054315265
+          ],
+          "relative_cutoff": 1e-12,
+          "absolute_cutoff": 2.225703054315265e-13,
+          "effective_rank": 3,
+          "dimension": 3,
+          "minimum_eigenvalue": 0.01728160755688808,
+          "maximum_eigenvalue": 0.2225703054315265,
+          "condition_number": 12.879027873932637,
+          "condition_number_infinite": false,
+          "truncated_eigenvalue_count": 0,
+          "negative_eigenvalue_count": 0,
+          "solver": "cholesky"
+        },
+        "heldout_residual_eigenstructure": {
+          "eigenvalues": [
+            0.13575370891750127,
+            0.29723884078449836
+          ],
+          "relative_cutoff": 1e-12,
+          "absolute_cutoff": 2.972388407844984e-13,
+          "effective_rank": 2,
+          "dimension": 2,
+          "minimum_eigenvalue": 0.13575370891750127,
+          "maximum_eigenvalue": 0.29723884078449836,
+          "condition_number": 2.1895448982917514,
+          "condition_number_infinite": false,
+          "truncated_eigenvalue_count": 0,
+          "negative_eigenvalue_count": 0,
+          "solver": "cholesky"
+        },
+        "eigenvalue_truncation_sensitivity": [
+          {
+            "relative_cutoff": 0.0,
+            "absolute_cutoff": 0.0,
+            "effective_rank": 2,
+            "plugin_chi_square": 5.2733469400778485
+          },
+          {
+            "relative_cutoff": 1e-14,
+            "absolute_cutoff": 2.9723884078449835e-15,
+            "effective_rank": 2,
+            "plugin_chi_square": 5.2733469400778485
+          },
+          {
+            "relative_cutoff": 1e-12,
+            "absolute_cutoff": 2.972388407844984e-13,
+            "effective_rank": 2,
+            "plugin_chi_square": 5.2733469400778485
+          },
+          {
+            "relative_cutoff": 1e-10,
+            "absolute_cutoff": 2.9723884078449837e-11,
+            "effective_rank": 2,
+            "plugin_chi_square": 5.2733469400778485
+          },
+          {
+            "relative_cutoff": 1e-08,
+            "absolute_cutoff": 2.9723884078449836e-09,
+            "effective_rank": 2,
+            "plugin_chi_square": 5.2733469400778485
+          },
+          {
+            "relative_cutoff": 1e-06,
+            "absolute_cutoff": 2.9723884078449837e-07,
+            "effective_rank": 2,
+            "plugin_chi_square": 5.2733469400778485
+          }
+        ],
+        "gauss_jordan_crosscheck_chi_square": 5.273346940077849,
+        "finite_batch_calibration": {
+          "batch_count": 100,
+          "plugin_chi_square": 5.2733469400778485,
+          "plugin_chi_square_kind": "asymptotic_known_covariance",
+          "plugin_chi_square_survival": 0.07159905023062485,
+          "hotelling": {
+            "applicable": true,
+            "t_square": 5.2733469400778485,
+            "f_statistic": 2.610040404684996,
+            "df": [
+              2,
+              98
+            ],
+            "f_survival": 0.07863794700001159,
+            "plugin_chi_square_survival": 0.07159905023062485,
+            "note": "finite-batch calibration of the plug-in quadratic form; not a paper-facing p-value"
+          },
+          "bootstrap": {
+            "replicates_requested": 2000,
+            "replicates_used": 2000,
+            "failures": 0,
+            "seed": 20260828,
+            "mean": 7.570940476528599,
+            "quantiles": {
+              "0.5": 6.58855909245745,
+              "0.9": 14.817411466820111,
+              "0.95": 17.68700276165757,
+              "0.99": 22.364950583761235
+            },
+            "observed_plugin_chi_square": 5.2733469400778485,
+            "observed_survival": 0.6165,
+            "diagonal_only": true,
+            "note": "uncentered batch bootstrap of the held-out plug-in chi-square, measuring sampling variability around the observed sample; not a null p-value and not paper-facing"
+          }
+        }
+      }
+    },
+    "A_p": {
+      "full_covariance": {
+        "training_sizes": [
+          65,
+          85,
+          130
+        ],
+        "heldout_sizes": [
+          145,
+          170
+        ],
+        "amplitude": 0.3025673287616241,
+        "amplitude_se": 0.06347420238832799,
+        "training_weights": [
+          0.6325530887907066,
+          0.34467471178570885,
+          0.022772199423584518
+        ],
+        "heldout_observed": [
+          0.6214371004106819,
+          0.8816043551667765
+        ],
+        "heldout_residuals": [
+          0.3188697716490578,
+          0.5790370264051523
+        ],
+        "heldout_residual_covariance": [
+          [
+            0.0427829147048678,
+            0.0014173867442952195
+          ],
+          [
+            0.0014173867442952195,
+            0.1018303758345064
+          ]
+        ],
+        "heldout_chi_square": 5.5515929352417235,
+        "heldout_chi_square_kind": "plugin_asymptotic",
+        "heldout_dof": 2,
+        "score_solver": "cholesky",
+        "training_covariance_eigenstructure": {
+          "eigenvalues": [
+            0.005088986844219497,
+            0.010059696310826276,
+            0.07318955011251208
+          ],
+          "relative_cutoff": 1e-12,
+          "absolute_cutoff": 7.318955011251207e-14,
+          "effective_rank": 3,
+          "dimension": 3,
+          "minimum_eigenvalue": 0.005088986844219497,
+          "maximum_eigenvalue": 0.07318955011251208,
+          "condition_number": 14.381949168457172,
+          "condition_number_infinite": false,
+          "truncated_eigenvalue_count": 0,
+          "negative_eigenvalue_count": 0,
+          "solver": "cholesky"
+        },
+        "heldout_residual_eigenstructure": {
+          "eigenvalues": [
+            0.04274891105938355,
+            0.10186437947999065
+          ],
+          "relative_cutoff": 1e-12,
+          "absolute_cutoff": 1.0186437947999064e-13,
+          "effective_rank": 2,
+          "dimension": 2,
+          "minimum_eigenvalue": 0.04274891105938355,
+          "maximum_eigenvalue": 0.10186437947999065,
+          "condition_number": 2.3828531991958433,
+          "condition_number_infinite": false,
+          "truncated_eigenvalue_count": 0,
+          "negative_eigenvalue_count": 0,
+          "solver": "cholesky"
+        },
+        "eigenvalue_truncation_sensitivity": [
+          {
+            "relative_cutoff": 0.0,
+            "absolute_cutoff": 0.0,
+            "effective_rank": 2,
+            "plugin_chi_square": 5.551592935241722
+          },
+          {
+            "relative_cutoff": 1e-14,
+            "absolute_cutoff": 1.0186437947999064e-15,
+            "effective_rank": 2,
+            "plugin_chi_square": 5.551592935241722
+          },
+          {
+            "relative_cutoff": 1e-12,
+            "absolute_cutoff": 1.0186437947999064e-13,
+            "effective_rank": 2,
+            "plugin_chi_square": 5.551592935241722
+          },
+          {
+            "relative_cutoff": 1e-10,
+            "absolute_cutoff": 1.0186437947999066e-11,
+            "effective_rank": 2,
+            "plugin_chi_square": 5.551592935241722
+          },
+          {
+            "relative_cutoff": 1e-08,
+            "absolute_cutoff": 1.0186437947999064e-09,
+            "effective_rank": 2,
+            "plugin_chi_square": 5.551592935241722
+          },
+          {
+            "relative_cutoff": 1e-06,
+            "absolute_cutoff": 1.0186437947999064e-07,
+            "effective_rank": 2,
+            "plugin_chi_square": 5.551592935241722
+          }
+        ],
+        "gauss_jordan_crosscheck_chi_square": 5.5515929352417235,
+        "finite_batch_calibration": {
+          "batch_count": 100,
+          "plugin_chi_square": 5.5515929352417235,
+          "plugin_chi_square_kind": "asymptotic_known_covariance",
+          "plugin_chi_square_survival": 0.062299837121091085,
+          "hotelling": {
+            "applicable": true,
+            "t_square": 5.5515929352417235,
+            "f_statistic": 2.7477581194630756,
+            "df": [
+              2,
+              98
+            ],
+            "f_survival": 0.06901166194725983,
+            "plugin_chi_square_survival": 0.062299837121091085,
+            "note": "finite-batch calibration of the plug-in quadratic form; not a paper-facing p-value"
+          },
+          "bootstrap": {
+            "replicates_requested": 2000,
+            "replicates_used": 2000,
+            "failures": 0,
+            "seed": 20260828,
+            "mean": 8.022490423805769,
+            "quantiles": {
+              "0.5": 6.9367030437467525,
+              "0.9": 15.961903098431373,
+              "0.95": 18.733053546500642,
+              "0.99": 25.024628792415506
+            },
+            "observed_plugin_chi_square": 5.5515929352417235,
+            "observed_survival": 0.616,
+            "diagonal_only": false,
+            "note": "uncentered batch bootstrap of the held-out plug-in chi-square, measuring sampling variability around the observed sample; not a null p-value and not paper-facing"
+          }
+        }
+      },
+      "diagonal_covariance": {
+        "training_sizes": [
+          65,
+          85,
+          130
+        ],
+        "heldout_sizes": [
+          145,
+          170
+        ],
+        "amplitude": 0.3088453745739729,
+        "amplitude_se": 0.058400094230314656,
+        "training_weights": [
+          0.605326617506058,
+          0.34788937456464386,
+          0.046784007929298016
+        ],
+        "heldout_observed": [
+          0.6214371004106819,
+          0.8816043551667765
+        ],
+        "heldout_residuals": [
+          0.312591725836709,
+          0.5727589805928036
+        ],
+        "heldout_residual_covariance": [
+          [
+            0.04469603442996985,
+            0.003410571006109631
+          ],
+          [
+            0.003410571006109631,
+            0.09724361497059053
+          ]
+        ],
+        "heldout_chi_square": 5.292880163846318,
+        "heldout_chi_square_kind": "plugin_asymptotic",
+        "heldout_dof": 2,
+        "score_solver": "cholesky",
+        "training_covariance_eigenstructure": {
+          "eigenvalues": [
+            0.0056342657128826785,
+            0.00980360785774987,
+            0.0729003596969253
+          ],
+          "relative_cutoff": 1e-12,
+          "absolute_cutoff": 7.290035969692529e-14,
+          "effective_rank": 3,
+          "dimension": 3,
+          "minimum_eigenvalue": 0.0056342657128826785,
+          "maximum_eigenvalue": 0.0729003596969253,
+          "condition_number": 12.938750746213394,
+          "condition_number_infinite": false,
+          "truncated_eigenvalue_count": 0,
+          "negative_eigenvalue_count": 0,
+          "solver": "cholesky"
+        },
+        "heldout_residual_eigenstructure": {
+          "eigenvalues": [
+            0.04447559797527517,
+            0.0974640514252852
+          ],
+          "relative_cutoff": 1e-12,
+          "absolute_cutoff": 9.74640514252852e-14,
+          "effective_rank": 2,
+          "dimension": 2,
+          "minimum_eigenvalue": 0.04447559797527517,
+          "maximum_eigenvalue": 0.0974640514252852,
+          "condition_number": 2.1914050819388042,
+          "condition_number_infinite": false,
+          "truncated_eigenvalue_count": 0,
+          "negative_eigenvalue_count": 0,
+          "solver": "cholesky"
+        },
+        "eigenvalue_truncation_sensitivity": [
+          {
+            "relative_cutoff": 0.0,
+            "absolute_cutoff": 0.0,
+            "effective_rank": 2,
+            "plugin_chi_square": 5.29288016384632
+          },
+          {
+            "relative_cutoff": 1e-14,
+            "absolute_cutoff": 9.74640514252852e-16,
+            "effective_rank": 2,
+            "plugin_chi_square": 5.29288016384632
+          },
+          {
+            "relative_cutoff": 1e-12,
+            "absolute_cutoff": 9.74640514252852e-14,
+            "effective_rank": 2,
+            "plugin_chi_square": 5.29288016384632
+          },
+          {
+            "relative_cutoff": 1e-10,
+            "absolute_cutoff": 9.746405142528521e-12,
+            "effective_rank": 2,
+            "plugin_chi_square": 5.29288016384632
+          },
+          {
+            "relative_cutoff": 1e-08,
+            "absolute_cutoff": 9.74640514252852e-10,
+            "effective_rank": 2,
+            "plugin_chi_square": 5.29288016384632
+          },
+          {
+            "relative_cutoff": 1e-06,
+            "absolute_cutoff": 9.74640514252852e-08,
+            "effective_rank": 2,
+            "plugin_chi_square": 5.29288016384632
+          }
+        ],
+        "gauss_jordan_crosscheck_chi_square": 5.292880163846318,
+        "finite_batch_calibration": {
+          "batch_count": 100,
+          "plugin_chi_square": 5.292880163846318,
+          "plugin_chi_square_kind": "asymptotic_known_covariance",
+          "plugin_chi_square_survival": 0.07090317380466635,
+          "hotelling": {
+            "applicable": true,
+            "t_square": 5.292880163846318,
+            "f_statistic": 2.619708363923935,
+            "df": [
+              2,
+              98
+            ],
+            "f_survival": 0.07791949675941146,
+            "plugin_chi_square_survival": 0.07090317380466635,
+            "note": "finite-batch calibration of the plug-in quadratic form; not a paper-facing p-value"
+          },
+          "bootstrap": {
+            "replicates_requested": 2000,
+            "replicates_used": 2000,
+            "failures": 0,
+            "seed": 20260828,
+            "mean": 7.590779384762958,
+            "quantiles": {
+              "0.5": 6.608877709554431,
+              "0.9": 14.842798325989616,
+              "0.95": 17.71324162943718,
+              "0.99": 22.399358346382783
+            },
+            "observed_plugin_chi_square": 5.292880163846318,
+            "observed_survival": 0.6165,
+            "diagonal_only": true,
+            "note": "uncentered batch bootstrap of the held-out plug-in chi-square, measuring sampling variability around the observed sample; not a null p-value and not paper-facing"
+          }
+        }
+      }
+    }
+  },
+  "score_numerics": {
+    "inverse": "cholesky_then_svd_pseudoinverse",
+    "eigenvalue_relative_cutoff": 1e-12,
+    "heldout_chi_square_kind": "plugin_asymptotic"
+  }
+}

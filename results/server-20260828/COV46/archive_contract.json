@@ -1,0 +1,154 @@
+{
+  "format_version": 1,
+  "batch_contract": {
+    "sizes": [
+      65,
+      85,
+      130,
+      145,
+      170
+    ],
+    "batch_count": 100,
+    "samples_per_size_batch": 100000,
+    "geometry_by_N": {
+      "65": [
+        8,
+        1,
+        7,
+        4
+      ],
+      "85": [
+        9,
+        2,
+        7,
+        6
+      ],
+      "130": [
+        11,
+        3,
+        9,
+        7
+      ],
+      "145": [
+        12,
+        1,
+        9,
+        8
+      ],
+      "170": [
+        13,
+        1,
+        11,
+        7
+      ]
+    }
+  },
+  "summary_contract": {
+    "format_version": 1,
+    "summary_format_version": 3,
+    "sizes": [
+      65,
+      85,
+      130,
+      145,
+      170
+    ],
+    "batch_count": 100,
+    "max_condition_allowed": 1000000000000.0,
+    "metric_covariance_diagnostics": {
+      "delta_M": {
+        "dimension": 5.0,
+        "infinity_norm_condition": 3.260719922999138,
+        "minimum_cholesky_pivot": 3.9619994435766845e-08,
+        "maximum_symmetry_error": 0.0,
+        "maximum_correlation_error": 0.0,
+        "maximum_absolute_mean": 0.0007303001530936115
+      },
+      "root_gap": {
+        "dimension": 5.0,
+        "infinity_norm_condition": 3.953393212125328,
+        "minimum_cholesky_pivot": 2.7599636059096574e-10,
+        "maximum_symmetry_error": 0.0,
+        "maximum_correlation_error": 0.0,
+        "maximum_absolute_mean": 8.55353032987927e-05
+      },
+      "mean_M_prime": {
+        "dimension": 5.0,
+        "infinity_norm_condition": 5.231485215280768,
+        "minimum_cholesky_pivot": 4.3223467586572026e-07,
+        "maximum_symmetry_error": 0.0,
+        "maximum_correlation_error": 0.0,
+        "maximum_absolute_mean": 11.981465570562152
+      },
+      "A_M": {
+        "dimension": 5.0,
+        "infinity_norm_condition": 24.878398866035138,
+        "minimum_cholesky_pivot": 0.01728160755688808,
+        "maximum_symmetry_error": 0.0,
+        "maximum_correlation_error": 0.0,
+        "maximum_absolute_mean": 1.539509483496766
+      },
+      "B": {
+        "dimension": 5.0,
+        "infinity_norm_condition": 3.2006349964398932,
+        "minimum_cholesky_pivot": 1.8881417162932415e-08,
+        "maximum_symmetry_error": 0.0,
+        "maximum_correlation_error": 0.0,
+        "maximum_absolute_mean": 1.7513966050449201
+      },
+      "A_p": {
+        "dimension": 5.0,
+        "infinity_norm_condition": 25.016447371853594,
+        "minimum_cholesky_pivot": 0.0056342657128826785,
+        "maximum_symmetry_error": 0.0,
+        "maximum_correlation_error": 0.0,
+        "maximum_absolute_mean": 0.8816043551667765
+      }
+    },
+    "heldout_residual_diagnostics": {
+      "A_M": {
+        "full_covariance": {
+          "dimension": 2.0,
+          "infinity_norm_condition": 2.4473889871268635,
+          "minimum_cholesky_pivot": 0.13057339150909225,
+          "maximum_symmetry_error": 0.0,
+          "heldout_chi_square": 5.530015183913106,
+          "heldout_dof": 2
+        },
+        "diagonal_covariance": {
+          "dimension": 2.0,
+          "infinity_norm_condition": 2.3358887846422447,
+          "minimum_cholesky_pivot": 0.13643307401285923,
+          "maximum_symmetry_error": 0.0,
+          "heldout_chi_square": 5.2733469400778485,
+          "heldout_dof": 2
+        }
+      },
+      "A_p": {
+        "full_covariance": {
+          "dimension": 2.0,
+          "infinity_norm_condition": 2.448014003329672,
+          "minimum_cholesky_pivot": 0.0427829147048678,
+          "maximum_symmetry_error": 0.0,
+          "heldout_chi_square": 5.5515929352417235,
+          "heldout_dof": 2
+        },
+        "diagonal_covariance": {
+          "dimension": 2.0,
+          "infinity_norm_condition": 2.3372083304218396,
+          "minimum_cholesky_pivot": 0.04469603442996985,
+          "maximum_symmetry_error": 0.0,
+          "heldout_chi_square": 5.292880163846318,
+          "heldout_dof": 2
+        }
+      }
+    },
+    "hardening_gates": {
+      "summary_format_version": 3,
+      "equal_batch_weight_asserted": true,
+      "coupling_validated": true,
+      "stable_inverse_declared": true,
+      "finite_batch_calibration_present": true
+    }
+  }
+}

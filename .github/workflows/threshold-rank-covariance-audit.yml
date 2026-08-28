@@ -4,16 +4,19 @@ on:
   push:
     branches:
       - research/threshold-rank-covariance-audit-20260828
+      - agent/cov46-harden
     paths:
       - .github/workflows/threshold-rank-covariance-audit.yml
       - scripts/audit_threshold_rank_covariance.py
       - scripts/score_threshold_rank_root_doubling.py
+      - scripts/validate_threshold_rank_covariance_archive.py
       - tests/test_threshold_rank_cross_size_covariance.py
       - tests/test_threshold_rank_root_doubling.py
+      - tests/test_threshold_rank_covariance_archive.py
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: threshold-rank-covariance-audit
@@ -44,51 +47,30 @@ jobs:
           python -m unittest
           tests.test_threshold_rank_cross_size_covariance
           tests.test_threshold_rank_root_doubling
+          tests.test_threshold_rank_covariance_archive
           -v
 
-      - name: Reconstruct aligned cross-size covariance
+      - name: Reconstruct hardened cross-size covariance into COV46
         run: |
-          rm -rf results/server-20260828/P33-cross-size-covariance
+          mkdir -p results/server-20260828/COV46
           python scripts/audit_threshold_rank_covariance.py \
             --histograms results/server-20260828/P33/p33_all_sizes_arm_10m.hist.csv \
+            --metadata results/server-20260828/P33/p33_all_sizes_arm_10m.metadata.json \
             --p 0.592746050790 \
             --training-sizes 65,85,130 \
             --heldout-sizes 145,170 \
             --seed-label p33-working-tree-10m \
-            --output-dir results/server-20260828/P33-cross-size-covariance
+            --expected-seed 2026093303 \
+            --output-dir results/server-20260828/COV46
 
-      - name: Score no-fit root-gap doubling relation
+      - name: Validate original P33 archive was not overwritten
         run: |
-          python scripts/score_threshold_rank_root_doubling.py \
+          test -f results/server-20260828/P33-cross-size-covariance/summary.json
+          python scripts/validate_threshold_rank_covariance_archive.py \
+            --batch-metrics results/server-20260828/P33-cross-size-covariance/batch_metrics.csv \
             --summary results/server-20260828/P33-cross-size-covariance/summary.json \
-            --json results/server-20260828/P33-cross-size-covariance/root_doubling.json \
-            --csv results/server-20260828/P33-cross-size-covariance/root_doubling.csv \
-            --report results/server-20260828/P33-cross-size-covariance/ROOT_DOUBLING_REPORT.md
-
-      - name: Record commands and source state
-        run: |
-          {
-            echo "source_commit=$(git rev-parse HEAD)"
-            echo "python=$(python --version 2>&1)"
-            echo "mpmath=$(python -c 'import mpmath; print(mpmath.__version__)')"
-            echo
-            echo "python scripts/audit_threshold_rank_covariance.py --histograms results/server-20260828/P33/p33_all_sizes_arm_10m.hist.csv --p 0.592746050790 --training-sizes 65,85,130 --heldout-sizes 145,170 --seed-label p33-working-tree-10m --output-dir results/server-20260828/P33-cross-size-covariance"
-            echo "python scripts/score_threshold_rank_root_doubling.py --summary results/server-20260828/P33-cross-size-covariance/summary.json --json results/server-20260828/P33-cross-size-covariance/root_doubling.json --csv results/server-20260828/P33-cross-size-covariance/root_doubling.csv --report results/server-20260828/P33-cross-size-covariance/ROOT_DOUBLING_REPORT.md"
-          } > results/server-20260828/P33-cross-size-covariance/provenance.txt
-          sha256sum \
-            results/server-20260828/P33-cross-size-covariance/* \
-            > results/server-20260828/P33-cross-size-covariance/checksums.sha256
-
-      - name: Commit generated audit outputs
-        env:
-          BRANCH_NAME: ${{ github.ref_name }}
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add results/server-20260828/P33-cross-size-covariance
-          if git diff --cached --quiet; then
-            echo "Audit outputs are already current."
-            exit 0
-          fi
-          git commit -m "analysis: record P33 cross-size covariance audit [skip ci]"
-          git push origin "HEAD:${BRANCH_NAME}"
+            --json /tmp/p33-archive-contract.json
+          python scripts/validate_threshold_rank_covariance_archive.py \
+            --batch-metrics results/server-20260828/COV46/batch_metrics.csv \
+            --summary results/server-20260828/COV46/summary.json \
+            --json /tmp/cov46-archive-contract.json

@@ -1,0 +1,82 @@
+{
+  "task": "COV46",
+  "title": "Harden threshold-rank cross-size covariance audit",
+  "branch": "agent/cov46-harden",
+  "parent_git_commit": "eb626087f9e7961f8b85d699ca951260958bb69c",
+  "timestamp_shanghai": "2026-08-28 21:48:59 CST",
+  "source_histogram": "results/server-20260828/P33/p33_all_sizes_arm_10m.hist.csv",
+  "source_metadata": "results/server-20260828/P33/p33_all_sizes_arm_10m.metadata.json",
+  "original_audit_retained": "results/server-20260828/P33-cross-size-covariance/",
+  "original_audit_not_overwritten": true,
+  "gates": {
+    "equal_batch_weight": "PASS",
+    "near_singular_numerics": "PASS",
+    "finite_batch_calibration": "PASS",
+    "synthetic_off_diagonal": "PASS"
+  },
+  "tests": {
+    "covariance_related": 21,
+    "full_suite": 76,
+    "result": "OK"
+  },
+  "coupling_contract": {
+    "validated": true,
+    "seed_label": "p33-working-tree-10m",
+    "seed": 2026093303,
+    "rng": "counter-derived SplitMix64 stream plus unbiased Fisher-Yates",
+    "replica_counter_first": 4000000000,
+    "replica_counter_last_exclusive": 4010000000,
+    "samples_per_batch": 100000,
+    "batches": 100
+  },
+  "equal_batch_weight_contract": {
+    "estimator": "unweighted_equal_batch_mean",
+    "asserted": true,
+    "samples_per_batch": 100000
+  },
+  "score_solver": {
+    "A_M_full": "cholesky",
+    "A_p_full": "cholesky",
+    "inverse": "cholesky_then_svd_pseudoinverse"
+  },
+  "heldout": {
+    "A_M": {
+      "full_plugin_chi_square": 5.530015183913106,
+      "diagonal_plugin_chi_square": 5.2733469400778485,
+      "original_full_plugin_chi_square": 5.530015183913106,
+      "original_diagonal_plugin_chi_square": 5.273346940077849,
+      "dof": 2,
+      "full_hotelling_f": 2.73707822234083,
+      "full_hotelling_f_survival": 0.0697131769457846,
+      "full_plugin_chi_square_survival": 0.06297562123801986
+    },
+    "A_p": {
+      "full_plugin_chi_square": 5.5515929352417235,
+      "diagonal_plugin_chi_square": 5.292880163846318,
+      "original_full_plugin_chi_square": 5.5515929352417235,
+      "original_diagonal_plugin_chi_square": 5.292880163846318,
+      "dof": 2,
+      "full_hotelling_f": 2.7477581194630756,
+      "full_hotelling_f_survival": 0.06901166194725983,
+      "full_plugin_chi_square_survival": 0.062299837121091085
+    }
+  },
+  "max_abs_correlation": {
+    "A_M": 0.22040688271331424,
+    "A_p": 0.2203717444211993
+  },
+  "root_doubling": {
+    "full_chi_square": 3.462461214294036,
+    "diagonal_chi_square": 3.4417344294858467,
+    "original_full_chi_square": 3.462461214294036,
+    "original_diagonal_chi_square": 3.4417344294858467,
+    "dof": 2
+  },
+  "did_not": [
+    "retune frozen predictions",
+    "change simulators or RNG",
+    "start N=185/265 or 1e8 campaigns",
+    "overwrite results/server-20260828/P33-cross-size-covariance/",
+    "merge PR 46"
+  ]
+}
