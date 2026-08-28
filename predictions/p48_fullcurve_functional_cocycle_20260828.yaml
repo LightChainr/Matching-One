@@ -1,0 +1,96 @@
+version: 1
+frozen_at: 2026-08-28
+status: frozen_before_N325_N425_targets
+claim_level: C0
+related_issues: [48, 57, 101, 119, 125, 138, 145]
+purpose: >-
+  Upgrade the center-only P4[S'] q=2-versus-Jordan comparison to a
+  parameter-free full-curve test of the same matching-odd scaling function.
+  Use only intrinsic thermal levels that were already fixed by the full-curve
+  pipeline before norm-5 target reveal.
+
+intrinsic_coordinate:
+  definition: 'u = Mbar_N(p), with Mbar=(M_first+M_second)/2'
+  center: 'Mbar_N(p0)=0'
+  derivative_rule_at_center: 'd/du = (1/MbarPrime_N(p0))*d/dp'
+  required_jackknife_rule: >-
+    Solve p0 and every p_plus/minus(u), and recompute MbarPrime, projectors and
+    all derived ratios inside each synchronized delete-one replicate.
+
+center_metric_normalization:
+  J_N: 'P4[S_prime_p](p0)/MbarPrime_N(p0)'
+  predicted_leading_power_if_x21over4_single_block: 'N^-13/8'
+  Xi_N: 'J_N/P4[D](p0)'
+  interpretation: >-
+    Xi is an internal single-scaling-function closure ratio. If the large
+    scaled S-prime drift is largely removed after division by MbarPrime, the
+    bare-p thermal metric is a major source of the apparent correction.
+
+thermal_parity_reconstruction:
+  solve: 'Mbar(p_plus_u)=+u, Mbar(p_minus_u)=-u'
+  D_even: '(P4[D](p_plus_u)+P4[D](p_minus_u))/2'
+  S_odd: '(P4[S](p_plus_u)-P4[S](p_minus_u))/2'
+  matching_odd_branch: 'T_N(u)=D_even(u,N)+S_odd(u,N)'
+  reflected_branch: 'D_even(u,N)-S_odd(u,N)'
+  scaled_branch: 'Z_N(u)=N^(13/8)*T_N(u)'
+
+lineages:
+  - {parent_N: 65, norm2_N: 130, norm5_N: 325}
+  - {parent_N: 85, norm2_N: 170, norm5_N: 425}
+
+models:
+  q2_analytic:
+    form: 'Z_N(u)=f(u)+N^-1*g(u)+...'
+    c_exact: '8/5'
+    c_decimal: '1.6'
+  jordan_rank2:
+    form: 'Z_N(u)=f(u)+log(N)*g(u)+...'
+    c_exact: 'log(5)/log(2)'
+    c_decimal: '2.3219280948873623478703194294893901758648313930246'
+
+functional_residual:
+  equation: 'R_c(u;N)=Z_5N(u)-c*Z_2N(u)+(c-1)*Z_N(u)'
+  property: >-
+    For either frozen single-correction model, both the unknown leading
+    scaling function f(u) and correction function g(u) cancel at first
+    correction order.
+  score: >-
+    Stack R_c over the exact pre-existing frozen u grid and both parent
+    lineages. Use the full covariance. Do not select/drop u values after
+    target reveal and do not treat them as independent tests.
+
+increment_rank_test:
+  delta2: 'Delta2(u)=Z_2N(u)-Z_N(u)'
+  delta5: 'Delta5(u)=Z_5N(u)-Z_N(u)'
+  rank1_prediction: 'Delta5(u)=c*Delta2(u) for one common scalar c across u'
+  use_if_fixed_models_fail: >-
+    First test whether any rank-1 scale-increment model is adequate with
+    covariance-aware estimation. Failure implies more than one correction
+    scaling function before any named larger operator basis is introduced.
+
+optional_norm10:
+  functional_mixed_difference: >-
+    H_2_5 Z(u)=Z_10N(u)-Z_5N(u)-Z_2N(u)+Z_N(u)
+  rank2_jordan: 'zero for every u at modeled order'
+  rank3_quadratic_log: '2*log(2)*log(5)*g2(u)'
+  ordinary_power: 'nonzero multiplicative curvature function'
+
+scoring_order:
+  - 'preserve all pre-existing Issue #48 chronology on N185/N265'
+  - 'after norm-5 reveal score q=2 functional residual first'
+  - 'score rank-2 Jordan functional residual second'
+  - 'only afterward test a free rank-1 multiplier across u'
+  - 'only after rank-1 failure move to multi-function/operator-mixing models'
+
+claim_guard:
+  - >-
+    Using u=Mbar is an intrinsic finite-size coordinate and removes the local
+    bare-p metric factor, but it does not guarantee removal of every nonlinear
+    coordinate correction.
+  - >-
+    A successful functional Jordan cocycle supports a logarithmic correction
+    scaling function; it does not by itself identify a unique microscopic
+    Jordan partner.
+  - >-
+    A successful q=2 cocycle supports one analytic relative-L^-2 correction
+    function; it does not uniquely identify its continuum operator.
