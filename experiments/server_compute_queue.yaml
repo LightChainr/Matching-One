@@ -1,0 +1,499 @@
+version: 1
+updated: 2026-08-28
+coordination_issue: 23
+source_branch: research/second-wave-20260828
+principles:
+  - maximize information gain before raw scale
+  - freeze pilot-selected choices before evaluation
+  - preserve negative results and power analyses
+  - retain sufficient statistics so analysis can be rerun without recomputation
+  - do not use expensive GPU/high-memory hardware before a CPU gate justifies it
+  - keep arithmetic, sampling, and finite-size-model uncertainty separate
+
+handoff_contract:
+  result_root: results/server-YYYYMMDD/<queue_id>/
+  required_files:
+    - metadata.json
+    - REPORT.md
+    - commands.txt
+    - environment.txt
+    - checksums.sha256
+  metadata_required:
+    - source_commit
+    - source_branch
+    - machine
+    - os_kernel
+    - compiler_or_interpreter
+    - dependency_versions
+    - rng_algorithm_if_stochastic
+    - rng_seed_or_counter_ranges
+    - sample_counts
+    - wall_time
+    - thread_or_gpu_configuration
+  statistical_rules:
+    - pilot data must not be reused as final evaluation data when pilot selects weights/couplings/models
+    - report signed effects and covariance/correlation, not only absolute error or p-values
+    - every null result should include a sensitivity or power statement when feasible
+    - held-out targets/orientations/sizes remain hidden until all selectable choices are frozen
+    - batchwise aggregates must be retained for bootstrap/jackknife when raw replicas are not retained
+
+queue:
+  - id: C00
+    priority: P0
+    status: ready
+    title: General 2x2 integer-period torus and homology engine
+    issue: 22
+    depends_on: []
+    purpose: >-
+      Generalize the PR #21 homology implementation from axis/diamond scalar
+      periods to an arbitrary integer 2x2 period matrix, so all later Gaussian,
+      sheared and modular tori share one correctness path.
+    requirements:
+      - period matrix P with nonzero integer determinant
+      - exact winding coefficients via adjugate(P)/det(P), never floating inversion
+      - rank-0/rank-1/rank-2 winding subgroup tracking
+      - generator-relative directional channels
+      - invariance under unimodular period-basis changes
+      - axis and diamond results exactly reproduce existing regressions
+    tests:
+      - exhaustive axis L=3
+      - exhaustive diamond L=2
+      - at least one small non-axis Gaussian quotient
+      - random basis-change regression with determinant +/-1 transformations
+    outputs:
+      - reusable general topology module
+      - exact regression JSON
+      - state/edge convention documentation
+    stop_gate: >-
+      Do not start C01 production data until all exhaustive and basis-invariance
+      tests pass.
+
+  - id: C01
+    priority: P0
+    status: ready_after_C00
+    title: Same-N Gaussian orientation discovery
+    issue: 22
+    depends_on: [C00]
+    frozen_target:
+      p_ref: '0.592746050790'
+      complement: '0.407253949210'
+      note: >-
+        p_ref is a discovery coordinate, not a threshold assertion. Same-N
+        orientation differences are the primary quantity so common thermal
+        displacement largely cancels.
+    geometries:
+      discovery_pairs:
+        - N: 65
+          reps: [[8,1],[7,4]]
+        - N: 85
+          reps: [[9,2],[7,6]]
+        - N: 145
+          reps: [[12,1],[9,8]]
+      confirmation_pairs:
+        - N: 205
+          reps: [[14,3],[13,6]]
+        - N: 425
+          reps: [[19,8],[16,13]]
+      multi_angle_if_discovery_passes:
+        N: 1105
+        reps: [[33,4],[32,9],[31,12],[24,23]]
+    coupling:
+      representation: cyclic_Z_mod_N
+      vertex_label: 'j = a*x + b*y mod N'
+      default: same_U_j
+      optional_relabel: 'j -> t*j mod N, gcd(t,N)=1'
+      selection: >-
+        Choose a bounded shortlist using graph-only step overlap or an
+        independent pilot. Freeze t before evaluation and retain the entire
+        pilot shortlist/results.
+    observables_required:
+      primal:
+        - cross
+        - both
+        - either
+        - direction_0
+        - direction_1
+      matching:
+        - cross
+        - both
+        - either
+        - direction_0
+        - direction_1
+      derived:
+        - M_primal_minus_matching
+        - covariance_across_orientations
+    sample_plan:
+      pilot_per_pair: 200000
+      evaluation_N65: 2000000
+      evaluation_N85: 2000000
+      N145_and_later: power_from_previous_effect_and_covariance
+    controls:
+      - square_bond_exact_pc_half_with_same_geometry_engine
+    outputs:
+      - long_form_channel_means.csv
+      - covariance_matrices.json
+      - coupling_pilot.json
+      - effect_power_budget.json
+    stop_gate: >-
+      If neither N=65 nor N=85 resolves a reproducible orientation effect in
+      the larger single/matching-even sector and the exact control also shows
+      no angular signal, stop before increasing N and debug/reassess geometry.
+
+  - id: C02
+    priority: P0
+    status: derive_from_C01
+    title: Matching-parity x rotation-parity sector decomposition
+    issue: 24
+    depends_on: [C01]
+    purpose: >-
+      Test whether the leading orientation-sensitive correction is
+      matching-even and therefore projected out of the exact matching
+      difference.
+    derived_channels:
+      S: '(R_G + R_hat)/2'
+      D: '(R_G - R_hat)/2'
+      delta_S: 'S(theta1)-S(theta2)'
+      delta_D: 'D(theta1)-D(theta2)'
+    angular_model:
+      leading: 'A0 + A4*cos(4 theta)'
+      optional_only_after_holdout: 'A8*cos(8 theta)'
+    working_hypothesis:
+      - 'S4 scales approximately as L^-2 in the discovery regime'
+      - 'abs(D4/S4) decreases with L or D4 is strongly suppressed'
+    outputs:
+      - sector_effects.csv
+      - angular_fit_training.json
+      - heldout_orientation_predictions.json
+      - deltaD_over_deltaS_vs_size.csv
+    acceptance:
+      - cos4 sign pattern at >=3 same-N sizes or a multi-angle same-N test
+      - held-out orientation prediction succeeds
+      - exact control validates angular implementation
+      - a null D alone never counts as support
+
+  - id: C03
+    priority: P0
+    status: ready_with_existing_PR21_code
+    title: Pilot-frozen minimum-variance equal-mean matching channels
+    issue: 20
+    depends_on: [C00]
+    channels:
+      - D_cross
+      - D_both
+      - D_either
+      - D_direction_0
+      - D_direction_1
+      - D_cluster_if_cheap_and_exactly_equal_mean
+    pilot_plan:
+      pilot_samples: 250000
+      evaluation_samples: 1000000
+      initial_sizes: [16,32]
+      gaussian_sizes_after_C00: [65,145]
+    method: >-
+      Estimate covariance on pilot, freeze GLS/minimum-variance weights, then
+      apply to independent evaluation. Compare best single, equal weight,
+      optimized, and with/without cluster channel.
+    outputs:
+      - pilot_covariance.json
+      - frozen_weights.json
+      - evaluation_variances.csv
+      - variance_reduction_ratios.csv
+      - covariance_condition_numbers.csv
+    gate_to_gpu: >-
+      Advance this optimization into the GPU kernel if variance reduction is
+      >=2x at multiple sizes or a stable near-null covariance direction has a
+      clear topological interpretation.
+
+  - id: C04
+    priority: P0
+    status: implementation_needed
+    title: Exact-threshold kappa3 controls
+    issue: 25
+    depends_on: [C00]
+    models:
+      stage_A:
+        model: triangular_site_self_matching
+        pc: '1/2'
+        requirement: fixed declared torus shape and exhaustive tiny-size regression
+      stage_B:
+        model: square_bond_exact_control
+        pc: '1/2'
+        caveat: analogous control; document observable mapping before universality comparison
+      stage_C:
+        model: square_site_target
+        pc: not_exact
+        run_only_after_controls: true
+    quantities:
+      - M_prime
+      - M_third
+      - kappa3
+      - M_fifth_if_stable
+      - kappa5_if_stable
+      - covariance_matrix_of_derivatives
+    correction_models:
+      - 'kappa3(L)=kappa_inf+a*L^(-3/2)'
+      - 'same + one predeclared subleading term'
+      - 'free leading exponent selected on training sizes only'
+    aggressive_diagnostic:
+      candidate: '-5/3'
+      transformed: 'Y_L=L^(3/2)*(kappa3+5/3)'
+    initial_physical_sizes: [8,12,16,24,32]
+    sample_rule: pilot_powered
+    outputs:
+      - exact_regression/
+      - derivatives_by_size.csv
+      - derivative_covariance.json
+      - kappa_by_size.csv
+      - correction_model_scores.json
+    acceptance:
+      - exact tiny-size agreement
+      - independent derivative method agreement where feasible
+      - held-out size comparison of fixed 3/2 versus free exponent
+      - no -5/3 claim from one realization
+
+  - id: C05
+    priority: P0
+    status: implementation_needed
+    title: Threshold-rank bidirectional Newman-Ziff
+    issue: 26
+    depends_on: [C00]
+    related_issue: 9
+    sufficient_statistics:
+      required:
+        - K_minus_hist_integer_counts
+        - K_plus_hist_integer_counts
+        - sample_count
+        - RNG_counter_ranges
+        - first_second_joint_moments
+      preferred:
+        - sparse_joint_Kminus_Kplus_hist
+        - per_batch_histograms
+    exact_tests:
+      - define_off_by_one_convention
+      - reconstruct_tiny_matching_polynomial
+      - verify_Kminus_le_Kplus_for_cross_channel
+      - compare_M_and_derivatives_to_direct_reference
+    cpu_pilot_sizes: [8,12,16,24,32]
+    sample_rule: 'target >=1e6 where cheap; power later sizes from pilot'
+    derived_after_run:
+      - arbitrary_p_M_curve
+      - median_root
+      - density_Mprime_over_2
+      - kappa3_and_optional_kappa5
+      - quantiles_and_standardized_moments
+      - Kplus_minus_Kminus_gap_distribution
+    outputs:
+      - kminus_hist.csv
+      - kplus_hist.csv
+      - joint_hist.csv_if_affordable
+      - batch_manifest.csv
+      - derived_summary.json
+    gpu_gate: exact_regression_plus_cpu_information_gain_pass
+
+  - id: C06
+    priority: P0
+    status: blocked_on_provenance_complete_2024_values
+    title: Reveal and score frozen widths 22-24 prediction
+    issue: 6
+    depends_on: []
+    frozen_artifact: predictions/polynomial_widths_22_24.yaml
+    protocol:
+      - import widths 22,23,24 from primary source with table/equation provenance
+      - do not modify frozen artifact or model
+      - score each width signed_error absolute_error and preregistered aggregate score
+      - retain failed prediction result
+    outputs:
+      - data/primary_source_widths_22_24.csv
+      - results/widths_22_24_reveal.json
+      - REPORT.md
+    acceptance: no_post_reveal_retuning
+
+  - id: C07
+    priority: P1
+    status: ready
+    title: Leakage-safe rational/Pade extrapolation challenge
+    issue: 27
+    depends_on: []
+    base_form: 'p_n = p_c + n^-4 F(n^-2)'
+    model_families:
+      - polynomial_F
+      - Pade_1_1
+      - Pade_2_1
+      - Pade_1_2
+      - Pade_2_2
+      - Bulirsch_Stoer_optional_independent_implementation
+    stage_A:
+      knowledge_cutoff: 18
+      targets: [19,20,21]
+    stage_B:
+      depends_on: [C06]
+      knowledge_cutoff: 21
+      targets: [22,23,24]
+    metrics:
+      - signed_error_per_width
+      - RMSE
+      - max_absolute_error
+      - signed_residual_trend
+      - intercept_drift
+      - conditioning
+      - rational_pole_locations
+    outputs:
+      - model_definitions.yaml
+      - fold_predictions.json
+      - signed_residuals.csv
+      - ranked_scores.json
+    acceptance: >-
+      Rational family must improve held-out behavior across more than one cutoff
+      and cannot rely on near-pole instability or extreme coefficients.
+
+  - id: C08
+    priority: P1
+    status: after_C05
+    title: Universal standardized threshold-density profile and tail test
+    issue: 28
+    depends_on: [C05]
+    standardizations:
+      - thermal_b_L_3_4_if_metric_available
+      - coordinate_free_median_and_IQR_or_SD
+    invariants:
+      - standardized_kurtosis
+      - standardized_sixth_moment_if_stable
+      - interquantile_ratios
+      - peak_height_times_width
+      - mean_minus_median
+      - median_minus_mode
+      - skewness
+      - kappa3
+      - kappa5_if_stable
+      - scaled_gap_distribution
+    tail_models:
+      - exponent_4_3_stretched_exponential
+      - Gaussian_exponent_2
+      - exponential_exponent_1
+    rule: tail_window_selected_on_training_sizes_with_minimum_histogram_count_threshold
+    outputs:
+      - standardized_profiles.csv
+      - invariant_vs_size.csv
+      - profile_distance_scores.json
+      - tail_model_scores.json
+    acceptance: candidate_function_must_match_multiple_local_and_global_invariants
+
+  - id: C09
+    priority: P1
+    status: bounded_exact_campaign
+    title: Finite matching polynomial factor/GCD production
+    issue: 29
+    related_issue: 17
+    depends_on: []
+    requirements:
+      - exact integer coefficient arrays
+      - primitive normalization
+      - exact control with known persistent factor
+      - factorization_over_Zp_where_feasible
+      - pairwise_and_multisize_GCD
+      - declared transformed/resultant tests only
+      - physical_root_isolating_intervals
+    resource_gate: >-
+      Measure state/memory growth before high-memory rental; do not extrapolate
+      transcendence from finite negative results.
+    outputs:
+      - polynomial_coefficients/
+      - factor_table.csv
+      - gcd_certificates/
+      - resource_profile.csv
+
+  - id: C10
+    priority: P1
+    status: only_if_C02_supports_spin4
+    title: Magic orientation / pi-over-8 suppression probe
+    issue: 22
+    depends_on: [C02]
+    approximants:
+      - [5,2]
+      - [12,5]
+      - [29,12]
+      - [70,29]
+    prediction: 'leading cos(4 theta) term is suppressed near theta=pi/8'
+    rule: >-
+      Estimate any scalar offset A0/A4 on training orientations first; do not
+      assume exact zero at pi/8 if data show an orientation-even offset.
+    outputs:
+      - suppression_vs_prediction.csv
+      - heldout_magic_orientation_test.json
+
+  - id: C11
+    priority: P2
+    status: gated
+    title: GPU production campaign
+    issue: 30
+    related_issue: 10
+    depends_on_any: [C02,C03,C05]
+    allowed_when: >-
+      At least one CPU gate provides a measured effect/variance/information model.
+    preferred_outputs_per_replica_or_batch:
+      - threshold_rank_histograms
+      - cheap_homology_channels
+      - same_N_orientation_paired_channels
+    validation:
+      - CPU_GPU_deterministic_regression
+      - scheduling_independent_counter_RNG
+      - overflow_checks
+      - benchmark_variance_per_wall_time
+    forbidden_first_use:
+      - brute_force_large_Pell_fixed_p_matching_residual
+      - irregular_frontier_transfer_matrix_without_profile
+
+  - id: C12
+    priority: P2
+    status: gated
+    title: High-memory transfer-matrix resource probe
+    issue: 31
+    related_issue: 11
+    depends_on: []
+    measurements_per_width:
+      - canonical_state_count_by_sector
+      - transition_count_and_branching
+      - peak_RSS
+      - bytes_per_state
+      - hash_load_factor
+      - time_by_pipeline_stage
+      - eigensolver_iterations
+      - checkpoint_size_and_restart
+    extrapolate: next_four_frontier_widths_with_low_central_high_resource_estimates
+    decision:
+      - current_host_sufficient
+      - rent_high_memory_CPU
+      - algorithmic_improvement_first
+    note: GPU_is_low_priority_unless_regular_arithmetic_kernel_is_profiled
+
+  - id: C13
+    priority: P2
+    status: after_C09_or_independent_search_budget
+    title: Rigorous replacement-gadget bounded search
+    issue: 14
+    depends_on: []
+    purpose: >-
+      Search ordinary independent-bond gadgets only for certified approximation,
+      stochastic domination or rigorous bounds; exact local Bernoulli-site
+      replacement is obstructed by the no-go lemma in the research notes.
+    requirements:
+      - floating_point_for_discovery_only
+      - interval_or_exact_terminal_connectivity_for_certification
+      - independent_verifier
+      - perturbed_certificate_negative_test
+    outputs:
+      - bounded_search_manifest
+      - candidate_certificates
+      - verifier
+      - theorem_or_negative_bound_report
+
+  - id: C14
+    priority: P3
+    status: deferred
+    title: Interval PSLQ / closed-form exclusion
+    issue: 1
+    depends_on: [C06,C07]
+    rule: >-
+      Do not restart until a defensible threshold interval exists from multiple
+      predictive estimator families. Input must be an interval, not a rounded
+      decimal, and every search must state basis, precision, degree and height bounds.

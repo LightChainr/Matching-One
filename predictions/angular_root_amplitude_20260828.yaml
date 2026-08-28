@@ -1,0 +1,47 @@
+version: 1
+frozen_date: 2026-08-28
+status: preregistered_before_high_stat_threshold_rank_rerun
+
+model:
+  delta_M: 'A_M * DeltaCos4 * N^(-13/8)'
+  mean_M_prime: 'B * N^(3/8)'
+  linearized_root_gap: '-delta_M / mean_M_prime'
+  implied_invariant: 'A_p = -N^2 * DeltaRoot / DeltaCos4 = A_M / B'
+
+frozen_inputs:
+  A_M:
+    value: 0.7885
+    standard_error: 0.0352
+    source: results/server-20260828/P31/pooled_deltaM_with_covariance.csv
+  B_reference:
+    value: 1.7483113712623968
+    construction: >-
+      arithmetic mean of the five P35 same-batch values of
+      B=N^(-3/8)*mean(M_prime) at N=65,85,130,145,170
+    source: results/server-20260828/P35-amplitude-closure/closure.csv
+    caveat: >-
+      B variation/statistical uncertainty is not included in the coefficient-only
+      uncertainty below; target scoring must propagate the actual slope covariance.
+
+prediction:
+  A_p_mean: 0.4510066187069702
+  coefficient_only_standard_error: 0.02013371335254959
+
+primary_sizes_for_high_stat_test: [65,85]
+secondary_sizes: [130,145,170]
+
+scoring_rules:
+  - use full threshold-rank histograms and same-batch jackknife covariance
+  - compute A_p separately for every size using its exact DeltaCos4
+  - score the frozen common value before fitting any radial correction
+  - report zero-effect and free-common-amplitude benchmarks
+  - do not use bare N^2*DeltaRoot across pairs with different DeltaCos4 as the primary invariant
+  - if the frozen value fails coherently, decompose failure into A_M drift, B drift, nonlinear closure, and angular-model error before fitting a new exponent
+
+acceptance:
+  strong_support: >-
+    N=65 and N=85 high-stat A_p values are jointly compatible with the frozen
+    0.451 prediction and with each other after covariance propagation.
+  falsification_signal: >-
+    a reproducible angular-normalized radial drift that cannot be explained by
+    measured A_M or B corrections and survives higher statistics.
