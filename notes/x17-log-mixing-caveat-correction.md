@@ -60,9 +60,9 @@ The scoring order on #43 remains unchanged:
 For an ordinary generic-Q `S_Q`-invariant square-lattice perturbation:
 
 - `x=17/4` non-diagonal spin-4 primary: non-singlet `[2]`, no known same-dimension singlet collision;
-- `x=196/27` next formal non-diagonal spin-4 primary: non-singlet `[21]`;
+- the second formal non-diagonal spin-4 primary is also `x=17/4` and is non-singlet `[21]`;
 - `x=21/4` thermal-family level-4 spin-4 descendant: singlet because the thermal family is singlet;
-- first simple non-diagonal spin-4 primary whose `Xi` contains the generic-Q singlet occurs only at `x=49/4`.
+- first simple non-diagonal spin-4 primary whose `Xi` contains the generic-Q singlet occurs at `x=6` on the corrected critical Potts branch.
 
 This makes the thermal-family `x=21/4` quasiprimary the lowest currently identified **generic-Q singlet spin-4 field above the dimension-4 sector** that naturally matches the observed `N^-13/8` law.
 

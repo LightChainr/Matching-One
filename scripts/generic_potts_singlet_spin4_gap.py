@@ -21,7 +21,7 @@ from fractions import Fraction as F
 
 
 def h(r:F,s:F)->F:
-    return ((3*r-2*s)**2-1)/24
+    return ((2*r-3*s)**2-1)/24
 
 def row(r:int)->dict[str,object]:
     s=F(4,r)
@@ -36,14 +36,14 @@ def row(r:int)->dict[str,object]:
 def main()->int:
     rows=[row(r) for r in (2,3,4)]
     assert rows[0]["x"]==F(17,4)
-    assert rows[1]["x"]==F(196,27)
-    assert rows[2]["x"]==F(49,4)
+    assert rows[1]["x"]==F(17,4)
+    assert rows[2]["x"]==F(6)
     labels={2:"Xi(2,2)=Xi(2,0)=[2] : nontrivial",3:"Xi(3,4/3)=Xi(3,1/3)=[21] : nontrivial",4:"Xi(4,1)=Xi(4,0) contains [] : singlet allowed"}
     for r in (2,3,4):
         q=rows[r-2]
         print(f"r={r} s={q['s']} x={q['x']} residual~N^-{q['residual_N_power']} root~L^-{q['root_L_power']}")
         print("  "+labels[r])
-    print("\nConclusion at generic Q: the formal x=17/4 and x=196/27 primary spin-4 fields are not ordinary S_Q-singlet lattice perturbations; the first non-diagonal primary in this sequence whose Xi contains [] is x=49/4.")
+    print("\nConclusion at generic Q: the first two x=17/4 primary spin-4 fields are not ordinary S_Q-singlet lattice perturbations; the first non-diagonal primary in this sequence whose Xi contains [] is x=6.")
     print("Q->1 logarithmic mixing is a separate caveat and must be tested rather than erased.")
     return 0
 

@@ -7,7 +7,7 @@ Status: operator-identification safeguard.  This note weakens any claim that `x=
 At percolation (`c=0`) use
 
 \[
-h_{r,s}=\frac{(3r-2s)^2-1}{24}.
+h_{r,s}=\frac{(2r-3s)^2-1}{24}.
 \]
 
 For the non-diagonal pairing

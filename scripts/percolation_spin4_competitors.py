@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """Enumerate formal c=0 non-diagonal spin-4 Kac competitors.
 
-At percolation, in the Kac convention h_{r,s}=((3r-2s)^2-1)/24,
+At percolation on the critical Potts branch,
+h_{r,s}=((2r-3s)^2-1)/24,
 a non-diagonal primary W(r,s) has weights (h_{r,s},h_{r,-s}).  Its
 conformal spin is -r*s and its scaling dimension is
 
-    x = (9 r^2 + 4 s^2 - 1)/12.
+    x = (4 r^2 + 9 s^2 - 1)/12.
 
 The Potts space of states further attaches an S_Q representation Xi(r,s), so
 formal Kac admissibility alone is NOT enough to make a field an allowed
@@ -23,7 +24,7 @@ from fractions import Fraction as F
 
 
 def h(r: F, s: F) -> F:
-    return ((3*r-2*s)**2-1)/24
+    return ((2*r-3*s)**2-1)/24
 
 
 def record(r: int) -> dict[str, object]:

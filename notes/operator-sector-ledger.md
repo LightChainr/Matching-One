@@ -204,6 +204,15 @@ Thermal-family quasiprimary counting gives the next ordinary spin-4 pair at tota
 
 Alternatives: another conformal family, nonlinear/composite correction, logarithmic mixing, second-order correction sector, or preasymptotic effective power.
 
+The corrected critical-Potts branch supplies a specific standard-spectrum
+candidate: the diagonal Potts singlet `V_<1,4>` has `x=33/4` and spin zero.
+Under the conditional interchiral/OPE parity rule `eta_s=(-1)^(s-1)`, it is
+matching odd.  Its contribution `L^(2-x)=L^-25/4` is exactly three powers below
+the leading `L^-13/4` term and therefore produces an `L^-7` accelerated root.
+The spectrum membership and arithmetic are E0; the matching parity is E3 under
+the stated automorphism assumption; identifying the historical signal with a
+nonzero `V_<1,4>` coupling remains E4.
+
 Decisive test: #47 modern threshold-rank replay with held-out exponent challenge.
 
 ## H. Logarithmic partner

@@ -9,7 +9,7 @@ For the critical Potts CFT at percolation (`c=0`), a non-diagonal module `W(r,s)
 \[
 (h_{r,s},h_{r,-s}),
 \qquad
-h_{r,s}=\frac{(3r-2s)^2-1}{24}.
+h_{r,s}=\frac{(2r-3s)^2-1}{24}.
 \]
 
 The conformal spin is
@@ -27,11 +27,11 @@ W(2,2):\quad x=17/4,
 \]
 
 \[
-W(3,4/3):\quad x=196/27,
+W(3,4/3):\quad x=17/4,
 \]
 
 \[
-W(4,1):\quad x=49/4.
+W(4,1):\quad x=6.
 \]
 
 If one looked only at Kac weights, `x=17/4` would seem to beat the thermal-family descendant `x=21/4`.  That conclusion is incomplete because physical Potts fields also carry the global `S_Q` representation.
@@ -78,7 +78,7 @@ while
 
 contains the trivial `S_Q` representation.
 
-So, within this non-diagonal-primary spin-4 sequence, the first formal states at `x=17/4` and `x=196/27` are **not ordinary generic-Q singlet perturbations**.  The first one whose internal representation contains the generic-Q singlet is much higher, `x=49/4`.
+So, within this non-diagonal-primary spin-4 sequence, the first two formal states at `x=17/4` are **not ordinary generic-Q singlet perturbations**.  The first one whose internal representation contains the generic-Q singlet is `x=6`.
 
 See `scripts/generic_potts_singlet_spin4_gap.py` for the exact conformal arithmetic.
 

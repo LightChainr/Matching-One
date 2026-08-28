@@ -131,7 +131,9 @@ But the next ordinary spin-4 quasiprimary in the **same thermal family** gives `
 
 Therefore the historical exponent near 7, if asymptotically real, cannot simply be called “the next thermal spin-4 descendant.”  Plausible alternatives are:
 
-1. a different matching-odd conformal family or scalar sector with relative exponent 3;
+1. the diagonal singlet scalar `V_<1,4>`: on the critical Potts branch it has
+   `x=33/4`, and under the conditional interchiral parity rule
+   `eta_s=(-1)^(s-1)` it is matching odd, giving exactly relative `q=3`;
 2. a composite/nonlinear correction;
 3. logarithmic mixing which mimics an effective power on small sizes;
 4. a relation to the percolation correction-to-scaling length exponent `omega=3/2`, possibly at second order (`2 omega=3`) if its linear contribution is absent for this observable;
@@ -164,6 +166,13 @@ q\in\{3/2,2,3,4,6\}.
 \]
 
 Also allow a free exponent and explicit log alternatives, but select only on training sizes and score on a frozen tail.
+
+The fixed `q=3` model now has a named operator candidate rather than only a
+free exponent.  Its existence and dimension are exact spectrum facts; its
+matching parity uses the OPE/interchiral-automorphism hypothesis, and a nonzero
+lattice/observable coupling remains to be shown.  Because it is scalar, it
+should cancel in a same-modulus orientation difference even if it survives in
+the unprojected axis sequence.
 
 The primary scientific question is no longer “can we get another digit of p_c?” It is:
 

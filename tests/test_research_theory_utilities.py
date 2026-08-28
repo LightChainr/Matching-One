@@ -11,6 +11,8 @@ sys.path.insert(0,str(SCRIPTS))
 from c4_self_matching_cyclic_geometry import build as build_c4, validate as validate_c4  # noqa:E402
 from gaussian_harmonic_arithmetic import harmonic, gmul, norm  # noqa:E402
 from thermal_spin4_tower import kac_singular_levels, quasiprimary_count  # noqa:E402
+from generic_potts_singlet_spin4_gap import row as spin4_primary_row  # noqa:E402
+from v14_scalar_post_l7 import diagonal_x, interchiral_parity  # noqa:E402
 
 
 class C4SelfMatchingGeometryTests(unittest.TestCase):
@@ -73,6 +75,18 @@ class ThermalTowerTests(unittest.TestCase):
             n=m+4
             if counts[m] and counts[n]: allowed.append((n,m,n+m))
         self.assertEqual(allowed[:2],[(4,0,4),(7,3,10)])
+
+
+class CorrectedCriticalPottsBranchTests(unittest.TestCase):
+    def test_non_diagonal_spin4_singlet_gap(self) -> None:
+        self.assertEqual(spin4_primary_row(2)["x"], Fraction(17, 4))
+        self.assertEqual(spin4_primary_row(3)["x"], Fraction(17, 4))
+        self.assertEqual(spin4_primary_row(4)["x"], Fraction(6))
+
+    def test_v14_scalar_post_l7_arithmetic(self) -> None:
+        self.assertEqual(diagonal_x(4), Fraction(33, 4))
+        self.assertEqual(interchiral_parity(4), -1)
+        self.assertEqual(diagonal_x(4) - Fraction(21, 4), 3)
 
 
 if __name__=="__main__":

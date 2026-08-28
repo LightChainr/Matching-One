@@ -39,12 +39,13 @@ def quasiprimary_count(level: int) -> int:
 
 
 def kac_singular_levels(limit_r: int = 20, limit_s: int = 30) -> list[int]:
-    # c=0: h_{r,s}=((3r-2s)^2-1)/24.  h=5/8 iff |3r-2s|=4.
+    # Critical Potts branch: h_{r,s}=((2r-3s)^2-1)/24.
+    # The thermal weight h=5/8 occurs when |2r-3s|=4.
     levels = {
         r * s
         for r in range(1, limit_r + 1)
         for s in range(1, limit_s + 1)
-        if abs(3 * r - 2 * s) == 4
+        if abs(2 * r - 3 * s) == 4
     }
     return sorted(levels)
 
