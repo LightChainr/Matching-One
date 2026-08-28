@@ -1,6 +1,7 @@
 version: 1
 frozen_at: 2026-08-28
 status: preregistered_before_target_run
+claim_level: C0
 source_checkpoint: 6d2d68a62b433e337b97eadaf1870cb58e2f7666
 related_issue: 50
 purpose: third_independent_parameter_free_Gaussian_doubling_lineage
@@ -15,6 +16,9 @@ observable:
 
 parent:
   N: 145
+  translation_group:
+    smith_invariants: [1, 145]
+    cyclic: true
   first: [12, 1]
   second: [9, 8]
   exact_cos4:
@@ -31,6 +35,9 @@ multiplier:
 
 child:
   N: 290
+  translation_group:
+    smith_invariants: [1, 290]
+    cyclic: true
   raw_lineage:
     first: [11, 13]
     second: [1, 17]
