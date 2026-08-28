@@ -1,18 +1,26 @@
-version: 1
+version: 2
 frozen_at: 2026-08-28
-status: preregistered_before_clean_norm2_fullcurve_result_and_N325_N425_runs
+status: corrected_before_N325_N425_targets
 claim_level: C0
 issue: 48
 related_issue: 64
+correction_trigger: PR_73_normalized_P4_definition_audit
 purpose: >-
-  Use Gaussian parent/child transfer of P4[S'] to discriminate the already
-  frozen pure-power, q=2 ordinary-RG, and rank-2 Jordan-log models without
-  refitting A, B, or the leading exponent.
+  Use Gaussian parent/child transfer of the normalized P4[S'] projector to
+  discriminate the already frozen pure-power, q=2 ordinary-RG, and rank-2
+  Jordan-log models without refitting A, B, or the leading exponent. Version 2
+  corrects the original sign convention: the H4 angular ratio cancels between
+  DeltaS' and the size-local DeltaCos4 denominator. Raw unnormalized contrasts
+  elsewhere still retain their angular sign.
 
 observable:
   name: P4_S_prime
+  definition: "P4[S'] = DeltaS' / DeltaCos4 at each size"
   leading_exponent_alpha_in_N: '5/4'
   pure_H4_law: "P4[S'] = N^(-5/4) A"
+  normalized_multiplier_rule: >-
+    P4[S'](Q*N)/P4[S'](N) = Q^(-5/4) * Y(Q*N)/Y(N).
+    No H4 angular factor appears after normalization.
 
 source_models:
   q2:
@@ -33,58 +41,68 @@ source_models:
       - ['-0.286289830474317', '0.065785221364566']
 
 transfer_formula:
-  general: >-
-    P4Sprime(QN)/P4Sprime(N) = r4(Q)*Q^(-5/4)*Y(QN)/Y(N),
-    where r4 is the exact Gaussian H4 angular ratio.
+  normalized_general: >-
+    P4Sprime(QN)/P4Sprime(N) = Q^(-5/4)*Y(QN)/Y(N).
+  raw_contrast_general: >-
+    DeltaSprime(QN)/DeltaSprime(N) = r4(Q)*Q^(-5/4)*Y(QN)/Y(N).
   statistic: >-
-    Score fixed residuals X_child-r_model(N,Q)*X_parent, not raw ratios, and
+    Score fixed residuals P4_child-r_model(N,Q)*P4_parent, not raw ratios, and
     propagate both source-model coefficient covariance and fresh target
     covariance.
 
 norm2:
   multiplier: [1, 1]
   Q: 2
-  r4: '-1'
-  pure_ratio: '-0.4204482076268572715155627381166074475200171311783922554'
+  raw_H4_angular_ratio: '-1'
+  normalized_pure_ratio: '0.4204482076268572715155627381166074475200171311783922554'
   lineages:
     N65_to_N130:
       parent_N: 65
-      q2_ratio: '-0.58237172752473190945962426603934630793136739000296'
+      q2_ratio: '0.58237172752473190945962426603934630793136739000296'
       q2_source_fit_se_ratio_delta: '0.04641459757334367'
-      jordan_log_ratio: '-0.58312688321395736209478561384545087859957015421002'
+      jordan_log_ratio: '0.58312688321395736209478561384545087859957015421002'
       jordan_source_fit_se_ratio_delta: '0.04557753473025064'
     N85_to_N170:
       parent_N: 85
-      q2_ratio: '-0.52527410982849958731704392329916482259123683252217'
+      q2_ratio: '0.52527410982849958731704392329916482259123683252217'
       q2_source_fit_se_ratio_delta: '0.02543767908020707'
-      jordan_log_ratio: '-0.56193918483447184008824001954254747367153623958617'
+      jordan_log_ratio: '0.56193918483447184008824001954254747367153623958617'
       jordan_source_fit_se_ratio_delta: '0.03447839709688333'
     N145_to_N290:
       parent_N: 145
       role: after_clean_fullcurve_N290_exists
-      q2_ratio: '-0.47138741841301009425146394805357842525701192356925'
+      q2_ratio: '0.47138741841301009425146394805357842525701192356925'
       q2_source_fit_se_ratio_delta: '0.01024692944092481'
-      jordan_log_ratio: '-0.53280523561093227406089170558189998682595028294911'
+      jordan_log_ratio: '0.53280523561093227406089170558189998682595028294911'
       jordan_source_fit_se_ratio_delta: '0.02174152788862644'
+  clean_replication_from_PR73:
+    note: >-
+      Fresh-seed norm-2 full curves replicate the S-prime drift. The q=2 model
+      remains first in chronological order; Jordan has a smaller descriptive
+      score but does not leapfrog it.
+    pure_N_minus_5_over_4_chi_square_over_2dof: '37.88683'
+    zero_chi_square_over_2dof: '1044.57202'
+    q2_chi_square_over_2dof: '1.78993'
+    jordan_chi_square_over_2dof: '0.67671'
 
 norm5:
   multipliers: [[2, -1], [2, 1]]
   Q: 5
-  r4: '-14/25'
-  pure_ratio: '-0.07489891415735926668836210420496856887545994146507748725'
+  raw_H4_angular_ratio: '-14/25'
+  normalized_pure_ratio: '0.1337480609952844048006466146517295872776070383304955130'
   lineages:
     N65_to_N325:
       parent_N: 65
-      q2_ratio: '-0.12105117014281649796174618439463806258368101679864'
-      q2_source_fit_se_ratio_delta: '0.01322932200155324'
-      jordan_log_ratio: '-0.14218765641158731164502825675450194444355528748458'
-      jordan_source_fit_se_ratio_delta: '0.01885222493578044'
+      q2_ratio: '0.216162803826458032074546757848'
+      q2_source_fit_se_ratio_delta: '0.023623789288487928571428571428571428571428571428571'
+      jordan_log_ratio: '0.253906529306405913651836172776'
+      jordan_source_fit_se_ratio_delta: '0.033664687385322214285714285714285714285714285714286'
     N85_to_N425:
       parent_N: 85
-      q2_ratio: '-0.10477691999226208432982860983321669819310485451367'
-      q2_source_fit_se_ratio_delta: '0.007250375338701921'
-      jordan_log_ratio: '-0.13342379372293274803459234277378310600237123718425'
-      jordan_source_fit_se_ratio_delta: '0.01426129126228102'
+      q2_ratio: '0.187101642843325150588979660416'
+      q2_source_fit_se_ratio_delta: '0.012947098819110573214285714285714285714285714285714'
+      jordan_log_ratio: '0.238256774505237050061772040667'
+      jordan_source_fit_se_ratio_delta: '0.025466591539787535714285714285714285714285714285714'
 
 chronology_and_claim_guard:
   - >-
@@ -95,7 +113,10 @@ chronology_and_claim_guard:
     replication/mechanism check rather than geometry-blind held-out evidence.
   - >-
     Norm-5 child sizes are prospective provided N325/N425 production begins
-    after this artifact is committed.
+    after this corrected artifact is committed.
+  - >-
+    The version-1 negative normalized ratios remain in git history as a
+    definition error; do not use them as a failed physical model.
   - >-
     Do not use a favorable multiplier score to retroactively reorder the P48
     N185/N265 primary scoring chronology.
