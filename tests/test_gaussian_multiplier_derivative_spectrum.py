@@ -53,6 +53,38 @@ class GaussianMultiplierDerivativeSpectrumTests(unittest.TestCase):
             thermal_step,
         )
 
+    def test_fixed_thermal_radial_adversaries_propagate_to_Sprime(self) -> None:
+        mp.mp.dps = 80
+        with ARTIFACT.open(encoding="utf-8") as handle:
+            frozen = yaml.safe_load(handle)
+
+        thermal_step = Fraction(3, 8)
+        competitors = frozen["thermal_radial_competitor_rule"]["candidates"]
+        for name, payload in competitors.items():
+            alpha_d = Fraction(payload["central_D_alpha_N"])
+            alpha_sprime = Fraction(payload["Sprime_alpha_N"])
+            self.assertEqual(alpha_d - alpha_sprime, thermal_step, name)
+
+        for section, q, angular in (
+            ("norm2", 2, -mp.mpf(1)),
+            ("norm5", 5, -mp.mpf(14) / 25),
+        ):
+            adversaries = frozen[section]["thermal_radial_adversaries"]
+            for name, payload in adversaries.items():
+                source_name = (
+                    "x14_over_3_V13" if name == "x14_over_3_V13" else "x17_over_4_W22"
+                )
+                alpha_sprime_fraction = Fraction(
+                    competitors[source_name]["Sprime_alpha_N"]
+                )
+                alpha_sprime = (
+                    mp.mpf(alpha_sprime_fraction.numerator)
+                    / alpha_sprime_fraction.denominator
+                )
+                expected = angular * mp.power(q, -alpha_sprime)
+                reported = mp.mpf(payload["Sprime_decimal"])
+                self.assertLess(abs(reported - expected), mp.mpf("1e-48"))
+
 
 if __name__ == "__main__":
     unittest.main()
