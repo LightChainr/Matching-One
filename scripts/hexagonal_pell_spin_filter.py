@@ -68,8 +68,11 @@ def record(x: int, m: int, e4_i: mp.mpc, terms: int) -> dict[str, object]:
         "tau_imag": mp.nstr(mp.im(tau), 40),
         "tau_distance_to_hex": mp.nstr(abs(tau - rho), 30),
         "E4": mp.nstr(e4, 40),
-        "E4_over_E4_i": mp.nstr(ratio, 40),
-        "m2_times_E4_ratio": mp.nstr(m * m * ratio, 40),
+        # Re(tau)=1/2 makes E4(tau)/E4(i) real.  The truncated q-series can
+        # retain an O(10^-dps) imaginary roundoff, which must not leak into a
+        # field whose machine-readable contract is a real scalar.
+        "E4_over_E4_i": mp.nstr(mp.re(ratio), 40),
+        "m2_times_E4_ratio": mp.nstr(mp.re(m * m * ratio), 40),
     }
 
 
