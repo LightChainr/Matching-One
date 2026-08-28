@@ -33,6 +33,13 @@ common_exact_H4_angular_ratio:
   numerator: -14
   denominator: 25
 
+common_full_curve_assumption:
+  mean_Mprime_child_over_parent_expression: '5^(3/8)'
+  note: >-
+    Root-ratio targets below divide each DeltaM ratio by the common leading
+    thermal-slope ratio 5^(3/8). Report the measured finite-slope corrected
+    target separately if the slope ratio drifts.
+
 models:
   x21_over_4_thermal_level4:
     role: original_primary_H4_radial_model
@@ -41,7 +48,7 @@ models:
     ratio_expression: '(-14/25)*5^(-13/8)'
     deltaM_child_over_parent: '-0.040960171839542465154598113571494955606802379298563'
     full_curve_if_run:
-      mean_slope_child_over_parent_expression: '5^(3/8)'
+      root_gap_exponent_in_N: '2'
       root_gap_child_over_parent_expression: '-14/625'
       root_gap_child_over_parent: '-0.0224'
 
@@ -51,6 +58,10 @@ models:
     exponent_alpha_in_N: '4/3'
     ratio_expression: '(-14/25)*5^(-4/3)'
     deltaM_child_over_parent: '-0.065497997335968199867352036867089470239083169426263'
+    full_curve_if_run:
+      root_gap_exponent_in_N: '41/24'
+      root_gap_child_over_parent_expression: '(-14/25)*5^(-41/24)'
+      root_gap_child_over_parent: '-0.035819067021328105549293730433896252210960248138626'
     interpretation: >-
       V_<1,3> level-4 spin4 is a generic-Q singlet candidate but is predicted
       matching-even only under the stronger interchiral/OPE matching hypothesis
@@ -63,6 +74,10 @@ models:
     exponent_alpha_in_N: '9/8'
     ratio_expression: '(-14/25)*5^(-9/8)'
     deltaM_child_over_parent: '-0.091589728603289560512387709283985252608368880807330'
+    full_curve_if_run:
+      root_gap_exponent_in_N: '3/2'
+      root_gap_child_over_parent_expression: '(-14/25)*5^(-3/2)'
+      root_gap_child_over_parent: '-0.050087922695995289199565490179580587673869851255298'
     interpretation: >-
       W(2,2) is not a generic-Q singlet perturbation; retain only as an
       adversarial Q=1 logarithmic-mixing competitor.
@@ -80,6 +95,8 @@ rules:
   - preserve_exact_lineage_order
   - score_both_lineages_jointly_with_parent_child_covariance
   - do_not_refit_any_exponent_or_parent_amplitude_before_fixed_ratio_scores
+  - root_ratio_scores_are_secondary_to_fixed_p_DeltaM_scores
+  - report_raw_and_measured_finite_slope_corrected_root_targets_separately
   - retain_failures_and_all_batch_aggregates
 
 notes:
@@ -88,5 +105,5 @@ notes:
     materially different magnitudes. The H12 same-exponent adversary predicts
     the opposite child sign and remains a separate angular test.
   - >-
-    For the primary x=21/4 H4 model, combining the norm-5 residual ratio with
-    mean(M') ~ N^(3/8) gives the exact full-curve root-gap ratio -14/625.
+    Root-gap exponents add the leading thermal-slope exponent 3/8 in N to the
+    corresponding DeltaM exponent. This gives 2, 41/24, and 3/2 respectively.
