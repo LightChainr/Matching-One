@@ -1,0 +1,47 @@
+format_version: 1
+status: frozen_before_N185_N265_target_scoring
+purpose: >-
+  Parameter-free radial ratio test linking central matching-odd P4[D]
+  and first-thermal-derivative P4[Sprime] for the same spin-4 operator.
+
+sizes:
+  parent_N: 185
+  child_N: 265
+  q: 1.4324324324324325
+  thermal_y_t: 0.75
+
+candidates:
+  x21_thermal_level4:
+    x: 5.25
+    beta_D: 1.625
+    beta_Sprime: 1.25
+    ratio_D_265_over_185: 0.5576728652710071
+    ratio_Sprime_265_over_185: 0.6381272901890036
+  x14_over_3_v13_parity_failure:
+    x: 4.666666666666667
+    beta_D: 1.3333333333333333
+    beta_Sprime: 0.9583333333333334
+    ratio_D_265_over_185: 0.6193000845309001
+    ratio_Sprime_265_over_185: 0.7086453535146922
+  x17_over_4_w22_leakage:
+    x: 4.25
+    beta_D: 1.125
+    beta_Sprime: 0.75
+    ratio_D_265_over_185: 0.6674466940342344
+    ratio_Sprime_265_over_185: 0.7637379846385327
+
+same_operator_closure:
+  expression: '(r_Sprime / r_D) = (265/185)^(3/8)'
+  target: 1.1442681362646159
+  independent_of_x: true
+
+scoring_order:
+  - preserve_original_issue_43_central_D_score
+  - score_joint_fixed_ratio_pair_for_each_candidate_with_full_batch_covariance
+  - score_x_independent_same_operator_closure
+  - only_then_log_mixed_or_free_exponent_models
+
+prohibitions:
+  - do_not_refit_candidate_exponents_on_N185_or_N265
+  - do_not_change_issue_43_frozen_predictions
+  - do_not_use_P33_retrospective_output_as_confirmatory_evidence
