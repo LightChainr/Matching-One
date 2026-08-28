@@ -1,0 +1,105 @@
+version: 3
+frozen_at: 2026-08-28
+purpose: post_P43_channel_corrected_research_frontier
+claim_level: exploratory
+
+current_evidence:
+  issue43_matching_odd:
+    status: prospective_survives
+    model: H4_like_x_21_over_4_N_minus_13_over_8
+    target_chi2: 3.045975773286075
+    df: 2
+  issue43_matching_even:
+    status: prospective_compatible_after_exact_channel_map
+    source_channel: either_even
+    target_channel: cross_even
+    exact_map: DeltaS_cross_equals_minus_DeltaS_either
+    corrected_chi2: 0.5700315435551194
+    corrected_df: 2
+    correction_pr: 134
+  P48_Sprime:
+    pure_power: prospectively_fails
+    q2_correction: survives
+    jordan_log: survives
+
+hard_rules:
+  - typed_channel_semantics_before_final_norm5_scoring
+  - do_not_change_existing_issue57_primary_predictions
+  - prefer_new_observable_or_new_geometry_over_new_fit_parameter
+  - retrospective_analysis_never_counts_as_prospective_evidence
+  - every_prediction_names_source_channel_and_target_channel
+  - derived_observables_from_one_random_block_are_correlated_evidence
+
+near_term_compute_order:
+  - issue57_norm5_H4_H12_and_radial_spectroscopy
+  - prospective_145_to_290_fullcurve_slope_root_test
+  - information_optimizer_selected_next_geometry
+
+p0_analysis_now:
+  - issue: 146
+    name: canonical_wrapping_channel_algebra
+    compute: exact_protocol
+  - issue: 95
+    name: prequential_evidence_ledger
+    compute: none
+  - issue: 100
+    name: pivotal_measure_bridge
+    compute: tiny_exact_then_existing_data
+  - issue: 101
+    name: intrinsic_quantile_center_spectroscopy
+    compute: existing_full_curves
+  - issue: 119
+    name: multi_u_thermal_response
+    compute: existing_full_curves
+  - issue: 125
+    name: joint_operator_mixing_matrix
+    compute: existing_then_new_targets
+    gate: channel_semantics_clean
+  - issue: 102
+    name: information_optimal_gaussian_design
+    compute: analysis_only
+
+p1_parallel:
+  - issue: 114
+    name: FK_Potts_torus_sector_derivation
+  - issue: 121
+    name: four_arm_spin4_anisotropy
+  - issue: 103
+    name: torus_modulus_spectroscopy
+  - issue: 106
+    name: isoradial_improved_action_control
+  - issue: 111
+    name: configuration_level_Euler_Betti_identity
+  - issue: 118
+    name: universal_amplitude_ratios
+  - issue: 115
+    name: N26_self_matching_Beta_family_falsification
+  - issue: 104
+    name: finite_matching_Galois_certificates
+  - issue: 144
+    name: surface_topological_polynomial_representation
+  - issue: 145
+    name: gaussian_isogeny_Hecke_like_action
+  - issue: 126
+    name: sequential_safe_stopping
+
+p2_high_risk:
+  - issue: 109
+    name: discrete_holomorphic_defect
+  - issue: 123
+    name: correlated_hyperedge_self_dual_embedding
+  - issue: 120
+    name: transfer_matrix_eigenoperator_spectroscopy
+  - issue: 112
+    name: rigorous_finite_size_bound_feasibility
+  - issue: 113
+    name: local_matching_complex_zeros
+  - issue: 122
+    name: standardized_full_threshold_distribution
+
+stop_rules:
+  - if_norm5_rejects_H4: preserve_odd_harmonic_semigroup_but_abandon_level4_H4_identification
+  - if_norm5_supports_H4_but_rejects_13_over_8: reopen_radial_operator_identity_only
+  - if_q2_and_jordan_remain_confounded: add_thermal_coordinate_or_modulus_information_not_more_same_size_samples
+  - if_channel_semantics_are_ambiguous: stop_scoring_until_exact_map_is_explicit
+  - if_models_remain_tied: use_prequential_ledger_and_information_optimizer
