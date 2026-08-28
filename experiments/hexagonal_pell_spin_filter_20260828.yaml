@@ -1,0 +1,41 @@
+version: 1
+status: theory_and_geometry_ready_production_gated
+related_issues: [57, 103, 121, 145]
+priority: P1_after_norm5
+
+stages:
+  - id: geometry_exact
+    action: generate_period_matrices_and_validate_general_homology
+    targets: [56, 780]
+    required_checks:
+      - determinant_matches_site_count
+      - integer_period_homology_regression
+      - tau_matches_frozen_pell_value
+
+  - id: controls
+    action: run_exact_or_exact_pc_controls_on_same_moduli
+    suggested_models:
+      - square_bond_p_half
+      - c4_self_matching_site_if_geometry_supported
+    gate: no_square_site_production_before_control_semantics_are_clear
+
+  - id: square_site_discovery
+    action: threshold_rank_full_curve
+    targets:
+      - {N: 56, role: small_control}
+      - {N: 780, role: first_serious_modular_spin_filter}
+    scoring_order:
+      - H4_L_minus_21_over_4_residual_and_L_minus_6_root
+      - H12_L_minus_13_over_4_residual_and_L_minus_4_root
+      - zero_effect
+      - free_exponent_only_after_fixed_scores
+    preserve:
+      - K_minus_K_plus_batch_histograms
+      - individual_orientation_or_shape_metadata
+      - full_period_matrix
+      - physical_length_convention
+      - source_commit_seed_counter_ranges
+
+stop_rules:
+  - do_not_run_N10864_until_N780_has_measurable_discrimination_power
+  - do_not_use_this_campaign_to_delay_norm5_issue57
