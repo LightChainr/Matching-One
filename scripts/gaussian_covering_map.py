@@ -9,8 +9,17 @@ A^2+B^2=Q*N, search units t modulo N for which
 maps the child's square-lattice NN residues bijectively to the parent's NN
 residues. The same map then covers the NN+NNN matching graph.
 
+The local step map is a D4 signed permutation R, but the induced map on torus
+winding coordinates is the integer matrix
+
+    H = P_parent^{-1} R P_child,
+
+where P(a,b) has columns (a,b),(-b,a). It satisfies |det H|=Q. Thus homology
+rank/cross-wrapping is preserved, while individual winding directions need not
+map by a mere D4 permutation.
+
 This is a correctness-first reference for Issue #67. Production coupling code
-must preserve its graph/fiber contract.
+must preserve its graph/fiber/homology contract.
 """
 
 from __future__ import annotations
@@ -19,6 +28,10 @@ from dataclasses import dataclass
 import argparse
 import math
 from typing import Iterable
+
+
+Matrix2 = tuple[tuple[int, int], tuple[int, int]]
+Vector2 = tuple[int, int]
 
 
 @dataclass(frozen=True)
@@ -35,6 +48,11 @@ class GaussianPair:
     @property
     def n(self) -> int:
         return self.a * self.a + self.b * self.b
+
+    @property
+    def period_matrix(self) -> Matrix2:
+        # Columns are (a,b) and (-b,a).
+        return ((self.a, -self.b), (self.b, self.a))
 
     @property
     def nn_signed(self) -> tuple[int, int, int, int]:
@@ -76,6 +94,40 @@ def signed_direction(value: int, geometry: GaussianPair) -> str:
     return lookup[value % n]
 
 
+def direction_vector(name: str) -> Vector2:
+    vectors = {
+        "+x": (1, 0),
+        "-x": (-1, 0),
+        "+y": (0, 1),
+        "-y": (0, -1),
+    }
+    return vectors[name]
+
+
+def matmul(left: Matrix2, right: Matrix2) -> Matrix2:
+    return (
+        (
+            left[0][0] * right[0][0] + left[0][1] * right[1][0],
+            left[0][0] * right[0][1] + left[0][1] * right[1][1],
+        ),
+        (
+            left[1][0] * right[0][0] + left[1][1] * right[1][0],
+            left[1][0] * right[0][1] + left[1][1] * right[1][1],
+        ),
+    )
+
+
+def matvec(matrix: Matrix2, vector: Vector2) -> Vector2:
+    return (
+        matrix[0][0] * vector[0] + matrix[0][1] * vector[1],
+        matrix[1][0] * vector[0] + matrix[1][1] * vector[1],
+    )
+
+
+def det(matrix: Matrix2) -> int:
+    return matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]
+
+
 @dataclass(frozen=True)
 class CoveringMap:
     parent: GaussianPair
@@ -91,6 +143,7 @@ class CoveringMap:
             raise ValueError("t does not map child NN directions bijectively to parent")
         if set(self.map_child_matching_residues()) != set(self.parent.matching_signed):
             raise ValueError("t does not map child matching directions bijectively to parent")
+        self.verify_homology()
 
     @property
     def degree(self) -> int:
@@ -117,6 +170,35 @@ class CoveringMap:
             name: signed_direction(self.t * residue, self.parent)
             for name, residue in child_positive
         }
+
+    def direction_matrix(self) -> Matrix2:
+        """D4 map of lifted unit lattice steps from child to parent."""
+
+        mapping = self.direction_map()
+        ex = direction_vector(mapping["+x"])
+        ey = direction_vector(mapping["+y"])
+        # Columns are the images of child e_x and e_y.
+        return ((ex[0], ey[0]), (ex[1], ey[1]))
+
+    def homology_matrix(self) -> Matrix2:
+        """Map child torus winding coordinates into parent winding coordinates."""
+
+        a, b = self.parent.a, self.parent.b
+        adj_parent: Matrix2 = ((a, b), (-b, a))
+        numerator = matmul(
+            matmul(adj_parent, self.direction_matrix()),
+            self.child.period_matrix,
+        )
+        n = self.parent.n
+        if any(value % n for row in numerator for value in row):
+            raise AssertionError("cover does not induce an integral homology map")
+        return (
+            (numerator[0][0] // n, numerator[0][1] // n),
+            (numerator[1][0] // n, numerator[1][1] // n),
+        )
+
+    def map_winding(self, child_winding: Vector2) -> Vector2:
+        return matvec(self.homology_matrix(), child_winding)
 
     def fiber(self, parent_label: int) -> tuple[int, ...]:
         n = self.parent.n
@@ -171,6 +253,36 @@ class CoveringMap:
                         "matching edge does not map to parent matching edge"
                     )
 
+    def verify_homology(self) -> None:
+        direction = self.direction_matrix()
+        if abs(det(direction)) != 1:
+            raise AssertionError("local direction map is not D4/unimodular")
+        homology = self.homology_matrix()
+        if abs(det(homology)) != self.degree:
+            raise AssertionError("homology map determinant does not equal cover degree")
+
+        # Check the two child period generators directly in lifted coordinates.
+        child_periods = (
+            (self.child.a, self.child.b),
+            (-self.child.b, self.child.a),
+        )
+        a, b = self.parent.a, self.parent.b
+        for column, displacement in enumerate(child_periods):
+            mapped = matvec(direction, displacement)
+            numerators = (
+                a * mapped[0] + b * mapped[1],
+                -b * mapped[0] + a * mapped[1],
+            )
+            if numerators[0] % self.parent.n or numerators[1] % self.parent.n:
+                raise AssertionError("mapped child period is not a parent period")
+            winding = (
+                numerators[0] // self.parent.n,
+                numerators[1] // self.parent.n,
+            )
+            expected = (homology[0][column], homology[1][column])
+            if winding != expected:
+                raise AssertionError("homology column disagrees with lifted period")
+
 
 def covering_units(parent: GaussianPair, child: GaussianPair) -> tuple[int, ...]:
     if child.n % parent.n:
@@ -186,6 +298,10 @@ def covering_units(parent: GaussianPair, child: GaussianPair) -> tuple[int, ...]
             (t * residue) % parent.n for residue in child.matching_signed
         }
         if mapped_matching != parent_matching:
+            continue
+        try:
+            CoveringMap(parent, child, t)
+        except (AssertionError, ValueError):
             continue
         found.append(t)
     return tuple(found)
@@ -211,13 +327,15 @@ def _self_test() -> None:
     )
     for parent, child, degree in examples:
         candidates = covering_units(parent, child)
-        assert len(candidates) == 4  # the four D4 direction identifications
+        assert len(candidates) == 4  # four D4 local direction identifications
         cover = canonical_cover(parent, child)
         assert cover.degree == degree
         assert set(cover.direction_map()) == {"+x", "+y"}
         assert len(set(cover.direction_map().values())) == 2
+        assert abs(det(cover.homology_matrix())) == degree
         cover.verify_partition()
         cover.verify_edges()
+        cover.verify_homology()
         for child_label in range(child.n):
             parent_label, kernel_index = cover.inverse_coordinates(child_label)
             assert child_label in cover.fiber(parent_label)
@@ -241,11 +359,15 @@ def main() -> int:
     print("covering units:", " ".join(map(str, candidates)))
     for t in candidates:
         cover = CoveringMap(parent, child, t)
-        print(f"t={t} direction_map={cover.direction_map()}")
+        print(
+            f"t={t} direction_map={cover.direction_map()} "
+            f"homology={cover.homology_matrix()}"
+        )
     cover = canonical_cover(parent, child)
     cover.verify_partition()
     cover.verify_edges()
-    print(f"canonical t={cover.t}; exact partition/edge checks PASS")
+    cover.verify_homology()
+    print(f"canonical t={cover.t}; exact partition/edge/homology checks PASS")
     return 0
 
 
