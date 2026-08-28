@@ -1,0 +1,3 @@
+# Q42/Q43 analysis of existing C05 histograms (no new MC)
+python3 scripts/analyze_q42_q43.py --c05-root results/server-20260828/C05 --pell-root results/server-20260828/pell --huawei-csv results/server-20260828/gaussian/same_n_prod.analysis.csv --q42-out results/server-20260828/Q42 --q43-out results/server-20260828/Q43
+python3 -m unittest tests.test_q42_q43

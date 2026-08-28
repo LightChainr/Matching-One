@@ -1,0 +1,68 @@
+{
+  "queue_ids": [
+    "Q42",
+    "Q43"
+  ],
+  "issues": [
+    35,
+    36
+  ],
+  "program": "Q42 amplitude closure + Q43 angular-radial harmonic challenge on existing C05 histograms",
+  "source_commit": "f89191a5468ec8417bbeac373334cecb6b5833a7",
+  "c05_histogram_commit": "f89191a5468ec8417bbeac373334cecb6b5833a7",
+  "c05_metadata_source_commit": "107ddc948c8ae8e5c8a30549c9b123ac9be091b7",
+  "c05_commit_note": "histograms from C05 SHA f89191a5468ec8417bbeac373334cecb6b5833a7; this analysis does not rerun MC",
+  "source_branch": "agent/q42-q43-closure-harmonics",
+  "machine": "cursor Linux 8 cores / 16 GB, no GPU",
+  "os_kernel": "Linux 6.12.94+",
+  "compiler_or_interpreter": "python 3.13.5 + numpy 2.2.4",
+  "dependency_versions": {
+    "python": "3.13.5",
+    "numpy": "2.2.4"
+  },
+  "rng_algorithm_if_stochastic": "none in this analysis; C05 used Philox4x32-10",
+  "rng_seed_or_counter_ranges": {
+    "C05_global_seed_hex": "0xc0100001",
+    "C05_global_seed": 3222274049,
+    "C05_seed_note": "0xC0100001, NOT a 1e8 campaign",
+    "from_C05_metadata": {
+      "global_seed": 3222274049,
+      "key": [
+        "global_seed",
+        "batch_id"
+      ],
+      "ctr": [
+        "draw_counter",
+        "replica_id",
+        "stream_id=0",
+        0
+      ],
+      "batch_begin": 0,
+      "batches": 40,
+      "replicas_per_batch": 50000,
+      "stream": "shared Fisher-Yates permutation of cyclic labels (CRN same_U_j)"
+    }
+  },
+  "sample_counts": {
+    "per_same_N_pair": 2000000,
+    "batches": 40,
+    "replicas_per_batch": 50000,
+    "NOT_1e8": true,
+    "from_C05_metadata": {
+      "exact_axis_L2_perms": 24,
+      "exact_axis_L3_perms": 362880,
+      "exact_gaussian_2_1_perms": 120,
+      "exact_axis_L4_mc": 20000,
+      "production_per_same_N_pair": 2000000
+    }
+  },
+  "wall_time": {
+    "analysis_s": 1.2042782306671143,
+    "new_MC_s": 0.0
+  },
+  "thread_or_gpu_configuration": "analysis process, no GPU, no new OpenMP MC",
+  "channel": "cross",
+  "N1105": "not started",
+  "second_stage_N185_221_265": "skipped (default; first five sizes analysed)",
+  "this_is_2e6_not_1e8": true
+}

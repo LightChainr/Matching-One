@@ -1,0 +1,81 @@
+{
+  "rule": "Huawei published A4 is a separate comparison table; never pooled with C05 as if same seed.",
+  "huawei_from_csv": [
+    {
+      "N": 65,
+      "A4": 0.6501614328098465,
+      "A4_se": 0.10910762439174017,
+      "delta_M": 0.001003766666666663,
+      "delta_M_se": 0.0001684483128602406,
+      "source": "/workspace/Matching-One-c05/results/server-20260828/gaussian/same_n_prod.analysis.csv"
+    },
+    {
+      "N": 85,
+      "A4": 0.6511711592989055,
+      "A4_se": 0.13561504504095231,
+      "delta_M": 0.0007603333333333341,
+      "delta_M_se": 0.0001583495180547546,
+      "source": "/workspace/Matching-One-c05/results/server-20260828/gaussian/same_n_prod.analysis.csv"
+    },
+    {
+      "N": 145,
+      "A4": 0.5574348862125189,
+      "A4_se": 0.3314329278946143,
+      "delta_M": 0.0003286666666666697,
+      "delta_M_se": 0.00019541467233030025,
+      "source": "/workspace/Matching-One-c05/results/server-20260828/gaussian/same_n_prod.analysis.csv"
+    }
+  ],
+  "comparison": [
+    {
+      "N": 65,
+      "huawei_published_A4": 0.65,
+      "huawei_published_se": 0.109,
+      "huawei_samples": 30000000,
+      "huawei_seed": 20260829,
+      "observable": "fixed-p wrapping matching_function at p_ref (NOT C05 Newman-Ziff M)",
+      "C05_A_M": 0.14171281987345835,
+      "C05_A_M_se": 0.2615445633184498,
+      "C05_samples": 2000000,
+      "C05_seed": 3222274049,
+      "signed_C05_minus_huawei": -0.5082871801265416,
+      "combined_se_independent": 0.2833488284807943,
+      "z_independent": -1.7938566495996433,
+      "pooled": false
+    },
+    {
+      "N": 85,
+      "huawei_published_A4": 0.651,
+      "huawei_published_se": 0.136,
+      "huawei_samples": 30000000,
+      "huawei_seed": 20260829,
+      "observable": "fixed-p wrapping matching_function at p_ref (NOT C05 Newman-Ziff M)",
+      "C05_A_M": 1.407768901928904,
+      "C05_A_M_se": 0.3172109716124004,
+      "C05_samples": 2000000,
+      "C05_seed": 3222274049,
+      "signed_C05_minus_huawei": 0.7567689019289039,
+      "combined_se_independent": 0.3451359159972823,
+      "z_independent": 2.1926692263892433,
+      "pooled": false
+    },
+    {
+      "N": 145,
+      "huawei_published_A4": 0.557,
+      "huawei_published_se": 0.331,
+      "huawei_samples": 30000000,
+      "huawei_seed": 20260829,
+      "observable": "fixed-p wrapping matching_function at p_ref (NOT C05 Newman-Ziff M)",
+      "C05_A_M": 0.3838710193965308,
+      "C05_A_M_se": 0.8974136799503802,
+      "C05_samples": 2000000,
+      "C05_seed": 3222274049,
+      "signed_C05_minus_huawei": -0.17312898060346926,
+      "combined_se_independent": 0.9565104876383131,
+      "z_independent": -0.18100060881813854,
+      "pooled": false
+    }
+  ],
+  "c05_observable": "Newman-Ziff matching function M(p)=P(K+<=m)-P(K->m), m~Bin(N,p_ref)",
+  "huawei_observable": "fixed-p primal_wrap(p_ref)-matching_wrap(p_ref); either/cross not two replications"
+}
