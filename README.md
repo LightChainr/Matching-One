@@ -10,39 +10,60 @@ p_c^{\mathrm{site}}(\mathbb Z^2)+p_c^{\mathrm{site}}(\mathrm{NN+NNN})=1.
 
 ## What we currently observe
 
-The strongest surviving numerical structure is a **matching-odd orientation sector on primitive Gaussian tori**.
+The strongest numerical structure is an orientation-dependent matching signal on primitive Gaussian tori.
 
-- Independent 100M same-`N` confirmation at `N=65,85,130,145,170` gives the prescribed `Delta cos(4 theta)` sign at all five sizes, with z-scores `16.03, 11.23, 5.22, 5.27, 2.58` and pooled
+- Independent 100M same-`N` confirmation at `N=65,85,130,145,170` reproduces the prescribed odd-square-harmonic sign and is compatible with
 
   ```text
-  A4 = N^(13/8) DeltaM / DeltaCos4 = 0.7885 +/- 0.0352.
+  DeltaM ~ DeltaCos4 * N^(-13/8).
   ```
 
-- Three prospective `1+i` Gaussian lineages are compatible with the no-fit raw-contrast law
+- Three prospective `1+i` Gaussian lineages are compatible with the no-fit raw-contrast transformation
 
   ```text
   DeltaM(2N)/DeltaM(N) = -2^(-13/8).
   ```
 
-- The first genuinely new-geometry full-curve test, `N=185,265` with 500M paired permutations per size, gives
+- The genuinely new N=185/265 full-curve target block, 500M paired permutations per size, gives
 
   ```text
-  DeltaM, x=21/4 H4: chi2 = 3.046 / 2
-  DeltaM, zero:      chi2 = 29.409 / 2
-  DeltaM, x=17/4:    chi2 = 30.246 / 2
+  DeltaM, x=21/4 H4-like: chi2 = 3.046 / 2
+  DeltaM, zero:            chi2 = 29.409 / 2
+  DeltaM, x=17/4:          chi2 = 30.246 / 2
   ```
 
-  so the matching-odd `x=21/4` H4-like radial law survives prospectively and clearly beats both zero and the larger lower-dimensional adversary over these targets.
+  so the matching-odd `x=21/4` H4-like radial law survives the new-geometry test and strongly outperforms these two frozen alternatives.
 
-The same prospective run also **breaks the old simple two-sector picture**. The frozen matching-even `DeltaS ~ +N^-1` prediction reverses sign at both new sizes:
+### Important channel-map erratum
+
+The original #108 report described the matching-even N=185/265 result as a prospective sign reversal. That interpretation was a protocol error, not a new physical effect.
+
+The frozen matching-even source amplitude was fitted from P31 `either/even`, while the threshold-rank target reconstructs rank-2 `cross/even`. Complementary torus topology gives
 
 ```text
-N=185 DeltaS = -6.08154e-5 +/- 8.08957e-6
-N=265 DeltaS = -7.02495e-5 +/- 9.38562e-6
-frozen positive-law chi2 = 240.247 / 2
+DeltaS_cross = -DeltaS_either.
 ```
 
-Likewise, the pure normalized derivative law `P4[S'] ~ N^-5/4` fails prospectively, while two predeclared corrections survive:
+After applying only this exact source-to-target channel map, with no refit,
+
+```text
+corrected DeltaS chi2 = 0.5700315 / 2
+marginal residual z   = +0.67, -0.12
+```
+
+The matching-even prospective result is therefore compatible with the frozen amplitude after channel conversion. The raw #108 files remain preserved; the erratum/scorer is on `main` via PR #134.
+
+This is an important methodological lesson for the whole repository: every frozen prediction must name its wrapping channel, and every scorer must make any exact channel map explicit.
+
+### A real prospective failure remains
+
+The normalized derivative law
+
+```text
+P4[S'] ~ N^-5/4
+```
+
+fails prospectively on N=185/265, while two predeclared corrections remain viable:
 
 ```text
 pure N^-5/4:  chi2 = 52.716 / 2
@@ -51,33 +72,38 @@ analytic 1/N:  chi2 =  0.862 / 2
 zero:          chi2 = 1278.555 / 2
 ```
 
-The current picture is therefore **not** one clean two-field pure-power model. It is a robust matching-odd leading sector plus unresolved finite-size structure in the matching-even and derivative channels.
+The correction mechanism is not yet uniquely identified.
 
 ## Working interpretation
 
-A compact empirical law for the surviving central odd sector is
+A compact empirical law for the central matching-odd sector remains
 
 \[
 \Delta M_N \approx A\,\Delta\cos(4\theta)\,N^{-13/8}.
 \]
 
-This now has independent-seed, held-out, Gaussian-semigroup, root-closure, and prospective-new-geometry support. It still does not prove that H4 is unique rather than H12/H20, nor uniquely identify an `x=21/4` LCFT operator.
+It now has independent-seed, held-out, Gaussian-semigroup, root-closure, and prospective-new-geometry support. It does **not** yet prove that H4 is unique rather than H12/H20, nor uniquely identify an `x=21/4` LCFT operator.
 
-Full-curve data also show that the bare finite-size slope ratio is not exactly `2^(3/8)` at current precision; a small but resolved correction is required. For normalized `P4=DeltaX/DeltaCos4`, the Gaussian angular sign cancels, so pure H4 normalized transfer is positive `Q^(-alpha)` even when the raw contrast changes sign.
+The matching-even sector is again compatible with its frozen `N^-1` amplitude once cross/either semantics are aligned. This strengthens the empirical two-parity picture, but does not prove a local matching/OPE automorphism.
 
-## Next experiments
+Full-curve data also show that the bare finite-size center-slope ratio is not exactly `2^(3/8)` at current precision; a small but resolved finite-size correction is required. For normalized `P4=DeltaX/DeltaCos4`, the Gaussian angular factor is already divided out, so pure-H4 normalized transfer is positive `Q^(-alpha)` even when the raw contrast changes sign.
 
-The execution order is now intentionally short:
+## Next experiments and analysis
 
-1. **Norm-5 H4 versus H12 — #57.** This is the highest-information dedicated discriminator. `N=325,425` are already supported by the production engine. Start with a small threshold-rank variance pilot, then choose production size from measured power rather than assuming billions of replicas.
+The execution order is intentionally short:
+
+1. **Norm-5 H4 versus H12 — #57.** Highest-information new-compute discriminator. N=325/425 are supported by the threshold-rank engine. Use a frozen variance/power pilot and preserve raw-versus-normalized channel conventions.
 2. **Third full-curve lineage — #50.** Score `145 -> 290`, including the already-frozen finite-size slope correction and induced root prediction.
-3. **Even/derivative correction analysis — #48.** First use existing `N=65..265` data to explain the `DeltaS` sign reversal and distinguish corrected `S'` models. Do not schedule a dedicated new run until #50/#57 have been reused.
+3. **Use existing full curves harder before simulating more.** Priority analyses include the prequential evidence ledger (#95), pivotal/Russo bridge (#100), intrinsic quantile-center spectroscopy (#101), multi-u thermal response (#119), and a joint operator-mixing treatment (#125).
+4. **Choose later expensive geometry by information gain — #102.** Do not default to a larger N.
 
-The exact N=1105 four-angle projector, axis-annihilator work, complex-zero maps, kappa3, and PSLQ are useful secondary tracks but should not displace these discriminators.
+Parallel theory/control routes are tracked in the post-P43 frontier map: FK/Potts torus sectors, four-arm anisotropy, torus-modulus spectroscopy, exactly-critical isoradial controls, Euler/Betti identities, universal amplitude ratios, exact self-matching Beta-family tests, and finite-polynomial Galois certificates.
+
+The exact N=1105 four-angle projector, axis-annihilator work, complex-zero maps, kappa3, rigorous-bound feasibility, and PSLQ are secondary/gated tracks.
 
 ## Repository
 
-The numerical archive, production source, exact checks, failed/null models, and raw sufficient statistics are on `main` under `results/`. The execution-facing synthesis is [`notes/SYNTHESIS-20260828.md`](notes/SYNTHESIS-20260828.md); the claim ledger is [`docs/STATUS.md`](docs/STATUS.md).
+The numerical archive, production source, exact checks, failed/null models, raw sufficient statistics, and protocol errata live on `main`. The execution-facing synthesis is [`notes/SYNTHESIS-20260828.md`](notes/SYNTHESIS-20260828.md); the claim ledger is [`docs/STATUS.md`](docs/STATUS.md).
 
 ```text
 constants/      reference values and exact relations
@@ -92,7 +118,7 @@ docs/           status and roadmap
 src/            production C++ engines
 ```
 
-This is an exploratory mathematics/computational-physics repository. Useful research assets should enter `main` quickly; claim strength is controlled by evidence, not by hiding exploratory work on branches.
+This is an exploratory mathematics/computational-physics repository. Useful research assets should enter `main` quickly; claim strength is controlled by evidence and chronology, not by branch location.
 
 ```bash
 python3 -m unittest discover -s tests -p 'test_*.py' -v
