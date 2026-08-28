@@ -1,0 +1,98 @@
+version: 1
+program: matching-structure-second-wave
+
+experiments:
+  - id: T12
+    priority: P1
+    title: Covariance-optimized matching-annihilator hierarchy
+    linked_issue: 8
+    hypothesis: >-
+      The known L^-4 matching root can be accelerated near L^-7 by a two-size
+      annihilator, and a covariance-aware wider-window construction can cancel
+      another correction without catastrophic noise amplification.
+    required_inputs:
+      - exact or high-statistics M_L(p) for several consecutive and spaced sizes
+      - full cross-size covariance matrix
+      - training-only estimates of correction exponents
+    protocol:
+      - reproduce the ordinary root and the published two-size acceleration
+      - compute arbitrary-precision constrained weights
+      - compare adjacent, spaced, and overdetermined size designs
+      - minimize w^T Sigma w subject to frozen cancellation constraints
+      - add a bias penalty for plausible omitted powers
+      - freeze design before scoring withheld larger sizes
+    reject_when:
+      - l1_weight_norm exceeds the preregistered threshold
+      - covariance-adjusted variance exceeds the ordinary estimator
+      - improvement does not persist out of sample
+    resources:
+      cpu: "8 cores"
+      ram: "16 GB"
+      gpu: "optional only for producing M_L statistics"
+
+  - id: T13
+    priority: P1
+    title: Universal odd scaling invariants
+    linked_issue: 16
+    hypothesis: >-
+      The matching function converges to a universal odd scaling function whose
+      metric-free derivative ratios contain simpler exact structure than p_c.
+    primary_target:
+      expression: "kappa_3 = M'''(0) / M'(0)^3"
+      aggressive_candidate: "-5/3"
+    secondary_targets:
+      - kappa_5
+      - kappa_7 if statistical conditioning permits
+      - aspect-ratio dependence
+      - cross-lattice universality
+    protocol:
+      - derive derivatives analytically from microcanonical Bernstein coefficients
+      - propagate the complete covariance matrix
+      - use blind finite-size extrapolation
+      - test at least two lattice realizations and two torus aspect ratios
+    resources:
+      cpu: "8 cores for development"
+      ram: "16 GB"
+      gpu: "RTX 5090-class useful for high-order derivative statistics"
+
+  - id: T14
+    priority: P2
+    title: Persistent-factor and gcd diagnostic
+    linked_issue: 17
+    hypothesis: >-
+      Unlike exact finite-cell models, square-site finite matching polynomials have
+      no stable nontrivial bounded-degree factor carrying the physical root.
+    controls:
+      - triangular-site percolation
+      - square-bond percolation
+      - martini-type exactly solvable lattices
+    outputs:
+      - primitive normalized exact polynomials
+      - irreducible factor tables
+      - pairwise and multi-size gcds
+      - physical-root isolation intervals
+      - negative-result certificates
+    resources:
+      cpu: "8 cores"
+      ram: "16 GB initially; more may be required for factorization"
+      gpu: false
+
+  - id: T15
+    priority: P1
+    title: Bidirectional microcanonical implementation
+    linked_issue: 9
+    protocol:
+      - one random site permutation per replica
+      - forward NN union/find sweep for occupied sites
+      - reverse NN+NNN sweep for complementary vacant sites
+      - pair k with N-k before binomial convolution
+      - produce M_L, analytic derivatives, roots, and covariance matrices
+    mandatory_validation:
+      - exhaustive small-torus identities
+      - independent winding classifier
+      - deterministic counter-based RNG mapping
+      - CPU reference before GPU production
+    resources:
+      cpu: "8 cores"
+      ram: "16 GB"
+      gpu: "later production stage"
