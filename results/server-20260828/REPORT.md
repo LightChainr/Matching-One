@@ -273,7 +273,16 @@ The final local and Python 3.9/AArch64 server regression suites each contain
   standard errors, with joint chi-square `0.03445/2`.  This independently
   supports the combined spin-4 sign and exponent relation without fitting an
   amplitude.
+- **P45:** a clean-source 100-million-per-size threshold-rank replay at
+  `N=65,85` gives angular-normalized root amplitudes `0.42034 +/- 0.02157` and
+  `0.39495 +/- 0.03078`.  With full cross-size jackknife covariance and the
+  frozen source uncertainty, the preregistered `A_p=0.45101` prediction scores
+  `chi-square=2.4267/2` and passes.  A free common amplitude is
+  `0.41301 +/- 0.01924`; zero effect scores `461.3/2`.  Closure remains within
+  `9e-5` of one, so the result tests the angular amplitude rather than root
+  nonlinearity.
 
-The expanded local suite contains 57 tests; all passed.  Detailed reports and
+The expanded local suite contains 59 tests; all passed.  Detailed reports and
 machine-readable outputs are under `P31/`, `P32-radial-challenge/`, `P33/`,
-`P34/`, `P35-amplitude-closure/`, `P37-doubling/`, and `C03-euler/`.
+`P34/`, `P35-amplitude-closure/`, `P37-doubling/`, `P45-root-amplitude/`, and
+`C03-euler/`.
