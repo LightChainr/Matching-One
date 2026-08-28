@@ -2,56 +2,93 @@
 
 ## Outcome
 
-The preregistered two-sector model does **not** pass as a conjunction.  Its
-matching-odd part survives the prospective test and decisively improves on
-zero, but the matching-even effect is nonzero with the opposite sign from the
-frozen prediction.
+The N=185/265 target is scientifically useful, but the two sectors must be read differently after a source/target channel-contract audit.
 
-All scores below use the frozen model order and zero target-fit parameters.
+### Matching-odd DeltaM: prospective pass
 
-| sector/model | N=185 observed | N=265 observed | frozen two-size chi-square |
+The frozen x=21/4 H4-like law survives the genuinely new target geometries and improves strongly on both zero and the predeclared x=17/4 radial adversary.
+
+| model | N=185 observed | N=265 observed | frozen two-size chi-square |
 |:---|---:|---:|---:|
-| DeltaM, x=21/4 H4 | 1.36830e-4 +/- 3.42352e-5 | 1.27110e-4 +/- 3.46783e-5 | 3.04598 / 2 |
+| DeltaM, x=21/4 H4 | 1.36830e-4 +/- 3.42352e-5 | 1.27110e-4 +/- 3.46783e-5 | **3.04598 / 2** |
 | DeltaM, zero | same | same | 29.40938 / 2 |
 | DeltaM, x=17/4 adversary | same | same | 30.24613 / 2 |
-| DeltaS, frozen positive N^-1 | -6.08154e-5 +/- 8.08957e-6 | -7.02495e-5 +/- 9.38562e-6 | 240.24721 / 2 |
-| DeltaS, zero | same | same | 112.53891 / 2 |
 
-The marginal DeltaM residuals from the x=21/4 prediction are -1.57 and
--0.84 combined standard errors.  The zero-effect marginal statistics are
-+4.00 and +3.67 sampling standard errors.  In contrast, the DeltaS residuals
-from the frozen positive prediction are -12.77 and -12.44 combined standard
-errors; the observed negative effects themselves are -7.52 and -7.48
-sampling standard errors from zero.
+The marginal DeltaM residuals from the frozen H4 prediction are -1.57 and -0.84 combined standard errors. The zero-effect marginal statistics are +4.00 and +3.67 sampling standard errors.
 
-Thus the prospective result supports a nonzero odd square-harmonic sector
-compatible with the frozen x=21/4 radial law, rejects the larger x=17/4
-adversarial prediction, and falsifies the frozen sign/amplitude assignment for
-the even sector.  It does not support describing the full result as a single
-successful two-spin4 model.
+### Registered DeltaS score: failed artifact, but source/target channels were mismatched
 
-The predeclared shared H4+H12 comparison is retained as `NOT_SCORABLE`: only
-the exact harmonic columns were frozen, not a complete pre-target H4/H12
-amplitude vector and source covariance.  No H12 amplitude is fitted to these
-targets.  The invalidated wrong-Kac-branch V_<1,3> artifact is excluded.
+The immutable pre-target artifact `predictions/two_spin4_heldout_20260828.yaml` froze the matching-even amplitude from the P31 **`either/even`** channel. The Issue #43 threshold-rank target, however, is explicitly a **rank-2 `cross`** engine and the scorer reconstructs
 
-## Issue #72 P4[S-prime] score from the same full curves
+```text
+S_cross = (R_G^cross + R_hat^cross)/2.
+```
 
-The derivative target is evaluated at each pair's intrinsic center and scored
-only after the Issue #43 primary and secondary stages.
+The originally registered positive means therefore score very badly against the negative cross-channel observations:
 
-| frozen model | chi-square / df |
+| registered artifact | N=185 observed | N=265 observed | chi-square |
+|:---|---:|---:|---:|
+| frozen positive either/even mean | -6.08154e-5 +/- 8.08957e-6 | -7.02495e-5 +/- 9.38562e-6 | 240.24721 / 2 |
+| zero | same | same | 112.53891 / 2 |
+
+That historical score remains unchanged in `analysis/primary_score.json` and must remain part of the preregistration record.
+
+However, P31 already contains both source channels, and the torus matching channel map gives the orientation-difference identity
+
+```text
+DeltaS_cross = -DeltaS_either.
+```
+
+The P31 source CSV verifies the equal-and-opposite relation on every frozen source size `N=65,85,130,145,170`, with identical batch SE. Applying only this exact pre-existing channel map to the frozen source prediction gives
+
+```text
+corrected cross means:
+N=185  -6.7521637459e-5
+N=265  -6.8919446970e-5
+
+observed:
+N=185  -6.0815376233e-5
+N=265  -7.0249507845e-5
+
+protocol-repair chi2 = 0.57003 / 2
+marginal residual z = +0.667, -0.119
+```
+
+The machine-readable diagnostic is `analysis/channel_map_corrected_DeltaS.json` and is independently recomputed by `scripts/audit_issue43_even_channel_map.py`.
+
+**Evidence boundary:** this repaired score is a post-reveal protocol correction, not a retroactive preregistered pass. The correct conclusion is that the original two-sector artifact had a source/target channel mismatch; its failed positive DeltaS score cannot be used as evidence that the physical matching-even cross sector is falsified.
+
+## Prospective P48 intrinsic-center score from the same targets
+
+A second, separate analysis evaluates the intrinsic-center P48 projectors. This must not be conflated with the fixed-coordinate registered DeltaS score above.
+
+Using only the P48 amplitudes frozen from `N=65,85,130`, with zero target refits, the new `N=185,265` geometries give:
+
+| intrinsic-center channel | frozen pure law | chi-square / 2 | zero chi-square / 2 |
+|:---|:---|---:|---:|
+| `P4[S]` | `N^-1` | **1.13878** | 112.53974 |
+| `P4[D]` | `N^-13/8` | **0.28085** | 29.40844 |
+| `P4[D']` | `N^-5/8` | **0.08761** | 59.39319 |
+| `P4[S']` | `N^-5/4` | **52.71634** | 1278.55524 |
+
+Thus `S`, `D`, and `D'` pure laws survive prospectively; `S'` is the unique clear pure-law failure among the four intrinsic-center P48 channels.
+
+The already-frozen S-prime correction models remain:
+
+| frozen S-prime model | chi-square / 2 |
 |:---|---:|
-| original pure N^-5/4 law | 52.71634 / 2 |
-| rank-2/Jordan log correction | 1.20360 / 2 |
-| analytic inverse-N correction | 0.86221 / 2 |
-| zero effect | 1278.55524 / 2 |
+| original pure N^-5/4 law | 52.71634 |
+| rank-2/Jordan log correction | 1.20360 |
+| analytic inverse-N correction | 0.86221 |
+| zero effect | 1278.55524 |
 
-The new geometries prospectively confirm that the P4[S-prime] signal is
-nonzero and that the original pure law fails.  Both frozen correction models
-survive.  The analytic statistic is descriptively smaller, but the frozen
-chronology is preserved: the rank-2/log correction is the primary correction
-model and is not displaced by post-reveal selection.
+Both correction models survive. The smaller descriptive analytic statistic does not retroactively reorder the preregistered chronology.
+
+The P48 new-geometry four-channel score is generated by `scripts/score_p48_new_geometry_channels.py` and stored under `results/server-20260828/P48-new-geometry-score/`.
+
+## H4+H12 boundary
+
+The predeclared shared H4+H12 comparison remains `NOT_SCORABLE`: exact harmonic columns were frozen, but no complete pre-target H4/H12 amplitude vector and source covariance was frozen. No H12 amplitude is fitted to the N=185/265 targets. The invalidated wrong-Kac-branch V_<1,3> artifact remains excluded.
 
 ## Production provenance
 
@@ -59,22 +96,16 @@ model and is not displaced by post-reveal selection.
 - Engine commit: `302464c3a08bdf74a8cea079a50cfebd7fc8843f`.
 - Source SHA-256: `0273b1df8d0f91a4e76a7287a897bc82d4e52d003302dcfa33f797c95931ce2b`.
 - Executable SHA-256: `f288da0db697efe24766e37f20d07af7a04b2e781e2324fc11731860011c4a17`.
-- Compiler reported by production metadata: GCC 10.3.1 with OpenMP.
-- N=185: pair (13,4)/(11,8), 500,000,000 replicas, counters [7000000000,7500000000), 100 batches, 8 threads, 1834.252 s.
-- N=265: pair (16,3)/(12,11), 500,000,000 replicas, counters [7500000000,8000000000), 100 batches, 8 threads, 2531.543 s.
+- Compiler: GCC 10.3.1 with OpenMP.
+- N=185: `(13,4)/(11,8)`, 500,000,000 replicas, counters `[7000000000,7500000000)`, 100 batches, 8 threads, 1834.252 s.
+- N=265: `(16,3)/(12,11)`, 500,000,000 replicas, counters `[7500000000,8000000000)`, 100 batches, 8 threads, 2531.543 s.
 - Common seed: 2026104301; counter domains are disjoint.
-- Both stderr files are empty.  Local downloads match the remote SHA-256 values.
+- Both stderr files are empty and retained checksums pass.
 
-The primary score reconstructs the microcanonical full curves at the frozen
-`p_ref=0.592746050790`.  The derivative analysis separately solves each
-orientation pair's intrinsic center.  Raw histograms, batch moments, metadata,
-stdout, stderr, scorer outputs, derivative covariance, commands, and checksums
-are retained.
+The primary threshold-rank score reconstructs full curves at frozen `p_ref=0.592746050790`. P48 separately solves each pair's intrinsic center. Raw histograms, batch moments, metadata, scorer outputs, covariance products, commands, and checksums are retained.
 
-## Evidence boundary
+## Final interpretation
 
-These are the first revealed N=185/265 target values and were scored against
-immutable pre-target artifacts.  No exponent, amplitude, sign, harmonic
-coefficient, correction coefficient, or thermal coordinate was fitted to the
-target values.  Flexible matrix/Jordan interpretations remain downstream
-models; they do not overwrite the failed frozen even-sector prediction.
+The new geometries strengthen the robust matching-odd H4-like law. They also strengthen most of the intrinsic-center P48 parity pattern: `S`, `D`, and `D'` transfer successfully, while only `S'` requires a correction.
+
+The originally reported DeltaS sign failure is a real failure of the registered **artifact contract**, but not a valid falsification of the matching-even cross sector because the source was `either/even` and the target was `cross/even`. The protocol repair is preserved as a lower-status diagnostic rather than rewriting the preregistration history.
