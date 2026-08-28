@@ -5,116 +5,100 @@ Matching One is a computational research project on square-lattice site percolat
 The exact structural anchor is
 
 \[
-p_c^{\mathrm{site}}(\mathbb Z^2)
-+ p_c^{\mathrm{site}}(\mathrm{NN+NNN}) = 1.
+p_c^{\mathrm{site}}(\mathbb Z^2)+p_c^{\mathrm{site}}(\mathrm{NN+NNN})=1.
 \]
 
 ## What we currently observe
 
-The strongest current numerical evidence is an orientation-dependent finite-size sector on primitive Gaussian tori.
+The strongest surviving numerical structure is a **matching-odd orientation sector on primitive Gaussian tori**.
 
-1. **Independent five-size confirmation.** With 100 million paired replicas per size, the frozen same-`N` orientation differences at `N=65,85,130,145,170` all have the sign predicted by `Delta cos(4 theta)`. The corresponding z-scores are `16.03, 11.23, 5.22, 5.27, 2.58`; the pooled scaled amplitude is
+- Independent 100M same-`N` confirmation at `N=65,85,130,145,170` gives the prescribed `Delta cos(4 theta)` sign at all five sizes, with z-scores `16.03, 11.23, 5.22, 5.27, 2.58` and pooled
 
-   ```text
-   A4 = N^(13/8) DeltaM / DeltaCos4
-      = 0.7885 +/- 0.0352.
-   ```
+  ```text
+  A4 = N^(13/8) DeltaM / DeltaCos4 = 0.7885 +/- 0.0352.
+  ```
 
-2. **Two parameter-free Gaussian-doubling tests.** Multiplication by `1+i` doubles `N` and rotates the microscopic square lattice by `pi/4`. The frozen prediction
+- Three prospective `1+i` Gaussian lineages are compatible with the no-fit raw-contrast law
 
-   ```text
-   DeltaM(2N) / DeltaM(N) = -2^(-13/8) = -0.3242098887...
-   ```
+  ```text
+  DeltaM(2N)/DeltaM(N) = -2^(-13/8).
+  ```
 
-   gives fresh observed ratios
+- The first genuinely new-geometry full-curve test, `N=185,265` with 500M paired permutations per size, gives
 
-   ```text
-   65 -> 130: -0.31382 +/- 0.0908
-   85 -> 170: -0.34095 +/- 0.1118.
-   ```
+  ```text
+  DeltaM, x=21/4 H4: chi2 = 3.046 / 2
+  DeltaM, zero:      chi2 = 29.409 / 2
+  DeltaM, x=17/4:    chi2 = 30.246 / 2
+  ```
 
-3. **A third prospective lineage also passes.** For the independently frozen `145 -> 290` lineage,
+  so the matching-odd `x=21/4` H4-like radial law survives prospectively and clearly beats both zero and the larger lower-dimensional adversary over these targets.
 
-   ```text
-   DeltaM_290 = -0.000160648 +/- 0.000040542
-   frozen target = -0.0001376564 +/- 0.000024997.
-   ```
+The same prospective run also **breaks the old simple two-sector picture**. The frozen matching-even `DeltaS ~ +N^-1` prediction reverses sign at both new sizes:
 
-4. **The residual moves the finite matching root in the expected way.** Threshold-rank reconstructions give
+```text
+N=185 DeltaS = -6.08154e-5 +/- 8.08957e-6
+N=265 DeltaS = -7.02495e-5 +/- 9.38562e-6
+frozen positive-law chi2 = 240.247 / 2
+```
 
-   ```text
-   -DeltaRoot * mean(M') / DeltaM ~= 1
-   ```
+Likewise, the pure normalized derivative law `P4[S'] ~ N^-5/4` fails prospectively, while two predeclared corrections survive:
 
-   across the tested sizes. A clean high-stat root-amplitude test gives `A_p=0.4203 +/- 0.0216` at `N=65` and `0.3949 +/- 0.0308` at `N=85`, against the frozen prediction `0.4510 +/- 0.0201`.
+```text
+pure N^-5/4:  chi2 = 52.716 / 2
+rank-2/log:    chi2 =  1.204 / 2
+analytic 1/N:  chi2 =  0.862 / 2
+zero:          chi2 = 1278.555 / 2
+```
 
-The numerical archive, production scripts, exact checks, failed models, and raw sufficient statistics are now on `main` under `results/server-20260828/`.
+The current picture is therefore **not** one clean two-field pure-power model. It is a robust matching-odd leading sector plus unresolved finite-size structure in the matching-even and derivative channels.
 
 ## Working interpretation
 
-A compact working law is
+A compact empirical law for the surviving central odd sector is
 
 \[
-\Delta M_N
-\approx A\,\Delta\cos(4\theta)\,N^{-13/8}
+\Delta M_N \approx A\,\Delta\cos(4\theta)\,N^{-13/8}.
 \]
 
-with Gaussian-integer multiplication acting simultaneously on the radial scale and microscopic orientation.
+This now has independent-seed, held-out, Gaussian-semigroup, root-closure, and prospective-new-geometry support. It still does not prove that H4 is unique rather than H12/H20, nor uniquely identify an `x=21/4` LCFT operator.
 
-The evidence is strongest for an **odd square-harmonic orientation sector with approximately `N^-13/8` radial behavior**. It is not yet enough to say that the leading harmonic is uniquely H4 rather than H12/H20/etc., or that the corresponding continuum field has been uniquely identified as the proposed `x=21/4` LCFT operator.
+Full-curve data also show that the bare finite-size slope ratio is not exactly `2^(3/8)` at current precision; a small but resolved correction is required. For normalized `P4=DeltaX/DeltaCos4`, the Gaussian angular sign cancels, so pure H4 normalized transfer is positive `Q^(-alpha)` even when the raw contrast changes sign.
 
-For the current integrated research view, see [`notes/SYNTHESIS-20260828.md`](notes/SYNTHESIS-20260828.md). The more formal claim ledger remains [`docs/STATUS.md`](docs/STATUS.md).
+## Next experiments
 
-## Next three experiments
+The execution order is now intentionally short:
 
-The project is currently optimized around three discriminators:
+1. **Norm-5 H4 versus H12 — #57.** This is the highest-information dedicated discriminator. `N=325,425` are already supported by the production engine. Start with a small threshold-rank variance pilot, then choose production size from measured power rather than assuming billions of replicas.
+2. **Third full-curve lineage — #50.** Score `145 -> 290`, including the already-frozen finite-size slope correction and induced root prediction.
+3. **Even/derivative correction analysis — #48.** First use existing `N=65..265` data to explain the `DeltaS` sign reversal and distinguish corrected `S'` models. Do not schedule a dedicated new run until #50/#57 have been reused.
 
-1. **Full-curve Gaussian doubling triptych** (#49/#50): test `DeltaM`, slope, and root ratios on the three exact lineages, including the parameter-free root target `-1/4`.
-2. **Norm-5 H4 versus H12 test** (#57): use a Gaussian multiplier for which the two harmonic hypotheses predict different signs/magnitudes.
-3. **Exact parity control** (#44, then #42/#48): separate generic square-lattice anisotropy from the matching-odd sector using self-matching/self-dual controls and derivative parity.
+The exact N=1105 four-angle projector, axis-annihilator work, complex-zero maps, kappa3, and PSLQ are useful secondary tracks but should not displace these discriminators.
 
-Prospective `N=185,265`, paired motif controls, finite-width annihilators, and kappa3 work continue in parallel when they do not displace those three tests.
+## Repository
 
-## What this does not claim
-
-Numerical estimates place the infinite square-site threshold near `0.59274605079`, but the project does not treat a rounded estimate as a definition and does not claim a known closed form. Published last digits are method-dependent and are tracked in `data/literature_threshold_sources.json`.
-
-Likewise, the current orientation results do not yet prove:
-
-- a unique asymptotic exponent;
-- a unique H4 harmonic;
-- an `x=21/4` LCFT operator identification;
-- universality of the proposed derivative invariants;
-- an exact expression for `p_c`.
-
-Those are research questions, not merge blockers for exploratory code and data.
-
-## Repository layout
+The numerical archive, production source, exact checks, failed/null models, and raw sufficient statistics are on `main` under `results/`. The execution-facing synthesis is [`notes/SYNTHESIS-20260828.md`](notes/SYNTHESIS-20260828.md); the claim ledger is [`docs/STATUS.md`](docs/STATUS.md).
 
 ```text
 constants/      reference values and exact relations
-data/           literature/source datasets and provenance
-notes/          synthesis, theory, derivations, and negative results
-scripts/        analysis, exact checks, and experiment tooling
-experiments/    frozen protocols and compute queues
-predictions/    preregistered numerical predictions
-results/        raw/derived research result archives
-tests/          smoke, regression, and exact-contract tests
-docs/           status, roadmap, and project governance
-src/            production C++ simulation engines
+data/           literature datasets and provenance
+notes/          synthesis, theory, derivations, negative results
+scripts/        analysis and exact checks
+experiments/    frozen protocols
+predictions/    preregistered predictions
+results/        raw and derived research archives
+tests/          smoke, regression, exact-contract tests
+docs/           status and roadmap
+src/            production C++ engines
 ```
 
-## Research workflow
-
-This is an exploratory mathematics/computational-physics repository, not a production service. Useful code and result archives should enter `main` quickly once they are understandable and the relevant tests run. Stronger scientific language is controlled by evidence level rather than by keeping exploratory work off the main branch.
-
-For local checks:
+This is an exploratory mathematics/computational-physics repository. Useful research assets should enter `main` quickly; claim strength is controlled by evidence, not by hiding exploratory work on branches.
 
 ```bash
 python3 -m unittest discover -s tests -p 'test_*.py' -v
 ```
 
-See [`GOVERNANCE.md`](GOVERNANCE.md) for the lightweight evidence levels and [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md) for how to preserve expensive run provenance.
+No closed form for square-site `p_c` is claimed. Published numerical estimates remain method-specific and are tracked in `data/literature_threshold_sources.json`.
 
 ## License
 

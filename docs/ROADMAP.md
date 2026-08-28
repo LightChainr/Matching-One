@@ -1,114 +1,142 @@
 # Roadmap
 
-This roadmap is intentionally execution-oriented. The project should optimize for information gain, not for completing every open issue in dependency order.
+This roadmap optimizes for information gain, not issue-count completion. The integrated research view is `notes/SYNTHESIS-20260828.md`.
 
-The current integrated synthesis is `notes/SYNTHESIS-20260828.md`.
+## Tier A — active discriminators
 
-## Tier A — run next
+### A1. Norm-5 H4 versus H12 — #57
 
-### A1. Full-curve Gaussian semigroup triptych — #49/#50
+This is now the highest-information dedicated experiment.
 
-Use threshold-rank data on
+The current odd central law survives the prospective N=185/265 test, but `1+i` cannot distinguish H4 from H12/H20. Norm 5 does: the frozen N=325/425 children give opposite raw signs for H4 and H12.
+
+Execution:
+
+1. run a small threshold-rank pilot (start at 1M per child, >=100 batches);
+2. estimate actual SE and throughput;
+3. choose final production count from measured H4-vs-H12/zero power;
+4. reuse the same full curves for derivative and root/correction scores.
+
+Do not assume billions of replicas before the pilot.
+
+### A2. Third full-curve lineage — #50
+
+Score `145 -> 290` with the already-frozen correction structure.
+
+Report in order:
 
 ```text
-65 -> 130
-85 -> 170
-145 -> 290
+raw DeltaM semigroup law
+bare 2^(3/8) slope baseline
+frozen finite-size slope correction
+raw/corrected root-ratio targets
+derivative channels
 ```
 
-to test, in exact lineage order,
+This tests whether the small slope correction resolved in the first two clean norm-2 lineages predicts a third lineage.
+
+### A3. Even/derivative correction analysis — #48
+
+The prospective N=185/265 result falsified the old positive `P4[S] ~ N^-1` sign assignment and the pure `P4[S'] ~ N^-5/4` law.
+
+Before new compute, use existing N=65..265 curves to:
+
+- reconstruct signed normalized S/D derivative sequences under the corrected P4 convention;
+- verify the S sign reversal directly from raw primal/matching curves;
+- test simple finite-size crossing/correction forms for S;
+- retain q=2 and log/Jordan as the first S-prime correction models;
+- examine cross-channel covariance.
+
+Reuse A1/A2 as fresh data before commissioning a dedicated new run.
+
+## Completed major prospective gate
+
+### N=185/265 — #43
+
+Completed and closed.
 
 ```text
-DeltaM_(2N) / DeltaM_N       = -2^(-13/8)
-mean(M')_(2N) / mean(M')_N   =  2^(3/8)
-DeltaRoot_(2N) / DeltaRoot_N = -1/4
+DeltaM x=21/4 H4: 3.046 / 2
+DeltaM zero:       29.409 / 2
+DeltaM x=17/4:     30.246 / 2
+
+DeltaS positive N^-1: 240.247 / 2
 ```
 
-This is the highest-value extension of the three successful fixed-`p` Gaussian lineages because it closes the mechanism at the root level.
-
-Use the available covariance diagnostics; do not delay the experiment to perfect a general covariance library.
-
-### A2. Norm-5 H4 versus H12 — #57
-
-Run the frozen moderate-size Gaussian multiplier design that gives sharply different H4/H12 predictions.
-
-The primary question is simple: does the child signal have the H4-predicted sign/magnitude or the H12 alternative? This is more informative than another free-exponent fit.
-
-### A3. Exact C4 self-matching parity control — #44
-
-Implement/run the self-matching C4 site triangulation control. Test whether generic square anisotropy survives while the matching-odd central residual vanishes at the exact self-matching center.
-
-If this works, continue with square-bond #42 and derivative-parity #48.
+Interpretation: the odd law survives and strengthens; the simple even companion law fails in sign. Do not rerun these sizes merely to rescue the old conjunction.
 
 ## Tier B — useful parallel work
 
-### B1. Prospective unused sizes — #43
+### B1. Axis annihilator / q=3 scalar test — #47 / PR #98
 
-Score frozen `N=185,265` predictions. Useful confirmation, but less discriminating than A1/A2 because it mostly adds more points to the existing model.
+Use the axis-specific threshold-rank engine and exact adjacent-size common-random-number coupling to test fixed post-leading corrections `q=2,3,4,6,...` without consuming orientation-program compute.
 
-### B2. Paired same-N motif controls — #40
+Pilot first; production only if the coupling actually improves information per wall time.
 
-Try exact-zero-mean paired controls on the actual orientation-difference statistic. Keep them only if they materially improve information per wall time.
+### B2. Exact complex-zero frontier — #124 / #84
 
-### B3. Literature completion — #4
+Keep this bounded and exact. The tiny zero map made prospective L=5 predictions; the L=5 result already falsifies the simple imaginary-RMS extrapolation. Treat this as an exact side result, not a new CFT narrative unless a stronger invariant emerges.
 
-Finish primary-source transcription of the 2024 Yang–Zhou tables and Jacobsen Reply when the full text is conveniently available. The current literature layer is already usable; do not block numerical work on the missing table transcription.
+### B3. Paired same-N motif controls — #40
 
-### B4. Derivative parity — #48
+Keep only if they materially improve the actual orientation-difference statistic.
 
-Once clean threshold-rank curves are already being produced, reconstruct the linked `S,D,S',D'` channels. This can become a strong operator discriminator at low marginal simulation cost.
+### B4. Literature completion — #4
 
-## Tier C — theory after the next discriminator
+Finish missing primary-source transcription when convenient. It does not block current numerical work.
 
-### C1. LCFT operator identification — #37
+## Tier C — theory after the next discriminators
 
-Keep the `x=21/4, spin-4` quasiprimary as the leading theory candidate, but do not spend major effort on module taxonomy until A2/A3 tell us whether H4 and matching parity survive direct tests.
+### C1. LCFT/operator identification — #37/#61
+
+The `x=21/4` spin-4 candidate remains the leading interpretation of the robust odd central sector. Unique H4 content and matching/OPE parity must be established before upgrading the operator claim.
 
 ### C2. Post-leading correction spectrum — #47/#58
 
-Use annihilator/semigroup residuals to distinguish candidate relative corrections `q=2,3,4,6`. Worth doing once the leading sector is secure enough that a subleading fit is meaningful.
+Use actual residual/annihilator evidence to distinguish q=2,3,4,6. Do not let a named operator determine the exponent before the data.
 
-### C3. kappa3 / continuum bridge — #25/#54
+### C3. N=1105 four-angle decomposition
 
-Continue as an independent universality track, but not at the expense of resolving the orientation mechanism.
+The exact H0/H4/H8/H12 projector and minimality result are already on `main`. Run the expensive four-angle campaign only after norm 5 and the third full-curve lineage have clarified the cheaper sectors.
+
+### C4. kappa3 / continuum bridge — #25/#54
+
+Independent universality track; useful but not on the critical path of the orientation mechanism.
 
 ## Engineering policy
 
-### Merge fast
+### Merge useful research quickly
 
-Exploratory scripts, notes, and result archives should enter `main` once they run and are understandable. C0–C2 material is allowed on `main`; the claim level is the warning label.
+C0-C2 notes/tools/results may live on `main` when they are understandable and tests run. Evidence labels, not branch exile, control claim strength.
 
 ### Test proportionally
 
-- every important CLI: smoke test or at least compile/import coverage;
-- central numerical transforms: regression tests;
-- topology/RNG/rank machinery: exact or independent oracle where practical.
+- important CLI: smoke/import coverage;
+- central transforms: regression tests;
+- topology/RNG/rank engines: exact or independent oracle when practical.
 
-Do not pursue product-style exhaustive coverage.
+Do not pursue production-service coverage targets.
 
-### Reproduce when it matters
+### Spend compute on leverage
 
-#39 clean replay and #46 covariance hardening are precision-quality tasks. Attach them to the quantitative result that needs them instead of globally blocking research.
+The synthetic red-team shows that new multipliers/sizes are more useful for mechanism selection than simply shrinking old five-size SEs. CPU first; use GPU only for a measured end-to-end information gain.
 
-### Hardware
+## Deprioritized
 
-CPU first. Use GPU/high-memory machines only when they unlock an experiment that is otherwise impractical or provide a measured end-to-end advantage for the actual statistic.
-
-## Deprioritized for now
-
-- broad PSLQ searches;
-- N=1105 four-angle runs before the cheaper norm-5 discriminator;
+- more N=185/265 replicas for the failed conjunction;
+- another free-exponent fit on N=65..170;
+- N=1105 before norm 5;
+- broad PSLQ;
 - large Pell scans;
-- rewriting already-usable analysis infrastructure for generalized edge cases;
-- new theory notes that do not produce a distinct numerical or exact test.
+- generalized infrastructure work without an active experiment;
+- theory notes that do not produce a distinct exact test or frozen prediction.
 
-## Milestone after Tier A
+## Milestone after A1/A2
 
-After A1/A2/A3, rewrite the synthesis around whichever of these outcomes occurs:
+Rewrite the synthesis around whichever branch survives:
 
-1. H4 + root semigroup + parity all pass — move aggressively toward a paper-level operator/mechanism analysis;
-2. odd harmonic survives but H4 fails — rebuild the angular theory around H12/higher harmonics;
-3. full-curve root law fails while fixed-`p` law survives — investigate thermal-coordinate/slope contamination;
-4. parity control fails — revise the matching-odd operator interpretation while retaining the empirical orientation sector.
-
-Any of those outcomes would substantially clarify the mathematics, which is the point of the next phase.
+1. norm-5 H4 passes and third-lineage correction predicts -> move toward paper-level odd-sector mechanism analysis;
+2. H12 sign wins -> rebuild the angular interpretation while retaining the empirical odd semigroup structure;
+3. odd law survives but slope/root correction fails -> expand the finite-size thermal-metric model;
+4. even-sector sign/correction becomes coherent -> rebuild a corrected multi-sector theory;
+5. no compact even-sector model survives -> present the robust odd sector separately rather than forcing a unified operator story.
