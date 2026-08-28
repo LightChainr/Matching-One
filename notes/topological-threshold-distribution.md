@@ -1,34 +1,26 @@
 # The matching function as a topological-threshold distribution
 
-Status: exact finite-size probability interpretation plus scaling conjectures.
-
-This viewpoint is potentially more useful than treating `M_L(p)` as merely a root-finding function.
+Status: exact finite-size probability interpretation plus scaling conjectures. Literature overlap is marked explicitly.
 
 ## 1. Exact CDF from monotonicity
 
-Mertens and Ziff prove that for every finite torus the matching function can be written as
+Mertens and Ziff show for every finite torus that
 
 \[
 M_L(p)=R_L^x(p)-\widehat R_L^x(1-p),
 \qquad x\in\{c,b,e,h\},
 \]
 
-and is monotonically increasing. For the cross-wrapping channel,
-
-\[
-M_L(0)=-1,\qquad M_L(1)=+1.
-\]
-
-Therefore
+is monotonically increasing and tends from `-1` to `+1` across `[0,1]`. Therefore
 
 \[
 \boxed{F_L(p)=\frac{1+M_L(p)}2}
 \]
 
-is exactly a cumulative distribution function on `[0,1]`, with density
+is exactly a cumulative distribution function, with density
 
 \[
-\boxed{\rho_L(p)=\frac12 M_L'(p).}
+\boxed{\rho_L(p)=\frac12M'_L(p).}
 \]
 
 The ordinary matching root
@@ -39,11 +31,11 @@ M_L(p_L^*)=0
 
 is exactly the **median** of this finite-size topological-threshold distribution.
 
-This interpretation requires no asymptotic scaling assumption.
+The root/median language is a reinterpretation of their matching function, not a new finite-size identity.
 
 ## 2. Configuration-level construction from cross wrapping
 
-Assign every site an independent `U_v ~ Uniform(0,1)`. At parameter `p`, make the site black when `U_v <= p` and white otherwise. Connect black sites on the primary lattice and white sites on the matching lattice.
+Assign every site an independent `U_v ~ Uniform(0,1)`. At parameter `p`, make a site black when `U_v <= p` and white otherwise. Connect black sites on the primary lattice and white sites on the matching lattice.
 
 Define
 
@@ -52,98 +44,83 @@ D_c(p)=I\{\text{black cross-wraps}\}
 -I\{\text{white matching configuration cross-wraps}\}.
 \]
 
-The topology of matching configurations implies
+Matching topology gives
 
 \[
 D_c(p)\in\{-1,0,+1\}.
 \]
 
-As `p` increases:
-
-- the black cross-wrapping event is increasing;
-- the white cross-wrapping event is decreasing;
-- black and white cross-wrapping events cannot coexist.
-
-Hence for every fixed uniform field, `D_c(p)` is nondecreasing and has the form
+As `p` increases, black cross-wrapping is increasing and white cross-wrapping is decreasing; the two cross-wrapping events cannot coexist. Hence every coupled realization has the monotone form
 
 ```text
 -1  -->  0  -->  +1
 ```
 
-with either jump allowed to coincide.
+with either transition allowed to coincide.
 
-Define two random thresholds:
+Define
 
-- `T_-`: the `p` at which white cross-wrapping disappears;
-- `T_+`: the `p` at which black cross-wrapping appears.
+- `T_-`: the parameter at which white cross-wrapping disappears;
+- `T_+`: the parameter at which black cross-wrapping appears.
 
-They obey `T_- <= T_+`, and configuration by configuration
+Then `T_- <= T_+` and configuration by configuration
 
 \[
 \frac{D_c(p)+1}{2}
-=\frac12 I\{T_-\le p\}
-+\frac12 I\{T_+\le p\}.
+=\frac12I\{T_-\le p\}
++\frac12I\{T_+\le p\}.
 \]
 
-Taking expectations gives
+Averaging gives the exact representation
 
 \[
 \boxed{
-F_L(p)=\frac12 P(T_-\le p)+\frac12P(T_+\le p).
+F_L(p)=\frac12P(T_-\le p)+\frac12P(T_+\le p).
 }
 \]
 
-Thus `rho_L` is not merely an abstract density: it is the equal mixture of the disappearance and appearance threshold distributions.
+Thus `rho_L` is the equal mixture of two concrete topological transition-threshold distributions.
 
 ## 3. Newman-Ziff rank representation
 
-Under the same iid-uniform construction, sort the site labels. The ordering is a uniformly random permutation and is independent of the order-statistic values.
+Sort the iid uniform labels. Their ordering is a uniformly random permutation independent of the order-statistic values.
 
-Let
-
-- `K_-` be the occupation rank at which white cross-wrapping disappears;
-- `K_+` be the occupation rank at which black cross-wrapping appears.
-
-Conditioned on `K=k`, the corresponding actual threshold is the `k`-th order statistic of `N` iid uniforms,
+Let `K_-` and `K_+` be the occupation ranks of the two topology transitions. Conditioned on `K=k`, the actual threshold is an order statistic,
 
 \[
-T\mid K=k\sim \operatorname{Beta}(k,N+1-k)
+T\mid K=k\sim\operatorname{Beta}(k,N+1-k)
 \]
 
-for the convention in which the transition occurs when the `k`-th site is occupied. Boundary/off-by-one conventions must be fixed by exact small-system tests.
+for the convention in which the transition occurs when the `k`-th site is occupied. Off-by-one conventions must be frozen with exact small-system tests.
 
-Therefore the entire canonical density is a **finite beta mixture** determined only by the two histograms of threshold ranks:
+Therefore
 
 \[
-\rho_L(p)
-=\frac12\sum_k P(K_-=k)\,\mathrm{BetaPDF}_{k,N+1-k}(p)
-+\frac12\sum_k P(K_+=k)\,\mathrm{BetaPDF}_{k,N+1-k}(p).
+\rho_L(p)=\frac12\sum_kP(K_-=k)\,\mathrm{BetaPDF}_{k,N+1-k}(p)
++\frac12\sum_kP(K_+=k)\,\mathrm{BetaPDF}_{k,N+1-k}(p).
 \]
 
-This means a Newman-Ziff simulation need not store a dense probability grid to preserve the full matching crossover. The threshold-rank histograms are a sufficient compressed representation for the cross-wrapping channel.
+The two threshold-rank histograms are consequently a compact sufficient representation of the entire **cross-channel** canonical matching curve.
 
-## 4. Immediate algorithmic consequence
+## 4. Algorithmic consequence
 
-For each random site permutation, run coupled forward/reverse connectivity and record only:
+For each random site permutation, a coupled forward/reverse connectivity implementation can record
 
 ```text
 K_minus, K_plus
 ```
 
-plus any additional observables/covariates desired.
+plus desired control variates.
 
-From these ranks one can later reconstruct:
+Afterward the beta mixture can reconstruct
 
-- `M_L(p)` at arbitrary `p`;
-- the matching root / median;
-- `M'_L`, `M'''_L`, ... analytically from beta mixtures;
-- moments and quantiles of the threshold distribution;
-- the standardized universal profile;
-- uncertainty by resampling permutations or histogram counts.
+- `M_L(p)` for arbitrary `p`;
+- the root/median;
+- derivatives analytically;
+- quantiles and moments;
+- a standardized scaling profile.
 
-For the cross channel this may be substantially more compact than storing every microcanonical wrapping indicator for every `k`.
-
-Keep the full microcanonical data during the reference stage until the threshold-rank equivalence has been exhaustively tested.
+Keep full microcanonical data during reference validation until the threshold-rank equivalence is exhaustively checked.
 
 ## 5. Scaling-limit random variable
 
@@ -151,103 +128,73 @@ Near criticality,
 
 \[
 M_L(p)\to\mathcal M(z),
-\qquad z=b(p-p_c)L^{1/\nu},
-\qquad \nu=4/3.
+\qquad z=b(p-p_c)L^{3/4}.
 \]
 
-Define the rescaled random threshold
+Choose `T_L` with equal probability from `T_-` and `T_+` and define
 
 \[
-Z_L=b(T_L-p_c)L^{3/4},
+Z_L=b(T_L-p_c)L^{3/4}.
 \]
 
-where `T_L` is chosen with probability `1/2` from `T_-` and `T_+`.
-
-Then the matching-scaling hypothesis is equivalent to convergence in distribution
+Then scaling of the matching function is equivalent to distributional convergence
 
 \[
-\boxed{Z_L\Rightarrow Z}
+Z_L\Rightarrow Z,
+\qquad
+P(Z\le z)=\frac{1+\mathcal M(z)}2.
 \]
 
-with universal CDF
-
-\[
-P(Z\le z)=\frac{1+\mathcal M(z)}2
-\]
-
-for fixed torus shape.
-
-Because `mathcal M` is odd, the limiting density
+Since `mathcal M` is odd,
 
 \[
 \rho(z)=\frac12\mathcal M'(z)
 \]
 
-is even. Hence the limiting distribution is symmetric around zero.
+is even. The limiting topological-threshold distribution is therefore symmetric about zero for a fixed torus shape.
 
-This gives a direct probabilistic meaning to universality of the matching scaling function.
-
-## 6. Median, mode, mean, and finite-size corrections
-
-Several pseudo-critical estimators become ordinary location statistics.
+## 6. Existing and reinterpreted location estimators
 
 ### Median
 
-\[
-M_L(p)=0
-\]
-
-defines the median.
+`M_L=0` is the median. Its unusually rapid convergence is empirically near `L^-4` for square-site matching.
 
 ### Mode
 
-Because
+Since
 
 \[
 \rho_L'(p)=\frac12M_L''(p),
 \]
 
-a root of
+the central solution of `M_L''=0` is the mode of the threshold density. Mertens-Ziff explicitly studied this derivative estimator and found a much slower apparent convergence near `L^-1.67` on their sizes.
+
+### Mean — already studied in 2016
+
+The threshold-distribution mean is
 
 \[
-M_L''(p)=0
+\mu_L=\int_0^1p\rho_L(p)\,dp
+=\frac12\left(1-\int_0^1M_L(p)\,dp\right).
 \]
 
-at the central maximum is the mode of the threshold density.
+This is **exactly Eq. (41) of Mertens and Ziff (2016)**. They numerically found this estimator to converge only around `L^-1.65`, so it is not a new fast threshold estimator.
 
-Mertens-Ziff's separate `M''=0` estimator can therefore be interpreted as a mode estimator rather than an unrelated derivative trick.
-
-### Mean
-
-The mean threshold is
+The rank interpretation nevertheless gives the cheap representation
 
 \[
-\mu_L=\frac12E[T_-+T_+].
+\mu_L=\frac{E[K_-]+E[K_+]}{2(N+1)}
 \]
 
-In the rank representation,
+under the fixed rank convention.
 
-\[
-E[T\mid K=k]=\frac{k}{N+1},
-\]
+Furthermore, because finite `M_L(p)` has integer power-basis coefficients, the exact finite-size mean is rational. This arithmetic observation may be useful for exact-enumeration diagnostics, but the known slow convergence makes it a low-priority route for improving `p_c`.
 
-so, modulo the fixed rank convention,
+**Scientific lesson:** the spectacular cancellation in the matching median/root is a special central finite-size structure. Do not assume that global statistics of `rho_L` inherit `L^-4` or `L^-7` convergence.
 
-\[
-\boxed{
-\mu_L=\frac{E[K_-]+E[K_+]}{2(N+1)}.
-}
-\]
+## 7. Distribution-asymmetry diagnostics
 
-This is extremely cheap to estimate.
-
-Since the limiting distribution is symmetric, mean, median and mode must all converge to `p_c`, but their finite-size biases can belong to different correction sectors.
-
-This creates a new estimator family without introducing arbitrary fitting functions.
-
-## 7. New finite-size diagnostics from distribution asymmetry
-
-Define
+Although the mean itself is slow, differences among location statistics may still isolate correction sectors:
 
 \[
 \delta_{\rm mm}=\text{mean}-\text{median},
@@ -255,84 +202,114 @@ Define
 \delta_{\rm md}=\text{median}-\text{mode}.
 \]
 
-Both vanish in the symmetric scaling limit.
+Both vanish in the symmetric scaling limit. Their exponents probe finite-size skew/asymmetry rather than the width of the critical window.
 
-Their size exponents isolate finite-size **skew/asymmetry corrections** rather than the symmetric width of the critical window. This may expose the operator responsible for the different convergence exponents of existing pseudo-critical estimators.
+Also preserve the standardized skewness of the finite threshold density. It may identify why median, mode and mean have very different finite-size biases.
 
-Also compute standardized skewness of the finite threshold distribution. Its asymptotic decay should be predictable from the leading odd correction to the even universal density.
+## 8. Global universal shape invariants: useful, but expect slower corrections
 
-## 8. Global universal invariants may be statistically better than high derivatives
+The threshold distribution gives global scale-free quantities such as
 
-Local derivative ratios such as
-
-\[
-\kappa_3=\frac{M'''(p_c)}{M'(p_c)^3}
-\]
-
-are interesting but increasingly high derivatives are noisy.
-
-The threshold-distribution view supplies global scale-free shape invariants:
-
-- standardized kurtosis `mu_4/mu_2^2`;
+- standardized kurtosis;
 - standardized sixth moment;
-- interquantile ratios, e.g. `(q_0.9-q_0.1)/(q_0.75-q_0.25)`;
-- peak-height times standard deviation;
-- entropy after unit-variance standardization.
+- interquantile ratios;
+- peak-height times standard deviation.
 
-For fixed torus modulus, these should be universal across microscopic realizations after the usual scaling limit.
+They remain useful as fingerprints of the universal limiting profile and may be statistically much more stable than fifth or seventh derivatives.
 
-A candidate analytic scaling function should match both local invariants (`kappa_3`, `kappa_5`) and these global invariants.
+However, the slow convergence of the mean is a warning that global moments can couple strongly to generic correction fields. Use cross-model profile collapse and held-out size tests; do not expect the special root cancellation automatically.
 
-## 9. Tail prediction
+## 9. Tail structure has an integrable-field-theory anchor
 
-Away from criticality the correlation length scales as
-
-\[
-\xi\sim |p-p_c|^{-\nu}.
-\]
-
-At fixed scaling variable `z`,
+The correlation length obeys
 
 \[
-L/\xi\propto |z|^{\nu}=|z|^{4/3}.
+\xi\sim |p-p_c|^{-4/3}.
 \]
 
-Wrapping/crossing failure probabilities in a massive phase are expected to be exponentially small in `L/xi`. This suggests the testable asymptotic form
+Delfino and Viti (2011) used the integrable `Q -> 1` Potts field theory to derive, for off-critical rectangular crossing in the massive regime,
 
 \[
-\log\rho(z)\sim -C|z|^{4/3}+\text{subleading logs/powers}
+P_{\rm cross}(L,R)
+\sim A\frac{L}{\xi}e^{-R/\xi},
+\qquad
+A=\frac12(3-\sqrt3),
 \]
 
-rather than a Gaussian `exp(-z^2)` or logistic `exp(-|z|)` tail.
+in the appropriate large-distance limit. Earlier Newman-Ziff simulations also confirmed the `4/3` stretched-exponential character of spanning-probability tails.
 
-This is a scaling argument, not an exact theorem for the torus matching density. It should be tested numerically before using it to constrain analytic families.
+For square-like geometry, `L/xi` scales as `|z|^(4/3)`. Therefore a testable qualitative prediction for the matching threshold density is
 
-If confirmed, the `4/3` stretched-exponential tail would be a strong fingerprint linking the full threshold distribution directly to the correlation-length exponent.
+\[
+\log\rho(z)
+=-C|z|^{4/3}+O(\log|z|)
+\]
 
-## 10. Practical server outputs
+with geometry/topology-dependent prefactors. The exact periodic cross-wrapping prefactor need not equal the open-rectangle amplitude above; only the massive scaling mechanism is being imported.
 
-Add, if cheap, the following to every permutation-based simulation:
+If
 
-```text
-K_minus
-K_plus
-```
+\[
+1-\mathcal M(z)\sim C_0s e^{-c s},
+\qquad s=z^{4/3},
+\]
 
-or aggregated histograms thereof.
+then differentiating suggests a leading density tail of the schematic form
 
-For large runs preserve at least:
+\[
+\rho(z)\propto z^{5/3}e^{-c z^{4/3}}
+\]
 
-- histogram counts of `K_minus` and `K_plus` separately;
-- their joint covariance / joint 2D histogram if affordable;
+up to topology-dependent powers and subleading terms. Fit the exponential exponent first; do not overinterpret the prefactor without a torus-specific derivation.
+
+## 10. Joint threshold gap: genuinely additional information
+
+The one-dimensional mixture `F_L` loses the pairing between `T_-` and `T_+`. Preserve their joint distribution whenever cheap.
+
+Define
+
+\[
+G_L=T_+-T_-\ge0.
+\]
+
+The critical window suggests
+
+\[
+G_L=O(L^{-3/4}),
+\]
+
+so
+
+\[
+G_z=bL^{3/4}G_L
+\]
+
+may have a nondegenerate universal limiting distribution for fixed shape.
+
+In Newman-Ziff rank units the corresponding gap should be of order
+
+\[
+K_+-K_-=O(NL^{-3/4})=O(L^{5/4}).
+\]
+
+This is a new observable not determined by `M_L(p)` alone. Its relation, if any, to pivotal-site / multi-arm structure should be investigated rather than assumed.
+
+## 11. Practical server outputs
+
+If cheap, preserve for every permutation or in aggregate:
+
+- histogram of `K_minus`;
+- histogram of `K_plus`;
+- **joint** histogram or at least moments/covariance of `(K_minus,K_plus)`;
+- histogram/moments of `K_plus-K_minus`;
 - sample count and RNG counter range;
 - exact period matrix and topology convention.
 
-The **joint** distribution contains additional information: the gap
+The cross-threshold histograms can later regenerate the whole canonical matching curve, while the joint gap contains information that the ordinary matching function discards.
 
-\[
-G_L=T_+-T_-
-\]
+## References / prior overlap
 
-measures the sample-level interval between destruction of complementary white cross-wrapping and creation of black cross-wrapping. Its scaling law may be universal and is not determined by `M_L` alone.
-
-That gap is a new observable worth preserving from the outset.
+- Mertens and Ziff, Phys. Rev. E 94, 062152 (2016): exact matching function, monotonicity, scaling function, median/root, mode-like `M''=0` estimator, and the integral/mean estimator Eq. (41).
+- Ziff and Newman, Phys. Rev. E 66, 016129 (2002): crossing-probability mean/median/mode estimators and their distinct finite-size corrections.
+- Newman and Ziff, Phys. Rev. E 64, 016706 (2001): microcanonical algorithm and stretched-exponential spanning tails.
+- Delfino and Viti, J. Phys. A / arXiv:1110.6355 (2011): integrable-field-theory off-critical crossing tails.
