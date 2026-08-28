@@ -55,18 +55,22 @@ The matching-even prospective result is therefore compatible with the frozen amp
 
 This is an important methodological lesson for the whole repository: every frozen prediction must name its wrapping channel, and every scorer must make any exact channel map explicit.
 
-### A real prospective failure remains
+### Prospective P48 parity score
 
-The normalized derivative law
+The same N=185/265 full curves are also genuinely new targets for the intrinsic-center P48 amplitudes frozen from N=65,85,130. With zero target refits,
 
 ```text
-P4[S'] ~ N^-5/4
+P4[S]   ~ N^-1:     chi2 =  1.139 / 2
+P4[D]   ~ N^-13/8:  chi2 =  0.281 / 2
+P4[D']  ~ N^-5/8:   chi2 =  0.088 / 2
+P4[S']  ~ N^-5/4:   chi2 = 52.716 / 2
 ```
 
-fails prospectively on N=185/265, while two predeclared corrections remain viable:
+So `S`, `D`, and `D'` pure laws all survive on prospective new geometries. `S'` is the unique clear pure-law failure among these four channels.
+
+The predeclared corrections for `S'` remain viable:
 
 ```text
-pure N^-5/4:  chi2 = 52.716 / 2
 rank-2/log:    chi2 =  1.204 / 2
 analytic 1/N:  chi2 =  0.862 / 2
 zero:          chi2 = 1278.555 / 2
@@ -84,7 +88,7 @@ A compact empirical law for the central matching-odd sector remains
 
 It now has independent-seed, held-out, Gaussian-semigroup, root-closure, and prospective-new-geometry support. It does **not** yet prove that H4 is unique rather than H12/H20, nor uniquely identify an `x=21/4` LCFT operator.
 
-The matching-even sector is again compatible with its frozen `N^-1` amplitude once cross/either semantics are aligned. This strengthens the empirical two-parity picture, but does not prove a local matching/OPE automorphism.
+The matching-even central sector is compatible with its frozen `N^-1` amplitude once cross/either semantics are aligned, and the independent intrinsic-center P48 score confirms pure `S`, `D`, and `D'` transfer on the new geometries. This strengthens the empirical parity picture, but does not prove a local matching/OPE automorphism.
 
 Full-curve data also show that the bare finite-size center-slope ratio is not exactly `2^(3/8)` at current precision; a small but resolved finite-size correction is required. For normalized `P4=DeltaX/DeltaCos4`, the Gaussian angular factor is already divided out, so pure-H4 normalized transfer is positive `Q^(-alpha)` even when the raw contrast changes sign.
 
@@ -94,7 +98,7 @@ The execution order is intentionally short:
 
 1. **Norm-5 H4 versus H12 — #57.** Highest-information new-compute discriminator. N=325/425 are supported by the threshold-rank engine. Use a frozen variance/power pilot and preserve raw-versus-normalized channel conventions.
 2. **Third full-curve lineage — #50.** Score `145 -> 290`, including the already-frozen finite-size slope correction and induced root prediction.
-3. **Use existing full curves harder before simulating more.** Priority analyses include the prequential evidence ledger (#95), pivotal/Russo bridge (#100), intrinsic quantile-center spectroscopy (#101), multi-u thermal response (#119), and a joint operator-mixing treatment (#125).
+3. **Use existing full curves harder before simulating more.** Priority analyses include the S-prime/channel-coordinate program (#48), prequential evidence ledger (#95), pivotal/Russo bridge (#100), intrinsic quantile-center spectroscopy (#101), multi-u thermal response (#119), and joint operator-mixing treatment (#125).
 4. **Choose later expensive geometry by information gain — #102.** Do not default to a larger N.
 
 Parallel theory/control routes are tracked in the post-P43 frontier map: FK/Potts torus sectors, four-arm anisotropy, torus-modulus spectroscopy, exactly-critical isoradial controls, Euler/Betti identities, universal amplitude ratios, exact self-matching Beta-family tests, and finite-polynomial Galois certificates.
