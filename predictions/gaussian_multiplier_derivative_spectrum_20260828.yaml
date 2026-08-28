@@ -1,4 +1,4 @@
-version: 1
+version: 2
 frozen_at: 2026-08-28
 status: preregistered_before_clean_norm2_fullcurve_result_and_N325_N425_runs
 claim_level: C0
@@ -29,6 +29,29 @@ channel_models:
     observable: "P4[S']"
     exponent_alpha_in_N: '5/4'
 
+thermal_radial_competitor_rule:
+  statement: >-
+    If a competing matching-odd H4 field has central-D exponent alpha_D in N,
+    its first thermal derivative S-prime has exponent alpha_D-3/8. Therefore
+    the central and derivative Gaussian multiplier ratios form a linked no-fit
+    test; do not fit an independent derivative exponent for the competitor.
+  candidates:
+    x21_over_4:
+      role: primary_thermal_level4_candidate
+      central_D_alpha_N: '13/8'
+      Sprime_alpha_N: '5/4'
+    x14_over_3_V13:
+      role: matching_parity_failure_adversary
+      central_D_alpha_N: '4/3'
+      Sprime_alpha_N: '23/24'
+      theory_guard: >-
+        The matching-odd assignment is deliberately adversarial and would
+        signal failure/mixing of the stronger parity hypothesis in Issue #61.
+    x17_over_4_W22:
+      role: Q1_logarithmic_leakage_adversary
+      central_D_alpha_N: '9/8'
+      Sprime_alpha_N: '3/4'
+
 norm2:
   multiplier: [1, 1]
   norm_ratio: 2
@@ -50,6 +73,15 @@ norm2:
     thermal_odd_Sprime:
       expression: '-2^(-5/4)'
       decimal: '-0.4204482076268572715155627381166074475200171311783922554'
+  thermal_radial_adversaries:
+    x14_over_3_V13:
+      D_expression: '-2^(-4/3)'
+      Sprime_expression: '-2^(-23/24)'
+      Sprime_decimal: '-0.51465111832174601439118590038696099818514642110709'
+    x17_over_4_W22:
+      D_expression: '-2^(-9/8)'
+      Sprime_expression: '-2^(-3/4)'
+      Sprime_decimal: '-0.59460355750136053335874998528023795764648604623191'
 
 norm5:
   multipliers: [[2, -1], [2, 1]]
@@ -71,6 +103,15 @@ norm5:
     thermal_odd_Sprime:
       expression: '(-14/25)*5^(-5/4)'
       decimal: '-0.07489891415735926668836210420496856887545994146507748725'
+  thermal_radial_adversaries:
+    x14_over_3_V13:
+      D_expression: '(-14/25)*5^(-4/3)'
+      Sprime_expression: '(-14/25)*5^(-23/24)'
+      Sprime_decimal: '-0.11976826901906928853825710965960610869698709003232'
+    x17_over_4_W22:
+      D_expression: '(-14/25)*5^(-9/8)'
+      Sprime_expression: '(-14/25)*5^(-3/4)'
+      Sprime_decimal: '-0.16747906349677670069413268734378230028070749285285'
 
 norm5_same_radial_H12_adversary_for_thermal_rows:
   exact_H12_angular_ratio: '23506/15625'
@@ -100,12 +141,14 @@ scoring_order:
   - four_fixed_H4_channel_residuals_individually
   - joint_four_channel_omnibus
   - zero_effect_and_sign_only_benchmarks
+  - thermal_x14_and_x17_linked_D_plus_Sprime_adversaries_after_primary_x21_score
   - norm5_thermal_H12_adversary_after_primary_H4_score
   - only_then_channel_specific_correction_or_Jordan_models_already_frozen_elsewhere
 
 rules:
   - exact_Gaussian_genealogy_order
   - no_channel_dropped_by_observed_parent_significance
+  - no_independent_derivative_exponent_fit_for_a_fixed_central_radial_competitor
   - norm2_is_replication_not_new_geometry_holdout
   - norm5_is_prospective_if_target_runs_postdate_this_artifact
   - preserve_all_batch_sufficient_statistics_and_failed_scores
