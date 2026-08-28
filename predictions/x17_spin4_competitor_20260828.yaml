@@ -1,0 +1,56 @@
+version: 1
+frozen_date: 2026-08-28
+purpose: prospective_competing_radial_model_for_issue_43
+status: competitor_only_do_not_modify_original_issue43_primary
+source_note: >-
+  The x=17/4 W(2,2) competitor was identified after P31/P32 outcomes were
+  visible but before N=185/265 target data exist. Its source amplitude is fit
+  once to the already committed pooled P31 data and then frozen for the future
+  N=185/265 score.
+operator_candidate:
+  formal_module: 'W(2,2) non-diagonal Potts/interchiral sector'
+  weights: ['1/8','33/8']
+  scaling_dimension: '17/4'
+  conformal_spin: '-4'
+  generic_Q_internal_representation: '[2] because Xi(2,2)=Xi(2,0)=[2]'
+  generic_Q_singlet: false
+  q1_caveat: >-
+    May only be relevant to the color-blind percolation observable through
+    special Q->1 logarithmic mixing; this is why it is retained as a numerical
+    competitor rather than treated as the ordinary bulk perturbation.
+finite_size_law:
+  delta_M: 'A_17 * DeltaCos4 * N^(-9/8)'
+  root_bias: 'proportional to L^(-3) after division by M_prime~L^(3/4)'
+source_fit:
+  data: results/server-20260828/P31/pooled_deltaM_with_covariance.csv
+  sizes: [65,85,130,145,170]
+  covariance_approximation: diagonal_pooled_size_errors
+  amplitude_A17: '0.08650341474278707'
+  amplitude_source_se: '0.003912649330481595'
+  retrospective_fit_chi_square: '13.779438162165771'
+  retrospective_degrees_of_freedom: 4
+  warning: >-
+    This retrospective chi-square is not a preregistered comparison because the
+    competitor was discovered after P31/P32. The prospective N=185/265 score is
+    the clean test.
+targets:
+  - N: 185
+    first: [13,4]
+    second: [11,8]
+    delta_cos4: '1.1780861943024106'
+    predicted_delta_M: '0.0002868415917648024'
+    source_amplitude_only_se: '0.000012974176398815644'
+    original_issue43_x21_prediction_for_reference: '0.00019223156676869253'
+  - N: 265
+    first: [16,3]
+    second: [12,11]
+    delta_cos4: '1.7224635101459596'
+    predicted_delta_M: '0.0002799185461225267'
+    source_amplitude_only_se: '0.000012661039050681047'
+    original_issue43_x21_prediction_for_reference: '0.0001567390401230751'
+scoring_rules:
+  - score_the_original_issue43_x21_H4_prediction_first
+  - then_score_this_fixed_x17_competitor_with_source_uncertainty_plus_target_covariance
+  - compare_zero_effect
+  - only_after_fixed_scores_fit_mixtures_or_free_exponents
+  - do_not_refit_A17_on_N185_or_N265_before_score
