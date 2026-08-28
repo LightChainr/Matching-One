@@ -1,14 +1,17 @@
-version: 1
+version: 2
 frozen_at: 2026-08-28
-status: conditional_exact_cft_identity_and_pre_target_geometry_prediction
+status: corrected_pre_target_no_Pell_data
 claim_level:
   ordinary_cft_descendant_identity: exact_given_inputs
   lattice_matching_identification: C0
 purpose: >-
   Record the exact torus Ward fingerprint of the repository thermal level-4
-  spin-4 quasiprimary, and freeze the geometry-only consequences of approaching
-  the equianharmonic torus with integer square-lattice Pell periods. This does
-  not alter any existing Issue #57 norm-5 scoring order or target.
+  spin-4 quasiprimary and freeze geometry-only consequences of approaching the
+  equianharmonic torus with integer square-lattice Pell periods. Version 2
+  distinguishes the exact descendant/primary E4 ratio from the literal Potts
+  Q4 one-point shape, which also contains the smooth thermal-primary torus
+  factor. No Pell target data have been generated and no Issue #57 target or
+  scoring order is changed.
 
 inputs:
   c: '0'
@@ -43,6 +46,12 @@ potts_energy_anchor:
   chiral_block_general: 'eta(tau)^(2 Delta_(1,2))'
   percolation_Delta: '5/8'
   percolation_chiral_block: 'eta(tau)^(5/4)'
+  percolation_full_primary_shape: 'abs(eta(tau))^(5/2)'
+  distinction: >-
+    E4 is the exact Q4/thermal-primary descendant ratio after fixing the period
+    scale. The literal ordinary-Q4 one-point shape is proportional to
+    E4(tau)*abs(eta(tau))^(5/2). A matching/topological observable may introduce
+    another smooth scalar response factor G(tau).
 
 elliptic_point:
   omega: 'exp(i*pi/3) = 1/2 + i*sqrt(3)/2'
@@ -53,7 +62,8 @@ elliptic_point:
   interpretation: >-
     Exact annihilation of this ordinary Q4 torus one-point fingerprint. Applying
     the zero to the measured matching residual additionally assumes the lattice
-    observable couples to the same scalar-background spin-4 response.
+    observable couples to a scalar-background spin-4 response with no singular
+    compensating factor at the elliptic point.
 
 pell_integer_periods:
   period_u: '[2b, 0]'
@@ -108,22 +118,27 @@ pell_integer_periods:
       E4: '0.000277726626463677567957873044364'
       N_E4: '3.01722206990139309829433275397'
 
-conditional_matching_shape_model:
-  model: 'DeltaM_H4(N,tau) = C_lattice * N^(-13/8) * E4(tau)'
-  role: >-
-    Strong lattice-to-CFT shape hypothesis. C_lattice is unknown but common for
-    a fixed microscopic convention; amplitude-free ratios are therefore testable.
-  square_torus_residual_exponent_in_N: '-13/8'
-  pell_extra_shape_exponent_in_N: '-1'
-  pell_H4_residual_exponent_in_N: '-21/8'
-  thermal_slope_exponent_in_N: '3/8'
-  pell_H4_root_component_exponent_in_N: '-3'
-  pell_H4_root_component_exponent_in_L: '-6'
-  asymptotic_cross_family_target:
-    expression: >-
-      [N_Dminus2^(21/8) DeltaM_Dminus2] /
-      [N_Dplus1^(21/8) DeltaM_Dplus1] -> -2
-    target: '-2'
+conditional_matching_shape_hierarchy:
+  robust_local_form:
+    model: 'DeltaM_H4(N,tau) = C_lattice * N^(-13/8) * E4(tau) * G(tau)'
+    assumptions:
+      - 'G(tau) is smooth and nonzero at omega'
+      - 'same microscopic coupling/orientation convention on compared families'
+    square_torus_residual_exponent_in_N: '-13/8'
+    pell_extra_shape_exponent_in_N: '-1'
+    pell_H4_residual_exponent_in_N: '-21/8'
+    thermal_slope_exponent_in_N: '3/8'
+    pell_H4_root_component_exponent_in_N: '-3'
+    pell_H4_root_component_exponent_in_L: '-6'
+    asymptotic_cross_family_target:
+      expression: >-
+        [N_Dminus2^(21/8) DeltaM_Dminus2] /
+        [N_Dplus1^(21/8) DeltaM_Dplus1] -> -2
+      target: '-2'
+      robustness: >-
+        Independent of any smooth nonzero G because both Pell families converge
+        to the same elliptic point from opposite sides with D=-2 and D=+1.
+
   moderate_pair:
     D_minus2:
       a: 19
@@ -135,15 +150,30 @@ conditional_matching_shape_model:
       b: 15
       N: 780
       E4: '0.00386292016315336617388415026928'
-    finite_N_scaled_N21over8_ratio:
-      expression: '(418*E4_418)/(780*E4_780)'
-      target: '-2.0140489558737853'
-    finite_N_raw_DeltaM_ratio:
-      expression: '(418/780)^(-13/8) * E4_418/E4_780'
-      target: '-10.356919847162752'
-    note: >-
-      Score signed observables with a declared channel/orientation convention.
-      The finite-N E4 ratio is stronger than replacing it by the asymptotic -2.
+
+  finite_modulus_models:
+    E4_only_descendant_primary_proxy:
+      role: >-
+        Exact ordinary-Q4/thermal-primary shape ratio after period-scale
+        normalization; not the full Q4 one-point and not an exact matching target.
+      shape: 'E4(tau)'
+      scaled_N21over8_ratio_418_over_780: '-2.0140489558737853'
+      raw_DeltaM_ratio_418_over_780_if_G_constant: '-10.356919847162752'
+
+    literal_ordinary_Q4_onepoint:
+      role: >-
+        Finite-modulus prediction if the measured response is literally
+        proportional to the ordinary Potts thermal Q4 one-point insertion.
+        Still not a proof for the matching/topological observable.
+      shape: 'E4(tau) * abs(eta(tau))^(5/2)'
+      scaled_N21over8_ratio_418_over_780: '-2.0184606018190551'
+      raw_DeltaM_ratio_418_over_780: '-10.379606020364236'
+
+  scoring_principle: >-
+    For a future Pell pilot, score the robust opposite-sign/simple-zero and
+    asymptotic cross-family structure first. Score finite-modulus E4-only or
+    literal-Q4 ratios only if the corresponding observable model has been
+    frozen before target reveal. Do not fit a free shape exponent first.
 
 spin12_interpretation:
   role_in_issue57: empirical_same_radial_angular_alias
@@ -175,5 +205,6 @@ forbidden_interpretations:
   - claim_total_root_L_minus6_without_bounding_surviving_sectors
   - treat_same_radial_H12_as_an_ordinary_x_21_over_4_local_primary
   - change_issue57_targets_or_scoring_order_after_this_note
-  - fit_a_free_Pell_shape_exponent_before_scoring_the_E4_geometry_target
+  - fit_a_free_Pell_shape_exponent_before_scoring_the_simple_zero_structure
+  - treat_E4_only_finite_ratio_as_exact_matching_target
   - compare_cross_family_signs_without_typed_channel_and_orientation_metadata
