@@ -1,93 +1,89 @@
-# Prospective correction test for the P48 `P4[S']` drift
+# Prospective extension of the P48 `P4[S']` correction test
 
 ## Status
 
-This note freezes a design response to a **retrospective** anomaly before the prospective `N=185,265` full-curve results are revealed. It is not evidence for a logarithmic correction.
+This note extends **already-frozen** P48 correction models to the new prospective `N=185,265` full-curve geometries. No coefficient is refit here.
 
-P48 predicted, for the matching-odd thermal-family spin-4 hypothesis,
+The chronological source is now canonical on `main` in `scripts/score_p49_fullcurve_doubling.py` at commit `204a3eb42862a23e7a3520695be44f5fda97bd65`.
 
-\[
-P_4[S'] \sim N^{-5/4}.
-\]
+The fresh 100M `N=130,170` P49 counters reproduce the P48 anomaly: the pure `N^-5/4` derivative law fails strongly, while both frozen correction models survive. Those fresh counters are replication evidence only and are **not** used to update the coefficients below.
 
-The parity pattern survived retrospectively, but the scaled quantity
+## Observable
 
-\[
-y_N = N^{5/4} P_4[S']
-\]
-
-rose across the old sizes and the pure constant-amplitude law failed its declared held-out conjunction. The existing five-size design has weak power to distinguish radial correction families, so this note freezes only two physically motivated competitors.
-
-## Training boundary
-
-Use only the original P48 training sizes
-
-```text
-N = 65, 85, 130.
-```
-
-The already-known `N=145,170` values are deliberately excluded from all coefficient fits. The new target sizes are `N=185,265` from Issue #43.
-
-The full synchronized-jackknife covariance of the three training values is used in GLS.
-
-## Frozen competitors
-
-### Rank-2 logarithmic/Jordan form
+For the derivative channel define
 
 \[
-y_N=A+B\log(N/100).
+y_N=N^{5/4}P_4[S'].
 \]
 
-Training-only GLS gives
+The original parity model predicts a constant `y_N`. P48 showed a systematic drift, motivating two pre-existing competitors.
 
-```text
-A = 2.2764144236775126
-B = 1.092329622789324
-```
+## Frozen model 1: q=2 ordinary correction
 
-and prospectively predicts
+The first surviving alternative in the preregistered P49 chronology is
 
-```text
-N=185: 2.9483999207703566 +/- 0.3231005705113109  [source-fit uncertainty]
-N=265: 3.3409547876223700 +/- 0.4431673354383646
-```
+\[
+P_4[S'] = A N^{-5/4}+B N^{-9/4},
+\]
 
-A positive logarithmic slope is compatible with the possibility that a `c=0` thermal logarithmic multiplet contaminates the nominal `N^-5/4` law. This is only a phenomenological rank-2 form; it is not an LCFT derivation.
-
-### Ordinary relative `L^-2` correction
-
-Because `L^2=N`, a relative `L^-2` correction becomes `N^-1` after the leading `N^-5/4` factor is removed:
+equivalently
 
 \[
 y_N=A+B/N.
 \]
 
-Training-only GLS gives
+The previously frozen parameters are
 
 ```text
-A = 3.1528570990005758
-B = -88.03321330713636
+A = 3.203310807356976
+B = -90.59560328584558
 ```
 
-and predicts
+Prospective extension:
 
 ```text
-N=185: 2.6770018919349736 +/- 0.24641162774047082
-N=265: 2.8206562940679856 +/- 0.2903523906239357
+N=185: y=2.7136048436497027 +/- 0.19668994042701207
+N=265: y=2.8614406062783133 +/- 0.23233037114485428
 ```
+
+These uncertainties are source-parameter uncertainty only.
+
+## Frozen model 2: rank-2 Jordan/log correction
+
+The second frozen alternative is
+
+\[
+P_4[S']=N^{-5/4}\bigl(A+B\log N\bigr),
+\]
+
+with previously frozen parameters
+
+```text
+A = -2.422594685734799
+B =  1.016646899281392
+```
+
+Prospective extension:
+
+```text
+N=185: y=2.8846638769766324 +/- 0.2344225574126884
+N=265: y=3.2500203406819943 +/- 0.32328609208512216
+```
+
+A pass would justify a dedicated logarithmic/Jordan study; it would not identify a specific LCFT partner.
 
 ## Scoring order
 
-1. retain the original pure-power P48 law as the baseline;
-2. score the frozen log/Jordan competitor;
-3. score the frozen ordinary `N^-1` correction;
-4. compare zero effect;
-5. only then consider free exponents or additional correction terms.
+Preserve the existing chronology:
 
-Target covariance must be combined with the source-fit prediction covariance committed in `predictions/p48_sprime_correction_competitors_20260828.yaml`.
+1. original pure `N^-5/4` law;
+2. q=2 ordinary correction;
+3. rank-2 Jordan/log correction;
+4. zero effect;
+5. only then free exponents or extra terms.
 
-## Interpretation
+Target sampling covariance must be added to the source-prediction covariance in `predictions/p48_sprime_correction_competitors_20260828.yaml`.
 
-A prospective preference for the logarithmic form would justify a dedicated logarithmic/Jordan study, but would not identify a specific logarithmic partner. Preference for `N^-1` would instead favor a conventional analytic/irrelevant correction. If both fail, the parity model can remain viable while the naive one-field derivative asymptotics are rejected.
+## Boundary
 
-This discriminator is deliberately secondary to Issue #43's original frozen central-amplitude predictions and to the norm-5 harmonic test. It must not be used to retune those primary predictions.
+This is secondary to Issue #43's original central-amplitude predictions and to the norm-5 H4/H12 discriminator. It must not be used to retune those primary tests.
