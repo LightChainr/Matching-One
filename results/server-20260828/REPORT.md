@@ -253,8 +253,9 @@ The final local and Python 3.9/AArch64 server regression suites each contain
   `K_minus/K_plus` histograms and joint moments for all five pairs.  A
   10-million-per-size ARM pilot completed in 65.2 seconds.  Central amplitudes
   and root gaps have the predicted signs, and symmetric thermal offsets leave
-  the central orientation amplitude intact.  The held-out `N^-2` root-gap
-  scaling gate is not yet met (`chi-square=7.40` for two held-out rows).
+  the central orientation amplitude intact.  Its historical constant raw
+  `N^2 DeltaRoot` score was model-mismatched because angular leverage varies;
+  the correctly normalized prospective score is reported under P45.
 - **P34:** the preliminary axis run gave `2.319x`, `1.852x`, and `1.665x` at
   `L=8,12,16`.  The later same-N run added exact Gaussian controls and a richer
   microcanonical motif basis; on held-out replicas it gives about `2.34x` at
@@ -281,8 +282,14 @@ The final local and Python 3.9/AArch64 server regression suites each contain
   `0.41301 +/- 0.01924`; zero effect scores `461.3/2`.  Closure remains within
   `9e-5` of one, so the result tests the angular amplitude rather than root
   nonlinearity.
+- **P48 retrospective:** synchronized cross-size jackknife reconstruction of
+  the P33 histograms supports the alternating matching-parity channel pattern,
+  but the four frozen powers do not pass as a conjunction.  In particular,
+  held-out `P4[D'] ~ N^-5/8` scores `0.407/2`, whereas
+  `P4[S'] ~ N^-5/4` scores `10.191/2` and shows upward drift.  This is planning
+  evidence only because P33 predates the P48 protocol.
 
-The expanded local suite contains 59 tests; all passed.  Detailed reports and
+The expanded local suite contains 64 tests; all passed.  Detailed reports and
 machine-readable outputs are under `P31/`, `P32-radial-challenge/`, `P33/`,
-`P34/`, `P35-amplitude-closure/`, `P37-doubling/`, `P45-root-amplitude/`, and
-`C03-euler/`.
+`P34/`, `P35-amplitude-closure/`, `P37-doubling/`, `P45-root-amplitude/`,
+`P48-retrospective/`, and `C03-euler/`.
