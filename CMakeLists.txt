@@ -19,6 +19,11 @@ target_include_directories(exact_torus_matching PRIVATE src)
 target_link_libraries(exact_torus_matching PRIVATE OpenMP::OpenMP_CXX)
 target_compile_options(exact_torus_matching PRIVATE -fopenmp)
 
+add_executable(newman_ziff_cpu src/newman_ziff_cpu.cpp)
+target_include_directories(newman_ziff_cpu PRIVATE src)
+target_link_libraries(newman_ziff_cpu PRIVATE OpenMP::OpenMP_CXX)
+target_compile_options(newman_ziff_cpu PRIVATE -fopenmp)
+
 add_executable(test_torus_connectivity tests/test_torus_connectivity.cpp)
 target_include_directories(test_torus_connectivity PRIVATE src)
 target_link_libraries(test_torus_connectivity PRIVATE OpenMP::OpenMP_CXX)

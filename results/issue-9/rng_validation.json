@@ -1,0 +1,38 @@
+{
+  "algorithm": "Philox4x32-10",
+  "source": "Random123 tests/kat_vectors (DEShawResearch/random123); Salmon et al. SC11",
+  "counter_layout": {
+    "key0": "global_seed",
+    "key1": "batch_id",
+    "ctr0": "draw_counter",
+    "ctr1": "replica_id",
+    "ctr2": "stream_id (0=G/shared, 1=independent G*)",
+    "ctr3": "0"
+  },
+  "kats": [
+    {
+      "ctr": ["0x00000000", "0x00000000", "0x00000000", "0x00000000"],
+      "key": ["0x00000000", "0x00000000"],
+      "expected": ["0x6627e8d5", "0xe169c58d", "0xbc57ac4c", "0x9b00dbd8"],
+      "got": ["0x6627e8d5", "0xe169c58d", "0xbc57ac4c", "0x9b00dbd8"],
+      "pass": true
+    },
+    {
+      "ctr": ["0xffffffff", "0xffffffff", "0xffffffff", "0xffffffff"],
+      "key": ["0xffffffff", "0xffffffff"],
+      "expected": ["0x408f276d", "0x41c83b0e", "0xa20bc7c6", "0x6d5451fd"],
+      "got": ["0x408f276d", "0x41c83b0e", "0xa20bc7c6", "0x6d5451fd"],
+      "pass": true
+    },
+    {
+      "ctr": ["0x243f6a88", "0x85a308d3", "0x13198a2e", "0x03707344"],
+      "key": ["0xa4093822", "0x299f31d0"],
+      "expected": ["0xd16cfe09", "0x94fdcceb", "0x5001e420", "0x24126ea1"],
+      "got": ["0xd16cfe09", "0x94fdcceb", "0x5001e420", "0x24126ea1"],
+      "pass": true
+    }
+  ],
+  "stream_determinism_same_tuple": true,
+  "independent_stream_id_distinct": true,
+  "all_pass": true
+}

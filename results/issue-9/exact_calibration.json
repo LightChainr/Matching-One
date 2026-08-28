@@ -1,0 +1,22 @@
+{
+  "exact_source": "results/issue-7",
+  "note": "Exact microcanonical expectations are Issue #7 totals / C(N,k). NZ shared mode uses one Fisher-Yates permutation for G (forward) and G* (reverse / complement). Reverse permutation is matching complement, not antithetic.",
+  "subset_enumeration": {
+    "L2": {"status": "PASS", "configs": 16, "mismatches": 0},
+    "L3": {"status": "PASS", "configs": 512, "mismatches": 0},
+    "L4": {"status": "PASS", "configs": 65536, "mismatches": 0}
+  },
+  "hand_crafted_and_prefix": {
+    "L2": {"status": "PASS", "failures": 0},
+    "L3": {"status": "PASS", "failures": 0},
+    "L4": {"status": "PASS", "failures": 0}
+  },
+  "exhaustive_permutations": {
+    "L2": {"status": "PASS", "permutations": 24, "loaded_exact": true},
+    "L3": {"status": "PASS", "permutations": 362880, "loaded_exact": true}
+  },
+  "mc_convergence": {
+    "L4": {"status": "PASS", "replicas": 40000, "max_wrap_abs_err": 0.00321463536464, "max_wrap_k": 10, "max_wrap_field": "H_G", "max_cluster_abs_err": 0.0077923992674, "max_cluster_k": 5, "bound_5_se": 0.025}
+  },
+  "overall": "PASS"
+}
