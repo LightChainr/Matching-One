@@ -1,0 +1,64 @@
+schema: third-lineage-slope-residual-competitors-v1
+status: frozen-before-N145-N290-fullcurve-target-reveal
+purpose: >-
+  Use the clean P49 slope residuals on 65->130 and 85->170 to distinguish two
+  minimal correction structures on the prospective 145->290 full-curve lineage.
+  The absolute asymptotic slope B_inf cancels from this construction.
+source:
+  canonical_main_commit: 204a3eb42862a23e7a3520695be44f5fda97bd65
+  target_q: 2^(3/8)
+  training_lineages: [65->130, 85->170]
+  training_residuals:
+    65->130: -0.023931231350616144
+    85->170: -0.022790101512292438
+  training_residual_covariance:
+    - [1.8113537612458743e-07, -9.654902376062175e-09]
+    - [-9.654902376062175e-09, 1.7865418074359005e-07]
+  prospective_lineage: 145->290
+observable: e_N = Mprime_(2N) - 2^(3/8) * Mprime_N
+models:
+  log_enhanced_q2:
+    B_formula: B_N = B_inf + (a + b*log(N))/N
+    residual_formula: >-
+      e_N = 2^(3/8)*N^(3/8)*[a*(1/(2N)-1/N)
+            + b*(log(2N)/(2N)-log(N)/N)]
+    fit: exact two-parameter GLS interpolation of the two training residuals
+    parameters_a_b: [-0.31942368, 0.23578330]
+    parameter_covariance:
+      - [0.03581895, -0.00995122]
+      - [-0.00995122, 0.00276802]
+    target_145_to_290:
+      residual_mean: -0.019962355169163417
+      source_prediction_se: 0.001064405691447966
+      source_linear_weights_on_training_residuals: [-1.20576260, 2.14205886]
+  analytic_q2_plus_q4:
+    B_formula: B_N = B_inf + a/N + b/N^2
+    residual_formula: >-
+      e_N = 2^(3/8)*N^(3/8)*[a*(1/(2N)-1/N)
+            + b*(1/(4N^2)-1/N^2)]
+    fit: exact two-parameter GLS interpolation of the two training residuals
+    parameters_a_b: [0.77021630, -11.64894080]
+    parameter_covariance:
+      - [0.00295914862, -0.140350713]
+      - [-0.140350713, 6.75641075]
+    target_145_to_290:
+      residual_mean: -0.018781090751015278
+      source_prediction_se: 0.000806487064955135
+      source_linear_weights_on_training_residuals: [-0.81448381, 1.67935589]
+source_prediction_cross_covariance:
+  log_vs_analytic: 8.569522225335957e-07
+model_separation:
+  target_mean_difference_log_minus_analytic: -0.001181264418148139
+  source_difference_se: 0.00026358379475904673
+  source_separation_z: -4.481551755592499
+scoring_order:
+  - historical_bare_slope_null_e_equals_zero
+  - log_enhanced_q2
+  - analytic_q2_plus_q4
+  - only_then_more_flexible_models
+rules:
+  - Do not use any N=290 full-curve statistic to change these parameters or order.
+  - Score the original bare 2^(3/8) slope law first for historical continuity.
+  - Add target jackknife covariance to source-prediction uncertainty.
+  - This test discriminates correction structure; it is not by itself an LCFT logarithmic-operator identification.
+  - If neither model predicts the target, preserve the failure and expand the correction basis only on a new training/heldout split.
