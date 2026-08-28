@@ -26,7 +26,7 @@ acting on an ordinary primary `phi` with `c=0`, `h=5/8` and null vector
 (L_{-2}-\tfrac23L_{-1}^2)\phi=0.
 \]
 
-Here `g2` is the Weierstrass invariant of the torus period lattice. For periods `(1,tau)`, `g2` is proportional to the weight-4 Eisenstein series `E4(tau)`. Therefore this particular spin-4 torus one-point fingerprint vanishes exactly at the equianharmonic/hexagonal elliptic point.
+Here `g2` is the Weierstrass invariant of the torus period lattice. After factoring the overall period scale and using periods `(1,tau)`, `g2` is proportional to the weight-4 Eisenstein series `E4(tau)`. Therefore this particular spin-4 torus one-point fingerprint vanishes exactly at the equianharmonic/hexagonal elliptic point.
 
 The identity is about the candidate continuum operator. It does **not** by itself prove that the matching residual couples only to this operator.
 
@@ -177,12 +177,20 @@ Roux, Ribault and Jacobsen, arXiv:2604.24491, show that the Potts energy field `
 F_{\rm energy}(\tau)=\eta(\tau)^{2\Delta_{1,2}}.
 \]
 
-At percolation `Delta_(1,2)=5/8`, so the ordinary energy block is proportional to `eta^(5/4)`.
+At percolation `Delta_(1,2)=5/8`, so
+
+\[
+F_{\rm energy}\propto \eta^{5/4},
+\qquad
+\langle\phi\bar\phi\rangle\propto |\eta|^{5/2}
+\]
+
+up to the overall normalization and period-scale convention.
 
 This is useful for two reasons:
 
 1. the primary one-point function that appears in the Ward identity is a concrete Potts torus object rather than an abstract nonzero function;
-2. the level-4 descendant shape is not an arbitrary weight-4 function multiplying that block: for the explicit repository `Q4`, the Ward/null-state algebra fixes it to `g2` exactly.
+2. the level-4 descendant/primary ratio is not an arbitrary weight-4 function: for the explicit repository `Q4`, the Ward/null-state algebra fixes it to `g2` exactly.
 
 So the previous minimal hypothesis
 
@@ -191,6 +199,14 @@ F_Q4 / F_energy proportional to E4
 ```
 
 is stronger now: within the ordinary thermal module it follows directly from Ward recursion.
+
+A crucial distinction follows. The **literal ordinary Q4 one-point function** has shape
+
+\[
+E_4(\tau)|\eta(\tau)|^{5/2},
+\]
+
+not `E4(tau)` alone. The latter is the exact descendant/primary ratio. For the matching residual, an additional smooth scalar response factor may appear because the measured observable is a topological projector rather than the identity operator. The zero and its leading sign structure are more robust than any finite-modulus amplitude ratio until that observable bridge is derived.
 
 ## 5. Exact elliptic-point annihilation of this Q4 fingerprint
 
@@ -311,7 +327,18 @@ A direct q-series evaluation gives:
 | `(71,41)` | -2 | 5822 | -0.00103701130037872 | -6.03747979080 |
 | `(97,56)` | +1 | 10864 | +0.000277726626463678 | +3.01722206990 |
 
-The opposite-side ratio is itself a useful no-amplitude target. If the matching H4 shape is proportional to this ordinary Q4 torus fingerprint, then
+### 6.1 Robust asymptotic cross-family target
+
+Suppose the H4 matching response near the elliptic point has the form
+
+\[
+\Delta M_{H4}(N,\tau)
+=C\,N^{-13/8}E_4(\tau)G(\tau),
+\]
+
+where `G(tau)` is smooth and nonzero at `omega`. This covers the E4-only proxy, the literal ordinary-Q4 one-point shape with `G=|eta|^(5/2)`, and more general scalar matching-response factors.
+
+Then on the fixed-defect Pell families
 
 \[
 \boxed{
@@ -321,9 +348,39 @@ The opposite-side ratio is itself a useful no-amplitude target. If the matching 
 }
 \]
 
-for matched generations of the `D=-2` and `D=+1` families, up to the common microscopic coupling and declared orientation convention.
+for `D_-=-2` and `D_+=+1`, up to the declared common microscopic coupling and orientation convention.
 
-At finite N the stronger conditional target uses the actual `E4(tau)` values rather than the asymptotic `-2` ratio.
+This asymptotic `-2` prediction is robust to every smooth nonzero `G` because both families approach the same `omega`.
+
+### 6.2 Finite-modulus model hierarchy, not one exact matching target
+
+For the moderate pair
+
+```text
+D=-2: (a,b)=(19,11), N=418
+D=+1: (a,b)=(26,15), N=780
+```
+
+two useful **conditional** finite-N ratios are:
+
+1. descendant/primary or E4-only proxy:
+
+   ```text
+   [418 E4(tau_418)]/[780 E4(tau_780)]
+   = -2.0140489558737853...
+   ```
+
+2. literal ordinary-Q4 one-point model, including the Potts energy primary factor:
+
+   ```text
+   [418 E4(tau_418)|eta(tau_418)|^(5/2)] /
+   [780 E4(tau_780)|eta(tau_780)|^(5/2)]
+   = -2.0184606018190551...
+   ```
+
+The second is the finite-modulus prediction for a literal Q4 one-point insertion. The first is the exact Q4/primary ratio proxy. Neither should be called the exact finite-N matching prediction before the matching/topological observable is mapped to the relevant CFT matrix element.
+
+Their closeness is useful experimentally: the dominant discriminator is the sign reversal and `O(1/N)` suppression, not resolving a sub-percent difference between these two smooth-factor models.
 
 ## 7. Consequence for the H4-induced matching-root bias
 
@@ -339,7 +396,7 @@ The thermal slope scales as
 \bar M'\sim N^{3/8}.
 \]
 
-If the H4 shape factor has the simple `g2/E4` zero above, then on a fixed-D Pell family
+If the H4 response has a simple elliptic zero, then on a fixed-D Pell family
 
 \[
 \Delta M_{H4}
@@ -418,21 +475,21 @@ My assessment after the N=185/265 result and the cross/either erratum is:
 1. **The matching-odd orientation sector is no longer a discovery-stage signal.** It has enough independent support that the main question is operator identification and representation structure.
 2. **The strongest missing theory bridge is now observable identification.** Exponent arithmetic alone is no longer the bottleneck. We need to show how the matching observable/topological projector couples to the thermal `Q4` torus sector.
 3. **Norm 5 remains the right expensive next experiment.** But its H12 branch should be treated as a deep falsification branch, not as a cosmetically different harmonic fit.
-4. **After norm 5 and the frozen 145->290 full curve, a moderate Pell-to-hexagonal pilot has unusually high information value.** `N=418` (`D=-2`) and `N=780` (`D=+1`) already have `N E4` values close to the asymptotic `-2:1` ratio and are dramatically cheaper than the gated N=1105 four-angle production.
-5. **Do not spend the Pell experiment merely estimating an exponent.** Preserve the full curve and score the signed cross-family `E4` shape ratio, H4 suppression, root response, and any surviving H12/scalar sideband jointly.
+4. **After norm 5 and the frozen 145->290 full curve, a moderate Pell-to-hexagonal pilot has unusually high information value.** `N=418` (`D=-2`) and `N=780` (`D=+1`) are already close to the asymptotic opposite-side geometry regime and are cheaper than the gated N=1105 four-angle production.
+5. **Do not spend the Pell experiment merely estimating an exponent.** Preserve the full curve and score the robust sign/`1/N` suppression first; then score the predeclared finite-modulus model hierarchy only if the observable bridge justifies it.
 6. **The q=2-versus-Jordan problem remains orthogonal.** The Gaussian `Q=2,5,10` plaquette/cocycle test from the isogeny program is still the cleanest way to decide whether the S-prime drift is an analytic correction or a non-semisimple logarithmic action.
 
 ## 10. Concrete validation tasks
 
 ### A. Algebraic verification — zero simulation
 
-Implement an independent symbolic/`Fraction` checker of the coefficient `493/96` from:
+Use an independent symbolic/`Fraction` checker of the coefficient `493/96` from:
 
 - the Virasoro commutator;
 - the level-2 null relation;
 - the Brehm-Runkel `L_-4` torus Ward identity.
 
-This is not a numerical fit.
+This is included in `scripts/verify_thermal_q4_torus_ward.py` with a unit test.
 
 ### B. Observable bridge — theory first
 
@@ -464,13 +521,14 @@ D=-2: (a,b)=(19,11), N=418
 D=+1: (a,b)=(26,15), N=780
 ```
 
-Score the no-fit geometry prediction before any free shape fit.
+Score the robust opposite-sign/simple-zero prediction before any free shape fit. Score finite-modulus E4-only or literal-Q4 ratios only under the corresponding predeclared observable model.
 
 ## Claim boundary
 
 What is exact here:
 
 - the reduction of the repository `Q4` one-point function to `(493/96) g2` in the ordinary `c=0,h=5/8` Virasoro module;
+- the Potts energy one-block form used for the ordinary primary torus factor;
 - the zero `g2(omega)=0`;
 - the Pell `O(1/N)` approach and the asymptotic `N E4` constant;
 - the lower dimension bound showing that a same-`x=21/4` local spin-12 primary is not available in the standard Potts/loop spectrum.
@@ -478,7 +536,7 @@ What is exact here:
 What remains conjectural:
 
 - that the measured matching-odd residual couples dominantly to this ordinary `Q4` torus matrix element;
-- that its full modulus dependence inherits exactly the same `g2/E4` factor;
+- the additional smooth modulus factor `G(tau)` appropriate to the matching/topological observable;
 - that no lower surviving sector masks the geometric annihilation;
 - that total matching-root convergence becomes `L^-6` rather than merely the H4 component.
 
