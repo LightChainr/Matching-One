@@ -1,0 +1,116 @@
+version: 1
+frozen_date: 2026-08-28
+status: preregistered_before_N325_N425_target_runs
+purpose: >-
+  Cross-norm spectroscopy of the correction left after the frozen leading
+  x=21/4 H4 term is annihilated. This is secondary to the original norm-5 H4
+  versus H12 score and does not modify any earlier prediction artifact.
+
+leading_model:
+  exponent_alpha_in_N: '13/8'
+  norm2_multiplier: '1+i'
+  norm2_H4_angular_ratio: '-1'
+  norm5_multipliers: ['2-i', '2+i']
+  norm5_H4_angular_ratio: '-14/25'
+
+residual_definition:
+  general: 'E_Q = DeltaM_(Q*N) - r_Q * Q^(-13/8) * DeltaM_N'
+  norm2: 'E_2 = DeltaM_(2N) + 2^(-13/8) * DeltaM_N'
+  norm5: 'E_5 = DeltaM_(5N) - (-14/25)*5^(-13/8)*DeltaM_N'
+  note: >-
+    Residuals must be evaluated in exact Gaussian genealogy order. Fresh parent
+    and child samples are allowed; covariance must be propagated according to
+    the frozen RNG policy.
+
+source_norm2_residuals:
+  source: results/server-20260828/P37-doubling/analysis.json
+  N65:
+    E2: '0.00001128787587884214'
+    E2_standard_error: '0.00009888861927823044'
+  N85:
+    E2: '-0.000015364732459718265'
+    E2_standard_error: '0.00010226494137506553'
+
+transfer_laws:
+  logarithmic_Jordan_rank2:
+    model: 'N^(-13/8) * DeltaCos4 * (A + B log N)'
+    E5_over_E2: '0.293348775257681883307333811504973224865729634786986546565512'
+    exact_expression: >-
+      [(-14/25)*5^(-13/8)*log(5)] / [(-1)*2^(-13/8)*log(2)]
+    prospective_E5_from_source:
+      N65:
+        mean: '0.00000331128456431907130237796841259'
+        source_only_standard_error: '0.0000290088553521920893949873369644'
+      N85:
+        mean: '-0.00000450722544922030307960890096429'
+        source_only_standard_error: '0.0000299992953041741114600667192349'
+
+  relative_length_q2:
+    interpretation: 'relative central correction L^-2; accelerated-root w=6'
+    relative_exponent_in_N_beta: '1'
+    E5_over_E2: '0.202141505348838012941217492289102222603673210723435619564157'
+    prospective_E5_from_source:
+      N65:
+        mean: '0.00000228174822233998802892309120738'
+        source_only_standard_error: '0.0000199894943627696243299306798205'
+      N85:
+        mean: '-0.00000310585014868960470371036959812'
+        source_only_standard_error: '0.0000206719891939664146506506075251'
+
+  relative_length_q3:
+    interpretation: 'relative central correction L^-3; historical accelerated-root w=7'
+    relative_exponent_in_N_beta: '3/2'
+    E5_over_E2: '0.177954970284005812017041073797504008746407926678314832016965'
+    prospective_E5_from_source:
+      N65:
+        mean: '0.00000200873361658889901335393311639'
+        source_only_standard_error: '0.0000175977213050838622206446582942'
+      N85:
+        mean: '-0.00000273423050829086337517392468228'
+        source_only_standard_error: '0.0000181985546034953828552846868137'
+
+  relative_length_q4:
+    interpretation: 'nonlinear T4*I4^2 candidate; accelerated-root w=8'
+    relative_exponent_in_N_beta: '2'
+    E5_over_E2: '0.161713204279070410352973993831281778082938568578748495651326'
+    prospective_E5_from_source:
+      N65:
+        mean: '0.0000018253985778719904231384729659'
+        source_only_standard_error: '0.0000159915954902156994639445438564'
+      N85:
+        mean: '-0.00000248468011895168376296829567849'
+        source_only_standard_error: '0.00001653759135517313172052048602'
+
+  relative_length_q6:
+    interpretation: 'next ordinary thermal spin-4 quasiprimary; accelerated-root w=10'
+    relative_exponent_in_N_beta: '3'
+    E5_over_E2: '0.143231695218605220598348394536278146302031303598320096148317'
+    prospective_E5_from_source:
+      N65:
+        mean: '0.0000016167815975437629462083617698'
+        source_only_standard_error: '0.0000141639845770481909537794531299'
+      N85:
+        mean: '-0.0000022007166767857770472004904581'
+        source_only_standard_error: '0.0000146475809145819166667467161892'
+
+formula_for_power_transfer: >-
+  For a relative correction C*N^(-beta),
+  E_Q = r_Q*Q^(-alpha)*C*N^(-alpha-beta)*(Q^(-beta)-1).
+  Therefore E5/E2 is fixed by the two multiplier norms and angular ratios;
+  no correction amplitude is fitted.
+
+scoring_order_after_primary_norm5_harmonic_score:
+  - pure_leading_power_residual_zero
+  - logarithmic_Jordan_rank2_transfer
+  - relative_length_q2
+  - relative_length_q3
+  - relative_length_q4
+  - relative_length_q6
+  - only_then_free_beta_or_multi_correction_models
+
+rules:
+  - original_norm5_H4_H12_score_remains_primary
+  - do_not_use_this_secondary_artifact_to_change_production_sample_count_after_target_means_are_seen
+  - propagate_source_E2_uncertainty_and_fresh_E5_sampling_covariance
+  - if_all_fixed_residual_models_are_underpowered_report_a_power_limit_not_a_winner
+  - do_not_interpret_q3_as_2_times_omega_3_over_2_without_an_operator_derivation
