@@ -1,0 +1,39 @@
+version: 1
+frozen_at: 2026-08-28
+status: implementation_frozen_before_N325_N425_reveal
+claim_level: C0
+related_issue: 57
+source_prediction: predictions/gaussian_norm5_harmonic_discrimination_20260828.yaml
+script: scripts/score_norm5_harmonic_primary.py
+
+primary_vector:
+  size_order: [65, 85, 325, 425]
+  lineage_order: [[65, 325], [85, 425]]
+  residual: DeltaM_child_minus_r_model_times_DeltaM_parent
+  fixed_probability: '0.592746050790'
+  models_in_order: [H4, H12, H8, zero_effect]
+  target_fit_parameters: 0
+  degrees_of_freedom: 2
+
+covariance_contract:
+  source_group:
+    sizes: [65, 85]
+    reason: identical_seed_and_counter_interval
+    estimator: aligned_delete_one_jackknife
+  target_groups:
+    - sizes: [325]
+      reason: disjoint_counter_intervals
+      estimator: within_run_delete_one_jackknife
+    - sizes: [425]
+      reason: disjoint_counter_intervals
+      estimator: within_run_delete_one_jackknife
+  propagation: exact_linear_residual_map
+  diagonal_sensitivity: required
+  warning: equal_batch_labels_do_not_imply_cross_run_covariance
+
+forbidden:
+  - target_exponent_fit
+  - post_reveal_lineage_sign_change
+  - target_omission
+  - model_reordering
+  - covariance_from_disjoint_batch_labels

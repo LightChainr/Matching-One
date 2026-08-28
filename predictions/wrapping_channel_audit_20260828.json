@@ -58,15 +58,38 @@
     },
     {
       "id": "issue57_norm5_fixed_p_raw_deltaM",
-      "status": "blocked_before_scoring",
+      "status": "registered",
       "prediction_artifact": "predictions/gaussian_norm5_harmonic_discrimination_20260828.yaml",
-      "reason": "the frozen artifact names a raw matching-function contrast but does not declare its topology channel; the future target scorer must add explicit source and target descriptors before scoring"
+      "frozen_kernel_contract": "predictions/norm5_harmonic_primary_scorer_20260828.yaml",
+      "semantic_manifest": "predictions/norm5_harmonic_semantic_gate_20260829.yaml",
+      "scorer": "scripts/score_norm5_harmonic_primary_typed.py",
+      "source_descriptor": {
+        "channel": "either",
+        "combination": "odd",
+        "coordinate": "p",
+        "orientation_order": "first_minus_second",
+        "normalization": "raw",
+        "quantity": "orientation_contrast"
+      },
+      "target_descriptor": {
+        "channel": "cross",
+        "combination": "odd",
+        "coordinate": "p",
+        "orientation_order": "first_minus_second",
+        "normalization": "raw",
+        "quantity": "orientation_contrast"
+      },
+      "expected_transform": {
+        "scale": 1.0,
+        "offset": 0.0
+      },
+      "exact_identity": "D_either = D_cross"
     },
     {
       "id": "issue57_norm5_full_curve_projectors",
       "status": "blocked_before_scoring",
       "prediction_artifact": "predictions/gaussian_normalized_p4_multiplier_spectrum_20260828.yaml",
-      "reason": "raw and angular-normalized rules are distinct, but future target artifacts must still declare cross/either/both and even/odd descriptors explicitly"
+      "reason": "raw and angular-normalized rules are distinct; the full-curve target scorer must explicitly declare the cross/either/both and even/odd descriptors before scoring"
     }
   ]
 }
