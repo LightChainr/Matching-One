@@ -84,6 +84,32 @@ at chiral levels `(7,3)`, total level 10.  It gives relative `q=6` and an
 An unprojected axis sequence can contain both.  Same-N orientation projection
 separates them without fitting a free exponent.
 
+More explicitly, for two orientations at the same `N`, write schematically
+
+\[
+D_i=A_0N^{-25/8}+c_{4,i}
+\left(A_4N^{-13/8}+B_4N^{-37/8}\right)+\cdots .
+\]
+
+Then
+
+\[
+P_0[D]=\frac{c_{4,1}D_2-c_{4,2}D_1}{c_{4,1}-c_{4,2}}
+\]
+
+cancels both displayed `H4` terms and retains the `V_<1,4>` scalar term.
+This is a direct scalar projector, not an exponent fit.
+
+Gaussian doubling provides a second parameter-free discriminator.  Under
+`N -> 2N` and `theta -> theta+pi/4`, the two candidate child/parent ratios are
+
+```text
+V_<1,4> scalar H0:             +2^(-25/8)
+thermal level-(7,3) spin4 H4:  -2^(-37/8)
+```
+
+They differ in both sign and radial power.
+
 ## 5. Claim boundary and numerical target
 
 Evidence levels:
