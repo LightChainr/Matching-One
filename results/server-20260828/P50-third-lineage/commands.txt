@@ -1,0 +1,5 @@
+g++ -O3 -std=c++17 -fopenmp src/gaussian_orientation_mc.cpp -o /workspace/p50-build-4bbbe90/gaussian_orientation_mc
+/workspace/p50-build-4bbbe90/gaussian_orientation_mc --self-test
+/workspace/p50-build-4bbbe90/gaussian_orientation_mc --samples 1000000 --batches 100 --p-ref 0.592746050790 --seed 2026105001 --replica-offset 6000000000 --threads 16 --n 290 --git-commit 4bbbe90180a9960dfae613b47548897ae1defa8b --output-prefix /workspace/p50-results-20260828/pilot_n290
+/workspace/p50-build-4bbbe90/gaussian_orientation_mc --samples 500000000 --batches 100 --p-ref 0.592746050790 --seed 2026105001 --replica-offset 6100000000 --threads 16 --n 290 --git-commit 4bbbe90180a9960dfae613b47548897ae1defa8b --output-prefix /workspace/p50-results-20260828/production_n290
+python3 scripts/score_issue50_n290.py --batches results/server-20260828/P50-third-lineage/production_n290.batches.csv --metadata results/server-20260828/P50-third-lineage/production_n290.metadata.json --json results/server-20260828/P50-third-lineage/production_score.json --csv results/server-20260828/P50-third-lineage/production_score.csv

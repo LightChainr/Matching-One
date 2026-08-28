@@ -24,7 +24,7 @@ EXPECTED_FIRST = (13, 11)
 EXPECTED_SECOND = (17, 1)
 CHANNELS = ("cross", "both", "either", "direction_0", "direction_1")
 TARGET_DELTA_M = -1.3765640041065354e-4
-SOURCE_SE = 2.49966e-5
+SOURCE_SE = 2.499658241589821e-5
 COMMIT_RE = re.compile(r"^[0-9a-fA-F]{40}$")
 
 

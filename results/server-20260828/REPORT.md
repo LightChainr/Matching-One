@@ -288,8 +288,15 @@ The final local and Python 3.9/AArch64 server regression suites each contain
   held-out `P4[D'] ~ N^-5/8` scores `0.407/2`, whereas
   `P4[S'] ~ N^-5/4` scores `10.191/2` and shows upward drift.  This is planning
   evidence only because P33 predates the P48 protocol.
+- **P50-A:** the prospective third Gaussian doubling lineage passes at
+  `N=290`.  A fresh 500-million-replica run gives
+  `Delta M=-1.60648e-4 +/- 4.0542e-5` versus the frozen
+  `-1.37656e-4 +/- 2.4997e-5` target.  The combined residual is only
+  `-0.483` standard errors (`chi-square=0.233/1`), while zero is excluded at
+  `3.96` sampling standard errors.  This extends the no-fit `-2^-13/8`
+  relation to a third exact lineage.
 
-The expanded local suite contains 64 tests; all passed.  Detailed reports and
+The expanded local suite contains 67 tests; all passed.  Detailed reports and
 machine-readable outputs are under `P31/`, `P32-radial-challenge/`, `P33/`,
 `P34/`, `P35-amplitude-closure/`, `P37-doubling/`, `P45-root-amplitude/`,
-`P48-retrospective/`, and `C03-euler/`.
+`P48-retrospective/`, `P50-third-lineage/`, and `C03-euler/`.
