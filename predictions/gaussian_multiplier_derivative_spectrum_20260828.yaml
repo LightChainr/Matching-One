@@ -1,0 +1,111 @@
+version: 1
+frozen_at: 2026-08-28
+status: preregistered_before_clean_norm2_fullcurve_result_and_N325_N425_runs
+claim_level: C0
+source_checkpoint: 7f86f9c58e529e3d6107bb5d81f374f90d31f98d
+related_issue: 64
+source_parity_issue: 48
+purpose: >-
+  Parameter-free Gaussian-multiplier eigenvalue test of the four frozen
+  matching-parity derivative channels. Old P33 outcomes at the norm-2 sizes
+  exist, so norm-2 is a fresh-seed confirmation/replication rather than a
+  geometry-blind held-out test. Norm-5 targets remain prospective.
+
+channel_models:
+  identity_even_S:
+    field_role: matching_even_identity_family_spin4_candidate
+    observable: 'P4[S]'
+    exponent_alpha_in_N: '1'
+  identity_even_Dprime:
+    field_role: matching_even_identity_family_spin4_candidate
+    observable: "P4[D']"
+    exponent_alpha_in_N: '5/8'
+  thermal_odd_D:
+    field_role: matching_odd_thermal_family_spin4_candidate
+    observable: 'P4[D]'
+    exponent_alpha_in_N: '13/8'
+  thermal_odd_Sprime:
+    field_role: matching_odd_thermal_family_spin4_candidate
+    observable: "P4[S']"
+    exponent_alpha_in_N: '5/4'
+
+norm2:
+  multiplier: [1, 1]
+  norm_ratio: 2
+  exact_H4_angular_ratio: '-1'
+  lineages:
+    - {parent_N: 65, child_N: 130}
+    - {parent_N: 85, child_N: 170}
+    - {parent_N: 145, child_N: 290, role: after_fullcurve_N290_exists}
+  fixed_child_over_parent:
+    identity_even_S:
+      expression: '-2^(-1)'
+      decimal: '-0.5'
+    identity_even_Dprime:
+      expression: '-2^(-5/8)'
+      decimal: '-0.6484197773255048329668770588962255799176725747124827564'
+    thermal_odd_D:
+      expression: '-2^(-13/8)'
+      decimal: '-0.3242098886627524164834385294481127899588362873562413782'
+    thermal_odd_Sprime:
+      expression: '-2^(-5/4)'
+      decimal: '-0.4204482076268572715155627381166074475200171311783922554'
+
+norm5:
+  multipliers: [[2, -1], [2, 1]]
+  norm_ratio: 5
+  exact_H4_angular_ratio: '-14/25'
+  lineages:
+    - {parent_N: 65, child_N: 325}
+    - {parent_N: 85, child_N: 425}
+  fixed_child_over_parent:
+    identity_even_S:
+      expression: '(-14/25)*5^(-1)'
+      decimal: '-0.112'
+    identity_even_Dprime:
+      expression: '(-14/25)*5^(-5/8)'
+      decimal: '-0.2048008591977123257729905678574747780340118964928150793'
+    thermal_odd_D:
+      expression: '(-14/25)*5^(-13/8)'
+      decimal: '-0.04096017183954246515459811357149495560680237929856301586'
+    thermal_odd_Sprime:
+      expression: '(-14/25)*5^(-5/4)'
+      decimal: '-0.07489891415735926668836210420496856887545994146507748725'
+
+norm5_same_radial_H12_adversary_for_thermal_rows:
+  exact_H12_angular_ratio: '23506/15625'
+  note: >-
+    This is a model-independent same-radial-exponent H12 alias for the thermal
+    D/Sprime rows, not an ordinary x=21/4 thermal-family spin-12 descendant.
+  thermal_odd_D:
+    expression: '(23506/15625)*5^(-13/8)'
+  thermal_odd_Sprime:
+    expression: '(23506/15625)*5^(-5/4)'
+
+primary_statistics:
+  type: fixed_residual_not_ratio
+  definition: 'R_X = X_child - fixed_ratio_X * X_parent'
+  rationale: >-
+    Residuals remain stable when a parent channel is weak; raw ratios are
+    descriptive only.
+  covariance: full_aligned_delete_one_batch_covariance_across_channels_and_lineages
+
+intrinsic_coordinate_rule:
+  requirement: >-
+    Recompute the finite-size center, individual curves, derivatives and P4
+    projections inside every delete-one-batch replicate. Do not hold the
+    full-sample center fixed in the jackknife.
+
+scoring_order:
+  - four_fixed_H4_channel_residuals_individually
+  - joint_four_channel_omnibus
+  - zero_effect_and_sign_only_benchmarks
+  - norm5_thermal_H12_adversary_after_primary_H4_score
+  - only_then_channel_specific_correction_or_Jordan_models_already_frozen_elsewhere
+
+rules:
+  - exact_Gaussian_genealogy_order
+  - no_channel_dropped_by_observed_parent_significance
+  - norm2_is_replication_not_new_geometry_holdout
+  - norm5_is_prospective_if_target_runs_postdate_this_artifact
+  - preserve_all_batch_sufficient_statistics_and_failed_scores
