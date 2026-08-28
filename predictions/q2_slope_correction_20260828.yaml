@@ -1,0 +1,51 @@
+schema: q2-slope-correction-v1
+status: frozen-before-N185-N265-and-N290-fullcurve-target-reveal
+purpose: >-
+  Test whether the statistically resolved finite-size correction to the
+  orientation-averaged thermal slope is consistent with a leading relative
+  L^-2 = N^-1 correction, as expected from an x=4 scalar sector.
+source:
+  canonical_main_commit: 204a3eb42862a23e7a3520695be44f5fda97bd65
+  clean_fullcurve_sizes: [65, 85, 130, 170]
+observable: B_N = mean(M_prime)_N / N^(3/8)
+source_values:
+  65: 1.7512890878020688
+  85: 1.7495627626834398
+  130: 1.7474322063690306
+  170: 1.7462413111920059
+model:
+  formula: B_N = B_inf + b/N
+  fit_type: unweighted OLS on the four clean full-curve point estimates
+  B_inf: 1.74327171
+  b: 0.52643524
+  t_equal_b_over_Binf: 0.3019811766358482
+  residuals:
+    65: -8.16231125e-05
+    85: 9.76997014e-05
+    130: 1.10997311e-04
+    170: -1.27073900e-04
+  residual_variance_df2: 2.2337871597321202e-08
+  parameter_covariance_ols:
+    - [4.82582320e-08, -4.19151194e-06]
+    - [-4.19151194e-06, 4.11699618e-04]
+prospective_B_targets:
+  185: {mean: 1.7461173031007646, model_fit_se: 0.00012236746557876582}
+  265: {mean: 1.7452582552821630, model_fit_se: 0.00014995585594515743}
+  290: {mean: 1.7450870011372910, model_fit_se: 0.00015571323395227510}
+third_doubling_lineage_145_to_290:
+  formula: slope_ratio = 2^(3/8) * (1+t/290)/(1+t/145)
+  slope_ratio: 1.295491943519179
+  model_fit_se: 5.19923902353554e-05
+  induced_root_ratio_if_DeltaM_ratio_is_minus_2pow_minus13_8:
+    mean: -0.250260057798617
+    model_fit_se_from_slope_only: 1.0043766501582775e-05
+rules:
+  - This is a secondary correction model; the original no-correction 2^(3/8) slope law remains preserved as the historical primary null.
+  - Do not refit B_inf or b on N=185,265,290 before scoring these predictions.
+  - The OLS covariance is a model-scatter diagnostic, not a substitute for target jackknife covariance.
+  - If the N^-1 model fails prospectively, retain the observed slope correction and test log/Jordan or higher correction structures rather than forcing this form.
+interpretation: >-
+  A prospective pass would support, but not prove, a common q=2 scalar
+  correction behind both the slope drift and the surviving P48 S-prime q=2
+  model. At c=0 the identity module contains logarithmic structure involving
+  TbarT, so q=2 and logarithmic corrections need not be mutually exclusive.
