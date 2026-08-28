@@ -1,0 +1,826 @@
+{
+  "schema_version": 1,
+  "input": "data/jacobsen_2015_square_site_cylinder.csv",
+  "models": [
+    "4",
+    "4,6",
+    "4,6,8",
+    "4,6,8,10",
+    "4,6,8,10,12"
+  ],
+  "workers": 8,
+  "jobs": [
+    {
+      "dps": 60,
+      "min_train": 5,
+      "holdout": 2
+    },
+    {
+      "dps": 60,
+      "min_train": 5,
+      "holdout": 3
+    },
+    {
+      "dps": 60,
+      "min_train": 5,
+      "holdout": 4
+    },
+    {
+      "dps": 60,
+      "min_train": 6,
+      "holdout": 2
+    },
+    {
+      "dps": 60,
+      "min_train": 6,
+      "holdout": 3
+    },
+    {
+      "dps": 60,
+      "min_train": 6,
+      "holdout": 4
+    },
+    {
+      "dps": 60,
+      "min_train": 7,
+      "holdout": 2
+    },
+    {
+      "dps": 60,
+      "min_train": 7,
+      "holdout": 3
+    },
+    {
+      "dps": 60,
+      "min_train": 7,
+      "holdout": 4
+    },
+    {
+      "dps": 60,
+      "min_train": 8,
+      "holdout": 2
+    },
+    {
+      "dps": 60,
+      "min_train": 8,
+      "holdout": 3
+    },
+    {
+      "dps": 60,
+      "min_train": 8,
+      "holdout": 4
+    },
+    {
+      "dps": 60,
+      "min_train": 9,
+      "holdout": 2
+    },
+    {
+      "dps": 60,
+      "min_train": 9,
+      "holdout": 3
+    },
+    {
+      "dps": 60,
+      "min_train": 9,
+      "holdout": 4
+    },
+    {
+      "dps": 60,
+      "min_train": 10,
+      "holdout": 2
+    },
+    {
+      "dps": 60,
+      "min_train": 10,
+      "holdout": 3
+    },
+    {
+      "dps": 60,
+      "min_train": 10,
+      "holdout": 4
+    },
+    {
+      "dps": 100,
+      "min_train": 5,
+      "holdout": 2
+    },
+    {
+      "dps": 100,
+      "min_train": 5,
+      "holdout": 3
+    },
+    {
+      "dps": 100,
+      "min_train": 5,
+      "holdout": 4
+    },
+    {
+      "dps": 100,
+      "min_train": 6,
+      "holdout": 2
+    },
+    {
+      "dps": 100,
+      "min_train": 6,
+      "holdout": 3
+    },
+    {
+      "dps": 100,
+      "min_train": 6,
+      "holdout": 4
+    },
+    {
+      "dps": 100,
+      "min_train": 7,
+      "holdout": 2
+    },
+    {
+      "dps": 100,
+      "min_train": 7,
+      "holdout": 3
+    },
+    {
+      "dps": 100,
+      "min_train": 7,
+      "holdout": 4
+    },
+    {
+      "dps": 100,
+      "min_train": 8,
+      "holdout": 2
+    },
+    {
+      "dps": 100,
+      "min_train": 8,
+      "holdout": 3
+    },
+    {
+      "dps": 100,
+      "min_train": 8,
+      "holdout": 4
+    },
+    {
+      "dps": 100,
+      "min_train": 9,
+      "holdout": 2
+    },
+    {
+      "dps": 100,
+      "min_train": 9,
+      "holdout": 3
+    },
+    {
+      "dps": 100,
+      "min_train": 9,
+      "holdout": 4
+    },
+    {
+      "dps": 100,
+      "min_train": 10,
+      "holdout": 2
+    },
+    {
+      "dps": 100,
+      "min_train": 10,
+      "holdout": 3
+    },
+    {
+      "dps": 100,
+      "min_train": 10,
+      "holdout": 4
+    },
+    {
+      "dps": 160,
+      "min_train": 5,
+      "holdout": 2
+    },
+    {
+      "dps": 160,
+      "min_train": 5,
+      "holdout": 3
+    },
+    {
+      "dps": 160,
+      "min_train": 5,
+      "holdout": 4
+    },
+    {
+      "dps": 160,
+      "min_train": 6,
+      "holdout": 2
+    },
+    {
+      "dps": 160,
+      "min_train": 6,
+      "holdout": 3
+    },
+    {
+      "dps": 160,
+      "min_train": 6,
+      "holdout": 4
+    },
+    {
+      "dps": 160,
+      "min_train": 7,
+      "holdout": 2
+    },
+    {
+      "dps": 160,
+      "min_train": 7,
+      "holdout": 3
+    },
+    {
+      "dps": 160,
+      "min_train": 7,
+      "holdout": 4
+    },
+    {
+      "dps": 160,
+      "min_train": 8,
+      "holdout": 2
+    },
+    {
+      "dps": 160,
+      "min_train": 8,
+      "holdout": 3
+    },
+    {
+      "dps": 160,
+      "min_train": 8,
+      "holdout": 4
+    },
+    {
+      "dps": 160,
+      "min_train": 9,
+      "holdout": 2
+    },
+    {
+      "dps": 160,
+      "min_train": 9,
+      "holdout": 3
+    },
+    {
+      "dps": 160,
+      "min_train": 9,
+      "holdout": 4
+    },
+    {
+      "dps": 160,
+      "min_train": 10,
+      "holdout": 2
+    },
+    {
+      "dps": 160,
+      "min_train": 10,
+      "holdout": 3
+    },
+    {
+      "dps": 160,
+      "min_train": 10,
+      "holdout": 4
+    }
+  ],
+  "results": [
+    {
+      "name": "dps-100_nmin-10_holdout-2",
+      "status": "completed",
+      "seconds": 0.2051291579991812,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-100_nmin-10_holdout-2.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-100_nmin-10_holdout-2.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-100_nmin-10_holdout-2.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-100_nmin-10_holdout-3",
+      "status": "completed",
+      "seconds": 0.19647491900104797,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-100_nmin-10_holdout-3.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-100_nmin-10_holdout-3.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-100_nmin-10_holdout-3.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-100_nmin-10_holdout-4",
+      "status": "completed",
+      "seconds": 0.18744578400219325,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-100_nmin-10_holdout-4.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-100_nmin-10_holdout-4.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-100_nmin-10_holdout-4.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-100_nmin-5_holdout-2",
+      "status": "completed",
+      "seconds": 0.35871193099956145,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-100_nmin-5_holdout-2.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-100_nmin-5_holdout-2.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-100_nmin-5_holdout-2.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-100_nmin-5_holdout-3",
+      "status": "completed",
+      "seconds": 0.3532199280016357,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-100_nmin-5_holdout-3.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-100_nmin-5_holdout-3.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-100_nmin-5_holdout-3.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-100_nmin-5_holdout-4",
+      "status": "completed",
+      "seconds": 0.3335616919976019,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-100_nmin-5_holdout-4.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-100_nmin-5_holdout-4.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-100_nmin-5_holdout-4.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-100_nmin-6_holdout-2",
+      "status": "completed",
+      "seconds": 0.32067120099964086,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-100_nmin-6_holdout-2.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-100_nmin-6_holdout-2.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-100_nmin-6_holdout-2.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-100_nmin-6_holdout-3",
+      "status": "completed",
+      "seconds": 0.30866337200131966,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-100_nmin-6_holdout-3.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-100_nmin-6_holdout-3.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-100_nmin-6_holdout-3.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-100_nmin-6_holdout-4",
+      "status": "completed",
+      "seconds": 0.297958335999283,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-100_nmin-6_holdout-4.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-100_nmin-6_holdout-4.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-100_nmin-6_holdout-4.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-100_nmin-7_holdout-2",
+      "status": "completed",
+      "seconds": 0.2891394250000303,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-100_nmin-7_holdout-2.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-100_nmin-7_holdout-2.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-100_nmin-7_holdout-2.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-100_nmin-7_holdout-3",
+      "status": "completed",
+      "seconds": 0.27605993000179296,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-100_nmin-7_holdout-3.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-100_nmin-7_holdout-3.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-100_nmin-7_holdout-3.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-100_nmin-7_holdout-4",
+      "status": "completed",
+      "seconds": 0.2692616239983181,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-100_nmin-7_holdout-4.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-100_nmin-7_holdout-4.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-100_nmin-7_holdout-4.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-100_nmin-8_holdout-2",
+      "status": "completed",
+      "seconds": 0.2601763150014449,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-100_nmin-8_holdout-2.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-100_nmin-8_holdout-2.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-100_nmin-8_holdout-2.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-100_nmin-8_holdout-3",
+      "status": "completed",
+      "seconds": 0.2503739140011021,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-100_nmin-8_holdout-3.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-100_nmin-8_holdout-3.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-100_nmin-8_holdout-3.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-100_nmin-8_holdout-4",
+      "status": "completed",
+      "seconds": 0.2359443019995524,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-100_nmin-8_holdout-4.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-100_nmin-8_holdout-4.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-100_nmin-8_holdout-4.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-100_nmin-9_holdout-2",
+      "status": "completed",
+      "seconds": 0.23196914700019988,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-100_nmin-9_holdout-2.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-100_nmin-9_holdout-2.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-100_nmin-9_holdout-2.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-100_nmin-9_holdout-3",
+      "status": "completed",
+      "seconds": 0.22239630300100544,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-100_nmin-9_holdout-3.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-100_nmin-9_holdout-3.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-100_nmin-9_holdout-3.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-100_nmin-9_holdout-4",
+      "status": "completed",
+      "seconds": 0.2116861370013794,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-100_nmin-9_holdout-4.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-100_nmin-9_holdout-4.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-100_nmin-9_holdout-4.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-160_nmin-10_holdout-2",
+      "status": "completed",
+      "seconds": 0.21206583399907686,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-160_nmin-10_holdout-2.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-160_nmin-10_holdout-2.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-160_nmin-10_holdout-2.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-160_nmin-10_holdout-3",
+      "status": "completed",
+      "seconds": 0.20701666300010402,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-160_nmin-10_holdout-3.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-160_nmin-10_holdout-3.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-160_nmin-10_holdout-3.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-160_nmin-10_holdout-4",
+      "status": "completed",
+      "seconds": 0.19169462799982284,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-160_nmin-10_holdout-4.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-160_nmin-10_holdout-4.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-160_nmin-10_holdout-4.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-160_nmin-5_holdout-2",
+      "status": "completed",
+      "seconds": 0.3676363289996516,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-160_nmin-5_holdout-2.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-160_nmin-5_holdout-2.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-160_nmin-5_holdout-2.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-160_nmin-5_holdout-3",
+      "status": "completed",
+      "seconds": 0.35554065399992396,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-160_nmin-5_holdout-3.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-160_nmin-5_holdout-3.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-160_nmin-5_holdout-3.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-160_nmin-5_holdout-4",
+      "status": "completed",
+      "seconds": 0.33981900999788195,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-160_nmin-5_holdout-4.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-160_nmin-5_holdout-4.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-160_nmin-5_holdout-4.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-160_nmin-6_holdout-2",
+      "status": "completed",
+      "seconds": 0.3315722500010452,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-160_nmin-6_holdout-2.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-160_nmin-6_holdout-2.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-160_nmin-6_holdout-2.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-160_nmin-6_holdout-3",
+      "status": "completed",
+      "seconds": 0.31804944300165516,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-160_nmin-6_holdout-3.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-160_nmin-6_holdout-3.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-160_nmin-6_holdout-3.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-160_nmin-6_holdout-4",
+      "status": "completed",
+      "seconds": 0.30672282299929066,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-160_nmin-6_holdout-4.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-160_nmin-6_holdout-4.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-160_nmin-6_holdout-4.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-160_nmin-7_holdout-2",
+      "status": "completed",
+      "seconds": 0.2981960029974289,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-160_nmin-7_holdout-2.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-160_nmin-7_holdout-2.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-160_nmin-7_holdout-2.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-160_nmin-7_holdout-3",
+      "status": "completed",
+      "seconds": 0.28572347100271145,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-160_nmin-7_holdout-3.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-160_nmin-7_holdout-3.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-160_nmin-7_holdout-3.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-160_nmin-7_holdout-4",
+      "status": "completed",
+      "seconds": 0.2737132930014923,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-160_nmin-7_holdout-4.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-160_nmin-7_holdout-4.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-160_nmin-7_holdout-4.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-160_nmin-8_holdout-2",
+      "status": "completed",
+      "seconds": 0.2694258660012565,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-160_nmin-8_holdout-2.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-160_nmin-8_holdout-2.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-160_nmin-8_holdout-2.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-160_nmin-8_holdout-3",
+      "status": "completed",
+      "seconds": 0.25702490999901784,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-160_nmin-8_holdout-3.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-160_nmin-8_holdout-3.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-160_nmin-8_holdout-3.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-160_nmin-8_holdout-4",
+      "status": "completed",
+      "seconds": 0.24225318299795617,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-160_nmin-8_holdout-4.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-160_nmin-8_holdout-4.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-160_nmin-8_holdout-4.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-160_nmin-9_holdout-2",
+      "status": "completed",
+      "seconds": 0.24025089000133448,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-160_nmin-9_holdout-2.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-160_nmin-9_holdout-2.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-160_nmin-9_holdout-2.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-160_nmin-9_holdout-3",
+      "status": "completed",
+      "seconds": 0.22736264799823402,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-160_nmin-9_holdout-3.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-160_nmin-9_holdout-3.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-160_nmin-9_holdout-3.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-160_nmin-9_holdout-4",
+      "status": "completed",
+      "seconds": 0.2157464580013766,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-160_nmin-9_holdout-4.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-160_nmin-9_holdout-4.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-160_nmin-9_holdout-4.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-60_nmin-10_holdout-2",
+      "status": "completed",
+      "seconds": 0.19743317800021032,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-60_nmin-10_holdout-2.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-60_nmin-10_holdout-2.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-60_nmin-10_holdout-2.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-60_nmin-10_holdout-3",
+      "status": "completed",
+      "seconds": 0.18834118700033287,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-60_nmin-10_holdout-3.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-60_nmin-10_holdout-3.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-60_nmin-10_holdout-3.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-60_nmin-10_holdout-4",
+      "status": "completed",
+      "seconds": 0.17842720900080167,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-60_nmin-10_holdout-4.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-60_nmin-10_holdout-4.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-60_nmin-10_holdout-4.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-60_nmin-5_holdout-2",
+      "status": "completed",
+      "seconds": 0.33080387500012876,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-60_nmin-5_holdout-2.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-60_nmin-5_holdout-2.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-60_nmin-5_holdout-2.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-60_nmin-5_holdout-3",
+      "status": "completed",
+      "seconds": 0.31881359800172504,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-60_nmin-5_holdout-3.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-60_nmin-5_holdout-3.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-60_nmin-5_holdout-3.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-60_nmin-5_holdout-4",
+      "status": "completed",
+      "seconds": 0.3072040780025418,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-60_nmin-5_holdout-4.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-60_nmin-5_holdout-4.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-60_nmin-5_holdout-4.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-60_nmin-6_holdout-2",
+      "status": "completed",
+      "seconds": 0.30287976800173055,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-60_nmin-6_holdout-2.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-60_nmin-6_holdout-2.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-60_nmin-6_holdout-2.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-60_nmin-6_holdout-3",
+      "status": "completed",
+      "seconds": 0.2906840760006162,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-60_nmin-6_holdout-3.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-60_nmin-6_holdout-3.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-60_nmin-6_holdout-3.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-60_nmin-6_holdout-4",
+      "status": "completed",
+      "seconds": 0.2791704330011271,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-60_nmin-6_holdout-4.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-60_nmin-6_holdout-4.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-60_nmin-6_holdout-4.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-60_nmin-7_holdout-2",
+      "status": "completed",
+      "seconds": 0.2751674169994658,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-60_nmin-7_holdout-2.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-60_nmin-7_holdout-2.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-60_nmin-7_holdout-2.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-60_nmin-7_holdout-3",
+      "status": "completed",
+      "seconds": 0.26127814299979946,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-60_nmin-7_holdout-3.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-60_nmin-7_holdout-3.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-60_nmin-7_holdout-3.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-60_nmin-7_holdout-4",
+      "status": "completed",
+      "seconds": 0.2511577199984458,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-60_nmin-7_holdout-4.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-60_nmin-7_holdout-4.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-60_nmin-7_holdout-4.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-60_nmin-8_holdout-2",
+      "status": "completed",
+      "seconds": 0.24668046000078903,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-60_nmin-8_holdout-2.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-60_nmin-8_holdout-2.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-60_nmin-8_holdout-2.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-60_nmin-8_holdout-3",
+      "status": "completed",
+      "seconds": 0.23535288000130095,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-60_nmin-8_holdout-3.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-60_nmin-8_holdout-3.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-60_nmin-8_holdout-3.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-60_nmin-8_holdout-4",
+      "status": "completed",
+      "seconds": 0.22292531999846688,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-60_nmin-8_holdout-4.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-60_nmin-8_holdout-4.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-60_nmin-8_holdout-4.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-60_nmin-9_holdout-2",
+      "status": "completed",
+      "seconds": 0.21926331899885554,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-60_nmin-9_holdout-2.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-60_nmin-9_holdout-2.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-60_nmin-9_holdout-2.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-60_nmin-9_holdout-3",
+      "status": "completed",
+      "seconds": 0.20910396199906245,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-60_nmin-9_holdout-3.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-60_nmin-9_holdout-3.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-60_nmin-9_holdout-3.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    },
+    {
+      "name": "dps-60_nmin-9_holdout-4",
+      "status": "completed",
+      "seconds": 0.20234108899967396,
+      "output": "results/server-20260828/issue-5-grid/raw/dps-60_nmin-9_holdout-4.json",
+      "stdout_log": "results/server-20260828/issue-5-grid/logs/dps-60_nmin-9_holdout-4.stdout.txt",
+      "stderr_log": "results/server-20260828/issue-5-grid/logs/dps-60_nmin-9_holdout-4.stderr.txt",
+      "returncode": 0,
+      "error": ""
+    }
+  ]
+}

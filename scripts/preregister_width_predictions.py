@@ -87,11 +87,13 @@ def mean(values: Sequence[mp.mpf]) -> mp.mpf:
 
 
 def linear_extrapolation(xs: Sequence[int], ys: Sequence[mp.mpf], target: int) -> mp.mpf:
+    if len(xs) != len(ys):
+        raise ValueError("x and y lengths differ")
     x_mean = mean([mp.mpf(x) for x in xs])
     y_mean = mean(list(ys))
     denominator = mp.fsum((mp.mpf(x) - x_mean) ** 2 for x in xs)
     slope = mp.fsum(
-        (mp.mpf(x) - x_mean) * (y - y_mean) for x, y in zip(xs, ys, strict=True)
+        (mp.mpf(x) - x_mean) * (y - y_mean) for x, y in zip(xs, ys)
     ) / denominator
     return y_mean + slope * (mp.mpf(target) - x_mean)
 
@@ -180,10 +182,13 @@ def render_yaml(path: Path, rows: Sequence[Observation]) -> str:
                 "    model_predictions:",
             ]
         )
-        for (n_min, powers), value in zip(SELECTED_MODELS, model_values, strict=True):
+        if len(SELECTED_MODELS) != len(model_values):
+            raise ValueError("model metadata and prediction lengths differ")
+        for (n_min, powers), value in zip(SELECTED_MODELS, model_values):
+            model_label = f"nmin={n_min};powers={','.join(map(str, powers))}"
             lines.extend(
                 [
-                    f"      - model: {q(f'nmin={n_min};powers={','.join(map(str, powers))}')}",
+                    f"      - model: {q(model_label)}",
                     f"        value: {q(number(value))}",
                 ]
             )
