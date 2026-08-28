@@ -33,9 +33,16 @@ from dataclasses import dataclass
 import json
 import math
 from pathlib import Path
-from typing import Dict, Iterable, Mapping, Sequence, Tuple
+from typing import Dict, Mapping, Sequence, Tuple
 
-from analyze_p48_retrospective import covariance_of_mean, inverse, matmul, pseudovalues, quadratic, transpose
+from analyze_p48_retrospective import (
+    covariance_of_mean,
+    inverse,
+    matmul,
+    pseudovalues,
+    quadratic,
+    transpose,
+)
 from score_p49_fullcurve_doubling import tail_and_derivative
 
 
@@ -209,7 +216,7 @@ def pair_jackknife(by_role, p_ref: float) -> dict:
     fields = ["M_upper_p_ref", "M_lower_p_ref", "F_p_ref", "annihilator_root"]
     vector = [full[name] for name in fields]
     deleted_vectors = [[row[name] for name in fields] for row in deleted]
-    covariance, pseudo = jackknife_pseudovalue_cov(vector, deleted_vectors)
+    covariance, _ = jackknife_pseudovalue_cov(vector, deleted_vectors)
     se = {fields[i]: math.sqrt(max(covariance[i][i], 0.0)) for i in range(len(fields))}
 
     L = full["pair_L"]
@@ -234,21 +241,54 @@ def pair_jackknife(by_role, p_ref: float) -> dict:
     return full
 
 
-def weighted_linear_fit(features: Sequence[Sequence[float]], values: Sequence[float], variances: Sequence[float]):
-    if any(v <= 0.0 for v in variances):
-        raise ValueError("nonpositive variance")
-    weights = [1.0 / v for v in variances]
+def weighted_linear_fit(
+    features: Sequence[Sequence[float]],
+    values: Sequence[float],
+    variances: Sequence[float],
+):
+    """Weighted linear fit with explicit design-column conditioning.
+
+    Finite-size basis columns can differ by many orders of magnitude, e.g.
+    `[1, L^-10]` or `[Delta L^-q, Delta L^4]`.  Solving the raw normal
+    equations can therefore trip a scale-based singularity guard even when the
+    columns are linearly independent.  Normalize each design column before the
+    solve, then map coefficients/covariance back to the original basis.
+    """
+    if not features or len(features) != len(values) or len(values) != len(variances):
+        raise ValueError("features, values and variances must be nonempty and aligned")
+    if any(v <= 0.0 or not math.isfinite(v) for v in variances):
+        raise ValueError("variances must be finite and positive")
     p = len(features[0])
+    if p == 0 or any(len(row) != p for row in features):
+        raise ValueError("design matrix is empty or ragged")
+
+    scales = []
+    for column in range(p):
+        scale = max(abs(row[column]) for row in features)
+        if scale == 0.0 or not math.isfinite(scale):
+            raise ValueError("design column is identically zero or nonfinite")
+        scales.append(scale)
+    scaled_features = [
+        [row[column] / scales[column] for column in range(p)]
+        for row in features
+    ]
+
+    weights = [1.0 / v for v in variances]
     normal = [[0.0] * p for _ in range(p)]
     rhs = [[0.0] for _ in range(p)]
-    for x, y, weight in zip(features, values, weights):
+    for x, y, weight in zip(scaled_features, values, weights):
         for i in range(p):
             rhs[i][0] += weight * x[i] * y
             for j in range(p):
                 normal[i][j] += weight * x[i] * x[j]
-    covariance = inverse(normal)
-    parameters = matmul(covariance, rhs)
-    beta = [row[0] for row in parameters]
+
+    scaled_covariance = inverse(normal)
+    scaled_parameters = matmul(scaled_covariance, rhs)
+    beta = [scaled_parameters[j][0] / scales[j] for j in range(p)]
+    covariance = [
+        [scaled_covariance[i][j] / (scales[i] * scales[j]) for j in range(p)]
+        for i in range(p)
+    ]
     fitted = [sum(a * b for a, b in zip(x, beta)) for x in features]
     residual = [y - yhat for y, yhat in zip(values, fitted)]
     chi2 = sum(r * r / v for r, v in zip(residual, variances))
@@ -260,22 +300,27 @@ def fit_f_shape(rows: Sequence[dict], q: float, train_max_L: int) -> dict:
     held = [row for row in rows if row["pair_L"] > train_max_L]
     if len(train) < 3 or not held:
         raise ValueError("need >=3 train pairs and >=1 heldout pair")
+
     def feature(L: int):
         return [L ** (-q) - (L - 1) ** (-q), L ** 4 - (L - 1) ** 4]
+
     x_train = [feature(row["pair_L"]) for row in train]
     y_train = [row["F_p_ref"] for row in train]
     v_train = [row["F_coupled_se"] ** 2 for row in train]
-    beta, beta_cov, train_residual, train_chi2 = weighted_linear_fit(x_train, y_train, v_train)
+    beta, beta_cov, _, train_chi2 = weighted_linear_fit(x_train, y_train, v_train)
     x_held = [feature(row["pair_L"]) for row in held]
     prediction = [sum(a * b for a, b in zip(x, beta)) for x in x_held]
     held_residual = [row["F_p_ref"] - pred for row, pred in zip(held, prediction)]
     # Target pairs are required to use distinct RNG domains, so target covariance
-    # is diagonal.  Add source-parameter prediction covariance.
+    # is diagonal. Add source-parameter prediction covariance.
     residual_cov = []
     for i, (row_i, x_i) in enumerate(zip(held, x_held)):
         current = []
         for j, (row_j, x_j) in enumerate(zip(held, x_held)):
-            source = sum(x_i[a] * beta_cov[a][b] * x_j[b] for a in range(2) for b in range(2))
+            source = sum(
+                x_i[a] * beta_cov[a][b] * x_j[b]
+                for a in range(2) for b in range(2)
+            )
             target = row_i["F_coupled_se"] ** 2 if i == j else 0.0
             current.append(source + target)
         residual_cov.append(current)
@@ -284,7 +329,10 @@ def fit_f_shape(rows: Sequence[dict], q: float, train_max_L: int) -> dict:
         "w_ann": 4.0 + q,
         "train_L": [row["pair_L"] for row in train],
         "heldout_L": [row["pair_L"] for row in held],
-        "parameters": {"correction_amplitude": beta[0], "thermal_mistuning_nuisance": beta[1]},
+        "parameters": {
+            "correction_amplitude": beta[0],
+            "thermal_mistuning_nuisance": beta[1],
+        },
         "parameter_covariance": beta_cov,
         "train_chi_square": train_chi2,
         "train_df": len(train) - 2,
@@ -299,11 +347,16 @@ def fit_f_shape(rows: Sequence[dict], q: float, train_max_L: int) -> dict:
 def fit_root_power(rows: Sequence[dict], w: float, train_max_L: int) -> dict:
     train = [row for row in rows if row["pair_L"] <= train_max_L]
     held = [row for row in rows if row["pair_L"] > train_max_L]
-    def feature(L: int): return [1.0, L ** (-w)]
+    if len(train) < 3 or not held:
+        raise ValueError("need >=3 train pairs and >=1 heldout pair")
+
+    def feature(L: int):
+        return [1.0, L ** (-w)]
+
     x_train = [feature(row["pair_L"]) for row in train]
     y_train = [row["annihilator_root"] for row in train]
     v_train = [row["se"]["annihilator_root"] ** 2 for row in train]
-    beta, beta_cov, train_residual, train_chi2 = weighted_linear_fit(x_train, y_train, v_train)
+    beta, beta_cov, _, train_chi2 = weighted_linear_fit(x_train, y_train, v_train)
     x_held = [feature(row["pair_L"]) for row in held]
     pred = [sum(a * b for a, b in zip(x, beta)) for x in x_held]
     residual = [row["annihilator_root"] - yhat for row, yhat in zip(held, pred)]
@@ -311,7 +364,10 @@ def fit_root_power(rows: Sequence[dict], w: float, train_max_L: int) -> dict:
     for i, (row_i, x_i) in enumerate(zip(held, x_held)):
         current = []
         for j, (row_j, x_j) in enumerate(zip(held, x_held)):
-            source = sum(x_i[a] * beta_cov[a][b] * x_j[b] for a in range(2) for b in range(2))
+            source = sum(
+                x_i[a] * beta_cov[a][b] * x_j[b]
+                for a in range(2) for b in range(2)
+            )
             target = row_i["se"]["annihilator_root"] ** 2 if i == j else 0.0
             current.append(source + target)
         residual_cov.append(current)
@@ -332,7 +388,12 @@ def fit_root_power(rows: Sequence[dict], w: float, train_max_L: int) -> dict:
     }
 
 
-def calculate(paths: Sequence[Path], p_ref: float, train_max_L: int, q_candidates: Sequence[float]) -> dict:
+def calculate(
+    paths: Sequence[Path],
+    p_ref: float,
+    train_max_L: int,
+    q_candidates: Sequence[float],
+) -> dict:
     records = read_pair_histograms(paths)
     groups = grouped(records)
     rows = [pair_jackknife(groups[L], p_ref) for L in sorted(groups)]
@@ -370,7 +431,8 @@ def report(payload: dict) -> str:
         gain = row["F_variance_gain_independent_over_coupled"]
         lines.append(
             f"| {row['pair_L']} | {row['F_p_ref']:.7g} | {row['F_coupled_se']:.3g} | "
-            f"{gain:.3g} | {row['annihilator_root']:.15g} | {row['se']['annihilator_root']:.3g} |"
+            f"{gain:.3g} | {row['annihilator_root']:.15g} | "
+            f"{row['se']['annihilator_root']:.3g} |"
         )
     lines.extend([
         "",
@@ -380,7 +442,10 @@ def report(payload: dict) -> str:
         "|---:|---:|---:|",
     ])
     for model in payload["F_shape_models"]:
-        lines.append(f"| {model['q']:g} | {model['w_ann']:g} | {model['heldout_chi_square']:.6g} / {model['heldout_df']} |")
+        lines.append(
+            f"| {model['q']:g} | {model['w_ann']:g} | "
+            f"{model['heldout_chi_square']:.6g} / {model['heldout_df']} |"
+        )
     lines.extend([
         "",
         "## Accelerated-root cross-check",
@@ -390,12 +455,15 @@ def report(payload: dict) -> str:
     ])
     for model in payload["accelerated_root_models"]:
         lines.append(
-            f"| {model['w']:g} | {model['heldout_chi_square']:.6g} / {model['heldout_df']} | "
-            f"{model['parameters']['pc']:.15g} |"
+            f"| {model['w']:g} | {model['heldout_chi_square']:.6g} / "
+            f"{model['heldout_df']} | {model['parameters']['pc']:.15g} |"
         )
     lines.extend([
         "",
-        "Primary scientific score is the fixed-p F-shape challenge because it removes the leading H4 amplitude algebraically and treats threshold mistuning as an explicit nuisance. The accelerated root is a cross-check, not the model-selection source.",
+        "Primary scientific score is the fixed-p F-shape challenge because it "
+        "removes the leading H4 amplitude algebraically and treats threshold "
+        "mistuning as an explicit nuisance. The accelerated root is a cross-check, "
+        "not the model-selection source.",
         "",
     ])
     return "\n".join(lines)
