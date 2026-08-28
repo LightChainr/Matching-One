@@ -1,0 +1,24 @@
+{
+  "engine": "same-N Gaussian site-orientation discovery",
+  "generated_utc": "2026-08-28T12:08:15Z",
+  "git_commit": "80fbdd1e9a380a87a3c56dec7795ceebb0ada23e",
+  "command": "build/gaussian_orientation_mc --samples 100000000 --batches 100 --p-ref 0.592746050790 --seed 2026100101 --replica-offset 2000000000 --threads 4 --n 85 --git-commit 80fbdd1e9a380a87a3c56dec7795ceebb0ada23e --output-prefix results/doubling-20260828/n85",
+  "compiler": "10.3.1",
+  "openmp": true,
+  "threads_requested": 4,
+  "samples_per_pair": 100000000,
+  "batches": 100,
+  "p_ref": 0.59274605078999998,
+  "seed": 2026100101,
+  "replica_counter_first": 2000000000,
+  "replica_counter_last_exclusive": 2100000000,
+  "rng": "stateless SplitMix64-derived mapping (seed,N,replica,cyclic-site)",
+  "coupling": "same cyclic labels j in Z/NZ share U_j across representations",
+  "channels": ["cross", "both", "either", "direction_0", "direction_1"],
+  "euler_motifs": false,
+  "euler_observable_names": ["q", "C_black", "C_white", "V", "E", "F0", "nnn_pos", "nnn_neg", "path3_x", "path3_y", "corners", "E_mc", "F0_mc", "nnn_pos_mc", "nnn_neg_mc", "path3_x_mc", "path3_y_mc", "corners_mc"],
+  "elapsed_seconds": 269.57288130000001,
+  "designs": [
+    {"N": 85, "first": [9,2], "second": [7,6], "theta_first": 0.21866894587394195, "theta_second": 0.70862627212767026, "cos4_first": 0.64124567474048444, "cos4_second": -0.95321799307958477}
+  ]
+}

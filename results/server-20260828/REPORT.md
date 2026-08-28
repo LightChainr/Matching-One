@@ -255,16 +255,25 @@ The final local and Python 3.9/AArch64 server regression suites each contain
   and root gaps have the predicted signs, and symmetric thermal offsets leave
   the central orientation amplitude intact.  The held-out `N^-2` root-gap
   scaling gate is not yet met (`chi-square=7.40` for two held-out rows).
-- **P34:** the exact Euler identity and fixed-K hypergeometric centering pass
-  on three tiny periodic quotients.  Pilot-frozen Euler/motif controls reduce
-  variance by `2.319x`, `1.852x`, and `1.665x` at axis `L=8,12,16`; the
-  multiple-size 2x GPU gate therefore remains closed.
+- **P34:** the preliminary axis run gave `2.319x`, `1.852x`, and `1.665x` at
+  `L=8,12,16`.  The later same-N run added exact Gaussian controls and a richer
+  microcanonical motif basis; on held-out replicas it gives about `2.34x` at
+  `N=65` and `2.16x` at `N=85` versus the best single estimator.  This passes
+  the multiple-size gate for individual-geometry matching estimates.  The
+  orientation-difference OLS overfits its pilot and remains excluded.
 - **P35:** same-batch amplitude closure gives
   `C=-Delta p* mean(M')/Delta M` between `0.99984` and `1.00031` at all five
   sizes, with delete-one-batch errors at the `2e-5--1.4e-4` level.  Direct and
   linearized root gaps agree; the remaining root-scaling failure is radial
   drift, not nonlinear root conversion.
+- **P37:** the preregistered Gaussian doubling test predicts the parameter-free
+  ratio `Delta M(2N)/Delta M(N)=-2^(-13/8)`.  A fresh 100-million-replica seed
+  gives `-0.3138 +/- 0.0908` for `65->130` and `-0.3410 +/- 0.1118` for
+  `85->170`.  The fixed-prediction residuals are only `+0.114` and `-0.150`
+  standard errors, with joint chi-square `0.03445/2`.  This independently
+  supports the combined spin-4 sign and exponent relation without fitting an
+  amplitude.
 
-The expanded local suite contains 53 tests before final integration additions;
-all passed.  Detailed reports and machine-readable outputs are under `P31/`,
-`P32-radial-challenge/`, `P33/`, `P35-amplitude-closure/`, and `C03-euler/`.
+The expanded local suite contains 57 tests; all passed.  Detailed reports and
+machine-readable outputs are under `P31/`, `P32-radial-challenge/`, `P33/`,
+`P34/`, `P35-amplitude-closure/`, `P37-doubling/`, and `C03-euler/`.
