@@ -1,0 +1,171 @@
+{
+  "audit": "Issue #43 matching-even wrapping-channel sign contract",
+  "classification": "frozen prediction generator/protocol channel mismatch",
+  "evidence_boundary": "Post-reveal deterministic audit. The literal frozen positive score and its reported failure remain immutable; the transported score is not a replacement preregistered endpoint and uses zero target-fit parameters.",
+  "exact_transport": {
+    "configuration_identities": [
+      "R_G_cross + R_hat_either = 1",
+      "R_G_either + R_hat_cross = 1"
+    ],
+    "degrees_of_freedom": 2,
+    "frozen_either_mean": [
+      6.752163745881449e-05,
+      6.891944697034459e-05
+    ],
+    "literal_frozen_positive_chi_square": 240.2472113766935,
+    "marginal_z": [
+      0.6672300312502979,
+      -0.11888928603861885
+    ],
+    "observed_cross": [
+      -6.0815376233385734e-05,
+      -7.024950784522366e-05
+    ],
+    "orientation_difference_identity": "DeltaS_cross = -DeltaS_either",
+    "residual": [
+      6.706261225428753e-06,
+      -1.330060874879074e-06
+    ],
+    "sector_identity": "S_cross = 1 - S_either",
+    "transported_chi_square": 0.5700315435551193,
+    "transported_cross_mean": [
+      -6.752163745881449e-05,
+      -6.891944697034459e-05
+    ],
+    "zero_chi_square": 112.53890899529225
+  },
+  "not_classified_as": [
+    "physical sign reversal",
+    "orientation-order mismatch",
+    "delta-cos4 sign mismatch",
+    "threshold-rank reconstruction error"
+  ],
+  "source": {
+    "batch_path": "results/server-20260828/P31/p31_confirmation_seed2026093001.batches.csv",
+    "configuration_level_batch_check": {
+      "batch_count": 500,
+      "integer_identity_max_abs_residual": 0,
+      "size_count": 5
+    },
+    "constant_amplitude_fits": {
+      "cross": {
+        "chi_square": 4.6580144208302245,
+        "degrees_of_freedom": 4,
+        "mean": -0.010603216462677737,
+        "standard_error": 0.0009366870182463299
+      },
+      "either": {
+        "chi_square": 4.658014420828597,
+        "degrees_of_freedom": 4,
+        "mean": 0.010603216462677735,
+        "standard_error": 0.000936687018246324
+      }
+    },
+    "frozen_channel": "either",
+    "path": "results/server-20260828/P31/p31_confirmation_seed2026093001.analysis.csv",
+    "rows": {
+      "cross": [
+        {
+          "N": 65,
+          "delta_cos4": 1.3633136094674556,
+          "difference": -0.00021518000000000147,
+          "scaled_amplitude": -0.010259341579861182,
+          "scaled_standard_error": 0.0014433099924670927,
+          "standard_error": 3.027206392939628e-05
+        },
+        {
+          "N": 85,
+          "delta_cos4": 1.5944636678200692,
+          "difference": -0.00024396499999999654,
+          "scaled_amplitude": -0.013005642849392176,
+          "scaled_standard_error": 0.0018007529279108585,
+          "standard_error": 3.377923668558207e-05
+        },
+        {
+          "N": 130,
+          "delta_cos4": 1.3633136094674556,
+          "difference": -0.00013056000000000067,
+          "scaled_amplitude": -0.01244966666666673,
+          "scaled_standard_error": 0.003079830547074238,
+          "standard_error": 3.229826845907621e-05
+        },
+        {
+          "N": 145,
+          "delta_cos4": 1.9177170035671818,
+          "difference": -9.507499999999669e-05,
+          "scaled_amplitude": -0.007188691018724948,
+          "scaled_standard_error": 0.0023912594162169365,
+          "standard_error": 3.162592305116795e-05
+        },
+        {
+          "N": 170,
+          "delta_cos4": 1.5944636678200692,
+          "difference": -7.655999999999442e-05,
+          "scaled_amplitude": -0.00816274479166607,
+          "scaled_standard_error": 0.003752463449851865,
+          "standard_error": 3.519509785653856e-05
+        }
+      ],
+      "either": [
+        {
+          "N": 65,
+          "delta_cos4": 1.3633136094674556,
+          "difference": 0.00021517999999999814,
+          "scaled_amplitude": 0.010259341579861022,
+          "scaled_standard_error": 0.0014433099924671042,
+          "standard_error": 3.027206392939652e-05
+        },
+        {
+          "N": 85,
+          "delta_cos4": 1.5944636678200692,
+          "difference": 0.00024396499999999378,
+          "scaled_amplitude": 0.013005642849392028,
+          "scaled_standard_error": 0.001800752927910828,
+          "standard_error": 3.37792366855815e-05
+        },
+        {
+          "N": 130,
+          "delta_cos4": 1.3633136094674556,
+          "difference": 0.0001305599999999929,
+          "scaled_amplitude": 0.01244966666666599,
+          "scaled_standard_error": 0.0030798305470743094,
+          "standard_error": 3.2298268459076964e-05
+        },
+        {
+          "N": 145,
+          "delta_cos4": 1.9177170035671818,
+          "difference": 9.507500000000669e-05,
+          "scaled_amplitude": 0.007188691018725705,
+          "scaled_standard_error": 0.0023912594162168363,
+          "standard_error": 3.162592305116662e-05
+        },
+        {
+          "N": 170,
+          "delta_cos4": 1.5944636678200692,
+          "difference": 7.656000000000774e-05,
+          "scaled_amplitude": 0.008162744791667492,
+          "scaled_standard_error": 0.003752463449851823,
+          "standard_error": 3.5195097856538164e-05
+        }
+      ]
+    },
+    "sector": "even"
+  },
+  "target": {
+    "metadata": [
+      {
+        "N": 185,
+        "channel": "rank-2 cross wrapping",
+        "path": "results/server-20260828/P43-heldout-fullcurve-500m/raw/n185.metadata.json"
+      },
+      {
+        "N": 265,
+        "channel": "rank-2 cross wrapping",
+        "path": "results/server-20260828/P43-heldout-fullcurve-500m/raw/n265.metadata.json"
+      }
+    ],
+    "orientation_order": "first_minus_second",
+    "production_channel": "cross",
+    "score_path": "results/server-20260828/P43-heldout-fullcurve-500m/analysis/primary_score.json"
+  }
+}
