@@ -1,0 +1,165 @@
+{
+  "schema": "matching-one/rho-child-residual-handoff/v1",
+  "status": "post_reveal_discovery_not_a_rescore",
+  "source_score_status": "frozen_independent_production_reveal",
+  "frozen_E4_plus_E6": {
+    "chi_square": "6.0645295813993245204",
+    "dof": 2,
+    "survival_p": "0.048206337136843122049",
+    "child_contributions": [
+      {
+        "child": "2omega",
+        "residual_re_im": [
+          "-0.00050167546103909842897",
+          "0.000016583537475307391022"
+        ],
+        "residual_phase_rad": "3.108548380278081731",
+        "chi_square_contribution": "1.8797962130414171458"
+      },
+      {
+        "child": "omega_over_2",
+        "residual_re_im": [
+          "0.00025356196773282770399",
+          "0.00040246736459129475727"
+        ],
+        "residual_phase_rad": "1.0085961928422031343",
+        "chi_square_contribution": "1.8476881818063176458"
+      },
+      {
+        "child": "omega_plus_1_over_2",
+        "residual_re_im": [
+          "0.00026759278601981573154",
+          "-0.00051770657594355970997"
+        ],
+        "residual_phase_rad": "-1.0937351582081297053",
+        "chi_square_contribution": "2.3370451865515898102"
+      }
+    ],
+    "ideal_DFT_of_residual": [
+      {
+        "r": 0,
+        "value_re_im": [
+          "6.4930975711816688533e-6",
+          "-0.000032885224625652520559"
+        ],
+        "abs": "0.00003352011805988320573",
+        "phase_rad": "-1.3758565230867299303"
+      },
+      {
+        "r": 1,
+        "value_re_im": [
+          "0.000011547056829398409834",
+          "0.000028784729407951586566"
+        ],
+        "abs": "0.000031014434841059885941",
+        "phase_rad": "1.1892970895465396643"
+      },
+      {
+        "r": 2,
+        "value_re_im": [
+          "-0.00051971561543967850766",
+          "0.000020684032693008325016"
+        ],
+        "abs": "0.00052012705192124859757",
+        "phase_rad": "3.1018148949735494701"
+      }
+    ],
+    "r2_to_largest_other_DFT_magnitude": "15.516862171906708319"
+  },
+  "next_design": {
+    "parent": "opposite-side Pell Dminus2 N30",
+    "children": "three degree-2 N60 children",
+    "reason": "the current failed complex relation is a coherent r2 residual; the opposite Pell side tests its phase while reversing signed Pell leakage",
+    "primary_normalization_free_quantity": "phase of (w dot delta_H4)/(w dot E4_squared), where w dot E4=w dot E6=0 within each triple",
+    "annihilator_geometry": {
+      "N112_Dplus1": {
+        "matrices": [
+          [
+            [
+              8,
+              8
+            ],
+            [
+              0,
+              14
+            ]
+          ],
+          [
+            [
+              16,
+              4
+            ],
+            [
+              0,
+              7
+            ]
+          ],
+          [
+            [
+              16,
+              12
+            ],
+            [
+              0,
+              7
+            ]
+          ]
+        ],
+        "w_dot_E4_abs": "1.11320681491e-59",
+        "w_dot_E6_abs": "9.95682444458e-60",
+        "w_dot_E4sq_re_im": [
+          "3.5673435080338994836e-58",
+          "731.72966334064930059"
+        ],
+        "w_dot_E4sq_phase_rad": "1.5707963267948966192",
+        "inferred_E4sq_completion_re_im": [
+          "-0.000057257608105053381793",
+          "2.3949367445233699711e-6"
+        ],
+        "inferred_E4sq_completion_phase_rad": "3.0997896231133525562"
+      },
+      "N60_Dminus2": {
+        "matrices": [
+          [
+            [
+              6,
+              6
+            ],
+            [
+              0,
+              10
+            ]
+          ],
+          [
+            [
+              12,
+              3
+            ],
+            [
+              0,
+              5
+            ]
+          ],
+          [
+            [
+              12,
+              9
+            ],
+            [
+              0,
+              5
+            ]
+          ]
+        ],
+        "w_dot_E4_abs": "4.97841222229e-60",
+        "w_dot_E6_abs": "9.95682444458e-60",
+        "w_dot_E4sq_re_im": [
+          "3.1799608069870434124e-58",
+          "729.49046035044876371"
+        ],
+        "w_dot_E4sq_phase_rad": "1.5707963267948966192"
+      }
+    },
+    "production_authorized": false
+  }
+}
