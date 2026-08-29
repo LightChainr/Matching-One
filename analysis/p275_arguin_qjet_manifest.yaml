@@ -1,0 +1,13 @@
+schema: matching-one.analysis-manifest.v1
+issue: 275
+related_issues: [252, 258, 263]
+kind: exact_continuum_score_jet
+entrypoint: scripts/p275_arguin_qjet_oracle.py
+output: results/arguin-qjet/latest.json
+claims:
+  - ordinary_Q_jet_is_n_times_previous_trivial_sector_derivative
+  - logarithmic_Q_jet_has_exact_pascal_coefficients
+  - ordinary_and_logarithmic_derivative_bases_are_related_by_stirling_transforms
+  - topology_forced_jet_must_be_subtracted_before_higher_rank_interpretation
+boundary: does_not_identify_a_nonzero_residual_with_a_specific_LCFT_module
+reproduce: python3 scripts/p275_arguin_qjet_oracle.py --max-order 10 --json results/arguin-qjet/latest.json
