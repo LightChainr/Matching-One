@@ -1,0 +1,90 @@
+{
+  "claim_boundary": {
+    "not_proved": [
+      "a numerical scaling dimension from a transfer gap",
+      "a Q=1 transfer realization of the complete global matching observable",
+      "that every possible twisted or Q-derivative matching insertion is colour singlet"
+    ],
+    "proved": [
+      "the exact W4 Potts transfer and insertion symmetry commutators",
+      "the full-basis singlet-to-[2,2] matrix-element zero",
+      "the nonzero [2,2] diagonal trace counterexample",
+      "the transposition-seam ratios 1 and 0",
+      "the W4 spatial alias of spin 0 and spin 4"
+    ]
+  },
+  "colour_seam_one_shot": {
+    "[2,2]_ratio": "0",
+    "seam": "one S4 transposition",
+    "singlet_ratio": "1",
+    "targets": "thermal singlet 1 versus V22 [2,2] 0",
+    "unnormalized_[2,2]_trace_identity": "12",
+    "unnormalized_[2,2]_trace_twisted": "0",
+    "unnormalized_singlet_trace_identity": "4",
+    "unnormalized_singlet_trace_twisted": "4"
+  },
+  "control": {
+    "model": "Q=4 square-lattice Potts row transfer at self-dual v=2",
+    "reason_for_Q4": "integer realization of the generic Potts [2] carrier; no pc estimate is performed",
+    "row_state_count": 256,
+    "symmetry_checks": {
+      "O_matching_commutes_with_D4_row_group": true,
+      "O_matching_commutes_with_S4_generators": true,
+      "T_commutes_with_S4_generators": true,
+      "T_commutes_with_reflection": true,
+      "T_commutes_with_translation": true
+    },
+    "width": 4
+  },
+  "exact_matrix_element": {
+    "is_zero": true,
+    "max_absolute_coefficient_in_full_W4_basis": "0",
+    "operator": "P_singlet O_matching P_[2,2]",
+    "reason": "T and O_matching commute with S4, while the central projectors are orthogonal",
+    "thermal_Q4": "not symmetry-forbidden"
+  },
+  "issue": 120,
+  "matching_odd_marker": {
+    "construction": "tensor O_matching with the #155 complement-odd two-state marker D, with J D J=-D",
+    "meaning": "matching/complement oddness commutes with Potts colour projection and cannot rescue V22",
+    "selection_result": "P_singlet (O_matching tensor D) P_[2,2]=0"
+  },
+  "minimal_counterexample_to_absence": {
+    "meaning": "O_matching acts nontrivially inside [2,2]; only the singlet-to-[2,2] matrix element vanishes",
+    "trace_P_[2,2]_O": "12",
+    "trace_P_singlet_O": "4"
+  },
+  "schema": "matching-one.p120-small-width-operator-spectroscopy.v1",
+  "spatial_sector": {
+    "alias": "spin 4 and spin 0 share the zero-momentum reflection-even row sector at W=4",
+    "combined_sector_ranks": {
+      "singlet_[4]": "7",
+      "two_row_[2,2]": "12"
+    },
+    "conclusion": "rotation/translation and reflection alone cannot distinguish thermal Q4 from V_(2,+/-2)",
+    "target": "spin +/-4, reflection-even cosine channel",
+    "width4_translation_phase": "exp(2 pi i * 4/4)=1"
+  },
+  "topology_and_Potts_sector": {
+    "V22_candidate": {
+      "Potts_sector": "[2] analytically; [2,2] at Q=4",
+      "marked_cluster_legs": 4,
+      "spin": "+/-4"
+    },
+    "global_matching_endpoint": {
+      "Potts_sector": "singlet [4]",
+      "insertion_histogram": {
+        "0": 196,
+        "1": 48,
+        "2": 12
+      },
+      "marked_cluster_legs": 0,
+      "row_insertion": "unmarked colour-blind C4-to-K4 monochromatic connectivity defect"
+    },
+    "thermal_Q4_candidate": {
+      "Potts_sector": "singlet",
+      "marked_cluster_legs": 0,
+      "spin": "+/-4"
+    }
+  }
+}

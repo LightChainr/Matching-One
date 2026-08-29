@@ -1,0 +1,16 @@
+schema_version: 1
+issue: 120
+frozen_on: 2026-08-29
+generator: scripts/p120_small_width_operator_spectroscopy.py
+artifact: results/exact-small-width-operator-spectroscopy/latest.json
+test: tests/test_p120_small_width_operator_spectroscopy.py
+control:
+  model: Q=4 square-lattice Potts
+  width: 4
+  coupling: self-dual v=2
+primary_matrix_element: "P_singlet O_matching P_[2,2] = 0"
+counterexample: "Tr(P_[2,2] O_matching)=12"
+colour_seam_targets:
+  thermal_Q4_singlet: 1
+  V22_[2,2]: 0
+pc_computation: false
