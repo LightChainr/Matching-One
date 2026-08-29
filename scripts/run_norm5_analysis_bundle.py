@@ -123,6 +123,23 @@ def build_commands(
     modes += [str(by_n[n].histogram) for n in REQUIRED_SIZES]
     modes += ["--output", str(modes_output)]
 
+    thermal_jet_output = output_dir / "thermal_jet_score.json"
+    thermal_jet = [python, str(scripts / "score_norm5_thermal_jet.py")]
+    for n in REQUIRED_SIZES:
+        run = by_n[n]
+        thermal_jet += [
+            "--run",
+            str(n),
+            str(run.histogram),
+            str(run.moments),
+            str(run.metadata),
+        ]
+    thermal_jet += [
+        "--lineage", "65", "130", "325",
+        "--lineage", "85", "170", "425",
+        "--output", str(thermal_jet_output),
+    ]
+
     rank_gap_output = output_dir / "rank_gap_boundary_score.json"
     rank_gap = [
         python,
@@ -139,6 +156,7 @@ def build_commands(
         ("primary_harmonic", primary, primary_output),
         ("intrinsic_functional_cocycle", cocycle, cocycle_output),
         ("krawtchouk_score_modes", modes, modes_output),
+        ("thermal_jet_score", thermal_jet, thermal_jet_output),
         ("rank_gap_boundary", rank_gap, rank_gap_output),
     ]
 
