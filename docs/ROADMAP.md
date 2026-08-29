@@ -157,6 +157,11 @@ Key current finite-size facts:
 - the finite matching slope has an exact pivotal-mass interpretation;
 - threshold ranks are finite activation/reliability signatures.
 
+Canonical protocol facts that must remain explicit:
+
+- the Issue #43 channel conversion is `DeltaS_cross = -DeltaS_either`, and its reported cross-channel value is `0.5700315436 / 2` before the canonical normalization;
+- the completed N=26 exact control rejects both proposed continuations, `Beta(5,5)` and `Beta(7,7)`, of the N=10 Beta law.
+
 ## What not to spend much time on
 
 These are low priority, not forbidden:
