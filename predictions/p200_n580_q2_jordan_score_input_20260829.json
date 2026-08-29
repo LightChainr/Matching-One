@@ -1,0 +1,60 @@
+{
+  "schema": "matching-one/p200-n580-q2-jordan-score-input/v1",
+  "issue": 200,
+  "status": "copied_exactly_from_post_reveal_freeze_before_N580_acquisition",
+  "source": {
+    "branch_commit": "dca24ca",
+    "path": "predictions/p200_affine_threeway_acquisition_20260829.json",
+    "sha256": "6823b0477c041d375efa334b5907bd0fbf7f6894de37957d425805bc5430640c",
+    "section": "N580_radial_clock"
+  },
+  "designs": [[24, 2], [18, 16]],
+  "paths": [
+    "145 --(1+i)^2--> 580",
+    "145 --(1+i)--> 290 --(1+i)--> 580"
+  ],
+  "state_order": ["I_S", "I_Du", "T_D", "T_Su"],
+  "score_semantics": {
+    "primary": "one joint four-coordinate covariance-aware score",
+    "target_covariance": "recompute all four coordinates inside each of 100 delete-one target batches",
+    "source_covariance": "add the frozen propagated N145/N290 prediction covariance for the selected model",
+    "forbidden": "do not score T_Su or any coordinate as an independent evidence row"
+  },
+  "models": {
+    "ordinary_q2": {
+      "identity_coefficient_alpha": -0.5,
+      "one_step_coefficient_beta": 1.5,
+      "N580_state_prediction": {
+        "I_Du": -0.01143077370854724,
+        "I_S": -0.004878079610261758,
+        "T_D": 0.8692978885922626,
+        "T_Su": 2.20882464474333
+      },
+      "N580_state_prediction_covariance": [
+        [0.000023827735281338376, 0.000011978771542508323, -0.00001872683250360268, -0.00014353284615631042],
+        [0.000011978771542508323, 0.00007602722856632645, 0.00000866974209038004, 0.00014398891863654666],
+        [-0.00001872683250360268, 0.00000866974209038004, 0.08474338121770383, 0.05806620093825266],
+        [-0.00014353284615631042, 0.00014398891863654666, 0.05806620093825266, 0.07462621358679833]
+      ],
+      "covariance_coordinate_order": ["I_S", "I_Du", "T_D", "T_Su"]
+    },
+    "rank2_Jordan": {
+      "identity_coefficient_alpha": -1.0,
+      "one_step_coefficient_beta": 2.0,
+      "N580_state_prediction": {
+        "I_Du": -0.011465473373506847,
+        "I_S": -0.0036771363177506167,
+        "T_D": 1.0101495788012453,
+        "T_Su": 2.463165975806417
+      },
+      "N580_state_prediction_covariance": [
+        [0.00004365172914152041, 0.000022142809826968074, -0.00003182940466279084, -0.0002543727297888775],
+        [0.000022142809826968074, 0.00013855521942097982, 0.000014771087983885734, 0.00025799050730336044],
+        [-0.00003182940466279084, 0.000014771087983885734, 0.15296598342278983, 0.10468231935064679],
+        [-0.0002543727297888775, 0.00025799050730336044, 0.10468231935064679, 0.1340590762576413]
+      ],
+      "covariance_coordinate_order": ["I_S", "I_Du", "T_D", "T_Su"]
+    }
+  },
+  "decision": "joint four-state affine score selects q2, Jordan, both, or neither"
+}

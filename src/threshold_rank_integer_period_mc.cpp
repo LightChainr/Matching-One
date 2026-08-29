@@ -11,8 +11,8 @@
 // displacements are converted to period-basis windings exactly using
 // adj(P)*displacement/det(P).  No floating-point geometry arithmetic is used.
 //
-// The first production designs are the nonprimitive norm-4 Gaussian children
-// N=260 and N=340, whose Smith invariants are (2,130) and (2,170).
+// Built-in production designs are nonprimitive Gaussian children including
+// N=260, N=340, and the Issue #200 N=580 radial-clock pair.
 
 #include <algorithm>
 #include <array>
@@ -241,6 +241,7 @@ struct PairDesign {
 const std::vector<PairDesign> kDesigns = {
     {260, 16, 2, {16, -2, 2, 16}, 14, 8, {14, -8, 8, 14}, "N65_to_N260_q4"},
     {340, 18, 4, {18, -4, 4, 18}, 14, 12, {14, -12, 12, 14}, "N85_to_N340_q4"},
+    {580, 24, 2, {24, -2, 2, 24}, 18, 16, {18, -16, 16, 18}, "P200_N145_to_N580_q4"},
 };
 
 Vector primitive(Vector value) {
@@ -561,9 +562,13 @@ void self_test() {
 
     const QuotientCoordinates q260({16, -2, 2, 16});
     const QuotientCoordinates q340({18, -4, 4, 18});
+    const QuotientCoordinates q580_first({24, -2, 2, 24});
+    const QuotientCoordinates q580_second({18, -16, 16, 18});
     if (q260.order != 260 || q260.smith1 != 2 || q260.smith2 != 130 ||
-        q340.order != 340 || q340.smith1 != 2 || q340.smith2 != 170) {
-        throw std::runtime_error("norm-4 Smith regression failed");
+        q340.order != 340 || q340.smith1 != 2 || q340.smith2 != 170 ||
+        q580_first.order != 580 || q580_first.smith1 != 2 || q580_first.smith2 != 290 ||
+        q580_second.order != 580 || q580_second.smith1 != 2 || q580_second.smith2 != 290) {
+        throw std::runtime_error("nonprimitive Gaussian child Smith regression failed");
     }
 
     counter_permutation(5, 17, 0, permutation);
@@ -572,7 +577,7 @@ void self_test() {
         throw std::runtime_error("Python-compatible counter/permutation regression failed");
     }
     std::cout << "self-test passed: arbitrary integer periods, exact HNF quotient/winding, "
-                 "basis invariance, Smith(2,130)/(2,170), N=5 all permutations\n";
+                 "basis invariance, Smith(2,130)/(2,170)/(2,290), N=5 all permutations\n";
 }
 
 struct Options {
@@ -604,7 +609,7 @@ struct Options {
         << "  --seed S             unsigned 64-bit seed (default 20260828)\n"
         << "  --replica-offset K   first sample counter (default 0)\n"
         << "  --threads T          OpenMP threads; 0 uses runtime default\n"
-        << "  --n N                predefined N=260 or N=340 norm-4 pair\n"
+        << "  --n N                predefined N=260, N=340, or Issue-200 N=580 pair\n"
         << "  --first-matrix A B C D   custom first row-major period matrix\n"
         << "  --second-matrix A B C D  custom second row-major period matrix\n"
         << "  --first-rep A B      optional Gaussian lineage label in CSV\n"
@@ -689,8 +694,10 @@ Options parse_options(int argc, char** argv) {
     if (options.custom && options.only_n != 0) {
         throw std::invalid_argument("--n cannot be combined with custom matrices");
     }
-    if (!options.custom && options.only_n != 260 && options.only_n != 340) {
-        throw std::invalid_argument("choose predefined --n 260 or --n 340, or custom matrices");
+    if (!options.custom && options.only_n != 260 && options.only_n != 340 &&
+        options.only_n != 580) {
+        throw std::invalid_argument(
+            "choose predefined --n 260, --n 340, or --n 580, or custom matrices");
     }
     if (options.replica_offset > std::numeric_limits<std::uint64_t>::max() - options.samples) {
         throw std::invalid_argument("replica counter range overflows uint64");

@@ -65,6 +65,13 @@ maximin/isogeny analysis:
 |---|---|---|---|
 | `65 -> 260` | `((16,-2),(2,16))` | `((14,-8),(8,14))` | `Z/2 x Z/130` |
 | `85 -> 340` | `((18,-4),(4,18))` | `((14,-12),(12,14))` | `Z/2 x Z/170` |
+| `145 -> 580` | `((24,-2),(2,24))` | `((18,-16),(16,18))` | `Z/2 x Z/290` |
+
+The N580 row is the Issue #200 radial-clock acquisition.  Both representations
+are nonprimitive, so compiling them into the older cyclic Gaussian source
+would silently select the wrong quotient.  Production may name the executable
+`threshold_rank_orientation_mc` for schema compatibility, but it must be built
+from this integer-period source.
 
 The CSV schema is intentionally identical to
 `threshold_rank_orientation_mc.cpp`, with Gaussian lineage labels

@@ -1,0 +1,63 @@
+version: 1
+created: 2026-08-29
+status: frozen_production_contract_before_N580_acquisition
+issue: 200
+scope: N580_only_no_N650_path_flags
+
+geometry:
+  N: 580
+  first_representation: [24, 2]
+  first_period_matrix: [[24, -2], [2, 24]]
+  second_representation: [18, 16]
+  second_period_matrix: [[18, -16], [16, 18]]
+  smith_invariants: [2, 290]
+  quotient_backend: src/threshold_rank_integer_period_mc.cpp
+  output_schema: threshold_rank_orientation_mc_hist_moments_v1
+
+sampling:
+  samples_per_pair: 100000000
+  batches: 100
+  threads: 8
+  seed: 2026102001
+  replica_counter_first: 12000000000
+  replica_counter_last_exclusive: 12100000000
+  rng_domain: issue200_N580_phaseA_v1
+  cross_orientation_coupling: same_HNF_label_permutation
+  worker_invariance: counter_derived_per_replica_static_batch_outputs
+  disjoint_from:
+    P50: {seed: 2026105003, counter_domain: N145_N290_existing}
+    P154: {seeds: [2026104501, 2026105401, 2026105402], counter_domain: norm4_source_and_target_existing}
+
+build:
+  command: >-
+    mkdir -p build/p200-n580 &&
+    g++ -O3 -DNDEBUG -std=c++17 -fopenmp
+    src/threshold_rank_integer_period_mc.cpp
+    -o build/p200-n580/threshold_rank_orientation_mc
+  self_test: build/p200-n580/threshold_rank_orientation_mc --self-test
+
+run:
+  output_prefix: /workspace/results/server-20260829/P200-n580-phaseA/raw/n580_100m
+  command: >-
+    build/p200-n580/threshold_rank_orientation_mc
+    --n 580 --samples 100000000 --batches 100
+    --seed 2026102001 --replica-offset 12000000000
+    --threads 8 --git-commit FULL_SHA
+    --output-prefix /workspace/results/server-20260829/P200-n580-phaseA/raw/n580_100m
+
+required_outputs:
+  - n580_100m.hist.csv
+  - n580_100m.moments.csv
+  - n580_100m.metadata.json
+
+score_input:
+  path: predictions/p200_n580_q2_jordan_score_input_20260829.json
+  state_order: [I_S, I_Du, T_D, T_Su]
+  primary_endpoint: joint_four_coordinate_covariance_aware_score
+  delete_one_rule: recompute_center_width_and_all_four_states_in_each_batch_delete_one
+  models: [ordinary_q2, rank2_Jordan]
+
+boundary:
+  - This is a 100M variance/integration pilot under frozen model targets.
+  - Do not add N650 marked path flags to this executable or manifest.
+  - Do not interpret four coordinates as independent evidence rows.
