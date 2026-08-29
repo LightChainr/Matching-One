@@ -58,14 +58,31 @@ No individual diagonal residual exceeds 2 standard errors.  The rejection of
 width-only and q=2 therefore comes from a coherent correlated direction, not
 from selecting one conspicuous high-order component after reveal.
 
+### Lineage decomposition (diagnostic only)
+
+Marginal five-dimensional scores show that the tension is concentrated in the
+`65 -> 325` lineage:
+
+| model | 65 -> 325 p | 85 -> 425 p |
+|---|---:|---:|
+| width collapse | 0.003283 | 0.220755 |
+| q=2 cocycle | 0.004871 | 0.331828 |
+| Jordan cocycle | 0.043805 | 0.298747 |
+
+These marginals share source covariance and are not additional tests.  Their
+role is mechanistic: a single scalar width misses a lineage-dependent
+direction, and even the surviving joint Jordan law is only borderline on the
+first Gaussian-prime lineage.
+
 ## Interpretation
 
 The paired rank gap is an exact measure of canonical neutral-window area, but
 its scalar width does not absorb the observed family-wide Krawtchouk drift.
 The remaining deformation must contain at least one additional jet-space
 direction.  Among the two frozen multiplier laws, Jordan/logarithmic mixing is
-the surviving compact description; a general low-rank transfer matrix remains
-the broader alternative.
+the surviving joint compact description.  The lineage decomposition suggests
+that the broader alternative should allow one arithmetic/orientation-dependent
+low-rank direction rather than a separate correction for every score mode.
 
 This result promotes the next analysis from scalar width fitting to Issue
 #180's finite-dimensional transfer problem.  The next model should use width
