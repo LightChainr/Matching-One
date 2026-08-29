@@ -6,9 +6,11 @@ direct typed entrypoints importing both `ObservableDescriptor` and
 `map_observable` from `wrapping_channels`. Three frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Two paths, `score_angular_root_amplitude.py`
-and `score_prequential_evidence.py`, are confirmed channel-bearing and require
-typed migrations. The remaining 25 files are outside a registered typed path.
+a descriptor is not applicable. Four paths are confirmed channel-bearing and
+require typed migrations: `score_angular_root_amplitude.py`,
+`score_axis_pair_annihilator.py`, its stable entrypoint, and
+`score_prequential_evidence.py`. The remaining 23 files are outside a
+registered typed path.
 
 This closes an inventory gap: the repository now has a deterministic list,
 including Git blob identities, rather than an informal claim that all scorers
@@ -17,7 +19,7 @@ import is added or removed without updating the manifest, or if a declared
 wrapped kernel disappears.
 
 `outside_registered_typed_path` is deliberately a triage label. Some of those
-25 scripts may not compare channel-bearing quantities, some may be historical,
+23 scripts may not compare channel-bearing quantities, some may be historical,
 and some may need a future typed wrapper. Static membership alone does not prove
 a semantic bug, data-provenance failure, or need for migration. Each candidate
 must be reviewed before modification; Issue #146 therefore remains open.
@@ -40,3 +42,13 @@ gate currently compares free-form `channel.source` and `channel.target` strings
 and treats any truthy `exact_map` field as sufficient. A typed migration must
 parse source/target descriptors and verify the registered affine transform,
 while preserving historical ledger rows and chronology.
+
+The axis-pair annihilator score path is migration-required as one operational
+unit. The base scorer reconstructs the cross matching function from
+`K_minus/K_plus` rank histograms, solves implicit ordinary and annihilator
+roots, and compares an `L^(13/4)`-rescaled adjacent-size combination. The
+stable entrypoint corrects batch-reader ordering and delegates to that base
+without adding a semantic gate. A future migration must type both the implicit
+root-location quantity and the ordered adjacent-size relationship, while
+preserving the stable reader contract; this audit does not change its frozen
+numerics or reinterpret existing score artifacts.
