@@ -1,0 +1,120 @@
+{
+  "claim_boundary": {
+    "exact": "Laurent cancellation algebra, VJS jet coefficients conditional on its published velocity gap, and finite matrix/null relations",
+    "not_claimed": "that Q4 and V_(2,2) collide, that the toy t coordinate is an exact Potts block, or that the measure score alone is the tangent field"
+  },
+  "coefficient_sources": {
+    "measure_score_issue_258": "supplies the lattice measure component Cov(G,T); it must be added to projector and explicit-field terms before the crossing vector is scored",
+    "normalized_OPE_issue_250": "kappa=d_Q log(C12p*C34p) shifts finite a and tangent d_delta coefficients but cannot create the d2_delta coefficient",
+    "projector_issue_262": "fixes opposite residue R=2J and its sign",
+    "velocity_issue_261": "fixes v for declared generic-Q families"
+  },
+  "exact_positive_control": {
+    "Q_tangent_d2_delta_block_coefficient": "3R/(16*pi^2)",
+    "channel_minus": "two-cluster [2], residue -R",
+    "channel_plus": "energy singlet, residue +R",
+    "derivation_boundary": "uses the VJS gap derivative d_Q(x_2cluster-x_energy)=sqrt(3)/pi and the #261 energy-family velocity",
+    "dimensions_at_Q1": "x_energy=x_2cluster=5/4",
+    "finite_d_delta_block_coefficient": "-R*sqrt(3)/pi",
+    "v_2cluster": "7*sqrt(3)/(16*pi)",
+    "v_energy": "-9*sqrt(3)/(16*pi)",
+    "v_energy_minus_v_2cluster": "-sqrt(3)/pi"
+  },
+  "finite_cross_ratio_toy": {
+    "logistic_cross_ratios_for_display": [
+      0.11920292202211755,
+      0.2689414213699951,
+      0.7310585786300049,
+      0.8807970779778824
+    ],
+    "matrix_ranks": {
+      "rank2": 2,
+      "rank3": 3
+    },
+    "meaning": "a stripped block jet with t=(d_Delta B)/B; this is a rank oracle, not a numerical conformal block approximation",
+    "pure_half_d2_responses_under_rank2_nulls": [
+      "-3",
+      "-3"
+    ],
+    "rank2_columns": [
+      "1",
+      "t"
+    ],
+    "rank2_left_null_covectors": [
+      [
+        "-2",
+        "3",
+        "-1",
+        "0"
+      ],
+      [
+        "0",
+        "-1",
+        "3",
+        "-2"
+      ]
+    ],
+    "rank3_columns": [
+      "1",
+      "t",
+      "t^2/2"
+    ],
+    "rank3_left_null_covector": [
+      "-2",
+      "4",
+      "-4",
+      "2"
+    ],
+    "t_values": [
+      -2,
+      -1,
+      1,
+      2
+    ]
+  },
+  "frozen_score": {
+    "general_block_form": "At arbitrary cross ratios, rank2 requires det[B,d_Delta B,Y]=0 on every triple; rank3 requires det[B,d_Delta B,d_Delta^2 B,Y]=0 on every quadruple.",
+    "higher_rank_falsifier": "r_left-r_right != 0 after covariance propagation and declared ordinary-column subtraction",
+    "input": "four reconstructed, block-normalized tangent values y_i at ordered t=(-2,-1,1,2)",
+    "rank2_prediction": "r_left=r_right=0",
+    "rank3_second_derivative_prediction": "r_left=r_right=-3 C for y=A+Bt+C t^2/2; hence r_left-r_right=0",
+    "residuals": {
+      "r_left": "-2 y_1 + 3 y_2 - y_3",
+      "r_right": "-y_2 + 3 y_3 - 2 y_4"
+    }
+  },
+  "issue": 263,
+  "schema": "matching-one/linearized-potts-crossing-toy/v1",
+  "spin4_adversary": {
+    "V_2_2_[2]": {
+      "dx_dQ": "-5*sqrt(3)/(16*pi)",
+      "x": "17/4"
+    },
+    "conclusion": "These fields are not a confluent pair. Their opposite projector residues cannot cancel between their distinct blocks; they must be kept as separate crossing columns.",
+    "dimension_gap_at_Q1": "-1",
+    "thermal_Q4": {
+      "dx_dQ": "-9*sqrt(3)/(16*pi)",
+      "x": "21/4"
+    },
+    "velocity_gap": "sqrt(3)/(4*pi)"
+  },
+  "status": "exact_two_channel_bookkeeping_and_frozen_jet_rank_score",
+  "two_channel_confluence": {
+    "Q_tangent_coefficients": {
+      "block": "b_+ + b_-",
+      "d2_delta_block": "R(v_+^2-v_-^2)/2",
+      "d_delta_block": "a_+v_+ + a_-v_- + R(w_+-w_-)/2"
+    },
+    "finite_Q1_coefficients": {
+      "block": "a_+ + a_-",
+      "d_delta_block": "R(v_+-v_-)"
+    },
+    "laurent_input": [
+      "A_+(e)=R/e+a_+ + b_+ e+O(e^2)",
+      "A_-(e)=-R/e+a_- + b_- e+O(e^2)",
+      "Delta_+(e)=Delta_*+v_+ e+w_+ e^2/2+O(e^3)",
+      "Delta_-(e)=Delta_*+v_- e+w_- e^2/2+O(e^3)"
+    ],
+    "regularity_gate": "If Delta_+(1)!=Delta_-(1), the uncancelled R[B(Delta_+)-B(Delta_-)]/e divergence forbids this simple opposite-residue confluence."
+  }
+}
