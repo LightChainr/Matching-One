@@ -38,9 +38,9 @@ child_N290:
   replica_counter_first: 7000000000
   replica_counter_last_exclusive: 7100000000
   command_template: >-
-    build/threshold_rank_integer_period_mc --first 13 -11 11 13
-    --second 17 -1 1 17 --first-rep 13 11 --second-rep 17 1
-    --id N145_to_N290_fullcurve --samples 100000000 --batches 100
+    build/threshold_rank_integer_period_mc --first-matrix 13 -11 11 13
+    --second-matrix 17 -1 1 17 --first-rep 13 11 --second-rep 17 1
+    --samples 100000000 --batches 100
     --seed 2026105004 --replica-offset 7000000000 --threads THREADS
     --git-commit FULL_SHA
     --output-prefix results/server-20260829/P50-n145-n290-fullcurve/raw/n290_100m
@@ -57,7 +57,7 @@ frozen_scoring:
   independent_source_target_covariance: true
 
 post_primary_reuse:
-  views:
+  analyses:
     - low_rank_matrix_semigroup_transfer
     - Krawtchouk_Hermite_thermal_jet
     - paired_rank_gap_neutral_window
