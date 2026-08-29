@@ -587,7 +587,7 @@ decision_experiments:
     compute_cost: none
     manifest: analysis/two_activation_h4_manifest.yaml
     entrypoint: scripts/analyze_two_activation_h4.py
-    outputs: [results/two-activation-h4/latest.json, results/two-activation-h4/latest.md]
+    outputs: [results/two-activation-h4/latest.json, results/two-activation-h4/latest.md, results/two-activation-h4/server-run.json]
     completed_output: K1_is_larger_at_all_ten_sizes_K2_reinforces_seven_and_has_unresolved_cancelling_point_estimates_at_three
     decision_output: which_geometry_or_sector_feature_controls_the_K2_sign_and_fraction
   - id: DX_RHO_C3_SECTOR

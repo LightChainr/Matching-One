@@ -234,6 +234,14 @@ class ResearchRegistryTests(unittest.TestCase):
             self.assertTrue((ROOT / relative).is_file(), relative)
         result = load_yaml(ROOT / row["outputs"][0])
         self.assertEqual(result["schema"], row["schema"])
+        assert_repo_relative(self, row["provenance"])
+        provenance = load_yaml(ROOT / row["provenance"])
+        self.assertEqual(provenance["schema"], "matching-one.two-activation-h4.server-run.v1")
+        self.assertEqual(provenance["source_commit"], row["source_commit"])
+        self.assertRegex(row["source_commit"], HEX40)
+        self.assertEqual(provenance["target"]["id"], "4a8d1d443419434889e49148ed0a7ba6")
+        self.assertTrue(provenance["outputs"]["json"]["byte_identical_remote_and_repository"])
+        self.assertTrue(provenance["outputs"]["markdown"]["byte_identical_remote_and_repository"])
 
     def test_machine_readable_frontier_has_no_permission_states(self) -> None:
         rendered = yaml.safe_dump(self.ledger, sort_keys=True).lower()
