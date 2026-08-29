@@ -1,0 +1,103 @@
+version: 1
+created: 2026-08-29
+status: runner_preflight_not_authorized
+issues: [215, 225, 275]
+production_authorized: false
+source_commits:
+  marked_birth_stream: 6899b119db5b16e9918db53abf5280d990eb6653
+  contact_closure: 8bef10bd306f22882ceb8b45ddf307a1ba75277b
+  multiradius_geometry: f8e02c9
+  global_line_failure: 36bf91a7f2b5d66d3636f7ee57eb6f9de3afe08a
+
+field_contract:
+  primary: paired_orientation_mean_local_D4_UV_shell
+  forbidden_primary: connected_A_top_response
+  q_products: exact_contact_controls_only
+  local_cutoff:
+    scheme: euclidean_disk
+    radii: [2, 4]
+    included: '0 < x^2+y^2 <= R^2'
+    boundary: '(R-1)^2 < x^2+y^2 <= R^2'
+    shell: '(local_D4_R4-local_D4_R2)/log(2)'
+    cancellation: R_independent_UV_or_contact_component
+  thermal_control: '(local_S4_R4-local_S4_R2)/log(2)'
+  source_parity:
+    D: '(active_D*h4_active-inactive_D*h4_inactive)/2'
+    S: '(active_S*h4_active+inactive_S*h4_inactive)/2'
+  exact_contact_controls:
+    - 'Cov(q,L_D)=L_S/2+(p-1/2-mean(q))*L_D-L_I02'
+    - 'Cov(q,L_S)=L_D/2+(p-1/2-mean(q))*L_S-L_I02'
+
+q2_design:
+  paired_orientation_contrast: first_minus_second_over_Delta_cos4
+  parent:
+    N: 65
+    first_rep: [8, 1]
+    second_rep: [7, 4]
+    first_matrix: [[8, -1], [1, 8]]
+    second_matrix: [[7, -4], [4, 7]]
+    Delta_cos4: '1152/845'
+  child:
+    N: 130
+    first_rep: [9, 7]
+    second_rep: [11, 3]
+    first_matrix: [[9, -7], [7, 9]]
+    second_matrix: [[11, -3], [3, 11]]
+    Delta_cos4: '-1152/845'
+  target:
+    P4_shell_child_over_parent: '-2^(-13/8)'
+    numerical: '-0.3242098886627524'
+    phase: reflection_real_D4_so_conjugation_is_identity_and_q2_phase_is_minus
+
+score_contract:
+  training: N65_two_raw_orientations
+  nuisance_columns:
+    - observed_thermal_S_shell
+    - cos4_times_one_common_H4_amplitude
+  heldout: N130_two_raw_orientations
+  heldout_signal_column: '-2^(-13/8)*cos4_child'
+  residual_dof: 2
+  covariance:
+    within_size: full_delete_one_across_orientation_radius_S_D_qS_qD
+    sufficient_statistics: full_40_real_covariance_including_direct_birth_contact
+    across_size: independent_seed_and_counter_domains_block_diagonal
+  decision_alpha: 0.01
+  gls_rcond: 1.0e-12
+
+phase:
+  id: P275_Q2_LOCAL_D4_UV_PHASE1
+  production_authorized: false
+  runner_commit: TO_BE_FROZEN_AFTER_PREFLIGHT
+  binary_sha256_arm64: TO_BE_FROZEN_AFTER_PREFLIGHT
+  samples_per_size: 1000000
+  batches: 100
+  sizes:
+    N65:
+      id: N65_q2_parent
+      N: 65
+      first_rep: [8, 1]
+      second_rep: [7, 4]
+      first_matrix: [[8, -1], [1, 8]]
+      second_matrix: [[7, -4], [4, 7]]
+      seed: 27520260829
+      replica_counter: [16000000000, 16001000000]
+    N130:
+      id: N130_q2_child
+      N: 130
+      first_rep: [9, 7]
+      second_rep: [11, 3]
+      first_matrix: [[9, -7], [7, 9]]
+      second_matrix: [[11, -3], [3, 11]]
+      seed: 27520260830
+      replica_counter: [16010000000, 16011000000]
+
+production_command_template: >-
+  threshold_rank_integer_period_mc --marked-births --n N --samples 1000000
+  --batches 100 --seed SIZE_SEED --replica-offset SIZE_COUNTER --threads 8
+  --git-commit RUNNER_COMMIT --binary-sha256 BINARY_SHA --output-prefix PREFIX
+
+claim_boundary:
+  - q_contact_algebra_is_an_exact_control_not_a_field_matrix_element
+  - the_two_radius_shell_only_annihilates_an_R_independent_contact_component
+  - a_surviving_heldout_q2_score_nominates_but_does_not_identify_Q4_epsilon
+  - no_H8_or_H12_rescoring

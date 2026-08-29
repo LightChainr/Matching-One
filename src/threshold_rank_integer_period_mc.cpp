@@ -327,6 +327,141 @@ LocalMark local_landing_mark(const Geometry& geometry,
             static_cast<int>(axis || diagonal), static_cast<int>(axis) - static_cast<int>(diagonal)};
 }
 
+// The legacy local mark above is the exact R=1 ring frozen in 6899b11.  The
+// field-identity follow-up keeps it byte-compatible and adds the Euclidean-disk
+// landing used by PR #247.  R=2 and R=4 are nested, C4/reflection symmetric,
+// and injective on every N=65/N=130 q2 quotient.
+int landing_sector(Int x, Int y) {
+    constexpr long double pi = 3.141592653589793238462643383279502884L;
+    int sector = static_cast<int>(std::floor(
+        (std::atan2(static_cast<long double>(y), static_cast<long double>(x)) +
+         pi / 8.0L) / (pi / 4.0L)));
+    sector %= 8;
+    return sector < 0 ? sector + 8 : sector;
+}
+
+struct LandingPoint {
+    Vector offset;
+    int boundary_mask = 0;
+    bool primal_root_neighbour = false;
+    bool matching_root_neighbour = false;
+};
+
+class EuclideanLanding {
+  public:
+    EuclideanLanding(const Geometry& geometry, int radius) : radius_(radius) {
+        if (radius <= 0) throw std::invalid_argument("local radius must be positive");
+        std::vector<int> seen(geometry.n, 0);
+        for (int y = -radius; y <= radius; ++y) {
+            for (int x = -radius; x <= radius; ++x) {
+                if (x == 0 && y == 0) continue;
+                const int norm2 = x * x + y * y;
+                if (norm2 > radius * radius) continue;
+                const int vertex = geometry.quotient.label({x, y});
+                if (vertex == geometry.quotient.label({0, 0}) || seen[vertex]) {
+                    valid_ = false;
+                }
+                seen[vertex] = 1;
+                const bool boundary = norm2 > (radius - 1) * (radius - 1);
+                const Int dx = safe_abs(x, "landing dx");
+                const Int dy = safe_abs(y, "landing dy");
+                points_.push_back({
+                    {x, y}, boundary ? 1 << landing_sector(x, y) : 0,
+                    dx + dy == 1,
+                    dx + dy == 1 || (dx == 1 && dy == 1),
+                });
+            }
+        }
+        primal_adjacency_.resize(points_.size());
+        matching_adjacency_.resize(points_.size());
+        for (int first = 0; first < static_cast<int>(points_.size()); ++first) {
+            for (int second = first + 1; second < static_cast<int>(points_.size()); ++second) {
+                const Vector left = points_[first].offset;
+                const Vector right = points_[second].offset;
+                const Int dx = safe_abs(left.x - right.x, "landing dx");
+                const Int dy = safe_abs(left.y - right.y, "landing dy");
+                if (dx + dy == 1) {
+                    primal_adjacency_[first].push_back(second);
+                    primal_adjacency_[second].push_back(first);
+                    matching_adjacency_[first].push_back(second);
+                    matching_adjacency_[second].push_back(first);
+                } else if (dx == 1 && dy == 1) {
+                    matching_adjacency_[first].push_back(second);
+                    matching_adjacency_[second].push_back(first);
+                }
+            }
+        }
+    }
+
+    bool valid() const { return valid_; }
+    int radius() const { return radius_; }
+    const std::vector<LandingPoint>& points() const { return points_; }
+
+    LocalMark mark(const Geometry& geometry, const std::vector<std::uint8_t>& active,
+                   int root, bool open_matching) const {
+        if (!valid_) return {};
+        const auto opened = component_masks(
+            geometry, active, root, true, open_matching);
+        const auto closed = component_masks(
+            geometry, active, root, false, !open_matching);
+        const bool axis =
+            (distinct_pair(opened, 0, 4) && distinct_pair(closed, 2, 6)) ||
+            (distinct_pair(opened, 2, 6) && distinct_pair(closed, 0, 4));
+        const bool diagonal =
+            (distinct_pair(opened, 1, 5) && distinct_pair(closed, 3, 7)) ||
+            (distinct_pair(opened, 3, 7) && distinct_pair(closed, 1, 5));
+        return {true, static_cast<int>(axis), static_cast<int>(diagonal),
+                static_cast<int>(axis || diagonal),
+                static_cast<int>(axis) - static_cast<int>(diagonal)};
+    }
+
+  private:
+    std::vector<int> component_masks(const Geometry& geometry,
+                                     const std::vector<std::uint8_t>& active,
+                                     int root, bool enabled, bool matching) const {
+        const auto& adjacency = matching ? matching_adjacency_ : primal_adjacency_;
+        const Vector origin = geometry.quotient.representative(root);
+        std::vector<int> vertices(points_.size());
+        std::vector<std::uint8_t> unseen(points_.size(), 0);
+        for (int index = 0; index < static_cast<int>(points_.size()); ++index) {
+            const Vector offset = points_[index].offset;
+            vertices[index] = geometry.quotient.label(
+                {origin.x + offset.x, origin.y + offset.y});
+            unseen[index] = static_cast<bool>(active[vertices[index]]) == enabled;
+        }
+        std::vector<int> masks;
+        std::vector<int> stack;
+        for (int start = 0; start < static_cast<int>(points_.size()); ++start) {
+            if (!unseen[start]) continue;
+            unseen[start] = 0;
+            stack.assign(1, start);
+            bool touches_root = false;
+            int mask = 0;
+            while (!stack.empty()) {
+                const int point = stack.back();
+                stack.pop_back();
+                touches_root = touches_root || (matching
+                    ? points_[point].matching_root_neighbour
+                    : points_[point].primal_root_neighbour);
+                mask |= points_[point].boundary_mask;
+                for (const int neighbour : adjacency[point]) {
+                    if (!unseen[neighbour]) continue;
+                    unseen[neighbour] = 0;
+                    stack.push_back(neighbour);
+                }
+            }
+            if (touches_root && mask) masks.push_back(mask);
+        }
+        return masks;
+    }
+
+    int radius_;
+    bool valid_ = true;
+    std::vector<LandingPoint> points_;
+    std::vector<std::vector<int>> primal_adjacency_;
+    std::vector<std::vector<int>> matching_adjacency_;
+};
+
 struct PathInsertion {
     int k_before = 0;
     int q_before = -1;
@@ -336,6 +471,8 @@ struct PathInsertion {
     Vector line{0, 0};
     Int index = 0;
     LocalMark local;
+    LocalMark local_r2;
+    LocalMark local_r4;
 };
 
 struct BirthTrace {
@@ -539,7 +676,12 @@ Geometry make_geometry(Matrix periods) {
 class ThresholdEngine {
   public:
     explicit ThresholdEngine(const Geometry& geometry)
-        : geometry_(geometry), active_(geometry.n), union_find_(geometry.quotient) {}
+        : geometry_(geometry), active_(geometry.n), union_find_(geometry.quotient),
+          landing_r2_(geometry, 2), landing_r4_(geometry, 4) {}
+
+    bool multiradius_valid() const {
+        return landing_r2_.valid() && landing_r4_.valid();
+    }
 
     int first_cross(const std::vector<int>& permutation, bool matching, bool reverse) {
         std::fill(active_.begin(), active_.end(), 0);
@@ -584,6 +726,10 @@ class ThresholdEngine {
             const int vertex = permutation[reverse ? geometry_.n - 1 - offset : offset];
             const LocalMark local = local_landing_mark(
                 geometry_, active_, vertex, matching);
+            const LocalMark local_r2 = landing_r2_.mark(
+                geometry_, active_, vertex, matching);
+            const LocalMark local_r4 = landing_r4_.mark(
+                geometry_, active_, vertex, matching);
             const int before_rank = global_rank;
             active_[vertex] = 1;
             for (const int edge_index : incident[vertex]) {
@@ -607,6 +753,8 @@ class ThresholdEngine {
             insertion.gate01 = gate01;
             insertion.gate12 = gate12;
             insertion.local = local;
+            insertion.local_r2 = local_r2;
+            insertion.local_r4 = local_r4;
 
             if (gate01 && gate12) {
                 trace.k1 = trace.k2 = offset + 1;
@@ -661,6 +809,8 @@ class ThresholdEngine {
     const Geometry& geometry_;
     std::vector<std::uint8_t> active_;
     HomologyUnionFind union_find_;
+    EuclideanLanding landing_r2_;
+    EuclideanLanding landing_r4_;
 };
 
 std::uint64_t splitmix64(std::uint64_t value) {
@@ -817,6 +967,11 @@ struct PathMoments {
     long double sum_q_J_D_imaginary = 0;
     std::int64_t sum_local_S = 0;
     std::int64_t sum_local_D = 0;
+    std::array<std::int64_t, 2> sum_local_multiradius_S{};
+    std::array<std::int64_t, 2> sum_local_multiradius_D{};
+    std::array<std::int64_t, 2> sum_q_local_multiradius_S{};
+    std::array<std::int64_t, 2> sum_q_local_multiradius_D{};
+    std::array<std::int64_t, 2> sum_local_multiradius_I02{};
 
     void add(const PathInsertion& active, const PathInsertion& inactive,
              const QuotientCoordinates& quotient, int n) {
@@ -871,6 +1026,36 @@ struct PathMoments {
                                  inactive_d * inactive.local.h4) / 2;
             sum_local_S += static_cast<std::int64_t>(absent) * local_s;
             sum_local_D += static_cast<std::int64_t>(absent) * local_d;
+        }
+        const std::array<LocalMark, 2> active_marks = {
+            active.local_r2, active.local_r4};
+        const std::array<LocalMark, 2> inactive_marks = {
+            inactive.local_r2, inactive.local_r4};
+        for (int radius_index = 0; radius_index < 2; ++radius_index) {
+            const LocalMark& active_mark = active_marks[radius_index];
+            const LocalMark& inactive_mark = inactive_marks[radius_index];
+            if (active_mark.valid != inactive_mark.valid ||
+                (active_mark.valid && !same_local(active_mark, inactive_mark))) {
+                throw std::logic_error(
+                    "multiradius local mark did not complement-pair");
+            }
+            if (!active_mark.valid) continue;
+            const int local_s = (active_s * active_mark.h4 +
+                                 inactive_s * inactive_mark.h4) / 2;
+            const int local_d = (active_d * active_mark.h4 -
+                                 inactive_d * inactive_mark.h4) / 2;
+            const std::int64_t weighted_s =
+                static_cast<std::int64_t>(absent) * local_s;
+            const std::int64_t weighted_d =
+                static_cast<std::int64_t>(absent) * local_d;
+            sum_local_multiradius_S[radius_index] += weighted_s;
+            sum_local_multiradius_D[radius_index] += weighted_d;
+            sum_q_local_multiradius_S[radius_index] += active.q_before * weighted_s;
+            sum_q_local_multiradius_D[radius_index] += active.q_before * weighted_d;
+            if (active.gate01 && active.gate12) {
+                sum_local_multiradius_I02[radius_index] +=
+                    static_cast<std::int64_t>(absent) * active_mark.h4;
+            }
         }
     }
 };
@@ -1072,8 +1257,48 @@ void self_test() {
     if (direct_births == 0) {
         throw std::runtime_error("N=4 direct-birth control found no simultaneous births");
     }
+    // Exact local complement oracle for the new Euclidean R=2 landing.  The
+    // disk has twelve sites on the L=5 torus, so every 2^12 local state is
+    // exhausted.  Primal-open in a state must equal matching-open in its
+    // complement, including the axis-minus-diagonal character.
+    const Geometry axis_l5 = make_geometry({5, 0, 0, 5});
+    const EuclideanLanding exact_r2(axis_l5, 2);
+    if (!exact_r2.valid() || exact_r2.points().size() != 12) {
+        throw std::runtime_error("R=2 exact landing geometry is not the frozen disk");
+    }
+    std::uint64_t nonzero_local_states = 0;
+    for (std::uint64_t mask = 0; mask < (1ULL << exact_r2.points().size()); ++mask) {
+        std::vector<std::uint8_t> active(axis_l5.n, 0);
+        for (int index = 0; index < static_cast<int>(exact_r2.points().size()); ++index) {
+            const Vector offset = exact_r2.points()[index].offset;
+            active[axis_l5.quotient.label(offset)] = (mask >> index) & 1ULL;
+        }
+        std::vector<std::uint8_t> complement(axis_l5.n, 0);
+        for (int vertex = 0; vertex < axis_l5.n; ++vertex) {
+            complement[vertex] = !active[vertex];
+        }
+        const LocalMark primal_local = exact_r2.mark(axis_l5, active, 0, false);
+        const LocalMark matching_local = exact_r2.mark(axis_l5, complement, 0, true);
+        if (!same_local(primal_local, matching_local)) {
+            throw std::runtime_error("R=2 exhaustive local complement oracle failed");
+        }
+        nonzero_local_states += static_cast<std::uint64_t>(primal_local.h4 != 0);
+    }
+    if (nonzero_local_states == 0) {
+        throw std::runtime_error("R=2 exact local oracle found no H4 state");
+    }
+    for (const Matrix matrix : std::array<Matrix, 4>{{
+             {8, -1, 1, 8}, {7, -4, 4, 7},
+             {9, -7, 7, 9}, {11, -3, 3, 11}}}) {
+        const Geometry geometry = make_geometry(matrix);
+        if (!EuclideanLanding(geometry, 2).valid() ||
+            !EuclideanLanding(geometry, 4).valid()) {
+            throw std::runtime_error("frozen q2 R=2/R=4 disk is not injective");
+        }
+    }
     std::cout << "self-test passed: arbitrary integer periods, exact HNF quotient/winding, "
                  "basis invariance, saturation gcd, lifted chi4, direct births, "
+                 "R2 exhaustive local complement, q2 R2/R4 injectivity, "
                  "Smith(2,130)/(2,170), N=5 all permutations\n";
 }
 
@@ -1085,6 +1310,7 @@ struct Options {
     int threads = 0;
     int only_n = 0;
     std::string git_commit = "unknown";
+    std::string binary_sha256 = "unknown";
     std::filesystem::path output_prefix;
     bool self_test = false;
     bool marked_births = false;
@@ -1113,6 +1339,7 @@ struct Options {
         << "  --first-rep A B      optional Gaussian lineage label in CSV\n"
         << "  --second-rep A B     optional Gaussian lineage label in CSV\n"
         << "  --git-commit SHA     provenance string\n"
+        << "  --binary-sha256 SHA  compiled runner hash\n"
         << "  --output-prefix PATH writes .hist.csv, .moments.csv, .metadata.json\n"
         << "  --marked-births      also writes sparse birth and microcanonical path streams\n"
         << "  --self-test          exact tiny and Smith regressions, then exit\n";
@@ -1164,6 +1391,7 @@ Options parse_options(int argc, char** argv) {
         else if (arg == "--threads") options.threads = parse_number<int>(need(i, arg), arg);
         else if (arg == "--n") options.only_n = parse_number<int>(need(i, arg), arg);
         else if (arg == "--git-commit") options.git_commit = need(i, arg);
+        else if (arg == "--binary-sha256") options.binary_sha256 = need(i, arg);
         else if (arg == "--output-prefix") options.output_prefix = need(i, arg);
         else if (arg == "--first-matrix") { options.first_matrix = parse_matrix(i, arg); first_matrix_set = true; }
         else if (arg == "--second-matrix") { options.second_matrix = parse_matrix(i, arg); second_matrix_set = true; }
@@ -1265,6 +1493,14 @@ void run_design(const PairDesign& design, const Options& options,
     const Geometry second_geometry = make_geometry(design.second);
     if (first_geometry.n != design.n || second_geometry.n != design.n) {
         throw std::logic_error("design N does not match period determinant");
+    }
+    if (options.marked_births) {
+        const ThresholdEngine first_probe(first_geometry);
+        const ThresholdEngine second_probe(second_geometry);
+        if (!first_probe.multiradius_valid() || !second_probe.multiradius_valid()) {
+            throw std::invalid_argument(
+                "Euclidean R=2/R=4 landing disks are not injective for this design");
+        }
     }
     const std::uint64_t per_batch = options.samples / options.batches;
     std::vector<PairBatch> output;
@@ -1378,7 +1614,17 @@ void run_design(const PairDesign& design, const Options& options,
                     << row.sum_J_S_imaginary << ',' << row.sum_J_D_real << ','
                     << row.sum_J_D_imaginary << ',' << row.sum_q_J_D_real << ','
                     << row.sum_q_J_D_imaginary << ',' << row.sum_local_S << ','
-                    << row.sum_local_D << '\n';
+                    << row.sum_local_D << ','
+                    << row.sum_local_multiradius_S[0] << ','
+                    << row.sum_local_multiradius_D[0] << ','
+                    << row.sum_q_local_multiradius_S[0] << ','
+                    << row.sum_q_local_multiradius_D[0] << ','
+                    << row.sum_local_multiradius_I02[0] << ','
+                    << row.sum_local_multiradius_S[1] << ','
+                    << row.sum_local_multiradius_D[1] << ','
+                    << row.sum_q_local_multiradius_S[1] << ','
+                    << row.sum_q_local_multiradius_D[1] << ','
+                    << row.sum_local_multiradius_I02[1] << '\n';
             }
             const ComplementAudit& audit = marked.complement;
             *complement_audit << design.n << ',' << a << ',' << b << ',' << orientation
@@ -1440,7 +1686,9 @@ int run(int argc, char** argv) {
                "sum_inactive_gate01,sum_inactive_gate12,sum_active_S,sum_active_D,"
                "sum_inactive_S,sum_inactive_D,"
                "sum_site_S,sum_site_D,sum_J_S_re,sum_J_S_im,sum_J_D_re,sum_J_D_im,"
-               "sum_q_J_D_re,sum_q_J_D_im,sum_local_S,sum_local_D\n";
+               "sum_q_J_D_re,sum_q_J_D_im,sum_local_S,sum_local_D,"
+               "sum_local_R2_S,sum_local_R2_D,sum_q_local_R2_S,sum_q_local_R2_D,sum_local_R2_I02,"
+               "sum_local_R4_S,sum_local_R4_D,sum_q_local_R4_S,sum_q_local_R4_D,sum_local_R4_I02\n";
         complement_audit
             << "n,a,b,orientation,batch,samples,endpoint_failures,site_failures,"
                "line_failures,local_mark_failures,index_mismatches\n";
@@ -1469,9 +1717,11 @@ int run(int argc, char** argv) {
     std::ofstream metadata(metadata_path);
     if (!metadata) throw std::runtime_error("cannot open metadata output");
     metadata << "{\n"
+             << "  \"schema\": \"matching-one/threshold-rank-marked-multiradius/v2\",\n"
              << "  \"engine\": \"general integer-period threshold-rank Newman-Ziff\",\n"
              << "  \"generated_utc\": \"" << utc_now() << "\",\n"
              << "  \"git_commit\": \"" << json_escape(options.git_commit) << "\",\n"
+             << "  \"binary_sha256\": \"" << json_escape(options.binary_sha256) << "\",\n"
              << "  \"command\": \"" << json_escape(command.str()) << "\",\n"
              << "  \"compiler\": \"" << json_escape(__VERSION__) << "\",\n"
              << "  \"openmp\": "
@@ -1501,6 +1751,8 @@ int run(int argc, char** argv) {
              << "  \"saturation_index\": \"gcd of raw winding coefficients on the primitive rational line before primitive reduction\",\n"
              << "  \"path_horvitz\": \"at pre-insertion k multiply the next-site gate by N-k; canonical Russo scorer later multiplies by N/(N-k) under Bin(N-1,k)\",\n"
              << "  \"full_source\": \"sum_site_S=(active_S+inactive_S)/2 and sum_site_D=(active_D-inactive_D)/2 on the paired primal/matching reverse insertion; raw sides are retained\",\n"
+             << "  \"local_multiradius_schema\": \"Euclidean disks R=2,4; shell (R-1)^2 < x^2+y^2 <= R^2; root-touching landing components; per-k S,D,qS,qD,I02 Horvitz sums\",\n"
+             << "  \"local_multiradius_primary\": \"mean D4 shell; q-products are exact contact controls only\",\n"
              << "  \"sparse_joint_histogram\": " << (options.marked_births ? "true" : "false") << ",\n"
              << "  \"per_batch_joint_moments\": true,\n"
              << "  \"elapsed_seconds\": " << std::setprecision(17) << elapsed << ",\n"
