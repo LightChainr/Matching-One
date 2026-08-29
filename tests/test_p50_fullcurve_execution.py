@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from score_p50_fullcurve_n290 import (  # noqa: E402
+    LINEAGE_SIGN,
     generalized_covariance_score,
     independent_residual_covariance,
     pseudovalue_vectors,
@@ -18,6 +19,9 @@ from score_p50_fullcurve_n290 import (  # noqa: E402
 
 
 class P50FullcurveExecutionTests(unittest.TestCase):
+    def test_both_sizes_preserve_frozen_genealogy_order(self) -> None:
+        self.assertEqual(LINEAGE_SIGN, {145: +1.0, 290: +1.0})
+
     def test_execution_plan_is_balanced_and_independent(self) -> None:
         plan = yaml.safe_load(
             (ROOT / "experiments/p50_n145_n290_fullcurve_20260829.yaml").read_text(
