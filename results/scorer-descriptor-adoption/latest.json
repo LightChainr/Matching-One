@@ -3,12 +3,13 @@
   "corpus_glob": "scripts/*score*.py",
   "counts": {
     "covered_frozen_kernel": 3,
+    "descriptor_not_applicable_generic_utility": 1,
     "direct_typed_entrypoint": 4,
-    "outside_registered_typed_path": 28,
+    "outside_registered_typed_path": 27,
     "total": 35
   },
   "rows": [
-    {"git_blob_sha":"ee2441f12e4b2532a3882e942cfc4e68de8ede57","path":"scripts/kappa3_half_score.py","status":"outside_registered_typed_path"},
+    {"git_blob_sha":"ee2441f12e4b2532a3882e942cfc4e68de8ede57","path":"scripts/kappa3_half_score.py","status":"descriptor_not_applicable_generic_utility"},
     {"git_blob_sha":"a92e575de3a33621d4196ca45c22abdf83bd4111","path":"scripts/score_angular_root_amplitude.py","status":"outside_registered_typed_path"},
     {"git_blob_sha":"152b4d62d1c2bbf3f7eaabc1f3214498f2d82e95","path":"scripts/score_axis_pair_annihilator_stable.py","status":"outside_registered_typed_path"},
     {"git_blob_sha":"dcb0093cc1bd9b7379d24d92d7be094fea0e62cb","path":"scripts/score_axis_pair_annihilator.py","status":"outside_registered_typed_path"},
@@ -45,6 +46,9 @@
     {"git_blob_sha":"0e8157bad50fb265efb3a0ca9cde1c795f34d995","path":"scripts/threshold_score_modes.py","status":"outside_registered_typed_path"}
   ],
   "schema": "scorer descriptor adoption inventory v1",
+  "descriptor_not_applicable_generic_utilities": {
+    "scripts/kappa3_half_score.py": "generic Bernoulli score-polynomial and aggregation helper; intentionally accepts an opaque caller-supplied observable D(C) and defines no topology observable"
+  },
   "typed_wrapper_kernels": {
     "scripts/score_intrinsic_functional_cocycle_typed.py": "scripts/score_intrinsic_functional_cocycle.py",
     "scripts/score_norm5_harmonic_primary_typed.py": "scripts/score_norm5_harmonic_primary.py",

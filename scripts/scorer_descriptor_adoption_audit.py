@@ -30,20 +30,37 @@ def audit(root: Path, manifest: Mapping[str, object]) -> dict:
     direct = {path for path in paths if imports_descriptor_map(root / path)}
     wrappers = dict(manifest["typed_wrapper_kernels"])
     standalone = set(manifest["direct_typed_standalone"])
+    not_applicable = dict(
+        manifest.get("descriptor_not_applicable_generic_utilities", {})
+    )
 
     if set(wrappers) | standalone != direct:
         raise ValueError("manifest direct-typed paths do not equal AST-detected paths")
     missing_kernels = sorted(set(wrappers.values()) - set(paths))
     if missing_kernels:
         raise ValueError("typed wrapper kernels missing from corpus: " + ", ".join(missing_kernels))
+    missing_utilities = sorted(set(not_applicable) - set(paths))
+    if missing_utilities:
+        raise ValueError(
+            "descriptor-not-applicable utilities missing from corpus: "
+            + ", ".join(missing_utilities)
+        )
 
     covered_kernels = set(wrappers.values())
+    overlap = sorted((direct | covered_kernels) & set(not_applicable))
+    if overlap:
+        raise ValueError(
+            "descriptor-not-applicable paths overlap typed paths: "
+            + ", ".join(overlap)
+        )
     rows = []
     for path in paths:
         if path in direct:
             status = "direct_typed_entrypoint"
         elif path in covered_kernels:
             status = "covered_frozen_kernel"
+        elif path in not_applicable:
+            status = "descriptor_not_applicable_generic_utility"
         else:
             status = "outside_registered_typed_path"
         rows.append(
@@ -59,6 +76,7 @@ def audit(root: Path, manifest: Mapping[str, object]) -> dict:
         for status in (
             "direct_typed_entrypoint",
             "covered_frozen_kernel",
+            "descriptor_not_applicable_generic_utility",
             "outside_registered_typed_path",
         )
     }
@@ -67,6 +85,7 @@ def audit(root: Path, manifest: Mapping[str, object]) -> dict:
         "corpus_glob": manifest["corpus_glob"],
         "counts": {"total": len(rows), **counts},
         "typed_wrapper_kernels": wrappers,
+        "descriptor_not_applicable_generic_utilities": not_applicable,
         "rows": rows,
         "boundary": manifest["boundary"],
     }
