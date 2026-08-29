@@ -181,6 +181,7 @@ class ThresholdRankIntegerPeriodMCTests(unittest.TestCase):
         self.assertIn("primitive(P*ell)", metadata["chi4_frame"])
         self.assertIn("raw winding coefficients", metadata["saturation_index"])
         self.assertIn("C_black_NN-C_white_matching-q", metadata["external_observer"])
+        self.assertIn("Chebyshev-radius-2", metadata["external_contact_split"])
         self.assertIn("q*J_D4 retained only as contact control", metadata["external_products"])
 
         with Path(str(prefix) + ".path.csv").open(newline="", encoding="utf-8") as handle:
@@ -189,7 +190,9 @@ class ThresholdRankIntegerPeriodMCTests(unittest.TestCase):
         required_external = {
             "sum_O_ext", "sum_O_ext2", "sum_O_ext_J_S_re", "sum_O_ext_J_S_im",
             "sum_O_ext_J_D_re", "sum_O_ext_J_D_im", "sum_J_D_conj_J_S_re",
-            "sum_J_D_conj_J_S_im", "sum_abs_J_S2",
+            "sum_J_D_conj_J_S_im", "sum_abs_J_S2", "sum_O_near",
+            "sum_O_near2", "sum_O_ext_O_near", "sum_O_near_J_S_re",
+            "sum_O_near_J_S_im", "sum_O_near_J_D_re", "sum_O_near_J_D_im",
         }
         self.assertTrue(required_external.issubset(rows[0]))
         for row in rows:
@@ -200,6 +203,7 @@ class ThresholdRankIntegerPeriodMCTests(unittest.TestCase):
             self.assertEqual(2 * int(row["sum_site_S"]), active_s + inactive_s)
             self.assertEqual(2 * int(row["sum_site_D"]), active_d - inactive_d)
             self.assertGreaterEqual(int(row["sum_O_ext2"]), 0)
+            self.assertGreaterEqual(int(row["sum_O_near2"]), 0)
             self.assertAlmostEqual(float(row["sum_J_D_conj_J_S_im"]), 0.0, places=12)
 
         with Path(str(prefix) + ".marked_births.csv").open(
@@ -242,6 +246,8 @@ class ThresholdRankIntegerPeriodMCTests(unittest.TestCase):
         for name in (
             "P4_connected_O_ext_J_D_re",
             "P4_connected_O_ext_J_S_re",
+            "P4_connected_O_near_J_D_re",
+            "P4_connected_O_far_J_D_re",
             "P4_Gram_J_D_conj_J_S_re",
             "P4_Gram_abs_J_S2",
         ):

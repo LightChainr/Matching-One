@@ -335,6 +335,7 @@ struct PathInsertion {
     int gate12 = 0;
     int components_before = 0;
     int components_after = 0;
+    int euler_near = 0;
     Vector line{0, 0};
     Int index = 0;
     LocalMark local;
@@ -563,6 +564,34 @@ int euler_cell_residue(const Geometry& geometry,
     return vertices - edges + faces;
 }
 
+int euler_local_residue_r2(const Geometry& geometry,
+                           const std::vector<std::uint8_t>& active, int root) {
+    if (static_cast<int>(active.size()) != geometry.n) {
+        throw std::invalid_argument("local Euler mask length differs from N");
+    }
+    const Vector origin = geometry.quotient.representative(root);
+    int residue = 0;
+    // Attribute V-E+F0 to the southwest cell anchor.  The Chebyshev-R2
+    // window is translation invariant and D4 symmetric; repeated anchors on
+    // tiny quotients deliberately retain multiplicity.
+    for (int dy = -2; dy <= 2; ++dy) {
+        for (int dx = -2; dx <= 2; ++dx) {
+            const Vector point{origin.x + dx, origin.y + dy};
+            const int anchor = geometry.quotient.label(point);
+            const int east = geometry.quotient.label({point.x + 1, point.y});
+            const int north = geometry.quotient.label({point.x, point.y + 1});
+            const int northeast = geometry.quotient.label({point.x + 1, point.y + 1});
+            const int occupied = active[anchor];
+            const int east_edge = occupied && active[east];
+            const int north_edge = occupied && active[north];
+            const int empty_face = !occupied && !active[east] &&
+                                   !active[north] && !active[northeast];
+            residue += occupied - east_edge - north_edge + empty_face;
+        }
+    }
+    return residue;
+}
+
 class ThresholdEngine {
   public:
     explicit ThresholdEngine(const Geometry& geometry)
@@ -618,6 +647,7 @@ class ThresholdEngine {
                 geometry_, active_, vertex, matching);
             const int before_rank = global_rank;
             const int components_before = graph_components_;
+            const int euler_near = euler_local_residue_r2(geometry_, active_, vertex);
             active_[vertex] = 1;
             ++graph_components_;
             for (const int edge_index : incident[vertex]) {
@@ -644,6 +674,7 @@ class ThresholdEngine {
             insertion.gate12 = gate12;
             insertion.components_before = components_before;
             insertion.components_after = graph_components_;
+            insertion.euler_near = euler_near;
             insertion.local = local;
 
             if (gate01 && gate12) {
@@ -856,10 +887,17 @@ struct PathMoments {
     long double sum_q_J_D_imaginary = 0;
     std::int64_t sum_O_ext = 0;
     std::uint64_t sum_O_ext2 = 0;
+    std::int64_t sum_O_near = 0;
+    std::uint64_t sum_O_near2 = 0;
+    std::int64_t sum_O_ext_O_near = 0;
     long double sum_O_ext_J_S_real = 0;
     long double sum_O_ext_J_S_imaginary = 0;
     long double sum_O_ext_J_D_real = 0;
     long double sum_O_ext_J_D_imaginary = 0;
+    long double sum_O_near_J_S_real = 0;
+    long double sum_O_near_J_S_imaginary = 0;
+    long double sum_O_near_J_D_real = 0;
+    long double sum_O_near_J_D_imaginary = 0;
     long double sum_J_D_conj_J_S_real = 0;
     long double sum_J_D_conj_J_S_imaginary = 0;
     long double sum_abs_J_S2 = 0;
@@ -907,6 +945,7 @@ struct PathMoments {
         const std::int64_t o_ext =
             static_cast<std::int64_t>(active.components_before) -
             static_cast<std::int64_t>(inactive.components_after) - active.q_before;
+        const std::int64_t o_near = active.euler_near;
         const long double j_s_real = site_s * chi_real;
         const long double j_s_imaginary = site_s * chi_imaginary;
         const long double j_d_real = site_d * chi_real;
@@ -932,10 +971,17 @@ struct PathMoments {
         sum_q_J_D_imaginary += active.q_before * j_d_imaginary;
         sum_O_ext += o_ext;
         sum_O_ext2 += static_cast<std::uint64_t>(o_ext * o_ext);
+        sum_O_near += o_near;
+        sum_O_near2 += static_cast<std::uint64_t>(o_near * o_near);
+        sum_O_ext_O_near += o_ext * o_near;
         sum_O_ext_J_S_real += o_ext * j_s_real;
         sum_O_ext_J_S_imaginary += o_ext * j_s_imaginary;
         sum_O_ext_J_D_real += o_ext * j_d_real;
         sum_O_ext_J_D_imaginary += o_ext * j_d_imaginary;
+        sum_O_near_J_S_real += o_near * j_s_real;
+        sum_O_near_J_S_imaginary += o_near * j_s_imaginary;
+        sum_O_near_J_D_real += o_near * j_d_real;
+        sum_O_near_J_D_imaginary += o_near * j_d_imaginary;
         sum_J_D_conj_J_S_real +=
             j_d_real * j_s_real + j_d_imaginary * j_s_imaginary;
         sum_J_D_conj_J_S_imaginary +=
@@ -1151,8 +1197,10 @@ void self_test() {
             one.add(primal.path[k], matching.path[axis_l2.n - 1 - k],
                     axis_l2.quotient, axis_l2.n);
             if (one.sum_O_ext != euler_cell_residue(axis_l2, active) ||
+                one.sum_O_near != euler_local_residue_r2(
+                    axis_l2, active, axis_permutation[k]) ||
                 std::fabs(one.sum_J_D_conj_J_S_imaginary) > 1e-18L) {
-                throw std::runtime_error("external Euler/Gram path regression failed");
+                throw std::runtime_error("external/local Euler/Gram path regression failed");
             }
             active[axis_permutation[k]] = 1;
         }
@@ -1466,9 +1514,13 @@ void run_design(const PairDesign& design, const Options& options,
                     << row.sum_J_S_imaginary << ',' << row.sum_J_D_real << ','
                     << row.sum_J_D_imaginary << ',' << row.sum_q_J_D_real << ','
                     << row.sum_q_J_D_imaginary << ',' << row.sum_O_ext << ','
-                    << row.sum_O_ext2 << ',' << row.sum_O_ext_J_S_real << ','
+                    << row.sum_O_ext2 << ',' << row.sum_O_near << ','
+                    << row.sum_O_near2 << ',' << row.sum_O_ext_O_near << ','
+                    << row.sum_O_ext_J_S_real << ','
                     << row.sum_O_ext_J_S_imaginary << ',' << row.sum_O_ext_J_D_real << ','
-                    << row.sum_O_ext_J_D_imaginary << ','
+                    << row.sum_O_ext_J_D_imaginary << ',' << row.sum_O_near_J_S_real << ','
+                    << row.sum_O_near_J_S_imaginary << ',' << row.sum_O_near_J_D_real << ','
+                    << row.sum_O_near_J_D_imaginary << ','
                     << row.sum_J_D_conj_J_S_real << ','
                     << row.sum_J_D_conj_J_S_imaginary << ',' << row.sum_abs_J_S2 << ','
                     << row.sum_local_S << ',' << row.sum_local_D << '\n';
@@ -1534,8 +1586,11 @@ int run(int argc, char** argv) {
                "sum_inactive_S,sum_inactive_D,"
                "sum_site_S,sum_site_D,sum_J_S_re,sum_J_S_im,sum_J_D_re,sum_J_D_im,"
                "sum_q_J_D_re,sum_q_J_D_im,sum_O_ext,sum_O_ext2,"
+               "sum_O_near,sum_O_near2,sum_O_ext_O_near,"
                "sum_O_ext_J_S_re,sum_O_ext_J_S_im,sum_O_ext_J_D_re,"
-               "sum_O_ext_J_D_im,sum_J_D_conj_J_S_re,sum_J_D_conj_J_S_im,"
+               "sum_O_ext_J_D_im,sum_O_near_J_S_re,sum_O_near_J_S_im,"
+               "sum_O_near_J_D_re,sum_O_near_J_D_im,"
+               "sum_J_D_conj_J_S_re,sum_J_D_conj_J_S_im,"
                "sum_abs_J_S2,sum_local_S,sum_local_D\n";
         complement_audit
             << "n,a,b,orientation,batch,samples,endpoint_failures,site_failures,"
@@ -1598,7 +1653,8 @@ int run(int argc, char** argv) {
              << "  \"path_horvitz\": \"at pre-insertion k multiply the next-site gate by N-k; canonical Russo scorer later multiplies by N/(N-k) under Bin(N-1,k)\",\n"
              << "  \"full_source\": \"sum_site_S=(active_S+inactive_S)/2 and sum_site_D=(active_D-inactive_D)/2 on the paired primal/matching reverse insertion; raw sides are retained\",\n"
              << "  \"external_observer\": \"O_ext=C_black_NN-C_white_matching-q=V-E+F0; evaluated on the pre-insertion configuration and outside the q-only algebra\",\n"
-             << "  \"external_products\": \"O_ext,O_ext^2,O_ext*J_S4,O_ext*J_D4 plus J_D4*conj(J_S4) and |J_S4|^2 same-path Gram rows; q*J_D4 retained only as contact control\",\n"
+             << "  \"external_contact_split\": \"O_near is the Chebyshev-radius-2 D4-symmetric sum of southwest-anchored local V-E+F0 densities around the next insertion site; O_far=O_ext-O_near\",\n"
+             << "  \"external_products\": \"O_ext/O_near first and second moments, O_ext*O_near, both times J_S4/J_D4, plus J_D4*conj(J_S4) and |J_S4|^2 same-path Gram rows; q*J_D4 retained only as contact control\",\n"
              << "  \"sparse_joint_histogram\": " << (options.marked_births ? "true" : "false") << ",\n"
              << "  \"per_batch_joint_moments\": true,\n"
              << "  \"elapsed_seconds\": " << std::setprecision(17) << elapsed << ",\n"

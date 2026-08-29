@@ -1,7 +1,7 @@
 schema: matching-one/external-observer-rank-birth-manifest/v1
 issues: [215, 275, 276]
 target: PR267_Target1
-status: schema_and_tiny_exact_preflight_no_N325_N425_production
+status: local_contact_split_pilot_complete_production_preregistration_pending
 
 base:
   main: 83e98fc
@@ -43,6 +43,11 @@ path_schema:
     - O_ext_times_J_S4_complex
     - J_D4_times_conjugate_J_S4_complex
     - abs_J_S4_squared
+    - O_near_R2
+    - O_near_squared
+    - O_ext_times_O_near
+    - O_near_times_J_D4_complex
+    - O_near_times_J_S4_complex
   gram_semantics: same_next_site_Horvitz_score_second_moments_not_products_of_site_sums
   direct_0_to_2: {ell: null, D: 0, S: 2, J_D4: 0, J_S4: 0}
 
@@ -54,6 +59,32 @@ candidate_decision:
 planned_geometry_pairs:
   - {N: 325, first: [17, 6], second: [18, 1], production: forbidden}
   - {N: 425, first: [16, 13], second: [19, 8], production: forbidden}
+
+contact_split:
+  local_density: h_x = occupied_x - occupied_x*occupied_east - occupied_x*occupied_north + empty_unit_face_x
+  O_near: sum h_x over Chebyshev radius 2 anchors centered at the next insertion site
+  O_far: O_ext - O_near
+  symmetry: translation invariant D4 scalar window containing axis and diagonal anchors
+  primary_unchanged: connected complex P4 O_ext_times_J_D4
+  mechanism_gate: connected complex P4 O_far_times_J_D4 must remain nonzero
+  nuisance: O_near and its full same-batch cross-products
+
+local_pilot:
+  status: revealed_before_production_freeze
+  sizes: [65, 130]
+  samples_per_size: 100000
+  batches: 100
+  independent_seeds: [20260830065, 20260830130]
+  result: results/external-observer-contact-pilot/latest.json
+  structural_gates: {Euler_Horvitz: pass, complement: pass, Russo: pass, alias_83e98fc: pass}
+  observation:
+    external_D_transfer_amplitude: 1.6748116915288425
+    external_D_transfer_phase_radians: 0.5662132621877821
+    external_S_transfer_phase_radians: 0.5649870198330352
+    contact_phase_difference_radians: 0.0012262423547468005
+    far_D_transfer_amplitude: 2.1347921649000354
+    far_D_transfer_phase_radians: 0.6415291246882722
+  decision: authorize_preregistration_because_far_D_is_nonzero_at_both_sizes_and_local_D_does_not_account_for_total
 
 exact_preflight:
   geometries: [axis_L2, gaussian_index5, axis_index9]

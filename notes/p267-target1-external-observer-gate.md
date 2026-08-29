@@ -101,6 +101,52 @@ starts only after the external-observer scorer and geometry-pair contract are
 frozen. The tiny preflight uses the existing index-9 topology backend and
 checks all microcanonical path products coefficient by coefficient.
 
+## Local contact split and revealed pilot
+
+The first N65/N130 100k run found a very strong nonzero `O_ext J_D4`, but its
+complex transfer phase was indistinguishable from the `O_ext J_S4` control.
+That is exactly the pattern a root-local contact can mimic. Before authorizing
+production, the stream was therefore extended by one frozen nuisance and no
+new field family:
+
+```text
+h_x(A) = 1_A(x) - 1_A(x)1_A(x+e1) - 1_A(x)1_A(x+e2)
+         + 1_{A empty on the unit face anchored at x},
+O_near = sum_{max(|dx|,|dy|)<=2} h_{root+(dx,dy)},
+O_far  = O_ext - O_near.
+```
+
+The window is a translation-invariant D4 scalar containing both axis and
+diagonal anchors. The stream stores `O_near`, its square, `O_ext O_near`, and
+both complex source products, so `O_far` and all relevant covariance entries
+are reconstructed exactly without another pass.
+
+With independent seeds and 100 batches at each size, the revealed pilot gave:
+
+| channel | N65 | N130 | amplitude transfer | phase transfer |
+|---|---:|---:|---:|---:|
+| connected `O_ext J_D4` | `-6.720+1.937i` | `-11.238-3.300i` | 1.675 | 0.566 |
+| connected `O_near J_D4` | `-1.807-0.025i` | `-0.330-0.380i` | 0.278 | 0.842 |
+| connected `O_far J_D4` | `-4.913+1.962i` | `-10.908-2.920i` | 2.135 | 0.642 |
+| connected `O_ext J_S4` | `1.289-0.377i` | `1.612+0.464i` | 1.249 | 0.565 |
+
+All complement counters and exact Russo residuals were zero. `O_far J_D4`
+remains overwhelmingly nonzero at both sizes, while the near term shrinks and
+does not account for the total. Thus the Euler observer survives the contact
+gate. The pilot selects only the following minimal production model:
+
+1. primary: the two complex `O_ext J_D4` vectors;
+2. mechanism gate: the two complex `O_far J_D4` vectors are nonzero;
+3. nuisance: `O_near J_D4` with the within-size covariance block;
+4. frozen contact null: the N325-to-N425 transfer phase of external JD equals
+   that of external JS, with amplitudes left free;
+5. transfer amplitudes/phases are reported, but two sizes do not define an
+   asymptotic exponent.
+
+The frozen scorer is `scripts/score_external_observer_transfer.py`; it uses
+the full within-size delete-one covariance and treats the two production
+counter/seed groups as independent.
+
 ## Scientific card
 
 1. **Mechanism-space change:** Target 1 moves from q-contact response to a bulk Euler scalar times the rank-birth H4 source.
