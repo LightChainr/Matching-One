@@ -23,6 +23,15 @@ METRICS = (
     "P4_J_D_im",
     "P4_connected_q_J_D_re",
     "P4_connected_q_J_D_im",
+    "P4_O_ext",
+    "P4_var_O_ext",
+    "P4_connected_O_ext_J_S_re",
+    "P4_connected_O_ext_J_S_im",
+    "P4_connected_O_ext_J_D_re",
+    "P4_connected_O_ext_J_D_im",
+    "P4_Gram_J_D_conj_J_S_re",
+    "P4_Gram_J_D_conj_J_S_im",
+    "P4_Gram_abs_J_S2",
     "P4_gamma_D_re",
     "P4_gamma_D_im",
     "P4_local_S",
@@ -61,6 +70,15 @@ VALUE_COLUMNS = (
     "sum_J_D_im",
     "sum_q_J_D_re",
     "sum_q_J_D_im",
+    "sum_O_ext",
+    "sum_O_ext2",
+    "sum_O_ext_J_S_re",
+    "sum_O_ext_J_S_im",
+    "sum_O_ext_J_D_re",
+    "sum_O_ext_J_D_im",
+    "sum_J_D_conj_J_S_re",
+    "sum_J_D_conj_J_S_im",
+    "sum_abs_J_S2",
     "sum_local_S",
     "sum_local_D",
 )
@@ -83,7 +101,10 @@ def read_path(path: Path) -> dict[tuple[int, str, int], list[PathRow]]:
                 batch=int(raw["batch"]),
                 samples=int(raw["samples"]),
                 k=int(raw["k"]),
-                values={column: mp.mpf(raw[column]) for column in VALUE_COLUMNS},
+                # Older marked streams predate the external-observer gate.
+                # Reading them as zero keeps the contact-control scorer usable;
+                # production manifests must still require the new columns.
+                values={column: mp.mpf(raw.get(column, "0")) for column in VALUE_COLUMNS},
             )
             groups.setdefault((row.n, row.orientation, row.batch), []).append(row)
     for key, rows in groups.items():
@@ -213,6 +234,14 @@ def preinsertion_q(rows: Sequence[PathRow], p: mp.mpf) -> mp.mpf:
     )
 
 
+def preinsertion_column(rows: Sequence[PathRow], column: str, p: mp.mpf) -> mp.mpf:
+    weights = binomial_weights(len(rows) - 1, p)
+    return mp.fsum(
+        weights[k] * rows[k].values[column] / rows[k].samples
+        for k in range(len(rows))
+    )
+
+
 def orientation_observables(rows: Sequence[PathRow], p: mp.mpf) -> dict[str, mp.mpf]:
     values = {
         "A_top": matching_curve(rows, p),
@@ -226,6 +255,19 @@ def orientation_observables(rows: Sequence[PathRow], p: mp.mpf) -> dict[str, mp.
         "q_J_D_im": canonical_site_sum(rows, "sum_q_J_D_im", p),
         "local_S": canonical_site_sum(rows, "sum_local_S", p),
         "local_D": canonical_site_sum(rows, "sum_local_D", p),
+        "O_ext": preinsertion_column(rows, "sum_O_ext", p),
+        "O_ext2": preinsertion_column(rows, "sum_O_ext2", p),
+        "O_ext_J_S_re": canonical_site_sum(rows, "sum_O_ext_J_S_re", p),
+        "O_ext_J_S_im": canonical_site_sum(rows, "sum_O_ext_J_S_im", p),
+        "O_ext_J_D_re": canonical_site_sum(rows, "sum_O_ext_J_D_re", p),
+        "O_ext_J_D_im": canonical_site_sum(rows, "sum_O_ext_J_D_im", p),
+        "Gram_J_D_conj_J_S_re": preinsertion_column(
+            rows, "sum_J_D_conj_J_S_re", p
+        ),
+        "Gram_J_D_conj_J_S_im": preinsertion_column(
+            rows, "sum_J_D_conj_J_S_im", p
+        ),
+        "Gram_abs_J_S2": preinsertion_column(rows, "sum_abs_J_S2", p),
     }
     q_pre = preinsertion_q(rows, p)
     values["connected_q_J_D_re"] = (
@@ -236,6 +278,13 @@ def orientation_observables(rows: Sequence[PathRow], p: mp.mpf) -> dict[str, mp.
     )
     values["gamma_D_re"] = values["connected_q_J_D_re"] / values["B"]
     values["gamma_D_im"] = values["connected_q_J_D_im"] / values["B"]
+    values["var_O_ext"] = values["O_ext2"] - values["O_ext"] ** 2
+    for source in ("J_S", "J_D"):
+        for part in ("re", "im"):
+            values[f"connected_O_ext_{source}_{part}"] = (
+                values[f"O_ext_{source}_{part}"]
+                - values["O_ext"] * values[f"{source}_{part}"]
+            )
 
     n = len(rows)
     q_coefficients = mean_column(rows, "sum_q") + [mp.mpf(1)]
@@ -267,6 +316,29 @@ def projected(first: Sequence[PathRow], second: Sequence[PathRow]) -> tuple[mp.m
         ) / delta,
         "P4_connected_q_J_D_im": (
             left["connected_q_J_D_im"] - right["connected_q_J_D_im"]
+        ) / delta,
+        "P4_O_ext": (left["O_ext"] - right["O_ext"]) / delta,
+        "P4_var_O_ext": (left["var_O_ext"] - right["var_O_ext"]) / delta,
+        "P4_connected_O_ext_J_S_re": (
+            left["connected_O_ext_J_S_re"] - right["connected_O_ext_J_S_re"]
+        ) / delta,
+        "P4_connected_O_ext_J_S_im": (
+            left["connected_O_ext_J_S_im"] - right["connected_O_ext_J_S_im"]
+        ) / delta,
+        "P4_connected_O_ext_J_D_re": (
+            left["connected_O_ext_J_D_re"] - right["connected_O_ext_J_D_re"]
+        ) / delta,
+        "P4_connected_O_ext_J_D_im": (
+            left["connected_O_ext_J_D_im"] - right["connected_O_ext_J_D_im"]
+        ) / delta,
+        "P4_Gram_J_D_conj_J_S_re": (
+            left["Gram_J_D_conj_J_S_re"] - right["Gram_J_D_conj_J_S_re"]
+        ) / delta,
+        "P4_Gram_J_D_conj_J_S_im": (
+            left["Gram_J_D_conj_J_S_im"] - right["Gram_J_D_conj_J_S_im"]
+        ) / delta,
+        "P4_Gram_abs_J_S2": (
+            left["Gram_abs_J_S2"] - right["Gram_abs_J_S2"]
         ) / delta,
         "P4_gamma_D_re": (left["gamma_D_re"] - right["gamma_D_re"]) / delta,
         "P4_gamma_D_im": (left["gamma_D_im"] - right["gamma_D_im"]) / delta,
@@ -385,7 +457,7 @@ def build_report(prefix: Path) -> dict[str, Any]:
     audit = validate_audit(audit_file)
     metadata = json.loads(metadata_file.read_text(encoding="utf-8"))
     return {
-        "schema": "matching-one/marked-birth-path-score/v1",
+        "schema": "matching-one/marked-birth-path-score/v2",
         "N": n,
         "prefix": str(prefix),
         "git_commit": metadata.get("git_commit"),
@@ -421,11 +493,11 @@ def build_report(prefix: Path) -> dict[str, Any]:
             for side, values in orientations.items()
         },
         "scientific_card": [
-            "MECHANISM SPACE: separates unmarked S/D, lifted-line chi4 S/D, local landing S/D and connected q-J_D in one common-field path.",
-            "NOT PROVED: a nonzero finite pilot does not identify the Q4 epsilon continuum field or its asymptotic exponent.",
-            "OBSERVER-SECTOR-SOURCE-GEOMETRY: A_top | odd D and even S birth sources | lifted chi4 and local H4 | frozen Gaussian orientation pair.",
-            "DEPENDENCY GROUP: all marked channels share the same permutation and batch; use the supplied covariance as one evidence block.",
-            "UPWEIGHT OBSERVATION: stable q2 sign transfer of connected q-J_D and gamma_D with zero reverse-complement audits.",
+            "MECHANISM SPACE: adds the bulk Euler residue outside sigma(q), while retaining S/D, line/landing H4, and two source-Gram roots.",
+            "NOT PROVED: a nonzero finite external coupling does not identify Q4 epsilon or its asymptotic exponent.",
+            "OBSERVER-SECTOR-SOURCE-GEOMETRY: Euler residue | matching-odd scalar | typed complex J_D4/J_S4 | integer-period orientation pair.",
+            "DEPENDENCY GROUP: state, sources, external cross-products, and Gram entries share one permutation batch and one covariance block.",
+            "UPWEIGHT OBSERVATION: connected O_ext-J_D4 conditioned on the J_D/J_S Gram plane; q-J_D4 is a contact control only.",
         ],
     }
 
