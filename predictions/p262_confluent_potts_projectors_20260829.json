@@ -1,0 +1,153 @@
+{
+  "connectivity_gram": [
+    {
+      "bell_dimension": 2,
+      "determinant_factorization": {
+        "formula": "product_{k=1}^n (Q)_k^S(n,k)",
+        "stirling_multiplicities": {
+          "1": 1,
+          "2": 1
+        }
+      },
+      "integer_oracle_Q5": {
+        "direct_determinant": "100",
+        "factorized_determinant": "100"
+      },
+      "marked_points": 2,
+      "rank_at_Q1": 1
+    },
+    {
+      "bell_dimension": 15,
+      "determinant_factorization": {
+        "formula": "product_{k=1}^n (Q)_k^S(n,k)",
+        "stirling_multiplicities": {
+          "1": 1,
+          "2": 7,
+          "3": 6,
+          "4": 1
+        }
+      },
+      "integer_oracle_Q5": {
+        "direct_determinant": "35831808000000000000000",
+        "factorized_determinant": "35831808000000000000000"
+      },
+      "marked_points": 4,
+      "rank_at_Q1": 1
+    }
+  ],
+  "frozen_risk_predictions": [
+    "Any singlet/[2] confluent tensor residue in the unordered-pair carrier is proportional to J with exact residue ratio -1.",
+    "The [1] projector is coefficientwise regular at Q=1; its trace vanishes linearly, so a pole in a normalized [1] observable is not forced by projector algebra.",
+    "A claimed VJS logarithmic coefficient must factor into the exact tensor residue and an independently nonzero scaling-dimension slope difference."
+  ],
+  "issue": 262,
+  "logarithmic_gate": {
+    "conditional_log_coefficient": "2 R [x_[2]'(1)-x_singlet'(1)] multiplying log(r) r^(-2x*)",
+    "exact_statement": "projector poles alone do not imply an LCFT logarithm",
+    "required_extra_condition": "x_singlet(1)=x_[2](1) with nonzero derivative difference",
+    "tensor_residue": "R=2J in this normalization"
+  },
+  "schema_version": 1,
+  "scope": "exact low-leg algebra; no continuum overlap inferred",
+  "separation_of_derivatives": {
+    "explicit_bare_operator": "<P d_Q O_bare>",
+    "measure_score_issue_258": "Cov(P O_bare,T_Q)",
+    "projector_geometry_issue_262": "finite collision combination of (d_Q P)O_bare; individual d_QP has a double pole",
+    "virasoro_gate_issue_252": "the 4:-6:3 Ward row distinguishes thermal Q4 from a spin-4 primary and is not part of Q differentiation"
+  },
+  "unordered_pair_representation": {
+    "Q_to_1_laurent": {
+      "P_[1]_at_Q1": "-X+4J",
+      "regular_block_derivative_at_Q1": "d_Q(P_singlet+P_[2])=X",
+      "regular_confluent_block_at_Q1": "lim(P_singlet+P_[2])=I+X-4J",
+      "residue_(Q-1)P_[2]": "-2 J",
+      "residue_(Q-1)P_singlet": "2 J",
+      "trace_collision": "tr(P_singlet)+tr(P_[2])=(Q-1)(Q-2)/2"
+    },
+    "categorical_traces": {
+      "singlet": "1",
+      "standard_[1]": "Q-1",
+      "two_row_[2]": "Q(Q-3)/2"
+    },
+    "diagram_basis": [
+      "I_pair",
+      "X_shared_colour",
+      "J_all_ones"
+    ],
+    "generic_decomposition": "C[2-subsets]=[] + [1] + [2]",
+    "integer_checks": [
+      {
+        "Q": 4,
+        "edge_space_dimension": 6,
+        "orthogonal_idempotents": true,
+        "traces": {
+          "singlet": {
+            "denominator": 1,
+            "numerator": 1,
+            "text": "1"
+          },
+          "standard": {
+            "denominator": 1,
+            "numerator": 3,
+            "text": "3"
+          },
+          "two_row_2": {
+            "denominator": 1,
+            "numerator": 2,
+            "text": "2"
+          }
+        }
+      },
+      {
+        "Q": 5,
+        "edge_space_dimension": 10,
+        "orthogonal_idempotents": true,
+        "traces": {
+          "singlet": {
+            "denominator": 1,
+            "numerator": 1,
+            "text": "1"
+          },
+          "standard": {
+            "denominator": 1,
+            "numerator": 4,
+            "text": "4"
+          },
+          "two_row_2": {
+            "denominator": 1,
+            "numerator": 5,
+            "text": "5"
+          }
+        }
+      },
+      {
+        "Q": 6,
+        "edge_space_dimension": 15,
+        "orthogonal_idempotents": true,
+        "traces": {
+          "singlet": {
+            "denominator": 1,
+            "numerator": 1,
+            "text": "1"
+          },
+          "standard": {
+            "denominator": 1,
+            "numerator": 5,
+            "text": "5"
+          },
+          "two_row_2": {
+            "denominator": 1,
+            "numerator": 9,
+            "text": "9"
+          }
+        }
+      }
+    ],
+    "meaning": "two distinct FK cluster colours, the minimal four-leg/two-cluster carrier",
+    "projectors": {
+      "singlet": "2 J/[Q(Q-1)]",
+      "standard_[1]": "(X-4J/Q)/(Q-2)",
+      "two_row_[2]": "I-P_singlet-P_[1]"
+    }
+  }
+}
