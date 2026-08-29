@@ -1,0 +1,148 @@
+{
+  "schema": "matching-one.p200-n650-mixed-join-score.v1",
+  "issue": 200,
+  "status": "frozen_interface_score",
+  "input": {
+    "batches": "results/local-20260829/P200-n650-mixed-join-smoke/n650_20k.batches.csv",
+    "metadata": "results/local-20260829/P200-n650-mixed-join-smoke/n650_20k.metadata.json",
+    "prediction": "predictions/p200_n650_mixed_join_phaseB_20260829.json",
+    "prediction_sha256": "8c043677605f9c8d0a00ee11fcc93539da9ea87bbacb93553e76ea26ec27ba5f",
+    "run_git_commit": "308097b",
+    "samples": 20000,
+    "batch_count": 100
+  },
+  "primary": {
+    "state_order": [
+      "ES",
+      "ED",
+      "OS",
+      "OD"
+    ],
+    "mean": [
+      -53.707875,
+      -0.005575,
+      -34.323975,
+      -0.028775
+    ],
+    "delete_one_covariance": [
+      [
+        0.0032725951704545455,
+        -0.00013198828914141414,
+        0.0031804243371212123,
+        -0.00016408753156565655
+      ],
+      [
+        -0.00013198828914141414,
+        0.0004141576452020202,
+        -0.00016138861742424242,
+        0.0001713776957070707
+      ],
+      [
+        0.0031804243371212123,
+        -0.00016138861742424242,
+        0.008112231180555556,
+        -0.00010159917297979798
+      ],
+      [
+        -0.00016408753156565655,
+        0.0001713776957070707,
+        -0.00010159917297979798,
+        0.0003423023926767677
+      ]
+    ],
+    "null": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "joint_GLS": {
+      "chi_square": 971848.3886566098,
+      "degrees_of_freedom": 4,
+      "p_value": 0.0,
+      "covariance_eigenvalues": [
+        0.00020143947165211594,
+        0.0005372422417799566,
+        0.0017064096767096953,
+        0.009696194998747121
+      ],
+      "pseudoinverse_tolerance": 9.69619499874712e-13,
+      "marginal_diagnostics": [
+        {
+          "name": "ES",
+          "mean": -53.707875,
+          "se": 0.057206600759480065,
+          "z": -938.8405234180905
+        },
+        {
+          "name": "ED",
+          "mean": -0.005575,
+          "se": 0.020350863500156944,
+          "z": -0.27394414983703297
+        },
+        {
+          "name": "OS",
+          "mean": -34.323975,
+          "se": 0.09006792537055328,
+          "z": -381.08988142877604
+        },
+        {
+          "name": "OD",
+          "mean": -0.028775,
+          "se": 0.01850141596410306,
+          "z": -1.5552863659640979
+        }
+      ]
+    }
+  },
+  "secondary_ambient_H1": {
+    "state_order": [
+      "ambient_ES",
+      "ambient_ED",
+      "ambient_OS",
+      "ambient_OD"
+    ],
+    "mean": [
+      -1.99905,
+      -0.0001,
+      0.0064,
+      -0.00095
+    ],
+    "delete_one_covariance": [
+      [
+        2.1186868686868686e-08,
+        -3.0303030303030305e-10,
+        -7.53030303030303e-08,
+        -4.643939393939394e-08
+      ],
+      [
+        -3.0303030303030305e-10,
+        2.01010101010101e-08,
+        2.4141414141414143e-08,
+        -7.272727272727273e-09
+      ],
+      [
+        -7.53030303030303e-08,
+        2.4141414141414143e-08,
+        5.3510505050505053e-05,
+        -1.7656060606060606e-06
+      ],
+      [
+        -4.643939393939394e-08,
+        -7.272727272727273e-09,
+        -1.7656060606060606e-06,
+        3.608179292929293e-05
+      ]
+    ],
+    "role": "correlated mechanism diagnostic; not an additional primary vote"
+  },
+  "decision": {
+    "stop_if_p_below": 1e-06,
+    "stop_if": "the factor-additive zero bridge is already overwhelmingly rejected and the leading channel sign is stable across at least 80% of leave-one batches",
+    "continue_if": "joint p is not decisive or the leading S/D/color channel is unstable",
+    "interpretation_boundary": "rejection identifies connected C2-by-C5 interaction, not path noncommutativity or Jordan by itself",
+    "leading_channel": "ES",
+    "leading_leave_one_sign_stability": 1.0,
+    "stop_recommended": true
+  }
+}

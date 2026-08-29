@@ -1,0 +1,18 @@
+{
+  "schema": "matching-one.p200-n650-mixed-join-run.v1",
+  "git_commit": "308097b",
+  "samples": 20000,
+  "batches": 100,
+  "threads": 1,
+  "seed": 2026102003,
+  "replica_offset": 18000000000,
+  "p_ref": "0.592746050790",
+  "state_order": ["ES","ED","OS","OD"],
+  "stored_sum_divisor": 2,
+  "first_periods": [[23,-11],[11,23]],
+  "second_periods": [[17,-19],[19,17]],
+  "lift_convention": "raw displacement between C++ column-HNF representatives; ambient-H1 is convention-sensitive secondary",
+  "rng": "counter SplitMix64; inverse-CDF Binomial(650,p_ref); conditional Fisher-Yates prefix",
+  "seconds": 4.0787158750000003,
+  "batch_csv": "results/local-20260829/P200-n650-mixed-join-smoke/n650_20k.batches.csv"
+}
