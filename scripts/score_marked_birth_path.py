@@ -25,10 +25,22 @@ METRICS = (
     "P4_connected_q_J_D_im",
     "P4_O_ext",
     "P4_var_O_ext",
+    "P4_O_near",
+    "P4_var_O_near",
+    "P4_cov_O_ext_O_near",
+    "P4_var_O_far",
     "P4_connected_O_ext_J_S_re",
     "P4_connected_O_ext_J_S_im",
     "P4_connected_O_ext_J_D_re",
     "P4_connected_O_ext_J_D_im",
+    "P4_connected_O_near_J_S_re",
+    "P4_connected_O_near_J_S_im",
+    "P4_connected_O_near_J_D_re",
+    "P4_connected_O_near_J_D_im",
+    "P4_connected_O_far_J_S_re",
+    "P4_connected_O_far_J_S_im",
+    "P4_connected_O_far_J_D_re",
+    "P4_connected_O_far_J_D_im",
     "P4_Gram_J_D_conj_J_S_re",
     "P4_Gram_J_D_conj_J_S_im",
     "P4_Gram_abs_J_S2",
@@ -72,10 +84,17 @@ VALUE_COLUMNS = (
     "sum_q_J_D_im",
     "sum_O_ext",
     "sum_O_ext2",
+    "sum_O_near",
+    "sum_O_near2",
+    "sum_O_ext_O_near",
     "sum_O_ext_J_S_re",
     "sum_O_ext_J_S_im",
     "sum_O_ext_J_D_re",
     "sum_O_ext_J_D_im",
+    "sum_O_near_J_S_re",
+    "sum_O_near_J_S_im",
+    "sum_O_near_J_D_re",
+    "sum_O_near_J_D_im",
     "sum_J_D_conj_J_S_re",
     "sum_J_D_conj_J_S_im",
     "sum_abs_J_S2",
@@ -257,10 +276,17 @@ def orientation_observables(rows: Sequence[PathRow], p: mp.mpf) -> dict[str, mp.
         "local_D": canonical_site_sum(rows, "sum_local_D", p),
         "O_ext": preinsertion_column(rows, "sum_O_ext", p),
         "O_ext2": preinsertion_column(rows, "sum_O_ext2", p),
+        "O_near": preinsertion_column(rows, "sum_O_near", p),
+        "O_near2": preinsertion_column(rows, "sum_O_near2", p),
+        "O_ext_O_near": preinsertion_column(rows, "sum_O_ext_O_near", p),
         "O_ext_J_S_re": canonical_site_sum(rows, "sum_O_ext_J_S_re", p),
         "O_ext_J_S_im": canonical_site_sum(rows, "sum_O_ext_J_S_im", p),
         "O_ext_J_D_re": canonical_site_sum(rows, "sum_O_ext_J_D_re", p),
         "O_ext_J_D_im": canonical_site_sum(rows, "sum_O_ext_J_D_im", p),
+        "O_near_J_S_re": canonical_site_sum(rows, "sum_O_near_J_S_re", p),
+        "O_near_J_S_im": canonical_site_sum(rows, "sum_O_near_J_S_im", p),
+        "O_near_J_D_re": canonical_site_sum(rows, "sum_O_near_J_D_re", p),
+        "O_near_J_D_im": canonical_site_sum(rows, "sum_O_near_J_D_im", p),
         "Gram_J_D_conj_J_S_re": preinsertion_column(
             rows, "sum_J_D_conj_J_S_re", p
         ),
@@ -279,11 +305,28 @@ def orientation_observables(rows: Sequence[PathRow], p: mp.mpf) -> dict[str, mp.
     values["gamma_D_re"] = values["connected_q_J_D_re"] / values["B"]
     values["gamma_D_im"] = values["connected_q_J_D_im"] / values["B"]
     values["var_O_ext"] = values["O_ext2"] - values["O_ext"] ** 2
+    values["var_O_near"] = values["O_near2"] - values["O_near"] ** 2
+    values["cov_O_ext_O_near"] = (
+        values["O_ext_O_near"] - values["O_ext"] * values["O_near"]
+    )
+    values["O_far"] = values["O_ext"] - values["O_near"]
+    values["var_O_far"] = (
+        values["O_ext2"] + values["O_near2"]
+        - 2 * values["O_ext_O_near"] - values["O_far"] ** 2
+    )
     for source in ("J_S", "J_D"):
         for part in ("re", "im"):
             values[f"connected_O_ext_{source}_{part}"] = (
                 values[f"O_ext_{source}_{part}"]
                 - values["O_ext"] * values[f"{source}_{part}"]
+            )
+            values[f"connected_O_near_{source}_{part}"] = (
+                values[f"O_near_{source}_{part}"]
+                - values["O_near"] * values[f"{source}_{part}"]
+            )
+            values[f"connected_O_far_{source}_{part}"] = (
+                values[f"connected_O_ext_{source}_{part}"]
+                - values[f"connected_O_near_{source}_{part}"]
             )
 
     n = len(rows)
@@ -319,6 +362,12 @@ def projected(first: Sequence[PathRow], second: Sequence[PathRow]) -> tuple[mp.m
         ) / delta,
         "P4_O_ext": (left["O_ext"] - right["O_ext"]) / delta,
         "P4_var_O_ext": (left["var_O_ext"] - right["var_O_ext"]) / delta,
+        "P4_O_near": (left["O_near"] - right["O_near"]) / delta,
+        "P4_var_O_near": (left["var_O_near"] - right["var_O_near"]) / delta,
+        "P4_cov_O_ext_O_near": (
+            left["cov_O_ext_O_near"] - right["cov_O_ext_O_near"]
+        ) / delta,
+        "P4_var_O_far": (left["var_O_far"] - right["var_O_far"]) / delta,
         "P4_connected_O_ext_J_S_re": (
             left["connected_O_ext_J_S_re"] - right["connected_O_ext_J_S_re"]
         ) / delta,
@@ -330,6 +379,30 @@ def projected(first: Sequence[PathRow], second: Sequence[PathRow]) -> tuple[mp.m
         ) / delta,
         "P4_connected_O_ext_J_D_im": (
             left["connected_O_ext_J_D_im"] - right["connected_O_ext_J_D_im"]
+        ) / delta,
+        "P4_connected_O_near_J_S_re": (
+            left["connected_O_near_J_S_re"] - right["connected_O_near_J_S_re"]
+        ) / delta,
+        "P4_connected_O_near_J_S_im": (
+            left["connected_O_near_J_S_im"] - right["connected_O_near_J_S_im"]
+        ) / delta,
+        "P4_connected_O_near_J_D_re": (
+            left["connected_O_near_J_D_re"] - right["connected_O_near_J_D_re"]
+        ) / delta,
+        "P4_connected_O_near_J_D_im": (
+            left["connected_O_near_J_D_im"] - right["connected_O_near_J_D_im"]
+        ) / delta,
+        "P4_connected_O_far_J_S_re": (
+            left["connected_O_far_J_S_re"] - right["connected_O_far_J_S_re"]
+        ) / delta,
+        "P4_connected_O_far_J_S_im": (
+            left["connected_O_far_J_S_im"] - right["connected_O_far_J_S_im"]
+        ) / delta,
+        "P4_connected_O_far_J_D_re": (
+            left["connected_O_far_J_D_re"] - right["connected_O_far_J_D_re"]
+        ) / delta,
+        "P4_connected_O_far_J_D_im": (
+            left["connected_O_far_J_D_im"] - right["connected_O_far_J_D_im"]
         ) / delta,
         "P4_Gram_J_D_conj_J_S_re": (
             left["Gram_J_D_conj_J_S_re"] - right["Gram_J_D_conj_J_S_re"]
@@ -497,7 +570,7 @@ def build_report(prefix: Path) -> dict[str, Any]:
             "NOT PROVED: a nonzero finite external coupling does not identify Q4 epsilon or its asymptotic exponent.",
             "OBSERVER-SECTOR-SOURCE-GEOMETRY: Euler residue | matching-odd scalar | typed complex J_D4/J_S4 | integer-period orientation pair.",
             "DEPENDENCY GROUP: state, sources, external cross-products, and Gram entries share one permutation batch and one covariance block.",
-            "UPWEIGHT OBSERVATION: connected O_ext-J_D4 conditioned on the J_D/J_S Gram plane; q-J_D4 is a contact control only.",
+            "UPWEIGHT OBSERVATION: connected O_ext-J_D4 is primary; its frozen R2 O_near/O_far split and J_D/J_S Gram plane decide whether the signal is bulk or contact locked; q-J_D4 is a control only.",
         ],
     }
 
