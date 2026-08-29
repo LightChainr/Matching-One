@@ -1,0 +1,116 @@
+{
+  "guarantee_scope": "For independent aligned batch vectors exactly distributed as a declared Gaussian with the fixed covariance, exp(cumulative log likelihood ratio) is a nonnegative martingale under its named null. Ville's inequality bounds the chance of ever crossing 1/alpha by alpha. The reverse likelihood ratio gives the same bound at the opposite endpoint. The guarantee does not cover covariance refits, model selection, geometry changes, or reuse of interim production data.",
+  "schema_version": 1,
+  "seed": 126,
+  "simulations_per_model_test": 5000,
+  "tests": {
+    "H12_vs_zero": {
+      "alternative": "zero",
+      "expected_log_e_drift_at_endpoint": 0.10566504367883676,
+      "mahalanobis_information_per_batch": 0.21133008735767353,
+      "models": {
+        "H12": {
+          "compute_fraction_vs_fixed": 0.437982,
+          "decision_rates": {
+            "alternative": 0.0066,
+            "inconclusive": 0.0542,
+            "null": 0.9392
+          },
+          "mean_batches": 43.7982
+        },
+        "H4": {
+          "compute_fraction_vs_fixed": 0.26497,
+          "decision_rates": {
+            "alternative": 0.9988,
+            "inconclusive": 0.0006,
+            "null": 0.0006
+          },
+          "mean_batches": 26.497
+        },
+        "zero": {
+          "compute_fraction_vs_fixed": 0.443984,
+          "decision_rates": {
+            "alternative": 0.9442,
+            "inconclusive": 0.0494,
+            "null": 0.0064
+          },
+          "mean_batches": 44.3984
+        }
+      },
+      "null": "H12",
+      "ville_error_bound_each_direction": 0.01
+    },
+    "H4_vs_H12": {
+      "alternative": "H12",
+      "expected_log_e_drift_at_endpoint": 0.19897324806005962,
+      "mahalanobis_information_per_batch": 0.39794649612011923,
+      "models": {
+        "H12": {
+          "compute_fraction_vs_fixed": 0.251844,
+          "decision_rates": {
+            "alternative": 0.9934,
+            "inconclusive": 0.0016,
+            "null": 0.005
+          },
+          "mean_batches": 25.1844
+        },
+        "H4": {
+          "compute_fraction_vs_fixed": 0.25337,
+          "decision_rates": {
+            "alternative": 0.0078,
+            "inconclusive": 0.0032,
+            "null": 0.989
+          },
+          "mean_batches": 25.337
+        },
+        "zero": {
+          "compute_fraction_vs_fixed": 0.425126,
+          "decision_rates": {
+            "alternative": 0.0812,
+            "inconclusive": 0.0672,
+            "null": 0.8516
+          },
+          "mean_batches": 42.5126
+        }
+      },
+      "null": "H4",
+      "ville_error_bound_each_direction": 0.01
+    },
+    "H4_vs_zero": {
+      "alternative": "zero",
+      "expected_log_e_drift_at_endpoint": 0.0146416231567472,
+      "mahalanobis_information_per_batch": 0.0292832463134944,
+      "models": {
+        "H12": {
+          "compute_fraction_vs_fixed": 0.508514,
+          "decision_rates": {
+            "alternative": 0.9968,
+            "inconclusive": 0.0032,
+            "null": 0.0
+          },
+          "mean_batches": 50.8514
+        },
+        "H4": {
+          "compute_fraction_vs_fixed": 0.991704,
+          "decision_rates": {
+            "alternative": 0.0,
+            "inconclusive": 0.9526,
+            "null": 0.0474
+          },
+          "mean_batches": 99.1704
+        },
+        "zero": {
+          "compute_fraction_vs_fixed": 0.991984,
+          "decision_rates": {
+            "alternative": 0.0448,
+            "inconclusive": 0.955,
+            "null": 0.0002
+          },
+          "mean_batches": 99.1984
+        }
+      },
+      "null": "H4",
+      "ville_error_bound_each_direction": 0.01
+    }
+  }
+}
