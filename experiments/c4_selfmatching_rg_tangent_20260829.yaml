@@ -1,6 +1,6 @@
 version: 1
 created: 2026-08-29
-status: N170_scalar_orthogonal_holdout_frozen
+status: N170_scalar_orthogonal_holdout_scored
 issue: 155
 purpose: >-
   Measure the exact p=1/2 Bernoulli score responses of all five wrapping
@@ -49,6 +49,12 @@ future_N170:
   thermal_control:
     law: d_t R_cross scales as N^(3/8)
     fixed_ratio: (170/130)^(3/8)
+  observed_result:
+    source_c_130: 0.6740950243296661
+    target_c_170: 0.6740655896003787
+    orthogonal_residual_z: -0.0244453462
+    thermal_scaling_residual_z: -0.2847192474
+    conclusion: no_separate_odd_direction_resolved_in_cross_wrapping_projection
 
 orientation_H4_rescue:
   frozen_after: N130_same_geometry_wrapping_rank_gate_failed
