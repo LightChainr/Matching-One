@@ -256,7 +256,7 @@ These lines remain active and may overtake the default order whenever they obtai
 | local pivotal | current N130/N170 rows nearly rank one | add a thermal-null or representation-typed row, not merely replicas |
 | modular-scalar modulus | channel typing is `main_integrated` | one new typed `cross/either` shape with a parameter-free prediction |
 | microscopic H4 origin | axis-only nonnegative fourth-moment proxy cannot cancel; axis/integer-diagonal cancellation is `4:1` only in the declared microscopic normalization | derive an exactly-critical family with a negative-`cos(4 theta)` oblique orbit before simulation; keep the proxy/renormalized-coupling boundary explicit |
-| microscopic threshold origin | feasibility, exact block-event semantics, O(`s^2`) evaluator and a frozen 400-trial/cutoff-373 plan are `main_integrated`; no empirical bound | acquire fresh IID trials under the frozen plan, while correlated-hyperedge and symbolic-obstruction work may continue independently |
+| microscopic threshold origin | main maps the known exact-route obstructions, freezes a synthetic-only location/scale/shape contract, exact block-event semantics, O(`s^2`) evaluator and a 400-trial/cutoff-373 plan; no empirical bound or collapse | acquire fresh IID trials under the frozen plan; use held-out curves plus covariance before shape-collapse claims; keep law-preserving decorated/correlated exact constructions open |
 | post-annihilator corrections | composite algebra rules out some shortcuts but not amplitudes | joint harmonic/phase sidebands rather than exponent alone |
 
 ## Recovered frontier sources
@@ -294,6 +294,8 @@ These lines remain active and may overtake the default order whenever they obtai
 | C3 character and invariants | `branch_only` `57b59be`, `a6120aa` |
 | relative-source closure/rigidity | `branch_only` `94dd7f9`, `094ee36` |
 | block-event confidence chain | `main_integrated` PRs #278-#281 through `d433f53`, `results/pc-confidence-preregistration/latest.md` |
+| threshold shape-collapse contract | `main_integrated` PR #289 `8e5a236`, `results/threshold-shape-collapse/latest.md` (synthetic fixtures only) |
+| exact site-threshold mechanism map | `main_integrated` PR #290 `9d21f36`, `notes/solvable-site-maps-and-square-obstruction.md` |
 
 See `docs/STATUS.md` for full branch names, artifact paths and claim boundaries.
 

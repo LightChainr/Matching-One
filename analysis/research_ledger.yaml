@@ -485,6 +485,23 @@ branch_sources:
       - notes/p200-n650-context-morphism-map.md
       - results/post-reveal-20260829/P200-n650-context-morphism/analysis.json
       - results/post-reveal-20260829/P200-n650-context-morphism/SCIENTIFIC_CARD.md
+  - id: SRC_THRESHOLD_SHAPE_COLLAPSE_MAIN
+    integration_status: main_integrated
+    pr: 289
+    ref: main
+    commit: 8e5a2364a9067dd34f551e587f7706e79cd8fc35
+    paths:
+      - analysis/threshold_shape_collapse_manifest.json
+      - notes/threshold-shape-collapse-contract.md
+      - results/threshold-shape-collapse/latest.json
+      - results/threshold-shape-collapse/latest.md
+  - id: SRC_EXACT_SITE_THRESHOLD_MAP_MAIN
+    integration_status: main_integrated
+    pr: 290
+    ref: main
+    commit: 9d21f36f0ccc2756a60574205ab78426f96a65c2
+    paths:
+      - notes/solvable-site-maps-and-square-obstruction.md
 
 scientific_nodes:
   - id: SN_DIGITAL_ALEXANDER_RANK_BALANCE
@@ -1201,6 +1218,48 @@ scientific_nodes:
     information_gain: high
     compute_cost: moderate
     decision_experiments: [DX_MIXED_CONTEXT_RECTANGLE]
+  - id: SN_THRESHOLD_SHAPE_COLLAPSE_CONTRACT
+    title: threshold_distribution_location_scale_shape_contract
+    integration_status: main_integrated
+    state: microscopic_threshold_structure
+    sources: [bernoulli_thermal]
+    observer_sectors: [topology_typed]
+    geometries: [square_controls]
+    acquisition: [exact_construction]
+    source_refs: [SRC_THRESHOLD_SHAPE_COLLAPSE_MAIN]
+    known_result: weighted_quantile_curves_are_split_into_median_location_IQR_scale_and_standardized_quantile_shape_with_exact_positive_affine_invariance_and_synthetic_tail_deformation_sensitivity
+    boundary: committed_rows_are_synthetic_fixtures_only_with_no_production_curve_covariance_pvalue_conformal_map_or_universality_result
+    supports: [shape_before_exponent_as_a_future_threshold_curve_interface]
+    tensions: [raw_location_difference_as_universal_shape_evidence]
+    excludes_only: [calling_the_synthetic_contract_a_measured_shape_collapse]
+    reusable_data_refs: [results/threshold-shape-collapse/latest.json]
+    dependency_group_refs: []
+    missing_inputs: [heldout_threshold_curves_and_frozen_covariance_or_bootstrap_plan]
+    next_discriminator: apply_the_contract_only_after_independent_curve_acquisition_and_covariance_freeze
+    information_gain: medium
+    compute_cost: low
+    decision_experiments: []
+  - id: SN_EXACT_SITE_THRESHOLD_ROUTE_OBSTRUCTION
+    title: bounded_map_of_known_exact_site_threshold_mechanisms_and_square_obstruction
+    integration_status: main_integrated
+    state: microscopic_threshold_structure
+    sources: [bernoulli_thermal]
+    observer_sectors: [topology_typed]
+    geometries: [square_controls, triangular_control]
+    acquisition: [exact_construction]
+    source_refs: [SRC_EXACT_SITE_THRESHOLD_MAP_MAIN]
+    known_result: known_exact_site_routes_use_self_matching_independence_preserving_line_graphs_or_separated_selfdual_three_terminal_cells_whereas_standard_square_site_has_a_different_matching_lattice_overlapping_correlations_four_terminals_and_basis_drifting_critical_polynomials
+    boundary: bounded_literature_mechanism_comparison_not_an_exhaustive_no_go_for_every_decorated_correlated_or_new_exact_representation
+    supports: [full_law_preservation_and_basis_independent_identity_as_gates_for_new_exact_candidates]
+    tensions: [decimal_closeness_or_one_finite_basis_factor_as_exactness]
+    excludes_only: [the_catalogued_direct_transfers_to_standard_square_site]
+    reusable_data_refs: [notes/solvable-site-maps-and-square-obstruction.md]
+    dependency_group_refs: []
+    missing_inputs: [one_new_law_preserving_decorated_or_correlated_structural_candidate]
+    next_discriminator: derive_a_basis_independent_identity_or_other_structural_consequence_before_numerical_scoring
+    information_gain: high
+    compute_cost: low
+    decision_experiments: []
 
 dependency_groups:
   - id: crn-2026104501-5000000000-5100000000
