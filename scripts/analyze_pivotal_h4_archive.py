@@ -21,6 +21,8 @@ from analyze_pivotal_h4_bridge import METRICS, bridge_metrics
 
 SIZES = (65, 85, 130, 170, 185, 265, 325, 425)
 BLOCKS = ((65, 85, 130, 170), (185,), (265,), (325,), (425,))
+BASE_METRICS = ("B_plus", "A_plus", "A_minus", "B_minus")
+ALL_METRICS = BASE_METRICS + METRICS
 
 
 def estimate(path: Path, expected_n: int):
@@ -68,7 +70,7 @@ def analyze(runs):
     deleted = {}
     for n in SIZES:
         points[n], deleted[n] = estimate(runs[n], n)
-    labels = [(metric, n) for metric in METRICS for n in SIZES]
+    labels = [(metric, n) for metric in ALL_METRICS for n in SIZES]
     dimension = len(labels)
     covariance = [[0.0] * dimension for _ in range(dimension)]
     for block in BLOCKS:
@@ -76,7 +78,7 @@ def analyze(runs):
         if len(batch_counts) != 1:
             raise ValueError(f"unaligned batch counts in block {block}")
         batches = batch_counts.pop()
-        block_labels = [(metric, n) for metric in METRICS for n in block]
+        block_labels = [(metric, n) for metric in ALL_METRICS for n in block]
         rows = []
         for batch in range(batches):
             row = []
@@ -105,9 +107,17 @@ def emit(result, runs, output_dir: Path):
     rows = []
     for n in SIZES:
         row = {"N": n}
-        for metric in ("Mbar_prime", "normalized_pivotal_H4", *METRICS):
+        for metric in (
+            "first_primal_pivotal",
+            "first_matching_pivotal",
+            "second_primal_pivotal",
+            "second_matching_pivotal",
+            *BASE_METRICS,
+            "normalized_pivotal_H4",
+            *METRICS,
+        ):
             row[metric] = result["points"][n][metric]
-            if metric in METRICS:
+            if metric in ALL_METRICS:
                 index = result["labels"].index((metric, n))
                 row[metric + "_se"] = math.sqrt(result["covariance"][index][index])
         rows.append(row)
@@ -124,6 +134,22 @@ def emit(result, runs, output_dir: Path):
         "values": rows,
         "scores": result["scores"],
         "stacked_covariance": result["covariance"],
+        "stacked_covariance_order": result["labels"],
+        "lossless_basis": {
+            "U": [
+                "first_primal_pivotal",
+                "first_matching_pivotal",
+                "second_primal_pivotal",
+                "second_matching_pivotal",
+            ],
+            "V": BASE_METRICS,
+            "identities": {
+                "B_plus": "Mbar_prime",
+                "A_plus": "2*P4[D_prime]",
+                "A_minus": "2*P4[S_prime]",
+                "B_minus": "orientation-mean primal-minus-matching pivotal mass",
+            },
+        },
         "evidence_rule": "all metrics are correlated transforms of previously analyzed raw data",
     }
     (output_dir / "archive_score.json").write_text(

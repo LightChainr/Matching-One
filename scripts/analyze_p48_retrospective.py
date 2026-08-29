@@ -225,6 +225,18 @@ def project_size(
         "Mbar_prime": (
             values["first"]["D_prime"] + values["second"]["D_prime"]
         ),
+        "first_primal_pivotal": (
+            values["first"]["D_prime"] + values["first"]["S_prime"]
+        ),
+        "first_matching_pivotal": (
+            values["first"]["D_prime"] - values["first"]["S_prime"]
+        ),
+        "second_primal_pivotal": (
+            values["second"]["D_prime"] + values["second"]["S_prime"]
+        ),
+        "second_matching_pivotal": (
+            values["second"]["D_prime"] - values["second"]["S_prime"]
+        ),
         "P4_S": (values["second"]["S"] - values["first"]["S"]) / delta_cos4,
         "P4_D": (values["first"]["D"] - values["second"]["D"]) / delta_cos4,
         "P4_S_prime": (
@@ -233,6 +245,14 @@ def project_size(
         "P4_D_prime": (
             values["first"]["D_prime"] - values["second"]["D_prime"]
         ) / delta_cos4,
+        "B_plus": values["first"]["D_prime"] + values["second"]["D_prime"],
+        "A_plus": 2.0 * (
+            values["first"]["D_prime"] - values["second"]["D_prime"]
+        ) / delta_cos4,
+        "A_minus": 2.0 * (
+            values["second"]["S_prime"] - values["first"]["S_prime"]
+        ) / delta_cos4,
+        "B_minus": values["first"]["S_prime"] + values["second"]["S_prime"],
         "delta_cos4": delta_cos4,
     }
 

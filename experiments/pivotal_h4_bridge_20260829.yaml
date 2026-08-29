@@ -48,6 +48,14 @@ high_statistics_archive:
     - [265]
     - [325]
     - [425]
+  lossless_pivotal_basis:
+    U: [first_primal, first_matching, second_primal, second_matching]
+    V: [B_plus, A_plus, A_minus, B_minus]
+    identities:
+      B_plus: Mbar_prime
+      A_plus: 2*P4[D_prime]
+      A_minus: 2*P4[S_prime]
+      B_minus: orientation_mean_primal_minus_matching_mass
   score_rule: >-
     Report constant-amplitude GLS diagnostics for the four frozen transforms.
     They are descriptive whole-archive tests, not heldout evidence and do not
