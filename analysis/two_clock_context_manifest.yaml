@@ -1,0 +1,39 @@
+schema: matching-one.two-clock-context-manifest.v1
+issue: 255
+hypothesis: one_dilation_generator_two_clocks
+
+clock_convention:
+  gaussian: t_m = log(abs(m)) = 0.5*log(Norm(m))
+  annulus: t_R = log(R_out/R_in)
+  spin: remove the declared lattice-spin rotation before comparing radial transfer
+
+archive_state_20260829:
+  gaussian:
+    available: fitted low-rank full-curve and Gaussian-semigroup summaries
+    limitation: no common latent basis with the annulus readout
+  annulus:
+    available: correlated scalar shell contrasts at several radii in PR 247
+    limitation: scalar endpoints do not identify a 2x2 transfer matrix
+  mixed_contexts:
+    available: false
+    consequence: separate spectra cannot score the one-generator hypothesis
+
+minimum_identifying_block:
+  state_dimension: 2
+  sources: 2 linearly independent frozen source instruments
+  readouts: 2 linearly independent frozen terminal instruments
+  paths:
+    - gaussian_then_annulus
+    - annulus_then_gaussian
+  exact_gate: cT*(A_m*U_t-U_t*A_m)*b = 0 for the spanning source/readout block
+  commensurate_gate: derotated(A_m)^p = U_t^q whenever p*t_m = q*t_R
+
+risky_prediction:
+  endpoint_sector: common rank-2 generator remains possible
+  morphism_sensitive_sector: mixed rectangle is nonzero unless deck/Smith state is added
+  interpretation_if_nonzero: cover-category memory, not another scalar correction exponent
+
+forbidden_shortcuts:
+  - infer_same_generator_from_equal_rank_only
+  - infer_same_generator_from_matching_eigenvalues_in_separately_fitted_bases
+  - compare_Jordan_nilpotent_directions_without_shared_sources_and_readouts

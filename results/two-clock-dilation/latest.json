@@ -1,0 +1,107 @@
+{
+  "cases": {
+    "Jordan": {
+      "A_squared_equals_U": true,
+      "A_squared_minus_U": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "commutator": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "commutator_zero": true
+    },
+    "complex_pair": {
+      "A_squared_equals_U": true,
+      "A_squared_minus_U": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "commutator": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "commutator_zero": true
+    },
+    "ordinary": {
+      "A_squared_equals_U": true,
+      "A_squared_minus_U": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "commutator": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "commutator_zero": true
+    },
+    "same_Jordan_spectrum_wrong_alignment": {
+      "A_squared_equals_U": false,
+      "A_squared_minus_U": [
+        [
+          "0",
+          "4"
+        ],
+        [
+          "-1",
+          "0"
+        ]
+      ],
+      "commutator": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ]
+      ],
+      "commutator_zero": false
+    }
+  },
+  "schema": "matching-one.two-clock-exact-oracles.v1",
+  "theorem": {
+    "commensurate": "If p*t_A=q*t_U then A^p=U^q after spin removal.",
+    "necessary": "A=exp(-t_A G), U=exp(-t_U G) implies [A,U]=0.",
+    "nonidentifiability": "Matching separate spectra or Jordan class does not align the two latent bases.",
+    "observable_rectangle": "Reachable/observable mixed contexts turn c^T(AU-UA)b=0 for spanning b,c into [A,U]=0."
+  }
+}
