@@ -80,25 +80,65 @@
       "id": "p37_two_lineage_fixed_coordinate",
       "raw_data_group": "p37_two_lineage_fixed_coordinate",
       "role": "primary",
-      "status": "PENDING_ARTIFACT_EXTRACTION",
+      "status": "SCORED",
       "channel": {"source": "matching_odd", "target": "matching_odd", "exact_map": null},
-      "models": {}
+      "chronology": {
+        "prediction_frozen_before_reveal": true,
+        "prediction_commit": "ceb7a57",
+        "reveal_artifact": "results/server-20260828/P37-doubling/analysis.json",
+        "reveal_blob_sha": "93eef600cc4973c4ac6285d50ba126174a5c0165"
+      },
+      "observation": [-0.00034083, -0.00031285],
+      "models": {
+        "H4_x21_over_4": {
+          "mean": [-0.00035211787587884217, -0.00029748526754028174],
+          "covariance": [[9.77895902275481e-9, -3.512477240640497e-10], [-3.512477240640497e-10, 1.045811823444559e-8]]
+        }
+      }
     },
     {
       "id": "p50_third_fixed_coordinate",
       "raw_data_group": "p50_third_fixed_coordinate",
       "role": "primary",
-      "status": "PENDING_ARTIFACT_EXTRACTION",
+      "status": "SCORED",
       "channel": {"source": "matching_odd", "target": "matching_odd", "exact_map": null},
-      "models": {}
+      "chronology": {
+        "prediction_frozen_before_reveal": true,
+        "prediction_artifact": "predictions/gaussian_doubling_third_lineage_20260828.yaml",
+        "prediction_blob_sha": "2596b3b615d8a2a06ebe800b02510f19748dc690",
+        "reveal_artifact": "results/server-20260828/P50-third-lineage/production_score.json",
+        "reveal_blob_sha": "503e927126f4b046759a765af0cde243beb04a11"
+      },
+      "observation": [-0.000160648],
+      "models": {
+        "H4_x21_over_4": {"mean": [-0.00013765640041065355], "covariance": [[2.268452187989943e-9]]},
+        "zero_effect": {"mean": [0.0], "covariance": [[1.6436230555151514e-9]]}
+      }
     },
     {
       "id": "p45_angular_normalized_root",
       "raw_data_group": "p45_angular_normalized_root",
       "role": "primary",
-      "status": "PENDING_ARTIFACT_EXTRACTION",
+      "status": "SCORED",
       "channel": {"source": "matching_root", "target": "matching_root", "exact_map": null},
-      "models": {}
+      "chronology": {
+        "prediction_frozen_before_reveal": true,
+        "prediction_artifact": "predictions/angular_root_amplitude_20260828.yaml",
+        "prediction_blob_sha": "e657a7f051f74171b70c30bbd2753afbfdb07476",
+        "reveal_artifact": "results/server-20260828/P45-root-amplitude/score.json",
+        "reveal_blob_sha": "6db49fdbae4e2a712ed2dd636b3d9e0583eea733"
+      },
+      "observation": [0.4203380978114989, 0.39494855768100623],
+      "models": {
+        "H4_x21_over_4": {
+          "mean": [0.4510066187069702, 0.4510066187069702],
+          "covariance": [[0.0008707324266527387, 0.0005412872188659858], [0.0005412872188659858, 0.001352837411382779]]
+        },
+        "zero_effect": {
+          "mean": [0.0, 0.0],
+          "covariance": [[0.000465366013290105, 0.00013592080550335205], [0.00013592080550335205, 0.0009474709980201452]]
+        }
+      }
     },
     {
       "id": "issue57_norm5",
@@ -106,6 +146,22 @@
       "role": "primary",
       "status": "PENDING_REVEAL",
       "channel": {"source": "matching_odd", "target": "matching_odd", "exact_map": null},
+      "models": {}
+    },
+    {
+      "id": "p49_clean_full_curve",
+      "raw_data_group": "p49_fullcurve_doubling_histograms",
+      "role": "primary",
+      "status": "PENDING_ARTIFACT_EXTRACTION",
+      "channel": {"source": "matching_full_curve", "target": "matching_full_curve", "exact_map": null},
+      "models": {}
+    },
+    {
+      "id": "p91_n145_to_n290_full_curve",
+      "raw_data_group": "p91_n145_n290_fullcurve_histograms",
+      "role": "primary",
+      "status": "PENDING_REVEAL",
+      "channel": {"source": "matching_full_curve", "target": "matching_full_curve", "exact_map": null},
       "models": {}
     }
   ]
