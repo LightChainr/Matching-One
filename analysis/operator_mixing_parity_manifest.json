@@ -1,0 +1,17 @@
+{
+  "schema": "matching-one/operator-mixing-parity-manifest/v1",
+  "issue": 125,
+  "scope": "exact selection zeros, rational powers, and structural-rank audit",
+  "fields": ["matching-even x=4", "matching-odd x=21/4"],
+  "channels": ["P4_S", "P4_D", "P4_S_prime", "P4_D_prime"],
+  "outputs": {
+    "json": "results/operator-mixing-parity/latest.json",
+    "markdown": "results/operator-mixing-parity/latest.md"
+  },
+  "commands": [
+    "python scripts/operator_mixing_parity_oracle.py --format json",
+    "python scripts/operator_mixing_parity_oracle.py --format markdown",
+    "python -m unittest tests.test_operator_mixing_parity_oracle"
+  ],
+  "boundary": "no amplitude fit, Taylor-ratio assumption, production score, or operator identification"
+}
