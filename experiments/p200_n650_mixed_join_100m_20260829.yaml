@@ -1,0 +1,36 @@
+schema: matching-one.p200-n650-mixed-join-production.v1
+issue: 200
+status: frozen_not_started
+p_ref: '0.592746050790'
+designs:
+  - {name: first, final: [23, 11], N130: [7, 9], N325: [17, -6], source: [8, 1]}
+  - {name: second, final: [17, 19], N130: [3, 11], N325: [18, 1], source: [7, 4]}
+rng:
+  seed: 2026102003
+  replica_offset: 18000000000
+  coupling: one counter Binomial K and conditional permutation shared by both HNF-label geometries
+  disjoint_from: [P50_seed_2026105003_offset_7000000000, P154_seed_2026105401_offset_8100000000, P205_seed_2026105501_offset_9300000000, P200_N580_seed_2026102001_offset_12000000000]
+build: g++ -O3 -DNDEBUG -std=c++17 -fopenmp src/p200_n650_mixed_join_mc.cpp -o build/p200/p200_n650_mixed_join_mc
+self_test: build/p200/p200_n650_mixed_join_mc --self-test
+calibration:
+  samples: 20000
+  batches: 100
+  threads: 16
+  command: build/p200/p200_n650_mixed_join_mc --samples 20000 --batches 100 --seed 2026102003 --replica-offset 18000000000 --threads 16 --git-commit COMMIT_SHA --output-prefix /workspace/results/server-20260829/P200-n650-mixed-join/calibration/n650_20k
+production:
+  samples: 100000000
+  batches: 100
+  threads: 16
+  command: build/p200/p200_n650_mixed_join_mc --production --samples 100000000 --batches 100 --seed 2026102003 --replica-offset 18000000000 --threads 16 --git-commit COMMIT_SHA --output-prefix /workspace/results/server-20260829/P200-n650-mixed-join/raw/n650_100m
+score: python3 scripts/score_p200_n650_mixed_join.py --batches OUTPUT.batches.csv --metadata OUTPUT.metadata.json --prediction predictions/p200_n650_mixed_join_phaseB_20260829.json --json SCORE.json --report SCORE.md
+primary_state_order: [ES, ED, OS, OD]
+covariance: synchronized_delete_one_full_4x4
+secondary_state_order: [ambient_ES, ambient_ED, ambient_OS, ambient_OD]
+stop_conditions:
+  - stop_before_100m_if_20k_joint_p_below_1e-6_and_leading_leave_one_sign_stability_at_least_0.8
+  - stop_on_self_test_or_worker_invariance_failure
+  - stop_if_peak_RSS_exceeds_8_GiB_or_20k_runtime_projects_above_12_hours_for_100m
+resource_estimate:
+  peak_memory: below_1_GiB_at_16_workers
+  local_single_core_rate: approximately_4700_samples_per_second
+  Huawei_16_core_expected_100m: 0.5_to_2_hours_if_not_stopped_by_calibration
