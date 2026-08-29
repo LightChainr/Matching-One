@@ -28,11 +28,6 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-        with:
-          # The scientific ledger pins branch-only commit:path evidence.  A
-          # shallow PR checkout cannot validate those immutable provenance
-          # pointers even when they are valid in the repository.
-          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5

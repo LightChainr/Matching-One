@@ -35,18 +35,49 @@ def assert_repo_relative(testcase: unittest.TestCase, relative: str) -> None:
 
 def git_object_exists(commit: str, relative: str) -> bool:
     result = subprocess.run(
-        ["git", "cat-file", "-e", f"{commit}:{relative}"],
+        ["git", "ls-tree", "--name-only", "--full-name", commit, "--", relative],
         cwd=ROOT,
         check=False,
         capture_output=True,
         text=True,
     )
-    return result.returncode == 0
+    return result.returncode == 0 and relative in result.stdout.splitlines()
+
+
+def ensure_provenance_history() -> None:
+    """Hydrate commit/tree history only when CI supplied a shallow checkout."""
+    shallow = subprocess.run(
+        ["git", "rev-parse", "--is-shallow-repository"],
+        cwd=ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout.strip()
+    if shallow != "true":
+        return
+    subprocess.run(
+        [
+            "git",
+            "fetch",
+            "--quiet",
+            "--no-tags",
+            "--unshallow",
+            "--filter=blob:none",
+            "origin",
+            "+refs/heads/*:refs/remotes/origin/*",
+        ],
+        cwd=ROOT,
+        check=True,
+    )
 
 
 class ResearchRegistryTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
+        # The ledger validates immutable branch-only commit:path pointers.  A
+        # default shallow Actions checkout lacks those commit/tree objects, so
+        # hydrate read-only history here without requiring workflow-file scope.
+        ensure_provenance_history()
         cls.ledger = load_yaml(LEDGER_PATH)
         cls.registry = load_yaml(REGISTRY_PATH)
 
