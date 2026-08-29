@@ -1,0 +1,539 @@
+{
+  "canonical_scorer_bridge": "multiply stored site sums by N/(N-k), then convolve against Bin(N-1,k)",
+  "exact_boundaries": {
+    "chi4_frame": "primitive lifted Euclidean P*ell",
+    "direct_birth": "0->2 has ell=null, S=2 and D=0",
+    "first_birth": "strict 0->1 uses the post-insertion rank-one line/index",
+    "full_source": "S=(S_active+S_inactive)/2 and D=(D_active-D_inactive)/2; every tiny insertion has S_active=S_inactive and D_active=-D_inactive",
+    "production_iota": "C++ runner preserves raw winding coefficients before primitive reduction; tiny geometric examples happen to have iota=1",
+    "second_birth": "strict 1->2 uses the pre-insertion plateau line/index"
+  },
+  "geometries": [
+    {
+      "N": 4,
+      "direct_0_to_2_absent_site_mass_summed_over_k": "2/3",
+      "id": "axis-L2",
+      "lifted_Euclidean_chi4_examples": [
+        {
+          "cos4": "1",
+          "physical_vector": "0,2",
+          "sin4": "0"
+        },
+        {
+          "cos4": "1",
+          "physical_vector": "2,0",
+          "sin4": "0"
+        }
+      ],
+      "microcanonical_rows": [
+        {
+          "exact_absent_site_sum": {
+            "J_D_im": "0",
+            "J_D_re": "0",
+            "J_S_im": "0",
+            "J_S_re": "0",
+            "active_D": "0",
+            "active_S": "0",
+            "inactive_D": "0",
+            "inactive_S": "0",
+            "q": "-1",
+            "q2": "1",
+            "q_J_D_im": "0",
+            "q_J_D_re": "0",
+            "site_D": "0",
+            "site_S": "0"
+          },
+          "k": 0,
+          "path_Horvitz_average": {
+            "J_D_im": "0",
+            "J_D_re": "0",
+            "J_S_im": "0",
+            "J_S_re": "0",
+            "active_D": "0",
+            "active_S": "0",
+            "inactive_D": "0",
+            "inactive_S": "0",
+            "q": "-1",
+            "q2": "1",
+            "q_J_D_im": "0",
+            "q_J_D_re": "0",
+            "site_D": "0",
+            "site_S": "0"
+          },
+          "residual": {
+            "J_D_im": "0",
+            "J_D_re": "0",
+            "J_S_im": "0",
+            "J_S_re": "0",
+            "active_D": "0",
+            "active_S": "0",
+            "inactive_D": "0",
+            "inactive_S": "0",
+            "q": "0",
+            "q2": "0",
+            "q_J_D_im": "0",
+            "q_J_D_re": "0",
+            "site_D": "0",
+            "site_S": "0"
+          }
+        },
+        {
+          "exact_absent_site_sum": {
+            "J_D_im": "0",
+            "J_D_re": "-2",
+            "J_S_im": "0",
+            "J_S_re": "2",
+            "active_D": "-2",
+            "active_S": "2",
+            "inactive_D": "2",
+            "inactive_S": "2",
+            "q": "-1",
+            "q2": "1",
+            "q_J_D_im": "0",
+            "q_J_D_re": "2",
+            "site_D": "-2",
+            "site_S": "2"
+          },
+          "k": 1,
+          "path_Horvitz_average": {
+            "J_D_im": "0",
+            "J_D_re": "-2",
+            "J_S_im": "0",
+            "J_S_re": "2",
+            "active_D": "-2",
+            "active_S": "2",
+            "inactive_D": "2",
+            "inactive_S": "2",
+            "q": "-1",
+            "q2": "1",
+            "q_J_D_im": "0",
+            "q_J_D_re": "2",
+            "site_D": "-2",
+            "site_S": "2"
+          },
+          "residual": {
+            "J_D_im": "0",
+            "J_D_re": "0",
+            "J_S_im": "0",
+            "J_S_re": "0",
+            "active_D": "0",
+            "active_S": "0",
+            "inactive_D": "0",
+            "inactive_S": "0",
+            "q": "0",
+            "q2": "0",
+            "q_J_D_im": "0",
+            "q_J_D_re": "0",
+            "site_D": "0",
+            "site_S": "0"
+          }
+        },
+        {
+          "exact_absent_site_sum": {
+            "J_D_im": "0",
+            "J_D_re": "4/3",
+            "J_S_im": "0",
+            "J_S_re": "4/3",
+            "active_D": "4/3",
+            "active_S": "8/3",
+            "inactive_D": "-4/3",
+            "inactive_S": "8/3",
+            "q": "-1/3",
+            "q2": "1/3",
+            "q_J_D_im": "0",
+            "q_J_D_re": "0",
+            "site_D": "4/3",
+            "site_S": "8/3"
+          },
+          "k": 2,
+          "path_Horvitz_average": {
+            "J_D_im": "0",
+            "J_D_re": "4/3",
+            "J_S_im": "0",
+            "J_S_re": "4/3",
+            "active_D": "4/3",
+            "active_S": "8/3",
+            "inactive_D": "-4/3",
+            "inactive_S": "8/3",
+            "q": "-1/3",
+            "q2": "1/3",
+            "q_J_D_im": "0",
+            "q_J_D_re": "0",
+            "site_D": "4/3",
+            "site_S": "8/3"
+          },
+          "residual": {
+            "J_D_im": "0",
+            "J_D_re": "0",
+            "J_S_im": "0",
+            "J_S_re": "0",
+            "active_D": "0",
+            "active_S": "0",
+            "inactive_D": "0",
+            "inactive_S": "0",
+            "q": "0",
+            "q2": "0",
+            "q_J_D_im": "0",
+            "q_J_D_re": "0",
+            "site_D": "0",
+            "site_S": "0"
+          }
+        },
+        {
+          "exact_absent_site_sum": {
+            "J_D_im": "0",
+            "J_D_re": "0",
+            "J_S_im": "0",
+            "J_S_re": "0",
+            "active_D": "0",
+            "active_S": "0",
+            "inactive_D": "0",
+            "inactive_S": "0",
+            "q": "1",
+            "q2": "1",
+            "q_J_D_im": "0",
+            "q_J_D_re": "0",
+            "site_D": "0",
+            "site_S": "0"
+          },
+          "k": 3,
+          "path_Horvitz_average": {
+            "J_D_im": "0",
+            "J_D_re": "0",
+            "J_S_im": "0",
+            "J_S_re": "0",
+            "active_D": "0",
+            "active_S": "0",
+            "inactive_D": "0",
+            "inactive_S": "0",
+            "q": "1",
+            "q2": "1",
+            "q_J_D_im": "0",
+            "q_J_D_re": "0",
+            "site_D": "0",
+            "site_S": "0"
+          },
+          "residual": {
+            "J_D_im": "0",
+            "J_D_re": "0",
+            "J_S_im": "0",
+            "J_S_re": "0",
+            "active_D": "0",
+            "active_S": "0",
+            "inactive_D": "0",
+            "inactive_S": "0",
+            "q": "0",
+            "q2": "0",
+            "q_J_D_im": "0",
+            "q_J_D_re": "0",
+            "site_D": "0",
+            "site_S": "0"
+          }
+        }
+      ],
+      "period_matrix": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "N": 5,
+      "direct_0_to_2_absent_site_mass_summed_over_k": "0",
+      "id": "gaussian-2-1",
+      "lifted_Euclidean_chi4_examples": [
+        {
+          "cos4": "-7/25",
+          "physical_vector": "-1,2",
+          "sin4": "24/25"
+        },
+        {
+          "cos4": "-7/25",
+          "physical_vector": "2,1",
+          "sin4": "24/25"
+        }
+      ],
+      "microcanonical_rows": [
+        {
+          "exact_absent_site_sum": {
+            "J_D_im": "0",
+            "J_D_re": "0",
+            "J_S_im": "0",
+            "J_S_re": "0",
+            "active_D": "0",
+            "active_S": "0",
+            "inactive_D": "0",
+            "inactive_S": "0",
+            "q": "-1",
+            "q2": "1",
+            "q_J_D_im": "0",
+            "q_J_D_re": "0",
+            "site_D": "0",
+            "site_S": "0"
+          },
+          "k": 0,
+          "path_Horvitz_average": {
+            "J_D_im": "0",
+            "J_D_re": "0",
+            "J_S_im": "0",
+            "J_S_re": "0",
+            "active_D": "0",
+            "active_S": "0",
+            "inactive_D": "0",
+            "inactive_S": "0",
+            "q": "-1",
+            "q2": "1",
+            "q_J_D_im": "0",
+            "q_J_D_re": "0",
+            "site_D": "0",
+            "site_S": "0"
+          },
+          "residual": {
+            "J_D_im": "0",
+            "J_D_re": "0",
+            "J_S_im": "0",
+            "J_S_re": "0",
+            "active_D": "0",
+            "active_S": "0",
+            "inactive_D": "0",
+            "inactive_S": "0",
+            "q": "0",
+            "q2": "0",
+            "q_J_D_im": "0",
+            "q_J_D_re": "0",
+            "site_D": "0",
+            "site_S": "0"
+          }
+        },
+        {
+          "exact_absent_site_sum": {
+            "J_D_im": "0",
+            "J_D_re": "0",
+            "J_S_im": "0",
+            "J_S_re": "0",
+            "active_D": "0",
+            "active_S": "0",
+            "inactive_D": "0",
+            "inactive_S": "0",
+            "q": "-1",
+            "q2": "1",
+            "q_J_D_im": "0",
+            "q_J_D_re": "0",
+            "site_D": "0",
+            "site_S": "0"
+          },
+          "k": 1,
+          "path_Horvitz_average": {
+            "J_D_im": "0",
+            "J_D_re": "0",
+            "J_S_im": "0",
+            "J_S_re": "0",
+            "active_D": "0",
+            "active_S": "0",
+            "inactive_D": "0",
+            "inactive_S": "0",
+            "q": "-1",
+            "q2": "1",
+            "q_J_D_im": "0",
+            "q_J_D_re": "0",
+            "site_D": "0",
+            "site_S": "0"
+          },
+          "residual": {
+            "J_D_im": "0",
+            "J_D_re": "0",
+            "J_S_im": "0",
+            "J_S_re": "0",
+            "active_D": "0",
+            "active_S": "0",
+            "inactive_D": "0",
+            "inactive_S": "0",
+            "q": "0",
+            "q2": "0",
+            "q_J_D_im": "0",
+            "q_J_D_re": "0",
+            "site_D": "0",
+            "site_S": "0"
+          }
+        },
+        {
+          "exact_absent_site_sum": {
+            "J_D_im": "-72/25",
+            "J_D_re": "21/25",
+            "J_S_im": "72/25",
+            "J_S_re": "-21/25",
+            "active_D": "-3",
+            "active_S": "3",
+            "inactive_D": "3",
+            "inactive_S": "3",
+            "q": "-1",
+            "q2": "1",
+            "q_J_D_im": "72/25",
+            "q_J_D_re": "-21/25",
+            "site_D": "-3",
+            "site_S": "3"
+          },
+          "k": 2,
+          "path_Horvitz_average": {
+            "J_D_im": "-72/25",
+            "J_D_re": "21/25",
+            "J_S_im": "72/25",
+            "J_S_re": "-21/25",
+            "active_D": "-3",
+            "active_S": "3",
+            "inactive_D": "3",
+            "inactive_S": "3",
+            "q": "-1",
+            "q2": "1",
+            "q_J_D_im": "72/25",
+            "q_J_D_re": "-21/25",
+            "site_D": "-3",
+            "site_S": "3"
+          },
+          "residual": {
+            "J_D_im": "0",
+            "J_D_re": "0",
+            "J_S_im": "0",
+            "J_S_re": "0",
+            "active_D": "0",
+            "active_S": "0",
+            "inactive_D": "0",
+            "inactive_S": "0",
+            "q": "0",
+            "q2": "0",
+            "q_J_D_im": "0",
+            "q_J_D_re": "0",
+            "site_D": "0",
+            "site_S": "0"
+          }
+        },
+        {
+          "exact_absent_site_sum": {
+            "J_D_im": "48/25",
+            "J_D_re": "-14/25",
+            "J_S_im": "48/25",
+            "J_S_re": "-14/25",
+            "active_D": "2",
+            "active_S": "2",
+            "inactive_D": "-2",
+            "inactive_S": "2",
+            "q": "0",
+            "q2": "0",
+            "q_J_D_im": "0",
+            "q_J_D_re": "0",
+            "site_D": "2",
+            "site_S": "2"
+          },
+          "k": 3,
+          "path_Horvitz_average": {
+            "J_D_im": "48/25",
+            "J_D_re": "-14/25",
+            "J_S_im": "48/25",
+            "J_S_re": "-14/25",
+            "active_D": "2",
+            "active_S": "2",
+            "inactive_D": "-2",
+            "inactive_S": "2",
+            "q": "0",
+            "q2": "0",
+            "q_J_D_im": "0",
+            "q_J_D_re": "0",
+            "site_D": "2",
+            "site_S": "2"
+          },
+          "residual": {
+            "J_D_im": "0",
+            "J_D_re": "0",
+            "J_S_im": "0",
+            "J_S_re": "0",
+            "active_D": "0",
+            "active_S": "0",
+            "inactive_D": "0",
+            "inactive_S": "0",
+            "q": "0",
+            "q2": "0",
+            "q_J_D_im": "0",
+            "q_J_D_re": "0",
+            "site_D": "0",
+            "site_S": "0"
+          }
+        },
+        {
+          "exact_absent_site_sum": {
+            "J_D_im": "0",
+            "J_D_re": "0",
+            "J_S_im": "0",
+            "J_S_re": "0",
+            "active_D": "0",
+            "active_S": "0",
+            "inactive_D": "0",
+            "inactive_S": "0",
+            "q": "1",
+            "q2": "1",
+            "q_J_D_im": "0",
+            "q_J_D_re": "0",
+            "site_D": "0",
+            "site_S": "0"
+          },
+          "k": 4,
+          "path_Horvitz_average": {
+            "J_D_im": "0",
+            "J_D_re": "0",
+            "J_S_im": "0",
+            "J_S_re": "0",
+            "active_D": "0",
+            "active_S": "0",
+            "inactive_D": "0",
+            "inactive_S": "0",
+            "q": "1",
+            "q2": "1",
+            "q_J_D_im": "0",
+            "q_J_D_re": "0",
+            "site_D": "0",
+            "site_S": "0"
+          },
+          "residual": {
+            "J_D_im": "0",
+            "J_D_re": "0",
+            "J_S_im": "0",
+            "J_S_re": "0",
+            "active_D": "0",
+            "active_S": "0",
+            "inactive_D": "0",
+            "inactive_S": "0",
+            "q": "0",
+            "q2": "0",
+            "q_J_D_im": "0",
+            "q_J_D_re": "0",
+            "site_D": "0",
+            "site_S": "0"
+          }
+        }
+      ],
+      "period_matrix": [
+        [
+          2,
+          -1
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    }
+  ],
+  "identity": "E_path[(N-k) I(next site) | |A|=k] = E_A[sum_(v absent) I_v(A)]",
+  "issues": [
+    215,
+    269,
+    275,
+    276
+  ],
+  "schema": "matching-one/marked-birth-path-oracle/v1",
+  "status": "tiny_exact_microcanonical_Horvitz_oracle"
+}
