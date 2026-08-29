@@ -1,0 +1,13 @@
+schema_version: 1
+issue: 123
+frozen_on: 2026-08-29
+generator: scripts/p123_correlated_hyperedge_closure.py
+artifact: results/exact-correlated-hyperedge-closure/latest.json
+test: tests/test_p123_correlated_hyperedge_closure.py
+coordinates: [P1, P2, P3, P4, P5, P6]
+selfdual_equations: ["P1=P4", "P2=P3", "P5=P6"]
+primary_obstruction: two-block all-or-none composition generates unpaired P2
+positive_family: "P=(w,u,u,w,v,v), w=1/2-4u-2v"
+pc_fit_performed: false
+literature:
+  - https://arxiv.org/abs/1506.06125
