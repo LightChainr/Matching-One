@@ -216,6 +216,53 @@ python3 scripts/run_triangular_energy_logpair_mc.py run \
 Run the analogous `L=96,128,192` rows before moving to the smaller fixed
 cutoffs.  This preserves the required fixed-`delta` first limit.
 
+## A projective Jordan pencil across sizes
+
+Once the relative field gauge is fixed, there is a stronger projective
+fingerprint than scoring `J` one size at a time.  In a canonical logarithmic
+basis the fixed-delta two-point matrix
+has the projective form
+
+```text
+M(t)/LD = [[0,1],[1,d0+k t]],       t=log L.
+```
+
+Therefore two sizes obey the exact matrix-pencil identity
+
+```text
+M(t2) M(t1)^-1 = [[1,0],[k(t2-t1),1]].
+```
+
+The unknown logarithmic mixing normalization occupies only the lower-left entry.
+The other three entries give `T00=1`, `T01=0`, and `T11=1`.  But there is an
+important exact degeneracy: if `LL=0` at both sizes, these three equations hold
+for *any* sequence of `DD/LD`.  The two-size pencil is therefore only a matrix
+re-expression of the per-size null-field condition, not independent evidence
+for a constant Jordan flow.
+
+New flow information first appears with three sizes.  For every adjacent pair
+define
+
+```text
+k_i = T10_i / log(L_(i+1)/L_i).
+```
+
+A single dilation generator requires all `k_i` to agree.  Four sizes give
+three rates and a two-degree-of-freedom constant-flow challenge.  This is the
+actual projective Jordan fingerprint frozen by the scorer.
+
+There is also an exact no-go that matters for the present raw blocks.  If the
+two fields at size `L_i` are independently rescaled, `M_i -> D_i M_i D_i`,
+then `J_i` survives but the cross-size pencil does not.  Dividing by `LD`
+removes the overall scale, not the size-dependent relative gauge.  The scorer
+therefore requires one declared ratio `A_L/A_D` per size for physical fields
+`A_L L_raw` and `A_D D_raw`.  It propagates the full three-by-three covariance
+and reports the source Gram condition number, but refuses to invent this
+normalization.  Phase A does not yet contain `pi_a`, so its raw output alone
+cannot legitimately score the constant-flow relation.  This identifies the
+exact extra scalar that the next measurement must supply and prevents the
+automatic two-size unipotent identity from being mistaken for a discovery.
+
 ## Remaining normalization boundary
 
 The raw three-correlation block is sufficient for the first finite-size
