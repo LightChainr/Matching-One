@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "frozen_on": "2026-08-29",
+  "governance": {
+    "additive_role": "primary",
+    "pairwise_rule": "compare only the intersection of additive endpoints predicted by both models",
+    "derived_view_rule": "one primary view per raw_data_group; sensitivities and diagnostics are non-additive",
+    "channel_rule": "source and target semantics must match or cite a registered exact_map",
+    "no_prediction_rule": "NO_PREDICTION is coverage metadata, never a score"
+  },
+  "blocks": [
+    {
+      "id": "issue43_n185_n265_deltaM",
+      "raw_data_group": "issue43_n185_n265_500m_histograms",
+      "role": "primary",
+      "status": "SCORED",
+      "channel": {"source": "matching_odd", "target": "matching_odd", "exact_map": null},
+      "chronology": {
+        "prediction_frozen_before_reveal": true,
+        "prediction_artifact": "predictions/two_spin4_heldout_20260828.yaml",
+        "prediction_sha256": "a370e79a10854341fac3ee75e8c518dbf3533e8c077cba2c2ec1018178144f44",
+        "reveal_artifact": "results/server-20260828/P43-heldout-fullcurve-500m/analysis/primary_score.json",
+        "reveal_blob_sha": "9df6f8664bd5ab4e573cc80ae26adcfc7aa357aa"
+      },
+      "observation": [0.00013683009348575636, 0.00012711031441723863],
+      "models": {
+        "H4_x21_over_4": {
+          "mean": [0.00019223156676869253, 0.0001567390401230751],
+          "covariance": [[1.2456913315488692e-9, 6.004596379659636e-11], [6.004596379659636e-11, 1.2515458385865729e-9]]
+        },
+        "H4_x17_over_4": {
+          "mean": [0.0002868415917648024, 0.0002799185461225267],
+          "covariance": [[1.3403776066792787e-9, 1.6426655403582926e-10], [1.6426655403582926e-10, 1.3628883247148765e-9]]
+        },
+        "zero_effect": {
+          "mean": [0.0, 0.0],
+          "covariance": [[1.1720483534516938e-9, 0.0], [0.0, 1.2025864148720061e-9]]
+        }
+      }
+    },
+    {
+      "id": "issue43_n185_n265_sprime_training_only",
+      "raw_data_group": "issue43_n185_n265_500m_histograms",
+      "role": "sensitivity",
+      "status": "SCORED",
+      "channel": {"source": "matching_even_derivative", "target": "matching_even_derivative", "exact_map": null},
+      "chronology": {
+        "prediction_frozen_before_reveal": true,
+        "prediction_artifact": "predictions/p48_sprime_correction_20260828.yaml",
+        "prediction_sha256": "0d44228ae117f94cb1f99d1e2727eb47390aae950c3ae70c21dd8bc5a09454ae",
+        "reveal_artifact": "results/server-20260828/P43-heldout-fullcurve-500m/analysis/secondary_score.json",
+        "reveal_blob_sha": "7f8227699b68b26d6aa90ef0d57ac22b8a12791c"
+      },
+      "observation": [2.579707985721759, 2.8584391240168143],
+      "models": {
+        "analytic_inverse_N": {
+          "mean": [2.6770018919349763, 2.8206562940679887],
+          "covariance": [[0.07075921446106298, 0.07145989058713698], [0.07145989058713698, 0.09757393747678815]]
+        },
+        "rank2_Jordan_log": {
+          "mean": [2.9483999207704414, 3.340954787622457],
+          "covariance": [[0.11443450284008791, 0.1428792399110507], [0.1428792399110507, 0.2096667139352909]]
+        }
+      }
+    },
+    {
+      "id": "issue43_deltaS_literal_channel_mismatch",
+      "raw_data_group": "issue43_n185_n265_500m_histograms",
+      "role": "protocol_history",
+      "status": "PROTOCOL_FAILURE_CHANNEL_MISMATCH",
+      "channel": {"source": "either_even", "target": "cross_even", "exact_map": null},
+      "chronology": {
+        "historical_chi_square": 240.2472113766935,
+        "excluded_from_evidence": true,
+        "correction_note": "notes/issue43-cross-either-channel-map-erratum.md"
+      },
+      "models": {}
+    },
+    {
+      "id": "p37_two_lineage_fixed_coordinate",
+      "raw_data_group": "p37_two_lineage_fixed_coordinate",
+      "role": "primary",
+      "status": "PENDING_ARTIFACT_EXTRACTION",
+      "channel": {"source": "matching_odd", "target": "matching_odd", "exact_map": null},
+      "models": {}
+    },
+    {
+      "id": "p50_third_fixed_coordinate",
+      "raw_data_group": "p50_third_fixed_coordinate",
+      "role": "primary",
+      "status": "PENDING_ARTIFACT_EXTRACTION",
+      "channel": {"source": "matching_odd", "target": "matching_odd", "exact_map": null},
+      "models": {}
+    },
+    {
+      "id": "p45_angular_normalized_root",
+      "raw_data_group": "p45_angular_normalized_root",
+      "role": "primary",
+      "status": "PENDING_ARTIFACT_EXTRACTION",
+      "channel": {"source": "matching_root", "target": "matching_root", "exact_map": null},
+      "models": {}
+    },
+    {
+      "id": "issue57_norm5",
+      "raw_data_group": "issue57_norm5_production",
+      "role": "primary",
+      "status": "PENDING_REVEAL",
+      "channel": {"source": "matching_odd", "target": "matching_odd", "exact_map": null},
+      "models": {}
+    }
+  ]
+}
