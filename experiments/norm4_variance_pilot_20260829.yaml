@@ -107,6 +107,7 @@ source_plus_target_forecast:
     reaching approximately three-sigma expected separation in both directions.
   frozen_production:
     driver: scripts/run_norm4_production_20260829.sh
+    scorer: scripts/score_norm4_production.py
     source_extension:
       executable: build/threshold_rank_orientation_mc
       sizes: [65, 130, 85, 170]
