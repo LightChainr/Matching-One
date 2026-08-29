@@ -44,6 +44,16 @@ operator_hypotheses:
 
 rank_gap_bridge:
   observable: 'G=K_plus-K_minus'
+  exact_canonical_neutral_area:
+    status: exact
+    microcanonical_sign: 'm_k=-1 for k<K_minus, 0 for K_minus<=k<K_plus, +1 for k>=K_plus'
+    neutral_indicator: 'U_k=1-m_k^2'
+    bernstein_basis_integral: 'integral_0^1 binomial(N,k)*p^k*(1-p)^(N-k) dp=1/(N+1)'
+    identity: >-
+      integral_0^1 E[U_(K~Bin(N,p))] dp=E[K_plus-K_minus]/(N+1)
+    evidence_boundary: >-
+      The area identity is exact at finite N. The subsequent N^(5/8)
+      scaling law and interpretation of corrections remain hypotheses.
   scaled_width: 'w_N=N^(-5/8)*E[G]'
   source_model: 'E[G]=A*N^(5/8)+B+...'
   correction_exponent_in_N: '5/8'

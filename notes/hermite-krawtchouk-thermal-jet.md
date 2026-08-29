@@ -108,6 +108,44 @@ G=K_+-K_-
 \]
 
 measures the number of occupation ranks in the topologically neutral window.
+This statement has an exact canonical bridge, not only a scaling
+interpretation.  For each permutation define
+
+\[
+m_k=\begin{cases}
+-1,&k<K_-,\\
+0,&K_-\le k<K_+,\\
++1,&k\ge K_+,
+\end{cases}
+\qquad U_k=1-m_k^2.
+\]
+
+Canonical binomial mixing gives
+
+\[
+U_N(p)=\mathbb E[U_{K}],\qquad K\sim\operatorname{Bin}(N,p).
+\]
+
+Every degree-`N` Bernstein basis function has the same unit-interval area,
+
+\[
+\int_0^1 \binom Nk p^k(1-p)^{N-k}\,dp=\frac1{N+1}.
+\]
+
+Because exactly `K_+-K_-` layers have `U_k=1`, linearity over permutations
+proves the finite-size identity
+
+\[
+\boxed{
+\int_0^1 \mathbb E\!\left[U_{K\sim\operatorname{Bin}(N,p)}\right]dp
+=\frac{\mathbb E[K_+-K_-]}{N+1}.
+}
+\]
+
+Thus the expected rank gap is exactly `(N+1)` times the canonical neutral-
+window area.  Calling it a width is therefore an observable identity before
+any scaling ansatz is imposed.
+
 The thermal law gives
 
 \[

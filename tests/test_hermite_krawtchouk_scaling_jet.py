@@ -12,8 +12,12 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from hermite_krawtchouk_scaling_jet import (  # noqa: E402
+    bernstein_basis_integral,
+    canonical_neutral_window_area,
     cocycle_residual,
     dilate_jet,
+    mean_canonical_neutral_window_area,
+    microcanonical_matching_sign,
     pooled_gap_convention_shift,
     response_from_modes,
     translate_jet,
@@ -105,12 +109,50 @@ class HermiteKrawtchoukScalingJetTests(unittest.TestCase):
         }
         self.assertNotIn(Fraction(-1, 4), shifts)
 
+    def test_exact_rank_gap_is_canonical_neutral_window_area(self) -> None:
+        for n in range(13):
+            for occupation in range(n + 1):
+                self.assertEqual(
+                    bernstein_basis_integral(n, occupation), Fraction(1, n + 1)
+                )
+            for k_minus in range(n + 2):
+                for k_plus in range(k_minus, n + 2):
+                    signs = [
+                        microcanonical_matching_sign(
+                            n, occupation, k_minus, k_plus
+                        )
+                        for occupation in range(n + 1)
+                    ]
+                    self.assertEqual(
+                        sum(1 - sign**2 for sign in signs), k_plus - k_minus
+                    )
+                    self.assertEqual(
+                        canonical_neutral_window_area(n, k_minus, k_plus),
+                        Fraction(k_plus - k_minus, n + 1),
+                    )
+
+    def test_exact_rank_gap_bridge_commutes_with_permutation_average(self) -> None:
+        n = 17
+        threshold_pairs = [(2, 7), (4, 15), (0, 18), (11, 11)]
+        expected_gap = Fraction(
+            sum(k_plus - k_minus for k_minus, k_plus in threshold_pairs),
+            len(threshold_pairs),
+        )
+        self.assertEqual(
+            mean_canonical_neutral_window_area(n, threshold_pairs),
+            expected_gap / (n + 1),
+        )
+
     def test_prediction_artifact_freezes_width_first(self) -> None:
         path = ROOT / "predictions" / "hermite_krawtchouk_jet_20260829.yaml"
         artifact = yaml.safe_load(path.read_text(encoding="utf-8"))
         self.assertEqual(artifact["status"], "source_theory_frozen_before_norm5_reveal")
         self.assertEqual(artifact["scoring_order"][0], "rank_gap_width_collapse")
         self.assertEqual(artifact["rank_gap_bridge"]["correction_exponent_in_N"], "5/8")
+        self.assertEqual(
+            artifact["rank_gap_bridge"]["exact_canonical_neutral_area"]["status"],
+            "exact",
+        )
 
 
 if __name__ == "__main__":

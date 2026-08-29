@@ -154,6 +154,74 @@ def pooled_gap_convention_shift(
     )
 
 
+def microcanonical_matching_sign(
+    n: int, occupation: int, k_minus: int, k_plus: int
+) -> int:
+    """Return the three-valued matching sign for one threshold pair.
+
+    Thresholds may equal ``n+1``, which represents a transition beyond the
+    last Bernstein layer.  The neutral plateau is ``k_minus <= k < k_plus``.
+    """
+
+    if n < 0 or not 0 <= occupation <= n:
+        raise ValueError("occupation must lie in 0..n")
+    if not 0 <= k_minus <= k_plus <= n + 1:
+        raise ValueError("thresholds must satisfy 0 <= Kminus <= Kplus <= n+1")
+    if occupation < k_minus:
+        return -1
+    if occupation < k_plus:
+        return 0
+    return 1
+
+
+def bernstein_basis_integral(n: int, occupation: int) -> Fraction:
+    """Integrate ``C(n,k) p^k (1-p)^(n-k)`` exactly over ``p in [0,1]``."""
+
+    if n < 0 or not 0 <= occupation <= n:
+        raise ValueError("occupation must lie in 0..n")
+    return Fraction(
+        math.comb(n, occupation)
+        * math.factorial(occupation)
+        * math.factorial(n - occupation),
+        math.factorial(n + 1),
+    )
+
+
+def canonical_neutral_window_area(
+    n: int, k_minus: int, k_plus: int
+) -> Fraction:
+    """Return the exact canonical area of ``U=1-m^2`` for one permutation."""
+
+    return sum(
+        (
+            bernstein_basis_integral(n, occupation)
+            for occupation in range(n + 1)
+            if 1
+            - microcanonical_matching_sign(
+                n, occupation, k_minus, k_plus
+            )
+            ** 2
+        ),
+        Fraction(0),
+    )
+
+
+def mean_canonical_neutral_window_area(
+    n: int, threshold_pairs: Sequence[tuple[int, int]]
+) -> Fraction:
+    """Average the exact canonical neutral-window area over permutations."""
+
+    if not threshold_pairs:
+        raise ValueError("at least one threshold pair is required")
+    return sum(
+        (
+            canonical_neutral_window_area(n, k_minus, k_plus)
+            for k_minus, k_plus in threshold_pairs
+        ),
+        Fraction(0),
+    ) / len(threshold_pairs)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--max-order", type=int, default=6)
@@ -172,6 +240,10 @@ def main() -> int:
         "translation_generator": [f"d_{r + 1}" for r in range(order)],
         "width_generator": [f"{r}*d_{r}" for r in range(order + 1)],
         "rank_gap_width": "w_N=N^(-5/8) E[K_plus-K_minus]",
+        "exact_neutral_area_bridge": (
+            "integral_0^1 E[U_{K~Bin(N,p)}] dp="
+            "E[K_plus-K_minus]/(N+1)"
+        ),
     }
     print(json.dumps(payload, indent=2))
     return 0
