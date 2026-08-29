@@ -40,6 +40,26 @@ future_N170:
   status: gated
   run_only_if: a frozen N130 wrapping pair passes the rank gate
 
+orientation_H4_rescue:
+  frozen_after: N130_same_geometry_wrapping_rank_gate_failed
+  first_representation: [11, 3]
+  second_representation: [9, 7]
+  shared_rng:
+    seed: 2026105501
+    counter_interval: [1000000000, 1010000000]
+  primary_channel: cross
+  response_rows:
+    - orientation_mean
+    - N_times_orientation_difference_over_DeltaCos4
+  columns: [t, lambda]
+  scale_invariant_conditioning: normalize_each_response_row_to_unit_Euclidean_norm
+  pair_gate:
+    maximum_row_angular_condition_number: 50
+    minimum_absolute_determinant_z: 3
+  N170_replication_if_pass:
+    first_representation: [13, 1]
+    second_representation: [11, 7]
+
 claim_boundary: >-
   Failure of the wrapping rank gate says that this topological readout family
   cannot resolve two odd RG directions. It does not prove the microscopic
