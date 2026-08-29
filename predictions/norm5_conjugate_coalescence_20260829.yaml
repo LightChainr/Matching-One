@@ -1,0 +1,121 @@
+version: 1
+status: frozen_before_coalescence_target_means
+frozen_date: 2026-08-29
+issue: 205
+claim_level: C0
+purpose: >-
+  Same-parent conjugate-multiplier tomography and cyclic/noncyclic arithmetic
+  control using one new coalescence geometry at N=325 and N=425.
+
+primary_coordinate:
+  probability: '0.59274605079'
+  channel: cross
+  combination: odd
+  quantity: raw_matching_function
+  orientation_convention: first_minus_second_when_a_pair_is_formed
+  note: >-
+    Use the same fixed probability as the prospective P57 primary. The primary
+    triangle residual is same-N and does not use a radial exponent or pc.
+
+model_order:
+  - H4
+  - H12
+  - H8
+
+sizes:
+  325:
+    parent_N: 65
+    parents:
+      - [8, 1]
+      - [7, 4]
+    observed_branch_multiplier: '2-i'
+    conjugate_multiplier: '2+i'
+    A: [17, 6]
+    B: [18, 1]
+    C: [15, 10]
+    C_period_matrix: [[15, -10], [10, 15]]
+    C_smith: [5, 65]
+    exact_products:
+      - '(8+i)(2-i)=17-6i'
+      - '(7+4i)(2-i)=18+i'
+      - '(8+i)(2+i)=15+10i'
+      - '(7+4i)(2+i)=10+15i'
+    same_parent_sine_ratio: '6/11'
+    harmonic_interpolation:
+      H4:
+        weight_A: '11/5'
+        weight_B: '-6/5'
+        integer_residual: '5*M_C - 11*M_A + 6*M_B'
+      H8:
+        weight_A: '22517/44795'
+        weight_B: '22278/44795'
+      H12:
+        weight_A: '363263/7144145'
+        weight_B: '6780882/7144145'
+
+  425:
+    parent_N: 85
+    parents:
+      - [9, 2]
+      - [7, 6]
+    observed_branch_multiplier: '2+i'
+    conjugate_multiplier: '2-i'
+    A: [16, 13]
+    B: [19, 8]
+    C: [20, 5]
+    C_period_matrix: [[20, -5], [5, 20]]
+    C_smith: [5, 85]
+    exact_products:
+      - '(9+2i)(2+i)=16+13i'
+      - '(7+6i)(2+i)=8+19i'
+      - '(9+2i)(2-i)=20-5i'
+      - '(7+6i)(2-i)=20+5i'
+    same_parent_sine_ratio: '33/13'
+    harmonic_interpolation:
+      H4:
+        weight_A: '-13/20'
+        weight_B: '33/20'
+        integer_residual: '20*M_C + 13*M_A - 33*M_B'
+      H8:
+        weight_A: '89531/242420'
+        weight_B: '152889/242420'
+      H12:
+        weight_A: '181189/68620'
+        weight_B: '-112569/68620'
+
+common_field_contract:
+  requirement: >-
+    For each N run C-vs-A and C-vs-B with identical seed and counter interval,
+    with C in the same slot in both runs. Verify the C histogram is byte-identical
+    before treating the two runs as one synchronized three-geometry block.
+  primary_uses_historical_P57_AB: false
+  historical_P57_AB_role: sensitivity_only
+  covariance: synchronized_delete_one_over_A_B_C
+
+pilot_gate:
+  first_samples_per_pair: 1000000
+  second_samples_per_pair_if_needed: 10000000
+  target_means_forbidden_for_model_choice: true
+  use_pilot_for:
+    - variance_of_frozen_linear_residuals
+    - throughput
+    - common_field_identity_check
+  promotion_rule: >-
+    Promote only if information per CPU is competitive with or mechanistically
+    more valuable than immediately opening the frozen balanced norm-4 production.
+
+interpretation:
+  H4_passes_both: >-
+    Supports the same-N H4 angular law across a cyclic/noncyclic Smith-class
+    change and removes a major arithmetic confounder for norm-4.
+  fixed_other_harmonic_passes: >-
+    Reopen angular representation before norm-10 tomography.
+  all_fixed_harmonics_fail_at_C: >-
+    Prioritize quotient arithmetic or nonlocal/topological response before
+    attributing noncyclic norm-4 failure to q2/Jordan.
+
+forbidden:
+  - fit_a_free_harmonic_from_C_target
+  - use_13_over_8_or_pc_to_rescue_the_same_N_primary
+  - assume_C_common_randomness_without_byte_identity_gate
+  - count_this_as_independent_of_any_reused_historical_P57_sensitivity_view
