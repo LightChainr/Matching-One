@@ -1,0 +1,74 @@
+version: 1
+created: 2026-08-29
+status: production_ready_before_N290_fullcurve_reveal
+issue: 50
+purpose: >-
+  Execute the third Gaussian-doubling full-curve lineage at balanced precision
+  and score the already-frozen center/slope/root targets before any adaptive
+  multivariate mechanism analysis.
+
+sampling:
+  samples_per_size: 100000000
+  batches: 100
+  rationale: >-
+    Match the clean P49 full-curve scale. The fixed-p N290 signal is already
+    established at 500M; this block is optimized for full-curve slope/root and
+    held-out transfer information rather than another center detection.
+  cross_size_rng: independent
+
+parent_N145:
+  representations: [[12, 1], [9, 8]]
+  engine: src/threshold_rank_orientation_mc.cpp
+  seed: 2026105003
+  replica_counter_first: 7000000000
+  replica_counter_last_exclusive: 7100000000
+  command_template: >-
+    build/threshold_rank_orientation_mc --n 145 --samples 100000000
+    --batches 100 --seed 2026105003 --replica-offset 7000000000
+    --threads THREADS --git-commit FULL_SHA
+    --output-prefix results/server-20260829/P50-n145-n290-fullcurve/raw/n145_100m
+
+child_N290:
+  lineage_order: [[13, 11], [17, 1]]
+  engine: src/threshold_rank_integer_period_mc.cpp
+  first_period_matrix: [[13, -11], [11, 13]]
+  second_period_matrix: [[17, -1], [1, 17]]
+  determinant_order: 290
+  seed: 2026105004
+  replica_counter_first: 7000000000
+  replica_counter_last_exclusive: 7100000000
+  command_template: >-
+    build/threshold_rank_integer_period_mc --first-matrix 13 -11 11 13
+    --second-matrix 17 -1 1 17 --first-rep 13 11 --second-rep 17 1
+    --samples 100000000 --batches 100
+    --seed 2026105004 --replica-offset 7000000000 --threads THREADS
+    --git-commit FULL_SHA
+    --output-prefix results/server-20260829/P50-n145-n290-fullcurve/raw/n290_100m
+
+frozen_scoring:
+  prediction: predictions/p49_slope_two_sector_145_290_20260828.yaml
+  scorer: scripts/score_p50_fullcurve_n290.py
+  order:
+    - intrinsic_and_thermal_even_DeltaM_transfer
+    - raw_asymptotic_slope_baseline
+    - frozen_scalar_plus_H4_slope_correction
+    - raw_root_ratio_baseline
+    - frozen_induced_root_ratio
+  independent_source_target_covariance: true
+
+post_primary_reuse:
+  analyses:
+    - low_rank_matrix_semigroup_transfer
+    - Krawtchouk_Hermite_thermal_jet
+    - paired_rank_gap_neutral_window
+    - metric_free_R_I_R_T
+    - multi_u_and_standardized_profile
+  evidence_rule: all_are_correlated_views_of_one_raw_block
+
+chronology:
+  N290_fullcurve_target_seen_before_this_freeze: false
+  fixed_coordinate_N290_known: true
+  note: >-
+    The earlier 500M fixed-p N290 result is known and remains prospective for
+    its own statistic. This full-curve plan freezes sample count, random domains,
+    geometry and primary score order before threshold-rank N290 curves are opened.
