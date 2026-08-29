@@ -42,6 +42,12 @@ CROSS_PAIRS = (
 )
 
 
+def popcount(value: int) -> int:
+    """Return the Hamming weight on every supported Python (3.9+)."""
+
+    return bin(value).count("1")
+
+
 def fraction_text(value: Fraction) -> str:
     if value.denominator == 1:
         return str(value.numerator)
@@ -80,7 +86,7 @@ def truth_tables(geometry: IntegerTorusGeometry) -> dict[str, list[int]]:
 
 
 def mask_probability(mask: int, n: int, p: Fraction) -> Fraction:
-    occupied = mask.bit_count()
+    occupied = popcount(mask)
     return p**occupied * (1 - p) ** (n - occupied)
 
 
@@ -123,7 +129,7 @@ def level_cross_spectrum(
     pq = p * (1 - p)
     levels = [Fraction(0) for _ in range(n + 1)]
     for subset in range(1, 1 << n):
-        level = subset.bit_count()
+        level = popcount(subset)
         levels[level] += first[subset] * second[subset] / pq**level
     return levels
 
@@ -146,8 +152,8 @@ def direct_noisy_pair_histograms(
     histograms = {pair: defaultdict(int) for pair in pairs}
     for first_mask in range(1 << n):
         for second_mask in range(1 << n):
-            both_one = (first_mask & second_mask).bit_count()
-            different = (first_mask ^ second_mask).bit_count()
+            both_one = popcount(first_mask & second_mask)
+            different = popcount(first_mask ^ second_mask)
             both_zero = n - both_one - different
             key = (both_one, both_zero, different)
             for first, second in pairs:
@@ -191,7 +197,7 @@ def pivotal_mass_exact(table: Sequence[int], n: int, p: Fraction) -> Fraction:
             difference = table[mask | low] - table[mask]
             if difference not in (-1, 0, 1):
                 raise ArithmeticError("indicator edge difference is not Boolean")
-            occupied = mask.bit_count()
+            occupied = popcount(mask)
             # mask has vertex fixed to zero, hence n-1 free coordinates.
             total += difference * difference * p**occupied * (1 - p) ** (
                 n - 1 - occupied
