@@ -51,9 +51,9 @@ corrected DeltaS chi2 = 0.5700315 / 2
 marginal residual z   = +0.67, -0.12
 ```
 
-The matching-even prospective result is therefore compatible with the frozen amplitude after channel conversion. The raw #108 files remain preserved; the erratum/scorer is on `main` via PR #134.
+The matching-even prospective result is therefore compatible with the frozen amplitude after channel conversion. The raw #108 files remain preserved.
 
-This is an important methodological lesson for the whole repository: every frozen prediction must name its wrapping channel, and every scorer must make any exact channel map explicit.
+The durable lesson is narrow: claim-bearing scores must state their observable semantics and apply an exact registered map when source and target conventions differ.
 
 ### A real prospective failure remains
 
@@ -82,57 +82,73 @@ A compact empirical law for the central matching-odd sector remains
 \Delta M_N \approx A\,\Delta\cos(4\theta)\,N^{-13/8}.
 \]
 
-It now has independent-seed, held-out, Gaussian-semigroup, root-closure, and prospective-new-geometry support. It does **not** yet prove that H4 is unique rather than H12/H20, nor uniquely identify an `x=21/4` LCFT operator.
+It has independent-seed, held-out, Gaussian-semigroup, root-closure, and prospective-new-geometry support. It does **not** yet prove that H4 is unique rather than H12/H20, nor uniquely identify an `x=21/4` LCFT operator.
 
-The matching-even sector is again compatible with its frozen `N^-1` amplitude once cross/either semantics are aligned. This strengthens the empirical two-parity picture, but does not prove a local matching/OPE automorphism.
+The matching-even sector is compatible with its frozen `N^-1` amplitude once cross/either semantics are aligned. Full-curve data also resolve a small finite-size correction to the bare center-slope multiplier `2^(3/8)`.
 
-Full-curve data also show that the bare finite-size center-slope ratio is not exactly `2^(3/8)` at current precision; a small but resolved finite-size correction is required. For normalized `P4=DeltaX/DeltaCos4`, the Gaussian angular factor is already divided out, so pure-H4 normalized transfer is positive `Q^(-alpha)` even when the raw contrast changes sign.
+The finite threshold-rank archive is now more than a source of roots and slopes: it supports reliability signatures, pivotal identities, Krawtchouk/Hermite response modes, paired rank-gap width, and low-rank transfer analysis without rerunning the simulation.
 
 ## Next experiments and analysis
 
-The execution order is intentionally short:
+The priority order is short, but it is a scheduling order rather than a permission system.
 
-1. **Norm-5 H4 versus H12 — #57.** Highest-information new-compute discriminator. N=325/425 are supported by the threshold-rank engine. Use a frozen variance/power pilot and preserve raw-versus-normalized channel conventions.
-2. **Third full-curve lineage — #50.** Score `145 -> 290`, including the already-frozen finite-size slope correction and induced root prediction.
-3. **Use existing full curves harder before simulating more.** Priority analyses include the prequential evidence ledger (#95), pivotal/Russo bridge (#100), intrinsic quantile-center spectroscopy (#101), multi-u thermal response (#119), and a joint operator-mixing treatment (#125).
-4. **Choose later expensive geometry by information gain — #102.** Do not default to a larger N.
+1. **Norm-5 N=325/425 — #57.** Highest-information new block. Keep the frozen H4/H12/H8/zero primary score, then reuse the same full threshold-rank data for q=2/Jordan, Krawtchouk/Hermite thermal-jet, paired rank-gap width, root/slope, derivative and multi-u analyses.
+2. **Third full-curve lineage — #50.** Score `145 -> 290`, including the frozen finite-size slope correction and induced root prediction, then use the same data as a held-out score-mode/low-rank transfer test.
+3. **Use existing full curves harder.** The prequential evidence ledger (#95) is complete. Active source-data routes include intrinsic quantile centers (#101), multi-u response (#119), joint operator mixing (#125), full standardized threshold profiles (#122), and pivotal/four-arm continuation (#100/#121).
+4. **Choose later geometry by information gain — #102.** Maximin Gaussian design tooling is canonical; update cost/variance inputs as new runs arrive rather than defaulting to larger N.
 
-Parallel theory/control routes are tracked in the post-P43 frontier map: FK/Potts torus sectors, four-arm anisotropy, torus-modulus spectroscopy, exactly-critical isoradial controls, Euler/Betti identities, universal amplitude ratios, exact self-matching Beta-family tests, and finite-polynomial Galois certificates.
+Norm-4, self-matching tangent, Pell/modulus work, N=1105, exact algebra and other controls are valid parallel directions. Their current ranking reflects expected information per compute, not a blanket gate.
 
-The exact N=1105 four-angle projector, axis-annihilator work, complex-zero maps, kappa3, rigorous-bound feasibility, and PSLQ are secondary/gated tracks.
+### One-command norm-5 analysis
+
+When a six-size norm-5/full-curve data block is available, `scripts/run_norm5_analysis_bundle.py` provides a thin orchestration entrypoint. It infers exact shared counter groups from metadata and runs the existing scorers independently. A frozen scorer that is inapplicable to an exploratory input is recorded as a failed subanalysis without blocking the other views.
+
+```text
+--run 65:HIST:MOMENTS:METADATA
+--run 85:HIST:MOMENTS:METADATA
+--run 130:HIST:MOMENTS:METADATA
+--run 170:HIST:MOMENTS:METADATA
+--run 325:HIST:MOMENTS:METADATA
+--run 425:HIST:MOMENTS:METADATA
+```
+
+This keeps one expensive data block reusable rather than turning every new observable into a new production campaign.
 
 ## Research navigation
 
-The repository now separates current claims, research relationships, immutable evidence, and historical snapshots explicitly:
+- `docs/STATUS.md` — authoritative current claim ledger.
+- `docs/RESEARCH-MAP.md` — how scientific tracks and evidence fit together.
+- `notes/SYNTHESIS-20260828.md` — execution-facing scientific synthesis.
+- `docs/ROADMAP.md` — information-gain priorities.
+- `analysis/research_ledger.yaml` — machine-readable questions, evidence and work state.
+- `analysis/artifact_registry.yaml` — lightweight artifact/navigation index; it does not block research integration.
+- `results/evidence-ledger/latest.md` — primary-only predictive evidence view.
 
-- [`docs/STATUS.md`](docs/STATUS.md) — authoritative current claim ledger.
-- [`docs/RESEARCH-MAP.md`](docs/RESEARCH-MAP.md) — how the scientific tracks and evidence blocks fit together.
-- [`notes/SYNTHESIS-20260828.md`](notes/SYNTHESIS-20260828.md) — execution-facing scientific synthesis.
-- [`docs/ROADMAP.md`](docs/ROADMAP.md) — active discriminators and information-gain priorities.
-- [`analysis/research_ledger.yaml`](analysis/research_ledger.yaml) — machine-readable questions, evidence blocks, analysis queue, and new-compute queue.
-- [`analysis/artifact_registry.yaml`](analysis/artifact_registry.yaml) — machine-readable status of predictions, result archives, topic notes, historical protocols, and frontier PRs.
-
-Old result reports, wave notes, and compute queues are preserved as provenance. Their presence does not make them competing current status documents.
+Old reports, wave notes, queues, closed PRs and negative results remain provenance, not competing current-status documents.
 
 ## Repository
-
-The numerical archive, production source, exact checks, failed/null models, raw sufficient statistics, and protocol errata live on `main`.
 
 ```text
 constants/      reference values and exact relations
 data/           literature datasets and provenance
 docs/           canonical status, research map, and roadmap
-analysis/       machine-readable research/evidence/artifact indexes
+analysis/       evidence/work indexes and analysis manifests
 notes/          synthesis, theory, derivations, negative results
-scripts/        analysis, scorers, and exact checks
+scripts/        production analysis, scorers, exact checks, orchestration
 experiments/    frozen and historical protocols
-predictions/    preregistered predictions
+predictions/    preregistered/frozen predictions
 results/        immutable raw and derived research archives
 tests/          smoke, regression, exact-contract tests
 src/            production C++ engines
 ```
 
-This is an exploratory mathematics/computational-physics repository. Useful research assets should enter `main` quickly; claim strength is controlled by evidence and chronology, not by branch location.
+This is an exploratory mathematics/computational-physics repository. Useful research assets should enter `main` quickly; claim strength is controlled by evidence and chronology, not by branch location or process ceremony.
+
+The repository-wide hard constraints are intentionally minimal:
+
+1. do not rewrite frozen predictions or committed result history;
+2. do not silently score incompatible observable semantics;
+3. do not add correlated views of one raw random block as independent primary evidence.
 
 ```bash
 python3 -m unittest discover -s tests -p 'test_*.py' -v
@@ -142,4 +158,4 @@ No closed form for square-site `p_c` is claimed. Published numerical estimates r
 
 ## License
 
-MIT. See [`LICENSE`](LICENSE).
+MIT. See `LICENSE`.
