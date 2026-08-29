@@ -1,0 +1,14 @@
+schema_version: 1
+issue: 233
+frozen_on: 2026-08-29
+generator: scripts/q1_matching_intertwiner.py
+artifact: results/exact-q1-matching-intertwiner/latest.json
+test: tests/test_q1_matching_intertwiner.py
+finite_representation:
+  space: doubled binary configuration space H_G plus H_Ghat
+  exchange: J|G,A> = |Ghat,A-complement>
+  tangent: K = diag(cluster_count_G, cluster_count_Ghat)
+  exact_identity: "[K,J] = 2 D J, D=(K-JKJ)/2"
+positive_control: planar edge-FK C3 dual repaired configurationwise by Euler counterterm
+no_go: C4/K4 cannot be repaired by any occupancy-only counterterm
+production_status: exact_only

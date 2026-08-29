@@ -1,0 +1,122 @@
+{
+  "claim_boundary": {
+    "not_proved": [
+      "a bounded-local transfer-matrix seam for infinite square-site percolation",
+      "identification of empirical P4[S']/P4[D'] with these exact finite-space operators",
+      "a continuum Jordan or OPE interpretation"
+    ],
+    "proved": [
+      "the doubled-space involution and Ad_J grading",
+      "the exact first-order pull-through identity",
+      "the C3 planar-dual Euler repair",
+      "the C4/K4 no-go for every occupancy-only counterterm",
+      "the separation from a Bernoulli measure score"
+    ]
+  },
+  "connection_to_existing_derivative_ledger": {
+    "issue_257_colour_selection": "Ad_J graph-complement parity and S_Q colour charge are distinct. The matching D operator is colour singlet, so the [2] null for V_(2,+/-2) does not remove this D channel; thermal Q4 remains eligible.",
+    "issue_258_measure_derivative": "A Bernoulli measure score depends only on |A|. The equal-size adjacent/opposite witness has equal measure score but different matching tangent, so the latter requires an explicit topological/operator insertion.",
+    "three_term_Q_derivative": [
+      "critical-manifold/measure score",
+      "projector or defect derivative",
+      "explicit bare-observable derivative"
+    ]
+  },
+  "edge_FK_positive_control": {
+    "adjusted_pullthrough_tangent_zero_configurationwise": true,
+    "local_Euler_counterterm": "ell(n)=2-n",
+    "pair": "C3 and its three-parallel-edge planar dual",
+    "raw_defect_values_by_occupied_count": {
+      "0": [
+        2
+      ],
+      "1": [
+        1
+      ],
+      "2": [
+        0
+      ],
+      "3": [
+        -1
+      ]
+    }
+  },
+  "exact_result": {
+    "interface_status": "J is an involutive configuration bijection and an intertwiner at Q=1 because all Q weights are one; its generic-Q intertwining fails at first order precisely when D is nonzero.",
+    "statement": "S and D are exact +/- eigenoperators of the exchange superoperator Ad_J on the doubled configuration space. D is also exactly half the first log-Q pull-through obstruction: [K,J]=2DJ. It is not thereby a parity field of either single theory."
+  },
+  "issue": 233,
+  "schema": "matching-one.q1-matching-intertwiner.v1",
+  "site_matching_square_face": {
+    "bare_exchange": {
+      "J_squared_is_identity": true,
+      "definition": "J|G,A>=|Ghat,A^c>; J|Ghat,B>=|G,B^c>"
+    },
+    "configuration_space_dimension": 32,
+    "graphs": {
+      "left": "C4 occupied",
+      "right": "K4 vacant matching"
+    },
+    "occupancy_counterterm_no_go": {
+      "candidate_class": "any scalar ell(|A|) added to the right tangent",
+      "consequence": "the Q matching tangent is not an occupancy-only measure derivative",
+      "defect_values_by_occupied_count": {
+        "0": [
+          -1
+        ],
+        "1": [
+          0
+        ],
+        "2": [
+          0,
+          1
+        ],
+        "3": [
+          0
+        ],
+        "4": [
+          1
+        ]
+      },
+      "exists": false,
+      "witness_count": 2,
+      "witnesses": [
+        {
+          "Bernoulli_measure_score_at_p_half": 0,
+          "defect": 0,
+          "occupied": [
+            0,
+            1
+          ],
+          "shape": "adjacent pair"
+        },
+        {
+          "Bernoulli_measure_score_at_p_half": 0,
+          "defect": 1,
+          "occupied": [
+            0,
+            2
+          ],
+          "shape": "opposite pair"
+        }
+      ]
+    },
+    "operator_identity": {
+      "Ad_J_D_equals_minus_D": true,
+      "Ad_J_S_equals_S": true,
+      "D": "(K-J K J)/2",
+      "K": "diag(k_C4(A), k_K4(B))",
+      "S": "(K+J K J)/2",
+      "all_order_identity": "exp(tK)J-Jexp(tK)=2 exp(tS)sinh(tD)J, t=log Q",
+      "d_logQ_pullthrough_residual_at_1": "[K,J]=2 D J",
+      "identity_verified": true,
+      "max_abs_residual": "1",
+      "nonzero_residual_rank": 8
+    },
+    "trace_selection": {
+      "meaning": "J-even and J-odd diagonal operators are exactly orthogonal in the J-invariant doubled trace",
+      "uniform_doubled_trace_D": "0",
+      "uniform_doubled_trace_S_times_D": "0"
+    }
+  }
+}
