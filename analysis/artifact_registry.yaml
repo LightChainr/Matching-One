@@ -83,6 +83,7 @@ evidence_archives:
   - {id: EXACT_ZERO_PILOT, path: results/exact-zero-map-pilot, status: negative_result, role: complex_zero_pilot}
   - {id: C4_LOCAL_ODD_PIVOTAL, path: results/local-20260829/P155-c4-local-odd-pivotal, status: immutable_result, role: exact_local_odd_tangent_oracle}
   - {id: C4_LOCAL_ODD_LARGEN, path: results/local-20260829/P155-c4-local-odd-pivotal-largeN, status: negative_result, role: largeN_rank_gate_one_dimension}
+  - {id: P225_MULTIRADIUS_PIVOTAL, path: results/local-20260829/P225-multiradius-pivotal, status: exploratory_control, role: aligned_two_cutoff_engineering_smoke}
 
 topic_derivations:
   - {path: notes/p234-triangular-energy-logpair-protocol.md, status: topic_derivation, role: lattice_energy_logpair_protocol}
@@ -100,8 +101,11 @@ topic_derivations:
   - {path: notes/square-bond-duality-tiny-torus.md, status: topic_derivation, role: square_bond_control}
   - {path: notes/pinson-arguin-primitive-baseline.md, status: topic_derivation, role: primitive_homology_baseline}
   - {path: notes/p156-square-bond-primitive-pilot.md, status: topic_derivation, role: primitive_homology_pilot}
+  - {path: notes/p156-norm2-h4-h8-production.md, status: topic_derivation, role: primitive_norm2_H4_H8_production}
+  - {path: notes/p156-norm2-generation2.md, status: topic_derivation, role: primitive_norm2_generation2_followup}
   - {path: notes/gaussian-isogeny-maximin-design.md, status: topic_derivation, role: information_design}
   - {path: notes/c4-local-odd-pivotal-tangent.md, status: topic_derivation, role: local_odd_tangent_readout}
+  - {path: notes/p225-multiradius-pivotal-prototype.md, status: topic_derivation, role: two_cutoff_pivotal_prototype}
 
 active_execution_protocols:
   - {path: experiments/p234_phaseA_huawei_20260829.yaml, status: active_execution_plan, issue: 234, role: first_fixed_delta_phaseA_line}
