@@ -1,0 +1,70 @@
+version: 1
+frozen_at: 2026-08-29
+status: frozen_calibration_not_deployed
+related_issue: 263
+depends_on_commit: 513ceb3
+purpose: >-
+  Acquire the smallest two-resolution square-bond boundary-connectivity stream
+  that can score the amplitude-gauge-projected Q-tangent ODE at four exact
+  cross ratios. This is a calibration acquisition, not a continuum claim.
+
+model:
+  lattice: open_square_bond_rectangle
+  critical_point: p=1/2
+  boundary_condition: free
+  rectangle_for_span_s:
+    vertices: '(6s+1)*(4s+1)'
+    horizontal_padding: 2s
+  cluster_score: 'J=2*k+b'
+  q_measure_score: '(J-E[J])/2'
+  link_patterns: [1234, '12|34', '14|23']
+  primary_channel: '14|23'
+
+geometries:
+  - {lambda: '1/4', base_span: 15, terminals_over_span: ['0', '2/5', '1', '2']}
+  - {lambda: '1/3', base_span: 14, terminals_over_span: ['0', '1/2', '1', '2']}
+  - {lambda: '2/3', base_span: 15, terminals_over_span: ['0', '4/5', '1', '2']}
+  - {lambda: '3/4', base_span: 14, terminals_over_span: ['0', '6/7', '1', '2']}
+  anchor_lambda: '1/3'
+
+acquisitions:
+  - level: 1
+    spans: [15, 14, 15, 14]
+    samples_per_geometry: 200000
+    batches: 100
+    seed: 2026102631
+    estimated_single_core_seconds: 76
+  - level: 2
+    spans: [30, 28, 30, 28]
+    samples_per_geometry: 500000
+    batches: 100
+    seed: 2026102632
+    estimated_single_core_seconds: 755
+
+score:
+  lambdas: ['1/4', '1/3', '2/3', '3/4']
+  frozen_target: [-0.14829994193484564, 0.0, 0.3249693720763416, 0.36786256566279774]
+  active_state_order: ['1/4', '2/3', '3/4']
+  covariance: synchronized_delete_one_batch_full_3x3
+  statistic: 'r^T Sigma^+ r'
+  score_each_level_separately: true
+
+resource_calibration:
+  host: local_mac_smoke
+  compiler: 'c++ -O2 -std=c++17'
+  level1_20000_samples_per_geometry_wall_seconds: 7.55
+  largest_level2_graph: {vertices: 21901, edges: 43500}
+  memory: 'well below 1 GiB; DSU state itself is below 1 MiB'
+  parallelism: four geometry processes may run independently
+
+finite_size_risks:
+  - The top and side boundaries are finite and do not equal the upper half-plane.
+  - Base spans differ by 14 versus 15 to realize all marked points exactly.
+  - Two levels can expose gross drift but cannot establish asymptotic convergence.
+  - Rare 14|23 events at lambda 1/4 dominate pilot variance.
+
+forbidden:
+  - change_lambdas_or_anchor_after_acquisition
+  - merge_the_two_levels_before_scoring
+  - call_the_level1_smoke_continuum_evidence
+  - replace_the_J_over_2_score_by_finite_difference_in_Q
