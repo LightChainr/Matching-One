@@ -1,0 +1,19 @@
+{
+  "schema": "matching-one/threshold-shape-collapse-manifest/v1",
+  "issue": 122,
+  "data_class": "synthetic fixtures only",
+  "quantile_convention": "left-continuous generalized inverse",
+  "center": "q50",
+  "scale": "q75-q25",
+  "grid_percent": [5, 10, 25, 50, 75, 90, 95],
+  "outputs": {
+    "json": "results/threshold-shape-collapse/latest.json",
+    "markdown": "results/threshold-shape-collapse/latest.md"
+  },
+  "commands": [
+    "python scripts/threshold_shape_collapse_contract.py --format json",
+    "python scripts/threshold_shape_collapse_contract.py --format markdown",
+    "python -m unittest tests.test_threshold_shape_collapse_contract"
+  ],
+  "boundary": "no production data, covariance estimate, p-value, conformal map, or universality claim"
+}
