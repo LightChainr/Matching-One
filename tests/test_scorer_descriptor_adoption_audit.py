@@ -112,9 +112,17 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
         self.assertEqual(
             result["counts"]["descriptor_not_applicable_generic_utility"], 1
         )
-        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 2)
-        self.assertEqual(result["counts"]["outside_registered_typed_path"], 25)
+        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 4)
+        self.assertEqual(result["counts"]["outside_registered_typed_path"], 23)
         self.assertEqual(len(result["rows"]), 35)
+        statuses = {row["path"]: row["status"] for row in result["rows"]}
+        for path in (
+            "scripts/score_axis_pair_annihilator.py",
+            "scripts/score_axis_pair_annihilator_stable.py",
+        ):
+            self.assertEqual(
+                statuses[path], "channel_bearing_migration_required"
+            )
 
 
 if __name__ == "__main__":
