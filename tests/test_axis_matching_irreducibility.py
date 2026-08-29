@@ -57,6 +57,11 @@ class ExactMatchingIrreducibilityTests(unittest.TestCase):
         result = rabin_irreducible([2, 3, 1], 5)
         self.assertFalse(result["irreducible"])
 
+    def test_linear_polynomial_is_trivially_irreducible(self) -> None:
+        result = rabin_irreducible([86, 1], 331)
+        self.assertTrue(result["x_qn_equals_x"])
+        self.assertTrue(result["irreducible"])
+
 
 if __name__ == "__main__":
     unittest.main()

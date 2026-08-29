@@ -144,7 +144,10 @@ def rabin_irreducible(integer_coefficients: list[int], prime: int) -> dict[str, 
     if degree <= 0:
         return {"irreducible": False, "reason": "degree <= 0"}
 
-    x = [0, 1]
+    # Rabin's congruence lives in F_p[x]/(reduced).  This reduction is
+    # invisible for degree > 1, but is essential for the trivially
+    # irreducible linear factors used by the Galois cycle certificates.
+    x = poly_mod([0, 1], reduced, prime)
     full = frobenius_x(degree, reduced, prime)
     full_condition = poly_sub(full, x, prime) == [0]
 
