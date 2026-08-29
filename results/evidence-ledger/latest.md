@@ -15,7 +15,10 @@ Only `primary` rows enter cumulative evidence.
 | p50_third_fixed_coordinate | primary | SCORED | zero_effect | 15.7018 | -1.343361 |
 | p45_angular_normalized_root | sensitivity | SCORED | H4_x21_over_4 | 2.42667 | -3.917646 |
 | p45_angular_normalized_root | sensitivity | SCORED | zero_effect | 461.275 | 225.136793 |
-| issue57_norm5 | primary | PENDING_REVEAL | — | — | — |
+| issue57_norm5 | primary | SCORED | H12_norm5 | 35.1931 | -1.227946 |
+| issue57_norm5 | primary | SCORED | H4_norm5 | 0.416304 | -18.653082 |
+| issue57_norm5 | primary | SCORED | H8_norm5 | 16.012 | -10.807794 |
+| issue57_norm5 | primary | SCORED | zero_effect | 1.77635 | -17.979104 |
 | p49_clean_full_curve | primary | SCORED | H4_pure_N_minus_5_over_4 | 37.8868 | 4.273907 |
 | p49_clean_full_curve | primary | SCORED | q2_even_scalar | 1.78993 | -13.272009 |
 | p49_clean_full_curve | primary | SCORED | rank2_Jordan_log | 0.676706 | -13.758148 |
@@ -28,12 +31,18 @@ Negative delta favors the left model.
 
 | Left | Right | Blocks | Delta NLPD | Preferred |
 |---|---|---|---:|---|
+| H12_norm5 | H4_norm5 | issue57_norm5 | 17.425136 | H4_norm5 |
+| H12_norm5 | H8_norm5 | issue57_norm5 | 9.579848 | H8_norm5 |
+| H12_norm5 | zero_effect | issue57_norm5 | 16.751158 | zero_effect |
+| H4_norm5 | H8_norm5 | issue57_norm5 | -7.845288 | H4_norm5 |
+| H4_norm5 | zero_effect | issue57_norm5 | -0.673978 | H4_norm5 |
 | H4_pure_N_minus_5_over_4 | q2_even_scalar | p49_clean_full_curve | 17.545916 | q2_even_scalar |
 | H4_pure_N_minus_5_over_4 | rank2_Jordan_log | p49_clean_full_curve | 18.032055 | rank2_Jordan_log |
 | H4_pure_N_minus_5_over_4 | zero_effect | p49_clean_full_curve | -503.016098 | H4_pure_N_minus_5_over_4 |
 | H4_x17_over_4 | H4_x21_over_4 | issue43_n185_n265_deltaM | 13.673035 | H4_x21_over_4 |
 | H4_x17_over_4 | zero_effect | issue43_n185_n265_deltaM | 0.540595 | zero_effect |
 | H4_x21_over_4 | zero_effect | issue43_n185_n265_deltaM, p50_third_fixed_coordinate | -20.705711 | H4_x21_over_4 |
+| H8_norm5 | zero_effect | issue57_norm5 | 7.171310 | zero_effect |
 | q2_even_scalar | rank2_Jordan_log | p49_clean_full_curve | 0.486139 | rank2_Jordan_log |
 | q2_even_scalar | zero_effect | p49_clean_full_curve | -520.562014 | q2_even_scalar |
 | rank2_Jordan_log | zero_effect | p49_clean_full_curve | -521.048153 | rank2_Jordan_log |

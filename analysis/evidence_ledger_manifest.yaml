@@ -144,9 +144,34 @@
       "id": "issue57_norm5",
       "raw_data_group": "issue57_norm5_production",
       "role": "primary",
-      "status": "PENDING_REVEAL",
+      "status": "SCORED",
       "channel": {"source": "matching_odd", "target": "matching_odd", "exact_map": null},
-      "models": {}
+      "chronology": {
+        "prediction_frozen_before_reveal": true,
+        "prediction_artifact": "predictions/gaussian_norm5_harmonic_discrimination_20260828.yaml",
+        "prediction_sha256": "868c7ee5a84fa33acf779c07a791ee783aba92a88057beb0b1c41d849d7167f9",
+        "reveal_artifact": "results/server-20260829/P57-norm5-500m/primary_score.json",
+        "reveal_sha256": "19243c1f51eabfec08dc3a1bf8724cf4e67bef62bedad50fdb99d30d54260447"
+      },
+      "observation": [-0.00002580880511044261, -0.00003373175778971359],
+      "models": {
+        "H4_norm5": {
+          "mean": [-0.00004654782509840279, -0.00003305030319500544],
+          "covariance": [[1.0343795402600933e-9, 1.2588387853851444e-12], [1.2588387853851444e-12, 1.0146144029716576e-9]]
+        },
+        "H12_norm5": {
+          "mean": [0.00012504607734434925, 0.00008878633450306262],
+          "covariance": [[1.0698601988005342e-9, 9.084718459880762e-12], [9.084718459880762e-12, 1.0558557466590204e-9]]
+        },
+        "H8_norm5": {
+          "mean": [-0.0001401754504391901, -0.00009952862733581639],
+          "covariance": [[1.080429822814191e-9, 1.1416033862081005e-11], [1.1416033862081005e-11, 1.0681414683599458e-9]]
+        },
+        "zero_effect": {
+          "mean": [0.0, 0.0],
+          "covariance": [[1.0286722676007302e-9, 0.0], [0.0, 1.0079804902162335e-9]]
+        }
+      }
     },
     {
       "id": "p49_clean_full_curve",

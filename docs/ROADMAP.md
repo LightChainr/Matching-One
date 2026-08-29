@@ -6,9 +6,9 @@ The three hard constraints are defined in `GOVERNANCE.md`: do not rewrite frozen
 
 ## Active — highest information now
 
-### 1. Norm-5 N=325/425 — #57
+### 1. Norm-5 N=325/425 — #57: production scored, reuse continues
 
-This remains the highest-information new data block because one pair of full threshold-rank runs can answer several already-defined questions at once.
+The N=325/425 production block is complete at 500,000,000 samples per size. The frozen primary score resolves the H4/H12 alias in favor of H4 (`chi2=0.4163` versus `35.1931`, two degrees of freedom), while the same scalar score does not independently reject a zero child effect. The retained threshold-rank histograms remain the highest-information existing data block because they can answer several already-defined questions without new production.
 
 Primary frozen discriminator:
 
@@ -23,7 +23,7 @@ H8  = negative with different magnitude
 zero = 0
 ```
 
-Score the existing frozen fixed-p H4/H12/H8/zero contract first. Then reuse the same histograms/moments for every compatible analysis rather than commissioning separate runs.
+The existing frozen fixed-p H4/H12/H8/zero contract has been scored. Continue by reusing the same histograms/moments for every compatible analysis rather than commissioning separate runs.
 
 High-value bundled readouts already available or being integrated:
 
@@ -156,6 +156,11 @@ Key current finite-size facts:
 - the bare finite-size slope multiplier is not exactly `2^(3/8)` at current precision;
 - the finite matching slope has an exact pivotal-mass interpretation;
 - threshold ranks are finite activation/reliability signatures.
+
+Canonical protocol facts that must remain explicit:
+
+- the Issue #43 channel conversion is `DeltaS_cross = -DeltaS_either`, and its reported cross-channel value is `0.5700315436 / 2` before the canonical normalization;
+- the completed N=26 exact control rejects both proposed continuations, `Beta(5,5)` and `Beta(7,7)`, of the N=10 Beta law.
 
 ## What not to spend much time on
 

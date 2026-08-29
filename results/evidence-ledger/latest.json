@@ -146,8 +146,33 @@
       "id": "issue57_norm5",
       "raw_data_group": "issue57_norm5_production",
       "role": "primary",
-      "scores": {},
-      "status": "PENDING_REVEAL"
+      "scores": {
+        "H12_norm5": {
+          "chi_square": 35.19307887805103,
+          "dimension": 2,
+          "log_determinant": -41.32472518150189,
+          "nlpd": -1.2279460853160833
+        },
+        "H4_norm5": {
+          "chi_square": 0.416303764018355,
+          "dimension": 2,
+          "log_determinant": -41.398222773119656,
+          "nlpd": -18.653082438141308
+        },
+        "H8_norm5": {
+          "chi_square": 16.012022412848534,
+          "dimension": 2,
+          "log_determinant": -41.30336547035954,
+          "nlpd": -10.807794462346155
+        },
+        "zero_effect": {
+          "chi_square": 1.7763512393600975,
+          "dimension": 2,
+          "log_determinant": -41.410313949268726,
+          "nlpd": -17.97910428854497
+        }
+      },
+      "status": "SCORED"
     },
     {
       "channel": {
@@ -200,6 +225,22 @@
     }
   ],
   "coverage": {
+    "H12_norm5": {
+      "additive": [
+        "issue57_norm5"
+      ],
+      "predicted": [
+        "issue57_norm5"
+      ]
+    },
+    "H4_norm5": {
+      "additive": [
+        "issue57_norm5"
+      ],
+      "predicted": [
+        "issue57_norm5"
+      ]
+    },
     "H4_pure_N_minus_5_over_4": {
       "additive": [
         "p49_clean_full_curve"
@@ -229,6 +270,14 @@
         "p45_angular_normalized_root"
       ]
     },
+    "H8_norm5": {
+      "additive": [
+        "issue57_norm5"
+      ],
+      "predicted": [
+        "issue57_norm5"
+      ]
+    },
     "analytic_inverse_N": {
       "additive": [],
       "predicted": [
@@ -256,17 +305,35 @@
       "additive": [
         "issue43_n185_n265_deltaM",
         "p50_third_fixed_coordinate",
+        "issue57_norm5",
         "p49_clean_full_curve"
       ],
       "predicted": [
         "issue43_n185_n265_deltaM",
         "p50_third_fixed_coordinate",
         "p45_angular_normalized_root",
+        "issue57_norm5",
         "p49_clean_full_curve"
       ]
     }
   },
   "cumulative_primary_only": {
+    "H12_norm5": {
+      "blocks": [
+        "issue57_norm5"
+      ],
+      "chi_square": 35.19307887805103,
+      "dimensions": 2,
+      "nlpd": -1.2279460853160833
+    },
+    "H4_norm5": {
+      "blocks": [
+        "issue57_norm5"
+      ],
+      "chi_square": 0.416303764018355,
+      "dimensions": 2,
+      "nlpd": -18.653082438141308
+    },
     "H4_pure_N_minus_5_over_4": {
       "blocks": [
         "p49_clean_full_curve"
@@ -293,6 +360,14 @@
       "dimensions": 5,
       "nlpd": -42.61311475107202
     },
+    "H8_norm5": {
+      "blocks": [
+        "issue57_norm5"
+      ],
+      "chi_square": 16.012022412848534,
+      "dimensions": 2,
+      "nlpd": -10.807794462346155
+    },
     "q2_even_scalar": {
       "blocks": [
         "p49_clean_full_curve"
@@ -313,11 +388,12 @@
       "blocks": [
         "issue43_n185_n265_deltaM",
         "p50_third_fixed_coordinate",
+        "issue57_norm5",
         "p49_clean_full_curve"
       ],
-      "chi_square": 1089.683168583058,
-      "dimensions": 5,
-      "nlpd": 501.9375603992755
+      "chi_square": 1091.459519822418,
+      "dimensions": 7,
+      "nlpd": 483.95845611073054
     }
   },
   "governance": {
@@ -329,6 +405,51 @@
   },
   "manifest_version": 1,
   "pairwise_primary_intersections": [
+    {
+      "delta_nlpd_left_minus_right": 17.425136352825223,
+      "intersection": [
+        "issue57_norm5"
+      ],
+      "left": "H12_norm5",
+      "preferred": "H4_norm5",
+      "right": "H4_norm5"
+    },
+    {
+      "delta_nlpd_left_minus_right": 9.579848377030071,
+      "intersection": [
+        "issue57_norm5"
+      ],
+      "left": "H12_norm5",
+      "preferred": "H8_norm5",
+      "right": "H8_norm5"
+    },
+    {
+      "delta_nlpd_left_minus_right": 16.751158203228886,
+      "intersection": [
+        "issue57_norm5"
+      ],
+      "left": "H12_norm5",
+      "preferred": "zero_effect",
+      "right": "zero_effect"
+    },
+    {
+      "delta_nlpd_left_minus_right": -7.845287975795152,
+      "intersection": [
+        "issue57_norm5"
+      ],
+      "left": "H4_norm5",
+      "preferred": "H4_norm5",
+      "right": "H8_norm5"
+    },
+    {
+      "delta_nlpd_left_minus_right": -0.6739781495963371,
+      "intersection": [
+        "issue57_norm5"
+      ],
+      "left": "H4_norm5",
+      "preferred": "H4_norm5",
+      "right": "zero_effect"
+    },
     {
       "delta_nlpd_left_minus_right": 17.545916021347658,
       "intersection": [
@@ -382,6 +503,15 @@
       ],
       "left": "H4_x21_over_4",
       "preferred": "H4_x21_over_4",
+      "right": "zero_effect"
+    },
+    {
+      "delta_nlpd_left_minus_right": 7.171309826198815,
+      "intersection": [
+        "issue57_norm5"
+      ],
+      "left": "H8_norm5",
+      "preferred": "zero_effect",
       "right": "zero_effect"
     },
     {
