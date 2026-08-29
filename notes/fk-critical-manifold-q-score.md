@@ -69,15 +69,35 @@ Every coefficient of `P_3` is positive, as is the corresponding quotient at
 difference at both exact sizes, and its sign follows `Q-1`.  The `L=3`
 tangent is `18865/65536`.
 
-This suggests a sharper finite-volume conjecture: for every square torus,
+The coefficient positivity is not merely a small-size conjecture.  Let `r(A)`
+be the homology rank of the open subgraph and let `A*` be its closed dual.
+Euler--Poincare duality on the torus gives configuration by configuration
 
 ```text
-D_L(x)=x^a (x-1) P_L(x),
+r(A)+r(A*)=2,
+k(A*)=k(A)+b(A)-V-r(A)+1.
 ```
 
-with `P_L` having positive coefficients.  A duality/Euler proof of that
-coefficient positivity would turn the Q-tangent into a monotone topological
-coordinate, not merely a local derivative at percolation.
+Since `E=2V` and `J=2k+b`, this implies
+
+```text
+J(A)-J(A*)=2(r(A)-1).
+```
+
+The wrapping-difference observable is exactly `r(A)-1`: rank zero is the
+dual-cross sector, rank one is the neutral winding sector, and rank two is the
+primal-cross sector.  Pairing every configuration with its dual complement
+therefore proves for every finite self-dual square torus
+
+```text
+D_L(x)=(x^2-1) sum_[r(A)=2] x^J(A*).
+```
+
+The remaining polynomial is a generating function of configurations and has
+nonnegative integer coefficients (strictly positive on its support).  Thus
+`Q=1` is the unique positive nontrivial zero and the sign follows `Q-1` at
+every finite size.  The L=2/L=3 enumerations now serve as exact executable
+checks of this general topological identity.
 
 This establishes the estimator, not a logarithmic field.  A fixed lattice
 observable has only the measure derivative `Cov(O,T)`.  The derivative of its

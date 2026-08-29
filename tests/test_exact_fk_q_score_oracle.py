@@ -43,6 +43,9 @@ class ExactFKQScoreOracleTests(unittest.TestCase):
         self.assertTrue(polynomial["Q1_zero_is_simple"])
         self.assertTrue(polynomial["P_L_coefficients_strictly_positive"])
         self.assertEqual(polynomial["tangent_from_simple_zero"], "69/256")
+        certificate = self.payload["topological_duality_certificate"]
+        self.assertTrue(certificate["paired_polynomial_matches_direct_histogram"])
+        self.assertTrue(certificate["configurationwise_Euler_J_identity"])
 
     def test_committed_l3_has_same_simple_positive_quotient_structure(self) -> None:
         payload = json.loads(
@@ -54,6 +57,7 @@ class ExactFKQScoreOracleTests(unittest.TestCase):
         self.assertTrue(polynomial["Q1_zero_is_simple"])
         self.assertTrue(polynomial["P_L_coefficients_strictly_positive"])
         self.assertEqual(polynomial["tangent_from_simple_zero"], "18865/65536")
+        self.assertTrue(payload["exact_checks"]["configurationwise_torus_duality"])
 
     def test_committed_artifact_is_byte_reproducible(self) -> None:
         artifact = json.loads(

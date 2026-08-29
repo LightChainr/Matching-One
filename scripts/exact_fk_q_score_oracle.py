@@ -53,15 +53,20 @@ def configuration_row(length: int, mask: int, pairs: Sequence[BondPair]) -> Dict
     primal_rank = _rank(primal, primal_roots)
     dual_rank = _rank(dual, dual_roots)
     clusters = len(primal_roots)
+    dual_clusters = len(dual_roots)
+    dual_bonds = len(pairs) - bonds
     return {
         "b": bonds,
         "k": clusters,
         "J": 2 * clusters + bonds,
+        "k_dual": dual_clusters,
+        "J_dual": 2 * dual_clusters + dual_bonds,
         "open_wrap": int(primal_rank > 0),
         "open_cross": int(primal_rank == 2),
         "closed_dual_wrap": int(dual_rank > 0),
         "wrap_difference": int(primal_rank > 0) - int(dual_rank > 0),
         "open_homology_rank": primal_rank,
+        "dual_homology_rank": dual_rank,
     }
 
 
@@ -206,6 +211,46 @@ def wrap_difference_factorization(histogram_rows: Sequence[dict]) -> dict:
     }
 
 
+def topological_duality_certificate(rows: Sequence[Dict[str, int]], histogram_rows: Sequence[dict]) -> dict:
+    positive_dual_j: Dict[int, int] = defaultdict(int)
+    for row in rows:
+        if row["open_homology_rank"] == 2:
+            positive_dual_j[row["J_dual"]] += 1
+
+    reconstructed: Dict[int, int] = defaultdict(int)
+    for exponent, count in positive_dual_j.items():
+        reconstructed[exponent] -= count
+        reconstructed[exponent + 2] += count
+    observed = {
+        row["J"]: row["observable_sums"]["wrap_difference"]
+        for row in histogram_rows
+        if row["observable_sums"]["wrap_difference"]
+    }
+    reconstructed = {key: value for key, value in reconstructed.items() if value}
+    return {
+        "configurationwise_homology_complementarity": all(
+            row["open_homology_rank"] + row["dual_homology_rank"] == 2
+            for row in rows
+        ),
+        "configurationwise_Euler_J_identity": all(
+            row["J"] - row["J_dual"]
+            == 2 * (row["open_homology_rank"] - 1)
+            for row in rows
+        ),
+        "configurationwise_wrap_difference_equals_rank_minus_one": all(
+            row["wrap_difference"] == row["open_homology_rank"] - 1
+            for row in rows
+        ),
+        "positive_cross_dual_J_histogram": [
+            {"J_dual": exponent, "count": positive_dual_j[exponent]}
+            for exponent in sorted(positive_dual_j)
+        ],
+        "paired_polynomial_identity": "D_L(x)=(x^2-1)*sum_{rank(A)=2} x^J(A*)",
+        "paired_polynomial_matches_direct_histogram": reconstructed == observed,
+        "positive_quotient_theorem": all(value > 0 for value in positive_dual_j.values()),
+    }
+
+
 def render(length: int = 2) -> dict:
     pairs = square_bond_pairs(length)
     if len(pairs) > 20:
@@ -253,6 +298,7 @@ def render(length: int = 2) -> dict:
         },
         "sqrtQ_histogram": histogram_rows,
         "wrap_difference_polynomial": wrap_difference_factorization(histogram_rows),
+        "topological_duality_certificate": topological_duality_certificate(rows, histogram_rows),
         "observable_derivatives": derivatives,
         "exact_checks": {
             "histogram_counts_sum_to_configurations": sum(row["count"] for row in histogram_rows) == len(rows),
@@ -262,6 +308,15 @@ def render(length: int = 2) -> dict:
             "open_closed_wrap_equal_at_Q1": (
                 derivatives["open_wrap"]["expectation_at_Q1"]
                 == derivatives["closed_dual_wrap"]["expectation_at_Q1"]
+            ),
+            "configurationwise_torus_duality": all(
+                topological_duality_certificate(rows, histogram_rows)[key]
+                for key in (
+                    "configurationwise_homology_complementarity",
+                    "configurationwise_Euler_J_identity",
+                    "configurationwise_wrap_difference_equals_rank_minus_one",
+                    "paired_polynomial_matches_direct_histogram",
+                )
             ),
         },
         "interpretation": {

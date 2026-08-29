@@ -9,6 +9,7 @@
   },
   "exact_checks": {
     "all_score_orders_match_ratio_differentiation": true,
+    "configurationwise_torus_duality": true,
     "histogram_counts_sum_to_configurations": true,
     "open_closed_wrap_equal_at_Q1": true
   },
@@ -187,6 +188,32 @@
       }
     }
   ],
+  "topological_duality_certificate": {
+    "configurationwise_Euler_J_identity": true,
+    "configurationwise_homology_complementarity": true,
+    "configurationwise_wrap_difference_equals_rank_minus_one": true,
+    "paired_polynomial_identity": "D_L(x)=(x^2-1)*sum_{rank(A)=2} x^J(A*)",
+    "paired_polynomial_matches_direct_histogram": true,
+    "positive_cross_dual_J_histogram": [
+      {
+        "J_dual": 5,
+        "count": 32
+      },
+      {
+        "J_dual": 6,
+        "count": 28
+      },
+      {
+        "J_dual": 7,
+        "count": 8
+      },
+      {
+        "J_dual": 8,
+        "count": 1
+      }
+    ],
+    "positive_quotient_theorem": true
+  },
   "wrap_difference_polynomial": {
     "L2_further_factorization": "x^5*(x-1)*(x+1)*(x+2)*(x^2+6*x+16)",
     "P_L_coefficients_ascending": [
