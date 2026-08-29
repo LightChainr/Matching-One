@@ -50,6 +50,10 @@ frozen_predictions:
   - {path: predictions/p48_sprime_jordan_log_20260828.yaml, status: frozen_prediction, issue: 48, role: Jordan_correction}
   - {path: predictions/p48_sprime_multiplier_correction_discrimination_20260828.yaml, status: frozen_prediction, issue: 48, role: Sprime_multiplier_transfer}
   - {path: predictions/norm5_sequential_stopping_20260829.yaml, status: frozen_prediction, issue: 126, role: optional_future_sequential_rule}
+  - {path: analysis/threshold_score_mode_manifest.yaml, status: frozen_prediction, issue: 182, role: source_derived_Krawtchouk_basis_and_norm5_vector}
+  - {path: predictions/rank_gap_thermal_window_20260829.yaml, status: frozen_prediction, role: retrospective_rank_gap_coordinate_contract}
+  - {path: predictions/rank_gap_boundary_correction_targets_20260829.yaml, status: frozen_prediction, role: prospective_N325_N425_rank_gap_targets}
+  - {path: predictions/hermite_krawtchouk_jet_20260829.yaml, status: frozen_prediction, issue: 182, role: width_first_thermal_jet_and_cocycle_contract}
   - {path: predictions/c4_self_matching_n26_beta_targets_20260828.json, status: frozen_prediction, issue: 115, role: completed_N26_exact_targets}
   - {path: predictions/reliability_signature_tomography_20260828.yaml, status: frozen_prediction, role: future_exact_signature_tomography}
   - {path: predictions/hexagonal_pell_spin_filter_20260828.yaml, status: frozen_prediction, role: Pell_shape_target}
@@ -68,6 +72,7 @@ evidence_archives:
   - {id: P49, path: results/server-20260828/P49-fullcurve-doubling-100m, status: immutable_result, role: clean_norm2_full_curves}
   - {id: P50, path: results/server-20260828/P50-third-lineage, status: immutable_result, role: third_fixed_coordinate_lineage}
   - {id: PREQUENTIAL, path: results/evidence-ledger, status: immutable_result, role: chronology_safe_evidence_view}
+  - {id: RANK_GAP_THERMAL_WINDOW, path: results/server-20260828/rank-gap-thermal-window, status: immutable_result, role: paired_rank_gap_source_analysis_and_target_prediction}
   - {id: SELFMATCHING_TANGENT_N10, path: results/local-20260828/P44-self-matching-tangent, status: immutable_result, role: exact_tangent_archive}
   - {id: N26_BETA, path: results/local-20260828/P115-n26-self-matching-exact, status: negative_result, role: exact_Beta_falsification}
   - {id: EXACT_SMALL_POLYNOMIALS, path: results/exact_small_matching_polynomials.md, status: immutable_result, role: bounded_exact_polynomials}
@@ -81,6 +86,8 @@ topic_derivations:
   - {path: notes/thermal-level4-torus-onepoint-E4.md, status: topic_derivation, role: ordinary_Q4_E4_identity}
   - {path: notes/rectangular-thermal-q4-hecke-ratio.md, status: topic_derivation, role: rectangular_weight4_identity}
   - {path: notes/logodds-krawtchouk-threshold-response.md, status: topic_derivation, role: score_mode_thermal_response}
+  - {path: notes/rank-gap-thermal-window.md, status: topic_derivation, role: paired_rank_gap_thermal_window}
+  - {path: notes/hermite-krawtchouk-thermal-jet.md, status: topic_derivation, role: exact_fullcurve_jet_and_rank_gap_width_bridge}
   - {path: notes/FRONTIER-ROUTES-20260828.md, status: historical, role: broad_earlier_frontier_snapshot}
 
 historical_protocols:
@@ -99,8 +106,6 @@ channel_semantics:
   required_fields: [topology_channel, combination, probability_coordinate, orientation_order, normalization, quantity]
 
 frontier_open_as_of_2026_08_29:
-  - {pr: 188, state: frontier, classification: unique_frontier, role: paired_rank_gap_thermal_window}
-  - {pr: 189, state: frontier, classification: unique_frontier, role: Hermite_Krawtchouk_thermal_jet}
   - {pr: 142, state: frontier, classification: unique_frontier, role: retrospective_low_rank_matrix_semigroup}
   - {pr: 139, state: frontier, classification: unique_frontier, role: information_optimal_Gaussian_design}
   - {pr: 84, state: frontier, classification: unique_frontier, role: exact_axis_L5_and_Galois}
@@ -121,11 +126,15 @@ canonical_integration_history:
   - {pr: 183, role: sequential_eprocess_methodology}
   - {pr: 184, role: prequential_evidence_ledger}
   - {pr: 186, role: rectangular_Q4_weight4_ratio}
+  - {pr: 188, role: paired_rank_gap_thermal_window}
 
 manual_integrations:
   - pr: 187
     role: Krawtchouk_score_mode_assets
     commits: [caf73d8415d735667ceb9d20c1913ebbf8db8dbb, 1ddf1398e4df80a4669a1b398183a2dc7e8e13d9, 087957b16e5f3bbea5feea725ac7f0cd17f87a70, 5a95d7eb9b236afe42bd5e1287687baf280f9507]
+  - pr: 189
+    role: Hermite_Krawtchouk_thermal_jet_assets
+    commits: [e2074385be1cf91743610957330296e5209ac240, 0b4ded685e0ad1f345ca84b1bbe2aebcde56dd34, 6f8033269a6af7dfe895afb9cfdf51da1e884679, 17793cc51d775c33a9e324ab36914d1c78587e4a]
 
 superseded_active_paths_closed:
   - {pr: 168, superseded_by: 170}
@@ -148,6 +157,7 @@ superseded_active_paths_closed:
   - {pr: 117, superseded_by: historical}
   - {pr: 130, superseded_by: negative_result}
   - {pr: 187, superseded_by: manual_integrations}
+  - {pr: 189, superseded_by: manual_integrations}
 
 directory_contract:
   constants: exact/reference constants and relations
