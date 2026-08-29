@@ -58,17 +58,19 @@ class ThresholdRankIntegerPeriodMCTests(unittest.TestCase):
     def tearDownClass(cls) -> None:
         cls.temporary.cleanup()
 
-    def run_predefined(self, n: int, *, samples: int = 8, threads: int = 1) -> Path:
-        prefix = Path(self.temporary.name) / f"n{n}_{samples}_{threads}"
-        subprocess.run(
-            [
+    def run_predefined(
+        self, n: int, *, samples: int = 8, threads: int = 1, marked: bool = False
+    ) -> Path:
+        prefix = Path(self.temporary.name) / f"n{n}_{samples}_{threads}_{int(marked)}"
+        command = [
                 str(self.binary), "--samples", str(samples), "--batches", "2",
                 "--n", str(n), "--seed", "17", "--replica-offset", "5",
                 "--threads", str(threads), "--git-commit", "test-sha",
                 "--output-prefix", str(prefix),
-            ],
-            check=True,
-        )
+        ]
+        if marked:
+            command.append("--marked-births")
+        subprocess.run(command, check=True)
         return prefix
 
     def test_exact_self_test(self) -> None:
@@ -168,6 +170,52 @@ class ThresholdRankIntegerPeriodMCTests(unittest.TestCase):
         )
         self.assertEqual(completed.returncode, 2)
         self.assertIn("negative value for --samples", completed.stderr)
+
+    def test_marked_path_full_source_frame_and_index_schema(self) -> None:
+        prefix = self.run_predefined(65, samples=20, marked=True)
+        metadata = json.loads(
+            Path(str(prefix) + ".metadata.json").read_text(encoding="utf-8")
+        )
+        self.assertTrue(metadata["marked_birth_schema"])
+        self.assertIn("active_S+inactive_S", metadata["full_source"])
+        self.assertIn("primitive(P*ell)", metadata["chi4_frame"])
+        self.assertIn("raw winding coefficients", metadata["saturation_index"])
+
+        with Path(str(prefix) + ".path.csv").open(newline="", encoding="utf-8") as handle:
+            rows = list(csv.DictReader(handle))
+        self.assertEqual(len(rows), 2 * 2 * 65)
+        for row in rows:
+            active_s = int(row["sum_active_S"])
+            inactive_s = int(row["sum_inactive_S"])
+            active_d = int(row["sum_active_D"])
+            inactive_d = int(row["sum_inactive_D"])
+            self.assertEqual(2 * int(row["sum_site_S"]), active_s + inactive_s)
+            self.assertEqual(2 * int(row["sum_site_D"]), active_d - inactive_d)
+
+        with Path(str(prefix) + ".marked_births.csv").open(
+            newline="", encoding="utf-8"
+        ) as handle:
+            sparse = list(csv.DictReader(handle))
+        self.assertTrue(sparse)
+        for row in sparse:
+            if row["direct_0_to_2"] == "1":
+                self.assertEqual((row["line_null"], row["iota01"], row["iota12"]), ("1", "0", "0"))
+            else:
+                self.assertEqual(row["line_null"], "0")
+                self.assertGreaterEqual(max(int(row["iota01"]), int(row["iota12"])), 1)
+                x, y = int(row["physical_x"]), int(row["physical_y"])
+                self.assertNotEqual((x, y), (0, 0))
+
+        with Path(str(prefix) + ".complement_audit.csv").open(
+            newline="", encoding="utf-8"
+        ) as handle:
+            audits = list(csv.DictReader(handle))
+        for row in audits:
+            for name in (
+                "endpoint_failures", "site_failures", "line_failures",
+                "local_mark_failures", "index_mismatches",
+            ):
+                self.assertEqual(int(row[name]), 0)
 
 
 if __name__ == "__main__":

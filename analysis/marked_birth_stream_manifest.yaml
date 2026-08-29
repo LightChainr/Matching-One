@@ -1,0 +1,64 @@
+schema: matching-one/marked-birth-stream-manifest/v1
+issues: [215, 269, 275, 276]
+base: 098c744
+phase: prerevealed_production_sparse_mark_stream
+
+exact_schema:
+  sparse_birth_key:
+    - K1
+    - K2
+    - first_birth_site
+    - second_birth_site
+    - primitive_period_line_ell
+    - saturation_indices_iota01_iota12
+    - primitive_lifted_physical_line_P_ell
+    - first_and_second_local_H4_marks
+  microcanonical_path:
+    - q
+    - q2
+    - active_and_inactive_gate_pairs
+    - full_S_equals_half_active_plus_inactive
+    - full_D_equals_half_active_minus_inactive
+    - chi4_ell_times_S_and_D
+    - q_times_chi4_ell_D
+    - local_H4_times_S_and_D
+  direct_0_to_2: {ell: null, iota: 0, S: 2, D: 0}
+  horvitz: at size k multiply the next-site insertion by N-k
+  canonical_bridge: multiply by N/(N-k) and convolve with Binomial(N-1,k)
+
+frame_and_integrality:
+  line: primitive winding coordinates in the period basis
+  chi4: primitive lifted Euclidean vector P_times_ell
+  iota: gcd of raw winding coefficients before primitive reduction
+  rank2_index: deliberately undefined and stored as zero
+
+frozen_pilot:
+  seed: 202608290215
+  replica_offset: 9100000000
+  batches: 20
+  designs:
+    - {id: q2_parent, N: 65, samples: 20000}
+    - {id: q2_child_exact_chi4_flip, N: 130, samples: 20000}
+    - {id: P50_N145_max_leverage, N: 145, samples: 10000}
+  primary_audits:
+    - zero complement endpoint_site_line_local failures
+    - report index mismatches separately
+    - exact full active_inactive source equations
+    - Russo B_minus_A_prime residual
+  exploratory_scores:
+    - P4_connected_q_J_D4_complex
+    - P4_gamma_D4_complex
+    - q2_parent_child sign_phase transfer
+
+commands:
+  - python3 scripts/marked_birth_path_oracle.py --output results/marked-birth-path-oracle/latest.json
+  - python3 -m unittest discover -s tests -p 'test_marked_birth*.py'
+  - c++ -O3 -DNDEBUG -std=c++17 -fopenmp src/threshold_rank_integer_period_mc.cpp -o threshold_rank_integer_period_mc
+  - threshold_rank_integer_period_mc --marked-births --n N --samples S --batches 20 --seed 202608290215 --replica-offset 9100000000 --threads 16 --output-prefix PREFIX
+  - python3 scripts/score_marked_birth_path.py --prefix PREFIX --output SCORE.json
+
+claim_boundary:
+  exact: insertion pairing, Horvitz identity, physical frame, iota gcd, direct-birth schema
+  production_estimate: frozen pilot means and common-batch delete-one covariance
+  conditional: connected q_J_D4 is a lattice proxy for the thermal Q4 coupling
+  not_claimed: asymptotic field identity or x_equals_21_over_4 scaling from the pilot
