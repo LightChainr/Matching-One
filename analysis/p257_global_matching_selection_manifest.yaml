@@ -1,0 +1,20 @@
+schema_version: 1
+issue: 257
+frozen_on: 2026-08-29
+generator: scripts/global_matching_spin4_selection.py
+artifact: predictions/p257_global_matching_spin4_selection_20260829.json
+tests: tests/test_global_matching_spin4_selection.py
+inputs:
+  - scripts/p262_confluent_potts_projectors.py
+  - analysis/q1_spin4_competitor_manifest.yaml
+claim_scope: regular unlabeled zero-leg one-insertion coupling
+exact_positive_control: charged P_[2] vector has zero invariant one-point and nonzero quadratic norm
+exact_negative_control: categorical [2] torus trace remains nonzero at Q=1
+frozen_experiment:
+  model: critical Q=4 square-lattice Potts/FK
+  seams: [identity, single_colour_transposition]
+  endpoint: unnormalized orientation-resolved transfer numerator
+  target_ratios:
+    thermal_Q4_singlet: 1
+    V22_[2,2]: 0
+production_status: not_run

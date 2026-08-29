@@ -25,6 +25,7 @@ canonical_documents:
   - {path: GOVERNANCE.md, status: canonical_current, role: permissive_execution_policy}
 
 frozen_predictions:
+  - {path: predictions/p257_global_matching_spin4_selection_20260829.json, status: frozen_prediction, issue: 257, role: singlet_vs_four_leg_one_seam_discriminator}
   - {path: predictions/two_spin4_heldout_20260828.yaml, status: frozen_prediction, issue: 43, role: N185_N265_targets}
   - {path: predictions/p49_slope_two_sector_145_290_20260828.yaml, status: frozen_prediction, issue: 50, role: completed_N290_slope_root_correction}
   - {path: predictions/gaussian_norm5_harmonic_discrimination_20260828.yaml, status: frozen_prediction, issue: 57, role: completed_norm5_harmonic_targets}
@@ -42,6 +43,7 @@ continuum_controls:
   - {path: predictions/p156_pinson_arguin_baselines_20260829.json, status: continuum_baseline, issue: 156, role: primitive_homology_sector_values}
 
 evidence_archives:
+  - {id: GLOBAL_MATCHING_SPIN4_SELECTION, path: predictions/p257_global_matching_spin4_selection_20260829.json, status: exact_result, role: regular_endpoint_selection_rule_and_counterexample}
   - {id: P57, path: results/server-20260829/P57-norm5-500m, status: immutable_result, role: prospective_norm5}
   - {id: P50_FULLCURVE, path: results/server-20260829/P50-n145-n290-fullcurve, status: immutable_result, role: heldout_fullcurve}
   - {id: MATCHING_ODD_SYNTHESIS, path: results/evidence-ledger/issue212-matching-odd-synthesis.json, status: post_reveal_synthesis, role: independent_primary_meta}
@@ -58,6 +60,7 @@ evidence_archives:
   - {id: VJS_COLLISION_TANGENT, path: results/vjs-collision-tangent/latest.json, status: exact_result, role: measure_projector_insertion_derivative_closure}
 
 topic_derivations:
+  - {path: notes/global-matching-spin4-selection-rule.md, status: topic_derivation, role: singlet_zero_leg_selection_rule}
   - {path: notes/pivotal-russo-finite-volume.md, status: topic_derivation, role: pivotal_identity}
   - {path: notes/post-n290-two-generator-thermal-transfer.md, status: topic_derivation, role: non_scalar_thermal_transfer}
   - {path: notes/q4-jordan-log-slope-shape.md, status: topic_derivation, role: Q4_Jordan_shape}

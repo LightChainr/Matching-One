@@ -1,0 +1,684 @@
+{
+  "claim_boundary": {
+    "categorical_trace_at_Q1": {
+      "denominator": 1,
+      "numerator": -1,
+      "text": "-1"
+    },
+    "live_loopholes": [
+      "an explicit cluster-colour/character insertion",
+      "a twisted or defect-sector trace",
+      "a singular Q-derivative/confluent residue such as the #262 J direction",
+      "failure of the assumed regular generic-Q continuation of the global matching endpoint"
+    ],
+    "minimal_counterexample": "An invariant torus trace need not exclude [2]: tr(P_[2])=Q(Q-3)/2, whose analytic value at Q=1 is -1. Thus symmetry proves the ordinary linear matrix-element null, not absence from every intermediate-state trace.",
+    "positive_control": "P_[2] e_{01} has zero invariant one-point but a nonzero invariant quadratic norm."
+  },
+  "evidence_layers": {
+    "conjectural": [
+      "the observed global matching spin-4 amplitude is dominated by thermal Q4 epsilon"
+    ],
+    "derived_under_explicit_hypothesis": [
+      "global matching is a regular unlabeled zero-leg generic-Q endpoint",
+      "therefore its ordinary linear overlap with V_(2,+/-2) vanishes"
+    ],
+    "exact": [
+      "pair-space projector matrix elements",
+      "charged positive control",
+      "S4 transposition characters",
+      "categorical-trace counterexample to the overbroad claim"
+    ]
+  },
+  "issue": 257,
+  "one_shot_discriminator": {
+    "comparison": "identity seam versus one colour-transposition seam",
+    "decision": "a single handed H4 amplitude ratio separates 1 from 0; no exponent fit is needed",
+    "exact_character_oracle": {
+      "singlet": {
+        "S4_irrep": "[4]",
+        "dimension": {
+          "denominator": 1,
+          "numerator": 1,
+          "text": "1"
+        },
+        "transposition_character": {
+          "denominator": 1,
+          "numerator": 1,
+          "text": "1"
+        },
+        "twist_to_identity_trace_ratio": {
+          "denominator": 1,
+          "numerator": 1,
+          "text": "1"
+        }
+      },
+      "standard": {
+        "S4_irrep": "[3,1]",
+        "dimension": {
+          "denominator": 1,
+          "numerator": 3,
+          "text": "3"
+        },
+        "transposition_character": {
+          "denominator": 1,
+          "numerator": 1,
+          "text": "1"
+        },
+        "twist_to_identity_trace_ratio": {
+          "denominator": 3,
+          "numerator": 1,
+          "text": "1/3"
+        }
+      },
+      "two_row_2": {
+        "S4_irrep": "[2,2]",
+        "dimension": {
+          "denominator": 1,
+          "numerator": 2,
+          "text": "2"
+        },
+        "transposition_character": {
+          "denominator": 1,
+          "numerator": 0,
+          "text": "0"
+        },
+        "twist_to_identity_trace_ratio": {
+          "denominator": 1,
+          "numerator": 0,
+          "text": "0"
+        }
+      }
+    },
+    "model": "critical Q=4 square-lattice Potts/FK torus",
+    "primary_targets": {
+      "V22_[2,2]": {
+        "denominator": 1,
+        "numerator": 0,
+        "text": "0"
+      },
+      "thermal_Q4_singlet": {
+        "denominator": 1,
+        "numerator": 1,
+        "text": "1"
+      }
+    },
+    "quantity": "unnormalized orientation-resolved transfer/numerator amplitude; restore the partition-function factor if simulation records normalized expectations",
+    "status": "frozen_not_run",
+    "target_formula": "A_g/A_e=chi_lambda(g)/dim(lambda)"
+  },
+  "schema_version": 1,
+  "scope": "exact regular one-insertion selection rule plus frozen discriminator; no MC run",
+  "selection_rule": {
+    "channel_table": [
+      {
+        "S_Q_sector": "[2]",
+        "candidate": "V_(2,+/-2)",
+        "dimension": "17/4",
+        "failed_gates": [
+          "S_Q singlet",
+          "zero-leg/topological endpoint"
+        ],
+        "legs": 4,
+        "regular_global_matching_linear_coupling": "exact_zero",
+        "spin": "+/-4"
+      },
+      {
+        "S_Q_sector": "singlet",
+        "candidate": "thermal Q4 epsilon",
+        "dimension": "21/4",
+        "legs": 0,
+        "passed_gates": [
+          "S_Q singlet",
+          "zero-leg",
+          "C4 spin"
+        ],
+        "regular_global_matching_linear_coupling": "allowed_not_proved_nonzero",
+        "spin": "+/-4"
+      }
+    ],
+    "exact_statement": "For integer Q>=4, an unlabeled S_Q-invariant covector on the unordered-pair carrier annihilates the [1] and [2] projectors exactly and preserves only the singlet projector. Any regular analytic continuation of this one-insertion matrix element is therefore zero at Q=1.",
+    "integer_oracles": [
+      {
+        "Q": 4,
+        "charged_positive_control": {
+          "definition": "v=P_[2] e_{01}",
+          "invariant_one_point": {
+            "denominator": 1,
+            "numerator": 0,
+            "text": "0"
+          },
+          "two_point_norm": {
+            "denominator": 3,
+            "numerator": 1,
+            "text": "1/3"
+          }
+        },
+        "exact_linear_null": true,
+        "invariant_covector_matrix_elements": {
+          "singlet": [
+            {
+              "denominator": 1,
+              "numerator": 1,
+              "text": "1"
+            },
+            {
+              "denominator": 1,
+              "numerator": 1,
+              "text": "1"
+            },
+            {
+              "denominator": 1,
+              "numerator": 1,
+              "text": "1"
+            },
+            {
+              "denominator": 1,
+              "numerator": 1,
+              "text": "1"
+            },
+            {
+              "denominator": 1,
+              "numerator": 1,
+              "text": "1"
+            },
+            {
+              "denominator": 1,
+              "numerator": 1,
+              "text": "1"
+            }
+          ],
+          "standard": [
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            }
+          ],
+          "two_row_2": [
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            }
+          ]
+        }
+      },
+      {
+        "Q": 5,
+        "charged_positive_control": {
+          "definition": "v=P_[2] e_{01}",
+          "invariant_one_point": {
+            "denominator": 1,
+            "numerator": 0,
+            "text": "0"
+          },
+          "two_point_norm": {
+            "denominator": 2,
+            "numerator": 1,
+            "text": "1/2"
+          }
+        },
+        "exact_linear_null": true,
+        "invariant_covector_matrix_elements": {
+          "singlet": [
+            {
+              "denominator": 1,
+              "numerator": 1,
+              "text": "1"
+            },
+            {
+              "denominator": 1,
+              "numerator": 1,
+              "text": "1"
+            },
+            {
+              "denominator": 1,
+              "numerator": 1,
+              "text": "1"
+            },
+            {
+              "denominator": 1,
+              "numerator": 1,
+              "text": "1"
+            },
+            {
+              "denominator": 1,
+              "numerator": 1,
+              "text": "1"
+            },
+            {
+              "denominator": 1,
+              "numerator": 1,
+              "text": "1"
+            },
+            {
+              "denominator": 1,
+              "numerator": 1,
+              "text": "1"
+            },
+            {
+              "denominator": 1,
+              "numerator": 1,
+              "text": "1"
+            },
+            {
+              "denominator": 1,
+              "numerator": 1,
+              "text": "1"
+            },
+            {
+              "denominator": 1,
+              "numerator": 1,
+              "text": "1"
+            }
+          ],
+          "standard": [
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            }
+          ],
+          "two_row_2": [
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            }
+          ]
+        }
+      },
+      {
+        "Q": 6,
+        "charged_positive_control": {
+          "definition": "v=P_[2] e_{01}",
+          "invariant_one_point": {
+            "denominator": 1,
+            "numerator": 0,
+            "text": "0"
+          },
+          "two_point_norm": {
+            "denominator": 5,
+            "numerator": 3,
+            "text": "3/5"
+          }
+        },
+        "exact_linear_null": true,
+        "invariant_covector_matrix_elements": {
+          "singlet": [
+            {
+              "denominator": 1,
+              "numerator": 1,
+              "text": "1"
+            },
+            {
+              "denominator": 1,
+              "numerator": 1,
+              "text": "1"
+            },
+            {
+              "denominator": 1,
+              "numerator": 1,
+              "text": "1"
+            },
+            {
+              "denominator": 1,
+              "numerator": 1,
+              "text": "1"
+            },
+            {
+              "denominator": 1,
+              "numerator": 1,
+              "text": "1"
+            },
+            {
+              "denominator": 1,
+              "numerator": 1,
+              "text": "1"
+            },
+            {
+              "denominator": 1,
+              "numerator": 1,
+              "text": "1"
+            },
+            {
+              "denominator": 1,
+              "numerator": 1,
+              "text": "1"
+            },
+            {
+              "denominator": 1,
+              "numerator": 1,
+              "text": "1"
+            },
+            {
+              "denominator": 1,
+              "numerator": 1,
+              "text": "1"
+            },
+            {
+              "denominator": 1,
+              "numerator": 1,
+              "text": "1"
+            },
+            {
+              "denominator": 1,
+              "numerator": 1,
+              "text": "1"
+            },
+            {
+              "denominator": 1,
+              "numerator": 1,
+              "text": "1"
+            },
+            {
+              "denominator": 1,
+              "numerator": 1,
+              "text": "1"
+            },
+            {
+              "denominator": 1,
+              "numerator": 1,
+              "text": "1"
+            }
+          ],
+          "standard": [
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            }
+          ],
+          "two_row_2": [
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            },
+            {
+              "denominator": 1,
+              "numerator": 0,
+              "text": "0"
+            }
+          ]
+        }
+      }
+    ],
+    "observable_hypothesis": "The ordinary fixed-Q global matching observable is an unlabeled zero-leg scalar before its C4 orientation projection: it introduces neither an FK cluster-colour character nor defect endpoints."
+  }
+}
