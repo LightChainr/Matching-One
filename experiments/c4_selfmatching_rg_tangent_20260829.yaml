@@ -1,0 +1,46 @@
+version: 1
+created: 2026-08-29
+status: rank_gate_frozen_before_disjoint_10m_confirmation
+issue: 155
+purpose: >-
+  Measure the exact p=1/2 Bernoulli score responses of all five wrapping
+  channels to the uniform and staggered microscopic odd tangents, then test
+  whether any two wrapping readouts resolve a second RG direction.
+
+exact_oracle:
+  geometry: {a: 3, b: 1, N: 10}
+  response_each_channel: {d_t: 15/8, d_lambda: 5/4}
+  Fisher: [[40, 0], [0, 40]]
+
+discovery:
+  geometry: {a: 11, b: 3, N: 130}
+  exploratory_samples: 100000
+  seed: 2026105501
+  counter_interval: [0, 100000]
+  observed_only_to_set_question: >-
+    All wrapping response rows were nearly parallel; no model exponent or
+    response pair was selected from this block.
+
+frozen_confirmation:
+  geometry: {a: 11, b: 3, N: 130}
+  samples: 10000000
+  batches: 100
+  seed: 2026105501
+  counter_interval: [1000000000, 1010000000]
+  pair_gate:
+    maximum_condition_number: 50
+    minimum_absolute_determinant_z: 3
+  decision: >-
+    If no wrapping pair passes both gates, classify the wrapping response
+    family as rank-1 at this precision. Do not extract or regularize a second
+    generalized eigenvalue; design a local/sublattice odd readout instead.
+
+future_N170:
+  geometry: {a: 13, b: 1, N: 170}
+  status: gated
+  run_only_if: a frozen N130 wrapping pair passes the rank gate
+
+claim_boundary: >-
+  Failure of the wrapping rank gate says that this topological readout family
+  cannot resolve two odd RG directions. It does not prove the microscopic
+  tangent plane itself is rank-1.
