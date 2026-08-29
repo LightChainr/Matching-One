@@ -47,6 +47,9 @@ EXPECTED_REPRESENTATIONS = {
     PARENT_N: {"first": (12, 1), "second": (9, 8)},
     CHILD_N: {"first": (13, 11), "second": (17, 1)},
 }
+# Both engines emit first-minus-second in the frozen genealogy order.  The
+# negative norm-2 transfer character is already carried by the target ratio.
+LINEAGE_SIGN = {PARENT_N: +1.0, CHILD_N: +1.0}
 FEATURE_ORDER = (
     "X_even_0.0",
     "X_even_0.025",
@@ -321,8 +324,12 @@ def render(
 
     parent_groups = grouped(parent_data, PARENT_N)
     child_groups = grouped(child_data, CHILD_N)
-    parent, parent_cov = estimate(parent_groups, lineage_sign=+1.0)
-    child, child_cov = estimate(child_groups, lineage_sign=-1.0)
+    parent, parent_cov = estimate(
+        parent_groups, lineage_sign=LINEAGE_SIGN[PARENT_N]
+    )
+    child, child_cov = estimate(
+        child_groups, lineage_sign=LINEAGE_SIGN[CHILD_N]
+    )
 
     target = prediction["target"]
     induced = prediction["induced_root_prediction_if_primary_deltaM_doubling_holds"]
