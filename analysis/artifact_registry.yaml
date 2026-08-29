@@ -41,6 +41,7 @@ frozen_predictions:
 continuum_controls:
   - {path: predictions/p156_pinson_arguin_baselines_20260829.json, status: continuum_baseline, issue: 156, role: primitive_homology_sector_values}
   - {path: analysis/two_activation_rank_mixture_exact.json, status: exact_algebra_oracle, issue: 28, role: two_activation_Bernoulli_Beta_mixture}
+  - {path: analysis/physical_root_uniqueness_exact.json, status: exact_algebra_oracle, issue: 113, role: physical_root_uniqueness_and_activation_bracket}
 
 evidence_archives:
   - {id: P57, path: results/server-20260829/P57-norm5-500m, status: immutable_result, role: prospective_norm5}
@@ -58,6 +59,7 @@ evidence_archives:
 
 topic_derivations:
   - {path: notes/two-activation-rank-mixture.md, status: topic_derivation, role: post_digital_Alexander_activation_calculus}
+  - {path: notes/physical-root-uniqueness-from-beta-mixture.md, status: topic_derivation, role: positive_density_simple_root_theorem}
   - {path: notes/pivotal-russo-finite-volume.md, status: topic_derivation, role: pivotal_identity}
   - {path: notes/post-n290-two-generator-thermal-transfer.md, status: topic_derivation, role: non_scalar_thermal_transfer}
   - {path: notes/q4-jordan-log-slope-shape.md, status: topic_derivation, role: Q4_Jordan_shape}

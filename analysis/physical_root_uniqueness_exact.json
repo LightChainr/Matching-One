@@ -1,0 +1,39 @@
+{
+  "axis_L2_exact_histogram": {
+    "N": 4,
+    "bracket": {
+      "M_derivative_at_root": 3.061467458920718,
+      "completion_mixture_median": 0.6142724318676105,
+      "onset_mixture_median": 0.458803899853803,
+      "physical_matching_root": 0.5411961001461969,
+      "root_balance_residual": -2.220446049250313e-16
+    },
+    "completion_histogram": {
+      "3": 24
+    },
+    "onset_histogram": {
+      "2": 16,
+      "3": 8
+    },
+    "samples": 24,
+    "strict_positive_derivative_grid_check": true
+  },
+  "complex_root_boundary": "no constraint on nonreal or out-of-interval roots; matching zeros are not automatically Fisher or Lee-Yang zeros",
+  "degenerate_extension": {
+    "K=0": "preactivated endpoint atom; no derivative contribution",
+    "K=N+1": "never-activated endpoint atom; no derivative contribution",
+    "M(0)": "-1+P(K1=0)+P(K2=0)",
+    "M(1)": "1-P(K1=N+1)-P(K2=N+1)"
+  },
+  "dependency": "Issue 28 two-activation Beta mixture and Issue 269 rank theorem",
+  "issue": 113,
+  "schema": "matching-one.physical-root-uniqueness.v1",
+  "theorem": {
+    "conclusion": "exactly one simple real root in (0,1)",
+    "honest_torus_endpoints": {
+      "M(0)": -1,
+      "M(1)": 1
+    },
+    "open_interval_derivative": "E[Beta(K1,N-K1+1)+Beta(K2,N-K2+1)]>0"
+  }
+}
