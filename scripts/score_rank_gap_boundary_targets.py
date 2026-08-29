@@ -228,6 +228,17 @@ def main() -> int:
         observation_covariance = mp.diag(variances)
         scored = score_targets(observed, observation_covariance, fit)
         payload["status"] = "targets_revealed_and_scored_against_frozen_source_fit"
+        payload["target_provenance"] = [
+            {
+                "N": run.n,
+                "moments": str(moments),
+                "moments_sha256": sha256(moments),
+                "metadata": str(metadata_path),
+                "metadata_sha256": sha256(metadata_path),
+                "git_commit": str(run.metadata["git_commit"]),
+            }
+            for run, (_, moments, metadata_path) in zip(runs, args.target_run)
+        ]
         payload["target_observed_gap_mean"] = [mp.nstr(value, 30) for value in observed]
         payload["target_observation_covariance"] = matrix_strings(observation_covariance, 30)
         payload["score"] = {

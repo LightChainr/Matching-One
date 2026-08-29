@@ -44,3 +44,28 @@ shape, and they are not counted as independent confirmations of the exponent.
 All input moment identities passed exactly.  N=65/85/130/170 use aligned
 delete-one covariance; N=185 and N=265 are independent because their counter
 intervals are disjoint.
+
+## Prospective N=325/N=425 reveal
+
+The source-only two-term model was committed while both Huawei target files
+were zero bytes.  The subsequent 500M-per-orientation reveal gives:
+
+| N | frozen E[G] | observed E[G] | signed marginal residual |
+|---:|---:|---:|---:|
+| 325 | 15.6291797836 | 15.6309549640 | +3.288 sigma |
+| 425 | 18.5304919949 | 18.5244346590 | -8.687 sigma |
+
+With the frozen, highly correlated source-fit prediction covariance added to
+the two independent target delete-one variances, the joint score is
+
+```text
+chi-square / df = 155.2186986901 / 2
+p                 = 1.9710054963e-34
+```
+
+This decisively falsifies `E[G]=A N^(5/8)+B` as a precision two-term transfer
+law across the norm-5 targets.  It does not by itself falsify the leading
+`N^(5/8)` thermal-window scale: the observed scaled means continue to rise,
+but their correction flow cannot be represented by one common additive
+constant.  The immutable machine-readable score is
+`boundary-target-reveal.json`.
