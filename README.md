@@ -8,147 +8,111 @@ The exact structural anchor is
 p_c^{\mathrm{site}}(\mathbb Z^2)+p_c^{\mathrm{site}}(\mathrm{NN+NNN})=1.
 \]
 
-## What we currently observe
+## Current empirical picture
 
-The strongest numerical structure is an orientation-dependent matching signal on primitive Gaussian tori.
-
-- Independent 100M same-`N` confirmation at `N=65,85,130,145,170` reproduces the prescribed odd-square-harmonic sign and is compatible with
-
-  ```text
-  DeltaM ~ DeltaCos4 * N^(-13/8).
-  ```
-
-- Three prospective `1+i` Gaussian lineages are compatible with the no-fit raw-contrast transformation
-
-  ```text
-  DeltaM(2N)/DeltaM(N) = -2^(-13/8).
-  ```
-
-- The genuinely new N=185/265 full-curve target block, 500M paired permutations per size, gives
-
-  ```text
-  DeltaM, x=21/4 H4-like: chi2 = 3.046 / 2
-  DeltaM, zero:            chi2 = 29.409 / 2
-  DeltaM, x=17/4:          chi2 = 30.246 / 2
-  ```
-
-  so the matching-odd `x=21/4` H4-like radial law survives the new-geometry test and strongly outperforms these two frozen alternatives.
-
-### Important channel-map erratum
-
-The original #108 report described the matching-even N=185/265 result as a prospective sign reversal. That interpretation was a protocol error, not a new physical effect.
-
-The frozen matching-even source amplitude was fitted from P31 `either/even`, while the threshold-rank target reconstructs rank-2 `cross/even`. Complementary torus topology gives
+The strongest numerical structure is a matching-odd orientation signal on primitive Gaussian tori. Independent same-`N` confirmation and prospective Gaussian lineages are compatible with
 
 ```text
-DeltaS_cross = -DeltaS_either.
+DeltaM ~ DeltaCos4 * N^(-13/8).
 ```
 
-After applying only this exact source-to-target channel map, with no refit,
+The N=185/265 prospective new-geometry block gives
 
 ```text
-corrected DeltaS chi2 = 0.5700315 / 2
-marginal residual z   = +0.67, -0.12
+x=21/4 H4-like: chi2 = 3.046 / 2
+zero:            chi2 = 29.409 / 2
+x=17/4:          chi2 = 30.246 / 2
 ```
 
-The matching-even prospective result is therefore compatible with the frozen amplitude after channel conversion. The raw #108 files remain preserved.
-
-The durable lesson is narrow: claim-bearing scores must state their observable semantics and apply an exact registered map when source and target conventions differ.
-
-### A real prospective failure remains
-
-The normalized derivative law
+The completed norm-5 N=325/425 prospective discriminator then resolves the old odd-harmonic alias:
 
 ```text
-P4[S'] ~ N^-5/4
+H4:  chi2 =  0.4163 / 2
+H12: chi2 = 35.1931 / 2
+H8:  chi2 = 16.0120 / 2
+zero:chi2 =  1.7764 / 2
 ```
 
-fails prospectively on N=185/265, while two predeclared corrections remain viable:
+So the frozen H4 transfer strongly outperforms the tested H12/H8 aliases. The child block alone does **not** reject zero effect, so this is a transfer/harmonic discrimination result rather than a new standalone nonzero-effect detection.
+
+The matching-even N=185/265 result is also compatible with its frozen amplitude after the exact channel conversion
 
 ```text
-pure N^-5/4:  chi2 = 52.716 / 2
-rank-2/log:    chi2 =  1.204 / 2
-analytic 1/N:  chi2 =  0.862 / 2
-zero:          chi2 = 1278.555 / 2
+DeltaS_cross = -DeltaS_either,
 ```
 
-The correction mechanism is not yet uniquely identified.
+with corrected `chi2 = 0.5700315 / 2` and no refit.
 
-## Working interpretation
+## Derivative/metric problem
 
-A compact empirical law for the central matching-odd sector remains
-
-\[
-\Delta M_N \approx A\,\Delta\cos(4\theta)\,N^{-13/8}.
-\]
-
-It has independent-seed, held-out, Gaussian-semigroup, root-closure, and prospective-new-geometry support. It does **not** yet prove that H4 is unique rather than H12/H20, nor uniquely identify an `x=21/4` LCFT operator.
-
-The matching-even sector is compatible with its frozen `N^-1` amplitude once cross/either semantics are aligned. Full-curve data also resolve a small finite-size correction to the bare center-slope multiplier `2^(3/8)`.
-
-The finite threshold-rank archive is now more than a source of roots and slopes: it supports reliability signatures, pivotal identities, Krawtchouk/Hermite response modes, paired rank-gap width, and low-rank transfer analysis without rerunning the simulation.
-
-## Next experiments and analysis
-
-The priority order is short, but it is a scheduling order rather than a permission system.
-
-1. **Norm-5 N=325/425 — #57.** Highest-information new block. Keep the frozen H4/H12/H8/zero primary score, then reuse the same full threshold-rank data for q=2/Jordan, Krawtchouk/Hermite thermal-jet, paired rank-gap width, root/slope, derivative and multi-u analyses.
-2. **Third full-curve lineage — #50.** Score `145 -> 290`, including the frozen finite-size slope correction and induced root prediction, then use the same data as a held-out score-mode/low-rank transfer test.
-3. **Use existing full curves harder.** The prequential evidence ledger (#95) is complete. Active source-data routes include intrinsic quantile centers (#101), multi-u response (#119), joint operator mixing (#125), full standardized threshold profiles (#122), and pivotal/four-arm continuation (#100/#121).
-4. **Choose later geometry by information gain — #102.** Maximin Gaussian design tooling is canonical; update cost/variance inputs as new runs arrive rather than defaulting to larger N.
-
-Norm-4, self-matching tangent, Pell/modulus work, N=1105, exact algebra and other controls are valid parallel directions. Their current ranking reflects expected information per compute, not a blanket gate.
-
-### One-command norm-5 analysis
-
-When a six-size norm-5/full-curve data block is available, `scripts/run_norm5_analysis_bundle.py` provides a thin orchestration entrypoint. It infers exact shared counter groups from metadata and runs the existing scorers independently. A frozen scorer that is inapplicable to an exploratory input is recorded as a failed subanalysis without blocking the other views.
+The prospective intrinsic-center score remains
 
 ```text
---run 65:HIST:MOMENTS:METADATA
---run 85:HIST:MOMENTS:METADATA
---run 130:HIST:MOMENTS:METADATA
---run 170:HIST:MOMENTS:METADATA
---run 325:HIST:MOMENTS:METADATA
---run 425:HIST:MOMENTS:METADATA
+P4[S]   ~ N^-1        survives
+P4[D]   ~ N^-13/8     survives
+P4[D']  ~ N^-5/8      survives
+P4[S']  ~ N^-5/4      fails
 ```
 
-This keeps one expensive data block reusable rather than turning every new observable into a new production campaign.
+On the norm-5 full-curve derived view, q=2 and rank-2/Jordan remain inconclusive:
+
+```text
+q2 analytic: chi2 = 10.648 / 6
+Jordan/log:  chi2 =  9.020 / 6
+```
+
+Two simple scalar correction stories have now failed on post-reveal P57 analyses:
+
+- `E[K_plus-K_minus] = A N^(5/8)+B` fails its frozen N325/N425 target with joint `chi2 = 155.22 / 2`;
+- using the observed canonical rank-gap width as a single scalar rescaling does not collapse the higher Krawtchouk/Hermite thermal jet.
+
+This shifts the live mechanism question toward low-rank transfer/operator mixing rather than another scalar correction exponent.
+
+## Highest-value next work
+
+1. **N=145 -> 290 full curve — #50.** This is now the single highest-information new production block. Score the frozen center-slope/root correction first, then reuse the same data for held-out low-rank transfer, Krawtchouk/Hermite, rank-gap and metric-free-ratio tests.
+2. **Use the completed P57 block harder.** The raw 500M N325/N425 histograms and joint moments are canonical and support additional covariance-aware analyses without new simulation.
+3. **Norm-4 dyadic closure — #154.** Ready if the q=2/Jordan or low-rank transfer ambiguity survives N290.
+4. **Independent controls.** Self-matching tangent (#155), pivotal/four-arm, FK/Potts, square-bond duality, and modulus/Pell work can proceed in parallel whenever they add more information per cost.
+
+N=1105 is lower current information per CPU, not prohibited.
+
+## Analysis infrastructure
+
+Threshold-rank production preserves reusable sufficient statistics rather than only final decimals. The same archive now supports:
+
+- roots, center slopes and derivative channels;
+- exact finite Russo/pivotal checks;
+- activation/reliability signatures;
+- Krawtchouk/Hermite full-curve response coordinates;
+- paired rank-gap/neutral-window observables;
+- low-rank matrix/semigroup transfer analysis;
+- metric-free amplitude ratios;
+- primary-only prequential evidence aggregation.
+
+`scripts/run_norm5_analysis_bundle.py` is a thin orchestration entrypoint for six-size norm-5 blocks. It calls existing frozen/typed scorers independently and does not redefine their statistics.
 
 ## Research navigation
 
 - `docs/STATUS.md` — authoritative current claim ledger.
 - `docs/RESEARCH-MAP.md` — how scientific tracks and evidence fit together.
-- `notes/SYNTHESIS-20260828.md` — execution-facing scientific synthesis.
+- `notes/SYNTHESIS-20260828.md` — execution-facing synthesis.
 - `docs/ROADMAP.md` — information-gain priorities.
-- `analysis/research_ledger.yaml` — machine-readable questions, evidence and work state.
-- `analysis/artifact_registry.yaml` — lightweight artifact/navigation index; it does not block research integration.
+- `analysis/research_ledger.yaml` — compact machine-readable evidence/work state.
+- `analysis/artifact_registry.yaml` — lightweight artifact/navigation index.
 - `results/evidence-ledger/latest.md` — primary-only predictive evidence view.
 
-Old reports, wave notes, queues, closed PRs and negative results remain provenance, not competing current-status documents.
+Old reports, queues, closed PRs and negative results remain provenance, not competing current-status documents.
 
-## Repository
+## Execution policy
 
-```text
-constants/      reference values and exact relations
-data/           literature datasets and provenance
-docs/           canonical status, research map, and roadmap
-analysis/       evidence/work indexes and analysis manifests
-notes/          synthesis, theory, derivations, negative results
-scripts/        production analysis, scorers, exact checks, orchestration
-experiments/    frozen and historical protocols
-predictions/    preregistered/frozen predictions
-results/        immutable raw and derived research archives
-tests/          smoke, regression, exact-contract tests
-src/            production C++ engines
-```
-
-This is an exploratory mathematics/computational-physics repository. Useful research assets should enter `main` quickly; claim strength is controlled by evidence and chronology, not by branch location or process ceremony.
-
-The repository-wide hard constraints are intentionally minimal:
+Useful analysis, exact work and pilots are allowed by default. The repository keeps only three hard constraints:
 
 1. do not rewrite frozen predictions or committed result history;
 2. do not silently score incompatible observable semantics;
 3. do not add correlated views of one raw random block as independent primary evidence.
+
+Claim strength is controlled by evidence and chronology, not process ceremony.
 
 ```bash
 python3 -m unittest discover -s tests -p 'test_*.py' -v
