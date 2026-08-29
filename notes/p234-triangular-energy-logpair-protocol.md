@@ -3,6 +3,8 @@
 Status: executable Phase-A0 protocol and exact algebra oracle for Issue #234.
 No universal logarithmic coefficient is claimed or fitted here.
 
+Production entry point: `scripts/run_triangular_energy_logpair_mc.py`.
+
 ## Fields and the limit that must be preserved
 
 For critical site percolation on the triangular lattice, Camia--Feng assign an
@@ -167,6 +169,52 @@ formula 1,048,576 times.  The exact centered `(LL,LD,DD)` vector is
 These numbers validate the algebra, periodic indexing, and centering
 convention only.  The quotient intentionally has non-scaling radii and the
 values are not continuum amplitudes.
+
+## Runnable Monte Carlo and local smoke
+
+The Phase-A runner assigns every batch its own SplitMix-derived stream, so
+worker scheduling does not affect the archive.  Each configuration performs
+one black-cluster union--find pass, evaluates the translation-summed `U/H`
+statistics, and never draws a cluster sign.  It writes both a CSV containing
+the integer sufficient statistics and a JSON analysis containing
+
+```text
+(LL,LD,DD), their full 3 by 3 covariance,
+the two-field matrix [[LL,LD],[LD,DD]],
+Delta_J = LL*DD-LD^2,
+J = LL*DD/LD^2 - 1.
+```
+
+`J` is unchanged by separate nonzero rescalings of the local and bilocal
+fields.  It is therefore a useful early Jordan-shape diagnostic before
+`pi_a` and `kappa` are known.  A logarithmic two-point Gram form with a
+vanishing bottom-bottom entry and nonzero mixed entry has negative determinant
+and `J -> -1`; this is a discriminator to measure, not a result assumed by
+the sampler.
+
+The committed 40-sample `L=32`, `delta=1/(8 sqrt(2))` smoke produced
+
+```text
+(LL,LD,DD) = (0.0003814, 0.0009275, 0.0011047),
+J = -0.510 +/- 0.464.
+```
+
+Its only role is to show that sampling, integer archival, U-stat centering,
+covariance, and nonlinear diagnostics run end to end.  Forty samples have no
+scientific evidentiary value.
+
+The first Huawei line is frozen in
+`experiments/p234_phaseA_huawei_20260829.yaml`.  For example:
+
+```bash
+python3 scripts/run_triangular_energy_logpair_mc.py run \
+  --L 64 --delta-denominator 8 --samples 100000 --batches 100 \
+  --seed 2026234064 --workers 16 \
+  --output-prefix results/server-20260829/P234-phaseA/d8-L64-100k
+```
+
+Run the analogous `L=96,128,192` rows before moving to the smaller fixed
+cutoffs.  This preserves the required fixed-`delta` first limit.
 
 ## Remaining normalization boundary
 

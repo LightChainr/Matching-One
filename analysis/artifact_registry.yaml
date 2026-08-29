@@ -57,6 +57,7 @@ continuum_controls:
   - {path: predictions/p234_triangular_energy_logpair_tiny_oracle_20260829.json, status: exact_algebra_oracle, issue: 234, role: cluster_sign_integration_control}
 
 evidence_archives:
+  - {id: P234_ENERGY_LOGPAIR_SMOKE, path: results/local-20260829/P234-triangular-energy-logpair-smoke, status: pipeline_smoke, role: cluster_sign_integrated_phaseA_runner}
   - {id: NEUTRAL_AREA_MODE_FRONT, path: results/local-20260829/neutral-area-mode-front, status: negative_result, role: exact_covector_and_bounded_mode_front}
   - {id: P31, path: results/server-20260828/P31, status: immutable_result, role: same_N_confirmation}
   - {id: P32, path: results/server-20260828/P32-radial-challenge, status: immutable_result, role: heldout_radial}
@@ -101,6 +102,9 @@ topic_derivations:
   - {path: notes/p156-square-bond-primitive-pilot.md, status: topic_derivation, role: primitive_homology_pilot}
   - {path: notes/gaussian-isogeny-maximin-design.md, status: topic_derivation, role: information_design}
   - {path: notes/c4-local-odd-pivotal-tangent.md, status: topic_derivation, role: local_odd_tangent_readout}
+
+active_execution_protocols:
+  - {path: experiments/p234_phaseA_huawei_20260829.yaml, status: active_execution_plan, issue: 234, role: first_fixed_delta_phaseA_line}
 
 historical_protocols:
   - {path: experiments/server_compute_queue.yaml, status: historical, role: original_server_queue}

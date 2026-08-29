@@ -1,0 +1,143 @@
+{
+  "block_estimates": [
+    [
+      -0.0017813152737087674,
+      -0.002033265431722005,
+      0.0011124504937065972
+    ],
+    [
+      0.0035660213894314237,
+      0.003770923614501953,
+      0.0010853661431206598
+    ],
+    [
+      0.001575787862141927,
+      0.0015602323744032117,
+      -0.001632033454047309
+    ],
+    [
+      -0.001835081312391493,
+      0.00041229459974500865,
+      0.0038529713948567707
+    ]
+  ],
+  "covariance_of_mean": [
+    [
+      1.76320854281637e-06,
+      1.4463492751135684e-06,
+      -7.865455445762899e-07
+    ],
+    [
+      1.4463492751135684e-06,
+      1.4597480538905337e-06,
+      -2.687888214531171e-07
+    ],
+    [
+      -7.865455445762899e-07,
+      -2.687888214531171e-07,
+      1.253594960495702e-06
+    ]
+  ],
+  "estimate": [
+    0.0003813531663682726,
+    0.0009275462892320421,
+    0.0011046886444091796
+  ],
+  "geometry": {
+    "L": 32,
+    "a": 0.03125,
+    "bilocal_radius_lattice_units": 3,
+    "center_displacement": [
+      16,
+      16
+    ],
+    "delta": 0.08838834764831843,
+    "delta_formula": "1/(8*sqrt(2))",
+    "lattice": "triangular_site",
+    "p": 0.5,
+    "period_basis_lattice_coordinates": [
+      [
+        32,
+        0
+      ],
+      [
+        0,
+        32
+      ]
+    ],
+    "realized_delta": 0.09375,
+    "realized_delta_error": 0.005361652351681567,
+    "sites": 1024,
+    "translations_per_configuration": 1024
+  },
+  "issue": 234,
+  "jordan_diagnostics": {
+    "gram_determinant_LL_DD_minus_LD_squared": -4.390656062716157e-07,
+    "gram_determinant_signed_z": -0.40994007224066104,
+    "gram_determinant_standard_error_delta_method": 1.0710482726700992e-06,
+    "rescaling_invariant_J": -0.5103383837017297,
+    "rescaling_invariant_J_definition": "LL*DD/LD^2-1",
+    "rescaling_invariant_J_standard_error_delta_method": 0.46391594414591986
+  },
+  "moment_order": [
+    "LL",
+    "LD",
+    "DD"
+  ],
+  "monte_carlo": {
+    "batches": 4,
+    "centering": "unbiased cross-configuration order-2 U-statistic",
+    "random_cluster_sign_draws": 0,
+    "samples_per_batch": 10,
+    "sign_treatment": "exact conditional integration over cluster signs",
+    "total_samples": 40
+  },
+  "run": {
+    "argv": [
+      "scripts/run_triangular_energy_logpair_mc.py",
+      "run",
+      "--L",
+      "32",
+      "--delta-denominator",
+      "8",
+      "--samples",
+      "40",
+      "--batches",
+      "4",
+      "--seed",
+      "2026082934",
+      "--workers",
+      "4",
+      "--output-prefix",
+      "results/local-20260829/P234-triangular-energy-logpair-smoke/L32-d8-40"
+    ],
+    "batch_archive": "results/local-20260829/P234-triangular-energy-logpair-smoke/L32-d8-40.batches.csv",
+    "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+    "python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "seed": 2026082934,
+    "workers": 4
+  },
+  "schema": "matching-one/p234-triangular-energy-logpair-phaseA/v1",
+  "scientific_boundary": [
+    "These are raw E_a/E_a_delta correlations, before pi_a and field normalization.",
+    "J is invariant under separate nonzero rescalings of the two fields, but one small run is only a pipeline smoke test.",
+    "Take L to infinity at fixed declared delta before comparing different delta rows.",
+    "No value of kappa=C1*CL/C2 is assumed or estimated."
+  ],
+  "standard_error": [
+    0.0013278586305839827,
+    0.0012082003368194092,
+    0.001119640549683559
+  ],
+  "status": "raw_parent_pair_phaseA_no_universal_coefficient",
+  "two_field_matrix": [
+    [
+      0.0003813531663682726,
+      0.0009275462892320421
+    ],
+    [
+      0.0009275462892320421,
+      0.0011046886444091796
+    ]
+  ]
+}
