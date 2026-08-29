@@ -1,0 +1,98 @@
+version: 1
+frozen_at: 2026-08-29
+status: source_theory_frozen_before_norm5_reveal
+claim_level: C0
+issue: 182
+purpose: >-
+  Interpret the matching-odd interlaced Krawtchouk tower as one thermal
+  scaling-function jet and distinguish rank-gap width renormalization from
+  translation and q2/Jordan functional mixing on held-out norm-5 curves.
+
+exact_finite_N_identity:
+  score_coefficients: 'c_r=E_p0[O H_r]'
+  response: >-
+    R_N(p)=sum_r c_r*sqrt(binomial(N,r))*
+    ((p-p0)/sqrt(p0*(1-p0)))^r
+  evidence_boundary: >-
+    This is an exact change of basis. Modes from one histogram are one
+    correlated functional block, not independent observations.
+
+thermal_scaling_jet:
+  coordinate: 'z=(p-p0)*N^(3/8)'
+  matching_odd_base_exponent: 'alpha=13/8'
+  interlaced_components:
+    even_r: P4_D_mode_r
+    odd_r: P4_S_mode_r
+  derivative_jet: >-
+    d_r=sqrt(r!)*N^(13/8+r/8)*c_r/(p0*(1-p0))^(r/2)
+  generating_function: 'F_T(z)=sum_r d_r*z^r/r!'
+
+operator_hypotheses:
+  translation:
+    action: 'F(z)->F(z+delta)'
+    jet: 'd_r->sum_k d_(r+k)*delta^k/k!'
+    infinitesimal_generator: '(T d)_r=d_(r+1)'
+  width:
+    action: 'F(z)->F(z/w)'
+    jet: 'd_r->w^(-r)*d_r'
+    infinitesimal_generator: '(W d)_r=-r*d_r'
+  rank2_Jordan:
+    action: 'd_r(N)=f_r+log(N)*g_r'
+    diagnostic: >-
+      multiplier increments are an additive log-norm cocycle but need not
+      lie in the translation or width tangent directions.
+
+rank_gap_bridge:
+  observable: 'G=K_plus-K_minus'
+  scaled_width: 'w_N=N^(-5/8)*E[G]'
+  source_model: 'E[G]=A*N^(5/8)+B+...'
+  correction_exponent_in_N: '5/8'
+  consequence: >-
+    An O(1) rank-boundary displacement B becomes a relative N^(-5/8)
+    correction to the thermal width and predicts d_r proportional to w_N^(-r).
+  minus_one_quarter_boundary: >-
+    B near -1/4 is not implied by the frozen Kminus/Kplus off-by-one
+    convention. Common endpoint shifts cancel in G; integer changes to one
+    endpoint and two-orientation averaging generate integer or half-integer
+    pooled shifts, not a forced quarter. Treat -1/4 as a conjectural
+    Euler-Maclaurin/topological boundary value until independently derived.
+
+frozen_predictions:
+  rank_gap_width_collapse:
+    orders: [2, 3, 4, 5, 6]
+    width_source: 'aligned paired rank-gap means, frozen independently of norm5 mode targets'
+    division_free_residual: >-
+      R_width(r,Q)=d_r(QN)*w_(QN)^r*d_0(N)
+      -d_r(N)*w_N^r*d_0(QN)
+    target: 'joint residual vector equals zero'
+    interpretation: >-
+      A pass makes discrete thermal-window width renormalization the first
+      explanation of the family-wide amplitude drift. A failure rules out
+      width-only closure but not the 5/8 rank-gap law itself.
+  width_corrected_multiplier_cocycle:
+    width_corrected_jet: 'dtilde_r(N)=w_N^r*d_r(N)'
+    q2_multiplier: '8/5'
+    Jordan_multiplier: 'log(5)/log(2)'
+    residual: >-
+      R_c(r)=dtilde_r(5N)-c*dtilde_r(2N)+(c-1)*dtilde_r(N)
+    model_order: [q2_analytic, rank2_Jordan]
+    target: 'one covariance-scored vector over r=2..6'
+
+scoring_order:
+  - rank_gap_width_collapse
+  - q2_analytic_after_width_correction
+  - rank2_Jordan_after_width_correction
+  - translation_or_general_matrix_mixing_only_after_fixed_scores
+
+covariance:
+  rule: >-
+    Recompute centers, score modes, paired rank-gap widths and every nonlinear
+    residual inside aligned delete-one replicates. Preserve independent
+    counter groups; matching numeric batch labels do not create covariance.
+
+forbidden:
+  - infer_Jordan_structure_from_alternating_mode_signs
+  - call_mode_components_independent_evidence
+  - use_norm5_targets_to_choose_orders_or_rotate_the_jet
+  - set_B_to_minus_one_quarter_from_endpoint_convention_alone
+  - divide_by_noisy_d0_in_the_primary_width_score
