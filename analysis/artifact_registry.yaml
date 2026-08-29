@@ -54,6 +54,7 @@ frozen_predictions:
   - {path: predictions/rank_gap_thermal_window_20260829.yaml, status: frozen_prediction, role: retrospective_rank_gap_coordinate_contract}
   - {path: predictions/rank_gap_boundary_correction_targets_20260829.yaml, status: frozen_prediction, role: prospective_N325_N425_rank_gap_targets}
   - {path: predictions/hermite_krawtchouk_jet_20260829.yaml, status: frozen_prediction, issue: 182, role: width_first_thermal_jet_and_cocycle_contract}
+  - {path: predictions/gaussian_isogeny_maximin_design_20260828.yaml, status: frozen_prediction, issue: 102, role: maximin_Gaussian_experiment_design}
   - {path: predictions/c4_self_matching_n26_beta_targets_20260828.json, status: frozen_prediction, issue: 115, role: completed_N26_exact_targets}
   - {path: predictions/reliability_signature_tomography_20260828.yaml, status: frozen_prediction, role: future_exact_signature_tomography}
   - {path: predictions/hexagonal_pell_spin_filter_20260828.yaml, status: frozen_prediction, role: Pell_shape_target}
@@ -73,6 +74,7 @@ evidence_archives:
   - {id: P50, path: results/server-20260828/P50-third-lineage, status: immutable_result, role: third_fixed_coordinate_lineage}
   - {id: PREQUENTIAL, path: results/evidence-ledger, status: immutable_result, role: chronology_safe_evidence_view}
   - {id: RANK_GAP_THERMAL_WINDOW, path: results/server-20260828/rank-gap-thermal-window, status: immutable_result, role: paired_rank_gap_source_analysis_and_target_prediction}
+  - {id: MATRIX_SEMIGROUP_DISCOVERY, path: results/discovery-20260828/matrix-semigroup, status: immutable_result, role: retrospective_low_rank_transfer_discovery}
   - {id: SELFMATCHING_TANGENT_N10, path: results/local-20260828/P44-self-matching-tangent, status: immutable_result, role: exact_tangent_archive}
   - {id: N26_BETA, path: results/local-20260828/P115-n26-self-matching-exact, status: negative_result, role: exact_Beta_falsification}
   - {id: EXACT_SMALL_POLYNOMIALS, path: results/exact_small_matching_polynomials.md, status: immutable_result, role: bounded_exact_polynomials}
@@ -88,6 +90,8 @@ topic_derivations:
   - {path: notes/logodds-krawtchouk-threshold-response.md, status: topic_derivation, role: score_mode_thermal_response}
   - {path: notes/rank-gap-thermal-window.md, status: topic_derivation, role: paired_rank_gap_thermal_window}
   - {path: notes/hermite-krawtchouk-thermal-jet.md, status: topic_derivation, role: exact_fullcurve_jet_and_rank_gap_width_bridge}
+  - {path: notes/matrix-gaussian-semigroup-discovery.md, status: topic_derivation, role: retrospective_low_rank_matrix_semigroup}
+  - {path: notes/gaussian-isogeny-maximin-design.md, status: topic_derivation, role: information_oriented_geometry_design}
   - {path: notes/FRONTIER-ROUTES-20260828.md, status: historical, role: broad_earlier_frontier_snapshot}
 
 historical_protocols:
@@ -96,7 +100,7 @@ historical_protocols:
   - {path: experiments/server_compute_queue_overrides_20260828_v2.yaml, status: historical, role: queue_override_v2}
   - {path: experiments/server_compute_queue_overrides_20260828_v3.yaml, status: historical, role: final_third_wave_queue_snapshot}
   - {path: experiments/post-server-third-wave.yaml, status: historical, role: third_wave_protocol}
-  - {path: experiments/post-server-third-wave-overrides-20260828.yaml, status: historical, role: third_wave_override}
+  - {path: experiments/post-server-third-wave-overrides_20260828.yaml, status: historical, role: third_wave_override}
 
 channel_semantics:
   implementation: scripts/wrapping_channels.py
@@ -106,11 +110,11 @@ channel_semantics:
   required_fields: [topology_channel, combination, probability_coordinate, orientation_order, normalization, quantity]
 
 frontier_open_as_of_2026_08_29:
-  - {pr: 142, state: frontier, classification: unique_frontier, role: retrospective_low_rank_matrix_semigroup}
-  - {pr: 139, state: frontier, classification: unique_frontier, role: information_optimal_Gaussian_design}
   - {pr: 84, state: frontier, classification: unique_frontier, role: exact_axis_L5_and_Galois}
 
 canonical_integration_history:
+  - {pr: 139, role: maximin_Gaussian_experiment_design}
+  - {pr: 142, role: retrospective_low_rank_matrix_semigroup}
   - {pr: 166, role: roadmap_channel_correction}
   - {pr: 170, role: research_map_and_typed_channel_layer}
   - {pr: 171, role: prospective_P48_new_geometry_score}
