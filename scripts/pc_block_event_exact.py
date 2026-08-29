@@ -149,7 +149,8 @@ def enumerate_reliability(s: int, graph: str) -> dict[str, Any]:
         decision = decide_event(mask, s, graph)
         reasons[decision.reason] += 1
         if decision.success:
-            occupied = mask.bit_count()
+            # ``int.bit_count`` starts in Python 3.10; CI still supports 3.9.
+            occupied = bin(mask).count("1")
             success_by_occupied[occupied] += 1
             successful_masks.append(mask)
 
