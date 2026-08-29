@@ -56,7 +56,7 @@ so the highest-information new run names a non-`A_top` module projection, a char
 
 Current archives do not make a common-context experiment:
 
-- norm-4 rejects analytic q2 and the frozen common-generator form, while Jordan plus one even mode is economical but post-reveal;
+- norm-4 rejects analytic q2 and the frozen common-generator form; its frozen generation-four target supports the post-reveal Jordan-plus-one-even-mode closure but cannot distinguish secondary eigenvalues `0`, `1/2` and `1`;
 - the annulus scalar odd-shell law fails, while a two-state recurrence passes held-out N365;
 - final CRT endpoints are path-order blind, while intermediate filtrations can retain activation time.
 

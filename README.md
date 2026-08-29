@@ -35,7 +35,7 @@ q_n = -1 + 1{n>=K1} + 1{n>=K2},
 M_N(p) = -1 + E[H_K1(p)] + E[H_K2(p)].
 ```
 
-Thus the matching curve is exactly an equal mixture of first-wrap and second-direction-completion distributions, not generically one latent threshold. The paired midpoint `C=(K1+K2)/2` and gap `G=K2-K1` retain information discarded by the scalar mixture.
+Thus the matching curve is exactly an equal mixture of first-wrap and second-direction-completion distributions, not generically one latent threshold. The raw midpoint `C_raw=(K1+K2)/2` and raw gap `G_raw=K2-K1` retain information discarded by the scalar mixture; the normalized clock/lifetime coordinates used below are `C=C_raw/(N+1)` and `W=G_raw/(N+1)`.
 
 The main line now contains three complementary finite checks. PR #282 identifies `K_minus/K_plus` with the first and second essential-H1 births in the exact filtration oracle. PR #283 reconstructs `P0=1-F1`, `P1=F1-F2`, `P2=F2` and the mean rank-one lifetime from an existing rank archive. PRs #284/#285 extend the short-period quotient frontier through index 7: 40 HNF quotients and 49,878 filtrations have no birth, reflection, rank-sum, reconstruction or plateau-line failures. This is a strong finite frontier, not an unrestricted theorem for every degenerate quotient. The reused rank archive does not contain the plateau line `ell`, Smith saturation index `iota` or local birth mark, which is precisely why the next stream should retain them.
 
@@ -72,7 +72,7 @@ The unmerged double-projector staircase sharpens the ordinary rank-plane questio
 
 ### The finite-size state is compact but not scalar
 
-The N145->290 full-curve result rejects a one-multiplier description through a resolved shape direction. Norm-4 subsequently rejects the frozen analytic q2 scalar and common thermal-jet generator, while the corresponding Jordan laws survive at 5% with visible tension. Post-reveal work suggests “Jordan plus one conjugation-even mode” as an economical next transfer model, not as an identified unique matrix.
+The N145->290 full-curve result rejects a one-multiplier description through a resolved shape direction. Norm-4 subsequently rejects the frozen analytic q2 scalar and common thermal-jet generator. The post-reveal “Jordan plus one conjugation-even mode” recurrence then passes its frozen N520/N680 generation-four pilot at `lambda=1/2` (`1.314/2`, `p=.518` for scalar U; `9.298/10`, `p=.504` for the jet), removing the visible residual tension. The nearly identical `lambda=0` and `lambda=1` scores leave the secondary eigenvalue and unique transfer matrix unidentified; this raises the value of a discriminating geometry/operator coordinate rather than another free lambda fit.
 
 In the annulus line, the simplest matching-odd scalar shell law fails, yet a two-state radial recurrence determined from N325/N425 passes a held-out N365 third geometry with joint `p=.965`. The correct update is therefore not “radial structure failed,” but “one scalar coordinate failed while a two-state recurrence survived.”
 

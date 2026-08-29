@@ -150,7 +150,7 @@ The ordinary P205 prism selects H4, while the branch-only N325 deck-charged like
 
 ### Low-dimensional state and the targeted context rectangle
 
-Norm-4 rejects the frozen analytic q2 and common-generator forms; Jordan remains borderline, and one post-reveal conjugation-even mode closes the visible residual. In the annulus, the simple odd-shell scalar law fails while a two-state recurrence trained on N325/N425 passes held-out N365. Separately, an unmarked final CRT endpoint is factor-order blind, whereas an intermediate rank filtration can retain activation time.
+Norm-4 rejects the frozen analytic q2 and common-generator forms. The post-reveal Jordan-plus-one-even-mode recurrence then passes its frozen N520/N680 generation-four target at `lambda=1/2`, but `lambda=0`, `1/2` and `1` are nearly indistinguishable; one secondary coordinate is supported while its transfer eigenvalue is not identified. In the annulus, the simple odd-shell scalar law fails while a two-state recurrence trained on N325/N425 passes held-out N365. Separately, an unmarked final CRT endpoint is factor-order blind, whereas an intermediate rank filtration can retain activation time.
 
 These results motivate a **targeted pilot**, not another retrospective fit: acquire a common source and common readout basis over at least two Gaussian-cover and two annulus contexts, with shared replicas and held-out prediction. Compare one common generator against a context/morphism-enriched realization. Existing disjoint archives do not form the rectangle, and an endpoint-only row cannot test chronological memory.
 

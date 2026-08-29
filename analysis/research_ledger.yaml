@@ -120,14 +120,23 @@ branch_sources:
     paths:
       - notes/two-activation-rank-mixture.md
       - analysis/two_activation_rank_mixture_exact.json
-  - id: SRC_TWO_ACTIVATION_H4_PR267
+  - id: SRC_PR267_ACTIVATION_FRONTIER
     integration_status: open_pr
     pr: 267
     ref: research/navigation-priority-refresh-20260829
-    commit: a73f1ad117a300edb890f66ecb6dcf8b14022be1
+    commit: ef97da8222ce5017f4185566809f89176528a905
+    commit_semantics: immutable_content_snapshot_before_registry_self_pin
     paths:
+      - analysis/activation_curve_nodes_manifest.yaml
+      - analysis/two_activation_prism_manifest.yaml
       - results/two-activation-h4/latest.json
       - results/two-activation-h4/latest.md
+      - results/activation-curve-nodes/latest.json
+      - results/activation-curve-nodes/latest.md
+      - results/two-activation-prism/latest.json
+      - results/two-activation-prism/latest.md
+      - scripts/analyze_activation_curve_nodes.py
+      - scripts/analyze_two_activation_prism.py
   - id: SRC_MATCHING_POLYNOMIAL_MAIN
     integration_status: main_integrated
     ref: main
@@ -207,10 +216,14 @@ branch_sources:
     integration_status: open_pr
     pr: 277
     ref: analysis/p154-even-rank2-transfer-20260829
-    commit: 039e708bdb79c0fda86cb868ebaca9961c2ed1e9
+    commit: 3e855ced4fd98d8979c0b712636b45c2fa54f969
     paths:
       - notes/norm4-even-rank2-transfer.md
       - predictions/norm4_even_rank2_next_generation_20260829.json
+      - results/server-20260829/P154-norm4-generation4-pilot/REPORT.md
+      - results/server-20260829/P154-norm4-generation4-pilot/analysis/score.json
+      - results/server-20260829/P154-norm4-generation4-pilot/raw/n520_100m.metadata.json
+      - results/server-20260829/P154-norm4-generation4-pilot/raw/n680_100m.metadata.json
   - id: SRC_NORM5_MULTIRADIUS_PR247
     integration_status: open_pr
     pr: 247
@@ -519,17 +532,17 @@ scientific_nodes:
     geometries: [gaussian_cover]
     acquisition: [existing_data_reuse, new_production]
     source_refs: [SRC_NORM4_REVEAL_PR273, SRC_NORM4_EVEN_MODE_PR277]
-    known_result: frozen_scalar_q2_and_common_generator_scores_fail_while_Jordan_scores_remain_borderline_and_a_post_reveal_even_mode_closes_the_visible_residual
-    boundary: the_extra_even_mode_is_post_reveal_and_is_not_independent_confirmation_or_a_unique_transfer_matrix
+    known_result: frozen_scalar_q2_and_common_generator_scores_fail_the_post_reveal_Jordan_plus_one_even_mode_recurrence_then_passes_its_frozen_N520_N680_generation4_target_at_lambda_half_in_both_scalar_and_jet_views
+    boundary: the_generation4_pilot_removes_the_visible_tension_but_lambda_0_half_and_1_have_nearly_identical_scores_so_the_secondary_eigenvalue_and_unique_transfer_matrix_are_not_identified
     supports: [Jordan_plus_one_even_mode_as_economical_transfer_state]
     tensions: [pure_scalar_q2, one_common_generator]
     excludes_only: [the_frozen_scalar_q2_and_common_generator_parameterizations]
-    reusable_data_refs: [results/server-20260829/P154-norm4-production/analysis/scalar_score.json, predictions/norm4_even_rank2_next_generation_20260829.json]
-    dependency_group_refs: []
-    missing_inputs: [genuinely_heldout_Gaussian_target_for_the_post_reveal_even_mode]
-    next_discriminator: heldout_generation4_prediction_from_the_frozen_rankone_residual
+    reusable_data_refs: [results/server-20260829/P154-norm4-production/analysis/scalar_score.json, predictions/norm4_even_rank2_next_generation_20260829.json, results/server-20260829/P154-norm4-generation4-pilot/analysis/score.json]
+    dependency_group_refs: [norm4-generation4-pr277]
+    missing_inputs: [geometry_or_operator_coordinate_that_separates_lambda_0_half_and_1, common_source_readout_Gaussian_annulus_cells]
+    next_discriminator: discriminating_geometry_or_operator_coordinate_with_a_frozen_lambda_comparison_then_the_common_context_rectangle
     information_gain: high
-    compute_cost: high
+    compute_cost: moderate
     decision_experiments: [DX_MIXED_CONTEXT_RECTANGLE]
   - id: SN_ANNULUS_TWO_STATE_RECURRENCE
     title: scalar_odd_shell_failure_but_two_state_radial_recurrence_survival
@@ -611,7 +624,7 @@ scientific_nodes:
     reusable_data_refs: [results/server-20260829/P205-quotient-character-prism/raw]
     dependency_group_refs: [crn-2026105525-9400000000-9412000000, crn-2026105550-9400000000-9412000000, crn-2026105625-9400000000-9412000000]
     missing_inputs: [large_N_transport_if_asymptotics_are_asked, continuum_overlap_fingerprint]
-    next_discriminator: split_the_same_frozen_prism_into_K1_and_K2_components_with_full_within_pair_covariance
+    next_discriminator: transport_the_resolved_component_character_to_the_common_marked_birth_stream_and_Q4_Jordan_fingerprint
     information_gain: very_high
     compute_cost: none
     decision_experiments: [DX_RANK_BIRTH_GLOBAL_BRIDGE]
@@ -791,7 +804,7 @@ scientific_nodes:
     observer_sectors: [global_unmarked, topology_typed]
     geometries: [gaussian_cover]
     acquisition: [existing_data_reuse]
-    source_refs: [SRC_DIGITAL_ALEXANDER_MAIN, SRC_TWO_ACTIVATION_RANK_MIXTURE, SRC_TWO_ACTIVATION_H4_PR267, SRC_NORM5_GLOBAL_MAIN]
+    source_refs: [SRC_DIGITAL_ALEXANDER_MAIN, SRC_TWO_ACTIVATION_RANK_MIXTURE, SRC_PR267_ACTIVATION_FRONTIER, SRC_NORM5_GLOBAL_MAIN]
     known_result: all_ten_archived_sizes_are_scoreable_K1_is_the_larger_point_estimate_everywhere_the_threshold_classification_is_K1_dominant_at_9_and_shared_at_1_and_K2_has_unresolved_cancelling_point_estimates_at_N265_N325_N425
     boundary: retrospective_reanalysis_with_no_new_primary_block_and_the_three_negative_K2_terms_are_each_below_absolute_z_2
     supports: [first_activation_larger_point_estimate_in_the_archived_orientation_response]
@@ -800,7 +813,7 @@ scientific_nodes:
     reusable_data_refs: [results/two-activation-h4/latest.json, results/two-activation-h4/server-run.json]
     dependency_group_refs: [crn-2026104501-5000000000-5100000000, crn-2026104301-7000000000-7500000000, crn-2026104301-7500000000-8000000000, crn-2026105003-7000000000-7100000000, crn-2026105004-7000000000-7100000000, crn-2026105701-10000000000-10500000000, crn-2026105701-10500000000-11000000000]
     missing_inputs: [line_resolved_D_H4_and_same_sample_qJ]
-    next_discriminator: use_the_P205_character_prism_then_move_to_line_resolved_birth_parity
+    next_discriminator: common_marked_birth_stream_with_line_and_landing_H4_same_sample_qJ_and_Q4_Jordan_fingerprint
     information_gain: very_high
     compute_cost: none
     decision_experiments: [DX_RANK_BIRTH_GLOBAL_BRIDGE]
@@ -812,7 +825,7 @@ scientific_nodes:
     observer_sectors: [global_unmarked, global_rank_projector, topology_typed]
     geometries: [gaussian_cover]
     acquisition: [existing_data_reuse]
-    source_refs: [SRC_TWO_ACTIVATION_H4_PR267, SRC_ESSENTIAL_BIRTH_CLOCK]
+    source_refs: [SRC_PR267_ACTIVATION_FRONTIER, SRC_ESSENTIAL_BIRTH_CLOCK]
     known_result: integrated_K2_area_has_one_positive_sign_at_all_ten_sizes_while_the_negative_D2_at_pbar_rows_N265_N325_N425_each_have_a_stable_upper_node_near_0p5946_0p5963_0p5969_so_they_are_local_negative_lobes_not_integrated_reversals
     boundary: the_Bernstein_curves_and_area_identity_are_exact_for_the_finite_archives_node_locations_are_scored_only_when_delete_one_branch_count_is_stable_and_no_scaling_exponent_or_continuum_operator_is_identified
     supports: [K2_local_node_crossing_instead_of_whole_activation_reversal]
@@ -833,7 +846,7 @@ scientific_nodes:
     observer_sectors: [global_unmarked, global_rank_projector, topology_typed]
     geometries: [gaussian_cover]
     acquisition: [existing_data_reuse]
-    source_refs: [SRC_P205_QUOTIENT_CHARACTER_PRISM, SRC_TWO_ACTIVATION_H4_PR267]
+    source_refs: [SRC_P205_QUOTIENT_CHARACTER_PRISM, SRC_PR267_ACTIVATION_FRONTIER]
     known_result: the_full_six_coordinate_GLS_selects_H4_for_both_K1_and_K2_with_chi2_2p585_over_4_p_0p629_K2_supplies_0p3673_of_the_fitted_signed_H4_amplitude_and_all_three_sizes_reinforce
     boundary: assigning_component_character_lines_is_retrospective_the_source_is_branch_only_N25_N50_N125_are_deliberately_small_and_the_result_identifies_neither_a_continuum_operator_nor_an_asymptotic_law
     supports: [ordinary_P205_H4_is_shared_by_both_essential_birth_activations]
@@ -905,6 +918,14 @@ dependency_groups:
     source_ref: SRC_P205_QUOTIENT_CHARACTER_PRISM
     metadata_paths: [results/server-20260829/P205-quotient-character-prism/raw/n125_12m.metadata.json]
     covariance_rule: aligned_delete_one_across_K1_K2_and_both_orientations
+  - id: norm4-generation4-pr277
+    kind: one_frozen_generation4_random_block_with_correlated_scalar_and_jet_views
+    member_sizes: [520, 680]
+    source_ref: SRC_NORM4_EVEN_MODE_PR277
+    metadata_paths:
+      - results/server-20260829/P154-norm4-generation4-pilot/raw/n520_100m.metadata.json
+      - results/server-20260829/P154-norm4-generation4-pilot/raw/n680_100m.metadata.json
+    covariance_rule: scalar_U_and_thermal_jet_share_the_same_curves_and_are_correlated_views_not_additive_evidence
 
 decision_experiments:
   - id: DX_RANK_BIRTH_GLOBAL_BRIDGE
@@ -912,7 +933,7 @@ decision_experiments:
     name: global_H4_to_rank_birth_mechanism_bridge
     scientific_node_refs: [SN_ESSENTIAL_BIRTH_ARCHIVE, SN_RANK_BIRTH_PARITY_INSERTION, SN_ATOP_RANK_BIRTH_COUPLING, SN_ESSENTIAL_BIRTH_CLOCK_SPLIT, SN_P205_QUOTIENT_CHARACTER_PRISM, SN_TWO_ACTIVATION_H4_REANALYSIS, SN_ACTIVATION_CURVE_NODE_SPECTRUM, SN_TWO_ACTIVATION_PRISM_REANALYSIS, SN_THERMAL_Q4_WARD]
     observer_sector_refs: [global_unmarked, global_rank_projector, topology_typed, rank_birth_local, matching_even, matching_odd]
-    source_refs: [SRC_ESSENTIAL_BIRTH_HISTOGRAM_MAIN, SRC_TWO_ACTIVATION_H4_PR267, SRC_P205_QUOTIENT_CHARACTER_PRISM, SRC_ESSENTIAL_BIRTH_CLOCK, SRC_RANK_BIRTH_PARITY_CHAIN, SRC_ATOP_RANK_BIRTH_COUPLING]
+    source_refs: [SRC_ESSENTIAL_BIRTH_HISTOGRAM_MAIN, SRC_PR267_ACTIVATION_FRONTIER, SRC_P205_QUOTIENT_CHARACTER_PRISM, SRC_ESSENTIAL_BIRTH_CLOCK, SRC_RANK_BIRTH_PARITY_CHAIN, SRC_ATOP_RANK_BIRTH_COUPLING]
     dependency_group_refs:
       - crn-2026104501-5000000000-5100000000
       - crn-2026104301-7000000000-7500000000
@@ -972,7 +993,7 @@ decision_experiments:
     observer_sector_refs: [boundary, topology_typed]
     source_refs: [SRC_EXACT_FK_Q_SCORE, SRC_CONFLUENT_PROJECTOR, SRC_VJS_FIELD_DERIVATIVE, SRC_BOUNDARY_Q_TANGENT, SRC_BOUNDARY_Q_LATTICE, SRC_ARGUIN_ALL_ORDER_QJET]
     dependency_group_refs: []
-    acquisition: exact_construction
+    acquisition: small_pilot
     expected_model_space_reduction: high
     compute_cost: low
     decision_output: paired_stopped_vs_global_variance_gate_then_one_complete_Q_derivative_interface_after_forced_Pascal_jet_subtraction
