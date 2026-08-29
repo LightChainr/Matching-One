@@ -1,0 +1,46 @@
+schema: matching-one/p275-double-projector-selection-manifest/v1
+issue: 275
+phase: exact_and_conditional_selection_theorem
+
+inputs:
+  local:
+    - notes/p231-vacuum-kdv-sector-response.md
+    - scripts/pinson_arguin_kdv.py
+    - notes/thermal-q4-jordan-inheritance.md
+    - notes/q4-jordan-log-slope-shape.md
+    - notes/digital-alexander-duality-proof.md
+  imported_exact_dependencies:
+    issue_257_global_matching_spin4_selection: "9320649"
+    issue_262_potts_projector_tomography: "d006f9c"
+
+claims:
+  exact:
+    - normalized Alexander-even rank tangents are multiples of [1, -2, 1]
+    - normalized Alexander-odd rank tangents are multiples of [-1, 0, 1]
+    - Arguin Q=1 rank equality makes every componentwise normalized vacuum KdV response A_top-null
+    - an involutive grading commuting with dilation makes both members of the inherited Q4 Jordan pair odd
+  conditional:
+    - thermal Q4 is odd when the primal/matching pair is coupled through the doubled transverse thermal coordinate
+  imported:
+    - regular unlabelled singlet one-insertion annihilates the Potts [2] four-leg sector
+  not_claimed:
+    - nonzero lattice overlap with Q4 epsilon or its top partner
+    - exclusion of charged/twisted insertions or singular Q-to-1 residues
+    - complete torus one-point identification
+
+outputs:
+  script: scripts/p275_double_projector_selection.py
+  note: notes/p275-double-projector-selection-staircase.md
+  certificate: results/exact-double-projector-selection/latest.json
+  tests: tests/test_p275_double_projector_selection.py
+
+commands:
+  - python scripts/p275_double_projector_selection.py --output results/exact-double-projector-selection/latest.json
+  - python -m unittest discover -s tests -p 'test_p275_double_projector_selection.py'
+
+decision:
+  staircase: >-
+    vacuum/KdV is killed by Alexander parity; V_(2,+/-2) is killed in the
+    regular unlabelled channel by Potts charge; thermal Q4 is the first listed
+    low-dimensional spin-4 candidate allowed by both projectors.
+  missing_matrix_element: g[A_top,Q4 epsilon]
