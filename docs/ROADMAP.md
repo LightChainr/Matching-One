@@ -1,192 +1,186 @@
 # Roadmap
 
-This roadmap optimizes for information gain, not issue-count completion. The integrated research view is `notes/SYNTHESIS-20260828.md`; the relationship among long-lived tracks is in `docs/RESEARCH-MAP.md`.
+This roadmap optimizes for **information gained per unit effort**. It is a priority map, not a permission system. Useful source-data analysis, exact work, pilots, and exploratory production may proceed whenever they are cheap enough to justify themselves.
 
-## Tier A — active discriminators
+The three hard constraints are defined in `GOVERNANCE.md`: do not rewrite frozen chronology, do not silently score mismatched observable semantics, and do not add correlated views as independent evidence.
 
-### A1. Norm-5 H4 versus H12 — #57
+## Active — highest information now
 
-This remains the highest-information dedicated new-compute experiment.
+### 1. Norm-5 N=325/425 — #57
 
-The current odd central law survives the prospective N=185/265 test, but `1+i` cannot distinguish H4 from H12/H20. Norm 5 does: the frozen N=325/425 children give opposite raw signs for H4 and H12.
+This remains the highest-information new data block because one pair of full threshold-rank runs can answer several already-defined questions at once.
 
-The score path is now protocol-ready on `main`:
+Primary frozen discriminator:
 
-- frozen 2026-08-28 fixed-p H4/H12/H8/zero scorer kernel is preserved;
-- canonical typed wrapper validates the exact `either/odd -> cross/odd` identity `D_either=D_cross` before scoring;
-- the frozen intrinsic full-curve q=2/Jordan cocycle scorer is also preserved;
-- its typed wrapper requires the same cross-channel primitive descriptors and size-local P4 normalization at every N.
+```text
+65 -> 325 via 2-i
+85 -> 425 via 2+i
 
-The numerical freezes were not changed by these semantic gates.
+raw DeltaM child/parent:
+H4  = negative
+H12 = positive
+H8  = negative with different magnitude
+zero = 0
+```
 
-Execution:
+Score the existing frozen fixed-p H4/H12/H8/zero contract first. Then reuse the same histograms/moments for every compatible analysis rather than commissioning separate runs.
 
-1. use a disjoint target production block with the already-frozen geometries and sample plan;
-2. score the raw H4 target first, then H12, H8, zero in the registered order;
-3. reuse the same full curves for intrinsic-center derivative/correction scores;
-4. preserve all rank histograms and covariance groups regardless of which model wins.
+High-value bundled readouts already available or being integrated:
 
-### A2. Third full-curve lineage — #50
+- intrinsic/full-curve q=2 versus Jordan cocycle;
+- Krawtchouk score-mode thermal vector `(D2,S3,D4,S5,D6)`;
+- paired rank-gap `G=K_plus-K_minus` and its frozen N=325/425 boundary prediction;
+- root movement and local residual/slope closure;
+- derivative/parity channels and multi-u response;
+- prequential evidence update using one primary view per raw-data block.
 
-Score `145 -> 290` with the already-frozen correction structure.
+The point is to make the N=325/425 campaign a **multi-question sufficient-statistics block**, not a single H4/H12 measurement.
 
-Report in order:
+A small or sequential run is allowed whenever useful. A run intended to claim optional-stopping guarantees must use the already-frozen sequential rule from its start; otherwise it remains ordinary exploratory/fixed-count evidence.
+
+### 2. N=145 -> 290 full curve — #50
+
+The fixed-coordinate third lineage has already passed prospectively. The remaining value is the full curve.
+
+Score in the existing order:
 
 ```text
 raw DeltaM semigroup law
 bare 2^(3/8) slope baseline
 frozen finite-size slope correction
 raw/corrected root-ratio targets
-derivative channels
+derivative and score-mode channels
 ```
 
-This tests whether the small slope correction resolved in the first two clean norm-2 lineages predicts a third lineage.
+The important question is whether the small finite-size slope correction learned on the first two norm-2 lineages predicts a third lineage without refit.
 
-### A3. S-prime correction and existing full-curve structure — #48/#101/#119/#125
+### 3. Existing-data compression before more large runs
 
-The prospective N=185/265 block now has a canonical no-refit four-channel scorer:
+Use the retained threshold-rank sufficient statistics harder. These analyses can run in parallel and do not need roadmap promotion.
+
+Highest-value directions:
+
+- prequential evidence ledger and chronology-safe predictive comparison;
+- intrinsic quantile-center spectroscopy;
+- multi-u functional response;
+- joint operator/transfer-matrix descriptions;
+- Krawtchouk/Hermite score-mode thermal jet;
+- paired rank-gap thermal-window flow;
+- standardized full threshold distribution;
+- orientation-resolved pivotal/four-arm observables;
+- local exact-zero and reliability-signature analysis.
+
+The goal is compression: identify a small common state/transfer structure rather than add one independent correction law per scalar summary.
+
+## Ready — useful whenever resources are available
+
+### Norm-4 dyadic closure — #154
+
+The general integer-period backend is canonical. N=260/340 gives the exact dyadic chain
 
 ```text
-P4[S]   ~ N^-1:     1.13878 / 2
-P4[D]   ~ N^-13/8:  0.28085 / 2
-P4[D']  ~ N^-5/8:   0.08761 / 2
-P4[S']  ~ N^-5/4:  52.71634 / 2
+65 -> 130 -> 260
+85 -> 170 -> 340
 ```
 
-So the active problem is not a broad parity failure. S, D, and D-prime survive their frozen pure laws; S-prime is nonzero but requires a subleading correction.
+This is particularly clean for q=2 versus Jordan because the log-scale steps are equal. A variance pilot is useful for cost planning, but it is not a permission prerequisite. Run small or full production whenever its arithmetic-class and semigroup-closure value justifies the CPU.
 
-Before commissioning another dedicated geometry:
+### Self-matching RG tangent — #155
 
-- use intrinsic quantile-center spectroscopy to isolate nonlinear thermal-coordinate effects;
-- score the frozen multi-u functional response as one correlated observable;
-- compare q=2 and Jordan through the norm-5 functional cocycle;
-- model the four primary channels jointly before adding more basis fields.
+The exact N=10 tangent and score-function oracle are already canonical. Larger-N work can start immediately with source-only thermal-orthogonalization, exploratory response matrices, or cheap pilots. A source-frozen orthogonalization rule is needed only if a later block is to be called a prospective held-out score.
 
-## Completed high-value gates and exact controls
+### Torus-modulus / Pell spectroscopy — #103/#159
 
-### N=185/265 prospective gate — #43
+Theory and control work may proceed now. Square-site Pell data may also be explored whenever useful. An explicit H4-isolating observable is required only for a strong claim that a Pell result specifically validates the H4 modular fingerprint; it is not a blanket ban on production or exploratory geometry scans.
 
-Completed and closed.
+### N=1105 four-angle projector — #74
+
+The exact projector is a valid design asset. It is lower expected information per CPU than norm-5 and the third full curve, but it is not blocked. Run it if compute becomes cheap, if the norm-5 outcome increases its value, or if four-angle decomposition becomes the shortest route to a live ambiguity.
+
+## Exact/control work — run early, not late
+
+Cheap exact calculations and controls should be used aggressively to eliminate weak mechanisms before spending simulation budget.
+
+Current useful routes include:
+
+- finite Russo/pivotal and orientation-resolved extensions;
+- C4 self-matching tangent and improved-action controls;
+- N=26/reliability-signature tomography;
+- exact small matching polynomials and local complex-zero structure;
+- rectangular/modular Q4 ratios;
+- FK/Potts sector derivations;
+- torus homology-character and modular-form identities;
+- surface-topological polynomial representations.
+
+A negative exact result is a successful research outcome if it removes a model class.
+
+## Theory program — keep multiple bridges alive
+
+Do not force the central odd signal into one continuum story too early. The following bridges are complementary:
+
+- thermal level-4 Virasoro/LCFT candidate;
+- pivotal/four-arm anisotropy;
+- FK/Potts torus-sector derivatives;
+- Gaussian CM/isogeny transfer laws;
+- torus-modulus modular fingerprints;
+- microscopic self-matching RG tangent;
+- low-rank full-curve transfer operators;
+- Krawtchouk/Hermite thermal-jet coordinates.
+
+Theory earns priority when it produces a parameter-free or low-dimensional discriminator that existing or already-planned data can score.
+
+## Current durable facts
+
+The project should continue to build upward from these layers:
 
 ```text
-DeltaM x=21/4 H4:             3.046 / 2
-DeltaM zero:                  29.409 / 2
-DeltaM x=17/4:                30.246 / 2
-
-DeltaS unconverted mismatch: 240.247 / 2  (historical invalid channel comparison)
-DeltaS corrected cross score: 0.5700315436 / 2
+exact matching/topology/channel algebra
+    -> threshold-rank reliability signatures and pivotal identities
+    -> validated full-curve/covariance machinery
+    -> reproduced finite-size orientation structure
+    -> mechanism discrimination
+    -> continuum/operator interpretation
 ```
 
-`DeltaS_cross = -DeltaS_either` is now an executable typed channel map rather than an informal correction. Do not rerun N=185/265 merely to repeat this gate.
+A higher-layer failure does not erase a lower-layer result.
 
-### Finite Russo/pivotal oracle — #100 first stage
+Key current finite-size facts:
 
-The exact finite-volume identity
+- same-N Gaussian orientation signal is reproducible;
+- tested matching-odd central data are compatible with `DeltaCos4*N^-13/8`;
+- N=185/265 favors the frozen x=21/4 H4-like radial law over zero and x=17/4;
+- matching-even central amplitude is compatible after exact cross/either conversion;
+- S, D and D-prime pure laws survive the N=185/265 derivative block;
+- pure S-prime `N^-5/4` fails prospectively;
+- q=2 and Jordan/log corrections both remain live;
+- the bare finite-size slope multiplier is not exactly `2^(3/8)` at current precision;
+- the finite matching slope has an exact pivotal-mass interpretation;
+- threshold ranks are finite activation/reliability signatures.
 
-```text
-M'(p) = pivotal_mass_primal(p) + pivotal_mass_matching(1-p)
-```
+## What not to spend much time on
 
-is canonical and independently regressed against exact polynomial derivatives on tiny axis/diamond/Gaussian tori; cross also agrees with threshold ranks. The remaining #100 question is the orientation-resolved/continuum pivotal or four-arm interpretation, not the scalar derivative identity.
+These are low priority, not forbidden:
 
-### C4 self-matching microscopic tangent — #44/#155 foundation
-
-The two-sublattice family has exact complement action `(t,lambda)->(-t,-lambda)` and N=10 response
-
-```text
-[[0,    0],
- [15/8, 5/4]]
-```
-
-for rows `(Rplus,Rminus)` and columns `(t,lambda)`. Independent likelihood-score derivatives reproduce it exactly. The open task is the large-N RG decomposition of this microscopic odd tangent, not construction of the finite involution.
-
-### N=26 self-matching Beta test — #115
-
-Completed exact negative result. Exhaustive `2^26` enumeration falsifies both frozen laws without a rescue fit:
-
-```text
-Beta(5,5): first k=5 coefficient difference = -96
-Beta(7,7): first k=5 coefficient difference = +156
-```
-
-The associated reliability-signature/minimal-degree theorem explains why the N=10 Beta(3,3) control is algebraically special. Do not fit a generalized Beta family to N=26 as a replacement hypothesis; use the committed activation signature/profile if more finite information is needed.
-
-## Tier B — useful parallel work
-
-### B1. Prequential evidence ledger — #95
-
-Build one chronology-locked predictive ledger across genuinely prospective blocks. Derived views from the same histograms are one correlated evidence block, not independent votes. Pairwise model comparisons should use only common predicted endpoints and include source+target covariance and predictive log score.
-
-### B2. Information-optimal Gaussian design — #102
-
-Use existing variance/throughput and exact harmonic arithmetic to choose any post-#57 expensive geometry by expected model-space reduction per CPU-second. New multiplier/modulus leverage is more valuable than automatically shrinking old five-size error bars.
-
-### B3. Axis annihilator / post-leading correction spectrum — #47/#58
-
-Use the axis-specific threshold-rank engine and exact adjacent-size coupling only after a pilot demonstrates useful information per wall time. Keep q=2,3,4,6 as mechanism-labeled fixed alternatives before a free exponent.
-
-### B4. Exact finite algebra / complex zeros — #84/#104/#113/#144
-
-Keep these bounded and exact. The global complex-zero imaginary-RMS forecast already failed at exact L=5. Continue only with local-root structure, Galois/reliability certificates, or a surface-topological polynomial representation that produces a new exact discriminator.
-
-### B5. Literature completion — #4/#6
-
-Finish the missing primary-source transcription before revealing the frozen widths 22–24 challenge. This is valuable threshold methodology but does not block the orientation/operator program.
-
-## Tier C — continuum/operator bridges
-
-### C1. LCFT/operator identification — #37/#61
-
-The `x=21/4`, spin-4 thermal level-4 quasiprimary remains the leading local candidate. The ordinary Virasoro state and its `g2/E4` torus one-point fingerprint are exact within that module, but lattice overlap and matching/RG parity are not proved.
-
-The exact self-matching tangent supplies a better finite starting point for #61: derive or measure how a microscopic pair-exchange-odd tangent decomposes into thermal and irrelevant continuum directions rather than assuming a scalar parity sign for every field.
-
-### C2. Pivotal/four-arm and FK/Potts bridges — #100/#114/#121
-
-The scalar Russo identity is now exact. The next useful step is a genuinely orientation-resolved pivotal/four-arm H4 observable or an FK/Potts torus-sector derivation that predicts a continuum channel independently of exponent matching.
-
-### C3. Torus modulus / CM-isogeny spectroscopy — #103/#138/#145/#159
-
-Use multiplier composition and modulus dependence as representation-level fingerprints, but keep Pell production gated until the lattice observable is an explicit typed/projected object. Do not infer a lattice Q4 coupling solely from the exact ordinary-CFT E4 zero.
-
-### C4. kappa3 / universal threshold profile — #16/#25/#54/#122
-
-The new reliability-signature interpretation gives exact finite baselines and shows why low-order central derivatives can miss a categorical finite-profile failure. Treat the full standardized threshold profile/signature as the higher-level object; do not promote a rational-looking `kappa3` without cross-realization and continuum support.
-
-## Engineering policy
-
-### Preserve history; reduce active entry points
-
-- frozen predictions are never rewritten after reveal;
-- immutable result archives remain in place even after an interpretation changes;
-- superseded PRs/queues are closed or indexed, not force-rewritten;
-- canonical current state lives in `STATUS`, `RESEARCH-MAP`, `SYNTHESIS`, `ROADMAP`, and the two analysis ledgers.
-
-### Channel semantics are executable
-
-No scorer should compare channel-bearing quantities unless descriptors are identical or a registered exact map exists. The #43 even correction and both #57 target scorer families now use this contract. Broader direction/both audit remains under #146.
-
-### Spend compute on leverage
-
-CPU first. GPU or very large campaigns require a frozen information target, exact CPU agreement, and a measured variance/throughput reason.
-
-## Deprioritized
-
-- more N=185/265 replicas merely to repeat the corrected no-fit gate;
-- another free-exponent fit on N=65..170;
+- another free exponent fit on the old five sizes;
+- more N=185/265 replicas merely repeating a completed gate;
 - generalized Beta fitting after the exact N=26 failure;
-- N=1105 before norm 5 and the third full-curve lineage;
-- broad PSLQ;
-- large Pell scans without an operational H4 projector;
+- broad PSLQ without a new structural constraint;
 - transfer-matrix width solely for more threshold digits;
-- theory notes that do not create an independent derivation, control, or frozen prediction.
+- theory notes that do not create an independent derivation, control, or scoreable prediction;
+- very large production that stores only a final scalar instead of reusable sufficient statistics.
 
-## Milestone after A1/A2
+## Decision rule for new compute
 
-Rewrite the main synthesis around whichever branch survives:
+When choosing between candidate runs, prefer the one that most reduces the live model space per CPU-second. Larger N is not automatically better. New multiplier, modulus, quotient type, observable direction, or exact control may be worth more than smaller error bars on an old geometry.
 
-1. norm-5 H4 passes and the third-lineage correction predicts -> move toward paper-level odd-sector mechanism analysis;
-2. H12 sign wins -> retain the empirical odd semigroup structure but rebuild the angular/operator interpretation;
-3. H4 survives but the radial/slope correction fails -> expand only the finite-size thermal-metric model;
-4. q=2/Jordan becomes distinguishable through the linked full-curve score -> update the derivative mechanism without changing the central evidence;
-5. no compact derivative-correction model survives -> present the robust central sectors separately rather than forcing a unified operator story.
+A quick pilot or rough variance model is enough to make this choice; it does not need to become a separate governance project.
+
+## Near-term success criteria
+
+The next major synthesis should be driven by what the norm-5 and N=290 full-curve blocks actually say:
+
+1. H4 sign/magnitude survives norm-5 and third-lineage metric/root correction predicts -> concentrate on operator/observable identification and common transfer structure.
+2. H12 sign wins -> keep the robust odd-square-harmonic semigroup evidence but rebuild the angular/operator interpretation.
+3. central H4 survives but derivative/thermal-jet structure rejects simple q=2/Jordan models -> move to a small joint transfer/mixing block, not a growing list of scalar corrections.
+4. rank-gap/score-mode/functional views collapse under one width or thermal metric -> use that common coordinate to design the next geometry.
+5. no compact common description survives -> report the robust sectors separately and choose the next experiment specifically to discriminate geometry/arithmetic effects from continuum mixing.
