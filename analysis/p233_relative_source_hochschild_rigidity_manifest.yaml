@@ -1,0 +1,13 @@
+schema: matching-one.analysis-manifest.v1
+issue: 233
+related_issues: [54, 114, 252]
+kind: exact_algebraic_no_go
+entrypoint: scripts/p233_relative_source_hochschild_rigidity.py
+output: results/exact-relative-source-hochschild-rigidity/latest.json
+claims:
+  - relative_source_algebra_is_Q_times_Q_times_Q
+  - hochschild_HH2_of_scalar_three_sector_algebra_vanishes
+  - every_computed_two_cocycle_is_explicitly_contractible
+  - matching_tangent_requires_a_larger_nonsemisimple_or_connectivity_resolving_object
+boundary: does_not_construct_the_larger_defect_algebra_or_identify_its_continuum_limit
+reproduce: python3 scripts/p233_relative_source_hochschild_rigidity.py --json results/exact-relative-source-hochschild-rigidity/latest.json
