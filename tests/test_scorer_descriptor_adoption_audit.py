@@ -25,6 +25,7 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
         (scripts / "score_wrapper.py").write_text(TYPED, encoding="utf-8")
         (scripts / "score_kernel.py").write_text(KERNEL, encoding="utf-8")
         (scripts / "score_generic.py").write_text(KERNEL, encoding="utf-8")
+        (scripts / "score_migration.py").write_text(KERNEL, encoding="utf-8")
         (scripts / "score_unclassified.py").write_text(KERNEL, encoding="utf-8")
         return {
             "schema": "fixture",
@@ -36,6 +37,9 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
             "descriptor_not_applicable_generic_utilities": {
                 "scripts/score_generic.py": "opaque generic score helper"
             },
+            "channel_bearing_migration_required": {
+                "scripts/score_migration.py": "fixture migration"
+            },
             "boundary": "fixture boundary",
         }
 
@@ -46,10 +50,11 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
             self.assertEqual(
                 result["counts"],
                 {
-                    "total": 5,
+                    "total": 6,
                     "direct_typed_entrypoint": 2,
                     "covered_frozen_kernel": 1,
                     "descriptor_not_applicable_generic_utility": 1,
+                    "channel_bearing_migration_required": 1,
                     "outside_registered_typed_path": 1,
                 },
             )
@@ -85,6 +90,16 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "overlap typed paths"):
                 audit(root, manifest)
 
+    def test_migration_cannot_overlap_resolved_class(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            manifest = self.fixture(root)
+            manifest["channel_bearing_migration_required"] = {
+                "scripts/score_generic.py": "invalid overlap"
+            }
+            with self.assertRaisesRegex(ValueError, "overlap resolved classes"):
+                audit(root, manifest)
+
     def test_checked_result_has_current_partition(self) -> None:
         result = json.loads(
             (ROOT / "results/scorer-descriptor-adoption/latest.json").read_text(
@@ -97,7 +112,8 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
         self.assertEqual(
             result["counts"]["descriptor_not_applicable_generic_utility"], 1
         )
-        self.assertEqual(result["counts"]["outside_registered_typed_path"], 27)
+        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 1)
+        self.assertEqual(result["counts"]["outside_registered_typed_path"], 26)
         self.assertEqual(len(result["rows"]), 35)
 
 
