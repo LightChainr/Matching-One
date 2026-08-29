@@ -1,10 +1,10 @@
 {
   "schema": "matching-one/rho-child-primitive-h4-independent-production/v1",
   "production_id": "P267-rho-C3-primitive-H4-N112-independent-2M-v2",
-  "status": "frozen_design_runner_preflight_pending",
-  "production_authorized": false,
+  "status": "frozen_prereveal_production_authorized",
+  "production_authorized": true,
   "issues": [156, 205, 226, 250, 275],
-  "runner_commit": "PENDING_RUNNER_COMMIT",
+  "runner_commit": "ac2fb6cd8469793a816d6fc7342034386acd899a",
   "model_development_source": "8ed805f583904bf7536e6bd5f02ad09cd7480556",
   "primary": "clean Pell-transported E4/r1 one-complex-amplitude subspace; reject or survive with 4 residual degrees of freedom",
   "secondary": "minimal E4/r1 plus E6/r0 two-complex-amplitude subspace; no pilot coefficient is reused or tuned",
@@ -23,6 +23,14 @@
     "2omega": "DevEnvC_ZyTrST",
     "omega_over_2": "DevEnvC_XPk2PZ",
     "omega_plus_1_over_2": "DevEnvC_HZsCM6"
+  },
+  "preflight": {
+    "exact_direction_alias_gate_commit": "83e98fc",
+    "all_three_children_two_orbit_character_rank": 2,
+    "tiny_exact_invalid_counts": [0, 0, 0],
+    "single_child_counter_offset_test": "passed",
+    "pilot_replay": "byte_identical_score",
+    "focused_tests": "11 passed"
   },
   "claim_boundary": "This is an independent test of one topology-typed modular child vector, not a repeat ordinary H4/H8/H12 selector."
 }
