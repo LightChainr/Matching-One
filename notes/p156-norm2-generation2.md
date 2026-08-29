@@ -27,3 +27,27 @@ python3 scripts/square_bond_primitive_norm2_generation2.py \
   --workers 16 --dps 80 \
   --output-prefix results/server-20260829/P156-norm2-generation2/result
 ```
+
+## Revealed result
+
+The frozen Huawei run completed at commit
+`3eb423da494064f27f4474553abaaa2bf463a73d`.  Both second-generation children
+again carry the alternating H4 sign:
+
+| lineage | parent C | child C | child/parent | H4 residual z |
+|---|---:|---:|---:|---:|
+| N60 -> N120 | `-0.00359392(291)` | `+0.00204393(172)` | `-0.568717` | `+1.096` |
+| N112 -> N224 | `-0.00200423(302)` | `+0.000817119(211)` | `-0.407697` | `-0.712` |
+
+The fixed `-1/2` model gives `chi2=1.70765/2 df`, `p=0.42578`.  The ratios do
+not move monotonically toward `-1/2` lineage by lineage, so the descriptive
+"closer on both" diagnostic fails; nevertheless their opposite residuals are
+jointly consistent with the parameter-free H4 law.  All frozen positive-phase
+models fail: `+1/2` gives `chi2=339.467`, `+1/4` gives `282.808`, and `+1/8`
+gives `225.996`, each with two degrees of freedom.
+
+The new child C effects are independently resolved (`z=11.89` and `3.86`).
+Their Q reflection controls remain null (`z=-0.782,+0.835`).  Combining this
+with generation one gives two successive exact sign alternations on each
+lineage, while keeping the scale-ratio conclusion conditional on visible
+finite-size drift.
