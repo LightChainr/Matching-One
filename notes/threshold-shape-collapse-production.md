@@ -32,3 +32,19 @@ The useful next test is no longer “does the full curve collapse exactly at
 finite N?” It is to freeze this tail vector on the N65/N85 families and test
 whether a fresh lineage changes only its amplitude, then connect that amplitude
 to the existing Hermite--Krawtchouk thermal jet.
+
+## Independent archive replication
+
+After commit `2b9b91b` had recorded the cover-family direction, the independent
+P43 N185/N265 500M blocks were inspected with the same scorer. Their residual
+vector is
+
+```text
+[0.000129, 0.000880, 0.000676, 0, 0.000676, 0.003951, 0.007753].
+```
+
+Its cosine with the four cover-flow vectors ranges from `0.99155` to
+`0.99962`. This is not a prospectively generated target, but it is an
+independent counter block and a different size ratio. The rank-one direction
+therefore replicates beyond the two cover pairs and can now be frozen as a
+genuine next-lineage prediction.

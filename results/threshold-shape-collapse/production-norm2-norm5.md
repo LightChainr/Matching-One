@@ -10,12 +10,14 @@ identically fixed, so the covariance score uses the four tail coordinates.
 | N85_to_N170_norm2 | -1.837997036e-05 | 0.7739617347 | 0.0005167091184 | 0.02009137703 | 301790/4 | -65527.7 |
 | N65_to_N325_norm5 | 1.154390567e-05 | 0.5510517693 | 0.002667981581 | 0.04566204907 | 3.19199e+06/4 | -693125 |
 | N85_to_N425_norm5 | -1.407440759e-05 | 0.5502491476 | 0.001962410474 | 0.03913297309 | 1.98114e+06/4 | -430192 |
+| N185_to_N265_independent | -1.289420572e-06 | 0.8749477974 | 7.742135616e-05 | 0.007752853847 | 158536/4 | -34420.8 |
 
 ## Post-reveal shape-flow direction
 
 - same-parent norm-2 versus norm-5 cosine: N65 `0.999994618`, N85 `0.994738715`;
 - norm-5/norm-2 projection scale: N65 `1.799980`, N85 `1.938567`;
 - effective positive correction power: N65 `0.631527`, N85 `0.429020` (5/8 predicts ratio `1.804095`).
+- independent N185->N265 direction cosine range across the four cover vectors: `0.991547` to `0.999620`.
 
 ## Interpretation
 

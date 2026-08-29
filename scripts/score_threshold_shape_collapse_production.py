@@ -311,6 +311,11 @@ def render_markdown(artifact: dict[str, Any]) -> str:
             diagnostic["effective_positive_correction_power"]["N85"],
             diagnostic["power_5_over_8_predicted_cover_ratio"],
         ),
+        "- independent N185->N265 direction cosine range across the four cover vectors: `%.6f` to `%.6f`."
+        % (
+            min(diagnostic["independent_N185_to_N265_cosines"].values()),
+            max(diagnostic["independent_N185_to_N265_cosines"].values()),
+        ),
         "",
         "## Interpretation",
         "",
@@ -329,18 +334,24 @@ def main() -> None:
     parser.add_argument("--n85", type=Path, required=True)
     parser.add_argument("--n130", type=Path, required=True)
     parser.add_argument("--n170", type=Path, required=True)
+    parser.add_argument("--n185", type=Path, required=True)
+    parser.add_argument("--n265", type=Path, required=True)
     parser.add_argument("--n325", type=Path, required=True)
     parser.add_argument("--n425", type=Path, required=True)
     parser.add_argument("--json", type=Path, required=True)
     parser.add_argument("--markdown", type=Path, required=True)
     args = parser.parse_args()
-    paths = {name: getattr(args, name) for name in ("n65", "n85", "n130", "n170", "n325", "n425")}
+    paths = {
+        name: getattr(args, name)
+        for name in ("n65", "n85", "n130", "n170", "n185", "n265", "n325", "n425")
+    }
     archives = {name: Archive.read(path) for name, path in paths.items()}
     comparisons = {
         "N65_to_N130_norm2": compare_archives(archives["n65"], archives["n130"], True),
         "N85_to_N170_norm2": compare_archives(archives["n85"], archives["n170"], True),
         "N65_to_N325_norm5": compare_archives(archives["n65"], archives["n325"], False),
         "N85_to_N425_norm5": compare_archives(archives["n85"], archives["n425"], False),
+        "N185_to_N265_independent": compare_archives(archives["n185"], archives["n265"], False),
     }
     n65_scale = projection_scale(
         comparisons["N65_to_N130_norm2"]["shape_residuals_all_grid"],
@@ -365,6 +376,18 @@ def main() -> None:
             "N85": effective_power_from_cover_ratio(n85_scale),
         },
         "power_5_over_8_predicted_cover_ratio": (1.0 - 5.0 ** (-0.625)) / (1.0 - 2.0 ** (-0.625)),
+        "independent_N185_to_N265_cosines": {
+            name: cosine(
+                comparisons["N185_to_N265_independent"]["shape_residuals_all_grid"],
+                comparisons[name]["shape_residuals_all_grid"],
+            )
+            for name in (
+                "N65_to_N130_norm2",
+                "N85_to_N170_norm2",
+                "N65_to_N325_norm5",
+                "N85_to_N425_norm5",
+            )
+        },
         "boundary": "post-reveal Euclidean direction diagnostic; no covariance-weighted mechanism score",
     }
     artifact = {
