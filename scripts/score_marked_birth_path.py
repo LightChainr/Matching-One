@@ -205,14 +205,6 @@ def canonical_site_sum(rows: Sequence[PathRow], column: str, p: mp.mpf) -> mp.mp
     )
 
 
-def preinsertion_q(rows: Sequence[PathRow], p: mp.mpf) -> mp.mpf:
-    weights = binomial_weights(len(rows) - 1, p)
-    return mp.fsum(
-        weights[k] * rows[k].values["sum_q"] / rows[k].samples
-        for k in range(len(rows))
-    )
-
-
 def orientation_observables(rows: Sequence[PathRow], p: mp.mpf) -> dict[str, mp.mpf]:
     values = {
         "A_top": matching_curve(rows, p),
@@ -222,17 +214,28 @@ def orientation_observables(rows: Sequence[PathRow], p: mp.mpf) -> dict[str, mp.
         "J_S_im": canonical_site_sum(rows, "sum_J_S_im", p),
         "J_D_re": canonical_site_sum(rows, "sum_J_D_re", p),
         "J_D_im": canonical_site_sum(rows, "sum_J_D_im", p),
-        "q_J_D_re": canonical_site_sum(rows, "sum_q_J_D_re", p),
-        "q_J_D_im": canonical_site_sum(rows, "sum_q_J_D_im", p),
+        "environment_q_J_D_re": canonical_site_sum(rows, "sum_q_J_D_re", p),
+        "environment_q_J_D_im": canonical_site_sum(rows, "sum_q_J_D_im", p),
         "local_S": canonical_site_sum(rows, "sum_local_S", p),
         "local_D": canonical_site_sum(rows, "sum_local_D", p),
     }
-    q_pre = preinsertion_q(rows, p)
+    # The path stores q before inserting the distinguished root.  The source
+    # is a function of the root-deleted environment, whereas the global q in
+    # Cov(q,J) is evaluated on the full Bernoulli configuration. Conditional
+    # on the environment, q_full=q_before+p*S.  Since S*J_D=J_D (direct
+    # 0->2 has D=0), the missing occupied-root term is exactly p*J_D.
+    values["q_J_D_re"] = (
+        values["environment_q_J_D_re"] + p * values["J_D_re"]
+    )
+    values["q_J_D_im"] = (
+        values["environment_q_J_D_im"] + p * values["J_D_im"]
+    )
+    q_full = values["A_top"]
     values["connected_q_J_D_re"] = (
-        values["q_J_D_re"] - q_pre * values["J_D_re"]
+        values["q_J_D_re"] - q_full * values["J_D_re"]
     )
     values["connected_q_J_D_im"] = (
-        values["q_J_D_im"] - q_pre * values["J_D_im"]
+        values["q_J_D_im"] - q_full * values["J_D_im"]
     )
     values["gamma_D_re"] = values["connected_q_J_D_re"] / values["B"]
     values["gamma_D_im"] = values["connected_q_J_D_im"] / values["B"]

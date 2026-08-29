@@ -16,6 +16,9 @@ Euclidean direction `P*ell`; the `(2,1)` line gives `(-7+24i)/25`.
 
 The production path stores Horvitz absent-site sums. A canonical Russo
 score multiplies them by `N/(N-k)` and convolves with `Bin(N-1,k)`.
+For the common-field product, the stored root-deleted `q_before*J_D` is
+completed to full-configuration `q*J_D` by adding `p*J_D`, because
+`q_after=q_before+S` and `S*J_D=J_D`.
 No random-root replay and no per-step all-site scan is required.
 
 ## Frozen production schema
