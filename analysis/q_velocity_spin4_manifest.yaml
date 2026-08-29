@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "frozen_on": "2026-08-29",
+  "issue": 261,
+  "u_at_q1": [2, 3],
+  "generic_loop_fields": [
+    {"id": "loop_V_2_2", "r": [2, 1], "s": [2, 1]},
+    {"id": "loop_V_2_minus2", "r": [2, 1], "s": [-2, 1]},
+    {"id": "loop_V_2_4_spin8_control", "r": [2, 1], "s": [4, 1]},
+    {"id": "loop_V_2_6_spin12_control", "r": [2, 1], "s": [6, 1]}
+  ],
+  "thermal_descendant": {"id": "thermal_Q4_epsilon", "left_level": 4},
+  "area_multipliers": [2, 5, 10],
+  "angular_aliases_without_q_family": [
+    {"id": "H8_control_from_gaussian_design", "status": "unresolved_no_generic_Q_field_family", "warning": "An angular harmonic alias plus a borrowed radial exponent does not define dx/dQ."},
+    {"id": "H12_alias_from_gaussian_design", "status": "unresolved_no_generic_Q_field_family", "warning": "An angular harmonic alias plus a borrowed radial exponent does not define dx/dQ."}
+  ],
+  "sources": [
+    {"arxiv": "2604.05503", "role": "generic critical-loop dimensions and leg/spin convention"},
+    {"arxiv": "2208.14298", "role": "physical Potts state spaces and representation multiplicities"},
+    {"arxiv": "2510.04701", "role": "controlled nonzero-spin leg-field lattice insertion"}
+  ],
+  "selection_boundary": "Only exact continuum dimensions, their Q derivatives at beta^2=2/3, and predeclared generic-Q field families are admitted. Lattice target observations, fitted amplitudes, raw measure scores treated as complete field derivatives, inferred Potts multiplicities, and Q velocities assigned to angular aliases without a generic-Q family are forbidden."
+}
