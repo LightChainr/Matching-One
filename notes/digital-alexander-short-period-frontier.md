@@ -10,14 +10,16 @@ frontier directly.
 ## Enumeration
 
 Every index-`n` sublattice of `Z^2` has a two-dimensional Hermite-normal-form representative. The
-oracle enumerates every such representative for `2<=n<=9`, constructs the square NN and matching
-NN+diagonal quotient graphs, and evaluates all `n!` site permutations. This gives 68 quotient
-geometries and 5,372,118 complete filtrations.
+oracle enumerates every such representative for `2<=n<=10` and constructs the square NN and matching
+NN+diagonal quotient graphs. This gives 86 quotient geometries and 70,690,518 complete filtrations.
 
 For each geometry the oracle first computes the exact primal and complementary matching marks for
-all `2^n` occupied-site subsets. Permutation paths then read this immutable table instead of
-reclassifying the same subset repeatedly. A direct cached-versus-uncached test exhausts all paths on
-the axis `L=2` control, so the acceleration does not change the observable semantics.
+all `2^n` occupied-site subsets. Every site permutation is a maximal chain in this Boolean subset
+lattice. Exact dynamic programming counts those chains, while a prefix set `S` receives the exact
+weight `|S|!(n-|S|)!` when plateau-step statistics are accumulated. A direct cached-versus-uncached
+test exhausts all paths on the axis `L=2` control, and an independent regression compares the new
+subset-lattice summary field-for-field with explicit permutation enumeration on every HNF quotient
+through index 6. The acceleration therefore preserves the existing path-level observable semantics.
 
 Each quotient is classified by whether the four corners `(0,0),(1,0),(0,1),(1,1)` remain distinct.
 Results for self-identifying faces are kept separate from the honest-cell cases.
@@ -37,6 +39,6 @@ and gate, with the first permutation counterexample archived rather than suppres
 
 ## Boundary
 
-This is an exhaustive finite frontier through index 9 only. A null search does not prove all degenerate
+This is an exhaustive finite frontier through index 10 only. A null search does not prove all degenerate
 quotients; a discovered counterexample would delimit the regular-cell theorem rather than contradict it.
 No production stream or continuum interpretation is changed.
