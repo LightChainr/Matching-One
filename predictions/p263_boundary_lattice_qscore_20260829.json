@@ -1,0 +1,216 @@
+{
+  "amplitude_gauge_and_score": {
+    "amplitude_gauge": "z_i -> z_i+c from the Q derivative of the common boundary-field normalization C1(Q)",
+    "frozen_target": {
+      "anchor_lambda": "1/3",
+      "anchored_dQ_logU": [
+        -0.14829994193484564,
+        0.0,
+        0.3249693720763416,
+        0.36786256566279774
+      ],
+      "anchored_dQ_logU_in_sqrt3_over_pi_units": [
+        -0.26898634039739444,
+        0.0,
+        0.5894292404676613,
+        0.6672288877247508
+      ],
+      "channel": "14|23",
+      "continuum_identification": "U^(14)(23)(lambda)=C1*V_(3h+1)(lambda)",
+      "independent_check_order": 140,
+      "lambda_order": [
+        "1/4",
+        "1/3",
+        "2/3",
+        "3/4"
+      ],
+      "max_abs_order_difference": 1.6653345369377348e-15,
+      "reflected_channel": "U^(12)(34)(lambda)=C1*V_(3h+1)(1-lambda)",
+      "series_order": 100
+    },
+    "primary_channel": "14|23",
+    "primary_score": "r^T Sigma_r^+ r with df=rank(Sigma_r)",
+    "projection": "subtract z at lambda=1/3; equivalently GLS-project the raw tangent off the ordinary U0 vector",
+    "raw_lattice_log_tangent": "z_i=dP_i/P_i + 4*h_prime*log(L_i) + explicit_i/P_i - 2*h_prime*log(K_i)",
+    "residual_vector": "three non-anchor components of anchored z_lattice-z_CLE",
+    "secondary_crossing": "anchored 12|34 tangent at lambda equals anchored 14|23 tangent at 1-lambda on the symmetric frozen grid"
+  },
+  "batch_sufficient_statistics_schema": {
+    "J": "2*number_of_FK_clusters + number_of_open_bonds",
+    "covariance_rule": "recompute probabilities and all three measure-score covariances inside each synchronized delete-one replicate",
+    "cross_geometry_rule": "share counter domains where geometry coupling is declared; otherwise retain block-diagonal covariance rather than inventing pairing",
+    "required_integer_fields": [
+      "geometry_id",
+      "batch",
+      "samples",
+      "sum_J",
+      "sum_J2",
+      "for_each_link_pattern: count,sum_J,sum_J2"
+    ]
+  },
+  "boundary_observable": {
+    "boundary_condition": "free",
+    "definitions": {
+      "1234": "all four marked vertices lie in one FK cluster",
+      "12|34": "x1,x2 share one cluster; x3,x4 share a distinct cluster",
+      "14|23": "x1,x4 share one cluster; x2,x3 share a distinct cluster"
+    },
+    "marked_vertices": "four distinct boundary vertices x1<x2<x3<x4",
+    "other_terminal_partitions": "recorded for normalization/debugging but zero in the primary three-vector",
+    "planar_forbidden": "13|24 as two distinct clusters",
+    "primary_vector_order": [
+      "1234",
+      "12|34",
+      "14|23"
+    ]
+  },
+  "claim_layers": {
+    "exact_continuum_from_source_and_parent_oracle": [
+      "14|23 is the high V_(3h+1) branch",
+      "12|34 is its lambda->1-lambda reflection",
+      "the inhomogeneous tangent ODE and universal sqrt(3)/pi exponent derivative"
+    ],
+    "exact_finite_lattice": [
+      "Q=1 critical-manifold measure score J/2",
+      "three link-pattern definitions and tiny four-cycle regression",
+      "separation of measure, bare/projector, field-renormalization and conformal-prefactor terms"
+    ],
+    "scaling_hypothesis": "finite square-FK boundary probabilities converge after L^(4h) renormalization to Cai's CLE connectivity vector"
+  },
+  "continuum_source": {
+    "arxiv": "2603.28161v2",
+    "branch_identification": "Theorem 1.4",
+    "conformal_prefactor_equation": "Eq. (1.4)",
+    "lattice_link_patterns_equation": "Eq. (1.1)",
+    "paper": "Gefei Cai, Boundary four-point connectivities of conformal loop ensembles"
+  },
+  "frozen_geometries": [
+    {
+      "K": "10/3",
+      "K_decimal": 3.3333333333333335,
+      "lambda": "1/4",
+      "normalized_boundary_points": [
+        "0",
+        "2/5",
+        "1",
+        "2"
+      ]
+    },
+    {
+      "K": "3",
+      "K_decimal": 3.0,
+      "lambda": "1/3",
+      "normalized_boundary_points": [
+        "0",
+        "1/2",
+        "1",
+        "2"
+      ]
+    },
+    {
+      "K": "15/4",
+      "K_decimal": 3.75,
+      "lambda": "2/3",
+      "normalized_boundary_points": [
+        "0",
+        "4/5",
+        "1",
+        "2"
+      ]
+    },
+    {
+      "K": "14/3",
+      "K_decimal": 4.666666666666667,
+      "lambda": "3/4",
+      "normalized_boundary_points": [
+        "0",
+        "6/7",
+        "1",
+        "2"
+      ]
+    }
+  ],
+  "integer_Q_fallback": {
+    "generic_Q_sampler_required_for_plain_connectivities": false,
+    "primary_replacement": "sample only Q=1 FK bond configurations and use the exact J/2 measure score",
+    "projector_validation_if_later_needed": "at integer Q=2,3,4 color each FK cluster uniformly, regress the declared color-projector polynomial on the terminal partition, then differentiate that symbolic polynomial at Q=1; never finite-difference noisy Q runs"
+  },
+  "issue": 263,
+  "q_score_decomposition": {
+    "conformal_prefactor_derivative": "2*h_prime*log(K)*G, kept separate and subtracted when forming d_Q log U",
+    "critical_square_FK_manifold": "v=sqrt(Q), p=v/(1+v)",
+    "explicit_field_derivative": "zero for the bare indicators; renormalized boundary fields add 4*h_prime*log(L)*G plus an unknown lambda-independent normalization tangent",
+    "explicit_projector_derivative": "zero for the three plain connectivity indicators",
+    "h_prime_at_Q1": "sqrt(3)/(3*pi)",
+    "measure_score": "S_measure=(J-E[J])/2 with J=2k+b; d_Q E[O]|_1=Cov(O,J/2)",
+    "no_double_count_rule": "use normalized continuum x_i and lattice spacing delta=1/L; log(L) belongs to field renormalization and log(K) to Eq. (1.4)"
+  },
+  "schema": "matching-one.p263-boundary-lattice-qscore.v1",
+  "status": "frozen_minimal_lattice_interface",
+  "tiny_square_bond_regression": {
+    "all_terminal_partition_counts": {
+      "1234": 5,
+      "123|4": 1,
+      "124|3": 1,
+      "12|34": 1,
+      "12|3|4": 1,
+      "134|2": 1,
+      "14|23": 1,
+      "14|2|3": 1,
+      "1|234": 1,
+      "1|23|4": 1,
+      "1|2|34": 1,
+      "1|2|3|4": 1
+    },
+    "configurations": 16,
+    "derivatives": {
+      "1234": {
+        "direct_critical_manifold_Q_derivative": "-37/256",
+        "explicit_projector_field_derivative": "0",
+        "measure_score_covariance": "-37/256",
+        "probability_Q1": "5/16"
+      },
+      "12|34": {
+        "direct_critical_manifold_Q_derivative": "-1/256",
+        "explicit_projector_field_derivative": "0",
+        "measure_score_covariance": "-1/256",
+        "probability_Q1": "1/16"
+      },
+      "14|23": {
+        "direct_critical_manifold_Q_derivative": "-1/256",
+        "explicit_projector_field_derivative": "0",
+        "measure_score_covariance": "-1/256",
+        "probability_Q1": "1/16"
+      }
+    },
+    "direct_polynomial_equals_measure_score": true,
+    "graph": "open four-cycle with every vertex a marked boundary point",
+    "sufficient_statistics": {
+      "link_patterns": {
+        "1234": {
+          "count": 5,
+          "sum_J": 26,
+          "sum_J2": 136,
+          "sum_explicit_projector_field_Q_derivative": "0"
+        },
+        "12|34": {
+          "count": 1,
+          "sum_J": 6,
+          "sum_J2": 36,
+          "sum_explicit_projector_field_Q_derivative": "0"
+        },
+        "14|23": {
+          "count": 1,
+          "sum_J": 6,
+          "sum_J2": 36,
+          "sum_explicit_projector_field_Q_derivative": "0"
+        }
+      },
+      "samples": 16,
+      "sum_J": 98,
+      "sum_J2": 612
+    },
+    "three_link_total_probability_Q1": "7/16",
+    "three_link_total_tangent": "-39/256"
+  }
+}
