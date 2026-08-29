@@ -10,9 +10,14 @@ frontier directly.
 ## Enumeration
 
 Every index-`n` sublattice of `Z^2` has a two-dimensional Hermite-normal-form representative. The
-oracle enumerates every such representative for `2<=n<=7`, constructs the square NN and matching
-NN+diagonal quotient graphs, and evaluates all `n!` site permutations. This gives 40 quotient
-geometries and 49,878 complete filtrations.
+oracle enumerates every such representative for `2<=n<=8`, constructs the square NN and matching
+NN+diagonal quotient graphs, and evaluates all `n!` site permutations. This gives 55 quotient
+geometries and 654,678 complete filtrations.
+
+For each geometry the oracle first computes the exact primal and complementary matching marks for
+all `2^n` occupied-site subsets. Permutation paths then read this immutable table instead of
+reclassifying the same subset repeatedly. A direct cached-versus-uncached test exhausts all paths on
+the axis `L=2` control, so the acceleration does not change the observable semantics.
 
 Each quotient is classified by whether the four corners `(0,0),(1,0),(0,1),(1,1)` remain distinct.
 Results for self-identifying faces are kept separate from the honest-cell cases.
@@ -32,6 +37,6 @@ and gate, with the first permutation counterexample archived rather than suppres
 
 ## Boundary
 
-This is an exhaustive finite frontier through index 7 only. A null search does not prove all degenerate
+This is an exhaustive finite frontier through index 8 only. A null search does not prove all degenerate
 quotients; a discovered counterexample would delimit the regular-cell theorem rather than contradict it.
 No production stream or continuum interpretation is changed.
