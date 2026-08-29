@@ -55,6 +55,7 @@ evidence_archives:
   - {id: N26_BETA, path: results/local-20260828/P115-n26-self-matching-exact, status: negative_result, role: exact_Beta_failure}
   - {id: GAUSSIAN_COVER_SELECTION_RULE, path: results/exact-cover-character-oracles/norm2_selection_rule.json, status: immutable_result, role: exact_deck_character_linear_null_and_allowed_channels}
   - {id: FK_Q_SCORE, path: results/fk-q-score/latest.json, status: exact_result, role: critical_manifold_Q_tangent_oracle}
+  - {id: VJS_COLLISION_TANGENT, path: results/vjs-collision-tangent/latest.json, status: exact_result, role: measure_projector_insertion_derivative_closure}
 
 topic_derivations:
   - {path: notes/pivotal-russo-finite-volume.md, status: topic_derivation, role: pivotal_identity}
@@ -66,6 +67,7 @@ topic_derivations:
   - {path: notes/p231-vacuum-kdv-sector-response.md, status: topic_derivation, role: primitive_vacuum_KdV}
   - {path: notes/p225-multiradius-pivotal-prototype.md, status: topic_derivation, role: local_multiradius_negative}
   - {path: notes/fk-critical-manifold-q-score.md, status: topic_derivation, role: exact_FK_Q_tangent}
+  - {path: notes/vjs-energy-two-cluster-tiny-tangent.md, status: topic_derivation, role: exact_VJS_field_derivative}
 
 historical_protocols:
   - {path: experiments/server_compute_queue.yaml, status: historical, role: original_server_queue}

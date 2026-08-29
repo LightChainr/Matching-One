@@ -1,0 +1,134 @@
+{
+  "centered_energy_channel": {
+    "Q1": "423/65536",
+    "dQ_at_Q1": "50601/8388608",
+    "definition": "G=P0+P1-P_distinct^2"
+  },
+  "collision_boundary": {
+    "finite_graph_result": "the full VJS tensor tangent decomposes exactly into three nonzero terms",
+    "not_determined_here": [
+      "continuum scaling-dimension collision slope sqrt(3)/pi",
+      "large-distance amplitude equality A(1)=A_tilde(1)",
+      "the logarithmic coefficient 2sqrt(3)/pi from a one-distance L2 oracle"
+    ],
+    "reason": "these are scaling-limit inputs, not finite colour/projector identities"
+  },
+  "critical_coordinate": {
+    "Q1_d_dt_equals_d_dQ": true,
+    "eta": "log(v/sqrt(Q))=0",
+    "mean_T": "849/256",
+    "measure_score": "T=k+b/2",
+    "t": "log(Q)"
+  },
+  "exact_partition_check": {
+    "P0_plus_P1_plus_P2": "1/16",
+    "both_pairs_distinct": "1/16",
+    "equal": true
+  },
+  "geometry": {
+    "bonds": 8,
+    "configurations": 256,
+    "lattice": "square_bond_L2_torus",
+    "marked_pairs": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "vertices": 4,
+    "warning": "tiny identity oracle, not a scaling-distance experiment"
+  },
+  "issue262_reuse_gate": {
+    "P_regular_at_Q1": "lim(P_singlet+P_[2])=I+X-4J",
+    "P_regular_derivative_at_Q1": "d_Q(P_singlet+P_[2])=X",
+    "individual_projector_derivatives_used": false
+  },
+  "issues": [
+    258,
+    262
+  ],
+  "schema": "matching-one.exact-vjs-collision-tangent.v1",
+  "source": {
+    "equations": [
+      4,
+      7,
+      12,
+      13,
+      14,
+      15
+    ],
+    "paper": "Vasseur, Jacobsen, Saleur, arXiv:1206.2312"
+  },
+  "vjs_centered_two_point_tensor": {
+    "Q1_value": {
+      "I_pair": "9/128",
+      "J_all_ones": "-4185/16384",
+      "X_shared_colour": "9/128"
+    },
+    "all_three_contributions_nonzero": true,
+    "derivative_decomposition": {
+      "direct_generic_Q_product_rule": {
+        "I_pair": "-4569/32768",
+        "J_all_ones": "1003689/2097152",
+        "X_shared_colour": "-2265/32768"
+      },
+      "explicit_insertion_normalization_derivative": {
+        "I_pair": "-9/64",
+        "J_all_ones": "1881/4096",
+        "X_shared_colour": "-9/64"
+      },
+      "finite_confluent_projector_derivative": {
+        "I_pair": "0/1",
+        "J_all_ones": "0/1",
+        "X_shared_colour": "9/128"
+      },
+      "measure_score_fixed_field": {
+        "I_pair": "39/32768",
+        "J_all_ones": "40617/2097152",
+        "X_shared_colour": "39/32768"
+      },
+      "sum": {
+        "I_pair": "-4569/32768",
+        "J_all_ones": "1003689/2097152",
+        "X_shared_colour": "-2265/32768"
+      },
+      "sum_equals_direct": true
+    },
+    "diagram_basis": [
+      "I_pair",
+      "X_shared_colour",
+      "J_all_ones"
+    ],
+    "generic_Q_formula": "4 Q^-4 J G(Q) + 2 Q^-2 [P_singlet(Q)+P_[2](Q)] P2(Q)"
+  },
+  "vjs_geometric_probabilities": {
+    "P0_four_clusters": {
+      "Q1": "1/256",
+      "dQ_at_Q1_measure_score": "175/65536"
+    },
+    "P1_one_propagating_cluster": {
+      "Q1": "3/128",
+      "dQ_at_Q1_measure_score": "269/32768"
+    },
+    "P2_two_propagating_clusters": {
+      "Q1": "9/256",
+      "dQ_at_Q1_measure_score": "39/65536"
+    },
+    "both_pairs_distinct": {
+      "Q1": "1/16",
+      "dQ_at_Q1_measure_score": "47/4096"
+    },
+    "pair0_distinct": {
+      "Q1": "37/256",
+      "dQ_at_Q1_measure_score": "1099/65536"
+    },
+    "pair1_distinct": {
+      "Q1": "37/256",
+      "dQ_at_Q1_measure_score": "1099/65536"
+    }
+  }
+}

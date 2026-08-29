@@ -1,0 +1,30 @@
+schema: matching-one.vjs-collision-tangent-manifest.v1
+issues: [258, 262]
+status: exact_tiny_finite_graph
+source:
+  paper: arXiv:1206.2312
+  equations: [4, 7, 12, 13, 14, 15]
+geometry:
+  model: square_bond_L2_torus
+  marked_neighbour_pairs: [[0, 1], [2, 3]]
+  configurations: 256
+critical_coordinate:
+  eta: 0
+  t: log(Q)
+  Q1_score: T=k+b/2
+tensor_basis: [I_pair, X_shared_colour, J_all_ones]
+generic_Q_centered_correlation: 4*Q^-4*J*G(Q) + 2*Q^-2*P_regular(Q)*P2(Q)
+projector_input_from_issue262:
+  P_regular: P_singlet+P_[2]
+  Q1_value: I+X-4J
+  Q1_derivative: X
+  forbidden: differentiate singular P_singlet or P_[2] separately
+derivative_rows:
+  - measure_score_fixed_field
+  - finite_confluent_projector_derivative
+  - explicit_insertion_normalization_derivative
+exact_gate: sum_of_three_rows_equals_direct_generic_Q_product_rule
+boundary:
+  exact: finite-graph colour/projector/measure derivative identity
+  external_scaling_inputs: [dimension_slope_sqrt3_over_pi, amplitude_matching, logarithmic_coefficient]
+  forbidden: call_the_L2_tensor_tangent_a_measured_LCFT_logarithm
