@@ -50,6 +50,9 @@ frozen_predictions:
   - {path: predictions/polynomial_widths_22_24.yaml, status: frozen_prediction, issue: 6, role: finite_width_challenge}
   - {path: predictions/wrapping_channel_audit_20260828.json, status: frozen_prediction, issue: 146, role: semantic_map_audit}
 
+continuum_controls:
+  - {path: predictions/p156_pinson_arguin_baselines_20260829.json, status: continuum_baseline, issue: 156, role: primitive_homology_sector_values}
+
 evidence_archives:
   - {id: NEUTRAL_AREA_MODE_FRONT, path: results/local-20260829/neutral-area-mode-front, status: negative_result, role: exact_covector_and_bounded_mode_front}
   - {id: P31, path: results/server-20260828/P31, status: immutable_result, role: same_N_confirmation}
@@ -87,6 +90,7 @@ topic_derivations:
   - {path: notes/matrix-gaussian-semigroup-discovery.md, status: topic_derivation, role: low_rank_transfer}
   - {path: notes/dimensionless-amplitude-ratios.md, status: topic_derivation, role: metric_free_ratios}
   - {path: notes/square-bond-duality-tiny-torus.md, status: topic_derivation, role: square_bond_control}
+  - {path: notes/pinson-arguin-primitive-baseline.md, status: topic_derivation, role: primitive_homology_baseline}
   - {path: notes/gaussian-isogeny-maximin-design.md, status: topic_derivation, role: information_design}
   - {path: notes/c4-local-odd-pivotal-tangent.md, status: topic_derivation, role: local_odd_tangent_readout}
 
