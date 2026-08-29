@@ -210,6 +210,79 @@ def gls_linear_continuum(sizes: Sequence[float], points: Sequence[Vector], covar
     )
 
 
+def mesh_aware_log_partner_diagnostic(rows: Sequence[dict]) -> dict:
+    """Resolve signed radius rounding after the frozen L192 reveal.
+
+    This is deliberately labelled post-reveal.  It uses the natural realized
+    cutoff in the bilocal prefactor, then gives each matrix coordinate a
+    leading signed delta error in addition to the analytic 1/L correction.
+    """
+    points = []
+    covariances = []
+    for row in rows:
+        ratio = (row["realized_delta"] / row["declared_delta"]) ** (-25.0 / 24.0)
+        scaling = [1.0, ratio, ratio * ratio]
+        points.append([value * scale for value, scale in zip(row["normalized_point"], scaling)])
+        covariance = row["normalized_covariance_delta_method"]
+        covariances.append(
+            [
+                [covariance[i][j] * scaling[i] * scaling[j] for j in range(3)]
+                for i in range(3)
+            ]
+        )
+    width = 3 * len(rows)
+    columns = [[0.0] * width for _ in range(8)]
+    for block, row in enumerate(rows):
+        inverse_size = 1.0 / float(row["L"])
+        delta_error = row["realized_delta"] - row["declared_delta"]
+        columns[0][3 * block] = inverse_size
+        columns[1][3 * block] = delta_error
+        columns[2][3 * block + 1] = 1.0
+        columns[3][3 * block + 1] = inverse_size
+        columns[4][3 * block + 1] = delta_error
+        columns[5][3 * block + 2] = 1.0
+        columns[6][3 * block + 2] = inverse_size
+        columns[7][3 * block + 2] = delta_error
+    score = _gls(
+        points,
+        covariances,
+        columns,
+        [
+            "LL_1_over_L",
+            "LL_delta_error",
+            "LD_continuum",
+            "LD_1_over_L",
+            "LD_delta_error",
+            "DD_continuum",
+            "DD_1_over_L",
+            "DD_delta_error",
+        ],
+        "realized-cutoff fields with 1/L and signed (delta_realized-delta_declared) corrections",
+    )
+    mixed = score["coefficients"][2]
+    dd_derivative = score["coefficients"][7]
+    declared_delta = float(rows[0]["declared_delta"])
+    kappa = -declared_delta * dd_derivative / (2.0 * mixed)
+    gradient_mixed = declared_delta * dd_derivative / (2.0 * mixed**2)
+    gradient_derivative = -declared_delta / (2.0 * mixed)
+    covariance = score["coefficient_covariance"]
+    kappa_variance = (
+        gradient_mixed**2 * covariance[2][2]
+        + gradient_derivative**2 * covariance[7][7]
+        + 2.0 * gradient_mixed * gradient_derivative * covariance[2][7]
+    )
+    return {
+        "status": "post_reveal_mechanism_diagnostic_added_after_the_frozen_L192_score",
+        "natural_realized_cutoff_points": points,
+        "score": score,
+        "cutoff_shear_proxy": {
+            "definition": "kappa_proxy=-delta*(d DD/d delta)/(2*LD) from B_delta=hat_phi-kappa*log(2delta)*phi",
+            "estimate": kappa,
+            "standard_error_delta_method": math.sqrt(max(0.0, kappa_variance)),
+        },
+    }
+
+
 def read_size(json_path: Path) -> dict:
     payload = json.loads(json_path.read_text(encoding="utf-8"))
     batch_path = json_path.with_suffix(".batches.csv")
@@ -280,6 +353,7 @@ def render(paths: Sequence[Path]) -> dict:
         "sizes": sizes,
         "joint_parent_pair_continuum_linear_in_1_over_L": continuum_score,
         "finite_L_constant_diagnostic": finite_score,
+        "post_reveal_mesh_aware_log_partner_diagnostic": mesh_aware_log_partner_diagnostic(sizes),
         "derivation": {
             "paper_normalizations": "phi_a=a^(-5/4)|log a|^(-1)E_a; eta_a^delta=pi_a^(-2)E_a^delta",
             "connection_proxy": "pi_a^(-2)=constant*(2*delta_realized)^(-5/24)/p_connection*(1+o(1)).",

@@ -261,6 +261,25 @@ already received their `a`-dependent normalization.  The projective pencil
 below remains useful for a calibrated change of physical scale/cutoff, but is
 not the primary fixed-delta production score.
 
+The frozen four-size score later showed that a monotone `1/L` correction is
+insufficient specifically for the top--top coordinate.  A clearly labelled
+post-reveal diagnostic therefore uses the natural realized cutoff in the
+bilocal prefactor and includes the signed nearest-vertex error
+`delta_realized-delta_declared`.  In the continuum OPE convention
+
+```text
+B_delta = hat(phi) - kappa log(2 delta) phi + o(1),
+```
+
+so the cutoff derivative also gives the exploratory same-gauge ratio
+
+```text
+kappa_proxy = -delta (d DD/d delta) / (2 LD).
+```
+
+The planned smaller-cutoff lines, not the four rounding offsets alone, are the
+proper independent test of this derivative.
+
 Once the relative field gauge is fixed, there is a stronger projective
 fingerprint than scoring `J` one size at a time.  In a canonical logarithmic
 basis the fixed-delta two-point matrix

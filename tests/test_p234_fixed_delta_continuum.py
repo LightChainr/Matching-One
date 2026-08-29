@@ -3,6 +3,7 @@ import math
 from scripts.score_p234_fixed_delta_continuum import (
     gls_linear_continuum,
     gls_parent_pair,
+    mesh_aware_log_partner_diagnostic,
     transform,
     transform_jacobian,
 )
@@ -49,3 +50,24 @@ def test_linear_continuum_recovers_exact_intercepts():
     assert math.isclose(score["coefficients"][3], 5.0)
     assert math.isclose(score["chi_square"], 0.0, abs_tol=1e-11)
     assert score["degrees_of_freedom"] == 4
+
+
+def test_mesh_diagnostic_tracks_chronology_and_is_finite():
+    rows = []
+    for L, error in [(10, 0.01), (20, -0.005), (40, 0.002), (80, -0.001)]:
+        rows.append(
+            {
+                "L": L,
+                "declared_delta": 0.1,
+                "realized_delta": 0.1 + error,
+                "normalized_point": [0.1 / L + error, 2.0 + 0.2 / L, 5.0 + 0.3 / L],
+                "normalized_covariance_delta_method": [
+                    [0.1, 0.0, 0.0],
+                    [0.0, 0.2, 0.0],
+                    [0.0, 0.0, 0.3],
+                ],
+            }
+        )
+    result = mesh_aware_log_partner_diagnostic(rows)
+    assert result["status"].startswith("post_reveal")
+    assert math.isfinite(result["cutoff_shear_proxy"]["estimate"])

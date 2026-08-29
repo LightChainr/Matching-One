@@ -45,6 +45,7 @@ continuum_controls:
   - {path: scripts/score_p234_fixed_delta_continuum.py, status: active_scorer, issue: 234, role: same_stream_relative_pi_normalization_and_parent_pair_limit}
 
 evidence_archives:
+  - {id: P234_FIXED_DELTA_D8, path: results/server-20260829/P234-phaseA, status: production_result, role: connection_normalized_parent_pair_and_cutoff_shear}
   - {id: P234_ENERGY_LOGPAIR_SMOKE, path: results/local-20260829/P234-triangular-energy-logpair-smoke, status: pipeline_smoke, role: cluster_sign_integrated_phaseA_runner}
   - {id: P57, path: results/server-20260829/P57-norm5-500m, status: immutable_result, role: prospective_norm5}
   - {id: P50_FULLCURVE, path: results/server-20260829/P50-n145-n290-fullcurve, status: immutable_result, role: heldout_fullcurve}

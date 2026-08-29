@@ -1,0 +1,414 @@
+{
+  "derivation": {
+    "bilocal_factor": "beta_numerator=(2*delta_declared)^(-25/24)*(2*delta_realized)^(-5/24)",
+    "connection_proxy": "pi_a^(-2)=constant*(2*delta_realized)^(-5/24)/p_connection*(1+o(1)).",
+    "paper_normalizations": "phi_a=a^(-5/4)|log a|^(-1)E_a; eta_a^delta=pi_a^(-2)E_a^delta",
+    "scored_vector": "[alpha^2 LL, alpha*beta_numerator*LD/p_connection, beta_numerator^2*DD/p_connection^2]"
+  },
+  "finite_L_constant_diagnostic": {
+    "chi_square": 24.963396163886657,
+    "chi_square_survival": 0.005415320534378125,
+    "coefficient_covariance": [
+      [
+        0.00013622572221315993,
+        4.045008108922887e-05
+      ],
+      [
+        4.045008108922887e-05,
+        0.00032714344108931536
+      ]
+    ],
+    "coefficient_order": [
+      "constant_LD",
+      "constant_DD"
+    ],
+    "coefficients": [
+      0.223182364482521,
+      1.68979875166507
+    ],
+    "degrees_of_freedom": 10,
+    "model": "normalized_LL=0; normalized_LD and normalized_DD constant at every finite L"
+  },
+  "issue": 234,
+  "joint_parent_pair_continuum_linear_in_1_over_L": {
+    "chi_square": 22.957950069819457,
+    "chi_square_survival": 0.001733587771881991,
+    "coefficient_covariance": [
+      [
+        1.8112163639037524,
+        0.0004825977838589389,
+        -0.02564772566122353,
+        -0.00969175830204429,
+        1.492625088142076
+      ],
+      [
+        0.0004825977838589161,
+        0.0011216860583870756,
+        -0.09936818641914967,
+        0.0003212337522704189,
+        -0.029269041197935948
+      ],
+      [
+        -0.025647725661221005,
+        -0.09936818641914967,
+        10.020497483348777,
+        -0.029412531799339284,
+        3.0734113646510037
+      ],
+      [
+        -0.009691758302044266,
+        0.0003212337522704175,
+        -0.029412531799339156,
+        0.0024198363816407185,
+        -0.22338050959032923
+      ],
+      [
+        1.4926250881420746,
+        -0.029269041197935802,
+        3.07341136465099,
+        -0.22338050959032926,
+        23.963193828692145
+      ]
+    ],
+    "coefficient_order": [
+      "LL_1_over_L",
+      "LD_continuum",
+      "LD_1_over_L",
+      "DD_continuum",
+      "DD_1_over_L"
+    ],
+    "coefficients": [
+      0.8193427555055666,
+      0.2170262749685309,
+      0.6590013581279155,
+      1.627703491901407,
+      6.7665689002203635
+    ],
+    "degrees_of_freedom": 7,
+    "model": "normalized_LL=c_LL/L; normalized_LD=C_LD+c_LD/L; normalized_DD=C_DD+c_DD/L"
+  },
+  "post_reveal_mesh_aware_log_partner_diagnostic": {
+    "cutoff_shear_proxy": {
+      "definition": "kappa_proxy=-delta*(d DD/d delta)/(2*LD) from B_delta=hat_phi-kappa*log(2delta)*phi",
+      "estimate": 2.788348528985267,
+      "standard_error_delta_method": 1.3407824802253796
+    },
+    "natural_realized_cutoff_points": [
+      [
+        0.03166764572330653,
+        0.2180892949781332,
+        1.6055394227837416
+      ],
+      [
+        -0.040884549141148134,
+        0.23249714167764965,
+        1.8006550901720966
+      ],
+      [
+        0.024978628789613645,
+        0.22418759612159334,
+        1.7151384427504697
+      ],
+      [
+        -0.004900065203884532,
+        0.2269852295491431,
+        1.7446048666878455
+      ]
+    ],
+    "score": {
+      "chi_square": 2.362340057650095,
+      "chi_square_survival": 0.6694434485984447,
+      "coefficient_covariance": [
+        [
+          2.690163632667667,
+          -4.2033458048977455,
+          0.00033509821215044774,
+          0.00655002779503671,
+          -0.07425114909924449,
+          -0.007526113718043043,
+          1.2926089240912597,
+          -0.634878825035698
+        ],
+        [
+          -4.203345804897747,
+          20.321020800742126,
+          0.000207428028430602,
+          -0.1088832715886946,
+          0.29490555099665156,
+          0.0048730494292147895,
+          -0.662377144379626,
+          4.857861194905521
+        ],
+        [
+          0.00033509821214909694,
+          0.0002074280284327279,
+          0.0017028734542688375,
+          -0.15099900471480265,
+          0.09052703371835444,
+          0.0004851649720827377,
+          -0.04398343296137201,
+          0.028139759804165373
+        ],
+        [
+          0.006550027795151327,
+          -0.10888327158883365,
+          -0.15099900471480268,
+          14.589342642049136,
+          -8.401161187396522,
+          -0.04396235797377751,
+          4.370294628657934,
+          -2.6932342086105736
+        ],
+        [
+          -0.07425114909931411,
+          0.29490555099675014,
+          0.09052703371835444,
+          -8.401161187396522,
+          13.551475205042262,
+          0.027481181874466333,
+          -2.640360647164139,
+          4.492402718402088
+        ],
+        [
+          -0.007526113718043605,
+          0.004873049429214956,
+          0.0004851649720827365,
+          -0.04396235797377731,
+          0.027481181874466225,
+          0.0033280215597930414,
+          -0.30671883979526576,
+          0.19164136780532356
+        ],
+        [
+          1.2926089240913161,
+          -0.6623771443796291,
+          -0.043983432961371874,
+          4.370294628657912,
+          -2.6403606471641274,
+          -0.30671883979526576,
+          31.545532529679402,
+          -19.561558696642493
+        ],
+        [
+          -0.634878825035734,
+          4.857861194905526,
+          0.028139759804164662,
+          -2.6932342086105057,
+          4.492402718402047,
+          0.19164136780532356,
+          -19.561558696642496,
+          36.380379225055336
+        ]
+      ],
+      "coefficient_order": [
+        "LL_1_over_L",
+        "LL_delta_error",
+        "LD_continuum",
+        "LD_1_over_L",
+        "LD_delta_error",
+        "DD_continuum",
+        "DD_1_over_L",
+        "DD_delta_error"
+      ],
+      "coefficients": [
+        -0.05103227878751454,
+        6.210271351737385,
+        0.22527412105008765,
+        -0.08117352835369851,
+        -1.1031693628614219,
+        1.7531817404708958,
+        -4.546574936918399,
+        -14.213248256381704
+      ],
+      "degrees_of_freedom": 4,
+      "model": "realized-cutoff fields with 1/L and signed (delta_realized-delta_declared) corrections"
+    },
+    "status": "post_reveal_mechanism_diagnostic_added_after_the_frozen_L192_score"
+  },
+  "schema": "matching-one.p234-fixed-delta-continuum.v1",
+  "scope": [
+    "The endpoint-connection proxy and LL/LD/DD come from the same batch stream; their covariance is retained.",
+    "The unknown connection-to-pi amplitude is L-independent only at one fixed declared delta, so it is absorbed into the two fitted constants.",
+    "This score tests the a->0 continuum collapse at fixed physical geometry. It does not estimate kappa, a universal amplitude, or a Jordan logarithmic coupling.",
+    "A coordinate-dilation Jordan shear is not a log(L) drift in a correctly renormalized fixed-geometry ultraviolet limit."
+  ],
+  "sizes": [
+    {
+      "L": 64,
+      "batches": 100,
+      "bilocal_normalization_numerator": 8.617679708002202,
+      "connection_probability_proxy_for_pi_a_squared": 0.15657926025390626,
+      "connection_probability_standard_error": 0.00011181529384233172,
+      "declared_delta": 0.08838834764831843,
+      "input_batches": "results/server-20260829/P234-phaseA/d8-L64-100k.batches.csv",
+      "input_json": "results/server-20260829/P234-phaseA/d8-L64-100k.json",
+      "local_normalization_alpha_L_5_over_4_over_log_L": 43.52594972146302,
+      "normalized_covariance_delta_method": [
+        [
+          0.0005391002372494823,
+          1.1564008523718212e-06,
+          0.0002896821584508907
+        ],
+        [
+          1.1564008523718212e-06,
+          0.0005637919796503528,
+          0.00019054941726142654
+        ],
+        [
+          0.0002896821584508907,
+          0.00019054941726142654,
+          0.0016212136207984491
+        ]
+      ],
+      "normalized_order": [
+        "alpha^2_LL",
+        "alpha*beta_numerator*LD/p_connection",
+        "beta_numerator^2*DD/p_connection^2"
+      ],
+      "normalized_point": [
+        0.03166764572330653,
+        0.23188693876795335,
+        1.8151179488917584
+      ],
+      "normalized_standard_error": [
+        0.023218532194122052,
+        0.023744304151740326,
+        0.040264297098030276
+      ],
+      "realized_delta": 0.09375
+    },
+    {
+      "L": 96,
+      "batches": 100,
+      "bilocal_normalization_numerator": 8.831757264023247,
+      "connection_probability_proxy_for_pi_a_squared": 0.14655945855034724,
+      "connection_probability_standard_error": 0.00010560540840939338,
+      "declared_delta": 0.08838834764831843,
+      "input_batches": "results/server-20260829/P234-phaseA/d8-L96-100k.batches.csv",
+      "input_json": "results/server-20260829/P234-phaseA/d8-L96-100k.json",
+      "local_normalization_alpha_L_5_over_4_over_log_L": 65.8355205976158,
+      "normalized_covariance_delta_method": [
+        [
+          0.0014535377309788733,
+          2.6668337696760156e-05,
+          0.00025043369129535374
+        ],
+        [
+          2.666833769676016e-05,
+          0.00048287608348133245,
+          0.00016697035174718724
+        ],
+        [
+          0.00025043369129535374,
+          0.00016697035174718724,
+          0.0013798968187228994
+        ]
+      ],
+      "normalized_order": [
+        "alpha^2_LL",
+        "alpha*beta_numerator*LD/p_connection",
+        "beta_numerator^2*DD/p_connection^2"
+      ],
+      "normalized_point": [
+        -0.040884549141148134,
+        0.2186631898386042,
+        1.592746485633434
+      ],
+      "normalized_standard_error": [
+        0.03812528991337474,
+        0.021974441596576064,
+        0.03714696244274758
+      ],
+      "realized_delta": 0.08333333333333333
+    },
+    {
+      "L": 128,
+      "batches": 100,
+      "bilocal_normalization_numerator": 8.775320064220532,
+      "connection_probability_proxy_for_pi_a_squared": 0.13737454345703123,
+      "connection_probability_standard_error": 9.518962573569533e-05,
+      "declared_delta": 0.08838834764831843,
+      "input_batches": "results/server-20260829/P234-phaseA/d8-L128-100k.batches.csv",
+      "input_json": "results/server-20260829/P234-phaseA/d8-L128-100k.json",
+      "local_normalization_alpha_L_5_over_4_over_log_L": 88.73377559316776,
+      "normalized_covariance_delta_method": [
+        [
+          0.0033797357242788106,
+          2.557198404467831e-05,
+          0.00034476982563309496
+        ],
+        [
+          2.5571984044678313e-05,
+          0.000494769782909868,
+          0.00012222862785428226
+        ],
+        [
+          0.00034476982563309496,
+          0.00012222862785428226,
+          0.001317204926068385
+        ]
+      ],
+      "normalized_order": [
+        "alpha^2_LL",
+        "alpha*beta_numerator*LD/p_connection",
+        "beta_numerator^2*DD/p_connection^2"
+      ],
+      "normalized_point": [
+        0.024978628789613645,
+        0.2177160441771753,
+        1.617546931930779
+      ],
+      "normalized_standard_error": [
+        0.058135494530267916,
+        0.022243421115239175,
+        0.03629331792587149
+      ],
+      "realized_delta": 0.0859375
+    },
+    {
+      "L": 192,
+      "batches": 100,
+      "bilocal_normalization_numerator": 8.720912491082844,
+      "connection_probability_proxy_for_pi_a_squared": 0.12565050808376735,
+      "connection_probability_standard_error": 9.445738730968639e-05,
+      "declared_delta": 0.08838834764831843,
+      "input_batches": "results/server-20260829/P234-phaseA/d8-L192-100k.batches.csv",
+      "input_json": "results/server-20260829/P234-phaseA/d8-L192-100k.json",
+      "local_normalization_alpha_L_5_over_4_over_log_L": 135.94011619923796,
+      "normalized_covariance_delta_method": [
+        [
+          0.007470968071779093,
+          0.00032058091843348735,
+          -0.0003183391948211745
+        ],
+        [
+          0.00032058091843348735,
+          0.0006954058290185707,
+          0.00017676575732518496
+        ],
+        [
+          -0.0003183391948211745,
+          0.00017676575732518496,
+          0.0012008182825370833
+        ]
+      ],
+      "normalized_order": [
+        "alpha^2_LL",
+        "alpha*beta_numerator*LD/p_connection",
+        "beta_numerator^2*DD/p_connection^2"
+      ],
+      "normalized_point": [
+        -0.004900065203884532,
+        0.2273953798785701,
+        1.7509153807507352
+      ],
+      "normalized_standard_error": [
+        0.08643476194089443,
+        0.02637054851569399,
+        0.034652825029672304
+      ],
+      "realized_delta": 0.08854166666666667
+    }
+  ],
+  "status": "production score"
+}
