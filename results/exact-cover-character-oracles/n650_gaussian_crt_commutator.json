@@ -1,0 +1,446 @@
+{
+  "character_projector_oracle": {
+    "all_joint_targets": [
+      {
+        "commutator_zero_exact": true,
+        "target_character": [
+          0,
+          0
+        ]
+      },
+      {
+        "commutator_zero_exact": true,
+        "target_character": [
+          0,
+          1
+        ]
+      },
+      {
+        "commutator_zero_exact": true,
+        "target_character": [
+          0,
+          2
+        ]
+      },
+      {
+        "commutator_zero_exact": true,
+        "target_character": [
+          0,
+          3
+        ]
+      },
+      {
+        "commutator_zero_exact": true,
+        "target_character": [
+          0,
+          4
+        ]
+      },
+      {
+        "commutator_zero_exact": true,
+        "target_character": [
+          1,
+          0
+        ]
+      },
+      {
+        "commutator_zero_exact": true,
+        "target_character": [
+          1,
+          1
+        ]
+      },
+      {
+        "commutator_zero_exact": true,
+        "target_character": [
+          1,
+          2
+        ]
+      },
+      {
+        "commutator_zero_exact": true,
+        "target_character": [
+          1,
+          3
+        ]
+      },
+      {
+        "commutator_zero_exact": true,
+        "target_character": [
+          1,
+          4
+        ]
+      }
+    ],
+    "basis": "characters indexed by (r mod 2,s mod 5)",
+    "commutator_zero_exact": true,
+    "factor_projectors_are_diagonal_masks": true
+  },
+  "factors": {
+    "alpha_norm2": {
+      "basis_matrix": [
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "coordinates": [
+        1,
+        1
+      ],
+      "gaussian_period": "1+i",
+      "index": 2,
+      "smith_invariants": [
+        1,
+        2
+      ]
+    },
+    "beta_norm5": {
+      "basis_matrix": [
+        [
+          2,
+          1
+        ],
+        [
+          -1,
+          2
+        ]
+      ],
+      "coordinates": [
+        2,
+        -1
+      ],
+      "gaussian_period": "2-i",
+      "index": 5,
+      "smith_invariants": [
+        1,
+        5
+      ]
+    },
+    "bezout_certificate": {
+      "crt_idempotent_mod_alpha": "i*(2-i)",
+      "crt_idempotent_mod_beta": "-(1+i)^2",
+      "identity": "1 = i*(2-i) - (1+i)^2",
+      "value": [
+        1,
+        0
+      ]
+    },
+    "gamma_product": {
+      "basis_matrix": [
+        [
+          3,
+          -1
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "coordinates": [
+        3,
+        1
+      ],
+      "gaussian_period": "3+i",
+      "index": 10,
+      "smith_invariants": [
+        1,
+        10
+      ]
+    }
+  },
+  "issue": 200,
+  "join_oracle": {
+    "full_partition_join_commutator_zero": true,
+    "interpretation": "minimal symmetric nonlinear interaction; not an order commutator",
+    "mixed_defect_formula": "h(Pi join R2 join R5)-h(Pi join R2)-h(Pi join R5)+h(Pi)",
+    "mixed_rank_defect": -4,
+    "rank_values_for_discrete_input": {
+      "h_base": 0,
+      "h_join_K2": 5,
+      "h_join_K2_K5": 9,
+      "h_join_K5": 8
+    }
+  },
+  "linear_fiber_oracle": {
+    "E5_E2_equals_E2_E5_equals_full_average": true,
+    "global_mean": "5/2",
+    "ordered_linear_mark": {
+      "definition": "C_mark=(E5 E2-E2 E5)f",
+      "evidence_level": "exact_Fubini_CRT_identity",
+      "prediction": "identically_zero_for_every_f"
+    },
+    "test_field_values": {
+      "0,0": "0",
+      "0,1": "1/7",
+      "0,2": "8/7",
+      "0,3": "3",
+      "0,4": "40/7",
+      "1,0": "17/7",
+      "1,1": "13/7",
+      "1,2": "15/7",
+      "1,3": "23/7",
+      "1,4": "37/7"
+    }
+  },
+  "n650_lattice_paths": [
+    {
+      "path_A_norm5_then_norm2": {
+        "final": {
+          "basis_matrix": [
+            [
+              23,
+              -11
+            ],
+            [
+              11,
+              23
+            ]
+          ],
+          "coordinates": [
+            23,
+            11
+          ],
+          "gaussian_period": "23+11i",
+          "index": 650,
+          "smith_invariants": [
+            1,
+            650
+          ]
+        },
+        "intermediate": {
+          "basis_matrix": [
+            [
+              17,
+              6
+            ],
+            [
+              -6,
+              17
+            ]
+          ],
+          "coordinates": [
+            17,
+            -6
+          ],
+          "gaussian_period": "17-6i",
+          "index": 325,
+          "smith_invariants": [
+            1,
+            325
+          ]
+        }
+      },
+      "path_B_norm2_then_norm5": {
+        "final": {
+          "basis_matrix": [
+            [
+              23,
+              -11
+            ],
+            [
+              11,
+              23
+            ]
+          ],
+          "coordinates": [
+            23,
+            11
+          ],
+          "gaussian_period": "23+11i",
+          "index": 650,
+          "smith_invariants": [
+            1,
+            650
+          ]
+        },
+        "intermediate": {
+          "basis_matrix": [
+            [
+              7,
+              -9
+            ],
+            [
+              9,
+              7
+            ]
+          ],
+          "coordinates": [
+            7,
+            9
+          ],
+          "gaussian_period": "7+9i",
+          "index": 130,
+          "smith_invariants": [
+            1,
+            130
+          ]
+        }
+      },
+      "source": {
+        "basis_matrix": [
+          [
+            8,
+            -1
+          ],
+          [
+            1,
+            8
+          ]
+        ],
+        "coordinates": [
+          8,
+          1
+        ],
+        "gaussian_period": "8+i",
+        "index": 65,
+        "smith_invariants": [
+          1,
+          65
+        ]
+      }
+    },
+    {
+      "path_A_norm5_then_norm2": {
+        "final": {
+          "basis_matrix": [
+            [
+              17,
+              -19
+            ],
+            [
+              19,
+              17
+            ]
+          ],
+          "coordinates": [
+            17,
+            19
+          ],
+          "gaussian_period": "17+19i",
+          "index": 650,
+          "smith_invariants": [
+            1,
+            650
+          ]
+        },
+        "intermediate": {
+          "basis_matrix": [
+            [
+              18,
+              -1
+            ],
+            [
+              1,
+              18
+            ]
+          ],
+          "coordinates": [
+            18,
+            1
+          ],
+          "gaussian_period": "18+i",
+          "index": 325,
+          "smith_invariants": [
+            1,
+            325
+          ]
+        }
+      },
+      "path_B_norm2_then_norm5": {
+        "final": {
+          "basis_matrix": [
+            [
+              17,
+              -19
+            ],
+            [
+              19,
+              17
+            ]
+          ],
+          "coordinates": [
+            17,
+            19
+          ],
+          "gaussian_period": "17+19i",
+          "index": 650,
+          "smith_invariants": [
+            1,
+            650
+          ]
+        },
+        "intermediate": {
+          "basis_matrix": [
+            [
+              3,
+              -11
+            ],
+            [
+              11,
+              3
+            ]
+          ],
+          "coordinates": [
+            3,
+            11
+          ],
+          "gaussian_period": "3+11i",
+          "index": 130,
+          "smith_invariants": [
+            1,
+            130
+          ]
+        }
+      },
+      "source": {
+        "basis_matrix": [
+          [
+            7,
+            -4
+          ],
+          [
+            4,
+            7
+          ]
+        ],
+        "coordinates": [
+          7,
+          4
+        ],
+        "gaussian_period": "7+4i",
+        "index": 65,
+        "smith_invariants": [
+          1,
+          65
+        ]
+      }
+    }
+  ],
+  "quotient_square": {
+    "cartesian_and_cocartesian": true,
+    "inclusions": "z*alpha*beta*R subset z*alpha*R,z*beta*R subset z*R",
+    "join": "z*alpha*R + z*beta*R = z*R",
+    "kernel_to_N130": "z*alpha*R/(z*alpha*beta*R) ~= R/(beta) ~= C5",
+    "kernel_to_N325": "z*beta*R/(z*alpha*beta*R) ~= R/(alpha) ~= C2",
+    "meet": "z*alpha*R intersect z*beta*R = z*alpha*beta*R",
+    "relative_deck_group": "zR/(z*alpha*beta*R) ~= R/(alpha*beta) ~= C2 x C5 ~= C10",
+    "rings": "R=Z[i]"
+  },
+  "schema": "matching-one.gaussian-crt-commutator.v1",
+  "scientific_boundary": {
+    "allowed_high_risk_observable": "a symmetric mixed topology/join defect after retaining the full typed connectivity state",
+    "excluded_as_discriminator": "any antisymmetric mark made only from honest linear fiber projections",
+    "extra_structure_needed_for_antisymmetry": "an explicitly nonfunctorial intermediate truncation, representative choice, pruning rule, or orientation-sensitive local coarse graining",
+    "proved": [
+      "the coprime Gaussian quotient square is CRT",
+      "linear fiber averages and character projectors commute pointwise",
+      "complete equivalence-relation joins commute"
+    ]
+  },
+  "status": "exact_finite_group_result"
+}
