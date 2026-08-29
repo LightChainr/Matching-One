@@ -24,6 +24,17 @@ class P48RetrospectiveTests(unittest.TestCase):
         self.assertAlmostEqual(value, 3 * p * p * (1 - p) + p ** 3, places=14)
         self.assertAlmostEqual(derivative, 6 * p * (1 - p), places=14)
 
+    def test_large_n_tail_survives_zero_endpoint_underflow(self):
+        n = 680
+        p = 0.75
+        histogram = [0] * (n + 1)
+        histogram[n] = 1
+        value, derivative = tail_and_derivative(histogram, 1, p)
+        self.assertAlmostEqual(value / (p ** n), 1.0, places=12)
+        self.assertAlmostEqual(
+            derivative / (n * p ** (n - 1)), 1.0, places=12
+        )
+
     def test_pseudovalue_covariance_normalization(self):
         self.assertEqual(pseudovalues(2.0, [1.5, 2.0, 2.5]), [3.0, 2.0, 1.0])
         covariance = covariance_of_mean([[3.0, 6.0], [2.0, 4.0], [1.0, 2.0]])

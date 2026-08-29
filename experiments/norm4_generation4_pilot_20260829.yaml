@@ -1,0 +1,52 @@
+version: 1
+created: 2026-08-29
+status: frozen_before_N520_N680_100M_completion
+issue: 154
+prediction: predictions/norm4_even_rank2_next_generation_20260829.json
+purpose: >-
+  First bounded fourth-generation test of the post-reveal Jordan plus one
+  conjugation-even mode recurrence. This pilot does not refit the prediction.
+
+generation:
+  runner_commit: bfab0330f5f56ca4d746b45d737f1607e3d229a0
+  runner_binary_sha256: ee9010f524935099ba22f1820fddc05a79dd309d98784dfd5ba7da28129b6856
+  host: f550f3cb1f774374b6842aa648fda796
+  samples_per_size: 100000000
+  batches: 100
+  threads_per_size: 4
+  launch: concurrent_4_plus_4_leaving_8_vcpu_for_N650
+  replica_counter_interval: [9300000000, 9400000000]
+  N520:
+    seed: 2026154520
+    first_representation: [22, 6]
+    second_representation: [18, 14]
+    first_period_matrix: [[22, -6], [6, 22]]
+    second_period_matrix: [[18, -14], [14, 18]]
+    smith_invariants: [2, 260]
+  N680:
+    seed: 2026154680
+    first_representation: [26, 2]
+    second_representation: [22, 14]
+    first_period_matrix: [[26, -2], [2, 26]]
+    second_period_matrix: [[22, -14], [14, 22]]
+    smith_invariants: [2, 340]
+
+scoring:
+  entrypoint: scripts/score_norm4_generation4_pilot.py
+  primary_secondary_eigenvalue: 0.5
+  primary_null: >-
+    x3 - 2*x2 + x1 - 0.5*(x2 - 2*x1 + x0) = 0
+  views:
+    - scalar_U_two_lineage_joint
+    - thermal_jet_orders_2_to_6_two_lineage_joint
+  covariance: >-
+    Full aligned covariance for N65/N130/N85/N170 plus independent covariance
+    blocks for N260/N340/N520/N680; scalar and jet scores remain correlated.
+  fixed_diagnostics_after_primary:
+    lambda_0: pure_rank2_Jordan
+    lambda_1: persistent_curvature_rank3_log_squared_candidate
+
+evidence_guard: >-
+  This is a small prospective fourth-generation pilot of a post-reveal
+  mechanism model. Do not change lambda or the recurrence after opening the
+  N520/N680 curves, and do not add scalar and jet p-values.
