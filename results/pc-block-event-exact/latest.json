@@ -1,0 +1,499 @@
+{
+  "cases": {
+    "matching_s1": {
+      "configuration_count": 4,
+      "edge_count": 1,
+      "graph": "matching",
+      "probability_at_half": "1/4",
+      "reason_counts": {
+        "left_empty": 2,
+        "right_empty": 1,
+        "success": 1
+      },
+      "reliability_polynomial": "sum_k c[k]*p^k*(1-p)^(2-k)",
+      "s": 1,
+      "site_count": 2,
+      "success_by_occupied": [
+        0,
+        0,
+        1
+      ],
+      "success_count": 1,
+      "successful_masks": [
+        3
+      ]
+    },
+    "matching_s2": {
+      "configuration_count": 256,
+      "edge_count": 16,
+      "graph": "matching",
+      "probability_at_half": "9/16",
+      "reason_counts": {
+        "largest_clusters_disconnected": 81,
+        "left_empty": 16,
+        "right_empty": 15,
+        "success": 144
+      },
+      "reliability_polynomial": "sum_k c[k]*p^k*(1-p)^(8-k)",
+      "s": 2,
+      "site_count": 8,
+      "success_by_occupied": [
+        0,
+        0,
+        4,
+        20,
+        41,
+        44,
+        26,
+        8,
+        1
+      ],
+      "success_count": 144,
+      "successful_masks": [
+        6,
+        7,
+        14,
+        15,
+        22,
+        23,
+        30,
+        31,
+        36,
+        37,
+        38,
+        39,
+        44,
+        45,
+        46,
+        47,
+        52,
+        53,
+        54,
+        55,
+        60,
+        61,
+        62,
+        63,
+        66,
+        67,
+        70,
+        71,
+        74,
+        75,
+        78,
+        79,
+        82,
+        83,
+        86,
+        87,
+        90,
+        91,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        134,
+        135,
+        142,
+        143,
+        150,
+        151,
+        158,
+        159,
+        164,
+        165,
+        166,
+        167,
+        172,
+        173,
+        174,
+        175,
+        180,
+        181,
+        182,
+        183,
+        188,
+        189,
+        190,
+        191,
+        194,
+        195,
+        198,
+        199,
+        202,
+        203,
+        206,
+        207,
+        210,
+        211,
+        214,
+        215,
+        218,
+        219,
+        222,
+        223,
+        224,
+        225,
+        226,
+        227,
+        228,
+        229,
+        230,
+        231,
+        232,
+        233,
+        234,
+        235,
+        236,
+        237,
+        238,
+        239,
+        240,
+        241,
+        242,
+        243,
+        244,
+        245,
+        246,
+        247,
+        248,
+        249,
+        250,
+        251,
+        252,
+        253,
+        254,
+        255
+      ]
+    },
+    "square_s1": {
+      "configuration_count": 4,
+      "edge_count": 1,
+      "graph": "square",
+      "probability_at_half": "1/4",
+      "reason_counts": {
+        "left_empty": 2,
+        "right_empty": 1,
+        "success": 1
+      },
+      "reliability_polynomial": "sum_k c[k]*p^k*(1-p)^(2-k)",
+      "s": 1,
+      "site_count": 2,
+      "success_by_occupied": [
+        0,
+        0,
+        1
+      ],
+      "success_count": 1,
+      "successful_masks": [
+        3
+      ]
+    },
+    "square_s2": {
+      "configuration_count": 256,
+      "edge_count": 10,
+      "graph": "square",
+      "probability_at_half": "41/128",
+      "reason_counts": {
+        "largest_clusters_disconnected": 87,
+        "left_empty": 16,
+        "left_tie": 32,
+        "right_empty": 13,
+        "right_tie": 26,
+        "success": 82
+      },
+      "reliability_polynomial": "sum_k c[k]*p^k*(1-p)^(8-k)",
+      "s": 2,
+      "site_count": 8,
+      "success_by_occupied": [
+        0,
+        0,
+        2,
+        8,
+        19,
+        24,
+        20,
+        8,
+        1
+      ],
+      "success_count": 82,
+      "successful_masks": [
+        6,
+        7,
+        14,
+        15,
+        23,
+        31,
+        38,
+        39,
+        46,
+        47,
+        54,
+        55,
+        62,
+        63,
+        70,
+        71,
+        78,
+        79,
+        87,
+        95,
+        96,
+        98,
+        99,
+        100,
+        102,
+        103,
+        108,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        124,
+        125,
+        126,
+        127,
+        142,
+        143,
+        159,
+        174,
+        175,
+        190,
+        191,
+        198,
+        199,
+        206,
+        207,
+        215,
+        223,
+        224,
+        226,
+        227,
+        228,
+        230,
+        231,
+        232,
+        234,
+        235,
+        236,
+        238,
+        239,
+        240,
+        241,
+        242,
+        243,
+        244,
+        245,
+        246,
+        247,
+        248,
+        249,
+        250,
+        251,
+        252,
+        253,
+        254,
+        255
+      ]
+    }
+  },
+  "cells": {
+    "boundary": "open rectangle; no periodic identifications",
+    "left": "0<=x<s",
+    "right": "s<=x<2s"
+  },
+  "claim_boundary": {
+    "not_proved": "production-scale performance, event probabilities near pc, statistical independence of any future sampler, or a new critical-probability bound",
+    "proved": "exact event decisions and reliability coefficients for s=1,2"
+  },
+  "event": "each half has a unique largest nonempty open cluster and those two selected clusters are connected in the full rectangle",
+  "graphs": {
+    "matching": "square edges plus both diagonals of every unit face",
+    "square": "nearest-neighbour horizontal/vertical edges"
+  },
+  "issue": 112,
+  "schema": "matching-one/pc-block-event-exact/v1",
+  "single_site_addition_counterexamples_s2": {
+    "matching": [],
+    "square": [
+      {
+        "enlarged_mask": 22,
+        "mask": 6,
+        "opened_index": 4
+      },
+      {
+        "enlarged_mask": 134,
+        "mask": 6,
+        "opened_index": 7
+      },
+      {
+        "enlarged_mask": 135,
+        "mask": 7,
+        "opened_index": 7
+      },
+      {
+        "enlarged_mask": 30,
+        "mask": 14,
+        "opened_index": 4
+      },
+      {
+        "enlarged_mask": 151,
+        "mask": 23,
+        "opened_index": 7
+      },
+      {
+        "enlarged_mask": 166,
+        "mask": 38,
+        "opened_index": 7
+      },
+      {
+        "enlarged_mask": 167,
+        "mask": 39,
+        "opened_index": 7
+      },
+      {
+        "enlarged_mask": 182,
+        "mask": 54,
+        "opened_index": 7
+      },
+      {
+        "enlarged_mask": 183,
+        "mask": 55,
+        "opened_index": 7
+      },
+      {
+        "enlarged_mask": 86,
+        "mask": 70,
+        "opened_index": 4
+      },
+      {
+        "enlarged_mask": 94,
+        "mask": 78,
+        "opened_index": 4
+      },
+      {
+        "enlarged_mask": 97,
+        "mask": 96,
+        "opened_index": 0
+      },
+      {
+        "enlarged_mask": 104,
+        "mask": 96,
+        "opened_index": 3
+      },
+      {
+        "enlarged_mask": 106,
+        "mask": 98,
+        "opened_index": 3
+      },
+      {
+        "enlarged_mask": 107,
+        "mask": 99,
+        "opened_index": 3
+      },
+      {
+        "enlarged_mask": 101,
+        "mask": 100,
+        "opened_index": 0
+      },
+      {
+        "enlarged_mask": 109,
+        "mask": 108,
+        "opened_index": 0
+      },
+      {
+        "enlarged_mask": 120,
+        "mask": 112,
+        "opened_index": 3
+      },
+      {
+        "enlarged_mask": 121,
+        "mask": 113,
+        "opened_index": 3
+      },
+      {
+        "enlarged_mask": 122,
+        "mask": 114,
+        "opened_index": 3
+      },
+      {
+        "enlarged_mask": 123,
+        "mask": 115,
+        "opened_index": 3
+      },
+      {
+        "enlarged_mask": 158,
+        "mask": 142,
+        "opened_index": 4
+      },
+      {
+        "enlarged_mask": 214,
+        "mask": 198,
+        "opened_index": 4
+      },
+      {
+        "enlarged_mask": 222,
+        "mask": 206,
+        "opened_index": 4
+      },
+      {
+        "enlarged_mask": 225,
+        "mask": 224,
+        "opened_index": 0
+      },
+      {
+        "enlarged_mask": 229,
+        "mask": 228,
+        "opened_index": 0
+      },
+      {
+        "enlarged_mask": 233,
+        "mask": 232,
+        "opened_index": 0
+      },
+      {
+        "enlarged_mask": 237,
+        "mask": 236,
+        "opened_index": 0
+      }
+    ]
+  },
+  "status": "tiny_exact_semantics_oracle",
+  "vertex_order": "row-major (x,y), y outer, x inner, width=2s, height=s"
+}
