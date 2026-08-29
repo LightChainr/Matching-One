@@ -1,0 +1,674 @@
+{
+  "coordinates": {
+    "C": "(K1+K2)/(2(N+1)); complement-odd centered birth clock",
+    "K1": "first occupation rank with ambient H1 rank at least one",
+    "K2": "first occupation rank with ambient H1 rank two",
+    "W": "(K2-K1)/(N+1); complement-even rank-one lifetime",
+    "exact_moment_bridge": "existing sums of K1,K2,K1^2,K2^2,K1*K2 determine mean/variance/covariance of C,W exactly"
+  },
+  "datasets": [
+    {
+      "H4_contrast": {
+        "C_per_delta_cos4": -0.0001219662748820486,
+        "N_13_over_8_C_per_delta_cos4": -0.33219853066733374,
+        "N_1_W_per_delta_cos4": 0.0060619057629615865,
+        "W_per_delta_cos4": 4.663004433047374e-05,
+        "delta_C": -0.00016627828244274555,
+        "delta_W": 6.357137404580562e-05,
+        "delta_cos4_first_minus_second": 1.3633136094674556,
+        "se_delta_C": 6.874135152975786e-06,
+        "se_delta_W": 7.18359764902645e-06,
+        "z_delta_C": -24.188974866280358,
+        "z_delta_W": 8.849517630545618
+      },
+      "N": 130,
+      "batches": 100,
+      "orientations": {
+        "first": {
+          "a": 11,
+          "b": 3,
+          "cos4": 0.48449704142011835,
+          "mean_C": 0.5912626044274809,
+          "mean_W": 0.06643770717557253,
+          "mean_corr_CW": -0.05701117652968629,
+          "mean_var_C": 0.0018946741995668171,
+          "mean_var_W": 0.002768023659684077
+        },
+        "second": {
+          "a": 9,
+          "b": 7,
+          "cos4": -0.8788165680473373,
+          "mean_C": 0.5914288827099237,
+          "mean_W": 0.06637413580152672,
+          "mean_corr_CW": -0.045307484542536205,
+          "mean_var_C": 0.0018925698284030733,
+          "mean_var_W": 0.0027595508215575494
+        }
+      },
+      "path": "results/server-20260828/P49-fullcurve-doubling-100m/raw/n130.moments.csv",
+      "samples_per_orientation": 100000000
+    },
+    {
+      "H4_contrast": {
+        "C_per_delta_cos4": -0.00010593353845605666,
+        "N_13_over_8_C_per_delta_cos4": -0.3445533546993478,
+        "N_1_W_per_delta_cos4": 0.006226005766793883,
+        "W_per_delta_cos4": 4.293797080547506e-05,
+        "delta_C": -0.0002031505479452178,
+        "delta_W": 8.234287671233076e-05,
+        "delta_cos4_first_minus_second": 1.9177170035671818,
+        "se_delta_C": 6.653325401159971e-06,
+        "se_delta_W": 7.199782178353193e-06,
+        "z_delta_C": -30.533685893342838,
+        "z_delta_W": 11.436856653789082
+      },
+      "N": 145,
+      "batches": 100,
+      "orientations": {
+        "first": {
+          "a": 12,
+          "b": 1,
+          "cos4": 0.9452080856123662,
+          "mean_C": 0.5913281127739726,
+          "mean_W": 0.06397073198630138,
+          "mean_corr_CW": -0.057774416267651715,
+          "mean_var_C": 0.0017930623333835926,
+          "mean_var_W": 0.0025916287424791254
+        },
+        "second": {
+          "a": 9,
+          "b": 8,
+          "cos4": -0.9725089179548156,
+          "mean_C": 0.5915312633219179,
+          "mean_W": 0.06388838910958904,
+          "mean_corr_CW": -0.0434353763999893,
+          "mean_var_C": 0.0017902772031518166,
+          "mean_var_W": 0.0025807379332578443
+        }
+      },
+      "path": "results/server-20260829/P50-n145-n290-fullcurve/raw/n145_100m.moments.csv",
+      "samples_per_orientation": 100000000
+    },
+    {
+      "H4_contrast": {
+        "C_per_delta_cos4": -8.673163358157088e-05,
+        "N_13_over_8_C_per_delta_cos4": -0.3653061835571019,
+        "N_1_W_per_delta_cos4": 0.006899273136726811,
+        "W_per_delta_cos4": 4.058395962780478e-05,
+        "delta_C": -0.0001382904385964978,
+        "delta_W": 6.470964912281121e-05,
+        "delta_cos4_first_minus_second": 1.5944636678200692,
+        "se_delta_C": 5.765356441743041e-06,
+        "se_delta_W": 6.608099331177859e-06,
+        "z_delta_C": -23.986450793437577,
+        "z_delta_W": 9.792475245870293
+      },
+      "N": 170,
+      "batches": 100,
+      "orientations": {
+        "first": {
+          "a": 13,
+          "b": 1,
+          "cos4": 0.9532179930795848,
+          "mean_C": 0.5914942525146198,
+          "mean_W": 0.06048861485380117,
+          "mean_corr_CW": -0.05372576925587678,
+          "mean_var_C": 0.0016483445304659788,
+          "mean_var_W": 0.002346393310224977
+        },
+        "second": {
+          "a": 11,
+          "b": 7,
+          "cos4": -0.6412456747404844,
+          "mean_C": 0.5916325429532164,
+          "mean_W": 0.060423905204678365,
+          "mean_corr_CW": -0.04368697527963652,
+          "mean_var_C": 0.0016463954027445416,
+          "mean_var_W": 0.002337421644590911
+        }
+      },
+      "path": "results/server-20260828/P49-fullcurve-doubling-100m/raw/n170.moments.csv",
+      "samples_per_orientation": 100000000
+    },
+    {
+      "H4_contrast": {
+        "C_per_delta_cos4": -6.577353409951603e-05,
+        "N_13_over_8_C_per_delta_cos4": -0.31783757341255137,
+        "N_1_W_per_delta_cos4": 0.005840968639993221,
+        "W_per_delta_cos4": 3.1572803459422815e-05,
+        "delta_C": -7.748689247311868e-05,
+        "delta_W": 3.719548387096941e-05,
+        "delta_cos4_first_minus_second": 1.1780861943024106,
+        "se_delta_C": 2.7177205370970802e-06,
+        "se_delta_W": 2.960192072849747e-06,
+        "z_delta_C": -28.511722016821466,
+        "z_delta_W": 12.565226497333901
+      },
+      "N": 185,
+      "batches": 100,
+      "orientations": {
+        "first": {
+          "a": 13,
+          "b": 4,
+          "cos4": 0.36794740686632577,
+          "mean_C": 0.5916206287634409,
+          "mean_W": 0.05868090369892473,
+          "mean_corr_CW": -0.048259569959455496,
+          "mean_var_C": 0.001573888776799926,
+          "mean_var_W": 0.0022197553531663277
+        },
+        "second": {
+          "a": 11,
+          "b": 8,
+          "cos4": -0.8101387874360847,
+          "mean_C": 0.591698115655914,
+          "mean_W": 0.05864370821505376,
+          "mean_corr_CW": -0.041760299812622886,
+          "mean_var_C": 0.0015728837638167854,
+          "mean_var_W": 0.002215318942969855
+        }
+      },
+      "path": "results/server-20260828/P43-heldout-fullcurve-500m/raw/n185.moments.csv",
+      "samples_per_orientation": 500000000
+    },
+    {
+      "H4_contrast": {
+        "C_per_delta_cos4": -5.446457684786389e-05,
+        "N_13_over_8_C_per_delta_cos4": -0.45755765364567835,
+        "N_1_W_per_delta_cos4": 0.006175482086792411,
+        "W_per_delta_cos4": 2.375185417997081e-05,
+        "delta_C": -7.425229885057893e-05,
+        "delta_W": 3.238122605364068e-05,
+        "delta_cos4_first_minus_second": 1.3633136094674556,
+        "se_delta_C": 1.3780729935038259e-05,
+        "se_delta_W": 1.7944283094429378e-05,
+        "z_delta_C": -5.388125244497275,
+        "z_delta_W": 1.8045427551069513
+      },
+      "N": 260,
+      "batches": 100,
+      "orientations": {
+        "first": {
+          "a": 16,
+          "b": 2,
+          "cos4": 0.8788165680473373,
+          "mean_C": 0.5918312082375479,
+          "mean_W": 0.05196896513409961,
+          "mean_corr_CW": -0.04388063498626638,
+          "mean_var_C": 0.0013032846327015995,
+          "mean_var_W": 0.0017800019218161362
+        },
+        "second": {
+          "a": 14,
+          "b": 8,
+          "cos4": -0.48449704142011835,
+          "mean_C": 0.5919054605363985,
+          "mean_W": 0.05193658390804597,
+          "mean_corr_CW": -0.038322228790268746,
+          "mean_var_C": 0.0013009651416346062,
+          "mean_var_W": 0.0017758013391888554
+        }
+      },
+      "path": "results/server-20260829/P154-norm4-variance-pilot/raw/n260_10m.moments.csv",
+      "samples_per_orientation": 10000000
+    },
+    {
+      "H4_contrast": {
+        "C_per_delta_cos4": -3.829699514861604e-05,
+        "N_13_over_8_C_per_delta_cos4": -0.33184803084531633,
+        "N_1_W_per_delta_cos4": 0.005370921182008844,
+        "W_per_delta_cos4": 2.0267627101920167e-05,
+        "delta_C": -6.596517669172796e-05,
+        "delta_W": 3.491024812030279e-05,
+        "delta_cos4_first_minus_second": 1.7224635101459596,
+        "se_delta_C": 2.3604588247490704e-06,
+        "se_delta_W": 2.72699719283772e-06,
+        "z_delta_C": -27.94591288782189,
+        "z_delta_W": 12.80171765925989
+      },
+      "N": 265,
+      "batches": 100,
+      "orientations": {
+        "first": {
+          "a": 16,
+          "b": 3,
+          "cos4": 0.7375293698825205,
+          "mean_C": 0.5918716570939849,
+          "mean_W": 0.05161647411278196,
+          "mean_corr_CW": -0.04295340944125847,
+          "mean_var_C": 0.0012881868307724753,
+          "mean_var_W": 0.001757014441759219
+        },
+        "second": {
+          "a": 12,
+          "b": 11,
+          "cos4": -0.984934140263439,
+          "mean_C": 0.5919376222706767,
+          "mean_W": 0.05158156386466166,
+          "mean_corr_CW": -0.03691807103328373,
+          "mean_var_C": 0.0012874831151449102,
+          "mean_var_W": 0.0017534819009017938
+        }
+      },
+      "path": "results/server-20260828/P43-heldout-fullcurve-500m/raw/n265.moments.csv",
+      "samples_per_orientation": 500000000
+    },
+    {
+      "H4_contrast": {
+        "C_per_delta_cos4": -3.709786841649769e-05,
+        "N_13_over_8_C_per_delta_cos4": -0.3721737197127381,
+        "N_1_W_per_delta_cos4": 0.0038083648243175967,
+        "W_per_delta_cos4": 1.3132292497646886e-05,
+        "delta_C": 7.114321305841553e-05,
+        "delta_W": -2.5184020618555167e-05,
+        "delta_cos4_first_minus_second": -1.9177170035671818,
+        "se_delta_C": 4.8260029615384174e-06,
+        "se_delta_W": 6.045655672918452e-06,
+        "z_delta_C": 14.741643058531555,
+        "z_delta_W": -4.165639259173679
+      },
+      "N": 290,
+      "batches": 100,
+      "orientations": {
+        "first": {
+          "a": 13,
+          "b": 11,
+          "cos4": -0.9452080856123662,
+          "mean_C": 0.5919950706185567,
+          "mean_W": 0.049943104673539525,
+          "mean_corr_CW": -0.03603518845586608,
+          "mean_var_C": 0.0012224476915264138,
+          "mean_var_W": 0.0016514855364994118
+        },
+        "second": {
+          "a": 17,
+          "b": 1,
+          "cos4": 0.9725089179548156,
+          "mean_C": 0.5919239274054983,
+          "mean_W": 0.04996828869415808,
+          "mean_corr_CW": -0.04189718386796883,
+          "mean_var_C": 0.0012233103433644049,
+          "mean_var_W": 0.0016548693868715294
+        }
+      },
+      "path": "results/server-20260829/P50-n145-n290-fullcurve/raw/n290_100m.moments.csv",
+      "samples_per_orientation": 100000000
+    },
+    {
+      "H4_contrast": {
+        "C_per_delta_cos4": -2.4389210368042044e-05,
+        "N_13_over_8_C_per_delta_cos4": -0.2944477237285692,
+        "N_1_W_per_delta_cos4": 0.005100715522941397,
+        "W_per_delta_cos4": 1.5694509301358146e-05,
+        "delta_C": 1.8620079754593234e-05,
+        "delta_W": -1.1982061349694872e-05,
+        "delta_cos4_first_minus_second": -0.7634556213017751,
+        "se_delta_C": 1.977678560808033e-06,
+        "se_delta_W": 2.6318604295649393e-06,
+        "z_delta_C": 9.415119384712098,
+        "z_delta_W": -4.552696341756835
+      },
+      "N": 325,
+      "batches": 100,
+      "orientations": {
+        "first": {
+          "a": 17,
+          "b": 6,
+          "cos4": 0.21200473372781065,
+          "mean_C": 0.5920094286196319,
+          "mean_W": 0.04794172358282209,
+          "mean_corr_CW": -0.03794450608287291,
+          "mean_var_C": 0.0011443318485130788,
+          "mean_var_W": 0.0015319473317606763
+        },
+        "second": {
+          "a": 18,
+          "b": 1,
+          "cos4": 0.9754603550295858,
+          "mean_C": 0.5919908085398773,
+          "mean_W": 0.04795370564417178,
+          "mean_corr_CW": -0.04005665774038674,
+          "mean_var_C": 0.0011447583136194417,
+          "mean_var_W": 0.0015333877470246804
+        }
+      },
+      "path": "results/server-20260829/P57-norm5-500m/raw/n325_500m.moments.csv",
+      "samples_per_orientation": 500000000
+    },
+    {
+      "H4_contrast": {
+        "C_per_delta_cos4": -1.8530210751668664e-05,
+        "N_13_over_8_C_per_delta_cos4": -0.24073187527139123,
+        "N_1_W_per_delta_cos4": 0.0001225648623331937,
+        "W_per_delta_cos4": 3.6048488921527566e-07,
+        "delta_C": -2.95457478005845e-05,
+        "delta_W": 5.747800586518997e-07,
+        "delta_cos4_first_minus_second": 1.5944636678200692,
+        "se_delta_C": 1.4935189658766755e-05,
+        "se_delta_W": 1.7140120876074255e-05,
+        "z_delta_C": -1.9782639842970822,
+        "z_delta_W": 0.033534189333182016
+      },
+      "N": 340,
+      "batches": 100,
+      "orientations": {
+        "first": {
+          "a": 18,
+          "b": 4,
+          "cos4": 0.6412456747404844,
+          "mean_C": 0.5920257507331378,
+          "mean_W": 0.04715446920821114,
+          "mean_corr_CW": -0.03848417281751294,
+          "mean_var_C": 0.0011149482037097992,
+          "mean_var_W": 0.0014853968922821272
+        },
+        "second": {
+          "a": 14,
+          "b": 12,
+          "cos4": -0.9532179930795848,
+          "mean_C": 0.5920552964809385,
+          "mean_W": 0.04715389442815249,
+          "mean_corr_CW": -0.03424072190349322,
+          "mean_var_C": 0.0011134863125309253,
+          "mean_var_W": 0.0014850594300611798
+        }
+      },
+      "path": "results/server-20260829/P154-norm4-variance-pilot/raw/n340_10m.moments.csv",
+      "samples_per_orientation": 10000000
+    },
+    {
+      "H4_contrast": {
+        "C_per_delta_cos4": -1.7424863880547376e-05,
+        "N_13_over_8_C_per_delta_cos4": -0.32531299011407877,
+        "N_1_W_per_delta_cos4": 0.004406274168903619,
+        "W_per_delta_cos4": 1.0367703926832045e-05,
+        "delta_C": 1.555865492957609e-05,
+        "delta_W": -9.257319248827528e-06,
+        "delta_cos4_first_minus_second": -0.8928996539792388,
+        "se_delta_C": 1.8264946926155916e-06,
+        "se_delta_W": 2.1768742062527624e-06,
+        "z_delta_C": 8.518313791153512,
+        "z_delta_W": -4.252574274727126
+      },
+      "N": 425,
+      "batches": 100,
+      "orientations": {
+        "first": {
+          "a": 16,
+          "b": 13,
+          "cos4": -0.9161910034602077,
+          "mean_C": 0.5921642265704226,
+          "mean_W": 0.043479959741784036,
+          "mean_corr_CW": -0.03205079232781587,
+          "mean_var_C": 0.000975325075250773,
+          "mean_var_W": 0.0012757509592052998
+        },
+        "second": {
+          "a": 19,
+          "b": 8,
+          "cos4": -0.023291349480968858,
+          "mean_C": 0.5921486679154929,
+          "mean_W": 0.04348921706103286,
+          "mean_corr_CW": -0.03372395750263282,
+          "mean_var_C": 0.0009755263325166519,
+          "mean_var_W": 0.0012765838681526595
+        }
+      },
+      "path": "results/server-20260829/P57-norm5-500m/raw/n425_500m.moments.csv",
+      "samples_per_orientation": 500000000
+    }
+  ],
+  "issues": [
+    28,
+    200,
+    215,
+    269,
+    276
+  ],
+  "research_consequence": {
+    "claim_boundary": "all coordinate identities are exact; cross-lineage scaling fits are exploratory reuse of correlated archives and do not create new evidence blocks.",
+    "next_archive": "future streams should add the rank-one line ell and its Smith index iota at activation, producing the marked state (C,W,ell,iota).",
+    "state_split": "C and W are topology-defined coordinates, not a fitted latent basis: C records clock translation while W records rank-one persistence/shear."
+  },
+  "retrospective_scaling_diagnostics": {
+    "C": {
+      "boundary": "unweighted retrospective cross-lineage diagnostic, not a frozen exponent score",
+      "effective_decay_exponent": 1.7334951524667468,
+      "intercept": -0.5031746136357551,
+      "log_amplitude_slope": -1.7334951524667468,
+      "points": 10,
+      "rms_log_residual": 0.15151353010872534,
+      "signs": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ]
+    },
+    "W": {
+      "boundary": "unweighted retrospective cross-lineage diagnostic, not a frozen exponent score",
+      "effective_decay_exponent": 2.282268072226819,
+      "intercept": 1.421034475654551,
+      "log_amplitude_slope": -2.282268072226819,
+      "points": 10,
+      "rms_log_residual": 1.046134442055994,
+      "signs": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "high_statistics_fixed_power_scores": {
+      "C_N_minus_13_over_8": {
+        "boundary": "retrospective common-amplitude diagnostic across distinct archived lineages",
+        "chi2": 11.026781693260729,
+        "common_scaled_amplitude": -0.3361312308567663,
+        "common_scaled_amplitude_se": 0.005279088673901313,
+        "coordinate": "C",
+        "dof": 7,
+        "fixed_decay_exponent": 1.625,
+        "scaled_amplitudes": [
+          -0.33219853066733374,
+          -0.3445533546993478,
+          -0.3653061835571019,
+          -0.31783757341255137,
+          -0.33184803084531633,
+          -0.3721737197127381,
+          -0.2944477237285692,
+          -0.32531299011407877
+        ],
+        "scaled_standard_errors": [
+          0.013733468760200393,
+          0.01128436821885528,
+          0.015229688906582443,
+          0.011147610559089775,
+          0.011874653448516516,
+          0.02524642051330546,
+          0.03127392353693166,
+          0.03818983405517705
+        ],
+        "sizes": [
+          130,
+          145,
+          170,
+          185,
+          265,
+          290,
+          325,
+          425
+        ]
+      },
+      "W_N_minus_1": {
+        "boundary": "retrospective common-amplitude diagnostic across distinct archived lineages",
+        "chi2": 10.941728394511077,
+        "common_scaled_amplitude": 0.005690332503282381,
+        "common_scaled_amplitude_se": 0.000219509444842102,
+        "coordinate": "W",
+        "dof": 7,
+        "fixed_decay_exponent": 1,
+        "scaled_amplitudes": [
+          0.0060619057629615865,
+          0.006226005766793883,
+          0.006899273136726811,
+          0.005840968639993221,
+          0.005370921182008844,
+          0.0038083648243175967,
+          0.005100715522941397,
+          0.004406274168903619
+        ],
+        "scaled_standard_errors": [
+          0.0006849984390152392,
+          0.0005443808517728672,
+          0.0007045484378054866,
+          0.0004648518386224523,
+          0.0004195469174500881,
+          0.0009142329873934035,
+          0.0011203724430637269,
+          0.0010361427888725956
+        ],
+        "sizes": [
+          130,
+          145,
+          170,
+          185,
+          265,
+          290,
+          325,
+          425
+        ]
+      },
+      "W_N_minus_11_over_8": {
+        "boundary": "retrospective common-amplitude diagnostic across distinct archived lineages",
+        "chi2": 4.453435534466448,
+        "common_scaled_amplitude": 0.04144305091701639,
+        "common_scaled_amplitude_se": 0.0015910386943500036,
+        "coordinate": "W",
+        "dof": 7,
+        "fixed_decay_exponent": 1.375,
+        "scaled_amplitudes": [
+          0.03761299686228515,
+          0.04024598114983745,
+          0.047339283910228826,
+          0.04136892853211568,
+          0.04352772628129268,
+          0.031925506374246015,
+          0.04462593855301463,
+          0.042630199520555315
+        ],
+        "scaled_standard_errors": [
+          0.00425028780466604,
+          0.0035189722463211752,
+          0.004834251067440061,
+          0.003292334486839005,
+          0.0034001473427128495,
+          0.007664011304852871,
+          0.009802089839313547,
+          0.010024563186092912
+        ],
+        "sizes": [
+          130,
+          145,
+          170,
+          185,
+          265,
+          290,
+          325,
+          425
+        ]
+      },
+      "W_N_minus_3_over_2": {
+        "boundary": "retrospective common-amplitude diagnostic across distinct archived lineages",
+        "chi2": 6.434916211197168,
+        "common_scaled_amplitude": 0.07961178030532068,
+        "common_scaled_amplitude_se": 0.0030608457994211044,
+        "coordinate": "W",
+        "dof": 7,
+        "fixed_decay_exponent": 1.5,
+        "scaled_amplitudes": [
+          0.0691163598019564,
+          0.07497103728895481,
+          0.0899555160541989,
+          0.07944576269931636,
+          0.08743226235771376,
+          0.06485411601570777,
+          0.09195445679760163,
+          0.09083766906910146
+        ],
+        "scaled_standard_errors": [
+          0.0078101838639644625,
+          0.00655521351350649,
+          0.009186187740646593,
+          0.006322668573954733,
+          0.006829729000816638,
+          0.01556882677079739,
+          0.02019780145541563,
+          0.021360630808718854
+        ],
+        "sizes": [
+          130,
+          145,
+          170,
+          185,
+          265,
+          290,
+          325,
+          425
+        ]
+      },
+      "W_N_minus_5_over_4": {
+        "boundary": "retrospective common-amplitude diagnostic across distinct archived lineages",
+        "chi2": 4.463477899239004,
+        "common_scaled_amplitude": 0.021479936963282143,
+        "common_scaled_amplitude_se": 0.000824641599115927,
+        "coordinate": "W",
+        "dof": 7,
+        "fixed_decay_exponent": 1.25,
+        "scaled_amplitudes": [
+          0.020468924246242304,
+          0.021604863121611112,
+          0.024912400033178902,
+          0.02154159252485874,
+          0.021670066679362096,
+          0.015715856137876613,
+          0.021657181838622742,
+          0.020006390848491314
+        ],
+        "scaled_standard_errors": [
+          0.002312998866242192,
+          0.001889056038352402,
+          0.0025440350276795466,
+          0.00171438155368146,
+          0.001692746806026256,
+          0.0037727357459642593,
+          0.0047570011731257866,
+          0.004704536489201018
+        ],
+        "sizes": [
+          130,
+          145,
+          170,
+          185,
+          265,
+          290,
+          325,
+          425
+        ]
+      }
+    },
+    "high_statistics_rule": "exclude only the named P154 10M variance-pilot files; retain P43/P49/P50/P57 archives"
+  },
+  "schema": "matching-one.essential-birth-clock.v1"
+}

@@ -1,0 +1,13 @@
+schema: matching-one.analysis-manifest.v1
+issue: 276
+related_issues: [28, 200, 215, 269]
+kind: exact_coordinate_change_plus_retrospective_archive_analysis
+entrypoint: scripts/analyze_essential_birth_clock.py
+output: results/essential-birth-clock/latest.json
+claims:
+  - threshold_rank_moments_exactly_determine_birth_midpoint_and_rank1_lifetime_covariance
+  - birth_midpoint_H4_contrast_is_consistent_with_the_existing_N_minus_13_over_8_transfer
+  - rank1_lifetime_carries_a_distinct_slower_complement_even_H4_response
+  - future_marked_state_should_store_C_W_rank1_line_and_Smith_index
+boundary: retrospective_power_diagnostics_do_not_establish_a_new_asymptotic_exponent
+reproduce: python3 scripts/analyze_essential_birth_clock.py --json results/essential-birth-clock/latest.json
