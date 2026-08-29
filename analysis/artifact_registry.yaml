@@ -184,6 +184,10 @@ evidence_archives:
     path: results/exact-zero-map-pilot
     status: negative_result
     role: bounded_complex_zero_pilot_and_forecasts
+  - id: RANK_GAP_THERMAL_WINDOW
+    path: results/server-20260828/rank-gap-thermal-window
+    status: immutable_result
+    role: retrospective_paired_rank_gap_scaling_and_correction_flow
 
 topic_derivations:
   - path: notes/operator-sector-ledger.md
@@ -205,6 +209,9 @@ topic_derivations:
   - path: notes/topological-threshold-distribution.md
     status: topic_derivation
     role: threshold_CDF_and_rank_distribution_interpretation
+  - path: notes/rank-gap-thermal-window.md
+    status: topic_derivation
+    role: paired_threshold_rank_gap_thermal_window_bridge
   - path: notes/pivotal-russo-finite-volume.md
     status: topic_derivation
     role: exact_finite_matching_slope_pivotal_identity
