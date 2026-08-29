@@ -1,0 +1,106 @@
+version: 1
+frozen_at: 2026-08-29
+status: frozen_before_N145_N290_fullcurve_reveal
+classification: prospective_sensitivity_score_nonadditive_with_P50_primary
+issue: 50
+related_issues: [48, 118, 125, 138, 180, 182]
+
+purpose: >-
+  Turn the post-reveal low-rank Gaussian-semigroup discovery into a genuine
+  held-out test on the unrevealed N=145 -> 290 full-curve block.  This score
+  does not change the already-frozen P50 primary center/slope/root order and
+  must not be counted as an additional independent evidence block.
+
+target_block:
+  parent_N: 145
+  child_N: 290
+  scale_factor_Q: 2
+  raw_data_group: p91_n145_n290_fullcurve_histograms
+  cross_size_rng: independent
+  parent_representations: [[12, 1], [9, 8]]
+  child_representations: [[13, 11], [17, 1]]
+
+source_model:
+  artifact: results/discovery-20260828/matrix-semigroup/discovery.json
+  artifact_sha256: c24c6d219423b9049d859d79509d5078a3f978a7
+  integration_commit: a2ecfa7b5525bdf1d80f7ca6c7ee252c84b1b58d
+  chronology: >-
+    The source model was developed after the N=185/265 reveal.  Its use here
+    is prospective only for the N=145/N=290 threshold-rank full curves, which
+    were not opened when this artifact was frozen.
+
+state_definition:
+  coordinate: intrinsic_center_u_equals_Mbar_p
+  state_order: [I_S, I_Du, T_D, T_Su]
+  formulas:
+    I_S: "N * P4[S]"
+    I_Du: "N * P4[D_prime] / Mbar_prime"
+    T_D: "N^(13/8) * P4[D]"
+    T_Su: "N^(13/8) * P4[S_prime] / Mbar_prime"
+  Mbar_prime: "mean of the two orientation matching slopes at the intrinsic center"
+  observable_semantics:
+    topology_channel: cross
+    probability_coordinate: intrinsic_center
+    orientation_order: first_minus_second
+    angular_normalization: size_local_DeltaCos4
+
+models:
+  analytic_inverse_N:
+    source_fit_key: ordinary_Su
+    law: "T_Su(N) = A + C/N"
+    source_correction_coefficient_C: -36.65872253298257
+    source_variance_C: 5.421026146597595
+    expected_child_minus_parent:
+      I_S: 0.0
+      I_Du: 0.0
+      T_D: 0.0
+      T_Su: 0.12640938804476748
+    source_se_T_Su_increment: 0.008028654202713493
+  rank2_Jordan_log:
+    source_fit_key: jordan_Su
+    law: "T_Su(N) = A + B log(N)"
+    source_log_coefficient_B: 0.3686183380664815
+    source_variance_B: 0.0005108760721161986
+    expected_child_minus_parent:
+      I_S: 0.0
+      I_Du: 0.0
+      T_D: 0.0
+      T_Su: 0.25550676173347436
+    source_se_T_Su_increment: 0.015666906158744935
+
+score_contract:
+  statistic: >-
+    For each model form delta_state = state_290 - state_145 and subtract the
+    frozen expected increment vector.  Because the two production streams are
+    independent, target covariance is Cov(state_145)+Cov(state_290).  Add the
+    frozen source-fit variance only to the T_Su prediction component.
+  jackknife: >-
+    Recompute the intrinsic center, Mbar_prime and all P4 projectors inside
+    every delete-one replicate before forming the state vector.
+  outputs:
+    - four_component_residual
+    - full_residual_covariance
+    - joint_chi_square_df4
+    - marginal_T_Su_signed_z
+    - delta_chi_square_between_the_two_frozen_models
+  no_refit_rules:
+    - do_not_refit_C_or_B_on_N145_or_N290
+    - do_not_change_state_basis_after_target_reveal
+    - do_not_drop_failed_state_components
+    - do_not_count_this_score_separately_from_the_P50_raw_data_block
+
+interpretation:
+  both_models_pass: >-
+    The held-out block supports a compact three-state description but does not
+    resolve the analytic-versus-Jordan thermal companion.  Prefer norm-4
+    dyadic closure before larger arbitrary-N production.
+  analytic_only_passes: >-
+    Favor an ordinary diagonalizable correction block; use norm-4 to test the
+    exact dyadic second-difference identity before promoting an operator name.
+  Jordan_only_passes: >-
+    Favor a generalized-eigenvector/logarithmic transfer block; require a
+    second multiplier or dyadic closure before any LCFT Jordan claim.
+  both_fail: >-
+    Reject this three-state transfer closure as an adequate predictive model.
+    Route the held-out residual direction to quotient/arithmetic, RG-tangent or
+    modulus-shape controls rather than adding a free scalar exponent.
