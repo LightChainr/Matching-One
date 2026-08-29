@@ -1,0 +1,348 @@
+{
+  "batches_per_design": 100,
+  "convention": {
+    "engine_winding": "(u,v)=u*omega1+v*omega2",
+    "map": "(u,v)->{u,-v}, primitive saturated and unoriented",
+    "paper_type": "{a,b}=a*omega1-b*omega2",
+    "target_engine_lines": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        -1
+      ]
+    ]
+  },
+  "exact_oracle": {
+    "N_bonds": 8,
+    "N_vertices": 4,
+    "configurations": 256,
+    "counts": {
+      "invariant_failure": 0,
+      "l0": 57,
+      "l1": 24,
+      "l2": 24,
+      "rank0": 75,
+      "rank1_other": 1,
+      "rank2": 75
+    },
+    "design": "pell_fundamental_N4",
+    "p": "1/2",
+    "passed": true,
+    "period_matrix_rows": [
+      [
+        2,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "rank1_other_lines": [
+      {
+        "count": 1,
+        "engine_winding": [
+          1,
+          -2
+        ]
+      }
+    ]
+  },
+  "interpretation_boundary": [
+    "C, Q, and S are continuum-baseline-subtracted real contrasts.",
+    "Q is a reflection-null convention/control statistic.",
+    "The two nontrivial complex C3 DFT modes are conjugate and counted once through C and Q.",
+    "Two pilot sizes do not support an exponent fit or an H4-versus-H8 claim."
+  ],
+  "issue": 156,
+  "model": "square_bond_percolation",
+  "p": "1/2",
+  "pilot": [
+    {
+      "N_bonds": 60,
+      "N_vertices": 30,
+      "batches": 100,
+      "category_counts": {
+        "invariant_failure": 0,
+        "l0": 23560,
+        "l1": 25500,
+        "l2": 25195,
+        "rank0": 62457,
+        "rank1_other": 736,
+        "rank2": 62552
+      },
+      "continuum_baselines": [
+        0.11072917769038501,
+        0.12721550374993465,
+        0.12721550374993465
+      ],
+      "continuum_baselines_50dps": [
+        "0.11072917769038501312751860913865363519163224173796",
+        "0.1272155037499346429480553869141822763171677841226",
+        "0.1272155037499346429480553869141822763171677841226"
+      ],
+      "contrast_covariance_of_mean": [
+        [
+          9.926309974747477e-07,
+          1.2676009461326946e-08,
+          8.125315656565673e-08
+        ],
+        [
+          1.2676009461326946e-08,
+          1.1903172348484853e-06,
+          -2.888336872255563e-07
+        ],
+        [
+          8.125315656565673e-08,
+          -2.888336872255563e-07,
+          1.1076452020202022e-06
+        ]
+      ],
+      "contrast_order": [
+        "C_nontrivial_real",
+        "Q_reflection_null",
+        "S_scalar"
+      ],
+      "contrasts": {
+        "C_nontrivial_real": {
+          "standard_error": 0.0009963086858372498,
+          "value": 0.007548826059549638,
+          "z": 7.576794387982242
+        },
+        "Q_reflection_null": {
+          "standard_error": 0.0010910166061286533,
+          "value": -0.0013206887407712677,
+          "z": -1.2105120429445886
+        },
+        "S_scalar": {
+          "standard_error": 0.0010524472442931295,
+          "value": 0.006114814809745697,
+          "z": 5.8100915204093475
+        }
+      },
+      "design": "pell_Dminus2_N30",
+      "engine_windings": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          -1
+        ]
+      ],
+      "p": 0.5,
+      "paper_types": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "period_matrix_rows": [
+        [
+          6,
+          3
+        ],
+        [
+          0,
+          5
+        ]
+      ],
+      "probabilities": [
+        0.1178,
+        0.1275,
+        0.125975
+      ],
+      "probability_covariance_of_mean": [
+        [
+          6.003535353535356e-07,
+          -3.777777777777771e-08,
+          -1.391919191919193e-07
+        ],
+        [
+          -3.777777777777771e-08,
+          7.281313131313132e-07,
+          -1.814646464646466e-07
+        ],
+        [
+          -1.391919191919193e-07,
+          -1.814646464646466e-07,
+          4.960290404040406e-07
+        ]
+      ],
+      "residuals": [
+        0.007070822309614991,
+        0.0002844962500653525,
+        -0.001240503749934646
+      ],
+      "samples": 200000,
+      "target_sector_order": [
+        "l0",
+        "l1",
+        "l2"
+      ],
+      "tau_imag": 0.8333333333333334,
+      "tau_real": 0.5
+    },
+    {
+      "N_bonds": 112,
+      "N_vertices": 56,
+      "batches": 100,
+      "category_counts": {
+        "invariant_failure": 0,
+        "l0": 25666,
+        "l1": 24070,
+        "l2": 23928,
+        "rank0": 63101,
+        "rank1_other": 669,
+        "rank2": 62566
+      },
+      "continuum_baselines": [
+        0.12470059657156361,
+        0.12015211579226502,
+        0.12015211579226502
+      ],
+      "continuum_baselines_50dps": [
+        "0.12470059657156361356306944379819518283006971050975",
+        "0.12015211579226502308743616256051247672799257647673",
+        "0.12015211579226502308743616256051247672799257647673"
+      ],
+      "contrast_covariance_of_mean": [
+        [
+          9.432856060606063e-07,
+          1.7915659978178425e-07,
+          1.6534393939393948e-07
+        ],
+        [
+          1.7915659978178425e-07,
+          1.0851204545454548e-06,
+          1.2447759281041837e-07
+        ],
+        [
+          1.6534393939393948e-07,
+          1.2447759281041837e-07,
+          1.134218181818182e-06
+        ]
+      ],
+      "contrast_order": [
+        "C_nontrivial_real",
+        "Q_reflection_null",
+        "S_scalar"
+      ],
+      "contrasts": {
+        "C_nontrivial_real": {
+          "standard_error": 0.0009712289153750552,
+          "value": 0.0037865192207014106,
+          "z": 3.898688723903146
+        },
+        "Q_reflection_null": {
+          "standard_error": 0.0010416911512273947,
+          "value": -0.0006148780366869534,
+          "z": -0.590269040840426
+        },
+        "S_scalar": {
+          "standard_error": 0.0010649967989708616,
+          "value": 0.0033151718439063393,
+          "z": 3.1128467682812655
+        }
+      },
+      "design": "pell_Dplus1_N56",
+      "engine_windings": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          -1
+        ]
+      ],
+      "p": 0.5,
+      "paper_types": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "period_matrix_rows": [
+        [
+          8,
+          4
+        ],
+        [
+          0,
+          7
+        ]
+      ],
+      "probabilities": [
+        0.12833,
+        0.12035,
+        0.11964
+      ],
+      "probability_covariance_of_mean": [
+        [
+          6.18748484848485e-07,
+          -1.581363636363637e-07,
+          2.768989898989901e-08
+        ],
+        [
+          -1.581363636363637e-07,
+          5.768434343434345e-07,
+          -1.676161616161617e-07
+        ],
+        [
+          2.768989898989901e-08,
+          -1.676161616161617e-07,
+          5.347515151515152e-07
+        ]
+      ],
+      "residuals": [
+        0.003629403428436387,
+        0.0001978842077349774,
+        -0.0005121157922650249
+      ],
+      "samples": 200000,
+      "target_sector_order": [
+        "l0",
+        "l1",
+        "l2"
+      ],
+      "tau_imag": 0.875,
+      "tau_real": 0.5
+    }
+  ],
+  "samples_per_design": 200000,
+  "schema": "p156-square-bond-primitive-pilot-v1",
+  "seed": 20260829
+}
