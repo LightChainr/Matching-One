@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "effective_for": "new production manifests after 2026-08-29",
+  "default": {
+    "within_same_N_orientation_pair": "shared_common_field",
+    "across_distinct_N": "domain_separate_by_experiment_tag_N_and_base_seed",
+    "derivation": "scripts/rng_domain_policy.py"
+  },
+  "intentional_cross_size_coupling": {
+    "allowed_only_when": [
+      "a named residual is frozen before production",
+      "a pilot motivates coupling for that exact residual",
+      "batches are aligned",
+      "full cross-size covariance is retained"
+    ],
+    "metadata_fields": ["mode", "coupled_residual", "seed", "counter_interval", "batch_count"]
+  },
+  "historical_boundary": "Existing streams are preserved and analyzed with their measured covariance; seeds are never rewritten retroactively.",
+  "clean_replay_completion_evidence": {
+    "campaign": "results/server-20260828/P45-root-amplitude",
+    "source_commit": "6d2d68a62b433e337b97eadaf1870cb58e2f7666",
+    "source_sha256": "251d1e7a74cb778ad38a11c6d5b79e86dc79701c0fff077af7f7bbf5109deefa",
+    "binary_sha256": "1f918e8cd51f3ff8a5ec88eee6aac3a358d70da98086d18803bc583064901cbf",
+    "thread_replay": "1-thread and 4-thread histogram/moment outputs byte-identical",
+    "mode": "intentional_cross_size_coupling_with_aligned_full_covariance"
+  }
+}
