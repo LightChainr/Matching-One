@@ -77,8 +77,15 @@
       "id": "p37_two_lineage_fixed_coordinate",
       "raw_data_group": "p37_two_lineage_fixed_coordinate",
       "role": "primary",
-      "scores": {},
-      "status": "PENDING_ARTIFACT_EXTRACTION"
+      "scores": {
+        "H4_x21_over_4": {
+          "chi_square": 0.03445322174120495,
+          "dimension": 2,
+          "log_determinant": -36.82012719273711,
+          "nlpd": -16.55495991908861
+        }
+      },
+      "status": "SCORED"
     },
     {
       "channel": {
@@ -89,8 +96,21 @@
       "id": "p50_third_fixed_coordinate",
       "raw_data_group": "p50_third_fixed_coordinate",
       "role": "primary",
-      "scores": {},
-      "status": "PENDING_ARTIFACT_EXTRACTION"
+      "scores": {
+        "H4_x21_over_4": {
+          "chi_square": 0.23302834173694265,
+          "dimension": 1,
+          "log_determinant": -19.904168093533332,
+          "nlpd": -8.916631342693522
+        },
+        "zero_effect": {
+          "chi_square": 15.70176313687156,
+          "dimension": 1,
+          "log_determinant": -20.22636285156869,
+          "nlpd": -1.3433613241438933
+        }
+      },
+      "status": "SCORED"
     },
     {
       "channel": {
@@ -101,8 +121,21 @@
       "id": "p45_angular_normalized_root",
       "raw_data_group": "p45_angular_normalized_root",
       "role": "primary",
-      "scores": {},
-      "status": "PENDING_ARTIFACT_EXTRACTION"
+      "scores": {
+        "H4_x21_over_4": {
+          "chi_square": 2.4266687318922746,
+          "dimension": 2,
+          "log_determinant": -13.937714860664713,
+          "nlpd": -3.917645997976874
+        },
+        "zero_effect": {
+          "chi_square": 461.2750346841349,
+          "dimension": 2,
+          "log_determinant": -14.677203414339605,
+          "nlpd": 225.13679270130697
+        }
+      },
+      "status": "SCORED"
     },
     {
       "channel": {
@@ -112,6 +145,30 @@
       },
       "id": "issue57_norm5",
       "raw_data_group": "issue57_norm5_production",
+      "role": "primary",
+      "scores": {},
+      "status": "PENDING_REVEAL"
+    },
+    {
+      "channel": {
+        "exact_map": null,
+        "source": "matching_full_curve",
+        "target": "matching_full_curve"
+      },
+      "id": "p49_clean_full_curve",
+      "raw_data_group": "p49_fullcurve_doubling_histograms",
+      "role": "primary",
+      "scores": {},
+      "status": "PENDING_ARTIFACT_EXTRACTION"
+    },
+    {
+      "channel": {
+        "exact_map": null,
+        "source": "matching_full_curve",
+        "target": "matching_full_curve"
+      },
+      "id": "p91_n145_to_n290_full_curve",
+      "raw_data_group": "p91_n145_n290_fullcurve_histograms",
       "role": "primary",
       "scores": {},
       "status": "PENDING_REVEAL"
@@ -128,10 +185,16 @@
     },
     "H4_x21_over_4": {
       "additive": [
-        "issue43_n185_n265_deltaM"
+        "issue43_n185_n265_deltaM",
+        "p37_two_lineage_fixed_coordinate",
+        "p50_third_fixed_coordinate",
+        "p45_angular_normalized_root"
       ],
       "predicted": [
-        "issue43_n185_n265_deltaM"
+        "issue43_n185_n265_deltaM",
+        "p37_two_lineage_fixed_coordinate",
+        "p50_third_fixed_coordinate",
+        "p45_angular_normalized_root"
       ]
     },
     "analytic_inverse_N": {
@@ -148,10 +211,14 @@
     },
     "zero_effect": {
       "additive": [
-        "issue43_n185_n265_deltaM"
+        "issue43_n185_n265_deltaM",
+        "p50_third_fixed_coordinate",
+        "p45_angular_normalized_root"
       ],
       "predicted": [
-        "issue43_n185_n265_deltaM"
+        "issue43_n185_n265_deltaM",
+        "p50_third_fixed_coordinate",
+        "p45_angular_normalized_root"
       ]
     }
   },
@@ -166,19 +233,24 @@
     },
     "H4_x21_over_4": {
       "blocks": [
-        "issue43_n185_n265_deltaM"
+        "issue43_n185_n265_deltaM",
+        "p37_two_lineage_fixed_coordinate",
+        "p50_third_fixed_coordinate",
+        "p45_angular_normalized_root"
       ],
-      "chi_square": 3.0459757732860746,
-      "dimensions": 2,
-      "nlpd": -17.14152348928989
+      "chi_square": 5.740126068656497,
+      "dimensions": 7,
+      "nlpd": -46.530760749048895
     },
     "zero_effect": {
       "blocks": [
-        "issue43_n185_n265_deltaM"
+        "issue43_n185_n265_deltaM",
+        "p50_third_fixed_coordinate",
+        "p45_angular_normalized_root"
       ],
-      "chi_square": 29.409384312149555,
-      "dimensions": 2,
-      "nlpd": -4.009082849157134
+      "chi_square": 506.386182133156,
+      "dimensions": 5,
+      "nlpd": 219.78434852800595
     }
   },
   "governance": {
@@ -209,9 +281,11 @@
       "right": "zero_effect"
     },
     {
-      "delta_nlpd_left_minus_right": -13.132440640132756,
+      "delta_nlpd_left_minus_right": -249.76014935796624,
       "intersection": [
-        "issue43_n185_n265_deltaM"
+        "issue43_n185_n265_deltaM",
+        "p45_angular_normalized_root",
+        "p50_third_fixed_coordinate"
       ],
       "left": "H4_x21_over_4",
       "preferred": "H4_x21_over_4",
