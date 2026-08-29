@@ -351,6 +351,9 @@ def build_report(parent_run: Run, child_run: Run, prediction: dict[str, Any]) ->
     residual_covariance = add_matrix(
         jackknife_covariance(parent_delete), jackknife_covariance(child_delete))
     chi_square = quadratic_2(point["child_residual"], residual_covariance)
+    survival_p = mp.exp(-chi_square/2)
+    decision_alpha = mp.mpf(str(prediction["score_contract"]["decision_alpha"]))
+    decision = "survives" if survival_p >= decision_alpha else "rejected"
     base_covariance = block_covariance(parent_run, child_run, parent, child)
     transfer = child["P4_shell_D"]/parent["P4_shell_D"]
     return {
@@ -374,7 +377,9 @@ def build_report(parent_run: Run, child_run: Run, prediction: dict[str, Any]) ->
             "child_residual": [_text(v) for v in point["child_residual"]],
             "child_residual_covariance_2x2": [[_text(v) for v in row] for row in residual_covariance],
             "chi_square": _text(chi_square), "dof": 2,
-            "survival_p": _text(mp.exp(-chi_square/2)),
+            "survival_p": _text(survival_p),
+            "decision_alpha": _text(decision_alpha),
+            "decision": decision,
         },
         "full_sufficient_statistics": {
             "coordinate_order": parent["coordinate_order"]+child["coordinate_order"],
@@ -422,6 +427,7 @@ def render_markdown(report: dict[str, Any]) -> str:
         f"- N65-trained thermal beta: `{fit['thermal_beta']}`",
         f"- N130 residual: `{fit['child_residual']}`",
         f"- chi-square: `{fit['chi_square']}/2`, survival p `{fit['survival_p']}`",
+        f"- preregistered decision at alpha `{fit['decision_alpha']}`: **{fit['decision']}**",
         "", "## Boundary", "",
         *[f"- {line}" for line in report["claim_boundary"]], "",
     ])
