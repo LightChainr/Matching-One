@@ -228,8 +228,9 @@ def score(run: dict, manifest: dict, *, cutoff: int = 9, dps: int = 60) -> dict:
 
 
 def render(report: dict) -> str:
+    lifecycle = "independent production" if report["status"] == "frozen_independent_production_reveal" else "pilot"
     lines = [
-        "# Three-rho-child non-A_top complex C3 pilot", "",
+        f"# Three-rho-child non-A_top complex C3 {lifecycle}", "",
         f"Observer: `{report['observer']}`.", "",
         "## Frozen scores", "",
         "| model | chi-square/df | p |", "|---|---:|---:|",

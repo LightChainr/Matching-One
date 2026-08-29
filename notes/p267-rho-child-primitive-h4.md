@@ -37,3 +37,18 @@ character; it does not refute a continuum field family.
 3. **Geometry:** all three degree-two children of one N56 rho Pell parent, one physical complex frame.
 4. **Dependency:** one common 224-bit field and a full 6x6 covariance; no coordinate is counted as a separate vote.
 5. **Decision:** compare null, three pure modular supports and frozen two-support mixtures; never reopen H4/H8/H12 ordinary-channel voting.
+
+## Independent production outcome
+
+The preregistered three-machine run used 2,000,000 samples per child with
+independent seeds and disjoint counter intervals.  The primary clean E4/r1
+row is decisively rejected (`chi2=235.2105/4`, `p=9.97e-50`); E6/r0 and
+E4-squared/r2 are also decisively rejected.  The secondary E4+E6 subspace is
+the unique near-fit but narrowly fails the frozen `.05` criterion
+(`chi2=6.0645/2`, `p=.04821`).
+
+The more informative mechanism statement is character support: the ideal C3
+r0 and r1 rows are independently resolved, while r2 is not.  Thus the named
+topology-typed observable is genuinely multi-character at N112.  This closes
+the proposed clean-row interpretation without reopening ordinary angular
+H4/H8/H12 selection.
