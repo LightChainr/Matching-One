@@ -1,0 +1,234 @@
+{
+  "schema": "matching-one/rho-child-primitive-h4-mc/v1",
+  "status": "production_under_frozen_manifest",
+  "production_id": "P267-rho-C3-primitive-H4-N60-opposite-Pell-2M-v1",
+  "observable": "delta primitive-homology automorphic H4; baseline scored separately",
+  "not_A_top": true,
+  "p": "1/2 square-bond",
+  "samples": 2000000,
+  "batches": 100,
+  "workers": 8,
+  "seed": 2672266002,
+  "replica_offset": 18002000000,
+  "replica_last_exclusive": 18004000000,
+  "selected_child": "omega_over_2",
+  "selected_family": "N60_Dminus2",
+  "child_gate": {
+    "family": "N60_Dminus2",
+    "parent_id": "pell_Dminus2_N30",
+    "parent_matrix_rows": [
+      [
+        6,
+        3
+      ],
+      [
+        0,
+        5
+      ]
+    ],
+    "parent_N": 30,
+    "child_order": [
+      "2omega",
+      "omega_over_2",
+      "omega_plus_1_over_2"
+    ],
+    "children": [
+      {
+        "id": "2omega",
+        "embedding_in_parent_basis": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "period_matrix_rows": [
+          [
+            6,
+            6
+          ],
+          [
+            0,
+            10
+          ]
+        ],
+        "N": 60,
+        "bonds": 120
+      },
+      {
+        "id": "omega_over_2",
+        "embedding_in_parent_basis": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "period_matrix_rows": [
+          [
+            12,
+            3
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "N": 60,
+        "bonds": 120
+      },
+      {
+        "id": "omega_plus_1_over_2",
+        "embedding_in_parent_basis": [
+          [
+            2,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "period_matrix_rows": [
+          [
+            12,
+            9
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "N": 60,
+        "bonds": 120
+      }
+    ],
+    "common_field": "same counter-derived 120-bit vector in deterministic primal-edge order",
+    "direction_alias_gate": {
+      "source_commit": "83e98fc",
+      "decision": "full primitive-line sum contains at least two C4 orbits with unequal spin4 phases",
+      "children": [
+        {
+          "child": "2omega",
+          "primitive_lines": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "exact_exp_minus_4itheta": [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "-161/289",
+              "240/289"
+            ]
+          ],
+          "two_orbit_character_determinant": [
+            "-450/289",
+            "240/289"
+          ],
+          "rank": 2
+        },
+        {
+          "child": "omega_over_2",
+          "primitive_lines": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "exact_exp_minus_4itheta": [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "-161/289",
+              "240/289"
+            ]
+          ],
+          "two_orbit_character_determinant": [
+            "-450/289",
+            "240/289"
+          ],
+          "rank": 2
+        },
+        {
+          "child": "omega_plus_1_over_2",
+          "primitive_lines": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "exact_exp_minus_4itheta": [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "-1241/2809",
+              "-2520/2809"
+            ]
+          ],
+          "two_orbit_character_determinant": [
+            "-4050/2809",
+            "-2520/2809"
+          ],
+          "rank": 2
+        }
+      ],
+      "all_rank_two": true
+    },
+    "passed": true
+  },
+  "summary": {
+    "primary_order": [
+      "omega_over_2_re",
+      "omega_over_2_im"
+    ],
+    "lattice_H4_point_re_im": [
+      -0.2508211162172503,
+      -0.37724707978129357
+    ],
+    "full_common_field_covariance_6x6": [
+      [
+        5.051988520406364e-08,
+        5.479368221269154e-08
+      ],
+      [
+        5.479368221269154e-08,
+        9.161907988354662e-08
+      ]
+    ],
+    "category_totals": {
+      "omega_over_2_rank0": 507951,
+      "omega_over_2_rank1": 984599,
+      "omega_over_2_rank2": 507450,
+      "omega_over_2_invalid": 0
+    },
+    "all_invariant_failures_zero": true
+  },
+  "manifest_runner_commit": "0a25a46ab34a662e6561c4b2cc9a3d0c21bffbd1"
+}

@@ -40,3 +40,27 @@ The production manifest was authorized only after implementation commit
 `0a25a46ab34a662e6561c4b2cc9a3d0c21bffbd1` recorded the runner, scorer,
 tests and frozen CLI/counter fields.  This authorization changes no model or
 acquisition parameter.
+
+## Frozen reveal
+
+The six-million-sample Huawei acquisition gives
+
+```text
+c112 = -5.725761e-5 + 2.394937e-6 i
+c60  = -3.602105e-5 + 9.831777e-6 i
+c60/c112 = 0.635176 - 0.145144 i
+```
+
+The raw phase difference is `-0.22465` radians.  The phase-preserving ray
+has an interior positive scale `.79676` and survives (`chi2=.95841/1`,
+`p=.32759`).  The signed-Pell flipping ray has `p=.03323`, above the frozen
+`.01` rejection threshold, but its best scale is the lower numerical boundary
+`1e-6`; it survives only by collapsing to the unresolved N60-zero model
+(`p=.10363`).
+
+Therefore the preregistered decision is `phase_unresolved_both_survive`.
+E4-squared phase preservation remains viable and is the only model with an
+interior nonzero amplitude.  A sign-flipped or Jordan/incoherent completion
+is not selected, but cannot be excluded at the frozen threshold because the
+N60 annihilator coefficient itself is not resolved.  This is an informative
+power boundary, not permission to rescore at `.05`.

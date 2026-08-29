@@ -211,8 +211,8 @@ def render(result):
         f"Decision: **{result['decision']}** at alpha `{result['decision_alpha']}`.", "",
         f"- c112: `{result['c112_re_im']}`", f"- c60: `{result['c60_re_im']}`",
         f"- raw c60/c112: `{result['raw_complex_ratio_re_im']}`; phase `{result['raw_phase_difference_rad']}` rad", "",
-        f"- phase-preserving E4-squared ray: `{result['phase_preserving_ray']['chi_square']}/1`, p `{result['phase_preserving_ray']['survival_p']}`",
-        f"- signed-Pell flipping ray: `{result['phase_flipping_ray']['chi_square']}/1`, p `{result['phase_flipping_ray']['survival_p']}`",
+        f"- phase-preserving E4-squared ray: scale `{result['phase_preserving_ray']['best_positive_scale']}`, `{result['phase_preserving_ray']['chi_square']}/1`, p `{result['phase_preserving_ray']['survival_p']}`",
+        f"- signed-Pell flipping ray: scale `{result['phase_flipping_ray']['best_positive_scale']}`, `{result['phase_flipping_ray']['chi_square']}/1`, p `{result['phase_flipping_ray']['survival_p']}`",
         f"- N60 coefficient zero: `{result['N60_zero']['chi_square']}/2`, p `{result['N60_zero']['survival_p']}`", "",
         result["claim_boundary"], "",
     ])
