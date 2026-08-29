@@ -37,6 +37,30 @@ CHILD_DESIGNS: tuple[tuple[str, Matrix], ...] = tuple(
     (name, matrix_product(PARENT_MATRIX, embedding))
     for name, embedding in CHILD_EMBEDDINGS
 )
+N60_PARENT_ID = "pell_Dminus2_N30"
+N60_PARENT_MATRIX: Matrix = ((6, 3), (0, 5))
+N60_CHILD_DESIGNS: tuple[tuple[str, Matrix], ...] = tuple(
+    (name, matrix_product(N60_PARENT_MATRIX, embedding))
+    for name, embedding in CHILD_EMBEDDINGS
+)
+FAMILIES = {
+    "N112_Dplus1": {
+        "parent_id": PARENT_ID,
+        "parent_matrix": PARENT_MATRIX,
+        "child_designs": CHILD_DESIGNS,
+        "parent_n": 56,
+        "child_n": 112,
+        "bonds": 224,
+    },
+    "N60_Dminus2": {
+        "parent_id": N60_PARENT_ID,
+        "parent_matrix": N60_PARENT_MATRIX,
+        "child_designs": N60_CHILD_DESIGNS,
+        "parent_n": 30,
+        "child_n": 60,
+        "bonds": 120,
+    },
+}
 PRIMARY_ORDER = tuple(
     coordinate
     for name, _ in CHILD_DESIGNS
@@ -44,6 +68,7 @@ PRIMARY_ORDER = tuple(
 )
 PRODUCTION_ID = "P267-rho-C3-primitive-H4-N112-v1"
 INDEPENDENT_PRODUCTION_ID = "P267-rho-C3-primitive-H4-N112-independent-2M-v2"
+OPPOSITE_PELL_PRODUCTION_ID = "P267-rho-C3-primitive-H4-N60-opposite-Pell-2M-v1"
 SMOKE_CAP = 5_000
 
 
@@ -73,33 +98,37 @@ def physical_phase(matrix: Matrix, line: tuple[int, int], spin: int = 4) -> comp
     return (value / abs(value)) ** spin
 
 
-def selected_designs(child: str) -> tuple[tuple[str, Matrix], ...]:
+def selected_designs(child: str, family: str = "N112_Dplus1") -> tuple[tuple[str, Matrix], ...]:
+    designs = FAMILIES[family]["child_designs"]
     if child == "all":
-        return CHILD_DESIGNS
-    selected = tuple(row for row in CHILD_DESIGNS if row[0] == child)
+        return designs
+    selected = tuple(row for row in designs if row[0] == child)
     if not selected:
         raise ValueError(f"unknown child: {child}")
     return selected
 
 
-def primary_order(child: str) -> tuple[str, ...]:
+def primary_order(child: str, family: str = "N112_Dplus1") -> tuple[str, ...]:
     return tuple(
         coordinate
-        for name, _ in selected_designs(child)
+        for name, _ in selected_designs(child, family)
         for coordinate in (f"{name}_re", f"{name}_im")
     )
 
 
-def child_gate() -> dict[str, object]:
-    parent_n = abs(determinant(PARENT_MATRIX))
-    geometries = [integer_torus_geometry(matrix) for _, matrix in CHILD_DESIGNS]
+def child_gate(family: str = "N112_Dplus1") -> dict[str, object]:
+    config = FAMILIES[family]
+    parent_matrix = config["parent_matrix"]
+    child_designs = config["child_designs"]
+    parent_n = abs(determinant(parent_matrix))
+    geometries = [integer_torus_geometry(matrix) for _, matrix in child_designs]
     edge_counts = [len(geometry.primal_edges) for geometry in geometries]
-    if parent_n != 56 or any(geometry.n != 112 for geometry in geometries):
+    if parent_n != config["parent_n"] or any(geometry.n != config["child_n"] for geometry in geometries):
         raise AssertionError("frozen parent/child determinants changed")
-    if len(set(edge_counts)) != 1 or edge_counts[0] != 224:
-        raise AssertionError("three-child common bond field is not 224 bits")
+    if len(set(edge_counts)) != 1 or edge_counts[0] != config["bonds"]:
+        raise AssertionError("three-child common bond-field length changed")
     alias_gates = []
-    for name, matrix in CHILD_DESIGNS:
+    for name, matrix in child_designs:
         first = exact_spin4_phase(matrix_vector(matrix, (1, 0)))
         second = exact_spin4_phase(matrix_vector(matrix, (0, 1)))
         difference = (second[0] - first[0], second[1] - first[1])
@@ -115,10 +144,11 @@ def child_gate() -> dict[str, object]:
             "rank": 2,
         })
     return {
-        "parent_id": PARENT_ID,
-        "parent_matrix_rows": [list(row) for row in PARENT_MATRIX],
+        "family": family,
+        "parent_id": config["parent_id"],
+        "parent_matrix_rows": [list(row) for row in parent_matrix],
         "parent_N": parent_n,
-        "child_order": [name for name, _ in CHILD_DESIGNS],
+        "child_order": [name for name, _ in child_designs],
         "children": [
             {
                 "id": name,
@@ -128,10 +158,10 @@ def child_gate() -> dict[str, object]:
                 "bonds": edge_count,
             }
             for (name, embedding), (_, matrix), edge_count in zip(
-                CHILD_EMBEDDINGS, CHILD_DESIGNS, edge_counts
+                CHILD_EMBEDDINGS, child_designs, edge_counts
             )
         ],
-        "common_field": "same counter-derived 224-bit vector in deterministic primal-edge order",
+        "common_field": f"same counter-derived {config['bonds']}-bit vector in deterministic primal-edge order",
         "direction_alias_gate": {
             "source_commit": "83e98fc",
             "decision": "full primitive-line sum contains at least two C4 orbits with unequal spin4 phases",
@@ -175,12 +205,12 @@ def tiny_oracle() -> dict[str, object]:
     }
 
 
-def _run_batch(task: tuple[int, int, int, int, str]) -> dict[str, object]:
-    batch, start, samples, seed, child = task
-    designs = selected_designs(child)
+def _run_batch(task: tuple[int, int, int, int, str, str]) -> dict[str, object]:
+    batch, start, samples, seed, child, family = task
+    designs = selected_designs(child, family)
     geometries = [integer_torus_geometry(matrix) for _, matrix in designs]
     edge_count = len(geometries[0].primal_edges)
-    order = primary_order(child)
+    order = primary_order(child, family)
     sums = {name: 0.0 for name in order}
     counts = {
         f"{name}_{category}": 0
@@ -225,8 +255,8 @@ def covariance_of_mean(rows: Sequence[Sequence[float]]) -> list[list[float]]:
     ]
 
 
-def summarize(batches: Sequence[dict[str, object]], child: str) -> dict[str, object]:
-    order = primary_order(child)
+def summarize(batches: Sequence[dict[str, object]], child: str, family: str = "N112_Dplus1") -> dict[str, object]:
+    order = primary_order(child, family)
     rows = [
         [float(batch[name]) / int(batch["samples"]) for name in order]
         for batch in batches
@@ -257,12 +287,13 @@ def run(
     *,
     child: str = "all",
     replica_offset: int = 0,
+    family: str = "N112_Dplus1",
 ) -> tuple[list[dict], dict]:
     if samples <= 0 or batches < 2 or samples % batches:
         raise ValueError("samples must be divisible by batches>=2")
     per_batch = samples // batches
     tasks = [
-        (batch, replica_offset + batch * per_batch, per_batch, seed, child)
+        (batch, replica_offset + batch * per_batch, per_batch, seed, child, family)
         for batch in range(batches)
     ]
     if workers == 1:
@@ -270,7 +301,7 @@ def run(
     else:
         with ProcessPoolExecutor(max_workers=workers) as pool:
             output = list(pool.map(_run_batch, tasks))
-    return output, summarize(output, child)
+    return output, summarize(output, child, family)
 
 
 def write_batches(path: Path, rows: Sequence[dict]) -> None:
@@ -289,13 +320,14 @@ def main() -> int:
     parser.add_argument("--seed", type=int, default=267156112)
     parser.add_argument("--replica-offset", type=int, default=0)
     parser.add_argument("--child", choices=("all",) + tuple(name for name, _ in CHILD_DESIGNS), default="all")
+    parser.add_argument("--family", choices=tuple(FAMILIES), default="N112_Dplus1")
     parser.add_argument("--manifest", type=Path)
     parser.add_argument("--output", type=Path)
     parser.add_argument("--batches-output", type=Path)
     parser.add_argument("--self-test", action="store_true")
     args = parser.parse_args()
     if args.self_test:
-        print(json.dumps({"child_gate": child_gate(), "tiny_oracle": tiny_oracle()}, indent=2))
+        print(json.dumps({"child_gate": child_gate(args.family), "tiny_oracle": tiny_oracle()}, indent=2))
         return 0
     if args.output is None or args.batches_output is None:
         raise SystemExit("--output and --batches-output are required")
@@ -315,7 +347,11 @@ def main() -> int:
                 "seed": args.seed,
                 "replica_offset": args.replica_offset,
             }
-            production_id_ok = manifest.get("production_id") == INDEPENDENT_PRODUCTION_ID
+            if "family" in expected:
+                actual["family"] = args.family
+            production_id_ok = manifest.get("production_id") in (
+                INDEPENDENT_PRODUCTION_ID, OPPOSITE_PELL_PRODUCTION_ID
+            )
         else:
             expected = manifest["acquisition"]
             actual = {
@@ -335,6 +371,7 @@ def main() -> int:
         args.seed,
         child=args.child,
         replica_offset=args.replica_offset,
+        family=args.family,
     )
     payload = {
         "schema": "matching-one/rho-child-primitive-h4-mc/v1",
@@ -350,7 +387,8 @@ def main() -> int:
         "replica_offset": args.replica_offset,
         "replica_last_exclusive": args.replica_offset + args.samples,
         "selected_child": args.child,
-        "child_gate": child_gate(),
+        "selected_family": args.family,
+        "child_gate": child_gate(args.family),
         "summary": summary,
         "manifest_runner_commit": manifest.get("runner_commit") if manifest else None,
     }

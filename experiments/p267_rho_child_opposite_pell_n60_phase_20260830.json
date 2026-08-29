@@ -1,0 +1,52 @@
+{
+  "schema": "matching-one/rho-child-opposite-pell-phase-production/v1",
+  "production_id": "P267-rho-C3-primitive-H4-N60-opposite-Pell-2M-v1",
+  "status": "frozen_prereveal_unauthorized",
+  "production_authorized": false,
+  "runner_commit": "PENDING_IMPLEMENTATION_COMMIT",
+  "issues": [156, 226, 250, 275],
+  "reference_result_commit": "d9319173770a308630012834cc236b7e2d7afeeb",
+  "reference_score": "results/server-20260830/P267-rho-C3-primitive-H4-independent/score.json",
+  "reference_score_sha256": "94a3d0a8fc2a489fac9957c11b6c0b8b3c4415aab29afcbba27e8ac6edb083b2",
+  "question": "Does the coherent r2-shaped remainder preserve the E4-squared completion phase across the opposite Pell side?",
+  "observer": "delta_H4_primitive = E[1_rank1 (P ell/|P ell|)^4] - H4_Pinson_Arguin(tau)",
+  "parent": {"id": "pell_Dminus2_N30", "period_matrix_rows": [[6, 3], [0, 5]], "N": 30},
+  "child_order": ["2omega", "omega_over_2", "omega_plus_1_over_2"],
+  "children": {
+    "2omega": {"period_matrix_rows": [[6, 6], [0, 10]], "N": 60, "bonds": 120},
+    "omega_over_2": {"period_matrix_rows": [[12, 3], [0, 5]], "N": 60, "bonds": 120},
+    "omega_plus_1_over_2": {"period_matrix_rows": [[12, 9], [0, 5]], "N": 60, "bonds": 120}
+  },
+  "annihilator": "complex w is the exact cross product of the actual-modulus E4 and E6 child vectors; w dot E4 = w dot E6 = 0",
+  "coefficient": "c_N = (w_N dot delta_H4_N)/(w_N dot E4_N_squared)",
+  "primary": "positive-real ray c60 = a*c112 with a>0, profiling the latent complex c112 and a; one residual degree of freedom",
+  "opponent": "negative-real ray c60 = -a*c112 with a>0; otherwise phase incoherent",
+  "normalization": "a is a positive nuisance scale; no amplitude, exponent or phase is imported from a pilot",
+  "ray_optimizer": {"log_scale_min": -13.815510557964274, "log_scale_max": 13.815510557964274, "grid_intervals": 240, "golden_iterations": 100},
+  "decision_alpha": 0.01,
+  "decision_rule": {
+    "preserved": "positive ray survives and negative ray rejects",
+    "flipped": "negative ray survives and positive ray rejects",
+    "incoherent": "both rays reject",
+    "unresolved": "both rays survive"
+  },
+  "covariance": "complete real/imag 2x2 covariance per child; disjoint machines/seeds/counters give block-diagonal N60 6x6 and independence from N112",
+  "runs": {
+    "2omega": {"family": "N60_Dminus2", "child": "2omega", "samples": 2000000, "batches": 100, "workers": 8, "seed": 2672266001, "replica_offset": 18000000000},
+    "omega_over_2": {"family": "N60_Dminus2", "child": "omega_over_2", "samples": 2000000, "batches": 100, "workers": 8, "seed": 2672266002, "replica_offset": 18002000000},
+    "omega_plus_1_over_2": {"family": "N60_Dminus2", "child": "omega_plus_1_over_2", "samples": 2000000, "batches": 100, "workers": 8, "seed": 2672266003, "replica_offset": 18004000000}
+  },
+  "preflight": {
+    "tiny_configurations": 65536,
+    "tiny_invalid_counts": [0, 0, 0],
+    "tiny_digest_sha256": "54f6d2cc80670db23d86b73d3d4d1f934bde1d14ed80a0c813b02a311b268f74",
+    "all_three_N60_alias_ranks": 2,
+    "w_dot_E4_abs_max": "5e-59",
+    "w_dot_E6_abs_max": "1e-59",
+    "N60_w_dot_E4sq": ["3.18e-58", "729.49046035044876371"],
+    "focused_tests": "8 passed"
+  },
+  "no_pilot": true,
+  "claim_boundary": "This is a completion-phase test of one typed non-A_top row, not another pure H4/H8/H12 vote."
+}
+
