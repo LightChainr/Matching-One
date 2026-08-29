@@ -7,9 +7,10 @@ import argparse
 import itertools
 import json
 from collections import Counter
+from functools import lru_cache
 from math import factorial
 from pathlib import Path
-from typing import Any, Optional, Sequence, Tuple
+from typing import Any, Hashable, Optional, Sequence, Tuple
 
 from digital_alexander_filtration_oracle import rank_mark
 from integer_period_torus import (
@@ -23,7 +24,7 @@ from integer_period_torus import (
 Matrix = Tuple[Tuple[int, int], Tuple[int, int]]
 
 
-def hnf_matrices(minimum_order: int = 2, maximum_order: int = 9) -> list[Matrix]:
+def hnf_matrices(minimum_order: int = 2, maximum_order: int = 10) -> list[Matrix]:
     if minimum_order < 1 or maximum_order < minimum_order:
         raise ValueError("invalid order range")
     matrices = []
@@ -239,7 +240,9 @@ def analyze_permutation(
     }
 
 
-def summarize_matrix(matrix: Matrix) -> dict[str, Any]:
+def summarize_matrix_by_permutation(matrix: Matrix) -> dict[str, Any]:
+    """Reference implementation that materializes every maximal chain."""
+
     geometry = integer_torus_geometry(matrix, name="hnf-frontier")
     state_table = build_state_table(geometry)
     counters: Counter[str] = Counter()
@@ -286,6 +289,299 @@ def summarize_matrix(matrix: Matrix) -> dict[str, Any]:
     }
 
 
+def _prefix_path_count(n: int, mask: int) -> int:
+    """Number of permutations whose prefix set is exactly ``mask``."""
+
+    size = mask.bit_count()
+    return factorial(size) * factorial(n - size)
+
+
+def _count_paths_avoiding_nodes(n: int, bad_masks: set[int]) -> int:
+    """Count maximal Boolean-lattice chains that avoid every bad node."""
+
+    full_mask = (1 << n) - 1
+    counts = [0] * (1 << n)
+    if 0 in bad_masks:
+        return 0
+    counts[0] = 1
+    for mask in range(1 << n):
+        if not counts[mask]:
+            continue
+        remaining = full_mask ^ mask
+        while remaining:
+            bit = remaining & -remaining
+            remaining ^= bit
+            child = mask | bit
+            if child not in bad_masks:
+                counts[child] += counts[mask]
+    return counts[full_mask]
+
+
+def _first_bad_node_permutation(n: int, bad_masks: set[int]) -> Optional[Tuple[int, ...]]:
+    """Return the lexicographically first maximal chain visiting a bad node."""
+
+    full_mask = (1 << n) - 1
+
+    @lru_cache(maxsize=None)
+    def can_fail(mask: int, failed: bool) -> bool:
+        failed = failed or mask in bad_masks
+        if mask == full_mask:
+            return failed
+        return any(
+            can_fail(mask | (1 << vertex), failed)
+            for vertex in range(n)
+            if not mask & (1 << vertex)
+        )
+
+    if not can_fail(0, False):
+        return None
+    mask = 0
+    failed = 0 in bad_masks
+    permutation = []
+    while mask != full_mask:
+        for vertex in range(n):
+            bit = 1 << vertex
+            if not mask & bit and can_fail(mask | bit, failed):
+                permutation.append(vertex)
+                mask |= bit
+                failed = failed or mask in bad_masks
+                break
+        else:  # pragma: no cover - guarded by can_fail
+            raise AssertionError("failed to materialize a bad maximal chain")
+    return tuple(permutation)
+
+
+def _marked_path_summary(
+    n: int,
+    marks: Sequence[Optional[Hashable]],
+    invalid_masks: set[int],
+) -> Tuple[int, Counter[str]]:
+    """Count paths with invalid/changing marks and their first valid mark.
+
+    The first component reproduces the permutation oracle's path-level failure
+    semantics.  The counter reproduces its first-valid-plateau-mark census.
+    """
+
+    full_mask = (1 << n) - 1
+    states: list[dict[Tuple[Optional[Hashable], bool], int]] = [
+        {} for _ in range(1 << n)
+    ]
+    first = marks[0]
+    states[0][(first, 0 in invalid_masks)] = 1
+    for mask in range(1 << n):
+        if not states[mask]:
+            continue
+        remaining = full_mask ^ mask
+        while remaining:
+            bit = remaining & -remaining
+            remaining ^= bit
+            child = mask | bit
+            mark = marks[child]
+            for (first_mark, failed), count in states[mask].items():
+                next_first = first_mark if first_mark is not None else mark
+                next_failed = failed or child in invalid_masks
+                if first_mark is not None and mark is not None and mark != first_mark:
+                    next_failed = True
+                key = (next_first, next_failed)
+                states[child][key] = states[child].get(key, 0) + count
+
+    failures = 0
+    first_mark_counts: Counter[str] = Counter()
+    for (first_mark, failed), count in states[full_mask].items():
+        if failed:
+            failures += count
+        if first_mark is not None:
+            if isinstance(first_mark, tuple):
+                label = ",".join(str(value) for value in first_mark)
+            else:
+                label = str(first_mark)
+            first_mark_counts[label] += count
+    return failures, first_mark_counts
+
+
+def _first_mark_failure_permutation(
+    n: int,
+    marks: Sequence[Optional[Hashable]],
+    invalid_masks: set[int],
+) -> Optional[Tuple[int, ...]]:
+    """Return the lexicographically first chain with an invalid/changing mark."""
+
+    full_mask = (1 << n) - 1
+
+    def advance(
+        mask: int,
+        first_mark: Optional[Hashable],
+        failed: bool,
+    ) -> Tuple[Optional[Hashable], bool]:
+        mark = marks[mask]
+        next_first = first_mark if first_mark is not None else mark
+        next_failed = failed or mask in invalid_masks
+        if first_mark is not None and mark is not None and mark != first_mark:
+            next_failed = True
+        return next_first, next_failed
+
+    initial_first, initial_failed = advance(0, None, False)
+
+    @lru_cache(maxsize=None)
+    def can_fail(mask: int, first_mark: Optional[Hashable], failed: bool) -> bool:
+        if mask == full_mask:
+            return failed
+        for vertex in range(n):
+            bit = 1 << vertex
+            if mask & bit:
+                continue
+            child = mask | bit
+            next_first, next_failed = advance(child, first_mark, failed)
+            if can_fail(child, next_first, next_failed):
+                return True
+        return False
+
+    if not can_fail(0, initial_first, initial_failed):
+        return None
+    mask = 0
+    first_mark = initial_first
+    failed = initial_failed
+    permutation = []
+    while mask != full_mask:
+        for vertex in range(n):
+            bit = 1 << vertex
+            if mask & bit:
+                continue
+            child = mask | bit
+            next_first, next_failed = advance(child, first_mark, failed)
+            if can_fail(child, next_first, next_failed):
+                permutation.append(vertex)
+                mask = child
+                first_mark = next_first
+                failed = next_failed
+                break
+        else:  # pragma: no cover - guarded by can_fail
+            raise AssertionError("failed to materialize a bad marked chain")
+    return tuple(permutation)
+
+
+def summarize_matrix(matrix: Matrix) -> dict[str, Any]:
+    """Exhaust every filtration via exact maximal-chain counts on subsets."""
+
+    geometry = integer_torus_geometry(matrix, name="hnf-frontier")
+    state_table = build_state_table(geometry)
+    n = geometry.n
+    total_paths = factorial(n)
+    masks = range(1 << n)
+
+    birth_bad = set()
+    rank_sum_bad = set()
+    reconstruction_bad = set()
+    line_bad = set()
+    plateau_lines: list[Optional[Tuple[int, int]]] = [None] * (1 << n)
+    index_pairs: list[Optional[Tuple[int, int]]] = [None] * (1 << n)
+    plateau_steps = 0
+    maximum_index = 0
+    for mask in masks:
+        black, white = state_table[mask]
+        black_rank, black_line, black_index, black_error = black
+        white_rank, white_line, white_index, white_error = white
+        if (black_rank >= 1) != (white_rank < 2):
+            birth_bad.add(mask)
+        if black_rank + white_rank != 2:
+            rank_sum_bad.add(mask)
+        if black_rank != int(white_rank < 2) + int(black_rank == 2):
+            reconstruction_bad.add(mask)
+
+        on_plateau = white_rank < 2 and black_rank < 2
+        if not on_plateau:
+            continue
+        plateau_steps += _prefix_path_count(n, mask)
+        if (
+            black_error
+            or white_error
+            or black_line is None
+            or white_line is None
+            or black_line != white_line
+            or black_index is None
+            or white_index is None
+        ):
+            line_bad.add(mask)
+            continue
+        plateau_lines[mask] = black_line
+        index_pairs[mask] = (black_index, white_index)
+        maximum_index = max(maximum_index, black_index, white_index)
+
+    full_mask = (1 << n) - 1
+    for mask in range(1 << n):
+        black_rank = state_table[mask][0][0]
+        white_rank = state_table[mask][1][0]
+        remaining = full_mask ^ mask
+        while remaining:
+            bit = remaining & -remaining
+            remaining ^= bit
+            child = mask | bit
+            if state_table[child][0][0] < black_rank:
+                raise AssertionError("black ambient rank decreased along a subset edge")
+            if state_table[child][1][0] > white_rank:
+                raise AssertionError("white ambient rank increased along a subset edge")
+
+    bad_by_gate = {
+        "birth": birth_bad,
+        "rank_sum": rank_sum_bad,
+        "reconstruction": reconstruction_bad,
+    }
+    failure_counts = {
+        gate: total_paths - _count_paths_avoiding_nodes(n, bad_masks)
+        for gate, bad_masks in bad_by_gate.items()
+    }
+    failure_counts["reflection"] = 0
+    line_failures, line_counts = _marked_path_summary(
+        n,
+        plateau_lines,
+        line_bad,
+    )
+    failure_counts["line"] = line_failures
+    index_evolution, _ = _marked_path_summary(n, index_pairs, set())
+
+    counterexamples = {
+        gate: []
+        for gate in ("birth", "reflection", "rank_sum", "reconstruction", "line")
+    }
+    for gate, count in failure_counts.items():
+        if not count:
+            continue
+        if gate == "line":
+            permutation = _first_mark_failure_permutation(
+                n,
+                plateau_lines,
+                line_bad,
+            )
+        else:
+            permutation = _first_bad_node_permutation(n, bad_by_gate[gate])
+        if permutation is None:  # pragma: no cover - count/search consistency
+            raise AssertionError("failed to recover counted counterexample")
+        counterexamples[gate].append(
+            analyze_permutation(
+                geometry,
+                permutation,
+                state_table=state_table,
+            )
+        )
+
+    return {
+        "matrix": [list(part) for part in matrix],
+        "order": n,
+        "four_distinct_face_corners": has_four_distinct_face_corners(geometry),
+        "permutations": total_paths,
+        "cached_subsets": len(state_table),
+        "rank_one_plateau_steps": plateau_steps,
+        "plateau_line_counts": dict(sorted(line_counts.items())),
+        "maximum_saturation_index": maximum_index,
+        "permutations_with_index_evolution": index_evolution,
+        "failure_counts": {
+            gate: failure_counts[gate]
+            for gate in ("birth", "reflection", "rank_sum", "reconstruction", "line")
+        },
+        "counterexamples": counterexamples,
+    }
+
+
 def _first_counterexample(rows: Sequence[dict[str, Any]], gate: str) -> Optional[dict[str, Any]]:
     for row in rows:
         examples = row["counterexamples"][gate]
@@ -313,8 +609,12 @@ def build_artifact() -> dict[str, Any]:
     }
     honest = [row for row in rows if row["four_distinct_face_corners"]]
     degenerate = [row for row in rows if not row["four_distinct_face_corners"]]
-    assert len(matrices) == 68
-    assert total_paths == 5372118
+    cached_subsets = sum(row["cached_subsets"] for row in rows)
+    plateau_steps = sum(row["rank_one_plateau_steps"] for row in rows)
+    maximum_index = max(row["maximum_saturation_index"] for row in rows)
+    index_evolution = sum(row["permutations_with_index_evolution"] for row in rows)
+    assert len(matrices) == 86
+    assert total_paths == 70690518
     assert all(abs(determinant(tuple(tuple(part) for part in row["matrix"]))) == row["order"] for row in rows)
     return {
         "schema": "matching-one/digital-alexander-quotient-frontier/v1",
@@ -322,19 +622,23 @@ def build_artifact() -> dict[str, Any]:
         "status": (
             "counterexample_found"
             if any(total_failures.values())
-            else "no_counterexample_through_index_9"
+            else "no_counterexample_through_index_10"
         ),
-        "order_range": [2, 9],
+        "order_range": [2, 10],
         "HNF_representatives": len(rows),
         "honest_face_representatives": len(honest),
         "self_identifying_face_representatives": len(degenerate),
         "filtration_paths": total_paths,
+        "cached_subsets": cached_subsets,
+        "rank_one_plateau_steps": plateau_steps,
+        "maximum_saturation_index": maximum_index,
+        "permutations_with_index_evolution": index_evolution,
         "total_failure_counts": total_failures,
         "first_counterexamples": first_counterexamples,
         "geometries": rows,
         "claim_boundary": {
-            "proved": "all permutations of every HNF quotient of index 2 through 9",
-            "not_proved": "index 10 and above or an unrestricted degenerate-quotient theorem",
+            "proved": "all permutations of every HNF quotient of index 2 through 10",
+            "not_proved": "index 11 and above or an unrestricted degenerate-quotient theorem",
         },
     }
 
@@ -343,12 +647,17 @@ def render_markdown(artifact: dict[str, Any]) -> str:
     lines = [
         "# Short-period digital Alexander quotient frontier",
         "",
-        "Every permutation of every two-dimensional HNF quotient of index 2 through 9 is exhausted.",
+        "Every permutation of every two-dimensional HNF quotient of index 2 through 10 is exhausted.",
         "",
         "- HNF representatives: `%d`;" % artifact["HNF_representatives"],
         "- honest four-corner representatives: `%d`;" % artifact["honest_face_representatives"],
         "- self-identifying face representatives: `%d`;" % artifact["self_identifying_face_representatives"],
         "- complete filtration paths: `%d`." % artifact["filtration_paths"],
+        "- cached occupied-site subsets: `%d`;" % artifact["cached_subsets"],
+        "- rank-one plateau steps: `%d`;" % artifact["rank_one_plateau_steps"],
+        "- maximum saturation index: `%d`;" % artifact["maximum_saturation_index"],
+        "- paths with saturation-index evolution: `%d`."
+        % artifact["permutations_with_index_evolution"],
         "",
         "## Failure census",
         "",
@@ -367,7 +676,7 @@ def render_markdown(artifact: dict[str, Any]) -> str:
             "",
             "## Boundary",
             "",
-            "The result is exhaustive only through index 9. It does not prove an unrestricted theorem",
+            "The result is exhaustive only through index 10. It does not prove an unrestricted theorem",
             "for all degenerate quotients or alter production data semantics.",
             "",
         ]
