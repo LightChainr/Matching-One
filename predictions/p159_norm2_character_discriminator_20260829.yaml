@@ -1,0 +1,112 @@
+version: 1
+frozen_at: 2026-08-29
+status: prospective_target_prediction_from_post_reveal_source_split
+claim_level: C0
+related_issues: [156, 159]
+purpose: >-
+  Separate the spin-4 and spin-8 lifts of the real Pell C3 character with the
+  smallest Gaussian embedding multiplier. The N30/N56 parent means were
+  already revealed; the N60/N112 child statistics were unseen at freeze.
+
+observable:
+  model: square_bond_percolation
+  probability: '1/2'
+  topology: primitive_rank_one_homology
+  continuum_subtraction: Pinson_Arguin_at_actual_tau
+  period_basis_registry: ['l0=(1,0)', 'l1=(0,1)', 'l2=(1,-1)']
+  coordinates:
+    C: 'r0-(r1+r2)/2'
+    Q: 'sqrt(3)*(r2-r1)/2'
+  complex_character: 'Z=C+iQ'
+  scalar_H12_excluded_from_primary: true
+
+embedding:
+  gaussian_multiplier: '1+i'
+  norm: 2
+  active_angle: 'pi/4'
+  left_matrix: [[1, -1], [1, 1]]
+  period_matrix_convention: columns_are_lifted_period_vectors
+  homology_basis_transport: identity
+  continuum_modulus_transport: unchanged
+  exact_character_phases:
+    H4: '-1'
+    H8: '+1'
+
+source_rows:
+  - id: Dminus2
+    parent_N: 30
+    parent_period_matrix: [[6, 3], [0, 5]]
+    parent_C: '0.00754882605955'
+    parent_C_SE: '0.000996308686'
+    child_N: 60
+    child_period_matrix: [[6, -2], [6, 8]]
+    child_smith_invariants: [2, 30]
+    source_based_targets:
+      rank4_H4_Nminus1: {ratio: '-1/2', C: '-0.003774413029775', source_SE: '0.000498154343'}
+      nonlocal_even_Nminus1: {ratio: '+1/2', C: '+0.003774413029775', source_SE: '0.000498154343'}
+      quadratic_H4xH4_Nminus2: {ratio: '+1/4', C: '+0.0018872065148875', source_SE: '0.0002490771715'}
+      local_H8_bound_saturated_Nminus3: {ratio: '+1/8', C: '+0.00094360325744375', source_SE: '0.00012453858575'}
+  - id: Dplus1
+    parent_N: 56
+    parent_period_matrix: [[8, 4], [0, 7]]
+    parent_C: '0.00378651922070'
+    parent_C_SE: '0.000971228915'
+    child_N: 112
+    child_period_matrix: [[8, -3], [8, 11]]
+    child_smith_invariants: [1, 112]
+    source_based_targets:
+      rank4_H4_Nminus1: {ratio: '-1/2', C: '-0.001893259610350', source_SE: '0.0004856144575'}
+      nonlocal_even_Nminus1: {ratio: '+1/2', C: '+0.001893259610350', source_SE: '0.0004856144575'}
+      quadratic_H4xH4_Nminus2: {ratio: '+1/4', C: '+0.000946629805175', source_SE: '0.00024280722875'}
+      local_H8_bound_saturated_Nminus3: {ratio: '+1/8', C: '+0.0004733149025875', source_SE: '0.000121403614375'}
+
+fixed_models_in_score_order:
+  - id: rank4_H4_Nminus1
+    mechanism: local_identity_family_or_rank4_lattice_anisotropy
+    spin: 4
+    scaling_dimension: 4
+    N_exponent: 1
+    norm2_ratio: '-1/2'
+    residual: '2*Z_child+Z_parent'
+  - id: nonlocal_even_Nminus1
+    mechanism: topological_or_nonlocal_character_with_even_norm2_lift
+    spin: not_local_field
+    scaling_dimension: not_assigned
+    N_exponent: 1
+    norm2_ratio: '+1/2'
+    residual: '2*Z_child-Z_parent'
+  - id: quadratic_H4xH4_Nminus2
+    mechanism: second_order_rank4_or_E4_squared_composite
+    effective_spin: 8
+    N_exponent: 2
+    norm2_ratio: '+1/4'
+    residual: '4*Z_child-Z_parent'
+  - id: local_H8_bound_saturated_Nminus3
+    mechanism: first_order_local_spin8
+    spin: 8
+    minimum_scaling_dimension: 8
+    minimum_N_exponent: 3
+    norm2_ratio_at_bound: '+1/8'
+    residual_at_bound: '8*Z_child-Z_parent'
+
+primary_score:
+  vector: [C, Q]
+  use_full_within_geometry_covariance: true
+  source_target_covariance: zero_for_archived_parent_and_fresh_child
+  lineages_joint: true
+  score_fixed_models_before_any_free_ratio: true
+  reflection_control: 'Q_parent and transformed Q_child'
+
+interpretation:
+  dimension_spin_bound: 'x >= abs(s) implies alpha_N=(x-2)/2 >= 3 for a local spin-8 field'
+  key_consequence: >-
+    If C really has an asymptotic N^-1 law, a first-order local H8 field and
+    an E4-squared second-order correction cannot be its leading source.
+  scalar_zero_boundary: >-
+    The E4 simple zero constrains a modular-scalar H4 response. The nontrivial
+    C3 character was constructed to retain H4 at rho, so same-sign C on the
+    two Pell sides does not by itself falsify a rank-4 H4 character.
+  forbidden:
+    - count_parent_and_child_views_as_independent_if_they_share_randomness
+    - fit_a_free_exponent_before_fixed_transfer_scores
+    - call_the_post_reveal_mechanism_split_new_primary_evidence
