@@ -1,0 +1,42 @@
+{
+  "schema": "matching-one/composite-spin4-algebra-manifest/v1",
+  "issue": 58,
+  "phase": "exact_selection_rule_check",
+  "generators": {
+    "T4": {"parity": -1, "spin": 4, "omega_length": "13/4"},
+    "I4": {"parity": 1, "spin": 4, "omega_length": "2"},
+    "V4": {"parity": 1, "spin": 4, "omega_length": "8/3", "status": "conditional"},
+    "S0": {"parity": 1, "spin": 0, "omega_length": "2", "status": "optional"}
+  },
+  "frozen_scope": {
+    "enumeration_max_total_degree": 5,
+    "angular_method": "exact Laurent convolution",
+    "radial_method": "Fraction exponent addition relative to one T4",
+    "matching_odd": "odd T4 multiplicity",
+    "target_channels": ["H4", "H12"]
+  },
+  "required_certificates": [
+    "T4*S0 has q=2, w=6 and H4 support",
+    "T4*I4 has H0/H8 but no H4",
+    "T4*I4^2 has q=4, w=8 and exact (3/4)H4+(1/4)H12",
+    "T4*I4*V4 has q=14/3 and w=26/3",
+    "T4*V4^2 has q=16/3 and w=28/3",
+    "q=3 is impossible at all degrees within the declared generator semiring",
+    "degree-limited q=6 composite collisions are reported"
+  ],
+  "outputs": {
+    "json": "results/composite-spin4-algebra/latest.json",
+    "markdown": "results/composite-spin4-algebra/latest.md"
+  },
+  "commands": [
+    "python scripts/composite_spin4_algebra.py --format json",
+    "python scripts/composite_spin4_algebra.py --format markdown",
+    "python -m unittest tests.test_composite_spin4_algebra"
+  ],
+  "acceptance_boundary": {
+    "exact": "parity, harmonic coefficients, exponent sums, and the declared-semiring q=3 no-go",
+    "conditional": "V4 parity and S0 existence/nonzero coupling",
+    "excluded": "data fitting, operator existence, new production scoring, and a continuum amplitude-ratio claim",
+    "parent_issue": "remain open"
+  }
+}
