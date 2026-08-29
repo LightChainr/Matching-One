@@ -55,6 +55,7 @@ evidence_archives:
   - {id: N26_BETA, path: results/local-20260828/P115-n26-self-matching-exact, status: negative_result, role: exact_Beta_failure}
   - {id: BOOLEAN_NOISE_SEMIGROUP, path: results/exact-boolean-noise-semigroup, status: immutable_result, role: exact_p_biased_wrapping_spectra}
   - {id: GAUSSIAN_COVER_SELECTION_RULE, path: results/exact-cover-character-oracles/norm2_selection_rule.json, status: immutable_result, role: exact_deck_character_linear_null_and_allowed_channels}
+  - {id: CONDITIONAL_REPLICA_FILTRATION, path: results/conditional-replica-filtration, status: immutable_result, role: exact_martingale_ANOVA_and_rank_rotation}
 
 topic_derivations:
   - {path: notes/pivotal-russo-finite-volume.md, status: topic_derivation, role: pivotal_identity}
@@ -66,6 +67,7 @@ topic_derivations:
   - {path: notes/p231-vacuum-kdv-sector-response.md, status: topic_derivation, role: primitive_vacuum_KdV}
   - {path: notes/p225-multiradius-pivotal-prototype.md, status: topic_derivation, role: local_multiradius_negative}
   - {path: notes/exact-boolean-noise-semigroup.md, status: topic_derivation, role: p_biased_noise_pivotal_bridge}
+  - {path: notes/black-noise-conditional-replica-tomography.md, status: topic_derivation, role: exact_information_filtration_and_rank_rotation}
 
 historical_protocols:
   - {path: experiments/server_compute_queue.yaml, status: historical, role: original_server_queue}

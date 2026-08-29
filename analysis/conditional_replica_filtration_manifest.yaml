@@ -1,0 +1,36 @@
+schema: matching-one.conditional-replica-filtration-manifest.v1
+issue: 256
+status: exact_gate_frozen
+probability: 2/5
+geometries:
+  - id: gaussian-2-1
+    N: 5
+    filtration:
+      - {id: F0_total_occupation, blocks: [[0, 1, 2, 3, 4]]}
+      - {id: F1_marked_origin_vs_rest, blocks: [[0], [1, 2, 3, 4]]}
+      - {id: F2_full_configuration, blocks: [[0], [1], [2], [3], [4]]}
+  - id: c4-self-matching-3-1
+    N: 10
+    filtration:
+      - {id: F0_total_occupation, blocks: [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]]}
+      - {id: F1_norm2_parent_fiber_counts, blocks: [[0, 5], [1, 6], [2, 7], [3, 8], [4, 9]]}
+      - {id: F2_full_configuration, blocks: [[0], [1], [2], [3], [4], [5], [6], [7], [8], [9]]}
+observable_vectors:
+  topology_pair: [primal_cross, matching_complement_cross]
+  symmetry_pair: [orientation_difference, matching_odd_cross]
+conditional_replica:
+  state: block occupation counts
+  marginal: exact Bernoulli(2/5)
+  conditional_draw: uniform subset at each declared block count
+four_replica:
+  coupling: two independent fine refinements per coarse state, two independent full replicas per refinement
+  estimator: symmetric half outer product of paired differences
+primary_exact_gates:
+  - C_j_conditional_replica_identity
+  - Gamma_j_PSD
+  - martingale_increment_orthogonality
+  - covariance_telescoping
+  - four_replica_increment_identity
+  - Krawtchouk_F0_equals_PR245_radial_projection
+mechanism_target: rank_and_axis_rotation_within_topology_pair
+
