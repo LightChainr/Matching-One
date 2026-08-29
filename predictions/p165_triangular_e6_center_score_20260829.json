@@ -1,0 +1,156 @@
+{
+  "Eisenstein_convention": {
+    "determinant_equals_norm": true,
+    "multiplication_matrix": "[[a,-b],[b,a+b]]",
+    "norm": "N(a+b omega)=a^2+ab+b^2",
+    "omega": "exp(i*pi/3), omega^2=omega-1"
+  },
+  "interpretation_boundary": {
+    "conditional": "K-slope sextic projector must overlap the Ward-active level-6 line rather than the Ward-null quotient line",
+    "exact": "Q6 Ward image, Eisenstein phases, multiplier factors, E6 Hecke ratios, and existing tiny center derivatives",
+    "not_claimed": "that raw K itself is E6, that M is identically zero away from p=1/2, or that one real orientation pair resolves arbitrary chiral mixing"
+  },
+  "issue": 165,
+  "level6_Ward_anchor": {
+    "Q6_over_primary_g3": "-3975/224",
+    "Q6_over_primary_pi6_E6": "-1325/252",
+    "Ward_map_rank": 1,
+    "quotient_dimension": 2,
+    "representative": "-25 L_-6 + 28 L_-5 L_-1 - 56 L_-4 L_-2 + 35 L_-3^2"
+  },
+  "minimal_execution": {
+    "compute_class": "small paired Monte Carlo; no threshold search and no off-critical scan",
+    "controls": [
+      "M(1/2)=0 exactly",
+      "Kbar nonzero",
+      "orientation swap/conjugation",
+      "spin12 scaled alternative +1"
+    ],
+    "phase_A": "use exact p=1/2 score K=E[M*4(k-N/2)] on the two N=91 orientations",
+    "phase_B": "repeat with common random fields on the m=1+omega N=273 children",
+    "primary_scores": [
+      "A6_child/A6_parent+1",
+      "R6_child/R6_parent+1/27"
+    ]
+  },
+  "modulus_control": {
+    "degree2_children": "E6hat(child_j)/E6hat(rho)=11/4 for all three children",
+    "frozen_nulls": [
+      "W6(child_1)-W6(child_0)=0",
+      "W6(child_2)-W6(child_0)=0",
+      "4 W6(child_0)-11 W6(parent)=0",
+      "W6(i)=0"
+    ],
+    "natural_hex": "E6hat(rho) is nonzero",
+    "square_zero": "E6hat(i)=0"
+  },
+  "multiplier_control": {
+    "alias_discriminator": "spin 12 has scaled factor +1 under the same multiplier",
+    "m": [
+      1,
+      1
+    ],
+    "m_inverse_6": {
+      "N_cubed_times_inverse_sixth": "(-27+0*omega)/27",
+      "denominator": 729,
+      "numerator_basis_1_omega": [
+        -27,
+        0
+      ],
+      "text": "(-27+0*omega)/729"
+    },
+    "matrix": [
+      [
+        1,
+        -1
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "norm": 3,
+    "raw_relative_response": "R6(mg)/R6(g)=-1/27",
+    "scaled_amplitude": "A6(mg)/A6(g)=-1",
+    "source_target": "N=91 orientation pair -> N=273 child pair"
+  },
+  "numerical_E6_oracle": {
+    "children": [
+      "(5.146943577876239913818352888985713168320158467070284662164307285369123 + 2.297731016933046548549800316847275335665424530265243856411439772092029e-94j)",
+      "(5.146943577876239913818352888985713168320158467070284662164307285369123 + 1.168428661890231927683527516792632376777476080288863378458990895568784e-90j)",
+      "(5.146943577876239913818352888985713168320158467070284662164307285369123 + 6.435078223561984144507239057663460332438126208045595572151578148465762e-91j)"
+    ],
+    "dps": 90,
+    "errors": {
+      "child_parent_11_over_4": "1.47273258822e-90",
+      "equal_children": "7.46895309519e-91",
+      "square_zero": "2.63136727398e-92"
+    },
+    "parent": "(1.871615846500450877752128323267532061207330351661921695332475376497863 - 2.407601115595877602037318306943869078622081787200994332577000488097599e-93j)",
+    "square": "(-2.631367273983407895114441610095097885011268595717049817424174373155634e-92 + 0.0j)"
+  },
+  "same_N91_projector": {
+    "delta_cos6": "194400/107653",
+    "normalized_statistic": "R6=D6/Kbar, Kbar=(K1+K2)/2",
+    "orientations": [
+      {
+        "g": [
+          1,
+          9
+        ],
+        "norm": 91,
+        "normalized_g^-6": {
+          "basis_1_omega": [
+            "418501/753571",
+            "451440/753571"
+          ],
+          "imaginary_coefficient_of_sqrt3": "225720/753571",
+          "real": "644221/753571"
+        }
+      },
+      {
+        "g": [
+          5,
+          6
+        ],
+        "norm": 91,
+        "normalized_g^-6": {
+          "basis_1_omega": [
+            "-851219/753571",
+            "269280/753571"
+          ],
+          "imaginary_coefficient_of_sqrt3": "134640/753571",
+          "real": "-716579/753571"
+        }
+      }
+    ],
+    "reason": "same N cancels scalar size dependence; real C6 coupling removes the sine quadrature",
+    "scaled_amplitude": "A6=N^3 R6",
+    "statistic": "D6=[K(1+9omega)-K(5+6omega)]/delta_cos6"
+  },
+  "schema": "matching-one/triangular-e6-center-score/v1",
+  "self_matching_correction": {
+    "degenerate": "M_L(1/2)=0 and the matching root is pinned",
+    "exact_repository_values": [
+      {
+        "L": 2,
+        "M_at_half": "0/1",
+        "Mprime_at_half": "3/1"
+      },
+      {
+        "L": 3,
+        "M_at_half": "0/1",
+        "Mprime_at_half": "261/64"
+      },
+      {
+        "L": 4,
+        "M_at_half": "0/1",
+        "Mprime_at_half": "5147/1024"
+      }
+    ],
+    "identity": "M_L(1-p)=-M_L(p)",
+    "nondegenerate": "K_L=M'_L(1/2) is complement-even and need not vanish",
+    "replacement_observable": "the same-N sextic orientation projector of K_L, divided by the mean center slope"
+  },
+  "status": "exact_non_degenerate_observable_and_frozen_E6_controls"
+}
