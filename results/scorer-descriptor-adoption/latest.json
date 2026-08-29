@@ -2,11 +2,11 @@
   "boundary": "outside_registered_typed_path is an inventory status, not proof that a scorer is channel-bearing or semantically invalid",
   "corpus_glob": "scripts/*score*.py",
   "counts": {
-    "channel_bearing_migration_required": 1,
+    "channel_bearing_migration_required": 2,
     "covered_frozen_kernel": 3,
     "descriptor_not_applicable_generic_utility": 1,
     "direct_typed_entrypoint": 4,
-    "outside_registered_typed_path": 26,
+    "outside_registered_typed_path": 25,
     "total": 35
   },
   "rows": [
@@ -39,7 +39,7 @@
     {"git_blob_sha":"c68db6e90035561892be4eb88eac05b8623cb89d","path":"scripts/score_p49_fullcurve_doubling.py","status":"outside_registered_typed_path"},
     {"git_blob_sha":"5008449033a85d2c81bf4ea3f025fa61217b6c4a","path":"scripts/score_p50_fullcurve_n290.py","status":"outside_registered_typed_path"},
     {"git_blob_sha":"1d6d044f35758088e67b959c0a33a432a8c43b5b","path":"scripts/score_p50_sprime_n290.py","status":"outside_registered_typed_path"},
-    {"git_blob_sha":"364878808083c88dae6a5d9ba4ecd7eb987e2c16","path":"scripts/score_prequential_evidence.py","status":"outside_registered_typed_path"},
+    {"git_blob_sha":"364878808083c88dae6a5d9ba4ecd7eb987e2c16","path":"scripts/score_prequential_evidence.py","status":"channel_bearing_migration_required"},
     {"git_blob_sha":"8f9d41b5ea77828b7683c3a48d7f0517654b980e","path":"scripts/score_rank_gap_boundary_targets.py","status":"outside_registered_typed_path"},
     {"git_blob_sha":"463acbb63df93eb58792db5a7db012d8e6096daa","path":"scripts/score_threshold_rank_root_doubling.py","status":"outside_registered_typed_path"},
     {"git_blob_sha":"c7b745b60614f315955ec5bda5fd0ae152c33f24","path":"scripts/score_v14_fixedp_scalar_projector.py","status":"outside_registered_typed_path"},
@@ -48,7 +48,8 @@
   ],
   "schema": "scorer descriptor adoption inventory v1",
   "channel_bearing_migration_required": {
-    "scripts/score_angular_root_amplitude.py": "reconstructs rank-2 cross K_minus/K_plus observables, forms signed orientation root gaps, divides by signed DeltaCos4, and scores the angular-normalized A_p across sizes"
+    "scripts/score_angular_root_amplitude.py": "reconstructs rank-2 cross K_minus/K_plus observables, forms signed orientation root gaps, divides by signed DeltaCos4, and scores the angular-normalized A_p across sizes",
+    "scripts/score_prequential_evidence.py": "validates scored blocks with free-form channel.source/channel.target strings and accepts any truthy exact_map instead of applying the registered descriptor map"
   },
   "descriptor_not_applicable_generic_utilities": {
     "scripts/kappa3_half_score.py": "generic Bernoulli score-polynomial and aggregation helper; intentionally accepts an opaque caller-supplied observable D(C) and defines no topology observable"
