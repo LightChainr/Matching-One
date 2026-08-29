@@ -1,0 +1,19 @@
+{
+  "schema": "matching-one/threshold-shape-collapse-production-manifest/v1",
+  "issue": 122,
+  "status": "retrospective_existing_archives",
+  "base_contract_commit": "8e5a2364a9067dd34f551e587f7706e79cd8fc35",
+  "observer": "equal mixture of Kminus/Kplus beta order statistics and both Gaussian orientations",
+  "grid": [0.05, 0.10, 0.25, 0.50, 0.75, 0.90, 0.95],
+  "center": "q50",
+  "scale": "q75-q25",
+  "primary_covariance_score": "four nonstructural tail coordinates q05,q10,q90,q95",
+  "comparisons": [
+    "N65 to N130 norm-2 common-counter cover",
+    "N85 to N170 norm-2 common-counter cover",
+    "N65 to N325 independent norm-5 cover",
+    "N85 to N425 independent norm-5 cover"
+  ],
+  "post_reveal_diagnostic": "Euclidean alignment and amplitude ratio of norm-2 versus norm-5 deformation for the same parent",
+  "boundary": "retrospective same-microscopic-model evidence; no prospective universality or cross-model claim"
+}
