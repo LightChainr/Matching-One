@@ -21,6 +21,14 @@ primary_cross_cutoff_quantity:
   success_direction: same_nonzero_sign_and_joint_cross_cutoff_compatibility
   boundary: same-gauge cutoff shear, not yet a universal coefficient
 
+joint_scorer:
+  path: scripts/score_p234_cross_cutoff_shear.py
+  frozen_status: added_after_d12_d16_L64_preview_before_all_L96_L128_L192_results
+  model:
+    LL: c_LL/L
+    LD: B+c_LD/(L*delta_realized)
+    DD: D-2*kappa*B*log(2*delta_realized)+c_DD/(L*delta_realized)
+
 common:
   samples_per_size: 100000
   batches: 100

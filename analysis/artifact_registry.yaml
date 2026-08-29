@@ -43,6 +43,7 @@ continuum_controls:
   - {path: predictions/p156_pinson_arguin_baselines_20260829.json, status: continuum_baseline, issue: 156, role: primitive_homology_sector_values}
   - {path: predictions/p234_triangular_energy_logpair_tiny_oracle_20260829.json, status: exact_algebra_oracle, issue: 234, role: cluster_sign_integration_control}
   - {path: scripts/score_p234_fixed_delta_continuum.py, status: active_scorer, issue: 234, role: same_stream_relative_pi_normalization_and_parent_pair_limit}
+  - {path: scripts/score_p234_cross_cutoff_shear.py, status: frozen_scorer, issue: 234, role: joint_logarithmic_top_field_cutoff_derivative}
 
 evidence_archives:
   - {id: P234_FIXED_DELTA_D8, path: results/server-20260829/P234-phaseA, status: production_result, role: connection_normalized_parent_pair_and_cutoff_shear}
