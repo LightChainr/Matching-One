@@ -61,15 +61,7 @@ primary_H4:
 
 fixed_angular_adversaries:
   score_after_primary: true
-  H8:
-    N325:
-      weight_A: 22517/44795
-      weight_B: 22278/44795
-      integer_residual_C_A_B: [44795, -22517, -22278]
-    N425:
-      weight_A: 89531/242420
-      weight_B: 152889/242420
-      integer_residual_C_A_B: [242420, -89531, -152889]
+  frozen_order: [H12, H8]
   H12:
     N325:
       weight_A: 363263/7144145
@@ -79,6 +71,15 @@ fixed_angular_adversaries:
       weight_A: 181189/68620
       weight_B: -112569/68620
       integer_residual_C_A_B: [68620, -181189, 112569]
+  H8:
+    N325:
+      weight_A: 22517/44795
+      weight_B: 22278/44795
+      integer_residual_C_A_B: [44795, -22517, -22278]
+    N425:
+      weight_A: 89531/242420
+      weight_B: 152889/242420
+      integer_residual_C_A_B: [242420, -89531, -152889]
 
 excluded_from_primary:
   - N^-13/8_radial_transfer

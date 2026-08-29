@@ -85,6 +85,15 @@ class Norm5ConjugateCoalescenceTests(unittest.TestCase):
         self.assertEqual(prediction["observable"]["p_ref"], 0.59274605079)
         self.assertEqual(prediction["primary_H4"]["N325"]["integer_residual_C_A_B"], [5, -11, 6])
         self.assertEqual(prediction["primary_H4"]["N425"]["integer_residual_C_A_B"], [20, 13, -33])
+        self.assertEqual(prediction["fixed_angular_adversaries"]["frozen_order"], ["H12", "H8"])
+        self.assertEqual(
+            experiment["score_order"][:3],
+            [
+                "joint_H4_fixed_p_ref_affine_residual",
+                "fixed_H12_affine_residual",
+                "fixed_H8_affine_residual",
+            ],
+        )
         self.assertEqual(experiment["pilot"]["samples_per_pair"], 10000000)
         self.assertEqual(experiment["pilot"]["batches"], 100)
         for key in ("N325", "N425"):
