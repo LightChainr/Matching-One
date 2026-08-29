@@ -33,6 +33,9 @@ def audit(root: Path, manifest: Mapping[str, object]) -> dict:
     not_applicable = dict(
         manifest.get("descriptor_not_applicable_generic_utilities", {})
     )
+    migration_required = dict(
+        manifest.get("channel_bearing_migration_required", {})
+    )
 
     if set(wrappers) | standalone != direct:
         raise ValueError("manifest direct-typed paths do not equal AST-detected paths")
@@ -45,6 +48,12 @@ def audit(root: Path, manifest: Mapping[str, object]) -> dict:
             "descriptor-not-applicable utilities missing from corpus: "
             + ", ".join(missing_utilities)
         )
+    missing_migrations = sorted(set(migration_required) - set(paths))
+    if missing_migrations:
+        raise ValueError(
+            "channel-bearing migration paths missing from corpus: "
+            + ", ".join(missing_migrations)
+        )
 
     covered_kernels = set(wrappers.values())
     overlap = sorted((direct | covered_kernels) & set(not_applicable))
@@ -52,6 +61,14 @@ def audit(root: Path, manifest: Mapping[str, object]) -> dict:
         raise ValueError(
             "descriptor-not-applicable paths overlap typed paths: "
             + ", ".join(overlap)
+        )
+    migration_overlap = sorted(
+        set(migration_required) & (direct | covered_kernels | set(not_applicable))
+    )
+    if migration_overlap:
+        raise ValueError(
+            "channel-bearing migration paths overlap resolved classes: "
+            + ", ".join(migration_overlap)
         )
     rows = []
     for path in paths:
@@ -61,6 +78,8 @@ def audit(root: Path, manifest: Mapping[str, object]) -> dict:
             status = "covered_frozen_kernel"
         elif path in not_applicable:
             status = "descriptor_not_applicable_generic_utility"
+        elif path in migration_required:
+            status = "channel_bearing_migration_required"
         else:
             status = "outside_registered_typed_path"
         rows.append(
@@ -77,6 +96,7 @@ def audit(root: Path, manifest: Mapping[str, object]) -> dict:
             "direct_typed_entrypoint",
             "covered_frozen_kernel",
             "descriptor_not_applicable_generic_utility",
+            "channel_bearing_migration_required",
             "outside_registered_typed_path",
         )
     }
@@ -86,6 +106,7 @@ def audit(root: Path, manifest: Mapping[str, object]) -> dict:
         "counts": {"total": len(rows), **counts},
         "typed_wrapper_kernels": wrappers,
         "descriptor_not_applicable_generic_utilities": not_applicable,
+        "channel_bearing_migration_required": migration_required,
         "rows": rows,
         "boundary": manifest["boundary"],
     }
