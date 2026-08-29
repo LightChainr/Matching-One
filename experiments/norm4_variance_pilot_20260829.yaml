@@ -108,6 +108,7 @@ source_plus_target_forecast:
   frozen_production:
     driver: scripts/run_norm4_production_20260829.sh
     scorer: scripts/score_norm4_production.py
+    full_jet_scorer: scripts/score_norm4_thermal_jet.py
     source_extension:
       executable: build/threshold_rank_orientation_mc
       sizes: [65, 130, 85, 170]
