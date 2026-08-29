@@ -26,6 +26,10 @@ class P50FullcurveExecutionTests(unittest.TestCase):
         self.assertNotEqual(plan["parent_N145"]["seed"], plan["child_N290"]["seed"])
         self.assertEqual(plan["parent_N145"]["representations"], [[12, 1], [9, 8]])
         self.assertEqual(plan["child_N290"]["lineage_order"], [[13, 11], [17, 1]])
+        self.assertEqual(
+            plan["post_primary_reuse"]["evidence_rule"],
+            "all_are_correlated_views_of_one_raw_block",
+        )
 
     def test_n290_period_matrices_have_order_290(self) -> None:
         plan = yaml.safe_load(
