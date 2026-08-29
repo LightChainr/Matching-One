@@ -1,0 +1,189 @@
+{
+  "claim_boundary": {
+    "not_proved": [
+      "a width-independent finite-bond-dimension tensor representation",
+      "a closed continuum CFT matrix element for the relative source",
+      "that generic-Q homology projector derivatives vanish",
+      "a no-go for local terms of arbitrarily large range"
+    ],
+    "proved": [
+      "the finite partition-function derivative formula",
+      "its topological-sector resolution",
+      "the N5 exhaustive factorization",
+      "the N25 plaquette-local one-colour FK obstruction"
+    ]
+  },
+  "derivative_ledger": {
+    "fixed_p_relative_Q_direction": [
+      "black NN cluster-fugacity derivative +k_black",
+      "white matching cluster-fugacity derivative -k_white",
+      "explicit local Euler derivative -(V-E+F0)"
+    ],
+    "issue_258_relation": "at fixed p and fixed topology semantics these are the complete source terms; moving along a Q-dependent critical manifold adds the separate measure-score covariance and must not be folded into this identity",
+    "projector_derivative": "not needed for the finite equality when q is used as a fixed sector charge; it becomes a separate term if the generic-Q homology projector itself is continued"
+  },
+  "finite_partition_function": {
+    "configuration_identity": "q=k_black-k_white-(V-E+F0)=I_black(H)-I_white_matching(H)",
+    "continuum_modular_gate": "use cross/either for a basis-independent modular-scalar continuum source; finite direction/both identities do not promote those labels to modular scalars",
+    "definition": "Z_rel(Q,p)=sum_omega P_p(omega) Q^k_black Q^(-k_white) Q^[-(V-E+F0)]",
+    "exact_derivatives": {
+      "first": "(Q d_Q) log Z_rel | Q=1 = E[q] = M_N(p)",
+      "second": "(Q d_Q)^2 log Z_rel | Q=1 = Var(q)"
+    },
+    "local_counterterm_factorization": "Q^[-(V-E+F0)]=product_sites Q^-n product_NN_edges Q^(n_i n_j) product_faces Q^(-prod_corner n)",
+    "normalization": "Z_rel(1,p)=1",
+    "sector_definition": "Z_r(p)=sum_{omega:q(omega)=r} P_p(omega), r in {-1,0,+1}",
+    "topological_resolution": "Z_rel(Q,p)=Q Z_+(p)+Z_0(p)+Q^-1 Z_-(p)",
+    "typed_topology": "H may be any repository channel whose primal-minus-matching difference equals q on the declared quotient"
+  },
+  "issue": 114,
+  "locality_status": {
+    "interpretation": "matching is a local coupled/two-connectivity cluster source, but not an ordinary one-colour FK Q derivative",
+    "negative": "no ordinary one-colour FK cluster derivative plus any translation-invariant plaquette-local counterterm can equal q on every configuration",
+    "positive": "for every fixed transfer width the source has a finite paired-connectivity representation tracking black NN and white NN+NNN partitions plus local site/edge/face weights"
+  },
+  "ordinary_FK_local_obstruction": {
+    "N": 25,
+    "cause": "the complementary white matching-cluster count differs",
+    "configurations": [
+      {
+        "Euler_motifs": {
+          "E": 11,
+          "F0": 0,
+          "V": 12
+        },
+        "black_clusters": 2,
+        "mask_hex": "0x1d24768",
+        "plaquette_pattern_histogram": [
+          1,
+          3,
+          2,
+          0,
+          2,
+          1,
+          1,
+          3,
+          1,
+          1,
+          3,
+          2,
+          2,
+          2,
+          1,
+          0
+        ],
+        "q_matching": 0,
+        "white_matching_clusters": 1
+      },
+      {
+        "Euler_motifs": {
+          "E": 11,
+          "F0": 0,
+          "V": 12
+        },
+        "black_clusters": 2,
+        "mask_hex": "0xf6aca0",
+        "plaquette_pattern_histogram": [
+          1,
+          3,
+          2,
+          0,
+          2,
+          1,
+          1,
+          3,
+          1,
+          1,
+          3,
+          2,
+          2,
+          2,
+          1,
+          0
+        ],
+        "q_matching": -1,
+        "white_matching_clusters": 2
+      }
+    ],
+    "declared_score_class": "a*k_black + sum_x f(oriented 2x2 plaquette pattern at x), for arbitrary a and f",
+    "different_matching_charge": true,
+    "geometry": "gaussian-4-3",
+    "no_go": "no ordinary one-colour FK cluster derivative plus any translation-invariant plaquette-local counterterm can equal q on every configuration",
+    "same_black_cluster_count": true,
+    "same_complete_plaquette_histogram": true
+  },
+  "schema": "matching-one.p114-relative-cluster-fugacity.v1",
+  "structural_connections": {
+    "issue_120_257": "the unmarked source is Potts-colour singlet; a charged [2] endpoint requires an additional character insertion",
+    "issue_123": "the paired black/white connectivity state is not optional: local composition generates partial boundary partitions, so the source cannot close on the all-or-none Bernoulli tensor alone",
+    "issue_233": "the insertion D=k_black-C k_white C-local is the first relative-Q pull-through obstruction; complement/matching exchange sends Q to Q^-1"
+  },
+  "tiny_exact_oracle": {
+    "N": 5,
+    "configuration_count": 32,
+    "factorization_failures": 0,
+    "geometry": "gaussian-2-1",
+    "matching_Bernstein_coefficients": [
+      -1,
+      -5,
+      -10,
+      0,
+      5,
+      1
+    ],
+    "p_half": {
+      "Z_minus": {
+        "denominator": 2,
+        "numerator": 1,
+        "text": "1/2"
+      },
+      "Z_plus": {
+        "denominator": 16,
+        "numerator": 3,
+        "text": "3/16"
+      },
+      "Z_zero": {
+        "denominator": 16,
+        "numerator": 5,
+        "text": "5/16"
+      },
+      "first_logQ_derivative": {
+        "denominator": 16,
+        "numerator": -5,
+        "text": "-5/16"
+      },
+      "second_logQ_derivative": {
+        "denominator": 256,
+        "numerator": 151,
+        "text": "151/256"
+      }
+    },
+    "sector_Bernstein_coefficients_by_q": {
+      "-1": [
+        1,
+        5,
+        10,
+        0,
+        0,
+        0
+      ],
+      "0": [
+        0,
+        0,
+        0,
+        10,
+        0,
+        0
+      ],
+      "1": [
+        0,
+        0,
+        0,
+        0,
+        5,
+        1
+      ]
+    },
+    "topology_channel_failures": 0
+  }
+}

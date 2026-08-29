@@ -1,0 +1,14 @@
+schema_version: 1
+issue: 114
+frozen_on: 2026-08-29
+generator: scripts/p114_relative_cluster_fugacity.py
+artifact: results/exact-relative-cluster-fugacity/latest.json
+test: tests/test_p114_relative_cluster_fugacity.py
+source_direction:
+  Q_black: Q
+  Q_white_matching: Q^-1
+  Euler_counterterm: Q^[-(V-E+F0)]
+exact_formula: "(Q d_Q) log Z_rel | Q=1 = M_N(p)"
+topological_resolution: "Z_rel=Q Z_plus + Z_zero + Q^-1 Z_minus"
+ordinary_FK_no_go_class: "k_black plus arbitrary translation-invariant oriented-plaquette local density"
+pc_fit_performed: false
