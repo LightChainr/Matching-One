@@ -1,0 +1,26 @@
+schema: matching-one.p200-phaseE-path-filtration.v1
+issue: 200
+status: exact_tiny_path_witness_production_stopped
+base_commit: 2c9507547e72bc26de75ab7cde23a68e07f1a3db
+oracle:
+  geometry: N1_to_N10_via_N2_N5_real_Gaussian_HNF_lift
+  configurations: 1024
+  measure: uniform_p_half
+  command: python3 scripts/p200_path_filtration_oracle.py --output results/exact-cover-character-oracles/p200_path_filtration.json
+primary_toy_observable:
+  target: final_ambient_H1_rank_two
+  definition: tau_R5_then_R2_minus_tau_R2_then_R5
+  endpoint_sigma_algebra_equal: true
+  path_reversal_parity: odd
+  typed_rows: [complement_even, complement_odd]
+secondary_exact_checks:
+  - Doob_increment_quadratic_variation_contrast
+  - intermediate_conditional_variance_information_advantage
+  - partition_Rc_scalar_rank_filtration_no_go
+minimum_future_state:
+  H1_activation: [h0_black, h2_black, h5_black, h25_black, h0_white, h2_white, h5_white, h25_white]
+  partition_Rc_chronology: dynamic_edge_order_or_marked_cluster_lineage
+production:
+  start: false
+  frozen_100m_mixed_join: do_not_run
+  reason: Phase_D_stop_already_triggered_and_Phase_E_is_exact_toy_only

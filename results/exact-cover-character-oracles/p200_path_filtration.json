@@ -1,0 +1,413 @@
+{
+  "schema": "matching-one.p200-path-filtration-oracle.v1",
+  "issue": 200,
+  "status": "exact_tiny_path_ordered_witness_production_stopped",
+  "geometry": {
+    "lineage": "N1 -> N2/N5 -> N10 over Z[i]",
+    "final_period_matrix": [
+      [
+        3,
+        -1
+      ],
+      [
+        1,
+        3
+      ]
+    ],
+    "final_column_HNF": [
+      [
+        10,
+        3
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "N2_column_HNF": [
+      [
+        2,
+        1
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "N5_column_HNF": [
+      [
+        5,
+        3
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "coordinates_in_reference_engine_order": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        0
+      ]
+    ],
+    "lift_convention": "raw displacement between exact reference representatives; ambient-H1 path rows are convention-labelled"
+  },
+  "filtrations": {
+    "target": "A_c=1{ambient H1 rank after R2 join R5 is two}",
+    "R2_then_R5": "sigma(h0) subset sigma(h0,h2) subset sigma(h0,h2,h5,h25)",
+    "R5_then_R2": "sigma(h0) subset sigma(h0,h5) subset sigma(h0,h2,h5,h25)",
+    "common_endpoint": true,
+    "activation_time": "first stage k in {0,1,2} at which the target rank two is visible; undefined off A_c",
+    "C_activation": "tau(R5 then R2)-tau(R2 then R5)=A_c*(1{h2=2}-1{h5=2})",
+    "C_Doob_Q": "sum_k (Delta E[A_c|F_k^(2,5)])^2 - sum_k (Delta E[A_c|F_k^(5,2)])^2",
+    "R2_information_advantage": "Var(A_c|sigma(h0,h5))-Var(A_c|sigma(h0,h2)); positive means R2 reveals more at stage one"
+  },
+  "exhaustive_checks": {
+    "configurations": 1024,
+    "join_endpoint_equal_every_configuration_and_colour": true,
+    "activation": {
+      "black_NN": {
+        "nonzero_configurations": 75,
+        "mean_at_p_half": {
+          "exact": "-75/1024",
+          "decimal": -0.0732421875
+        },
+        "minimum": "-1",
+        "maximum": "0",
+        "histogram": {
+          "-1": 75,
+          "0": 949
+        },
+        "configuration_order_sha256": "62df13c75129e64bf797373370d2eb8903f11119421711bbee3774e64af12b80"
+      },
+      "white_matching": {
+        "nonzero_configurations": 50,
+        "mean_at_p_half": {
+          "exact": "-21/512",
+          "decimal": -0.041015625
+        },
+        "minimum": "-1",
+        "maximum": "1",
+        "histogram": {
+          "-1": 46,
+          "0": 974,
+          "1": 4
+        },
+        "configuration_order_sha256": "b83151ac5d9a828347b8a628f24dd68b682f764b29c15d0a1345dd9de8ae3e4f"
+      },
+      "typed_complement_even": {
+        "nonzero_configurations": 125,
+        "mean_at_p_half": {
+          "exact": "-117/2048",
+          "decimal": -0.05712890625
+        },
+        "minimum": "-1/2",
+        "maximum": "1/2",
+        "histogram": {
+          "-1/2": 121,
+          "0": 899,
+          "1/2": 4
+        },
+        "configuration_order_sha256": "dd17448e2adffb24e8f2bee1555de77b5a107f9fd3b3adfa0c5fe4e07e3caff8"
+      },
+      "typed_complement_odd": {
+        "nonzero_configurations": 125,
+        "mean_at_p_half": {
+          "exact": "-33/2048",
+          "decimal": -0.01611328125
+        },
+        "minimum": "-1/2",
+        "maximum": "1/2",
+        "histogram": {
+          "-1/2": 79,
+          "0": 899,
+          "1/2": 46
+        },
+        "configuration_order_sha256": "4a3fce73d7670d2bf4d7e605cf153d344f39e9f612a7a2a0d6da3c0872fb520b"
+      }
+    },
+    "Doob_quadratic_variation": {
+      "black_NN": {
+        "nonzero_configurations": 669,
+        "mean_at_p_half": {
+          "exact": "0",
+          "decimal": 0.0
+        },
+        "minimum": "-24138723735/65472235336",
+        "maximum": "509375/669879",
+        "histogram": {
+          "-24138723735/65472235336": 2,
+          "-89650/669879": 125,
+          "-286100/2351057": 29,
+          "-54677102943/583267922056": 5,
+          "-257143/20944697": 233,
+          "-2757181059/583267922056": 129,
+          "0": 355,
+          "2964189573/65472235336": 100,
+          "3209854/20944697": 24,
+          "509375/669879": 22
+        },
+        "configuration_order_sha256": "c3c30a6902855457556a20048619b5220c9d9befe91cf99b01fff62064b2387d"
+      },
+      "white_matching": {
+        "nonzero_configurations": 382,
+        "mean_at_p_half": {
+          "exact": "0",
+          "decimal": 0.0
+        },
+        "minimum": "-196520/234639",
+        "maximum": "70805/174158",
+        "histogram": {
+          "-196520/234639": 4,
+          "-1568/6723": 2,
+          "-368/2241": 8,
+          "-106426885/1318201902": 170,
+          "-1030618/98431443": 37,
+          "-2240/1215203": 82,
+          "0": 642,
+          "130/2241": 27,
+          "448/6723": 8,
+          "133280/1215203": 2,
+          "70805/174158": 42
+        },
+        "configuration_order_sha256": "46c6d97f409107d6cb70027ffdbf2b8d5829980610ba804838336011d218762a"
+      },
+      "mean_zero_reason": "exact martingale isometry; the configurationwise contrast is nevertheless nonzero"
+    },
+    "conditional_variance_information": {
+      "black_NN": {
+        "nonzero_configurations": 669,
+        "mean_at_p_half": {
+          "exact": "-110932591235/1819605946368",
+          "decimal": -0.060965172957598596
+        },
+        "minimum": "-3100/17161",
+        "maximum": "0",
+        "histogram": {
+          "-3100/17161": 29,
+          "-145148517/955799056": 102,
+          "-2750/21609": 147,
+          "-10498/152881": 257,
+          "-339628365/8514860176": 134,
+          "0": 355
+        },
+        "configuration_order_sha256": "3d0155948c43c19bb8434793f7077a6374940094fc3c6cae99ffe2cbc5e5db87"
+      },
+      "white_matching": {
+        "nonzero_configurations": 382,
+        "mean_at_p_half": {
+          "exact": "-6026549/190440448",
+          "decimal": -0.03164532043108825
+        },
+        "minimum": "-14/81",
+        "maximum": "97850/1185921",
+        "histogram": {
+          "-14/81": 10,
+          "-1785/11236": 42,
+          "-11600545/85045284": 170,
+          "-2/27": 35,
+          "-238/14641": 84,
+          "0": 642,
+          "170/7569": 4,
+          "97850/1185921": 37
+        },
+        "configuration_order_sha256": "b54d6b954efa7337eacb52ea2e4a5dcc4d97752cd64c866562712b60d1597508"
+      }
+    },
+    "partition_Rc_scalar_rank_no_go": {
+      "target": "1{R_nonlocal != 0}",
+      "same_rank_summary_filtrations": true,
+      "C_Doob_Q_zero_all_black": true,
+      "C_Doob_Q_zero_all_white": true,
+      "interpretation": "the natural scalar ranks do not chronologize Rc on N10; a nonzero Rc path mark needs richer intermediate state"
+    }
+  },
+  "symmetry_typing": {
+    "path_orientation_R2_swap_R5": "C_activation, C_Doob_Q, and R2_information_advantage are odd by definition",
+    "typed_layer_swap": {
+      "even": "(C_black_NN+C_white_matching)/2 is invariant",
+      "odd": "(C_black_NN-C_white_matching)/2 changes sign"
+    },
+    "geometric_N650_orientation": "not inferred from the one-fiber N10 oracle; S/D needs both real N650 geometries or a second exact finite geometry"
+  },
+  "witnesses": {
+    "balanced_first_H1_activation": {
+      "mask": 62,
+      "occupied_sites": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "black_NN": {
+        "partition_ranks": {
+          "0": 4,
+          "2": 4,
+          "5": 4,
+          "25": 4
+        },
+        "ambient_H1_ranks": {
+          "0": 1,
+          "2": 1,
+          "5": 1,
+          "25": 1
+        },
+        "J_local": 0,
+        "R_nonlocal": 0
+      },
+      "white_matching": {
+        "partition_ranks": {
+          "0": 4,
+          "2": 4,
+          "5": 4,
+          "25": 4
+        },
+        "ambient_H1_ranks": {
+          "0": 1,
+          "2": 1,
+          "5": 2,
+          "25": 2
+        },
+        "J_local": 0,
+        "R_nonlocal": 0
+      },
+      "black_path": {
+        "final_rank_two_event": 0,
+        "tau_R2_then_R5": null,
+        "tau_R5_then_R2": null,
+        "C_activation": 0
+      },
+      "white_path": {
+        "final_rank_two_event": 1,
+        "tau_R2_then_R5": 2,
+        "tau_R5_then_R2": 1,
+        "C_activation": -1
+      },
+      "C_typed_even": "-1/2",
+      "C_typed_odd": "1/2"
+    },
+    "balanced_Doob_quadratic_variation": {
+      "mask": 31,
+      "occupied_sites": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "black_NN": {
+        "partition_ranks": {
+          "0": 4,
+          "2": 4,
+          "5": 4,
+          "25": 4
+        },
+        "ambient_H1_ranks": {
+          "0": 1,
+          "2": 1,
+          "5": 1,
+          "25": 1
+        },
+        "J_local": 0,
+        "R_nonlocal": 0
+      },
+      "white_matching": {
+        "partition_ranks": {
+          "0": 4,
+          "2": 4,
+          "5": 4,
+          "25": 4
+        },
+        "ambient_H1_ranks": {
+          "0": 1,
+          "2": 1,
+          "5": 1,
+          "25": 1
+        },
+        "J_local": 0,
+        "R_nonlocal": 0
+      },
+      "black_Doob": {
+        "M0": "37/62",
+        "M2": "22/147",
+        "M5": "0",
+        "M25": "0",
+        "Q_R2_then_R5": "18466121/83064996",
+        "Q_R5_then_R2": "1369/3844",
+        "C_Doob_Q": "-89650/669879",
+        "conditional_variance_after_R2": "2750/21609",
+        "conditional_variance_after_R5": "0",
+        "R2_information_advantage": "-2750/21609"
+      },
+      "white_Doob": {
+        "M0": "14/31",
+        "M2": "21/106",
+        "M5": "2/87",
+        "M25": "0",
+        "Q_R2_then_R5": "558845/5398898",
+        "Q_R5_then_R2": "1340180/7273809",
+        "C_Doob_Q": "-106426885/1318201902",
+        "conditional_variance_after_R2": "1785/11236",
+        "conditional_variance_after_R5": "170/7569",
+        "R2_information_advantage": "-11600545/85045284"
+      }
+    },
+    "same_endpoint_different_Doob_contrast": {
+      "shared_endpoint_ranks_h0_h25": [
+        0,
+        2
+      ],
+      "first_mask": 141,
+      "first_C_Doob_Q": "-286100/2351057",
+      "second_mask": 173,
+      "second_C_Doob_Q": "0"
+    }
+  },
+  "minimal_extra_data": {
+    "for_H1_activation": "retain per-colour h0,h2,h5,h25 before batch aggregation; do not retain only the final join or mixed Delta25",
+    "for_partition_Rc_chronology": "dynamic edge order or marked cluster lineage at the intermediate join; scalar r0,r2,r5,r25,J_local is exactly insufficient in this oracle"
+  },
+  "decision": {
+    "exact_toy_result": "a genuine path-filtration witness exists even though final joins commute",
+    "mechanism": "norm-five and norm-two intermediate ranks reveal the same final rank-two event at different stopping times",
+    "production": "stopped; do not run the frozen 100M mixed-join job and do not reinterpret the Phase D Rc rejection as path order",
+    "not_claimed": "continuum memory, Jordan structure, or a resolved N650 S/D channel"
+  }
+}
