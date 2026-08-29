@@ -1,0 +1,45 @@
+schema: matching-one/rank-birth-parity-channels-manifest/v1
+issue: 215
+base_commit: 3881e88
+phase: exact_complement_parity_followup
+
+increment_over_3881e88:
+  - primal-to-matching complement and insertion-reversal map
+  - exact I_01 to I_12 gate exchange
+  - canonical even S and odd D insertion channels
+  - coefficientwise p-to-1-minus-p parity certificates
+  - complement-preserved primitive line and tiny index pairing
+  - exact projective spin-4 character chi4(ell)
+  - line-H4 and landing-H4 even/odd channels
+
+claims:
+  exact_general:
+    - S equals I_01 plus I_12 and carries M_prime
+    - D equals I_12 minus I_01 and carries minus partial_p P_rank1
+    - complement reversal preserves S and negates D
+    - a direct 0-to-2 birth contributes only to S
+    - chi4 of the preserved line does not change complement parity
+  exhaustive_controls:
+    - all environment-level rank and gate exchanges close
+    - every primal/matching polynomial parity closes coefficientwise
+    - local landing marks are preserved on the injective axis L4 annulus
+    - endpoint ell and iota pair on every nonsimultaneous birth
+  conditional_mechanism:
+    - the marked D channel is a candidate local endpoint for the anomalous matching-odd H4 lifetime mode
+  not_claimed:
+    - a continuum overlap or exponent
+    - general integral-index equality
+    - a canonical line for simultaneous 0-to-2
+
+outputs:
+  script: scripts/rank_birth_parity_channels.py
+  note: notes/p215-rank-birth-complement-parity-channels.md
+  json: results/rank-birth-parity-channels/latest.json
+  markdown: results/rank-birth-parity-channels/latest.md
+  tests: tests/test_rank_birth_parity_channels.py
+
+commands:
+  - python scripts/rank_birth_parity_channels.py --output results/rank-birth-parity-channels/latest.json
+  - python scripts/rank_birth_parity_channels.py --format markdown --output results/rank-birth-parity-channels/latest.md
+  - python -m unittest discover -s tests -p 'test_rank_birth_parity_channels.py'
+
