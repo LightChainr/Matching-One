@@ -15,6 +15,7 @@ definitions:
   russo_interpretation: total primal-plus-matching pivotal mass
   normalized_pivotal_H4: J_N = P4[S_prime]/Mbar_prime
   primary_scaled: Y_N = N^(13/8)*J_N
+  matching_even_pivotal_H4: E_N = N*P4[D_prime]/Mbar_prime
   coefficient_ratio: Xi_N = J_N/P4[D]
   thermal_control: T_N = N^(-3/8)*Mbar_prime
 primary_score:
@@ -23,6 +24,7 @@ primary_score:
   score_on: [145, 170]
   covariance: synchronized delete-one pseudovalues across every size and metric
 diagnostics:
+  - constant E_N tests the relative L^(-2) anisotropy of total pivotal mass
   - constant Xi_N tests whether central D and pivotal H4 are coefficients of one scaling function
   - constant T_N checks the Russo mass exponent independently
 evidence_rule: >-
@@ -35,6 +37,7 @@ claim_boundary: >-
   coefficient relation.
 observed:
   primary_Y_chi_square_df2: 10.3160883882
+  matching_even_E_chi_square_df2: 0.4098636060
   Xi_chi_square_df2: 3.3069523125
   thermal_leading_law_chi_square_df2: 528.170319545
   decision: >-

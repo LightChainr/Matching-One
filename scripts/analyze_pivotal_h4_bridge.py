@@ -21,7 +21,12 @@ from analyze_p48_retrospective import (
 )
 
 
-METRICS = ("pivotal_H4_scaled", "coefficient_ratio", "thermal_mass_scaled")
+METRICS = (
+    "pivotal_H4_scaled",
+    "even_pivotal_H4_scaled",
+    "coefficient_ratio",
+    "thermal_mass_scaled",
+)
 
 
 def bridge_metrics(projected):
@@ -31,6 +36,9 @@ def bridge_metrics(projected):
         "Mbar_prime": slope,
         "normalized_pivotal_H4": normalized_h4,
         "pivotal_H4_scaled": normalized_h4 * projected["N"] ** (13.0 / 8.0),
+        "even_pivotal_H4_scaled": (
+            projected["N"] * projected["P4_D_prime"] / slope
+        ),
         "coefficient_ratio": normalized_h4 / projected["P4_D"],
         "thermal_mass_scaled": slope / projected["N"] ** (3.0 / 8.0),
     }
@@ -125,6 +133,7 @@ def emit(result, input_path: Path, output_dir: Path):
             "Mbar_prime": "orientation-mean matching slope; exact total pivotal mass by Russo",
             "normalized_pivotal_H4": "P4[S_prime]/Mbar_prime",
             "pivotal_H4_scaled": "N^(13/8)*normalized_pivotal_H4",
+            "even_pivotal_H4_scaled": "N*P4[D_prime]/Mbar_prime",
             "coefficient_ratio": "normalized_pivotal_H4/P4[D]",
             "thermal_mass_scaled": "N^(-3/8)*Mbar_prime",
         },
@@ -143,6 +152,7 @@ def emit(result, input_path: Path, output_dir: Path):
     )
 
     primary = result["scores"]["pivotal_H4_scaled"]
+    even = result["scores"]["even_pivotal_H4_scaled"]
     xi = result["scores"]["coefficient_ratio"]
     thermal = result["scores"]["thermal_mass_scaled"]
     lines = [
@@ -158,10 +168,17 @@ def emit(result, input_path: Path, output_dir: Path):
         "",
         f"The stronger dimensionless coefficient `Xi=[P4[S']/Mbar']/P4[D]` is still compatible with a shared central-value/derivative scaling function at `{xi['heldout_chi_square']:.4f} / 2 df`, although its point estimates decrease with N and this is retrospective evidence. The leading pure thermal-mass law is also far too rigid at `{thermal['heldout_chi_square']:.4f} / 2 df`; its already-resolved finite-size corrections cannot be discarded merely because the leading exponent is exact.",
         "",
+        f"The matching-even angular pivotal response `N P4[D']/Mbar'` gives `{even['heldout_chi_square']:.4f} / 2 df`. This is the integrated form of a relative `L^-2` anisotropy in the total pivotal mass and is the direct zero-extra-compute bridge for the x=4 sector.",
+        "",
         "| metric | source constant (SE) | heldout chi-square / 2 | heldout z (145,170) |",
         "| --- | ---: | ---: | ---: |",
     ]
-    for name, score in (("N^(13/8) P4[S']/Mbar'", primary), ("Xi", xi), ("N^(-3/8) Mbar'", thermal)):
+    for name, score in (
+        ("N^(13/8) P4[S']/Mbar'", primary),
+        ("N P4[D']/Mbar'", even),
+        ("Xi", xi),
+        ("N^(-3/8) Mbar'", thermal),
+    ):
         z = [score["residual"][i] / score["residual_se"][i] for i in range(2)]
         lines.append(
             f"| {name} | {score['amplitude']:.9g} ({score['amplitude_se']:.3g}) | "

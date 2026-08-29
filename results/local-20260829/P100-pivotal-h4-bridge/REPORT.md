@@ -10,9 +10,12 @@ Thermal normalization does not remove the known derivative drift: the primary co
 
 The stronger dimensionless coefficient `Xi=[P4[S']/Mbar']/P4[D]` is still compatible with a shared central-value/derivative scaling function at `3.3070 / 2 df`, although its point estimates decrease with N and this is retrospective evidence. The leading pure thermal-mass law is also far too rigid at `528.1703 / 2 df`; its already-resolved finite-size corrections cannot be discarded merely because the leading exponent is exact.
 
+The matching-even angular pivotal response `N P4[D']/Mbar'` gives `0.4099 / 2 df`. This is the integrated form of a relative `L^-2` anisotropy in the total pivotal mass and is the direct zero-extra-compute bridge for the x=4 sector.
+
 | metric | source constant (SE) | heldout chi-square / 2 | heldout z (145,170) |
 | --- | ---: | ---: | ---: |
 | N^(13/8) P4[S']/Mbar' | 1.1099926 (0.0438) | 10.32 | +1.979, +2.547 |
+| N P4[D']/Mbar' | -0.0140150524 (0.00279) | 0.4099 | -0.597, +0.296 |
 | Xi | 3.90501323 (0.688) | 3.307 | -1.422, -1.693 |
 | N^(-3/8) Mbar' | 1.749682 (9.38e-05) | 528.2 | -13.842, -20.438 |
 
