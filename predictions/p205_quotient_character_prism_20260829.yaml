@@ -1,0 +1,147 @@
+version: 1
+created: 2026-08-29
+status: design_frozen_after_P205_10M_before_new_target_reveal
+issue: 205
+claim_level: C0
+generator: scripts/design_p205_quotient_character_maximin.py
+calibration_score: results/server-20260829/P205-norm5-conjugate-coalescence/analysis/score.json
+calibration_score_sha256: 1f10a248883268a46b612b3ba2cf1455f783fd2ea1ddb8b85a252ac6d8cabc6f
+purpose: >-
+  Turn the H4/H8/H12 ambiguity left by the N325/N425 coalescence score into
+  an exact three-coordinate angular code. This is a small-N mechanism stress
+  test, not an asymptotic universality claim and not an invitation to refit an
+  exponent after reveal.
+
+observable:
+  topology_channel: cross
+  definition: DeltaM_N = M_first(p_ref) - M_second(p_ref)
+  p_ref: 0.59274605079
+  model: DeltaM_N = A_s * N^(-13/8) * Delta_cos_s_theta
+  nuisance: one_shared_amplitude_A_s_per_harmonic
+  covariance: synchronized_within_pair_and_independent_across_N
+
+frozen_model_order: [H4, H8, H12]
+exact_sign_code:
+  H4: ['+', '+', '+']
+  H8: ['+', '-', '+']
+  H12: ['+', '+', '-']
+
+production_design:
+  authorization: frozen_not_launched
+  executable: build/threshold_rank_integer_period_mc
+  executable_source_commit: 4d82c754a04635de0561b221771099e4ec5a5f88
+  samples_per_pair: 12000000
+  batches: 100
+  threads_per_job: 8
+  replica_counter: [9400000000, 9412000000]
+  launch: two_8_thread_lanes_with_one_pair_job_per_lane
+  estimated_cpu_seconds_from_P205: '497.0377897044'
+  estimated_two_lane_wall_seconds_from_P205: '38.8310773207'
+  planning_maximin_noncentrality_at_reference_amplitude: '6.8981461527'
+  planning_reference_amplitude_only: '0.7885'
+  planning_note: >-
+    The reference amplitude and P205 mean pair-contrast variance set the sample
+    scale only. They are not fixed target means and are not used to rank the
+    revealed models.
+
+targets:
+  - id: N25_square_vs_3_4
+    role: all_positive_anchor
+    N: 25
+    first_representation: [5, 0]
+    second_representation: [4, 3]
+    first_matrix: [[5, 0], [0, 5]]
+    second_matrix: [[4, -3], [3, 4]]
+    first_smith_invariants: [5, 5]
+    second_smith_invariants: [1, 25]
+    exact_character_difference:
+      H4: '1152/625'
+      H8: '225792/390625'
+      H12: '212015232/244140625'
+    seed: 2026105525
+    output_prefix: results/server-20260829/P205-quotient-character-prism/raw/n25_12m
+    command: >-
+      build/threshold_rank_integer_period_mc --first-matrix 5 0 0 5
+      --second-matrix 4 -3 3 4 --first-rep 5 0 --second-rep 4 3
+      --samples 12000000 --batches 100 --seed 2026105525
+      --replica-offset 9400000000 --threads 8
+      --git-commit 4d82c754a04635de0561b221771099e4ec5a5f88
+      --output-prefix results/server-20260829/P205-quotient-character-prism/raw/n25_12m
+
+  - id: N50_1_7_vs_diagonal
+    role: H8_only_sign_flip
+    N: 50
+    first_representation: [7, 1]
+    second_representation: [5, 5]
+    first_matrix: [[7, -1], [1, 7]]
+    second_matrix: [[5, -5], [5, 5]]
+    first_smith_invariants: [1, 50]
+    second_smith_invariants: [5, 10]
+    exact_character_difference:
+      H4: '1152/625'
+      H8: '-225792/390625'
+      H12: '212015232/244140625'
+    seed: 2026105550
+    output_prefix: results/server-20260829/P205-quotient-character-prism/raw/n50_12m
+    command: >-
+      build/threshold_rank_integer_period_mc --first-matrix 7 -1 1 7
+      --second-matrix 5 -5 5 5 --first-rep 7 1 --second-rep 5 5
+      --samples 12000000 --batches 100 --seed 2026105550
+      --replica-offset 9400000000 --threads 8
+      --git-commit 4d82c754a04635de0561b221771099e4ec5a5f88
+      --output-prefix results/server-20260829/P205-quotient-character-prism/raw/n50_12m
+
+  - id: N125_2_11_vs_5_10
+    role: H12_only_sign_flip
+    N: 125
+    first_representation: [11, 2]
+    second_representation: [10, 5]
+    first_matrix: [[11, -2], [2, 11]]
+    second_matrix: [[10, -5], [5, 10]]
+    first_smith_invariants: [1, 125]
+    second_smith_invariants: [5, 25]
+    exact_character_difference:
+      H4: '16128/15625'
+      H8: '237984768/244140625'
+      H12: '-4983630043392/3814697265625'
+    seed: 2026105625
+    output_prefix: results/server-20260829/P205-quotient-character-prism/raw/n125_12m
+    command: >-
+      build/threshold_rank_integer_period_mc --first-matrix 11 -2 2 11
+      --second-matrix 10 -5 5 10 --first-rep 11 2 --second-rep 10 5
+      --samples 12000000 --batches 100 --seed 2026105625
+      --replica-offset 9400000000 --threads 8
+      --git-commit 4d82c754a04635de0561b221771099e4ec5a5f88
+      --output-prefix results/server-20260829/P205-quotient-character-prism/raw/n125_12m
+
+pre_score_checks:
+  - determinant_of_each_period_matrix_equals_declared_N
+  - first_and_second_Smith_invariants_differ_for_every_pair
+  - identical_observable_descriptors_for_both_orientations
+  - common_priority_field_and_replica_counters_within_each_pair
+  - independent_seeds_across_N25_N50_N125
+
+minimal_sufficient_statistics:
+  per_synchronized_batch_and_orientation:
+    - marginal_K_plus_threshold_rank_histogram
+    - marginal_K_minus_threshold_rank_histogram
+  not_required:
+    - root
+    - derivative
+    - joint_K_plus_times_K_minus_moment
+    - fitted_exponent
+    - full_curve_refit
+
+scoring_contract:
+  - construct the three-vector DeltaM = [DeltaM_25, DeltaM_50, DeltaM_125]
+  - use synchronized batch covariance within each pair and zero cross-N covariance
+  - for each frozen harmonic fit exactly one GLS amplitude A_s
+  - report the two-degree-of-freedom GLS residual chi-square
+  - report frozen order H4 then H8 then H12 without target-conditioned changes
+  - do not fit the radial exponent or add offsets
+
+fallback_if_small_N_breaks_single_amplitude_model: >-
+  Do not repair the prism with a free correction term. Escalate to the already
+  enumerated N400/N450/N500 sign-isomorphic bridge, preserving the same signs
+  at much lower information per CPU, or use the best new medium-N triple
+  N338/N400/N500 as an information-first compromise.
