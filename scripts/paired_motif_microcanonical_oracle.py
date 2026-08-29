@@ -74,6 +74,11 @@ def direct_count(mask: int, embeddings: tuple[Embedding, ...]) -> int:
     return sum(all(mask & (1 << vertex) for vertex in item) for item in embeddings)
 
 
+def popcount(mask: int) -> int:
+    """Return the number of set bits on every supported Python version."""
+    return bin(mask).count("1")
+
+
 def incremental_count(mask: int, n: int, embeddings: tuple[Embedding, ...]) -> int:
     incident: dict[int, list[Embedding]] = defaultdict(list)
     for item in embeddings:
@@ -102,7 +107,7 @@ def exact_summary(geometry: IntegerTorusGeometry) -> dict[str, Any]:
     sums = {name: [0] * (geometry.n + 1) for name in motifs}
     incremental_failures = 0
     for mask in range(1 << geometry.n):
-        k = mask.bit_count()
+        k = popcount(mask)
         for name, embeddings in motifs.items():
             direct = direct_count(mask, embeddings)
             sums[name][k] += direct
@@ -205,7 +210,7 @@ def joint_histogram(geometry: IntegerTorusGeometry) -> dict[int, Counter[tuple[i
     order = tuple(MOTIF_SIZES)
     result: dict[int, Counter[tuple[int, ...]]] = defaultdict(Counter)
     for mask in range(1 << geometry.n):
-        result[mask.bit_count()][tuple(direct_count(mask, motifs[name]) for name in order)] += 1
+        result[popcount(mask)][tuple(direct_count(mask, motifs[name]) for name in order)] += 1
     return result
 
 
