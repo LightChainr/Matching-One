@@ -1,0 +1,59 @@
+{
+  "schema": "matching-one/rigorous-pc-confidence-gate-manifest/v1",
+  "issue": 112,
+  "phase": "phase0_certification_and_cost_gate",
+  "model": "independent site percolation on the square lattice and its site-matching graph",
+  "block_event": {
+    "cells": "two adjacent s-by-s cells",
+    "success": "each cell has a unique largest open cluster and the two clusters connect in the union",
+    "renormalized_model": "1-independent bond percolation on Z2"
+  },
+  "deterministic_constants": {
+    "legacy": "0.8639 from arXiv:math/0702232",
+    "modern": "p_max(Z2)<=0.8457 from arXiv:2206.12335"
+  },
+  "statistical_protocol": {
+    "familywise_alpha": "1/1000000",
+    "sides": 2,
+    "maximum_attempts_per_side": 3,
+    "per_run_alpha": "1/6000000",
+    "null": "block-event probability<=p0",
+    "test": "exact upper binomial tail",
+    "trials": 400
+  },
+  "required_certificates": [
+    "legacy N=400 cutoff 378 and tail 1.148990352894e-7 are reproduced",
+    "modern N=400 cutoff is 373 at per-run alpha 1/6000000",
+    "cutoff minus one fails the exact alpha inequality",
+    "power is tabulated at true block-event probabilities 0.90,0.92,0.94,0.95",
+    "two-sided route uses the square site-matching graph",
+    "heuristic scale/cost multipliers are labelled non-rigorous",
+    "IID genuine-randomness assumption is explicit"
+  ],
+  "outputs": {
+    "json": "results/rigorous-pc-confidence-gate/latest.json",
+    "markdown": "results/rigorous-pc-confidence-gate/latest.md"
+  },
+  "commands": [
+    "python scripts/rigorous_pc_confidence_gate.py --format json",
+    "python scripts/rigorous_pc_confidence_gate.py --format markdown",
+    "python -m unittest tests.test_rigorous_pc_confidence_gate"
+  ],
+  "sources": [
+    {
+      "id": "arXiv:math/0702232",
+      "url": "https://arxiv.org/abs/math/0702232",
+      "role": "block event, 1-independent reduction, binomial test, historical square-site interval"
+    },
+    {
+      "id": "arXiv:2206.12335",
+      "url": "https://arxiv.org/abs/2206.12335",
+      "role": "modern rigorous upper bound on p_max(Z2)"
+    }
+  ],
+  "decision": {
+    "class": "methodologically_interesting_but_weak",
+    "next_gate": "validate an open-boundary block-event evaluator before any production run",
+    "parent_issue": "remain open"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "schema": "matching-one/pc-block-event-exact-manifest/v1",
+  "issue": 112,
+  "phase": "tiny_open_boundary_event_semantics",
+  "domain": {
+    "shape": "2s-by-s open rectangle split into adjacent s-by-s halves",
+    "sizes": [1, 2],
+    "graphs": ["square NN", "square matching NN+both diagonals"],
+    "vertex_order": "row-major, y outer and x inner"
+  },
+  "event": [
+    "each half has at least one open cluster",
+    "each half has a unique cluster of maximum site count",
+    "the two selected clusters are connected in the union rectangle"
+  ],
+  "required_exact_results": {
+    "square_s1_coefficients": [0, 0, 1],
+    "matching_s1_coefficients": [0, 0, 1],
+    "square_s2_coefficients": [0, 0, 2, 8, 19, 24, 20, 8, 1],
+    "matching_s2_coefficients": [0, 0, 4, 20, 41, 44, 26, 8, 1],
+    "square_s2_probability_at_half": "41/128",
+    "matching_s2_probability_at_half": "9/16",
+    "square_s2_success_to_failure_single_site_additions": 28,
+    "matching_s2_success_to_failure_single_site_additions": 0
+  },
+  "outputs": {
+    "json": "results/pc-block-event-exact/latest.json",
+    "markdown": "results/pc-block-event-exact/latest.md"
+  },
+  "commands": [
+    "python scripts/pc_block_event_exact.py --format json",
+    "python scripts/pc_block_event_exact.py --format markdown",
+    "python -m unittest tests.test_pc_block_event_exact"
+  ],
+  "claim_boundary": {
+    "exact": "all configurations at s=1,2",
+    "warning": "the square NN unique-largest event is not monotone under opening sites",
+    "not_claimed": "production-scale probability, sampler validation, or a new pc bound",
+    "parent_issue": "remain open"
+  }
+}
