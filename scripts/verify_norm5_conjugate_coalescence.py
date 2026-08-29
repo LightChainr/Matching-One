@@ -1,132 +1,167 @@
 #!/usr/bin/env python3
-"""Verify exact Gaussian coalescence and same-N harmonic interpolation targets."""
+"""Verify exact same-parent norm-5 conjugate coalescence and harmonic weights."""
 from __future__ import annotations
 
+import json
 from fractions import Fraction
 from math import gcd
 
+Gaussian = tuple[int, int]
 
-def mul(z: tuple[int, int], w: tuple[int, int]) -> tuple[int, int]:
+
+def mul(z: Gaussian, w: Gaussian) -> Gaussian:
     a, b = z
     c, d = w
     return a * c - b * d, a * d + b * c
 
 
-def norm(z: tuple[int, int]) -> int:
+def norm(z: Gaussian) -> int:
     a, b = z
     return a * a + b * b
 
 
-def d4_canonical(z: tuple[int, int]) -> tuple[int, int]:
-    a, b = map(abs, z)
-    return max(a, b), min(a, b)
+def power(z: Gaussian, exponent: int) -> Gaussian:
+    result = (1, 0)
+    for _ in range(exponent):
+        result = mul(result, z)
+    return result
 
 
-def smith_for_gaussian(z: tuple[int, int]) -> tuple[int, int]:
-    a, b = map(abs, z)
-    d1 = gcd(a, b)
-    return d1, norm(z) // d1
+def d4_canonical(z: Gaussian) -> Gaussian:
+    a, b = sorted((abs(z[0]), abs(z[1])), reverse=True)
+    return a, b
 
 
-def harmonic_cos(z: tuple[int, int], spin: int) -> Fraction:
-    if spin % 2:
-        raise ValueError("spin must be even")
-    a, b = z
-    x, y = 1, 0
-    for _ in range(spin):
-        x, y = x * a - y * b, x * b + y * a
-    return Fraction(x, norm(z) ** (spin // 2))
+def smith_invariants(z: Gaussian) -> tuple[int, int]:
+    divisor = gcd(abs(z[0]), abs(z[1]))
+    return divisor, norm(z) // divisor
 
 
-def harmonic_sin(z: tuple[int, int], spin: int = 4) -> Fraction:
-    if spin % 2:
-        raise ValueError("spin must be even")
-    a, b = z
-    x, y = 1, 0
-    for _ in range(spin):
-        x, y = x * a - y * b, x * b + y * a
-    return Fraction(y, norm(z) ** (spin // 2))
+def cosine_harmonic(z: Gaussian, spin: int) -> Fraction:
+    if spin <= 0 or spin % 4:
+        raise ValueError("spin must be a positive multiple of four")
+    real, _ = power(z, spin)
+    return Fraction(real, norm(z) ** (spin // 2))
 
 
-def interpolation_weights(
-    A: tuple[int, int], B: tuple[int, int], C: tuple[int, int], spin: int
-) -> tuple[Fraction, Fraction]:
-    cA, cB, cC = (harmonic_cos(z, spin) for z in (A, B, C))
-    if cA == cB:
-        raise ValueError("source angles do not identify this harmonic")
-    wA = (cC - cB) / (cA - cB)
-    return wA, 1 - wA
+def affine_weights(a: Gaussian, b: Gaussian, c: Gaussian, spin: int) -> tuple[Fraction, Fraction]:
+    ca = cosine_harmonic(a, spin)
+    cb = cosine_harmonic(b, spin)
+    cc = cosine_harmonic(c, spin)
+    if ca == cb:
+        raise ValueError("A and B do not separate this harmonic")
+    weight_a = Fraction(cc - cb, ca - cb)
+    return weight_a, 1 - weight_a
 
 
-def verified_payload() -> dict:
-    h_minus = (2, -1)
-    h_plus = (2, 1)
+def ftext(value: Fraction) -> str:
+    return str(value.numerator) if value.denominator == 1 else f"{value.numerator}/{value.denominator}"
 
-    cases = {
-        325: {
-            "parents": ((8, 1), (7, 4)),
-            "observed_h": h_minus,
-            "conjugate_h": h_plus,
-            "A": (17, 6),
-            "B": (18, 1),
-            "C": (15, 10),
-            "smith": (5, 65),
-            "sine_ratio": Fraction(6, 11),
-            "weights": {
-                4: (Fraction(11, 5), Fraction(-6, 5)),
-                8: (Fraction(22517, 44795), Fraction(22278, 44795)),
-                12: (Fraction(363263, 7144145), Fraction(6780882, 7144145)),
-            },
+
+DESIGNS = {
+    325: {
+        "parents": ((8, 1), (7, 4)),
+        "observed_multiplier": (2, -1),
+        "conjugate_multiplier": (2, 1),
+        "A": (17, 6),
+        "B": (18, 1),
+        "C": (15, 10),
+        "expected_weights": {
+            4: (Fraction(11, 5), Fraction(-6, 5)),
+            8: (Fraction(22517, 44795), Fraction(22278, 44795)),
+            12: (Fraction(363263, 7144145), Fraction(6780882, 7144145)),
         },
-        425: {
-            "parents": ((9, 2), (7, 6)),
-            "observed_h": h_plus,
-            "conjugate_h": h_minus,
-            "A": (16, 13),
-            "B": (19, 8),
-            "C": (20, 5),
-            "smith": (5, 85),
-            "sine_ratio": Fraction(33, 13),
-            "weights": {
-                4: (Fraction(-13, 20), Fraction(33, 20)),
-                8: (Fraction(89531, 242420), Fraction(152889, 242420)),
-                12: (Fraction(181189, 68620), Fraction(-112569, 68620)),
-            },
+        "h4_integer_residual_C_A_B": (5, -11, 6),
+        "h4_conjugate_ratio": Fraction(6, 11),
+    },
+    425: {
+        "parents": ((9, 2), (7, 6)),
+        "observed_multiplier": (2, 1),
+        "conjugate_multiplier": (2, -1),
+        "A": (16, 13),
+        "B": (19, 8),
+        "C": (20, 5),
+        "expected_weights": {
+            4: (Fraction(-13, 20), Fraction(33, 20)),
+            8: (Fraction(89531, 242420), Fraction(152889, 242420)),
+            12: (Fraction(181189, 68620), Fraction(-112569, 68620)),
         },
+        "h4_integer_residual_C_A_B": (20, 13, -33),
+        "h4_conjugate_ratio": Fraction(33, 13),
+    },
+}
+
+
+def verify_design(n: int, design: dict[str, object]) -> dict[str, object]:
+    parents = design["parents"]
+    observed = design["observed_multiplier"]
+    conjugate = design["conjugate_multiplier"]
+    a = design["A"]
+    b = design["B"]
+    c = design["C"]
+    assert isinstance(parents, tuple) and isinstance(observed, tuple) and isinstance(conjugate, tuple)
+    assert isinstance(a, tuple) and isinstance(b, tuple) and isinstance(c, tuple)
+
+    observed_children = tuple(d4_canonical(mul(parent, observed)) for parent in parents)
+    conjugate_children = tuple(d4_canonical(mul(parent, conjugate)) for parent in parents)
+    assert observed_children == (a, b)
+    assert conjugate_children == (c, c)
+    assert norm(a) == norm(b) == norm(c) == n
+    assert smith_invariants(a) == (1, n)
+    assert smith_invariants(b) == (1, n)
+    assert smith_invariants(c) == (5, n // 5)
+
+    harmonics: dict[str, object] = {}
+    expected = design["expected_weights"]
+    assert isinstance(expected, dict)
+    for spin in (4, 8, 12):
+        weights = affine_weights(a, b, c, spin)
+        assert weights == expected[spin]
+        harmonics[f"H{spin}"] = {
+            "cos_A": ftext(cosine_harmonic(a, spin)),
+            "cos_B": ftext(cosine_harmonic(b, spin)),
+            "cos_C": ftext(cosine_harmonic(c, spin)),
+            "weight_A": ftext(weights[0]),
+            "weight_B": ftext(weights[1]),
+        }
+
+    ratio = Fraction(cosine_harmonic(c, 4) - cosine_harmonic(a, 4),
+                     cosine_harmonic(c, 4) - cosine_harmonic(b, 4))
+    assert ratio == design["h4_conjugate_ratio"]
+    residual = design["h4_integer_residual_C_A_B"]
+    assert isinstance(residual, tuple) and sum(residual) == 0
+
+    return {
+        "N": n,
+        "parents": [list(parent) for parent in parents],
+        "observed_multiplier": list(observed),
+        "conjugate_multiplier": list(conjugate),
+        "observed_children_D4": [list(child) for child in observed_children],
+        "conjugate_children_D4": [list(child) for child in conjugate_children],
+        "A": list(a),
+        "B": list(b),
+        "C": list(c),
+        "smith_A": list(smith_invariants(a)),
+        "smith_B": list(smith_invariants(b)),
+        "smith_C": list(smith_invariants(c)),
+        "harmonics": harmonics,
+        "H4_integer_residual_C_A_B": list(residual),
+        "H4_conjugate_ratio": ftext(ratio),
     }
 
-    output = {}
-    for N, row in cases.items():
-        p1, p2 = row["parents"]
-        obs1 = mul(p1, row["observed_h"])
-        obs2 = mul(p2, row["observed_h"])
-        con1 = mul(p1, row["conjugate_h"])
-        con2 = mul(p2, row["conjugate_h"])
-        assert d4_canonical(obs1) == row["A"]
-        assert d4_canonical(obs2) == row["B"]
-        assert d4_canonical(con1) == row["C"]
-        assert d4_canonical(con2) == row["C"]
-        assert norm(row["A"]) == norm(row["B"]) == norm(row["C"]) == N
-        assert smith_for_gaussian(row["C"]) == row["smith"]
-        assert harmonic_sin(p1) / harmonic_sin(p2) == row["sine_ratio"]
-        for spin, expected in row["weights"].items():
-            assert interpolation_weights(row["A"], row["B"], row["C"], spin) == expected
-        output[N] = {
-            "products": [obs1, obs2, con1, con2],
-            "canonical_children": [
-                d4_canonical(obs1), d4_canonical(obs2),
-                d4_canonical(con1), d4_canonical(con2),
-            ],
-            "C_smith": row["smith"],
-            "parent_sine_ratio": str(row["sine_ratio"]),
-            "weights": {
-                f"H{spin}": [str(weight) for weight in row["weights"][spin]]
-                for spin in (4, 8, 12)
-            },
-        }
-    return output
+
+def main() -> int:
+    payload = {
+        "schema": "matching-one/norm5-conjugate-coalescence/v1",
+        "interpretation": (
+            "same-parent conjugate norm-5 branches coalesce to one noncyclic D4 geometry; "
+            "the H4 test is same-N and uses no radial exponent or fitted amplitude"
+        ),
+        "designs": [verify_design(n, design) for n, design in sorted(DESIGNS.items())],
+    }
+    print(json.dumps(payload, indent=2))
+    return 0
 
 
 if __name__ == "__main__":
-    for N, row in verified_payload().items():
-        print(N, row)
+    raise SystemExit(main())

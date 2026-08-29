@@ -1,159 +1,133 @@
 # Same-parent conjugate norm-5 coalescence tomography
 
-## Research boundary
+Status: **prospective exact-control design before the new C-node data are read**.
 
-This note responds to a specific weakness in the post-P57 mechanism story. The
-observed norm-5 conjugation-odd thermal-jet diagnostic compares two different
-parent lineages, so multiplier conjugation is entangled with parent size and
-geometry. It is useful as a discovery clue, but it is not by itself a clean
-measurement of a conjugate Gaussian quadrature.
+Related: #57, #180, #200, #205, PRs #199, #202 and #204.
 
-The exact Gaussian arithmetic supplies a direct control with no radial model:
-complete the missing conjugate norm-5 branch from each P57 parent. For the two
-parent pairs already used by P57, both missing branches coalesce to one new
-noncyclic child at the same N.
+## Why this is now the next high-information target
 
-## Exact coalescence
+The N145->290 full-curve result changes the mechanism question. The frozen
+finite-size center-slope correction predicts well, `P4[D']` transfers almost as
+an eigenchannel, but the three-level matching-odd curve has a resolved shape
+failure and `P4[S']` still drifts. The post-N290 two-generator model therefore
+introduces a conjugation-even radial/Jordan direction and a tentative
+conjugation-odd spin-4 quadrature.
 
-For N=65,
+The weak point is that the norm-5 evidence for the conjugation-odd direction is
+confounded: the `2-i` branch was measured on the N65 lineage and the `2+i`
+branch on the different N85 lineage. A difference between those residuals may
+therefore be multiplier conjugation, parent geometry, parent size, or finite
+quotient arithmetic.
 
-```text
-(8+i)(2-i)   = 17-6i
-(7+4i)(2-i) = 18+i
-
-(8+i)(2+i)   = 15+10i
-(7+4i)(2+i) = 10+15i.
-```
-
-The last two Gaussian numbers are D4-equivalent, so the conjugate branch has a
-single child class `(15,10)`, norm 325 and Smith group `(5,65)`.
-
-For N=85,
+There is an unusually cheap exact way to separate these possibilities before
+spending the frozen norm-4 production budget: apply the missing conjugate
+multiplier to the **same two parents**. In both lineages the two missing paths
+coalesce, up to D4, to one new noncyclic child.
 
 ```text
-(9+2i)(2+i) = 16+13i
-(7+6i)(2+i) = 8+19i
+N65 parents: 8+i, 7+4i
+  observed 2-i -> A=(17,6), B=(18,1)
+  missing  2+i -> C=(15,10) from both parents
 
-(9+2i)(2-i) = 20-5i
-(7+6i)(2-i) = 20+5i.
+N85 parents: 9+2i, 7+6i
+  observed 2+i -> A=(16,13), B=(19,8)
+  missing  2-i -> C=(20,5) from both parents
 ```
 
-Again the conjugate branch coalesces, now to `(20,5)`, norm 425 and Smith group
-`(5,85)`.
+The new C quotients have Smith invariants `(5,65)` and `(5,85)`, while A and B
+are cyclic. One new geometric node per size therefore tests conjugation and
+quotient class at the same time.
 
-This is useful for two independent reasons. First, it removes the parent-lineage
-confounder from conjugate-multiplier spectroscopy. Second, the coalesced node is
-noncyclic while the observed P57 child nodes are primitive/cyclic, making the
-same block a matched arithmetic-class control.
+## Bold conjecture: coalescence is a kernel test of the transfer representation
 
-## Same-N H4 law
-
-At fixed N and fixed p, a reflection-even scalar response with one H4 anisotropy
-has the form
+Suppose the leading reflection-even angular response at fixed N is a scalar
+background plus one square harmonic,
 
 ```text
-M(theta) = S_N + A_N cos(4 theta).
+M(theta) = S_N + A_N cos(s theta).
 ```
 
-The scalar `S_N` and amplitude `A_N` are unrestricted. Three orientations
-therefore give one exact linear relation.
-
-For N=325 the exact cos4 values imply
+Three same-N angles must then lie in a two-dimensional affine subspace. The C
+node is not fitted: its value is fixed by A and B. For H4 the exact nulls are
 
 ```text
-M_(15,10) = 11/5 M_(17,6) - 6/5 M_(18,1),
+N325:  5 M_C - 11 M_A +  6 M_B = 0
+N425: 20 M_C + 13 M_A - 33 M_B = 0.
 ```
 
-or
+These equations use neither `N^-13/8`, `p_c`, a root, a thermal metric nor a
+parent amplitude. The coefficient sums vanish, so an arbitrary scalar H0
+background cancels exactly. This makes the experiment a representation/kernel
+test rather than another exponent fit.
+
+The equivalent conjugate ratios are
 
 ```text
-5 M_(15,10) - 11 M_(17,6) + 6 M_(18,1) = 0.
+N325: (M_C-M_A)/(M_C-M_B) = 6/11
+N425: (M_C-M_A)/(M_C-M_B) = 33/13.
 ```
 
-For N=425,
+The fixed H8 and H12 affine alternatives are frozen in
+`predictions/norm5_conjugate_coalescence_20260829.yaml`; no harmonic is selected
+from the new C values.
+
+## Why this can beat norm-4 in information per CPU
+
+PR #204 shows that a roughly three-sigma norm-4 q2/Jordan decision requires a
+large balanced source extension plus N260/N340 production, with projected
+incremental compute around 260k CPU seconds. That run is valuable, but its
+interpretation depends on treating the noncyclic quotient as a clean radial
+semigroup test.
+
+The coalescence control attacks that assumption directly at N325/N425 while
+also unconfounding the proposed conjugation-odd quadrature. A 10M common-field
+stage at each size is small compared with the frozen norm-4 campaign and can
+change what a later norm-4 failure means.
+
+This is a priority argument, not a permission gate. Norm-4 may proceed in
+parallel when compute is already allocated.
+
+## Common-field construction
+
+For each size run two arbitrary-period pairs with exactly the same seed and
+replica-counter interval, always placing C first:
 
 ```text
-M_(20,5) = -13/20 M_(16,13) + 33/20 M_(19,8),
+N325: C=(15,10) vs A=(17,6)
+      C=(15,10) vs B=(18,1)
+
+N425: C=(20,5)  vs A=(16,13)
+      C=(20,5)  vs B=(19,8).
 ```
 
-or
+The priority permutation is geometry-independent at fixed N. Consequently the
+first-orientation C threshold stream should be exactly duplicated across the
+two pair jobs. Check this before covariance construction. Then form the H4
+linear residual inside synchronized batches. Across N325/N425 use independent
+seeds.
 
-```text
-20 M_(20,5) + 13 M_(16,13) - 33 M_(19,8) = 0.
-```
+The first stage is 10M pair replicas with 100 batches. It is a fixed-sample
+prospective score, not a blinded variance-only artifact. If it is underpowered,
+its covariance may set a later sample count, but the harmonic residuals remain
+unchanged.
 
-These relations are stronger than another cross-size H4 fit. They contain no
-`13/8`, no threshold value, no root conversion, and no nonuniversal amplitude.
+## Decision map
 
-The same identities may be read as true same-parent conjugate quadrature
-relations. The parent spin-4 sine ratios are exactly
+- **H4 passes at both sizes while H8/H12 are worse:** the simplest complex H4
+  transfer survives same-parent conjugation and a quotient-class change. The
+  noncyclic norm-4 experiment becomes much cleaner to interpret.
+- **H4 fails but one frozen H8/H12 affine law passes:** reopen the angular
+  representation before launching norm-10 tomography.
+- **all fixed harmonics fail mainly through C:** prioritize quotient arithmetic,
+  nonlocal topology, or a quotient-sensitive readout before adding continuum
+  fields.
+- **all models are simply noisy:** accumulate more samples with the same
+  residuals. Do not add a fitted exponent or target-chosen harmonic.
 
-```text
-sin(4 theta_(8,1)) / sin(4 theta_(7,4)) = 6/11,
-sin(4 theta_(9,2)) / sin(4 theta_(7,6)) = 33/13.
-```
+## Claim boundary
 
-The corresponding child conjugate differences have the same ratios under a
-single H4 response.
-
-## Angular adversaries
-
-A three-angle same-N block can test H4 against other single harmonics without
-using a radial exponent. The frozen interpolation weights are in
-`predictions/norm5_conjugate_coalescence_20260829.yaml` and are independently
-recomputed by `scripts/verify_norm5_conjugate_coalescence.py`.
-
-The H8/H12 weights are deliberately very different from H4, especially at
-N=325. The control is therefore informative even though P57 already disfavored
-the old H8/H12 transfer aliases: it asks whether the same angular law survives
-when the third point changes the quotient arithmetic class.
-
-## Common-field three-geometry block
-
-The clean implementation uses new disjoint data rather than treating historical
-P57 A/B values as a fixed source.
-
-At each N run two general-period pairs with the same seed and counter interval,
-keeping C in the same slot:
-
-```text
-N325: (15,10) vs (17,6)
-      (15,10) vs (18,1)
-
-N425: (20,5)  vs (16,13)
-      (20,5)  vs (19,8).
-```
-
-The rank priority permutation is a function of N and the counter stream, not of
-the second geometry. Therefore the repeated C histogram should be byte-identical.
-That statement is an implementation gate, not an assumption: verify it on a
-tiny run. If it fails, retain both C streams and propagate their measured
-covariance explicitly.
-
-With the identity gate passed, the two pair runs form one synchronized
-three-geometry block. Compute each frozen linear residual inside delete-one
-batches. This can yield much smaller variance than combining a new C mean with
-the old P57 A/B block.
-
-## Why this should precede a strong interpretation of norm 4
-
-The planned norm-4 targets N260/N340 are also noncyclic. If their q2/Jordan
-closure fails, the first interpretation question will be whether the failure is
-a radial/Jordan mechanism or a quotient-arithmetic effect. The coalescence
-triangle asks that question at fixed N, where radial scaling is absent.
-
-A pass therefore strengthens the use of norm 4 as an even-generator test. A
-failure specifically at the coalesced C node would instead make quotient
-arithmetic or nonlocal topology the leading explanation before another LCFT
-operator is introduced.
-
-## Compute gate
-
-Do not automatically displace the frozen balanced norm-4 production. First run
-a 1M/10M variance pilot, using target means only for variance estimation. If the
-H4 residual and fixed-adversary separations are underpowered per CPU, keep the
-construction as a later arithmetic control and proceed with norm 4.
-
-The point is not to create another campaign. It is to cheaply test the exact
-confounder that currently limits interpretation of both the P57 conjugation
-residual and a future noncyclic norm-4 result.
+A pass would not prove a unique H4/LCFT operator. It would establish something
+more operational and immediately useful: the same-N angular transfer law is
+stable under the first deliberately noncyclic conjugate-coalescence control.
+A failure would be equally valuable because it would prevent a quotient effect
+from being misnamed as q2/Jordan or higher-rank RG mixing.
