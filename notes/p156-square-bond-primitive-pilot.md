@@ -92,21 +92,29 @@ is resolved in this inexpensive pilot.
 As a fixed-coordinate diagnostic only, `N*C` is about `0.2265` and `0.2120`.
 No exponent is fitted from those two numbers.  More importantly, the scalar
 residual is also resolved: `N*S` is about `0.1834` and `0.1856`.  Thus the
-pilot provides a positive nontrivial C3 signal but does not remove the scalar
-floor.  It does not support treating the scalar residual as already showing
-the extra pure-H4 suppression.
+continuum approximation has visible finite-size error in both representation
+sectors.  This does **not** contaminate `C`: the `(C,Q)` doublet is exactly
+orthogonal to the scalar `S` coordinate before any statistical weighting.
+
+The representation statement is consequently stronger than a generic
+"positive signal." Under the 60-degree cycle of the three unoriented lines,
+spin 12 has phase one and belongs to the scalar coordinate, whereas spin 4 and
+spin 8 occupy the two conjugate nontrivial modes.  The resolved `C` therefore
+excludes a purely scalar or pure-H12 explanation of this sector residual.  It
+does not distinguish H4 from H8, which remain conjugate aliases in the real
+three-sector data.
 
 ## Boundary and next gate
 
-This result shows that primitive-sector tomography adds information beyond a
-scalar sum and that the continuum/sign conventions work in production-like
-data.  It does not distinguish H4 from H8: the real three-sector probabilities
-carry one nontrivial real doublet, while the nominal complex modes are
-conjugate.  It also does not identify the resolved scalar finite-size term.
+This result cleanly detects a nontrivial C3 doublet beyond the scalar sum and
+shows that the continuum/sign conventions work in production-like data.  It
+does not distinguish H4 from H8: the real three-sector probabilities carry one
+nontrivial real doublet, while the nominal complex modes are conjugate.  It
+also does not identify the separately resolved scalar finite-size term.
 
-A larger N418/N780 run is justified only if the next question is the stability
-of the nontrivial contrast versus the scalar floor.  The present two sizes must
-not be used for a free-exponent fit.
+A larger N418/N780 run is justified if the next question is the stability and
+radial scaling of the nontrivial doublet, independently of the scalar channel.
+The present two sizes must not be used for a free-exponent fit.
 
 ## Reproduction
 

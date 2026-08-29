@@ -355,7 +355,9 @@ def build_result(
         "interpretation_boundary": [
             "C, Q, and S are continuum-baseline-subtracted real contrasts.",
             "Q is a reflection-null convention/control statistic.",
+            "C and Q are exactly orthogonal to the scalar S coordinate, so a nonzero S does not leak algebraically into C.",
             "The two nontrivial complex C3 DFT modes are conjugate and counted once through C and Q.",
+            "Under the 60-degree sector cycle, spin 12 is scalar while spin 4 and spin 8 occupy the conjugate nontrivial modes; nonzero C excludes a purely scalar/spin-12 origin but not H4 versus H8.",
             "Two pilot sizes do not support an exponent fit or an H4-versus-H8 claim.",
         ],
     }
