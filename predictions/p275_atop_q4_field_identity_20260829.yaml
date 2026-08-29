@@ -41,19 +41,34 @@ moduli:
 geometries:
   N50:
     seed: 2026275050
-    i: {z: [7,1], matrix: [[7,-1],[1,7]], smith: [1,50]}
-    2i: {z: [4,3], matrix: [[4,-6],[3,8]], smith: [1,50]}
-    5i_over_2: {z: [2,1], matrix: [[4,-5],[2,10]], smith: [1,50]}
+    i: {z: [7,1], matrix: [[7,-1],[1,7]], smith: [1,50], transport: {real: 527/625, imag: -336/625}}
+    2i: {z: [4,3], matrix: [[4,-6],[3,8]], smith: [1,50], transport: {real: -527/625, imag: -336/625}}
+    5i_over_2: {z: [2,1], matrix: [[4,-5],[2,10]], smith: [1,50], transport: {real: -7/25, imag: -24/25}}
   N130:
     seed: 2026275130
-    i: {z: [11,3], matrix: [[11,-3],[3,11]], smith: [1,130]}
-    2i: {z: [8,1], matrix: [[8,-2],[1,16]], smith: [1,130]}
-    5i_over_2: {z: [3,2], matrix: [[6,-10],[4,15]], smith: [1,130]}
+    i: {z: [11,3], matrix: [[11,-3],[3,11]], smith: [1,130], transport: {real: 2047/4225, imag: -3696/4225}}
+    2i: {z: [8,1], matrix: [[8,-2],[1,16]], smith: [1,130], transport: {real: 3713/4225, imag: -2016/4225}}
+    5i_over_2: {z: [3,2], matrix: [[6,-10],[4,15]], smith: [1,130], transport: {real: -119/169, imag: -120/169}}
   N170:
     seed: 2026275170
-    i: {z: [13,1], matrix: [[13,-1],[1,13]], smith: [1,170]}
-    2i: {z: [9,2], matrix: [[9,-4],[2,18]], smith: [1,170]}
-    5i_over_2: {z: [4,1], matrix: [[8,-5],[2,20]], smith: [1,170]}
+    i: {z: [13,1], matrix: [[13,-1],[1,13]], smith: [1,170], transport: {real: 6887/7225, imag: -2184/7225}}
+    2i: {z: [9,2], matrix: [[9,-4],[2,18]], smith: [1,170], transport: {real: 4633/7225, imag: -5544/7225}}
+    5i_over_2: {z: [4,1], matrix: [[8,-5],[2,20]], smith: [1,170], transport: {real: 161/289, imag: -240/289}}
+
+phase1_microcanonical_matching_root:
+  id: P275_PHASE1_MATCHING_ROOT
+  status: implementation_preflight
+  production_authorized: false
+  evaluation_p: finite_matching_root_inside_each_delete_one
+  samples_per_geometry: 20000000
+  batches: 100
+  replica_counter: [9500000000, 9520000000]
+  microcanonical_levels: all_k_from_0_through_N
+  full_site_root_estimator: k_times_last_active_plus_N_minus_k_times_next_inactive
+  incoming_outgoing_reason: required_for_exact_078bd61_same_sample_semantics
+  common_field: identical_seed_counter_permutation_and_batches_across_moduli_within_N
+  gls_rcond: 1.0e-12
+  decision_alpha: 0.01
 
 acquisition:
   status: not_launched_runner_extension_required

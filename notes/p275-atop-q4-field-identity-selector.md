@@ -192,6 +192,42 @@ are not sufficient.
 - Every nonzero subspace fails: the flow is multi-field or `J_D4` does not
   isolate the global H4 coupling.
 
-This branch freezes the selector and a 20M-per-geometry first acquisition but
-does not implement the runner, launch production, open a PR, or add any new
-harmonic hypothesis.
+The original selector froze a 20M-per-geometry first acquisition without a
+runner.  The Phase 1 extension below implements it without opening a PR,
+launching before authorization, or adding any new harmonic hypothesis.
+
+## Phase 1 execution contract: the missing p is resolved microcanonically
+
+The original selector did not say at which Bernoulli probability `Gamma` was
+to be evaluated.  A batch total cannot repair that omission: choosing a fixed
+`p` after reveal would be tunable, while using a geometry-dependent finite
+matching root requires the occupation-resolved stream.
+
+Phase 1 therefore stores every `k=0,...,N` microcanonical moment.  In every
+delete-one replicate it first solves
+
+```text
+M_N(p_N)=E_p[A_top]=0
+```
+
+and only then forms `Cov(A_top,J_D4)/B`, the exact frame transport, scaling and
+GLS score.  No fixed or post-reveal `p` is present.
+
+One permutation supplies the exact 078bd61 full-root estimator in linear time.
+At `B_k`, the next site is uniform among inactive roots and the last inserted
+site is uniform among active roots, so
+
+```text
+J_hat(B_k) = (N-k) j(next | B_k) + k j(last | B_k without last).
+```
+
+The second term is essential: retaining only the outgoing insertion would omit
+the active-root half of the same-sample observable.  The C++ exact test averages
+all `5!` paths on the Gaussian `(2,1)` torus and reproduces the committed
+`p=1/2` values `Cov=(-49/128,21/16)` and `B=25/8`.
+
+The line character is always evaluated on the physical lifted vector `P*ell`
+in the lab Euclidean frame.  The rational `z`-frame transport is applied only
+after the connected response is formed.  A modulus-sensitive test covers all
+three period types so non-square runs cannot silently reuse winding-coordinate
+angles.
