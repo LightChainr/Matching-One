@@ -1,0 +1,112 @@
+version: 1
+created: 2026-08-29
+status: pilot_ready_frozen_before_C_reveal
+issue: 205
+prediction: predictions/norm5_conjugate_coalescence_20260829.yaml
+executable: build/threshold_rank_integer_period_mc
+purpose: >-
+  Run the smallest clean same-parent conjugation/quotient control before
+  spending the much larger frozen norm-4 production budget. The 10M stage is
+  itself a fixed-sample prospective score; if it is underpowered, later sample
+  allocation may use its covariance but must not change the frozen residuals.
+
+pilot:
+  samples_per_pair: 10000000
+  batches: 100
+  threads_per_job: 8
+  p_ref: 0.59274605079
+  launch: two_pair_jobs_in_parallel_per_size_on_16_vcpu
+  why_skip_1m: >-
+    Fixed-p scoring does not need an intrinsic-center solve, and recent norm-4
+    work showed that 1M blocks can be operationally marginal for stable
+    delete-one curve diagnostics. Go directly to a still-cheap 10M covariance
+    and signal check instead of adding a ceremonial stage.
+  report_point_estimate: true
+  no_model_refit_after_pilot: true
+
+N325:
+  C_representation: [15, 10]
+  C_matrix: [[15, -10], [10, 15]]
+  smith_C: [5, 65]
+  pairs:
+    - id: N325_C_vs_A
+      first_representation: [15, 10]
+      second_representation: [17, 6]
+      first_matrix: [[15, -10], [10, 15]]
+      second_matrix: [[17, -6], [6, 17]]
+      seed: 2026105501
+      replica_counter: [9300000000, 9310000000]
+      output_prefix: results/server-20260829/P205-norm5-conjugate-coalescence/raw/n325_C_A_10m
+      command: >-
+        build/threshold_rank_integer_period_mc --first-matrix 15 -10 10 15
+        --second-matrix 17 -6 6 17 --first-rep 15 10 --second-rep 17 6
+        --samples 10000000 --batches 100 --seed 2026105501
+        --replica-offset 9300000000 --threads 8 --git-commit FULL_SHA
+        --output-prefix results/server-20260829/P205-norm5-conjugate-coalescence/raw/n325_C_A_10m
+    - id: N325_C_vs_B
+      first_representation: [15, 10]
+      second_representation: [18, 1]
+      first_matrix: [[15, -10], [10, 15]]
+      second_matrix: [[18, -1], [1, 18]]
+      seed: 2026105501
+      replica_counter: [9300000000, 9310000000]
+      output_prefix: results/server-20260829/P205-norm5-conjugate-coalescence/raw/n325_C_B_10m
+      command: >-
+        build/threshold_rank_integer_period_mc --first-matrix 15 -10 10 15
+        --second-matrix 18 -1 1 18 --first-rep 15 10 --second-rep 18 1
+        --samples 10000000 --batches 100 --seed 2026105501
+        --replica-offset 9300000000 --threads 8 --git-commit FULL_SHA
+        --output-prefix results/server-20260829/P205-norm5-conjugate-coalescence/raw/n325_C_B_10m
+
+N425:
+  C_representation: [20, 5]
+  C_matrix: [[20, -5], [5, 20]]
+  smith_C: [5, 85]
+  pairs:
+    - id: N425_C_vs_A
+      first_representation: [20, 5]
+      second_representation: [16, 13]
+      first_matrix: [[20, -5], [5, 20]]
+      second_matrix: [[16, -13], [13, 16]]
+      seed: 2026105502
+      replica_counter: [9300000000, 9310000000]
+      output_prefix: results/server-20260829/P205-norm5-conjugate-coalescence/raw/n425_C_A_10m
+      command: >-
+        build/threshold_rank_integer_period_mc --first-matrix 20 -5 5 20
+        --second-matrix 16 -13 13 16 --first-rep 20 5 --second-rep 16 13
+        --samples 10000000 --batches 100 --seed 2026105502
+        --replica-offset 9300000000 --threads 8 --git-commit FULL_SHA
+        --output-prefix results/server-20260829/P205-norm5-conjugate-coalescence/raw/n425_C_A_10m
+    - id: N425_C_vs_B
+      first_representation: [20, 5]
+      second_representation: [19, 8]
+      first_matrix: [[20, -5], [5, 20]]
+      second_matrix: [[19, -8], [8, 19]]
+      seed: 2026105502
+      replica_counter: [9300000000, 9310000000]
+      output_prefix: results/server-20260829/P205-norm5-conjugate-coalescence/raw/n425_C_B_10m
+      command: >-
+        build/threshold_rank_integer_period_mc --first-matrix 20 -5 5 20
+        --second-matrix 19 -8 8 19 --first-rep 20 5 --second-rep 19 8
+        --samples 10000000 --batches 100 --seed 2026105502
+        --replica-offset 9300000000 --threads 8 --git-commit FULL_SHA
+        --output-prefix results/server-20260829/P205-norm5-conjugate-coalescence/raw/n425_C_B_10m
+
+pre_score_checks:
+  - all_period_determinants_equal_declared_N
+  - C_smith_invariants_are_5_by_parent_N
+  - duplicated_C_first_orientation_threshold_histograms_match_exactly_per_size
+  - duplicated_C_first_orientation_moments_match_exactly_per_size
+  - A_B_C_observable_descriptors_are_identical
+
+score_order:
+  - joint_H4_fixed_p_ref_affine_residual
+  - fixed_H12_affine_residual
+  - fixed_H8_affine_residual
+  - full_curve_and_derivative_views_as_correlated_diagnostics
+
+priority_rule: >-
+  This control outranks starting the 260k-CPU-second norm-4 production when the
+  same compute queue is scarce, because it tests the quotient/conjugation
+  assumption on which a clean interpretation of norm-4 failure depends. It
+  does not block norm-4 work that is already running or independently funded.

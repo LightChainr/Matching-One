@@ -1,0 +1,38 @@
+version: 1
+issue: 156
+status: executable_not_started
+model: square_bond_percolation
+p: 0.5
+purpose: >-
+  Separate the conjugate H4/H8 C3 aliases by the active norm-2 Gaussian
+  multiplier 1+i, using two independent parent/child lineages.
+
+designs:
+  - {lineage: pell_Dminus2, role: parent, N: 30, matrix_rows: [[6, 3], [0, 5]]}
+  - {lineage: pell_Dminus2, role: child, N: 60, matrix_rows: [[6, -2], [6, 8]]}
+  - {lineage: pell_Dplus1, role: parent, N: 56, matrix_rows: [[8, 4], [0, 7]]}
+  - {lineage: pell_Dplus1, role: child, N: 112, matrix_rows: [[8, -3], [8, 11]]}
+
+sampling:
+  samples_per_design: 2000000
+  batches_per_design: 200
+  master_seed: 20260829
+  seed_contract: one distinct deterministic seed block per design
+  parent_child_crn: false
+
+primary_scores:
+  H4: '2*C_child+C_parent=0'
+  H8: '2*C_child-C_parent=0'
+  radial_assumption: 'C scales as N^-1 in this fixed comparison'
+
+outputs:
+  - JSON with every design C/Q/S estimate and covariance
+  - CSV with per-batch category-count sufficient statistics
+  - block-diagonal six-coordinate parent/child covariance for each lineage
+  - joint H4/H8 null covariance and z scores
+
+production_command: >-
+  python3 scripts/square_bond_primitive_norm2.py
+  --samples-per-design 2000000 --batches 200 --seed 20260829
+  --workers 16 --dps 80
+  --output-prefix results/server-20260829/P156-norm2-h4-h8/result

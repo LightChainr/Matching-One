@@ -1,0 +1,47 @@
+version: 1
+frozen_at: 2026-08-29
+status: retrospective_existing_data_diagnostic
+issues: [182, 180]
+purpose: >-
+  Evaluate the exact neutral-area Krawtchouk covector on existing paired
+  threshold histograms and test whether orders at most 16 already exhibit
+  the proposed N^(1/4) moving mode front.
+
+observable:
+  matching_sign: 'm_k=-1 below Kminus, 0 on Kminus<=k<Kplus, +1 at and above Kplus'
+  neutral_indicator: 'U_k=1-m_k^2'
+  microcanonical_mean: 'q_k=P(Kminus<=k)-P(Kplus<=k)'
+  exact_area: 'integral_0^1 U_N(p) dp=E[Kplus-Kminus]/(N+1)'
+
+score_basis:
+  family: orthonormal_binomial_Krawtchouk
+  center: pooled_size_local_intrinsic_matching_center
+  maximum_order: 16
+  exact_covector: >-
+    ell_r=sqrt(binomial(N,r))*((1-p0)^(r+1)-(-p0)^(r+1))
+    /((r+1)*(p0*(1-p0))^(r/2))
+  half_filling_oracle: 'ell_odd=0; ell_even=sqrt(binomial(N,r))/(r+1)'
+
+mode_front_diagnostic:
+  tail: 'T_R=E[G]/(N+1)-sum_(r=0)^R ell_r*c_r'
+  relative_tail: 'abs(T_R)/(E[G]/(N+1))'
+  epsilons: ['0.05', '0.10']
+  R_epsilon: 'first R<=16 with relative_tail<=epsilon; null if unresolved'
+  proposed_scaling_view: 'R_epsilon/N^(1/4)'
+
+inputs:
+  - results/server-20260828/P45-root-amplitude/n65.hist.csv
+  - results/server-20260828/P45-root-amplitude/n85.hist.csv
+  - results/server-20260828/P49-fullcurve-doubling-100m/raw/n130.hist.csv
+  - results/server-20260828/P49-fullcurve-doubling-100m/raw/n170.hist.csv
+  - results/server-20260828/P43-heldout-fullcurve-500m/raw/n185.hist.csv
+  - results/server-20260828/P43-heldout-fullcurve-500m/raw/n265.hist.csv
+  - results/server-20260829/P57-norm5-500m/raw/n325_500m.hist.csv
+  - results/server-20260829/P57-norm5-500m/raw/n425_500m.hist.csv
+
+interpretation_boundary:
+  - exact_covector_and_N10_oracle_are_algebraic_checks
+  - existing_data_mode_front_is_retrospective_not_prospective
+  - unresolved_R_epsilon_does_not_falsify_the_exact_area_identity
+  - do_not_treat_high_order_terms_as_precise_physical_modes_without_covariance
+  - no_new_simulation_or_independent_evidence_row
