@@ -39,9 +39,21 @@ class ExactFKQScoreOracleTests(unittest.TestCase):
 
     def test_wrap_difference_polynomial_has_simple_q1_zero(self) -> None:
         polynomial = self.payload["wrap_difference_polynomial"]
-        self.assertTrue(polynomial["factorization_exact"])
+        self.assertTrue(polynomial["Q1_factorization_exact"])
         self.assertTrue(polynomial["Q1_zero_is_simple"])
-        self.assertEqual(polynomial["tangent_from_factorization"], "69/256")
+        self.assertTrue(polynomial["P_L_coefficients_strictly_positive"])
+        self.assertEqual(polynomial["tangent_from_simple_zero"], "69/256")
+
+    def test_committed_l3_has_same_simple_positive_quotient_structure(self) -> None:
+        payload = json.loads(
+            (ROOT / "results/fk-q-score/L3.json").read_text(encoding="utf-8")
+        )
+        polynomial = payload["wrap_difference_polynomial"]
+        self.assertEqual(payload["geometry"]["configurations"], 262144)
+        self.assertTrue(polynomial["Q1_factorization_exact"])
+        self.assertTrue(polynomial["Q1_zero_is_simple"])
+        self.assertTrue(polynomial["P_L_coefficients_strictly_positive"])
+        self.assertEqual(polynomial["tangent_from_simple_zero"], "18865/65536")
 
     def test_committed_artifact_is_byte_reproducible(self) -> None:
         artifact = json.loads(

@@ -156,6 +156,15 @@ def multiply_polynomials(left: Sequence[int], right: Sequence[int]) -> list[int]
     return answer
 
 
+def _divide_by_x_minus_one(coefficients: Sequence[int]) -> tuple[list[int], int]:
+    high_to_low = list(reversed(coefficients))
+    quotient_high = [high_to_low[0]]
+    for coefficient in high_to_low[1:-1]:
+        quotient_high.append(coefficient + quotient_high[-1])
+    remainder = high_to_low[-1] + quotient_high[-1]
+    return list(reversed(quotient_high)), remainder
+
+
 def wrap_difference_factorization(histogram_rows: Sequence[dict]) -> dict:
     minimum_j = min(row["J"] for row in histogram_rows)
     coefficients = [
@@ -169,20 +178,29 @@ def wrap_difference_factorization(histogram_rows: Sequence[dict]) -> dict:
         )
         for exponent in range(minimum_j, max(row["J"] for row in histogram_rows) + 1)
     ]
-    factors = ([-1, 1], [1, 1], [2, 1], [16, 6, 1])
-    reconstructed = [1]
-    for factor in factors:
-        reconstructed = multiply_polynomials(reconstructed, factor)
+    quotient, remainder = _divide_by_x_minus_one(coefficients)
+    l2_factors = ([-1, 1], [1, 1], [2, 1], [16, 6, 1])
+    l2_reconstructed = [1]
+    for factor in l2_factors:
+        l2_reconstructed = multiply_polynomials(l2_reconstructed, factor)
     derivative_at_one = sum(index * coefficient for index, coefficient in enumerate(coefficients))
     partition_at_one = sum(row["count"] for row in histogram_rows)
     return {
         "variable": "x=sqrt(Q)",
-        "numerator": "x^5*(x-1)*(x+1)*(x+2)*(x^2+6*x+16)",
+        "Q1_factorization": f"x^{minimum_j}*(x-1)*P_L(x)",
         "common_monomial_power": minimum_j,
         "reduced_coefficients_ascending": coefficients,
-        "factorization_exact": coefficients == reconstructed,
-        "Q1_zero_is_simple": derivative_at_one != 0 and sum(coefficients) == 0,
-        "tangent_from_factorization": fraction_text(
+        "P_L_coefficients_ascending": quotient,
+        "division_remainder": remainder,
+        "Q1_factorization_exact": remainder == 0,
+        "P_L_coefficients_strictly_positive": all(value > 0 for value in quotient),
+        "Q1_zero_is_simple": remainder == 0 and sum(quotient) != 0,
+        "L2_further_factorization": (
+            "x^5*(x-1)*(x+1)*(x+2)*(x^2+6*x+16)"
+            if coefficients == l2_reconstructed
+            else None
+        ),
+        "tangent_from_simple_zero": fraction_text(
             Fraction(derivative_at_one, 2 * partition_at_one)
         ),
     }

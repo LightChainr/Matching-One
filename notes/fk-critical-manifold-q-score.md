@@ -54,6 +54,31 @@ The percolation zero `x=1` is simple.  Differentiating this factorization and
 dividing by the `Q=1` partition sum gives the exact tangent `69/256`.  This is
 an algebraic finite-volume topological response, not a fitted derivative.
 
+The complete `L=3` enumeration (`2^18=262144` configurations) has the same
+stronger structure:
+
+```text
+D_3(x) = x^10 (x-1) P_3(x),
+P_3(x) = 11664 + 36288 x + 46992 x^2 + 34050 x^3
+         + 15669 x^4 + 4941 x^5 + 1116 x^6
+         + 180 x^7 + 19 x^8 + x^9.
+```
+
+Every coefficient of `P_3` is positive, as is the corresponding quotient at
+`L=2`.  Hence `x=1` is the unique positive nontrivial zero of the topological
+difference at both exact sizes, and its sign follows `Q-1`.  The `L=3`
+tangent is `18865/65536`.
+
+This suggests a sharper finite-volume conjecture: for every square torus,
+
+```text
+D_L(x)=x^a (x-1) P_L(x),
+```
+
+with `P_L` having positive coefficients.  A duality/Euler proof of that
+coefficient positivity would turn the Q-tangent into a monotone topological
+coordinate, not merely a local derivative at percolation.
+
 This establishes the estimator, not a logarithmic field.  A fixed lattice
 observable has only the measure derivative `Cov(O,T)`.  The derivative of its
 generic-Q representation projector, normalization, and explicit insertion

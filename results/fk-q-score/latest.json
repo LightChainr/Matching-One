@@ -188,10 +188,20 @@
     }
   ],
   "wrap_difference_polynomial": {
+    "L2_further_factorization": "x^5*(x-1)*(x+1)*(x+2)*(x^2+6*x+16)",
+    "P_L_coefficients_ascending": [
+      32,
+      60,
+      36,
+      9,
+      1
+    ],
+    "P_L_coefficients_strictly_positive": true,
+    "Q1_factorization": "x^5*(x-1)*P_L(x)",
+    "Q1_factorization_exact": true,
     "Q1_zero_is_simple": true,
     "common_monomial_power": 5,
-    "factorization_exact": true,
-    "numerator": "x^5*(x-1)*(x+1)*(x+2)*(x^2+6*x+16)",
+    "division_remainder": 0,
     "reduced_coefficients_ascending": [
       -32,
       -28,
@@ -200,7 +210,7 @@
       8,
       1
     ],
-    "tangent_from_factorization": "69/256",
+    "tangent_from_simple_zero": "69/256",
     "variable": "x=sqrt(Q)"
   }
 }

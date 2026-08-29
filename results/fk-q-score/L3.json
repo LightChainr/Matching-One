@@ -1,0 +1,281 @@
+{
+  "critical_coordinates": {
+    "J": "2*k+b",
+    "Q1_p": "1/2",
+    "T": "k+b/2=J/2",
+    "eta": "log(v/sqrt(Q))",
+    "t": "log(Q)",
+    "weight": "exp(eta*b+t*T)"
+  },
+  "exact_checks": {
+    "all_score_orders_match_ratio_differentiation": true,
+    "histogram_counts_sum_to_configurations": true,
+    "open_closed_wrap_equal_at_Q1": true
+  },
+  "exact_means": {
+    "T": "824363/131072",
+    "T_equals_k_plus_b_over_2": true,
+    "b": "9/1",
+    "k": "234539/131072"
+  },
+  "geometry": {
+    "L": 3,
+    "bonds": 18,
+    "configurations": 262144,
+    "lattice": "square_bond",
+    "periods": [
+      [
+        3,
+        0
+      ],
+      [
+        0,
+        3
+      ]
+    ],
+    "vertices": 9
+  },
+  "interpretation": {
+    "exact_result": "One Q=1 ensemble reconstructs the complete finite-volume critical-manifold Q tangent through J=2k+b.",
+    "field_warning": "These are derivatives of the FK measure for fixed observables; Q-dependent projectors, normalizations, and insertion definitions remain separate terms.",
+    "next_gate": "Add the VJS energy/two-cluster field derivative before calling any T-score direction a logarithmic partner."
+  },
+  "issue": 258,
+  "observable_derivatives": {
+    "closed_dual_wrap": {
+      "direct_equals_score": true,
+      "expectation_at_Q1": "46671/65536",
+      "mixed_eta_t_derivative": "-5432070843/17179869184",
+      "t_derivatives_direct_ratio": [
+        "-1352584005/8589934592",
+        "-29488685184873/562949953421312",
+        "753472775867058153/73786976294838206464"
+      ],
+      "t_derivatives_score_H1_H2_H3": [
+        "-1352584005/8589934592",
+        "-29488685184873/562949953421312",
+        "753472775867058153/73786976294838206464"
+      ]
+    },
+    "open_cross": {
+      "direct_equals_score": true,
+      "expectation_at_Q1": "18865/65536",
+      "mixed_eta_t_derivative": "5432070843/17179869184",
+      "t_derivatives_direct_ratio": [
+        "1352584005/8589934592",
+        "29488685184873/562949953421312",
+        "-753472775867058153/73786976294838206464"
+      ],
+      "t_derivatives_score_H1_H2_H3": [
+        "1352584005/8589934592",
+        "29488685184873/562949953421312",
+        "-753472775867058153/73786976294838206464"
+      ]
+    },
+    "open_homology_rank": {
+      "direct_equals_score": true,
+      "expectation_at_Q1": "1/1",
+      "mixed_eta_t_derivative": "3249605709/8589934592",
+      "t_derivatives_direct_ratio": [
+        "18865/65536",
+        "116247365/4294967296",
+        "-15413664422341/562949953421312"
+      ],
+      "t_derivatives_score_H1_H2_H3": [
+        "18865/65536",
+        "116247365/4294967296",
+        "-15413664422341/562949953421312"
+      ]
+    },
+    "open_wrap": {
+      "direct_equals_score": true,
+      "expectation_at_Q1": "46671/65536",
+      "mixed_eta_t_derivative": "1067140575/17179869184",
+      "t_derivatives_direct_ratio": [
+        "1120089275/8589934592",
+        "-14251910559593/562949953421312",
+        "-1266827047298021399/73786976294838206464"
+      ],
+      "t_derivatives_score_H1_H2_H3": [
+        "1120089275/8589934592",
+        "-14251910559593/562949953421312",
+        "-1266827047298021399/73786976294838206464"
+      ]
+    },
+    "wrap_difference": {
+      "direct_equals_score": true,
+      "expectation_at_Q1": "0/1",
+      "mixed_eta_t_derivative": "3249605709/8589934592",
+      "t_derivatives_direct_ratio": [
+        "18865/65536",
+        "116247365/4294967296",
+        "-15413664422341/562949953421312"
+      ],
+      "t_derivatives_score_H1_H2_H3": [
+        "18865/65536",
+        "116247365/4294967296",
+        "-15413664422341/562949953421312"
+      ]
+    }
+  },
+  "schema": "matching-one.exact-fk-critical-manifold-q-score.v1",
+  "sqrtQ_histogram": [
+    {
+      "J": 10,
+      "count": 11664,
+      "observable_sums": {
+        "closed_dual_wrap": 11664,
+        "open_cross": 0,
+        "open_homology_rank": 0,
+        "open_wrap": 0,
+        "wrap_difference": -11664
+      }
+    },
+    {
+      "J": 11,
+      "count": 45360,
+      "observable_sums": {
+        "closed_dual_wrap": 45360,
+        "open_cross": 0,
+        "open_homology_rank": 20736,
+        "open_wrap": 20736,
+        "wrap_difference": -24624
+      }
+    },
+    {
+      "J": 12,
+      "count": 74712,
+      "observable_sums": {
+        "closed_dual_wrap": 63048,
+        "open_cross": 11664,
+        "open_homology_rank": 64008,
+        "open_wrap": 52344,
+        "wrap_difference": -10704
+      }
+    },
+    {
+      "J": 13,
+      "count": 68934,
+      "observable_sums": {
+        "closed_dual_wrap": 44310,
+        "open_cross": 24624,
+        "open_homology_rank": 81876,
+        "open_wrap": 57252,
+        "wrap_difference": 12942
+      }
+    },
+    {
+      "J": 14,
+      "count": 40011,
+      "observable_sums": {
+        "closed_dual_wrap": 17643,
+        "open_cross": 22368,
+        "open_homology_rank": 58392,
+        "open_wrap": 36024,
+        "wrap_difference": 18381
+      }
+    },
+    {
+      "J": 15,
+      "count": 15770,
+      "observable_sums": {
+        "closed_dual_wrap": 4088,
+        "open_cross": 11682,
+        "open_homology_rank": 26498,
+        "open_wrap": 14816,
+        "wrap_difference": 10728
+      }
+    },
+    {
+      "J": 16,
+      "count": 4521,
+      "observable_sums": {
+        "closed_dual_wrap": 534,
+        "open_cross": 3987,
+        "open_homology_rank": 8346,
+        "open_wrap": 4359,
+        "wrap_difference": 3825
+      }
+    },
+    {
+      "J": 17,
+      "count": 990,
+      "observable_sums": {
+        "closed_dual_wrap": 36,
+        "open_cross": 954,
+        "open_homology_rank": 1926,
+        "open_wrap": 972,
+        "wrap_difference": 936
+      }
+    },
+    {
+      "J": 18,
+      "count": 163,
+      "observable_sums": {
+        "closed_dual_wrap": 1,
+        "open_cross": 162,
+        "open_homology_rank": 324,
+        "open_wrap": 162,
+        "wrap_difference": 161
+      }
+    },
+    {
+      "J": 19,
+      "count": 18,
+      "observable_sums": {
+        "closed_dual_wrap": 0,
+        "open_cross": 18,
+        "open_homology_rank": 36,
+        "open_wrap": 18,
+        "wrap_difference": 18
+      }
+    },
+    {
+      "J": 20,
+      "count": 1,
+      "observable_sums": {
+        "closed_dual_wrap": 0,
+        "open_cross": 1,
+        "open_homology_rank": 2,
+        "open_wrap": 1,
+        "wrap_difference": 1
+      }
+    }
+  ],
+  "wrap_difference_polynomial": {
+    "L2_further_factorization": null,
+    "P_L_coefficients_ascending": [
+      11664,
+      36288,
+      46992,
+      34050,
+      15669,
+      4941,
+      1116,
+      180,
+      19,
+      1
+    ],
+    "P_L_coefficients_strictly_positive": true,
+    "Q1_factorization": "x^10*(x-1)*P_L(x)",
+    "Q1_factorization_exact": true,
+    "Q1_zero_is_simple": true,
+    "common_monomial_power": 10,
+    "division_remainder": 0,
+    "reduced_coefficients_ascending": [
+      -11664,
+      -24624,
+      -10704,
+      12942,
+      18381,
+      10728,
+      3825,
+      936,
+      161,
+      18,
+      1
+    ],
+    "tangent_from_simple_zero": "18865/65536",
+    "variable": "x=sqrt(Q)"
+  }
+}

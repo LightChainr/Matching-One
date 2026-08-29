@@ -7,14 +7,15 @@ coordinate_identity:
   T: k+b/2
   integer_archive_coordinate: J=2*k+b
 exact_phase:
-  geometry: square_bond_L2_torus
-  configurations: 256
+  geometries: [square_bond_L2_torus, square_bond_L3_torus]
+  configurations: [256, 262144]
   score_orders: [1, 2, 3]
   observables: [open_wrap, open_cross, closed_dual_wrap, wrap_difference, open_homology_rank]
 prediction:
   parent_collision_rank: 2
   spin4_descendant_collision_rank: 2
   nonlinear_four_point_rank_may_increase_to: 3
+  topological_Q_zero_conjecture: D_L(x)=x^a*(x-1)*P_L(x) with P_L positive for x=sqrt(Q)>0
 required_before_field_identification:
   - VJS_energy_two_cluster_explicit_field_derivative
   - Q_dependent_projector_derivative
