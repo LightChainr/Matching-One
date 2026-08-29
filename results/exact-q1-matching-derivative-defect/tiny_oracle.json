@@ -1,0 +1,152 @@
+{
+  "S_D_projection_boundary": {
+    "formal_exchange": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "otherwise": "S and D are covectors on a doubled observable pair, not intrinsic fields",
+    "parity_requires": "a physical two-way identification J with J^2=I",
+    "projectors_twice_P_minus": [
+      [
+        1,
+        -1
+      ],
+      [
+        -1,
+        1
+      ]
+    ],
+    "projectors_twice_P_plus": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ]
+  },
+  "edge_FK_nondual_obstruction": {
+    "complement_mask": 7,
+    "configuration_count": 8,
+    "configurationwise_zero": false,
+    "defect_histogram_by_size": {
+      "0": {
+        "0": 1
+      },
+      "1": {
+        "-1": 3
+      },
+      "2": {
+        "-2": 3
+      },
+      "3": {
+        "-2": 1
+      }
+    },
+    "first_log_Q_tangent_bernstein_coefficients": [
+      0,
+      -3,
+      -6,
+      -2
+    ],
+    "first_log_Q_tangent_power_coefficients": [
+      0,
+      -3,
+      0,
+      1
+    ],
+    "p_half": {
+      "mean_defect": "-11/8",
+      "second_log_Q_tangent_variance": "31/64"
+    }
+  },
+  "edge_FK_planar_dual_control": {
+    "complement_mask": 7,
+    "configuration_count": 8,
+    "configurationwise_zero": true,
+    "defect_histogram_by_size": {
+      "0": {
+        "0": 1
+      },
+      "1": {
+        "0": 3
+      },
+      "2": {
+        "0": 3
+      },
+      "3": {
+        "0": 1
+      }
+    },
+    "first_log_Q_tangent_bernstein_coefficients": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "first_log_Q_tangent_power_coefficients": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "p_half": {
+      "mean_defect": "0",
+      "second_log_Q_tangent_variance": "0"
+    }
+  },
+  "exact_object": {
+    "amplitude": "Xi(Q,p)=E_p[Q^d]",
+    "first_tangent": "(Q d/dQ) log Xi | Q=1 = E_p[d]",
+    "normalization": "Xi(1,p)=1",
+    "second_tangent": "(Q d/dQ)^2 log Xi | Q=1 = Var_p(d)"
+  },
+  "schema": "matching-one.q1-matching-derivative-defect.v1",
+  "site_matching_C4_to_K4": {
+    "configuration_count": 16,
+    "defect_histogram_by_size": {
+      "0": {
+        "-1": 1
+      },
+      "1": {
+        "0": 4
+      },
+      "2": {
+        "0": 4,
+        "1": 2
+      },
+      "3": {
+        "0": 4
+      },
+      "4": {
+        "1": 1
+      }
+    },
+    "first_log_Q_tangent_bernstein_coefficients": [
+      -1,
+      0,
+      2,
+      0,
+      1
+    ],
+    "first_log_Q_tangent_power_coefficients": [
+      -1,
+      4,
+      -4,
+      0,
+      2
+    ],
+    "p_half": {
+      "mean_defect": "1/8",
+      "second_log_Q_tangent_variance": "15/64"
+    }
+  }
+}
