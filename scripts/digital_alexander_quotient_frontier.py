@@ -23,7 +23,7 @@ from integer_period_torus import (
 Matrix = Tuple[Tuple[int, int], Tuple[int, int]]
 
 
-def hnf_matrices(minimum_order: int = 2, maximum_order: int = 7) -> list[Matrix]:
+def hnf_matrices(minimum_order: int = 2, maximum_order: int = 8) -> list[Matrix]:
     if minimum_order < 1 or maximum_order < minimum_order:
         raise ValueError("invalid order range")
     matrices = []
@@ -67,12 +67,58 @@ def _rank_line_safe(
         return rank, None, None, str(error)
 
 
+def build_state_table(
+    geometry: IntegerTorusGeometry,
+) -> dict[int, Tuple[tuple[Any, ...], tuple[Any, ...]]]:
+    """Cache exact primal/dual marks for every occupied-site subset."""
+
+    table = {}
+    for mask in range(1 << geometry.n):
+        active = tuple(bool(mask & (1 << vertex)) for vertex in range(geometry.n))
+        table[mask] = (
+            _rank_line_safe(geometry, active, matching=False),
+            _rank_line_safe(
+                geometry,
+                tuple(not value for value in active),
+                matching=True,
+            ),
+        )
+    return table
+
+
+def _cached_rank(
+    state_table: dict[int, Tuple[tuple[Any, ...], tuple[Any, ...]]],
+    full_mask: int,
+    mask: int,
+    *,
+    matching: bool,
+) -> int:
+    if matching:
+        return state_table[full_mask ^ mask][1][0]
+    return state_table[mask][0][0]
+
+
 def _first_rank_two(
     geometry: IntegerTorusGeometry,
     order: Sequence[int],
     *,
     matching: bool,
+    state_table: Optional[dict[int, Tuple[tuple[Any, ...], tuple[Any, ...]]]] = None,
 ) -> int:
+    if state_table is not None:
+        mask = 0
+        full_mask = (1 << geometry.n) - 1
+        for rank, vertex in enumerate(order, start=1):
+            mask |= 1 << vertex
+            if _cached_rank(
+                state_table,
+                full_mask,
+                mask,
+                matching=matching,
+            ) == 2:
+                return rank
+        raise AssertionError("fully occupied quotient never reached ambient rank two")
+
     active = [False] * geometry.n
     for rank, vertex in enumerate(order, start=1):
         active[vertex] = True
@@ -87,12 +133,19 @@ def _thresholds(
     *,
     forward_matching: bool,
     complement_matching: bool,
+    state_table: Optional[dict[int, Tuple[tuple[Any, ...], tuple[Any, ...]]]] = None,
 ) -> Tuple[int, int]:
-    k_plus = _first_rank_two(geometry, permutation, matching=forward_matching)
+    k_plus = _first_rank_two(
+        geometry,
+        permutation,
+        matching=forward_matching,
+        state_table=state_table,
+    )
     reverse_birth = _first_rank_two(
         geometry,
         tuple(reversed(permutation)),
         matching=complement_matching,
+        state_table=state_table,
     )
     return geometry.n - reverse_birth + 1, k_plus
 
@@ -100,19 +153,29 @@ def _thresholds(
 def analyze_permutation(
     geometry: IntegerTorusGeometry,
     permutation: Sequence[int],
+    *,
+    state_table: Optional[dict[int, Tuple[tuple[Any, ...], tuple[Any, ...]]]] = None,
 ) -> dict[str, Any]:
-    active = [False] * geometry.n
     states = []
-    for k in range(geometry.n + 1):
-        black = _rank_line_safe(geometry, active, matching=False)
-        white = _rank_line_safe(
-            geometry,
-            tuple(not value for value in active),
-            matching=True,
-        )
-        states.append({"k": k, "black": black, "white": white})
-        if k < geometry.n:
-            active[permutation[k]] = True
+    if state_table is None:
+        active = [False] * geometry.n
+        for k in range(geometry.n + 1):
+            black = _rank_line_safe(geometry, active, matching=False)
+            white = _rank_line_safe(
+                geometry,
+                tuple(not value for value in active),
+                matching=True,
+            )
+            states.append({"k": k, "black": black, "white": white})
+            if k < geometry.n:
+                active[permutation[k]] = True
+    else:
+        mask = 0
+        for k in range(geometry.n + 1):
+            black, white = state_table[mask]
+            states.append({"k": k, "black": black, "white": white})
+            if k < geometry.n:
+                mask |= 1 << permutation[k]
 
     k_first = next(state["k"] for state in states if state["black"][0] >= 1)
     k_second = next(state["k"] for state in states if state["black"][0] == 2)
@@ -121,12 +184,14 @@ def analyze_permutation(
         permutation,
         forward_matching=False,
         complement_matching=True,
+        state_table=state_table,
     )
     swapped_minus, swapped_plus = _thresholds(
         geometry,
         tuple(reversed(permutation)),
         forward_matching=True,
         complement_matching=False,
+        state_table=state_table,
     )
 
     rank_sum_steps = []
@@ -176,13 +241,14 @@ def analyze_permutation(
 
 def summarize_matrix(matrix: Matrix) -> dict[str, Any]:
     geometry = integer_torus_geometry(matrix, name="hnf-frontier")
+    state_table = build_state_table(geometry)
     counters: Counter[str] = Counter()
     line_counts: Counter[str] = Counter()
     examples = {gate: [] for gate in ("birth", "reflection", "rank_sum", "reconstruction", "line")}
     plateau_steps = 0
     maximum_index = 0
     for permutation in itertools.permutations(range(geometry.n)):
-        row = analyze_permutation(geometry, permutation)
+        row = analyze_permutation(geometry, permutation, state_table=state_table)
         failures = {
             "birth": any(row["birth_residuals"]),
             "reflection": any(row["reflection_residuals"]),
@@ -207,6 +273,7 @@ def summarize_matrix(matrix: Matrix) -> dict[str, Any]:
         "order": geometry.n,
         "four_distinct_face_corners": has_four_distinct_face_corners(geometry),
         "permutations": factorial(geometry.n),
+        "cached_subsets": len(state_table),
         "rank_one_plateau_steps": plateau_steps,
         "plateau_line_counts": dict(sorted(line_counts.items())),
         "maximum_saturation_index": maximum_index,
@@ -246,8 +313,8 @@ def build_artifact() -> dict[str, Any]:
     }
     honest = [row for row in rows if row["four_distinct_face_corners"]]
     degenerate = [row for row in rows if not row["four_distinct_face_corners"]]
-    assert len(matrices) == 40
-    assert total_paths == 49878
+    assert len(matrices) == 55
+    assert total_paths == 654678
     assert all(abs(determinant(tuple(tuple(part) for part in row["matrix"]))) == row["order"] for row in rows)
     return {
         "schema": "matching-one/digital-alexander-quotient-frontier/v1",
@@ -255,9 +322,9 @@ def build_artifact() -> dict[str, Any]:
         "status": (
             "counterexample_found"
             if any(total_failures.values())
-            else "no_counterexample_through_index_7"
+            else "no_counterexample_through_index_8"
         ),
-        "order_range": [2, 7],
+        "order_range": [2, 8],
         "HNF_representatives": len(rows),
         "honest_face_representatives": len(honest),
         "self_identifying_face_representatives": len(degenerate),
@@ -266,8 +333,8 @@ def build_artifact() -> dict[str, Any]:
         "first_counterexamples": first_counterexamples,
         "geometries": rows,
         "claim_boundary": {
-            "proved": "all permutations of every HNF quotient of index 2 through 7",
-            "not_proved": "index 8 and above or an unrestricted degenerate-quotient theorem",
+            "proved": "all permutations of every HNF quotient of index 2 through 8",
+            "not_proved": "index 9 and above or an unrestricted degenerate-quotient theorem",
         },
     }
 
@@ -276,7 +343,7 @@ def render_markdown(artifact: dict[str, Any]) -> str:
     lines = [
         "# Short-period digital Alexander quotient frontier",
         "",
-        "Every permutation of every two-dimensional HNF quotient of index 2 through 7 is exhausted.",
+        "Every permutation of every two-dimensional HNF quotient of index 2 through 8 is exhausted.",
         "",
         "- HNF representatives: `%d`;" % artifact["HNF_representatives"],
         "- honest four-corner representatives: `%d`;" % artifact["honest_face_representatives"],
@@ -300,7 +367,7 @@ def render_markdown(artifact: dict[str, Any]) -> str:
             "",
             "## Boundary",
             "",
-            "The result is exhaustive only through index 7. It does not prove an unrestricted theorem",
+            "The result is exhaustive only through index 8. It does not prove an unrestricted theorem",
             "for all degenerate quotients or alter production data semantics.",
             "",
         ]
