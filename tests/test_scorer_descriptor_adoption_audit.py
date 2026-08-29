@@ -24,6 +24,7 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
         (scripts / "score_direct.py").write_text(TYPED, encoding="utf-8")
         (scripts / "score_wrapper.py").write_text(TYPED, encoding="utf-8")
         (scripts / "score_kernel.py").write_text(KERNEL, encoding="utf-8")
+        (scripts / "score_generic.py").write_text(KERNEL, encoding="utf-8")
         (scripts / "score_unclassified.py").write_text(KERNEL, encoding="utf-8")
         return {
             "schema": "fixture",
@@ -32,6 +33,9 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
                 "scripts/score_wrapper.py": "scripts/score_kernel.py"
             },
             "direct_typed_standalone": ["scripts/score_direct.py"],
+            "descriptor_not_applicable_generic_utilities": {
+                "scripts/score_generic.py": "opaque generic score helper"
+            },
             "boundary": "fixture boundary",
         }
 
@@ -42,9 +46,10 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
             self.assertEqual(
                 result["counts"],
                 {
-                    "total": 4,
+                    "total": 5,
                     "direct_typed_entrypoint": 2,
                     "covered_frozen_kernel": 1,
+                    "descriptor_not_applicable_generic_utility": 1,
                     "outside_registered_typed_path": 1,
                 },
             )
@@ -70,6 +75,16 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "kernels missing"):
                 audit(root, manifest)
 
+    def test_not_applicable_cannot_overlap_typed_path(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            manifest = self.fixture(root)
+            manifest["descriptor_not_applicable_generic_utilities"] = {
+                "scripts/score_direct.py": "invalid overlap"
+            }
+            with self.assertRaisesRegex(ValueError, "overlap typed paths"):
+                audit(root, manifest)
+
     def test_checked_result_has_current_partition(self) -> None:
         result = json.loads(
             (ROOT / "results/scorer-descriptor-adoption/latest.json").read_text(
@@ -79,7 +94,10 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
         self.assertEqual(result["counts"]["total"], 35)
         self.assertEqual(result["counts"]["direct_typed_entrypoint"], 4)
         self.assertEqual(result["counts"]["covered_frozen_kernel"], 3)
-        self.assertEqual(result["counts"]["outside_registered_typed_path"], 28)
+        self.assertEqual(
+            result["counts"]["descriptor_not_applicable_generic_utility"], 1
+        )
+        self.assertEqual(result["counts"]["outside_registered_typed_path"], 27)
         self.assertEqual(len(result["rows"]), 35)
 
 
