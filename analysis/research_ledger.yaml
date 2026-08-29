@@ -1,61 +1,191 @@
-version: 5
+version: 6
 updated: 2026-08-29
 purpose: >
-  Compact map of durable evidence and next information axes. This ranks work;
-  it does not grant permission.
+  Compact machine-readable map of durable evidence, live hypotheses and default
+  research attention. Priority is advisory: it does not lock tasks, forbid
+  parallel work, require branch consolidation or imply scientific rejection.
 
 canonical_views:
   overview: README.md
+  next_targets: docs/NEXT-TARGETS.md
   claim_ledger: docs/STATUS.md
   research_map: docs/RESEARCH-MAP.md
-  execution_synthesis: notes/SYNTHESIS-20260828.md
   roadmap: docs/ROADMAP.md
+  execution_synthesis: notes/SYNTHESIS-20260828.md
   artifact_registry: analysis/artifact_registry.yaml
   reproducibility: REPRODUCIBILITY.md
   governance: GOVERNANCE.md
 
-hard_constraints:
+priority_policy:
+  - priority_is_attention_not_permission
+  - no_task_locking_from_this_ledger
+  - no_branch_merge_requirement
+  - preserve_competing_hypotheses_until_discriminated
+  - lower_priority_is_not_rejection
+  - raise_priority_when_new_independent_information_becomes_available
+
+evidence_integrity_rules:
   - preserve_frozen_predictions_and_committed_result_history
   - require_identical_observable_semantics_or_a_registered_exact_map_for_claim_bearing_scores
   - do_not_add_correlated_views_of_one_raw_random_block_as_independent_primary_evidence
+
+core_questions:
+  - id: Q1
+    question: which_continuum_sector_produces_global_square_site_matching_H4
+  - id: Q2
+    question: why_the_lattice_matching_observable_selects_that_sector
+  - id: Q3
+    question: whether_structure_can_explain_or_constrain_square_site_pc_itself
+
+live_hypotheses:
+  - id: H_Q4_JORDAN
+    question: Q1
+    state: live_candidate
+    summary: thermal_Q4_x21_over_4_spin4_with_inherited_rank2_Jordan
+  - id: H_V22
+    question: Q1
+    state: live_competitor
+    summary: four_leg_V_2_pm_2_x17_over_4_spin4_physical_Q1_overlap_unresolved
+  - id: H_LOW_RANK_ORDINARY
+    question: Q1
+    state: live_competitor
+    summary: diagonalizable_multifield_finite_size_mixing
+  - id: H_COVER_MEMORY
+    question: Q1
+    state: live_competitor
+    summary: deck_Smith_defect_or_combinatorial_map_memory
+  - id: H_HIGHER_RANK
+    question: Q1
+    state: conditional_competitor
+    summary: promote_only_if_basis_invariant_rank2_or_insertion_order_requires_it
 
 research_tracks:
   - id: A
     name: exact_topology_semantics_and_cover_characters
     state: exact
+    serves: [Q1, Q2]
     evidence: [E_CHANNEL_SEMANTICS, E_RUSSO_PIVOTAL, E_COVER_CHARACTERS]
   - id: B
     name: threshold_rank_and_reusable_statistics
     state: exact
+    serves: [Q1]
     evidence: [E_PREQUENTIAL, E_KRAWTCHOUK_MODES, E_NEUTRAL_AREA]
   - id: C
-    name: square_site_matching_odd_thermal_H4
+    name: square_site_matching_odd_H4
     state: predictive
+    serves: [Q1]
     evidence: [E_P57, E_P50_FULLCURVE, E_MATCHING_ODD_SYNTHESIS]
   - id: D
     name: thermal_derivative_mixing_and_intrinsic_coordinates
     state: predictive
+    serves: [Q1]
     evidence: [E_P50_FULLCURVE, E_NEUTRAL_AREA, E_INTRINSIC_QUANTILE]
   - id: E
-    name: pivotal_and_self_matching_RG
+    name: pivotal_self_matching_and_local_RG
     state: mechanism_candidate
+    serves: [Q1, Q2]
     evidence: [E_RUSSO_PIVOTAL, E_LOCAL_TANGENT, E_MULTIRADIUS]
   - id: F
     name: Q4_Jordan_and_modular_shape
     state: mechanism_candidate
+    serves: [Q1]
     evidence: [E_RECTANGULAR_Q4, E_Q4_JORDAN, E_HEX_HECKE]
   - id: G
     name: primitive_square_bond_spin4
-    state: predictive
+    state: predictive_separate_sector
+    serves: [Q1]
     evidence: [E_PRIMITIVE_GEN2, E_PRIMITIVE_KDV]
   - id: H
     name: exact_finite_algebra_and_negative_controls
     state: exact
+    serves: [Q2, Q3]
     evidence: [E_N26_BETA_NEGATIVE]
   - id: I
-    name: threshold_value_and_literature
-    state: observed
+    name: threshold_value_and_microscopic_origin
+    state: open
+    serves: [Q3]
     evidence: [E_PREQUENTIAL]
+  - id: J
+    name: Q1_spin4_representation_and_parameter_velocity
+    state: exact_preflight_overlap_unresolved
+    serves: [Q1, Q2]
+    evidence: [E_Q1_SPIN4_COMPETITOR, E_Q_VELOCITY]
+
+priority_frontier:
+  - rank: 1
+    name: resolve_lower_spin4_competitor_and_global_selection
+    issues: [257, 262, 250, 264]
+    serves: [Q1, Q2]
+    best_outputs:
+      - physical_Q1_projector_or_multiplicity_result
+      - exact_or_controlled_zero_nonzero_global_overlap
+      - charged_four_leg_positive_control
+  - rank: 2
+    name: infer_minimal_predictive_state_before_field_naming
+    issues: [249, 180, 253, 255]
+    serves: [Q1]
+    best_outputs:
+      - covariance_aware_heldout_rank
+      - composition_and_minimal_polynomial_residuals
+      - product_only_vs_cover_enriched_factorization
+  - rank: 3
+    name: independent_positive_controls
+    issues: [246, 234, 42, 44, 155, 106]
+    serves: [Q1, Q2]
+    best_outputs:
+      - known_log_pair_calibration
+      - symmetry_forced_sector_split
+      - tunable_H4_zero_crossing
+  - rank: 4
+    name: orthogonal_prospective_discriminator
+    issues: [205, 154, 159]
+    serves: [Q1]
+    best_outputs:
+      - same_N_coalescence_residual
+      - norm4_scale_composition_residual
+      - scalar_cancelled_modulus_shape_residual
+  - rank: 5
+    name: matching_observable_continuum_bridge
+    issues: [61, 114, 233, 120]
+    serves: [Q2]
+    best_outputs:
+      - RG_tangent_or_intertwiner
+      - FK_Potts_topological_sector_formula
+      - defect_or_transfer_matrix_selection_rule
+      - precise_local_obstruction
+  - rank: 6
+    name: threshold_origin
+    issues: [123, 3, 13, 17, 29, 47]
+    serves: [Q3]
+    best_outputs:
+      - self_dual_or_integrable_embedding
+      - bounded_symbolic_closure_or_no_go
+      - exact_finite_structure_with_predictive_consequence
+
+parallel_lanes:
+  existing_data_exact:
+    - {issues: [257, 262, 264], name: spin4_representation_selection}
+    - {issues: [249, 180, 253, 255], name: common_minimal_state_analysis}
+    - {issues: [246, 234], name: known_log_pair_calibration}
+    - {issues: [61, 114, 233], name: matching_observable_bridge}
+    - {issues: [123], name: threshold_origin_symbolic_line}
+  prospective_compute:
+    - {issues: [205], name: same_N_norm5_coalescence}
+    - {issues: [154], name: norm4_dyadic_composition}
+    - {issues: [159], name: modulus_shape_fingerprint}
+    - {issues: [42, 44, 106], name: exact_critical_controls}
+  useful_parallel:
+    - {issues: [119], name: multi_u_intrinsic_coordinate}
+    - {issues: [227, 245], name: Boolean_noise_semigroup}
+    - {issues: [118], name: metric_free_cross_microscopic_ratios}
+    - {issues: [165], name: C6_E6_mirror_control}
+
+acquisition_preferences:
+  - exact_selection_rule_or_matrix_element_zero
+  - parameter_free_ratio_phase_rank_or_shape
+  - independent_positive_control
+  - independent_prospective_raw_block
+  - additional_precision_on_already_resolved_scalar_effect
 
 evidence_blocks:
   - id: E_CHANNEL_SEMANTICS
@@ -101,7 +231,7 @@ evidence_blocks:
     status: exact
     paths: [results/exact-cover-character-oracles/gaussian_cover_characters.json]
   - id: E_Q4_JORDAN
-    status: exact
+    status: exact_candidate_representation
     paths: [notes/q4-jordan-log-slope-shape.md, predictions/q4_jordan_log_slope_shape_20260829.json]
   - id: E_HEX_HECKE
     status: exact
@@ -112,38 +242,22 @@ evidence_blocks:
   - id: E_PRIMITIVE_KDV
     status: mechanism_candidate
     paths: [results/local-20260829/P231-vacuum-kdv-sector-response/score.json]
+  - id: E_Q1_SPIN4_COMPETITOR
+    status: exact_continuum_preflight
+    paths: [analysis/q1_spin4_competitor_manifest.yaml]
+  - id: E_Q_VELOCITY
+    status: exact_continuum_preflight
+    paths: [analysis/q_velocity_spin4_manifest.yaml]
 
-analysis_queue:
-  - {issue: 119, name: multi_u_coordinate_separation, state: analysis_ready}
-  - {issue: 227, name: Boolean_noise_semigroup, state: analysis_ready}
-  - {issue: 234, name: energy_logpair_sufficient_statistics, state: analysis_ready}
-  - {issue: 180, name: low_rank_fullcurve_transfer, state: analysis_ready}
-  - {issue: 118, name: metric_free_ratios, state: analysis_ready}
-
-new_compute_queue:
-  - {rank: 1, issue: 205, name: same_N_norm5_coalescence, state: active}
-  - {rank: 2, issue: 159, name: scalar_cancelled_Q4_Jordan_modulus_fingerprint, state: active}
-  - {rank: 3, issue: 154, name: norm4_dyadic_deck_character_closure, state: ready}
-  - {rank: 4, issue: 155, name: larger_injective_local_pivotal_geometry, state: ready}
-  - {rank: 5, issue: 156, name: primitive_x4_shape_correction_target, state: ready}
-  - {rank: 6, issue: 74, name: N1105_four_angle, state: later}
-
-completed_analysis_tasks:
-  - {issue: 95, name: prequential_evidence_ledger, outcome: canonical_primary_only_evidence_aggregation}
-  - {issue: 212, name: independent_matching_odd_synthesis, outcome: global_zero_disfavored_fixed_H4_compatible}
-  - {issue: 101, name: intrinsic_quantile_N145_N290, outcome: frozen_N_minus_3_over_4_transfer_compatible}
-  - {issue: 225, name: small_torus_multiradius_prototype, outcome: do_not_extend_N130_N170_same_design}
-
-completed_production_tasks:
+completed_information:
   - {issue: 50, name: N145_to_N290_full_curve, outcome: corrected_slope_survives_single_multiplier_shape_fails}
   - {issue: 57, name: norm5_H4_H12, outcome: H4_transfer_compatible_H12_H8_disfavored_child_zero_not_rejected}
-  - {issue: 156, name: primitive_norm2_two_generations, outcome: negative_rank4_H4_phase_repeats_positive_phase_adversaries_fail}
-
-completed_exact_tasks:
-  - {issue: 115, name: N26_self_matching_Beta_falsification, outcome: both_frozen_Beta_laws_fail}
-  - {issue: 100, name: finite_Russo_identity, outcome: exact}
+  - {issue: 212, name: independent_matching_odd_synthesis, outcome: global_zero_disfavored_fixed_H4_compatible}
+  - {issue: 225, name: small_torus_multiradius_prototype, outcome: current_readout_not_simple_one_generator_shell}
   - {issue: 216, name: Q4_Jordan_module_shape_relations, outcome: exact_module_relations_not_lattice_identification}
-  - {name: Gaussian_cover_deck_characters, outcome: norm4_Z2xZ2_and_Hadamard_split_exact}
+  - {issue: 248, name: deck_character_selection_rule, outcome: invariant_global_linear_nontrivial_character_response_exact_zero}
+  - {issue: 260, name: Q1_spin4_competitor_preflight, outcome: exact_x17_over_4_four_leg_spin4_competitor_overlap_unresolved}
+  - {issue: 264, name: Q_velocity_spin_sector_preflight, outcome: exact_continuum_velocity_fingerprints_lattice_field_derivative_unresolved}
 
 negative_results:
   - {id: NR_N290_SCALAR_SHAPE, statement: N145_N290_fullcurve_is_not_one_scalar_multiplier}
@@ -155,7 +269,8 @@ negative_results:
   - {id: NR_PRIMITIVE_SCALAR_E4, statement: scalar_E4_Pell_phase_bridge_fails_for_primitive_character}
 
 maintenance_rules:
-  - Integrate useful science first; refresh navigation afterward.
-  - Existing-data analysis, exact work, pilots and exploratory production are allowed by default.
-  - Prefer a new information axis over another unconstrained fit parameter.
-  - A negative result succeeds when it removes a mechanism or compute loop.
+  - integrate_useful_science_without_requiring_navigation_sync_first
+  - prefer_priority_changes_over_task_locking
+  - preserve_independent_branches_when_they_help_adversarial_comparison
+  - prefer_a_new_information_axis_over_another_unconstrained_fit_parameter
+  - negative_results_can_raise_the_priority_of_better_discriminators
