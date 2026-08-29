@@ -1,0 +1,160 @@
+{
+  "analysis": {
+    "primary_covariance_of_mean": [
+      [
+        26.112129764129392,
+        4.58705566303825,
+        3.9119489024262357,
+        -1.2773679045128659
+      ],
+      [
+        4.58705566303825,
+        11.417389891949824,
+        3.1534007805730844,
+        -5.505160217756129
+      ],
+      [
+        3.9119489024262357,
+        3.1534007805730844,
+        5.622472325781384,
+        -3.486744588480197
+      ],
+      [
+        -1.2773679045128659,
+        -5.505160217756129,
+        -3.486744588480197,
+        12.241979405844043
+      ]
+    ],
+    "primary_order": [
+      "plus_re",
+      "plus_im",
+      "minus_re",
+      "minus_im"
+    ],
+    "primary_point": [
+      -6.084610486866991,
+      -5.535553686166156,
+      0.9294332904904641,
+      2.949819290075685
+    ],
+    "primary_standard_error": [
+      5.1100029123405974,
+      3.378962842641189,
+      2.371175304734212,
+      3.4988540132226214
+    ],
+    "same_parent_handed_ratio": {
+      "delete_one_covariance_re_im": [
+        [
+          12.005081791030499,
+          -0.2240636208722992
+        ],
+        [
+          -0.2240636208722992,
+          5.384515238639154
+        ]
+      ],
+      "delete_one_valid_replicates": 20,
+      "delta_method_phase_standard_error_degrees": 56.449138513856,
+      "frozen_target_phase_differences": {
+        "H12": {
+          "target_phase_degrees": -82.43877175012827,
+          "wrapped_difference_degrees": -127.77778988852765
+        },
+        "H4": {
+          "target_phase_degrees": -147.47959058337608,
+          "wrapped_difference_degrees": -62.73697105527987
+        },
+        "H8": {
+          "target_phase_degrees": 65.04081883324784,
+          "wrapped_difference_degrees": 84.74261952809621
+        }
+      },
+      "phase_degrees": 149.78343836134405,
+      "phase_radians": 2.614214164363434,
+      "point_re_im": [
+        -2.298325024901094,
+        1.3385466389892926
+      ]
+    },
+    "same_parent_plus_minus_conjugacy_is_not_a_null": true,
+    "true_reflection_conjugacy_null": {
+      "covariance_of_mean": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "point_re_im": [
+        0.0,
+        0.0
+      ],
+      "relation": "R_((8+i)(2+i))-conj(R_((8-i)(2-i)))"
+    }
+  },
+  "issues": [
+    226,
+    244
+  ],
+  "mapping_gate": {
+    "child_order": 325,
+    "common_field": "(deterministic parent representative j, fiber k in Z/5)",
+    "deck_action": "k -> k+1 mod 5",
+    "deck_step": [
+      8,
+      1
+    ],
+    "fiber_representative": "u_k=(k,0) modulo M_(2+/-i)",
+    "minus_child_periods": [
+      [
+        17,
+        6
+      ],
+      [
+        -6,
+        17
+      ]
+    ],
+    "parent": [
+      8,
+      1
+    ],
+    "parent_order": 65,
+    "passed": true,
+    "plus_child_periods": [
+      [
+        15,
+        -10
+      ],
+      [
+        10,
+        15
+      ]
+    ],
+    "same_parent_hands_are_reflections": false,
+    "true_reflection_pair": "(8+i)(2+i) <-> (8-i)(2-i)",
+    "unique_labels_per_child": 325
+  },
+  "observable": {
+    "marked_row_estimator": "(325/2) zeta5^(-k_root) [pivotalH4_primal-pivotalH4_matching]",
+    "root_schedule": "root_field=replica mod 325",
+    "score": "S_chi=sum_(j,k) zeta5^k (X_jk-p)",
+    "shared_randomness": "same (parent,fiber) Bernoulli field and marked root for both hands"
+  },
+  "run": {
+    "batches": 20,
+    "batches_output": "results/local-20260829/P226-norm5-chiral-fixedp-smoke/chiral_response.batches.csv",
+    "p": 0.59274605079,
+    "radius": 1,
+    "samples": 20000,
+    "seed": 2265325020000,
+    "workers": 8
+  },
+  "schema": "matching-one.norm5-chiral-fixedp-response.v1",
+  "status": "engineering_smoke"
+}

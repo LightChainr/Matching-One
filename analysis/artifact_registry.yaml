@@ -38,6 +38,7 @@ frozen_predictions:
   - {path: predictions/c4_self_matching_n26_beta_targets_20260828.json, status: frozen_prediction, issue: 115, role: completed_N26_targets}
   - {path: predictions/wrapping_channel_audit_20260828.json, status: frozen_prediction, issue: 146, role: semantic_map_audit}
   - {path: predictions/norm5_chiral_hecke_phase_20260829.json, status: frozen_prediction, issue: 226, role: H4_H8_H12_chiral_Hecke_phase}
+  - {path: experiments/p226_norm5_chiral_fixedp_production_20260829.json, status: frozen_prediction, issue: 226, role: N325_chiral_fixedp_production}
 
 continuum_controls:
   - {path: predictions/p156_pinson_arguin_baselines_20260829.json, status: continuum_baseline, issue: 156, role: primitive_homology_sector_values}
@@ -55,6 +56,7 @@ evidence_archives:
   - {id: COVER_CHARACTERS, path: results/exact-cover-character-oracles/gaussian_cover_characters.json, status: exact_result, role: deck_character_oracle}
   - {id: N26_BETA, path: results/local-20260828/P115-n26-self-matching-exact, status: negative_result, role: exact_Beta_failure}
   - {id: GAUSSIAN_COVER_SELECTION_RULE, path: results/exact-cover-character-oracles/norm2_selection_rule.json, status: immutable_result, role: exact_deck_character_linear_null_and_allowed_channels}
+  - {id: NORM5_CHIRAL_FIXEDP_SMOKE, path: results/local-20260829/P226-norm5-chiral-fixedp-smoke, status: engineering_smoke, role: N325_charged_handed_response}
 
 topic_derivations:
   - {path: notes/pivotal-russo-finite-volume.md, status: topic_derivation, role: pivotal_identity}
@@ -63,6 +65,7 @@ topic_derivations:
   - {path: notes/hexagonal-degree2-hecke-fingerprint.md, status: topic_derivation, role: modular_phase_projector}
   - {path: notes/gaussian-cover-fiber-character-rg.md, status: topic_derivation, role: exact_cover_character_selection_rule}
   - {path: notes/norm5-chiral-hecke-phase.md, status: topic_derivation, role: norm5_chiral_character_phase_discriminator}
+  - {path: notes/norm5-chiral-fixedp-mc.md, status: topic_derivation, role: deployable_N325_chiral_response}
   - {path: notes/p156-norm2-generation2.md, status: topic_derivation, role: primitive_second_generation}
   - {path: notes/p231-vacuum-kdv-sector-response.md, status: topic_derivation, role: primitive_vacuum_KdV}
   - {path: notes/p225-multiradius-pivotal-prototype.md, status: topic_derivation, role: local_multiradius_negative}

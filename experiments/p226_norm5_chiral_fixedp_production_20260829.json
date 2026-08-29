@@ -1,0 +1,23 @@
+{
+  "schema": "matching-one.norm5-chiral-fixedp-production.v1",
+  "production_id": "P226-N325-norm5-chiral-fixedp-v1",
+  "status": "frozen_after_20k_engineering_smoke_before_production",
+  "issues": [226, 244],
+  "question": "Does one same-parent 2+i versus 2-i charged handed ratio select the frozen H4, H8, or H12 Hecke phase?",
+  "run": {
+    "samples": 200000,
+    "batches": 100,
+    "workers": 16,
+    "p": 0.59274605079,
+    "seed": 2265325000829,
+    "radius": 1,
+    "output": "/workspace/Matching-One/results/huawei-20260829/P226-norm5-chiral-fixedp/chiral_response.json",
+    "batches_output": "/workspace/Matching-One/results/huawei-20260829/P226-norm5-chiral-fixedp/chiral_response.batches.csv"
+  },
+  "primary_vector": ["plus_re", "plus_im", "minus_re", "minus_im"],
+  "covariance": "complete 4x4 batch covariance of primary response mean",
+  "primary_transform": "complex same-parent ratio R_((8+i)(2+i))/R_((8+i)(2-i))",
+  "frozen_phase_targets": "predictions/norm5_chiral_hecke_phase_20260829.json",
+  "required_null": "true reflected pair R_((8+i)(2+i))-conj(R_((8-i)(2-i)))",
+  "semantic_warning": "The two same-parent hands are not geometric reflections; their conjugacy difference is not a null."
+}
