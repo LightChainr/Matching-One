@@ -1,0 +1,67 @@
+{
+  "schema": "matching-one/mean-jd4-q2-chain-prereg/v1",
+  "issues": [215, 258, 275],
+  "runner_commit": "6899b119db5b16e9918db53abf5280d990eb6653",
+  "frozen_before_N260_outcome": true,
+  "seed": 202608290315,
+  "replica_offset": 9300000000,
+  "samples_per_size": 5000000,
+  "batches": 100,
+  "threads_per_server": 16,
+  "sizes": [
+    {
+      "N": 65,
+      "first": [8, 1],
+      "second": [7, 4],
+      "delta_cos4": "1152/845",
+      "server": "DevEnvC_ZyTrST"
+    },
+    {
+      "N": 130,
+      "first": [9, 7],
+      "second": [11, 3],
+      "delta_cos4": "-1152/845",
+      "server": "DevEnvC_XPk2PZ"
+    },
+    {
+      "N": 260,
+      "first": [16, 2],
+      "second": [14, 8],
+      "delta_cos4": "1152/845",
+      "server": "DevEnvC_HZsCM6"
+    }
+  ],
+  "estimator": {
+    "center": "per-size intrinsic root of the orientation-mean q curve, recomputed inside every delete-one score",
+    "source": "complex same-size P4 mean J_D4, with J_D4=chi4(P*ell)(I12-I01)",
+    "projection": "(first-second)/delta_cos4",
+    "direct_0_to_2": "zero contribution because ell=null and D=0"
+  },
+  "primary_targets": {
+    "r_65_to_130": "J130/J65 = -2^(-13/8) = -0.3242098886627524 with zero residual phase",
+    "r_130_to_260": "J260/J130 = -2^(-13/8) = -0.3242098886627524 with zero residual phase",
+    "r_65_to_260": "J260/J65 = +4^(-13/8) = +0.10511205190671431 with zero residual phase",
+    "joint": "fit one real exponent alpha to both complex edges under alternating sign; compare alpha=13/8 to alpha=0 and free complex transfers"
+  },
+  "secondary_controls": [
+    "all complement endpoint/site/line/local/index audits exactly zero",
+    "Russo residual below 1e-30 at 50 dps",
+    "each edge phase residual reported before magnitude/exponent",
+    "N65 and N130 production are fresh replicas, not reuse of the 20k pilot",
+    "cross-size counters are aligned identifiers but only within-size orientation pairs share an exact permutation field"
+  ],
+  "power_and_runtime": {
+    "pilot_single_thread_seconds": {"N65_20k": 3.891738067, "N130_20k": 7.511799843},
+    "conservative_16_thread_wall_seconds": {"N65": 82, "N130": 157, "N260": 315},
+    "worst_case_sparse_raw_gib_per_server": {"N65": 1.2, "N130": 1.3, "N260": 1.6},
+    "N260_expected_from_N65_pilot": {"re": 0.004067, "im": 0.003055},
+    "N260_conservative_5m_se": {"re": 0.00110, "im": 0.00164},
+    "N260_combined_expected_snr": 4.0,
+    "interpretation": "5m is discovery-grade for the complex two-step chain, not a precision exponent determination"
+  },
+  "claim_boundary": {
+    "primary": "mean J_D4 only; the connected A_top response is excluded by the exact contact no-go",
+    "heldout": "N260 outcome and second q2 transfer",
+    "not_claimed": "field identity from a two-edge exponent match without independent modular or external-observer evidence"
+  }
+}
