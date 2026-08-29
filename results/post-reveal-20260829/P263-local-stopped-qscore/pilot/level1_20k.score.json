@@ -1,0 +1,145 @@
+{
+  "anchored_lattice_tangent": [
+    -6.088454941545391,
+    0.0,
+    -4.064959897752518,
+    -4.616685907437493
+  ],
+  "batch_count": 20,
+  "covariance_trace": 31.250400531453746,
+  "estimates": [
+    {
+      "d_log_probability": -3.671875,
+      "estimated_completion_noise_in_outer_variance": 0.012349525669642857,
+      "estimated_ideal_stopped_outer_variance": 0.11195984385156758,
+      "events_14_23": 12,
+      "geometry_id": "lambda_1_4",
+      "inner_replicates": 8,
+      "lambda": "1/4",
+      "local_outer_estimator_sample_variance": 0.12430936952121044,
+      "max_revealed_edges": 9685,
+      "mean_conditional_delta_J_variance_on_14_23": 658.641369047619,
+      "mean_revealed_edges": 2222.9032,
+      "mean_revealed_edges_on_14_23": 6541.833333333333,
+      "mean_revealed_fraction": 0.20300485844748858,
+      "measure_tangent_14_23": -0.002203125,
+      "probability_14_23": 0.0006,
+      "samples": 20000,
+      "span_L": 15,
+      "z_before_amplitude_projection": -2.1236965627240063
+    },
+    {
+      "d_log_probability": 2.4285714285714284,
+      "estimated_completion_noise_in_outer_variance": 0.02044609375,
+      "estimated_ideal_stopped_outer_variance": 0.10552479604448972,
+      "events_14_23": 21,
+      "geometry_id": "lambda_1_3",
+      "inner_replicates": 8,
+      "lambda": "1/3",
+      "local_outer_estimator_sample_variance": 0.12597088979448973,
+      "max_revealed_edges": 8333,
+      "mean_conditional_delta_J_variance_on_14_23": 623.1190476190476,
+      "mean_revealed_edges": 1988.99325,
+      "mean_revealed_edges_on_14_23": 5838.238095238095,
+      "mean_revealed_fraction": 0.2083151707163804,
+      "measure_tangent_14_23": 0.00255,
+      "probability_14_23": 0.00105,
+      "samples": 20000,
+      "span_L": 14,
+      "z_before_amplitude_projection": 3.9647583788213843
+    },
+    {
+      "d_log_probability": -1.6050884955752212,
+      "estimated_completion_noise_in_outer_variance": 0.11088816964285714,
+      "estimated_ideal_stopped_outer_variance": 0.6092671583969824,
+      "events_14_23": 113,
+      "geometry_id": "lambda_2_3",
+      "inner_replicates": 8,
+      "lambda": "2/3",
+      "local_outer_estimator_sample_variance": 0.7201553280398395,
+      "max_revealed_edges": 9690,
+      "mean_conditional_delta_J_variance_on_14_23": 628.0391908975979,
+      "mean_revealed_edges": 2483.9636,
+      "mean_revealed_edges_on_14_23": 6109.265486725663,
+      "mean_revealed_fraction": 0.22684599086757992,
+      "measure_tangent_14_23": -0.00906875,
+      "probability_14_23": 0.00565,
+      "samples": 20000,
+      "span_L": 15,
+      "z_before_amplitude_projection": -0.1002015189311336
+    },
+    {
+      "d_log_probability": -2.025717703349282,
+      "estimated_completion_noise_in_outer_variance": 0.18267712053571428,
+      "estimated_ideal_stopped_outer_variance": 0.8903260698972448,
+      "events_14_23": 209,
+      "geometry_id": "lambda_3_4",
+      "inner_replicates": 8,
+      "lambda": "3/4",
+      "local_outer_estimator_sample_variance": 1.073003190432959,
+      "max_revealed_edges": 8330,
+      "mean_conditional_delta_J_variance_on_14_23": 559.3940533151059,
+      "mean_revealed_edges": 2168.87935,
+      "mean_revealed_edges_on_14_23": 5384.755980861244,
+      "mean_revealed_fraction": 0.22715535714285714,
+      "measure_tangent_14_23": -0.02116875,
+      "probability_14_23": 0.01045,
+      "samples": 20000,
+      "span_L": 14,
+      "z_before_amplitude_projection": -0.6519275286161086
+    }
+  ],
+  "exact_identity": "For event-determining transcript T and independent completion C, E[I(T)*(J(C<-T)-J(C))/2]=Cov(I,J/2).",
+  "frozen_target": [
+    -0.14829994193484564,
+    0.0,
+    0.3249693720763416,
+    0.36786256566279774
+  ],
+  "issue": 263,
+  "joint_gls": {
+    "chi_square": 6.586542432499845,
+    "covariance_eigenvalues": [
+      0.5270310333155626,
+      5.0139267778957555,
+      25.709442720242425
+    ],
+    "degrees_of_freedom": 3,
+    "relative_pseudoinverse_cutoff": 1e-10
+  },
+  "residual": [
+    -5.940154999610545,
+    -4.389929269828859,
+    -4.984548473100291
+  ],
+  "residual_covariance": [
+    [
+      21.825471606969963,
+      7.620906869562615,
+      3.2816224077808944
+    ],
+    [
+      7.620906869562615,
+      5.302926965353273,
+      3.690188933402534
+    ],
+    [
+      3.2816224077808944,
+      3.690188933402534,
+      4.122001959130511
+    ]
+  ],
+  "schema": "matching-one.p263-local-stopped-qscore-score.v1",
+  "state_order": [
+    "lambda_1_4",
+    "lambda_2_3",
+    "lambda_3_4"
+  ],
+  "status": "exploratory_mechanism_pilot_not_primary_evidence",
+  "warnings": [
+    "The covariance numerator is unbiased; d_log_probability is a finite-sample ratio estimator.",
+    "Finite inner replication adds completion noise even though untouched edges cancel sample by sample.",
+    "Arm/event-scale variance is a scaling conjecture; transcript size can remain large in finite rectangles.",
+    "This secondary must not replace or be combined with the revealed Phase-E primary score."
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "issue": 263,
+  "schema": "matching-one.p263-local-stopped-qscore-exact.v1",
+  "score_identity": {
+    "coupled_completion": "C is independent p=1/2; C<-T overwrites only transcript edges",
+    "global_score": "S=J/2-E[J/2]",
+    "local_bound": "if r transcript edges are overwritten, |J(C<-T)-J(C)|/2 <= r/2",
+    "rao_blackwell": "S_T=E[S|T] and Cov(I,S)=E[I*S_T]",
+    "stopped_sigma_field": "T is an adaptive p=1/2 edge transcript that determines the event I",
+    "unbiased_estimator": "I(T)*(J(C<-T)-J(C))/2 has expectation Cov(I,J/2)"
+  },
+  "status": "exact_identity_and_tiny_variance_oracle",
+  "tiny_graph": {
+    "adaptive_reveal_order": "23=open,41=open,12=closed,34=closed; stop at first mismatch",
+    "core": "open four-cycle with terminals at all four vertices",
+    "event": "14|23, core mask 1010 in edge order (12,23,34,41)",
+    "rows": [
+      {
+        "completion_noise_at_one_inner_draw": "47/4096",
+        "configurations": 16,
+        "coupled_inner_replicates": {
+          "1": {
+            "ratio_to_global": 51.13333333333333,
+            "variance": "767/65536",
+            "variance_decimal": 0.0117034912109375
+          },
+          "16": {
+            "ratio_to_global": 4.133333333333334,
+            "variance": "31/32768",
+            "variance_decimal": 0.000946044921875
+          },
+          "4": {
+            "ratio_to_global": 13.533333333333333,
+            "variance": "203/65536",
+            "variance_decimal": 0.0030975341796875
+          },
+          "8": {
+            "ratio_to_global": 7.266666666666667,
+            "variance": "109/65536",
+            "variance_decimal": 0.0016632080078125
+          }
+        },
+        "global_centered_variance": "15/65536",
+        "global_centered_variance_decimal": 0.0002288818359375,
+        "ideal_stopped_variance": "15/65536",
+        "mean_revealed_core_edges": "15/8",
+        "revealed_core_edges_on_high_event": 4,
+        "spectator_edges": 0,
+        "target_covariance": "-1/256"
+      },
+      {
+        "completion_noise_at_one_inner_draw": "47/4096",
+        "configurations": 32,
+        "coupled_inner_replicates": {
+          "1": {
+            "ratio_to_global": 2.830258302583026,
+            "variance": "767/65536",
+            "variance_decimal": 0.0117034912109375
+          },
+          "16": {
+            "ratio_to_global": 0.22878228782287824,
+            "variance": "31/32768",
+            "variance_decimal": 0.000946044921875
+          },
+          "4": {
+            "ratio_to_global": 0.7490774907749077,
+            "variance": "203/65536",
+            "variance_decimal": 0.0030975341796875
+          },
+          "8": {
+            "ratio_to_global": 0.4022140221402214,
+            "variance": "109/65536",
+            "variance_decimal": 0.0016632080078125
+          }
+        },
+        "global_centered_variance": "271/65536",
+        "global_centered_variance_decimal": 0.0041351318359375,
+        "ideal_stopped_variance": "15/65536",
+        "mean_revealed_core_edges": "15/8",
+        "revealed_core_edges_on_high_event": 4,
+        "spectator_edges": 1,
+        "target_covariance": "-1/256"
+      },
+      {
+        "completion_noise_at_one_inner_draw": "47/4096",
+        "configurations": 64,
+        "coupled_inner_replicates": {
+          "1": {
+            "ratio_to_global": 1.4554079696394686,
+            "variance": "767/65536",
+            "variance_decimal": 0.0117034912109375
+          },
+          "16": {
+            "ratio_to_global": 0.11764705882352941,
+            "variance": "31/32768",
+            "variance_decimal": 0.000946044921875
+          },
+          "4": {
+            "ratio_to_global": 0.38519924098671726,
+            "variance": "203/65536",
+            "variance_decimal": 0.0030975341796875
+          },
+          "8": {
+            "ratio_to_global": 0.20683111954459202,
+            "variance": "109/65536",
+            "variance_decimal": 0.0016632080078125
+          }
+        },
+        "global_centered_variance": "527/65536",
+        "global_centered_variance_decimal": 0.0080413818359375,
+        "ideal_stopped_variance": "15/65536",
+        "mean_revealed_core_edges": "15/8",
+        "revealed_core_edges_on_high_event": 4,
+        "spectator_edges": 2,
+        "target_covariance": "-1/256"
+      },
+      {
+        "completion_noise_at_one_inner_draw": "47/4096",
+        "configurations": 128,
+        "coupled_inner_replicates": {
+          "1": {
+            "ratio_to_global": 0.979565772669221,
+            "variance": "767/65536",
+            "variance_decimal": 0.0117034912109375
+          },
+          "16": {
+            "ratio_to_global": 0.07918263090676884,
+            "variance": "31/32768",
+            "variance_decimal": 0.000946044921875
+          },
+          "4": {
+            "ratio_to_global": 0.25925925925925924,
+            "variance": "203/65536",
+            "variance_decimal": 0.0030975341796875
+          },
+          "8": {
+            "ratio_to_global": 0.1392081736909323,
+            "variance": "109/65536",
+            "variance_decimal": 0.0016632080078125
+          }
+        },
+        "global_centered_variance": "783/65536",
+        "global_centered_variance_decimal": 0.0119476318359375,
+        "ideal_stopped_variance": "15/65536",
+        "mean_revealed_core_edges": "15/8",
+        "revealed_core_edges_on_high_event": 4,
+        "spectator_edges": 3,
+        "target_covariance": "-1/256"
+      },
+      {
+        "completion_noise_at_one_inner_draw": "47/4096",
+        "configurations": 256,
+        "coupled_inner_replicates": {
+          "1": {
+            "ratio_to_global": 0.7382098171318575,
+            "variance": "767/65536",
+            "variance_decimal": 0.0117034912109375
+          },
+          "16": {
+            "ratio_to_global": 0.059672762271414825,
+            "variance": "31/32768",
+            "variance_decimal": 0.000946044921875
+          },
+          "4": {
+            "ratio_to_global": 0.19538017324350337,
+            "variance": "203/65536",
+            "variance_decimal": 0.0030975341796875
+          },
+          "8": {
+            "ratio_to_global": 0.10490856592877768,
+            "variance": "109/65536",
+            "variance_decimal": 0.0016632080078125
+          }
+        },
+        "global_centered_variance": "1039/65536",
+        "global_centered_variance_decimal": 0.0158538818359375,
+        "ideal_stopped_variance": "15/65536",
+        "mean_revealed_core_edges": "15/8",
+        "revealed_core_edges_on_high_event": 4,
+        "spectator_edges": 4,
+        "target_covariance": "-1/256"
+      }
+    ],
+    "spectators": "disjoint Bernoulli edges invisible to the event; they model far-field extensive noise"
+  },
+  "variance_statement": {
+    "finite_inner_replicates": "Var(local_K)=Var(I*S_T)+E[I*Var(delta S|T)]/K",
+    "ideal": "I*S_T is the Rao-Blackwell projection of I*S and cannot have larger variance",
+    "scaling_conjecture": "far-field area noise cancels exactly; remaining variance follows the marked-arm transcript size and rare-event count"
+  }
+}

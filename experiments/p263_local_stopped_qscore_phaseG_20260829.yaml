@@ -1,0 +1,120 @@
+version: 1
+frozen_at: 2026-08-29
+status: frozen_and_deployed_local_mechanism_pilot
+related_issue: 263
+depends_on_commit: 92a7930
+purpose: >-
+  Test a genuinely localized, event-determining stopped-transcript estimator
+  of the same 14|23 Q-tangent covariance. This exploratory secondary neither
+  changes nor combines with the revealed Phase-E primary score.
+
+exact_identity:
+  full_score: 'S=J/2-E[J/2], J=2*k+b'
+  transcript: >-
+    T adaptively reveals p=1/2 edges until I_14|23 is measurable. Conditional
+    on T, unrevealed edges remain independent fair bonds.
+  independent_completion: 'C is an independent p=1/2 bond configuration'
+  overwrite: 'C<-T replaces only the revealed transcript edges of C'
+  estimator: 'I(T)*(J(C<-T)-J(C))/2'
+  expectation: 'Cov(I_14|23,J/2)'
+  proof: >-
+    C<-T has the law of a full bond configuration conditional on T, whereas C
+    has the unconditional law. Thus the conditional mean of the difference is
+    E[J/2|T]-E[J/2]. Multiplication by the T-measurable event indicator and the
+    tower property give the covariance.
+  exact_local_bound: 'for r revealed edges, abs(J(C<-T)-J(C))/2 <= r/2'
+  ratio_boundary: >-
+    The covariance numerator is unbiased. Dividing by the empirical event
+    probability to estimate d_Q log P retains finite-sample ratio bias.
+
+exploration:
+  sources: all_four_marked_boundary_vertices
+  algorithm: multi_source_fifo_reveal_of_marked_cluster_frontiers
+  false_stop: >-
+    Stop immediately when any open connection joins {x1,x4} to {x2,x3}; that
+    forbidden merge is permanent and proves I_14|23=0.
+  otherwise: >-
+    Exhaust all terminal-connected frontiers, then accept exactly when x1~x4
+    and x2~x3 are two distinct clusters.
+  completion_work: >-
+    Run coupled completions only on accepted outer samples because the local
+    covariance estimator is multiplied by the event indicator.
+
+unchanged_science:
+  geometry: experiments/p263_boundary_qscore_phaseD_20260829.yaml
+  lattice: open_square_bond_rectangle
+  critical_point: p=1/2
+  boundary_condition: free
+  primary_channel: '14|23'
+  lambdas: ['1/4', '1/3', '2/3', '3/4']
+  anchor_lambda: '1/3'
+  tangent_target: predictions/p263_boundary_lattice_qscore_20260829.json
+
+minimal_batch_sufficient_statistics:
+  identity_and_ratio:
+    - samples
+    - count_14_23
+    - inner_replicates
+    - sum_delta_J_14_23
+  outer_and_completion_variance_separation:
+    - sum_delta_J_inner_square_14_23
+    - sum_delta_J2_individual_14_23
+  transcript_scale_diagnostics:
+    - sum_revealed
+    - sum_revealed2
+    - sum_revealed_14_23
+    - max_revealed
+  metadata:
+    - geometry_id
+    - lambda_num
+    - lambda_den
+    - level
+    - span_L
+    - vertices
+    - edges
+    - batch
+    - outer_seed
+    - completion_seed
+    - sample_begin
+
+frozen_small_pilot:
+  level: 1
+  spans: [15, 14, 15, 14]
+  outer_samples_per_geometry: 20000
+  synchronized_batches: 20
+  inner_replicates_per_event_positive_outer_sample: 8
+  outer_seed: 2026102633
+  completion_seed: 2026102634
+  completion_counter: 'outer_sample*8+inner, range [0,160000)'
+  execution: single_core
+  score: >-
+    Form sum_delta_J/(2*K*N), divide by count/N for the log tangent, apply the
+    unchanged span/prefactor corrections and lambda=1/3 amplitude gauge, then
+    use synchronized delete-one-batch covariance and the frozen 3D GLS shape.
+  revealed_result_root: results/post-reveal-20260829/P263-local-stopped-qscore/pilot
+
+variance_claim_layers:
+  exact:
+    - 'I*E[S|T] is the Rao-Blackwell projection of I*S and has no larger variance.'
+    - 'Untouched completion edges cancel sample by sample in J(C<-T)-J(C).'
+    - 'At fixed T, averaging K independent completions divides completion noise by K.'
+  tiny_exact_oracle: >-
+    On a four-cycle plus disjoint spectator edges, ideal stopped variance is
+    independent of the spectator count while global centered-score variance
+    grows linearly with it.
+  conjecture: >-
+    In large rectangles, the remaining variance should track the revealed
+    marked-arm/transcript scale and rare-event count rather than total area.
+    This can fail to be advantageous when the transcript itself is extensive
+    or K is too small.
+  compute_caveat: >-
+    The current reference runner rebuilds full DSUs for base and overwritten
+    configurations on event-positive samples. Its statistical support is
+    localized, but its positive-sample completion cost is not yet arm-only.
+
+forbidden:
+  - alter_the_Phase_E_primary_data_or_scorer
+  - combine_this_secondary_with_Phase_E_as_independent_evidence
+  - claim_the_log_ratio_is_exactly_unbiased
+  - claim_arm_scale_variance_without_measuring_transcript_scaling
+  - merge_or_open_a_pull_request

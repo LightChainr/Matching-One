@@ -1,0 +1,6 @@
+c++ -O2 -std=c++17 src/p263_local_stopped_qscore_pilot.cpp -o /tmp/p263_local_stopped_qscore
+/tmp/p263_local_stopped_qscore --level 1 --samples 20000 --batches 20 --inner 8 --outer-seed 2026102633 --completion-seed 2026102634 --output results/post-reveal-20260829/P263-local-stopped-qscore/pilot/level1_20k.batches.csv
+python3 scripts/score_p263_local_stopped_qscore.py --batches results/post-reveal-20260829/P263-local-stopped-qscore/pilot/level1_20k.batches.csv --output results/post-reveal-20260829/P263-local-stopped-qscore/pilot/level1_20k.score.json
+python3 scripts/p263_local_stopped_score.py --output results/post-reveal-20260829/P263-local-stopped-qscore/exact.json
+python3 -m unittest discover -s tests -p 'test_p263_*.py' -v
+shasum -a 256 experiments/p263_local_stopped_qscore_phaseG_20260829.yaml src/p263_local_stopped_qscore_pilot.cpp scripts/p263_local_stopped_score.py scripts/score_p263_local_stopped_qscore.py tests/test_p263_local_stopped_qscore.py results/post-reveal-20260829/P263-local-stopped-qscore/REPORT.md results/post-reveal-20260829/P263-local-stopped-qscore/exact.json results/post-reveal-20260829/P263-local-stopped-qscore/pilot/level1_20k.batches.csv results/post-reveal-20260829/P263-local-stopped-qscore/pilot/level1_20k.score.json > results/post-reveal-20260829/P263-local-stopped-qscore/checksums.sha256
