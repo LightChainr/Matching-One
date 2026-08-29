@@ -12,7 +12,7 @@ from typing import Any, Sequence
 
 import mpmath as mp
 
-from score_marked_birth_path import combine, cos4, projected, read_path
+from score_marked_birth_path import combine, projected, read_path
 
 
 SIZES = (65, 130, 260)
@@ -39,17 +39,14 @@ def target_two_step() -> mp.mpf:
     return mp.power(4, -mp.mpf(13) / 8)
 
 
-def _complex_point(first, second) -> tuple[mp.mpf, mp.mpc]:
-    p, _, orientations = projected(first, second)
-    delta = cos4(first[0].a, first[0].b) - cos4(second[0].a, second[0].b)
-    value = mp.mpc(
-        (orientations["first"]["J_D_re"] - orientations["second"]["J_D_re"]) / delta,
-        (orientations["first"]["J_D_im"] - orientations["second"]["J_D_im"]) / delta,
-    )
-    return p, value
+def _complex_point(first, second) -> tuple[mp.mpf, mp.mpc, mp.mpc]:
+    p, point, _ = projected(first, second)
+    j_d = mp.mpc(point["P4_J_D_re"], point["P4_J_D_im"])
+    j_s = mp.mpc(point["P4_J_S_re"], point["P4_J_S_im"])
+    return p, j_d, j_s
 
 
-def load_size(prefix: Path) -> tuple[mp.mpf, mp.mpc, list[mp.mpc], list[mp.mpf]]:
+def load_size(prefix: Path) -> tuple[mp.mpf, mp.mpc, mp.mpc, list[mp.mpc], list[mp.mpf]]:
     groups = read_path(Path(str(prefix) + ".path.csv"))
     n = next(iter(groups))[0]
     batches = sorted(
@@ -60,7 +57,7 @@ def load_size(prefix: Path) -> tuple[mp.mpf, mp.mpc, list[mp.mpc], list[mp.mpf]]
         raise ValueError(f"expected 100 batches for N={n}, got {len(batches)}")
     first = combine([groups[(n, "first", batch)] for batch in batches])
     second = combine([groups[(n, "second", batch)] for batch in batches])
-    center, point = _complex_point(first, second)
+    center, point, point_s = _complex_point(first, second)
     deletes: list[mp.mpc] = []
     delete_centers: list[mp.mpf] = []
     for omitted in batches:
@@ -70,10 +67,10 @@ def load_size(prefix: Path) -> tuple[mp.mpf, mp.mpc, list[mp.mpc], list[mp.mpf]]
         second_delete = combine(
             [groups[(n, "second", batch)] for batch in batches if batch != omitted]
         )
-        p_delete, value_delete = _complex_point(first_delete, second_delete)
+        p_delete, value_delete, _ = _complex_point(first_delete, second_delete)
         delete_centers.append(p_delete)
         deletes.append(value_delete)
-    return center, point, deletes, delete_centers
+    return center, point, point_s, deletes, delete_centers
 
 
 def jackknife_covariance(rows: Sequence[Sequence[mp.mpf]]) -> list[list[mp.mpf]]:
@@ -231,10 +228,11 @@ def provenance(raw: Path, provenance_dir: Path, n: int) -> dict[str, Any]:
 def build_report(raw: Path, provenance_dir: Path) -> dict[str, Any]:
     centers: dict[int, mp.mpf] = {}
     points: dict[int, mp.mpc] = {}
+    points_s: dict[int, mp.mpc] = {}
     deletes: dict[int, list[mp.mpc]] = {}
     for n in SIZES:
-        center, point, delete, _ = load_size(raw / NAMES[n])
-        centers[n], points[n], deletes[n] = center, point, delete
+        center, point, point_s, delete, _ = load_size(raw / NAMES[n])
+        centers[n], points[n], points_s[n], deletes[n] = center, point, point_s, delete
 
     vectors = [
         [coordinate for n in SIZES for coordinate in (mp.re(deletes[n][index]), mp.im(deletes[n][index]))]
@@ -272,6 +270,19 @@ def build_report(raw: Path, provenance_dir: Path) -> dict[str, Any]:
             "joint_edge_exponent": _text(joint_exponent),
             "joint_edge_exponent_se": _text(_jackknife_se(joint_exponents)),
             "joint_residual_from_13_over_8": _text(joint_exponent - mp.mpf(13) / 8),
+        },
+        "post_reveal_gate_diagnostic": {
+            "status": "not a rescue of the preregistered primitive-line J_D4 target",
+            "P4_mean_J_S4": {str(n): _complex_json(points_s[n]) for n in SIZES},
+            "magnitude_ratios": {
+                "N65_to_N130": _text(abs(points_s[130] / points_s[65])),
+                "N130_to_N260": _text(abs(points_s[260] / points_s[130])),
+            },
+            "interpretation": (
+                "J_S4 grows approximately thermally while its phase alternates. The two-step "
+                "J_D4 phase closure may motivate only a newly preregistered matrix/two-step "
+                "transfer with an independent second coordinate; it cannot be called a q2 pass."
+            ),
         },
         "full_cross_size_delete_one_covariance": [[_text(value) for value in row] for row in cross_covariance],
         "provenance": {str(n): provenance(raw, provenance_dir, n) for n in SIZES},
@@ -326,6 +337,23 @@ def render_markdown(report: dict[str, Any]) -> str:
         "This rejects the **primitive-line mean `J_D4` source as the proposed q2 H4 carrier**. "
         "It does not reject the established global H4 response, nor a different external/local "
         "observer coupling to the rank-birth stream.",
+        "",
+        "## Post-reveal gate diagnostic",
+        "",
+    ]
+    gate = report["post_reveal_gate_diagnostic"]
+    for n in SIZES:
+        z = gate["P4_mean_J_S4"][str(n)]
+        lines.append(f"- `N={n}` P4 mean `J_S4 = {z['re']}+({z['im']})i`, `|J_S4|={z['abs']}`.")
+    lines += [
+        "",
+        f"Its magnitude grows by `{gate['magnitude_ratios']['N65_to_N130']}` and "
+        f"`{gate['magnitude_ratios']['N130_to_N260']}` on the two doublings, close to a "
+        "thermal gate contribution, while the complex phase alternates. This offers a plausible "
+        "generation-two/mixed-source explanation for the accidental two-step `J_D4` phase closure. "
+        "It is post-reveal and does not change the primary rejection. If retained, the next test "
+        "must preregister a two-step or matrix transfer and add an independent second coordinate; "
+        "the q4 coincidence must not be relabelled a q2 success.",
         "",
         "## Scientific card",
         "",

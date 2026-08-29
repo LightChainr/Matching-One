@@ -20,6 +20,14 @@ Joint edge exponent: `1.14668388760345681240986 +/- 0.254873914345216699956887`.
 
 This rejects the **primitive-line mean `J_D4` source as the proposed q2 H4 carrier**. It does not reject the established global H4 response, nor a different external/local observer coupling to the rank-birth stream.
 
+## Post-reveal gate diagnostic
+
+- `N=65` P4 mean `J_S4 = 5.69458667572251504491458+(-1.65439416392284252721982)i`, `|J_S4|=5.93003688495597520180418`.
+- `N=130` P4 mean `J_S4 = 7.27037822837303921181325+(2.12536785828835165797781)i`, `|J_S4|=7.5746675251555369614752`.
+- `N=260` P4 mean `J_S4 = 9.3692441941477543687431+(-2.73393657142785915795107)i`, `|J_S4|=9.75997673901747169520036`.
+
+Its magnitude grows by `1.27733902370352145865639` and `1.28850232787175196290473` on the two doublings, close to a thermal gate contribution, while the complex phase alternates. This offers a plausible generation-two/mixed-source explanation for the accidental two-step `J_D4` phase closure. It is post-reveal and does not change the primary rejection. If retained, the next test must preregister a two-step or matrix transfer and add an independent second coordinate; the q4 coincidence must not be relabelled a q2 success.
+
 ## Scientific card
 
 1. **Mechanism-space change:** remove the bare primitive-line mean-`J_D4` q2 staircase from the live H4 mechanisms.

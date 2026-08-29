@@ -58,6 +58,13 @@ class MeanJD4Q2ChainScoreTests(unittest.TestCase):
         self.assertEqual(failed["path"], "/workspace/Matching-One-mean-jd4-q2-chain")
         self.assertTrue(self.score["remote_raw"]["65"].startswith("/workspace/mean-jd4-N65-5m/"))
 
+    def test_post_reveal_gate_is_labelled_diagnostic(self) -> None:
+        gate = self.score["post_reveal_gate_diagnostic"]
+        self.assertIn("not a rescue", gate["status"])
+        for ratio in gate["magnitude_ratios"].values():
+            self.assertGreater(float(ratio), 1.2)
+            self.assertLess(float(ratio), 1.4)
+
 
 if __name__ == "__main__":
     unittest.main()
