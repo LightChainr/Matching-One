@@ -26,7 +26,7 @@ An old issue title does not override a completed result. A post-reveal fit is no
 | Rank | Decision target | Five-axis vector | Actual maturity | Exact next output | Acquisition |
 |---:|---|---|---|---|---|
 | 1 | **Which activation coordinate creates the K2 local shape, and where can a genuine field row escape q-only contact closure?** | finite topology / Bernoulli+birth source / K1/K2,C/W,line,landing,independent covector / Gaussian cover / existing-data reuse first | Draft curves and the new transport/shape reuse isolate positive translation plus negative zero-area K2 deformation; marked pilot exists; exact contact theorem and P275 retire global q-only coupling as a field identity | Aligned shape covariance with `W/ell/landing`; then only the missing mean-JD4 third point, two-radius UV annihilator or independent observer | none first; moderate only after attribution |
-| 2 | **Can a typed seam distinguish singlet from charged spin 4 without scaling?** | continuum module / colour seam / projected H4 numerator / Q=4 tiny torus / exact construction | Exact preflight has raw partition sums and character ratios 1/0; only the orientation-resolved H4 kernel is missing | Six raw `Z/N` values reproducing singlet 1 and `[2,2]` 0 after partition restoration | low exact work |
+| 2 | **Can a typed seam distinguish singlet from charged spin 4 without scaling?** | continuum module / colour seam / calibrated multi-orbit or typed numerator / Q=4 tiny torus / exact construction | Exact preflight has colour ratios 1/0; open PR #291 proves one C4 direction orbit aliases scalar/spin 4 | Necessary angular-rank repair with calibration/typed law, constituent orbit numerators and six raw seam `Z/N` values, with spatial and colour certificates separate | low exact work |
 | 3 | **One dilation generator or context-dependent action?** | low-dimensional dynamics / common source / shared readout / Gaussian×annulus mixed order / targeted pilot | Annulus odd sector needs rank two while plus need not; Gaussian lambdas alias; separate spectra cannot align bases; P200 sees static interaction but not chronology | Spanning `AU-UA` rectangle, commensurate power cell and held-out mixed context; intermediate state only for chronology | reuse design; acquire missing mixed orders |
 | 4 | **Is the charged H8 tendency a quadratic character or a separate field?** | charged module / deck source / complex C3+Z5 rows / `rho` children+N325 cover / engine reuse | Ordinary P205 is H4; charged row is H8-leaning; exact C3 and primitive fusion rules are branch-only | Complex parent/children DFT including zero order, then `113/122` conjugate-paired fusion closure | one shared typed geometry package |
 | 5 | **What supplies the two external operator-mixing Taylor ratios and the full Q derivative?** | confluent module / Q measure+projector+field / typed seam,boundary,VJS / transfer+cross-ratio / exact+pilot | Main PR #288 proves rank four; parity does not give the two ratios. Q velocities and stopped estimator are already exact inputs | Continuum or frozen train/held-out ratios, plus one complete typed measure-projector-field tangent after Pascal subtraction | low exact then paired pilot |
@@ -40,7 +40,7 @@ These are coordination defaults, not task locks. A team may depart from them whe
 1. **Run a live lifecycle drift pass at the start and end of each work block.** Compare open PR head/state with the registry and compare latest `origin/main` with the navigation base. PRs #286 and #287 each landed during this refresh and were absorbed before handoff; the control plane should treat that as a routine update rather than wait for another cleanup.
 2. **Publish the lifecycle tuple with every result:** `input_status`, `output_status`, immutable `snapshot_commit`, and `base_or_parent`. This keeps branch-only input -> open-PR analysis, stacked post-reveal work, and main-integrated facts distinguishable.
 3. **Give each raw dependency block one covariance bundle and one statistical coordinator.** Root split, Bernstein curves, areas and node spectra from the same histograms are coordinates of one block. Teams may analyze them in parallel, but downstream synthesis should consume the shared covariance rather than add the views as independent evidence.
-4. **Reuse the marked pilot before requesting a stream.** It already retains K1/K2, line/local marks and qJ at q2 N65/N130 and P50 N145. Ask first whether the desired fixed-q or shape coordinate is reconstructible; use the index-9 cached topology backend for any genuinely missing continuation.
+4. **Reuse the marked pilot before requesting a stream.** It already retains K1/K2, line/local marks and qJ at q2 N65/N130 and P50 N145. Ask first whether the desired fixed-q or shape coordinate is reconstructible; main has the cached topology backend through index 9 and open PR #292 extends it through index 10.
 5. **Do not multiply q-only projectors.** `A_top`, `E_top` and every nonlinear `f(q)` connected to a root-independent insertion lie in the exact contact closure. New field information requires a within-q observer, separated landing mark, charged seam, bulk resolved field or modular/stress covector.
 6. **Name the observer sector in every C3 title and manifest.** An ordinary `A_top` real-part selector has lower incremental value after P205. A declared non-`A_top`, charged, defect or singular-Q row makes the new information axis visible before compute begins.
 7. **Share schemas across contexts and tangents.** Gaussian/annulus cells need a common source/readout/batch table to become a rectangle. Q-tangent work benefits from one measure/projector/explicit-field/Pascal-subtraction interface and a paired stopped/global outer transcript.
@@ -52,7 +52,7 @@ This is the current smallest high-information starting design, not a requirement
 | Module | Minimum starting cells | Same-stream readouts | Primary decision |
 |---|---|---|---|
 | activation-shape reuse | existing ten K1/K2 archives, then the existing marked pilot | same-area translation, zero-area deformation, `C/W`, line and landing coordinates with shared delete-one covariance | whether K2 nodes are translation, lifetime or local-shape effects; whether new production is needed at all |
-| Q=4 typed seam | exact 2x2 transfer only | `Z_id,Z_trans,N_H4_[4],N_H4_[2,2]` in both seams | singlet 1 versus charged 0 after exact normalization restoration |
+| Q=4 typed seam | exact 2x2 transfer plus PR #291 alias gate | calibrated multi-orbit constituents or typed-edge law, then `Z_id,Z_trans,N_[4],N_[2,2]` | necessary spatial angular rank reported separately from singlet 1 versus charged 0 colour character |
 | Gaussian-annulus mixed order | one commensurate clock pair plus one held-out pair | spanning sources/readouts, `AU`, `UA`; add intermediate ranks only for chronology | shared commuting generator versus context action, distinct from static interaction |
 | charged complex geometry | one parent plus three `rho` children, then reuse N325 basis | full complex DFT, parent zero order, `113/122` cubic rows and covariance | quadratic E4-squared character versus separate charged field |
 
@@ -149,7 +149,15 @@ unnormalized [2,2] character ratio = 0.
 
 Normalized expectations alone obscure the character: the singlet ratio is `516/337` and must be multiplied by `Z_transposition/Z_identity=337/516`. The existing `d_log(v)` insertion validates plumbing but aliases scalar and fourth-harmonic stencil components; it is not a V22 measurement.
 
-Add only an orientation-resolved H4 kernel with declared handedness and emit
+Open PR #291 makes “orientation-resolved” precise. On one C4 orbit, including horizontal/vertical axes, `exp(-4 i theta)` is constant, so scalar and nominal spin 4 have character rank one. Under a shared, radially/type-calibrated two-component model, axis and diagonal orbits give
+
+```text
+[[1,1],[1,-1]], determinant -2,
+scalar = (axis+diagonal)/2,
+spin4 = (axis-diagonal)/2.
+```
+
+This is a necessary angular-rank repair, not a pure H4 certificate: raw orbit amplitudes may differ and H12-like `4 mod 8` harmonics remain aliased. Alternatively, supply an exact transformation law for typed/internal edge data. Then emit
 
 ```text
 Z_identity, Z_transposition,
@@ -157,7 +165,7 @@ N_H4_[4]_identity, N_H4_[4]_transposition,
 N_H4_[2,2]_identity, N_H4_[2,2]_transposition.
 ```
 
-Nonzero identity numerators and restored ratios `1/0` form the decision. No free exponent or production-scale framework belongs in this gate.
+When the kernel is direction-only, save the calibrated orbit constituents as well. Report the spatial angular-rank gate and the restored colour-seam ratios `1/0` as separate decisions. No free exponent, discrete-holomorphic claim, pure-H4 identity or production-scale framework belongs in this gate.
 
 ## Target 3 contract: context rectangle
 
@@ -267,6 +275,7 @@ These lines remain active and may overtake the default order whenever they obtai
 | essential-H1 filtration oracle | `main_integrated` PR #282 `3bb4054`, `notes/digital-alexander-filtration-oracle.md` |
 | essential-birth archive reconstruction | `main_integrated` PR #283 `bedc94b`, `results/essential-birth-histogram/latest.json` |
 | cached quotient frontier through index 9 | `main_integrated` PRs #284/#285/#286/#287 `84035cf`, `results/digital-alexander-quotient-frontier/latest.json` |
+| cached quotient frontier through index 10 | `open_pr` #292 `exact/issue-269-index10-subset-dp@2d46a46`, `results/digital-alexander-quotient-frontier/latest.md` |
 | two activation | `branch_only` `theory/p28-two-activation-rank-mixture-20260829@b8004bc`, `notes/two-activation-rank-mixture.md` |
 | endpoint, full-curve-node, transport/shape and P205 activation splits | `open_pr` #267, `results/two-activation-h4/latest.json`, `results/activation-curve-nodes/latest.json`, `results/activation-transport-shape/latest.json`, `results/two-activation-prism/latest.json` |
 | P205 ordinary quotient prism | `branch_only` `results/p205-quotient-character-prism-20260829@fc14817` |
@@ -277,6 +286,7 @@ These lines remain active and may overtake the default order whenever they obtai
 | global selection | `branch_only` `analysis/p257-global-singlet-selection-20260829@9320649` |
 | small-width selection | `branch_only` `analysis/p120-operator-spectroscopy-20260829@9cf2373` |
 | Q=4 seam numerator preflight | `branch_only` `analysis/p257-p258-q4-seam-preflight-20260829@192e794`, `results/q4-seam-numerator-preflight/SCIENTIFIC_CARD.md` |
+| spin-4 direction-character alias gate | `open_pr` #291 `analysis/issue-109-spin4-alias-gate@31cf1ee`, `results/discrete-holomorphic-spin4-alias/latest.md` |
 | double-projector staircase | `branch_only` `theory/p275-double-projector-selection-20260829@ddf41aa` |
 | norm-4 reveal / generation-four score | `open_pr` #273 `8b26a30`; #277 `3e855ce`, `results/server-20260829/P154-norm4-generation4-pilot/REPORT.md` |
 | Q=1 spin-sector velocity oracle | `main_integrated` PR #264 `540a115`, `results/q-velocity-spin4/latest.md` |

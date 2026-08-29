@@ -30,7 +30,7 @@ unnormalized charged [2,2] ratio = 0.
 
 A normalized singlet ratio is `516/337` and must be restored with the partition factor `337/516`. The current log-v insertion is only a plumbing witness.
 
-**Next decision output:** implement one orientation-resolved H4 insertion and emit six raw `Z/N` values. This is the lowest-cost typed discriminator between singlet and four-leg charged spin 4 and a clean normalization positive control for the Q-tangent interface; it needs no exponent fit or large framework.
+Open PR #291 supplies a fail-fast necessary gate: on one C4 direction orbit the nominal spin-4 character is constant and indistinguishable from a scalar; horizontal/vertical bonds are still one axial orbit. **Next decision output:** add calibrated multi-orbit phases under a declared shared two-component model, or provide typed/internal-edge transformation data. Axis+diagonal half-sum/difference is sufficient only after radial/type calibration and still does not exclude H12-like aliases. Emit constituent orbit numerators plus the six raw seam `Z/N` values, reporting spatial angular rank separately from colour character. This needs no exponent fit or large framework.
 
 ### 3. Measure the mixed-order Gaussian/annulus rectangle
 
@@ -106,12 +106,12 @@ x nuisance cancellation and archive reuse
 ## Completed results that change repetition value
 
 - **#50 N145->290 full curve — complete:** the resolved shape direction already rejects one scalar multiplier. Its archive remains reusable for new typed coordinates, while another endpoint-only repeat has lower information gain.
-- **Digital Alexander through index 9:** exact finite backbone plus cached rank/winding/`iota` states across 68 quotients and 5,372,118 paths within its declared frontier. The marked pilot already reuses this semantics; the next gain is fixed-q/local analysis or a specifically missing third point, not reimplementation. Index 10 and an unrestricted theorem remain open.
+- **Digital Alexander frontier:** main is exact through index 9; open PR #292 extends the same cached/subset-DP semantics through index 10 with 86 quotients and 70,690,518 paths, zero failures and no `iota` evolution. The next exact frontier is index 11 or an unrestricted theorem, while marked/local reuse remains a separate mechanism lane.
 - **P205 ordinary prism:** H4 beats the frozen H8/H12 lines. A `rho`/C3 run gains more information from a distinct typed observer than from repeating this selector.
 - **PR #267 activation reuse:** all ten archived pairs are scored, the full curves turn three negative root points into stable local node crossings, and the P205 subset resolves H4/H4. The new transport/shape reuse shows that the K2 pointwise sign split is positive translation plus negative zero-area deformation; `W/ell/landing` attribution is now more valuable than another root split.
 - **Marked-birth contact chain and P275:** a common pilot already exists; exact contact closure and nine-geometry rejection retire global q-only connected coupling as a field-identity path. Mean source and separated-local/independent observers remain live.
 - **PR #288 mixing audit:** parity gives the four powers but the amplitude map is rank four. Two external Taylor ratios, not another parity argument, are the live closure variables.
-- **Q=4 seam preflight:** representation characters and partition normalization are exact. The only missing semantic component is the orientation-resolved H4 kernel and six raw values.
+- **Q=4 seam plus PR #291 alias gate:** colour characters and normalization are exact, and a single C4 orbit aliases scalar/spin 4. The missing spatial kernel needs calibrated phase diversity or typed internal data; six raw seam values alone certify colour sector, not pure H4.
 - **Norm-4:** analytic q2 and the frozen common generator fail; the frozen generation-four target keeps the small-state family live but does not separate pure Jordan, an analytic even mode or persistent curvature, nor establish a nonzero extra mode.
 - **PR #247 / annulus:** the ordinary plus-shell control passes, the matching-odd minus-shell scalar law fails and matched-delta equality is marginally tense inside one correlated block; a distinct two-state recurrence survives held-out N365. The sector score rejects rank one specifically for `A_minus` but leaves several rank-two dynamics aliased. A discriminating context is higher value than more same-row replicas.
 - **Triangular log pair:** the cross-cutoff shear is measured; repeat production without gauge closure is lower value.

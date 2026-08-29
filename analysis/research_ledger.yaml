@@ -104,6 +104,9 @@ observer_sectors:
   - id: bulk_energy_logpair
     name: bulk_energy_and_top_partner_readout
     semantic_boundary: field_gauge_and_cutoff_normalization_are_part_of_the_observable
+  - id: direction_character
+    name: spatial_direction_or_internal_edge_character
+    semantic_boundary: one_C4_direction_orbit_has_angular_character_rank_one_and_multi_orbit_rows_require_radial_type_calibration_while_colour_seam_and_spatial_harmonic_certificates_remain_distinct
 
 branch_sources:
   - id: SRC_DIGITAL_ALEXANDER_MAIN
@@ -502,6 +505,27 @@ branch_sources:
     commit: 9d21f36f0ccc2756a60574205ab78426f96a65c2
     paths:
       - notes/solvable-site-maps-and-square-obstruction.md
+  - id: SRC_DIGITAL_ALEXANDER_INDEX10_PR292
+    integration_status: open_pr
+    pr: 292
+    ref: exact/issue-269-index10-subset-dp
+    commit: 2d46a463d95d1b003682e5cf7e271f6e12c4c2fd
+    paths:
+      - analysis/digital_alexander_quotient_frontier_manifest.json
+      - notes/digital-alexander-short-period-frontier.md
+      - results/digital-alexander-quotient-frontier/latest.json
+      - results/digital-alexander-quotient-frontier/latest.md
+      - scripts/digital_alexander_quotient_frontier.py
+  - id: SRC_SPIN4_DIRECTION_ALIAS_PR291
+    integration_status: open_pr
+    pr: 291
+    ref: analysis/issue-109-spin4-alias-gate
+    commit: 31cf1ee7065b198b1b1e3ee84789ce943c33a8dc
+    paths:
+      - analysis/discrete_holomorphic_spin4_alias_manifest.json
+      - notes/discrete-holomorphic-spin4-alias-gate.md
+      - results/discrete-holomorphic-spin4-alias/latest.json
+      - results/discrete-holomorphic-spin4-alias/latest.md
 
 scientific_nodes:
   - id: SN_DIGITAL_ALEXANDER_RANK_BALANCE
@@ -520,8 +544,8 @@ scientific_nodes:
     excludes_only: [independent_black_and_white_ambient_rank_variables_in_the_declared_scope]
     reusable_data_refs: [results/digital-alexander-filtration/latest.json, results/digital-alexander-quotient-frontier/latest.json]
     dependency_group_refs: []
-    missing_inputs: [index10_and_higher_or_an_unrestricted_degenerate_quotient_theorem, production_scale_line_and_landing_marks]
-    next_discriminator: retain_birth_line_index_and_local_mark_in_addition_to_the_ordered_rank_activation_pair
+    missing_inputs: [main_integration_of_the_open_index10_frontier, index11_and_higher_or_an_unrestricted_degenerate_quotient_theorem, production_scale_line_and_landing_marks]
+    next_discriminator: keep_main_index9_and_open_PR292_index10_distinct_then_reuse_the_subset_backend_for_marks_or_extend_the_exact_frontier_to_index11
     information_gain: very_high
     compute_cost: none
     decision_experiments: [DX_RANK_BIRTH_GLOBAL_BRIDGE]
@@ -1118,19 +1142,19 @@ scientific_nodes:
     integration_status: branch_only
     state: continuum_module
     sources: [projector_derivative]
-    observer_sectors: [topology_typed, deck_charged]
+    observer_sectors: [topology_typed, deck_charged, direction_character]
     geometries: [finite_transfer_cylinder]
     acquisition: [exact_construction]
-    source_refs: [SRC_Q4_SEAM_PREFLIGHT]
+    source_refs: [SRC_Q4_SEAM_PREFLIGHT, SRC_SPIN4_DIRECTION_ALIAS_PR291]
     known_result: exact_2x2_Q4_transfer_has_Zid_33024_Ztrans_21568_and_unnormalized_projected_character_ratios_one_for_singlet_4_and_zero_for_charged_22_while_normalized_expectations_require_restoring_the_partition_ratio
-    boundary: the_log_v_insertion_is_a_plumbing_witness_not_a_pure_orientation_resolved_H4_kernel_or_V22_overlap
-    supports: [typed_seam_as_a_scaling_free_singlet_versus_charged_spin4_discriminator]
-    tensions: [normalized_expectation_ratio_as_the_representation_character]
-    excludes_only: [using_the_log_v_witness_as_a_field_measurement]
+    boundary: the_log_v_insertion_is_plumbing_and_one_C4_direction_orbit_aliases_scalar_with_spin4_axis_diagonal_demixing_requires_shared_radial_type_calibration_and_still_aliases_higher_4mod8_harmonics
+    supports: [separate_spatial_angular_rank_and_colour_seam_certificates_before_a_scaling_fit]
+    tensions: [normalized_expectation_ratio_or_one_orbit_numerator_as_a_pure_spatial_H4_identity]
+    excludes_only: [using_the_log_v_witness_or_one_direction_orbit_as_a_field_measurement]
     reusable_data_refs: [results/q4-seam-numerator-preflight/latest.json]
     dependency_group_refs: []
-    missing_inputs: [orientation_resolved_H4_kernel_and_six_raw_partition_numerator_values]
-    next_discriminator: implement_the_minimal_H4_kernel_and_score_restored_ratios_one_and_zero
+    missing_inputs: [calibrated_multi_phase_or_typed_internal_kernel, constituent_orbit_numerators, six_raw_partition_numerator_values]
+    next_discriminator: pass_the_necessary_angular_rank_gate_then_score_the_independent_colour_ratios_one_and_zero
     information_gain: very_high
     compute_cost: low
     decision_experiments: [DX_Q4_SEAM_H4]
@@ -1260,6 +1284,48 @@ scientific_nodes:
     information_gain: high
     compute_cost: low
     decision_experiments: []
+  - id: SN_DIGITAL_ALEXANDER_INDEX10_FRONTIER
+    title: cached_subset_DP_HNF_frontier_through_index10
+    integration_status: open_pr
+    state: finite_topological_state
+    sources: [bernoulli_thermal]
+    observer_sectors: [topology_typed]
+    geometries: [square_controls]
+    acquisition: [exact_construction]
+    source_refs: [SRC_DIGITAL_ALEXANDER_INDEX9_MAIN, SRC_DIGITAL_ALEXANDER_INDEX10_PR292]
+    known_result: open_PR292_exhausts_86_HNF_quotients_and_70690518_filtrations_through_index10_with_zero_birth_reflection_rank_sum_reconstruction_or_line_failures_31068_cached_subsets_262901744_plateau_steps_max_iota_one_and_no_index_evolution
+    boundary: finite_C5_frontier_only_not_main_integrated_not_index11_or_higher_not_an_unrestricted_degenerate_quotient_theorem_and_not_a_general_proof_iota_equals_one
+    supports: [cached_subset_lattice_DP_as_the_current_exact_frontier_backend]
+    tensions: [repeating_explicit_permutation_enumeration_or_treating_index10_as_main]
+    excludes_only: [counterexamples_within_the_declared_index2_through10_HNF_family]
+    reusable_data_refs: [results/digital-alexander-quotient-frontier/latest.json]
+    dependency_group_refs: []
+    missing_inputs: [main_integration_or_index11_frontier_or_unrestricted_theorem]
+    next_discriminator: preserve_open_PR_status_and_move_exact_attention_to_index11_or_a_general_argument
+    information_gain: high
+    compute_cost: low
+    decision_experiments: []
+  - id: SN_SPIN4_DIRECTION_ALIAS_GATE
+    title: one_C4_orbit_scalar_spin4_direction_character_alias
+    integration_status: open_pr
+    state: continuum_module
+    sources: [explicit_operator_derivative]
+    observer_sectors: [direction_character]
+    geometries: [square_controls, finite_transfer_cylinder]
+    acquisition: [exact_construction]
+    source_refs: [SRC_SPIN4_DIRECTION_ALIAS_PR291]
+    known_result: exp_minus4itheta_is_constant_on_one_C4_orbit_axis_plus1_diagonal_minus1_so_a_direction_only_scalar_defect_and_nominal_spin4_row_have_angular_character_rank_one
+    boundary: axis_diagonal_half_sum_difference_requires_shared_radial_type_calibration_raw_orbits_may_have_separate_amplitudes_higher_4mod8_harmonics_remain_aliased_and_no_discrete_harmonicity_percolation_scaling_or_field_identity_follows
+    supports: [calibrated_phase_diversity_or_typed_internal_transformation_as_a_necessary_spatial_kernel_gate]
+    tensions: [horizontal_vertical_or_any_single_C4_orbit_as_an_H4_certificate]
+    excludes_only: [direction_only_single_orbit_scalar_spin4_identifiability]
+    reusable_data_refs: [results/discrete-holomorphic-spin4-alias/latest.json]
+    dependency_group_refs: []
+    missing_inputs: [calibrated_multi_orbit_kernel_or_exact_typed_internal_edge_law]
+    next_discriminator: report_spatial_angular_rank_separately_from_Q4_colour_seam_character
+    information_gain: very_high
+    compute_cost: low
+    decision_experiments: [DX_Q4_SEAM_H4]
 
 dependency_groups:
   - id: crn-2026104501-5000000000-5100000000
@@ -1388,14 +1454,14 @@ decision_experiments:
   - id: DX_Q4_SEAM_H4
     attention_rank: 2
     name: exact_Q4_singlet_charged_orientation_resolved_H4_seam
-    scientific_node_refs: [SN_GLOBAL_SPIN4_SELECTION_STAIRCASE, SN_Q4_SEAM_NORMALIZATION]
-    observer_sector_refs: [topology_typed, deck_charged]
-    source_refs: [SRC_SMALL_WIDTH_SPECTROSCOPY, SRC_Q4_SEAM_PREFLIGHT]
+    scientific_node_refs: [SN_GLOBAL_SPIN4_SELECTION_STAIRCASE, SN_Q4_SEAM_NORMALIZATION, SN_SPIN4_DIRECTION_ALIAS_GATE]
+    observer_sector_refs: [topology_typed, deck_charged, direction_character]
+    source_refs: [SRC_SMALL_WIDTH_SPECTROSCOPY, SRC_Q4_SEAM_PREFLIGHT, SRC_SPIN4_DIRECTION_ALIAS_PR291]
     dependency_group_refs: []
     acquisition: exact_construction
     expected_model_space_reduction: very_high
     compute_cost: low
-    decision_output: six_raw_partition_and_H4_numerator_values_restoring_character_ratios_one_and_zero
+    decision_output: necessary_calibrated_spatial_angular_rank_or_typed_edge_gate_reported_separately_from_six_raw_colour_seam_values_restoring_ratios_one_and_zero
   - id: DX_RHO_C3_SECTOR
     attention_rank: 4
     name: complex_C3_rho_sector_response

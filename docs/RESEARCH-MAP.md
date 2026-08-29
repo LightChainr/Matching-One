@@ -51,7 +51,7 @@ r_black + r_white = 2,
 q = r_black - 1 = A_top.
 ```
 
-`main` now also contains the filtration oracle, the essential-birth histogram reconstruction and exhaustive HNF checks through quotient index 9. Across 68 quotient representatives and 5,372,118 filtration paths there are no birth, reflection, rank-sum, reconstruction or line failures. The cached frontier retains 12,636 exact subset states and enumerates 17,727,344 rank-one plateau steps with maximum `iota=1` and no pathwise index evolution. The index-9 layer alone adds 13 quotients and 4,717,440 paths. That is a strong finite frontier and a reusable exact backend, not a theorem for index 10 and above, an unrestricted theorem for every degenerate quotient or a substitute for the missing production-scale marks.
+`main` contains the filtration oracle, essential-birth reconstruction and exhaustive HNF checks through quotient index 9. Open PR #292 extends the same cached subset-DP semantics through index 10: 86 representatives and 70,690,518 paths have zero birth/reflection/rank-sum/reconstruction/line failures; 31,068 cached subsets generate 262,901,744 plateau steps with maximum `iota=1` and no evolution. Honest and self-identifying faces are kept separate. This is an inspectable finite frontier, not yet main-integrated and not a theorem for index 11 and above or every degenerate quotient.
 
 For a monotone site ordering,
 
@@ -192,7 +192,7 @@ D^n H|Q=1 = sum_(k<n) binom(n,k) D^k P|Q=1.
 
 Only a typed residual after this subtraction can be assigned to an explicit field derivative, singular projector residue or finite-lattice failure of the continuum identity.
 
-Main-integrated PR #288 also prevents a false closure: the four parity-allowed rows have structural rank four, so `f_I1/f_I0` and `f_T1/f_T0` must be supplied by continuum dynamics or frozen training geometries. The branch-only Q=4 seam preflight is the smallest typed normalization control; its missing orientation-resolved H4 kernel tests raw singlet/charged numerator ratios `1/0` before a bulk Q-tangent interpretation.
+Main-integrated PR #288 also prevents a false closure: the four parity-allowed rows have structural rank four, so `f_I1/f_I0` and `f_T1/f_T0` must be supplied by continuum dynamics or frozen training geometries. The Q=4 seam preflight is the smallest typed normalization control. Open PR #291 adds a necessary kernel gate: a single C4 orbit aliases scalar and spin 4, so the missing H4 insertion must use two unequal fourth-angle phases—axis plus diagonal is the minimal direction-only pair—or typed internal edge data. Only then do the raw singlet/charged numerator ratios `1/0` become a spin-4 test.
 
 ### Cross-microscopic logarithmic control
 
@@ -212,7 +212,7 @@ The mechanism chain deliberately mixes lifecycle states:
 
 | Layer | Current status | Scientific use |
 |---|---|---|
-| Digital Alexander theorem, filtration, essential births, cached index-9 frontier | `main_integrated` | exact finite-state backbone and reusable line/`iota` oracle within declared scope; index 10 and an unrestricted theorem remain open |
+| Digital Alexander theorem, filtration and cached quotient frontier | `main_integrated` through index 9; `open_pr` #292 through index 10 | exact finite-state backbone and reusable subset/line/`iota` oracle; index 11 and an unrestricted theorem remain open |
 | `C/W`, `I01/I12`, `S/D`, tiny `Cov(A_top,J_D4)` | `branch_only` | exact coordinates and finite contact controls; the later all-order theorem excludes q-only connected rows as independent field matrices |
 | marked-birth pilot and q-only contact theorem | `branch_only` `0b3cebf` | common q2/P50 field, noisy mean-source lead and exact contact closure; reuse before new acquisition |
 | P275 global-line field map | `branch_only` `4d7ecd5` | rejects the declared Q4/Jordan/H4 maps and reclassifies `Gamma` as projective polarization |
@@ -221,7 +221,7 @@ The mechanism chain deliberately mixes lifecycle states:
 | P205 K1/K2 prism reuse | `open_pr` #267 | retrospective component-character decomposition with branch-only source data |
 | Q=1 spin-sector velocity oracle | `main_integrated` PR #264 | exact continuum-family discriminator; lattice overlaps and field-definition terms remain missing |
 | four-channel operator-mixing audit | `main_integrated` PR #288 | exact rank four; two external Taylor ratios remain missing |
-| Q=4 seam, annulus sector and mixed-clock gates | `branch_only` | typed numerator normalization, odd-sector rank-two boundary and `AU-UA` design; their named kernels/mixed cells remain to acquire |
+| spin-4 alias, Q=4 seam, annulus sector and mixed-clock gates | `open_pr` #291 plus `branch_only` sources | two-orbit/typed-edge identifiability, numerator normalization, odd-sector rank-two boundary and `AU-UA` design; their named kernels/mixed cells remain to acquire |
 | anisotropy stencil and threshold-confidence chains | `main_integrated` PRs #272/#278-#281 | exact microscopic feasibility/protocol infrastructure, not renormalized H4 or a new threshold bound |
 | threshold shape contract and exact-route obstruction map | `main_integrated` PRs #289/#290 | methodology-only location/scale/shape interface and bounded comparison of known exact mechanisms; no production collapse or exhaustive impossibility theorem |
 | Q4/Jordan overlap and fingerprint | `hypothesis` plus branch-only exact predictions | requires an independent within-q or typed covector; global line `Gamma` is not that covector |
