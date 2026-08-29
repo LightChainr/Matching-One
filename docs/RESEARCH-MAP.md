@@ -49,7 +49,7 @@ r_black + r_white = 2,
 q = r_black - 1 = A_top.
 ```
 
-`main` now also contains the filtration oracle, the essential-birth histogram reconstruction and exhaustive HNF checks through quotient index 8. Across 55 quotient representatives and 654,678 filtration paths there are no birth, reflection, rank-sum, reconstruction or line failures. The index-8 extension verifies cached/direct equality on the axis-L2 control, retains 5,980 exact subset states and enumerates 1,967,984 rank-one plateau steps with maximum `iota=1`. That is a strong finite frontier and a reusable exact backend, not an unrestricted theorem for every degenerate quotient or a substitute for the missing production-scale marks.
+`main` now also contains the filtration oracle, the essential-birth histogram reconstruction and exhaustive HNF checks through quotient index 9. Across 68 quotient representatives and 5,372,118 filtration paths there are no birth, reflection, rank-sum, reconstruction or line failures. The cached frontier retains 12,636 exact subset states and enumerates 17,727,344 rank-one plateau steps with maximum `iota=1` and no pathwise index evolution. The index-9 layer alone adds 13 quotients and 4,717,440 paths. That is a strong finite frontier and a reusable exact backend, not a theorem for index 10 and above, an unrestricted theorem for every degenerate quotient or a substitute for the missing production-scale marks.
 
 For a monotone site ordering,
 
@@ -194,7 +194,7 @@ The mechanism chain deliberately mixes lifecycle states:
 
 | Layer | Current status | Scientific use |
 |---|---|---|
-| Digital Alexander theorem, filtration, essential births, cached index-8 frontier | `main_integrated` | exact finite-state backbone and reusable line/`iota` oracle within declared scope |
+| Digital Alexander theorem, filtration, essential births, cached index-9 frontier | `main_integrated` | exact finite-state backbone and reusable line/`iota` oracle within declared scope; index 10 and an unrestricted theorem remain open |
 | `C/W`, `I01/I12`, `S/D`, tiny `Cov(A_top,J_D4)` | `branch_only` | exact coordinates and finite controls, not large-N field identity |
 | P205 total prism | `branch_only` | frozen ordinary character selection at small N |
 | ten-size K1/K2 root and full-curve reuse | `open_pr` #267 | retrospective component, area and stable-node decomposition with shared-stream covariance |

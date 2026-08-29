@@ -126,10 +126,10 @@ branch_sources:
     paths:
       - notes/essential-birth-histogram-reconstruction.md
       - results/essential-birth-histogram/latest.json
-  - id: SRC_DIGITAL_ALEXANDER_INDEX8_MAIN
+  - id: SRC_DIGITAL_ALEXANDER_INDEX9_MAIN
     integration_status: main_integrated
     ref: main
-    commit: e63634dc5c2423c64e5544ceeb307ae7a88e0d4e
+    commit: 84035cfedf4a00bdab5f4e7836a45c23ec6595df
     paths:
       - notes/digital-alexander-short-period-frontier.md
       - results/digital-alexander-quotient-frontier/latest.json
@@ -430,15 +430,15 @@ scientific_nodes:
     observer_sectors: [topology_typed]
     geometries: [square_controls]
     acquisition: [exact_construction]
-    source_refs: [SRC_DIGITAL_ALEXANDER_MAIN, SRC_DIGITAL_ALEXANDER_FILTRATION_MAIN, SRC_DIGITAL_ALEXANDER_INDEX8_MAIN]
-    known_result: configurationwise_rblack_plus_rwhite_equals_2_matching_charge_equals_rblack_minus_1_and_index2_through_8_HNF_exhaustion_has_zero_birth_reflection_rank_sum_reconstruction_or_line_failures_with_cached_and_direct_semantics_equal_on_axis_L2
-    boundary: regular_square_cell_theorem_holds_in_its_declared_class_while_degenerate_HNF_exhaustion_covers_only_55_quotients_and_654678_filtrations_through_index8_not_an_unrestricted_quotient_theorem
+    source_refs: [SRC_DIGITAL_ALEXANDER_MAIN, SRC_DIGITAL_ALEXANDER_FILTRATION_MAIN, SRC_DIGITAL_ALEXANDER_INDEX9_MAIN]
+    known_result: configurationwise_rblack_plus_rwhite_equals_2_matching_charge_equals_rblack_minus_1_and_index2_through_9_HNF_exhaustion_has_zero_birth_reflection_rank_sum_reconstruction_or_line_failures_across_68_quotients_and_5372118_paths_with_cached_and_direct_semantics_equal_on_axis_L2
+    boundary: regular_square_cell_theorem_holds_in_its_declared_class_while_degenerate_HNF_exhaustion_stops_at_index9_and_is_not_an_unrestricted_quotient_theorem
     supports: [ambient_homology_as_the_exact_finite_matching_state]
     tensions: [wrapping_sign_as_an_untyped_scalar_only]
     excludes_only: [independent_black_and_white_ambient_rank_variables_in_the_declared_scope]
     reusable_data_refs: [results/digital-alexander-filtration/latest.json, results/digital-alexander-quotient-frontier/latest.json]
     dependency_group_refs: []
-    missing_inputs: [index9_and_higher_or_an_unrestricted_degenerate_quotient_theorem, production_scale_line_and_landing_marks]
+    missing_inputs: [index10_and_higher_or_an_unrestricted_degenerate_quotient_theorem, production_scale_line_and_landing_marks]
     next_discriminator: retain_birth_line_index_and_local_mark_in_addition_to_the_ordered_rank_activation_pair
     information_gain: very_high
     compute_cost: none

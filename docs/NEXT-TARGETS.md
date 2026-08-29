@@ -37,10 +37,10 @@ An old issue title does not override a completed result. A post-reveal fit is no
 
 These are coordination defaults, not task locks. A team may depart from them whenever it introduces a sharper observer, source, geometry or exact map.
 
-1. **Run a live lifecycle drift pass at the start and end of each work block.** Compare open PR head/state with the registry and compare latest `origin/main` with the navigation base. PR #286 moved from new frontier to `main_integrated` during this refresh; the control plane should absorb that kind of change before it turns into stale next-step prose.
+1. **Run a live lifecycle drift pass at the start and end of each work block.** Compare open PR head/state with the registry and compare latest `origin/main` with the navigation base. PRs #286 and #287 each landed during this refresh and were absorbed before handoff; the control plane should treat that as a routine update rather than wait for another cleanup.
 2. **Publish the lifecycle tuple with every result:** `input_status`, `output_status`, immutable `snapshot_commit`, and `base_or_parent`. This keeps branch-only input -> open-PR analysis, stacked post-reveal work, and main-integrated facts distinguishable.
 3. **Give each raw dependency block one covariance bundle and one statistical coordinator.** Root split, Bernstein curves, areas and node spectra from the same histograms are coordinates of one block. Teams may analyze them in parallel, but downstream synthesis should consume the shared covariance rather than add the views as independent evidence.
-4. **Reuse the index-8 cached topology oracle.** The common rank-birth stream can call the same rank/winding/line/`iota` implementation used by the exact frontier, with a field-level equivalence test before production. This is cheaper and safer than separate P215/P276/production implementations.
+4. **Reuse the index-9 cached topology oracle.** The common rank-birth stream can call the same rank/winding/line/`iota` implementation used by the exact frontier, with a field-level equivalence test before production. This is cheaper and safer than separate P215/P276/production implementations.
 5. **Acquire the rank-1 common stream once and analyze it many ways.** One aligned batch schema should retain `q`, `I01/I12`, `ell`, `iota`, line-H4, landing-H4, `S/D`, `qJ` and `K1/K2`; topology, continuum-fingerprint and statistical teams can then work concurrently without launching mutually incomparable streams.
 6. **Name the observer sector in every C3 title and manifest.** An ordinary `A_top` real-part selector has lower incremental value after P205. A declared non-`A_top`, charged, defect or singular-Q row makes the new information axis visible before compute begins.
 7. **Share schemas across contexts and tangents.** Gaussian/annulus cells need a common source/readout/batch table to become a rectangle. Q-tangent work benefits from one measure/projector/explicit-field/Pascal-subtraction interface and a paired stopped/global outer transcript.
@@ -109,7 +109,7 @@ unmarked N*S birth mass,
 K1, K2 and common delete-one batch id.
 ```
 
-The exact index-8 frontier finds `iota=1` with no pathwise index evolution. In the common large-N stream, `iota` is therefore a cheap control and a possible new regime detector, not an already observed varying signal; `ell`, landing marks and their same-sample products remain the primary missing coordinates.
+The exact index-9 frontier finds `iota=1` with no pathwise index evolution across 5,372,118 paths. In the common large-N stream, `iota` is therefore a cheap control and a possible new regime detector, not an already observed varying signal; `ell`, landing marks and their same-sample products remain the primary missing coordinates.
 
 Here
 
@@ -223,7 +223,7 @@ These lines remain active and may overtake the default order whenever they obtai
 | digital Alexander proof | `main_integrated` `2da5855`, `notes/digital-alexander-duality-proof.md` |
 | essential-H1 filtration oracle | `main_integrated` PR #282 `3bb4054`, `notes/digital-alexander-filtration-oracle.md` |
 | essential-birth archive reconstruction | `main_integrated` PR #283 `bedc94b`, `results/essential-birth-histogram/latest.json` |
-| cached quotient frontier through index 8 | `main_integrated` PRs #284/#285/#286 `e63634d`, `results/digital-alexander-quotient-frontier/latest.json` |
+| cached quotient frontier through index 9 | `main_integrated` PRs #284/#285/#286/#287 `84035cf`, `results/digital-alexander-quotient-frontier/latest.json` |
 | two activation | `branch_only` `theory/p28-two-activation-rank-mixture-20260829@b8004bc`, `notes/two-activation-rank-mixture.md` |
 | endpoint, full-curve-node and P205 activation splits | `open_pr` #267, `results/two-activation-h4/latest.json`, `results/activation-curve-nodes/latest.json`, `results/two-activation-prism/latest.json` |
 | P205 ordinary quotient prism | `branch_only` `results/p205-quotient-character-prism-20260829@fc14817` |

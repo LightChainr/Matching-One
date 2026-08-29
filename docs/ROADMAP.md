@@ -13,7 +13,7 @@ For scientific coordinates use `docs/RESEARCH-MAP.md`; for claim and branch stat
 The existing evidence now forms a directed chain:
 
 ```text
-Digital Alexander cached index-8 frontier and main essential births
+Digital Alexander cached index-9 frontier and main essential births
 -> K1/K2 and C/W
 -> I01/I12 and S/D
 -> tiny nonzero Cov(A_top,J_D4)
@@ -148,7 +148,7 @@ x nuisance cancellation and archive reuse
 ## Completed results that change repetition value
 
 - **#50 N145->290 full curve — complete:** the resolved shape direction already rejects one scalar multiplier. Its archive remains reusable for new typed coordinates, while another endpoint-only repeat has lower information gain.
-- **Digital Alexander through index 8:** exact finite backbone plus cached rank/winding/`iota` states within its declared quotient frontier; the next gain is to reuse that backend in one marked production stream, not reimplement topology or add another untyped wrapping sign.
+- **Digital Alexander through index 9:** exact finite backbone plus cached rank/winding/`iota` states across 68 quotients and 5,372,118 paths within its declared frontier; the next gain is to reuse that backend in one marked production stream, not reimplement topology or add another untyped wrapping sign. Index 10 and an unrestricted theorem remain open.
 - **P205 ordinary prism:** H4 beats the frozen H8/H12 lines. A `rho`/C3 run gains more information from a distinct typed observer than from repeating this selector.
 - **PR #267 activation reuse:** all ten archived pairs are scored, the full curves turn three negative root points into stable local node crossings, and the P205 subset resolves H4/H4. The next gain is line-resolved common-field covariance, not another marginal K1/K2 split.
 - **Norm-4:** analytic q2 and the frozen common generator fail; the frozen generation-four target keeps the small-state family live but does not separate pure Jordan, an analytic even mode or persistent curvature, nor establish a nonzero extra mode.
