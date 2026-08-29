@@ -1,0 +1,42 @@
+name: Norm-5 fast thermal-jet diagnostic
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/norm5-fast-thermal-jet.yml
+
+permissions:
+  contents: write
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Run point-estimate thermal-jet diagnostic
+        run: |
+          mkdir -p results/server-20260829/P57-norm5-500m/post-reveal-fast-jet
+          python scripts/analyze_norm5_thermal_jet_fast.py \
+            --run 65:results/server-20260828/P45-root-amplitude/n65.hist.csv:results/server-20260828/P45-root-amplitude/n65.moments.csv:results/server-20260828/P45-root-amplitude/n65.metadata.json \
+            --run 85:results/server-20260828/P45-root-amplitude/n85.hist.csv:results/server-20260828/P45-root-amplitude/n85.moments.csv:results/server-20260828/P45-root-amplitude/n85.metadata.json \
+            --run 130:results/server-20260828/P49-fullcurve-doubling-100m/raw/n130.hist.csv:results/server-20260828/P49-fullcurve-doubling-100m/raw/n130.moments.csv:results/server-20260828/P49-fullcurve-doubling-100m/raw/n130.metadata.json \
+            --run 170:results/server-20260828/P49-fullcurve-doubling-100m/raw/n170.hist.csv:results/server-20260828/P49-fullcurve-doubling-100m/raw/n170.moments.csv:results/server-20260828/P49-fullcurve-doubling-100m/raw/n170.metadata.json \
+            --run 325:results/server-20260829/P57-norm5-500m/raw/n325_500m.hist.csv:results/server-20260829/P57-norm5-500m/raw/n325_500m.moments.csv:results/server-20260829/P57-norm5-500m/raw/n325_500m.metadata.json \
+            --run 425:results/server-20260829/P57-norm5-500m/raw/n425_500m.hist.csv:results/server-20260829/P57-norm5-500m/raw/n425_500m.moments.csv:results/server-20260829/P57-norm5-500m/raw/n425_500m.metadata.json \
+            --output results/server-20260829/P57-norm5-500m/post-reveal-fast-jet/analysis.json
+      - name: Commit result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/server-20260829/P57-norm5-500m/post-reveal-fast-jet
+          git commit -m "analysis: record fast norm5 thermal-jet diagnostic [skip ci]"
+          git push origin HEAD:main
