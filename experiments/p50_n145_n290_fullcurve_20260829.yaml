@@ -57,11 +57,12 @@ frozen_scoring:
   independent_source_target_covariance: true
 
 post_primary_reuse:
-  - low_rank_matrix_semigroup_transfer
-  - Krawtchouk_Hermite_thermal_jet
-  - paired_rank_gap_neutral_window
-  - metric_free_R_I_R_T
-  - multi_u_and_standardized_profile
+  views:
+    - low_rank_matrix_semigroup_transfer
+    - Krawtchouk_Hermite_thermal_jet
+    - paired_rank_gap_neutral_window
+    - metric_free_R_I_R_T
+    - multi_u_and_standardized_profile
   evidence_rule: all_are_correlated_views_of_one_raw_block
 
 chronology:
