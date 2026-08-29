@@ -1,0 +1,194 @@
+{
+  "schema": "matching-one/rho-child-primitive-h4-mc/v1",
+  "status": "production_under_frozen_manifest",
+  "production_id": "P267-rho-C3-primitive-H4-N112-v1",
+  "observable": "delta primitive-homology automorphic H4; baseline scored separately",
+  "not_A_top": true,
+  "p": "1/2 square-bond",
+  "samples": 100000,
+  "batches": 100,
+  "workers": 8,
+  "seed": 267156112,
+  "child_gate": {
+    "parent_id": "pell_Dplus1_N56",
+    "parent_matrix_rows": [
+      [
+        8,
+        4
+      ],
+      [
+        0,
+        7
+      ]
+    ],
+    "parent_N": 56,
+    "child_order": [
+      "2omega",
+      "omega_over_2",
+      "omega_plus_1_over_2"
+    ],
+    "children": [
+      {
+        "id": "2omega",
+        "embedding_in_parent_basis": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "period_matrix_rows": [
+          [
+            8,
+            8
+          ],
+          [
+            0,
+            14
+          ]
+        ],
+        "N": 112,
+        "bonds": 224
+      },
+      {
+        "id": "omega_over_2",
+        "embedding_in_parent_basis": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "period_matrix_rows": [
+          [
+            16,
+            4
+          ],
+          [
+            0,
+            7
+          ]
+        ],
+        "N": 112,
+        "bonds": 224
+      },
+      {
+        "id": "omega_plus_1_over_2",
+        "embedding_in_parent_basis": [
+          [
+            2,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "period_matrix_rows": [
+          [
+            16,
+            12
+          ],
+          [
+            0,
+            7
+          ]
+        ],
+        "N": 112,
+        "bonds": 224
+      }
+    ],
+    "common_field": "same counter-derived 224-bit vector in deterministic primal-edge order",
+    "passed": true
+  },
+  "summary": {
+    "primary_order": [
+      "2omega_re",
+      "2omega_im",
+      "omega_over_2_re",
+      "omega_over_2_im",
+      "omega_plus_1_over_2_re",
+      "omega_plus_1_over_2_im"
+    ],
+    "lattice_H4_point_re_im": [
+      0.4576353913178459,
+      0.00010166853607462001,
+      -0.21508511325296362,
+      -0.3882268677293631,
+      -0.21490122128114716,
+      0.3886974904908087
+    ],
+    "full_common_field_covariance_6x6": [
+      [
+        2.910469916387895e-06,
+        4.4677574133134066e-08,
+        1.785252901313645e-07,
+        3.0912897478077687e-07,
+        3.1831306171420853e-07,
+        -5.033984969115734e-07
+      ],
+      [
+        4.4677574133134066e-08,
+        1.5984165402685137e-07,
+        3.455627721749688e-08,
+        9.892369928030534e-08,
+        4.2099714490504254e-08,
+        -1.2997583387807554e-07
+      ],
+      [
+        1.785252901313645e-07,
+        3.455627721749688e-08,
+        8.546257791297017e-07,
+        1.248818916210501e-06,
+        -1.8356554723101367e-07,
+        2.214638313311628e-07
+      ],
+      [
+        3.0912897478077687e-07,
+        9.892369928030534e-08,
+        1.248818916210501e-06,
+        2.453303227895031e-06,
+        -1.7821564874405402e-07,
+        2.680956985641065e-07
+      ],
+      [
+        3.1831306171420853e-07,
+        4.2099714490504254e-08,
+        -1.8356554723101367e-07,
+        -1.7821564874405402e-07,
+        9.81009436627087e-07,
+        -1.2291497369384075e-06
+      ],
+      [
+        -5.033984969115734e-07,
+        -1.2997583387807554e-07,
+        2.214638313311628e-07,
+        2.680956985641065e-07,
+        -1.2291497369384075e-06,
+        2.1266771907931434e-06
+      ]
+    ],
+    "category_totals": {
+      "2omega_rank0": 25318,
+      "2omega_rank1": 49499,
+      "2omega_rank2": 25183,
+      "2omega_invalid": 0,
+      "omega_over_2_rank0": 26247,
+      "omega_over_2_rank1": 48340,
+      "omega_over_2_rank2": 25413,
+      "omega_over_2_invalid": 0,
+      "omega_plus_1_over_2_rank0": 26060,
+      "omega_plus_1_over_2_rank1": 48420,
+      "omega_plus_1_over_2_rank2": 25520,
+      "omega_plus_1_over_2_invalid": 0
+    },
+    "all_invariant_failures_zero": true
+  },
+  "manifest_runner_commit": "8eddecf4aa053132a434ab6d4454ad493cf1ee72"
+}

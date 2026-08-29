@@ -121,6 +121,36 @@ def score(run: dict, manifest: dict, *, cutoff: int = 9, dps: int = 60) -> dict:
     zeta = mp.exp(2 * mp.pi * mp.j / 3)
     complex_y = [mp.mpc(y[2 * j], y[2 * j + 1]) for j in range(3)]
     dft = [sum(complex_y[j] * zeta ** (-r * j) for j in range(3)) / 3 for r in range(3)]
+    dft_transform_rows = []
+    for r in range(3):
+        real_row = []
+        imag_row = []
+        for j in range(3):
+            coefficient = zeta ** (-r * j) / 3
+            real_row.extend([mp.re(coefficient), -mp.im(coefficient)])
+            imag_row.extend([mp.im(coefficient), mp.re(coefficient)])
+        dft_transform_rows.extend([real_row, imag_row])
+    dft_transform = mp.matrix(dft_transform_rows)
+    dft_covariance = dft_transform * covariance * dft_transform.T
+    dft_components = []
+    for r, value in enumerate(dft):
+        component_covariance = mp.matrix([
+            [dft_covariance[2*r+i, 2*r+j] for j in range(2)] for i in range(2)
+        ])
+        component = mp.matrix([mp.re(value), mp.im(value)])
+        component_chi2 = (component.T * (component_covariance ** -1) * component)[0]
+        component_p = mp.exp(-component_chi2 / 2)
+        dft_components.append({
+            "r": r,
+            "value_re_im": [mp.nstr(mp.re(value), 20), mp.nstr(mp.im(value), 20)],
+            "covariance_2x2": [
+                [mp.nstr(component_covariance[i, j], 20) for j in range(2)]
+                for i in range(2)
+            ],
+            "zero_chi_square": mp.nstr(component_chi2, 20),
+            "zero_dof": 2,
+            "zero_survival_p": mp.nstr(component_p, 20),
+        })
     return {
         "schema": "matching-one/rho-child-primitive-h4-score/v1",
         "status": "frozen_reveal",
@@ -134,7 +164,10 @@ def score(run: dict, manifest: dict, *, cutoff: int = 9, dps: int = 60) -> dict:
         "cutoff_minus_2_change_abs": [mp.nstr(v, 8) for v in convergence],
         "delta_H4_re_im": [mp.nstr(value, 20) for value in y],
         "full_covariance_6x6": [[mp.nstr(covariance[i, j], 20) for j in range(6)] for i in range(6)],
-        "ideal_C3_DFT_re_im": [[mp.nstr(mp.re(v), 20), mp.nstr(mp.im(v), 20)] for v in dft],
+        "ideal_C3_DFT_components": dft_components,
+        "ideal_C3_DFT_full_covariance_6x6": [
+            [mp.nstr(dft_covariance[i, j], 20) for j in range(6)] for i in range(6)
+        ],
         "null": {"chi_square": mp.nstr(zero_chi2, 20), "dof": 6, "survival_p": mp.nstr(zero_p, 20)},
         "pell_transported_pure_models": pure_scores,
         "two_character_mixture_opponents": mixture_scores,
@@ -162,6 +195,13 @@ def render(report: dict) -> str:
     lines += ["", "## Complex response", ""]
     for index, name in enumerate(report["child_order"]):
         lines.append(f"- {name}: `{report['delta_H4_re_im'][2*index]} + i {report['delta_H4_re_im'][2*index+1]}`")
+    lines += ["", "## Ideal C3 DFT diagnostics", ""]
+    for component in report["ideal_C3_DFT_components"]:
+        lines.append(
+            f"- r={component['r']}: `{component['value_re_im']}`, "
+            f"zero chi-square `{component['zero_chi_square']}/2`, "
+            f"p `{component['zero_survival_p']}`"
+        )
     lines += ["", "## Boundary", ""] + [f"- {line}" for line in report["claim_boundary"]] + [""]
     return "\n".join(lines)
 
