@@ -1,0 +1,471 @@
+{
+  "schema": "matching-one/p275-atop-q4-field-identity-design/v1",
+  "status": "design_frozen_before_any_multi_modulus_gamma_target",
+  "issues": [
+    205,
+    215,
+    275
+  ],
+  "input_commits": {
+    "H4_selection": "fc14817bb8c0b2f6e7cbde41778e715dcb62bc64",
+    "double_projector": "ddf41aa",
+    "A_top_rank_birth_proxy": "078bd61",
+    "eta_cocycle": "f5dcca6",
+    "complex_character_archive": "cc1d43c"
+  },
+  "decision_boundary": "H4 is treated as selected. No H8/H12 score is permitted in this design.",
+  "archive_audit": {
+    "fc14817_quotient_prism": {
+      "available": "A_top H4 at square modulus for N25/N50/N125 with full pair covariance",
+      "result": "H4 chi2=1.087585/2 and A4=0.8039184543+/-0.0131464871",
+      "post_reveal_log_slope_diagnostic": "-0.08258+/-0.08018; not a frozen field-identity score",
+      "missing": "ell/H4 rank-birth source and same-sample A_top*J_D4 moments"
+    },
+    "Gaussian_Hecke_children": {
+      "available": "scale and angular character at tau=i",
+      "missing": "a genuine modulus axis and A_top*J_D4 moments"
+    },
+    "cc1d43c_complex_character": {
+      "available": "same-parent charged local pivotal response with 4x4 covariance",
+      "missing": "global q=A_top and q*J_D4; it is a different observable and cannot be relabelled"
+    },
+    "078bd61_rank_birth_proxy": {
+      "available": "exact finite definition, parity controls, and tiny nonzero complex coupling",
+      "missing": "multi-N multi-modulus common-field stream"
+    },
+    "conclusion": "no committed archive can reconstruct the field-identity score"
+  },
+  "observable": {
+    "only_global_channel": "A_top=P2-P0=q=rank(H1 image)-1",
+    "complex_source": "J_D4=sum_v chi4(ell_v)*(I12-I01)_v",
+    "birth_mass": "B=E[sum_v(I01+I12)_v]=M_prime",
+    "normalized_response": "gamma=Cov(A_top,J_D4)/B",
+    "canonical_complex_response": "Gamma=conjugate((z/abs(z))^4)*gamma_lab",
+    "scaled_response": "Y=N^(13/8)*Gamma",
+    "excluded": [
+      "E_top",
+      "primitive_rank1_character",
+      "charged_local_O_Schi_response",
+      "H8_or_H12_refit",
+      "free_radial_exponent"
+    ]
+  },
+  "modulus_oracle": {
+    "normalization": "E4hat(tau)=Im(tau)^2 E4(tau)",
+    "values": {
+      "i": {
+        "tau": "1i",
+        "E4hat_over_i": "1.0",
+        "two_log_abs_eta_ratio_to_i": "0.0",
+        "eta_abs": "0.768225422326056659002594179576180644517866914464805014676702824143631",
+        "E4_terms": 46,
+        "E4_last_term_abs": "7.8894803485e-119"
+      },
+      "2i": {
+        "tau": "2i",
+        "E4hat_over_i": "2.75",
+        "two_log_abs_eta_ratio_to_i": "-0.5198603854199589820629240910936324260566251007701914405905100071200452",
+        "eta_abs": "0.5923827813324158852903633744919953727615299932057706652342899396271762",
+        "E4_terms": 27,
+        "E4_last_term_abs": "2.17794003528e-141"
+      },
+      "5i_over_2": {
+        "tau": "5/2i",
+        "E4hat_over_i": "4.29343685437492302111095592241330523446298423883852599781672418536036",
+        "two_log_abs_eta_ratio_to_i": "-0.7816530999014344284384824638880257145636937354186894997093386433226981",
+        "eta_abs": "0.5197025656447175145745486396313617105937856610445792371478564304578739",
+        "E4_terms": 23,
+        "E4_last_term_abs": "3.64879740987e-151"
+      }
+    },
+    "exact_E4hat_2i_over_i": "11/4",
+    "eta_cocycle_ratio_2i_over_5i_over_2": "0.6650781343866131772672665009706023296977443743984953827251758133735292",
+    "eta_cocycle_residual": "eta25*[R(2i)-R(i)]-eta2*[R(5i/2)-R(i)]=0"
+  },
+  "selected_geometries": [
+    {
+      "N": 50,
+      "modulus": "i",
+      "tau_imaginary": "1",
+      "representation_z": [
+        7,
+        1
+      ],
+      "period_matrix": [
+        [
+          7,
+          -1
+        ],
+        [
+          1,
+          7
+        ]
+      ],
+      "smith_invariants": [
+        1,
+        50
+      ],
+      "lab_to_canonical_H4_transport": {
+        "operation": "multiply gamma_lab by conjugate((z/abs(z))^4)",
+        "real": "527/625",
+        "imag": "-336/625"
+      }
+    },
+    {
+      "N": 50,
+      "modulus": "2i",
+      "tau_imaginary": "2",
+      "representation_z": [
+        4,
+        3
+      ],
+      "period_matrix": [
+        [
+          4,
+          -6
+        ],
+        [
+          3,
+          8
+        ]
+      ],
+      "smith_invariants": [
+        1,
+        50
+      ],
+      "lab_to_canonical_H4_transport": {
+        "operation": "multiply gamma_lab by conjugate((z/abs(z))^4)",
+        "real": "-527/625",
+        "imag": "-336/625"
+      }
+    },
+    {
+      "N": 50,
+      "modulus": "5i_over_2",
+      "tau_imaginary": "5/2",
+      "representation_z": [
+        2,
+        1
+      ],
+      "period_matrix": [
+        [
+          4,
+          -5
+        ],
+        [
+          2,
+          10
+        ]
+      ],
+      "smith_invariants": [
+        1,
+        50
+      ],
+      "lab_to_canonical_H4_transport": {
+        "operation": "multiply gamma_lab by conjugate((z/abs(z))^4)",
+        "real": "-7/25",
+        "imag": "-24/25"
+      }
+    },
+    {
+      "N": 130,
+      "modulus": "i",
+      "tau_imaginary": "1",
+      "representation_z": [
+        11,
+        3
+      ],
+      "period_matrix": [
+        [
+          11,
+          -3
+        ],
+        [
+          3,
+          11
+        ]
+      ],
+      "smith_invariants": [
+        1,
+        130
+      ],
+      "lab_to_canonical_H4_transport": {
+        "operation": "multiply gamma_lab by conjugate((z/abs(z))^4)",
+        "real": "2047/4225",
+        "imag": "-3696/4225"
+      }
+    },
+    {
+      "N": 130,
+      "modulus": "2i",
+      "tau_imaginary": "2",
+      "representation_z": [
+        8,
+        1
+      ],
+      "period_matrix": [
+        [
+          8,
+          -2
+        ],
+        [
+          1,
+          16
+        ]
+      ],
+      "smith_invariants": [
+        1,
+        130
+      ],
+      "lab_to_canonical_H4_transport": {
+        "operation": "multiply gamma_lab by conjugate((z/abs(z))^4)",
+        "real": "3713/4225",
+        "imag": "-2016/4225"
+      }
+    },
+    {
+      "N": 130,
+      "modulus": "5i_over_2",
+      "tau_imaginary": "5/2",
+      "representation_z": [
+        3,
+        2
+      ],
+      "period_matrix": [
+        [
+          6,
+          -10
+        ],
+        [
+          4,
+          15
+        ]
+      ],
+      "smith_invariants": [
+        1,
+        130
+      ],
+      "lab_to_canonical_H4_transport": {
+        "operation": "multiply gamma_lab by conjugate((z/abs(z))^4)",
+        "real": "-119/169",
+        "imag": "-120/169"
+      }
+    },
+    {
+      "N": 170,
+      "modulus": "i",
+      "tau_imaginary": "1",
+      "representation_z": [
+        13,
+        1
+      ],
+      "period_matrix": [
+        [
+          13,
+          -1
+        ],
+        [
+          1,
+          13
+        ]
+      ],
+      "smith_invariants": [
+        1,
+        170
+      ],
+      "lab_to_canonical_H4_transport": {
+        "operation": "multiply gamma_lab by conjugate((z/abs(z))^4)",
+        "real": "6887/7225",
+        "imag": "-2184/7225"
+      }
+    },
+    {
+      "N": 170,
+      "modulus": "2i",
+      "tau_imaginary": "2",
+      "representation_z": [
+        9,
+        2
+      ],
+      "period_matrix": [
+        [
+          9,
+          -4
+        ],
+        [
+          2,
+          18
+        ]
+      ],
+      "smith_invariants": [
+        1,
+        170
+      ],
+      "lab_to_canonical_H4_transport": {
+        "operation": "multiply gamma_lab by conjugate((z/abs(z))^4)",
+        "real": "4633/7225",
+        "imag": "-5544/7225"
+      }
+    },
+    {
+      "N": 170,
+      "modulus": "5i_over_2",
+      "tau_imaginary": "5/2",
+      "representation_z": [
+        4,
+        1
+      ],
+      "period_matrix": [
+        [
+          8,
+          -5
+        ],
+        [
+          2,
+          20
+        ]
+      ],
+      "smith_invariants": [
+        1,
+        170
+      ],
+      "lab_to_canonical_H4_transport": {
+        "operation": "multiply gamma_lab by conjugate((z/abs(z))^4)",
+        "real": "161/289",
+        "imag": "-240/289"
+      }
+    }
+  ],
+  "common_field_blocks": {
+    "sizes": [
+      50,
+      130,
+      170
+    ],
+    "within_each_N": "all i/2i/5i_over_2 geometries use identical seed, counter, priority field, uniform-root schedule, and batch boundaries",
+    "across_N": "independent seeds",
+    "all_selected_quotients": "cyclic Z/N; Smith invariants (1,N)"
+  },
+  "frozen_model_subspaces": {
+    "Q4_epsilon_ordinary": {
+      "equation": "Y(N,tau)=c*F(tau)",
+      "F_E4hat_over_i": {
+        "i": "1.0",
+        "2i": "2.75",
+        "5i_over_2": "4.29343685437492302111095592241330523446298423883852599781672418536036"
+      },
+      "nuisance": "one common complex c",
+      "real_observations_parameters_df": [
+        18,
+        2,
+        16
+      ]
+    },
+    "Q4_energy_Jordan": {
+      "equation": "Y(N,tau)=F(tau)*[c0+c1*log(N)+c2*e(tau)]",
+      "F_E4hat_over_i": {
+        "i": "1.0",
+        "2i": "2.75",
+        "5i_over_2": "4.29343685437492302111095592241330523446298423883852599781672418536036"
+      },
+      "e_two_log_eta_ratio_to_i": {
+        "i": "0.0",
+        "2i": "-0.5198603854199589820629240910936324260566251007701914405905100071200452",
+        "5i_over_2": "-0.7816530999014344284384824638880257145636937354186894997093386433226981"
+      },
+      "nuisance": "three common complex coefficients c0,c1,c2",
+      "real_observations_parameters_df": [
+        18,
+        6,
+        12
+      ],
+      "parameter_free_relations": [
+        "log-slope vector is proportional to E4hat(tau)",
+        "eta25*[R(2i)-R(i)]-eta2*[R(5i/2)-R(i)]=0"
+      ]
+    },
+    "generic_allowed_H4_pure": {
+      "equation": "Y(N,tau)=c_tau",
+      "nuisance": "one unrelated complex intercept per modulus",
+      "real_observations_parameters_df": [
+        18,
+        6,
+        12
+      ]
+    },
+    "generic_allowed_H4_affine_log": {
+      "equation": "Y(N,tau)=a_tau+b_tau*log(N)",
+      "nuisance": "one unrelated complex intercept and slope per modulus",
+      "real_observations_parameters_df": [
+        18,
+        12,
+        6
+      ]
+    }
+  },
+  "frozen_score_order": [
+    "Q4_epsilon_ordinary",
+    "Q4_energy_Jordan",
+    "generic_allowed_H4_pure",
+    "generic_allowed_H4_affine_log",
+    "zero_response"
+  ],
+  "acquisition": {
+    "status": "not_launched_runner_extension_required",
+    "samples_per_geometry": 20000000,
+    "batches": 100,
+    "sizes": [
+      50,
+      130,
+      170
+    ],
+    "moduli": [
+      "i",
+      "2i",
+      "5i_over_2"
+    ],
+    "seeds_by_N": {
+      "50": 2026275050,
+      "130": 2026275130,
+      "170": 2026275170
+    },
+    "replica_counter": [
+      9500000000,
+      9520000000
+    ],
+    "random_root": "counter-derived uniform label, identical across moduli within N",
+    "production_authorized": false
+  },
+  "minimal_sufficient_statistics": {
+    "per_aligned_batch_per_geometry": [
+      "samples and replica interval",
+      "sum q and sum q^2",
+      "sum I01, I12, and direct I02",
+      "sum Re/Im J_S4 and J_D4",
+      "sum q*Re/Im J_S4 and q*Re/Im J_D4",
+      "unmarked birth mass sum N*(I01+I12)",
+      "optional landing-H4 S/D values and q-products as a correlated diagnostic",
+      "priority-field digest and random-root digest"
+    ],
+    "covariance": "recompute every covariance, gamma ratio, canonical phase transport, N^(13/8) scaling, and GLS residual inside synchronized delete-one batches; preserve the full 18x18 real covariance in the frozen observation order",
+    "not_sufficient": [
+      "marginal threshold histograms",
+      "unmarked birth mass alone",
+      "marked H4 means without q*J",
+      "separate marginal z scores"
+    ]
+  },
+  "decision_map": {
+    "ordinary_Q4_fits_and_no_log_gain": "thermal Q4 epsilon selected",
+    "ordinary_fails_Jordan_fits_and_c1_nonzero": "thermal Q4 Jordan completion selected",
+    "Q4_models_fail_generic_H4_fits": "H4 is real but its field completion is not the thermal Q4 module",
+    "all_nonzero_models_fail": "multi-field flow or J_D4 does not isolate the global H4 coupling"
+  },
+  "scientific_card": [
+    "Question: which field completes the already-selected global H4 channel?",
+    "Observable: only gamma=Cov(A_top,J_D4)/birth_mass, transported as one complex character.",
+    "Selector: three moduli times three cyclic sizes, scored with one full covariance block structure.",
+    "Q4 fingerprint: E4hat modulus vector; Jordan adds the gauge-free eta cocycle, never a free exponent.",
+    "Stop rule: do not collect more harmonic votes; failure promotes another H4 completion, not H8/H12."
+  ]
+}
