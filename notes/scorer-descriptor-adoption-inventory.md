@@ -6,10 +6,11 @@ direct typed entrypoints importing both `ObservableDescriptor` and
 `map_observable` from `wrapping_channels`. Three frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Four paths are confirmed channel-bearing and
+a descriptor is not applicable. Five paths are confirmed channel-bearing and
 require typed migrations: `score_angular_root_amplitude.py`,
-`score_axis_pair_annihilator.py`, its stable entrypoint, and
-`score_prequential_evidence.py`. The remaining 23 files are outside a
+`score_axis_pair_annihilator.py`, its stable entrypoint,
+`score_c4_self_matching_n26.py`, and `score_prequential_evidence.py`. The
+remaining 22 files are outside a
 registered typed path.
 
 This closes an inventory gap: the repository now has a deterministic list,
@@ -19,7 +20,7 @@ import is added or removed without updating the manifest, or if a declared
 wrapped kernel disappears.
 
 `outside_registered_typed_path` is deliberately a triage label. Some of those
-23 scripts may not compare channel-bearing quantities, some may be historical,
+22 scripts may not compare channel-bearing quantities, some may be historical,
 and some may need a future typed wrapper. Static membership alone does not prove
 a semantic bug, data-provenance failure, or need for migration. Each candidate
 must be reviewed before modification; Issue #146 therefore remains open.
@@ -42,6 +43,15 @@ gate currently compares free-form `channel.source` and `channel.target` strings
 and treats any truthy `exact_map` field as sufficient. A typed migration must
 parse source/target descriptors and verify the registered affine transform,
 while preserving historical ledger rows and chronology.
+
+`score_c4_self_matching_n26.py` is migration-required even though its committed
+N=26 control finds all five wrapping-channel Bernstein vectors identical. It
+selects the scored observable from the prediction's free-form
+`geometry.wrapping_channel` string, then compares that exact law with frozen
+hypotheses. Numerical equality on one finite self-matching geometry does not
+establish semantic interchangeability. A typed migration must bind the frozen
+prediction and result to the exact channel descriptor while preserving the
+pre-target scoring order and stop-without-generalized-fit rule.
 
 The axis-pair annihilator score path is migration-required as one operational
 unit. The base scorer reconstructs the cross matching function from
