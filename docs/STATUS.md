@@ -161,7 +161,7 @@ When compute/attention is scarce:
 3. **Existing-data analysis** — #95 evidence ledger, #101 quantile-center, #119 multi-u response, #125 joint channel mixing, #122 full threshold profile. For #100, the exact finite Russo stage is complete; the remaining work is orientation-resolved/continuum interpretation.
 4. **#102 information-optimal design** chooses any later expensive Gaussian target.
 
-Exact/theory controls (#103/#106/#111/#114/#118/#121) may proceed in parallel. N=1105 and Pell/modulus production remain gated behind cheaper discriminators and an explicit observable bridge.
+Exact/theory controls (#103/#106/#111/#114/#118/#121) may proceed in parallel. #118 metric-free monomials `R_I` and `R_T` are a derivation freeze, not a #57 numerical target. N=1105 and Pell/modulus production remain gated behind cheaper discriminators and an explicit observable bridge.
 
 ## Engineering/governance status
 

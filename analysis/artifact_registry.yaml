@@ -122,6 +122,11 @@ frozen_predictions:
     status: frozen_prediction
     issue: 146
     role: semantic_map_audit
+  - path: predictions/dimensionless_amplitude_ratios_20260829.yaml
+    status: frozen_prediction
+    issue: 118
+    role: metric_free_ratio_definition_freeze
+    evidence_boundary: not_a_numerical_target_for_issue_57
 
 evidence_archives:
   - id: P31
@@ -217,6 +222,10 @@ topic_derivations:
   - path: notes/selfdual-beta-minimal-degree-theorem.md
     status: topic_derivation
     role: exact_minimal_degree_selfdual_Beta_theorem
+  - path: notes/dimensionless-amplitude-ratios.md
+    status: topic_derivation
+    role: metric_free_ratio_derivation
+    caveat: descriptive_P48_reconstructions_are_not_issue_57_targets
   - path: notes/n26-central-jet-signature-trap.md
     status: topic_derivation
     role: post_reveal_N26_profile_vs_central_jet_diagnostic

@@ -149,9 +149,11 @@ The scalar Russo identity is now exact. The next useful step is a genuinely orie
 
 Use multiplier composition and modulus dependence as representation-level fingerprints, but keep Pell production gated until the lattice observable is an explicit typed/projected object. Do not infer a lattice Q4 coupling solely from the exact ordinary-CFT E4 zero.
 
-### C4. kappa3 / universal threshold profile — #16/#25/#54/#122
+### C4. kappa3 / universal threshold profile — #16/#25/#54/#122/#118
 
 The new reliability-signature interpretation gives exact finite baselines and shows why low-order central derivatives can miss a categorical finite-profile failure. Treat the full standardized threshold profile/signature as the higher-level object; do not promote a rational-looking `kappa3` without cross-realization and continuum support.
+
+Metric-free two-sector ratios `R_I=P4[D']/(P4[S] Mbar')` and `R_T=P4[S']/(P4[D] Mbar')` are a derivation freeze under #118. They cancel the thermal metric `b` and have net `N^0`. Descriptive P48 reconstructions are not a #57 target. Covariance-aware delete-one measurement remains.
 
 ## Engineering policy
 

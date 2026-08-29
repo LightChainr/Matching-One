@@ -505,7 +505,9 @@ analysis_queue:
     state: analysis_ready
   - issue: 118
     name: universal_amplitude_ratios
-    state: analysis_ready
+    state: definition_freeze
+    remaining: covariance_aware_delete_one_reconstruction
+    not_a_numerical_target_for_issue_57: true
 
 new_compute_queue:
   - rank: 1

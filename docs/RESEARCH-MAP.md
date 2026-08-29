@@ -228,7 +228,7 @@ These strengthen foundations and controls; they do not upgrade the H4/LCFT claim
 4. #125 joint operator-mixing model.
 5. #122 standardized full threshold distribution.
 6. #113 local exact-zero analysis.
-7. #118 dimensionless amplitude-ratio derivation.
+7. #118 dimensionless amplitude-ratio derivation freeze (`R_I`, `R_T`); not a #57 numerical target. Covariance-aware delete-one reconstruction remains.
 8. #100/#121 orientation-resolved pivotal/four-arm continuation after the completed scalar Russo identity.
 
 ### New production data

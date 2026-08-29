@@ -1,0 +1,53 @@
+version: 1
+frozen_date: 2026-08-29
+status: definition_freeze
+issue: 118
+not_a_numerical_target_for_issue_57: true
+claim_level: C0
+purpose: >
+  Freeze the metric-cancelling monomials for the two-sector derivative
+  ladder before any new production or cross-model comparison.
+
+observables:
+  P4_S:
+    combination: even
+    n_exponent: "-1"
+  P4_D:
+    combination: odd
+    n_exponent: "-13/8"
+  P4_D_prime:
+    combination: even_thermal_derivative
+    n_exponent: "-5/8"
+  P4_S_prime:
+    combination: odd_thermal_derivative
+    n_exponent: "-5/4"
+  Mbar_prime:
+    combination: isotropic_slope
+    n_exponent: "3/8"
+
+ratios:
+  R_I:
+    formula: P4[D_prime] / (P4[S] * Mbar_prime)
+    scaled_formula: A_Dprime / (A_S * B)
+    net_n_exponent: "0"
+    cancelled: [thermal_metric_b]
+    role: cleaner_first_target
+    uses_surviving_pure_laws: [P4_S, P4_D_prime]
+  R_T:
+    formula: P4[S_prime] / (P4[D] * Mbar_prime)
+    scaled_formula: A_Sprime / (A_D * B)
+    net_n_exponent: "0"
+    cancelled: [thermal_metric_b, thermal_coupling_u_T]
+    role: thermal_branch_response
+    inherits: prospective_Sprime_correction_ambiguity
+  raw_A_D_over_A_S:
+    formula: P4[D] / P4[S]
+    net_n_exponent: "-5/8"
+    universality_candidate: false
+    reason: does_not_cancel_two_independent_lattice_couplings
+
+governance:
+  - Do not promote descriptive P48 reconstructions to a frozen #57 target.
+  - Recompute every factor inside the same delete-one replicate before quoting
+    a covariance-aware ratio.
+  - Cross-model comparison requires matched observable, channel, and modulus.
