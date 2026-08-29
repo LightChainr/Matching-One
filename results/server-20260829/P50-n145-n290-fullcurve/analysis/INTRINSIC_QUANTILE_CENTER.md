@@ -53,4 +53,3 @@ therefore carries the nonlinear crossing and shared-curve correlations.
 N145 and N290 use independent RNG domains, so their covariance blocks are
 combined as independent blocks.  The full size-local and three-residual
 covariance matrices are stored in `intrinsic_quantile_center_score.json`.
-
