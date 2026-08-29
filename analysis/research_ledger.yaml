@@ -1,5 +1,5 @@
 version: 11
-updated: 2026-08-29
+updated: 2026-08-30
 purpose: >
   Compact map of durable evidence and next information axes. This ranks work;
   it does not grant permission. The advisory lifecycle overlay records actual
@@ -33,7 +33,7 @@ team_coordination_signals:
     action: assign_one_covariance_bundle_and_statistical_coordinator_per_raw_random_block
     reason: parallel_derived_views_are_coordinates_not_independent_votes
   - id: CS_SHARED_RANK_BIRTH_STREAM
-    action: reuse_the_index9_cached_topology_oracle_and_acquire_q_I01_I12_ell_iota_line_landing_SD_qJ_K1_K2_once_in_aligned_batches
+    action: reuse_the_index10_cached_topology_oracle_and_acquire_q_I01_I12_ell_iota_line_landing_SD_qJ_K1_K2_once_in_aligned_batches
     reason: one_sufficient_stream_supports_parallel_mechanism_analyses_without_incomparable_production
   - id: CS_TYPED_C3_MANIFEST
     action: name_the_observer_sector_and_complex_character_in_each_C3_title_and_manifest
@@ -505,22 +505,22 @@ branch_sources:
     commit: 9d21f36f0ccc2756a60574205ab78426f96a65c2
     paths:
       - notes/solvable-site-maps-and-square-obstruction.md
-  - id: SRC_DIGITAL_ALEXANDER_INDEX10_PR292
-    integration_status: open_pr
+  - id: SRC_DIGITAL_ALEXANDER_INDEX10_MAIN
+    integration_status: main_integrated
     pr: 292
-    ref: exact/issue-269-index10-subset-dp
-    commit: 2d46a463d95d1b003682e5cf7e271f6e12c4c2fd
+    ref: main
+    commit: 4557a762bf803522d498e3ff4160b75e8837fe5f
     paths:
       - analysis/digital_alexander_quotient_frontier_manifest.json
       - notes/digital-alexander-short-period-frontier.md
       - results/digital-alexander-quotient-frontier/latest.json
       - results/digital-alexander-quotient-frontier/latest.md
       - scripts/digital_alexander_quotient_frontier.py
-  - id: SRC_SPIN4_DIRECTION_ALIAS_PR291
-    integration_status: open_pr
+  - id: SRC_SPIN4_DIRECTION_ALIAS_MAIN
+    integration_status: main_integrated
     pr: 291
-    ref: analysis/issue-109-spin4-alias-gate
-    commit: 31cf1ee7065b198b1b1e3ee84789ce943c33a8dc
+    ref: main
+    commit: 83e98fca02a074396493b64ed59cb02700a68796
     paths:
       - analysis/discrete_holomorphic_spin4_alias_manifest.json
       - notes/discrete-holomorphic-spin4-alias-gate.md
@@ -536,16 +536,16 @@ scientific_nodes:
     observer_sectors: [topology_typed]
     geometries: [square_controls]
     acquisition: [exact_construction]
-    source_refs: [SRC_DIGITAL_ALEXANDER_MAIN, SRC_DIGITAL_ALEXANDER_FILTRATION_MAIN, SRC_DIGITAL_ALEXANDER_INDEX9_MAIN]
-    known_result: configurationwise_rblack_plus_rwhite_equals_2_matching_charge_equals_rblack_minus_1_and_index2_through_9_HNF_exhaustion_has_zero_birth_reflection_rank_sum_reconstruction_or_line_failures_across_68_quotients_and_5372118_paths_with_cached_and_direct_semantics_equal_on_axis_L2
-    boundary: regular_square_cell_theorem_holds_in_its_declared_class_while_degenerate_HNF_exhaustion_stops_at_index9_and_is_not_an_unrestricted_quotient_theorem
+    source_refs: [SRC_DIGITAL_ALEXANDER_MAIN, SRC_DIGITAL_ALEXANDER_FILTRATION_MAIN, SRC_DIGITAL_ALEXANDER_INDEX9_MAIN, SRC_DIGITAL_ALEXANDER_INDEX10_MAIN]
+    known_result: configurationwise_rblack_plus_rwhite_equals_2_matching_charge_equals_rblack_minus_1_and_index2_through_10_HNF_exhaustion_has_zero_birth_reflection_rank_sum_reconstruction_or_line_failures_across_86_quotients_and_70690518_paths_with_cached_and_direct_semantics_equal_on_axis_L2
+    boundary: regular_square_cell_theorem_holds_in_its_declared_class_while_degenerate_HNF_exhaustion_stops_at_index10_and_is_not_an_unrestricted_quotient_theorem
     supports: [ambient_homology_as_the_exact_finite_matching_state]
     tensions: [wrapping_sign_as_an_untyped_scalar_only]
     excludes_only: [independent_black_and_white_ambient_rank_variables_in_the_declared_scope]
     reusable_data_refs: [results/digital-alexander-filtration/latest.json, results/digital-alexander-quotient-frontier/latest.json]
     dependency_group_refs: []
-    missing_inputs: [main_integration_of_the_open_index10_frontier, index11_and_higher_or_an_unrestricted_degenerate_quotient_theorem, production_scale_line_and_landing_marks]
-    next_discriminator: keep_main_index9_and_open_PR292_index10_distinct_then_reuse_the_subset_backend_for_marks_or_extend_the_exact_frontier_to_index11
+    missing_inputs: [index11_and_higher_or_an_unrestricted_degenerate_quotient_theorem, production_scale_line_and_landing_marks]
+    next_discriminator: reuse_the_main_index10_subset_backend_for_marks_or_extend_the_exact_frontier_to_index11
     information_gain: very_high
     compute_cost: none
     decision_experiments: [DX_RANK_BIRTH_GLOBAL_BRIDGE]
@@ -1145,7 +1145,7 @@ scientific_nodes:
     observer_sectors: [topology_typed, deck_charged, direction_character]
     geometries: [finite_transfer_cylinder]
     acquisition: [exact_construction]
-    source_refs: [SRC_Q4_SEAM_PREFLIGHT, SRC_SPIN4_DIRECTION_ALIAS_PR291]
+    source_refs: [SRC_Q4_SEAM_PREFLIGHT, SRC_SPIN4_DIRECTION_ALIAS_MAIN]
     known_result: exact_2x2_Q4_transfer_has_Zid_33024_Ztrans_21568_and_unnormalized_projected_character_ratios_one_for_singlet_4_and_zero_for_charged_22_while_normalized_expectations_require_restoring_the_partition_ratio
     boundary: the_log_v_insertion_is_plumbing_and_one_C4_direction_orbit_aliases_scalar_with_spin4_axis_diagonal_demixing_requires_shared_radial_type_calibration_and_still_aliases_higher_4mod8_harmonics
     supports: [separate_spatial_angular_rank_and_colour_seam_certificates_before_a_scaling_fit]
@@ -1286,34 +1286,34 @@ scientific_nodes:
     decision_experiments: []
   - id: SN_DIGITAL_ALEXANDER_INDEX10_FRONTIER
     title: cached_subset_DP_HNF_frontier_through_index10
-    integration_status: open_pr
+    integration_status: main_integrated
     state: finite_topological_state
     sources: [bernoulli_thermal]
     observer_sectors: [topology_typed]
     geometries: [square_controls]
     acquisition: [exact_construction]
-    source_refs: [SRC_DIGITAL_ALEXANDER_INDEX9_MAIN, SRC_DIGITAL_ALEXANDER_INDEX10_PR292]
-    known_result: open_PR292_exhausts_86_HNF_quotients_and_70690518_filtrations_through_index10_with_zero_birth_reflection_rank_sum_reconstruction_or_line_failures_31068_cached_subsets_262901744_plateau_steps_max_iota_one_and_no_index_evolution
-    boundary: finite_C5_frontier_only_not_main_integrated_not_index11_or_higher_not_an_unrestricted_degenerate_quotient_theorem_and_not_a_general_proof_iota_equals_one
+    source_refs: [SRC_DIGITAL_ALEXANDER_INDEX9_MAIN, SRC_DIGITAL_ALEXANDER_INDEX10_MAIN]
+    known_result: merged_PR292_exhausts_86_HNF_quotients_and_70690518_filtrations_through_index10_with_zero_birth_reflection_rank_sum_reconstruction_or_line_failures_31068_cached_subsets_262901744_plateau_steps_max_iota_one_and_no_index_evolution
+    boundary: finite_C5_frontier_only_not_index11_or_higher_not_an_unrestricted_degenerate_quotient_theorem_and_not_a_general_proof_iota_equals_one
     supports: [cached_subset_lattice_DP_as_the_current_exact_frontier_backend]
-    tensions: [repeating_explicit_permutation_enumeration_or_treating_index10_as_main]
+    tensions: [repeating_explicit_permutation_enumeration_or_treating_finite_index10_as_an_unrestricted_theorem]
     excludes_only: [counterexamples_within_the_declared_index2_through10_HNF_family]
     reusable_data_refs: [results/digital-alexander-quotient-frontier/latest.json]
     dependency_group_refs: []
-    missing_inputs: [main_integration_or_index11_frontier_or_unrestricted_theorem]
-    next_discriminator: preserve_open_PR_status_and_move_exact_attention_to_index11_or_a_general_argument
+    missing_inputs: [index11_frontier_or_unrestricted_theorem]
+    next_discriminator: move_exact_attention_to_index11_or_a_general_argument_and_reuse_the_backend_for_marked_streams
     information_gain: high
     compute_cost: low
     decision_experiments: []
   - id: SN_SPIN4_DIRECTION_ALIAS_GATE
     title: one_C4_orbit_scalar_spin4_direction_character_alias
-    integration_status: open_pr
+    integration_status: main_integrated
     state: continuum_module
     sources: [explicit_operator_derivative]
     observer_sectors: [direction_character]
     geometries: [square_controls, finite_transfer_cylinder]
     acquisition: [exact_construction]
-    source_refs: [SRC_SPIN4_DIRECTION_ALIAS_PR291]
+    source_refs: [SRC_SPIN4_DIRECTION_ALIAS_MAIN]
     known_result: exp_minus4itheta_is_constant_on_one_C4_orbit_axis_plus1_diagonal_minus1_so_a_direction_only_scalar_defect_and_nominal_spin4_row_have_angular_character_rank_one
     boundary: axis_diagonal_half_sum_difference_requires_shared_radial_type_calibration_raw_orbits_may_have_separate_amplitudes_higher_4mod8_harmonics_remain_aliased_and_no_discrete_harmonicity_percolation_scaling_or_field_identity_follows
     supports: [calibrated_phase_diversity_or_typed_internal_transformation_as_a_necessary_spatial_kernel_gate]
@@ -1456,7 +1456,7 @@ decision_experiments:
     name: exact_Q4_singlet_charged_orientation_resolved_H4_seam
     scientific_node_refs: [SN_GLOBAL_SPIN4_SELECTION_STAIRCASE, SN_Q4_SEAM_NORMALIZATION, SN_SPIN4_DIRECTION_ALIAS_GATE]
     observer_sector_refs: [topology_typed, deck_charged, direction_character]
-    source_refs: [SRC_SMALL_WIDTH_SPECTROSCOPY, SRC_Q4_SEAM_PREFLIGHT, SRC_SPIN4_DIRECTION_ALIAS_PR291]
+    source_refs: [SRC_SMALL_WIDTH_SPECTROSCOPY, SRC_Q4_SEAM_PREFLIGHT, SRC_SPIN4_DIRECTION_ALIAS_MAIN]
     dependency_group_refs: []
     acquisition: exact_construction
     expected_model_space_reduction: very_high
