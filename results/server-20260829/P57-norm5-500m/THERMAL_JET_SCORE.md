@@ -1,0 +1,84 @@
+# Frozen finite-N thermal-jet score
+
+## Outcome
+
+The prereveal width-only thermal-jet hypothesis fails on the joint norm-5
+target vector.  After canonical rank-gap width correction, the analytic q=2
+cocycle also fails at the conventional 5% level, while the frozen rank-2
+Jordan cocycle remains compatible with the data.
+
+| ordered score | chi-square / dof | survival probability |
+|---|---:|---:|
+| canonical rank-gap width collapse | 24.5004 / 10 | 0.006377 |
+| width-corrected q=2, c=8/5 | 22.2386 / 10 | 0.013934 |
+| width-corrected rank-2 Jordan, c=log(5)/log(2) | 17.0513 / 10 | 0.073237 |
+
+The Jordan score improves chi-square by 5.18739 relative to q=2.  These are
+two fixed, non-nested models evaluated on the same data, so that difference is
+a model-ranking diagnostic rather than a separately calibrated likelihood-ratio
+test.
+
+## Frozen object that was scored
+
+The score executes `predictions/hermite_krawtchouk_jet_20260829.yaml`.  For
+each size it recomputes the intrinsic center and forms the exact finite-N
+matching-odd thermal jet
+
+```text
+d_fin(r,N) = r! N^(13/8) sqrt(C(N,r)) N^(-3r/8) c_r
+             / [p0(1-p0)]^(r/2),
+```
+
+with interlaced coefficients `D2,S3,D4,S5,D6`.  The canonical width is the
+exact neutral-window area normalization
+
+```text
+w_can(N) = N^(3/8) E[K_plus-K_minus] / (N+1).
+```
+
+The two scored lineages are `65 -> 130 -> 325` and `85 -> 170 -> 425`.
+Consequently each score is one ten-component vector, not ten independent
+hypothesis tests.
+
+## Covariance propagation
+
+Every intrinsic center, score coefficient, width and nonlinear residual is
+recomputed inside delete-one-batch replicates.  N=65,85,130,170 share the same
+seed and counter interval and are deleted synchronously.  N=325 and N=425 use
+two disjoint production counter intervals and contribute independent
+jackknife covariance matrices.
+
+All three residual covariance matrices have numerical rank 10.  The
+correlation-matrix condition numbers are approximately 1117 for width
+collapse and 466 for the two cocycles.  No eigenmode is truncated by the
+declared relative cutoff `1e-10`; the smallest correlation eigenvalues are
+0.00289 and 0.00675, respectively.
+
+No individual diagonal residual exceeds 2 standard errors.  The rejection of
+width-only and q=2 therefore comes from a coherent correlated direction, not
+from selecting one conspicuous high-order component after reveal.
+
+## Interpretation
+
+The paired rank gap is an exact measure of canonical neutral-window area, but
+its scalar width does not absorb the observed family-wide Krawtchouk drift.
+The remaining deformation must contain at least one additional jet-space
+direction.  Among the two frozen multiplier laws, Jordan/logarithmic mixing is
+the surviving compact description; a general low-rank transfer matrix remains
+the broader alternative.
+
+This result promotes the next analysis from scalar width fitting to Issue
+#180's finite-dimensional transfer problem.  The next model should use width
+as one fixed generator and ask whether one additional source-trained direction
+predicts the held-out norm-5 jet.  It should not add separate correction laws
+for D2, S3, D4, S5 and D6.
+
+## Evidence boundary
+
+The width score, q=2 score, Jordan score, component residuals and the earlier
+fixed-p/full-curve norm-5 scores all reuse the same production histograms.
+They are ordered correlated views, not additive evidence rows.  The exact
+rank-gap area identity and exact Krawtchouk generating function are unaffected
+by the failure of their simplest scaling closure.
+
+Machine-readable output: `thermal_jet_score.json`.

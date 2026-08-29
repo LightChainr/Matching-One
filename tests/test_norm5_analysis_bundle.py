@@ -68,6 +68,7 @@ class Norm5AnalysisBundleTests(unittest.TestCase):
                 "primary_harmonic",
                 "intrinsic_functional_cocycle",
                 "krawtchouk_score_modes",
+                "thermal_jet_score",
                 "rank_gap_boundary",
             ],
         )
@@ -75,6 +76,7 @@ class Norm5AnalysisBundleTests(unittest.TestCase):
         self.assertIn("score_norm5_harmonic_primary_typed.py", flattened)
         self.assertIn("score_intrinsic_functional_cocycle_typed.py", flattened)
         self.assertIn("threshold_score_modes.py", flattened)
+        self.assertIn("score_norm5_thermal_jet.py", flattened)
         self.assertIn("score_rank_gap_boundary_targets.py", flattened)
         self.assertIn("65,130,325", flattened)
         self.assertIn("85,170", flattened)
