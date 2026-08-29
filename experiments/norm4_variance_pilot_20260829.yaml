@@ -106,6 +106,7 @@ source_plus_target_forecast:
     source to 2B and running each target at 1B is the lowest-CPU allocation
     reaching approximately three-sigma expected separation in both directions.
   frozen_production:
+    driver: scripts/run_norm4_production_20260829.sh
     source_extension:
       executable: build/threshold_rank_orientation_mc
       sizes: [65, 130, 85, 170]
