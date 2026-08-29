@@ -1,6 +1,6 @@
 version: 1
 created: 2026-08-29
-status: pilot_only_before_large_norm4_production
+status: pilot_extended_to_10m_for_analysis_floor
 issue: 154
 purpose: >-
   Measure the full-curve variance and CPU cost of the noncyclic N260/N340
@@ -66,3 +66,25 @@ exact_future_nulls:
   jordan: R_J = U_4N - 2*U_2N + U_N
   root_character: DeltaRoot_4N / DeltaRoot_N = 1/16
   central_D: P4_D_4N / P4_D_N = 4^(-13/8)
+
+analysis_floor_extension:
+  frozen_after: >-
+    The 1M generation completed, but the N340 delete-one mean-matching center
+    was not bracketed by the standard full-curve scorer. No q2/Jordan pilot
+    point estimate was scored before this extension.
+  purpose: determine_the_minimum_stable_intrinsic_center_sample_count
+  samples_per_size: 10000000
+  batches: 100
+  threads_per_job: 8
+  N260:
+    seed: 2026105401
+    replica_counter_first: 8101000000
+    replica_counter_last_exclusive: 8111000000
+  N340:
+    seed: 2026105402
+    replica_counter_first: 8101000000
+    replica_counter_last_exclusive: 8111000000
+  rule: >-
+    Treat this as a disjoint variance extension. Do not combine or interpret
+    its point means as prospective q2/Jordan evidence; use it only to project
+    covariance and production cost.
