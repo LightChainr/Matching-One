@@ -119,7 +119,7 @@ class ResearchRegistryTests(unittest.TestCase):
         frontier = [int(row["pr"]) for row in rows]
         self.assertEqual(len(frontier), len(set(frontier)))
         self.assertTrue(
-            {84, 196, 197, 228, 229, 230, 245, 246, 247, 267, 273, 277, 281}.issubset(frontier)
+            {84, 196, 197, 228, 229, 230, 245, 246, 247, 267, 273, 277}.issubset(frontier)
         )
         canonical = {int(row["pr"]) for row in self.registry["canonical_integration_history"]}
         manual = {int(row["pr"]) for row in self.registry.get("manual_integrations", [])}

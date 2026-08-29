@@ -28,6 +28,7 @@ from pathlib import Path
 from typing import Any, Mapping, Optional, Sequence
 
 import yaml
+import mpmath as mp
 
 
 SCHEMA = "matching-one.two-activation-h4.v1"
@@ -442,7 +443,38 @@ def matching_root(
         if not math.isfinite(candidate) or not lower < candidate < upper:
             candidate = (lower + upper) / 2.0
         p = candidate
-    return p
+    # The float Newton/bracketing loop is fast, but its last-ULP stopping point
+    # can depend on the platform libm used by ``q**n``.  That is immaterial for
+    # the point estimate yet can leak into a delete-one covariance through the
+    # difference of two roots.  Finish with a fixed number of high-precision
+    # Newton steps so the serialized root is the same correctly rounded float
+    # on every supported platform.
+    with mp.workdps(50):
+        refined = mp.mpf(p)
+        mp_samples = mp.mpf(samples)
+        for _ in range(4):
+            q = 1 - refined
+            probability = q**n
+            density = n * q ** (n - 1)
+            cumulative1 = 0
+            cumulative2 = 0
+            value = mp.mpf(-1)
+            derivative = mp.mpf(0)
+            for occupied in range(n + 1):
+                if occupied:
+                    cumulative1 += k1[occupied]
+                    cumulative2 += k2[occupied]
+                value += (cumulative1 + cumulative2) * probability / mp_samples
+                if occupied < n:
+                    probability *= (
+                        (n - occupied) * refined / ((occupied + 1) * q)
+                    )
+            for rank in range(1, n + 1):
+                derivative += (k1[rank] + k2[rank]) * density / mp_samples
+                if rank < n:
+                    density *= (n - rank) * refined / (rank * q)
+            refined -= value / derivative
+    return float(refined)
 
 
 def _cos4(a: int, b: int) -> float:
