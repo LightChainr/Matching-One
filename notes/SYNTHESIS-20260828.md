@@ -1,229 +1,147 @@
-# Research Synthesis — 2026-08-29 execution sync
+# Research Synthesis — 2026-08-29 post-norm-5
 
-This is the execution-facing view of Matching One. It is deliberately shorter and more permissive than earlier wave notes: useful analysis, exact work and pilots may proceed by default. `docs/STATUS.md` controls claim language; `docs/ROADMAP.md` ranks information gain.
+This is the execution-facing view after the completed N=325/425 norm-5 reveal and immediate post-reveal analyses. `docs/STATUS.md` controls claim language; `docs/ROADMAP.md` ranks information gain.
 
-## Current thesis
+## What changed
 
-The strongest finite-size picture remains a **two-parity orientation structure with one unresolved derivative/metric mechanism**:
+The project has moved past the old H4/H12 alias question.
+
+The prospective P57 norm-5 block gives
 
 ```text
-matching-odd central sector
-    -> robust and prospectively reproduced
-    -> compatible with DeltaCos4 * N^-13/8
-    -> root motion locally follows DeltaRoot ~= -DeltaM/M'
-
-matching-even central sector
-    -> compatible with the frozen N^-1 amplitude after exact either->cross conversion
-
-intrinsic derivative sectors
-    -> S, D and D-prime pure laws survive N=185/265
-    -> S-prime is decisively nonzero
-    -> pure N^-5/4 fails prospectively
-    -> q=2 and Jordan-log corrections both remain live
+H4:  chi2 =  0.4163 / 2
+H12: chi2 = 35.1931 / 2
+H8:  chi2 = 16.0120 / 2
+zero:chi2 =  1.7764 / 2
 ```
 
-The main uncertainty is no longer whether an orientation signal exists. It is **what compact mechanism transports the full response across size, multiplier and geometry**.
+The frozen H4 transfer is compatible and decisively outperforms the tested H12/H8 aliases. Because zero is also compatible with the noisy child block, P57 is not a new standalone nonzero-effect detection; its value is that it supplies a new angular/multiplier axis and resolves the `1+i` alias.
 
-## Durable evidence
-
-### Central matching-odd signal
-
-Independent N=65,85,130,145,170 data and prospective Gaussian lineages are compatible with
+The central matching-odd evidence chain now spans same-N confirmation, held-out radial tests, norm-2 semigroup lineages, N=185/265 new geometries, root closure, and norm-5 split-prime transfer. The compact empirical law remains
 
 ```text
 DeltaM ~ DeltaCos4 * N^-13/8.
 ```
 
-The N=185/265 new-geometry block gives
+H4 is now substantially harder to replace by the old H12/H8 aliases, but global operator uniqueness and the LCFT/Q4 mechanism are still open.
+
+## The live problem is multivariate finite-size structure
+
+The derivative picture remains
 
 ```text
-N=185 DeltaM = +1.36830e-4 +/- 3.42352e-5
-N=265 DeltaM = +1.27110e-4 +/- 3.46783e-5
-
-x=21/4 H4-like: chi2 = 3.04598 / 2
-zero:            chi2 = 29.40938 / 2
-x=17/4:          chi2 = 30.24613 / 2
+P4[S]   ~ N^-1        survives
+P4[D]   ~ N^-13/8     survives
+P4[D']  ~ N^-5/8      survives
+P4[S']  ~ N^-5/4      pure law fails
 ```
 
-The third fixed-coordinate 145->290 lineage also passed prospectively with residual z about `-0.48`.
-
-This is strong C3 finite-size evidence. H4 uniqueness, unique asymptotic exponent and unique continuum operator remain open.
-
-### Matching-even correction
-
-The historical N=185/265 sign conflict was a source/target observable mismatch. Exact torus topology gives
+P57 does not resolve q=2 versus rank-2/Jordan:
 
 ```text
-DeltaS_cross = -DeltaS_either.
+q2 analytic: chi2 = 10.648 / 6
+Jordan/log:  chi2 =  9.020 / 6
 ```
 
-With that conversion and no refit,
+Immediate post-reveal work deleted two simpler explanations.
+
+### Simple rank-gap boundary correction fails
+
+For
 
 ```text
-corrected chi2 = 0.5700315436 / 2
-z = +0.667, -0.119.
+G = K_plus - K_minus,
 ```
 
-The old unconverted score remains provenance; it is excluded from current evidence.
-
-### Derivative sector
-
-Using frozen source amplitudes and independent N=185/265 targets:
+the exact neutral-window identity is
 
 ```text
-P4[S]   ~ N^-1:     chi2 =  1.13878 / 2
-P4[D]   ~ N^-13/8:  chi2 =  0.28085 / 2
-P4[D']  ~ N^-5/8:   chi2 =  0.08761 / 2
-P4[S']  ~ N^-5/4:  chi2 = 52.71634 / 2
+integral_0^1 E[U_{K~Bin(N,p)}] dp = E[G]/(N+1).
 ```
 
-For S-prime:
+The frozen source law
 
 ```text
-pure N^-5/4:   chi2 = 52.71634 / 2
-rank-2/log:    chi2 =  1.20360 / 2
-analytic 1/N:  chi2 =  0.86221 / 2
-zero:           chi2 = 1278.55524 / 2
+E[G] = A N^(5/8) + B
 ```
 
-So the open mechanism question is narrow: the channel is real, the pure law fails, and two fixed corrections remain viable.
-
-## The finite layer is now an analysis engine
-
-The repository now preserves enough structure that one expensive threshold-rank block can answer many questions without rerunning simulation.
-
-### Exact/semantic primitives
-
-- typed channel/combination/coordinate/order/normalization descriptors;
-- exact registered cross/either maps;
-- arbitrary integer-period torus backend with exact winding arithmetic;
-- exact finite Russo/pivotal identity;
-- exact C4 self-matching tangent;
-- exact N=26 Beta-family falsification and reliability-signature interpretation.
-
-### Evidence accounting
-
-The prequential ledger from #95 is complete. One raw random block contributes one additive primary view; correlated root/slope/derivative/score-mode diagnostics remain available without becoming duplicate evidence votes.
-
-### Krawtchouk/Hermite response coordinates
-
-The same threshold-rank histograms can be projected onto orthonormal binomial Krawtchouk score modes. Mode 0 and mode 1 exactly recover value and first-derivative information in new coordinates, while modes `r>=2` expose a higher thermal-response vector.
-
-The exact finite-N generating function is
+fails its N325/N425 target with joint
 
 ```text
-R_N(p) = sum_r c_r sqrt(C(N,r))
-         ((p-p0)/sqrt(p0(1-p0)))^r.
+chi2 = 155.22 / 2.
 ```
 
-This means the score tower is one full-curve Taylor jet, not a collection of unrelated observables.
+The source constant-correction fit was already poor, so this does not reject the thermal exponent. It rejects the idea that one constant boundary term is an adequate description over the current range.
 
-### Paired rank-gap width
+### Scalar width collapse fails
 
-The joint statistic
+Using the **observed** canonical width
 
 ```text
-G = K_plus - K_minus
+w_can(N) = N^(3/8) E[G]/(N+1)
 ```
 
-contains information not reconstructible from the two marginal rank laws. Exactly,
+does not collapse the higher Krawtchouk/Hermite thermal jet. In the point-level diagnostic, 65->325 has r>=2 cosine `-0.35`; 85->425 keeps a similar direction (`0.994`) but still has large order-dependent amplitude residuals. Width-corrected q=2/Jordan residual norms remain comparable rather than separating.
 
-```text
-integral_0^1 E[U_{K~Bin(N,p)}] dp = E[G]/(N+1),
-```
+This is exploratory because full covariance is not attached to that fast diagnostic. Its use is directional: **stop trying to explain the whole derivative tower with one scalar width parameter.**
 
-where `U` is the neutral-window indicator. This provides a canonical width coordinate
+## The active mechanism direction
 
-```text
-w_can(N) = N^(3/8) E[G]/(N+1).
-```
+The highest-value model class is now a small multivariate transfer/mixing state.
 
-The source fit and its N=325/425 target predictions are frozen before the norm-5 reveal. The strongest immediate mechanism test is therefore width-only collapse of the Hermite/Krawtchouk jet, followed by q=2 versus Jordan cocycle scoring if a residual direction remains.
+Retrospective full-curve analysis already found that a rank-1 identity block plus a rank-2 thermal block compresses the four derivative/parity channels better than unrelated scalar corrections. Krawtchouk/Hermite modes provide a structured full-curve state vector; metric-free ratios provide another low-dimensional readout.
 
-### Low-rank matrix/semigroup discovery
+The next question is therefore:
 
-The retrospective P48/full-curve analysis now has a compact matrix-state candidate: a rank-1 identity block plus a rank-2 thermal block gives a much better organizing picture than assigning a new independent exponent to every scalar channel. Its Jordan-vs-ordinary ranking is post-reveal discovery, not prospective evidence, but it creates a sharper held-out transfer test for N=290 and norm-5.
+> Can one source-fitted low-rank transfer state predict a genuinely held-out full curve and its derived coordinates?
 
-### Information-oriented geometry design
+This is more discriminating than fitting another correction exponent to P57.
 
-The maximin Gaussian design tooling from #139 is canonical. It confirms norm-5 as a high-leverage H4/H12/radial discriminator under its planning model and supplies exact multiplier/harmonic arithmetic for choosing later geometries by model separation per compute cost.
+## Highest-value next block: #50 N=145 -> 290 full curve
 
-## Highest-value execution
+The fixed-coordinate 145->290 result already passed prospectively. The full curve is now the single best next production target because it can test several live mechanisms at once without changing geometry families.
 
-### 1. #57 N=325/425 — one block, many questions
+Score/use it in this order:
 
-Do not treat norm-5 as a single H4/H12 number. Produce full threshold-rank histograms and joint moments, then score the same raw block in this order:
+1. frozen central `DeltaM` transfer;
+2. bare center-slope baseline;
+3. already-frozen finite-size slope correction;
+4. direct and induced root-ratio predictions;
+5. derivative S/D channels;
+6. held-out low-rank matrix/semigroup transfer;
+7. Krawtchouk/Hermite thermal-response vector;
+8. paired rank-gap/neutral-window behavior;
+9. metric-free `R_I`/`R_T` ratios, frozen against N290 rather than retrospectively assigned to P57.
 
-1. frozen H4/H12/H8/zero fixed-p primary;
-2. intrinsic/full-curve q=2 versus Jordan cocycle;
-3. frozen Krawtchouk thermal vector `(D2,S3,D4,S5,D6)`;
-4. frozen paired rank-gap N=325/425 targets;
-5. canonical rank-gap width -> Hermite/Krawtchouk width-collapse residual;
-6. root/slope closure, derivative, multi-u and low-rank-transfer diagnostics;
-7. update the prequential ledger with one additive primary view for the raw block.
+All derived views come from one raw block and must remain one correlated evidence unit.
 
-A small pilot or exploratory block may start whenever useful. If optional-stopping guarantees are desired, use the frozen sequential rule from the beginning; otherwise the data remain ordinary exploratory/fixed-count evidence.
+## What comes after N290
 
-### 2. #50 N=145->290 full curve
+### If a compact transfer state predicts
 
-The fixed-coordinate result is already prospective. The full curve should test:
+Then stop adding scalar corrections. Use the learned state to choose the next multiplier/modulus by expected separation of competing transfer operators. Norm-4, Pell/modulus or another Gaussian split prime can be selected with the maximin design tools.
 
-1. central residual transfer;
-2. bare center-slope multiplier;
-3. frozen finite-size slope correction;
-4. direct and induced root transfer;
-5. derivative channels;
-6. Krawtchouk/rank-gap coordinates;
-7. held-out low-rank matrix/semigroup transfer.
+### If N290 rejects the compact state
 
-This is a third-lineage mechanism test, not another signal-discovery run.
+Use the residual direction to decide whether the failure is:
 
-### 3. Existing-data analysis continues in parallel
+- dyadic q=2/Jordan structure -> #154 norm-4;
+- microscopic matching/RG decomposition -> #155 self-matching tangent;
+- torus-shape/operator fingerprint -> #159/modulus/Pell;
+- arithmetic/quotient dependence -> general-period matched control.
 
-Run useful work without waiting for a roadmap promotion:
+Do not respond by adding a free scalar exponent first.
 
-- #101 intrinsic quantile centers;
-- #119 multi-u functional response;
-- #125 joint operator mixing;
-- #122 standardized threshold profile;
-- #100/#121 orientation-resolved pivotal/four-arm structure;
-- #113 exact local-zero structure;
-- #118 dimensionless amplitude ratios;
-- #180 low-rank full-curve transfer operator.
+## Independent controls that are now cheap
 
-## Later compute is a priority choice, not a gate
+- exact square-bond geometric dual transport fixes the self-dual primal/dual convention and forces the odd center channel to vanish at `p=1/2`;
+- finite Russo/pivotal identity gives a probability-theory interpretation of the slope;
+- N=26 Beta failure and reliability signatures constrain exact finite mechanisms;
+- rectangular Q4/E4 arithmetic supplies a shape fingerprint;
+- metric-free ratios cancel the thermal coordinate metric and can be held out on N290.
 
-Norm-4 N=260/340, large-N self-matching tangent, Pell/modulus geometry and N=1105 are all valid exploratory directions. Their present ordering reflects expected information per CPU, not permission.
+These may proceed in parallel; none needs to wait for a governance promotion.
 
-Use the maximin/information-design tools to decide when one of them outranks extending #57 or #50. A strong operator-specific Pell/modulus claim still needs an explicit observable bridge, but generating exploratory data does not.
+## Current thesis
 
-## Parallel theory/control routes
-
-Keep multiple bridges alive until one creates a sharper score:
-
-- FK/Potts torus-sector derivation;
-- pivotal/four-arm anisotropy;
-- torus-modulus and Gaussian-CM/isogeny spectroscopy;
-- exactly-critical anisotropy controls;
-- Euler/Betti/topological polynomial identities;
-- universal amplitude ratios;
-- self-matching RG tangent;
-- bounded exact/Galois work.
-
-Theory earns priority when it produces an independent derivation, exact control, or parameter-free/low-dimensional target that current data can score.
-
-## Avoid low-information loops
-
-Low priority rather than forbidden:
-
-- another free exponent fit on the old five sizes;
-- more N=185/265 replicas merely repeating an already completed test;
-- generalized Beta rescue fitting after the exact N=26 failure;
-- broad PSLQ without a new structural constraint;
-- transfer-matrix width solely for threshold digits;
-- large production that stores only a final scalar instead of reusable sufficient statistics;
-- treating several views from one histogram as independent evidence.
-
-## Current project thesis
-
-> Square-site/matching finite-size corrections contain reproducible matching-odd and matching-even orientation sectors once exact wrapping-channel semantics are aligned. The central matching-odd residual is compatible with an odd-square-harmonic `N^-13/8` law across independent seeds, exact Gaussian transformations and prospective new geometries, and it moves the finite root through the expected residual/slope mechanism. The matching-even central amplitude survives the N=185/265 block after exact channel conversion. Threshold ranks now also provide a reusable finite analysis state: reliability signatures, pivotal mass, Krawtchouk/Hermite response modes, paired rank-gap width and low-rank transfer structure. The next decisive step is to use N=325/425 and N=290 full curves as multi-question held-out blocks that discriminate harmonic content, thermal metric and compact transfer mechanisms at once.
+> The matching-odd central orientation sector is now supported across independent seeds, new geometries, norm-2 and norm-5 Gaussian multipliers, and local root closure. Norm-5 decisively removes the main H12/H8 angular aliases but does not by itself prove a nonzero child effect or a unique continuum operator. The derivative anomaly is not well described by either a constant rank-gap boundary correction or a single scalar width flow. The next high-information question is whether a small multivariate finite-size transfer/mixing state predicts the held-out N=145->290 full curve. That is the line to optimize around now.
