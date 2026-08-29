@@ -1,0 +1,68 @@
+{
+  "claim_boundary": {
+    "conditional": "identification of microscopic H4/E6 responses and the continuum Jordan limit",
+    "exact": "gauge no-go, cancellation in U46, C3 character closure, and Gram transformation laws",
+    "not_claimed": "universality of either bare amplitude or the finite-cutoff Issue #234 J values"
+  },
+  "cross_microscopic_double_ratio": {
+    "cancelled": [
+      "square_H4_irrelevant_coupling",
+      "triangular_E6_irrelevant_coupling",
+      "both_field_normalizations",
+      "both_constant_metric_factors"
+    ],
+    "conditional_bridge": "the two lattice responses must be typed as the same-frame E4 and E6 torus one-point shapes",
+    "division_free_null": "A4_square(j)^3*A6_triangular(k)^2-A4_square(k)^3*A6_triangular(j)^2=0",
+    "formula": "U46(j,k)=(A4_square(j)/A4_square(k))^3/(A6_triangular(j)/A6_triangular(k))^2",
+    "frozen_target": "U46(j,k)=1 for all three child pairs",
+    "hex_degree2_child_pair_values": {
+      "0:1": {
+        "character_exponent_mod_3": 0,
+        "exact": "1",
+        "floating_oracle_absolute_error": 4.900355254280762e-16
+      },
+      "0:2": {
+        "character_exponent_mod_3": 0,
+        "exact": "1",
+        "floating_oracle_absolute_error": 5.23691153334427e-16
+      },
+      "1:2": {
+        "character_exponent_mod_3": 0,
+        "exact": "1",
+        "floating_oracle_absolute_error": 6.673721777099395e-16
+      }
+    },
+    "powers_reason": "3*weight(E4)=2*weight(E6)=12"
+  },
+  "issue": 118,
+  "log_pair": {
+    "K": "LL*DD/LD^2",
+    "coflow_observables": [
+      "LL",
+      "LD",
+      "DD"
+    ],
+    "existing_issue_234_J": "K-1",
+    "finite_cutoff_shear_invariant": false,
+    "jordan_limit": "LL->0 with LD!=0 implies K->0 and J->-1, invariant under top->top+alpha*bottom",
+    "minimal_required_observable": "the same-flow mixed pairing LD; LL and DD alone cannot cancel independent field normalizations",
+    "rescaling_invariant": true
+  },
+  "raw_single_modulus_no_go": {
+    "charge_matrix": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "gauge_group": "(C*)_H4 x (C*)_E6",
+    "kernel_dimension": 0,
+    "statement": "A4^p A6^q is invariant only for p=q=0."
+  },
+  "schema": "matching-one/cross-microscopic-amplitude-invariants/v1",
+  "status": "exact_gauge_counting_and_conditional_modular_prediction"
+}
