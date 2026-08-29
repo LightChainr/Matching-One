@@ -1,0 +1,156 @@
+{
+  "archive_audit": {
+    "fk_q_score_archive": {
+      "contains_explicit_field_derivative": false,
+      "contains_measure_score": true,
+      "observable_semantics": "fixed topology functions",
+      "path": "results/fk-q-score/latest.json",
+      "present": true,
+      "sizes": [
+        2
+      ]
+    },
+    "missing": [
+      "two sizes of one declared generic-Q spin-4 field family",
+      "explicit derivative of its Q-dependent projector/normalization",
+      "full covariance of [O1,dQO1,O2,dQO2]"
+    ],
+    "scoreable_now": false,
+    "site_percolation_score_archive": {
+      "coordinate": "Bernoulli site t/lambda; not Potts critical-manifold Q",
+      "path": "results/local-20260829/P225-multiradius-pivotal/raw/n130_n170_20k.batches.csv",
+      "present": true,
+      "usable_for_Q_velocity": false
+    }
+  },
+  "claim_boundary": {
+    "exact": "continuum dimensions and Q velocities",
+    "forbidden": "substitute the FK measure score for the total field derivative",
+    "synthetic": "amplitude cancellation and covariance propagation",
+    "unresolved": "physical Potts multiplicity, lattice overlap, and explicit field derivative"
+  },
+  "exact_targets": {
+    "dimension_gap_thermal_minus_four_leg": "1",
+    "fields": {
+      "four_leg_V_2_2": {
+        "absolute_spin": 4,
+        "dx_dQ_at_Q1": {
+          "coefficient_sqrt3_over_pi": "-5/16",
+          "decimal": -0.17229027981931003,
+          "exact": "-5/16*sqrt(3)/pi"
+        },
+        "dx_du": {
+          "decimal": -1.875,
+          "denominator": 8,
+          "numerator": -15,
+          "text": "-15/8"
+        },
+        "generic_Q_family": "V_(2,2) dense/FK loop primary",
+        "leg_count": 4,
+        "potts_multiplicity": "unresolved",
+        "spin": -4,
+        "velocity_coefficient_sqrt3_over_pi": {
+          "decimal": -0.3125,
+          "denominator": 16,
+          "numerator": -5,
+          "text": "-5/16"
+        },
+        "x": {
+          "decimal": 4.25,
+          "denominator": 4,
+          "numerator": 17,
+          "text": "17/4"
+        }
+      },
+      "thermal_Q4_epsilon": {
+        "absolute_spin": 4,
+        "dx_dQ_at_Q1": {
+          "coefficient_sqrt3_over_pi": "-9/16",
+          "decimal": -0.310122503674758,
+          "exact": "-9/16*sqrt(3)/pi"
+        },
+        "dx_du": {
+          "decimal": -3.375,
+          "denominator": 8,
+          "numerator": -27,
+          "text": "-27/8"
+        },
+        "generic_Q_family": "level-4 chiral descendant of Potts energy",
+        "leg_count": 0,
+        "potts_multiplicity": "thermal family known; lattice Q4 overlap unresolved",
+        "spin": 4,
+        "velocity_coefficient_sqrt3_over_pi": {
+          "decimal": -0.5625,
+          "denominator": 16,
+          "numerator": -9,
+          "text": "-9/16"
+        },
+        "x": {
+          "decimal": 5.25,
+          "denominator": 4,
+          "numerator": 21,
+          "text": "21/4"
+        }
+      }
+    },
+    "potts_coordinate": {
+      "Q1_u": "2/3",
+      "dQ_du_at_Q1": "2*pi*sqrt(3)",
+      "d_dt_equals_d_dQ_at_Q1": true,
+      "sqrt_Q": "-2*cos(pi*u)",
+      "t": "log(Q)",
+      "u": "beta^2"
+    },
+    "velocity_gap_four_leg_minus_thermal_Q4": {
+      "coefficient_sqrt3_over_pi": "1/4",
+      "decimal": 0.13783222385544802,
+      "exact": "sqrt(3)/(4*pi)"
+    }
+  },
+  "issue": 261,
+  "lattice_score": {
+    "reason": "no archive contains two sizes plus an explicit generic-Q field derivative",
+    "status": "NOT_SCOREABLE"
+  },
+  "schema": "matching-one.q1-spin4-velocity-oracle.v1",
+  "scorer_contract": {
+    "covariance": "full 4x4; propagated with the exact gradient",
+    "formula": "-[(dQO2/O2)-(dQO1/O1)]/log(L2/L1)",
+    "input_schema": "matching-one.q-velocity-two-size-input.v1",
+    "point_order": [
+      "O_L1",
+      "dQ_O_L1",
+      "O_L2",
+      "dQ_O_L2"
+    ],
+    "required_derivative_semantics": "total_dQ_field=measure_score_response+explicit_field_definition_derivative"
+  },
+  "synthetic_two_size_oracle": {
+    "four_leg_V_2_2": {
+      "absolute_error": 2.7755575615628914e-17,
+      "normalization_velocity_cancelled": -0.43,
+      "point": [
+        0.025549371611386585,
+        -0.001832718636260624,
+        0.00537109375,
+        0.0002561479270332551
+      ],
+      "recovered_velocity": -0.17229027981931005,
+      "synthetic_model": "A(Q)*L^[-y(Q)] with arbitrary A(1), dQ log A",
+      "target_velocity": -0.17229027981931003
+    },
+    "thermal_Q4_epsilon": {
+      "absolute_error": 5.551115123125783e-17,
+      "normalization_velocity_cancelled": -0.43,
+      "point": [
+        0.025549371611386585,
+        0.00549009028904786,
+        0.00537109375,
+        0.0023087225186598586
+      ],
+      "recovered_velocity": -0.3101225036747581,
+      "synthetic_model": "A(Q)*L^[-y(Q)] with arbitrary A(1), dQ log A",
+      "target_velocity": -0.310122503674758
+    }
+  }
+}

@@ -1,0 +1,40 @@
+schema: matching-one.q-velocity-spin4-manifest.v1
+issue: 261
+base_oracles: [PR260, analysis/p258-exact-fk-q-score-20260829@ce8f27a]
+potts_coordinate:
+  u: beta_squared
+  sqrt_Q: -2*cos(pi*u)
+  Q1_u: 2/3
+  score_t: log(Q)
+exact_targets:
+  four_leg_V_2_2: {x: 17/4, spin: -4, dx_dQ_Q1: -5*sqrt(3)/(16*pi)}
+  thermal_Q4_epsilon: {x: 21/4, spin: 4, dx_dQ_Q1: -9*sqrt(3)/(16*pi)}
+  velocity_gap: sqrt(3)/(4*pi)
+scorer:
+  sizes: [8, 16]
+  point_order: [O_L1, dQ_O_L1, O_L2, dQ_O_L2]
+  required_covariance: full_4x4
+  primary: -((dQ_O_L2/O_L2)-(dQ_O_L1/O_L1))/log(L2/L1)
+  required_derivative: total_dQ_field=measure_score_response+explicit_field_definition_derivative
+minimal_acquisition:
+  model: square_lattice_critical_FK
+  Q: 1
+  sizes: [8, 16]
+  fields:
+    - controlled_character_weighted_four_leg_V_2_2
+    - controlled_energy_then_source_frozen_Q4_descendant
+  archive_per_field_and_size:
+    - observable_sum
+    - measure_score_T_sum
+    - observable_times_score_T_sum
+    - explicit_field_definition_derivative_sum
+  batches: variance_selected
+  covariance: joint within each field; cross-field covariance retained when streamed together
+current_gap:
+  - PR258 has only L2 and fixed topology observables
+  - no archive has an explicit generic-Q spin4 projector derivative
+  - site-percolation t/lambda streams are not Potts-Q score streams
+forbidden:
+  - call_measure_score_a_field_derivative
+  - score_a_raw_pivotal_H4_as_V_2_2_without_character_calibration
+  - fit_a_two_field_velocity_without_amplitude_derivative_controls
