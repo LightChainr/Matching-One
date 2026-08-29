@@ -1,0 +1,599 @@
+{
+  "identifiability_boundary": {
+    "geometry_context": "ED/OD compare two static HNF embeddings under shared counters; they are not join-order variables",
+    "mixed_factor_interaction": "identified by nonzero R_c=J_full-J_local after the exact local incidence subtraction",
+    "path_or_state_memory": "not identified because batches omit intermediate corner states and chronological filtrations",
+    "typed_ambient_H1": "endpoint mixed defect only, with frozen representative-displacement convention; correlated secondary"
+  },
+  "input": {
+    "N": 650,
+    "batch_csv": "results/local-20260829/P200-n650-mixed-join-smoke/n650_20k.batches.csv",
+    "batches": 100,
+    "committed_score": "results/local-20260829/P200-n650-mixed-join-smoke/score.json",
+    "metadata": "results/local-20260829/P200-n650-mixed-join-smoke/n650_20k.metadata.json",
+    "samples": 20000,
+    "sha256": {
+      "batch_csv": "db5be1d870135053691e34605703f15e99e95df2da88dc279c0a55e26130d0af",
+      "committed_score": "d49fce38a1a14916f343ee48bdf39e39a2f6150618ffa439354eb75b2023fd9a",
+      "metadata": "8f3d3605d5a99c043e2d465be0d2e4753d719d6388822048f6f4d365c05abbd7",
+      "prediction": "8c043677605f9c8d0a00ee11fcc93539da9ea87bbacb93553e76ea26ec27ba5f"
+    },
+    "source_fibers": 65
+  },
+  "issue": 200,
+  "local_incidence_subtraction": {
+    "context_reconstruction": [
+      {
+        "connected_residual_mean": -44.0331,
+        "connected_residual_se": 0.06657094567512774,
+        "context": "first_black",
+        "exact_local_incidence_baseline_mean": 56.65207726547156,
+        "implied_full_mixed_join_mean": 12.618977265471564,
+        "per_source_fiber": {
+          "connected_residual": -0.6774323076923077,
+          "implied_full_mixed_join": 0.19413811177648554,
+          "local_incidence_baseline": 0.8715704194687932
+        }
+      },
+      {
+        "connected_residual_mean": -9.680350000000002,
+        "connected_residual_se": 0.03748819713246323,
+        "context": "first_white",
+        "exact_local_incidence_baseline_mean": 15.15251021062233,
+        "implied_full_mixed_join_mean": 5.472160210622327,
+        "per_source_fiber": {
+          "connected_residual": -0.14892846153846157,
+          "implied_full_mixed_join": 0.08418708016342044,
+          "local_incidence_baseline": 0.233115541701882
+        }
+      },
+      {
+        "connected_residual_mean": -43.99875,
+        "connected_residual_se": 0.07064527173981228,
+        "context": "second_black",
+        "exact_local_incidence_baseline_mean": 56.65207726547156,
+        "implied_full_mixed_join_mean": 12.65332726547156,
+        "per_source_fiber": {
+          "connected_residual": -0.6769038461538461,
+          "implied_full_mixed_join": 0.19466657331494708,
+          "local_incidence_baseline": 0.8715704194687932
+        }
+      },
+      {
+        "connected_residual_mean": -9.703550000000002,
+        "connected_residual_se": 0.03624191271682191,
+        "context": "second_white",
+        "exact_local_incidence_baseline_mean": 15.15251021062233,
+        "implied_full_mixed_join_mean": 5.448960210622328,
+        "per_source_fiber": {
+          "connected_residual": -0.14928538461538465,
+          "implied_full_mixed_join": 0.08383015708649735,
+          "local_incidence_baseline": 0.233115541701882
+        }
+      }
+    ],
+    "exact_p_ref_baseline_per_source_fiber": {
+      "black": 0.8715704194687932,
+      "white": 0.233115541701882
+    },
+    "formula": "R_c=J_full,c-sum_over_65_fibers b1(Inc_c)",
+    "performed_in_runner": true,
+    "raw_contains_only_residual": true
+  },
+  "morphism_parameter_freeze": {
+    "classification": "post_reveal_conditional_future_challenge",
+    "common_connected_residual_density_per_source_fiber": {
+      "black": {
+        "estimate": -0.6771680769230769,
+        "se": 0.0010247145662683997
+      },
+      "white": {
+        "estimate": -0.1491069230769231,
+        "se": 0.0005452309470376336
+      }
+    },
+    "conditional_N1300_prediction": {
+      "assumptions": [
+        "connected residual is extensive in the number of C2xC5 source fibers",
+        "geometry-difference ED and OD remain zero",
+        "p_ref and typed graph semantics are unchanged"
+      ],
+      "black_connected_residual": {
+        "mean": -88.03184999999999,
+        "parameter_fit_se_only": 0.13321289361489197
+      },
+      "mean": [
+        -107.41575,
+        0.0,
+        -68.64794999999998,
+        0.0
+      ],
+      "model_discrepancy": "unestimated from a single N; this is a freeze, not an established scale law",
+      "source_fibers": 130,
+      "state_order": [
+        "ES",
+        "ED",
+        "OS",
+        "OD"
+      ],
+      "unrun_geometry_pair": [
+        {
+          "N1300_after_3_plus_i": [
+            30,
+            20
+          ],
+          "N260_after_1_plus_i": [
+            8,
+            14
+          ],
+          "N650_after_2_minus_i": [
+            25,
+            -5
+          ],
+          "final_period_matrix": [
+            [
+              30,
+              -20
+            ],
+            [
+              20,
+              30
+            ]
+          ],
+          "name": "source_11_plus_3i",
+          "source_gaussian": [
+            11,
+            3
+          ]
+        },
+        {
+          "N1300_after_3_plus_i": [
+            12,
+            34
+          ],
+          "N260_after_1_plus_i": [
+            -2,
+            16
+          ],
+          "N650_after_2_minus_i": [
+            23,
+            11
+          ],
+          "final_period_matrix": [
+            [
+              12,
+              -34
+            ],
+            [
+              34,
+              12
+            ]
+          ],
+          "name": "source_7_plus_9i",
+          "source_gaussian": [
+            7,
+            9
+          ]
+        }
+      ],
+      "white_connected_residual": {
+        "mean": -19.383900000000004,
+        "parameter_fit_se_only": 0.07088002311489237
+      }
+    },
+    "same_N650_new_HNF_geometry_prediction": {
+      "E": -53.707875,
+      "O": -34.323975,
+      "condition": "same C2xC5 observable, p_ref, source-fiber count, and graph typing",
+      "fit_covariance_EO": [
+        [
+          0.0032725951704545455,
+          0.0031804243371212123
+        ],
+        [
+          0.0031804243371212123,
+          0.008112231180555556
+        ]
+      ],
+      "model_discrepancy": "not estimated; ED/OD are only a two-geometry compatibility check"
+    }
+  },
+  "primary_partition_residual": {
+    "batch_parity_sensitivity_ES_OS": {
+      "even_batches": [
+        -53.6647,
+        -34.2593
+      ],
+      "odd_batches": [
+        -53.75105,
+        -34.38865
+      ],
+      "role": "post_reveal robustness only"
+    },
+    "common_geometry_S": {
+      "chi_square": 945025.8310498161,
+      "covariance": [
+        [
+          0.0032725951704545455,
+          0.0031804243371212123
+        ],
+        [
+          0.0031804243371212123,
+          0.008112231180555556
+        ]
+      ],
+      "degrees_of_freedom": 2,
+      "log10_p_value": -205209.75184048494,
+      "marginal": [
+        {
+          "mean": -53.707875,
+          "name": "ES",
+          "se": 0.057206600759480065,
+          "z": -938.8405234180906
+        },
+        {
+          "mean": -34.323975,
+          "name": "OS",
+          "se": 0.09006792537055329,
+          "z": -381.089881428776
+        }
+      ],
+      "mean": [
+        -53.707875,
+        -34.323975
+      ],
+      "p_value": 0.0,
+      "state_order": [
+        "ES",
+        "OS"
+      ]
+    },
+    "covariance": [
+      [
+        0.0032725951704545455,
+        -0.00013198828914141414,
+        0.0031804243371212123,
+        -0.00016408753156565655
+      ],
+      [
+        -0.00013198828914141414,
+        0.0004141576452020202,
+        -0.00016138861742424242,
+        0.0001713776957070707
+      ],
+      [
+        0.0031804243371212123,
+        -0.00016138861742424242,
+        0.008112231180555556,
+        -0.00010159917297979798
+      ],
+      [
+        -0.00016408753156565655,
+        0.0001713776957070707,
+        -0.00010159917297979798,
+        0.0003423023926767677
+      ]
+    ],
+    "geometry_difference_D": {
+      "chi_square": 2.6564513001439676,
+      "covariance": [
+        [
+          0.0004141576452020202,
+          0.0001713776957070707
+        ],
+        [
+          0.0001713776957070707,
+          0.0003423023926767677
+        ]
+      ],
+      "degrees_of_freedom": 2,
+      "log10_p_value": -0.576841070548622,
+      "marginal": [
+        {
+          "mean": -0.005575,
+          "name": "ED",
+          "se": 0.020350863500156944,
+          "z": -0.273944149837033
+        },
+        {
+          "mean": -0.028775,
+          "name": "OD",
+          "se": 0.01850141596410306,
+          "z": -1.5552863659640979
+        }
+      ],
+      "mean": [
+        -0.005575,
+        -0.028775
+      ],
+      "p_value": 0.26494695308493754,
+      "state_order": [
+        "ED",
+        "OD"
+      ]
+    },
+    "leave_one_sign_stability": {
+      "ES": 1.0,
+      "OS": 1.0
+    },
+    "mean": [
+      -53.707875,
+      -0.005575,
+      -34.323975,
+      -0.028775
+    ],
+    "one_orientation_exact_local_reference_scale": {
+      "even": 7.488234400056551,
+      "odd": 9.326257506118877,
+      "scaled_mean": [
+        -7.172301524054109,
+        -0.000744501267208983,
+        -3.680358919693171,
+        -0.0030853748120423406
+      ],
+      "scaled_state_order": [
+        "ES",
+        "ED",
+        "OS",
+        "OD"
+      ]
+    },
+    "orientation_contexts": {
+      "covariance": [
+        [
+          0.004431690808080808,
+          -0.0012071397474747475,
+          0.004161614898989899,
+          -0.0012292222727272727
+        ],
+        [
+          -0.0012071397474747475,
+          0.0014053649242424242,
+          -0.0012265233585858587,
+          0.0011525682575757577
+        ],
+        [
+          0.004161614898989899,
+          -0.0012265233585858587,
+          0.004990754419191919,
+          -0.0011767506313131314
+        ],
+        [
+          -0.0012292222727272727,
+          0.0011525682575757577,
+          -0.0011767506313131314,
+          0.0013134762373737375
+        ]
+      ],
+      "mean": [
+        -44.0331,
+        -9.680350000000002,
+        -43.99875,
+        -9.703550000000002
+      ],
+      "state_order": [
+        "first_black",
+        "first_white",
+        "second_black",
+        "second_white"
+      ]
+    },
+    "per_source_fiber_state_mean": [
+      -0.826275,
+      -8.576923076923078e-05,
+      -0.5280611538461538,
+      -0.0004426923076923077
+    ],
+    "second_minus_first_geometry": {
+      "chi_square": 2.6564513001439676,
+      "covariance": [
+        [
+          0.0016566305808080807,
+          0.0006855107828282828
+        ],
+        [
+          0.0006855107828282828,
+          0.0013692095707070707
+        ]
+      ],
+      "degrees_of_freedom": 2,
+      "log10_p_value": -0.576841070548622,
+      "marginal": [
+        {
+          "mean": 0.01115,
+          "name": "E_second-E_first",
+          "se": 0.04070172700031389,
+          "z": 0.273944149837033
+        },
+        {
+          "mean": 0.05755,
+          "name": "O_second-O_first",
+          "se": 0.03700283192820612,
+          "z": 1.5552863659640979
+        }
+      ],
+      "mean": [
+        0.01115,
+        0.05755
+      ],
+      "p_value": 0.26494695308493754,
+      "state_order": [
+        "E_second-E_first",
+        "O_second-O_first"
+      ]
+    },
+    "state_order": [
+      "ES",
+      "ED",
+      "OS",
+      "OD"
+    ]
+  },
+  "schema": "matching-one.p200-n650-context-morphism-map.v1",
+  "scientific_card": [
+    "Question: Does the revealed N650 signal require ordered path/state memory, or only a static mixed-factor interaction?",
+    "Exact boundary: the runner subtracts local C2xC5 incidence cycles configurationwise, and the two final joins commute.",
+    "Observed: residual common modes ES and OS survive overwhelmingly, while geometry-difference ED/OD jointly remain compatible with zero.",
+    "Not identified: the raw batches contain no intermediate h0,h2,h5,h25 state or chronology, so ES/OS cannot diagnose path memory.",
+    "Freeze: transport rho_B=-0.67716808 and rho_W=-0.14910692 per source fiber only as a future geometry/scale challenge, with scale discrepancy unestimated."
+  ],
+  "status": "post_reveal_opportunity_map_no_new_production",
+  "typed_ambient_H1": {
+    "common_geometry_S": {
+      "chi_square": 189563315.32955092,
+      "covariance": [
+        [
+          2.1186868686868686e-08,
+          -7.53030303030303e-08
+        ],
+        [
+          -7.53030303030303e-08,
+          5.3510505050505053e-05
+        ]
+      ],
+      "degrees_of_freedom": 2,
+      "log10_p_value": -41163150.90945504,
+      "marginal": [
+        {
+          "mean": -1.99905,
+          "name": "ambient_ES",
+          "se": 0.000145557097686333,
+          "z": -13733.785791111577
+        },
+        {
+          "mean": 0.0064,
+          "name": "ambient_OS",
+          "se": 0.007315087494384811,
+          "z": 0.8749040944367038
+        }
+      ],
+      "mean": [
+        -1.99905,
+        0.0064
+      ],
+      "p_value": 0.0,
+      "state_order": [
+        "ambient_ES",
+        "ambient_OS"
+      ]
+    },
+    "covariance": [
+      [
+        2.1186868686868686e-08,
+        -3.0303030303030305e-10,
+        -7.53030303030303e-08,
+        -4.643939393939394e-08
+      ],
+      [
+        -3.0303030303030305e-10,
+        2.01010101010101e-08,
+        2.4141414141414143e-08,
+        -7.272727272727273e-09
+      ],
+      [
+        -7.53030303030303e-08,
+        2.4141414141414143e-08,
+        5.3510505050505053e-05,
+        -1.7656060606060606e-06
+      ],
+      [
+        -4.643939393939394e-08,
+        -7.272727272727273e-09,
+        -1.7656060606060606e-06,
+        3.608179292929293e-05
+      ]
+    ],
+    "geometry_difference_D": {
+      "chi_square": 0.5244435174706089,
+      "covariance": [
+        [
+          2.01010101010101e-08,
+          -7.272727272727273e-09
+        ],
+        [
+          -7.272727272727273e-09,
+          3.608179292929293e-05
+        ]
+      ],
+      "degrees_of_freedom": 2,
+      "log10_p_value": -0.11388146285370855,
+      "marginal": [
+        {
+          "mean": -0.0001,
+          "name": "ambient_ED",
+          "se": 0.0001417780310944192,
+          "z": -0.7053278933842967
+        },
+        {
+          "mean": -0.00095,
+          "name": "ambient_OD",
+          "se": 0.006006812210257028,
+          "z": -0.15815377054368576
+        }
+      ],
+      "mean": [
+        -0.0001,
+        -0.00095
+      ],
+      "p_value": 0.7693403968358544,
+      "state_order": [
+        "ambient_ED",
+        "ambient_OD"
+      ]
+    },
+    "interpretation": "the surviving common even rank defect is convention-labelled endpoint topology, not chronology",
+    "mean": [
+      -1.99905,
+      -0.0001,
+      0.0064,
+      -0.00095
+    ],
+    "orientation_color_contexts": {
+      "covariance": [
+        [
+          2.147300505050505e-05,
+          -2.150510101010101e-05,
+          4.323434343434345e-06,
+          -4.392196969696971e-06
+        ],
+        [
+          -2.150510101010101e-05,
+          2.1577878787878787e-05,
+          -4.321616161616163e-06,
+          4.391464646464648e-06
+        ],
+        [
+          4.323434343434345e-06,
+          -4.321616161616163e-06,
+          2.3261212121212122e-05,
+          -2.3270404040404042e-05
+        ],
+        [
+          -4.392196969696971e-06,
+          4.391464646464648e-06,
+          -2.3270404040404042e-05,
+          2.3321489898989898e-05
+        ]
+      ],
+      "mean": [
+        -0.99685,
+        -1.0023,
+        -0.9958,
+        -1.00315
+      ],
+      "state_order": [
+        "first_black",
+        "first_white",
+        "second_black",
+        "second_white"
+      ]
+    },
+    "scaling": "global rank O(1), not divided by the 65 source fibers",
+    "state_order": [
+      "ambient_ES",
+      "ambient_ED",
+      "ambient_OS",
+      "ambient_OD"
+    ]
+  }
+}
