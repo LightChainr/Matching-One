@@ -17,7 +17,6 @@
 #include <algorithm>
 #include <array>
 #include <chrono>
-#include <cmath>
 #include <cstdint>
 #include <cstdlib>
 #include <ctime>
@@ -26,7 +25,6 @@
 #include <iomanip>
 #include <iostream>
 #include <limits>
-#include <map>
 #include <numeric>
 #include <sstream>
 #include <stdexcept>
@@ -48,10 +46,6 @@ struct Vector {
     Int y = 0;
 };
 
-bool same_vector(const Vector& first, const Vector& second) {
-    return first.x == second.x && first.y == second.y;
-}
-
 struct Matrix {
     Int a = 0;
     Int b = 0;
@@ -72,11 +66,6 @@ Int checked_int(__int128 value, const char* context) {
         throw std::overflow_error(std::string(context) + " overflows int64");
     }
     return static_cast<Int>(value);
-}
-
-Vector scaled(Vector value, Int factor) {
-    return {checked_int(static_cast<__int128>(value.x) * factor, "scaled winding"),
-            checked_int(static_cast<__int128>(value.y) * factor, "scaled winding")};
 }
 
 Int safe_abs(Int value, const char* context) {
@@ -238,119 +227,6 @@ struct Geometry {
         : quotient(periods), n(static_cast<int>(quotient.order)) {}
 };
 
-struct LocalMark {
-    bool valid = false;
-    int axis = 0;
-    int diagonal = 0;
-    int landed = 0;
-    int h4 = 0;
-};
-
-const std::array<Vector, 8> kLocalPoints = {{{1, 0}, {1, 1}, {0, 1}, {-1, 1},
-                                             {-1, 0}, {-1, -1}, {0, -1}, {1, -1}}};
-
-bool local_adjacent(Vector first, Vector second, bool matching) {
-    const Int dx = safe_abs(first.x - second.x, "local dx");
-    const Int dy = safe_abs(first.y - second.y, "local dy");
-    return matching ? (std::max(dx, dy) == 1) : (dx + dy == 1);
-}
-
-std::vector<int> local_component_masks(const Geometry& geometry,
-                                       const std::vector<std::uint8_t>& active,
-                                       int root, bool matching, bool enabled_value,
-                                       bool& injective) {
-    const Vector origin = geometry.quotient.representative(root);
-    std::array<int, 8> vertices{};
-    for (int index = 0; index < 8; ++index) {
-        vertices[index] = geometry.quotient.label(
-            {origin.x + kLocalPoints[index].x, origin.y + kLocalPoints[index].y});
-        if (vertices[index] == root) injective = false;
-        for (int prior = 0; prior < index; ++prior) {
-            if (vertices[index] == vertices[prior]) injective = false;
-        }
-    }
-    if (!injective) return {};
-    std::array<bool, 8> unseen{};
-    for (int index = 0; index < 8; ++index) {
-        unseen[index] = static_cast<bool>(active[vertices[index]]) == enabled_value;
-    }
-    std::vector<int> masks;
-    for (int start = 0; start < 8; ++start) {
-        if (!unseen[start]) continue;
-        unseen[start] = false;
-        std::vector<int> stack{start};
-        int mask = 0;
-        while (!stack.empty()) {
-            const int current = stack.back();
-            stack.pop_back();
-            mask |= 1 << current;
-            for (int other = 0; other < 8; ++other) {
-                if (unseen[other] &&
-                    local_adjacent(kLocalPoints[current], kLocalPoints[other], matching)) {
-                    unseen[other] = false;
-                    stack.push_back(other);
-                }
-            }
-        }
-        masks.push_back(mask);
-    }
-    return masks;
-}
-
-bool distinct_pair(const std::vector<int>& masks, int first, int second) {
-    for (int i = 0; i < static_cast<int>(masks.size()); ++i) {
-        for (int j = 0; j < static_cast<int>(masks.size()); ++j) {
-            if (i != j && (masks[i] & (1 << first)) && (masks[j] & (1 << second))) {
-                return true;
-            }
-        }
-    }
-    return false;
-}
-
-LocalMark local_landing_mark(const Geometry& geometry,
-                             const std::vector<std::uint8_t>& active,
-                             int root, bool open_matching) {
-    bool injective = true;
-    const auto opened = local_component_masks(
-        geometry, active, root, open_matching, true, injective);
-    const auto closed = local_component_masks(
-        geometry, active, root, !open_matching, false, injective);
-    if (!injective) return {};
-    const bool axis =
-        (distinct_pair(opened, 0, 4) && distinct_pair(closed, 2, 6)) ||
-        (distinct_pair(opened, 2, 6) && distinct_pair(closed, 0, 4));
-    const bool diagonal =
-        (distinct_pair(opened, 1, 5) && distinct_pair(closed, 3, 7)) ||
-        (distinct_pair(opened, 3, 7) && distinct_pair(closed, 1, 5));
-    return {true, static_cast<int>(axis), static_cast<int>(diagonal),
-            static_cast<int>(axis || diagonal), static_cast<int>(axis) - static_cast<int>(diagonal)};
-}
-
-struct PathInsertion {
-    int k_before = 0;
-    int q_before = -1;
-    int site = -1;
-    int gate01 = 0;
-    int gate12 = 0;
-    Vector line{0, 0};
-    Int index = 0;
-    LocalMark local;
-};
-
-struct BirthTrace {
-    int k1 = 0;
-    int k2 = 0;
-    int site1 = -1;
-    int site2 = -1;
-    Vector line{0, 0};
-    Int index1 = 0;
-    Int index2 = 0;
-    LocalMark mark1;
-    LocalMark mark2;
-    std::vector<PathInsertion> path;
-};
-
 struct PairDesign {
     int n;
     int a1;
@@ -363,9 +239,6 @@ struct PairDesign {
 };
 
 const std::vector<PairDesign> kDesigns = {
-    {65, 8, 1, {8, -1, 1, 8}, 7, 4, {7, -4, 4, 7}, "N65_q2_parent"},
-    {130, 9, 7, {9, -7, 7, 9}, 11, 3, {11, -3, 3, 11}, "N130_q2_child"},
-    {145, 12, 1, {12, -1, 1, 12}, 9, 8, {9, -8, 8, 9}, "N145_max_leverage"},
     {260, 16, 2, {16, -2, 2, 16}, 14, 8, {14, -8, 8, 14}, "N65_to_N260_q4"},
     {340, 18, 4, {18, -4, 4, 18}, 14, 12, {14, -12, 12, 14}, "N85_to_N340_q4"},
 };
@@ -385,16 +258,10 @@ Vector primitive(Vector value) {
 
 class HomologyUnionFind {
   public:
-    struct ComponentMark {
-        int rank = 0;
-        Vector line{0, 0};
-        Int index = 0;
-    };
-
     explicit HomologyUnionFind(const QuotientCoordinates& quotient)
         : quotient_(quotient), parent_(quotient.order), size_(quotient.order),
           delta_x_(quotient.order), delta_y_(quotient.order), rank_(quotient.order),
-          basis_(quotient.order), index_(quotient.order) {
+          basis_(quotient.order) {
         reset();
     }
 
@@ -404,7 +271,6 @@ class HomologyUnionFind {
         std::fill(delta_x_.begin(), delta_x_.end(), 0);
         std::fill(delta_y_.begin(), delta_y_.end(), 0);
         std::fill(rank_.begin(), rank_.end(), 0);
-        std::fill(index_.begin(), index_.end(), 0);
     }
 
     struct FindResult {
@@ -425,35 +291,17 @@ class HomologyUnionFind {
 
     void extend(int root, Vector value) {
         if ((value.x == 0 && value.y == 0) || rank_[root] == 2) return;
+        value = primitive(value);
         if (rank_[root] == 0) {
-            const Int divisor = std::gcd(safe_abs(value.x, "winding"),
-                                         safe_abs(value.y, "winding"));
-            basis_[root][0] = primitive(value);
-            index_[root] = divisor;
+            basis_[root][0] = value;
             rank_[root] = 1;
             return;
         }
         const Vector first = basis_[root][0];
-        if (static_cast<__int128>(first.x) * value.y ==
+        if (static_cast<__int128>(first.x) * value.y !=
             static_cast<__int128>(first.y) * value.x) {
-            Int coefficient = 0;
-            if (first.x != 0) {
-                if (value.x % first.x != 0 ||
-                    value.y != (value.x / first.x) * first.y) {
-                    throw std::logic_error("collinear winding is not integral on primitive line");
-                }
-                coefficient = value.x / first.x;
-            } else {
-                if (first.y == 0 || value.y % first.y != 0 || value.x != 0) {
-                    throw std::logic_error("vertical winding is not integral on primitive line");
-                }
-                coefficient = value.y / first.y;
-            }
-            index_[root] = std::gcd(index_[root], safe_abs(coefficient, "line coefficient"));
-        } else {
-            basis_[root][1] = primitive(value);
+            basis_[root][1] = value;
             rank_[root] = 2;
-            index_[root] = 0;
         }
     }
 
@@ -476,22 +324,12 @@ class HomologyUnionFind {
         delta_y_[second.root] = root_dy;
         size_[first.root] += size_[second.root];
         for (std::uint8_t index = 0; index < rank_[second.root]; ++index) {
-            const Vector generator = index == 0 && rank_[second.root] == 1
-                ? scaled(basis_[second.root][0], index_[second.root])
-                : basis_[second.root][index];
-            extend(first.root, generator);
+            extend(first.root, basis_[second.root][index]);
         }
         rank_[second.root] = 0;
-        index_[second.root] = 0;
     }
 
     bool component_crosses(int vertex) { return rank_[find(vertex).root] == 2; }
-
-    ComponentMark component_mark(int vertex) {
-        const int root = find(vertex).root;
-        if (rank_[root] == 1) return {1, basis_[root][0], index_[root]};
-        return {static_cast<int>(rank_[root]), {0, 0}, 0};
-    }
 
   private:
     const QuotientCoordinates& quotient_;
@@ -501,7 +339,6 @@ class HomologyUnionFind {
     std::vector<Int> delta_y_;
     std::vector<std::uint8_t> rank_;
     std::vector<std::array<Vector, 2>> basis_;
-    std::vector<Int> index_;
 };
 
 std::vector<std::vector<int>> make_incident(int n, const std::vector<Edge>& edges) {
@@ -566,95 +403,6 @@ class ThresholdEngine {
         const int k_minus = geometry_.n - reverse_white + 1;
         if (k_minus > k_plus) throw std::logic_error("K_minus exceeds K_plus");
         return {k_minus, k_plus};
-    }
-
-    BirthTrace trace(const std::vector<int>& permutation, bool matching, bool reverse) {
-        std::fill(active_.begin(), active_.end(), 0);
-        union_find_.reset();
-        const std::vector<Edge>& edges = matching ? geometry_.matching_edges
-                                                  : geometry_.primal_edges;
-        const std::vector<std::vector<int>>& incident = matching
-            ? geometry_.matching_incident : geometry_.primal_incident;
-        BirthTrace trace;
-        trace.path.reserve(geometry_.n);
-        int global_rank = 0;
-        Vector plateau_line{0, 0};
-        Int plateau_index = 0;
-        for (int offset = 0; offset < geometry_.n; ++offset) {
-            const int vertex = permutation[reverse ? geometry_.n - 1 - offset : offset];
-            const LocalMark local = local_landing_mark(
-                geometry_, active_, vertex, matching);
-            const int before_rank = global_rank;
-            active_[vertex] = 1;
-            for (const int edge_index : incident[vertex]) {
-                const Edge& edge = edges[edge_index];
-                if (active_[edge.i] && active_[edge.j]) union_find_.add_edge(edge);
-            }
-            const HomologyUnionFind::ComponentMark component =
-                union_find_.component_mark(vertex);
-            if (component.rank == 2) global_rank = 2;
-            else if (component.rank == 1 && global_rank == 0) global_rank = 1;
-
-            const int gate01 = before_rank == 0 && global_rank >= 1;
-            const int gate12 = before_rank <= 1 && global_rank == 2;
-            if (global_rank - before_rank != gate01 + gate12) {
-                throw std::logic_error("rank increment did not split into birth gates");
-            }
-            PathInsertion insertion;
-            insertion.k_before = offset;
-            insertion.q_before = before_rank - 1;
-            insertion.site = vertex;
-            insertion.gate01 = gate01;
-            insertion.gate12 = gate12;
-            insertion.local = local;
-
-            if (gate01 && gate12) {
-                trace.k1 = trace.k2 = offset + 1;
-                trace.site1 = trace.site2 = vertex;
-                trace.mark1 = trace.mark2 = local;
-            } else if (gate01) {
-                if (component.rank != 1 || component.index < 1) {
-                    throw std::logic_error("strict first birth lacks a rank-one mark");
-                }
-                plateau_line = component.line;
-                plateau_index = component.index;
-                insertion.line = plateau_line;
-                insertion.index = plateau_index;
-                trace.k1 = offset + 1;
-                trace.site1 = vertex;
-                trace.line = plateau_line;
-                trace.index1 = plateau_index;
-                trace.mark1 = local;
-            } else if (gate12) {
-                if (plateau_index < 1) {
-                    throw std::logic_error("strict second birth lacks the plateau mark");
-                }
-                insertion.line = plateau_line;
-                insertion.index = plateau_index;
-                trace.k2 = offset + 1;
-                trace.site2 = vertex;
-                trace.index2 = plateau_index;
-                trace.mark2 = local;
-            }
-            trace.path.push_back(insertion);
-
-            if (global_rank == 1 && component.rank == 1) {
-                if (plateau_index == 0) {
-                    plateau_line = component.line;
-                    plateau_index = component.index;
-                } else {
-                    if (!same_vector(plateau_line, component.line)) {
-                        throw std::logic_error(
-                            "disconnected rank-one components have different ambient lines");
-                    }
-                    plateau_index = std::gcd(plateau_index, component.index);
-                }
-            }
-        }
-        if (!(1 <= trace.k1 && trace.k1 <= trace.k2 && trace.k2 <= geometry_.n)) {
-            throw std::logic_error("marked trace did not contain both essential births");
-        }
-        return trace;
     }
 
   private:
@@ -745,198 +493,6 @@ struct PairBatch {
     explicit PairBatch(int n = 0) : first(n), second(n) {}
 };
 
-struct Spin4 {
-    long double real = 0;
-    long double imaginary = 0;
-    Vector physical{0, 0};
-};
-
-Spin4 spin4_mark(const QuotientCoordinates& quotient, Vector line) {
-    if (line.x == 0 && line.y == 0) return {};
-    const Vector physical = primitive(quotient.period_vector(line));
-    const long double x = static_cast<long double>(physical.x);
-    const long double y = static_cast<long double>(physical.y);
-    const long double radius2 = x * x + y * y;
-    const long double denominator = radius2 * radius2;
-    return {(x * x * x * x - 6 * x * x * y * y + y * y * y * y) / denominator,
-            (4 * x * y * (x * x - y * y)) / denominator,
-            physical};
-}
-
-bool same_local(const LocalMark& first, const LocalMark& second) {
-    return first.valid == second.valid && first.axis == second.axis &&
-           first.diagonal == second.diagonal && first.landed == second.landed &&
-           first.h4 == second.h4;
-}
-
-struct MarkedKey {
-    int k1 = 0;
-    int k2 = 0;
-    int site1 = -1;
-    int site2 = -1;
-    Vector line{0, 0};
-    Int index1 = 0;
-    Int index2 = 0;
-    Vector physical{0, 0};
-    LocalMark mark1;
-    LocalMark mark2;
-
-    bool operator<(const MarkedKey& other) const {
-        return std::tie(k1, k2, site1, site2, line.x, line.y, index1, index2,
-                        physical.x, physical.y, mark1.valid, mark1.axis,
-                        mark1.diagonal, mark1.landed, mark1.h4, mark2.valid,
-                        mark2.axis, mark2.diagonal, mark2.landed, mark2.h4) <
-               std::tie(other.k1, other.k2, other.site1, other.site2,
-                        other.line.x, other.line.y, other.index1, other.index2,
-                        other.physical.x, other.physical.y, other.mark1.valid,
-                        other.mark1.axis, other.mark1.diagonal, other.mark1.landed,
-                        other.mark1.h4, other.mark2.valid, other.mark2.axis,
-                        other.mark2.diagonal, other.mark2.landed, other.mark2.h4);
-    }
-};
-
-struct PathMoments {
-    std::uint64_t samples = 0;
-    std::int64_t sum_q = 0;
-    std::uint64_t sum_q2 = 0;
-    std::uint64_t sum_gate01 = 0;
-    std::uint64_t sum_gate12 = 0;
-    std::uint64_t sum_inactive_gate01 = 0;
-    std::uint64_t sum_inactive_gate12 = 0;
-    std::uint64_t sum_active_S = 0;
-    std::int64_t sum_active_D = 0;
-    std::uint64_t sum_inactive_S = 0;
-    std::int64_t sum_inactive_D = 0;
-    std::uint64_t sum_site_S = 0;
-    std::int64_t sum_site_D = 0;
-    long double sum_J_S_real = 0;
-    long double sum_J_S_imaginary = 0;
-    long double sum_J_D_real = 0;
-    long double sum_J_D_imaginary = 0;
-    long double sum_q_J_D_real = 0;
-    long double sum_q_J_D_imaginary = 0;
-    std::int64_t sum_local_S = 0;
-    std::int64_t sum_local_D = 0;
-
-    void add(const PathInsertion& active, const PathInsertion& inactive,
-             const QuotientCoordinates& quotient, int n) {
-        if (active.site != inactive.site ||
-            active.gate01 != inactive.gate12 ||
-            active.gate12 != inactive.gate01 ||
-            !same_vector(active.line, inactive.line)) {
-            throw std::logic_error("active/inactive insertion source did not complement-pair");
-        }
-        const std::uint64_t absent = static_cast<std::uint64_t>(n - active.k_before);
-        const int active_s = active.gate01 + active.gate12;
-        const int active_d = active.gate12 - active.gate01;
-        const int inactive_s = inactive.gate01 + inactive.gate12;
-        const int inactive_d = inactive.gate12 - inactive.gate01;
-        // q=(r_primal-r_matching)/2.  Under black insertion the matching
-        // insertion is traversed backwards, hence the minus sign in full D.
-        const int full_s = (active_s + inactive_s) / 2;
-        const int full_d = (active_d - inactive_d) / 2;
-        if (2 * full_s != active_s + inactive_s ||
-            2 * full_d != active_d - inactive_d) {
-            throw std::logic_error("full active/inactive source was not integral");
-        }
-        const Spin4 active_chi = spin4_mark(quotient, active.line);
-        const Spin4 inactive_chi = spin4_mark(quotient, inactive.line);
-        const long double site_s = static_cast<long double>(absent) * full_s;
-        const long double site_d = static_cast<long double>(absent) * full_d;
-        const long double chi_real = (active_chi.real + inactive_chi.real) / 2;
-        const long double chi_imaginary = (active_chi.imaginary + inactive_chi.imaginary) / 2;
-        ++samples;
-        sum_q += active.q_before;
-        sum_q2 += static_cast<std::uint64_t>(active.q_before * active.q_before);
-        sum_gate01 += active.gate01;
-        sum_gate12 += active.gate12;
-        sum_inactive_gate01 += inactive.gate01;
-        sum_inactive_gate12 += inactive.gate12;
-        sum_active_S += absent * static_cast<std::uint64_t>(active_s);
-        sum_active_D += static_cast<std::int64_t>(absent) * active_d;
-        sum_inactive_S += absent * static_cast<std::uint64_t>(inactive_s);
-        sum_inactive_D += static_cast<std::int64_t>(absent) * inactive_d;
-        sum_site_S += absent * static_cast<std::uint64_t>(full_s);
-        sum_site_D += static_cast<std::int64_t>(absent) * full_d;
-        sum_J_S_real += site_s * chi_real;
-        sum_J_S_imaginary += site_s * chi_imaginary;
-        sum_J_D_real += site_d * chi_real;
-        sum_J_D_imaginary += site_d * chi_imaginary;
-        sum_q_J_D_real += active.q_before * site_d * chi_real;
-        sum_q_J_D_imaginary += active.q_before * site_d * chi_imaginary;
-        if (active.local.valid && inactive.local.valid) {
-            const int local_s = (active_s * active.local.h4 +
-                                 inactive_s * inactive.local.h4) / 2;
-            const int local_d = (active_d * active.local.h4 -
-                                 inactive_d * inactive.local.h4) / 2;
-            sum_local_S += static_cast<std::int64_t>(absent) * local_s;
-            sum_local_D += static_cast<std::int64_t>(absent) * local_d;
-        }
-    }
-};
-
-struct ComplementAudit {
-    std::uint64_t endpoint_failures = 0;
-    std::uint64_t site_failures = 0;
-    std::uint64_t line_failures = 0;
-    std::uint64_t local_mark_failures = 0;
-    std::uint64_t index_mismatches = 0;
-
-    void add(const BirthTrace& primal, const BirthTrace& matching, int n) {
-        if (primal.k1 + matching.k2 != n + 1 ||
-            primal.k2 + matching.k1 != n + 1) ++endpoint_failures;
-        if (primal.site1 != matching.site2 || primal.site2 != matching.site1) {
-            ++site_failures;
-        }
-        if (!same_vector(primal.line, matching.line)) ++line_failures;
-        if (!same_local(primal.mark1, matching.mark2) ||
-            !same_local(primal.mark2, matching.mark1)) ++local_mark_failures;
-        if (primal.index1 != matching.index2 || primal.index2 != matching.index1) {
-            ++index_mismatches;
-        }
-    }
-};
-
-struct MarkedOrientation {
-    std::vector<PathMoments> path;
-    std::map<MarkedKey, std::uint64_t> sparse;
-    ComplementAudit complement;
-
-    explicit MarkedOrientation(int n = 0) : path(n) {}
-
-    void add(const BirthTrace& primal, const BirthTrace& matching,
-             const Geometry& geometry) {
-        if (static_cast<int>(primal.path.size()) != geometry.n) {
-            throw std::logic_error("marked path length differs from N");
-        }
-        const Spin4 chi = spin4_mark(geometry.quotient, primal.line);
-        MarkedKey key;
-        key.k1 = primal.k1;
-        key.k2 = primal.k2;
-        key.site1 = primal.site1;
-        key.site2 = primal.site2;
-        key.line = primal.line;
-        key.index1 = primal.index1;
-        key.index2 = primal.index2;
-        key.physical = chi.physical;
-        key.mark1 = primal.mark1;
-        key.mark2 = primal.mark2;
-        ++sparse[key];
-        for (const PathInsertion& insertion : primal.path) {
-            const PathInsertion& inactive = matching.path[geometry.n - 1 - insertion.k_before];
-            path[insertion.k_before].add(
-                insertion, inactive, geometry.quotient, geometry.n);
-        }
-        complement.add(primal, matching, geometry.n);
-    }
-};
-
-struct MarkedPairBatch {
-    MarkedOrientation first;
-    MarkedOrientation second;
-    explicit MarkedPairBatch(int n = 0) : first(n), second(n) {}
-};
-
 std::vector<int> remap_permutation(const Geometry& source, const Geometry& target,
                                    const std::vector<int>& permutation) {
     std::vector<int> mapped;
@@ -1015,66 +571,8 @@ void self_test() {
     if (permutation != expected || gaussian_engine.ranks(permutation) != std::make_pair(3, 4)) {
         throw std::runtime_error("Python-compatible counter/permutation regression failed");
     }
-
-    // Saturation index must use raw winding coefficients before primitive reduction.
-    const QuotientCoordinates index_quotient({4, 0, 0, 4});
-    HomologyUnionFind index_union(index_quotient);
-    index_union.add_edge({0, 0, 8, 0});  // winding (2,0)
-    auto index_mark = index_union.component_mark(0);
-    if (index_mark.rank != 1 || !same_vector(index_mark.line, {1, 0}) ||
-        index_mark.index != 2) {
-        throw std::runtime_error("raw-winding saturation-index regression failed");
-    }
-    index_union.add_edge({0, 0, 16, 0});  // winding (4,0), gcd remains two
-    index_mark = index_union.component_mark(0);
-    if (index_mark.index != 2) {
-        throw std::runtime_error("same-line saturation gcd regression failed");
-    }
-    index_union.add_edge({0, 0, 4, 0});  // winding (1,0), saturation becomes one
-    index_mark = index_union.component_mark(0);
-    if (index_mark.index != 1) {
-        throw std::runtime_error("saturation-to-primitive regression failed");
-    }
-
-    // chi4 is evaluated in the lifted Euclidean P*ell frame, not period coordinates.
-    const Spin4 gaussian_chi = spin4_mark(gaussian.quotient, {1, 0});
-    if (!same_vector(gaussian_chi.physical, {2, 1}) ||
-        std::fabs(gaussian_chi.real + static_cast<long double>(7) / 25) > 1e-18L ||
-        std::fabs(gaussian_chi.imaginary - static_cast<long double>(24) / 25) > 1e-18L) {
-        throw std::runtime_error("lifted-Euclidean chi4 frame regression failed");
-    }
-
-    // The degenerate N=4 control contains direct 0->2 births.  They have two
-    // gates, no canonical line, D=0, and reverse-complement endpoint/site exchange.
-    const Geometry axis_l2 = make_geometry({2, 0, 0, 2});
-    ThresholdEngine axis_l2_engine(axis_l2);
-    std::vector<int> axis_permutation(axis_l2.n);
-    std::iota(axis_permutation.begin(), axis_permutation.end(), 0);
-    std::uint64_t direct_births = 0;
-    do {
-        const BirthTrace primal = axis_l2_engine.trace(axis_permutation, false, false);
-        const BirthTrace matching = axis_l2_engine.trace(axis_permutation, true, true);
-        ComplementAudit audit;
-        audit.add(primal, matching, axis_l2.n);
-        if (audit.endpoint_failures || audit.site_failures || audit.line_failures) {
-            throw std::runtime_error("direct-birth complement regression failed");
-        }
-        if (primal.k1 == primal.k2) {
-            ++direct_births;
-            const PathInsertion& insertion = primal.path[primal.k1 - 1];
-            if (insertion.gate01 != 1 || insertion.gate12 != 1 ||
-                insertion.line.x != 0 || insertion.line.y != 0 ||
-                insertion.index != 0) {
-                throw std::runtime_error("direct 0->2 marked schema regression failed");
-            }
-        }
-    } while (std::next_permutation(axis_permutation.begin(), axis_permutation.end()));
-    if (direct_births == 0) {
-        throw std::runtime_error("N=4 direct-birth control found no simultaneous births");
-    }
     std::cout << "self-test passed: arbitrary integer periods, exact HNF quotient/winding, "
-                 "basis invariance, saturation gcd, lifted chi4, direct births, "
-                 "Smith(2,130)/(2,170), N=5 all permutations\n";
+                 "basis invariance, Smith(2,130)/(2,170), N=5 all permutations\n";
 }
 
 struct Options {
@@ -1087,7 +585,6 @@ struct Options {
     std::string git_commit = "unknown";
     std::filesystem::path output_prefix;
     bool self_test = false;
-    bool marked_births = false;
     bool custom = false;
     Matrix first_matrix;
     Matrix second_matrix;
@@ -1107,14 +604,13 @@ struct Options {
         << "  --seed S             unsigned 64-bit seed (default 20260828)\n"
         << "  --replica-offset K   first sample counter (default 0)\n"
         << "  --threads T          OpenMP threads; 0 uses runtime default\n"
-        << "  --n N                predefined N=65,130,145 marked or N=260,340 norm-4 pair\n"
+        << "  --n N                predefined N=260 or N=340 norm-4 pair\n"
         << "  --first-matrix A B C D   custom first row-major period matrix\n"
         << "  --second-matrix A B C D  custom second row-major period matrix\n"
         << "  --first-rep A B      optional Gaussian lineage label in CSV\n"
         << "  --second-rep A B     optional Gaussian lineage label in CSV\n"
         << "  --git-commit SHA     provenance string\n"
         << "  --output-prefix PATH writes .hist.csv, .moments.csv, .metadata.json\n"
-        << "  --marked-births      also writes sparse birth and microcanonical path streams\n"
         << "  --self-test          exact tiny and Smith regressions, then exit\n";
     std::exit(status);
 }
@@ -1176,7 +672,6 @@ Options parse_options(int argc, char** argv) {
             options.second_b = value.second; options.second_rep_set = true;
         }
         else if (arg == "--self-test") options.self_test = true;
-        else if (arg == "--marked-births") options.marked_births = true;
         else if (arg == "--help") usage(argv[0], 0);
         else throw std::invalid_argument("unknown option: " + arg);
     }
@@ -1194,10 +689,8 @@ Options parse_options(int argc, char** argv) {
     if (options.custom && options.only_n != 0) {
         throw std::invalid_argument("--n cannot be combined with custom matrices");
     }
-    if (!options.custom && options.only_n != 65 && options.only_n != 130 &&
-        options.only_n != 145 && options.only_n != 260 && options.only_n != 340) {
-        throw std::invalid_argument(
-            "choose predefined --n 65, 130, 145, 260 or 340, or custom matrices");
+    if (!options.custom && options.only_n != 260 && options.only_n != 340) {
+        throw std::invalid_argument("choose predefined --n 260 or --n 340, or custom matrices");
     }
     if (options.replica_offset > std::numeric_limits<std::uint64_t>::max() - options.samples) {
         throw std::invalid_argument("replica counter range overflows uint64");
@@ -1258,9 +751,7 @@ PairDesign custom_design(const Options& options) {
 }
 
 void run_design(const PairDesign& design, const Options& options,
-                std::ofstream& histogram, std::ofstream& moments,
-                std::ofstream* marked_births, std::ofstream* path_moments,
-                std::ofstream* complement_audit) {
+                std::ofstream& histogram, std::ofstream& moments) {
     const Geometry first_geometry = make_geometry(design.first);
     const Geometry second_geometry = make_geometry(design.second);
     if (first_geometry.n != design.n || second_geometry.n != design.n) {
@@ -1270,13 +761,6 @@ void run_design(const PairDesign& design, const Options& options,
     std::vector<PairBatch> output;
     output.reserve(options.batches);
     for (int batch = 0; batch < options.batches; ++batch) output.emplace_back(design.n);
-    std::vector<MarkedPairBatch> marked_output;
-    if (options.marked_births) {
-        marked_output.reserve(options.batches);
-        for (int batch = 0; batch < options.batches; ++batch) {
-            marked_output.emplace_back(design.n);
-        }
-    }
 
 #ifdef _OPENMP
     if (options.threads > 0) omp_set_num_threads(options.threads);
@@ -1291,29 +775,10 @@ void run_design(const PairDesign& design, const Options& options,
                                     static_cast<std::uint64_t>(batch) * per_batch;
         for (std::uint64_t replica = begin; replica < begin + per_batch; ++replica) {
             counter_permutation(design.n, options.seed, replica, permutation);
-            if (options.marked_births) {
-                const BirthTrace first_primal = first_engine.trace(permutation, false, false);
-                const BirthTrace first_matching = first_engine.trace(permutation, true, true);
-                const BirthTrace second_primal = second_engine.trace(permutation, false, false);
-                const BirthTrace second_matching = second_engine.trace(permutation, true, true);
-                if (first_primal.k1 != design.n - first_matching.k2 + 1 ||
-                    first_primal.k2 != design.n - first_matching.k1 + 1 ||
-                    second_primal.k1 != design.n - second_matching.k2 + 1 ||
-                    second_primal.k2 != design.n - second_matching.k1 + 1) {
-                    throw std::logic_error("direct and reverse-complement birth ranks differ");
-                }
-                local.first.add(first_primal.k1, first_primal.k2);
-                local.second.add(second_primal.k1, second_primal.k2);
-                marked_output[batch].first.add(
-                    first_primal, first_matching, first_geometry);
-                marked_output[batch].second.add(
-                    second_primal, second_matching, second_geometry);
-            } else {
-                const auto first = first_engine.ranks(permutation);
-                const auto second = second_engine.ranks(permutation);
-                local.first.add(first.first, first.second);
-                local.second.add(second.first, second.second);
-            }
+            const auto first = first_engine.ranks(permutation);
+            const auto second = second_engine.ranks(permutation);
+            local.first.add(first.first, first.second);
+            local.second.add(second.first, second.second);
         }
         output[batch] = std::move(local);
     }
@@ -1341,58 +806,6 @@ void run_design(const PairDesign& design, const Options& options,
         write_orientation(batch, "first", design.a1, design.b1, output[batch].first);
         write_orientation(batch, "second", design.a2, design.b2, output[batch].second);
     }
-    if (options.marked_births) {
-        if (!marked_births || !path_moments || !complement_audit) {
-            throw std::logic_error("marked output streams were not opened");
-        }
-        auto write_marked_orientation = [&](int batch, const char* orientation,
-                                            int a, int b, const Geometry& geometry,
-                                            const MarkedOrientation& marked) {
-            for (const auto& item : marked.sparse) {
-                const MarkedKey& key = item.first;
-                const Spin4 chi = spin4_mark(geometry.quotient, key.line);
-                *marked_births << design.n << ',' << a << ',' << b << ',' << orientation
-                    << ',' << batch << ',' << per_batch << ',' << key.k1 << ',' << key.k2
-                    << ',' << static_cast<int>(key.k1 == key.k2) << ',' << key.site1
-                    << ',' << key.site2 << ','
-                    << static_cast<int>(key.line.x == 0 && key.line.y == 0) << ','
-                    << key.line.x << ',' << key.line.y << ',' << key.index1 << ','
-                    << key.index2 << ',' << key.physical.x << ',' << key.physical.y << ','
-                    << std::setprecision(21) << chi.real << ',' << chi.imaginary << ','
-                    << static_cast<int>(key.mark1.valid) << ',' << key.mark1.axis << ','
-                    << key.mark1.diagonal << ',' << key.mark1.landed << ',' << key.mark1.h4
-                    << ',' << static_cast<int>(key.mark2.valid) << ',' << key.mark2.axis
-                    << ',' << key.mark2.diagonal << ',' << key.mark2.landed << ','
-                    << key.mark2.h4 << ',' << item.second << '\n';
-            }
-            for (int k = 0; k < design.n; ++k) {
-                const PathMoments& row = marked.path[k];
-                *path_moments << design.n << ',' << a << ',' << b << ',' << orientation
-                    << ',' << batch << ',' << row.samples << ',' << k << ',' << row.sum_q
-                    << ',' << row.sum_q2 << ',' << row.sum_gate01 << ',' << row.sum_gate12
-                    << ',' << row.sum_inactive_gate01 << ',' << row.sum_inactive_gate12
-                    << ',' << row.sum_active_S << ',' << row.sum_active_D
-                    << ',' << row.sum_inactive_S << ',' << row.sum_inactive_D
-                    << ',' << row.sum_site_S << ',' << row.sum_site_D << ','
-                    << std::setprecision(21) << row.sum_J_S_real << ','
-                    << row.sum_J_S_imaginary << ',' << row.sum_J_D_real << ','
-                    << row.sum_J_D_imaginary << ',' << row.sum_q_J_D_real << ','
-                    << row.sum_q_J_D_imaginary << ',' << row.sum_local_S << ','
-                    << row.sum_local_D << '\n';
-            }
-            const ComplementAudit& audit = marked.complement;
-            *complement_audit << design.n << ',' << a << ',' << b << ',' << orientation
-                << ',' << batch << ',' << per_batch << ',' << audit.endpoint_failures << ','
-                << audit.site_failures << ',' << audit.line_failures << ','
-                << audit.local_mark_failures << ',' << audit.index_mismatches << '\n';
-        };
-        for (int batch = 0; batch < options.batches; ++batch) {
-            write_marked_orientation(batch, "first", design.a1, design.b1,
-                                     first_geometry, marked_output[batch].first);
-            write_marked_orientation(batch, "second", design.a2, design.b2,
-                                     second_geometry, marked_output[batch].second);
-        }
-    }
     std::cout << "completed " << design.id << " N=" << design.n << " samples="
               << options.samples << '\n';
 }
@@ -1411,52 +824,15 @@ int run(int argc, char** argv) {
     const std::filesystem::path histogram_path = options.output_prefix.string() + ".hist.csv";
     const std::filesystem::path moments_path = options.output_prefix.string() + ".moments.csv";
     const std::filesystem::path metadata_path = options.output_prefix.string() + ".metadata.json";
-    const std::filesystem::path marked_path = options.output_prefix.string() + ".marked_births.csv";
-    const std::filesystem::path path_moments_path = options.output_prefix.string() + ".path.csv";
-    const std::filesystem::path audit_path = options.output_prefix.string() + ".complement_audit.csv";
     std::ofstream histogram(histogram_path), moments(moments_path);
     if (!histogram || !moments) throw std::runtime_error("cannot open output files");
-    std::ofstream marked_births, path_moments, complement_audit;
-    if (options.marked_births) {
-        marked_births.open(marked_path);
-        path_moments.open(path_moments_path);
-        complement_audit.open(audit_path);
-        if (!marked_births || !path_moments || !complement_audit) {
-            throw std::runtime_error("cannot open marked-birth output files");
-        }
-    }
     histogram << "n,a,b,orientation,batch,samples,kind,k,count\n";
     moments << "n,a,b,orientation,batch,samples,sum_kminus,sum_kplus,sum_kminus2,"
                "sum_kplus2,sum_product,sum_gap,sum_gap2\n";
-    if (options.marked_births) {
-        marked_births
-            << "n,a,b,orientation,batch,samples,k1,k2,direct_0_to_2,site01,site12,"
-               "line_null,ell_u,ell_v,iota01,iota12,physical_x,physical_y,chi4_re,"
-               "chi4_im,mark01_valid,mark01_axis,mark01_diagonal,mark01_landed,"
-               "mark01_h4,mark12_valid,mark12_axis,mark12_diagonal,mark12_landed,"
-               "mark12_h4,count\n";
-        path_moments
-            << "n,a,b,orientation,batch,samples,k,sum_q,sum_q2,sum_gate01,sum_gate12,"
-               "sum_inactive_gate01,sum_inactive_gate12,sum_active_S,sum_active_D,"
-               "sum_inactive_S,sum_inactive_D,"
-               "sum_site_S,sum_site_D,sum_J_S_re,sum_J_S_im,sum_J_D_re,sum_J_D_im,"
-               "sum_q_J_D_re,sum_q_J_D_im,sum_local_S,sum_local_D\n";
-        complement_audit
-            << "n,a,b,orientation,batch,samples,endpoint_failures,site_failures,"
-               "line_failures,local_mark_failures,index_mismatches\n";
-    }
     const auto started = std::chrono::steady_clock::now();
-    run_design(design, options, histogram, moments,
-               options.marked_births ? &marked_births : nullptr,
-               options.marked_births ? &path_moments : nullptr,
-               options.marked_births ? &complement_audit : nullptr);
+    run_design(design, options, histogram, moments);
     histogram.close();
     moments.close();
-    if (options.marked_births) {
-        marked_births.close();
-        path_moments.close();
-        complement_audit.close();
-    }
     const double elapsed = std::chrono::duration<double>(
         std::chrono::steady_clock::now() - started).count();
 
@@ -1494,14 +870,7 @@ int run(int argc, char** argv) {
              << "  \"channel\": \"rank-2 cross wrapping\",\n"
              << "  \"K_plus\": \"first black primal cross rank, 1-based\",\n"
              << "  \"K_minus\": \"first black rank after white matching cross is lost; N-r+1\",\n"
-             << "  \"marked_birth_schema\": " << (options.marked_births ? "true" : "false") << ",\n"
-             << "  \"marked_birth_semantics\": \"strict 0->1 uses post-line; strict 1->2 uses pre-line; direct 0->2 has null line, D=0, S=2\",\n"
-             << "  \"line_coordinates\": \"ell_u,ell_v are primitive period-basis winding coordinates\",\n"
-             << "  \"chi4_frame\": \"physical lifted Euclidean direction primitive(P*ell), never raw period coordinates\",\n"
-             << "  \"saturation_index\": \"gcd of raw winding coefficients on the primitive rational line before primitive reduction\",\n"
-             << "  \"path_horvitz\": \"at pre-insertion k multiply the next-site gate by N-k; canonical Russo scorer later multiplies by N/(N-k) under Bin(N-1,k)\",\n"
-             << "  \"full_source\": \"sum_site_S=(active_S+inactive_S)/2 and sum_site_D=(active_D-inactive_D)/2 on the paired primal/matching reverse insertion; raw sides are retained\",\n"
-             << "  \"sparse_joint_histogram\": " << (options.marked_births ? "true" : "false") << ",\n"
+             << "  \"sparse_joint_histogram\": false,\n"
              << "  \"per_batch_joint_moments\": true,\n"
              << "  \"elapsed_seconds\": " << std::setprecision(17) << elapsed << ",\n"
              << "  \"designs\": [\n"
@@ -1516,20 +885,10 @@ int run(int argc, char** argv) {
              << ", \"second_smith_invariants\": [" << second.smith1 << ',' << second.smith2 << "]}\n"
              << "  ],\n"
              << "  \"histogram_csv\": \"" << json_escape(histogram_path.string()) << "\",\n"
-             << "  \"moments_csv\": \"" << json_escape(moments_path.string()) << "\",\n"
-             << "  \"marked_births_csv\": "
-             << (options.marked_births ? "\"" + json_escape(marked_path.string()) + "\"" : "null") << ",\n"
-             << "  \"path_csv\": "
-             << (options.marked_births ? "\"" + json_escape(path_moments_path.string()) + "\"" : "null") << ",\n"
-             << "  \"complement_audit_csv\": "
-             << (options.marked_births ? "\"" + json_escape(audit_path.string()) + "\"" : "null") << "\n"
+             << "  \"moments_csv\": \"" << json_escape(moments_path.string()) << "\"\n"
              << "}\n";
     std::cout << "wrote " << histogram_path << "\nwrote " << moments_path
               << "\nwrote " << metadata_path << '\n';
-    if (options.marked_births) {
-        std::cout << "wrote " << marked_path << "\nwrote " << path_moments_path
-                  << "\nwrote " << audit_path << '\n';
-    }
     return 0;
 }
 
