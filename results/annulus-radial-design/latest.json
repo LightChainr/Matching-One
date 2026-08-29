@@ -1,0 +1,639 @@
+{
+  "channel_recurrences": {
+    "A_minus": {
+      "Delta_SE": 11.476466424056783,
+      "Delta_over_SE": -0.6517154622836998,
+      "R7_check": {
+        "branch": "principal complex phase theta in (0,pi)",
+        "chi_square": 2.4091543434058065,
+        "chi_square_survival": 0.2998187445648641,
+        "degrees_of_freedom": 2,
+        "log2_step_from_R2": 1.8073549220576042,
+        "observed": [
+          -0.00013292488402608712,
+          0.009941418928046442
+        ],
+        "predicted": [
+          -0.012171718652311002,
+          -0.0034641728023883543
+        ],
+        "radius": 7,
+        "residual": [
+          0.012038793768284914,
+          0.013405591730434797
+        ],
+        "residual_covariance": [
+          [
+            0.00010693292167342184,
+            -2.532006854921739e-05
+          ],
+          [
+            -2.532006854921739e-05,
+            0.0002567688904121335
+          ]
+        ],
+        "status": "correlated post-reveal design check; not independent evidence"
+      },
+      "channel": "A_minus",
+      "identifiability": "T,D are exactly saturated by two outputs x three dyadic radii; sign is descriptive",
+      "point_class": "C2_principal_branch",
+      "recurrence": {
+        "D": 1.966083450550634,
+        "Delta": -7.479390620937526,
+        "T": -0.620437894768695
+      },
+      "recurrence_covariance_delta_method": [
+        [
+          0.3868566583564114,
+          0.11602457293477768,
+          -0.9441393572541444
+        ],
+        [
+          0.11602457293477768,
+          8.122614596975449,
+          -32.634430474099034
+        ],
+        [
+          -0.9441393572541444,
+          -32.634430474099034,
+          131.70928158250268
+        ]
+      ],
+      "source_geometry_order": [
+        325,
+        425
+      ],
+      "source_radii": [
+        2,
+        4,
+        8
+      ]
+    },
+    "A_plus": {
+      "Delta_SE": 215.05539525576953,
+      "Delta_over_SE": 0.22787884187376756,
+      "R7_check": {
+        "branch": "positive-real roots",
+        "chi_square": 5.183939588949287,
+        "chi_square_survival": 0.07487241147162749,
+        "degrees_of_freedom": 2,
+        "log2_step_from_R2": 1.8073549220576042,
+        "observed": [
+          -0.006922662920380018,
+          -0.04057602237056741
+        ],
+        "predicted": [
+          -0.02546409470181677,
+          -0.024922217085759143
+        ],
+        "radius": 7,
+        "residual": [
+          0.018541431781436753,
+          -0.01565380528480827
+        ],
+        "residual_covariance": [
+          [
+            0.00014087227347661866,
+            5.1594426930782205e-05
+          ],
+          [
+            5.1594426930782205e-05,
+            0.00020251326445910672
+          ]
+        ],
+        "status": "correlated post-reveal design check; not independent evidence"
+      },
+      "channel": "A_plus",
+      "identifiability": "T,D are exactly saturated by two outputs x three dyadic radii; sign is descriptive",
+      "point_class": "R2_positive_roots",
+      "recurrence": {
+        "D": 4.8113534445212425,
+        "Delta": 49.00657440959009,
+        "T": 8.261476150644935
+      },
+      "recurrence_covariance_delta_method": [
+        [
+          322.461777332111,
+          389.32567442858925,
+          3770.738537953376
+        ],
+        [
+          389.32567442858925,
+          604.7618505222729,
+          4013.7875108928274
+        ],
+        [
+          3770.738537953376,
+          4013.787510892828,
+          46248.82302861526
+        ]
+      ],
+      "source_geometry_order": [
+        325,
+        425
+      ],
+      "source_radii": [
+        2,
+        4,
+        8
+      ]
+    }
+  },
+  "evidence_boundary": "one post-reveal reanalysis of PR247; never count as a new evidence row",
+  "identifiability": {
+    "C2": "saturated per channel: 6 source values, 6 parameters; Delta<0 has phase aliases and is not a goodness-of-fit result",
+    "J2": "weakly testable: 6 source values, 5 parameters, df=1 per channel",
+    "R1": "testable: 6 source values, 3 parameters, df=3 per channel",
+    "R2": "saturated per channel: 6 source values, 6 parameters; Delta>0 is not a goodness-of-fit result",
+    "R2_gap1": "weakly testable ordinary-real adversary from PR260: x=17/4 versus x=21/4 fixes the relative gap to one before observable normalization",
+    "joint_common_spectrum": "plus and minus jointly give df 7/3/2/2 for R1/J2/R2/C2, but this adds a matching-parity sharing assumption"
+  },
+  "issue": 253,
+  "mechanism_link": {
+    "non_duplication": "Issue 256 and this score are coordinate-design links, not independent votes for one mechanism",
+    "statement": "the minus point estimate is a complex/rotating two-state realization, consistent in form with the rotating rank-two topology plane found exactly in Issue 256"
+  },
+  "model_profiles": {
+    "joint_common_spectrum": {
+      "C2": {
+        "boundary_hit": [
+          false,
+          false
+        ],
+        "chi_square": 1.7025581959217548,
+        "chi_square_survival": 0.42686857587678206,
+        "degrees_of_freedom": 2,
+        "linear_parameter_count": 8,
+        "model": "C2",
+        "nonlinear_parameter_count": 2,
+        "parameter_names": [
+          "decay_x",
+          "theta_per_log2_step"
+        ],
+        "parameter_ranges": [
+          [
+            -8.0,
+            8.0
+          ],
+          [
+            0.05,
+            3.0915926535897933
+          ]
+        ],
+        "parameters": [
+          -4.931712962962963,
+          0.2920248783961786
+        ]
+      },
+      "J2": {
+        "boundary_hit": [
+          false
+        ],
+        "chi_square": 1.7017534737717694,
+        "chi_square_survival": 0.6365440286560012,
+        "degrees_of_freedom": 3,
+        "linear_parameter_count": 8,
+        "model": "J2",
+        "nonlinear_parameter_count": 1,
+        "parameter_names": [
+          "x"
+        ],
+        "parameter_ranges": [
+          [
+            -8.0,
+            8.0
+          ]
+        ],
+        "parameters": [
+          -4.97928088678483
+        ]
+      },
+      "R1": {
+        "boundary_hit": [
+          true
+        ],
+        "chi_square": 13.521321410402937,
+        "chi_square_survival": 0.060380271790829686,
+        "degrees_of_freedom": 7,
+        "linear_parameter_count": 4,
+        "model": "R1",
+        "nonlinear_parameter_count": 1,
+        "parameter_names": [
+          "x"
+        ],
+        "parameter_ranges": [
+          [
+            -8.0,
+            8.0
+          ]
+        ],
+        "parameters": [
+          -7.999999999999552
+        ]
+      },
+      "R2": {
+        "boundary_hit": [
+          true,
+          false
+        ],
+        "chi_square": 1.6918141219796503,
+        "chi_square_survival": 0.4291679001460251,
+        "degrees_of_freedom": 2,
+        "linear_parameter_count": 8,
+        "model": "R2",
+        "nonlinear_parameter_count": 2,
+        "parameter_names": [
+          "center_x",
+          "gap_x"
+        ],
+        "parameter_ranges": [
+          [
+            -8.0,
+            8.0
+          ],
+          [
+            0.05,
+            16.0
+          ]
+        ],
+        "parameters": [
+          -8.0,
+          8.376906105324075
+        ]
+      },
+      "R2_gap1": {
+        "boundary_hit": [
+          false
+        ],
+        "chi_square": 1.7007421545862482,
+        "chi_square_survival": 0.6367688102935327,
+        "degrees_of_freedom": 3,
+        "linear_parameter_count": 8,
+        "model": "R2_gap1",
+        "nonlinear_parameter_count": 1,
+        "parameter_names": [
+          "center_x_with_gap_fixed_to_1"
+        ],
+        "parameter_ranges": [
+          [
+            -8.0,
+            8.0
+          ]
+        ],
+        "parameters": [
+          -5.045945860551591
+        ]
+      }
+    },
+    "minus": {
+      "C2": {
+        "boundary_hit": [
+          false,
+          false
+        ],
+        "chi_square": 3.777906946730531e-09,
+        "chi_square_survival": null,
+        "degrees_of_freedom": 0,
+        "linear_parameter_count": 4,
+        "model": "C2",
+        "nonlinear_parameter_count": 2,
+        "parameter_names": [
+          "decay_x",
+          "theta_per_log2_step"
+        ],
+        "parameter_ranges": [
+          [
+            -8.0,
+            8.0
+          ],
+          [
+            0.05,
+            3.0915926535897933
+          ]
+        ],
+        "parameters": [
+          -0.4876543209876547,
+          1.7938992601528285
+        ]
+      },
+      "J2": {
+        "boundary_hit": [
+          false
+        ],
+        "chi_square": 0.7645872726475526,
+        "chi_square_survival": 0.3818967490536761,
+        "degrees_of_freedom": 1,
+        "linear_parameter_count": 4,
+        "model": "J2",
+        "nonlinear_parameter_count": 1,
+        "parameter_names": [
+          "x"
+        ],
+        "parameter_ranges": [
+          [
+            -8.0,
+            8.0
+          ]
+        ],
+        "parameters": [
+          -7.374038459225892
+        ]
+      },
+      "R1": {
+        "boundary_hit": [
+          true
+        ],
+        "chi_square": 11.623693042614025,
+        "chi_square_survival": 0.008789948765610787,
+        "degrees_of_freedom": 3,
+        "linear_parameter_count": 2,
+        "model": "R1",
+        "nonlinear_parameter_count": 1,
+        "parameter_names": [
+          "x"
+        ],
+        "parameter_ranges": [
+          [
+            -8.0,
+            8.0
+          ]
+        ],
+        "parameters": [
+          -8.0
+        ]
+      },
+      "R2": {
+        "boundary_hit": [
+          false,
+          true
+        ],
+        "chi_square": 0.7645873045916777,
+        "chi_square_survival": null,
+        "degrees_of_freedom": 0,
+        "linear_parameter_count": 4,
+        "model": "R2",
+        "nonlinear_parameter_count": 2,
+        "parameter_names": [
+          "center_x",
+          "gap_x"
+        ],
+        "parameter_ranges": [
+          [
+            -8.0,
+            8.0
+          ],
+          [
+            0.05,
+            16.0
+          ]
+        ],
+        "parameters": [
+          -7.374228395061729,
+          0.05
+        ]
+      },
+      "R2_gap1": {
+        "boundary_hit": [
+          false
+        ],
+        "chi_square": 0.7645990465575875,
+        "chi_square_survival": 0.38189308394986976,
+        "degrees_of_freedom": 1,
+        "linear_parameter_count": 4,
+        "model": "R2_gap1",
+        "nonlinear_parameter_count": 1,
+        "parameter_names": [
+          "center_x_with_gap_fixed_to_1"
+        ],
+        "parameter_ranges": [
+          [
+            -8.0,
+            8.0
+          ]
+        ],
+        "parameters": [
+          -7.465172556968989
+        ]
+      }
+    },
+    "plus": {
+      "C2": {
+        "boundary_hit": [
+          false,
+          true
+        ],
+        "chi_square": 0.3425154061529997,
+        "chi_square_survival": null,
+        "degrees_of_freedom": 0,
+        "linear_parameter_count": 4,
+        "model": "C2",
+        "nonlinear_parameter_count": 2,
+        "parameter_names": [
+          "decay_x",
+          "theta_per_log2_step"
+        ],
+        "parameter_ranges": [
+          [
+            -8.0,
+            8.0
+          ],
+          [
+            0.05,
+            3.0915926535897933
+          ]
+        ],
+        "parameters": [
+          -1.7854938271604939,
+          0.05
+        ]
+      },
+      "J2": {
+        "boundary_hit": [
+          false
+        ],
+        "chi_square": 0.3413441302030387,
+        "chi_square_survival": 0.5590543901594582,
+        "degrees_of_freedom": 1,
+        "linear_parameter_count": 4,
+        "model": "J2",
+        "nonlinear_parameter_count": 1,
+        "parameter_names": [
+          "x"
+        ],
+        "parameter_ranges": [
+          [
+            -8.0,
+            8.0
+          ]
+        ],
+        "parameters": [
+          -1.7838236084689476
+        ]
+      },
+      "R1": {
+        "boundary_hit": [
+          false
+        ],
+        "chi_square": 0.6698366303185102,
+        "chi_square_survival": 0.8802746832595175,
+        "degrees_of_freedom": 3,
+        "linear_parameter_count": 2,
+        "model": "R1",
+        "nonlinear_parameter_count": 1,
+        "parameter_names": [
+          "x"
+        ],
+        "parameter_ranges": [
+          [
+            -8.0,
+            8.0
+          ]
+        ],
+        "parameters": [
+          -2.134931115417282
+        ]
+      },
+      "R2": {
+        "boundary_hit": [
+          false,
+          false
+        ],
+        "chi_square": 3.1339290152148246e-09,
+        "chi_square_survival": null,
+        "degrees_of_freedom": 0,
+        "linear_parameter_count": 4,
+        "model": "R2",
+        "nonlinear_parameter_count": 2,
+        "parameter_names": [
+          "center_x",
+          "gap_x"
+        ],
+        "parameter_ranges": [
+          [
+            -8.0,
+            8.0
+          ],
+          [
+            0.05,
+            16.0
+          ]
+        ],
+        "parameters": [
+          -1.1331018518518523,
+          3.597521219135802
+        ]
+      },
+      "R2_gap1": {
+        "boundary_hit": [
+          false
+        ],
+        "chi_square": 0.28663691114676665,
+        "chi_square_survival": 0.5923837811168733,
+        "degrees_of_freedom": 1,
+        "linear_parameter_count": 4,
+        "model": "R2_gap1",
+        "nonlinear_parameter_count": 1,
+        "parameter_names": [
+          "center_x_with_gap_fixed_to_1"
+        ],
+        "parameter_ranges": [
+          [
+            -8.0,
+            8.0
+          ]
+        ],
+        "parameters": [
+          -1.7088409467530639
+        ]
+      }
+    }
+  },
+  "next_acquisition": {
+    "geometry": {
+      "N": 365,
+      "first": [
+        14,
+        13
+      ],
+      "second": [
+        19,
+        2
+      ]
+    },
+    "minimality": "one additional geometry block; no denser radius ladder",
+    "radii": [
+      2,
+      4,
+      7,
+      8
+    ],
+    "reason": "a third primitive orientation-contrast output overidentifies T,D on 2,4,8 and retains R7 as an off-grid propagation target"
+  },
+  "profile_bounds_are_design_not_theory": {
+    "complex_phase": [
+      0.05,
+      3.0915926535897933
+    ],
+    "real_gap": [
+      0.05,
+      16.0
+    ],
+    "x": [
+      -8.0,
+      8.0
+    ]
+  },
+  "radial_coordinate": "n=log2(R/2)",
+  "schema": "matching-one/annulus-channel-recurrence/v1",
+  "source": "results/server-20260829/P225-norm5-multiradius/analysis.json",
+  "synthetic_oracles": {
+    "C2": {
+      "max_abs_error": 1.942890293094024e-16,
+      "predicted": [
+        -0.23217992710914293,
+        0.7095418959184677
+      ],
+      "recurrence": {
+        "D": 0.6723999999999998,
+        "Delta": -1.1961057600979697,
+        "T": 1.2220860198455874
+      },
+      "target": [
+        -0.23217992710914312,
+        0.7095418959184677
+      ]
+    },
+    "J2": {
+      "max_abs_error": 0.0,
+      "predicted": [
+        0.2503850484144183,
+        0.6014199247353047
+      ],
+      "recurrence": {
+        "D": 0.49000000000000005,
+        "Delta": -4.440892098500626e-16,
+        "T": 1.4
+      },
+      "target": [
+        0.2503850484144183,
+        0.6014199247353047
+      ]
+    },
+    "R2": {
+      "max_abs_error": 2.220446049250313e-16,
+      "predicted": [
+        0.6599441833705957,
+        0.4022068057848955
+      ],
+      "recurrence": {
+        "D": 0.28,
+        "Delta": 0.20250000000000012,
+        "T": 1.1500000000000001
+      },
+      "target": [
+        0.6599441833705959,
+        0.4022068057848954
+      ]
+    }
+  }
+}

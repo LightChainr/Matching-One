@@ -1,0 +1,33 @@
+schema: matching-one/annulus-radial-model-hierarchy/v1
+issue: 253
+status: post_reveal_acquisition_design
+source:
+  pr: 247
+  artifact: results/server-20260829/P225-norm5-multiradius/analysis.json
+  evidence_rule: one correlated raw block; this reanalysis is not a new evidence row
+radial_coordinate: n = log2(R/2)
+source_radii: [2, 4, 8]
+correlated_target_radius: 7
+readouts: [N325_orientation_contrast, N425_orientation_contrast]
+models:
+  R1: {modes: 1, source_df_per_channel: 3, identifiable: true}
+  J2: {modes: 2, repeated_root: true, source_df_per_channel: 1, identifiable: weak}
+  R2_gap1:
+    modes: 2
+    source: PR260
+    fields: [V_2_2_x17_over_4, thermal_Q4_x21_over_4]
+    relative_dimension_gap: 1
+    source_df_per_channel: 1
+    identifiable: weak
+    boundary: normalized_shell_common_shift_unresolved
+  R2: {modes: 2, discriminant: positive, source_df_per_channel: 0, identifiable: false_saturated}
+  C2: {modes: 2, discriminant: negative, source_df_per_channel: 0, identifiable: false_saturated_and_phase_aliased}
+next_acquisition:
+  geometry: {N: 365, first: [14, 13], second: [19, 2]}
+  radii: [2, 4, 7, 8]
+  primary_use: third readout overidentifies the dyadic recurrence; R7 remains off-grid target
+  samples: variance_selected_later
+frozen_interpretation:
+  fact: current plus point recurrence has positive Delta; minus has negative Delta
+  uncertainty: both absolute Delta estimates are below one delta-method standard error
+  conjecture: minus is a rotating two-state radial plane, linked structurally but not evidentially to Issue 256

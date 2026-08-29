@@ -55,6 +55,7 @@ evidence_archives:
   - {id: N26_BETA, path: results/local-20260828/P115-n26-self-matching-exact, status: negative_result, role: exact_Beta_failure}
   - {id: P225_NORM5_MULTIRADIUS, path: results/server-20260829/P225-norm5-multiradius, status: immutable_result, role: two_cutoff_plus_minus_shell_score}
   - {id: GAUSSIAN_COVER_SELECTION_RULE, path: results/exact-cover-character-oracles/norm2_selection_rule.json, status: immutable_result, role: exact_deck_character_linear_null_and_allowed_channels}
+  - {id: ANNULUS_RADIAL_DESIGN, path: results/annulus-radial-design/latest.json, status: post_reveal_design, role: covariance_aware_rank2_recurrence_acquisition}
 
 topic_derivations:
   - {path: notes/pivotal-russo-finite-volume.md, status: topic_derivation, role: pivotal_identity}
@@ -65,6 +66,7 @@ topic_derivations:
   - {path: notes/p156-norm2-generation2.md, status: topic_derivation, role: primitive_second_generation}
   - {path: notes/p231-vacuum-kdv-sector-response.md, status: topic_derivation, role: primitive_vacuum_KdV}
   - {path: notes/p225-multiradius-pivotal-prototype.md, status: topic_derivation, role: local_multiradius_negative}
+  - {path: notes/annulus-radial-channel-spectroscopy.md, status: topic_derivation, role: radial_recurrence_identifiability}
 
 historical_protocols:
   - {path: experiments/server_compute_queue.yaml, status: historical, role: original_server_queue}
