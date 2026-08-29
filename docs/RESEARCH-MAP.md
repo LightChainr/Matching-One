@@ -3,127 +3,110 @@
 **Status:** canonical navigation layer  
 **Updated:** 2026-08-29
 
-This document explains how the Matching One research program fits together. It does not replace the claim ledger in [`docs/STATUS.md`](STATUS.md), the execution-facing synthesis in [`notes/SYNTHESIS-20260828.md`](../notes/SYNTHESIS-20260828.md), or immutable evidence under `results/`.
-
-The repository has several legitimate organizational axes:
-
-- **scientific question** — topology, threshold signatures, orientation, derivatives, operator identification, exact algebra;
-- **evidence block** — P31, P37, P43, P45, P49, P50, exact controls;
-- **execution campaign** — for example `results/server-20260828/`;
-- **chronology** — frozen predictions, reveals, negative results, errata, later interpretations.
-
-The purpose of this map is to separate those axes so that a later theoretical revision cannot accidentally erase an earlier numerical or exact result.
+This document explains how Matching One fits together scientifically. It is a map, not a permission system. `docs/STATUS.md` controls current claim language; `docs/ROADMAP.md` ranks information gain; `GOVERNANCE.md` defines the three hard constraints.
 
 ## 1. Canonical reading order
 
-1. [`README.md`](../README.md) — short external overview.
-2. [`docs/STATUS.md`](STATUS.md) — authoritative current claim ledger.
-3. [`docs/RESEARCH-MAP.md`](RESEARCH-MAP.md) — relationships among tracks and evidence.
-4. [`notes/SYNTHESIS-20260828.md`](../notes/SYNTHESIS-20260828.md) — execution-facing scientific synthesis.
-5. [`docs/ROADMAP.md`](ROADMAP.md) — active discriminators and compute priorities.
-6. [`analysis/research_ledger.yaml`](../analysis/research_ledger.yaml) — machine-readable questions, evidence blocks, analysis queue, and compute queue.
-7. [`analysis/artifact_registry.yaml`](../analysis/artifact_registry.yaml) — machine-readable status of documents, predictions, results, historical protocols, and frontier work.
+1. `README.md` — external overview.
+2. `docs/STATUS.md` — authoritative current claim ledger.
+3. `docs/RESEARCH-MAP.md` — relationships among research tracks and evidence.
+4. `notes/SYNTHESIS-20260828.md` — execution-facing scientific synthesis.
+5. `docs/ROADMAP.md` — information-gain priorities.
+6. `analysis/research_ledger.yaml` — machine-readable research/evidence/work state.
+7. `analysis/artifact_registry.yaml` — artifact integration/provenance index.
+8. `results/evidence-ledger/latest.md` — current primary-only predictive evidence view.
 
-Old reports, wave notes, and compute queues remain valuable provenance, but they are not competing current-status documents.
+Old reports, queues, PRs and notes remain provenance. They are not competing current-status documents.
 
 ## 2. Evidence architecture
 
 Read the project from harder facts upward:
 
 ```text
-exact matching / finite topology / channel algebra
+exact matching / finite topology / observable semantics
                     |
                     v
- finite activation signatures / pivotal identities
+ activation signatures / pivotal identities / exact controls
                     |
                     v
- validated threshold-rank / covariance machinery
+ threshold-rank sufficient statistics and covariance machinery
                     |
                     v
-       finite-size empirical structure
- same-N orientation / semigroup / root closure / S,D
+ finite-size empirical structure
+ orientation / Gaussian semigroup / roots / derivatives / full curves
                     |
                     v
-         mechanism discrimination
- H4 vs H12 / radial corrections / q=2 vs Jordan
+ mechanism discrimination
+ H4 vs H12 / thermal metric / q=2 vs Jordan / low-rank transfer
                     |
                     v
-        continuum interpretation
- Virasoro/LCFT / FK-Potts / pivotal H4 / RG parity / modulus
+ continuum interpretation
+ Virasoro/LCFT / FK-Potts / pivotal H4 / RG tangent / modulus
 ```
 
-A higher-layer failure does not erase lower-layer evidence. An H12 result would revise H4 without erasing the odd-square-harmonic semigroup evidence; failure of thermal-Q4 would not erase root closure; a different S-prime correction would not erase the prospective failure of pure `N^-5/4`.
+A higher-layer failure does not erase lower-layer evidence. H12 winning norm-5 would change the H4 interpretation, not the existence of the odd-square-harmonic signal. A new S-prime mechanism would not erase the prospective failure of pure `N^-5/4`.
 
-## 3. Long-lived research tracks
+## 3. Long-lived tracks
 
-### A. Exact matching, topology, and observable semantics
+### A. Exact matching, topology and observable semantics
 
-**Question:** What is exactly true before asymptotics or CFT enter?
+What is true before asymptotics enter?
 
-Canonical assets now include:
+Canonical assets include finite matching/complement identities, arbitrary integer-period torus topology, Gaussian quotient arithmetic, exact winding/homology classification, and typed observable descriptors for topology channel, matching combination, probability coordinate, orientation order, normalization and quantity.
 
-- finite matching/complement identities;
-- arbitrary integer-period torus topology and homology-rank classification;
-- Gaussian quotient arithmetic;
-- typed observable descriptors for channel, even/odd combination, probability coordinate, orientation order, raw/normalized status, and scalar/contrast quantity;
-- fail-closed exact channel mapping, including `DeltaS_cross=-DeltaS_either` and matching-odd `D_either=D_cross` where registered;
-- the exact C4 self-matching two-sublattice tangent with microscopic complement action `(t,lambda)->(-t,-lambda)`.
+The exact self-matching two-sublattice family supplies a microscopic complement tangent `(t,lambda)->(-t,-lambda)`.
 
-**Boundary:** exact finite pair exchange does not by itself prove a local continuum RG/OPE automorphism.
+Useful continuations: Euler/Betti lifts, broader direction/both channel algebra, and large-N decomposition of the self-matching tangent. These may be explored immediately; a complete semantic map is required only before a claim-bearing scorer compares different declared channels.
 
-**Open continuation:** configuration-level Euler/Betti lift (#111), broader direction/both channel audit (#146), and large-N decomposition of the exact self-matching tangent (#155).
+### B. Threshold ranks, reliability signatures and statistical coordinates
 
-### B. Threshold ranks, reliability signatures, and pivotal mass
+What information should expensive simulation preserve?
 
-**Question:** What reusable finite information should expensive simulation preserve?
+`K_minus/K_plus` histograms reconstruct the finite matching curve. Joint moments preserve additional eventwise information. Under the frozen rank convention the ranks are finite activation/reliability signatures, not merely an implementation device.
 
-`K_minus/K_plus` histograms are not merely an implementation trick. Under the frozen rank convention they reconstruct the matching curve and are exact activation/reliability signatures for the finite monotone event. Per-batch histograms and joint moments support later roots, slopes, intrinsic centers, derivative projectors, profiles, and covariance reanalysis without rerunning Monte Carlo.
-
-The finite matching slope also has an exact probability interpretation:
+The finite matching slope has the exact identity
 
 ```text
 M'(p) = pivotal_mass_primal(p) + pivotal_mass_matching(1-p).
 ```
 
-This identity is now a canonical tiny-system oracle, including cross-channel agreement with threshold-rank reconstruction.
+The source-data analysis layer now also includes orthonormal Krawtchouk score modes in the Bernoulli natural coordinate. Mode 0 and mode 1 exactly recover already-used value/first-derivative information; modes `r>=2` expose higher response directions without new simulation.
 
-**Open continuation:** prequential evidence covariance (#95), intrinsic quantile spectroscopy (#101), multi-u response (#119), standardized threshold profiles (#122), joint threshold-gap/signature analysis, and orientation-resolved pivotal/four-arm structure (#100/#121).
+The prequential evidence ledger is canonical and prevents multiple derived views from one raw random block from being added as independent primary evidence.
+
+Useful continuations: quantile centers, multi-u response, standardized threshold profiles, paired rank-gap/window observables, higher score modes and low-rank full-curve transfer operators.
 
 ### C. Gaussian orientation and the central matching-odd sector
 
-**Question:** Is the microscopic-orientation correction real and predictive at fixed continuum shape/area?
+The empirical signal-discovery question is largely settled: primitive same-N Gaussian tori, independent seeds, held-out tests, Gaussian multiplier lineages and N=185/265 prospective geometries support a nonzero matching-odd orientation sector.
 
-Signal discovery is complete. Same-`N` Gaussian tori, independent seeds, held-out tests, exact Gaussian multiplier lineages, and N=185/265 prospective geometries support a nonzero matching-odd orientation sector.
-
-The compact empirical law over the tested regime is
+Over the tested regime the compact law is
 
 ```text
 DeltaM ~ DeltaCos4 * N^(-13/8).
 ```
 
-**Not established:** H4 rather than H12/H20; unique asymptotic exponent; unique continuum operator.
+Not established: H4 rather than H12/H20, unique asymptotic exponent, or unique continuum operator.
 
-**Primary discriminator:** #57 norm-5 N=325/425.
+The highest-information discriminator remains norm-5 N=325/425.
 
-### D. Gaussian semigroup, root movement, and thermal metric
+### D. Gaussian semigroup, root movement and thermal metric
 
-**Question:** How does the central sector transform under exact Gaussian multiplication and move the finite root?
-
-P37/P50 provide no-amplitude-fit lineage tests. P35/P45 show local root movement is explained by
+P37/P50 test parameter-free Gaussian lineage transfer. P35/P45 show local root movement is explained by
 
 ```text
 DeltaRoot ~= -DeltaM / mean(M').
 ```
 
-P49 resolves a small but decisive finite-size correction to the bare center-slope multiplier.
+P49 resolves a small finite-size correction to the bare center-slope multiplier.
 
-**Open continuation:** the frozen 145->290 full-curve correction score (#50) and semigroup residual/correction spectroscopy.
+The fixed-coordinate `145->290` lineage already passed; the remaining high-value test is the full curve, which can simultaneously score central transfer, slope correction, root transfer, derivative channels and higher response coordinates.
 
-### E. Matching-even and derivative/parity sectors
+Norm-4 dyadic closure is also ready whenever its arithmetic-class or q=2/Jordan information is worth the compute.
 
-**Question:** Do `S=(R_G+R_hat)/2` and `D=(R_G-R_hat)/2` expose linked finite-size sectors?
+### E. Matching parity, derivatives and the thermal-response jet
 
-The canonical prospective N=185/265 four-channel score is:
+The prospective N=185/265 four-channel picture is
 
 ```text
 P4[S]   ~ N^-1        survives
@@ -132,165 +115,156 @@ P4[D']  ~ N^-5/8      survives
 P4[S']  ~ N^-5/4      pure law fails
 ```
 
-S-prime is clearly nonzero; analytic q=2 and rank-2/Jordan-log corrections both remain viable.
+S-prime is nonzero; analytic q=2 and rank-2/Jordan-log corrections remain live.
 
-Both #57 scorer families are now channel-safe without changing their original numerical freezes:
+The Krawtchouk basis sharpens the question: changing `p` to log-odds alone cannot remove the S-prime anomaly because mode 1 is exactly the first derivative up to a known scalar. Higher source modes show a coherent interlaced thermal direction through order six. Norm-5 can test the frozen higher-mode direction using the same expensive histograms as the H4/H12 primary score.
 
-- raw fixed-p primary validates exact `either/odd -> cross/odd` identity before the H4/H12 score;
-- intrinsic full-curve cocycle validates identical cross-channel primitive descriptors and size-local P4 normalization before comparing N, 2N, and 5N.
-
-**Open continuation:** #101/#119/#125 and the norm-5 target itself.
+The preferred strategy is now to seek one compact thermal metric/width/transfer structure across several channels instead of adding one correction exponent per scalar observable.
 
 ### F. Continuum/operator identification
 
-**Question:** What continuum field or probability object produces the measured sector?
+The ordinary `c=0,h=5/8` Virasoro module contains a non-null level-4 quasiprimary with bulk `x=21/4`, spin `±4`. In the declared normalization its torus one-point ratio has the exact weight-4 `g2/E4` fingerprint. The rectangular weight-4 ratio is also now an exact arithmetic asset.
 
-The ordinary Virasoro module contains a non-null `c=0,h=5/8` level-4 quasiprimary with bulk `x=21/4`, spin `±4`; in the stated normalization its torus one-point ratio has an exact `g2/E4` fingerprint.
+Independent bridges remain distinct:
 
-Several independent bridges should remain distinct:
+- self-matching microscopic tangent -> RG blocks;
+- finite Russo identity -> pivotal/four-arm anisotropy;
+- FK/Potts torus sectors and thermal/Q derivatives;
+- torus one-point modular fingerprints;
+- Gaussian isogeny transfer laws.
 
-- the exact self-matching microscopic odd tangent -> large-N RG blocks;
-- finite Russo identity -> orientation-resolved pivotal/four-arm H4;
-- FK/Potts torus-sector Q/thermal derivatives;
-- self-dual/self-matching controls;
-- torus-modulus one-point fingerprints.
+None currently proves that the measured lattice matching residual couples uniquely to the ordinary thermal Q4 operator.
 
-**Boundary:** none of these finite/exact facts yet proves that the lattice matching residual couples uniquely to thermal Q4.
+### G. Gaussian CM/isogeny and torus-shape spectroscopy
 
-### G. Gaussian CM/isogeny and modular-shape spectroscopy
+Gaussian multiplication is an exact finite torus cover. Pure eigenfields, finite mixing blocks and logarithmic/Jordan blocks predict different composition laws.
 
-**Question:** Are multiplier composition and torus shape revealing a representation law rather than only fitted powers?
+Torus modulus supplies an orthogonal axis of information. Pell/hexagonal, rectangular, generic sheared and multi-angle studies are all valid exploratory directions. An explicit H4-isolating observable is needed for a strong operator-specific interpretation, not for permission to generate or inspect data.
 
-Gaussian multiplication is an exact finite torus cover/isogeny. Pure scaling fields, finite mixing blocks, and logarithmic/Jordan blocks predict different composition laws. The exact ordinary-Q4 E4 zero supplies an independent modulus axis.
-
-**Gate:** Pell/modulus production remains behind #57/#50 and an operational typed H4-isolating lattice observable. N=1105 remains behind cheaper harmonic/multiplier leverage.
+The design principle is information gain: choose a multiplier/modulus/quotient type that separates live models, not merely a larger N.
 
 ### H. Exact finite matching algebra and reliability structure
 
-**Question:** What exact finite structure exists independently of the continuum story?
+This track includes exact small matching polynomials/roots, bounded complex-zero tests, the C4 N=10 exact control, exhaustive N=26 self-matching Beta falsification, the self-dual minimal-degree theorem and activation/reliability signatures.
 
-This track now contains:
+Negative exact results are useful because they delete mechanism classes cheaply. The exact L5/Galois frontier and surface-topological-polynomial route remain independent low-cost directions when effort is available.
 
-- exact small matching polynomials and roots;
-- bounded complex-zero tests, including the failed global imaginary-RMS forecast at exact L=5;
-- exact C4 self-matching N=10 control;
-- exhaustive N=26 self-matching test that falsifies both frozen `Beta(5,5)` and `Beta(7,7)` laws;
-- the self-dual minimal-degree theorem explaining why N=10 `Beta(3,3)` is algebraically special;
-- activation/reliability signature and Gaussian/majority shape baselines;
-- Boolean/Banzhaf interpretation of the exact self-matching tangent.
+### I. Threshold value, literature and finite-width extrapolation
 
-These results constrain finite mechanisms; they do **not** imply transcendence or determine the infinite square-site threshold.
+Published square-site threshold values remain method-specific evidence with explicit provenance. Good next-width prediction has been shown not to guarantee an unbiased infinite-width intercept; rational/Padé alternatives did not automatically cure the drift.
 
-### I. Threshold value, literature, and finite-width extrapolation
-
-**Question:** What can be responsibly said about the numerical square-site threshold itself?
-
-Published values remain method-specific evidence with explicit provenance. Blind finite-width work has shown that very accurate next-width prediction can coexist with systematic infinite-intercept drift; Padé/rational alternatives did not automatically cure that drift.
-
-This is a valuable independent methodology track, but it is not the critical path of the orientation/operator program.
+This track is methodologically useful but is not the critical path of the orientation/operator program.
 
 ## 4. Core evidence chain
 
 | Block | Role | Durable conclusion |
 |---|---|---|
-| P31 | independent high-stat same-N confirmation | orientation signal is reproducible |
-| P32 | held-out radial challenge | fixed `13/8` predicts better than tested zero/free alternatives over tested holdouts |
-| P35 | local closure | direct root movement is in the linear residual/slope regime |
-| P37 | two fresh norm-2 lineages | parameter-free Gaussian sign/scale relation survives |
-| P45 | angular-normalized root amplitude | independently frozen root amplitude is compatible |
-| P49 | clean full-curve lineages | central structure survives; bare slope multiplier has a real finite-size correction |
-| P50-A | third fixed-p lineage | central no-fit semigroup relation survives a third genealogy |
-| P43 | N=185/265 new geometries | matching-odd law beats zero and frozen x=17/4 adversary |
-| #134 | exact channel-map erratum | matching-even sign reversal was a source/target semantic bug, not a physical reversal |
-| P48 new-geometry score | prospective four-channel test | S, D, D-prime survive; pure S-prime fails |
+| P31 | independent same-N confirmation | orientation signal is reproducible |
+| P32 | held-out radial challenge | fixed `13/8` performs well on tested holdouts |
+| P35 | local closure | direct root movement is in the residual/slope regime |
+| P37 | fresh norm-2 lineages | parameter-free Gaussian sign/scale relation survives |
+| P45 | angular-normalized root score | frozen root amplitude is compatible |
+| P49 | clean full curves | central structure survives; bare slope multiplier needs finite-size correction |
+| P50-A | third fixed-coordinate lineage | no-fit semigroup relation survives a third genealogy |
+| P43 | N=185/265 new geometries | current odd radial law beats zero and frozen x=17/4 adversary |
+| #134 | exact semantic correction | historical even-sector sign reversal was a channel-map error |
+| P48 new-geometry | four-channel derivative test | S, D, D-prime survive; pure S-prime fails |
+| #184 | prequential ledger | primary predictive evidence is aggregated without shared-view double counting |
 
-Do not add these local scores as independent global evidence without shared source/raw-data covariance. #95 exists to build that prequential layer.
+## 5. Exact/control layer
 
-## 5. Exact/control evidence added after the original synthesis
+| Asset | What it establishes |
+|---|---|
+| typed channel mapper | claim-bearing scores cannot silently compare incompatible observables |
+| general integer-period backend | noncyclic/sheared quotient topology can be simulated with exact winding arithmetic |
+| Russo/pivotal oracle | finite matching slope equals primal+matching pivotal mass |
+| self-matching tangent | explicit microscopic pair-exchange-odd tangent and rational N=10 responses |
+| N=26 Beta test | both frozen finite Beta-family hypotheses fail |
+| reliability signatures | threshold ranks and exact finite controls share an activation-signature language |
+| Krawtchouk score coordinates | exact orthogonal response coordinates available from existing histograms |
+| rectangular weight-4 ratio | exact modular/shape ratio available for conditional lattice comparison |
 
-| Asset | Status | What it establishes |
-|---|---|---|
-| Typed channel mapper | exact protocol | channel-bearing scores fail closed unless descriptors match or an exact map exists |
-| Russo/pivotal oracle | exact finite | scalar matching slope equals primal+matching pivotal mass |
-| Self-matching tangent | exact finite | explicit microscopic pair-exchange-odd tangent and rational N=10 responses |
-| N=26 Beta test | exact negative | both frozen finite Beta-family hypotheses fail |
-| Reliability signature layer | exact finite | threshold ranks/finite self-dual controls share an activation-signature language |
+These strengthen foundations and create discriminators; they do not by themselves upgrade the H4/LCFT claim.
 
-These strengthen foundations and controls; they do not upgrade the H4/LCFT claim by themselves.
+## 6. Work by resource type
 
-## 6. Current work by resource type
+### Existing data / cheap analysis
 
-### Existing-data / low-compute
+Run freely when useful:
 
-1. #95 prequential evidence ledger.
-2. #101 intrinsic quantile-center spectroscopy.
-3. #119 multi-u functional response.
-4. #125 joint operator-mixing model.
-5. #122 standardized full threshold distribution.
-6. #113 local exact-zero analysis.
-7. #118 dimensionless amplitude-ratio derivation.
-8. #100/#121 orientation-resolved pivotal/four-arm continuation after the completed scalar Russo identity.
+- intrinsic quantile-center spectroscopy;
+- multi-u functional response;
+- joint operator/mixing or transfer models;
+- Krawtchouk/Hermite score-mode analysis;
+- paired threshold-rank gap/window analysis;
+- standardized threshold distribution;
+- local exact-zero analysis;
+- amplitude-ratio derivations;
+- orientation-resolved pivotal/four-arm analysis.
 
-### New production data
+### New production
 
-1. **#57 norm-5 N=325/425** — H4 versus H12 and linked radial/derivative leverage.
-2. **#50 145->290 full curve** — third-lineage slope/root correction test.
-3. **#155 large-N self-matching tangent** — only after a source-frozen thermal-orthogonalization rule.
-4. **Norm-4 closure** — only if variance/information per CPU justifies it.
-5. **Pell/modulus production** — only after an operational H4 projector/observable bridge.
-6. **N=1105** — gated behind cheaper tests.
+Current ordering by expected information:
+
+1. norm-5 N=325/425 full threshold-rank block;
+2. N=145->290 full curve;
+3. norm-4 dyadic closure;
+4. large-N self-matching tangent;
+5. Pell/modulus geometry;
+6. N=1105 four-angle campaign.
+
+Items 3–6 are lower priority, not blocked.
 
 ## 7. Negative results are first-class evidence
 
-Preserve and index, rather than hide:
+Preserve and reuse:
 
 - underpowered large-Pell fixed-p scans;
 - wrapping-only GLS `1x` structural negative;
-- overfit orientation-difference control-variate pilot;
-- Padé failure to cure finite-width signed drift;
-- bare finite-size slope multiplier failure;
+- failed control-variate variance ideas;
+- Padé failure to cure finite-width drift;
+- bare slope-multiplier failure;
 - prospective pure S-prime failure;
-- exact L5 global complex-zero RMS failure;
+- exact global complex-zero RMS failure;
 - graph-cover CRN variance-gain failure;
-- exact N26 `Beta(5,5)` and `Beta(7,7)` failures.
+- exact N=26 Beta-family failures.
 
-## 8. Document/artifact status
+## 8. Artifact status
 
-Use these labels consistently:
+Use a small vocabulary:
 
-- **canonical-current** — current project truth/navigation;
+- **canonical-current** — current navigation/project state;
 - **frozen-prediction** — immutable pre-target hypothesis/score contract;
 - **immutable-result** — committed evidence archive;
 - **topic-derivation** — focused mathematical/theory argument;
-- **historical-snapshot** — accurate earlier project state;
-- **frontier-open** — unmerged work, not canonical `main` evidence;
-- **superseded-protocol** — retained provenance, no longer the active execution entrypoint.
+- **historical** — useful provenance that is not an active entrypoint;
+- **frontier** — genuinely distinct unintegrated work.
 
-Old queues, notes and reports remain in place; organization is achieved through indexes before file movement.
+The artifact registry is navigation metadata. It must not block integration of useful analysis code or results.
 
 ## 9. Directory contract
 
 ```text
 constants/      exact/reference constants and relations
 data/           literature datasets and provenance
-docs/           canonical project-level navigation, status, roadmap
-analysis/       machine-readable research/evidence/artifact indexes
+docs/           canonical project navigation, status and roadmap
+analysis/       machine-readable evidence/work indexes and analysis manifests
 notes/          synthesis, theory, derivations, bounded negative results
 scripts/        analysis, scorers, exact checks, research utilities
-experiments/    frozen or historical protocols and queues
+experiments/    historical or frozen execution protocols
 predictions/    preregistered/frozen prediction artifacts
 results/        immutable raw and derived research archives
 src/            production C++ engines
-tests/          scientific-contract, exact-regression, and smoke tests
+tests/          scientific-contract, exact-regression and smoke tests
 ```
 
 ## 10. Update rule
 
-When new evidence lands:
+When useful work lands:
 
-1. preserve the frozen prediction and old result;
-2. add/update the evidence block in `analysis/research_ledger.yaml`;
-3. update `docs/STATUS.md` only if the current claim boundary changes;
-4. update this map only if relationships among tracks change;
-5. update `docs/ROADMAP.md` when the information-optimal next discriminator changes;
-6. mark old syntheses/queues as historical through the registry rather than rewriting their history.
+1. integrate the scientific asset without waiting on registry cleanup;
+2. preserve frozen predictions and old results;
+3. add/update the evidence ledger when the evidence boundary changes;
+4. update `docs/STATUS.md` only when the current claim boundary changes;
+5. update the roadmap when the information-optimal next target changes;
+6. close redundant active PRs aggressively while retaining Git history.
