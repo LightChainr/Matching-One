@@ -143,15 +143,23 @@ x nuisance cancellation and archive reuse
 
 ## Completed results that change repetition value
 
+- **#50 N145->290 full curve — complete:** the resolved shape direction already rejects one scalar multiplier. Its archive remains reusable for new typed coordinates, while another endpoint-only repeat has lower information gain.
 - **Digital Alexander through index 7:** exact finite backbone within its declared quotient frontier; the next gain is retained birth structure, not another untyped wrapping sign.
-- **P205 ordinary prism:** H4 beats the frozen H8/H12 lines. Do not use `rho`/C3 merely to repeat this selector.
+- **P205 ordinary prism:** H4 beats the frozen H8/H12 lines. A `rho`/C3 run gains more information from a distinct typed observer than from repeating this selector.
 - **PR #267 activation reuse:** all ten archived pairs are scored, the full curves turn three negative root points into stable local node crossings, and the P205 subset resolves H4/H4. The next gain is line-resolved common-field covariance, not another marginal K1/K2 split.
-- **Norm-4:** analytic q2 and the frozen common generator fail; Jordan survives only as a boundary with an extra post-reveal even mode.
+- **Norm-4:** analytic q2 and the frozen common generator fail; the frozen generation-four target supports the extra even coordinate but leaves its eigenvalue aliased.
 - **Annulus:** one scalar shell coordinate fails; a two-state recurrence survives held-out N365. More N365 replicas alone have low mechanism gain.
 - **Triangular log pair:** the cross-cutoff shear is measured; repeat production without gauge closure is lower value.
 - **P263 stopped estimator:** unbiasedness and the mechanism are exact; variance advantage remains unmeasured until the stopped/global comparison is paired.
 
 These are information judgments, not prohibitions. New semantics, a new observer or an independent geometry can immediately change the ordering.
+
+## Secondary opportunities and repetition-value signals
+
+- **Same-N coalescence:** the exact amplitude-free interpolation remains ready when a new Smith class can fill the Gaussian/annulus context rectangle or distinguish an eigenvalue alias.
+- **Local pivotal N130/N170:** the current two response rows are nearly rank one. The historical signal to “stop adding replicas” means that replicas of the same readout have low present information gain, not that the task is forbidden; a thermal-null, representation-typed or line-versus-landing row can immediately raise its priority.
+- **Third primitive norm-2 generation:** it remains an independent opportunity when its new phase, character or Smith geometry separates mechanisms rather than extending the same marginal fit.
+- **Scalar width and free exponent repeats:** the declared scalar-width shortcuts have failed and another free exponent alone is weak discrimination; a new observer, source or exact typed map remains welcome.
 
 ## Lifecycle maintenance and decision rule
 
