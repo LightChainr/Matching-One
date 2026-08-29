@@ -1,0 +1,16 @@
+{
+  "schema": "matching-one/observable-descriptor-map-audit-manifest/v1",
+  "issue": 146,
+  "data_class": "exhaustive finite registry audit",
+  "registry": "scripts/wrapping_channels.py",
+  "outputs": {
+    "json": "results/observable-descriptor-map-audit/latest.json",
+    "markdown": "results/observable-descriptor-map-audit/latest.md"
+  },
+  "commands": [
+    "python scripts/observable_descriptor_map_audit.py --format json",
+    "python scripts/observable_descriptor_map_audit.py --format markdown",
+    "python -m unittest tests.test_observable_descriptor_map_audit"
+  ],
+  "boundary": "no scorer/artifact scan, new channel identity, or repository-wide adoption claim"
+}
