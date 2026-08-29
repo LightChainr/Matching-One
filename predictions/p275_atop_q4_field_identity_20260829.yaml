@@ -2,7 +2,7 @@ version: 1
 created: 2026-08-29
 status: design_frozen_before_any_multi_modulus_gamma_target
 issues: [205, 215, 275]
-production_authorized: false
+production_authorized: true
 generator: scripts/design_p275_atop_q4_field_identity.py
 machine_design: results/p275-atop-q4-field-identity/latest.json
 
@@ -57,8 +57,16 @@ geometries:
 
 phase1_microcanonical_matching_root:
   id: P275_PHASE1_MATCHING_ROOT
-  status: implementation_preflight
-  production_authorized: false
+  status: frozen_prereveal_production_authorized
+  production_authorized: true
+  runner_commit: cb83673fb5f221616a47d53f564635c11e7d0680
+  binary_sha256_arm64: 462cd70be52b18bba69d1337b551110bb0df1527a1bacaebda85215e13ffb356
+  preflight:
+    local_exact_078bd61: pass
+    local_synthetic_scorer: pass
+    arm64_exact_self_test: pass_all_three_hosts
+    arm64_compiler: g++_GCC_10.3.1
+    arm64_binary_byte_identity: pass_all_three_hosts
   evaluation_p: finite_matching_root_inside_each_delete_one
   samples_per_geometry: 20000000
   batches: 100
@@ -71,11 +79,11 @@ phase1_microcanonical_matching_root:
   decision_alpha: 0.01
 
 acquisition:
-  status: not_launched_runner_extension_required
+  status: phase1_frozen_authorized_prereveal
   samples_per_geometry: 20000000
   batches: 100
   replica_counter: [9500000000, 9520000000]
-  within_N: identical_priority_field_random_root_counter_and_batches_across_all_three_moduli
+  within_N: identical_priority_permutation_counter_and_batches_across_all_three_moduli
   across_N: independent_seeds
 
 model_order:
@@ -108,7 +116,7 @@ sufficient_statistics_per_aligned_batch_per_geometry:
   - sum_q_times_ReIm_J_S4_and_J_D4
   - unmarked_birth_mass_N_times_I01_plus_I12
   - optional_landing_H4_S_D_and_q_products
-  - priority_field_digest_and_random_root_digest
+  - priority_permutation_digest
 
 covariance_contract: >-
   Recompute connected covariances, division by B, exact complex frame

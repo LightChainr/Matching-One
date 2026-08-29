@@ -231,3 +231,9 @@ in the lab Euclidean frame.  The rational `z`-frame transport is applied only
 after the connected response is formed.  A modulus-sensitive test covers all
 three period types so non-square runs cannot silently reuse winding-coordinate
 angles.
+
+After those gates passed locally and on all three ARM64 hosts, Phase 1 was
+authorized before any target data were produced.  The runner is frozen at
+`cb83673fb5f221616a47d53f564635c11e7d0680`; independent builds with GCC 10.3.1
+on the three hosts have the identical SHA256
+`462cd70be52b18bba69d1337b551110bb0df1527a1bacaebda85215e13ffb356`.

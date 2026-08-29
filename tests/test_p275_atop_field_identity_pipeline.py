@@ -91,7 +91,9 @@ class P275FieldIdentityPipelineTests(unittest.TestCase):
         phase = prediction["phase1_microcanonical_matching_root"]
         self.assertEqual(phase["evaluation_p"], "finite_matching_root_inside_each_delete_one")
         self.assertEqual(phase["microcanonical_levels"], "all_k_from_0_through_N")
-        self.assertFalse(phase["production_authorized"])
+        self.assertTrue(prediction["production_authorized"])
+        self.assertTrue(phase["production_authorized"])
+        self.assertEqual(phase["runner_commit"], "cb83673fb5f221616a47d53f564635c11e7d0680")
 
 
 if __name__ == "__main__":
