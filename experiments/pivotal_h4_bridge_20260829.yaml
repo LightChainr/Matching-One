@@ -1,0 +1,35 @@
+version: 1
+created: 2026-08-29
+status: retrospective_protocol_frozen_before_execution
+issues: [100, 121]
+input:
+  path: results/server-20260828/P33/p33_all_sizes_arm_10m.hist.csv
+  sizes: [65, 85, 130, 145, 170]
+  batches: 100
+  evidence_class: retrospective_reuse
+split:
+  source_sizes: [65, 85, 130]
+  heldout_sizes: [145, 170]
+definitions:
+  Mbar_prime: orientation mean of the matching-function derivative
+  russo_interpretation: total primal-plus-matching pivotal mass
+  normalized_pivotal_H4: J_N = P4[S_prime]/Mbar_prime
+  primary_scaled: Y_N = N^(13/8)*J_N
+  coefficient_ratio: Xi_N = J_N/P4[D]
+  thermal_control: T_N = N^(-3/8)*Mbar_prime
+primary_score:
+  model: constant Y_N
+  fit_on: [65, 85, 130]
+  score_on: [145, 170]
+  covariance: synchronized delete-one pseudovalues across every size and metric
+diagnostics:
+  - constant Xi_N tests whether central D and pivotal H4 are coefficients of one scaling function
+  - constant T_N checks the Russo mass exponent independently
+evidence_rule: >-
+  Y, Xi, and T are correlated deterministic views of one raw block. The Y
+  heldout score is primary; Xi and T are mechanism diagnostics and must not be
+  counted as independent confirmation.
+claim_boundary: >-
+  Compatibility supports an integrated pivotal/four-arm interpretation. It
+  does not identify a local landing-sector observable or prove an SLE/OPE
+  coefficient relation.

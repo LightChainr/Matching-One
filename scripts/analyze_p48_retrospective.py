@@ -219,6 +219,12 @@ def project_size(
     # convention; these signs are the frozen P48 projector definitions.
     return {
         "p0": p0,
+        # D=(M/2) for each orientation, hence the orientation-mean matching
+        # slope is D'_first+D'_second.  By Russo this is the mean total
+        # primal-plus-matching pivotal mass.
+        "Mbar_prime": (
+            values["first"]["D_prime"] + values["second"]["D_prime"]
+        ),
         "P4_S": (values["second"]["S"] - values["first"]["S"]) / delta_cos4,
         "P4_D": (values["first"]["D"] - values["second"]["D"]) / delta_cos4,
         "P4_S_prime": (
