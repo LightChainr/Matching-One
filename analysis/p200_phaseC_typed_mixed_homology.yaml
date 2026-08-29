@@ -1,0 +1,19 @@
+schema: matching-one.p200-phaseC-typed-mixed-homology.v1
+issue: 200
+status: exact_tiny_gate_passed_production_stopped
+base_branch: analysis/p200-n650-hnf-operationalization-20260829
+oracle:
+  geometry: N1_to_N10_via_N2_N5
+  configurations: 1024
+  command: python3 scripts/p200_typed_mixed_homology_oracle.py --output results/exact-cover-character-oracles/p200_typed_mixed_homology.json
+primary_future_state:
+  order: [R_S_even, R_D_even, R_S_odd, R_D_odd]
+  definition: R_colour=J_full_colour-J_local_colour
+  covariance: full_delete_one_4x4_same_stream
+  null: zero_vector_conditioned_on_factor_additive_topology_bridge
+secondary:
+  rows: [ambient_H1_even, ambient_H1_odd]
+  role: correlated_mechanism_diagnostic
+production:
+  start: false
+  next: bounded_Cxx_fixture_only
