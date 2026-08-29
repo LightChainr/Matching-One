@@ -1,0 +1,889 @@
+{
+  "declared_cutoffs": [
+    0.08838834764831843,
+    0.05892556509887895,
+    0.044194173824159216
+  ],
+  "issue": 234,
+  "joint_score": {
+    "gls": {
+      "chi_square": 22.413980247051683,
+      "chi_square_survival": 0.8385645716964221,
+      "coefficient_covariance": [
+        [
+          0.6322753803958632,
+          -0.0017938191213836543,
+          0.01695421864970496,
+          -0.002019318364700113,
+          0.0017923122409314492,
+          0.061910358671384315
+        ],
+        [
+          -0.001793819121383661,
+          0.0005234884921223822,
+          -0.0030965181105363756,
+          8.989726247827799e-05,
+          -6.0587840603816895e-05,
+          -0.0013080414410775822
+        ],
+        [
+          0.016954218649705033,
+          -0.0030965181105363756,
+          0.022075033759127963,
+          -0.0009520952975308255,
+          0.00014383983986091973,
+          0.009423761684598901
+        ],
+        [
+          -0.0020193183647011156,
+          8.989726247827544e-05,
+          -0.0009520952975308034,
+          0.016168209180218912,
+          0.008713398680537271,
+          0.002505749865966438
+        ],
+        [
+          0.001792312240930898,
+          -6.058784060381813e-05,
+          0.00014383983986093057,
+          0.008713398680537283,
+          0.0051676351344322104,
+          0.007469439000892092
+        ],
+        [
+          0.06191035867138402,
+          -0.0013080414410775803,
+          0.009423761684598884,
+          0.002505749865966646,
+          0.0074694390008922034,
+          0.09342734079103503
+        ]
+      ],
+      "coefficient_order": [
+        "LL_1_over_L",
+        "LD_continuum",
+        "LD_1_over_lattice_radius",
+        "DD_intercept",
+        "DD_log_2delta_slope",
+        "DD_1_over_lattice_radius"
+      ],
+      "coefficients": [
+        0.9057757225441064,
+        0.2078022352680034,
+        0.15004266334404703,
+        -0.06100406809680387,
+        -1.0484688933012167,
+        -0.42444650189646643
+      ],
+      "degrees_of_freedom": 30,
+      "model": "LL=c/L; LD=B+c/(L delta); DD=D+s log(2 delta)+c/(L delta)"
+    },
+    "kappa_proxy": {
+      "definition": "-d(DD)/dlog(2delta)/(2*LD)",
+      "estimate": 2.522756533270689,
+      "standard_error_delta_method": 0.32176401786689623
+    }
+  },
+  "rows": [
+    {
+      "L": 64,
+      "batches": 100,
+      "bilocal_normalization_numerator": 8.617679708002202,
+      "connection_probability_proxy_for_pi_a_squared": 0.15657926025390626,
+      "connection_probability_standard_error": 0.00011181529384233172,
+      "declared_delta": 0.08838834764831843,
+      "input_batches": "results/server-20260829/P234-phaseA/d8-L64-100k.batches.csv",
+      "input_json": "results/server-20260829/P234-phaseA/d8-L64-100k.json",
+      "local_normalization_alpha_L_5_over_4_over_log_L": 43.52594972146302,
+      "natural_realized_cutoff_covariance": [
+        [
+          0.0005391002372494823,
+          1.0875931518430847e-06,
+          0.0002562346572320335
+        ],
+        [
+          1.0875931518430847e-06,
+          0.0004986950022342102,
+          0.00015851917690089127
+        ],
+        [
+          0.0002562346572320335,
+          0.0001585191769008913,
+          0.001268447476399518
+        ]
+      ],
+      "natural_realized_cutoff_point": [
+        0.03166764572330653,
+        0.2180892949781332,
+        1.6055394227837416
+      ],
+      "normalized_covariance_delta_method": [
+        [
+          0.0005391002372494823,
+          1.1564008523718212e-06,
+          0.0002896821584508907
+        ],
+        [
+          1.1564008523718212e-06,
+          0.0005637919796503528,
+          0.00019054941726142654
+        ],
+        [
+          0.0002896821584508907,
+          0.00019054941726142654,
+          0.0016212136207984491
+        ]
+      ],
+      "normalized_order": [
+        "alpha^2_LL",
+        "alpha*beta_numerator*LD/p_connection",
+        "beta_numerator^2*DD/p_connection^2"
+      ],
+      "normalized_point": [
+        0.03166764572330653,
+        0.23188693876795335,
+        1.8151179488917584
+      ],
+      "normalized_standard_error": [
+        0.023218532194122052,
+        0.023744304151740326,
+        0.040264297098030276
+      ],
+      "realized_delta": 0.09375
+    },
+    {
+      "L": 96,
+      "batches": 100,
+      "bilocal_normalization_numerator": 8.831757264023247,
+      "connection_probability_proxy_for_pi_a_squared": 0.14655945855034724,
+      "connection_probability_standard_error": 0.00010560540840939338,
+      "declared_delta": 0.08838834764831843,
+      "input_batches": "results/server-20260829/P234-phaseA/d8-L96-100k.batches.csv",
+      "input_json": "results/server-20260829/P234-phaseA/d8-L96-100k.json",
+      "local_normalization_alpha_L_5_over_4_over_log_L": 65.8355205976158,
+      "natural_realized_cutoff_covariance": [
+        [
+          0.0014535377309788733,
+          2.8355537538657126e-05,
+          0.0002831239654578336
+        ],
+        [
+          2.835553753865713e-05,
+          0.0005459081438796775,
+          0.00020070822879211553
+        ],
+        [
+          0.0002831239654578336,
+          0.00020070822879211553,
+          0.0017636579830329518
+        ]
+      ],
+      "natural_realized_cutoff_point": [
+        -0.040884549141148134,
+        0.23249714167764965,
+        1.8006550901720966
+      ],
+      "normalized_covariance_delta_method": [
+        [
+          0.0014535377309788733,
+          2.6668337696760156e-05,
+          0.00025043369129535374
+        ],
+        [
+          2.666833769676016e-05,
+          0.00048287608348133245,
+          0.00016697035174718724
+        ],
+        [
+          0.00025043369129535374,
+          0.00016697035174718724,
+          0.0013798968187228994
+        ]
+      ],
+      "normalized_order": [
+        "alpha^2_LL",
+        "alpha*beta_numerator*LD/p_connection",
+        "beta_numerator^2*DD/p_connection^2"
+      ],
+      "normalized_point": [
+        -0.040884549141148134,
+        0.2186631898386042,
+        1.592746485633434
+      ],
+      "normalized_standard_error": [
+        0.03812528991337474,
+        0.021974441596576064,
+        0.03714696244274758
+      ],
+      "realized_delta": 0.08333333333333333
+    },
+    {
+      "L": 128,
+      "batches": 100,
+      "bilocal_normalization_numerator": 8.775320064220532,
+      "connection_probability_proxy_for_pi_a_squared": 0.13737454345703123,
+      "connection_probability_standard_error": 9.518962573569533e-05,
+      "declared_delta": 0.08838834764831843,
+      "input_batches": "results/server-20260829/P234-phaseA/d8-L128-100k.batches.csv",
+      "input_json": "results/server-20260829/P234-phaseA/d8-L128-100k.json",
+      "local_normalization_alpha_L_5_over_4_over_log_L": 88.73377559316776,
+      "natural_realized_cutoff_covariance": [
+        [
+          0.0033797357242788106,
+          2.633210452037596e-05,
+          0.0003655708345586369
+        ],
+        [
+          2.6332104520375964e-05,
+          0.0005246207440590872,
+          0.00013345546806866463
+        ],
+        [
+          0.0003655708345586369,
+          0.00013345546806866463,
+          0.00148094158439503
+        ]
+      ],
+      "natural_realized_cutoff_point": [
+        0.024978628789613645,
+        0.22418759612159334,
+        1.7151384427504697
+      ],
+      "normalized_covariance_delta_method": [
+        [
+          0.0033797357242788106,
+          2.557198404467831e-05,
+          0.00034476982563309496
+        ],
+        [
+          2.5571984044678313e-05,
+          0.000494769782909868,
+          0.00012222862785428226
+        ],
+        [
+          0.00034476982563309496,
+          0.00012222862785428226,
+          0.001317204926068385
+        ]
+      ],
+      "normalized_order": [
+        "alpha^2_LL",
+        "alpha*beta_numerator*LD/p_connection",
+        "beta_numerator^2*DD/p_connection^2"
+      ],
+      "normalized_point": [
+        0.024978628789613645,
+        0.2177160441771753,
+        1.617546931930779
+      ],
+      "normalized_standard_error": [
+        0.058135494530267916,
+        0.022243421115239175,
+        0.03629331792587149
+      ],
+      "realized_delta": 0.0859375
+    },
+    {
+      "L": 192,
+      "batches": 100,
+      "bilocal_normalization_numerator": 8.720912491082844,
+      "connection_probability_proxy_for_pi_a_squared": 0.12565050808376735,
+      "connection_probability_standard_error": 9.445738730968639e-05,
+      "declared_delta": 0.08838834764831843,
+      "input_batches": "results/server-20260829/P234-phaseA/d8-L192-100k.batches.csv",
+      "input_json": "results/server-20260829/P234-phaseA/d8-L192-100k.json",
+      "local_normalization_alpha_L_5_over_4_over_log_L": 135.94011619923796,
+      "natural_realized_cutoff_covariance": [
+        [
+          0.007470968071779093,
+          0.000320002690461689,
+          -0.0003171918612676668
+        ],
+        [
+          0.000320002690461689,
+          0.0006928995010077017,
+          0.00017581099064638118
+        ],
+        [
+          -0.0003171918612676668,
+          0.00017581099064638118,
+          0.001192178087681271
+        ]
+      ],
+      "natural_realized_cutoff_point": [
+        -0.004900065203884532,
+        0.2269852295491431,
+        1.7446048666878455
+      ],
+      "normalized_covariance_delta_method": [
+        [
+          0.007470968071779093,
+          0.00032058091843348735,
+          -0.0003183391948211745
+        ],
+        [
+          0.00032058091843348735,
+          0.0006954058290185707,
+          0.00017676575732518496
+        ],
+        [
+          -0.0003183391948211745,
+          0.00017676575732518496,
+          0.0012008182825370833
+        ]
+      ],
+      "normalized_order": [
+        "alpha^2_LL",
+        "alpha*beta_numerator*LD/p_connection",
+        "beta_numerator^2*DD/p_connection^2"
+      ],
+      "normalized_point": [
+        -0.004900065203884532,
+        0.2273953798785701,
+        1.7509153807507352
+      ],
+      "normalized_standard_error": [
+        0.08643476194089443,
+        0.02637054851569399,
+        0.034652825029672304
+      ],
+      "realized_delta": 0.08854166666666667
+    },
+    {
+      "L": 64,
+      "batches": 100,
+      "bilocal_normalization_numerator": 14.305545483921573,
+      "connection_probability_proxy_for_pi_a_squared": 0.16704245605468748,
+      "connection_probability_standard_error": 9.417733055210896e-05,
+      "declared_delta": 0.05892556509887895,
+      "input_batches": "results/server-20260829/P234-phaseB/d12-L64-100k.batches.csv",
+      "input_json": "results/server-20260829/P234-phaseB/d12-L64-100k.json",
+      "local_normalization_alpha_L_5_over_4_over_log_L": 43.52594972146302,
+      "natural_realized_cutoff_covariance": [
+        [
+          0.0006236795795669761,
+          0.00022022463324989687,
+          0.000759725670262019
+        ],
+        [
+          0.00022022463324989684,
+          0.0011938255785791953,
+          0.0004788766816319372
+        ],
+        [
+          0.0007597256702620189,
+          0.00047887668163193724,
+          0.006708647989456429
+        ]
+      ],
+      "natural_realized_cutoff_point": [
+        0.022372979935306857,
+        0.2828278289632525,
+        2.041583630405522
+      ],
+      "normalized_covariance_delta_method": [
+        [
+          0.0006236795795669761,
+          0.00023415737141400768,
+          0.0008588961944861293
+        ],
+        [
+          0.00023415737141400765,
+          0.0013496611822636393,
+          0.0005756380673241955
+        ],
+        [
+          0.0008588961944861292,
+          0.0005756380673241955,
+          0.008574380650368588
+        ]
+      ],
+      "normalized_order": [
+        "alpha^2_LL",
+        "alpha*beta_numerator*LD/p_connection",
+        "beta_numerator^2*DD/p_connection^2"
+      ],
+      "normalized_point": [
+        0.022372979935306857,
+        0.3007212227599283,
+        2.3080810344024814
+      ],
+      "normalized_standard_error": [
+        0.024973577628505213,
+        0.036737735127027625,
+        0.09259795165320121
+      ],
+      "realized_delta": 0.0625
+    },
+    {
+      "L": 96,
+      "batches": 100,
+      "bilocal_normalization_numerator": 14.305545483921573,
+      "connection_probability_proxy_for_pi_a_squared": 0.15362530707465277,
+      "connection_probability_standard_error": 8.356978148446313e-05,
+      "declared_delta": 0.05892556509887895,
+      "input_batches": "results/server-20260829/P234-phaseB/d12-L96-100k.batches.csv",
+      "input_json": "results/server-20260829/P234-phaseB/d12-L96-100k.json",
+      "local_normalization_alpha_L_5_over_4_over_log_L": 65.8355205976158,
+      "natural_realized_cutoff_covariance": [
+        [
+          0.0017144914475936141,
+          -9.944955221030103e-05,
+          0.001147782093878035
+        ],
+        [
+          -9.944955221030103e-05,
+          0.0012367897898220481,
+          5.106396471585698e-05
+        ],
+        [
+          0.0011477820938780349,
+          5.1063964715856986e-05,
+          0.006363079959359299
+        ]
+      ],
+      "natural_realized_cutoff_point": [
+        0.029724546887113207,
+        0.19392489121069792,
+        2.0330515354891725
+      ],
+      "normalized_covariance_delta_method": [
+        [
+          0.0017144914475936141,
+          -0.00010574133052336512,
+          0.0012976074274167512
+        ],
+        [
+          -0.00010574133052336512,
+          0.0013982337117700566,
+          6.138190287064179e-05
+        ],
+        [
+          0.001297607427416751,
+          6.13819028706418e-05,
+          0.008132707181242226
+        ]
+      ],
+      "normalized_order": [
+        "alpha^2_LL",
+        "alpha*beta_numerator*LD/p_connection",
+        "beta_numerator^2*DD/p_connection^2"
+      ],
+      "normalized_point": [
+        0.029724546887113207,
+        0.20619374911669058,
+        2.2984352054651493
+      ],
+      "normalized_standard_error": [
+        0.04140641795173321,
+        0.037392963399148466,
+        0.09018152350255691
+      ],
+      "realized_delta": 0.0625
+    },
+    {
+      "L": 128,
+      "batches": 100,
+      "bilocal_normalization_numerator": 14.305545483921573,
+      "connection_probability_proxy_for_pi_a_squared": 0.1447847802734375,
+      "connection_probability_standard_error": 7.931141285023267e-05,
+      "declared_delta": 0.05892556509887895,
+      "input_batches": "results/server-20260829/P234-phaseB/d12-L128-100k.batches.csv",
+      "input_json": "results/server-20260829/P234-phaseB/d12-L128-100k.json",
+      "local_normalization_alpha_L_5_over_4_over_log_L": 88.73377559316776,
+      "natural_realized_cutoff_covariance": [
+        [
+          0.0031347486078918065,
+          0.0002403988098018862,
+          0.0001806231687450357
+        ],
+        [
+          0.00024039880980188615,
+          0.0015338426741267673,
+          0.0008786463542581268
+        ],
+        [
+          0.0001806231687450357,
+          0.0008786463542581269,
+          0.0034862502609847553
+        ]
+      ],
+      "natural_realized_cutoff_point": [
+        0.08529483506387411,
+        0.17237781266945856,
+        2.1027634519879332
+      ],
+      "normalized_covariance_delta_method": [
+        [
+          0.0031347486078918065,
+          0.00025560788801673266,
+          0.00020420075080210552
+        ],
+        [
+          0.0002556078880167326,
+          0.0017340622902653154,
+          0.0010561848355258628
+        ],
+        [
+          0.00020420075080210552,
+          0.0010561848355258628,
+          0.004455806419879272
+        ]
+      ],
+      "normalized_order": [
+        "alpha^2_LL",
+        "alpha*beta_numerator*LD/p_connection",
+        "beta_numerator^2*DD/p_connection^2"
+      ],
+      "normalized_point": [
+        0.08529483506387411,
+        0.18328347246683654,
+        2.3772469425629237
+      ],
+      "normalized_standard_error": [
+        0.05598882574131919,
+        0.04164207355866559,
+        0.06675182709019485
+      ],
+      "realized_delta": 0.0625
+    },
+    {
+      "L": 192,
+      "batches": 100,
+      "bilocal_normalization_numerator": 14.567232081984493,
+      "connection_probability_proxy_for_pi_a_squared": 0.13511112223307292,
+      "connection_probability_standard_error": 6.237663114040811e-05,
+      "declared_delta": 0.05892556509887895,
+      "input_batches": "results/server-20260829/P234-phaseB/d12-L192-100k.batches.csv",
+      "input_json": "results/server-20260829/P234-phaseB/d12-L192-100k.json",
+      "local_normalization_alpha_L_5_over_4_over_log_L": 135.94011619923796,
+      "natural_realized_cutoff_covariance": [
+        [
+          0.008671679307451045,
+          0.00010340991460284815,
+          0.001400743452972067
+        ],
+        [
+          0.00010340991460284815,
+          0.0024347989201548986,
+          0.0015127577027387734
+        ],
+        [
+          0.001400743452972067,
+          0.0015127577027387736,
+          0.004188955083564121
+        ]
+      ],
+      "natural_realized_cutoff_point": [
+        0.08697001362596099,
+        0.2804613209357687,
+        2.209029745629734
+      ],
+      "normalized_covariance_delta_method": [
+        [
+          0.008671679307451045,
+          0.00010042481352902605,
+          0.0013210410415287579
+        ],
+        [
+          0.00010042481352902605,
+          0.002296258672185751,
+          0.0013854981062793304
+        ],
+        [
+          0.0013210410415287579,
+          0.0013854981062793304,
+          0.0037258135832574845
+        ]
+      ],
+      "normalized_order": [
+        "alpha^2_LL",
+        "alpha*beta_numerator*LD/p_connection",
+        "beta_numerator^2*DD/p_connection^2"
+      ],
+      "normalized_point": [
+        0.08697001362596099,
+        0.2723653332975788,
+        2.083335781254517
+      ],
+      "normalized_standard_error": [
+        0.09312185193310454,
+        0.04791929331893106,
+        0.061039442848517915
+      ],
+      "realized_delta": 0.057291666666666664
+    },
+    {
+      "L": 64,
+      "batches": 100,
+      "bilocal_normalization_numerator": 20.496412047141582,
+      "connection_probability_proxy_for_pi_a_squared": 0.17591913818359375,
+      "connection_probability_standard_error": 7.272502877529471e-05,
+      "declared_delta": 0.044194173824159216,
+      "input_batches": "results/server-20260829/P234-phaseB/d16-L64-100k.batches.csv",
+      "input_json": "results/server-20260829/P234-phaseB/d16-L64-100k.json",
+      "local_normalization_alpha_L_5_over_4_over_log_L": 43.52594972146302,
+      "natural_realized_cutoff_covariance": [
+        [
+          0.0006022355896493914,
+          0.0003760838829547676,
+          0.0010990272370650462
+        ],
+        [
+          0.00037608388295476755,
+          0.003012153383607463,
+          0.002283992388383373
+        ],
+        [
+          0.0010990272370650462,
+          0.002283992388383373,
+          0.018919263974804392
+        ]
+      ],
+      "natural_realized_cutoff_point": [
+        -0.0032672343013017933,
+        0.25492834592643127,
+        2.3325850090773645
+      ],
+      "normalized_covariance_delta_method": [
+        [
+          0.0006022355896493914,
+          0.0003998772170229188,
+          0.0012424883724492521
+        ],
+        [
+          0.00039987721702291877,
+          0.0034053437703331826,
+          0.0027454938080336356
+        ],
+        [
+          0.0012424883724492521,
+          0.0027454938080336356,
+          0.024180873880956497
+        ]
+      ],
+      "normalized_order": [
+        "alpha^2_LL",
+        "alpha*beta_numerator*LD/p_connection",
+        "beta_numerator^2*DD/p_connection^2"
+      ],
+      "normalized_point": [
+        -0.0032672343013017933,
+        0.27105665020369357,
+        2.637068176097011
+      ],
+      "normalized_standard_error": [
+        0.024540488781794698,
+        0.05835532341040689,
+        0.15550200603515216
+      ],
+      "realized_delta": 0.046875
+    },
+    {
+      "L": 96,
+      "batches": 100,
+      "bilocal_normalization_numerator": 21.005577152706824,
+      "connection_probability_proxy_for_pi_a_squared": 0.16527025173611112,
+      "connection_probability_standard_error": 7.250797411941633e-05,
+      "declared_delta": 0.044194173824159216,
+      "input_batches": "results/server-20260829/P234-phaseB/d16-L96-100k.batches.csv",
+      "input_json": "results/server-20260829/P234-phaseB/d16-L96-100k.json",
+      "local_normalization_alpha_L_5_over_4_over_log_L": 65.8355205976158,
+      "natural_realized_cutoff_covariance": [
+        [
+          0.0012729887258519637,
+          0.0003155011440991755,
+          0.002026840388077704
+        ],
+        [
+          0.0003155011440991755,
+          0.003595992988986796,
+          0.0027863129648738275
+        ],
+        [
+          0.002026840388077704,
+          0.0027863129648738275,
+          0.023256399542818523
+        ]
+      ],
+      "natural_realized_cutoff_point": [
+        -0.004685216981239119,
+        0.2688790770888497,
+        2.374019224484031
+      ],
+      "normalized_covariance_delta_method": [
+        [
+          0.0012729887258519637,
+          0.0002967283213404202,
+          0.0017928158050202335
+        ],
+        [
+          0.0002967283213404202,
+          0.0031807897174931958,
+          0.002317950084172169
+        ],
+        [
+          0.0017928158050202335,
+          0.002317950084172169,
+          0.01819594958479225
+        ]
+      ],
+      "normalized_order": [
+        "alpha^2_LL",
+        "alpha*beta_numerator*LD/p_connection",
+        "beta_numerator^2*DD/p_connection^2"
+      ],
+      "normalized_point": [
+        -0.004685216981239119,
+        0.2528803418952303,
+        2.099908415143382
+      ],
+      "normalized_standard_error": [
+        0.03567896755585794,
+        0.05639849038310508,
+        0.1348923629594806
+      ],
+      "realized_delta": 0.041666666666666664
+    },
+    {
+      "L": 128,
+      "batches": 100,
+      "bilocal_normalization_numerator": 20.496412047141582,
+      "connection_probability_proxy_for_pi_a_squared": 0.1522415789794922,
+      "connection_probability_standard_error": 7.256205235056575e-05,
+      "declared_delta": 0.044194173824159216,
+      "input_batches": "results/server-20260829/P234-phaseB/d16-L128-100k.batches.csv",
+      "input_json": "results/server-20260829/P234-phaseB/d16-L128-100k.json",
+      "local_normalization_alpha_L_5_over_4_over_log_L": 88.73377559316776,
+      "natural_realized_cutoff_covariance": [
+        [
+          0.0023238074552892375,
+          0.00017656403042219657,
+          0.0008423817169508395
+        ],
+        [
+          0.00017656403042219657,
+          0.0026161791125606224,
+          0.0017487563843905053
+        ],
+        [
+          0.0008423817169508395,
+          0.0017487563843905055,
+          0.010926701957197424
+        ]
+      ],
+      "natural_realized_cutoff_point": [
+        0.005123960869036739,
+        0.1833659230296061,
+        2.283503051637524
+      ],
+      "normalized_covariance_delta_method": [
+        [
+          0.0023238074552892375,
+          0.0001877345355957985,
+          0.0009523417192737954
+        ],
+        [
+          0.0001877345355957985,
+          0.0029576811365310965,
+          0.0021021085050558098
+        ],
+        [
+          0.0009523417192737955,
+          0.0021021085050558098,
+          0.013965511677074806
+        ]
+      ],
+      "normalized_order": [
+        "alpha^2_LL",
+        "alpha*beta_numerator*LD/p_connection",
+        "beta_numerator^2*DD/p_connection^2"
+      ],
+      "normalized_point": [
+        0.005123960869036739,
+        0.19496675694219112,
+        2.581579322536923
+      ],
+      "normalized_standard_error": [
+        0.04820588610625509,
+        0.054384567080478785,
+        0.11817576603125873
+      ],
+      "realized_delta": 0.046875
+    },
+    {
+      "L": 192,
+      "batches": 100,
+      "bilocal_normalization_numerator": 21.005577152706824,
+      "connection_probability_proxy_for_pi_a_squared": 0.14309327609592015,
+      "connection_probability_standard_error": 5.9360466417510253e-05,
+      "declared_delta": 0.044194173824159216,
+      "input_batches": "results/server-20260829/P234-phaseB/d16-L192-100k.batches.csv",
+      "input_json": "results/server-20260829/P234-phaseB/d16-L192-100k.json",
+      "local_normalization_alpha_L_5_over_4_over_log_L": 135.94011619923796,
+      "natural_realized_cutoff_covariance": [
+        [
+          0.005480178753341258,
+          0.00023733266206716388,
+          0.001078302257938225
+        ],
+        [
+          0.00023733266206716388,
+          0.004663287633608921,
+          0.002972466210687671
+        ],
+        [
+          0.001078302257938225,
+          0.002972466210687671,
+          0.012562484368982387
+        ]
+      ],
+      "natural_realized_cutoff_point": [
+        -0.022836200900528073,
+        0.3378410695816041,
+        2.47671825119023
+      ],
+      "normalized_covariance_delta_method": [
+        [
+          0.005480178753341258,
+          0.00022321098902990254,
+          0.0009537985043085398
+        ],
+        [
+          0.00022321098902990254,
+          0.004124851577888017,
+          0.0024728120602828317
+        ],
+        [
+          0.0009537985043085398,
+          0.0024728120602828317,
+          0.00982896478953599
+        ]
+      ],
+      "normalized_order": [
+        "alpha^2_LL",
+        "alpha*beta_numerator*LD/p_connection",
+        "beta_numerator^2*DD/p_connection^2"
+      ],
+      "normalized_point": [
+        -0.022836200900528073,
+        0.31773898552104635,
+        2.1907495288897345
+      ],
+      "normalized_standard_error": [
+        0.07402822943540699,
+        0.06422500741835704,
+        0.09914113570832235
+      ],
+      "realized_delta": 0.041666666666666664
+    }
+  ],
+  "schema": "matching-one.p234-cross-cutoff-shear.v1",
+  "scope": [
+    "The natural realized cutoff removes the deterministic nearest-vertex prefactor before fitting.",
+    "The leading finite-radius correction is 1/(L*delta_realized), not a free correction per cutoff.",
+    "The LCFT relation B_delta=hat_phi-kappa*log(2delta)*phi predicts a common LD and a DD slope -2*kappa*LD.",
+    "kappa_proxy remains in the connection-probability field gauge; cross-lattice universality needs an additional amplitude invariant."
+  ],
+  "status": "scorer_frozen_after_L64_preview_before_L96_L128_L192_phaseB_reveal"
+}
