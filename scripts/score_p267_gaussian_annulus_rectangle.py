@@ -27,6 +27,8 @@ RADII = (2, 4, 7, 8)
 GAUSSIAN_SEED = 26725360829
 GAUSSIAN_COUNTER = (26725300000, 26725500000)
 BOOTSTRAP_SEED = 267253255
+ANNULUS_SOURCE_COMMIT = "3123b73"
+ANNULUS_SOURCE_PATH = "results/server-20260829/P225-norm5-multiradius/analysis.json"
 
 
 def sha256(path: Path) -> str:
@@ -87,6 +89,15 @@ def psd_inverse(matrix: np.ndarray, rcond: float = 1e-11) -> tuple[np.ndarray, i
     return inverse, int(np.count_nonzero(keep))
 
 
+def chi_square_survival_even(value: float, degrees: int) -> float:
+    if degrees <= 0 or degrees % 2:
+        raise ValueError("even positive chi-square degrees required")
+    half = value / 2
+    return math.exp(-half) * sum(
+        half ** power / math.factorial(power) for power in range(degrees // 2)
+    )
+
+
 def fixed_score(point: np.ndarray, covariance: np.ndarray,
                 lambda_gaussian: float, lambda_annulus: float) -> dict[str, Any]:
     transform = residual_matrix(lambda_gaussian, lambda_annulus)
@@ -110,6 +121,7 @@ def fixed_score(point: np.ndarray, covariance: np.ndarray,
         "residual_covariance": residual_covariance.tolist(),
         "chi_square": total,
         "effective_rank": rank,
+        "chi_square_survival_reference": chi_square_survival_even(total, rank),
         "context_components": {
             "Gaussian": {
                 "chi_square": float(residual[:4] @ gaussian_precision @ residual[:4]),
@@ -440,6 +452,8 @@ def score(batch_path: Path, metadata_path: Path, annulus_path: Path,
     manifest = yaml.safe_load(manifest_path.read_text(encoding="utf-8"))
     if manifest.get("schema") != "matching-one/p267-gaussian-annulus-missing-cells/v1":
         raise ValueError("manifest schema mismatch")
+    if require_production and manifest.get("production_authorized") is not True:
+        raise ValueError("manifest has not authorized production scoring")
     gaussian_point, gaussian_covariance, gaussian_order, audit = read_gaussian_batches(
         batch_path, metadata_path, manifest, require_production
     )
@@ -457,7 +471,11 @@ def score(batch_path: Path, metadata_path: Path, annulus_path: Path,
         "sources": {
             "Gaussian_batches": {"path": str(batch_path), "sha256": sha256(batch_path)},
             "Gaussian_metadata": {"path": str(metadata_path), "sha256": sha256(metadata_path)},
-            "annulus_analysis": {"path": str(annulus_path), "sha256": sha256(annulus_path)},
+            "annulus_analysis": {
+                "path_at_commit": ANNULUS_SOURCE_PATH,
+                "commit": ANNULUS_SOURCE_COMMIT,
+                "sha256": sha256(annulus_path),
+            },
             "manifest": {"path": str(manifest_path), "sha256": sha256(manifest_path)},
         },
         "dependency_groups": {

@@ -1,0 +1,6 @@
+g++ -std=c++17 -O3 -DNDEBUG -fopenmp src/general_period_multiradius_pivotal_mc.cpp -o build/general_period_multiradius_pivotal_mc
+./build/general_period_multiradius_pivotal_mc --self-test
+./build/general_period_multiradius_pivotal_mc --validate-only
+./build/general_period_multiradius_pivotal_mc --samples 200000 --batches 200 --threads 8 --radii 2 --cutoff euclidean --p 0.592746050790 --seed 26725360829 --replica-offset 26725300000 --git-commit ee9190c9996031cb1c088b98668088c29cb2e86d --binary-sha256 f273763dea4736db894f0074a125c52debe78a2eb1c6aa4ecef53481f096fdbb --output-prefix results/server-20260830/P267-gaussian-annulus-context/raw/gaussian_200k
+python3 scripts/score_p267_gaussian_annulus_rectangle.py --batches results/server-20260830/P267-gaussian-annulus-context/raw/gaussian_200k.batches.csv --metadata results/server-20260830/P267-gaussian-annulus-context/raw/gaussian_200k.metadata.json --annulus-analysis <git-worktree-at-3123b73>/results/server-20260829/P225-norm5-multiradius/analysis.json --manifest analysis/p267_gaussian_annulus_missing_cells_20260829.yaml --bootstrap-draws 100000 --output results/server-20260830/P267-gaussian-annulus-context/score.json
+
