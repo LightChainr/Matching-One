@@ -1,0 +1,163 @@
+{
+  "claim_boundary": {
+    "exact": "all Virasoro mode coefficients, residue covectors, ratios, and spectrum arithmetic",
+    "not_claimed": "that the existing torus or pivotal rows already implement the required Ward projection",
+    "prediction": "the observed lattice row selects the fixed-c Q4 Jordan fingerprint"
+  },
+  "direct_spin4_ward_gate": {
+    "four_leg_primary_vector": [
+      "0",
+      "0",
+      "0"
+    ],
+    "ordinary_q4_vector": [
+      "40",
+      "-60",
+      "30"
+    ],
+    "primitive_ratio": "4:-6:3",
+    "q4_state": "Q4|epsilon>=(40L_-2^2-60L_-3L_-1-9L_-4)|epsilon>",
+    "scalar_mode_order": [
+      "L2^2",
+      "L1 L3",
+      "L4"
+    ],
+    "selection_rule": "A spin-4 primary such as V_(2,-2) is killed by every positive mode, whereas the thermal Q4 descendant has the nonzero exact vector (40,-60,30)."
+  },
+  "frozen_high_risk_prediction": {
+    "claim_status": "conditional until the lattice-to-Virasoro Ward projection is calibrated",
+    "frozen_adversaries": {
+      "Kac_curve_parameter_log": "J_A/J_B=-482/185 and parent d/b=2/3",
+      "V22_four_leg_primary": "positive-mode vector=0; parent b/a=33/4 for spin +4",
+      "negative_dimension_primary": "parent a>0,b<0",
+      "ordinary_Q4": "J_A=J_B=0"
+    },
+    "stage_1_operator_gate": "after common normalization, the three positive-mode contractions lie on 4:-6:3 rather than the zero vector of the x=17/4 four-leg primary",
+    "stage_2_module_gate": "after subtracting the ordinary Q4 line, (J_A/J_B)=-10/3 and the parent null jet has d/b=0, selecting a fixed-c Jordan lift",
+    "target": "source-frozen local/torus spin-4 Ward projection of the leading matching-odd row"
+  },
+  "inhomogeneous_null_jets": {
+    "definition": "R=N2|psi>; L1 R=a L_-1|phi>, L1^2 R=b|phi>, L2 R=d|phi>, with (L0-h)|psi>=|phi> for logarithmic rows",
+    "exact_discriminator": {
+      "V22_spin_plus": "b/a=33/4 with (a,b)=(-28/3,-77)",
+      "fixed_c_jordan": "b/a=5/4 and d/b=0",
+      "kac_curve_log_tangent": "b/a=5/4 and d/b=2/3",
+      "negative_h_primary": "a>0, b<0",
+      "ordinary_thermal": "(a,b,d)=(0,0,0)"
+    },
+    "fixed_c_jordan_top": {
+      "a_L1R_over_Lminus1phi": "-8/3",
+      "b_L1squaredR_over_phi": "-10/3",
+      "b_over_a_when_defined": "5/4",
+      "d_L2R_over_phi": "0",
+      "d_over_b_when_defined": "0"
+    },
+    "four_leg_V22_spin_minus_chiral_h_1_over_8": {
+      "a_L1R_over_Lminus1phi": "4/3",
+      "b_L1squaredR_over_phi": "1/3",
+      "b_over_a_when_defined": "1/4",
+      "d_L2R_over_phi": "0",
+      "d_over_b_when_defined": "0"
+    },
+    "four_leg_V22_spin_plus_chiral_h_33_over_8": {
+      "a_L1R_over_Lminus1phi": "-28/3",
+      "b_L1squaredR_over_phi": "-77",
+      "b_over_a_when_defined": "33/4",
+      "d_L2R_over_phi": "0",
+      "d_over_b_when_defined": "0"
+    },
+    "kac_curve_parameter_tangent": {
+      "a_L1R_over_Lminus1phi": "-8/3",
+      "b_L1squaredR_over_phi": "-10/3",
+      "b_over_a_when_defined": "5/4",
+      "d_L2R_over_phi": "-20/9",
+      "d_over_b_when_defined": "2/3"
+    },
+    "negative_dimension_control_h_minus_1_over_24": {
+      "a_L1R_over_Lminus1phi": "16/9",
+      "b_L1squaredR_over_phi": "-4/27",
+      "b_over_a_when_defined": "-1/12",
+      "d_L2R_over_phi": "0",
+      "d_over_b_when_defined": "0"
+    },
+    "ordinary_thermal_primary": {
+      "a_L1R_over_Lminus1phi": "0",
+      "b_L1squaredR_over_phi": "0",
+      "b_over_a_when_defined": null,
+      "d_L2R_over_phi": "0",
+      "d_over_b_when_defined": null
+    }
+  },
+  "issue": 252,
+  "minimal_execution": {
+    "covariance": "one same-stream full covariance; score linear constraints before ratios",
+    "cover_test": "transport the source-frozen Ward covectors over one norm-2 and the existing norm-5 handed pair; the coefficients are representation algebra and must not be refit by cover",
+    "first_control": "calibrate the same positive-mode/Ward projection on an exact-critical model with a known thermal degenerate insertion; do not infer modes from the target",
+    "no_new_large_compute_before": "the control reproduces the exact Q4 vector (40,-60,30)",
+    "saved_joint_vector": [
+      "W_L2squared",
+      "W_L1L3",
+      "W_L4",
+      "parent_L1R",
+      "parent_L1squaredR",
+      "parent_L2R",
+      "bottom normalization rows"
+    ]
+  },
+  "q4_jordan_residue": {
+    "basis_invariance": "psi->psi+lambda phi adds lambda*(40,-60,30); both covectors annihilate that shift",
+    "fixed_c_covector_residue": [
+      "1500",
+      "-450"
+    ],
+    "fixed_c_ratio_JA_over_JB": "-10/3",
+    "fixed_c_tangent_vector": [
+      "864",
+      "-546",
+      "48"
+    ],
+    "kac_curve_covector_residue": [
+      "-4820/3",
+      "1850/3"
+    ],
+    "kac_curve_ratio_JA_over_JB": "-482/185",
+    "kac_curve_tangent_vector": [
+      "-616",
+      "362/3",
+      "248"
+    ],
+    "ordinary_line_annihilating_covectors": [
+      "J_A=3 W_(L2^2)+2 W_(L1L3)",
+      "J_B=W_(L1L3)+2 W_(L4)"
+    ]
+  },
+  "schema": "matching-one/null-field-residue-ward/v1",
+  "status": "exact Virasoro algebra and frozen conditional lattice prediction",
+  "thermal_level2": {
+    "c": "0",
+    "coefficient_a_h": "3/[2(2h+1)]",
+    "h": "5/8",
+    "kac_curve_derivative_at_5_over_8": "-40/9",
+    "level2_kac_curve": "c(h)=2h(5-8h)/(2h+1)",
+    "null_operator": "N2=L_-2-(2/3)L_-1^2"
+  },
+  "thermal_tower_boundary": {
+    "consequence": "The ordinary level-10 correction stays in the N2 quotient and cannot create a nonzero inhomogeneous null residue.",
+    "first_singular_levels": [
+      2,
+      10,
+      16
+    ],
+    "leading_spin4_pair": [
+      4,
+      0
+    ],
+    "next_dimension": "45/4",
+    "next_ordinary_spin4_pair": [
+      7,
+      3
+    ],
+    "next_total_level": 10,
+    "relative_to_leading": "L^-6=N^-3"
+  }
+}
