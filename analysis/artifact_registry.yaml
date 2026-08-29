@@ -51,6 +51,7 @@ frozen_predictions:
   - {path: predictions/wrapping_channel_audit_20260828.json, status: frozen_prediction, issue: 146, role: semantic_map_audit}
 
 evidence_archives:
+  - {id: NEUTRAL_AREA_MODE_FRONT, path: results/local-20260829/neutral-area-mode-front, status: negative_result, role: exact_covector_and_bounded_mode_front}
   - {id: P31, path: results/server-20260828/P31, status: immutable_result, role: same_N_confirmation}
   - {id: P32, path: results/server-20260828/P32-radial-challenge, status: immutable_result, role: heldout_radial}
   - {id: P35, path: results/server-20260828/P35-amplitude-closure, status: immutable_result, role: root_closure}
