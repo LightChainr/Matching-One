@@ -145,18 +145,22 @@ branch_sources:
     integration_status: open_pr
     pr: 267
     ref: research/navigation-priority-refresh-20260829
-    commit: ef97da8222ce5017f4185566809f89176528a905
+    commit: 1dd00013ab31a9360bb5ce1115f178da83f680b8
     commit_semantics: immutable_content_snapshot_before_registry_self_pin
     paths:
       - analysis/activation_curve_nodes_manifest.yaml
+      - analysis/activation_transport_shape_manifest.yaml
       - analysis/two_activation_prism_manifest.yaml
       - results/two-activation-h4/latest.json
       - results/two-activation-h4/latest.md
       - results/activation-curve-nodes/latest.json
       - results/activation-curve-nodes/latest.md
+      - results/activation-transport-shape/latest.json
+      - results/activation-transport-shape/latest.md
       - results/two-activation-prism/latest.json
       - results/two-activation-prism/latest.md
       - scripts/analyze_activation_curve_nodes.py
+      - scripts/analyze_activation_transport_shape.py
       - scripts/analyze_two_activation_prism.py
   - id: SRC_MATCHING_POLYNOMIAL_MAIN
     integration_status: main_integrated
