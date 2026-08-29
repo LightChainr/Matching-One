@@ -153,6 +153,7 @@ class ResearchRegistryTests(unittest.TestCase):
             {84, 196, 197, 228, 229, 230, 245, 246, 247, 267, 273, 277}.issubset(frontier)
         )
         canonical = {int(row["pr"]) for row in self.registry["canonical_integration_history"]}
+        self.assertTrue({282, 283, 284, 285, 286}.issubset(canonical))
         manual = {int(row["pr"]) for row in self.registry.get("manual_integrations", [])}
         closed = {int(row["pr"]) for row in self.registry["superseded_active_paths_closed"]}
         self.assertFalse(set(frontier) & canonical)

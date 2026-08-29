@@ -1,4 +1,4 @@
-version: 8
+version: 9
 updated: 2026-08-29
 purpose: >
   Compact map of durable evidence and next information axes. This ranks work;
@@ -20,6 +20,26 @@ hard_constraints:
   - preserve_frozen_predictions_and_committed_result_history
   - require_identical_observable_semantics_or_a_registered_exact_map_for_claim_bearing_scores
   - do_not_add_correlated_views_of_one_raw_random_block_as_independent_primary_evidence
+
+team_coordination_signals:
+  - id: CS_LIVE_LIFECYCLE_DRIFT
+    action: compare_live_PR_heads_states_and_latest_main_to_the_registry_at_start_and_end_of_each_work_block
+    reason: navigation_should_change_when_results_land_not_wait_for_a_later_cleanup
+  - id: CS_LIFECYCLE_TUPLE
+    action: publish_input_status_output_status_snapshot_commit_and_base_or_parent_with_each_result
+    reason: branch_only_inputs_open_PR_outputs_stacked_results_and_main_facts_are_distinct
+  - id: CS_DEPENDENCY_COORDINATOR
+    action: assign_one_covariance_bundle_and_statistical_coordinator_per_raw_random_block
+    reason: parallel_derived_views_are_coordinates_not_independent_votes
+  - id: CS_SHARED_RANK_BIRTH_STREAM
+    action: reuse_the_index8_cached_topology_oracle_and_acquire_q_I01_I12_ell_iota_line_landing_SD_qJ_K1_K2_once_in_aligned_batches
+    reason: one_sufficient_stream_supports_parallel_mechanism_analyses_without_incomparable_production
+  - id: CS_TYPED_C3_MANIFEST
+    action: name_the_observer_sector_and_complex_character_in_each_C3_title_and_manifest
+    reason: distinct_typed_rows_add_more_information_than_repeating_the_ordinary_A_top_selector
+  - id: CS_SHARED_CONTEXT_AND_Q_INTERFACES
+    action: use_common_source_readout_batch_schemas_for_Gaussian_annulus_and_measure_projector_field_Pascal_interfaces_for_Q_tangents
+    reason: shared_semantics_turn_parallel_work_into_a_scoreable_rectangle_or_tangent
 
 frontier_schema:
   integration_statuses: [main_integrated, open_pr, branch_only, hypothesis]
@@ -106,10 +126,10 @@ branch_sources:
     paths:
       - notes/essential-birth-histogram-reconstruction.md
       - results/essential-birth-histogram/latest.json
-  - id: SRC_DIGITAL_ALEXANDER_INDEX7_MAIN
+  - id: SRC_DIGITAL_ALEXANDER_INDEX8_MAIN
     integration_status: main_integrated
     ref: main
-    commit: d6fda88dee845bb9f1b4ea7aff33fa9921585c58
+    commit: e63634dc5c2423c64e5544ceeb307ae7a88e0d4e
     paths:
       - notes/digital-alexander-short-period-frontier.md
       - results/digital-alexander-quotient-frontier/latest.json
@@ -384,15 +404,15 @@ scientific_nodes:
     observer_sectors: [topology_typed]
     geometries: [square_controls]
     acquisition: [exact_construction]
-    source_refs: [SRC_DIGITAL_ALEXANDER_MAIN, SRC_DIGITAL_ALEXANDER_FILTRATION_MAIN, SRC_DIGITAL_ALEXANDER_INDEX7_MAIN]
-    known_result: configurationwise_rblack_plus_rwhite_equals_2_matching_charge_equals_rblack_minus_1_and_index2_through_7_HNF_exhaustion_has_zero_birth_reflection_rank_sum_reconstruction_or_line_failures
-    boundary: regular_square_cell_theorem_holds_in_its_declared_class_while_degenerate_HNF_exhaustion_covers_only_40_quotients_and_49878_filtrations_through_index7_not_an_unrestricted_quotient_theorem
+    source_refs: [SRC_DIGITAL_ALEXANDER_MAIN, SRC_DIGITAL_ALEXANDER_FILTRATION_MAIN, SRC_DIGITAL_ALEXANDER_INDEX8_MAIN]
+    known_result: configurationwise_rblack_plus_rwhite_equals_2_matching_charge_equals_rblack_minus_1_and_index2_through_8_HNF_exhaustion_has_zero_birth_reflection_rank_sum_reconstruction_or_line_failures_with_cached_and_direct_semantics_equal_on_axis_L2
+    boundary: regular_square_cell_theorem_holds_in_its_declared_class_while_degenerate_HNF_exhaustion_covers_only_55_quotients_and_654678_filtrations_through_index8_not_an_unrestricted_quotient_theorem
     supports: [ambient_homology_as_the_exact_finite_matching_state]
     tensions: [wrapping_sign_as_an_untyped_scalar_only]
     excludes_only: [independent_black_and_white_ambient_rank_variables_in_the_declared_scope]
     reusable_data_refs: [results/digital-alexander-filtration/latest.json, results/digital-alexander-quotient-frontier/latest.json]
     dependency_group_refs: []
-    missing_inputs: [unrestricted_degenerate_quotient_theorem]
+    missing_inputs: [index9_and_higher_or_an_unrestricted_degenerate_quotient_theorem, production_scale_line_and_landing_marks]
     next_discriminator: retain_birth_line_index_and_local_mark_in_addition_to_the_ordered_rank_activation_pair
     information_gain: very_high
     compute_cost: none
@@ -534,9 +554,9 @@ scientific_nodes:
     source_refs: [SRC_NORM4_REVEAL_PR273, SRC_NORM4_EVEN_MODE_PR277]
     known_result: frozen_scalar_q2_and_common_generator_scores_fail_the_post_reveal_Jordan_plus_one_even_mode_recurrence_then_passes_its_frozen_N520_N680_generation4_target_at_lambda_half_in_both_scalar_and_jet_views
     boundary: the_generation4_pilot_removes_the_visible_tension_but_lambda_0_half_and_1_have_nearly_identical_scores_so_the_secondary_eigenvalue_and_unique_transfer_matrix_are_not_identified
-    supports: [Jordan_plus_one_even_mode_as_economical_transfer_state]
+    supports: [small_state_transfer_family_remains_compatible_after_generation4]
     tensions: [pure_scalar_q2, one_common_generator]
-    excludes_only: [the_frozen_scalar_q2_and_common_generator_parameterizations]
+    excludes_only: [the_frozen_scalar_q2_and_common_generator_parameterizations_not_pure_Jordan_or_any_specific_secondary_eigenvalue]
     reusable_data_refs: [results/server-20260829/P154-norm4-production/analysis/scalar_score.json, predictions/norm4_even_rank2_next_generation_20260829.json, results/server-20260829/P154-norm4-generation4-pilot/analysis/score.json]
     dependency_group_refs: [norm4-generation4-pr277]
     missing_inputs: [geometry_or_operator_coordinate_that_separates_lambda_0_half_and_1, common_source_readout_Gaussian_annulus_cells]
@@ -969,8 +989,8 @@ decision_experiments:
     name: common_source_readout_Gaussian_annulus_context_rectangle
     scientific_node_refs: [SN_NORM4_EVEN_TRANSFER, SN_ANNULUS_TWO_STATE_RECURRENCE, SN_PATH_FILTRATION_MEMORY]
     observer_sector_refs: [topology_typed, local_pivotal, matching_odd]
-    source_refs: [SRC_CONTEXT_HANKEL, SRC_P200_PATH_FILTRATION, SRC_ANNULUS_RECURRENCE]
-    dependency_group_refs: []
+    source_refs: [SRC_NORM4_REVEAL_PR273, SRC_NORM4_EVEN_MODE_PR277, SRC_CONTEXT_HANKEL, SRC_P200_PATH_FILTRATION, SRC_ANNULUS_RECURRENCE]
+    dependency_group_refs: [norm4-generation4-pr277]
     acquisition: small_pilot
     expected_model_space_reduction: very_high
     compute_cost: moderate

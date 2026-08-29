@@ -30,7 +30,7 @@ measure covariance
 The highest-information line is now a connected chain rather than a collection of H4 fits:
 
 ```text
-Digital Alexander rank balance and index-2..7 quotient frontier   [main]
+Digital Alexander rank balance and cached index-2..8 frontier     [main]
     -> essential H1 births K1,K2 and P0/P1/P2 reconstruction      [main]
     -> complement coordinates C (clock translation), W (lifetime) [branch_only]
     -> full finite K2 curve: positive area, three local node crossings [open_pr]
@@ -49,7 +49,7 @@ r_black + r_white = 2,
 q = r_black - 1 = A_top.
 ```
 
-`main` now also contains the filtration oracle, the essential-birth histogram reconstruction and exhaustive HNF checks through quotient index 7. Across 40 quotient representatives and 49,878 filtration paths there are no birth, reflection, rank-sum, reconstruction or line failures. That is a strong finite frontier, not an unrestricted theorem for every degenerate quotient.
+`main` now also contains the filtration oracle, the essential-birth histogram reconstruction and exhaustive HNF checks through quotient index 8. Across 55 quotient representatives and 654,678 filtration paths there are no birth, reflection, rank-sum, reconstruction or line failures. The index-8 extension verifies cached/direct equality on the axis-L2 control, retains 5,980 exact subset states and enumerates 1,967,984 rank-one plateau steps with maximum `iota=1`. That is a strong finite frontier and a reusable exact backend, not an unrestricted theorem for every degenerate quotient or a substitute for the missing production-scale marks.
 
 For a monotone site ordering,
 
@@ -150,7 +150,7 @@ The ordinary P205 prism selects H4, while the branch-only N325 deck-charged like
 
 ### Low-dimensional state and the targeted context rectangle
 
-Norm-4 rejects the frozen analytic q2 and common-generator forms. The post-reveal Jordan-plus-one-even-mode recurrence then passes its frozen N520/N680 generation-four target at `lambda=1/2`, but `lambda=0`, `1/2` and `1` are nearly indistinguishable; one secondary coordinate is supported while its transfer eigenvalue is not identified. In the annulus, the simple odd-shell scalar law fails while a two-state recurrence trained on N325/N425 passes held-out N365. Separately, an unmarked final CRT endpoint is factor-order blind, whereas an intermediate rank filtration can retain activation time.
+Norm-4 rejects the frozen analytic q2 and common-generator forms. The post-reveal Jordan-plus-one-even-mode recurrence then passes its frozen N520/N680 generation-four target at `lambda=1/2`, but `lambda=0`, `1/2` and `1` are nearly indistinguishable. The small-state family remains usable, while neither a nonzero extra mode nor its transfer eigenvalue is identified. In the annulus, the simple odd-shell scalar law fails while a two-state recurrence trained on N325/N425 passes held-out N365. Separately, an unmarked final CRT endpoint is factor-order blind, whereas an intermediate rank filtration can retain activation time.
 
 These results motivate a **targeted pilot**, not another retrospective fit: acquire a common source and common readout basis over at least two Gaussian-cover and two annulus contexts, with shared replicas and held-out prediction. Compare one common generator against a context/morphism-enriched realization. Existing disjoint archives do not form the rectangle, and an endpoint-only row cannot test chronological memory.
 
@@ -184,7 +184,7 @@ The mechanism chain deliberately mixes lifecycle states:
 
 | Layer | Current status | Scientific use |
 |---|---|---|
-| Digital Alexander theorem, filtration, essential births, index-7 frontier | `main_integrated` | exact finite-state backbone within declared scope |
+| Digital Alexander theorem, filtration, essential births, cached index-8 frontier | `main_integrated` | exact finite-state backbone and reusable line/`iota` oracle within declared scope |
 | `C/W`, `I01/I12`, `S/D`, tiny `Cov(A_top,J_D4)` | `branch_only` | exact coordinates and finite controls, not large-N field identity |
 | P205 total prism | `branch_only` | frozen ordinary character selection at small N |
 | ten-size K1/K2 root and full-curve reuse | `open_pr` #267 | retrospective component, area and stable-node decomposition with shared-stream covariance |

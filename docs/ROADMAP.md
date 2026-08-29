@@ -13,7 +13,7 @@ For scientific coordinates use `docs/RESEARCH-MAP.md`; for claim and branch stat
 The existing evidence now forms a directed chain:
 
 ```text
-Digital Alexander index-7 frontier and main essential births
+Digital Alexander cached index-8 frontier and main essential births
 -> K1/K2 and C/W
 -> I01/I12 and S/D
 -> tiny nonzero Cov(A_top,J_D4)
@@ -21,7 +21,7 @@ Digital Alexander index-7 frontier and main essential births
 -> Q4/Jordan modulus and Ward fingerprint.
 ```
 
-The cheap retrospective stage is complete. Across the ten main-integrated archives, the integrated K2 curve area has one positive sign; the negative root-point values at N=265/325/425 are local lobes below stable nearby zeros, not whole-response reversals. In the P205 prism, both `K1` and `K2` select H4 and reinforce; the joint score is `chi-square=2.585155/4`, `p=.629455`, and `K2` supplies 36.732% of the fitted signed H4 amplitude. This resolves the declared ordinary H4/H8/H12 character competition at small N. It does not identify a continuum field, establish asymptotics or turn the branch-only raw archive into main evidence.
+The cheap retrospective stage is complete. Across the ten main-integrated archives, the integrated K2 curve area has one positive sign; the negative root-point values at N=265/325/425 are local lobes associated with stable nearby zero branches, not whole-response reversals. Their node-minus-`p_bar` offsets are not significant relative to node-position errors. In the P205 prism, both `K1` and `K2` select H4 and reinforce; the joint score is `chi-square=2.585155/4`, `p=.629455`, and `K2` supplies 36.732% of the fitted signed H4 amplitude. This resolves the declared ordinary H4/H8/H12 character competition at small N. It does not identify a continuum field, establish asymptotics or turn the branch-only raw archive into main evidence.
 
 **Next decision output:** one common-field, orientation-paired stream retaining
 
@@ -144,10 +144,10 @@ x nuisance cancellation and archive reuse
 ## Completed results that change repetition value
 
 - **#50 N145->290 full curve — complete:** the resolved shape direction already rejects one scalar multiplier. Its archive remains reusable for new typed coordinates, while another endpoint-only repeat has lower information gain.
-- **Digital Alexander through index 7:** exact finite backbone within its declared quotient frontier; the next gain is retained birth structure, not another untyped wrapping sign.
+- **Digital Alexander through index 8:** exact finite backbone plus cached rank/winding/`iota` states within its declared quotient frontier; the next gain is to reuse that backend in one marked production stream, not reimplement topology or add another untyped wrapping sign.
 - **P205 ordinary prism:** H4 beats the frozen H8/H12 lines. A `rho`/C3 run gains more information from a distinct typed observer than from repeating this selector.
 - **PR #267 activation reuse:** all ten archived pairs are scored, the full curves turn three negative root points into stable local node crossings, and the P205 subset resolves H4/H4. The next gain is line-resolved common-field covariance, not another marginal K1/K2 split.
-- **Norm-4:** analytic q2 and the frozen common generator fail; the frozen generation-four target supports the extra even coordinate but leaves its eigenvalue aliased.
+- **Norm-4:** analytic q2 and the frozen common generator fail; the frozen generation-four target keeps the small-state family live but does not separate pure Jordan, an analytic even mode or persistent curvature, nor establish a nonzero extra mode.
 - **Annulus:** one scalar shell coordinate fails; a two-state recurrence survives held-out N365. More N365 replicas alone have low mechanism gain.
 - **Triangular log pair:** the cross-cutoff shear is measured; repeat production without gauge closure is lower value.
 - **P263 stopped estimator:** unbiasedness and the mechanism are exact; variance advantage remains unmeasured until the stopped/global comparison is paired.

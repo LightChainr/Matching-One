@@ -27,11 +27,33 @@ An old issue title does not override a completed result. A post-reveal fit is no
 |---:|---|---|---|---|---|
 | 1 | **How does global ordinary H4 arise from rank-birth dynamics?** | finite topology+continuum candidate / rank-birth geometric tilt / global projector+line/landing birth rows / Gaussian cover / exact+common-stream pilot | Main reconstructs the rank plane; Draft reuse resolves both activations as H4 on P205; branch-only P276 and P215 define C/W, S/D and a nonzero finite `A_top` coupling | One common-field stream yielding `gamma_D4`, Q4 modulus/Jordan fingerprint, line-H4 D, landing-H4 and even-S controls with full covariance | existing definitions; low-cost sufficient-statistic stream |
 | 2 | **Which typed non-`A_top` complex C3 character is present?** | continuum module / typed or charged source / non-`A_top` complex row / three `rho` children / pilot | Exact child-character algebra is `branch_only`; P205 already selects ordinary H4 and the double-projector staircase gives `A_top(KdV)=0` | Three-point complex DFT for a named typed module or charged observer: r=0/1/2 scores plus mixture residual and full complex covariance | one typed complex row over three registered geometries |
-| 3 | **One generator or context/morphism-enriched state?** | low-dimensional dynamics / common source / common readout / Gaussian×annulus rectangle / reuse+targeted acquisition | Norm-4 generation four supports one extra coordinate but not its eigenvalue; annulus supports a distinct two-state recurrence; shared rectangular realization is not yet built | Held-out covariance score comparing one shared generator with the smallest context-enriched alternative, including a geometry/operator row that separates the norm-4 lambda aliases | reuse first; acquire only missing rectangle cells |
+| 3 | **One generator or context/morphism-enriched state?** | low-dimensional dynamics / common source / common readout / Gaussian×annulus rectangle / reuse+targeted acquisition | Norm-4 generation four keeps a small-state family live but does not establish a nonzero extra mode or distinguish its lambda aliases; annulus supports a distinct two-state recurrence; shared rectangular realization is not yet built | Held-out covariance score comparing one shared generator with the smallest context-enriched alternative, using a geometry/operator row chosen to maximize the frozen lambda models' separation | reuse first; acquire only missing rectangle cells |
 | 4 | **Does the log-pair statistic survive gauge and microscopic change?** | continuum Jordan control / cutoff shear / top-plus-two-spin and complex H4/E6 / triangular+square / targeted production | Triangular cross-cutoff result is `open_pr`; normalization audit and invariant design are `branch_only` | Gauge-invariant `CL` plus shear gate; then weight-12 two-modulus H4/E6 null in a common complex frame | small new control statistics |
 | 5 | **Can the full Q derivative be reproduced on a known control?** | confluent module / Q measure+projector+field / boundary or tiny VJS / cross-ratio / exact+pilot | Branch-only theory supplies measure/projector/field terms and forced Pascal-jet subtraction; the P263 chain has an exact unbiased stopped score but its unpaired pilot did not resolve a variance gain | Paired stopped-versus-global transcript variance gate, then an anchored tangent reproducing the ODE, `sqrt(3)/pi` log coefficient and all prefactor/field terms | exact construction, then paired pilot |
 | 6 | **Does the charged norm-5 sector have one fusion eigenphase?** | charged module / Z5 deck source / cubic charged row / N325 handed cover / engine reuse | Linear charged score is `branch_only` and H8-leaning; two primitive cubic channels are frozen in theory | Joint complex closure `C_A,+C_B,--C_A,-C_B,+=0`, normalization-free conjugate-paired magnitudes and full covariance | reuse engine; new marked three-point accumulators |
 | 7 | **Where can a nontrivial relative-source deformation live?** | defect/connectivity radical / relative fugacity / junction observer / exact finite algebra / theory | Scalar source closes at rank three and its semisimple algebra has `HH^2=0` on branch-only proofs | Minimal enlarged connectivity algebra, separable quotient, radical/module-extension data and one explicit nontrivial or obstructed class | exact work has the best current information/cost ratio |
+
+## Team execution advice
+
+These are coordination defaults, not task locks. A team may depart from them whenever it introduces a sharper observer, source, geometry or exact map.
+
+1. **Run a live lifecycle drift pass at the start and end of each work block.** Compare open PR head/state with the registry and compare latest `origin/main` with the navigation base. PR #286 moved from new frontier to `main_integrated` during this refresh; the control plane should absorb that kind of change before it turns into stale next-step prose.
+2. **Publish the lifecycle tuple with every result:** `input_status`, `output_status`, immutable `snapshot_commit`, and `base_or_parent`. This keeps branch-only input -> open-PR analysis, stacked post-reveal work, and main-integrated facts distinguishable.
+3. **Give each raw dependency block one covariance bundle and one statistical coordinator.** Root split, Bernstein curves, areas and node spectra from the same histograms are coordinates of one block. Teams may analyze them in parallel, but downstream synthesis should consume the shared covariance rather than add the views as independent evidence.
+4. **Reuse the index-8 cached topology oracle.** The common rank-birth stream can call the same rank/winding/line/`iota` implementation used by the exact frontier, with a field-level equivalence test before production. This is cheaper and safer than separate P215/P276/production implementations.
+5. **Acquire the rank-1 common stream once and analyze it many ways.** One aligned batch schema should retain `q`, `I01/I12`, `ell`, `iota`, line-H4, landing-H4, `S/D`, `qJ` and `K1/K2`; topology, continuum-fingerprint and statistical teams can then work concurrently without launching mutually incomparable streams.
+6. **Name the observer sector in every C3 title and manifest.** An ordinary `A_top` real-part selector has lower incremental value after P205. A declared non-`A_top`, charged, defect or singular-Q row makes the new information axis visible before compute begins.
+7. **Share schemas across contexts and tangents.** Gaussian/annulus cells need a common source/readout/batch table to become a rectangle. Q-tangent work benefits from one measure/projector/explicit-field/Pascal-subtraction interface and a paired stopped/global outer transcript.
+
+## Minimum sufficient parallel acquisition matrix
+
+This is the current smallest high-information starting design, not a requirement to serialize work. All three modules can run in parallel, and a cheaper design may replace one when it preserves the same decision.
+
+| Module | Minimum starting cells | Same-stream readouts | Primary decision |
+|---|---|---|---|
+| rank-birth / node bridge | N325 and N425, each with one aligned orientation pair | `K1/K2`, `C/W`, `I01/I12`, direct `0->2`, `ell`, `iota`, complex line-H4, landing-H4, `A_top`, `S/D`, `qJ_D4` | which line/landing/clock/lifetime coordinate creates the local K2 shape, and whether `gamma_D4` survives across N |
+| typed complex C3 | all three `rho` children at one common area, for one named non-`A_top` observer | full complex row, r=0/1/2 DFT, mixture residual and complex covariance; reuse the rank-birth `J_D4` contract when appropriate | scalar versus weight-4 versus conjugate weight-8 character without repeating the ordinary P205 selector |
+| Gaussian-annulus context rectangle | two Gaussian and two annulus contexts, each with registered train/holdout scales | one semantics-matched topology/global row and one local matching-odd row; add activation-time marks when testing path memory | common generator versus context/morphism enrichment, with the observer chosen to maximize frozen `lambda=0,1/2,1` Mahalanobis distance |
 
 ## Target 1 contract: global H4 to rank-birth mechanism
 
@@ -63,7 +85,7 @@ K2 reinforcing:         N=65,85,130,145,170,185,290
 K2 cancelling:          N=265,325,425 (each negative term individually |z|<2)
 ```
 
-The complete Bernstein curves remove the ambiguity in the last line: the integrated K2 area is positive at all ten sizes. N=265/325/425 are local negative lobes immediately below stable critical-window zeros at approximately `.594623/.596349/.596943`, not reversals of the whole second-activation response. The saved `A2`, `D2(p_bar)` and `D2'(p_bar)` covariance also keeps N=65/85/130/170 as one shared-stream block.
+The complete Bernstein curves remove the ambiguity in the last line: the integrated K2 area is positive at all ten sizes. N=265/325/425 are local negative lobes with delete-one-stable nearby critical-window zero branches at approximately `.594623/.596349/.596943`, not reversals of the whole second-activation response. Node-position errors exceed the point offsets from `p_bar`, so the relative ordering is not significant. The saved `A2`, `D2(p_bar)` and `D2'(p_bar)` covariance also keeps N=65/85/130/170 as one shared-stream block.
 
 The P205 reuse supplies the missing controlled character comparison:
 
@@ -86,6 +108,8 @@ q*(N*S_H4), q*(N*D_H4),
 unmarked N*S birth mass,
 K1, K2 and common delete-one batch id.
 ```
+
+The exact index-8 frontier finds `iota=1` with no pathwise index evolution. In the common large-N stream, `iota` is therefore a cheap control and a possible new regime detector, not an already observed varying signal; `ell`, landing marks and their same-sample products remain the primary missing coordinates.
 
 Here
 
@@ -196,7 +220,7 @@ These lines remain active and may overtake the default order whenever they obtai
 | digital Alexander proof | `main_integrated` `2da5855`, `notes/digital-alexander-duality-proof.md` |
 | essential-H1 filtration oracle | `main_integrated` PR #282 `3bb4054`, `notes/digital-alexander-filtration-oracle.md` |
 | essential-birth archive reconstruction | `main_integrated` PR #283 `bedc94b`, `results/essential-birth-histogram/latest.json` |
-| quotient frontier through index 7 | `main_integrated` PRs #284/#285 `d6fda88`, `results/digital-alexander-quotient-frontier/latest.json` |
+| cached quotient frontier through index 8 | `main_integrated` PRs #284/#285/#286 `e63634d`, `results/digital-alexander-quotient-frontier/latest.json` |
 | two activation | `branch_only` `theory/p28-two-activation-rank-mixture-20260829@b8004bc`, `notes/two-activation-rank-mixture.md` |
 | endpoint, full-curve-node and P205 activation splits | `open_pr` #267, `results/two-activation-h4/latest.json`, `results/activation-curve-nodes/latest.json`, `results/two-activation-prism/latest.json` |
 | P205 ordinary quotient prism | `branch_only` `results/p205-quotient-character-prism-20260829@fc14817` |
