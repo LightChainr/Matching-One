@@ -1,0 +1,939 @@
+{
+  "schema": "matching-one.two-activation-prism.v1",
+  "status": "retrospective branch-only existing-data reanalysis; no new simulation",
+  "exact_mapping": {
+    "K1": "K_minus",
+    "K2": "K_plus",
+    "F1": "E[Pr(Binomial(N,p_ref)>=K1)]",
+    "F2": "E[Pr(Binomial(N,p_ref)>=K2)]",
+    "DeltaM": "DeltaF1+DeltaF2"
+  },
+  "fixed_scoring": {
+    "p_ref": 0.59274605079,
+    "radial_exponent": "13/8",
+    "model_order": [
+      "H4",
+      "H8",
+      "H12"
+    ],
+    "component_pair_count": 9,
+    "fitted_parameters_per_pair": 2,
+    "offset_or_correction_fitted": false
+  },
+  "size_order": [
+    25,
+    50,
+    125
+  ],
+  "by_N": {
+    "25": {
+      "status": "scoreable",
+      "dependency_group": "crn-2026105525-9400000000-9412000000",
+      "representatives": {
+        "first": [
+          5,
+          0
+        ],
+        "second": [
+          4,
+          3
+        ]
+      },
+      "samples_per_orientation": 12000000,
+      "batch_count": 100,
+      "fixed_p_components": {
+        "first_F1": 0.6835475445190576,
+        "first_F2": 0.32085654093125554,
+        "first_M": 0.004404085450313122,
+        "second_F1": 0.6785298457156973,
+        "second_F2": 0.31791508374160476,
+        "second_M": -0.00355507054269788,
+        "delta_F1": 0.005017698803360338,
+        "delta_F2": 0.0029414571896507757,
+        "delta_M": 0.007959155993011002,
+        "reconstruction_residual": -1.1102230246251565e-16
+      },
+      "original_P205_delta_M": 0.007959155993011075,
+      "original_reconstruction_residual": -7.28583859910259e-17,
+      "estimate_vector_order": [
+        "delta_F1",
+        "delta_F2"
+      ],
+      "estimate_vector": [
+        0.005017698803360338,
+        0.0029414571896507757
+      ],
+      "delete_one_covariance": [
+        [
+          6.561802403593798e-09,
+          1.6556730243399939e-09
+        ],
+        [
+          1.6556730243399939e-09,
+          7.942586342652102e-09
+        ]
+      ],
+      "delete_one_correlation": 0.22934117142664545,
+      "provenance": {
+        "runner_commit": "4d82c754a04635de0561b221771099e4ec5a5f88",
+        "seed": 2026105525,
+        "counter_first": 9400000000,
+        "counter_last_exclusive": 9412000000,
+        "inputs": {
+          "histogram": {
+            "path": "results/server-20260829/P205-quotient-character-prism/raw/n25_12m.hist.csv",
+            "sha256": "c8c332ee6f6620e17d60af3b760aaf97dfff6c161c72aee40eca906fcb290c76"
+          },
+          "moments": {
+            "path": "results/server-20260829/P205-quotient-character-prism/raw/n25_12m.moments.csv",
+            "sha256": "931f6a98ff4d00d6e7f0856c73bcc7b5a0c9e9cd08f0cab5438523bc5a1f1e23"
+          },
+          "metadata": {
+            "path": "results/server-20260829/P205-quotient-character-prism/raw/n25_12m.metadata.json",
+            "sha256": "2d4a6cdee724fa05106eb818a27eece382fd855a883c554fb79fdb592fa19486"
+          }
+        }
+      }
+    },
+    "50": {
+      "status": "scoreable",
+      "dependency_group": "crn-2026105550-9400000000-9412000000",
+      "representatives": {
+        "first": [
+          7,
+          1
+        ],
+        "second": [
+          5,
+          5
+        ]
+      },
+      "samples_per_orientation": 12000000,
+      "batch_count": 100,
+      "fixed_p_components": {
+        "first_F1": 0.6861248834786031,
+        "first_F2": 0.31491702700071317,
+        "first_M": 0.0010419104793162326,
+        "second_F1": 0.6845350814331375,
+        "second_F2": 0.3141024659665523,
+        "second_M": -0.0013624526003102044,
+        "delta_F1": 0.0015898020454656603,
+        "delta_F2": 0.0008145610341608878,
+        "delta_M": 0.002404363079626437,
+        "reconstruction_residual": -1.1102230246251565e-16
+      },
+      "original_P205_delta_M": 0.002404363079626521,
+      "original_reconstruction_residual": -8.413408858487514e-17,
+      "estimate_vector_order": [
+        "delta_F1",
+        "delta_F2"
+      ],
+      "estimate_vector": [
+        0.0015898020454656603,
+        0.0008145610341608878
+      ],
+      "delete_one_covariance": [
+        [
+          1.0396665515436613e-08,
+          4.2994100844530835e-09
+        ],
+        [
+          4.2994100844530835e-09,
+          1.2491882613596187e-08
+        ]
+      ],
+      "delete_one_correlation": 0.3772661912099639,
+      "provenance": {
+        "runner_commit": "4d82c754a04635de0561b221771099e4ec5a5f88",
+        "seed": 2026105550,
+        "counter_first": 9400000000,
+        "counter_last_exclusive": 9412000000,
+        "inputs": {
+          "histogram": {
+            "path": "results/server-20260829/P205-quotient-character-prism/raw/n50_12m.hist.csv",
+            "sha256": "7c1f2604c1a8d386157a8774a69d9836f5cf2a96d89bbbb2fe7cbe05f8c89b88"
+          },
+          "moments": {
+            "path": "results/server-20260829/P205-quotient-character-prism/raw/n50_12m.moments.csv",
+            "sha256": "bdb23a0d91398ceca91787aede4396855eb7669cfe046c5512952194059aa4e9"
+          },
+          "metadata": {
+            "path": "results/server-20260829/P205-quotient-character-prism/raw/n50_12m.metadata.json",
+            "sha256": "adb1f6fd84a81b40bbb172a77a5aaff9c6f45f29d0ab0650458c01318cae6450"
+          }
+        }
+      }
+    },
+    "125": {
+      "status": "scoreable",
+      "dependency_group": "crn-2026105625-9400000000-9412000000",
+      "representatives": {
+        "first": [
+          11,
+          2
+        ],
+        "second": [
+          10,
+          5
+        ]
+      },
+      "samples_per_orientation": 12000000,
+      "batch_count": 100,
+      "fixed_p_components": {
+        "first_F1": 0.6884830963353169,
+        "first_F2": 0.31165203969472954,
+        "first_M": 0.0001351360300465565,
+        "second_F1": 0.688263623096756,
+        "second_F2": 0.31163405373207465,
+        "second_M": -0.00010232317116931622,
+        "delta_F1": 0.00021947323856086332,
+        "delta_F2": 1.798596265489838e-05,
+        "delta_M": 0.00023745920121587272,
+        "reconstruction_residual": 1.1102230246251565e-16
+      },
+      "original_P205_delta_M": 0.00023745920121575416,
+      "original_reconstruction_residual": 1.185575075612899e-16,
+      "estimate_vector_order": [
+        "delta_F1",
+        "delta_F2"
+      ],
+      "estimate_vector": [
+        0.00021947323856086332,
+        1.798596265489838e-05
+      ],
+      "delete_one_covariance": [
+        [
+          1.4991363628895005e-08,
+          8.66710247456904e-09
+        ],
+        [
+          8.66710247456904e-09,
+          1.580134032819207e-08
+        ]
+      ],
+      "delete_one_correlation": 0.5631270621456277,
+      "provenance": {
+        "runner_commit": "4d82c754a04635de0561b221771099e4ec5a5f88",
+        "seed": 2026105625,
+        "counter_first": 9400000000,
+        "counter_last_exclusive": 9412000000,
+        "inputs": {
+          "histogram": {
+            "path": "results/server-20260829/P205-quotient-character-prism/raw/n125_12m.hist.csv",
+            "sha256": "5045668f08ae97f71d013d8ab299df13378c3d2ba1e8b17309e64ea822607f4f"
+          },
+          "moments": {
+            "path": "results/server-20260829/P205-quotient-character-prism/raw/n125_12m.moments.csv",
+            "sha256": "5e58910c23f7b37773c436fc6a85c68e39377dafeaf4fa968a49d96124faa82c"
+          },
+          "metadata": {
+            "path": "results/server-20260829/P205-quotient-character-prism/raw/n125_12m.metadata.json",
+            "sha256": "7947e405ce82af46e737ac9ad8ce12f2cbefed3bc562688938faeafa0957ff22"
+          }
+        }
+      }
+    }
+  },
+  "joint_score": {
+    "observation_order": [
+      {
+        "N": 25,
+        "component": "K1"
+      },
+      {
+        "N": 25,
+        "component": "K2"
+      },
+      {
+        "N": 50,
+        "component": "K1"
+      },
+      {
+        "N": 50,
+        "component": "K2"
+      },
+      {
+        "N": 125,
+        "component": "K1"
+      },
+      {
+        "N": 125,
+        "component": "K2"
+      }
+    ],
+    "estimate_vector": [
+      0.005017698803360338,
+      0.0029414571896507757,
+      0.0015898020454656603,
+      0.0008145610341608878,
+      0.00021947323856086332,
+      1.798596265489838e-05
+    ],
+    "delete_one_covariance": [
+      [
+        6.561802403593798e-09,
+        1.6556730243399939e-09,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1.6556730243399939e-09,
+        7.942586342652102e-09,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0396665515436613e-08,
+        4.2994100844530835e-09,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        4.2994100844530835e-09,
+        1.2491882613596187e-08,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.4991363628895005e-08,
+        8.66710247456904e-09
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        8.66710247456904e-09,
+        1.580134032819207e-08
+      ]
+    ],
+    "zero_cross_N_blocks_mean_independent_counter_streams": true,
+    "frozen_component_pair_scores": [
+      {
+        "K1_character": "H4",
+        "K2_character": "H4",
+        "amplitudes": {
+          "A1": 0.5085811186032236,
+          "A2": 0.2952662594222174
+        },
+        "amplitude_covariance": [
+          [
+            6.314129040528216e-05,
+            1.6653261029911852e-05
+          ],
+          [
+            1.6653261029911852e-05,
+            7.637861818992357e-05
+          ]
+        ],
+        "amplitude_standard_errors": {
+          "A1": 0.007946149407435162,
+          "A2": 0.008739486151366313
+        },
+        "K2_fitted_fraction": 0.36731631836320117,
+        "component_interaction": "reinforcing",
+        "fitted_vector": [
+          0.005015106734063168,
+          0.002911613805162249,
+          0.0016259471958824396,
+          0.0009439739876005856,
+          0.00020541963362087396,
+          0.00011926020178982982
+        ],
+        "residual_vector": [
+          2.5920692971696108e-06,
+          2.9843384488526838e-05,
+          -3.6145150416779306e-05,
+          -0.00012941295343969783,
+          1.405360493998936e-05,
+          -0.00010127423913493144
+        ],
+        "marginal_standardized_residuals": [
+          0.03199889886412292,
+          0.3348629523160155,
+          -0.35448919352800073,
+          -1.1578806638868984,
+          0.11478025141786724,
+          -0.8056604147078591
+        ],
+        "chi_square": 2.5851547717135257,
+        "degrees_of_freedom": 4,
+        "chi_square_survival": 0.6294551310397293,
+        "delta_chi_square_from_best": 0.0
+      },
+      {
+        "K1_character": "H4",
+        "K2_character": "H8",
+        "amplitudes": {
+          "A1": 0.4877726151746959,
+          "A2": 0.8071664739502362
+        },
+        "amplitude_covariance": [
+          [
+            6.170239044737858e-05,
+            4.061029656214116e-05
+          ],
+          [
+            4.061029656214116e-05,
+            0.0007523346578101895
+          ]
+        ],
+        "amplitude_standard_errors": {
+          "A1": 0.007855086915329365,
+          "A2": 0.027428719580217184
+        },
+        "K2_fitted_fraction": 0.6233238927830087,
+        "component_interaction": "reinforcing",
+        "fitted_vector": [
+          0.0048099145594956315,
+          0.0024960835413050113,
+          0.0015594218638114304,
+          -0.0008092549670194265,
+          0.00019701492689045826,
+          0.00030788848959915183
+        ],
+        "residual_vector": [
+          0.00020778424386470613,
+          0.00044537364834576444,
+          3.0380181654229843e-05,
+          0.0016238160011803142,
+          2.2458311670405055e-05,
+          -0.00028990252694425345
+        ],
+        "marginal_standardized_residuals": [
+          2.565080729996363,
+          4.997393470105694,
+          0.2979499592521465,
+          14.528569973120467,
+          0.1834241584957963,
+          -2.3062428518626423
+        ],
+        "chi_square": 278.0378539027836,
+        "degrees_of_freedom": 4,
+        "chi_square_survival": 5.902471380387057e-59,
+        "delta_chi_square_from_best": 275.45269913107006
+      },
+      {
+        "K1_character": "H4",
+        "K2_character": "H12",
+        "amplitudes": {
+          "A1": 0.5075046372149776,
+          "A2": 0.6216878221850728
+        },
+        "amplitude_covariance": [
+          [
+            6.304852317948262e-05,
+            3.4748917502774914e-05
+          ],
+          [
+            3.4748917502774914e-05,
+            0.00034126803527414194
+          ]
+        ],
+        "amplitude_standard_errors": {
+          "A1": 0.007940310017844556,
+          "A2": 0.01847344134897832
+        },
+        "K2_fitted_fraction": 0.5505596650152808,
+        "component_interaction": "reinforcing",
+        "fitted_vector": [
+          0.005004491575808546,
+          0.0028883303096764704,
+          0.001622505656606571,
+          0.0009364252481214617,
+          0.0002049848349146607,
+          -0.00031781859721794284
+        ],
+        "residual_vector": [
+          1.3207227551791968e-05,
+          5.312687997430536e-05,
+          -3.270361114091069e-05,
+          -0.00012186421396057393,
+          1.4488403646202618e-05,
+          0.0003358045598728412
+        ],
+        "marginal_standardized_residuals": [
+          0.16304222235367005,
+          0.5961195146071273,
+          -0.3207367130892622,
+          -1.0903407519439257,
+          0.11833139043368754,
+          2.6714043302511206
+        ],
+        "chi_square": 11.50398975524496,
+        "degrees_of_freedom": 4,
+        "chi_square_survival": 0.0214472922078054,
+        "delta_chi_square_from_best": 8.918834983531434
+      },
+      {
+        "K1_character": "H8",
+        "K2_character": "H4",
+        "amplitudes": {
+          "A1": 1.3684485392901837,
+          "A2": 0.25048360726640045
+        },
+        "amplitude_covariance": [
+          [
+            0.0006226690717942788,
+            4.065750560612071e-05
+          ],
+          [
+            4.065750560612071e-05,
+            7.464114094997103e-05
+          ]
+        ],
+        "amplitude_standard_errors": {
+          "A1": 0.024953337888833204,
+          "A2": 0.008639510457773116
+        },
+        "K2_fitted_fraction": 0.1547214982414,
+        "component_interaction": "reinforcing",
+        "fitted_vector": [
+          0.00423179354728217,
+          0.002470013100415947,
+          -0.0013719893148081066,
+          0.0008008026722813941,
+          0.0005219859439828472,
+          0.00010117216103895825
+        ],
+        "residual_vector": [
+          0.0007859052560781673,
+          0.00047144408923482884,
+          0.0029617913602737666,
+          1.375836187949371e-05,
+          -0.00030251270542198385,
+          -8.318619838405987e-05
+        ],
+        "marginal_standardized_residuals": [
+          9.701940775074249,
+          5.289921444191491,
+          29.047410747922974,
+          0.12309850570288916,
+          -2.470717266758518,
+          -0.6617657921752332
+        ],
+        "chi_square": 1091.5705398987693,
+        "degrees_of_freedom": 4,
+        "chi_square_survival": 5.084939186602909e-235,
+        "delta_chi_square_from_best": 1088.9853851270557
+      },
+      {
+        "K1_character": "H8",
+        "K2_character": "H8",
+        "amplitudes": {
+          "A1": 1.422845333392921,
+          "A2": 0.8652959021428495
+        },
+        "amplitude_covariance": [
+          [
+            0.0006380200608666261,
+            0.00017002138595274268
+          ],
+          [
+            0.00017002138595274268,
+            0.00077091419828427
+          ]
+        ],
+        "amplitude_standard_errors": {
+          "A1": 0.02525905898616625,
+          "A2": 0.027765341674185644
+        },
+        "K2_fitted_fraction": 0.37816542471437065,
+        "component_interaction": "reinforcing",
+        "fitted_vector": [
+          0.004400010323921943,
+          0.0026758431245629244,
+          -0.0014265268572336944,
+          -0.0008675348014935372,
+          0.0005427352532218237,
+          0.0003300615882412412
+        ],
+        "residual_vector": [
+          0.0006176884794383943,
+          0.0002656140650878513,
+          0.003016328902699355,
+          0.001682095835654425,
+          -0.00032326201466096043,
+          -0.0003120756255863428
+        ],
+        "marginal_standardized_residuals": [
+          7.625317426762341,
+          2.980369403013604,
+          29.582281102826,
+          15.05000999622871,
+          -2.6401834600496046,
+          -2.482635071640696
+        ],
+        "chi_square": 960.9204523381541,
+        "degrees_of_freedom": 4,
+        "chi_square_survival": 1.0503533291451471e-206,
+        "delta_chi_square_from_best": 958.3352975664405
+      },
+      {
+        "K1_character": "H8",
+        "K2_character": "H12",
+        "amplitudes": {
+          "A1": 1.3617625665758772,
+          "A2": 0.5231470212844332
+        },
+        "amplitude_covariance": [
+          [
+            0.0006210144320180354,
+            8.261942531232856e-05
+          ],
+          [
+            8.261942531232856e-05,
+            0.00033310796534704993
+          ]
+        ],
+        "amplitude_standard_errors": {
+          "A1": 0.024920161155539012,
+          "A2": 0.018251245583440323
+        },
+        "K2_fitted_fraction": 0.2775448884411974,
+        "component_interaction": "reinforcing",
+        "fitted_vector": [
+          0.0042111178292136035,
+          0.002430514711840323,
+          -0.0013652860425550739,
+          0.0007879969041189328,
+          0.0005194356224482638,
+          -0.00026744267220641727
+        ],
+        "residual_vector": [
+          0.0008065809741467341,
+          0.0005109424778104526,
+          0.002955088088020734,
+          2.6564130041954932e-05,
+          -0.00029996238388740046,
+          0.00028542863486131565
+        ],
+        "marginal_standardized_residuals": [
+          9.957180946369675,
+          5.733120070514971,
+          28.981669215585264,
+          0.23767398634394768,
+          -2.449887981448033,
+          2.2706519870811697
+        ],
+        "chi_square": 1110.549141271025,
+        "degrees_of_freedom": 4,
+        "chi_square_survival": 3.913877593616657e-239,
+        "delta_chi_square_from_best": 1107.9639864993114
+      },
+      {
+        "K1_character": "H12",
+        "K2_character": "H4",
+        "amplitudes": {
+          "A1": 1.0668628860268536,
+          "A2": 0.2925352581491023
+        },
+        "amplitude_covariance": [
+          [
+            0.0002823808591064574,
+            3.4780775953279836e-05
+          ],
+          [
+            3.4780775953279836e-05,
+            7.62703266702988e-05
+          ]
+        ],
+        "amplitude_standard_errors": {
+          "A1": 0.01680419171238109,
+          "A2": 0.008733288422484328
+        },
+        "K2_fitted_fraction": 0.21519468700351377,
+        "component_interaction": "reinforcing",
+        "fitted_vector": [
+          0.004956591234407267,
+          0.0028846834643089544,
+          0.0016069758922539544,
+          0.000935242904790889,
+          -0.0005454005270188513,
+          0.00011815713040078143
+        ],
+        "residual_vector": [
+          6.110756895307077e-05,
+          5.677372534182131e-05,
+          -1.71738467882941e-05,
+          -0.00012068187063000123,
+          0.0007648737655797146,
+          -0.00010017116774588305
+        ],
+        "marginal_standardized_residuals": [
+          0.7543683036934564,
+          0.6370395854146411,
+          -0.16843042642117975,
+          -1.0797621163115685,
+          6.246966774080741,
+          -0.7968852221184677
+        ],
+        "chi_square": 68.31528781491753,
+        "degrees_of_freedom": 4,
+        "chi_square_survival": 5.14687355913294e-14,
+        "delta_chi_square_from_best": 65.730133043204
+      },
+      {
+        "K1_character": "H12",
+        "K2_character": "H8",
+        "amplitudes": {
+          "A1": 1.020642928752389,
+          "A2": 0.7920061552724306
+        },
+        "amplitude_covariance": [
+          [
+            0.00027561225822079577,
+            8.259759301065899e-05
+          ],
+          [
+            8.2597593010659e-05,
+            0.0007503598991051173
+          ]
+        ],
+        "amplitude_standard_errors": {
+          "A1": 0.016601573968175302,
+          "A2": 0.027392697915778894
+        },
+        "K2_fitted_fraction": 0.43693297409438686,
+        "component_interaction": "reinforcing",
+        "fitted_vector": [
+          0.004741855640844287,
+          0.0024492017354398403,
+          0.0015373564893729709,
+          -0.0007940554219595706,
+          -0.0005217720088780044,
+          0.00030210568299085956
+        ],
+        "residual_vector": [
+          0.00027584316251605054,
+          0.0004922554542109354,
+          5.24455560926894e-05,
+          0.0016086164561204585,
+          0.0007412452474388678,
+          -0.0002841197203359612
+        ],
+        "marginal_standardized_residuals": [
+          3.405262918452505,
+          5.523439030653722,
+          0.5143534518200399,
+          14.392576945707756,
+          6.053985167979033,
+          -2.2602392638820428
+        ],
+        "chi_square": 354.37203234776194,
+        "degrees_of_freedom": 4,
+        "chi_square_survival": 1.9950993328022966e-75,
+        "delta_chi_square_from_best": 351.7868775760484
+      },
+      {
+        "K1_character": "H12",
+        "K2_character": "H12",
+        "amplitudes": {
+          "A1": 1.071340759891726,
+          "A2": 0.6268043091292449
+        },
+        "amplitude_covariance": [
+          [
+            0.0002830748204821179,
+            7.525795240344642e-05
+          ],
+          [
+            7.525795240344642e-05,
+            0.0003421243158535631
+          ]
+        ],
+        "amplitude_standard_errors": {
+          "A1": 0.016824827502299033,
+          "A2": 0.018496602819262867
+        },
+        "K2_fitted_fraction": 0.3691111675698092,
+        "component_interaction": "reinforcing",
+        "fitted_vector": [
+          0.0049773952108489485,
+          0.002912101250319919,
+          0.0016137207471398547,
+          0.0009441320221408831,
+          -0.0005476897010053235,
+          -0.00032043424231384534
+        ],
+        "residual_vector": [
+          4.0303592511389125e-05,
+          2.9355939330856593e-05,
+          -2.3918701674194385e-05,
+          -0.0001295709879799953,
+          0.0007671629395661868,
+          0.0003384202049687437
+        ],
+        "marginal_standardized_residuals": [
+          0.49754479251037304,
+          0.3293934880649901,
+          -0.23457977540428004,
+          -1.1592946269684379,
+          6.265663184491344,
+          2.6922124027747336
+        ],
+        "chi_square": 41.97073024759262,
+        "degrees_of_freedom": 4,
+        "chi_square_survival": 1.691630117335971e-08,
+        "delta_chi_square_from_best": 39.385575475879094
+      }
+    ],
+    "best_pair": {
+      "K1_character": "H4",
+      "K2_character": "H4",
+      "amplitudes": {
+        "A1": 0.5085811186032236,
+        "A2": 0.2952662594222174
+      },
+      "amplitude_covariance": [
+        [
+          6.314129040528216e-05,
+          1.6653261029911852e-05
+        ],
+        [
+          1.6653261029911852e-05,
+          7.637861818992357e-05
+        ]
+      ],
+      "amplitude_standard_errors": {
+        "A1": 0.007946149407435162,
+        "A2": 0.008739486151366313
+      },
+      "K2_fitted_fraction": 0.36731631836320117,
+      "component_interaction": "reinforcing",
+      "fitted_vector": [
+        0.005015106734063168,
+        0.002911613805162249,
+        0.0016259471958824396,
+        0.0009439739876005856,
+        0.00020541963362087396,
+        0.00011926020178982982
+      ],
+      "residual_vector": [
+        2.5920692971696108e-06,
+        2.9843384488526838e-05,
+        -3.6145150416779306e-05,
+        -0.00012941295343969783,
+        1.405360493998936e-05,
+        -0.00010127423913493144
+      ],
+      "marginal_standardized_residuals": [
+        0.03199889886412292,
+        0.3348629523160155,
+        -0.35448919352800073,
+        -1.1578806638868984,
+        0.11478025141786724,
+        -0.8056604147078591
+      ],
+      "chi_square": 2.5851547717135257,
+      "degrees_of_freedom": 4,
+      "chi_square_survival": 0.6294551310397293,
+      "delta_chi_square_from_best": 0.0
+    },
+    "runner_up_pair": {
+      "K1_character": "H4",
+      "K2_character": "H12",
+      "amplitudes": {
+        "A1": 0.5075046372149776,
+        "A2": 0.6216878221850728
+      },
+      "amplitude_covariance": [
+        [
+          6.304852317948262e-05,
+          3.4748917502774914e-05
+        ],
+        [
+          3.4748917502774914e-05,
+          0.00034126803527414194
+        ]
+      ],
+      "amplitude_standard_errors": {
+        "A1": 0.007940310017844556,
+        "A2": 0.01847344134897832
+      },
+      "K2_fitted_fraction": 0.5505596650152808,
+      "component_interaction": "reinforcing",
+      "fitted_vector": [
+        0.005004491575808546,
+        0.0028883303096764704,
+        0.001622505656606571,
+        0.0009364252481214617,
+        0.0002049848349146607,
+        -0.00031781859721794284
+      ],
+      "residual_vector": [
+        1.3207227551791968e-05,
+        5.312687997430536e-05,
+        -3.270361114091069e-05,
+        -0.00012186421396057393,
+        1.4488403646202618e-05,
+        0.0003358045598728412
+      ],
+      "marginal_standardized_residuals": [
+        0.16304222235367005,
+        0.5961195146071273,
+        -0.3207367130892622,
+        -1.0903407519439257,
+        0.11833139043368754,
+        2.6714043302511206
+      ],
+      "chi_square": 11.50398975524496,
+      "degrees_of_freedom": 4,
+      "chi_square_survival": 0.0214472922078054,
+      "delta_chi_square_from_best": 8.918834983531434
+    },
+    "delta_chi_square_to_runner_up": 8.918834983531434,
+    "decision": "both_activation_components_select_H4"
+  },
+  "dependency_groups": [
+    {
+      "id": "crn-2026105525-9400000000-9412000000",
+      "sizes": [
+        25
+      ],
+      "rule": "delete_same_aligned_batch_from_both_orientations_and_both_activations",
+      "independent_evidence_units": 1
+    },
+    {
+      "id": "crn-2026105550-9400000000-9412000000",
+      "sizes": [
+        50
+      ],
+      "rule": "delete_same_aligned_batch_from_both_orientations_and_both_activations",
+      "independent_evidence_units": 1
+    },
+    {
+      "id": "crn-2026105625-9400000000-9412000000",
+      "sizes": [
+        125
+      ],
+      "rule": "delete_same_aligned_batch_from_both_orientations_and_both_activations",
+      "independent_evidence_units": 1
+    }
+  ],
+  "provenance": {
+    "manifest": "analysis/two_activation_prism_manifest.yaml",
+    "manifest_sha256": "93210c4eb6936bd05bd604966874f21c19d9cbb3e11233fe01aadd2754167e25",
+    "source_integration_state": "branch_only",
+    "source_branch": "results/p205-quotient-character-prism-20260829",
+    "source_commit": "fc14817bb8c0b2f6e7cbde41778e715dcb62bc64",
+    "source_checkout_commit_verified": true,
+    "original_total_score": {
+      "path": "results/server-20260829/P205-quotient-character-prism/analysis/score.json",
+      "sha256": "6599b67395da4a243719026e7ca4939bc1c7330bef9604256bd07f50a88ba6e5"
+    }
+  },
+  "interpretation_guard": "This retrospective decomposition reuses a preregistered small-N character prism from a branch-only commit. It can distinguish the frozen H4/H8/H12 character lines for K1 and K2, but it does not identify a continuum operator, prove an asymptotic law, or convert branch-only inputs into main-integrated facts."
+}

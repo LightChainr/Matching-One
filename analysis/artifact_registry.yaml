@@ -1,4 +1,4 @@
-version: 6
+version: 7
 updated: 2026-08-29
 purpose: >
   Lightweight navigation/provenance index. Registry conflicts never block
@@ -16,7 +16,6 @@ canonical_documents:
   - {path: docs/NEXT-TARGETS.md, status: canonical_current, role: decision_experiment_board}
   - {path: docs/STATUS.md, status: canonical_current, role: claim_ledger}
   - {path: docs/RESEARCH-MAP.md, status: canonical_current, role: research_navigation}
-  - {path: notes/SYNTHESIS-20260828.md, status: canonical_current, role: execution_synthesis}
   - {path: docs/ROADMAP.md, status: canonical_current, role: information_gain_priorities}
   - {path: analysis/research_ledger.yaml, status: canonical_current, role: compact_research_ledger}
   - {path: analysis/artifact_registry.yaml, status: canonical_current, role: artifact_index}
@@ -67,6 +66,7 @@ topic_derivations:
   - {path: notes/p225-multiradius-pivotal-prototype.md, status: topic_derivation, role: local_multiradius_negative}
 
 historical_protocols:
+  - {path: notes/SYNTHESIS-20260828.md, status: historical_snapshot, role: pre_frontier_recovery_execution_synthesis}
   - {path: experiments/server_compute_queue.yaml, status: historical, role: original_server_queue}
   - {path: experiments/p50_n145_n290_fullcurve_20260829.yaml, status: historical, role: completed_N290_plan}
 
@@ -88,6 +88,25 @@ registered_reanalyses:
     schema: matching-one.two-activation-h4.v1
     role: Kminus_Kplus_first_wrap_second_completion_H4_decomposition
     result_summary: K1_larger_at_all_ten_sizes_K2_reinforces_seven_and_has_unresolved_cancelling_point_estimates_at_three
+  - id: TWO_ACTIVATION_PRISM
+    status: scored_branch_only_existing_data_reanalysis
+    manifest: analysis/two_activation_prism_manifest.yaml
+    entrypoint: scripts/analyze_two_activation_prism.py
+    outputs: [results/two-activation-prism/latest.json, results/two-activation-prism/latest.md]
+    source_ref: results/p205-quotient-character-prism-20260829
+    source_commit: fc14817bb8c0b2f6e7cbde41778e715dcb62bc64
+    schema: matching-one.two-activation-prism.v1
+    role: P205_cross_Smith_K1_K2_component_character_GLS
+    result_summary: H4_H4_best_K2_fitted_share_0p3673_three_sizes_reinforce
+  - id: ACTIVATION_CURVE_NODES
+    status: scored_existing_data_reanalysis
+    manifest: analysis/activation_curve_nodes_manifest.yaml
+    entrypoint: scripts/analyze_activation_curve_nodes.py
+    outputs: [results/activation-curve-nodes/latest.json, results/activation-curve-nodes/latest.md]
+    source_manifest: analysis/two_activation_h4_manifest.yaml
+    schema: matching-one.activation-curve-nodes.v1
+    role: full_K1_K2_Bernstein_curves_integrated_areas_and_stable_node_spectrum
+    result_summary: K2_area_positive_all_ten_three_negative_root_points_are_local_lobes_before_stable_upper_nodes
 
 frontier_open_as_of_2026_08_29:
   - {pr: 84, state: open, draft: false, branch: research/axis-l5-exact-20260828, commit: 6a049b764658bc15956ae83f704c85e1d36ff660, classification: exact_side_result, role: axis_L5_Galois_frontier, representative_path: results/exact-axis-l5-frontier/REPORT.md}
@@ -127,6 +146,10 @@ canonical_integration_history:
   - {pr: 232, role: Q4_Jordan_shape}
   - {pr: 240, role: multiradius_small_torus_stop}
   - {pr: 281, role: pc_confidence_preregistration_and_ledger_audit}
+  - {pr: 282, role: essential_H1_filtration_oracle}
+  - {pr: 283, role: existing_rank_archive_essential_birth_reconstruction}
+  - {pr: 284, role: short_period_Alexander_quotient_frontier_index6}
+  - {pr: 285, role: short_period_Alexander_quotient_frontier_index7}
 
 manual_integrations:
   - {pr: 223, role: hexagonal_degree2_Hecke_unique_assets}

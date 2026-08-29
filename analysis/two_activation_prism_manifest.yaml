@@ -1,0 +1,79 @@
+schema: matching-one.two-activation-prism.manifest.v1
+status: retrospective_branch_only_existing_data_reanalysis
+source:
+  integration_state: branch_only
+  branch: results/p205-quotient-character-prism-20260829
+  commit: fc14817bb8c0b2f6e7cbde41778e715dcb62bc64
+  original_total_score:
+    path: results/server-20260829/P205-quotient-character-prism/analysis/score.json
+    sha256: 6599b67395da4a243719026e7ca4939bc1c7330bef9604256bd07f50a88ba6e5
+semantic_contract:
+  K1: K_minus
+  K2: K_plus
+  F1: E[Pr(Binomial(N,p_ref)>=K1)]
+  F2: E[Pr(Binomial(N,p_ref)>=K2)]
+  DeltaM: DeltaF1+DeltaF2
+scoring_contract:
+  p_ref: '0.59274605079'
+  radial_exponent: 13/8
+  model_order: [H4, H8, H12]
+  observation_order: [N25_K1, N25_K2, N50_K1, N50_K2, N125_K1, N125_K2]
+  fitted_parameters_per_component_pair: 2
+  offsets_or_corrections: none
+  covariance: aligned_delete_one_2x2_within_N_independent_across_N
+targets:
+  - N: 25
+    expected_first: [5, 0]
+    expected_second: [4, 3]
+    dependency_group: crn-2026105525-9400000000-9412000000
+    exact_character_difference:
+      H4: 1152/625
+      H8: 225792/390625
+      H12: 212015232/244140625
+    files:
+      histogram: results/server-20260829/P205-quotient-character-prism/raw/n25_12m.hist.csv
+      moments: results/server-20260829/P205-quotient-character-prism/raw/n25_12m.moments.csv
+      metadata: results/server-20260829/P205-quotient-character-prism/raw/n25_12m.metadata.json
+    sha256:
+      histogram: c8c332ee6f6620e17d60af3b760aaf97dfff6c161c72aee40eca906fcb290c76
+      moments: 931f6a98ff4d00d6e7f0856c73bcc7b5a0c9e9cd08f0cab5438523bc5a1f1e23
+      metadata: 2d4a6cdee724fa05106eb818a27eece382fd855a883c554fb79fdb592fa19486
+  - N: 50
+    expected_first: [7, 1]
+    expected_second: [5, 5]
+    dependency_group: crn-2026105550-9400000000-9412000000
+    exact_character_difference:
+      H4: 1152/625
+      H8: -225792/390625
+      H12: 212015232/244140625
+    files:
+      histogram: results/server-20260829/P205-quotient-character-prism/raw/n50_12m.hist.csv
+      moments: results/server-20260829/P205-quotient-character-prism/raw/n50_12m.moments.csv
+      metadata: results/server-20260829/P205-quotient-character-prism/raw/n50_12m.metadata.json
+    sha256:
+      histogram: 7c1f2604c1a8d386157a8774a69d9836f5cf2a96d89bbbb2fe7cbe05f8c89b88
+      moments: bdb23a0d91398ceca91787aede4396855eb7669cfe046c5512952194059aa4e9
+      metadata: adb1f6fd84a81b40bbb172a77a5aaff9c6f45f29d0ab0650458c01318cae6450
+  - N: 125
+    expected_first: [11, 2]
+    expected_second: [10, 5]
+    dependency_group: crn-2026105625-9400000000-9412000000
+    exact_character_difference:
+      H4: 16128/15625
+      H8: 237984768/244140625
+      H12: -4983630043392/3814697265625
+    files:
+      histogram: results/server-20260829/P205-quotient-character-prism/raw/n125_12m.hist.csv
+      moments: results/server-20260829/P205-quotient-character-prism/raw/n125_12m.moments.csv
+      metadata: results/server-20260829/P205-quotient-character-prism/raw/n125_12m.metadata.json
+    sha256:
+      histogram: 5045668f08ae97f71d013d8ab299df13378c3d2ba1e8b17309e64ea822607f4f
+      moments: 5e58910c23f7b37773c436fc6a85c68e39377dafeaf4fa968a49d96124faa82c
+      metadata: 7947e405ce82af46e737ac9ad8ce12f2cbefed3bc562688938faeafa0957ff22
+interpretation_boundary:
+  - component_character_assignment_is_retrospective
+  - source_archives_remain_branch_only
+  - deliberately_small_N_mechanism_prism
+  - no_continuum_operator_identification
+  - no_asymptotic_claim
+  - no_new_monte_carlo_samples

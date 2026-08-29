@@ -182,6 +182,12 @@ class ResearchRegistryTests(unittest.TestCase):
                 self.assertIn(row["compute_cost"], schema["compute_cost"])
                 for key in ("known_result", "boundary", "next_discriminator", "supports", "tensions", "excludes_only"):
                     self.assertTrue(row[key], key)
+                for key in ("reusable_data_refs", "dependency_group_refs", "missing_inputs"):
+                    self.assertIn(key, row)
+                    self.assertIsInstance(row[key], list)
+                self.assertTrue(set(row["dependency_group_refs"]).issubset({
+                    dependency["id"] for dependency in self.ledger["dependency_groups"]
+                }))
         self.assertEqual(statuses_seen, set(schema["integration_statuses"]))
 
     def test_decision_experiments_form_the_declared_attention_order(self) -> None:
@@ -211,16 +217,35 @@ class ResearchRegistryTests(unittest.TestCase):
         manifest = load_yaml(TWO_ACTIVATION_MANIFEST)
         groups = {row["id"]: row for row in self.ledger["dependency_groups"]}
         self.assertEqual(len(groups), len(self.ledger["dependency_groups"]))
-        self.assertEqual({run["dependency_group"] for run in manifest["runs"]}, set(groups))
+        manifest_group_ids = {run["dependency_group"] for run in manifest["runs"]}
+        self.assertTrue(manifest_group_ids.issubset(groups))
         manifest_sizes = sorted(int(run["N"]) for run in manifest["runs"])
-        ledger_sizes = sorted(size for row in groups.values() for size in row["member_sizes"])
+        ledger_sizes = sorted(
+            size for group_id, row in groups.items()
+            if group_id in manifest_group_ids
+            for size in row["member_sizes"]
+        )
         self.assertEqual(manifest_sizes, ledger_sizes)
         metadata_in_manifest = {run["metadata"] for run in manifest["runs"]}
-        metadata_in_ledger = {path for row in groups.values() for path in row["metadata_paths"]}
+        metadata_in_ledger = {
+            path for group_id, row in groups.items()
+            if group_id in manifest_group_ids
+            for path in row["metadata_paths"]
+        }
         self.assertEqual(metadata_in_manifest, metadata_in_ledger)
-        for relative in metadata_in_ledger:
-            assert_repo_relative(self, relative)
-            self.assertTrue((ROOT / relative).is_file(), relative)
+        sources = {row["id"]: row for row in self.ledger["branch_sources"]}
+        for group in groups.values():
+            for relative in group["metadata_paths"]:
+                assert_repo_relative(self, relative)
+                source_ref = group.get("source_ref")
+                if source_ref is None:
+                    self.assertTrue((ROOT / relative).is_file(), relative)
+                else:
+                    self.assertIn(source_ref, sources)
+                    self.assertTrue(
+                        git_object_exists(sources[source_ref]["commit"], relative),
+                        f"{sources[source_ref]['commit']}:{relative}",
+                    )
 
     def test_registered_two_activation_reanalysis_contract(self) -> None:
         rows = {row["id"]: row for row in self.registry["registered_reanalyses"]}
@@ -242,6 +267,44 @@ class ResearchRegistryTests(unittest.TestCase):
         self.assertEqual(provenance["target"]["id"], "4a8d1d443419434889e49148ed0a7ba6")
         self.assertTrue(provenance["outputs"]["json"]["byte_identical_remote_and_repository"])
         self.assertTrue(provenance["outputs"]["markdown"]["byte_identical_remote_and_repository"])
+
+    def test_registered_two_activation_prism_contract(self) -> None:
+        rows = {row["id"]: row for row in self.registry["registered_reanalyses"]}
+        row = rows["TWO_ACTIVATION_PRISM"]
+        self.assertEqual(row["schema"], "matching-one.two-activation-prism.v1")
+        for key in ("manifest", "entrypoint"):
+            assert_repo_relative(self, row[key])
+            self.assertTrue((ROOT / row[key]).is_file(), row[key])
+        for relative in row["outputs"]:
+            assert_repo_relative(self, relative)
+            self.assertTrue((ROOT / relative).is_file(), relative)
+        result = load_yaml(ROOT / row["outputs"][0])
+        manifest = load_yaml(ROOT / row["manifest"])
+        self.assertEqual(result["schema"], row["schema"])
+        self.assertEqual(manifest["source"]["integration_state"], "branch_only")
+        self.assertEqual(manifest["source"]["commit"], row["source_commit"])
+        self.assertRegex(row["source_commit"], HEX40)
+        best = result["joint_score"]["best_pair"]
+        self.assertEqual((best["K1_character"], best["K2_character"]), ("H4", "H4"))
+
+    def test_registered_activation_curve_nodes_contract(self) -> None:
+        rows = {row["id"]: row for row in self.registry["registered_reanalyses"]}
+        row = rows["ACTIVATION_CURVE_NODES"]
+        self.assertEqual(row["schema"], "matching-one.activation-curve-nodes.v1")
+        for key in ("manifest", "entrypoint", "source_manifest"):
+            assert_repo_relative(self, row[key])
+            self.assertTrue((ROOT / row[key]).is_file(), row[key])
+        for relative in row["outputs"]:
+            assert_repo_relative(self, relative)
+            self.assertTrue((ROOT / relative).is_file(), relative)
+        result = load_yaml(ROOT / row["outputs"][0])
+        self.assertEqual(result["schema"], row["schema"])
+        findings = result["descriptive_findings"]
+        self.assertTrue(findings["A2_has_one_nonzero_sign_across_all_scoreable_sizes"])
+        self.assertEqual(
+            findings["negative_points_explained_by_scoreable_nearby_upper_node"],
+            [265, 325, 425],
+        )
 
     def test_machine_readable_frontier_has_no_permission_states(self) -> None:
         rendered = yaml.safe_dump(self.ledger, sort_keys=True).lower()

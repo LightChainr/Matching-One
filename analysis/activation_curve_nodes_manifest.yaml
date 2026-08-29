@@ -1,0 +1,38 @@
+schema: matching-one.activation-curve-nodes.manifest.v1
+status: retrospective_existing_data_reanalysis
+description: >-
+  Resolve the complete orientation-normalized K1/K2 curves in their finite
+  Bernstein representation, their exact integrated areas, and statistically
+  stable sign-changing node branches. No new samples or free exponent fits.
+
+source_manifest: analysis/two_activation_h4_manifest.yaml
+source_manifest_sha256: 69025ca601fbae8118d68ca604165720884a60c9b2110f454538c24163d6e0c2
+required_sizes: [65, 85, 130, 145, 170, 185, 265, 290, 325, 425]
+
+semantic_contract:
+  orientation_difference: first minus second
+  K1: K_minus
+  K2: K_plus
+  D1: (F1_first(p) - F1_second(p)) / Delta cos(4 theta)
+  D2: (F2_first(p) - F2_second(p)) / Delta cos(4 theta)
+  area: integral D_i(p) dp = -Delta E[Ki] / ((N+1) Delta cos(4 theta))
+  C: (K1+K2) / (2(N+1))
+  W: (K2-K1) / (N+1)
+  K2_identity: K2/(N+1) = C + W/2
+  inference_boundary: >-
+    Existing finite archives only. No fitted exponent and no independent
+    evidence multiplication within one dependency group.
+
+node_policy:
+  node_kind: simple_sign_changing
+  full_domain: [0.01, 0.99]
+  critical_window: [0.55, 0.65]
+  endpoint_rule: p=0 and p=1 are structural zeros and are not scored as nodes
+  point_grid_intervals: 1024
+  jackknife_grid_intervals: 256
+  root_tolerance: 1.0e-12
+  nearby_node_radius: 0.02
+  stability_rule: >-
+    Delete the same batch from both orientations. A node spectrum is
+    not_scoreable if any delete-one replicate changes its branch count; node
+    positions are sorted and jackknifed only when that count is stable.

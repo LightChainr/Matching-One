@@ -25,17 +25,23 @@ An old issue title does not override a completed result. A post-reveal fit is no
 
 | Rank | Decision target | Five-axis vector | Actual maturity | Exact next output | Acquisition |
 |---:|---|---|---|---|---|
-| 1 | **Why does the second activation change from reinforcement to cancellation?** | finite topology / Bernoulli thermal / global ordinary / Gaussian geometry and sector / reuse | The Draft K1/K2 reanalysis is complete: K1 dominates every size; K2 reinforces seven and has unresolved cancelling point estimates on three | Geometry/sector classification of the K2 component with existing covariance, followed by one held-out geometry only if required | existing data first |
-| 2 | **Which complex C3 character is present?** | continuum/vacuum shape / typed response / complex topology row / three `rho` children / production | Exact child-character algebra is `branch_only`; current real rows alias conjugate characters | Three-point complex DFT with pure r=0/1/2 scores: scalar/constant, E4 weight-4, E4-squared weight-8, plus mixture residual | one typed complex row over three registered geometries |
+| 1 | **How does global ordinary H4 arise from rank-birth dynamics?** | finite topology+continuum candidate / rank-birth geometric tilt / global projector+line/landing birth rows / Gaussian cover / exact+common-stream pilot | Main reconstructs the rank plane; Draft reuse resolves both activations as H4 on P205; branch-only P276 and P215 define C/W, S/D and a nonzero finite `A_top` coupling | One common-field stream yielding `gamma_D4`, Q4 modulus/Jordan fingerprint, line-H4 D, landing-H4 and even-S controls with full covariance | existing definitions; low-cost sufficient-statistic stream |
+| 2 | **Which typed non-`A_top` complex C3 character is present?** | continuum module / typed or charged source / non-`A_top` complex row / three `rho` children / pilot | Exact child-character algebra is `branch_only`; P205 already selects ordinary H4 and the double-projector staircase gives `A_top(KdV)=0` | Three-point complex DFT for a named typed module or charged observer: r=0/1/2 scores plus mixture residual and full complex covariance | one typed complex row over three registered geometries |
 | 3 | **One generator or context/morphism-enriched state?** | low-dimensional dynamics / common source / common readout / Gaussian×annulus rectangle / reuse+targeted acquisition | Norm-4 and annulus results exist off-main; shared rectangular realization is not yet built | Held-out covariance score comparing one shared generator with the smallest context-enriched alternative | reuse first; acquire only missing rectangle cells |
 | 4 | **Does the log-pair statistic survive gauge and microscopic change?** | continuum Jordan control / cutoff shear / top-plus-two-spin and complex H4/E6 / triangular+square / targeted production | Triangular cross-cutoff result is `open_pr`; normalization audit and invariant design are `branch_only` | Gauge-invariant `CL` plus shear gate; then weight-12 two-modulus H4/E6 null in a common complex frame | small new control statistics |
-| 5 | **Can the full Q derivative be reproduced on a known control?** | confluent module / Q measure+projector+field / boundary or tiny VJS / cross-ratio / exact+pilot | Exact measure, projector, Ward and boundary pieces exist across branch-only sources; no end-to-end calibrated vector | Anchored function-valued tangent reproducing the inhomogeneous ODE, `sqrt(3)/pi` log coefficient and required prefactor/field terms | exact construction, then smallest pilot |
+| 5 | **Can the full Q derivative be reproduced on a known control?** | confluent module / Q measure+projector+field / boundary or tiny VJS / cross-ratio / exact+pilot | Branch-only theory supplies measure/projector/field terms and forced Pascal-jet subtraction; the P263 chain has an exact unbiased stopped score but its unpaired pilot did not resolve a variance gain | Paired stopped-versus-global transcript variance gate, then an anchored tangent reproducing the ODE, `sqrt(3)/pi` log coefficient and all prefactor/field terms | exact construction, then paired pilot |
 | 6 | **Does the charged norm-5 sector have one fusion eigenphase?** | charged module / Z5 deck source / cubic charged row / N325 handed cover / engine reuse | Linear charged score is `branch_only` and H8-leaning; two primitive cubic channels are frozen in theory | Joint complex closure `C_A,+C_B,--C_A,-C_B,+=0`, normalization-free conjugate-paired magnitudes and full covariance | reuse engine; new marked three-point accumulators |
-| 7 | **Where can a nontrivial relative-source deformation live?** | defect/connectivity radical / relative fugacity / junction observer / exact finite algebra / theory | Scalar source closes at rank three and its semisimple algebra has `HH^2=0` on branch-only proofs | Minimal enlarged connectivity algebra, separable quotient, radical/module-extension data and one explicit nontrivial or obstructed class | exact work only |
+| 7 | **Where can a nontrivial relative-source deformation live?** | defect/connectivity radical / relative fugacity / junction observer / exact finite algebra / theory | Scalar source closes at rank three and its semisimple algebra has `HH^2=0` on branch-only proofs | Minimal enlarged connectivity algebra, separable quotient, radical/module-extension data and one explicit nontrivial or obstructed class | exact work has the best current information/cost ratio |
 
-## Target 1 contract: two-activation H4 decomposition
+## Target 1 contract: global H4 to rank-birth mechanism
 
-The exact definitions are
+Three completed layers make a common-stream bridge more informative than another endpoint-only fit:
+
+- `main_integrated` PRs #282/#283 identify the two activation times with essential-H1 births and reconstruct `P0/P1/P2` plus the rank-one lifetime from an existing archive;
+- `open_pr` #267 scores all ten archived endpoint pairs and reuses the branch-only P205 prism to select `H4/H4` for K1 and K2;
+- branch-only P276/P215 define the complement-parity clock/lifetime and line-resolved birth insertion, and tiny controls show that its finite `A_top` coupling is not symmetry-forced to zero.
+
+The endpoint identities remain
 
 ```text
 K1 = K_minus,
@@ -43,56 +49,70 @@ K2 = K_plus,
 F1(p) = E[H_K1(p)],
 F2(p) = E[H_K2(p)],
 M(p)  = -1 + F1(p) + F2(p),
-C = (K1+K2)/2,
-G = K2-K1.
+C = (K1+K2)/(2(N+1)),
+W = (K2-K1)/(N+1).
 ```
 
-For each aligned direction pair at common root `p_bar`, compute
+The archived result is now a baseline, not the next acquisition:
 
 ```text
-DeltaF1, DeltaF2, DeltaM=DeltaF1+DeltaF2,
-delta_p1=-DeltaF1/Mbar',
-delta_p2=-DeltaF2/Mbar',
-actual root difference - (delta_p1+delta_p2).
+scoreable sizes:        10/10
+larger point estimate: K1 at 10/10
+magnitude class:        K1-dominant 9, shared 1, K2-dominant 0
+K2 reinforcing:         N=65,85,130,145,170,185,290
+K2 cancelling:          N=265,325,425 (each negative term individually |z|<2)
 ```
 
-Use only exact `DeltaCos4` direction normalization; do not fit a free exponent. Delete one aligned batch across both directions, not one component at a time. Shared streams remain one dependency group.
+The complete Bernstein curves remove the ambiguity in the last line: the integrated K2 area is positive at all ten sizes. N=265/325/425 are local negative lobes immediately below stable critical-window zeros at approximately `.594623/.596349/.596943`, not reversals of the whole second-activation response. The saved `A2`, `D2(p_bar)` and `D2'(p_bar)` covariance also keeps N=65/85/130/170 as one shared-stream block.
 
-Default archives are N=65,85,130,145,170,185,265,290,325,425. A dataset without the required `K_minus/K_plus` semantics or aligned batch structure must be reported as `not_scoreable`, with a reason; do not substitute a similar-looking histogram.
-
-Entry point on this Draft branch:
-
-```bash
-python3 scripts/analyze_two_activation_h4.py \
-  --manifest analysis/two_activation_h4_manifest.yaml \
-  --output-json results/two-activation-h4/latest.json \
-  --output-md results/two-activation-h4/latest.md \
-  --workers 16
-```
-
-Completed result:
+The P205 reuse supplies the missing controlled character comparison:
 
 ```text
-scoreable sizes: 10/10
-larger component: K1 at every size
-K2 reinforcing:   N=65,85,130,145,170,185,290
-K2 cancelling:    N=265,325,425 (each negative term individually |z|<2)
+joint component model: H4/H4
+chi-square / df:       2.585155 / 4, p=.629455
+A1, A2:                .508581, .295266
+K2 signed H4 share:    36.732%
+interaction:           reinforcing at N=25,50,125
 ```
 
-The nonlinear closure residual is negligible relative to the root gap at every size. The next question is therefore not whether the linear decomposition works, but which geometry/sector feature controls the sign and relative size of `K2`. N=65,85,130,170 remain one shared dependency group.
+The next stream should retain, in each aligned batch,
+
+```text
+q=r-1, q^2,
+I01, I12, direct 0->2,
+ell, iota, Re/Im chi4(ell), landing H4,
+N*S_H4, N*D_H4,
+q*(N*S_H4), q*(N*D_H4),
+unmarked N*S birth mass,
+K1, K2 and common delete-one batch id.
+```
+
+Here
+
+```text
+S = I01+I12 = M'                 matching-even rank increment,
+D = I12-I01 = -partial_p P1     matching-odd lifetime insertion,
+J_D4 = sum_v chi4(ell_v) D_v    line-resolved H4 source,
+gamma_D4 = Cov(A_top,J_D4)/M'.
+```
+
+Direct 0->2 births contribute twice to S and zero to D. Line-H4 and local landing-H4 remain separate observer rows. The same configuration counter, uniform root and batch deletion should be shared across the two orientations so the saved covariance can test all of the following without counting derived coordinates as independent evidence.
 
 Interpretation outcomes:
 
 | Pattern | Scientific update |
 |---|---|
-| `DeltaF1` dominates | H4 is primarily first appearance of nontrivial homology; this is the observed point-estimate pattern at all ten sizes |
-| `DeltaF2` dominates | H4 is primarily completion of the second ambient direction |
-| large opposite components, small sum | the matching root hides a topology-sector cancellation |
-| large closure residual | linear root-shift decomposition is insufficient at current anisotropy; retain the exact curve-level split |
+| nonzero `gamma_D4` survives with Q4 modulus/Jordan fingerprint | line-resolved rank-one lifetime is a concrete mechanism for the ordinary thermal-Q4/Jordan carrier |
+| line-H4 D survives but landing-H4 does not | homology-polarization/lifetime, rather than a local birth landing, carries the global response |
+| landing-H4 survives but line-H4 D does not | the local pivotal landing sector supplies the bridge and the plateau-line source is secondary |
+| only even S/W survives | the extra finite-size coordinate is rank-one persistence/shear without the declared matching-odd coupling |
+| finite coupling decays or has the wrong modulus fingerprint | the exact rank-birth interface remains useful, while the proposed Q4 continuum identification is re-ranked below other typed carriers |
 
-## Target 2 contract: complex C3 character
+The three reproducible Draft outputs are [`results/two-activation-h4/latest.md`](../results/two-activation-h4/latest.md), [`results/activation-curve-nodes/latest.md`](../results/activation-curve-nodes/latest.md) and [`results/two-activation-prism/latest.md`](../results/two-activation-prism/latest.md). Their source lifecycles differ: the first two reuse main-integrated archives; the prism reuses immutable branch-only P205 files and remains retrospective at the component-character level.
 
-Use one typed complex/chiral observer and the three degree-2 child geometries in one registered frame. The frozen ordinary-ring predictions are
+## Target 2 contract: typed non-`A_top` complex C3 character
+
+Use one explicitly named non-`A_top` module or charged complex observer and the three degree-2 child geometries in one registered frame. The exact character predictions are
 
 ```text
 r=0: (1,1,1)             E6 / constant child character
@@ -100,11 +120,11 @@ r=1: (1,zeta,zeta^2)     E4 / weight-4
 r=2: (1,zeta^2,zeta)     E4^2 / weight-8
 ```
 
-Keep real and imaginary covariance together. A real-only `1:-1/2:-1/2` score cannot distinguish r=1 from r=2. More than one DFT component is an interpretable mixture/tangent/nonlocal result, not an automatic failure.
+Keep real and imaginary covariance together. A real-only `1:-1/2:-1/2` score cannot distinguish r=1 from r=2. More than one DFT component is an interpretable mixture/tangent/nonlocal result, not an automatic failure. Repeating the ordinary global row now has lower information gain: P205 already selects its H4 line within the frozen H4/H8/H12 family, and the double-projector staircase places vacuum/KdV on the exact `A_top=0` line. A charged, defect, singular-Q or otherwise typed module is therefore the higher-information axis.
 
 ## Target 3 contract: context rectangle
 
-The comparison is not “fit another rank everywhere.” It must use the same declared source/readout basis on a rectangular subset of:
+The informative comparison is not “fit another rank everywhere.” It uses the same declared source/readout basis on a rectangular subset of:
 
 ```text
 contexts = {Gaussian scale/Smith/deck, annulus radius/geometry},
@@ -120,7 +140,7 @@ The final CRT endpoint cannot be used as a path-order label. If chronological me
 
 ## Target 4 contract: gauge closure
 
-Do not treat the triangular `kappa_proxy` or a bare square-H4/triangular-E6 amplitude ratio as universal. The next rows must cancel the relevant gauges:
+The triangular `kappa_proxy` and a bare square-H4/triangular-E6 amplitude ratio remain gauge-fixed coordinates rather than universal numbers. The next rows cancel the relevant gauges:
 
 - normalized top-plus-two-spin statistic for `CL` and its shear ratio;
 - two-modulus, weight-12 H4/E6 polynomial null across the same C3 children;
@@ -130,16 +150,19 @@ The current open-PR result already establishes a nonzero cutoff shear within its
 
 ## Target 5 contract: Q-tangent control
 
-The saved comparison vector must separately expose:
+The comparison is maximally diagnostic when the saved vector separately exposes:
 
 ```text
 measure score,
 finite confluent projector contribution,
 explicit field/insertion derivative,
-boundary conformal-prefactor derivative where applicable.
+boundary conformal-prefactor derivative where applicable,
+forced Pascal Q-jet subtraction before interpreting higher derivatives.
 ```
 
-Use the Ward `4:-6:3` row to test thermal descendant versus primary and the projector residue direction to test singlet/`[2]` confluence. For the boundary route, score the anchored cross-ratio tangent after removing the single amplitude gauge. Passing only the measure covariance is not an end-to-end control.
+Use the Ward `4:-6:3` row to test thermal descendant versus primary and the projector residue direction to test singlet/`[2]` confluence. For the boundary route, score the anchored cross-ratio tangent after removing the single amplitude gauge.
+
+The branch-only P263 chain already establishes useful design facts: 200k/500k pilots do not reject the predicted shape; event-J crossfit is an exact variance-one no-op; the localized stopped-transcript estimator is exactly unbiased; and its unpaired 20k pilot did not resolve a variance advantage. The next low-cost decision is a paired same-outer-transcript comparison of stopped and matched global scores across K and scale. Its paired variance ratio decides whether the stopped route accelerates the full interface; either outcome leaves the exact estimator available.
 
 ## Target 6 contract: charged fusion
 
@@ -149,9 +172,9 @@ The existing `71/21/8` ordering is one 4D comparison, not four votes and not a s
 
 ## Target 7 contract: radical rather than another scalar source
 
-Do not add `q^3,q^4,...` as nominally new source coordinates: they reduce exactly to the three rows `1,q,q^2`. Do not seek a Hochschild class by merely changing coefficients or attaching an ordinary bimodule to the same separable scalar algebra.
+Powers `q^3,q^4,...` reduce exactly to the three rows `1,q,q^2`, so they are existing coordinates rather than new source axes. Coefficient changes or ordinary bimodules on the same separable scalar algebra likewise leave the Hochschild class trivial.
 
-The next algebra must retain information absent from the scalar sectors, such as connectivity partitions, junction composition, non-semisimple radical states, doubled-space exchange, singular projectors or marked/charged defect endpoints.
+The next algebra gains a genuinely new axis by retaining information absent from the scalar sectors, such as connectivity partitions, junction composition, non-semisimple radical states, doubled-space exchange, singular projectors or marked/charged defect endpoints.
 
 ## Secondary opportunity pool
 
@@ -171,28 +194,37 @@ These lines remain active and may overtake the default order whenever they obtai
 | Node | Lifecycle pointer |
 |---|---|
 | digital Alexander proof | `main_integrated` `2da5855`, `notes/digital-alexander-duality-proof.md` |
+| essential-H1 filtration oracle | `main_integrated` PR #282 `3bb4054`, `notes/digital-alexander-filtration-oracle.md` |
+| essential-birth archive reconstruction | `main_integrated` PR #283 `bedc94b`, `results/essential-birth-histogram/latest.json` |
+| quotient frontier through index 7 | `main_integrated` PRs #284/#285 `d6fda88`, `results/digital-alexander-quotient-frontier/latest.json` |
 | two activation | `branch_only` `theory/p28-two-activation-rank-mixture-20260829@b8004bc`, `notes/two-activation-rank-mixture.md` |
+| endpoint, full-curve-node and P205 activation splits | `open_pr` #267, `results/two-activation-h4/latest.json`, `results/activation-curve-nodes/latest.json`, `results/two-activation-prism/latest.json` |
+| P205 ordinary quotient prism | `branch_only` `results/p205-quotient-character-prism-20260829@fc14817` |
+| essential-birth C/W clock | `branch_only` `analysis/p276-essential-birth-clock-20260829@195a198` |
+| rank-birth S/D and A-top coupling | `branch_only` `analysis/p215-rank-birth-parity-channels-20260829@dabe28e`; `analysis/p215-atop-q4-coupling-proxy-20260829@078bd61` |
 | global selection | `branch_only` `analysis/p257-global-singlet-selection-20260829@9320649` |
 | small-width selection | `branch_only` `analysis/p120-operator-spectroscopy-20260829@9cf2373` |
+| double-projector staircase | `branch_only` `theory/p275-double-projector-selection-20260829@ddf41aa` |
 | norm-4 reveal / fit | `open_pr` #273 `8b26a30`; #277 `039e708` |
 | annulus held-out recurrence | `branch_only` `analysis/p253-annulus-recurrence-20260829@8e91c90` |
 | ordered filtration | `branch_only` `analysis/p200-path-ordered-filtration-20260829@fb82de4` |
 | triangular log pair | `open_pr` #246 `7f9dcd8`; normalization audit `branch_only` `ceb7c6e` |
 | charged norm-5 | `branch_only` `analysis/norm5-chiral-hecke-phase-20260829@cc1d43c` |
-| Q/projector/Ward controls | `branch_only` `1055e22`, `d006f9c`, `fa73f5d`, `2a15e63` |
+| Q/projector/Ward/Q-jet controls | `branch_only` `1055e22`, `d006f9c`, `fa73f5d`, `2a15e63`, `0709011` |
+| P263 stopped-score chain | `branch_only` `analysis/p263-local-stopped-qscore-20260829@8187970` |
 | C3 character and invariants | `branch_only` `57b59be`, `a6120aa` |
 | relative-source closure/rigidity | `branch_only` `94dd7f9`, `094ee36` |
 
 See `docs/STATUS.md` for full branch names, artifact paths and claim boundaries.
 
-## Stop/re-rank rules
+## Evidence-aware re-ranking cues
 
-- Do not count a post-reveal coordinate on an old stream as new primary evidence.
-- Do not increase N365 alone when uncertainty is dominated by old recurrence coefficients.
-- Do not add replicas to the same N130/N170 local pivotal rows when a new observer is the missing dimension.
-- Do not infer path order from a final unmarked CRT join.
-- Do not pool ordinary and charged norm-5 rows as the same operator amplitude.
-- Do not call a gauge-fixed agreement universal before a normalization-free statistic exists.
-- Do not use the roadmap to forbid a mathematically distinct attempt; re-rank it by the new information axis it supplies.
+- A post-reveal coordinate on an old stream remains correlated reuse rather than a new primary block.
+- Extra N365 samples have lower information while uncertainty is dominated by the inherited recurrence coefficients; a new context or source can overtake them.
+- At N130/N170 the missing dimension is a new local observer, so representation-typed or thermal-null rows outrank replicas of the same response pair.
+- Path order lives in an intermediate filtration or lineage, while a final unmarked CRT join is order-blind.
+- Ordinary and charged norm-5 rows retain separate operator amplitudes and dependency semantics.
+- Gauge-fixed agreement becomes a universality test only after a normalization-free statistic is available.
+- The roadmap never forbids a mathematically distinct attempt; new information axes can re-rank any lane immediately.
 
 The target is a faster sequence of scientific separations, not a smaller number of ideas.
