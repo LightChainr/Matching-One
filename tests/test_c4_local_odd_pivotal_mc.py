@@ -26,7 +26,9 @@ class C4LocalOddPivotalMCTests(unittest.TestCase):
         cls.temporary = tempfile.TemporaryDirectory()
         cls.binary = Path(cls.temporary.name) / "c4_local_odd_pivotal_mc"
         command = [compiler, "-O2", "-std=c++17"]
-        if "g++" in Path(compiler).name:
+        if Path(compiler).name.startswith("g++-") or (
+            sys.platform != "darwin" and "clang" not in Path(compiler).name
+        ):
             command.append("-fopenmp")
         command += [str(ROOT / "src" / "c4_local_odd_pivotal_mc.cpp"),
                     "-o", str(cls.binary)]
