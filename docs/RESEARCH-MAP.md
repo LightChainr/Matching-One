@@ -30,7 +30,7 @@ measure covariance
 The highest-information line is now a connected chain rather than a collection of H4 fits:
 
 ```text
-Digital Alexander rank balance and cached index-2..8 frontier     [main]
+Digital Alexander rank balance and cached index-2..9 frontier     [main]
     -> essential H1 births K1,K2 and P0/P1/P2 reconstruction      [main]
     -> complement coordinates C (clock translation), W (lifetime) [branch_only]
     -> full finite K2 curve: positive area, three local node crossings [open_pr]
