@@ -1,0 +1,98 @@
+{
+  "N": 4,
+  "beta_mixture": "(1/3) Beta(2,3) + (2/3) Beta(3,2)",
+  "checks": {
+    "Bernoulli_convolution_equals_matching_polynomial": true,
+    "Beta_mixture_equals_half_matching_derivative": true,
+    "all_rank_traces_monotone": true,
+    "direct_microcanonical_equals_threshold_profile": true,
+    "rank_trace_equals_two_activation_indicators": true,
+    "trace_joint_equals_existing_exact_histogram": true
+  },
+  "density_power_coefficients_ascending": [
+    "0",
+    "4",
+    "0",
+    "-4"
+  ],
+  "exact_rational_probes": [
+    {
+      "completion_CDF": "17/625",
+      "density_rho": "96/125",
+      "matching_M": "-527/625",
+      "onset_CDF": "81/625",
+      "p": "1/5"
+    },
+    {
+      "completion_CDF": "5/16",
+      "density_rho": "3/2",
+      "matching_M": "-1/8",
+      "onset_CDF": "9/16",
+      "p": "1/2"
+    },
+    {
+      "completion_CDF": "512/625",
+      "density_rho": "144/125",
+      "matching_M": "463/625",
+      "onset_CDF": "576/625",
+      "p": "4/5"
+    }
+  ],
+  "issue": 28,
+  "joint_K1_K2_counts": [
+    {
+      "K1": 2,
+      "K2": 3,
+      "count": 16
+    },
+    {
+      "K1": 3,
+      "K2": 3,
+      "count": 8
+    }
+  ],
+  "joint_midpoint_gap_counts": [
+    {
+      "C": "5/2",
+      "G": 1,
+      "count": 16
+    },
+    {
+      "C": "3",
+      "G": 0,
+      "count": 8
+    }
+  ],
+  "matching_power_coefficients_ascending": [
+    "-1",
+    "0",
+    "4",
+    "0",
+    "-2"
+  ],
+  "microcanonical_q_by_n": [
+    "-1",
+    "-1",
+    "-1/3",
+    "1",
+    "1"
+  ],
+  "midpoint_gap_semantics": {
+    "G_definition": "number of n with K1<=n<K2, equivalently r_n=1",
+    "integrated_rank1_probability_EG_over_N_plus_1": "2/15",
+    "mean_C": "8/3",
+    "mean_G": "2/3",
+    "mixture_mean_EC_over_N_plus_1": "8/15"
+  },
+  "oracle": "existing threshold_rank_nz exact axis L=2 histogram",
+  "permutations": 24,
+  "root_two_CDF_balance": {
+    "balance_residual": -2.220446049250313e-16,
+    "equation": "E[H_K1(p)]+E[H_K2(p)]=1",
+    "exact_root": "sqrt(1-1/sqrt(2))",
+    "numerical_root": 0.5411961001461969
+  },
+  "schema": "matching-one.two-activation-rank-mixture.v1",
+  "scope": "tiny short-period oracle is a machine certificate; the honest-cell proof scope is supplied by Issue 269",
+  "theorem_dependency": "digital Alexander rank identity from Issue 269"
+}
