@@ -42,6 +42,7 @@ continuum_controls:
   - {path: predictions/p156_pinson_arguin_baselines_20260829.json, status: continuum_baseline, issue: 156, role: primitive_homology_sector_values}
 
 evidence_archives:
+  - {id: C4_MICROSCOPIC_ODD_TANGENT, path: results/exact-c4-microscopic-odd-tangent/latest.json, status: exact_result, role: single_theory_intertwiner_and_local_thermal_zero}
   - {id: Q1_MATCHING_INTERTWINER, path: results/exact-q1-matching-intertwiner/latest.json, status: exact_result, role: doubled_exchange_tangent_and_density_counterterm_no_go}
   - {id: P57, path: results/server-20260829/P57-norm5-500m, status: immutable_result, role: prospective_norm5}
   - {id: P50_FULLCURVE, path: results/server-20260829/P50-n145-n290-fullcurve, status: immutable_result, role: heldout_fullcurve}
@@ -57,6 +58,7 @@ evidence_archives:
   - {id: GAUSSIAN_COVER_SELECTION_RULE, path: results/exact-cover-character-oracles/norm2_selection_rule.json, status: immutable_result, role: exact_deck_character_linear_null_and_allowed_channels}
 
 topic_derivations:
+  - {path: notes/c4-microscopic-odd-thermal-null.md, status: topic_derivation, role: exact_local_odd_RG_tangent}
   - {path: notes/q1-matching-intertwiner-selection.md, status: topic_derivation, role: exact_derivative_defect_intertwiner}
   - {path: notes/pivotal-russo-finite-volume.md, status: topic_derivation, role: pivotal_identity}
   - {path: notes/post-n290-two-generator-thermal-transfer.md, status: topic_derivation, role: non_scalar_thermal_transfer}

@@ -1,0 +1,101 @@
+{
+  "claim_boundary": {
+    "not_proved": [
+      "that either orthogonalization is an RG eigenoperator at large size",
+      "that the surviving local row has x=21/4",
+      "a transfer-matrix or continuum OPE involution beyond the finite probability family"
+    ],
+    "proved": [
+      "the single-theory complement intertwiner for the finite probability family",
+      "a local complement-odd score Fisher-orthogonal to the uniform thermal score",
+      "the unique alpha=3/64 local readout with zero t response and lambda response 11/64",
+      "the exact coupling direction (2,-3) with global response zero and local response -39/64"
+    ]
+  },
+  "coupling_space_zero": {
+    "direction_delta_p_even_delta_p_odd": [
+      "-1",
+      "5"
+    ],
+    "direction_delta_t_delta_lambda": [
+      "2",
+      "-3"
+    ],
+    "global_cross_matrix_element": "0",
+    "local_h4_matrix_element": "-39/64",
+    "meaning": "an exact microscopic coupling tangent invisible to the N10 global thermal proxy but visible to the local H4 row"
+  },
+  "geometry": {
+    "N": 10,
+    "a": 3,
+    "b": 1,
+    "configurations": 1024,
+    "even_sites": 5,
+    "local_cell_vertices": [
+      0,
+      3
+    ],
+    "odd_sites": 5
+  },
+  "issue": 155,
+  "local_thermal_orthogonalization": {
+    "alpha_star": "3/64",
+    "complement_odd_violations": 0,
+    "epsilon_cell": "[(n_even-1/2)+(n_odd-1/2)]/2 on one microscopic even/odd cell",
+    "family": "O_alpha=O_local_H4 + alpha epsilon_cell",
+    "response_rows_columns_t_lambda": {
+      "global_cross": [
+        "15/8",
+        "5/4"
+      ],
+      "local_h4": [
+        "-3/64",
+        "11/64"
+      ],
+      "local_thermal_null": [
+        "0",
+        "11/64"
+      ],
+      "thermal_cell": [
+        "1",
+        "0"
+      ]
+    },
+    "surviving_lambda_matrix_element": "11/64",
+    "unique_t_response_zero": true
+  },
+  "microscopic_scores": {
+    "Fisher_Gram": [
+      [
+        "40",
+        "0"
+      ],
+      [
+        "0",
+        "40"
+      ]
+    ],
+    "S_lambda": "4 sum_x parity(x)(n_x-1/2)",
+    "S_t": "4 sum_x (n_x-1/2)",
+    "complement_odd_violations": {
+      "score_lambda": 0,
+      "score_t": 0
+    },
+    "exact_thermal_orthogonality": true,
+    "interpretation": "S_lambda is a genuine local UV odd tangent Fisher-orthogonal to the uniform thermal score S_t at the center"
+  },
+  "operator_separation": {
+    "Ad_C_parity": "all recorded scores and readouts are exactly odd",
+    "Potts_colour_charge": "singlet; independent of the #257 [2] selection rule",
+    "Q_defect_vs_measure": "this is a p-coupling score inside one self-matching theory, complementary to the #233 Q-cluster pull-through obstruction"
+  },
+  "schema": "matching-one.c4-microscopic-odd-tangent.v1",
+  "single_theory_intertwiner": {
+    "C_squared_is_identity": true,
+    "configurationwise_weight_signature_violations": 0,
+    "consequence": "unlike the non-self-matching #233 pair, species doubling collapses and local odd operators exist inside one theory",
+    "definition": "C|A>=|A^c> on the self-matching C4 graph",
+    "family_identity": "C W(t,lambda) C = W(-t,-lambda)",
+    "parameter_action": "(t,lambda)->(-t,-lambda)"
+  }
+}

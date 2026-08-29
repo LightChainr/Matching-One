@@ -1,0 +1,17 @@
+schema_version: 1
+issue: 155
+frozen_on: 2026-08-29
+generator: scripts/c4_microscopic_odd_tangent.py
+artifact: results/exact-c4-microscopic-odd-tangent/latest.json
+test: tests/test_c4_microscopic_odd_tangent.py
+base_identity: "C W(t,lambda) C = W(-t,-lambda)"
+exact_local_readout_zero:
+  family: O_local_H4 + alpha epsilon_cell
+  alpha: 3/64
+  response_t: 0
+  response_lambda: 11/64
+exact_coupling_zero:
+  direction_t_lambda: [2, -3]
+  global_response: 0
+  local_response: -39/64
+production_status: exact_N10_only
