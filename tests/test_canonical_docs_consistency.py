@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Guard the canonical claim documents against known protocol/status regressions."""
+"""Guard scientific claim boundaries without coupling roadmap prose to them."""
 
 from __future__ import annotations
 
@@ -21,9 +21,13 @@ class CanonicalDocsConsistencyTest(unittest.TestCase):
             "ROADMAP": ROADMAP.read_text(encoding="utf-8"),
             "SYNTHESIS": SYNTHESIS.read_text(encoding="utf-8"),
         }
+        cls.claim_documents = {
+            "STATUS": cls.documents["STATUS"],
+            "SYNTHESIS": cls.documents["SYNTHESIS"],
+        }
 
-    def test_issue43_channel_correction_is_canonical_everywhere(self) -> None:
-        for name, document in self.documents.items():
+    def test_issue43_channel_correction_is_locked_in_claim_documents(self) -> None:
+        for name, document in self.claim_documents.items():
             with self.subTest(document=name):
                 self.assertIn("DeltaS_cross = -DeltaS_either", document)
                 self.assertIn("0.5700315436 / 2", document)
@@ -45,8 +49,8 @@ class CanonicalDocsConsistencyTest(unittest.TestCase):
                 self.assertIn("#57", document)
                 self.assertIn("#50", document)
 
-    def test_n26_beta_experiment_is_recorded_as_completed(self) -> None:
-        for name, document in self.documents.items():
+    def test_n26_beta_result_remains_visible_in_claim_documents(self) -> None:
+        for name, document in self.claim_documents.items():
             with self.subTest(document=name):
                 self.assertIn("Beta(5,5)", document)
                 self.assertIn("Beta(7,7)", document)
@@ -62,11 +66,17 @@ class CanonicalDocsConsistencyTest(unittest.TestCase):
                 with self.subTest(document=name, phrase=phrase):
                     self.assertNotIn(phrase, document)
 
-    def test_russo_pivotal_progress_is_visible_everywhere(self) -> None:
-        for name, document in self.documents.items():
+    def test_russo_pivotal_progress_is_visible_in_claim_documents(self) -> None:
+        for name, document in self.claim_documents.items():
             with self.subTest(document=name):
                 self.assertIn("Russo", document)
                 self.assertIn("pivotal", document.lower())
+
+    def test_roadmap_is_priority_not_claim_duplication(self) -> None:
+        roadmap = self.documents["ROADMAP"]
+        self.assertIn("information", roadmap.lower())
+        self.assertIn("not a permission", roadmap.lower())
+        self.assertNotIn("remain gated behind", roadmap)
 
     def test_norm5_typed_entrypoints_exist(self) -> None:
         required = (
