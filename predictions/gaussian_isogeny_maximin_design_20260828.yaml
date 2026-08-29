@@ -1,0 +1,180 @@
+version: 1
+frozen_at: 2026-08-28
+status: design_frozen_before_any_new_target_run
+claim_level: C0
+purpose: >-
+  A four-edge Gaussian scale experiment chosen by exact harmonic leverage and
+  a maximin information-per-site-cost proxy. It is designed to distinguish
+  H4 from H12 and the radial exponents 13/8, 4/3 and 9/8 while reusing the
+  same full curves for the frozen P4[S'] pure, q=2 and Jordan-log challenge.
+generator: scripts/optimize_gaussian_isogeny_design.py
+
+planning_proxy:
+  reference_matching_odd_amplitude_A4: '0.7885'
+  reference_alpha_in_N: '13/8'
+  fixed_p_child_SE_per_100M_replicas: '9.2e-5'
+  throughput_site_updates_per_second_16cpu: '1.0e8'
+  budget_billion_site_replicas: 750
+  note: >-
+    This is a geometry/sample-scale ranking proxy, not a likelihood for future
+    observations. Parent/child covariance must be used in the real score.
+
+pure_matching_odd_models_in_frozen_order:
+  - {id: H4_alpha_13_8, harmonic: 4, alpha_in_N: '13/8'}
+  - {id: H12_alpha_13_8, harmonic: 12, alpha_in_N: '13/8'}
+  - {id: H4_alpha_4_3, harmonic: 4, alpha_in_N: '4/3'}
+  - {id: H4_alpha_9_8, harmonic: 4, alpha_in_N: '9/8'}
+
+selected_edges:
+  - id: N65_to_N130_q2
+    role: high_signal_radial_leverage
+    parent: {N: 65, first: [8,1], second: [7,4]}
+    multiplier: [1,-1]
+    multiplier_norm: 2
+    child: {N: 130, first_lineage: [9,7], second_lineage: [11,3]}
+    child_smith_invariants: [1,130]
+    exact_angular_ratios: {H4: '-1', H8: '+1', H12: '-1'}
+    planned_replicas: 2000000000
+    reference_child_targets:
+      H4_alpha_13_8: '-3.946749115437837e-4'
+      H12_alpha_13_8: '-3.946749115437837e-4'
+      H4_alpha_4_3: '-4.831032239286198e-4'
+      H4_alpha_9_8: '-5.581546126336204e-4'
+
+  - id: N85_to_N170_q2
+    role: second_parent_radial_leverage
+    parent: {N: 85, first: [9,2], second: [7,6]}
+    multiplier: [1,-1]
+    multiplier_norm: 2
+    child: {N: 170, first_lineage: [11,7], second_lineage: [13,1]}
+    child_smith_invariants: [1,170]
+    exact_angular_ratios: {H4: '-1', H8: '+1', H12: '-1'}
+    planned_replicas: 600000000
+    reference_child_targets:
+      H4_alpha_13_8: '-2.984948400587200e-4'
+      H12_alpha_13_8: '-2.984948400587200e-4'
+      H4_alpha_4_3: '-3.653736666320325e-4'
+      H4_alpha_9_8: '-4.221354511094296e-4'
+
+  - id: N65_to_N325_q5
+    role: primary_H4_H12_sign_split_and_Sprime_transfer
+    parent: {N: 65, first: [8,1], second: [7,4]}
+    multiplier: [1,2]
+    multiplier_norm: 5
+    child: {N: 325, first_lineage: [17,6], second_lineage: [18,1]}
+    child_smith_invariants: [1,325]
+    exact_angular_ratios:
+      H4: '-14/25'
+      H8: '-1054/625'
+      H12: '+23506/15625'
+    planned_replicas: 500000000
+    reference_child_targets:
+      H4_alpha_13_8: '-4.986261296429995e-5'
+      H12_alpha_13_8: '+1.339509234672954e-4'
+      H4_alpha_4_3: '-7.973358373333946e-5'
+      H4_alpha_9_8: '-1.114961921239370e-4'
+
+  - id: N85_to_N425_q5
+    role: independent_H4_H12_sign_split_and_Sprime_transfer
+    parent: {N: 85, first: [9,2], second: [7,6]}
+    multiplier: [1,-2]
+    multiplier_norm: 5
+    child: {N: 425, first_lineage: [16,13], second_lineage: [19,8]}
+    child_smith_invariants: [1,425]
+    exact_angular_ratios:
+      H4: '-14/25'
+      H8: '-1054/625'
+      H12: '+23506/15625'
+    planned_replicas: 500000000
+    reference_child_targets:
+      H4_alpha_13_8: '-3.771137269270643e-5'
+      H12_alpha_13_8: '+1.013078316016865e-4'
+      H4_alpha_4_3: '-6.030295472974708e-5'
+      H4_alpha_9_8: '-8.432519286572087e-5'
+
+expected_proxy_separation:
+  used_billion_site_replicas: 737
+  estimated_16cpu_seconds: 7370
+  maximin_pair: H4_alpha_4_3_vs_H4_alpha_9_8
+  maximin_chi_square: '16.5306328069'
+  maximin_sigma: '4.0657880917'
+  selected_pairwise_chi_square:
+    H4_alpha_13_8_vs_H12_alpha_13_8: '31.3762732385'
+    H4_alpha_13_8_vs_H4_alpha_4_3: '22.4765200444'
+    H4_alpha_13_8_vs_H4_alpha_9_8: '77.5155941789'
+    H4_alpha_4_3_vs_H4_alpha_9_8: '16.5306328069'
+
+normalized_P4_Sprime_transfer_ratios:
+  definition: "P4[S'](qN)/P4[S'](N)"
+  source: predictions/p48_sprime_multiplier_correction_discrimination_20260828.yaml
+  N65_to_N325:
+    pure_N_minus_5_4: '0.133748060995284405'
+    q2_even_scalar: '0.216162803826458032'
+    rank2_Jordan_log: '0.253906529306405914'
+  N85_to_N425:
+    pure_N_minus_5_4: '0.133748060995284405'
+    q2_even_scalar: '0.187101642843325151'
+    rank2_Jordan_log: '0.238256774505237050'
+
+scoring_contract:
+  - score raw H4 alpha=13/8 first
+  - score H12 alpha=13/8 second
+  - score H4 alpha=4/3 third
+  - score H4 alpha=9/8 fourth
+  - score zero after the four signed pure targets
+  - score normalized P4[S'] pure, q2, then Jordan using the same full curves
+  - use covariance-aware residuals child_minus_ratio_times_parent
+  - do_not_fit_any_exponent_or_multiplier_on_targets
+
+primitive_multiplier_ranking:
+  search_scope: >-
+    Parents N=65/85, every primitive Gaussian multiplier of norm 2..65,
+    primitive cyclic children only, exact H4/H8/H12 arithmetic.
+  top_balanced_edges:
+    - N65_to_N325_q5
+    - N85_to_N425_q5
+    - N65_to_N650_q10
+    - N85_to_N850_q10
+    - N65_to_N1105_q17
+  conclusion: >-
+    The two norm-5 children are the first two rows under the frozen balanced
+    angular/radial gap per sqrt(child-N) proxy. Norm 10 and 13/17 descendants
+    are useful backups but are not competitive first experiments.
+
+nonprimitive_norm4_benchmark:
+  why_not_in_primitive_ranking: >-
+    Multiplication by 2 has Gaussian norm 4 but content 2. The children are not
+    cyclic Z/N quotients, so the current cyclic C++ production engine cannot
+    represent them. This is an engine-domain exclusion, not a mathematical
+    statement that norm 4 is uninformative.
+  semigroup_identity: 'T4 = T2^2 up to the D4-trivial Gaussian unit i'
+  rows:
+    - parent: {N: 65, first: [8,1], second: [7,4]}
+      multiplier: [2,0]
+      child: {N: 260, first_lineage: [16,2], second_lineage: [14,8]}
+      child_smith_invariants: [2,130]
+      quotient_group: 'Z/2 x Z/130'
+      exact_angular_ratios: {H4: '+1', H8: '+1', H12: '+1'}
+      reference_targets_13_8_4_3_9_8:
+        ['+1.279575091295918e-4','+1.917196414683799e-4','+2.559150182591835e-4']
+      P4_Sprime_pure_q2_Jordan_ratios:
+        ['0.1767766952966369','0.2788973758671766','0.3135726104360514']
+    - parent: {N: 85, first: [9,2], second: [7,6]}
+      multiplier: [2,0]
+      child: {N: 340, first_lineage: [18,4], second_lineage: [14,12]}
+      child_smith_invariants: [2,170]
+      quotient_group: 'Z/2 x Z/170'
+      exact_angular_ratios: {H4: '+1', H8: '+1', H12: '+1'}
+      reference_targets_13_8_4_3_9_8:
+        ['+9.677497886184368e-5','+1.449986356932917e-4','+1.935499577236874e-4']
+      P4_Sprime_pure_q2_Jordan_ratios:
+        ['0.1767766952966369','0.2428874893369600','0.2957559508212650']
+  equal_budget_comparison:
+    primitive_q2_plus_q5_maximin_chi_square: '16.5306'
+    idealized_q4_plus_q5_maximin_chi_square: '7.5534'
+  engine_decision: >-
+    Implement a minimal general-period/Smith-coordinate production backend in
+    parallel after the norm-5 design is frozen. Norm 4 is not the first pure-
+    model campaign under equal cost, but it is the cheapest direct radial-
+    curvature and T4=T2^2 backend-universality test and gives strong q2/Jordan
+    separation. Do not delay N325/N425 while building it.

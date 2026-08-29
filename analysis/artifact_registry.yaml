@@ -1,9 +1,8 @@
-version: 3
+version: 4
 updated: 2026-08-29
 purpose: >
-  Lightweight navigation index for canonical documents, frozen predictions,
-  immutable evidence and genuinely unintegrated frontier work. This registry
-  never grants permission to run analysis and must not block integration.
+  Lightweight navigation index. Registry conflicts never block scientific
+  integration; claim strength lives in STATUS and priority lives in ROADMAP.
 
 integration_policy:
   registry_conflicts_block_science: false
@@ -12,82 +11,85 @@ integration_policy:
   execution_priority_source: docs/ROADMAP.md
   hard_constraints_source: GOVERNANCE.md
 
-status_vocabulary:
-  canonical_current: current mainline navigation or project-level claim document
-  frozen_prediction: immutable pre-target hypothesis or scoring contract
-  immutable_result: committed raw/derived evidence archive
-  topic_derivation: focused mathematical or theoretical argument
-  historical: retained provenance, not an active entrypoint
-  frontier: distinct unintegrated work
-  negative_result: retained failed hypothesis, method or underpowered campaign
-
 canonical_documents:
   - {path: README.md, status: canonical_current, role: external_overview}
-  - {path: docs/STATUS.md, status: canonical_current, role: authoritative_claim_ledger}
+  - {path: docs/STATUS.md, status: canonical_current, role: claim_ledger}
   - {path: docs/RESEARCH-MAP.md, status: canonical_current, role: research_navigation}
   - {path: notes/SYNTHESIS-20260828.md, status: canonical_current, role: execution_synthesis}
   - {path: docs/ROADMAP.md, status: canonical_current, role: information_gain_priorities}
-  - {path: analysis/research_ledger.yaml, status: canonical_current, role: machine_readable_research_ledger}
-  - {path: analysis/artifact_registry.yaml, status: canonical_current, role: lightweight_artifact_index}
+  - {path: analysis/research_ledger.yaml, status: canonical_current, role: compact_research_ledger}
+  - {path: analysis/artifact_registry.yaml, status: canonical_current, role: artifact_index}
   - {path: analysis/evidence_ledger_manifest.yaml, status: canonical_current, role: predictive_evidence_manifest}
-  - {path: results/evidence-ledger/latest.md, status: canonical_current, role: primary_only_predictive_evidence_view}
+  - {path: results/evidence-ledger/latest.md, status: canonical_current, role: primary_only_evidence_view}
   - {path: REPRODUCIBILITY.md, status: canonical_current, role: provenance_contract}
-  - {path: GOVERNANCE.md, status: canonical_current, role: permissive_execution_and_claim_policy}
+  - {path: GOVERNANCE.md, status: canonical_current, role: permissive_execution_policy}
 
 frozen_predictions:
   - {path: predictions/two_spin4_heldout_20260828.yaml, status: frozen_prediction, issue: 43, role: N185_N265_targets}
   - {path: predictions/x17_spin4_competitor_20260828.yaml, status: frozen_prediction, issue: 43, role: radial_adversary}
   - {path: predictions/angular_root_amplitude_20260828.yaml, status: frozen_prediction, role: root_amplitude}
   - {path: predictions/gaussian_doubling_third_lineage_20260828.yaml, status: frozen_prediction, issue: 50, role: third_lineage_fixed_coordinate}
-  - {path: predictions/p49_slope_two_sector_145_290_20260828.yaml, status: frozen_prediction, issue: 50, role: third_lineage_slope_root_correction}
-  - {path: predictions/gaussian_norm5_harmonic_discrimination_20260828.yaml, status: frozen_prediction, issue: 57, role: norm5_H4_H12}
+  - {path: predictions/p49_slope_two_sector_145_290_20260828.yaml, status: frozen_prediction, issue: 50, role: N290_slope_root_correction}
+  - {path: predictions/gaussian_norm5_harmonic_discrimination_20260828.yaml, status: frozen_prediction, issue: 57, role: completed_norm5_H4_H12}
   - {path: predictions/norm5_harmonic_primary_scorer_20260828.yaml, status: frozen_prediction, issue: 57, role: norm5_primary_kernel}
-  - {path: predictions/norm5_harmonic_semantic_gate_20260829.yaml, status: frozen_prediction, issue: 57, role: norm5_primary_semantics}
-  - {path: predictions/intrinsic_functional_cocycle_scorer_20260828.yaml, status: frozen_prediction, issues: [48, 57, 119, 125, 138], role: fullcurve_q2_Jordan_kernel}
-  - {path: predictions/intrinsic_functional_cocycle_semantic_gate_20260829.yaml, status: frozen_prediction, issues: [48, 57, 146], role: fullcurve_semantics}
+  - {path: predictions/norm5_harmonic_semantic_gate_20260829.yaml, status: frozen_prediction, issue: 57, role: norm5_semantics}
+  - {path: predictions/intrinsic_functional_cocycle_scorer_20260828.yaml, status: frozen_prediction, role: q2_Jordan_fullcurve_kernel}
+  - {path: predictions/intrinsic_functional_cocycle_semantic_gate_20260829.yaml, status: frozen_prediction, role: q2_Jordan_semantics}
   - {path: predictions/p48_sprime_scoring_manifest_20260828.yaml, status: frozen_prediction, issue: 48, role: Sprime_score_order}
   - {path: predictions/p48_sprime_q2_correction_20260828.yaml, status: frozen_prediction, issue: 48, role: q2_correction}
   - {path: predictions/p48_sprime_jordan_log_20260828.yaml, status: frozen_prediction, issue: 48, role: Jordan_correction}
-  - {path: predictions/p48_sprime_multiplier_correction_discrimination_20260828.yaml, status: frozen_prediction, issue: 48, role: Sprime_multiplier_transfer}
-  - {path: predictions/norm5_sequential_stopping_20260829.yaml, status: frozen_prediction, issue: 126, role: optional_future_sequential_rule}
-  - {path: predictions/c4_self_matching_n26_beta_targets_20260828.json, status: frozen_prediction, issue: 115, role: completed_N26_exact_targets}
-  - {path: predictions/reliability_signature_tomography_20260828.yaml, status: frozen_prediction, role: future_exact_signature_tomography}
+  - {path: analysis/threshold_score_mode_manifest.yaml, status: frozen_prediction, issue: 182, role: source_Krawtchouk_basis}
+  - {path: predictions/rank_gap_boundary_correction_targets_20260829.yaml, status: frozen_prediction, role: completed_norm5_rank_gap_target}
+  - {path: predictions/hermite_krawtchouk_jet_20260829.yaml, status: frozen_prediction, issue: 182, role: thermal_jet_contract}
+  - {path: predictions/dimensionless_amplitude_ratios_20260829.yaml, status: frozen_prediction, issue: 118, role: post_P57_definition_for_future_heldout_use}
+  - {path: predictions/gaussian_isogeny_maximin_design_20260828.yaml, status: frozen_prediction, issue: 102, role: geometry_design_benchmark}
+  - {path: predictions/c4_self_matching_n26_beta_targets_20260828.json, status: frozen_prediction, issue: 115, role: completed_N26_targets}
+  - {path: predictions/reliability_signature_tomography_20260828.yaml, status: frozen_prediction, role: exact_signature_tomography}
   - {path: predictions/hexagonal_pell_spin_filter_20260828.yaml, status: frozen_prediction, role: Pell_shape_target}
-  - {path: predictions/rectangular_thermal_q4_hecke_20260829.yaml, status: frozen_prediction, issues: [103, 145, 159, 164], role: rectangular_weight4_ratio}
+  - {path: predictions/rectangular_thermal_q4_hecke_20260829.yaml, status: frozen_prediction, role: rectangular_weight4_ratio}
   - {path: predictions/polynomial_widths_22_24.yaml, status: frozen_prediction, issue: 6, role: finite_width_challenge}
   - {path: predictions/wrapping_channel_audit_20260828.json, status: frozen_prediction, issue: 146, role: semantic_map_audit}
 
 evidence_archives:
-  - {id: P31, path: results/server-20260828/P31, status: immutable_result, role: independent_same_N_confirmation}
-  - {id: P32, path: results/server-20260828/P32-radial-challenge, status: immutable_result, role: heldout_radial_challenge}
-  - {id: P35, path: results/server-20260828/P35-amplitude-closure, status: immutable_result, role: residual_root_closure}
-  - {id: P37, path: results/server-20260828/P37-doubling, status: immutable_result, role: prospective_norm2}
-  - {id: P43, path: results/server-20260828/P43-heldout-fullcurve-500m, status: immutable_result, role: N185_N265_full_curves}
+  - {id: P31, path: results/server-20260828/P31, status: immutable_result, role: same_N_confirmation}
+  - {id: P32, path: results/server-20260828/P32-radial-challenge, status: immutable_result, role: heldout_radial}
+  - {id: P35, path: results/server-20260828/P35-amplitude-closure, status: immutable_result, role: root_closure}
+  - {id: P37, path: results/server-20260828/P37-doubling, status: immutable_result, role: norm2_lineages}
+  - {id: P43, path: results/server-20260828/P43-heldout-fullcurve-500m, status: immutable_result, role: new_geometry_fullcurves}
   - {id: P45, path: results/server-20260828/P45-root-amplitude, status: immutable_result, role: root_amplitude}
-  - {id: P48_NEW_GEOMETRY, path: results/server-20260828/P48-new-geometry-score, status: immutable_result, role: prospective_four_channel_score}
-  - {id: P49, path: results/server-20260828/P49-fullcurve-doubling-100m, status: immutable_result, role: clean_norm2_full_curves}
-  - {id: P50, path: results/server-20260828/P50-third-lineage, status: immutable_result, role: third_fixed_coordinate_lineage}
-  - {id: PREQUENTIAL, path: results/evidence-ledger, status: immutable_result, role: chronology_safe_evidence_view}
-  - {id: SELFMATCHING_TANGENT_N10, path: results/local-20260828/P44-self-matching-tangent, status: immutable_result, role: exact_tangent_archive}
-  - {id: N26_BETA, path: results/local-20260828/P115-n26-self-matching-exact, status: negative_result, role: exact_Beta_falsification}
-  - {id: EXACT_SMALL_POLYNOMIALS, path: results/exact_small_matching_polynomials.md, status: immutable_result, role: bounded_exact_polynomials}
-  - {id: EXACT_ZERO_PILOT, path: results/exact-zero-map-pilot, status: negative_result, role: bounded_complex_zero_pilot}
+  - {id: P48, path: results/server-20260828/P48-new-geometry-score, status: immutable_result, role: four_channel_score}
+  - {id: P49, path: results/server-20260828/P49-fullcurve-doubling-100m, status: immutable_result, role: clean_norm2_fullcurves}
+  - {id: P50A, path: results/server-20260828/P50-third-lineage, status: immutable_result, role: third_fixed_coordinate_lineage}
+  - {id: P57, path: results/server-20260829/P57-norm5-500m, status: immutable_result, role: prospective_norm5_reveal}
+  - {id: P57_RANK_GAP, path: results/server-20260829/P57-norm5-500m/post-reveal-rank-gap, status: negative_result, role: simple_rank_gap_boundary_failure}
+  - {id: P57_FAST_JET, path: results/server-20260829/P57-norm5-500m/post-reveal-fast-jet, status: immutable_result, role: exploratory_scalar_width_failure}
+  - {id: PREQUENTIAL, path: results/evidence-ledger, status: immutable_result, role: primary_only_evidence_view}
+  - {id: MATRIX_SEMIGROUP, path: results/discovery-20260828/matrix-semigroup, status: immutable_result, role: retrospective_low_rank_transfer}
+  - {id: SELFMATCHING_N10, path: results/local-20260828/P44-self-matching-tangent, status: immutable_result, role: exact_tangent}
+  - {id: N26_BETA, path: results/local-20260828/P115-n26-self-matching-exact, status: negative_result, role: exact_Beta_failure}
+  - {id: SQUARE_BOND_DUALITY, path: results/exact_square_bond_duality.md, status: immutable_result, role: exact_duality_oracle}
+  - {id: EXACT_POLYNOMIALS, path: results/exact_small_matching_polynomials.md, status: immutable_result, role: exact_finite_polynomials}
+  - {id: EXACT_ZERO_PILOT, path: results/exact-zero-map-pilot, status: negative_result, role: complex_zero_pilot}
 
 topic_derivations:
-  - {path: notes/pivotal-russo-finite-volume.md, status: topic_derivation, role: finite_matching_slope_identity}
-  - {path: notes/c4-self-matching-tangent-improvement.md, status: topic_derivation, role: microscopic_self_matching_tangent}
-  - {path: notes/reliability-signature-threshold-tomography.md, status: topic_derivation, role: activation_signature_framework}
-  - {path: notes/selfdual-beta-minimal-degree-theorem.md, status: topic_derivation, role: minimal_degree_Beta_theorem}
-  - {path: notes/thermal-level4-torus-onepoint-E4.md, status: topic_derivation, role: ordinary_Q4_E4_identity}
-  - {path: notes/rectangular-thermal-q4-hecke-ratio.md, status: topic_derivation, role: rectangular_weight4_identity}
-  - {path: notes/logodds-krawtchouk-threshold-response.md, status: topic_derivation, role: score_mode_thermal_response}
-  - {path: notes/FRONTIER-ROUTES-20260828.md, status: historical, role: broad_earlier_frontier_snapshot}
+  - {path: notes/pivotal-russo-finite-volume.md, status: topic_derivation, role: pivotal_identity}
+  - {path: notes/c4-self-matching-tangent-improvement.md, status: topic_derivation, role: microscopic_tangent}
+  - {path: notes/reliability-signature-threshold-tomography.md, status: topic_derivation, role: reliability_signatures}
+  - {path: notes/thermal-level4-torus-onepoint-E4.md, status: topic_derivation, role: Q4_E4_identity}
+  - {path: notes/rectangular-thermal-q4-hecke-ratio.md, status: topic_derivation, role: rectangular_Q4_ratio}
+  - {path: notes/logodds-krawtchouk-threshold-response.md, status: topic_derivation, role: score_modes}
+  - {path: notes/rank-gap-thermal-window.md, status: topic_derivation, role: rank_gap_window}
+  - {path: notes/hermite-krawtchouk-thermal-jet.md, status: topic_derivation, role: thermal_jet}
+  - {path: notes/matrix-gaussian-semigroup-discovery.md, status: topic_derivation, role: low_rank_transfer}
+  - {path: notes/dimensionless-amplitude-ratios.md, status: topic_derivation, role: metric_free_ratios}
+  - {path: notes/square-bond-duality-tiny-torus.md, status: topic_derivation, role: square_bond_control}
+  - {path: notes/gaussian-isogeny-maximin-design.md, status: topic_derivation, role: information_design}
 
 historical_protocols:
   - {path: experiments/server_compute_queue.yaml, status: historical, role: original_server_queue}
   - {path: experiments/server_compute_queue_overrides_20260828.yaml, status: historical, role: queue_override_v1}
   - {path: experiments/server_compute_queue_overrides_20260828_v2.yaml, status: historical, role: queue_override_v2}
-  - {path: experiments/server_compute_queue_overrides_20260828_v3.yaml, status: historical, role: final_third_wave_queue_snapshot}
+  - {path: experiments/server_compute_queue_overrides_20260828_v3.yaml, status: historical, role: final_third_wave_queue}
   - {path: experiments/post-server-third-wave.yaml, status: historical, role: third_wave_protocol}
   - {path: experiments/post-server-third-wave-overrides-20260828.yaml, status: historical, role: third_wave_override}
 
@@ -99,65 +101,43 @@ channel_semantics:
   required_fields: [topology_channel, combination, probability_coordinate, orientation_order, normalization, quantity]
 
 frontier_open_as_of_2026_08_29:
-  - {pr: 188, state: frontier, classification: unique_frontier, role: paired_rank_gap_thermal_window}
-  - {pr: 189, state: frontier, classification: unique_frontier, role: Hermite_Krawtchouk_thermal_jet}
-  - {pr: 142, state: frontier, classification: unique_frontier, role: retrospective_low_rank_matrix_semigroup}
-  - {pr: 139, state: frontier, classification: unique_frontier, role: information_optimal_Gaussian_design}
   - {pr: 84, state: frontier, classification: unique_frontier, role: exact_axis_L5_and_Galois}
 
 canonical_integration_history:
-  - {pr: 166, role: roadmap_channel_correction}
-  - {pr: 170, role: research_map_and_typed_channel_layer}
-  - {pr: 171, role: prospective_P48_new_geometry_score}
-  - {pr: 172, role: typed_norm5_primary_score}
-  - {pr: 173, role: typed_norm5_fullcurve_score}
-  - {pr: 174, role: exact_Russo_pivotal_oracle}
+  - {pr: 139, role: maximin_Gaussian_design}
+  - {pr: 142, role: low_rank_matrix_semigroup}
+  - {pr: 170, role: research_map_and_typed_semantics}
+  - {pr: 171, role: P48_new_geometry_score}
+  - {pr: 172, role: typed_norm5_primary}
+  - {pr: 173, role: typed_norm5_fullcurve}
+  - {pr: 174, role: exact_Russo_oracle}
   - {pr: 175, role: exact_self_matching_tangent}
-  - {pr: 176, role: exact_N26_Beta_falsification}
+  - {pr: 176, role: exact_N26_Beta_failure}
   - {pr: 177, role: reliability_signature_layer}
-  - {pr: 178, role: canonical_research_map_sync}
   - {pr: 179, role: general_integer_period_backend}
   - {pr: 181, role: norm5_calibration_archive}
-  - {pr: 183, role: sequential_eprocess_methodology}
+  - {pr: 183, role: sequential_methodology}
   - {pr: 184, role: prequential_evidence_ledger}
-  - {pr: 186, role: rectangular_Q4_weight4_ratio}
+  - {pr: 186, role: rectangular_Q4_ratio}
+  - {pr: 188, role: rank_gap_analysis}
+  - {pr: 190, role: prospective_norm5_reveal}
 
 manual_integrations:
-  - pr: 187
-    role: Krawtchouk_score_mode_assets
-    commits: [caf73d8415d735667ceb9d20c1913ebbf8db8dbb, 1ddf1398e4df80a4669a1b398183a2dc7e8e13d9, 087957b16e5f3bbea5feea725ac7f0cd17f87a70, 5a95d7eb9b236afe42bd5e1287687baf280f9507]
+  - {pr: 187, role: Krawtchouk_score_modes}
+  - {pr: 189, role: Hermite_Krawtchouk_thermal_jet}
+  - {pr: 191, role: square_bond_duality_oracle}
+  - {pr: 192, role: metric_free_amplitude_ratios}
 
 superseded_active_paths_closed:
-  - {pr: 168, superseded_by: 170}
-  - {pr: 128, superseded_by: [134, 170]}
-  - {pr: 135, superseded_by: [134, 170]}
-  - {pr: 137, superseded_by: [171, 170]}
-  - {pr: 110, superseded_by: historical}
-  - {pr: 163, superseded_by: 172}
-  - {pr: 157, superseded_by: 173}
-  - {pr: 169, superseded_by: 174}
-  - {pr: 148, superseded_by: 175}
-  - {pr: 167, superseded_by: 175}
-  - {pr: 152, superseded_by: 176}
-  - {pr: 162, superseded_by: 177}
-  - {pr: 149, superseded_by: 179}
-  - {pr: 150, superseded_by: 181}
   - {pr: 141, superseded_by: [170, 186]}
   - {pr: 143, superseded_by: [173, 186]}
   - {pr: 151, superseded_by: [170, 186]}
+  - {pr: 149, superseded_by: 179}
+  - {pr: 150, superseded_by: 181}
   - {pr: 117, superseded_by: historical}
   - {pr: 130, superseded_by: negative_result}
   - {pr: 187, superseded_by: manual_integrations}
-
-directory_contract:
-  constants: exact/reference constants and relations
-  data: literature datasets and provenance
-  docs: canonical project navigation, status and roadmap
-  analysis: machine-readable research/evidence indexes and manifests
-  notes: synthesis, theory, derivations and bounded negative results
-  scripts: analysis, scorers, exact checks and research utilities
-  experiments: historical/frozen execution protocols
-  predictions: preregistered/frozen prediction artifacts
-  results: immutable raw and derived research archives
-  src: production C++ engines
-  tests: scientific-contract, exact-regression and smoke tests
+  - {pr: 189, superseded_by: manual_integrations}
+  - {pr: 191, superseded_by: manual_integrations}
+  - {pr: 192, superseded_by: manual_integrations}
+  - {pr: 193, superseded_by: current_registry_cleanup}
