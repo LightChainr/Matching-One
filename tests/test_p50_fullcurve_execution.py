@@ -9,7 +9,11 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from score_p50_fullcurve_n290 import independent_residual_covariance, scalar_score  # noqa: E402
+from score_p50_fullcurve_n290 import (  # noqa: E402
+    independent_residual_covariance,
+    pseudovalue_vectors,
+    scalar_score,
+)
 
 
 class P50FullcurveExecutionTests(unittest.TestCase):
@@ -52,6 +56,12 @@ class P50FullcurveExecutionTests(unittest.TestCase):
         child = [[16.0, 2.0], [2.0, 25.0]]
         result = independent_residual_covariance(parent, child, -0.5)
         self.assertEqual(result, [[17.0, 2.25], [2.25, 27.25]])
+
+    def test_vector_jackknife_pseudovalues_are_coordinatewise(self) -> None:
+        self.assertEqual(
+            pseudovalue_vectors([10.0, 20.0], [[9.0, 21.0], [11.0, 19.0]]),
+            [[11.0, 19.0], [9.0, 21.0]],
+        )
 
     def test_scalar_score_includes_frozen_ratio_uncertainty(self) -> None:
         without = scalar_score(10.0, 13.0, 1.0, 4.0, 1.2)

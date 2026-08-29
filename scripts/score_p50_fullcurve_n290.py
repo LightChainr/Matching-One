@@ -30,7 +30,6 @@ from analyze_p48_retrospective import (
     Histogram,
     covariance_of_mean,
     project_size,
-    pseudovalues,
     quadratic,
     read_histograms,
 )
@@ -185,6 +184,18 @@ def vector(stat: Mapping[str, float]) -> list[float]:
     return [float(stat[name]) for name in FEATURE_ORDER]
 
 
+def pseudovalue_vectors(
+    full: Sequence[float], deleted: Sequence[Sequence[float]]
+) -> list[list[float]]:
+    batches = len(deleted)
+    if any(len(row) != len(full) for row in deleted):
+        raise ValueError("ragged delete-one vectors")
+    return [
+        [batches * full[j] - (batches - 1) * row[j] for j in range(len(full))]
+        for row in deleted
+    ]
+
+
 def estimate(by_orientation, *, lineage_sign: float):
     point = size_statistics(by_orientation, lineage_sign=lineage_sign)
     batch_ids = [row.batch for row in by_orientation["first"]]
@@ -193,7 +204,7 @@ def estimate(by_orientation, *, lineage_sign: float):
         for batch in batch_ids
     ]
     point_vector = vector(point)
-    pseudo = pseudovalues(point_vector, deleted)
+    pseudo = pseudovalue_vectors(point_vector, deleted)
     covariance = covariance_of_mean(pseudo)
     return point, covariance
 
