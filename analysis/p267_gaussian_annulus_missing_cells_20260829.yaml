@@ -1,7 +1,8 @@
 schema: matching-one/p267-gaussian-annulus-missing-cells/v1
 created: 2026-08-29
-status: frozen_missing_cell_design_not_production_authorized
-production_authorized: false
+status: preregistered_missing_cell_production_authorized
+production_authorized: true
+authorized: 2026-08-30
 issues: [154, 253, 255]
 pull_request_context: 267
 
@@ -147,3 +148,38 @@ authorization_gate:
   - scorer_synthetic_shared_and_context_enriched_recovery
   - binary_hash_and_counter_domain_freeze
 
+authorization_evidence:
+  implementation_commit: ee9190c9996031cb1c088b98668088c29cb2e86d
+  implementation_files:
+    runner: src/general_period_multiradius_pivotal_mc.cpp
+    scorer: scripts/score_p267_gaussian_annulus_rectangle.py
+    tests: tests/test_p267_general_period_rectangle.py
+  inherited_exact_gate:
+    commit: 83e98fca02a074396493b64ed59cb02700a68796
+    condition: axis_and_diagonal_C4_orbits_give_scalar_spin4_rank_2
+    adapter_assertion: every_frozen_R2_landing_retains_both_orbits
+  tiny_exact:
+    primitive_N10: all_1024_fields_equal_under_P253_cyclic_to_HNF_relabelling
+    nonprimitive_N8_Smith_2_4: all_256_fields_equal_under_independent_direct_coset_labelling
+    period_basis: invariant_under_right_unimodular_basis_change
+  synthetic_scorer:
+    shared_truth: lambda_Gaussian_equals_lambda_annulus_equals_1_half_recovered
+    enriched_truth: lambda_Gaussian_1_half_lambda_annulus_1_recovered
+  Huawei_preflight:
+    host: Huawei-CodeBuddy-XPk2PZ
+    threads: 8
+    smoke_seed: 26725360830
+    smoke_counter: [26726000000, 26726020000]
+    samples_per_design: 20000
+    elapsed_seconds: 1.19299
+    estimated_production_elapsed_seconds: 11.9299
+    max_resident_kibibytes: 5892
+
+production_freeze:
+  host: Huawei-CodeBuddy-XPk2PZ
+  source_commit: ee9190c9996031cb1c088b98668088c29cb2e86d
+  compiler_command: "g++ -std=c++17 -O3 -DNDEBUG -fopenmp src/general_period_multiradius_pivotal_mc.cpp -o build/general_period_multiradius_pivotal_mc"
+  ARM64_binary_sha256: f273763dea4736db894f0074a125c52debe78a2eb1c6aa4ecef53481f096fdbb
+  threads: 8
+  output_prefix: results/server-20260830/P267-gaussian-annulus-context/raw/gaussian_200k
+  command: "./build/general_period_multiradius_pivotal_mc --samples 200000 --batches 200 --threads 8 --radii 2 --cutoff euclidean --p 0.592746050790 --seed 26725360829 --replica-offset 26725300000 --git-commit ee9190c9996031cb1c088b98668088c29cb2e86d --binary-sha256 f273763dea4736db894f0074a125c52debe78a2eb1c6aa4ecef53481f096fdbb --output-prefix results/server-20260830/P267-gaussian-annulus-context/raw/gaussian_200k"

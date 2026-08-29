@@ -107,13 +107,17 @@ class GeneralPeriodRectangleTests(unittest.TestCase):
         )
         self.assertGreater(result["context_enriched_truth"]["delta"], 100)
 
-    def test_manifest_remains_not_production_authorized(self) -> None:
+    def test_manifest_records_preregistered_production_binary(self) -> None:
         manifest = yaml.safe_load(
             (ROOT / "analysis/p267_gaussian_annulus_missing_cells_20260829.yaml")
             .read_text(encoding="utf-8")
         )
-        self.assertFalse(manifest["production_authorized"])
+        self.assertTrue(manifest["production_authorized"])
         self.assertEqual(len(manifest["authorization_gate"]), 4)
+        self.assertEqual(
+            manifest["production_freeze"]["ARM64_binary_sha256"],
+            "f273763dea4736db894f0074a125c52debe78a2eb1c6aa4ecef53481f096fdbb",
+        )
 
 
 if __name__ == "__main__":

@@ -43,7 +43,7 @@ def test_manifest_has_exactly_two_missing_cells() -> None:
     statuses = [entry["status"] for context in cells.values() for entry in context.values()]
     assert statuses.count("existing") == 2
     assert statuses.count("missing") == 2
-    assert manifest["production_authorized"] is False
+    assert manifest["production_authorized"] is True
 
 
 def test_every_frozen_period_matrix_has_declared_determinant() -> None:
