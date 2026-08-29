@@ -141,6 +141,54 @@ def covariance(replicates):
         for j in range(width)] for i in range(width)]
 
 
+def solve(matrix, rhs):
+    """Small dense partial-pivot solve for the frozen covariance scores."""
+    size = len(rhs)
+    augmented = [list(map(float, matrix[row])) + [float(rhs[row])] for row in range(size)]
+    for column in range(size):
+        pivot = max(range(column, size), key=lambda row: abs(augmented[row][column]))
+        if abs(augmented[pivot][column]) < 1e-18:
+            raise ArithmeticError("singular covariance in GLS score")
+        augmented[column], augmented[pivot] = augmented[pivot], augmented[column]
+        scale = augmented[column][column]
+        augmented[column] = [value / scale for value in augmented[column]]
+        for row in range(size):
+            if row == column:
+                continue
+            factor = augmented[row][column]
+            augmented[row] = [
+                augmented[row][index] - factor * augmented[column][index]
+                for index in range(size + 1)
+            ]
+    return [augmented[row][-1] for row in range(size)]
+
+
+def chi_square_survival(value, degrees_of_freedom):
+    if degrees_of_freedom == 2:
+        return math.exp(-value / 2)
+    if degrees_of_freedom == 3:
+        return (math.erfc(math.sqrt(value / 2)) +
+                math.sqrt(2 * value / math.pi) * math.exp(-value / 2))
+    raise ValueError("only the frozen df=2/3 scores are supported")
+
+
+def constant_gls(values, matrix):
+    precision_one = solve(matrix, [1.0] * len(values))
+    denominator = sum(precision_one)
+    mean = sum(weight * value for weight, value in zip(precision_one, values)) / denominator
+    residual = [value - mean for value in values]
+    precision_residual = solve(matrix, residual)
+    chi_square = sum(left * right for left, right in zip(residual, precision_residual))
+    degrees_of_freedom = len(values) - 1
+    return {
+        "constant_GLS_amplitude": mean,
+        "constant_GLS_SE": math.sqrt(1 / denominator),
+        "chi_square": chi_square,
+        "degrees_of_freedom": degrees_of_freedom,
+        "chi_square_survival": chi_square_survival(chi_square, degrees_of_freedom),
+    }
+
+
 def subcovariance(full_order, full_cov, selected):
     indices = [full_order.index(label) for label in selected]
     return [[full_cov[i][j] for j in indices] for i in indices]
@@ -190,6 +238,24 @@ def analyze(batch_path: Path, metadata_path: Path, require_production: bool = Tr
         sum(transform[i][a] * matched_cov[a][b] * transform[j][b]
             for a in range(4) for b in range(4))
         for j in range(2)] for i in range(2)]
+    shell_scores = {}
+    for channel in ("A_plus", "A_minus"):
+        indices = [
+            index for index, label in enumerate(shell_order)
+            if label.endswith(channel)
+        ]
+        values = [shell_vector[index] for index in indices]
+        matrix = [[shell_cov[first][second] for second in indices] for first in indices]
+        shell_scores[channel] = constant_gls(values, matrix)
+    matched_precision_residual = solve(matched_difference_cov, matched_difference)
+    matched_chi_square = sum(
+        left * right for left, right in zip(matched_difference, matched_precision_residual))
+    matched_score = {
+        "null": "N325_R7 and N425_R8 orientation-contrast vectors are equal at matched delta",
+        "chi_square": matched_chi_square,
+        "degrees_of_freedom": 2,
+        "chi_square_survival": chi_square_survival(matched_chi_square, 2),
+    }
     return {
         "schema": "matching-one/norm5-multiradius-pivotal-score/v1",
         "source": {"batches": str(batch_path), "metadata": str(metadata_path)},
@@ -214,6 +280,10 @@ def analyze(batch_path: Path, metadata_path: Path, require_production: bool = Tr
         },
         "contrast_vector": {"order": order, "point": vector, "covariance": full_cov},
         "shell_vector": {"order": shell_order, "point": shell_vector, "covariance": shell_cov},
+        "hypothesis_scores": {
+            "constant_shell_GLS": shell_scores,
+            "matched_delta_equality": matched_score,
+        },
         "interpretation": {
             "same_R": "UV comparison only; delta changes with N",
             "matched_delta": "N325,R7 versus N425,R8 holds delta to about 0.1 percent",

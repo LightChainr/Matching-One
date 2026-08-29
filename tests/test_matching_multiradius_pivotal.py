@@ -80,6 +80,33 @@ class MatchingMultiRadiusPivotalTests(unittest.TestCase):
         self.assertEqual(len(result["contrast_vector"]["order"]), 16)
         self.assertEqual(len(result["shell_vector"]["order"]), 8)
         self.assertLess(result["matched_delta"]["relative_delta_mismatch"], 0.001)
+        self.assertEqual(
+            set(result["hypothesis_scores"]["constant_shell_GLS"]),
+            {"A_plus", "A_minus"},
+        )
+
+    def test_committed_production_scores_are_locked(self) -> None:
+        result_path = ROOT / "results/server-20260829/P225-norm5-multiradius/analysis.json"
+        if not result_path.exists():
+            self.skipTest("production archive is not present in this stack")
+        import json
+        result = json.loads(result_path.read_text(encoding="utf-8"))
+        scores = result["hypothesis_scores"]
+        self.assertAlmostEqual(
+            scores["constant_shell_GLS"]["A_plus"]["chi_square_survival"],
+            0.3564415937648036,
+            places=13,
+        )
+        self.assertAlmostEqual(
+            scores["constant_shell_GLS"]["A_minus"]["chi_square_survival"],
+            0.0038217924661527844,
+            places=14,
+        )
+        self.assertAlmostEqual(
+            scores["matched_delta_equality"]["chi_square_survival"],
+            0.045442439290774336,
+            places=14,
+        )
 
     def test_runtime_custom_designs(self) -> None:
         completed = subprocess.run(
