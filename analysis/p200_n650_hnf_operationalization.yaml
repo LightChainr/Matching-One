@@ -1,0 +1,20 @@
+schema: matching-one.p200-n650-hnf-operationalization.v1
+issue: 200
+base_commit: 6fcfd01
+status: exact_configuration_map_and_production_obstruction
+command: python3 scripts/p200_n650_hnf_maps.py --output results/exact-cover-character-oracles/n650_hnf_maps.json
+old_antisymmetric_path_mark:
+  implement: false
+  reason: exact per-configuration null under character projectors and full connectivity joins
+symmetric_mixed_join:
+  formula: h25-h2-h5+h0
+  required_rows: [h0, h2, h5, h25]
+  required_covariance: full_4x4_same_configuration_batch_covariance
+  current_histogram_sufficient: false
+  next_gate: freeze typed h and black/white lift transport before changing C++
+  proposed_high_information_h: half the difference of black-NN and white-matching ambient H1 ranks after same-colour fiber joins
+  exact_symmetry_target: complement negates all four h rows and Delta25
+  immediate_next_step: tiny exact complement-and-winding oracle
+production:
+  start: false
+  runner_extension: none

@@ -1,0 +1,554 @@
+{
+  "schema": "matching-one.p200-n650-hnf-map.v1",
+  "issue": 200,
+  "base_exact_result": "results/exact-cover-character-oracles/n650_gaussian_crt_commutator.json",
+  "status": "exact_configuration_label_operationalization",
+  "lineages": [
+    {
+      "lattices": {
+        "source_N65": {
+          "gaussian": [
+            8,
+            1
+          ],
+          "period_matrix": [
+            [
+              8,
+              -1
+            ],
+            [
+              1,
+              8
+            ]
+          ],
+          "column_HNF": [
+            [
+              65,
+              8
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "hnf_parameters": {
+            "h11": 65,
+            "h12": 8,
+            "h22": 1,
+            "order": 65
+          }
+        },
+        "intermediate_N130": {
+          "gaussian": [
+            7,
+            9
+          ],
+          "period_matrix": [
+            [
+              7,
+              -9
+            ],
+            [
+              9,
+              7
+            ]
+          ],
+          "column_HNF": [
+            [
+              130,
+              73
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "hnf_parameters": {
+            "h11": 130,
+            "h12": 73,
+            "h22": 1,
+            "order": 130
+          }
+        },
+        "intermediate_N325": {
+          "gaussian": [
+            17,
+            -6
+          ],
+          "period_matrix": [
+            [
+              17,
+              6
+            ],
+            [
+              -6,
+              17
+            ]
+          ],
+          "column_HNF": [
+            [
+              325,
+              268
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "hnf_parameters": {
+            "h11": 325,
+            "h12": 268,
+            "h22": 1,
+            "order": 325
+          }
+        },
+        "final_N650": {
+          "gaussian": [
+            23,
+            11
+          ],
+          "period_matrix": [
+            [
+              23,
+              -11
+            ],
+            [
+              11,
+              23
+            ]
+          ],
+          "column_HNF": [
+            [
+              650,
+              593
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "hnf_parameters": {
+            "h11": 650,
+            "h12": 593,
+            "h22": 1,
+            "order": 650
+          }
+        }
+      },
+      "map_cardinalities": {
+        "N650_to_N130": {
+          "targets": 130,
+          "fiber_size": 5
+        },
+        "N650_to_N325": {
+          "targets": 325,
+          "fiber_size": 2
+        },
+        "N650_to_N65": {
+          "targets": 65,
+          "fiber_size": 10
+        }
+      },
+      "map_sha256_in_final_HNF_label_order": {
+        "N650_to_N130": "72515b127a5bcf5bcde34006558ee845c53ab945bdce903751a17e9e84dcffba",
+        "N650_to_N325": "197d97b8813caca0423d9ebc21d70dbec866cd31e4980b799199c2bd661a1fab",
+        "N650_to_N65": "137f95978443db1c521362052ea6c20d7725b8e7df3705952cee00719a643ee7",
+        "paired_N130_N325": "58329f3be73840fabf12143a9cf34b32c6260968d30ec0012f7ca5bdb8b9dcfe"
+      },
+      "first_16_map_rows": [
+        {
+          "final_label": 0,
+          "N130_label": 0,
+          "N325_label": 0,
+          "N65_label": 0
+        },
+        {
+          "final_label": 1,
+          "N130_label": 1,
+          "N325_label": 1,
+          "N65_label": 1
+        },
+        {
+          "final_label": 2,
+          "N130_label": 2,
+          "N325_label": 2,
+          "N65_label": 2
+        },
+        {
+          "final_label": 3,
+          "N130_label": 3,
+          "N325_label": 3,
+          "N65_label": 3
+        },
+        {
+          "final_label": 4,
+          "N130_label": 4,
+          "N325_label": 4,
+          "N65_label": 4
+        },
+        {
+          "final_label": 5,
+          "N130_label": 5,
+          "N325_label": 5,
+          "N65_label": 5
+        },
+        {
+          "final_label": 6,
+          "N130_label": 6,
+          "N325_label": 6,
+          "N65_label": 6
+        },
+        {
+          "final_label": 7,
+          "N130_label": 7,
+          "N325_label": 7,
+          "N65_label": 7
+        },
+        {
+          "final_label": 8,
+          "N130_label": 8,
+          "N325_label": 8,
+          "N65_label": 8
+        },
+        {
+          "final_label": 9,
+          "N130_label": 9,
+          "N325_label": 9,
+          "N65_label": 9
+        },
+        {
+          "final_label": 10,
+          "N130_label": 10,
+          "N325_label": 10,
+          "N65_label": 10
+        },
+        {
+          "final_label": 11,
+          "N130_label": 11,
+          "N325_label": 11,
+          "N65_label": 11
+        },
+        {
+          "final_label": 12,
+          "N130_label": 12,
+          "N325_label": 12,
+          "N65_label": 12
+        },
+        {
+          "final_label": 13,
+          "N130_label": 13,
+          "N325_label": 13,
+          "N65_label": 13
+        },
+        {
+          "final_label": 14,
+          "N130_label": 14,
+          "N325_label": 14,
+          "N65_label": 14
+        },
+        {
+          "final_label": 15,
+          "N130_label": 15,
+          "N325_label": 15,
+          "N65_label": 15
+        }
+      ],
+      "composition_to_N65_equal_by_both_paths": true,
+      "N130_N325_label_pair_is_bijective_on_each_N65_fiber": true
+    },
+    {
+      "lattices": {
+        "source_N65": {
+          "gaussian": [
+            7,
+            4
+          ],
+          "period_matrix": [
+            [
+              7,
+              -4
+            ],
+            [
+              4,
+              7
+            ]
+          ],
+          "column_HNF": [
+            [
+              65,
+              18
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "hnf_parameters": {
+            "h11": 65,
+            "h12": 18,
+            "h22": 1,
+            "order": 65
+          }
+        },
+        "intermediate_N130": {
+          "gaussian": [
+            3,
+            11
+          ],
+          "period_matrix": [
+            [
+              3,
+              -11
+            ],
+            [
+              11,
+              3
+            ]
+          ],
+          "column_HNF": [
+            [
+              130,
+              83
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "hnf_parameters": {
+            "h11": 130,
+            "h12": 83,
+            "h22": 1,
+            "order": 130
+          }
+        },
+        "intermediate_N325": {
+          "gaussian": [
+            18,
+            1
+          ],
+          "period_matrix": [
+            [
+              18,
+              -1
+            ],
+            [
+              1,
+              18
+            ]
+          ],
+          "column_HNF": [
+            [
+              325,
+              18
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "hnf_parameters": {
+            "h11": 325,
+            "h12": 18,
+            "h22": 1,
+            "order": 325
+          }
+        },
+        "final_N650": {
+          "gaussian": [
+            17,
+            19
+          ],
+          "period_matrix": [
+            [
+              17,
+              -19
+            ],
+            [
+              19,
+              17
+            ]
+          ],
+          "column_HNF": [
+            [
+              650,
+              343
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "hnf_parameters": {
+            "h11": 650,
+            "h12": 343,
+            "h22": 1,
+            "order": 650
+          }
+        }
+      },
+      "map_cardinalities": {
+        "N650_to_N130": {
+          "targets": 130,
+          "fiber_size": 5
+        },
+        "N650_to_N325": {
+          "targets": 325,
+          "fiber_size": 2
+        },
+        "N650_to_N65": {
+          "targets": 65,
+          "fiber_size": 10
+        }
+      },
+      "map_sha256_in_final_HNF_label_order": {
+        "N650_to_N130": "72515b127a5bcf5bcde34006558ee845c53ab945bdce903751a17e9e84dcffba",
+        "N650_to_N325": "197d97b8813caca0423d9ebc21d70dbec866cd31e4980b799199c2bd661a1fab",
+        "N650_to_N65": "137f95978443db1c521362052ea6c20d7725b8e7df3705952cee00719a643ee7",
+        "paired_N130_N325": "58329f3be73840fabf12143a9cf34b32c6260968d30ec0012f7ca5bdb8b9dcfe"
+      },
+      "first_16_map_rows": [
+        {
+          "final_label": 0,
+          "N130_label": 0,
+          "N325_label": 0,
+          "N65_label": 0
+        },
+        {
+          "final_label": 1,
+          "N130_label": 1,
+          "N325_label": 1,
+          "N65_label": 1
+        },
+        {
+          "final_label": 2,
+          "N130_label": 2,
+          "N325_label": 2,
+          "N65_label": 2
+        },
+        {
+          "final_label": 3,
+          "N130_label": 3,
+          "N325_label": 3,
+          "N65_label": 3
+        },
+        {
+          "final_label": 4,
+          "N130_label": 4,
+          "N325_label": 4,
+          "N65_label": 4
+        },
+        {
+          "final_label": 5,
+          "N130_label": 5,
+          "N325_label": 5,
+          "N65_label": 5
+        },
+        {
+          "final_label": 6,
+          "N130_label": 6,
+          "N325_label": 6,
+          "N65_label": 6
+        },
+        {
+          "final_label": 7,
+          "N130_label": 7,
+          "N325_label": 7,
+          "N65_label": 7
+        },
+        {
+          "final_label": 8,
+          "N130_label": 8,
+          "N325_label": 8,
+          "N65_label": 8
+        },
+        {
+          "final_label": 9,
+          "N130_label": 9,
+          "N325_label": 9,
+          "N65_label": 9
+        },
+        {
+          "final_label": 10,
+          "N130_label": 10,
+          "N325_label": 10,
+          "N65_label": 10
+        },
+        {
+          "final_label": 11,
+          "N130_label": 11,
+          "N325_label": 11,
+          "N65_label": 11
+        },
+        {
+          "final_label": 12,
+          "N130_label": 12,
+          "N325_label": 12,
+          "N65_label": 12
+        },
+        {
+          "final_label": 13,
+          "N130_label": 13,
+          "N325_label": 13,
+          "N65_label": 13
+        },
+        {
+          "final_label": 14,
+          "N130_label": 14,
+          "N325_label": 14,
+          "N65_label": 14
+        },
+        {
+          "final_label": 15,
+          "N130_label": 15,
+          "N325_label": 15,
+          "N65_label": 15
+        }
+      ],
+      "composition_to_N65_equal_by_both_paths": true,
+      "N130_N325_label_pair_is_bijective_on_each_N65_fiber": true
+    }
+  ],
+  "configuration_semantics": {
+    "well_typed_per_final_site": [
+      "N650 HNF label",
+      "N130 quotient label",
+      "N325 quotient label",
+      "N65 quotient label"
+    ],
+    "not_well_typed": "subtracting N130 and N325 labels or treating them as duplicate endpoint samples",
+    "linear_or_full_join_order_mark": "exact implementation null"
+  },
+  "mixed_join_acquisition_gate": {
+    "canonical_algebra": "Delta25 h = h(Pi join R2 join R5)-h(Pi join R2)-h(Pi join R5)+h(Pi)",
+    "required_same_configuration_rows": [
+      "h0",
+      "h2",
+      "h5",
+      "h25"
+    ],
+    "required_batch_output": "four means plus full 4x4 covariance before forming Delta25",
+    "current_threshold_histogram_sufficient": false,
+    "current_runner_obstruction": "rank histograms discard the typed connectivity partition and lifted homology state needed to apply both joins",
+    "q_specific_obstruction": "ordinary binary pushdown does not preserve black/white complementarity, so matching charge q needs an explicit typed two-colour transport",
+    "implementation_decision": "no C++ production extension until h and its typed lift transport are frozen"
+  },
+  "high_information_candidate": {
+    "name": "typed two-colour mixed homology defect",
+    "definition": "h_R=(rank_H1(black_NN join R)-rank_H1(white_matching join R))/2 in the common parent-period basis; Delta25=h_R2R5-h_R2-h_R5+h_empty",
+    "configuration_level_construction": [
+      "build black NN and white matching connectivity separately on the final lift",
+      "for each R in {empty,R2,R5,R2 join R5}, add only same-colour fiber-identification edges with exact lifted deck displacement",
+      "measure both ambient winding ranks before discarding either DSU",
+      "emit four correlated rows and their full covariance"
+    ],
+    "exact_symmetry_target": "complement swaps the two typed layers and negates every h_R and Delta25",
+    "status": "exploratory mechanism; requires a tiny exact complement/winding oracle before C++ production",
+    "why_not_ordinary_q": "mixed-colour fibers can occupy both quotient layers, so this is a typed defect observable rather than the standard matching charge of one binary quotient mask"
+  },
+  "evidence_boundary": {
+    "exact": "both real N650 HNF quotient squares commute and have fiber sizes 2,5,10",
+    "exact_toy": "the symmetric partition-rank Delta25 equals -4 in the base artifact",
+    "open": "whether typed ambient-H1 or matching charge has a nonzero Delta25 on percolation configurations"
+  }
+}
