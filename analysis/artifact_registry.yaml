@@ -44,6 +44,7 @@ continuum_controls:
   - {path: predictions/p234_triangular_energy_logpair_tiny_oracle_20260829.json, status: exact_algebra_oracle, issue: 234, role: cluster_sign_integration_control}
   - {path: scripts/score_p234_fixed_delta_continuum.py, status: active_scorer, issue: 234, role: same_stream_relative_pi_normalization_and_parent_pair_limit}
   - {path: scripts/score_p234_cross_cutoff_shear.py, status: frozen_scorer, issue: 234, role: joint_logarithmic_top_field_cutoff_derivative}
+  - {path: analysis/p234_natural_cutoff_normalization_audit.json, status: exact_symbolic_audit, issue: 234, role: C1_C2_CL_connection_gauge_dictionary}
 
 evidence_archives:
   - {id: P234_FIXED_DELTA_D8, path: results/server-20260829/P234-phaseA, status: production_result, role: connection_normalized_parent_pair_and_cutoff_shear}
@@ -63,6 +64,7 @@ evidence_archives:
 
 topic_derivations:
   - {path: notes/p234-triangular-energy-logpair-protocol.md, status: topic_derivation, role: lattice_energy_logpair_protocol}
+  - {path: notes/p234-natural-cutoff-normalization-audit.md, status: topic_derivation, role: natural_cutoff_C1_C2_CL_dictionary}
   - {path: notes/pivotal-russo-finite-volume.md, status: topic_derivation, role: pivotal_identity}
   - {path: notes/post-n290-two-generator-thermal-transfer.md, status: topic_derivation, role: non_scalar_thermal_transfer}
   - {path: notes/q4-jordan-log-slope-shape.md, status: topic_derivation, role: Q4_Jordan_shape}

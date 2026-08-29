@@ -1,0 +1,66 @@
+{
+  "gauge_exponents_lambda_phi_mu_top": {
+    "CL_invariant_minus_2_t3_squared_over_s2": [
+      0,
+      0
+    ],
+    "kappa_proxy": [
+      -1,
+      1
+    ],
+    "mixed_phi_top": [
+      1,
+      1
+    ],
+    "top_spin_spin_slope": [
+      0,
+      1
+    ],
+    "top_top_slope": [
+      0,
+      2
+    ]
+  },
+  "issue": 234,
+  "minimal_extra_observable": {
+    "continuum": "t3=-CL*F3",
+    "definition": "t3=d<T_delta chi chi>/dlog(2delta), chi=psi/C1^(1/4)",
+    "existing_top_top_slope": "s2=-2*CL*G2",
+    "gauge_invariant_CL": "-2*(t3/F3)^2/(s2/G2)",
+    "same_shear_gate_in_pconn_gauge": "(s2/G2)/(2*t3/F3)=1"
+  },
+  "numeric_self_check": {
+    "CL_from_gauge_invariant_extra_observable": 7.0,
+    "DD_log_2delta_slope": -154.0,
+    "LD_continuum": 18.333333333333332,
+    "kappa_proxy_sqrt_C1_CL_over_C2": 4.2,
+    "paper_kappa_C1_CL_over_C2": 12.6,
+    "same_shear_gate": 1.0,
+    "spin_pair_amplitude_sqrt_C1": 3.0,
+    "top_spin_spin_log_2delta_slope": -91.0
+  },
+  "paper_convention": {
+    "paper_kappa": "C1*CL/C2",
+    "spin_two_point_coefficient": "sqrt(C1)"
+  },
+  "partial_8_over_3_diagnostic": {
+    "classification": "high_risk_amplitude_conjecture_not_exponent_theorem",
+    "estimate": 2.653,
+    "identity_if_true": "C2=(3/8)*sqrt(C1)*CL",
+    "standard_error": 0.448,
+    "target": 2.6666666666666665,
+    "z_score_estimate_minus_target": -0.030505952380951995
+  },
+  "schema": "matching-one.p234-natural-cutoff-normalization-audit.v1",
+  "scope": [
+    "No frozen scorer or run artifact is modified.",
+    "The supplied 2.653 +/- 0.448 value is partial and not a final score.",
+    "Plane shape factors are explicit; individual torus amplitudes need a torus-to-plane geometry bridge."
+  ],
+  "scorer_dictionary_after_p_connection_normalization": {
+    "DD_log_2delta_slope": "-2*CL*G2",
+    "LD_continuum": "(C2/sqrt(C1))*G2",
+    "kappa_proxy": "sqrt(C1)*CL/C2"
+  },
+  "status": "theory_audit_partial_not_final"
+}
