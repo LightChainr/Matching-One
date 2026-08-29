@@ -1,0 +1,114 @@
+schema: matching-one/p275-cartan-background-holdout/v1
+created: 2026-08-29
+status: frozen_post_reveal_design_not_production_authorized
+production_authorized: false
+issues: [215, 258, 275]
+
+chronology:
+  frozen_p275_reveal_commit: 36bf91a
+  post_reveal_mean_source_commit: 4d7ecd5
+  exact_contact_closure_commit: 8bef10b
+  source_score_sha256: 16d73aee1bbfaaf513dfcf1eacb45978ad8777ec9e91b2fa6edc521bcf6e7b79
+  present_analysis: post_reveal_discovery_and_future_holdout_freeze
+
+claim_boundary:
+  exact_from_8bef10b: "Cov(q,J_D)=J_S/2+(p-1/2-E[q])J_D"
+  numerical_regression_here: nine geometries and every delete-one replicate close to floating roundoff
+  discovery_here: full_covariance_thermal_vs_relative_contact_decomposition
+  not_claimed: a_new_independent_N_minus_13_over_8_remainder_in_the_same_q_J_D_score
+
+discovery_result:
+  source: results/p275-cartan-contact-background/latest.json
+  total_contact_split: Gamma_equals_thermal_contact_plus_relative_contact
+  thermal_contact: "phase * E[J_S]/(2B)"
+  relative_contact: "phase * (p-1/2-E[q])*E[J_D]/B"
+  covariance: complete_36x36_real_covariance_thermal_then_relative
+  model_boundary: constant_plus_free_modulus_N_minus_13_over_8_is_rejected_post_reveal
+
+future_primary:
+  name: cross_fitted_independent_clock_observer
+  purpose: escape_the_rank_gate_contact_identity
+  observer:
+    symbol: O_ext
+    definition: "(K1+K2-(N+1))/(2*(N+1))"
+    meaning: centered essential_birth_clock_midpoint_of_the_complete_priority_path
+    complement: odd
+    reason_independent: not_a_function_of_the_instantaneous_three_state_q_at_level_k
+  source_gram:
+    fields: [J_D4, J_S4]
+    alpha: "Cov(J_D4,J_S4)/Var(J_S4), with the complex conjugation in the second slot"
+    residual: J_perp_equals_J_D4_minus_alpha_times_J_S4
+    cross_fit: >-
+      Inside every outer delete-one replicate, solve p on retained batches;
+      train alpha on retained even batches and score odd batches, then train on
+      odd and score even; average the two fold scores with fixed equal weights.
+  observable:
+    gamma_ext_perp: "Cov(O_ext,J_perp)/B"
+    scaled: "Y_ext=N^(13/8)*phase*gamma_ext_perp"
+    fixed_N_modulus_test: "Y_ext(tau)=c*F_Q4(tau)"
+    Q4_shape_order_i_2i_5i_over_2: ['1', '11/4', '4.2934368543749230211109559224133052345']
+    gls_coordinates: [i_Re, i_Im, 2i_Re, 2i_Im, 5i_over_2_Re, 5i_over_2_Im]
+    Q4_shape_dof: 4
+    zero_dof: 6
+    decision: >-
+      A passing nonzero Q4-shape score motivates a second size for the frozen
+      N^-13/8 transfer. Failure says this O_ext/source residual does not realize
+      the proposed field bridge; do not retune alpha or the modulus vector.
+
+minimal_sufficient_statistics_per_batch_per_k_per_modulus:
+  - samples_and_priority_counter_interval
+  - sum_q_for_the_matching_root
+  - sum_birth_mass
+  - sum_O_ext_and_sum_O_ext_squared
+  - sum_complex_J_D4_and_J_S4
+  - sum_complex_O_ext_times_J_D4_and_O_ext_times_J_S4
+  - sum_complex_J_D4_times_conjugate_J_S4
+  - sum_absolute_J_D4_squared_and_sum_absolute_J_S4_squared
+  - common_priority_field_digest_across_the_three_moduli
+
+heldout_acquisition:
+  N: 250
+  samples_per_geometry: 2000000
+  batches: 100
+  seed: 2026275250
+  replica_counter: [9875000000, 9877000000]
+  moduli:
+    i:
+      z: [13, 9]
+      matrix: [[13, -9], [9, 13]]
+      smith: [1, 250]
+      transport: {real: '-11753/15625', imag: '-10296/15625'}
+    2i:
+      z: [11, 2]
+      matrix: [[11, -4], [2, 22]]
+      smith: [1, 250]
+      transport: {real: '11753/15625', imag: '-10296/15625'}
+    5i_over_2:
+      z: [4, 3]
+      matrix: [[8, -15], [6, 20]]
+      smith: [1, 250]
+      transport: {real: '-527/625', imag: '-336/625'}
+  dependency: same_seed_counter_priority_field_and_batch_partition_across_all_three_moduli
+  independence: new_seed_and_counter_relative_to_the_revealed_nine_geometry_training_block
+
+required_preflight_before_production_authorization:
+  - exact_tiny_complement_check_for_O_ext
+  - exact_tiny_nonclosure_check_showing_O_ext_response_is_not_determined_by_J_S_and_J_D_means
+  - synthetic_cross_fit_and_outer_jackknife_scorer_test
+  - binary_hash_and_counter_domain_freeze
+
+secondary_negative_control:
+  name: fixed_N_empirical_modulus_projection_of_the_closed_q_contact
+  status: frozen_adversarial_shape_check_not_independent_field_evidence
+  weights_order_i_2i_5i_over_2:
+    - [-0.43047825461713873, 0.0003738071405607637]
+    - [-0.0647908341110844, 0.0000979489261400644]
+    - [0.37467723480862114, -0.00014980229342154348]
+  constraints:
+    sum_w_times_trained_scale0_profile: 0
+    sum_w_times_Q4_shape: 1
+  warning: >-
+    The constant background model is itself rejected by the revealed precision,
+    so this is an operational shape challenge, not an exact background removal.
+    The q-contact remains algebraically closed whatever this secondary returns.
+
