@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "frozen_on": "2026-08-29",
+  "issue": 257,
+  "beta_squared": [2, 3],
+  "competitor": {"r": [2, 1], "s": [2, 1]},
+  "thermal_q4_dimension": [21, 4],
+  "gaussian_area_multipliers": [2, 4, 5, 10],
+  "sources": [
+    {"arxiv": "2604.05503", "role": "generic-loop V_(r,s) spectrum and 2r-leg interpretation"},
+    {"arxiv": "2208.14298", "role": "Potts physical state spaces and S_Q representations"},
+    {"arxiv": "2510.04701", "role": "nonzero-spin leg-field lattice prescription"}
+  ],
+  "unresolved_gates": [
+    {"id": "potts_q1_multiplicity", "status": "unresolved_requires_representation_limit"},
+    {"id": "global_matching_matrix_element", "status": "unresolved_requires_selection_rule"},
+    {"id": "local_pivotal_overlap", "status": "unresolved_requires_character_weighted_control"},
+    {"id": "normalized_shell_transfer", "status": "unresolved_requires_lattice_to_radial_normalization"}
+  ],
+  "claim_boundary": "The generic critical-loop spectrum contains a four-leg spin-4 primary with x=17/4 at beta^2=2/3. This does not establish nonzero multiplicity in the physical Q=1 Potts sector, a nonzero matrix element for global matching, or a transfer exponent for the normalized local shell observable. No target outcome or fitted amplitude is used."
+}
