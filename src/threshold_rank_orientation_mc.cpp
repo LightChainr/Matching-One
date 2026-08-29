@@ -178,6 +178,24 @@ class HomologyUnionFind {
 
     bool component_crosses(int vertex) { return rank_[find(vertex).root] == 2; }
 
+    std::uint8_t component_rank(int vertex) { return rank_[find(vertex).root]; }
+
+    bool component_direction_0(int vertex) {
+        const int root = find(vertex).root;
+        for (std::uint8_t index = 0; index < rank_[root]; ++index) {
+            if (basis_[root][index].x != 0) return true;
+        }
+        return false;
+    }
+
+    bool component_direction_1(int vertex) {
+        const int root = find(vertex).root;
+        for (std::uint8_t index = 0; index < rank_[root]; ++index) {
+            if (basis_[root][index].y != 0) return true;
+        }
+        return false;
+    }
+
   private:
     int n_;
     int a_;
