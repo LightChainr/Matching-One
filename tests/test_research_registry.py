@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the repository research-map and artifact-registry contracts."""
+"""Validate lightweight research navigation without recreating process gates."""
 
 from __future__ import annotations
 
@@ -31,46 +31,45 @@ class ResearchRegistryTests(unittest.TestCase):
         for label, relative in self.ledger["canonical_views"].items():
             with self.subTest(label=label, path=relative):
                 self.assertTrue((ROOT / relative).exists(), relative)
-
         for row in self.registry["canonical_documents"]:
-            relative = row["path"]
-            with self.subTest(path=relative):
+            with self.subTest(path=row["path"]):
                 self.assertEqual(row["status"], "canonical_current")
-                self.assertTrue((ROOT / relative).exists(), relative)
+                self.assertTrue((ROOT / row["path"]).exists(), row["path"])
 
-    def test_research_track_ids_are_unique(self) -> None:
+    def test_only_three_hard_constraints_are_registered(self) -> None:
+        expected = {
+            "preserve_frozen_predictions_and_committed_result_history",
+            "require_identical_observable_semantics_or_a_registered_exact_map_for_claim_bearing_scores",
+            "do_not_add_correlated_views_of_one_raw_random_block_as_independent_primary_evidence",
+        }
+        self.assertEqual(set(self.ledger["hard_constraints"]), expected)
+        self.assertFalse(self.registry["integration_policy"]["registry_conflicts_block_science"])
+
+    def test_research_track_ids_and_evidence_references(self) -> None:
         tracks = self.ledger["research_tracks"]
         ids = [row["id"] for row in tracks]
-        self.assertEqual(len(ids), len(set(ids)))
         self.assertEqual(ids, list("ABCDEFGHI"))
-
-    def test_evidence_references_are_declared_and_paths_exist(self) -> None:
-        blocks = self.ledger["evidence_blocks"]
-        evidence_ids = {row["id"] for row in blocks}
-        self.assertEqual(len(evidence_ids), len(blocks))
-
+        evidence = {row["id"]: row for row in self.ledger["evidence_blocks"]}
+        self.assertEqual(len(evidence), len(self.ledger["evidence_blocks"]))
         required = {
             "E_CHANNEL_SEMANTICS",
-            "E_RELIABILITY_SIGNATURE",
             "E_RUSSO_PIVOTAL",
-            "E_SELFMATCHING_TANGENT",
-            "E_P48_NEW_GEOMETRY",
-            "E_NORM5_SCORE_SEMANTICS",
+            "E_PREQUENTIAL",
+            "E_KRAWTCHOUK_MODES",
+            "E_RECTANGULAR_Q4",
             "E_N26_BETA_NEGATIVE",
         }
-        self.assertTrue(required.issubset(evidence_ids), required - evidence_ids)
-
-        for track in self.ledger["research_tracks"]:
+        self.assertTrue(required.issubset(evidence), required - set(evidence))
+        for track in tracks:
             for evidence_id in track.get("evidence", []):
                 with self.subTest(track=track["id"], evidence=evidence_id):
-                    self.assertIn(evidence_id, evidence_ids)
-
-        for block in blocks:
+                    self.assertIn(evidence_id, evidence)
+        for block in evidence.values():
             for relative in block.get("paths", []):
                 with self.subTest(evidence=block["id"], path=relative):
                     self.assertTrue((ROOT / relative).exists(), relative)
 
-    def test_frozen_prediction_registry_points_to_real_files(self) -> None:
+    def test_frozen_prediction_paths_are_unique_and_real(self) -> None:
         rows = self.registry["frozen_predictions"]
         paths = [row["path"] for row in rows]
         self.assertEqual(len(paths), len(set(paths)))
@@ -79,76 +78,52 @@ class ResearchRegistryTests(unittest.TestCase):
                 self.assertEqual(row["status"], "frozen_prediction")
                 self.assertTrue((ROOT / row["path"]).is_file(), row["path"])
 
-    def test_evidence_archives_are_not_declared_canonical_documents(self) -> None:
-        canonical_paths = {
-            row["path"] for row in self.registry["canonical_documents"]
-        }
-        for row in self.registry["evidence_archives"]:
-            with self.subTest(path=row["path"]):
-                self.assertNotIn(row["path"], canonical_paths)
-                self.assertTrue((ROOT / row["path"]).exists(), row["path"])
+    def test_evidence_and_topic_paths_exist(self) -> None:
+        for section in ("evidence_archives", "topic_derivations", "historical_protocols"):
+            for row in self.registry[section]:
+                with self.subTest(section=section, path=row["path"]):
+                    self.assertTrue((ROOT / row["path"]).exists(), row["path"])
 
-    def test_channel_semantics_contract_is_registered(self) -> None:
+    def test_channel_semantics_minimum_contract(self) -> None:
         semantics = self.registry["channel_semantics"]
-        required_paths = (
-            semantics["implementation"],
-            semantics["audit"],
-            semantics["primary_norm5_entrypoint"],
-            semantics["fullcurve_norm5_entrypoint"],
-        )
-        for relative in required_paths:
-            with self.subTest(path=relative):
-                self.assertTrue((ROOT / relative).is_file(), relative)
-        self.assertIn("orientation_order", semantics["required_fields"])
-        self.assertIn("normalization", semantics["required_fields"])
+        for key in ("implementation", "audit", "primary_norm5_entrypoint", "fullcurve_norm5_entrypoint"):
+            with self.subTest(key=key):
+                self.assertTrue((ROOT / semantics[key]).is_file(), semantics[key])
+        self.assertTrue({"orientation_order", "normalization", "quantity"}.issubset(semantics["required_fields"]))
 
-    def test_completed_n26_beta_is_not_still_new_compute(self) -> None:
-        new_issue_numbers = {
-            int(row["issue"])
-            for row in self.ledger["new_compute_queue"]
-            if row.get("issue") is not None
-        }
-        self.assertNotIn(115, new_issue_numbers)
-        completed = {
-            int(row["issue"]): row
-            for row in self.ledger["completed_exact_tasks"]
-            if row.get("issue") is not None
-        }
-        self.assertIn(115, completed)
-        self.assertEqual(
-            completed[115]["outcome"], "both_frozen_Beta5_and_Beta7_laws_fail"
-        )
+    def test_frontier_is_disjoint_from_integrated_and_closed_history(self) -> None:
+        frontier = [int(row["pr"]) for row in self.registry["frontier_open_as_of_2026_08_29"]]
+        self.assertEqual(len(frontier), len(set(frontier)))
+        canonical = {int(row["pr"]) for row in self.registry["canonical_integration_history"]}
+        manual = {int(row["pr"]) for row in self.registry.get("manual_integrations", [])}
+        closed = {int(row["pr"]) for row in self.registry["superseded_active_paths_closed"]}
+        self.assertFalse(set(frontier) & canonical)
+        self.assertFalse(set(frontier) & manual)
+        self.assertFalse(set(frontier) & closed)
 
-    def test_frontier_excludes_closed_superseded_paths(self) -> None:
-        rows = self.registry["frontier_open_as_of_2026_08_29"]
-        numbers = [int(row["pr"]) for row in rows]
-        self.assertEqual(len(numbers), len(set(numbers)))
-        superseded = {
-            168,
-            128,
-            135,
-            137,
-            110,
-            163,
-            157,
-            169,
-            148,
-            167,
-            152,
-            162,
-        }
-        self.assertFalse(superseded.intersection(numbers))
+    def test_completed_work_is_not_still_queued_as_new_compute(self) -> None:
+        new_issues = {int(row["issue"]) for row in self.ledger["new_compute_queue"] if row.get("issue") is not None}
+        exact_completed = {int(row["issue"]) for row in self.ledger["completed_exact_tasks"] if row.get("issue") is not None}
+        analysis_completed = {int(row["issue"]) for row in self.ledger.get("completed_analysis_tasks", []) if row.get("issue") is not None}
+        self.assertFalse(new_issues & exact_completed)
+        self.assertFalse(new_issues & analysis_completed)
+        self.assertIn(95, analysis_completed)
+        self.assertIn(115, exact_completed)
 
-        recorded_superseded = {
-            int(row["pr"]) for row in self.registry["superseded_active_paths_closed"]
-        }
-        self.assertTrue(superseded.issubset(recorded_superseded))
+    def test_no_gated_state_remains_in_machine_readable_work_queue(self) -> None:
+        def walk(value):
+            if isinstance(value, dict):
+                for key, item in value.items():
+                    if key == "state":
+                        yield item
+                    yield from walk(item)
+            elif isinstance(value, list):
+                for item in value:
+                    yield from walk(item)
 
-    def test_canonical_integration_history_is_unique(self) -> None:
-        rows = self.registry["canonical_integration_history"]
-        numbers = [int(row["pr"]) for row in rows]
-        self.assertEqual(len(numbers), len(set(numbers)))
-        self.assertTrue({170, 171, 172, 173, 174, 175, 176, 177}.issubset(numbers))
+        self.assertNotIn("gated", set(walk(self.ledger)))
+        allowed_new_compute_states = {"active", "ready", "later"}
+        self.assertTrue({row["state"] for row in self.ledger["new_compute_queue"]}.issubset(allowed_new_compute_states))
 
 
 if __name__ == "__main__":
