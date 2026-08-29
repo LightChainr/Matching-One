@@ -42,6 +42,7 @@ continuum_controls:
   - {path: predictions/p156_pinson_arguin_baselines_20260829.json, status: continuum_baseline, issue: 156, role: primitive_homology_sector_values}
 
 evidence_archives:
+  - {id: RELATIVE_SOURCE_PDE, path: results/exact-relative-source-pde/latest.json, status: exact_result, role: Q_source_closure_and_topology_sector_inversion}
   - {id: RELATIVE_CLUSTER_FUGACITY, path: results/exact-relative-cluster-fugacity/latest.json, status: exact_result, role: matching_partition_derivative_and_one_colour_FK_no_go}
   - {id: CORRELATED_HYPEREDGE_CLOSURE, path: results/exact-correlated-hyperedge-closure/latest.json, status: exact_result, role: two_block_partial_state_no_go_and_selfdual_simplex}
   - {id: SMALL_WIDTH_OPERATOR_SPECTROSCOPY, path: results/exact-small-width-operator-spectroscopy/latest.json, status: exact_result, role: singlet_to_V22_matrix_element_zero}
@@ -61,6 +62,7 @@ evidence_archives:
   - {id: GAUSSIAN_COVER_SELECTION_RULE, path: results/exact-cover-character-oracles/norm2_selection_rule.json, status: immutable_result, role: exact_deck_character_linear_null_and_allowed_channels}
 
 topic_derivations:
+  - {path: notes/p54-relative-source-pde.md, status: topic_derivation, role: mixed_Q_thermal_ledger_closure}
   - {path: notes/p114-relative-cluster-fugacity-formula.md, status: topic_derivation, role: explicit_matching_Q_derivative}
   - {path: notes/p123-correlated-hyperedge-closure.md, status: topic_derivation, role: four_terminal_selfdual_obstruction}
   - {path: notes/p120-small-width-operator-spectroscopy.md, status: topic_derivation, role: transfer_operator_sector_selection}

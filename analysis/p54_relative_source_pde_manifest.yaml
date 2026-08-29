@@ -1,0 +1,14 @@
+schema: matching-one.analysis-manifest.v1
+issue: 54
+related_issue: 114
+kind: exact_finite_oracle
+entrypoint: scripts/p54_relative_source_pde.py
+output: results/exact-relative-source-pde/latest.json
+claims:
+  - q_cubic_support_identity
+  - relative_Q_source_linear_PDE
+  - connected_cumulant_closure
+  - three_sector_inversion_from_first_two_cumulants
+  - mixed_Q_thermal_ledger_reduction
+boundary: thermal_kappa3_is_not_determined
+reproduce: python3 scripts/p54_relative_source_pde.py --json results/exact-relative-source-pde/latest.json

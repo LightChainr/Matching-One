@@ -1,0 +1,252 @@
+{
+  "claim_boundary": {
+    "critical_distinction": "F_sss closes three Q-source insertions; issue 54 requires three thermal insertions (schematically F_suuu), which this identity does not close",
+    "not_proved": [
+      "the thermal third-derivative kappa3 sought by issue 54",
+      "a relation reducing F_suuu to F_su",
+      "a continuum value for any thermal cumulant"
+    ],
+    "proved": [
+      "the linear source PDE and every commuting mixed derivative",
+      "the logarithmic cumulant closure",
+      "the inversion from (F_s,F_ss) to the three q-sector weights",
+      "the N5 finite oracle including one thermal-score insertion"
+    ]
+  },
+  "exact_source_equations": {
+    "derivative_recurrence": "all positive odd raw s derivatives equal G_s; all positive even raw s derivatives equal G_ss",
+    "linear_PDE": "partial_s^3 G=partial_s G",
+    "log_cumulant_closure": "F_sss=F_s-3 F_s F_ss-(F_s)^3, F=log G",
+    "mixed_linear_PDE": "partial_u^alpha partial_s^3 G=partial_u^alpha partial_s G for every commuting thermal/score multi-derivative alpha",
+    "one_u_derivative": "F_sssu=(1-3 F_ss-3 F_s^2)F_su-3 F_s F_ssu",
+    "relative_fugacity": "G(s,u)=E_u[exp(s q)]=P_0(u)+P_+(u) exp(s)+P_-(u) exp(-s), with G(0,u)=1"
+  },
+  "issues": [
+    54,
+    114
+  ],
+  "mixed_ledger_consequence": {
+    "eliminated_independent_rows": "every row with at least three Q-source insertions is algebraically reducible to rows with at most two Q-source insertions",
+    "issue_54_use": "compute or estimate only the 0-, 1-, and 2-Q-source columns of the mixed Q/thermal ledger; generate higher-Q columns from the exact closure",
+    "retained_rows": "thermal/score derivative order is unrestricted and remains dynamical"
+  },
+  "schema": "matching-one.p54-relative-source-pde.v1",
+  "sector_inversion": {
+    "P_minus": "(v+mu^2-mu)/2",
+    "P_plus": "(v+mu^2+mu)/2",
+    "P_zero": "1-v-mu^2",
+    "inputs": "mu=F_s and v=F_ss at s=0",
+    "meaning": "the first two connected Q-source derivatives reconstruct all three finite matching-topology sector weights",
+    "raw_second": "E[q^2]=v+mu^2"
+  },
+  "support_identity": {
+    "charge_support": [
+      -1,
+      0,
+      1
+    ],
+    "configurationwise_identity": "q^3=q",
+    "minimal_polynomial": "q(q-1)(q+1)=0"
+  },
+  "tiny_exact_oracle": {
+    "N": 5,
+    "first_thermal_log_closure": {
+      "F_sssu_direct": {
+        "denominator": 2048,
+        "numerator": -2125,
+        "text": "-2125/2048"
+      },
+      "closure_rhs": {
+        "denominator": 2048,
+        "numerator": -2125,
+        "text": "-2125/2048"
+      },
+      "equal": true
+    },
+    "geometry": "gaussian(2,1)",
+    "joint_distribution": [
+      {
+        "probability": {
+          "denominator": 32,
+          "numerator": 1,
+          "text": "1/32"
+        },
+        "q": -1,
+        "thermal_score": -5
+      },
+      {
+        "probability": {
+          "denominator": 32,
+          "numerator": 5,
+          "text": "5/32"
+        },
+        "q": -1,
+        "thermal_score": -3
+      },
+      {
+        "probability": {
+          "denominator": 16,
+          "numerator": 5,
+          "text": "5/16"
+        },
+        "q": -1,
+        "thermal_score": -1
+      },
+      {
+        "probability": {
+          "denominator": 16,
+          "numerator": 5,
+          "text": "5/16"
+        },
+        "q": 0,
+        "thermal_score": 1
+      },
+      {
+        "probability": {
+          "denominator": 32,
+          "numerator": 5,
+          "text": "5/32"
+        },
+        "q": 1,
+        "thermal_score": 3
+      },
+      {
+        "probability": {
+          "denominator": 32,
+          "numerator": 1,
+          "text": "1/32"
+        },
+        "q": 1,
+        "thermal_score": 5
+      }
+    ],
+    "mixed_raw_PDE_checks": [
+      {
+        "d_s3_d_u": {
+          "denominator": 16,
+          "numerator": -5,
+          "text": "-5/16"
+        },
+        "d_s_d_u": {
+          "denominator": 16,
+          "numerator": -5,
+          "text": "-5/16"
+        },
+        "equal": true,
+        "u_power": 0
+      },
+      {
+        "d_s3_d_u": {
+          "denominator": 16,
+          "numerator": 25,
+          "text": "25/16"
+        },
+        "d_s_d_u": {
+          "denominator": 16,
+          "numerator": 25,
+          "text": "25/16"
+        },
+        "equal": true,
+        "u_power": 1
+      },
+      {
+        "d_s3_d_u": {
+          "denominator": 16,
+          "numerator": -5,
+          "text": "-5/16"
+        },
+        "d_s_d_u": {
+          "denominator": 16,
+          "numerator": -5,
+          "text": "-5/16"
+        },
+        "equal": true,
+        "u_power": 2
+      },
+      {
+        "d_s3_d_u": {
+          "denominator": 16,
+          "numerator": 265,
+          "text": "265/16"
+        },
+        "d_s_d_u": {
+          "denominator": 16,
+          "numerator": 265,
+          "text": "265/16"
+        },
+        "equal": true,
+        "u_power": 3
+      },
+      {
+        "d_s3_d_u": {
+          "denominator": 16,
+          "numerator": -5,
+          "text": "-5/16"
+        },
+        "d_s_d_u": {
+          "denominator": 16,
+          "numerator": -5,
+          "text": "-5/16"
+        },
+        "equal": true,
+        "u_power": 4
+      }
+    ],
+    "mu": {
+      "denominator": 16,
+      "numerator": -5,
+      "text": "-5/16"
+    },
+    "p": "1/2",
+    "sector_weights": {
+      "-1": {
+        "denominator": 2,
+        "numerator": 1,
+        "text": "1/2"
+      },
+      "0": {
+        "denominator": 16,
+        "numerator": 5,
+        "text": "5/16"
+      },
+      "1": {
+        "denominator": 16,
+        "numerator": 3,
+        "text": "3/16"
+      }
+    },
+    "sector_weights_from_mu_variance": {
+      "-1": {
+        "denominator": 2,
+        "numerator": 1,
+        "text": "1/2"
+      },
+      "0": {
+        "denominator": 16,
+        "numerator": 5,
+        "text": "5/16"
+      },
+      "1": {
+        "denominator": 16,
+        "numerator": 3,
+        "text": "3/16"
+      }
+    },
+    "thermal_score": "the unnormalized numerator source exp(u t) uses t=2*occupied-N, a fixed multiple of the Bernoulli score; division by its s-independent partition function gives normalized E_u and preserves the s-PDE",
+    "third_q_cumulant": {
+      "denominator": 2048,
+      "numerator": 555,
+      "text": "555/2048"
+    },
+    "third_q_cumulant_from_closure": {
+      "denominator": 2048,
+      "numerator": 555,
+      "text": "555/2048"
+    },
+    "variance": {
+      "denominator": 256,
+      "numerator": 151,
+      "text": "151/256"
+    }
+  }
+}
