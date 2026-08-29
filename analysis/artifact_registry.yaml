@@ -1,4 +1,4 @@
-version: 10
+version: 11
 updated: 2026-08-29
 purpose: >
   Lightweight navigation/provenance index. Registry conflicts never block
@@ -17,6 +17,7 @@ canonical_documents:
   - {path: docs/STATUS.md, status: canonical_current, role: claim_ledger}
   - {path: docs/RESEARCH-MAP.md, status: canonical_current, role: research_navigation}
   - {path: docs/ROADMAP.md, status: canonical_current, role: information_gain_priorities}
+  - {path: docs/HYPOTHESIS-BOARD.md, status: canonical_current, role: falsifiable_mechanism_board}
   - {path: analysis/research_ledger.yaml, status: canonical_current, role: compact_research_ledger}
   - {path: analysis/artifact_registry.yaml, status: canonical_current, role: artifact_index}
   - {path: analysis/evidence_ledger_manifest.yaml, status: canonical_current, role: predictive_evidence_manifest}
@@ -57,6 +58,7 @@ evidence_archives:
   - {id: Q1_SPIN4_VELOCITY, path: results/q-velocity-spin4, status: exact_result, role: fourleg_versus_thermal_Q4_velocity_fingerprint}
   - {id: ANISOTROPY_STENCIL_GATE, path: results/anisotropy-stencil-gate, status: exact_result, role: microscopic_H4_geometry_feasibility_boundary}
   - {id: PC_CONFIDENCE_PREREGISTRATION, path: results/pc-confidence-preregistration, status: frozen_protocol, role: fresh_IID_400_trial_cutoff373_acquisition_contract}
+  - {id: OPERATOR_MIXING_RANK4, path: results/operator-mixing-parity, status: exact_result, role: parity_zero_pattern_and_rank_four_identifiability_boundary}
 
 topic_derivations:
   - {path: notes/pivotal-russo-finite-volume.md, status: topic_derivation, role: pivotal_identity}
@@ -118,6 +120,26 @@ registered_reanalyses:
     schema: matching-one.activation-curve-nodes.v1
     role: full_K1_K2_Bernstein_curves_integrated_areas_and_stable_node_spectrum
     result_summary: K2_area_positive_all_ten_three_negative_root_points_are_local_lobes_before_stable_upper_nodes
+  - id: ACTIVATION_TRANSPORT_SHAPE
+    status: open_pr_existing_data_reanalysis
+    input_integration_status: main_integrated_archive_reuse
+    output_integration_status: open_pr
+    output_snapshot_commit: pending_first_content_snapshot
+    manifest: analysis/activation_transport_shape_manifest.yaml
+    entrypoint: scripts/analyze_activation_transport_shape.py
+    outputs: [results/activation-transport-shape/latest.json, results/activation-transport-shape/latest.md]
+    source_manifest: analysis/two_activation_h4_manifest.yaml
+    schema: matching-one.activation-transport-shape.v1
+    role: same_area_translation_and_zero_area_activation_distribution_deformation
+    result_summary: K2_translation_positive_and_shape_negative_at_pbar_all_ten_with_N265_N325_N425_local_negative_values_caused_by_shape_over_translation
+
+frontier_branch_assets:
+  - {id: MARKED_BIRTH_CONTACT_CHAIN, status: branch_only, branch: analysis/marked-birth-stream-20260829, commit: 0b3cebf9cd1b536c859d3fad1591345725a068f7, representative_path: results/server-20260829/marked-birth-pilot/REPORT.md, role: common_birth_pilot_mean_source_lead_and_all_order_q_only_contact_closure}
+  - {id: P275_GLOBAL_LINE_FIELD_IDENTITY, status: branch_only, branch: research/p275-atop-field-identity-pipeline-20260829, commit: 4d7ecd5202a86d8ec42e9cdf4cf9453f1197f464, representative_path: results/server-20260829/P275-atop-field-identity/REPORT.md, role: nine_geometry_rejection_of_global_line_local_field_map}
+  - {id: Q4_SEAM_PREFLIGHT, status: branch_only, branch: analysis/p257-p258-q4-seam-preflight-20260829, commit: 192e7942bbf84c941fbb3b88b6ae39447bd91854, representative_path: results/q4-seam-numerator-preflight/SCIENTIFIC_CARD.md, role: exact_singlet_one_charged_zero_numerator_and_partition_normalization_gate}
+  - {id: ANNULUS_SECTOR_SPECTRUM, status: branch_only, branch: analysis/p253-spectrum-sector-test-20260829, commit: 3123b73cec4dc3a25ff68bd7ea77151ad370c918, representative_path: results/p253-annulus-spectrum/SCIENTIFIC_CARD.md, role: odd_rank_two_boundary_and_generator_alias}
+  - {id: TWO_CLOCK_GENERATOR_GATE, status: branch_only, branch: analysis/p255-two-clock-generator-20260829, commit: 356fd8841a50deca0817804070f5cade04350e2e, representative_path: notes/two-clock-dilation-consistency.md, role: commutator_and_commensurate_power_mixed_context_gate}
+  - {id: P200_STATIC_CONTEXT_MAP, status: branch_only, branch: analysis/p200-context-morphism-map-20260829, commit: 7fc89df8051f56426e5038bde368df10c2651146, representative_path: results/post-reveal-20260829/P200-n650-context-morphism/SCIENTIFIC_CARD.md, role: static_mixed_factor_interaction_without_chronology}
 
 frontier_open_as_of_2026_08_29:
   - {pr: 84, state: open, draft: false, branch: research/axis-l5-exact-20260828, commit: 6a049b764658bc15956ae83f704c85e1d36ff660, classification: exact_side_result, role: axis_L5_Galois_frontier, representative_path: results/exact-axis-l5-frontier/REPORT.md}
@@ -170,6 +192,7 @@ canonical_integration_history:
   - {pr: 285, role: short_period_Alexander_quotient_frontier_index7}
   - {pr: 286, role: cached_short_period_Alexander_quotient_frontier_index8}
   - {pr: 287, role: cached_short_period_Alexander_quotient_frontier_index9}
+  - {pr: 288, role: exact_rank_four_operator_mixing_identifiability_boundary}
 
 manual_integrations:
   - {pr: 223, role: hexagonal_degree2_Hecke_unique_assets}

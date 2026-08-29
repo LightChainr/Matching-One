@@ -4,126 +4,82 @@ This roadmap ranks expected mechanism reduction per unit effort. It is not a per
 
 The evidence constraints remain narrow: preserve frozen chronology; compare claim-bearing rows only when observable semantics match or an exact map is registered; and never add correlated views of one random block as independent evidence.
 
-For scientific coordinates use `docs/RESEARCH-MAP.md`; for claim and branch status use `docs/STATUS.md`; for execution contracts use `docs/NEXT-TARGETS.md`.
+For scientific coordinates use `docs/RESEARCH-MAP.md`; for claim and branch status use `docs/STATUS.md`; for execution contracts use `docs/NEXT-TARGETS.md`; for bold mechanisms and sharp falsifiers use `docs/HYPOTHESIS-BOARD.md`.
 
 ## Default attention now
 
-### 1. Close the global-H4 to rank-birth mechanism bridge
+### 1. Reuse activation shape before producing another global rank row
 
-The existing evidence now forms a directed chain:
+The existing archive already establishes exact two activation times, positive integrated K2 response at all ten sizes, local K2 nodes at N265/N325/N425 and an ordinary H4 character on both P205 components. The marked-birth branch additionally contains q2 N65/N130 and P50 N145 line/landing fields.
 
-```text
-Digital Alexander cached index-9 frontier and main essential births
--> K1/K2 and C/W
--> I01/I12 and S/D
--> tiny nonzero Cov(A_top,J_D4)
--> P205 H4/H4 activation prism
--> Q4/Jordan modulus and Ward fingerprint.
-```
+The earlier next step—larger `gamma_D4=Cov(A_top,J_D4)/M'`—has been superseded. Exact gate algebra closes every root-independent connected insertion against any `f(q)`, `q in {-1,0,1}`, into contact moments; P275 rejects the frozen global-line Q4/Jordan/H4 field maps across nine geometries. This reclassifies the row as a projective/contact control without negating the global H4 signal or the mean-source lead.
 
-The cheap retrospective stage is complete. Across the ten main-integrated archives, the integrated K2 curve area has one positive sign; the negative root-point values at N=265/325/425 are local lobes associated with stable nearby zero branches, not whole-response reversals. Their node-minus-`p_bar` offsets are not significant relative to node-position errors. In the P205 prism, both `K1` and `K2` select H4 and reinforce; the joint score is `chi-square=2.585155/4`, `p=.629455`, and `K2` supplies 36.732% of the fitted signed H4 amplitude. This resolves the declared ordinary H4/H8/H12 character competition at small N. It does not identify a continuum field, establish asymptotics or turn the branch-only raw archive into main evidence.
+**Reuse now:** decompose each K1/K2 response into a same-area translation mode and a zero-area shape mode with aligned delete-one covariance. On the marked pilot, relate `C/W`, `J_S/J_D`, `ell` and landing marks inside fixed-q sectors.
 
-**Next decision output:** one common-field, orientation-paired stream retaining
+**Only then acquire:** either the preregistered mean-`J_D4` q2 third point, a two-radius landing-H4 UV annihilator or an independent bulk/modular/charged observer with a two-root field Gram. The decision is local carrier versus line/lifetime shape, not survival of another q-only connected proxy.
+
+### 2. Add the tiny typed Q=4 seam H4 kernel
+
+The branch-only 2x2 preflight already closes the representation and normalization plumbing:
 
 ```text
-q, q^2;
-I01, I12, direct 0->2;
-ell, iota, Re/Im chi4(ell);
-line H4 and landing H4;
-N*S_H4, N*D_H4, unmarked S;
-q*(N*S_H4), q*(N*D_H4) and same-sample qJ moments.
+Z_id=33024, Z_(01)=21568,
+unnormalized singlet [4] ratio = 1,
+unnormalized charged [2,2] ratio = 0.
 ```
 
-From the same delete-one blocks report the even `S` control, matching-odd line `D`, landing response, `gamma_D4=Cov(A_top,J_D4)/M'`, and full covariance. Pair the large-N survival/phase with the Q4/Jordan modulus response and the `4:-6:3` Ward projection; a power law alone is not the decision.
+A normalized singlet ratio is `516/337` and must be restored with the partition factor `337/516`. The current log-v insertion is only a plumbing witness.
 
-**Why first:** it is the first acquisition that can distinguish clock translation, rank-one lifetime, projective line and landing mechanisms while testing a nonzero lattice-to-module overlap. Old endpoint and pivotal archives lack the required same-sample fields, so more retrospective fitting cannot close this gap.
+**Next decision output:** implement one orientation-resolved H4 insertion and emit six raw `Z/N` values. This is the lowest-cost typed discriminator between singlet and four-leg charged spin 4 and a clean normalization positive control for the Q-tangent interface; it needs no exponent fit or large framework.
 
-### 2. Direct `rho`/C3 attention toward a new typed sector
+### 3. Measure the mixed-order Gaussian/annulus rectangle
 
-P205 has already answered the ordinary global H4/H8/H12 selector within its frozen family. The C3 characters remain valuable,
+The state evidence is now sector-specific: Gaussian norm-4 retains a small family but aliases `lambda=0,1/2,1`; annulus `A_minus` rejects rank one while named rank-two families close; `A_plus` does not require rank two. Shared-J2, parity-specific-J2, gap-one and rotating-plane dynamics remain unresolved.
+
+If one generator acts with two clocks,
 
 ```text
-r=0: scalar/E6-like,
-r=1: weight-4 character,
-r=2: conjugate weight-8 character,
+A=exp(-t_A G), U=exp(-t_U G)  =>  [A,U]=0,
+A^p=U^q when p*t_A=q*t_U.
 ```
 
-so the highest-information new run names a non-`A_top` module projection, a charged/marked observer or another typed response. Real-only rows do not separate the conjugate `r=1` and `r=2` characters.
+Matching separately fitted spectra cannot align latent bases. **Next decision output:** a spanning common source/readout basis with both `c^T A U b` and `c^T U A b`, one commensurate clock cell and one held-out mixed cell. Choose the annulus geometry by Mahalanobis separation of the live rank-two classes.
 
-**Next decision output:** a three-child complex DFT with a transported common frame and complete covariance, scored on a declared non-ordinary observer. It should decide scalar/module/charged support or mixing, not repeat the ordinary character competition.
+Keep two questions separate. P200 already identifies a static mixed-factor interaction and freezes source-fibre coefficients for a new geometry/scale holdout. Chronological/morphism memory additionally requires `h0,h2,h5,h25`, lineage or both path orders; an endpoint-only repeat cannot answer it.
 
-### 3. Acquire the Gaussian/annulus context rectangle as a targeted pilot
+### 4. Direct complex C3 and Z5 work toward charged or non-`A_top` sectors
 
-Current archives do not make a common-context experiment:
+P205 already answers the ordinary global H4/H8/H12 selector within its frozen family. The charged N325 row instead ranks H8/H12/H4 about `71/21/8`; these are different observer sectors, not votes to pool.
 
-- norm-4 rejects analytic q2 and the frozen common-generator form; its frozen generation-four target supports the post-reveal Jordan-plus-one-even-mode closure but cannot distinguish secondary eigenvalues `0`, `1/2` and `1`;
-- the annulus scalar odd-shell law fails, while a two-state recurrence passes held-out N365;
-- final CRT endpoints are path-order blind, while intermediate filtrations can retain activation time.
+**Next decision output:** acquire the full complex parent/three-child C3 response for one declared charged, defect or otherwise non-`A_top` observer. Keep both r=1 and conjugate r=2 DFT components and check the parent zero order. Reuse the same transported basis and engine for the primitive Z5 `113/122` cubic rows. This directly tests whether the H8 tendency is a quadratic `E4^2` response or a distinct charged field.
 
-**Next decision output:** acquire at least two Gaussian-cover and two annulus contexts with the same source, readout basis, replica alignment and delete-one scheme. Freeze a shared-generator prediction and a context/morphism-enriched alternative, then score a held-out cell. Retain intermediate filtration or marked context when chronological memory is at issue.
+### 5. Supply the two missing operator-mixing Taylor ratios
 
-This is best treated as a targeted pilot because the existing disjoint streams do not supply the missing cross-context covariance or common readout basis. Unmarked `aa` and direct `d` endpoints are one endpoint fact, not two votes.
+Main-integrated PR #288 proves that the four parity-allowed channel map has rank four. Parity fixes zeros and the powers `N^-1`, `N^-13/8`, `N^-5/4`, `N^-5/8`, but does not fix `f_I1/f_I0` or `f_T1/f_T0`.
 
-### 4. Close the cross-microscopic logarithmic gauge
+**Next decision output:** obtain those two ratios either from a continuum block calculation or from a frozen multi-geometry training set, then predict a held-out geometry. Do not count a two-amplitude fit as symmetry closure unless those external relations were fixed before the held-out score.
 
-The triangular cross-cutoff log-pair result is positive, but its reported `kappa_proxy` is connection-normalized and gauge dependent.
-
-**Next decision output:** measure one top field with two two-point-normalized macroscopic spin insertions, derive the invariant `CL` and shear gate, and transport the same statistic to square-bond and square-site controls. In a common complex frame, combine the square/matching H4 row with the triangular E6 center score into the two-modulus weight-12 double ratio.
-
-This tests normalization and microscopic transport before logarithmic language is used to identify the unknown square-site module.
-
-### 5. Gate and then complete the Potts-Q tangent
-
-The field tangent has three irreducible pieces:
+The complete Q tangent proceeds in parallel as
 
 ```text
 measure score + finite confluent projector + explicit operator derivative,
 ```
 
-with boundary prefactor and amplitude-gauge terms where required. A measure score alone is not a logarithmic field derivative.
+with the forced Pascal jet subtracted. The Q=4 seam is the typed normalization control. P263's paired stopped/global variance ratio is an efficiency decision, not a permission gate for semantic work.
 
-Main already fixes the Q=1 continuum-family velocity gap `sqrt(3)/(4 pi)` between the four-leg and thermal-Q4 candidates. That analytic oracle is an input to the lattice interface, not a task to repeat; the unresolved quantities are the multiplicity/field terms, typed lattice overlap and projector contribution.
+### 6. Close gauge-free cross-microscopic and Q-tangent controls
 
-P263 supplies an exactly unbiased stopped-transcript estimator and an exact spectator-noise cancellation mechanism. The frozen 20k pilot did not demonstrate a variance gain because the stopped and global runs were unpaired and had different rare-event counts.
+The triangular cross-cutoff log-pair result is positive, but `kappa_proxy` is gauge dependent and the global square `Gamma` is not a field row.
 
-**Next decision output, variance gate:** on each outer transcript record both the stopped conditional estimator and its matched global score; vary completion count `K` and scale; report paired covariance, variance ratio, revealed fraction and completion-noise share. A favorable gate raises the localized estimator's downstream priority; an unfavorable gate keeps the exact construction available while shifting compute attention to the matched global route.
+**Next decision output:** measure a normalized top-plus-two-spin statistic and a two-modulus weight-12 H4/E6 null using a separated-local or typed square observer. In parallel, calibrate the boundary/VJS measure-projector-field decomposition and the Ward `4:-6:3` projection. A high-risk exact sprint should derive whether the exact factor four between the Q-velocity gap and the boundary log coefficient is a genuine descendant collision rule.
 
-**Next decision output, semantic gate:** calibrate measure, projector and explicit-field terms on one boundary or tiny VJS positive control. Before interpreting higher derivatives, subtract the exact topology-forced Pascal jet
+### 7. Build the connectivity radical and an exact improved-action family
 
-```text
-D^n H|1 = sum_(k<n) binom(n,k) D^k P|1.
-```
+The scalar relative source is exhausted: `q^3=q`, its three-sector algebra is semisimple and `HH^2=0`. More powers of the same source cannot add the missing state.
 
-Only a typed residual after subtraction can count as new field/projector information.
+**Next decision output:** adjoin the smallest partial-connectivity/junction/defect generator, quotient the scalar block and compute its radical/Jordan data. Project both the Q-tangent defect and the threshold success-to-failure vector into it; agreement would provide a shared backend, while separation would cleanly split the two theories.
 
-### 6. Resolve the ordinary/charged tension with Z5 fusion
-
-The ordinary P205 prism selects H4, while the branch-only N325 deck-charged likelihood ranks H8/H12/H4 about `71/21/8`. These are different observers and must not be pooled into one scalar vote. The charged H8 row is not yet a discovered spin-8 field.
-
-Z5 conservation leaves two primitive nonneutral cubic channels, `113` and `122`, whose disconnected one- and two-point pieces vanish exactly.
-
-**Next decision output:** measure both channels in both hands and score
-
-```text
-C_A,+ C_B,- - C_A,- C_B,+ = 0
-```
-
-with full complex covariance and normalization-free conjugate-paired magnitudes. This distinguishes one handed charged eigenphase from richer charge-resolved fusion.
-
-### 7. Move scalar Q-source theory to the connectivity/defect radical
-
-The scalar relative source is exhausted:
-
-```text
-q in {-1,0,1},
-q^3=q,
-Q[q]/(q^3-q) is semisimple,
-HH^2=0.
-```
-
-Unsubtracted all-order Q jets also contain a forced Pascal component. Neither more powers of the same scalar source nor derivative order by itself creates a new module.
-
-**Next decision output:** adjoin the smallest connectivity-resolving junction, marked defect, singular projector or doubled-space exchange generator; quotient the separable block; and compute the radical, module extensions or defect cohomology.
+An independent exact opportunity is to construct an exactly critical oblique family whose microscopic H4 proxy crosses zero. Three common-frame coupling points would distinguish a linear ordinary response, a quadratic charged response and an independent charged field before a broad parameter scan.
 
 ## Parallel threshold-origin program
 
@@ -148,11 +104,14 @@ x nuisance cancellation and archive reuse
 ## Completed results that change repetition value
 
 - **#50 N145->290 full curve — complete:** the resolved shape direction already rejects one scalar multiplier. Its archive remains reusable for new typed coordinates, while another endpoint-only repeat has lower information gain.
-- **Digital Alexander through index 9:** exact finite backbone plus cached rank/winding/`iota` states across 68 quotients and 5,372,118 paths within its declared frontier; the next gain is to reuse that backend in one marked production stream, not reimplement topology or add another untyped wrapping sign. Index 10 and an unrestricted theorem remain open.
+- **Digital Alexander through index 9:** exact finite backbone plus cached rank/winding/`iota` states across 68 quotients and 5,372,118 paths within its declared frontier. The marked pilot already reuses this semantics; the next gain is fixed-q/local analysis or a specifically missing third point, not reimplementation. Index 10 and an unrestricted theorem remain open.
 - **P205 ordinary prism:** H4 beats the frozen H8/H12 lines. A `rho`/C3 run gains more information from a distinct typed observer than from repeating this selector.
-- **PR #267 activation reuse:** all ten archived pairs are scored, the full curves turn three negative root points into stable local node crossings, and the P205 subset resolves H4/H4. The next gain is line-resolved common-field covariance, not another marginal K1/K2 split.
+- **PR #267 activation reuse:** all ten archived pairs are scored, the full curves turn three negative root points into stable local node crossings, and the P205 subset resolves H4/H4. The new transport/shape reuse shows that the K2 pointwise sign split is positive translation plus negative zero-area deformation; `W/ell/landing` attribution is now more valuable than another root split.
+- **Marked-birth contact chain and P275:** a common pilot already exists; exact contact closure and nine-geometry rejection retire global q-only connected coupling as a field-identity path. Mean source and separated-local/independent observers remain live.
+- **PR #288 mixing audit:** parity gives the four powers but the amplitude map is rank four. Two external Taylor ratios, not another parity argument, are the live closure variables.
+- **Q=4 seam preflight:** representation characters and partition normalization are exact. The only missing semantic component is the orientation-resolved H4 kernel and six raw values.
 - **Norm-4:** analytic q2 and the frozen common generator fail; the frozen generation-four target keeps the small-state family live but does not separate pure Jordan, an analytic even mode or persistent curvature, nor establish a nonzero extra mode.
-- **PR #247 / annulus:** the ordinary plus-shell control passes, the matching-odd minus-shell scalar law fails and matched-delta equality is marginally tense inside one correlated block; a distinct two-state recurrence survives held-out N365. A context-enriched basis now has higher mechanism gain than treating any one of those rows as the whole radial story.
+- **PR #247 / annulus:** the ordinary plus-shell control passes, the matching-odd minus-shell scalar law fails and matched-delta equality is marginally tense inside one correlated block; a distinct two-state recurrence survives held-out N365. The sector score rejects rank one specifically for `A_minus` but leaves several rank-two dynamics aliased. A discriminating context is higher value than more same-row replicas.
 - **Triangular log pair:** the cross-cutoff shear is measured; repeat production without gauge closure is lower value.
 - **P263 stopped estimator:** unbiasedness and the mechanism are exact; variance advantage remains unmeasured until the stopped/global comparison is paired.
 

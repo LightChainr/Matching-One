@@ -1,4 +1,4 @@
-version: 10
+version: 11
 updated: 2026-08-29
 purpose: >
   Compact map of durable evidence and next information axes. This ranks work;
@@ -12,6 +12,7 @@ canonical_views:
   research_map: docs/RESEARCH-MAP.md
   historical_synthesis: notes/SYNTHESIS-20260828.md
   roadmap: docs/ROADMAP.md
+  hypothesis_board: docs/HYPOTHESIS-BOARD.md
   artifact_registry: analysis/artifact_registry.yaml
   reproducibility: REPRODUCIBILITY.md
   governance: GOVERNANCE.md
@@ -420,6 +421,66 @@ branch_sources:
     paths:
       - notes/z5-charged-ope-fusion.md
       - predictions/z5_charged_ope_fusion_20260829.json
+  - id: SRC_OPERATOR_MIXING_MAIN
+    integration_status: main_integrated
+    pr: 288
+    ref: main
+    commit: a38f76b903644434fe438211264c7c8a23aa141c
+    paths:
+      - notes/operator-mixing-identifiability-boundary.md
+      - results/operator-mixing-parity/latest.json
+      - results/operator-mixing-parity/latest.md
+  - id: SRC_MARKED_BIRTH_CONTACT_CHAIN
+    integration_status: branch_only
+    ref: analysis/marked-birth-stream-20260829
+    commit: 0b3cebf9cd1b536c859d3fad1591345725a068f7
+    paths:
+      - results/server-20260829/marked-birth-pilot/REPORT.md
+      - results/server-20260829/marked-birth-pilot/ORTHOGONALIZATION.md
+      - notes/topology-insertion-algebra-no-go.md
+      - results/topology-insertion-algebra/latest.json
+      - analysis/mean_jd4_q2_chain_prereg.json
+      - notes/mean-jd4-q2-chain-preregistration.md
+  - id: SRC_P275_GLOBAL_LINE_FIELD_IDENTITY
+    integration_status: branch_only
+    ref: research/p275-atop-field-identity-pipeline-20260829
+    commit: 4d7ecd5202a86d8ec42e9cdf4cf9453f1197f464
+    paths:
+      - results/server-20260829/P275-atop-field-identity/REPORT.md
+      - results/server-20260829/P275-atop-field-identity/SCIENTIFIC_CARD.md
+      - results/server-20260829/P275-atop-field-identity/DISCOVERY_MEAN_JD4.md
+      - results/server-20260829/P275-atop-field-identity/PROVENANCE.md
+  - id: SRC_Q4_SEAM_PREFLIGHT
+    integration_status: branch_only
+    ref: analysis/p257-p258-q4-seam-preflight-20260829
+    commit: 192e7942bbf84c941fbb3b88b6ae39447bd91854
+    paths:
+      - notes/p257-p258-q4-seam-numerator-preflight.md
+      - results/q4-seam-numerator-preflight/latest.json
+      - results/q4-seam-numerator-preflight/SCIENTIFIC_CARD.md
+  - id: SRC_ANNULUS_SECTOR_SPECTRUM
+    integration_status: branch_only
+    ref: analysis/p253-spectrum-sector-test-20260829
+    commit: 3123b73cec4dc3a25ff68bd7ea77151ad370c918
+    paths:
+      - notes/p253-annulus-continuous-spectrum.md
+      - results/p253-annulus-spectrum/latest.json
+      - results/p253-annulus-spectrum/SCIENTIFIC_CARD.md
+  - id: SRC_TWO_CLOCK_GENERATOR_GATE
+    integration_status: branch_only
+    ref: analysis/p255-two-clock-generator-20260829
+    commit: 356fd8841a50deca0817804070f5cade04350e2e
+    paths:
+      - notes/two-clock-dilation-consistency.md
+      - results/two-clock-dilation/latest.json
+  - id: SRC_P200_STATIC_CONTEXT_MAP
+    integration_status: branch_only
+    ref: analysis/p200-context-morphism-map-20260829
+    commit: 7fc89df8051f56426e5038bde368df10c2651146
+    paths:
+      - notes/p200-n650-context-morphism-map.md
+      - results/post-reveal-20260829/P200-n650-context-morphism/analysis.json
+      - results/post-reveal-20260829/P200-n650-context-morphism/SCIENTIFIC_CARD.md
 
 scientific_nodes:
   - id: SN_DIGITAL_ALEXANDER_RANK_BALANCE
@@ -514,16 +575,16 @@ scientific_nodes:
     observer_sectors: [global_rank_projector, rank_birth_local, matching_odd]
     geometries: [square_controls, gaussian_cover]
     acquisition: [exact_construction, small_pilot]
-    source_refs: [SRC_ATOP_RANK_BIRTH_COUPLING]
+    source_refs: [SRC_ATOP_RANK_BIRTH_COUPLING, SRC_MARKED_BIRTH_CONTACT_CHAIN, SRC_P275_GLOBAL_LINE_FIELD_IDENTITY]
     known_result: partial_h_expectation_A_top_equals_Cov_A_top_J_D4_and_tiny_axis_and_Gaussian_controls_give_exact_nonzero_complex_couplings_with_matching_parity_sign_controls
-    boundary: a_nonzero_finite_proxy_closes_the_symmetry_obstruction_but_does_not_establish_survival_scaling_Q4_dominance_or_the_modulus_Jordan_fingerprint
-    supports: [finite_lattice_bridge_from_global_H4_to_line_resolved_rankone_lifetime_births]
+    boundary: a_nonzero_finite_proxy_closes_the_symmetry_obstruction_but_the_later_exact_gate_theorem_classifies_every_q_only_root_independent_connected_insertion_as_contact_and_P275_rejects_the_declared_global_line_field_map
+    supports: [finite_contact_and_projective_control_for_the_line_resolved_birth_source]
     tensions: [symmetry_forced_zero_global_to_birth_coupling]
     excludes_only: [a_universal_finite_lattice_symmetry_zero_for_the_declared_D_H4_source]
     reusable_data_refs: [results/rank-birth-atop-coupling/latest.json]
     dependency_group_refs: []
-    missing_inputs: [same_sample_q_times_J_D4_at_large_N, modulus_response, Jordan_log_partner_response]
-    next_discriminator: common_field_stream_with_q_I01_I12_ell_iota_chi4_landing_and_qJ_sufficient_statistics
+    missing_inputs: [within_q_observer_variation, separated_landing_radius, independent_bulk_or_modular_covector]
+    next_discriminator: reuse_the_marked_pilot_for_C_W_line_landing_shape_covariance_then_acquire_only_a_missing_independent_covector_or_mean_source_third_point
     information_gain: very_high
     compute_cost: low
     decision_experiments: [DX_RANK_BIRTH_GLOBAL_BRIDGE]
@@ -858,8 +919,8 @@ scientific_nodes:
     excludes_only: [calling_a_nonzero_primary_mode_vector_the_declared_Q4_Ward_row]
     reusable_data_refs: [predictions/null_field_residue_ward_20260829.json, results/exact-double-projector-selection/latest.json]
     dependency_group_refs: []
-    missing_inputs: [calibrated_lattice_mode_projection_and_rank_birth_gamma_D4]
-    next_discriminator: calibrate_the_lattice_mode_projection_then_pair_it_with_rank_birth_gamma_D4
+    missing_inputs: [calibrated_lattice_mode_projection_and_an_independent_within_q_or_typed_covector]
+    next_discriminator: calibrate_the_lattice_mode_projection_then_pair_it_with_a_separated_local_charged_or_modular_covector
     information_gain: very_high
     compute_cost: low
     decision_experiments: [DX_RANK_BIRTH_GLOBAL_BRIDGE, DX_Q_TANGENT_INTERFACE]
@@ -921,8 +982,8 @@ scientific_nodes:
     excludes_only: [second_activation_as_the_larger_point_estimate_in_the_ten_scored_archives]
     reusable_data_refs: [results/two-activation-h4/latest.json, results/two-activation-h4/server-run.json]
     dependency_group_refs: [crn-2026104501-5000000000-5100000000, crn-2026104301-7000000000-7500000000, crn-2026104301-7500000000-8000000000, crn-2026105003-7000000000-7100000000, crn-2026105004-7000000000-7100000000, crn-2026105701-10000000000-10500000000, crn-2026105701-10500000000-11000000000]
-    missing_inputs: [line_resolved_D_H4_and_same_sample_qJ]
-    next_discriminator: common_marked_birth_stream_with_line_and_landing_H4_same_sample_qJ_and_Q4_Jordan_fingerprint
+    missing_inputs: [shape_conditioning_on_C_W_ell_and_landing, independent_within_q_covector]
+    next_discriminator: activation_transport_shape_reuse_then_marked_pilot_fixed_q_line_landing_covariance
     information_gain: very_high
     compute_cost: none
     decision_experiments: [DX_RANK_BIRTH_GLOBAL_BRIDGE]
@@ -942,8 +1003,8 @@ scientific_nodes:
     excludes_only: [integrated_K2_response_reversal_in_the_ten_declared_archives]
     reusable_data_refs: [results/activation-curve-nodes/latest.json]
     dependency_group_refs: [crn-2026104501-5000000000-5100000000, crn-2026104301-7000000000-7500000000, crn-2026104301-7500000000-8000000000, crn-2026105003-7000000000-7100000000, crn-2026105004-7000000000-7100000000, crn-2026105701-10000000000-10500000000, crn-2026105701-10500000000-11000000000]
-    missing_inputs: [ell, iota, line_and_landing_H4, same_sample_qJ]
-    next_discriminator: use_a_common_marked_birth_stream_to_identify_which_C_W_line_or_landing_coordinate_creates_the_local_node
+    missing_inputs: [marked_pilot_C_W_line_landing_crosswalk_and_a_large_N_followup_only_if_needed]
+    next_discriminator: relate_the_zero_area_K2_shape_mode_to_W_ell_and_landing_marks_in_the_existing_pilot
     information_gain: very_high
     compute_cost: none
     decision_experiments: [DX_RANK_BIRTH_GLOBAL_BRIDGE]
@@ -963,11 +1024,179 @@ scientific_nodes:
     excludes_only: [H8_or_H12_component_pairs_within_the_declared_frozen_small_N_nine_pair_GLS]
     reusable_data_refs: [results/two-activation-prism/latest.json]
     dependency_group_refs: [crn-2026105525-9400000000-9412000000, crn-2026105550-9400000000-9412000000, crn-2026105625-9400000000-9412000000]
-    missing_inputs: [line_resolved_D_H4, same_sample_qJ, Q4_modulus_and_Jordan_fingerprint]
-    next_discriminator: common_field_rank_birth_stream_for_gamma_D4_and_line_vs_landing_H4
+    missing_inputs: [within_q_line_landing_or_independent_observer_map]
+    next_discriminator: use_the_P205_character_as_a_control_while_testing_the_activation_shape_against_line_and_landing_coordinates
     information_gain: very_high
     compute_cost: none
     decision_experiments: [DX_RANK_BIRTH_GLOBAL_BRIDGE]
+  - id: SN_ACTIVATION_TRANSPORT_SHAPE
+    title: activation_response_translation_and_zero_area_shape_decomposition
+    integration_status: open_pr
+    state: finite_topological_state
+    sources: [bernoulli_thermal]
+    observer_sectors: [global_rank_projector, topology_typed]
+    geometries: [gaussian_cover]
+    acquisition: [existing_data_reuse, exact_construction]
+    source_refs: [SRC_PR267_ACTIVATION_FRONTIER]
+    known_result: each_activation_direction_curve_is_decomposed_exactly_into_a_same_area_pooled_density_translation_tangent_and_a_zero_area_shape_residual_K2_translation_at_pbar_is_positive_and_shape_is_negative_at_all_ten_sizes_and_the_N265_N325_N425_negative_values_are_shape_over_translation_not_integrated_reversals
+    boundary: deterministic_reuse_of_the_existing_histograms_with_one_full_180_by_180_dependency_group_aligned_delete_one_covariance_and_no_new_primary_block_or_continuum_field_identification
+    supports: [activation_distribution_deformation_as_the_source_of_the_local_K2_sign_split]
+    tensions: [root_shift_as_a_complete_activation_mechanism_coordinate]
+    excludes_only: [whole_K2_direction_reversal_as_the_cause_of_the_three_negative_pbar_values]
+    reusable_data_refs: [results/activation-transport-shape/latest.json, results/activation-transport-shape/latest.md]
+    dependency_group_refs: [crn-2026104501-5000000000-5100000000, crn-2026104301-7000000000-7500000000, crn-2026104301-7500000000-8000000000, crn-2026105003-7000000000-7100000000, crn-2026105004-7000000000-7100000000, crn-2026105701-10000000000-10500000000, crn-2026105701-10500000000-11000000000]
+    missing_inputs: [joint_shape_C_W_ell_and_landing_covariance]
+    next_discriminator: explain_the_zero_area_K2_shape_by_lifetime_line_or_landing_coordinates_in_the_existing_marked_pilot
+    information_gain: very_high
+    compute_cost: none
+    decision_experiments: [DX_RANK_BIRTH_GLOBAL_BRIDGE]
+  - id: SN_TOPOLOGY_INSERTION_CONTACT_NOGO
+    title: all_order_q_only_topology_insertion_contact_closure
+    integration_status: branch_only
+    state: finite_topological_state
+    sources: [rank_birth_geometric_tilt]
+    observer_sectors: [global_rank_projector, rank_birth_local]
+    geometries: [square_controls, gaussian_cover]
+    acquisition: [exact_construction, small_pilot]
+    source_refs: [SRC_MARKED_BIRTH_CONTACT_CHAIN]
+    known_result: for_q_in_minus1_0_1_every_f_of_q_and_root_independent_marked_gate_polynomial_connected_coupling_reduces_exactly_to_contact_source_moments_and_the_marked_pilot_connected_qJ_row_follows_birth_mass
+    boundary: the_theorem_does_not_apply_to_observers_varying_within_fixed_q_separated_local_marks_charged_seams_bulk_resolved_topology_or_modular_stress_rows
+    supports: [within_q_and_independent_observers_as_the_minimal_field_escape]
+    tensions: [nonlinear_q_only_projectors_as_new_matrix_elements]
+    excludes_only: [independent_field_information_from_the_declared_q_only_root_independent_connected_insertions]
+    reusable_data_refs: [results/server-20260829/marked-birth-pilot/ORTHOGONALIZATION.md, results/topology-insertion-algebra/latest.json]
+    dependency_group_refs: [marked-birth-pilot-634040d]
+    missing_inputs: [fixed_q_clock_lifetime_line_landing_crosswalk, independent_observer_two_root_Gram]
+    next_discriminator: reuse_the_marked_pilot_then_choose_mean_source_landing_or_independent_covector_followup
+    information_gain: very_high
+    compute_cost: none
+    decision_experiments: [DX_RANK_BIRTH_GLOBAL_BRIDGE]
+  - id: SN_P275_GLOBAL_LINE_FIELD_MAP_REJECTION
+    title: global_homology_line_response_is_projective_not_local_Q4_field_map
+    integration_status: branch_only
+    state: continuum_module
+    sources: [rank_birth_geometric_tilt]
+    observer_sectors: [global_rank_projector, rank_birth_local]
+    geometries: [gaussian_cover, moduli_hecke_child]
+    acquisition: [new_production, existing_data_reuse]
+    source_refs: [SRC_P275_GLOBAL_LINE_FIELD_IDENTITY]
+    known_result: nine_finite_root_responses_reject_the_frozen_ordinary_Q4_Q4_Jordan_pure_H4_affine_log_H4_and_zero_bases_and_Gamma_is_an_order_one_projective_homology_line_polarization
+    boundary: rejects_the_declared_global_chi4_ell_to_local_N_minus13_over8_field_map_not_global_ordinary_H4_local_or_charged_Q4_or_the_mean_JD4_radial_lead
+    supports: [separated_local_or_independent_covector_as_the_next_field_test]
+    tensions: [global_line_Gamma_as_a_local_Q4_matrix_element]
+    excludes_only: [the_five_frozen_global_line_field_maps_in_the_declared_nine_geometry_score]
+    reusable_data_refs: [results/server-20260829/P275-atop-field-identity/REPORT.md]
+    dependency_group_refs: [p275-global-line-180m]
+    missing_inputs: [two_radius_landing_UV_annihilator_or_mean_source_third_point]
+    next_discriminator: test_a_within_q_or_separated_local_observer_without_repeating_global_ell_Gamma
+    information_gain: very_high
+    compute_cost: none
+    decision_experiments: [DX_RANK_BIRTH_GLOBAL_BRIDGE]
+  - id: SN_Q4_SEAM_NORMALIZATION
+    title: exact_Q4_singlet_and_charged_seam_numerator_gate
+    integration_status: branch_only
+    state: continuum_module
+    sources: [projector_derivative]
+    observer_sectors: [topology_typed, deck_charged]
+    geometries: [finite_transfer_cylinder]
+    acquisition: [exact_construction]
+    source_refs: [SRC_Q4_SEAM_PREFLIGHT]
+    known_result: exact_2x2_Q4_transfer_has_Zid_33024_Ztrans_21568_and_unnormalized_projected_character_ratios_one_for_singlet_4_and_zero_for_charged_22_while_normalized_expectations_require_restoring_the_partition_ratio
+    boundary: the_log_v_insertion_is_a_plumbing_witness_not_a_pure_orientation_resolved_H4_kernel_or_V22_overlap
+    supports: [typed_seam_as_a_scaling_free_singlet_versus_charged_spin4_discriminator]
+    tensions: [normalized_expectation_ratio_as_the_representation_character]
+    excludes_only: [using_the_log_v_witness_as_a_field_measurement]
+    reusable_data_refs: [results/q4-seam-numerator-preflight/latest.json]
+    dependency_group_refs: []
+    missing_inputs: [orientation_resolved_H4_kernel_and_six_raw_partition_numerator_values]
+    next_discriminator: implement_the_minimal_H4_kernel_and_score_restored_ratios_one_and_zero
+    information_gain: very_high
+    compute_cost: low
+    decision_experiments: [DX_Q4_SEAM_H4]
+  - id: SN_OPERATOR_MIXING_RANK4
+    title: exact_rank_four_parity_allowed_operator_mixing_boundary
+    integration_status: main_integrated
+    state: continuum_module
+    sources: [bernoulli_thermal, potts_Q_measure]
+    observer_sectors: [matching_even, matching_odd]
+    geometries: [square_controls, finite_transfer_cylinder]
+    acquisition: [exact_construction]
+    source_refs: [SRC_OPERATOR_MIXING_MAIN]
+    known_result: parity_fixes_the_four_channel_zero_pattern_and_powers_but_the_structural_map_on_I_f0_I_f1_T_f0_T_f1_has_rank_four
+    boundary: does_not_reject_the_zero_pattern_or_powers_and_does_not_supply_the_external_Taylor_ratio_dynamics
+    supports: [continuum_or_frozen_training_ratios_as_the_required_two_amplitude_closure]
+    tensions: [two_amplitudes_from_parity_alone]
+    excludes_only: [symmetry_only_derivation_of_fI1_over_fI0_and_fT1_over_fT0]
+    reusable_data_refs: [results/operator-mixing-parity/latest.json]
+    dependency_group_refs: []
+    missing_inputs: [two_external_Taylor_ratios]
+    next_discriminator: derive_from_continuum_dynamics_or_freeze_on_training_geometries_then_score_a_holdout
+    information_gain: very_high
+    compute_cost: low
+    decision_experiments: [DX_Q_TANGENT_INTERFACE]
+  - id: SN_ANNULUS_SECTOR_SPECTRUM
+    title: annulus_odd_sector_rank_two_boundary_and_generator_alias
+    integration_status: branch_only
+    state: low_dimensional_dynamics
+    sources: [bernoulli_thermal]
+    observer_sectors: [matching_even, matching_odd, local_pivotal]
+    geometries: [annulus]
+    acquisition: [existing_data_reuse]
+    source_refs: [SRC_NORM5_MULTIRADIUS_PR247, SRC_ANNULUS_RECURRENCE, SRC_ANNULUS_SECTOR_SPECTRUM]
+    known_result: Aminus_rejects_bounded_window_rank_one_named_rank_two_families_close_Aplus_does_not_require_rank_two_and_shared_J2_gap_one_and_rotating_plane_variants_remain_aliased
+    boundary: the_C2_rotating_plane_is_a_lead_not_an_identified_complex_spectrum_and_the_plus_sector_does_not_inherit_the_minus_rank_requirement
+    supports: [sector_specific_low_dimensional_dynamics]
+    tensions: [one_scalar_or_one_shared_generator_for_all_annulus_rows]
+    excludes_only: [bounded_window_rank_one_for_the_declared_Aminus_score]
+    reusable_data_refs: [results/p253-annulus-spectrum/latest.json]
+    dependency_group_refs: [norm5-multiradius-pr247, annulus-spectrum-3123b73]
+    missing_inputs: [one_geometry_or_readout_maximizing_separation_of_live_rank_two_classes]
+    next_discriminator: use_the_mixed_context_rectangle_with_a_parity_sensitive_annulus_cell
+    information_gain: very_high
+    compute_cost: low
+    decision_experiments: [DX_MIXED_CONTEXT_RECTANGLE]
+  - id: SN_TWO_CLOCK_MIXED_ORDER_GATE
+    title: shared_generator_commutator_and_commensurate_clock_gate
+    integration_status: branch_only
+    state: low_dimensional_dynamics
+    sources: [bernoulli_thermal]
+    observer_sectors: [topology_typed, matching_odd]
+    geometries: [gaussian_cover, annulus]
+    acquisition: [exact_construction]
+    source_refs: [SRC_TWO_CLOCK_GENERATOR_GATE]
+    known_result: one_generator_implies_AU_equals_UA_and_commensurate_A_power_equals_U_power_while_equal_separate_spectra_or_Jordan_classes_do_not_align_latent_bases
+    boundary: current_disjoint_archives_do_not_supply_a_spanning_shared_source_readout_basis_or_both_mixed_orders
+    supports: [observable_AU_minus_UA_rectangle_as_the_minimal_context_gate]
+    tensions: [separate_spectrum_matching_as_generator_identification]
+    excludes_only: [the_wrong_alignment_witness_and_other_noncommuting_shared_generator_claims]
+    reusable_data_refs: [results/two-clock-dilation/latest.json]
+    dependency_group_refs: []
+    missing_inputs: [shared_spanning_sources_readouts_and_both_mixed_orders]
+    next_discriminator: acquire_one_commensurate_and_one_heldout_AU_UA_rectangle
+    information_gain: very_high
+    compute_cost: moderate
+    decision_experiments: [DX_MIXED_CONTEXT_RECTANGLE]
+  - id: SN_STATIC_CONTEXT_INTERACTION
+    title: P200_static_mixed_factor_interaction_without_chronology
+    integration_status: branch_only
+    state: low_dimensional_dynamics
+    sources: [bernoulli_thermal]
+    observer_sectors: [topology_typed, matching_even, matching_odd]
+    geometries: [gaussian_cover]
+    acquisition: [existing_data_reuse]
+    source_refs: [SRC_P200_STATIC_CONTEXT_MAP, SRC_P200_PATH_FILTRATION]
+    known_result: exact_local_cycle_subtraction_leaves_large_common_ES_OS_residuals_while_ED_OD_are_compatible_with_zero_so_a_static_mixed_factor_interaction_is_identified
+    boundary: raw_batches_omit_h0_h2_h5_h25_and_cannot_identify_path_order_or_morphism_memory
+    supports: [new_geometry_scale_holdout_for_static_interaction]
+    tensions: [endpoint_residual_as_chronology_evidence]
+    excludes_only: [claiming_path_memory_from_the_declared_final_join_batches]
+    reusable_data_refs: [results/post-reveal-20260829/P200-n650-context-morphism/analysis.json]
+    dependency_group_refs: []
+    missing_inputs: [new_geometry_or_scale_holdout, intermediate_state_or_both_orders_for_chronology]
+    next_discriminator: separate_static_coefficient_transport_from_AU_UA_or_filtration_memory
+    information_gain: high
+    compute_cost: moderate
+    decision_experiments: [DX_MIXED_CONTEXT_RECTANGLE]
 
 dependency_groups:
   - id: crn-2026104501-5000000000-5100000000
@@ -1042,14 +1271,35 @@ dependency_groups:
     metadata_paths:
       - results/server-20260829/P225-norm5-multiradius/raw/norm5_200k.metadata.json
     covariance_rule: plus_minus_sameR_shell_and_matched_delta_summaries_share_one_raw_block_and_are_not_additive_evidence
+  - id: marked-birth-pilot-634040d
+    kind: one_branch_only_counter_coupled_marked_birth_discovery_block
+    member_sizes: [65, 130, 145]
+    source_ref: SRC_MARKED_BIRTH_CONTACT_CHAIN
+    metadata_paths:
+      - results/server-20260829/marked-birth-pilot/raw/q2_N65_20k.metadata.json
+      - results/server-20260829/marked-birth-pilot/raw/q2_N130_20k.metadata.json
+      - results/server-20260829/marked-birth-pilot/raw/P50_N145_10k.metadata.json
+    covariance_rule: all_line_landing_qJ_orthogonal_and_contact_views_are_transforms_of_one_aligned_pilot_and_are_not_additive_evidence
+  - id: p275-global-line-180m
+    kind: one_branch_only_nine_geometry_global_line_field_identity_block
+    member_sizes: [50, 130, 170]
+    source_ref: SRC_P275_GLOBAL_LINE_FIELD_IDENTITY
+    metadata_paths: [results/server-20260829/P275-atop-field-identity/PROVENANCE.md]
+    covariance_rule: frozen_global_line_models_and_discovery_mean_views_reuse_the_declared_geometry_blocks_and_are_not_independent_votes
+  - id: annulus-spectrum-3123b73
+    kind: branch_only_full_covariance_sector_spectrum_reuse
+    member_sizes: [325, 365, 425]
+    source_ref: SRC_ANNULUS_SECTOR_SPECTRUM
+    metadata_paths: [results/p253-annulus-spectrum/latest.json]
+    covariance_rule: old_and_N365_domains_are_independent_only_where_declared_and_all_model_scores_on_each_domain_are_correlated_views
 
 decision_experiments:
   - id: DX_RANK_BIRTH_GLOBAL_BRIDGE
     attention_rank: 1
-    name: global_H4_to_rank_birth_mechanism_bridge
-    scientific_node_refs: [SN_ESSENTIAL_BIRTH_ARCHIVE, SN_RANK_BIRTH_PARITY_INSERTION, SN_ATOP_RANK_BIRTH_COUPLING, SN_ESSENTIAL_BIRTH_CLOCK_SPLIT, SN_P205_QUOTIENT_CHARACTER_PRISM, SN_TWO_ACTIVATION_H4_REANALYSIS, SN_ACTIVATION_CURVE_NODE_SPECTRUM, SN_TWO_ACTIVATION_PRISM_REANALYSIS, SN_THERMAL_Q4_WARD]
+    name: activation_shape_and_q_only_contact_escape
+    scientific_node_refs: [SN_ESSENTIAL_BIRTH_ARCHIVE, SN_RANK_BIRTH_PARITY_INSERTION, SN_ATOP_RANK_BIRTH_COUPLING, SN_ESSENTIAL_BIRTH_CLOCK_SPLIT, SN_TWO_ACTIVATION_H4_REANALYSIS, SN_ACTIVATION_CURVE_NODE_SPECTRUM, SN_TWO_ACTIVATION_PRISM_REANALYSIS, SN_ACTIVATION_TRANSPORT_SHAPE, SN_TOPOLOGY_INSERTION_CONTACT_NOGO, SN_P275_GLOBAL_LINE_FIELD_MAP_REJECTION]
     observer_sector_refs: [global_unmarked, global_rank_projector, topology_typed, rank_birth_local, matching_even, matching_odd]
-    source_refs: [SRC_ESSENTIAL_BIRTH_HISTOGRAM_MAIN, SRC_PR267_ACTIVATION_FRONTIER, SRC_P205_QUOTIENT_CHARACTER_PRISM, SRC_ESSENTIAL_BIRTH_CLOCK, SRC_RANK_BIRTH_PARITY_CHAIN, SRC_ATOP_RANK_BIRTH_COUPLING]
+    source_refs: [SRC_ESSENTIAL_BIRTH_HISTOGRAM_MAIN, SRC_PR267_ACTIVATION_FRONTIER, SRC_P205_QUOTIENT_CHARACTER_PRISM, SRC_ESSENTIAL_BIRTH_CLOCK, SRC_RANK_BIRTH_PARITY_CHAIN, SRC_ATOP_RANK_BIRTH_COUPLING, SRC_MARKED_BIRTH_CONTACT_CHAIN, SRC_P275_GLOBAL_LINE_FIELD_IDENTITY]
     dependency_group_refs:
       - crn-2026104501-5000000000-5100000000
       - crn-2026104301-7000000000-7500000000
@@ -1061,38 +1311,52 @@ decision_experiments:
       - crn-2026105525-9400000000-9412000000
       - crn-2026105550-9400000000-9412000000
       - crn-2026105625-9400000000-9412000000
-    acquisition: small_pilot
+      - marked-birth-pilot-634040d
+      - p275-global-line-180m
+    acquisition: existing_data_reuse
     expected_model_space_reduction: very_high
     compute_cost: low
     completed_reuse_outputs:
       - results/two-activation-h4/latest.json
       - results/activation-curve-nodes/latest.json
+      - results/activation-transport-shape/latest.json
       - results/two-activation-prism/latest.json
-    decision_output: shared_stream_gamma_D4_and_Q4_modulus_Jordan_fingerprint_with_line_H4_D_landing_H4_and_even_S_controls
-  - id: DX_RHO_C3_SECTOR
+    decision_output: zero_area_activation_shape_attribution_to_C_W_line_or_landing_then_only_a_missing_mean_source_third_point_or_independent_within_q_covector
+  - id: DX_Q4_SEAM_H4
     attention_rank: 2
+    name: exact_Q4_singlet_charged_orientation_resolved_H4_seam
+    scientific_node_refs: [SN_GLOBAL_SPIN4_SELECTION_STAIRCASE, SN_Q4_SEAM_NORMALIZATION]
+    observer_sector_refs: [topology_typed, deck_charged]
+    source_refs: [SRC_SMALL_WIDTH_SPECTROSCOPY, SRC_Q4_SEAM_PREFLIGHT]
+    dependency_group_refs: []
+    acquisition: exact_construction
+    expected_model_space_reduction: very_high
+    compute_cost: low
+    decision_output: six_raw_partition_and_H4_numerator_values_restoring_character_ratios_one_and_zero
+  - id: DX_RHO_C3_SECTOR
+    attention_rank: 4
     name: complex_C3_rho_sector_response
     scientific_node_refs: [SN_GLOBAL_CHARGED_SECTOR_TENSION, SN_MODULAR_C3_CHARACTER]
     observer_sector_refs: [topology_typed, deck_charged]
-    source_refs: [SRC_NORM5_CHARGED, SRC_MODULAR_C3_CHARACTER]
+    source_refs: [SRC_NORM5_CHARGED, SRC_MODULAR_C3_CHARACTER, SRC_Z5_CHARGED_FUSION]
     dependency_group_refs: []
     acquisition: small_pilot
     expected_model_space_reduction: very_high
     compute_cost: low
-    decision_output: typed_non_A_top_module_or_charged_r0_r1_r2_character_with_full_complex_covariance
+    decision_output: charged_or_typed_parent_child_r0_r1_r2_character_and_zero_order_then_primitive_Z5_fusion_closure_in_the_same_basis
   - id: DX_MIXED_CONTEXT_RECTANGLE
     attention_rank: 3
     name: common_source_readout_Gaussian_annulus_context_rectangle
-    scientific_node_refs: [SN_NORM4_EVEN_TRANSFER, SN_ANNULUS_TWO_STATE_RECURRENCE, SN_PATH_FILTRATION_MEMORY]
+    scientific_node_refs: [SN_NORM4_EVEN_TRANSFER, SN_ANNULUS_TWO_STATE_RECURRENCE, SN_ANNULUS_SECTOR_SPECTRUM, SN_TWO_CLOCK_MIXED_ORDER_GATE, SN_PATH_FILTRATION_MEMORY, SN_STATIC_CONTEXT_INTERACTION]
     observer_sector_refs: [topology_typed, local_pivotal, matching_odd]
-    source_refs: [SRC_NORM4_REVEAL_PR273, SRC_NORM4_EVEN_MODE_PR277, SRC_CONTEXT_HANKEL, SRC_P200_PATH_FILTRATION, SRC_ANNULUS_RECURRENCE]
-    dependency_group_refs: [norm4-generation4-pr277, norm5-multiradius-pr247]
+    source_refs: [SRC_NORM4_REVEAL_PR273, SRC_NORM4_EVEN_MODE_PR277, SRC_CONTEXT_HANKEL, SRC_P200_PATH_FILTRATION, SRC_P200_STATIC_CONTEXT_MAP, SRC_ANNULUS_RECURRENCE, SRC_ANNULUS_SECTOR_SPECTRUM, SRC_TWO_CLOCK_GENERATOR_GATE]
+    dependency_group_refs: [norm4-generation4-pr277, norm5-multiradius-pr247, annulus-spectrum-3123b73]
     acquisition: small_pilot
     expected_model_space_reduction: very_high
     compute_cost: moderate
-    decision_output: one_common_generator_versus_morphism_enriched_state
+    decision_output: shared_commuting_generator_versus_context_action_from_AU_UA_with_static_interaction_and_chronological_memory_reported_separately
   - id: DX_CROSS_MICRO_TOP_FIELD
-    attention_rank: 4
+    attention_rank: 6
     name: gauge_invariant_triangular_square_top_field_control
     scientific_node_refs: [SN_TRIANGULAR_LOGPAIR_CONTROL, SN_CROSS_MICROSCOPIC_GAUGE_CONTROL]
     observer_sector_refs: [cross_microscopic, bulk_energy_logpair]
@@ -1104,15 +1368,15 @@ decision_experiments:
     decision_output: normalized_cross_microscopic_H4_E6_top_partner_response
   - id: DX_Q_TANGENT_INTERFACE
     attention_rank: 5
-    name: measure_projector_field_Q_tangent_positive_control
-    scientific_node_refs: [SN_GLOBAL_SPIN4_SELECTION_STAIRCASE, SN_Q1_SPIN4_VELOCITY_ORACLE, SN_Q_TANGENT_THREE_PART_INTERFACE, SN_BOUNDARY_Q_TANGENT_CONTROL, SN_THERMAL_Q4_WARD]
+    name: rank_four_operator_mixing_and_measure_projector_field_Q_tangent_control
+    scientific_node_refs: [SN_OPERATOR_MIXING_RANK4, SN_GLOBAL_SPIN4_SELECTION_STAIRCASE, SN_Q1_SPIN4_VELOCITY_ORACLE, SN_Q_TANGENT_THREE_PART_INTERFACE, SN_BOUNDARY_Q_TANGENT_CONTROL, SN_THERMAL_Q4_WARD, SN_Q4_SEAM_NORMALIZATION]
     observer_sector_refs: [boundary, topology_typed]
-    source_refs: [SRC_Q_VELOCITY_SPIN4_MAIN, SRC_EXACT_FK_Q_SCORE, SRC_CONFLUENT_PROJECTOR, SRC_VJS_FIELD_DERIVATIVE, SRC_BOUNDARY_Q_TANGENT, SRC_BOUNDARY_Q_LATTICE, SRC_ARGUIN_ALL_ORDER_QJET]
+    source_refs: [SRC_OPERATOR_MIXING_MAIN, SRC_Q4_SEAM_PREFLIGHT, SRC_Q_VELOCITY_SPIN4_MAIN, SRC_EXACT_FK_Q_SCORE, SRC_CONFLUENT_PROJECTOR, SRC_VJS_FIELD_DERIVATIVE, SRC_BOUNDARY_Q_TANGENT, SRC_BOUNDARY_Q_LATTICE, SRC_ARGUIN_ALL_ORDER_QJET]
     dependency_group_refs: []
     acquisition: small_pilot
     expected_model_space_reduction: high
     compute_cost: low
-    decision_output: paired_stopped_vs_global_variance_gate_then_one_complete_Q_derivative_interface_after_forced_Pascal_jet_subtraction
+    decision_output: two_external_Taylor_ratios_from_continuum_or_frozen_training_plus_one_complete_typed_Q_derivative_interface_after_forced_Pascal_jet_subtraction
   - id: DX_Z5_CHARGED_FUSION
     attention_rank: 6
     name: primitive_Z5_cubic_fusion_channels
@@ -1141,11 +1405,11 @@ attention_order:
   parallel: true
   decision_experiment_refs:
     - DX_RANK_BIRTH_GLOBAL_BRIDGE
-    - DX_RHO_C3_SECTOR
+    - DX_Q4_SEAM_H4
     - DX_MIXED_CONTEXT_RECTANGLE
-    - DX_CROSS_MICRO_TOP_FIELD
+    - DX_RHO_C3_SECTOR
     - DX_Q_TANGENT_INTERFACE
-    - DX_Z5_CHARGED_FUSION
+    - DX_CROSS_MICRO_TOP_FIELD
     - DX_CONNECTIVITY_RADICAL
 
 research_tracks:

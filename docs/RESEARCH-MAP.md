@@ -34,10 +34,12 @@ Digital Alexander rank balance and cached index-2..9 frontier     [main]
     -> essential H1 births K1,K2 and P0/P1/P2 reconstruction      [main]
     -> complement coordinates C (clock translation), W (lifetime) [branch_only]
     -> full finite K2 curve: positive area, three local node crossings [open_pr]
+    -> positive translation + negative zero-area K2 deformation       [open_pr]
     -> local gates I01,I12 and parity channels S,D                 [branch_only]
-    -> tiny nonzero Cov(A_top,J_D4) lattice coupling               [branch_only]
+    -> marked-birth q2/P50 pilot with line and landing fields      [branch_only]
+    -> exact q-only contact closure and P275 global-line rejection [branch_only]
     -> P205 ordinary H4/H4 K1/K2 prism                             [branch_only + PR #267 reuse]
-    -> common-field large-N coupling and Q4/Jordan fingerprint     [next]
+    -> fixed-q shape/clock/lifetime + separated local covector      [next]
 ```
 
 ### 1. Digital topology and essential births
@@ -92,7 +94,7 @@ J_D4 = sum_v chi4(ell_v) (I12-I01)_v
 
 is a complete matching-odd line-H4 observer. It is not the same object as landing H4.
 
-### 3. A finite lattice bridge exists
+### 3. The first finite bridge is a contact control, not a field identity
 
 With `A_top=q=r-1`, the exact geometric tilt obeys
 
@@ -101,6 +103,20 @@ partial_h <A_top>|h=0 = Cov(A_top, Re[e^(-4 i phi) J_D4]).
 ```
 
 Tiny axis and Gaussian enumerations give nonzero real/complex couplings with exact complement sign controls. This closes a finite-lattice symmetry obstruction: the global rank projector can couple to the matching-odd line-birth source. It does not establish survival at large N, Q4 dominance or a Jordan logarithmic partner.
+
+The missing stream has since been piloted at q2 N65/N130 and P50 N145. It separates two effects:
+
+- the mean line source has `J_D4(130)/J_D4(65)=-.33074-.00823i`, magnitude `.33085`, near the preregistered `2^-13/8` factor but with a noisy N130 mean;
+- the connected response grows with the birth mass and survives neither batch-Gram subtraction nor interpretation as an independent field row.
+
+The reason is exact. For `q in {-1,0,1}`,
+
+```text
+Cov(q,J_D)=J_S/2+(p-1/2-<q>)J_D,
+Cov(q,J_S)=J_D/2+(p-1/2-<q>)J_S.
+```
+
+The all-order gate theorem extends this closure to every topology-only `f(q)` and every root-independent marked gate polynomial. A nine-geometry P275 production independently rejects the frozen global-line Q4/Jordan/H4 field maps and finds an order-one projective polarization. The escape is precise: measure an observer that still varies inside fixed q, such as `C/W`, a separated landing/arm mark, bulk resolved topology, a charged seam or a modular/stress response. The finite coupling remains a useful contact and implementation control.
 
 ### 4. P205 resolves the ordinary character competition
 
@@ -117,14 +133,14 @@ Both activations reinforce at every P205 size. The runner-up `H4/H12` is worse b
 
 This changes the information ranking of `rho`/C3 geometries. Another ordinary `A_top` H4/H8/H12 selector would largely repeat P205. A C3 acquisition gains substantially more information when it names a distinct typed non-`A_top` module row, a charged row or another observable whose complex character answers a different question.
 
-### 5. The remaining ordinary module question is Q4/Jordan
+### 5. The ordinary module question now requires an independent covector
 
 Two independent selection steps narrow the regular ordinary carrier:
 
 - vacuum/KdV spin 4 lies on the Alexander-even rank line and has exact zero `A_top` projection;
 - the regular unlabeled four-leg `[2]` endpoint has an exact ordinary linear selection zero under its declared generic-Q hypothesis.
 
-The transverse thermal `Q4 epsilon`/Jordan family is therefore the first listed candidate allowed by both selectors. “Allowed” is not “identified”: the missing evidence is a nonzero large-N lattice overlap plus a module fingerprint. Main-integrated exact spectroscopy already fixes an additional Q-direction discriminator at Q=1:
+The transverse thermal `Q4 epsilon`/Jordan family is therefore the first listed candidate allowed by both selectors. “Allowed” is not “identified,” and P275 shows that the global `chi4(ell)` line is not the required local-field covector. A future overlap must use a separated-local, charged, modular/stress or other within-q observer and carry a module fingerprint. Main-integrated exact spectroscopy already fixes an additional Q-direction discriminator at Q=1:
 
 ```text
 x'_[four-leg V_(2,+/-2)] = -5 sqrt(3)/(16 pi),
@@ -132,11 +148,11 @@ x'_[thermal Q4 epsilon]   = -9 sqrt(3)/(16 pi),
 gap                       =  sqrt(3)/(4 pi).
 ```
 
-The generic-loop spin-8 and spin-12 rows in that oracle are controls rather than H8/H12 angular-alias assignments. The other sharp fingerprint is the thermal-Q4 positive-mode Ward vector `4:-6:3`; an ordinary primary gives zero, and Jordan residues add a second gate. Modulus/phase dependence, the log-partner response and the complete lattice Q-derivative interface must accompany any scaling power.
+The generic-loop spin-8 and spin-12 rows in that oracle are controls rather than H8/H12 angular-alias assignments. The other sharp fingerprint is the thermal-Q4 positive-mode Ward vector `4:-6:3`; an ordinary primary gives zero, and Jordan residues add a second gate. Main's PR #288 adds a rank-four identifiability boundary: parity fixes four powers but not the Taylor ratios `f_I1/f_I0` and `f_T1/f_T0`. Modulus/phase dependence, the log-partner response, an independent covector and those two external dynamical relations must accompany any scaling power.
 
-## Rank-1 acquisition contract
+## Rank-1 reuse and escape contract
 
-The next common-field stream should retain, in the same orientation-paired replicas and delete-one batches:
+The marked-birth pilot already retains most of the common field below at q2 N65/N130 and P50 N145. Reuse it before producing another stream. Any continuation should retain, in the same orientation-paired replicas and delete-one batches:
 
 ```text
 q and q^2;
@@ -144,11 +160,11 @@ I01, I12 and direct 0->2;
 ell, iota and Re/Im chi4(ell);
 line H4 and landing H4 separately;
 N*S_H4, N*D_H4 and the unmarked S birth mass;
-q*(N*S_H4), q*(N*D_H4) and the required qJ cross moments;
-K1,K2,ell,iota when a permutation/threshold stream is used.
+K1,K2,C,W and their line/landing-conditioned curve bins;
+two-root field products when an independent observer is used.
 ```
 
-This one stream can estimate `gamma_D4=Cov(A_top,J_D4)/M'`, preserve the even `S` sign control, distinguish line from landing mechanisms, and connect the P205 activation split to the Q4/Jordan modulus/Ward fingerprint. Endpoint histograms or old marked-pivotal batches cannot reconstruct the missing same-sample `qJ` covariance.
+The immediate zero-production analysis decomposes each activation response into a same-area translation mode and a zero-area shape mode, then relates the shape coordinate to `C/W`, line and landing marks with aligned delete-one covariance. A new production is justified only for a missing decision coordinate: the frozen third-point mean-`J_D4` transfer, a two-radius landing UV annihilator or an independent-observer/two-root Gram. More `qJ`, `q^2J` or nonlinear q-only connected rows are exact contact transforms, not new field evidence.
 
 ## Parallel programs
 
@@ -158,9 +174,9 @@ The ordinary P205 prism selects H4, while the branch-only N325 deck-charged like
 
 ### Low-dimensional state and the targeted context rectangle
 
-Norm-4 rejects the frozen analytic q2 and common-generator forms. The post-reveal Jordan-plus-one-even-mode recurrence then passes its frozen N520/N680 generation-four target at `lambda=1/2`, but `lambda=0`, `1/2` and `1` are nearly indistinguishable. The small-state family remains usable, while neither a nonzero extra mode nor its transfer eigenvalue is identified. In the PR #247 multiradius block, the ordinary/local plus shell is compatible with a common amplitude (`p=.3564`), the matching-odd minus shell rejects that scalar law (`p=.00382`), and matched-cutoff equality is marginally tense (`p=.04544`); all three are correlated views of one raw block. A distinct two-state recurrence trained on N325/N425 then passes held-out N365 (`p=.965`). Separately, an unmarked final CRT endpoint is factor-order blind, whereas an intermediate rank filtration can retain activation time.
+Norm-4 rejects the frozen analytic q2 and common-generator forms. The post-reveal Jordan-plus-one-even-mode recurrence then passes its frozen N520/N680 generation-four target at `lambda=1/2`, but `lambda=0`, `1/2` and `1` are nearly indistinguishable. The small-state family remains usable, while neither a nonzero extra mode nor its transfer eigenvalue is identified. In the PR #247 multiradius block, the ordinary/local plus shell is compatible with a common amplitude (`p=.3564`), the matching-odd minus shell rejects that scalar law (`p=.00382`), and matched-cutoff equality is marginally tense (`p=.04544`); all three are correlated views of one raw block. A distinct two-state recurrence trained on N325/N425 then passes held-out N365 (`p=.965`). The newer sector score rejects rank one only for `A_minus`, keeps named rank-two families live and does not resolve shared-J2 versus gap-one. Separately, P200 observes a static mixed interaction but stores no intermediate state, while the exact final CRT endpoint is factor-order blind.
 
-These results motivate a **targeted pilot**, not another retrospective fit: acquire a common source and common readout basis over at least two Gaussian-cover and two annulus contexts, with shared replicas and held-out prediction. Compare one common generator against a context/morphism-enriched realization. Existing disjoint archives do not form the rectangle, and an endpoint-only row cannot test chronological memory.
+These results motivate a **targeted mixed-order pilot**, not another retrospective fit. After spin removal, one generator implies `A=exp(-t_A G)`, `U=exp(-t_U G)`, hence `[A,U]=0` and `A^p=U^q` for commensurate clocks. Acquire a shared spanning source/readout basis and both `c^T A U b` and `c^T U A b`, with one commensurate clock cell and held-out prediction. Existing disjoint spectra cannot align latent bases. Static interaction can be challenged by a new geometry/scale using the frozen P200 coefficients; chronological memory additionally requires intermediate `h0,h2,h5,h25` or lineage.
 
 ### Potts-Q tangent and the P263 variance gate
 
@@ -175,6 +191,8 @@ D^n H|Q=1 = sum_(k<n) binom(n,k) D^k P|Q=1.
 ```
 
 Only a typed residual after this subtraction can be assigned to an explicit field derivative, singular projector residue or finite-lattice failure of the continuum identity.
+
+Main-integrated PR #288 also prevents a false closure: the four parity-allowed rows have structural rank four, so `f_I1/f_I0` and `f_T1/f_T0` must be supplied by continuum dynamics or frozen training geometries. The branch-only Q=4 seam preflight is the smallest typed normalization control; its missing orientation-resolved H4 kernel tests raw singlet/charged numerator ratios `1/0` before a bulk Q-tangent interpretation.
 
 ### Cross-microscopic logarithmic control
 
@@ -195,13 +213,17 @@ The mechanism chain deliberately mixes lifecycle states:
 | Layer | Current status | Scientific use |
 |---|---|---|
 | Digital Alexander theorem, filtration, essential births, cached index-9 frontier | `main_integrated` | exact finite-state backbone and reusable line/`iota` oracle within declared scope; index 10 and an unrestricted theorem remain open |
-| `C/W`, `I01/I12`, `S/D`, tiny `Cov(A_top,J_D4)` | `branch_only` | exact coordinates and finite controls, not large-N field identity |
+| `C/W`, `I01/I12`, `S/D`, tiny `Cov(A_top,J_D4)` | `branch_only` | exact coordinates and finite contact controls; the later all-order theorem excludes q-only connected rows as independent field matrices |
+| marked-birth pilot and q-only contact theorem | `branch_only` `0b3cebf` | common q2/P50 field, noisy mean-source lead and exact contact closure; reuse before new acquisition |
+| P275 global-line field map | `branch_only` `4d7ecd5` | rejects the declared Q4/Jordan/H4 maps and reclassifies `Gamma` as projective polarization |
 | P205 total prism | `branch_only` | frozen ordinary character selection at small N |
-| ten-size K1/K2 root and full-curve reuse | `open_pr` #267 | retrospective component, area and stable-node decomposition with shared-stream covariance |
+| ten-size K1/K2 root, full-curve and transport/shape reuse | `open_pr` #267 | retrospective component, area, stable-node and same-area-translation/zero-area-deformation decomposition with shared covariance |
 | P205 K1/K2 prism reuse | `open_pr` #267 | retrospective component-character decomposition with branch-only source data |
 | Q=1 spin-sector velocity oracle | `main_integrated` PR #264 | exact continuum-family discriminator; lattice overlaps and field-definition terms remain missing |
+| four-channel operator-mixing audit | `main_integrated` PR #288 | exact rank four; two external Taylor ratios remain missing |
+| Q=4 seam, annulus sector and mixed-clock gates | `branch_only` | typed numerator normalization, odd-sector rank-two boundary and `AU-UA` design; their named kernels/mixed cells remain to acquire |
 | anisotropy stencil and threshold-confidence chains | `main_integrated` PRs #272/#278-#281 | exact microscopic feasibility/protocol infrastructure, not renormalized H4 or a new threshold bound |
-| Q4/Jordan overlap and fingerprint | `hypothesis` plus branch-only exact predictions | next mechanism discriminator |
+| Q4/Jordan overlap and fingerprint | `hypothesis` plus branch-only exact predictions | requires an independent within-q or typed covector; global line `Gamma` is not that covector |
 
 Use `docs/STATUS.md` and `analysis/research_ledger.yaml` for exact commit/path pointers. Citation here never promotes an unmerged result to `main`.
 
