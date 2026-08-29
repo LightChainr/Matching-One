@@ -15,6 +15,7 @@
 | `M'(p)` equals primal pivotal mass at `p` plus matching pivotal mass at `1-p` | C5 finite | Exact Russo/chain-rule identity |
 | The C4 self-matching family has complement tangent `(t,lambda)->(-t,-lambda)` | C5 finite | Exact microscopic `J=-I` |
 | Square-bond geometric dual transport swaps primal/dual wrapping and forces `E[D]=0` at `p=1/2` | C5 finite | Exact L=2/L=3 oracle and general finite symmetry argument |
+| Occupied Euler characteristic equals `β0_black-β0_white-q` on square tori | C5 finite | Algebraic rewrite of P34; exhaustive N≤9; Betti CVs reduce to `(V,E,F0,q)` |
 
 ## Strongest current finite-size evidence
 

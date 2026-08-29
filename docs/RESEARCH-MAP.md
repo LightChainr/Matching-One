@@ -52,7 +52,7 @@ Canonical assets include finite matching/complement identities, arbitrary intege
 
 The exact square-bond control now sharpens the duality convention: geometric dual transport, not bit-complement, swaps primal/dual wrapping and forces the odd center channel to vanish at `p=1/2`.
 
-Useful continuations: Euler/Betti lifts, broader channel algebra, and large-N self-matching tangent decomposition.
+Useful continuations: broader channel algebra, and large-N self-matching tangent decomposition. The Euler/Betti lift is an exact rewrite of P34; Betti control variates reduce to `(V,E,F0,q)` and that variance-reduction branch is closed.
 
 ### B. Threshold ranks as reusable finite state
 
