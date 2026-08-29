@@ -1,0 +1,22 @@
+{
+  "schema": "matching-one/matching-multiradius-pivotal/v1",
+  "generated_utc": "2026-08-29T11:08:35Z",
+  "git_commit": "c423612f5854f6a61a889675ad79b70cad5d6956",
+  "command": "build/matching_multiradius_pivotal_mc --samples 200000 --batches 200 --radii 2,4,7,8 --cutoff euclidean --p 0.592746050790 --threads 16 --seed 25336560829 --replica-offset 25336500000 --design n365_first,14,13 --design n365_second,19,2 --git-commit c423612f5854f6a61a889675ad79b70cad5d6956 --output-prefix results/server-20260829/P253-n365-annulus/raw/n365_200k",
+  "samples_per_design": 200000,
+  "batches": 200,
+  "seed": 25336560829,
+  "replica_counter_first": 25336500000,
+  "replica_counter_last_exclusive": 25336700000,
+  "p": "0.59274605079",
+  "cutoff": "euclidean",
+  "radii": [2,4,7,8],
+  "designs": [{"label":"n365_first","N":365,"a":14,"b":13},{"label":"n365_second","N":365,"a":19,"b":2}],
+  "graph_semantics": "black NN primal; complemented white NN+NNN matching",
+  "landing_registry": "absolute lattice axis minus diagonal; no per-design sign relabeling",
+  "boundary_rule": "euclidean: (R-1)^2 < x^2+y^2 <= R^2; chebyshev: max(|x|,|y|)=R",
+  "cross_radius_coupling": "same configuration and pivotal flag",
+  "cross_design_coupling": "same seed/counter; identical fields within equal N and prefix-coupled across N",
+  "elapsed_seconds": 1.954167776,
+  "batch_csv": "results/server-20260829/P253-n365-annulus/raw/n365_200k.batches.csv"
+}

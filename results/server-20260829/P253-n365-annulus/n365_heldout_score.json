@@ -1,0 +1,245 @@
+{
+  "N365_contrast_block": {
+    "batch_csv": "results/server-20260829/P253-n365-annulus/raw/n365_200k.batches.csv",
+    "batches": 200,
+    "covariance": [
+      [
+        1.1631105527638192e-07,
+        -3.816080402010051e-09,
+        -1.3344974874371858e-08,
+        4.776381909547745e-10,
+        5.527638190954809e-11,
+        3.864321608040195e-10,
+        -2.3847487437185932e-08,
+        -6.876884422110551e-10
+      ],
+      [
+        -3.816080402010051e-09,
+        2.0130854271356782e-07,
+        3.035376884422111e-08,
+        1.816180904522613e-08,
+        3.010050251256282e-09,
+        -1.8846231155778894e-08,
+        -1.728442211055276e-08,
+        -3.795979899497486e-09
+      ],
+      [
+        -1.3344974874371858e-08,
+        3.035376884422111e-08,
+        2.3766218592964824e-07,
+        9.036344221105528e-08,
+        -2.2128140703517584e-08,
+        -1.1515829145728642e-08,
+        -2.321721105527638e-08,
+        3.688316582914574e-09
+      ],
+      [
+        4.776381909547745e-10,
+        1.816180904522613e-08,
+        9.036344221105528e-08,
+        1.939244974874372e-07,
+        -5.228643216080401e-09,
+        -2.9034924623115576e-08,
+        -4.006369346733668e-08,
+        -4.3253768844220884e-10
+      ],
+      [
+        5.527638190954809e-11,
+        3.010050251256282e-09,
+        -2.2128140703517584e-08,
+        -5.228643216080401e-09,
+        1.1537688442211055e-07,
+        8.341708542713565e-10,
+        9.128140703517588e-09,
+        3.6105527638190966e-09
+      ],
+      [
+        3.864321608040195e-10,
+        -1.8846231155778894e-08,
+        -1.1515829145728642e-08,
+        -2.9034924623115576e-08,
+        8.341708542713565e-10,
+        1.512457286432161e-07,
+        3.205201005025126e-08,
+        -2.7429648241206025e-09
+      ],
+      [
+        -2.3847487437185932e-08,
+        -1.728442211055276e-08,
+        -2.321721105527638e-08,
+        -4.006369346733668e-08,
+        9.128140703517588e-09,
+        3.205201005025126e-08,
+        1.7057675879396986e-07,
+        6.667826633165829e-08
+      ],
+      [
+        -6.876884422110551e-10,
+        -3.795979899497486e-09,
+        3.688316582914574e-09,
+        -4.3253768844220884e-10,
+        3.6105527638190966e-09,
+        -2.7429648241206025e-09,
+        6.667826633165829e-08,
+        1.736923366834171e-07
+      ]
+    ],
+    "metadata": {
+      "batch_csv": "results/server-20260829/P253-n365-annulus/raw/n365_200k.batches.csv",
+      "batches": 200,
+      "boundary_rule": "euclidean: (R-1)^2 < x^2+y^2 <= R^2; chebyshev: max(|x|,|y|)=R",
+      "command": "build/matching_multiradius_pivotal_mc --samples 200000 --batches 200 --radii 2,4,7,8 --cutoff euclidean --p 0.592746050790 --threads 16 --seed 25336560829 --replica-offset 25336500000 --design n365_first,14,13 --design n365_second,19,2 --git-commit c423612f5854f6a61a889675ad79b70cad5d6956 --output-prefix results/server-20260829/P253-n365-annulus/raw/n365_200k",
+      "cross_design_coupling": "same seed/counter; identical fields within equal N and prefix-coupled across N",
+      "cross_radius_coupling": "same configuration and pivotal flag",
+      "cutoff": "euclidean",
+      "designs": [
+        {
+          "N": 365,
+          "a": 14,
+          "b": 13,
+          "label": "n365_first"
+        },
+        {
+          "N": 365,
+          "a": 19,
+          "b": 2,
+          "label": "n365_second"
+        }
+      ],
+      "elapsed_seconds": 1.954167776,
+      "generated_utc": "2026-08-29T11:08:35Z",
+      "git_commit": "c423612f5854f6a61a889675ad79b70cad5d6956",
+      "graph_semantics": "black NN primal; complemented white NN+NNN matching",
+      "landing_registry": "absolute lattice axis minus diagonal; no per-design sign relabeling",
+      "p": "0.59274605079",
+      "radii": [
+        2,
+        4,
+        7,
+        8
+      ],
+      "replica_counter_first": 25336500000,
+      "replica_counter_last_exclusive": 25336700000,
+      "samples_per_design": 200000,
+      "schema": "matching-one/matching-multiradius-pivotal/v1",
+      "seed": 25336560829
+    },
+    "order": [
+      "N365_R2_Delta_A_plus",
+      "N365_R4_Delta_A_plus",
+      "N365_R7_Delta_A_plus",
+      "N365_R8_Delta_A_plus",
+      "N365_R2_Delta_A_minus",
+      "N365_R4_Delta_A_minus",
+      "N365_R7_Delta_A_minus",
+      "N365_R8_Delta_A_minus"
+    ],
+    "point": [
+      -0.00020999999999999998,
+      -0.00064,
+      -0.001265,
+      -0.002595,
+      0.0001,
+      -0.00061,
+      -0.000265,
+      1.5000000000000014e-05
+    ]
+  },
+  "channels": [
+    {
+      "N365_dyadic_point_R2_R4_R8": [
+        -0.00020999999999999998,
+        -0.00064,
+        -0.002595
+      ],
+      "channel": "A_plus",
+      "heldout_R7_fractional_propagation": {
+        "branch": "R2",
+        "chi_square": 0.12131959030891397,
+        "chi_square_survival": 0.7276076711051799,
+        "degrees_of_freedom": 1,
+        "residual": 0.001649201414822843,
+        "standard_error_delta_method": 0.004734871870991755,
+        "z": 0.3483096184559278
+      },
+      "heldout_dyadic_recurrence": {
+        "chi_square": 0.039995005465881785,
+        "chi_square_survival": 0.8414903468192252,
+        "degrees_of_freedom": 1,
+        "residual": 0.0016819605130632973,
+        "standard_error_delta_method": 0.008410327652563113,
+        "z": 0.19998751327490868
+      },
+      "old_saturated_recurrence": {
+        "D": 4.8113534445212425,
+        "Delta": 49.00657440959009,
+        "T": 8.261476150644935
+      }
+    },
+    {
+      "N365_dyadic_point_R2_R4_R8": [
+        0.0001,
+        -0.00061,
+        1.5000000000000014e-05
+      ],
+      "channel": "A_minus",
+      "heldout_R7_fractional_propagation": {
+        "branch": "C2",
+        "chi_square": 0.027394722920836636,
+        "chi_square_survival": 0.8685398148360525,
+        "degrees_of_freedom": 1,
+        "residual": -0.00016004508917909398,
+        "standard_error_delta_method": 0.0009669608629977979,
+        "z": -0.16551351280435272
+      },
+      "heldout_dyadic_recurrence": {
+        "chi_square": 0.029935538341114936,
+        "chi_square_survival": 0.8626365748301983,
+        "degrees_of_freedom": 1,
+        "residual": -0.00016685877075384053,
+        "standard_error_delta_method": 0.0009643962289695058,
+        "z": -0.17301889590768674
+      },
+      "old_saturated_recurrence": {
+        "D": 1.966083450550634,
+        "Delta": -7.479390620937526,
+        "T": -0.620437894768695
+      }
+    }
+  ],
+  "issue": 253,
+  "joint_heldout_dyadic_recurrence": {
+    "assumption": "separate T,D inherited from the old two-readout saturation; only the third geometry is held out",
+    "chi_square": 0.0710297707054328,
+    "chi_square_survival": 0.9651083681446092,
+    "covariance_delta_method": [
+      [
+        7.073361122346776e-05,
+        1.2679906897871505e-07
+      ],
+      [
+        1.2679906897871502e-07,
+        9.300600864506034e-07
+      ]
+    ],
+    "degrees_of_freedom": 2,
+    "order": [
+      "A_plus",
+      "A_minus"
+    ],
+    "residual": [
+      0.0016819605130632973,
+      -0.00016685877075384053
+    ]
+  },
+  "new_source": "results/server-20260829/P253-n365-annulus/raw/n365_200k.metadata.json",
+  "old_source": "results/server-20260829/P225-norm5-multiradius/analysis.json",
+  "schema": "matching-one.p253-n365-heldout.v1",
+  "scope": [
+    "N325/N425 determine T,D before N365 enters the score.",
+    "N365 is an independent replica-counter block, so old/new covariance is block diagonal.",
+    "The R7 check uses the same N365 block and is correlated design information, not another evidence row.",
+    "Passing or failing this recurrence tests one shared two-state radial generator per channel; it does not by itself identify Jordan, two-real, or complex scaling dimensions."
+  ],
+  "status": "scored_frozen_third_geometry_acquisition"
+}
