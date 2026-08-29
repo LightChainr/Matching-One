@@ -1,0 +1,224 @@
+{
+  "schema": "matching-one/intrinsic-quantile-center-N145-N290-score/v1",
+  "status": "secondary post-primary score from pre-target frozen Issue #101 coordinates",
+  "primary_score_unchanged": "scripts/score_p50_fullcurve_n290.py and its frozen order are untouched",
+  "frozen": {
+    "u": [
+      0.025,
+      0.05
+    ],
+    "Q": "c_0.05-c_0.025",
+    "target_ratio": 0.5946035575013605,
+    "target_formula": "Q_290/Q_145=2^{-3/4}"
+  },
+  "observations": {
+    "N145": {
+      "N": 145,
+      "Q": -3.7526150840072603e-06,
+      "Q_scaled_N_to_3_over_4": -0.0001568050414483474,
+      "levels": {
+        "0.025": {
+          "p_minus": 0.5905264205183569,
+          "p_plus": 0.5949550639502303,
+          "c": 0.5927407422342936,
+          "w": 0.002214321715936718,
+          "w_scaled_N_to_3_over_8": 0.014313759636165007,
+          "M_minus": -0.02500000000000019,
+          "M_plus": 0.02499999999999991
+        },
+        "0.05": {
+          "p_minus": 0.5883061254196797,
+          "p_plus": 0.5971678538187395,
+          "c": 0.5927369896192096,
+          "w": 0.004430864199529871,
+          "w_scaled_N_to_3_over_8": 0.028641874699643584,
+          "M_minus": -0.049999999999999156,
+          "M_plus": 0.04999999999999838
+        }
+      }
+    },
+    "N290": {
+      "N": 290,
+      "Q": -2.2359787729131497e-06,
+      "Q_scaled_N_to_3_over_4": -0.0001571325558896214,
+      "levels": {
+        "0.025": {
+          "p_minus": 0.5910414781232898,
+          "p_plus": 0.5944601910990452,
+          "c": 0.5927508346111675,
+          "w": 0.0017093564878777334,
+          "w_scaled_N_to_3_over_8": 0.014329528279732988,
+          "M_minus": -0.02500000000000069,
+          "M_plus": 0.025000000000000577
+        },
+        "0.05": {
+          "p_minus": 0.5893281442256912,
+          "p_plus": 0.596169053039098,
+          "c": 0.5927485986323946,
+          "w": 0.003420454406703355,
+          "w_scaled_N_to_3_over_8": 0.02867365496780966,
+          "M_minus": -0.05000000000000049,
+          "M_plus": 0.049999999999997935
+        }
+      }
+    }
+  },
+  "size_local_feature_order": [
+    "Q",
+    "w_0.025_scaled",
+    "w_0.05_scaled",
+    "c_0.025",
+    "c_0.05"
+  ],
+  "size_local_covariance": {
+    "N145": [
+      [
+        1.8470225566697476e-17,
+        -1.1232836165799148e-16,
+        -2.252359052649188e-16,
+        -3.5356890481466548e-15,
+        -3.517218822521267e-15
+      ],
+      [
+        -1.1232836165799148e-16,
+        2.309893277094402e-13,
+        4.619982128574464e-13,
+        -2.821761048470593e-13,
+        -2.8228843321923967e-13
+      ],
+      [
+        -2.252359052649188e-16,
+        4.619982128574464e-13,
+        9.240363955999558e-13,
+        -5.644158126573062e-13,
+        -5.646410485836718e-13
+      ],
+      [
+        -3.5356890481466548e-15,
+        -2.821761048470593e-13,
+        -5.644158126573062e-13,
+        1.0038058073446687e-11,
+        1.0034522384355788e-11
+      ],
+      [
+        -3.517218822521267e-15,
+        -2.8228843321923967e-13,
+        -5.646410485836718e-13,
+        1.0034522384355788e-11,
+        1.0031005165490576e-11
+      ]
+    ],
+    "N290": [
+      [
+        1.383704695725197e-17,
+        -6.306360076738963e-17,
+        -1.266030441018533e-16,
+        -1.1314689694465208e-15,
+        -1.1176319224884535e-15
+      ],
+      [
+        -6.306360076738963e-17,
+        2.4948680089102165e-13,
+        4.988167367357143e-13,
+        -1.1048178091519282e-13,
+        -1.1054484452213105e-13
+      ],
+      [
+        -1.266030441018533e-16,
+        4.988167367357143e-13,
+        9.973209668936373e-13,
+        -2.2110609256098699e-13,
+        -2.2123269561745474e-13
+      ],
+      [
+        -1.1314689694465208e-15,
+        -1.1048178091519282e-13,
+        -2.2110609256098699e-13,
+        6.265653281843837e-12,
+        6.264521812851555e-12
+      ],
+      [
+        -1.1176319224884535e-15,
+        -1.1054484452213105e-13,
+        -2.2123269561745474e-13,
+        6.264521812851555e-12,
+        6.263404180906233e-12
+      ]
+    ],
+    "cross_size": "zero by independent RNG domains"
+  },
+  "primary_quantile_center_score": {
+    "observed_ratio_Q290_over_Q145": 0.5958454898404986,
+    "observed_ratio_standard_error_delta_method": 0.0012034365742889918,
+    "target_ratio": 0.5946035575013605,
+    "residual_Q290_minus_target_Q145": -4.660494029166079e-09,
+    "residual_standard_error": 4.5130098417110095e-09,
+    "signed_z": -1.0326797841413868,
+    "chi_square": 1.0664275365743012,
+    "degrees_of_freedom": 1
+  },
+  "width_drift": {
+    "definition": "w_u N^{3/8}(N290)-w_u N^{3/8}(N145)",
+    "u": [
+      0.025,
+      0.05
+    ],
+    "residual": [
+      1.576864356798123e-05,
+      3.1780268166074765e-05
+    ],
+    "standard_error": [
+      6.931638540781406e-07,
+      1.3861303555198526e-06
+    ],
+    "signed_z": [
+      22.74879665927246,
+      22.927330059196297
+    ]
+  },
+  "joint_residual_order": [
+    "Q290_minus_frozen_ratio_Q145",
+    "scaled_width_drift_0.025",
+    "scaled_width_drift_0.05"
+  ],
+  "joint_residual": [
+    -4.660494029166079e-09,
+    1.576864356798123e-05,
+    3.1780268166074765e-05
+  ],
+  "joint_residual_covariance": [
+    [
+      2.0367257831380433e-17,
+      -1.2985444421753078e-16,
+      -2.6052911464941343e-16
+    ],
+    [
+      -1.2985444421753078e-16,
+      4.804761286004619e-13,
+      9.608149495931607e-13
+    ],
+    [
+      -2.6052911464941343e-16,
+      9.608149495931607e-13,
+      1.921357362493593e-12
+    ]
+  ],
+  "covariance_rule": "all crossings are recomputed inside each size-local delete-one replicate; N145/N290 pseudovalue covariances are combined as independent blocks",
+  "provenance": {
+    "freeze": "predictions/intrinsic_quantile_center_20260829.yaml",
+    "freeze_sha256": "7230e362dbf440126f921c16fbe027048c70353c9ee03ca9923bf1f3ce70e7dd",
+    "freeze_commit": "3762b342b8b376e587df0073044b2c7f6452aa8e",
+    "freeze_committed_at_utc": "2026-08-29T06:41:21Z",
+    "target_results_first_commit": "9675bce5b406247e15c03bca20abef954f26a3a2",
+    "target_results_first_committed_at_utc": "2026-08-29T06:47:18Z",
+    "chronology": "freeze precedes first target-result commit",
+    "parent_hist": "results/server-20260829/P50-n145-n290-fullcurve/raw/n145_100m.hist.csv",
+    "parent_hist_sha256": "c685dae9bddc005224fe5dd052945482cd3b8c5bb26744dad4e44996a8318b42",
+    "parent_metadata": "results/server-20260829/P50-n145-n290-fullcurve/raw/n145_100m.metadata.json",
+    "parent_metadata_sha256": "596b74853030dfbdb6d225a86b11c2c5124318acb9f7bab2a97fab6556c78257",
+    "child_hist": "results/server-20260829/P50-n145-n290-fullcurve/raw/n290_100m.hist.csv",
+    "child_hist_sha256": "e5f62077407f5c989e1b2907171c5f844b770812212bde616f63c621dbf97eb9",
+    "child_metadata": "results/server-20260829/P50-n145-n290-fullcurve/raw/n290_100m.metadata.json",
+    "child_metadata_sha256": "a38377490496004809c9b1c71a388cb7c4ecda2588f8fc1ed7c2e0aaf5ea253d"
+  }
+}

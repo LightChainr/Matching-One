@@ -1,0 +1,41 @@
+{
+  "schema": "matching-one/c4-local-odd-pivotal/v1",
+  "geometry": {
+    "a": 3,
+    "b": 1,
+    "N": 10,
+    "configurations": 1024,
+    "radius": 1
+  },
+  "observable_rows": [
+    "global_cross_half_difference",
+    "local_pivotal_h4_half_difference"
+  ],
+  "parameter_columns": [
+    "t",
+    "lambda"
+  ],
+  "response_matrix": [
+    [
+      "15/8",
+      "5/4"
+    ],
+    [
+      "-3/64",
+      "11/64"
+    ]
+  ],
+  "determinant": "195/512",
+  "local_twice_observable_counts": {
+    "-1": 88,
+    "0": 848,
+    "1": 88
+  },
+  "symmetry_violations": {
+    "complement_odd": 0,
+    "rotation_C4": 0,
+    "registry_pi_over_4": 0
+  },
+  "passed": true,
+  "interpretation": "The exact local complement-odd row is linearly independent of the global wrapping row. This is an oracle and conditioning gate, not a large-N exponent measurement."
+}
