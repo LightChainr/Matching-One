@@ -1,0 +1,671 @@
+{
+  "ambient_rank_readout": {
+    "boundary_cases": {
+      "boundary_rank_0_black_torus_side": "(2,0), q=+1",
+      "boundary_rank_0_white_torus_side": "(0,2), q=-1",
+      "boundary_rank_1": "(r_black,r_white)=(1,1), q=0; both sides are annular in ambient H1"
+    },
+    "charge": "q=(r_black-r_white)/2",
+    "rank_sum": "r_black+r_white=2"
+  },
+  "claim_boundary": {
+    "not_proved": [
+      "identification with a named transition or vertex polynomial",
+      "a deletion/contraction relation with fewer states than the frontier rule",
+      "a width-independent finite-state recursion",
+      "complement oddness on non-self-matching axis tori"
+    ],
+    "proved": [
+      "the 16 local terminal partitions of black NN and white NN+NNN are realized by the typed incidence hubs",
+      "all 512 axis-L3 masks have identical component counts and ambient ranks in the spine and reference graphs",
+      "the rank-graded state sum specializes exactly to the finite matching polynomial coefficients",
+      "the site complement exchanges the binary typed junction labels",
+      "two pairwise smoothings alone cannot realize the required four-terminal join"
+    ]
+  },
+  "fixed_embedded_object": {
+    "complement": "exchange B and W at every site, hence exchange the two typed local junction states",
+    "local_state_B": "J_edge: join the four edge-midpoint ports through the site node",
+    "local_state_W": "J_face: join the four face-center ports through the site node",
+    "name": "doubled-lattice edge/face incidence spine",
+    "nodes": [
+      "even-even original site nodes",
+      "odd-even/even-odd edge-midpoint hubs",
+      "odd-odd face-center hubs"
+    ],
+    "ribbon_interpretation": "in the #269 cellwise thickening, the black edge-star spine retracts from U and the white face-star spine is a 1-skeleton of closure(T^2\\U); the subsurfaces U and V, not arbitrary metric neighborhoods of the bare spines, share the typed boundary"
+  },
+  "honest_torus_exact_oracle": {
+    "L": 3,
+    "N": 9,
+    "boundary_descriptor_failure_count": 0,
+    "boundary_descriptor_failures": [],
+    "coefficient_rows": [
+      {
+        "count": 1,
+        "occupied": 0,
+        "rank_black": 0,
+        "rank_white": 2
+      },
+      {
+        "count": 9,
+        "occupied": 1,
+        "rank_black": 0,
+        "rank_white": 2
+      },
+      {
+        "count": 36,
+        "occupied": 2,
+        "rank_black": 0,
+        "rank_white": 2
+      },
+      {
+        "count": 78,
+        "occupied": 3,
+        "rank_black": 0,
+        "rank_white": 2
+      },
+      {
+        "count": 6,
+        "occupied": 3,
+        "rank_black": 1,
+        "rank_white": 1
+      },
+      {
+        "count": 90,
+        "occupied": 4,
+        "rank_black": 0,
+        "rank_white": 2
+      },
+      {
+        "count": 36,
+        "occupied": 4,
+        "rank_black": 1,
+        "rank_white": 1
+      },
+      {
+        "count": 45,
+        "occupied": 5,
+        "rank_black": 0,
+        "rank_white": 2
+      },
+      {
+        "count": 72,
+        "occupied": 5,
+        "rank_black": 1,
+        "rank_white": 1
+      },
+      {
+        "count": 9,
+        "occupied": 5,
+        "rank_black": 2,
+        "rank_white": 0
+      },
+      {
+        "count": 48,
+        "occupied": 6,
+        "rank_black": 1,
+        "rank_white": 1
+      },
+      {
+        "count": 36,
+        "occupied": 6,
+        "rank_black": 2,
+        "rank_white": 0
+      },
+      {
+        "count": 36,
+        "occupied": 7,
+        "rank_black": 2,
+        "rank_white": 0
+      },
+      {
+        "count": 9,
+        "occupied": 8,
+        "rank_black": 2,
+        "rank_white": 0
+      },
+      {
+        "count": 1,
+        "occupied": 9,
+        "rank_black": 2,
+        "rank_white": 0
+      }
+    ],
+    "complement_local_symbol_failure_count": 0,
+    "configurations": 512,
+    "geometry": "axis_L3_honest_square_cell_torus",
+    "matching_Bernstein_coefficients_direct": [
+      -1,
+      -9,
+      -36,
+      -78,
+      -90,
+      -36,
+      36,
+      36,
+      9,
+      1
+    ],
+    "matching_Bernstein_coefficients_from_state_sum": [
+      -1,
+      -9,
+      -36,
+      -78,
+      -90,
+      -36,
+      36,
+      36,
+      9,
+      1
+    ],
+    "matching_specialization": "M_L(p)=1/2 (x d_x-y d_y) Phi_L(p;x,y)|x=y=1",
+    "spine_failure_count": 0,
+    "spine_failures": [],
+    "state_sum": "Phi_L(p;x,y)=sum_mask p^|B|(1-p)^(N-|B|) x^r_black(mask) y^r_white(mask)"
+  },
+  "issues": [
+    144,
+    269
+  ],
+  "local_16_pattern_certificate": {
+    "all_16_pass": true,
+    "interpretation": "edge-midpoint hubs reproduce black NN boundary edges; each face-center hub replaces the white NN+NNN clique by an embedded star with the same terminal partition",
+    "patterns": [
+      {
+        "black_edge_hub_partition": [],
+        "black_reference_partition": [],
+        "mask": 0,
+        "pass": true,
+        "white_face_hub_partition": [
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "white_matching_partition": [
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ]
+      },
+      {
+        "black_edge_hub_partition": [
+          [
+            0
+          ]
+        ],
+        "black_reference_partition": [
+          [
+            0
+          ]
+        ],
+        "mask": 1,
+        "pass": true,
+        "white_face_hub_partition": [
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "white_matching_partition": [
+          [
+            1,
+            2,
+            3
+          ]
+        ]
+      },
+      {
+        "black_edge_hub_partition": [
+          [
+            1
+          ]
+        ],
+        "black_reference_partition": [
+          [
+            1
+          ]
+        ],
+        "mask": 2,
+        "pass": true,
+        "white_face_hub_partition": [
+          [
+            0,
+            2,
+            3
+          ]
+        ],
+        "white_matching_partition": [
+          [
+            0,
+            2,
+            3
+          ]
+        ]
+      },
+      {
+        "black_edge_hub_partition": [
+          [
+            0,
+            1
+          ]
+        ],
+        "black_reference_partition": [
+          [
+            0,
+            1
+          ]
+        ],
+        "mask": 3,
+        "pass": true,
+        "white_face_hub_partition": [
+          [
+            2,
+            3
+          ]
+        ],
+        "white_matching_partition": [
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      {
+        "black_edge_hub_partition": [
+          [
+            2
+          ]
+        ],
+        "black_reference_partition": [
+          [
+            2
+          ]
+        ],
+        "mask": 4,
+        "pass": true,
+        "white_face_hub_partition": [
+          [
+            0,
+            1,
+            3
+          ]
+        ],
+        "white_matching_partition": [
+          [
+            0,
+            1,
+            3
+          ]
+        ]
+      },
+      {
+        "black_edge_hub_partition": [
+          [
+            0
+          ],
+          [
+            2
+          ]
+        ],
+        "black_reference_partition": [
+          [
+            0
+          ],
+          [
+            2
+          ]
+        ],
+        "mask": 5,
+        "pass": true,
+        "white_face_hub_partition": [
+          [
+            1,
+            3
+          ]
+        ],
+        "white_matching_partition": [
+          [
+            1,
+            3
+          ]
+        ]
+      },
+      {
+        "black_edge_hub_partition": [
+          [
+            1,
+            2
+          ]
+        ],
+        "black_reference_partition": [
+          [
+            1,
+            2
+          ]
+        ],
+        "mask": 6,
+        "pass": true,
+        "white_face_hub_partition": [
+          [
+            0,
+            3
+          ]
+        ],
+        "white_matching_partition": [
+          [
+            0,
+            3
+          ]
+        ]
+      },
+      {
+        "black_edge_hub_partition": [
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "black_reference_partition": [
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "mask": 7,
+        "pass": true,
+        "white_face_hub_partition": [
+          [
+            3
+          ]
+        ],
+        "white_matching_partition": [
+          [
+            3
+          ]
+        ]
+      },
+      {
+        "black_edge_hub_partition": [
+          [
+            3
+          ]
+        ],
+        "black_reference_partition": [
+          [
+            3
+          ]
+        ],
+        "mask": 8,
+        "pass": true,
+        "white_face_hub_partition": [
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "white_matching_partition": [
+          [
+            0,
+            1,
+            2
+          ]
+        ]
+      },
+      {
+        "black_edge_hub_partition": [
+          [
+            0,
+            3
+          ]
+        ],
+        "black_reference_partition": [
+          [
+            0,
+            3
+          ]
+        ],
+        "mask": 9,
+        "pass": true,
+        "white_face_hub_partition": [
+          [
+            1,
+            2
+          ]
+        ],
+        "white_matching_partition": [
+          [
+            1,
+            2
+          ]
+        ]
+      },
+      {
+        "black_edge_hub_partition": [
+          [
+            1
+          ],
+          [
+            3
+          ]
+        ],
+        "black_reference_partition": [
+          [
+            1
+          ],
+          [
+            3
+          ]
+        ],
+        "mask": 10,
+        "pass": true,
+        "white_face_hub_partition": [
+          [
+            0,
+            2
+          ]
+        ],
+        "white_matching_partition": [
+          [
+            0,
+            2
+          ]
+        ]
+      },
+      {
+        "black_edge_hub_partition": [
+          [
+            0,
+            1,
+            3
+          ]
+        ],
+        "black_reference_partition": [
+          [
+            0,
+            1,
+            3
+          ]
+        ],
+        "mask": 11,
+        "pass": true,
+        "white_face_hub_partition": [
+          [
+            2
+          ]
+        ],
+        "white_matching_partition": [
+          [
+            2
+          ]
+        ]
+      },
+      {
+        "black_edge_hub_partition": [
+          [
+            2,
+            3
+          ]
+        ],
+        "black_reference_partition": [
+          [
+            2,
+            3
+          ]
+        ],
+        "mask": 12,
+        "pass": true,
+        "white_face_hub_partition": [
+          [
+            0,
+            1
+          ]
+        ],
+        "white_matching_partition": [
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "black_edge_hub_partition": [
+          [
+            0,
+            2,
+            3
+          ]
+        ],
+        "black_reference_partition": [
+          [
+            0,
+            2,
+            3
+          ]
+        ],
+        "mask": 13,
+        "pass": true,
+        "white_face_hub_partition": [
+          [
+            1
+          ]
+        ],
+        "white_matching_partition": [
+          [
+            1
+          ]
+        ]
+      },
+      {
+        "black_edge_hub_partition": [
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "black_reference_partition": [
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "mask": 14,
+        "pass": true,
+        "white_face_hub_partition": [
+          [
+            0
+          ]
+        ],
+        "white_matching_partition": [
+          [
+            0
+          ]
+        ]
+      },
+      {
+        "black_edge_hub_partition": [
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "black_reference_partition": [
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "mask": 15,
+        "pass": true,
+        "white_face_hub_partition": [],
+        "white_matching_partition": []
+      }
+    ]
+  },
+  "minimal_transfer_rule": {
+    "B_update": "union its site node with four edge-midpoint hubs",
+    "W_update": "union its site node with four face-center hubs",
+    "branch": "for each new site choose B or W",
+    "closure": "when the periodic frontier closes, emit p^|B|(1-p)^(N-|B|) x^r_black y^r_white",
+    "frontier_state": "two typed connectivity partitions with integer lift potentials and accumulated H1 generators",
+    "width_scope": "finite for every fixed strip width; no claim of width-independent bond dimension"
+  },
+  "naive_two_smoothing_obstruction": {
+    "consequence": "a pure two-pairing transition polynomial loses the four-arm cluster matrix element; the exact binary alphabet is instead typed junctions J_edge and J_face on alternating port sets",
+    "either_smoothing_equals_target": false,
+    "minimal_missing_partition_type": "J4=four-way junction {north,east,south,west}",
+    "target_black_star_partition": [
+      [
+        0,
+        1,
+        2,
+        3
+      ]
+    ],
+    "terminal_order": [
+      "north",
+      "east",
+      "south",
+      "west"
+    ],
+    "two_pairwise_smoothings": [
+      [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    ]
+  },
+  "schema": "matching-one.p144-typed-incidence-spine.v1"
+}

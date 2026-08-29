@@ -1,0 +1,14 @@
+schema: matching-one.analysis-manifest.v1
+issue: 144
+related_issue: 269
+kind: exact_finite_state_sum
+entrypoint: scripts/p144_typed_incidence_spine.py
+output: results/exact-typed-incidence-spine/latest.json
+geometry: axis_L3_honest_square_cell_torus
+claims:
+  - binary_typed_incidence_spine
+  - rank_graded_vertex_surface_state_sum
+  - exact_matching_derivative_specialization
+  - finite_width_transfer_rule
+  - pairwise_two_smoothing_J4_obstruction
+reproduce: python3 scripts/p144_typed_incidence_spine.py --json results/exact-typed-incidence-spine/latest.json
