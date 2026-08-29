@@ -1,5 +1,9 @@
-# Generation was performed remotely by the already-frozen driver; it was not rerun.
+# N260/N340 and N65/N130 were performed by the frozen driver on the first host.
+# Its redundant N85/N170 leg was stopped after those accepted blocks completed.
 scripts/run_norm4_production_20260829.sh results/server-20260829/P154-norm4-production
+
+# N85/N170 used the same frozen binary and exact same registered arguments on
+# a second 16-vCPU Huawei host; see source_85_170.stdout.txt and environment.txt.
 
 # Frozen scalar q=2/Jordan score and correlated secondary rows.
 python3 scripts/score_norm4_production.py \
