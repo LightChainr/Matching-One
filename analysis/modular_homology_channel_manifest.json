@@ -1,0 +1,30 @@
+{
+  "candidate_spins": [0, 4, 8, 12, 16, 20, 24],
+  "elliptic_stabilizers": {
+    "hexagonal_rho": 6,
+    "square_tau_i": 4
+  },
+  "representative_subgroups": [
+    {"id": "rank0", "basis": []},
+    {"id": "rank1_axis0", "basis": [[1, 0]]},
+    {"id": "rank1_axis1", "basis": [[0, 1]]},
+    {"id": "rank1_spiral", "basis": [[1, 1]]},
+    {"id": "rank1_oblique", "basis": [[2, 1]]},
+    {"id": "rank2_standard", "basis": [[1, 0], [0, 1]]},
+    {"id": "rank2_index2", "basis": [[2, 0], [0, 1]]}
+  ],
+  "scientific_boundary": [
+    "This proves a topological channel-label statement under SL(2,Z) basis change, not an FK-to-CFT matrix element.",
+    "The elliptic zero additionally assumes a homogeneous first-order spin response; logarithmic or mixed-spin terms must be typed separately.",
+    "Primitive winding characters, direction channels, and the repository `both` channel are vector-valued or basis-dependent and do not inherit the scalar zero.",
+    "No overlap or selection rule between thermal Q4 and V_(2,2) is inferred, and Issue 114 remains open."
+  ],
+  "sl2_transformations": [
+    {"id": "identity", "matrix": [[1, 0], [0, 1]]},
+    {"id": "S", "matrix": [[0, -1], [1, 0]]},
+    {"id": "T", "matrix": [[1, 1], [0, 1]]},
+    {"id": "T_inverse", "matrix": [[1, -1], [0, 1]]},
+    {"id": "lower_shear", "matrix": [[1, 0], [1, 1]]},
+    {"id": "lower_shear_inverse", "matrix": [[1, 0], [-1, 1]]}
+  ]
+}
