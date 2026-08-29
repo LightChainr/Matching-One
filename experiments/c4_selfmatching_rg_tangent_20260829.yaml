@@ -1,6 +1,6 @@
 version: 1
 created: 2026-08-29
-status: rank_gate_frozen_before_disjoint_10m_confirmation
+status: N170_scalar_orthogonal_holdout_frozen
 issue: 155
 purpose: >-
   Measure the exact p=1/2 Bernoulli score responses of all five wrapping
@@ -37,8 +37,18 @@ frozen_confirmation:
 
 future_N170:
   geometry: {a: 13, b: 1, N: 170}
-  status: gated
-  run_only_if: a frozen N130 wrapping pair passes the rank gate
+  status: promoted_as_scalar_orthogonal_holdout_after_matrix_rank_failure
+  samples: 10000000
+  batches: 100
+  seed: 2026105501
+  counter_interval: [1000000000, 1010000000]
+  primary_channel: cross
+  source_rule: c_130 = d_lambda_R_cross(130) / d_t_R_cross(130)
+  primary_residual: d_lambda_R_cross(170) - c_130*d_t_R_cross(170)
+  source_uncertainty: recompute_c_130_inside_each_aligned_delete_one
+  thermal_control:
+    law: d_t R_cross scales as N^(3/8)
+    fixed_ratio: (170/130)^(3/8)
 
 orientation_H4_rescue:
   frozen_after: N130_same_geometry_wrapping_rank_gate_failed
@@ -59,6 +69,10 @@ orientation_H4_rescue:
   N170_replication_if_pass:
     first_representation: [13, 1]
     second_representation: [11, 7]
+  observed_result:
+    cross_determinant_z: -0.098270749
+    cross_row_angular_condition_number: 69.93566
+    any_channel_passed: false
 
 claim_boundary: >-
   Failure of the wrapping rank gate says that this topological readout family
