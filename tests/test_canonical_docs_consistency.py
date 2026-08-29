@@ -7,18 +7,31 @@ from pathlib import Path
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
+README = ROOT / "README.md"
 STATUS = ROOT / "docs" / "STATUS.md"
 ROADMAP = ROOT / "docs" / "ROADMAP.md"
+RESEARCH_MAP = ROOT / "docs" / "RESEARCH-MAP.md"
+NEXT_TARGETS = ROOT / "docs" / "NEXT-TARGETS.md"
 SYNTHESIS = ROOT / "notes" / "SYNTHESIS-20260828.md"
 
 
 class CanonicalDocsConsistencyTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
+        cls.readme = README.read_text(encoding="utf-8")
         cls.status = STATUS.read_text(encoding="utf-8")
         cls.roadmap = ROADMAP.read_text(encoding="utf-8")
+        cls.research_map = RESEARCH_MAP.read_text(encoding="utf-8")
+        cls.next_targets = NEXT_TARGETS.read_text(encoding="utf-8")
         cls.synthesis = SYNTHESIS.read_text(encoding="utf-8")
-        cls.documents = {"STATUS": cls.status, "ROADMAP": cls.roadmap, "SYNTHESIS": cls.synthesis}
+        cls.documents = {
+            "README": cls.readme,
+            "STATUS": cls.status,
+            "ROADMAP": cls.roadmap,
+            "RESEARCH_MAP": cls.research_map,
+            "NEXT_TARGETS": cls.next_targets,
+            "SYNTHESIS": cls.synthesis,
+        }
 
     def test_issue43_channel_correction_remains_in_claim_ledger(self) -> None:
         self.assertIn("DeltaS_cross = -DeltaS_either", self.status)
@@ -89,6 +102,37 @@ class CanonicalDocsConsistencyTest(unittest.TestCase):
         for relative in required:
             with self.subTest(path=relative):
                 self.assertTrue((ROOT / relative).is_file(), relative)
+
+    def test_five_scientific_coordinates_are_visible(self) -> None:
+        combined = (self.readme + self.research_map + self.next_targets).lower()
+        for coordinate in ("state", "source", "observer", "geometry", "acquisition"):
+            with self.subTest(coordinate=coordinate):
+                self.assertIn(coordinate, combined)
+
+    def test_frontier_lifecycle_is_distinct_from_main(self) -> None:
+        for lifecycle in ("main_integrated", "open_pr", "branch_only", "hypothesis"):
+            with self.subTest(lifecycle=lifecycle):
+                self.assertIn(lifecycle, self.status)
+                self.assertIn(lifecycle, self.next_targets)
+
+    def test_two_activation_and_observer_sector_tension_are_visible(self) -> None:
+        combined = self.readme + self.status + self.roadmap + self.next_targets
+        self.assertIn("K1=K_minus", combined.replace(" ", ""))
+        self.assertIn("K2=K_plus", combined.replace(" ", ""))
+        self.assertIn("71/21/8", combined.replace(" ", ""))
+        self.assertIn("charged", combined.lower())
+        self.assertIn("global", combined.lower())
+        self.assertIn("ten", combined.lower())
+        self.assertIn("K1", combined)
+        self.assertIn("N=265/325/425", combined)
+
+    def test_new_attention_order_is_decision_output_driven(self) -> None:
+        headings = [line for line in self.roadmap.splitlines() if line.startswith("### ")]
+        numbered = [line for line in headings if line[4:5].isdigit()]
+        self.assertGreaterEqual(len(numbered), 7)
+        self.assertIn("K1/K2", self.roadmap)
+        self.assertIn("connectivity/defect radical", self.roadmap)
+        self.assertIn("Next decision output", self.roadmap)
 
 
 if __name__ == "__main__":

@@ -1,4 +1,4 @@
-version: 5
+version: 6
 updated: 2026-08-29
 purpose: >
   Lightweight navigation/provenance index. Registry conflicts never block
@@ -13,6 +13,7 @@ integration_policy:
 
 canonical_documents:
   - {path: README.md, status: canonical_current, role: external_overview}
+  - {path: docs/NEXT-TARGETS.md, status: canonical_current, role: decision_experiment_board}
   - {path: docs/STATUS.md, status: canonical_current, role: claim_ledger}
   - {path: docs/RESEARCH-MAP.md, status: canonical_current, role: research_navigation}
   - {path: notes/SYNTHESIS-20260828.md, status: canonical_current, role: execution_synthesis}
@@ -76,15 +77,30 @@ channel_semantics:
   fullcurve_norm5_entrypoint: scripts/score_intrinsic_functional_cocycle_typed.py
   required_fields: [topology_channel, combination, probability_coordinate, orientation_order, normalization, quantity]
 
+registered_reanalyses:
+  - id: TWO_ACTIVATION_H4
+    status: scored_existing_data_reanalysis
+    manifest: analysis/two_activation_h4_manifest.yaml
+    entrypoint: scripts/analyze_two_activation_h4.py
+    outputs: [results/two-activation-h4/latest.json, results/two-activation-h4/latest.md]
+    schema: matching-one.two-activation-h4.v1
+    role: Kminus_Kplus_first_wrap_second_completion_H4_decomposition
+    result_summary: K1_larger_at_all_ten_sizes_K2_reinforces_seven_and_has_unresolved_cancelling_point_estimates_at_three
+
 frontier_open_as_of_2026_08_29:
-  - {pr: 246, state: frontier, classification: parallel_exact_protocol, role: triangular_energy_logpair_statistics}
-  - {pr: 245, state: frontier, classification: parallel_exact_protocol, role: Boolean_noise_semigroup_oracle}
-  - {pr: 230, state: frontier, classification: analysis_template, role: multi_u_response}
-  - {pr: 229, state: frontier, classification: exact_side_result, role: matching_defect_polynomial}
-  - {pr: 228, state: frontier, classification: exact_side_result, role: finite_Galois_certificates}
-  - {pr: 197, state: frontier, classification: negative_result_extract, role: local_matching_zeros}
-  - {pr: 196, state: frontier, classification: exact_side_result, role: Euler_Betti_identity}
-  - {pr: 84, state: frontier, classification: exact_side_result, role: axis_L5_Galois_frontier}
+  - {pr: 84, state: open, draft: false, branch: research/axis-l5-exact-20260828, commit: 6a049b764658bc15956ae83f704c85e1d36ff660, classification: exact_side_result, role: axis_L5_Galois_frontier, representative_path: results/exact-axis-l5-frontier/REPORT.md}
+  - {pr: 196, state: open, draft: false, branch: research/configuration-betti-identity-111, commit: 4ebfc91753e9569983b0a40b8d3eeefdeac0b172, classification: exact_side_result, role: Euler_Betti_identity, representative_path: results/configuration_betti_identity.md}
+  - {pr: 197, state: open, draft: false, branch: research/local-matching-zeros-113, commit: bf31f18429f2ef929fdc385e4efe0a2e4a726e42, classification: negative_result_extract, role: local_matching_zeros, representative_path: results/local_matching_zeros.md}
+  - {pr: 228, state: open, draft: false, branch: research/axis-matching-galois-104, commit: 9ab422978e380d96516760014582ad7bf17a02b5, classification: exact_side_result, role: finite_Galois_certificates, representative_path: results/axis_matching_galois.json}
+  - {pr: 229, state: open, draft: false, branch: research/matching-defect-polynomial-144, commit: 83a14f3d74295fc9218fdd5be4905980dd40742e, classification: exact_side_result, role: matching_defect_polynomial, representative_path: results/matching_defect_polynomial.md}
+  - {pr: 230, state: open, draft: false, branch: research/multi-u-thermal-response-119, commit: 9858eac23e3c8b568c8661684f22d5ea02704fc8, classification: analysis_template, role: multi_u_response, representative_path: predictions/multi_u_thermal_response_20260829.yaml}
+  - {pr: 245, state: open, draft: false, branch: analysis/p227-exact-noise-semigroup-20260829, commit: c7eddeb53879182287de4c555fad4312249f5ee9, classification: exact_protocol, role: Boolean_noise_semigroup_oracle, representative_path: results/exact-boolean-noise-semigroup/oracle.json}
+  - {pr: 246, state: open, draft: false, branch: research/p234-energy-logpair-sufficient-statistics-20260829, commit: 7f9dcd88eb14cf89dce499902953ade1c57abcb7, classification: production_result, role: triangular_energy_logpair_cross_cutoff_shear, representative_path: results/server-20260829/P234-phaseB/cross_cutoff_shear_score.json}
+  - {pr: 247, state: open, draft: false, branch: analysis/p225-norm5-multiradius-job-20260829, commit: 9d35fa65de5bd4c81321751024dc8007dc329a87, classification: production_result, role: norm5_two_cutoff_pivotal_score, representative_path: results/server-20260829/P225-norm5-multiradius/REPORT.md}
+  - {pr: 267, state: open, draft: true, branch: research/navigation-priority-refresh-20260829, commit: 69221b3f26b414274847127f0308a106a41ac05e, classification: overview_reanalysis, role: scientific_frontier_atlas_and_two_activation_reanalysis, representative_path: README.md}
+  - {pr: 273, state: open, draft: false, branch: results/p154-norm4-production-reveal-20260829, commit: 8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc, classification: production_reveal, role: norm4_q2_versus_Jordan_score, representative_path: results/server-20260829/P154-norm4-production/analysis/scalar_score.json}
+  - {pr: 277, state: open, draft: false, branch: analysis/p154-even-rank2-transfer-20260829, commit: 039e708bdb79c0fda86cb868ebaca9961c2ed1e9, classification: post_reveal_analysis, role: Jordan_plus_even_mode_transfer, representative_path: predictions/norm4_even_rank2_next_generation_20260829.json}
+  - {pr: 281, state: open, draft: false, branch: analysis/issue-112-pc-confidence-preregistration, commit: 3cb936289813308874f407ab8a131c46b497e5b2, classification: preregistration, role: pc_confidence_ledger_audit, representative_path: analysis/pc_confidence_preregistration_manifest.json}
 
 canonical_integration_history:
   - {pr: 190, role: prospective_norm5_reveal}

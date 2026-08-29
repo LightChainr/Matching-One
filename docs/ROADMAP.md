@@ -1,152 +1,154 @@
-# Roadmap
+# Roadmap: Default Attention, Not Permission
 
-This roadmap optimizes for **information gained per unit effort**. It is not a permission system. Existing-data analysis, exact work, pilots and exploratory production may proceed whenever useful.
+This roadmap ranks expected mechanism reduction per unit effort. It is **not a permission system**: exact work, reanalysis, pilots, production and independent theory may run in parallel. Priority is an attention signal, not a lock, veto, acceptance decision or demand to consolidate branches.
 
-The only hard constraints are chronology, observable-semantic compatibility for claim-bearing scores, and non-duplication of correlated evidence.
+The only evidence constraints are frozen chronology, observable-semantic compatibility for claim-bearing comparisons, and non-duplication of correlated evidence.
 
-For a fast lifecycle view—what is already implemented, what is actually missing, and the cheapest next information—see `docs/NEXT-TARGETS.md`.
+For the scientific coordinates use `docs/RESEARCH-MAP.md`; for exact claim and branch status use `docs/STATUS.md`; for an execution-ready decision board use `docs/NEXT-TARGETS.md`.
 
 ## Default attention now
 
-The useful question is not “which issue number is P0?” but “which next result would most change the live model space?”
+### 1. Explain the geometry dependence left by the completed `K1/K2` split
 
-### 1. Resolve the lower spin-4 representation/selection question — #257/#262/#250/#264
-
-The continuum preflight is already complete:
+Digital Alexander gives the exact finite state and the two-activation theorem identifies
 
 ```text
-V_(2,+/-2): x=17/4, |spin|=4, four legs
-Q4 epsilon:  x=21/4, |spin|=4
+K1 = K_minus: first nontrivial ambient direction
+K2 = K_plus:  completion of rank two.
 ```
 
-and their `Q` velocities are distinct. What is missing is the physical `Q=1` Potts projector/multiplicity and the actual lattice overlap.
+The existing curve is exactly `-1+E[H_K1]+E[H_K2]`, but that marginal mixture discards the pairing. The Draft reanalysis has now recovered the split at all ten archived sizes with aligned delete-one covariance.
 
-**Best next information:** an exact zero/nonzero global matching matrix element, projector/multiplicity result, or controlled charged four-leg insertion. This is higher value than another free radial exponent fit because it can remove or force accommodation of the lower-dimensional competitor.
+The point estimates are first-activation dominated at every size. `K2` reinforces the H4 root shift at seven sizes and reverses sign at N=265/325/425, producing about 9.5%, 25.6% and 19.0% cancellation respectively; none of those three negative `K2` rows is individually resolved at `|z|>=2`.
 
-### 2. Calibrate the logarithmic diagnostics on the known triangular pair — #246/#234
+**Next decision output:** classify the `K2` response by geometry/sector character using the existing per-size covariance, then freeze one genuinely held-out geometry only if the archive cannot distinguish phase/Smith/context explanations. Do not fit a free size exponent or count the shared N65/85/130/170 stream four times.
 
-The exact protocol, tiny oracle and production implementation already exist. The remaining value is a small scaling calculation on a logarithmic pair whose lattice definition comes from outside the square-site interpretation.
+**Why first:** the result connects exact topology to global H4 and has already exposed the most concrete unresolved sign/sector question in the existing archive.
 
-**Best next information:** show whether the same rank/Jordan diagnostics that are being proposed for square-site data recover the known energy/log pair. A failure here should improve the diagnostic before it is used to name the unknown target sector.
+### 2. Acquire the complex C3 response on the `rho`/Hecke-child geometries
 
-### 3. Same-N norm-5 coalescence — #205
-
-The exact A/B/C geometry and frozen H4/H8/H12 residuals are ready. At fixed N the new C node changes Smith class while the primary H4 interpolation removes radial exponent, parent amplitude and `p_c`.
+The ordinary modular ring gives three zero-parameter complex child characters:
 
 ```text
-N325: 5 M_C - 11 M_A + 6 M_B = 0
-N425: 20 M_C + 13 M_A - 33 M_B = 0
+E4 / weight-4 KdV:      (1,zeta,zeta^2)
+E6 / scalar character:  (1,1,1)
+E4^2 / weight 8:        (1,zeta^2,zeta)
 ```
 
-**Best next information:** a variance-only pilot followed by the smallest fresh common-field target that can decide whether H4 interpolation survives the arithmetic-class change.
+Real-only observations alias the two conjugate characters. This route must retain the imaginary channel in one transported complex frame.
 
-### 4. Implement the minimal-state analysis on existing blocks — #249/#180/#253/#255
+**Next decision output:** a covariance-aware three-point DFT for one typed complex response, scored against pure r=0/1/2 support and mixtures. This separates a scalar-Q4 zero/constant row, a weight-4 vacuum/KdV response and the weight-8 conjugate character more directly than a free exponent fit.
 
-The repository already has low-rank matrix/semigroup and structured Krawtchouk assets, but the context-Hankel/minimal-realization program itself is not yet implemented on `main`.
+Keep this distinct from the older primitive C3/Pell result: that experiment observed a real primitive character and rejected its simple scalar E4 bridge.
 
-**Best next information:** covariance-aware held-out rank/composition on archived norm-2, norm-5, N290 and compatible local/score-mode data. This is no-new-production work and can tell us whether several current descriptions are genuinely distinct mechanisms or different coordinates of one small predictive block.
+### 3. Form a Gaussian/annulus common-context rectangle
 
-### 5. Turn the modular-scalar theorem into one typed square-site score
+The current low-state evidence is deliberately mixed:
 
-The new exact modular channel classification says that rank/either/cross are modular scalars, while direction-specific channels are basis-dependent. This opens a cleaner scalar elliptic-spin route.
+- N145->290 rejects one scalar curve multiplier;
+- Norm-4 rejects analytic q2 and leaves scalar/common-generator Jordan with tension;
+- the simple annulus odd-shell scalar law fails;
+- a two-state annulus recurrence passes held-out N365 with joint `p=.965`;
+- an exact path oracle says intermediate filtration, not a final CRT endpoint, can carry order information.
 
-Keep this separate from the older primitive C3/Pell experiment: that block found a real primitive character but **failed** the simple ordinary-H4 zero bridge.
+**Next decision output:** reuse a common source and a common readout basis over at least two Gaussian-cover and two annulus contexts. Compare one shared generator against a context/morphism-enriched realization by covariance-aware held-out prediction, not by naming latent eigenvectors in advance.
 
-**Best next information:** one typed `cross` or `either` square-site observable at a new modulus with a parameter-free Q4/Jordan-versus-competitor shape prediction.
+This absorbs the old minimal-realization, same-N coalescence and composition questions into a stronger rectangular design. Coalescence remains useful when it supplies a new same-N Smith class; it is no longer the only way to probe state dimension.
 
-### 6. Re-rank norm-4 before buying the full production — #154
+### 4. Turn the triangular log-pair result into a gauge-invariant cross-microscopic control
 
-The N260/N340 variance pilot and scorer are ready. Under the current source/target plan the expected q2/Jordan separation is useful, but the production is expensive and source covariance dominates.
+Open PR #246 now contains a completed 12-point cross-cutoff production result: the frozen model passes and the top-top logarithmic cutoff shear is resolved. The fitted `kappa_proxy` is in a connection-normalized gauge; consistency with `8/3` is not an exponent theorem.
 
-**Best next information before compute:** rerun the already-existing information/CPU optimizer with today’s enlarged model set. Norm-4 is ready to run; readiness alone does not make it the best next purchase.
+**Next decision output:** measure one top field with two two-point-normalized macroscopic spin insertions, derive the invariant `CL` and shear gate, then transport the same typed statistic to square-bond and square-site controls. On the registered C3 children, pair the complex square/matching H4 row with the triangular E6 center score to form the two-modulus weight-12 double ratio.
 
-## Parallel theory / exact lines
+This tests the diagnostic and its normalization before using logarithmic language to identify the unknown square-site sector.
 
-These do not need to wait for the default attention order.
+### 5. Calibrate the complete Potts-Q derivative on a boundary or tiny VJS control
 
-### Matching observable -> continuum bridge — #61/#114/#233/#120
-
-There is already substantial structure:
-
-- exact finite matching/complement semantics;
-- exact Russo/pivotal derivative relation;
-- an explicit C4 self-matching microscopic tangent with exact UV involution;
-- FK/Potts homology and thermal-cumulant formulas;
-- transfer/defect formulations proposed as stronger bridges.
-
-The missing step is not another statement that the sectors look even/odd. It is an RG/FK/defect/transfer-matrix map—or a precise obstruction—that predicts a field-selection rule.
-
-### Metric-free cross-microscopic ratios — #118
-
-The dimensionless combinations are already derived. The next information is empirical universality across a second microscopic realization at matched modulus and typed observable semantics.
-
-### Threshold-origin line — #123/#3/#13/#17/#29/#47
-
-Keep this scientifically separate from finite-size operator identification.
-
-Already established bounded results include:
-
-- no exact finite nondegenerate **independent-bond** four-terminal gadget representation of one Bernoulli site in the declared class;
-- no simple persistent bounded-degree factor mechanism in the explored exact matching polynomials;
-- finite-size Galois complexity for several exact polynomials;
-- the historical post-annihilator exponent near 7 is not automatically the next ordinary thermal spin-4 descendant.
-
-Useful next work includes correlated-hyperedge/self-dual symbolic closure or obstruction and an honest post-annihilator correction-spectrum test. Both can run while Q1/Q2 work continues.
-
-## Existing machinery that should be reused
-
-### Acquisition optimizer — #102
-
-This is **already implemented**. It successfully selected norm-5 as the high-information design for the previous H4/H12 model set. Do not list “build the optimizer” as future work.
-
-Update its model/utility table to include:
-
-- representation/projector separation;
-- modulus/shape fingerprints;
-- rank-revealing measurements;
-- positive-control value;
-- independence from already-used raw blocks.
-
-### Sequential stopping — #126
-
-Calibration already showed that the old H4-vs-H12 decision could often finish far below a fixed 100-batch budget, whereas H4-vs-zero was intrinsically much weaker. Future experiment design should therefore optimize **question + target + stopping rule**, not target geometry alone.
-
-## Completed high-information blocks
-
-- **#50 N145->290 full curve:** complete. Corrected slope/root structure survives; a single three-level multiplier shape does not.
-- **#57 norm-5 N325/425:** complete. Frozen H4 beats H12/H8; child block alone remains compatible with zero.
-- **#212 independent matching-odd synthesis:** complete. Global zero strongly disfavored; fixed H4 compatible.
-- **#225 current multiradius prototype:** complete negative decision for the simple one-coordinate shell law; do not reinterpret this as a basis-invariant rank-2 falsification.
-- **#248 deck-character selection rule:** exact. Global deck-invariant observables have zero first-order response to nontrivial deck characters; use charged/marked/twisted or nonlinear channels instead.
-- **#260/#264 continuum spin-4 preflights:** complete as continuum arithmetic/velocity oracles; lattice field overlap remains the next question.
-- **primitive square-bond sign/phase program:** complete for repeated norm-2 sign transfer; the next value is KdV/shape/character structure, not another same-purpose sign generation.
-
-## Low-information repetitions already retired
-
-- For the current local pivotal readout, stop adding replicas to the same N130/N170 rows; change geometry or observable instead.
-- Do not run a third primitive norm-2 generation whose only purpose is another sign flip.
-- Do not substitute another scalar width or free exponent fit for a new shape, modulus or rank discriminator.
-
-## Lifecycle debt to fix without rewriting history
-
-The repository contains status drift between different views. A concrete example is the N145->290 block: current claim documents treat it as completed, while the primary evidence ledger still contains a `PENDING_REVEAL` lifecycle entry.
-
-Do not edit a frozen preregistration simply to make dashboards agree. Regenerate/reconcile the lifecycle view from committed score artifacts and keep historical files immutable.
-
-This is navigation maintenance, not a science gate.
-
-## Decision logic
-
-Choose the next experiment by the ambiguity it can kill and by actual maturity:
+A Q-dependent field derivative must keep three distinct pieces:
 
 ```text
-lower spin-4 allowed or forbidden?       -> projector / charged selection work
-known Jordan diagnostic works at all?    -> triangular positive control
-H4 vs quotient/conjugation ambiguity     -> same-N coalescence #205
-how many predictive states are needed?   -> #249 existing-data realization
-specific Q4/Jordan shape vs alternatives -> typed modular-scalar modulus test
-q2 vs Jordan dyadic composition          -> norm-4 #154 if acquisition ranking supports cost
-why is p_c that microscopic number?      -> correlated-hyperedge / exact threshold-origin line
+measure score + finite confluent projector derivative + explicit operator derivative.
 ```
 
-A failed discriminator is a successful result if it removes a mechanism class. A low-priority task is still allowed to run whenever it becomes cheap or yields a new information axis.
+Boundary correlators additionally require the conformal-prefactor derivative and projection off one amplitude-gauge direction. The boundary CLE tangent supplies an exact inhomogeneous ODE and the gauge-invariant high-branch coefficient `sqrt(3)/pi`. The thermal-Q4 Ward row supplies the independent module gate `4:-6:3`; a primary gives zero.
+
+**Next decision output:** one exact-critical control that reproduces the full typed tangent vector and its anchored shape before any bulk matching Q-velocity is interpreted as a field derivative.
+
+### 6. Reuse the N325 charged engine for Z5 cubic fusion
+
+The ordinary norm-5 global transfer favors H4, while the branch-only N325 deck-charged score ranks H8/H12/H4 approximately `71/21/8`. Neither result should be pooled with the other as one scalar vote.
+
+Z5 charge conservation leaves two primitive nonneutral cubic channels, `113` and `122`; disconnected one- and two-point pieces vanish exactly.
+
+**Next decision output:** measure both channels in both hands and score
+
+```text
+C_A,+ C_B,- - C_A,- C_B,+ = 0
+```
+
+with the complete complex covariance. Also report normalization-free conjugate-paired OPE magnitudes. This decides whether the charged sector has one handed eigenphase or a richer fusion structure.
+
+### 7. Move relative-source theory to the connectivity/defect radical
+
+The scalar relative source is exhausted:
+
+```text
+q in {-1,0,1},  q^3=q,
+Q[q]/(q^3-q) is semisimple,
+HH^2 = 0.
+```
+
+Higher powers of the same source cannot create new response rows or a nontrivial multiplication deformation.
+
+**Next decision output:** construct the smallest connectivity-resolving junction/partition algebra that contains the scalar three-idempotent block, quotient the separable part, and compute its radical, module extensions or defect cohomology. Doubled-space matching exchange, singular projectors and marked/charged insertions are valid enlargement directions.
+
+## Parallel threshold-origin program
+
+Operator identification does not determine the microscopic numerical value of square-site `p_c`. The direct threshold line stays visible and may run beside all seven priorities.
+
+`main` now contains exact tiny open-block semantics, an O(`s^2`) evaluator and a confidence-feasibility gate. Earlier results constrain ordinary independent-bond gadgets, simple persistent finite factors and several Galois-small mechanisms. These are bounded advances, not a closed form or new rigorous bound.
+
+High-risk next directions include correlated-hyperedge/self-dual closures, block-event confidence constructions and symbolic obstructions. Their priority may rise whenever they gain a sharper finite target.
+
+## Existing machinery to reuse
+
+### Acquisition optimizer and stopping
+
+The information-per-CPU optimizer and sequential-stopping calibration already exist. Update their candidate table; do not rebuild them. Current utility should reward:
+
+```text
+mechanism classes removed
+× new observer/source/geometry axis
+× independence from reused random blocks
+× nuisance cancellation and archive reuse
+÷ expected compute under a valid stopping rule.
+```
+
+### Exact and sufficient-statistic infrastructure
+
+Reuse threshold-rank histograms, aligned batch files, full curves, joint moments, Krawtchouk modes, topology/deck types and registered common frames. A new coordinate on an old archive can be decisive while remaining dependent on that archive.
+
+## Completed or superseded blocks that constrain repetition
+
+- **#50 N145->290 full curve:** complete. Center/slope/root correction survives; a single full-curve multiplier does not.
+- **#57 ordinary norm-5 N325/425:** complete. Frozen H4 beats tested H12/H8; child block alone remains compatible with zero.
+- **#212 independent ordinary matching-odd synthesis:** complete. Global zero strongly disfavored; fixed H4 compatible.
+- **#225 simple multiradius shell law:** complete negative decision for that one coordinate, not for all local pivotal or rank-2 mechanisms.
+- **#248 deck-character rule:** exact. Use charged/marked/twisted or nonlinear channels for nontrivial deck information.
+- **#273 Norm-4 reveal:** available in an open PR. Analytic q2 fails; scalar/common-generator Jordan survives with tension. Its scalar and jet rows reuse the same curves.
+- **#246 triangular cutoff shear:** available in an open PR. The frozen cross-cutoff score has run; describe the next step as gauge closure, not initial production.
+- **N365 annulus recurrence:** branch-only held-out confirmation. More N365 samples alone are limited by old `T,D` covariance.
+- **#267 K1/K2 H4 decomposition:** complete on the Draft branch. Ten sizes are scoreable; `K1` dominates all point estimates and the unresolved information is the geometry dependence of `K2`, not whether the decomposition can be computed.
+
+For the present N130/N170 local pivotal readout, **stop adding replicas** to the same two nearly rank-one rows; change source, observer or geometry instead. Do not run a **third primitive norm-2** generation whose only role is another sign flip. Do not replace selection, shape or rank discrimination with another **free exponent** or scalar-width fit.
+
+These are information judgments, not prohibitions. A new observable, semantics or independent geometry can immediately change the ranking.
+
+## Lifecycle maintenance
+
+Frozen predictions and preregistrations remain immutable. Reconcile generated lifecycle views from scored artifacts rather than rewriting history. Every unmerged scientific pointer must carry branch/commit/path and one of `open_pr` or `branch_only`; every main claim must be reproducible from `main_integrated` artifacts.
+
+## Decision rule
+
+Prefer the next observation that forces different **zero, sign, representation, rank, complex character, composition law or function-valued shape**. Slightly different fitted exponents are lower information when a typed algebraic discriminator is available.

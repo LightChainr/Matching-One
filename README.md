@@ -1,120 +1,119 @@
 # Matching One
 
-Matching One is a computational research project on square-lattice site percolation, its matching-lattice identity, and the finite-size/operator structure behind the threshold.
-
-The exact structural anchor is
+Matching One studies square-lattice site percolation through its matching-lattice identity, finite topology, operator sectors and the microscopic origin of the threshold. The exact structural anchor is
 
 \[
 p_c^{\mathrm{site}}(\mathbb Z^2)+p_c^{\mathrm{site}}(\mathrm{NN+NNN})=1.
 \]
 
+The repository is organized to expose the next mechanism-changing observation, not to turn priorities into permissions. Exact work, reanalysis, pilots and independent theory lines may proceed in parallel. A lower priority is not a rejection; no task is locked by the overview.
+
 ## Start here
 
-- [`docs/NEXT-TARGETS.md`](docs/NEXT-TARGETS.md) — fast decision board: what can change the research picture next.
-- [`docs/STATUS.md`](docs/STATUS.md) — authoritative current claim ledger.
-- [`docs/RESEARCH-MAP.md`](docs/RESEARCH-MAP.md) — how the scientific tracks fit together.
-- [`docs/ROADMAP.md`](docs/ROADMAP.md) — default research-attention priorities.
-- [`analysis/research_ledger.yaml`](analysis/research_ledger.yaml) — machine-readable evidence, hypotheses and priorities.
+- [`docs/NEXT-TARGETS.md`](docs/NEXT-TARGETS.md) — seven highest-information moves and their exact decision outputs.
+- [`docs/STATUS.md`](docs/STATUS.md) — authoritative claim ledger, including the boundary between `main` and unmerged frontier work.
+- [`docs/RESEARCH-MAP.md`](docs/RESEARCH-MAP.md) — the state/source/observer/geometry/acquisition atlas.
+- [`docs/ROADMAP.md`](docs/ROADMAP.md) — default attention order and parallel research portfolio.
+- [`analysis/research_ledger.yaml`](analysis/research_ledger.yaml) — machine-readable nodes, sectors, sources, experiments and dependency groups.
 - [`results/evidence-ledger/latest.md`](results/evidence-ledger/latest.md) — primary-only predictive evidence view.
 
-Priorities are advisory. They do not lock tasks, prevent parallel work, require branch consolidation, or imply that a lower-ranked mechanism is rejected.
+## The current scientific picture
 
-## Current empirical picture
+### One exact finite object, two activations
 
-The strongest numerical structure is a matching-odd orientation signal on primitive Gaussian tori. Independent primary blocks strongly disfavor global zero and remain compatible with a leading H4-like transfer
-
-```text
-DeltaM ~ DeltaCos4 * N^(-13/8).
-```
-
-The completed norm-5 N=325/425 discriminator resolves the old angular alias in favor of H4 over the tested H12/H8 alternatives:
+On honest periodic square-cell tori, the integrated digital Alexander theorem gives, configuration by configuration,
 
 ```text
-H4:   chi2 =  0.4163 / 2
-H12:  chi2 = 35.1931 / 2
-H8:   chi2 = 16.0120 / 2
-zero: chi2 =  1.7764 / 2
+r_black + r_white = 2,
+q = r_black - 1 = 1 - r_white.
 ```
 
-The child block alone does **not** reject zero, so the value of this result is transfer/harmonic discrimination rather than a new standalone detection.
-
-The N145 -> N290 full-curve block adds a different fact: the finite-size response cannot be compressed into one scalar multiplier. The corrected center/slope/root structure survives, while a resolved shape direction fails the one-multiplier description.
-
-## The main identification problem
-
-The project should no longer treat “spin 4” as a unique operator label.
-
-Two exact continuum candidates now matter directly:
+Along a uniformly ordered site permutation, the ambient black homology rank is nondecreasing and activates at most twice. With `K1=K_minus` and `K2=K_plus`,
 
 ```text
-V_(2,+/-2):  x=17/4, |spin|=4     four-leg primary candidate
-Q4 epsilon:   x=21/4, |spin|=4     thermal descendant / Jordan candidate
+q_n = -1 + 1{n>=K1} + 1{n>=K2},
+M_N(p) = -1 + E[H_K1(p)] + E[H_K2(p)].
 ```
 
-The Q4 construction is exact at the representation level and has precise modular/Jordan fingerprints, but the lattice overlap is not proved. The lower `x=17/4` field is a serious competitor until its physical `Q=1` representation/multiplicity and global matching overlap are derived.
+Thus the matching curve is exactly an equal mixture of first-wrap and second-direction-completion distributions, not generically one latent threshold. The paired midpoint `C=(K1+K2)/2` and gap `G=K2-K1` retain information discarded by the scalar mixture.
 
-Therefore the highest-information question is increasingly a **selection-rule / representation question**, not another radial exponent fit.
+The completed Draft reanalysis scores all ten archived sizes without new Monte Carlo production or a fitted exponent. `K1` is the larger linearized H4 root-shift component at every size. `K2` reinforces it at N=65,85,130,145,170,185,290 and has an opposite-sign point estimate at N=265,325,425. Those three cancelling `K2` terms are individually below `|z|=2`, so the sign change is a geometry/sector clue rather than a confirmed transition. The full estimates, aligned jackknife covariance and dependency groups are in [`results/two-activation-h4/latest.md`](results/two-activation-h4/latest.md).
 
-## Derivative and local-state problem
+Each activation contributes a strictly positive beta density for `0<p<1`, so `M_N'(p)>0`; together with the endpoint signs this gives one unique, simple physical root. This is a finite-volume theorem, not a claim that the root has a closed form.
 
-Prospective/full-curve analyses support the broad pattern
+### The global ordinary and charged sectors disagree usefully
+
+Independent square-site primary blocks strongly disfavor global zero and remain compatible with an H4-like ordinary, unmarked response. The completed norm-5 ordinary transfer favors H4 over the tested H12/H8 aliases, although the child block alone does not reject zero.
+
+A different, deck-charged N325 observable instead gives a frozen likelihood ordering of approximately
 
 ```text
-P4[S]   ~ N^-1        survives
-P4[D]   ~ N^-13/8     survives
-P4[D']  transfers cleanly
-P4[S']  requires nontrivial finite-size mixing
+H8 / H12 / H4 = 71 / 21 / 8.
 ```
 
-Simple scalar-width and one-coordinate shell descriptions do not close the full state. Rank-2/Jordan remains viable, but ordinary diagonalizable low-rank mixing and cover/topological memory remain live alternatives.
+This is not a discovered spin-8 field: H12 and H4 are not both rejected at a strict 5% gate. It is evidence that the charged and ordinary global observables should not be compressed into one scalar angular amplitude.
 
-The current local pivotal/two-cutoff results should therefore be read as evidence that the chosen scalar coordinate is insufficient, not as a blanket rejection of local or logarithmic mechanisms.
+### “Spin 4” is not a field identity
 
-## Three questions organize the project
+The main continuum candidates remain
 
 ```text
-Q1. Which continuum sector produces the global matching H4 signal?
-Q2. Why does the lattice matching observable select that sector?
-Q3. Can this structure explain or constrain the microscopic value of p_c itself?
+V_(2,+/-2): x=17/4, |spin|=4, four-leg [2] sector
+Q4 epsilon:  x=21/4, |spin|=4, thermal singlet descendant/Jordan candidate
 ```
 
-The first two form the operator/selection program. The third is a distinct threshold-origin program: even a complete CFT operator identification does not automatically determine the nonuniversal microscopic critical probability.
+An unmerged exact global-endpoint calculation finds an ordinary linear selection zero for the four-leg `[2]` carrier under the explicit hypothesis that the matching observable is a regular unlabeled zero-leg generic-Q endpoint. A separate unmerged width-four Q=4 transfer calculation reproduces the singlet-to-`[2,2]` matrix-element zero while showing that charged/twisted traces can still see that block. This narrows the global selection question; it does not prove absence from every trace, singular Q derivative, defect sector or marked observable.
 
-## Highest-value current attention
+### The finite-size state is compact but not scalar
 
-The default order is documented in [`docs/NEXT-TARGETS.md`](docs/NEXT-TARGETS.md). In compact form:
+The N145->290 full-curve result rejects a one-multiplier description through a resolved shape direction. Norm-4 subsequently rejects the frozen analytic q2 scalar and common thermal-jet generator, while the corresponding Jordan laws survive at 5% with visible tension. Post-reveal work suggests “Jordan plus one conjugation-even mode” as an economical next transfer model, not as an identified unique matrix.
 
-1. **Resolve the lower spin-4 competitor and its global selection rule** — representation/projector/multiplicity, charged positive controls, and typed `Q`-parameter fingerprints.
-2. **Infer the smallest predictive state before naming fields** — use existing norm-2/norm-5/N290/local/score-mode data to compare ordinary rank-2, Jordan rank-2, cover-enriched state, or no stable low-rank closure.
-3. **Calibrate the machinery on independent controls** — triangular known logarithmic pair, square-bond/self-matching controls, and tunable exactly-critical anisotropy.
-4. **Buy orthogonal prospective evidence** — same-N coalescence, norm-4 composition, or modulus/shape, chosen by expected model-space reduction per compute.
-5. **Build the matching-observable bridge** — RG tangent, FK/Potts sector derivative, defect/intertwiner or transfer-matrix selection rule.
-6. **Keep a direct threshold-origin line visible** — correlated-hyperedge/self-dual embeddings and exact finite structural work aimed at the value of `p_c` itself.
+In the annulus line, the simplest matching-odd scalar shell law fails, yet a two-state radial recurrence determined from N325/N425 passes a held-out N365 third geometry with joint `p=.965`. The correct update is therefore not “radial structure failed,” but “one scalar coordinate failed while a two-state recurrence survived.”
 
-These activities can run in parallel; the list is a default attention order, not a sequence of approvals.
+### Geometry and acquisition carry different kinds of memory
 
-## Analysis infrastructure
+The exact CRT join says an unmarked final quotient does not remember the order of its factors. An exact path-filtration witness nevertheless shows that intermediate homology ranks can record when rank two first appears. Chronological/morphism memory therefore belongs to an intermediate filtration, dynamic lineage or marked acquisition—not to the final endpoint alone.
 
-Threshold-rank production preserves reusable sufficient statistics rather than only final decimals. The archive supports:
+The triangular-site energy/log-pair control has also moved beyond implementation readiness: an open-PR cross-cutoff production score passes its frozen joint model and resolves a nonzero top-partner cutoff shear. Its `kappa_proxy` is gauge-dependent; a top field with two normalized macroscopic spin insertions is the cheapest proposed gauge-invariant continuation.
 
-- roots, centers, slopes and derivative channels;
-- exact Russo/pivotal checks;
-- Krawtchouk/Hermite and full-curve coordinates;
-- rank-gap and intrinsic-quantile observables;
-- low-rank/minimal-realization and semigroup tests;
-- Gaussian cover/Smith/deck arithmetic;
-- metric-free amplitude ratios;
-- primary-only prequential evidence aggregation.
+## Five coordinates for every research node
 
-Different analyses of the same histogram are coordinates on one raw block, not automatically independent evidence.
+The scientific atlas uses five independent coordinates:
 
-## Working philosophy
+| coordinate | examples | question it prevents us from conflating |
+|---|---|---|
+| **state** | finite topological state, continuum module, low-dimensional dynamics, microscopic threshold structure | What object is evolving or being identified? |
+| **source** | Bernoulli thermal, Potts-Q measure, projector derivative, relative cluster fugacity, deck charge, boundary source | What perturbation creates the response? |
+| **observer** | global unmarked, topology-typed, local pivotal, matching-odd, deck-charged, boundary/cross-microscopic | Which sector is actually being measured? |
+| **geometry** | Gaussian cover, annulus, modulus/Hecke child, boundary cross-ratio, triangular/square controls | What change supplies the discriminator? |
+| **acquisition** | existing-data reuse, exact construction, small pilot, new production | What new cost and independence does the result have? |
 
-The repository should stay permissive about exploration while keeping claims conservative.
+The same exponent or harmonic in two different observer sectors is not automatically the same operator. Several views derived from one histogram are coordinates on one random block, not independent evidence.
 
-Useful exact work, reanalysis, pilots and side programs may proceed whenever they are cheap or open a new information axis. Priority changes are preferred over task locking or premature consolidation.
+## Default attention
 
-The scientific objective is to make live mechanisms predict different things as quickly as possible—not to maximize the number of explanations, and not to prematurely collapse them into one story.
+The current default order is:
+
+1. explain why the completed `K1/K2` decomposition is first-activation dominated while the `K2` point estimate changes from reinforcement to cancellation on three geometries;
+2. measure the complex C3 response across the `rho` geometries to distinguish scalar-Q4 zero, weight-4 KdV and weight-8 conjugate characters;
+3. form a common-source/readout Gaussian/annulus context rectangle to test one generator versus a morphism-enriched state;
+4. turn the triangular log-pair control into a gauge-invariant cross-microscopic H4/E6/top-field statistic;
+5. calibrate the full Potts-Q derivative—measure, confluent projector and explicit field—on a boundary or tiny VJS control;
+6. reuse the N325 charged engine for the two primitive Z5 cubic fusion channels;
+7. move the relative-source theory from its rigid three-sector scalar algebra to a connectivity/defect radical.
+
+These are parallel attention lanes, not approval gates.
+
+## Claim and provenance discipline
+
+The overview uses four lifecycle labels:
+
+- `main_integrated`: present on the current shared `main` line;
+- `open_pr`: inspectable in an open PR but not yet integrated;
+- `branch_only`: inspectable remote branch, neither promoted to `main` nor treated as canonical;
+- `hypothesis`: a proposed mechanism or future discriminator.
+
+Frozen chronology is preserved. Claim-bearing comparisons require identical observable semantics or an exact registered map, and correlated views of one random block are not counted as independent primary evidence. Those are the only evidence constraints; they do not serialize research.
 
 ```bash
 python3 -m unittest discover -s tests -p 'test_*.py' -v

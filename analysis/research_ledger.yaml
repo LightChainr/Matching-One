@@ -1,4 +1,4 @@
-version: 6
+version: 7
 updated: 2026-08-29
 purpose: >
   Compact map of durable evidence and next information axes. This ranks work;
@@ -20,6 +20,654 @@ hard_constraints:
   - preserve_frozen_predictions_and_committed_result_history
   - require_identical_observable_semantics_or_a_registered_exact_map_for_claim_bearing_scores
   - do_not_add_correlated_views_of_one_raw_random_block_as_independent_primary_evidence
+
+frontier_schema:
+  integration_statuses: [main_integrated, open_pr, branch_only, hypothesis]
+  states:
+    - finite_topological_state
+    - continuum_module
+    - low_dimensional_dynamics
+    - microscopic_threshold_structure
+  sources:
+    - bernoulli_thermal
+    - potts_Q_measure
+    - projector_derivative
+    - relative_cluster_fugacity
+    - deck_charge
+    - boundary_source
+  geometries:
+    - gaussian_cover
+    - annulus
+    - moduli_hecke_child
+    - boundary_cross_ratio
+    - triangular_control
+    - square_controls
+    - finite_transfer_cylinder
+  acquisitions: [existing_data_reuse, exact_construction, small_pilot, new_production]
+  information_gain: [very_high, high, medium]
+  compute_cost: [none, low, moderate, high]
+
+observer_sectors:
+  - id: global_unmarked
+    name: global_unmarked_endpoint
+    semantic_boundary: regular_unlabelled_zero_leg_endpoint_only
+  - id: topology_typed
+    name: typed_homology_or_connectivity_sector
+    semantic_boundary: subgroup_and_combination_must_be_declared
+  - id: local_pivotal
+    name: local_or_landing_marked_pivotal
+    semantic_boundary: marked_location_and_radius_are_part_of_the_observable
+  - id: matching_odd
+    name: matching_exchange_odd_readout
+    semantic_boundary: matching_parity_is_not_a_Potts_charge_label
+  - id: deck_charged
+    name: nontrivial_cover_character
+    semantic_boundary: transported_character_basis_and_conjugation_pair_are_part_of_the_observable
+  - id: boundary
+    name: boundary_connectivity_or_crossing
+    semantic_boundary: event_partition_and_cross_ratio_are_part_of_the_observable
+  - id: cross_microscopic
+    name: matched_dimensionless_cross_lattice_statistic
+    semantic_boundary: raw_amplitudes_are_not_universal_without_metric_cancellation
+
+branch_sources:
+  - id: SRC_DIGITAL_ALEXANDER_MAIN
+    integration_status: main_integrated
+    ref: main
+    commit: 2da58552e261724e3862d214072a19d4a629fab9
+    paths:
+      - notes/digital-alexander-duality-proof.md
+      - results/digital-alexander-local-bridge/latest.json
+  - id: SRC_TWO_ACTIVATION_RANK_MIXTURE
+    integration_status: branch_only
+    ref: theory/p28-two-activation-rank-mixture-20260829
+    commit: b8004bc34650c28bda896f3f7d055d3a8b47eacc
+    paths:
+      - notes/two-activation-rank-mixture.md
+      - analysis/two_activation_rank_mixture_exact.json
+  - id: SRC_MATCHING_POLYNOMIAL_MAIN
+    integration_status: main_integrated
+    ref: main
+    commit: 1668bddd9e8b10cbe5c57add79eb61f74861fb4b
+    paths:
+      - results/exact_small_matching_polynomials.md
+      - scripts/exact_matching_polynomial.py
+  - id: SRC_NORM5_GLOBAL_MAIN
+    integration_status: main_integrated
+    ref: main
+    commit: 1668bddd9e8b10cbe5c57add79eb61f74861fb4b
+    paths:
+      - results/server-20260829/P57-norm5-500m/REPORT.md
+      - results/server-20260829/P57-norm5-500m/primary_score.json
+  - id: SRC_GLOBAL_SPIN4_SELECTION
+    integration_status: branch_only
+    ref: analysis/p257-global-singlet-selection-20260829
+    commit: 932064943255b8d8506f200612ab0f298c9b7092
+    paths:
+      - predictions/p257_global_matching_spin4_selection_20260829.json
+      - scripts/global_matching_spin4_selection.py
+  - id: SRC_SMALL_WIDTH_SPECTROSCOPY
+    integration_status: branch_only
+    ref: analysis/p120-operator-spectroscopy-20260829
+    commit: 9cf2373cc391d4254e6ec29807dcce035bfb8338
+    paths:
+      - notes/p120-small-width-operator-spectroscopy.md
+      - results/exact-small-width-operator-spectroscopy/latest.json
+  - id: SRC_NORM4_REVEAL_PR273
+    integration_status: open_pr
+    pr: 273
+    ref: results/p154-norm4-production-reveal-20260829
+    commit: 8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc
+    paths:
+      - results/server-20260829/P154-norm4-production/REPORT.md
+      - results/server-20260829/P154-norm4-production/analysis/scalar_score.json
+  - id: SRC_NORM4_EVEN_MODE_PR277
+    integration_status: open_pr
+    pr: 277
+    ref: analysis/p154-even-rank2-transfer-20260829
+    commit: 039e708bdb79c0fda86cb868ebaca9961c2ed1e9
+    paths:
+      - notes/norm4-even-rank2-transfer.md
+      - predictions/norm4_even_rank2_next_generation_20260829.json
+  - id: SRC_NORM5_MULTIRADIUS_PR247
+    integration_status: open_pr
+    pr: 247
+    ref: analysis/p225-norm5-multiradius-job-20260829
+    commit: 9d35fa65de5bd4c81321751024dc8007dc329a87
+    paths:
+      - results/server-20260829/P225-norm5-multiradius/REPORT.md
+      - results/server-20260829/P225-norm5-multiradius/analysis.json
+  - id: SRC_ANNULUS_RECURRENCE
+    integration_status: branch_only
+    ref: analysis/p253-annulus-recurrence-20260829
+    commit: 8e91c9057148b81ebf00461f154449deeafac1a0
+    paths:
+      - results/server-20260829/P253-n365-annulus/README.md
+      - results/server-20260829/P253-n365-annulus/n365_heldout_score.json
+  - id: SRC_P200_ENDPOINT_EARLY_STOP
+    integration_status: branch_only
+    ref: analysis/p200-n650-mixed-join-production-20260829
+    commit: 2c9507547e72bc26de75ab7cde23a68e07f1a3db
+    paths:
+      - results/local-20260829/P200-n650-mixed-join-smoke/SCORE.md
+      - results/local-20260829/P200-n650-mixed-join-smoke/score.json
+  - id: SRC_P200_PATH_FILTRATION
+    integration_status: branch_only
+    ref: analysis/p200-path-ordered-filtration-20260829
+    commit: fb82de4dc5670397e3747743b3eb8ce23b3fcb8f
+    paths:
+      - notes/p200-path-ordered-filtration-oracle.md
+      - results/exact-cover-character-oracles/p200_path_filtration.json
+  - id: SRC_CONTEXT_HANKEL
+    integration_status: branch_only
+    ref: theory/p249-context-hankel-exact-20260829
+    commit: 62261af98cc6df1516534dcd4e91937e02353bf4
+    paths:
+      - notes/context-hankel-exact-minimal.md
+      - results/exact-cover-character-oracles/context_hankel_minimal.json
+  - id: SRC_TRIANGULAR_LOGPAIR_PR246
+    integration_status: open_pr
+    pr: 246
+    ref: research/p234-energy-logpair-sufficient-statistics-20260829
+    commit: 7f9dcd88eb14cf89dce499902953ade1c57abcb7
+    paths:
+      - results/server-20260829/P234-phaseB/REPORT.md
+      - results/server-20260829/P234-phaseB/cross_cutoff_shear_score.json
+  - id: SRC_TRIANGULAR_E6
+    integration_status: branch_only
+    ref: theory/p165-triangular-e6-center-score-20260829
+    commit: 63deb20c375101716fdb8569c74577561041e0b4
+    paths:
+      - notes/p165-triangular-e6-center-score.md
+      - predictions/p165_triangular_e6_center_score_20260829.json
+  - id: SRC_NORM5_CHARGED
+    integration_status: branch_only
+    ref: analysis/norm5-chiral-hecke-phase-20260829
+    commit: cc1d43c971918d419154fc2038da22bcb63d8743
+    paths:
+      - results/huawei-20260829/P226-norm5-chiral-fixedp/README.md
+      - results/huawei-20260829/P226-norm5-chiral-fixedp/chiral_phase_score.json
+  - id: SRC_EXACT_FK_Q_SCORE
+    integration_status: branch_only
+    ref: analysis/p258-exact-fk-q-score-20260829
+    commit: eff23fa83307cc76d2c9245b9252e25345d6d1b0
+    paths:
+      - notes/fk-critical-manifold-q-score.md
+      - results/fk-q-score/latest.json
+  - id: SRC_CONFLUENT_PROJECTOR
+    integration_status: branch_only
+    ref: theory/p262-confluent-projector-tomography-20260829
+    commit: d006f9c1c2f19933e5510fe2289ae418f3424be0
+    paths:
+      - notes/p262-confluent-potts-projector-tomography.md
+      - predictions/p262_confluent_potts_projectors_20260829.json
+  - id: SRC_VJS_FIELD_DERIVATIVE
+    integration_status: branch_only
+    ref: analysis/p258-vjs-field-derivative-20260829
+    commit: 1055e221e4e88d39309467efb04cfba24fbfa130
+    paths:
+      - notes/vjs-energy-two-cluster-tiny-tangent.md
+      - results/vjs-collision-tangent/latest.json
+  - id: SRC_RELATIVE_SOURCE_PDE
+    integration_status: branch_only
+    ref: analysis/p54-relative-source-pde-20260829
+    commit: 1027a0b8cce6b703a55808f49c38041084099f74
+    paths:
+      - notes/p54-relative-source-pde.md
+      - results/exact-relative-source-pde/latest.json
+  - id: SRC_RELATIVE_SOURCE_RANK3
+    integration_status: branch_only
+    ref: theory/p252-relative-source-rank3-nogo-20260829
+    commit: 94dd7f9bcd1881fa33836ecabae45e423724ca80
+    paths:
+      - notes/p252-relative-source-rank3-no-go.md
+      - results/exact-relative-source-observer-closure/latest.json
+  - id: SRC_RELATIVE_SOURCE_HH2
+    integration_status: branch_only
+    ref: theory/p233-relative-source-hh2-rigidity-20260829
+    commit: 094ee366e3dfb9e37efb01f3deda8bfaaa35b6ac
+    paths:
+      - notes/p233-relative-source-hochschild-rigidity.md
+      - results/exact-relative-source-hochschild-rigidity/latest.json
+  - id: SRC_BOUNDARY_Q_TANGENT
+    integration_status: branch_only
+    ref: theory/p263-boundary-tangent-ode-20260829
+    commit: 2a15e63b561d8c15625a09e167724bef79e4b0ba
+    paths:
+      - notes/p263-boundary-cle-q-tangent.md
+      - predictions/p263_boundary_tangent_ode_20260829.json
+  - id: SRC_BOUNDARY_Q_LATTICE
+    integration_status: branch_only
+    ref: analysis/p263-boundary-lattice-qscore-20260829
+    commit: fbd017408d0841d022aae425253799f778c38b09
+    paths:
+      - notes/p263-boundary-qscore-phaseD.md
+      - results/local-20260829/P263-boundary-qscore-smoke/score.json
+  - id: SRC_NULL_RESIDUE_WARD
+    integration_status: branch_only
+    ref: theory/p252-null-residue-ward-20260829
+    commit: fa73f5dc8c5790f623431e638aff963748933942
+    paths:
+      - notes/null-field-residue-ward.md
+      - predictions/null_field_residue_ward_20260829.json
+  - id: SRC_MODULAR_C3_CHARACTER
+    integration_status: branch_only
+    ref: theory/p164-modular-ring-character-syzygy-20260829
+    commit: 57b59be7cda7c00b70949db55104151c0adddb3c
+    paths:
+      - notes/p164-modular-ring-character-syzygy.md
+      - predictions/p164_modular_ring_character_syzygy_20260829.json
+  - id: SRC_CROSS_MICROSCOPIC_INVARIANT
+    integration_status: branch_only
+    ref: theory/p118-cross-microscopic-invariants-20260829
+    commit: a6120aa82ae8302efeae0476a144113b585d1f18
+    paths:
+      - notes/p118-cross-microscopic-amplitude-invariants.md
+      - predictions/p118_cross_microscopic_invariants_20260829.json
+  - id: SRC_Z5_CHARGED_FUSION
+    integration_status: branch_only
+    ref: theory/p250-z5-charged-ope-fusion-20260829
+    commit: 0a58508249c563b0758975ef71238e1ea082c001
+    paths:
+      - notes/z5-charged-ope-fusion.md
+      - predictions/z5_charged_ope_fusion_20260829.json
+
+scientific_nodes:
+  - id: SN_DIGITAL_ALEXANDER_RANK_BALANCE
+    title: digital_Alexander_ambient_rank_balance
+    integration_status: main_integrated
+    state: finite_topological_state
+    sources: [bernoulli_thermal]
+    observer_sectors: [topology_typed]
+    geometries: [square_controls]
+    acquisition: [exact_construction]
+    source_refs: [SRC_DIGITAL_ALEXANDER_MAIN]
+    known_result: configurationwise_rblack_plus_rwhite_equals_2_and_matching_charge_equals_rblack_minus_1
+    boundary: proof_is_for_honest_periodic_square_cell_tori_and_declared_tiny_degenerate_controls_use_the_finite_oracle
+    supports: [ambient_homology_as_the_exact_finite_matching_state]
+    tensions: [wrapping_sign_as_an_untyped_scalar_only]
+    excludes_only: [independent_black_and_white_ambient_rank_variables_in_the_declared_scope]
+    next_discriminator: retain_the_ordered_rank_activation_pair_in_archived_permutations
+    information_gain: very_high
+    compute_cost: none
+    decision_experiments: [DX_TWO_ACTIVATION_H4]
+  - id: SN_TWO_ACTIVATION_THEOREM
+    title: digital_Alexander_two_activation_matching_curve
+    integration_status: branch_only
+    state: finite_topological_state
+    sources: [bernoulli_thermal]
+    observer_sectors: [topology_typed, global_unmarked]
+    geometries: [square_controls]
+    acquisition: [exact_construction]
+    source_refs: [SRC_DIGITAL_ALEXANDER_MAIN, SRC_TWO_ACTIVATION_RANK_MIXTURE, SRC_MATCHING_POLYNOMIAL_MAIN]
+    known_result: K1_equals_Kminus_K2_equals_Kplus_M_equals_minus1_plus_F1_plus_F2_and_positive_beta_density_gives_a_unique_simple_physical_root
+    boundary: the_two_activation_identity_is_exact_finite_volume_but_makes_no_scaling_or_single_field_claim
+    supports: [two_activation_finite_state]
+    tensions: [single_latent_threshold_compression]
+    excludes_only: [generic_one_threshold_representation]
+    next_discriminator: decompose_orientation_H4_between_first_wrap_and_second_direction_completion
+    information_gain: very_high
+    compute_cost: none
+    decision_experiments: [DX_TWO_ACTIVATION_H4]
+  - id: SN_GLOBAL_FOURLEG_SELECTION_ZERO
+    title: regular_global_endpoint_fourleg_selection_zero
+    integration_status: branch_only
+    state: continuum_module
+    sources: [projector_derivative]
+    observer_sectors: [global_unmarked]
+    geometries: [finite_transfer_cylinder]
+    acquisition: [exact_construction]
+    source_refs: [SRC_GLOBAL_SPIN4_SELECTION, SRC_SMALL_WIDTH_SPECTROSCOPY]
+    known_result: exact_unlabelled_pair_projector_and_width4_transfer_both_give_a_singlet_to_fourleg_matrix_element_zero
+    boundary: assumes_a_regular_unlabelled_zero_leg_generic_Q_endpoint_and_does_not_cover_charged_twisted_defect_or_singular_Q_derivative_traces
+    supports: [thermal_singlet_global_carrier]
+    tensions: [fourleg_x17_over_4_as_ordinary_global_linear_carrier]
+    excludes_only: [regular_linear_overlap_of_the_declared_global_endpoint_with_the_fourleg_sector]
+    next_discriminator: one_Q4_transposition_seam_or_equivalent_charged_trace_control
+    information_gain: high
+    compute_cost: low
+    decision_experiments: [DX_RHO_C3_SECTOR, DX_Q_TANGENT_INTERFACE]
+  - id: SN_NORM4_EVEN_TRANSFER
+    title: norm4_scalar_q2_rejection_and_Jordan_boundary_survival
+    integration_status: open_pr
+    state: low_dimensional_dynamics
+    sources: [bernoulli_thermal, deck_charge]
+    observer_sectors: [topology_typed]
+    geometries: [gaussian_cover]
+    acquisition: [existing_data_reuse, new_production]
+    source_refs: [SRC_NORM4_REVEAL_PR273, SRC_NORM4_EVEN_MODE_PR277]
+    known_result: frozen_scalar_q2_and_common_generator_scores_fail_while_Jordan_scores_remain_borderline_and_a_post_reveal_even_mode_closes_the_visible_residual
+    boundary: the_extra_even_mode_is_post_reveal_and_is_not_independent_confirmation_or_a_unique_transfer_matrix
+    supports: [Jordan_plus_one_even_mode_as_economical_transfer_state]
+    tensions: [pure_scalar_q2, one_common_generator]
+    excludes_only: [the_frozen_scalar_q2_and_common_generator_parameterizations]
+    next_discriminator: heldout_generation4_prediction_from_the_frozen_rankone_residual
+    information_gain: high
+    compute_cost: high
+    decision_experiments: [DX_MIXED_CONTEXT_RECTANGLE]
+  - id: SN_ANNULUS_TWO_STATE_RECURRENCE
+    title: scalar_odd_shell_failure_but_two_state_radial_recurrence_survival
+    integration_status: branch_only
+    state: low_dimensional_dynamics
+    sources: [bernoulli_thermal]
+    observer_sectors: [local_pivotal, matching_odd]
+    geometries: [annulus, gaussian_cover]
+    acquisition: [new_production, existing_data_reuse]
+    source_refs: [SRC_NORM5_MULTIRADIUS_PR247, SRC_ANNULUS_RECURRENCE]
+    known_result: simple_matching_odd_scalar_shell_law_fails_but_a_two_state_recurrence_frozen_on_N325_N425_passes_the_heldout_N365_geometry_with_joint_p_about_0p965
+    boundary: the_heldout_readout_confirms_a_two_state_recurrence_but_does_not_distinguish_Jordan_from_two_distinct_roots
+    supports: [shared_two_state_radial_dynamics]
+    tensions: [one_scalar_shell_coordinate]
+    excludes_only: [the_declared_simple_matching_odd_scalar_shell_law]
+    next_discriminator: a_context_rectangle_or_second_independent_readout_not_more_N365_replicas
+    information_gain: high
+    compute_cost: moderate
+    decision_experiments: [DX_MIXED_CONTEXT_RECTANGLE]
+  - id: SN_PATH_FILTRATION_MEMORY
+    title: endpoint_forgets_factor_order_but_filtration_retains_activation_time
+    integration_status: branch_only
+    state: finite_topological_state
+    sources: [deck_charge]
+    observer_sectors: [topology_typed]
+    geometries: [gaussian_cover]
+    acquisition: [exact_construction, small_pilot]
+    source_refs: [SRC_P200_ENDPOINT_EARLY_STOP, SRC_P200_PATH_FILTRATION, SRC_CONTEXT_HANKEL]
+    known_result: the_unmarked_final_CRT_endpoint_has_no_factor_order_memory_while_intermediate_homology_filtration_has_an_exact_order_sensitive_activation_mark
+    boundary: chronological_memory_requires_intermediate_h0_h2_h5_h25_or_dynamic_lineage_and_cannot_be_inferred_from_the_final_unmarked_graph
+    supports: [morphism_enriched_or_filtration_state]
+    tensions: [endpoint_only_path_memory]
+    excludes_only: [chronological_claims_from_the_unmarked_final_join]
+    next_discriminator: common_source_and_readout_Gaussian_annulus_context_rectangle
+    information_gain: very_high
+    compute_cost: low
+    decision_experiments: [DX_MIXED_CONTEXT_RECTANGLE]
+  - id: SN_TRIANGULAR_LOGPAIR_CONTROL
+    title: triangular_energy_logpair_cross_cutoff_positive_control
+    integration_status: open_pr
+    state: continuum_module
+    sources: [bernoulli_thermal]
+    observer_sectors: [local_pivotal, cross_microscopic]
+    geometries: [triangular_control]
+    acquisition: [new_production, existing_data_reuse]
+    source_refs: [SRC_TRIANGULAR_LOGPAIR_PR246, SRC_TRIANGULAR_E6]
+    known_result: frozen_cross_cutoff_model_passes_and_resolves_a_nonzero_top_partner_cutoff_shear
+    boundary: the_reported_kappa_proxy_is_gauge_dependent_and_is_not_a_universal_mixing_coefficient
+    supports: [known_logpair_rank2_control]
+    tensions: [fixed_cutoff_monotone_continuum_shortcut]
+    excludes_only: [the_declared_fixed_cutoff_phaseA_fit]
+    next_discriminator: one_top_field_with_two_normalized_macroscopic_spin_insertions_across_triangular_and_square_controls
+    information_gain: high
+    compute_cost: moderate
+    decision_experiments: [DX_CROSS_MICRO_TOP_FIELD]
+  - id: SN_GLOBAL_CHARGED_SECTOR_TENSION
+    title: norm5_charged_H8_H12_H4_order_differs_from_global_unmarked_H4
+    integration_status: branch_only
+    state: continuum_module
+    sources: [bernoulli_thermal, deck_charge]
+    observer_sectors: [global_unmarked, deck_charged]
+    geometries: [gaussian_cover, moduli_hecke_child]
+    acquisition: [new_production, existing_data_reuse]
+    source_refs: [SRC_NORM5_GLOBAL_MAIN, SRC_NORM5_CHARGED]
+    known_result: charged_N325_frozen_weights_are_approximately_H8_H12_H4_equal_71_21_8_while_the_ordinary_global_transfer_favors_H4
+    boundary: charged_H8_is_a_likelihood_leader_not_a_discovered_spin8_field_and_H12_H4_are_not_both_rejected_at_strict_5_percent
+    supports: [observer_sector_dependent_operator_projection]
+    tensions: [one_scalar_angular_amplitude_for_charged_and_unmarked_rows]
+    excludes_only: [automatic_identification_of_equal_harmonic_labels_across_observer_sectors]
+    next_discriminator: complex_C3_rho_response_and_primitive_Z5_cubic_fusion_channels
+    information_gain: very_high
+    compute_cost: low
+    decision_experiments: [DX_RHO_C3_SECTOR, DX_Z5_CHARGED_FUSION]
+  - id: SN_Q_TANGENT_THREE_PART_INTERFACE
+    title: Potts_Q_tangent_measure_projector_and_field_derivative
+    integration_status: branch_only
+    state: continuum_module
+    sources: [potts_Q_measure, projector_derivative]
+    observer_sectors: [topology_typed, boundary]
+    geometries: [square_controls, finite_transfer_cylinder]
+    acquisition: [exact_construction]
+    source_refs: [SRC_EXACT_FK_Q_SCORE, SRC_CONFLUENT_PROJECTOR, SRC_VJS_FIELD_DERIVATIVE]
+    known_result: exact_measure_score_confluent_projector_residues_and_an_explicit_tiny_VJS_field_derivative_are_separate_constructible_terms
+    boundary: the_measure_tangent_alone_is_not_a_logarithmic_field_and_no_term_may_be_silently_substituted_for_another
+    supports: [three_part_Q_derivative_interface]
+    tensions: [single_measure_score_as_complete_field_tangent]
+    excludes_only: [identification_of_the_FK_measure_score_with_the_full_logarithmic_operator]
+    next_discriminator: calibrate_all_three_terms_on_one_boundary_or_tiny_VJS_positive_control
+    information_gain: very_high
+    compute_cost: low
+    decision_experiments: [DX_Q_TANGENT_INTERFACE]
+  - id: SN_RELATIVE_SOURCE_SEMISIMPLE_CLOSURE
+    title: relative_source_three_sector_closure_and_HH2_rigidity
+    integration_status: branch_only
+    state: finite_topological_state
+    sources: [relative_cluster_fugacity]
+    observer_sectors: [topology_typed]
+    geometries: [square_controls]
+    acquisition: [exact_construction]
+    source_refs: [SRC_RELATIVE_SOURCE_PDE, SRC_RELATIVE_SOURCE_RANK3, SRC_RELATIVE_SOURCE_HH2]
+    known_result: q_cubed_equals_q_closes_all_global_relative_Q_derivatives_on_three_rows_and_the_resulting_semisimple_source_algebra_has_HH2_equal_zero
+    boundary: this_is_a_no_go_for_more_scalar_source_derivatives_not_for_connectivity_or_defect_extensions
+    supports: [three_sector_source_compression]
+    tensions: [rank3_LCFT_identification_from_repeated_global_relative_Q_derivatives]
+    excludes_only: [new_independent_columns_from_higher_powers_of_the_same_global_relative_source]
+    next_discriminator: adjoin_connectivity_or_defect_radical_generators
+    information_gain: high
+    compute_cost: none
+    decision_experiments: [DX_CONNECTIVITY_RADICAL]
+  - id: SN_BOUNDARY_Q_TANGENT_CONTROL
+    title: exact_boundary_CLE_Q_tangent_and_lattice_score
+    integration_status: branch_only
+    state: continuum_module
+    sources: [potts_Q_measure, boundary_source]
+    observer_sectors: [boundary]
+    geometries: [boundary_cross_ratio]
+    acquisition: [exact_construction, small_pilot]
+    source_refs: [SRC_BOUNDARY_Q_TANGENT, SRC_BOUNDARY_Q_LATTICE]
+    known_result: exact_inhomogeneous_boundary_tangent_has_universal_high_branch_log_coefficient_sqrt3_over_pi_and_a_Q1_covariance_lattice_interface
+    boundary: the_20k_lattice_smoke_is_calibration_only_because_boundary_events_are_sparse
+    supports: [boundary_positive_control_for_Q_tangent_semantics]
+    tensions: [generic_Q_sampler_as_a_prerequisite]
+    excludes_only: [omitting_the_full_conformal_prefactor_derivative]
+    next_discriminator: score_the_anchored_four_cross_ratio_derivative_vector_with_adequate_event_counts
+    information_gain: high
+    compute_cost: moderate
+    decision_experiments: [DX_Q_TANGENT_INTERFACE]
+  - id: SN_WARD_MODULAR_C3_AND_CROSS_MICRO
+    title: Ward_4_minus6_3_modular_C3_and_metric_free_cross_controls
+    integration_status: branch_only
+    state: continuum_module
+    sources: [potts_Q_measure, deck_charge, bernoulli_thermal]
+    observer_sectors: [topology_typed, cross_microscopic]
+    geometries: [moduli_hecke_child, triangular_control, square_controls]
+    acquisition: [exact_construction]
+    source_refs: [SRC_NULL_RESIDUE_WARD, SRC_MODULAR_C3_CHARACTER, SRC_CROSS_MICROSCOPIC_INVARIANT]
+    known_result: exact_Ward_residue_ratio_4_minus6_3_modular_child_character_syzygy_and_metric_cancelled_cross_microscopic_ratios_are_available_as_distinct_controls
+    boundary: these_oracles_fix_fingerprints_or_normalizations_but_do_not_prove_lattice_overlap
+    supports: [parameter_free_sector_discriminators]
+    tensions: [raw_amplitude_matching_across_microscopic_lattices]
+    excludes_only: [calling_an_unmatched_raw_H4_amplitude_ratio_universal]
+    next_discriminator: complex_C3_rho_response_followed_by_a_normalized_top_field_cross_control
+    information_gain: high
+    compute_cost: low
+    decision_experiments: [DX_RHO_C3_SECTOR, DX_CROSS_MICRO_TOP_FIELD]
+  - id: SN_CONNECTIVITY_RADICAL_HYPOTHESIS
+    title: connectivity_or_defect_radical_beyond_the_three_sector_source
+    integration_status: hypothesis
+    state: continuum_module
+    sources: [relative_cluster_fugacity, projector_derivative]
+    observer_sectors: [topology_typed, matching_odd]
+    geometries: [square_controls, finite_transfer_cylinder]
+    acquisition: [exact_construction]
+    source_refs: [SRC_RELATIVE_SOURCE_RANK3, SRC_RELATIVE_SOURCE_HH2]
+    known_result: the_current_scalar_relative_source_is_semisimple_and_rigid
+    boundary: the_radical_extension_is_a_target_not_an_established_algebra
+    supports: [connectivity_marked_extension_as_next_new_information_axis]
+    tensions: [more_equivalent_scalar_Q_source_derivatives]
+    excludes_only: [nothing_beyond_the_declared_semisimple_scalar_source_class]
+    next_discriminator: construct_one_connectivity_marked_generator_and_test_nonsemisimple_closure
+    information_gain: high
+    compute_cost: low
+    decision_experiments: [DX_CONNECTIVITY_RADICAL]
+  - id: SN_TWO_ACTIVATION_H4_REANALYSIS
+    title: first_wrap_dominance_and_geometry_dependent_second_completion_H4
+    integration_status: open_pr
+    state: microscopic_threshold_structure
+    sources: [bernoulli_thermal]
+    observer_sectors: [global_unmarked, topology_typed]
+    geometries: [gaussian_cover]
+    acquisition: [existing_data_reuse]
+    source_refs: [SRC_DIGITAL_ALEXANDER_MAIN, SRC_TWO_ACTIVATION_RANK_MIXTURE, SRC_NORM5_GLOBAL_MAIN]
+    known_result: all_ten_archived_sizes_are_scoreable_K1_is_the_larger_root_shift_component_everywhere_and_K2_has_unresolved_cancelling_point_estimates_at_N265_N325_N425
+    boundary: retrospective_reanalysis_with_no_new_primary_block_and_the_three_negative_K2_terms_are_each_below_absolute_z_2
+    supports: [first_activation_dominance_in_the_archived_orientation_response]
+    tensions: [one_geometry_independent_K2_sign_or_fraction]
+    excludes_only: [second_activation_as_the_larger_point_estimate_in_the_ten_scored_archives]
+    next_discriminator: classify_K2_by_geometry_sector_character_then_freeze_one_heldout_geometry_only_if_needed
+    information_gain: very_high
+    compute_cost: none
+    decision_experiments: [DX_TWO_ACTIVATION_H4]
+
+dependency_groups:
+  - id: crn-2026104501-5000000000-5100000000
+    kind: shared_counter_rng_domain
+    member_sizes: [65, 85, 130, 170]
+    metadata_paths:
+      - results/server-20260828/P45-root-amplitude/n65.metadata.json
+      - results/server-20260828/P45-root-amplitude/n85.metadata.json
+      - results/server-20260828/P49-fullcurve-doubling-100m/raw/n130.metadata.json
+      - results/server-20260828/P49-fullcurve-doubling-100m/raw/n170.metadata.json
+    covariance_rule: aligned_delete_one_across_all_available_views
+  - id: crn-2026104301-7000000000-7500000000
+    kind: one_counter_rng_domain
+    member_sizes: [185]
+    metadata_paths: [results/server-20260828/P43-heldout-fullcurve-500m/raw/n185.metadata.json]
+    covariance_rule: aligned_delete_one_within_the_same_N_orientation_pair
+  - id: crn-2026104301-7500000000-8000000000
+    kind: one_counter_rng_domain
+    member_sizes: [265]
+    metadata_paths: [results/server-20260828/P43-heldout-fullcurve-500m/raw/n265.metadata.json]
+    covariance_rule: aligned_delete_one_within_the_same_N_orientation_pair
+  - id: crn-2026105003-7000000000-7100000000
+    kind: one_counter_rng_domain
+    member_sizes: [145]
+    metadata_paths: [results/server-20260829/P50-n145-n290-fullcurve/raw/n145_100m.metadata.json]
+    covariance_rule: aligned_delete_one_within_the_same_N_orientation_pair
+  - id: crn-2026105004-7000000000-7100000000
+    kind: one_counter_rng_domain
+    member_sizes: [290]
+    metadata_paths: [results/server-20260829/P50-n145-n290-fullcurve/raw/n290_100m.metadata.json]
+    covariance_rule: aligned_delete_one_within_the_same_N_orientation_pair
+  - id: crn-2026105701-10000000000-10500000000
+    kind: one_counter_rng_domain
+    member_sizes: [325]
+    metadata_paths: [results/server-20260829/P57-norm5-500m/raw/n325_500m.metadata.json]
+    covariance_rule: aligned_delete_one_within_the_same_N_orientation_pair
+  - id: crn-2026105701-10500000000-11000000000
+    kind: one_counter_rng_domain
+    member_sizes: [425]
+    metadata_paths: [results/server-20260829/P57-norm5-500m/raw/n425_500m.metadata.json]
+    covariance_rule: aligned_delete_one_within_the_same_N_orientation_pair
+
+decision_experiments:
+  - id: DX_TWO_ACTIVATION_H4
+    attention_rank: 1
+    name: archived_K1_K2_orientation_decomposition
+    scientific_node_refs: [SN_DIGITAL_ALEXANDER_RANK_BALANCE, SN_TWO_ACTIVATION_THEOREM, SN_TWO_ACTIVATION_H4_REANALYSIS]
+    observer_sector_refs: [global_unmarked, topology_typed]
+    source_refs: [SRC_DIGITAL_ALEXANDER_MAIN, SRC_TWO_ACTIVATION_RANK_MIXTURE, SRC_NORM5_GLOBAL_MAIN]
+    dependency_group_refs:
+      - crn-2026104501-5000000000-5100000000
+      - crn-2026104301-7000000000-7500000000
+      - crn-2026104301-7500000000-8000000000
+      - crn-2026105003-7000000000-7100000000
+      - crn-2026105004-7000000000-7100000000
+      - crn-2026105701-10000000000-10500000000
+      - crn-2026105701-10500000000-11000000000
+    acquisition: existing_data_reuse
+    expected_model_space_reduction: very_high
+    compute_cost: none
+    manifest: analysis/two_activation_h4_manifest.yaml
+    entrypoint: scripts/analyze_two_activation_h4.py
+    outputs: [results/two-activation-h4/latest.json, results/two-activation-h4/latest.md]
+    completed_output: K1_is_larger_at_all_ten_sizes_K2_reinforces_seven_and_has_unresolved_cancelling_point_estimates_at_three
+    decision_output: which_geometry_or_sector_feature_controls_the_K2_sign_and_fraction
+  - id: DX_RHO_C3_SECTOR
+    attention_rank: 2
+    name: complex_C3_rho_sector_response
+    scientific_node_refs: [SN_GLOBAL_CHARGED_SECTOR_TENSION, SN_WARD_MODULAR_C3_AND_CROSS_MICRO]
+    observer_sector_refs: [topology_typed, deck_charged]
+    source_refs: [SRC_NORM5_CHARGED, SRC_MODULAR_C3_CHARACTER]
+    dependency_group_refs: []
+    acquisition: small_pilot
+    expected_model_space_reduction: very_high
+    compute_cost: low
+    decision_output: scalar_Q4_zero_versus_weight4_KdV_versus_weight8_conjugate_character
+  - id: DX_MIXED_CONTEXT_RECTANGLE
+    attention_rank: 3
+    name: common_source_readout_Gaussian_annulus_context_rectangle
+    scientific_node_refs: [SN_NORM4_EVEN_TRANSFER, SN_ANNULUS_TWO_STATE_RECURRENCE, SN_PATH_FILTRATION_MEMORY]
+    observer_sector_refs: [topology_typed, local_pivotal, matching_odd]
+    source_refs: [SRC_CONTEXT_HANKEL, SRC_P200_PATH_FILTRATION, SRC_ANNULUS_RECURRENCE]
+    dependency_group_refs: []
+    acquisition: existing_data_reuse
+    expected_model_space_reduction: very_high
+    compute_cost: low
+    decision_output: one_common_generator_versus_morphism_enriched_state
+  - id: DX_CROSS_MICRO_TOP_FIELD
+    attention_rank: 4
+    name: gauge_invariant_triangular_square_top_field_control
+    scientific_node_refs: [SN_TRIANGULAR_LOGPAIR_CONTROL, SN_WARD_MODULAR_C3_AND_CROSS_MICRO]
+    observer_sector_refs: [cross_microscopic, local_pivotal]
+    source_refs: [SRC_TRIANGULAR_LOGPAIR_PR246, SRC_TRIANGULAR_E6, SRC_CROSS_MICROSCOPIC_INVARIANT]
+    dependency_group_refs: []
+    acquisition: small_pilot
+    expected_model_space_reduction: high
+    compute_cost: moderate
+    decision_output: normalized_cross_microscopic_H4_E6_top_partner_response
+  - id: DX_Q_TANGENT_INTERFACE
+    attention_rank: 5
+    name: measure_projector_field_Q_tangent_positive_control
+    scientific_node_refs: [SN_GLOBAL_FOURLEG_SELECTION_ZERO, SN_Q_TANGENT_THREE_PART_INTERFACE, SN_BOUNDARY_Q_TANGENT_CONTROL]
+    observer_sector_refs: [boundary, topology_typed]
+    source_refs: [SRC_EXACT_FK_Q_SCORE, SRC_CONFLUENT_PROJECTOR, SRC_VJS_FIELD_DERIVATIVE, SRC_BOUNDARY_Q_TANGENT]
+    dependency_group_refs: []
+    acquisition: exact_construction
+    expected_model_space_reduction: high
+    compute_cost: low
+    decision_output: one_complete_Q_derivative_interface_with_all_three_terms_declared
+  - id: DX_Z5_CHARGED_FUSION
+    attention_rank: 6
+    name: primitive_Z5_cubic_fusion_channels
+    scientific_node_refs: [SN_GLOBAL_CHARGED_SECTOR_TENSION]
+    observer_sector_refs: [deck_charged]
+    source_refs: [SRC_NORM5_CHARGED, SRC_Z5_CHARGED_FUSION]
+    dependency_group_refs: []
+    acquisition: small_pilot
+    expected_model_space_reduction: high
+    compute_cost: moderate
+    decision_output: one_charged_fusion_eigenphase_versus_multiple_charge_resolved_fields
+  - id: DX_CONNECTIVITY_RADICAL
+    attention_rank: 7
+    name: connectivity_defect_radical_extension
+    scientific_node_refs: [SN_RELATIVE_SOURCE_SEMISIMPLE_CLOSURE, SN_CONNECTIVITY_RADICAL_HYPOTHESIS]
+    observer_sector_refs: [topology_typed, matching_odd]
+    source_refs: [SRC_RELATIVE_SOURCE_RANK3, SRC_RELATIVE_SOURCE_HH2]
+    dependency_group_refs: []
+    acquisition: exact_construction
+    expected_model_space_reduction: high
+    compute_cost: low
+    decision_output: first_nonsemisimple_connectivity_or_defect_generator_beyond_the_rigid_scalar_source
+
+attention_order:
+  principle: priority_is_attention_not_permission
+  parallel: true
+  decision_experiment_refs:
+    - DX_TWO_ACTIVATION_H4
+    - DX_RHO_C3_SECTOR
+    - DX_MIXED_CONTEXT_RECTANGLE
+    - DX_CROSS_MICRO_TOP_FIELD
+    - DX_Q_TANGENT_INTERFACE
+    - DX_Z5_CHARGED_FUSION
+    - DX_CONNECTIVITY_RADICAL
 
 research_tracks:
   - id: A
@@ -115,21 +763,6 @@ evidence_blocks:
     status: mechanism_candidate
     paths: [results/local-20260829/P231-vacuum-kdv-sector-response/score.json]
 
-analysis_queue:
-  - {issue: 119, name: multi_u_coordinate_separation, state: analysis_ready}
-  - {issue: 227, name: Boolean_noise_semigroup, state: analysis_ready}
-  - {issue: 234, name: energy_logpair_sufficient_statistics, state: analysis_ready}
-  - {issue: 180, name: low_rank_fullcurve_transfer, state: analysis_ready}
-  - {issue: 118, name: metric_free_ratios, state: analysis_ready}
-
-new_compute_queue:
-  - {rank: 1, issue: 205, name: same_N_norm5_coalescence, state: active}
-  - {rank: 2, issue: 159, name: scalar_cancelled_Q4_Jordan_modulus_fingerprint, state: active}
-  - {rank: 3, issue: 154, name: norm4_dyadic_deck_character_closure, state: ready}
-  - {rank: 4, issue: 155, name: larger_injective_local_pivotal_geometry, state: ready}
-  - {rank: 5, issue: 156, name: primitive_x4_shape_correction_target, state: ready}
-  - {rank: 6, issue: 74, name: N1105_four_angle, state: later}
-
 completed_analysis_tasks:
   - {issue: 95, name: prequential_evidence_ledger, outcome: canonical_primary_only_evidence_aggregation}
   - {issue: 212, name: independent_matching_odd_synthesis, outcome: global_zero_disfavored_fixed_H4_compatible}
@@ -155,78 +788,6 @@ negative_results:
   - {id: NR_SELFMATCHING_SAME_ROWS, statement: N130_N170_current_global_local_tangent_rows_resolve_only_one_direction}
   - {id: NR_SMALL_MULTIRADIUS, statement: N130_N170_multiradius_does_not_support_simple_shell_log_flow_and_R8_is_noninjective}
   - {id: NR_PRIMITIVE_SCALAR_E4, statement: scalar_E4_Pell_phase_bridge_fails_for_primitive_character}
-
-# Advisory only. This section describes actual maturity and the next missing input.
-# It is not a permission system and does not alter the queues above.
-attention_overlay:
-  principle: priority_is_attention_not_permission
-  lifecycle_snapshot:
-    - topic: lower_spin4_representation_selection
-      related_issues: [257, 262, 250, 264]
-      maturity: exact_continuum_preflight_complete
-      durable_state: x17_over_4_four_leg_spin4_competitor_and_distinct_Q_velocity_are_exact
-      next_missing_input: physical_Q1_Potts_projector_multiplicity_or_global_matching_matrix_element
-      cheapest_next_move: exact_representation_or_charged_control_before_new_radial_production
-    - topic: minimal_predictive_state
-      related_issues: [249, 180, 253, 255]
-      maturity: conceptual_synthesis_with_existing_matrix_assets_but_no_context_Hankel_main_implementation
-      durable_state: scalar_width_and_one_scalar_curve_transfer_are_already_insufficient
-      next_missing_input: first_covariance_aware_partial_realization_on_existing_blocks
-      cheapest_next_move: no_new_production_implementation_and_heldout_rank_test
-    - topic: triangular_energy_logpair_control
-      related_issues: [246, 234]
-      maturity: exact_protocol_tiny_oracle_and_production_code_ready
-      durable_state: direct_known_log_pair_definition_is_external_not_inferred_from_square_site
-      next_missing_input: scaling_production_or_small_positive_control_calibration
-      cheapest_next_move: run_the_smallest_scaling_block_that_validates_the_rank2_diagnostic
-    - topic: norm5_same_N_coalescence
-      related_issues: [205]
-      maturity: frozen_prediction_and_regression_ready_target_unrevealed
-      durable_state: amplitude_free_H4_H8_H12_same_N_interpolation_and_Smith_class_test_are_exact
-      next_missing_input: fresh_common_field_C_node_target
-      cheapest_next_move: variance_pilot_then_smallest_decisive_common_field_block
-    - topic: norm4_dyadic_closure
-      related_issues: [154]
-      maturity: variance_pilot_complete_scorer_ready_high_cost
-      durable_state: expected_q2_vs_Jordan_separation_is_about_three_sigma_at_current_budget
-      next_missing_input: production_only_if_updated_acquisition_value_beats_cheaper_targets
-      cheapest_next_move: rerank_with_current_model_set_before_committing_large_compute
-    - topic: modular_scalar_shape
-      related_issues: [159, 103, 220]
-      maturity: exact_modular_assets_exist_but_lattice_overlap_score_still_missing
-      durable_state: old_primitive_C3_Pell_simple_H4_bridge_failed_and_must_remain_separate_from_scalar_shape_tests
-      next_missing_input: typed_modular_scalar_cross_or_either_lattice_score_with_parameter_free_prediction
-      cheapest_next_move: use_exact_scalar_channel_classification_then_choose_one_new_shape
-    - topic: matching_observable_continuum_bridge
-      related_issues: [61, 114, 233, 120]
-      maturity: substantial_theory_and_exact_UV_tangent_but_no_continuum_identification
-      durable_state: finite_matching_exchange_is_not_yet_a_local_CFT_OPE_involution
-      next_missing_input: RG_FK_defect_or_transfer_intertwiner_that_predicts_a_selection_rule
-      cheapest_next_move: exact_or_small_width_positive_control_before_large_square_site_work
-    - topic: metric_free_cross_microscopic_ratios
-      related_issues: [118]
-      maturity: dimensionless_ratio_derivation_complete
-      durable_state: thermal_metric_factor_cancels_in_declared_ratios_but_raw_H4_amplitude_ratio_is_not_universal
-      next_missing_input: second_microscopic_realization_with_matched_observable_and_modulus
-      cheapest_next_move: reuse_exact_critical_control_data_when_available
-    - topic: threshold_origin
-      related_issues: [123, 3, 13, 17, 29, 47]
-      maturity: several_bounded_no_go_and_finite_algebra_results_complete
-      durable_state: ordinary_independent_bond_gadget_exact_site_representation_is_ruled_out_in_declared_class
-      next_missing_input: correlated_hyperedge_selfdual_closure_or_obstruction_and_post_annihilator_structure
-      cheapest_next_move: symbolic_exact_work_in_parallel_with_operator_program
-    - topic: acquisition_optimization
-      related_issues: [102, 126]
-      maturity: original_Gaussian_information_per_CPU_optimizer_and_sequential_stopping_calibration_complete
-      durable_state: old_optimizer_correctly_selected_norm5_for_the_then_live_H4_H12_question
-      next_missing_input: rerun_utility_model_with_representation_modulus_rank_and_positive_control_axes
-      cheapest_next_move: update_model_utility_table_before_next_expensive_production
-    - topic: lifecycle_synchronization
-      related_issues: [95]
-      maturity: canonical_views_exist_but_some_status_fields_are_stale
-      durable_state: STATUS_treats_N145_to_N290_as_complete_while_primary_evidence_ledger_still_marks_it_pending_reveal
-      next_missing_input: regenerate_or_reconcile_lifecycle_metadata_without_rewriting_historical_predictions
-      cheapest_next_move: derive_status_from_existing_scored_artifacts_and_keep_history_immutable
 
 maintenance_rules:
   - Integrate useful science first; refresh navigation afterward.
