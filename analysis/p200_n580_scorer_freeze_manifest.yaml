@@ -1,0 +1,19 @@
+schema: matching-one.analysis-manifest.v1
+issue: 200
+status: scorer_frozen_before_N580_target_completion
+base_runner_commit: d9d6bb1a9bd9230139fef616a16280cad34d28f6
+entrypoint: scripts/score_p200_n580_phaseA.py
+prediction:
+  path: predictions/p200_n580_q2_jordan_score_input_20260829.json
+  sha256: 13c46d38266ddf5c50b3cba1d936b9111f1726f7b839f9c4ef245d6b09746a10
+model_order: [ordinary_q2, rank2_Jordan]
+state_order: [I_S, I_Du, T_D, T_Su]
+target_inputs: [histograms, moments, metadata]
+target_status_at_freeze: not_generated_or_read
+score: joint_GLS_with_target_plus_frozen_prediction_covariance
+center_bisection_steps: 72
+outputs: [machine_json, markdown_report]
+boundary:
+  - No coordinate is an independent evidence row.
+  - No target-dependent mode selection, regularization choice, or refit is allowed.
+  - The scorer does not consume N650 path flags.
