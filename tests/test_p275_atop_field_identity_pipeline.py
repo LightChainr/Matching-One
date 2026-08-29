@@ -12,6 +12,7 @@ import numpy as np
 import yaml
 
 from score_p275_atop_field_identity import _design_matrix, fit_models
+from discover_p275_mean_jd4 import geometry_mean_estimate
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -94,6 +95,27 @@ class P275FieldIdentityPipelineTests(unittest.TestCase):
         self.assertTrue(prediction["production_authorized"])
         self.assertTrue(phase["production_authorized"])
         self.assertEqual(phase["runner_commit"], "cb83673fb5f221616a47d53f564635c11e7d0680")
+
+    def test_mean_j_discovery_uses_j_not_qj_or_birth_normalization(self):
+        rows = []
+        for k, q, j in ((0, -1.0, 2.0), (1, 1.0, 6.0)):
+            rows.append({
+                "n": 1.0, "batch": 0.0, "k": float(k), "counter_first": 0.0,
+                "counter_last_exclusive": 1.0, "samples": 1.0, "sum_q": q,
+                "sum_q2": 1.0, "sum_I01": 0.0, "sum_I12": 0.0,
+                "sum_I02": 0.0, "sum_Re_J_S4": 0.0, "sum_Im_J_S4": 0.0,
+                "sum_Re_J_D4": j, "sum_Im_J_D4": 0.0,
+                "sum_q_Re_J_S4": 0.0, "sum_q_Im_J_S4": 0.0,
+                "sum_q_Re_J_D4": 1000.0, "sum_q_Im_J_D4": 0.0,
+                "sum_birth_mass": 1000.0,
+            })
+        result = geometry_mean_estimate(
+            {"N": 1, "rows": rows},
+            {"transport": {"real": "0", "imag": "1"}},
+        )
+        self.assertAlmostEqual(result["p_matching"], 0.5)
+        self.assertAlmostEqual(result["mean_J_D4_canonical"][0], 0.0)
+        self.assertAlmostEqual(result["mean_J_D4_canonical"][1], 4.0)
 
 
 if __name__ == "__main__":
