@@ -1,0 +1,23 @@
+schema: matching-one.p200-n650-phaseB-operationalization.v1
+issue: 200
+status: exact_obstruction_before_production
+endpoint:
+  parent_designs: [[8, 1], [7, 4]]
+  final_designs: [[23, 11], [17, 19]]
+  gaussian_product: 3+i
+  unmarked_histogram_streams_per_orientation: 1
+old_path_flag:
+  status: do_not_implement
+  reason: character projectors commute exactly; intermediate binary homology is undefined on a generic final configuration
+exact_gate:
+  command: python3 scripts/p200_n650_path_oracle.py --output results/exact-p200-n650-path/latest.json
+  exhaustive_configurations: 1024
+revised_optional_charged_acquisition:
+  site_label: full Z/10 deck coordinate with exact Z/5 x Z/2 CRT pair
+  zero_control: Pi5_Pi2_minus_Pi2_Pi5
+  legal_linear_endpoint: opposite-character marked/covariant response with full covariance
+  legal_quadratic_endpoint: full Bernoulli Hessian including diagonal correction
+  legal_symmetric_topology_endpoint: Delta25_h mixed inclusion-exclusion under connectivity joins R2 and R5
+production:
+  start: false
+  cxx_runner_extension: none

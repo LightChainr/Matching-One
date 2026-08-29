@@ -1,0 +1,444 @@
+{
+  "schema": "matching-one.p200-n650-path-operationalization.v1",
+  "issue": 200,
+  "status": "exact_obstruction_and_revised_acquisition_semantics",
+  "gaussian_identity": "(2-i)(1+i)=(1+i)(2-i)=3+i",
+  "deck_groups": {
+    "final_over_parent": {
+      "label": "3+i",
+      "multiplier": [
+        3,
+        1
+      ],
+      "multiplication_matrix": [
+        [
+          3,
+          -1
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "norm_degree": 10,
+      "smith_invariants": [
+        1,
+        10
+      ],
+      "additive_group": "Z/10",
+      "group_exponent": 10,
+      "element_representatives": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    "path_A_first_stage": {
+      "label": "2-i",
+      "multiplier": [
+        2,
+        -1
+      ],
+      "multiplication_matrix": [
+        [
+          2,
+          1
+        ],
+        [
+          -1,
+          2
+        ]
+      ],
+      "norm_degree": 5,
+      "smith_invariants": [
+        1,
+        5
+      ],
+      "additive_group": "Z/5",
+      "group_exponent": 5,
+      "element_representatives": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          -1,
+          0
+        ]
+      ]
+    },
+    "path_B_first_stage": {
+      "label": "1+i",
+      "multiplier": [
+        1,
+        1
+      ],
+      "multiplication_matrix": [
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "norm_degree": 2,
+      "smith_invariants": [
+        1,
+        2
+      ],
+      "additive_group": "Z/2",
+      "group_exponent": 2,
+      "element_representatives": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    "crt": "Z/10 is canonically represented here by the declared Gaussian basis as Z/5 x Z/2"
+  },
+  "n650_lineages": [
+    {
+      "parent_gaussian": [
+        8,
+        1
+      ],
+      "parent_period_matrix": [
+        [
+          8,
+          -1
+        ],
+        [
+          1,
+          8
+        ]
+      ],
+      "path_A": {
+        "multipliers": [
+          "2-i",
+          "1+i"
+        ],
+        "intermediate_gaussian": [
+          17,
+          -6
+        ],
+        "intermediate_period_matrix": [
+          [
+            17,
+            6
+          ],
+          [
+            -6,
+            17
+          ]
+        ]
+      },
+      "path_B": {
+        "multipliers": [
+          "1+i",
+          "2-i"
+        ],
+        "intermediate_gaussian": [
+          7,
+          9
+        ],
+        "intermediate_period_matrix": [
+          [
+            7,
+            -9
+          ],
+          [
+            9,
+            7
+          ]
+        ]
+      },
+      "common_final_gaussian": [
+        23,
+        11
+      ],
+      "common_final_period_matrix": [
+        [
+          23,
+          -11
+        ],
+        [
+          11,
+          23
+        ]
+      ],
+      "final_smith_invariants": [
+        1,
+        650
+      ],
+      "same_integer_period_graph_not_merely_isomorphic": true
+    },
+    {
+      "parent_gaussian": [
+        7,
+        4
+      ],
+      "parent_period_matrix": [
+        [
+          7,
+          -4
+        ],
+        [
+          4,
+          7
+        ]
+      ],
+      "path_A": {
+        "multipliers": [
+          "2-i",
+          "1+i"
+        ],
+        "intermediate_gaussian": [
+          18,
+          1
+        ],
+        "intermediate_period_matrix": [
+          [
+            18,
+            -1
+          ],
+          [
+            1,
+            18
+          ]
+        ]
+      },
+      "path_B": {
+        "multipliers": [
+          "1+i",
+          "2-i"
+        ],
+        "intermediate_gaussian": [
+          3,
+          11
+        ],
+        "intermediate_period_matrix": [
+          [
+            3,
+            -11
+          ],
+          [
+            11,
+            3
+          ]
+        ]
+      },
+      "common_final_gaussian": [
+        17,
+        19
+      ],
+      "common_final_period_matrix": [
+        [
+          17,
+          -19
+        ],
+        [
+          19,
+          17
+        ]
+      ],
+      "final_smith_invariants": [
+        1,
+        650
+      ],
+      "same_integer_period_graph_not_merely_isomorphic": true
+    }
+  ],
+  "single_parent_fiber_exhaustive_oracle": {
+    "configuration_count": 1024,
+    "full_to_factor_indices": {
+      "Z5": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        3,
+        4,
+        1,
+        2,
+        0
+      ],
+      "Z2": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    "crt_pairs_in_full_representative_order": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        4,
+        1
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "crt_is_bijection": true,
+    "descent_counts": {
+      "to_Z5_intermediate": 32,
+      "to_Z2_intermediate": 4,
+      "to_both": 2
+    },
+    "expected_descent_counts": {
+      "to_Z5_intermediate": 32,
+      "to_Z2_intermediate": 4,
+      "to_both": 2
+    },
+    "sequential_character_transform_nonzero_commutators": 0,
+    "all_linear_character_projectors_commute_per_configuration": true,
+    "functorial_boolean_direct_image": {
+      "OR_nonzero_order_commutators": 0,
+      "AND_nonzero_order_commutators": 0,
+      "interpretation": "set image (OR), universal image (AND), and connectivity-equivalence joins compose in either order"
+    },
+    "minimal_binary_pushdown_ambiguity": {
+      "full_element_index": 0,
+      "projects_to_Z5_cell": 0,
+      "projects_to_Z2_cell": 0,
+      "fiber_OR_value": 1,
+      "fiber_AND_value": 0,
+      "meaning": "a binary pushdown requires an extra rule"
+    },
+    "symmetric_mixed_partition_witness": {
+      "partition": "discrete partition on C2 x C5",
+      "rank_definition": "h(Pi)=10-number_of_blocks(Pi)",
+      "join_orders_equal": true,
+      "ranks": {
+        "h_Pi": 0,
+        "h_Pi_join_R2": 5,
+        "h_Pi_join_R5": 8,
+        "h_Pi_join_R2_join_R5": 9
+      },
+      "Delta25_h": -4,
+      "meaning": "the antisymmetric commutator is zero while a symmetric mixed interaction need not vanish"
+    }
+  },
+  "exact_conclusions": {
+    "endpoint_histogram_count": 1,
+    "linear_deck_path_commutator": "identically zero on every configuration",
+    "generic_binary_configuration_descends_to_intermediate": false,
+    "intermediate_homology_flag_without_pushdown_rule": "undefined as a Bernoulli intermediate mask; functorial direct-image connectivity is defined and commutes",
+    "old_C_mark_semantics": "exact zero for character projectors or honest functorial direct images; otherwise an extra nonfunctorial rule is missing"
+  },
+  "revised_acquisition": {
+    "do_not_duplicate_endpoint_stream_by_path": true,
+    "store_full_deck_label": "Z/10 label, equivalently the exact (Z/5,Z/2) CRT pair",
+    "exact_zero_control": "Pi_Z5 Pi_Z2 - Pi_Z2 Pi_Z5 = 0 per configuration",
+    "allowed_nonzero_linear_channel": "declared marked/covariant O_chibar times S_chi with full covariance",
+    "allowed_invariant_quadratic_channel": "Bernoulli Hessian in chi tensor chibar, including diagonal correction",
+    "minimal_nonlinear_mixed_candidate": "Delta25 h = h(Pi join R2 join R5)-h(Pi join R2)-h(Pi join R5)+h(Pi); symmetric, not an order commutator",
+    "noncanonical_alternative": "freeze OR, AND, majority, or another pushdown as a new observable; never call its difference factorization memory",
+    "production_decision": "do not extend the N650 C++ runner for the old path flag"
+  },
+  "evidence_boundary": {
+    "exact": [
+      "period matrices coincide pathwise",
+      "Z10-to-Z5xZ2 CRT is bijective",
+      "all 1024 fiber configurations have zero sequential-character commutator",
+      "only 32/1024 and 4/1024 configurations descend to the two intermediates"
+    ],
+    "inference": "a nonzero morphism-memory experiment needs an explicitly new nonlinear or marked observable",
+    "not_claimed": "absence of all possible nonlinear coarse-graining memory"
+  }
+}
