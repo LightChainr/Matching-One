@@ -87,7 +87,7 @@ zero:           chi2 = 1278.55524 / 2
 
 Both fixed correction mechanisms remain viable. Descriptive chi-square alone does not reorder frozen chronology.
 
-## Exact-control progress
+## Exact-control and analysis-coordinate progress
 
 ### Finite Russo/pivotal identity
 
@@ -128,6 +128,20 @@ Beta(7,7): first coefficient difference at k=5 = +156
 
 No generalized-Beta rescue fit was performed. The reliability-signature/minimal-degree theorem explains the N=10 result more sharply: `Beta(s,s)` is forced in the minimal-degree self-dual case, while N=26 has extra polynomial degrees of freedom and is the first nontrivial deformation in this control family.
 
+### Prequential evidence aggregation
+
+Issue #95 is complete. `analysis/evidence_ledger_manifest.yaml` and `scripts/score_prequential_evidence.py` keep one additive primary view per raw-data group and compare models only on common predicted endpoints. Root, slope, derivatives, score modes and other correlated views remain available without being counted as independent votes.
+
+### Krawtchouk/Hermite thermal-response coordinates
+
+The threshold-rank archive can now be projected onto orthonormal binomial Krawtchouk score modes at the intrinsic center. Mode 0 and mode 1 are exact alternate coordinates for already-used value/first-derivative information; higher modes expose a source-data thermal-response vector without new simulation.
+
+The exact finite-N Hermite–Krawtchouk generating identity and the exact paired-rank-gap neutral-window area relation are canonical. Their width/transfer interpretations remain C0/C2 hypotheses frozen for future norm-5 scoring, not upgraded claims.
+
+### Low-rank matrix/semigroup discovery
+
+A retrospective intrinsic-coordinate analysis now provides a compact matrix/semigroup candidate for the four derivative/parity channels. Its model ranking is post-reveal discovery evidence and does not reorder the frozen q=2/Jordan chronology. It is useful because it converts the next question from several unrelated scalar corrections into a held-out low-rank transfer test.
+
 ## Current interpretation
 
 The evidence-respecting picture is a two-parity finite-size structure with one unresolved derivative-correction problem:
@@ -137,7 +151,7 @@ The evidence-respecting picture is a two-parity finite-size structure with one u
 3. **derivative sector** — S, D, and D-prime pure laws survive N=185/265; S-prime is nonzero but requires a subleading correction;
 4. **operator theory remains conditional** — H4 uniqueness, matching/RG parity, and the LCFT family assignment are not proved.
 
-The exact finite-combinatorial layer is now stronger than it was when the first operator notes were written: threshold ranks have a reliability-signature interpretation, the slope has an exact pivotal interpretation, and a self-matching microscopic tangent is explicit. These are bridges and controls; they do not collapse the continuum question into a solved operator identification.
+The exact finite-combinatorial layer is now stronger than it was when the first operator notes were written: threshold ranks have a reliability-signature interpretation, the slope has an exact pivotal interpretation, a self-matching microscopic tangent is explicit, and the same retained sufficient statistics now support score-mode, rank-gap and low-rank-transfer analyses. These are bridges and coordinates; they do not collapse the continuum question into a solved operator identification.
 
 ## Open interpretations
 
@@ -146,32 +160,35 @@ The exact finite-combinatorial layer is now stronger than it was when the first 
 | H4 is the unique leading odd harmonic | C2 | Norm-5 H4-vs-H12 test #57 |
 | `13/8` is the unique asymptotic radial exponent | C2/C3 | Norm-5 transfer and additional full-curve lineages |
 | Minimal relative-`1/N` slope correction explains the P49 drift | C0/C2 | Frozen 145->290 full-curve score #50 |
-| `S'` correction is ordinary q=2 versus logarithmic/Jordan | C0/C2 | Norm-5/full-curve cocycle and later multiplier leverage |
+| `S'` correction is ordinary q=2 versus logarithmic/Jordan | C0/C2 | Norm-5/full-curve cocycle, thermal-jet/width score and later multiplier leverage |
+| A compact low-rank transfer state explains several derivative channels | C0/C2 | Held-out N=290 and norm-5 full-curve transfer scores |
 | `x=21/4` thermal-family spin-4 field is the continuum mechanism | C0/C2 | Unique harmonic, radial competitors, pivotal/FK bridge, and parity/modulus controls |
 | Matching/complement defines a continuum RG parity block | C0/C2 | Large-N continuation of the exact self-matching tangent and independent controls |
-| `V_<1,4>` explains historical post-`L^-7` behavior | C0 | Axis-annihilator experiment; keep conditional until q=3 discrimination |
+| `V_<1,4>` explains historical post-`L^-7` behavior | C0 | Axis-annihilator discrimination; keep conditional |
 | Simple PSLQ/algebraic form gives `p_c` | C0 | Low-priority bounded search after provenance constraints |
 
 ## Execution priorities
 
 When compute/attention is scarce:
 
-1. **#57 norm-5 N=325/425** — highest-information H4-vs-H12 and radial/correction multiplier test. Both the fixed-p primary scorer and the intrinsic full-curve q=2/Jordan scorer now have typed source/target semantic gates on `main`; the frozen numerical contracts themselves were not changed.
-2. **#50 N=145->290 full curve** — score the already-frozen slope correction and induced root prediction on a third lineage.
-3. **Existing-data analysis** — #95 evidence ledger, #101 quantile-center, #119 multi-u response, #125 joint channel mixing, #122 full threshold profile. For #100, the exact finite Russo stage is complete; the remaining work is orientation-resolved/continuum interpretation.
-4. **#102 information-optimal design** chooses any later expensive Gaussian target.
+1. **#57 norm-5 N=325/425** — highest-information block. Keep the frozen H4/H12/H8/zero primary score, then reuse the same full threshold-rank data for q=2/Jordan, Krawtchouk/Hermite thermal-jet, paired-rank-gap width, root/slope and other correlated readouts.
+2. **#50 N=145->290 full curve** — score the already-frozen slope correction and induced root prediction on a third lineage, and use the same data as a held-out low-rank/score-mode transfer test.
+3. **Existing-data analysis** — #101 quantile-center, #119 multi-u response, #125 joint channel mixing, #122 full threshold profile and orientation-resolved pivotal work. #95 is complete.
+4. **Information-optimal design** — the maximin Gaussian design tool is canonical and provides a benchmark for later geometry selection; continue #102 by updating variance/cost estimates as new blocks arrive.
 
-Exact/theory controls (#103/#106/#111/#114/#118/#121) may proceed in parallel. N=1105 and Pell/modulus production remain gated behind cheaper discriminators and an explicit observable bridge.
+Exact/theory controls (#103/#106/#111/#114/#118/#121) may proceed in parallel. Norm-4, self-matching tangent, Pell/modulus and N=1105 are scheduling choices rather than permission classes: exploratory work may proceed whenever the expected information justifies the compute. Strong operator-specific claims still require the corresponding observable/semantic bridge.
 
 ## Engineering/governance status
 
 - Canonical navigation: `README.md` -> `docs/STATUS.md` -> `docs/RESEARCH-MAP.md` -> `notes/SYNTHESIS-20260828.md` / `docs/ROADMAP.md`.
-- Machine-readable knowledge layer: `analysis/research_ledger.yaml` and `analysis/artifact_registry.yaml`.
+- Machine-readable knowledge layer: `analysis/research_ledger.yaml`, `analysis/artifact_registry.yaml`, and the prequential evidence manifest.
+- The registry is lightweight navigation and does not block integration.
+- Research execution defaults to permissive; only frozen chronology, claim-bearing observable semantics, and independent-evidence accounting are hard constraints.
 - Huawei archive and production tools: canonical on `main`.
 - P48 N=185/265 four-channel prospective scorer/result: canonical.
-- Typed wrapping-channel descriptor/map layer: canonical; a channel mismatch fails closed unless an exact registered map exists.
-- #57 fixed-p and full-curve scorer semantic gates: canonical; broader direction/both audit under #146 remains open.
-- Exact Russo/pivotal oracle, N=10 self-matching tangent/score-function oracle, N=26 Beta falsification, and reliability-signature tooling: canonical.
+- Typed wrapping-channel descriptor/map layer: canonical; a claim-bearing channel mismatch fails closed unless an exact registered map exists.
+- #57 fixed-p and full-curve scorer semantic checks are canonical; broader direction/both audit under #146 remains useful but is not a blanket production gate.
+- Exact Russo/pivotal oracle, N=10 self-matching tangent/score-function oracle, N=26 Beta falsification, reliability-signature tooling, Krawtchouk/Hermite score coordinates, rank-gap analysis, low-rank matrix discovery and maximin Gaussian design are canonical.
 - CI covers Python 3.9/3.11/3.13 and C++17.
 
 ## Explicit non-claims
