@@ -1,0 +1,196 @@
+{
+  "N": 9,
+  "boundary": "terminal output collapses to three sectors; the typed connectivity frontier does not",
+  "checks": {
+    "Phi_equals_xy_Zrel_symbolically_per_monomial": true,
+    "covariance_is_strict_rank_one": true,
+    "rank_sum_two_for_every_coefficient_row": true,
+    "relative_source_equals_matching_specialization": true,
+    "terminal_support_exactly_three_monomials": true,
+    "third_cumulant_closure_exact": true
+  },
+  "diagonal_source": {
+    "operator_identity": "(x*d_x+y*d_y)^m Phi=2^m Phi",
+    "rank_sum": 2,
+    "stochastic_diagonal_cumulants_order_ge_2": 0
+  },
+  "exact_factorization": {
+    "Phi": "x*y*Z_rel(p,x/y)",
+    "Z_rel": "P_minus*Q^-1+P_zero+P_plus*Q",
+    "terminal_monomials": [
+      "y^2",
+      "x*y",
+      "x^2"
+    ],
+    "terminal_rank_pairs": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        0
+      ]
+    ]
+  },
+  "geometry": "axis_L3_honest_square_cell_torus",
+  "issues": [
+    144,
+    269,
+    54
+  ],
+  "p": {
+    "denominator": 5,
+    "numerator": 2,
+    "text": "2/5"
+  },
+  "rank_covariance": {
+    "determinant": {
+      "denominator": 1,
+      "numerator": 0,
+      "text": "0"
+    },
+    "matrix": [
+      [
+        {
+          "denominator": 3814697265625,
+          "numerator": 1409540604336,
+          "text": "1409540604336/3814697265625"
+        },
+        {
+          "denominator": 3814697265625,
+          "numerator": -1409540604336,
+          "text": "-1409540604336/3814697265625"
+        }
+      ],
+      [
+        {
+          "denominator": 3814697265625,
+          "numerator": -1409540604336,
+          "text": "-1409540604336/3814697265625"
+        },
+        {
+          "denominator": 3814697265625,
+          "numerator": 1409540604336,
+          "text": "1409540604336/3814697265625"
+        }
+      ]
+    ],
+    "rank": 1,
+    "strict_rank_one_for_0_lt_p_lt_1": true
+  },
+  "relative_source": {
+    "matching_from_bivariate_derivative": {
+      "denominator": 1953125,
+      "numerator": -1239733,
+      "text": "-1239733/1953125"
+    },
+    "mean_q_equals_M": {
+      "denominator": 1953125,
+      "numerator": -1239733,
+      "text": "-1239733/1953125"
+    },
+    "raw_second_q": {
+      "denominator": 1953125,
+      "numerator": 1508597,
+      "text": "1508597/1953125"
+    },
+    "variance_q": {
+      "denominator": 3814697265625,
+      "numerator": 1409540604336,
+      "text": "1409540604336/3814697265625"
+    }
+  },
+  "schema": "matching-one.p144-relative-rank-source-collapse.v1",
+  "sector_probabilities": {
+    "P_minus": {
+      "denominator": 390625,
+      "numerator": 274833,
+      "text": "274833/390625"
+    },
+    "P_plus": {
+      "denominator": 1953125,
+      "numerator": 134432,
+      "text": "134432/1953125"
+    },
+    "P_zero": {
+      "denominator": 1953125,
+      "numerator": 444528,
+      "text": "444528/1953125"
+    }
+  },
+  "terminal_Bernstein_counts_by_q": {
+    "-1": [
+      1,
+      9,
+      36,
+      78,
+      90,
+      45,
+      0,
+      0,
+      0,
+      0
+    ],
+    "0": [
+      0,
+      0,
+      0,
+      6,
+      36,
+      72,
+      48,
+      0,
+      0,
+      0
+    ],
+    "1": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      9,
+      36,
+      36,
+      9,
+      1
+    ]
+  },
+  "three_state_closure": {
+    "linear_source_PDE": "G_sss=G_s",
+    "log_cumulant_identity": "F_sss=F_s-3*F_s*F_ss-F_s^3",
+    "sector_inversion_from_mean_variance": {
+      "-1": {
+        "denominator": 390625,
+        "numerator": 274833,
+        "text": "274833/390625"
+      },
+      "0": {
+        "denominator": 1953125,
+        "numerator": 444528,
+        "text": "444528/1953125"
+      },
+      "1": {
+        "denominator": 1953125,
+        "numerator": 134432,
+        "text": "134432/1953125"
+      }
+    },
+    "support_identity": "q^3=q",
+    "third_cumulant_direct": {
+      "denominator": 7450580596923828125,
+      "numerator": 2418548568476814576,
+      "text": "2418548568476814576/7450580596923828125"
+    },
+    "third_cumulant_from_closure": {
+      "denominator": 7450580596923828125,
+      "numerator": 2418548568476814576,
+      "text": "2418548568476814576/7450580596923828125"
+    }
+  }
+}
