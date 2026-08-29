@@ -13,9 +13,10 @@ model:
   expression: E[G] = A*N^(5/8) + B + o(1)
   exponent_in_N: {numerator: 5, denominator: 8, fitted: false}
   correction_interpretation: >-
-    The additive constant B is the natural first correction from integer rank
-    boundaries. In the scaled amplitude it is exactly B*N^(-5/8); no correction
-    exponent is selected or fitted.
+    B is the minimal additive lattice-scale correction ansatz for an integer
+    rank gap. Endpoint conventions do not force B or its value. In the scaled
+    amplitude it is exactly B*N^(-5/8); no correction exponent is selected or
+    fitted.
   source_size_order: [65, 85, 130, 170, 185, 265]
   estimator: full_covariance_GLS
   fit_parameters: [A, B]

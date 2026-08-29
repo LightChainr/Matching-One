@@ -36,9 +36,8 @@ observable and a precise correction-flow target for a future freeze.
 ## Prospective integer-boundary target
 
 That future freeze is now registered while the Huawei N=325 and N=425 moment
-files are still zero bytes and unseen. Integer threshold ranks make an additive
-boundary displacement the natural first correction, so the frozen source-only
-model is
+files are still zero bytes and unseen.  The minimal two-term lattice-scale
+ansatz for the integer gap is
 
 ```text
 E[G] = A N^(5/8) + B + o(1).
@@ -67,6 +66,10 @@ covariance preserves that structure. Source lack of fit remains explicit:
 `chi2=31.2748` on 4 degrees of freedom (`p=2.69e-6`). The target therefore
 tests this specific two-term extrapolant rather than certifying it from the
 source data.
+
+The endpoint convention does not force a particular `B`; in particular it
+does not prove the nearby value `-1/4`.  The frozen target is the fitted
+two-term extrapolant, not an endpoint theorem.
 
 After reveal, each target's two orientations are pooled and its delete-one
 batch variance is computed. Because the target counter intervals are disjoint,
