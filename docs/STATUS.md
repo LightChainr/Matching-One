@@ -16,7 +16,7 @@ Only three constraints are treated as hard: preserve frozen predictions/result h
 | Central square-site odd sector is compatible with `DeltaCos4*N^-13/8` | C3 | P31/P32/P37/P43/P50/P57 |
 | Frozen norm-5 H4 transfer beats H12/H8 aliases | C3 | H4 `0.4163/2`; H12 `35.1931/2`; H8 `16.0120/2` |
 | P57 child block alone rejects zero | negative refinement | No: zero `1.77635/2`; its value is harmonic/transfer discrimination |
-| N145->290 full curve is one scalar multiplier | C3 negative | No: three-level transfer `9.3520/2`, `p=.0093`; the resolved shape mode fails while the common amplitude direction remains viable |
+| N145->290 full curve (#50) is one scalar multiplier | C3 negative | No: three-level transfer `9.3520/2`, `p=.0093`; the resolved shape mode fails while the common amplitude direction remains viable |
 | Frozen finite-size center-slope correction predicts N290 | C3 | corrected slope residual `z=-0.666`; bare `2^(3/8)` gives `z=-22.690` |
 | Pure `P4[S'] ~ N^-5/4` is sufficient | C3 negative | Prospectively falsified; `52.71634/2` on P48 new geometry |
 | One scalar width explains the higher thermal jet | C2 negative | No: full covariance norm-5 width score `24.5004/10`; width-corrected q2 `22.2386/10` |
