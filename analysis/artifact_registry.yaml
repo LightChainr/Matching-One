@@ -48,18 +48,19 @@ evidence_archives:
   - {id: NORM4_PILOT, path: results/server-20260829/P154-norm4-variance-pilot, status: calibration_result, role: covariance_and_cost}
   - {id: NEUTRAL_AREA, path: results/local-20260829/neutral-area-mode-front, status: negative_result, role: low_order_mode_front_failure}
   - {id: LOCAL_TANGENT_LARGEN, path: results/local-20260829/P155-c4-local-odd-pivotal-largeN, status: negative_result, role: one_direction_rank_gate}
-  - {id: MULTIRADIUS, path: results/local-20260829/P225-multiradius-pivotal-prototype, status: negative_result, role: small_torus_multiradius_stop}
+  - {id: MULTIRADIUS, path: results/local-20260829/P225-multiradius-pivotal, status: negative_result, role: small_torus_multiradius_stop}
   - {id: PRIMITIVE_GEN2, path: results/server-20260829/P156-norm2-generation2, status: immutable_result, role: second_prospective_norm2_generation}
   - {id: PRIMITIVE_KDV, path: results/local-20260829/P231-vacuum-kdv-sector-response, status: mechanism_result, role: x4_geometry_response}
   - {id: COVER_CHARACTERS, path: results/exact-cover-character-oracles/gaussian_cover_characters.json, status: exact_result, role: deck_character_oracle}
   - {id: N26_BETA, path: results/local-20260828/P115-n26-self-matching-exact, status: negative_result, role: exact_Beta_failure}
+  - {id: GAUSSIAN_COVER_SELECTION_RULE, path: results/exact-cover-character-oracles/norm2_selection_rule.json, status: immutable_result, role: exact_deck_character_linear_null_and_allowed_channels}
 
 topic_derivations:
   - {path: notes/pivotal-russo-finite-volume.md, status: topic_derivation, role: pivotal_identity}
   - {path: notes/post-n290-two-generator-thermal-transfer.md, status: topic_derivation, role: non_scalar_thermal_transfer}
   - {path: notes/q4-jordan-log-slope-shape.md, status: topic_derivation, role: Q4_Jordan_shape}
   - {path: notes/hexagonal-degree2-hecke-fingerprint.md, status: topic_derivation, role: modular_phase_projector}
-  - {path: notes/gaussian-cover-fiber-character-rg.md, status: topic_derivation, role: deck_character_structure}
+  - {path: notes/gaussian-cover-fiber-character-rg.md, status: topic_derivation, role: exact_cover_character_selection_rule}
   - {path: notes/p156-norm2-generation2.md, status: topic_derivation, role: primitive_second_generation}
   - {path: notes/p231-vacuum-kdv-sector-response.md, status: topic_derivation, role: primitive_vacuum_KdV}
   - {path: notes/p225-multiradius-pivotal-prototype.md, status: topic_derivation, role: local_multiradius_negative}
