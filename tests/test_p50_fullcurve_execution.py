@@ -42,6 +42,10 @@ class P50FullcurveExecutionTests(unittest.TestCase):
             determinant = matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]
             self.assertEqual(determinant, 290)
         self.assertEqual(plan["child_N290"]["determinant_order"], 290)
+        command = plan["child_N290"]["command_template"]
+        self.assertIn("--first-matrix 13 -11 11 13", command)
+        self.assertIn("--second-matrix 17 -1 1 17", command)
+        self.assertNotIn("--id", command)
 
     def test_independent_residual_covariance_adds_size_local_terms(self) -> None:
         parent = [[4.0, 1.0], [1.0, 9.0]]
