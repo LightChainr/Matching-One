@@ -1,0 +1,193 @@
+{
+  "schema_version": 1,
+  "frozen_on": "2026-08-29",
+  "governance": {
+    "additive_role": "primary",
+    "pairwise_rule": "compare only the intersection of additive endpoints predicted by both models",
+    "derived_view_rule": "one primary view per raw_data_group; sensitivities and diagnostics are non-additive",
+    "channel_rule": "source and target semantics must match or cite a registered exact_map",
+    "no_prediction_rule": "NO_PREDICTION is coverage metadata, never a score"
+  },
+  "blocks": [
+    {
+      "id": "issue43_n185_n265_deltaM",
+      "raw_data_group": "issue43_n185_n265_500m_histograms",
+      "role": "primary",
+      "status": "SCORED",
+      "channel": {"source": "matching_odd", "target": "matching_odd", "exact_map": null},
+      "chronology": {
+        "prediction_frozen_before_reveal": true,
+        "prediction_artifact": "predictions/two_spin4_heldout_20260828.yaml",
+        "prediction_sha256": "a370e79a10854341fac3ee75e8c518dbf3533e8c077cba2c2ec1018178144f44",
+        "reveal_artifact": "results/server-20260828/P43-heldout-fullcurve-500m/analysis/primary_score.json",
+        "reveal_blob_sha": "9df6f8664bd5ab4e573cc80ae26adcfc7aa357aa"
+      },
+      "observation": [0.00013683009348575636, 0.00012711031441723863],
+      "models": {
+        "H4_x21_over_4": {
+          "mean": [0.00019223156676869253, 0.0001567390401230751],
+          "covariance": [[1.2456913315488692e-9, 6.004596379659636e-11], [6.004596379659636e-11, 1.2515458385865729e-9]]
+        },
+        "H4_x17_over_4": {
+          "mean": [0.0002868415917648024, 0.0002799185461225267],
+          "covariance": [[1.3403776066792787e-9, 1.6426655403582926e-10], [1.6426655403582926e-10, 1.3628883247148765e-9]]
+        },
+        "zero_effect": {
+          "mean": [0.0, 0.0],
+          "covariance": [[1.1720483534516938e-9, 0.0], [0.0, 1.2025864148720061e-9]]
+        }
+      }
+    },
+    {
+      "id": "issue43_n185_n265_sprime_training_only",
+      "raw_data_group": "issue43_n185_n265_500m_histograms",
+      "role": "sensitivity",
+      "status": "SCORED",
+      "channel": {"source": "matching_even_derivative", "target": "matching_even_derivative", "exact_map": null},
+      "chronology": {
+        "prediction_frozen_before_reveal": true,
+        "prediction_artifact": "predictions/p48_sprime_correction_20260828.yaml",
+        "prediction_sha256": "0d44228ae117f94cb1f99d1e2727eb47390aae950c3ae70c21dd8bc5a09454ae",
+        "reveal_artifact": "results/server-20260828/P43-heldout-fullcurve-500m/analysis/secondary_score.json",
+        "reveal_blob_sha": "7f8227699b68b26d6aa90ef0d57ac22b8a12791c"
+      },
+      "observation": [2.579707985721759, 2.8584391240168143],
+      "models": {
+        "analytic_inverse_N": {
+          "mean": [2.6770018919349763, 2.8206562940679887],
+          "covariance": [[0.07075921446106298, 0.07145989058713698], [0.07145989058713698, 0.09757393747678815]]
+        },
+        "rank2_Jordan_log": {
+          "mean": [2.9483999207704414, 3.340954787622457],
+          "covariance": [[0.11443450284008791, 0.1428792399110507], [0.1428792399110507, 0.2096667139352909]]
+        }
+      }
+    },
+    {
+      "id": "issue43_deltaS_literal_channel_mismatch",
+      "raw_data_group": "issue43_n185_n265_500m_histograms",
+      "role": "protocol_history",
+      "status": "PROTOCOL_FAILURE_CHANNEL_MISMATCH",
+      "channel": {"source": "either_even", "target": "cross_even", "exact_map": null},
+      "chronology": {
+        "historical_chi_square": 240.2472113766935,
+        "excluded_from_evidence": true,
+        "correction_note": "notes/issue43-cross-either-channel-map-erratum.md"
+      },
+      "models": {}
+    },
+    {
+      "id": "p37_two_lineage_fixed_coordinate",
+      "raw_data_group": "p37_two_lineage_fixed_coordinate",
+      "role": "primary",
+      "status": "SCORED",
+      "channel": {"source": "matching_odd", "target": "matching_odd", "exact_map": null},
+      "chronology": {
+        "prediction_frozen_before_reveal": true,
+        "prediction_commit": "ceb7a57",
+        "reveal_artifact": "results/server-20260828/P37-doubling/analysis.json",
+        "reveal_blob_sha": "93eef600cc4973c4ac6285d50ba126174a5c0165"
+      },
+      "observation": [-0.00034083, -0.00031285],
+      "models": {
+        "H4_x21_over_4": {
+          "mean": [-0.00035211787587884217, -0.00029748526754028174],
+          "covariance": [[9.77895902275481e-9, -3.512477240640497e-10], [-3.512477240640497e-10, 1.045811823444559e-8]]
+        }
+      }
+    },
+    {
+      "id": "p50_third_fixed_coordinate",
+      "raw_data_group": "p50_third_fixed_coordinate",
+      "role": "primary",
+      "status": "SCORED",
+      "channel": {"source": "matching_odd", "target": "matching_odd", "exact_map": null},
+      "chronology": {
+        "prediction_frozen_before_reveal": true,
+        "prediction_artifact": "predictions/gaussian_doubling_third_lineage_20260828.yaml",
+        "prediction_blob_sha": "2596b3b615d8a2a06ebe800b02510f19748dc690",
+        "reveal_artifact": "results/server-20260828/P50-third-lineage/production_score.json",
+        "reveal_blob_sha": "503e927126f4b046759a765af0cde243beb04a11"
+      },
+      "observation": [-0.000160648],
+      "models": {
+        "H4_x21_over_4": {"mean": [-0.00013765640041065355], "covariance": [[2.268452187989943e-9]]},
+        "zero_effect": {"mean": [0.0], "covariance": [[1.6436230555151514e-9]]}
+      }
+    },
+    {
+      "id": "p45_angular_normalized_root",
+      "raw_data_group": "p45_p49_shared_fullcurve_histograms",
+      "role": "sensitivity",
+      "status": "SCORED",
+      "channel": {"source": "matching_root", "target": "matching_root", "exact_map": null},
+      "chronology": {
+        "prediction_frozen_before_reveal": true,
+        "prediction_artifact": "predictions/angular_root_amplitude_20260828.yaml",
+        "prediction_blob_sha": "e657a7f051f74171b70c30bbd2753afbfdb07476",
+        "reveal_artifact": "results/server-20260828/P45-root-amplitude/score.json",
+        "reveal_blob_sha": "6db49fdbae4e2a712ed2dd636b3d9e0583eea733"
+      },
+      "observation": [0.4203380978114989, 0.39494855768100623],
+      "models": {
+        "H4_x21_over_4": {
+          "mean": [0.4510066187069702, 0.4510066187069702],
+          "covariance": [[0.0008707324266527387, 0.0005412872188659858], [0.0005412872188659858, 0.001352837411382779]]
+        },
+        "zero_effect": {
+          "mean": [0.0, 0.0],
+          "covariance": [[0.000465366013290105, 0.00013592080550335205], [0.00013592080550335205, 0.0009474709980201452]]
+        }
+      }
+    },
+    {
+      "id": "issue57_norm5",
+      "raw_data_group": "issue57_norm5_production",
+      "role": "primary",
+      "status": "PENDING_REVEAL",
+      "channel": {"source": "matching_odd", "target": "matching_odd", "exact_map": null},
+      "models": {}
+    },
+    {
+      "id": "p49_clean_full_curve",
+      "raw_data_group": "p45_p49_shared_fullcurve_histograms",
+      "role": "primary",
+      "status": "SCORED",
+      "channel": {"source": "matching_even_derivative", "target": "matching_even_derivative", "exact_map": null},
+      "chronology": {
+        "prediction_frozen_before_reveal": true,
+        "prediction_artifact": "predictions/p48_sprime_correction_20260828.yaml",
+        "prediction_sha256": "0d44228ae117f94cb1f99d1e2727eb47390aae950c3ae70c21dd8bc5a09454ae",
+        "reveal_artifact": "results/server-20260828/P49-fullcurve-doubling-100m/analysis/score.json",
+        "reveal_blob_sha": "39941d4083754f6fbe931bbe4d1730475917c4cb"
+      },
+      "observation": [0.0055380388347450625, 0.004593056189910697],
+      "models": {
+        "H4_pure_N_minus_5_over_4": {
+          "mean": [0.0044272958126054, 0.0031659684253880624],
+          "covariance": [[8.229336218174841e-8, 2.2002864811040103e-8], [2.2002864811040103e-8, 6.166617390724193e-8]]
+        },
+        "q2_even_scalar": {
+          "mean": [0.005709852977251097, 0.004350252194522092],
+          "covariance": [[1.665255894879427e-7, 1.0244960980202156e-7], [1.0244960980202158e-7, 1.3834359840953507e-7]]
+        },
+        "rank2_Jordan_log": {
+          "mean": [0.005754384092088816, 0.004559266944357833],
+          "covariance": [[1.7030887098338484e-7, 1.1871468218194916e-7], [1.1871468218195001e-7, 1.6753932239972602e-7]]
+        },
+        "zero_effect": {
+          "mean": [0.0, 0.0],
+          "covariance": [[5.1838650845447447e-8, 2.2463751922158947e-10], [2.2463751922158947e-10, 4.609251836552054e-8]]
+        }
+      }
+    },
+    {
+      "id": "p91_n145_to_n290_full_curve",
+      "raw_data_group": "p91_n145_n290_fullcurve_histograms",
+      "role": "primary",
+      "status": "PENDING_REVEAL",
+      "channel": {"source": "matching_full_curve", "target": "matching_full_curve", "exact_map": null},
+      "models": {}
+    }
+  ]
+}
