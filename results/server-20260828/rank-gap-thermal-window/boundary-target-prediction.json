@@ -1,0 +1,51 @@
+{
+  "schema": "matching-one/rank-gap-boundary-targets/v1",
+  "status": "frozen_source_fit_targets_unseen",
+  "model": "E[G]=A*N^(5/8)+B; exponent fixed, not fitted",
+  "source_fit": {
+    "A": "0.427866620709333321439274336929",
+    "B": "-0.264904353325853375518887844891",
+    "parameter_covariance": [
+      [
+        "4.9841497287818241358410453052e-10",
+        "-0.0000000108680754801728170106924719592"
+      ],
+      [
+        "-0.0000000108680754801728170106924719592",
+        "0.000000258858967663790393675823796122"
+      ]
+    ],
+    "chi_square": "31.2748401453236295527186434251",
+    "degrees_of_freedom": 4,
+    "chi_square_survival": "0.000002690547931731369530130748"
+  },
+  "target_order": [
+    325,
+    425
+  ],
+  "target_gap_mean_prediction": [
+    "15.6291797835840767946434852788",
+    "18.5304919948637043005515286988"
+  ],
+  "target_scaled_amplitude_prediction": [
+    "0.420735430922467124465785218702",
+    "0.42183622218147031013692349336"
+  ],
+  "target_prediction_covariance_from_source_fit": [
+    [
+      "0.000000139193182566778465541321345162",
+      "0.000000191044459950006313827295280395"
+    ],
+    [
+      "0.000000191044459950006313827295280395",
+      "0.00000026581302404850514936690075479"
+    ]
+  ],
+  "scoring_rule": "r=y_target-y_frozen; Cov(r)=Cov_target_delete_one+Cov_frozen_prediction; score r^T Cov(r)^-1 r against chi-square_2 and report signed marginal z",
+  "provenance": {
+    "manifest": "predictions/rank_gap_boundary_correction_targets_20260829.yaml",
+    "manifest_sha256": "010d0a11a1187d56fbe92e5f7e9fde4990634bd19658c518dff35b4511bfbf38",
+    "source_score": "results/server-20260828/rank-gap-thermal-window/score.json",
+    "source_score_sha256": "58378a4b5e4bc43ddecc1016ba16c8dcf567e706f429f38a606e2882c13f1b58"
+  }
+}
