@@ -31,6 +31,27 @@ evidence_rule: >-
   Y, Xi, and T are correlated deterministic views of one raw block. The Y
   heldout score is primary; Xi and T are mechanism diagnostics and must not be
   counted as independent confirmation.
+high_statistics_archive:
+  status: descriptive_protocol_frozen
+  runs:
+    65: results/server-20260828/P45-root-amplitude/n65.hist.csv
+    85: results/server-20260828/P45-root-amplitude/n85.hist.csv
+    130: results/server-20260828/P49-fullcurve-doubling-100m/raw/n130.hist.csv
+    170: results/server-20260828/P49-fullcurve-doubling-100m/raw/n170.hist.csv
+    185: results/server-20260828/P43-heldout-fullcurve-500m/raw/n185.hist.csv
+    265: results/server-20260828/P43-heldout-fullcurve-500m/raw/n265.hist.csv
+    325: results/server-20260829/P57-norm5-500m/raw/n325_500m.hist.csv
+    425: results/server-20260829/P57-norm5-500m/raw/n425_500m.hist.csv
+  covariance_blocks:
+    - [65, 85, 130, 170]
+    - [185]
+    - [265]
+    - [325]
+    - [425]
+  score_rule: >-
+    Report constant-amplitude GLS diagnostics for the four frozen transforms.
+    They are descriptive whole-archive tests, not heldout evidence and do not
+    replace the five-size primary split.
 claim_boundary: >-
   Compatibility supports an integrated pivotal/four-arm interpretation. It
   does not identify a local landing-sector observable or prove an SLE/OPE

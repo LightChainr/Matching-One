@@ -7,6 +7,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from analyze_pivotal_h4_bridge import bridge_metrics  # noqa: E402
+from analyze_pivotal_h4_archive import fit_constant  # noqa: E402
 
 
 class PivotalH4BridgeTests(unittest.TestCase):
@@ -24,6 +25,12 @@ class PivotalH4BridgeTests(unittest.TestCase):
         self.assertEqual(result["even_pivotal_H4_scaled"], -2.0)
         self.assertEqual(result["coefficient_ratio"], 0.5)
         self.assertEqual(result["thermal_mass_scaled"], 8.0 / 16 ** (3 / 8))
+
+    def test_constant_fit(self):
+        result = fit_constant([2.0, 2.0], [[1.0, 0.0], [0.0, 1.0]])
+        self.assertEqual(result["amplitude"], 2.0)
+        self.assertEqual(result["chi_square"], 0.0)
+        self.assertEqual(result["df"], 1)
 
 
 if __name__ == "__main__":
