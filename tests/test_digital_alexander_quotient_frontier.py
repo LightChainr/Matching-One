@@ -18,19 +18,25 @@ class DigitalAlexanderQuotientFrontierTests(unittest.TestCase):
         cls.artifact = frontier.build_artifact()
 
     def test_all_hnf_representatives_and_permutations_are_exhausted(self) -> None:
-        self.assertEqual(self.artifact["status"], "no_counterexample_through_index_6")
-        self.assertEqual(self.artifact["HNF_representatives"], 32)
-        self.assertEqual(self.artifact["filtration_paths"], 9558)
-        self.assertEqual(len(self.artifact["geometries"]), 32)
+        self.assertEqual(self.artifact["status"], "no_counterexample_through_index_7")
+        self.assertEqual(self.artifact["HNF_representatives"], 40)
+        self.assertEqual(self.artifact["filtration_paths"], 49878)
+        self.assertEqual(len(self.artifact["geometries"]), 40)
 
     def test_face_degeneracy_partition_is_complete(self) -> None:
         self.assertEqual(
             self.artifact["honest_face_representatives"]
             + self.artifact["self_identifying_face_representatives"],
-            32,
+            40,
         )
-        self.assertEqual(self.artifact["honest_face_representatives"], 13)
-        self.assertEqual(self.artifact["self_identifying_face_representatives"], 19)
+        self.assertEqual(self.artifact["honest_face_representatives"], 17)
+        self.assertEqual(self.artifact["self_identifying_face_representatives"], 23)
+
+    def test_index_seven_extension_is_complete(self) -> None:
+        rows = [row for row in self.artifact["geometries"] if row["order"] == 7]
+        self.assertEqual(len(rows), 8)
+        self.assertTrue(all(row["permutations"] == 5040 for row in rows))
+        self.assertEqual(sum(row["four_distinct_face_corners"] for row in rows), 4)
 
     def test_all_five_exact_gates_have_zero_failures(self) -> None:
         expected = {
@@ -50,7 +56,7 @@ class DigitalAlexanderQuotientFrontierTests(unittest.TestCase):
         geometries = self.artifact["geometries"]
         self.assertEqual(max(row["maximum_saturation_index"] for row in geometries), 1)
         self.assertEqual(sum(row["permutations_with_index_evolution"] for row in geometries), 0)
-        self.assertEqual(sum(row["rank_one_plateau_steps"] for row in geometries), 21104)
+        self.assertEqual(sum(row["rank_one_plateau_steps"] for row in geometries), 150128)
 
     def test_failure_counts_match_stored_examples(self) -> None:
         for gate, count in self.artifact["total_failure_counts"].items():
