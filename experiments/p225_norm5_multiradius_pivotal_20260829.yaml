@@ -1,0 +1,96 @@
+version: 1
+frozen_at: 2026-08-29
+status: frozen_before_200k_production
+related_issue: 225
+stacked_on_pr: 240
+engine_commit: f8e02c9
+purpose: >-
+  First scientific multi-radius square-site/matching pivotal-H4 block with a
+  genuine dyadic 2,4,8 window, exact orientation order, same-R UV views and an
+  independently declared near-fixed-delta comparison.
+
+model:
+  primal: square_site_NN
+  matching: complemented_square_site_NN_plus_NNN
+  p: '0.592746050790'
+  root: vertex_zero_toggled_for_pivotal_test
+  cutoff:
+    scheme: euclidean_disk
+    included: '0 < x^2+y^2 <= R^2'
+    landing_shell: '(R-1)^2 < x^2+y^2 <= R^2'
+    reason: >-
+      The inherited Chebyshev square aliases N425 (16,13) at R=8. The disk is
+      C4/reflection symmetric and is injective for all four frozen designs.
+    boundary: this_is_a_new_cutoff_scheme_not_PR211_square_R3
+  landing_registry: absolute_lattice_axis_minus_diagonal
+
+designs_in_frozen_order:
+  - {label: n325_first, N: 325, rep: [17, 6], pair_role: first}
+  - {label: n325_second, N: 325, rep: [18, 1], pair_role: second}
+  - {label: n425_first, N: 425, rep: [16, 13], pair_role: first}
+  - {label: n425_second, N: 425, rep: [19, 8], pair_role: second}
+
+orientation_contract:
+  contrast: first_minus_second
+  N325_Delta_cos4: '-16128/21125'
+  N425_Delta_cos4: '-32256/36125'
+  registry_reversal_between_sizes: false
+  rule: do_not_relabel_the_H4_mark_after_reading_means
+
+production:
+  radii: [2, 4, 7, 8]
+  dyadic_shells: [[2, 4], [4, 8]]
+  samples_per_design: 200000
+  batches: 200
+  seed: 22550260829
+  replica_offset: 15000000000
+  counter_last_exclusive: 15000200000
+  freshness: disjoint_from_PR211_12B_interval_and_PR224_zero_interval
+  covariance:
+    within_equal_N: identical_Bernoulli_field_for_the_two_reps
+    cross_N: same_seed_counter_prefix_coupling
+    cross_radius: identical_configuration_and_single_pivotal_flag
+    delete_one: recompute_every_ratio_contrast_shell_and_matched_delta_view
+
+scoring_views:
+  same_R_UV:
+    radii: [2, 4, 8]
+    meaning: compare fixed lattice cutoff; delta changes with N
+  dyadic_shells:
+    statistic: '[Delta A(2R)-Delta A(R)]/log(2)'
+    channels: [A_plus, A_minus]
+    hypothesis_order: [common_log_shell_direction, UV_localized, unresolved]
+  matched_delta:
+    first: {N: 325, R: 7, delta: '0.3882901373576604'}
+    second: {N: 425, R: 8, delta: '0.3880570000581328'}
+    relative_mismatch: '0.0006006006547629'
+    statistic: N325_first_minus_second_contrast_minus_N425_first_minus_second_contrast
+  evidence_rule: all_views_form_one_correlated_primary_block
+
+commands:
+  compile: >-
+    g++ -O3 -DNDEBUG -std=c++17 -fopenmp
+    src/matching_multiradius_pivotal_mc.cpp
+    -o build/matching_multiradius_pivotal_mc
+  validate: >-
+    build/matching_multiradius_pivotal_mc --validate-only
+    --radii 2,4,7,8 --cutoff euclidean
+  run: >-
+    build/matching_multiradius_pivotal_mc
+    --samples 200000 --batches 200 --radii 2,4,7,8
+    --cutoff euclidean --p 0.592746050790 --threads 16
+    --seed 22550260829 --replica-offset 15000000000
+    --git-commit f8e02c9
+    --output-prefix results/server-20260829/P225-norm5-multiradius/raw/norm5_200k
+  score: >-
+    python3 scripts/analyze_norm5_multiradius_pivotal.py
+    --batches results/server-20260829/P225-norm5-multiradius/raw/norm5_200k.batches.csv
+    --metadata results/server-20260829/P225-norm5-multiradius/raw/norm5_200k.metadata.json
+    --output results/server-20260829/P225-norm5-multiradius/analysis.json
+
+forbidden:
+  - run_chebyshev_R8_on_the_N425_first_geometry
+  - count_same_R_shell_or_matched_delta_views_as_independent_evidence
+  - compare_raw_first_second_marks_without_the_frozen_order
+  - fit_a_free_radius_power_before_the_fixed_shell_views
+  - call_the_disk_cutoff_a_reproduction_of_PR211_R3
