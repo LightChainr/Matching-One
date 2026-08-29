@@ -1,8 +1,8 @@
-version: 4
+version: 5
 updated: 2026-08-29
 purpose: >
-  Lightweight navigation index. Registry conflicts never block scientific
-  integration; claim strength lives in STATUS and priority lives in ROADMAP.
+  Lightweight navigation/provenance index. Registry conflicts never block
+  science; claim strength lives in STATUS and priority lives in ROADMAP.
 
 integration_policy:
   registry_conflicts_block_science: false
@@ -26,88 +26,49 @@ canonical_documents:
 
 frozen_predictions:
   - {path: predictions/two_spin4_heldout_20260828.yaml, status: frozen_prediction, issue: 43, role: N185_N265_targets}
-  - {path: predictions/x17_spin4_competitor_20260828.yaml, status: frozen_prediction, issue: 43, role: radial_adversary}
-  - {path: predictions/angular_root_amplitude_20260828.yaml, status: frozen_prediction, role: root_amplitude}
-  - {path: predictions/gaussian_doubling_third_lineage_20260828.yaml, status: frozen_prediction, issue: 50, role: third_lineage_fixed_coordinate}
-  - {path: predictions/p49_slope_two_sector_145_290_20260828.yaml, status: frozen_prediction, issue: 50, role: N290_slope_root_correction}
-  - {path: predictions/gaussian_norm5_harmonic_discrimination_20260828.yaml, status: frozen_prediction, issue: 57, role: completed_norm5_H4_H12}
-  - {path: predictions/norm5_harmonic_primary_scorer_20260828.yaml, status: frozen_prediction, issue: 57, role: norm5_primary_kernel}
-  - {path: predictions/norm5_harmonic_semantic_gate_20260829.yaml, status: frozen_prediction, issue: 57, role: norm5_semantics}
-  - {path: predictions/intrinsic_functional_cocycle_scorer_20260828.yaml, status: frozen_prediction, role: q2_Jordan_fullcurve_kernel}
-  - {path: predictions/intrinsic_functional_cocycle_semantic_gate_20260829.yaml, status: frozen_prediction, role: q2_Jordan_semantics}
-  - {path: predictions/p48_sprime_scoring_manifest_20260828.yaml, status: frozen_prediction, issue: 48, role: Sprime_score_order}
-  - {path: predictions/p48_sprime_q2_correction_20260828.yaml, status: frozen_prediction, issue: 48, role: q2_correction}
-  - {path: predictions/p48_sprime_jordan_log_20260828.yaml, status: frozen_prediction, issue: 48, role: Jordan_correction}
-  - {path: analysis/threshold_score_mode_manifest.yaml, status: frozen_prediction, issue: 182, role: source_Krawtchouk_basis}
-  - {path: predictions/rank_gap_boundary_correction_targets_20260829.yaml, status: frozen_prediction, role: completed_norm5_rank_gap_target}
-  - {path: predictions/hermite_krawtchouk_jet_20260829.yaml, status: frozen_prediction, issue: 182, role: thermal_jet_contract}
-  - {path: predictions/dimensionless_amplitude_ratios_20260829.yaml, status: frozen_prediction, issue: 118, role: post_P57_definition_for_future_heldout_use}
-  - {path: predictions/gaussian_isogeny_maximin_design_20260828.yaml, status: frozen_prediction, issue: 102, role: geometry_design_benchmark}
+  - {path: predictions/p49_slope_two_sector_145_290_20260828.yaml, status: frozen_prediction, issue: 50, role: completed_N290_slope_root_correction}
+  - {path: predictions/gaussian_norm5_harmonic_discrimination_20260828.yaml, status: frozen_prediction, issue: 57, role: completed_norm5_harmonic_targets}
+  - {path: predictions/norm4_two_generator_transfer_20260829.yaml, status: frozen_prediction, issue: 154, role: norm4_q2_Jordan_transfer}
+  - {path: predictions/norm5_conjugate_coalescence_20260829.yaml, status: frozen_prediction, issue: 205, role: same_N_H4_quotient_control}
+  - {path: predictions/q4_jordan_log_slope_shape_20260829.json, status: frozen_prediction, issue: 216, role: Q4_Jordan_shape}
+  - {path: predictions/hexagonal_degree2_hecke_20260829.json, status: frozen_prediction, issue: 164, role: scalar_cancelled_modular_projector}
+  - {path: predictions/p159_norm2_character_discriminator_20260829.yaml, status: frozen_prediction, issue: 156, role: primitive_norm2_generation1_hierarchy}
+  - {path: predictions/p156_norm2_generation2_20260829.yaml, status: frozen_prediction, issue: 156, role: primitive_norm2_generation2}
+  - {path: predictions/p231_pinson_arguin_kdv_oracles_20260829.json, status: frozen_prediction, issue: 231, role: vacuum_KdV_geometry_oracle}
   - {path: predictions/c4_self_matching_n26_beta_targets_20260828.json, status: frozen_prediction, issue: 115, role: completed_N26_targets}
-  - {path: predictions/reliability_signature_tomography_20260828.yaml, status: frozen_prediction, role: exact_signature_tomography}
-  - {path: predictions/hexagonal_pell_spin_filter_20260828.yaml, status: frozen_prediction, role: Pell_shape_target}
-  - {path: predictions/rectangular_thermal_q4_hecke_20260829.yaml, status: frozen_prediction, role: rectangular_weight4_ratio}
-  - {path: predictions/q4_jordan_log_slope_shape_20260829.json, status: frozen_prediction, issue: 216, role: module_specific_Q4_Jordan_log_slope_shape}
-  - {path: predictions/polynomial_widths_22_24.yaml, status: frozen_prediction, issue: 6, role: finite_width_challenge}
   - {path: predictions/wrapping_channel_audit_20260828.json, status: frozen_prediction, issue: 146, role: semantic_map_audit}
 
 continuum_controls:
   - {path: predictions/p156_pinson_arguin_baselines_20260829.json, status: continuum_baseline, issue: 156, role: primitive_homology_sector_values}
 
 evidence_archives:
-  - {id: NEUTRAL_AREA_MODE_FRONT, path: results/local-20260829/neutral-area-mode-front, status: negative_result, role: exact_covector_and_bounded_mode_front}
-  - {id: P31, path: results/server-20260828/P31, status: immutable_result, role: same_N_confirmation}
-  - {id: P32, path: results/server-20260828/P32-radial-challenge, status: immutable_result, role: heldout_radial}
-  - {id: P35, path: results/server-20260828/P35-amplitude-closure, status: immutable_result, role: root_closure}
-  - {id: P37, path: results/server-20260828/P37-doubling, status: immutable_result, role: norm2_lineages}
-  - {id: P43, path: results/server-20260828/P43-heldout-fullcurve-500m, status: immutable_result, role: new_geometry_fullcurves}
-  - {id: P45, path: results/server-20260828/P45-root-amplitude, status: immutable_result, role: root_amplitude}
-  - {id: P48, path: results/server-20260828/P48-new-geometry-score, status: immutable_result, role: four_channel_score}
-  - {id: P49, path: results/server-20260828/P49-fullcurve-doubling-100m, status: immutable_result, role: clean_norm2_fullcurves}
-  - {id: P50A, path: results/server-20260828/P50-third-lineage, status: immutable_result, role: third_fixed_coordinate_lineage}
-  - {id: P57, path: results/server-20260829/P57-norm5-500m, status: immutable_result, role: prospective_norm5_reveal}
-  - {id: P57_RANK_GAP, path: results/server-20260829/P57-norm5-500m/post-reveal-rank-gap, status: negative_result, role: simple_rank_gap_boundary_failure}
-  - {id: P57_FAST_JET, path: results/server-20260829/P57-norm5-500m/post-reveal-fast-jet, status: immutable_result, role: exploratory_scalar_width_failure}
-  - {id: PREQUENTIAL, path: results/evidence-ledger, status: immutable_result, role: primary_only_evidence_view}
-  - {id: P212_SYNTHESIS, path: results/evidence-ledger/issue212-matching-odd-synthesis.json, status: post_reveal_synthesis, role: matching_odd_signal_existence}
-  - {id: MATRIX_SEMIGROUP, path: results/discovery-20260828/matrix-semigroup, status: immutable_result, role: retrospective_low_rank_transfer}
-  - {id: SELFMATCHING_N10, path: results/local-20260828/P44-self-matching-tangent, status: immutable_result, role: exact_tangent}
+  - {id: P57, path: results/server-20260829/P57-norm5-500m, status: immutable_result, role: prospective_norm5}
+  - {id: P50_FULLCURVE, path: results/server-20260829/P50-n145-n290-fullcurve, status: immutable_result, role: heldout_fullcurve}
+  - {id: MATCHING_ODD_SYNTHESIS, path: results/evidence-ledger/issue212-matching-odd-synthesis.json, status: post_reveal_synthesis, role: independent_primary_meta}
+  - {id: NORM4_PILOT, path: results/server-20260829/P154-norm4-variance-pilot, status: calibration_result, role: covariance_and_cost}
+  - {id: NEUTRAL_AREA, path: results/local-20260829/neutral-area-mode-front, status: negative_result, role: low_order_mode_front_failure}
+  - {id: LOCAL_TANGENT_LARGEN, path: results/local-20260829/P155-c4-local-odd-pivotal-largeN, status: negative_result, role: one_direction_rank_gate}
+  - {id: MULTIRADIUS, path: results/local-20260829/P225-multiradius-pivotal-prototype, status: negative_result, role: small_torus_multiradius_stop}
+  - {id: PRIMITIVE_GEN2, path: results/server-20260829/P156-norm2-generation2, status: immutable_result, role: second_prospective_norm2_generation}
+  - {id: PRIMITIVE_KDV, path: results/local-20260829/P231-vacuum-kdv-sector-response, status: mechanism_result, role: x4_geometry_response}
+  - {id: COVER_CHARACTERS, path: results/exact-cover-character-oracles/gaussian_cover_characters.json, status: exact_result, role: deck_character_oracle}
   - {id: N26_BETA, path: results/local-20260828/P115-n26-self-matching-exact, status: negative_result, role: exact_Beta_failure}
-  - {id: SQUARE_BOND_DUALITY, path: results/exact_square_bond_duality.md, status: immutable_result, role: exact_duality_oracle}
-  - {id: P156_PRIMITIVE_PILOT, path: results/local-20260829/P156-square-bond-primitive-pilot, status: exploratory_result, role: square_bond_C3_primitive_control}
-  - {id: P159_PELL_HEX_FILTER, path: results/local-20260829/P159-pell-hex-h4-filter, status: negative_result, role: post_reveal_H4_phase_bridge_gate}
-  - {id: EXACT_POLYNOMIALS, path: results/exact_small_matching_polynomials.md, status: immutable_result, role: exact_finite_polynomials}
-  - {id: EXACT_ZERO_PILOT, path: results/exact-zero-map-pilot, status: negative_result, role: complex_zero_pilot}
   - {id: BOOLEAN_NOISE_SEMIGROUP, path: results/exact-boolean-noise-semigroup, status: immutable_result, role: exact_p_biased_wrapping_spectra}
-  - {id: C4_LOCAL_ODD_PIVOTAL, path: results/local-20260829/P155-c4-local-odd-pivotal, status: immutable_result, role: exact_local_odd_tangent_oracle}
-  - {id: C4_LOCAL_ODD_LARGEN, path: results/local-20260829/P155-c4-local-odd-pivotal-largeN, status: negative_result, role: largeN_rank_gate_one_dimension}
 
 topic_derivations:
   - {path: notes/pivotal-russo-finite-volume.md, status: topic_derivation, role: pivotal_identity}
-  - {path: notes/c4-self-matching-tangent-improvement.md, status: topic_derivation, role: microscopic_tangent}
-  - {path: notes/reliability-signature-threshold-tomography.md, status: topic_derivation, role: reliability_signatures}
-  - {path: notes/thermal-level4-torus-onepoint-E4.md, status: topic_derivation, role: Q4_E4_identity}
-  - {path: notes/rectangular-thermal-q4-hecke-ratio.md, status: topic_derivation, role: rectangular_Q4_ratio}
-  - {path: notes/q4-jordan-log-slope-shape.md, status: topic_derivation, role: Q4_Jordan_log_slope_shape}
-  - {path: notes/logodds-krawtchouk-threshold-response.md, status: topic_derivation, role: score_modes}
-  - {path: notes/rank-gap-thermal-window.md, status: topic_derivation, role: rank_gap_window}
-  - {path: notes/hermite-krawtchouk-thermal-jet.md, status: topic_derivation, role: thermal_jet}
-  - {path: notes/matrix-gaussian-semigroup-discovery.md, status: topic_derivation, role: low_rank_transfer}
-  - {path: notes/dimensionless-amplitude-ratios.md, status: topic_derivation, role: metric_free_ratios}
-  - {path: notes/square-bond-duality-tiny-torus.md, status: topic_derivation, role: square_bond_control}
-  - {path: notes/pinson-arguin-primitive-baseline.md, status: topic_derivation, role: primitive_homology_baseline}
-  - {path: notes/p156-square-bond-primitive-pilot.md, status: topic_derivation, role: primitive_homology_pilot}
-  - {path: notes/gaussian-isogeny-maximin-design.md, status: topic_derivation, role: information_design}
+  - {path: notes/post-n290-two-generator-thermal-transfer.md, status: topic_derivation, role: non_scalar_thermal_transfer}
+  - {path: notes/q4-jordan-log-slope-shape.md, status: topic_derivation, role: Q4_Jordan_shape}
+  - {path: notes/hexagonal-degree2-hecke-fingerprint.md, status: topic_derivation, role: modular_phase_projector}
+  - {path: notes/gaussian-cover-fiber-character-rg.md, status: topic_derivation, role: deck_character_structure}
+  - {path: notes/p156-norm2-generation2.md, status: topic_derivation, role: primitive_second_generation}
+  - {path: notes/p231-vacuum-kdv-sector-response.md, status: topic_derivation, role: primitive_vacuum_KdV}
+  - {path: notes/p225-multiradius-pivotal-prototype.md, status: topic_derivation, role: local_multiradius_negative}
   - {path: notes/exact-boolean-noise-semigroup.md, status: topic_derivation, role: p_biased_noise_pivotal_bridge}
-  - {path: notes/c4-local-odd-pivotal-tangent.md, status: topic_derivation, role: local_odd_tangent_readout}
 
 historical_protocols:
   - {path: experiments/server_compute_queue.yaml, status: historical, role: original_server_queue}
-  - {path: experiments/server_compute_queue_overrides_20260828.yaml, status: historical, role: queue_override_v1}
-  - {path: experiments/server_compute_queue_overrides_20260828_v2.yaml, status: historical, role: queue_override_v2}
-  - {path: experiments/server_compute_queue_overrides_20260828_v3.yaml, status: historical, role: final_third_wave_queue}
-  - {path: experiments/post-server-third-wave.yaml, status: historical, role: third_wave_protocol}
-  - {path: experiments/post-server-third-wave-overrides-20260828.yaml, status: historical, role: third_wave_override}
+  - {path: experiments/p50_n145_n290_fullcurve_20260829.yaml, status: historical, role: completed_N290_plan}
 
 channel_semantics:
   implementation: scripts/wrapping_channels.py
@@ -117,43 +78,49 @@ channel_semantics:
   required_fields: [topology_channel, combination, probability_coordinate, orientation_order, normalization, quantity]
 
 frontier_open_as_of_2026_08_29:
-  - {pr: 84, state: frontier, classification: unique_frontier, role: exact_axis_L5_and_Galois}
+  - {pr: 246, state: frontier, classification: parallel_exact_protocol, role: triangular_energy_logpair_statistics}
+  - {pr: 245, state: frontier, classification: parallel_exact_protocol, role: Boolean_noise_semigroup_oracle}
+  - {pr: 230, state: frontier, classification: analysis_template, role: multi_u_response}
+  - {pr: 229, state: frontier, classification: exact_side_result, role: matching_defect_polynomial}
+  - {pr: 228, state: frontier, classification: exact_side_result, role: finite_Galois_certificates}
+  - {pr: 197, state: frontier, classification: negative_result_extract, role: local_matching_zeros}
+  - {pr: 196, state: frontier, classification: exact_side_result, role: Euler_Betti_identity}
+  - {pr: 84, state: frontier, classification: exact_side_result, role: axis_L5_Galois_frontier}
 
 canonical_integration_history:
-  - {pr: 139, role: maximin_Gaussian_design}
-  - {pr: 142, role: low_rank_matrix_semigroup}
-  - {pr: 170, role: research_map_and_typed_semantics}
-  - {pr: 171, role: P48_new_geometry_score}
-  - {pr: 172, role: typed_norm5_primary}
-  - {pr: 173, role: typed_norm5_fullcurve}
-  - {pr: 174, role: exact_Russo_oracle}
-  - {pr: 175, role: exact_self_matching_tangent}
-  - {pr: 176, role: exact_N26_Beta_failure}
-  - {pr: 177, role: reliability_signature_layer}
-  - {pr: 179, role: general_integer_period_backend}
-  - {pr: 181, role: norm5_calibration_archive}
-  - {pr: 183, role: sequential_methodology}
-  - {pr: 184, role: prequential_evidence_ledger}
-  - {pr: 186, role: rectangular_Q4_ratio}
-  - {pr: 188, role: rank_gap_analysis}
   - {pr: 190, role: prospective_norm5_reveal}
+  - {pr: 195, role: P50_execution_repairs}
+  - {pr: 199, role: N145_N290_fullcurve_result}
+  - {pr: 194, role: norm5_thermal_jet_score}
+  - {pr: 221, role: independent_matching_odd_synthesis}
+  - {pr: 204, role: norm4_two_generator_pilot_and_plan}
+  - {pr: 207, role: same_N_norm5_coalescence_freeze}
+  - {pr: 209, role: pivotal_normalization}
+  - {pr: 211, role: local_landing_marked_H4}
+  - {pr: 208, role: self_matching_tangent_rank_test}
+  - {pr: 219, role: local_odd_tangent_oracle}
+  - {pr: 224, role: largeN_local_tangent_stop}
+  - {pr: 210, role: neutral_area_covector}
+  - {pr: 213, role: general_tau_primitive_baseline}
+  - {pr: 222, role: primitive_C3_pilot}
+  - {pr: 235, role: primitive_Pell_phase_gate}
+  - {pr: 238, role: primitive_norm2_generation1}
+  - {pr: 243, role: primitive_norm2_generation2}
+  - {pr: 236, role: intrinsic_quantile_heldout}
+  - {pr: 217, role: Q4_Jordan_inheritance}
+  - {pr: 232, role: Q4_Jordan_shape}
+  - {pr: 240, role: multiradius_small_torus_stop}
 
 manual_integrations:
-  - {pr: 187, role: Krawtchouk_score_modes}
-  - {pr: 189, role: Hermite_Krawtchouk_thermal_jet}
-  - {pr: 191, role: square_bond_duality_oracle}
-  - {pr: 192, role: metric_free_amplitude_ratios}
+  - {pr: 223, role: hexagonal_degree2_Hecke_unique_assets}
+  - {pr: 237, role: prereveal_primitive_norm2_freeze}
+  - {pr: 239, role: Gaussian_cover_character_oracle}
+  - {pr: 241, role: vacuum_KdV_unique_assets}
 
 superseded_active_paths_closed:
-  - {pr: 141, superseded_by: [170, 186]}
-  - {pr: 143, superseded_by: [173, 186]}
-  - {pr: 151, superseded_by: [170, 186]}
-  - {pr: 149, superseded_by: 179}
-  - {pr: 150, superseded_by: 181}
-  - {pr: 117, superseded_by: historical}
-  - {pr: 130, superseded_by: negative_result}
-  - {pr: 187, superseded_by: manual_integrations}
-  - {pr: 189, superseded_by: manual_integrations}
-  - {pr: 191, superseded_by: manual_integrations}
-  - {pr: 192, superseded_by: manual_integrations}
-  - {pr: 193, superseded_by: current_registry_cleanup}
+  - {pr: 202, superseded_by: 204}
+  - {pr: 198, superseded_by: 236}
+  - {pr: 223, superseded_by: manual_integrations}
+  - {pr: 237, superseded_by: manual_integrations}
+  - {pr: 239, superseded_by: manual_integrations}
+  - {pr: 241, superseded_by: manual_integrations}

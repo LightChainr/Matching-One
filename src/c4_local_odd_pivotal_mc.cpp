@@ -474,6 +474,7 @@ int run_local(int argc, char** argv) {
 
 }  // namespace
 
+#ifndef C4_LOCAL_ODD_NO_MAIN
 int main(int argc, char** argv) {
     try {
         return run_local(argc, argv);
@@ -482,3 +483,4 @@ int main(int argc, char** argv) {
         return 2;
     }
 }
+#endif
