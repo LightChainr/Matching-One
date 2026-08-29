@@ -1,0 +1,326 @@
+{
+  "claim_boundary": {
+    "exact": "finite state/gate algebra, all-order closure, and tiny marked geometry checks",
+    "not_ruled_out": "mean insertion sources themselves, couplings to observers varying inside a fixed q sector, or continuum identification from independent modular data"
+  },
+  "finite_algebra": {
+    "D_minimal_polynomial": "D*(D-1)*(D+1)=0",
+    "D_multiplication": [
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "1",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ]
+    ],
+    "Q_minimal_polynomial": "Q*(Q-1)*(Q+1)=0",
+    "Q_multiplication": [
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ]
+    ],
+    "S_minimal_polynomial": "S*(S-1)*(S-2)=0",
+    "S_multiplication": [
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "2",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "-1",
+        "0",
+        "1"
+      ]
+    ],
+    "bernoulli_root_restriction_observer_to_gate": [
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "p-1/2",
+        "1/2"
+      ],
+      [
+        "0",
+        "1/2",
+        "p-1/2"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "endpoint_multiplication_on_gate_ideal": {
+      "Q_after": "(S+D)/2",
+      "Q_after_minimal_polynomial": "Q_after*(Q_after-1)=0",
+      "Q_before": "(-S+D)/2",
+      "Q_before_minimal_polynomial": "Q_before*(Q_before+1)=0"
+    },
+    "gate_basis": [
+      "1",
+      "S",
+      "D",
+      "D^2"
+    ],
+    "insertion_difference_observer_to_gate": [
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "insertion_difference_statement": "Delta(a+b*q+c*q^2)=b*S+c*D",
+    "joint_relations": [
+      "S*D=D",
+      "D^2=2*S-S^2",
+      "S*D^2=D^2",
+      "D^3=D"
+    ],
+    "matrix_convention": "columns are images of basis vectors",
+    "observer_basis": [
+      "1",
+      "q",
+      "q^2"
+    ],
+    "restriction_statement": "E_x[f(q_x)|environment]=a+(b*(p-1/2)+c/2)S+(b/2+c*(p-1/2))D on insertion support"
+  },
+  "issues": [
+    215,
+    258,
+    275
+  ],
+  "observer_frontier": {
+    "current_fields_sufficient_for": [
+      "all f(q) couplings to unmarked S/D",
+      "all f(q) couplings to lifted-line chi4 S/D",
+      "all f(q) couplings to same-root local-landing H4 S/D",
+      "contact subtraction using q,q2,J_S,J_D and q_before*J_D"
+    ],
+    "external_classes": {
+      "bulk_Betti_observer": "component/cycle counts or Euler/Betti density that varies within a fixed ambient-rank q sector",
+      "charged_seam_observer": "signed/character-valued seam crossing, winding charge, or defect partition observable resolving states within the same q sector",
+      "local_landing_observer": "landing or arm/motif value at a separately sampled site or separation, not merely a mark multiplying the same root gate",
+      "modular_or_shape_observer": "independent stress/KdV response or wrapping channel not determined by ambient rank alone"
+    },
+    "minimal_missing_statistics": [
+      "O_ext and O_ext^2 per microcanonical k/batch",
+      "O_ext*J_D4 and O_ext*J_S4 on the same configuration",
+      "for field Gram: two-root J_D4*conj(J_S4) and |J_S4|^2",
+      "root/separation metadata when O_ext is local",
+      "seam charge and orientation phase when O_ext is charged"
+    ]
+  },
+  "schema": "matching-one/topology-insertion-algebra/v1",
+  "scientific_card": [
+    "MECHANISM SPACE: every q-only connected insertion response collapses to a four-dimensional gate algebra.",
+    "NOT PROVED: the theorem says nothing about observers that resolve configurations within one q sector.",
+    "OBSERVER-SECTOR-SOURCE-GEOMETRY: f(q) | ambient-rank topology | arbitrary marked S/D gate polynomial | any finite torus.",
+    "DEPENDENCY GROUP: previous A_top/J_D and q2 orthogonal scores are corollaries, not independent evidence.",
+    "UPWEIGHT OBSERVATION: an independent bulk, separated-local, or charged-seam observer with same-field source products."
+  ],
+  "status": "exact_all_order_topology_observer_no_go",
+  "theorem": {
+    "all_order_reason": "Q*(Q-1)*(Q+1)=0 reduces arbitrary polynomial, analytic, or lookup-table f to degree at most two",
+    "connected_closure": "Cov(f(q),X)=b*((p-1/2)mu_SG+mu_DG/2-<q>mu_G)+c*(mu_SG/2+(p-1/2)mu_DG-<q^2>mu_G)",
+    "marked_source": "X=H(environment)*G(S,D), with H independent of root occupation and G(0,0)=0",
+    "no_go": "topology-only f(q) cannot supply an independent field matrix element against any root-occupation-independent marked insertion source",
+    "observer": "every f:{-1,0,1}->C has unique f(q)=a+b*q+c*q^2",
+    "raw_closure": "E[f(q)X]=a*mu_G+(b*(p-1/2)+c/2)*mu_SG+(b/2+c*(p-1/2))*mu_DG"
+  },
+  "tiny_exact_oracle": [
+    {
+      "N": 4,
+      "exact_pointwise_checks": 2560,
+      "failures": [],
+      "id": "axis-L2",
+      "period_matrix": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "transition_counts": {
+        "-1->-1": 8,
+        "-1->0": 8,
+        "-1->1": 4,
+        "0->1": 8,
+        "1->1": 4
+      }
+    },
+    {
+      "N": 5,
+      "exact_pointwise_checks": 6400,
+      "failures": [],
+      "id": "gaussian-2-1",
+      "period_matrix": [
+        [
+          2,
+          -1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "transition_counts": {
+        "-1->-1": 25,
+        "-1->0": 30,
+        "0->1": 20,
+        "1->1": 5
+      }
+    }
+  ],
+  "truth_table": [
+    {
+      "D": 0,
+      "Delta_q2_check": 0,
+      "Delta_q_check": 0,
+      "I01": "0",
+      "I12": "0",
+      "S": 0,
+      "direct02_projector": "0",
+      "name": "inactive_minus",
+      "q0": -1,
+      "q1": -1,
+      "strict01_projector": "0",
+      "strict12_projector": "0"
+    },
+    {
+      "D": 0,
+      "Delta_q2_check": 0,
+      "Delta_q_check": 0,
+      "I01": "0",
+      "I12": "0",
+      "S": 0,
+      "direct02_projector": "0",
+      "name": "inactive_zero",
+      "q0": 0,
+      "q1": 0,
+      "strict01_projector": "0",
+      "strict12_projector": "0"
+    },
+    {
+      "D": 0,
+      "Delta_q2_check": 0,
+      "Delta_q_check": 0,
+      "I01": "0",
+      "I12": "0",
+      "S": 0,
+      "direct02_projector": "0",
+      "name": "inactive_plus",
+      "q0": 1,
+      "q1": 1,
+      "strict01_projector": "0",
+      "strict12_projector": "0"
+    },
+    {
+      "D": -1,
+      "Delta_q2_check": -1,
+      "Delta_q_check": 1,
+      "I01": "1",
+      "I12": "0",
+      "S": 1,
+      "direct02_projector": "0",
+      "name": "strict_01",
+      "q0": -1,
+      "q1": 0,
+      "strict01_projector": "1",
+      "strict12_projector": "0"
+    },
+    {
+      "D": 1,
+      "Delta_q2_check": 1,
+      "Delta_q_check": 1,
+      "I01": "0",
+      "I12": "1",
+      "S": 1,
+      "direct02_projector": "0",
+      "name": "strict_12",
+      "q0": 0,
+      "q1": 1,
+      "strict01_projector": "0",
+      "strict12_projector": "1"
+    },
+    {
+      "D": 0,
+      "Delta_q2_check": 0,
+      "Delta_q_check": 2,
+      "I01": "1",
+      "I12": "1",
+      "S": 2,
+      "direct02_projector": "1",
+      "name": "direct_02",
+      "q0": -1,
+      "q1": 1,
+      "strict01_projector": "0",
+      "strict12_projector": "0"
+    }
+  ]
+}
