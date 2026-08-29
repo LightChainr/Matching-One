@@ -1,0 +1,612 @@
+{
+  "boundary": "local regular-cell certificate; small nonregular period quotients remain covered by the finite exact oracle",
+  "category_counts": {
+    "all_black": 1,
+    "all_white": 1,
+    "one_white": 4,
+    "three_white": 4,
+    "two_adjacent_white": 4,
+    "two_diagonal_white": 2
+  },
+  "checks": {
+    "all_16_masks_present": true,
+    "every_removed_diagonal_has_NN_replacement": true,
+    "only_two_diagonal_white_keeps_a_diagonal": true
+  },
+  "corner_order": [
+    "SW",
+    "SE",
+    "NE",
+    "NW"
+  ],
+  "issue": 269,
+  "patterns": [
+    {
+      "category": "all_black",
+      "incidence_spokes": [],
+      "local_two_cell": false,
+      "mask": "0000",
+      "matching_edges": [],
+      "nerve_simplex_dimension": null,
+      "removed_diagonals_with_NN_replacement": [],
+      "spine_edges": [],
+      "white_corners": []
+    },
+    {
+      "category": "one_white",
+      "incidence_spokes": [
+        [
+          "SW",
+          "c_f"
+        ]
+      ],
+      "local_two_cell": false,
+      "mask": "0001",
+      "matching_edges": [],
+      "nerve_simplex_dimension": 0,
+      "removed_diagonals_with_NN_replacement": [],
+      "spine_edges": [],
+      "white_corners": [
+        "SW"
+      ]
+    },
+    {
+      "category": "one_white",
+      "incidence_spokes": [
+        [
+          "SE",
+          "c_f"
+        ]
+      ],
+      "local_two_cell": false,
+      "mask": "0010",
+      "matching_edges": [],
+      "nerve_simplex_dimension": 0,
+      "removed_diagonals_with_NN_replacement": [],
+      "spine_edges": [],
+      "white_corners": [
+        "SE"
+      ]
+    },
+    {
+      "category": "two_adjacent_white",
+      "incidence_spokes": [
+        [
+          "SW",
+          "c_f"
+        ],
+        [
+          "SE",
+          "c_f"
+        ]
+      ],
+      "local_two_cell": false,
+      "mask": "0011",
+      "matching_edges": [
+        [
+          "SW",
+          "SE"
+        ]
+      ],
+      "nerve_simplex_dimension": 1,
+      "removed_diagonals_with_NN_replacement": [],
+      "spine_edges": [
+        [
+          "SW",
+          "SE"
+        ]
+      ],
+      "white_corners": [
+        "SW",
+        "SE"
+      ]
+    },
+    {
+      "category": "one_white",
+      "incidence_spokes": [
+        [
+          "NE",
+          "c_f"
+        ]
+      ],
+      "local_two_cell": false,
+      "mask": "0100",
+      "matching_edges": [],
+      "nerve_simplex_dimension": 0,
+      "removed_diagonals_with_NN_replacement": [],
+      "spine_edges": [],
+      "white_corners": [
+        "NE"
+      ]
+    },
+    {
+      "category": "two_diagonal_white",
+      "incidence_spokes": [
+        [
+          "SW",
+          "c_f"
+        ],
+        [
+          "NE",
+          "c_f"
+        ]
+      ],
+      "local_two_cell": false,
+      "mask": "0101",
+      "matching_edges": [
+        [
+          "SW",
+          "NE"
+        ]
+      ],
+      "nerve_simplex_dimension": 1,
+      "removed_diagonals_with_NN_replacement": [],
+      "spine_edges": [
+        [
+          "SW",
+          "NE"
+        ]
+      ],
+      "white_corners": [
+        "SW",
+        "NE"
+      ]
+    },
+    {
+      "category": "two_adjacent_white",
+      "incidence_spokes": [
+        [
+          "SE",
+          "c_f"
+        ],
+        [
+          "NE",
+          "c_f"
+        ]
+      ],
+      "local_two_cell": false,
+      "mask": "0110",
+      "matching_edges": [
+        [
+          "SE",
+          "NE"
+        ]
+      ],
+      "nerve_simplex_dimension": 1,
+      "removed_diagonals_with_NN_replacement": [],
+      "spine_edges": [
+        [
+          "SE",
+          "NE"
+        ]
+      ],
+      "white_corners": [
+        "SE",
+        "NE"
+      ]
+    },
+    {
+      "category": "three_white",
+      "incidence_spokes": [
+        [
+          "SW",
+          "c_f"
+        ],
+        [
+          "SE",
+          "c_f"
+        ],
+        [
+          "NE",
+          "c_f"
+        ]
+      ],
+      "local_two_cell": false,
+      "mask": "0111",
+      "matching_edges": [
+        [
+          "SW",
+          "SE"
+        ],
+        [
+          "SW",
+          "NE"
+        ],
+        [
+          "SE",
+          "NE"
+        ]
+      ],
+      "nerve_simplex_dimension": 2,
+      "removed_diagonals_with_NN_replacement": [
+        [
+          "SW",
+          "NE"
+        ]
+      ],
+      "spine_edges": [
+        [
+          "SW",
+          "SE"
+        ],
+        [
+          "SE",
+          "NE"
+        ]
+      ],
+      "white_corners": [
+        "SW",
+        "SE",
+        "NE"
+      ]
+    },
+    {
+      "category": "one_white",
+      "incidence_spokes": [
+        [
+          "NW",
+          "c_f"
+        ]
+      ],
+      "local_two_cell": false,
+      "mask": "1000",
+      "matching_edges": [],
+      "nerve_simplex_dimension": 0,
+      "removed_diagonals_with_NN_replacement": [],
+      "spine_edges": [],
+      "white_corners": [
+        "NW"
+      ]
+    },
+    {
+      "category": "two_adjacent_white",
+      "incidence_spokes": [
+        [
+          "SW",
+          "c_f"
+        ],
+        [
+          "NW",
+          "c_f"
+        ]
+      ],
+      "local_two_cell": false,
+      "mask": "1001",
+      "matching_edges": [
+        [
+          "SW",
+          "NW"
+        ]
+      ],
+      "nerve_simplex_dimension": 1,
+      "removed_diagonals_with_NN_replacement": [],
+      "spine_edges": [
+        [
+          "SW",
+          "NW"
+        ]
+      ],
+      "white_corners": [
+        "SW",
+        "NW"
+      ]
+    },
+    {
+      "category": "two_diagonal_white",
+      "incidence_spokes": [
+        [
+          "SE",
+          "c_f"
+        ],
+        [
+          "NW",
+          "c_f"
+        ]
+      ],
+      "local_two_cell": false,
+      "mask": "1010",
+      "matching_edges": [
+        [
+          "SE",
+          "NW"
+        ]
+      ],
+      "nerve_simplex_dimension": 1,
+      "removed_diagonals_with_NN_replacement": [],
+      "spine_edges": [
+        [
+          "SE",
+          "NW"
+        ]
+      ],
+      "white_corners": [
+        "SE",
+        "NW"
+      ]
+    },
+    {
+      "category": "three_white",
+      "incidence_spokes": [
+        [
+          "SW",
+          "c_f"
+        ],
+        [
+          "SE",
+          "c_f"
+        ],
+        [
+          "NW",
+          "c_f"
+        ]
+      ],
+      "local_two_cell": false,
+      "mask": "1011",
+      "matching_edges": [
+        [
+          "SW",
+          "SE"
+        ],
+        [
+          "SW",
+          "NW"
+        ],
+        [
+          "SE",
+          "NW"
+        ]
+      ],
+      "nerve_simplex_dimension": 2,
+      "removed_diagonals_with_NN_replacement": [
+        [
+          "SE",
+          "NW"
+        ]
+      ],
+      "spine_edges": [
+        [
+          "SW",
+          "SE"
+        ],
+        [
+          "SW",
+          "NW"
+        ]
+      ],
+      "white_corners": [
+        "SW",
+        "SE",
+        "NW"
+      ]
+    },
+    {
+      "category": "two_adjacent_white",
+      "incidence_spokes": [
+        [
+          "NE",
+          "c_f"
+        ],
+        [
+          "NW",
+          "c_f"
+        ]
+      ],
+      "local_two_cell": false,
+      "mask": "1100",
+      "matching_edges": [
+        [
+          "NE",
+          "NW"
+        ]
+      ],
+      "nerve_simplex_dimension": 1,
+      "removed_diagonals_with_NN_replacement": [],
+      "spine_edges": [
+        [
+          "NE",
+          "NW"
+        ]
+      ],
+      "white_corners": [
+        "NE",
+        "NW"
+      ]
+    },
+    {
+      "category": "three_white",
+      "incidence_spokes": [
+        [
+          "SW",
+          "c_f"
+        ],
+        [
+          "NE",
+          "c_f"
+        ],
+        [
+          "NW",
+          "c_f"
+        ]
+      ],
+      "local_two_cell": false,
+      "mask": "1101",
+      "matching_edges": [
+        [
+          "SW",
+          "NE"
+        ],
+        [
+          "SW",
+          "NW"
+        ],
+        [
+          "NE",
+          "NW"
+        ]
+      ],
+      "nerve_simplex_dimension": 2,
+      "removed_diagonals_with_NN_replacement": [
+        [
+          "SW",
+          "NE"
+        ]
+      ],
+      "spine_edges": [
+        [
+          "SW",
+          "NW"
+        ],
+        [
+          "NE",
+          "NW"
+        ]
+      ],
+      "white_corners": [
+        "SW",
+        "NE",
+        "NW"
+      ]
+    },
+    {
+      "category": "three_white",
+      "incidence_spokes": [
+        [
+          "SE",
+          "c_f"
+        ],
+        [
+          "NE",
+          "c_f"
+        ],
+        [
+          "NW",
+          "c_f"
+        ]
+      ],
+      "local_two_cell": false,
+      "mask": "1110",
+      "matching_edges": [
+        [
+          "SE",
+          "NE"
+        ],
+        [
+          "SE",
+          "NW"
+        ],
+        [
+          "NE",
+          "NW"
+        ]
+      ],
+      "nerve_simplex_dimension": 2,
+      "removed_diagonals_with_NN_replacement": [
+        [
+          "SE",
+          "NW"
+        ]
+      ],
+      "spine_edges": [
+        [
+          "SE",
+          "NE"
+        ],
+        [
+          "NE",
+          "NW"
+        ]
+      ],
+      "white_corners": [
+        "SE",
+        "NE",
+        "NW"
+      ]
+    },
+    {
+      "category": "all_white",
+      "incidence_spokes": [
+        [
+          "SW",
+          "c_f"
+        ],
+        [
+          "SE",
+          "c_f"
+        ],
+        [
+          "NE",
+          "c_f"
+        ],
+        [
+          "NW",
+          "c_f"
+        ]
+      ],
+      "local_two_cell": true,
+      "mask": "1111",
+      "matching_edges": [
+        [
+          "SW",
+          "SE"
+        ],
+        [
+          "SW",
+          "NE"
+        ],
+        [
+          "SW",
+          "NW"
+        ],
+        [
+          "SE",
+          "NE"
+        ],
+        [
+          "SE",
+          "NW"
+        ],
+        [
+          "NE",
+          "NW"
+        ]
+      ],
+      "nerve_simplex_dimension": 3,
+      "removed_diagonals_with_NN_replacement": [
+        [
+          "SW",
+          "NE"
+        ],
+        [
+          "SE",
+          "NW"
+        ]
+      ],
+      "spine_edges": [
+        [
+          "SW",
+          "SE"
+        ],
+        [
+          "SW",
+          "NW"
+        ],
+        [
+          "SE",
+          "NE"
+        ],
+        [
+          "NE",
+          "NW"
+        ]
+      ],
+      "white_corners": [
+        "SW",
+        "SE",
+        "NE",
+        "NW"
+      ]
+    }
+  ],
+  "schema": "matching-one/digital-alexander-local-certificate/v1",
+  "status": "exact_16_pattern_local_certificate"
+}
