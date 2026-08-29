@@ -121,6 +121,12 @@ Calibration already showed that the old H4-vs-H12 decision could often finish fa
 - **#260/#264 continuum spin-4 preflights:** complete as continuum arithmetic/velocity oracles; lattice field overlap remains the next question.
 - **primitive square-bond sign/phase program:** complete for repeated norm-2 sign transfer; the next value is KdV/shape/character structure, not another same-purpose sign generation.
 
+## Low-information repetitions already retired
+
+- For the current local pivotal readout, stop adding replicas to the same N130/N170 rows; change geometry or observable instead.
+- Do not run a third primitive norm-2 generation whose only purpose is another sign flip.
+- Do not substitute another scalar width or free exponent fit for a new shape, modulus or rank discriminator.
+
 ## Lifecycle debt to fix without rewriting history
 
 The repository contains status drift between different views. A concrete example is the N145->290 block: current claim documents treat it as completed, while the primary evidence ledger still contains a `PENDING_REVEAL` lifecycle entry.
