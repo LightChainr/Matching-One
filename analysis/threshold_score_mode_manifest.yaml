@@ -51,9 +51,12 @@ next_target:
     high_signal_subvector: [P4_D_mode_2, P4_D_mode_4, P4_D_mode_6]
     high_signal_signs: [positive, negative, positive]
     target_use: signed_direction_transfer_without_target_refitting
+    primary_evidence: one_covariance_whitened_score_of_full_vector
+    diagnostics_only: [high_signal_subvector, individual_components, mode_0, mode_1]
 
 forbidden:
   - count_modes_0_or_1_as_independent_of_value_or_derivative
+  - count_components_from_one_histogram_as_independent_evidence_rows
   - choose_mode_order_from_norm5_target
   - rotate_basis_using_norm5_target
   - infer_Jordan_structure_from_source_reconstruction_error

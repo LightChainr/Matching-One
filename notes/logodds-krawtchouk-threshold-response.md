@@ -100,7 +100,9 @@ mixing; it is not well described as an unrelated scalar slope failure.
 
 These are descriptive source results.  Modes zero and one remain exact
 coordinate views of already scored observables, and the norm-5 target remains
-unseen when defining the basis, order, sign, and exponent ladder.
+unseen when defining the basis, order, sign, and exponent ladder.  Modes two
+through six from one threshold histogram are one correlated multivariate
+block, not five independent tests.
 
 ## Next score
 
@@ -108,4 +110,6 @@ Use the now-frozen modes `r=0..6` to predict the held-out norm-5 lineage.  The
 primary target is the signed thermal vector `D_2,S_3,D_4,S_5,D_6`, with the
 even-`D` direction as the high-signal subtarget.  Do not rotate it using the
 target.  Independent Gaussian-multiplier stability can distinguish a shared
-response direction from one noisy high-order coefficient.
+response direction from one noisy high-order coefficient.  The future primary
+evidence row is one covariance-whitened, no-refit score of the full frozen
+vector; the even-`D` subvector and individual modes are diagnostics only.
