@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "claim": "The unique finite homological-balance root converges to the square-site threshold.",
+  "scope": "Honest L x L periodic square-cell tori",
+  "exact_inputs": [
+    "M_L(p)=E_p[r_B]-1",
+    "r_B+r_W=2 configuration by configuration",
+    "rank is monotone under site insertion",
+    "p_c(G)+p_c(Ghat)=1"
+  ],
+  "probability_input": "Subcritical exponential decay for finite-range Bernoulli site percolation",
+  "proof_reduction": {
+    "lower_side": "black NN is subcritical",
+    "upper_side": "white matching is subcritical, then r_B=2-r_W",
+    "root_step": "strict monotonicity brackets the unique zero"
+  },
+  "does_not_claim": [
+    "a convergence rate for p_L-p_c",
+    "a CFT operator identity",
+    "coverage of degenerate short-period quotient cells",
+    "a closed form for p_c"
+  ],
+  "dependency_group": [269, 275, 276],
+  "primary_note": "notes/homological-balance-convergence.md"
+}
