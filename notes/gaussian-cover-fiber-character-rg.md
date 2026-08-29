@@ -97,10 +97,66 @@ This exact oracle does not show that any nontrivial fiber character survives
 as a continuum RG direction.  That question belongs to a later response
 experiment, not to this commit.
 
+## Finite-volume character selection rule
+
+Issue #244 supplies the exact gate that must precede such a response
+experiment.  Let a deck translation \(T_t\) act on a regular cover with deck
+group \(K\).  At uniform Bernoulli \(p\), the product measure is invariant.  A
+nontrivial character score obeys
+
+\[
+ S_\chi(T_t\omega)=\chi(-t)S_\chi(\omega).
+\]
+
+If \(O\) is an unmarked deck-invariant observable, changing variables in its
+linear response gives
+
+\[
+ R_\chi(O)=\frac{E_p[O S_\chi]}{p(1-p)}
+           =\chi(-t)R_\chi(O).
+\]
+
+For some \(t\), a nontrivial \(\chi\) has \(\chi(-t)\ne1\), hence
+\(R_\chi(O)=0\) exactly at every finite size.  Global wrapping, homology and
+site-summed pivotal rows therefore cannot see an unmarked linear detail mode.
+This supersedes any proposal to estimate that symmetry-forced column by a
+larger Monte Carlo run.
+
+Two channels remain legal.  First, an opposite-character marked row
+\(O_{\bar\chi}\) makes \(E[O_{\bar\chi}S_\chi]\) invariant and potentially
+nonzero.  Second, \(\chi\otimes\bar\chi\) permits an invariant quadratic
+susceptibility.  For a real perturbation
+\(p_i(\epsilon)=p+\epsilon h_i\), the required Bernoulli second score is
+
+\[
+ H_h=\left[\sum_i\frac{h_i(X_i-p)}{p(1-p)}\right]^2
+ -\sum_i h_i^2\left[\frac{X_i}{p^2}
+                    +\frac{1-X_i}{(1-p)^2}\right].
+\]
+
+The diagonal likelihood correction is essential: raw \(S_h^2\) is not the
+second derivative.  This quadratic object is a composite susceptibility, not
+a new linear RG tangent.
+
+The norm-two executable oracle exhausts all \(2^{10}\) configurations of the
+\((2+i)\to(2+i)(1+i)=1+3i\) cover at \(p=2/5\).  It verifies:
+
+- matching-odd cross wrap has exactly zero linear detail response;
+- a balanced but non-equivariant sign registry produces a nonzero response on
+  a deck-even anchored control, so the test detects labeling errors;
+- the opposite-character marked pivotal row has response
+  \(-10944/390625\), equal to direct symbolic differentiation;
+- the invariant Hessian response is \(109056/78125\), also equal to direct
+  symbolic differentiation, while the raw score-product term alone differs.
+
+These are exact finite-volume statements and require no CFT assumption.
+
 Reproduce with:
 
 ```bash
 python3 scripts/gaussian_cover_character_modes.py \
   --output results/exact-cover-character-oracles/gaussian_cover_characters.json
+python3 scripts/gaussian_cover_selection_rule.py \
+  --output results/exact-cover-character-oracles/norm2_selection_rule.json
 python3 -m unittest discover -s tests -p 'test_gaussian_cover_character_modes.py'
 ```

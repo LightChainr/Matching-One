@@ -81,6 +81,7 @@ evidence_archives:
   - {id: C4_LOCAL_ODD_PIVOTAL, path: results/local-20260829/P155-c4-local-odd-pivotal, status: immutable_result, role: exact_local_odd_tangent_oracle}
   - {id: C4_LOCAL_ODD_LARGEN, path: results/local-20260829/P155-c4-local-odd-pivotal-largeN, status: negative_result, role: largeN_rank_gate_one_dimension}
   - {id: P225_MULTIRADIUS_PIVOTAL, path: results/local-20260829/P225-multiradius-pivotal, status: exploratory_control, role: aligned_two_cutoff_engineering_smoke}
+  - {id: GAUSSIAN_COVER_SELECTION_RULE, path: results/exact-cover-character-oracles/norm2_selection_rule.json, status: immutable_result, role: exact_deck_character_linear_null_and_allowed_channels}
 
 topic_derivations:
   - {path: notes/pivotal-russo-finite-volume.md, status: topic_derivation, role: pivotal_identity}
@@ -102,6 +103,7 @@ topic_derivations:
   - {path: notes/gaussian-isogeny-maximin-design.md, status: topic_derivation, role: information_design}
   - {path: notes/c4-local-odd-pivotal-tangent.md, status: topic_derivation, role: local_odd_tangent_readout}
   - {path: notes/p225-multiradius-pivotal-prototype.md, status: topic_derivation, role: two_cutoff_pivotal_prototype}
+  - {path: notes/gaussian-cover-fiber-character-rg.md, status: topic_derivation, role: exact_cover_character_selection_rule}
 
 historical_protocols:
   - {path: experiments/server_compute_queue.yaml, status: historical, role: original_server_queue}
