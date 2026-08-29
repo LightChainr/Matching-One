@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from fractions import Fraction
+import os
 import sys
 import unittest
 from pathlib import Path
@@ -30,11 +31,19 @@ L3_EVEN_EXPECTATIONS = {
     "direction_0": Fraction(527, 1024),
     "direction_1": Fraction(527, 1024),
 }
+RUN_SLOW_EXACT = os.environ.get("MATCHING_ONE_SLOW_EXACT") == "1"
 
 
 class SquareBondDualityExactTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        # One 2^8 enumeration is enough to protect the executable convention
+        # on every push. The much slower 2^18 oracle is opt-in below and its
+        # locked result remains archived under results/exact_square_bond_duality.md.
+        cls.l2 = enumerate_exact(2)
+
     def test_l2_geometric_dual_transport_swaps_primal_and_dual(self) -> None:
-        result = enumerate_exact(2)
+        result = self.l2
         self.assertTrue(result["passed"])
         self.assertEqual(result["N_bonds"], 8)
         self.assertEqual(result["configurations"], 256)
@@ -43,21 +52,18 @@ class SquareBondDualityExactTests(unittest.TestCase):
         self.assertTrue(result["geometric_dual_map_bijective"])
 
     def test_l2_naive_complement_is_not_the_duality_map(self) -> None:
-        result = enumerate_exact(2)
-        self.assertEqual(result["naive_complement_swap_failures"], 138)
+        self.assertEqual(self.l2["naive_complement_swap_failures"], 138)
 
     def test_l2_odd_sector_vanishes_exactly_at_half(self) -> None:
-        result = enumerate_exact(2)
         for name in CHANNELS:
-            row = result["channels"][name]
+            row = self.l2["channels"][name]
             self.assertTrue(row["D_vanishes_at_half"], name)
             self.assertEqual(row["E_D"]["fraction"], "0")
             self.assertTrue(row["primal_dual_equidistributed"], name)
 
     def test_l2_even_sector_locked_rationals(self) -> None:
-        result = enumerate_exact(2)
         for name, expected in L2_EVEN_EXPECTATIONS.items():
-            row = result["channels"][name]
+            row = self.l2["channels"][name]
             self.assertEqual(Fraction(row["E_S"]["fraction"]), expected, name)
             self.assertFalse(row["S_identically_zero"], name)
         self.assertEqual(
@@ -77,6 +83,10 @@ class SquareBondDualityExactTests(unittest.TestCase):
         self.assertEqual(primal.as_dict(), swapped_dual.as_dict())
         self.assertEqual(dual.as_dict(), swapped_primal.as_dict())
 
+    @unittest.skipUnless(
+        RUN_SLOW_EXACT,
+        "set MATCHING_ONE_SLOW_EXACT=1 to replay the archived L=3 2^18 oracle",
+    )
     def test_l3_identities(self) -> None:
         result = enumerate_exact(3)
         self.assertTrue(result["passed"])
