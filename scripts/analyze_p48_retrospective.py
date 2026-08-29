@@ -139,6 +139,39 @@ def tail_and_derivative(hist: Sequence[int], samples: int, p: float) -> Tuple[fl
         raise ValueError("p must be strictly between zero and one")
     q = 1.0 - p
     probability = q ** n
+    if probability == 0.0:
+        # Starting the recurrence at k=0 underflows for the N=680 bracket
+        # evaluation even though the mass around the binomial mode is ordinary.
+        # Re-center only that numerical edge case; the established path below
+        # remains bit-for-bit unchanged wherever q**n is representable.
+        mode = min(n, int((n + 1) * p))
+        weights = [0.0] * (n + 1)
+        weights[mode] = 1.0
+        for occupied in range(mode, 0, -1):
+            weights[occupied - 1] = (
+                weights[occupied]
+                * occupied
+                * q
+                / ((n - occupied + 1) * p)
+            )
+        for occupied in range(mode, n):
+            weights[occupied + 1] = (
+                weights[occupied]
+                * (n - occupied)
+                * p
+                / ((occupied + 1) * q)
+            )
+        normalization = math.fsum(weights)
+        cumulative = 0
+        value_terms = []
+        derivative_terms = []
+        for occupied, weight in enumerate(weights):
+            if occupied:
+                cumulative += hist[occupied]
+                derivative_terms.append(hist[occupied] * occupied * weight / p)
+            value_terms.append(cumulative * weight)
+        scale = samples * normalization
+        return math.fsum(value_terms) / scale, math.fsum(derivative_terms) / scale
     cumulative = 0
     value = 0.0
     for occupied in range(n + 1):

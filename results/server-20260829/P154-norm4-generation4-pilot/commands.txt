@@ -1,0 +1,5 @@
+python3 scripts/score_norm4_generation4_pilot.py \
+  --new-target 520:results/server-20260829/P154-norm4-generation4-pilot/raw/n520_100m.hist.csv:results/server-20260829/P154-norm4-generation4-pilot/raw/n520_100m.moments.csv:results/server-20260829/P154-norm4-generation4-pilot/raw/n520_100m.metadata.json \
+  --new-target 680:results/server-20260829/P154-norm4-generation4-pilot/raw/n680_100m.hist.csv:results/server-20260829/P154-norm4-generation4-pilot/raw/n680_100m.moments.csv:results/server-20260829/P154-norm4-generation4-pilot/raw/n680_100m.metadata.json \
+  --prediction predictions/norm4_even_rank2_next_generation_20260829.json \
+  --output results/server-20260829/P154-norm4-generation4-pilot/analysis/score.json
