@@ -1,0 +1,47 @@
+schema: matching-one.p257-p258-q4-seam-preflight.v1
+issues: [257, 258]
+frozen_on: 2026-08-29
+status: exact_tiny_preflight_complete_production_not_started
+lineage:
+  base_commit: 9320649
+  inspected_main: d6fda88
+  inspected_qscore_commits: [ce8f27a, eff23fa]
+generator: scripts/exact_q4_seam_numerator_preflight.py
+artifact: results/q4-seam-numerator-preflight/latest.json
+tests: tests/test_exact_q4_seam_numerator_preflight.py
+exact_geometry:
+  model: critical Q=4 square-lattice Potts
+  v: 2
+  width: 2
+  height: 2
+  seams:
+    identity: [0, 1, 2, 3]
+    transposition_01: [1, 0, 2, 3]
+  seam_cycle: time
+exact_targets:
+  unnormalized_sector_numerator_ratio:
+    singlet_[4]: 1
+    two_row_[2,2]: 0
+  partition_sums:
+    identity: 33024
+    transposition_01: 21568
+  normalized_singlet_ratio_before_restoration: 516/337
+  restoration: multiply by Z_transposition/Z_identity
+scope_boundary:
+  exact: S4-equivariant sector traces and partition normalization
+  witness_only: log-v insertion is nonzero and equivariant but is not a pure H4 field
+  missing_engine_feature: orientation-resolved H4 transfer kernel with fixed handedness
+production_freeze:
+  status: blocked_by_missing_H4_kernel
+  required_raw_outputs:
+    - Z_identity
+    - Z_transposition
+    - N_H4_singlet_identity
+    - N_H4_singlet_transposition
+    - N_H4_[2,2]_identity
+    - N_H4_[2,2]_transposition
+  primary_scores:
+    singlet: N_twist/N_identity = 1
+    two_row_[2,2]: N_twist/N_identity = 0
+  forbidden_shortcut: do_not_score_normalized_expectation_ratio_without_restoring_Z
+

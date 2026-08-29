@@ -1,0 +1,254 @@
+{
+  "direct_spin_enumeration_partition_sums": {
+    "identity": {
+      "denominator": 1,
+      "numerator": 33024,
+      "text": "33024"
+    },
+    "transposition": {
+      "denominator": 1,
+      "numerator": 21568,
+      "text": "21568"
+    }
+  },
+  "exact_checks": {
+    "all_projectors_commute_with_transfer": true,
+    "both_witnesses_match_frozen_character_targets": true,
+    "normalization_restoration_recovers_numerator_ratio": true,
+    "partition_function_is_seam_dependent": true,
+    "row_transfer_equals_direct_spin_enumeration": true
+  },
+  "frozen_minimal_acquisition_schema": {
+    "acceptance_gates": [
+      "tiny exact identity/transposition Z values reproduce this artifact",
+      "sector projectors commute with the zero-source transfer",
+      "identity-seam H4 numerators are nonzero in both target sectors",
+      "the H4 kernel has a declared orientation/handedness and is not the log(v) witness"
+    ],
+    "model": "critical Q=4 square-lattice Potts/FK transfer",
+    "normalized_output_conversion": "If E_g=N_g/Z_g is recorded, score (E_transposition/E_identity)*(Z_transposition/Z_identity), never E_transposition/E_identity alone.",
+    "primary_scores": {
+      "singlet": "N_H4_singlet_transposition/N_H4_singlet_identity = 1",
+      "two_row_2": "N_H4_[2,2]_transposition/N_H4_[2,2]_identity = 0"
+    },
+    "reason_no_large_run": "the repository currently has no colour-seam H4 kernel satisfying the last gate",
+    "required_raw_outputs": [
+      "Z_identity",
+      "Z_transposition",
+      "N_H4_singlet_identity",
+      "N_H4_singlet_transposition",
+      "N_H4_[2,2]_identity",
+      "N_H4_[2,2]_transposition"
+    ],
+    "seam_orientation": "repeat with the same cycle and H4 handedness; do not average conjugacy representatives",
+    "seams": [
+      "identity",
+      "single transposition (01) on one fixed torus cycle"
+    ],
+    "status": "prereveal_no_production_started"
+  },
+  "geometry": {
+    "Q": 4,
+    "height": 2,
+    "model": "critical Q=4 square-lattice Potts row transfer",
+    "parallel_edge_note": "width=2 torus retains the two directed nearest-neighbour bonds per row",
+    "row_states": 16,
+    "spin_configurations": 256,
+    "v": 2,
+    "width": 2
+  },
+  "issues": [
+    257,
+    258
+  ],
+  "partition_sums": {
+    "identity": {
+      "denominator": 1,
+      "numerator": 33024,
+      "text": "33024"
+    },
+    "transposition": {
+      "denominator": 1,
+      "numerator": 21568,
+      "text": "21568"
+    }
+  },
+  "partition_twist_to_identity_ratio": {
+    "denominator": 516,
+    "numerator": 337,
+    "text": "337/516"
+  },
+  "schema": "matching-one.exact-q4-seam-numerator-preflight.v1",
+  "scientific_layers": {
+    "exact": "finite Q4 transfer/projector/seam traces and normalization restoration",
+    "exploratory": "a future nonzero [2,2] H4 numerator would be the controlled V22-like channel needed to compare with local pivotal H4",
+    "mechanism_inference": "one seam separates singlet and [2,2] colour charge without an exponent fit"
+  },
+  "scope_boundary": {
+    "issue_258_cross_validation": "The observable numerator and the partition normalization are separate derivatives/objects; a seam-dependent denominator cannot be absorbed into the representation character.",
+    "not_proved": "The log(v) witness is a nonzero equivariant insertion, not a pure continuum H4 operator. A production runner must implement the separately frozen orientation-resolved H4 kernel.",
+    "proved": "For an S4-equivariant transfer insertion inside a projected isotypic sector, the unnormalized identity/transposition numerator ratio is chi_lambda((12))/dim(lambda): 1 for the singlet and 0 for [2,2]. The seam partition factor must be restored if normalized expectations are stored."
+  },
+  "seams": {
+    "identity": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "placement": "time-cycle trace Tr[U_g K]",
+    "single_colour_transposition": [
+      1,
+      0,
+      2,
+      3
+    ]
+  },
+  "sector_numerator_oracles": {
+    "singlet": {
+      "S4_irrep": "[4]",
+      "logv_inserted_witness": {
+        "normalized_expectation_twist_to_identity_ratio": {
+          "denominator": 337,
+          "numerator": 516,
+          "text": "516/337"
+        },
+        "partition_restored_ratio": {
+          "denominator": 1,
+          "numerator": 1,
+          "text": "1"
+        },
+        "unnormalized_numerator": {
+          "identity": {
+            "denominator": 1,
+            "numerator": 63616,
+            "text": "63616"
+          },
+          "transposition": {
+            "denominator": 1,
+            "numerator": 63616,
+            "text": "63616"
+          }
+        },
+        "unnormalized_twist_to_identity_ratio": {
+          "denominator": 1,
+          "numerator": 1,
+          "text": "1"
+        }
+      },
+      "projector_commutes_with_transfer": true,
+      "projector_rank": {
+        "denominator": 1,
+        "numerator": 2,
+        "text": "2"
+      },
+      "seam_character_target": {
+        "denominator": 1,
+        "numerator": 1,
+        "text": "1"
+      },
+      "transfer_power_witness": {
+        "normalized_expectation_twist_to_identity_ratio": {
+          "denominator": 337,
+          "numerator": 516,
+          "text": "516/337"
+        },
+        "partition_restored_ratio": {
+          "denominator": 1,
+          "numerator": 1,
+          "text": "1"
+        },
+        "unnormalized_numerator": {
+          "identity": {
+            "denominator": 1,
+            "numerator": 15904,
+            "text": "15904"
+          },
+          "transposition": {
+            "denominator": 1,
+            "numerator": 15904,
+            "text": "15904"
+          }
+        },
+        "unnormalized_twist_to_identity_ratio": {
+          "denominator": 1,
+          "numerator": 1,
+          "text": "1"
+        }
+      }
+    },
+    "two_row_2": {
+      "S4_irrep": "[2,2]",
+      "logv_inserted_witness": {
+        "normalized_expectation_twist_to_identity_ratio": {
+          "denominator": 1,
+          "numerator": 0,
+          "text": "0"
+        },
+        "partition_restored_ratio": {
+          "denominator": 1,
+          "numerator": 0,
+          "text": "0"
+        },
+        "unnormalized_numerator": {
+          "identity": {
+            "denominator": 1,
+            "numerator": 128,
+            "text": "128"
+          },
+          "transposition": {
+            "denominator": 1,
+            "numerator": 0,
+            "text": "0"
+          }
+        },
+        "unnormalized_twist_to_identity_ratio": {
+          "denominator": 1,
+          "numerator": 0,
+          "text": "0"
+        }
+      },
+      "projector_commutes_with_transfer": true,
+      "projector_rank": {
+        "denominator": 1,
+        "numerator": 2,
+        "text": "2"
+      },
+      "seam_character_target": {
+        "denominator": 1,
+        "numerator": 0,
+        "text": "0"
+      },
+      "transfer_power_witness": {
+        "normalized_expectation_twist_to_identity_ratio": {
+          "denominator": 1,
+          "numerator": 0,
+          "text": "0"
+        },
+        "partition_restored_ratio": {
+          "denominator": 1,
+          "numerator": 0,
+          "text": "0"
+        },
+        "unnormalized_numerator": {
+          "identity": {
+            "denominator": 1,
+            "numerator": 32,
+            "text": "32"
+          },
+          "transposition": {
+            "denominator": 1,
+            "numerator": 0,
+            "text": "0"
+          }
+        },
+        "unnormalized_twist_to_identity_ratio": {
+          "denominator": 1,
+          "numerator": 0,
+          "text": "0"
+        }
+      }
+    }
+  },
+  "status": "exact_tiny_preflight_complete_h4_production_not_run"
+}
