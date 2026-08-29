@@ -1,0 +1,49 @@
+{
+  "claim_boundary": {
+    "not_proved": "random-sampler independence, production event probabilities, timing guarantees, or a new critical-probability bound",
+    "proved": "deterministic evaluator agrees with the exact oracle on all s=1,2 cases"
+  },
+  "complexity": {
+    "memory": "O(s^2)",
+    "time": "O(s^2)"
+  },
+  "differential_oracle": {
+    "configuration_graph_pairs": 520,
+    "graphs": [
+      "square",
+      "matching"
+    ],
+    "mismatch_count": 0,
+    "sizes": [
+      1,
+      2
+    ]
+  },
+  "issue": 112,
+  "large_all_open_controls": {
+    "matching": {
+      "full_edge_checks": 32194,
+      "half_edge_checks": 32004,
+      "left_largest_size": 4096,
+      "right_largest_size": 4096,
+      "s": 64,
+      "success": true
+    },
+    "square": {
+      "full_edge_checks": 16192,
+      "half_edge_checks": 16128,
+      "left_largest_size": 4096,
+      "right_largest_size": 4096,
+      "s": 64,
+      "success": true
+    }
+  },
+  "nonmonotonicity_witness": {
+    "after_mask": 22,
+    "after_reason": "left_tie",
+    "before_mask": 6,
+    "before_reason": "success"
+  },
+  "schema": "matching-one/pc-block-event-linear/v1",
+  "status": "deterministic_evaluator_validated"
+}

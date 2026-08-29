@@ -1,0 +1,33 @@
+{
+  "schema": "matching-one/pc-block-event-linear-manifest/v1",
+  "issue": 112,
+  "phase": "deterministic_linear_evaluator",
+  "input": "one explicit Boolean flag per site in a 2s-by-s open rectangle",
+  "graphs": ["square NN", "square matching NN+both diagonals"],
+  "algorithm": {
+    "full_connectivity": "disjoint-set forest over every microscopic edge",
+    "half_selection": "second disjoint-set forest with cross-half edges suppressed",
+    "time": "O(s^2)",
+    "memory": "O(s^2)"
+  },
+  "required_controls": {
+    "tiny_exact_differential_pairs": 520,
+    "tiny_exact_mismatches": 0,
+    "large_all_open_size": 64,
+    "square_nonmonotonicity_witness": "mask 6 success; mask 22 left_tie"
+  },
+  "outputs": {
+    "json": "results/pc-block-event-linear/latest.json",
+    "markdown": "results/pc-block-event-linear/latest.md"
+  },
+  "commands": [
+    "python scripts/pc_block_event_linear.py --format json",
+    "python scripts/pc_block_event_linear.py --format markdown",
+    "python -m unittest tests.test_pc_block_event_linear"
+  ],
+  "claim_boundary": {
+    "included": "deterministic event evaluation and exact tiny differential validation",
+    "excluded": "random sampling, independence certification, event-probability estimates, and a pc bound",
+    "parent_issue": "remain open"
+  }
+}
