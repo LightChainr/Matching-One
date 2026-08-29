@@ -1,0 +1,153 @@
+{
+  "handed_pair": {
+    "character_transport": "chi_plus(k)=zeta5^k -> conjugate chi_minus(k)=zeta5^-k",
+    "deck_transport": "k_plus -> k_minus",
+    "multipliers": [
+      "2+i",
+      "2-i"
+    ],
+    "ratio": "q=(2+i)/(2-i)=(3+4i)/5",
+    "reflection": "(x,y)->(x,-y)"
+  },
+  "hecke_eigenfield_predictions": {
+    "all_three_exactly_distinct": true,
+    "formula": "A_s(2+i)/A_s(2-i)=((2+i)/(2-i))^s",
+    "minimum_separation_degrees": 65.04081883324783,
+    "pairwise_principal_phase_separation_degrees": {
+      "H4_vs_H12": 65.04081883324783,
+      "H4_vs_H8": 147.47959058337608,
+      "H8_vs_H12": 147.47959058337608
+    },
+    "single_handed_pair_discriminates": "yes, conditional on one-field dominance and the frozen reflection/character transport",
+    "unknown_common_complex_normalization": "cancels in the handed ratio",
+    "values": [
+      {
+        "decimal": [
+          -0.8432,
+          -0.5376
+        ],
+        "exact": {
+          "gaussian_rational": "(-527-336i)/625",
+          "imag": "-336/625",
+          "real": "-527/625"
+        },
+        "modulus_squared_exact": "1",
+        "phase_degrees_principal": -147.47959058337608,
+        "spin": 4
+      },
+      {
+        "decimal": [
+          0.42197248,
+          0.90660864
+        ],
+        "exact": {
+          "gaussian_rational": "(164833+354144i)/390625",
+          "imag": "354144/390625",
+          "real": "164833/390625"
+        },
+        "modulus_squared_exact": "1",
+        "phase_degrees_principal": 65.04081883324784,
+        "spin": 8
+      },
+      {
+        "decimal": [
+          0.131585609728,
+          -0.991304810496
+        ],
+        "exact": {
+          "gaussian_rational": "(32125393-242017776i)/244140625",
+          "imag": "-242017776/244140625",
+          "real": "32125393/244140625"
+        },
+        "modulus_squared_exact": "1",
+        "phase_degrees_principal": -82.43877175012827,
+        "spin": 12
+      }
+    ]
+  },
+  "interpretation_boundary": {
+    "mechanism_hypothesis": "a stable measured phase near one target identifies the dominant spin-s Hecke eigenfield",
+    "not_implied": "the tiny real oracle response is not evidence for any of H4/H8/H12",
+    "result": "H4, H8 and H12 give three distinct unit phases for one handed norm-5 pair"
+  },
+  "issues": [
+    226,
+    244
+  ],
+  "response_design": {
+    "covariance": "estimate Re/Im of both handed responses in one shared-randomness batch vector",
+    "handed_ratio": "R_(2+i)/R_(2-i) after exact reflection transport",
+    "matrix_element": "R_m=E[O_chibar S_chi]/[p(1-p)]",
+    "opposite_character_row": "O_chibar=sum_(j,k) zeta5^-k Delta_(j,k)[matching-odd H4/local-pivotal readout]",
+    "score": "S_chi=sum_(j,k) zeta5^k (X_(j,k)-p)"
+  },
+  "schema": "matching-one.norm5-chiral-hecke-phase.v1",
+  "status": "exact_prediction_plus_tiny_channel_oracle",
+  "tiny_exact_oracle": {
+    "child_order": 5,
+    "enumeration": "all 2^5 configurations for each hand",
+    "hands": {
+      "2+i": {
+        "direct_symbolic_derivative": {
+          "basis": "1,zeta5,zeta5^2,zeta5^3",
+          "coefficients": [
+            "-46/25",
+            "0",
+            "0",
+            "0"
+          ],
+          "decimal": [
+            -1.84,
+            0.0
+          ]
+        },
+        "response": {
+          "basis": "1,zeta5,zeta5^2,zeta5^3",
+          "coefficients": [
+            "-46/25",
+            "0",
+            "0",
+            "0"
+          ],
+          "decimal": [
+            -1.84,
+            0.0
+          ]
+        }
+      },
+      "2-i": {
+        "direct_symbolic_derivative": {
+          "basis": "1,zeta5,zeta5^2,zeta5^3",
+          "coefficients": [
+            "-46/25",
+            "0",
+            "0",
+            "0"
+          ],
+          "decimal": [
+            -1.84,
+            0.0
+          ]
+        },
+        "response": {
+          "basis": "1,zeta5,zeta5^2,zeta5^3",
+          "coefficients": [
+            "-46/25",
+            "0",
+            "0",
+            "0"
+          ],
+          "decimal": [
+            -1.84,
+            0.0
+          ]
+        }
+      }
+    },
+    "observable": "Z5-opposite-character pivotal projection of matching-odd cross wrap",
+    "p": "2/5",
+    "parent_order": 1,
+    "reflection_conjugacy_exact": true,
+    "scientific_scope": "validates charged channel and transport only; N=5 does not test the Hecke spin phase"
+  }
+}
