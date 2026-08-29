@@ -6,11 +6,11 @@ direct typed entrypoints importing both `ObservableDescriptor` and
 `map_observable` from `wrapping_channels`. Three frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Five paths are confirmed channel-bearing and
+a descriptor is not applicable. Six paths are confirmed channel-bearing and
 require typed migrations: `score_angular_root_amplitude.py`,
 `score_axis_pair_annihilator.py`, its stable entrypoint,
-`score_c4_self_matching_n26.py`, and `score_prequential_evidence.py`. The
-remaining 22 files are outside a
+`score_c4_self_matching_n26.py`, `score_c4_tangent_orthogonal_holdout.py`, and
+`score_prequential_evidence.py`. The remaining 21 files are outside a
 registered typed path.
 
 This closes an inventory gap: the repository now has a deterministic list,
@@ -20,7 +20,7 @@ import is added or removed without updating the manifest, or if a declared
 wrapped kernel disappears.
 
 `outside_registered_typed_path` is deliberately a triage label. Some of those
-22 scripts may not compare channel-bearing quantities, some may be historical,
+21 scripts may not compare channel-bearing quantities, some may be historical,
 and some may need a future typed wrapper. Static membership alone does not prove
 a semantic bug, data-provenance failure, or need for migration. Each candidate
 must be reviewed before modification; Issue #146 therefore remains open.
@@ -52,6 +52,14 @@ hypotheses. Numerical equality on one finite self-matching geometry does not
 establish semantic interchangeability. A typed migration must bind the frozen
 prediction and result to the exact channel descriptor while preserving the
 pre-target scoring order and stop-without-generalized-fit rule.
+
+`score_c4_tangent_orthogonal_holdout.py` is migration-required. It selects the
+`cross` response through a free-form channel string, freezes `lambda/t` on
+N=130, and applies that projection to aligned N=170 batches before scoring
+orthogonal and thermal residuals. A typed migration must bind both sizes to the
+same exact channel semantics and type the response-coordinate pair, without
+changing batch alignment, jackknife construction, or the frozen interpretation
+rule.
 
 The axis-pair annihilator score path is migration-required as one operational
 unit. The base scorer reconstructs the cross matching function from
