@@ -152,6 +152,12 @@ def emit(result, input_path: Path, output_dir: Path):
         "",
         "The exact Russo identity turns the orientation-mean matching slope into total pivotal mass. Dividing `P4[S']` by that mass removes the leading thermal metric and defines an integrated spin-4 pivotal anisotropy coefficient.",
         "",
+        "## Decision",
+        "",
+        f"Thermal normalization does not remove the known derivative drift: the primary constant-amplitude score is `{primary['heldout_chi_square']:.4f} / 2 df`. Thus the bare `N^-13/8` pivotal-H4 law is not an adequate precision model for this block.",
+        "",
+        f"The stronger dimensionless coefficient `Xi=[P4[S']/Mbar']/P4[D]` is still compatible with a shared central-value/derivative scaling function at `{xi['heldout_chi_square']:.4f} / 2 df`, although its point estimates decrease with N and this is retrospective evidence. The leading pure thermal-mass law is also far too rigid at `{thermal['heldout_chi_square']:.4f} / 2 df`; its already-resolved finite-size corrections cannot be discarded merely because the leading exponent is exact.",
+        "",
         "| metric | source constant (SE) | heldout chi-square / 2 | heldout z (145,170) |",
         "| --- | ---: | ---: | ---: |",
     ]
@@ -164,6 +170,8 @@ def emit(result, input_path: Path, output_dir: Path):
     lines.extend([
         "",
         "`Xi=[P4[S']/Mbar']/P4[D]` asks whether the central residual and pivotal anisotropy are two coefficients of one matching-odd scaling function. It is diagnostic because the denominator is noisy. All three rows are correlated views of one batch block and are not additive evidence.",
+        "",
+        "The next high-information use is to score `Xi` and the pivotal-normalized q=2/Jordan alternatives on the already authorized norm-4 targets from Issue #154. Those are correlated transforms of the same target block, not extra evidence. A genuinely independent geometric test still requires a local landing-sector/four-arm H4 observable.",
         "",
     ])
     (output_dir / "REPORT.md").write_text("\n".join(lines), encoding="utf-8")

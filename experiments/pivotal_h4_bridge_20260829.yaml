@@ -1,6 +1,6 @@
 version: 1
 created: 2026-08-29
-status: retrospective_protocol_frozen_before_execution
+status: retrospective_bridge_scored
 issues: [100, 121]
 input:
   path: results/server-20260828/P33/p33_all_sizes_arm_10m.hist.csv
@@ -33,3 +33,12 @@ claim_boundary: >-
   Compatibility supports an integrated pivotal/four-arm interpretation. It
   does not identify a local landing-sector observable or prove an SLE/OPE
   coefficient relation.
+observed:
+  primary_Y_chi_square_df2: 10.3160883882
+  Xi_chi_square_df2: 3.3069523125
+  thermal_leading_law_chi_square_df2: 528.170319545
+  decision: >-
+    Dividing by total pivotal mass does not remove the known finite-size drift
+    in P4[S_prime]. The dimensionless Xi coefficient remains compatible with a
+    shared scaling-function interpretation but is retrospective and visibly
+    trends downward.
