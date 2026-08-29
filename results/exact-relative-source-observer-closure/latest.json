@@ -1,0 +1,547 @@
+{
+  "exact_algebra": {
+    "algebra": "R[q]/(q^3-q)",
+    "basis": [
+      "1",
+      "q",
+      "q^2"
+    ],
+    "dimension": 3,
+    "mixed_connected_closure": "kappa(W,q,q,q)=(1-3 E[q^2]) kappa(W,q)-3 E[q] kappa(W,q,q)",
+    "observer_sector_inversion": {
+      "W_minus": "(E[W q^2]-E[W q])/2",
+      "W_plus": "(E[W q^2]+E[W q])/2",
+      "W_zero": "E[W]-E[W q^2]"
+    },
+    "primitive_sector_idempotents": {
+      "minus": "(q^2-q)/2",
+      "plus": "(q^2+q)/2",
+      "zero": "1-q^2"
+    }
+  },
+  "issues": [
+    54,
+    114,
+    252
+  ],
+  "rank3_consequence": {
+    "allowed": "The observer W itself may couple to a rank-3 Virasoro module. The theorem removes repeated global-source order as evidence for that coupling; it does not forbid the coupling.",
+    "exact_no_go": "Repeated insertions of the single global relative-topology source cannot create a fourth independent linear response direction; every observer row is fixed by its 0-, 1-, and 2-source moments.",
+    "issue_252": "A rank-3 second-energy/Jordan channel cannot be identified merely by taking a third relative-Q-source derivative. It requires an independent thermal, spatial, charged, or multi-point insertion W; after W is supplied, the relative source only sector-resolves that W.",
+    "next_score": "Measure the independent W channel first, then store only E[W], E[Wq], and E[Wq^2] (or the equivalent three sector-weighted W means). Generate all higher relative-source rows algebraically."
+  },
+  "schema": "matching-one.p252-relative-source-observer-closure.v1",
+  "tiny_exact_oracle": {
+    "N": 5,
+    "geometry": "gaussian(2,1)",
+    "observer_by_source_power_matrix_rank": 3,
+    "observer_by_source_power_matrix_shape": [
+      5,
+      7
+    ],
+    "observers": [
+      {
+        "mixed_connected_cumulants": {
+          "closure_exact": true,
+          "kappa_W_q": {
+            "denominator": 1,
+            "numerator": 0,
+            "text": "0"
+          },
+          "kappa_W_q_q": {
+            "denominator": 1,
+            "numerator": 0,
+            "text": "0"
+          },
+          "kappa_W_q_q_q": {
+            "denominator": 1,
+            "numerator": 0,
+            "text": "0"
+          },
+          "third_from_closure": {
+            "denominator": 1,
+            "numerator": 0,
+            "text": "0"
+          }
+        },
+        "name": "one",
+        "odd_raw_rows_equal": true,
+        "positive_even_raw_rows_equal": true,
+        "raw_moments_E_W_q_power_0_to_6": [
+          {
+            "denominator": 1,
+            "numerator": 1,
+            "text": "1"
+          },
+          {
+            "denominator": 16,
+            "numerator": -5,
+            "text": "-5/16"
+          },
+          {
+            "denominator": 16,
+            "numerator": 11,
+            "text": "11/16"
+          },
+          {
+            "denominator": 16,
+            "numerator": -5,
+            "text": "-5/16"
+          },
+          {
+            "denominator": 16,
+            "numerator": 11,
+            "text": "11/16"
+          },
+          {
+            "denominator": 16,
+            "numerator": -5,
+            "text": "-5/16"
+          },
+          {
+            "denominator": 16,
+            "numerator": 11,
+            "text": "11/16"
+          }
+        ],
+        "sector_reconstruction_exact": true,
+        "sector_weighted_observer_direct": {
+          "-1": {
+            "denominator": 2,
+            "numerator": 1,
+            "text": "1/2"
+          },
+          "0": {
+            "denominator": 16,
+            "numerator": 5,
+            "text": "5/16"
+          },
+          "1": {
+            "denominator": 16,
+            "numerator": 3,
+            "text": "3/16"
+          }
+        },
+        "sector_weighted_observer_reconstructed": {
+          "-1": {
+            "denominator": 2,
+            "numerator": 1,
+            "text": "1/2"
+          },
+          "0": {
+            "denominator": 16,
+            "numerator": 5,
+            "text": "5/16"
+          },
+          "1": {
+            "denominator": 16,
+            "numerator": 3,
+            "text": "3/16"
+          }
+        }
+      },
+      {
+        "mixed_connected_cumulants": {
+          "closure_exact": true,
+          "kappa_W_q": {
+            "denominator": 16,
+            "numerator": 25,
+            "text": "25/16"
+          },
+          "kappa_W_q_q": {
+            "denominator": 128,
+            "numerator": 85,
+            "text": "85/128"
+          },
+          "kappa_W_q_q_q": {
+            "denominator": 2048,
+            "numerator": -2125,
+            "text": "-2125/2048"
+          },
+          "third_from_closure": {
+            "denominator": 2048,
+            "numerator": -2125,
+            "text": "-2125/2048"
+          }
+        },
+        "name": "thermal_score",
+        "odd_raw_rows_equal": true,
+        "positive_even_raw_rows_equal": true,
+        "raw_moments_E_W_q_power_0_to_6": [
+          {
+            "denominator": 1,
+            "numerator": 0,
+            "text": "0"
+          },
+          {
+            "denominator": 16,
+            "numerator": 25,
+            "text": "25/16"
+          },
+          {
+            "denominator": 16,
+            "numerator": -5,
+            "text": "-5/16"
+          },
+          {
+            "denominator": 16,
+            "numerator": 25,
+            "text": "25/16"
+          },
+          {
+            "denominator": 16,
+            "numerator": -5,
+            "text": "-5/16"
+          },
+          {
+            "denominator": 16,
+            "numerator": 25,
+            "text": "25/16"
+          },
+          {
+            "denominator": 16,
+            "numerator": -5,
+            "text": "-5/16"
+          }
+        ],
+        "sector_reconstruction_exact": true,
+        "sector_weighted_observer_direct": {
+          "-1": {
+            "denominator": 16,
+            "numerator": -15,
+            "text": "-15/16"
+          },
+          "0": {
+            "denominator": 16,
+            "numerator": 5,
+            "text": "5/16"
+          },
+          "1": {
+            "denominator": 8,
+            "numerator": 5,
+            "text": "5/8"
+          }
+        },
+        "sector_weighted_observer_reconstructed": {
+          "-1": {
+            "denominator": 16,
+            "numerator": -15,
+            "text": "-15/16"
+          },
+          "0": {
+            "denominator": 16,
+            "numerator": 5,
+            "text": "5/16"
+          },
+          "1": {
+            "denominator": 8,
+            "numerator": 5,
+            "text": "5/8"
+          }
+        }
+      },
+      {
+        "mixed_connected_cumulants": {
+          "closure_exact": true,
+          "kappa_W_q": {
+            "denominator": 4,
+            "numerator": 5,
+            "text": "5/4"
+          },
+          "kappa_W_q_q": {
+            "denominator": 32,
+            "numerator": 65,
+            "text": "65/32"
+          },
+          "kappa_W_q_q_q": {
+            "denominator": 512,
+            "numerator": 295,
+            "text": "295/512"
+          },
+          "third_from_closure": {
+            "denominator": 512,
+            "numerator": 295,
+            "text": "295/512"
+          }
+        },
+        "name": "thermal_score_squared",
+        "odd_raw_rows_equal": true,
+        "positive_even_raw_rows_equal": true,
+        "raw_moments_E_W_q_power_0_to_6": [
+          {
+            "denominator": 1,
+            "numerator": 5,
+            "text": "5"
+          },
+          {
+            "denominator": 16,
+            "numerator": -5,
+            "text": "-5/16"
+          },
+          {
+            "denominator": 16,
+            "numerator": 75,
+            "text": "75/16"
+          },
+          {
+            "denominator": 16,
+            "numerator": -5,
+            "text": "-5/16"
+          },
+          {
+            "denominator": 16,
+            "numerator": 75,
+            "text": "75/16"
+          },
+          {
+            "denominator": 16,
+            "numerator": -5,
+            "text": "-5/16"
+          },
+          {
+            "denominator": 16,
+            "numerator": 75,
+            "text": "75/16"
+          }
+        ],
+        "sector_reconstruction_exact": true,
+        "sector_weighted_observer_direct": {
+          "-1": {
+            "denominator": 2,
+            "numerator": 5,
+            "text": "5/2"
+          },
+          "0": {
+            "denominator": 16,
+            "numerator": 5,
+            "text": "5/16"
+          },
+          "1": {
+            "denominator": 16,
+            "numerator": 35,
+            "text": "35/16"
+          }
+        },
+        "sector_weighted_observer_reconstructed": {
+          "-1": {
+            "denominator": 2,
+            "numerator": 5,
+            "text": "5/2"
+          },
+          "0": {
+            "denominator": 16,
+            "numerator": 5,
+            "text": "5/16"
+          },
+          "1": {
+            "denominator": 16,
+            "numerator": 35,
+            "text": "35/16"
+          }
+        }
+      },
+      {
+        "mixed_connected_cumulants": {
+          "closure_exact": true,
+          "kappa_W_q": {
+            "denominator": 256,
+            "numerator": 25,
+            "text": "25/256"
+          },
+          "kappa_W_q_q": {
+            "denominator": 2048,
+            "numerator": -315,
+            "text": "-315/2048"
+          },
+          "kappa_W_q_q_q": {
+            "denominator": 32768,
+            "numerator": -8125,
+            "text": "-8125/32768"
+          },
+          "third_from_closure": {
+            "denominator": 32768,
+            "numerator": -8125,
+            "text": "-8125/32768"
+          }
+        },
+        "name": "neutral_sector_mark",
+        "odd_raw_rows_equal": true,
+        "positive_even_raw_rows_equal": true,
+        "raw_moments_E_W_q_power_0_to_6": [
+          {
+            "denominator": 16,
+            "numerator": 5,
+            "text": "5/16"
+          },
+          {
+            "denominator": 1,
+            "numerator": 0,
+            "text": "0"
+          },
+          {
+            "denominator": 1,
+            "numerator": 0,
+            "text": "0"
+          },
+          {
+            "denominator": 1,
+            "numerator": 0,
+            "text": "0"
+          },
+          {
+            "denominator": 1,
+            "numerator": 0,
+            "text": "0"
+          },
+          {
+            "denominator": 1,
+            "numerator": 0,
+            "text": "0"
+          },
+          {
+            "denominator": 1,
+            "numerator": 0,
+            "text": "0"
+          }
+        ],
+        "sector_reconstruction_exact": true,
+        "sector_weighted_observer_direct": {
+          "-1": {
+            "denominator": 1,
+            "numerator": 0,
+            "text": "0"
+          },
+          "0": {
+            "denominator": 16,
+            "numerator": 5,
+            "text": "5/16"
+          },
+          "1": {
+            "denominator": 1,
+            "numerator": 0,
+            "text": "0"
+          }
+        },
+        "sector_weighted_observer_reconstructed": {
+          "-1": {
+            "denominator": 1,
+            "numerator": 0,
+            "text": "0"
+          },
+          "0": {
+            "denominator": 16,
+            "numerator": 5,
+            "text": "5/16"
+          },
+          "1": {
+            "denominator": 1,
+            "numerator": 0,
+            "text": "0"
+          }
+        }
+      },
+      {
+        "mixed_connected_cumulants": {
+          "closure_exact": true,
+          "kappa_W_q": {
+            "denominator": 256,
+            "numerator": 45,
+            "text": "45/256"
+          },
+          "kappa_W_q_q": {
+            "denominator": 2048,
+            "numerator": 1225,
+            "text": "1225/2048"
+          },
+          "kappa_W_q_q_q": {
+            "denominator": 32768,
+            "numerator": 12255,
+            "text": "12255/32768"
+          },
+          "third_from_closure": {
+            "denominator": 32768,
+            "numerator": 12255,
+            "text": "12255/32768"
+          }
+        },
+        "name": "signed_thermal_score",
+        "odd_raw_rows_equal": true,
+        "positive_even_raw_rows_equal": true,
+        "raw_moments_E_W_q_power_0_to_6": [
+          {
+            "denominator": 16,
+            "numerator": 25,
+            "text": "25/16"
+          },
+          {
+            "denominator": 16,
+            "numerator": -5,
+            "text": "-5/16"
+          },
+          {
+            "denominator": 16,
+            "numerator": 25,
+            "text": "25/16"
+          },
+          {
+            "denominator": 16,
+            "numerator": -5,
+            "text": "-5/16"
+          },
+          {
+            "denominator": 16,
+            "numerator": 25,
+            "text": "25/16"
+          },
+          {
+            "denominator": 16,
+            "numerator": -5,
+            "text": "-5/16"
+          },
+          {
+            "denominator": 16,
+            "numerator": 25,
+            "text": "25/16"
+          }
+        ],
+        "sector_reconstruction_exact": true,
+        "sector_weighted_observer_direct": {
+          "-1": {
+            "denominator": 16,
+            "numerator": 15,
+            "text": "15/16"
+          },
+          "0": {
+            "denominator": 1,
+            "numerator": 0,
+            "text": "0"
+          },
+          "1": {
+            "denominator": 8,
+            "numerator": 5,
+            "text": "5/8"
+          }
+        },
+        "sector_weighted_observer_reconstructed": {
+          "-1": {
+            "denominator": 16,
+            "numerator": 15,
+            "text": "15/16"
+          },
+          "0": {
+            "denominator": 1,
+            "numerator": 0,
+            "text": "0"
+          },
+          "1": {
+            "denominator": 8,
+            "numerator": 5,
+            "text": "5/8"
+          }
+        }
+      }
+    ],
+    "p": "1/2",
+    "rank_bound": 3
+  }
+}
