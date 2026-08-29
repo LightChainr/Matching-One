@@ -1,11 +1,11 @@
 # Short-period digital Alexander quotient frontier
 
-Every permutation of every two-dimensional HNF quotient of index 2 through 8 is exhausted.
+Every permutation of every two-dimensional HNF quotient of index 2 through 9 is exhausted.
 
-- HNF representatives: `55`;
-- honest four-corner representatives: `28`;
-- self-identifying face representatives: `27`;
-- complete filtration paths: `654678`.
+- HNF representatives: `68`;
+- honest four-corner representatives: `37`;
+- self-identifying face representatives: `31`;
+- complete filtration paths: `5372118`.
 
 ## Failure census
 
@@ -22,5 +22,5 @@ quotient is not confused with the already proved regular square-cell theorem.
 
 ## Boundary
 
-The result is exhaustive only through index 8. It does not prove an unrestricted theorem
+The result is exhaustive only through index 9. It does not prove an unrestricted theorem
 for all degenerate quotients or alter production data semantics.
