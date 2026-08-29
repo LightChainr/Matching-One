@@ -1,0 +1,190 @@
+{
+  "critical_coordinates": {
+    "J": "2*k+b",
+    "Q1_p": "1/2",
+    "T": "k+b/2=J/2",
+    "eta": "log(v/sqrt(Q))",
+    "t": "log(Q)",
+    "weight": "exp(eta*b+t*T)"
+  },
+  "exact_checks": {
+    "all_score_orders_match_ratio_differentiation": true,
+    "histogram_counts_sum_to_configurations": true,
+    "open_closed_wrap_equal_at_Q1": true
+  },
+  "exact_means": {
+    "T": "849/256",
+    "T_equals_k_plus_b_over_2": true,
+    "b": "4/1",
+    "k": "337/256"
+  },
+  "geometry": {
+    "L": 2,
+    "bonds": 8,
+    "configurations": 256,
+    "lattice": "square_bond",
+    "periods": [
+      [
+        2,
+        0
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "vertices": 4
+  },
+  "interpretation": {
+    "exact_result": "One Q=1 ensemble reconstructs the complete finite-volume critical-manifold Q tangent through J=2k+b.",
+    "field_warning": "These are derivatives of the FK measure for fixed observables; Q-dependent projectors, normalizations, and insertion definitions remain separate terms.",
+    "next_gate": "Add the VJS energy/two-cluster field derivative before calling any T-score direction a logarithmic partner."
+  },
+  "issue": 258,
+  "observable_derivatives": {
+    "closed_dual_wrap": {
+      "direct_equals_score": true,
+      "expectation_at_Q1": "187/256",
+      "mixed_eta_t_derivative": "-1431/8192",
+      "t_derivatives_direct_ratio": [
+        "-9259/65536",
+        "-346853/8388608",
+        "28935391/2147483648"
+      ],
+      "t_derivatives_score_H1_H2_H3": [
+        "-9259/65536",
+        "-346853/8388608",
+        "28935391/2147483648"
+      ]
+    },
+    "open_cross": {
+      "direct_equals_score": true,
+      "expectation_at_Q1": "69/256",
+      "mixed_eta_t_derivative": "1431/8192",
+      "t_derivatives_direct_ratio": [
+        "9259/65536",
+        "346853/8388608",
+        "-28935391/2147483648"
+      ],
+      "t_derivatives_score_H1_H2_H3": [
+        "9259/65536",
+        "346853/8388608",
+        "-28935391/2147483648"
+      ]
+    },
+    "open_homology_rank": {
+      "direct_equals_score": true,
+      "expectation_at_Q1": "1/1",
+      "mixed_eta_t_derivative": "1269/8192",
+      "t_derivatives_direct_ratio": [
+        "69/256",
+        "427/32768",
+        "-253905/8388608"
+      ],
+      "t_derivatives_score_H1_H2_H3": [
+        "69/256",
+        "427/32768",
+        "-253905/8388608"
+      ]
+    },
+    "open_wrap": {
+      "direct_equals_score": true,
+      "expectation_at_Q1": "187/256",
+      "mixed_eta_t_derivative": "-81/4096",
+      "t_derivatives_direct_ratio": [
+        "8405/65536",
+        "-237541/8388608",
+        "-36064289/2147483648"
+      ],
+      "t_derivatives_score_H1_H2_H3": [
+        "8405/65536",
+        "-237541/8388608",
+        "-36064289/2147483648"
+      ]
+    },
+    "wrap_difference": {
+      "direct_equals_score": true,
+      "expectation_at_Q1": "0/1",
+      "mixed_eta_t_derivative": "1269/8192",
+      "t_derivatives_direct_ratio": [
+        "69/256",
+        "427/32768",
+        "-253905/8388608"
+      ],
+      "t_derivatives_score_H1_H2_H3": [
+        "69/256",
+        "427/32768",
+        "-253905/8388608"
+      ]
+    }
+  },
+  "schema": "matching-one.exact-fk-critical-manifold-q-score.v1",
+  "sqrtQ_histogram": [
+    {
+      "J": 5,
+      "count": 32,
+      "observable_sums": {
+        "closed_dual_wrap": 32,
+        "open_cross": 0,
+        "open_homology_rank": 0,
+        "open_wrap": 0,
+        "wrap_difference": -32
+      }
+    },
+    {
+      "J": 6,
+      "count": 88,
+      "observable_sums": {
+        "closed_dual_wrap": 88,
+        "open_cross": 0,
+        "open_homology_rank": 60,
+        "open_wrap": 60,
+        "wrap_difference": -28
+      }
+    },
+    {
+      "J": 7,
+      "count": 88,
+      "observable_sums": {
+        "closed_dual_wrap": 56,
+        "open_cross": 32,
+        "open_homology_rank": 112,
+        "open_wrap": 80,
+        "wrap_difference": 24
+      }
+    },
+    {
+      "J": 8,
+      "count": 39,
+      "observable_sums": {
+        "closed_dual_wrap": 11,
+        "open_cross": 28,
+        "open_homology_rank": 66,
+        "open_wrap": 38,
+        "wrap_difference": 27
+      }
+    },
+    {
+      "J": 9,
+      "count": 8,
+      "observable_sums": {
+        "closed_dual_wrap": 0,
+        "open_cross": 8,
+        "open_homology_rank": 16,
+        "open_wrap": 8,
+        "wrap_difference": 8
+      }
+    },
+    {
+      "J": 10,
+      "count": 1,
+      "observable_sums": {
+        "closed_dual_wrap": 0,
+        "open_cross": 1,
+        "open_homology_rank": 2,
+        "open_wrap": 1,
+        "wrap_difference": 1
+      }
+    }
+  ]
+}
