@@ -272,47 +272,71 @@ channel_semantics:
     - quantity
 
 frontier_open_as_of_2026_08_29:
+  - pr: 189
+    state: frontier_open
+    classification: unique_frontier
+    role: hermite_krawtchouk_thermal_jet
+    affects_tracks: [B, E]
+  - pr: 188
+    state: frontier_open
+    classification: unique_frontier
+    role: paired_rank_gap_thermal_window
+    affects_tracks: [B]
+  - pr: 187
+    state: frontier_open
+    classification: unique_frontier
+    role: krawtchouk_threshold_response_tower
+    affects_tracks: [B]
+  - pr: 186
+    state: frontier_open
+    classification: unique_frontier
+    role: rectangular_thermal_Q4_hecke_ratio
+    affects_tracks: [F, G]
+    related_open_prs: [151]
   - pr: 151
     state: frontier_open
+    classification: partially_integrated_with_remaining_deliverable
     role: stronger_Q4_Pell_modular_shape_program
     affects_tracks: [F, G]
-  - pr: 150
-    state: frontier_open
-    role: norm5_variance_and_power_pilot
-    affects_tracks: [C, E]
-    evidence_boundary: calibration_only
-  - pr: 149
-    state: frontier_open
-    role: general_period_norm4_threshold_rank_backend
-    affects_tracks: [B, E, G]
+    already_on_main: ordinary_Q4_E4_fingerprint_and_Pell_filter
+    remaining: ward_identity_pell_finite_modulus_targets_elliptic_spin_filter
   - pr: 143
     state: frontier_open
+    classification: unique_frontier
     role: CM_Jordan_and_intrinsic_functional_research_program
     affects_tracks: [E, F, G]
   - pr: 142
     state: frontier_open
+    classification: unique_frontier
     role: retrospective_matrix_Gaussian_semigroup_discovery
     affects_tracks: [E, G]
     evidence_boundary: post_reveal_model_development
   - pr: 141
     state: frontier_open
+    classification: unique_frontier
     role: early_CM_elliptic_annihilator_freeze
     affects_tracks: [F, G]
   - pr: 139
     state: frontier_open
+    classification: unique_frontier
     role: maximin_Gaussian_isogeny_design
     affects_tracks: [C, G]
   - pr: 130
     state: frontier_open
+    classification: historical_negative_result_to_extract
     role: graph_cover_order_statistic_CRN_pilot
     affects_tracks: [B, G]
     evidence_boundary: negative_method_result
   - pr: 117
     state: frontier_open
+    classification: partially_integrated_with_remaining_deliverable
     role: V13_V14_post_L7_conditional_theory
     affects_tracks: [D, F]
+    already_on_main: v14_scalar_post_l7_arithmetic
+    remaining: correction_ladder_synthesis_and_q3_discriminator
   - pr: 84
     state: frontier_open
+    classification: unique_frontier
     role: exact_axis_L5_and_Galois_frontier
     affects_tracks: [H]
 
@@ -335,6 +359,16 @@ canonical_integration_history:
     role: exact_N26_Beta_falsification
   - pr: 177
     role: reliability_signature_threshold_tomography
+  - pr: 178
+    role: canonical_research_map_sync_after_exact_controls
+  - pr: 179
+    role: general_integer_period_threshold_rank_backend
+  - pr: 181
+    role: norm5_calibration_pilot_archive
+  - pr: 183
+    role: calibrated_gaussian_sequential_eprocess
+  - pr: 184
+    role: prequential_evidence_ledger
 
 superseded_active_paths_closed:
   - pr: 168
@@ -361,6 +395,12 @@ superseded_active_paths_closed:
     superseded_by: 176
   - pr: 162
     superseded_by: 177
+  - pr: 149
+    superseded_by: 179
+    note: general_period_backend_reintegrated_on_main
+  - pr: 150
+    superseded_by: 181
+    note: norm5_variance_power_pilot_archived_as_calibration_only
 
 integration_notes:
   - >
@@ -372,6 +412,13 @@ integration_notes:
   - >
     Frontier PR entries are integration status only. Scientific claim levels
     remain governed by docs/STATUS.md and chronology.
+  - >
+    Classification vocabulary for frontier_open rows is unique_frontier,
+    partially_integrated_with_remaining_deliverable,
+    superseded_close_recommended, or historical_negative_result_to_extract.
+  - >
+    PRs #149 and #150 are closed and reintegrated through #179 and #181;
+    they must not reappear as frontier_open.
 
 directory_contract:
   constants: exact/reference constants and relations

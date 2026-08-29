@@ -87,7 +87,7 @@ M'(p) = pivotal_mass_primal(p) + pivotal_mass_matching(1-p).
 
 This identity is now a canonical tiny-system oracle, including cross-channel agreement with threshold-rank reconstruction.
 
-**Open continuation:** prequential evidence covariance (#95), intrinsic quantile spectroscopy (#101), multi-u response (#119), standardized threshold profiles (#122), joint threshold-gap/signature analysis, and orientation-resolved pivotal/four-arm structure (#100/#121).
+**Open continuation:** prequential evidence covariance is now a canonical ledger (#95 / #184); remaining work is intrinsic quantile spectroscopy (#101), multi-u response (#119), standardized threshold profiles (#122), joint threshold-gap/signature analysis, and orientation-resolved pivotal/four-arm structure (#100/#121).
 
 ### C. Gaussian orientation and the central matching-odd sector
 
@@ -204,7 +204,7 @@ This is a valuable independent methodology track, but it is not the critical pat
 | #134 | exact channel-map erratum | matching-even sign reversal was a source/target semantic bug, not a physical reversal |
 | P48 new-geometry score | prospective four-channel test | S, D, D-prime survive; pure S-prime fails |
 
-Do not add these local scores as independent global evidence without shared source/raw-data covariance. #95 exists to build that prequential layer.
+Do not add these local scores as independent global evidence without shared source/raw-data covariance. The #95 prequential ledger is canonical on `main` and exists to enforce that chronology.
 
 ## 5. Exact/control evidence added after the original synthesis
 
@@ -222,7 +222,7 @@ These strengthen foundations and controls; they do not upgrade the H4/LCFT claim
 
 ### Existing-data / low-compute
 
-1. #95 prequential evidence ledger.
+1. #95 prequential evidence ledger (canonical on `main` via #184; add later prospective blocks to the same ledger).
 2. #101 intrinsic quantile-center spectroscopy.
 3. #119 multi-u functional response.
 4. #125 joint operator-mixing model.

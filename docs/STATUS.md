@@ -158,7 +158,7 @@ When compute/attention is scarce:
 
 1. **#57 norm-5 N=325/425** — highest-information H4-vs-H12 and radial/correction multiplier test. Both the fixed-p primary scorer and the intrinsic full-curve q=2/Jordan scorer now have typed source/target semantic gates on `main`; the frozen numerical contracts themselves were not changed.
 2. **#50 N=145->290 full curve** — score the already-frozen slope correction and induced root prediction on a third lineage.
-3. **Existing-data analysis** — #95 evidence ledger, #101 quantile-center, #119 multi-u response, #125 joint channel mixing, #122 full threshold profile. For #100, the exact finite Russo stage is complete; the remaining work is orientation-resolved/continuum interpretation.
+3. **Existing-data analysis** — #101 quantile-center, #119 multi-u response, #125 joint channel mixing, #122 full threshold profile. #95 prequential evidence ledger is canonical on `main` via #184. For #100, the exact finite Russo stage is complete; the remaining work is orientation-resolved/continuum interpretation.
 4. **#102 information-optimal design** chooses any later expensive Gaussian target.
 
 Exact/theory controls (#103/#106/#111/#114/#118/#121) may proceed in parallel. N=1105 and Pell/modulus production remain gated behind cheaper discriminators and an explicit observable bridge.
@@ -172,6 +172,7 @@ Exact/theory controls (#103/#106/#111/#114/#118/#121) may proceed in parallel. N
 - Typed wrapping-channel descriptor/map layer: canonical; a channel mismatch fails closed unless an exact registered map exists.
 - #57 fixed-p and full-curve scorer semantic gates: canonical; broader direction/both audit under #146 remains open.
 - Exact Russo/pivotal oracle, N=10 self-matching tangent/score-function oracle, N=26 Beta falsification, and reliability-signature tooling: canonical.
+- Artifact registry frontier entries are integration status only; closed reintegrated PRs #149/#150 are superseded by #179/#181, and #178--#184 belong to canonical integration history.
 - CI covers Python 3.9/3.11/3.13 and C++17.
 
 ## Explicit non-claims

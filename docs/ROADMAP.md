@@ -115,7 +115,7 @@ The associated reliability-signature/minimal-degree theorem explains why the N=1
 
 ### B1. Prequential evidence ledger — #95
 
-Build one chronology-locked predictive ledger across genuinely prospective blocks. Derived views from the same histograms are one correlated evidence block, not independent votes. Pairwise model comparisons should use only common predicted endpoints and include source+target covariance and predictive log score.
+Canonical on `main` through #184. Derived views from the same histograms are one correlated evidence block, not independent votes. Pairwise model comparisons should use only common predicted endpoints and include source+target covariance and predictive log score. Remaining work is to add later prospective blocks to the same ledger, not to rebuild it.
 
 ### B2. Information-optimal Gaussian design — #102
 
