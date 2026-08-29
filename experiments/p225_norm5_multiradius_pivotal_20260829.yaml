@@ -80,7 +80,7 @@ commands:
     --samples 200000 --batches 200 --radii 2,4,7,8
     --cutoff euclidean --p 0.592746050790 --threads 16
     --seed 22550260829 --replica-offset 15000000000
-    --git-commit f8e02c9
+    --git-commit "$(git rev-parse HEAD)"
     --output-prefix results/server-20260829/P225-norm5-multiradius/raw/norm5_200k
   score: >-
     python3 scripts/analyze_norm5_multiradius_pivotal.py

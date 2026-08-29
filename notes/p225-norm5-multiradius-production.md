@@ -74,7 +74,7 @@ covariance.  All outputs are correlated views of one raw block.
 
 ## Huawei execution
 
-After checking out commit `f8e02c9` or this branch:
+After checking out this branch:
 
 ```bash
 mkdir -p build results/server-20260829/P225-norm5-multiradius/raw
@@ -90,7 +90,7 @@ build/matching_multiradius_pivotal_mc \
   --samples 200000 --batches 200 --radii 2,4,7,8 \
   --cutoff euclidean --p 0.592746050790 --threads 16 \
   --seed 22550260829 --replica-offset 15000000000 \
-  --git-commit f8e02c9 \
+  --git-commit "$(git rev-parse HEAD)" \
   --output-prefix results/server-20260829/P225-norm5-multiradius/raw/norm5_200k \
   2> results/server-20260829/P225-norm5-multiradius/raw/run.time.txt
 
