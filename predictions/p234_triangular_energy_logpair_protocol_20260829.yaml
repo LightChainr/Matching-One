@@ -1,0 +1,105 @@
+version: 1
+frozen_date: 2026-08-29
+status: protocol_freeze_no_universal_coefficient
+issue: 234
+claim_level: C0
+paper: Camia--Feng arXiv:2508.16047v2
+purpose: >
+  Freeze a periodic-torus, cluster-sign-integrated sufficient-statistics
+  protocol for the three raw parent-pair correlations. This artifact does not
+  freeze or estimate C1, C2, CL, or kappa=C1*CL/C2.
+
+model:
+  lattice: triangular_site
+  occupation_probability: 1/2
+  torus: 60_degree_rhombus
+  period_basis_lattice_coordinates: [[L, 0], [0, L]]
+  physical_rescaling: a=1/L
+  energy_axis: e1
+
+fields:
+  cluster_spin: >
+    S_x=0 on a white site; S_x=sigma_C on a black site in cluster C, with
+    independent symmetric sigma_C in {-1,+1}.
+  local_pair: A_L(z)=(z-e1,z+e1)
+  bilocal_pair: >
+    A_D(z;delta,L)=(z-r_delta(L)e1,z+r_delta(L)e1), where
+    r_delta(L) is the unique nearest integer to delta*L.
+  E_a: S_x*S_y - expectation(S_x*S_y) for A_L
+  E_a_delta: S_x*S_y - expectation(S_x*S_y) for A_D
+  phi_a: a^(-5/4)*abs(log(a))^(-1)*E_a
+  eta_a_delta: pi_a^(-2)*E_a_delta
+  log_partner: >
+    (2*delta)^(-25/24)*eta_a_delta + kappa*log(2*delta)*phi_a;
+    kappa is deliberately unresolved in this protocol.
+
+sign_integration:
+  pair_identity: >
+    E_sigma[S_x*S_y | omega] = 1{x and y belong to the same black cluster}.
+  four_spin_identity: >
+    E_sigma[S_x*S_y*S_u*S_v | omega] equals one iff all four endpoint slots
+    are black and every touched black cluster occurs with even multiplicity;
+    otherwise it equals zero.
+  random_cluster_signs_to_generate: 0
+  estimator_class: Rao_Blackwellized_over_cluster_signs
+
+insertions:
+  center_displacement: [L/2, L/2]
+  L_requirement: positive_even_integer
+  translation_average: all_L_squared_periodic_translates
+  mixed_coordinate: >
+    one_half_times_[Cov(E_L(z1),E_D(z2))+Cov(E_D(z1),E_L(z2))]
+
+fixed_delta_sequences:
+  - delta: 1/(8*sqrt(2))
+    L: [64, 96, 128, 192]
+  - delta: 1/(12*sqrt(2))
+    L: [64, 96, 128, 192]
+  - delta: 1/(16*sqrt(2))
+    L: [64, 96, 128, 192]
+fixed_delta_rationale: >
+  Irrational delta makes delta/a nonintegral and makes nearest-vertex ties
+  impossible for every integer L. The realized endpoint error is O(a).
+
+ordered_limits:
+  step_1: >
+    For each declared delta separately, take a=1/L to zero using only that
+    row's L sequence. Do not pool different delta values in the a fit.
+  step_2: >
+    Only after the fixed-delta a-to-zero limits are recorded, take delta to
+    zero across those continuum-extrapolated values.
+  forbidden: simultaneous_free_fit_in_a_and_delta
+
+per_configuration_integer_statistics:
+  placements: L^2
+  pair_sums: [U_L1, U_L2, U_D1, U_D2]
+  within_products: [U_L1*U_L2, U_L1*U_D2, U_D1*U_L2, U_D1*U_D2]
+  four_spin_sums: [H_LL, H_L1D2, H_D1L2, H_DD]
+  definitions: >
+    Each U or H is first summed over all translations. Products are products
+    of per-configuration translation sums, not sums of placementwise products.
+
+unbiased_block_estimator:
+  formula: >
+    C_AB = sum_i H_AB,i/(n*placements)
+      - [(sum_i U_A,i)(sum_i U_B,i)-sum_i U_A,i*U_B,i]
+        /(n*(n-1)*placements^2).
+  output_order: [E_a_E_a, E_a_E_a_delta_symmetric, E_a_delta_E_a_delta]
+  blocks: at_least_50_independent_blocks
+  covariance: >
+    Form the three-coordinate unbiased vector independently in every block;
+    archive the full 3x3 covariance of the mean across blocks.
+
+normalization_boundary:
+  pi_a: >
+    The one-arm normalization must be measured with a separately frozen
+    periodic-torus radius convention before forming eta_a_delta.
+  kappa: >
+    Do not infer C1*CL/C2 from these three raw covariances alone and do not
+    substitute a literature value without matching field normalizations.
+  universal_coefficient_frozen: false
+
+tiny_oracle:
+  artifact: predictions/p234_triangular_energy_logpair_tiny_oracle_20260829.json
+  geometry: 6x3_periodic_triangular_quotient
+  role: algebra_and_convention_only_not_scaling_evidence

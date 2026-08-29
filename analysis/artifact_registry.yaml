@@ -25,6 +25,7 @@ canonical_documents:
   - {path: GOVERNANCE.md, status: canonical_current, role: permissive_execution_policy}
 
 frozen_predictions:
+  - {path: predictions/p234_triangular_energy_logpair_protocol_20260829.yaml, status: frozen_prediction, issue: 234, role: periodic_energy_logpair_sufficient_statistics}
   - {path: predictions/two_spin4_heldout_20260828.yaml, status: frozen_prediction, issue: 43, role: N185_N265_targets}
   - {path: predictions/x17_spin4_competitor_20260828.yaml, status: frozen_prediction, issue: 43, role: radial_adversary}
   - {path: predictions/angular_root_amplitude_20260828.yaml, status: frozen_prediction, role: root_amplitude}
@@ -53,6 +54,7 @@ frozen_predictions:
 
 continuum_controls:
   - {path: predictions/p156_pinson_arguin_baselines_20260829.json, status: continuum_baseline, issue: 156, role: primitive_homology_sector_values}
+  - {path: predictions/p234_triangular_energy_logpair_tiny_oracle_20260829.json, status: exact_algebra_oracle, issue: 234, role: cluster_sign_integration_control}
 
 evidence_archives:
   - {id: NEUTRAL_AREA_MODE_FRONT, path: results/local-20260829/neutral-area-mode-front, status: negative_result, role: exact_covector_and_bounded_mode_front}
@@ -82,6 +84,7 @@ evidence_archives:
   - {id: C4_LOCAL_ODD_LARGEN, path: results/local-20260829/P155-c4-local-odd-pivotal-largeN, status: negative_result, role: largeN_rank_gate_one_dimension}
 
 topic_derivations:
+  - {path: notes/p234-triangular-energy-logpair-protocol.md, status: topic_derivation, role: lattice_energy_logpair_protocol}
   - {path: notes/pivotal-russo-finite-volume.md, status: topic_derivation, role: pivotal_identity}
   - {path: notes/c4-self-matching-tangent-improvement.md, status: topic_derivation, role: microscopic_tangent}
   - {path: notes/reliability-signature-threshold-tomography.md, status: topic_derivation, role: reliability_signatures}
