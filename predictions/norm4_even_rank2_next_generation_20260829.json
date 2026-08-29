@@ -1,0 +1,141 @@
+{
+  "schema": "matching-one/norm4-even-rank2-transfer/v1",
+  "status": "post_reveal_exploratory_fit_and_frozen_future_fork",
+  "inputs": {
+    "scalar_score": "results/server-20260829/P154-norm4-production/analysis/scalar_score.json",
+    "scalar_sha256": "06984dc8d8e1a4f96ccf5e695932fb81dd9e968bc921122d3e394a3b907a8ae5",
+    "thermal_jet_score": "results/server-20260829/P154-norm4-production/analysis/thermal_jet_score.json",
+    "thermal_jet_sha256": "5ab42909c67fca87a9c9b27df3bd1e4e89ce7ac0e1bdd5d7fcb8cec7b4be7c95"
+  },
+  "model": {
+    "fixed_primary": "rank2_Jordan; affine in generation k=log2(N/N0)",
+    "secondary": "one conjugation-even mode; its Jordan second-difference vector is rank one across the two lineages",
+    "fitted_parameters": "five mode-direction entries plus one lineage amplitude ratio",
+    "degrees_of_freedom": 4,
+    "identifiability": "three generations identify the shared residual direction but not the secondary eigenvalue"
+  },
+  "covariance_aware_rank_one_fit": {
+    "lineage_85_over_65_amplitude_ratio": 0.177756489859683,
+    "profile_68_percent_interval_delta_chi2_1": [
+      -0.44671403862246206,
+      1.0623488336893876
+    ],
+    "profile_95_percent_interval_delta_chi2_3p841": [
+      -1.1866154037496526,
+      2.784719888041718
+    ],
+    "thermal_mode_direction_orders_2_to_6": [
+      0.13673290816305453,
+      0.2594442340481605,
+      -0.2741512012873742,
+      -2.9593056633673327,
+      -0.7992352715781945
+    ],
+    "chi_square": 4.756323173785579,
+    "degrees_of_freedom": 4,
+    "chi_square_survival": 0.3132261157962236,
+    "improvement_over_zero_secondary_Jordan": {
+      "delta_chi_square": 13.286230267433274,
+      "added_parameters": 6,
+      "chi_square_survival_if_used_as_nested_diagnostic": 0.03870918312862024
+    },
+    "post_fit_residual": [
+      0.008270522032735223,
+      0.04129025945500929,
+      -0.04224644936104388,
+      -0.3258457089620575,
+      0.4909794513635366,
+      -0.06947162670614418,
+      -0.44870432754474976,
+      0.41661607428283287,
+      3.142508836994803,
+      -6.026640325215954
+    ]
+  },
+  "future_branch": {
+    "frozen_secondary_eigenvalue": 0.5,
+    "basis": "lambda=1/2 is inherited from the ordinary analytic q=2 irrelevant mode; it is not fitted from the three generations",
+    "predictions": [
+      {
+        "lineage": [
+          65,
+          130,
+          260,
+          520
+        ],
+        "next_N": 520,
+        "thermal_jet_orders": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "fitted_current_second_difference": [
+          0.13673290816305453,
+          0.2594442340481605,
+          -0.2741512012873742,
+          -2.9593056633673327,
+          -0.7992352715781945
+        ],
+        "next_thermal_jet_point_if_lambda_half": [
+          2.5652616425516563,
+          0.1756474900052069,
+          -9.862245713970179,
+          -14.891723453707732,
+          44.916925247277014
+        ],
+        "observed_scalar_U_second_difference": 0.010785533507194911,
+        "next_scalar_U_point_if_lambda_half": 1.9279025734651105,
+        "future_null": "x3 - 2*x2 + x1 - lambda_secondary*(x2 - 2*x1 + x0) = 0"
+      },
+      {
+        "lineage": [
+          85,
+          170,
+          340,
+          680
+        ],
+        "next_N": 680,
+        "thermal_jet_orders": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "fitted_current_second_difference": [
+          0.024305161803370973,
+          0.046117896358735075,
+          -0.048732155231659045,
+          -0.5260357871420578,
+          -0.14206925644779034
+        ],
+        "next_thermal_jet_point_if_lambda_half": [
+          2.3187467177651513,
+          -1.2748431467176606,
+          -9.06616975463366,
+          -2.773664980813319,
+          38.119859647230996
+        ],
+        "observed_scalar_U_second_difference": 0.21006999043285934,
+        "next_scalar_U_point_if_lambda_half": 2.5725311897727745,
+        "future_null": "x3 - 2*x2 + x1 - lambda_secondary*(x2 - 2*x1 + x0) = 0"
+      }
+    ],
+    "decision_table": {
+      "next_second_difference_over_current_near_0": "pure rank2 Jordan reached",
+      "near_1_over_2": "Jordan plus analytic even irrelevant mode",
+      "near_1": "persistent curvature; rank3/log-squared candidate",
+      "other_common_ratio": "different coherent even eigenmode",
+      "no_common_ratio_across_orders_or_lineages": "one-secondary-mode transfer falsified"
+    }
+  },
+  "scalar_side_view": {
+    "Jordan_residuals": [
+      0.010785533507194911,
+      0.21006999043285934
+    ],
+    "guard": "U and the thermal jet share curves but their cross-covariance is not present in the submitted score JSONs, so scalar U is predicted separately and is not added to the rank-one chi-square"
+  }
+}
