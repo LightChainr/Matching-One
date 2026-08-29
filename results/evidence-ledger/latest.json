@@ -119,8 +119,8 @@
         "target": "matching_root"
       },
       "id": "p45_angular_normalized_root",
-      "raw_data_group": "p45_angular_normalized_root",
-      "role": "primary",
+      "raw_data_group": "p45_p49_shared_fullcurve_histograms",
+      "role": "sensitivity",
       "scores": {
         "H4_x21_over_4": {
           "chi_square": 2.4266687318922746,
@@ -152,14 +152,39 @@
     {
       "channel": {
         "exact_map": null,
-        "source": "matching_full_curve",
-        "target": "matching_full_curve"
+        "source": "matching_even_derivative",
+        "target": "matching_even_derivative"
       },
       "id": "p49_clean_full_curve",
-      "raw_data_group": "p49_fullcurve_doubling_histograms",
+      "raw_data_group": "p45_p49_shared_fullcurve_histograms",
       "role": "primary",
-      "scores": {},
-      "status": "PENDING_ARTIFACT_EXTRACTION"
+      "scores": {
+        "H4_pure_N_minus_5_over_4": {
+          "chi_square": 37.88682662885448,
+          "dimension": 2,
+          "log_determinant": -33.01476768111945,
+          "nlpd": 4.273906540276859
+        },
+        "q2_even_scalar": {
+          "chi_square": 1.7899341032300053,
+          "dimension": 2,
+          "log_determinant": -32.0097071981903,
+          "nlpd": -13.2720094810708
+        },
+        "rank2_Jordan_log": {
+          "chi_square": 0.6767060803820557,
+          "dimension": 2,
+          "log_determinant": -31.86875645844262,
+          "nlpd": -13.758148122620938
+        },
+        "zero_effect": {
+          "chi_square": 1044.572021134037,
+          "dimension": 2,
+          "log_determinant": -33.66776612170262,
+          "nlpd": 507.29000457257655
+        }
+      },
+      "status": "SCORED"
     },
     {
       "channel": {
@@ -175,6 +200,14 @@
     }
   ],
   "coverage": {
+    "H4_pure_N_minus_5_over_4": {
+      "additive": [
+        "p49_clean_full_curve"
+      ],
+      "predicted": [
+        "p49_clean_full_curve"
+      ]
+    },
     "H4_x17_over_4": {
       "additive": [
         "issue43_n185_n265_deltaM"
@@ -187,8 +220,7 @@
       "additive": [
         "issue43_n185_n265_deltaM",
         "p37_two_lineage_fixed_coordinate",
-        "p50_third_fixed_coordinate",
-        "p45_angular_normalized_root"
+        "p50_third_fixed_coordinate"
       ],
       "predicted": [
         "issue43_n185_n265_deltaM",
@@ -203,26 +235,46 @@
         "issue43_n185_n265_sprime_training_only"
       ]
     },
-    "rank2_Jordan_log": {
-      "additive": [],
+    "q2_even_scalar": {
+      "additive": [
+        "p49_clean_full_curve"
+      ],
       "predicted": [
-        "issue43_n185_n265_sprime_training_only"
+        "p49_clean_full_curve"
+      ]
+    },
+    "rank2_Jordan_log": {
+      "additive": [
+        "p49_clean_full_curve"
+      ],
+      "predicted": [
+        "issue43_n185_n265_sprime_training_only",
+        "p49_clean_full_curve"
       ]
     },
     "zero_effect": {
       "additive": [
         "issue43_n185_n265_deltaM",
         "p50_third_fixed_coordinate",
-        "p45_angular_normalized_root"
+        "p49_clean_full_curve"
       ],
       "predicted": [
         "issue43_n185_n265_deltaM",
         "p50_third_fixed_coordinate",
-        "p45_angular_normalized_root"
+        "p45_angular_normalized_root",
+        "p49_clean_full_curve"
       ]
     }
   },
   "cumulative_primary_only": {
+    "H4_pure_N_minus_5_over_4": {
+      "blocks": [
+        "p49_clean_full_curve"
+      ],
+      "chi_square": 37.88682662885448,
+      "dimensions": 2,
+      "nlpd": 4.273906540276859
+    },
     "H4_x17_over_4": {
       "blocks": [
         "issue43_n185_n265_deltaM"
@@ -235,22 +287,37 @@
       "blocks": [
         "issue43_n185_n265_deltaM",
         "p37_two_lineage_fixed_coordinate",
-        "p50_third_fixed_coordinate",
-        "p45_angular_normalized_root"
+        "p50_third_fixed_coordinate"
       ],
-      "chi_square": 5.740126068656497,
-      "dimensions": 7,
-      "nlpd": -46.530760749048895
+      "chi_square": 3.3134573367642224,
+      "dimensions": 5,
+      "nlpd": -42.61311475107202
+    },
+    "q2_even_scalar": {
+      "blocks": [
+        "p49_clean_full_curve"
+      ],
+      "chi_square": 1.7899341032300053,
+      "dimensions": 2,
+      "nlpd": -13.2720094810708
+    },
+    "rank2_Jordan_log": {
+      "blocks": [
+        "p49_clean_full_curve"
+      ],
+      "chi_square": 0.6767060803820557,
+      "dimensions": 2,
+      "nlpd": -13.758148122620938
     },
     "zero_effect": {
       "blocks": [
         "issue43_n185_n265_deltaM",
         "p50_third_fixed_coordinate",
-        "p45_angular_normalized_root"
+        "p49_clean_full_curve"
       ],
-      "chi_square": 506.386182133156,
+      "chi_square": 1089.683168583058,
       "dimensions": 5,
-      "nlpd": 219.78434852800595
+      "nlpd": 501.9375603992755
     }
   },
   "governance": {
@@ -262,6 +329,33 @@
   },
   "manifest_version": 1,
   "pairwise_primary_intersections": [
+    {
+      "delta_nlpd_left_minus_right": 17.545916021347658,
+      "intersection": [
+        "p49_clean_full_curve"
+      ],
+      "left": "H4_pure_N_minus_5_over_4",
+      "preferred": "q2_even_scalar",
+      "right": "q2_even_scalar"
+    },
+    {
+      "delta_nlpd_left_minus_right": 18.032054662897796,
+      "intersection": [
+        "p49_clean_full_curve"
+      ],
+      "left": "H4_pure_N_minus_5_over_4",
+      "preferred": "rank2_Jordan_log",
+      "right": "rank2_Jordan_log"
+    },
+    {
+      "delta_nlpd_left_minus_right": -503.0160980322997,
+      "intersection": [
+        "p49_clean_full_curve"
+      ],
+      "left": "H4_pure_N_minus_5_over_4",
+      "preferred": "H4_pure_N_minus_5_over_4",
+      "right": "zero_effect"
+    },
     {
       "delta_nlpd_left_minus_right": 13.673035412725394,
       "intersection": [
@@ -281,14 +375,40 @@
       "right": "zero_effect"
     },
     {
-      "delta_nlpd_left_minus_right": -249.76014935796624,
+      "delta_nlpd_left_minus_right": -20.70571065868239,
       "intersection": [
         "issue43_n185_n265_deltaM",
-        "p45_angular_normalized_root",
         "p50_third_fixed_coordinate"
       ],
       "left": "H4_x21_over_4",
       "preferred": "H4_x21_over_4",
+      "right": "zero_effect"
+    },
+    {
+      "delta_nlpd_left_minus_right": 0.48613864155013786,
+      "intersection": [
+        "p49_clean_full_curve"
+      ],
+      "left": "q2_even_scalar",
+      "preferred": "rank2_Jordan_log",
+      "right": "rank2_Jordan_log"
+    },
+    {
+      "delta_nlpd_left_minus_right": -520.5620140536473,
+      "intersection": [
+        "p49_clean_full_curve"
+      ],
+      "left": "q2_even_scalar",
+      "preferred": "q2_even_scalar",
+      "right": "zero_effect"
+    },
+    {
+      "delta_nlpd_left_minus_right": -521.0481526951975,
+      "intersection": [
+        "p49_clean_full_curve"
+      ],
+      "left": "rank2_Jordan_log",
+      "preferred": "rank2_Jordan_log",
       "right": "zero_effect"
     }
   ],
