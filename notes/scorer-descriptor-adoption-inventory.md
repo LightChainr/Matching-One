@@ -6,9 +6,9 @@ direct typed entrypoints importing both `ObservableDescriptor` and
 `map_observable` from `wrapping_channels`. Three frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. One path, `score_angular_root_amplitude.py`,
-is confirmed channel-bearing and requires a typed migration. The remaining 26 files are outside a
-registered typed path.
+a descriptor is not applicable. Two paths, `score_angular_root_amplitude.py`
+and `score_prequential_evidence.py`, are confirmed channel-bearing and require
+typed migrations. The remaining 25 files are outside a registered typed path.
 
 This closes an inventory gap: the repository now has a deterministic list,
 including Git blob identities, rather than an informal claim that all scorers
@@ -17,7 +17,7 @@ import is added or removed without updating the manifest, or if a declared
 wrapped kernel disappears.
 
 `outside_registered_typed_path` is deliberately a triage label. Some of those
-26 scripts may not compare channel-bearing quantities, some may be historical,
+25 scripts may not compare channel-bearing quantities, some may be historical,
 and some may need a future typed wrapper. Static membership alone does not prove
 a semantic bug, data-provenance failure, or need for migration. Each candidate
 must be reviewed before modification; Issue #146 therefore remains open.
@@ -34,3 +34,9 @@ observables, forms signed orientation differences and root gaps, normalizes by
 signed `DeltaCos4`, and scores `A_p` across sizes. A later migration must decide
 explicitly whether the descriptor schema needs a root-location quantity; this
 inventory result does not retrofit or reinterpret the completed P45 score.
+
+`score_prequential_evidence.py` is also migration-required. Its scored-block
+gate currently compares free-form `channel.source` and `channel.target` strings
+and treats any truthy `exact_map` field as sufficient. A typed migration must
+parse source/target descriptors and verify the registered affine transform,
+while preserving historical ledger rows and chronology.
