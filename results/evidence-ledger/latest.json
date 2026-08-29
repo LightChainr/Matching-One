@@ -1,0 +1,222 @@
+{
+  "blocks": [
+    {
+      "channel": {
+        "exact_map": null,
+        "source": "matching_odd",
+        "target": "matching_odd"
+      },
+      "id": "issue43_n185_n265_deltaM",
+      "raw_data_group": "issue43_n185_n265_500m_histograms",
+      "role": "primary",
+      "scores": {
+        "H4_x17_over_4": {
+          "chi_square": 30.246125012414854,
+          "dimension": 2,
+          "log_determinant": -40.85885529836254,
+          "nlpd": -3.4684880765644985
+        },
+        "H4_x21_over_4": {
+          "chi_square": 3.0459757732860746,
+          "dimension": 2,
+          "log_determinant": -41.004776884684546,
+          "nlpd": -17.14152348928989
+        },
+        "zero_effect": {
+          "chi_square": 29.409384312149555,
+          "dimension": 2,
+          "log_determinant": -41.103304143282514,
+          "nlpd": -4.009082849157134
+        }
+      },
+      "status": "SCORED"
+    },
+    {
+      "channel": {
+        "exact_map": null,
+        "source": "matching_even_derivative",
+        "target": "matching_even_derivative"
+      },
+      "id": "issue43_n185_n265_sprime_training_only",
+      "raw_data_group": "issue43_n185_n265_500m_histograms",
+      "role": "sensitivity",
+      "scores": {
+        "analytic_inverse_N": {
+          "chi_square": 0.862213788756995,
+          "dimension": 2,
+          "log_determinant": -6.321225400725154,
+          "nlpd": -0.8916287395747338
+        },
+        "rank2_Jordan_log": {
+          "chi_square": 1.2036032710036646,
+          "dimension": 2,
+          "log_determinant": -5.632775520149536,
+          "nlpd": -0.37670905816359035
+        }
+      },
+      "status": "SCORED"
+    },
+    {
+      "channel": {
+        "exact_map": null,
+        "source": "either_even",
+        "target": "cross_even"
+      },
+      "id": "issue43_deltaS_literal_channel_mismatch",
+      "raw_data_group": "issue43_n185_n265_500m_histograms",
+      "role": "protocol_history",
+      "scores": {},
+      "status": "PROTOCOL_FAILURE_CHANNEL_MISMATCH"
+    },
+    {
+      "channel": {
+        "exact_map": null,
+        "source": "matching_odd",
+        "target": "matching_odd"
+      },
+      "id": "p37_two_lineage_fixed_coordinate",
+      "raw_data_group": "p37_two_lineage_fixed_coordinate",
+      "role": "primary",
+      "scores": {},
+      "status": "PENDING_ARTIFACT_EXTRACTION"
+    },
+    {
+      "channel": {
+        "exact_map": null,
+        "source": "matching_odd",
+        "target": "matching_odd"
+      },
+      "id": "p50_third_fixed_coordinate",
+      "raw_data_group": "p50_third_fixed_coordinate",
+      "role": "primary",
+      "scores": {},
+      "status": "PENDING_ARTIFACT_EXTRACTION"
+    },
+    {
+      "channel": {
+        "exact_map": null,
+        "source": "matching_root",
+        "target": "matching_root"
+      },
+      "id": "p45_angular_normalized_root",
+      "raw_data_group": "p45_angular_normalized_root",
+      "role": "primary",
+      "scores": {},
+      "status": "PENDING_ARTIFACT_EXTRACTION"
+    },
+    {
+      "channel": {
+        "exact_map": null,
+        "source": "matching_odd",
+        "target": "matching_odd"
+      },
+      "id": "issue57_norm5",
+      "raw_data_group": "issue57_norm5_production",
+      "role": "primary",
+      "scores": {},
+      "status": "PENDING_REVEAL"
+    }
+  ],
+  "coverage": {
+    "H4_x17_over_4": {
+      "additive": [
+        "issue43_n185_n265_deltaM"
+      ],
+      "predicted": [
+        "issue43_n185_n265_deltaM"
+      ]
+    },
+    "H4_x21_over_4": {
+      "additive": [
+        "issue43_n185_n265_deltaM"
+      ],
+      "predicted": [
+        "issue43_n185_n265_deltaM"
+      ]
+    },
+    "analytic_inverse_N": {
+      "additive": [],
+      "predicted": [
+        "issue43_n185_n265_sprime_training_only"
+      ]
+    },
+    "rank2_Jordan_log": {
+      "additive": [],
+      "predicted": [
+        "issue43_n185_n265_sprime_training_only"
+      ]
+    },
+    "zero_effect": {
+      "additive": [
+        "issue43_n185_n265_deltaM"
+      ],
+      "predicted": [
+        "issue43_n185_n265_deltaM"
+      ]
+    }
+  },
+  "cumulative_primary_only": {
+    "H4_x17_over_4": {
+      "blocks": [
+        "issue43_n185_n265_deltaM"
+      ],
+      "chi_square": 30.246125012414854,
+      "dimensions": 2,
+      "nlpd": -3.4684880765644985
+    },
+    "H4_x21_over_4": {
+      "blocks": [
+        "issue43_n185_n265_deltaM"
+      ],
+      "chi_square": 3.0459757732860746,
+      "dimensions": 2,
+      "nlpd": -17.14152348928989
+    },
+    "zero_effect": {
+      "blocks": [
+        "issue43_n185_n265_deltaM"
+      ],
+      "chi_square": 29.409384312149555,
+      "dimensions": 2,
+      "nlpd": -4.009082849157134
+    }
+  },
+  "governance": {
+    "additive_role": "primary",
+    "channel_rule": "source and target semantics must match or cite a registered exact_map",
+    "derived_view_rule": "one primary view per raw_data_group; sensitivities and diagnostics are non-additive",
+    "no_prediction_rule": "NO_PREDICTION is coverage metadata, never a score",
+    "pairwise_rule": "compare only the intersection of additive endpoints predicted by both models"
+  },
+  "manifest_version": 1,
+  "pairwise_primary_intersections": [
+    {
+      "delta_nlpd_left_minus_right": 13.673035412725394,
+      "intersection": [
+        "issue43_n185_n265_deltaM"
+      ],
+      "left": "H4_x17_over_4",
+      "preferred": "H4_x21_over_4",
+      "right": "H4_x21_over_4"
+    },
+    {
+      "delta_nlpd_left_minus_right": 0.5405947725926357,
+      "intersection": [
+        "issue43_n185_n265_deltaM"
+      ],
+      "left": "H4_x17_over_4",
+      "preferred": "zero_effect",
+      "right": "zero_effect"
+    },
+    {
+      "delta_nlpd_left_minus_right": -13.132440640132756,
+      "intersection": [
+        "issue43_n185_n265_deltaM"
+      ],
+      "left": "H4_x21_over_4",
+      "preferred": "H4_x21_over_4",
+      "right": "zero_effect"
+    }
+  ],
+  "schema_version": 1
+}
