@@ -37,6 +37,12 @@ class ExactFKQScoreOracleTests(unittest.TestCase):
             "0/1",
         )
 
+    def test_wrap_difference_polynomial_has_simple_q1_zero(self) -> None:
+        polynomial = self.payload["wrap_difference_polynomial"]
+        self.assertTrue(polynomial["factorization_exact"])
+        self.assertTrue(polynomial["Q1_zero_is_simple"])
+        self.assertEqual(polynomial["tangent_from_factorization"], "69/256")
+
     def test_committed_artifact_is_byte_reproducible(self) -> None:
         artifact = json.loads(
             (ROOT / "results/fk-q-score/latest.json").read_text(encoding="utf-8")

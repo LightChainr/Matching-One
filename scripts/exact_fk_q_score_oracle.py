@@ -148,6 +148,46 @@ def histogram(rows: Sequence[Dict[str, int]]) -> list[dict]:
     ]
 
 
+def multiply_polynomials(left: Sequence[int], right: Sequence[int]) -> list[int]:
+    answer = [0] * (len(left) + len(right) - 1)
+    for i, a in enumerate(left):
+        for j, b in enumerate(right):
+            answer[i + j] += a * b
+    return answer
+
+
+def wrap_difference_factorization(histogram_rows: Sequence[dict]) -> dict:
+    minimum_j = min(row["J"] for row in histogram_rows)
+    coefficients = [
+        next(
+            (
+                row["observable_sums"]["wrap_difference"]
+                for row in histogram_rows
+                if row["J"] == exponent
+            ),
+            0,
+        )
+        for exponent in range(minimum_j, max(row["J"] for row in histogram_rows) + 1)
+    ]
+    factors = ([-1, 1], [1, 1], [2, 1], [16, 6, 1])
+    reconstructed = [1]
+    for factor in factors:
+        reconstructed = multiply_polynomials(reconstructed, factor)
+    derivative_at_one = sum(index * coefficient for index, coefficient in enumerate(coefficients))
+    partition_at_one = sum(row["count"] for row in histogram_rows)
+    return {
+        "variable": "x=sqrt(Q)",
+        "numerator": "x^5*(x-1)*(x+1)*(x+2)*(x^2+6*x+16)",
+        "common_monomial_power": minimum_j,
+        "reduced_coefficients_ascending": coefficients,
+        "factorization_exact": coefficients == reconstructed,
+        "Q1_zero_is_simple": derivative_at_one != 0 and sum(coefficients) == 0,
+        "tangent_from_factorization": fraction_text(
+            Fraction(derivative_at_one, 2 * partition_at_one)
+        ),
+    }
+
+
 def render(length: int = 2) -> dict:
     pairs = square_bond_pairs(length)
     if len(pairs) > 20:
@@ -156,6 +196,7 @@ def render(length: int = 2) -> dict:
     mu_b = mean(rows, lambda row: Fraction(row["b"]))
     mu_k = mean(rows, lambda row: Fraction(row["k"]))
     mu_t = mean(rows, lambda row: Fraction(row["J"], 2))
+    histogram_rows = histogram(rows)
     derivatives = {}
     for observable in OBSERVABLES:
         ratio = ratio_derivatives(rows, observable)
@@ -192,10 +233,11 @@ def render(length: int = 2) -> dict:
             "T": fraction_text(mu_t),
             "T_equals_k_plus_b_over_2": mu_t == mu_k + mu_b / 2,
         },
-        "sqrtQ_histogram": histogram(rows),
+        "sqrtQ_histogram": histogram_rows,
+        "wrap_difference_polynomial": wrap_difference_factorization(histogram_rows),
         "observable_derivatives": derivatives,
         "exact_checks": {
-            "histogram_counts_sum_to_configurations": sum(row["count"] for row in histogram(rows)) == len(rows),
+            "histogram_counts_sum_to_configurations": sum(row["count"] for row in histogram_rows) == len(rows),
             "all_score_orders_match_ratio_differentiation": all(
                 row["direct_equals_score"] for row in derivatives.values()
             ),

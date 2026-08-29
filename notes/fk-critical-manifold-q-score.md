@@ -43,6 +43,17 @@ their difference has a nonzero critical-manifold Q tangent.  Finite-torus
 duality therefore does not erase the parameter-space direction: topology is
 already a sensitive covector for the `Q` score.
 
+In fact the complete `L=2` wrapping-difference numerator factorizes in
+`x=sqrt(Q)` as
+
+```text
+x^5 (x-1)(x+1)(x+2)(x^2+6x+16).
+```
+
+The percolation zero `x=1` is simple.  Differentiating this factorization and
+dividing by the `Q=1` partition sum gives the exact tangent `69/256`.  This is
+an algebraic finite-volume topological response, not a fitted derivative.
+
 This establishes the estimator, not a logarithmic field.  A fixed lattice
 observable has only the measure derivative `Cov(O,T)`.  The derivative of its
 generic-Q representation projector, normalization, and explicit insertion
