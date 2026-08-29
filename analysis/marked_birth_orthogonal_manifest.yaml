@@ -1,0 +1,34 @@
+schema: matching-one/marked-birth-orthogonal-manifest/v1
+issues: [215, 275, 276]
+source_commit: 634040d
+phase: heldout_batch_gram_and_exact_contact_closure
+
+source_doublet:
+  candidate: J_D4_equals_chi4_ell_times_I12_minus_I01
+  thermal_control: J_S4_equals_chi4_ell_times_I12_plus_I01
+  estimator_gram: alpha_equals_cov_batch_J_S_J_D_over_var_batch_J_S
+  training: q2_N65_only
+  heldout: q2_N130_child
+  external_direction: P50_N145
+
+exact_contact_identity:
+  C_D: one_half_J_S_plus_p_minus_one_half_minus_mean_q_times_J_D
+  C_S: one_half_J_D_plus_p_minus_one_half_minus_mean_q_times_J_S
+  meaning: connected rank response is algebraically closed by gate-source means
+
+claim_boundary:
+  exact: gate contact identities orientation by orientation
+  production: centered complex estimator-batch Gram and N130 heldout transfer
+  not_available: configuration-level source Gram
+  minimal_addition:
+    - two_root_Horvitz_J_D_times_conjugate_J_S
+    - two_root_Horvitz_absolute_J_S_squared
+    - independent_global_observer_and_its_J_D_J_S_products
+
+outputs:
+  script: scripts/score_marked_birth_orthogonal.py
+  result: results/server-20260829/marked-birth-pilot/analysis/orthogonal_score.json
+  report: results/server-20260829/marked-birth-pilot/ORTHOGONALIZATION.md
+  test: tests/test_score_marked_birth_orthogonal.py
+
+conclusion: N65 batch Gram does not remove N130 thermal growth; the prior connected proxy is a contact channel rather than an independent Q4 matrix element

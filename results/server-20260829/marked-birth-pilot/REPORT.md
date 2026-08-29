@@ -72,3 +72,13 @@ control for that subtraction.
 3. OBSERVER-SECTOR-SOURCE-GEOMETRY: `A_top` | Alexander odd | lifted-line `J_D4` | exact q2 Gaussian parent/child plus P50 leverage.
 4. DEPENDENCY GROUP: all pilot channels and their covariances reuse one counter-coupled stream per size; they form one discovery block.
 5. UPWEIGHT OBSERVATION: q2 transfer of the thermally orthogonalized `J_D4` residual, with the frozen conjugation/phase law and `2^(-13/8)` magnitude target.
+
+## Orthogonalization follow-up
+
+The requested held-out batch-Gram score is in `ORTHOGONALIZATION.md`. It
+changes the interpretation: N65 gives a weak, noisy estimator-level
+`alpha=0.00626-0.02099i`, and applying it to N130 leaves the connected q2
+growth unchanged (`1.26442 -> 1.26447`). More importantly, exact gate algebra
+closes the connected response in terms of source means. Therefore the
+connected `A_top` response is a contact channel, not an independent matrix
+element. The mean-`J_D4` radial lead remains separate and alive.

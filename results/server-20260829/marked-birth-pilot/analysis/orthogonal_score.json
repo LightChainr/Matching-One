@@ -1,0 +1,204 @@
+{
+  "alpha": {
+    "abs": "0.0219033255405451004334184",
+    "im": "-0.0209896457381260144007131",
+    "re": "0.00626022695459707404599426"
+  },
+  "alpha_delete_one_se": {
+    "im": "0.0893215231457786328734572",
+    "re": "0.0615460780499974836808019"
+  },
+  "claim_boundary": {
+    "batch_gram": "estimator-level projection, not a configuration-level source Gram matrix",
+    "exact_contact": "C_D=J_S/2+(p-1/2-<q>)J_D and C_S=J_D/2+(p-1/2-<q>)J_S orientation by orientation",
+    "missing_for_field_gram": "per-configuration or two-root Horvitz sums of J_D*conj(J_S) and |J_S|^2"
+  },
+  "conclusion": "The N65 batch-Gram projection does not remove the held-out thermal growth. More strongly, the connected response is exactly closed by gate-source means, so it is not an independent Q4 matrix element.",
+  "external_direction": "P50 N145",
+  "gram_definition": "alpha=<delta J_S,delta J_D>/<delta J_S,delta J_S> over 20 aligned N65 batch estimators",
+  "gram_normal_equation_residual": {
+    "abs": "5.71997931907298333824479e-53",
+    "im": "-2.61012178719940981068412e-53",
+    "re": "5.08973748503884913083403e-53"
+  },
+  "held_out": "N130 q2 child",
+  "issues": [
+    215,
+    275,
+    276
+  ],
+  "minimal_additional_statistics": [
+    "two-root Horvitz sum of J_D4*conj(J_S4) per k/batch",
+    "two-root Horvitz sum of |J_S4|^2 per k/batch",
+    "an independent global observer O_ext and O_ext*J_D4/O_ext*J_S4 products"
+  ],
+  "schema": "matching-one/marked-birth-batch-gram-orthogonal/v1",
+  "scientific_card": [
+    "MECHANISM SPACE: the apparent thermal growth is an exact rank-gate contact channel, not free evidence for a Q4 matrix element.",
+    "NOT PROVED: the noisy mean-J_D q2 exponent remains a candidate; batch Gram is not the missing field-level Gram.",
+    "OBSERVER-SECTOR-SOURCE-GEOMETRY: A_top | Alexander odd | J_D/J_S gate doublet | q2 Gaussian parent and held-out child.",
+    "DEPENDENCY GROUP: orthogonal and raw scores are deterministic transforms of the same 634040d pilot.",
+    "UPWEIGHT OBSERVATION: mean-J_D radial transfer or an independent-observer coupling after two-root field orthogonalization."
+  ],
+  "scores": {
+    "N130_heldout": {
+      "contact_identity_max_residual": {
+        "D": "3.48865045759924276964823e-22",
+        "S": "3.48865045759924276964823e-22"
+      },
+      "orthogonal_connected_C_perp": {
+        "abs": "3.755505695564241236083",
+        "im": "1.07102320424935481714527",
+        "re": "3.59954612769094822858514"
+      },
+      "orthogonal_source_J_perp": {
+        "abs": "0.164059625511933962159779",
+        "im": "0.128318881458311218573167",
+        "re": "-0.102224387424938313157796"
+      },
+      "p": "0.593023247962918828779289",
+      "raw_connected_C_D": {
+        "abs": "3.76019192460339692464948",
+        "im": "1.05851151311214988503009",
+        "re": "3.60812925024334808743162"
+      },
+      "raw_source_J_D": {
+        "abs": "0.0160108768522728082767357",
+        "im": "-0.00993188465671992286274976",
+        "re": "-0.012558098771082213834361"
+      },
+      "thermal_connected_C_S": {
+        "abs": "0.692714543451044318308936",
+        "im": "0.212255283305555847598395",
+        "re": "0.659394520311980596884838"
+      },
+      "thermal_control_J_S": {
+        "abs": "7.52317894781372081910735",
+        "im": "2.11895872232483673650005",
+        "re": "7.21860342544948641145063"
+      }
+    },
+    "N65_training": {
+      "contact_identity_max_residual": {
+        "D": "4.70175427214695285443752e-22",
+        "S": "4.70175427214695285443752e-22"
+      },
+      "orthogonal_connected_C_perp": {
+        "abs": "2.97002386098390412788741",
+        "im": "-0.844208078879061064681985",
+        "re": "2.84751724391074795893737"
+      },
+      "orthogonal_source_J_perp": {
+        "abs": "0.163967778752849682442291",
+        "im": "0.159223806560008253932304",
+        "re": "0.0391562497397865757901565"
+      },
+      "p": "0.593120625709462679207388",
+      "raw_connected_C_D": {
+        "abs": "2.9738438553306584170851",
+        "im": "-0.856645299639931703539",
+        "re": "2.84778968789704090679305"
+      },
+      "raw_source_J_D": {
+        "abs": "0.0483938737210797531711768",
+        "im": "0.0290659434541998879929157",
+        "re": "0.0386928668471214239041039"
+      },
+      "thermal_connected_C_S": {
+        "abs": "0.567959618539316985200667",
+        "im": "-0.150370962643419807179397",
+        "re": "0.547692159780489926009543"
+      },
+      "thermal_control_J_S": {
+        "abs": "5.9424167221096823176218",
+        "im": "-1.71867485418394783538325",
+        "re": "5.68845086511297616977927"
+      }
+    },
+    "P50_N145_external": {
+      "contact_identity_max_residual": {
+        "D": "5.37462453889689552082639e-22",
+        "S": "5.37462453889689552082639e-22"
+      },
+      "orthogonal_connected_C_perp": {
+        "abs": "3.77259731319732418052604",
+        "im": "0.203470819543186278507418",
+        "re": "3.76710633154123928563737"
+      },
+      "orthogonal_source_J_perp": {
+        "abs": "0.183736216752527694276641",
+        "im": "0.179659110052667401663178",
+        "re": "-0.0384915772814700529137896"
+      },
+      "p": "0.59258521655920190346402",
+      "raw_connected_C_D": {
+        "abs": "3.77710439311431648857295",
+        "im": "0.188887580714993432934381",
+        "re": "3.77237843784728282824461"
+      },
+      "raw_source_J_D": {
+        "abs": "0.0289058987837824986329677",
+        "im": "0.0236907229708278409225843",
+        "re": "0.0165620237174618432205379"
+      },
+      "thermal_connected_C_S": {
+        "abs": "0.707973081343445208098021",
+        "im": "0.0403648358563588477265339",
+        "re": "0.706821451240142889644754"
+      },
+      "thermal_control_J_S": {
+        "abs": "7.55134772194354865522688",
+        "im": "0.373436088415346573753284",
+        "re": "7.54210831966573304749839"
+      }
+    }
+  },
+  "thermal_control": "J_S4=chi4(ell)(I01+I12)",
+  "training": "N65 only",
+  "training_crossfit": {
+    "C_perp_batch_se": {
+      "im": "0.248766968333760970789289",
+      "re": "0.336808051816241859115087"
+    },
+    "J_perp_batch_se": {
+      "im": "0.4786854193901417394883",
+      "re": "0.541498340236946949799329"
+    },
+    "mean_C_perp": {
+      "abs": "2.96995510914914558115204",
+      "im": "-0.843782824175880923158079",
+      "re": "2.84757157872930169867251"
+    },
+    "mean_J_perp": {
+      "abs": "0.167022883321718188487292",
+      "im": "0.161816144162134326481417",
+      "re": "0.0413784852501834429350583"
+    }
+  },
+  "transfers": {
+    "orthogonal_connected_N130_over_conj_N65": {
+      "abs": "1.2644698734238869407709",
+      "im": "0.0012460117256518300614657",
+      "re": "1.26446925951222720883551"
+    },
+    "orthogonal_source_N130_over_N65": {
+      "abs": "1.00056015126741895602008",
+      "im": "0.792289366452361400946257",
+      "re": "0.611063152309805121161329"
+    },
+    "raw_connected_N130_over_conj_N65": {
+      "abs": "1.26442143822151191369753",
+      "im": "-0.00864665042631079889628515",
+      "re": "1.26439187314319679165298"
+    },
+    "raw_source_N130_over_N65": {
+      "abs": "0.330845117804625647389026",
+      "im": "-0.00823243951680497301382976",
+      "re": "-0.330742677794624457885861"
+    },
+    "targets": {
+      "H4_mean_source": "-2^(-13/8)=-0.3242098886627524",
+      "thermal_connected": "2^(3/8)=1.2968395546510096 after q2 conjugation"
+    }
+  }
+}
