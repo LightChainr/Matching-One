@@ -114,6 +114,10 @@ frozen_predictions:
   - path: predictions/hexagonal_pell_spin_filter_20260828.yaml
     status: frozen_prediction
     role: gated_modular_shape_test
+  - path: predictions/rectangular_thermal_q4_hecke_20260829.yaml
+    status: frozen_prediction
+    issues: [103, 145, 159, 164]
+    role: exact_rectangular_Ward_Hecke_ratio_and_conditional_lattice_score
   - path: predictions/polynomial_widths_22_24.yaml
     status: frozen_prediction
     issue: 6
