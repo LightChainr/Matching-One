@@ -15,8 +15,8 @@ purpose: >-
   thermal-transfer model. Norm 4 is used because it is the exact dyadic
   composition T4=T2^2, changes to a noncyclic quotient class, and is a spin-4
   sine-quadrature phase node. The scalar q=2/Jordan completion is primary;
-  full-jet one-generator closure and the root character are correlated
-  secondary views from the same future histograms.
+  full-jet one-generator closure, quotient-arithmetic guardrails, and the root
+  character are correlated secondary views from the same future histograms.
 
 evidence_boundary:
   development_inputs_already_revealed:
@@ -120,11 +120,41 @@ phase_node:
     sine4: 0
     target: no_V_odd_contribution_under_two_generator_hypothesis
 
+quotient_arithmetic_guardrail:
+  purpose: >-
+    Norm-4 changes from primitive cyclic Gaussian quotients to noncyclic Smith
+    classes. Before interpreting failure of U as evidence against q=2 or
+    Jordan, verify that robust leading/eigen-like channels still obey their
+    predeclared norm-4 semigroup characters on the same target block.
+  joint_channels:
+    - observable: P4[D]
+      target_ratio_target_over_parent: 4^(-13/8)
+      interpretation: leading_matching_odd_thermal_H4_radial_character
+    - observable: P4[D_prime]
+      target_ratio_target_over_parent: 4^(-5/8)
+      interpretation: derivative_channel_that_was_near_eigenchannel_on_N145_to_N290
+    - observable: DeltaRoot
+      target_ratio_target_over_parent: 1/16
+      interpretation: exact_two_step_norm2_H4_root_character
+  score_rule: >-
+    Form one covariance-aware guardrail vector across both lineages and all
+    available channels. These are correlated secondary views of the same
+    future histograms and are not additive evidence. Recompute all intrinsic
+    quantities inside each target delete-one replicate and propagate source
+    covariance.
+  decision_rule: >-
+    If the guardrail vector itself is incompatible at the preregistered 5%
+    reference level, classify the norm-4 block first as quotient/arithmetic or
+    broad semigroup sensitivity. Do not attribute a simultaneous failure of U
+    solely to the q=2/Jordan continuum correction mechanism. If the guardrail
+    survives, the scalar/full-jet U tests have a cleaner interpretation as an
+    even-generator discriminator.
+
 secondary_root_character:
   formula: DeltaRoot(4N) / DeltaRoot(N)
   target: 1/16
   origin: exact_two_step_composition_of_the_norm2_H4_root_character
-  evidence_role: correlated_secondary_view_not_additive
+  evidence_role: included_in_joint_quotient_arithmetic_guardrail_not_additive
 
 full_jet_secondary:
   basis: frozen_Krawtchouk_Hermite_interlaced_thermal_jet
@@ -139,10 +169,12 @@ full_jet_secondary:
     - count_scalar_U_and_full_jet_as_independent_evidence
 
 execution_gate:
+  - score_the_pre_reveal_N290_conjugation_phase_node_first
   - general integer-period backend exact/oracle tests pass
   - run disjoint-counter N260/N340 variance and throughput pilot
   - freeze final sample counts before target physics means are opened
   - freeze complete source+target covariance contract
+  - freeze_the_source_trained_full_jet_even_generator_if_claimed_prospectively
   - apply typed observable/channel semantic checks
   - preserve threshold-rank histograms and paired moments
 
@@ -161,6 +193,9 @@ future_norm10:
     cosine: (25/14)*(Y10-Y5)
     sine: (25/48)*(Y10+Y5)
   semigroup_identity: (1+i)*(2-i)=3+i
+  protocol_requirement: >-
+    Freeze a typed complex-phase/genealogy convention and the complete
+    covariance propagation before any N650/N850 target production.
 
 forbidden:
   - use_P57_or_N290_reused_views_as_new_additive_evidence
