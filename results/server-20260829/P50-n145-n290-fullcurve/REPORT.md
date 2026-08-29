@@ -66,6 +66,19 @@ It supports treating the derivative response as a small non-diagonal or
 Jordan thermal block: one projected direction is already an excellent
 eigenchannel, while its companion is not governed by the same scalar law.
 
+The repository froze direct N290 predictions for the two `S_prime` correction
+models before this target was revealed.  Scoring the new N290 observation and
+its independent target variance gives:
+
+| ordered frozen model | predicted `P4_S_prime(290)` | z | two-sided p |
+|---|---:|---:|---:|
+| q=2 even-scalar correction | 0.00241567 | 1.30913 | 0.19049 |
+| rank-2 Jordan log | 0.00279233 | 0.14675 | 0.88333 |
+
+Both survive, so q=2 remains the first passing model in the declared order.
+Jordan is descriptively much closer, consistent with the independent norm-5
+ordering, but this one scalar score does not by itself promote Jordan over q=2.
+
 The preregistered conjugation phase-node diagnostic in Issue #138 is not yet
 identified with one of these real projected scalars.  It should be formed
 from the two genealogy-resolved transfer responses with full covariance,
@@ -100,4 +113,5 @@ larger chi-square.
   interval in an independent stream, 8 threads, 705.83 seconds
 - corrected scorer: PR #195
 
-Machine-readable score: `analysis/score.json`.
+Machine-readable scores: `analysis/score.json` and
+`analysis/sprime_frozen_score.json`.
