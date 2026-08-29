@@ -1,0 +1,504 @@
+{
+  "schema": "matching-one/p267-gaussian-annulus-semantic-crosswalk/v1",
+  "status": "post_reveal_design_audit_no_numeric_rectangle",
+  "issues": [
+    154,
+    253,
+    255
+  ],
+  "source_commits": {
+    "Gaussian_PR277": "3e855ce",
+    "annulus_P253": "3123b73"
+  },
+  "source_files": {
+    "Gaussian_PR277_score_sha256": "27ec7c18da5f1b8441899e4566e21a382bc8d3a7434fc4db7d7fb2fe67b7b02e",
+    "annulus_old_score_sha256": "5c7721e7578574bc417f37d82155e218ea832f64647873e8a195311793b274e6"
+  },
+  "semantic_crosswalk": {
+    "PR277_scalar_U": {
+      "state": "global rank-histogram thermal response",
+      "source": "Bernoulli-p derivative reconstructed from a complete threshold curve",
+      "observer": "N^(13/8) P4[S_prime]/Mbar_prime, global orientation/rank projector",
+      "normalization": "global thermal slope and canonical width",
+      "transfer_coordinate": "Gaussian cover generation k=log2(N/N0)",
+      "batch_contract": "100 threshold-histogram batches; source lineages partly aligned",
+      "matching_sector": "matching-odd thermal scalar side view; not an ordinary A_plus row"
+    },
+    "PR277_thermal_jet": {
+      "state": "width-normalized Hermite-Krawtchouk jet orders 2 through 6",
+      "source": "higher Bernoulli-p derivatives of the global threshold curve",
+      "observer": "alternating P4[D] even orders and P4[S] odd orders",
+      "normalization": "canonical dimensionless width to each derivative order",
+      "transfer_coordinate": "Gaussian cover generation k=log2(N/N0)",
+      "batch_contract": "100 threshold-histogram/moment batches with complete jet covariance",
+      "matching_sector": "matching-odd thermal jet"
+    },
+    "P253_A_plus": {
+      "state": "local landing-shell pivotal H4 amplitude",
+      "source": "single-root occupied/unoccupied toggle at fixed p",
+      "observer": "(primal_h4+matching_h4)/(primal_pivotal+matching_pivotal), then orientation contrast",
+      "normalization": "conditional pivotal-event mass",
+      "transfer_coordinate": "annulus n=log2(R/2) at fixed quotient",
+      "batch_contract": "200 common-field batches across radii/designs",
+      "matching_sector": "ordinary/matching-even"
+    },
+    "P253_A_minus": {
+      "state": "local landing-shell pivotal H4 amplitude",
+      "source": "single-root occupied/unoccupied toggle at fixed p",
+      "observer": "(primal_h4-matching_h4)/(primal_pivotal+matching_pivotal), then orientation contrast",
+      "normalization": "conditional pivotal-event mass",
+      "transfer_coordinate": "annulus n=log2(R/2) at fixed quotient",
+      "batch_contract": "200 common-field batches across radii/designs",
+      "matching_sector": "matching-odd"
+    },
+    "exact_pairwise_verdict": {
+      "same_source_rows": [],
+      "same_observer_rows": [],
+      "same_normalization_rows": [],
+      "numerically_eligible_cross_context_pairs": [],
+      "reason": "A global product-measure derivative is not a fixed-p root-toggle conditional amplitude. Multiplication by N, a pivotal mass, or a power of R cannot change the sigma-algebra or sufficient statistic."
+    }
+  },
+  "Gaussian_PR277_lambda_sensitivity": {
+    "scalar_U": {
+      "rows": [
+        {
+          "row": "N65_U",
+          "curvature_lambda_1_minus_0": -0.010785533507194911,
+          "curvature_standard_error": 0.06277254781683843,
+          "mahalanobis_squared_lambda_0_vs_1": 0.02952186244805392,
+          "minimum_adjacent_0_half_or_half_1": 0.00738046561201348
+        },
+        {
+          "row": "N85_U",
+          "curvature_lambda_1_minus_0": -0.2100699904328589,
+          "curvature_standard_error": 0.09062493446508275,
+          "mahalanobis_squared_lambda_0_vs_1": 5.373195226783633,
+          "minimum_adjacent_0_half_or_half_1": 1.3432988066959082
+        }
+      ],
+      "best_individual_row": {
+        "row": "N85_U",
+        "curvature_lambda_1_minus_0": -0.2100699904328589,
+        "curvature_standard_error": 0.09062493446508275,
+        "mahalanobis_squared_lambda_0_vs_1": 5.373195226783633,
+        "minimum_adjacent_0_half_or_half_1": 1.3432988066959082
+      },
+      "full_view_mahalanobis_squared_lambda_0_vs_1": 5.39703128923063,
+      "semantic_warning": "This is a design-sensitivity diagnostic inside PR277 only. It does not make the row synonymous with a P253 landing-H4 row."
+    },
+    "thermal_jet": {
+      "rows": [
+        {
+          "row": "N65_r2",
+          "curvature_lambda_1_minus_0": -0.14500343019585282,
+          "curvature_standard_error": 0.10124458600405879,
+          "mahalanobis_squared_lambda_0_vs_1": 2.051223268122804,
+          "minimum_adjacent_0_half_or_half_1": 0.512805817030701
+        },
+        {
+          "row": "N65_r3",
+          "curvature_lambda_1_minus_0": -0.3007344935038695,
+          "curvature_standard_error": 0.18859989207039277,
+          "mahalanobis_squared_lambda_0_vs_1": 2.542632578058447,
+          "minimum_adjacent_0_half_or_half_1": 0.6356581445146118
+        },
+        {
+          "row": "N65_r4",
+          "curvature_lambda_1_minus_0": 0.3163976506523767,
+          "curvature_standard_error": 0.6103396994107496,
+          "mahalanobis_squared_lambda_0_vs_1": 0.2687343989487971,
+          "minimum_adjacent_0_half_or_half_1": 0.06718359973719927
+        },
+        {
+          "row": "N65_r5",
+          "curvature_lambda_1_minus_0": 3.285151372381319,
+          "curvature_standard_error": 1.8316828393139015,
+          "mahalanobis_squared_lambda_0_vs_1": 3.2166974746762746,
+          "minimum_adjacent_0_half_or_half_1": 0.8041743686690687
+        },
+        {
+          "row": "N65_r6",
+          "curvature_lambda_1_minus_0": 0.30825582237633853,
+          "curvature_standard_error": 6.8329628753147285,
+          "mahalanobis_squared_lambda_0_vs_1": 0.0020351876306732605,
+          "minimum_adjacent_0_half_or_half_1": 0.0005087969076683151
+        },
+        {
+          "row": "N85_r2",
+          "curvature_lambda_1_minus_0": 0.045166464902657966,
+          "curvature_standard_error": 0.14277233740622258,
+          "mahalanobis_squared_lambda_0_vs_1": 0.10007925449806943,
+          "minimum_adjacent_0_half_or_half_1": 0.025019813624517356
+        },
+        {
+          "row": "N85_r3",
+          "curvature_lambda_1_minus_0": 0.40258643118584503,
+          "curvature_standard_error": 0.2825071537839174,
+          "mahalanobis_squared_lambda_0_vs_1": 2.030763584960309,
+          "minimum_adjacent_0_half_or_half_1": 0.5076908962400772
+        },
+        {
+          "row": "N85_r4",
+          "curvature_lambda_1_minus_0": -0.3678839190413008,
+          "curvature_standard_error": 0.9255770780067702,
+          "mahalanobis_squared_lambda_0_vs_1": 0.15797793301590854,
+          "minimum_adjacent_0_half_or_half_1": 0.039494483253977135
+        },
+        {
+          "row": "N85_r5",
+          "curvature_lambda_1_minus_0": -2.6164730496267703,
+          "curvature_standard_error": 2.7824595523394726,
+          "mahalanobis_squared_lambda_0_vs_1": 0.8842494773155973,
+          "minimum_adjacent_0_half_or_half_1": 0.22106236932889933
+        },
+        {
+          "row": "N85_r6",
+          "curvature_lambda_1_minus_0": 6.168709593244564,
+          "curvature_standard_error": 10.951828868996795,
+          "mahalanobis_squared_lambda_0_vs_1": 0.3172600238765287,
+          "minimum_adjacent_0_half_or_half_1": 0.07931500596913217
+        }
+      ],
+      "best_individual_row": {
+        "row": "N65_r5",
+        "curvature_lambda_1_minus_0": 3.285151372381319,
+        "curvature_standard_error": 1.8316828393139015,
+        "mahalanobis_squared_lambda_0_vs_1": 3.2166974746762746,
+        "minimum_adjacent_0_half_or_half_1": 0.8041743686690687
+      },
+      "full_view_mahalanobis_squared_lambda_0_vs_1": 18.042553437369136,
+      "semantic_warning": "This is a design-sensitivity diagnostic inside PR277 only. It does not make the row synonymous with a P253 landing-H4 row."
+    }
+  },
+  "annulus_row_selection": {
+    "method": "Post-reveal design metric: calibrate the confluent basis on R2/R4/R7, predict R8, and use the complete A_plus/A_minus covariance.",
+    "lambda_basis": {
+      "0": "1,n,indicator(n=0)",
+      "1/2": "1,n,(1/2)^n",
+      "1": "1,n,n^2 confluent persistent-curvature limit"
+    },
+    "candidates": {
+      "N325": {
+        "channels": {
+          "A_plus": {
+            "predictions": {
+              "0.0": {
+                "R8_prediction_from_R2_R4_R7": -0.006544897456731999,
+                "R8_residual": -0.029519479920943226,
+                "R8_residual_standard_error": 0.0124658342870124
+              },
+              "0.5": {
+                "R8_prediction_from_R2_R4_R7": -0.006324255449613521,
+                "R8_residual": -0.029740121928061705,
+                "R8_residual_standard_error": 0.013357089870560928
+              },
+              "1.0": {
+                "R8_prediction_from_R2_R4_R7": -0.006187048630635128,
+                "R8_residual": -0.029877328747040098,
+                "R8_residual_standard_error": 0.013976591500073033
+              }
+            },
+            "pairwise_separation": [
+              {
+                "lambda_pair": [
+                  0.0,
+                  0.5
+                ],
+                "prediction_difference": -0.00022064200711847894,
+                "pooled_residual_variance": 0.00016690443714074764,
+                "mahalanobis_squared": 0.00029168125269322503
+              },
+              {
+                "lambda_pair": [
+                  0.5,
+                  1.0
+                ],
+                "prediction_difference": -0.00013720681897839168,
+                "pooled_residual_variance": 0.00018687847988507755,
+                "mahalanobis_squared": 0.00010073771568425732
+              },
+              {
+                "lambda_pair": [
+                  0.0,
+                  1.0
+                ],
+                "prediction_difference": -0.0003578488260968704,
+                "pooled_residual_variance": 0.00017537106721558386,
+                "mahalanobis_squared": 0.0007301990252559111
+              }
+            ],
+            "minimum_adjacent_mahalanobis_squared": 0.00010073771568425732
+          },
+          "A_minus": {
+            "predictions": {
+              "0.0": {
+                "R8_prediction_from_R2_R4_R7": -0.00022465037361607586,
+                "R8_residual": -0.012660120418356074,
+                "R8_residual_standard_error": 0.012074771632808035
+              },
+              "0.5": {
+                "R8_prediction_from_R2_R4_R7": 0.00015301676877246497,
+                "R8_residual": -0.013037787560744614,
+                "R8_residual_standard_error": 0.012851444791559932
+              },
+              "1.0": {
+                "R8_prediction_from_R2_R4_R7": 0.00038787008576555645,
+                "R8_residual": -0.013272640877737706,
+                "R8_residual_standard_error": 0.013409821301283943
+              }
+            },
+            "pairwise_separation": [
+              {
+                "lambda_pair": [
+                  0.0,
+                  0.5
+                ],
+                "prediction_difference": -0.00037766714238854083,
+                "pooled_residual_variance": 0.0001554798716074893,
+                "mahalanobis_squared": 0.0009173693608392196
+              },
+              {
+                "lambda_pair": [
+                  0.5,
+                  1.0
+                ],
+                "prediction_difference": -0.0002348533169930915,
+                "pooled_residual_variance": 0.00017249147028144073,
+                "mahalanobis_squared": 0.00031976120565650984
+              },
+              {
+                "lambda_pair": [
+                  0.0,
+                  1.0
+                ],
+                "prediction_difference": -0.0006125204593816323,
+                "pooled_residual_variance": 0.0001628117086584171,
+                "mahalanobis_squared": 0.002304387787909194
+              }
+            ],
+            "minimum_adjacent_mahalanobis_squared": 0.00031976120565650984
+          }
+        },
+        "joint_pairwise_separation": [
+          {
+            "lambda_pair": [
+              0.0,
+              0.5
+            ],
+            "prediction_difference_A_plus_A_minus": [
+              -0.00022064200711847883,
+              -0.00037766714238854083
+            ],
+            "mahalanobis_squared": 0.0010639062321205464
+          },
+          {
+            "lambda_pair": [
+              0.5,
+              1.0
+            ],
+            "prediction_difference_A_plus_A_minus": [
+              -0.00013720681897839168,
+              -0.0002348533169930915
+            ],
+            "mahalanobis_squared": 0.00037041687881637036
+          },
+          {
+            "lambda_pair": [
+              0.0,
+              1.0
+            ],
+            "prediction_difference_A_plus_A_minus": [
+              -0.0003578488260968704,
+              -0.0006125204593816323
+            ],
+            "mahalanobis_squared": 0.00267258865499485
+          }
+        ],
+        "joint_minimum_adjacent_mahalanobis_squared": 0.00037041687881637036
+      },
+      "N425": {
+        "channels": {
+          "A_plus": {
+            "predictions": {
+              "0.0": {
+                "R8_prediction_from_R2_R4_R7": -0.04921825319098081,
+                "R8_residual": 0.012140986584688408,
+                "R8_residual_standard_error": 0.013465089244192756
+              },
+              "0.5": {
+                "R8_prediction_from_R2_R4_R7": -0.051865440080169675,
+                "R8_residual": 0.014788173473877272,
+                "R8_residual_standard_error": 0.014363559082516002
+              },
+              "1.0": {
+                "R8_prediction_from_R2_R4_R7": -0.05351160028805725,
+                "R8_residual": 0.01643433368176484,
+                "R8_residual_standard_error": 0.014987214686512169
+              }
+            },
+            "pairwise_separation": [
+              {
+                "lambda_pair": [
+                  0.0,
+                  0.5
+                ],
+                "prediction_difference": 0.0026471868891888616,
+                "pooled_residual_variance": 0.0001938102289355017,
+                "mahalanobis_squared": 0.0361570102093294
+              },
+              {
+                "lambda_pair": [
+                  0.5,
+                  1.0
+                ],
+                "prediction_difference": 0.0016461602078875759,
+                "pooled_residual_variance": 0.000215464216788267,
+                "mahalanobis_squared": 0.0125767678291351
+              },
+              {
+                "lambda_pair": [
+                  0.0,
+                  1.0
+                ],
+                "prediction_difference": 0.0042933470970764375,
+                "pooled_residual_variance": 0.00020296261620684076,
+                "mahalanobis_squared": 0.09081883964872445
+              }
+            ],
+            "minimum_adjacent_mahalanobis_squared": 0.0125767678291351
+          },
+          "A_minus": {
+            "predictions": {
+              "0.0": {
+                "R8_prediction_from_R2_R4_R7": 0.004548726683640656,
+                "R8_residual": -0.023754853713998922,
+                "R8_residual_standard_error": 0.01350332001702277
+              },
+              "0.5": {
+                "R8_prediction_from_R2_R4_R7": 0.0005374585833250786,
+                "R8_residual": -0.019743585613683348,
+                "R8_residual_standard_error": 0.014372568325174728
+              },
+              "1.0": {
+                "R8_prediction_from_R2_R4_R7": -0.0019569591538116052,
+                "R8_residual": -0.017249167876546664,
+                "R8_residual_standard_error": 0.014991089514883775
+              }
+            },
+            "pairwise_separation": [
+              {
+                "lambda_pair": [
+                  0.0,
+                  0.5
+                ],
+                "prediction_difference": 0.004011268100315576,
+                "pooled_residual_variance": 0.00019445518587197185,
+                "mahalanobis_squared": 0.08274539812583384
+              },
+              {
+                "lambda_pair": [
+                  0.5,
+                  1.0
+                ],
+                "prediction_difference": 0.0024944177371366842,
+                "pooled_residual_variance": 0.00021565174255253706,
+                "mahalanobis_squared": 0.028852629585528453
+              },
+              {
+                "lambda_pair": [
+                  0.0,
+                  1.0
+                ],
+                "prediction_difference": 0.006505685837452261,
+                "pooled_residual_variance": 0.00020353620816269304,
+                "mahalanobis_squared": 0.2079430908027727
+              }
+            ],
+            "minimum_adjacent_mahalanobis_squared": 0.028852629585528453
+          }
+        },
+        "joint_pairwise_separation": [
+          {
+            "lambda_pair": [
+              0.0,
+              0.5
+            ],
+            "prediction_difference_A_plus_A_minus": [
+              0.0026471868891888616,
+              0.004011268100315577
+            ],
+            "mahalanobis_squared": 0.12283430743090423
+          },
+          {
+            "lambda_pair": [
+              0.5,
+              1.0
+            ],
+            "prediction_difference_A_plus_A_minus": [
+              0.0016461602078875759,
+              0.0024944177371366847
+            ],
+            "mahalanobis_squared": 0.0433206368672709
+          },
+          {
+            "lambda_pair": [
+              0.0,
+              1.0
+            ],
+            "prediction_difference_A_plus_A_minus": [
+              0.0042933470970764375,
+              0.006505685837452261
+            ],
+            "mahalanobis_squared": 0.3102769465700579
+          }
+        ],
+        "joint_minimum_adjacent_mahalanobis_squared": 0.0433206368672709
+      }
+    },
+    "selected_existing_annulus_context": "N425",
+    "selected_rows": [
+      "A_plus ordinary/matching-even",
+      "A_minus matching-odd"
+    ],
+    "warning": "The selected N425 block has weak absolute separation; it selects semantics and geometry for a future rectangle, not a mechanism from existing data."
+  },
+  "rectangle": {
+    "row_order": [
+      "A_plus ordinary/matching-even",
+      "A_minus matching-odd"
+    ],
+    "context_order": [
+      "annulus_radius_doubling",
+      "Gaussian_cover_doubling"
+    ],
+    "cells": {
+      "annulus_radius_doubling:A_plus": "existing P253 N425 R2/R4/R7/R8",
+      "annulus_radius_doubling:A_minus": "existing P253 N425 R2/R4/R7/R8",
+      "Gaussian_cover_doubling:A_plus": "missing",
+      "Gaussian_cover_doubling:A_minus": "missing"
+    },
+    "numerical_score_now": "forbidden_no_common_source_readout_rectangle"
+  },
+  "frozen_future_score": {
+    "Gaussian_residual": "x3-2*x2+x1-lambda*(x2-2*x1+x0) at fixed R=2",
+    "annulus_residual": "R8 minus the R2/R4/R7 confluent-basis prediction",
+    "lambda_candidates_in_frozen_order": [
+      0,
+      0.5,
+      1
+    ],
+    "shared_generator": "one common lambda for both contexts and both rows",
+    "context_enriched": "one lambda per context, shared by A_plus/A_minus inside that context",
+    "comparison": "Report all three diagonal and all nine context-pair GLS scores. Use Delta=min(diagonal)-min(all) only with a frozen Gaussian parametric bootstrap and the worst-case p over the three shared nulls.",
+    "covariance": "complete A_plus/A_minus covariance inside each context; zero between the revealed P253 counters and the future independent Gaussian counters",
+    "claim_boundary": "A context gain distinguishes one shared generator from a context-dependent effective generator. It does not by itself prove path/state memory."
+  },
+  "scientific_card": [
+    "MECHANISM QUESTION: can one low-dimensional generator transport the same local pivotal rows through cover and radius contexts?",
+    "SEMANTIC VERDICT: no PR277 global-rank row is identical to a P253 local landing-H4 row, so no current numerical rectangle exists.",
+    "SELECTED ROWS: N425 A_plus ordinary and A_minus matching-odd, chosen jointly with the full annulus covariance.",
+    "MISSING CELLS: the same fixed-p root-toggle A_plus/A_minus readout along one norm-4 Gaussian cover chain.",
+    "DECISION: compare shared lambda with context-specific lambda only after the missing cells pass the general-period runner preflight."
+  ]
+}

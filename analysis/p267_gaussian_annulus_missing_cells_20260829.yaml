@@ -1,0 +1,149 @@
+schema: matching-one/p267-gaussian-annulus-missing-cells/v1
+created: 2026-08-29
+status: frozen_missing_cell_design_not_production_authorized
+production_authorized: false
+issues: [154, 253, 255]
+pull_request_context: 267
+
+source_chronology:
+  Gaussian_PR277_commit: 3e855ce
+  annulus_P253_commit: 3123b73
+  navigation_freeze: 7ee897e
+  crosswalk_result: results/p267-gaussian-annulus-crosswalk/latest.json
+
+semantic_gate:
+  verdict: no_existing_cross_context_rows_are_numerically_eligible
+  Gaussian_source: global_Bernoulli_p_derivative_from_complete_threshold_rank_curve
+  Gaussian_readout: global_rank_orientation_U_and_Hermite_Krawtchouk_jet
+  annulus_source: fixed_p_single_root_toggle_pivotal
+  annulus_readout: conditional_landing_shell_H4_A_plus_A_minus
+  forbidden_repairs:
+    - multiply_by_N_or_R_power
+    - divide_by_pivotal_mass_after_the_fact
+    - rename_U_or_r_modes_as_A_plus_or_A_minus
+    - treat_100_and_200_batch_coordinates_as_aligned
+
+rectangle:
+  row_order:
+    - A_plus_ordinary_matching_even
+    - A_minus_matching_odd
+  context_order:
+    - annulus_radius_doubling
+    - Gaussian_cover_doubling
+  cells:
+    annulus_radius_doubling:
+      A_plus_ordinary_matching_even:
+        status: existing
+        source: P253_N425_R2_R4_R7_R8
+      A_minus_matching_odd:
+        status: existing
+        source: P253_N425_R2_R4_R7_R8
+    Gaussian_cover_doubling:
+      A_plus_ordinary_matching_even: {status: missing}
+      A_minus_matching_odd: {status: missing}
+
+row_freeze:
+  annulus_geometry: N425
+  channels: [A_plus, A_minus]
+  selection: joint_full_covariance_R8_prediction_from_R2_R4_R7
+  candidates: [lambda_0, lambda_half, lambda_1_confluent_quadratic]
+  N425_minimum_adjacent_Mahalanobis_squared: 0.043320636867270876
+  N325_minimum_adjacent_Mahalanobis_squared: 0.00037041687881637036
+  boundary: weak_design_metric_not_a_mechanism_result
+
+missing_Gaussian_acquisition:
+  purpose: fill_both_missing_cells_with_the_exact_P253_source_and_readout
+  p: '0.592746050790'
+  root: vertex_zero_toggled_for_primal_and_complement_matching_pivotal
+  cutoff: euclidean_disk
+  radii: [2]
+  landing_registry: absolute_lattice_axis_minus_diagonal
+  samples_per_design: 200000
+  batches: 200
+  seed: 26725360829
+  replica_counter: [26725300000, 26725500000]
+  dependency: same_seed_counter_root_and_batch_for_all_designs_and_both_channels
+  independence: disjoint_from_P253_and_PR277_counter_domains
+  cover_lineages:
+    - sizes: [65, 130, 260, 520]
+      designs:
+        - {label: n65_first, N: 65, matrix: [[8, -1], [1, 8]], smith: [1, 65]}
+        - {label: n65_second, N: 65, matrix: [[7, -4], [4, 7]], smith: [1, 65]}
+        - {label: n130_first, N: 130, matrix: [[11, -3], [3, 11]], smith: [1, 130]}
+        - {label: n130_second, N: 130, matrix: [[9, -7], [7, 9]], smith: [1, 130]}
+        - {label: n260_first, N: 260, matrix: [[16, -2], [2, 16]], smith: [2, 130]}
+        - {label: n260_second, N: 260, matrix: [[14, -8], [8, 14]], smith: [2, 130]}
+        - {label: n520_first, N: 520, matrix: [[22, -6], [6, 22]], smith: [2, 260]}
+        - {label: n520_second, N: 520, matrix: [[18, -14], [14, 18]], smith: [2, 260]}
+    - sizes: [85, 170, 340, 680]
+      designs:
+        - {label: n85_first, N: 85, matrix: [[9, -2], [2, 9]], smith: [1, 85]}
+        - {label: n85_second, N: 85, matrix: [[7, -6], [6, 7]], smith: [1, 85]}
+        - {label: n170_first, N: 170, matrix: [[13, -1], [1, 13]], smith: [1, 170]}
+        - {label: n170_second, N: 170, matrix: [[11, -7], [7, 11]], smith: [1, 170]}
+        - {label: n340_first, N: 340, matrix: [[18, -4], [4, 18]], smith: [2, 170]}
+        - {label: n340_second, N: 340, matrix: [[14, -12], [12, 14]], smith: [2, 170]}
+        - {label: n680_first, N: 680, matrix: [[26, -2], [2, 26]], smith: [2, 340]}
+        - {label: n680_second, N: 680, matrix: [[22, -14], [14, 22]], smith: [2, 340]}
+
+runner_reuse_path:
+  local_observable_backend:
+    source: src/matching_multiradius_pivotal_mc.cpp_at_3123b73
+    reuse_verbatim:
+      - fixed_p_counter_Bernoulli_configuration
+      - primal_and_complement_matching_root_toggle
+      - euclidean_MatchingLanding_R2
+      - A_plus_A_minus_integer_batch_statistics
+      - P253_metadata_and_digest_fields
+  general_period_backend:
+    source: src/threshold_rank_integer_period_mc.cpp_from_PR277_lineage
+    reuse:
+      - arbitrary_2x2_period_matrix_vertex_quotient
+      - HNF_Smith_geometry_validation
+      - primal_and_matching_edges
+      - homology_cross_classifier
+  minimal_adapter:
+    - replace_label_a_b_parser_with_label_m00_m01_m10_m11
+    - map_local_integer_displacements_through_the_general_period_vertex_index
+    - preserve_every_P253_event_and_normalization_definition
+    - emit_period_matrix_and_Smith_invariants_in_metadata
+  preflight_observation:
+    primitive_N65_N85_N130_N170_R2: pass_existing_cyclic_runner
+    nonprimitive_N260_N340_N520_N680: cyclic_runner_rejects_gcd_greater_than_one
+  forbidden: build_a_new_generic_topology_or_observable_framework
+
+sufficient_statistics_per_design_radius_batch:
+  - samples_and_counter_interval
+  - primal_pivotal_and_matching_pivotal
+  - primal_h4_and_matching_h4
+  - h4_plus_equals_primal_plus_matching
+  - h4_minus_equals_primal_minus_matching
+  - common_field_digest
+
+frozen_score:
+  Gaussian_cover_residual: "x3-2*x2+x1-lambda*(x2-2*x1+x0) at R=2"
+  annulus_residual: "x_R8-h_lambda*(x_R2,x_R4,x_R7)"
+  lambda_order: [0, '1/2', 1]
+  lambda_one_basis: rank3_confluent_quadratic
+  shared_generator:
+    constraint: same_lambda_for_both_contexts_and_both_rows
+    scores: three_fixed_full_covariance_GLS_rows
+  context_enriched:
+    constraint: one_lambda_per_context_shared_across_A_plus_A_minus
+    scores: nine_fixed_full_covariance_GLS_rows
+  comparison:
+    statistic: min_shared_diagonal_chi2_minus_min_context_pair_chi2
+    calibration: Gaussian_parametric_bootstrap_100000_draws_seed_267253255
+    composite_null: report_worst_case_p_across_lambda_0_half_1
+  covariance:
+    within_annulus: existing_complete_P253_N425_A_plus_A_minus_covariance
+    within_Gaussian: complete_common_field_two_lineage_A_plus_A_minus_covariance
+    between_contexts: zero_due_to_disjoint_seed_counter_domains
+  interpretation_boundary: context_dependence_is_not_automatically_path_or_state_memory
+
+authorization_gate:
+  - general_period_R2_injectivity_pass_all_16_designs
+  - tiny_exact_axis_and_nonprimitive_period_equivalence_for_local_landing_and_pivotal_flags
+  - scorer_synthetic_shared_and_context_enriched_recovery
+  - binary_hash_and_counter_domain_freeze
+
