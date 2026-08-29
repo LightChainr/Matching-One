@@ -111,6 +111,10 @@ Beta(7,7): first k=5 coefficient difference = +156
 
 The associated reliability-signature/minimal-degree theorem explains why the N=10 Beta(3,3) control is algebraically special. Do not fit a generalized Beta family to N=26 as a replacement hypothesis; use the committed activation signature/profile if more finite information is needed.
 
+### Square-bond tiny-torus conventions — #42 first stage
+
+Completed exact identity. Geometric dual transport `T` swaps primal and dual wrapping; naive bit-complement does not. Therefore `E[D](p=1/2)=0` in every channel on every finite torus. Locked `L=2`/`L=3` even-sector rationals live in `results/exact_square_bond_duality.md`. Remaining #42 production is same-`N` `P4[S]` and `P4[D']`, not the center of `D`.
+
 ## Tier B — useful parallel work
 
 ### B1. Prequential evidence ledger — #95

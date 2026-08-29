@@ -37,11 +37,13 @@ research_tracks:
       - scripts/matched_torus_reference.py
       - scripts/wrapping_channels.py
       - results/local-20260828/P44-self-matching-tangent
+      - scripts/square_bond_duality_exact.py
     evidence:
       - E_MATCHING_IDENTITY
       - E_EXACT_TOPOLOGY
       - E_CHANNEL_SEMANTICS
       - E_SELFMATCHING_TANGENT
+      - E_SQUARE_BOND_DUALITY
     strongest_statements:
       - level: exact
         statement: Finite torus complement identities determine registered cross/either maps.
@@ -49,10 +51,13 @@ research_tracks:
         statement: Channel-bearing scores are typed by topology, combination, coordinate, orientation order, normalization and quantity.
       - level: exact
         statement: The two-sublattice C4 self-matching control has microscopic complement tangent J=-I at the center.
+      - level: exact
+        statement: Square-bond geometric dual transport T makes D odd, so E[D](p=1/2)=0; bit-complement is not the duality map.
     open_questions:
       - configuration-level Euler/Betti lift of the matching identity
       - large-N RG decomposition of the exact self-matching odd tangent
       - broader direction/both channel-map audit
+      - square-bond same-N orientation production after tiny-torus conventions
     analysis_now:
       - issue: 111
         task: configuration_level_euler_betti_identity
@@ -60,6 +65,11 @@ research_tracks:
         task: broader_channel_semantic_audit
       - issue: 155
         task: self_matching_RG_tangent_decomposition
+    new_compute:
+      - issue: 42
+        task: square_bond_self_dual_orientation
+        conventions_status: exact_tiny_torus_frozen
+        remaining: P4_S_and_P4_Dprime_same_N_pairs
 
   - id: B
     name: threshold_rank_reliability_and_statistics
@@ -356,6 +366,15 @@ evidence_blocks:
       - results/local-20260828/P44-self-matching-tangent
       - scripts/c4_self_matching_tangent.py
 
+  - id: E_SQUARE_BOND_DUALITY
+    status: exact
+    role: square_bond_tiny_torus_conventions
+    paths:
+      - notes/square-bond-duality-tiny-torus.md
+      - results/exact_square_bond_duality.md
+      - scripts/square_bond_duality_exact.py
+      - tests/test_square_bond_duality_exact.py
+
   - id: E_P31
     status: predictive
     role: independent_seed_same_N_confirmation
@@ -537,6 +556,12 @@ new_compute_queue:
     name: N1105_four_angle
     state: gated
     gate: norm5_and_third_lineage_first
+  - rank: 7
+    issue: 42
+    name: square_bond_self_dual_orientation
+    state: new_compute
+    conventions_status: exact_tiny_torus_frozen
+    remaining: P4_S_and_P4_Dprime_same_N_pairs
 
 completed_exact_tasks:
   - issue: 115
@@ -549,6 +574,10 @@ completed_exact_tasks:
     outcome: exact_J_minus_I_and_score_function_oracle_complete
   - name: reliability_signature_finite_layer
     outcome: canonical
+  - issue: 42
+    name: square_bond_tiny_torus_duality_conventions
+    outcome: geometric_T_swaps_wrapping_E_D_at_half_vanishes
+    remaining_production: same_N_orientation_P4
 
 negative_results:
   - id: NR_LARGE_PELL

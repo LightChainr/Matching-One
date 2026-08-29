@@ -15,6 +15,7 @@
 | Threshold-rank histograms are exact activation/reliability signatures for the finite monotone event under the frozen rank convention | C5 finite | Canonical finite combinatorial interpretation |
 | For the finite matching function, `M'(p)` equals primal pivotal mass at `p` plus matching pivotal mass at `1-p` | C5 finite | Exact Russo/chain-rule identity with independent tiny-torus regression |
 | The C4 self-matching two-sublattice family has exact complement tangent `(t,lambda)->(-t,-lambda)` at the center | C5 finite | Exact microscopic `J=-I`; no continuum parity conclusion implied |
+| Square-bond occupation complement is not the duality map; geometric dual transport `T` makes `D` odd, so `E[D](p=1/2)=0` identically | C5 finite | Exact tiny-torus identity; does not score orientation amplitudes |
 
 ## Strongest current finite-size evidence
 
@@ -127,6 +128,16 @@ Beta(7,7): first coefficient difference at k=5 = +156
 ```
 
 No generalized-Beta rescue fit was performed. The reliability-signature/minimal-degree theorem explains the N=10 result more sharply: `Beta(s,s)` is forced in the minimal-degree self-dual case, while N=26 has extra polynomial degrees of freedom and is the first nontrivial deformation in this control family.
+
+### Square-bond tiny-torus duality conventions
+
+On the `L x L` square-bond torus, geometric dual transport `T` (vacant primal bond occupies the identified dual edge) is a bijection that swaps primal and dual wrapping. Naive bit-complement is not that map. Consequently `D=R_primal-R_dual` is odd under `T` and
+
+```text
+E[D(p=1/2)] = 0
+```
+
+in every registered channel, for every finite `L`. Exhaustive `L=2` (`2^8`) and `L=3` (`2^18`) enumerations lock the even-sector rationals and the failure of bit-complement. This freezes the #42 observable conventions. It does **not** measure `P4[S]` or `P4[D']` on same-`N` Gaussian pairs.
 
 ## Current interpretation
 

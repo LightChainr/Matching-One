@@ -215,6 +215,7 @@ Do not add these local scores as independent global evidence without shared sour
 | Self-matching tangent | exact finite | explicit microscopic pair-exchange-odd tangent and rational N=10 responses |
 | N=26 Beta test | exact negative | both frozen finite Beta-family hypotheses fail |
 | Reliability signature layer | exact finite | threshold ranks/finite self-dual controls share an activation-signature language |
+| Square-bond tiny-torus duality | exact finite | geometric dual transport makes `D` odd, so `E[D](p=1/2)=0`; bit-complement is not the map |
 
 These strengthen foundations and controls; they do not upgrade the H4/LCFT claim by themselves.
 
