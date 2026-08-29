@@ -1,0 +1,188 @@
+{
+  "claim_boundary": {
+    "conditional": "all four lattice readouts must factor through one common two-state transfer realization",
+    "exact": "Cayley-Hamilton coefficients and the shared-context affine/commutator implications",
+    "post_reveal": "N580 state predictions use the already opened N145/N290 means"
+  },
+  "exact_oracle": {
+    "enriched_sector_counterexample": {
+      "A_charged": "-1",
+      "U_charged": "0",
+      "defect": "5",
+      "endpoint_affine_prediction": "-5",
+      "endpoint_alpha": "-2",
+      "endpoint_beta": "3"
+    },
+    "models": {
+      "ordinary_q2": {
+        "A": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "1/2"
+          ]
+        ],
+        "A_squared": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "1/4"
+          ]
+        ],
+        "alpha": "-1/2",
+        "beta": "3/2"
+      },
+      "rank2_Jordan": {
+        "A": [
+          [
+            "1",
+            "1"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "A_squared": [
+          [
+            "1",
+            "2"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "alpha": "-1",
+        "beta": "2"
+      }
+    }
+  },
+  "hankel_gate": {
+    "commutator": "U=alpha*I+beta*A implies [A,U]=0",
+    "identity": "H_U=alpha*H_I+beta*H_A for every source/readout context",
+    "minimal_score": "solve alpha,beta on two noncollinear context entries and predict every remaining entry",
+    "rank": "rank([vec(H_I),vec(H_A),vec(H_U)])<=2"
+  },
+  "issue": 180,
+  "observed_state": {
+    "N145": {
+      "I_Du": -0.011326674713668418,
+      "I_S": -0.008480909487795181,
+      "T_D": 0.4467428179653149,
+      "T_Su": 1.4458006515540685
+    },
+    "N290": {
+      "I_Du": -0.011396074043587633,
+      "I_S": -0.006079022902772899,
+      "T_D": 0.7284461983832801,
+      "T_Su": 1.9544833136802429
+    }
+  },
+  "predictions": {
+    "ordinary_q2": {
+      "N580_state_prediction": {
+        "I_Du": -0.01143077370854724,
+        "I_S": -0.004878079610261758,
+        "T_D": 0.8692978885922626,
+        "T_Su": 2.20882464474333
+      },
+      "N580_state_prediction_covariance": [
+        [
+          2.3827735281338376e-05,
+          1.1978771542508323e-05,
+          -1.872683250360268e-05,
+          -0.00014353284615631042
+        ],
+        [
+          1.1978771542508323e-05,
+          7.602722856632645e-05,
+          8.66974209038004e-06,
+          0.00014398891863654666
+        ],
+        [
+          -1.872683250360268e-05,
+          8.66974209038004e-06,
+          0.08474338121770383,
+          0.05806620093825266
+        ],
+        [
+          -0.00014353284615631042,
+          0.00014398891863654666,
+          0.05806620093825266,
+          0.07462621358679833
+        ]
+      ],
+      "N580_state_prediction_standard_error": {
+        "I_Du": 0.008719359412613202,
+        "I_S": 0.004881366128589248,
+        "T_D": 0.2911071644905083,
+        "T_Su": 0.2731779888402401
+      },
+      "identity_coefficient_alpha": -0.5,
+      "one_step_coefficient_beta": 1.5
+    },
+    "rank2_Jordan": {
+      "N580_state_prediction": {
+        "I_Du": -0.011465473373506847,
+        "I_S": -0.0036771363177506167,
+        "T_D": 1.0101495788012453,
+        "T_Su": 2.463165975806417
+      },
+      "N580_state_prediction_covariance": [
+        [
+          4.365172914152041e-05,
+          2.2142809826968074e-05,
+          -3.182940466279084e-05,
+          -0.0002543727297888775
+        ],
+        [
+          2.2142809826968074e-05,
+          0.00013855521942097982,
+          1.4771087983885734e-05,
+          0.00025799050730336044
+        ],
+        [
+          -3.182940466279084e-05,
+          1.4771087983885734e-05,
+          0.15296598342278983,
+          0.10468231935064679
+        ],
+        [
+          -0.0002543727297888775,
+          0.00025799050730336044,
+          0.10468231935064679,
+          0.1340590762576413
+        ]
+      ],
+      "N580_state_prediction_standard_error": {
+        "I_Du": 0.011770948110538072,
+        "I_S": 0.006606945522820693,
+        "T_D": 0.3911086593554147,
+        "T_Su": 0.36614078748159334
+      },
+      "identity_coefficient_alpha": -1.0,
+      "one_step_coefficient_beta": 2.0
+    }
+  },
+  "provenance": {
+    "child_histogram": "results/server-20260829/P50-n145-n290-fullcurve/raw/n290_100m.hist.csv",
+    "child_sha256": "e5f62077407f5c989e1b2907171c5f844b770812212bde616f63c621dbf97eb9",
+    "parent_histogram": "results/server-20260829/P50-n145-n290-fullcurve/raw/n145_100m.hist.csv",
+    "parent_sha256": "c685dae9bddc005224fe5dd052945482cd3b8c5bb26744dad4e44996a8318b42"
+  },
+  "schema": "matching-one/p180-affine-clock-hankel/v1",
+  "state_order": [
+    "I_S",
+    "I_Du",
+    "T_D",
+    "T_Su"
+  ],
+  "status": "exact_rank2_clock_theorem_and_post_reveal_N580_prediction"
+}
