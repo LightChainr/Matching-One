@@ -1,0 +1,28 @@
+{
+  "schema": "matching-one/rho-child-primitive-h4-independent-production/v1",
+  "production_id": "P267-rho-C3-primitive-H4-N112-independent-2M-v2",
+  "status": "frozen_design_runner_preflight_pending",
+  "production_authorized": false,
+  "issues": [156, 205, 226, 250, 275],
+  "runner_commit": "PENDING_RUNNER_COMMIT",
+  "model_development_source": "8ed805f583904bf7536e6bd5f02ad09cd7480556",
+  "primary": "clean Pell-transported E4/r1 one-complex-amplitude subspace; reject or survive with 4 residual degrees of freedom",
+  "secondary": "minimal E4/r1 plus E6/r0 two-complex-amplitude subspace; no pilot coefficient is reused or tuned",
+  "fixed_opponents": ["null", "E6/r0", "E4-squared/r2", "E6/r0 plus E4-squared/r2", "saturated mixture boundary"],
+  "observer": "delta_H4_primitive = E[1_rank1 (P ell/|P ell|)^4] - H4_Pinson_Arguin(tau)",
+  "direction_alias_gate": "83e98fc repaired: the full primitive sum contains multiple C4 direction orbits; exact two-line character rank is 2 for every child",
+  "child_order": ["2omega", "omega_over_2", "omega_plus_1_over_2"],
+  "complex_character_convention": "zeta=exp(2*pi*i/3); physical plus-spin phase u(ell)^4; ideal DFT_r=(1/3) sum_j zeta^(-r*j) delta_H4_j",
+  "covariance": "each child keeps its complete 2x2 complex batch covariance; disjoint seed/counter domains make the combined 6x6 covariance exactly block diagonal",
+  "runs": {
+    "2omega": {"child": "2omega", "samples": 2000000, "batches": 100, "workers": 8, "seed": 2671562001, "replica_offset": 17000000000},
+    "omega_over_2": {"child": "omega_over_2", "samples": 2000000, "batches": 100, "workers": 8, "seed": 2671562002, "replica_offset": 17002000000},
+    "omega_plus_1_over_2": {"child": "omega_plus_1_over_2", "samples": 2000000, "batches": 100, "workers": 8, "seed": 2671562003, "replica_offset": 17004000000}
+  },
+  "machines": {
+    "2omega": "DevEnvC_ZyTrST",
+    "omega_over_2": "DevEnvC_XPk2PZ",
+    "omega_plus_1_over_2": "DevEnvC_HZsCM6"
+  },
+  "claim_boundary": "This is an independent test of one topology-typed modular child vector, not a repeat ordinary H4/H8/H12 selector."
+}

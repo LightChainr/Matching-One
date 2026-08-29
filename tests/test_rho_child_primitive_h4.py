@@ -15,6 +15,7 @@ from rho_child_primitive_h4_mc import (  # noqa: E402
     child_gate,
     counter_mask,
     physical_phase,
+    run,
     tiny_oracle,
 )
 from score_rho_child_primitive_h4 import complex_design, gls, real_vector  # noqa: E402
@@ -24,6 +25,8 @@ class RhoChildPrimitiveH4Tests(unittest.TestCase):
     def test_child_gate_and_taus(self):
         gate = child_gate()
         self.assertTrue(gate["passed"])
+        self.assertTrue(gate["direction_alias_gate"]["all_rank_two"])
+        self.assertTrue(all(row["rank"] == 2 for row in gate["direction_alias_gate"]["children"]))
         expected = [1 + 1.75j, 0.25 + 0.4375j, 0.75 + 0.4375j]
         for (_, matrix), target in zip(CHILD_DESIGNS, expected):
             (a, b), (c, d) = matrix
@@ -40,6 +43,15 @@ class RhoChildPrimitiveH4Tests(unittest.TestCase):
         self.assertTrue(oracle["passed"])
         self.assertEqual(oracle["invalid_counts"], [0, 0, 0])
         self.assertEqual(len(oracle["digest_sha256"]), 64)
+
+    def test_single_child_stream_has_one_complex_covariance_block(self):
+        rows, summary = run(
+            20, 2, 1, 2671562001,
+            child="2omega", replica_offset=17000000000,
+        )
+        self.assertEqual(summary["primary_order"], ["2omega_re", "2omega_im"])
+        self.assertEqual(len(summary["full_common_field_covariance_6x6"]), 2)
+        self.assertEqual(rows[0]["replica_first"], 17000000000)
 
     def test_synthetic_gls_selects_named_column(self):
         mp.mp.dps = 60

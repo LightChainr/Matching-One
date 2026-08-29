@@ -75,15 +75,62 @@ def gls(y, covariance, design):
     }
 
 
+def combine_independent_runs(runs: list[dict], manifest: dict) -> dict:
+    by_child = {run.get("selected_child"): run for run in runs}
+    expected_children = [name for name, _ in CHILD_DESIGNS]
+    if sorted(by_child) != sorted(expected_children):
+        raise ValueError("independent production requires exactly the three named child runs")
+    point = []
+    covariance = mp.zeros(6, 6)
+    totals = {}
+    for child_index, child in enumerate(expected_children):
+        run = by_child[child]
+        expected = manifest["runs"][child]
+        for key in ("samples", "batches", "workers", "seed", "replica_offset"):
+            if run[key] != expected[key]:
+                raise ValueError(f"{child}: acquisition mismatch for {key}")
+        if run.get("manifest_runner_commit") != manifest.get("runner_commit"):
+            raise ValueError(f"{child}: runner commit mismatch")
+        summary = run["summary"]
+        if summary["primary_order"] != [f"{child}_re", f"{child}_im"]:
+            raise ValueError(f"{child}: primary coordinate order mismatch")
+        if not summary["all_invariant_failures_zero"]:
+            raise ValueError(f"{child}: homology invariant failures are nonzero")
+        point.extend(summary["lattice_H4_point_re_im"])
+        child_covariance = summary["full_common_field_covariance_6x6"]
+        if len(child_covariance) != 2 or any(len(row) != 2 for row in child_covariance):
+            raise ValueError(f"{child}: expected a 2x2 complex covariance")
+        for i in range(2):
+            for j in range(2):
+                covariance[2*child_index+i, 2*child_index+j] = mp.mpf(str(child_covariance[i][j]))
+        totals.update({f"{child}:{key}": value for key, value in summary["category_totals"].items()})
+    return {
+        "manifest_runner_commit": manifest["runner_commit"],
+        "summary": {
+            "primary_order": [coordinate for child in expected_children for coordinate in (f"{child}_re", f"{child}_im")],
+            "lattice_H4_point_re_im": point,
+            "full_common_field_covariance_6x6": [
+                [float(covariance[i, j]) for j in range(6)] for i in range(6)
+            ],
+            "category_totals": totals,
+            "all_invariant_failures_zero": True,
+        },
+        "independent_child_runs": True,
+    }
+
+
 def score(run: dict, manifest: dict, *, cutoff: int = 9, dps: int = 60) -> dict:
     if not manifest.get("production_authorized"):
         raise ValueError("manifest is not authorized")
+    if "runs" in manifest:
+        run = combine_independent_runs(run["runs"], manifest)
     if run.get("manifest_runner_commit") != manifest.get("runner_commit"):
         raise ValueError("runner commit mismatch")
-    acquisition = manifest["acquisition"]
-    for key in ("samples", "batches", "workers", "seed"):
-        if run[key] != acquisition[key]:
-            raise ValueError(f"acquisition mismatch: {key}")
+    if "acquisition" in manifest:
+        acquisition = manifest["acquisition"]
+        for key in ("samples", "batches", "workers", "seed"):
+            if run[key] != acquisition[key]:
+                raise ValueError(f"acquisition mismatch: {key}")
     summary = run["summary"]
     if not summary["all_invariant_failures_zero"]:
         raise ValueError("homology invariant failures are nonzero")
@@ -153,7 +200,7 @@ def score(run: dict, manifest: dict, *, cutoff: int = 9, dps: int = 60) -> dict:
         })
     return {
         "schema": "matching-one/rho-child-primitive-h4-score/v1",
-        "status": "frozen_reveal",
+        "status": "frozen_independent_production_reveal" if "runs" in manifest else "frozen_reveal",
         "issues": [156, 205, 226, 250, 275],
         "observer": "delta_H4_primitive = E[1_rank1 u(ell)^4] - Pinson/Arguin H4(tau)",
         "observer_sector": "topology_typed_rank1_polarization_non_A_top",
@@ -208,14 +255,16 @@ def render(report: dict) -> str:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("run", type=Path)
+    parser.add_argument("run", type=Path, nargs="+")
     parser.add_argument("manifest", type=Path)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--markdown", type=Path, required=True)
     parser.add_argument("--cutoff", type=int, default=9)
     parser.add_argument("--dps", type=int, default=60)
     args = parser.parse_args()
-    report = score(json.loads(args.run.read_text()), json.loads(args.manifest.read_text()), cutoff=args.cutoff, dps=args.dps)
+    loaded_runs = [json.loads(path.read_text()) for path in args.run]
+    run_payload = loaded_runs[0] if len(loaded_runs) == 1 else {"runs": loaded_runs}
+    report = score(run_payload, json.loads(args.manifest.read_text()), cutoff=args.cutoff, dps=args.dps)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, indent=2) + "\n")
     args.markdown.write_text(render(report))

@@ -10,6 +10,13 @@ It is explicitly not `A_top=P2-P0`: it varies inside the rank-one sector and
 retains the ambient winding line.  The physical lifted vector `P ell` fixes
 one laboratory complex frame without using raw period coordinates.
 
+The exact alias gate `83e98fc` does not invalidate this row.  That gate has
+rank one only for a direction statistic restricted to a single C4 orbit.
+Here the sum runs over every primitive winding line.  In each frozen child,
+the two included lines `(1,0)` and `(0,1)` already have unequal exact fourth-
+angle phases, so the scalar/spin-4 character matrix has rank two before the
+remaining primitive orbits are added.  The runner now checks this fail-fast.
+
 The three index-two children of the N56 positive Pell parent are frozen in
 the exact Hecke order `2 tau`, `tau/2`, `(tau+1)/2`.  The runner gives all
 three the same counter-derived 224-bit Bernoulli bond vector, so the six real

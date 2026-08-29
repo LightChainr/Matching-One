@@ -21,6 +21,7 @@ from pathlib import Path
 from typing import Sequence
 
 from integer_period_torus import Matrix, determinant, integer_torus_geometry, matrix_product, matrix_vector
+from discrete_holomorphic_spin4_alias_gate import spin4_phase as exact_spin4_phase
 from square_bond_primitive_pilot import classify_bond_mask
 
 
@@ -42,6 +43,7 @@ PRIMARY_ORDER = tuple(
     for coordinate in (f"{name}_re", f"{name}_im")
 )
 PRODUCTION_ID = "P267-rho-C3-primitive-H4-N112-v1"
+INDEPENDENT_PRODUCTION_ID = "P267-rho-C3-primitive-H4-N112-independent-2M-v2"
 SMOKE_CAP = 5_000
 
 
@@ -71,6 +73,23 @@ def physical_phase(matrix: Matrix, line: tuple[int, int], spin: int = 4) -> comp
     return (value / abs(value)) ** spin
 
 
+def selected_designs(child: str) -> tuple[tuple[str, Matrix], ...]:
+    if child == "all":
+        return CHILD_DESIGNS
+    selected = tuple(row for row in CHILD_DESIGNS if row[0] == child)
+    if not selected:
+        raise ValueError(f"unknown child: {child}")
+    return selected
+
+
+def primary_order(child: str) -> tuple[str, ...]:
+    return tuple(
+        coordinate
+        for name, _ in selected_designs(child)
+        for coordinate in (f"{name}_re", f"{name}_im")
+    )
+
+
 def child_gate() -> dict[str, object]:
     parent_n = abs(determinant(PARENT_MATRIX))
     geometries = [integer_torus_geometry(matrix) for _, matrix in CHILD_DESIGNS]
@@ -79,6 +98,22 @@ def child_gate() -> dict[str, object]:
         raise AssertionError("frozen parent/child determinants changed")
     if len(set(edge_counts)) != 1 or edge_counts[0] != 224:
         raise AssertionError("three-child common bond field is not 224 bits")
+    alias_gates = []
+    for name, matrix in CHILD_DESIGNS:
+        first = exact_spin4_phase(matrix_vector(matrix, (1, 0)))
+        second = exact_spin4_phase(matrix_vector(matrix, (0, 1)))
+        difference = (second[0] - first[0], second[1] - first[1])
+        if difference == (0, 0):
+            raise AssertionError(f"{name}: primitive H4 collapsed to one C4 orbit")
+        alias_gates.append({
+            "child": name,
+            "primitive_lines": [[1, 0], [0, 1]],
+            "exact_exp_minus_4itheta": [
+                [str(value) for value in first], [str(value) for value in second]
+            ],
+            "two_orbit_character_determinant": [str(value) for value in difference],
+            "rank": 2,
+        })
     return {
         "parent_id": PARENT_ID,
         "parent_matrix_rows": [list(row) for row in PARENT_MATRIX],
@@ -97,6 +132,12 @@ def child_gate() -> dict[str, object]:
             )
         ],
         "common_field": "same counter-derived 224-bit vector in deterministic primal-edge order",
+        "direction_alias_gate": {
+            "source_commit": "83e98fc",
+            "decision": "full primitive-line sum contains at least two C4 orbits with unequal spin4 phases",
+            "children": alias_gates,
+            "all_rank_two": True,
+        },
         "passed": True,
     }
 
@@ -134,21 +175,23 @@ def tiny_oracle() -> dict[str, object]:
     }
 
 
-def _run_batch(task: tuple[int, int, int, int]) -> dict[str, object]:
-    batch, start, samples, seed = task
-    geometries = [integer_torus_geometry(matrix) for _, matrix in CHILD_DESIGNS]
+def _run_batch(task: tuple[int, int, int, int, str]) -> dict[str, object]:
+    batch, start, samples, seed, child = task
+    designs = selected_designs(child)
+    geometries = [integer_torus_geometry(matrix) for _, matrix in designs]
     edge_count = len(geometries[0].primal_edges)
-    sums = {name: 0.0 for name in PRIMARY_ORDER}
+    order = primary_order(child)
+    sums = {name: 0.0 for name in order}
     counts = {
         f"{name}_{category}": 0
-        for name, _ in CHILD_DESIGNS
+        for name, _ in designs
         for category in ("rank0", "rank1", "rank2", "invalid")
     }
     field_digest = hashlib.sha256()
     for replica in range(start, start + samples):
         mask = counter_mask(seed, replica, edge_count)
         field_digest.update(mask.to_bytes((edge_count + 7) // 8, "little"))
-        for (name, matrix), geometry in zip(CHILD_DESIGNS, geometries):
+        for (name, matrix), geometry in zip(designs, geometries):
             category, line = classify_bond_mask(geometry, mask)
             if category == "invariant_failure":
                 counts[f"{name}_invalid"] += 1
@@ -182,12 +225,13 @@ def covariance_of_mean(rows: Sequence[Sequence[float]]) -> list[list[float]]:
     ]
 
 
-def summarize(batches: Sequence[dict[str, object]]) -> dict[str, object]:
+def summarize(batches: Sequence[dict[str, object]], child: str) -> dict[str, object]:
+    order = primary_order(child)
     rows = [
-        [float(batch[name]) / int(batch["samples"]) for name in PRIMARY_ORDER]
+        [float(batch[name]) / int(batch["samples"]) for name in order]
         for batch in batches
     ]
-    point = [sum(row[j] for row in rows) / len(rows) for j in range(len(PRIMARY_ORDER))]
+    point = [sum(row[j] for row in rows) / len(rows) for j in range(len(order))]
     covariance = covariance_of_mean(rows)
     totals = {
         key: sum(int(batch[key]) for batch in batches)
@@ -195,7 +239,7 @@ def summarize(batches: Sequence[dict[str, object]]) -> dict[str, object]:
         if key.endswith(("_rank0", "_rank1", "_rank2", "_invalid"))
     }
     return {
-        "primary_order": list(PRIMARY_ORDER),
+        "primary_order": list(order),
         "lattice_H4_point_re_im": point,
         "full_common_field_covariance_6x6": covariance,
         "category_totals": totals,
@@ -205,17 +249,28 @@ def summarize(batches: Sequence[dict[str, object]]) -> dict[str, object]:
     }
 
 
-def run(samples: int, batches: int, workers: int, seed: int) -> tuple[list[dict], dict]:
+def run(
+    samples: int,
+    batches: int,
+    workers: int,
+    seed: int,
+    *,
+    child: str = "all",
+    replica_offset: int = 0,
+) -> tuple[list[dict], dict]:
     if samples <= 0 or batches < 2 or samples % batches:
         raise ValueError("samples must be divisible by batches>=2")
     per_batch = samples // batches
-    tasks = [(batch, batch * per_batch, per_batch, seed) for batch in range(batches)]
+    tasks = [
+        (batch, replica_offset + batch * per_batch, per_batch, seed, child)
+        for batch in range(batches)
+    ]
     if workers == 1:
         output = [_run_batch(task) for task in tasks]
     else:
         with ProcessPoolExecutor(max_workers=workers) as pool:
             output = list(pool.map(_run_batch, tasks))
-    return output, summarize(output)
+    return output, summarize(output, child)
 
 
 def write_batches(path: Path, rows: Sequence[dict]) -> None:
@@ -232,6 +287,8 @@ def main() -> int:
     parser.add_argument("--batches", type=int, default=20)
     parser.add_argument("--workers", type=int, default=1)
     parser.add_argument("--seed", type=int, default=267156112)
+    parser.add_argument("--replica-offset", type=int, default=0)
+    parser.add_argument("--child", choices=("all",) + tuple(name for name, _ in CHILD_DESIGNS), default="all")
     parser.add_argument("--manifest", type=Path)
     parser.add_argument("--output", type=Path)
     parser.add_argument("--batches-output", type=Path)
@@ -248,25 +305,41 @@ def main() -> int:
         if args.manifest is None:
             raise ValueError("runs above the smoke cap require a manifest")
         manifest = json.loads(args.manifest.read_text())
-        expected = manifest["acquisition"]
-        actual = {
-            "samples": args.samples,
-            "batches": args.batches,
-            "workers": args.workers,
-            "seed": args.seed,
-        }
-        if (
-            manifest.get("production_id") != PRODUCTION_ID
-            or not manifest.get("production_authorized")
-            or expected != actual
-        ):
+        if "runs" in manifest:
+            expected = manifest["runs"].get(args.child)
+            actual = {
+                "child": args.child,
+                "samples": args.samples,
+                "batches": args.batches,
+                "workers": args.workers,
+                "seed": args.seed,
+                "replica_offset": args.replica_offset,
+            }
+            production_id_ok = manifest.get("production_id") == INDEPENDENT_PRODUCTION_ID
+        else:
+            expected = manifest["acquisition"]
+            actual = {
+                "samples": args.samples,
+                "batches": args.batches,
+                "workers": args.workers,
+                "seed": args.seed,
+            }
+            production_id_ok = manifest.get("production_id") == PRODUCTION_ID
+        if not production_id_ok or not manifest.get("production_authorized") or expected != actual:
             raise ValueError("CLI differs from the authorized frozen acquisition")
         status = "production_under_frozen_manifest"
-    batches, summary = run(args.samples, args.batches, args.workers, args.seed)
+    batches, summary = run(
+        args.samples,
+        args.batches,
+        args.workers,
+        args.seed,
+        child=args.child,
+        replica_offset=args.replica_offset,
+    )
     payload = {
         "schema": "matching-one/rho-child-primitive-h4-mc/v1",
         "status": status,
-        "production_id": PRODUCTION_ID,
+        "production_id": manifest.get("production_id") if manifest else PRODUCTION_ID,
         "observable": "delta primitive-homology automorphic H4; baseline scored separately",
         "not_A_top": True,
         "p": "1/2 square-bond",
@@ -274,6 +347,9 @@ def main() -> int:
         "batches": args.batches,
         "workers": args.workers,
         "seed": args.seed,
+        "replica_offset": args.replica_offset,
+        "replica_last_exclusive": args.replica_offset + args.samples,
+        "selected_child": args.child,
         "child_gate": child_gate(),
         "summary": summary,
         "manifest_runner_commit": manifest.get("runner_commit") if manifest else None,
