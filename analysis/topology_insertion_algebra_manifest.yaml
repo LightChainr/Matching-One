@@ -1,0 +1,36 @@
+schema: matching-one/topology-insertion-algebra-manifest/v1
+issues: [215, 258, 275]
+base_result: 8bef10b
+phase: exact_all_order_topology_observer_no_go
+
+finite_algebras:
+  observer:
+    basis: [1, q, q2]
+    minimal_polynomial: q_times_q_minus_1_times_q_plus_1
+  gate:
+    basis: [1, S, D, D2]
+    relations: [SD_equals_D, D2_equals_2S_minus_S2, SD2_equals_D2, D3_equals_D]
+    minimal_polynomials: [S_times_S_minus_1_times_S_minus_2, D_times_D_minus_1_times_D_plus_1]
+  insertion: Delta_f_equals_bS_plus_cD
+
+theorem_scope:
+  observer: arbitrary lookup_table_or_function_of_q_in_minus1_0_plus1
+  source: H_environment_times_G_S_D_with_G_0_0_zero
+  result: connected_coupling_closes_in_mean_marked_gate_moments
+  no_go: no_independent_field_matrix_element_from_topology_only_observer
+
+escape_observers:
+  - separately_sampled_local_landing_or_arm_field
+  - bulk_Betti_Euler_or_component_density
+  - charged_seam_winding_or_defect_character
+  - independent_modular_stress_or_wrapping_channel
+
+outputs:
+  script: scripts/topology_insertion_algebra.py
+  result: results/topology-insertion-algebra/latest.json
+  note: notes/topology-insertion-algebra-no-go.md
+  test: tests/test_topology_insertion_algebra.py
+
+commands:
+  - python3 scripts/topology_insertion_algebra.py --output results/topology-insertion-algebra/latest.json --markdown notes/topology-insertion-algebra-no-go.md
+  - python3 -m unittest discover -s tests -p 'test_topology_insertion_algebra.py'
