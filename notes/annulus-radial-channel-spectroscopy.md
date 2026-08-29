@@ -112,8 +112,14 @@ radii: 2,4,7,8.
 
 The third readout makes the dyadic `T,D` recurrence overidentified, while R7
 remains an off-grid propagation target. This is more informative than adding a
-dense radius ladder to the same two readouts. Samples should be selected from
-the observed covariance; this note does not preregister a production count.
+dense radius ladder to the same two readouts.
+
+The follow-up production freeze now lives in
+`experiments/p253_n365_annulus_recurrence_20260829.yaml`. It keeps the existing
+200k/200-batch resolution, uses a fresh RNG domain, and costs only about half
+of PR #247: an empirical linear estimate of 1.96 seconds wall time on the same
+16-vCPU Huawei class, with a 2--4 second planning envelope. The freeze did not
+start the job.
 
 ## Reproduction
 

@@ -1,0 +1,79 @@
+schema: matching-one.p253-n365-annulus-production.v1
+frozen_at: 2026-08-29
+status: frozen_not_started
+issue: 253
+purpose: third geometry readout for an overidentified dyadic radial recurrence
+base_result: PR247
+engine: src/matching_multiradius_pivotal_mc.cpp
+model:
+  primal: square_site_NN
+  matching: complemented_square_site_NN_plus_NNN
+  p: '0.592746050790'
+  cutoff: {scheme: euclidean_disk, radii: [2, 4, 7, 8]}
+designs_in_frozen_order:
+  - {label: n365_first, N: 365, rep: [14, 13], pair_role: first, cos4: '-131767/133225'}
+  - {label: n365_second, N: 365, rep: [19, 2], pair_role: second, cos4: '121673/133225'}
+orientation_contract:
+  contrast: first_minus_second
+  Delta_cos4: '-50688/26645'
+  Delta_cos4_decimal: '-1.9023456558453744'
+  rule: no sign relabeling after reveal
+production:
+  samples_per_design: 200000
+  batches: 200
+  samples_per_batch: 1000
+  threads: 16
+  seed: 25336560829
+  replica_counter_first: 25336500000
+  replica_counter_last_exclusive: 25336700000
+  independence: new seed and counter domain; independent of PR247
+  within_pair_coupling: identical Bernoulli field at each counter because both reps have N365
+  output_prefix: results/server-20260829/P253-n365-annulus/raw/n365_200k
+  required_outputs:
+    - results/server-20260829/P253-n365-annulus/raw/n365_200k.batches.csv
+    - results/server-20260829/P253-n365-annulus/raw/n365_200k.metadata.json
+    - results/server-20260829/P253-n365-annulus/raw/production.stdout.txt
+    - results/server-20260829/P253-n365-annulus/raw/run.time.txt
+    - results/server-20260829/P253-n365-annulus/environment.txt
+    - results/server-20260829/P253-n365-annulus/CHECKSUMS.sha256
+commands:
+  entrypoint: bash scripts/run_p253_n365_annulus_20260829.sh
+  compile: >-
+    g++ -O3 -DNDEBUG -std=c++17 -fopenmp
+    src/matching_multiradius_pivotal_mc.cpp
+    -o build/matching_multiradius_pivotal_mc
+  validate: >-
+    build/matching_multiradius_pivotal_mc --validate-only
+    --radii 2,4,7,8 --cutoff euclidean
+    --design n365_first,14,13 --design n365_second,19,2
+  production: >-
+    build/matching_multiradius_pivotal_mc
+    --samples 200000 --batches 200 --radii 2,4,7,8
+    --cutoff euclidean --p 0.592746050790 --threads 16
+    --seed 25336560829 --replica-offset 25336500000
+    --design n365_first,14,13 --design n365_second,19,2
+    --git-commit "$(git rev-parse HEAD)"
+    --output-prefix results/server-20260829/P253-n365-annulus/raw/n365_200k
+cost_estimate:
+  empirical_reference: PR247 Huawei 16-vCPU, 4 designs x 200k, N average 375
+  reference_wall_seconds: 4.02383
+  reference_user_cpu_seconds: 56.46
+  linear_N_and_design_scaled_wall_seconds: 1.9587
+  linear_N_and_design_scaled_user_cpu_seconds: 27.4768
+  planning_envelope:
+    wall_seconds: [2, 4]
+    peak_RSS_MiB: [6, 16]
+    output_MiB: [0.1, 1]
+    compile_plus_run_wall_seconds: [5, 15]
+  disclaimer: estimate only; no N365 production was started during freeze
+analysis_contract:
+  source_radii: [2, 4, 8]
+  heldout_fractional_radius: 7
+  role: third output makes shared T,D recurrence overidentified
+  covariance_merge: PR247 and N365 are independent blocks; retain within-N365 pair/radius covariance
+  evidence_rule: acquisition extends the PR247 radial block; it is not a second vote for Issue256
+forbidden:
+  - start_from_this_freeze_task
+  - reuse_PR247_seed_or_counter_domain
+  - relabel_the_orientation_contrast_after_reading_means
+  - call_R7_an_independent_evidence_block
