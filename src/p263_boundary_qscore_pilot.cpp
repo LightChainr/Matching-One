@@ -71,6 +71,7 @@ struct Accumulator {
     uint64_t samples = 0;
     int64_t sum_j = 0;
     int64_t sum_j2 = 0;
+    int64_t sum_b = 0;
     std::array<int64_t, 3> count{{0, 0, 0}};
     std::array<int64_t, 3> sum_j_channel{{0, 0, 0}};
     std::array<int64_t, 3> sum_j2_channel{{0, 0, 0}};
@@ -138,6 +139,7 @@ Accumulator run_batch(const Geometry& geometry, int level, uint64_t begin,
         ++result.samples;
         result.sum_j += j;
         result.sum_j2 += static_cast<int64_t>(j) * j;
+        result.sum_b += bonds;
         if (selected >= 0) {
             ++result.count[selected];
             result.sum_j_channel[selected] += j;
@@ -149,7 +151,7 @@ Accumulator run_batch(const Geometry& geometry, int level, uint64_t begin,
 
 void write_header(std::ofstream& output) {
     output << "geometry_id,lambda_num,lambda_den,level,span_L,nx,ny,vertices,edges,"
-              "batch,seed,sample_begin,samples,sum_J,sum_J2,"
+              "batch,seed,sample_begin,samples,sum_J,sum_J2,sum_b,"
               "count_1234,sum_J_1234,sum_J2_1234,"
               "count_12_34,sum_J_12_34,sum_J2_12_34,"
               "count_14_23,sum_J_14_23,sum_J2_14_23\n";
@@ -167,7 +169,7 @@ void write_row(std::ofstream& output, const Geometry& geometry, int level,
            << ',' << level << ',' << span << ',' << nx << ',' << ny << ','
            << vertices << ',' << edges << ',' << batch << ',' << seed << ','
            << sample_begin << ',' << row.samples << ','
-           << row.sum_j << ',' << row.sum_j2;
+           << row.sum_j << ',' << row.sum_j2 << ',' << row.sum_b;
     for (int index = 0; index < 3; ++index) {
         output << ',' << row.count[index] << ',' << row.sum_j_channel[index] << ','
                << row.sum_j2_channel[index];

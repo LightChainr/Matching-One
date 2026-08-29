@@ -1,0 +1,62 @@
+version: 1
+frozen_at: 2026-08-29
+status: schema_ready_not_deployed
+related_issue: 263
+depends_on_commit: 90da884
+purpose: >-
+  Add the smallest exact-zero batch control needed for a two-fold
+  cross-fitted variance reduction of the boundary Q-score. This does not
+  rescore or replace the revealed Phase-E primary results.
+
+unchanged_science:
+  geometry: experiments/p263_boundary_qscore_phaseD_20260829.yaml
+  primary_channel: '14|23'
+  q_measure_score: '(J-E[J])/2 with J=2*k+b'
+  lambdas: ['1/4', '1/3', '2/3', '3/4']
+  anchor_lambda: '1/3'
+  tangent_target: predictions/p263_boundary_lattice_qscore_20260829.json
+
+new_minimal_integer_field:
+  name: sum_b
+  definition: 'sum over samples of the number of open bonds b'
+  exact_control_per_batch: 'W_g=(2*sum_b-n_g*edges_g)/sqrt(n_g*edges_g)'
+  expectation_at_p_half: 0
+  reason_exact: 'b is Binomial(edges_g,1/2) for every fixed geometry'
+
+crossfit:
+  folds: 'even versus odd synchronized batch ids'
+  train: 'beta_train=Sigma_YW * Sigma_WW^+ on one half'
+  apply: 'Y_b^cv=Y_b-beta_other_half*W_b on the held-out half'
+  swap: true
+  target_preservation: >-
+    beta_train is independent of the held-out W and E[W]=0 exactly, so the
+    correction has conditional expectation zero.
+  covariance: 'sample covariance of the 100 cross-fitted active residual contributions divided by 100'
+
+minimality_boundary:
+  batch_crossfit_requires_only: [sum_b]
+  analytic_sample_level_beta_would_also_require:
+    - 'for every geometry pair (g,h): sum_over_samples J_g*b_h'
+    - 'for every geometry pair (g,h) and link pattern p: sum_over_samples I_p,g*J_g*b_h'
+  analytic_control_covariance: >-
+    Sigma_WW is exact from the edge counts and declared shared-edge CRN
+    enumeration; sample b_g*b_h products are optional audit fields, not
+    required by the batch crossfit.
+  current_90da884_raw_missing:
+    - sum_b
+    - cross_geometry_sum_Jg_bh
+    - cross_geometry_for_each_link_pattern_sum_IJg_bh
+  current_event_counts_not_strict_controls: >-
+    Their finite-lattice expectations are unknown. Centering them by the
+    opposite fold either cancels for a fixed beta or introduces a noisy
+    beta-times-mean product rather than a target-preserving control.
+
+deployment_gate:
+  - compile_and_schema_tests_pass
+  - a_new_seed_and_counter_domain_are_frozen_before_any_acquisition
+  - pilot_must_report_variance_ratio_before_a_larger_run
+
+forbidden:
+  - call_the_revealed_event_count_decomposition_variance_reduction
+  - use_full_sample_event_means_as_if_they_were_known_controls
+  - replace_the_Phase_E_primary_score

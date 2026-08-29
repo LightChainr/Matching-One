@@ -1,0 +1,337 @@
+{
+  "claim_boundary": [
+    "No new variance-reduced chi-square is claimed from the revealed Phase-E raw data.",
+    "The unchanged primary chi-squares are the exact result of the available conditional decomposition.",
+    "The bond-control scorer becomes executable only on a new stream containing sum_b."
+  ],
+  "issue": 263,
+  "levels": {
+    "level1_200k": {
+      "frozen_primary_unchanged": {
+        "joint_gls": {
+          "chi_square": 1.0977457461886801,
+          "covariance_eigenvalues": [
+            0.13384685442257446,
+            1.0296910716171768,
+            3.8701012379483415
+          ],
+          "degrees_of_freedom": 3,
+          "relative_pseudoinverse_cutoff": 1e-10
+        },
+        "residual": [
+          0.7061816388305817,
+          -0.2250278021078037,
+          -0.5334486466196069
+        ],
+        "residual_covariance": [
+          [
+            2.79170266562206,
+            1.0425968409798076,
+            0.9023783316359228
+          ],
+          [
+            1.0425968409798076,
+            1.2179536668361939,
+            0.9817629234833384
+          ],
+          [
+            0.9023783316359228,
+            0.9817629234833384,
+            1.023982831529838
+          ]
+        ]
+      },
+      "revealed_conditional_score": {
+        "geometry_results": [
+          {
+            "absolute_difference": 4.547473508864641e-13,
+            "crossfit_conditional_reconstruction": -0.8521818023250489,
+            "direct_d_log_probability": -0.8521818023255037,
+            "folds": [
+              {
+                "conditional_explained": 3334.2045454545455,
+                "conditional_residual": -2.1331168831170544,
+                "heldout_14_23_count": 63,
+                "heldout_batch_parity": 0,
+                "overall_explained": 3334.006239458239,
+                "overall_residual": 0.013900541760645573,
+                "training_batch_parity": 1
+              },
+              {
+                "conditional_explained": 3332.0714285714284,
+                "conditional_residual": 2.1331168831170544,
+                "heldout_14_23_count": 66,
+                "heldout_batch_parity": 1,
+                "overall_explained": 3334.0240571210247,
+                "overall_residual": -0.014252121024874213,
+                "training_batch_parity": 0
+              }
+            ],
+            "geometry_id": "lambda_1_4"
+          },
+          {
+            "absolute_difference": 0.0,
+            "crossfit_conditional_reconstruction": -1.398072012195371,
+            "direct_d_log_probability": -1.398072012195371,
+            "folds": [
+              {
+                "conditional_explained": 2909.5049504950493,
+                "conditional_residual": 0.08639565879684596,
+                "heldout_14_23_count": 104,
+                "heldout_batch_parity": 0,
+                "overall_explained": 2910.94522352631,
+                "overall_residual": 0.003416473689735867,
+                "training_batch_parity": 1
+              },
+              {
+                "conditional_explained": 2909.591346153846,
+                "conditional_residual": -0.08639565879684596,
+                "heldout_14_23_count": 101,
+                "heldout_batch_parity": 1,
+                "overall_explained": 2910.948643035955,
+                "overall_residual": -0.0035780359547765692,
+                "training_batch_parity": 0
+              }
+            ],
+            "geometry_id": "lambda_1_3"
+          },
+          {
+            "absolute_difference": 0.0,
+            "crossfit_conditional_reconstruction": -1.266830468621265,
+            "direct_d_log_probability": -1.266830468621265,
+            "folds": [
+              {
+                "conditional_explained": 3332.0189768976898,
+                "conditional_residual": 1.4595354990046872,
+                "heldout_14_23_count": 605,
+                "heldout_batch_parity": 0,
+                "overall_explained": 3334.008861596783,
+                "overall_residual": 0.011278403217331506,
+                "training_batch_parity": 1
+              },
+              {
+                "conditional_explained": 3333.4785123966944,
+                "conditional_residual": -1.4595354990046872,
+                "heldout_14_23_count": 606,
+                "heldout_batch_parity": 1,
+                "overall_explained": 3334.021040343807,
+                "overall_residual": -0.011235343807032332,
+                "training_batch_parity": 0
+              }
+            ],
+            "geometry_id": "lambda_2_3"
+          },
+          {
+            "absolute_difference": 0.0,
+            "crossfit_conditional_reconstruction": -1.4012613176355444,
+            "direct_d_log_probability": -1.4012613176355444,
+            "folds": [
+              {
+                "conditional_explained": 2909.9751737835154,
+                "conditional_residual": -0.8669836925141681,
+                "heldout_14_23_count": 989,
+                "heldout_batch_parity": 0,
+                "overall_explained": 2910.9441980694833,
+                "overall_residual": 0.00444193051700131,
+                "training_batch_parity": 1
+              },
+              {
+                "conditional_explained": 2909.1081900910012,
+                "conditional_residual": 0.8669836925141681,
+                "heldout_14_23_count": 1007,
+                "heldout_batch_parity": 1,
+                "overall_explained": 2910.949025968239,
+                "overall_residual": -0.003960968238540226,
+                "training_batch_parity": 0
+              }
+            ],
+            "geometry_id": "lambda_3_4"
+          }
+        ],
+        "identity": "E[J/2|H]-E[J/2] = {E[J/2-m(X)|H]-E[J/2-m(X)]} + {m(H)-E[m(X)]} for any category function m",
+        "maximum_absolute_difference": 4.547473508864641e-13,
+        "reason_no_reduction": "The residual and explained terms use the same held-out event counts and sum exactly to the original estimator in every fold.",
+        "variance_ratio_to_primary": 1.0
+      },
+      "strict_control_available": false,
+      "strict_crossfit_bond_control": {
+        "missing_minimal_field": "sum_b per synchronized geometry/batch",
+        "missing_training_cross_matrix": "Sigma_YW cannot be formed because the exact-zero bond-count control W is absent.",
+        "status": "not_identifiable_from_revealed_sufficient_statistics"
+      }
+    },
+    "level2_500k": {
+      "frozen_primary_unchanged": {
+        "joint_gls": {
+          "chi_square": 5.872171777302203,
+          "covariance_eigenvalues": [
+            0.5262293043984562,
+            2.5909604768238004,
+            9.653543441741881
+          ],
+          "degrees_of_freedom": 3,
+          "relative_pseudoinverse_cutoff": 1e-10
+        },
+        "residual": [
+          1.5826869826566357,
+          0.13397800626906964,
+          -1.930542446744187
+        ],
+        "residual_covariance": [
+          [
+            6.432743715072,
+            2.6836502006688576,
+            2.274615572839592
+          ],
+          [
+            2.6836502006688576,
+            3.5443037533073296,
+            2.6155520213219536
+          ],
+          [
+            2.274615572839592,
+            2.6155520213219536,
+            2.7936857545848035
+          ]
+        ]
+      },
+      "revealed_conditional_score": {
+        "geometry_results": [
+          {
+            "absolute_difference": 1.8189894035458565e-12,
+            "crossfit_conditional_reconstruction": 0.8818548979597836,
+            "direct_d_log_probability": 0.8818548979579646,
+            "folds": [
+              {
+                "conditional_explained": 13129.04347826087,
+                "conditional_residual": -4.581939799330939,
+                "heldout_14_23_count": 78,
+                "heldout_batch_parity": 0,
+                "overall_explained": 13125.689416688501,
+                "overall_residual": 0.0819693114982238,
+                "training_batch_parity": 1
+              },
+              {
+                "conditional_explained": 13124.461538461539,
+                "conditional_residual": 4.581939799330939,
+                "heldout_14_23_count": 69,
+                "heldout_batch_parity": 1,
+                "overall_explained": 13125.771658303593,
+                "overall_residual": -0.08226430359293614,
+                "training_batch_parity": 0
+              }
+            ],
+            "geometry_id": "lambda_1_4"
+          },
+          {
+            "absolute_difference": 1.8189894035458565e-12,
+            "crossfit_conditional_reconstruction": -0.5405406557365495,
+            "direct_d_log_probability": -0.5405406557383685,
+            "folds": [
+              {
+                "conditional_explained": 11446.491596638656,
+                "conditional_residual": 0.06840336134337122,
+                "heldout_14_23_count": 125,
+                "heldout_batch_parity": 0,
+                "overall_explained": 11447.161448382114,
+                "overall_residual": -0.18775838211430143,
+                "training_batch_parity": 1
+              },
+              {
+                "conditional_explained": 11446.56,
+                "conditional_residual": -0.06840336134337122,
+                "heldout_14_23_count": 119,
+                "heldout_batch_parity": 1,
+                "overall_explained": 11446.973022923456,
+                "overall_residual": 0.18764707654457075,
+                "training_batch_parity": 0
+              }
+            ],
+            "geometry_id": "lambda_1_3"
+          },
+          {
+            "absolute_difference": 1.8189894035458565e-12,
+            "crossfit_conditional_reconstruction": -0.05029330378965824,
+            "direct_d_log_probability": -0.05029330378783925,
+            "folds": [
+              {
+                "conditional_explained": 13126.193322981366,
+                "conditional_residual": -1.0668573197235673,
+                "heldout_14_23_count": 597,
+                "heldout_batch_parity": 0,
+                "overall_explained": 13125.689824962537,
+                "overall_residual": 0.08156103746249806,
+                "training_batch_parity": 1
+              },
+              {
+                "conditional_explained": 13125.126465661642,
+                "conditional_residual": 1.0668573197235673,
+                "heldout_14_23_count": 644,
+                "heldout_batch_parity": 1,
+                "overall_explained": 13125.7705420475,
+                "overall_residual": -0.08114804749893303,
+                "training_batch_parity": 0
+              }
+            ],
+            "geometry_id": "lambda_2_3"
+          },
+          {
+            "absolute_difference": 1.8189894035458565e-12,
+            "crossfit_conditional_reconstruction": -1.940823761300635,
+            "direct_d_log_probability": -1.940823761302454,
+            "folds": [
+              {
+                "conditional_explained": 11444.219008264463,
+                "conditional_residual": 1.7872250391883426,
+                "heldout_14_23_count": 1123,
+                "heldout_batch_parity": 0,
+                "overall_explained": 11447.16069201675,
+                "overall_residual": -0.18700201675012149,
+                "training_batch_parity": 1
+              },
+              {
+                "conditional_explained": 11446.006233303651,
+                "conditional_residual": -1.7872250391883426,
+                "heldout_14_23_count": 1089,
+                "heldout_batch_parity": 1,
+                "overall_explained": 11446.974132015943,
+                "overall_residual": 0.18653798405720293,
+                "training_batch_parity": 0
+              }
+            ],
+            "geometry_id": "lambda_3_4"
+          }
+        ],
+        "identity": "E[J/2|H]-E[J/2] = {E[J/2-m(X)|H]-E[J/2-m(X)]} + {m(H)-E[m(X)]} for any category function m",
+        "maximum_absolute_difference": 1.8189894035458565e-12,
+        "reason_no_reduction": "The residual and explained terms use the same held-out event counts and sum exactly to the original estimator in every fold.",
+        "variance_ratio_to_primary": 1.0
+      },
+      "strict_control_available": false,
+      "strict_crossfit_bond_control": {
+        "missing_minimal_field": "sum_b per synchronized geometry/batch",
+        "missing_training_cross_matrix": "Sigma_YW cannot be formed because the exact-zero bond-count control W is absent.",
+        "status": "not_identifiable_from_revealed_sufficient_statistics"
+      }
+    }
+  },
+  "next_run_contract": "experiments/p263_boundary_qscore_control_phaseF_20260829.yaml",
+  "schema": "matching-one.p263-crossfit-control-audit.v1",
+  "source_commit": "90da884",
+  "status": "revealed_data_no_go_and_next_run_schema",
+  "strict_no_go": {
+    "available_auxiliaries": [
+      "J and J^2 moments with unknown finite-lattice expectations",
+      "three mutually exclusive event counts with unknown finite-lattice probabilities"
+    ],
+    "batch_crossfit_extra_cross_moments_required": [],
+    "minimal_exact_control": "W_g=(2*sum_b_g-n_g*edges_g)/sqrt(n_g*edges_g), E[W_g]=0",
+    "minimal_missing_field": "sum_b",
+    "sample_level_analytic_beta_extra_fields": [
+      "for every geometry pair (g,h): sum J_g*b_h",
+      "for every geometry pair (g,h) and pattern p: sum I_p,g*J_g*b_h"
+    ],
+    "sample_level_control_covariance": "Sigma_WW is already exact from edge counts and the shared-edge CRN enumeration; b_g*b_h is only an optional audit moment.",
+    "why_opposite_fold_centering_fails": "For a fixed beta, the two equal-fold corrections beta*(X_A-X_B) and beta*(X_B-X_A) cancel exactly. Allowing fold-specific betas leaves a noisy beta-difference times mean-difference product, not an exact known-mean control."
+  }
+}
