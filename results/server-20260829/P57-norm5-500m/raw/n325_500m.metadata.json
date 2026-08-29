@@ -1,0 +1,27 @@
+{
+  "engine": "same-N Gaussian threshold-rank Newman-Ziff",
+  "generated_utc": "2026-08-29T04:50:40Z",
+  "git_commit": "fd6cfb647049bdaeb6bf1bb7a5f6a8a996507107",
+  "command": "build/threshold_rank_orientation_mc --samples 500000000 --batches 100 --seed 2026105701 --replica-offset 10000000000 --threads 8 --n 325 --git-commit fd6cfb647049bdaeb6bf1bb7a5f6a8a996507107 --output-prefix results/raw/n325_500m",
+  "compiler": "10.3.1",
+  "openmp": true,
+  "threads_requested": 8,
+  "samples_per_pair": 500000000,
+  "batches": 100,
+  "seed": 2026105701,
+  "replica_counter_first": 10000000000,
+  "replica_counter_last_exclusive": 10500000000,
+  "rng": "counter-derived SplitMix64 stream plus unbiased Fisher-Yates",
+  "coupling": "same cyclic permutation shared by same-N orientations",
+  "channel": "rank-2 cross wrapping",
+  "K_plus": "first black primal cross rank, 1-based",
+  "K_minus": "first black rank after white matching cross is lost; N-r+1",
+  "sparse_joint_histogram": false,
+  "per_batch_joint_moments": true,
+  "elapsed_seconds": 3192.146082105,
+  "designs": [
+    {"N": 325, "first": [17,6], "second": [18,1]}
+  ],
+  "histogram_csv": "results/raw/n325_500m.hist.csv",
+  "moments_csv": "results/raw/n325_500m.moments.csv"
+}
