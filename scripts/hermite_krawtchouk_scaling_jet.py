@@ -84,19 +84,36 @@ def dilate_jet(jet: Sequence[mp.mpf], scale: mp.mpf) -> list[mp.mpf]:
 
 
 def width_normalized_jet(
-    jet: Sequence[mp.mpf], scaled_rank_gap: mp.mpf
+    jet: Sequence[mp.mpf], canonical_width: mp.mpf
 ) -> list[mp.mpf]:
-    """Remove a thermal-window width w_N from the derivative jet.
+    """Remove the canonical dimensionless width from the derivative jet.
 
-    If F_N(z)=A_N F(z/w_N), then d_(r,N)=A_N w_N^(-r)d_r and multiplying
-    by w_N^r removes the width drift while retaining the common amplitude.
+    If F_N(z)=A_N F(z/w_can), then d_(r,N)=A_N w_can^(-r)d_r and
+    multiplying by w_can^r removes width drift while retaining the common
+    amplitude.
     """
 
-    if scaled_rank_gap <= 0:
-        raise ValueError("scaled rank gap must be positive")
+    if canonical_width <= 0:
+        raise ValueError("canonical width must be positive")
     return [
-        value * scaled_rank_gap**order for order, value in enumerate(jet)
+        value * canonical_width**order for order, value in enumerate(jet)
     ]
+
+
+def canonical_dimensionless_width(n: int, mean_rank_gap: mp.mpf) -> mp.mpf:
+    """Return ``N^(3/8) E[G]/(N+1)`` from the exact canonical area bridge."""
+
+    if n <= 0 or mean_rank_gap < 0:
+        raise ValueError("size must be positive and mean rank gap nonnegative")
+    return mp.power(n, mp.mpf(3) / 8) * mean_rank_gap / (n + 1)
+
+
+def rank_normalized_width(n: int, mean_rank_gap: mp.mpf) -> mp.mpf:
+    """Return the rank surrogate ``N^(-5/8) E[G]``."""
+
+    if n <= 0 or mean_rank_gap < 0:
+        raise ValueError("size must be positive and mean rank gap nonnegative")
+    return mp.power(n, -mp.mpf(5) / 8) * mean_rank_gap
 
 
 def width_cross_residual(
@@ -239,7 +256,13 @@ def main() -> int:
         ),
         "translation_generator": [f"d_{r + 1}" for r in range(order)],
         "width_generator": [f"{r}*d_{r}" for r in range(order + 1)],
-        "rank_gap_width": "w_N=N^(-5/8) E[K_plus-K_minus]",
+        "canonical_dimensionless_width": (
+            "w_can(N)=N^(3/8) E[K_plus-K_minus]/(N+1)"
+        ),
+        "rank_width_surrogate": (
+            "w_rank(N)=N^(-5/8) E[K_plus-K_minus]="
+            "(1+1/N) w_can(N)"
+        ),
         "exact_neutral_area_bridge": (
             "integral_0^1 E[U_{K~Bin(N,p)}] dp="
             "E[K_plus-K_minus]/(N+1)"

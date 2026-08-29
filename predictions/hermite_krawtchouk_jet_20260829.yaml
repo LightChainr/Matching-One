@@ -54,12 +54,18 @@ rank_gap_bridge:
     evidence_boundary: >-
       The area identity is exact at finite N. The subsequent N^(5/8)
       scaling law and interpretation of corrections remain hypotheses.
-  scaled_width: 'w_N=N^(-5/8)*E[G]'
+  primary_width: 'w_can(N)=N^(3/8)*E[G]/(N+1)'
+  rank_normalized_surrogate: 'w_rank(N)=N^(-5/8)*E[G]=(1+1/N)*w_can(N)'
+  normalization_rule: >-
+    Use w_can in frozen width residuals and downstream cocycles. The rank
+    surrogate contains the known 1+1/N canonical Jacobian and must not be
+    treated as the exact width.
   source_model: 'E[G]=A*N^(5/8)+B+...'
   correction_exponent_in_N: '5/8'
   consequence: >-
     An O(1) rank-boundary displacement B becomes a relative N^(-5/8)
-    correction to the thermal width and predicts d_r proportional to w_N^(-r).
+    correction to the thermal width, while w_can also retains its known
+    canonical 1/(1+N^-1) factor. It predicts d_r proportional to w_can^(-r).
   minus_one_quarter_boundary: >-
     B near -1/4 is not implied by the frozen Kminus/Kplus off-by-one
     convention. Common endpoint shifts cancel in G; integer changes to one
@@ -70,17 +76,17 @@ rank_gap_bridge:
 frozen_predictions:
   rank_gap_width_collapse:
     orders: [2, 3, 4, 5, 6]
-    width_source: 'aligned paired rank-gap means, frozen independently of norm5 mode targets'
+    width_source: 'w_can from aligned paired rank-gap means, frozen independently of norm5 mode targets'
     division_free_residual: >-
-      R_width(r,Q)=d_r(QN)*w_(QN)^r*d_0(N)
-      -d_r(N)*w_N^r*d_0(QN)
+      R_width(r,Q)=d_r(QN)*w_can(QN)^r*d_0(N)
+      -d_r(N)*w_can(N)^r*d_0(QN)
     target: 'joint residual vector equals zero'
     interpretation: >-
       A pass makes discrete thermal-window width renormalization the first
       explanation of the family-wide amplitude drift. A failure rules out
       width-only closure but not the 5/8 rank-gap law itself.
   width_corrected_multiplier_cocycle:
-    width_corrected_jet: 'dtilde_r(N)=w_N^r*d_r(N)'
+    width_corrected_jet: 'dtilde_r(N)=w_can(N)^r*d_r(N)'
     q2_multiplier: '8/5'
     Jordan_multiplier: 'log(5)/log(2)'
     residual: >-

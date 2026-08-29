@@ -158,25 +158,31 @@ The new source fit indicates the sharper form
 \mathbb E G=A N^{5/8}+B+\cdots.
 \]
 
-In probability units this is
+The exact canonical neutral-window area is `E[G]/(N+1)`, not `E[G]/N`.
+Its dimensionless thermal width is therefore
 
 \[
-\frac{\mathbb E G}{N}
-=N^{-3/8}\left[A+B N^{-5/8}+\cdots\right].
+\boxed{
+w_{\rm can}(N)=N^{3/8}\frac{\mathbb E G}{N+1}
+=\frac{A+B N^{-5/8}+\cdots}{1+N^{-1}}.
+}
 \]
 
-Hence
+The earlier rank-normalized quantity is only a surrogate:
 
 \[
-\boxed{w_N=N^{-5/8}\mathbb E G=A+B N^{-5/8}+\cdots}
+\boxed{
+w_{\rm rank}(N)=N^{-5/8}\mathbb E G
+=\left(1+\frac1N\right)w_{\rm can}(N).
+}
 \]
 
-is exactly a finite-size thermal-window width with a relative `N^-5/8`
-correction.  This turns the rank-gap observation into a prediction for the
-whole Hermite jet:
+Using `w_rank` as though it were exact would mix the known `1+1/N` canonical
+Jacobian into the inferred correction.  The exact bridge instead turns
+`w_can` into the finite-size width observable used for the whole Hermite jet:
 
 \[
-d_{r,N}\propto w_N^{-r}.
+d_{r,N}\propto w_{\rm can}(N)^{-r}.
 \]
 
 After allowing an arbitrary size-dependent common amplitude, the
@@ -185,13 +191,13 @@ division-free held-out residual is
 \[
 \boxed{
 R^{\rm width}_{r,Q}
-=d_{r,QN}w_{QN}^{r}d_{0,N}
--d_{r,N}w_N^{r}d_{0,QN}=0,
+=d_{r,QN}w_{\rm can}(QN)^{r}d_{0,N}
+-d_{r,N}w_{\rm can}(N)^{r}d_{0,QN}=0,
 \quad r=2,\ldots,6.
 }
 \]
 
-This is the strongest immediate prediction because `w_N` comes from paired
+This is the strongest immediate prediction because `w_can` comes from paired
 joint rank moments, whereas `d_r` comes from the marginal full-curve score
 modes.  They share replicas and must be combined inside the same delete-one
 replicates, but the width law is not fitted from the mode vector.
@@ -228,7 +234,7 @@ stored endpoint definitions.
 Define the width-corrected jet
 
 \[
-\widetilde d_{r,N}=w_N^r d_{r,N}.
+\widetilde d_{r,N}=w_{\rm can}(N)^r d_{r,N}.
 \]
 
 Score width-only collapse first.  If a residual functional direction remains,

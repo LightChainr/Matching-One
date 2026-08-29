@@ -14,11 +14,13 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from hermite_krawtchouk_scaling_jet import (  # noqa: E402
     bernstein_basis_integral,
     canonical_neutral_window_area,
+    canonical_dimensionless_width,
     cocycle_residual,
     dilate_jet,
     mean_canonical_neutral_window_area,
     microcanonical_matching_sign,
     pooled_gap_convention_shift,
+    rank_normalized_width,
     response_from_modes,
     translate_jet,
     width_cross_residual,
@@ -143,6 +145,16 @@ class HermiteKrawtchoukScalingJetTests(unittest.TestCase):
             expected_gap / (n + 1),
         )
 
+    def test_rank_surrogate_contains_known_one_plus_inverse_n_jacobian(self) -> None:
+        mp.mp.dps = 60
+        for n, mean_gap in ((17, mp.mpf("5.25")), (185, mp.mpf("11.75"))):
+            canonical = canonical_dimensionless_width(n, mean_gap)
+            surrogate = rank_normalized_width(n, mean_gap)
+            self.assertLess(
+                abs(surrogate - (1 + mp.mpf(1) / n) * canonical),
+                mp.mpf("1e-55"),
+            )
+
     def test_prediction_artifact_freezes_width_first(self) -> None:
         path = ROOT / "predictions" / "hermite_krawtchouk_jet_20260829.yaml"
         artifact = yaml.safe_load(path.read_text(encoding="utf-8"))
@@ -153,6 +165,14 @@ class HermiteKrawtchoukScalingJetTests(unittest.TestCase):
             artifact["rank_gap_bridge"]["exact_canonical_neutral_area"]["status"],
             "exact",
         )
+        self.assertEqual(
+            artifact["rank_gap_bridge"]["primary_width"],
+            "w_can(N)=N^(3/8)*E[G]/(N+1)",
+        )
+        width_residual = artifact["frozen_predictions"][
+            "rank_gap_width_collapse"
+        ]["division_free_residual"]
+        self.assertIn("w_can", width_residual)
 
 
 if __name__ == "__main__":
