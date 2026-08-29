@@ -1,0 +1,282 @@
+{
+  "acquisition": {
+    "batches": "at least 100 synchronized counter batches",
+    "canonical_sampling": "for each counter permutation draw K~Binomial(650,p_ref), use the prefix configuration, and use the same K/permutation labels for both orientations",
+    "endpoint_orientations": [
+      [
+        23,
+        11
+      ],
+      [
+        17,
+        19
+      ]
+    ],
+    "full_lift_rule": "retain NN-black and NN+NNN-white displacement-potential connectivity; primary partition rank ignores potentials, while ambient-H1 ranks for all four corners are archived as a typed secondary vector",
+    "probability": "0.59274605079",
+    "same_configuration_rule": "evaluate Pi, Pi join R2, Pi join R5, and Pi join R2 join R5 on the same configuration; never treat four corners or two paths as replicas",
+    "source_fibers_per_orientation": 65
+  },
+  "claim_layers": {
+    "exact": [
+      "partition-rank J is nonnegative",
+      "isolated J equals the C2-C5 incidence first Betti number",
+      "the closed form max(k-1,0) and all toy moments",
+      "factor-additive four-corner tables have zero mixed defect"
+    ],
+    "exploratory": "a persistent OD component would be a chiral mixed-factor interaction worth comparing with the P57 odd direction",
+    "mechanism_null": "the minimal factor-additive topology extension of either radial clock has zero connected residual mean"
+  },
+  "connected_toy_witness": {
+    "J_full": 1,
+    "J_isolated": 0,
+    "R_connected": 1,
+    "base_connectivity_edges_relabelled": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "factor2_edges_relabelled": [
+      [
+        0,
+        2
+      ]
+    ],
+    "factor5_edges_relabelled": [
+      [
+        0,
+        1
+      ]
+    ],
+    "occupied_vertices_as_(fiber,a,b)": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        1,
+        0,
+        0
+      ]
+    ]
+  },
+  "factors": {
+    "K2": "C2",
+    "K5": "C5",
+    "fiber": "C2 x C5"
+  },
+  "issue": 200,
+  "null_and_alternative": {
+    "exact_algebra": {
+      "factor_additive_table": {
+        "00": 7,
+        "01": 18,
+        "10": 4,
+        "11": 15
+      },
+      "mixed_defect": 0,
+      "statement": "any h_ab=h_00+a*u2+b*u5 has zero four-corner mixed defect"
+    },
+    "nonzero_does_not_alone_identify": "continuum RG memory, Jordan structure, or path noncommutativity",
+    "nonzero_mean_identifies": "a nonlocal mixed C2-by-C5 connectivity interaction",
+    "primary_null": "mean vector (ES,ED,OS,OD)=0 after the configurationwise isolated-fiber subtraction",
+    "radial_clock_boundary": "q2 and Jordan alone constrain only unmarked endpoint states; zero is the prediction of their minimal factor-additive topology extension, not a theorem of either scalar clock",
+    "synthetic_interaction": {
+      "inserted_lambda": 4,
+      "recovered_mixed_defect": 4,
+      "table": {
+        "00": 7,
+        "01": 18,
+        "10": 4,
+        "11": 19
+      }
+    }
+  },
+  "primary_observable": {
+    "color_channels": {
+      "even": "R_black+R_white",
+      "odd": "R_black-R_white"
+    },
+    "connected_residual": "R_c=J_c_full-J_c_local",
+    "orientation_channels": {
+      "ED": "(even_(23,11)-even_(17,19))/2",
+      "ES": "(even_(23,11)+even_(17,19))/2",
+      "OD": "(odd_(23,11)-odd_(17,19))/2",
+      "OS": "(odd_(23,11)+odd_(17,19))/2"
+    },
+    "partition_rank": "r(Pi)=number_of_colored_vertices-number_of_blocks",
+    "per_color_full": "J_c=r(Pi_c join R2)+r(Pi_c join R5)-r(Pi_c join R2 join R5)-r(Pi_c)",
+    "per_color_local": "J_c_local=sum_over_65_fibers b1(C2-C5 occupied-cell incidence graph)",
+    "primary_state_order": [
+      "ES",
+      "ED",
+      "OS",
+      "OD"
+    ],
+    "two_row_closed_form": "b1=max(k_c-1,0), k_c=#C5 columns with both C2 lifts color c"
+  },
+  "schema": "matching-one.p200-n650-mixed-join-phaseB.v1",
+  "score": {
+    "covariance": "full 4x4 delete-one covariance from synchronized same-flow batches",
+    "decision": {
+      "fail": "factor-additive topology bridge is false; classify the nonzero ES/ED/OS/OD channel before proposing an RG-memory mechanism",
+      "pass": "no detected connected mixed-factor interaction at frozen precision"
+    },
+    "degrees_of_freedom": "numerical rank of the frozen covariance pseudoinverse",
+    "primary": "joint GLS chi-square of the zero 4-vector (ES,ED,OS,OD)",
+    "report_also": [
+      "four marginal signed z values",
+      "raw J_black/J_white and exact local baselines",
+      "secondary four-corner ambient-H1 mixed defects without folding them into the primary score"
+    ]
+  },
+  "status": "frozen_phaseB_observable_before_N650_acquisition",
+  "toy_exact_normalization": {
+    "all_binary_fiber_configurations": 1024,
+    "isolated_residual_R_c_zero_configurationwise": true,
+    "p_half": {
+      "covariance_decimal": [
+        [
+          "0.52522945404052734375",
+          "-0.13980960845947265625",
+          "0.6650390625",
+          "0.3854198455810546875"
+        ],
+        [
+          "-0.13980960845947265625",
+          "0.52522945404052734375",
+          "-0.6650390625",
+          "0.3854198455810546875"
+        ],
+        [
+          "0.6650390625",
+          "-0.6650390625",
+          "1.330078125",
+          "0"
+        ],
+        [
+          "0.3854198455810546875",
+          "0.3854198455810546875",
+          "0",
+          "0.770839691162109375"
+        ]
+      ],
+      "covariance_exact": [
+        [
+          "550743/1048576",
+          "-146601/1048576",
+          "681/1024",
+          "202071/524288"
+        ],
+        [
+          "-146601/1048576",
+          "550743/1048576",
+          "-681/1024",
+          "202071/524288"
+        ],
+        [
+          "681/1024",
+          "-681/1024",
+          "681/512",
+          "0"
+        ],
+        [
+          "202071/524288",
+          "202071/524288",
+          "0",
+          "202071/262144"
+        ]
+      ],
+      "mean_decimal": [
+        "0.4873046875",
+        "0.4873046875",
+        "0",
+        "0.974609375"
+      ],
+      "mean_exact": [
+        "499/1024",
+        "499/1024",
+        "0",
+        "499/512"
+      ],
+      "order": [
+        "J_black",
+        "J_white",
+        "C_odd",
+        "C_even"
+      ],
+      "p": "0.5",
+      "p_exact": "1/2"
+    },
+    "p_half_C_odd_distribution_counts": {
+      "-1": 210,
+      "-2": 80,
+      "-3": 15,
+      "-4": 1,
+      "0": 412,
+      "1": 210,
+      "2": 80,
+      "3": 15,
+      "4": 1
+    },
+    "p_ref": {
+      "covariance_decimal": [
+        [
+          "0.8377012502672683406712209822307291678599",
+          "-0.1188670178471091353212112098169217787377",
+          "0.9565682681143774759924321920476509465976",
+          "0.7188342324201592053500097724138073891222"
+        ],
+        [
+          "-0.1188670178471091353212112098169217787377",
+          "0.2627043920452620715778900554159993663811",
+          "-0.3815714098923712068991012652329211451188",
+          "0.1438373741981529362566788455990775876434"
+        ],
+        [
+          "0.9565682681143774759924321920476509465976",
+          "-0.3815714098923712068991012652329211451188",
+          "1.338139678006748682891533457280572091716",
+          "0.5749968582220062690933309268147298014788"
+        ],
+        [
+          "0.7188342324201592053500097724138073891222",
+          "0.1438373741981529362566788455990775876434",
+          "0.5749968582220062690933309268147298014788",
+          "0.8626716066183121416066886180128849767655"
+        ]
+      ],
+      "mean_decimal": [
+        "0.8715704194687931775313336936817541191472",
+        "0.2331155417018819949435069487835748506282",
+        "0.6384548777669111825878267448981792685190",
+        "1.104685961170675172474840642465328969775"
+      ],
+      "order": [
+        "J_black",
+        "J_white",
+        "C_odd",
+        "C_even"
+      ],
+      "p": "0.59274605079",
+      "p_exact": "59274605079/100000000000"
+    },
+    "recommended_dimensionless_reference": "divide an orientation's odd connected residual by sqrt(65*Var_p_ref[J_black-J_white]); empirical delete-one covariance remains primary"
+  }
+}
