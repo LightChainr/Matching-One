@@ -333,6 +333,8 @@ struct PathInsertion {
     int site = -1;
     int gate01 = 0;
     int gate12 = 0;
+    int components_before = 0;
+    int components_after = 0;
     Vector line{0, 0};
     Int index = 0;
     LocalMark local;
@@ -457,14 +459,14 @@ class HomologyUnionFind {
         }
     }
 
-    void add_edge(const Edge& edge) {
+    bool add_edge(const Edge& edge) {
         FindResult first = find(edge.i);
         FindResult second = find(edge.j);
         Int root_dx = first.dx + edge.dx - second.dx;
         Int root_dy = first.dy + edge.dy - second.dy;
         if (first.root == second.root) {
             extend(first.root, quotient_.winding(root_dx, root_dy));
-            return;
+            return false;
         }
         if (size_[first.root] < size_[second.root]) {
             std::swap(first, second);
@@ -483,6 +485,7 @@ class HomologyUnionFind {
         }
         rank_[second.root] = 0;
         index_[second.root] = 0;
+        return true;
     }
 
     bool component_crosses(int vertex) { return rank_[find(vertex).root] == 2; }
@@ -536,6 +539,30 @@ Geometry make_geometry(Matrix periods) {
     return geometry;
 }
 
+int euler_cell_residue(const Geometry& geometry,
+                       const std::vector<std::uint8_t>& active) {
+    if (static_cast<int>(active.size()) != geometry.n) {
+        throw std::invalid_argument("Euler mask length differs from N");
+    }
+    int vertices = 0;
+    int edges = 0;
+    int faces = 0;
+    for (const std::uint8_t value : active) vertices += value;
+    for (const Edge& edge : geometry.primal_edges) {
+        if (active[edge.i] && active[edge.j]) ++edges;
+    }
+    for (int root = 0; root < geometry.n; ++root) {
+        const Vector point = geometry.quotient.representative(root);
+        const int east = geometry.quotient.label({point.x + 1, point.y});
+        const int north = geometry.quotient.label({point.x, point.y + 1});
+        const int northeast = geometry.quotient.label({point.x + 1, point.y + 1});
+        if (active[root] && active[east] && active[north] && active[northeast]) {
+            ++faces;
+        }
+    }
+    return vertices - edges + faces;
+}
+
 class ThresholdEngine {
   public:
     explicit ThresholdEngine(const Geometry& geometry)
@@ -544,6 +571,7 @@ class ThresholdEngine {
     int first_cross(const std::vector<int>& permutation, bool matching, bool reverse) {
         std::fill(active_.begin(), active_.end(), 0);
         union_find_.reset();
+        graph_components_ = 0;
         const std::vector<Edge>& edges = matching ? geometry_.matching_edges
                                                   : geometry_.primal_edges;
         const std::vector<std::vector<int>>& incident = matching
@@ -551,9 +579,12 @@ class ThresholdEngine {
         for (int offset = 0; offset < geometry_.n; ++offset) {
             const int vertex = permutation[reverse ? geometry_.n - 1 - offset : offset];
             active_[vertex] = 1;
+            ++graph_components_;
             for (const int edge_index : incident[vertex]) {
                 const Edge& edge = edges[edge_index];
-                if (active_[edge.i] && active_[edge.j]) union_find_.add_edge(edge);
+                if (active_[edge.i] && active_[edge.j] && union_find_.add_edge(edge)) {
+                    --graph_components_;
+                }
             }
             if (union_find_.component_crosses(vertex)) return offset + 1;
         }
@@ -571,6 +602,7 @@ class ThresholdEngine {
     BirthTrace trace(const std::vector<int>& permutation, bool matching, bool reverse) {
         std::fill(active_.begin(), active_.end(), 0);
         union_find_.reset();
+        graph_components_ = 0;
         const std::vector<Edge>& edges = matching ? geometry_.matching_edges
                                                   : geometry_.primal_edges;
         const std::vector<std::vector<int>>& incident = matching
@@ -585,10 +617,14 @@ class ThresholdEngine {
             const LocalMark local = local_landing_mark(
                 geometry_, active_, vertex, matching);
             const int before_rank = global_rank;
+            const int components_before = graph_components_;
             active_[vertex] = 1;
+            ++graph_components_;
             for (const int edge_index : incident[vertex]) {
                 const Edge& edge = edges[edge_index];
-                if (active_[edge.i] && active_[edge.j]) union_find_.add_edge(edge);
+                if (active_[edge.i] && active_[edge.j] && union_find_.add_edge(edge)) {
+                    --graph_components_;
+                }
             }
             const HomologyUnionFind::ComponentMark component =
                 union_find_.component_mark(vertex);
@@ -606,6 +642,8 @@ class ThresholdEngine {
             insertion.site = vertex;
             insertion.gate01 = gate01;
             insertion.gate12 = gate12;
+            insertion.components_before = components_before;
+            insertion.components_after = graph_components_;
             insertion.local = local;
 
             if (gate01 && gate12) {
@@ -661,6 +699,7 @@ class ThresholdEngine {
     const Geometry& geometry_;
     std::vector<std::uint8_t> active_;
     HomologyUnionFind union_find_;
+    int graph_components_ = 0;
 };
 
 std::uint64_t splitmix64(std::uint64_t value) {
@@ -815,6 +854,15 @@ struct PathMoments {
     long double sum_J_D_imaginary = 0;
     long double sum_q_J_D_real = 0;
     long double sum_q_J_D_imaginary = 0;
+    std::int64_t sum_O_ext = 0;
+    std::uint64_t sum_O_ext2 = 0;
+    long double sum_O_ext_J_S_real = 0;
+    long double sum_O_ext_J_S_imaginary = 0;
+    long double sum_O_ext_J_D_real = 0;
+    long double sum_O_ext_J_D_imaginary = 0;
+    long double sum_J_D_conj_J_S_real = 0;
+    long double sum_J_D_conj_J_S_imaginary = 0;
+    long double sum_abs_J_S2 = 0;
     std::int64_t sum_local_S = 0;
     std::int64_t sum_local_D = 0;
 
@@ -825,6 +873,9 @@ struct PathMoments {
             active.gate12 != inactive.gate01 ||
             !same_vector(active.line, inactive.line)) {
             throw std::logic_error("active/inactive insertion source did not complement-pair");
+        }
+        if (active.k_before + inactive.k_before != n - 1) {
+            throw std::logic_error("active/inactive insertion ranks did not reverse-pair");
         }
         const std::uint64_t absent = static_cast<std::uint64_t>(n - active.k_before);
         const int active_s = active.gate01 + active.gate12;
@@ -845,6 +896,21 @@ struct PathMoments {
         const long double site_d = static_cast<long double>(absent) * full_d;
         const long double chi_real = (active_chi.real + inactive_chi.real) / 2;
         const long double chi_imaginary = (active_chi.imaginary + inactive_chi.imaginary) / 2;
+        // This is a configuration observer, not a function of ambient rank:
+        //
+        //   O_ext = C_black^NN - C_white^matching - q.
+        //
+        // The black component count is read before inserting the next site.
+        // The reverse matching trace is read after inserting that same site,
+        // which is exactly the white complement of the black configuration.
+        // On square cellulations O_ext=V-E+F0 configuration by configuration.
+        const std::int64_t o_ext =
+            static_cast<std::int64_t>(active.components_before) -
+            static_cast<std::int64_t>(inactive.components_after) - active.q_before;
+        const long double j_s_real = site_s * chi_real;
+        const long double j_s_imaginary = site_s * chi_imaginary;
+        const long double j_d_real = site_d * chi_real;
+        const long double j_d_imaginary = site_d * chi_imaginary;
         ++samples;
         sum_q += active.q_before;
         sum_q2 += static_cast<std::uint64_t>(active.q_before * active.q_before);
@@ -858,12 +924,23 @@ struct PathMoments {
         sum_inactive_D += static_cast<std::int64_t>(absent) * inactive_d;
         sum_site_S += absent * static_cast<std::uint64_t>(full_s);
         sum_site_D += static_cast<std::int64_t>(absent) * full_d;
-        sum_J_S_real += site_s * chi_real;
-        sum_J_S_imaginary += site_s * chi_imaginary;
-        sum_J_D_real += site_d * chi_real;
-        sum_J_D_imaginary += site_d * chi_imaginary;
-        sum_q_J_D_real += active.q_before * site_d * chi_real;
-        sum_q_J_D_imaginary += active.q_before * site_d * chi_imaginary;
+        sum_J_S_real += j_s_real;
+        sum_J_S_imaginary += j_s_imaginary;
+        sum_J_D_real += j_d_real;
+        sum_J_D_imaginary += j_d_imaginary;
+        sum_q_J_D_real += active.q_before * j_d_real;
+        sum_q_J_D_imaginary += active.q_before * j_d_imaginary;
+        sum_O_ext += o_ext;
+        sum_O_ext2 += static_cast<std::uint64_t>(o_ext * o_ext);
+        sum_O_ext_J_S_real += o_ext * j_s_real;
+        sum_O_ext_J_S_imaginary += o_ext * j_s_imaginary;
+        sum_O_ext_J_D_real += o_ext * j_d_real;
+        sum_O_ext_J_D_imaginary += o_ext * j_d_imaginary;
+        sum_J_D_conj_J_S_real +=
+            j_d_real * j_s_real + j_d_imaginary * j_s_imaginary;
+        sum_J_D_conj_J_S_imaginary +=
+            j_d_imaginary * j_s_real - j_d_real * j_s_imaginary;
+        sum_abs_J_S2 += j_s_real * j_s_real + j_s_imaginary * j_s_imaginary;
         if (active.local.valid && inactive.local.valid) {
             const int local_s = (active_s * active.local.h4 +
                                  inactive_s * inactive.local.h4) / 2;
@@ -1068,13 +1145,24 @@ void self_test() {
                 throw std::runtime_error("direct 0->2 marked schema regression failed");
             }
         }
+        std::vector<std::uint8_t> active(axis_l2.n, 0);
+        for (int k = 0; k < axis_l2.n; ++k) {
+            PathMoments one;
+            one.add(primal.path[k], matching.path[axis_l2.n - 1 - k],
+                    axis_l2.quotient, axis_l2.n);
+            if (one.sum_O_ext != euler_cell_residue(axis_l2, active) ||
+                std::fabs(one.sum_J_D_conj_J_S_imaginary) > 1e-18L) {
+                throw std::runtime_error("external Euler/Gram path regression failed");
+            }
+            active[axis_permutation[k]] = 1;
+        }
     } while (std::next_permutation(axis_permutation.begin(), axis_permutation.end()));
     if (direct_births == 0) {
         throw std::runtime_error("N=4 direct-birth control found no simultaneous births");
     }
     std::cout << "self-test passed: arbitrary integer periods, exact HNF quotient/winding, "
                  "basis invariance, saturation gcd, lifted chi4, direct births, "
-                 "Smith(2,130)/(2,170), N=5 all permutations\n";
+                 "Euler external observer/Gram, Smith(2,130)/(2,170), N=5 all permutations\n";
 }
 
 struct Options {
@@ -1377,8 +1465,13 @@ void run_design(const PairDesign& design, const Options& options,
                     << std::setprecision(21) << row.sum_J_S_real << ','
                     << row.sum_J_S_imaginary << ',' << row.sum_J_D_real << ','
                     << row.sum_J_D_imaginary << ',' << row.sum_q_J_D_real << ','
-                    << row.sum_q_J_D_imaginary << ',' << row.sum_local_S << ','
-                    << row.sum_local_D << '\n';
+                    << row.sum_q_J_D_imaginary << ',' << row.sum_O_ext << ','
+                    << row.sum_O_ext2 << ',' << row.sum_O_ext_J_S_real << ','
+                    << row.sum_O_ext_J_S_imaginary << ',' << row.sum_O_ext_J_D_real << ','
+                    << row.sum_O_ext_J_D_imaginary << ','
+                    << row.sum_J_D_conj_J_S_real << ','
+                    << row.sum_J_D_conj_J_S_imaginary << ',' << row.sum_abs_J_S2 << ','
+                    << row.sum_local_S << ',' << row.sum_local_D << '\n';
             }
             const ComplementAudit& audit = marked.complement;
             *complement_audit << design.n << ',' << a << ',' << b << ',' << orientation
@@ -1440,7 +1533,10 @@ int run(int argc, char** argv) {
                "sum_inactive_gate01,sum_inactive_gate12,sum_active_S,sum_active_D,"
                "sum_inactive_S,sum_inactive_D,"
                "sum_site_S,sum_site_D,sum_J_S_re,sum_J_S_im,sum_J_D_re,sum_J_D_im,"
-               "sum_q_J_D_re,sum_q_J_D_im,sum_local_S,sum_local_D\n";
+               "sum_q_J_D_re,sum_q_J_D_im,sum_O_ext,sum_O_ext2,"
+               "sum_O_ext_J_S_re,sum_O_ext_J_S_im,sum_O_ext_J_D_re,"
+               "sum_O_ext_J_D_im,sum_J_D_conj_J_S_re,sum_J_D_conj_J_S_im,"
+               "sum_abs_J_S2,sum_local_S,sum_local_D\n";
         complement_audit
             << "n,a,b,orientation,batch,samples,endpoint_failures,site_failures,"
                "line_failures,local_mark_failures,index_mismatches\n";
@@ -1501,6 +1597,8 @@ int run(int argc, char** argv) {
              << "  \"saturation_index\": \"gcd of raw winding coefficients on the primitive rational line before primitive reduction\",\n"
              << "  \"path_horvitz\": \"at pre-insertion k multiply the next-site gate by N-k; canonical Russo scorer later multiplies by N/(N-k) under Bin(N-1,k)\",\n"
              << "  \"full_source\": \"sum_site_S=(active_S+inactive_S)/2 and sum_site_D=(active_D-inactive_D)/2 on the paired primal/matching reverse insertion; raw sides are retained\",\n"
+             << "  \"external_observer\": \"O_ext=C_black_NN-C_white_matching-q=V-E+F0; evaluated on the pre-insertion configuration and outside the q-only algebra\",\n"
+             << "  \"external_products\": \"O_ext,O_ext^2,O_ext*J_S4,O_ext*J_D4 plus J_D4*conj(J_S4) and |J_S4|^2 same-path Gram rows; q*J_D4 retained only as contact control\",\n"
              << "  \"sparse_joint_histogram\": " << (options.marked_births ? "true" : "false") << ",\n"
              << "  \"per_batch_joint_moments\": true,\n"
              << "  \"elapsed_seconds\": " << std::setprecision(17) << elapsed << ",\n"

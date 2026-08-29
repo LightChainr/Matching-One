@@ -1,0 +1,78 @@
+schema: matching-one/external-observer-rank-birth-manifest/v1
+issues: [215, 275, 276]
+target: PR267_Target1
+status: schema_and_tiny_exact_preflight_no_N325_N425_production
+
+base:
+  main: 83e98fc
+  marked_birth_runner_lineage: 6899b11
+  q_only_no_go_lineage: b31581a
+  rejected_scalar_sources: [507571d, eea85c4]
+
+observer:
+  id: Euler_residue
+  exact_component_definition: O_ext = C_black_NN - C_white_matching - q
+  exact_cell_definition: O_ext = V - E_NN + F0
+  matching_parity: odd
+  spin: 0
+  microcanonical_fluctuation: -(E-E_mc) + (F0-F0_mc)
+  sigma_algebra: outside sigma(q), certified by equal-q unequal-O_ext tiny witnesses
+  intended_role: external thermal_Euler scalar coupled to line-H4 rank-birth sources
+
+observer_authorization_gate:
+  source: 83e98fc
+  exact_rule: one_C4_direction_orbit_aliases_scalar_and_spin4
+  current_design: pass_via_scalar_O_ext_times_typed_internal_complex_JD_JS
+  retained_internal_information: [complex_chi4_ell, primitive_line_ell, axis_landing, diagonal_landing]
+  future_local_H4_requirement: separate_axis_and_diagonal_orbits_with_response_determinant_minus_2_or_preserve_equivalent_typed_complex_edge_data
+  forbidden: direction_only_single_orbit_local_H4_labelled_as_independent_spin4
+
+path_schema:
+  retained:
+    - K1_K2
+    - I01_I12
+    - primitive_line_ell
+    - saturation_index_iota
+    - line_and_landing_H4
+    - S_D
+    - q_times_J_D4_contact_control
+  added:
+    - O_ext
+    - O_ext_squared
+    - O_ext_times_J_D4_complex
+    - O_ext_times_J_S4_complex
+    - J_D4_times_conjugate_J_S4_complex
+    - abs_J_S4_squared
+  gram_semantics: same_next_site_Horvitz_score_second_moments_not_products_of_site_sums
+  direct_0_to_2: {ell: null, D: 0, S: 2, J_D4: 0, J_S4: 0}
+
+candidate_decision:
+  selected: bulk_Betti_Euler_cycle_rank
+  second_coordinate: macroscopically_separated_local_H4_or_arm_after_far_anchor_freeze
+  charged_lane: charged_seam_after_gauge_and_orientation_freeze
+
+planned_geometry_pairs:
+  - {N: 325, first: [17, 6], second: [18, 1], production: forbidden}
+  - {N: 425, first: [16, 13], second: [19, 8], production: forbidden}
+
+exact_preflight:
+  geometries: [axis_L2, gaussian_index5, axis_index9]
+  requirements:
+    - Euler_component_cell_identity_zero_residual
+    - equal_q_unequal_O_ext_witness
+    - all_microcanonical_Horvitz_product_residuals_zero
+    - compiled_runner_self_test
+    - complex_Gram_imaginary_roundoff_zero
+    - observer_authorization_gate_83e98fc_passes
+
+commands:
+  - python3 scripts/external_observer_path_oracle.py --output results/external-observer-path-oracle/latest.json
+  - python3 scripts/external_observer_path_oracle.py --format markdown --output results/external-observer-path-oracle/latest.md
+  - python3 -m unittest discover -s tests -p 'test_external_observer_path_oracle.py'
+  - python3 -m unittest discover -s tests -p 'test_threshold_rank_integer_period_mc.py'
+
+claim_boundary:
+  exact: O_ext identity, matching parity, q-sigma escape, path-product Horvitz semantics
+  implemented: production-compatible per-k sufficient-statistic columns
+  conditional: O_ext is a useful lattice thermal scalar for a Q4-epsilon bridge
+  not_claimed: field identity or asymptotic exponent before a frozen N325_N425 score
