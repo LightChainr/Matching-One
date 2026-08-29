@@ -2,163 +2,202 @@
 
 **Updated:** 2026-08-29
 
-This is a navigation layer. It does not grant permission, lock tasks, require branch consolidation, or declare lower-priority work false. `STATUS` owns claim language; `ROADMAP` ranks attention; `NEXT-TARGETS` is the fast decision board.
+This is a navigation layer, not a permission system. `STATUS` owns claim language; `ROADMAP` ranks information gain; `NEXT-TARGETS` shows actual maturity and the next missing input; `GOVERNANCE` owns the three hard constraints.
 
-## The project in one page
-
-Matching One now has enough evidence that the main uncertainty is no longer “does a finite-size signal exist?” The useful questions are:
+## Scientific stack
 
 ```text
-Q1. Which continuum sector produces the global matching H4 signal?
-Q2. Why does the lattice matching observable select that sector?
-Q3. Can any of this explain or constrain the microscopic value of p_c itself?
+exact topology / semantics / cover arithmetic
+        -> reusable sufficient statistics and covariance
+        -> predictive finite-size evidence
+        -> mechanism discrimination
+        -> continuum/operator identification
+        -> optional microscopic threshold-origin explanation
 ```
 
-Everything else in the repository should be readable as evidence, a discriminator, a control, or a tool serving one or more of these questions.
+Failures at a higher layer do not erase lower-layer evidence. A continuum candidate can exist exactly without the lattice observable overlapping it, and a finite-size operator identification can succeed without explaining the microscopic value of `p_c`.
 
-## Q1. Which continuum sector produces the global matching H4 signal?
+## A. Global square-site matching-odd H4 sector
 
-### What is already durable
+Durable evidence includes independent same-N orientation confirmation, held-out new geometry, norm-5 harmonic discrimination and the completed N145->290 full curve.
 
-- independent square-site blocks strongly disfavor global zero;
-- the leading orientation dependence transfers as H4 across the tested Gaussian lineages;
-- H12/H8 aliases tested by norm-5 are strongly disfavored relative to H4;
-- N145->290 shows that the full thermal response is not one scalar multiplier;
-- pure `P4[S']`, scalar-width and simple one-coordinate shell descriptions fail;
-- the live response is low-rank/multicomponent rather than one clean scalar correction.
+Current empirical summary:
 
-### Live field/mechanism classes
+- global zero is strongly disfavored by independent primary blocks;
+- frozen H4 transfer remains compatible and tested H12/H8 aliases are disfavored;
+- the norm-5 child block alone is still compatible with zero, so its primary value is transfer/harmonic discrimination;
+- N145->290 rejects a one-scalar full-curve multiplier through a resolved shape mode while retaining the frozen center/slope/root correction;
+- pure `P4[S']`, scalar width and simple one-coordinate thermal-jet explanations fail;
+- the live finite-size state is compact but non-scalar.
 
-1. **Thermal Q4 / inherited Jordan candidate**
+This establishes a strong spin-4-like finite-size phenomenon. It does **not** uniquely identify the continuum field.
 
-   The exact Virasoro/LCFT construction gives an `x=21/4`, spin-4 rank-2 candidate and exact torus-shape relations. This is a real representation-theory bridge, but lattice overlap remains unproved.
+## B. Competing spin-4 representations
 
-2. **Lower four-leg spin-4 competitor**
+The current continuum candidate set is sharper than the old “H4 versus H12” problem.
 
-   The exact loop spectrum contains `V_(2,+/-2)` with `x=17/4`, spin 4. It is lower-dimensional and naturally related to four-leg geometry. Its physical `Q=1` multiplicity/representation and overlap with the global matching observable are active questions.
+### Thermal Q4 / inherited Jordan candidate
 
-3. **Ordinary low-rank mixing**
-
-   Two or more diagonalizable finite-size fields can mimic part of a log/Jordan sequence over the current size range. This remains a first-class competitor.
-
-4. **Cover/defect/topological memory**
-
-   Smith/deck/combinatorial-map information may create a small state that is not one local bulk field. The exact deck-character selection rule makes this possibility sharply testable with the correct charged/twisted observables.
-
-5. **Higher-rank structure**
-
-   Keep this live only where a basis-invariant rank-2 description fails or higher-point/second-derivative observables require it. Do not use rank 3 as a free rescue of one-insertion data.
-
-### Highest-value discriminators
-
-- Potts/projector/multiplicity and charged-insertion work for the `x=17/4` competitor;
-- covariance-aware minimal realization before naming latent directions;
-- modulus/shape fingerprints rather than another radial exponent;
-- exact scale/cover composition under norm 4;
-- independent positive controls where the expected field structure is already known or tunable.
-
-## Q2. Why does matching select that sector?
-
-This is the main conceptual bridge still missing.
-
-### Exact lattice side
-
-The project has strong finite-volume semantics:
-
-- Sykes-Essam / Mertens-Ziff matching structure;
-- exact wrapping-channel maps;
-- finite Russo/pivotal identities;
-- exact cover/deck arithmetic and selection rules;
-- configuration/topological side programs.
-
-### Missing continuum side
-
-The empirical S/D or matching-even/odd decomposition does **not** by itself prove a local CFT involution with `+/-` eigenoperators.
-
-The relevant routes are:
-
-- **#61:** matching action on the RG tangent space;
-- **#114:** FK/Potts `Q -> 1` topological-sector definition of the matching observable;
-- **#233:** local defect/interface or derivative-defect construction, including a useful obstruction if no bounded-locality object exists;
-- **#120:** transfer-matrix operator spectroscopy and matrix-element selection rules.
-
-A partial formula, exact zero, small-width intertwiner, or precise no-go can all advance this question. This work should run alongside numerical discrimination rather than act as a prerequisite.
-
-## Q3. Why is the square-site threshold that number?
-
-The operator program and the threshold-value program should stay connected but distinct.
-
-CFT/operator identification explains critical corrections and universal structure. It does not automatically determine the microscopic location
+The percolation energy Jordan pair has an exact level-4 descendant with
 
 ```text
-p_c(square site) = 0.592746...
+x=21/4, |spin|=4,
 ```
 
-The direct threshold-origin line includes:
+nonzero Q4 Gram norm and an inherited rank-2 Jordan structure. Exact torus assets include `g2/E4`, a fixed logarithmic-slope relation and CM/rectangular shape ratios.
 
-- correlated-hyperedge/self-dual or Yang-Baxter-compatible embeddings (#123);
-- exact decorated-cell / critical-polynomial structure (#3/#13);
-- finite matching-polynomial factors, recurrences and topology (#17/#29 and related exact work);
-- post-leading annihilator structure (#47) when used to identify the microscopic correction hierarchy rather than only improve decimals.
+These results prove the **candidate representation exists**. They do not prove the lattice matching observable overlaps it.
 
-A rigorous obstruction to a finite local exact mechanism is also useful: it would explain why the threshold is structurally harder than self-dual neighbors.
+### Four-leg `V_(2,+/-2)` competitor
 
-## Independent controls: the project should use them more aggressively
-
-Controls are the fastest way to tell whether the analysis machinery recognizes known physics rather than merely organizing the target data.
-
-### Triangular-site logarithmic pair
-
-#246/#234 provides an externally defined percolation energy/logarithmic-pair construction. This is the strongest calibration for Jordan/radial/two-cutoff diagnostics.
-
-### Exact C4 controls
-
-- square-bond `p_c=1/2` duality control (#42);
-- C4 self-matching site control (#44/#155).
-
-These separate generic square anisotropy from matching/duality-odd structure.
-
-### Tunable exactly-critical anisotropy
-
-#106 is a high-value improved-action laboratory. A controllable zero crossing of `A4(lambda)` would test the H4 pipeline and expose subleading sectors without relying on the target lattice alone.
-
-### C6/E6 mirror program
-
-#165 tests whether the square-lattice `C4 -> E4/Gaussian` picture has a genuine symmetry/modular analogue or is model-specific.
-
-## Data/analysis infrastructure
-
-### Threshold-rank and thermal coordinates
-
-The threshold-rank archive supports values, roots, derivatives, Krawtchouk/Hermite modes, quantiles and covariance-aware full-curve analysis. Different projections of one histogram are coordinates, not independent evidence.
-
-### Gaussian-cover category
-
-Norm-2, norm-5, norm-4 and norm-10 covers provide scale, phase, Smith/deck and composition information. The exact theorem that unmarked deck-invariant global observables have zero linear response to nontrivial deck characters should shape the observable design, not shut down the charged-sector program.
-
-### Local pivotal / annulus sector
-
-Russo connects slope to pivotal mass, and marked four-arm H4 observables are measurable. Current small-torus/local rows do not support a one-coordinate shell law; this motivates better state-space/radial diagnostics and independent controls, not a blanket rejection of local mechanisms.
-
-### Primitive square-bond sector
-
-The primitive square-bond H4/KdV response remains scientifically separate from the square-site thermal H4 line. Its next value is in shape/module identification, not another same-purpose sign repetition.
-
-## Current decision frontier
+The exact Q=1 loop-spectrum preflight gives
 
 ```text
-representation/selection:  x=17/4 competitor vs global Q4 candidate
-state dimension:            Jordan vs ordinary low-rank vs cover-enriched memory
-positive controls:          known log pair / self-matching / tunable anisotropy
-orthogonal new evidence:    same-N coalescence / norm-4 / modulus shape
-observable bridge:          matching -> RG/FK/defect/TM selection rule
-threshold origin:           self-dual/hyperedge/exact microscopic mechanism
+x=17/4, |spin|=4, four legs,
 ```
 
-See [`NEXT-TARGETS.md`](NEXT-TARGETS.md) for the default attention order.
+with a distinct exact `Q`-velocity from thermal Q4. Because it is lower-dimensional and naturally four-leg, its physical Potts multiplicity/projector and its global/local matrix elements are now a central selection question.
 
-## Priority philosophy
+### Ordinary low-rank and cover-memory alternatives
 
-A priority reduction means only that the next unit of effort is expected to change the research picture less. It does not close a branch, reject a mechanism, or prevent cheap exploratory work.
+The existing data also allow ordinary diagonalizable multi-field mixing or a small state enriched by Smith/deck/defect/combinatorial-map information. These should be distinguished by basis-invariant rank/composition and charged/typed observables before latent directions are given field names.
 
-Raise a task whenever it gains a new independent observable, a stronger adversarial prediction, a better positive control, or a much cheaper path to the same scientific decision.
+## C. Local pivotal / four-arm and self-matching RG sector
+
+Russo gives an exact pivotal interpretation of the matching slope. Integrated H4 pivotal ratios are stable and genuinely local landing-marked H4 observables are measurable.
+
+Important distinctions:
+
+- the exact C4 self-matching microscopic family supplies a genuine two-parameter odd UV tangent and an exact microscopic involution;
+- this is a strong UV/RG control but is not yet a proof of a continuum OPE automorphism;
+- the N130/N170 global/local response matrices resolve essentially one direction with the current rows;
+- the multiradius prototype rejects the simplest constant-shell law for the raw matching-odd local coordinate and has a geometric non-injectivity issue at large R;
+- this does **not** falsify a basis-invariant rank-2 plane or the existence of the continuum energy Jordan pair.
+
+The next value in this line comes from a different geometry/readout, a known logarithmic positive control, or a representation-typed local insertion—not simply more replicas of the same row.
+
+## D. Known logarithmic positive control
+
+The triangular-site energy/log-pair program is more mature than its open-issue state suggests.
+
+The repository already has:
+
+- an exact protocol mirroring the externally defined lattice pair;
+- cluster-sign integration and tiny exact oracles;
+- unbiased covariance/sufficient-statistic machinery;
+- production implementation.
+
+The main missing step is a scaling calculation that demonstrates the proposed Jordan/rank diagnostics on a system where the logarithmic pair is independently known. This line is method calibration, not an alternative source of evidence for the same square-site raw block.
+
+## E. Gaussian covers, deck characters and minimal state
+
+Exact cover arithmetic supplies norm-2, norm-5, norm-4 and norm-10 genealogy/Smith/deck data. The exact selection theorem has an important consequence:
+
+> an unmarked deck-invariant global observable has zero first-order response to a nontrivial deck character.
+
+Therefore a nontrivial microscopic detail sector requires a character-covariant marked row, twisted/seam observable, anchored response or an explicitly nonlinear invariant susceptibility. A global scalar detail column is not a search target anymore; it is a null/regression condition.
+
+The repository already has matrix/semigroup and Krawtchouk state descriptions. The newer context-Hankel/minimal-realization idea asks a prior question—what state dimension is actually identifiable from all declared cover contexts—but that full program is not yet implemented on `main`.
+
+Use minimal rank/composition first; field naming comes later.
+
+## F. Prospective cover/composition targets
+
+### Same-N norm-5 coalescence — #205
+
+This is a particularly clean prospective target because it removes radial scaling and unknown parent amplitude while adding a noncyclic Smith-class node at the same N. Frozen H4/H8/H12 interpolation and regression tests already exist.
+
+### Norm-4 dyadic closure — #154
+
+The engine, scorer and variance pilot are ready. Norm-4 tests exact scale composition and noncyclic deck structure, but the current high-statistics plan is expensive and source-covariance limited. Its scientific readiness should be separated from its acquisition priority.
+
+## G. Modulus / shape spectroscopy: two routes that must not be conflated
+
+### Modular-scalar route
+
+Exact SL(2,Z) classification now distinguishes modular scalars (`rank/either/cross`) from basis-dependent directional channels. Scalar `cross/either` observables can therefore legally use elliptic spin filtering and offer a clean route to a Q4/Jordan shape score once the lattice observable is typed.
+
+### Primitive C3/Pell route
+
+The older primitive homology-character experiment is a **different sector**. It found a real primitive character and reflection nulls, but the simple ordinary-H4/E4 Pell bridge failed. This negative result must remain visible; it is not evidence for the Q4 modular-scalar story.
+
+The primitive square-bond program instead points toward a separate `x≈4`, spin-4 identity/vacuum-family response, with a striking vacuum-KdV geometry prediction.
+
+## H. Thermal-jet coordinates and reusable analysis infrastructure
+
+Threshold-rank histograms support values, derivatives, full curves, Krawtchouk/Hermite modes, rank-gap statistics, intrinsic quantiles and reliability/pivotal views.
+
+Key structural lessons:
+
+- Krawtchouk modes are exact coordinates of the same canonical curve, not independent observables;
+- changing from bare `p` to log-odds does not remove the first-derivative `S'` anomaly by itself;
+- the full neutral-area covector is exact, but low-order truncation is ill-conditioned;
+- the global rank gap is not a redundant low-order thermal-jet coordinate;
+- intrinsic quantile centers supply a useful independent coordinate, and the held-out N145->290 transfer passed while the width metric drifted.
+
+Several derived views of one histogram remain one evidence block.
+
+## I. Matching observable -> continuum bridge
+
+This line is partly developed, not blank.
+
+Existing ingredients include:
+
+- exact finite matching/complement channel algebra;
+- configuration/expectation topology and Russo identities;
+- a concrete exact self-matching UV tangent;
+- FK/Potts restricted partition-function and thermal-cumulant formulas;
+- proposed defect/intertwiner and transfer-matrix formulations.
+
+The remaining identifying step is a map or obstruction strong enough to predict an operator-selection rule. Until then “matching-even/odd operator” should be read conservatively: empirical pair-exchange sector first, continuum grading only when derived.
+
+## J. Threshold-value / microscopic-origin line
+
+This is a separate scientific objective from operator spectroscopy.
+
+Completed bounded results already rule out or weaken several simple mechanisms:
+
+- no finite nondegenerate ordinary independent-bond gadget exactly realizes a Bernoulli four-terminal site in the declared class;
+- explored finite matching polynomials do not expose a simple persistent bounded-degree physical factor;
+- several finite polynomials have large/full-symmetric Galois groups;
+- the historical post-leading-annihilator exponent near 7 is not automatically the next ordinary thermal spin-4 descendant.
+
+Live high-risk directions include correlated hyperedges/multispin/self-dual closures, symbolic obstructions and post-annihilator correction structure. Success here would address why the microscopic critical point is where it is; failure does not weaken the finite-size operator results.
+
+## K. Experiment selection and stopping
+
+The information-per-CPU optimizer is already implemented and previously selected the norm-5 design that was later run. Sequential stopping has also been calibrated for frozen model comparisons.
+
+The next methodological task is therefore not to rebuild experiment design. It is to update the utility function for the current scientific state:
+
+```text
+representation / selection
+modulus / shape
+minimal predictive rank
+positive-control value
+independence from reused raw blocks
+expected stopping cost
+```
+
+This should be used before committing to the next expensive production.
+
+## Lifecycle synchronization
+
+The repository currently has a genuine navigation problem: lifecycle state can disagree across issue, note, prediction, result, evidence ledger and canonical documents. For example, N145->290 is a completed scientific block in current claim documents while the older primary evidence ledger still carries a pending-reveal lifecycle entry.
+
+Fix these mismatches by regenerating/reconciling status views from committed scored artifacts. Do not rewrite frozen historical predictions merely to make dashboards agree.
+
+## Fast next-information map
+
+```text
+Is x=17/4 globally allowed?               -> Potts projector / charged selection
+Do our Jordan diagnostics recover a known pair? -> triangular positive control
+Does H4 survive same-N arithmetic change? -> #205 coalescence
+How many states are actually needed?      -> existing-data minimal realization
+Does the candidate have the right shape?  -> typed modular-scalar modulus score
+Is dyadic q2/Jordan composition worth cost? -> rerank #154 with updated optimizer
+Can matching select a continuum sector?   -> RG/FK/defect/TM bridge
+Why is pc that microscopic number?        -> threshold-origin symbolic/exact line
+```
+
+Update rule: integrate useful science first, refresh navigation afterward. Priority changes attention, not permission.
