@@ -1,0 +1,840 @@
+{
+  "batches_per_design": 200,
+  "designs": [
+    {
+      "N_bonds": 60,
+      "N_vertices": 30,
+      "batches": 200,
+      "category_counts": {
+        "invariant_failure": 0,
+        "l0": 236012,
+        "l1": 251788,
+        "l2": 251676,
+        "rank0": 626352,
+        "rank1_other": 7389,
+        "rank2": 626783
+      },
+      "continuum_baselines": [
+        0.11072917769038501,
+        0.12721550374993465,
+        0.12721550374993465
+      ],
+      "continuum_baselines_50dps": [
+        "0.11072917769038501312751860913865363519163224173796",
+        "0.1272155037499346429480553869141822763171677841226",
+        "0.1272155037499346429480553869141822763171677841226"
+      ],
+      "contrast_covariance_of_mean": [
+        [
+          1.0157236180904523e-07,
+          7.393376373041909e-09,
+          7.168241206030103e-09
+        ],
+        [
+          7.393376373041909e-09,
+          8.879345728643217e-08,
+          2.7017729617120168e-09
+        ],
+        [
+          7.1682412060301095e-09,
+          2.7017729617120168e-09,
+          1.0129123618090449e-07
+        ]
+      ],
+      "contrast_order": [
+        "C_nontrivial_real",
+        "Q_reflection_null",
+        "S_scalar"
+      ],
+      "contrasts": {
+        "C_nontrivial_real": {
+          "standard_error": 0.0003187041917029728,
+          "value": 0.008626326059549633,
+          "z": 27.066873559006186
+        },
+        "Q_reflection_null": {
+          "standard_error": 0.00029798231035823615,
+          "value": -4.849742261192895e-05,
+          "z": -0.16275269009635188
+        },
+        "S_scalar": {
+          "standard_error": 0.0003182628413448615,
+          "value": 0.0045778148097457005,
+          "z": 14.383755233257963
+        }
+      },
+      "design": "pell_Dminus2_N30",
+      "engine_windings": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          -1
+        ]
+      ],
+      "lineage": "pell_Dminus2",
+      "lineage_role": "parent",
+      "p": 0.5,
+      "paper_types": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "period_matrix_rows": [
+        [
+          6,
+          3
+        ],
+        [
+          0,
+          5
+        ]
+      ],
+      "probabilities": [
+        0.118006,
+        0.125894,
+        0.125838
+      ],
+      "probability_covariance_of_mean": [
+        [
+          5.9583738693467305e-08,
+          -1.3886251256281409e-08,
+          -7.1549145728643345e-09
+        ],
+        [
+          -1.3886251256281409e-08,
+          5.235107537688441e-08,
+          -8.650361809045226e-09
+        ],
+        [
+          -7.1549145728643345e-09,
+          -8.650361809045226e-09,
+          4.873947738693471e-08
+        ]
+      ],
+      "residuals": [
+        0.007276822309614989,
+        -0.0013215037499346438,
+        -0.0013775037499346443
+      ],
+      "samples": 2000000,
+      "seed_block": 11418563313151150124,
+      "target_sector_order": [
+        "l0",
+        "l1",
+        "l2"
+      ],
+      "tau_imag": 0.8333333333333334,
+      "tau_real": 0.5
+    },
+    {
+      "N_bonds": 120,
+      "N_vertices": 60,
+      "batches": 200,
+      "category_counts": {
+        "invariant_failure": 0,
+        "l0": 218215,
+        "l1": 258518,
+        "l2": 258233,
+        "rank0": 630019,
+        "rank1_other": 6558,
+        "rank2": 628457
+      },
+      "continuum_baselines": [
+        0.11072917769038501,
+        0.12721550374993465,
+        0.12721550374993465
+      ],
+      "continuum_baselines_50dps": [
+        "0.11072917769038501312751860913865363519163224173796",
+        "0.1272155037499346429480553869141822763171677841226",
+        "0.1272155037499346429480553869141822763171677841226"
+      ],
+      "contrast_covariance_of_mean": [
+        [
+          8.494948461055274e-08,
+          4.447146525665368e-09,
+          -1.3499820351758751e-08
+        ],
+        [
+          4.447146525665368e-09,
+          1.0467981312814064e-07,
+          2.537487072236728e-09
+        ],
+        [
+          -1.3499820351758748e-08,
+          2.5374870722367345e-09,
+          1.213854824120602e-07
+        ]
+      ],
+      "contrast_order": [
+        "C_nontrivial_real",
+        "Q_reflection_null",
+        "S_scalar"
+      ],
+      "contrasts": {
+        "C_nontrivial_real": {
+          "standard_error": 0.0002914609486887613,
+          "value": -0.0035939239404503692,
+          "z": -12.330722028521794
+        },
+        "Q_reflection_null": {
+          "standard_error": 0.00032354259862982595,
+          "value": -0.00012340862003929766,
+          "z": -0.38142927874697846
+        },
+        "S_scalar": {
+          "standard_error": 0.000348404194021915,
+          "value": 0.0023228148097456935,
+          "z": 6.667011619267666
+        }
+      },
+      "design": "pell_Dminus2_N60_norm2",
+      "engine_windings": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          -1
+        ]
+      ],
+      "lineage": "pell_Dminus2",
+      "lineage_role": "child",
+      "p": 0.5,
+      "paper_types": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "period_matrix_rows": [
+        [
+          6,
+          -2
+        ],
+        [
+          6,
+          8
+        ]
+      ],
+      "probabilities": [
+        0.1091075,
+        0.129259,
+        0.1291165
+      ],
+      "probability_covariance_of_mean": [
+        [
+          4.524268216080401e-08,
+          -9.090414572864319e-09,
+          -4.690320351758792e-09
+        ],
+        [
+          -9.090414572864319e-09,
+          6.155436683417085e-08,
+          -8.96720351758795e-09
+        ],
+        [
+          -4.690320351758792e-09,
+          -8.96720351758795e-09,
+          6.008431030150746e-08
+        ]
+      ],
+      "residuals": [
+        -0.001621677690385015,
+        0.002043496250065363,
+        0.0019009962500653454
+      ],
+      "samples": 2000000,
+      "seed_block": 16291321729029300786,
+      "target_sector_order": [
+        "l0",
+        "l1",
+        "l2"
+      ],
+      "tau_imag": 0.8333333333333334,
+      "tau_real": 0.5
+    },
+    {
+      "N_bonds": 112,
+      "N_vertices": 56,
+      "batches": 200,
+      "category_counts": {
+        "invariant_failure": 0,
+        "l0": 257280,
+        "l1": 239312,
+        "l2": 238758,
+        "rank0": 629013,
+        "rank1_other": 6617,
+        "rank2": 629020
+      },
+      "continuum_baselines": [
+        0.12470059657156361,
+        0.12015211579226502,
+        0.12015211579226502
+      ],
+      "continuum_baselines_50dps": [
+        "0.12470059657156361356306944379819518283006971050975",
+        "0.12015211579226502308743616256051247672799257647673",
+        "0.12015211579226502308743616256051247672799257647673"
+      ],
+      "contrast_covariance_of_mean": [
+        [
+          7.36474560301507e-08,
+          6.00048983604484e-10,
+          9.012625628140733e-09
+        ],
+        [
+          6.00048983604484e-10,
+          9.00153429648241e-08,
+          4.6524930077932615e-09
+        ],
+        [
+          9.012625628140733e-09,
+          4.652493007793255e-09,
+          1.3819635678391965e-07
+        ]
+      ],
+      "contrast_order": [
+        "C_nontrivial_real",
+        "Q_reflection_null",
+        "S_scalar"
+      ],
+      "contrasts": {
+        "C_nontrivial_real": {
+          "standard_error": 0.00027138064785491007,
+          "value": 0.004574019220701414,
+          "z": 16.85462562218825
+        },
+        "Q_reflection_null": {
+          "standard_error": 0.0003000255705182878,
+          "value": -0.00023988903684828898,
+          "z": -0.799561972114196
+        },
+        "S_scalar": {
+          "standard_error": 0.00037174770582199917,
+          "value": 0.0026701718439063465,
+          "z": 7.182752716663388
+        }
+      },
+      "design": "pell_Dplus1_N56",
+      "engine_windings": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          -1
+        ]
+      ],
+      "lineage": "pell_Dplus1",
+      "lineage_role": "parent",
+      "p": 0.5,
+      "paper_types": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "period_matrix_rows": [
+        [
+          8,
+          4
+        ],
+        [
+          0,
+          7
+        ]
+      ],
+      "probabilities": [
+        0.12864,
+        0.119656,
+        0.119379
+      ],
+      "probability_covariance_of_mean": [
+        [
+          5.2092964824120604e-08,
+          -1.1358793969848864e-09,
+          1.116783919597986e-09
+        ],
+        [
+          -1.1358793969848864e-09,
+          4.998072361809039e-08,
+          -8.469718592964828e-09
+        ],
+        [
+          1.116783919597986e-09,
+          -8.469718592964828e-09,
+          5.31002964824121e-08
+        ]
+      ],
+      "residuals": [
+        0.003939403428436392,
+        -0.0004961157922650228,
+        -0.0007731157922650223
+      ],
+      "samples": 2000000,
+      "seed_block": 16026911447777570598,
+      "target_sector_order": [
+        "l0",
+        "l1",
+        "l2"
+      ],
+      "tau_imag": 0.875,
+      "tau_real": 0.5
+    },
+    {
+      "N_bonds": 224,
+      "N_vertices": 112,
+      "batches": 200,
+      "category_counts": {
+        "invariant_failure": 0,
+        "l0": 247342,
+        "l1": 242276,
+        "l2": 242231,
+        "rank0": 630615,
+        "rank1_other": 6165,
+        "rank2": 631371
+      },
+      "continuum_baselines": [
+        0.12470059657156361,
+        0.12015211579226502,
+        0.12015211579226502
+      ],
+      "continuum_baselines_50dps": [
+        "0.12470059657156361356306944379819518283006971050975",
+        "0.12015211579226502308743616256051247672799257647673",
+        "0.12015211579226502308743616256051247672799257647673"
+      ],
+      "contrast_covariance_of_mean": [
+        [
+          9.128494692211061e-08,
+          -7.144899976253924e-10,
+          3.793170226130703e-09
+        ],
+        [
+          -7.144899976253924e-10,
+          7.909576790201002e-08,
+          3.6934514709729042e-09
+        ],
+        [
+          3.793170226130703e-09,
+          3.6934514709729042e-09,
+          1.2434597864321603e-07
+        ]
+      ],
+      "contrast_order": [
+        "C_nontrivial_real",
+        "Q_reflection_null",
+        "S_scalar"
+      ],
+      "contrasts": {
+        "C_nontrivial_real": {
+          "standard_error": 0.0003021339883596525,
+          "value": -0.0020042307792985867,
+          "z": -6.6335826372265085
+        },
+        "Q_reflection_null": {
+          "standard_error": 0.00028123969830379567,
+          "value": -1.9485571585145284e-05,
+          "z": -0.06928457007551235
+        },
+        "S_scalar": {
+          "standard_error": 0.0003526272517024401,
+          "value": 0.0009196718439063445,
+          "z": 2.608056636196676
+        }
+      },
+      "design": "pell_Dplus1_N112_norm2",
+      "engine_windings": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          -1
+        ]
+      ],
+      "lineage": "pell_Dplus1",
+      "lineage_role": "child",
+      "p": 0.5,
+      "paper_types": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "period_matrix_rows": [
+        [
+          8,
+          -3
+        ],
+        [
+          8,
+          11
+        ]
+      ],
+      "probabilities": [
+        0.123671,
+        0.121138,
+        0.1211155
+      ],
+      "probability_covariance_of_mean": [
+        [
+          5.607316080402014e-08,
+          -6.483658291457293e-09,
+          -5.6120628140703615e-09
+        ],
+        [
+          -6.483658291457293e-09,
+          4.778470351758792e-08,
+          -3.249190954773872e-09
+        ],
+        [
+          -5.6120628140703615e-09,
+          -3.249190954773872e-09,
+          5.1177938442211043e-08
+        ]
+      ],
+      "residuals": [
+        -0.0010295965715636096,
+        0.0009858842077349744,
+        0.0009633842077349797
+      ],
+      "samples": 2000000,
+      "seed_block": 15155520681065720096,
+      "target_sector_order": [
+        "l0",
+        "l1",
+        "l2"
+      ],
+      "tau_imag": 0.875,
+      "tau_real": 0.5
+    }
+  ],
+  "exact_oracle": {
+    "N_bonds": 8,
+    "N_vertices": 4,
+    "configurations": 256,
+    "counts": {
+      "invariant_failure": 0,
+      "l0": 57,
+      "l1": 24,
+      "l2": 24,
+      "rank0": 75,
+      "rank1_other": 1,
+      "rank2": 75
+    },
+    "design": "pell_fundamental_N4",
+    "p": "1/2",
+    "passed": true,
+    "period_matrix_rows": [
+      [
+        2,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "rank1_other_lines": [
+      {
+        "count": 1,
+        "engine_winding": [
+          1,
+          -2
+        ]
+      }
+    ]
+  },
+  "geometry_contract": {
+    "active_multiplier": "1+i",
+    "child_order": "N_child=2*N_parent",
+    "multiplier_matrix": [
+      [
+        1,
+        -1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "norm": 2
+  },
+  "interpretation_boundary": [
+    "H4 and H8 nulls are separate fixed hypotheses, not fitted signs.",
+    "Parent and child use independent seed blocks; no CRN covariance is claimed.",
+    "C/Q/S covariance is retained for every design and as a six-coordinate lineage block.",
+    "Q remains a reflection/convention null and S remains a scalar diagnostic.",
+    "The norm-2 score assumes the live same-radial C~N^-1 comparison."
+  ],
+  "issue": 156,
+  "lineages": [
+    {
+      "C_child": -0.0035939239404503692,
+      "C_child_over_C_parent": -0.4166227795750631,
+      "C_parent": 0.008626326059549633,
+      "C_parent_times_C_child": -3.1002359743546325e-05,
+      "child_design": "pell_Dminus2_N60_norm2",
+      "lineage": "pell_Dminus2",
+      "null_covariance_of_mean": [
+        [
+          4.413703002512562e-07,
+          2.3822557663316573e-07
+        ],
+        [
+          2.3822557663316573e-07,
+          4.413703002512562e-07
+        ]
+      ],
+      "null_order": [
+        "H4_null_2Cchild_plus_Cparent",
+        "H8_null_2Cchild_minus_Cparent"
+      ],
+      "null_scores": {
+        "H4_null_2Cchild_plus_Cparent": {
+          "standard_error": 0.0006643570578019445,
+          "value": 0.0014384781786488943,
+          "z": 2.1652184796653846
+        },
+        "H8_null_2Cchild_minus_Cparent": {
+          "standard_error": 0.0006643570578019445,
+          "value": -0.01581417394045037,
+          "z": -23.803726858524367
+        }
+      },
+      "parent_child_sampling": "independent_seed_blocks_no_CRN",
+      "parent_design": "pell_Dminus2_N30",
+      "six_coordinate_covariance_of_mean": [
+        [
+          1.0157236180904523e-07,
+          7.393376373041909e-09,
+          7.168241206030103e-09,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          7.393376373041909e-09,
+          8.879345728643217e-08,
+          2.7017729617120168e-09,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          7.1682412060301095e-09,
+          2.7017729617120168e-09,
+          1.0129123618090449e-07,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          8.494948461055274e-08,
+          4.447146525665368e-09,
+          -1.3499820351758751e-08
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          4.447146525665368e-09,
+          1.0467981312814064e-07,
+          2.537487072236728e-09
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          -1.3499820351758748e-08,
+          2.5374870722367345e-09,
+          1.213854824120602e-07
+        ]
+      ],
+      "six_coordinate_order": [
+        "C_parent",
+        "Q_parent",
+        "S_parent",
+        "C_child",
+        "Q_child",
+        "S_child"
+      ]
+    },
+    {
+      "C_child": -0.0020042307792985867,
+      "C_child_over_C_parent": -0.4381771659873443,
+      "C_parent": 0.004574019220701414,
+      "C_parent_times_C_child": -9.16739010723311e-06,
+      "child_design": "pell_Dplus1_N112_norm2",
+      "lineage": "pell_Dplus1",
+      "null_covariance_of_mean": [
+        [
+          4.3878724371859314e-07,
+          2.914923316582918e-07
+        ],
+        [
+          2.914923316582918e-07,
+          4.3878724371859314e-07
+        ]
+      ],
+      "null_order": [
+        "H4_null_2Cchild_plus_Cparent",
+        "H8_null_2Cchild_minus_Cparent"
+      ],
+      "null_scores": {
+        "H4_null_2Cchild_plus_Cparent": {
+          "standard_error": 0.0006624101778494901,
+          "value": 0.0005655576621042407,
+          "z": 0.8537876998513514
+        },
+        "H8_null_2Cchild_minus_Cparent": {
+          "standard_error": 0.0006624101778494901,
+          "value": -0.008582480779298587,
+          "z": -12.956444611345722
+        }
+      },
+      "parent_child_sampling": "independent_seed_blocks_no_CRN",
+      "parent_design": "pell_Dplus1_N56",
+      "six_coordinate_covariance_of_mean": [
+        [
+          7.36474560301507e-08,
+          6.00048983604484e-10,
+          9.012625628140733e-09,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          6.00048983604484e-10,
+          9.00153429648241e-08,
+          4.6524930077932615e-09,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          9.012625628140733e-09,
+          4.652493007793255e-09,
+          1.3819635678391965e-07,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          9.128494692211061e-08,
+          -7.144899976253924e-10,
+          3.793170226130703e-09
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          -7.144899976253924e-10,
+          7.909576790201002e-08,
+          3.6934514709729042e-09
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          3.793170226130703e-09,
+          3.6934514709729042e-09,
+          1.2434597864321603e-07
+        ]
+      ],
+      "six_coordinate_order": [
+        "C_parent",
+        "Q_parent",
+        "S_parent",
+        "C_child",
+        "Q_child",
+        "S_child"
+      ]
+    }
+  ],
+  "master_seed": 20260829,
+  "model": "square_bond_percolation",
+  "p": 0.5,
+  "primary_scores": {
+    "H4": "2*C_child+C_parent=0",
+    "H8": "2*C_child-C_parent=0",
+    "radial_assumption": "same leading C~N^-1 transfer for the H4/H8 comparison"
+  },
+  "samples_per_design": 2000000,
+  "sampling_contract": {
+    "batch_labels_are_not_paired_across_designs": true,
+    "cross_design_covariance": "zero by independent RNG stream design",
+    "parent_child_common_random_numbers": false,
+    "seed_blocks": {
+      "pell_Dminus2_N30": 11418563313151150124,
+      "pell_Dminus2_N60_norm2": 16291321729029300786,
+      "pell_Dplus1_N112_norm2": 15155520681065720096,
+      "pell_Dplus1_N56": 16026911447777570598
+    }
+  },
+  "schema": "p156-square-bond-primitive-norm2-v1",
+  "workers_affect_results": false
+}
