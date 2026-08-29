@@ -1,0 +1,32 @@
+{
+  "schema": "matching-one/digital-alexander-quotient-frontier-manifest/v1",
+  "issue": 269,
+  "phase": "degenerate_short_period_frontier",
+  "period_normal_form": "2D Hermite normal form",
+  "order_range": [2, 6],
+  "required_counts": {
+    "HNF_representatives": 32,
+    "complete_filtration_paths": 9558
+  },
+  "gates": [
+    "direct first/second births equal historical K_minus/K_plus",
+    "full rank path reconstructs from the two endpoints",
+    "black/white ambient ranks sum to two",
+    "both swapped/reversed endpoint sums equal N+1",
+    "rank-one black/white projective lines agree and remain constant"
+  ],
+  "outputs": {
+    "json": "results/digital-alexander-quotient-frontier/latest.json",
+    "markdown": "results/digital-alexander-quotient-frontier/latest.md"
+  },
+  "commands": [
+    "python scripts/digital_alexander_quotient_frontier.py --format json",
+    "python scripts/digital_alexander_quotient_frontier.py --format markdown",
+    "python -m unittest tests.test_digital_alexander_quotient_frontier"
+  ],
+  "claim_boundary": {
+    "included": "all permutations on every index-2-through-6 HNF quotient",
+    "excluded": "index 7 and above, unrestricted theorem, and production changes",
+    "parent_issue": "remain open"
+  }
+}
