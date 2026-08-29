@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import itertools
 import sys
 import unittest
 from pathlib import Path
@@ -18,25 +19,46 @@ class DigitalAlexanderQuotientFrontierTests(unittest.TestCase):
         cls.artifact = frontier.build_artifact()
 
     def test_all_hnf_representatives_and_permutations_are_exhausted(self) -> None:
-        self.assertEqual(self.artifact["status"], "no_counterexample_through_index_7")
-        self.assertEqual(self.artifact["HNF_representatives"], 40)
-        self.assertEqual(self.artifact["filtration_paths"], 49878)
-        self.assertEqual(len(self.artifact["geometries"]), 40)
+        self.assertEqual(self.artifact["status"], "no_counterexample_through_index_8")
+        self.assertEqual(self.artifact["HNF_representatives"], 55)
+        self.assertEqual(self.artifact["filtration_paths"], 654678)
+        self.assertEqual(len(self.artifact["geometries"]), 55)
 
     def test_face_degeneracy_partition_is_complete(self) -> None:
         self.assertEqual(
             self.artifact["honest_face_representatives"]
             + self.artifact["self_identifying_face_representatives"],
-            40,
+            55,
         )
-        self.assertEqual(self.artifact["honest_face_representatives"], 17)
-        self.assertEqual(self.artifact["self_identifying_face_representatives"], 23)
+        self.assertEqual(self.artifact["honest_face_representatives"], 28)
+        self.assertEqual(self.artifact["self_identifying_face_representatives"], 27)
 
     def test_index_seven_extension_is_complete(self) -> None:
         rows = [row for row in self.artifact["geometries"] if row["order"] == 7]
         self.assertEqual(len(rows), 8)
         self.assertTrue(all(row["permutations"] == 5040 for row in rows))
         self.assertEqual(sum(row["four_distinct_face_corners"] for row in rows), 4)
+
+    def test_index_eight_extension_is_complete(self) -> None:
+        rows = [row for row in self.artifact["geometries"] if row["order"] == 8]
+        self.assertEqual(len(rows), 15)
+        self.assertTrue(all(row["permutations"] == 40320 for row in rows))
+        self.assertEqual(sum(row["four_distinct_face_corners"] for row in rows), 11)
+        self.assertEqual(sum(row["rank_one_plateau_steps"] for row in rows), 1817856)
+
+    def test_cached_and_uncached_paths_are_identical(self) -> None:
+        geometry = frontier.integer_torus_geometry(((2, 0), (0, 2)), name="cache-equivalence")
+        state_table = frontier.build_state_table(geometry)
+        self.assertEqual(len(state_table), 1 << geometry.n)
+        for permutation in itertools.permutations(range(geometry.n)):
+            self.assertEqual(
+                frontier.analyze_permutation(geometry, permutation),
+                frontier.analyze_permutation(
+                    geometry,
+                    permutation,
+                    state_table=state_table,
+                ),
+            )
 
     def test_all_five_exact_gates_have_zero_failures(self) -> None:
         expected = {
@@ -56,7 +78,9 @@ class DigitalAlexanderQuotientFrontierTests(unittest.TestCase):
         geometries = self.artifact["geometries"]
         self.assertEqual(max(row["maximum_saturation_index"] for row in geometries), 1)
         self.assertEqual(sum(row["permutations_with_index_evolution"] for row in geometries), 0)
-        self.assertEqual(sum(row["rank_one_plateau_steps"] for row in geometries), 150128)
+        self.assertEqual(sum(row["rank_one_plateau_steps"] for row in geometries), 1967984)
+        self.assertEqual(sum(row["cached_subsets"] for row in geometries), 5980)
+        self.assertTrue(all(row["cached_subsets"] == 1 << row["order"] for row in geometries))
 
     def test_failure_counts_match_stored_examples(self) -> None:
         for gate, count in self.artifact["total_failure_counts"].items():
