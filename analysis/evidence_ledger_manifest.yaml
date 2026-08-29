@@ -117,8 +117,8 @@
     },
     {
       "id": "p45_angular_normalized_root",
-      "raw_data_group": "p45_angular_normalized_root",
-      "role": "primary",
+      "raw_data_group": "p45_p49_shared_fullcurve_histograms",
+      "role": "sensitivity",
       "status": "SCORED",
       "channel": {"source": "matching_root", "target": "matching_root", "exact_map": null},
       "chronology": {
@@ -150,11 +150,36 @@
     },
     {
       "id": "p49_clean_full_curve",
-      "raw_data_group": "p49_fullcurve_doubling_histograms",
+      "raw_data_group": "p45_p49_shared_fullcurve_histograms",
       "role": "primary",
-      "status": "PENDING_ARTIFACT_EXTRACTION",
-      "channel": {"source": "matching_full_curve", "target": "matching_full_curve", "exact_map": null},
-      "models": {}
+      "status": "SCORED",
+      "channel": {"source": "matching_even_derivative", "target": "matching_even_derivative", "exact_map": null},
+      "chronology": {
+        "prediction_frozen_before_reveal": true,
+        "prediction_artifact": "predictions/p48_sprime_correction_20260828.yaml",
+        "prediction_sha256": "0d44228ae117f94cb1f99d1e2727eb47390aae950c3ae70c21dd8bc5a09454ae",
+        "reveal_artifact": "results/server-20260828/P49-fullcurve-doubling-100m/analysis/score.json",
+        "reveal_blob_sha": "39941d4083754f6fbe931bbe4d1730475917c4cb"
+      },
+      "observation": [0.0055380388347450625, 0.004593056189910697],
+      "models": {
+        "H4_pure_N_minus_5_over_4": {
+          "mean": [0.0044272958126054, 0.0031659684253880624],
+          "covariance": [[8.229336218174841e-8, 2.2002864811040103e-8], [2.2002864811040103e-8, 6.166617390724193e-8]]
+        },
+        "q2_even_scalar": {
+          "mean": [0.005709852977251097, 0.004350252194522092],
+          "covariance": [[1.665255894879427e-7, 1.0244960980202156e-7], [1.0244960980202158e-7, 1.3834359840953507e-7]]
+        },
+        "rank2_Jordan_log": {
+          "mean": [0.005754384092088816, 0.004559266944357833],
+          "covariance": [[1.7030887098338484e-7, 1.1871468218194916e-7], [1.1871468218195001e-7, 1.6753932239972602e-7]]
+        },
+        "zero_effect": {
+          "mean": [0.0, 0.0],
+          "covariance": [[5.1838650845447447e-8, 2.2463751922158947e-10], [2.2463751922158947e-10, 4.609251836552054e-8]]
+        }
+      }
     },
     {
       "id": "p91_n145_to_n290_full_curve",
