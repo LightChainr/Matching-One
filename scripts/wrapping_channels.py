@@ -26,6 +26,13 @@ class TopologyChannel(str, Enum):
     DIRECTION_1 = "direction_1"
 
 
+class ModularBehavior(str, Enum):
+    """Behavior of a topology label under an SL(2,Z) homology-basis change."""
+
+    SCALAR = "modular_scalar"
+    BASIS_DEPENDENT = "basis_dependent"
+
+
 class Combination(str, Enum):
     PRIMAL = "primal"
     MATCHING = "matching"
@@ -82,6 +89,12 @@ class ObservableDescriptor:
             "quantity": self.quantity.value,
         }
 
+    @property
+    def modular_behavior(self) -> ModularBehavior:
+        """Classify only the topology label, not a physical response field."""
+
+        return modular_behavior(self.channel)
+
     @classmethod
     def from_dict(cls, payload: Mapping[str, Any]) -> "ObservableDescriptor":
         required = {
@@ -123,6 +136,42 @@ class AffineTransform:
             "offset": self.offset,
             "exact_identity": self.exact_identity,
         }
+
+
+def modular_behavior(channel: TopologyChannel) -> ModularBehavior:
+    """Return the exact homology-basis behavior of a registered channel.
+
+    ``either`` is the event ``rank > 0`` and ``cross`` is ``rank == 2``;
+    rational subgroup rank is invariant under SL(2,Z).  The other registered
+    channels refer to the selected quotient generators.  In particular, a
+    rank-one spiral can have ``both=True`` and shear to a single generator.
+
+    This is a topology-label contract only.  It does not assert that an
+    orientation response is a homogeneous CFT spin field.
+    """
+
+    if channel in (TopologyChannel.CROSS, TopologyChannel.EITHER):
+        return ModularBehavior.SCALAR
+    if channel in (
+        TopologyChannel.BOTH,
+        TopologyChannel.DIRECTION_0,
+        TopologyChannel.DIRECTION_1,
+    ):
+        return ModularBehavior.BASIS_DEPENDENT
+    raise ObservableMappingError(f"unregistered topology channel {channel!r}")
+
+
+def require_modular_scalar_topology(
+    descriptor: ObservableDescriptor,
+) -> ModularBehavior:
+    """Fail closed unless ``descriptor`` uses a modular-scalar topology label."""
+
+    behavior = descriptor.modular_behavior
+    if behavior is not ModularBehavior.SCALAR:
+        raise ObservableMappingError(
+            f"channel {descriptor.channel.value!r} is {behavior.value}, not modular_scalar"
+        )
+    return behavior
 
 
 def _opposite_coordinates(

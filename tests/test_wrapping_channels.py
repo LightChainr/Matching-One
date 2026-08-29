@@ -11,6 +11,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from wrapping_channels import (  # noqa: E402
     Combination,
+    ModularBehavior,
     Normalization,
     ObservableDescriptor,
     ObservableMappingError,
@@ -19,6 +20,8 @@ from wrapping_channels import (  # noqa: E402
     Quantity,
     TopologyChannel,
     map_observable,
+    modular_behavior,
+    require_modular_scalar_topology,
 )
 
 
@@ -42,6 +45,41 @@ def descriptor(
 
 
 class WrappingChannelMapTests(unittest.TestCase):
+    def test_modular_scalar_topology_contract(self) -> None:
+        for channel in (TopologyChannel.CROSS, TopologyChannel.EITHER):
+            with self.subTest(channel=channel.value):
+                value = descriptor(channel, Combination.ODD)
+                self.assertIs(value.modular_behavior, ModularBehavior.SCALAR)
+                self.assertIs(
+                    require_modular_scalar_topology(value), ModularBehavior.SCALAR
+                )
+
+    def test_basis_dependent_channels_fail_scalar_gate(self) -> None:
+        for channel in (
+            TopologyChannel.BOTH,
+            TopologyChannel.DIRECTION_0,
+            TopologyChannel.DIRECTION_1,
+        ):
+            with self.subTest(channel=channel.value):
+                value = descriptor(channel, Combination.PRIMAL)
+                self.assertIs(
+                    modular_behavior(channel), ModularBehavior.BASIS_DEPENDENT
+                )
+                with self.assertRaisesRegex(
+                    ObservableMappingError, "basis_dependent, not modular_scalar"
+                ):
+                    require_modular_scalar_topology(value)
+
+    def test_modular_behavior_is_independent_of_matching_combination(self) -> None:
+        for combination in Combination:
+            with self.subTest(combination=combination.value):
+                self.assertIs(
+                    descriptor(
+                        TopologyChannel.CROSS, combination
+                    ).modular_behavior,
+                    ModularBehavior.SCALAR,
+                )
+
     def test_issue43_even_contrast_map_negates_without_offset(self) -> None:
         transform = map_observable(
             descriptor(TopologyChannel.EITHER, Combination.EVEN),
