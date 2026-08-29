@@ -1,4 +1,4 @@
-version: 9
+version: 10
 updated: 2026-08-29
 purpose: >
   Lightweight navigation/provenance index. Registry conflicts never block
@@ -54,6 +54,9 @@ evidence_archives:
   - {id: COVER_CHARACTERS, path: results/exact-cover-character-oracles/gaussian_cover_characters.json, status: exact_result, role: deck_character_oracle}
   - {id: N26_BETA, path: results/local-20260828/P115-n26-self-matching-exact, status: negative_result, role: exact_Beta_failure}
   - {id: GAUSSIAN_COVER_SELECTION_RULE, path: results/exact-cover-character-oracles/norm2_selection_rule.json, status: immutable_result, role: exact_deck_character_linear_null_and_allowed_channels}
+  - {id: Q1_SPIN4_VELOCITY, path: results/q-velocity-spin4, status: exact_result, role: fourleg_versus_thermal_Q4_velocity_fingerprint}
+  - {id: ANISOTROPY_STENCIL_GATE, path: results/anisotropy-stencil-gate, status: exact_result, role: microscopic_H4_geometry_feasibility_boundary}
+  - {id: PC_CONFIDENCE_PREREGISTRATION, path: results/pc-confidence-preregistration, status: frozen_protocol, role: fresh_IID_400_trial_cutoff373_acquisition_contract}
 
 topic_derivations:
   - {path: notes/pivotal-russo-finite-volume.md, status: topic_derivation, role: pivotal_identity}
@@ -130,6 +133,7 @@ frontier_open_as_of_2026_08_29:
   - {pr: 273, state: open, draft: false, branch: results/p154-norm4-production-reveal-20260829, commit: 8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc, classification: production_reveal, role: norm4_q2_versus_Jordan_score, representative_path: results/server-20260829/P154-norm4-production/analysis/scalar_score.json}
   - {pr: 277, state: open, draft: false, branch: analysis/p154-even-rank2-transfer-20260829, commit: 3e855ced4fd98d8979c0b712636b45c2fa54f969, classification: prospective_pilot_score_of_post_reveal_frozen_recurrence, role: generation4_Jordan_plus_even_mode_survival_without_eigenvalue_identification, representative_path: results/server-20260829/P154-norm4-generation4-pilot/REPORT.md}
 
+canonical_integration_history_scope: selected_scientifically_material_integrations_not_an_exhaustive_merge_log
 canonical_integration_history:
   - {pr: 190, role: prospective_norm5_reveal}
   - {pr: 195, role: P50_execution_repairs}
@@ -153,6 +157,12 @@ canonical_integration_history:
   - {pr: 217, role: Q4_Jordan_inheritance}
   - {pr: 232, role: Q4_Jordan_shape}
   - {pr: 240, role: multiradius_small_torus_stop}
+  - {pr: 260, role: exact_Q1_spin4_competitor_preflight}
+  - {pr: 264, role: exact_Q1_spin_sector_velocity_oracle}
+  - {pr: 272, role: exact_microscopic_anisotropy_stencil_gate}
+  - {pr: 278, role: pc_confidence_feasibility_gate}
+  - {pr: 279, role: exact_pc_block_event_semantics}
+  - {pr: 280, role: linear_pc_block_event_evaluator}
   - {pr: 281, role: pc_confidence_preregistration_and_ledger_audit}
   - {pr: 282, role: essential_H1_filtration_oracle}
   - {pr: 283, role: existing_rank_archive_essential_birth_reconstruction}

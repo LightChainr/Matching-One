@@ -82,6 +82,8 @@ measure score + finite confluent projector + explicit operator derivative,
 
 with boundary prefactor and amplitude-gauge terms where required. A measure score alone is not a logarithmic field derivative.
 
+Main already fixes the Q=1 continuum-family velocity gap `sqrt(3)/(4 pi)` between the four-leg and thermal-Q4 candidates. That analytic oracle is an input to the lattice interface, not a task to repeat; the unresolved quantities are the multiplicity/field terms, typed lattice overlap and projector contribution.
+
 P263 supplies an exactly unbiased stopped-transcript estimator and an exact spectator-noise cancellation mechanism. The frozen 20k pilot did not demonstrate a variance gain because the stopped and global runs were unpaired and had different rare-event counts.
 
 **Next decision output, variance gate:** on each outer transcript record both the stopped conditional estimator and its matched global score; vary completion count `K` and scale; report paired covariance, variance ratio, revealed fraction and completion-noise share. A favorable gate raises the localized estimator's downstream priority; an unfavorable gate keeps the exact construction available while shifting compute attention to the matched global route.
@@ -125,7 +127,9 @@ Unsubtracted all-order Q jets also contain a forced Pascal component. Neither mo
 
 ## Parallel threshold-origin program
 
-Operator identification does not determine the microscopic numerical value of square-site `p_c`. Exact open-block semantics, correlated-hyperedge/self-dual closures, confidence constructions and symbolic obstructions may run beside all seven priorities. Results here constrain particular mechanisms; they do not upgrade or weaken a continuum-field claim by themselves.
+Operator identification does not determine the microscopic numerical value of square-site `p_c`. The block-event line has already moved from feasibility to an auditable execution contract: exact tiny-event semantics, an O(`s^2`) evaluator with 520/520 differential agreement, and a content-addressed familywise plan with 400 trials per attempt and acceptance cutoff 373 are on `main`. The missing empirical object is now fresh IID acquisition under that frozen plan, not another semantics rewrite. Correlated-hyperedge/self-dual closures and symbolic obstructions may run beside it and all seven priorities. Results here constrain particular mechanisms; they do not upgrade or weaken a continuum-field claim by themselves.
+
+The exact anisotropy-stencil gate supplies a second microscopic design filter. A nonempty nonnegative axis-only fourth-moment proxy cannot cross zero; in the declared axis-plus-integer-diagonal normalization cancellation requires `4:1`, and a more general positive-weight search needs a negative-phase oblique orbit. This prevents a blind axis-only scan while leaving exactly-critical oblique constructions and the renormalized H4 coupling fully open.
 
 ## Existing infrastructure to reuse
 
@@ -148,7 +152,7 @@ x nuisance cancellation and archive reuse
 - **P205 ordinary prism:** H4 beats the frozen H8/H12 lines. A `rho`/C3 run gains more information from a distinct typed observer than from repeating this selector.
 - **PR #267 activation reuse:** all ten archived pairs are scored, the full curves turn three negative root points into stable local node crossings, and the P205 subset resolves H4/H4. The next gain is line-resolved common-field covariance, not another marginal K1/K2 split.
 - **Norm-4:** analytic q2 and the frozen common generator fail; the frozen generation-four target keeps the small-state family live but does not separate pure Jordan, an analytic even mode or persistent curvature, nor establish a nonzero extra mode.
-- **Annulus:** one scalar shell coordinate fails; a two-state recurrence survives held-out N365. More N365 replicas alone have low mechanism gain.
+- **PR #247 / annulus:** the ordinary plus-shell control passes, the matching-odd minus-shell scalar law fails and matched-delta equality is marginally tense inside one correlated block; a distinct two-state recurrence survives held-out N365. A context-enriched basis now has higher mechanism gain than treating any one of those rows as the whole radial story.
 - **Triangular log pair:** the cross-cutoff shear is measured; repeat production without gauge closure is lower value.
 - **P263 stopped estimator:** unbiasedness and the mechanism are exact; variance advantage remains unmeasured until the stopped/global comparison is paired.
 
@@ -160,6 +164,8 @@ These are information judgments, not prohibitions. New semantics, a new observer
 - **Local pivotal N130/N170:** the current two response rows are nearly rank one. The historical signal to “stop adding replicas” means that replicas of the same readout have low present information gain, not that the task is forbidden; a thermal-null, representation-typed or line-versus-landing row can immediately raise its priority.
 - **Third primitive norm-2 generation:** it remains an independent opportunity when its new phase, character or Smith geometry separates mechanisms rather than extending the same marginal fit.
 - **Scalar width and free exponent repeats:** the declared scalar-width shortcuts have failed and another free exponent alone is weak discrimination; a new observer, source or exact typed map remains welcome.
+- **Microscopic H4 design:** an exactly-critical negative-phase oblique orbit can immediately raise this lane; axis-only nonnegative proxy scans cannot realize the declared cancellation and therefore add little mechanism information.
+- **Threshold confidence acquisition:** the frozen 400/373 plan is ready for fresh IID trials. New closures or symbolic arguments remain parallel alternatives rather than prerequisites or vetoes.
 
 ## Lifecycle maintenance and decision rule
 

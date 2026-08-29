@@ -1,4 +1,4 @@
-version: 9
+version: 10
 updated: 2026-08-29
 purpose: >
   Compact map of durable evidence and next information axes. This ranks work;
@@ -164,6 +164,32 @@ branch_sources:
     paths:
       - results/exact_small_matching_polynomials.md
       - scripts/exact_matching_polynomial.py
+  - id: SRC_Q_VELOCITY_SPIN4_MAIN
+    integration_status: main_integrated
+    ref: main
+    commit: 540a11543a467d85b7c61fff3f7d96d8e8b5e8df
+    paths:
+      - notes/q-velocity-spin4-spectroscopy.md
+      - results/q-velocity-spin4/latest.json
+      - results/q-velocity-spin4/latest.md
+  - id: SRC_ANISOTROPY_STENCIL_MAIN
+    integration_status: main_integrated
+    ref: main
+    commit: a0dcc8fef52f448aa63cbed39c2d53141dc56a60
+    paths:
+      - notes/anisotropy-stencil-feasibility-gate.md
+      - results/anisotropy-stencil-gate/latest.json
+      - results/anisotropy-stencil-gate/latest.md
+  - id: SRC_PC_CONFIDENCE_CHAIN_MAIN
+    integration_status: main_integrated
+    ref: main
+    commit: d433f53432e8540ecbfe93db96617d0b1ed89fc5
+    paths:
+      - results/rigorous-pc-confidence-gate/latest.json
+      - results/pc-block-event-exact/latest.json
+      - results/pc-block-event-linear/latest.json
+      - results/pc-confidence-preregistration/latest.json
+      - results/pc-confidence-preregistration/latest.md
   - id: SRC_NORM5_GLOBAL_MAIN
     integration_status: main_integrated
     ref: main
@@ -543,6 +569,27 @@ scientific_nodes:
     information_gain: very_high
     compute_cost: low
     decision_experiments: [DX_RANK_BIRTH_GLOBAL_BRIDGE, DX_RHO_C3_SECTOR, DX_Q_TANGENT_INTERFACE]
+  - id: SN_Q1_SPIN4_VELOCITY_ORACLE
+    title: exact_Q1_velocity_split_between_fourleg_and_thermal_Q4_spin4_families
+    integration_status: main_integrated
+    state: continuum_module
+    sources: [potts_Q_measure, explicit_operator_derivative]
+    observer_sectors: [global_rank_projector, topology_typed]
+    geometries: [finite_transfer_cylinder]
+    acquisition: [exact_construction]
+    source_refs: [SRC_Q_VELOCITY_SPIN4_MAIN]
+    known_result: at_Q1_the_fourleg_V2plusminus2_velocity_is_minus5sqrt3_over_16pi_the_thermal_Q4epsilon_velocity_is_minus9sqrt3_over_16pi_and_their_exact_gap_is_sqrt3_over_4pi
+    boundary: generic_loop_spin8_and_spin12_rows_are_controls_not_H8_H12_angular_alias_assignments_and_the_oracle_does_not_supply_Potts_multiplicities_explicit_field_definition_terms_or_a_lattice_overlap
+    supports: [Q_direction_as_a_parameter_free_fourleg_versus_thermal_Q4_discriminator]
+    tensions: [spin4_harmonic_label_as_a_complete_operator_identity]
+    excludes_only: [equal_Q1_velocity_for_the_declared_fourleg_and_thermal_Q4_families]
+    reusable_data_refs: [results/q-velocity-spin4/latest.json]
+    dependency_group_refs: []
+    missing_inputs: [lattice_measure_projector_field_interface, typed_nonzero_lattice_overlap]
+    next_discriminator: insert_the_exact_velocity_rows_into_one_complete_lattice_Q_tangent_positive_control
+    information_gain: high
+    compute_cost: none
+    decision_experiments: [DX_Q_TANGENT_INTERFACE]
   - id: SN_NORM4_EVEN_TRANSFER
     title: norm4_scalar_q2_rejection_and_Jordan_boundary_survival
     integration_status: open_pr
@@ -573,18 +620,60 @@ scientific_nodes:
     geometries: [annulus, gaussian_cover]
     acquisition: [new_production, existing_data_reuse]
     source_refs: [SRC_NORM5_MULTIRADIUS_PR247, SRC_ANNULUS_RECURRENCE]
-    known_result: simple_matching_odd_scalar_shell_law_fails_but_a_two_state_recurrence_frozen_on_N325_N425_passes_the_heldout_N365_geometry_with_joint_p_about_0p965
-    boundary: the_heldout_readout_confirms_a_two_state_recurrence_but_does_not_distinguish_Jordan_from_two_distinct_roots
-    supports: [shared_two_state_radial_dynamics]
-    tensions: [one_scalar_shell_coordinate]
+    known_result: in_one_PR247_raw_block_the_plus_shell_is_compatible_with_a_common_amplitude_p_0p3564_the_matchingodd_minus_shell_rejects_the_scalar_law_p_0p00382_and_matched_delta_equality_is_marginally_tense_p_0p04544_while_a_distinct_two_state_recurrence_frozen_on_N325_N425_passes_heldout_N365_with_joint_p_about_0p965
+    boundary: plus_minus_shell_and_matched_delta_are_correlated_views_of_one_raw_block_and_the_heldout_recurrence_does_not_distinguish_Jordan_from_two_distinct_or_complex_roots
+    supports: [ordinary_plus_shell_positive_control, shared_two_state_radial_dynamics]
+    tensions: [one_matchingodd_scalar_shell_coordinate, exact_fixed_delta_collapse_at_current_precision]
     excludes_only: [the_declared_simple_matching_odd_scalar_shell_law]
     reusable_data_refs: [results/server-20260829/P225-norm5-multiradius/analysis.json, results/server-20260829/P253-n365-annulus/n365_heldout_score.json]
-    dependency_group_refs: []
+    dependency_group_refs: [norm5-multiradius-pr247]
     missing_inputs: [common_source_readout_Gaussian_annulus_cells]
     next_discriminator: a_context_rectangle_or_second_independent_readout_not_more_N365_replicas
     information_gain: high
     compute_cost: moderate
     decision_experiments: [DX_MIXED_CONTEXT_RECTANGLE]
+  - id: SN_MICROSCOPIC_ANISOTROPY_STENCIL_GATE
+    title: exact_microscopic_spin4_stencil_feasibility_boundary
+    integration_status: main_integrated
+    state: microscopic_threshold_structure
+    sources: [bernoulli_thermal]
+    observer_sectors: [local_pivotal, matching_odd]
+    geometries: [square_controls]
+    acquisition: [exact_construction]
+    source_refs: [SRC_ANISOTROPY_STENCIL_MAIN]
+    known_result: every_nonempty_nonnegative_axis_only_fourth_moment_proxy_is_strictly_positive_axis_plus_integer_diagonal_cancels_only_at_weight_ratio_4_to_1_and_general_positive_weight_cancellation_requires_a_negative_cos4theta_orbit
+    boundary: this_is_an_exact_statement_for_the_declared_microscopic_stencil_proxy_not_a_derivation_or_zero_theorem_for_the_renormalized_H4_coupling
+    supports: [negative_phase_oblique_orbit_as_a_geometry_design_requirement_for_proxy_cancellation]
+    tensions: [blind_axis_only_improved_action_zero_search]
+    excludes_only: [nontrivial_zero_inside_the_declared_nonnegative_axis_only_proxy_family]
+    reusable_data_refs: [results/anisotropy-stencil-gate/latest.json]
+    dependency_group_refs: []
+    missing_inputs: [exactly_critical_oblique_family_with_physical_weights, measured_renormalized_H4_response]
+    next_discriminator: derive_an_exactly_critical_negative_phase_oblique_orbit_family_then_measure_its_typed_H4_response
+    information_gain: high
+    compute_cost: low
+    decision_experiments: []
+  - id: SN_PC_BLOCK_EVENT_CONFIDENCE_CHAIN
+    title: frozen_block_event_semantics_linear_evaluator_and_confidence_acquisition_contract
+    integration_status: main_integrated
+    state: microscopic_threshold_structure
+    sources: [bernoulli_thermal]
+    observer_sectors: [boundary]
+    geometries: [square_controls]
+    acquisition: [exact_construction]
+    source_refs: [SRC_PC_CONFIDENCE_CHAIN_MAIN]
+    known_result: feasibility_exact_tiny_event_semantics_an_O_s_squared_evaluator_with_520_of_520_differential_matches_and_a_content_addressed_familywise_plan_with_400_trials_and_acceptance_cutoff_373_are_integrated
+    boundary: validator_fixtures_and_independence_attestations_are_not_fresh_IID_percolation_evidence_and_no_new_pc_bound_or_closed_form_has_been_obtained
+    supports: [execution_ready_auditable_threshold_confidence_acquisition]
+    tensions: [protocol_readiness_as_an_empirical_bound]
+    excludes_only: [claiming_a_bound_from_the_current_synthetic_and_exact_protocol_artifacts]
+    reusable_data_refs: [results/pc-block-event-linear/latest.json, results/pc-confidence-preregistration/latest.json]
+    dependency_group_refs: []
+    missing_inputs: [fresh_IID_trials_under_the_frozen_400_over_373_plan]
+    next_discriminator: execute_and_audit_fresh_IID_acquisition_without_changing_the_content_addressed_plan
+    information_gain: high
+    compute_cost: moderate
+    decision_experiments: []
   - id: SN_PATH_FILTRATION_MEMORY
     title: endpoint_forgets_factor_order_but_filtration_retains_activation_time
     integration_status: branch_only
@@ -946,6 +1035,13 @@ dependency_groups:
       - results/server-20260829/P154-norm4-generation4-pilot/raw/n520_100m.metadata.json
       - results/server-20260829/P154-norm4-generation4-pilot/raw/n680_100m.metadata.json
     covariance_rule: scalar_U_and_thermal_jet_share_the_same_curves_and_are_correlated_views_not_additive_evidence
+  - id: norm5-multiradius-pr247
+    kind: one_aligned_multiradius_random_block_with_correlated_plus_minus_shell_and_matched_delta_views
+    member_sizes: [325, 425]
+    source_ref: SRC_NORM5_MULTIRADIUS_PR247
+    metadata_paths:
+      - results/server-20260829/P225-norm5-multiradius/raw/norm5_200k.metadata.json
+    covariance_rule: plus_minus_sameR_shell_and_matched_delta_summaries_share_one_raw_block_and_are_not_additive_evidence
 
 decision_experiments:
   - id: DX_RANK_BIRTH_GLOBAL_BRIDGE
@@ -990,7 +1086,7 @@ decision_experiments:
     scientific_node_refs: [SN_NORM4_EVEN_TRANSFER, SN_ANNULUS_TWO_STATE_RECURRENCE, SN_PATH_FILTRATION_MEMORY]
     observer_sector_refs: [topology_typed, local_pivotal, matching_odd]
     source_refs: [SRC_NORM4_REVEAL_PR273, SRC_NORM4_EVEN_MODE_PR277, SRC_CONTEXT_HANKEL, SRC_P200_PATH_FILTRATION, SRC_ANNULUS_RECURRENCE]
-    dependency_group_refs: [norm4-generation4-pr277]
+    dependency_group_refs: [norm4-generation4-pr277, norm5-multiradius-pr247]
     acquisition: small_pilot
     expected_model_space_reduction: very_high
     compute_cost: moderate
@@ -1009,9 +1105,9 @@ decision_experiments:
   - id: DX_Q_TANGENT_INTERFACE
     attention_rank: 5
     name: measure_projector_field_Q_tangent_positive_control
-    scientific_node_refs: [SN_GLOBAL_SPIN4_SELECTION_STAIRCASE, SN_Q_TANGENT_THREE_PART_INTERFACE, SN_BOUNDARY_Q_TANGENT_CONTROL, SN_THERMAL_Q4_WARD]
+    scientific_node_refs: [SN_GLOBAL_SPIN4_SELECTION_STAIRCASE, SN_Q1_SPIN4_VELOCITY_ORACLE, SN_Q_TANGENT_THREE_PART_INTERFACE, SN_BOUNDARY_Q_TANGENT_CONTROL, SN_THERMAL_Q4_WARD]
     observer_sector_refs: [boundary, topology_typed]
-    source_refs: [SRC_EXACT_FK_Q_SCORE, SRC_CONFLUENT_PROJECTOR, SRC_VJS_FIELD_DERIVATIVE, SRC_BOUNDARY_Q_TANGENT, SRC_BOUNDARY_Q_LATTICE, SRC_ARGUIN_ALL_ORDER_QJET]
+    source_refs: [SRC_Q_VELOCITY_SPIN4_MAIN, SRC_EXACT_FK_Q_SCORE, SRC_CONFLUENT_PROJECTOR, SRC_VJS_FIELD_DERIVATIVE, SRC_BOUNDARY_Q_TANGENT, SRC_BOUNDARY_Q_LATTICE, SRC_ARGUIN_ALL_ORDER_QJET]
     dependency_group_refs: []
     acquisition: small_pilot
     expected_model_space_reduction: high

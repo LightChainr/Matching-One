@@ -186,6 +186,8 @@ forced Pascal Q-jet subtraction before interpreting higher derivatives.
 
 Use the Ward `4:-6:3` row to test thermal descendant versus primary and the projector residue direction to test singlet/`[2]` confluence. For the boundary route, score the anchored cross-ratio tangent after removing the single amplitude gauge.
 
+Do not spend this lane rederiving the continuum-family Q velocities already exact on `main`: at Q=1 the four-leg `V_(2,+/-2)` and thermal `Q4 epsilon` rows differ by `sqrt(3)/(4 pi)` in `dx/dQ`. The spin-8/spin-12 generic-loop rows in that oracle are controls, not the H8/H12 angular aliases. What remains is to connect that exact fingerprint to a lattice observable through the measure + projector + explicit-field decomposition and a nonzero typed overlap.
+
 The branch-only P263 chain already establishes useful design facts: 200k/500k pilots do not reject the predicted shape; event-J crossfit is an exact variance-one no-op; the localized stopped-transcript estimator is exactly unbiased; and its unpaired 20k pilot did not resolve a variance advantage. The next low-cost decision is a paired same-outer-transcript comparison of stopped and matched global scores across K and scale. Its paired variance ratio decides whether the stopped route accelerates the full interface; either outcome leaves the exact estimator available.
 
 ## Target 6 contract: charged fusion
@@ -210,7 +212,8 @@ These lines remain active and may overtake the default order whenever they obtai
 | same-N norm-5 coalescence | exact amplitude-free interpolation is ready | use when its new Smith class fills the context rectangle efficiently |
 | local pivotal | current N130/N170 rows nearly rank one | add a thermal-null or representation-typed row, not merely replicas |
 | modular-scalar modulus | channel typing is `main_integrated` | one new typed `cross/either` shape with a parameter-free prediction |
-| microscopic threshold origin | exact semantics/evaluators exist; no threshold bound | correlated-hyperedge, block-event confidence or symbolic obstruction |
+| microscopic H4 origin | axis-only nonnegative fourth-moment proxy cannot cancel; axis/integer-diagonal cancellation is `4:1` only in the declared microscopic normalization | derive an exactly-critical family with a negative-`cos(4 theta)` oblique orbit before simulation; keep the proxy/renormalized-coupling boundary explicit |
+| microscopic threshold origin | feasibility, exact block-event semantics, O(`s^2`) evaluator and a frozen 400-trial/cutoff-373 plan are `main_integrated`; no empirical bound | acquire fresh IID trials under the frozen plan, while correlated-hyperedge and symbolic-obstruction work may continue independently |
 | post-annihilator corrections | composite algebra rules out some shortcuts but not amplitudes | joint harmonic/phase sidebands rather than exponent alone |
 
 ## Recovered frontier sources
@@ -230,6 +233,9 @@ These lines remain active and may overtake the default order whenever they obtai
 | small-width selection | `branch_only` `analysis/p120-operator-spectroscopy-20260829@9cf2373` |
 | double-projector staircase | `branch_only` `theory/p275-double-projector-selection-20260829@ddf41aa` |
 | norm-4 reveal / generation-four score | `open_pr` #273 `8b26a30`; #277 `3e855ce`, `results/server-20260829/P154-norm4-generation4-pilot/REPORT.md` |
+| Q=1 spin-sector velocity oracle | `main_integrated` PR #264 `540a115`, `results/q-velocity-spin4/latest.md` |
+| microscopic anisotropy stencil gate | `main_integrated` PR #272 `a0dcc8f`, `results/anisotropy-stencil-gate/latest.md` |
+| norm-5 plus/minus shell and matched-delta controls | `open_pr` #247 `9d35fa6`, `results/server-20260829/P225-norm5-multiradius/REPORT.md` |
 | annulus held-out recurrence | `branch_only` `analysis/p253-annulus-recurrence-20260829@8e91c90` |
 | ordered filtration | `branch_only` `analysis/p200-path-ordered-filtration-20260829@fb82de4` |
 | triangular log pair | `open_pr` #246 `7f9dcd8`; normalization audit `branch_only` `ceb7c6e` |
@@ -238,6 +244,7 @@ These lines remain active and may overtake the default order whenever they obtai
 | P263 stopped-score chain | `branch_only` `analysis/p263-local-stopped-qscore-20260829@8187970` |
 | C3 character and invariants | `branch_only` `57b59be`, `a6120aa` |
 | relative-source closure/rigidity | `branch_only` `94dd7f9`, `094ee36` |
+| block-event confidence chain | `main_integrated` PRs #278-#281 through `d433f53`, `results/pc-confidence-preregistration/latest.md` |
 
 See `docs/STATUS.md` for full branch names, artifact paths and claim boundaries.
 

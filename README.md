@@ -70,11 +70,13 @@ An unmerged exact global-endpoint calculation finds an ordinary linear selection
 
 The unmerged double-projector staircase sharpens the ordinary rank-plane question: the vacuum/KdV spin-4 direction lies on the Alexander-even line and has `A_top=0`, while the regular unlabeled `[2]` four-leg carrier also has zero ordinary overlap. Thermal `Q4 epsilon`/Jordan is the first listed candidate allowed by both selectors. “Allowed” is still not “coupled”: the missing discriminator is a nonzero lattice-to-module coupling together with its modulus/Jordan fingerprint. A new complex-C3 acquisition should therefore name a typed non-`A_top` module or charged observer, rather than repeat the already-resolved ordinary H4/H8/H12 character competition.
 
+Main also contains an exact Q=1 velocity fingerprint that makes the future Q-tangent test sharper. The four-leg `V_(2,+/-2)` row has `dx/dQ=-5 sqrt(3)/(16 pi)`, while thermal `Q4 epsilon` has `-9 sqrt(3)/(16 pi)`; their velocity gap is `sqrt(3)/(4 pi)`. The generic-loop spin-8 and spin-12 rows in that oracle are controls, not assignments of the experiment-design H8/H12 aliases. The analytic velocities therefore do not need to be rederived; the missing work is the lattice measure + projector + explicit-field interface and its overlap.
+
 ### The finite-size state is compact but not scalar
 
 The N145->290 full-curve result rejects a one-multiplier description through a resolved shape direction. Norm-4 subsequently rejects the frozen analytic q2 scalar and common thermal-jet generator. The post-reveal “Jordan plus one conjugation-even mode” recurrence then passes its frozen N520/N680 generation-four pilot at `lambda=1/2` (`1.314/2`, `p=.518` for scalar U; `9.298/10`, `p=.504` for the jet), removing the visible residual tension. Nearly identical `lambda=0` and `lambda=1` scores mean that pure Jordan, the analytic even-mode choice and persistent curvature remain unresolved; the pilot does not establish a nonzero extra mode or a unique transfer matrix. This raises the value of a geometry/operator coordinate chosen to maximize the frozen models' Mahalanobis separation rather than another free lambda fit.
 
-In the annulus line, the simplest matching-odd scalar shell law fails, yet a two-state radial recurrence determined from N325/N425 passes a held-out N365 third geometry with joint `p=.965`. The correct update is therefore not “radial structure failed,” but “one scalar coordinate failed while a two-state recurrence survived.”
+In the annulus line, PR #247 supplies a useful split inside one correlated raw block: the ordinary/local plus-shell control is compatible with one common per-log amplitude (`p=.3564`, amplitude about 3.3 source standard errors from zero), the matching-odd minus-shell scalar law fails (`p=.00382`), and matched-cutoff equality is marginally tense (`p=.04544`). A two-state radial recurrence determined from N325/N425 nevertheless passes a held-out N365 third geometry with joint `p=.965`. The correct update is therefore not “radial structure failed,” but “the ordinary control works, one odd scalar coordinate fails, and a two-state recurrence survives.”
 
 ### Geometry and acquisition carry different kinds of memory
 
@@ -127,7 +129,7 @@ Frozen chronology is preserved. Claim-bearing comparisons require identical obse
 python3 -m unittest discover -s tests -p 'test_*.py' -v
 ```
 
-No closed form for square-site `p_c` is claimed. Published numerical estimates remain method-specific and are tracked in `data/literature_threshold_sources.json`.
+No closed form for square-site `p_c` is claimed. The exact threshold-origin chain now fixes block-event semantics, an O(`s^2`) evaluator and a familywise plan with 400 trials and acceptance cutoff 373, but contains no fresh IID result. Its next empirical step is acquisition under that frozen plan. Separately, the exact microscopic H4 stencil gate shows that a nonnegative axis-only family cannot cancel its fourth-moment proxy; an admissible search needs a negative-phase oblique orbit (axis/integer-diagonal cancellation is `4:1` in the declared normalization). Neither statement is a theorem about the renormalized H4 coupling. Published numerical estimates remain method-specific and are tracked in `data/literature_threshold_sources.json`.
 
 ## License
 

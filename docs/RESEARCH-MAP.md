@@ -124,7 +124,15 @@ Two independent selection steps narrow the regular ordinary carrier:
 - vacuum/KdV spin 4 lies on the Alexander-even rank line and has exact zero `A_top` projection;
 - the regular unlabeled four-leg `[2]` endpoint has an exact ordinary linear selection zero under its declared generic-Q hypothesis.
 
-The transverse thermal `Q4 epsilon`/Jordan family is therefore the first listed candidate allowed by both selectors. “Allowed” is not “identified”: the missing evidence is a nonzero large-N lattice overlap plus a module fingerprint. The sharp fingerprint is the thermal-Q4 positive-mode Ward vector `4:-6:3`; an ordinary primary gives zero, and Jordan residues add a second gate. Modulus/phase dependence and the log-partner response must accompany any scaling power.
+The transverse thermal `Q4 epsilon`/Jordan family is therefore the first listed candidate allowed by both selectors. “Allowed” is not “identified”: the missing evidence is a nonzero large-N lattice overlap plus a module fingerprint. Main-integrated exact spectroscopy already fixes an additional Q-direction discriminator at Q=1:
+
+```text
+x'_[four-leg V_(2,+/-2)] = -5 sqrt(3)/(16 pi),
+x'_[thermal Q4 epsilon]   = -9 sqrt(3)/(16 pi),
+gap                       =  sqrt(3)/(4 pi).
+```
+
+The generic-loop spin-8 and spin-12 rows in that oracle are controls rather than H8/H12 angular-alias assignments. The other sharp fingerprint is the thermal-Q4 positive-mode Ward vector `4:-6:3`; an ordinary primary gives zero, and Jordan residues add a second gate. Modulus/phase dependence, the log-partner response and the complete lattice Q-derivative interface must accompany any scaling power.
 
 ## Rank-1 acquisition contract
 
@@ -150,7 +158,7 @@ The ordinary P205 prism selects H4, while the branch-only N325 deck-charged like
 
 ### Low-dimensional state and the targeted context rectangle
 
-Norm-4 rejects the frozen analytic q2 and common-generator forms. The post-reveal Jordan-plus-one-even-mode recurrence then passes its frozen N520/N680 generation-four target at `lambda=1/2`, but `lambda=0`, `1/2` and `1` are nearly indistinguishable. The small-state family remains usable, while neither a nonzero extra mode nor its transfer eigenvalue is identified. In the annulus, the simple odd-shell scalar law fails while a two-state recurrence trained on N325/N425 passes held-out N365. Separately, an unmarked final CRT endpoint is factor-order blind, whereas an intermediate rank filtration can retain activation time.
+Norm-4 rejects the frozen analytic q2 and common-generator forms. The post-reveal Jordan-plus-one-even-mode recurrence then passes its frozen N520/N680 generation-four target at `lambda=1/2`, but `lambda=0`, `1/2` and `1` are nearly indistinguishable. The small-state family remains usable, while neither a nonzero extra mode nor its transfer eigenvalue is identified. In the PR #247 multiradius block, the ordinary/local plus shell is compatible with a common amplitude (`p=.3564`), the matching-odd minus shell rejects that scalar law (`p=.00382`), and matched-cutoff equality is marginally tense (`p=.04544`); all three are correlated views of one raw block. A distinct two-state recurrence trained on N325/N425 then passes held-out N365 (`p=.965`). Separately, an unmarked final CRT endpoint is factor-order blind, whereas an intermediate rank filtration can retain activation time.
 
 These results motivate a **targeted pilot**, not another retrospective fit: acquire a common source and common readout basis over at least two Gaussian-cover and two annulus contexts, with shared replicas and held-out prediction. Compare one common generator against a context/morphism-enriched realization. Existing disjoint archives do not form the rectangle, and an endpoint-only row cannot test chronological memory.
 
@@ -160,7 +168,7 @@ The exact boundary tangent supplies a function-valued positive control, but the 
 
 The next P263 output is therefore paired: on each outer transcript record both the stopped estimator and its matched global score, vary completion count `K` and scale, and report their covariance and variance ratio. This is an estimator-mechanism gate, not a rescore of the boundary shape.
 
-Before any higher Q derivative is called a new state, subtract the topology-forced Pascal jet
+The continuum-family velocities of the four-leg and thermal-Q4 candidates are already exact on `main`; the live task is not to recompute them but to expose the lattice measure score, finite confluent projector and explicit field derivative in one typed interface. Before any higher Q derivative is called a new state, subtract the topology-forced Pascal jet
 
 ```text
 D^n H|Q=1 = sum_(k<n) binom(n,k) D^k P|Q=1.
@@ -176,7 +184,9 @@ The triangular log-pair cross-cutoff result is positive but its `kappa_proxy` is
 
 The scalar relative source closes on `1,q,q^2`, its three-sector algebra is semisimple, and `HH^2=0`. Higher powers and unsubtracted Pascal Q-jets do not add new representation content. The theory frontier is a connectivity/defect radical, marked junction or singular projector extension.
 
-The numerical origin of square-site `p_c` remains a separate program. Exact block semantics, correlated-hyperedge closures and symbolic obstructions can run in parallel; success or failure there neither identifies nor refutes the continuum carrier.
+The numerical origin of square-site `p_c` remains a separate program. Main now contains a frozen chain from feasibility through exact block-event semantics and an O(`s^2`) evaluator to a content-addressed familywise plan: 400 trials per attempt and acceptance cutoff 373. That is an execution-ready protocol, not a bound; the next empirical step is fresh IID acquisition under the frozen plan. Correlated-hyperedge closures and symbolic obstructions can run in parallel, and success or failure there neither identifies nor refutes the continuum carrier.
+
+The exact microscopic H4 stencil gate also removes one uninformative search family: any nonzero nonnegative horizontal/vertical-only fourth-moment proxy is strictly positive. In the declared axis-plus-integer-diagonal normalization, cancellation occurs only at weight ratio `4:1`; more generally a nonnegative candidate needs an oblique orbit with negative `cos(4 theta)`. This guides improved-action geometry design but is not a statement that the renormalized H4 coupling vanishes.
 
 ## Lifecycle boundaries
 
@@ -189,6 +199,8 @@ The mechanism chain deliberately mixes lifecycle states:
 | P205 total prism | `branch_only` | frozen ordinary character selection at small N |
 | ten-size K1/K2 root and full-curve reuse | `open_pr` #267 | retrospective component, area and stable-node decomposition with shared-stream covariance |
 | P205 K1/K2 prism reuse | `open_pr` #267 | retrospective component-character decomposition with branch-only source data |
+| Q=1 spin-sector velocity oracle | `main_integrated` PR #264 | exact continuum-family discriminator; lattice overlaps and field-definition terms remain missing |
+| anisotropy stencil and threshold-confidence chains | `main_integrated` PRs #272/#278-#281 | exact microscopic feasibility/protocol infrastructure, not renormalized H4 or a new threshold bound |
 | Q4/Jordan overlap and fingerprint | `hypothesis` plus branch-only exact predictions | next mechanism discriminator |
 
 Use `docs/STATUS.md` and `analysis/research_ledger.yaml` for exact commit/path pointers. Citation here never promotes an unmerged result to `main`.
