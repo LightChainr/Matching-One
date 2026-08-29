@@ -1,8 +1,8 @@
 version: 1
 created: 2026-08-29
-status: runner_preflight_not_authorized
+status: frozen_prereveal_production_authorized
 issues: [215, 225, 275]
-production_authorized: false
+production_authorized: true
 source_commits:
   marked_birth_stream: 6899b119db5b16e9918db53abf5280d990eb6653
   contact_closure: 8bef10bd306f22882ceb8b45ddf307a1ba75277b
@@ -66,9 +66,21 @@ score_contract:
 
 phase:
   id: P275_Q2_LOCAL_D4_UV_PHASE1
-  production_authorized: false
-  runner_commit: TO_BE_FROZEN_AFTER_PREFLIGHT
-  binary_sha256_arm64: TO_BE_FROZEN_AFTER_PREFLIGHT
+  production_authorized: true
+  runner_commit: 6ecb339f93b878389301a1dc978ae4a38c522b5c
+  binary_sha256_arm64: 12f3fc0daf7709f518f812038d5a991fc532841be01b2e64fdd1c08fe95a5c77
+  preflight:
+    Huawei_DevEnv: DevEnvC_ZyTrST
+    compiler: GCC_10.3.1_aarch64
+    exact_R2_local_complement_states: 4096_pass
+    q2_R2_R4_injectivity: pass_all_four_quotients
+    contact_identity_R2_R4: pass_to_below_2.2e-61
+    training_determinant_10k: '-5.191614954010342339430162139964'
+    benchmark_samples: 10000
+    benchmark_N65_seconds: 1.343673201
+    benchmark_N130_seconds: 2.589301644
+    benchmark_threads_each: 8
+    estimated_concurrent_1M_wall_minutes: 4.5
   samples_per_size: 1000000
   batches: 100
   sizes:

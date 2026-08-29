@@ -32,6 +32,16 @@ predicted with the fixed q2 transfer `-2^(-13/8)`, giving a two-coordinate
 heldout score.  Recomputing roots, shells, nuisance coefficients and residuals
 inside delete-one blocks propagates the training uncertainty.
 
+## Prereveal gate
+
+ARM64 GCC 10.3.1 produced binary
+`12f3fc0daf7709f518f812038d5a991fc532841be01b2e64fdd1c08fe95a5c77`
+from runner commit `6ecb339f93b878389301a1dc978ae4a38c522b5c`.  The exhaustive
+R2 oracle, all four R2/R4 injectivity checks, and the two contact identities
+passed.  On ZyTrST, 10,000 replicas took 1.344 seconds at N65 and 2.589 seconds
+at N130 with eight threads each.  The now-authorized production target remains
+one million replicas per size in disjoint seed/counter domains.
+
 ## Scientific card
 
 1. MECHANISM SPACE: local landing D4 after an R4-R2 UV annihilator, with even thermal-shell nuisance.
