@@ -1,9 +1,9 @@
 {
   "schema": "matching-one/rho-child-opposite-pell-phase-production/v1",
   "production_id": "P267-rho-C3-primitive-H4-N60-opposite-Pell-2M-v1",
-  "status": "frozen_prereveal_unauthorized",
-  "production_authorized": false,
-  "runner_commit": "PENDING_IMPLEMENTATION_COMMIT",
+  "status": "frozen_prereveal_production_authorized",
+  "production_authorized": true,
+  "runner_commit": "0a25a46ab34a662e6561c4b2cc9a3d0c21bffbd1",
   "issues": [156, 226, 250, 275],
   "reference_result_commit": "d9319173770a308630012834cc236b7e2d7afeeb",
   "reference_score": "results/server-20260830/P267-rho-C3-primitive-H4-independent/score.json",
@@ -36,6 +36,7 @@
     "omega_over_2": {"family": "N60_Dminus2", "child": "omega_over_2", "samples": 2000000, "batches": 100, "workers": 8, "seed": 2672266002, "replica_offset": 18002000000},
     "omega_plus_1_over_2": {"family": "N60_Dminus2", "child": "omega_plus_1_over_2", "samples": 2000000, "batches": 100, "workers": 8, "seed": 2672266003, "replica_offset": 18004000000}
   },
+  "machine_plan": "DevEnvC_HZsCM6 sequential exclusive execution; ZyTrST and XPk2PZ remain available to Target 1",
   "preflight": {
     "tiny_configurations": 65536,
     "tiny_invalid_counts": [0, 0, 0],
@@ -44,9 +45,10 @@
     "w_dot_E4_abs_max": "5e-59",
     "w_dot_E6_abs_max": "1e-59",
     "N60_w_dot_E4sq": ["3.18e-58", "729.49046035044876371"],
-    "focused_tests": "8 passed"
+    "focused_tests": "8 passed",
+    "implementation_commit": "0a25a46ab34a662e6561c4b2cc9a3d0c21bffbd1",
+    "N112_score_replay": "byte identical"
   },
   "no_pilot": true,
   "claim_boundary": "This is a completion-phase test of one typed non-A_top row, not another pure H4/H8/H12 vote."
 }
-

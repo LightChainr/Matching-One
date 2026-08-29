@@ -36,6 +36,7 @@ two-million-sample acquisition.
 
 The full primitive-line sum passes the exact scalar/spin-4 alias gate at all
 three children.  Tiny exhaustive classification has zero invariant failures.
-The production manifest remains unauthorized until its implementation commit
-is recorded and all frozen CLI/counter fields are rechecked.
-
+The production manifest was authorized only after implementation commit
+`0a25a46ab34a662e6561c4b2cc9a3d0c21bffbd1` recorded the runner, scorer,
+tests and frozen CLI/counter fields.  This authorization changes no model or
+acquisition parameter.
