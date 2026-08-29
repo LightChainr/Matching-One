@@ -1,0 +1,29 @@
+{
+  "engine": "general integer-period threshold-rank Newman-Ziff",
+  "generated_utc": "2026-08-29T13:58:46Z",
+  "git_commit": "4d82c754a04635de0561b221771099e4ec5a5f88",
+  "command": "build/threshold_rank_integer_period_mc --first-matrix 5 0 0 5 --second-matrix 4 -3 3 4 --first-rep 5 0 --second-rep 4 3 --samples 12000000 --batches 100 --seed 2026105525 --replica-offset 9400000000 --threads 8 --git-commit 4d82c754a04635de0561b221771099e4ec5a5f88 --output-prefix results/server-20260829/P205-quotient-character-prism/raw/n25_12m",
+  "compiler": "10.3.1",
+  "openmp": true,
+  "threads_requested": 8,
+  "samples_per_pair": 12000000,
+  "batches": 100,
+  "seed": 2026105525,
+  "replica_counter_first": 9400000000,
+  "replica_counter_last_exclusive": 9412000000,
+  "rng": "counter-derived SplitMix64 stream plus unbiased Fisher-Yates",
+  "coupling": "same HNF mixed-radix label permutation shared by the pair",
+  "quotient_coordinates": "column-HNF representatives (rx,ry), label=rx+h11*ry",
+  "period_matrix_convention": "row-major matrix; columns are lifted period vectors",
+  "channel": "rank-2 cross wrapping",
+  "K_plus": "first black primal cross rank, 1-based",
+  "K_minus": "first black rank after white matching cross is lost; N-r+1",
+  "sparse_joint_histogram": false,
+  "per_batch_joint_moments": true,
+  "elapsed_seconds": 9.2430764720000003,
+  "designs": [
+    {"id": "custom", "N": 25, "first": [5,0], "second": [4,3], "first_period_matrix": [[5,0],[0,5]], "second_period_matrix": [[4,-3],[3,4]], "first_HNF": [[5,0],[0,5]], "second_HNF": [[25,18],[0,1]], "first_smith_invariants": [5,5], "second_smith_invariants": [1,25]}
+  ],
+  "histogram_csv": "results/server-20260829/P205-quotient-character-prism/raw/n25_12m.hist.csv",
+  "moments_csv": "results/server-20260829/P205-quotient-character-prism/raw/n25_12m.moments.csv"
+}

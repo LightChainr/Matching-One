@@ -1,0 +1,16 @@
+Freeze artifact:
+  predictions/p205_quotient_character_prism_20260829.yaml
+  commit c5541191ba7159db95f3d972a136efbaa35182ba
+
+Production commands are preserved verbatim in each raw/*.metadata.json file.
+The three frozen output prefixes are:
+  results/server-20260829/P205-quotient-character-prism/raw/n25_12m
+  results/server-20260829/P205-quotient-character-prism/raw/n50_12m
+  results/server-20260829/P205-quotient-character-prism/raw/n125_12m
+
+Frozen scorer command:
+  python3 scripts/score_p205_quotient_character_prism.py
+    --run 25:results/server-20260829/P205-quotient-character-prism/raw/n25_12m
+    --run 50:results/server-20260829/P205-quotient-character-prism/raw/n50_12m
+    --run 125:results/server-20260829/P205-quotient-character-prism/raw/n125_12m
+    --output results/server-20260829/P205-quotient-character-prism/analysis/score.json

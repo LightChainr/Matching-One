@@ -1,0 +1,165 @@
+{
+  "schema": "matching-one/p205-quotient-character-prism-score/v1",
+  "status": "frozen fixed-sample score; one amplitude per harmonic",
+  "fixed_probability": "0.59274605079",
+  "size_order": [
+    25,
+    50,
+    125
+  ],
+  "model_order": [
+    "H4",
+    "H8",
+    "H12"
+  ],
+  "contrast_vector": [
+    "0.00795915599301107588601725477527",
+    "0.00240436307962652100000921269338",
+    "0.00023745920121575415260896840011"
+  ],
+  "contrast_covariance": [
+    [
+      "1.78157347949116173850816e-8",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "3.1487368297936964729032e-8",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "4.812690890623283107195874e-8"
+    ]
+  ],
+  "by_size": {
+    "25": {
+      "DeltaM_first_minus_second": "0.00795915599301107588601725477527",
+      "variance": "1.78157347949116173850816e-8",
+      "standard_error": "0.00013347559625231728998"
+    },
+    "50": {
+      "DeltaM_first_minus_second": "0.00240436307962652100000921269338",
+      "variance": "3.1487368297936964729032e-8",
+      "standard_error": "0.00017744680413559711312"
+    },
+    "125": {
+      "DeltaM_first_minus_second": "0.00023745920121575415260896840011",
+      "variance": "4.812690890623283107195874e-8",
+      "standard_error": "0.00021937846044275365703"
+    }
+  },
+  "models": [
+    {
+      "fitted_shared_amplitude": "0.803918454315677401661047814064",
+      "amplitude_standard_error": "0.013146487067147613363",
+      "model_vector": [
+        "0.00986097704106032859714207360504",
+        "0.00319702626858812689857306902274",
+        "0.000403907314107614054539812378832"
+      ],
+      "residuals": [
+        "0.0000317345721194743893096380110744",
+        "-0.000165785336623463684557478826573",
+        "-0.0000872493424284357391747335350538"
+      ],
+      "signed_standardized_residuals": [
+        "0.237755612340435157",
+        "-0.934281896093083517",
+        "-0.397711526702974879"
+      ],
+      "chi_square": "1.087584851039073688",
+      "degrees_of_freedom": 2,
+      "chi_square_survival_df2": "0.580542408423459758",
+      "name": "H4",
+      "delta_chi_square_from_best": "0.0"
+    },
+    {
+      "fitted_shared_amplitude": "2.28583803144317869558884463155",
+      "amplitude_standard_error": "0.041822462205867559819",
+      "model_vector": [
+        "0.00309240240007651904806375428254",
+        "-0.00100258743782923659539251444553",
+        "0.00038144360492620499128252617357"
+      ],
+      "residuals": [
+        "0.000890424978390004473955484159851",
+        "0.00469611557486376348636530452331",
+        "-0.00063445909777535184423855551153"
+      ],
+      "signed_standardized_residuals": [
+        "6.67106949428252261",
+        "26.4649205588126381",
+        "-2.89207562353603351"
+      ],
+      "chi_square": "753.25928979406204406",
+      "degrees_of_freedom": 2,
+      "chi_square_survival_df2": "2.70285968198734257e-164",
+      "name": "H8",
+      "delta_chi_square_from_best": "752.17170494302297037"
+    },
+    {
+      "fitted_shared_amplitude": "1.69743083899527149361952414366",
+      "amplitude_standard_error": "0.02785259874210081362",
+      "model_vector": [
+        "0.00464594963357128687448735838296",
+        "0.0015062628134329023041031326618",
+        "-0.000511218952465390426510180119392"
+      ],
+      "residuals": [
+        "0.000072977808568392242832201637127",
+        "-0.000152413871526268454925609930312",
+        "0.00110521801660936564066415850007"
+      ],
+      "signed_standardized_residuals": [
+        "0.546750197170407951",
+        "-0.858927114910451798",
+        "5.03795137580414342"
+      ],
+      "chi_square": "26.417645631801133961",
+      "degrees_of_freedom": 2,
+      "chi_square_survival_df2": "1.83434549987236e-6",
+      "name": "H12",
+      "delta_chi_square_from_best": "25.330060780762060273"
+    }
+  ],
+  "best_frozen_harmonic_by_chi_square": "H4",
+  "decision": "best_one_amplitude_character_line_is_H4",
+  "provenance": {
+    "design": "/Volumes/Mac Data/Research/\u8bba\u6587\u9879\u76ee\u603b\u5e93/Matching-One-worktrees/p205-quotient-character-maximin-20260829/predictions/p205_quotient_character_prism_20260829.yaml",
+    "design_sha256": "2092ac4d59753df7877ffc2de1970c475b1acadc5263a467b96e29789fb49de8",
+    "runner_commit": "4d82c754a04635de0561b221771099e4ec5a5f88",
+    "inputs": [
+      {
+        "N": 25,
+        "histogram": "results/server-20260829/P205-quotient-character-prism/raw/n25_12m.hist.csv",
+        "histogram_sha256": "c8c332ee6f6620e17d60af3b760aaf97dfff6c161c72aee40eca906fcb290c76",
+        "moments": "results/server-20260829/P205-quotient-character-prism/raw/n25_12m.moments.csv",
+        "moments_sha256": "931f6a98ff4d00d6e7f0856c73bcc7b5a0c9e9cd08f0cab5438523bc5a1f1e23",
+        "metadata": "results/server-20260829/P205-quotient-character-prism/raw/n25_12m.metadata.json",
+        "metadata_sha256": "2d4a6cdee724fa05106eb818a27eece382fd855a883c554fb79fdb592fa19486"
+      },
+      {
+        "N": 50,
+        "histogram": "results/server-20260829/P205-quotient-character-prism/raw/n50_12m.hist.csv",
+        "histogram_sha256": "7c1f2604c1a8d386157a8774a69d9836f5cf2a96d89bbbb2fe7cbe05f8c89b88",
+        "moments": "results/server-20260829/P205-quotient-character-prism/raw/n50_12m.moments.csv",
+        "moments_sha256": "bdb23a0d91398ceca91787aede4396855eb7669cfe046c5512952194059aa4e9",
+        "metadata": "results/server-20260829/P205-quotient-character-prism/raw/n50_12m.metadata.json",
+        "metadata_sha256": "adb1f6fd84a81b40bbb172a77a5aaff9c6f45f29d0ab0650458c01318cae6450"
+      },
+      {
+        "N": 125,
+        "histogram": "results/server-20260829/P205-quotient-character-prism/raw/n125_12m.hist.csv",
+        "histogram_sha256": "5045668f08ae97f71d013d8ab299df13378c3d2ba1e8b17309e64ea822607f4f",
+        "moments": "results/server-20260829/P205-quotient-character-prism/raw/n125_12m.moments.csv",
+        "moments_sha256": "5e58910c23f7b37773c436fc6a85c68e39377dafeaf4fa968a49d96124faa82c",
+        "metadata": "results/server-20260829/P205-quotient-character-prism/raw/n125_12m.metadata.json",
+        "metadata_sha256": "7947e405ce82af46e737ac9ad8ce12f2cbefed3bc562688938faeafa0957ff22"
+      }
+    ]
+  },
+  "interpretation_guard": "H4, H8 and H12 were scored in frozen order as exact angular character lines. Exactly one shared amplitude was fitted per line; the N exponent remained 13/8 and no offset or correction was fitted."
+}
