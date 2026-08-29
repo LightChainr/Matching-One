@@ -1,0 +1,119 @@
+schema: matching-one/preregistered-experiment/v1
+id: P267-Target1-external-Euler-rank-birth
+issues: [215, 275, 276]
+pull_request: 267
+frozen_utc: 2026-08-30T00:30:00+08:00
+status: preregistered_before_N325_N425_reveal
+
+code:
+  branch: analysis/external-observer-stream-20260829
+  runner_source_commit: 01d8a4e
+  runner: src/threshold_rank_integer_period_mc.cpp
+  single_size_scorer: scripts/score_marked_birth_path.py
+  transfer_scorer: scripts/score_external_observer_transfer.py
+  binary_requirement: independently_compile_on_each_ARM_host_and_require_identical_SHA256
+
+pilot_revealed_before_freeze:
+  sizes: [65, 130]
+  samples: 100000
+  batches: 100
+  seeds: [20260830065, 20260830130]
+  result: results/external-observer-contact-pilot/latest.json
+  use: selected_nonzero_complex_primary_and_contact_phase_null_only
+  prohibited_use: no_parameter_refit_or_exponent_fit_after_production_reveal
+
+production:
+  common:
+    samples: 2000000
+    batches: 100
+    threads: 16
+    marked_births: true
+    raw_retention: remote_workspace
+    repository_retention: metadata_checksums_path_aggregates_scores_only
+  jobs:
+    - id: N325_external_Euler
+      host: DevEnvC_ZyTrST
+      devenv_id: f415a4bcbd9a438b85f5f29e4a507ea4
+      N: 325
+      first_rep: [17, 6]
+      second_rep: [18, 1]
+      first_matrix: [[17, -6], [6, 17]]
+      second_matrix: [[18, -1], [1, 18]]
+      seed: 20260830325
+      replica_offset: 11000000000
+      remote_prefix: /workspace/p267-target1-external/N325_2m/N325_2m
+    - id: N425_external_Euler
+      host: DevEnvC_XPk2PZ
+      devenv_id: f550f3cb1f774374b6842aa648fda796
+      N: 425
+      first_rep: [16, 13]
+      second_rep: [19, 8]
+      first_matrix: [[16, -13], [13, 16]]
+      second_matrix: [[19, -8], [8, 19]]
+      seed: 20260830425
+      replica_offset: 13000000000
+      remote_prefix: /workspace/p267-target1-external/N425_2m/N425_2m
+  reserve_host:
+    host: DevEnvC_HZsCM6
+    devenv_id: 033945d8bf8b47a7acf475c595169e07
+    role: unrelated_third_task_or_exact_rerun_only_after_a_structural_failure
+
+estimands:
+  primary:
+    - connected_complex_P4_O_ext_times_J_D_at_N325
+    - connected_complex_P4_O_ext_times_J_D_at_N425
+    - complex_transfer_C_D_N425_over_C_D_N325
+  mechanism_gate:
+    - connected_complex_P4_O_far_times_J_D_at_N325
+    - connected_complex_P4_O_far_times_J_D_at_N425
+  nuisance:
+    - connected_complex_P4_O_near_times_J_D
+    - O_near_variance_and_O_ext_O_near_covariance
+  controls:
+    - connected_complex_P4_O_ext_times_J_S
+    - connected_complex_P4_O_far_times_J_S
+    - q_times_J_D_contact_control_not_a_candidate_source
+    - J_D_conjugate_J_S_and_abs_J_S_squared_Gram_roots
+
+frozen_models:
+  nonzero_primary:
+    null: each_complex_P4_O_ext_J_D_vector_is_zero
+    score: two_dimensional_Mahalanobis_chi_square_using_delete_one_covariance
+  bulk_mechanism:
+    null: each_complex_P4_O_far_J_D_vector_is_zero
+    score: two_dimensional_Mahalanobis_chi_square_using_delete_one_covariance
+    interpretation: failure_to_reject_blocks_bulk_promotion_but_does_not_delete_the_observer
+  contact_phase_lock:
+    null: arg((C_D_425/C_D_325)/(C_S_425/C_S_325))_equals_zero_modulo_pi
+    amplitude: free
+    score: delta_method_phase_with_full_within_size_covariance
+  transfer:
+    outputs: [complex_ratio, amplitude, phase, covariance_re_im, amplitude_se, phase_se]
+    exponent_claim: forbidden_from_two_sizes
+
+acceptance_and_claim_boundary:
+  exact_gates:
+    - all_complement_audit_counters_zero
+    - Russo_B_minus_Aprime_zero_at_scorer_precision
+    - Euler_component_cell_and_R2_local_oracles_pass
+    - direct_0_to_2_schema_is_ell_null_D0_S2
+    - single_direction_spin4_alias_gate_83e98fc_passes
+  evidence_upgrade:
+    - primary_nonzero_at_both_sizes
+    - far_D_nonzero_at_both_sizes
+  not_identified: [Q4_epsilon_field_identity, asymptotic_exponent, universal_amplitude]
+  qJ_policy: retain_as_contact_control_never_rescue_as_primary
+
+commands:
+  N325: >-
+    ./threshold_rank_integer_period_mc --samples 2000000 --batches 100
+    --threads 16 --first-matrix 17 -6 6 17 --second-matrix 18 -1 1 18
+    --first-rep 17 6 --second-rep 18 1 --seed 20260830325
+    --replica-offset 11000000000 --git-commit 01d8a4e --marked-births
+    --output-prefix /workspace/p267-target1-external/N325_2m/N325_2m
+  N425: >-
+    ./threshold_rank_integer_period_mc --samples 2000000 --batches 100
+    --threads 16 --first-matrix 16 -13 13 16 --second-matrix 19 -8 8 19
+    --first-rep 16 13 --second-rep 19 8 --seed 20260830425
+    --replica-offset 13000000000 --git-commit 01d8a4e --marked-births
+    --output-prefix /workspace/p267-target1-external/N425_2m/N425_2m

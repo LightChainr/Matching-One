@@ -147,6 +147,11 @@ The frozen scorer is `scripts/score_external_observer_transfer.py`; it uses
 the full within-size delete-one covariance and treats the two production
 counter/seed groups as independent.
 
+The production contract is frozen in
+`experiments/p267_target1_external_observer_20260830.yaml`. Only that manifest
+authorizes the N325/N425 jobs; qJ remains a control and cannot be revived as a
+candidate source after reveal.
+
 ## Scientific card
 
 1. **Mechanism-space change:** Target 1 moves from q-contact response to a bulk Euler scalar times the rank-birth H4 source.

@@ -1,7 +1,7 @@
 schema: matching-one/external-observer-rank-birth-manifest/v1
 issues: [215, 275, 276]
 target: PR267_Target1
-status: local_contact_split_pilot_complete_production_preregistration_pending
+status: production_preregistered_N325_N425_authorized
 
 base:
   main: 83e98fc
@@ -57,8 +57,8 @@ candidate_decision:
   charged_lane: charged_seam_after_gauge_and_orientation_freeze
 
 planned_geometry_pairs:
-  - {N: 325, first: [17, 6], second: [18, 1], production: forbidden}
-  - {N: 425, first: [16, 13], second: [19, 8], production: forbidden}
+  - {N: 325, first: [17, 6], second: [18, 1], production: authorized_by_p267_target1_external_observer_20260830}
+  - {N: 425, first: [16, 13], second: [19, 8], production: authorized_by_p267_target1_external_observer_20260830}
 
 contact_split:
   local_density: h_x = occupied_x - occupied_x*occupied_east - occupied_x*occupied_north + empty_unit_face_x
