@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from score_p50_fullcurve_n290 import (  # noqa: E402
+    generalized_covariance_score,
     independent_residual_covariance,
     pseudovalue_vectors,
     scalar_score,
@@ -62,6 +63,14 @@ class P50FullcurveExecutionTests(unittest.TestCase):
             pseudovalue_vectors([10.0, 20.0], [[9.0, 21.0], [11.0, 19.0]]),
             [[11.0, 19.0], [9.0, 21.0]],
         )
+
+    def test_generalized_score_drops_a_numerical_null_mode(self) -> None:
+        epsilon = 1e-12
+        score = generalized_covariance_score(
+            [1.0, 1.0], [[1.0, 1.0 - epsilon], [1.0 - epsilon, 1.0]]
+        )
+        self.assertEqual(score["numerical_rank"], 1)
+        self.assertAlmostEqual(score["chi_square"], 1.0, places=9)
 
     def test_scalar_score_includes_frozen_ratio_uncertainty(self) -> None:
         without = scalar_score(10.0, 13.0, 1.0, 4.0, 1.2)
