@@ -1,0 +1,59 @@
+schema_version: 1
+frozen_on: '2026-08-29'
+status: source_basis_frozen_before_norm5_reveal
+issue: 182
+script: scripts/threshold_score_modes.py
+
+coordinate:
+  natural_parameter: eta=log(p/(1-p))
+  center: size_local_intrinsic_matching_center
+  recompute_center_inside_delete_one: true
+
+basis:
+  family: orthonormal_binomial_Krawtchouk
+  orders: [0, 1, 2, 3, 4, 5, 6]
+  sign_convention: H1=(K-Np)/sqrt(Np(1-p))
+  angular_normalization: size_local_DeltaCos4
+  sectors: [P4_S, P4_D]
+
+scaling_towers:
+  derivation: >-
+    z=(p-pc)N^(3/8); thermal response order r supplies N^(3r/8), while
+    orthonormal binomial score normalization removes N^(r/2), so the
+    score-mode decay exponent advances by r/8.
+  matching_even_I:
+    base_exponent_in_N: '1'
+    sectors: {even_r: P4_S, odd_r: P4_D}
+    mode_exponent: 1+r/8
+  matching_odd_T:
+    base_exponent_in_N: '13/8'
+    sectors: {even_r: P4_D, odd_r: P4_S}
+    mode_exponent: 13/8+r/8
+
+exact_view_contract:
+  mode_0: original_value
+  mode_1: first_eta_derivative_divided_by_sqrt(Np(1-p))
+  p_derivative_factor: sqrt(N/(p(1-p)))
+  evidence_role: alternate_coordinates_not_additive_evidence
+
+source_blocks:
+  - [65, 85]
+  - [130, 170]
+  - [185, 265]
+
+next_target:
+  sizes: [325, 425]
+  rule: do_not_change_basis_order_or_sign_after_reveal
+  primary_question: whether_a_stable_r_ge_2_direction_explains_Sprime_transfer
+  frozen_thermal_vector:
+    ordered_components: [P4_D_mode_2, P4_S_mode_3, P4_D_mode_4, P4_S_mode_5, P4_D_mode_6]
+    source_signs: [positive, negative, negative, negative, positive]
+    high_signal_subvector: [P4_D_mode_2, P4_D_mode_4, P4_D_mode_6]
+    high_signal_signs: [positive, negative, positive]
+    target_use: signed_direction_transfer_without_target_refitting
+
+forbidden:
+  - count_modes_0_or_1_as_independent_of_value_or_derivative
+  - choose_mode_order_from_norm5_target
+  - rotate_basis_using_norm5_target
+  - infer_Jordan_structure_from_source_reconstruction_error
