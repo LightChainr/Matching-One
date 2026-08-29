@@ -1,0 +1,316 @@
+{
+  "conclusion": {
+    "claim_level": "finite_exact_plus_deterministic_counterexample_search_not_proof",
+    "common_channel_holds_on_all_exhaustive": true,
+    "random_search_found_weak_counterexample": false,
+    "strong_rank_sum_holds_on_all_exhaustive": true,
+    "weak_identity_holds_on_all_exhaustive": true
+  },
+  "counterexample_search": {
+    "common_channel_counterexamples": [],
+    "configurations_evaluated": 85152,
+    "matrix_count": 160,
+    "order_range": [
+      5,
+      31
+    ],
+    "rank_pair_counts": {
+      "r0_r2": 36622,
+      "r1_r1": 41220,
+      "r2_r0": 7310
+    },
+    "samples_per_matrix": 640,
+    "seed": 2690829,
+    "strong_rank_sum_counterexamples": [],
+    "weak_rank_counterexamples": []
+  },
+  "elementary_rank_lemma": {
+    "premise_implies_weak_identity": true,
+    "premise_rank_pairs": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    "rows": [
+      {
+        "common_channel_premise": true,
+        "q_cross": 0,
+        "q_either": 0,
+        "rank_black": 0,
+        "rank_white": 0,
+        "weak_identity": true
+      },
+      {
+        "common_channel_premise": false,
+        "q_cross": 0,
+        "q_either": -1,
+        "rank_black": 0,
+        "rank_white": 1,
+        "weak_identity": false
+      },
+      {
+        "common_channel_premise": true,
+        "q_cross": -1,
+        "q_either": -1,
+        "rank_black": 0,
+        "rank_white": 2,
+        "weak_identity": true
+      },
+      {
+        "common_channel_premise": false,
+        "q_cross": 0,
+        "q_either": 1,
+        "rank_black": 1,
+        "rank_white": 0,
+        "weak_identity": false
+      },
+      {
+        "common_channel_premise": true,
+        "q_cross": 0,
+        "q_either": 0,
+        "rank_black": 1,
+        "rank_white": 1,
+        "weak_identity": true
+      },
+      {
+        "common_channel_premise": false,
+        "q_cross": -1,
+        "q_either": 0,
+        "rank_black": 1,
+        "rank_white": 2,
+        "weak_identity": false
+      },
+      {
+        "common_channel_premise": true,
+        "q_cross": 1,
+        "q_either": 1,
+        "rank_black": 2,
+        "rank_white": 0,
+        "weak_identity": true
+      },
+      {
+        "common_channel_premise": false,
+        "q_cross": 1,
+        "q_either": 0,
+        "rank_black": 2,
+        "rank_white": 1,
+        "weak_identity": false
+      },
+      {
+        "common_channel_premise": true,
+        "q_cross": 0,
+        "q_either": 0,
+        "rank_black": 2,
+        "rank_white": 2,
+        "weak_identity": true
+      }
+    ]
+  },
+  "exhaustive_geometries": [
+    {
+      "N": 4,
+      "common_channel_counterexamples": [],
+      "common_channel_failure_count_capped": 0,
+      "configurations": 16,
+      "id": "axis-L2",
+      "joint_rank_q_counts": {
+        "r0_r2_q-1": 7,
+        "r1_r1_q+0": 4,
+        "r2_r0_q+1": 5
+      },
+      "kind": "axis",
+      "matching_edges_equal_primal_edges": false,
+      "period_matrix": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "q_counts": {
+        "+0": 4,
+        "+1": 5,
+        "-1": 7
+      },
+      "q_zero_count": 4,
+      "raw_rank_equality_count": 4,
+      "raw_rank_equality_outside_q_zero_count": 0,
+      "strong_rank_sum_counterexamples": [],
+      "strong_rank_sum_failure_count_capped": 0,
+      "weak_rank_counterexamples": [],
+      "weak_rank_failure_count_capped": 0
+    },
+    {
+      "N": 9,
+      "common_channel_counterexamples": [],
+      "common_channel_failure_count_capped": 0,
+      "configurations": 512,
+      "id": "axis-L3",
+      "joint_rank_q_counts": {
+        "r0_r2_q-1": 259,
+        "r1_r1_q+0": 162,
+        "r2_r0_q+1": 91
+      },
+      "kind": "axis",
+      "matching_edges_equal_primal_edges": false,
+      "period_matrix": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "q_counts": {
+        "+0": 162,
+        "+1": 91,
+        "-1": 259
+      },
+      "q_zero_count": 162,
+      "raw_rank_equality_count": 162,
+      "raw_rank_equality_outside_q_zero_count": 0,
+      "strong_rank_sum_counterexamples": [],
+      "strong_rank_sum_failure_count_capped": 0,
+      "weak_rank_counterexamples": [],
+      "weak_rank_failure_count_capped": 0
+    },
+    {
+      "N": 5,
+      "common_channel_counterexamples": [],
+      "common_channel_failure_count_capped": 0,
+      "configurations": 32,
+      "id": "gaussian-2-1",
+      "joint_rank_q_counts": {
+        "r0_r2_q-1": 16,
+        "r1_r1_q+0": 10,
+        "r2_r0_q+1": 6
+      },
+      "kind": "gaussian",
+      "matching_edges_equal_primal_edges": false,
+      "period_matrix": [
+        [
+          2,
+          -1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "q_counts": {
+        "+0": 10,
+        "+1": 6,
+        "-1": 16
+      },
+      "q_zero_count": 10,
+      "raw_rank_equality_count": 10,
+      "raw_rank_equality_outside_q_zero_count": 0,
+      "strong_rank_sum_counterexamples": [],
+      "strong_rank_sum_failure_count_capped": 0,
+      "weak_rank_counterexamples": [],
+      "weak_rank_failure_count_capped": 0
+    },
+    {
+      "N": 8,
+      "common_channel_counterexamples": [],
+      "common_channel_failure_count_capped": 0,
+      "configurations": 256,
+      "id": "diamond-L2",
+      "joint_rank_q_counts": {
+        "r0_r2_q-1": 143,
+        "r1_r1_q+0": 68,
+        "r2_r0_q+1": 45
+      },
+      "kind": "diamond",
+      "matching_edges_equal_primal_edges": false,
+      "period_matrix": [
+        [
+          2,
+          -2
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "q_counts": {
+        "+0": 68,
+        "+1": 45,
+        "-1": 143
+      },
+      "q_zero_count": 68,
+      "raw_rank_equality_count": 68,
+      "raw_rank_equality_outside_q_zero_count": 0,
+      "strong_rank_sum_counterexamples": [],
+      "strong_rank_sum_failure_count_capped": 0,
+      "weak_rank_counterexamples": [],
+      "weak_rank_failure_count_capped": 0
+    },
+    {
+      "N": 10,
+      "common_channel_counterexamples": [],
+      "common_channel_failure_count_capped": 0,
+      "configurations": 1024,
+      "id": "c4-self-matching-3-1",
+      "joint_rank_q_counts": {
+        "r0_r2_q-1": 352,
+        "r1_r1_q+0": 320,
+        "r2_r0_q+1": 352
+      },
+      "kind": "c4_self_matching",
+      "matching_edges_equal_primal_edges": true,
+      "period_matrix": [
+        [
+          3,
+          -1
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "q_counts": {
+        "+0": 320,
+        "+1": 352,
+        "-1": 352
+      },
+      "q_zero_count": 320,
+      "raw_rank_equality_count": 320,
+      "raw_rank_equality_outside_q_zero_count": 0,
+      "strong_rank_sum_counterexamples": [],
+      "strong_rank_sum_failure_count_capped": 0,
+      "weak_rank_counterexamples": [],
+      "weak_rank_failure_count_capped": 0
+    }
+  ],
+  "issue": 269,
+  "schema_version": 1,
+  "scientific_boundary": [
+    "The exhaustive checks establish finite configuration identities only on the declared quotients.",
+    "The fixed-seed general-period scan is a counterexample search, not statistical evidence or a proof.",
+    "A general result still requires a periodic digital Alexander/relative-homology argument with the 4/8 adjacency pair.",
+    "No CFT field, universal amplitude, or closed form for square-site p_c is inferred."
+  ]
+}
