@@ -1,0 +1,58 @@
+version: 1
+frozen_at: 2026-08-29
+status: executable_engineering_prototype
+related_issue: 225
+base_results: [PR211, PR224]
+purpose: >-
+  Record nested fixed-root pivotal H4 marks at several lattice radii from one
+  configuration/pivotal stream, preserving aligned covariance for the local
+  matching plus/minus channels and dyadic shell increments.
+
+observable:
+  model: C4_checkerboard_self_matching_site_percolation
+  center: 'p=1/2'
+  root: fixed_even_vertex_zero
+  landing_registry: eight_45_degree_sectors
+  black_h4: black_cross_pivotal_times_axis_minus_diagonal_landing
+  white_h4: complement_cross_pivotal_times_axis_minus_diagonal_landing
+  h4_plus: black_h4_plus_white_h4
+  h4_minus: black_h4_minus_white_h4
+  normalization:
+    mu0: 'N*(black_pivotal+white_pivotal)/samples'
+    A_plus: 'h4_plus/(black_pivotal+white_pivotal)'
+    A_minus: 'h4_minus/(black_pivotal+white_pivotal)'
+
+prototype:
+  sizes:
+    - {N: 130, a: 11, b: 3}
+    - {N: 170, a: 13, b: 1}
+  radii: [1, 2, 4]
+  samples_per_size: 20000
+  batches: 100
+  seed: 22520260829
+  replica_offset: 0
+  coupling:
+    cross_radius: identical_configuration_and_pivotal_flag
+    cross_size: same_seed_counter_prefix_site_bits
+  scope: engineering_and_variance_smoke_not_mechanism_score
+
+radius_semantics:
+  fixed_R: 'delta=R/sqrt(N) tends to zero as N grows; UV observable'
+  fixed_delta: 'choose R(N)=round(delta*sqrt(N)); two-cutoff observable'
+  dyadic_shell: 'A(2R)-A(R), optionally divided by log(2)'
+  warning: fixed_R_and_fixed_delta_are_distinct_limits
+  current_geometry_limit: >-
+    R=8 is not injective on N130/N170 and is rejected before sampling. The
+    prototype therefore uses 1,2,4; a true 2,4,8 window needs larger tori.
+
+primary_future_structure:
+  - compute_all_shells_inside_each_delete_one_replicate
+  - score_plus_and_minus_as_one_correlated_vector
+  - compare_fixed_R_across_sizes_separately_from_nearest_fixed_delta_pairs
+  - test_common_per_log_shell_direction_before_any_free_power
+
+forbidden:
+  - rerun_global_pivotal_classification_for_each_radius
+  - count_radii_shells_or_plus_minus_as_independent_evidence
+  - call_the_20k_smoke_a_Jordan_test
+  - use_fixed_R_data_as_if_delta_were_held_fixed
