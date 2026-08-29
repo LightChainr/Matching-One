@@ -218,6 +218,49 @@ cutoffs.  This preserves the required fixed-`delta` first limit.
 
 ## A projective Jordan pencil across sizes
 
+### Fixed-delta continuum score from the existing archive
+
+The batch sufficient statistics already retain `sum_D1` and `sum_D2`.
+Dividing by the sample count and torus volume gives the probability that the
+two endpoints of a bilocal insertion belong to one black cluster.  The
+Camia--Feng spin two-point limit implies, at one fixed physical `delta`,
+
+```text
+pi_a^(-2) p_conn(a,delta_realized)
+  = constant * (2 delta_realized)^(-5/24) * (1+o(1)).
+```
+
+The unknown factor is independent of `L`.  Consequently the already archived
+data recover the relative `pi_a` normalization across sizes without another
+Monte Carlo run.  With
+
+```text
+alpha_L = L^(5/4)/log L,
+```
+
+the primary fixed-delta continuum vector is, up to two harmless constants,
+
+```text
+[alpha_L^2 LL,
+ alpha_L beta_L LD/p_conn,
+ beta_L^2 DD/p_conn^2],
+
+beta_L=(2 delta_declared)^(-25/24)
+       (2 delta_realized)^(-5/24).
+```
+
+`scripts/score_p234_fixed_delta_continuum.py` propagates the joint batch
+covariance of `(LL,LD,DD,p_conn)` and scores the direct parent-pair target with
+one leading analytic `1/L` correction: the first coordinate extrapolates to
+zero, while the second and third extrapolate to constants.
+This is the correct `a -> 0` question at fixed physical geometry.
+
+A Jordan shear under a dilation of continuum coordinates must not be confused
+with a `log L` drift as the ultraviolet mesh is removed after the fields have
+already received their `a`-dependent normalization.  The projective pencil
+below remains useful for a calibrated change of physical scale/cutoff, but is
+not the primary fixed-delta production score.
+
 Once the relative field gauge is fixed, there is a stronger projective
 fingerprint than scoring `J` one size at a time.  In a canonical logarithmic
 basis the fixed-delta two-point matrix
