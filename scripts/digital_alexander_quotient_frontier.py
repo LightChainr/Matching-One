@@ -23,7 +23,7 @@ from integer_period_torus import (
 Matrix = Tuple[Tuple[int, int], Tuple[int, int]]
 
 
-def hnf_matrices(minimum_order: int = 2, maximum_order: int = 6) -> list[Matrix]:
+def hnf_matrices(minimum_order: int = 2, maximum_order: int = 7) -> list[Matrix]:
     if minimum_order < 1 or maximum_order < minimum_order:
         raise ValueError("invalid order range")
     matrices = []
@@ -246,8 +246,8 @@ def build_artifact() -> dict[str, Any]:
     }
     honest = [row for row in rows if row["four_distinct_face_corners"]]
     degenerate = [row for row in rows if not row["four_distinct_face_corners"]]
-    assert len(matrices) == 32
-    assert total_paths == 9558
+    assert len(matrices) == 40
+    assert total_paths == 49878
     assert all(abs(determinant(tuple(tuple(part) for part in row["matrix"]))) == row["order"] for row in rows)
     return {
         "schema": "matching-one/digital-alexander-quotient-frontier/v1",
@@ -255,9 +255,9 @@ def build_artifact() -> dict[str, Any]:
         "status": (
             "counterexample_found"
             if any(total_failures.values())
-            else "no_counterexample_through_index_6"
+            else "no_counterexample_through_index_7"
         ),
-        "order_range": [2, 6],
+        "order_range": [2, 7],
         "HNF_representatives": len(rows),
         "honest_face_representatives": len(honest),
         "self_identifying_face_representatives": len(degenerate),
@@ -266,8 +266,8 @@ def build_artifact() -> dict[str, Any]:
         "first_counterexamples": first_counterexamples,
         "geometries": rows,
         "claim_boundary": {
-            "proved": "all permutations of every HNF quotient of index 2 through 6",
-            "not_proved": "index 7 and above or an unrestricted degenerate-quotient theorem",
+            "proved": "all permutations of every HNF quotient of index 2 through 7",
+            "not_proved": "index 8 and above or an unrestricted degenerate-quotient theorem",
         },
     }
 
@@ -276,7 +276,7 @@ def render_markdown(artifact: dict[str, Any]) -> str:
     lines = [
         "# Short-period digital Alexander quotient frontier",
         "",
-        "Every permutation of every two-dimensional HNF quotient of index 2 through 6 is exhausted.",
+        "Every permutation of every two-dimensional HNF quotient of index 2 through 7 is exhausted.",
         "",
         "- HNF representatives: `%d`;" % artifact["HNF_representatives"],
         "- honest four-corner representatives: `%d`;" % artifact["honest_face_representatives"],
@@ -300,7 +300,7 @@ def render_markdown(artifact: dict[str, Any]) -> str:
             "",
             "## Boundary",
             "",
-            "The result is exhaustive only through index 6. It does not prove an unrestricted theorem",
+            "The result is exhaustive only through index 7. It does not prove an unrestricted theorem",
             "for all degenerate quotients or alter production data semantics.",
             "",
         ]
