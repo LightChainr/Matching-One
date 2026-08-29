@@ -1,0 +1,191 @@
+{
+  "best_model": "H8",
+  "evidence_accounting": "one joint 4D comparison; Re/Im and the two hands are not independent votes",
+  "joint_model": "R_minus=c, R_plus=q_s*c; one free complex normalization",
+  "minimum_phase_residual_model": "H8",
+  "models": {
+    "H12": {
+      "chi_square": 3.5390991269889858,
+      "chi_square_per_df": 1.7695495634944929,
+      "degrees_of_freedom": 2,
+      "delta_chi_square": 2.465167987703535,
+      "exact_ratio": {
+        "imag": "-242017776/244140625",
+        "real": "32125393/244140625"
+      },
+      "fitted_common_complex_normalization_re_im": [
+        1.128432669415185,
+        0.7654340875158867
+      ],
+      "fitted_primary_vector": [
+        0.9072639939141065,
+        -1.0179006223997422,
+        1.128432669415185,
+        0.7654340875158867
+      ],
+      "normalization_covariance": [
+        [
+          0.7779318609460079,
+          -0.00757496749121298
+        ],
+        [
+          -0.007574967491212984,
+          0.724124507049924
+        ]
+      ],
+      "normalized_weight_over_frozen_three": 0.20753010858344867,
+      "observed_ratio_phase_degrees": 29.196793077759352,
+      "relative_likelihood_to_best": 0.2915382704395623,
+      "residual_primary_vector": [
+        1.8170074114005237,
+        0.06697106707143241,
+        0.027682716930966134,
+        -2.0693737377816577
+      ],
+      "spin": 12,
+      "target_phase_degrees": -82.43877175012827,
+      "wrapped_phase_residual_degrees": 111.6355648278876
+    },
+    "H4": {
+      "chi_square": 5.430041255348852,
+      "chi_square_per_df": 2.715020627674426,
+      "degrees_of_freedom": 2,
+      "delta_chi_square": 4.356110116063402,
+      "exact_ratio": {
+        "imag": "-336/625",
+        "real": "-527/625"
+      },
+      "fitted_common_complex_normalization_re_im": [
+        -0.129151978199993,
+        0.6196929390209944
+      ],
+      "fitted_primary_vector": [
+        0.44204787203592066,
+        -0.45309298270218623,
+        -0.129151978199993,
+        0.6196929390209944
+      ],
+      "normalization_covariance": [
+        [
+          0.7409057065663295,
+          0.07334543404658785
+        ],
+        [
+          0.07334543404658787,
+          0.7267639527924532
+        ]
+      ],
+      "normalized_weight_over_frozen_three": 0.0806247251865797,
+      "observed_ratio_phase_degrees": 29.196793077759352,
+      "relative_likelihood_to_best": 0.11326160380294378,
+      "residual_primary_vector": [
+        2.2822235332787093,
+        -0.4978365726261236,
+        1.285267364546144,
+        -1.9236325892867654
+      ],
+      "spin": 4,
+      "target_phase_degrees": -147.47959058337608,
+      "wrapped_phase_residual_degrees": 176.67638366113545
+    },
+    "H8": {
+      "chi_square": 1.0739311392854505,
+      "chi_square_per_df": 0.5369655696427252,
+      "degrees_of_freedom": 2,
+      "delta_chi_square": 0.0,
+      "exact_ratio": {
+        "imag": "354144/390625",
+        "real": "164833/390625"
+      },
+      "fitted_common_complex_normalization_re_im": [
+        0.7063828472712391,
+        -2.163427033521259
+      ],
+      "fitted_primary_vector": [
+        2.259455762492449,
+        -0.27249387815010295,
+        0.7063828472712391,
+        -2.163427033521259
+      ],
+      "normalization_covariance": [
+        [
+          0.7261452338011475,
+          -0.015285536306927694
+        ],
+        [
+          -0.015285536306927706,
+          1.0871634248263822
+        ]
+      ],
+      "normalized_weight_over_frozen_three": 0.7118451662299716,
+      "observed_ratio_phase_degrees": 29.196793077759352,
+      "relative_likelihood_to_best": 1.0,
+      "residual_primary_vector": [
+        0.464815642822181,
+        -0.6784356771782069,
+        0.44973253907491195,
+        0.8594873832554881
+      ],
+      "spin": 8,
+      "target_phase_degrees": 65.04081883324784,
+      "wrapped_phase_residual_degrees": -35.844025755488474
+    }
+  },
+  "primary_covariance": [
+    [
+      1.6599084875069692,
+      -0.021764402317000924,
+      0.05929096906910566,
+      -0.3520027795511663
+    ],
+    [
+      -0.021764402317000924,
+      1.5848172727236056,
+      -0.062072791133289125,
+      0.15483452584971064
+    ],
+    [
+      0.05929096906910566,
+      -0.062072791133289125,
+      1.4039287471775797,
+      0.056669554683767775
+    ],
+    [
+      -0.3520027795511663,
+      0.15483452584971064,
+      0.056669554683767775,
+      1.9444616140943356
+    ]
+  ],
+  "primary_vector": [
+    2.72427140531463,
+    -0.9509295553283098,
+    1.156115386346151,
+    -1.303939650265771
+  ],
+  "provenance": {
+    "contract": "predictions/norm5_chiral_phase_scorer_20260829.json",
+    "contract_sha256": "5e4b2a90413e309a9e6977bd5b2be28d81c472861fc1341288bc99cfb652e4d4",
+    "input": "results/huawei-20260829/P226-norm5-chiral-fixedp/chiral_response.json",
+    "input_sha256": "57d6c996d8bf0cdf8d15ecfaf0ae8e7997d040e390e2ac6d30bcdaafa09dce89",
+    "manifest": "experiments/p226_norm5_chiral_fixedp_production_20260829.json",
+    "manifest_sha256": "9b381f7ecf651d482bc4cbb2a63d2217893a44feb2007f06302bc45bc32ade9f"
+  },
+  "ranking": [
+    "H8",
+    "H12",
+    "H4"
+  ],
+  "reflection_conjugacy_null": {
+    "chi_square": 0.0,
+    "degrees_of_freedom": 0,
+    "point_re_im": [
+      0.0,
+      0.0
+    ],
+    "relation": "R_((8+i)(2+i))-conj(R_((8-i)(2-i)))",
+    "status": "exact_configurationwise_null"
+  },
+  "schema": "matching-one.norm5-chiral-phase-score.v1",
+  "status": "scored_under_pre_reveal_contract"
+}
