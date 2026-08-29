@@ -1,0 +1,31 @@
+{
+  "blocks": [
+    "issue43_n185_n265_deltaM",
+    "issue57_norm5"
+  ],
+  "comparison": {
+    "delta_nlpd_H4_minus_zero": -13.806418789729094,
+    "interpretation": "negative favors the block-specific fixed H4 predictions; do not treat the chi-square difference as a calibrated likelihood-ratio test"
+  },
+  "governance": {
+    "anti_double_counting": "use exactly the two registered primary target blocks; add no derived views",
+    "independence_rule": "distinct raw_data_group; cross-block target covariance set to zero",
+    "target_channel": "matching_odd"
+  },
+  "models": {
+    "H4_fixed_predictions": {
+      "chi_square": 3.4622795373044295,
+      "chi_square_survival": 0.48363695393249573,
+      "degrees_of_freedom": 4,
+      "nlpd": -35.7946059274312
+    },
+    "zero_effect": {
+      "chi_square": 31.18573555150965,
+      "chi_square_survival": 2.805595267905808e-06,
+      "degrees_of_freedom": 4,
+      "nlpd": -21.988187137702106
+    }
+  },
+  "schema": "matching-one/independent-target-existence-meta/v1",
+  "status": "post-reveal synthesis; not an additive prequential evidence row"
+}
