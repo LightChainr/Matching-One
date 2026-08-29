@@ -25,12 +25,12 @@ from pathlib import Path
 from typing import Dict, Mapping, Sequence, Tuple
 
 import yaml
+import mpmath as mp
 
 from analyze_p48_retrospective import (
     Histogram,
     covariance_of_mean,
     project_size,
-    quadratic,
     read_histograms,
 )
 from score_p49_fullcurve_doubling import (
@@ -47,6 +47,9 @@ EXPECTED_REPRESENTATIONS = {
     PARENT_N: {"first": (12, 1), "second": (9, 8)},
     CHILD_N: {"first": (13, 11), "second": (17, 1)},
 }
+# Both engines emit first-minus-second in the frozen genealogy order.  The
+# negative norm-2 transfer character is already carried by the target ratio.
+LINEAGE_SIGN = {PARENT_N: +1.0, CHILD_N: +1.0}
 FEATURE_ORDER = (
     "X_even_0.0",
     "X_even_0.025",
@@ -254,6 +257,58 @@ def scalar_score(
     }
 
 
+def generalized_covariance_score(
+    residual: Sequence[float],
+    covariance: Sequence[Sequence[float]],
+    relative_cutoff: float = 1e-10,
+) -> dict[str, object]:
+    """Score a correlated vector after removing numerical covariance null modes."""
+    mp.mp.dps = 80
+    values = [mp.mpf(str(value)) for value in residual]
+    matrix = [[mp.mpf(str(value)) for value in row] for row in covariance]
+    scales = [mp.sqrt(matrix[i][i]) for i in range(len(values))]
+    if any(scale <= 0 for scale in scales):
+        raise ValueError("residual covariance has nonpositive diagonal")
+    correlation = mp.matrix([
+        [matrix[i][j] / (scales[i] * scales[j]) for j in range(len(values))]
+        for i in range(len(values))
+    ])
+    eigenvalues, eigenvectors = mp.eigsy(correlation)
+    spectrum = [eigenvalues[i] for i in range(len(values))]
+    cutoff = max(spectrum) * mp.mpf(str(relative_cutoff))
+    if min(spectrum) < -cutoff:
+        raise ValueError("residual correlation is materially indefinite")
+    active = [i for i, value in enumerate(spectrum) if value > cutoff]
+    if not active:
+        raise ValueError("residual covariance has zero numerical rank")
+    standardized = mp.matrix([
+        value / scale for value, scale in zip(values, scales)
+    ])
+    contributions = [
+        ((eigenvectors[:, i].T * standardized)[0] ** 2) / spectrum[i]
+        for i in active
+    ]
+    chi_square = mp.fsum(contributions)
+    degrees = len(active)
+    survival = mp.gammainc(
+        mp.mpf(degrees) / 2, chi_square / 2, mp.inf
+    ) / mp.gamma(mp.mpf(degrees) / 2)
+    return {
+        "chi_square": float(chi_square),
+        "degrees_of_freedom": degrees,
+        "chi_square_survival": float(survival),
+        "numerical_rank": degrees,
+        "relative_eigenvalue_cutoff": relative_cutoff,
+        "active_condition_number": float(
+            max(spectrum) / min(spectrum[i] for i in active)
+        ),
+        "correlation_eigenvalues": [float(value) for value in spectrum],
+        "component_standardized_residuals": [
+            float(value / scale) for value, scale in zip(values, scales)
+        ],
+    }
+
+
 def render(
     parent_data,
     child_data,
@@ -269,8 +324,12 @@ def render(
 
     parent_groups = grouped(parent_data, PARENT_N)
     child_groups = grouped(child_data, CHILD_N)
-    parent, parent_cov = estimate(parent_groups, lineage_sign=+1.0)
-    child, child_cov = estimate(child_groups, lineage_sign=-1.0)
+    parent, parent_cov = estimate(
+        parent_groups, lineage_sign=LINEAGE_SIGN[PARENT_N]
+    )
+    child, child_cov = estimate(
+        child_groups, lineage_sign=LINEAGE_SIGN[CHILD_N]
+    )
 
     target = prediction["target"]
     induced = prediction["induced_root_prediction_if_primary_deltaM_doubling_holds"]
@@ -294,7 +353,7 @@ def render(
         submatrix(child_cov, delta_indices),
         delta_ratio,
     )
-    delta_chi2 = quadratic(delta_residual, delta_cov)
+    delta_score = generalized_covariance_score(delta_residual, delta_cov)
 
     slope_index = FEATURE_ORDER.index("mean_slope")
     root_index = FEATURE_ORDER.index("root_gap_lineage")
@@ -360,8 +419,7 @@ def render(
             "child_over_parent_ratio": delta_ratio,
             "residual": delta_residual,
             "residual_covariance": delta_cov,
-            "chi_square": delta_chi2,
-            "degrees_of_freedom": len(delta_indices),
+            **delta_score,
         },
         "slope": {
             "raw_asymptotic_baseline": slope_raw,
