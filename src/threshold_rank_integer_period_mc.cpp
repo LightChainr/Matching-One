@@ -894,6 +894,7 @@ int run(int argc, char** argv) {
 
 }  // namespace
 
+#ifndef THRESHOLD_RANK_INTEGER_PERIOD_NO_MAIN
 int main(int argc, char** argv) {
     try {
         return run(argc, argv);
@@ -902,3 +903,4 @@ int main(int argc, char** argv) {
         return 2;
     }
 }
+#endif
