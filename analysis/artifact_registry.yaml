@@ -71,6 +71,7 @@ evidence_archives:
   - {id: EXACT_POLYNOMIALS, path: results/exact_small_matching_polynomials.md, status: immutable_result, role: exact_finite_polynomials}
   - {id: EXACT_ZERO_PILOT, path: results/exact-zero-map-pilot, status: negative_result, role: complex_zero_pilot}
   - {id: GAUSSIAN_COVER_CHARACTERS, path: results/exact-cover-character-oracles, status: immutable_result, role: exact_deck_group_character_oracle}
+  - {id: GAUSSIAN_COVER_FIBER_SCORE_SMOKE, path: results/local-20260829/P226-gaussian-cover-fiber-score-smoke, status: smoke_only, role: fixed_p_deck_character_score_kernel}
 
 topic_derivations:
   - {path: notes/pivotal-russo-finite-volume.md, status: topic_derivation, role: pivotal_identity}
@@ -86,6 +87,7 @@ topic_derivations:
   - {path: notes/square-bond-duality-tiny-torus.md, status: topic_derivation, role: square_bond_control}
   - {path: notes/gaussian-isogeny-maximin-design.md, status: topic_derivation, role: information_design}
   - {path: notes/gaussian-cover-fiber-character-rg.md, status: topic_derivation, role: exact_cover_character_RG_basis}
+  - {path: notes/gaussian-cover-fixed-p-fiber-score-pilot.md, status: topic_derivation, role: fixed_p_deck_character_score_pilot}
 
 historical_protocols:
   - {path: experiments/server_compute_queue.yaml, status: historical, role: original_server_queue}

@@ -1,0 +1,27 @@
+schema: matching-one.gaussian-cover-fiber-score-pilot.v1
+issue: 226
+status: smoke_only_not_production_evidence
+base_pr: 239
+cover_multiplier: 1+i
+deck_group: Z/2
+parent_order: 65
+child_order: 130
+lineages:
+  - {parent: [8, 1], child: [7, 9], parent_multiplier_mod_65: 29}
+  - {parent: [7, 4], child: [3, 11], parent_multiplier_mod_65: 24}
+fiber: "{j,j+65}"
+probability: 0.592746050790
+samples: 20000
+batches: 20
+seed: 22620260829
+primary_observable: matching_odd_cross_wrap
+derived_observables:
+  - global_matching_odd
+  - orientation_H4_difference
+score_modes:
+  - deck_trivial
+  - deck_detail
+exact_gate: N5_to_N10_rational_finite_difference
+artifact: results/local-20260829/P226-gaussian-cover-fiber-score-smoke/fiber_score_smoke.json
+batch_sufficient_statistics: results/local-20260829/P226-gaussian-cover-fiber-score-smoke/fiber_score_smoke.batches.csv
+
