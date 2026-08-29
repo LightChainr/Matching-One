@@ -1,0 +1,109 @@
+version: 1
+created: 2026-08-29
+status: design_frozen_before_any_multi_modulus_gamma_target
+issues: [205, 215, 275]
+production_authorized: false
+generator: scripts/design_p275_atop_q4_field_identity.py
+machine_design: results/p275-atop-q4-field-identity/latest.json
+
+input_evidence:
+  H4_selected: fc14817bb8c0b2f6e7cbde41778e715dcb62bc64
+  double_projector_staircase: ddf41aa
+  A_top_rank_birth_proxy: 078bd61
+  Q4_eta_cocycle: f5dcca6
+  complex_character_archive_audit: cc1d43c
+
+scope:
+  stop_harmonic_voting: true
+  only_global_channel: A_top=P2-P0
+  excluded_channels: [E_top, primitive_rank1_C3, charged_local_O_Schi]
+  forbidden_refits: [H8, H12, free_radial_exponent]
+
+observable:
+  A_top_sample: q=rank_image_H1_minus_1
+  odd_complex_source: J_D4=sum_v chi4(ell_v)*(I12-I01)_v
+  birth_mass: B=E[sum_v(I01+I12)_v]
+  response: gamma=Cov(A_top,J_D4)/B
+  canonical_transport: Gamma=conjugate((z/abs(z))^4)*gamma_lab
+  scaled_response: Y=N^(13/8)*Gamma
+
+moduli:
+  - {id: i, tau: i, E4hat_over_i: '1', eta_coordinate: '0'}
+  - id: 2i
+    tau: 2i
+    E4hat_over_i: '11/4'
+    eta_coordinate: '-0.5198603854199589820629240910936324261'
+  - id: 5i_over_2
+    tau: 5i/2
+    E4hat_over_i: '4.2934368543749230211109559224133052345'
+    eta_coordinate: '-0.7816530999014344284384824638880257146'
+
+geometries:
+  N50:
+    seed: 2026275050
+    i: {z: [7,1], matrix: [[7,-1],[1,7]], smith: [1,50]}
+    2i: {z: [4,3], matrix: [[4,-6],[3,8]], smith: [1,50]}
+    5i_over_2: {z: [2,1], matrix: [[4,-5],[2,10]], smith: [1,50]}
+  N130:
+    seed: 2026275130
+    i: {z: [11,3], matrix: [[11,-3],[3,11]], smith: [1,130]}
+    2i: {z: [8,1], matrix: [[8,-2],[1,16]], smith: [1,130]}
+    5i_over_2: {z: [3,2], matrix: [[6,-10],[4,15]], smith: [1,130]}
+  N170:
+    seed: 2026275170
+    i: {z: [13,1], matrix: [[13,-1],[1,13]], smith: [1,170]}
+    2i: {z: [9,2], matrix: [[9,-4],[2,18]], smith: [1,170]}
+    5i_over_2: {z: [4,1], matrix: [[8,-5],[2,20]], smith: [1,170]}
+
+acquisition:
+  status: not_launched_runner_extension_required
+  samples_per_geometry: 20000000
+  batches: 100
+  replica_counter: [9500000000, 9520000000]
+  within_N: identical_priority_field_random_root_counter_and_batches_across_all_three_moduli
+  across_N: independent_seeds
+
+model_order:
+  - Q4_epsilon_ordinary
+  - Q4_energy_Jordan
+  - generic_allowed_H4_pure
+  - generic_allowed_H4_affine_log
+  - zero_response
+
+models:
+  Q4_epsilon_ordinary:
+    equation: Y(N,tau)=c*E4hat(tau)/E4hat(i)
+    nuisance: one_common_complex_c
+  Q4_energy_Jordan:
+    equation: Y(N,tau)=F(tau)*[c0+c1*log(N)+c2*e_eta(tau)]
+    nuisance: three_common_complex_coefficients
+    relations:
+      - log_slope_vector_is_proportional_to_E4hat_modulus_vector
+      - eta25*[R(2i)-R(i)]-eta2*[R(5i/2)-R(i)]=0
+  generic_allowed_H4_pure:
+    equation: Y(N,tau)=c_tau
+  generic_allowed_H4_affine_log:
+    equation: Y(N,tau)=a_tau+b_tau*log(N)
+
+sufficient_statistics_per_aligned_batch_per_geometry:
+  - samples_and_replica_interval
+  - sum_q_and_sum_q_squared
+  - sum_I01_I12_and_direct_I02
+  - sum_ReIm_J_S4_and_J_D4
+  - sum_q_times_ReIm_J_S4_and_J_D4
+  - unmarked_birth_mass_N_times_I01_plus_I12
+  - optional_landing_H4_S_D_and_q_products
+  - priority_field_digest_and_random_root_digest
+
+covariance_contract: >-
+  Recompute connected covariances, division by B, exact complex frame
+  transport, N^(13/8) scaling and every GLS residual inside synchronized
+  delete-one batches. Preserve the complete 18x18 real covariance in order
+  N50/N130/N170, then i/2i/5i_over_2, then Re/Im. Never score marginal
+  components as independent evidence.
+
+decision_map:
+  ordinary_Q4_fits_without_log_gain: thermal_Q4_epsilon_selected
+  ordinary_fails_but_Jordan_fits_with_nonzero_log: thermal_Q4_Jordan_selected
+  Q4_models_fail_but_generic_H4_fits: another_allowed_H4_completion
+  all_nonzero_models_fail: multi_field_flow_or_J_D4_mapping_failure

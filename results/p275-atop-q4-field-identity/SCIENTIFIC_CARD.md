@@ -1,0 +1,5 @@
+- Question: which field completes the already-selected global H4 channel?
+- Observable: only `gamma=Cov(A_top,J_D4)/birth_mass`, transported as one complex character.
+- Selector: three moduli times three cyclic sizes, scored with one full covariance block structure.
+- Q4 fingerprint: `E4hat` modulus vector; Jordan adds the gauge-free eta cocycle, never a free exponent.
+- Stop rule: do not collect more harmonic votes; failure promotes another H4 completion, not H8/H12.
