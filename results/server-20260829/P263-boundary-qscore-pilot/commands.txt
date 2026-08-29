@@ -1,0 +1,18 @@
+# Remote deployment and frozen acquisitions (Huawei-CodeBuddy-XPk2PZ)
+git clone --branch analysis/p263-boundary-lattice-qscore-20260829 --single-branch https://github.com/LightChainr/Matching-One.git /workspace/Matching-One-p263-boundary-qscore
+cd /workspace/Matching-One-p263-boundary-qscore
+test "$(git rev-parse HEAD)" = fbd017408d0841d022aae425253799f778c38b09
+c++ -O2 -std=c++17 src/p263_boundary_qscore_pilot.cpp -o build/p263/p263_boundary_qscore_pilot
+sha256sum build/p263/p263_boundary_qscore_pilot
+/usr/bin/time -v -o results/server-20260829/P263-boundary-qscore-pilot/logs/level1.time.txt build/p263/p263_boundary_qscore_pilot --level 1 --samples 200000 --batches 100 --seed 2026102631 --output results/server-20260829/P263-boundary-qscore-pilot/raw/level1_200k.batches.csv
+/usr/bin/time -v -o results/server-20260829/P263-boundary-qscore-pilot/logs/level2.time.txt build/p263/p263_boundary_qscore_pilot --level 2 --samples 500000 --batches 100 --seed 2026102632 --output results/server-20260829/P263-boundary-qscore-pilot/raw/level2_500k.batches.csv
+
+# Checksum-verified transfer to the branch worktree, then unchanged scoring
+scp Huawei-CodeBuddy-XPk2PZ:/workspace/Matching-One-p263-boundary-qscore/results/server-20260829/P263-boundary-qscore-pilot/raw/level1_200k.batches.csv results/server-20260829/P263-boundary-qscore-pilot/raw/
+scp Huawei-CodeBuddy-XPk2PZ:/workspace/Matching-One-p263-boundary-qscore/results/server-20260829/P263-boundary-qscore-pilot/raw/level2_500k.batches.csv results/server-20260829/P263-boundary-qscore-pilot/raw/
+python3 scripts/score_p263_boundary_qscore_pilot.py --batches results/server-20260829/P263-boundary-qscore-pilot/raw/level1_200k.batches.csv --output results/server-20260829/P263-boundary-qscore-pilot/analysis/level1_200k.score.json
+python3 scripts/score_p263_boundary_qscore_pilot.py --batches results/server-20260829/P263-boundary-qscore-pilot/raw/level2_500k.batches.csv --output results/server-20260829/P263-boundary-qscore-pilot/analysis/level2_500k.score.json
+
+# Post-reveal fixed-rectangle conformal secondary; primary scores remain unchanged
+python3 scripts/analyze_p263_rectangle_conformal_secondary.py --level1-batches results/server-20260829/P263-boundary-qscore-pilot/raw/level1_200k.batches.csv --level1-score results/server-20260829/P263-boundary-qscore-pilot/analysis/level1_200k.score.json --level2-batches results/server-20260829/P263-boundary-qscore-pilot/raw/level2_500k.batches.csv --level2-score results/server-20260829/P263-boundary-qscore-pilot/analysis/level2_500k.score.json --output results/server-20260829/P263-boundary-qscore-pilot/analysis/rectangle_conformal_secondary.json
+python3 -m unittest discover -s tests -p 'test_p263_*.py'

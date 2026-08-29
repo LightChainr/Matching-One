@@ -1,0 +1,106 @@
+{
+  "anchored_lattice_tangent": [
+    1.43438704072179,
+    0.0,
+    0.4589473783454112,
+    -1.5626798810813893
+  ],
+  "batch_count": 100,
+  "estimates": [
+    {
+      "d_log_probability": 0.8818548979591195,
+      "events_14_23": 147,
+      "geometry_id": "lambda_1_4",
+      "lambda": "1/4",
+      "measure_tangent_14_23": 0.00025926533999998114,
+      "probability_14_23": 0.000294,
+      "samples": 500000,
+      "span_L": 30,
+      "z_before_amplitude_projection": 2.9395694277989057
+    },
+    {
+      "d_log_probability": -0.5405406557366318,
+      "events_14_23": 244,
+      "geometry_id": "lambda_1_3",
+      "lambda": "1/3",
+      "measure_tangent_14_23": -0.0002637838399994763,
+      "probability_14_23": 0.000488,
+      "samples": 500000,
+      "span_L": 28,
+      "z_before_amplitude_projection": 1.5051823870771157
+    },
+    {
+      "d_log_probability": -0.0502933037853528,
+      "events_14_23": 1241,
+      "geometry_id": "lambda_2_3",
+      "lambda": "2/3",
+      "measure_tangent_14_23": -0.00012482797999524564,
+      "probability_14_23": 0.002482,
+      "samples": 500000,
+      "span_L": 30,
+      "z_before_amplitude_projection": 1.964129765422527
+    },
+    {
+      "d_log_probability": -1.9408237613012391,
+      "events_14_23": 2212,
+      "geometry_id": "lambda_3_4",
+      "lambda": "3/4",
+      "measure_tangent_14_23": -0.008586204319996682,
+      "probability_14_23": 0.004424,
+      "samples": 500000,
+      "span_L": 28,
+      "z_before_amplitude_projection": -0.05749749400427362
+    }
+  ],
+  "frozen_target": [
+    -0.14829994193484564,
+    0.0,
+    0.3249693720763416,
+    0.36786256566279774
+  ],
+  "issue": 263,
+  "joint_gls": {
+    "chi_square": 5.872171777302203,
+    "covariance_eigenvalues": [
+      0.5262293043984562,
+      2.5909604768238004,
+      9.653543441741881
+    ],
+    "degrees_of_freedom": 3,
+    "relative_pseudoinverse_cutoff": 1e-10
+  },
+  "residual": [
+    1.5826869826566357,
+    0.13397800626906964,
+    -1.930542446744187
+  ],
+  "residual_covariance": [
+    [
+      6.432743715072,
+      2.6836502006688576,
+      2.274615572839592
+    ],
+    [
+      2.6836502006688576,
+      3.5443037533073296,
+      2.6155520213219536
+    ],
+    [
+      2.274615572839592,
+      2.6155520213219536,
+      2.7936857545848035
+    ]
+  ],
+  "schema": "matching-one.p263-boundary-qscore-pilot-score.v1",
+  "state_order": [
+    "lambda_1_4",
+    "lambda_2_3",
+    "lambda_3_4"
+  ],
+  "status": "pilot_not_continuum_evidence",
+  "warnings": [
+    "The pilot rectangles are finite boxes, not the upper half-plane.",
+    "A single resolution level cannot separate scaling correction from ODE-shape error.",
+    "The GLS result is a software/sensitivity diagnostic until both frozen levels are acquired."
+  ]
+}
