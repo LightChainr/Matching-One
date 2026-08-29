@@ -61,13 +61,17 @@ def integer_selection_check(q: int) -> dict:
     invariant = [Fraction(1) for _ in range(size)]
     seed = [Fraction(i == 0) for i in range(size)]
     charged = matrix_times_vector(projectors["two_row_2"], seed)
+    singlet_row = row_times_matrix(invariant, projectors["singlet"])
+    standard_row = row_times_matrix(invariant, projectors["standard"])
+    two_row = row_times_matrix(invariant, projectors["two_row_2"])
     return {
         "Q": q,
         "invariant_covector_matrix_elements": {
-            name: [fraction_record(value) for value in row_times_matrix(invariant, projector)]
-            for name, projector in projectors.items()
+            "ell_P_singlet_equals_ell": singlet_row == invariant,
+            "ell_P_standard_all_zero": all(value == 0 for value in standard_row),
+            "ell_P_two_row_2_all_zero": all(value == 0 for value in two_row),
         },
-        "exact_linear_null": all(value == 0 for value in row_times_matrix(invariant, projectors["two_row_2"])),
+        "exact_linear_null": all(value == 0 for value in two_row),
         "charged_positive_control": {
             "definition": "v=P_[2] e_{01}",
             "invariant_one_point": fraction_record(dot(invariant, charged)),
