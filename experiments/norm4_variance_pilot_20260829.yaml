@@ -1,7 +1,8 @@
 version: 1
 created: 2026-08-29
-status: pilot_extended_to_10m_for_analysis_floor
+status: production_counts_frozen_after_source_plus_target_covariance_forecast
 issue: 154
+depends_on_pr: 202
 purpose: >-
   Measure the full-curve variance and CPU cost of the noncyclic N260/N340
   dyadic children before deciding whether a 0.5B, 1B, or 2B norm-4 closure
@@ -88,3 +89,49 @@ analysis_floor_extension:
     Treat this as a disjoint variance extension. Do not combine or interpret
     its point means as prospective q2/Jordan evidence; use it only to project
     covariance and production cost.
+
+source_plus_target_forecast:
+  frozen_after: >-
+    Both 10M target pilots completed. Sample allocation used only delete-one
+    covariance and throughput, not the N260/N340 pilot point means.
+  source_block:
+    sizes: [65, 130, 85, 170]
+    existing_samples_per_size: 100000000
+    existing_seed: 2026104501
+    existing_counter_interval: [5000000000, 5100000000]
+    covariance: full_4_by_4_common_random_numbers
+  finding: >-
+    Keeping the sources at 100M caps expected q2-vs-Jordan separation below
+    2.1 sigma even with 2B targets. Across the tested grid, accumulating each
+    source to 2B and running each target at 1B is the lowest-CPU allocation
+    reaching approximately three-sigma expected separation in both directions.
+  frozen_production:
+    source_extension:
+      executable: build/threshold_rank_orientation_mc
+      sizes: [65, 130, 85, 170]
+      additional_samples_per_size: 1900000000
+      batches: 100
+      seed: 2026104501
+      replica_counter_first: 5100000000
+      replica_counter_last_exclusive: 7000000000
+      cross_size_rng: aligned_common_random_numbers
+    targets:
+      samples_per_size: 1000000000
+      batches: 100
+      N260:
+        seed: 2026105401
+        replica_counter_first: 8200000000
+        replica_counter_last_exclusive: 9200000000
+      N340:
+        seed: 2026105402
+        replica_counter_first: 8200000000
+        replica_counter_last_exclusive: 9200000000
+      cross_size_rng: independent
+  expected_sqrt_noncentrality:
+    q2_null_if_jordan_true: 3.1547753335
+    jordan_null_if_q2_true: 3.0254303027
+  projected_incremental_cpu_seconds: 260111.1303
+  promotion_basis: >-
+    Retain the noncyclic arithmetic-class closure and prospective even-generator
+    phase-node test frozen on PR 202; this is no longer justified only as a
+    cheaper substitute for extending the norm-5 block.
