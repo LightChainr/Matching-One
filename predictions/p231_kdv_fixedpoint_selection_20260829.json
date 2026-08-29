@@ -1,0 +1,127 @@
+{
+  "claim_boundary": {
+    "conditional_bridge": "matching-even H4 must couple to the same sector-resolved I3 insertion and registered modular frame",
+    "exact": "c=0 total-partition degeneracy, vector-valued modular fixed-point selection, and Pinson-sector character ratios",
+    "not_claimed": "that an unconditioned matching observable is I3, or that the real projection alone distinguishes weight4 from its weight8 conjugate"
+  },
+  "exact_rho_sector_oracle": {
+    "C_Q_S": [
+      "3/2",
+      "0",
+      "0"
+    ],
+    "chiral_vector": [
+      "1",
+      "(0)+(1)*omega",
+      "(-1)+(-1)*omega"
+    ],
+    "cycle_check": [
+      "(0)+(1)*omega",
+      "(-1)+(-1)*omega",
+      "1"
+    ],
+    "cycle_eigenvalue": "omega",
+    "omega_times_vector": [
+      "(0)+(1)*omega",
+      "(-1)+(-1)*omega",
+      "1"
+    ],
+    "projector_numerators": {
+      "omega": [
+        "3",
+        "(0)+(3)*omega",
+        "(-3)+(-3)*omega"
+      ],
+      "omega2": [
+        "0",
+        "0",
+        "0"
+      ],
+      "trivial": [
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    "reflection_even_normalized": [
+      "1",
+      "-1/2",
+      "-1/2"
+    ],
+    "reflection_even_vector": [
+      "2",
+      "-1",
+      "-1"
+    ]
+  },
+  "fixed_point_covariance": {
+    "rho": "exp(i*pi/3)",
+    "square_rule": "at tau=i, weight 4 lies in the +1 eigenspace of the sector swap",
+    "stabilizer": "gamma(tau)=(tau-1)/tau with (c tau+d)=tau",
+    "weight4_allowed_character": "omega=exp(2*pi*i/3)",
+    "weight8_allowed_character": "omega^2",
+    "weight_w_rule": "R_gamma v(rho)=rho^(-w) v(rho)"
+  },
+  "frozen_predictions": {
+    "character_purity": "P_omega K4=K4, P_1 K4=P_omega2 K4=0",
+    "chiral_ratios": "K4_01/K4_10=omega and K4_11/K4_10=omega^2",
+    "contrast_nulls": "Q_rho=0 and S_rho=0 exactly; C_rho is allowed and nonzero",
+    "four_leg_discriminator": "an unmarked singlet readout cannot linearly see the [2] four-leg primary; the nonzero rho omega-sector response requires topological-sector resolution rather than a hidden scalar V_(2,2) amplitude",
+    "reflection_even_ratios": "R_10:R_01:R_11=2:-1:-1",
+    "thermal_Q4_discriminator": "a scalar/trivial-sector weight-4 one-point is forced to zero at rho (the E4 node), while the sector-valued vacuum KdV omega character is allowed"
+  },
+  "issue": 231,
+  "minimal_score": {
+    "measure": "the complex primitive-sector response in registered order [(1,0),(0,1),(1,1)] at rho",
+    "weight8_adversary": "the chiral character is conjugated (omega^2), even though the reflection-even 2:-1:-1 projection alone cannot distinguish it",
+    "zero_parameter_residuals": [
+      "K4_01-omega*K4_10",
+      "K4_11-omega^2*K4_10",
+      "R_10+R_01+R_11",
+      "R_01-R_11"
+    ]
+  },
+  "numerical_oracle": {
+    "amplitude": "(0.005816680556147096068915866891068176268017984772573677767100776324655227 - 1.73366079494739221113109080139200633263233008562569211056364037339875e-125j)",
+    "dps": 90,
+    "errors": {
+      "C_minus_3A_abs": "2.59885244141e-113",
+      "reflection_Q_abs": "0.0",
+      "reflection_S_abs": "2.59885244141e-113",
+      "sector_01_minus_omega": "2.62985376562e-111",
+      "sector_11_minus_omega2": "3.35241891719e-111"
+    },
+    "holomorphic_values": [
+      "(0.005816680556147096068915866891068176268017984772573677767100776324655227 - 1.73366079494739221113109080139200633263233008562569211056364037339875e-125j)",
+      "(-0.002908340278073548034457933445534088134008992386286838883550388162327613 + 0.005037393127322382024483468132161572219395735479333878173098324893035376j)",
+      "(-0.002908340278073548034457933445534088134008992386286838883550388162327613 - 0.005037393127322382024483468132161572219395735479333878173098324893035376j)"
+    ],
+    "ratio_to_first": [
+      "(1.0 + 0.0j)",
+      "(-0.5 + 0.8660254037844386467637231707529361834714026269051903140279034897259665j)",
+      "(-0.5 - 0.8660254037844386467637231707529361834714026269051903140279034897259665j)"
+    ],
+    "sector_order": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ]
+  },
+  "schema": "matching-one/vacuum-kdv-fixedpoint-selection/v1",
+  "status": "exact_modular_selection_and_frozen_sector_character",
+  "vacuum_degeneracy": {
+    "I3_mean": "D2 D0[1]=0",
+    "I3_second_moment": "[D^4+(1/18)E4 D^2-(11/1080)E6 D][1]=0",
+    "Q1_total_partition": "Z_total=1",
+    "selection_rule": "At c=0 the normalized unconditioned vacuum KdV response vanishes; a nonzero I3 signal must be sector-resolved, defect-twisted, or a lattice contact/nonuniversal term."
+  }
+}
