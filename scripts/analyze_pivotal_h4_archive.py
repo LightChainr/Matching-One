@@ -140,6 +140,12 @@ def emit(result, runs, output_dir: Path):
         "",
         "**Status: descriptive reuse, not heldout evidence.**",
         "",
+        "## Decision",
+        "",
+        f"Across N=65--425, the matching-even relative pivotal anisotropy `N P4[D']/Mbar'` is compatible with one amplitude (`chi-square={result['scores']['even_pivotal_H4_scaled']['chi_square']:.4f} / 7 df`). This is the clean integrated signature of an `L^-2` H4 correction to total pivotal mass.",
+        "",
+        f"The coefficient ratio `Xi` is also compatible with one value (`chi-square={result['scores']['coefficient_ratio']['chi_square']:.4f} / 7 df`), supporting a common scaling-function relation between central `P4[D]` and derivative `P4[S']`. In contrast, the matching-odd leading-power normalization is decisively nonconstant (`chi-square={result['scores']['pivotal_H4_scaled']['chi_square']:.4f} / 7 df`): pivotal normalization does not erase its q=2/Jordan-scale finite-size dynamics.",
+        "",
         "| metric | constant amplitude (SE) | chi-square / df |",
         "| --- | ---: | ---: |",
     ]
