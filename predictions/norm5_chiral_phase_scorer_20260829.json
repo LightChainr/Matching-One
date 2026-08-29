@@ -1,0 +1,27 @@
+{
+  "schema": "matching-one.norm5-chiral-phase-scorer-contract.v1",
+  "status": "frozen_before_200k_reveal",
+  "issues": [226, 244],
+  "production_manifest": "experiments/p226_norm5_chiral_fixedp_production_20260829.json",
+  "production_manifest_sha256": "9b381f7ecf651d482bc4cbb2a63d2217893a44feb2007f06302bc45bc32ade9f",
+  "primary_order": ["plus_re", "plus_im", "minus_re", "minus_im"],
+  "model": {
+    "equations": ["R_minus=c", "R_plus=q_s*c"],
+    "free_parameters": ["Re(c)", "Im(c)"],
+    "observations": 4,
+    "degrees_of_freedom": 2,
+    "covariance": "one complete 4x4 covariance; hands and Re/Im are not independent votes"
+  },
+  "targets": {
+    "H4": {"spin": 4, "q_re": "-527/625", "q_im": "-336/625"},
+    "H8": {"spin": 8, "q_re": "164833/390625", "q_im": "354144/390625"},
+    "H12": {"spin": 12, "q_re": "32125393/244140625", "q_im": "-242017776/244140625"}
+  },
+  "ranking": {
+    "primary": "minimum joint GLS chi_square with 2 df",
+    "relative_likelihood": "exp[-(chi_square-model_minimum)/2]",
+    "normalized_weights": "normalize the three relative likelihoods over the frozen model set",
+    "phase_residual": "wrapped observed ratio phase minus exact target phase; descriptive only"
+  },
+  "reflection_null": "score only the true reflected pair null supplied by the engine; same-parent plus/minus conjugacy is not a null"
+}
