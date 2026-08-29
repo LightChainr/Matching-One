@@ -292,7 +292,8 @@ def summarize_matrix_by_permutation(matrix: Matrix) -> dict[str, Any]:
 def _prefix_path_count(n: int, mask: int) -> int:
     """Number of permutations whose prefix set is exactly ``mask``."""
 
-    size = mask.bit_count()
+    # int.bit_count() is unavailable on the repository's Python 3.9 floor.
+    size = bin(mask).count("1")
     return factorial(size) * factorial(n - size)
 
 
