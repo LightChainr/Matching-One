@@ -51,3 +51,10 @@ Their Q reflection controls remain null (`z=-0.782,+0.835`).  Combining this
 with generation one gives two successive exact sign alternations on each
 lineage, while keeping the scale-ratio conclusion conditional on visible
 finite-size drift.
+
+The four transition residuals are not independent because each generation-1
+child is reused as a generation-2 parent.  Propagating the exact shared-middle
+covariance, `Cov(r1,r2)=Var(C_middle)/2`, gives the combined two-lineage,
+two-generation H4 score `chi2=7.33031/4 df`, `p=0.11943`.  Thus the complete
+six-geometry chain remains compatible with one fixed `-1/2` transfer; simply
+adding the four individual z-squares would double-count the middle points.
