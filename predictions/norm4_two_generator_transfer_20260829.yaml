@@ -1,0 +1,170 @@
+version: 1
+status: frozen_before_N260_N340_target_production
+frozen_at: 2026-08-29
+claim_level: C0
+issue: 200
+related:
+  - 154
+  - 180
+  - 182
+  - 194
+  - 199
+
+purpose: >-
+  Freeze the first unrevealed test of the post-P57/post-N290 two-generator
+  thermal-transfer model. Norm 4 is used because it is the exact dyadic
+  composition T4=T2^2, changes to a noncyclic quotient class, and is a spin-4
+  sine-quadrature phase node. The scalar q=2/Jordan completion is primary;
+  full-jet one-generator closure and the root character are correlated
+  secondary views from the same future histograms.
+
+evidence_boundary:
+  development_inputs_already_revealed:
+    - P57 norm-5 H4/H12/H8/zero production result
+    - P57 Krawtchouk/Hermite thermal-jet diagnostic on PR 194
+    - P50 N145-to-N290 held-out full-curve result on PR 199
+  prospective_targets_not_seen:
+    - N260 full-curve physics target
+    - N340 full-curve physics target
+  note: >-
+    This artifact does not turn the post-reveal two-generator synthesis into
+    evidence. Its evidential content begins only when the unrevealed norm-4
+    targets are produced under a frozen covariance/sample plan.
+
+observable:
+  name: U
+  formula: N^(13/8) * P4[S_prime](N) / MbarPrime(N)
+  primitive_channel: cross
+  projector: size_local_P4
+  center: intrinsic_center_recomputed_inside_each_delete_one
+  covariance: full_source_plus_target_covariance
+
+lineages:
+  - parent_N: 65
+    double_N: 130
+    target_N: 260
+    net_multiplier: 2i
+    net_norm: 4
+    target_quotient_smith: [2, 130]
+    q2_completion_U: 1.5141591344
+    jordan_completion_U: 1.6371333807
+  - parent_N: 85
+    double_N: 170
+    target_N: 340
+    net_multiplier: 2i
+    net_norm: 4
+    target_quotient_smith: [2, 170]
+    q2_completion_U: 1.8192047521
+    jordan_completion_U: 2.0238329116
+
+primary_scalar_models:
+  scoring_order:
+    - analytic_q2
+    - rank2_Jordan
+  analytic_q2:
+    law: U(N) = A + C/N
+    null_residual: U(N) - 3*U(2N) + 2*U(4N)
+    target: 0
+    increment_ratio: 1/2
+  rank2_Jordan:
+    law: U(N) = A + B*log(N)
+    null_residual: U(4N) - 2*U(2N) + U(N)
+    target: 0
+    increment_ratio: 1
+  rule: >-
+    Score the two fixed models jointly over both lineages with propagated
+    covariance. Do not select a free exponent before these scores.
+
+two_generator_structure:
+  even_generator:
+    parity: Gaussian_conjugation_even
+    alternatives: [analytic_q2, rank2_Jordan]
+    requirement: >-
+      The full Krawtchouk/Hermite jet version must use one common source-frozen
+      vector generator, not rank-specific correction amplitudes.
+  odd_generator:
+    parity: Gaussian_conjugation_odd
+    hypothesis: amplitude proportional to sin(4*arg(multiplier))
+    norm4_target: exact_phase_node_zero
+    note: >-
+      The sine-quadrature interpretation is post-reveal and is not promoted by
+      this freeze. Norm 4 is useful precisely because it removes this proposed
+      generator from the first prospective even-generator test.
+
+spin4_phase_table:
+  convention: chi4(m) = (m/abs(m))^4 = cos(4phi) + i*sin(4phi)
+  entries:
+    1+i:  {norm: 2,  real: -1,    imag: 0}
+    1-i:  {norm: 2,  real: -1,    imag: 0}
+    2i:   {norm: 4,  real: 1,     imag: 0}
+    2+i:  {norm: 5,  real: -7/25, imag: 24/25}
+    2-i:  {norm: 5,  real: -7/25, imag: -24/25}
+    3+i:  {norm: 10, real: 7/25,  imag: 24/25}
+    3-i:  {norm: 10, real: 7/25,  imag: -24/25}
+  exact_semigroup_check:
+    multiplication: (1+i)*(2-i) = 3+i
+    character: chi4(1+i)*chi4(2-i) = chi4(3+i)
+
+phase_node:
+  norm2_N145_N290:
+    source_artifact: predictions/norm2_conjugation_phase_node_20260829.yaml
+    status: frozen_before_N290_reveal_on_PR194_branch
+    multipliers: [1+i, 1-i]
+    sine4: [0, 0]
+    target: conjugation_odd_transfer_residual_equals_zero
+    scoring_rule: >-
+      Execute after the frozen P50 primary score with the genealogy-resolved
+      response and full N145+N290 covariance. Do not choose modes from N290.
+  norm4_N260_N340:
+    multiplier: 2i
+    sine4: 0
+    target: no_V_odd_contribution_under_two_generator_hypothesis
+
+secondary_root_character:
+  formula: DeltaRoot(4N) / DeltaRoot(N)
+  target: 1/16
+  origin: exact_two_step_composition_of_the_norm2_H4_root_character
+  evidence_role: correlated_secondary_view_not_additive
+
+full_jet_secondary:
+  basis: frozen_Krawtchouk_Hermite_interlaced_thermal_jet
+  target_ranks: [2, 3, 4, 5, 6]
+  model_order:
+    - q2_one_even_generator
+    - Jordan_one_even_generator
+    - only_then_source_stable_free_matrix
+  forbidden:
+    - fit_one_correction_amplitude_per_rank
+    - select_a_generator_using_N260_or_N340_target_means
+    - count_scalar_U_and_full_jet_as_independent_evidence
+
+execution_gate:
+  - general integer-period backend exact/oracle tests pass
+  - run disjoint-counter N260/N340 variance and throughput pilot
+  - freeze final sample counts before target physics means are opened
+  - freeze complete source+target covariance contract
+  - apply typed observable/channel semantic checks
+  - preserve threshold-rank histograms and paired moments
+
+future_norm10:
+  status: not_authorized_by_this_artifact
+  gate: >-
+    Only promote if the N290 phase node and prospective norm-4 even-generator
+    score support the two-generator picture.
+  multipliers_for_quadrature_tomography: [2+i, 3+i]
+  phase_matrix:
+    - [-7/25, 24/25]
+    - [7/25, 24/25]
+  determinant: -336/625
+  condition_number_2norm: 24/7
+  reconstruction:
+    cosine: (25/14)*(Y10-Y5)
+    sine: (25/48)*(Y10+Y5)
+  semigroup_identity: (1+i)*(2-i)=3+i
+
+forbidden:
+  - use_P57_or_N290_reused_views_as_new_additive_evidence
+  - reinterpret_P57_zero_compatibility_as_absence_of_the_central_H4_sector
+  - promote_Jordan_from_descriptive_closeness_without_a_new_heldout_score
+  - open_N650_or_N850_before_the_norm4_and_phase_node_gates
+  - add_a_free_scalar_exponent_before_the_fixed_two_generator_tests
