@@ -23,8 +23,16 @@ thermal_scaling_jet:
   interlaced_components:
     even_r: P4_D_mode_r
     odd_r: P4_S_mode_r
-  derivative_jet: >-
-    d_r=sqrt(r!)*N^(13/8+r/8)*c_r/(p0*(1-p0))^(r/2)
+  primary_coordinate: exact_finite_N_jet
+  finite_derivative_jet: >-
+    dfin_r=r!*N^(13/8)*sqrt(binomial(N,r))*N^(-3r/8)*c_r
+    /(p0*(1-p0))^(r/2)
+  asymptotic_view: >-
+    dasym_r=sqrt(r!)*N^(13/8+r/8)*c_r/(p0*(1-p0))^(r/2)
+  finite_to_asymptotic_factor: 'sqrt((N)_r/N^r)'
+  normalization_rule: >-
+    Use dfin in every frozen finite-size width residual and downstream
+    cocycle. dasym is a large-N display only.
   generating_function: 'F_T(z)=sum_r d_r*z^r/r!'
 
 operator_hypotheses:
@@ -78,19 +86,19 @@ frozen_predictions:
     orders: [2, 3, 4, 5, 6]
     width_source: 'w_can from aligned paired rank-gap means, frozen independently of norm5 mode targets'
     division_free_residual: >-
-      R_width(r,Q)=d_r(QN)*w_can(QN)^r*d_0(N)
-      -d_r(N)*w_can(N)^r*d_0(QN)
+      R_width(r,Q)=dfin_r(QN)*w_can(QN)^r*dfin_0(N)
+      -dfin_r(N)*w_can(N)^r*dfin_0(QN)
     target: 'joint residual vector equals zero'
     interpretation: >-
       A pass makes discrete thermal-window width renormalization the first
       explanation of the family-wide amplitude drift. A failure rules out
       width-only closure but not the 5/8 rank-gap law itself.
   width_corrected_multiplier_cocycle:
-    width_corrected_jet: 'dtilde_r(N)=w_can(N)^r*d_r(N)'
+    width_corrected_jet: 'dtilde_fin_r(N)=w_can(N)^r*dfin_r(N)'
     q2_multiplier: '8/5'
     Jordan_multiplier: 'log(5)/log(2)'
     residual: >-
-      R_c(r)=dtilde_r(5N)-c*dtilde_r(2N)+(c-1)*dtilde_r(N)
+      R_c(r)=dtilde_fin_r(5N)-c*dtilde_fin_r(2N)+(c-1)*dtilde_fin_r(N)
     model_order: [q2_analytic, rank2_Jordan]
     target: 'one covariance-scored vector over r=2..6'
 

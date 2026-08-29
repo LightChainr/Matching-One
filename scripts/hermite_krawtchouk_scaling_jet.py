@@ -45,16 +45,42 @@ def scaling_derivative_jet(
     p0: mp.mpf,
     alpha: mp.mpf,
 ) -> list[mp.mpf]:
-    """Convert score coefficients to derivatives of the scaling function.
+    """Convert score coefficients to the exact finite-N scaling jet.
 
-    If c_r ~ N^(-alpha-r/8) and z=(p-p0)N^(3/8), then the limiting
-    derivative is
+    Substituting ``p-p0=z*N^(-3/8)`` in the exact finite-N response and
+    multiplying by ``N^alpha`` gives
 
-      d_r = sqrt(r!) N^(alpha+r/8) c_r / (p0(1-p0))^(r/2).
+      d_fin_r = r! N^alpha sqrt(C(N,r)) N^(-3r/8) c_r
+                / (p0(1-p0))^(r/2).
     """
 
     if n <= 0 or not 0 < p0 < 1:
         raise ValueError("invalid size or center")
+    if len(coefficients) > n + 1:
+        raise ValueError("a degree-N response has at most N+1 score modes")
+    variance = p0 * (1 - p0)
+    return [
+        math.factorial(order)
+        * mp.sqrt(math.comb(n, order))
+        * mp.power(n, alpha - 3 * mp.mpf(order) / 8)
+        * coefficient
+        / mp.power(variance, mp.mpf(order) / 2)
+        for order, coefficient in enumerate(coefficients)
+    ]
+
+
+def asymptotic_scaling_derivative_jet(
+    coefficients: Sequence[mp.mpf],
+    n: int,
+    p0: mp.mpf,
+    alpha: mp.mpf,
+) -> list[mp.mpf]:
+    """Return the large-N view obtained by replacing ``(N)_r`` with ``N^r``."""
+
+    if n <= 0 or not 0 < p0 < 1:
+        raise ValueError("invalid size or center")
+    if len(coefficients) > n + 1:
+        raise ValueError("a degree-N response has at most N+1 score modes")
     variance = p0 * (1 - p0)
     return [
         mp.sqrt(math.factorial(order))
@@ -63,6 +89,15 @@ def scaling_derivative_jet(
         / mp.power(variance, mp.mpf(order) / 2)
         for order, coefficient in enumerate(coefficients)
     ]
+
+
+def finite_jet_factor(n: int, order: int) -> mp.mpf:
+    """Return ``d_fin/d_asym=sqrt((N)_r/N^r)`` exactly before the square root."""
+
+    if n <= 0 or not 0 <= order <= n:
+        raise ValueError("order must lie in 0..n for positive n")
+    falling = math.factorial(n) // math.factorial(n - order)
+    return mp.sqrt(mp.mpf(falling) / mp.power(n, order))
 
 
 def translate_jet(jet: Sequence[mp.mpf], displacement: mp.mpf) -> list[mp.mpf]:
@@ -251,9 +286,15 @@ def main() -> int:
             "R_N(p)=sum_r c_r sqrt(C(N,r)) "
             "((p-p0)/sqrt(p0(1-p0)))^r"
         ),
-        "scaling_derivative_jet": (
-            "d_r=sqrt(r!)*N^(alpha+r/8)*c_r/(p0(1-p0))^(r/2)"
+        "primary_finite_scaling_jet": (
+            "d_fin_r=r!*N^alpha*sqrt(C(N,r))*N^(-3r/8)*c_r/"
+            "(p0(1-p0))^(r/2)"
         ),
+        "asymptotic_scaling_jet": (
+            "d_asym_r=sqrt(r!)*N^(alpha+r/8)*c_r/"
+            "(p0(1-p0))^(r/2)"
+        ),
+        "finite_to_asymptotic_factor": "sqrt((N)_r/N^r)",
         "translation_generator": [f"d_{r + 1}" for r in range(order)],
         "width_generator": [f"{r}*d_{r}" for r in range(order + 1)],
         "canonical_dimensionless_width": (

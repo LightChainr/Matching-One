@@ -12,16 +12,19 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from hermite_krawtchouk_scaling_jet import (  # noqa: E402
+    asymptotic_scaling_derivative_jet,
     bernstein_basis_integral,
     canonical_neutral_window_area,
     canonical_dimensionless_width,
     cocycle_residual,
     dilate_jet,
+    finite_jet_factor,
     mean_canonical_neutral_window_area,
     microcanonical_matching_sign,
     pooled_gap_convention_shift,
     rank_normalized_width,
     response_from_modes,
+    scaling_derivative_jet,
     translate_jet,
     width_cross_residual,
 )
@@ -59,6 +62,27 @@ class HermiteKrawtchoukScalingJetTests(unittest.TestCase):
         self.assertLess(abs(translated[0] - expected0), mp.mpf("1e-50"))
         self.assertLess(abs(translated[1] - expected1), mp.mpf("1e-50"))
         self.assertEqual(dilate_jet(jet, mp.mpf(3)), [1, 6, 54, 648])
+
+    def test_finite_jet_is_primary_and_differs_by_known_falling_factor(self) -> None:
+        mp.mp.dps = 60
+        n = 17
+        p0 = mp.mpf("0.592746050790")
+        alpha = mp.mpf(13) / 8
+        coefficients = [mp.mpf(order + 1) / 19 for order in range(7)]
+        finite = scaling_derivative_jet(coefficients, n, p0, alpha)
+        asymptotic = asymptotic_scaling_derivative_jet(
+            coefficients, n, p0, alpha
+        )
+        for order, (finite_value, asymptotic_value) in enumerate(
+            zip(finite, asymptotic)
+        ):
+            self.assertLess(
+                abs(
+                    finite_value
+                    - finite_jet_factor(n, order) * asymptotic_value
+                ),
+                mp.mpf("1e-52"),
+            )
 
     def test_width_cross_residual_cancels_width_and_amplitude(self) -> None:
         shape = [mp.mpf(value) for value in (2, 3, -5, 7, -11)]
@@ -168,6 +192,14 @@ class HermiteKrawtchoukScalingJetTests(unittest.TestCase):
         self.assertEqual(
             artifact["rank_gap_bridge"]["primary_width"],
             "w_can(N)=N^(3/8)*E[G]/(N+1)",
+        )
+        self.assertEqual(
+            artifact["thermal_scaling_jet"]["primary_coordinate"],
+            "exact_finite_N_jet",
+        )
+        self.assertEqual(
+            artifact["thermal_scaling_jet"]["finite_to_asymptotic_factor"],
+            "sqrt((N)_r/N^r)",
         )
         width_residual = artifact["frozen_predictions"][
             "rank_gap_width_collapse"

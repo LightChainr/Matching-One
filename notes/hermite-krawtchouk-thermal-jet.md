@@ -44,12 +44,37 @@ then the scaling-function derivative jet is
 
 \[
 \boxed{
-d_{r,N}=\frac{\sqrt{r!}\,N^{13/8+r/8}c_{r,N}}
+d^{\rm fin}_{r,N}
+=\frac{r!\,N^{13/8}\sqrt{\binom Nr}\,N^{-3r/8}c_{r,N}}
 {[p_0(1-p_0)]^{r/2}},
 \qquad
 F_T(z)=\sum_{r\ge0}\frac{d_r}{r!}z^r.
 }
 \]
+
+This is the primary coordinate for every finite-size score.  It follows
+directly from the exact generating function, without replacing a falling
+factorial by its limit.  The simpler expression
+
+\[
+d^{\rm asym}_{r,N}
+=\frac{\sqrt{r!}\,N^{13/8+r/8}c_{r,N}}
+{[p_0(1-p_0)]^{r/2}}
+\]
+
+is only an asymptotic view.  Their known relation is
+
+\[
+\boxed{
+d^{\rm fin}_{r,N}
+=\sqrt{\frac{(N)_r}{N^r}}\;d^{\rm asym}_{r,N}.
+}
+\]
+
+Keeping this factor prevents a known order-dependent finite-`N` effect from
+entering the width or cocycle residuals as if it were physics.  Below,
+`d_{r,N}` always means the primary exact finite-`N` jet unless explicitly
+labelled `asym`.
 
 The Krawtchouk-to-Hermite limit is therefore an operator statement: score
 order `r` is the `r`-th thermal Taylor component of one matching-odd spin-4
