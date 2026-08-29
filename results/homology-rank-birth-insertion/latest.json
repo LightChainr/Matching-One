@@ -1,0 +1,904 @@
+{
+  "claim_boundary": {
+    "exact": "pointwise gate decomposition for every monotone rank in {0,1,2}; exact exhaustive polynomial certificates on the declared geometries",
+    "not_claimed": "a canonical ell for a simultaneous 0->2 jump, production SNF streaming, or a continuum operator identification"
+  },
+  "geometries": [
+    {
+      "N": 4,
+      "birth_bernstein_counts_by_other_occupancy": {
+        "0_to_1": [
+          0,
+          8,
+          4,
+          0
+        ],
+        "1_to_2": [
+          0,
+          0,
+          12,
+          0
+        ]
+      },
+      "environment_insertions_weighted": 32,
+      "homology_line_h4_raw_sums": {
+        "0_to_1": {
+          "cos4": "8",
+          "sin4": "0"
+        },
+        "1_to_2": {
+          "cos4": "8",
+          "sin4": "0"
+        }
+      },
+      "id": "axis-L2-degenerate",
+      "line_index_counts": {
+        "0_to_1": {
+          "(0,1);iota=1": 4,
+          "(1,0);iota=1": 4,
+          "none(simultaneous-0-to-2)": 4
+        },
+        "1_to_2": {
+          "(0,1);iota=1": 4,
+          "(1,0);iota=1": 4,
+          "none(simultaneous-0-to-2)": 4
+        }
+      },
+      "local_landing_h4_raw_sums": {
+        "0_to_1": {},
+        "1_to_2": {}
+      },
+      "p_equals_half": {
+        "M_prime": "3",
+        "f_01": "3/2",
+        "f_12": "3/2"
+      },
+      "period_matrix": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "power_basis_coefficients_ascending": {
+        "M": [
+          "-1",
+          "0",
+          "4",
+          "0",
+          "-2"
+        ],
+        "M_prime_direct": [
+          "0",
+          "8",
+          "0",
+          "-8"
+        ],
+        "f_01": [
+          "0",
+          "8",
+          "-12",
+          "4"
+        ],
+        "f_01_plus_f_12": [
+          "0",
+          "8",
+          "0",
+          "-8"
+        ],
+        "f_12": [
+          "0",
+          "0",
+          "12",
+          "-12"
+        ]
+      },
+      "representatives": {
+        "0->0": {
+          "environment_mask": 0,
+          "insertion": {
+            "births": [],
+            "delta_rank": 0,
+            "gate_0_to_1": 0,
+            "gate_1_to_2": 0,
+            "local_geometry_mark": {
+              "axis": null,
+              "diagonal": null,
+              "h4": null,
+              "landed": null,
+              "radius": null,
+              "status": "not_evaluated_on_short_period_control"
+            },
+            "rank_after": 0,
+            "rank_before": 0,
+            "vertex": 0
+          }
+        },
+        "0->1": {
+          "environment_mask": 2,
+          "insertion": {
+            "births": [
+              {
+                "ell": [
+                  0,
+                  1
+                ],
+                "ell_role": "new_rank_one_image_after_0_to_1",
+                "homology_h4": {
+                  "cos4": "1",
+                  "physical_vector": "0,2",
+                  "sin4": "0"
+                },
+                "iota": 1,
+                "simultaneous_0_to_2": false,
+                "type": "0_to_1"
+              }
+            ],
+            "delta_rank": 1,
+            "gate_0_to_1": 1,
+            "gate_1_to_2": 0,
+            "local_geometry_mark": {
+              "axis": null,
+              "diagonal": null,
+              "h4": null,
+              "landed": null,
+              "radius": null,
+              "status": "not_evaluated_on_short_period_control"
+            },
+            "rank_after": 1,
+            "rank_before": 0,
+            "vertex": 0
+          }
+        },
+        "0->2": {
+          "environment_mask": 6,
+          "insertion": {
+            "births": [
+              {
+                "ell": null,
+                "ell_role": null,
+                "homology_h4": null,
+                "iota": null,
+                "simultaneous_0_to_2": true,
+                "type": "0_to_1"
+              },
+              {
+                "ell": null,
+                "ell_role": null,
+                "homology_h4": null,
+                "iota": null,
+                "simultaneous_0_to_2": true,
+                "type": "1_to_2"
+              }
+            ],
+            "delta_rank": 2,
+            "gate_0_to_1": 1,
+            "gate_1_to_2": 1,
+            "local_geometry_mark": {
+              "axis": null,
+              "diagonal": null,
+              "h4": null,
+              "landed": null,
+              "radius": null,
+              "status": "not_evaluated_on_short_period_control"
+            },
+            "rank_after": 2,
+            "rank_before": 0,
+            "vertex": 0
+          }
+        },
+        "1->2": {
+          "environment_mask": 10,
+          "insertion": {
+            "births": [
+              {
+                "ell": [
+                  1,
+                  0
+                ],
+                "ell_role": "rank_one_plateau_line_before_1_to_2",
+                "homology_h4": {
+                  "cos4": "1",
+                  "physical_vector": "2,0",
+                  "sin4": "0"
+                },
+                "iota": 1,
+                "simultaneous_0_to_2": false,
+                "type": "1_to_2"
+              }
+            ],
+            "delta_rank": 1,
+            "gate_0_to_1": 0,
+            "gate_1_to_2": 1,
+            "local_geometry_mark": {
+              "axis": null,
+              "diagonal": null,
+              "h4": null,
+              "landed": null,
+              "radius": null,
+              "status": "not_evaluated_on_short_period_control"
+            },
+            "rank_after": 2,
+            "rank_before": 1,
+            "vertex": 0
+          }
+        },
+        "2->2": {
+          "environment_mask": 14,
+          "insertion": {
+            "births": [],
+            "delta_rank": 0,
+            "gate_0_to_1": 0,
+            "gate_1_to_2": 0,
+            "local_geometry_mark": {
+              "axis": null,
+              "diagonal": null,
+              "h4": null,
+              "landed": null,
+              "radius": null,
+              "status": "not_evaluated_on_short_period_control"
+            },
+            "rank_after": 2,
+            "rank_before": 2,
+            "vertex": 0
+          }
+        }
+      },
+      "root_sampling": {
+        "exact_translation_reduction": false,
+        "multiplicity_per_environment": 1,
+        "roots": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "transition_counts": {
+        "0->0": 8,
+        "0->1": 8,
+        "0->2": 4,
+        "1->2": 8,
+        "2->2": 4
+      }
+    },
+    {
+      "N": 5,
+      "birth_bernstein_counts_by_other_occupancy": {
+        "0_to_1": [
+          0,
+          0,
+          30,
+          0,
+          0
+        ],
+        "1_to_2": [
+          0,
+          0,
+          0,
+          20,
+          0
+        ]
+      },
+      "environment_insertions_weighted": 80,
+      "homology_line_h4_raw_sums": {
+        "0_to_1": {
+          "cos4": "-42/5",
+          "sin4": "144/5"
+        },
+        "1_to_2": {
+          "cos4": "-28/5",
+          "sin4": "96/5"
+        }
+      },
+      "id": "gaussian-2-1",
+      "line_index_counts": {
+        "0_to_1": {
+          "(0,1);iota=1": 15,
+          "(1,0);iota=1": 15
+        },
+        "1_to_2": {
+          "(0,1);iota=1": 10,
+          "(1,0);iota=1": 10
+        }
+      },
+      "local_landing_h4_raw_sums": {
+        "0_to_1": {},
+        "1_to_2": {}
+      },
+      "p_equals_half": {
+        "M_prime": "25/8",
+        "f_01": "15/8",
+        "f_12": "5/4"
+      },
+      "period_matrix": [
+        [
+          2,
+          -1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "power_basis_coefficients_ascending": {
+        "M": [
+          "-1",
+          "0",
+          "0",
+          "10",
+          "-10",
+          "2"
+        ],
+        "M_prime_direct": [
+          "0",
+          "0",
+          "30",
+          "-40",
+          "10"
+        ],
+        "f_01": [
+          "0",
+          "0",
+          "30",
+          "-60",
+          "30"
+        ],
+        "f_01_plus_f_12": [
+          "0",
+          "0",
+          "30",
+          "-40",
+          "10"
+        ],
+        "f_12": [
+          "0",
+          "0",
+          "0",
+          "20",
+          "-20"
+        ]
+      },
+      "representatives": {
+        "0->0": {
+          "environment_mask": 0,
+          "insertion": {
+            "births": [],
+            "delta_rank": 0,
+            "gate_0_to_1": 0,
+            "gate_1_to_2": 0,
+            "local_geometry_mark": {
+              "axis": null,
+              "diagonal": null,
+              "h4": null,
+              "landed": null,
+              "radius": null,
+              "status": "not_evaluated_on_short_period_control"
+            },
+            "rank_after": 0,
+            "rank_before": 0,
+            "vertex": 0
+          }
+        },
+        "0->1": {
+          "environment_mask": 6,
+          "insertion": {
+            "births": [
+              {
+                "ell": [
+                  0,
+                  1
+                ],
+                "ell_role": "new_rank_one_image_after_0_to_1",
+                "homology_h4": {
+                  "cos4": "-7/25",
+                  "physical_vector": "-1,2",
+                  "sin4": "24/25"
+                },
+                "iota": 1,
+                "simultaneous_0_to_2": false,
+                "type": "0_to_1"
+              }
+            ],
+            "delta_rank": 1,
+            "gate_0_to_1": 1,
+            "gate_1_to_2": 0,
+            "local_geometry_mark": {
+              "axis": null,
+              "diagonal": null,
+              "h4": null,
+              "landed": null,
+              "radius": null,
+              "status": "not_evaluated_on_short_period_control"
+            },
+            "rank_after": 1,
+            "rank_before": 0,
+            "vertex": 0
+          }
+        },
+        "1->2": {
+          "environment_mask": 14,
+          "insertion": {
+            "births": [
+              {
+                "ell": [
+                  0,
+                  1
+                ],
+                "ell_role": "rank_one_plateau_line_before_1_to_2",
+                "homology_h4": {
+                  "cos4": "-7/25",
+                  "physical_vector": "-1,2",
+                  "sin4": "24/25"
+                },
+                "iota": 1,
+                "simultaneous_0_to_2": false,
+                "type": "1_to_2"
+              }
+            ],
+            "delta_rank": 1,
+            "gate_0_to_1": 0,
+            "gate_1_to_2": 1,
+            "local_geometry_mark": {
+              "axis": null,
+              "diagonal": null,
+              "h4": null,
+              "landed": null,
+              "radius": null,
+              "status": "not_evaluated_on_short_period_control"
+            },
+            "rank_after": 2,
+            "rank_before": 1,
+            "vertex": 0
+          }
+        },
+        "2->2": {
+          "environment_mask": 30,
+          "insertion": {
+            "births": [],
+            "delta_rank": 0,
+            "gate_0_to_1": 0,
+            "gate_1_to_2": 0,
+            "local_geometry_mark": {
+              "axis": null,
+              "diagonal": null,
+              "h4": null,
+              "landed": null,
+              "radius": null,
+              "status": "not_evaluated_on_short_period_control"
+            },
+            "rank_after": 2,
+            "rank_before": 2,
+            "vertex": 0
+          }
+        }
+      },
+      "root_sampling": {
+        "exact_translation_reduction": false,
+        "multiplicity_per_environment": 1,
+        "roots": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "transition_counts": {
+        "0->0": 25,
+        "0->1": 30,
+        "1->2": 20,
+        "2->2": 5
+      }
+    },
+    {
+      "N": 16,
+      "birth_bernstein_counts_by_other_occupancy": {
+        "0_to_1": [
+          0,
+          0,
+          0,
+          32,
+          384,
+          2304,
+          8400,
+          20304,
+          28800,
+          19968,
+          4400,
+          160,
+          0,
+          0,
+          0,
+          0
+        ],
+        "1_to_2": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          112,
+          1520,
+          8128,
+          17504,
+          16432,
+          5600,
+          640,
+          0,
+          0,
+          0
+        ]
+      },
+      "environment_insertions_weighted": 524288,
+      "homology_line_h4_raw_sums": {
+        "0_to_1": {
+          "cos4": "64832",
+          "sin4": "0"
+        },
+        "1_to_2": {
+          "cos4": "36928",
+          "sin4": "0"
+        }
+      },
+      "id": "axis-L4-fixed-root",
+      "line_index_counts": {
+        "0_to_1": {
+          "(0,1);iota=1": 36240,
+          "(1,-1);iota=1": 3824,
+          "(1,0);iota=1": 36240,
+          "(1,1);iota=1": 3824,
+          "none(simultaneous-0-to-2)": 4624
+        },
+        "1_to_2": {
+          "(0,1);iota=1": 20560,
+          "(1,-1);iota=1": 2096,
+          "(1,0);iota=1": 20560,
+          "(1,1);iota=1": 2096,
+          "none(simultaneous-0-to-2)": 4624
+        }
+      },
+      "local_landing_h4_raw_sums": {
+        "0_to_1": {
+          "axis": 24352,
+          "both": 3840,
+          "diagonal": 16096,
+          "h4": 8256,
+          "landed": 36608
+        },
+        "1_to_2": {
+          "axis": 14272,
+          "both": 1408,
+          "diagonal": 7584,
+          "h4": 6688,
+          "landed": 20448
+        }
+      },
+      "p_equals_half": {
+        "M_prime": "4209/1024",
+        "f_01": "5297/2048",
+        "f_12": "3121/2048"
+      },
+      "period_matrix": [
+        [
+          4,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "power_basis_coefficients_ascending": {
+        "M": [
+          "-1",
+          "0",
+          "0",
+          "0",
+          "8",
+          "0",
+          "32",
+          "-64",
+          "172",
+          "-704",
+          "1104",
+          "-608",
+          "-56",
+          "128",
+          "16",
+          "-32",
+          "6"
+        ],
+        "M_prime_direct": [
+          "0",
+          "0",
+          "0",
+          "32",
+          "0",
+          "192",
+          "-448",
+          "1376",
+          "-6336",
+          "11040",
+          "-6688",
+          "-672",
+          "1664",
+          "224",
+          "-480",
+          "96"
+        ],
+        "f_01": [
+          "0",
+          "0",
+          "0",
+          "32",
+          "0",
+          "192",
+          "-560",
+          "864",
+          "-6336",
+          "17280",
+          "-17776",
+          "5520",
+          "416",
+          "2464",
+          "-2880",
+          "784"
+        ],
+        "f_01_plus_f_12": [
+          "0",
+          "0",
+          "0",
+          "32",
+          "0",
+          "192",
+          "-448",
+          "1376",
+          "-6336",
+          "11040",
+          "-6688",
+          "-672",
+          "1664",
+          "224",
+          "-480",
+          "96"
+        ],
+        "f_12": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "112",
+          "512",
+          "0",
+          "-6240",
+          "11088",
+          "-6192",
+          "1248",
+          "-2240",
+          "2400",
+          "-688"
+        ]
+      },
+      "representatives": {
+        "0->0": {
+          "environment_mask": 0,
+          "insertion": {
+            "births": [],
+            "delta_rank": 0,
+            "gate_0_to_1": 0,
+            "gate_1_to_2": 0,
+            "local_geometry_mark": {
+              "axis": 0,
+              "both": 0,
+              "diagonal": 0,
+              "h4": 0,
+              "landed": 0,
+              "radius": 1,
+              "status": "evaluated"
+            },
+            "rank_after": 0,
+            "rank_before": 0,
+            "vertex": 0
+          }
+        },
+        "0->1": {
+          "environment_mask": 14,
+          "insertion": {
+            "births": [
+              {
+                "ell": [
+                  0,
+                  1
+                ],
+                "ell_role": "new_rank_one_image_after_0_to_1",
+                "homology_h4": {
+                  "cos4": "1",
+                  "physical_vector": "0,4",
+                  "sin4": "0"
+                },
+                "iota": 1,
+                "simultaneous_0_to_2": false,
+                "type": "0_to_1"
+              }
+            ],
+            "delta_rank": 1,
+            "gate_0_to_1": 1,
+            "gate_1_to_2": 0,
+            "local_geometry_mark": {
+              "axis": 1,
+              "both": 0,
+              "diagonal": 0,
+              "h4": 1,
+              "landed": 1,
+              "radius": 1,
+              "status": "evaluated"
+            },
+            "rank_after": 1,
+            "rank_before": 0,
+            "vertex": 0
+          }
+        },
+        "0->2": {
+          "environment_mask": 4382,
+          "insertion": {
+            "births": [
+              {
+                "ell": null,
+                "ell_role": null,
+                "homology_h4": null,
+                "iota": null,
+                "simultaneous_0_to_2": true,
+                "type": "0_to_1"
+              },
+              {
+                "ell": null,
+                "ell_role": null,
+                "homology_h4": null,
+                "iota": null,
+                "simultaneous_0_to_2": true,
+                "type": "1_to_2"
+              }
+            ],
+            "delta_rank": 2,
+            "gate_0_to_1": 1,
+            "gate_1_to_2": 1,
+            "local_geometry_mark": {
+              "axis": 0,
+              "both": 0,
+              "diagonal": 0,
+              "h4": 0,
+              "landed": 0,
+              "radius": 1,
+              "status": "evaluated"
+            },
+            "rank_after": 2,
+            "rank_before": 0,
+            "vertex": 0
+          }
+        },
+        "1->1": {
+          "environment_mask": 190,
+          "insertion": {
+            "births": [],
+            "delta_rank": 0,
+            "gate_0_to_1": 0,
+            "gate_1_to_2": 0,
+            "local_geometry_mark": {
+              "axis": 0,
+              "both": 0,
+              "diagonal": 0,
+              "h4": 0,
+              "landed": 0,
+              "radius": 1,
+              "status": "evaluated"
+            },
+            "rank_after": 1,
+            "rank_before": 1,
+            "vertex": 0
+          }
+        },
+        "1->2": {
+          "environment_mask": 4542,
+          "insertion": {
+            "births": [
+              {
+                "ell": [
+                  0,
+                  1
+                ],
+                "ell_role": "rank_one_plateau_line_before_1_to_2",
+                "homology_h4": {
+                  "cos4": "1",
+                  "physical_vector": "0,4",
+                  "sin4": "0"
+                },
+                "iota": 1,
+                "simultaneous_0_to_2": false,
+                "type": "1_to_2"
+              }
+            ],
+            "delta_rank": 1,
+            "gate_0_to_1": 0,
+            "gate_1_to_2": 1,
+            "local_geometry_mark": {
+              "axis": 0,
+              "both": 0,
+              "diagonal": 0,
+              "h4": 0,
+              "landed": 0,
+              "radius": 1,
+              "status": "evaluated"
+            },
+            "rank_after": 2,
+            "rank_before": 1,
+            "vertex": 0
+          }
+        },
+        "2->2": {
+          "environment_mask": 8894,
+          "insertion": {
+            "births": [],
+            "delta_rank": 0,
+            "gate_0_to_1": 0,
+            "gate_1_to_2": 0,
+            "local_geometry_mark": {
+              "axis": 0,
+              "both": 0,
+              "diagonal": 0,
+              "h4": 0,
+              "landed": 0,
+              "radius": 1,
+              "status": "evaluated"
+            },
+            "rank_after": 2,
+            "rank_before": 2,
+            "vertex": 0
+          }
+        }
+      },
+      "root_sampling": {
+        "exact_translation_reduction": true,
+        "multiplicity_per_environment": 16,
+        "roots": [
+          0
+        ]
+      },
+      "transition_counts": {
+        "0->0": 250096,
+        "0->1": 80128,
+        "0->2": 4624,
+        "1->1": 96736,
+        "1->2": 45312,
+        "2->2": 47392
+      }
+    }
+  ],
+  "issues": [
+    215,
+    269,
+    276
+  ],
+  "pointwise_theorem": {
+    "definitions": {
+      "I_01": "1[r(v=0)=0 and r(v=1)>=1]",
+      "I_12": "1[r(v=0)<=1 and r(v=1)=2]"
+    },
+    "direct_0_to_2": "counted once in each gate; no canonical intermediate ell",
+    "identity": "Delta_v r = I_01 + I_12",
+    "russo": "M'(p)=d E_p[r]/dp=f_01(p)+f_12(p)"
+  },
+  "schema": "matching-one/homology-rank-birth-insertion/v1",
+  "status": "tiny_exact_typed_insertion_oracle",
+  "typed_line_semantics": {
+    "0_to_1": "ell is the new primitive rank-one image; iota is its saturation index after insertion",
+    "1_to_2": "ell is the canonical rank-one plateau line immediately before insertion; iota is its endpoint index",
+    "shared_interval_mark": "on a nonempty rank-one plateau the two endpoint insertions carry the same ell"
+  }
+}
