@@ -1,0 +1,194 @@
+{
+  "schema": "matching-one/rho-child-primitive-h4-mc/v1",
+  "status": "engineering_smoke",
+  "production_id": "P267-rho-C3-primitive-H4-N112-v1",
+  "observable": "delta primitive-homology automorphic H4; baseline scored separately",
+  "not_A_top": true,
+  "p": "1/2 square-bond",
+  "samples": 2000,
+  "batches": 20,
+  "workers": 8,
+  "seed": 267156112,
+  "child_gate": {
+    "parent_id": "pell_Dplus1_N56",
+    "parent_matrix_rows": [
+      [
+        8,
+        4
+      ],
+      [
+        0,
+        7
+      ]
+    ],
+    "parent_N": 56,
+    "child_order": [
+      "2omega",
+      "omega_over_2",
+      "omega_plus_1_over_2"
+    ],
+    "children": [
+      {
+        "id": "2omega",
+        "embedding_in_parent_basis": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "period_matrix_rows": [
+          [
+            8,
+            8
+          ],
+          [
+            0,
+            14
+          ]
+        ],
+        "N": 112,
+        "bonds": 224
+      },
+      {
+        "id": "omega_over_2",
+        "embedding_in_parent_basis": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "period_matrix_rows": [
+          [
+            16,
+            4
+          ],
+          [
+            0,
+            7
+          ]
+        ],
+        "N": 112,
+        "bonds": 224
+      },
+      {
+        "id": "omega_plus_1_over_2",
+        "embedding_in_parent_basis": [
+          [
+            2,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "period_matrix_rows": [
+          [
+            16,
+            12
+          ],
+          [
+            0,
+            7
+          ]
+        ],
+        "N": 112,
+        "bonds": 224
+      }
+    ],
+    "common_field": "same counter-derived 224-bit vector in deterministic primal-edge order",
+    "passed": true
+  },
+  "summary": {
+    "primary_order": [
+      "2omega_re",
+      "2omega_im",
+      "omega_over_2_re",
+      "omega_over_2_im",
+      "omega_plus_1_over_2_re",
+      "omega_plus_1_over_2_im"
+    ],
+    "lattice_H4_point_re_im": [
+      0.467909430448465,
+      -0.001881154441623367,
+      -0.21640934912195742,
+      -0.39499557270192404,
+      -0.21341165868911421,
+      0.3877329462090965
+    ],
+    "full_common_field_covariance_6x6": [
+      [
+        0.00018470585684043274,
+        -3.047783518933362e-06,
+        -3.27349828478554e-06,
+        2.1209960954986374e-05,
+        1.0666040541228682e-05,
+        -8.04828376856002e-06
+      ],
+      [
+        -3.047783518933362e-06,
+        9.898348597312057e-06,
+        -2.2501774366606132e-06,
+        -5.92085390584066e-06,
+        -6.652922690239772e-08,
+        7.787392838542856e-06
+      ],
+      [
+        -3.27349828478554e-06,
+        -2.2501774366606132e-06,
+        2.2272545317124352e-05,
+        3.301838174613483e-05,
+        2.7424511968678547e-06,
+        -8.50030098362702e-06
+      ],
+      [
+        2.1209960954986374e-05,
+        -5.92085390584066e-06,
+        3.301838174613483e-05,
+        8.512604433889957e-05,
+        2.5484749677318306e-05,
+        -3.64030623429052e-05
+      ],
+      [
+        1.0666040541228682e-05,
+        -6.652922690239772e-08,
+        2.7424511968678547e-06,
+        2.5484749677318306e-05,
+        4.1692819940819044e-05,
+        -5.009358207657494e-05
+      ],
+      [
+        -8.04828376856002e-06,
+        7.787392838542856e-06,
+        -8.50030098362702e-06,
+        -3.64030623429052e-05,
+        -5.009358207657494e-05,
+        0.00010731428035662605
+      ]
+    ],
+    "category_totals": {
+      "2omega_rank0": 476,
+      "2omega_rank1": 1010,
+      "2omega_rank2": 514,
+      "2omega_invalid": 0,
+      "omega_over_2_rank0": 548,
+      "omega_over_2_rank1": 970,
+      "omega_over_2_rank2": 482,
+      "omega_over_2_invalid": 0,
+      "omega_plus_1_over_2_rank0": 518,
+      "omega_plus_1_over_2_rank1": 976,
+      "omega_plus_1_over_2_rank2": 506,
+      "omega_plus_1_over_2_invalid": 0
+    },
+    "all_invariant_failures_zero": true
+  },
+  "manifest_runner_commit": null
+}

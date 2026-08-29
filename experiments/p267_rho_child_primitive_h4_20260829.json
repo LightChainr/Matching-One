@@ -1,0 +1,26 @@
+{
+  "schema": "matching-one/rho-child-primitive-h4-manifest/v1",
+  "production_id": "P267-rho-C3-primitive-H4-N112-v1",
+  "status": "frozen_design_preflight_pending",
+  "production_authorized": false,
+  "issues": [156, 205, 226, 250, 275],
+  "runner_commit": "PENDING_PREFLIGHT_COMMIT",
+  "question": "Which ordinary modular C3 support, if any, carries the named non-A_top primitive-rank1 complex response over all three degree-2 rho children?",
+  "observer": "delta_H4_primitive = E[1_rank1 (P ell/|P ell|)^4] - H4_Pinson_Arguin(tau)",
+  "observer_sector": "topology_typed_rank1_polarization_non_A_top",
+  "p": "1/2 square-bond",
+  "parent": {"id": "pell_Dplus1_N56", "period_matrix_rows": [[8, 4], [0, 7]]},
+  "child_order": ["2omega", "omega_over_2", "omega_plus_1_over_2"],
+  "child_period_matrices": [[[8, 8], [0, 14]], [[16, 4], [0, 7]], [[16, 12], [0, 7]]],
+  "complex_character_convention": "zeta=exp(2*pi*i/3); DFT_r=(1/3) sum_j zeta^(-r*j) delta_H4_j",
+  "models": {
+    "E4_r1": "one complex amplitude times Ehat4 at the three actual child moduli",
+    "E6_r0": "one complex amplitude times Ehat6 at the three actual child moduli",
+    "E4sq_r2": "one complex amplitude times Ehat4 squared at the three actual child moduli",
+    "null": "all six real coordinates zero",
+    "mixture": "each pair of the three pure character columns, plus a reported saturated boundary"
+  },
+  "covariance": "complete 6x6 covariance from the same counter-derived 224-bit bond field across all children",
+  "acquisition": {"samples": 100000, "batches": 100, "workers": 8, "seed": 267156112},
+  "score_boundary": "No H4/H8/H12 ordinary angular rescoring; the labels are modular-ring C3 supports of a rank-one polarization observable."
+}
