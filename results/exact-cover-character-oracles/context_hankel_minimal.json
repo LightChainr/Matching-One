@@ -1,0 +1,209 @@
+{
+  "archive_gate": {
+    "do_not_do": "Do not fill the missing charged entry from endpoint amplitudes or a fitted latent model.",
+    "rank_scored_from_current_archive": false,
+    "reason": "Current unmarked N65/N130/N260 endpoints and norm-four pilots do not contain a common-replica intermediate Z2 charged context for the aa path and its direct-2i comparator."
+  },
+  "claim_boundary": {
+    "exact": "endpoint product blindness, character-sector block zeros, and ranks of the displayed oracle",
+    "not_claimed": "that the current archive has already measured any of these predictive ranks",
+    "prediction": "physical endpoint rank 2, charged rank 1, combined rank 3"
+  },
+  "endpoint_product_sector": {
+    "aa_equals_direct_column": [
+      true,
+      true
+    ],
+    "columns": [
+      "epsilon",
+      "a",
+      "aa",
+      "direct_2i"
+    ],
+    "declared_exact_outputs": [
+      "constant_character",
+      "norm_character"
+    ],
+    "hankel_block": [
+      [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "2",
+        "4",
+        "4"
+      ]
+    ],
+    "meaning": "Any endpoint-only series factors through the Gaussian product and therefore identifies aa with direct_2i; this exact block is a rank-two witness, not a fit to the physical thermal amplitudes.",
+    "rank": 2,
+    "rank_two_minor_columns": [
+      "epsilon",
+      "a"
+    ],
+    "rank_two_minor_determinant": "1"
+  },
+  "exact_gaussian_words": {
+    "a": "1+i",
+    "aa": "(1+i)^2=2i",
+    "direct": "2i",
+    "endpoint_norms": {
+      "a": 2,
+      "aa": 4,
+      "direct_2i": 4,
+      "epsilon": 1
+    },
+    "endpoint_smith": {
+      "a": [
+        1,
+        2
+      ],
+      "aa": [
+        2,
+        2
+      ],
+      "direct_2i": [
+        2,
+        2
+      ],
+      "epsilon": [
+        1,
+        1
+      ]
+    },
+    "same_endpoint": true
+  },
+  "frozen_physical_prediction": {
+    "combined_unstructured_rank": 3,
+    "endpoint_rank": 2,
+    "falsifiers": [
+      "endpoint held-out contexts reject every rank-two realization",
+      "the allowed charged block is zero after exact labeling/null controls",
+      "the charged block itself has predictive rank greater than one"
+    ],
+    "first_allowed_charged_sector_rank": 1,
+    "sector_statement": "The third state is predicted to live in a nontrivial deck/marked sector, not to be a third scalar bulk correction field."
+  },
+  "issue": 249,
+  "minimal_acquisition": {
+    "charged_row": "R_chi=<O_chibar S_chi>/[p(1-p)] with the intermediate Z2 flag for aa and the corresponding flagged character of the Z2xZ2 direct cover",
+    "endpoint_rows": [
+      "frozen normalized P4[D] response",
+      "frozen normalized P4[Dprime] or the already-declared second endpoint mode"
+    ],
+    "first_scores": [
+      "endpoint rank-2 held-out context prediction",
+      "charged-sector nonzero gate",
+      "sector-resolved rank (2,1) versus enriched rank 3",
+      "A_direct-A_a^2 residual only inside the charged block"
+    ],
+    "minimum_new_measurement": "one flagged charged aa/direct-2i pair; unmarked aa and direct-2i are the same endpoint and must not be counted as independent data",
+    "required_raw_structure": "same replicas for every available row; delete-one blocks sufficient to rebuild the whole partial Hankel and its covariance",
+    "source": "one N65 parent with exact common parent/fiber labels",
+    "words": [
+      "epsilon",
+      "a=1+i",
+      "aa=(1+i)(1+i)",
+      "direct d=2i"
+    ]
+  },
+  "morphism_sensitive_exact_witness": {
+    "A_a": [
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-1"
+      ]
+    ],
+    "A_direct_2i": [
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "4",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "A_direct_minus_A_a_squared": [
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-1"
+      ]
+    ],
+    "boundary": "This is an exact identifiable model class, not a measured lattice defect.",
+    "claim": "Product composition is exact on the endpoint subspace while one marked/charged coordinate can retain a rank-one context defect invisible to endpoint covectors.",
+    "defect_rank": 1,
+    "endpoint_projection_of_defect": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ]
+  },
+  "schema": "matching-one/context-hankel-exact-oracle/v1",
+  "sector_resolved_enrichment": {
+    "block_hankel_minor": [
+      [
+        "1",
+        "1",
+        "0"
+      ],
+      [
+        "1",
+        "2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "determinant": "1",
+    "interpretation": "rank 3 = rank 2 trivial endpoint sector direct-sum rank 1 charged sector",
+    "off_sector_zeros": "exact deck-character selection rule",
+    "rank": 3,
+    "rows_and_columns": [
+      "endpoint_constant",
+      "endpoint_norm",
+      "charged_marked"
+    ]
+  },
+  "status": "exact_witness_plus_frozen_acquisition_prediction"
+}
