@@ -1,0 +1,236 @@
+{
+  "coordinate_definition": {
+    "I_Du": "N*P4_D_prime/Mbar_prime",
+    "I_S": "N*P4_S",
+    "T_D": "N^(13/8)*P4_D",
+    "T_Su": "N^(13/8)*P4_S_prime/Mbar_prime",
+    "center": "P50 intrinsic root of the orientation-mean matching function, evaluated with the stable arbitrary-precision binomial recurrence required at N580",
+    "center_bisection_steps": 72,
+    "thermal_width_coordinate": "division by intrinsic Mbar_prime; exactly the P180 frozen state, not a newly fitted width"
+  },
+  "decision_semantics": "read q2 joint GLS first, then Jordan joint GLS; classify q2, Jordan, both, or neither without treating coordinates as independent evidence",
+  "issue": 200,
+  "models_in_frozen_order": [
+    {
+      "joint_GLS": {
+        "active_condition_number": 5.2201181910517365,
+        "chi_square": 3.346399667996206,
+        "chi_square_survival": 0.5016143711569866,
+        "component_standardized_residuals": [
+          -0.8790973227135206,
+          -0.33664500281352033,
+          -1.4569219935298179,
+          -0.2739662144025321
+        ],
+        "correlation_eigenvalues": [
+          0.3183021794981173,
+          0.7084071427950195,
+          1.3117156802573262,
+          1.661574997449537
+        ],
+        "degrees_of_freedom": 4,
+        "numerical_rank": 4,
+        "relative_eigenvalue_cutoff": 1e-10
+      },
+      "marginal_z_correlated_diagnostics_only": [
+        -0.8790973227135206,
+        -0.33664500281352033,
+        -1.4569219935298179,
+        -0.2739662144025321
+      ],
+      "model": "ordinary_q2",
+      "predicted_state": [
+        -0.004878079610261758,
+        -0.01143077370854724,
+        0.8692978885922626,
+        2.20882464474333
+      ],
+      "residual_target_minus_prediction": [
+        -0.007417964678117832,
+        -0.0047832527115455915,
+        -0.9552435938967485,
+        -0.17341837597673182
+      ],
+      "state_order": [
+        "I_S",
+        "I_Du",
+        "T_D",
+        "T_Su"
+      ],
+      "target_plus_prediction_covariance": [
+        [
+          7.120255980242616e-05,
+          3.450789819199678e-05,
+          0.0002723550238917324,
+          -0.0006783150485781194
+        ],
+        [
+          3.450789819199678e-05,
+          0.0002018841894145606,
+          0.0008906769129767704,
+          -0.00030055453964729573
+        ],
+        [
+          0.0002723550238917324,
+          0.0008906769129767704,
+          0.4298883431423307,
+          0.272355153696561
+        ],
+        [
+          -0.0006783150485781194,
+          -0.00030055453964729573,
+          0.272355153696561,
+          0.40067865945250464
+        ]
+      ]
+    },
+    {
+      "joint_GLS": {
+        "active_condition_number": 5.321168152845858,
+        "chi_square": 3.2785851556345156,
+        "chi_square_survival": 0.5123323929956104,
+        "component_standardized_residuals": [
+          -0.9033752613160221,
+          -0.2920253581860195,
+          -1.5530493879041953,
+          -0.6306208406659716
+        ],
+        "correlation_eigenvalues": [
+          0.31423186920720464,
+          0.7092637647707152,
+          1.3044237509874779,
+          1.6720806150346024
+        ],
+        "degrees_of_freedom": 4,
+        "numerical_rank": 4,
+        "relative_eigenvalue_cutoff": 1e-10
+      },
+      "marginal_z_correlated_diagnostics_only": [
+        -0.9033752613160221,
+        -0.2920253581860195,
+        -1.5530493879041953,
+        -0.6306208406659715
+      ],
+      "model": "rank2_Jordan",
+      "predicted_state": [
+        -0.0036771363177506167,
+        -0.011465473373506847,
+        1.0101495788012453,
+        2.463165975806417
+      ],
+      "residual_target_minus_prediction": [
+        -0.008618907970628973,
+        -0.004748553046585984,
+        -1.0960952841057312,
+        -0.4277597070398187
+      ],
+      "state_order": [
+        "I_S",
+        "I_Du",
+        "T_D",
+        "T_Su"
+      ],
+      "target_plus_prediction_covariance": [
+        [
+          9.102655366260818e-05,
+          4.467193647645653e-05,
+          0.00025925245173254424,
+          -0.0007891549322106865
+        ],
+        [
+          4.467193647645653e-05,
+          0.00026441218026921395,
+          0.0008967782588702761,
+          -0.00018655295098048196
+        ],
+        [
+          0.00025925245173254424,
+          0.0008967782588702761,
+          0.49811094534741673,
+          0.31897127210895515
+        ],
+        [
+          -0.0007891549322106865,
+          -0.00018655295098048196,
+          0.31897127210895515,
+          0.4601115221233476
+        ]
+      ]
+    }
+  ],
+  "provenance": {
+    "histograms": {
+      "path": "results/server-20260829/P200-n580-phaseA/raw/n580_100m.hist.csv",
+      "sha256": "52e0bcfc3ff8e0cc0f67383d7f7e22280bbdeb4dfae668f1f753c5640a263b35"
+    },
+    "metadata": {
+      "path": "results/server-20260829/P200-n580-phaseA/raw/n580_100m.metadata.json",
+      "sha256": "415f19eb9001bbb9a887eb89bd1413c366270fb79b14ae0c9fa4200381ebb1f6"
+    },
+    "moments": {
+      "path": "results/server-20260829/P200-n580-phaseA/raw/n580_100m.moments.csv",
+      "sha256": "88621301c7975b527216eff270042a6b32e3e21e83c8be1ab1d4b0626f1835b0"
+    },
+    "prediction": {
+      "path": "predictions/p200_n580_q2_jordan_score_input_20260829.json",
+      "sha256": "13c46d38266ddf5c50b3cba1d936b9111f1726f7b839f9c4ef245d6b09746a10"
+    },
+    "target_git_commit": "d9d6bb1a9bd9230139fef616a16280cad34d28f6",
+    "target_rng": {
+      "replica_counter_first": 12000000000,
+      "replica_counter_last_exclusive": 12100000000,
+      "seed": 2026102001
+    }
+  },
+  "schema": "matching-one/p200-n580-phaseA-joint-scorer/v1",
+  "state_order": [
+    "I_S",
+    "I_Du",
+    "T_D",
+    "T_Su"
+  ],
+  "status": "scorer_frozen_before_N580_target_completion",
+  "target": {
+    "N": 580,
+    "covariance": [
+      [
+        4.737482452108778e-05,
+        2.2529126649488457e-05,
+        0.00029108185639533507,
+        -0.000534782202421809
+      ],
+      [
+        2.2529126649488457e-05,
+        0.00012585696084823416,
+        0.0008820071708863904,
+        -0.0004445434582838424
+      ],
+      [
+        0.00029108185639533507,
+        0.0008820071708863904,
+        0.3451449619246269,
+        0.21428895275830834
+      ],
+      [
+        -0.000534782202421809,
+        -0.0004445434582838424,
+        0.21428895275830834,
+        0.3260524458657063
+      ]
+    ],
+    "delete_one_batches": 100,
+    "moments_validation": {
+      "batches": 100,
+      "samples_per_orientation": {
+        "first": 100000000,
+        "second": 100000000
+      }
+    },
+    "state": {
+      "I_Du": -0.01621402642009283,
+      "I_S": -0.01229604428837959,
+      "T_D": -0.08594570530448581,
+      "T_Su": 2.0354062687665984
+    }
+  }
+}
