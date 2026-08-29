@@ -1,0 +1,70 @@
+{
+  "claim_boundary": {
+    "conditional_bridge": "the lattice top and bottom observables must realize the same energy/[2] collision normalization across moduli",
+    "exact": "the derivative of the generic Potts energy eta block after a homogeneous level-4 torus Ward operation",
+    "not_claimed": "that an arbitrary Q4 Jordan top contains no additional torus blocks, or that P4[S'] already equals this field"
+  },
+  "exact_CM_eta_identities": {
+    "abs_eta((1+i)/2)/eta(i)": "2^(1/4)",
+    "eta(2i)/eta(i)": "2^(-3/8)",
+    "proof_inputs": [
+      "theta2(tau)=2 eta(2tau)^2/eta(tau)",
+      "lambda(i)=theta2(i)^4/theta3(i)^4=1/2",
+      "eta(i)^3=theta2(i)theta3(i)theta4(i)/2 with theta2(i)=theta4(i)",
+      "eta(gamma tau)=epsilon(gamma)(c tau+d)^(1/2)eta(tau), gamma=[[1,0],[1,1]]"
+    ]
+  },
+  "fixed_Q4_path_audit": {
+    "C_Q4_at_h_5_8": "493/96",
+    "boundary": "these constants depend on the generic descendant-normalization path; the frozen modulus difference does not",
+    "dC_Q4_dh_at_h_5_8": "3637/540",
+    "dlogC_Q4_dh_at_h_5_8": "29096/22185"
+  },
+  "frozen_predictions": {
+    "Xi_2i_i": "-3 log(2)/4",
+    "Xi_shear_i": "log(2)/2",
+    "amplitude_and_velocity_free_ratio": "Xi(2i,i)/Xi((1+i)/2,i)=-3/2",
+    "hexagonal_joint_zero": "H_bottom(rho)=partial_u H_bottom(rho)=0 because E4(rho)=0",
+    "scoring_definition": "Xi(tau1,tau0)=[H_top/H_bottom(tau1)-H_top/H_bottom(tau0)]/x_collision_velocity"
+  },
+  "generic_identity": {
+    "bottom": "H_Q4(u,tau)=C_Q4(u) g2(tau) |eta(tau)|^(4h(u))",
+    "dimension_velocity": "x'(u)=2h'(u)",
+    "gauge_free_difference": "[R_u(tau1)-R_u(tau0)]/x'(u)=2 log|eta(tau1)/eta(tau0)|",
+    "tangent_over_bottom": "R_u(tau)=(partial_u H_Q4)/H_Q4=partial_u log C_Q4+4 h'(u) log|eta(tau)|",
+    "top_shift_invariance": "H_top -> H_top+alpha H_bottom adds a constant to R and cancels in every modulus difference"
+  },
+  "issue": 220,
+  "numerical_oracle": {
+    "Xi_2i_i": "-0.5198603854199589820629240910936324260566251007701914405905100071200452",
+    "Xi_shear_i": "0.3465735902799726547086160607290882840377500671801276270603400047466968",
+    "dps": 90,
+    "errors": {
+      "E4_rho_abs": "5.339717270010092932551967658312485402371330745514358682778872049179381e-91",
+      "Xi_2i_i": "1.227273366324431638273942988746568910743803878124862391277887279296776e-91",
+      "Xi_shear_i": "1.04318236137576689253285154043458357413223329640613303258620418740226e-90",
+      "ratio_minus_minus3over2": "4.66363879203284022544098335723696186082645473687447708685597166132775e-90"
+    },
+    "eta_values": {
+      "(1+i)/2": {
+        "imag": "0.119246006195194373562106258909600280276235272206346528407805268303259",
+        "real": "0.9057633419831964315470940094475852213060100668539808751119175149231785"
+      },
+      "2i": {
+        "imag": "0.0",
+        "real": "0.5923827813324158852903633744919953727615299932057706652342899396271762"
+      },
+      "i": {
+        "imag": "0.0",
+        "real": "0.768225422326056659002594179576180644517866914464805014676702824143631"
+      },
+      "rho": {
+        "imag": "0.1044965810199023959255170676621713938542248175926402542185786010833746",
+        "real": "0.7937303350476405194499851839410421637536443765765420055244498470792709"
+      }
+    },
+    "ratio": "-1.5"
+  },
+  "schema": "matching-one/q4-logtorus-eta-cocycle/v1",
+  "status": "exact_energy_block_derivative_and_frozen_gauge_free_shape_ratio"
+}
