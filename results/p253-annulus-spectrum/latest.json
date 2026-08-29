@@ -1,0 +1,1714 @@
+{
+  "archive_eligibility": [
+    {
+      "allowed_use": "operator-context metadata only",
+      "eligible_for_numeric_merge": false,
+      "name": "P43 heldout full curve",
+      "path": "results/server-20260828/P43-heldout-fullcurve-500m/raw/n185.metadata.json",
+      "reason": "global threshold/rank/full-curve archive has no annulus radius and marked-insertion label",
+      "sha256": "e691d1d7b5395c611377bcf1ec3ed38638af2d6d4f9ee9f64997fb4e74f41537"
+    },
+    {
+      "allowed_use": "operator-context metadata only",
+      "eligible_for_numeric_merge": false,
+      "name": "P49 full curve",
+      "path": "results/server-20260828/P49-fullcurve-doubling-100m/raw/n130.metadata.json",
+      "reason": "global threshold/rank/full-curve archive has no annulus radius and marked-insertion label",
+      "sha256": "862245343c56f3b1c84ff6166ed7a359fb8bbd0903e5d371bbf33c34d4f9453d"
+    },
+    {
+      "allowed_use": "operator-context metadata only",
+      "eligible_for_numeric_merge": false,
+      "name": "P50 third lineage full curve",
+      "path": "results/server-20260829/P50-n145-n290-fullcurve/raw/n145_100m.metadata.json",
+      "reason": "global threshold/rank/full-curve archive has no annulus radius and marked-insertion label",
+      "sha256": "596b74853030dfbdb6d225a86b11c2c5124318acb9f7bab2a97fab6556c78257"
+    },
+    {
+      "allowed_use": "operator-context metadata only",
+      "eligible_for_numeric_merge": false,
+      "name": "P57 norm5 full curve",
+      "path": "results/server-20260829/P57-norm5-500m/raw/n325_500m.metadata.json",
+      "reason": "global threshold/rank/full-curve archive has no annulus radius and marked-insertion label",
+      "sha256": "4c0e2e304fa7704afe8d1fbc827a0e16ff18ec4d0c9ba42471237c5f34dbc8d0"
+    },
+    {
+      "allowed_use": "operator-context metadata only",
+      "eligible_for_numeric_merge": false,
+      "name": "P225 C4 marked-pivotal pilot",
+      "path": "results/local-20260829/P225-multiradius-pivotal/raw/n130_n170_20k.metadata.json",
+      "reason": "different C4 geometry, size and radius grid; no aligned norm5 transfer readout",
+      "sha256": "e16656ade3d02876c10366e6b9b928231336f7bae0469c430c571a932ed1d469"
+    }
+  ],
+  "combined_order": [
+    "N325_R2_Delta_A_plus",
+    "N325_R4_Delta_A_plus",
+    "N325_R7_Delta_A_plus",
+    "N325_R8_Delta_A_plus",
+    "N425_R2_Delta_A_plus",
+    "N425_R4_Delta_A_plus",
+    "N425_R7_Delta_A_plus",
+    "N425_R8_Delta_A_plus",
+    "N365_R2_Delta_A_plus",
+    "N365_R4_Delta_A_plus",
+    "N365_R7_Delta_A_plus",
+    "N365_R8_Delta_A_plus",
+    "N325_R2_Delta_A_minus",
+    "N325_R4_Delta_A_minus",
+    "N325_R7_Delta_A_minus",
+    "N325_R8_Delta_A_minus",
+    "N425_R2_Delta_A_minus",
+    "N425_R4_Delta_A_minus",
+    "N425_R7_Delta_A_minus",
+    "N425_R8_Delta_A_minus",
+    "N365_R2_Delta_A_minus",
+    "N365_R4_Delta_A_minus",
+    "N365_R7_Delta_A_minus",
+    "N365_R8_Delta_A_minus"
+  ],
+  "continuous_spectrum_profiles": {
+    "joint_sector_separated_spectra": {
+      "C2": {
+        "boundary_hit": [
+          false,
+          true,
+          false,
+          false
+        ],
+        "chi_square": 5.619770070252813,
+        "chi_square_survival": 0.6897374100018652,
+        "degrees_of_freedom": 8,
+        "linear_parameter_count": 12,
+        "model": "C2",
+        "nonlinear_parameter_count": 4,
+        "parameter_names": [
+          "A_plus:decay_x",
+          "A_plus:theta_per_log2_step",
+          "A_minus:decay_x",
+          "A_minus:theta_per_log2_step"
+        ],
+        "parameter_ranges": [
+          [
+            -8.0,
+            8.0
+          ],
+          [
+            0.05,
+            3.0915926535897933
+          ],
+          [
+            -8.0,
+            8.0
+          ],
+          [
+            0.05,
+            3.0915926535897933
+          ]
+        ],
+        "parameters": [
+          -6.411127435859484,
+          0.05,
+          -1.6173103306794416,
+          1.6593946983659682
+        ],
+        "spectrum_scope": "sector_separated",
+        "transfer_spectrum": {
+          "A_minus": {
+            "complex_pair_modulus_per_radius_doubling": 3.0680251954273325,
+            "eigenvalues_real_imag": [
+              [
+                -0.271466556856372,
+                3.055991575296874
+              ],
+              [
+                -0.271466556856372,
+                -3.055991575296874
+              ]
+            ],
+            "phase_per_log2_step": 1.6593946983659682
+          },
+          "A_plus": {
+            "complex_pair_modulus_per_radius_doubling": 85.10237183789276,
+            "eigenvalues_real_imag": [
+              [
+                84.99601603332464,
+                4.253345847422251
+              ],
+              [
+                84.99601603332464,
+                -4.253345847422251
+              ]
+            ],
+            "phase_per_log2_step": 0.05
+          }
+        }
+      },
+      "J2": {
+        "boundary_hit": [
+          false,
+          false
+        ],
+        "chi_square": 7.503731225729893,
+        "chi_square_survival": 0.6771860947455792,
+        "degrees_of_freedom": 10,
+        "linear_parameter_count": 12,
+        "model": "J2",
+        "nonlinear_parameter_count": 2,
+        "parameter_names": [
+          "A_plus:x",
+          "A_minus:x"
+        ],
+        "parameter_ranges": [
+          [
+            -8.0,
+            8.0
+          ],
+          [
+            -8.0,
+            8.0
+          ]
+        ],
+        "parameters": [
+          -7.094907407407408,
+          -2.9521604938271606
+        ],
+        "spectrum_scope": "sector_separated",
+        "transfer_spectrum": {
+          "A_minus": {
+            "eigenvalues_per_radius_doubling": [
+              7.739071528567634,
+              7.739071528567634
+            ],
+            "jordan_candidate": true
+          },
+          "A_plus": {
+            "eigenvalues_per_radius_doubling": [
+              136.70359827137472,
+              136.70359827137472
+            ],
+            "jordan_candidate": true
+          }
+        }
+      },
+      "R1": {
+        "boundary_hit": [
+          false,
+          true
+        ],
+        "chi_square": 27.326038155154706,
+        "chi_square_survival": 0.037998462456471656,
+        "degrees_of_freedom": 16,
+        "linear_parameter_count": 6,
+        "model": "R1",
+        "nonlinear_parameter_count": 2,
+        "parameter_names": [
+          "A_plus:x",
+          "A_minus:x"
+        ],
+        "parameter_ranges": [
+          [
+            -8.0,
+            8.0
+          ],
+          [
+            -8.0,
+            8.0
+          ]
+        ],
+        "parameters": [
+          -2.4861111111111116,
+          -8.0
+        ],
+        "spectrum_scope": "sector_separated",
+        "transfer_spectrum": {
+          "A_minus": {
+            "eigenvalues_per_radius_doubling": [
+              256.0
+            ],
+            "jordan_candidate": false
+          },
+          "A_plus": {
+            "eigenvalues_per_radius_doubling": [
+              5.602656763126339
+            ],
+            "jordan_candidate": false
+          }
+        }
+      },
+      "R2": {
+        "boundary_hit": [
+          true,
+          false,
+          false,
+          true
+        ],
+        "chi_square": 6.527247488521094,
+        "chi_square_survival": 0.5883869487987041,
+        "degrees_of_freedom": 8,
+        "linear_parameter_count": 12,
+        "model": "R2",
+        "nonlinear_parameter_count": 4,
+        "parameter_names": [
+          "A_plus:center_x",
+          "A_plus:gap_x",
+          "A_minus:center_x",
+          "A_minus:gap_x"
+        ],
+        "parameter_ranges": [
+          [
+            -8.0,
+            8.0
+          ],
+          [
+            0.05,
+            16.0
+          ],
+          [
+            -8.0,
+            8.0
+          ],
+          [
+            0.05,
+            16.0
+          ]
+        ],
+        "parameters": [
+          -8.0,
+          11.484934009336838,
+          -2.9091808772707997,
+          0.05
+        ],
+        "spectrum_scope": "sector_separated",
+        "transfer_spectrum": {
+          "A_minus": {
+            "dimension_gap": 0.05,
+            "eigenvalues_per_radius_doubling": [
+              7.643221696626723,
+              7.382865506798348
+            ]
+          },
+          "A_plus": {
+            "dimension_gap": 11.484934009336838,
+            "eigenvalues_per_radius_doubling": [
+              13705.496808225253,
+              4.781731076006606
+            ]
+          }
+        }
+      },
+      "R2_gap1": {
+        "boundary_hit": [
+          false,
+          false
+        ],
+        "chi_square": 7.571824400962708,
+        "chi_square_survival": 0.6705806477725115,
+        "degrees_of_freedom": 10,
+        "linear_parameter_count": 12,
+        "model": "R2_gap1",
+        "nonlinear_parameter_count": 2,
+        "parameter_names": [
+          "A_plus:center_x_with_gap_fixed_to_1",
+          "A_minus:center_x_with_gap_fixed_to_1"
+        ],
+        "parameter_ranges": [
+          [
+            -8.0,
+            8.0
+          ],
+          [
+            -8.0,
+            8.0
+          ]
+        ],
+        "parameters": [
+          -7.0871913580246915,
+          -3.0003858024691366
+        ],
+        "spectrum_scope": "sector_separated",
+        "transfer_spectrum": {
+          "A_minus": {
+            "dimension_gap": 1.0,
+            "eigenvalues_per_radius_doubling": [
+              11.316734391652782,
+              5.658367195826391
+            ]
+          },
+          "A_plus": {
+            "dimension_gap": 1.0,
+            "eigenvalues_per_radius_doubling": [
+              192.29685507245523,
+              96.14842753622762
+            ]
+          }
+        }
+      }
+    },
+    "joint_shared_spectrum": {
+      "C2": {
+        "boundary_hit": [
+          false,
+          true
+        ],
+        "chi_square": 10.822967378247778,
+        "chi_square_survival": 0.37147589252138347,
+        "degrees_of_freedom": 10,
+        "linear_parameter_count": 12,
+        "model": "C2",
+        "nonlinear_parameter_count": 2,
+        "parameter_names": [
+          "decay_x",
+          "theta_per_log2_step"
+        ],
+        "parameter_ranges": [
+          [
+            -8.0,
+            8.0
+          ],
+          [
+            0.05,
+            3.0915926535897933
+          ]
+        ],
+        "parameters": [
+          -3.179398148148149,
+          0.05
+        ],
+        "spectrum_scope": "shared",
+        "transfer_spectrum": {
+          "A_minus": {
+            "complex_pair_modulus_per_radius_doubling": 9.059291012178576,
+            "eigenvalues_real_imag": [
+              [
+                9.04796925740713,
+                0.4527758389700079
+              ],
+              [
+                9.04796925740713,
+                -0.4527758389700079
+              ]
+            ],
+            "phase_per_log2_step": 0.05
+          },
+          "A_plus": {
+            "complex_pair_modulus_per_radius_doubling": 9.059291012178576,
+            "eigenvalues_real_imag": [
+              [
+                9.04796925740713,
+                0.4527758389700079
+              ],
+              [
+                9.04796925740713,
+                -0.4527758389700079
+              ]
+            ],
+            "phase_per_log2_step": 0.05
+          }
+        }
+      },
+      "J2": {
+        "boundary_hit": [
+          false
+        ],
+        "chi_square": 10.82220279936145,
+        "chi_square_survival": 0.45827667785284065,
+        "degrees_of_freedom": 11,
+        "linear_parameter_count": 12,
+        "model": "J2",
+        "nonlinear_parameter_count": 1,
+        "parameter_names": [
+          "x"
+        ],
+        "parameter_ranges": [
+          [
+            -8.0,
+            8.0
+          ]
+        ],
+        "parameters": [
+          -3.1803304125710863
+        ],
+        "spectrum_scope": "shared",
+        "transfer_spectrum": {
+          "A_minus": {
+            "eigenvalues_per_radius_doubling": [
+              9.065146985778116,
+              9.065146985778116
+            ],
+            "jordan_candidate": true
+          },
+          "A_plus": {
+            "eigenvalues_per_radius_doubling": [
+              9.065146985778116,
+              9.065146985778116
+            ],
+            "jordan_candidate": true
+          }
+        }
+      },
+      "R1": {
+        "boundary_hit": [
+          false
+        ],
+        "chi_square": 31.003870462402077,
+        "chi_square_survival": 0.01995063844629832,
+        "degrees_of_freedom": 17,
+        "linear_parameter_count": 6,
+        "model": "R1",
+        "nonlinear_parameter_count": 1,
+        "parameter_names": [
+          "x"
+        ],
+        "parameter_ranges": [
+          [
+            -8.0,
+            8.0
+          ]
+        ],
+        "parameters": [
+          -3.5203727107486875
+        ],
+        "spectrum_scope": "shared",
+        "transfer_spectrum": {
+          "A_minus": {
+            "eigenvalues_per_radius_doubling": [
+              11.47460599002255
+            ],
+            "jordan_candidate": false
+          },
+          "A_plus": {
+            "eigenvalues_per_radius_doubling": [
+              11.47460599002255
+            ],
+            "jordan_candidate": false
+          }
+        }
+      },
+      "R2": {
+        "boundary_hit": [
+          false,
+          false
+        ],
+        "chi_square": 10.59733622045954,
+        "chi_square_survival": 0.3897368297265187,
+        "degrees_of_freedom": 10,
+        "linear_parameter_count": 12,
+        "model": "R2",
+        "nonlinear_parameter_count": 2,
+        "parameter_names": [
+          "center_x",
+          "gap_x"
+        ],
+        "parameter_ranges": [
+          [
+            -8.0,
+            8.0
+          ],
+          [
+            0.05,
+            16.0
+          ]
+        ],
+        "parameters": [
+          -3.814429012345679,
+          4.032884837962962
+        ],
+        "spectrum_scope": "shared",
+        "transfer_spectrum": {
+          "A_minus": {
+            "dimension_gap": 4.032884837962962,
+            "eigenvalues_per_radius_doubling": [
+              56.920302793023794,
+              3.4773459260277577
+            ]
+          },
+          "A_plus": {
+            "dimension_gap": 4.032884837962962,
+            "eigenvalues_per_radius_doubling": [
+              56.920302793023794,
+              3.4773459260277577
+            ]
+          }
+        }
+      },
+      "R2_gap1": {
+        "boundary_hit": [
+          false
+        ],
+        "chi_square": 10.787515222033818,
+        "chi_square_survival": 0.4612325945095026,
+        "degrees_of_freedom": 11,
+        "linear_parameter_count": 12,
+        "model": "R2_gap1",
+        "nonlinear_parameter_count": 1,
+        "parameter_names": [
+          "center_x_with_gap_fixed_to_1"
+        ],
+        "parameter_ranges": [
+          [
+            -8.0,
+            8.0
+          ]
+        ],
+        "parameters": [
+          -3.2185958882280996
+        ],
+        "spectrum_scope": "shared",
+        "transfer_spectrum": {
+          "A_minus": {
+            "dimension_gap": 1.0,
+            "eigenvalues_per_radius_doubling": [
+              13.164637475368542,
+              6.582318737684271
+            ]
+          },
+          "A_plus": {
+            "dimension_gap": 1.0,
+            "eigenvalues_per_radius_doubling": [
+              13.164637475368542,
+              6.582318737684271
+            ]
+          }
+        }
+      }
+    },
+    "per_sector": {
+      "A_minus": {
+        "C2": {
+          "boundary_hit": [
+            false,
+            false
+          ],
+          "chi_square": 1.5015421261933293,
+          "chi_square_survival": 0.8263682639241852,
+          "degrees_of_freedom": 4,
+          "linear_parameter_count": 6,
+          "model": "C2",
+          "nonlinear_parameter_count": 2,
+          "parameter_names": [
+            "decay_x",
+            "theta_per_log2_step"
+          ],
+          "parameter_ranges": [
+            [
+              -8.0,
+              8.0
+            ],
+            [
+              0.05,
+              3.0915926535897933
+            ]
+          ],
+          "parameters": [
+            -1.5486111111111116,
+            1.6531581263218387
+          ],
+          "spectrum_scope": "shared",
+          "transfer_spectrum": {
+            "A_minus": {
+              "complex_pair_modulus_per_radius_doubling": 2.9253537848362363,
+              "eigenvalues_real_imag": [
+                [
+                  -0.24066509590083268,
+                  2.9154373733748313
+                ],
+                [
+                  -0.24066509590083268,
+                  -2.9154373733748313
+                ]
+              ],
+              "phase_per_log2_step": 1.6531581263218387
+            }
+          }
+        },
+        "J2": {
+          "boundary_hit": [
+            false
+          ],
+          "chi_square": 3.3557048881991065,
+          "chi_square_survival": 0.6453246800941088,
+          "degrees_of_freedom": 5,
+          "linear_parameter_count": 6,
+          "model": "J2",
+          "nonlinear_parameter_count": 1,
+          "parameter_names": [
+            "x"
+          ],
+          "parameter_ranges": [
+            [
+              -8.0,
+              8.0
+            ]
+          ],
+          "parameters": [
+            -2.895503131267736
+          ],
+          "spectrum_scope": "shared",
+          "transfer_spectrum": {
+            "A_minus": {
+              "eigenvalues_per_radius_doubling": [
+                7.441034104603947,
+                7.441034104603947
+              ],
+              "jordan_candidate": true
+            }
+          }
+        },
+        "R1": {
+          "boundary_hit": [
+            true
+          ],
+          "chi_square": 18.28990782070373,
+          "chi_square_survival": 0.019154980815265506,
+          "degrees_of_freedom": 8,
+          "linear_parameter_count": 3,
+          "model": "R1",
+          "nonlinear_parameter_count": 1,
+          "parameter_names": [
+            "x"
+          ],
+          "parameter_ranges": [
+            [
+              -8.0,
+              8.0
+            ]
+          ],
+          "parameters": [
+            -8.0
+          ],
+          "spectrum_scope": "shared",
+          "transfer_spectrum": {
+            "A_minus": {
+              "eigenvalues_per_radius_doubling": [
+                256.0
+              ],
+              "jordan_candidate": false
+            }
+          }
+        },
+        "R2": {
+          "boundary_hit": [
+            false,
+            true
+          ],
+          "chi_square": 3.355897166385715,
+          "chi_square_survival": 0.5001248379558295,
+          "degrees_of_freedom": 4,
+          "linear_parameter_count": 6,
+          "model": "R2",
+          "nonlinear_parameter_count": 2,
+          "parameter_names": [
+            "center_x",
+            "gap_x"
+          ],
+          "parameter_ranges": [
+            [
+              -8.0,
+              8.0
+            ],
+            [
+              0.05,
+              16.0
+            ]
+          ],
+          "parameters": [
+            -2.8954475308641983,
+            0.05
+          ],
+          "spectrum_scope": "shared",
+          "transfer_spectrum": {
+            "A_minus": {
+              "dimension_gap": 0.05,
+              "eigenvalues_per_radius_doubling": [
+                7.570809310644806,
+                7.3129197525142855
+              ]
+            }
+          }
+        },
+        "R2_gap1": {
+          "boundary_hit": [
+            false
+          ],
+          "chi_square": 3.431529614414673,
+          "chi_square_survival": 0.6337724421360144,
+          "degrees_of_freedom": 5,
+          "linear_parameter_count": 6,
+          "model": "R2_gap1",
+          "nonlinear_parameter_count": 1,
+          "parameter_names": [
+            "center_x_with_gap_fixed_to_1"
+          ],
+          "parameter_ranges": [
+            [
+              -8.0,
+              8.0
+            ]
+          ],
+          "parameters": [
+            -2.943945193579527
+          ],
+          "spectrum_scope": "shared",
+          "transfer_spectrum": {
+            "A_minus": {
+              "dimension_gap": 1.0,
+              "eigenvalues_per_radius_doubling": [
+                10.882553394990008,
+                5.441276697495004
+              ]
+            }
+          }
+        }
+      },
+      "A_plus": {
+        "C2": {
+          "boundary_hit": [
+            false,
+            true
+          ],
+          "chi_square": 4.191746498831983,
+          "chi_square_survival": 0.38067730370652,
+          "degrees_of_freedom": 4,
+          "linear_parameter_count": 6,
+          "model": "C2",
+          "nonlinear_parameter_count": 2,
+          "parameter_names": [
+            "decay_x",
+            "theta_per_log2_step"
+          ],
+          "parameter_ranges": [
+            [
+              -8.0,
+              8.0
+            ],
+            [
+              0.05,
+              3.0915926535897933
+            ]
+          ],
+          "parameters": [
+            -6.39621913580247,
+            0.05
+          ],
+          "spectrum_scope": "shared",
+          "transfer_spectrum": {
+            "A_plus": {
+              "complex_pair_modulus_per_radius_doubling": 84.22748222586095,
+              "eigenvalues_real_imag": [
+                [
+                  84.12221980549103,
+                  4.209619591409355
+                ],
+                [
+                  84.12221980549103,
+                  -4.209619591409355
+                ]
+              ],
+              "phase_per_log2_step": 0.05
+            }
+          }
+        },
+        "J2": {
+          "boundary_hit": [
+            false
+          ],
+          "chi_square": 4.19143991696632,
+          "chi_square_survival": 0.5221955232744946,
+          "degrees_of_freedom": 5,
+          "linear_parameter_count": 6,
+          "model": "J2",
+          "nonlinear_parameter_count": 1,
+          "parameter_names": [
+            "x"
+          ],
+          "parameter_ranges": [
+            [
+              -8.0,
+              8.0
+            ]
+          ],
+          "parameters": [
+            -6.395609650557709
+          ],
+          "spectrum_scope": "shared",
+          "transfer_spectrum": {
+            "A_plus": {
+              "eigenvalues_per_radius_doubling": [
+                84.19190674799654,
+                84.19190674799654
+              ],
+              "jordan_candidate": true
+            }
+          }
+        },
+        "R1": {
+          "boundary_hit": [
+            false
+          ],
+          "chi_square": 8.953885487061369,
+          "chi_square_survival": 0.346201063706017,
+          "degrees_of_freedom": 8,
+          "linear_parameter_count": 3,
+          "model": "R1",
+          "nonlinear_parameter_count": 1,
+          "parameter_names": [
+            "x"
+          ],
+          "parameter_ranges": [
+            [
+              -8.0,
+              8.0
+            ]
+          ],
+          "parameters": [
+            -2.6568203400135273
+          ],
+          "spectrum_scope": "shared",
+          "transfer_spectrum": {
+            "A_plus": {
+              "eigenvalues_per_radius_doubling": [
+                6.306416000436314
+              ],
+              "jordan_candidate": false
+            }
+          }
+        },
+        "R2": {
+          "boundary_hit": [
+            true,
+            false
+          ],
+          "chi_square": 2.8406652829826924,
+          "chi_square_survival": 0.5848337526705891,
+          "degrees_of_freedom": 4,
+          "linear_parameter_count": 6,
+          "model": "R2",
+          "nonlinear_parameter_count": 2,
+          "parameter_names": [
+            "center_x",
+            "gap_x"
+          ],
+          "parameter_ranges": [
+            [
+              -8.0,
+              8.0
+            ],
+            [
+              0.05,
+              16.0
+            ]
+          ],
+          "parameters": [
+            -8.0,
+            11.784434076003084
+          ],
+          "spectrum_scope": "shared",
+          "transfer_spectrum": {
+            "A_plus": {
+              "dimension_gap": 11.784434076003084,
+              "eigenvalues_per_radius_doubling": [
+                15204.56623043826,
+                4.310284095366197
+              ]
+            }
+          }
+        },
+        "R2_gap1": {
+          "boundary_hit": [
+            false
+          ],
+          "chi_square": 4.1766313731490445,
+          "chi_square_survival": 0.5242759008916023,
+          "degrees_of_freedom": 5,
+          "linear_parameter_count": 6,
+          "model": "R2_gap1",
+          "nonlinear_parameter_count": 1,
+          "parameter_names": [
+            "center_x_with_gap_fixed_to_1"
+          ],
+          "parameter_ranges": [
+            [
+              -8.0,
+              8.0
+            ]
+          ],
+          "parameters": [
+            -6.375755023221457
+          ],
+          "spectrum_scope": "shared",
+          "transfer_spectrum": {
+            "A_plus": {
+              "dimension_gap": 1.0,
+              "eigenvalues_per_radius_doubling": [
+                117.43796169389059,
+                58.71898084694529
+              ]
+            }
+          }
+        }
+      }
+    },
+    "sector_sharing_likelihood_ratio": {
+      "C2": {
+        "calibration_note": "asymptotic Wilks reference; profile-boundary hits make this descriptive",
+        "chi_square_survival": 0.07415493532134969,
+        "degrees_of_freedom": 2,
+        "delta_chi_square": 5.203197307994965,
+        "nested_models": [
+          "shared_spectrum",
+          "sector_separated_spectra"
+        ],
+        "null": "matching-even and matching-odd sectors share the continuous radial spectrum"
+      },
+      "J2": {
+        "calibration_note": "asymptotic Wilks reference; profile-boundary hits make this descriptive",
+        "chi_square_survival": 0.06850548992682481,
+        "degrees_of_freedom": 1,
+        "delta_chi_square": 3.318471573631558,
+        "nested_models": [
+          "shared_spectrum",
+          "sector_separated_spectra"
+        ],
+        "null": "matching-even and matching-odd sectors share the continuous radial spectrum"
+      },
+      "R1": {
+        "calibration_note": "asymptotic Wilks reference; profile-boundary hits make this descriptive",
+        "chi_square_survival": 0.055140494379182295,
+        "degrees_of_freedom": 1,
+        "delta_chi_square": 3.677832307247371,
+        "nested_models": [
+          "shared_spectrum",
+          "sector_separated_spectra"
+        ],
+        "null": "matching-even and matching-odd sectors share the continuous radial spectrum"
+      },
+      "R2": {
+        "calibration_note": "asymptotic Wilks reference; profile-boundary hits make this descriptive",
+        "chi_square_survival": 0.13067468486637002,
+        "degrees_of_freedom": 2,
+        "delta_chi_square": 4.070088731938447,
+        "nested_models": [
+          "shared_spectrum",
+          "sector_separated_spectra"
+        ],
+        "null": "matching-even and matching-odd sectors share the continuous radial spectrum"
+      },
+      "R2_gap1": {
+        "calibration_note": "asymptotic Wilks reference; profile-boundary hits make this descriptive",
+        "chi_square_survival": 0.07293539790978412,
+        "degrees_of_freedom": 1,
+        "delta_chi_square": 3.21569082107111,
+        "nested_models": [
+          "shared_spectrum",
+          "sector_separated_spectra"
+        ],
+        "null": "matching-even and matching-odd sectors share the continuous radial spectrum"
+      }
+    }
+  },
+  "dependency_groups": {
+    "G_n365": {
+      "batches": 200,
+      "covariance": "full 8x8 batch covariance retained",
+      "members": "N365 x all four radii x both sectors"
+    },
+    "G_old": {
+      "batches": 200,
+      "covariance": "full 16x16 delete-one covariance retained",
+      "members": "N325/N425 x all four radii x both sectors"
+    },
+    "between_groups": "independent counter domains; block-diagonal only across G_old/G_n365"
+  },
+  "heldout_N365_spectrum_transfer": {
+    "J2": {
+      "sector_separated": {
+        "N365_calibration_radii": [
+          2,
+          4
+        ],
+        "N365_heldout_radii": [
+          7,
+          8
+        ],
+        "chi_square": 1.0745479862929912,
+        "chi_square_survival": 0.8982891406665188,
+        "covariance": [
+          [
+            58.51476712355297,
+            216.03846077266783,
+            -0.0006983802710379724,
+            -0.0005294528068367993
+          ],
+          [
+            216.03846077266783,
+            798.5003312127144,
+            -0.002561998966675869,
+            -0.0020049396296382754
+          ],
+          [
+            -0.0006983802710379724,
+            -0.002561998966675869,
+            0.00016323591600251575,
+            0.00030154606057987855
+          ],
+          [
+            -0.0005294528068367993,
+            -0.0020049396296382754,
+            0.00030154606057987855,
+            0.00055843316696429
+          ]
+        ],
+        "covariance_components": {
+          "G_n365_calibration_and_target_jackknife": [
+            [
+              38.47155027905619,
+              138.67372647707666,
+              -0.000510044125905877,
+              -0.0001391723899514162
+            ],
+            [
+              138.67372647707666,
+              499.86108742386637,
+              -0.0018197616901593691,
+              -0.00046749223226207634
+            ],
+            [
+              -0.000510044125905877,
+              -0.0018197616901593691,
+              0.00014874844825818578,
+              0.0002719257399324587
+            ],
+            [
+              -0.0001391723899514162,
+              -0.00046749223226207634,
+              0.0002719257399324587,
+              0.0004978723429623777
+            ]
+          ],
+          "G_old_spectrum_training_jackknife": [
+            [
+              20.043216844496783,
+              77.36473429559118,
+              -0.0001883361451320954,
+              -0.0003902804168853831
+            ],
+            [
+              77.36473429559118,
+              298.6392437888481,
+              -0.0007422372765164998,
+              -0.0015374473973761992
+            ],
+            [
+              -0.0001883361451320954,
+              -0.0007422372765164998,
+              1.4487467744329973e-05,
+              2.9620320647419848e-05
+            ],
+            [
+              -0.0003902804168853831,
+              -0.0015374473973761992,
+              2.9620320647419848e-05,
+              6.0560824001912326e-05
+            ]
+          ]
+        },
+        "degrees_of_freedom": 4,
+        "marginal_z": [
+          -0.48597304630991217,
+          -0.4755324069967466,
+          0.7071419434934771,
+          0.6783803295956066
+        ],
+        "model": "J2",
+        "old_training_fit": {
+          "boundary_hit": [
+            true,
+            false
+          ],
+          "chi_square": 4.37336459238592,
+          "chi_square_survival": 0.6262869264355918,
+          "degrees_of_freedom": 6,
+          "linear_parameter_count": 8,
+          "model": "J2",
+          "nonlinear_parameter_count": 2,
+          "parameter_names": [
+            "A_plus:x",
+            "A_minus:x"
+          ],
+          "parameter_ranges": [
+            [
+              -8.0,
+              8.0
+            ],
+            [
+              -8.0,
+              8.0
+            ]
+          ],
+          "parameters": [
+            -8.0,
+            -2.990740740740742
+          ],
+          "spectrum_scope": "sector_separated",
+          "transfer_spectrum": {
+            "A_minus": {
+              "eigenvalues_per_radius_doubling": [
+                7.948820176888274,
+                7.948820176888274
+              ],
+              "jordan_candidate": true
+            },
+            "A_plus": {
+              "eigenvalues_per_radius_doubling": [
+                256.0,
+                256.0
+              ],
+              "jordan_candidate": true
+            }
+          }
+        },
+        "old_training_spectrum_scope": "sector_separated",
+        "residual": [
+          -3.7174481772334538,
+          -13.437474999999997,
+          0.009034715016940358,
+          0.01603093483625431
+        ],
+        "residual_order": [
+          "A_plus_R7",
+          "A_plus_R8",
+          "A_minus_R7",
+          "A_minus_R8"
+        ],
+        "standard_error": [
+          7.649494566541829,
+          28.257748162454742,
+          0.01277638117788115,
+          0.023631190553255882
+        ],
+        "uncertainty_method": "fixed-weight delete-one jackknife within each dependency group; independent group covariances added"
+      },
+      "shared": {
+        "N365_calibration_radii": [
+          2,
+          4
+        ],
+        "N365_heldout_radii": [
+          7,
+          8
+        ],
+        "chi_square": 2.9443808970474734,
+        "chi_square_survival": 0.5671758571645011,
+        "covariance": [
+          [
+            0.00034035559348099105,
+            0.0006572006744388904,
+            -6.319567400969683e-05,
+            -0.00013037085623591205
+          ],
+          [
+            0.0006572006744388904,
+            0.0012726397032391003,
+            -0.0001301279457232208,
+            -0.000269585854312319
+          ],
+          [
+            -6.319567400969683e-05,
+            -0.0001301279457232208,
+            0.0003442345222680694,
+            0.0006679609824029716
+          ],
+          [
+            -0.00013037085623591205,
+            -0.000269585854312319,
+            0.0006679609824029716,
+            0.0012996964793204019
+          ]
+        ],
+        "covariance_components": {
+          "G_n365_calibration_and_target_jackknife": [
+            [
+              0.0002901184958049477,
+              0.0005506922359344375,
+              -5.910424949927054e-06,
+              -8.952866190850457e-06
+            ],
+            [
+              0.0005506922359344375,
+              0.0010468224843374174,
+              -8.693405234968565e-06,
+              -1.2193265948563615e-05
+            ],
+            [
+              -5.910424949927054e-06,
+              -8.693405234968565e-06,
+              0.00027887223383654225,
+              0.0005294426143685615
+            ],
+            [
+              -8.952866190850457e-06,
+              -1.2193265948563615e-05,
+              0.0005294426143685615,
+              0.0010061336538949566
+            ]
+          ],
+          "G_old_spectrum_training_jackknife": [
+            [
+              5.0237097676043394e-05,
+              0.00010650843850445286,
+              -5.7285249059769774e-05,
+              -0.00012141799004506158
+            ],
+            [
+              0.00010650843850445286,
+              0.00022581721890168295,
+              -0.00012143454048825225,
+              -0.0002573925883637554
+            ],
+            [
+              -5.7285249059769774e-05,
+              -0.00012143454048825225,
+              6.536228843152716e-05,
+              0.00013851836803441007
+            ],
+            [
+              -0.00012141799004506158,
+              -0.0002573925883637554,
+              0.00013851836803441007,
+              0.0002935628254254452
+            ]
+          ]
+        },
+        "degrees_of_freedom": 4,
+        "marginal_z": [
+          -0.22241006192863597,
+          -0.2657027573900197,
+          0.6087741742197688,
+          0.5751480949729314
+        ],
+        "model": "J2",
+        "old_training_fit": {
+          "boundary_hit": [
+            false
+          ],
+          "chi_square": 7.71156035284501,
+          "chi_square_survival": 0.35871400088952554,
+          "degrees_of_freedom": 7,
+          "linear_parameter_count": 8,
+          "model": "J2",
+          "nonlinear_parameter_count": 1,
+          "parameter_names": [
+            "x"
+          ],
+          "parameter_ranges": [
+            [
+              -8.0,
+              8.0
+            ]
+          ],
+          "parameters": [
+            -3.253015945922074
+          ],
+          "spectrum_scope": "shared",
+          "transfer_spectrum": {
+            "A_minus": {
+              "eigenvalues_per_radius_doubling": [
+                9.533565969284165,
+                9.533565969284165
+              ],
+              "jordan_candidate": true
+            },
+            "A_plus": {
+              "eigenvalues_per_radius_doubling": [
+                9.533565969284165,
+                9.533565969284165
+              ],
+              "jordan_candidate": true
+            }
+          }
+        },
+        "old_training_spectrum_scope": "shared",
+        "residual": [
+          -0.004103182909759102,
+          -0.00947870037836182,
+          0.011294927078397117,
+          0.020734838491595995
+        ],
+        "residual_order": [
+          "A_plus_R7",
+          "A_plus_R8",
+          "A_minus_R7",
+          "A_minus_R8"
+        ],
+        "standard_error": [
+          0.0184487287768288,
+          0.03567407606707005,
+          0.01855355821043687,
+          0.036051303434416926
+        ],
+        "uncertainty_method": "fixed-weight delete-one jackknife within each dependency group; independent group covariances added"
+      }
+    },
+    "R2_gap1": {
+      "sector_separated": {
+        "N365_calibration_radii": [
+          2,
+          4
+        ],
+        "N365_heldout_radii": [
+          7,
+          8
+        ],
+        "chi_square": 1.084297844899635,
+        "chi_square_survival": 0.8967554594861958,
+        "covariance": [
+          [
+            55.63682846465073,
+            206.48227767810178,
+            -0.0004636650157045123,
+            -5.336739454596195e-05
+          ],
+          [
+            206.48227767810178,
+            767.1173357647783,
+            -0.0016584063801495263,
+            -0.00014817736674293126
+          ],
+          [
+            -0.0004636650157045123,
+            -0.0016584063801495263,
+            0.00018157551947460692,
+            0.0003400817156359075
+          ],
+          [
+            -5.336739454596195e-05,
+            -0.00014817736674293126,
+            0.0003400817156359075,
+            0.0006384928178719648
+          ]
+        ],
+        "covariance_components": {
+          "G_n365_calibration_and_target_jackknife": [
+            [
+              37.944123981253206,
+              137.72292225540295,
+              -0.0005150341083200171,
+              -0.00015560894585350856
+            ],
+            [
+              137.72292225540295,
+              499.8832174085509,
+              -0.0018495727996715409,
+              -0.000528178431697426
+            ],
+            [
+              -0.0005150341083200171,
+              -0.0018495727996715409,
+              0.00016547092161877706,
+              0.00030661077320226005
+            ],
+            [
+              -0.00015560894585350856,
+              -0.000528178431697426,
+              0.00030661077320226005,
+              0.0005689278479107465
+            ]
+          ],
+          "G_old_spectrum_training_jackknife": [
+            [
+              17.692704483397527,
+              68.75935542269883,
+              5.1369092615504766e-05,
+              0.00010224155130754661
+            ],
+            [
+              68.75935542269883,
+              267.2341183562275,
+              0.0001911664195220146,
+              0.00038000106495449473
+            ],
+            [
+              5.1369092615504766e-05,
+              0.0001911664195220146,
+              1.6104597855829855e-05,
+              3.347094243364749e-05
+            ],
+            [
+              0.00010224155130754661,
+              0.00038000106495449473,
+              3.347094243364749e-05,
+              6.956496996121826e-05
+            ]
+          ]
+        },
+        "degrees_of_freedom": 4,
+        "marginal_z": [
+          -0.49422909074551274,
+          -0.4844443256039765,
+          0.7158921022092709,
+          0.6878101684232858
+        ],
+        "model": "R2_gap1",
+        "old_training_fit": {
+          "boundary_hit": [
+            true,
+            false
+          ],
+          "chi_square": 4.428070931143748,
+          "chi_square_survival": 0.6189526799858855,
+          "degrees_of_freedom": 6,
+          "linear_parameter_count": 8,
+          "model": "R2_gap1",
+          "nonlinear_parameter_count": 2,
+          "parameter_names": [
+            "A_plus:center_x_with_gap_fixed_to_1",
+            "A_minus:center_x_with_gap_fixed_to_1"
+          ],
+          "parameter_ranges": [
+            [
+              -8.0,
+              8.0
+            ],
+            [
+              -8.0,
+              8.0
+            ]
+          ],
+          "parameters": [
+            -8.0,
+            -3.0374228395061733
+          ],
+          "spectrum_scope": "sector_separated",
+          "transfer_spectrum": {
+            "A_minus": {
+              "dimension_gap": 1.0,
+              "eigenvalues_per_radius_doubling": [
+                11.611020238074131,
+                5.8055101190370655
+              ]
+            },
+            "A_plus": {
+              "dimension_gap": 1.0,
+              "eigenvalues_per_radius_doubling": [
+                362.03867196751236,
+                181.01933598375618
+              ]
+            }
+          }
+        },
+        "old_training_spectrum_scope": "sector_separated",
+        "residual": [
+          -3.6864596733294173,
+          -13.41759787491119,
+          0.009646643274123118,
+          0.017379873066286182
+        ],
+        "residual_order": [
+          "A_plus_R7",
+          "A_plus_R8",
+          "A_minus_R7",
+          "A_minus_R8"
+        ],
+        "standard_error": [
+          7.459009885008246,
+          27.696883141696258,
+          0.01347499608440043,
+          0.025268415420678137
+        ],
+        "uncertainty_method": "fixed-weight delete-one jackknife within each dependency group; independent group covariances added"
+      },
+      "shared": {
+        "N365_calibration_radii": [
+          2,
+          4
+        ],
+        "N365_heldout_radii": [
+          7,
+          8
+        ],
+        "chi_square": 2.938933118737026,
+        "chi_square_survival": 0.5680962616296891,
+        "covariance": [
+          [
+            0.00037484628384139155,
+            0.00073251224457109,
+            -6.899762763894408e-05,
+            -0.0001446371534012313
+          ],
+          [
+            0.00073251224457109,
+            0.0014351889386201118,
+            -0.00014350365064304084,
+            -0.00030205817941384897
+          ],
+          [
+            -6.899762763894408e-05,
+            -0.00014350365064304084,
+            0.00038071237095859556,
+            0.0007489273072913184
+          ],
+          [
+            -0.0001446371534012313,
+            -0.00030205817941384897,
+            0.0007489273072913184,
+            0.0014773775156727209
+          ]
+        ],
+        "covariance_components": {
+          "G_n365_calibration_and_target_jackknife": [
+            [
+              0.0003210717024400738,
+              0.0006174415939710339,
+              -6.558702239193899e-06,
+              -1.020069057811202e-05
+            ],
+            [
+              0.0006174415939710339,
+              0.0011889445943741267,
+              -9.911647263592362e-06,
+              -1.4413862742741589e-05
+            ],
+            [
+              -6.558702239193899e-06,
+              -9.911647263592362e-06,
+              0.00030816699903447517,
+              0.0005927524886342807
+            ],
+            [
+              -1.020069057811202e-05,
+              -1.4413862742741589e-05,
+              0.0005927524886342807,
+              0.0011411559924991755
+            ]
+          ],
+          "G_old_spectrum_training_jackknife": [
+            [
+              5.3774581401317766e-05,
+              0.00011507065060005619,
+              -6.243892539975017e-05,
+              -0.0001344364628231193
+            ],
+            [
+              0.00011507065060005619,
+              0.000246244344245985,
+              -0.00013359200337944847,
+              -0.0002876443166711074
+            ],
+            [
+              -6.243892539975017e-05,
+              -0.00013359200337944847,
+              7.254537192412038e-05,
+              0.00015617481865703775
+            ],
+            [
+              -0.0001344364628231193,
+              -0.0002876443166711074,
+              0.00015617481865703775,
+              0.0003362215231735453
+            ]
+          ]
+        },
+        "degrees_of_freedom": 4,
+        "marginal_z": [
+          -0.21108713048612793,
+          -0.2519365852014587,
+          0.6160902129942881,
+          0.5828131735251597
+        ],
+        "model": "R2_gap1",
+        "old_training_fit": {
+          "boundary_hit": [
+            false
+          ],
+          "chi_square": 7.737909250689092,
+          "chi_square_survival": 0.35627121601617495,
+          "degrees_of_freedom": 7,
+          "linear_parameter_count": 8,
+          "model": "R2_gap1",
+          "nonlinear_parameter_count": 1,
+          "parameter_names": [
+            "center_x_with_gap_fixed_to_1"
+          ],
+          "parameter_ranges": [
+            [
+              -8.0,
+              8.0
+            ]
+          ],
+          "parameters": [
+            -3.2973459920542556
+          ],
+          "spectrum_scope": "shared",
+          "transfer_spectrum": {
+            "A_minus": {
+              "dimension_gap": 1.0,
+              "eigenvalues_per_radius_doubling": [
+                13.903208877677484,
+                6.951604438838742
+              ]
+            },
+            "A_plus": {
+              "dimension_gap": 1.0,
+              "eigenvalues_per_radius_doubling": [
+                13.903208877677484,
+                6.951604438838742
+              ]
+            }
+          }
+        },
+        "old_training_spectrum_scope": "shared",
+        "residual": [
+          -0.00408684682806458,
+          -0.009544337272544265,
+          0.012021061093883467,
+          0.0224013969778914
+        ],
+        "residual_order": [
+          "A_plus_R7",
+          "A_plus_R8",
+          "A_minus_R7",
+          "A_minus_R8"
+        ],
+        "standard_error": [
+          0.019360947390078605,
+          0.03788388758588685,
+          0.019511852063773844,
+          0.038436668894074585
+        ],
+        "uncertainty_method": "fixed-weight delete-one jackknife within each dependency group; independent group covariances added"
+      }
+    }
+  },
+  "interpretation_boundary": {
+    "exact": [
+      "All-data profiles use 24 observations and the complete within-group covariance.",
+      "Heldout scores train the named spectrum only on G_old, calibrate N365 amplitudes at R2/R4, and score N365 R7/R8.",
+      "J2 and R2_gap1 are nonnested continuous-transfer classes; their chi-square difference is descriptive, not Wilks-calibrated."
+    ],
+    "exploratory_conjecture": "a finite complex phase in A_minus would be a rotating two-state sector; a theta-boundary fit is not such evidence",
+    "mechanism_inference": "sector-sharing likelihood ratios test one radial generator versus matching-parity-specific generators"
+  },
+  "issue": 253,
+  "radial_coordinate": "n=log2(R/2); R7 is an off-grid continuous-transfer constraint",
+  "schema": "matching-one/p253-annulus-continuous-spectrum/v1",
+  "sources": {
+    "n365_batches": {
+      "path": "results/server-20260829/P253-n365-annulus/raw/n365_200k.batches.csv",
+      "sha256": "aaaf75b13ca287f88c80abccf365ad1bd1f2f58417cd392bbfea4cf528024a7e"
+    },
+    "n365_metadata": {
+      "path": "results/server-20260829/P253-n365-annulus/raw/n365_200k.metadata.json",
+      "sha256": "58be2b9aa136c020816f1cd438d6c919ebf1973ec7bbab42f67cf4cdb6599881"
+    },
+    "old_analysis": {
+      "path": "results/server-20260829/P225-norm5-multiradius/analysis.json",
+      "sha256": "5c7721e7578574bc417f37d82155e218ea832f64647873e8a195311793b274e6"
+    },
+    "old_batches": {
+      "path": "results/server-20260829/P225-norm5-multiradius/raw/norm5_200k.batches.csv",
+      "sha256": "403254afc6bcff0cff6b7026a15a8c5834074c023fd35a654cd8e8640fc21eb1"
+    }
+  },
+  "status": "post_reveal_continuous_spectrum_and_independent_geometry_holdout"
+}
