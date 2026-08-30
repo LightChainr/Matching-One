@@ -1,6 +1,6 @@
 {
   "schema": "matching-one/p334-current-k0-geometry-pilot-freeze/v1",
-  "status": "frozen_before_runner_implementation_or_pilot_reveal",
+  "status": "amended_before_any_pilot_data_after_two_zero-sample_launcher_failures",
   "parent_result_commit": "742a8b0",
   "source_engine_commit": "9f2033a2d205a01d3554bc2e9c93bed5760f5b29",
   "question": "Does a compact geometry summary of the actual rank-one configuration at intrinsic k0 absorb the birth-age association, and does that summary transfer from N325 to held-out N425?",
@@ -32,7 +32,7 @@
   },
   "sampling": "At each size one counter-derived permutation is shared by the two orientations. The size streams are disjoint. Retain only paths with ambient rank exactly one after k0 occupied sites.",
   "row_fields": [
-    "batch", "replica", "orientation", "k1", "age_steps", "ell_u", "ell_v",
+    "batch", "replica", "orientation", "k1", "k2", "age_steps", "ell_u", "ell_v",
     "essential_size", "essential_carriers", "occupied_frontier", "vacant_frontier",
     "H2", "H2_theta", "H2_figure8", "H2_separate", "H2_direction_positive",
     "H2_direction_negative", "H2_direction_mixed", "next_site", "next_exit"
@@ -59,7 +59,8 @@
   "secondary_scores": [
     "Mtyped and MH2 attenuation as mechanism diagnostics, not independent evidence",
     "calibration of next_exit-H2/(N-k0)",
-    "N325 geometry-only coefficient fit transferred without refitting to N425, followed by held-out line-fixed age residual slopes; source and target jackknife covariance contributions are summed"
+    "N325 geometry-only coefficient fit transferred without refitting to N425, followed by held-out line-fixed age residual slopes; source and target jackknife covariance contributions are summed",
+    "post-reveal descriptive only: after the frozen age score, use retained K1/K2 to evaluate covariance and linear explained trace of current-k0 geometry against the already external temporal mode2/mode3 scores from 5a7f2d9; this cannot alter the primary decision"
   ],
   "gates": {
     "exact": [
@@ -78,5 +79,6 @@
     "The pilot is limited to 50000 paths per size. No adaptive extension is authorized by this freeze."
   ],
   "score_once_after_raw_lock": true,
-  "no_phase_or_model_selection": true
+  "no_phase_or_model_selection": true,
+  "amendment_chronology": "The first launch on both nodes exited 127 before invoking the runner because /usr/bin/time was absent. No CSV or metadata was created. Before relaunch and before any pilot reveal, K2 retention and the externally requested post-reveal temporal-mode description were added; seeds, counters, fields used by the primary model, scores, and gates are unchanged."
 }

@@ -44,6 +44,13 @@ basis, flexible learner, adaptive sample increase, or post-reveal covariate
 selection is allowed.  Delete-one batches preserve the common-randomness
 orientation covariance.  The N325 and N425 blocks are independent.
 
+The row also retains the realized `K2`.  This was added before any simulation
+row existed: both first launchers stopped with exit 127 because `/usr/bin/time`
+was absent, before invoking the runner.  After the frozen age score only, K1/K2
+may support a descriptive covariance/explained-trace crosswalk to the external
+temporal mode-2/mode-3 result at `5a7f2d9`.  That crosswalk cannot change the
+primary pilot decision.
+
 ## Claim boundary
 
 Persistence after the cheap vector means only that `(k,rank,ell,cheap current
