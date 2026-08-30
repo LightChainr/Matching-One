@@ -1,0 +1,41 @@
+schema: matching-one/rank-birth-atop-coupling-manifest/v1
+issues: [215, 275]
+base:
+  main: c500640
+  rank_birth_parity: dabe28e
+phase: exact_proxy_conditional_bridge_conjecture
+
+exact:
+  source: J_D4 equals sum chi4(ell) times (I_12-I_01)
+  response: partial_h E_h[A_top] at zero equals Cov(A_top,J_D4)
+  parity: both factors are complement-odd so the connected response is allowed/even
+  control: A_top with the even S_H4 source reverses sign between primal and matching
+  tiny: line coupling is nonzero on all declared controls and landing coupling is nonzero on axis L4
+
+conditional_CFT_bridge:
+  assumption: J_D4 flows predominantly to the x=21/4 thermal Q4 epsilon family
+  normalized_prediction: Cov(A_top,J_D4)/M_prime scales as N^-13/8
+  raw_rank_birth_prediction: summed covariance scales as N^-5/4 if M_prime scales as N^3/8
+  local_rank_birth_prediction: per-site covariance scales as N^-9/4
+  required_companion: modulus phase and Jordan affine-log fingerprint
+
+conjecture:
+  statement: >-
+    The line-resolved rank-one lifetime source has nonzero continuum overlap
+    with the thermal Q4 epsilon or inherited energy-hull Jordan module.
+
+archive_boundary:
+  available_from_bedc94b: [K1_K2, M_prime, unmarked_D]
+  missing: [ell_iota, H4_source, same_sample_A_top_times_J]
+
+outputs:
+  script: scripts/rank_birth_atop_coupling_proxy.py
+  note: notes/p215-atop-rank-birth-q4-coupling-proxy.md
+  json: results/rank-birth-atop-coupling/latest.json
+  markdown: results/rank-birth-atop-coupling/latest.md
+  tests: tests/test_rank_birth_atop_coupling_proxy.py
+
+commands:
+  - python scripts/rank_birth_atop_coupling_proxy.py --output results/rank-birth-atop-coupling/latest.json
+  - python scripts/rank_birth_atop_coupling_proxy.py --format markdown --output results/rank-birth-atop-coupling/latest.md
+  - python -m unittest discover -s tests -p 'test_rank_birth_atop_coupling_proxy.py'

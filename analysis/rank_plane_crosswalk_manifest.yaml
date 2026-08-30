@@ -1,0 +1,45 @@
+schema: matching-one/rank-plane-crosswalk-manifest/v1
+issues: [28, 43, 48, 215, 269, 275, 276]
+base_main: d6fda88
+phase: same_stream_rank_plane_crosswalk
+
+exact_basis:
+  clock_odd_even: [c_equals_C_minus_half, W]
+  state_odd_even: [A_top, E_top]
+  insertion_odd_even: [D_birth, S_birth]
+  historical_map:
+    - D_historical_equals_A_top_over_2
+    - S_historical_equals_E_top_over_2
+    - S_historical_prime_equals_D_birth_over_2
+    - D_historical_prime_equals_S_birth_over_2
+  endpoint_warning: K2/F2 and f12 are mixed-parity coordinates, not even projectors
+
+archive_increment_over_bedc94b:
+  - join ten common-batch histogram and moment archives
+  - recover a full fixed-center 14x14 estimator covariance
+  - add the intrinsic-center M-estimator influence covariance
+  - locate historical K2 cancellation in the state layer
+  - state the exact ell/iota information boundary
+
+next_acquisition:
+  single_size: P50-N145 maximizes absolute Delta-cos4 per square-root site cost
+  radial: N65-to-N130 q2 has an exact chi4 sign flip
+  sparse_tuple: [K1, K2, ell_u, ell_v, iota, count]
+  connected_extension: [q, J_D4_re_im, q_times_J_D4_re_im]
+
+outputs:
+  script: scripts/rank_plane_crosswalk.py
+  note: notes/rank-plane-crosswalk.md
+  result: results/rank-plane-crosswalk/latest.json
+  tests: tests/test_rank_plane_crosswalk.py
+
+commands:
+  - python3 scripts/rank_plane_crosswalk.py --output results/rank-plane-crosswalk/latest.json
+  - python3 scripts/rank_plane_crosswalk.py --format markdown --output notes/rank-plane-crosswalk.md
+  - python3 -m unittest discover -s tests -p 'test_rank_plane_crosswalk.py'
+
+claim_boundary:
+  exact: linear maps, complement parities, fixed-center batch covariance reconstruction
+  first_order: intrinsic-center covariance correction
+  exploratory: sign stability and odd-leading mechanism language
+  unavailable: event-level nonlinear cross covariance and all ell/iota marked terms
