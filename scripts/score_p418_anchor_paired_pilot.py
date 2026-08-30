@@ -12,7 +12,7 @@ from pathlib import Path
 from typing import Any
 
 import numpy as np
-from scipy.stats import chi2
+from scipy.stats import f as f_distribution
 
 import score_p406_spatial_fourier_cone as p406
 import score_p418_crt_degauging as p418
@@ -23,6 +23,7 @@ FREEZE = ROOT / "analysis/p418_anchor_paired_pilot_freeze.json"
 OLD4 = ROOT / "results/huawei-20260830/P250-projective-leg-bivariate-80k/response_80k.batches.csv"
 DEFAULT_BATCHES = ROOT / "results/local-20260830/P418-anchor-paired-5k/response_5k.batches.csv"
 DEFAULT_OUTPUT = ROOT / "results/local-20260830/P418-anchor-paired-5k/score.json"
+ARCHIVED_P418 = ROOT / "results/huawei-20260830/P418-crt-degauging/score.json"
 ESTIMATORS = ("current", "independent", "full")
 HANDS = ("plus", "minus")
 CHARGES = (1, 2)
@@ -86,6 +87,7 @@ def fit_cones(exact: dict[str, Any], block: dict[str, Any], hand: str, charge: i
             "distance_squared": statistic,
             "bootstrap_p": (1 + sum(value >= statistic for value in reference)) / (bootstrap + 1),
             "resolved_modes": len(white["y"]),
+            "resolved_design_rank": int(np.linalg.matrix_rank(white["X"], tol=1e-10)),
             "bootstrap_q99": float(np.quantile(reference, 0.99)),
         }
     output["masked_minus_raw"] = output["masked"]["distance_squared"] - output["raw"]["distance_squared"]
@@ -104,10 +106,19 @@ def paired_zero(values: np.ndarray, rtol: float = 1e-10) -> dict[str, Any]:
     whitened = transform @ mean
     statistic = float(whitened @ whitened)
     degrees = int(np.sum(keep))
+    if degrees >= batches:
+        hotelling_f = math.inf
+        hotelling_p = 0.0
+    else:
+        hotelling_f = (batches - degrees) * statistic / (degrees * (batches - 1))
+        hotelling_p = float(f_distribution.sf(hotelling_f, degrees, batches - degrees))
     return {
         "mahalanobis_squared": statistic,
         "resolved_modes": degrees,
-        "chi2_reference_p": float(chi2.sf(statistic, degrees)),
+        "hotelling_F": hotelling_f,
+        "hotelling_numerator_df": degrees,
+        "hotelling_denominator_df": batches - degrees,
+        "hotelling_p": hotelling_p,
         "rms_coordinate_difference": float(np.sqrt(np.mean(mean * mean))),
     }
 
@@ -150,6 +161,9 @@ def build_score(path: Path, bootstrap: int, seed: int) -> dict[str, Any]:
     exact = p418.exact_section_and_masks()
     channels = {}
     decisions = []
+    significant_current_independent = []
+    significant_current_full = []
+    maximum_mask_specific_increment = 0.0
     for hand_index, hand in enumerate(HANDS):
         for charge in CHARGES:
             key = f"{hand}_r{charge}"
@@ -162,6 +176,10 @@ def build_score(path: Path, bootstrap: int, seed: int) -> dict[str, Any]:
                     charge,
                     bootstrap,
                     seed + 10_000 * estimator_index + 1_000 * hand_index + charge,
+                )
+                maximum_mask_specific_increment = max(
+                    maximum_mask_specific_increment,
+                    abs(estimator_scores[estimator]["masked_minus_raw"]),
                 )
             paired = {}
             for left, right in (("current", "independent"), ("current", "full"), ("independent", "full")):
@@ -181,6 +199,10 @@ def build_score(path: Path, bootstrap: int, seed: int) -> dict[str, Any]:
             else:
                 decision = "no_estimator_rejects_at_5k"
             decisions.append(decision)
+            if paired["current_minus_independent"]["hotelling_p"] < 0.01:
+                significant_current_independent.append(key)
+            if paired["current_minus_full"]["hotelling_p"] < 0.01:
+                significant_current_full.append(key)
             channels[key] = {
                 "estimators": estimator_scores,
                 "paired_differences": paired,
@@ -188,6 +210,8 @@ def build_score(path: Path, bootstrap: int, seed: int) -> dict[str, Any]:
             }
     if all(value == "full_anchor_rejects_anchor_sampling_not_causal" for value in decisions):
         decision = "scorer_or_model_assembly_persists_after_full_anchor_average"
+    elif maximum_mask_specific_increment < 0.01 and not significant_current_full:
+        decision = "one_anchor_noise_visible_but_no_mask_specific_or_current_vs_full_bias"
     elif any(value == "one_anchor_only_tension" for value in decisions):
         decision = "anchor_sampling_or_counter_correlation_candidate"
     else:
@@ -195,6 +219,16 @@ def build_score(path: Path, bootstrap: int, seed: int) -> dict[str, Any]:
     replay = historical_replay(rows, blocks)
     if not replay["passed"]:
         raise AssertionError("current estimator does not replay the old radius4 stream")
+    full_saturated = all(
+        row["estimators"]["full"]["masked"]["resolved_design_rank"]
+        == row["estimators"]["full"]["masked"]["resolved_modes"]
+        for row in channels.values()
+    )
+    archived = json.loads(ARCHIVED_P418.read_text())
+    archived_increments = {
+        key: row["increment_over_raw_cone"] for key, row in archived["channels"].items()
+    }
+    minimum_archived_increment = min(archived_increments.values())
     return {
         "schema": "matching-one/p418-anchor-paired-pilot-score/v1",
         "status": "single_authorized_5k_paired_pilot_scored",
@@ -209,6 +243,24 @@ def build_score(path: Path, bootstrap: int, seed: int) -> dict[str, Any]:
             "full_cross_estimator_channel_covariance_recoverable_from_batch_rows": True,
         },
         "channels": channels,
+        "cross_channel_diagnostic": {
+            "maximum_absolute_masked_minus_raw_distance": maximum_mask_specific_increment,
+            "current_minus_independent_hotelling_p_below_0_01": significant_current_independent,
+            "current_minus_full_hotelling_p_below_0_01": significant_current_full,
+            "full_anchor_radius4_resolved_design_is_saturated": full_saturated,
+            "archived_P418_score_sha256": sha256(ARCHIVED_P418),
+            "archived_masked_minus_raw_distances": archived_increments,
+            "minimum_archived_masked_minus_raw_distance": minimum_archived_increment,
+            "minimum_archive_to_maximum_pilot_increment_ratio": (
+                minimum_archived_increment / maximum_mask_specific_increment
+                if maximum_mask_specific_increment else math.inf
+            ),
+            "interpretation": (
+                "An isolated current-independent difference without a current-full difference is not a systematic "
+                "same-counter bias. A negligible masked-minus-raw increment cannot explain the archived mask-specific penalty. "
+                "The full-anchor radius4 zero distance is structurally saturated and is not an independent acceptance of the mask."
+            ),
+        },
         "decision": decision,
         "claim_boundary": freeze["claim_boundary"],
     }
@@ -233,6 +285,12 @@ def markdown(result: dict[str, Any]) -> str:
     lines += [
         "",
         f"The current estimator replays {replay['old_radius4_first_batches']} historical radius-4 batches with maximum summed-coordinate error `{replay['maximum_absolute_sum_error']:.3g}`.",
+        "",
+        f"Maximum absolute masked-minus-raw distance across all estimators/channels: `{result['cross_channel_diagnostic']['maximum_absolute_masked_minus_raw_distance']:.6g}`. Current-minus-independent has Hotelling p<0.01 only in `{result['cross_channel_diagnostic']['current_minus_independent_hotelling_p_below_0_01']}`; current-minus-full has none: `{result['cross_channel_diagnostic']['current_minus_full_hotelling_p_below_0_01']}`.",
+        "",
+        "The full-anchor rows have 41 resolved covariance modes and masked-design rank 41, so their exact zero distance is structurally saturated rather than an independent acceptance of the CRT mask. The causal observation is instead that switching anchor streams changes ordinary finite-sample cone distance but creates essentially no masked-minus-raw penalty.",
+        "",
+        f"For scale only, the committed archive score has masked-minus-raw increments at least `{result['cross_channel_diagnostic']['minimum_archived_masked_minus_raw_distance']:.6g}`, more than `{result['cross_channel_diagnostic']['minimum_archive_to_maximum_pilot_increment_ratio']:.3g}` times this pilot maximum. This is descriptive because the sample sizes and block assembly differ, but it rules out reproducing the archive-specific penalty in the paired radius-4 gate.",
         "",
         "All 100 batch rows retain the joint current/independent/full × hand × charge coordinates, so the complete paired covariance remains reconstructible. This is the only authorized 5k pilot; no production extension was run.",
         "",

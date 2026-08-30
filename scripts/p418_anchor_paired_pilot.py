@@ -210,7 +210,7 @@ def main() -> int:
         "coordinates": [list(point) for point in GRID],
         "batch_rows_retain_full_cross_estimator_channel_covariance": True,
         "anchor_matches": sum(int(row["anchor_matches"]) for row in rows),
-        "batches_output": str(batches),
+        "batches_output": str(batches.resolve().relative_to(ROOT)),
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(payload, indent=2) + "\n")

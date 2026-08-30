@@ -1,0 +1,192 @@
+{
+  "schema": "matching-one/p418-anchor-paired-pilot/v1",
+  "status": "completed_single_authorized_5k_paired_pilot",
+  "issues": [
+    418,
+    250
+  ],
+  "freeze": "analysis/p418_anchor_paired_pilot_freeze.json",
+  "run": {
+    "samples": 5000,
+    "batches": 100,
+    "workers": 10,
+    "p": 0.59274605079,
+    "field_seed": 25050510120261130,
+    "independent_anchor_seed": 41850510120260830,
+    "replica_offset": 0
+  },
+  "estimators": {
+    "current": "the production translated_points(field_seed, replica) anchor on the same counter-based replica",
+    "independent": "one uniform parent anchor from a separately seeded SplitMix64 counter",
+    "full": "the exact arithmetic mean over all 101 parent anchors for the same configuration"
+  },
+  "coordinates": [
+    [
+      0,
+      0
+    ],
+    [
+      -1,
+      0
+    ],
+    [
+      0,
+      -1
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      -2,
+      0
+    ],
+    [
+      -1,
+      -1
+    ],
+    [
+      -1,
+      1
+    ],
+    [
+      0,
+      -2
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      1,
+      -1
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      -3,
+      0
+    ],
+    [
+      -2,
+      -1
+    ],
+    [
+      -2,
+      1
+    ],
+    [
+      -1,
+      -2
+    ],
+    [
+      -1,
+      2
+    ],
+    [
+      0,
+      -3
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      1,
+      -2
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      -1
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      3,
+      0
+    ],
+    [
+      -4,
+      0
+    ],
+    [
+      -3,
+      -1
+    ],
+    [
+      -3,
+      1
+    ],
+    [
+      -2,
+      -2
+    ],
+    [
+      -2,
+      2
+    ],
+    [
+      -1,
+      -3
+    ],
+    [
+      -1,
+      3
+    ],
+    [
+      0,
+      -4
+    ],
+    [
+      0,
+      4
+    ],
+    [
+      1,
+      -3
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      2,
+      -2
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      3,
+      -1
+    ],
+    [
+      3,
+      1
+    ],
+    [
+      4,
+      0
+    ]
+  ],
+  "batch_rows_retain_full_cross_estimator_channel_covariance": true,
+  "anchor_matches": 60,
+  "batches_output": "results/local-20260830/P418-anchor-paired-5k/response_5k.batches.csv"
+}
