@@ -43,7 +43,7 @@
     {
       "N": 170,
       "path": "results/server-20260828/P49-fullcurve-doubling-100m/raw/n170.hist.csv",
-      "sha256": "5d6f5600399b80e25be2171dead9e823c5104dd1278052c24f39951fbfae29a1",
+      "sha256": "5d6f5600399c80e25be2171dead9e823c5104dd1278052c24f39951fbfae29a1",
       "dependency_group": "P49-shared-counter-5.0b-5.1b"
     },
     {
@@ -63,7 +63,7 @@
     {
       "N": 290,
       "path": "results/server-20260829/P50-n145-n290-fullcurve/raw/n290_100m.hist.csv",
-      "sha256": "e5f62077407d5c989e1b2907171c5f844b770812212bde616f63c621dbf97eb9",
+      "sha256": "e5f62077407f5c989e1b2907171c5f844b770812212bde616f63c621dbf97eb9",
       "dependency_group": "P50-N290-seed-2026105004"
     },
     {
@@ -81,5 +81,10 @@
   ],
   "covariance": "Within each held-out size, delete one of the 100 shared-randomness batches synchronously across both orientations and both tails. Different held-out dependency groups have disjoint RNG domains and contribute independent chi-square blocks.",
   "interpretation_level": "Level-S production statistical model-elimination score; not an exact tail theorem or universality proof",
-  "new_monte_carlo": false
+  "new_monte_carlo": false,
+  "chronology": [
+    "9c2c595 froze all scientific choices before scoring",
+    "first scorer invocation failed closed on a transcription error in the N=170 source SHA before any held-out archive was loaded",
+    "the follow-up changes only the N=170 and N=290 SHA transcriptions and this chronology"
+  ]
 }
