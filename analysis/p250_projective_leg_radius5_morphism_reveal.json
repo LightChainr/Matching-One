@@ -1,0 +1,41 @@
+{
+  "schema": "matching-one/p250-projective-leg-radius5-morphism-reveal/v1",
+  "status": "authorized_single_frozen_reveal",
+  "freeze_commit": "efc0f64",
+  "authorization_commit": "d8a6941cb8cffd694be49eac6e635cb4b6118df5",
+  "runner_commit": "fd64f78b08d3b0033b35b40295b514597a6c674b",
+  "scorer_commit": "8ae64df8c03625c178b0d73414c41c3a864e6a14",
+  "old_batches": "results/huawei-20260830/P250-projective-leg-bivariate-80k/response_80k.batches.csv",
+  "old_batches_sha256": "dfbd83d680080939bcae5cad0090af95d82748ed780ce73807d4b002d6a9ca72",
+  "response": "results/huawei-20260830/P250-projective-leg-radius5-morphism-1200k/response_1200k.json",
+  "response_sha256": "e27f727a874e376b3872cbd062f3afe86f554dcd18de648a2d4a470887093d59",
+  "new_batches": "results/huawei-20260830/P250-projective-leg-radius5-morphism-1200k/response_1200k.batches.csv",
+  "new_batches_sha256": "50985e38c9c8afab0c8b0e78113184d33861d928aefaba1e8043e67fc348677e",
+  "exact_gate": "results/huawei-20260830/P250-projective-leg-radius5-morphism-1200k/exact_gate.json",
+  "exact_gate_sha256": "8f3fd95f432457ce7eb44eb66ba8a19ce6a48b18fca56309c0cd79fb4b0deed7",
+  "execution": {
+    "host": "Huawei-CodeBuddy-XPk2PZ",
+    "remote_directory": "/workspace/p250-projective-leg-radius5-morphism-1200k",
+    "started_utc": "2026-08-30T09:06:53Z",
+    "completed_utc": "2026-08-30T09:21:22Z",
+    "elapsed_seconds": 869,
+    "exit_code": 0,
+    "stderr_bytes": 0,
+    "samples": 1200000,
+    "batches": 400,
+    "workers": 16,
+    "p": 0.59274605079,
+    "seed": 25050510120261250,
+    "replica_offset": 0,
+    "replica_last_exclusive": 1200000
+  },
+  "score_contract": {
+    "support_first": true,
+    "general_5_plus_5": "separate plus/minus old-line degree-five extension",
+    "parameter_free_maps": ["identity_conjugation", "Alexander_R0_conjugation", "Alexander_R1_conjugation", "Alexander_R2_conjugation", "Alexander_R3_conjugation"],
+    "independent_covariance_sum": true,
+    "decision_alpha": 0.01
+  },
+  "decision_alpha": 0.01,
+  "score_once": true
+}
