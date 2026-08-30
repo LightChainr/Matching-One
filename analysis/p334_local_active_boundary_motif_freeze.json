@@ -1,0 +1,54 @@
+{
+  "schema": "matching-one/p334-local-active-boundary-motif-freeze/v1",
+  "status": "frozen_before_fresh_data",
+  "parent_result_commit": "082dcab",
+  "runner_source_sha256": "1e0f52859fdc2b787f0d852b9a5d2fac35d7e5f017cd78903f0a04af6c69156a",
+  "old_transport_score": {
+    "path": "results/local-20260830/P334-morphology-state-transport/score.json",
+    "sha256": "b384b79b127c13eaad492d41fc6eab22d745d39aa4b57145ab8c401adaf9dab2"
+  },
+  "old_raw_lock": {
+    "path": "analysis/p334_bottleneck_proxy_pilot_raw_lock.json",
+    "sha256": "fbe6eba4655b8d4ce21e0d74d9c24ee5bde77e9ec025ddae2faa699f39ad024d"
+  },
+  "raw_site_fields": [
+    "birth_r1_occupied",
+    "birth_r1_essential",
+    "birth_r1_same_side_pairs",
+    "birth_r1_opposite_side_pairs",
+    "exit_r1_occupied",
+    "exit_r1_essential",
+    "exit_r1_same_side_pairs",
+    "exit_r1_opposite_side_pairs"
+  ],
+  "typed_coordinates": "For each radius-1 field x, S_x=(birth_x+exit_x)/2 is complement-even and D_x=(exit_x-birth_x)/2 is complement-odd. Same/opposite side is measured relative to primitive(P*ell), hence is invariant under ell sign and covariant under D4.",
+  "retrospective_boundary": "The exit site is selected by the future path, but every local field is evaluated on the frozen current-k0 configuration. These are mechanism diagnostics, not causal or online predictors.",
+  "runs": {
+    "N325": {
+      "host": "Huawei-CodeBuddy-HZsCM6",
+      "samples": 20000,
+      "batches": 20,
+      "seed": 20260830334825,
+      "replica_counter_first": 34825000000,
+      "replica_counter_last_exclusive": 34825020000,
+      "k0": 193,
+      "first_matrix": [325, 57, 0, 1],
+      "second_matrix": [325, 18, 0, 1]
+    },
+    "N425": {
+      "host": "Huawei-CodeBuddy-TgFr7R",
+      "samples": 20000,
+      "batches": 20,
+      "seed": 20260830334925,
+      "replica_counter_first": 34925000000,
+      "replica_counter_last_exclusive": 34925020000,
+      "k0": 252,
+      "first_matrix": [425, 132, 0, 1],
+      "second_matrix": [425, 268, 0, 1]
+    }
+  },
+  "primary_score": "Keep the opposite-size rank-one morphology subspaces from 8fd596d fixed. On each fresh block compare age+fixed-rank1 with age+fixed-rank1+the eight frozen S/D local-motif coordinates. Add the paired fresh age-coefficient shift and its full two-orientation covariance to the corresponding 8fd596d production-anchor residual.",
+  "primary_decision": "Local motifs absorb the remaining cross-size rank-one age association only if both size-level joint p values are at least 0.01 and all four absolute residual retentions relative to the 8fd596d rank-one residual are at most 0.25.",
+  "extension_rule": "Do not extend beyond 20k unless the primary gate passes or all four retentions are below 0.50 with a coherent same typed coordinate dominating both sizes. A 100k extension is otherwise forbidden.",
+  "claim_boundary": "This fresh mechanism pilot was selected after global active-boundary aggregates failed at 082dcab. It tests localized current-k0 structure around the realized birth/exit sites; failure does not prove intrinsic temporal memory."
+}

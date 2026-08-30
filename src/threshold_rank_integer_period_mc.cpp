@@ -387,6 +387,23 @@ struct GeometryPilotRecord {
     int h2_direction_mixed = 0;
     int next_site = -1;
     int next_exit = 0;
+    int birth_site = -1;
+    int exit_site = -1;
+    int birth_r1_occupied = 0;
+    int birth_r1_essential = 0;
+    int birth_r1_same_side_pairs = 0;
+    int birth_r1_opposite_side_pairs = 0;
+    int exit_r1_occupied = 0;
+    int exit_r1_essential = 0;
+    int exit_r1_same_side_pairs = 0;
+    int exit_r1_opposite_side_pairs = 0;
+};
+
+struct LocalCompletionMotif {
+    int occupied = 0;
+    int essential = 0;
+    int same_side_pairs = 0;
+    int opposite_side_pairs = 0;
 };
 
 struct CarrierShapeMetrics {
@@ -958,6 +975,7 @@ class ThresholdEngine {
         graph_components_ = 0;
         int global_rank = 0;
         int k1 = 0;
+        int site1 = -1;
         Vector plateau_line{0, 0};
         for (int offset = 0; offset < k0; ++offset) {
             const int vertex = permutation[offset];
@@ -977,6 +995,7 @@ class ThresholdEngine {
                 if (global_rank == 0) {
                     global_rank = 1;
                     k1 = offset + 1;
+                    site1 = vertex;
                     plateau_line = component.line;
                 } else if (global_rank == 1 &&
                            !same_vector(plateau_line, component.line)) {
@@ -994,6 +1013,7 @@ class ThresholdEngine {
         record.k1 = k1;
         record.line = plateau_line;
         record.next_site = permutation[k0];
+        record.birth_site = site1;
 
         std::map<int, HomologyUnionFind::ComponentMark> roots;
         for (int vertex = 0; vertex < geometry_.n; ++vertex) {
@@ -1017,6 +1037,49 @@ class ThresholdEngine {
             if (active_[vertex] && union_find_.component_mark(vertex).rank == 1) {
                 essential[vertex] = 1;
             }
+        }
+
+        // Freeze a strictly local current-k0 readout around the two sites that
+        // realize the first and second homology births.  The primitive line is
+        // projective: only same-side versus opposite-side contact pairs are
+        // retained, so ell -> -ell and every D4 relabelling leave the counts
+        // unchanged.  Site2 is selected by the future path, but its motif is
+        // evaluated here, before that future is exposed.
+        const Vector physical_line = primitive(
+            geometry_.quotient.period_vector(plateau_line));
+        auto local_motif = [&](int center) {
+            LocalCompletionMotif motif;
+            std::vector<int> sides;
+            for (const int edge_index : geometry_.primal_incident[center]) {
+                const Edge& edge = geometry_.primal_edges[edge_index];
+                const int other = edge.i == center ? edge.j : edge.i;
+                const Vector step = edge.i == center
+                    ? Vector{edge.dx, edge.dy} : Vector{-edge.dx, -edge.dy};
+                motif.occupied += static_cast<int>(active_[other]);
+                if (!essential[other]) continue;
+                ++motif.essential;
+                const __int128 cross =
+                    static_cast<__int128>(physical_line.x) * step.y -
+                    static_cast<__int128>(physical_line.y) * step.x;
+                sides.push_back(cross > 0 ? 1 : (cross < 0 ? -1 : 0));
+            }
+            for (std::size_t i = 0; i < sides.size(); ++i) {
+                for (std::size_t j = i + 1; j < sides.size(); ++j) {
+                    if (sides[i] == 0 || sides[j] == 0) continue;
+                    if (sides[i] == sides[j]) ++motif.same_side_pairs;
+                    else ++motif.opposite_side_pairs;
+                }
+            }
+            return motif;
+        };
+        const LocalCompletionMotif birth_motif = local_motif(site1);
+        record.birth_r1_occupied = birth_motif.occupied;
+        record.birth_r1_essential = birth_motif.essential;
+        record.birth_r1_same_side_pairs = birth_motif.same_side_pairs;
+        record.birth_r1_opposite_side_pairs = birth_motif.opposite_side_pairs;
+        std::vector<LocalCompletionMotif> vacant_motifs(geometry_.n);
+        for (int vertex = 0; vertex < geometry_.n; ++vertex) {
+            if (!active_[vertex]) vacant_motifs[vertex] = local_motif(vertex);
         }
 
         for (int vertex = 0; vertex < geometry_.n; ++vertex) {
@@ -1089,6 +1152,12 @@ class ThresholdEngine {
                 (component.rank == 1 && !same_vector(component.line, plateau_line));
             if (crossed) {
                 record.k2 = offset + 1;
+                record.exit_site = vertex;
+                const LocalCompletionMotif& exit_motif = vacant_motifs[vertex];
+                record.exit_r1_occupied = exit_motif.occupied;
+                record.exit_r1_essential = exit_motif.essential;
+                record.exit_r1_same_side_pairs = exit_motif.same_side_pairs;
+                record.exit_r1_opposite_side_pairs = exit_motif.opposite_side_pairs;
                 break;
             }
         }
@@ -1991,7 +2060,14 @@ void run_geometry_pilot_design(const PairDesign& design, const Options& options,
                    << value.h2 << ',' << value.h2_theta << ',' << value.h2_figure8 << ','
                    << value.h2_separate << ',' << value.h2_direction_positive << ','
                    << value.h2_direction_negative << ',' << value.h2_direction_mixed << ','
-                   << value.next_site << ',' << value.next_exit << '\n';
+                   << value.next_site << ',' << value.next_exit << ','
+                   << value.birth_site << ',' << value.exit_site << ','
+                   << value.birth_r1_occupied << ',' << value.birth_r1_essential << ','
+                   << value.birth_r1_same_side_pairs << ','
+                   << value.birth_r1_opposite_side_pairs << ','
+                   << value.exit_r1_occupied << ',' << value.exit_r1_essential << ','
+                   << value.exit_r1_same_side_pairs << ','
+                   << value.exit_r1_opposite_side_pairs << '\n';
         }
     };
     for (int batch = 0; batch < options.batches; ++batch) {
@@ -2264,7 +2340,11 @@ int run(int argc, char** argv) {
                "boundary_axis_imbalance,boundary_corner_balance,frontier_components,"
                "largest_frontier_component,frontier_component_sumsq,"
                "H2,H2_theta,H2_figure8,H2_separate,H2_direction_positive,"
-               "H2_direction_negative,H2_direction_mixed,next_site,next_exit\n";
+               "H2_direction_negative,H2_direction_mixed,next_site,next_exit,"
+               "birth_site,exit_site,birth_r1_occupied,birth_r1_essential,"
+               "birth_r1_same_side_pairs,birth_r1_opposite_side_pairs,"
+               "exit_r1_occupied,exit_r1_essential,exit_r1_same_side_pairs,"
+               "exit_r1_opposite_side_pairs\n";
     }
     histogram << "n,a,b,orientation,batch,samples,kind,k,count\n";
     moments << "n,a,b,orientation,batch,samples,sum_kminus,sum_kplus,sum_kminus2,"
@@ -2354,6 +2434,7 @@ int run(int argc, char** argv) {
              << "  \"marked_birth_schema\": " << (options.marked_births ? "true" : "false") << ",\n"
              << "  \"geometry_pilot_k0\": " << options.geometry_pilot_k0 << ",\n"
              << "  \"geometry_pilot_semantics\": \"rank-one state after k0 occupied sites; H2 is the exact number of vacant sites whose one-step insertion gives ambient rank two\",\n"
+             << "  \"local_completion_motif\": \"radius-1 NN counts at current k0 around realized first-birth and future second-birth sites; occupied and essential contacts plus projective-line same-side/opposite-side essential-contact pairs; future site selects a location but never changes the frozen current-k0 field\",\n"
              << "  \"marked_birth_semantics\": \"strict 0->1 uses post-line; strict 1->2 uses pre-line; direct 0->2 has null line, D=0, S=2\",\n"
              << "  \"line_coordinates\": \"ell_u,ell_v are primitive period-basis winding coordinates\",\n"
              << "  \"chi4_frame\": \"physical lifted Euclidean direction primitive(P*ell), never raw period coordinates\",\n"
