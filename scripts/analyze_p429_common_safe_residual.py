@@ -106,10 +106,25 @@ def derive_features(frame: pd.DataFrame) -> pd.DataFrame:
 def load_inputs(contract: dict, root: Path) -> tuple[pd.DataFrame, dict]:
     raw_lock_path = root / contract["inputs"]["raw_lock"]
     raw_lock = json.loads(raw_lock_path.read_text())
+    parent_score_path = root / raw_lock["score"]["path"]
+    parent_score_hash = sha256(parent_score_path)
+    _require(parent_score_hash == raw_lock["score"]["sha256"],
+             "parent production score hash drifted")
+    parent_score = json.loads(parent_score_path.read_text())
     frames: list[pd.DataFrame] = []
     audit: dict = {
         "raw_lock": {"path": str(raw_lock_path.relative_to(root)),
                      "sha256": sha256(raw_lock_path)},
+        "parent_score": {
+            "path": str(parent_score_path.relative_to(root)),
+            "sha256": parent_score_hash,
+            "secondary_vector_order": parent_score[
+                "secondary_successor_heterogeneity"]["vector_order"],
+            "secondary_vector": parent_score[
+                "secondary_successor_heterogeneity"]["vector"],
+            "secondary_size_common_gap": parent_score[
+                "secondary_successor_heterogeneity"]["size_common_gap"],
+        },
         "sizes": {},
     }
 
@@ -324,11 +339,13 @@ def crossfit_candidate(
 
 
 def cluster_metric(values: np.ndarray, data: pd.DataFrame) -> dict:
-    """Cluster covariance for the four environment means.
+    """Conditional score dispersion for the four environment means.
 
     A size-batch is one cluster and contributes a two-orientation influence
-    vector.  The resulting 4x4 matrix is block diagonal only because the two
-    size runs have disjoint RNG streams; no all-size meta-estimate is formed.
+    vector.  The resulting 4x4 matrix is block diagonal only conditional on
+    the already fitted fold models.  Because slopes are shared across sizes,
+    this is not a full nuisance-refit sampling covariance.  No all-size
+    meta-estimate is formed.
     """
     values = np.asarray(values, dtype=float)
     estimates = np.zeros(len(ENVIRONMENTS), dtype=float)
@@ -354,14 +371,14 @@ def cluster_metric(values: np.ndarray, data: pd.DataFrame) -> dict:
         block /= np.outer(counts[positions], counts[positions])
         covariance[np.ix_(positions, positions)] = block
 
-    standard_errors = np.sqrt(np.maximum(np.diag(covariance), 0.0))
+    dispersion_se = np.sqrt(np.maximum(np.diag(covariance), 0.0))
     by_environment = {
         env: {
             "estimate": float(estimates[index]),
-            "se": float(standard_errors[index]),
-            "normal_95_interval": [
-                float(estimates[index] - 1.96 * standard_errors[index]),
-                float(estimates[index] + 1.96 * standard_errors[index]),
+            "conditional_score_dispersion_se": float(dispersion_se[index]),
+            "conditional_normal_reference_range": [
+                float(estimates[index] - 1.96 * dispersion_se[index]),
+                float(estimates[index] + 1.96 * dispersion_se[index]),
             ],
             "rows": int(counts[index]),
         }
@@ -376,15 +393,16 @@ def cluster_metric(values: np.ndarray, data: pd.DataFrame) -> dict:
         se = float(math.sqrt(max(float(weight @ block @ weight), 0.0)))
         by_size[size] = {
             "equal_orientation_mean": estimate,
-            "se_with_direction_covariance": se,
-            "normal_95_interval": [estimate - 1.96 * se, estimate + 1.96 * se],
-            "orientation_covariance": block.tolist(),
+            "conditional_score_dispersion_se_with_direction_covariance": se,
+            "conditional_normal_reference_range": [
+                estimate - 1.96 * se, estimate + 1.96 * se],
+            "conditional_orientation_score_covariance": block.tolist(),
         }
     return {
         "vector_order": list(ENVIRONMENTS),
         "vector": estimates.tolist(),
-        "batch_cluster_covariance": covariance.tolist(),
-        "standard_errors": standard_errors.tolist(),
+        "conditional_on_fold_models_batch_score_covariance": covariance.tolist(),
+        "conditional_score_dispersion_se": dispersion_se.tolist(),
         "by_environment": by_environment,
         "by_size": by_size,
     }
@@ -417,7 +435,13 @@ def coefficient_summary(fold_fits: list[dict], features: list[str]) -> dict:
     return output
 
 
-def score(contract: dict, data: pd.DataFrame, audit: dict) -> tuple[dict, dict]:
+def score(
+    contract: dict,
+    data: pd.DataFrame,
+    audit: dict,
+    contract_path: Path,
+    analyzer_path: Path,
+) -> tuple[dict, dict]:
     candidates = contract["candidate_states_in_fixed_nested_order"]
     cumulative: list[str] = []
     candidate_features: dict[str, list[str]] = {}
@@ -504,9 +528,43 @@ def score(contract: dict, data: pd.DataFrame, audit: dict) -> tuple[dict, dict]:
             "symmetry_lock_difference": -0.25 * (mean1 - mean2) ** 2,
         }
 
+    parent_labels = audit["parent_score"]["secondary_vector_order"]
+    parent_values = audit["parent_score"]["secondary_vector"]
+    parent_map = dict(zip(parent_labels, parent_values))
+    parent_comparison = {"by_environment": {}, "by_size": {}}
+    for env in ENVIRONMENTS:
+        size, orientation = env.split("_", 1)
+        parent_value = float(parent_map[f"conditional_gap:{size}:{orientation}"])
+        observed = outcome_audit[env]["conventional_covariance"]
+        _require(abs(parent_value - observed) < 1e-14,
+                 f"{env} common-safe covariance no longer reproduces parent score")
+        parent_comparison["by_environment"][env] = {
+            "parent_conventional_covariance": parent_value,
+            "recomputed_conventional_covariance": observed,
+            "difference": observed - parent_value,
+        }
+    for size in SIZES:
+        parent = audit["parent_score"]["secondary_size_common_gap"][size]
+        crossfit = fitted[baseline_id]["heldout_residual_dependence"]["by_size"][size]
+        parent_comparison["by_size"][size] = {
+            "parent_GLS_conventional_gap": parent,
+            "crossfit_symmetry_locked_equal_orientation_gap": crossfit,
+            "comparison_boundary": (
+                "The parent uses full-sample clone-specific means and GLS direction weights; "
+                "the reanalysis uses fold-held symmetry-locked means and equal direction weights."
+            ),
+        }
+
     payload = {
         "schema": "matching-one/p429-common-safe-reanalysis-score/v1",
-        "contract_sha256": sha256(ROOT / "analysis/p429_common_safe_reanalysis_contract.json"),
+        "contract": {
+            "path": str(contract_path.resolve()),
+            "sha256": sha256(contract_path),
+        },
+        "analyzer": {
+            "path": str(analyzer_path.resolve()),
+            "sha256": sha256(analyzer_path),
+        },
         "contract_status": contract["status"],
         "analysis_unit": contract["analysis_unit"],
         "dependency_contract": contract["dependency_contract"],
@@ -518,13 +576,22 @@ def score(contract: dict, data: pd.DataFrame, audit: dict) -> tuple[dict, dict]:
         "feature_support": feature_support(data, all_features),
         "degeneracy_audit": contract["degeneracy_audit"],
         "outcome_audit": outcome_audit,
+        "parent_secondary_reproduction": parent_comparison,
         "candidates": fitted,
         "candidate_order": [candidate["id"] for candidate in candidates],
-        "inference_boundary": (
-            "Normal intervals are descriptive batch-cluster intervals for fixed cross-fitted "
-            "scores. They are not multiplicity-adjusted confirmatory intervals. No clone, "
-            "orientation, or size is counted as an independent study, and no all-size p-value "
-            "or meta-estimate is formed."
+        "dispersion_boundary": (
+            "Reported batch quantities are held-out score dispersions conditional on the fitted "
+            "fold models. The nuisance models share slopes across sizes and were not refit in a "
+            "cluster bootstrap or delete-one loop, so these are not full sampling standard errors "
+            "or confidence intervals. Stored cross-size covariance blocks are zero only under "
+            "that conditional view. No clone, orientation, or size is counted as an independent "
+            "study, and no all-size significance claim or meta-estimate is formed."
+        ),
+        "metric_identity": (
+            "With one shared prediction for both binary clones, pair-average Brier loss minus "
+            "the residual cross-product equals mean[(y1+y2)/2-y1*y2], which is model-invariant. "
+            "Therefore Brier gain equals absorbed dependence algebraically and is an audit, not "
+            "independent corroboration. Log-loss gain is the separate held-out loss diagnostic."
         ),
         "claim_boundary": contract["claim_boundary"],
         "environment": {
@@ -547,13 +614,13 @@ def render_report(payload: dict) -> str:
         "",
         "## Outcome first",
         "",
-        "This is a zero-new-sample, post-reveal mechanism allocation on the locked P429 ",
-        "production files.  Five-fold cross-fitting holds out whole batches simultaneously ",
+        "This is a zero-new-sample, post-reveal predictive allocation on the locked P429",
+        "production files.  Five-fold cross-fitting holds out whole batches simultaneously",
         "across both orientations and both sizes.  Each row remains one paired-clone unit.",
         "",
-        "The tables below report the symmetry-locked held-out residual product, the amount ",
-        "absorbed relative to the environment-intercept model, and held-out predictive loss. ",
-        "Direction means use equal weights with the measured within-batch direction covariance; ",
+        "The tables below report the symmetry-locked held-out residual product, the amount",
+        "predictively absorbed relative to the environment-intercept model, and held-out loss.",
+        "Direction means use equal weights with the measured within-batch direction covariance;",
         "the two sizes are deliberately not pooled into a single evidence number.",
         "",
         "## Analysis rows",
@@ -571,12 +638,35 @@ def render_report(payload: dict) -> str:
         )
 
     baseline = payload["candidates"]["intercept_only"]
+    lines.extend([
+        "",
+        "## Parent-secondary reproduction",
+        "",
+        "| size | parent conventional gap (GLS SE) | cross-fit baseline (conditional score dispersion) |",
+        "|---|---:|---:|",
+    ])
+    for size in SIZES:
+        parent = payload["parent_secondary_reproduction"]["by_size"][size][
+            "parent_GLS_conventional_gap"]
+        crossfit = baseline["heldout_residual_dependence"]["by_size"][size]
+        lines.append(
+            f"| {size} | {_fmt(parent['estimate'])} ({_fmt(parent['se'])}) | "
+            f"{_fmt(crossfit['equal_orientation_mean'])} "
+            f"({_fmt(crossfit['conditional_score_dispersion_se_with_direction_covariance'])}) |"
+        )
+    lines.extend([
+        "",
+        "The environment-level conventional covariances reproduce the locked parent score exactly.",
+        "The small size-summary differences above are expected: the parent uses full-sample,",
+        "clone-specific means and GLS direction weights, whereas this reanalysis uses fold-held,",
+        "symmetry-locked means and equal direction weights.",
+    ])
     for size in SIZES:
         lines.extend([
             "",
             f"## {size}: fixed nested candidate states",
             "",
-            "| candidate state | features | residual dependence (SE) | absorbed | absorbed fraction | log-loss gain | Brier gain |",
+            "| candidate state | features | residual dependence (conditional dispersion) | predictively absorbed | absorbed fraction point | log-loss gain | Brier gain audit |",
             "|---|---:|---:|---:|---:|---:|---:|",
         ])
         for identifier in payload["candidate_order"]:
@@ -589,7 +679,7 @@ def render_report(payload: dict) -> str:
             lines.append(
                 f"| `{identifier}` | {len(candidate['features'])} | "
                 f"{_fmt(residual['equal_orientation_mean'])} "
-                f"({_fmt(residual['se_with_direction_covariance'])}) | "
+                f"({_fmt(residual['conditional_score_dispersion_se_with_direction_covariance'])}) | "
                 f"{_fmt(absorbed['equal_orientation_mean'])} | {fraction:.1%} | "
                 f"{_fmt(log_gain['equal_orientation_mean'])} | "
                 f"{_fmt(brier_gain['equal_orientation_mean'])} |"
@@ -597,9 +687,24 @@ def render_report(payload: dict) -> str:
 
         lines.extend([
             "",
+            f"### {size}: direction audit (point estimates)",
+            "",
+            "| candidate state | first residual | second residual |",
+            "|---|---:|---:|",
+        ])
+        for identifier in payload["candidate_order"]:
+            candidate = payload["candidates"][identifier]
+            by_env = candidate["heldout_residual_dependence"]["by_environment"]
+            lines.append(
+                f"| `{identifier}` | {_fmt(by_env[f'{size}_first']['estimate'])} | "
+                f"{_fmt(by_env[f'{size}_second']['estimate'])} |"
+            )
+
+        lines.extend([
+            "",
             f"### {size}: incremental contribution of each added block",
             "",
-            "| added block endpoint | residual absorbed beyond previous state | log-loss gain beyond previous state |",
+            "| added block endpoint | predictive residual reduction beyond previous state | log-loss gain beyond previous state |",
             "|---|---:|---:|",
         ])
         for identifier in payload["candidate_order"][1:]:
@@ -608,7 +713,8 @@ def render_report(payload: dict) -> str:
             log_gain = increment["log_loss_improvement"]["by_size"][size]
             lines.append(
                 f"| `{identifier}` | {_fmt(absorbed['equal_orientation_mean'])} "
-                f"(SE {_fmt(absorbed['se_with_direction_covariance'])}) | "
+                f"(conditional dispersion "
+                f"{_fmt(absorbed['conditional_score_dispersion_se_with_direction_covariance'])}) | "
                 f"{_fmt(log_gain['equal_orientation_mean'])} |"
             )
 
@@ -616,24 +722,38 @@ def render_report(payload: dict) -> str:
         "",
         "## Interpretation and boundaries",
         "",
-        "- The baseline and all candidate scores use one shared prediction for the two suffix ",
-        "  streams.  The exact audit in `score.json` reports how little this symmetry lock differs ",
+        "- The baseline and all candidate scores use one shared prediction for the two suffix",
+        "  streams.  The exact audit in `score.json` reports how little this symmetry lock differs",
         "  from the conventional product-of-separate-means covariance.",
-        "- `H2_theta` is exactly `H2` in these rows; `H2_figure8` and `H2_separate` are zero. ",
-        "  `checkpoint_b1_safe_count` is algebraically redundant with `H2`.  None is presented as ",
+        "- `H2_theta` is exactly `H2` in these rows; `H2_figure8` and `H2_separate` are zero.",
+        "  `checkpoint_b1_safe_count` is algebraically redundant with `H2`.  None is presented as",
         "  extra evidence.",
-        "- The cooperative block contains boundary multicontact/contact-pair proxies.  It is not ",
+        "- `branch_common_safe=1` is filtered within each orientation.  The jointly safe replica",
+        "  counts above are overlap diagnostics only; a both-orientations-safe subset is a different",
+        "  post-hoc estimand and is not substituted here.",
+        "- The cooperative block contains boundary multicontact/contact-pair proxies.  It is not",
         "  the exact microscopic two-step cooperative-pair count.",
-        "- Every covariate is measured before the shared common update.  The analysis therefore ",
-        "  tests how much pre-update state predicts successor heterogeneity; it does not observe ",
+        "- H2 is the exact pre-common count of one-step rank-two hazard sites.  Its dominant",
+        "  absorption is therefore primarily risk-set accounting, not a newly identified memory",
+        "  mechanism; the common update can still change the unobserved successor H2.",
+        "- Every covariate is measured before the shared common update.  The analysis therefore",
+        "  tests how much pre-update state predicts successor heterogeneity; it does not observe",
         "  the complete successor state.",
-        "- Cross-fitting addresses in-sample prediction bias only.  These already revealed rows ",
-        "  cannot provide independent confirmation, causal mediation, full-state sufficiency, ",
+        "- Cross-fitting addresses in-sample prediction bias only.  These already revealed rows",
+        "  cannot provide independent confirmation, causal mediation, full-state sufficiency,",
         "  Markov closure/nonclosure at scale, a continuum memory field, or a scale exponent.",
-        "- Normal intervals are descriptive, batch-clustered, and unadjusted for the fixed nested ",
-        "  sequence.  No all-size significance claim is made.",
+        "- Batch quantities are conditional score dispersions, not nuisance-refit sampling SEs or",
+        "  confidence intervals.  Shared cross-size slopes induce unconditional coupling that the",
+        "  stored zero cross-size blocks do not estimate.  No significance claim is made.",
+        "- Absorbed fractions are point estimates without ratio intervals.  Values above 100% and",
+        "  negative residuals are model/noise-scale overcorrection, not exact full absorption or",
+        "  evidence of negative dependence.  At N425, direction averaging also hides opposite-sign",
+        "  first/second residual point estimates, which are shown explicitly above.",
+        "- Brier gain is algebraically identical to absorbed dependence under the shared clone",
+        "  prediction, so it is only an internal audit.  Log-loss gain is the separate held-out",
+        "  predictive-loss diagnostic.",
         "",
-        "Full feature transforms, fold fits, four-environment covariance matrices, source hashes, ",
+        "Full feature transforms, fold fits, four-environment covariance matrices, source hashes,",
         "and support audits are in `score.json`.",
         "",
     ])
@@ -653,7 +773,8 @@ def main() -> None:
     _require(contract["schema"] == "matching-one/p429-common-safe-reanalysis-contract/v1",
              "unexpected contract schema")
     data, audit = load_inputs(contract, ROOT)
-    payload, _ = score(contract, data, audit)
+    payload, _ = score(
+        contract, data, audit, args.contract, Path(__file__).resolve())
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n")
     if args.report:
