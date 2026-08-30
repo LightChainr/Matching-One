@@ -1,0 +1,53 @@
+{
+  "schema": "matching-one/p250-projective-leg-direction-charge-refreeze-manifest/v1",
+  "issue": 250,
+  "status": "transparent_protocol_repair_after_strict_null",
+  "scorer_commit": "5fad8dfc7c1d66aa668bc58bfaca05f0df79f7a9",
+  "rank2_source_commit": "c28fd7da33a6abd3ab64130a39ed0cab49e80805",
+  "original_freeze_commit": "4d9b3eeca9cc8a5dcab338d6c0e003b9340c6a4f",
+  "original_strict_reveal": {
+    "score_sha256": "3682a3ee9c44fa52c54c7d3964e56dccd8f3e6957c159470f41c4d65e0f30900",
+    "markdown_sha256": "004e9359765292a3d0d618d55d8e879d750ce6d57d961ab136af26a11e18f020",
+    "result": "all candidates rejected",
+    "protocol_defect": "the strict model fixed the leading axis-difference amplitude to zero, although the rank-two T fit never imposed or inferred that condition"
+  },
+  "input": {
+    "batches": "results/huawei-20260830/P250-z5-projective-leg-cross-scale-n505-80k/response_80k.batches.csv",
+    "sha256": "8b0e06f3fdc577c362e6f2404db60933d0cf489ee532c053288a03c44dc7fe5c",
+    "samples": 80000,
+    "batches_count": 160,
+    "parent_norm": 101
+  },
+  "repaired_primary_score": {
+    "fit": "fit both complex A-mode amplitudes on d1..4 at the already frozen T roots",
+    "nuisance": "leading A-mode amplitude is free in every hand-charge channel",
+    "tested_relation": "second A-mode amplitude equals ((1-q)/(1+q)) times the second T-mode amplitude",
+    "coordinates": "four complex second-mode amplitude residuals",
+    "covariance": "delete-one covariance with roots and all amplitudes refit in each deletion",
+    "heldout": "fit only the leading A amplitude on d1..4 under each q and predict A(d5)"
+  },
+  "direction_candidates": {
+    "internal_direction_invariant": "q=1",
+    "spatial_C4": ["q=-i", "q=+i"],
+    "one_step_Z5": ["q=exp(2*pi*i*j/5), j=1,2,3,4"]
+  },
+  "root_phase_alphabet": {
+    "spatial_C4": ["-pi/2", "+pi/2"],
+    "one_step_Z5": ["2*pi*j/5, j=0,1,2,3,4"],
+    "logical_boundary": "the root phase cannot by itself name the state; a non-Z5 internal account requires a compound or non-generator transfer step"
+  },
+  "decision_alpha": 0.01,
+  "decision_rule": [
+    "a q candidate closes only when both its second-mode amplitude score and d5 heldout have p>=0.01",
+    "if only q=1 closes, reject a spatial C4 direction character for the second state",
+    "if exactly one q=+i or q=-i closes, retain that spatial C4 direction character",
+    "if multiple candidates close, report unresolved",
+    "if none closes, report that no single shared direction character describes the second mode"
+  ],
+  "claim_boundary": [
+    "This repair is explicitly post-strict-null and is not represented as prospectively frozen before any x/y reveal.",
+    "The repair removes an unjustified nuisance restriction; it does not reselect rank, roots, phase alphabets, or candidates.",
+    "Unrestricted per-channel q values are diagnostics only.",
+    "No new simulation is used."
+  ]
+}
