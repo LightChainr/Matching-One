@@ -1,0 +1,29 @@
+{
+  "engine": "general integer-period threshold-rank Newman-Ziff",
+  "generated_utc": "2026-08-30T04:34:20Z",
+  "git_commit": "c1a353a0718d86894ebf49f7b7200152e402ad09",
+  "command": "/Volumes/Mac Data/Research/论文项目总库/Matching-One-worktrees/issue55-h4-h12-acquisition-20260830/build/threshold_rank_integer_period_mc_issue55 --samples 20000 --batches 20 --seed 6466720871935232339 --replica-offset 15550000000 --threads 1 --first-matrix 17 -4 4 17 --second-matrix 16 -7 7 16 --first-rep 17 4 --second-rep 16 7 --git-commit c1a353a0718d86894ebf49f7b7200152e402ad09 --output-prefix /Volumes/Mac Data/Research/论文项目总库/Matching-One-worktrees/issue55-h4-h12-acquisition-20260830/results/local-20260830/P55-h4-h12-orthogonal-smoke/raw/issue55_smoke_n305_shard0",
+  "compiler": "Apple LLVM 21.0.0 (clang-2100.1.1.101)",
+  "openmp": false,
+  "threads_requested": 1,
+  "samples_per_pair": 20000,
+  "batches": 20,
+  "seed": 6466720871935232339,
+  "replica_counter_first": 15550000000,
+  "replica_counter_last_exclusive": 15550020000,
+  "rng": "counter-derived SplitMix64 stream plus unbiased Fisher-Yates",
+  "coupling": "same HNF mixed-radix label permutation shared by the pair",
+  "quotient_coordinates": "column-HNF representatives (rx,ry), label=rx+h11*ry",
+  "period_matrix_convention": "row-major matrix; columns are lifted period vectors",
+  "channel": "rank-2 cross wrapping",
+  "K_plus": "first black primal cross rank, 1-based",
+  "K_minus": "first black rank after white matching cross is lost; N-r+1",
+  "sparse_joint_histogram": false,
+  "per_batch_joint_moments": true,
+  "elapsed_seconds": 0.61981237499999997,
+  "designs": [
+    {"id": "custom", "N": 305, "first": [17,4], "second": [16,7], "first_period_matrix": [[17,-4],[4,17]], "second_period_matrix": [[16,-7],[7,16]], "first_HNF": [[305,233],[0,1]], "second_HNF": [[305,133],[0,1]], "first_smith_invariants": [1,305], "second_smith_invariants": [1,305]}
+  ],
+  "histogram_csv": "/Volumes/Mac Data/Research/论文项目总库/Matching-One-worktrees/issue55-h4-h12-acquisition-20260830/results/local-20260830/P55-h4-h12-orthogonal-smoke/raw/issue55_smoke_n305_shard0.hist.csv",
+  "moments_csv": "/Volumes/Mac Data/Research/论文项目总库/Matching-One-worktrees/issue55-h4-h12-acquisition-20260830/results/local-20260830/P55-h4-h12-orthogonal-smoke/raw/issue55_smoke_n305_shard0.moments.csv"
+}

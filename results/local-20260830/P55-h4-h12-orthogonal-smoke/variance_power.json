@@ -1,0 +1,143 @@
+{
+  "equal_amplitude_h12_sign_flip_shift_by_N": {
+    "305": -8.452032713698133e-05,
+    "325": 9.040513053302348e-05
+  },
+  "grid_threshold_reached": true,
+  "orthogonal_A12_power_sensitivity": [
+    {
+      "projected_A12_sampling_se": 0.28481572272032096,
+      "samples_per_design": 300000000,
+      "two_sided_alpha_0.05_power_by_abs_A12_over_A4": {
+        "0.1": 0.0588254865951231,
+        "0.25": 0.10642569697867088,
+        "0.5": 0.2828095576433633,
+        "1.0": 0.7905976366516215
+      }
+    },
+    {
+      "projected_A12_sampling_se": 0.20139512892408637,
+      "samples_per_design": 600000000,
+      "two_sided_alpha_0.05_power_by_abs_A12_over_A4": {
+        "0.1": 0.06773802343714441,
+        "0.25": 0.16490289889341536,
+        "0.5": 0.4990994450097047,
+        "1.0": 0.9747217454392977
+      }
+    },
+    {
+      "projected_A12_sampling_se": 0.14240786136016048,
+      "samples_per_design": 1200000000,
+      "two_sided_alpha_0.05_power_by_abs_A12_over_A4": {
+        "0.1": 0.08579594778188976,
+        "0.25": 0.2828095576433633,
+        "0.5": 0.7905976366516215,
+        "1.0": 0.9998261863137186
+      }
+    },
+    {
+      "projected_A12_sampling_se": 0.10069756446204318,
+      "samples_per_design": 2400000000,
+      "two_sided_alpha_0.05_power_by_abs_A12_over_A4": {
+        "0.1": 0.122656503904646,
+        "0.25": 0.4990994450097047,
+        "0.5": 0.9747217454392977,
+        "1.0": 0.9999999978264599
+      }
+    }
+  ],
+  "p_ref": "0.592746050790",
+  "production_grid_projection": [
+    {
+      "conditional_h4_only_vs_equal_A12_mahalanobis": 2.7684567146395893,
+      "projected_A12_sampling_se": 0.28481572272032096,
+      "projected_h4_signal_to_noise_by_N": {
+        "305": 1.097038541142517,
+        "325": 1.1237106807924997
+      },
+      "projected_sampling_se_by_N": {
+        "305": 4.495811181768928e-05,
+        "325": 4.437317702527689e-05
+      },
+      "samples_per_design": 300000000,
+      "zero_effect_df2_alpha_0.05_power": 0.2702589285775356,
+      "zero_effect_h4_vector_mahalanobis": 1.5704200886639363
+    },
+    {
+      "conditional_h4_only_vs_equal_A12_mahalanobis": 3.9151890326861687,
+      "projected_A12_sampling_se": 0.20139512892408637,
+      "projected_h4_signal_to_noise_by_N": {
+        "305": 1.551446783329742,
+        "325": 1.589166884960257
+      },
+      "projected_sampling_se_by_N": {
+        "305": 3.179018573563115e-05,
+        "325": 3.13765743773644e-05
+      },
+      "samples_per_design": 600000000,
+      "zero_effect_df2_alpha_0.05_power": 0.4979344527879245,
+      "zero_effect_h4_vector_mahalanobis": 2.220909388011697
+    },
+    {
+      "conditional_h4_only_vs_equal_A12_mahalanobis": 5.536913429279179,
+      "projected_A12_sampling_se": 0.14240786136016048,
+      "projected_h4_signal_to_noise_by_N": {
+        "305": 2.194077082285034,
+        "325": 2.2474213615849994
+      },
+      "projected_sampling_se_by_N": {
+        "305": 2.247905590884464e-05,
+        "325": 2.2186588512638444e-05
+      },
+      "samples_per_design": 1200000000,
+      "zero_effect_df2_alpha_0.05_power": 0.8098370877350426,
+      "zero_effect_h4_vector_mahalanobis": 3.1408401773278727
+    },
+    {
+      "conditional_h4_only_vs_equal_A12_mahalanobis": 7.830378065372337,
+      "projected_A12_sampling_se": 0.10069756446204318,
+      "projected_h4_signal_to_noise_by_N": {
+        "305": 3.102893566659484,
+        "325": 3.178333769920514
+      },
+      "projected_sampling_se_by_N": {
+        "305": 1.5895092867815576e-05,
+        "325": 1.56882871886822e-05
+      },
+      "samples_per_design": 2400000000,
+      "zero_effect_df2_alpha_0.05_power": 0.9840657320342862,
+      "zero_effect_h4_vector_mahalanobis": 4.441818776023394
+    }
+  ],
+  "recommended_samples_per_design": 600000000,
+  "sample_count_freeze_rule": {
+    "equal_amplitude_definition": "A12=A4=0.7885; the H12 shifts are N^(-13/8)*A12*delta_cos12_N and therefore have opposite signs",
+    "operational_grid_per_design": [
+      300000000,
+      600000000,
+      1200000000,
+      2400000000
+    ],
+    "primary_choice": "smallest grid point with conditional Mahalanobis separation at least 3 between H4-only and the equal-amplitude A12=A4 sign-flip alternative, profiling the shared A4 column with the full two-row sampling covariance; if none, 2400000000",
+    "secondary_power": "report zero-effect power for the frozen H4 vector and H12 sensitivities at A12/A4 in {0.10,0.25,0.50,1.00}; neither changes the primary choice"
+  },
+  "schema": "matching-one/issue55-h4-h12-variance-pilot/v1",
+  "scientific_boundary": "The pilot chooses cost from centered variance only; it contains no target estimate, target residual, or H4/H12 score.",
+  "status": "variance_only_target_means_withheld",
+  "variance_estimates": {
+    "305": {
+      "batches": 20,
+      "centered_sampling_se": 0.005506221687616454,
+      "observed_target_mean": "withheld_by_protocol",
+      "samples": 20000,
+      "variance_constant_se_times_sqrt_samples": 0.7786973388060061
+    },
+    "325": {
+      "batches": 20,
+      "centered_sampling_se": 0.005434582098905895,
+      "observed_target_mean": "withheld_by_protocol",
+      "samples": 20000,
+      "variance_constant_se_times_sqrt_samples": 0.7685659710102758
+    }
+  }
+}

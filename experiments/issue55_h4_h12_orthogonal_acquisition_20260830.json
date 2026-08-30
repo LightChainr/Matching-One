@@ -1,0 +1,118 @@
+{
+  "schema": "matching-one/issue55-h4-h12-orthogonal-acquisition/v1",
+  "status": "variance_pilot_complete_production_preregistered_standby",
+  "issue": 55,
+  "pull_request": 325,
+  "frozen_design": {
+    "path": "analysis/h4_h12_orthogonal_design_manifest.json",
+    "sha256": "f5c7f5ef3d6f79088fd744e189283d30f031223a753bfd58fa3437e458fb5116",
+    "source_commit": "c1a353a0718d86894ebf49f7b7200152e402ad09",
+    "mutation_policy": "read_only"
+  },
+  "engine": {
+    "path": "src/threshold_rank_integer_period_mc.cpp",
+    "sha256_at_source_commit": "7df0d9362b31111eab8fc73ab4032eea37458fde0ff2d720bded8e7b530fa94a",
+    "channel": "matching_odd_DeltaM_from_threshold_ranks",
+    "reconstruction_coordinate": "0.592746050790",
+    "coordinate_provenance": "P31 source-amplitude coordinate; acquisition/scorer coordinate, not a changed target model",
+    "same_size_coupling": "common counter permutation for the signed first-minus-second orientation pair",
+    "cross_size_coupling": "none"
+  },
+  "designs": [
+    {
+      "id": "n305-opposite-alias-a",
+      "N": 305,
+      "first": [17, 4],
+      "second": [16, 7],
+      "first_period_matrix": [[17, -4], [4, 17]],
+      "second_period_matrix": [[16, -7], [7, 16]],
+      "delta_cos4": "12672/18605",
+      "delta_cos12": "-187921184989824/161001169878125",
+      "alias_ratio": "-14829638967/8653650625"
+    },
+    {
+      "id": "n325-opposite-alias-b",
+      "N": 325,
+      "first": [18, 1],
+      "second": [17, 6],
+      "first_period_matrix": [[18, -1], [1, 18]],
+      "second_period_matrix": [[17, -6], [6, 17]],
+      "delta_cos4": "16128/21125",
+      "delta_cos12": "25095083827968/18129541015625",
+      "alias_ratio": "1555994781/858203125"
+    }
+  ],
+  "rng": {
+    "policy": "analysis/rng_domain_policy.yaml",
+    "derivation": "scripts/rng_domain_policy.py",
+    "base_seed": 55005520260830,
+    "smoke": {
+      "experiment_tag": "issue55-h4-h12-orthogonal-smoke",
+      "effective_seed_by_N": {
+        "305": 6466720871935232339,
+        "325": 859043225199512
+      }
+    },
+    "production": {
+      "experiment_tag": "issue55-h4-h12-orthogonal-production",
+      "effective_seed_by_N": {
+        "305": 10276216240036424455,
+        "325": 11868444676518621238
+      }
+    }
+  },
+  "variance_only_smoke": {
+    "samples_per_design": 20000,
+    "batches": 20,
+    "counter_first": 15550000000,
+    "counter_last_exclusive": 15550020000,
+    "output_policy": "variance and power only; observed target means and frozen-target scores forbidden",
+    "sample_count_freeze_rule": {
+      "operational_grid_per_design": [300000000, 600000000, 1200000000, 2400000000],
+      "primary_choice": "smallest grid point with conditional Mahalanobis separation at least 3 between H4-only and the equal-amplitude A12=A4 sign-flip alternative, profiling the shared A4 column with the full two-row sampling covariance; if none, 2400000000",
+      "equal_amplitude_definition": "A12=A4=0.7885; the H12 shifts are N^(-13/8)*A12*delta_cos12_N and therefore have opposite signs",
+      "secondary_power": "report zero-effect power for the frozen H4 vector and H12 sensitivities at A12/A4 in {0.10,0.25,0.50,1.00}; neither changes the primary choice"
+    },
+    "frozen_result": {
+      "path": "results/local-20260830/P55-h4-h12-orthogonal-smoke/variance_power.json",
+      "sha256": "36f0878cbbdd51a4799a8cef628b302859c286958aadc998623f1c18eb1a5e1d",
+      "recommended_samples_per_design": 600000000,
+      "projected_conditional_h4_vs_equal_h12_mahalanobis": "3.9151890326861687",
+      "observed_target_means_revealed": false
+    }
+  },
+  "production": {
+    "authorization": "preregistered_standby_until_Huawei_250_jobs_release_and_explicit_launch_authorization",
+    "samples_per_design": 600000000,
+    "batches_per_shard": 100,
+    "shard_count": 3,
+    "counter_first": 15551000000,
+    "counter_last_exclusive": 16151000000,
+    "threads_per_size": 8,
+    "run_both_sizes_concurrently": true,
+    "machines": ["Huawei-CodeBuddy-XPk2PZ", "Huawei-CodeBuddy-N520", "Huawei-CodeBuddy-N680"]
+  },
+  "scoring": {
+    "order": [
+      "frozen_h4_only_target_with_correlated_source_uncertainty_and_target_sampling_covariance",
+      "zero_effect_with_target_sampling_covariance",
+      "declared_two_column_h4_h12_gls",
+      "held_out_third_alias_only_if_a12_is_resolved"
+    ],
+    "identifiable_coordinates": {
+      "normalized_row": "y_N=N^(13/8)*DeltaM_N/delta_cos4_N=A4+r_N*A12",
+      "A12_contrast": "(y_325-y_305)/(r_325-r_305)",
+      "A4_contrast": "(r_325*y_305-r_305*y_325)/(r_325-r_305)"
+    },
+    "covariance": "paired batch covariance within each size; domain-separated zero cross-size sampling covariance; fully correlated source-A4 target covariance"
+  },
+  "forbidden": [
+    "swap either signed orientation order",
+    "alter either Gaussian period matrix",
+    "change radial exponent, source amplitude, or H4/H12 target columns",
+    "inspect smoke target means before production sample count freeze",
+    "add per-size harmonic coefficients",
+    "call repeated H4 agreement H12 identification",
+    "start Huawei work while Issue 250 occupies the machines"
+  ]
+}
