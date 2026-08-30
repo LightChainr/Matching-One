@@ -1,0 +1,29 @@
+{
+  "schema": "matching-one/transfer-resource-telemetry-manifest/v1",
+  "issue": 31,
+  "artifact_schema": "matching-one/transfer-resource-telemetry/v1",
+  "measurement_contract": {
+    "execution": "argv without a shell",
+    "clock": "time.monotonic",
+    "rss_source": "os.wait4(pid) rusage.ru_maxrss",
+    "rss_scope": "specific waited command process; descendant aggregation follows the host wait4 semantics",
+    "default_poll_interval_ms": 10,
+    "captured_streams": "byte counts and SHA-256 only",
+    "environment_allowlist": [
+      "OMP_NUM_THREADS",
+      "OMP_PROC_BIND",
+      "OMP_PLACES",
+      "MKL_NUM_THREADS",
+      "OPENBLAS_NUM_THREADS"
+    ]
+  },
+  "commands": [
+    "python scripts/transfer_resource_probe.py --label smoke -- python -c 'print(1)'",
+    "python -m unittest tests.test_transfer_resource_probe"
+  ],
+  "claim_boundary": {
+    "included": "one-command wall time, direct-process peak RSS, exit status, stream digests, host, repository, executable, and allowlisted environment provenance",
+    "excluded": "canonical state counts, transition branching, bytes per state, phase timings, eigensolver convergence, checkpoint/restart, width extrapolation, and hardware-rental decisions",
+    "parent_issue": "remain open"
+  }
+}
