@@ -1,0 +1,97 @@
+schema: matching-one.f3-activation-flux-manifest.v1
+analysis_schema: matching-one.f3-activation-flux.v1
+title: F3 projective first-birth versus first-born-line exit flux tomography
+status: exploratory_existing_data_reanalysis
+new_samples: false
+
+source:
+  repository: light-chain/Matching-One
+  archive_commit: a7cb19a1b0f1115a7e5dfd23421a5dd25892fe78
+  curve_result_commit: 62b2b86191bf8dfe53807df469c3c650047b64d4
+  representation_commit: 3cb06ab03ac3f7d65d6e5abb76b564e3ff448ce7
+  dependency_group: p334-N65-projective-birth-20k
+  births:
+    path: results/local-20260830/P334-projective-birth-N65-smoke/n65_20k.births.csv
+    sha256: 254ebd802adb476240c6ac5e367bb580025ca56fbd5c64ca3746b2d10cf74587
+    rows_including_header: 18002
+  metadata:
+    path: results/local-20260830/P334-projective-birth-N65-smoke/n65_20k.metadata.json
+    sha256: 01a782cdc42d2db0969050e95375e443226dea445eaeab7695c0edef52249661
+  design:
+    N: 65
+    samples_per_orientation: 20000
+    aligned_batches: 20
+    samples_per_batch: 1000
+    first_shape: [8, 1]
+    second_shape: [7, 4]
+    pairing: same_counter_permutation_within_batch
+
+evaluation_points:
+  - id: half
+    p: 0.5
+    role: complement_fixed_point
+  - id: h_cross
+    p: 0.5736333260803443
+    role: branch_only_H_orientation_crossing_from_62b2b86
+    root_treatment: frozen_full_data_root_no_root_uncertainty_propagated
+  - id: p_ref
+    p: 0.59274605079
+    role: canonical_matching_reference
+  - id: upper_probe
+    p: 0.65
+    role: post_reference_flux_probe
+
+character_basis:
+  projective_line_order: [x, d_plus, d_minus, y]
+  H: [0.5, -0.5, -0.5, 0.5]
+  A: [0.7071067811865476, 0.0, 0.0, -0.7071067811865476]
+  D: [0.0, 0.7071067811865476, -0.7071067811865476, 0.0]
+  c3_transform:
+    u: H/sqrt(3) + sqrt(2/3)*A
+    v: sqrt(2/3)*H - A/sqrt(3)
+    w: D
+
+flux_contract:
+  plateau: "C(p)=E[w(ell) 1{tau1 <= Bin(N,p) < tau2}]"
+  first_birth: "B(p)=E[w(ell) N Bin(N-1,p)[tau1-1]]"
+  rank_one_exit_at_completion: "E(p)=E[w(ell_birth) N Bin(N-1,p)[tau2-1]]"
+  derivative: "C'(p)=B(p)-E(p)"
+  direct_rank2: zero_in_all_zero_sum_projective_characters
+  sign_note: line masses are nonnegative but projected H/A/D and u/v/w coordinates are signed
+  completion_line_boundary: tau2_records_only_rank_two_completion_time_no_raw_completing_winding_or_section_audited_complement_representative_is_recorded
+  primary_view: aligned_second_minus_first_orientation_contrast
+
+reference_checks:
+  p_ref_plateau_H_contrast: 0.0011029842
+  h_cross_derivative_H_contrast: 0.060246233115848584
+
+next_child_fields:
+  - tau1
+  - first_projective_line
+  - tau2
+  - raw_completion_winding
+  - marked_complement_lift
+  - completion_section
+  - basis_orientation
+  - completion_transporter
+  - completion_ambiguity_flag
+  - direct_rank2_typed_atom
+  - aligned_batch_and_counter
+  - note: >-
+      The current archive records the first line and completion time but not
+      which marked complement representative completes rank two. Such a
+      representative is section/gauge dependent, so a fresh child must also
+      retain raw winding, basis/orientation, transporter and ambiguity data
+      before a stabilizer-C3 completion character can be interpreted.
+
+outputs:
+  json: results/f3-activation-flux/latest.json
+  markdown: results/f3-activation-flux/latest.md
+  scorer: scripts/analyze_f3_activation_flux.py
+
+claim_boundary: >-
+  This analysis exactly re-expresses one existing paired N65 archive. It can
+  locate directional character response at the rank-one birth and rank-two
+  completion boundaries, but it is not a new evidence vote, a continuum-field
+  identity, an intrinsic completion-line state, or an independent physical
+  twist-source experiment.

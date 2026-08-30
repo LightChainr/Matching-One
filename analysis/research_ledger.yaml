@@ -1,4 +1,4 @@
-version: 14
+version: 15
 updated: 2026-08-30
 purpose: >
   Compact map of durable evidence and next information axes. This ranks work;
@@ -44,29 +44,32 @@ team_coordination_signals:
   - id: CS_OPERATOR_TOMOGRAPHY_TRIAD
     action: coordinate_source_rank_modulus_shape_and_charge_spatial_selection_as_three_distinct_decision_axes
     reason: a_2x2_source_determinant_E4_aspect_ratio_fingerprint_and_typed_seam_remove_different_operator_aliases_without_pooling_their_evidence
+  - id: CS_PROJECTIVE_COMPLETION_ROUTE
+    action: retain_tau1_ell_birth_tau2_raw_completion_winding_marked_complement_lift_basis_orientation_transporter_ambiguity_DIRECT_RANK2_and_one_joint_A4_stabilizer_C3_covariance_block
+    reason: a_complement_representative_is_section_dependent_and_completion_time_alone_cannot_support_a_gauge_covariant_stabilizer_C3_route_character
 
 semantic_transport:
   status_axis: semantic_adoption_status
   separate_from: [integration_status, evidence_role, dependency_group, attention_rank]
   registry_source_ref: SRC_OBSERVABLE_DESCRIPTOR_REGISTRY_MAIN
-  inventory_source_ref: SRC_SCORER_ADOPTION_MAIN
-  main_snapshot_commit: 42c1563e8b705db20d98511195e18c6bcffd096b
+  inventory_source_ref: SRC_SCORER_INVENTORY_LATEST_MAIN
+  main_snapshot_commit: 8ba849c022a8f8f875d29a3d0b1b7d92b3a02d48
   current_main_inventory:
-    total_score_scripts: 44
-    direct_typed: 13
-    covered_kernels: 12
+    total_score_scripts: 51
+    direct_typed: 20
+    covered_kernels: 19
     generic_not_applicable: 1
-    migration_required: 18
+    migration_required: 11
     outside_registered_typed_path: 0
-    consistency_status: composed_current_after_PR347
+    consistency_status: live_current_after_PR357
   integrated_components:
-    prs: [345, 346, 347]
-    source_refs: [SRC_P50_SPRIME_TYPED_MAIN, SRC_P48_NEW_GEOMETRY_TYPED_MAIN, SRC_SCORER_INVENTORY_COMPOSITION_MAIN]
-    scientific_boundary: two_post_score_identity_wrappers_and_one_derived_inventory_composition_without_new_data_refit_score_model_reordering_or_evidence
-  remaining_contract_gap: 18_channel_bearing_paths_still_require_migration_after_PR347_and_the_second_contract_must_name_units_model_space_size_map_chronology_and_dependency_relation
+    prs: [345, 346, 347, 348, 350, 352, 353, 355, 357]
+    source_refs: [SRC_P50_SPRIME_TYPED_MAIN, SRC_P48_NEW_GEOMETRY_TYPED_MAIN, SRC_SCORER_INVENTORY_COMPOSITION_MAIN, SRC_SCORER_INVENTORY_LATEST_MAIN]
+    scientific_boundary: post_score_identity_sign_and_normalization_wrappers_plus_derived_inventory_updates_without_new_data_refit_score_model_reordering_or_evidence
+  remaining_contract_gap: 11_channel_bearing_paths_still_require_migration_after_PR357_and_the_second_contract_must_name_units_model_space_size_map_chronology_dependency_relation_and_derived_response_semantics
   allowed_statuses: [typed_direct, covered_by_typed_wrapper, migration_required, outside_registered_typed_path, not_applicable, not_in_main_inventory]
   interpretation: migration_required_is_a_future_reuse_contract_not_a_scientific_error_evidence_demotion_task_lock_or_rerun_request
-  migration_priority: [prequential_evidence, issue43, P50, norm4, norm5, matching_odd_synthesis, current_frontier_scorers_when_integrated]
+  migration_priority: [prequential_evidence, issue43_secondary, P49_P50_fullcurve, norm4, norm5, P159, P231, threshold_modes, v14_root_projector, current_frontier_scorers_when_integrated]
 
 frontier_schema:
   integration_statuses: [main_integrated, open_pr, branch_only, hypothesis]
@@ -113,6 +116,9 @@ observer_sectors:
   - id: rank_birth_local
     name: rank_birth_gate_line_index_and_landing_mark
     semantic_boundary: I01_I12_direct_birth_ell_iota_and_line_or_landing_H4_are_distinct_fields
+  - id: projective_completion
+    name: first_line_and_rank_two_completion_route_character
+    semantic_boundary: tau2_does_not_identify_an_intrinsic_completion_line_a_marked_complement_is_section_dependent_and_a_complex_stabilizer_C3_phase_requires_raw_winding_lift_basis_transporter_ambiguity_or_a_gauge_invariant_product
   - id: matching_odd
     name: matching_exchange_odd_readout
     semantic_boundary: matching_parity_is_not_a_Potts_charge_label
@@ -216,6 +222,15 @@ branch_sources:
     result_status: literature_boundary_between_cohomology_twists_global_symmetry_twists_MPO_defects_and_integrable_seams_not_a_module_or_field_identification
     paths:
       - notes/p337-finite-abelian-twist-literature-brief.md
+  - id: SRC_PR267_FRONTIER_LITERATURE
+    integration_status: open_pr
+    pr: 267
+    ref: research/navigation-priority-refresh-20260829
+    commit: PR267_CONTENT_SNAPSHOT_PENDING
+    commit_semantics: immutable_content_snapshot_before_registry_self_pin
+    result_status: arxiv_backed_mechanism_design_brief_not_a_matching_field_or_lattice_dictionary_result
+    paths:
+      - notes/scientific-frontier-literature-20260830.md
   - id: SRC_MATCHING_POLYNOMIAL_MAIN
     integration_status: main_integrated
     ref: main
@@ -608,7 +623,7 @@ branch_sources:
     pr: 320
     ref: main
     commit: 4464441e698a00281f897d6d907c33a22278d0f1
-    scientific_commit: d8dbf479
+    scientific_commit: d8dbf479837895f019e87b304fb2201782b92089
     paths:
       - analysis/digital_alexander_quotient_frontier_manifest.json
       - notes/digital-alexander-short-period-frontier.md
@@ -845,6 +860,57 @@ branch_sources:
       - notes/scorer-descriptor-adoption-inventory.md
       - results/scorer-descriptor-adoption/latest.json
       - tests/test_scorer_descriptor_adoption_audit.py
+  - id: SRC_SCORER_INVENTORY_LATEST_MAIN
+    integration_status: main_integrated
+    pr: 357
+    ref: main
+    commit: 8ba849c022a8f8f875d29a3d0b1b7d92b3a02d48
+    parent_commit: 0515f9bce8bd745cb56250cab0ff2901a0cec87e
+    result_status: live_51_path_inventory_20_direct_19_covered_11_migrations_one_utility_after_semantic_wrappers_without_new_data_rescore_or_scientific_change
+    covered_family_commits:
+      intrinsic_quantile_center: ab7b6df5108df626d0bce22beb2155cc60935fbc
+      rank_gap_boundary: b3ad0efc59c57106297d1a7e422bb3328284cfb6
+      threshold_root_doubling: 51bb94c6a2a8b4b2fb04621db15ee3392b7b55ba
+      v14_fixed_p_scalar: 5ded6f0164b1068d1628188d5323118cc5be70d0
+      axis_pair_base_and_stable: 0515f9bce8bd745cb56250cab0ff2901a0cec87e
+      angular_root_amplitude: 8ba849c022a8f8f875d29a3d0b1b7d92b3a02d48
+    paths:
+      - analysis/scorer_descriptor_adoption_manifest.json
+      - notes/scorer-descriptor-adoption-inventory.md
+      - predictions/intrinsic_quantile_center_n145_n290_semantic_gate_20260830.json
+      - predictions/rank_gap_boundary_targets_semantic_gate_20260830.json
+      - predictions/threshold_rank_root_doubling_semantic_gate_20260830.json
+      - predictions/v14_fixedp_scalar_projector_semantic_gate_20260830.json
+      - predictions/axis_pair_annihilator_semantic_gate_20260830.json
+      - predictions/angular_root_amplitude_semantic_gate_20260830.json
+      - results/scorer-descriptor-adoption/latest.json
+  - id: SRC_PARAMETRIC_MATCHING_PROFILE_MAIN
+    integration_status: main_integrated
+    pr: 349
+    ref: main
+    commit: 6cc2c675a7443a1e32b27a42ee0b9ad136ce0dea
+    result_status: exact_finite_series_coordinate_elimination_through_order5_on_one_synthetic_profile_without_data_or_universality_claim
+    paths:
+      - analysis/parametric_matching_profile_contract.json
+      - scripts/parametric_matching_profile.py
+  - id: SRC_LOGODDS_DERIVATIVE_CHAIN_MAIN
+    integration_status: main_integrated
+    pr: 354
+    ref: main
+    commit: 06ad6a3b15f226008cb61e407be385759f7aadc2
+    result_status: exact_Bernoulli_natural_coordinate_chain_and_complement_parity_through_order6_on_one_synthetic_response_without_archive_or_field_claim
+    paths:
+      - analysis/logodds_derivative_contract.json
+      - scripts/logodds_derivative_chain.py
+  - id: SRC_PELL_3_2_REGRESSION_MAIN
+    integration_status: main_integrated
+    pr: 351
+    ref: main
+    commit: f70ab0d8cbeea1904e21acbb3a1c5587fa5e61cd
+    result_status: exact_N9_N8_smallest_Pell_pair_matching_polynomial_regression_without_root_or_large_Pell_claim
+    paths:
+      - analysis/pell_3_2_exact_regression.json
+      - scripts/validate_pell_3_2_regression.py
   - id: SRC_DIGITAL_ALEXANDER_UNRESTRICTED_RATIONAL
     integration_status: branch_only
     ref: theory/p269-unrestricted-degenerate-quotient-20260830
@@ -921,6 +987,18 @@ branch_sources:
       - results/separated-two-orbit-observer/N325_20k_smoke_score.json
       - results/separated-two-orbit-observer/N425_20k_smoke_score.json
       - scripts/score_two_observer_source_rank.py
+  - id: SRC_TWO_OBSERVER_SOURCE_RANK_RESULT
+    integration_status: branch_only
+    ref: analysis/external-observer-stream-20260829
+    commit: 26cecb4f2be8759ded1bedad345d2e9f198a2ded
+    parent_commit: 9f2033a2d205a01d3554bc2e9c93bed5760f5b29
+    result_status: frozen_N325_N425_2m_each_joint_rank_one_null_not_rejected_chi2_4_4p27897_p_0p36957
+    provenance_exception: preexisting_non_designated_Zy_XP_hosts_recorded_in_result_and_not_accessed_by_PR267_refresh
+    raw_retention_boundary: git_contains_path_histogram_and_moment_summaries_but_not_the_full_marked_birth_stream_needed_for_a_new_birth_exit_source_rotation
+    paths:
+      - results/server-20260830/P267-two-observer-source-rank-2m/REPORT.md
+      - results/server-20260830/P267-two-observer-source-rank-2m/SCIENTIFIC_CARD.md
+      - results/server-20260830/P267-two-observer-source-rank-2m/joint_score.json
   - id: SRC_P321_TOPOLOGICAL_PRG_BRIDGE
     integration_status: branch_only
     ref: theory/p321-topological-prg-bridge-20260830
@@ -1035,6 +1113,17 @@ branch_sources:
       - notes/p334-conditional-projective-flux.md
       - results/local-20260830/P334-projective-birth-N65-smoke/conditional_flux.json
       - scripts/score_conditional_projective_flux.py
+  - id: SRC_P334_N13_MULTIORBIT_FLUX
+    integration_status: branch_only
+    ref: analysis/p334-n13-multiorbit-flux-20260830
+    commit: b8e286e83d62648fb8880961a8f76343bda90e25
+    parent_commit: 6f54935f4a8b2ce5ba045b43948aab00d6e065b3
+    result_status: exact_N13_axis_and_diagonal_line_orbits_both_have_birth_exit_flux_and_reinforce_dA4dp_with_75p574_24p426_signed_shares_at_p_ref
+    paths:
+      - analysis/p334_n13_multiorbit_flux_manifest.json
+      - notes/p334-n13-multiorbit-flux.md
+      - results/p334-n13-multiorbit-flux/latest.json
+      - results/p334-n13-multiorbit-flux/latest.md
   - id: SRC_P337_FINITE_ABELIAN_TWIST_TOMOGRAPHY
     integration_status: branch_only
     ref: theory/p337-finite-abelian-twist-tomography-20260830
@@ -1058,6 +1147,52 @@ branch_sources:
       - notes/p337-p334-flat-twist-n65.md
       - results/local-20260830/P334-projective-birth-N65-smoke/flat_twist_score.json
       - scripts/score_flat_twist_projective_archive.py
+  - id: SRC_P337_FLAT_TWIST_REPRESENTATION
+    integration_status: branch_only
+    ref: theory/p337-flat-twist-representation-20260830
+    commit: 3cb06ab03ac3f7d65d6e5abb76b564e3ff448ce7
+    parent_commit: a7cb19a1b0f1115a7e5dfd23421a5dd25892fe78
+    external_theory_dependency_commit: 4b17955946207f39762f836156aa063f64fbf67d
+    result_status: exact_F3_A4_standard_triplet_and_C3_neutral_plus_charged_plane_with_reused_N65_placement_not_a_field_identity
+    paths:
+      - analysis/p337_flat_twist_representation_manifest.json
+      - notes/p337-flat-twist-representation.md
+      - results/local-20260830/P334-projective-birth-N65-smoke/flat_twist_representation.json
+  - id: SRC_P337_SHEAR_TRANSPORT_SMOKE
+    integration_status: branch_only
+    ref: analysis/p337-shear-transport-smoke-20260830
+    commit: bd139138719c118b9763c958638ade423029252f
+    parent_commit: 3cb06ab03ac3f7d65d6e5abb76b564e3ff448ce7
+    result_status: fresh_N65_10k_pathwise_basis_relabel_transport_gate_with_zero_physical_source_information
+    paths:
+      - analysis/p337_flat_twist_shear_transport_manifest.json
+      - notes/p337-flat-twist-shear-transport-smoke.md
+      - results/local-20260830/P337-flat-twist-shear-smoke/score.json
+  - id: SRC_P337_F3_TWIST_CURVES
+    integration_status: branch_only
+    ref: analysis/p337-f3-twist-curves-20260830
+    commit: 62b2b86191bf8dfe53807df469c3c650047b64d4
+    parent_commit: a7cb19a1b0f1115a7e5dfd23421a5dd25892fe78
+    sibling_boundary: not_a_git_child_of_3cb06ab_or_bd13913
+    result_status: zero_sample_complete_F3_Bernstein_curves_and_unique_20_of_20_LOO_H_crossing_at_0p573633326_unresolved_from_p_ref
+    paths:
+      - analysis/p337_f3_twist_curves_manifest.json
+      - notes/p337-f3-twist-curves.md
+      - results/local-20260830/P337-F3-twist-curves/score.json
+  - id: SRC_PR267_F3_ACTIVATION_FLUX
+    integration_status: open_pr
+    pr: 267
+    ref: research/navigation-priority-refresh-20260829
+    commit: PR267_CONTENT_SNAPSHOT_PENDING
+    commit_semantics: immutable_content_snapshot_before_registry_self_pin
+    archive_commit: a7cb19a1b0f1115a7e5dfd23421a5dd25892fe78
+    result_status: zero_sample_signed_first_birth_and_first_line_exit_flux_tomography_with_full_A4_and_fixed_u_v_w_representation_basis_covariance_and_boundary_coefficients_not_physical_C3_transport
+    dependency_group_refs: [p334-N65-projective-birth-20k]
+    paths:
+      - analysis/f3_activation_flux_manifest.yaml
+      - scripts/analyze_f3_activation_flux.py
+      - results/f3-activation-flux/latest.json
+      - results/f3-activation-flux/latest.md
   - id: SRC_P158_GAUSSIAN_ROOT_CHARACTER_POWER
     integration_status: branch_only
     ref: analysis/p158-gaussian-root-character-power-20260830
@@ -1110,6 +1245,36 @@ branch_sources:
       - results/huawei-20260830/P250-z5-charged-threepoint/README.md
       - results/huawei-20260830/P250-z5-charged-threepoint/score_1m.json
       - results/huawei-20260830/P250-z5-charged-threepoint/charged_threepoint_1m_merged.batches.csv
+  - id: SRC_Z5_SEPARATION_NORMALIZED_SMOKE
+    integration_status: branch_only
+    ref: analysis/p250-separation-normalized-cubic-smoke-20260830
+    commit: c5bd02561f300b0c47880d15125a6295bceb190a
+    result_status: normalized_multiseparation_interface_with_only_d1_pair_support_resolved_in_the_initial_R1_smoke
+    paths:
+      - analysis/p250_separation_normalized_cubic_manifest.json
+      - notes/p250-separation-normalized-near-zero-reveal.md
+      - results/local-20260830/P250-z5-multiseparation-smoke/score_4k.json
+  - id: SRC_Z5_LOCAL_RADIUS_SELECTOR
+    integration_status: branch_only
+    ref: analysis/p250-insertion-radius-selector-20260830
+    commit: 842400d09b82d4e251cb42d011ab191359464320
+    freeze_parent_commit: abd2cbd4273be74f8ba8385a52207540e03340d9
+    result_status: R1_R4_common_counter_selector_closes_the_local_annulus_landing_H4_family_for_the_normalized_target
+    paths:
+      - analysis/p250_radius_selector_result_manifest.json
+      - notes/p250-radius-selector-result.md
+      - results/local-20260830/P250-z5-radius-selector/selection.json
+  - id: SRC_Z5_PROJECTIVE_LEG_PROPAGATION
+    integration_status: branch_only
+    ref: analysis/p250-projective-leg-insertion-smoke-20260830
+    commit: 114f8444e299077ba0ca08eddc7da6d23d49776d
+    protocol_parent_commit: 057f913f42e69cc6d45c39f27af875713a3eba28
+    result_status: root_marked_projective_leg_2k_smoke_passes_pair_propagation_at_d1_d2_with_nondegenerate_cubic_interface_and_no_phase_selection
+    paths:
+      - analysis/p250_projective_leg_insertion_result.json
+      - notes/p250-projective-leg-insertion-result.md
+      - results/local-20260830/P250-z5-projective-leg-smoke/exact_gate.json
+      - results/local-20260830/P250-z5-projective-leg-smoke/score_2k.json
   - id: SRC_PSLQ_CONTRACT
     integration_status: main_integrated
     pr: 319
@@ -1477,19 +1642,19 @@ scientific_nodes:
     integration_status: branch_only
     state: continuum_module
     sources: [bernoulli_thermal, deck_charge]
-    observer_sectors: [global_unmarked, deck_charged]
+    observer_sectors: [global_unmarked, topology_typed, deck_charged]
     geometries: [gaussian_cover, moduli_hecke_child]
     acquisition: [new_production, existing_data_reuse]
-    source_refs: [SRC_NORM5_GLOBAL_MAIN, SRC_P205_QUOTIENT_CHARACTER_PRISM, SRC_NORM5_CHARGED]
-    known_result: the_ordinary_global_P205_prism_decisively_selects_H4_within_its_frozen_three_line_competition_while_charged_N325_weights_are_approximately_H8_H12_H4_equal_71_21_8
-    boundary: charged_H8_is_a_likelihood_leader_not_a_discovered_spin8_field_and_H12_H4_are_not_both_rejected_at_strict_5_percent
-    supports: [observer_sector_dependent_operator_projection]
+    source_refs: [SRC_NORM5_GLOBAL_MAIN, SRC_P205_QUOTIENT_CHARACTER_PRISM, SRC_NORM5_CHARGED, SRC_Z5_CUBIC_STREAM, SRC_Z5_SEPARATION_NORMALIZED_SMOKE, SRC_Z5_LOCAL_RADIUS_SELECTOR, SRC_Z5_PROJECTIVE_LEG_PROPAGATION]
+    known_result: the_ordinary_global_P205_prism_decisively_selects_H4_within_its_frozen_three_line_competition_while_charged_N325_weights_are_approximately_H8_H12_H4_equal_71_21_8_the_one_million_Z5_cubic_stream_is_support_limited_the_R1_R4_local_landing_family_is_closed_and_a_root_marked_projective_leg_2k_smoke_retains_pair_support_at_d1_d2
+    boundary: charged_H8_is_a_likelihood_leader_not_a_discovered_spin8_field_H12_H4_are_not_both_rejected_at_strict_5_percent_and_the_projective_leg_result_is_an_operator_selection_smoke_with_no_phase_score_or_fusion_field_identification
+    supports: [observer_sector_dependent_operator_projection, projective_topology_marks_as_a_higher_overlap_charged_observer_candidate]
     tensions: [one_scalar_angular_amplitude_for_charged_and_unmarked_rows]
     excludes_only: [automatic_identification_of_equal_harmonic_labels_across_observer_sectors]
-    reusable_data_refs: [results/server-20260829/P205-quotient-character-prism/analysis/score.json, results/huawei-20260829/P226-norm5-chiral-fixedp/chiral_phase_score.json]
-    dependency_group_refs: [crn-2026105525-9400000000-9412000000, crn-2026105550-9400000000-9412000000, crn-2026105625-9400000000-9412000000]
-    missing_inputs: [typed_complex_rho_child_row, Z5_cubic_channels]
-    next_discriminator: typed_charged_or_module_C3_response_and_primitive_Z5_cubic_fusion_channels_not_a_repeat_ordinary_harmonic_selector
+    reusable_data_refs: [results/server-20260829/P205-quotient-character-prism/analysis/score.json, results/huawei-20260829/P226-norm5-chiral-fixedp/chiral_phase_score.json, results/huawei-20260830/P250-z5-charged-threepoint/score_1m.json, results/local-20260830/P250-z5-radius-selector/selection.json, results/local-20260830/P250-z5-projective-leg-smoke/score_2k.json]
+    dependency_group_refs: [crn-2026105525-9400000000-9412000000, crn-2026105550-9400000000-9412000000, crn-2026105625-9400000000-9412000000, z5-normalized-multiseparation-smoke-4k, z5-local-H4-radius-common-counter-4k, z5-projective-leg-smoke-2k]
+    missing_inputs: [fresh_unchanged_projective_leg_d1_d2_support_block_with_joint_linear_and_cubic_covariance, stronger_typed_complex_rho_row]
+    next_discriminator: preserve_the_selected_projective_leg_operator_and_require_fresh_d1_d2_support_before_common_phase_or_linear_to_cubic_transport_while_strengthening_rho_in_parallel
     information_gain: very_high
     compute_cost: low
     decision_experiments: [DX_RHO_C3_SECTOR, DX_Z5_CHARGED_FUSION]
@@ -1635,11 +1800,11 @@ scientific_nodes:
     excludes_only: [nothing_beyond_the_declared_semisimple_scalar_source_class]
     reusable_data_refs: [results/exact-relative-source-observer-closure/latest.json, results/exact-relative-source-hochschild-rigidity/latest.json]
     dependency_group_refs: []
-    missing_inputs: [one_connectivity_marked_composition_generator]
-    next_discriminator: construct_one_connectivity_marked_generator_and_test_nonsemisimple_closure
+    missing_inputs: [one_connectivity_marked_composition_generator, one_exact_cross_boundary_source_coordinate]
+    next_discriminator: construct_one_connectivity_marked_generator_and_one_n12_or_winding_source_then_test_nonsemisimple_closure_and_independence_from_the_completed_rank_one_lane
     information_gain: high
     compute_cost: low
-    decision_experiments: [DX_CONNECTIVITY_RADICAL]
+    decision_experiments: [DX_CONNECTIVITY_RADICAL, DX_INDEPENDENT_SOURCE_RANK_ESCAPE]
   - id: SN_TWO_ACTIVATION_H4_REANALYSIS
     title: first_wrap_dominance_and_geometry_dependent_second_completion_H4
     integration_status: open_pr
@@ -2145,23 +2310,23 @@ scientific_nodes:
     compute_cost: low
     decision_experiments: [DX_Q_TANGENT_INTERFACE]
   - id: SN_PROJECTIVE_ESSENTIAL_BIRTH_FLUX
-    title: projective_first_born_line_and_birth_exit_flux_split
-    integration_status: branch_only
+    title: projective_first_birth_and_rank_two_completion_route_flux
+    integration_status: open_pr
     state: microscopic_threshold_structure
     sources: [bernoulli_thermal, rank_birth_geometric_tilt]
-    observer_sectors: [topology_typed, rank_birth_local, direction_character]
+    observer_sectors: [topology_typed, rank_birth_local, projective_completion, direction_character]
     geometries: [square_controls, gaussian_cover]
-    acquisition: [exact_construction, small_pilot]
-    source_refs: [SRC_P334_PROJECTIVE_ESSENTIAL_BIRTH, SRC_P334_PROJECTIVE_BIRTH_SMOKE, SRC_P334_CONDITIONAL_LINE_FLUX, SRC_DIGITAL_ALEXANDER_INTEGRAL_SATURATION, SRC_PR267_ACTIVATION_FRONTIER]
-    known_result: conditional_on_integral_saturation_the_filtration_state_requires_K1_K2_ell1_and_DIRECT_RANK2_and_the_real_N65_20k_per_orientation_archive_reconstructs_K1_K2_and_dA4dp_birth1_minus_exit2_with_joint_covariance_while_a_post_hoc_conditional_composition_finds_same_modulus_line_sorting_0p0117153_plusminus_0p0043509
-    boundary: the_conditional_ratio_was_designed_after_viewing_the_20k_smoke_and_all_raw_flux_A4_conditional_and_twist_rows_share_one_dependency_group_so_no_independent_detection_exponent_field_identity_or_production_claim_follows
-    supports: [a_direct_mechanism_split_of_matching_H4_between_first_nontrivial_homology_birth_and_second_direction_completion, line_dependent_lifetime_or_exit_sorting_as_a_fresh_testable_coordinate]
-    tensions: [K1_K2_as_a_sufficient_inventory_for_directional_H4, factorized_timing_as_a_complete_explanation_of_the_exploratory_conditional_contrast]
-    excludes_only: [recovering_the_projective_first_born_line_from_K1_K2_alone, interpreting_total_ingress_egress_traffic_as_line_composition]
-    reusable_data_refs: [results/projective-essential-birth/latest.json, results/two-activation-h4/latest.json, results/local-20260830/P334-projective-birth-N65-smoke/score.json, results/local-20260830/P334-projective-birth-N65-smoke/conditional_flux.json]
-    dependency_group_refs: [p334-N65-projective-birth-20k]
-    missing_inputs: [fresh_independent_child_with_boundary_conditioned_composition_complete_F3_characters_and_full_cross_covariance]
-    next_discriminator: preregister_one_N130_child_boundary_by_F3_character_block_to_separate_ordinary_H4_sorting_modular_reflection_odd_structure_and_N65_only_microscopic_effect
+    acquisition: [exact_construction, existing_data_reuse, small_pilot]
+    source_refs: [SRC_P334_PROJECTIVE_ESSENTIAL_BIRTH, SRC_P334_PROJECTIVE_BIRTH_SMOKE, SRC_P334_CONDITIONAL_LINE_FLUX, SRC_P334_N13_MULTIORBIT_FLUX, SRC_P337_FLAT_TWIST_REPRESENTATION, SRC_P337_F3_TWIST_CURVES, SRC_PR267_F3_ACTIVATION_FLUX, SRC_DIGITAL_ALEXANDER_INTEGRAL_SATURATION, SRC_PR267_ACTIVATION_FRONTIER]
+    known_result: conditional_on_integral_saturation_the_filtration_state_requires_K1_K2_ell_birth_and_DIRECT_RANK2_exact_N13_axis_and_diagonal_orbits_both_carry_reinforcing_birth_exit_flux_and_the_N65_archive_gives_an_A4_standard_triplet_a_stable_H_crossing_and_zero_sample_signed_first_birth_minus_first_line_weighted_rank_one_exit_curves_that_reinforce_H_at_the_crossing_and_p_ref_then_nearly_cancel_by_p_0p65
+    boundary: tau2_records_only_rank_two_completion_time_and_does_not_identify_an_intrinsic_complement_representative_the_crossing_reuses_one_20k_block_and_its_delete_one_flux_score_holds_the_full_sample_root_fixed_so_no_independent_detection_root_uncertainty_field_identity_or_verified_C3_transport_follows
+    supports: [a_direct_mechanism_split_of_matching_H4_between_rank_one_birth_and_first_born_line_exit_at_rank_two_completion, two_topological_boundaries_not_first_birth_alone_carry_the_N65_H_response, a_section_aware_completion_route_as_the_next_missing_typed_coordinate]
+    tensions: [K1_K2_or_tau2_without_a_marked_complement_and_transporter_as_a_sufficient_inventory_for_directional_H4, one_first_line_character_as_the_whole_directional_mechanism]
+    excludes_only: [recovering_the_projective_first_born_line_from_K1_K2_alone, interpreting_total_ingress_egress_traffic_as_line_composition, first_birth_only_localization_for_the_declared_N13_N65_finite_observers]
+    reusable_data_refs: [results/projective-essential-birth/latest.json, results/two-activation-h4/latest.json, results/local-20260830/P334-projective-birth-N65-smoke/score.json, results/local-20260830/P334-projective-birth-N65-smoke/conditional_flux.json, results/p334-n13-multiorbit-flux/latest.json, results/local-20260830/P337-F3-twist-curves/score.json, results/f3-activation-flux/latest.json]
+    dependency_group_refs: [p334-N13-multiorbit-exact, p334-N65-projective-birth-20k]
+    missing_inputs: [fresh_N130_child_with_tau1_ell_birth_tau2_raw_completion_winding_marked_complement_lift_basis_orientation_transporter_ambiguity_DIRECT_RANK2_full_A4_boundary_covariance_and_frozen_crossing_dual]
+    next_discriminator: freeze_one_N130_child_with_a_section_aware_complement_representative_and_score_birth_exit_A4_flux_plus_a_gauge_covariant_stabilizer_C3_completion_character_without_refitting_the_N65_crossing
     information_gain: very_high
     compute_cost: low
     decision_experiments: [DX_PROJECTIVE_BIRTH_EXIT_FLUX]
@@ -2170,19 +2335,19 @@ scientific_nodes:
     integration_status: branch_only
     state: finite_topological_state
     sources: [bernoulli_thermal, deck_charge]
-    observer_sectors: [topology_typed, global_rank_projector, direction_character]
+    observer_sectors: [topology_typed, global_rank_projector, projective_completion, direction_character]
     geometries: [square_controls, gaussian_cover, moduli_hecke_child]
     acquisition: [exact_construction, existing_data_reuse]
-    source_refs: [SRC_P337_FINITE_ABELIAN_TWIST_TOMOGRAPHY, SRC_P337_P334_FLAT_TWIST_N65, SRC_DIGITAL_ALEXANDER_INTEGRAL_SATURATION, SRC_PR267_P337_LITERATURE_TOMOGRAPHY]
-    known_result: conditional_on_integral_saturation_Sn_equals_n2P0_plus_nP1_plus_P2_and_S1_S2_S3_invert_the_complete_unmarked_rank_source_while_individual_nonzero_Fq_twists_recover_the_primitive_line_mod_q_and_N65_F3_is_the_minimal_full_D4_projective_basis
-    boundary: the_transform_is_exact_finite_volume_cohomology_not_yet_an_SQ_group_twist_MPO_defect_integrable_seam_affine_TL_module_or_local_CFT_field_and_a_finite_prime_list_does_not_recover_an_unbounded_integral_line
+    source_refs: [SRC_P337_FINITE_ABELIAN_TWIST_TOMOGRAPHY, SRC_P337_P334_FLAT_TWIST_N65, SRC_P337_FLAT_TWIST_REPRESENTATION, SRC_P337_SHEAR_TRANSPORT_SMOKE, SRC_P337_F3_TWIST_CURVES, SRC_PR267_F3_ACTIVATION_FLUX, SRC_DIGITAL_ALEXANDER_INTEGRAL_SATURATION, SRC_PR267_P337_LITERATURE_TOMOGRAPHY, SRC_PR267_FRONTIER_LITERATURE]
+    known_result: conditional_on_integral_saturation_Sn_equals_n2P0_plus_nP1_plus_P2_and_S1_S2_S3_invert_the_complete_unmarked_rank_source_individual_nonzero_Fq_twists_recover_the_primitive_line_mod_q_and_F3_H_A_D_form_one_A4_standard_triplet_with_C3_neutral_u_and_charged_v_w_the_H_curve_has_one_stable_20_of_20_LOO_crossing_at_0p573633326_and_basis_shear_transport_is_pathwise_exact_relabeling_only
+    boundary: the_transform_and_A4_C3_decomposition_are_exact_finite_volume_kinematics_not_yet_a_physical_source_SQ_group_twist_MPO_defect_integrable_seam_affine_TL_module_local_CFT_field_or_verified_charged_transport_and_a_finite_prime_list_does_not_recover_an_unbounded_integral_line
     supports: [finite_source_tomography_without_an_infinite_scan, modular_projective_line_marks_as_a_Fourier_implementation_of_P334]
     tensions: [finite_field_rank_as_a_new_Smith_defect_state, aggregate_twists_as_line_resolved_observers]
     excludes_only: [additional_q_primary_rank_or_Smith_state_on_the_theorem_supported_saturated_carriers]
-    reusable_data_refs: [results/finite-abelian-twist-tomography/latest.json, results/local-20260830/P334-projective-birth-N65-smoke/flat_twist_score.json]
-    dependency_group_refs: [p334-N65-projective-birth-20k, p337-finite-abelian-exact]
-    missing_inputs: [finite_lattice_seam_or_transfer_identity_modular_action_convention_and_fresh_multiscale_twist_character_score]
-    next_discriminator: freeze_the_complete_F3_vector_and_boundary_composition_on_a_fresh_N130_child_then_derive_the_exact_seam_or_transfer_matrix_bridge_before_continuum_identification
+    reusable_data_refs: [results/finite-abelian-twist-tomography/latest.json, results/local-20260830/P334-projective-birth-N65-smoke/flat_twist_score.json, results/local-20260830/P334-projective-birth-N65-smoke/flat_twist_representation.json, results/local-20260830/P337-F3-twist-curves/score.json, results/f3-activation-flux/latest.json]
+    dependency_group_refs: [p334-N65-projective-birth-20k, p337-finite-abelian-exact, p337-shear-transport-N65-10k]
+    missing_inputs: [section_aware_completion_mark_and_gauge_covariant_stabilizer_C3_character, physical_seam_winding_or_defect_source_bridge]
+    next_discriminator: derive_the_stabilizer_C3_completion_projector_record_raw_winding_lift_transporter_and_ambiguity_in_one_fresh_child_and_only_then_test_a_physical_seam_or_transfer_source_before_continuum_identification
     information_gain: very_high
     compute_cost: low
     decision_experiments: [DX_PROJECTIVE_BIRTH_EXIT_FLUX]
@@ -2216,19 +2381,19 @@ scientific_nodes:
     observer_sectors: [bulk_euler_external, rank_birth_local, matching_odd, matching_even]
     geometries: [gaussian_cover]
     acquisition: [new_production, existing_data_reuse]
-    source_refs: [SRC_EXTERNAL_EULER_BULK, SRC_MARKED_BIRTH_CONTACT_CHAIN, SRC_P275_CARTAN_CONTACT]
-    known_result: O_ext_escapes_sigma_q_far_D_amplitudes_are_31p007_32p673_and_source_orthogonal_JDperp_retains_0p998792_0p999144_of_far_magnitude_with_chi2_641994_589232_and_transfer_amplitude_1p054088_plusminus0p001956
-    boundary: direct_JS_projection_is_rejected_only_in_the_recorded_same_next_site_lattice_Gram_metric_not_CFT_field_orthogonality_Q4_epsilon_exponent_or_source_energy_fraction_because_absJD_squared_is_missing
-    supports: [external_within_q_bulk_observer_as_a_successful_contact_escape, source_component_independent_of_direct_JS_projection]
-    tensions: [root_local_contact_as_the_origin_of_the_signal, topology_only_q_observer_as_sufficient, JD_as_only_a_rescaled_direct_JS_projection]
-    excludes_only: [radius2_local_Euler_nuisance_as_the_dominant_declared_coupling, direct_JS_projection_as_the_explanation_in_the_declared_Gram_metric]
-    reusable_data_refs: [results/server-20260830/P267-target1-external-Euler-2m/transfer_score.json, results/server-20260830/P267-target1-external-Euler-2m/gram_orthogonal_score.json]
-    dependency_group_refs: [external-euler-n325-n425]
-    missing_inputs: [frozen_N325_and_N425_two_observer_path_aggregates_and_joint_covariance_score]
-    next_discriminator: acquire_the_already_gated_two_observer_blocks_and_score_the_joint_2x2_coupling_determinant
+    source_refs: [SRC_EXTERNAL_EULER_BULK, SRC_MARKED_BIRTH_CONTACT_CHAIN, SRC_P275_CARTAN_CONTACT, SRC_TWO_OBSERVER_SOURCE_RANK_RESULT]
+    known_result: O_ext_escapes_sigma_q_far_D_amplitudes_are_31p007_32p673_source_orthogonal_JDperp_retains_0p998792_0p999144_of_far_magnitude_and_the_completed_frozen_N325_N425_two_observer_score_does_not_reject_a_common_rank_one_coupling_lane_with_joint_chi2_4_4p278970457_p_0p369565835
+    boundary: direct_JS_projection_is_rejected_only_in_the_recorded_same_next_site_lattice_Gram_metric_and_the_joint_null_applies_only_to_the_declared_Ofar_Osep4_by_JDperp_JS_basis_not_to_one_microscopic_source_CFT_field_orthogonality_Q4_epsilon_exponent_or_source_energy_fraction
+    supports: [external_within_q_bulk_observer_as_a_successful_contact_escape, source_component_independent_of_direct_JS_projection, one_common_projective_transport_lane_is_adequate_in_the_declared_two_by_two_basis]
+    tensions: [root_local_contact_as_the_origin_of_the_signal, topology_only_q_observer_as_sufficient, JD_as_only_a_rescaled_direct_JS_projection, repeated_observer_basis_as_a_route_to_new_source_rank]
+    excludes_only: [radius2_local_Euler_nuisance_as_the_dominant_declared_coupling, direct_JS_projection_as_the_explanation_in_the_declared_Gram_metric, rank_two_coupling_in_the_frozen_two_by_two_basis_at_the_declared_gate]
+    reusable_data_refs: [results/server-20260830/P267-target1-external-Euler-2m/transfer_score.json, results/server-20260830/P267-target1-external-Euler-2m/gram_orthogonal_score.json, results/server-20260830/P267-two-observer-source-rank-2m/joint_score.json]
+    dependency_group_refs: [external-euler-n325-n425, two-observer-source-rank-production-acquired]
+    missing_inputs: [mechanism_derived_cross_boundary_winding_seam_or_endpoint_conditioned_source_basis, full_marked_birth_stream_for_zero_cost_rotation_is_not_retained_in_git]
+    next_discriminator: exact_gate_one_physically_new_source_column_then_pilot_only_if_it_is_not_a_reversible_rotation_of_the_completed_basis
     information_gain: very_high
     compute_cost: none
-    decision_experiments: [DX_EXTERNAL_EULER_GRAM, DX_TWO_OBSERVER_COUPLING]
+    decision_experiments: [DX_EXTERNAL_EULER_GRAM, DX_TWO_OBSERVER_COUPLING, DX_INDEPENDENT_SOURCE_RANK_ESCAPE]
   - id: SN_TWO_OBSERVER_SOURCE_RANK_LANE
     title: Ofar_Osep4_by_JDperp_JS_projective_source_rank_determinant
     integration_status: branch_only
@@ -2238,19 +2403,19 @@ scientific_nodes:
     observer_sectors: [bulk_euler_external, local_pivotal, rank_birth_local, matching_odd, matching_even, direction_character]
     geometries: [gaussian_cover]
     acquisition: [exact_construction, small_pilot, new_production]
-    source_refs: [SRC_EXTERNAL_EULER_BULK, SRC_TWO_OBSERVER_SOURCE_RANK_FREEZE, SRC_SPIN4_DIRECTION_ALIAS_MAIN]
-    known_result: an_exact_radius6_axis_diagonal_gate_has_response_rank_two_and_removes_the_one_orbit_alias_while_20k_smoke_determinants_at_N325_and_N425_are_unresolved_and_the_2m_per_size_joint_4df_production_decision_is_frozen
-    boundary: exact_observer_design_rank_is_not_coupling_rank_smoke_has_no_committed_raw_path_aggregate_provenance_and_a_nonzero_production_determinant_would_only_resolve_a_two_dimensional_lattice_source_plane_not_name_Q4_H4_or_an_exponent
-    supports: [the_current_highest_information_source_rank_discriminator_is_implementation_ready]
-    tensions: [larger_N_one_observer_repeats_or_treating_same_sign_smoke_imaginary_parts_as_additive_evidence]
-    excludes_only: [axis_diagonal_scalar_H4_alias_and_root_contact_in_the_four_declared_production_geometries]
-    reusable_data_refs: [results/separated-two-orbit-observer/exact_mapping_gate.json, results/separated-two-orbit-observer/N325_20k_smoke_score.json, results/separated-two-orbit-observer/N425_20k_smoke_score.json]
-    dependency_group_refs: [two-observer-source-rank-smoke, two-observer-source-rank-production-planned]
-    missing_inputs: [N325_and_N425_2m_path_aggregates_metadata_checksums_audits_and_explicit_joint_block_diagonal_score]
-    next_discriminator: acquire_the_two_frozen_2m_blocks_and_score_joint_detC_zero_at_chi2_4_threshold_18p4668269529
+    source_refs: [SRC_EXTERNAL_EULER_BULK, SRC_TWO_OBSERVER_SOURCE_RANK_FREEZE, SRC_TWO_OBSERVER_SOURCE_RANK_RESULT, SRC_SPIN4_DIRECTION_ALIAS_MAIN]
+    known_result: the_exact_radius6_axis_diagonal_observer_gate_has_design_rank_two_and_the_completed_frozen_N325_N425_two_million_per_size_joint_score_is_chi2_4_4p278970457_p_0p369565835_so_rank_one_coupling_is_not_rejected_in_the_declared_Ofar_Osep4_by_JDperp_JS_basis
+    boundary: exact_observer_design_rank_is_not_coupling_rank_and_failure_to_reject_rank_one_does_not_prove_one_microscopic_source_projective_transport_field_Q4_H4_or_exponent_the_preexisting_Zy_XP_provenance_is_recorded_and_the_full_marked_birth_stream_is_not_in_git
+    supports: [one_shared_projective_transport_lane_as_an_adequate_current_basis_description]
+    tensions: [rank_two_source_claims_from_smoke_point_estimates, larger_N_or_repeated_observer_design_without_a_new_source]
+    excludes_only: [axis_diagonal_scalar_H4_alias_and_rank_two_coupling_in_the_four_declared_geometries_at_the_frozen_joint_gate]
+    reusable_data_refs: [results/separated-two-orbit-observer/exact_mapping_gate.json, results/separated-two-orbit-observer/N325_20k_smoke_score.json, results/separated-two-orbit-observer/N425_20k_smoke_score.json, results/server-20260830/P267-two-observer-source-rank-2m/joint_score.json]
+    dependency_group_refs: [two-observer-source-rank-smoke, two-observer-source-rank-production-acquired]
+    missing_inputs: [new_mechanism_derived_source_basis_not_a_repeat_or_invertible_rotation]
+    next_discriminator: derive_a_cross_boundary_n12_winding_seam_or_K1_K2_conditioned_Euler_source_and_exact_gate_its_independence_before_any_new_production
     information_gain: very_high
-    compute_cost: moderate
-    decision_experiments: [DX_TWO_OBSERVER_COUPLING]
+    compute_cost: none
+    decision_experiments: [DX_TWO_OBSERVER_COUPLING, DX_INDEPENDENT_SOURCE_RANK_ESCAPE]
   - id: SN_THRESHOLD_TAIL_FLOW_FIBER
     title: nearly_rankone_threshold_tail_deformation_across_production_views
     integration_status: branch_only
@@ -2323,19 +2488,19 @@ scientific_nodes:
     semantic_adoption_status: not_in_main_inventory
     state: continuum_module
     sources: [bernoulli_thermal, deck_charge]
-    observer_sectors: [deck_charged, local_pivotal]
+    observer_sectors: [deck_charged, local_pivotal, topology_typed]
     geometries: [gaussian_cover]
     acquisition: [small_pilot, new_production]
-    source_refs: [SRC_Z5_CUBIC_STREAM, SRC_Z5_CHARGED_FUSION, SRC_NORM5_CHARGED]
-    known_result: exact_charge_bookkeeping_leaves_113_122_and_conjugates_and_the_one_million_replica_zero_parameter_closure_survives_chi2_0p8396_over2_p_0p657_while_H12_H8_H4_all_survive_and_the_complete_eight_real_cubic_vector_does_not_reject_zero_chi2_8p564_over8_p_about_0p380
-    boundary: closure_can_be_vacuous_when_the_vector_is_near_zero_all_shards_channels_controls_and_models_are_one_dependency_block_bare_cubics_lack_neutral_twopoint_gauge_normalization_and_the_nominal_H12_first_order_is_not_a_field_identification_or_a_refutation_of_the_separate_linear_H8_tendency
-    supports: [exact_two_channel_fusion_basis_and_a_surviving_common_phase_closure_condition]
-    tensions: [compact_three_anchor_local_H4_cubic_as_a_high_overlap_field_observer, interpreting_model_order_without_nonzero_support]
+    source_refs: [SRC_Z5_CUBIC_STREAM, SRC_Z5_CHARGED_FUSION, SRC_NORM5_CHARGED, SRC_Z5_SEPARATION_NORMALIZED_SMOKE, SRC_Z5_LOCAL_RADIUS_SELECTOR, SRC_Z5_PROJECTIVE_LEG_PROPAGATION]
+    known_result: exact_charge_bookkeeping_leaves_113_122_and_conjugates_the_one_million_replica_compact_cubic_vector_is_support_limited_the_normalized_R1_R4_local_landing_family_has_no_radius_with_two_supported_separations_and_the_root_marked_projective_leg_2k_smoke_passes_d1_d2_pair_support_with_minimum_pair_z_5p527_2p900_and_a_nondegenerate_cubic_interface
+    boundary: all_compact_cubic_shards_channels_controls_and_models_are_one_dependency_block_the_radius_selection_blocks_are_correlated_bare_cubics_need_gauge_normalization_and_the_projective_leg_smoke_did_not_score_phase_d3_is_unresolved_and_descriptive_cubic_p_values_are_not_a_promotion_gate
+    supports: [exact_two_channel_fusion_basis, projective_leg_topology_mark_as_a_higher_overlap_candidate_than_the_closed_local_landing_family]
+    tensions: [compact_three_anchor_local_H4_cubic_as_a_high_overlap_field_observer, interpreting_model_order_or_phase_without_nonzero_support]
     excludes_only: [additional_primitive_neutral_connected_Z5_cubic_channels_and_a_nonconstant_raw_cubic_monomial_that_removes_all_field_normalizations]
-    reusable_data_refs: [results/local-20260830/P250-z5-charged-threepoint-smoke, results/huawei-20260830/P250-z5-charged-threepoint/score_1m.json]
-    dependency_group_refs: [z5-cubic-smoke, z5-cubic-production-acquired, z5-linear-charged-200k]
-    missing_inputs: [neutral_twopoint_denominators_C000_two_non_equivalent_separations_and_preferably_the_linear_charged_row_in_the_same_stream]
-    next_discriminator: establish_jointly_covariant_gauge_normalized_nonzero_I113_I122_support_before_testing_cross_separation_closure_and_linear_to_cubic_phase_transport
+    reusable_data_refs: [results/local-20260830/P250-z5-charged-threepoint-smoke, results/huawei-20260830/P250-z5-charged-threepoint/score_1m.json, results/local-20260830/P250-z5-multiseparation-smoke/score_4k.json, results/local-20260830/P250-z5-radius-selector/selection.json, results/local-20260830/P250-z5-projective-leg-smoke/score_2k.json]
+    dependency_group_refs: [z5-cubic-smoke, z5-cubic-production-acquired, z5-linear-charged-200k, z5-normalized-multiseparation-smoke-4k, z5-local-H4-radius-common-counter-4k, z5-projective-leg-smoke-2k]
+    missing_inputs: [fresh_unchanged_projective_leg_d1_d2_support_block_with_neutral_denominators_and_preferably_same_stream_linear_row]
+    next_discriminator: freeze_the_selected_projective_leg_operator_and_score_d1_d2_support_first_then_only_after_support_passes_test_cross_separation_closure_and_linear_to_cubic_phase_transport
     information_gain: high
     compute_cost: moderate
     decision_experiments: [DX_Z5_CHARGED_FUSION]
@@ -2424,36 +2589,74 @@ scientific_nodes:
     compute_cost: high
     decision_experiments: [DX_GAUSSIAN_COMMUTING_SQUARE]
   - id: SN_ODD_JET_LINEAR_METRIC_INVARIANTS
-    title: exact_odd_jet_linear_thermal_metric_invariants
+    title: exact_coordinate_free_matching_jets_and_Bernoulli_natural_coordinate_chain
     integration_status: main_integrated
     state: low_dimensional_dynamics
     sources: [bernoulli_thermal]
-    observer_sectors: [global_unmarked]
+    observer_sectors: [global_unmarked, matching_odd]
     geometries: [square_controls]
-    acquisition: [exact_construction]
-    source_refs: [SRC_ODD_JET_INVARIANTS_MAIN]
-    known_result: for_odd_r_kappa_r_equals_d_r_over_d1_to_the_r_is_exactly_invariant_under_linear_thermal_coordinate_rescaling_and_the_sparse_Jacobian_propagates_a_supplied_derivative_covariance_by_JSigmaJtranspose
-    boundary: synthetic_fixture_only_and_not_invariant_to_observable_amplitude_or_nonlinear_thermal_reparameterization_while_delta_method_covariance_is_not_an_exact_finite_sample_ratio_law
-    supports: [a_low_cost_common_linear_metric_normalization_for_future_typed_odd_jet_comparisons]
-    tensions: [treating_a_linear_coordinate_invariant_as_a_universal_cross_lattice_field_identifier]
-    excludes_only: [linear_thermal_metric_scale_as_an_explanation_for_differences_between_correctly_normalized_kappa_rows]
-    reusable_data_refs: [analysis/odd_jet_invariant_contract.json]
+    acquisition: [exact_construction, existing_data_reuse]
+    source_refs: [SRC_ODD_JET_INVARIANTS_MAIN, SRC_PARAMETRIC_MATCHING_PROFILE_MAIN, SRC_LOGODDS_DERIVATIVE_CHAIN_MAIN]
+    known_result: linear_metric_kappa_r_invariance_is_exact_and_main_now_also_eliminates_two_synthetic_bare_coordinates_to_one_common_M_of_U_jet_through_order5_with_kappa3_minus2_kappa5_12_while_the_Bernoulli_logodds_chain_closes_complement_parity_through_order6_on_one_synthetic_Bernstein_response
+    boundary: all_committed_examples_are_exact_algebraic_or_synthetic_fixtures_without_archived_histogram_covariance_heldout_score_limiting_value_modulus_Jordan_or_universality_claim
+    supports: [coordinate_elimination_natural_parameter_parity_and_sparse_covariance_transport_as_reusable_preconditions_for_odd_jet_comparison]
+    tensions: [bare_p_or_other_nonlinear_coordinate_derivatives_as_intrinsic_amplitudes, treating_a_synthetic_parametric_invariant_as_a_universal_field_identifier]
+    excludes_only: [linear_metric_scale_and_the_two_declared_synthetic_bare_coordinate_choices_as_explanations_after_exact_parametric_elimination]
+    reusable_data_refs: [analysis/odd_jet_invariant_contract.json, analysis/parametric_matching_profile_contract.json, analysis/logodds_derivative_contract.json]
     dependency_group_refs: []
-    missing_inputs: [typed_data_adapter_common_observable_normalization_delete_one_or_full_nonlinear_covariance_and_parametric_curve_invariants]
-    next_discriminator: apply_the_primitive_to_one_typed_shared_observable_block_with_delete_one_recomputation_then_test_a_nonlinear_reparameterization_invariant_curve_quantity
+    missing_inputs: [one_typed_same_observable_archive_adapter_with_common_normalization_and_delete_one_or_full_nonlinear_root_covariance]
+    next_discriminator: apply_the_coordinate_free_profile_and_logodds_chain_to_one_existing_shared_observable_archive_without_new_production_then_score_only_frozen_invariants_with_joint_covariance
+    information_gain: high
+    compute_cost: low
+    decision_experiments: []
+  - id: SN_Z5_PROJECTIVE_LEG_PROPAGATION
+    title: root_marked_rank_one_component_projective_leg_Z5_support
+    integration_status: branch_only
+    semantic_adoption_status: not_in_main_inventory
+    state: finite_topological_state
+    sources: [bernoulli_thermal, deck_charge]
+    observer_sectors: [topology_typed, deck_charged]
+    geometries: [gaussian_cover]
+    acquisition: [small_pilot]
+    source_refs: [SRC_Z5_PROJECTIVE_LEG_PROPAGATION, SRC_Z5_CHARGED_FUSION]
+    known_result: the_frozen_root_marked_black_NN_rankone_membership_minus_white_matching_rankone_membership_operator_passes_all_four_pair_propagation_gates_at_d1_d2_with_minimum_z_5p5265_2p8996_and_nondegenerate_cubic_covariance_while_d3_is_unresolved
+    boundary: this_is_a_2k_operator_interface_smoke_with_no_phase_score_local_primary_field_universal_OPE_or_large_sample_support_claim
+    supports: [a_usable_topology_typed_charged_insertion_for_fresh_support_first_scoring]
+    tensions: [compact_local_landing_H4_as_the_required_overlap]
+    excludes_only: [the_R1_R4_local_radius_family_as_the_selected_normalized_insertion]
+    reusable_data_refs: [results/local-20260830/P250-z5-projective-leg-smoke/score_2k.json]
+    dependency_group_refs: [z5-projective-leg-smoke-2k]
+    missing_inputs: [fresh_unchanged_operator_d1_d2_support_first_block_and_same_stream_linear_row_only_if_support_passes]
+    next_discriminator: freeze_fresh_counters_score_pair_and_cubic_support_at_d1_d2_then_and_only_then_score_common_phase_and_linear_to_cubic_transport
+    information_gain: high
+    compute_cost: moderate
+    decision_experiments: [DX_Z5_CHARGED_FUSION]
+  - id: SN_PELL_3_2_EXACT_CALIBRATION
+    title: smallest_Pell_3_2_exact_matching_polynomial_regression
+    integration_status: main_integrated
+    state: finite_topological_state
+    sources: [bernoulli_thermal]
+    observer_sectors: [global_unmarked, topology_typed]
+    geometries: [gaussian_cover]
+    acquisition: [exact_construction]
+    source_refs: [SRC_PELL_3_2_REGRESSION_MAIN]
+    known_result: exhaustive_enumeration_regenerates_the_frozen_axis_L3_N9_and_diamond_L2_N8_integer_matching_polynomials_for_the_smallest_nontrivial_Pell_3_2_pair_with_site_count_residual_one
+    boundary: this_is_an_exact_regression_fixture_without_numerical_roots_orientation_exponent_large_Pell_continuation_or_continuum_claim
+    supports: [small_exact_cross_geometry_regression_for_future_Pell_pipeline_changes]
+    tensions: [smallest_Pell_pair_as_evidence_for_large_size_scaling]
+    excludes_only: [implementation_drift_for_the_two_declared_primitive_polynomials]
+    reusable_data_refs: [analysis/pell_3_2_exact_regression.json]
+    dependency_group_refs: []
+    missing_inputs: [a_claim_bearing_larger_Pell_target_only_if_a_new_mechanism_question_requires_it]
+    next_discriminator: retain_as_exact_regression_or_freeze_a_larger_7_5_orientation_law_holdout_before_any_asymptotic_claim
     information_gain: medium
     compute_cost: low
     decision_experiments: []
-
 dependency_groups:
   - id: crn-2026104501-5000000000-5100000000
     kind: shared_counter_rng_domain
     member_sizes: [65, 85, 130, 170]
-    metadata_paths:
-      - results/server-20260828/P45-root-amplitude/n65.metadata.json
-      - results/server-20260828/P45-root-amplitude/n85.metadata.json
-      - results/server-20260828/P49-fullcurve-doubling-100m/raw/n130.metadata.json
-      - results/server-20260828/P49-fullcurve-doubling-100m/raw/n170.metadata.json
+    metadata_paths: [results/server-20260828/P45-root-amplitude/n65.metadata.json, results/server-20260828/P45-root-amplitude/n85.metadata.json, results/server-20260828/P49-fullcurve-doubling-100m/raw/n130.metadata.json, results/server-20260828/P49-fullcurve-doubling-100m/raw/n170.metadata.json]
     covariance_rule: aligned_delete_one_across_all_available_views
   - id: crn-2026104301-7000000000-7500000000
     kind: one_counter_rng_domain
@@ -2507,25 +2710,19 @@ dependency_groups:
     kind: one_frozen_generation4_random_block_with_correlated_scalar_and_jet_views
     member_sizes: [520, 680]
     source_ref: SRC_NORM4_EVEN_MODE_PR277
-    metadata_paths:
-      - results/server-20260829/P154-norm4-generation4-pilot/raw/n520_100m.metadata.json
-      - results/server-20260829/P154-norm4-generation4-pilot/raw/n680_100m.metadata.json
+    metadata_paths: [results/server-20260829/P154-norm4-generation4-pilot/raw/n520_100m.metadata.json, results/server-20260829/P154-norm4-generation4-pilot/raw/n680_100m.metadata.json]
     covariance_rule: scalar_U_and_thermal_jet_share_the_same_curves_and_are_correlated_views_not_additive_evidence
   - id: norm5-multiradius-pr247
     kind: one_aligned_multiradius_random_block_with_correlated_plus_minus_shell_and_matched_delta_views
     member_sizes: [325, 425]
     source_ref: SRC_NORM5_MULTIRADIUS_PR247
-    metadata_paths:
-      - results/server-20260829/P225-norm5-multiradius/raw/norm5_200k.metadata.json
+    metadata_paths: [results/server-20260829/P225-norm5-multiradius/raw/norm5_200k.metadata.json]
     covariance_rule: plus_minus_sameR_shell_and_matched_delta_summaries_share_one_raw_block_and_are_not_additive_evidence
   - id: marked-birth-pilot-634040d
     kind: one_branch_only_counter_coupled_marked_birth_discovery_block
     member_sizes: [65, 130, 145]
     source_ref: SRC_MARKED_BIRTH_CONTACT_CHAIN
-    metadata_paths:
-      - results/server-20260829/marked-birth-pilot/raw/q2_N65_20k.metadata.json
-      - results/server-20260829/marked-birth-pilot/raw/q2_N130_20k.metadata.json
-      - results/server-20260829/marked-birth-pilot/raw/P50_N145_10k.metadata.json
+    metadata_paths: [results/server-20260829/marked-birth-pilot/raw/q2_N65_20k.metadata.json, results/server-20260829/marked-birth-pilot/raw/q2_N130_20k.metadata.json, results/server-20260829/marked-birth-pilot/raw/P50_N145_10k.metadata.json]
     covariance_rule: all_line_landing_qJ_orthogonal_and_contact_views_are_transforms_of_one_aligned_pilot_and_are_not_additive_evidence
   - id: p275-global-line-180m
     kind: one_branch_only_nine_geometry_global_line_field_identity_block
@@ -2543,9 +2740,7 @@ dependency_groups:
     kind: branch_only_two_size_external_Euler_marked_birth_blocks
     member_sizes: [325, 425]
     source_ref: SRC_EXTERNAL_EULER_BULK
-    metadata_paths:
-      - results/server-20260830/P267-target1-external-Euler-2m/raw-summary/N325_2m/N325_2m.metadata.json
-      - results/server-20260830/P267-target1-external-Euler-2m/raw-summary/N425_2m/N425_2m.metadata.json
+    metadata_paths: [results/server-20260830/P267-target1-external-Euler-2m/raw-summary/N325_2m/N325_2m.metadata.json, results/server-20260830/P267-target1-external-Euler-2m/raw-summary/N425_2m/N425_2m.metadata.json]
     covariance_rule: within_each_size_all_external_near_far_D_S_and_completed_Gram_orthogonal_views_share_100_aligned_batches_while_sizes_use_declared_independent_seed_counter_groups
   - id: threshold-tail-flow-reuse
     kind: branch_only_correlated_shape_views_plus_declared_independent_P43_comparison
@@ -2563,25 +2758,20 @@ dependency_groups:
     kind: branch_only_primitive_C3_geometry_blocks
     member_sizes: [112, 60]
     source_ref: SRC_PRIMITIVE_C3_RESPONSE
-    metadata_paths:
-      - results/server-20260830/P267-rho-C3-primitive-H4-independent/score.json
-      - results/server-20260830/P267-rho-C3-N60-opposite-Pell/increment_power_freeze.json
+    metadata_paths: [results/server-20260830/P267-rho-C3-primitive-H4-independent/score.json, results/server-20260830/P267-rho-C3-N60-opposite-Pell/increment_power_freeze.json]
     covariance_rule: N112_character_models_share_one_complex_covariance_block_and_N60_power_projections_are_not_independent_model_votes
   - id: p334-N65-projective-birth-20k
     kind: branch_only_one_exploratory_path_archive_with_many_correlated_flux_conditional_and_twist_views
     member_sizes: [65]
     source_ref: SRC_P334_PROJECTIVE_BIRTH_SMOKE
-    metadata_paths:
-      - results/local-20260830/P334-projective-birth-N65-smoke/score.json
-      - results/local-20260830/P334-projective-birth-N65-smoke/conditional_flux.json
-      - results/local-20260830/P334-projective-birth-N65-smoke/flat_twist_score.json
-    covariance_rule: both_orientations_share_aligned_counter_permutations_and_all_raw_birth_exit_A4_conditional_F2_F3_and_character_scores_are_coordinates_of_one_20k_block_not_independent_evidence
+    metadata_paths: [results/local-20260830/P334-projective-birth-N65-smoke/score.json, results/local-20260830/P334-projective-birth-N65-smoke/conditional_flux.json, results/local-20260830/P334-projective-birth-N65-smoke/flat_twist_score.json, results/local-20260830/P334-projective-birth-N65-smoke/flat_twist_representation.json, results/local-20260830/P337-F3-twist-curves/score.json, results/f3-activation-flux/latest.json]
+    covariance_rule: both_orientations_share_20_aligned_counter_batches_and_all_raw_birth_exit_A4_HAD_uvw_F2_F3_conditional_all_p_curve_crossing_reference_upper_probe_and_PR267_flux_views_are_coordinates_of_one_block_not_independent_evidence
   - id: p337-finite-abelian-exact
     kind: one_exact_theorem_and_executable_oracle_bundle_conditional_on_integral_saturation
     member_sizes: [2, 3]
     source_ref: SRC_P337_FINITE_ABELIAN_TWIST_TOMOGRAPHY
-    metadata_paths: [results/finite-abelian-twist-tomography/latest.json]
-    covariance_rule: aggregate_source_inversion_and_individual_projective_line_rows_are_two_views_of_one_exact_cohomology_transform_and_do_not_supply_statistical_votes
+    metadata_paths: [results/finite-abelian-twist-tomography/latest.json, results/local-20260830/P334-projective-birth-N65-smoke/flat_twist_representation.json]
+    covariance_rule: aggregate_source_inversion_and_the_exact_A4_C3_representation_are_algebraic_views_while_the_N65_numerical_placement_remains_in_p334_N65_projective_birth_20k_and_supplies_no_separate_vote
   - id: z5-cubic-smoke
     kind: engineering_only_joint_24_real_covariance_block
     member_sizes: [325]
@@ -2592,10 +2782,7 @@ dependency_groups:
     kind: branch_only_one_million_replica_primary_covariance_block
     member_sizes: [325]
     source_ref: SRC_Z5_CUBIC_STREAM
-    metadata_paths:
-      - experiments/p250_z5_charged_threepoint_production_20260830.json
-      - results/huawei-20260830/P250-z5-charged-threepoint/score_1m.json
-      - results/huawei-20260830/P250-z5-charged-threepoint/charged_threepoint_1m_merged.batches.csv
+    metadata_paths: [experiments/p250_z5_charged_threepoint_production_20260830.json, results/huawei-20260830/P250-z5-charged-threepoint/score_1m.json, results/huawei-20260830/P250-z5-charged-threepoint/charged_threepoint_1m_merged.batches.csv]
     covariance_rule: all_three_shards_two_primitive_channels_conjugates_nonneutral_controls_closure_H12_H8_H4_and_zero_omnibus_share_one_100_batch_block_and_must_not_be_added_as_independent_votes
   - id: z5-linear-charged-200k
     kind: earlier_independent_RNG_but_shared_geometry_basis_and_theory_lineage
@@ -2607,16 +2794,15 @@ dependency_groups:
     kind: branch_only_engineering_and_power_smoke_not_scientific_evidence
     member_sizes: [325, 425]
     source_ref: SRC_TWO_OBSERVER_SOURCE_RANK_FREEZE
-    metadata_paths:
-      - results/separated-two-orbit-observer/N325_20k_smoke_score.json
-      - results/separated-two-orbit-observer/N425_20k_smoke_score.json
+    metadata_paths: [results/separated-two-orbit-observer/N325_20k_smoke_score.json, results/separated-two-orbit-observer/N425_20k_smoke_score.json]
     covariance_rule: within_each_size_both_observers_and_sources_share_one_aligned_stream_sizes_are_disjoint_and_smoke_point_estimates_must_not_be_added_as_scientific_evidence
   - id: two-observer-source-rank-production-planned
-    kind: prospective_primary_not_acquired
+    kind: historical_design_superseded_by_completed_production
     member_sizes: [325, 425]
     source_ref: SRC_TWO_OBSERVER_SOURCE_RANK_FREEZE
     metadata_paths: [experiments/p267_two_observer_source_rank_20260830.yaml]
-    covariance_rule: planned_N325_and_N425_streams_use_disjoint_seed_counter_domains_each_size_is_one_full_observer_source_covariance_block_and_the_joint_block_diagonal_score_is_not_yet_acquired
+    covariance_rule: the_frozen_design_was_executed_and_is_retained_for_chronology_only_current_result_semantics_live_in_the_acquired_group
+    superseded_by: two-observer-source-rank-production-acquired
   - id: p321-published-TL-sequence
     kind: one_published_transfer_matrix_sequence_reanalysis
     member_sizes: [14, 15, 16, 17, 18, 19, 20, 21]
@@ -2628,9 +2814,7 @@ dependency_groups:
     superseded_by: p321-fresh-multiscale-acquired
     member_sizes: [144, 576, 1296]
     source_ref: SRC_P321_THERMAL_Q4_ASPECT_RATIO
-    metadata_paths:
-      - analysis/p321_equal_area_rectangle_design.json
-      - predictions/p321_thermal_q4_aspect_ratio_20260830.json
+    metadata_paths: [analysis/p321_equal_area_rectangle_design.json, predictions/p321_thermal_q4_aspect_ratio_20260830.json]
     covariance_rule: this_design_record_preserves_the_original_alignment_contract_but_current_result_status_lives_in_p321_fresh_multiscale_acquired_and_must_not_be_read_as_an_unacquired_current_target
   - id: p321-equal-area-N144-smoke
     kind: branch_only_single_scale_variance_and_covariance_smoke_not_E4_evidence
@@ -2642,9 +2826,7 @@ dependency_groups:
     kind: branch_only_fresh_three_scale_five_shape_primary_score_complete
     member_sizes: [144, 576, 1296]
     source_ref: SRC_P321_FRESH_MULTISCALE_RESULT
-    metadata_paths:
-      - analysis/p321_fresh_multiscale_decision_freeze.json
-      - results/local-20260830/P321-equal-area-fresh-100k/multiscale_score.json
+    metadata_paths: [analysis/p321_fresh_multiscale_decision_freeze.json, results/local-20260830/P321-equal-area-fresh-100k/multiscale_score.json]
     covariance_rule: five_shapes_share_one_counter_domain_within_each_N_cross_N_domains_are_independent_root_and_E4_primary_covariances_are_retained_and_the_pilot_is_not_pooled_while_the_fit_does_not_serialize_the_full_11x11_parameter_covariance
   - id: p333-shared-phaseA-exact
     kind: shared_exact_Q_lift_transport_derivation_not_two_independent_evidence_rows
@@ -2676,39 +2858,265 @@ dependency_groups:
     source_ref: SRC_H4_H12_VARIANCE_PILOT
     metadata_paths: [experiments/issue55_h4_h12_orthogonal_acquisition_20260830.json]
     covariance_rule: planned_direction_pairs_are_aligned_within_each_size_and_disjoint_across_sizes_and_the_future_A12_contrast_must_propagate_target_and_source_A4_uncertainty_without_inventing_fit_degrees_of_freedom
-
+  - id: p334-N13-multiorbit-exact
+    kind: exact_full_subset_and_directed_boundary_census_without_sampling
+    member_sizes: [13]
+    source_ref: SRC_P334_N13_MULTIORBIT_FLUX
+    metadata_paths: [results/p334-n13-multiorbit-flux/latest.json]
+    covariance_rule: axis_diagonal_orbit_censuses_and_their_75p574_24p426_signed_shares_are_one_exact_finite_enumeration_not_statistical_votes_or_continuum_amplitudes
+  - id: p337-shear-transport-N65-10k
+    kind: branch_only_deterministic_basis_relabel_transport_gate
+    member_sizes: [65]
+    source_ref: SRC_P337_SHEAR_TRANSPORT_SMOKE
+    metadata_paths: [results/local-20260830/P337-flat-twist-shear-smoke/score.json]
+    covariance_rule: identity_and_shear_use_the_same_counters_and_quotient_graph_and_the_pathwise_zero_residual_is_a_basis_relabel_not_independent_physical_source_evidence
+  - id: z5-normalized-multiseparation-smoke-4k
+    kind: branch_only_engineering_normalization_and_support_smoke
+    member_sizes: [325]
+    source_ref: SRC_Z5_SEPARATION_NORMALIZED_SMOKE
+    metadata_paths: [results/local-20260830/P250-z5-multiseparation-smoke/score_4k.json]
+    covariance_rule: d1_d2_d3_both_hands_pairs_cubics_and_R1_normalization_share_one_counter_aligned_smoke_and_are_not_separationwise_votes
+  - id: z5-local-H4-radius-common-counter-4k
+    kind: branch_only_common_counter_R1_R4_local_radius_selector
+    member_sizes: [325]
+    source_ref: SRC_Z5_LOCAL_RADIUS_SELECTOR
+    derived_source_refs: [SRC_Z5_SEPARATION_NORMALIZED_SMOKE]
+    metadata_paths: [results/local-20260830/P250-z5-multiseparation-smoke/score_4k.json, results/local-20260830/P250-z5-radius-selector/selection.json]
+    covariance_rule: R1_R4_d1_d3_both_hands_pairs_and_cubics_share_aligned_seed_counter_blocks_so_the_closed_local_family_is_one_selector_not_independent_radius_or_separation_votes
+  - id: z5-projective-leg-smoke-2k
+    kind: branch_only_40_batch_engineering_operator_selector_without_phase_score
+    member_sizes: [325]
+    source_ref: SRC_Z5_PROJECTIVE_LEG_PROPAGATION
+    metadata_paths: [results/local-20260830/P250-z5-projective-leg-smoke/exact_gate.json, results/local-20260830/P250-z5-projective-leg-smoke/score_2k.json]
+    covariance_rule: d1_d3_both_hands_pairs_and_cubics_share_one_40_batch_stream_the_d1_d2_pass_is_one_operator_selection_smoke_and_no_phase_or_independent_distance_vote_is_created
+  - id: two-observer-source-rank-production-acquired
+    kind: branch_only_completed_frozen_two_size_primary_decision
+    member_sizes: [325, 425]
+    source_ref: SRC_TWO_OBSERVER_SOURCE_RANK_RESULT
+    metadata_paths: [results/server-20260830/P267-two-observer-source-rank-2m/REPORT.md, results/server-20260830/P267-two-observer-source-rank-2m/joint_score.json]
+    covariance_rule: within_each_size_all_four_matrix_entries_and_delete_one_root_Gram_steps_share_one_block_sizes_have_disjoint_counters_and_the_joint_block_diagonal_chi2_is_one_frozen_primary_decision_not_three_votes
 decision_experiments:
-  - id: DX_RANK_BIRTH_GLOBAL_BRIDGE
+  - id: DX_PROJECTIVE_BIRTH_EXIT_FLUX
     attention_rank: 1
-    name: activation_shape_and_external_Euler_contact_escape
-    scientific_node_refs: [SN_ESSENTIAL_BIRTH_ARCHIVE, SN_RANK_BIRTH_PARITY_INSERTION, SN_ESSENTIAL_BIRTH_CLOCK_SPLIT, SN_TWO_ACTIVATION_H4_REANALYSIS, SN_ACTIVATION_CURVE_NODE_SPECTRUM, SN_ACTIVATION_TRANSPORT_SHAPE, SN_TOPOLOGY_INSERTION_CONTACT_NOGO, SN_P275_GLOBAL_LINE_FIELD_MAP_REJECTION, SN_EXTERNAL_EULER_RANK_BIRTH_BRIDGE]
-    observer_sector_refs: [global_unmarked, global_rank_projector, topology_typed, rank_birth_local, matching_even, matching_odd, bulk_euler_external]
-    source_refs: [SRC_ESSENTIAL_BIRTH_HISTOGRAM_MAIN, SRC_PR267_ACTIVATION_FRONTIER, SRC_ESSENTIAL_BIRTH_CLOCK, SRC_RANK_BIRTH_PARITY_CHAIN, SRC_MARKED_BIRTH_MEAN_CHAIN, SRC_LOCAL_D4_UV_Q2, SRC_P275_CARTAN_CONTACT, SRC_EXTERNAL_EULER_BULK]
-    dependency_group_refs:
-      - crn-2026104501-5000000000-5100000000
-      - crn-2026104301-7000000000-7500000000
-      - crn-2026104301-7500000000-8000000000
-      - crn-2026105003-7000000000-7100000000
-      - crn-2026105004-7000000000-7100000000
-      - crn-2026105701-10000000000-10500000000
-      - crn-2026105701-10500000000-11000000000
-      - crn-2026105525-9400000000-9412000000
-      - crn-2026105550-9400000000-9412000000
-      - crn-2026105625-9400000000-9412000000
-      - marked-birth-pilot-634040d
-      - p275-global-line-180m
-      - external-euler-n325-n425
+    name: fresh_N130_birth_completion_A4_and_stabilizer_C3_child
+    status: N13_exact_and_N65_existing_data_boundary_tomography_complete_fresh_N130_gauge_audited_complement_child_not_acquired
+    scientific_node_refs: [SN_PROJECTIVE_ESSENTIAL_BIRTH_FLUX, SN_FINITE_ABELIAN_TWIST_TOMOGRAPHY, SN_TWO_ACTIVATION_H4_REANALYSIS, SN_ACTIVATION_TRANSPORT_SHAPE]
+    observer_sector_refs: [topology_typed, rank_birth_local, projective_completion, direction_character, matching_odd]
+    source_refs: [SRC_P334_PROJECTIVE_ESSENTIAL_BIRTH, SRC_P334_PROJECTIVE_BIRTH_SMOKE, SRC_P334_CONDITIONAL_LINE_FLUX, SRC_P334_N13_MULTIORBIT_FLUX, SRC_P337_FINITE_ABELIAN_TWIST_TOMOGRAPHY, SRC_P337_P334_FLAT_TWIST_N65, SRC_P337_FLAT_TWIST_REPRESENTATION, SRC_P337_F3_TWIST_CURVES, SRC_PR267_F3_ACTIVATION_FLUX, SRC_DIGITAL_ALEXANDER_INTEGRAL_SATURATION, SRC_PR267_ACTIVATION_FRONTIER, SRC_PR267_P337_LITERATURE_TOMOGRAPHY, SRC_PR267_FRONTIER_LITERATURE]
+    dependency_group_refs: [p334-N13-multiorbit-exact, p334-N65-projective-birth-20k, p337-finite-abelian-exact]
+    acquisition: small_pilot
+    expected_model_space_reduction: very_high
+    compute_cost: low
+    decision_output: one_fresh_N130_child_with_tau1_ell_birth_tau2_raw_completion_winding_marked_complement_lift_basis_orientation_transporter_ambiguity_DIRECT_RANK2_full_A4_boundary_covariance_frozen_H_crossing_dual_and_a_declared_gauge_covariant_stabilizer_C3_completion_character
+  - id: DX_Z5_CHARGED_FUSION
+    attention_rank: 2
+    name: fresh_projective_leg_d1_d2_support_then_phase_transport
+    status: compact_1m_signal_limited_local_R1_R4_family_closed_projective_leg_2k_propagation_pass_fresh_support_block_not_acquired
+    scientific_node_refs: [SN_GLOBAL_CHARGED_SECTOR_TENSION, SN_Z5_CHARGED_CUBIC_CLOSURE, SN_Z5_PROJECTIVE_LEG_PROPAGATION]
+    observer_sector_refs: [topology_typed, deck_charged]
+    source_refs: [SRC_NORM5_CHARGED, SRC_Z5_CHARGED_FUSION, SRC_Z5_CUBIC_STREAM, SRC_Z5_SEPARATION_NORMALIZED_SMOKE, SRC_Z5_LOCAL_RADIUS_SELECTOR, SRC_Z5_PROJECTIVE_LEG_PROPAGATION]
+    dependency_group_refs: [z5-cubic-smoke, z5-cubic-production-acquired, z5-linear-charged-200k, z5-normalized-multiseparation-smoke-4k, z5-local-H4-radius-common-counter-4k, z5-projective-leg-smoke-2k]
+    acquisition: small_pilot
+    expected_model_space_reduction: high
+    compute_cost: moderate
+    decision_output: unchanged_projective_leg_operator_with_fresh_counters_scores_d1_d2_pair_and_cubic_support_first_then_only_conditionally_scores_common_phase_and_same_stream_linear_to_cubic_transport
+  - id: DX_INDEPENDENT_SOURCE_RANK_ESCAPE
+    attention_rank: 3
+    name: physically_independent_cross_boundary_winding_or_endpoint_hazard_source_rank_escape
+    status: candidate_mechanisms_named_exact_gate_not_yet_selected
+    scientific_node_refs: [SN_EXTERNAL_EULER_RANK_BIRTH_BRIDGE, SN_TWO_OBSERVER_SOURCE_RANK_LANE, SN_CONNECTIVITY_RADICAL_HYPOTHESIS]
+    observer_sector_refs: [bulk_euler_external, topology_typed, rank_birth_local, projective_completion]
+    source_refs: [SRC_EXTERNAL_EULER_BULK, SRC_TWO_OBSERVER_SOURCE_RANK_RESULT, SRC_PR267_FRONTIER_LITERATURE]
+    dependency_group_refs: [external-euler-n325-n425, two-observer-source-rank-production-acquired]
+    acquisition: exact_construction
+    expected_model_space_reduction: very_high
+    compute_cost: low
+    decision_output: one_nonreversible_n12_winding_seam_or_K1_K2_conditioned_Euler_source_exactly_gated_then_piloted_against_the_current_observers_to_split_or_reproduce_the_surviving_lane
+  - id: DX_ASPECT_RATIO_Q4_SHAPE
+    attention_rank: 4
+    name: typed_or_second_function_aspect_ratio_projector_fingerprint
+    status: fresh_100k_three_scale_primary_complete_scale_gate_passed_conditional_E4_not_rejected
+    scientific_node_refs: [SN_P321_TOPOLOGICAL_PRG_PROJECTOR_BRIDGE, SN_P321_THERMAL_Q4_ASPECT_RATIO_SHAPE]
+    observer_sector_refs: [topology_typed, global_rank_projector, direction_character]
+    source_refs: [SRC_P321_TOPOLOGICAL_PRG_BRIDGE, SRC_P321_THERMAL_Q4_ASPECT_RATIO, SRC_P321_EQUAL_AREA_COVARIANCE_SMOKE, SRC_P321_FRESH_MULTISCALE_FREEZE, SRC_P321_FRESH_MULTISCALE_RESULT]
+    dependency_group_refs: [p321-published-TL-sequence, p321-equal-area-N144-smoke, p321-fresh-multiscale-acquired]
+    acquisition: small_pilot
+    expected_model_space_reduction: very_high
+    compute_cost: moderate
+    decision_output: same_geometry_resolved_homology_typed_seam_or_independent_second_modulus_function_projector_distinguishing_ordinary_E4_compatibility_from_defect_contact_Jordan_or_nontransparent_sector_response_without_more_P2_minus_P0_replication
+  - id: DX_Q4_SEAM_H4
+    attention_rank: 5
+    name: exact_Q4_singlet_charged_orientation_resolved_H4_seam
+    scientific_node_refs: [SN_GLOBAL_SPIN4_SELECTION_STAIRCASE, SN_Q4_SEAM_NORMALIZATION, SN_SPIN4_DIRECTION_ALIAS_GATE]
+    observer_sector_refs: [topology_typed, deck_charged, direction_character]
+    source_refs: [SRC_SMALL_WIDTH_SPECTROSCOPY, SRC_Q4_SEAM_PREFLIGHT, SRC_SPIN4_DIRECTION_ALIAS_MAIN]
+    dependency_group_refs: []
+    acquisition: exact_construction
+    expected_model_space_reduction: very_high
+    compute_cost: low
+    decision_output: necessary_calibrated_spatial_angular_rank_or_typed_edge_gate_reported_separately_from_six_raw_colour_seam_values_restoring_ratios_one_and_zero
+  - id: DX_MIXED_CONTEXT_RECTANGLE
+    attention_rank: 6
+    name: common_source_readout_Gaussian_annulus_context_rectangle
+    scientific_node_refs: [SN_NORM4_EVEN_TRANSFER, SN_ANNULUS_TWO_STATE_RECURRENCE, SN_ANNULUS_SECTOR_SPECTRUM, SN_TWO_CLOCK_MIXED_ORDER_GATE, SN_PATH_FILTRATION_MEMORY, SN_STATIC_CONTEXT_INTERACTION, SN_CONTEXT_RECTANGLE_RESULT]
+    observer_sector_refs: [topology_typed, local_pivotal, matching_odd]
+    source_refs: [SRC_NORM4_REVEAL_PR273, SRC_NORM4_EVEN_MODE_PR277, SRC_CONTEXT_HANKEL, SRC_P200_PATH_FILTRATION, SRC_P200_STATIC_CONTEXT_MAP, SRC_ANNULUS_RECURRENCE, SRC_ANNULUS_SECTOR_SPECTRUM, SRC_TWO_CLOCK_GENERATOR_GATE, SRC_CONTEXT_RECTANGLE_RESULT]
+    dependency_group_refs: [norm4-generation4-pr277, norm5-multiradius-pr247, annulus-spectrum-3123b73, gaussian-annulus-context-rectangle]
+    acquisition: small_pilot
+    expected_model_space_reduction: very_high
+    compute_cost: moderate
+    decision_output: maximin_AU_UA_or_intermediate_state_readout_after_same_semantics_rectangle_found_no_context_enrichment
+  - id: DX_Q_TANGENT_INTERFACE
+    attention_rank: 7
+    name: rank_four_operator_mixing_and_measure_projector_field_Q_tangent_control
+    scientific_node_refs: [SN_OPERATOR_MIXING_RANK4, SN_GLOBAL_SPIN4_SELECTION_STAIRCASE, SN_Q1_SPIN4_VELOCITY_ORACLE, SN_Q_TANGENT_THREE_PART_INTERFACE, SN_Q_LIFT_SECTION_DEPENDENCE, SN_BOUNDARY_Q_TANGENT_CONTROL, SN_THERMAL_Q4_WARD, SN_Q4_SEAM_NORMALIZATION]
+    observer_sector_refs: [boundary, topology_typed]
+    source_refs: [SRC_OPERATOR_MIXING_MAIN, SRC_Q4_SEAM_PREFLIGHT, SRC_Q_VELOCITY_SPIN4_MAIN, SRC_EXACT_FK_Q_SCORE, SRC_CONFLUENT_PROJECTOR, SRC_VJS_FIELD_DERIVATIVE, SRC_BOUNDARY_Q_TANGENT, SRC_BOUNDARY_Q_LATTICE, SRC_ARGUIN_ALL_ORDER_QJET, SRC_P333_Q_LIFT_COVARIANCE, SRC_P333_GENERIC_Q_LIFT_DESCRIPTOR]
+    dependency_group_refs: [p333-shared-phaseA-exact]
+    acquisition: small_pilot
+    expected_model_space_reduction: high
+    compute_cost: low
+    decision_output: one_complete_lift_sector_normalization_Qv_path_insertion_projector_field_descriptor_plus_bottom_field_projection_and_scale_or_modulus_log_slope_positive_control_after_forced_Pascal_jet_subtraction
+  - id: DX_CROSS_MICRO_TOP_FIELD
+    attention_rank: 8
+    name: gauge_invariant_triangular_square_top_field_control
+    scientific_node_refs: [SN_TRIANGULAR_LOGPAIR_CONTROL, SN_CROSS_MICROSCOPIC_GAUGE_CONTROL]
+    observer_sector_refs: [cross_microscopic, bulk_energy_logpair]
+    source_refs: [SRC_TRIANGULAR_LOGPAIR_PR246, SRC_TRIANGULAR_E6, SRC_CROSS_MICROSCOPIC_INVARIANT]
+    dependency_group_refs: []
+    acquisition: small_pilot
+    expected_model_space_reduction: high
+    compute_cost: moderate
+    decision_output: normalized_cross_microscopic_H4_E6_top_partner_response
+  - id: DX_CONNECTIVITY_RADICAL
+    attention_rank: 9
+    name: connectivity_defect_radical_extension
+    scientific_node_refs: [SN_RELATIVE_SOURCE_SEMISIMPLE_CLOSURE, SN_CONNECTIVITY_RADICAL_HYPOTHESIS, SN_TYPED_SITE_SURFACE_POLYNOMIAL, SN_TERMINAL_PARTITION_CANONICALIZER]
+    observer_sector_refs: [topology_typed, matching_odd]
+    source_refs: [SRC_RELATIVE_SOURCE_RANK3, SRC_RELATIVE_SOURCE_HH2, SRC_SURFACE_POLYNOMIAL_CLASSIFICATION, SRC_TERMINAL_PARTITION_CANONICAL_MAIN]
+    dependency_group_refs: []
+    acquisition: exact_construction
+    expected_model_space_reduction: high
+    compute_cost: low
+    decision_output: typed_site_quotient_recurrence_then_first_nonsemisimple_connectivity_or_defect_generator_beyond_the_rigid_scalar_source
+  - id: DX_INTEGRAL_STABILIZER
+    attention_rank: 10
+    name: review_all_qL_integral_saturation_or_find_the_first_carrier_counterexample
+    status: branch_only_theorem_claim_pending_review
+    scientific_node_refs: [SN_DIGITAL_ALEXANDER_UNRESTRICTED_RATIONAL, SN_DIGITAL_ALEXANDER_INTEGRAL_SATURATION, SN_DIGITAL_ALEXANDER_INDEX13_FRONTIER]
+    observer_sector_refs: [topology_typed]
+    source_refs: [SRC_DIGITAL_ALEXANDER_UNRESTRICTED_RATIONAL, SRC_DIGITAL_ALEXANDER_INTEGRAL_SATURATION, SRC_DIGITAL_ALEXANDER_INDEX13_MAIN]
+    dependency_group_refs: []
+    acquisition: exact_construction
+    expected_model_space_reduction: very_high
+    compute_cost: low
+    decision_output: accepted_all_qL_carrier_and_coprime_prime_Smith_proof_or_the_first_exact_failure_localized_to_pruning_component_preservation_or_integral_descent
+  - id: DX_HOMOLOGY_SCALING_WINDOW
+    attention_rank: 11
+    name: nearcritical_homology_activation_window_and_root_shift_rate
+    scientific_node_refs: [SN_HOMOLOGICAL_BALANCE_ROOT_CONVERGENCE]
+    observer_sector_refs: [topology_typed, global_unmarked]
+    source_refs: [SRC_HOMOLOGICAL_BALANCE_CONVERGENCE]
+    dependency_group_refs: []
+    acquisition: exact_construction
+    expected_model_space_reduction: very_high
+    compute_cost: low
+    decision_output: two_sided_activation_bounds_at_pc_plusminus_lambda_L_minus_three_quarters_and_rate_for_pL_minus_pc
+  - id: DX_RHO_C3_SECTOR
+    attention_rank: 12
+    name: complex_C3_rho_sector_response
+    scientific_node_refs: [SN_GLOBAL_CHARGED_SECTOR_TENSION, SN_MODULAR_C3_CHARACTER, SN_PRIMITIVE_C3_MULTI_CHARACTER]
+    observer_sector_refs: [topology_typed, deck_charged]
+    source_refs: [SRC_NORM5_CHARGED, SRC_MODULAR_C3_CHARACTER, SRC_PRIMITIVE_C3_RESPONSE]
+    dependency_group_refs: [rho-c3-n112-n60]
+    acquisition: small_pilot
+    expected_model_space_reduction: very_high
+    compute_cost: low
+    decision_output: stronger_N112_or_nondegenerate_geometry_covector_resolving_the_current_multi_character_residual_without_N60_only_replication
+  - id: DX_THRESHOLD_TAIL_HOLDOUT
+    attention_rank: 13
+    name: frozen_tail_flow_direction_fresh_lineage_amplitude
+    scientific_node_refs: [SN_THRESHOLD_TAIL_FLOW_FIBER]
+    observer_sector_refs: [global_unmarked]
+    source_refs: [SRC_THRESHOLD_TAIL_FLOW]
+    dependency_group_refs: [threshold-tail-flow-reuse]
+    acquisition: small_pilot
+    expected_model_space_reduction: high
+    compute_cost: low
+    decision_output: heldout_tail_amplitude_and_thermal_jet_alignment_without_refitting_direction_or_exponent
+  - id: DX_MOTIF_JOINT_GRAM
+    attention_rank: 14
+    name: N130_crossfit_paired_motif_joint_Gram_control
+    scientific_node_refs: [SN_MICROCANONICAL_MOTIF_CONTROL, SN_ACTIVATION_TRANSPORT_SHAPE]
+    observer_sector_refs: [microcanonical_motif_control, rank_birth_local]
+    source_refs: [SRC_PAIRED_MOTIF_MICROCANONICAL_MAIN, SRC_PR267_ACTIVATION_FRONTIER]
+    dependency_group_refs: []
+    acquisition: small_pilot
+    expected_model_space_reduction: medium
+    compute_cost: low
+    decision_output: heldout_variance_ratio_for_K2_zero_area_deformation_and_face_rightangle_conditional_covariance_without_threshold_origin_claim
+  - id: DX_H4_H12_DEALIAS
+    attention_rank: 15
+    name: prospective_ordinary_H4_H12_opposite_alias_dealiasing
+    status: variance_pilot_complete_production_standby_not_acquired
+    scientific_node_refs: [SN_H4_H12_ORTHOGONAL_DESIGN, SN_H4_H12_VARIANCE_PILOT, SN_SPIN4_DIRECTION_ALIAS_GATE]
+    observer_sector_refs: [global_unmarked, matching_odd, direction_character]
+    source_refs: [SRC_H4_H12_ORTHOGONAL_DESIGN_MAIN, SRC_H4_H12_VARIANCE_PILOT, SRC_SPIN4_DIRECTION_ALIAS_MAIN]
+    dependency_group_refs: [issue55-h4-h12-variance-smoke, issue55-h4-h12-production-planned]
+    acquisition: new_production
+    expected_model_space_reduction: high
+    compute_cost: high
+    decision_output: frozen_order_H4_only_zero_then_covariance_aware_A12_contrast_in_the_two_row_df_zero_design_without_H12_only_or_general_harmonic_claim
+  - id: DX_GAUSSIAN_COMMUTING_SQUARE
+    attention_rank: 16
+    name: prospective_Gaussian_direct_two_step_H4_root_character_composition
+    status: source_only_power_gate_complete_target_production_deferred
+    scientific_node_refs: [SN_GAUSSIAN_COMMUTING_SQUARE_DESIGN]
+    observer_sector_refs: [global_unmarked, direction_character]
+    source_refs: [SRC_GAUSSIAN_COMMUTING_SQUARE_MAIN, SRC_P158_GAUSSIAN_ROOT_CHARACTER_POWER]
+    dependency_group_refs: [p158-source-only-power-reuse]
+    acquisition: small_pilot
+    expected_model_space_reduction: high
+    compute_cost: high
+    decision_output: target_only_50M_variance_runtime_gate_then_recost_or_stop_before_any_N650_N850_scientific_production_or_covering_CRN
+  - id: DX_REAL_GADGET_CERTIFICATE
+    attention_rank: 17
+    name: real_end_to_end_gadget_comparison_certificate
+    scientific_node_refs: [SN_SYNTHETIC_GADGET_COMPARISON_PROTOCOL, SN_EXACT_SITE_THRESHOLD_ROUTE_OBSTRUCTION]
+    observer_sector_refs: [boundary, topology_typed]
+    source_refs: [SRC_SYNTHETIC_GADGET_COMPARISON_MAIN, SRC_EXACT_SITE_THRESHOLD_MAP_MAIN]
+    dependency_group_refs: []
+    acquisition: exact_construction
+    expected_model_space_reduction: medium
+    compute_cost: low
+    decision_output: one_reproduced_published_baseline_with_actual_artifact_binding_and_independently_certified_probability_interval_then_one_real_candidate_comparison
+  - id: DX_RATIONAL_WIDTH_22_24_REVEAL
+    attention_rank: 18
+    name: Issue27_rational_width_22_24_prereveal_score
+    status: open_PR_prereveal_protocol_target_artifact_absent
+    scientific_node_refs: []
+    observer_sector_refs: [global_unmarked]
+    source_refs: [SRC_RATIONAL_STAGE_B_QUARANTINE_MAIN]
+    dependency_group_refs: [rational-width-stageB-frozen-sequence]
+    acquisition: existing_data_reuse
+    expected_model_space_reduction: medium
+    compute_cost: low
+    decision_output: when_the_primary_width22_24_source_arrives_bind_its_artifact_then_score_all_frozen_metrics_once_before_any_refit_or_post_cutoff_model_change
+  - id: DX_RANK_BIRTH_GLOBAL_BRIDGE
+    attention_rank: 19
+    name: completed_activation_shape_and_external_Euler_synthesis
+    status: completed_reuse_synthesis_followups_moved_to_projective_flux_and_independent_source_escape
+    scientific_node_refs: [SN_ESSENTIAL_BIRTH_ARCHIVE, SN_RANK_BIRTH_PARITY_INSERTION, SN_ESSENTIAL_BIRTH_CLOCK_SPLIT, SN_TWO_ACTIVATION_H4_REANALYSIS, SN_ACTIVATION_CURVE_NODE_SPECTRUM, SN_ACTIVATION_TRANSPORT_SHAPE, SN_TOPOLOGY_INSERTION_CONTACT_NOGO, SN_P275_GLOBAL_LINE_FIELD_MAP_REJECTION, SN_EXTERNAL_EULER_RANK_BIRTH_BRIDGE, SN_PROJECTIVE_ESSENTIAL_BIRTH_FLUX, SN_TWO_OBSERVER_SOURCE_RANK_LANE]
+    observer_sector_refs: [global_unmarked, global_rank_projector, topology_typed, rank_birth_local, projective_completion, matching_even, matching_odd, bulk_euler_external]
+    source_refs: [SRC_ESSENTIAL_BIRTH_HISTOGRAM_MAIN, SRC_PR267_ACTIVATION_FRONTIER, SRC_PR267_F3_ACTIVATION_FLUX, SRC_ESSENTIAL_BIRTH_CLOCK, SRC_RANK_BIRTH_PARITY_CHAIN, SRC_MARKED_BIRTH_MEAN_CHAIN, SRC_LOCAL_D4_UV_Q2, SRC_P275_CARTAN_CONTACT, SRC_EXTERNAL_EULER_BULK, SRC_TWO_OBSERVER_SOURCE_RANK_RESULT]
+    dependency_group_refs: [crn-2026104501-5000000000-5100000000, crn-2026104301-7000000000-7500000000, crn-2026104301-7500000000-8000000000, crn-2026105003-7000000000-7100000000, crn-2026105004-7000000000-7100000000, crn-2026105701-10000000000-10500000000, crn-2026105701-10500000000-11000000000, crn-2026105525-9400000000-9412000000, crn-2026105550-9400000000-9412000000, crn-2026105625-9400000000-9412000000, marked-birth-pilot-634040d, p275-global-line-180m, external-euler-n325-n425, p334-N65-projective-birth-20k, two-observer-source-rank-production-acquired]
     acquisition: existing_data_reuse
     expected_model_space_reduction: very_high
     compute_cost: low
-    completed_reuse_outputs:
-      - results/two-activation-h4/latest.json
-      - results/activation-curve-nodes/latest.json
-      - results/activation-transport-shape/latest.json
-      - results/two-activation-prism/latest.json
-    decision_output: completed_Ofar_JDperp_residual_then_two_observer_coupling_rank_and_activation_shape_attribution_to_C_W
+    completed_reuse_outputs: [results/two-activation-h4/latest.json, results/activation-curve-nodes/latest.json, results/activation-transport-shape/latest.json, results/two-activation-prism/latest.json, results/f3-activation-flux/latest.json, results/server-20260830/P267-two-observer-source-rank-2m/joint_score.json]
+    decision_output: completed_activation_shape_external_Euler_and_current_basis_source_rank_synthesis_with_live_followups_in_DX_PROJECTIVE_BIRTH_EXIT_FLUX_and_DX_INDEPENDENT_SOURCE_RANK_ESCAPE
   - id: DX_EXTERNAL_EULER_GRAM
-    attention_rank: 1
+    attention_rank: 20
     name: stored_external_Euler_source_orthogonal_Gram_residual
     status: completed
     scientific_node_refs: [SN_EXTERNAL_EULER_RANK_BIRTH_BRIDGE]
@@ -2721,236 +3129,44 @@ decision_experiments:
     completed_result: coherent_nonzero_Ofar_JDperp_retains_more_than_99p8_percent_of_far_vector_and_rejects_direct_JS_projection_in_the_declared_lattice_Gram_metric
     decision_output: completed_direct_JS_projection_discriminator
   - id: DX_TWO_OBSERVER_COUPLING
-    attention_rank: 1
+    attention_rank: 21
     name: common_flow_two_observer_source_coupling_determinant
-    status: frozen_protocol_exact_gate_and_smoke_complete_production_not_acquired
+    status: completed_frozen_production_current_rank_one_null_not_rejected
     scientific_node_refs: [SN_EXTERNAL_EULER_RANK_BIRTH_BRIDGE, SN_TWO_OBSERVER_SOURCE_RANK_LANE, SN_SPIN4_DIRECTION_ALIAS_GATE]
     observer_sector_refs: [bulk_euler_external, local_pivotal, rank_birth_local, matching_odd, matching_even, direction_character]
-    source_refs: [SRC_EXTERNAL_EULER_BULK, SRC_TWO_OBSERVER_SOURCE_RANK_FREEZE, SRC_SPIN4_DIRECTION_ALIAS_MAIN]
-    dependency_group_refs: [two-observer-source-rank-smoke, two-observer-source-rank-production-planned]
+    source_refs: [SRC_EXTERNAL_EULER_BULK, SRC_TWO_OBSERVER_SOURCE_RANK_FREEZE, SRC_TWO_OBSERVER_SOURCE_RANK_RESULT, SRC_SPIN4_DIRECTION_ALIAS_MAIN]
+    dependency_group_refs: [two-observer-source-rank-smoke, two-observer-source-rank-production-acquired]
     acquisition: new_production
     expected_model_space_reduction: very_high
-    compute_cost: moderate
-    decision_output: joint_detC_zero_test_over_N325_and_N425_at_the_frozen_chi2_4_threshold_18p4668269529_resolving_rank_two_coupling_versus_one_shared_projective_transport_lane
-  - id: DX_PROJECTIVE_BIRTH_EXIT_FLUX
-    attention_rank: 1
-    name: fresh_N130_birth_exit_by_complete_F3_character_child
-    status: branch_only_N65_exact_smoke_and_F3_archive_reuse_complete_fresh_N130_child_not_acquired
-    scientific_node_refs: [SN_PROJECTIVE_ESSENTIAL_BIRTH_FLUX, SN_FINITE_ABELIAN_TWIST_TOMOGRAPHY, SN_TWO_ACTIVATION_H4_REANALYSIS, SN_ACTIVATION_TRANSPORT_SHAPE]
-    observer_sector_refs: [topology_typed, rank_birth_local, direction_character, matching_odd]
-    source_refs: [SRC_P334_PROJECTIVE_ESSENTIAL_BIRTH, SRC_P334_PROJECTIVE_BIRTH_SMOKE, SRC_P334_CONDITIONAL_LINE_FLUX, SRC_P337_FINITE_ABELIAN_TWIST_TOMOGRAPHY, SRC_P337_P334_FLAT_TWIST_N65, SRC_DIGITAL_ALEXANDER_INTEGRAL_SATURATION, SRC_PR267_ACTIVATION_FRONTIER, SRC_PR267_P337_LITERATURE_TOMOGRAPHY]
-    dependency_group_refs: [p334-N65-projective-birth-20k, p337-finite-abelian-exact]
-    acquisition: small_pilot
-    expected_model_space_reduction: very_high
-    compute_cost: low
-    decision_output: one_fresh_N130_child_with_joint_birth1_exit2_by_complete_F3_projective_character_and_boundary_composition_covariance_separating_ordinary_H4_sorting_modular_reflection_odd_structure_and_N65_only_microscopic_effect
-  - id: DX_INTEGRAL_STABILIZER
-    attention_rank: 2
-    name: review_all_qL_integral_saturation_or_find_the_first_carrier_counterexample
-    status: branch_only_theorem_claim_pending_review
-    scientific_node_refs: [SN_DIGITAL_ALEXANDER_UNRESTRICTED_RATIONAL, SN_DIGITAL_ALEXANDER_INTEGRAL_SATURATION, SN_DIGITAL_ALEXANDER_INDEX13_FRONTIER]
-    observer_sector_refs: [topology_typed]
-    source_refs: [SRC_DIGITAL_ALEXANDER_UNRESTRICTED_RATIONAL, SRC_DIGITAL_ALEXANDER_INTEGRAL_SATURATION, SRC_DIGITAL_ALEXANDER_INDEX13_MAIN]
-    dependency_group_refs: []
-    acquisition: exact_construction
-    expected_model_space_reduction: very_high
-    compute_cost: low
-    decision_output: accepted_all_qL_carrier_and_coprime_prime_Smith_proof_or_the_first_exact_failure_localized_to_pruning_component_preservation_or_integral_descent
-  - id: DX_ASPECT_RATIO_Q4_SHAPE
-    attention_rank: 2
-    name: typed_or_second_function_aspect_ratio_projector_fingerprint
-    status: fresh_100k_three_scale_primary_complete_scale_gate_passed_conditional_E4_not_rejected
-    scientific_node_refs: [SN_P321_TOPOLOGICAL_PRG_PROJECTOR_BRIDGE, SN_P321_THERMAL_Q4_ASPECT_RATIO_SHAPE]
-    observer_sector_refs: [topology_typed, global_rank_projector, direction_character]
-    source_refs: [SRC_P321_TOPOLOGICAL_PRG_BRIDGE, SRC_P321_THERMAL_Q4_ASPECT_RATIO, SRC_P321_EQUAL_AREA_COVARIANCE_SMOKE, SRC_P321_FRESH_MULTISCALE_FREEZE, SRC_P321_FRESH_MULTISCALE_RESULT]
-    dependency_group_refs: [p321-published-TL-sequence, p321-equal-area-N144-smoke, p321-fresh-multiscale-acquired]
-    acquisition: small_pilot
-    expected_model_space_reduction: very_high
-    compute_cost: moderate
-    decision_output: same_geometry_resolved_homology_typed_seam_or_independent_second_modulus_function_projector_distinguishing_ordinary_E4_compatibility_from_defect_contact_Jordan_or_nontransparent_sector_response_without_more_P2_minus_P0_replication
-  - id: DX_HOMOLOGY_SCALING_WINDOW
-    attention_rank: 2
-    name: nearcritical_homology_activation_window_and_root_shift_rate
-    scientific_node_refs: [SN_HOMOLOGICAL_BALANCE_ROOT_CONVERGENCE]
-    observer_sector_refs: [topology_typed, global_unmarked]
-    source_refs: [SRC_HOMOLOGICAL_BALANCE_CONVERGENCE]
-    dependency_group_refs: []
-    acquisition: exact_construction
-    expected_model_space_reduction: very_high
-    compute_cost: low
-    decision_output: two_sided_activation_bounds_at_pc_plusminus_lambda_L_minus_three_quarters_and_rate_for_pL_minus_pc
-  - id: DX_MOTIF_JOINT_GRAM
-    attention_rank: 6
-    name: N130_crossfit_paired_motif_joint_Gram_control
-    scientific_node_refs: [SN_MICROCANONICAL_MOTIF_CONTROL, SN_ACTIVATION_TRANSPORT_SHAPE]
-    observer_sector_refs: [microcanonical_motif_control, rank_birth_local]
-    source_refs: [SRC_PAIRED_MOTIF_MICROCANONICAL_MAIN, SRC_PR267_ACTIVATION_FRONTIER]
-    dependency_group_refs: []
-    acquisition: small_pilot
-    expected_model_space_reduction: medium
-    compute_cost: low
-    decision_output: heldout_variance_ratio_for_K2_zero_area_deformation_and_face_rightangle_conditional_covariance_without_threshold_origin_claim
-  - id: DX_THRESHOLD_TAIL_HOLDOUT
-    attention_rank: 5
-    name: frozen_tail_flow_direction_fresh_lineage_amplitude
-    scientific_node_refs: [SN_THRESHOLD_TAIL_FLOW_FIBER]
-    observer_sector_refs: [global_unmarked]
-    source_refs: [SRC_THRESHOLD_TAIL_FLOW]
-    dependency_group_refs: [threshold-tail-flow-reuse]
-    acquisition: small_pilot
-    expected_model_space_reduction: high
-    compute_cost: low
-    decision_output: heldout_tail_amplitude_and_thermal_jet_alignment_without_refitting_direction_or_exponent
-  - id: DX_H4_H12_DEALIAS
-    attention_rank: 6
-    name: prospective_ordinary_H4_H12_opposite_alias_dealiasing
-    status: variance_pilot_complete_production_standby_not_acquired
-    scientific_node_refs: [SN_H4_H12_ORTHOGONAL_DESIGN, SN_H4_H12_VARIANCE_PILOT, SN_SPIN4_DIRECTION_ALIAS_GATE]
-    observer_sector_refs: [global_unmarked, matching_odd, direction_character]
-    source_refs: [SRC_H4_H12_ORTHOGONAL_DESIGN_MAIN, SRC_H4_H12_VARIANCE_PILOT, SRC_SPIN4_DIRECTION_ALIAS_MAIN]
-    dependency_group_refs: [issue55-h4-h12-variance-smoke, issue55-h4-h12-production-planned]
-    acquisition: new_production
-    expected_model_space_reduction: high
-    compute_cost: high
-    decision_output: frozen_order_H4_only_zero_then_covariance_aware_A12_contrast_in_the_two_row_df_zero_design_without_H12_only_or_general_harmonic_claim
-  - id: DX_GAUSSIAN_COMMUTING_SQUARE
-    attention_rank: 6
-    name: prospective_Gaussian_direct_two_step_H4_root_character_composition
-    status: source_only_power_gate_complete_target_production_deferred
-    scientific_node_refs: [SN_GAUSSIAN_COMMUTING_SQUARE_DESIGN]
-    observer_sector_refs: [global_unmarked, direction_character]
-    source_refs: [SRC_GAUSSIAN_COMMUTING_SQUARE_MAIN, SRC_P158_GAUSSIAN_ROOT_CHARACTER_POWER]
-    dependency_group_refs: [p158-source-only-power-reuse]
-    acquisition: small_pilot
-    expected_model_space_reduction: high
-    compute_cost: high
-    decision_output: target_only_50M_variance_runtime_gate_then_recost_or_stop_before_any_N650_N850_scientific_production_or_covering_CRN
-  - id: DX_Q4_SEAM_H4
-    attention_rank: 2
-    name: exact_Q4_singlet_charged_orientation_resolved_H4_seam
-    scientific_node_refs: [SN_GLOBAL_SPIN4_SELECTION_STAIRCASE, SN_Q4_SEAM_NORMALIZATION, SN_SPIN4_DIRECTION_ALIAS_GATE]
-    observer_sector_refs: [topology_typed, deck_charged, direction_character]
-    source_refs: [SRC_SMALL_WIDTH_SPECTROSCOPY, SRC_Q4_SEAM_PREFLIGHT, SRC_SPIN4_DIRECTION_ALIAS_MAIN]
-    dependency_group_refs: []
-    acquisition: exact_construction
-    expected_model_space_reduction: very_high
-    compute_cost: low
-    decision_output: necessary_calibrated_spatial_angular_rank_or_typed_edge_gate_reported_separately_from_six_raw_colour_seam_values_restoring_ratios_one_and_zero
-  - id: DX_RHO_C3_SECTOR
-    attention_rank: 4
-    name: complex_C3_rho_sector_response
-    scientific_node_refs: [SN_GLOBAL_CHARGED_SECTOR_TENSION, SN_MODULAR_C3_CHARACTER, SN_PRIMITIVE_C3_MULTI_CHARACTER]
-    observer_sector_refs: [topology_typed, deck_charged]
-    source_refs: [SRC_NORM5_CHARGED, SRC_MODULAR_C3_CHARACTER, SRC_PRIMITIVE_C3_RESPONSE]
-    dependency_group_refs: [rho-c3-n112-n60]
-    acquisition: small_pilot
-    expected_model_space_reduction: very_high
-    compute_cost: low
-    decision_output: stronger_N112_or_nondegenerate_geometry_covector_resolving_the_current_multi_character_residual_without_N60_only_replication
-  - id: DX_MIXED_CONTEXT_RECTANGLE
-    attention_rank: 3
-    name: common_source_readout_Gaussian_annulus_context_rectangle
-    scientific_node_refs: [SN_NORM4_EVEN_TRANSFER, SN_ANNULUS_TWO_STATE_RECURRENCE, SN_ANNULUS_SECTOR_SPECTRUM, SN_TWO_CLOCK_MIXED_ORDER_GATE, SN_PATH_FILTRATION_MEMORY, SN_STATIC_CONTEXT_INTERACTION, SN_CONTEXT_RECTANGLE_RESULT]
-    observer_sector_refs: [topology_typed, local_pivotal, matching_odd]
-    source_refs: [SRC_NORM4_REVEAL_PR273, SRC_NORM4_EVEN_MODE_PR277, SRC_CONTEXT_HANKEL, SRC_P200_PATH_FILTRATION, SRC_P200_STATIC_CONTEXT_MAP, SRC_ANNULUS_RECURRENCE, SRC_ANNULUS_SECTOR_SPECTRUM, SRC_TWO_CLOCK_GENERATOR_GATE, SRC_CONTEXT_RECTANGLE_RESULT]
-    dependency_group_refs: [norm4-generation4-pr277, norm5-multiradius-pr247, annulus-spectrum-3123b73, gaussian-annulus-context-rectangle]
-    acquisition: small_pilot
-    expected_model_space_reduction: very_high
-    compute_cost: moderate
-    decision_output: maximin_AU_UA_or_intermediate_state_readout_after_same_semantics_rectangle_found_no_context_enrichment
-  - id: DX_CROSS_MICRO_TOP_FIELD
-    attention_rank: 6
-    name: gauge_invariant_triangular_square_top_field_control
-    scientific_node_refs: [SN_TRIANGULAR_LOGPAIR_CONTROL, SN_CROSS_MICROSCOPIC_GAUGE_CONTROL]
-    observer_sector_refs: [cross_microscopic, bulk_energy_logpair]
-    source_refs: [SRC_TRIANGULAR_LOGPAIR_PR246, SRC_TRIANGULAR_E6, SRC_CROSS_MICROSCOPIC_INVARIANT]
-    dependency_group_refs: []
-    acquisition: small_pilot
-    expected_model_space_reduction: high
-    compute_cost: moderate
-    decision_output: normalized_cross_microscopic_H4_E6_top_partner_response
-  - id: DX_Q_TANGENT_INTERFACE
-    attention_rank: 5
-    name: rank_four_operator_mixing_and_measure_projector_field_Q_tangent_control
-    scientific_node_refs: [SN_OPERATOR_MIXING_RANK4, SN_GLOBAL_SPIN4_SELECTION_STAIRCASE, SN_Q1_SPIN4_VELOCITY_ORACLE, SN_Q_TANGENT_THREE_PART_INTERFACE, SN_Q_LIFT_SECTION_DEPENDENCE, SN_BOUNDARY_Q_TANGENT_CONTROL, SN_THERMAL_Q4_WARD, SN_Q4_SEAM_NORMALIZATION]
-    observer_sector_refs: [boundary, topology_typed]
-    source_refs: [SRC_OPERATOR_MIXING_MAIN, SRC_Q4_SEAM_PREFLIGHT, SRC_Q_VELOCITY_SPIN4_MAIN, SRC_EXACT_FK_Q_SCORE, SRC_CONFLUENT_PROJECTOR, SRC_VJS_FIELD_DERIVATIVE, SRC_BOUNDARY_Q_TANGENT, SRC_BOUNDARY_Q_LATTICE, SRC_ARGUIN_ALL_ORDER_QJET, SRC_P333_Q_LIFT_COVARIANCE, SRC_P333_GENERIC_Q_LIFT_DESCRIPTOR]
-    dependency_group_refs: [p333-shared-phaseA-exact]
-    acquisition: small_pilot
-    expected_model_space_reduction: high
-    compute_cost: low
-    decision_output: one_complete_lift_sector_normalization_Qv_path_insertion_projector_field_descriptor_plus_bottom_field_projection_and_scale_or_modulus_log_slope_positive_control_after_forced_Pascal_jet_subtraction
-  - id: DX_RATIONAL_WIDTH_22_24_REVEAL
-    attention_rank: 8
-    name: Issue27_rational_width_22_24_prereveal_score
-    status: open_PR_prereveal_protocol_target_artifact_absent
-    scientific_node_refs: []
-    observer_sector_refs: [global_unmarked]
-    source_refs: [SRC_RATIONAL_STAGE_B_QUARANTINE_MAIN]
-    dependency_group_refs: [rational-width-stageB-frozen-sequence]
-    acquisition: existing_data_reuse
-    expected_model_space_reduction: medium
-    compute_cost: low
-    decision_output: when_the_primary_width22_24_source_arrives_bind_its_artifact_then_score_all_frozen_metrics_once_before_any_refit_or_post_cutoff_model_change
-  - id: DX_Z5_CHARGED_FUSION
-    attention_rank: 3
-    name: normalized_separation_aware_Z5_linear_cubic_bridge
-    status: branch_only_one_million_production_complete_signal_limited_normalized_separation_bridge_not_acquired
-    scientific_node_refs: [SN_GLOBAL_CHARGED_SECTOR_TENSION, SN_Z5_CHARGED_CUBIC_CLOSURE]
-    observer_sector_refs: [deck_charged]
-    source_refs: [SRC_NORM5_CHARGED, SRC_Z5_CHARGED_FUSION, SRC_Z5_CUBIC_STREAM]
-    dependency_group_refs: [z5-cubic-smoke, z5-cubic-production-acquired, z5-linear-charged-200k]
-    acquisition: new_production
-    expected_model_space_reduction: high
-    compute_cost: moderate
-    decision_output: jointly_covariant_nonzero_gauge_normalized_I113_I122_support_at_two_separations_then_cross_separation_closure_and_same_stream_linear_to_cubic_phase_transport_distinguishing_one_charged_eigenfield_from_mixture_or_weak_overlap
-  - id: DX_CONNECTIVITY_RADICAL
-    attention_rank: 7
-    name: connectivity_defect_radical_extension
-    scientific_node_refs: [SN_RELATIVE_SOURCE_SEMISIMPLE_CLOSURE, SN_CONNECTIVITY_RADICAL_HYPOTHESIS, SN_TYPED_SITE_SURFACE_POLYNOMIAL, SN_TERMINAL_PARTITION_CANONICALIZER]
-    observer_sector_refs: [topology_typed, matching_odd]
-    source_refs: [SRC_RELATIVE_SOURCE_RANK3, SRC_RELATIVE_SOURCE_HH2, SRC_SURFACE_POLYNOMIAL_CLASSIFICATION, SRC_TERMINAL_PARTITION_CANONICAL_MAIN]
-    dependency_group_refs: []
-    acquisition: exact_construction
-    expected_model_space_reduction: high
-    compute_cost: low
-    decision_output: typed_site_quotient_recurrence_then_first_nonsemisimple_connectivity_or_defect_generator_beyond_the_rigid_scalar_source
-  - id: DX_REAL_GADGET_CERTIFICATE
-    attention_rank: 8
-    name: real_end_to_end_gadget_comparison_certificate
-    scientific_node_refs: [SN_SYNTHETIC_GADGET_COMPARISON_PROTOCOL, SN_EXACT_SITE_THRESHOLD_ROUTE_OBSTRUCTION]
-    observer_sector_refs: [boundary, topology_typed]
-    source_refs: [SRC_SYNTHETIC_GADGET_COMPARISON_MAIN, SRC_EXACT_SITE_THRESHOLD_MAP_MAIN]
-    dependency_group_refs: []
-    acquisition: exact_construction
-    expected_model_space_reduction: medium
-    compute_cost: low
-    decision_output: one_reproduced_published_baseline_with_actual_artifact_binding_and_independently_certified_probability_interval_then_one_real_candidate_comparison
+    compute_cost: none
+    completed_result: joint_chi2_4_4p278970457_p_0p369565835_below_18p4668269529
+    decision_output: completed_current_Ofar_Osep4_by_JDperp_JS_basis_does_not_reject_one_common_projective_lane_without_proving_one_source
 
 attention_order:
   principle: priority_is_attention_not_permission
   parallel: true
   decision_experiment_refs:
-    - DX_TWO_OBSERVER_COUPLING
     - DX_PROJECTIVE_BIRTH_EXIT_FLUX
-    - DX_Q4_SEAM_H4
-    - DX_ASPECT_RATIO_Q4_SHAPE
     - DX_Z5_CHARGED_FUSION
-    - DX_EXTERNAL_EULER_GRAM
-    - DX_RANK_BIRTH_GLOBAL_BRIDGE
+    - DX_INDEPENDENT_SOURCE_RANK_ESCAPE
+    - DX_ASPECT_RATIO_Q4_SHAPE
+    - DX_Q4_SEAM_H4
+    - DX_MIXED_CONTEXT_RECTANGLE
+    - DX_Q_TANGENT_INTERFACE
+    - DX_CROSS_MICRO_TOP_FIELD
+    - DX_CONNECTIVITY_RADICAL
     - DX_INTEGRAL_STABILIZER
     - DX_HOMOLOGY_SCALING_WINDOW
     - DX_RHO_C3_SECTOR
-    - DX_MIXED_CONTEXT_RECTANGLE
     - DX_THRESHOLD_TAIL_HOLDOUT
     - DX_MOTIF_JOINT_GRAM
     - DX_H4_H12_DEALIAS
     - DX_GAUSSIAN_COMMUTING_SQUARE
-    - DX_Q_TANGENT_INTERFACE
-    - DX_CROSS_MICRO_TOP_FIELD
-    - DX_CONNECTIVITY_RADICAL
     - DX_REAL_GADGET_CERTIFICATE
     - DX_RATIONAL_WIDTH_22_24_REVEAL
+    - DX_RANK_BIRTH_GLOBAL_BRIDGE
+    - DX_EXTERNAL_EULER_GRAM
+    - DX_TWO_OBSERVER_COUPLING
 
 research_tracks:
   - id: A

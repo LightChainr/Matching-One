@@ -235,12 +235,12 @@ derivative coordinate, and parity-tower units. It must preserve the exact mode
 0/mode 1 identities, aligned jackknife covariance, and the guard that those
 views reuse existing evidence rather than creating independent blocks.
 
-The axis-pair annihilator score path is migration-required as one operational
-unit. The base scorer reconstructs the cross matching function from
-`K_minus/K_plus` rank histograms, solves implicit ordinary and annihilator
-roots, and compares an `L^(13/4)`-rescaled adjacent-size combination. The
-stable entrypoint corrects batch-reader ordering and delegates to that base
-without adding a semantic gate. A future migration must type both the implicit
-root-location quantity and the ordered adjacent-size relationship, while
-preserving the stable reader contract; this audit does not change its frozen
-numerics or reinterpret existing score artifacts.
+The axis-pair annihilator base and stable-reader paths are now covered frozen
+kernels, not migration-required adoption paths. Their shared semantic gate
+types the `cross` matching-odd topology value, adjacent upper/lower roles,
+orientation order, angular normalization and stable batch-reader contract.
+The implicit ordinary and annihilator roots, the `L^(13/4)` adjacent-size
+relationship and the candidate `q -> w` interpretation remain bespoke
+response/model metadata. They are a second-layer contract gap, not evidence
+that these two paths remain untyped in the current adoption inventory; the
+wrappers change neither frozen numerics nor existing score interpretation.
