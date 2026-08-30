@@ -1,0 +1,34 @@
+{
+  "schema": "matching-one/main-ruleset-contract/v1",
+  "issue": 52,
+  "status": "desired_local_contract_only",
+  "target_branch": "main",
+  "workflow_path": ".github/workflows/ci.yml",
+  "workflow_name": "ci",
+  "required_status_checks": [
+    "Python 3.9",
+    "Python 3.11",
+    "Python 3.13",
+    "C++17 build and self-tests"
+  ],
+  "workflow_jobs": {
+    "python_job_id": "python",
+    "python_name_template": "Python ${{ matrix.python-version }}",
+    "python_versions": ["3.9", "3.11", "3.13"],
+    "cxx_job_id": "cxx",
+    "cxx_name": "C++17 build and self-tests"
+  },
+  "desired_policy": {
+    "require_pull_request": true,
+    "required_approving_review_count": 0,
+    "block_force_pushes": true,
+    "block_deletions": true,
+    "require_linear_history": false,
+    "require_external_approvals": false
+  },
+  "hosting_side_state": "not_checked_or_modified",
+  "claim_boundary": {
+    "conclusion": "The desired main policy and exact CI check names are synchronized with the checked-in workflow.",
+    "unresolved": "This local contract neither enables nor verifies a GitHub ruleset; issue #52 remains open until the hosting-side setting is applied."
+  }
+}
