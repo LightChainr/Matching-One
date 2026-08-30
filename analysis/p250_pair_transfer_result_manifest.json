@@ -1,0 +1,62 @@
+{
+  "schema": "matching-one/p250-pair-transfer-result-manifest/v1",
+  "issue": 250,
+  "status": "fresh_pair_transfer_revealed",
+  "branch": "analysis/p250-projective-leg-transfer-spectrum-20260830",
+  "freeze_commit": "f35a0c0cd8de1656efa064b03a4aeb21d6dae41e",
+  "protocol_commit": "47d086f35f71ec70e66d4bce0610d72de0b447bf",
+  "execution": {
+    "host": "Huawei-CodeBuddy-XPk2PZ",
+    "remote_directory": "/workspace/p250-projective-leg-pair-transfer-40k",
+    "started_utc": "2026-08-30T06:48:45Z",
+    "completed_utc": "2026-08-30T06:49:08Z",
+    "elapsed_seconds": 22,
+    "samples": 40000,
+    "batches": 100,
+    "workers": 16,
+    "seed": 25025033720260931,
+    "replica_first": 0,
+    "replica_last_exclusive": 40000
+  },
+  "hashes": {
+    "response_40k.json": "4af91032bdd4c489a29511cd4305fb9c9793519ecc7aa5f970fb30dfd2d66c6b",
+    "response_40k.batches.csv": "6a5ab14f7a26accdd1329d3ee7704e84400685ab6634738bc9065b2487e1da4b",
+    "exact_gate.json": "c8fc0ac8aa9b070bd89860f1ab559fd05363b02f2b4ceaab41ee5e8d63e0b6dc",
+    "score_40k.json": "c346599ac3a8911b53d10b6000239efd239e9643e4ed1681638294a224236cd9",
+    "score_40k.md": "b519bd202f54d7edc0efd40319d9f49b1a94e3494ae1e68b7e56e86e4abb7f2a"
+  },
+  "primary_gate": {
+    "minimum_d1_d3_real_abs_z": 7.99531697955373,
+    "threshold": 5.0,
+    "passed": true
+  },
+  "frozen_scores": {
+    "single_exponential": {
+      "chi_square": 19.12449532472438,
+      "degrees_of_freedom": 8,
+      "survival_p": 0.014207838794754492
+    },
+    "within_channel_power": {
+      "chi_square": 9.2971924392628,
+      "degrees_of_freedom": 8,
+      "survival_p": 0.31784884739460834
+    },
+    "deck_phase_nonzero": {
+      "chi_square": 5.845807016759123,
+      "degrees_of_freedom": 8,
+      "survival_p": 0.6644989496843605
+    },
+    "deck_phase_constant_step": {
+      "chi_square": 3.6897000536159053,
+      "degrees_of_freedom": 4,
+      "survival_p": 0.449625765124243
+    }
+  },
+  "decision": "resolved charged propagation; d1-d3 favor a power-like local shape over one constant transfer eigenvalue; no resolved deck phase",
+  "claim_boundary": [
+    "The power score tests equality of adjacent effective powers within each channel, not one common universal exponent across channels.",
+    "The exponential p-value is tension with a one-eigenvalue local shape, not a no-propagation result.",
+    "Separations 4-6 are periodic-image diagnostics on the Gaussian norm-65 parent and are not a monotone infinite-volume tail.",
+    "No cubic or OPE phase was computed."
+  ]
+}
