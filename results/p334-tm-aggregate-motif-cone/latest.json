@@ -1,0 +1,340 @@
+{
+  "bounded_audit": {
+    "Alexander_reflected_margin_equal": 18,
+    "Alexander_reflected_margin_unequal": 474,
+    "Alexander_reflected_row_pairs": 492,
+    "corrected_Rayleigh_pass": 984,
+    "displacement_order_corrected_fail": 220,
+    "displacement_order_corrected_pass": 3110,
+    "displacement_order_tables": 3330,
+    "four_motif_identity_pass": 984,
+    "line_layer_rows": 984,
+    "ordinary_Rayleigh_fail": 16,
+    "ordinary_Rayleigh_pass": 968,
+    "relative_pair_corrected_fail": 3900,
+    "relative_pair_corrected_pass": 48012,
+    "relative_pair_tables": 51912,
+    "signed_kernel_simple_contrast_negative_rows": 802,
+    "synergy_only_fail": 68,
+    "synergy_only_pass": 916
+  },
+  "conditional_topology_theorem": {
+    "proof_target": "construct a topology-respecting injection from coexit x flat face pairs into mixed x mixed or synergy x non-coexit face pairs",
+    "single_missing_motif_inequality": "4 D F <= M^2 + 4 Y (T-D)",
+    "statement": "If every fixed-line two-mark table satisfies the aggregate curvature-corrected Rayleigh inequality after summing all relative displacements, then aggregate TM holds; with translation regularity this also supplies the explicit one-mark Hall injection and every proper cut."
+  },
+  "curvature_corrected_Rayleigh_theorem": {
+    "equivalent_inequality": "4 D F <= M^2 + 4 Y (T-D)",
+    "integer_identity": "M^2 + 4 Y (T-D) - 4 D F = 4 (m-1) TM_margin",
+    "interpretation": "hard coexit-times-flat four-face tokens must inject into mixed-times-mixed tokens or a synergy face paired with any non-coexit face",
+    "status": "exact equivalence; this is the unique remaining local motif inequality"
+  },
+  "failed_stronger_routes": {
+    "Alexander_primal_matching_identity": {
+      "first_margin_mismatch": {
+        "N": 6,
+        "carrier": "primal",
+        "line": [
+          1,
+          0
+        ],
+        "lower_layer": 2,
+        "matrix": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "primal_margin": 144,
+        "reflected_matching_layer": 3,
+        "reflected_matching_margin": 288
+      },
+      "reason": "complement reverses an exit face into a birth face rather than the reflected exit motif table",
+      "status": "false"
+    },
+    "Fourier_sum_of_squares": {
+      "first_failure": {
+        "N": 6,
+        "carrier": "primal",
+        "contrast_vector": [
+          0,
+          1
+        ],
+        "line": [
+          1,
+          0
+        ],
+        "lower_layer": 2,
+        "matrix": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "quadratic_form": -48
+      },
+      "reason": "the signed supply-minus-demand kernel has an exact negative e_v-e_w quadratic contrast",
+      "status": "false"
+    },
+    "quotient_order_orbit_pairing": {
+      "first_failure": {
+        "N": 6,
+        "carrier": "matching",
+        "line": [
+          1,
+          0
+        ],
+        "lower_layer": 2,
+        "matrix": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "motifs": {
+          "D": 6,
+          "F": 6,
+          "M": 0,
+          "T": 12,
+          "Y": 0
+        },
+        "polynomial": -144,
+        "quotient_order": 2
+      },
+      "status": "false"
+    },
+    "relative_displacement_locality": {
+      "first_failure": {
+        "N": 6,
+        "carrier": "matching",
+        "line": [
+          1,
+          0
+        ],
+        "lower_layer": 2,
+        "matrix": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "motifs": {
+          "D": 2,
+          "F": 2,
+          "T": 4
+        },
+        "pair": [
+          0,
+          3
+        ],
+        "polynomial": -16,
+        "quotient_order": 2
+      },
+      "status": "false"
+    }
+  },
+  "mechanism_independence": {
+    "Pareto_frontier": [
+      {
+        "mixed_square_over_hard": "75/208",
+        "rows": 4,
+        "synergy_over_hard": "180/13",
+        "total_cover_over_hard": "2955/208"
+      },
+      {
+        "mixed_square_over_hard": "16/27",
+        "rows": 4,
+        "synergy_over_hard": "4688/441",
+        "total_cover_over_hard": "14848/1323"
+      },
+      {
+        "mixed_square_over_hard": "128/173",
+        "rows": 4,
+        "synergy_over_hard": "1385/173",
+        "total_cover_over_hard": "1513/173"
+      },
+      {
+        "mixed_square_over_hard": "165/164",
+        "rows": 6,
+        "synergy_over_hard": "1245/451",
+        "total_cover_over_hard": "6795/1804"
+      },
+      {
+        "mixed_square_over_hard": "363/280",
+        "rows": 2,
+        "synergy_over_hard": "309/280",
+        "total_cover_over_hard": "12/5"
+      },
+      {
+        "mixed_square_over_hard": "841/540",
+        "rows": 4,
+        "synergy_over_hard": "119/108",
+        "total_cover_over_hard": "359/135"
+      },
+      {
+        "mixed_square_over_hard": "28/17",
+        "rows": 6,
+        "synergy_over_hard": "243/272",
+        "total_cover_over_hard": "691/272"
+      },
+      {
+        "mixed_square_over_hard": "27/16",
+        "rows": 6,
+        "synergy_over_hard": "23/48",
+        "total_cover_over_hard": "13/6"
+      },
+      {
+        "mixed_square_over_hard": "32/17",
+        "rows": 8,
+        "synergy_over_hard": "0",
+        "total_cover_over_hard": "32/17"
+      }
+    ],
+    "exact_convex_lower_hull": [
+      {
+        "mixed_square_over_hard": "75/208",
+        "synergy_over_hard": "180/13",
+        "total_cover_over_hard": "2955/208"
+      },
+      {
+        "mixed_square_over_hard": "165/164",
+        "synergy_over_hard": "1245/451",
+        "total_cover_over_hard": "6795/1804"
+      },
+      {
+        "mixed_square_over_hard": "363/280",
+        "synergy_over_hard": "309/280",
+        "total_cover_over_hard": "12/5"
+      },
+      {
+        "mixed_square_over_hard": "32/17",
+        "synergy_over_hard": "0",
+        "total_cover_over_hard": "32/17"
+      }
+    ],
+    "minimum_corrected_cover_over_hard": "32/17",
+    "minimum_row": {
+      "N": 12,
+      "TM_margin": 31104,
+      "carrier": "matching",
+      "hard_coexit_flat": 705024,
+      "line": [
+        0,
+        1
+      ],
+      "lower_layer": 6,
+      "matrix": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "mixed_square_cover": 1327104,
+      "motifs": {
+        "D_coexit": 1224,
+        "F_flat": 144,
+        "M_mixed": 1152,
+        "T": 2520,
+        "Y_synergy": 0
+      },
+      "synergy_cover": 0
+    },
+    "ordinary_Rayleigh_without_synergy": {
+      "first_failure": {
+        "N": 10,
+        "TM_margin": 1082000,
+        "carrier": "matching",
+        "hard_coexit_flat": 2116800,
+        "line": [
+          1,
+          0
+        ],
+        "lower_layer": 4,
+        "matrix": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "mixed_square_cover": 1254400,
+        "motifs": {
+          "D_coexit": 140,
+          "F_flat": 3780,
+          "M_mixed": 1120,
+          "T": 6000,
+          "Y_synergy": 960
+        },
+        "synergy_cover": 22502400
+      },
+      "status": "false"
+    },
+    "synergy_without_mixed_square": {
+      "first_failure": {
+        "N": 9,
+        "TM_margin": 7776,
+        "carrier": "matching",
+        "hard_coexit_flat": 62208,
+        "line": [
+          0,
+          1
+        ],
+        "lower_layer": 4,
+        "matrix": [
+          [
+            3,
+            0
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "mixed_square_cover": 186624,
+        "motifs": {
+          "D_coexit": 216,
+          "F_flat": 72,
+          "M_mixed": 432,
+          "T": 720,
+          "Y_synergy": 0
+        },
+        "synergy_cover": 0
+      },
+      "status": "false"
+    }
+  },
+  "random_two_mark_experiment": {
+    "motifs": {
+      "D": "both single insertions exit to rank two",
+      "F": "both singles and the double insertion stay on ell",
+      "M": "exactly one single insertion exits",
+      "Y": "both singles stay on ell but the double insertion exits"
+    },
+    "probability_form": "with p=P(a single mark exits), aggregate TM is P(D) <= p^2 + P(Y)",
+    "sampling": "choose S uniformly from F_k(ell), then an ordered pair of distinct absent sites"
+  },
+  "schema_version": "p334-tm-aggregate-motif-cone-v1"
+}
