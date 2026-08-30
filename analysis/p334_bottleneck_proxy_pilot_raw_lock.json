@@ -1,0 +1,39 @@
+{
+  "schema": "matching-one/p334-bottleneck-proxy-pilot-raw-lock/v1",
+  "status": "raw_locked_before_single_frozen_score",
+  "freeze_commit": "54e84ef45b241ac013c656c040cd609f2462407c",
+  "runner_commit": "5ff7a97693b2f828bda9dc8a18c14d79df041d14",
+  "scorer_commit": "2ee9859b7869be37e9f6fea8411a4337702c5f60",
+  "runner_source_sha256": "732d99ded8ea1ad48d2b5d56c01a2a59ce8b9087d25301b290d7107d1118a1d9",
+  "freeze_sha256": "0f6e453dabe4b2faddfdd3319dfcc834f5e5baafdd3a8dcbe552c1f74707027d",
+  "scorer_sha256": "e2169d603d441407df5a440f5ddf35de644cf70ab73578cb65232e7da5b54f8c",
+  "runs": {
+    "N325": {
+      "host_devenv_id": "f415a4bcbd9a438b85f5f29e4a507ea4",
+      "csv": "results/server-20260830/P334-bottleneck-proxy-pilot/raw/N325/N325_20k.geometry_pilot.csv",
+      "csv_sha256": "fc62329def2c66a7f2f12fb2299a8aa1f4cdf78fa7f3ccea2dd93c56e6254e57",
+      "metadata_sha256": "67e338ecdc2401e2cdab73628c96a1c75467a74df9a74342ec8ea37b487ce857",
+      "rows_excluding_header": 18246,
+      "first_rows": 9183,
+      "second_rows": 9063,
+      "first_next_exits": 599,
+      "second_next_exits": 609,
+      "batches": 20,
+      "exit_code": 0
+    },
+    "N425": {
+      "host_devenv_id": "f550f3cb1f774374b6842aa648fda796",
+      "csv": "results/server-20260830/P334-bottleneck-proxy-pilot/raw/N425/N425_20k.geometry_pilot.csv",
+      "csv_sha256": "c071a223eb1cce4cf7d646a1bebf5e1569e1b17bfb6a24f1b3e51feffe1e0e02",
+      "metadata_sha256": "30d5aaa2c469386672af23cc157baa2a8c020576aedb52ecc3d0df6f3b92afb4",
+      "rows_excluding_header": 18066,
+      "first_rows": 9046,
+      "second_rows": 9020,
+      "first_next_exits": 471,
+      "second_next_exits": 500,
+      "batches": 20,
+      "exit_code": 0
+    }
+  },
+  "reveal_boundary": "Before this lock only exit/completion, metadata, exact provenance, row counts, batch counts, and next-exit support gates were read. No proxy distribution, regression, attenuation, or model score was inspected."
+}
