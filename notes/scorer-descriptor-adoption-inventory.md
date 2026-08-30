@@ -1,18 +1,18 @@
 # Scorer descriptor-adoption inventory
 
 At main commit `11ba86892fabd3349e322d198f23ef24d8cbe828`, the exact
-`scripts/*score*.py` corpus contains 36 files. Python-AST inspection finds five
+`scripts/*score*.py` corpus contains 37 files. Python-AST inspection finds six
 direct typed entrypoints importing both `ObservableDescriptor` and
-`map_observable` from `wrapping_channels`. Four frozen kernels are covered by
+`map_observable` from `wrapping_channels`. Five frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Twenty-six paths are confirmed channel-bearing and
+a descriptor is not applicable. Twenty-five paths are confirmed channel-bearing and
 require typed migrations: `score_angular_root_amplitude.py`,
 `score_axis_pair_annihilator.py`, its stable entrypoint,
 `score_c4_tangent_orthogonal_holdout.py`,
 `score_intrinsic_quantile_center_n145_n290.py`,
 `score_issue43_full_curve.py`, its locked wrapper,
-`score_issue43_secondary.py`, `score_issue50_n290.py`,
+`score_issue43_secondary.py`,
 `score_matching_odd_synthesis.py`, `score_norm4_production.py`,
 `score_norm4_thermal_jet.py`, `score_norm5_thermal_jet.py`,
 `score_p159_pell_hex_filter.py`,
@@ -37,7 +37,7 @@ wrapped kernel disappears.
 but no current scorer has that status. Static membership alone would not prove
 a semantic bug, data-provenance failure, or need for migration; any future
 corpus addition must still be reviewed before modification. Issue #146 remains
-open because inventory classification is not the same as implementing the 27
+open because inventory classification is not the same as implementing the 25
 required typed migrations.
 
 The `kappa3_half_score.py` exception is narrow. It defines only exact Bernoulli
@@ -100,12 +100,13 @@ migration must represent the root-gap quantity, genealogy, stored-versus-lineage
 orientation order, sign map, and cross-size relation. It must preserve both the
 full-covariance score and the diagonal-only diagnostic.
 
-`score_issue50_n290.py` is migration-required. It computes the
-`either/matching_function` contrast between ordered Gaussian lineages
-`(13,11)` and `(17,1)` at fixed p, with channel, sector, lineage order, and
-subtraction sign encoded as strings and constants. A typed migration must bind
-the exact observable and ordered lineage map while preserving the prospective
-target, run provenance, counter-range validation, and sampling-error score.
+`score_issue50_n290.py` is now a covered frozen kernel. Its typed entrypoint
+validates an exact identity map for the fixed-p `either/matching-odd`
+first-minus-second orientation contrast before scoring, and records both
+descriptors plus the applied transform. The semantic gate freezes N=290 and
+ordered Gaussian lineages `(13,11)` then `(17,1)`. The prospective target, run
+provenance, counter-range validation, sampling-error calculation, zero-control
+evidence reuse, and numerical outputs remain unchanged.
 
 `score_p231_vacuum_kdv_sector.py` is migration-required. It concatenates
 ordered `C_nontrivial_real`, `Q_reflection_null`, and `S_scalar` coordinates
