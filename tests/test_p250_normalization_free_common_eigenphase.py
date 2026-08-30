@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import cmath
 import json
+import math
 from pathlib import Path
 import sys
 import unittest
@@ -63,6 +64,18 @@ class P250NormalizedCommonEigenphaseTests(unittest.TestCase):
             ["cross_re", "cross_im", "norm_difference"],
         )
         self.assertEqual(len(result["primary_common_unit_eigenphase"]["contrast_full_shared_batch_covariance_3x3"]), 3)
+        self.assertAlmostEqual(
+            result["primary_common_unit_eigenphase"]["survival_p"],
+            0.3717090718193832,
+        )
+        self.assertEqual(
+            result["primary_common_unit_eigenphase"]["decision"],
+            "common_unit_eigenphase_survives",
+        )
+        self.assertGreater(
+            result["descriptive_eigenphase"]["common_projection"]["phase_standard_error"],
+            math.pi,
+        )
 
 
 if __name__ == "__main__":

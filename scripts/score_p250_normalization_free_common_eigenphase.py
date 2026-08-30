@@ -268,6 +268,7 @@ def render(result: Mapping[str, object]) -> str:
         f"- common q projection: `{common['complex_re_im']}`",
         f"- amplitude: `{common['amplitude']:.6g} +/- {common['amplitude_standard_error']:.3g}`",
         f"- phase: `{common['phase_radians']:.6g} +/- {common['phase_standard_error']:.3g}` radians", "",
+        "The common-unit-eigenphase completion survives, but the projected q amplitude and phase are not resolved.  Survival is therefore not a positive phase identification.", "",
         "## Boundary", "",
         *[f"- {line}" for line in result["claim_boundary"]], "",
     ]

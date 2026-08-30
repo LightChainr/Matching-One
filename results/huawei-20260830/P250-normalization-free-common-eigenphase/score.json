@@ -1,0 +1,236 @@
+{
+  "schema": "matching-one/p250-normalization-free-common-eigenphase-score/v1",
+  "status": "retrospective_normalization_free_reveal",
+  "manifest": "analysis/p250_normalization_free_common_eigenphase_20260830.json",
+  "manifest_sha256": "7e98395745d77ffc1bdfc22844fc65988abf75c2867f305db75225d2c09e8afb",
+  "operator": "root-marked projective-leg Z5 insertion, not ordinary A_top",
+  "separation": 1,
+  "input_gates": {
+    "samples": 10000,
+    "batches": 50,
+    "minimum_pair_abs_z": 15.396799794945,
+    "cubic_support_zero_score": {
+      "chi_square": 24.918425997195936,
+      "degrees_of_freedom": 8,
+      "survival_p": 0.001604811278057845
+    },
+    "DFT_conjugacy_max_abs": 1.4217791915866692e-15
+  },
+  "normalization": {
+    "Omega113_h": "C113_h / (G1_h*sqrt(G2_h))",
+    "Omega122_h": "C122_h / (sqrt(G1_h)*G2_h)",
+    "positive_denominator_gate": "G1_h>0 and G2_h>0 in full and every delete-one",
+    "scope": "cancels independent positive field-amplitude normalizations; complex deck phase is retained in the frozen transported basis"
+  },
+  "omega_order": [
+    "Omega113_plus_re",
+    "Omega113_plus_im",
+    "Omega113_minus_re",
+    "Omega113_minus_im",
+    "Omega122_plus_re",
+    "Omega122_plus_im",
+    "Omega122_minus_re",
+    "Omega122_minus_im"
+  ],
+  "omega_point": [
+    0.13288775576244222,
+    -1.2083943518473759,
+    -0.12135700246023533,
+    0.005104456377450601,
+    -0.2347844504399132,
+    -0.034816049542986865,
+    -0.22335049420003222,
+    -0.3552373149275131
+  ],
+  "omega_full_shared_batch_covariance_8x8": [
+    [
+      0.158472618762191,
+      -0.00945538277230747,
+      0.04452318521123661,
+      -0.008891624169492737,
+      -0.00042017240571179496,
+      0.006880470905154729,
+      0.0026902830692191095,
+      -0.01833501551619978
+    ],
+    [
+      -0.00945538277230747,
+      0.1279596949407959,
+      -0.038168290853541204,
+      0.07247855451287902,
+      0.0005806309095167138,
+      0.02129034494019204,
+      -0.01580294003908159,
+      0.02482482310870898
+    ],
+    [
+      0.04452318521123661,
+      -0.038168290853541204,
+      0.12009196234667505,
+      0.0030310780395973536,
+      -0.008991614690993743,
+      0.01043864448062299,
+      0.004439679744805172,
+      -0.0036226192434747157
+    ],
+    [
+      -0.008891624169492737,
+      0.07247855451287902,
+      0.0030310780395973536,
+      0.15075079941696107,
+      0.006554932944930334,
+      0.021246161948569695,
+      -0.009382316865519024,
+      -0.0012826049113791639
+    ],
+    [
+      -0.00042017240571179496,
+      0.0005806309095167138,
+      -0.008991614690993743,
+      0.006554932944930334,
+      0.15094473071542236,
+      0.013523334356195318,
+      0.07637751686873107,
+      0.0032973500023317525
+    ],
+    [
+      0.006880470905154729,
+      0.02129034494019204,
+      0.01043864448062299,
+      0.021246161948569695,
+      0.013523334356195318,
+      0.11607467406035402,
+      -0.026899613365114542,
+      0.07159848985866434
+    ],
+    [
+      0.0026902830692191095,
+      -0.01580294003908159,
+      0.004439679744805172,
+      -0.009382316865519024,
+      0.07637751686873107,
+      -0.026899613365114542,
+      0.16055458183300372,
+      -0.035806380147272804
+    ],
+    [
+      -0.01833501551619978,
+      0.02482482310870898,
+      -0.0036226192434747157,
+      -0.0012826049113791639,
+      0.0032973500023317525,
+      0.07159848985866434,
+      -0.035806380147272804,
+      0.14411304247021728
+    ]
+  ],
+  "primary_common_unit_eigenphase": {
+    "null": "one common unit-modulus q exists with (A_plus,B_plus)=q*(A_minus,B_minus)",
+    "contrast_order": [
+      "cross_re",
+      "cross_im",
+      "norm_difference"
+    ],
+    "contrast_point": [
+      -0.48761776498229786,
+      0.21966206170517624,
+      1.343379389985019
+    ],
+    "contrast_full_shared_batch_covariance_3x3": [
+      [
+        0.25918200253226603,
+        0.0588709517286154,
+        -0.06775650261594804
+      ],
+      [
+        0.0588709517286154,
+        0.2820557902210034,
+        -0.045261681239148754
+      ],
+      [
+        -0.06775650261594804,
+        -0.045261681239148754,
+        0.8887455080305483
+      ]
+    ],
+    "chi_square": 3.1320586815013316,
+    "degrees_of_freedom": 3,
+    "survival_p": 0.3717090718193832,
+    "decision_alpha": 0.01,
+    "decision": "common_unit_eigenphase_survives"
+  },
+  "descriptive_eigenphase": {
+    "common_projection": {
+      "complex_re_im": [
+        0.2227718616280279,
+        0.36859945045627757
+      ],
+      "covariance_re_im": [
+        [
+          7.122449646255247,
+          0.35755725497458246
+        ],
+        [
+          0.35755725497458246,
+          5.745833911080666
+        ]
+      ],
+      "amplitude": 0.4306888171405046,
+      "amplitude_standard_error": 2.535883099840871,
+      "phase_radians": 1.0271669798784986,
+      "phase_standard_error": 5.891118242260399
+    },
+    "channel_order": [
+      "q113_re",
+      "q113_im",
+      "q122_re",
+      "q122_im"
+    ],
+    "channel_point": [
+      -1.5111626944014962,
+      9.89378992108837,
+      0.36805743730815255,
+      -0.4295118601329197
+    ],
+    "channel_full_shared_batch_covariance_4x4": [
+      [
+        1160.242640745267,
+        -357.1664808241669,
+        4.458478391383475,
+        3.6630280822739416
+      ],
+      [
+        -357.1664808241669,
+        2639.496780276457,
+        3.3512940976523016,
+        -3.4929465261683035
+      ],
+      [
+        4.458478391383475,
+        3.3512940976523016,
+        0.7106911666210483,
+        -0.10333067409400233
+      ],
+      [
+        3.6630280822739416,
+        -3.4929465261683035,
+        -0.10333067409400233,
+        0.6217041981185647
+      ]
+    ]
+  },
+  "conjugate_channels": {
+    "role": "exact controls, not independent observations",
+    "relations": [
+      "C244=conj(C113)",
+      "C334=conj(C122)"
+    ],
+    "maximum_batch_residual": 1.4217791915866692e-15
+  },
+  "claim_boundary": [
+    "This is the charged projective-leg sector, not ordinary global A_top.",
+    "Positive two-point normalization cancels field amplitudes while the exact transported Z5 basis retains complex phase.",
+    "A surviving relation would not identify a local primary or universal OPE coefficient; rejection removes only this common unit-eigenphase completion.",
+    "No H4/H8/H12 model was scored and no new simulation was used."
+  ]
+}
