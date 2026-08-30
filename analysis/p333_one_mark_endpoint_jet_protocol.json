@@ -1,0 +1,101 @@
+{
+  "schema": "matching-one/p333-one-mark-endpoint-jet-protocol/v1",
+  "status": "frozen_before_exact_intersection",
+  "issues": [333, 321, 370],
+  "base_commit": "ba3135e573d5a38a232cd8f24b24b3dd8dd9b8f5",
+  "latest_main_audited": "ca866f0802f94767b55888734ffca2a1e73f50c6",
+  "question": "Is one terminal marked-loop response state enough to reopen a nonempty and unique generic-Q affine/Gram/source direction at widths three and four?",
+  "state_space": {
+    "ordinary": "V_w is the rational span of circular noncrossing connectivity states in repository order",
+    "mark": "Add exactly one state mu. It records one terminal singleton-loop response after all marked connectivity outcomes have been collapsed to their endpoint amplitude.",
+    "module": "W_w=V_w direct-sum Q*mu",
+    "widths": [3, 4],
+    "filtration": "The mark line Q*mu is invariant. Intertwiners and their Q velocities may map ordinary states into mu but may not feed mu back into V_w.",
+    "boundary": "This is the smallest one-mark endpoint quotient, not the full rooted-connectivity module and not an arbitrary extra matrix block."
+  },
+  "generic_Q_action": {
+    "join": "e_bar_i=diag(e_i,1)",
+    "translation": "T_bar=diag(T,1)",
+    "ordinary_detach": "D_i(Q)=D_i(1)+(Q-1)P_i, where P_i projects states in which site i is already singleton",
+    "mark_emission": "ell_i(pi)=1 exactly when site i is singleton",
+    "marked_detach": "D_bar_i(Q)=[[D_i(Q),0],[(Q-1)ell_i,1]]",
+    "first_jet": "At Q=1+epsilon, D_bar_i=D_bar_i0+epsilon D_bar_i1 with D_bar_i0=diag(D_i(1),1) and D_bar_i1=[[P_i,0],[ell_i,0]].",
+    "physical_meaning": "The ordinary Q loop weight is retained, while its first insertion is also exposed as one terminal mark. Subsequent marked histories are deliberately collapsed."
+  },
+  "gram": {
+    "ordinary": "G(Q)_(pi,sigma)=Q^{b(pi vee sigma)}",
+    "marked_column": "g(Q)_pi=d/dQ G(Q)_(pi,s0)=b(pi) Q^{b(pi)-1}, where s0 is all-singleton",
+    "extended": "G_bar(Q)=[[G(Q),g(Q)],[g(Q)^T,0]]",
+    "first_jet": "G_bar0 has top-left all ones and marked column b(pi); G_bar1 has top-left b(pi vee sigma) and marked column b(pi)(b(pi)-1)",
+    "radical": "R_bar=ker(G_bar0), computed exactly over Q",
+    "compatibility": "For a radical basis B require B^T(G_bar1 X0-X0^T G_bar1)B=0. The velocity terms vanish on ker(G_bar0), but D_bar_i1 must act nontrivially on R_bar for the mark to count as a genuine Q-sensitive extension."
+  },
+  "endpoint_and_source": {
+    "endpoint_covectors": [
+      "U=(one^T,0)",
+      "K=(block_count(pi),0)",
+      "M=(0,...,0,1)"
+    ],
+    "endpoint_normalization": "Each of U,K,M is fixed by X0 and annihilates V. These covectors span the row space of G_bar0 and therefore make R_bar invariant.",
+    "sources": [
+      "S=(s0,0)",
+      "mu=(0,...,0,1)"
+    ],
+    "source_normalization": "X0 fixes S and mu; V kills both.",
+    "canonical_candidate": "X0=T_bar and V=0"
+  },
+  "affine_jet_equations": {
+    "order_zero": "X0 A_i0=B_i0 X0 for joins, translation and detach, with the target site shifted by one",
+    "velocity": "V A_i0+X0 A_i1=B_i0 V+B_i1 X0; joins and translation have zero first coefficient",
+    "mark_filtration": "The V_w components of X0*mu and V*mu vanish"
+  },
+  "analysis_ladder": [
+    "marked generic-Q affine Hom jet plus mark filtration",
+    "plus three endpoint covector normalizations",
+    "plus extended first-jet radical Gram self-adjointness",
+    "plus ordinary and marked source normalization"
+  ],
+  "decision_rule": {
+    "one_mark_unique": "The final affine system is consistent with tangent dimension zero.",
+    "one_mark_nonunique": "The final affine system is consistent with positive tangent dimension.",
+    "one_mark_insufficient": "The final affine system is inconsistent.",
+    "genuine_velocity_gate": "At least one D_bar_i1 has nonzero rank from R_bar into the mark coordinate."
+  },
+  "lower_bound_if_empty": {
+    "rule": "After endpoint normalization, restrict the canonical Gram skew residual to R_bar. A skew form of rank 2r needs codimension at least r to vanish on a subspace. In the declared scalar endpoint-mark family, each additional independent mark can add at most one new ordinary endpoint covector, so at least r further marks are required.",
+    "boundary": "This is a lower bound within scalar endpoint-mark quotients, not for arbitrary marked connectivity modules."
+  },
+  "outputs": {
+    "exact_dimensions": "Affine tangent dimension or inconsistency at every ladder stage",
+    "mark_gate": "Rank of the mark row of D_bar_i1 restricted to R_bar",
+    "canonical": "Exact residual counts for X0=T_bar,V=0",
+    "certificate": "A rational particular solution/basis when nonempty, or left-null inconsistency witness at the first empty restriction",
+    "minimum_next": "If empty, residual-rank lower bound on further scalar endpoint marks"
+  },
+  "deduplication": {
+    "ba3135e": "already shows scalar Q detach uniquely selects T but does not make it Gram-compatible; this protocol adds a non-scalar mark-emission velocity and changes the Q=1 radical",
+    "96df7c8": "already gives the join-only empty Gram/source intersection",
+    "d0fca79": "already gives an unconstrained crossed/trivial direct-sum Hom, without this marked endpoint state or Q action",
+    "PR385_b5c761a": "is a finite-noise identifiability theorem and does not supply this exact marked module",
+    "PR393_8923acd": "is a formal Gaussian multiplier semigroup with an assumed common K and does not supply microscopic mark emission"
+  },
+  "claim_boundary": [
+    "Exact rational first-jet algebra only at widths three and four.",
+    "The one-mark state is a terminal response quotient; it does not retain marked-cluster geometry after emission.",
+    "No continuum LCFT, physical transfer matrix, or formal-semigroup K identification is made.",
+    "Failure would motivate the smallest higher marked quotient allowed by the exact skew-rank lower bound, not an unrestricted matrix extension."
+  ],
+  "compute_contract": {
+    "arithmetic": "fractions.Fraction exact row reduction",
+    "monte_carlo": false,
+    "fit": false,
+    "server": false,
+    "expected_cost": "local seconds to minutes"
+  },
+  "frozen_inputs": {
+    "ba3135e:scripts/p333_generic_q_detach_intertwiner.py": "85e3f7a837a9de4ba1cad6e59eb2f35e31a8e8df",
+    "ba3135e:results/p333-generic-q-detach-intertwiner/latest.json": "7b0fc118c32427e5923686e0758f78a503dc7ffe",
+    "96df7c8:results/p333-gram-source-intertwiner/latest.json": "f786200ce4907b8584d0bb43527504b3151c7636",
+    "8923acd:analysis/formal_jordan_multiplier_semigroup_contract.json": "2733afd159cc82820db97f70fa739a021865aef6"
+  }
+}
