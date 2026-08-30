@@ -4,20 +4,29 @@ from pathlib import Path
 import sys
 import unittest
 
-import numpy as np
+try:
+    import numpy as np
+except ModuleNotFoundError:
+    np = None
 
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from score_z5_projective_leg_joint_annihilation import (  # noqa: E402
-    MONOMIALS_2,
-    joint_stack,
-    maximum_volume_pivot,
-    projective_q,
-    schur_complement,
-    transformed_basis,
-)
+if np is not None:
+    try:
+        from score_z5_projective_leg_joint_annihilation import (  # noqa: E402
+            MONOMIALS_2,
+            joint_stack,
+            maximum_volume_pivot,
+            projective_q,
+            schur_complement,
+            transformed_basis,
+        )
+    except ModuleNotFoundError as error:
+        if error.name != "scipy":
+            raise
+        np = None
 
 
 def matrix_with_kernel(rng: np.random.Generator, kernel: np.ndarray) -> np.ndarray:
@@ -28,6 +37,7 @@ def matrix_with_kernel(rng: np.random.Generator, kernel: np.ndarray) -> np.ndarr
     return matrix
 
 
+@unittest.skipIf(np is None, "optional numerical analysis dependencies are absent")
 class Z5ProjectiveLegJointAnnihilationTests(unittest.TestCase):
     def test_conjugating_bridge_is_one_complex_rank_five_null(self) -> None:
         rng = np.random.default_rng(250505)
