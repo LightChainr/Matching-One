@@ -1,12 +1,12 @@
 # Scorer descriptor-adoption inventory
 
-In this checked snapshot, the exact `scripts/*score*.py` corpus contains 57
-files. Python-AST inspection finds twenty-six
+In this checked snapshot, the exact `scripts/*score*.py` corpus contains 58
+files. Python-AST inspection finds twenty-seven
 direct typed entrypoints importing both `ObservableDescriptor` and
-`map_observable` from `wrapping_channels`. Twenty-five frozen kernels are covered by
+`map_observable` from `wrapping_channels`. Twenty-six frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Five paths are confirmed channel-bearing and
+a descriptor is not applicable. Four paths are confirmed channel-bearing and
 require typed migrations:
 `score_norm4_production.py`,
 `score_norm4_thermal_jet.py`, `score_norm5_thermal_jet.py`,
@@ -30,7 +30,7 @@ unchanged.
 but no current scorer has that status. Static membership alone would not prove
 a semantic bug, data-provenance failure, or need for migration; any future
 corpus addition must still be reviewed before modification. Issue #146 remains
-open because inventory classification is not the same as implementing the 5
+open because inventory classification is not the same as implementing the 4
 required typed migrations.
 
 `score_axis_pair_annihilator.py` and its stable-reader entrypoint are now
