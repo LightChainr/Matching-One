@@ -1,0 +1,81 @@
+{
+  "schema": "matching-one/p333-source-landing-doublet-width4-protocol/v1",
+  "status": "frozen_after_width3_success_before_width4_intersection",
+  "issues": [333, 321, 370],
+  "base_commit": "b82e8cc38d244e3f261c363b84e7f9afae2087e5",
+  "trigger": "The frozen width-three source/landing doublet succeeded uniquely in b82e8cc, activating the protocol's width-four follow-up rule.",
+  "question": "Does the same non-scalar source/landing mechanism survive at width four in the minimal rational C4 charge-one doublet?",
+  "scope": {
+    "width": 4,
+    "ordinary_module": "V_4 is the fourteen-dimensional circular noncrossing connectivity module",
+    "mark_module": "L is the two-dimensional rational charge-one quotient of four landing positions",
+    "extended_module": "W=V_4 direct-sum L",
+    "stop_rule": "This is the only width-four typed case; no additional mark representation is tested."
+  },
+  "source_landing_semantics": {
+    "landing_positions": "lambda_i labels the complementary three-site landing registry opposite source site i",
+    "basis": "Use the real charge-one axes x=lambda_0-lambda_2 and y=lambda_1-lambda_3",
+    "translation": "R(x)=y and R(y)=-x; matrix R=[[0,-1],[1,0]]",
+    "emission_vectors": [
+      "q_0=(1,0)",
+      "q_1=(0,1)",
+      "q_2=(-1,0)",
+      "q_3=(0,-1)"
+    ],
+    "covariance": "R q_i=q_(i+1 mod 4)",
+    "provenance": "This is the C4 source/landing analogue of the successful C3 doublet, not an arbitrary pair of endpoint columns."
+  },
+  "generic_Q_action": {
+    "join": "e_bar_i=diag(e_i,I_2)",
+    "translation": "T_bar=diag(T,R)",
+    "ordinary_detach": "D_i(Q)=D_i(1)+(Q-1)P_i",
+    "mark_emission": "E_i(pi)=q_i when site i is singleton and zero otherwise",
+    "marked_detach": "D_bar_i1 has P_i in the ordinary block and q_i times the singleton covector in the landing-by-ordinary block"
+  },
+  "gram": {
+    "landing_reference_states": "tau_i has site i singleton and the complementary three sites joined",
+    "raw_columns": "g_i(Q)_pi=d/dQ G(Q)_(pi,tau_i)",
+    "doublet_columns": "C(Q)=[g_0(Q)-g_2(Q),g_1(Q)-g_3(Q)]",
+    "extended": "G_bar(Q)=[[G(Q),C(Q)],[C(Q)^T,0_2]]",
+    "radical": "R_bar=ker(G_bar(1))",
+    "compatibility": "Require B^T(G_bar1 X0-X0^T G_bar1)B=0"
+  },
+  "normalization": {
+    "filtration": "No landing-to-ordinary feedback in X0 or V",
+    "endpoint": "U=(one^T,0,0) is fixed by X0 and annihilates V",
+    "radical_invariance": "G_bar0 X0 B=0",
+    "ordinary_source": "The all-singleton source is fixed by X0 and killed by V",
+    "source_landing_transport": "X0 restricted to L is R and V restricted to L is zero",
+    "canonical_candidate": "X0=T_bar,V=0"
+  },
+  "analysis_ladder": [
+    "affine Q-jet plus landing filtration",
+    "plus endpoint normalization and radical invariance",
+    "plus radical Gram self-adjointness",
+    "plus ordinary-source and source/landing transport normalization"
+  ],
+  "outputs": {
+    "dimensions": "Exact affine tangent dimension or inconsistency at every stage",
+    "non_scalar_gate": "Rank beyond the width-four scalar falling-factorial span",
+    "canonical": "Final membership and velocity uniqueness",
+    "failure": "First exact left-null witness if empty"
+  },
+  "claim_boundary": [
+    "Exact rational Q=1 first-jet algebra at width four only.",
+    "The two mark types are the fixed C4 source/landing charge-one axes.",
+    "No arbitrary endpoint columns, continuum LCFT identity, physical transfer matrix or formal Gaussian-K identification is introduced.",
+    "No further typed mark case is run after this result."
+  ],
+  "compute_contract": {
+    "arithmetic": "Python standard-library fractions.Fraction row reduction",
+    "monte_carlo": false,
+    "fit": false,
+    "server": false,
+    "expected_cost": "local minutes"
+  },
+  "frozen_inputs": {
+    "b82e8cc:scripts/p333_source_landing_doublet.py": "a073496c5f7c9058ba38f1fb7a2a02394c16280a",
+    "b82e8cc:results/p333-source-landing-doublet/latest.json": "1a3c199e026be12a801c41f21bb3cd9e4dd32196",
+    "e7e6c80:results/p333-minimal-multimark-jet/latest.json": "5ffcea9a1058f37afabff8e7e4ff6ba11c8f902c"
+  }
+}
