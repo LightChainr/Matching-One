@@ -1,0 +1,29 @@
+{
+  "schema": "matching-one/p418-anchor-paired-pilot-freeze/v1",
+  "status": "authorized_single_5k_paired_pilot",
+  "issues": [418, 250],
+  "base_commit": "7ecfe24",
+  "samples": 5000,
+  "batches": 100,
+  "workers": 10,
+  "p": 0.59274605079,
+  "field_seed": 25050510120261130,
+  "replica_offset": 0,
+  "independent_anchor_seed": 41850510120260830,
+  "coordinate_set": "the frozen radius-4 GRID from z5_projective_leg_bivariate_mc.py",
+  "estimators": {
+    "current": "the production translated_points(field_seed, replica) anchor on the same counter-based replica",
+    "independent": "one uniform parent anchor from a separately seeded SplitMix64 counter",
+    "full": "the exact arithmetic mean over all 101 parent anchors for the same configuration"
+  },
+  "pairing": "all three estimators share each Bernoulli configuration, both children, both charges and the runner gauge",
+  "primary": "per estimator and hand/charge, compare raw and frozen CRT-mask-times-positive-Fourier-cone distances using its own batch covariance",
+  "paired_differences": "covariance-whitened zero-mean tests for current-independent, current-full and independent-full; retain batch rows for the full cross-estimator/channel covariance",
+  "decision": {
+    "sampling_or_counter_correlation": "full-anchor cone survives while a one-anchor cone rejects, with a resolved paired discrepancy; a current-only excess over independent indicates counter coupling",
+    "scorer_or_model_assembly": "full-anchor cone rejects comparably, because anchor sampling has been removed",
+    "underpowered": "the channels disagree or paired covariance does not resolve the estimator differences"
+  },
+  "historical_control": "aggregate every four new current batches and reproduce the first 25 radius-4 production batches from the identical seed/replica interval",
+  "claim_boundary": "one authorized 5k paired pilot only; no new observable, geometry, field interpretation or production extension"
+}
