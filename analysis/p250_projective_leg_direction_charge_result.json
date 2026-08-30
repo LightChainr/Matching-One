@@ -1,0 +1,64 @@
+{
+  "schema": "matching-one/p250-projective-leg-direction-charge-result/v1",
+  "issue": 250,
+  "status": "existing_N505_batches_reconstructed_and_scored",
+  "branch": "analysis/p250-projective-leg-direction-charge-tomography-20260830",
+  "strict_freeze_commit": "4d9b3eeca9cc8a5dcab338d6c0e003b9340c6a4f",
+  "protocol_repair_commit": "40ab0739ee01097a906de42f821a7a9b7ff1c341",
+  "final_scorer_commit": "bbef835",
+  "input": {
+    "N505_batches_sha256": "8b0e06f3fdc577c362e6f2404db60933d0cf489ee532c053288a03c44dc7fe5c",
+    "samples": 80000,
+    "batches": 160,
+    "new_simulation": false
+  },
+  "outputs": {
+    "score_json_sha256": "65c71515caf2559fff6e136a340d7e7da8174ecd3656768816cfa2854e05e43c",
+    "score_markdown_sha256": "cbdec604fd0f201d698af82fca8427369e9c6835fc5272dfedddaed0a900eb1c",
+    "strict_score_json_sha256": "3682a3ee9c44fa52c54c7d3964e56dccd8f3e6957c159470f41c4d65e0f30900",
+    "strict_score_markdown_sha256": "004e9359765292a3d0d618d55d8e879d750ce6d57d961ab136af26a11e18f020"
+  },
+  "exact_reconstruction": {
+    "X": "T+A",
+    "Y": "T-A",
+    "covariance": "complete delete-one covariance retained"
+  },
+  "second_root_phase": {
+    "radians": -1.58201331622166,
+    "jackknife_standard_error": 0.49373057984527624,
+    "C4_minus_i_p": 0.9818745421060646,
+    "nearest_Z5_j4_p": 0.5098856204845295,
+    "exact_statement": "-pi/2 is not equal to any 2*pi*j/5 one-step deck phase",
+    "inference": "the noisy scalar root phase alone cannot distinguish C4 from a nearby Z5 alphabet element"
+  },
+  "strict_scalar_character_score": {
+    "best_candidate": "direction_Z5_j2",
+    "best_p": 1.2106010039452023e-63,
+    "decision": "all scalar x/y characters rejected"
+  },
+  "mode_resolved_score": {
+    "training_amplitude_p_range": [0.09438464086251637, 0.5167897544977903],
+    "heldout_d5_p_range": [2.805397807424602e-19, 1.2113040704084708e-17],
+    "unrestricted_A_amplitudes_at_T_roots_heldout": {
+      "chi_square": 61.744068497265204,
+      "degrees_of_freedom": 8,
+      "survival_p": 2.117539025157436e-10
+    },
+    "conjugate_XY_all_distances_p": 1.5622515688976284e-101,
+    "decision": "the A row is not closed by the frozen T-row rank-two roots even with both A amplitudes free"
+  },
+  "mechanism_update": "the approximately quarter-turn scalar translation root is not an independently transforming one-dimensional spatial or deck character",
+  "next_object": {
+    "state": "a common at-least-two-dimensional latent transfer state",
+    "operators": ["T_x", "T_y", "spatial quarter-turn R", "deck operator D"],
+    "relations_to_test": ["T_y=R T_x R^-1", "T_x T_y=T_y T_x", "R^4=I", "D^5=I"],
+    "minimal_new_rows": "same-flow mixed-displacement projective-leg pairs sufficient for a bivariate block-Hankel realization",
+    "warning": "do not choose the alphabet label with the smallest scalar p-value"
+  },
+  "claim_boundary": [
+    "This result does not identify the second state as spatial C4 or internal Z5.",
+    "It rejects the one-dimensional scalar-character reduction on the archived distance window.",
+    "The protocol repair after the strict null is explicitly recorded and does not reselect rank or candidate alphabets.",
+    "No new random stream was generated."
+  ]
+}
