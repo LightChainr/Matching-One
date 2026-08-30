@@ -1,0 +1,75 @@
+{
+  "schema": "matching-one/p250-cross-scale-power-freeze/v1",
+  "source": "results/huawei-20260830/P250-z5-projective-leg-pair-transfer-40k/response_40k.batches.csv",
+  "source_samples": 40000,
+  "uses": "N65 d1 amplitude and conservative max N*Var(mean) over d1-d3 real pair rows",
+  "target_parent": [
+    10,
+    1
+  ],
+  "target_parent_order": 101,
+  "target_child_order": 505,
+  "fixed_sample_design_shape": "sin(pi*d/sqrt(101))^(-5/4)",
+  "conservative_per_replica_variance": 0.0033539608547655045,
+  "source_d1_amplitudes": {
+    "plus_r1": 0.008928332335885317,
+    "plus_r2": 0.009004917664114685,
+    "minus_r1": 0.008886407980685922,
+    "minus_r2": 0.008525842019314079
+  },
+  "forecast_target_means": {
+    "plus_r1": {
+      "1": 0.008928332335885317,
+      "2": 0.003994391837535391,
+      "3": 0.0026763524218632573,
+      "4": 0.0021826809661543386,
+      "5": 0.0020448098937802047
+    },
+    "plus_r2": {
+      "1": 0.009004917664114685,
+      "2": 0.004028654877759019,
+      "3": 0.0026993096014321714,
+      "4": 0.002201403537394329,
+      "5": 0.0020623498364022315
+    },
+    "minus_r1": {
+      "1": 0.008886407980685922,
+      "2": 0.00397563555742591,
+      "3": 0.0026637851981811842,
+      "4": 0.0021724318525831268,
+      "5": 0.00203520817499589
+    },
+    "minus_r2": {
+      "1": 0.008525842019314079,
+      "2": 0.003814324163672333,
+      "3": 0.002555702126488121,
+      "4": 0.002084285440540835,
+      "5": 0.0019526296130162736
+    }
+  },
+  "grid": [
+    {
+      "samples": 20000,
+      "projected_minimum_d1_d5_real_abs_z": 4.768215492661708,
+      "qualifies": false
+    },
+    {
+      "samples": 40000,
+      "projected_minimum_d1_d5_real_abs_z": 6.743275018039697,
+      "qualifies": true
+    },
+    {
+      "samples": 80000,
+      "projected_minimum_d1_d5_real_abs_z": 9.536430985323417,
+      "qualifies": true
+    }
+  ],
+  "selection_rule": "first grid point with predicted weakest d1-d5 real-row z>=5",
+  "selected_samples": 40000,
+  "excluded_from_sample_selection": [
+    "new N101 observations",
+    "source-fitted alpha",
+    "source-fitted exponential mass",
+    "deck phase"
+  ]
+}
