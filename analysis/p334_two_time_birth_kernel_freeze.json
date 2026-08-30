@@ -1,0 +1,50 @@
+{
+  "schema": "matching-one/p334-two-time-birth-kernel-freeze/v1",
+  "status": "frozen_before_two_time_summary",
+  "frozen_utc": "2026-08-30T12:40:00Z",
+  "issues": [334, 337],
+  "parent_result": "742a8b0",
+  "new_monte_carlo": false,
+  "inputs": {
+    "N325": {
+      "N": 325,
+      "k0": 193,
+      "remote_alias": "Huawei-CodeBuddy",
+      "remote_path": "/workspace/p267-two-observer-source-rank/N325_2m/N325_2m.marked_births.csv",
+      "sha256": "c9bfb3ee791474491ad6b81e55259d9906befe9dac1c461f72087658f4c7219b"
+    },
+    "N425": {
+      "N": 425,
+      "k0": 252,
+      "remote_alias": "Huawei-CodeBuddy-XPk2PZ",
+      "remote_path": "/workspace/p267-two-observer-source-rank/N425_2m/N425_2m.marked_births.csv",
+      "sha256": "4f1315ceb790962c9c24b67baa7644dab4ffba781920fe8d468b1ebe490ad4d0"
+    }
+  },
+  "time_grid": {
+    "z": [-1.5, -1.0, -0.5, 0.0, 0.5, 1.0, 1.5],
+    "integer_layer": "floor(k0 + z*N^(5/8) + 1/2)",
+    "reason": "fixed near-critical N^(5/8) occupation-count window; no grid point is selected from the reveal"
+  },
+  "path_state": "r(k)=0 before K1, 1 on K1<=k<K2, and 2 after K2",
+  "primary_model_elimination": {
+    "null": "the connected two-time rank kernel on the seven frozen layers is separable rank one",
+    "coordinates": "six adjacent normalized principal minors 1-C_ij^2/(C_ii*C_jj), jointly for both orientations",
+    "score": "delete-one-batch covariance-aware Wald test, one test per size",
+    "interpretation": "rejection removes one scalar temporal amplitude for this topology process; it is not a CFT-state count"
+  },
+  "secondary_scale_transfer": {
+    "target": "equal-orientation mean of all 28 upper-triangular connected-kernel entries",
+    "contrast": "N425-N325 on the frozen z grid",
+    "covariance": "full paired-orientation delete-one covariance within size, block independent across sizes"
+  },
+  "exact_gate": "for every p<=q, P(K1<=p,K2<=q)=E[r(p)r(q)]-F1(p)-2F2(p)",
+  "claim_boundary": [
+    "The two orientations of one size are paired views of one counter-keyed archive.",
+    "A nonseparable temporal covariance kernel is process information, not proof of Jordan structure or a continuum field.",
+    "The scale-transfer score mixes finite-size and quotient-shape differences and is diagnostic rather than a universal-collapse claim.",
+    "No new simulation is authorized or required."
+  ],
+  "summary_script": "scripts/summarize_p334_two_time_kernel.py",
+  "score_script": "scripts/score_p334_two_time_kernel.py"
+}
