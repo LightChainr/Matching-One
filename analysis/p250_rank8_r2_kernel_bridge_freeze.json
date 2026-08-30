@@ -1,0 +1,82 @@
+{
+  "schema": "matching-one/p250-rank8-r2-kernel-bridge-freeze/v1",
+  "status": "frozen_existing_data_score_not_run",
+  "frozen_utc": "2026-08-30T11:08:25Z",
+  "issue": 250,
+  "method_issue": 370,
+  "parent_commit": "33c557b9aebed1bc9c07019b9cd5cee6c04be947",
+  "dependency_group": "P250 projective-leg N505 old4-80k plus radius5-1200k plus independent radius6-1200k",
+  "inputs": {
+    "old4_batches": {
+      "path": "results/huawei-20260830/P250-projective-leg-bivariate-80k/response_80k.batches.csv",
+      "sha256": "dfbd83d680080939bcae5cad0090af95d82748ed780ce73807d4b002d6a9ca72"
+    },
+    "old5_batches": {
+      "path": "results/huawei-20260830/P250-projective-leg-radius5-morphism-1200k/response_1200k.batches.csv",
+      "sha256": "50985e38c9c8afab0c8b0e78113184d33861d928aefaba1e8043e67fc348677e"
+    },
+    "fresh6_batches": {
+      "path": "results/huawei-20260830/P250-projective-leg-radius6-flat-1200k/response_1200k.batches.csv",
+      "sha256": "8734a15e61a7358da66019cf26d75a3d4f2deb0185831526204967a0ee5a42cf"
+    },
+    "upstream_result_manifest": {
+      "path": "analysis/p250_projective_leg_radius6_flat_result_manifest.json",
+      "sha256": "ebdea973b8a0626431eb609ba4c30e3e494d0945411fb863f1328aa2f315afba"
+    },
+    "upstream_score": {
+      "path": "results/huawei-20260830/P250-projective-leg-radius6-flat-1200k/score.json",
+      "sha256": "f85e70021de883a070d0441bd8dbe9eb593ede33578f7a8d2386a621d419c7fd"
+    },
+    "upstream_scorer": {
+      "path": "scripts/score_z5_projective_leg_radius6_flat.py",
+      "sha256": "6259d9a3cf11b5df1d086e537cb47d49a9aa8675e8eaffcdd77a7fdcdcf43d83"
+    }
+  },
+  "upstream_gate": {
+    "required": [
+      "rank(H3_plus)<=7 eliminated at alpha 0.01",
+      "rank(H3_minus_R2)<=7 eliminated at alpha 0.01",
+      "rank(H3_plus)<=8 not eliminated at alpha 0.01",
+      "rank(H3_minus_R2)<=8 not eliminated at alpha 0.01"
+    ],
+    "purpose": "fix rank eight as the first compatible truncated class without claiming that it is exact or flat"
+  },
+  "observer": {
+    "matrix": "H3[(charge,u),v]=G_charge(u+v), charges 1 and 2, total degrees |u|,|v|<=3",
+    "matrix_shape_per_hand": [20, 10],
+    "plus_chart": "declared N505 C4-covariant projective-leg chart",
+    "minus_chart": "the already-selected Alexander-R2 spatial map applied before constructing H3",
+    "kernel_dimension": 2
+  },
+  "primary_null": "conjugate(Pker8(H3_plus)) = Pker8(H3_minus_R2)",
+  "statistic": {
+    "rank8_projector": "right singular subspace projector formed from the two smallest singular vectors of the full 20x10 complex H3",
+    "residual": "row-major real/imag vectorization of conjugate(P_plus)-P_minus_R2",
+    "covariance": "delete-one covariance is computed independently in old4, old5 and fresh6 and summed",
+    "eigen_relative_cutoff": 1e-10,
+    "calibration": "finite-batch Hotelling F using 400 as the minimum batch count",
+    "alpha": 0.01,
+    "descriptive_only": [
+      "principal angles between the two kernel planes",
+      "singular values and the rank8/rank9 separation in each hand",
+      "asymptotic chi-square p-value"
+    ]
+  },
+  "decision": {
+    "p_below_alpha": "rank8_R2_kernel_plane_bridge_rejected",
+    "p_at_or_above_alpha": "rank8_R2_kernel_plane_bridge_compatible_at_this_truncation",
+    "no_best_map_vote": true,
+    "no_rescore_of_identity_or_R0_R1_R3": true
+  },
+  "claim_boundary": [
+    "This is an existing-data conditional test of a truncated rank-eight relation-space bridge.",
+    "Compatibility does not prove rank eight exact, flat at the next moment order, or physically eight-dimensional.",
+    "Rejection does not imply noncommuting or path-dependent translations; ordered TxTy and TyTx were never recorded.",
+    "The radius-five R2 null-line result is not itself rescored or erased. This test asks whether it extends to the two-dimensional degree-three relation plane.",
+    "All three raw blocks remain one declared dependency group and no new evidence row is created."
+  ],
+  "planned_scorer": "scripts/score_p250_rank8_r2_kernel_bridge.py",
+  "planned_output": "results/local-20260830/P250-rank8-R2-kernel-bridge/score.json",
+  "score_authorized": true,
+  "score_executed": false
+}
