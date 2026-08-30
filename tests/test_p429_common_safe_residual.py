@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import importlib.util
+import hashlib
+import json
 from pathlib import Path
 import unittest
 
@@ -61,7 +63,8 @@ class P429CommonSafeResidualTest(unittest.TestCase):
                     })
                     values.append(shared + size_index)
         summary = MODULE.cluster_metric(np.asarray(values), pd.DataFrame(rows))
-        covariance = np.asarray(summary["batch_cluster_covariance"])
+        covariance = np.asarray(
+            summary["conditional_on_fold_models_batch_score_covariance"])
         self.assertGreater(covariance[0, 1], 0.0)
         self.assertGreater(covariance[2, 3], 0.0)
         self.assertEqual(covariance[0, 2], 0.0)
@@ -75,6 +78,53 @@ class P429CommonSafeResidualTest(unittest.TestCase):
         source = (ROOT / "scripts/analyze_p429_common_safe_residual.py").read_text()
         self.assertIn('safe["fold"] = safe["batch"] % 5', source)
         self.assertNotIn("train_test_split", source)
+
+    def test_brier_gain_equals_absorbed_dependence_for_shared_prediction(self) -> None:
+        y1 = np.asarray([0.0, 1.0, 1.0, 0.0])
+        y2 = np.asarray([1.0, 1.0, 0.0, 0.0])
+        baseline = np.asarray([0.4, 0.7, 0.6, 0.2])
+        model = np.asarray([0.5, 0.8, 0.4, 0.1])
+        residual_gain = np.mean(
+            (y1 - baseline) * (y2 - baseline)
+            - (y1 - model) * (y2 - model)
+        )
+        baseline_brier = np.mean(0.5 * ((y1 - baseline) ** 2 + (y2 - baseline) ** 2))
+        model_brier = np.mean(0.5 * ((y1 - model) ** 2 + (y2 - model) ** 2))
+        self.assertAlmostEqual(residual_gain, baseline_brier - model_brier)
+
+    def test_scored_artifact_preserves_dependency_and_metric_contracts(self) -> None:
+        path = ROOT / "results/local-20260830/P429-common-safe-reanalysis/score.json"
+        self.assertTrue(path.exists())
+        payload = json.loads(path.read_text())
+        contract_path = ROOT / "analysis/p429_common_safe_reanalysis_contract.json"
+        self.assertEqual(
+            payload["contract"]["sha256"],
+            hashlib.sha256(contract_path.read_bytes()).hexdigest())
+        analyzer_path = ROOT / "scripts/analyze_p429_common_safe_residual.py"
+        self.assertEqual(
+            payload["analyzer"]["sha256"],
+            hashlib.sha256(analyzer_path.read_bytes()).hexdigest())
+        self.assertEqual(
+            payload["candidate_order"],
+            [
+                "intercept_only", "H2", "H2_cooperative",
+                "H2_cooperative_geometry", "H2_cooperative_geometry_age",
+                "H2_cooperative_geometry_age_line",
+            ],
+        )
+        for identifier in payload["candidate_order"]:
+            candidate = payload["candidates"][identifier]
+            self.assertTrue(all(fit["converged"] for fit in candidate["fold_fits"]))
+            covariance = np.asarray(
+                candidate["heldout_residual_dependence"][
+                    "conditional_on_fold_models_batch_score_covariance"])
+            self.assertTrue(np.allclose(covariance, covariance.T))
+            self.assertTrue(np.allclose(covariance[:2, 2:], 0.0))
+            absorbed = np.asarray(candidate["absorbed_vs_intercept"]["vector"])
+            brier = np.asarray(candidate["brier_improvement_vs_intercept"]["vector"])
+            self.assertTrue(np.allclose(absorbed, brier, atol=1e-14, rtol=0.0))
+        for item in payload["parent_secondary_reproduction"]["by_environment"].values():
+            self.assertAlmostEqual(item["difference"], 0.0, places=14)
 
 
 if __name__ == "__main__":

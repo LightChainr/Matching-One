@@ -14,7 +14,8 @@
     "fold": "batch modulo 5",
     "holdout": "For each fold, hold out that complete batch set simultaneously in both orientations and both sizes.",
     "nuisance_fit": "One joint model across all four size-orientation environments, with four unpenalized environment intercepts and common feature slopes.",
-    "uncertainty": "Batch-cluster sandwich covariance of held-out pair scores. The two orientations remain coupled inside each size-batch vector; size blocks are reported separately and are not meta-analysed into independent evidence.",
+    "uncertainty": "Conditional-on-fitted-fold-model batch score dispersion. The two orientations remain coupled inside each size-batch vector; size blocks are reported separately and are not meta-analysed into independent evidence.",
+    "uncertainty_boundary": "The nuisance models share slopes across sizes and are not refit inside a batch bootstrap or delete-one loop. Stored cross-size covariance blocks are zero only conditional on the fitted fold models. The reported dispersions and normal reference ranges are not full sampling SEs or confidence intervals and cannot support significance claims.",
     "forbidden": [
       "clone-level standard errors",
       "orientation-wise model selection",
@@ -71,5 +72,5 @@
     "cooperative_label_boundary": "The two cooperative coordinates are checkpoint local-multicontact proxies, not the exact two-step cooperative pair count."
   },
   "support_audit_amendment": "Before any mechanism model was scored, an outcome-blind support and collinearity audit replaced the broad first-draft geometry list by fixed low-redundancy coordinates. The earlier committed draft remains in git history at fa69c92.",
-  "claim_boundary": "Descriptive, post-reveal, zero-new-sample mechanism allocation at two fixed checkpoints. Cross-fitting limits in-sample prediction bias but does not establish causal mediation, full-state sufficiency, scaled Markov closure, a continuum memory field, or a scale exponent."
+  "claim_boundary": "Descriptive, post-reveal, zero-new-sample, model- and order-dependent predictive allocation at two fixed checkpoints. Cross-fitting limits in-sample prediction bias but does not establish causal mediation, full-state sufficiency, scaled Markov closure, a continuum memory field, or a scale exponent."
 }
