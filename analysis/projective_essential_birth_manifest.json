@@ -1,0 +1,44 @@
+{
+  "schema": "matching-one/projective-essential-birth-manifest/v1",
+  "issue": 334,
+  "phase": "A",
+  "status": "exact tiny-quotient certificate",
+  "source_theorem": "Issue 269 unrestricted integral saturation: iota=1",
+  "geometries": [
+    "axis-L2",
+    "gaussian-2-1",
+    "c4-self-matching-3-1"
+  ],
+  "state": [
+    "K1",
+    "K2",
+    "primitive projective ell1 or DIRECT_RANK2",
+    "site1",
+    "site2"
+  ],
+  "exact_gates": [
+    "canonical ell up to sign and integral saturation iota=1",
+    "SL(2,Z) period-basis covariance",
+    "D4 action on exact rational chi4",
+    "complement/Alexander birth-time, line and site reflection",
+    "K1 marginal recovery from ell plus DIRECT_RANK2",
+    "configurationwise A4 crosswalk to Issue 156",
+    "coefficientwise dA4/dp equals j4_birth1 minus j4_exit2"
+  ],
+  "outputs": {
+    "json": "results/projective-essential-birth/latest.json",
+    "markdown": "results/projective-essential-birth/latest.md",
+    "note": "notes/projective-essential-birth-phase-a.md"
+  },
+  "commands": [
+    "python3 scripts/projective_essential_birth_oracle.py --json results/projective-essential-birth/latest.json --markdown results/projective-essential-birth/latest.md",
+    "python3 -m unittest discover -s tests -p 'test_projective_essential_birth_oracle.py'"
+  ],
+  "claim_boundary": [
+    "ell is extra projective information but is exactly timing-independent conditional on a line birth in the three tiny symmetric controls",
+    "the two supported lines have identical chi4, so these controls do not yet expose an independent spin-4 value",
+    "A4 is Issue 156's primitive-sector character; only its birth/exit flux split is new",
+    "direct 0-to-2 births have no canonical ell and must remain a typed atom",
+    "no continuum field or scaling exponent is assigned"
+  ]
+}

@@ -1,0 +1,1134 @@
+{
+  "D4_chi4_action": {
+    "all_pass": true,
+    "elements": [
+      {
+        "chi4_action": "identity",
+        "element": "R0",
+        "failures": 0,
+        "rank_one_states_checked": 4
+      },
+      {
+        "chi4_action": "identity",
+        "element": "R90",
+        "failures": 0,
+        "rank_one_states_checked": 4
+      },
+      {
+        "chi4_action": "identity",
+        "element": "R180",
+        "failures": 0,
+        "rank_one_states_checked": 4
+      },
+      {
+        "chi4_action": "identity",
+        "element": "R270",
+        "failures": 0,
+        "rank_one_states_checked": 4
+      },
+      {
+        "chi4_action": "conjugation",
+        "element": "R0X",
+        "failures": 0,
+        "rank_one_states_checked": 4
+      },
+      {
+        "chi4_action": "conjugation",
+        "element": "R90X",
+        "failures": 0,
+        "rank_one_states_checked": 4
+      },
+      {
+        "chi4_action": "conjugation",
+        "element": "R180X",
+        "failures": 0,
+        "rank_one_states_checked": 4
+      },
+      {
+        "chi4_action": "conjugation",
+        "element": "R270X",
+        "failures": 0,
+        "rank_one_states_checked": 4
+      }
+    ]
+  },
+  "SL2Z_basis_covariance": {
+    "axis-L2": {
+      "all_pass": true,
+      "changes": [
+        {
+          "change": [
+            [
+              0,
+              -1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "failures": 0,
+          "rank_one_states_checked": 4
+        },
+        {
+          "change": [
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "failures": 0,
+          "rank_one_states_checked": 4
+        },
+        {
+          "change": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "failures": 0,
+          "rank_one_states_checked": 4
+        }
+      ]
+    },
+    "gaussian-2-1": {
+      "all_pass": true,
+      "changes": [
+        {
+          "change": [
+            [
+              0,
+              -1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "failures": 0,
+          "rank_one_states_checked": 10
+        },
+        {
+          "change": [
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "failures": 0,
+          "rank_one_states_checked": 10
+        },
+        {
+          "change": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "failures": 0,
+          "rank_one_states_checked": 10
+        }
+      ]
+    }
+  },
+  "all_pass": true,
+  "geometries": [
+    {
+      "K1_histogram": {
+        "2": 16,
+        "3": 8
+      },
+      "N": 4,
+      "all_paths": 24,
+      "birth_site_pair_counts": {
+        "0,0": 2,
+        "0,1": 1,
+        "0,2": 1,
+        "0,3": 2,
+        "1,0": 1,
+        "1,1": 2,
+        "1,2": 2,
+        "1,3": 1,
+        "2,0": 1,
+        "2,1": 2,
+        "2,2": 2,
+        "2,3": 1,
+        "3,0": 2,
+        "3,1": 1,
+        "3,2": 1,
+        "3,3": 2
+      },
+      "canonicality": {
+        "all_pass": true,
+        "generator_checks": 4,
+        "rank_one_states": 4,
+        "up_to_sign_failures": 0
+      },
+      "chi4_adds_information_beyond_K1_K2_on_this_quotient": false,
+      "complement_Alexander": {
+        "all_pass": true,
+        "configuration_failures": 0,
+        "rank_one_complement_pairs": 4,
+        "reflected_path_count_failures": 0
+      },
+      "direct_rank2_paths_without_projective_line": 8,
+      "distinct_chi4_values_per_timing_cell": {
+        "2,3": 1
+      },
+      "ell_independent_of_K1_K2_conditional_on_line_birth": true,
+      "ell_not_determined_by_K1_K2": true,
+      "id": "axis-L2",
+      "joint_K1_K2_ell_counts": [
+        {
+          "K1": 2,
+          "K2": 3,
+          "count": 8,
+          "ell": "0,1"
+        },
+        {
+          "K1": 2,
+          "K2": 3,
+          "count": 8,
+          "ell": "1,0"
+        },
+        {
+          "K1": 3,
+          "K2": 3,
+          "count": 8,
+          "ell": "DIRECT_RANK2"
+        }
+      ],
+      "period_matrix": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "primitive_sector_crosswalk": {
+        "all_pass": true,
+        "degree_N_minus_1_raw_coefficients": [
+          {
+            "bernstein_degree_N_minus_1_normalizer": 1,
+            "dA4_raw": {
+              "imag": "0",
+              "real": "0"
+            },
+            "directed_edges": 4,
+            "j4_birth1_raw": {
+              "imag": "0",
+              "real": "0"
+            },
+            "j4_exit2_raw": {
+              "imag": "0",
+              "real": "0"
+            },
+            "lower_subset_size": 0
+          },
+          {
+            "bernstein_degree_N_minus_1_normalizer": 3,
+            "dA4_raw": {
+              "imag": "0",
+              "real": "8"
+            },
+            "directed_edges": 12,
+            "j4_birth1_raw": {
+              "imag": "0",
+              "real": "8"
+            },
+            "j4_exit2_raw": {
+              "imag": "0",
+              "real": "0"
+            },
+            "lower_subset_size": 1
+          },
+          {
+            "bernstein_degree_N_minus_1_normalizer": 3,
+            "dA4_raw": {
+              "imag": "0",
+              "real": "-8"
+            },
+            "directed_edges": 12,
+            "j4_birth1_raw": {
+              "imag": "0",
+              "real": "0"
+            },
+            "j4_exit2_raw": {
+              "imag": "0",
+              "real": "8"
+            },
+            "lower_subset_size": 2
+          },
+          {
+            "bernstein_degree_N_minus_1_normalizer": 1,
+            "dA4_raw": {
+              "imag": "0",
+              "real": "0"
+            },
+            "directed_edges": 4,
+            "j4_birth1_raw": {
+              "imag": "0",
+              "real": "0"
+            },
+            "j4_exit2_raw": {
+              "imag": "0",
+              "real": "0"
+            },
+            "lower_subset_size": 3
+          }
+        ],
+        "derivative_coefficient_failures": 0,
+        "identity": "A4(state)=primitive-sector chi4; dA4/dp=j4_birth1-j4_exit2",
+        "state_crosswalk_path_failures": 0
+      },
+      "subgroup_contract": {
+        "after_line_birth": "Z ell with ell primitive",
+        "after_second_birth": "Z^2",
+        "iota": 1
+      },
+      "sum_over_ell_plus_direct_atom_recovers_K1": true,
+      "sum_over_projective_ell_recovers_line_bearing_K1": true,
+      "terminal_marked_state_count": 20,
+      "timing_cells_with_multiple_line_marks": {
+        "2,3": [
+          "0,1",
+          "1,0"
+        ]
+      },
+      "timing_line_factorization_failures": 0,
+      "unmarked_transition_K1_histogram": {
+        "2": 16,
+        "3": 8
+      }
+    },
+    {
+      "K1_histogram": {
+        "3": 120
+      },
+      "N": 5,
+      "all_paths": 120,
+      "birth_site_pair_counts": {
+        "0,1": 6,
+        "0,2": 6,
+        "0,3": 6,
+        "0,4": 6,
+        "1,0": 6,
+        "1,2": 6,
+        "1,3": 6,
+        "1,4": 6,
+        "2,0": 6,
+        "2,1": 6,
+        "2,3": 6,
+        "2,4": 6,
+        "3,0": 6,
+        "3,1": 6,
+        "3,2": 6,
+        "3,4": 6,
+        "4,0": 6,
+        "4,1": 6,
+        "4,2": 6,
+        "4,3": 6
+      },
+      "canonicality": {
+        "all_pass": true,
+        "generator_checks": 10,
+        "rank_one_states": 10,
+        "up_to_sign_failures": 0
+      },
+      "chi4_adds_information_beyond_K1_K2_on_this_quotient": false,
+      "complement_Alexander": {
+        "all_pass": true,
+        "configuration_failures": 0,
+        "rank_one_complement_pairs": 10,
+        "reflected_path_count_failures": 0
+      },
+      "direct_rank2_paths_without_projective_line": 0,
+      "distinct_chi4_values_per_timing_cell": {
+        "3,4": 1
+      },
+      "ell_independent_of_K1_K2_conditional_on_line_birth": true,
+      "ell_not_determined_by_K1_K2": true,
+      "id": "gaussian-2-1",
+      "joint_K1_K2_ell_counts": [
+        {
+          "K1": 3,
+          "K2": 4,
+          "count": 60,
+          "ell": "0,1"
+        },
+        {
+          "K1": 3,
+          "K2": 4,
+          "count": 60,
+          "ell": "1,0"
+        }
+      ],
+      "period_matrix": [
+        [
+          2,
+          -1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "primitive_sector_crosswalk": {
+        "all_pass": true,
+        "degree_N_minus_1_raw_coefficients": [
+          {
+            "bernstein_degree_N_minus_1_normalizer": 1,
+            "dA4_raw": {
+              "imag": "0",
+              "real": "0"
+            },
+            "directed_edges": 5,
+            "j4_birth1_raw": {
+              "imag": "0",
+              "real": "0"
+            },
+            "j4_exit2_raw": {
+              "imag": "0",
+              "real": "0"
+            },
+            "lower_subset_size": 0
+          },
+          {
+            "bernstein_degree_N_minus_1_normalizer": 4,
+            "dA4_raw": {
+              "imag": "0",
+              "real": "0"
+            },
+            "directed_edges": 20,
+            "j4_birth1_raw": {
+              "imag": "0",
+              "real": "0"
+            },
+            "j4_exit2_raw": {
+              "imag": "0",
+              "real": "0"
+            },
+            "lower_subset_size": 1
+          },
+          {
+            "bernstein_degree_N_minus_1_normalizer": 6,
+            "dA4_raw": {
+              "imag": "144/5",
+              "real": "-42/5"
+            },
+            "directed_edges": 30,
+            "j4_birth1_raw": {
+              "imag": "144/5",
+              "real": "-42/5"
+            },
+            "j4_exit2_raw": {
+              "imag": "0",
+              "real": "0"
+            },
+            "lower_subset_size": 2
+          },
+          {
+            "bernstein_degree_N_minus_1_normalizer": 4,
+            "dA4_raw": {
+              "imag": "-96/5",
+              "real": "28/5"
+            },
+            "directed_edges": 20,
+            "j4_birth1_raw": {
+              "imag": "0",
+              "real": "0"
+            },
+            "j4_exit2_raw": {
+              "imag": "96/5",
+              "real": "-28/5"
+            },
+            "lower_subset_size": 3
+          },
+          {
+            "bernstein_degree_N_minus_1_normalizer": 1,
+            "dA4_raw": {
+              "imag": "0",
+              "real": "0"
+            },
+            "directed_edges": 5,
+            "j4_birth1_raw": {
+              "imag": "0",
+              "real": "0"
+            },
+            "j4_exit2_raw": {
+              "imag": "0",
+              "real": "0"
+            },
+            "lower_subset_size": 4
+          }
+        ],
+        "derivative_coefficient_failures": 0,
+        "identity": "A4(state)=primitive-sector chi4; dA4/dp=j4_birth1-j4_exit2",
+        "state_crosswalk_path_failures": 0
+      },
+      "subgroup_contract": {
+        "after_line_birth": "Z ell with ell primitive",
+        "after_second_birth": "Z^2",
+        "iota": 1
+      },
+      "sum_over_ell_plus_direct_atom_recovers_K1": true,
+      "sum_over_projective_ell_recovers_line_bearing_K1": true,
+      "terminal_marked_state_count": 40,
+      "timing_cells_with_multiple_line_marks": {
+        "3,4": [
+          "0,1",
+          "1,0"
+        ]
+      },
+      "timing_line_factorization_failures": 0,
+      "unmarked_transition_K1_histogram": {
+        "3": 120
+      }
+    },
+    {
+      "K1_histogram": {
+        "3": 604800,
+        "4": 1036800,
+        "5": 1036800,
+        "6": 691200,
+        "7": 259200
+      },
+      "N": 10,
+      "all_paths": 3628800,
+      "birth_site_pair_counts": {
+        "0,0": 103680,
+        "0,1": 14400,
+        "0,2": 97920,
+        "0,3": 14400,
+        "0,4": 97920,
+        "0,5": 51840,
+        "0,6": 97920,
+        "0,7": 14400,
+        "0,8": 97920,
+        "0,9": 14400,
+        "1,0": 14400,
+        "1,2": 14400,
+        "1,3": 2880,
+        "1,4": 14400,
+        "1,5": 2880,
+        "1,6": 51840,
+        "1,7": 2880,
+        "1,8": 14400,
+        "1,9": 2880,
+        "2,0": 97920,
+        "2,1": 14400,
+        "2,2": 103680,
+        "2,3": 14400,
+        "2,4": 97920,
+        "2,5": 14400,
+        "2,6": 97920,
+        "2,7": 51840,
+        "2,8": 97920,
+        "2,9": 14400,
+        "3,0": 14400,
+        "3,1": 2880,
+        "3,2": 14400,
+        "3,4": 14400,
+        "3,5": 2880,
+        "3,6": 14400,
+        "3,7": 2880,
+        "3,8": 51840,
+        "3,9": 2880,
+        "4,0": 97920,
+        "4,1": 14400,
+        "4,2": 97920,
+        "4,3": 14400,
+        "4,4": 103680,
+        "4,5": 14400,
+        "4,6": 97920,
+        "4,7": 14400,
+        "4,8": 97920,
+        "4,9": 51840,
+        "5,0": 51840,
+        "5,1": 2880,
+        "5,2": 14400,
+        "5,3": 2880,
+        "5,4": 14400,
+        "5,6": 14400,
+        "5,7": 2880,
+        "5,8": 14400,
+        "5,9": 2880,
+        "6,0": 97920,
+        "6,1": 51840,
+        "6,2": 97920,
+        "6,3": 14400,
+        "6,4": 97920,
+        "6,5": 14400,
+        "6,6": 103680,
+        "6,7": 14400,
+        "6,8": 97920,
+        "6,9": 14400,
+        "7,0": 14400,
+        "7,1": 2880,
+        "7,2": 51840,
+        "7,3": 2880,
+        "7,4": 14400,
+        "7,5": 2880,
+        "7,6": 14400,
+        "7,8": 14400,
+        "7,9": 2880,
+        "8,0": 97920,
+        "8,1": 14400,
+        "8,2": 97920,
+        "8,3": 51840,
+        "8,4": 97920,
+        "8,5": 14400,
+        "8,6": 97920,
+        "8,7": 14400,
+        "8,8": 103680,
+        "8,9": 14400,
+        "9,0": 14400,
+        "9,1": 2880,
+        "9,2": 14400,
+        "9,3": 2880,
+        "9,4": 51840,
+        "9,5": 2880,
+        "9,6": 14400,
+        "9,7": 2880,
+        "9,8": 14400
+      },
+      "canonicality": {
+        "all_pass": true,
+        "generator_checks": 320,
+        "rank_one_states": 320,
+        "up_to_sign_failures": 0
+      },
+      "chi4_adds_information_beyond_K1_K2_on_this_quotient": false,
+      "complement_Alexander": {
+        "all_pass": true,
+        "configuration_failures": 0,
+        "rank_one_complement_pairs": 320,
+        "reflected_path_count_failures": 0
+      },
+      "direct_rank2_paths_without_projective_line": 518400,
+      "distinct_chi4_values_per_timing_cell": {
+        "3,4": 1,
+        "3,5": 1,
+        "3,6": 1,
+        "3,7": 1,
+        "3,8": 1,
+        "4,5": 1,
+        "4,6": 1,
+        "4,7": 1,
+        "4,8": 1,
+        "5,6": 1,
+        "5,7": 1,
+        "5,8": 1,
+        "6,7": 1,
+        "6,8": 1,
+        "7,8": 1
+      },
+      "ell_independent_of_K1_K2_conditional_on_line_birth": true,
+      "ell_not_determined_by_K1_K2": true,
+      "id": "c4-self-matching-3-1",
+      "joint_K1_K2_ell_counts": [
+        {
+          "K1": 3,
+          "K2": 4,
+          "count": 86400,
+          "ell": "0,1"
+        },
+        {
+          "K1": 3,
+          "K2": 4,
+          "count": 86400,
+          "ell": "1,0"
+        },
+        {
+          "K1": 3,
+          "K2": 5,
+          "count": 86400,
+          "ell": "0,1"
+        },
+        {
+          "K1": 3,
+          "K2": 5,
+          "count": 86400,
+          "ell": "1,0"
+        },
+        {
+          "K1": 3,
+          "K2": 6,
+          "count": 69120,
+          "ell": "0,1"
+        },
+        {
+          "K1": 3,
+          "K2": 6,
+          "count": 69120,
+          "ell": "1,0"
+        },
+        {
+          "K1": 3,
+          "K2": 7,
+          "count": 43200,
+          "ell": "0,1"
+        },
+        {
+          "K1": 3,
+          "K2": 7,
+          "count": 43200,
+          "ell": "1,0"
+        },
+        {
+          "K1": 3,
+          "K2": 8,
+          "count": 17280,
+          "ell": "0,1"
+        },
+        {
+          "K1": 3,
+          "K2": 8,
+          "count": 17280,
+          "ell": "1,0"
+        },
+        {
+          "K1": 4,
+          "K2": 4,
+          "count": 86400,
+          "ell": "DIRECT_RANK2"
+        },
+        {
+          "K1": 4,
+          "K2": 5,
+          "count": 172800,
+          "ell": "0,1"
+        },
+        {
+          "K1": 4,
+          "K2": 5,
+          "count": 172800,
+          "ell": "1,0"
+        },
+        {
+          "K1": 4,
+          "K2": 6,
+          "count": 155520,
+          "ell": "0,1"
+        },
+        {
+          "K1": 4,
+          "K2": 6,
+          "count": 155520,
+          "ell": "1,0"
+        },
+        {
+          "K1": 4,
+          "K2": 7,
+          "count": 103680,
+          "ell": "0,1"
+        },
+        {
+          "K1": 4,
+          "K2": 7,
+          "count": 103680,
+          "ell": "1,0"
+        },
+        {
+          "K1": 4,
+          "K2": 8,
+          "count": 43200,
+          "ell": "0,1"
+        },
+        {
+          "K1": 4,
+          "K2": 8,
+          "count": 43200,
+          "ell": "1,0"
+        },
+        {
+          "K1": 5,
+          "K2": 5,
+          "count": 172800,
+          "ell": "DIRECT_RANK2"
+        },
+        {
+          "K1": 5,
+          "K2": 6,
+          "count": 207360,
+          "ell": "0,1"
+        },
+        {
+          "K1": 5,
+          "K2": 6,
+          "count": 207360,
+          "ell": "1,0"
+        },
+        {
+          "K1": 5,
+          "K2": 7,
+          "count": 155520,
+          "ell": "0,1"
+        },
+        {
+          "K1": 5,
+          "K2": 7,
+          "count": 155520,
+          "ell": "1,0"
+        },
+        {
+          "K1": 5,
+          "K2": 8,
+          "count": 69120,
+          "ell": "0,1"
+        },
+        {
+          "K1": 5,
+          "K2": 8,
+          "count": 69120,
+          "ell": "1,0"
+        },
+        {
+          "K1": 6,
+          "K2": 6,
+          "count": 172800,
+          "ell": "DIRECT_RANK2"
+        },
+        {
+          "K1": 6,
+          "K2": 7,
+          "count": 172800,
+          "ell": "0,1"
+        },
+        {
+          "K1": 6,
+          "K2": 7,
+          "count": 172800,
+          "ell": "1,0"
+        },
+        {
+          "K1": 6,
+          "K2": 8,
+          "count": 86400,
+          "ell": "0,1"
+        },
+        {
+          "K1": 6,
+          "K2": 8,
+          "count": 86400,
+          "ell": "1,0"
+        },
+        {
+          "K1": 7,
+          "K2": 7,
+          "count": 86400,
+          "ell": "DIRECT_RANK2"
+        },
+        {
+          "K1": 7,
+          "K2": 8,
+          "count": 86400,
+          "ell": "0,1"
+        },
+        {
+          "K1": 7,
+          "K2": 8,
+          "count": 86400,
+          "ell": "1,0"
+        }
+      ],
+      "period_matrix": [
+        [
+          3,
+          -1
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "primitive_sector_crosswalk": {
+        "all_pass": true,
+        "degree_N_minus_1_raw_coefficients": [
+          {
+            "bernstein_degree_N_minus_1_normalizer": 1,
+            "dA4_raw": {
+              "imag": "0",
+              "real": "0"
+            },
+            "directed_edges": 10,
+            "j4_birth1_raw": {
+              "imag": "0",
+              "real": "0"
+            },
+            "j4_exit2_raw": {
+              "imag": "0",
+              "real": "0"
+            },
+            "lower_subset_size": 0
+          },
+          {
+            "bernstein_degree_N_minus_1_normalizer": 9,
+            "dA4_raw": {
+              "imag": "0",
+              "real": "0"
+            },
+            "directed_edges": 90,
+            "j4_birth1_raw": {
+              "imag": "0",
+              "real": "0"
+            },
+            "j4_exit2_raw": {
+              "imag": "0",
+              "real": "0"
+            },
+            "lower_subset_size": 1
+          },
+          {
+            "bernstein_degree_N_minus_1_normalizer": 36,
+            "dA4_raw": {
+              "imag": "288/5",
+              "real": "84/5"
+            },
+            "directed_edges": 360,
+            "j4_birth1_raw": {
+              "imag": "288/5",
+              "real": "84/5"
+            },
+            "j4_exit2_raw": {
+              "imag": "0",
+              "real": "0"
+            },
+            "lower_subset_size": 2
+          },
+          {
+            "bernstein_degree_N_minus_1_normalizer": 84,
+            "dA4_raw": {
+              "imag": "864/5",
+              "real": "252/5"
+            },
+            "directed_edges": 840,
+            "j4_birth1_raw": {
+              "imag": "1056/5",
+              "real": "308/5"
+            },
+            "j4_exit2_raw": {
+              "imag": "192/5",
+              "real": "56/5"
+            },
+            "lower_subset_size": 3
+          },
+          {
+            "bernstein_degree_N_minus_1_normalizer": 126,
+            "dA4_raw": {
+              "imag": "576/5",
+              "real": "168/5"
+            },
+            "directed_edges": 1260,
+            "j4_birth1_raw": {
+              "imag": "288",
+              "real": "84"
+            },
+            "j4_exit2_raw": {
+              "imag": "864/5",
+              "real": "252/5"
+            },
+            "lower_subset_size": 4
+          },
+          {
+            "bernstein_degree_N_minus_1_normalizer": 126,
+            "dA4_raw": {
+              "imag": "-576/5",
+              "real": "-168/5"
+            },
+            "directed_edges": 1260,
+            "j4_birth1_raw": {
+              "imag": "864/5",
+              "real": "252/5"
+            },
+            "j4_exit2_raw": {
+              "imag": "288",
+              "real": "84"
+            },
+            "lower_subset_size": 5
+          },
+          {
+            "bernstein_degree_N_minus_1_normalizer": 84,
+            "dA4_raw": {
+              "imag": "-864/5",
+              "real": "-252/5"
+            },
+            "directed_edges": 840,
+            "j4_birth1_raw": {
+              "imag": "192/5",
+              "real": "56/5"
+            },
+            "j4_exit2_raw": {
+              "imag": "1056/5",
+              "real": "308/5"
+            },
+            "lower_subset_size": 6
+          },
+          {
+            "bernstein_degree_N_minus_1_normalizer": 36,
+            "dA4_raw": {
+              "imag": "-288/5",
+              "real": "-84/5"
+            },
+            "directed_edges": 360,
+            "j4_birth1_raw": {
+              "imag": "0",
+              "real": "0"
+            },
+            "j4_exit2_raw": {
+              "imag": "288/5",
+              "real": "84/5"
+            },
+            "lower_subset_size": 7
+          },
+          {
+            "bernstein_degree_N_minus_1_normalizer": 9,
+            "dA4_raw": {
+              "imag": "0",
+              "real": "0"
+            },
+            "directed_edges": 90,
+            "j4_birth1_raw": {
+              "imag": "0",
+              "real": "0"
+            },
+            "j4_exit2_raw": {
+              "imag": "0",
+              "real": "0"
+            },
+            "lower_subset_size": 8
+          },
+          {
+            "bernstein_degree_N_minus_1_normalizer": 1,
+            "dA4_raw": {
+              "imag": "0",
+              "real": "0"
+            },
+            "directed_edges": 10,
+            "j4_birth1_raw": {
+              "imag": "0",
+              "real": "0"
+            },
+            "j4_exit2_raw": {
+              "imag": "0",
+              "real": "0"
+            },
+            "lower_subset_size": 9
+          }
+        ],
+        "derivative_coefficient_failures": 0,
+        "identity": "A4(state)=primitive-sector chi4; dA4/dp=j4_birth1-j4_exit2",
+        "state_crosswalk_path_failures": 0
+      },
+      "subgroup_contract": {
+        "after_line_birth": "Z ell with ell primitive",
+        "after_second_birth": "Z^2",
+        "iota": 1
+      },
+      "sum_over_ell_plus_direct_atom_recovers_K1": true,
+      "sum_over_projective_ell_recovers_line_bearing_K1": true,
+      "terminal_marked_state_count": 1680,
+      "timing_cells_with_multiple_line_marks": {
+        "3,4": [
+          "0,1",
+          "1,0"
+        ],
+        "3,5": [
+          "0,1",
+          "1,0"
+        ],
+        "3,6": [
+          "0,1",
+          "1,0"
+        ],
+        "3,7": [
+          "0,1",
+          "1,0"
+        ],
+        "3,8": [
+          "0,1",
+          "1,0"
+        ],
+        "4,5": [
+          "0,1",
+          "1,0"
+        ],
+        "4,6": [
+          "0,1",
+          "1,0"
+        ],
+        "4,7": [
+          "0,1",
+          "1,0"
+        ],
+        "4,8": [
+          "0,1",
+          "1,0"
+        ],
+        "5,6": [
+          "0,1",
+          "1,0"
+        ],
+        "5,7": [
+          "0,1",
+          "1,0"
+        ],
+        "5,8": [
+          "0,1",
+          "1,0"
+        ],
+        "6,7": [
+          "0,1",
+          "1,0"
+        ],
+        "6,8": [
+          "0,1",
+          "1,0"
+        ],
+        "7,8": [
+          "0,1",
+          "1,0"
+        ]
+      },
+      "timing_line_factorization_failures": 0,
+      "unmarked_transition_K1_histogram": {
+        "3": 604800,
+        "4": 1036800,
+        "5": 1036800,
+        "6": 691200,
+        "7": 259200
+      }
+    }
+  ],
+  "issue": 334,
+  "schema": "matching-one/projective-essential-birth-oracle/v1",
+  "scientific_crosswalk": {
+    "A4": "exactly the fixed-p rank-one primitive-sector chi4 of Issue 156",
+    "direct_birth_boundary": "0->2 jumps have no ell; the full unmarked K1 histogram is the sum over projective ell plus a typed DIRECT_RANK2 atom",
+    "new_split": "dA4/dp = j4_birth1 - j4_exit2, with the first line retained at exit",
+    "not_new": "A4 alone is not an independent observable",
+    "required_archive": "K1,K2,ell1,site1,site2; iota is fixed to one",
+    "tiny_oracle_result": "ell is not a function of K1,K2, but is exactly independent of them conditional on a line birth in all three controls; their supported lines share one chi4 value"
+  },
+  "status": "exact_phase_A_certificate"
+}
