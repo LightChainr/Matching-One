@@ -1,0 +1,83 @@
+{
+  "claim_boundary": {
+    "excluded": "production archives, empirical amplitudes, transfer fits, or physics claims",
+    "included": "exact rank reversal, M sign, orientation sign, and self-matching zero",
+    "parent_issue": "remain open"
+  },
+  "issue": 439,
+  "report": {
+    "H4_contrasts": {
+      "dual": "1/6",
+      "original": "-1/6"
+    },
+    "covector_gap": "2",
+    "covectors": {
+      "first": "-1",
+      "second": "1"
+    },
+    "dual_threshold": "5/8",
+    "exact_checks": {
+      "dual_H4_equals_negative_original": true,
+      "orientation_descriptor_preserved": true,
+      "self_matching_odd_coordinate_zero": true
+    },
+    "orientation_certificates": {
+      "first": {
+        "dual_M": "-1/6",
+        "dual_rank_counts": {
+          "P0": 2,
+          "P1": 3,
+          "P2": 1
+        },
+        "dual_threshold": "5/8",
+        "exact_checks": {
+          "M_changes_sign": true,
+          "rank_sectors_reverse": true,
+          "row_duality_involutive": true
+        },
+        "original_M": "1/6",
+        "original_rank_counts": {
+          "P0": 1,
+          "P1": 3,
+          "P2": 2
+        },
+        "threshold": "3/8"
+      },
+      "second": {
+        "dual_M": "1/6",
+        "dual_rank_counts": {
+          "P0": 1,
+          "P1": 3,
+          "P2": 2
+        },
+        "dual_threshold": "5/8",
+        "exact_checks": {
+          "M_changes_sign": true,
+          "rank_sectors_reverse": true,
+          "row_duality_involutive": true
+        },
+        "original_M": "-1/6",
+        "original_rank_counts": {
+          "P0": 2,
+          "P1": 3,
+          "P2": 1
+        },
+        "threshold": "3/8"
+      }
+    },
+    "orientation_order": [
+      "first",
+      "second"
+    ],
+    "self_matching_midpoint": {
+      "first": "0",
+      "odd_H4_contrast": "0",
+      "second": "0"
+    },
+    "threshold": "3/8"
+  },
+  "schema": "matching-one/projective-complement-sign/v1",
+  "status": "exact_complement_orientation_sign_control",
+  "tie_policy": "fail closed when p equals a birth time",
+  "transform": "(tau1,tau2)->(1-tau2,1-tau1)"
+}
