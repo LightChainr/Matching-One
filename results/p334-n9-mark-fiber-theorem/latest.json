@@ -1,0 +1,1210 @@
+{
+  "claim_boundary": [
+    "Exact for the six frozen N9 matching/layer4/Y=0 rows.",
+    "The target-image deficit follows without max flow; source injection still uses the separately certified Hall result.",
+    "No arbitrary-HNF formula or saturation theorem is claimed.",
+    "No slot, source, phase or provenance label contributes target capacity."
+  ],
+  "common_fiber_signature": {
+    "anchor_count": 48,
+    "full_activity_counts": {
+      "LL": 5184,
+      "LR": 5184,
+      "RL": 5184,
+      "RR": 5184
+    },
+    "full_anchor_partner_count_histogram": {
+      "432": 48
+    },
+    "full_base_pair_fibers": {
+      "base_pair_count": 720,
+      "targets_per_base_pair_histogram": {
+        "24": 432,
+        "36": 288
+      }
+    },
+    "old_activity_base_pair_fibers": {
+      "LL": {
+        "base_pair_count": 360,
+        "targets_per_base_pair_histogram": {
+          "10": 48,
+          "11": 96,
+          "3": 96,
+          "6": 72,
+          "9": 48
+        }
+      },
+      "LR": {
+        "base_pair_count": 198,
+        "targets_per_base_pair_histogram": {
+          "10": 12,
+          "12": 24,
+          "3": 48,
+          "4": 36,
+          "6": 36,
+          "8": 42
+        }
+      },
+      "RL": {
+        "base_pair_count": 84,
+        "targets_per_base_pair_histogram": {
+          "12": 12,
+          "13": 24,
+          "14": 12,
+          "3": 24,
+          "6": 12
+        }
+      },
+      "RR": {
+        "base_pair_count": 16,
+        "targets_per_base_pair_histogram": {
+          "3": 16
+        }
+      }
+    },
+    "old_activity_counts": {
+      "LL": 2688,
+      "LR": 1248,
+      "RL": 768,
+      "RR": 48
+    },
+    "old_anchor_partner_count_histogram": {
+      "0": 12,
+      "164": 24,
+      "67": 8,
+      "70": 4
+    },
+    "old_base_pair_fibers": {
+      "base_pair_count": 480,
+      "targets_per_base_pair_histogram": {
+        "10": 72,
+        "11": 112,
+        "12": 30,
+        "13": 24,
+        "14": 20,
+        "15": 32,
+        "18": 6,
+        "21": 4,
+        "3": 24,
+        "6": 78,
+        "7": 24,
+        "8": 18,
+        "9": 36
+      }
+    },
+    "sha256": "cdab8b095058fc6e385e3da1474b1be452da8453543759a0a2df2f89184c4350",
+    "two_mark_activity_base_pair_fibers": {
+      "LL": {
+        "base_pair_count": 432,
+        "targets_per_base_pair_histogram": {
+          "12": 432
+        }
+      },
+      "LR": {
+        "base_pair_count": 432,
+        "targets_per_base_pair_histogram": {
+          "12": 432
+        }
+      },
+      "RL": {
+        "base_pair_count": 288,
+        "targets_per_base_pair_histogram": {
+          "18": 288
+        }
+      },
+      "RR": {
+        "base_pair_count": 288,
+        "targets_per_base_pair_histogram": {
+          "18": 288
+        }
+      }
+    },
+    "two_mark_activity_counts": {
+      "LL": 5184,
+      "LR": 5184,
+      "RL": 5184,
+      "RR": 5184
+    },
+    "two_mark_anchor_partner_count_histogram": {
+      "432": 48
+    },
+    "two_mark_base_pair_fibers": {
+      "base_pair_count": 720,
+      "targets_per_base_pair_histogram": {
+        "24": 432,
+        "36": 288
+      }
+    }
+  },
+  "conclusion": {
+    "negative": "The old 11M image is not a union of eleven complete M-sized first-anchor fibers. The 11/16 fraction is an exact global sum over nonuniform fibers, not a literal eleven-of-sixteen local-slot rule.",
+    "positive": "All six N9 Y=0 rows have the same exact nonuniform first-M anchor fiber histogram. Its sum gives 11M old targets against 16M demand, hence the 5M = 5/16 deficit without a max-flow calculation. Releasing two output marks makes all 48 anchors complete with M partners, giving 48M."
+  },
+  "crosswalk_to_birth_age_review": {
+    "commit": "fee33287cf4830e07ccef6177f43034add02256e",
+    "next_existing_archive_test": {
+      "birth_age_estimand": "At each occupied count k and line ell, compare the discrete exit hazards P(tau2=k+1 | tau2>k,tau1=j,ell) across entry times j; freeze pooling bins before scoring.",
+      "collision_estimand": "D_N = mean[DIRECT_RANK2] = P(tau1=tau2)",
+      "compute": "no new simulation; one pass over existing sparse joint records plus batch-level scoring",
+      "covariance_contract": "Compute both estimands in every original batch and retain their full joint covariance. A covariance-whitened common-age score must count DIRECT_RANK2 paths as a separate no-plateau channel rather than silently dropping them from the risk set.",
+      "inputs": "same-batch (tau1, primitive ell, tau2, DIRECT_RANK2) records already emitted by the projective-birth archive",
+      "primary_null": "Conditional on (k,ell,tau2>k), exit hazard is independent of tau1; D_N is reported jointly but is not combined as an independent vote."
+    },
+    "relationship": "The birth-age review concerns path-time memory of (tau1,ell,tau2) and the direct 0-to-2 collision mass D_N. This certificate concerns the image capacity of a bounded N9 D x F switching reservoir. Neither identity implies the other, and the exact N10 1/57 witness is not rerun here."
+  },
+  "derived_identities": {
+    "M": 432,
+    "deficiency": 2160,
+    "deficiency_fraction": "5/16",
+    "deficiency_in_M_units": 5,
+    "full_MM_formula": "M^2/N = 432^2/9 = 20736 = 48M",
+    "normalized_first_M_anchors": 48,
+    "old_anchor_sum": "12*0 + 8*67 + 4*70 + 24*164 = 4752 = 11M",
+    "old_coverage_fraction": "11/16",
+    "old_image": 4752,
+    "old_image_in_M_units": 11,
+    "source_demand": 6912,
+    "source_demand_in_M_units": 16,
+    "two_mark_gain": 15984,
+    "two_mark_gain_in_M_units": 37,
+    "two_mark_image": 20736,
+    "two_mark_image_in_M_units": 48
+  },
+  "issue": 334,
+  "protocol": {
+    "input_hashes_verified": true,
+    "parent_commit": "a5de4d61df8f4abf5e96cb81b57bcf54565691e2",
+    "path": "analysis/p334_n9_mark_fiber_protocol.json",
+    "sha256": "f19d9130a66d27aab0b20f4557d0d506c23ca5e7e368564e9b832add4256ff0a"
+  },
+  "rows": [
+    {
+      "N": 9,
+      "Smith_invariants": [
+        3,
+        3
+      ],
+      "carrier": "matching",
+      "fiber_signature": {
+        "anchor_count": 48,
+        "full_activity_counts": {
+          "LL": 5184,
+          "LR": 5184,
+          "RL": 5184,
+          "RR": 5184
+        },
+        "full_anchor_partner_count_histogram": {
+          "432": 48
+        },
+        "full_base_pair_fibers": {
+          "base_pair_count": 720,
+          "targets_per_base_pair_histogram": {
+            "24": 432,
+            "36": 288
+          }
+        },
+        "old_activity_base_pair_fibers": {
+          "LL": {
+            "base_pair_count": 360,
+            "targets_per_base_pair_histogram": {
+              "10": 48,
+              "11": 96,
+              "3": 96,
+              "6": 72,
+              "9": 48
+            }
+          },
+          "LR": {
+            "base_pair_count": 198,
+            "targets_per_base_pair_histogram": {
+              "10": 12,
+              "12": 24,
+              "3": 48,
+              "4": 36,
+              "6": 36,
+              "8": 42
+            }
+          },
+          "RL": {
+            "base_pair_count": 84,
+            "targets_per_base_pair_histogram": {
+              "12": 12,
+              "13": 24,
+              "14": 12,
+              "3": 24,
+              "6": 12
+            }
+          },
+          "RR": {
+            "base_pair_count": 16,
+            "targets_per_base_pair_histogram": {
+              "3": 16
+            }
+          }
+        },
+        "old_activity_counts": {
+          "LL": 2688,
+          "LR": 1248,
+          "RL": 768,
+          "RR": 48
+        },
+        "old_anchor_partner_count_histogram": {
+          "0": 12,
+          "164": 24,
+          "67": 8,
+          "70": 4
+        },
+        "old_base_pair_fibers": {
+          "base_pair_count": 480,
+          "targets_per_base_pair_histogram": {
+            "10": 72,
+            "11": 112,
+            "12": 30,
+            "13": 24,
+            "14": 20,
+            "15": 32,
+            "18": 6,
+            "21": 4,
+            "3": 24,
+            "6": 78,
+            "7": 24,
+            "8": 18,
+            "9": 36
+          }
+        },
+        "sha256": "cdab8b095058fc6e385e3da1474b1be452da8453543759a0a2df2f89184c4350",
+        "two_mark_activity_base_pair_fibers": {
+          "LL": {
+            "base_pair_count": 432,
+            "targets_per_base_pair_histogram": {
+              "12": 432
+            }
+          },
+          "LR": {
+            "base_pair_count": 432,
+            "targets_per_base_pair_histogram": {
+              "12": 432
+            }
+          },
+          "RL": {
+            "base_pair_count": 288,
+            "targets_per_base_pair_histogram": {
+              "18": 288
+            }
+          },
+          "RR": {
+            "base_pair_count": 288,
+            "targets_per_base_pair_histogram": {
+              "18": 288
+            }
+          }
+        },
+        "two_mark_activity_counts": {
+          "LL": 5184,
+          "LR": 5184,
+          "RL": 5184,
+          "RR": 5184
+        },
+        "two_mark_anchor_partner_count_histogram": {
+          "432": 48
+        },
+        "two_mark_base_pair_fibers": {
+          "base_pair_count": 720,
+          "targets_per_base_pair_histogram": {
+            "24": 432,
+            "36": 288
+          }
+        }
+      },
+      "image_counts": {
+        "full_MM": 20736,
+        "old": 4752,
+        "two_mark": 20736,
+        "two_mark_gain": 15984
+      },
+      "line": [
+        0,
+        1
+      ],
+      "lower_layer": 4,
+      "matrix": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "motifs": {
+        "D": 216,
+        "F": 72,
+        "M": 432,
+        "Y": 0
+      },
+      "row_index": 1,
+      "set_relations": {
+        "old_subset_two_mark": true,
+        "two_mark_equals_full_MM": true
+      }
+    },
+    {
+      "N": 9,
+      "Smith_invariants": [
+        3,
+        3
+      ],
+      "carrier": "matching",
+      "fiber_signature": {
+        "anchor_count": 48,
+        "full_activity_counts": {
+          "LL": 5184,
+          "LR": 5184,
+          "RL": 5184,
+          "RR": 5184
+        },
+        "full_anchor_partner_count_histogram": {
+          "432": 48
+        },
+        "full_base_pair_fibers": {
+          "base_pair_count": 720,
+          "targets_per_base_pair_histogram": {
+            "24": 432,
+            "36": 288
+          }
+        },
+        "old_activity_base_pair_fibers": {
+          "LL": {
+            "base_pair_count": 360,
+            "targets_per_base_pair_histogram": {
+              "10": 48,
+              "11": 96,
+              "3": 96,
+              "6": 72,
+              "9": 48
+            }
+          },
+          "LR": {
+            "base_pair_count": 198,
+            "targets_per_base_pair_histogram": {
+              "10": 12,
+              "12": 24,
+              "3": 48,
+              "4": 36,
+              "6": 36,
+              "8": 42
+            }
+          },
+          "RL": {
+            "base_pair_count": 84,
+            "targets_per_base_pair_histogram": {
+              "12": 12,
+              "13": 24,
+              "14": 12,
+              "3": 24,
+              "6": 12
+            }
+          },
+          "RR": {
+            "base_pair_count": 16,
+            "targets_per_base_pair_histogram": {
+              "3": 16
+            }
+          }
+        },
+        "old_activity_counts": {
+          "LL": 2688,
+          "LR": 1248,
+          "RL": 768,
+          "RR": 48
+        },
+        "old_anchor_partner_count_histogram": {
+          "0": 12,
+          "164": 24,
+          "67": 8,
+          "70": 4
+        },
+        "old_base_pair_fibers": {
+          "base_pair_count": 480,
+          "targets_per_base_pair_histogram": {
+            "10": 72,
+            "11": 112,
+            "12": 30,
+            "13": 24,
+            "14": 20,
+            "15": 32,
+            "18": 6,
+            "21": 4,
+            "3": 24,
+            "6": 78,
+            "7": 24,
+            "8": 18,
+            "9": 36
+          }
+        },
+        "sha256": "cdab8b095058fc6e385e3da1474b1be452da8453543759a0a2df2f89184c4350",
+        "two_mark_activity_base_pair_fibers": {
+          "LL": {
+            "base_pair_count": 432,
+            "targets_per_base_pair_histogram": {
+              "12": 432
+            }
+          },
+          "LR": {
+            "base_pair_count": 432,
+            "targets_per_base_pair_histogram": {
+              "12": 432
+            }
+          },
+          "RL": {
+            "base_pair_count": 288,
+            "targets_per_base_pair_histogram": {
+              "18": 288
+            }
+          },
+          "RR": {
+            "base_pair_count": 288,
+            "targets_per_base_pair_histogram": {
+              "18": 288
+            }
+          }
+        },
+        "two_mark_activity_counts": {
+          "LL": 5184,
+          "LR": 5184,
+          "RL": 5184,
+          "RR": 5184
+        },
+        "two_mark_anchor_partner_count_histogram": {
+          "432": 48
+        },
+        "two_mark_base_pair_fibers": {
+          "base_pair_count": 720,
+          "targets_per_base_pair_histogram": {
+            "24": 432,
+            "36": 288
+          }
+        }
+      },
+      "image_counts": {
+        "full_MM": 20736,
+        "old": 4752,
+        "two_mark": 20736,
+        "two_mark_gain": 15984
+      },
+      "line": [
+        1,
+        0
+      ],
+      "lower_layer": 4,
+      "matrix": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "motifs": {
+        "D": 216,
+        "F": 72,
+        "M": 432,
+        "Y": 0
+      },
+      "row_index": 3,
+      "set_relations": {
+        "old_subset_two_mark": true,
+        "two_mark_equals_full_MM": true
+      }
+    },
+    {
+      "N": 9,
+      "Smith_invariants": [
+        1,
+        9
+      ],
+      "carrier": "matching",
+      "fiber_signature": {
+        "anchor_count": 48,
+        "full_activity_counts": {
+          "LL": 5184,
+          "LR": 5184,
+          "RL": 5184,
+          "RR": 5184
+        },
+        "full_anchor_partner_count_histogram": {
+          "432": 48
+        },
+        "full_base_pair_fibers": {
+          "base_pair_count": 720,
+          "targets_per_base_pair_histogram": {
+            "24": 432,
+            "36": 288
+          }
+        },
+        "old_activity_base_pair_fibers": {
+          "LL": {
+            "base_pair_count": 360,
+            "targets_per_base_pair_histogram": {
+              "10": 48,
+              "11": 96,
+              "3": 96,
+              "6": 72,
+              "9": 48
+            }
+          },
+          "LR": {
+            "base_pair_count": 198,
+            "targets_per_base_pair_histogram": {
+              "10": 12,
+              "12": 24,
+              "3": 48,
+              "4": 36,
+              "6": 36,
+              "8": 42
+            }
+          },
+          "RL": {
+            "base_pair_count": 84,
+            "targets_per_base_pair_histogram": {
+              "12": 12,
+              "13": 24,
+              "14": 12,
+              "3": 24,
+              "6": 12
+            }
+          },
+          "RR": {
+            "base_pair_count": 16,
+            "targets_per_base_pair_histogram": {
+              "3": 16
+            }
+          }
+        },
+        "old_activity_counts": {
+          "LL": 2688,
+          "LR": 1248,
+          "RL": 768,
+          "RR": 48
+        },
+        "old_anchor_partner_count_histogram": {
+          "0": 12,
+          "164": 24,
+          "67": 8,
+          "70": 4
+        },
+        "old_base_pair_fibers": {
+          "base_pair_count": 480,
+          "targets_per_base_pair_histogram": {
+            "10": 72,
+            "11": 112,
+            "12": 30,
+            "13": 24,
+            "14": 20,
+            "15": 32,
+            "18": 6,
+            "21": 4,
+            "3": 24,
+            "6": 78,
+            "7": 24,
+            "8": 18,
+            "9": 36
+          }
+        },
+        "sha256": "cdab8b095058fc6e385e3da1474b1be452da8453543759a0a2df2f89184c4350",
+        "two_mark_activity_base_pair_fibers": {
+          "LL": {
+            "base_pair_count": 432,
+            "targets_per_base_pair_histogram": {
+              "12": 432
+            }
+          },
+          "LR": {
+            "base_pair_count": 432,
+            "targets_per_base_pair_histogram": {
+              "12": 432
+            }
+          },
+          "RL": {
+            "base_pair_count": 288,
+            "targets_per_base_pair_histogram": {
+              "18": 288
+            }
+          },
+          "RR": {
+            "base_pair_count": 288,
+            "targets_per_base_pair_histogram": {
+              "18": 288
+            }
+          }
+        },
+        "two_mark_activity_counts": {
+          "LL": 5184,
+          "LR": 5184,
+          "RL": 5184,
+          "RR": 5184
+        },
+        "two_mark_anchor_partner_count_histogram": {
+          "432": 48
+        },
+        "two_mark_base_pair_fibers": {
+          "base_pair_count": 720,
+          "targets_per_base_pair_histogram": {
+            "24": 432,
+            "36": 288
+          }
+        }
+      },
+      "image_counts": {
+        "full_MM": 20736,
+        "old": 4752,
+        "two_mark": 20736,
+        "two_mark_gain": 15984
+      },
+      "line": [
+        1,
+        0
+      ],
+      "lower_layer": 4,
+      "matrix": [
+        [
+          3,
+          1
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "motifs": {
+        "D": 216,
+        "F": 72,
+        "M": 432,
+        "Y": 0
+      },
+      "row_index": 6,
+      "set_relations": {
+        "old_subset_two_mark": true,
+        "two_mark_equals_full_MM": true
+      }
+    },
+    {
+      "N": 9,
+      "Smith_invariants": [
+        1,
+        9
+      ],
+      "carrier": "matching",
+      "fiber_signature": {
+        "anchor_count": 48,
+        "full_activity_counts": {
+          "LL": 5184,
+          "LR": 5184,
+          "RL": 5184,
+          "RR": 5184
+        },
+        "full_anchor_partner_count_histogram": {
+          "432": 48
+        },
+        "full_base_pair_fibers": {
+          "base_pair_count": 720,
+          "targets_per_base_pair_histogram": {
+            "24": 432,
+            "36": 288
+          }
+        },
+        "old_activity_base_pair_fibers": {
+          "LL": {
+            "base_pair_count": 360,
+            "targets_per_base_pair_histogram": {
+              "10": 48,
+              "11": 96,
+              "3": 96,
+              "6": 72,
+              "9": 48
+            }
+          },
+          "LR": {
+            "base_pair_count": 198,
+            "targets_per_base_pair_histogram": {
+              "10": 12,
+              "12": 24,
+              "3": 48,
+              "4": 36,
+              "6": 36,
+              "8": 42
+            }
+          },
+          "RL": {
+            "base_pair_count": 84,
+            "targets_per_base_pair_histogram": {
+              "12": 12,
+              "13": 24,
+              "14": 12,
+              "3": 24,
+              "6": 12
+            }
+          },
+          "RR": {
+            "base_pair_count": 16,
+            "targets_per_base_pair_histogram": {
+              "3": 16
+            }
+          }
+        },
+        "old_activity_counts": {
+          "LL": 2688,
+          "LR": 1248,
+          "RL": 768,
+          "RR": 48
+        },
+        "old_anchor_partner_count_histogram": {
+          "0": 12,
+          "164": 24,
+          "67": 8,
+          "70": 4
+        },
+        "old_base_pair_fibers": {
+          "base_pair_count": 480,
+          "targets_per_base_pair_histogram": {
+            "10": 72,
+            "11": 112,
+            "12": 30,
+            "13": 24,
+            "14": 20,
+            "15": 32,
+            "18": 6,
+            "21": 4,
+            "3": 24,
+            "6": 78,
+            "7": 24,
+            "8": 18,
+            "9": 36
+          }
+        },
+        "sha256": "cdab8b095058fc6e385e3da1474b1be452da8453543759a0a2df2f89184c4350",
+        "two_mark_activity_base_pair_fibers": {
+          "LL": {
+            "base_pair_count": 432,
+            "targets_per_base_pair_histogram": {
+              "12": 432
+            }
+          },
+          "LR": {
+            "base_pair_count": 432,
+            "targets_per_base_pair_histogram": {
+              "12": 432
+            }
+          },
+          "RL": {
+            "base_pair_count": 288,
+            "targets_per_base_pair_histogram": {
+              "18": 288
+            }
+          },
+          "RR": {
+            "base_pair_count": 288,
+            "targets_per_base_pair_histogram": {
+              "18": 288
+            }
+          }
+        },
+        "two_mark_activity_counts": {
+          "LL": 5184,
+          "LR": 5184,
+          "RL": 5184,
+          "RR": 5184
+        },
+        "two_mark_anchor_partner_count_histogram": {
+          "432": 48
+        },
+        "two_mark_base_pair_fibers": {
+          "base_pair_count": 720,
+          "targets_per_base_pair_histogram": {
+            "24": 432,
+            "36": 288
+          }
+        }
+      },
+      "image_counts": {
+        "full_MM": 20736,
+        "old": 4752,
+        "two_mark": 20736,
+        "two_mark_gain": 15984
+      },
+      "line": [
+        1,
+        0
+      ],
+      "lower_layer": 4,
+      "matrix": [
+        [
+          3,
+          2
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "motifs": {
+        "D": 216,
+        "F": 72,
+        "M": 432,
+        "Y": 0
+      },
+      "row_index": 9,
+      "set_relations": {
+        "old_subset_two_mark": true,
+        "two_mark_equals_full_MM": true
+      }
+    },
+    {
+      "N": 9,
+      "Smith_invariants": [
+        1,
+        9
+      ],
+      "carrier": "matching",
+      "fiber_signature": {
+        "anchor_count": 48,
+        "full_activity_counts": {
+          "LL": 5184,
+          "LR": 5184,
+          "RL": 5184,
+          "RR": 5184
+        },
+        "full_anchor_partner_count_histogram": {
+          "432": 48
+        },
+        "full_base_pair_fibers": {
+          "base_pair_count": 720,
+          "targets_per_base_pair_histogram": {
+            "24": 432,
+            "36": 288
+          }
+        },
+        "old_activity_base_pair_fibers": {
+          "LL": {
+            "base_pair_count": 360,
+            "targets_per_base_pair_histogram": {
+              "10": 48,
+              "11": 96,
+              "3": 96,
+              "6": 72,
+              "9": 48
+            }
+          },
+          "LR": {
+            "base_pair_count": 198,
+            "targets_per_base_pair_histogram": {
+              "10": 12,
+              "12": 24,
+              "3": 48,
+              "4": 36,
+              "6": 36,
+              "8": 42
+            }
+          },
+          "RL": {
+            "base_pair_count": 84,
+            "targets_per_base_pair_histogram": {
+              "12": 12,
+              "13": 24,
+              "14": 12,
+              "3": 24,
+              "6": 12
+            }
+          },
+          "RR": {
+            "base_pair_count": 16,
+            "targets_per_base_pair_histogram": {
+              "3": 16
+            }
+          }
+        },
+        "old_activity_counts": {
+          "LL": 2688,
+          "LR": 1248,
+          "RL": 768,
+          "RR": 48
+        },
+        "old_anchor_partner_count_histogram": {
+          "0": 12,
+          "164": 24,
+          "67": 8,
+          "70": 4
+        },
+        "old_base_pair_fibers": {
+          "base_pair_count": 480,
+          "targets_per_base_pair_histogram": {
+            "10": 72,
+            "11": 112,
+            "12": 30,
+            "13": 24,
+            "14": 20,
+            "15": 32,
+            "18": 6,
+            "21": 4,
+            "3": 24,
+            "6": 78,
+            "7": 24,
+            "8": 18,
+            "9": 36
+          }
+        },
+        "sha256": "cdab8b095058fc6e385e3da1474b1be452da8453543759a0a2df2f89184c4350",
+        "two_mark_activity_base_pair_fibers": {
+          "LL": {
+            "base_pair_count": 432,
+            "targets_per_base_pair_histogram": {
+              "12": 432
+            }
+          },
+          "LR": {
+            "base_pair_count": 432,
+            "targets_per_base_pair_histogram": {
+              "12": 432
+            }
+          },
+          "RL": {
+            "base_pair_count": 288,
+            "targets_per_base_pair_histogram": {
+              "18": 288
+            }
+          },
+          "RR": {
+            "base_pair_count": 288,
+            "targets_per_base_pair_histogram": {
+              "18": 288
+            }
+          }
+        },
+        "two_mark_activity_counts": {
+          "LL": 5184,
+          "LR": 5184,
+          "RL": 5184,
+          "RR": 5184
+        },
+        "two_mark_anchor_partner_count_histogram": {
+          "432": 48
+        },
+        "two_mark_base_pair_fibers": {
+          "base_pair_count": 720,
+          "targets_per_base_pair_histogram": {
+            "24": 432,
+            "36": 288
+          }
+        }
+      },
+      "image_counts": {
+        "full_MM": 20736,
+        "old": 4752,
+        "two_mark": 20736,
+        "two_mark_gain": 15984
+      },
+      "line": [
+        1,
+        -3
+      ],
+      "lower_layer": 4,
+      "matrix": [
+        [
+          9,
+          3
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "motifs": {
+        "D": 216,
+        "F": 72,
+        "M": 432,
+        "Y": 0
+      },
+      "row_index": 15,
+      "set_relations": {
+        "old_subset_two_mark": true,
+        "two_mark_equals_full_MM": true
+      }
+    },
+    {
+      "N": 9,
+      "Smith_invariants": [
+        1,
+        9
+      ],
+      "carrier": "matching",
+      "fiber_signature": {
+        "anchor_count": 48,
+        "full_activity_counts": {
+          "LL": 5184,
+          "LR": 5184,
+          "RL": 5184,
+          "RR": 5184
+        },
+        "full_anchor_partner_count_histogram": {
+          "432": 48
+        },
+        "full_base_pair_fibers": {
+          "base_pair_count": 720,
+          "targets_per_base_pair_histogram": {
+            "24": 432,
+            "36": 288
+          }
+        },
+        "old_activity_base_pair_fibers": {
+          "LL": {
+            "base_pair_count": 360,
+            "targets_per_base_pair_histogram": {
+              "10": 48,
+              "11": 96,
+              "3": 96,
+              "6": 72,
+              "9": 48
+            }
+          },
+          "LR": {
+            "base_pair_count": 198,
+            "targets_per_base_pair_histogram": {
+              "10": 12,
+              "12": 24,
+              "3": 48,
+              "4": 36,
+              "6": 36,
+              "8": 42
+            }
+          },
+          "RL": {
+            "base_pair_count": 84,
+            "targets_per_base_pair_histogram": {
+              "12": 12,
+              "13": 24,
+              "14": 12,
+              "3": 24,
+              "6": 12
+            }
+          },
+          "RR": {
+            "base_pair_count": 16,
+            "targets_per_base_pair_histogram": {
+              "3": 16
+            }
+          }
+        },
+        "old_activity_counts": {
+          "LL": 2688,
+          "LR": 1248,
+          "RL": 768,
+          "RR": 48
+        },
+        "old_anchor_partner_count_histogram": {
+          "0": 12,
+          "164": 24,
+          "67": 8,
+          "70": 4
+        },
+        "old_base_pair_fibers": {
+          "base_pair_count": 480,
+          "targets_per_base_pair_histogram": {
+            "10": 72,
+            "11": 112,
+            "12": 30,
+            "13": 24,
+            "14": 20,
+            "15": 32,
+            "18": 6,
+            "21": 4,
+            "3": 24,
+            "6": 78,
+            "7": 24,
+            "8": 18,
+            "9": 36
+          }
+        },
+        "sha256": "cdab8b095058fc6e385e3da1474b1be452da8453543759a0a2df2f89184c4350",
+        "two_mark_activity_base_pair_fibers": {
+          "LL": {
+            "base_pair_count": 432,
+            "targets_per_base_pair_histogram": {
+              "12": 432
+            }
+          },
+          "LR": {
+            "base_pair_count": 432,
+            "targets_per_base_pair_histogram": {
+              "12": 432
+            }
+          },
+          "RL": {
+            "base_pair_count": 288,
+            "targets_per_base_pair_histogram": {
+              "18": 288
+            }
+          },
+          "RR": {
+            "base_pair_count": 288,
+            "targets_per_base_pair_histogram": {
+              "18": 288
+            }
+          }
+        },
+        "two_mark_activity_counts": {
+          "LL": 5184,
+          "LR": 5184,
+          "RL": 5184,
+          "RR": 5184
+        },
+        "two_mark_anchor_partner_count_histogram": {
+          "432": 48
+        },
+        "two_mark_base_pair_fibers": {
+          "base_pair_count": 720,
+          "targets_per_base_pair_histogram": {
+            "24": 432,
+            "36": 288
+          }
+        }
+      },
+      "image_counts": {
+        "full_MM": 20736,
+        "old": 4752,
+        "two_mark": 20736,
+        "two_mark_gain": 15984
+      },
+      "line": [
+        2,
+        -3
+      ],
+      "lower_layer": 4,
+      "matrix": [
+        [
+          9,
+          6
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "motifs": {
+        "D": 216,
+        "F": 72,
+        "M": 432,
+        "Y": 0
+      },
+      "row_index": 24,
+      "set_relations": {
+        "old_subset_two_mark": true,
+        "two_mark_equals_full_MM": true
+      }
+    }
+  ],
+  "schema": "matching-one/p334-n9-mark-fiber-theorem/v1",
+  "status": "exact_bounded_mark_fiber_theorem"
+}
