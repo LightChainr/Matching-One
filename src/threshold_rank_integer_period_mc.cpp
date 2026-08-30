@@ -357,6 +357,25 @@ struct BirthTrace {
     std::vector<PathInsertion> path;
 };
 
+struct GeometryPilotRecord {
+    bool at_risk = false;
+    int k1 = 0;
+    Vector line{0, 0};
+    int essential_size = 0;
+    int essential_carriers = 0;
+    int occupied_frontier = 0;
+    int vacant_frontier = 0;
+    int h2 = 0;
+    int h2_theta = 0;
+    int h2_figure8 = 0;
+    int h2_separate = 0;
+    int h2_direction_positive = 0;
+    int h2_direction_negative = 0;
+    int h2_direction_mixed = 0;
+    int next_site = -1;
+    int next_exit = 0;
+};
+
 struct PairDesign {
     int n;
     int a1;
@@ -493,6 +512,8 @@ class HomologyUnionFind {
     }
 
     bool component_crosses(int vertex) { return rank_[find(vertex).root] == 2; }
+
+    int component_size(int vertex) { return size_[find(vertex).root]; }
 
     ComponentMark component_mark(int vertex) {
         const int root = find(vertex).root;
@@ -759,7 +780,178 @@ class ThresholdEngine {
         return trace;
     }
 
+    GeometryPilotRecord geometry_pilot(const std::vector<int>& permutation, int k0) {
+        if (static_cast<int>(permutation.size()) != geometry_.n ||
+            k0 <= 0 || k0 >= geometry_.n) {
+            throw std::invalid_argument("invalid current-geometry pilot layer");
+        }
+        std::fill(active_.begin(), active_.end(), 0);
+        union_find_.reset();
+        graph_components_ = 0;
+        int global_rank = 0;
+        int k1 = 0;
+        Vector plateau_line{0, 0};
+        for (int offset = 0; offset < k0; ++offset) {
+            const int vertex = permutation[offset];
+            active_[vertex] = 1;
+            ++graph_components_;
+            for (const int edge_index : geometry_.primal_incident[vertex]) {
+                const Edge& edge = geometry_.primal_edges[edge_index];
+                if (active_[edge.i] && active_[edge.j] && union_find_.add_edge(edge)) {
+                    --graph_components_;
+                }
+            }
+            const HomologyUnionFind::ComponentMark component =
+                union_find_.component_mark(vertex);
+            if (component.rank == 2) {
+                global_rank = 2;
+            } else if (component.rank == 1) {
+                if (global_rank == 0) {
+                    global_rank = 1;
+                    k1 = offset + 1;
+                    plateau_line = component.line;
+                } else if (global_rank == 1 &&
+                           !same_vector(plateau_line, component.line)) {
+                    // This branch should be forbidden by disjoint-carrier
+                    // geometry on T2, but the ambient image definition is
+                    // explicit here rather than relying on that theorem.
+                    global_rank = 2;
+                }
+            }
+        }
+
+        GeometryPilotRecord record;
+        if (global_rank != 1) return record;
+        record.at_risk = true;
+        record.k1 = k1;
+        record.line = plateau_line;
+        record.next_site = permutation[k0];
+
+        std::map<int, HomologyUnionFind::ComponentMark> roots;
+        for (int vertex = 0; vertex < geometry_.n; ++vertex) {
+            if (!active_[vertex]) continue;
+            const int root = union_find_.find(vertex).root;
+            if (!roots.count(root)) roots[root] = union_find_.component_mark(vertex);
+        }
+        for (const auto& item : roots) {
+            const HomologyUnionFind::ComponentMark& mark = item.second;
+            if (mark.rank == 1) {
+                if (!same_vector(mark.line, plateau_line)) {
+                    throw std::logic_error("rank-one current carriers do not share ell");
+                }
+                ++record.essential_carriers;
+                record.essential_size += union_find_.component_size(item.first);
+            }
+        }
+
+        for (int vertex = 0; vertex < geometry_.n; ++vertex) {
+            if (active_[vertex]) {
+                if (union_find_.component_mark(vertex).rank != 1) continue;
+                bool frontier = false;
+                for (const int edge_index : geometry_.primal_incident[vertex]) {
+                    const Edge& edge = geometry_.primal_edges[edge_index];
+                    const int other = edge.i == vertex ? edge.j : edge.i;
+                    if (!active_[other]) frontier = true;
+                }
+                record.occupied_frontier += static_cast<int>(frontier);
+            } else {
+                bool frontier = false;
+                for (const int edge_index : geometry_.primal_incident[vertex]) {
+                    const Edge& edge = geometry_.primal_edges[edge_index];
+                    const int other = edge.i == vertex ? edge.j : edge.i;
+                    if (active_[other] &&
+                        union_find_.component_mark(other).rank == 1) frontier = true;
+                }
+                record.vacant_frontier += static_cast<int>(frontier);
+            }
+        }
+
+        for (int vertex = 0; vertex < geometry_.n; ++vertex) {
+            if (active_[vertex]) continue;
+            const Completion completion = one_step_completion(vertex, plateau_line);
+            if (!completion.crosses) continue;
+            ++record.h2;
+            if (completion.type == 0) ++record.h2_theta;
+            else if (completion.type == 1) ++record.h2_figure8;
+            else ++record.h2_separate;
+            if (completion.direction == 1) ++record.h2_direction_positive;
+            else if (completion.direction == -1) ++record.h2_direction_negative;
+            else ++record.h2_direction_mixed;
+            if (vertex == record.next_site) record.next_exit = 1;
+        }
+        if (record.h2 != record.h2_theta + record.h2_figure8 + record.h2_separate ||
+            record.h2 != record.h2_direction_positive +
+                         record.h2_direction_negative + record.h2_direction_mixed) {
+            throw std::logic_error("H2 trigger decompositions do not sum to H2");
+        }
+        return record;
+    }
+
   private:
+    struct Completion {
+        bool crosses = false;
+        int type = 2;       // 0 theta, 1 joined figure-eight, 2 separate carrier
+        int direction = 0;  // +1/-1, or 0 for mixed completing signs
+    };
+
+    Completion one_step_completion(int vertex, Vector plateau_line) {
+        struct RootContacts {
+            HomologyUnionFind::ComponentMark mark;
+            std::vector<Vector> root_positions;
+        };
+        std::map<int, RootContacts> contacts;
+        bool touches_rank_one = false;
+        for (const int edge_index : geometry_.primal_incident[vertex]) {
+            const Edge& edge = geometry_.primal_edges[edge_index];
+            const int other = edge.i == vertex ? edge.j : edge.i;
+            if (!active_[other]) continue;
+            const Vector step = edge.i == vertex
+                ? Vector{edge.dx, edge.dy} : Vector{-edge.dx, -edge.dy};
+            const HomologyUnionFind::FindResult found = union_find_.find(other);
+            const Vector root_position{step.x - found.dx, step.y - found.dy};
+            auto inserted = contacts.emplace(
+                found.root,
+                RootContacts{union_find_.component_mark(other), {}});
+            inserted.first->second.root_positions.push_back(root_position);
+            if (inserted.first->second.mark.rank == 1) touches_rank_one = true;
+        }
+
+        bool theta = false;
+        bool figure8 = false;
+        bool separate = false;
+        bool positive = false;
+        bool negative = false;
+        for (const auto& item : contacts) {
+            const RootContacts& root = item.second;
+            if (root.root_positions.size() < 2) continue;
+            const Vector anchor = root.root_positions.front();
+            for (std::size_t index = 1; index < root.root_positions.size(); ++index) {
+                const Vector displacement{
+                    root.root_positions[index].x - anchor.x,
+                    root.root_positions[index].y - anchor.y};
+                const Vector winding = geometry_.quotient.winding(
+                    displacement.x, displacement.y);
+                const __int128 cross = static_cast<__int128>(plateau_line.x) * winding.y -
+                                       static_cast<__int128>(plateau_line.y) * winding.x;
+                if (cross == 0) continue;
+                if (root.mark.rank == 1) theta = true;
+                else if (touches_rank_one) figure8 = true;
+                else separate = true;
+                const Vector canonical = primitive(winding);
+                const __int128 signed_cross =
+                    static_cast<__int128>(plateau_line.x) * canonical.y -
+                    static_cast<__int128>(plateau_line.y) * canonical.x;
+                positive = positive || signed_cross > 0;
+                negative = negative || signed_cross < 0;
+            }
+        }
+        Completion result;
+        result.crosses = theta || figure8 || separate;
+        result.type = theta ? 0 : (figure8 ? 1 : 2);
+        result.direction = positive == negative ? 0 : (positive ? 1 : -1);
+        return result;
+    }
+
     const Geometry& geometry_;
     std::vector<std::uint8_t> active_;
     HomologyUnionFind union_find_;
@@ -1173,6 +1365,29 @@ void self_test() {
         throw std::runtime_error("N=5 all-permutation rank histogram regression failed");
     }
 
+    // The virtual H2 oracle must equal explicit one-step replay.  N=5 has a
+    // rank-one plateau after three sites for every permutation, so all 120
+    // orders exercise the current-state path without a sampling caveat.
+    std::iota(permutation.begin(), permutation.end(), 0);
+    do {
+        const GeometryPilotRecord pilot = gaussian_engine.geometry_pilot(permutation, 3);
+        if (!pilot.at_risk || pilot.k1 != 3) {
+            throw std::runtime_error("N=5 geometry-pilot risk-set regression failed");
+        }
+        int brute_h2 = 0;
+        for (int candidate = 3; candidate < gaussian.n; ++candidate) {
+            std::vector<int> replay = permutation;
+            std::swap(replay[3], replay[candidate]);
+            const BirthTrace trace = gaussian_engine.trace(replay, false, false);
+            brute_h2 += static_cast<int>(trace.k2 == 4);
+        }
+        const BirthTrace actual = gaussian_engine.trace(permutation, false, false);
+        if (pilot.h2 != brute_h2 ||
+            pilot.next_exit != static_cast<int>(actual.k2 == 4)) {
+            throw std::runtime_error("virtual H2 differs from one-step replay");
+        }
+    } while (std::next_permutation(permutation.begin(), permutation.end()));
+
     const QuotientCoordinates arbitrary({3, 1, 1, 2});
     if (arbitrary.order != 5 || arbitrary.smith1 != 1 || arbitrary.smith2 != 5) {
         throw std::runtime_error("arbitrary-matrix Smith regression failed");
@@ -1299,7 +1514,8 @@ void self_test() {
     }
     std::cout << "self-test passed: arbitrary integer periods, exact HNF quotient/winding, "
                  "basis invariance, saturation gcd, lifted chi4, direct births, "
-                 "Euler external observer/Gram, Smith(2,130)/(2,170), N=5 all permutations\n";
+                 "Euler external observer/Gram, exact virtual H2, "
+                 "Smith(2,130)/(2,170), N=5 all permutations\n";
 }
 
 struct Options {
@@ -1314,6 +1530,7 @@ struct Options {
     bool self_test = false;
     bool marked_births = false;
     int far_radius = 0;
+    int geometry_pilot_k0 = 0;
     bool custom = false;
     Matrix first_matrix;
     Matrix second_matrix;
@@ -1342,6 +1559,7 @@ struct Options {
         << "  --output-prefix PATH writes .hist.csv, .moments.csv, .metadata.json\n"
         << "  --marked-births      also writes sparse birth and microcanonical path streams\n"
         << "  --far-radius R       add paired axis/diagonal local-arm observer at distance R\n"
+        << "  --geometry-pilot-k0 K  write current rank-one geometry rows after K sites\n"
         << "  --self-test          exact tiny and Smith regressions, then exit\n";
     std::exit(status);
 }
@@ -1405,6 +1623,9 @@ Options parse_options(int argc, char** argv) {
         else if (arg == "--self-test") options.self_test = true;
         else if (arg == "--marked-births") options.marked_births = true;
         else if (arg == "--far-radius") options.far_radius = parse_number<int>(need(i, arg), arg);
+        else if (arg == "--geometry-pilot-k0") {
+            options.geometry_pilot_k0 = parse_number<int>(need(i, arg), arg);
+        }
         else if (arg == "--help") usage(argv[0], 0);
         else throw std::invalid_argument("unknown option: " + arg);
     }
@@ -1418,6 +1639,11 @@ Options parse_options(int argc, char** argv) {
     if (options.far_radius < 0 || (options.far_radius > 0 && !options.marked_births)) {
         throw std::invalid_argument("far-radius must be nonnegative and requires --marked-births");
     }
+    if (options.geometry_pilot_k0 < 0 ||
+        (options.geometry_pilot_k0 > 0 && options.marked_births)) {
+        throw std::invalid_argument(
+            "geometry-pilot-k0 must be nonnegative and is exclusive with --marked-births");
+    }
     if (first_matrix_set != second_matrix_set) {
         throw std::invalid_argument("custom runs require both period matrices");
     }
@@ -1430,10 +1656,75 @@ Options parse_options(int argc, char** argv) {
         throw std::invalid_argument(
             "choose predefined --n 65, 130, 145, 260 or 340, or custom matrices");
     }
+    if (options.geometry_pilot_k0 >=
+        static_cast<int>(options.custom
+            ? QuotientCoordinates(options.first_matrix).order : options.only_n)) {
+        throw std::invalid_argument("geometry-pilot-k0 must be strictly below N");
+    }
     if (options.replica_offset > std::numeric_limits<std::uint64_t>::max() - options.samples) {
         throw std::invalid_argument("replica counter range overflows uint64");
     }
     return options;
+}
+
+struct PilotRow {
+    std::uint64_t replica = 0;
+    GeometryPilotRecord record;
+};
+
+void run_geometry_pilot_design(const PairDesign& design, const Options& options,
+                               std::ofstream& output) {
+    const Geometry first_geometry = make_geometry(design.first);
+    const Geometry second_geometry = make_geometry(design.second);
+    const std::uint64_t per_batch = options.samples / options.batches;
+    std::vector<std::vector<PilotRow>> first_rows(options.batches);
+    std::vector<std::vector<PilotRow>> second_rows(options.batches);
+#ifdef _OPENMP
+    if (options.threads > 0) omp_set_num_threads(options.threads);
+#endif
+#pragma omp parallel for schedule(static)
+    for (int batch = 0; batch < options.batches; ++batch) {
+        ThresholdEngine first_engine(first_geometry);
+        ThresholdEngine second_engine(second_geometry);
+        std::vector<int> permutation;
+        const std::uint64_t begin = options.replica_offset +
+                                    static_cast<std::uint64_t>(batch) * per_batch;
+        first_rows[batch].reserve(per_batch);
+        second_rows[batch].reserve(per_batch);
+        for (std::uint64_t replica = begin; replica < begin + per_batch; ++replica) {
+            counter_permutation(design.n, options.seed, replica, permutation);
+            const GeometryPilotRecord first =
+                first_engine.geometry_pilot(permutation, options.geometry_pilot_k0);
+            const GeometryPilotRecord second =
+                second_engine.geometry_pilot(permutation, options.geometry_pilot_k0);
+            if (first.at_risk) first_rows[batch].push_back({replica, first});
+            if (second.at_risk) second_rows[batch].push_back({replica, second});
+        }
+    }
+
+    auto write_rows = [&](int batch, const char* orientation, int a, int b,
+                          const std::vector<PilotRow>& rows) {
+        for (const PilotRow& row : rows) {
+            const GeometryPilotRecord& value = row.record;
+            output << design.n << ',' << a << ',' << b << ',' << orientation << ','
+                   << batch << ',' << row.replica << ',' << options.geometry_pilot_k0 << ','
+                   << value.k1 << ',' << options.geometry_pilot_k0 - value.k1 << ','
+                   << value.line.x << ',' << value.line.y << ','
+                   << value.essential_size << ',' << value.essential_carriers << ','
+                   << value.occupied_frontier << ',' << value.vacant_frontier << ','
+                   << value.h2 << ',' << value.h2_theta << ',' << value.h2_figure8 << ','
+                   << value.h2_separate << ',' << value.h2_direction_positive << ','
+                   << value.h2_direction_negative << ',' << value.h2_direction_mixed << ','
+                   << value.next_site << ',' << value.next_exit << '\n';
+        }
+    };
+    for (int batch = 0; batch < options.batches; ++batch) {
+        write_rows(batch, "first", design.a1, design.b1, first_rows[batch]);
+        write_rows(batch, "second", design.a2, design.b2, second_rows[batch]);
+    }
+    std::cout << "completed current-k0 geometry pilot " << design.id
+              << " N=" << design.n << " k0=" << options.geometry_pilot_k0
+              << " samples=" << options.samples << '\n';
 }
 
 std::string json_escape(const std::string& value) {
@@ -1672,6 +1963,8 @@ int run(int argc, char** argv) {
     const std::filesystem::path marked_path = options.output_prefix.string() + ".marked_births.csv";
     const std::filesystem::path path_moments_path = options.output_prefix.string() + ".path.csv";
     const std::filesystem::path audit_path = options.output_prefix.string() + ".complement_audit.csv";
+    const std::filesystem::path geometry_pilot_path =
+        options.output_prefix.string() + ".geometry_pilot.csv";
     std::ofstream histogram(histogram_path), moments(moments_path);
     if (!histogram || !moments) throw std::runtime_error("cannot open output files");
     std::ofstream marked_births, path_moments, complement_audit;
@@ -1682,6 +1975,16 @@ int run(int argc, char** argv) {
         if (!marked_births || !path_moments || !complement_audit) {
             throw std::runtime_error("cannot open marked-birth output files");
         }
+    }
+    std::ofstream geometry_pilot;
+    if (options.geometry_pilot_k0 > 0) {
+        geometry_pilot.open(geometry_pilot_path);
+        if (!geometry_pilot) throw std::runtime_error("cannot open geometry-pilot output");
+        geometry_pilot
+            << "n,a,b,orientation,batch,replica,k0,k1,age_steps,ell_u,ell_v,"
+               "essential_size,essential_carriers,occupied_frontier,vacant_frontier,"
+               "H2,H2_theta,H2_figure8,H2_separate,H2_direction_positive,"
+               "H2_direction_negative,H2_direction_mixed,next_site,next_exit\n";
     }
     histogram << "n,a,b,orientation,batch,samples,kind,k,count\n";
     moments << "n,a,b,orientation,batch,samples,sum_kminus,sum_kplus,sum_kminus2,"
@@ -1715,10 +2018,14 @@ int run(int argc, char** argv) {
                "separated_mark_failures\n";
     }
     const auto started = std::chrono::steady_clock::now();
-    run_design(design, options, histogram, moments,
-               options.marked_births ? &marked_births : nullptr,
-               options.marked_births ? &path_moments : nullptr,
-               options.marked_births ? &complement_audit : nullptr);
+    if (options.geometry_pilot_k0 > 0) {
+        run_geometry_pilot_design(design, options, geometry_pilot);
+    } else {
+        run_design(design, options, histogram, moments,
+                   options.marked_births ? &marked_births : nullptr,
+                   options.marked_births ? &path_moments : nullptr,
+                   options.marked_births ? &complement_audit : nullptr);
+    }
     histogram.close();
     moments.close();
     if (options.marked_births) {
@@ -1726,6 +2033,7 @@ int run(int argc, char** argv) {
         path_moments.close();
         complement_audit.close();
     }
+    if (geometry_pilot) geometry_pilot.close();
     const double elapsed = std::chrono::duration<double>(
         std::chrono::steady_clock::now() - started).count();
 
@@ -1764,6 +2072,8 @@ int run(int argc, char** argv) {
              << "  \"K_plus\": \"first black primal cross rank, 1-based\",\n"
              << "  \"K_minus\": \"first black rank after white matching cross is lost; N-r+1\",\n"
              << "  \"marked_birth_schema\": " << (options.marked_births ? "true" : "false") << ",\n"
+             << "  \"geometry_pilot_k0\": " << options.geometry_pilot_k0 << ",\n"
+             << "  \"geometry_pilot_semantics\": \"rank-one state after k0 occupied sites; H2 is the exact number of vacant sites whose one-step insertion gives ambient rank two\",\n"
              << "  \"marked_birth_semantics\": \"strict 0->1 uses post-line; strict 1->2 uses pre-line; direct 0->2 has null line, D=0, S=2\",\n"
              << "  \"line_coordinates\": \"ell_u,ell_v are primitive period-basis winding coordinates\",\n"
              << "  \"chi4_frame\": \"physical lifted Euclidean direction primitive(P*ell), never raw period coordinates\",\n"
@@ -1797,13 +2107,19 @@ int run(int argc, char** argv) {
              << "  \"path_csv\": "
              << (options.marked_births ? "\"" + json_escape(path_moments_path.string()) + "\"" : "null") << ",\n"
              << "  \"complement_audit_csv\": "
-             << (options.marked_births ? "\"" + json_escape(audit_path.string()) + "\"" : "null") << "\n"
+             << (options.marked_births ? "\"" + json_escape(audit_path.string()) + "\"" : "null") << ",\n"
+             << "  \"geometry_pilot_csv\": "
+             << (options.geometry_pilot_k0 > 0
+                    ? "\"" + json_escape(geometry_pilot_path.string()) + "\"" : "null") << "\n"
              << "}\n";
     std::cout << "wrote " << histogram_path << "\nwrote " << moments_path
               << "\nwrote " << metadata_path << '\n';
     if (options.marked_births) {
         std::cout << "wrote " << marked_path << "\nwrote " << path_moments_path
                   << "\nwrote " << audit_path << '\n';
+    }
+    if (options.geometry_pilot_k0 > 0) {
+        std::cout << "wrote " << geometry_pilot_path << '\n';
     }
     return 0;
 }
