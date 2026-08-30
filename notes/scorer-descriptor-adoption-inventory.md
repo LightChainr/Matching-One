@@ -1,12 +1,12 @@
 # Scorer descriptor-adoption inventory
 
-In this checked snapshot, the exact `scripts/*score*.py` corpus contains 51
-files. Python-AST inspection finds twenty
+In this checked snapshot, the exact `scripts/*score*.py` corpus contains 52
+files. Python-AST inspection finds twenty-one
 direct typed entrypoints importing both `ObservableDescriptor` and
-`map_observable` from `wrapping_channels`. Nineteen frozen kernels are covered by
+`map_observable` from `wrapping_channels`. Twenty frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Eleven paths are confirmed channel-bearing and
+a descriptor is not applicable. Ten paths are confirmed channel-bearing and
 require typed migrations:
 `score_issue43_secondary.py`,
 `score_norm4_production.py`,
@@ -15,7 +15,6 @@ require typed migrations:
 `score_p231_vacuum_kdv_sector.py`,
 `score_p49_fullcurve_doubling.py`,
 `score_p50_fullcurve_n290.py`,
-`score_prequential_evidence.py`,
 `threshold_score_modes.py`,
 `score_v14_scalar_root_projector.py`. No scorer remains outside a registered
 audit class.
@@ -37,7 +36,7 @@ unchanged.
 but no current scorer has that status. Static membership alone would not prove
 a semantic bug, data-provenance failure, or need for migration; any future
 corpus addition must still be reviewed before modification. Issue #146 remains
-open because inventory classification is not the same as implementing the 11
+open because inventory classification is not the same as implementing the 10
 required typed migrations.
 
 `score_axis_pair_annihilator.py` and its stable-reader entrypoint are now
@@ -65,11 +64,16 @@ types the topology contrast without reinterpreting root location or finite-size
 normalization as a new exact topology identity; every completed P45 number is
 unchanged.
 
-`score_prequential_evidence.py` is also migration-required. Its scored-block
-gate currently compares free-form `channel.source` and `channel.target` strings
-and treats any truthy `exact_map` field as sufficient. A typed migration must
-parse source/target descriptors and verify the registered affine transform,
-while preserving historical ledger rows and chronology.
+`score_prequential_evidence.py` is now a covered frozen kernel. Its typed
+entrypoint binds the complete nine-block canonical manifest, parses every
+legacy source/target label into an `ObservableDescriptor`, and invokes the
+registered affine map before replaying any Gaussian score. The retrospective
+either-even/cross-even map is recorded as scale -1 but the historical mismatch
+row remains excluded; a truthy free-form `exact_map` is rejected. All block
+order, roles, raw-data groups, chronology, observations, model covariances,
+additive totals, coverage and pairwise intersections remain byte-for-byte
+equivalent after removing the added semantic annotation. The pending P91
+full-curve block remains pending and still needs quantity-level decomposition.
 
 `score_c4_self_matching_n26.py` is now a covered frozen kernel. Its typed
 entrypoint validates an exact identity map for the frozen `either` matching-odd

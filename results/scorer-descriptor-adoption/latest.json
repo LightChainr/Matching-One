@@ -9,7 +9,6 @@
     "scripts/score_p231_vacuum_kdv_sector.py": "scores ordered C/Q/S sector coordinates across two designs against a per-unit-g4 theory vector without typed coordinate or normalization descriptors",
     "scripts/score_p49_fullcurve_doubling.py": "scores matching tails, thermal even/odd contrasts, signed lineage root gaps, and normalized P4 projectors across doubled sizes without typed quantity families",
     "scripts/score_p50_fullcurve_n290.py": "scores thermal-even DeltaM, slope, signed root-gap, and four P4 quantities across independent N145/N290 lineages using implicit feature, order, sign, and stream semantics",
-    "scripts/score_prequential_evidence.py": "validates scored blocks with free-form channel.source/channel.target strings and accepts any truthy exact_map instead of applying the registered descriptor map",
     "scripts/score_v14_scalar_root_projector.py": "projects paired matching roots into H4-null scalar and H4 coordinates, then scores fixed-beta and doubling-lineage reconstructions without typed quantity, orientation, or lineage maps",
     "scripts/threshold_score_modes.py": "projects paired orientation threshold curves into intrinsic-center S/D Krawtchouk modes, DeltaCos4-normalized P4 coordinates, and parity towers with implicit sector, basis, normalization, and shared-evidence semantics"
   },
@@ -18,12 +17,12 @@
   ],
   "corpus_glob": "scripts/*score*.py",
   "counts": {
-    "channel_bearing_migration_required": 11,
-    "covered_frozen_kernel": 19,
+    "channel_bearing_migration_required": 10,
+    "covered_frozen_kernel": 20,
     "descriptor_not_applicable_generic_utility": 1,
-    "direct_typed_entrypoint": 20,
+    "direct_typed_entrypoint": 21,
     "outside_registered_typed_path": 0,
-    "total": 51
+    "total": 52
   },
   "descriptor_not_applicable_generic_utilities": {
     "scripts/kappa3_half_score.py": "generic Bernoulli score-polynomial and aggregation helper; intentionally accepts an opaque caller-supplied observable D(C) and defines no topology observable"
@@ -242,7 +241,12 @@
     {
       "git_blob_sha": "364878808083c88dae6a5d9ba4ecd7eb987e2c16",
       "path": "scripts/score_prequential_evidence.py",
-      "status": "channel_bearing_migration_required"
+      "status": "covered_frozen_kernel"
+    },
+    {
+      "git_blob_sha": "fdf3145f41da1ac58655106436bb6c9652f639ea",
+      "path": "scripts/score_prequential_evidence_typed.py",
+      "status": "direct_typed_entrypoint"
     },
     {
       "git_blob_sha": "8f9d41b5ea77828b7683c3a48d7f0517654b980e",
@@ -303,6 +307,7 @@
     "scripts/score_p48_sprime_frozen_typed.py": "scripts/score_p48_sprime_frozen.py",
     "scripts/score_p48_sprime_prospective_typed.py": "scripts/score_p48_sprime_prospective.py",
     "scripts/score_p50_sprime_n290_typed.py": "scripts/score_p50_sprime_n290.py",
+    "scripts/score_prequential_evidence_typed.py": "scripts/score_prequential_evidence.py",
     "scripts/score_rank_gap_boundary_targets_typed.py": "scripts/score_rank_gap_boundary_targets.py",
     "scripts/score_threshold_rank_root_doubling_typed.py": "scripts/score_threshold_rank_root_doubling.py",
     "scripts/score_v14_fixedp_scalar_projector_typed.py": "scripts/score_v14_fixedp_scalar_projector.py"
