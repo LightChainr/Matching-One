@@ -1,0 +1,104 @@
+{
+  "schema": "matching-one/p333-source-landing-doublet-protocol/v1",
+  "status": "frozen_before_exact_intersection",
+  "issues": [333, 321, 370],
+  "base_commit": "e7e6c80fa170f91bfde56d51b4ebbfff8dd0f7f1",
+  "latest_main_audited": "6f711e524d9b33693703109521e592ca893e9cb0",
+  "question": "Does one genuinely non-scalar source/landing endpoint doublet break the width-three Gram obstruction that is invisible to every scalar block-count mark tested through e7e6c80?",
+  "scope": {
+    "width": 3,
+    "ordinary_module": "V_3 is the five-dimensional rational span of circular noncrossing connectivities",
+    "mark_module": "L is the two-dimensional zero-sum quotient of the three landing positions",
+    "extended_module": "W=V_3 direct-sum L",
+    "stop_rule": "Compute width three only. If its final intersection is empty, stop and do not construct width four."
+  },
+  "source_landing_semantics": {
+    "landing_positions": "lambda_i labels the landing registry whose complementary pair is the two boundary sites other than source site i",
+    "zero_sum_relation": "lambda_0+lambda_1+lambda_2=0",
+    "basis": [
+      "mu_0=lambda_0-lambda_2",
+      "mu_1=lambda_1-lambda_2"
+    ],
+    "translation": "R(mu_0)=-mu_0+mu_1 and R(mu_1)=-mu_0; matrix R=[[-1,-1],[1,0]]",
+    "integer_emission_vectors": [
+      "q_0=(2,-1)",
+      "q_1=(-1,2)",
+      "q_2=(-1,-1)"
+    ],
+    "covariance": "R q_i=q_(i+1 mod 3)",
+    "provenance": "This is the minimal rational C3 source/landing doublet already implicit in the repository's landing-registry observables; it is not a freely selected two-column mark basis."
+  },
+  "generic_Q_action": {
+    "join": "e_bar_i=diag(e_i,I_2)",
+    "translation": "T_bar=diag(T,R)",
+    "ordinary_detach": "D_i(Q)=D_i(1)+(Q-1)P_i",
+    "mark_emission": "E_i(pi)=q_i if site i is singleton in pi, otherwise zero",
+    "marked_detach": "D_bar_i(Q) has ordinary block D_i(Q), landing block I_2, zero landing-to-ordinary block and ordinary-to-landing block (Q-1)E_i",
+    "first_jet": "D_bar_i1 has P_i in the ordinary block and q_i times the singleton covector in the landing-by-ordinary block"
+  },
+  "gram": {
+    "landing_reference_states": "tau_i is the width-three connectivity with site i singleton and the other two sites joined",
+    "raw_columns": "g_i(Q)_pi=d/dQ G(Q)_(pi,tau_i)=b(pi vee tau_i) Q^{b(pi vee tau_i)-1}",
+    "doublet_columns": "C(Q)=[g_0(Q)-g_2(Q), g_1(Q)-g_2(Q)]",
+    "extended": "G_bar(Q)=[[G(Q),C(Q)],[C(Q)^T,0_2]]",
+    "radical": "R_bar=ker(G_bar(1)), computed exactly",
+    "compatibility": "For radical basis B require B^T(G_bar1 X0-X0^T G_bar1)B=0",
+    "non_scalar_gate": "Require the two landing columns at Q=1 to have nonzero projection outside the span of ordinary scalar block-count columns used by e7e6c80."
+  },
+  "normalization": {
+    "filtration": "The landing subspace is invariant: X0 and V do not feed L back into V_3.",
+    "endpoint": "U=(one^T,0,0) is fixed by X0 and annihilates V.",
+    "radical_invariance": "G_bar0 X0 B=0.",
+    "ordinary_source": "X0 fixes the all-singleton ordinary source and V kills it.",
+    "source_landing_transport": "On L, X0 is exactly R and V is zero. This is source-to-next-landing transport, not pointwise fixation of two non-invariant mark basis vectors.",
+    "canonical_candidate": "X0=T_bar,V=0"
+  },
+  "affine_jet": {
+    "order_zero": "X0 A_i0=B_i0 X0 for joins, translation and detach, with target site shifted by one",
+    "velocity": "V A_i0+X0 A_i1=B_i0 V+B_i1 X0"
+  },
+  "analysis_ladder": [
+    "affine Q-jet plus landing filtration",
+    "plus endpoint normalization and radical invariance",
+    "plus radical Gram self-adjointness",
+    "plus ordinary-source and source/landing transport normalization"
+  ],
+  "decision_rule": {
+    "doublet_breaks_obstruction_unique": "The final affine system is consistent with tangent dimension zero.",
+    "doublet_breaks_obstruction_nonunique": "The final affine system is consistent with positive tangent dimension.",
+    "doublet_fails": "The final affine system is inconsistent.",
+    "success_followup": "Only if width three succeeds, freeze a separate width-four typed construction before computing it.",
+    "failure_bound": "If width three fails, one source/landing doublet is insufficient; the typed-family lower bound becomes at least two non-scalar doublets (mark dimension at least four)."
+  },
+  "outputs": {
+    "dimensions": "Exact affine tangent dimension or inconsistency at every stage",
+    "non_scalar_certificate": "Rank/projection certificate that C is not in the frozen scalar falling-factorial mark span",
+    "obstruction": "Exact first-empty left-null witness and whether the landing moduli have nonzero coefficient rank against the old y^T b obstruction",
+    "canonical": "Whether X0=T_bar,V=0 belongs to the final intersection and whether velocity is unique"
+  },
+  "deduplication": {
+    "e7e6c80": "exhausts the width-four scalar falling-factorial family and leaves the width-three scalar Gram obstruction untouched",
+    "081a5ed": "already excludes one scalar terminal response mark",
+    "ba3135e": "already excludes unmarked scalar loop fugacity",
+    "PR385_b5c761a": "is finite-noise identifiability, not this exact landing doublet",
+    "PR393_8923acd": "is a formal Gaussian semigroup and supplies no source/landing representation"
+  },
+  "claim_boundary": [
+    "Exact rational Q=1 first-jet algebra at width three only.",
+    "The mark is the fixed C3 source/landing doublet; no arbitrary two-column extension is searched.",
+    "No continuum LCFT, physical transfer matrix or formal Gaussian-K identification is made.",
+    "A width-three failure stops this line and raises only the typed-family mark-dimension lower bound."
+  ],
+  "compute_contract": {
+    "arithmetic": "Python standard-library fractions.Fraction row reduction",
+    "monte_carlo": false,
+    "fit": false,
+    "server": false,
+    "expected_cost": "local seconds"
+  },
+  "frozen_inputs": {
+    "e7e6c80:scripts/p333_minimal_multimark_jet.py": "e585130904dbbc665592656939ba033e41dc32fd",
+    "e7e6c80:results/p333-minimal-multimark-jet/latest.json": "5ffcea9a1058f37afabff8e7e4ff6ba11c8f902c",
+    "8923acd:analysis/formal_jordan_multiplier_semigroup_contract.json": "2733afd159cc82820db97f70fa739a021865aef6"
+  }
+}
