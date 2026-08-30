@@ -1,0 +1,44 @@
+{
+  "schema": "matching-one/p250-projective-leg-fresh-production-manifest/v1",
+  "issue": 250,
+  "status": "authorized_fresh_production",
+  "runner_commit": "114f8444e299077ba0ca08eddc7da6d23d49776d",
+  "protocol_commit": "2ed3c1c",
+  "operator": "black NN rank-one root membership minus white matching rank-one root membership",
+  "run": {
+    "samples": 10000,
+    "batches": 50,
+    "workers": 16,
+    "p": 0.59274605079,
+    "seed": 25033433720260930,
+    "replica_offset": 0,
+    "replica_last_exclusive": 10000
+  },
+  "targets": {
+    "separations": [1, 2],
+    "retained_tail_diagnostic": 3,
+    "channels": ["G1", "G2", "V1", "V2", "C113", "C122"]
+  },
+  "gates": {
+    "minimum_pair_abs_z": 5.0,
+    "support_alpha": 0.01,
+    "support_test": "8-real local-variance-normalized cubic vector against zero, separately at d1 and d2",
+    "support_gate": "both d1 and d2 pass all four denominators, covariance nondegeneracy, and p<0.01"
+  },
+  "phase_policy": "locked_until_both_support_stages_pass",
+  "phase_if_unlocked": "joint 4-real d1/d2 cross-product closure of separation-normalized cubics",
+  "power_freeze": "analysis/p250_projective_leg_power_freeze.json",
+  "selected_samples_reason": "first grid point with projected weakest denominator z>=5 and minimum support power>=0.90; projected minimum power is 0.98599",
+  "execution": {
+    "host": "Huawei-CodeBuddy-XPk2PZ",
+    "remote_directory": "/workspace/p250-projective-leg-fresh-10k",
+    "response": "response_10k.json",
+    "batches": "response_10k.batches.csv"
+  },
+  "claim_boundary": [
+    "The sample size uses only the 2k denominator and support covariance, not a phase estimate.",
+    "The fresh seed has no overlap with the smoke stream.",
+    "Phase code is conditional and cannot execute unless both frozen support stages pass.",
+    "The topological projective-leg row is not automatically a local primary."
+  ]
+}

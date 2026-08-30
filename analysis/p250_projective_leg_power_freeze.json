@@ -1,0 +1,106 @@
+{
+  "schema": "matching-one/p250-projective-leg-power-freeze/v1",
+  "source": "frozen 2k projective-leg smoke denominator and 8-real support covariance only",
+  "grid": [
+    5000,
+    10000,
+    20000,
+    40000
+  ],
+  "support_alpha": 0.01,
+  "support_df": 8,
+  "critical_chi_square": 20.090235029663233,
+  "minimum_denominator_abs_z": 5.0,
+  "minimum_support_power": 0.9,
+  "noncentrality_estimator": "max(smoke_chi_square-df,0) scaled linearly with samples",
+  "smoke": {
+    "1": {
+      "minimum_pair_abs_z": 5.526511512862423,
+      "support_chi_square": 15.204441297031932,
+      "support_df": 8,
+      "estimated_noncentrality": 7.2044412970319325
+    },
+    "2": {
+      "minimum_pair_abs_z": 2.89964844061552,
+      "support_chi_square": 28.17029194004761,
+      "support_df": 8,
+      "estimated_noncentrality": 20.17029194004761
+    }
+  },
+  "table": [
+    {
+      "samples": 5000,
+      "forecasts": {
+        "1": {
+          "minimum_pair_abs_z": 8.738181947894097,
+          "support_noncentrality": 18.011103242579832,
+          "support_expected_chi_square": 26.011103242579832,
+          "support_power_at_alpha_0.01": 0.7155900114008934
+        },
+        "2": {
+          "minimum_pair_abs_z": 4.584746743050268,
+          "support_noncentrality": 50.425729850119026,
+          "support_expected_chi_square": 58.425729850119026,
+          "support_power_at_alpha_0.01": 0.9993983263447941
+        }
+      },
+      "qualifies": false
+    },
+    {
+      "samples": 10000,
+      "forecasts": {
+        "1": {
+          "minimum_pair_abs_z": 12.357655421195581,
+          "support_noncentrality": 36.022206485159664,
+          "support_expected_chi_square": 44.022206485159664,
+          "support_power_at_alpha_0.01": 0.9859856692224604
+        },
+        "2": {
+          "minimum_pair_abs_z": 6.483811024067565,
+          "support_noncentrality": 100.85145970023805,
+          "support_expected_chi_square": 108.85145970023805,
+          "support_power_at_alpha_0.01": 0.9999999993648596
+        }
+      },
+      "qualifies": true
+    },
+    {
+      "samples": 20000,
+      "forecasts": {
+        "1": {
+          "minimum_pair_abs_z": 17.476363895788193,
+          "support_noncentrality": 72.04441297031933,
+          "support_expected_chi_square": 80.04441297031933,
+          "support_power_at_alpha_0.01": 0.9999975287837073
+        },
+        "2": {
+          "minimum_pair_abs_z": 9.169493486100537,
+          "support_noncentrality": 201.7029194004761,
+          "support_expected_chi_square": 209.7029194004761,
+          "support_power_at_alpha_0.01": 1.0
+        }
+      },
+      "qualifies": true
+    },
+    {
+      "samples": 40000,
+      "forecasts": {
+        "1": {
+          "minimum_pair_abs_z": 24.715310842391162,
+          "support_noncentrality": 144.08882594063866,
+          "support_expected_chi_square": 152.08882594063866,
+          "support_power_at_alpha_0.01": 0.9999999999999993
+        },
+        "2": {
+          "minimum_pair_abs_z": 12.96762204813513,
+          "support_noncentrality": 403.4058388009522,
+          "support_expected_chi_square": 411.4058388009522,
+          "support_power_at_alpha_0.01": 1.0
+        }
+      },
+      "qualifies": true
+    }
+  ],
+  "selected_samples": 10000,
+  "selection_rule": "first frozen grid point satisfying both d1/d2 denominator and support-power thresholds"
+}

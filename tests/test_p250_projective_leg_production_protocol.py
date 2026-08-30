@@ -47,6 +47,18 @@ class P250ProjectiveLegProductionProtocolTests(unittest.TestCase):
         self.assertTrue(result["phase_closure"]["computed"])
         self.assertEqual(result["phase_closure"]["joint_zero_score"]["degrees_of_freedom"], 4)
 
+    def test_committed_manifest_freezes_fresh_seed_and_phase_lock(self) -> None:
+        manifest = json.loads(
+            (ROOT / "analysis/p250_projective_leg_fresh_production_manifest.json").read_text()
+        )
+        power = json.loads(
+            (ROOT / "analysis/p250_projective_leg_power_freeze.json").read_text()
+        )
+        self.assertEqual(manifest["run"]["samples"], power["selected_samples"])
+        self.assertEqual(manifest["run"]["seed"], 25033433720260930)
+        self.assertEqual(manifest["run"]["replica_offset"], 0)
+        self.assertEqual(manifest["phase_policy"], "locked_until_both_support_stages_pass")
+
 
 if __name__ == "__main__":
     unittest.main()
