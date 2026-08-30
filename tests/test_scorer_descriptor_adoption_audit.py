@@ -124,15 +124,15 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
             )
         )
         self.assertEqual(result, audit(ROOT, manifest))
-        self.assertEqual(result["counts"]["total"], 43)
-        self.assertEqual(result["counts"]["direct_typed_entrypoint"], 12)
-        self.assertEqual(result["counts"]["covered_frozen_kernel"], 11)
+        self.assertEqual(result["counts"]["total"], 44)
+        self.assertEqual(result["counts"]["direct_typed_entrypoint"], 13)
+        self.assertEqual(result["counts"]["covered_frozen_kernel"], 12)
         self.assertEqual(
             result["counts"]["descriptor_not_applicable_generic_utility"], 1
         )
-        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 19)
+        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 18)
         self.assertEqual(result["counts"]["outside_registered_typed_path"], 0)
-        self.assertEqual(len(result["rows"]), 43)
+        self.assertEqual(len(result["rows"]), 44)
         statuses = {row["path"]: row["status"] for row in result["rows"]}
         for path in (
             "scripts/score_axis_pair_annihilator.py",
