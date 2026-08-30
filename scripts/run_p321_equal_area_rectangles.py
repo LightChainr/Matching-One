@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor
 import json
 from pathlib import Path
 import subprocess
@@ -37,6 +38,7 @@ def run_campaign(
     seed: int,
     replica_offset: int,
     threads: int,
+    parallel_runs: int,
     git_commit: str,
     output_dir: Path,
 ) -> dict[str, Any]:
@@ -47,6 +49,8 @@ def run_campaign(
         raise ValueError("wrong P321 geometry design")
     square, rectangles = rows_for_n(design, n)
     output_dir.mkdir(parents=True, exist_ok=True)
+    if not 1 <= parallel_runs <= 4:
+        raise ValueError("parallel_runs must lie in 1..4")
     runs = []
     for rectangle in rectangles:
         label = rectangle["aspect_ratio"].replace("/", "_")
@@ -65,7 +69,6 @@ def run_campaign(
             "--second-rep", str(rectangle["width"]), "0",
             "--output-prefix", str(prefix),
         ]
-        subprocess.run(command, cwd=ROOT, check=True)
         runs.append({
             "rho": rectangle["aspect_ratio"],
             "role": rectangle["role"],
@@ -75,6 +78,15 @@ def run_campaign(
             "metadata": prefix.name + ".metadata.json",
             "command": command,
         })
+    def execute(run: Mapping[str, Any]) -> None:
+        subprocess.run(run["command"], cwd=ROOT, check=True)
+
+    if parallel_runs == 1:
+        for run in runs:
+            execute(run)
+    else:
+        with ThreadPoolExecutor(max_workers=parallel_runs) as executor:
+            list(executor.map(execute, runs))
     manifest = {
         "schema": "matching-one/p321-equal-area-campaign/v1",
         "status": "local_variance_smoke" if samples <= 100_000 else "production",
@@ -86,6 +98,7 @@ def run_campaign(
         "replica_counter_first": replica_offset,
         "replica_counter_last_exclusive": replica_offset + samples,
         "git_commit": git_commit,
+        "parallel_rectangle_processes": parallel_runs,
         "square_rerun_count": len(runs),
         "runs": runs,
     }
@@ -104,6 +117,10 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser.add_argument("--seed", type=int, default=32114420260830)
     parser.add_argument("--replica-offset", type=int, default=0)
     parser.add_argument("--threads", type=int, default=1)
+    parser.add_argument(
+        "--parallel-runs", type=int, default=1, choices=(1, 2, 3, 4),
+        help="run distinct rectangle subprocesses concurrently",
+    )
     parser.add_argument("--git-commit", required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
     args = parser.parse_args(argv)
@@ -116,6 +133,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         seed=args.seed,
         replica_offset=args.replica_offset,
         threads=args.threads,
+        parallel_runs=args.parallel_runs,
         git_commit=args.git_commit,
         output_dir=args.output_dir,
     )
