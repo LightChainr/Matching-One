@@ -124,15 +124,15 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
             )
         )
         self.assertEqual(result, audit(ROOT, manifest))
-        self.assertEqual(result["counts"]["total"], 64)
+        self.assertEqual(result["counts"]["total"], 65)
         self.assertEqual(result["counts"]["direct_typed_entrypoint"], 28)
         self.assertEqual(result["counts"]["covered_frozen_kernel"], 27)
         self.assertEqual(
             result["counts"]["descriptor_not_applicable_generic_utility"], 1
         )
-        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 8)
+        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 9)
         self.assertEqual(result["counts"]["outside_registered_typed_path"], 0)
-        self.assertEqual(len(result["rows"]), 64)
+        self.assertEqual(len(result["rows"]), 65)
         statuses = {row["path"]: row["status"] for row in result["rows"]}
         self.assertEqual(
             statuses["scripts/score_prequential_evidence.py"],

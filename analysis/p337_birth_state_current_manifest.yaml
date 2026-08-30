@@ -1,0 +1,134 @@
+schema: matching-one.p337-birth-state-current.manifest.v1
+status: retrospective_existing_data_reanalysis
+new_samples: false
+evaluation_reference: 0.592746050790
+
+semantic_contract:
+  K1: tau1=K_minus=first_ambient_H1_birth
+  K2: tau2=K_plus=second_ambient_H1_birth
+  line_atom: kind=LINE_and_K1<K2_with_primitive_first_birth_line
+  collision_atom: kind=DIRECT_RANK2_and_K1=K2_and_line_zero
+  collision_role: line_free_correlated_path_channel_not_an_additive_projective_line_component
+  fixed_p_selection_zero: DIRECT_RANK2_cancels_exactly_from_E_top_and_its_p_derivative_but_enters_A_top_derivative_with_coefficient_two
+  direction_contrast: (second-first)/(cos4_second-cos4_first)
+
+runs:
+  - id: N85
+    role: four_generation_primary
+    N: 85
+    archive_commit: 878397720bdbed6c65c3cb79fb658424b16978e8
+    path: results/server-20260830/P337-natural-current-scale-N85/raw/n85_200k.births.csv
+    sha256: e04f6483f936db3c54cead03a153298db377dbaf21cc8f39d35b2771803979b6
+    compression: none
+    metadata_path: results/server-20260830/P337-natural-current-scale-N85/raw/n85_200k.metadata.json
+    metadata_sha256: d28295d909476e2f83f022b624fdb65486816db2fa49ba74e08a1f805777b11c
+    dependency_group: p337-natural-current-N85-200k
+    batches: 20
+    samples_per_orientation: 200000
+    cos4: {first: 4633/7225, second: -6887/7225}
+  - id: N170
+    role: four_generation_primary
+    N: 170
+    archive_commit: 0db21b7c21fe7912b28804582411dc5966dd957d
+    path: results/server-20260830/P337-N170-angle-flip/raw/n170_8m.births.csv
+    sha256: d317bd01d8ba33f04e8c85c28a713309a8b83483742c4c82a64052dd9ed8f8ea
+    compression: none
+    metadata_path: results/server-20260830/P337-N170-angle-flip/raw/n170_8m.metadata.json
+    metadata_sha256: f750f5b0f779dc56643c06e563514b417c4957a4365cfad5bec86c2332d0db0c
+    dependency_group: p337-natural-current-N170-8m
+    batches: 80
+    samples_per_orientation: 8000000
+    cos4: {first: -4633/7225, second: 6887/7225}
+  - id: N340
+    role: four_generation_primary
+    N: 340
+    archive_commit: e819f5ecd0074ee2250c1852457fd8dc758099ea
+    path: results/server-20260830/P337-N340-second-child/raw/n340_12m.births.csv
+    sha256: 4e179b6aaee4012fb80403a6a1558f4cc4a50205f00be85f70fb74fb40b10ceb
+    compression: none
+    metadata_path: results/server-20260830/P337-N340-second-child/raw/n340_12m.metadata.json
+    metadata_sha256: 8b42289e487302dc7718fe6a657c62e072461548bf90d8c7e1527a0e215689d9
+    dependency_group: p337-natural-current-N340-12m
+    batches: 80
+    samples_per_orientation: 12000000
+    cos4: {first: 4633/7225, second: -6887/7225}
+  - id: N680
+    role: four_generation_primary
+    N: 680
+    archive_commit: 02080a4c574914439e080299ad28ab66f5172826
+    path: results/server-20260830/P337-N680-heldout/raw/n680_120m.births.csv.gz
+    sha256: 80cd32714150fa6d168bc3df31f81074d616b480e086876dad0ea5c5e7ab7a6a
+    compression: gzip
+    metadata_path: results/server-20260830/P337-N680-heldout/raw/n680_120m.metadata.json
+    metadata_sha256: 6c8f712f929283b024141c5b9750d5fd8539fb09db1ea1cbcdc32bd2404c7b31
+    dependency_group: p337-natural-current-N680-120m
+    batches: 80
+    samples_per_orientation: 120000000
+    cos4: {first: -4633/7225, second: 6887/7225}
+  - id: N130-control
+    role: independent_cross_lineage_control
+    N: 130
+    archive_commit: 634040db7ba203fd9074db3fe5fa4b327a8b7cb8
+    path: results/server-20260829/marked-birth-pilot/raw/q2_N130_20k.marked_births.csv
+    sha256: e055396ff572cca6d01b7966cd6bd7291e9f25bf8698e09f7bd36cdccf795669
+    compression: none
+    metadata_path: results/server-20260829/marked-birth-pilot/raw/q2_N130_20k.metadata.json
+    metadata_sha256: f85226bddc2ac8ac21924d160e6ba1ae7ed3ba38a8f3d11864a846d13350de80
+    dependency_group: marked-birth-pilot-N130-20k
+    batches: 20
+    samples_per_orientation: 20000
+    source_schema: marked_births
+    column_map: {tau1: k1, tau2: k2, ell_x: ell_u, ell_y: ell_v, direct: direct_0_to_2}
+    cos4: {first: -3713/4225, second: 2047/4225}
+
+evaluation_contexts:
+  - id: pooled_root
+    p: pooled_matching_root
+    recompute_root_in_every_delete_one: true
+  - id: fixed_reference
+    p: 0.592746050790
+    recompute_root_in_every_delete_one: false
+
+primary_coordinates:
+  - angular_E_top
+  - angular_A_top
+  - angular_E_log_derivative
+  - angular_A_log_derivative
+  - angular_J01_log
+  - angular_J12_log
+  - angular_J02_log
+  - angular_collision_mass
+  - angular_completion_age1_log
+  - angular_completion_age2_log
+  - angular_age_hazard_beta
+  - angular_K_H_linear
+  - angular_K_A_activity
+  - angular_K_D_activity
+  - angular_H_birth_log
+  - angular_H_completion_log
+  - angular_A_birth_log
+  - angular_A_completion_log
+  - angular_D_birth_log
+  - angular_D_completion_log
+
+covariance:
+  within_size: delete_one_aligned_batch_across_both_orientations
+  recompute: [pooled_root, binomial_tails, Russo_currents, age_fixed_effects, character_ratios, all_direction_contrasts]
+  across_sizes: independent_block_diagonal
+  n130: separate_control_block
+  existing_ten_size_etop: separate_dependency_group_not_jointly_paired
+
+not_scoreable:
+  - raw_completion_winding
+  - completion_complement_representative
+  - completion_C3_character
+  - completion_section_basis_transporter_ambiguity
+  - microscopic_path_order_or_current_configuration
+  - per_replica_cross_orientation_identity
+  - cross_archive_sample_covariance_with_ten_size_Etop_or_Euler
+
+claim_boundary:
+  - This reanalysis creates no new Monte Carlo samples and no new independent evidence groups.
+  - A nonzero age score rejects lumpability of the retained coarse state but does not distinguish intrinsic memory from unrecorded current geometry.
+  - Collision current is a line-free state transition and cannot be relabelled as a third charged projective component.
+  - Nonzero state currents do not identify Q4, a Jordan block, a field or a free exponent.
