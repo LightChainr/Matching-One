@@ -1,0 +1,56 @@
+{
+  "schema": "matching-one/observable-semantic-gate/v1",
+  "status": "semantic_gate_added_after_frozen_issue43_secondary_ledger",
+  "frozen_kernel": "scripts/score_issue43_secondary.py",
+  "frozen_kernel_git_blob": "be08124b54bf27c0ccf88ee9f43b48d66a791b4d",
+  "target_sizes": [185, 265],
+  "artifact_sha256": {
+    "primary_prediction": "a370e79a10854341fac3ee75e8c518dbf3533e8c077cba2c2ec1018178144f44",
+    "x17_competitor": "941af010cc146c76e26985ecf3edf58f0df28d987fc79c03725ebc21f64964f5",
+    "p48_models": "0d44228ae117f94cb1f99d1e2727eb47390aae950c3ae70c21dd8bc5a09454ae"
+  },
+  "stage_order": [
+    "original_x21_H4_two_sector",
+    "x17_over_4_H4_adversarial_radial",
+    "zero_effect",
+    "predeclared_shared_H4_plus_H12",
+    "issue72_P48_S_prime"
+  ],
+  "stage_status_contract": [
+    "ALREADY_SCORED_BY_PRIMARY",
+    "SCORED_FROZEN_NO_REFIT",
+    "ALREADY_SCORED_BY_PRIMARY",
+    "NOT_SCORABLE",
+    "READY_AWAITING_DERIVATIVE_TARGET_or_SCORED_FROZEN_NO_REFIT"
+  ],
+  "excluded_model": "V_<1,3>_N^-4/3",
+  "observable_descriptors": {
+    "DeltaM": {
+      "channel": "cross",
+      "combination": "odd",
+      "coordinate": "p",
+      "orientation_order": "first_minus_second",
+      "normalization": "raw",
+      "quantity": "orientation_contrast"
+    },
+    "DeltaS": {
+      "channel": "cross",
+      "combination": "even",
+      "coordinate": "p",
+      "orientation_order": "first_minus_second",
+      "normalization": "raw",
+      "quantity": "orientation_contrast"
+    },
+    "P4_S_prime": {
+      "channel": "cross",
+      "combination": "even",
+      "coordinate": "p",
+      "orientation_order": "first_minus_second",
+      "normalization": "angular_normalized",
+      "quantity": "orientation_contrast"
+    }
+  },
+  "exact_registered_map": {"scale": 1.0, "offset": 0.0},
+  "raw_data_boundary": "The ledger consumes the primary score JSON and an optional aggregated P48 target JSON; it has no raw-histogram or moment interface.",
+  "evidence_boundary": "Stages 1 and 3 copy the primary score; stage 2 reuses its DeltaM target observations; stage 4 is deliberately not scorable; and stage 5 is optional and ordered last. Typed annotation does not make reused summaries independent, unlock H4+H12, rehabilitate the excluded wrong-Kac branch, refit a target amplitude, or change a score."
+}

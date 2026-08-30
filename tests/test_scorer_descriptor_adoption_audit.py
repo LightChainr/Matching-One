@@ -124,15 +124,15 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
             )
         )
         self.assertEqual(result, audit(ROOT, manifest))
-        self.assertEqual(result["counts"]["total"], 54)
-        self.assertEqual(result["counts"]["direct_typed_entrypoint"], 23)
-        self.assertEqual(result["counts"]["covered_frozen_kernel"], 22)
+        self.assertEqual(result["counts"]["total"], 55)
+        self.assertEqual(result["counts"]["direct_typed_entrypoint"], 24)
+        self.assertEqual(result["counts"]["covered_frozen_kernel"], 23)
         self.assertEqual(
             result["counts"]["descriptor_not_applicable_generic_utility"], 1
         )
-        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 8)
+        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 7)
         self.assertEqual(result["counts"]["outside_registered_typed_path"], 0)
-        self.assertEqual(len(result["rows"]), 54)
+        self.assertEqual(len(result["rows"]), 55)
         statuses = {row["path"]: row["status"] for row in result["rows"]}
         self.assertEqual(
             statuses["scripts/score_prequential_evidence.py"],
@@ -140,6 +140,14 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
         )
         self.assertEqual(
             statuses["scripts/score_prequential_evidence_typed.py"],
+            "direct_typed_entrypoint",
+        )
+        self.assertEqual(
+            statuses["scripts/score_issue43_secondary.py"],
+            "covered_frozen_kernel",
+        )
+        self.assertEqual(
+            statuses["scripts/score_issue43_secondary_typed.py"],
             "direct_typed_entrypoint",
         )
         self.assertEqual(
@@ -151,7 +159,6 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
             "direct_typed_entrypoint",
         )
         for path in (
-            "scripts/score_issue43_secondary.py",
             "scripts/score_norm4_production.py",
             "scripts/score_norm4_thermal_jet.py",
             "scripts/score_norm5_thermal_jet.py",
