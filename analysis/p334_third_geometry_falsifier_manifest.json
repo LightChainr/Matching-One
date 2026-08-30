@@ -1,0 +1,33 @@
+{
+  "schema": "matching-one/p334-third-geometry-falsifier-manifest/v1",
+  "issue": 334,
+  "parent_commit": "77aa3fe",
+  "selection_stage": {
+    "domain": "HNF quotients N<=18",
+    "order": "increasing N then repository HNF lexicographic order",
+    "allowed_inputs": "period lattice D4 stabilizer and supported primitive-line orbits only",
+    "forbidden_inputs": "birth counts, exit counts, net roots and p_ref scores",
+    "criterion": "honest face, no quarter turn, exactly two constant distinct non-real chi4 orbits"
+  },
+  "selected": {
+    "period_matrix": [[7, 2], [0, 1]],
+    "N": 7,
+    "gaussian_similarity": false
+  },
+  "frozen_falsifier": {
+    "close_pair_threshold": "maximum N13/N17 orbit-zero separation read from the parent artifact",
+    "primary": "reinforcement occurs only between the two simple orbit-net zeros"
+  },
+  "mechanism_theorem": "Re[(chi1 J1) conjugate(chi2 J2)] = Gram(chi1,chi2) J1 J2",
+  "compute": "128 subsets and 448 directed boundary edges; no N13/N17 recomputation",
+  "outputs": {
+    "json": "results/p334-third-geometry-falsifier/latest.json",
+    "markdown": "results/p334-third-geometry-falsifier/latest.md"
+  },
+  "commands": [
+    "PYTHONPATH=scripts python3 scripts/p334_third_geometry_falsifier.py --format json --output results/p334-third-geometry-falsifier/latest.json",
+    "PYTHONPATH=scripts python3 scripts/p334_third_geometry_falsifier.py --format markdown --output results/p334-third-geometry-falsifier/latest.md",
+    "PYTHONPATH=scripts python3 -m unittest discover -s tests -p test_p334_third_geometry_falsifier.py"
+  ],
+  "claim_boundary": "Exact asymmetric finite-volume falsifier; no Monte Carlo or continuum claim."
+}

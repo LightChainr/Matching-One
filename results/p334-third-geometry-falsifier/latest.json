@@ -1,0 +1,1224 @@
+{
+  "census": {
+    "coefficient_rows": [
+      {
+        "lower_subset_size": 0,
+        "orbit_0": {
+          "birth_edges": 0,
+          "birth_minus_exit_edges": 0,
+          "coefficient_identity_pass": true,
+          "exit_edges": 0,
+          "rank_one_states_at_k": 0,
+          "rank_one_states_at_k_plus_1": 0
+        },
+        "orbit_1": {
+          "birth_edges": 0,
+          "birth_minus_exit_edges": 0,
+          "coefficient_identity_pass": true,
+          "exit_edges": 0,
+          "rank_one_states_at_k": 0,
+          "rank_one_states_at_k_plus_1": 0
+        }
+      },
+      {
+        "lower_subset_size": 1,
+        "orbit_0": {
+          "birth_edges": 0,
+          "birth_minus_exit_edges": 0,
+          "coefficient_identity_pass": true,
+          "exit_edges": 0,
+          "rank_one_states_at_k": 0,
+          "rank_one_states_at_k_plus_1": 0
+        },
+        "orbit_1": {
+          "birth_edges": 0,
+          "birth_minus_exit_edges": 0,
+          "coefficient_identity_pass": true,
+          "exit_edges": 0,
+          "rank_one_states_at_k": 0,
+          "rank_one_states_at_k_plus_1": 0
+        }
+      },
+      {
+        "lower_subset_size": 2,
+        "orbit_0": {
+          "birth_edges": 21,
+          "birth_minus_exit_edges": 21,
+          "coefficient_identity_pass": true,
+          "exit_edges": 0,
+          "rank_one_states_at_k": 0,
+          "rank_one_states_at_k_plus_1": 7
+        },
+        "orbit_1": {
+          "birth_edges": 0,
+          "birth_minus_exit_edges": 0,
+          "coefficient_identity_pass": true,
+          "exit_edges": 0,
+          "rank_one_states_at_k": 0,
+          "rank_one_states_at_k_plus_1": 0
+        }
+      },
+      {
+        "lower_subset_size": 3,
+        "orbit_0": {
+          "birth_edges": 56,
+          "birth_minus_exit_edges": 56,
+          "coefficient_identity_pass": true,
+          "exit_edges": 0,
+          "rank_one_states_at_k": 7,
+          "rank_one_states_at_k_plus_1": 21
+        },
+        "orbit_1": {
+          "birth_edges": 28,
+          "birth_minus_exit_edges": 28,
+          "coefficient_identity_pass": true,
+          "exit_edges": 0,
+          "rank_one_states_at_k": 0,
+          "rank_one_states_at_k_plus_1": 7
+        }
+      },
+      {
+        "lower_subset_size": 4,
+        "orbit_0": {
+          "birth_edges": 7,
+          "birth_minus_exit_edges": -28,
+          "coefficient_identity_pass": true,
+          "exit_edges": 35,
+          "rank_one_states_at_k": 21,
+          "rank_one_states_at_k_plus_1": 7
+        },
+        "orbit_1": {
+          "birth_edges": 0,
+          "birth_minus_exit_edges": -21,
+          "coefficient_identity_pass": true,
+          "exit_edges": 21,
+          "rank_one_states_at_k": 7,
+          "rank_one_states_at_k_plus_1": 0
+        }
+      },
+      {
+        "lower_subset_size": 5,
+        "orbit_0": {
+          "birth_edges": 0,
+          "birth_minus_exit_edges": -14,
+          "coefficient_identity_pass": true,
+          "exit_edges": 14,
+          "rank_one_states_at_k": 7,
+          "rank_one_states_at_k_plus_1": 0
+        },
+        "orbit_1": {
+          "birth_edges": 0,
+          "birth_minus_exit_edges": 0,
+          "coefficient_identity_pass": true,
+          "exit_edges": 0,
+          "rank_one_states_at_k": 0,
+          "rank_one_states_at_k_plus_1": 0
+        }
+      },
+      {
+        "lower_subset_size": 6,
+        "orbit_0": {
+          "birth_edges": 0,
+          "birth_minus_exit_edges": 0,
+          "coefficient_identity_pass": true,
+          "exit_edges": 0,
+          "rank_one_states_at_k": 0,
+          "rank_one_states_at_k_plus_1": 0
+        },
+        "orbit_1": {
+          "birth_edges": 0,
+          "birth_minus_exit_edges": 0,
+          "coefficient_identity_pass": true,
+          "exit_edges": 0,
+          "rank_one_states_at_k": 0,
+          "rank_one_states_at_k_plus_1": 0
+        }
+      }
+    ],
+    "direct_rank2_edge_count": 14,
+    "gates": {
+      "coefficient_failures": 0,
+      "coefficientwise_continuity": true,
+      "edge_count_exact": true
+    },
+    "geometry": {
+      "N": 7,
+      "directed_addition_edges": 448,
+      "id": "hnf-7-2-0-1",
+      "period_matrix": [
+        [
+          7,
+          2
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "subset_states": 128
+    },
+    "orbits": {
+      "orbit_0": {
+        "birth_edge_count": 84,
+        "chi4": {
+          "imag": "24/25",
+          "real": "-7/25"
+        },
+        "exit_edge_count": 49,
+        "primitive_lines": [
+          [
+            0,
+            1
+          ]
+        ],
+        "rank_one_state_count": 35
+      },
+      "orbit_1": {
+        "birth_edge_count": 28,
+        "chi4": {
+          "imag": "24/25",
+          "real": "7/25"
+        },
+        "exit_edge_count": 21,
+        "primitive_lines": [
+          [
+            1,
+            -3
+          ]
+        ],
+        "rank_one_state_count": 7
+      }
+    }
+  },
+  "claim_boundary": [
+    "The HNF candidate was selected from geometry and line-orbit support before boundary flux counts were read.",
+    "This exact N=7 quotient is an asymmetric finite-volume falsifier, not an asymptotic geometry.",
+    "The Gram-controlled alignment rule is a new mechanism classification, not a continuum-field identity.",
+    "No N13/N17 recomputation, Monte Carlo sample, Huawei production, PR, or merge is used."
+  ],
+  "issue": 334,
+  "mechanism_update": {
+    "classification": "paired_timing_zeros_with_character_gram_controlled_alignment",
+    "exact_two_orbit_alignment_theorem": {
+      "consequence": "Simple paired zeros determine only the sign pattern of J1 J2. The character Gram sign independently decides whether each interval is reinforcing or cancelling.",
+      "formula": "Re[(chi1 J1) conjugate(chi2 J2)] = Re[chi1 conjugate(chi2)] J1 J2 = Gram(chi1,chi2) J1 J2",
+      "scope": "real scalar orbit-net currents J1,J2 and fixed complex orbit characters chi1,chi2"
+    },
+    "next_falsifiable_prediction": "For a fresh two-orbit quotient, the sign of Re(chi_a conjugate(chi_b)) must determine the alignment topology: positive Gram gives cancellation between the simple net zeros and reinforcement outside; negative Gram gives the reverse. Failure rejects the two-scalar-current reduction.",
+    "statement": "The close pair of source/sink balance times survives the asymmetric HNF quotient, but the Gaussian claim that reinforcement occurs only between them is false. The timing pair and the spin-4 alignment are separate layers: the latter flips with the exact chi4 Gram sign."
+  },
+  "parent_commit": "77aa3fe",
+  "schema": "matching-one/p334-third-geometry-falsifier/v1",
+  "score": {
+    "character_geometry": {
+      "characters_linearly_independent_over_R": true,
+      "chi4_gram_real": "527/625",
+      "chi4_oriented_determinant": "-336/625",
+      "interpretation": "positive Gram: same-sign incidence contributions reinforce; opposite-sign incidence contributions cancel"
+    },
+    "complex_total_zero_gate": {
+      "has_interior_zero": false,
+      "reason": "The two chi4 vectors are real-linearly independent and the two scalar net roots are disjoint, so their complex sum cannot vanish."
+    },
+    "frozen_prediction_score": {
+      "paired_net_zeros_close": true,
+      "reinforcement_only_between_zeros": false,
+      "verdict": "paired_timing_survives_but_reinforcement_topology_is_falsified"
+    },
+    "p_ref_metrics": {
+      "orbit_0": {
+        "birth": "1.13403509607901149842320237467",
+        "chi4_weighted_contribution": {
+          "imag": "0.000238216817645027300574799382534",
+          "real": "-0.0000694799051464662960009831532391"
+        },
+        "exit": "1.13378695356063126165177029198",
+        "net": "0.000248142518380236771432082690140",
+        "net_fraction_of_activity": "0.000109418866625653742190674952498",
+        "net_slope_at_p_ref": "-6.67263686183739752376274608818",
+        "net_slope_at_root": "-6.67298485293693831983311735865",
+        "p_ref_minus_root": "-0.0000371871048851578376385710364704",
+        "root": "0.592783237894885157837638571036"
+      },
+      "orbit_0_signed_projection_share": "-0.00581905045311050519473174658271",
+      "orbit_1": {
+        "birth": "0.393876392934465946689394691605",
+        "chi4_weighted_contribution": {
+          "imag": "-0.0346369609951849576491798496224",
+          "real": "-0.0101024469569289459810107894732"
+        },
+        "exit": "0.429956560637783610907290368295",
+        "net": "-0.0360801677033176642178956766900",
+        "net_fraction_of_activity": "0.0437954897857256682997530248536",
+        "net_slope_at_p_ref": "-1.69793665848051683612513577531",
+        "net_slope_at_root": "-1.67930029154518950437317784257",
+        "p_ref_minus_root": "0.0213174793614285714285714285714",
+        "root": "0.571428571428571428571428571429"
+      },
+      "orbit_1_signed_projection_share": "1.00581905045311050519473174658",
+      "total_complex_net": {
+        "imag": "-0.0343987441775399303486050502398",
+        "phase_degrees": "-106.4732826",
+        "real": "-0.0101719268620754122770117726264"
+      }
+    },
+    "paired_zero_test": {
+      "close_pair_pass": true,
+      "frozen_close_threshold_from_parent_max": "0.0409499231130266717212867090127",
+      "observed_separation": "0.0213546664663137292662099996079",
+      "ordering": [
+        "orbit_1",
+        "orbit_0"
+      ]
+    },
+    "phase_intervals": [
+      {
+        "character_contribution_alignment": "reinforce",
+        "lower": "0",
+        "orbit_0_net_sign": "positive",
+        "orbit_1_net_sign": "positive",
+        "upper": "0.571428571428571428571428571429"
+      },
+      {
+        "character_contribution_alignment": "cancel",
+        "lower": "0.571428571428571428571428571429",
+        "orbit_0_net_sign": "positive",
+        "orbit_1_net_sign": "negative",
+        "upper": "0.592783237894885157837638571036"
+      },
+      {
+        "character_contribution_alignment": "reinforce",
+        "lower": "0.592783237894885157837638571036",
+        "orbit_0_net_sign": "negative",
+        "orbit_1_net_sign": "negative",
+        "upper": "1"
+      }
+    ],
+    "root_sets": {
+      "orbit_0": {
+        "degree_after_trim": 6,
+        "endpoint_one_order": 1,
+        "endpoint_zero_order": 2,
+        "interior_root_count": 1,
+        "roots": [
+          {
+            "decimal": "0.592783237894885157837638571036",
+            "kind": "rational_isolating_interval",
+            "lower": "192369158994607224541697206284839/324518553658426726783156020576256",
+            "upper": "3077906543913715592667155300557425/5192296858534827628530496329220096",
+            "width": "1/5192296858534827628530496329220096"
+          }
+        ]
+      },
+      "orbit_1": {
+        "degree_after_trim": 6,
+        "endpoint_one_order": 2,
+        "endpoint_zero_order": 3,
+        "interior_root_count": 1,
+        "roots": [
+          {
+            "decimal": "0.571428571428571428571428571429",
+            "kind": "exact_rational",
+            "lower": "4/7",
+            "root": "4/7",
+            "upper": "4/7"
+          }
+        ]
+      }
+    }
+  },
+  "selection": {
+    "gaussian_similarity": false,
+    "gaussian_similarity_reason": "A square-similarity lattice is invariant under physical quarter-turn; the exact quarter-turn stabilizer gate fails here.",
+    "maximum_order": 18,
+    "rows_examined": [
+      {
+        "N": 4,
+        "decision": "exclude_degenerate_face",
+        "matrix": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            4
+          ]
+        ]
+      },
+      {
+        "N": 4,
+        "decision": "exclude_quarter_turn",
+        "matrix": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "quarter_turn_lattice_symmetry": true
+      },
+      {
+        "N": 4,
+        "d4_stabilizer_order": 4,
+        "decision": "exclude_orbit_count",
+        "matrix": [
+          [
+            2,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "orbit_chi4": [
+          [
+            {
+              "imag": "0",
+              "real": "1"
+            }
+          ]
+        ],
+        "primitive_line_support": [
+          [
+            1,
+            0
+          ]
+        ],
+        "projective_orbits": [
+          [
+            [
+              1,
+              0
+            ]
+          ]
+        ],
+        "quarter_turn_lattice_symmetry": false
+      },
+      {
+        "N": 4,
+        "decision": "exclude_degenerate_face",
+        "matrix": [
+          [
+            4,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "N": 4,
+        "decision": "exclude_degenerate_face",
+        "matrix": [
+          [
+            4,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "N": 4,
+        "d4_stabilizer_order": 4,
+        "decision": "exclude_orbit_count",
+        "matrix": [
+          [
+            4,
+            2
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "orbit_chi4": [
+          [
+            {
+              "imag": "0",
+              "real": "1"
+            }
+          ]
+        ],
+        "primitive_line_support": [
+          [
+            1,
+            -2
+          ]
+        ],
+        "projective_orbits": [
+          [
+            [
+              1,
+              -2
+            ]
+          ]
+        ],
+        "quarter_turn_lattice_symmetry": false
+      },
+      {
+        "N": 4,
+        "decision": "exclude_degenerate_face",
+        "matrix": [
+          [
+            4,
+            3
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "N": 5,
+        "decision": "exclude_degenerate_face",
+        "matrix": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            5
+          ]
+        ]
+      },
+      {
+        "N": 5,
+        "decision": "exclude_degenerate_face",
+        "matrix": [
+          [
+            5,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "N": 5,
+        "decision": "exclude_degenerate_face",
+        "matrix": [
+          [
+            5,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "N": 5,
+        "decision": "exclude_quarter_turn",
+        "matrix": [
+          [
+            5,
+            2
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "quarter_turn_lattice_symmetry": true
+      },
+      {
+        "N": 5,
+        "decision": "exclude_quarter_turn",
+        "matrix": [
+          [
+            5,
+            3
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "quarter_turn_lattice_symmetry": true
+      },
+      {
+        "N": 5,
+        "decision": "exclude_degenerate_face",
+        "matrix": [
+          [
+            5,
+            4
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "N": 6,
+        "decision": "exclude_degenerate_face",
+        "matrix": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            6
+          ]
+        ]
+      },
+      {
+        "N": 6,
+        "d4_stabilizer_order": 4,
+        "decision": "exclude_trivial_or_aliased_character",
+        "matrix": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "orbit_chi4": [
+          [
+            {
+              "imag": "0",
+              "real": "1"
+            }
+          ],
+          [
+            {
+              "imag": "0",
+              "real": "1"
+            }
+          ]
+        ],
+        "primitive_line_support": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "projective_orbits": [
+          [
+            [
+              0,
+              1
+            ]
+          ],
+          [
+            [
+              1,
+              0
+            ]
+          ]
+        ],
+        "quarter_turn_lattice_symmetry": false
+      },
+      {
+        "N": 6,
+        "d4_stabilizer_order": 4,
+        "decision": "exclude_orbit_count",
+        "matrix": [
+          [
+            2,
+            1
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "orbit_chi4": [
+          [
+            {
+              "imag": "0",
+              "real": "1"
+            }
+          ]
+        ],
+        "primitive_line_support": [
+          [
+            1,
+            0
+          ]
+        ],
+        "projective_orbits": [
+          [
+            [
+              1,
+              0
+            ]
+          ]
+        ],
+        "quarter_turn_lattice_symmetry": false
+      },
+      {
+        "N": 6,
+        "d4_stabilizer_order": 4,
+        "decision": "exclude_trivial_or_aliased_character",
+        "matrix": [
+          [
+            3,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "orbit_chi4": [
+          [
+            {
+              "imag": "0",
+              "real": "1"
+            }
+          ],
+          [
+            {
+              "imag": "0",
+              "real": "1"
+            }
+          ]
+        ],
+        "primitive_line_support": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "projective_orbits": [
+          [
+            [
+              0,
+              1
+            ]
+          ],
+          [
+            [
+              1,
+              0
+            ]
+          ]
+        ],
+        "quarter_turn_lattice_symmetry": false
+      },
+      {
+        "N": 6,
+        "d4_stabilizer_order": 2,
+        "decision": "exclude_orbit_count",
+        "matrix": [
+          [
+            3,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "orbit_chi4": [
+          [
+            {
+              "imag": "-24/25",
+              "real": "-7/25"
+            }
+          ],
+          [
+            {
+              "imag": "0",
+              "real": "-1"
+            }
+          ],
+          [
+            {
+              "imag": "0",
+              "real": "1"
+            }
+          ]
+        ],
+        "primitive_line_support": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            -1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "projective_orbits": [
+          [
+            [
+              0,
+              1
+            ]
+          ],
+          [
+            [
+              1,
+              -1
+            ]
+          ],
+          [
+            [
+              1,
+              0
+            ]
+          ]
+        ],
+        "quarter_turn_lattice_symmetry": false
+      },
+      {
+        "N": 6,
+        "d4_stabilizer_order": 2,
+        "decision": "exclude_orbit_count",
+        "matrix": [
+          [
+            3,
+            2
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "orbit_chi4": [
+          [
+            {
+              "imag": "0",
+              "real": "-1"
+            }
+          ],
+          [
+            {
+              "imag": "24/25",
+              "real": "-7/25"
+            }
+          ],
+          [
+            {
+              "imag": "0",
+              "real": "1"
+            }
+          ]
+        ],
+        "primitive_line_support": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            -1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "projective_orbits": [
+          [
+            [
+              0,
+              1
+            ]
+          ],
+          [
+            [
+              1,
+              -1
+            ]
+          ],
+          [
+            [
+              1,
+              0
+            ]
+          ]
+        ],
+        "quarter_turn_lattice_symmetry": false
+      },
+      {
+        "N": 6,
+        "decision": "exclude_degenerate_face",
+        "matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "N": 6,
+        "decision": "exclude_degenerate_face",
+        "matrix": [
+          [
+            6,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "N": 6,
+        "d4_stabilizer_order": 2,
+        "decision": "exclude_orbit_count",
+        "matrix": [
+          [
+            6,
+            2
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "orbit_chi4": [
+          [
+            {
+              "imag": "24/25",
+              "real": "-7/25"
+            }
+          ],
+          [
+            {
+              "imag": "0",
+              "real": "1"
+            }
+          ],
+          [
+            {
+              "imag": "0",
+              "real": "-1"
+            }
+          ]
+        ],
+        "primitive_line_support": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            -3
+          ],
+          [
+            1,
+            -2
+          ]
+        ],
+        "projective_orbits": [
+          [
+            [
+              0,
+              1
+            ]
+          ],
+          [
+            [
+              1,
+              -3
+            ]
+          ],
+          [
+            [
+              1,
+              -2
+            ]
+          ]
+        ],
+        "quarter_turn_lattice_symmetry": false
+      },
+      {
+        "N": 6,
+        "d4_stabilizer_order": 4,
+        "decision": "exclude_orbit_count",
+        "matrix": [
+          [
+            6,
+            3
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "orbit_chi4": [
+          [
+            {
+              "imag": "0",
+              "real": "1"
+            }
+          ]
+        ],
+        "primitive_line_support": [
+          [
+            1,
+            -2
+          ]
+        ],
+        "projective_orbits": [
+          [
+            [
+              1,
+              -2
+            ]
+          ]
+        ],
+        "quarter_turn_lattice_symmetry": false
+      },
+      {
+        "N": 6,
+        "d4_stabilizer_order": 2,
+        "decision": "exclude_orbit_count",
+        "matrix": [
+          [
+            6,
+            4
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "orbit_chi4": [
+          [
+            {
+              "imag": "0",
+              "real": "-1"
+            }
+          ],
+          [
+            {
+              "imag": "-24/25",
+              "real": "-7/25"
+            }
+          ],
+          [
+            {
+              "imag": "0",
+              "real": "1"
+            }
+          ]
+        ],
+        "primitive_line_support": [
+          [
+            1,
+            -2
+          ],
+          [
+            1,
+            -1
+          ],
+          [
+            2,
+            -3
+          ]
+        ],
+        "projective_orbits": [
+          [
+            [
+              1,
+              -2
+            ]
+          ],
+          [
+            [
+              1,
+              -1
+            ]
+          ],
+          [
+            [
+              2,
+              -3
+            ]
+          ]
+        ],
+        "quarter_turn_lattice_symmetry": false
+      },
+      {
+        "N": 6,
+        "decision": "exclude_degenerate_face",
+        "matrix": [
+          [
+            6,
+            5
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "N": 7,
+        "decision": "exclude_degenerate_face",
+        "matrix": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            7
+          ]
+        ]
+      },
+      {
+        "N": 7,
+        "decision": "exclude_degenerate_face",
+        "matrix": [
+          [
+            7,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "N": 7,
+        "decision": "exclude_degenerate_face",
+        "matrix": [
+          [
+            7,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "N": 7,
+        "d4_stabilizer_order": 2,
+        "decision": "select_first_lexicographic_candidate",
+        "matrix": [
+          [
+            7,
+            2
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "orbit_chi4": [
+          [
+            {
+              "imag": "24/25",
+              "real": "-7/25"
+            }
+          ],
+          [
+            {
+              "imag": "24/25",
+              "real": "7/25"
+            }
+          ]
+        ],
+        "primitive_line_support": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            -3
+          ]
+        ],
+        "projective_orbits": [
+          [
+            [
+              0,
+              1
+            ]
+          ],
+          [
+            [
+              1,
+              -3
+            ]
+          ]
+        ],
+        "quarter_turn_lattice_symmetry": false
+      }
+    ],
+    "selected_N": 7,
+    "selected_characters": [
+      {
+        "imag": "24/25",
+        "real": "-7/25"
+      },
+      {
+        "imag": "24/25",
+        "real": "7/25"
+      }
+    ],
+    "selected_matrix": [
+      [
+        7,
+        2
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "selected_orbits": [
+      [
+        [
+          0,
+          1
+        ]
+      ],
+      [
+        [
+          1,
+          -3
+        ]
+      ]
+    ],
+    "selection_rule": "First HNF in increasing N/lexicographic order with four distinct face corners, no physical quarter-turn lattice symmetry, exactly two projective stabilizer orbits, and distinct constant non-real chi4 on both orbits. Source/sink counts are forbidden during selection.",
+    "selection_was_flux_blind": true
+  },
+  "status": "exact_third_geometry_falsifier"
+}
