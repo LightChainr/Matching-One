@@ -1,0 +1,29 @@
+{
+  "engine": "general integer-period threshold-rank Newman-Ziff",
+  "generated_utc": "2026-08-30T06:15:31Z",
+  "git_commit": "0b8bb6300554e2fbd6e6e2712c2a882dab5f6417",
+  "command": "/workspace/issue55-h4-h12-acquisition-src/build/threshold_rank_integer_period_mc_issue55 --samples 200000000 --batches 100 --seed 11868444676518621238 --replica-offset 15551000000 --threads 8 --first-matrix 18 -1 1 18 --second-matrix 17 -6 6 17 --first-rep 18 1 --second-rep 17 6 --git-commit 0b8bb6300554e2fbd6e6e2712c2a882dab5f6417 --output-prefix /workspace/issue55-h4-h12-acquisition-src/results/server-20260830/P55-h4-h12-orthogonal-production/shard0/issue55_production_n325_shard0",
+  "compiler": "10.3.1",
+  "openmp": true,
+  "threads_requested": 8,
+  "samples_per_pair": 200000000,
+  "batches": 100,
+  "seed": 11868444676518621238,
+  "replica_counter_first": 15551000000,
+  "replica_counter_last_exclusive": 15751000000,
+  "rng": "counter-derived SplitMix64 stream plus unbiased Fisher-Yates",
+  "coupling": "same HNF mixed-radix label permutation shared by the pair",
+  "quotient_coordinates": "column-HNF representatives (rx,ry), label=rx+h11*ry",
+  "period_matrix_convention": "row-major matrix; columns are lifted period vectors",
+  "channel": "rank-2 cross wrapping",
+  "K_plus": "first black primal cross rank, 1-based",
+  "K_minus": "first black rank after white matching cross is lost; N-r+1",
+  "sparse_joint_histogram": false,
+  "per_batch_joint_moments": true,
+  "elapsed_seconds": 1585.0592207499999,
+  "designs": [
+    {"id": "custom", "N": 325, "first": [18,1], "second": [17,6], "first_period_matrix": [[18,-1],[1,18]], "second_period_matrix": [[17,-6],[6,17]], "first_HNF": [[325,18],[0,1]], "second_HNF": [[325,57],[0,1]], "first_smith_invariants": [1,325], "second_smith_invariants": [1,325]}
+  ],
+  "histogram_csv": "/workspace/issue55-h4-h12-acquisition-src/results/server-20260830/P55-h4-h12-orthogonal-production/shard0/issue55_production_n325_shard0.hist.csv",
+  "moments_csv": "/workspace/issue55-h4-h12-acquisition-src/results/server-20260830/P55-h4-h12-orthogonal-production/shard0/issue55_production_n325_shard0.moments.csv"
+}

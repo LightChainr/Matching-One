@@ -1,0 +1,104 @@
+self-test passed: arbitrary integer periods, exact HNF quotient/winding, basis invariance, Smith(2,130)/(2,170), N=5 all permutations
+ee9010f524935099ba22f1820fddc05a79dd309d98784dfd5ba7da28129b6856  /workspace/issue55-h4-h12-acquisition-src/build/threshold_rank_integer_period_mc_issue55
+completed custom N=325 samples=200000000
+wrote "/workspace/issue55-h4-h12-acquisition-src/results/server-20260830/P55-h4-h12-orthogonal-production/shard1/issue55_production_n325_shard1.hist.csv"
+wrote "/workspace/issue55-h4-h12-acquisition-src/results/server-20260830/P55-h4-h12-orthogonal-production/shard1/issue55_production_n325_shard1.moments.csv"
+wrote "/workspace/issue55-h4-h12-acquisition-src/results/server-20260830/P55-h4-h12-orthogonal-production/shard1/issue55_production_n325_shard1.metadata.json"
+completed custom N=305 samples=200000000
+wrote "/workspace/issue55-h4-h12-acquisition-src/results/server-20260830/P55-h4-h12-orthogonal-production/shard1/issue55_production_n305_shard1.hist.csv"
+wrote "/workspace/issue55-h4-h12-acquisition-src/results/server-20260830/P55-h4-h12-orthogonal-production/shard1/issue55_production_n305_shard1.moments.csv"
+wrote "/workspace/issue55-h4-h12-acquisition-src/results/server-20260830/P55-h4-h12-orthogonal-production/shard1/issue55_production_n305_shard1.metadata.json"
+[
+  {
+    "N": 305,
+    "stage": "production",
+    "shard_index": 1,
+    "samples": 200000000,
+    "batches": 100,
+    "seed": 10276216240036424455,
+    "counter_interval": [
+      15751000000,
+      15951000000
+    ],
+    "output_prefix": "/workspace/issue55-h4-h12-acquisition-src/results/server-20260830/P55-h4-h12-orthogonal-production/shard1/issue55_production_n305_shard1",
+    "argv": [
+      "/workspace/issue55-h4-h12-acquisition-src/build/threshold_rank_integer_period_mc_issue55",
+      "--samples",
+      "200000000",
+      "--batches",
+      "100",
+      "--seed",
+      "10276216240036424455",
+      "--replica-offset",
+      "15751000000",
+      "--threads",
+      "8",
+      "--first-matrix",
+      "17",
+      "-4",
+      "4",
+      "17",
+      "--second-matrix",
+      "16",
+      "-7",
+      "7",
+      "16",
+      "--first-rep",
+      "17",
+      "4",
+      "--second-rep",
+      "16",
+      "7",
+      "--git-commit",
+      "0b8bb6300554e2fbd6e6e2712c2a882dab5f6417",
+      "--output-prefix",
+      "/workspace/issue55-h4-h12-acquisition-src/results/server-20260830/P55-h4-h12-orthogonal-production/shard1/issue55_production_n305_shard1"
+    ]
+  },
+  {
+    "N": 325,
+    "stage": "production",
+    "shard_index": 1,
+    "samples": 200000000,
+    "batches": 100,
+    "seed": 11868444676518621238,
+    "counter_interval": [
+      15751000000,
+      15951000000
+    ],
+    "output_prefix": "/workspace/issue55-h4-h12-acquisition-src/results/server-20260830/P55-h4-h12-orthogonal-production/shard1/issue55_production_n325_shard1",
+    "argv": [
+      "/workspace/issue55-h4-h12-acquisition-src/build/threshold_rank_integer_period_mc_issue55",
+      "--samples",
+      "200000000",
+      "--batches",
+      "100",
+      "--seed",
+      "11868444676518621238",
+      "--replica-offset",
+      "15751000000",
+      "--threads",
+      "8",
+      "--first-matrix",
+      "18",
+      "-1",
+      "1",
+      "18",
+      "--second-matrix",
+      "17",
+      "-6",
+      "6",
+      "17",
+      "--first-rep",
+      "18",
+      "1",
+      "--second-rep",
+      "17",
+      "6",
+      "--git-commit",
+      "0b8bb6300554e2fbd6e6e2712c2a882dab5f6417",
+      "--output-prefix",
+      "/workspace/issue55-h4-h12-acquisition-src/results/server-20260830/P55-h4-h12-orthogonal-production/shard1/issue55_production_n325_shard1"
+    ]
+  }
+]

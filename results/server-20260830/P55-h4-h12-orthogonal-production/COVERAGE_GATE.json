@@ -1,0 +1,46 @@
+{
+  "schema": "matching-one/issue55-production-coverage-gate/v1",
+  "status": "passed",
+  "source_commit": "0b8bb6300554e2fbd6e6e2712c2a882dab5f6417",
+  "binary_sha256": "ee9010f524935099ba22f1820fddc05a79dd309d98784dfd5ba7da28129b6856",
+  "samples_per_size": 600000000,
+  "batches_per_size": 300,
+  "sizes": {
+    "305": {
+      "seed": 10276216240036424455,
+      "period_pair": [[17, 4], [16, 7]]
+    },
+    "325": {
+      "seed": 11868444676518621238,
+      "period_pair": [[18, 1], [17, 6]]
+    }
+  },
+  "shards": [
+    {
+      "index": 0,
+      "counter_interval": [15551000000, 15751000000],
+      "actual_host_alias": "Huawei-CodeBuddy-TgFr7R",
+      "actual_host_id": "83750ac4eae34bbbbc64b894b854dd8c"
+    },
+    {
+      "index": 1,
+      "counter_interval": [15751000000, 15951000000],
+      "actual_host_alias": "Huawei-CodeBuddy",
+      "actual_host_id": "f415a4bcbd9a438b85f5f29e4a507ea4",
+      "host_replacement_provenance": "shard1/HOST_REPLACEMENT_PROVENANCE.txt"
+    },
+    {
+      "index": 2,
+      "counter_interval": [15951000000, 16151000000],
+      "actual_host_alias": "Huawei-CodeBuddy-HZsCM6",
+      "actual_host_id": "033945d8bf8b47a7acf475c595169e07"
+    }
+  ],
+  "checks": {
+    "contiguous_no_overlap": true,
+    "same_binary_all_hosts": true,
+    "same_source_commit_all_runs": true,
+    "remote_local_sha256_all_files": true,
+    "frozen_seed_matrix_and_orientation_order": true
+  }
+}
