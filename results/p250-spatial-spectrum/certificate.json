@@ -1,0 +1,659 @@
+{
+  "conclusion": {
+    "boundary": "Not a statistical effective-rank or physical-field count; no production spectrum estimated.",
+    "complete_spatial_rank_lower_bound": 100,
+    "ensemble": "0<p<1 independent Bernoulli and uniform parent-anchor target",
+    "positive_nonzero_spatial_frequencies_per_hand_charge": 100
+  },
+  "cyclotomic_degree": {
+    "extension_degree": 100,
+    "phi_101": 100,
+    "phi_5": 4,
+    "phi_505": 400
+  },
+  "data_class": "exact finite witness; no Monte Carlo",
+  "endpoint_aliases": [
+    {
+      "displacement_labels": 41,
+      "distinct_parent_vertices": 41,
+      "radius": 4,
+      "repeated_classes": []
+    },
+    {
+      "displacement_labels": 61,
+      "distinct_parent_vertices": 61,
+      "radius": 5,
+      "repeated_classes": []
+    },
+    {
+      "displacement_labels": 85,
+      "distinct_parent_vertices": 77,
+      "radius": 6,
+      "repeated_classes": [
+        {
+          "displacements": [
+            [
+              -5,
+              -1
+            ],
+            [
+              5,
+              0
+            ]
+          ],
+          "parent_label": 5
+        },
+        {
+          "displacements": [
+            [
+              -4,
+              -1
+            ],
+            [
+              6,
+              0
+            ]
+          ],
+          "parent_label": 6
+        },
+        {
+          "displacements": [
+            [
+              0,
+              6
+            ],
+            [
+              1,
+              -4
+            ]
+          ],
+          "parent_label": 41
+        },
+        {
+          "displacements": [
+            [
+              -1,
+              5
+            ],
+            [
+              0,
+              -5
+            ]
+          ],
+          "parent_label": 50
+        },
+        {
+          "displacements": [
+            [
+              0,
+              5
+            ],
+            [
+              1,
+              -5
+            ]
+          ],
+          "parent_label": 51
+        },
+        {
+          "displacements": [
+            [
+              -1,
+              4
+            ],
+            [
+              0,
+              -6
+            ]
+          ],
+          "parent_label": 60
+        },
+        {
+          "displacements": [
+            [
+              -6,
+              0
+            ],
+            [
+              4,
+              1
+            ]
+          ],
+          "parent_label": 95
+        },
+        {
+          "displacements": [
+            [
+              -5,
+              0
+            ],
+            [
+              5,
+              1
+            ]
+          ],
+          "parent_label": 96
+        }
+      ]
+    }
+  ],
+  "issue": 406,
+  "parent": {
+    "fiber_step": [
+      10,
+      1
+    ],
+    "gaussian_period": [
+      10,
+      1
+    ],
+    "label": "(x-10*y) mod 101",
+    "order": 101
+  },
+  "projection_leakage_control": {
+    "boundary": "Algebraic control only; not a fitted P250 ordered response.",
+    "checks": {
+      "compression_commutator_nonzero": true,
+      "leakage_identity": true,
+      "microscopic_commutation": true,
+      "orthogonal_projector": true
+    },
+    "commutator": [
+      [
+        "0",
+        "-4/9",
+        "4/9"
+      ],
+      [
+        "4/9",
+        "0",
+        "-4/9"
+      ],
+      [
+        "-4/9",
+        "4/9",
+        "0"
+      ]
+    ]
+  },
+  "schema": "matching-one/p250-spatial-spectrum-certificate/v1",
+  "source_semantics_commit": "33c557b9aebed1bc9c07019b9cd5cee6c04be947",
+  "witnesses": [
+    {
+      "black_NN_components": [
+        {
+          "ambient_rank": 1,
+          "size": 31
+        }
+      ],
+      "charged_field_basis": "5*F_r=sum_{j=0}^3 coefficients[j]*zeta5^j",
+      "charges": {
+        "1": {
+          "all_coefficients_sha256": "d951b48a321f00835cd462c9f632e0d7921556713564eaf33137bb85006f614f",
+          "all_fifth_root_gauges_preserve_zero_support": true,
+          "nonzero_coefficients": [
+            2,
+            0,
+            0,
+            0
+          ],
+          "nonzero_parent": 0,
+          "nonzero_parents": 29,
+          "zero_coefficients": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "zero_parent": 21,
+          "zero_parents": 72
+        },
+        "2": {
+          "all_coefficients_sha256": "da4d40ebdc3a4d672c22be26a7817283b09437ca06bda60731ffe8c8d0615154",
+          "all_fifth_root_gauges_preserve_zero_support": true,
+          "nonzero_coefficients": [
+            2,
+            0,
+            0,
+            0
+          ],
+          "nonzero_parent": 0,
+          "nonzero_parents": 29,
+          "zero_coefficients": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "zero_parent": 21,
+          "zero_parents": 72
+        },
+        "3": {
+          "all_coefficients_sha256": "1e17c2a2d0cca5efdea5a5970f59b5e941e278dee242fe28ca4e7b684a1ecdbf",
+          "all_fifth_root_gauges_preserve_zero_support": true,
+          "nonzero_coefficients": [
+            2,
+            0,
+            0,
+            0
+          ],
+          "nonzero_parent": 0,
+          "nonzero_parents": 29,
+          "zero_coefficients": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "zero_parent": 21,
+          "zero_parents": 72
+        },
+        "4": {
+          "all_coefficients_sha256": "590e630353a5dbdce9e3cb5da109af6f876ac835cbff26b6b121092532cb84e9",
+          "all_fifth_root_gauges_preserve_zero_support": true,
+          "nonzero_coefficients": [
+            2,
+            0,
+            0,
+            0
+          ],
+          "nonzero_parent": 0,
+          "nonzero_parents": 29,
+          "zero_coefficients": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "zero_parent": 21,
+          "zero_parents": 72
+        }
+      },
+      "gaussian_period": [
+        19,
+        12
+      ],
+      "hand": "plus",
+      "occupied_count": 31,
+      "occupied_lifts": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          7,
+          0
+        ],
+        [
+          8,
+          0
+        ],
+        [
+          9,
+          0
+        ],
+        [
+          10,
+          0
+        ],
+        [
+          11,
+          0
+        ],
+        [
+          12,
+          0
+        ],
+        [
+          13,
+          0
+        ],
+        [
+          14,
+          0
+        ],
+        [
+          15,
+          0
+        ],
+        [
+          16,
+          0
+        ],
+        [
+          17,
+          0
+        ],
+        [
+          18,
+          0
+        ],
+        [
+          19,
+          0
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          19,
+          2
+        ],
+        [
+          19,
+          3
+        ],
+        [
+          19,
+          4
+        ],
+        [
+          19,
+          5
+        ],
+        [
+          19,
+          6
+        ],
+        [
+          19,
+          7
+        ],
+        [
+          19,
+          8
+        ],
+        [
+          19,
+          9
+        ],
+        [
+          19,
+          10
+        ],
+        [
+          19,
+          11
+        ]
+      ],
+      "order": 505,
+      "parent_fiber_label_count": 505,
+      "period_matrix_columns": [
+        [
+          19,
+          12
+        ],
+        [
+          -12,
+          19
+        ]
+      ],
+      "vacant_count": 474,
+      "white_matching_components": [
+        {
+          "ambient_rank": 1,
+          "size": 474
+        }
+      ]
+    },
+    {
+      "black_NN_components": [
+        {
+          "ambient_rank": 1,
+          "size": 29
+        }
+      ],
+      "charged_field_basis": "5*F_r=sum_{j=0}^3 coefficients[j]*zeta5^j",
+      "charges": {
+        "1": {
+          "all_coefficients_sha256": "d73d680666d547c799de37eebda00c5e92aee33caafad74dcc935bf8dedc7ff2",
+          "all_fifth_root_gauges_preserve_zero_support": true,
+          "nonzero_coefficients": [
+            2,
+            0,
+            0,
+            0
+          ],
+          "nonzero_parent": 0,
+          "nonzero_parents": 29,
+          "zero_coefficients": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "zero_parent": 22,
+          "zero_parents": 72
+        },
+        "2": {
+          "all_coefficients_sha256": "39a4bcbb7b6953465b3d6a63ab5be428a82881851c98558977299d9e268225dc",
+          "all_fifth_root_gauges_preserve_zero_support": true,
+          "nonzero_coefficients": [
+            2,
+            0,
+            0,
+            0
+          ],
+          "nonzero_parent": 0,
+          "nonzero_parents": 29,
+          "zero_coefficients": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "zero_parent": 22,
+          "zero_parents": 72
+        },
+        "3": {
+          "all_coefficients_sha256": "fa0c47b77baece31cc2422fdb28646da6b61db21a047939e7d47b2aad52fc2cb",
+          "all_fifth_root_gauges_preserve_zero_support": true,
+          "nonzero_coefficients": [
+            2,
+            0,
+            0,
+            0
+          ],
+          "nonzero_parent": 0,
+          "nonzero_parents": 29,
+          "zero_coefficients": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "zero_parent": 22,
+          "zero_parents": 72
+        },
+        "4": {
+          "all_coefficients_sha256": "ad3d72714f9c43d2ffa5989aa8b925fa0dc922a601ef14a0c6a8a6758329260e",
+          "all_fifth_root_gauges_preserve_zero_support": true,
+          "nonzero_coefficients": [
+            2,
+            0,
+            0,
+            0
+          ],
+          "nonzero_parent": 0,
+          "nonzero_parents": 29,
+          "zero_coefficients": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "zero_parent": 22,
+          "zero_parents": 72
+        }
+      },
+      "gaussian_period": [
+        21,
+        -8
+      ],
+      "hand": "minus",
+      "occupied_count": 29,
+      "occupied_lifts": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          7,
+          0
+        ],
+        [
+          8,
+          0
+        ],
+        [
+          9,
+          0
+        ],
+        [
+          10,
+          0
+        ],
+        [
+          11,
+          0
+        ],
+        [
+          12,
+          0
+        ],
+        [
+          13,
+          0
+        ],
+        [
+          14,
+          0
+        ],
+        [
+          15,
+          0
+        ],
+        [
+          16,
+          0
+        ],
+        [
+          17,
+          0
+        ],
+        [
+          18,
+          0
+        ],
+        [
+          19,
+          0
+        ],
+        [
+          20,
+          0
+        ],
+        [
+          21,
+          0
+        ],
+        [
+          21,
+          -1
+        ],
+        [
+          21,
+          -2
+        ],
+        [
+          21,
+          -3
+        ],
+        [
+          21,
+          -4
+        ],
+        [
+          21,
+          -5
+        ],
+        [
+          21,
+          -6
+        ],
+        [
+          21,
+          -7
+        ]
+      ],
+      "order": 505,
+      "parent_fiber_label_count": 505,
+      "period_matrix_columns": [
+        [
+          21,
+          -8
+        ],
+        [
+          8,
+          21
+        ]
+      ],
+      "vacant_count": 476,
+      "white_matching_components": [
+        {
+          "ambient_rank": 1,
+          "size": 476
+        }
+      ]
+    }
+  ]
+}
