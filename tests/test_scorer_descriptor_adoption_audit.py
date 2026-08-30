@@ -27,9 +27,13 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
         (scripts / "score_generic.py").write_text(KERNEL, encoding="utf-8")
         (scripts / "score_migration.py").write_text(KERNEL, encoding="utf-8")
         (scripts / "score_unclassified.py").write_text(KERNEL, encoding="utf-8")
+        (scripts / "scorer_descriptor_adoption_audit.py").write_text(
+            KERNEL, encoding="utf-8"
+        )
         return {
             "schema": "fixture",
             "corpus_glob": "scripts/*score*.py",
+            "corpus_exclusions": ["scripts/scorer_descriptor_adoption_audit.py"],
             "typed_wrapper_kernels": {
                 "scripts/score_wrapper.py": "scripts/score_kernel.py"
             },
@@ -72,6 +76,14 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "do not equal"):
                 audit(root, manifest)
 
+    def test_stale_corpus_exclusion_fails_closed(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            manifest = self.fixture(root)
+            manifest["corpus_exclusions"] = ["scripts/missing_score_audit.py"]
+            with self.assertRaisesRegex(ValueError, "exclusions do not match"):
+                audit(root, manifest)
+
     def test_missing_wrapped_kernel_fails_closed(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -101,11 +113,17 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
                 audit(root, manifest)
 
     def test_checked_result_has_current_partition(self) -> None:
+        manifest = json.loads(
+            (ROOT / "analysis/scorer_descriptor_adoption_manifest.json").read_text(
+                encoding="utf-8"
+            )
+        )
         result = json.loads(
             (ROOT / "results/scorer-descriptor-adoption/latest.json").read_text(
                 encoding="utf-8"
             )
         )
+        self.assertEqual(result, audit(ROOT, manifest))
         self.assertEqual(result["counts"]["total"], 39)
         self.assertEqual(result["counts"]["direct_typed_entrypoint"], 8)
         self.assertEqual(result["counts"]["covered_frozen_kernel"], 7)

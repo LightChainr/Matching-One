@@ -26,7 +26,18 @@ def imports_descriptor_map(path: Path) -> bool:
 
 
 def audit(root: Path, manifest: Mapping[str, object]) -> dict:
-    paths = sorted(path.relative_to(root).as_posix() for path in root.glob(str(manifest["corpus_glob"])))
+    candidates = {
+        path.relative_to(root).as_posix()
+        for path in root.glob(str(manifest["corpus_glob"]))
+    }
+    exclusions = set(manifest.get("corpus_exclusions", ()))
+    missing_exclusions = sorted(exclusions - candidates)
+    if missing_exclusions:
+        raise ValueError(
+            "corpus exclusions do not match the corpus glob: "
+            + ", ".join(missing_exclusions)
+        )
+    paths = sorted(candidates - exclusions)
     direct = {path for path in paths if imports_descriptor_map(root / path)}
     wrappers = dict(manifest["typed_wrapper_kernels"])
     standalone = set(manifest["direct_typed_standalone"])
@@ -103,6 +114,7 @@ def audit(root: Path, manifest: Mapping[str, object]) -> dict:
     return {
         "schema": manifest["schema"],
         "corpus_glob": manifest["corpus_glob"],
+        "corpus_exclusions": sorted(exclusions),
         "counts": {"total": len(rows), **counts},
         "typed_wrapper_kernels": wrappers,
         "descriptor_not_applicable_generic_utilities": not_applicable,
