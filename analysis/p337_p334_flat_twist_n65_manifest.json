@@ -1,0 +1,34 @@
+{
+  "schema": "matching-one/p337-p334-flat-twist-N65/v1",
+  "issues": [337, 334],
+  "theory_commit": "4b17955",
+  "archive_commit": "1714141",
+  "dependency_group": "P334_N65_20k_projective_birth_smoke",
+  "archive_sufficient": true,
+  "new_fields_required": [],
+  "fields_used": ["tau1", "primitive ell", "tau2", "DIRECT_RANK2"],
+  "fixed_p": 0.592746050790,
+  "exact_contracts": [
+    "T_alpha=P0+L_kernel(alpha) for nonzero prime-field twists",
+    "T_zero=1",
+    "S_q=q^2 P0+q P1+P2",
+    "S2/S3 reconstruct P0/P1/P2"
+  ],
+  "primary_projector": "F3 balanced axes-minus-diagonals H4 alias",
+  "same_H4_result": {
+    "F3_absolute_z": 0.7322918455212236,
+    "raw_chi4_absolute_z": 0.7293608057500932,
+    "conclusion": "nominal 0.4 percent gain; effectively tied"
+  },
+  "new_sector_result": {
+    "name": "F3_diagonal_odd",
+    "orientation_contrast": 0.0020775612521830144,
+    "standard_error": 0.0010406273485829573,
+    "absolute_z": 1.996450751570262,
+    "joint_F3_odd_quadratic": 5.902505532845466,
+    "joint_df": 2
+  },
+  "score": "results/local-20260830/P334-projective-birth-N65-smoke/flat_twist_score.json",
+  "note": "notes/p337-p334-flat-twist-n65.md",
+  "claim_boundary": "one exploratory correlated reanalysis; no defect identity or exponent fit"
+}
