@@ -142,6 +142,19 @@ VALUE_COLUMNS = (
     "sum_F3_H_J_S_im",
     "sum_F3_D_J_S_re",
     "sum_F3_D_J_S_im",
+    "sum_F5_X",
+    "sum_F5_Y",
+    "sum_F5_X2",
+    "sum_F5_Y2",
+    "sum_F5_X_Y",
+    "sum_F5_X_W_line_re",
+    "sum_F5_X_W_line_im",
+    "sum_F5_Y_W_line_re",
+    "sum_F5_Y_W_line_im",
+    "sum_F5_X_J_S_re",
+    "sum_F5_X_J_S_im",
+    "sum_F5_Y_J_S_re",
+    "sum_F5_Y_J_S_im",
 )
 
 

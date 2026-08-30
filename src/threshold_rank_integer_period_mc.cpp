@@ -1233,6 +1233,32 @@ F3LineCharacters f3_line_characters(Vector line) {
     return {-1, -1};
 }
 
+struct F5EvenCharacters {
+    int axis_minus_diagonal = 0;
+    int axis_diagonal_minus_oblique = 0;
+};
+
+F5EvenCharacters f5_even_characters(Vector line) {
+    if (line.x == 0 && line.y == 0) return {};
+    auto mod5 = [](Int value) {
+        int result = static_cast<int>(value % 5);
+        return result < 0 ? result + 5 : result;
+    };
+    const int u = mod5(line.x);
+    const int v = mod5(line.y);
+    if (u == 0 && v == 0) {
+        throw std::logic_error("primitive winding line vanished modulo five");
+    }
+    if (u == 0 || v == 0) return {1, 1};
+    int inverse = 0;
+    for (int candidate = 1; candidate < 5; ++candidate) {
+        if ((u * candidate) % 5 == 1) inverse = candidate;
+    }
+    const int slope = (v * inverse) % 5;
+    if (slope == 1 || slope == 4) return {-1, 1};
+    return {0, -2};
+}
+
 bool same_local(const LocalMark& first, const LocalMark& second) {
     return first.valid == second.valid && first.axis == second.axis &&
            first.diagonal == second.diagonal && first.landed == second.landed &&
@@ -1337,11 +1363,25 @@ struct PathMoments {
     long double sum_F3_H_J_S_imaginary = 0;
     long double sum_F3_D_J_S_real = 0;
     long double sum_F3_D_J_S_imaginary = 0;
+    std::int64_t sum_F5_X = 0;
+    std::int64_t sum_F5_Y = 0;
+    std::uint64_t sum_F5_X2 = 0;
+    std::uint64_t sum_F5_Y2 = 0;
+    std::int64_t sum_F5_X_Y = 0;
+    long double sum_F5_X_W_line_real = 0;
+    long double sum_F5_X_W_line_imaginary = 0;
+    long double sum_F5_Y_W_line_real = 0;
+    long double sum_F5_Y_W_line_imaginary = 0;
+    long double sum_F5_X_J_S_real = 0;
+    long double sum_F5_X_J_S_imaginary = 0;
+    long double sum_F5_Y_J_S_real = 0;
+    long double sum_F5_Y_J_S_imaginary = 0;
 
     void add(const PathInsertion& active, const PathInsertion& inactive,
              const QuotientCoordinates& quotient, int n,
              const Spin4& current_line_state,
-             const F3LineCharacters& current_f3) {
+             const F3LineCharacters& current_f3,
+             const F5EvenCharacters& current_f5) {
         if (active.site != inactive.site ||
             active.gate01 != inactive.gate12 ||
             active.gate12 != inactive.gate01 ||
@@ -1448,6 +1488,21 @@ struct PathMoments {
         sum_F3_H_J_S_imaginary += current_f3.h4 * j_s_imaginary;
         sum_F3_D_J_S_real += current_f3.diagonal * j_s_real;
         sum_F3_D_J_S_imaginary += current_f3.diagonal * j_s_imaginary;
+        const int f5_x = current_f5.axis_minus_diagonal;
+        const int f5_y = current_f5.axis_diagonal_minus_oblique;
+        sum_F5_X += f5_x;
+        sum_F5_Y += f5_y;
+        sum_F5_X2 += f5_x * f5_x;
+        sum_F5_Y2 += f5_y * f5_y;
+        sum_F5_X_Y += f5_x * f5_y;
+        sum_F5_X_W_line_real += f5_x * w_real;
+        sum_F5_X_W_line_imaginary += f5_x * w_imaginary;
+        sum_F5_Y_W_line_real += f5_y * w_real;
+        sum_F5_Y_W_line_imaginary += f5_y * w_imaginary;
+        sum_F5_X_J_S_real += f5_x * j_s_real;
+        sum_F5_X_J_S_imaginary += f5_x * j_s_imaginary;
+        sum_F5_Y_J_S_real += f5_y * j_s_real;
+        sum_F5_Y_J_S_imaginary += f5_y * j_s_imaginary;
         if (active.local.valid && inactive.local.valid) {
             const int local_s = (active_s * active.local.h4 +
                                  inactive_s * inactive.local.h4) / 2;
@@ -1532,6 +1587,7 @@ struct MarkedOrientation {
         }
         const Spin4 chi = spin4_mark(geometry.quotient, primal.line);
         const F3LineCharacters f3 = f3_line_characters(primal.line);
+        const F5EvenCharacters f5 = f5_even_characters(primal.line);
         MarkedKey key;
         key.k1 = primal.k1;
         key.k2 = primal.k2;
@@ -1552,9 +1608,12 @@ struct MarkedOrientation {
             const F3LineCharacters current_f3 =
                 primal.k1 <= insertion.k_before && insertion.k_before < primal.k2
                 ? f3 : F3LineCharacters{};
+            const F5EvenCharacters current_f5 =
+                primal.k1 <= insertion.k_before && insertion.k_before < primal.k2
+                ? f5 : F5EvenCharacters{};
             path[insertion.k_before].add(
                 insertion, inactive, geometry.quotient, geometry.n,
-                current_line_state, current_f3);
+                current_line_state, current_f3, current_f5);
         }
         complement.add(primal, matching, geometry.n);
     }
@@ -1702,6 +1761,14 @@ void self_test() {
         f3_line_characters({-4, -1}).diagonal != 1) {
         throw std::runtime_error("F3 projective-line character regression failed");
     }
+    if (f5_even_characters({1, 0}).axis_minus_diagonal != 1 ||
+        f5_even_characters({0, -1}).axis_diagonal_minus_oblique != 1 ||
+        f5_even_characters({1, 1}).axis_minus_diagonal != -1 ||
+        f5_even_characters({-1, 1}).axis_diagonal_minus_oblique != 1 ||
+        f5_even_characters({1, 2}).axis_diagonal_minus_oblique != -2 ||
+        f5_even_characters({-1, -2}).axis_diagonal_minus_oblique != -2) {
+        throw std::runtime_error("F5 D4-even projective-line character regression failed");
+    }
 
     // The degenerate N=4 control contains direct 0->2 births.  They have two
     // gates, no canonical line, D=0, and reverse-complement endpoint/site exchange.
@@ -1735,7 +1802,8 @@ void self_test() {
                 ? spin4_mark(axis_l2.quotient, primal.line) : Spin4{};
             one.add(primal.path[k], matching.path[axis_l2.n - 1 - k],
                     axis_l2.quotient, axis_l2.n, current_line_state,
-                    f3_line_characters(primal.line));
+                    f3_line_characters(primal.line),
+                    f5_even_characters(primal.line));
             if (one.sum_O_ext != euler_cell_residue(axis_l2, active) ||
                 one.sum_O_near != euler_local_residue_r2(
                     axis_l2, active, axis_permutation[k]) ||
@@ -2241,7 +2309,18 @@ void run_design(const PairDesign& design, const Options& options,
                     << row.sum_F3_H_J_S_real << ','
                     << row.sum_F3_H_J_S_imaginary << ','
                     << row.sum_F3_D_J_S_real << ','
-                    << row.sum_F3_D_J_S_imaginary << '\n';
+                    << row.sum_F3_D_J_S_imaginary << ','
+                    << row.sum_F5_X << ',' << row.sum_F5_Y << ','
+                    << row.sum_F5_X2 << ',' << row.sum_F5_Y2 << ','
+                    << row.sum_F5_X_Y << ','
+                    << row.sum_F5_X_W_line_real << ','
+                    << row.sum_F5_X_W_line_imaginary << ','
+                    << row.sum_F5_Y_W_line_real << ','
+                    << row.sum_F5_Y_W_line_imaginary << ','
+                    << row.sum_F5_X_J_S_real << ','
+                    << row.sum_F5_X_J_S_imaginary << ','
+                    << row.sum_F5_Y_J_S_real << ','
+                    << row.sum_F5_Y_J_S_imaginary << '\n';
             }
             const ComplementAudit& audit = marked.complement;
             *complement_audit << design.n << ',' << a << ',' << b << ',' << orientation
@@ -2338,7 +2417,12 @@ int run(int argc, char** argv) {
                "sum_F3_H_W_line_re,sum_F3_H_W_line_im,"
                "sum_F3_D_W_line_re,sum_F3_D_W_line_im,"
                "sum_F3_H_J_S_re,sum_F3_H_J_S_im,"
-               "sum_F3_D_J_S_re,sum_F3_D_J_S_im\n";
+               "sum_F3_D_J_S_re,sum_F3_D_J_S_im,"
+               "sum_F5_X,sum_F5_Y,sum_F5_X2,sum_F5_Y2,sum_F5_X_Y,"
+               "sum_F5_X_W_line_re,sum_F5_X_W_line_im,"
+               "sum_F5_Y_W_line_re,sum_F5_Y_W_line_im,"
+               "sum_F5_X_J_S_re,sum_F5_X_J_S_im,"
+               "sum_F5_Y_J_S_re,sum_F5_Y_J_S_im\n";
         complement_audit
             << "n,a,b,orientation,batch,samples,endpoint_failures,site_failures,"
                "line_failures,local_mark_failures,index_mismatches,"
@@ -2415,6 +2499,7 @@ int run(int argc, char** argv) {
              << "  \"separated_products\": \"O_sep axis/diagonal means, O_sep4 first/second moments, internal local-H4 type controls, and O_sep4 times J_S4/J_D4 in the same path batch\",\n"
              << "  \"ambient_line_source\": \"W_line=1[K1<=k<K2] exp(i4 theta(P ell)); current rank-one ambient-H1 state, zero outside the plateau, with full O_ext/O_near/O_sep4 and J_S Gram products\",\n"
              << "  \"finite_abelian_line_observer\": \"on the rank-one plateau reduce primitive ell in P1(F3): F3_H=+1 axes/-1 diagonals and F3_D=+1 diag+/-1 diag-/0 axes; zero off plateau, with W_line and J_S products\",\n"
+             << "  \"finite_abelian_even_line_observer\": \"on the rank-one plateau reduce primitive ell in P1(F5): F5_X=axis-diagonal and F5_Y=axis+diagonal-2*oblique over the three D4-even projective orbits; zero off plateau, with W_line and J_S products\",\n"
              << "  \"sparse_joint_histogram\": " << (options.marked_births ? "true" : "false") << ",\n"
              << "  \"per_batch_joint_moments\": true,\n"
              << "  \"elapsed_seconds\": " << std::setprecision(17) << elapsed << ",\n"

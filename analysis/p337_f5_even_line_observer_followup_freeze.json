@@ -1,0 +1,43 @@
+{
+  "schema": "matching-one/p337-f5-even-line-observer-followup-freeze/v1",
+  "status": "frozen_after_F3_null_before_new_counter_reveal",
+  "issues": [337, 334],
+  "reason": "The frozen F3 determinant was null because its second row F3_D was projective/reflection odd. P1(F5) is the smallest prime projective line space with three D4-even orbits and hence two independent even zero-sum observer rows.",
+  "observer_rows": {
+    "F5_X": "+1 axes, -1 diagonals, 0 obliques",
+    "F5_Y": "+1 axes, +1 diagonals, -2 obliques",
+    "orbit_partition": "P1(F5) = {0,infinity} union {+1,-1} union {+2,-2}"
+  },
+  "source_columns": ["W_line", "JS"],
+  "fixed_occupancy": {"N325": 193, "N425": 252},
+  "runs": {
+    "N325": {
+      "samples": 20000, "batches": 20, "k0": 193,
+      "seed": 20260830337425, "replica_offset": 35125000000,
+      "first_matrix": [[17, -6], [6, 17]],
+      "second_matrix": [[18, -1], [1, 18]],
+      "first_rep": [17, 6], "second_rep": [18, 1],
+      "planned_host": "Huawei-CodeBuddy-TgFr7R"
+    },
+    "N425": {
+      "samples": 20000, "batches": 20, "k0": 252,
+      "seed": 20260830337525, "replica_offset": 35225000000,
+      "first_matrix": [[16, -13], [13, 16]],
+      "second_matrix": [[19, -8], [8, 19]],
+      "first_rep": [16, 13], "second_rep": [19, 8],
+      "planned_host": "Huawei-CodeBuddy-XPk2PZ"
+    }
+  },
+  "primary": {
+    "per_orientation_matrix_rows": ["F5_X", "F5_Y"],
+    "per_orientation_matrix_columns": ["W_line", "JS"],
+    "statistic": "joint chi-square of first/second complex determinants using aligned delete-one covariance",
+    "decision": "coupling-rank lift within size iff chi-square_4 > 13.27670413599 at alpha=0.01",
+    "size_policy": "no pooling"
+  },
+  "stop_rules": [
+    "one 20k block per size only",
+    "do not alter F5 orbit weights, k0, sources or gate after reveal",
+    "do not interpret finite-abelian rank lift as a field or exponent"
+  ]
+}
