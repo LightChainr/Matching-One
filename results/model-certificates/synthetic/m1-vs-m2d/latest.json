@@ -1,0 +1,67 @@
+{
+  "claim_boundary": {
+    "excluded": "SOS completeness, noisy data, multi-generator relations, physical field identification, or exclusion of M1 outside the declared three moments",
+    "included": "one exact one-generator rational positive/negative control",
+    "parent_issue": "remain open"
+  },
+  "claim_level": "exact_synthetic_control",
+  "issue": 370,
+  "m1_infeasibility_certificate": {
+    "evaluated_minor": "1",
+    "identity": "f_0*f_2-f_1^2=0 for every scalar character",
+    "primitive_witness": [
+      1,
+      -1
+    ],
+    "status": "exactly_infeasible"
+  },
+  "m2d_extracted_realization": {
+    "eigenvalues": [
+      "1",
+      "2"
+    ],
+    "generator": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "2"
+      ]
+    ],
+    "readout": [
+      "1",
+      "1"
+    ],
+    "reproduced_moments": [
+      "2",
+      "3",
+      "5"
+    ],
+    "source": [
+      "1",
+      "1"
+    ],
+    "status": "exactly_feasible"
+  },
+  "model_classes": {
+    "excluded": "M1: one scalar character f_n=alpha*lambda^n",
+    "feasible": "M2d: one diagonalizable two-state generator"
+  },
+  "schema": "matching-one.synthetic-model-certificate.m1-vs-m2d.v1",
+  "synthetic_input": {
+    "dependency_group": "synthetic-exact-m1-m2d",
+    "moments": [
+      "2",
+      "3",
+      "5"
+    ],
+    "word_family": [
+      "identity",
+      "a",
+      "a^2"
+    ]
+  },
+  "synthetic_input_sha256": "1a7fe4c74c7109ae28e1a9e73104bb73825d7501496aad0e59e90d7e8b76777c"
+}

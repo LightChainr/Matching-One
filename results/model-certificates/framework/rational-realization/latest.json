@@ -1,0 +1,99 @@
+{
+  "claim_boundary": {
+    "excluded": "realization search or extraction, uniqueness up to similarity, other contexts, noisy data, cover/deck/Smith semantics, or physical state dimension",
+    "included": "exact response, reachability, and observability verification of the supplied typed rational realization",
+    "parent_issue": "remain open"
+  },
+  "claim_level": "exact",
+  "descriptor": {
+    "channels": [
+      {
+        "id": "endpoint",
+        "moments": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "readout": [
+          "1",
+          "1",
+          "0"
+        ],
+        "source": [
+          "0",
+          "1",
+          "0"
+        ]
+      },
+      {
+        "id": "morphism",
+        "moments": [
+          "1",
+          "2",
+          "4"
+        ],
+        "readout": [
+          "0",
+          "0",
+          "1"
+        ],
+        "source": [
+          "0",
+          "0",
+          "1"
+        ]
+      }
+    ],
+    "generator": [
+      [
+        "1",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "2"
+      ]
+    ]
+  },
+  "issue": 370,
+  "schema": "matching-one/exact-rational-realization-certificate/v1",
+  "source": {
+    "dependency_group": "synthetic-exact-morphism-rank3",
+    "path": "results/model-certificates/synthetic/morphism-forces-rank3/latest.json",
+    "sha256": "4205ac6bc14458b9d1acdea1f6c475308527b1118f084576e8b000670a30c59e"
+  },
+  "verification": {
+    "channels": [
+      {
+        "id": "endpoint",
+        "moments": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      {
+        "id": "morphism",
+        "moments": [
+          "1",
+          "2",
+          "4"
+        ]
+      }
+    ],
+    "dimension": 3,
+    "minimal_on_declared_typed_rows": true,
+    "observability_rank_across_typed_channels": 3,
+    "reachability_rank_across_typed_channels": 3,
+    "status": "exact_rational_realization_verified"
+  }
+}
