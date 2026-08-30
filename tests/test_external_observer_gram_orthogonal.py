@@ -10,7 +10,11 @@ import mpmath as mp
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from score_external_observer_gram_orthogonal import orthogonalize  # noqa: E402
+from score_external_observer_gram_orthogonal import (  # noqa: E402
+    METRICS,
+    delete_one_covariance,
+    orthogonalize,
+)
 
 
 class ExternalObserverGramOrthogonalTests(unittest.TestCase):
@@ -43,7 +47,15 @@ class ExternalObserverGramOrthogonalTests(unittest.TestCase):
         self.assertEqual(result["beta"], mp.mpf("-0.2"))
         self.assertEqual(mp.im(result["gram_residual"]), mp.mpf("1e-20"))
 
+    def test_delete_one_covariance_uses_local_metric_order(self) -> None:
+        rows = [
+            {name: mp.mpf(index + offset) for index, name in enumerate(METRICS)}
+            for offset in (0, 1, 2)
+        ]
+        covariance = delete_one_covariance(rows)
+        self.assertEqual(len(covariance), len(METRICS))
+        self.assertEqual(covariance[0][0], mp.mpf(4) / 3)
+
 
 if __name__ == "__main__":
     unittest.main()
-

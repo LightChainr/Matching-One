@@ -82,6 +82,24 @@ def projected(first: Sequence[base.PathRow], second: Sequence[base.PathRow]) -> 
     }
 
 
+def delete_one_covariance(rows: Sequence[dict[str, mp.mpf]]) -> list[list[mp.mpf]]:
+    count = len(rows)
+    means = {
+        name: mp.fsum(row[name] for row in rows) / count for name in METRICS
+    }
+    factor = mp.mpf(count - 1) / count
+    return [
+        [
+            factor * mp.fsum(
+                (row[left] - means[left]) * (row[right] - means[right])
+                for row in rows
+            )
+            for right in METRICS
+        ]
+        for left in METRICS
+    ]
+
+
 def score_prefix(prefix: Path) -> dict:
     groups = base.read_path(Path(str(prefix) + ".path.csv"))
     sizes = {key[0] for key in groups}
@@ -108,7 +126,7 @@ def score_prefix(prefix: Path) -> dict:
         )
         delete_centers.append(leave_center)
         delete_rows.append(leave_point)
-    covariance = base.covariance(delete_rows)
+    covariance = delete_one_covariance(delete_rows)
     standard_errors = {
         name: mp.sqrt(max(mp.mpf(0), covariance[index][index]))
         for index, name in enumerate(METRICS)
@@ -203,4 +221,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
