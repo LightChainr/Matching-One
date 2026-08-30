@@ -1,0 +1,85 @@
+{
+  "schema": "matching-one/p334-bottleneck-proxy-pilot-result/v1",
+  "status": "completed_fresh_20k_per_size_pilot",
+  "chronology": {
+    "freeze_commit": "54e84ef45b241ac013c656c040cd609f2462407c",
+    "runner_commit": "5ff7a97693b2f828bda9dc8a18c14d79df041d14",
+    "frozen_scorer_commit": "2ee9859b7869be37e9f6fea8411a4337702c5f60",
+    "raw_lock_commit": "d1be2e0c280c330e636ae14581f1cc46433b6326",
+    "pre_output_interface_fixes": [
+      {
+        "commit": "2caedb3c54f25573a629d6401d33fc7dd8f6d061",
+        "reason": "the first invocation stopped before output when exact collinearity in the frozen proxy span reached a nonsingular solver; the fix preserves the complete frozen span with a pseudoinverse and verifies that age adds one rank"
+      },
+      {
+        "commit": "1540b28c4f661cea9dbf64027e216bf0d5f21d6f",
+        "reason": "the second invocation stopped before output because the age-identifiability gate was incorrectly applied to the geometry-only transfer fit; the fix limits that gate to a literal age predictor"
+      }
+    ],
+    "completed_frozen_scores": 1,
+    "scientific_model_or_threshold_changed_after_lock": false
+  },
+  "primary_production_anchor": {
+    "decision": "shape_proxy_fails_common_production_age_absorption",
+    "rule": "both size-level two-orientation joint p values must be at least 0.01 and all four absolute slope retentions must be at most 0.25",
+    "absolute_slope_retention": {
+      "N325_first": 0.7560448949148302,
+      "N325_second": 0.6701462285352159,
+      "N425_first": 0.3041480869478949,
+      "N425_second": 0.27198922534201636
+    },
+    "joint": {
+      "N325": {
+        "chi2": 21.09764673597287,
+        "df": 2,
+        "p": 2.6224319094953577e-05
+      },
+      "N425": {
+        "chi2": 1.6669150326376287,
+        "df": 2,
+        "p": 0.43454424215498183
+      }
+    },
+    "interpretation": "the one-pass boundary/core/cut vector attenuates the N425 point estimates strongly but does not meet the common all-size/all-orientation absorption gate; N325 retains a large, jointly nonzero production-anchored age association"
+  },
+  "fresh_pilot": {
+    "support_gate": "passed_all_four_orientation_rows",
+    "Mshape_joint_p": {
+      "N325": 0.6713660496931714,
+      "N425": 0.6939125456816588
+    },
+    "Mshape_resolved_rank": 11,
+    "Mshape_nominal_columns": 12,
+    "collinear_deficiency": 1,
+    "solver": "Moore-Penrose least-squares on the full frozen column span; no proxy selected or dropped",
+    "H2_absolute_retention_vs_fresh_M0": {
+      "N325_first": 0.3697356991519427,
+      "N325_second": 0.051619652608707815,
+      "N425_first": 0.1027913496971306,
+      "N425_second": 0.3598298099234061
+    },
+    "H2_boundary": "H2 is the one-step hazard sufficient statistic and remains a definition-level calibration ceiling, not an independent mechanism"
+  },
+  "cross_size_transfer": {
+    "method": "fit the complete N325 geometry-only span and transfer it without refitting to N425",
+    "N425_residual_age": {
+      "first": -0.058272262045787275,
+      "second": -0.07724427927740035
+    },
+    "joint": {
+      "chi2": 1.588256584808819,
+      "df": 2,
+      "p": 0.45197505333741445
+    },
+    "interpretation": "the 20k transfer test is imprecise, but its residual effect sizes remain comparable to the production age slope rather than closing toward zero"
+  },
+  "artifacts": {
+    "raw_lock": "analysis/p334_bottleneck_proxy_pilot_raw_lock.json",
+    "raw_lock_sha256": "fbe6eba4655b8d4ce21e0d74d9c24ee5bde77e9ec025ddae2faa699f39ad024d",
+    "score": "results/server-20260830/P334-bottleneck-proxy-pilot/p334_bottleneck_proxy_pilot_score.json",
+    "score_sha256": "fdd1cc1073ef68e8bb5a679df0727d293ee87640e1a1de41562f67a8ab957e8c",
+    "final_scorer_sha256": "6549a9181eaefab15a24486b389a4113e35af9424b6d97e23b487ab3ce040809",
+    "runner_source_sha256": "732d99ded8ea1ad48d2b5d56c01a2a59ce8b9087d25301b290d7107d1118a1d9"
+  },
+  "claim_boundary": "Failure to absorb excludes only this compact one-pass shape vector. It does not prove intrinsic temporal memory, complete-state non-Markovianity, or absence of a more targeted bottleneck coordinate. The N325 and N425 rows are separate size blocks, while orientations within size share their random stream."
+}
