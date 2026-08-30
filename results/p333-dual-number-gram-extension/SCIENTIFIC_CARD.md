@@ -20,6 +20,10 @@
   `D0,J01,D1` creates a length-two zero-Jordan transient.  Yet no defective
   deterministic join/detach element through four marks is first-jet-Gram
   self-adjoint, so one bare morphism word still fails the physical gate.
+- Weighted-history positive control: at three marks
+  `K=D+J-DJ-JD=(D-J)^2` is nonzero rank one, square-zero, and H-self-adjoint;
+  it realizes an exact isotropic-bottom Jordan chain.  The signed connected
+  subtraction, not a single history, is the minimal successful mechanism.
 - Observer/sector/source/geometry: exact set-partition connectivity Gram;
   generic-Q colour/connectivity sector; no stochastic source or geometry.
 - Dependency group: Issue #262 low-leg connectivity Gram algebra.

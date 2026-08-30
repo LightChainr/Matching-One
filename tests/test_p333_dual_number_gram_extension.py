@@ -16,6 +16,7 @@ from p333_dual_number_gram_extension import (  # noqa: E402
     sharp_jordan_gate_oracle,
     join_semilattice_oracle,
     detach_join_semigroup_oracle,
+    weighted_detach_join_jordan_oracle,
 )
 
 
@@ -57,6 +58,17 @@ class DualNumberGramExtensionTests(unittest.TestCase):
         self.assertEqual(n3["first_defective_height"], 2)
         self.assertEqual(n3["gram_self_adjoint_defective_elements"], 0)
         self.assertEqual(detach_join_semigroup_oracle(4)["gram_self_adjoint_defective_elements"], 0)
+
+    def test_signed_history_jordan_control(self):
+        oracle = weighted_detach_join_jordan_oracle()
+        self.assertTrue(oracle["formula_exact"])
+        self.assertEqual(oracle["rank"], 1)
+        self.assertTrue(oracle["nonzero"])
+        self.assertTrue(oracle["square_zero"])
+        self.assertTrue(oracle["first_jet_gram_self_adjoint"])
+        self.assertTrue(oracle["chain"]["K_partner_equals_bottom"])
+        self.assertTrue(oracle["chain"]["K_bottom_zero"])
+        self.assertEqual(oracle["chain"]["bottom_H_norm"], "0")
 
 
 if __name__ == "__main__":

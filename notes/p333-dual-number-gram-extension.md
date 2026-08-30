@@ -193,6 +193,53 @@ Gram-compatible physical block requires a weighted sum of histories, an
 explicit Q-dependent action, or a larger state category.  This sharply
 separates "noncommutative morphism exists" from "LCFT Jordan block exists".
 
+## A minimal Gram-compatible weighted-history Jordan block
+
+The weighted-sum option can be realized exactly, still at three marks.  Put
+
+```text
+D = detach point 1,
+J = join points 0 and 1.
+```
+
+On the four-dimensional endpoint radical, define
+
+```text
+K = D + J - D J - J D = (D-J)^2.
+```
+
+Direct rational calculation gives
+
+```text
+K != 0,
+rank K = 1,
+K^2 = 0,
+H K = K^T H.
+```
+
+With radical coordinates
+
+```text
+v=(1,-1,-1,0),   w=(0,0,0,1),
+```
+
+the exact chain is
+
+```text
+K w=v,   K v=0,   <v,v>_H=0,   <v,w>_H=1.
+```
+
+This is the first finite positive control in this route that simultaneously
+has a nontrivial Jordan chain and passes the first-jet Gram gate.  Its form is
+suggestive: the nilpotent is a signed, connected-history subtraction of two
+incompatible idempotent operations, not a single trajectory.
+
+The signs matter.  `K` is not a positive stochastic transfer matrix, and this
+calculation does not identify a continuum LCFT field.  It does establish a
+precise microscopic mechanism worth transporting into a physical transfer
+construction: subtract disconnected one-step histories from the two possible
+ordered detach/join histories.
+
 ## Claim boundary
 
 This proves a finite algebra statement.  It does not prove a transfer-matrix

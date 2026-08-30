@@ -15,7 +15,7 @@ from fractions import Fraction
 from math import factorial
 from pathlib import Path
 
-from p262_confluent_potts_projectors import join_block_count, set_partitions
+from p262_confluent_potts_projectors import join_block_count, matrix_rank, set_partitions
 
 
 Matrix = list[list[Fraction]]
@@ -323,6 +323,63 @@ def detach_join_semigroup_oracle(n: int) -> dict:
     }
 
 
+def weighted_detach_join_jordan_oracle() -> dict:
+    """Minimal signed-history Gram-compatible nilpotent at three marks."""
+    n = 3
+    d = radical_operator(detach_operator(n, 1))
+    j = radical_operator(join_operator(n, 0, 1))
+    k = [
+        [
+            d[row][column]
+            + j[row][column]
+            - multiply(d, j)[row][column]
+            - multiply(j, d)[row][column]
+            for column in range(len(d))
+        ]
+        for row in range(len(d))
+    ]
+    difference = [[d[row][column] - j[row][column]
+                   for column in range(len(d))] for row in range(len(d))]
+    square = multiply(difference, difference)
+    h = restricted_first_form(n)
+    bottom = [Fraction(1), Fraction(-1), Fraction(-1), Fraction(0)]
+    partner = [Fraction(0), Fraction(0), Fraction(0), Fraction(1)]
+
+    def apply(operator: Matrix, vector: list[Fraction]) -> list[Fraction]:
+        return [sum(operator[row][column] * vector[column]
+                    for column in range(len(vector))) for row in range(len(vector))]
+
+    def bilinear(left: list[Fraction], right: list[Fraction]) -> Fraction:
+        return sum(left[row] * h[row][column] * right[column]
+                   for row in range(len(left)) for column in range(len(right)))
+
+    return {
+        "formula": "K=D1+J01-D1*J01-J01*D1=(D1-J01)^2",
+        "matrix": [[str(value) for value in row] for row in k],
+        "formula_exact": k == square,
+        "rank": matrix_rank(k),
+        "nonzero": any(value for row in k for value in row),
+        "square_zero": not any(value for row in multiply(k, k) for value in row),
+        "first_jet_gram_self_adjoint": multiply(h, k) == multiply(transpose(k), h),
+        "chain": {
+            "partner": [str(value) for value in partner],
+            "bottom": [str(value) for value in bottom],
+            "K_partner_equals_bottom": apply(k, partner) == bottom,
+            "K_bottom_zero": not any(apply(k, bottom)),
+            "bottom_H_norm": str(bilinear(bottom, bottom)),
+            "bottom_partner_H_pairing": str(bilinear(bottom, partner)),
+        },
+        "claim_boundary": (
+            "K is a signed connected-history combination, not a positive "
+            "stochastic transfer matrix or a continuum LCFT identification."
+        ),
+    }
+
+
+def scale_matrix(matrix: Matrix, scalar: Fraction) -> Matrix:
+    return [[scalar * value for value in row] for row in matrix]
+
+
 def analyze(max_points: int = 5) -> dict:
     rows = []
     for n in range(2, max_points + 1):
@@ -398,6 +455,7 @@ def analyze(max_points: int = 5) -> dict:
                     "a larger Q-dependent action, not one bare morphism word."
                 ),
             },
+            "weighted_history_jordan_control": weighted_detach_join_jordan_oracle(),
         },
         "checks": rows,
     }

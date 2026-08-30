@@ -195,6 +195,59 @@
           "2"
         ]
       ]
+    },
+    "weighted_history_jordan_control": {
+      "chain": {
+        "K_bottom_zero": true,
+        "K_partner_equals_bottom": true,
+        "bottom": [
+          "1",
+          "-1",
+          "-1",
+          "0"
+        ],
+        "bottom_H_norm": "0",
+        "bottom_partner_H_pairing": "1",
+        "partner": [
+          "0",
+          "0",
+          "0",
+          "1"
+        ]
+      },
+      "claim_boundary": "K is a signed connected-history combination, not a positive stochastic transfer matrix or a continuum LCFT identification.",
+      "first_jet_gram_self_adjoint": true,
+      "formula": "K=D1+J01-D1*J01-J01*D1=(D1-J01)^2",
+      "formula_exact": true,
+      "matrix": [
+        [
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "nonzero": true,
+      "rank": 1,
+      "square_zero": true
     }
   },
   "ring": "Q[epsilon]/(epsilon^2), Q=1+epsilon",
