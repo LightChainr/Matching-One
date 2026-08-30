@@ -13,11 +13,15 @@ from score_z5_charged_threepoint import gls_model, zero_score  # noqa: E402
 from z5_charged_threepoint_mc import (  # noqa: E402
     JOINT_REAL_ORDER,
     PRIMARY_REAL_ORDER,
+    PRODUCTION_ID,
+    _run_batch,
     dft_charges,
     exact_mapping_gate,
     parent_anchor_indices,
     run,
+    summarize,
 )
+from merge_z5_charged_threepoint_shards import merge_payloads  # noqa: E402
 
 
 class Z5ChargedThreePointTests(unittest.TestCase):
@@ -70,6 +74,38 @@ class Z5ChargedThreePointTests(unittest.TestCase):
         )
         self.assertGreater(score["chi_square"], 0.0)
         self.assertGreater(score["survival_p"], 0.0)
+
+    def test_disjoint_shard_merge_reproduces_batch_summary(self):
+        seed = 25011312220260831
+        tasks = [(j, 2 * j, 2, 0.592746050790, seed, 1) for j in range(4)]
+        rows = [_run_batch(task) for task in tasks]
+        gate = exact_mapping_gate()
+        observable = {"test": "same frozen observable"}
+        payloads = [
+            {
+                "schema": "matching-one/z5-charged-threepoint-response/v1",
+                "production_id": PRODUCTION_ID,
+                "manifest_runner_commit": "runner",
+                "mapping_gate": gate,
+                "observable": observable,
+                "run": {"p": 0.592746050790, "seed": seed, "radius": 1},
+            }
+            for _ in range(2)
+        ]
+        execution = {
+            "schema": "matching-one/z5-charged-threepoint-execution/v1",
+            "production_id": PRODUCTION_ID,
+            "production_authorized": True,
+            "runner_commit": "runner",
+            "run": {"samples": 8, "batches": 4, "workers": 2, "p": 0.592746050790, "seed": seed, "radius": 1, "replica_offset": 0},
+        }
+        merged = merge_payloads(payloads, rows[:2] + rows[2:], execution)
+        direct = summarize(rows)
+        self.assertEqual(merged["analysis"]["primary_point"], direct["primary_point"])
+        self.assertEqual(
+            merged["analysis"]["primary_covariance_of_mean"],
+            direct["primary_covariance_of_mean"],
+        )
 
 
 if __name__ == "__main__":

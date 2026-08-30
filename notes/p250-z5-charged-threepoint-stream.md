@@ -66,3 +66,12 @@ The anchor, DFT convention, p, radius, hypotheses, score order, and covariance
 contract are unchanged.  The 20k point estimates are model-development data
 only and are not combined with production.
 
+### Execution-only amendment
+
+Before production produced any response, the one-million-replica counter
+domain was partitioned into three disjoint ranges of 340k, 330k and 330k.
+Every range retains 10k batch units and uses the same runner commit, seed, p,
+radius, anchor, DFT, and frozen scores.  The merge oracle verifies exact
+coverage `[0,1000000)`, then recomputes all point estimates and covariance from
+the 100 retained batch sufficient-statistic rows.  This is wall-clock
+parallelism only; it creates no new scientific degree of freedom.

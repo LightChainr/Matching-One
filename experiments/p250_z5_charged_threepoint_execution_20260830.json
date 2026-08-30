@@ -1,0 +1,36 @@
+{
+  "schema": "matching-one/z5-charged-threepoint-execution/v1",
+  "production_id": "P250-N325-Z5-charged-threepoint-v1",
+  "status": "frozen_disjoint_replica_partition_before_production",
+  "production_authorized": true,
+  "runner_commit": "846e00011ecd0b331479e0205adadf16ef0a06fd",
+  "scientific_freeze": "experiments/p250_z5_charged_threepoint_production_20260830.json",
+  "amendment": "Execution-only partition of the same one-million-replica counter domain into three exact disjoint ranges; observable, seed, hypotheses, scores, and 10k batch units are unchanged.",
+  "run": {
+    "samples": 1000000,
+    "batches": 100,
+    "workers": 48,
+    "p": 0.59274605079,
+    "seed": 25011312220260831,
+    "radius": 1,
+    "replica_offset": 0,
+    "output": "results/huawei-20260830/P250-z5-charged-threepoint/charged_threepoint_1m_merged.json",
+    "batches_output": "results/huawei-20260830/P250-z5-charged-threepoint/charged_threepoint_1m_merged.batches.csv"
+  },
+  "shard_manifests": [
+    "experiments/p250_z5_charged_threepoint_shard_zy_20260830.json",
+    "experiments/p250_z5_charged_threepoint_shard_xp_20260830.json",
+    "experiments/p250_z5_charged_threepoint_shard_hz_20260830.json"
+  ],
+  "merge_contract": {
+    "batch_unit": 10000,
+    "coverage": [[0, 340000], [340000, 670000], [670000, 1000000]],
+    "oracle": "scripts/merge_z5_charged_threepoint_shards.py",
+    "requirements": [
+      "identical runner commit, seed, p, radius, observable and mapping gate",
+      "exact disjoint contiguous replica_first intervals",
+      "100 retained 10k batch sufficient-statistic rows",
+      "recompute the complete 8x8 and 24x24 covariance after merge"
+    ]
+  }
+}
