@@ -1,0 +1,26 @@
+{
+  "schema": "matching-one/p334-single-root-mechanism-manifest/v1",
+  "issues": [334, 337],
+  "parent_commit": "62edfe7",
+  "focused_inputs": "six-HNF atlas coefficient tables plus checked N13/N17 state counts",
+  "bounded_scan": "all honest connected HNF quotients of index 4..12",
+  "normalized_layers": "q_k=A_k/binom(N,k)",
+  "exact_theorem": "one positive-to-negative sign change of q_(k+1)-q_k implies one simple root of A'(p)",
+  "audits": [
+    "support contiguity",
+    "weak and strict single peak",
+    "normalized log-concavity / ULC",
+    "adjacent-ratio monotonicity",
+    "Bernstein derivative coefficient identity"
+  ],
+  "outputs": {
+    "json": "results/p334-single-root-mechanism/latest.json",
+    "markdown": "results/p334-single-root-mechanism/latest.md"
+  },
+  "commands": [
+    "PYTHONPATH=scripts python3 scripts/p334_single_root_mechanism.py --format json --output results/p334-single-root-mechanism/latest.json",
+    "PYTHONPATH=scripts python3 scripts/p334_single_root_mechanism.py --format markdown --output results/p334-single-root-mechanism/latest.md",
+    "PYTHONPATH=scripts python3 -m unittest discover -s tests -p test_p334_single_root_mechanism.py"
+  ],
+  "claim_boundary": "The one-sign-change implication is proved; all-quotient projective ULC is a conjecture supported exactly through HNF N12 and by N13/N17."
+}

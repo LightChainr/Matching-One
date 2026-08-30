@@ -1,0 +1,1030 @@
+{
+  "bounded_scan": {
+    "gate": "all honest-face connected HNF quotients of index 4..12, including quarter-turn cases",
+    "line_pass_counts": {
+      "adjacent_ratio_monotone": 240,
+      "adjacent_ratio_strictly_decreasing": 240,
+      "derivative_coefficient_identity_pass": 240,
+      "log_concave_normalized_sequence": 240,
+      "single_nonzero_derivative_sign_change": 240,
+      "strict_log_concave_on_positive_support": 240,
+      "strict_single_peak": 228,
+      "support_contiguous": 240,
+      "weak_single_peak": 240
+    },
+    "line_sequences": 240,
+    "matrix_count": 83,
+    "minimal_direct_rank2_witness": {
+      "N": 4,
+      "added_site": 0,
+      "coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "lower_mask": 6,
+      "lower_rank": 0,
+      "lower_sites": [
+        1,
+        2
+      ],
+      "matrix": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "rank_jump": 2,
+      "upper_rank": 2
+    },
+    "minimal_non_strict_line_peak": {
+      "N": 6,
+      "audit": {
+        "adjacent_q_ratios": [
+          "3",
+          "1"
+        ],
+        "adjacent_ratio_monotone": true,
+        "adjacent_ratio_strictly_decreasing": true,
+        "counts_on_support": [
+          3,
+          12,
+          9
+        ],
+        "derivative_coefficient_identity_pass": true,
+        "difference_sign_word": "0++0-0",
+        "log_concave_normalized_sequence": true,
+        "modes": [
+          3,
+          4
+        ],
+        "q_on_support": [
+          "1/5",
+          "3/5",
+          "3/5"
+        ],
+        "single_nonzero_derivative_sign_change": true,
+        "strict_log_concave_on_positive_support": true,
+        "strict_single_peak": false,
+        "support": [
+          2,
+          3,
+          4
+        ],
+        "support_contiguous": true,
+        "weak_single_peak": true
+      },
+      "group": [
+        [
+          1,
+          0
+        ]
+      ],
+      "matrix": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ]
+    },
+    "minimal_non_strict_orbit_peak": {
+      "N": 6,
+      "audit": {
+        "adjacent_q_ratios": [
+          "3",
+          "1"
+        ],
+        "adjacent_ratio_monotone": true,
+        "adjacent_ratio_strictly_decreasing": true,
+        "counts_on_support": [
+          3,
+          12,
+          9
+        ],
+        "derivative_coefficient_identity_pass": true,
+        "difference_sign_word": "0++0-0",
+        "log_concave_normalized_sequence": true,
+        "modes": [
+          3,
+          4
+        ],
+        "q_on_support": [
+          "1/5",
+          "3/5",
+          "3/5"
+        ],
+        "single_nonzero_derivative_sign_change": true,
+        "strict_log_concave_on_positive_support": true,
+        "strict_single_peak": false,
+        "support": [
+          2,
+          3,
+          4
+        ],
+        "support_contiguous": true,
+        "weak_single_peak": true
+      },
+      "group": [
+        [
+          1,
+          0
+        ]
+      ],
+      "matrix": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ]
+    },
+    "minimum_log_concavity_counterexample": null,
+    "minimum_ratio_monotonicity_counterexample": null,
+    "orbit_pass_counts": {
+      "adjacent_ratio_monotone": 217,
+      "adjacent_ratio_strictly_decreasing": 217,
+      "derivative_coefficient_identity_pass": 217,
+      "log_concave_normalized_sequence": 217,
+      "single_nonzero_derivative_sign_change": 217,
+      "strict_log_concave_on_positive_support": 217,
+      "strict_single_peak": 205,
+      "support_contiguous": 217,
+      "weak_single_peak": 217
+    },
+    "orbit_sequences": 217
+  },
+  "claim_boundary": [
+    "The unique-root implication is proved; projective-line ULC for all quotients is conjectural.",
+    "Strict single-peakedness itself already fails at N=6 through a two-layer plateau, but the one-sign-change criterion survives.",
+    "The matroid obstruction rules out the literal site-ground rank model, not every possible auxiliary lift.",
+    "No Monte Carlo sample, Huawei production, new PR, or merge is used."
+  ],
+  "exact_theorem": {
+    "conclusion": "A(p) has exactly one simple critical point in 0<p<1.",
+    "derivative_identity": "d_k=(k+1)A_(k+1)-(N-k)A_k=(N-k) binom(N,k) (q_(k+1)-q_k)",
+    "minimal_sufficient_condition": "After deleting zeros, q_(k+1)-q_k has one sign change from positive to negative, with both signs present.",
+    "proof": "With t=p/(1-p), factor A'(p)=(1-p)^(N-1) P(t). The positive coefficients of P have strictly lower degrees than all negative coefficients. Writing P=P_plus-P_minus, P_minus/P_plus is strictly increasing because its log-derivative is the difference of two degree averages with disjoint ordered supports. It crosses one exactly once and transversely.",
+    "ulc_corollary": "Contiguous support and strictly decreasing q_(k+1)/q_k, with the ratio crossing one, imply the sufficient sign-change condition."
+  },
+  "focused_atlas_n13_n17": {
+    "all_strict_single_peak_ulc_ratio": true,
+    "row_count": 16,
+    "rows": [
+      {
+        "N": 7,
+        "audit": {
+          "adjacent_q_ratios": [
+            "3",
+            "5/9"
+          ],
+          "adjacent_ratio_monotone": true,
+          "adjacent_ratio_strictly_decreasing": true,
+          "counts_on_support": [
+            7,
+            21,
+            7
+          ],
+          "derivative_coefficient_identity_pass": true,
+          "difference_sign_word": "00++--0",
+          "log_concave_normalized_sequence": true,
+          "modes": [
+            4
+          ],
+          "q_on_support": [
+            "1/5",
+            "3/5",
+            "1/3"
+          ],
+          "single_nonzero_derivative_sign_change": true,
+          "strict_log_concave_on_positive_support": true,
+          "strict_single_peak": true,
+          "support": [
+            3,
+            4,
+            5
+          ],
+          "support_contiguous": true,
+          "weak_single_peak": true
+        },
+        "geometry": [
+          [
+            7,
+            2
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "orbit": [
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "N": 7,
+        "audit": {
+          "adjacent_q_ratios": [],
+          "adjacent_ratio_monotone": true,
+          "adjacent_ratio_strictly_decreasing": true,
+          "counts_on_support": [
+            7
+          ],
+          "derivative_coefficient_identity_pass": true,
+          "difference_sign_word": "000+-00",
+          "log_concave_normalized_sequence": true,
+          "modes": [
+            4
+          ],
+          "q_on_support": [
+            "1/5"
+          ],
+          "single_nonzero_derivative_sign_change": true,
+          "strict_log_concave_on_positive_support": true,
+          "strict_single_peak": true,
+          "support": [
+            4
+          ],
+          "support_contiguous": true,
+          "weak_single_peak": true
+        },
+        "geometry": [
+          [
+            7,
+            2
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "orbit": [
+          [
+            1,
+            -3
+          ]
+        ]
+      },
+      {
+        "N": 7,
+        "audit": {
+          "adjacent_q_ratios": [],
+          "adjacent_ratio_monotone": true,
+          "adjacent_ratio_strictly_decreasing": true,
+          "counts_on_support": [
+            7
+          ],
+          "derivative_coefficient_identity_pass": true,
+          "difference_sign_word": "000+-00",
+          "log_concave_normalized_sequence": true,
+          "modes": [
+            4
+          ],
+          "q_on_support": [
+            "1/5"
+          ],
+          "single_nonzero_derivative_sign_change": true,
+          "strict_log_concave_on_positive_support": true,
+          "strict_single_peak": true,
+          "support": [
+            4
+          ],
+          "support_contiguous": true,
+          "weak_single_peak": true
+        },
+        "geometry": [
+          [
+            7,
+            3
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "orbit": [
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "N": 7,
+        "audit": {
+          "adjacent_q_ratios": [
+            "3",
+            "5/9"
+          ],
+          "adjacent_ratio_monotone": true,
+          "adjacent_ratio_strictly_decreasing": true,
+          "counts_on_support": [
+            7,
+            21,
+            7
+          ],
+          "derivative_coefficient_identity_pass": true,
+          "difference_sign_word": "00++--0",
+          "log_concave_normalized_sequence": true,
+          "modes": [
+            4
+          ],
+          "q_on_support": [
+            "1/5",
+            "3/5",
+            "1/3"
+          ],
+          "single_nonzero_derivative_sign_change": true,
+          "strict_log_concave_on_positive_support": true,
+          "strict_single_peak": true,
+          "support": [
+            3,
+            4,
+            5
+          ],
+          "support_contiguous": true,
+          "weak_single_peak": true
+        },
+        "geometry": [
+          [
+            7,
+            3
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "orbit": [
+          [
+            1,
+            -2
+          ]
+        ]
+      },
+      {
+        "N": 7,
+        "audit": {
+          "adjacent_q_ratios": [
+            "3",
+            "5/9"
+          ],
+          "adjacent_ratio_monotone": true,
+          "adjacent_ratio_strictly_decreasing": true,
+          "counts_on_support": [
+            7,
+            21,
+            7
+          ],
+          "derivative_coefficient_identity_pass": true,
+          "difference_sign_word": "00++--0",
+          "log_concave_normalized_sequence": true,
+          "modes": [
+            4
+          ],
+          "q_on_support": [
+            "1/5",
+            "3/5",
+            "1/3"
+          ],
+          "single_nonzero_derivative_sign_change": true,
+          "strict_log_concave_on_positive_support": true,
+          "strict_single_peak": true,
+          "support": [
+            3,
+            4,
+            5
+          ],
+          "support_contiguous": true,
+          "weak_single_peak": true
+        },
+        "geometry": [
+          [
+            7,
+            4
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "orbit": [
+          [
+            1,
+            -2
+          ]
+        ]
+      },
+      {
+        "N": 7,
+        "audit": {
+          "adjacent_q_ratios": [],
+          "adjacent_ratio_monotone": true,
+          "adjacent_ratio_strictly_decreasing": true,
+          "counts_on_support": [
+            7
+          ],
+          "derivative_coefficient_identity_pass": true,
+          "difference_sign_word": "000+-00",
+          "log_concave_normalized_sequence": true,
+          "modes": [
+            4
+          ],
+          "q_on_support": [
+            "1/5"
+          ],
+          "single_nonzero_derivative_sign_change": true,
+          "strict_log_concave_on_positive_support": true,
+          "strict_single_peak": true,
+          "support": [
+            4
+          ],
+          "support_contiguous": true,
+          "weak_single_peak": true
+        },
+        "geometry": [
+          [
+            7,
+            4
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "orbit": [
+          [
+            1,
+            -1
+          ]
+        ]
+      },
+      {
+        "N": 7,
+        "audit": {
+          "adjacent_q_ratios": [
+            "3",
+            "5/9"
+          ],
+          "adjacent_ratio_monotone": true,
+          "adjacent_ratio_strictly_decreasing": true,
+          "counts_on_support": [
+            7,
+            21,
+            7
+          ],
+          "derivative_coefficient_identity_pass": true,
+          "difference_sign_word": "00++--0",
+          "log_concave_normalized_sequence": true,
+          "modes": [
+            4
+          ],
+          "q_on_support": [
+            "1/5",
+            "3/5",
+            "1/3"
+          ],
+          "single_nonzero_derivative_sign_change": true,
+          "strict_log_concave_on_positive_support": true,
+          "strict_single_peak": true,
+          "support": [
+            3,
+            4,
+            5
+          ],
+          "support_contiguous": true,
+          "weak_single_peak": true
+        },
+        "geometry": [
+          [
+            7,
+            5
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "orbit": [
+          [
+            1,
+            -1
+          ]
+        ]
+      },
+      {
+        "N": 7,
+        "audit": {
+          "adjacent_q_ratios": [],
+          "adjacent_ratio_monotone": true,
+          "adjacent_ratio_strictly_decreasing": true,
+          "counts_on_support": [
+            7
+          ],
+          "derivative_coefficient_identity_pass": true,
+          "difference_sign_word": "000+-00",
+          "log_concave_normalized_sequence": true,
+          "modes": [
+            4
+          ],
+          "q_on_support": [
+            "1/5"
+          ],
+          "single_nonzero_derivative_sign_change": true,
+          "strict_log_concave_on_positive_support": true,
+          "strict_single_peak": true,
+          "support": [
+            4
+          ],
+          "support_contiguous": true,
+          "weak_single_peak": true
+        },
+        "geometry": [
+          [
+            7,
+            5
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "orbit": [
+          [
+            2,
+            -3
+          ]
+        ]
+      },
+      {
+        "N": 8,
+        "audit": {
+          "adjacent_q_ratios": [
+            "5/4"
+          ],
+          "adjacent_ratio_monotone": true,
+          "adjacent_ratio_strictly_decreasing": true,
+          "counts_on_support": [
+            16,
+            16
+          ],
+          "derivative_coefficient_identity_pass": true,
+          "difference_sign_word": "000++-00",
+          "log_concave_normalized_sequence": true,
+          "modes": [
+            5
+          ],
+          "q_on_support": [
+            "8/35",
+            "2/7"
+          ],
+          "single_nonzero_derivative_sign_change": true,
+          "strict_log_concave_on_positive_support": true,
+          "strict_single_peak": true,
+          "support": [
+            4,
+            5
+          ],
+          "support_contiguous": true,
+          "weak_single_peak": true
+        },
+        "geometry": [
+          [
+            8,
+            3
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "orbit": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            -3
+          ]
+        ]
+      },
+      {
+        "N": 8,
+        "audit": {
+          "adjacent_q_ratios": [
+            "5/3",
+            "1/2"
+          ],
+          "adjacent_ratio_monotone": true,
+          "adjacent_ratio_strictly_decreasing": true,
+          "counts_on_support": [
+            12,
+            16,
+            4
+          ],
+          "derivative_coefficient_identity_pass": true,
+          "difference_sign_word": "000++--0",
+          "log_concave_normalized_sequence": true,
+          "modes": [
+            5
+          ],
+          "q_on_support": [
+            "6/35",
+            "2/7",
+            "1/7"
+          ],
+          "single_nonzero_derivative_sign_change": true,
+          "strict_log_concave_on_positive_support": true,
+          "strict_single_peak": true,
+          "support": [
+            4,
+            5,
+            6
+          ],
+          "support_contiguous": true,
+          "weak_single_peak": true
+        },
+        "geometry": [
+          [
+            8,
+            3
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "orbit": [
+          [
+            1,
+            -2
+          ]
+        ]
+      },
+      {
+        "N": 8,
+        "audit": {
+          "adjacent_q_ratios": [
+            "5/3",
+            "1/2"
+          ],
+          "adjacent_ratio_monotone": true,
+          "adjacent_ratio_strictly_decreasing": true,
+          "counts_on_support": [
+            12,
+            16,
+            4
+          ],
+          "derivative_coefficient_identity_pass": true,
+          "difference_sign_word": "000++--0",
+          "log_concave_normalized_sequence": true,
+          "modes": [
+            5
+          ],
+          "q_on_support": [
+            "6/35",
+            "2/7",
+            "1/7"
+          ],
+          "single_nonzero_derivative_sign_change": true,
+          "strict_log_concave_on_positive_support": true,
+          "strict_single_peak": true,
+          "support": [
+            4,
+            5,
+            6
+          ],
+          "support_contiguous": true,
+          "weak_single_peak": true
+        },
+        "geometry": [
+          [
+            8,
+            5
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "orbit": [
+          [
+            1,
+            -2
+          ]
+        ]
+      },
+      {
+        "N": 8,
+        "audit": {
+          "adjacent_q_ratios": [
+            "5/4"
+          ],
+          "adjacent_ratio_monotone": true,
+          "adjacent_ratio_strictly_decreasing": true,
+          "counts_on_support": [
+            16,
+            16
+          ],
+          "derivative_coefficient_identity_pass": true,
+          "difference_sign_word": "000++-00",
+          "log_concave_normalized_sequence": true,
+          "modes": [
+            5
+          ],
+          "q_on_support": [
+            "8/35",
+            "2/7"
+          ],
+          "single_nonzero_derivative_sign_change": true,
+          "strict_log_concave_on_positive_support": true,
+          "strict_single_peak": true,
+          "support": [
+            4,
+            5
+          ],
+          "support_contiguous": true,
+          "weak_single_peak": true
+        },
+        "geometry": [
+          [
+            8,
+            5
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "orbit": [
+          [
+            1,
+            -1
+          ],
+          [
+            2,
+            -3
+          ]
+        ]
+      },
+      {
+        "N": 13,
+        "audit": {
+          "adjacent_q_ratios": [
+            "39/8",
+            "30/13",
+            "56/45",
+            "9/14",
+            "1/4"
+          ],
+          "adjacent_ratio_monotone": true,
+          "adjacent_ratio_strictly_decreasing": true,
+          "counts_on_support": [
+            52,
+            338,
+            780,
+            728,
+            260,
+            26
+          ],
+          "derivative_coefficient_identity_pass": true,
+          "difference_sign_word": "0000++++---00",
+          "log_concave_normalized_sequence": true,
+          "modes": [
+            8
+          ],
+          "q_on_support": [
+            "4/99",
+            "13/66",
+            "5/11",
+            "56/99",
+            "4/11",
+            "1/11"
+          ],
+          "single_nonzero_derivative_sign_change": true,
+          "strict_log_concave_on_positive_support": true,
+          "strict_single_peak": true,
+          "support": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "support_contiguous": true,
+          "weak_single_peak": true
+        },
+        "geometry": "N13",
+        "orbit": "axis_orbit"
+      },
+      {
+        "N": 13,
+        "audit": {
+          "adjacent_q_ratios": [
+            "3",
+            "8/9"
+          ],
+          "adjacent_ratio_monotone": true,
+          "adjacent_ratio_strictly_decreasing": true,
+          "counts_on_support": [
+            26,
+            78,
+            52
+          ],
+          "derivative_coefficient_identity_pass": true,
+          "difference_sign_word": "00000++--0000",
+          "log_concave_normalized_sequence": true,
+          "modes": [
+            7
+          ],
+          "q_on_support": [
+            "1/66",
+            "1/22",
+            "4/99"
+          ],
+          "single_nonzero_derivative_sign_change": true,
+          "strict_log_concave_on_positive_support": true,
+          "strict_single_peak": true,
+          "support": [
+            6,
+            7,
+            8
+          ],
+          "support_contiguous": true,
+          "weak_single_peak": true
+        },
+        "geometry": "N13",
+        "orbit": "diagonal_orbit"
+      },
+      {
+        "N": 17,
+        "audit": {
+          "adjacent_q_ratios": [
+            "11/2",
+            "392/121",
+            "12/5",
+            "307/168",
+            "1575/1228",
+            "1859/2205",
+            "86/169",
+            "52/215"
+          ],
+          "adjacent_ratio_monotone": true,
+          "adjacent_ratio_strictly_decreasing": true,
+          "counts_on_support": [
+            34,
+            374,
+            1904,
+            5712,
+            10438,
+            10710,
+            5746,
+            1462,
+            136
+          ],
+          "derivative_coefficient_identity_pass": true,
+          "difference_sign_word": "0000++++++----000",
+          "log_concave_normalized_sequence": true,
+          "modes": [
+            10
+          ],
+          "q_on_support": [
+            "1/182",
+            "11/364",
+            "14/143",
+            "168/715",
+            "307/715",
+            "315/572",
+            "13/28",
+            "43/182",
+            "2/35"
+          ],
+          "single_nonzero_derivative_sign_change": true,
+          "strict_log_concave_on_positive_support": true,
+          "strict_single_peak": true,
+          "support": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "support_contiguous": true,
+          "weak_single_peak": true
+        },
+        "geometry": "N17",
+        "orbit": "axis_orbit"
+      },
+      {
+        "N": 17,
+        "audit": {
+          "adjacent_q_ratios": [
+            "19/4",
+            "35/19",
+            "44/49",
+            "3/8"
+          ],
+          "adjacent_ratio_monotone": true,
+          "adjacent_ratio_strictly_decreasing": true,
+          "counts_on_support": [
+            136,
+            646,
+            952,
+            544,
+            102
+          ],
+          "derivative_coefficient_identity_pass": true,
+          "difference_sign_word": "0000000+++---0000",
+          "log_concave_normalized_sequence": true,
+          "modes": [
+            10
+          ],
+          "q_on_support": [
+            "4/715",
+            "19/715",
+            "7/143",
+            "4/91",
+            "3/182"
+          ],
+          "single_nonzero_derivative_sign_change": true,
+          "strict_log_concave_on_positive_support": true,
+          "strict_single_peak": true,
+          "support": [
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "support_contiguous": true,
+          "weak_single_peak": true
+        },
+        "geometry": "N17",
+        "orbit": "diagonal_orbit"
+      }
+    ]
+  },
+  "issues": [
+    334,
+    337
+  ],
+  "parent_commit": "62edfe7",
+  "schema": "matching-one/p334-single-root-mechanism/v1",
+  "status": "exact_single_root_criterion_and_bounded_ulc_audit",
+  "structural_interpretation": {
+    "matroid_obstruction": "The site-ground homology-rank function is not a matroid rank: one site addition can jump from rank 0 directly to rank 2, violating the matroid unit-increment axiom.",
+    "order_convexity": "The fixed-line rank-one family is order-convex in the Boolean lattice because homology images grow under site inclusion.",
+    "two_upset_decomposition": "For fixed primitive line ell, 1{H1=ell}=1{ell subset H1}-1{rank(H1)=2}. Both terms are increasing events; rank two is contained in the line-containing event.",
+    "why_upsets_do_not_prove_ulc": "A difference of nested increasing events need not have a log-concave layer density. On four elements, U={sets containing 1} union {sets containing {2,3,4}} and V={sets containing 1 with size>=2} give U\\V={{1},{2,3,4}}, whose normalized layer sequence has a zero valley and is not log-concave."
+  },
+  "theorem_conjecture_ladder": [
+    {
+      "claim": "one sign change of normalized layer differences implies one simple root",
+      "level": "THEOREM"
+    },
+    {
+      "claim": "All 240 fixed-line and 217 stabilizer-orbit sequences in the honest connected HNF N<=12 scan are contiguous, strictly ULC on positive support, and have strictly decreasing adjacent ratios.",
+      "level": "EXACT_BOUNDED_EVIDENCE"
+    },
+    {
+      "claim": "Projective rank-one ULC conjecture: every honest finite square-torus quotient and fixed primitive line has a contiguous ULC normalized layer sequence, hence a unique simple balance point.",
+      "level": "CONJECTURE"
+    },
+    {
+      "claim": "Show the order-convex line stratum has a normalized matching/Lorentzian rank-generating property; ordinary matroid and nested-upset log-concavity do not suffice.",
+      "level": "PROOF_TARGET"
+    }
+  ]
+}
