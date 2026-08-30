@@ -1,0 +1,50 @@
+{
+  "schema": "matching-one/p337-n340-second-child-result-manifest/v1",
+  "issues": [337, 334],
+  "preregistration_commit": "5369c21",
+  "source_reveal_commit": "0db21b7",
+  "engine_commit": "1714141+freeze-5369c21",
+  "environment": {
+    "name": "DevEnvC_HZsCM6",
+    "id": "033945d8bf8b47a7acf475c595169e07",
+    "architecture": "aarch64",
+    "vcpus": 16
+  },
+  "production": {
+    "N": 340,
+    "orientations": ["18+4i", "14+12i"],
+    "smith_invariants": [[2, 170], [2, 170]],
+    "samples_per_shape": 12000000,
+    "batches": 80,
+    "seed": 202608337340,
+    "elapsed_seconds": 51.500789386,
+    "births_sha256": "4e179b6aaee4012fb80403a6a1558f4cc4a50205f00be85f70fb74fb40b10ceb",
+    "metadata_sha256": "8b42289e487302dc7718fe6a657c62e072461548bf90d8c7e1527a0e215689d9"
+  },
+  "result": {
+    "Delta_K_A_N340": 0.007744724454833037,
+    "Delta_K_A_standard_error": 0.001991301971595492,
+    "z_vs_scalar_zero": 3.889276747226704,
+    "H4_amplitude": -0.0048572599119938095,
+    "H4_amplitude_standard_error": 0.0012488851340952626,
+    "z_to_nominal_area_H4": -1.004739025260331,
+    "z_to_observed_effective_measurement_only": 2.2698966038964485,
+    "z_to_observed_effective_predictive": 0.9417804157707134,
+    "z_to_scale_neutral_measurement_only": 5.0078538550015,
+    "z_to_scale_neutral_predictive": 3.946410898002878,
+    "A_projective_scalar": 0.0010677461875082945,
+    "A_projective_scalar_z": 0.505818770739814
+  },
+  "artifacts": {
+    "preregistration": "analysis/p337_n340_second_child_preregistration.json",
+    "script": "scripts/score_n340_second_child.py",
+    "score": "results/server-20260830/P337-N340-second-child/score.json",
+    "report": "results/server-20260830/P337-N340-second-child/REPORT.md",
+    "raw": "results/server-20260830/P337-N340-second-child/raw",
+    "checksums": "results/server-20260830/P337-N340-second-child/CHECKSUMS.sha256",
+    "science_card": "results/server-20260830/P337-N340-second-child/SCIENTIFIC_CARD.md",
+    "note": "notes/p337-n340-second-child-reveal.md",
+    "test": "tests/test_score_n340_second_child.py"
+  },
+  "claim_boundary": "same-lineage scale-transfer discriminator; no exponent fit, harmonic revote, or unique correction law"
+}
