@@ -1,0 +1,460 @@
+{
+  "corrected_general_theorem": {
+    "important_boundary": "the original mark-only universal injection is false and must not be restated as a conjectural proof strategy",
+    "open": "a topology proof of Hall saturation for the two-carrier transport graph on arbitrary HNF quotients",
+    "proved": "the implication from Hall saturation to aggregate TM, and Hall saturation on every minimal N=6 obstruction row",
+    "statement": "For any fixed-line row, form the two-carrier transport graph whose left vertices are the 4DF hard tokens and whose right vertices are M x M plus four replicas of Y x nonD. Join tokens when some quotient translation and exactly one occupied-to-vacant replacement in each lower configuration realizes the crossed ordered faces. If this graph satisfies Hall, its matching is a collision-free configuration injection and aggregate TM follows."
+  },
+  "exact_obstruction": {
+    "forced_alignment": "zero positive targets on all 4608 minimal hard tokens",
+    "lost_information": "The mark-only output forgets the quotient translation phase; M x M also forgets the fourfold source replica. Bare fibers have maximum size 24. Adding phase leaves maximum fiber 4; phase plus replica reconstructs the source but is a decorated certificate, not an unmarked TM injection.",
+    "mark_only_Hall_deficiency": 1032,
+    "obstruction_invariant": "sitewise union multiplicity u in {0,1,2}^Q of the two lower configurations",
+    "one_carrier_transport_Hall_deficiencies": [
+      276,
+      336
+    ],
+    "statement": "A translation-equivariant two-face switch that only crosses ordered missing marks is not injective. Even allowing every balanced recombination of the two bases while preserving the sitewise occupation multiplicity u_i=1_S(i)+1_T(i) leaves a positive Hall deficiency.",
+    "union_preserving_Hall_deficiencies": [
+      840,
+      852
+    ]
+  },
+  "minimal_counterexample_gate": {
+    "hard_rows_below_N6": 0,
+    "minimal_N": 6,
+    "minimal_rows": 4,
+    "search": "all connected honest-face HNF quotients through N=6, both carriers, every fixed line and lower layer"
+  },
+  "minimal_repair_on_the_counterexample": {
+    "interpretation": "the second transport is the configuration-level information carried by an Alexander-dual birth square; a mark-only or one-carrier rule cannot represent it",
+    "matching": "1152 of 1152 hard tokens on each of four N=6 rows",
+    "move": "one occupied-to-vacant replacement independently in each of the two lower configurations, followed by the ordered-mark cross",
+    "status": "exact bounded theorem",
+    "why_minimal": "all phase/ordering switches with zero carrier transports fail; arbitrary union-preserving base crossover fails; transport on only one carrier still has positive Hall deficiency; exactly one transport on each carrier saturates every minimal row"
+  },
+  "production_pair_covariance_crosscheck": {
+    "assessment": "orthogonal",
+    "commit": "a9f7d28",
+    "reason": "its signed union histograms concern finite local embedding controls at fixed K; they do not retain the fixed projective line, global D/M/Y/F rank pattern, relative translation phase, or the two-base sitewise-union invariant that obstructs this switch"
+  },
+  "rows": [
+    {
+      "N": 6,
+      "carrier": "matching",
+      "forced_alignment_outcomes": {
+        "D|F": 576,
+        "M|None": 288,
+        "None|None": 288
+      },
+      "forced_alignment_positive_targets": 0,
+      "hard_tokens_4DF": 1152,
+      "line": [
+        1,
+        0
+      ],
+      "lower_layer": 2,
+      "matrix": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "motifs": {
+        "D": 12,
+        "F": 24,
+        "M": 48,
+        "Y": 24
+      },
+      "operation_audits": {
+        "mark_only": {
+          "Hall_deficiency": 1032,
+          "collision_free_injection_exists": false,
+          "maximum_degree": 1,
+          "maximum_matching": 120,
+          "minimum_degree": 1,
+          "operation": "mark_only",
+          "reachable_cover_tokens": 120,
+          "source_tokens": 1152,
+          "zero_degree_sources": 0
+        },
+        "one_carrier_transport": {
+          "Hall_deficiency": 276,
+          "collision_free_injection_exists": false,
+          "maximum_degree": 14,
+          "maximum_matching": 876,
+          "minimum_degree": 10,
+          "operation": "one_carrier_transport",
+          "reachable_cover_tokens": 1044,
+          "source_tokens": 1152,
+          "zero_degree_sources": 0
+        },
+        "two_carrier_transport": {
+          "Hall_deficiency": 0,
+          "collision_free_injection_exists": true,
+          "maximum_degree": 45,
+          "maximum_matching": 1152,
+          "minimum_degree": 40,
+          "operation": "two_carrier_transport",
+          "reachable_cover_tokens": 2724,
+          "source_tokens": 1152,
+          "zero_degree_sources": 0
+        },
+        "union_preserving": {
+          "Hall_deficiency": 852,
+          "collision_free_injection_exists": false,
+          "maximum_degree": 2,
+          "maximum_matching": 300,
+          "minimum_degree": 1,
+          "operation": "union_preserving",
+          "reachable_cover_tokens": 300,
+          "source_tokens": 1152,
+          "zero_degree_sources": 0
+        }
+      },
+      "phase_information_loss": {
+        "admissible_phase_count_histogram": {
+          "1": 1152
+        },
+        "bare_target": {
+          "collision_excess": 1032,
+          "distinct_images": 120,
+          "maximum_fiber": 24
+        },
+        "output_occurrences": {
+          "MM": 576,
+          "YN": 576
+        },
+        "target_plus_phase_and_replica": {
+          "collision_excess": 0,
+          "distinct_images": 1152,
+          "maximum_fiber": 1
+        },
+        "target_plus_translation_phase": {
+          "collision_excess": 432,
+          "distinct_images": 720,
+          "maximum_fiber": 4
+        }
+      }
+    },
+    {
+      "N": 6,
+      "carrier": "matching",
+      "forced_alignment_outcomes": {
+        "D|F": 576,
+        "M|None": 288,
+        "None|None": 288
+      },
+      "forced_alignment_positive_targets": 0,
+      "hard_tokens_4DF": 1152,
+      "line": [
+        1,
+        0
+      ],
+      "lower_layer": 2,
+      "matrix": [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "motifs": {
+        "D": 12,
+        "F": 24,
+        "M": 48,
+        "Y": 24
+      },
+      "operation_audits": {
+        "mark_only": {
+          "Hall_deficiency": 1032,
+          "collision_free_injection_exists": false,
+          "maximum_degree": 1,
+          "maximum_matching": 120,
+          "minimum_degree": 1,
+          "operation": "mark_only",
+          "reachable_cover_tokens": 120,
+          "source_tokens": 1152,
+          "zero_degree_sources": 0
+        },
+        "one_carrier_transport": {
+          "Hall_deficiency": 336,
+          "collision_free_injection_exists": false,
+          "maximum_degree": 14,
+          "maximum_matching": 816,
+          "minimum_degree": 10,
+          "operation": "one_carrier_transport",
+          "reachable_cover_tokens": 912,
+          "source_tokens": 1152,
+          "zero_degree_sources": 0
+        },
+        "two_carrier_transport": {
+          "Hall_deficiency": 0,
+          "collision_free_injection_exists": true,
+          "maximum_degree": 38,
+          "maximum_matching": 1152,
+          "minimum_degree": 22,
+          "operation": "two_carrier_transport",
+          "reachable_cover_tokens": 1440,
+          "source_tokens": 1152,
+          "zero_degree_sources": 0
+        },
+        "union_preserving": {
+          "Hall_deficiency": 840,
+          "collision_free_injection_exists": false,
+          "maximum_degree": 2,
+          "maximum_matching": 312,
+          "minimum_degree": 2,
+          "operation": "union_preserving",
+          "reachable_cover_tokens": 312,
+          "source_tokens": 1152,
+          "zero_degree_sources": 0
+        }
+      },
+      "phase_information_loss": {
+        "admissible_phase_count_histogram": {
+          "1": 1152
+        },
+        "bare_target": {
+          "collision_excess": 1032,
+          "distinct_images": 120,
+          "maximum_fiber": 24
+        },
+        "output_occurrences": {
+          "MM": 576,
+          "YN": 576
+        },
+        "target_plus_phase_and_replica": {
+          "collision_excess": 0,
+          "distinct_images": 1152,
+          "maximum_fiber": 1
+        },
+        "target_plus_translation_phase": {
+          "collision_excess": 432,
+          "distinct_images": 720,
+          "maximum_fiber": 4
+        }
+      }
+    },
+    {
+      "N": 6,
+      "carrier": "matching",
+      "forced_alignment_outcomes": {
+        "D|F": 576,
+        "M|None": 288,
+        "None|None": 288
+      },
+      "forced_alignment_positive_targets": 0,
+      "hard_tokens_4DF": 1152,
+      "line": [
+        0,
+        1
+      ],
+      "lower_layer": 2,
+      "matrix": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "motifs": {
+        "D": 12,
+        "F": 24,
+        "M": 48,
+        "Y": 24
+      },
+      "operation_audits": {
+        "mark_only": {
+          "Hall_deficiency": 1032,
+          "collision_free_injection_exists": false,
+          "maximum_degree": 1,
+          "maximum_matching": 120,
+          "minimum_degree": 1,
+          "operation": "mark_only",
+          "reachable_cover_tokens": 120,
+          "source_tokens": 1152,
+          "zero_degree_sources": 0
+        },
+        "one_carrier_transport": {
+          "Hall_deficiency": 276,
+          "collision_free_injection_exists": false,
+          "maximum_degree": 14,
+          "maximum_matching": 876,
+          "minimum_degree": 10,
+          "operation": "one_carrier_transport",
+          "reachable_cover_tokens": 1044,
+          "source_tokens": 1152,
+          "zero_degree_sources": 0
+        },
+        "two_carrier_transport": {
+          "Hall_deficiency": 0,
+          "collision_free_injection_exists": true,
+          "maximum_degree": 45,
+          "maximum_matching": 1152,
+          "minimum_degree": 40,
+          "operation": "two_carrier_transport",
+          "reachable_cover_tokens": 2724,
+          "source_tokens": 1152,
+          "zero_degree_sources": 0
+        },
+        "union_preserving": {
+          "Hall_deficiency": 852,
+          "collision_free_injection_exists": false,
+          "maximum_degree": 2,
+          "maximum_matching": 300,
+          "minimum_degree": 1,
+          "operation": "union_preserving",
+          "reachable_cover_tokens": 300,
+          "source_tokens": 1152,
+          "zero_degree_sources": 0
+        }
+      },
+      "phase_information_loss": {
+        "admissible_phase_count_histogram": {
+          "1": 1152
+        },
+        "bare_target": {
+          "collision_excess": 1032,
+          "distinct_images": 120,
+          "maximum_fiber": 24
+        },
+        "output_occurrences": {
+          "MM": 576,
+          "YN": 576
+        },
+        "target_plus_phase_and_replica": {
+          "collision_excess": 0,
+          "distinct_images": 1152,
+          "maximum_fiber": 1
+        },
+        "target_plus_translation_phase": {
+          "collision_excess": 432,
+          "distinct_images": 720,
+          "maximum_fiber": 4
+        }
+      }
+    },
+    {
+      "N": 6,
+      "carrier": "matching",
+      "forced_alignment_outcomes": {
+        "D|F": 576,
+        "M|None": 288,
+        "None|None": 288
+      },
+      "forced_alignment_positive_targets": 0,
+      "hard_tokens_4DF": 1152,
+      "line": [
+        1,
+        -2
+      ],
+      "lower_layer": 2,
+      "matrix": [
+        [
+          6,
+          3
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "motifs": {
+        "D": 12,
+        "F": 24,
+        "M": 48,
+        "Y": 24
+      },
+      "operation_audits": {
+        "mark_only": {
+          "Hall_deficiency": 1032,
+          "collision_free_injection_exists": false,
+          "maximum_degree": 1,
+          "maximum_matching": 120,
+          "minimum_degree": 1,
+          "operation": "mark_only",
+          "reachable_cover_tokens": 120,
+          "source_tokens": 1152,
+          "zero_degree_sources": 0
+        },
+        "one_carrier_transport": {
+          "Hall_deficiency": 336,
+          "collision_free_injection_exists": false,
+          "maximum_degree": 14,
+          "maximum_matching": 816,
+          "minimum_degree": 10,
+          "operation": "one_carrier_transport",
+          "reachable_cover_tokens": 912,
+          "source_tokens": 1152,
+          "zero_degree_sources": 0
+        },
+        "two_carrier_transport": {
+          "Hall_deficiency": 0,
+          "collision_free_injection_exists": true,
+          "maximum_degree": 38,
+          "maximum_matching": 1152,
+          "minimum_degree": 22,
+          "operation": "two_carrier_transport",
+          "reachable_cover_tokens": 1440,
+          "source_tokens": 1152,
+          "zero_degree_sources": 0
+        },
+        "union_preserving": {
+          "Hall_deficiency": 840,
+          "collision_free_injection_exists": false,
+          "maximum_degree": 2,
+          "maximum_matching": 312,
+          "minimum_degree": 2,
+          "operation": "union_preserving",
+          "reachable_cover_tokens": 312,
+          "source_tokens": 1152,
+          "zero_degree_sources": 0
+        }
+      },
+      "phase_information_loss": {
+        "admissible_phase_count_histogram": {
+          "1": 1152
+        },
+        "bare_target": {
+          "collision_excess": 1032,
+          "distinct_images": 120,
+          "maximum_fiber": 24
+        },
+        "output_occurrences": {
+          "MM": 576,
+          "YN": 576
+        },
+        "target_plus_phase_and_replica": {
+          "collision_excess": 0,
+          "distinct_images": 1152,
+          "maximum_fiber": 1
+        },
+        "target_plus_translation_phase": {
+          "collision_excess": 432,
+          "distinct_images": 720,
+          "maximum_fiber": 4
+        }
+      }
+    }
+  ],
+  "schema_version": "p334-tm-configuration-cross-switch-v1",
+  "scientific_card": {
+    "answer": "Not by any two-face mark switch, nor by any sitewise-union-preserving base crossover; N=6 is an exact counterexample.",
+    "minimal_repair": "One occupied-to-vacant transport in both carriers, not just one, gives a full 1152/1152 matching in all four minimal rows.",
+    "next_theorem": "Prove Hall for the two-carrier transport graph from Alexander complement; do not return to delta-local, mark-only, or one-carrier switching.",
+    "obstruction": "The switch collapses translation phase and replica information and remains trapped in a fixed two-base union fiber.",
+    "question": "Can D x F be removed by a universal configuration-level cross-switch?"
+  },
+  "universal_strict_injection_status": "refuted"
+}
