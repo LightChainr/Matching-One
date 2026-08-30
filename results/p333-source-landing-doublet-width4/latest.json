@@ -1,0 +1,151 @@
+{
+  "canonical_restricted_gram_skew_rank": 2,
+  "claim_boundary": [
+    "Exact rational Q=1 first-jet algebra at width four only.",
+    "The two mark types are the fixed C4 source/landing charge-one axes.",
+    "No arbitrary endpoint columns, continuum LCFT identity, physical transfer matrix or formal Gaussian-K identification is introduced.",
+    "No further typed mark case is run after this result."
+  ],
+  "decision": "width4_doublet_fails",
+  "extended_dimension": 16,
+  "final_velocity": null,
+  "first_empty_restriction": {
+    "added_stage": "gram_self_adjoint",
+    "augmented_rank": 1,
+    "coefficient_rank": 0,
+    "consistent": false,
+    "from_stage": "endpoint_radical_normalized",
+    "inconsistency_witness": {
+      "identity": "y^T C=0 but y^T b=1",
+      "left_multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "left_times_parameter_matrix": [
+        0,
+        0
+      ],
+      "left_times_rhs": 1
+    },
+    "parameter_count_before_restriction": 2,
+    "remaining_dimension": null
+  },
+  "g0_rank": 5,
+  "global_decision": "The successful width-three escape does not persist at width four. The C4 charge-one landing doublet is genuinely non-scalar and translation covariant, but its ladder is 4 -> 2 -> empty at the Gram gate. The exact restriction has coefficient rank zero and augmented rank one, so neither surviving modulus touches the obstruction. No further case is run; representation decomposition identifies the untested one-dimensional C4 charge-two alternating landing character as the minimum missing type.",
+  "issues": [
+    333,
+    321,
+    370
+  ],
+  "landing_dimension": 2,
+  "next_type_lower_bound_if_failure": {
+    "existing_charge1_dimension": 2,
+    "minimum_non_scalar_mark_dimension": 3,
+    "missing_irrep": "C4 charge-two alternating landing character q_i=(-1)^i",
+    "reason": "The four-position landing permutation decomposes as scalar plus a two-dimensional charge-one block plus a one-dimensional charge-two block. The charge-one block is insufficient and the residual Gram-skew rank is two.",
+    "tested": false
+  },
+  "non_scalar_gate": {
+    "combined_scalar_plus_landing_rank": 6,
+    "new_non_scalar_rank": 2,
+    "passes": true,
+    "scalar_falling_factorial_rank": 4
+  },
+  "ordinary_dimension": 14,
+  "protocol": {
+    "commit": "32d2f68",
+    "path": "analysis/p333_source_landing_doublet_width4_protocol.json",
+    "sha256": "b694689026aeb41b55afd8a90458d1b03be5e7a1bc65f0359f10d139fba05f84"
+  },
+  "radical_dimension": 11,
+  "schema": "matching-one/p333-source-landing-doublet-width4/v1",
+  "stages": {
+    "affine_q_jet": {
+      "affine_tangent_dimension": 4,
+      "canonical_X0_T_V0_nonzero_equations": 0,
+      "consistent": true,
+      "equations": 4664,
+      "rank": 508
+    },
+    "endpoint_radical_normalized": {
+      "affine_tangent_dimension": 2,
+      "canonical_X0_T_V0_nonzero_equations": 0,
+      "consistent": true,
+      "equations": 4872,
+      "rank": 510
+    },
+    "gram_self_adjoint": {
+      "affine_tangent_dimension": null,
+      "canonical_X0_T_V0_nonzero_equations": 4,
+      "consistent": false,
+      "equations": 4927,
+      "rank": 510
+    },
+    "source_landing_normalized": {
+      "affine_tangent_dimension": null,
+      "canonical_X0_T_V0_nonzero_equations": 4,
+      "consistent": false,
+      "equations": 4967,
+      "rank": 512
+    }
+  },
+  "status": "exact_rational_width4_source_landing_certificate",
+  "translation_covariance": {
+    "G0_residual_rank": 0,
+    "G1_residual_rank": 0
+  },
+  "width": 4
+}
