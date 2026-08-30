@@ -1,0 +1,504 @@
+{
+  "by_N": {
+    "65": {
+      "N": 65,
+      "batches": 100,
+      "cross_fit": {
+        "boundary": "all variance ratios are held-out fold scores; no training covariance is reported as performance",
+        "fold_rule": "batch modulo 5; fit on four folds and score only the omitted fold",
+        "folds": [
+          {
+            "beta": [
+              0.1752234288151272,
+              0.013956787530676413,
+              -0.18704163752128578,
+              0.004710128675944164
+            ],
+            "evaluation_batches": 20,
+            "evaluation_samples": 200000,
+            "fold": 0,
+            "heldout_adjusted_mean": -0.00035279535655727387,
+            "heldout_projection_variance_per_replica": 0.19120719875119885,
+            "heldout_raw_variance_per_replica": 0.7182157518537592,
+            "heldout_residual_variance_per_replica": 0.5270085531025603,
+            "heldout_variance_reduction": 1.362816120583888,
+            "training_batches": 80,
+            "training_samples": 800000
+          },
+          {
+            "beta": [
+              0.17541451614588222,
+              0.014156853136063687,
+              -0.18723680397386952,
+              0.004179248817593535
+            ],
+            "evaluation_batches": 20,
+            "evaluation_samples": 200000,
+            "fold": 1,
+            "heldout_adjusted_mean": 0.0016707177135239254,
+            "heldout_projection_variance_per_replica": 0.19118962385087324,
+            "heldout_raw_variance_per_replica": 0.718806657008285,
+            "heldout_residual_variance_per_replica": 0.5276170331574118,
+            "heldout_variance_reduction": 1.362364389009088,
+            "training_batches": 80,
+            "training_samples": 800000
+          },
+          {
+            "beta": [
+              0.17523501435718908,
+              0.014200345822153107,
+              -0.18678400742828788,
+              0.0038317735080598374
+            ],
+            "evaluation_batches": 20,
+            "evaluation_samples": 200000,
+            "fold": 2,
+            "heldout_adjusted_mean": 0.0004537605393212679,
+            "heldout_projection_variance_per_replica": 0.19374481293618406,
+            "heldout_raw_variance_per_replica": 0.7217832725163627,
+            "heldout_residual_variance_per_replica": 0.5280384595801786,
+            "heldout_variance_reduction": 1.3669142075185632,
+            "training_batches": 80,
+            "training_samples": 800000
+          },
+          {
+            "beta": [
+              0.17529220495464448,
+              0.01416353527803529,
+              -0.18681252579835392,
+              0.004205112951373047
+            ],
+            "evaluation_batches": 20,
+            "evaluation_samples": 200000,
+            "fold": 3,
+            "heldout_adjusted_mean": -0.00010739849943975692,
+            "heldout_projection_variance_per_replica": 0.1927216231442278,
+            "heldout_raw_variance_per_replica": 0.7244935695678478,
+            "heldout_residual_variance_per_replica": 0.53177194642362,
+            "heldout_variance_reduction": 1.3624140469243595,
+            "training_batches": 80,
+            "training_samples": 800000
+          },
+          {
+            "beta": [
+              0.17538637709881344,
+              0.014004545885221329,
+              -0.18729740449522342,
+              0.004419881127203089
+            ],
+            "evaluation_batches": 20,
+            "evaluation_samples": 200000,
+            "fold": 4,
+            "heldout_adjusted_mean": 0.0010476088872189524,
+            "heldout_projection_variance_per_replica": 0.19088057101725764,
+            "heldout_raw_variance_per_replica": 0.7202334922674613,
+            "heldout_residual_variance_per_replica": 0.5293529212502036,
+            "heldout_variance_reduction": 1.3605922690790935,
+            "training_batches": 80,
+            "training_samples": 800000
+          }
+        ],
+        "oof_adjusted_mean": 0.000542378656813423,
+        "oof_conditional_standard_error": 0.0007271573300894346,
+        "oof_projection_variance_per_replica": 0.19194876593994836,
+        "oof_raw_variance_per_replica": 0.7207065486427432,
+        "oof_residual_variance_per_replica": 0.5287577827027948,
+        "oof_unexplained_fraction": 0.7336658501279998,
+        "oof_variance_reduction": 1.3630183275199927
+      },
+      "exact_gates": {
+        "control_mean_max_abs": 0.002000000000000058,
+        "identity_l1": 0.0,
+        "wrapping_l1": 0.0
+      },
+      "full_replica_means": [
+        0.000258,
+        -0.0016079999999999812,
+        0.00018099999999999367,
+        -1.6000000000035958e-05,
+        -0.002000000000000058
+      ],
+      "full_target_control_covariance": [
+        [
+          0.7207066541426541,
+          0.8897483046123047,
+          -0.9375619842599843,
+          -0.26281025868225744,
+          0.00830952430952238
+        ],
+        [
+          0.8897483046123047,
+          15.137750552086551,
+          -3.7938535028055025,
+          9.29933827361023,
+          6.727237511237453
+        ],
+        [
+          -0.9375619842599843,
+          -3.7938535028055025,
+          15.124718091957092,
+          2.6476626505586043,
+          2.234446596446566
+        ],
+        [
+          -0.26281025868225744,
+          9.29933827361023,
+          2.6476626505586043,
+          10.471590471334649,
+          6.592491560491595
+        ],
+        [
+          0.008309524309522382,
+          6.727237511237453,
+          2.234446596446566,
+          6.592491560491595,
+          7.1395571395571915
+        ]
+      ],
+      "geometries": {
+        "first": [
+          8,
+          1
+        ],
+        "second": [
+          7,
+          4
+        ]
+      },
+      "labels": [
+        "delta_q",
+        "delta_nn_edge",
+        "delta_diagonal_pair",
+        "delta_face",
+        "delta_right_angle"
+      ],
+      "samples": 1000000
+    },
+    "85": {
+      "N": 85,
+      "batches": 100,
+      "cross_fit": {
+        "boundary": "all variance ratios are held-out fold scores; no training covariance is reported as performance",
+        "fold_rule": "batch modulo 5; fit on four folds and score only the omitted fold",
+        "folds": [
+          {
+            "beta": [
+              0.15643934430006784,
+              0.015173800691923619,
+              -0.15995496455875277,
+              0.000601416817727398
+            ],
+            "evaluation_batches": 20,
+            "evaluation_samples": 200000,
+            "fold": 0,
+            "heldout_adjusted_mean": 0.0019008309242383194,
+            "heldout_projection_variance_per_replica": 0.1871266033196738,
+            "heldout_raw_variance_per_replica": 0.7604267429087146,
+            "heldout_residual_variance_per_replica": 0.5733001395890408,
+            "heldout_variance_reduction": 1.3264025078623074,
+            "training_batches": 80,
+            "training_samples": 800000
+          },
+          {
+            "beta": [
+              0.1561653353124686,
+              0.01516199135070102,
+              -0.15988174805862276,
+              0.0009448727345790693
+            ],
+            "evaluation_batches": 20,
+            "evaluation_samples": 200000,
+            "fold": 1,
+            "heldout_adjusted_mean": 0.0006455006353536396,
+            "heldout_projection_variance_per_replica": 0.18988674159863372,
+            "heldout_raw_variance_per_replica": 0.763284715798579,
+            "heldout_residual_variance_per_replica": 0.5733979741999453,
+            "heldout_variance_reduction": 1.3311604681958986,
+            "training_batches": 80,
+            "training_samples": 800000
+          },
+          {
+            "beta": [
+              0.15617718447399756,
+              0.015107929581326987,
+              -0.15936935728924262,
+              0.0004984190554157733
+            ],
+            "evaluation_batches": 20,
+            "evaluation_samples": 200000,
+            "fold": 2,
+            "heldout_adjusted_mean": 0.0005088153651796502,
+            "heldout_projection_variance_per_replica": 0.1902328005568713,
+            "heldout_raw_variance_per_replica": 0.7561837784188922,
+            "heldout_residual_variance_per_replica": 0.5659509778620209,
+            "heldout_variance_reduction": 1.3361294670353059,
+            "training_batches": 80,
+            "training_samples": 800000
+          },
+          {
+            "beta": [
+              0.15626458038447347,
+              0.015134802650557182,
+              -0.15975495322665403,
+              0.0004392060215857884
+            ],
+            "evaluation_batches": 20,
+            "evaluation_samples": 200000,
+            "fold": 3,
+            "heldout_adjusted_mean": -0.0029085116241131096,
+            "heldout_projection_variance_per_replica": 0.18784826088547324,
+            "heldout_raw_variance_per_replica": 0.7586968144590722,
+            "heldout_residual_variance_per_replica": 0.570848553573599,
+            "heldout_variance_reduction": 1.3290684713301182,
+            "training_batches": 80,
+            "training_samples": 800000
+          },
+          {
+            "beta": [
+              0.15616722908692007,
+              0.015358189045256846,
+              -0.15959433038637516,
+              0.0004694907521031284
+            ],
+            "evaluation_batches": 20,
+            "evaluation_samples": 200000,
+            "fold": 4,
+            "heldout_adjusted_mean": 0.002955884169896102,
+            "heldout_projection_variance_per_replica": 0.19223858065661403,
+            "heldout_raw_variance_per_replica": 0.7674229471147355,
+            "heldout_residual_variance_per_replica": 0.5751843664581214,
+            "heldout_variance_reduction": 1.3342208026973743,
+            "training_batches": 80,
+            "training_samples": 800000
+          }
+        ],
+        "oof_adjusted_mean": 0.0006205038941109203,
+        "oof_conditional_standard_error": 0.0007561325296114071,
+        "oof_projection_variance_per_replica": 0.18946659740345329,
+        "oof_raw_variance_per_replica": 0.7612029997399987,
+        "oof_residual_variance_per_replica": 0.5717364023365454,
+        "oof_unexplained_fraction": 0.7510958345301205,
+        "oof_variance_reduction": 1.331388025371745
+      },
+      "exact_gates": {
+        "control_mean_max_abs": 0.005169000000000195,
+        "identity_l1": 0.0,
+        "wrapping_l1": 0.0
+      },
+      "full_replica_means": [
+        -0.000599,
+        -0.005169000000000195,
+        0.004592999999999975,
+        0.0030129999999999827,
+        0.0016490000000000408
+      ],
+      "full_target_control_covariance": [
+        [
+          0.7612094024084024,
+          1.0748959786649752,
+          -1.0216102704032741,
+          -0.23179842701142497,
+          0.04488503263603325
+        ],
+        [
+          1.0748959786649752,
+          19.771318052757085,
+          -4.916619175402174,
+          12.176678750875746,
+          8.790271313952287
+        ],
+        [
+          -1.0216102704032741,
+          -4.916619175402174,
+          19.77631568066686,
+          3.4782466395376255,
+          2.9453783715213655
+        ],
+        [
+          -0.23179842701142497,
+          12.176678750875746,
+          3.478246639537626,
+          13.726283648114423,
+          8.632998664561699
+        ],
+        [
+          0.04488503263603325,
+          8.790271313952287,
+          2.9453783715213655,
+          8.632998664561699,
+          9.349737630536284
+        ]
+      ],
+      "geometries": {
+        "first": [
+          9,
+          2
+        ],
+        "second": [
+          7,
+          6
+        ]
+      },
+      "labels": [
+        "delta_q",
+        "delta_nn_edge",
+        "delta_diagonal_pair",
+        "delta_face",
+        "delta_right_angle"
+      ],
+      "samples": 1000000
+    }
+  },
+  "control_contract": {
+    "definitions": {
+      "delta_diagonal_pair": "Delta(nnn_pos_mc+nnn_neg_mc)",
+      "delta_face": "Delta F0_mc",
+      "delta_nn_edge": "Delta E_mc",
+      "delta_right_angle": "Delta right_angle_mc for translated {i,i+x,i+y}"
+    },
+    "fixed_K_conditional_means": "exactly zero for every control contrast",
+    "order": [
+      "delta_nn_edge",
+      "delta_diagonal_pair",
+      "delta_face",
+      "delta_right_angle"
+    ]
+  },
+  "issue": 40,
+  "metadata": [
+    {
+      "batches": 100,
+      "channels": [
+        "cross",
+        "both",
+        "either",
+        "direction_0",
+        "direction_1"
+      ],
+      "command": "./build/gaussian_orientation_mc --samples 1000000 --batches 100 --n 65 --p-ref 0.592746050790 --seed 4020260830 --replica-offset 40000000 --threads 8 --git-commit 1b988f99b9431a3d109a74a45499b8c158a64079 --euler-motifs --output-prefix results/local-20260830/P40-production-motif-projection/N65/mc",
+      "compiler": "Apple LLVM 21.0.0 (clang-2100.1.1.101)",
+      "coupling": "same cyclic labels j in Z/NZ share U_j across representations",
+      "cross_geometry_joint_gram": true,
+      "designs": [
+        {
+          "N": 65,
+          "cos4_first": 0.8788165680473373,
+          "cos4_second": -0.4844970414201182,
+          "first": [
+            8,
+            1
+          ],
+          "second": [
+            7,
+            4
+          ],
+          "theta_first": 0.12435499454676144,
+          "theta_second": 0.5191461142465229
+        }
+      ],
+      "elapsed_seconds": 8.792856042,
+      "engine": "same-N Gaussian site-orientation discovery",
+      "euler_motifs": true,
+      "euler_observable_names": [
+        "q",
+        "C_black",
+        "C_white",
+        "V",
+        "E",
+        "F0",
+        "nnn_pos",
+        "nnn_neg",
+        "path3_x",
+        "path3_y",
+        "corners",
+        "E_mc",
+        "F0_mc",
+        "nnn_pos_mc",
+        "nnn_neg_mc",
+        "path3_x_mc",
+        "path3_y_mc",
+        "corners_mc",
+        "right_angle",
+        "right_angle_mc"
+      ],
+      "generated_utc": "2026-08-30T10:17:34Z",
+      "git_commit": "1b988f99b9431a3d109a74a45499b8c158a64079",
+      "openmp": false,
+      "p_ref": 0.59274605079,
+      "replica_counter_first": 40000000,
+      "replica_counter_last_exclusive": 41000000,
+      "rng": "stateless SplitMix64-derived mapping (seed,N,replica,cyclic-site)",
+      "samples_per_pair": 1000000,
+      "seed": 4020260830,
+      "threads_requested": 8
+    },
+    {
+      "batches": 100,
+      "channels": [
+        "cross",
+        "both",
+        "either",
+        "direction_0",
+        "direction_1"
+      ],
+      "command": "./build/gaussian_orientation_mc --samples 1000000 --batches 100 --n 85 --p-ref 0.592746050790 --seed 4020260830 --replica-offset 40000000 --threads 8 --git-commit 1b988f99b9431a3d109a74a45499b8c158a64079 --euler-motifs --output-prefix results/local-20260830/P40-production-motif-projection/N85/mc",
+      "compiler": "Apple LLVM 21.0.0 (clang-2100.1.1.101)",
+      "coupling": "same cyclic labels j in Z/NZ share U_j across representations",
+      "cross_geometry_joint_gram": true,
+      "designs": [
+        {
+          "N": 85,
+          "cos4_first": 0.6412456747404844,
+          "cos4_second": -0.9532179930795848,
+          "first": [
+            9,
+            2
+          ],
+          "second": [
+            7,
+            6
+          ],
+          "theta_first": 0.21866894587394195,
+          "theta_second": 0.7086262721276703
+        }
+      ],
+      "elapsed_seconds": 11.555321416,
+      "engine": "same-N Gaussian site-orientation discovery",
+      "euler_motifs": true,
+      "euler_observable_names": [
+        "q",
+        "C_black",
+        "C_white",
+        "V",
+        "E",
+        "F0",
+        "nnn_pos",
+        "nnn_neg",
+        "path3_x",
+        "path3_y",
+        "corners",
+        "E_mc",
+        "F0_mc",
+        "nnn_pos_mc",
+        "nnn_neg_mc",
+        "path3_x_mc",
+        "path3_y_mc",
+        "corners_mc",
+        "right_angle",
+        "right_angle_mc"
+      ],
+      "generated_utc": "2026-08-30T10:17:46Z",
+      "git_commit": "1b988f99b9431a3d109a74a45499b8c158a64079",
+      "openmp": false,
+      "p_ref": 0.59274605079,
+      "replica_counter_first": 40000000,
+      "replica_counter_last_exclusive": 41000000,
+      "rng": "stateless SplitMix64-derived mapping (seed,N,replica,cyclic-site)",
+      "samples_per_pair": 1000000,
+      "seed": 4020260830,
+      "threads_requested": 8
+    }
+  ],
+  "schema": "matching-one/p40-production-motif-projection-score/v1",
+  "status": "post-freeze production score"
+}

@@ -1,0 +1,8 @@
+clang++ -O3 -std=c++17 -Wall -Wextra src/gaussian_orientation_mc.cpp -o build/gaussian_orientation_mc
+./build/gaussian_orientation_mc --self-test
+PYTHONPATH=scripts python3 tests/test_p40_production_motif_projection.py
+PYTHONPATH=scripts python3 tests/test_gaussian_orientation_mc.py
+PYTHONPATH=scripts python3 tests/test_production_pair_motif_covariance_certificate.py
+./build/gaussian_orientation_mc --samples 1000000 --batches 100 --n 65 --p-ref 0.592746050790 --seed 4020260830 --replica-offset 40000000 --threads 8 --git-commit 1b988f99b9431a3d109a74a45499b8c158a64079 --euler-motifs --output-prefix results/local-20260830/P40-production-motif-projection/N65/mc
+./build/gaussian_orientation_mc --samples 1000000 --batches 100 --n 85 --p-ref 0.592746050790 --seed 4020260830 --replica-offset 40000000 --threads 8 --git-commit 1b988f99b9431a3d109a74a45499b8c158a64079 --euler-motifs --output-prefix results/local-20260830/P40-production-motif-projection/N85/mc
+PYTHONPATH=scripts python3 scripts/score_p40_production_motif_projection.py --motifs results/local-20260830/P40-production-motif-projection/N65/mc.motifs.jsonl results/local-20260830/P40-production-motif-projection/N85/mc.motifs.jsonl --metadata results/local-20260830/P40-production-motif-projection/N65/mc.metadata.json results/local-20260830/P40-production-motif-projection/N85/mc.metadata.json --output results/local-20260830/P40-production-motif-projection/score.json

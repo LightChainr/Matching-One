@@ -1,0 +1,36 @@
+{
+  "schema": "matching-one/p40-production-motif-projection-checks/v1",
+  "generated_utc": "2026-08-30T10:18:35Z",
+  "runner_commit": "1b988f99b9431a3d109a74a45499b8c158a64079",
+  "freeze_commit": "f6b7411d4abbd857afc6689771e8317af284d864",
+  "binary_sha256": "639b234d0215a4e66fec9ed7e83d3b933d677547906ad60aa43ff9dcf118739c",
+  "by_N": {
+    "65": {
+      "motif_rows": 100,
+      "batch_csv_data_rows": 500,
+      "samples": 1000000,
+      "replica_counter": [40000000, 41000000],
+      "identity_l1": 0,
+      "wrapping_l1": 0,
+      "joint_gram_width": 20,
+      "metadata_elapsed_seconds": 8.792856042
+    },
+    "85": {
+      "motif_rows": 100,
+      "batch_csv_data_rows": 500,
+      "samples": 1000000,
+      "replica_counter": [40000000, 41000000],
+      "identity_l1": 0,
+      "wrapping_l1": 0,
+      "joint_gram_width": 20,
+      "metadata_elapsed_seconds": 11.555321416
+    }
+  },
+  "gates": {
+    "contiguous_batches": true,
+    "matching_seed_and_counter_contract": true,
+    "matching_runner_commit": true,
+    "joint_cross_gram_present": true,
+    "score_ran_once_after_freeze": true
+  }
+}
