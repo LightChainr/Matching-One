@@ -1,0 +1,741 @@
+{
+  "claim_boundary": {
+    "excluded": "finite-sample non-Gaussian coverage, cross-archive independence pooling, exact physical dimension, continuum field identity, exponent or SOS certificate",
+    "included": "exact rational verification of model feasibility margins inside the declared production Gaussian outer confidence contract",
+    "parent_issue": "remain open"
+  },
+  "claim_level": "robust_statistical",
+  "confidence_set": {
+    "arithmetic": "every saved feasibility margin is evaluated exactly as a rational number",
+    "calibration": "two-sided Gaussian Bonferroni; K=3.25 is conservatively above the nominal z_(1-0.01/16)",
+    "covariance": "intrinsic-center first-order A_top/E_top covariance from each aligned production archive",
+    "critical_value": "13/4",
+    "exact_arithmetic_boundary": "all feasibility margins are exact rational consequences of the pinned decimal estimates/covariances and K=13/4; Gaussian calibration itself is an assumed outer-set contract",
+    "familywise_alpha_per_model": "1/100",
+    "nominal_critical_check": "runtime NormalDist z_(1-0.01/16) is strictly below 13/4",
+    "rational_critical_decimal": 3.25,
+    "rows_per_model": 8
+  },
+  "decision_summary": {
+    "eliminated": [
+      "M_ETOP_ZERO",
+      "M_F2_ZERO",
+      "M_F1_ZERO"
+    ],
+    "model_ordering": "free_common_line strictly outranks all three frozen fixed-ratio lines",
+    "not_eliminated": [
+      "M_COMMON_STATE_LINE"
+    ]
+  },
+  "fixed_ratio_models": [
+    {
+      "certificate_logic": "one incompatible row excludes a universal fixed-ratio model",
+      "decision": "eliminated",
+      "id": "M_ETOP_ZERO",
+      "incompatible_rows": [
+        "P49-N130",
+        "P50-N145",
+        "P49-N170",
+        "P43-N185",
+        "P43-N265"
+      ],
+      "ratio": "0",
+      "relation": "E_top=0",
+      "rows": [
+        {
+          "N": 130,
+          "exact_test": "(E-r*A)^2 <= K^2*(var_E+r^2*var_A-2r*cov_AE)",
+          "id": "P49-N130",
+          "inside_outer_band": false,
+          "margin_decimal": 9.882686413778534e-09,
+          "residual": "-668074028578103/5000000000000000000",
+          "squared_feasibility_margin": "247067160344463339733221078609/25000000000000000000000000000000000000",
+          "variance": "7545779780018467/10000000000000000000000000"
+        },
+        {
+          "N": 145,
+          "exact_test": "(E-r*A)^2 <= K^2*(var_E+r^2*var_A-2r*cov_AE)",
+          "id": "P50-N145",
+          "inside_outer_band": false,
+          "margin_decimal": 9.013038878515835e-09,
+          "residual": "-2924451547517811/25000000000000000000",
+          "squared_feasibility_margin": "5633149299072396760681612231721/625000000000000000000000000000000000000",
+          "variance": "4422085763343031/10000000000000000000000000"
+        },
+        {
+          "N": 170,
+          "exact_test": "(E-r*A)^2 <= K^2*(var_E+r^2*var_A-2r*cov_AE)",
+          "id": "P49-N170",
+          "inside_outer_band": false,
+          "margin_decimal": 4.182317156473511e-09,
+          "residual": "-10653636068648911/100000000000000000000",
+          "squared_feasibility_margin": "41823171564735110143464981485921/10000000000000000000000000000000000000000",
+          "variance": "339298413815299/500000000000000000000000"
+        },
+        {
+          "N": 185,
+          "exact_test": "(E-r*A)^2 <= K^2*(var_E+r^2*var_A-2r*cov_AE)",
+          "id": "P43-N185",
+          "inside_outer_band": false,
+          "margin_decimal": 8.664966733411495e-09,
+          "residual": "-2064652625015669/20000000000000000000",
+          "squared_feasibility_margin": "3465986693364598228962495517561/400000000000000000000000000000000000000",
+          "variance": "58935189986649/312500000000000000000000"
+        },
+        {
+          "N": 265,
+          "exact_test": "(E-r*A)^2 <= K^2*(var_E+r^2*var_A-2r*cov_AE)",
+          "id": "P43-N265",
+          "inside_outer_band": false,
+          "margin_decimal": 5.39902453457951e-09,
+          "residual": "-1019590606702079/12500000000000000000",
+          "squared_feasibility_margin": "843597583528048445952975422241/156250000000000000000000000000000000000",
+          "variance": "1187400235911211/10000000000000000000000000"
+        },
+        {
+          "N": 290,
+          "exact_test": "(E-r*A)^2 <= K^2*(var_E+r^2*var_A-2r*cov_AE)",
+          "id": "P50-N290",
+          "inside_outer_band": true,
+          "margin_decimal": -3.432837839333247e-09,
+          "residual": "-20962147940717843/500000000000000000000",
+          "squared_feasibility_margin": "-858209459833311747197097861427351/250000000000000000000000000000000000000000",
+          "variance": "2457034047094633/5000000000000000000000000"
+        },
+        {
+          "N": 325,
+          "exact_test": "(E-r*A)^2 <= K^2*(var_E+r^2*var_A-2r*cov_AE)",
+          "id": "P57-N325",
+          "inside_outer_band": true,
+          "margin_decimal": -3.9569712659935556e-09,
+          "residual": "-9085441322022851/200000000000000000000",
+          "squared_feasibility_margin": "-158278850639742219976701433831799/40000000000000000000000000000000000000000",
+          "variance": "2849989285865829/5000000000000000000000000"
+        },
+        {
+          "N": 425,
+          "exact_test": "(E-r*A)^2 <= K^2*(var_E+r^2*var_A-2r*cov_AE)",
+          "id": "P57-N425",
+          "inside_outer_band": true,
+          "margin_decimal": -2.3109012421804453e-09,
+          "residual": "-1165994176525457/25000000000000000000",
+          "squared_feasibility_margin": "-1444313276362778189778280941151/625000000000000000000000000000000000000",
+          "variance": "4247260699348157/10000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "certificate_logic": "one incompatible row excludes a universal fixed-ratio model",
+      "decision": "eliminated",
+      "id": "M_F2_ZERO",
+      "incompatible_rows": [
+        "P50-N145"
+      ],
+      "ratio": "-1",
+      "relation": "E_top=-A_top",
+      "rows": [
+        {
+          "N": 130,
+          "exact_test": "(E-r*A)^2 <= K^2*(var_E+r^2*var_A-2r*cov_AE)",
+          "id": "P49-N130",
+          "inside_outer_band": true,
+          "margin_decimal": -1.8037778903254717e-08,
+          "residual": "7812569567145767/50000000000000000000",
+          "squared_feasibility_margin": "-45094447258136797120457973981711/2500000000000000000000000000000000000000",
+          "variance": "40191504094534057/10000000000000000000000000"
+        },
+        {
+          "N": 145,
+          "exact_test": "(E-r*A)^2 <= K^2*(var_E+r^2*var_A-2r*cov_AE)",
+          "id": "P50-N145",
+          "inside_outer_band": false,
+          "margin_decimal": 3.121013518767501e-09,
+          "residual": "3943141938573919/25000000000000000000",
+          "squared_feasibility_margin": "1950633449229688246253177018561/625000000000000000000000000000000000000",
+          "variance": "20597752272300377/10000000000000000000000000"
+        },
+        {
+          "N": 170,
+          "exact_test": "(E-r*A)^2 <= K^2*(var_E+r^2*var_A-2r*cov_AE)",
+          "id": "P49-N170",
+          "inside_outer_band": true,
+          "margin_decimal": -2.176442662107191e-09,
+          "residual": "1962842486744733/12500000000000000000",
+          "squared_feasibility_margin": "-340069165954248631411646758711/156250000000000000000000000000000000000",
+          "variance": "31756268260161863/12500000000000000000000000"
+        },
+        {
+          "N": 185,
+          "exact_test": "(E-r*A)^2 <= K^2*(var_E+r^2*var_A-2r*cov_AE)",
+          "id": "P43-N185",
+          "inside_outer_band": true,
+          "margin_decimal": -1.0408405131184658e-08,
+          "residual": "258212675207101/20000000000000000000",
+          "squared_feasibility_margin": "-4163362052473862848046759175799/400000000000000000000000000000000000000",
+          "variance": "50059595717295511/50000000000000000000000000"
+        },
+        {
+          "N": 265,
+          "exact_test": "(E-r*A)^2 <= K^2*(var_E+r^2*var_A-2r*cov_AE)",
+          "id": "P43-N265",
+          "inside_outer_band": true,
+          "margin_decimal": -5.899578603235622e-09,
+          "residual": "-777196068760809/100000000000000000000",
+          "squared_feasibility_margin": "-58995786032356221323823145665519/10000000000000000000000000000000000000000",
+          "variance": "14106466215775971/25000000000000000000000000"
+        },
+        {
+          "N": 290,
+          "exact_test": "(E-r*A)^2 <= K^2*(var_E+r^2*var_A-2r*cov_AE)",
+          "id": "P50-N290",
+          "inside_outer_band": true,
+          "margin_decimal": -9.886812259300524e-09,
+          "residual": "6456071326974509/62500000000000000000",
+          "squared_feasibility_margin": "-38620360387892671351931526708919/3906250000000000000000000000000000000000",
+          "variance": "97311771104946829/50000000000000000000000000"
+        },
+        {
+          "N": 325,
+          "exact_test": "(E-r*A)^2 <= K^2*(var_E+r^2*var_A-2r*cov_AE)",
+          "id": "P57-N325",
+          "inside_outer_band": true,
+          "margin_decimal": -2.5347561886326255e-08,
+          "residual": "-11616763414855581/1000000000000000000000",
+          "squared_feasibility_margin": "-25347561886326253729236240913152439/1000000000000000000000000000000000000000000",
+          "variance": "120627271377812927/50000000000000000000000000"
+        },
+        {
+          "N": 425,
+          "exact_test": "(E-r*A)^2 <= K^2*(var_E+r^2*var_A-2r*cov_AE)",
+          "id": "P57-N425",
+          "inside_outer_band": true,
+          "margin_decimal": -1.6505677380446104e-08,
+          "residual": "-886378925486951/100000000000000000000",
+          "squared_feasibility_margin": "-165056773804461054591947528723599/10000000000000000000000000000000000000000",
+          "variance": "39252648853019753/25000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "certificate_logic": "one incompatible row excludes a universal fixed-ratio model",
+      "decision": "eliminated",
+      "id": "M_F1_ZERO",
+      "incompatible_rows": [
+        "P49-N130",
+        "P50-N145",
+        "P49-N170",
+        "P43-N185",
+        "P43-N265",
+        "P50-N290"
+      ],
+      "ratio": "1",
+      "relation": "E_top=A_top",
+      "rows": [
+        {
+          "N": 130,
+          "exact_test": "(E-r*A)^2 <= K^2*(var_E+r^2*var_A-2r*cov_AE)",
+          "id": "P49-N130",
+          "inside_outer_band": false,
+          "margin_decimal": 1.3397669764000057e-07,
+          "residual": "-21174050138707827/50000000000000000000",
+          "squared_feasibility_margin": "334941744100001449802936271061929/2500000000000000000000000000000000000000",
+          "variance": "42943869415957017/10000000000000000000000000"
+        },
+        {
+          "N": 145,
+          "exact_test": "(E-r*A)^2 <= K^2*(var_E+r^2*var_A-2r*cov_AE)",
+          "id": "P50-N145",
+          "inside_outer_band": false,
+          "margin_decimal": 1.3260178356834113e-07,
+          "residual": "-9792045033609541/25000000000000000000",
+          "squared_feasibility_margin": "82876114730213197147134996230681/625000000000000000000000000000000000000",
+          "variance": "788178932489033/400000000000000000000000"
+        },
+        {
+          "N": 170,
+          "exact_test": "(E-r*A)^2 <= K^2*(var_E+r^2*var_A-2r*cov_AE)",
+          "id": "P49-N170",
+          "inside_outer_band": false,
+          "margin_decimal": 1.0690916192731343e-07,
+          "residual": "-18505006015627843/50000000000000000000",
+          "squared_feasibility_margin": "267272904818283589045845476832649/2500000000000000000000000000000000000000",
+          "variance": "35579807252136837/12500000000000000000000000"
+        },
+        {
+          "N": 185,
+          "exact_test": "(E-r*A)^2 <= K^2*(var_E+r^2*var_A-2r*cov_AE)",
+          "id": "P43-N185",
+          "inside_outer_band": false,
+          "margin_decimal": 3.6876978859602896e-08,
+          "residual": "-4387517925238439/20000000000000000000",
+          "squared_feasibility_margin": "14750791543841157497595003156721/400000000000000000000000000000000000000",
+          "variance": "53248781070384129/50000000000000000000000000"
+        },
+        {
+          "N": 265,
+          "exact_test": "(E-r*A)^2 <= K^2*(var_E+r^2*var_A-2r*cov_AE)",
+          "id": "P43-N265",
+          "inside_outer_band": false,
+          "margin_decimal": 1.9026437004097414e-08,
+          "residual": "-3107250727694491/20000000000000000000",
+          "squared_feasibility_margin": "7610574801638965027772231749081/400000000000000000000000000000000000000",
+          "variance": "12097232444490999/25000000000000000000000000"
+        },
+        {
+          "N": 290,
+          "exact_test": "(E-r*A)^2 <= K^2*(var_E+r^2*var_A-2r*cov_AE)",
+          "id": "P50-N290",
+          "inside_outer_band": false,
+          "margin_decimal": 1.3965935786123026e-08,
+          "residual": "-46786433248615879/250000000000000000000",
+          "squared_feasibility_margin": "872870986632689100839694290942641/62500000000000000000000000000000000000000",
+          "variance": "99680897476506531/50000000000000000000000000"
+        },
+        {
+          "N": 325,
+          "exact_test": "(E-r*A)^2 <= K^2*(var_E+r^2*var_A-2r*cov_AE)",
+          "id": "P57-N325",
+          "inside_outer_band": true,
+          "margin_decimal": -1.756176805258377e-08,
+          "residual": "-79237649805372929/1000000000000000000000",
+          "squared_feasibility_margin": "-17561768052583769873216603233960959/1000000000000000000000000000000000000000000",
+          "variance": "112853837629645853/50000000000000000000000000"
+        },
+        {
+          "N": 425,
+          "exact_test": "(E-r*A)^2 <= K^2*(var_E+r^2*var_A-2r*cov_AE)",
+          "id": "P57-N425",
+          "inside_outer_band": true,
+          "margin_decimal": -1.1970703487371645e-08,
+          "residual": "-1688314897343341/20000000000000000000",
+          "squared_feasibility_margin": "-4788281394948658148780362957719/400000000000000000000000000000000000000",
+          "variance": "1412479398583601/781250000000000000000000"
+        }
+      ]
+    }
+  ],
+  "free_ratio_model": {
+    "certificate_logic": "one common rational r lies inside all eight simultaneous line-distance bands",
+    "decision": "not_eliminated",
+    "feasible_witness_r": "-2/3",
+    "id": "M_COMMON_STATE_LINE",
+    "relation": "E_top=r*A_top for one common real r",
+    "rows": [
+      {
+        "N": 130,
+        "exact_test": "(E-r*A)^2 <= K^2*(var_E+r^2*var_A-2r*cov_AE)",
+        "id": "P49-N130",
+        "inside_outer_band": true,
+        "margin_decimal": -1.9416906676375724e-08,
+        "residual": "1118049856063813/18750000000000000000",
+        "squared_feasibility_margin": "-2275418751137780028846956258677/117187500000000000000000000000000000000",
+        "variance": "195742549956805603/90000000000000000000000000"
+      },
+      {
+        "N": 145,
+        "exact_test": "(E-r*A)^2 <= K^2*(var_E+r^2*var_A-2r*cov_AE)",
+        "id": "P50-N145",
+        "inside_outer_band": true,
+        "margin_decimal": -7.992391286880492e-09,
+        "residual": "4961832329630027/75000000000000000000",
+        "squared_feasibility_margin": "-4995244554300308012495672219919/625000000000000000000000000000000000000",
+        "variance": "21078943373198243/18000000000000000000000000"
+      },
+      {
+        "N": 170,
+        "exact_test": "(E-r*A)^2 <= K^2*(var_E+r^2*var_A-2r*cov_AE)",
+        "id": "P49-N170",
+        "inside_outer_band": true,
+        "margin_decimal": -1.0764421050609093e-08,
+        "residual": "20751843719266817/300000000000000000000",
+        "squared_feasibility_margin": "-968797894554818367517783962688511/90000000000000000000000000000000000000000",
+        "variance": "18401537308398317/12500000000000000000000000"
+      },
+      {
+        "N": 185,
+        "exact_test": "(E-r*A)^2 <= K^2*(var_E+r^2*var_A-2r*cov_AE)",
+        "id": "P43-N185",
+        "inside_outer_band": true,
+        "margin_decimal": -5.066018983163189e-09,
+        "residual": "-516075758200489/20000000000000000000",
+        "squared_feasibility_margin": "-18237668339387480593016321447911/3600000000000000000000000000000000000000",
+        "variance": "122098674752706313/225000000000000000000000000"
+      },
+      {
+        "N": 265,
+        "exact_test": "(E-r*A)^2 <= K^2*(var_E+r^2*var_A-2r*cov_AE)",
+        "id": "P43-N265",
+        "inside_outer_band": true,
+        "margin_decimal": -2.392134149708664e-09,
+        "residual": "-38844467964553/1200000000000000000",
+        "squared_feasibility_margin": "-3444673175580475673735510191/1440000000000000000000000000000000000",
+        "variance": "146555203166557987/450000000000000000000000000"
+      },
+      {
+        "N": 290,
+        "exact_test": "(E-r*A)^2 <= K^2*(var_E+r^2*var_A-2r*cov_AE)",
+        "id": "P50-N290",
+        "inside_outer_band": true,
+        "margin_decimal": -8.951576253254654e-09,
+        "residual": "27444997763624767/500000000000000000000",
+        "squared_feasibility_margin": "-20141046569822969971962355017761399/2250000000000000000000000000000000000000000",
+        "variance": "15929051887592477/14062500000000000000000000"
+      },
+      {
+        "N": 325,
+        "exact_test": "(E-r*A)^2 <= K^2*(var_E+r^2*var_A-2r*cov_AE)",
+        "id": "P57-N325",
+        "inside_outer_band": true,
+        "margin_decimal": -1.432898863433503e-08,
+        "residual": "-68660733439825417/3000000000000000000000",
+        "squared_feasibility_margin": "-42986965903005092090017426853592037/3000000000000000000000000000000000000000000",
+        "variance": "79097747944088779/56250000000000000000000000"
+      },
+      {
+        "N": 425,
+        "exact_test": "(E-r*A)^2 <= K^2*(var_E+r^2*var_A-2r*cov_AE)",
+        "id": "P57-N425",
+        "inside_outer_band": true,
+        "margin_decimal": -9.123576625084568e-09,
+        "residual": "-214557818569191/10000000000000000000",
+        "squared_feasibility_margin": "-8211218962576110744224910449671/900000000000000000000000000000000000000",
+        "variance": "408309324504550991/450000000000000000000000000"
+      }
+    ]
+  },
+  "issue": 370,
+  "projection_sha256": "29771ae13fa7995f40c2b3de27de45afaf2fd31a67376712dc3b27741e0574f7",
+  "raw_production_git_objects": [
+    {
+      "bytes": 1504007,
+      "git_blob_sha": "72bda0fe9a58a2c27823482efdd009669a3144a6",
+      "path": "results/server-20260828/P43-heldout-fullcurve-500m/raw/n185.hist.csv"
+    },
+    {
+      "bytes": 20385,
+      "git_blob_sha": "c339f8952a841246a6f82b23309b2362a7082362",
+      "path": "results/server-20260828/P43-heldout-fullcurve-500m/raw/n185.moments.csv"
+    },
+    {
+      "bytes": 1990261,
+      "git_blob_sha": "44bc80928e5cb294f0f26902f407d8a7ba24b443",
+      "path": "results/server-20260828/P43-heldout-fullcurve-500m/raw/n265.hist.csv"
+    },
+    {
+      "bytes": 21285,
+      "git_blob_sha": "ea3ed8c298fdebe8eff06b5808fdcba27ab09815",
+      "path": "results/server-20260828/P43-heldout-fullcurve-500m/raw/n265.moments.csv"
+    },
+    {
+      "bytes": 1044865,
+      "git_blob_sha": "72a6ae5470aff5cc90b27cede5d12128863f7ede",
+      "path": "results/server-20260828/P49-fullcurve-doubling-100m/raw/n130.hist.csv"
+    },
+    {
+      "bytes": 19085,
+      "git_blob_sha": "27e73ff4b76d8e31bd9a527561cde4ff1d5b2476",
+      "path": "results/server-20260828/P49-fullcurve-doubling-100m/raw/n130.moments.csv"
+    },
+    {
+      "bytes": 1302766,
+      "git_blob_sha": "8e046a6a78f5804b9b194a927076056134ae6c75",
+      "path": "results/server-20260828/P49-fullcurve-doubling-100m/raw/n170.hist.csv"
+    },
+    {
+      "bytes": 19985,
+      "git_blob_sha": "ec91f76a0371db3e44ab5eb94ef655df7071ded5",
+      "path": "results/server-20260828/P49-fullcurve-doubling-100m/raw/n170.moments.csv"
+    },
+    {
+      "bytes": 1138741,
+      "git_blob_sha": "6feffb11fae15e692f7e32ce810da11bd8bcf56f",
+      "path": "results/server-20260829/P50-n145-n290-fullcurve/raw/n145_100m.hist.csv"
+    },
+    {
+      "bytes": 19085,
+      "git_blob_sha": "965efdcc83b6008000e00f12089c8661d5738f58",
+      "path": "results/server-20260829/P50-n145-n290-fullcurve/raw/n145_100m.moments.csv"
+    },
+    {
+      "bytes": 1952540,
+      "git_blob_sha": "c6101ee1f2ca06ee552bfb80dbfd967ba791fbf1",
+      "path": "results/server-20260829/P50-n145-n290-fullcurve/raw/n290_100m.hist.csv"
+    },
+    {
+      "bytes": 20485,
+      "git_blob_sha": "15af2c5855cae7d3048beaf7912379cdc4acc291",
+      "path": "results/server-20260829/P50-n145-n290-fullcurve/raw/n290_100m.moments.csv"
+    },
+    {
+      "bytes": 2279437,
+      "git_blob_sha": "da442e4f9dcf12c4435f4bd24f4da25b501d59c2",
+      "path": "results/server-20260829/P57-norm5-500m/raw/n325_500m.hist.csv"
+    },
+    {
+      "bytes": 21385,
+      "git_blob_sha": "1dc912794a14cf5d6fd8a49ad1921001f1c577a1",
+      "path": "results/server-20260829/P57-norm5-500m/raw/n325_500m.moments.csv"
+    },
+    {
+      "bytes": 2766279,
+      "git_blob_sha": "df5277e8b80b7757d26fec16cb27ed336d3dfec6",
+      "path": "results/server-20260829/P57-norm5-500m/raw/n425_500m.hist.csv"
+    },
+    {
+      "bytes": 21685,
+      "git_blob_sha": "937804a13cb709e1326f21cebf11f691f1d7b80c",
+      "path": "results/server-20260829/P57-norm5-500m/raw/n425_500m.moments.csv"
+    }
+  ],
+  "schema": "matching-one/etop-production-rational-confidence-certificate/v1",
+  "source": {
+    "commit": "66513881dac903f42444052fe364528cfd7d9987",
+    "dependency_group": "etop-rank-plane-eight-production-archives",
+    "git_blob": "fb64070aa47753b67d9527c094288ce950ec7a8c",
+    "path": "results/rank-plane-crosswalk/latest.json",
+    "sha256": "d3739f34c0ba982edea580d71990deb1e2ef24f292c7497b31b2346e14a8c299"
+  },
+  "source_projection": [
+    {
+      "A_top": "14493309852926797/50000000000000000000",
+      "E_top": "-668074028578103/5000000000000000000",
+      "N": 130,
+      "batches": 100,
+      "covariance_AE": [
+        [
+          "3402190697522707/1000000000000000000000000",
+          "-34404566517787/500000000000000000000000"
+        ],
+        [
+          "-34404566517787/500000000000000000000000",
+          "7545779780018467/10000000000000000000000000"
+        ]
+      ],
+      "histogram": "results/server-20260828/P49-fullcurve-doubling-100m/raw/n130.hist.csv",
+      "id": "P49-N130",
+      "moments": "results/server-20260828/P49-fullcurve-doubling-100m/raw/n130.moments.csv",
+      "orientations": {
+        "first": [
+          11,
+          3
+        ],
+        "second": [
+          9,
+          7
+        ]
+      },
+      "samples_per_orientation": 100000000
+    },
+    {
+      "A_top": "686759348609173/2500000000000000000",
+      "E_top": "-2924451547517811/25000000000000000000",
+      "N": 145,
+      "batches": 100,
+      "covariance_AE": [
+        [
+          "1572902702892007/1000000000000000000000000",
+          "111659870009319/5000000000000000000000000"
+        ],
+        [
+          "111659870009319/5000000000000000000000000",
+          "4422085763343031/10000000000000000000000000"
+        ]
+      ],
+      "histogram": "results/server-20260829/P50-n145-n290-fullcurve/raw/n145_100m.hist.csv",
+      "id": "P50-N145",
+      "moments": "results/server-20260829/P50-n145-n290-fullcurve/raw/n145_100m.moments.csv",
+      "orientations": {
+        "first": [
+          12,
+          1
+        ],
+        "second": [
+          9,
+          8
+        ]
+      },
+      "samples_per_orientation": 100000000
+    },
+    {
+      "A_top": "1054255038504271/4000000000000000000",
+      "E_top": "-10653636068648911/100000000000000000000",
+      "N": 170,
+      "batches": 100,
+      "covariance_AE": [
+        [
+          "40296923857227/20000000000000000000000",
+          "-1911769495987487/25000000000000000000000000"
+        ],
+        [
+          "-1911769495987487/25000000000000000000000000",
+          "339298413815299/500000000000000000000000"
+        ]
+      ],
+      "histogram": "results/server-20260828/P49-fullcurve-doubling-100m/raw/n170.hist.csv",
+      "id": "P49-N170",
+      "moments": "results/server-20260828/P49-fullcurve-doubling-100m/raw/n170.moments.csv",
+      "orientations": {
+        "first": [
+          13,
+          1
+        ],
+        "second": [
+          11,
+          7
+        ]
+      },
+      "samples_per_orientation": 100000000
+    },
+    {
+      "A_top": "232286530022277/2000000000000000000",
+      "E_top": "-2064652625015669/20000000000000000000",
+      "N": 185,
+      "batches": 100,
+      "covariance_AE": [
+        [
+          "2111227899798799/2500000000000000000000000",
+          "-1594592676544309/100000000000000000000000000"
+        ],
+        [
+          "-1594592676544309/100000000000000000000000000",
+          "58935189986649/312500000000000000000000"
+        ]
+      ],
+      "histogram": "results/server-20260828/P43-heldout-fullcurve-500m/raw/n185.hist.csv",
+      "id": "P43-N185",
+      "moments": "results/server-20260828/P43-heldout-fullcurve-500m/raw/n185.moments.csv",
+      "orientations": {
+        "first": [
+          13,
+          4
+        ],
+        "second": [
+          11,
+          8
+        ]
+      },
+      "samples_per_orientation": 500000000
+    },
+    {
+      "A_top": "7379528784855823/100000000000000000000",
+      "E_top": "-1019590606702079/12500000000000000000",
+      "N": 265,
+      "batches": 100,
+      "covariance_AE": [
+        [
+          "4053339496142183/10000000000000000000000000",
+          "502308442821243/25000000000000000000000000"
+        ],
+        [
+          "502308442821243/25000000000000000000000000",
+          "1187400235911211/10000000000000000000000000"
+        ]
+      ],
+      "histogram": "results/server-20260828/P43-heldout-fullcurve-500m/raw/n265.hist.csv",
+      "id": "P43-N265",
+      "moments": "results/server-20260828/P43-heldout-fullcurve-500m/raw/n265.moments.csv",
+      "orientations": {
+        "first": [
+          16,
+          3
+        ],
+        "second": [
+          12,
+          11
+        ]
+      },
+      "samples_per_orientation": 500000000
+    },
+    {
+      "A_top": "14522143711302783/100000000000000000000",
+      "E_top": "-20962147940717843/500000000000000000000",
+      "N": 290,
+      "batches": 100,
+      "covariance_AE": [
+        [
+          "1478519876395607/1000000000000000000000000",
+          "-1184563185779851/100000000000000000000000000"
+        ],
+        [
+          "-1184563185779851/100000000000000000000000000",
+          "2457034047094633/5000000000000000000000000"
+        ]
+      ],
+      "histogram": "results/server-20260829/P50-n145-n290-fullcurve/raw/n290_100m.hist.csv",
+      "id": "P50-N290",
+      "moments": "results/server-20260829/P50-n145-n290-fullcurve/raw/n290_100m.moments.csv",
+      "orientations": {
+        "first": [
+          13,
+          11
+        ],
+        "second": [
+          17,
+          1
+        ]
+      },
+      "samples_per_orientation": 100000000
+    },
+    {
+      "A_top": "16905221597629337/500000000000000000000",
+      "E_top": "-9085441322022851/200000000000000000000",
+      "N": 325,
+      "batches": 100,
+      "covariance_AE": [
+        [
+          "882406616450711/500000000000000000000000",
+          "3886716874083537/100000000000000000000000000"
+        ],
+        [
+          "3886716874083537/100000000000000000000000000",
+          "2849989285865829/5000000000000000000000000"
+        ]
+      ],
+      "histogram": "results/server-20260829/P57-norm5-500m/raw/n325_500m.hist.csv",
+      "id": "P57-N325",
+      "moments": "results/server-20260829/P57-norm5-500m/raw/n325_500m.moments.csv",
+      "orientations": {
+        "first": [
+          17,
+          6
+        ],
+        "second": [
+          18,
+          1
+        ]
+      },
+      "samples_per_orientation": 500000000
+    },
+    {
+      "A_top": "3777597780614877/100000000000000000000",
+      "E_top": "-1165994176525457/25000000000000000000",
+      "N": 425,
+      "batches": 100,
+      "covariance_AE": [
+        [
+          "316078430554771/250000000000000000000000",
+          "-5946691901655479/100000000000000000000000000"
+        ],
+        [
+          "-5946691901655479/100000000000000000000000000",
+          "4247260699348157/10000000000000000000000000"
+        ]
+      ],
+      "histogram": "results/server-20260829/P57-norm5-500m/raw/n425_500m.hist.csv",
+      "id": "P57-N425",
+      "moments": "results/server-20260829/P57-norm5-500m/raw/n425_500m.moments.csv",
+      "orientations": {
+        "first": [
+          16,
+          13
+        ],
+        "second": [
+          19,
+          8
+        ]
+      },
+      "samples_per_orientation": 500000000
+    }
+  ],
+  "status": "verified_rational_outer_confidence_model_ordering"
+}

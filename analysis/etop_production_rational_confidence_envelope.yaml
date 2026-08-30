@@ -1,0 +1,48 @@
+schema: matching-one/algebraic-model-certificate-envelope/v1
+issue: 370
+certificate_id: production-etop-fixed-versus-free-line
+claim_level: robust_statistical
+status: verified
+inputs:
+  - path: results/model-certificates/production/etop-rational-confidence/latest.json
+    sha256: d7a35268f66ce96dfcbc88fa354c5c6a8cb8cd9cdf56351265de116cc2041c63
+    descriptor: eight high-statistics production A_top/E_top rows with aligned-batch covariance
+    dependency_group: etop-rank-plane-eight-production-archives
+    chronology: retrospective production reuse; fixed line relations precede this exact-rational adapter but not all source acquisition
+model_class:
+  id: Etop-fixed-ratio-ladder-with-free-common-line
+  state_dimension: 1
+  relations:
+    - E_top=r*A_top with r in 0,-1,1 for the three frozen fixed classes
+    - E_top=r*A_top with one shared free real r for the surviving class
+  parameter_bounds: []
+gauge:
+  kind: invariant_coordinates
+  coverage: complete_for_declared_class
+  uncovered_set: none
+confidence_set:
+  kind: outer_confidence_set
+  covariance: per-archive intrinsic-center first-order A_top/E_top covariance
+  threshold: K=13/4 under 99 percent per-model Gaussian Bonferroni over eight rows
+  calibration: exact rational feasibility arithmetic conditional on the declared Gaussian outer-set contract
+certificate:
+  level: S
+  type: rational_line_distance_margin
+  order: 2
+  result: three fixed ratios excluded and common ratio witnessed feasible at r=-2/3
+  dual_support:
+    - P49-N130
+    - P50-N145
+    - P49-N170
+    - P43-N185
+    - P43-N265
+    - P50-N290
+verification:
+  verifier: scripts/certify_etop_production_rational_confidence.py
+  arithmetic: rational
+  status: verified_exact
+  residual: "0"
+claim_boundary:
+  included: exact reproduction of all rational feasibility margins and model decisions from pinned production summaries
+  excluded: finite-sample Gaussian coverage proof, cross-archive independence pooling, physical state dimension, field identity, exponent, or SOS result
+  parent_issue: remain open

@@ -1,0 +1,38 @@
+{
+  "schema": "matching-one/etop-production-rational-confidence-manifest/v1",
+  "issue": 370,
+  "source": {
+    "commit": "66513881dac903f42444052fe364528cfd7d9987",
+    "path": "results/rank-plane-crosswalk/latest.json",
+    "sha256": "d3739f34c0ba982edea580d71990deb1e2ef24f292c7497b31b2346e14a8c299",
+    "dependency_group": "etop-rank-plane-eight-production-archives"
+  },
+  "selection": {
+    "expected_sizes": [130, 145, 170, 185, 265, 290, 325, 425],
+    "expected_ids": ["P49-N130", "P50-N145", "P49-N170", "P43-N185", "P43-N265", "P50-N290", "P57-N325", "P57-N425"],
+    "rule": "use the source high_statistics_summary and exclude only P154 10M variance pilots"
+  },
+  "observable": {
+    "A_top": "P2-P0",
+    "E_top": "P0+P2=1-P1"
+  },
+  "confidence": {
+    "familywise_alpha_per_model": "1/100",
+    "rows_per_model": 8,
+    "critical_value": "13/4",
+    "calibration": "two-sided Gaussian Bonferroni; K=3.25 is conservatively above the nominal z_(1-0.01/16)",
+    "covariance": "intrinsic-center first-order A_top/E_top covariance from each aligned production archive",
+    "arithmetic": "every saved feasibility margin is evaluated exactly as a rational number"
+  },
+  "fixed_ratio_models": [
+    {"id": "M_ETOP_ZERO", "r": "0", "relation": "E_top=0"},
+    {"id": "M_F2_ZERO", "r": "-1", "relation": "E_top=-A_top"},
+    {"id": "M_F1_ZERO", "r": "1", "relation": "E_top=A_top"}
+  ],
+  "free_ratio_model": {
+    "id": "M_COMMON_STATE_LINE",
+    "relation": "E_top=r*A_top for one common real r",
+    "feasible_witness_r": "-2/3"
+  }
+}
+
