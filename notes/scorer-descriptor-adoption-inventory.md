@@ -1,12 +1,12 @@
 # Scorer descriptor-adoption inventory
 
-In this checked snapshot, the exact `scripts/*score*.py` corpus contains 46
-files. Python-AST inspection finds fifteen
+In this checked snapshot, the exact `scripts/*score*.py` corpus contains 47
+files. Python-AST inspection finds sixteen
 direct typed entrypoints importing both `ObservableDescriptor` and
-`map_observable` from `wrapping_channels`. Fourteen frozen kernels are covered by
+`map_observable` from `wrapping_channels`. Fifteen frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Sixteen paths are confirmed channel-bearing and
+a descriptor is not applicable. Fifteen paths are confirmed channel-bearing and
 require typed migrations: `score_angular_root_amplitude.py`,
 `score_axis_pair_annihilator.py`, its stable entrypoint,
 `score_issue43_secondary.py`,
@@ -17,7 +17,6 @@ require typed migrations: `score_angular_root_amplitude.py`,
 `score_p49_fullcurve_doubling.py`,
 `score_p50_fullcurve_n290.py`,
 `score_prequential_evidence.py`,
-`score_threshold_rank_root_doubling.py`,
 `threshold_score_modes.py`,
 `score_v14_fixedp_scalar_projector.py`, and
 `score_v14_scalar_root_projector.py`. No scorer remains outside a registered
@@ -40,7 +39,7 @@ unchanged.
 but no current scorer has that status. Static membership alone would not prove
 a semantic bug, data-provenance failure, or need for migration; any future
 corpus addition must still be reviewed before modification. Issue #146 remains
-open because inventory classification is not the same as implementing the 16
+open because inventory classification is not the same as implementing the 15
 required typed migrations.
 
 The `kappa3_half_score.py` exception is narrow. It defines only exact Bernoulli
@@ -91,12 +90,7 @@ new primary evidence row.
 
 `score_rank_gap_boundary_targets.py` is now a covered frozen kernel. Its typed entrypoint validates the exact cross/primal identity used by the same paired rank-gap observable across source and target sizes before replaying the frozen scorer. The semantic gate freezes `G=K_plus-K_minus`, rank units, equal first/second orientation pooling, source and target order, the unfitted `5/8` exponent, and `(A,B)` parameter order. It preserves pre-reveal chronology, disjoint counters, covariance, predictions, and all numerical results; rank units are not reinterpreted as probability values.
 
-`score_threshold_rank_root_doubling.py` is migration-required. It tests a
-fixed `-1/4` doubling ratio for two Gaussian threshold-rank root-gap lineages,
-reversing the stored child sign to follow multiplication by `1+i`. A typed
-migration must represent the root-gap quantity, genealogy, stored-versus-lineage
-orientation order, sign map, and cross-size relation. It must preserve both the
-full-covariance score and the diagonal-only diagnostic.
+`score_threshold_rank_root_doubling.py` is now a covered frozen kernel. Its typed entrypoint uses the registered raw orientation-order reversal to obtain the exact stored-child transform `(-1,0)` before evaluating the two `1+i` lineages. The semantic gate freezes sizes `[65,85,130,170]`, lineage order `(65,130)` then `(85,170)`, the threshold-rank root-gap quantity, fixed `-1/4` ratio, and full-versus-diagonal covariance order. The full covariance remains primary, the diagonal score remains diagnostic, and no numerical output changes.
 
 `score_issue50_n290.py` is now a covered frozen kernel. Its typed entrypoint
 validates an exact identity map for the fixed-p `either/matching-odd`
