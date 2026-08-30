@@ -21,6 +21,49 @@ The working loop is:
 This is an attention rule, not a permission or locking system. Exploratory models
 may run in parallel, and an inconclusive certificate leaves a model open.
 
+## What has actually reached production
+
+The current boundary is uneven and should be read literally:
+
+| requested layer | present state | exact boundary | next mechanism-changing output |
+|---|---|---|---|
+| Issue #275 Phase D, canonical `A_top/E_top` coordinates | **production-scored** on ten archived aligned direction pairs, including the P57 norm-5 N325/N425 blocks | full delete-one covariance and finite-model Mahalanobis exclusion; not a finite-sample theorem or a field identification | localize the surviving even response by activation, geometry and state current |
+| P154 norm-4 production | **Phase-D production-scored** at N65/N85/N130/N170/N260/N340 | immutable PR #273 blobs supply `K1/K2`, canonical `A_top/E_top` and full aligned-delete-one covariance for the declared 1.9B/1B blocks; all six are K1-dominant and reinforcing, but `E_top=1-P1` is topology, not the energy operator | treat this as the topological arm of Phase E; do not repeat scalar/common-line scoring or call it an energy projection |
+| Issue #275 Phase E, `J_top` versus `J_bulk` | **not done and not identifiable from the present observer set** | P154 stores only threshold-rank histograms and Kminus/Kplus moments. It has no same-batch ordinary bulk-energy/singlet row, cross-moment or joint covariance; an unconstrained `J_bulk` can therefore be changed without changing any stored statistic | recover a compatible same-batch energy row if it exists outside P154, otherwise minimally acquire `B,B2,A*B,E*B` and freeze explicit `J_top/J_bulk` transfer images |
+| Issue #370 M1/M2d/M2j synthetic ladder | **five exact-rational Level-E controls are main-integrated through PR #414** | M1 -> M2d, minimal M2d -> M2j, endpoint-M2j -> morphism-forced generic rank 3, semantic zero and one reachable-source gauge boundary are covered; this is not yet a generic compiler, physical M3c or independent verifier | use the fixtures as regression controls for one typed production compiler; do not build another toy example |
+| Issue #370 production elimination | **statistical Level-S applications exist** for E_top and P250, plus an observer-wise E_top outer audit | the outer audit is floating Gaussian Bonferroni/Fieller, not directed rational interval arithmetic, Positivstellensatz or SOS | escalate one bounded survivor only when the stronger proof object would change the survivor set |
+
+In particular, the norm-5 request is no longer waiting for a synthetic harness:
+its N325/N425 production rows already participate in the canonical E_top score.
+The former immediate data-use gap in norm-4 is now closed by
+[`results/norm4-two-activation-h4/latest.md`](../results/norm4-two-activation-h4/latest.md)
+and
+[`results/norm4-etop-production-elimination/latest.md`](../results/norm4-etop-production-elimination/latest.md).
+Phase E remains open for a sharper reason than “more fitting is needed”:
+canonical `E_top` is an Alexander-even rank-plane coordinate, not an energy
+operator. The `J_bulk` alternative requires a third, separately observed
+ordinary-energy/even-singlet row.
+The common-line and fixed-power distances live entirely in the A/E plane and
+cannot substitute for that missing observer.
+
+### Issue #370 exact synthetic ladder
+
+The former toy-fixture gap is now closed on main:
+
+| integrated PR / main commit | exact witness | boundary |
+|---|---|---|
+| #411 / `7ecfaa3` | moments `(2,3,5)` give scalar Hankel minor `1`, excluding M1; `diag(1,2)` realizes M2d | one generator and three declared moments |
+| #410 / `de2f44e` | `f_n=n+1` has a nonzero rank-two minor and a unique repeated-root recurrence, excluding minimal reachable/observable M2d; a 2x2 Jordan block realizes M2j | not all product-only or multigenerator models |
+| #414 / `73ec55f` | endpoint moments remain M2j-compatible, but one typed morphism row gives stacked determinant `-1` and forces common predictive rank at least three | generic three-state realization, not physical deck/Smith/projector M3c |
+| #413 / `9a94388` | `z=0`, `7z-1=0` has a primitive Bezout contradiction before optimization | one synthetic semantic-zero row |
+| #412 / `58e01a4` | reachable-source minor `1/1024` exposes exact gauge amplification `1024` while responses, trace and determinant remain invariant | the zero-minor boundary and full chart atlas remain uncovered |
+
+These are main-integrated exact controls, not five independent scientific results.
+They should now become regression fixtures for a shared model manifest, flat
+extraction and production-confidence interface. A separately implemented
+certificate verifier, directed intervals/SOS and a physical M3c construction
+remain open.
+
 ## First production application: this archive requires an even topological coordinate
 
 The exact response coordinates are
@@ -58,6 +101,30 @@ no-pooling outer-set statement does not. They use different declared evidence
 sets and certificate strengths, so they are calibration layers—not independent
 votes or contradictory observers.
 
+### Norm-4 Phase-D extension
+
+The same exact coordinate transform now reads the six P154 archives directly
+from immutable PR #273 Git blobs. N65/N85/N130/N170 share one declared aligned
+counter group; N260 and N340 are separate groups. All six direction pairs are
+scoreable. K1 and K2 reinforce at every size, all six are K1-dominant, and the
+K2 point estimates at N260/N340 remain individually unresolved.
+
+On the full saved covariance, the declared distances are:
+
+| norm-4 model image | result |
+|---|---:|
+| `E_top=0` | `5324.015/6`, `p=2.85e-1150` |
+| `Delta4 F2=0` | `3761.101/6`, `p=3.43e-811` |
+| `Delta4 F1=0` | `21141.019/6`, `p=1.08e-4583` |
+| one common `E_top=lambda A_top` line | `106.665/5`, `p=2.08e-21` |
+| one uncorrected `E_top=c N^-13/8` amplitude | `177.528/5`, `p=1.80e-36` |
+
+These results close the canonical Phase-D reuse on P154. They do not decide
+Phase E. With only activation-derived A/E rows, `J_bulk` has no independently
+measured ordinary-even coordinate. A valid comparison must add that observer
+on the same aligned batches, retain its joint covariance with A/E and freeze
+both common-transfer model images before scoring.
+
 ## Second production application: P250 is no longer a bridge election
 
 The retrospective zero-sample augmented P250 gate combines the old radius-four
@@ -70,11 +137,23 @@ rank-at-most-five chart rejects at `p=6.01e-7`. The conflict therefore cannot be
 assigned only to a wrong cross-hand bridge, and the earlier direction-only
 extension cannot be promoted to general `5+5` support.
 
-This closes the current R2-versus-R3 map-voting route. It does not establish
-physical rank six, a closed transfer algebra, a microscopic quotient or a
-continuum field. If P250 resumes, the discriminator should separate a larger
-state space from ordered/path-enriched memory rather than repeat another fixed
-D4 map vote.
+This closes the current R2-versus-R3 map-voting route. Exact endpoint audit
+`af7dd01` proves that every present endpoint observable factors through word
+abelianization, and `3128e3e` proves fixed-site delete/add overwrites commute or
+absorb. Open PR #416 supplies the correct endpoint baseline: the complete
+uniform-anchor N505 autocorrelation has at least 100 nonzero spatial Fourier
+modes. Branch score `dbeb29c` then applies that structure to the archived
+radius-4/5/6 production blocks; all four hand-charge channels remain compatible
+with the nonnegative 101-frequency cone (`p=.163--.378`). Endpoint rank growth
+therefore cannot be used as a hidden-state count.
+
+The order-sensitive escape is already constructed. Exact branch `6fbbe5e`
+defines covariant state-dependent cut/join supports; 8,136 of 82,944 admissible
+L3 marked states have all four operations defined, and every such rectangle has
+nonzero `R_minus`. The next experiment is the frozen N505 adaptive pilot. It
+must report unconditional `I_defined*R_minus`, the conditional response,
+defined/tie rates, all four selected supports, complement partners and joint
+periodogram covariance. Another endpoint rank or shell vote has lower value.
 
 A later `branch_only` locked radius-six Level-S certificate at `33c557b`
 completes the candidate-independent rank ladder through eight. Endpoint-Hankel
@@ -117,31 +196,32 @@ or reversible Gram rotation.
 
 ## Consequences for the next portfolio
 
-1. **P334/P337 birth age, completion and collision:** the branch-only exact `1/57` witness
-   shows `(k,rank,line)` is not Markov under the actual path law, while
-   `(k,rank,line,K1)` is the exact observed age augmentation. Reuse the existing
-   `(K1,line,K2,DIRECT_RANK2)` archives for a K1-conditioned exit hazard,
-   two-time rank source and collision scaling before any fifth generation. Apply
-   the same mechanism labels to the surviving Euler residual only when its
-   retained fields make the definition scoreable.
-2. **P321 generic-Q closure:** main already contains noncrossing detach/join
-   primitives. The missing gate is now generic-Q weighting, closure traces,
-   sector transport and first-jet Gram/radical compatibility, not another state
-   codec or ordinary aspect-ratio replication.
-3. **P250 rank-eight flatness versus memory:** use next-order moments or a border
-   basis to test the first compatible rank-eight class, and compare it with one
-   ordered/context row before any cross-hand projector. Open PR #385 proves that unrestricted ordinary
-   near-collisions are not positively separated from a Jordan semigroup on a
-   finite noisy word set; use a physical spectral restriction or its conditional
-   C4-character obstruction only after flatness, cyclic source and internal
-   Laurent rotation are established. Its older R2-gauge continuation is
-   superseded by the augmented all-map rejection, and its five-state P250
-   application lacks support after the radius-six rank lower bound.
-4. **Continuum passports:** normalization-free three-point and modulus ratios
+1. **Norm-4 Phase E:** stop calling the canonical Alexander-even coordinate an
+   energy projection. Recover or minimally acquire the same-batch square-site
+   ordinary-energy row, its cross-moments and explicit `J_top/J_bulk` images,
+   then score the real observer comparison on one joint covariance.
+2. **P334/P337 continuation:** cheap current geometry and the completed bottleneck
+   score `f97b906` both fail to absorb production age. Move to checkpoint-clustered
+   `H2=b1`, `b2`, overlap/triangle/minimal-triple sketches and at least two future
+   orders; keep risk composition, conditional hazard and `mark12_h4` separate.
+3. **P250 adaptive morphism:** the positive Fourier cone explains endpoint rank
+   growth and the exact adaptive D/J interface exists. Run its N505 production
+   pilot with unconditional defined/tie rates and joint spatial-spectrum control;
+   stop endpoint-only rank escalation.
+4. **P333 typed radical:** width-3 charge-one succeeds but width-4 charge-one
+   fails exactly at the Gram gate (`7b40ec7`). Run the frozen one-dimensional C4
+   charge-two alternating landing gate `a572058`; add rooted history/full-Q state
+   only if this minimum missing irrep fails.
+5. **Issue #370 compiler/production lift:** compose the five exact-rational
+   fixtures behind one typed manifest and independent verifier, then feed the
+   actual Phase-E and adaptive-P250 production confidence problems into it.
+   Interval/SOS strengthening
+   starts only for a bounded survivor that would change the decision.
+6. **Continuum passports:** normalization-free three-point and modulus ratios
    remain high-value orthogonal discriminators after a lattice observable map is
    explicit. They should not delay production scoring of already typed finite
    observables.
-5. **Threshold track:** main's exact degree-one height-100 exclusion removes
+7. **Threshold track:** main's exact degree-one height-100 exclusion removes
    low-height rational roots only. Degree 2--4 and constant-basis searches stay
    open, separate from operator identification.
 
