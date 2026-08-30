@@ -2,11 +2,11 @@
   "boundary": "outside_registered_typed_path is an inventory status, not proof that a scorer is channel-bearing or semantically invalid",
   "corpus_glob": "scripts/*score*.py",
   "counts": {
-    "channel_bearing_migration_required": 16,
+    "channel_bearing_migration_required": 18,
     "covered_frozen_kernel": 3,
     "descriptor_not_applicable_generic_utility": 1,
     "direct_typed_entrypoint": 4,
-    "outside_registered_typed_path": 11,
+    "outside_registered_typed_path": 9,
     "total": 35
   },
   "rows": [
@@ -20,8 +20,8 @@
     {"git_blob_sha":"d61b35eb593c51f137a5fa4883201d9260d5c612","path":"scripts/score_intrinsic_functional_cocycle.py","status":"covered_frozen_kernel"},
     {"git_blob_sha":"837652a580ef915eb5649ea63e5b1d1ba73a3e7e","path":"scripts/score_intrinsic_quantile_center_n145_n290.py","status":"channel_bearing_migration_required"},
     {"git_blob_sha":"fecd46ad417e75e6165ca396f4d7535d6911da12","path":"scripts/score_issue43_cross_either_correction.py","status":"direct_typed_entrypoint"},
-    {"git_blob_sha":"022ac040596eb4518773982975edd101ff3d0a26","path":"scripts/score_issue43_full_curve_locked.py","status":"outside_registered_typed_path"},
-    {"git_blob_sha":"067b0b613b9c2f412bc75aa0361d488ed68e44d3","path":"scripts/score_issue43_full_curve.py","status":"outside_registered_typed_path"},
+    {"git_blob_sha":"022ac040596eb4518773982975edd101ff3d0a26","path":"scripts/score_issue43_full_curve_locked.py","status":"channel_bearing_migration_required"},
+    {"git_blob_sha":"067b0b613b9c2f412bc75aa0361d488ed68e44d3","path":"scripts/score_issue43_full_curve.py","status":"channel_bearing_migration_required"},
     {"git_blob_sha":"be08124b54bf27c0ccf88ee9f43b48d66a791b4d","path":"scripts/score_issue43_secondary.py","status":"outside_registered_typed_path"},
     {"git_blob_sha":"d1349c92aa01dd1d4cbaf97d56a7034be5457f11","path":"scripts/score_issue50_n290.py","status":"channel_bearing_migration_required"},
     {"git_blob_sha":"7a448080609fed552150e26f73741b22719f9d8e","path":"scripts/score_matching_odd_synthesis.py","status":"channel_bearing_migration_required"},
@@ -54,6 +54,8 @@
     "scripts/score_c4_self_matching_n26.py": "selects a wrapping observable through a free-form prediction geometry channel and scores its exact Bernstein/power law without binding the frozen hypothesis to a descriptor",
     "scripts/score_c4_tangent_orthogonal_holdout.py": "selects the cross response through a free-form channel string and transports a source-frozen tangent projection across sizes without descriptor validation",
     "scripts/score_intrinsic_quantile_center_n145_n290.py": "scores intrinsic quantile-center Q, scaled widths, and centers across independent N145/N290 streams using implicit coordinate, scaling, level, and cross-size map semantics",
+    "scripts/score_issue43_full_curve.py": "scores ordered orientation differences in matching-odd DeltaM and matching-even DeltaS sectors at frozen p_ref across N185/N265 without typed sector or cross-size descriptors",
+    "scripts/score_issue43_full_curve_locked.py": "operational provenance wrapper delegates to the channel-bearing Issue43 full-curve scorer without adding a semantic descriptor gate",
     "scripts/score_issue50_n290.py": "scores an either/matching_function contrast between two ordered Gaussian lineages with implicit channel, sector, order, and sign semantics",
     "scripts/score_matching_odd_synthesis.py": "selects two ledger blocks by free-form matching_odd source/target strings and combines their scores without verifying registered descriptor identity maps",
     "scripts/score_p231_vacuum_kdv_sector.py": "scores ordered C/Q/S sector coordinates across two designs against a per-unit-g4 theory vector without typed coordinate or normalization descriptors",
