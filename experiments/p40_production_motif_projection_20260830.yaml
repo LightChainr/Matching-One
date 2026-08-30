@@ -1,0 +1,70 @@
+schema: matching-one/p40-production-motif-projection/v1
+issue: 40
+status: FROZEN_PRODUCTION_AUTHORIZED
+frozen_utc: "2026-08-30T10:16:46Z"
+
+question: >-
+  Does the exact fixed-K four-motif subspace explain held-out same-field
+  orientation noise in Delta q at N=65 and N=85?
+
+runner:
+  source: src/gaussian_orientation_mc.cpp
+  commit: 1b988f99b9431a3d109a74a45499b8c158a64079
+  build: clang++ -O3 -std=c++17 -Wall -Wextra src/gaussian_orientation_mc.cpp -o build/gaussian_orientation_mc
+  binary_sha256: 639b234d0215a4e66fec9ed7e83d3b933d677547906ad60aa43ff9dcf118739c
+  joint_gram: sum first[i]*second[j] over the same Bernoulli replica
+
+acquisition:
+  host: local Mac CPU
+  sizes:
+    - {N: 65, first: [8, 1], second: [7, 4]}
+    - {N: 85, first: [9, 2], second: [7, 6]}
+  p_ref: 0.592746050790
+  samples_per_size: 1000000
+  batches_per_size: 100
+  threads: 8
+  seed: 4020260830
+  replica_counter: {first: 40000000, last_exclusive: 41000000}
+  coupling: same cyclic labels share the identical Bernoulli field within each same-N pair
+  output_root: results/local-20260830/P40-production-motif-projection
+
+controls:
+  order: [delta_nn_edge, delta_diagonal_pair, delta_face, delta_right_angle]
+  definitions:
+    delta_nn_edge: Delta E_mc
+    delta_diagonal_pair: Delta(nnn_pos_mc + nnn_neg_mc)
+    delta_face: Delta F0_mc
+    delta_right_angle: Delta right_angle_mc for translated {i,i+x,i+y}
+  centering: exact fixed-K conditional zero for every orientation contrast
+
+score:
+  target: delta_q
+  folds: 5
+  fold_assignment: batch modulo 5
+  fit: ordinary full-rank linear projection on four controls using the other four folds
+  evaluation: score projection and residual variance only on the omitted fold
+  primary:
+    - oof_variance_reduction
+    - oof_unexplained_fraction
+  report:
+    - full_target_control_covariance
+    - foldwise_coefficients
+    - heldout_projection_variance
+    - heldout_residual_variance
+    - wall_time
+  no_tuning: no control dropping, regularization, geometry expansion, or post-data fold change
+  boundary: training covariance is never used as a variance-reduction result
+
+preflight:
+  samples: 10000
+  batches: 10
+  elapsed_seconds_N65: 0.09262175
+  exact_identity_l1: 0
+  wrapping_l1: 0
+  tests:
+    - ./build/gaussian_orientation_mc --self-test
+    - PYTHONPATH=scripts python3 tests/test_p40_production_motif_projection.py
+    - PYTHONPATH=scripts python3 tests/test_gaussian_orientation_mc.py
+    - PYTHONPATH=scripts python3 tests/test_production_pair_motif_covariance_certificate.py
+
+stop_rule: score only N65 and N85; do not expand to the remaining declared pairs in this phase
