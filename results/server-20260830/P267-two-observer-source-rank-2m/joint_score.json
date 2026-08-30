@@ -1,0 +1,47 @@
+{
+  "schema": "matching-one/two-observer-two-source-rank-joint-score/v1",
+  "status": "frozen_production_reveal",
+  "issues": [215, 275],
+  "pull_request_context": 267,
+  "source_commit": "9f2033a2d205a01d3554bc2e9c93bed5760f5b29",
+  "score_order": [
+    "per-size complex determinant with full delete-one covariance",
+    "joint block-diagonal determinant chi-square",
+    "normalized wedge at each size",
+    "transfer only if both determinants resolve"
+  ],
+  "sizes": {
+    "325": {
+      "determinant_re": "0.0808299576113689758010772",
+      "determinant_im": "0.161718185628952404531765",
+      "determinant_re_se": "0.230807118643976595321356",
+      "determinant_im_se": "0.152196851819379995683525",
+      "chi_square_2d": "1.2627525719874554038597",
+      "survival_p_df2": 0.5318593065473517,
+      "normalized_wedge": "0.139155904426317326120018"
+    },
+    "425": {
+      "determinant_re": "0.115699834877477103280439",
+      "determinant_im": "-0.332441246887334984906717",
+      "determinant_re_se": "0.235962405291350415211133",
+      "determinant_im_se": "0.191471966979912167090411",
+      "chi_square_2d": "3.01621788524052843662676",
+      "survival_p_df2": 0.22132812665042784,
+      "normalized_wedge": "0.493296185207295955701937"
+    }
+  },
+  "primary_joint": {
+    "null": "both complex two-observer x two-source determinants are zero",
+    "covariance": "block diagonal because size streams use disjoint counter domains",
+    "chi_square": 4.2789704572279845,
+    "degrees_of_freedom": 4,
+    "survival_p": 0.369565834701578,
+    "frozen_rejection_threshold": 18.4668269529,
+    "decision": "do_not_reject_rank_one_projective_lane"
+  },
+  "secondary_transfer": {
+    "status": "not_scored",
+    "reason": "the preregistration permits determinant N425/N325 transfer only if both determinants are resolved"
+  },
+  "claim_boundary": "The result does not show that only one microscopic source exists. It leaves the simplest single-projective-lane explanation compatible with these two observers and this power."
+}
