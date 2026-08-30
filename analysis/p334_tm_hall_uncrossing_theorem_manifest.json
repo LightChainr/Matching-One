@@ -1,0 +1,22 @@
+{
+  "schema_version": "p334-tm-hall-uncrossing-manifest-v1",
+  "parent_result_commit": "551f89008b788574cfbc60d587e13b1bffdf88fd",
+  "scope": {
+    "maximum_order": 12,
+    "rows": 984,
+    "new_geometries": false,
+    "enumeration": "all nonempty site subsets in the existing atlas"
+  },
+  "frozen_questions": [
+    "Is the Hall gap submodular or supermodular?",
+    "Can worst cuts be restricted to connected, line-coset, or all-site sets?",
+    "Does translation invariance prove the proper-subset Hall cuts from aggregate TM?"
+  ],
+  "primary_contract": [
+    "loops count twice in weighted degree",
+    "check demand and supply regularity separately",
+    "verify the exact regular-cut decomposition on every subset",
+    "classify every ratio maximizer and every cut with ratio at least 9/10",
+    "do not extend beyond the existing N<=12 topology atlas"
+  ]
+}

@@ -1,0 +1,340 @@
+{
+  "bounded_audit": {
+    "demand_regular_rows": 984,
+    "line_layer_rows": 984,
+    "negative_Hall_cuts": 0,
+    "nonempty_site_cuts_checked": 2470440,
+    "nonunique_or_proper_ratio_max_rows": 0,
+    "positive_demand_cuts_checked": 1694550,
+    "positive_demand_rows": 688,
+    "ratio_bound_failures": 0,
+    "regular_cut_decomposition_failures": 0,
+    "supply_regular_rows": 984,
+    "unique_all_site_ratio_max_rows": 688,
+    "zero_demand_rows": 296
+  },
+  "canonical_cut_reduction": {
+    "bisubmodular_fallback": "not needed; ordinary submodularity plus the regular cut decomposition closes the family",
+    "connected_set_restriction": "true but unnecessary: the unique worst cut is all-site on the connected quotient",
+    "line_coset_restriction": "unnecessary: no proper line-coset or other proper set can beat all-site under regularity",
+    "required_cuts": "one all-site aggregate TM cut per line/carrier/layer row"
+  },
+  "regular_two_mark_cut_theorem": {
+    "corollary": "The all-site aggregate TM inequality implies every induced Hall cut. Moreover D_in(U)/S_inc(U) <= D_tot/S_tot, so all-site is ratio-worst; it is uniquely worst when the combined positive graph connects every proper cut.",
+    "proof": [
+      "regularity gives 2 D_in(U)+D_cut(U)=2|U|D_tot/N",
+      "regularity gives S_inc(U)=|U|S_tot/N+S_cut(U)/2",
+      "subtract and use nonnegative cut weights"
+    ],
+    "statement": "For regular nonnegative demand and supply weighted multigraphs on N sites, g(U)=S_inc(U)-D_in(U)=|U|/N*(S_tot-D_tot)+(D_cut(U)+S_cut(U))/2.",
+    "status": "exact theorem"
+  },
+  "schema_version": "p334-tm-hall-uncrossing-theorem-v1",
+  "scientific_boundary": {
+    "closed": "proper-subset Hall inequalities require no new topological injection once translation regularity and aggregate TM are known",
+    "remaining": "prove aggregate TM itself for arbitrary digital Alexander quotients, equivalently the all-site two-carrier moment inequality"
+  },
+  "tight_cut_classification": {
+    "classification": "all positive-demand rows have all-site as the unique ratio maximizer; every >=9/10 cut is all-site, while the strongest proper cut is a complement-of-one-site cut",
+    "largest_proper_cut": {
+      "N": 12,
+      "carrier": "primal",
+      "demand": 34560,
+      "demand_cut": 6912,
+      "line": [
+        1,
+        -1
+      ],
+      "lower_layer": 8,
+      "matrix": [
+        [
+          4,
+          1
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "ratio": "576/715",
+      "supply": 42900,
+      "supply_cut": 6600,
+      "vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    "largest_proper_ratio": "576/715",
+    "largest_ratio": "24/25",
+    "maximizer_count": 6,
+    "maximizers": [
+      {
+        "N": 12,
+        "carrier": "primal",
+        "demand": 41472,
+        "line": [
+          1,
+          -1
+        ],
+        "lower_layer": 8,
+        "matrix": [
+          [
+            4,
+            1
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "ratio": "24/25",
+        "supply": 43200
+      },
+      {
+        "N": 12,
+        "carrier": "primal",
+        "demand": 41472,
+        "line": [
+          0,
+          1
+        ],
+        "lower_layer": 8,
+        "matrix": [
+          [
+            4,
+            3
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "ratio": "24/25",
+        "supply": 43200
+      },
+      {
+        "N": 12,
+        "carrier": "primal",
+        "demand": 41472,
+        "line": [
+          1,
+          -3
+        ],
+        "lower_layer": 8,
+        "matrix": [
+          [
+            12,
+            3
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "ratio": "24/25",
+        "supply": 43200
+      },
+      {
+        "N": 12,
+        "carrier": "primal",
+        "demand": 41472,
+        "line": [
+          1,
+          -3
+        ],
+        "lower_layer": 8,
+        "matrix": [
+          [
+            12,
+            5
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "ratio": "24/25",
+        "supply": 43200
+      },
+      {
+        "N": 12,
+        "carrier": "primal",
+        "demand": 41472,
+        "line": [
+          2,
+          -3
+        ],
+        "lower_layer": 8,
+        "matrix": [
+          [
+            12,
+            7
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "ratio": "24/25",
+        "supply": 43200
+      },
+      {
+        "N": 12,
+        "carrier": "primal",
+        "demand": 41472,
+        "line": [
+          2,
+          -3
+        ],
+        "lower_layer": 8,
+        "matrix": [
+          [
+            12,
+            9
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "ratio": "24/25",
+        "supply": 43200
+      }
+    ],
+    "near_tight_ratio_at_least_9_over_10": [
+      {
+        "class": "all_site",
+        "cuts": 4,
+        "set_size": 10
+      },
+      {
+        "class": "all_site",
+        "cuts": 12,
+        "set_size": 11
+      },
+      {
+        "class": "all_site",
+        "cuts": 46,
+        "set_size": 12
+      }
+    ]
+  },
+  "translation_regularity": {
+    "consequence": "the weighted demand graph and combined synergy-plus-reservoir supply multigraph are both regular; a reservoir loop counts twice in weighted degree",
+    "status": "exact symmetry consequence",
+    "topological_input": "the finite torus translation group acts transitively on sites and preserves carrier, layer, ambient projective line ell, rank transitions, and the replicated token type"
+  },
+  "uncrossing_lemma": {
+    "consequence": "g is submodular and the deficit -g is supermodular; maximally dangerous Hall sets uncross by union/intersection",
+    "identity": "g(A)+g(B)-g(A union B)-g(A intersection B)=(D+S)(A\\B,B\\A)>=0",
+    "one_edge_truth_table": [
+      {
+        "A_membership": 0,
+        "B_membership": 0,
+        "expected": 0,
+        "slack": 0
+      },
+      {
+        "A_membership": 0,
+        "B_membership": 1,
+        "expected": 0,
+        "slack": 0
+      },
+      {
+        "A_membership": 0,
+        "B_membership": 2,
+        "expected": 0,
+        "slack": 0
+      },
+      {
+        "A_membership": 0,
+        "B_membership": 3,
+        "expected": 0,
+        "slack": 0
+      },
+      {
+        "A_membership": 1,
+        "B_membership": 0,
+        "expected": 0,
+        "slack": 0
+      },
+      {
+        "A_membership": 1,
+        "B_membership": 1,
+        "expected": 0,
+        "slack": 0
+      },
+      {
+        "A_membership": 1,
+        "B_membership": 2,
+        "expected": 5,
+        "slack": 5
+      },
+      {
+        "A_membership": 1,
+        "B_membership": 3,
+        "expected": 0,
+        "slack": 0
+      },
+      {
+        "A_membership": 2,
+        "B_membership": 0,
+        "expected": 0,
+        "slack": 0
+      },
+      {
+        "A_membership": 2,
+        "B_membership": 1,
+        "expected": 5,
+        "slack": 5
+      },
+      {
+        "A_membership": 2,
+        "B_membership": 2,
+        "expected": 0,
+        "slack": 0
+      },
+      {
+        "A_membership": 2,
+        "B_membership": 3,
+        "expected": 0,
+        "slack": 0
+      },
+      {
+        "A_membership": 3,
+        "B_membership": 0,
+        "expected": 0,
+        "slack": 0
+      },
+      {
+        "A_membership": 3,
+        "B_membership": 1,
+        "expected": 0,
+        "slack": 0
+      },
+      {
+        "A_membership": 3,
+        "B_membership": 2,
+        "expected": 0,
+        "slack": 0
+      },
+      {
+        "A_membership": 3,
+        "B_membership": 3,
+        "expected": 0,
+        "slack": 0
+      }
+    ],
+    "status": "exact by summing the two-site identity",
+    "truth_table_failures": 0
+  }
+}
