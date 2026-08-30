@@ -11,7 +11,7 @@ import math
 from pathlib import Path
 from typing import Mapping, Sequence
 
-from score_z5_charged_threepoint import zero_score
+from score_z5_charged_threepoint import chi_square_survival, zero_score
 from score_z5_projective_leg_cross_scale import add_covariance, jackknife_covariance
 from score_z5_projective_leg_pair_transfer import CHANNELS, means, read_batches, transfer
 
@@ -141,13 +141,19 @@ def heldout_score(target_batches: Sequence[dict], rank: int) -> tuple[dict, list
     coefficients = fit_recurrence(full_rows, rank, TARGET_FIT_LAST)
     residual = recurrence_residual(full_rows, coefficients, TARGET_HOLDOUT)
     deleted_residuals = []
+    deleted_training_residuals = []
     deleted_coefficients = []
     for omitted in range(len(target_batches)):
         deleted_rows = series(means(target_batches, omitted), TARGET_HOLDOUT)
         deleted = fit_recurrence(deleted_rows, rank, TARGET_FIT_LAST)
         deleted_coefficients.append(deleted)
+        deleted_training_residuals.append(training_residuals(deleted_rows, deleted, TARGET_FIT_LAST))
         deleted_residuals.append(recurrence_residual(deleted_rows, deleted, TARGET_HOLDOUT))
     covariance = jackknife_covariance(deleted_residuals)
+    training_residual = training_residuals(full_rows, coefficients, TARGET_FIT_LAST)
+    training_covariance = jackknife_covariance(deleted_training_residuals)
+    raw_training_score = zero_score(training_residual, training_covariance)
+    training_dof = len(training_residual) - 2 * rank
     return ({
         "rank": rank,
         "fit_distances": list(range(1, TARGET_FIT_LAST + 1)),
@@ -155,7 +161,14 @@ def heldout_score(target_batches: Sequence[dict], rank: int) -> tuple[dict, list
         "coefficients": complex_payload(coefficients),
         "eigenvalues": complex_payload(recurrence_roots(coefficients)),
         "channel_amplitudes": fit_amplitudes(full_rows, recurrence_roots(coefficients), TARGET_FIT_LAST),
-        "training_residual": training_residuals(full_rows, coefficients, TARGET_FIT_LAST),
+        "training_residual": training_residual,
+        "training_covariance": training_covariance,
+        "training_score": {
+            "chi_square": raw_training_score["chi_square"],
+            "degrees_of_freedom": training_dof,
+            "survival_p": chi_square_survival(raw_training_score["chi_square"], training_dof),
+            "fit_parameters_subtracted": 2 * rank,
+        },
         "heldout_residual_order": [f"{hand}_r{charge}_{part}" for hand, charge in CHANNELS for part in ("re", "im")],
         "heldout_residual": residual,
         "heldout_covariance": covariance,
@@ -342,12 +355,13 @@ def score(target_batches, source_batches, manifest) -> dict:
     minimal = None
     for rank in (1, 2):
         row = ranks[str(rank)]
+        training_pass = row["training_score"]["survival_p"] >= alpha
         target_pass = row["heldout_zero_score"]["survival_p"] >= alpha
         source_pass = any(
             constraint["zero_score"]["survival_p"] >= alpha
             for constraint in row["source_geometry_constraints"].values()
         )
-        if target_pass and source_pass:
+        if training_pass and target_pass and source_pass:
             minimal = rank
             break
     if minimal is None and ranks["3"]["heldout_zero_score"]["survival_p"] >= alpha:
@@ -378,7 +392,7 @@ def score(target_batches, source_batches, manifest) -> dict:
 
 
 def render(result) -> str:
-    lines = ["# P250 minimal projective-leg state dimension", "", "| rank | N505 d5 chi2/df | p | N325 fixed p | N325 1/L p |", "|---:|---:|---:|---:|---:|"]
+    lines = ["# P250 minimal projective-leg state dimension", "", "| rank | N505 fit p | N505 d5 chi2/df | p | N325 fixed p | N325 1/L p |", "|---:|---:|---:|---:|---:|---:|"]
     for rank in (1, 2, 3):
         row = result["ranks"][str(rank)]
         target = row["heldout_zero_score"]
@@ -388,7 +402,7 @@ def render(result) -> str:
             fixed_text, scaled_text = f"{fixed:.6g}", f"{scaled:.6g}"
         else:
             fixed_text = scaled_text = "not identifiable"
-        lines.append(f"| {rank} | {target['chi_square']:.6g}/{target['degrees_of_freedom']} | {target['survival_p']:.6g} | {fixed_text} | {scaled_text} |")
+        lines.append(f"| {rank} | {row['training_score']['survival_p']:.6g} | {target['chi_square']:.6g}/{target['degrees_of_freedom']} | {target['survival_p']:.6g} | {fixed_text} | {scaled_text} |")
     image = result["nearest_image_kernel"]
     lines += [
         "", f"Decision: `{result['decision']}`.",
