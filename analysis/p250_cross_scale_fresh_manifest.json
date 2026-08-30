@@ -1,0 +1,78 @@
+{
+  "schema": "matching-one/p250-cross-scale-fresh-manifest/v1",
+  "issue": 250,
+  "status": "authorized_fresh_cross_scale_transfer",
+  "runner_commit": "56c228da6ff13d157bbde16ceb4f6a149e28e603",
+  "scorer_commit": "56c228da6ff13d157bbde16ceb4f6a149e28e603",
+  "source_commit": "8868a7cdfe25c38e2de5996d5aad699577cc3091",
+  "target": {
+    "parent": [10, 1],
+    "parent_order": 101,
+    "parent_length": 10.04987562112089,
+    "children": [[19, 12], [21, -8]],
+    "child_order": 505,
+    "separations": [1, 2, 3, 4, 5]
+  },
+  "run": {
+    "samples": 40000,
+    "batches": 100,
+    "workers": 16,
+    "p": 0.59274605079,
+    "seed": 25050510120260931,
+    "replica_offset": 0,
+    "replica_last_exclusive": 40000
+  },
+  "transfer_gate": {
+    "distances": [1, 2, 3, 4, 5],
+    "minimum_real_abs_z": 5.0,
+    "power_freeze": "analysis/p250_cross_scale_power_freeze.json"
+  },
+  "source_fit": {
+    "source_parent_order": 65,
+    "source_length": 8.06225774829855,
+    "fit_distances": [1, 2, 3],
+    "common_cylinder_alpha": 1.414538684433616,
+    "common_cylinder_alpha_standard_error": 0.05264563788017381,
+    "common_exponential_mass": 0.7120974786219539,
+    "common_exponential_mass_standard_error": 0.026708960036055145,
+    "source_only": true
+  },
+  "frozen_models_in_order": [
+    {
+      "name": "fixed_thermal_sine",
+      "formula": "|T(d)/T(1)|=[sin(pi*d/L)/sin(pi/L)]^(-5/4)",
+      "alpha_2x": 1.25,
+      "parameters_from_target": 0
+    },
+    {
+      "name": "source_fitted_sine",
+      "formula": "|T(d)/T(1)|=[sin(pi*d/L)/sin(pi/L)]^(-alpha_source)",
+      "alpha_2x": 1.414538684433616,
+      "parameters_from_target": 0
+    },
+    {
+      "name": "single_exponential",
+      "formula": "|T(d)/T(1)|=exp[-mass_source*(d-1)]",
+      "mass": 0.7120974786219539,
+      "parameters_from_target": 0
+    }
+  ],
+  "heldout": {
+    "geometry": "all N101 rows are held out from source parameter selection",
+    "decisive_distance": 5,
+    "reason": "d5 approaches the N101 antipodal scale and was unavailable on the N65 clean-distance window"
+  },
+  "execution": {
+    "host": "Huawei-CodeBuddy-XPk2PZ",
+    "remote_directory": "/workspace/p250-projective-leg-cross-scale-n505-40k",
+    "response": "response_40k.json",
+    "batches": "response_40k.batches.csv",
+    "required_runner_flag": "--production-manifest analysis/p250_cross_scale_fresh_manifest.json"
+  },
+  "claim_boundary": [
+    "The thermal alpha=5/4 target is parameter-free and was frozen before N101 collection.",
+    "The free alpha and exponential mass are estimated only from the old N65 d1-d3 rows; their source uncertainty is propagated.",
+    "The fresh target is a propagator-shape discriminator, not an OPE or local-primary experiment.",
+    "A failure of all three shapes permits a transfer-state mixture or a genuinely two-dimensional torus function."
+  ]
+}
