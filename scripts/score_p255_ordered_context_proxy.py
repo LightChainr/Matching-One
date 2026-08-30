@@ -102,13 +102,20 @@ def psd_inverse(matrix: np.ndarray, rcond: float = 1e-11) -> tuple[np.ndarray, i
     return (vectors[:, keep] / values[keep]) @ vectors[:, keep].T, int(keep.sum())
 
 
-def chi2_sf_even(value: float, degrees: int) -> float:
-    if degrees <= 0 or degrees % 2:
-        raise ValueError("positive even degrees required")
+def chi2_survival(value: float, degrees: int) -> float:
+    if degrees <= 0:
+        raise ValueError("positive degrees required")
     half = value / 2
-    return math.exp(-half) * sum(
-        half ** power / math.factorial(power) for power in range(degrees // 2)
-    )
+    if degrees % 2 == 0:
+        return math.exp(-half) * sum(
+            half ** power / math.factorial(power) for power in range(degrees // 2)
+        )
+    shape = 0.5
+    survival = math.erfc(math.sqrt(half))
+    while shape < degrees / 2:
+        survival += math.exp(-half) * half ** shape / math.gamma(shape + 1)
+        shape += 1
+    return survival
 
 
 def score(replay_path: Path, metadata_path: Path, source_batch_path: Path,
@@ -166,9 +173,10 @@ def score(replay_path: Path, metadata_path: Path, source_batch_path: Path,
             "covariance": primary_covariance.tolist(),
             "chi_square": chi2,
             "degrees_of_freedom": rank,
-            "p_value": chi2_sf_even(chi2, rank),
+            "p_value": chi2_survival(chi2, rank),
             "frozen_gate_alpha": 0.01,
             "frozen_gate_critical_df4": 13.276704135987622,
+            "protocol_covariance_rank_gate_passed": rank == 4,
             "signal_gate_passed": rank == 4 and chi2 > 13.276704135987622,
         },
         "decision_boundary": {

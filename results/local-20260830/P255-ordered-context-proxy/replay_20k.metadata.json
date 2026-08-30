@@ -1,0 +1,22 @@
+{
+  "schema": "matching-one.p255-n650-ordered-proxy-replay.v1",
+  "git_commit": "d1bb4ab",
+  "samples": 20000,
+  "batches": 100,
+  "threads": 1,
+  "seed": 2026102003,
+  "replica_offset": 18000000000,
+  "p_ref": "0.592746050790",
+  "state_order": ["ES","ED","OS","OD"],
+  "stored_sum_divisor": 2,
+  "ordered_fields": ["Jlocal","ambient_h0","ambient_h2","ambient_h5","ambient_h25","partition_r0","partition_r2","partition_r5","partition_r25","Cact"],
+  "Cact_definition": "1{ambient_h25=2}(1{ambient_h2=2}-1{ambient_h5=2})",
+  "replay_source_commit": "308097b",
+  "replay_source_batch_sha256": "db5be1d870135053691e34605703f15e99e95df2da88dc279c0a55e26130d0af",
+  "first_periods": [[23,-11],[11,23]],
+  "second_periods": [[17,-19],[19,17]],
+  "lift_convention": "raw displacement between C++ column-HNF representatives; ambient-H1 is convention-sensitive secondary",
+  "rng": "counter SplitMix64; inverse-CDF Binomial(650,p_ref); conditional Fisher-Yates prefix",
+  "seconds": 3.9335255,
+  "batch_csv": "results/local-20260830/P255-ordered-context-proxy/replay_20k.batches.csv"
+}

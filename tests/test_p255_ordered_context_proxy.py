@@ -23,7 +23,8 @@ class OrderedContextProxyTest(unittest.TestCase):
         inverse, rank = MODULE.psd_inverse(covariance)
         self.assertEqual(rank, 4)
         self.assertTrue(np.allclose(inverse, np.diag([1, 1 / 2, 1 / 3, 1 / 4])))
-        self.assertAlmostEqual(MODULE.chi2_sf_even(0.0, 4), 1.0)
+        self.assertAlmostEqual(MODULE.chi2_survival(0.0, 4), 1.0)
+        self.assertAlmostEqual(MODULE.chi2_survival(0.0, 3), 1.0)
 
     def test_freeze_names(self) -> None:
         self.assertEqual(MODULE.CHANNELS, ("ES", "ED", "OS", "OD"))
