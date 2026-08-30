@@ -84,13 +84,46 @@ bound of eight in one observer/dependency convention, not exact state dimension,
 rank-eight flatness, cross-hand closure, noncommutation or a field count. The R2
 bridge was not reached because its rank-five support prerequisite failed.
 
+## Third production application: the Euler response is only partly an occupancy clock
+
+The N325/N425 external-Euler archives retain aligned batch-by-occupation
+aggregates, so the global density nuisance can be removed exactly without new
+simulation. With `n_occ` denoting the pre-insertion occupation count—not K1/K2—
+
+```text
+mu_ext(k) = k - 2N (k)_2/(N)_2 + N (k)_4/(N)_4.
+```
+
+The frozen radius-two local Euler nuisance has a corresponding exact conditional
+mean on the declared locally injective period quotients. The scorer then centers
+`J_D` and `J_S` within each `n_occ`, recomputes the same-next-site Gram
+coefficient inside every aligned delete-one batch, and projects `J_S` only after
+that centering.
+
+[`results/euler-occupancy-clock/latest.md`](../results/euler-occupancy-clock/latest.md)
+shows that the clock accounts for 53.14% and 56.16% of the raw far-D complex
+magnitude at N325 and N425. A coherent 46.64% and 43.65% remains after
+fixed-occupation centering and the JS projection; the joint zero-residual score
+is `chi2=390067.1/4`, `log10 p=-84696.7`. The JS step itself retains more than
+99.5% of the fixed-occupation residual.
+
+This eliminates the declared “global occupation clock plus direct JS”
+explanation. It does not identify a second microscopic source, Q4 field,
+continuum exponent or independent evidence block: every row is a coordinate of
+the same `external-euler-n325-n425` production group. The next discriminator is
+K1 age/K2 completion/`DIRECT_RANK2` conditioning where retained fields permit,
+then one genuinely new `n12` or winding/seam source—not another density transform
+or reversible Gram rotation.
+
 ## Consequences for the next portfolio
 
-1. **P334/P337 birth age and collision:** the branch-only exact `1/57` witness
+1. **P334/P337 birth age, completion and collision:** the branch-only exact `1/57` witness
    shows `(k,rank,line)` is not Markov under the actual path law, while
    `(k,rank,line,K1)` is the exact observed age augmentation. Reuse the existing
    `(K1,line,K2,DIRECT_RANK2)` archives for a K1-conditioned exit hazard,
-   two-time rank source and collision scaling before any fifth generation.
+   two-time rank source and collision scaling before any fifth generation. Apply
+   the same mechanism labels to the surviving Euler residual only when its
+   retained fields make the definition scoreable.
 2. **P321 generic-Q closure:** main already contains noncrossing detach/join
    primitives. The missing gate is now generic-Q weighting, closure traces,
    sector transport and first-jet Gram/radical compatibility, not another state
@@ -125,3 +158,7 @@ bridge was not reached because its rank-five support prerequisite failed.
   [Temperley--Lieb local operators](https://arxiv.org/abs/2602.15742) motivate
   independent fusion, modulus and finite-module coordinates. None supplies the
   Matching-One lattice-to-field dictionary by itself.
+- [Anchored random clusters and SLE excursions](https://arxiv.org/abs/2605.04395)
+  supplies bulk-boundary anchored and pivotal observables in a half-plane SLE
+  setting; it motivates boundary-conditioned readouts but does not identify the
+  torus occupancy-clock residual or its birth-age kernel.

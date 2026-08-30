@@ -1,4 +1,4 @@
-version: 18
+version: 19
 updated: 2026-08-30
 purpose: >
   Compact map of durable evidence and next information axes. This ranks work;
@@ -53,7 +53,7 @@ semantic_transport:
   separate_from: [integration_status, evidence_role, dependency_group, attention_rank]
   registry_source_ref: SRC_OBSERVABLE_DESCRIPTOR_REGISTRY_MAIN
   inventory_source_ref: SRC_SCORER_INVENTORY_LATEST_MAIN
-  main_snapshot_commit: 0dc4430ed3a5633bc95320378dea59104cfc7bd8
+  main_snapshot_commit: e7d63b4c08cfb63a9c027959087c8beaa6228fdf
   current_main_inventory:
     total_score_scripts: 59
     direct_typed: 28
@@ -61,21 +61,21 @@ semantic_transport:
     generic_not_applicable: 1
     migration_required: 3
     outside_registered_typed_path: 0
-    consistency_status: live_current_after_PR384
+    consistency_status: live_current_after_PR386
   current_draft_inventory:
-    total_score_scripts: 63
+    total_score_scripts: 64
     direct_typed: 28
     covered_kernels: 27
     generic_not_applicable: 1
-    migration_required: 7
+    migration_required: 8
     outside_registered_typed_path: 0
-    draft_only_additions: [score_z5_projective_leg_joint_ta_rank, score_z5_projective_leg_joint_annihilation, score_etop_production_elimination, score_z5_projective_leg_augmented_joint]
+    draft_only_additions: [score_z5_projective_leg_joint_ta_rank, score_z5_projective_leg_joint_annihilation, score_etop_production_elimination, score_z5_projective_leg_augmented_joint, score_euler_occupancy_clock]
     interpretation: draft_registration_preserves_existing_data_evidence_role_and_creates_no_task_gate
   integrated_components:
-    prs: [345, 346, 347, 348, 350, 352, 353, 355, 357, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384]
-    source_refs: [SRC_P50_SPRIME_TYPED_MAIN, SRC_P48_NEW_GEOMETRY_TYPED_MAIN, SRC_SCORER_INVENTORY_COMPOSITION_MAIN, SRC_PREQUENTIAL_EVIDENCE_TYPED_MAIN, SRC_P231_VACUUM_KDV_TYPED_MAIN, SRC_V14_SCALAR_ROOT_TYPED_MAIN, SRC_ISSUE43_SECONDARY_TYPED_MAIN, SRC_THRESHOLD_SCORE_MODES_TYPED_MAIN, SRC_SCORER_INVENTORY_LATEST_MAIN, SRC_PRODUCTION_PAIR_MOTIF_COVARIANCE_MAIN, SRC_THRESHOLD_PROFILE_SYMMETRY_MAIN, SRC_PLANAR_STATE_OPERATIONS_MAIN, SRC_DEGREE1_RATIONAL_EXCLUSION_MAIN, SRC_TERMINAL_GADGET_GRAPH_MAIN, SRC_RATIONAL_JORDAN_GEOMETRY_MAIN, SRC_EXACT_PROFILE_DISTANCE_MAIN, SRC_TERMINAL_RELIABILITY_STAR4_MAIN]
-    scientific_boundary: typed_entrypoints_exact_non_crossing_codec_synthetic_threshold_profile_shape_symmetry_and_fixed_K_motif_covariance_oracles_plus_exact_planar_state_terminal_graph_synthetic_profile_distance_synthetic_rational_Jordan_geometry_and_one_star4_terminal_reliability_baseline_without_new_production_data_physical_Q_dependent_transfer_broad_gadget_search_new_percolation_bound_empirical_invariant_target_control_covariance_variance_reduction_or_field_identification
-  remaining_contract_gap: 3_main_and_7_draft_channel_bearing_paths_still_require_migration_after_PR384_and_PR267_respectively_and_the_second_contract_must_name_units_model_space_size_map_chronology_dependency_relation_and_derived_response_semantics
+    prs: [345, 346, 347, 348, 350, 352, 353, 355, 357, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 386]
+    source_refs: [SRC_P50_SPRIME_TYPED_MAIN, SRC_P48_NEW_GEOMETRY_TYPED_MAIN, SRC_SCORER_INVENTORY_COMPOSITION_MAIN, SRC_PREQUENTIAL_EVIDENCE_TYPED_MAIN, SRC_P231_VACUUM_KDV_TYPED_MAIN, SRC_V14_SCALAR_ROOT_TYPED_MAIN, SRC_ISSUE43_SECONDARY_TYPED_MAIN, SRC_THRESHOLD_SCORE_MODES_TYPED_MAIN, SRC_SCORER_INVENTORY_LATEST_MAIN, SRC_PRODUCTION_PAIR_MOTIF_COVARIANCE_MAIN, SRC_THRESHOLD_PROFILE_SYMMETRY_MAIN, SRC_PLANAR_STATE_OPERATIONS_MAIN, SRC_DEGREE1_RATIONAL_EXCLUSION_MAIN, SRC_TERMINAL_GADGET_GRAPH_MAIN, SRC_RATIONAL_JORDAN_GEOMETRY_MAIN, SRC_EXACT_PROFILE_DISTANCE_MAIN, SRC_TERMINAL_RELIABILITY_STAR4_MAIN, SRC_BOUNDED_TERMINAL_GADGET_CENSUS_MAIN]
+    scientific_boundary: typed_entrypoints_exact_non_crossing_codec_synthetic_threshold_profile_shape_symmetry_and_fixed_K_motif_covariance_oracles_plus_exact_planar_state_terminal_graph_synthetic_profile_distance_synthetic_rational_Jordan_geometry_one_star4_terminal_reliability_baseline_and_a_bounded_one_internal_vertex_structural_gadget_census_without_new_production_data_physical_Q_dependent_transfer_probability_polynomials_for_the_census_planarity_tiling_self_duality_optimization_new_percolation_bound_empirical_invariant_target_control_covariance_variance_reduction_or_field_identification
+  remaining_contract_gap: 3_main_and_8_draft_channel_bearing_paths_still_require_migration_after_PR386_and_PR267_respectively_and_the_second_contract_must_name_units_model_space_size_map_chronology_dependency_relation_and_derived_response_semantics
   allowed_statuses: [typed_direct, covered_by_typed_wrapper, migration_required, outside_registered_typed_path, not_applicable, not_in_main_inventory]
   interpretation: migration_required_is_a_future_reuse_contract_not_a_scientific_error_evidence_demotion_task_lock_or_rerun_request
   migration_priority: [norm4_production, norm4_thermal_jet, norm5_thermal_jet]
@@ -393,6 +393,17 @@ branch_sources:
       - results/terminal-reliability/star4/latest.json
       - scripts/terminal_reliability_polynomial.py
     claim_boundary: one_declared_baseline_only_without_broad_enumeration_optimization_domination_certificate_theorem_assumptions_new_percolation_bound_or_closed_Issue14
+  - id: SRC_BOUNDED_TERMINAL_GADGET_CENSUS_MAIN
+    integration_status: main_integrated
+    pr: 386
+    ref: main
+    commit: e7d63b4c08cfb63a9c027959087c8beaa6228fdf
+    result_status: exhaustive_simple_graph_census_for_one_internal_vertex_with_3_terminal_counts_64_labeled_20_orbits_11_connected_4_connected_internal_degree_at_least3_and_4_terminal_counts_1024_labeled_90_orbits_58_connected_27_connected_internal_degree_at_least3
+    paths:
+      - analysis/bounded_gadget_census.json
+      - notes/bounded-gadget-census.md
+      - scripts/bounded_gadget_census.py
+    claim_boundary: exact_bounded_structural_filter_only_without_terminal_probability_polynomials_planarity_periodic_tilings_general_series_parallel_reduction_self_duality_or_critical_manifold_equation_candidate_ranking_parameter_optimization_percolation_bound_or_closed_Issue13
   - id: SRC_PR385_JORDAN_NONSEPARATION_C4_FIVE_STATE
     integration_status: open_pr
     pr: 385
@@ -1235,6 +1246,21 @@ branch_sources:
       - results/server-20260830/P267-target1-external-Euler-2m/gram_orthogonal_score.json
       - analysis/p267_target1_source_orthogonal_manifest.yaml
       - notes/p267-target1-source-orthogonal.md
+  - id: SRC_PR267_EULER_OCCUPANCY_CLOCK
+    integration_status: open_pr
+    pr: 267
+    ref: research/navigation-priority-refresh-20260829
+    commit: c34dd98278bb630a38d537c8028c89ecd882f8d3
+    input_source_ref: SRC_EXTERNAL_EULER_BULK
+    input_commit: 48a8818047bfcbdbe3ef3af5466463d12dd89fa3
+    result_status: exact_preinsertion_occupancy_clock_accounts_for_0p531395_and_0p561588_of_raw_far_D_magnitude_at_N325_N425_while_0p466395_and_0p436546_survive_fixed_n_occ_centering_and_within_n_occ_JS_projection_with_joint_chi2_390067p1008_over4_log10p_minus84696p705
+    paths:
+      - analysis/euler_occupancy_clock_manifest.yaml
+      - results/euler-occupancy-clock/latest.json
+      - results/euler-occupancy-clock/latest.md
+      - scripts/score_euler_occupancy_clock.py
+    dependency_group_refs: [external-euler-n325-n425]
+    claim_boundary: exact_mu_formulas_require_the_declared_locally_injective_square_period_quotients_and_the_surviving_residual_escapes_only_sigma_n_occ_plus_span_JS_in_this_observer_source_metric_not_a_second_microscopic_source_Q4_field_exponent_or_continuum_identification
   - id: SRC_TWO_OBSERVER_SOURCE_RANK_FREEZE
     integration_status: branch_only
     ref: analysis/external-observer-stream-20260829
@@ -3138,16 +3164,16 @@ scientific_nodes:
     observer_sectors: [bulk_euler_external, rank_birth_local, matching_odd, matching_even]
     geometries: [gaussian_cover]
     acquisition: [new_production, existing_data_reuse]
-    source_refs: [SRC_EXTERNAL_EULER_BULK, SRC_MARKED_BIRTH_CONTACT_CHAIN, SRC_P275_CARTAN_CONTACT, SRC_TWO_OBSERVER_SOURCE_RANK_RESULT]
-    known_result: O_ext_escapes_sigma_q_far_D_amplitudes_are_31p007_32p673_source_orthogonal_JDperp_retains_0p998792_0p999144_of_far_magnitude_and_the_completed_frozen_N325_N425_two_observer_score_does_not_reject_a_common_rank_one_coupling_lane_with_joint_chi2_4_4p278970457_p_0p369565835
-    boundary: direct_JS_projection_is_rejected_only_in_the_recorded_same_next_site_lattice_Gram_metric_and_the_joint_null_applies_only_to_the_declared_Ofar_Osep4_by_JDperp_JS_basis_not_to_one_microscopic_source_CFT_field_orthogonality_Q4_epsilon_exponent_or_source_energy_fraction
-    supports: [external_within_q_bulk_observer_as_a_successful_contact_escape, source_component_independent_of_direct_JS_projection, one_common_projective_transport_lane_is_adequate_in_the_declared_two_by_two_basis]
-    tensions: [root_local_contact_as_the_origin_of_the_signal, topology_only_q_observer_as_sufficient, JD_as_only_a_rescaled_direct_JS_projection, repeated_observer_basis_as_a_route_to_new_source_rank]
-    excludes_only: [radius2_local_Euler_nuisance_as_the_dominant_declared_coupling, direct_JS_projection_as_the_explanation_in_the_declared_Gram_metric, rank_two_coupling_in_the_frozen_two_by_two_basis_at_the_declared_gate]
-    reusable_data_refs: [results/server-20260830/P267-target1-external-Euler-2m/transfer_score.json, results/server-20260830/P267-target1-external-Euler-2m/gram_orthogonal_score.json, results/server-20260830/P267-two-observer-source-rank-2m/joint_score.json]
+    source_refs: [SRC_EXTERNAL_EULER_BULK, SRC_PR267_EULER_OCCUPANCY_CLOCK, SRC_MARKED_BIRTH_CONTACT_CHAIN, SRC_P275_CARTAN_CONTACT, SRC_TWO_OBSERVER_SOURCE_RANK_RESULT]
+    known_result: O_ext_escapes_sigma_q_far_D_amplitudes_are_31p007_32p673_the_exact_preinsertion_occupancy_clock_accounts_for_0p531395_0p561588_of_raw_far_D_magnitude_at_N325_N425_and_0p466395_0p436546_survives_fixed_n_occ_centering_plus_within_n_occ_JS_projection_with_joint_chi2_390067p1008_over4_while_the_completed_two_observer_score_does_not_reject_a_common_rank_one_lane_at_chi2_4_4p278970457_p_0p369565835
+    boundary: the_occupancy_residual_escapes_only_sigma_n_occ_plus_span_JS_in_the_recorded_same_next_site_metric_and_the_joint_null_applies_only_to_the_declared_Ofar_Osep4_by_JDperp_JS_basis_not_to_one_or_two_microscopic_sources_CFT_field_orthogonality_Q4_epsilon_exponent_or_source_energy_fraction
+    supports: [external_within_q_bulk_observer_as_a_successful_contact_escape, source_component_independent_of_direct_JS_projection, pure_preinsertion_occupancy_clock_is_insufficient_for_the_far_D_response, one_common_projective_transport_lane_is_adequate_in_the_declared_two_by_two_basis]
+    tensions: [root_local_contact_as_the_origin_of_the_signal, topology_only_q_observer_as_sufficient, JD_as_only_a_rescaled_direct_JS_projection, naming_the_surviving_residual_as_a_second_source_or_Q4_field_without_a_mechanism_typed_column, repeated_observer_basis_as_a_route_to_new_source_rank]
+    excludes_only: [radius2_local_Euler_nuisance_as_the_dominant_declared_coupling, direct_JS_projection_as_the_explanation_in_the_declared_Gram_metric, the_declared_exact_occupancy_clock_plus_direct_JS_projection_as_a_complete_explanation, rank_two_coupling_in_the_frozen_two_by_two_basis_at_the_declared_gate]
+    reusable_data_refs: [results/server-20260830/P267-target1-external-Euler-2m/transfer_score.json, results/server-20260830/P267-target1-external-Euler-2m/gram_orthogonal_score.json, results/server-20260830/P267-two-observer-source-rank-2m/joint_score.json, analysis/euler_occupancy_clock_manifest.yaml, results/euler-occupancy-clock/latest.json]
     dependency_group_refs: [external-euler-n325-n425, two-observer-source-rank-production-acquired]
     missing_inputs: [mechanism_derived_cross_boundary_winding_seam_or_endpoint_conditioned_source_basis, full_marked_birth_stream_for_zero_cost_rotation_is_not_retained_in_git]
-    next_discriminator: exact_gate_one_physically_new_source_column_then_pilot_only_if_it_is_not_a_reversible_rotation_of_the_completed_basis
+    next_discriminator: first_score_K1_age_line_weighted_K2_completion_and_DIRECT_RANK2_collision_conditioning_if_the_retained_fields_are_semantically_scoreable_then_exact_gate_one_physically_new_cross_boundary_or_winding_column_without_reversible_rotation
     information_gain: very_high
     compute_cost: none
     decision_experiments: [DX_EXTERNAL_EULER_GRAM, DX_TWO_OBSERVER_COUPLING, DX_INDEPENDENT_SOURCE_RANK_ESCAPE]
@@ -3565,16 +3591,16 @@ scientific_nodes:
     observer_sectors: [boundary, topology_typed]
     geometries: []
     acquisition: [exact_construction]
-    source_refs: [SRC_TERMINAL_PARTITION_CANONICAL_MAIN, SRC_TERMINAL_GADGET_GRAPH_MAIN]
-    known_result: deterministic_lexicographic_encoding_and_canonicalization_under_explicit_terminal_groups_and_internal_relabeling_give_20_orbits_for_three_terminals_plus_one_internal_vertex_and_90_for_four_plus_one
-    boundary: this_is_only_a_byte_stable_simple_graph_identity_and_small_orbit_accounting_primitive_without_connectivity_polynomial_probability_planarity_tiling_reduction_self_duality_threshold_candidate_search_or_negative_certificate
-    supports: [deduplicated_typed_objects_for_a_future_real_gadget_search]
+    source_refs: [SRC_TERMINAL_PARTITION_CANONICAL_MAIN, SRC_TERMINAL_GADGET_GRAPH_MAIN, SRC_BOUNDED_TERMINAL_GADGET_CENSUS_MAIN]
+    known_result: deterministic_encoding_and_the_exhaustive_one_internal_vertex_census_give_64_labeled_20_orbit_11_connected_4_connected_internal_degree_at_least3_three_terminal_graphs_and_1024_labeled_90_orbit_58_connected_27_connected_internal_degree_at_least3_four_terminal_graphs
+    boundary: this_is_a_byte_stable_key_and_complete_bounded_structural_filter_without_connectivity_probability_polynomial_planarity_periodic_tiling_series_parallel_reduction_self_duality_candidate_ranking_parameter_optimization_threshold_search_or_negative_certificate
+    supports: [deduplicated_and_finitely_filtered_typed_objects_for_one_declared_real_gadget_score]
     tensions: [reporting_an_encoding_as_a_candidate_or_probability_bound]
     excludes_only: [duplicate_labels_within_the_declared_small_graph_symmetry_actions]
-    reusable_data_refs: [analysis/gadget_graph_canonical_manifest.json]
-    dependency_group_refs: [terminal-gadget-canonical-exact-main]
-    missing_inputs: [one_real_typed_terminal_connectivity_polynomial_and_planarity_or_tiling_gate]
-    next_discriminator: bind_one_reproduced_real_gadget_baseline_and_candidate_to_exact_probability_intervals_using_the_canonical_key
+    reusable_data_refs: [analysis/gadget_graph_canonical_manifest.json, analysis/bounded_gadget_census.json, notes/bounded-gadget-census.md]
+    dependency_group_refs: [terminal-gadget-canonical-exact-main, bounded-terminal-gadget-census-exact-main]
+    missing_inputs: [one_predeclared_four_terminal_survivor_probability_polynomial_and_planarity_periodic_tiling_theorem_premise_gate]
+    next_discriminator: choose_one_canonical_survivor_from_the_27_four_terminal_connected_internal_degree_at_least3_orbits_then_compute_its_terminal_partition_polynomials_and_check_planarity_tiling_and_comparison_theorem_premises
     information_gain: medium
     compute_cost: low
     decision_experiments: [DX_REAL_GADGET_CERTIFICATE]
@@ -3792,8 +3818,14 @@ dependency_groups:
     kind: branch_only_two_size_external_Euler_marked_birth_blocks
     member_sizes: [325, 425]
     source_ref: SRC_EXTERNAL_EULER_BULK
-    metadata_paths: [results/server-20260830/P267-target1-external-Euler-2m/raw-summary/N325_2m/N325_2m.metadata.json, results/server-20260830/P267-target1-external-Euler-2m/raw-summary/N425_2m/N425_2m.metadata.json]
-    covariance_rule: within_each_size_all_external_near_far_D_S_and_completed_Gram_orthogonal_views_share_100_aligned_batches_while_sizes_use_declared_independent_seed_counter_groups
+    derived_source_refs: [SRC_PR267_EULER_OCCUPANCY_CLOCK]
+    metadata_paths: [results/server-20260830/P267-target1-external-Euler-2m/raw-summary/N325_2m/N325_2m.metadata.json, results/server-20260830/P267-target1-external-Euler-2m/raw-summary/N425_2m/N425_2m.metadata.json, analysis/euler_occupancy_clock_manifest.yaml, results/euler-occupancy-clock/latest.json]
+    metadata_source_refs:
+      results/server-20260830/P267-target1-external-Euler-2m/raw-summary/N325_2m/N325_2m.metadata.json: SRC_EXTERNAL_EULER_BULK
+      results/server-20260830/P267-target1-external-Euler-2m/raw-summary/N425_2m/N425_2m.metadata.json: SRC_EXTERNAL_EULER_BULK
+      analysis/euler_occupancy_clock_manifest.yaml: SRC_PR267_EULER_OCCUPANCY_CLOCK
+      results/euler-occupancy-clock/latest.json: SRC_PR267_EULER_OCCUPANCY_CLOCK
+    covariance_rule: within_each_size_all_external_near_far_D_S_Gram_occupancy_clock_fixed_n_occ_and_JS_projected_views_share_the_same_100_aligned_batches_while_sizes_use_declared_disjoint_counter_groups_and_none_of_these_views_are_additive_evidence
   - id: threshold-tail-flow-reuse
     kind: branch_only_correlated_shape_views_plus_declared_independent_P43_comparison
     member_sizes: [65, 85, 185, 265, 325, 425]
@@ -4148,6 +4180,11 @@ dependency_groups:
     source_ref: SRC_TERMINAL_GADGET_GRAPH_MAIN
     metadata_paths: [analysis/gadget_graph_canonical_manifest.json, scripts/gadget_graph_canonical.py]
     covariance_rule: the_S3_and_S4_small_graph_orbit_counts_are_exact_encoding_regressions_not_connectivity_probability_or_candidate_search_evidence
+  - id: bounded-terminal-gadget-census-exact-main
+    kind: main_integrated_exact_one_internal_vertex_structural_gadget_census
+    source_ref: SRC_BOUNDED_TERMINAL_GADGET_CENSUS_MAIN
+    metadata_paths: [analysis/bounded_gadget_census.json, notes/bounded-gadget-census.md, scripts/bounded_gadget_census.py]
+    covariance_rule: labeled_orbit_connected_and_internal_degree_filters_are_nested_counts_from_one_exhaustive_exact_census_not_independent_gadget_probability_or_bound_evidence
   - id: rational-Jordan-geometry-exact-main
     kind: main_integrated_exact_synthetic_rational_two_by_two_geometry_regression
     source_ref: SRC_RATIONAL_JORDAN_GEOMETRY_MAIN
@@ -4231,16 +4268,16 @@ decision_experiments:
     decision_output: compare_rank8_next_order_flatness_with_one_actual_TxTy_versus_TyTx_or_other_path_enriched_word_then_test_a_cross_hand_projector_only_if_the_rank8_relation_spaces_survive
   - id: DX_INDEPENDENT_SOURCE_RANK_ESCAPE
     attention_rank: 6
-    name: physically_independent_cross_boundary_winding_or_endpoint_hazard_source_rank_escape
-    status: candidate_mechanisms_named_exact_gate_not_yet_selected
+    name: physically_independent_cross_boundary_winding_or_rank_birth_hazard_source_rank_escape
+    status: exact_occupancy_clock_explains_a_majority_but_not_all_of_the_far_D_magnitude_and_direct_JS_projection_removes_less_than_one_percent_of_the_fixed_n_occ_residual_so_a_second_source_is_not_identified_but_density_clock_sufficiency_is_closed
     scientific_node_refs: [SN_EXTERNAL_EULER_RANK_BIRTH_BRIDGE, SN_TWO_OBSERVER_SOURCE_RANK_LANE, SN_CONNECTIVITY_RADICAL_HYPOTHESIS]
     observer_sector_refs: [bulk_euler_external, topology_typed, rank_birth_local, projective_completion]
-    source_refs: [SRC_EXTERNAL_EULER_BULK, SRC_TWO_OBSERVER_SOURCE_RANK_RESULT, SRC_PR267_FRONTIER_LITERATURE]
+    source_refs: [SRC_EXTERNAL_EULER_BULK, SRC_PR267_EULER_OCCUPANCY_CLOCK, SRC_TWO_OBSERVER_SOURCE_RANK_RESULT, SRC_PR267_FRONTIER_LITERATURE]
     dependency_group_refs: [external-euler-n325-n425, two-observer-source-rank-production-acquired]
     acquisition: exact_construction
     expected_model_space_reduction: very_high
     compute_cost: low
-    decision_output: one_nonreversible_n12_winding_seam_or_K1_K2_conditioned_Euler_source_exactly_gated_then_piloted_against_the_current_observers_to_split_or_reproduce_the_surviving_lane
+    decision_output: first_try_K1_age_K2_completion_and_DIRECT_RANK2_collision_on_retained_fields_then_define_one_nonreversible_n12_or_winding_seam_source_outside_sigma_n_occ_plus_span_JS_and_pilot_only_if_the_exact_gate_adds_a_new_column
   - id: DX_PROOF_CARRYING_MODEL_ELIMINATION
     attention_rank: 7
     name: exact_or_interval_verified_small_model_class_exclusion
@@ -4403,15 +4440,15 @@ decision_experiments:
   - id: DX_REAL_GADGET_CERTIFICATE
     attention_rank: 21
     name: real_end_to_end_gadget_comparison_certificate
-    status: one_exact_four_terminal_star_connectivity_polynomial_baseline_complete_published_bound_reproduction_and_candidate_comparison_missing
+    status: exact_star4_probability_baseline_and_bounded_one_internal_vertex_census_complete_with_27_connected_four_terminal_internal_degree_at_least3_orbits_but_candidate_polynomial_planarity_tiling_and_real_comparison_missing
     scientific_node_refs: [SN_SYNTHETIC_GADGET_COMPARISON_PROTOCOL, SN_TERMINAL_GADGET_GRAPH_ENCODING, SN_TERMINAL_RELIABILITY_STAR4, SN_EXACT_SITE_THRESHOLD_ROUTE_OBSTRUCTION]
     observer_sector_refs: [boundary, topology_typed]
-    source_refs: [SRC_SYNTHETIC_GADGET_COMPARISON_MAIN, SRC_TERMINAL_GADGET_GRAPH_MAIN, SRC_TERMINAL_RELIABILITY_STAR4_MAIN, SRC_EXACT_SITE_THRESHOLD_MAP_MAIN]
-    dependency_group_refs: [terminal-gadget-canonical-exact-main, terminal-reliability-star4-exact-main]
+    source_refs: [SRC_SYNTHETIC_GADGET_COMPARISON_MAIN, SRC_TERMINAL_GADGET_GRAPH_MAIN, SRC_TERMINAL_RELIABILITY_STAR4_MAIN, SRC_BOUNDED_TERMINAL_GADGET_CENSUS_MAIN, SRC_EXACT_SITE_THRESHOLD_MAP_MAIN]
+    dependency_group_refs: [terminal-gadget-canonical-exact-main, terminal-reliability-star4-exact-main, bounded-terminal-gadget-census-exact-main]
     acquisition: exact_construction
     expected_model_space_reduction: medium
     compute_cost: low
-    decision_output: use_the_completed_star_as_an_exact_pipeline_fixture_then_bind_one_reproduced_published_baseline_with_theorem_assumptions_and_independently_certified_probability_intervals_before_one_declared_candidate_comparison
+    decision_output: predeclare_one_structural_selection_rule_choose_one_of_the_27_four_terminal_survivors_compute_its_complete_exact_terminal_partition_polynomials_and_check_planarity_periodic_tiling_and_theorem_premises_before_comparing_to_the_star_and_one_reproduced_published_baseline
   - id: DX_RATIONAL_WIDTH_22_24_REVEAL
     attention_rank: 22
     name: Issue27_rational_width_22_24_prereveal_score
@@ -4430,26 +4467,26 @@ decision_experiments:
     status: completed_reuse_synthesis_followups_moved_to_projective_flux_and_independent_source_escape
     scientific_node_refs: [SN_ESSENTIAL_BIRTH_ARCHIVE, SN_RANK_BIRTH_PARITY_INSERTION, SN_ESSENTIAL_BIRTH_CLOCK_SPLIT, SN_TWO_ACTIVATION_H4_REANALYSIS, SN_ACTIVATION_CURVE_NODE_SPECTRUM, SN_ACTIVATION_TRANSPORT_SHAPE, SN_TOPOLOGY_INSERTION_CONTACT_NOGO, SN_P275_GLOBAL_LINE_FIELD_MAP_REJECTION, SN_EXTERNAL_EULER_RANK_BIRTH_BRIDGE, SN_PROJECTIVE_ESSENTIAL_BIRTH_FLUX, SN_TWO_OBSERVER_SOURCE_RANK_LANE]
     observer_sector_refs: [global_unmarked, global_rank_projector, topology_typed, rank_birth_local, projective_completion, matching_even, matching_odd, bulk_euler_external]
-    source_refs: [SRC_ESSENTIAL_BIRTH_HISTOGRAM_MAIN, SRC_PR267_ACTIVATION_FRONTIER, SRC_PR267_F3_ACTIVATION_FLUX, SRC_ESSENTIAL_BIRTH_CLOCK, SRC_RANK_BIRTH_PARITY_CHAIN, SRC_MARKED_BIRTH_MEAN_CHAIN, SRC_LOCAL_D4_UV_Q2, SRC_P275_CARTAN_CONTACT, SRC_EXTERNAL_EULER_BULK, SRC_TWO_OBSERVER_SOURCE_RANK_RESULT]
+    source_refs: [SRC_ESSENTIAL_BIRTH_HISTOGRAM_MAIN, SRC_PR267_ACTIVATION_FRONTIER, SRC_PR267_F3_ACTIVATION_FLUX, SRC_ESSENTIAL_BIRTH_CLOCK, SRC_RANK_BIRTH_PARITY_CHAIN, SRC_MARKED_BIRTH_MEAN_CHAIN, SRC_LOCAL_D4_UV_Q2, SRC_P275_CARTAN_CONTACT, SRC_EXTERNAL_EULER_BULK, SRC_PR267_EULER_OCCUPANCY_CLOCK, SRC_TWO_OBSERVER_SOURCE_RANK_RESULT]
     dependency_group_refs: [crn-2026104501-5000000000-5100000000, crn-2026104301-7000000000-7500000000, crn-2026104301-7500000000-8000000000, crn-2026105003-7000000000-7100000000, crn-2026105004-7000000000-7100000000, crn-2026105701-10000000000-10500000000, crn-2026105701-10500000000-11000000000, crn-2026105525-9400000000-9412000000, crn-2026105550-9400000000-9412000000, crn-2026105625-9400000000-9412000000, marked-birth-pilot-634040d, p275-global-line-180m, external-euler-n325-n425, p334-N65-projective-birth-20k, two-observer-source-rank-production-acquired]
     acquisition: existing_data_reuse
     expected_model_space_reduction: very_high
     compute_cost: low
-    completed_reuse_outputs: [results/two-activation-h4/latest.json, results/activation-curve-nodes/latest.json, results/activation-transport-shape/latest.json, results/two-activation-prism/latest.json, results/f3-activation-flux/latest.json, results/server-20260830/P267-two-observer-source-rank-2m/joint_score.json]
+    completed_reuse_outputs: [results/two-activation-h4/latest.json, results/activation-curve-nodes/latest.json, results/activation-transport-shape/latest.json, results/two-activation-prism/latest.json, results/f3-activation-flux/latest.json, results/euler-occupancy-clock/latest.json, results/server-20260830/P267-two-observer-source-rank-2m/joint_score.json]
     decision_output: completed_activation_shape_external_Euler_and_current_basis_source_rank_synthesis_with_live_followups_in_DX_PROJECTIVE_BIRTH_EXIT_FLUX_and_DX_INDEPENDENT_SOURCE_RANK_ESCAPE
   - id: DX_EXTERNAL_EULER_GRAM
     attention_rank: 24
-    name: stored_external_Euler_source_orthogonal_Gram_residual
+    name: stored_external_Euler_occupancy_clock_and_source_orthogonal_residual
     status: completed
     scientific_node_refs: [SN_EXTERNAL_EULER_RANK_BIRTH_BRIDGE]
     observer_sector_refs: [bulk_euler_external, rank_birth_local, matching_odd, matching_even]
-    source_refs: [SRC_EXTERNAL_EULER_BULK]
+    source_refs: [SRC_EXTERNAL_EULER_BULK, SRC_PR267_EULER_OCCUPANCY_CLOCK]
     dependency_group_refs: [external-euler-n325-n425]
     acquisition: existing_data_reuse
     expected_model_space_reduction: very_high
     compute_cost: none
-    completed_result: coherent_nonzero_Ofar_JDperp_retains_more_than_99p8_percent_of_far_vector_and_rejects_direct_JS_projection_in_the_declared_lattice_Gram_metric
-    decision_output: completed_direct_JS_projection_discriminator
+    completed_result: exact_occupancy_clock_accounts_for_53p14_and_56p16_percent_of_raw_far_D_magnitude_46p64_and_43p65_percent_survives_fixed_n_occ_plus_JS_and_the_JS_projection_retains_99p527_and_99p602_percent_of_the_fixed_n_occ_residual
+    decision_output: completed_density_clock_and_direct_JS_sufficiency_discriminator_without_second_source_identification
   - id: DX_TWO_OBSERVER_COUPLING
     attention_rank: 25
     name: common_flow_two_observer_source_coupling_determinant
