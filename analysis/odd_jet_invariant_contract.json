@@ -1,0 +1,28 @@
+{
+  "schema": "matching-one/odd-jet-invariants/v1",
+  "issue": 16,
+  "status": "exact_algebra_only_no_estimate",
+  "coordinate_convention": "M_tilde(u)=M(lambda*u)",
+  "derivative_orders": [1, 3, 5],
+  "synthetic_fixture": {
+    "derivatives": ["2", "-16", "384"],
+    "covariance": [
+      ["1/100", "0", "0"],
+      ["0", "4/25", "0"],
+      ["0", "0", "64"]
+    ],
+    "coordinate_rescales": ["2", "-3/2"]
+  },
+  "expected": {
+    "invariants": {"3": "-2", "5": "12"},
+    "invariant_covariance": [
+      ["37/400", "-9/10"],
+      ["-9/10", "145/16"]
+    ]
+  },
+  "claim_boundary": {
+    "included": "exact normalized odd derivatives, their Jacobian covariance propagation, and invariance under nonzero thermal-coordinate rescaling",
+    "excluded": "samples, finite-size estimates, correction fits, root uncertainty, cross-lattice comparison, and any decision about kappa3=-5/3",
+    "parent_issue": "remain open"
+  }
+}
