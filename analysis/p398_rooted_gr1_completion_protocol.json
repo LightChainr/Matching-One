@@ -1,0 +1,63 @@
+{
+  "schema": "matching-one/p398-rooted-gr1-completion-protocol/v1",
+  "status": "frozen_before_exact_completion",
+  "issues": [398, 333],
+  "base_commit": "c43b33481fda1a452537c4440478917c666262f6",
+  "question": "Can physically named rooted/source-to-landing connectivity responses fill the exact 2 trivial, 2 charge-one and 3 charge-two dimensions missing from the width-four grade-one Q-adic layer, without adding another terminal character?",
+  "base_layer": {
+    "module": "width-four circular noncrossing connectivity module",
+    "grade_one_dimension": 13,
+    "sector_dimensions": {"trivial": 5, "charge1_rational": 4, "charge2": 4},
+    "previously_tested_ranks": {"trivial": 3, "charge1_rational": 2, "charge2": 1},
+    "frozen_deficits": {"trivial": 2, "charge1_rational": 2, "charge2": 3}
+  },
+  "rooted_orbits": {
+    "AP": {
+      "meaning": "source i is joined to adjacent landing i+1 and the other two sites remain singleton",
+      "seed_state": [0, 0, 1, 2],
+      "orbit_size": 4
+    },
+    "OP": {
+      "meaning": "source i is joined to opposite landing i+2 and the other two sites remain singleton",
+      "seed_state": [0, 1, 0, 2],
+      "orbit_size": 2
+    },
+    "DP": {
+      "meaning": "the source-adjacent pair and complementary landing pair are both retained",
+      "seed_state": [0, 0, 1, 1],
+      "orbit_size": 2
+    }
+  },
+  "response_contract": {
+    "raw_column": "For rooted reference tau use c_tau=d/dQ G(Q)[:,tau] at Q=1, exactly the corresponding column of G1.",
+    "trivial_completion": ["sum(AP_0..AP_3)", "sum(OP_0,OP_1)"],
+    "charge1_completion": ["AP_0-AP_2", "AP_1-AP_3"],
+    "charge2_completion": ["AP_0-AP_1+AP_2-AP_3", "OP_0-OP_1", "DP_0-DP_1"],
+    "dimension": 7,
+    "no_fit": "All coefficients are frozen C4 character projectors; no endpoint column or amplitude is fitted."
+  },
+  "decision_rule": {
+    "complete": "Each sector gains exactly its frozen deficit and the combined old-plus-rooted grade-one response matrix has rank thirteen.",
+    "incomplete": "Report the deficient sector, exact rank and a primitive left-null functional annihilating every old-plus-rooted response in that sector.",
+    "minimality": "Seven new coordinates is the dimension lower bound 2+2+3. Reaching rank thirteen with seven proves minimality within linear grade-one completion."
+  },
+  "covariance_gate": {
+    "translation": "AP rotates as a four-cycle; OP and DP rotate as two-cycles. The projected action is I_2 on the two trivial coordinates, the standard C4 charge-one rotation on the AP doublet, and -I_3 on the three charge-two coordinates.",
+    "required": "Both raw response columns and their H-dual grade-one vectors must have zero exact translation residual."
+  },
+  "scope_boundary": [
+    "Width four and the already-certified grade-one layer only.",
+    "This is an exact span/completion certificate, not yet an affine endpoint/Gram/source closure test for a new extended module.",
+    "No terminal-character family, random production, continuum field or physical Jordan interpretation is added."
+  ],
+  "compute_contract": {
+    "arithmetic": "Python standard-library exact integers and fractions",
+    "expected_cost": "local seconds",
+    "monte_carlo": false,
+    "server": false
+  },
+  "frozen_inputs": {
+    "c43b334:results/p398-qadic-jantzen/latest.json": "d209823c3bbd5b6b1a23a3292f4c95339d87b96c5624e33f4325a264a2c03ddd",
+    "c43b334:scripts/p398_qadic_jantzen.py": "repository object at base commit"
+  }
+}
