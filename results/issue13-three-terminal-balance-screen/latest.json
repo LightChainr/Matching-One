@@ -1,0 +1,746 @@
+{
+  "candidate_counts": {
+    "connected_orbits": 11,
+    "internal_degree_at_least_3_orbits": 4
+  },
+  "claim_boundary": {
+    "excluded": "a square-site threshold formula, percolation bound, periodic tiling, self-dual embedding, critical manifold, or convergent gadget family",
+    "included": "exact terminal reliability and formal three-terminal balance roots for the complete connected three-terminal plus one-internal-vertex census",
+    "parent_issue": "remain open"
+  },
+  "decision": {
+    "closest_connected_candidate": "3:4:001101",
+    "closest_connected_is_primary": false,
+    "closest_connected_root": "0.61803398874989484820458683436563811772030917980576",
+    "exact_square_site_claims_certified": 0,
+    "primary_retained_distance": "0.05995759387653930229656674646137040799924864563186",
+    "primary_retained_for_structural_followup": "3:4:001011",
+    "primary_retained_root": "0.65270364466613930229656674646137040799924864563186"
+  },
+  "formal_balance": "P(000)-P(012)=0 in restricted-growth-string notation",
+  "interpretation": {
+    "elimination": "none of the bounded candidates is certified as an exact square-site construction by a balance-root match alone",
+    "exact": "all eleven connected canonical orbits have exact reliability polynomials and a unique formal all-connected/all-separate balance root in the open unit interval",
+    "screen": "the frozen target-distance ranking chooses one degree-filtered candidate for planarity, tiling, and dual-cell follow-up"
+  },
+  "issue": 13,
+  "probability_model": "one shared independent bond probability p",
+  "protocol": "predictions/p13_three_terminal_balance_screen_20260830.yaml",
+  "ranking": [
+    {
+      "absolute_distance_to_square_site_reference": "0.02528793796029484820458683436563811772030917980576",
+      "all_connected_bernstein_counts": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "all_connected_rank": 1,
+      "all_separate_bernstein_counts": [
+        1,
+        2,
+        0,
+        0
+      ],
+      "balance_bernstein_counts": [
+        -1,
+        -2,
+        0,
+        1
+      ],
+      "balance_probability_gap_at_reported_midpoint": "-1.675703E-58",
+      "canonical_graph_encoding": "3:4:001101",
+      "edge_count": 3,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "gadget_sha256": "a4104f511e560754ee4b1f061facafff96e2e0d9c6f76db59caa041977ef5e4c",
+      "internal_degree": 2,
+      "labeled_orbit_multiplicity": 6,
+      "nonzero_terminal_partitions": 4,
+      "primary_subset": false,
+      "primitive_balance_power_coefficients_low_to_high": [
+        -1,
+        1,
+        1
+      ],
+      "proper_partial_partition_mass_at_root": "0.52786404500042060718165266253744752911876328077695",
+      "root_decimal": "0.61803398874989484820458683436563811772030917980576",
+      "root_isolation": {
+        "bits": 192,
+        "lower": "3879462223309917287578862680008231480301264909000893428305/6277101735386680763835789423207666416102355444464034512896",
+        "upper": "1939731111654958643789431340004115740150632454500446714153/3138550867693340381917894711603833208051177722232017256448"
+      }
+    },
+    {
+      "absolute_distance_to_square_site_reference": "0.05995759387653930229656674646137040799924864563186",
+      "all_connected_bernstein_counts": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "all_connected_rank": 2,
+      "all_separate_bernstein_counts": [
+        1,
+        3,
+        0,
+        0
+      ],
+      "balance_bernstein_counts": [
+        -1,
+        -3,
+        0,
+        1
+      ],
+      "balance_probability_gap_at_reported_midpoint": "-1.710988E-59",
+      "canonical_graph_encoding": "3:4:001011",
+      "edge_count": 3,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "gadget_sha256": "f73c61408b837ea7583995e6208dbb0abd5f1e6f388d23bdffca9f4a0449fc53",
+      "internal_degree": 3,
+      "labeled_orbit_multiplicity": 1,
+      "nonzero_terminal_partitions": 5,
+      "primary_rank": 1,
+      "primary_subset": true,
+      "primitive_balance_power_coefficients_low_to_high": [
+        -1,
+        0,
+        3,
+        -1
+      ],
+      "proper_partial_partition_mass_at_root": "0.44386771343722898109051037036033274324351386359124",
+      "root_decimal": "0.65270364466613930229656674646137040799924864563186",
+      "root_isolation": {
+        "bits": 192,
+        "lower": "4097087180627034454075375037133351602100684344606629628061/6277101735386680763835789423207666416102355444464034512896",
+        "upper": "2048543590313517227037687518566675801050342172303314814031/3138550867693340381917894711603833208051177722232017256448"
+      }
+    },
+    {
+      "absolute_distance_to_square_site_reference": "0.09274605078960000000000000000000000000000000000000",
+      "all_connected_bernstein_counts": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "all_connected_rank": 3,
+      "all_separate_bernstein_counts": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "balance_bernstein_counts": [
+        -1,
+        -1,
+        1,
+        1
+      ],
+      "balance_probability_gap_at_reported_midpoint": "-1.593092E-58",
+      "canonical_graph_encoding": "3:4:010101",
+      "edge_count": 3,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "gadget_sha256": "e06edc384333d224fb3aed31c18660875b6fccad7f1ac3906bbd91c20c687cc2",
+      "internal_degree": 1,
+      "labeled_orbit_multiplicity": 3,
+      "nonzero_terminal_partitions": 4,
+      "primary_subset": false,
+      "primitive_balance_power_coefficients_low_to_high": [
+        -1,
+        2
+      ],
+      "proper_partial_partition_mass_at_root": "0.50000000000000000000000000000000000000000000000000",
+      "root_decimal": "0.50000000000000000000000000000000000000000000000000",
+      "root_isolation": {
+        "bits": 192,
+        "lower": "3138550867693340381917894711603833208051177722232017256447/6277101735386680763835789423207666416102355444464034512896",
+        "upper": "1/2"
+      }
+    },
+    {
+      "absolute_distance_to_square_site_reference": "0.09274605078960000000000000000000000000000000000000",
+      "all_connected_bernstein_counts": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "all_connected_rank": 4,
+      "all_separate_bernstein_counts": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "balance_bernstein_counts": [
+        -1,
+        -1,
+        1,
+        1
+      ],
+      "balance_probability_gap_at_reported_midpoint": "-1.593092E-58",
+      "canonical_graph_encoding": "3:4:010110",
+      "edge_count": 3,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "gadget_sha256": "c390f72914feed97808d9978a7e8c1435a408ca2272cb3f06f25eda7b6fb9be7",
+      "internal_degree": 1,
+      "labeled_orbit_multiplicity": 6,
+      "nonzero_terminal_partitions": 4,
+      "primary_subset": false,
+      "primitive_balance_power_coefficients_low_to_high": [
+        -1,
+        2
+      ],
+      "proper_partial_partition_mass_at_root": "0.50000000000000000000000000000000000000000000000000",
+      "root_decimal": "0.50000000000000000000000000000000000000000000000000",
+      "root_isolation": {
+        "bits": 192,
+        "lower": "3138550867693340381917894711603833208051177722232017256447/6277101735386680763835789423207666416102355444464034512896",
+        "upper": "1/2"
+      }
+    },
+    {
+      "absolute_distance_to_square_site_reference": "0.09274605078960000000000000000000000000000000000000",
+      "all_connected_bernstein_counts": [
+        0,
+        0,
+        0,
+        3,
+        1
+      ],
+      "all_connected_rank": 5,
+      "all_separate_bernstein_counts": [
+        1,
+        3,
+        0,
+        0,
+        0
+      ],
+      "balance_bernstein_counts": [
+        -1,
+        -3,
+        0,
+        3,
+        1
+      ],
+      "balance_probability_gap_at_reported_midpoint": "-1.991365E-58",
+      "canonical_graph_encoding": "3:4:001111",
+      "edge_count": 4,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "gadget_sha256": "ca968e062f167403560ffba6c8447f45fe3d8f102ca664fbe79abf7441a85d8a",
+      "internal_degree": 3,
+      "labeled_orbit_multiplicity": 3,
+      "nonzero_terminal_partitions": 5,
+      "primary_rank": 2,
+      "primary_subset": true,
+      "primitive_balance_power_coefficients_low_to_high": [
+        -1,
+        1,
+        3,
+        -2
+      ],
+      "proper_partial_partition_mass_at_root": "0.50000000000000000000000000000000000000000000000000",
+      "root_decimal": "0.50000000000000000000000000000000000000000000000000",
+      "root_isolation": {
+        "bits": 192,
+        "lower": "3138550867693340381917894711603833208051177722232017256447/6277101735386680763835789423207666416102355444464034512896",
+        "upper": "1/2"
+      }
+    },
+    {
+      "absolute_distance_to_square_site_reference": "0.14770418287697119142219487100641048106728886247091",
+      "all_connected_bernstein_counts": [
+        0,
+        0,
+        1,
+        3,
+        1
+      ],
+      "all_connected_rank": 6,
+      "all_separate_bernstein_counts": [
+        1,
+        2,
+        0,
+        0,
+        0
+      ],
+      "balance_bernstein_counts": [
+        -1,
+        -2,
+        1,
+        3,
+        1
+      ],
+      "balance_probability_gap_at_reported_midpoint": "-2.133198E-59",
+      "canonical_graph_encoding": "3:4:010111",
+      "edge_count": 4,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "gadget_sha256": "da1e7825cfaf2fbbb9c83eb14103dcb086725a26b5d1d78c8abe12b12cf89153",
+      "internal_degree": 2,
+      "labeled_orbit_multiplicity": 6,
+      "nonzero_terminal_partitions": 4,
+      "primary_subset": false,
+      "primitive_balance_power_coefficients_low_to_high": [
+        -1,
+        2,
+        1,
+        -1
+      ],
+      "proper_partial_partition_mass_at_root": "0.50604079256506587789998046398304075747090107641439",
+      "root_decimal": "0.44504186791262880857780512899358951893271113752909",
+      "root_isolation": {
+        "bits": 192,
+        "lower": "2793573081394092252158085268820164701374225730306374443583/6277101735386680763835789423207666416102355444464034512896",
+        "upper": "43649579396782691439970082325315073458972277036037100681/98079714615416886934934209737619787751599303819750539264"
+      }
+    },
+    {
+      "absolute_distance_to_square_site_reference": "0.16695938447115548038161371112880363937941844546798",
+      "all_connected_bernstein_counts": [
+        0,
+        0,
+        1,
+        4,
+        1
+      ],
+      "all_connected_rank": 7,
+      "all_separate_bernstein_counts": [
+        1,
+        2,
+        0,
+        0,
+        0
+      ],
+      "balance_bernstein_counts": [
+        -1,
+        -2,
+        1,
+        4,
+        1
+      ],
+      "balance_probability_gap_at_reported_midpoint": "1.585659E-58",
+      "canonical_graph_encoding": "3:4:011110",
+      "edge_count": 4,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "gadget_sha256": "159f78cad51f009fdcb49318deae414df24e2bdfcb0d3e12ac62f442929fb0ef",
+      "internal_degree": 2,
+      "labeled_orbit_multiplicity": 3,
+      "nonzero_terminal_partitions": 5,
+      "primary_subset": false,
+      "primitive_balance_power_coefficients_low_to_high": [
+        -1,
+        2,
+        1,
+        0,
+        -1
+      ],
+      "proper_partial_partition_mass_at_root": "0.46011114368030936211478229852120008077337655809967",
+      "root_decimal": "0.42578666631844451961838628887119636062058155453202",
+      "root_isolation": {
+        "bits": 192,
+        "lower": "2672706222052017669960924631844611816114474898238204392579/6277101735386680763835789423207666416102355444464034512896",
+        "upper": "668176555513004417490231157961152954028618724559551098145/1569275433846670190958947355801916604025588861116008628224"
+      }
+    },
+    {
+      "absolute_distance_to_square_site_reference": "0.21820286423886069409407190980125645649500012026889",
+      "all_connected_bernstein_counts": [
+        0,
+        0,
+        1,
+        8,
+        5,
+        1
+      ],
+      "all_connected_rank": 8,
+      "all_separate_bernstein_counts": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0
+      ],
+      "balance_bernstein_counts": [
+        -1,
+        -3,
+        1,
+        8,
+        5,
+        1
+      ],
+      "balance_probability_gap_at_reported_midpoint": "-1.671513E-58",
+      "canonical_graph_encoding": "3:4:011111",
+      "edge_count": 5,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "gadget_sha256": "5718dc16d676c5d29ba79d3a8ba857a4a9b2664e1a3db1dfc6d874ae62daea87",
+      "internal_degree": 3,
+      "labeled_orbit_multiplicity": 3,
+      "nonzero_terminal_partitions": 5,
+      "primary_rank": 3,
+      "primary_subset": true,
+      "primitive_balance_power_coefficients_low_to_high": [
+        -1,
+        2,
+        3,
+        -3,
+        -1,
+        1
+      ],
+      "proper_partial_partition_mass_at_root": "0.46465892891518959184016558483720322698306239727461",
+      "root_decimal": "0.37454318655073930590592809019874354350499987973111",
+      "root_isolation": {
+        "bits": 192,
+        "lower": "1175522843137451504049863704323584038914774900101846139621/3138550867693340381917894711603833208051177722232017256448",
+        "upper": "2351045686274903008099727408647168077829549800203692279243/6277101735386680763835789423207666416102355444464034512896"
+      }
+    },
+    {
+      "absolute_distance_to_square_site_reference": "0.24544969545573930229656674646137040799924864563186",
+      "all_connected_bernstein_counts": [
+        0,
+        0,
+        3,
+        4,
+        1
+      ],
+      "all_connected_rank": 9,
+      "all_separate_bernstein_counts": [
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "balance_bernstein_counts": [
+        -1,
+        -1,
+        3,
+        4,
+        1
+      ],
+      "balance_probability_gap_at_reported_midpoint": "1.710988E-59",
+      "canonical_graph_encoding": "3:4:110101",
+      "edge_count": 4,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "gadget_sha256": "8c8ccf5158924b67d96dcd53bc11f49e0b9783a39a14ff55fdde32b9a35782cf",
+      "internal_degree": 1,
+      "labeled_orbit_multiplicity": 3,
+      "nonzero_terminal_partitions": 5,
+      "primary_subset": false,
+      "primitive_balance_power_coefficients_low_to_high": [
+        -1,
+        3,
+        0,
+        -1
+      ],
+      "proper_partial_partition_mass_at_root": "0.44386771343722898109051037036033274324351386359124",
+      "root_decimal": "0.34729635533386069770343325353862959200075135436814",
+      "root_isolation": {
+        "bits": 192,
+        "lower": "1090007277379823154880207193037157407000835549928702442417/3138550867693340381917894711603833208051177722232017256448",
+        "upper": "2180014554759646309760414386074314814001671099857404884835/6277101735386680763835789423207666416102355444464034512896"
+      }
+    },
+    {
+      "absolute_distance_to_square_site_reference": "0.26925733331880580730057165200747795000765821627200",
+      "all_connected_bernstein_counts": [
+        0,
+        0,
+        3,
+        9,
+        5,
+        1
+      ],
+      "all_connected_rank": 10,
+      "all_separate_bernstein_counts": [
+        1,
+        2,
+        0,
+        0,
+        0,
+        0
+      ],
+      "balance_bernstein_counts": [
+        -1,
+        -2,
+        3,
+        9,
+        5,
+        1
+      ],
+      "balance_probability_gap_at_reported_midpoint": "1.627770E-58",
+      "canonical_graph_encoding": "3:4:110111",
+      "edge_count": 5,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "gadget_sha256": "8c68a5d920f34fd4d44af900e6d28761a0cc4d4ec52ed013a60c63d2a519cefa",
+      "internal_degree": 2,
+      "labeled_orbit_multiplicity": 3,
+      "nonzero_terminal_partitions": 5,
+      "primary_subset": false,
+      "primitive_balance_power_coefficients_low_to_high": [
+        -1,
+        3,
+        1,
+        -2,
+        -1,
+        1
+      ],
+      "proper_partial_partition_mass_at_root": "0.44556528532805660922239103026048459578001427501746",
+      "root_decimal": "0.32348871747079419269942834799252204999234178372800",
+      "root_isolation": {
+        "bits": 192,
+        "lower": "2030571589813933903185372593930130750572976569463239452991/6277101735386680763835789423207666416102355444464034512896",
+        "upper": "31727681090842717237271446780158292977702758897863116453/98079714615416886934934209737619787751599303819750539264"
+      }
+    },
+    {
+      "absolute_distance_to_square_site_reference": "0.29985283197614752440084436210484903928483593768847",
+      "all_connected_bernstein_counts": [
+        0,
+        0,
+        3,
+        17,
+        15,
+        6,
+        1
+      ],
+      "all_connected_rank": 11,
+      "all_separate_bernstein_counts": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "balance_bernstein_counts": [
+        -1,
+        -3,
+        3,
+        17,
+        15,
+        6,
+        1
+      ],
+      "balance_probability_gap_at_reported_midpoint": "2.283740E-58",
+      "canonical_graph_encoding": "3:4:111111",
+      "edge_count": 6,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "gadget_sha256": "233ca3d92ef99b29fe25a4b330600c9cff799de6010e43dc284d00f01ac6aa41",
+      "internal_degree": 3,
+      "labeled_orbit_multiplicity": 1,
+      "nonzero_terminal_partitions": 5,
+      "primary_rank": 4,
+      "primary_subset": true,
+      "primitive_balance_power_coefficients_low_to_high": [
+        -1,
+        3,
+        3,
+        -5,
+        -3,
+        6,
+        -2
+      ],
+      "proper_partial_partition_mass_at_root": "0.43933982822017871339873345684272644107274609346729",
+      "root_decimal": "0.29289321881345247559915563789515096071516406231153",
+      "root_isolation": {
+        "bits": 192,
+        "lower": "1838520532096913349496613831509136502079734397504592304051/6277101735386680763835789423207666416102355444464034512896",
+        "upper": "459630133024228337374153457877284125519933599376148076013/1569275433846670190958947355801916604025588861116008628224"
+      }
+    }
+  ],
+  "schema": "matching-one/bounded-three-terminal-balance-screen/v1",
+  "source_commit": "e7d63b4c08cfb63a9c027959087c8beaa6228fdf",
+  "square_site_reference": "0.5927460507896",
+  "status": "exact_bounded_three_terminal_balance_screen"
+}
