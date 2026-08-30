@@ -144,7 +144,6 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
             "scripts/score_norm5_thermal_jet.py",
             "scripts/score_p159_pell_hex_filter.py",
             "scripts/score_p231_vacuum_kdv_sector.py",
-            "scripts/score_p48_new_geometry_channels.py",
             "scripts/score_p49_fullcurve_doubling.py",
             "scripts/score_p50_fullcurve_n290.py",
             "scripts/score_rank_gap_boundary_targets.py",
@@ -210,6 +209,14 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
         )
         self.assertEqual(
             statuses["scripts/score_p48_sprime_frozen_typed.py"],
+            "direct_typed_entrypoint",
+        )
+        self.assertEqual(
+            statuses["scripts/score_p48_new_geometry_channels.py"],
+            "covered_frozen_kernel",
+        )
+        self.assertEqual(
+            statuses["scripts/score_p48_new_geometry_channels_typed.py"],
             "direct_typed_entrypoint",
         )
         self.assertEqual(
