@@ -1,16 +1,15 @@
 # Scorer descriptor-adoption inventory
 
-In this checked snapshot, the exact `scripts/*score*.py` corpus contains 58
-files. Python-AST inspection finds twenty-seven
+In this checked snapshot, the exact `scripts/*score*.py` corpus contains 59
+files. Python-AST inspection finds twenty-eight
 direct typed entrypoints importing both `ObservableDescriptor` and
-`map_observable` from `wrapping_channels`. Twenty-six frozen kernels are covered by
+`map_observable` from `wrapping_channels`. Twenty-seven frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Four paths are confirmed channel-bearing and
+a descriptor is not applicable. Three paths are confirmed channel-bearing and
 require typed migrations:
 `score_norm4_production.py`,
-`score_norm4_thermal_jet.py`, `score_norm5_thermal_jet.py`,
-`score_p49_fullcurve_doubling.py`. No scorer remains outside a registered
+`score_norm4_thermal_jet.py`, `score_norm5_thermal_jet.py`. No scorer remains outside a registered
 audit class.
 
 This closes an inventory gap: the repository now has a deterministic list,
@@ -30,7 +29,7 @@ unchanged.
 but no current scorer has that status. Static membership alone would not prove
 a semantic bug, data-provenance failure, or need for migration; any future
 corpus addition must still be reviewed before modification. Issue #146 remains
-open because inventory classification is not the same as implementing the 4
+open because inventory classification is not the same as implementing the 3
 required typed migrations.
 
 `score_axis_pair_annihilator.py` and its stable-reader entrypoint are now
@@ -118,14 +117,17 @@ scoring. Target sizes, leading power, four-model chronological order,
 source-plus-target covariance, target independence, and no-refit semantics are
 unchanged.
 
-`score_p49_fullcurve_doubling.py` is migration-required. One entrypoint emits
-matching tails and slopes, thermal `X_even/X_odd` contrasts, signed lineage
-root gaps, and four normalized P4 projectors across two doubling lineages. It
-also distinguishes the unnormalized H4 sign reversal from the positive ratio
-for size-normalized P4 quantities. A migration needs separate typed quantity
-families plus explicit lineage, sign, and normalization maps; a single channel
-string is insufficient. Numerical full-curve, covariance, frozen-model, and
-report contracts remain unchanged.
+`score_p49_fullcurve_doubling.py` is now a covered frozen kernel. Its typed
+entrypoint validates the registered raw matching child-order reversal
+`(-1,0)` across both doubling lineages and four angular-normalized P4 maps
+`(1,0)` before replaying the four canonical histograms. The semantic gate
+freezes size/lineage/level order, synchronized delete-one construction,
+thermal-even/odd response families, slope and implicit-root quantities, four
+projector powers, joint-score order, lineage multipliers, frozen S-prime model
+order, input identities, and no-refit boundary. The normalized positive P4
+ratio remains distinct from the unnormalized negative H4 lineage character.
+All families reuse the same aligned histogram blocks and are not promoted to
+independent evidence; frozen numerical conclusions are unchanged.
 
 `score_p50_fullcurve_n290.py` is now a covered frozen kernel. Its typed entrypoint validates four exact identity maps for the raw thermal-even contrast, raw matching-function value, angular-normalized P4_S, and angular-normalized P4_D before replaying the scorer. The quantity contract separately freezes N145/N290 representation order, lineage signs, independent RNG streams, nine-feature order, five scoring stages, response coordinates, and `Cov_child + ratio^2 Cov_parent`. The wrapper rejects kernel, prediction, schema, size, feature, P4, scoring-order, or covariance drift before adding semantic annotations; all nine quantities at a size remain correlated views of one histogram block, not independent evidence.\n\n`score_p50_sprime_n290.py` is now a covered frozen kernel. Its typed
 entrypoint validates the registered exact identity map for the cross/even,
