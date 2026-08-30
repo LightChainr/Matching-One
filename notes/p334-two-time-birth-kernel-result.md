@@ -31,6 +31,19 @@ small finite-size/shape differences.  Thus the useful observation is a stable
 three-mode hierarchy, not exact finite-size collapse or an exact rank-three
 claim.
 
+A post-reveal eigenspace comparison sharpens this.  The N325-to-N425 angle of
+mode one is `1.89--1.96` degrees.  Modes two and three rotate into each other,
+but their two-dimensional span has principal angles at most `1.97` degrees.
+Most strikingly, the complete leading-three subspace has principal angles
+
+```text
+first orientation:  0.0015, 0.1782, 0.3910 degrees
+second orientation: 0.0072, 0.1051, 0.4317 degrees.
+```
+
+The next geometry analysis should therefore project onto this stable subspace
+before assigning names to individual modes two and three.
+
 ## Exact reconstruction gate
 
 For every frozen pair `p<=q`, both orientations and both sizes satisfy
@@ -55,4 +68,3 @@ joint birth kernel; they are not products of independent single-time samples.
   use disjoint seeds and counter domains.
 - Next lift: project the newly acquired current-`k0` geometry covariates onto
   the second and third temporal eigenmodes and test which mode survives.
-
