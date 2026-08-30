@@ -49,27 +49,29 @@ Six items that were still described as preparation are now results.
 
 ## Default attention now
 
-### 1. Consume P250 N505 intermediate-state rows without new samples
+### Completed after the refresh: P250 state increment
 
-The completed `defined.csv` stores the typed `D0`, `J0`, `J_after_D` and
-`D_after_J` intermediate objects together with outcomes on 400 batch clusters.
-Use them now. The first decision is whether a compact pre-outcome state block
-predicts held-out `Rminus` beyond a low-dimensional residue-Fourier baseline.
-The terminal positive cone cannot answer that question because its omitted
-zero residue makes the completion nonunique.
+The completed `defined.csv` stores typed intermediate objects together with
+outcomes on 400 batch clusters. Draft reanalysis `eb29446` has now used them in
+ten whole-batch folds. `M_spec` held-out MSE is `.70173`; adding only
+pre-outcome antisymmetric rank, basis, site-phase and component-change state
+lowers it to `.48438`, a 30.97% row-weighted gain. The equal-batch loss
+reduction is `.21736+/-.01258` (`t=17.28`), and both hands improve.
 
-The zero-sample reanalysis should retain:
+The result retains:
 
 - the 400 batch/replica clusters as the inference unit;
-- child and hand fixed effects plus a small residue-Fourier baseline;
-- only pre-outcome intermediate-state coordinates in the enriched model;
-- cross-fitted held-out loss, prediction covariance and a no-leakage audit;
-- a literal `not_scoreable` boundary for any desired periodogram coordinate
-  absent from the archive.
+- training-only selection of two residue frequencies per hand;
+- only pre-outcome coordinates in the enriched model;
+- the literal boundary that endpoint fields, periodograms and `Delta P-` are
+  absent and cannot be reconstructed.
 
-This separates observed spatial heterogeneity from intermediate-state
-information without calling either a continuum field, unique spectrum or
-hidden-state count.
+This establishes an intermediate-state increment beyond the declared
+low-dimensional nonzero-residue baseline without calling it a continuum
+field, unique spectrum or hidden-state count. Both enriched residuals retain a
+common `k=36` peak. A future P250 row should target that orthogonal high-
+frequency coordinate while recording the complete terminal periodogram; the
+current production and zero-sample analysis leave the immediate queue.
 
 ### 2. Consume P429 100k common-safe rows
 

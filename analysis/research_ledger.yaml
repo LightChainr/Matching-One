@@ -2729,6 +2729,19 @@ branch_sources:
       - results/server-20260830/P250-adaptive-spatial-joint-N505-200k/run.json
       - results/server-20260830/P250-adaptive-spatial-joint-N505-200k/score.json
     claim_boundary: conditional_residue_heterogeneity_is_resolved_and_source_amplitude_transfer_fails_but_the_positive_Fourier_cone_is_nonidentifying_because_residue_zero_is_unobserved_so_no_unique_spectrum_state_count_or_field_is_selected
+  - id: SRC_PR267_P250_ADAPTIVE_STATE_REANALYSIS
+    integration_status: open_pr
+    pr: 267
+    ref: research/navigation-priority-refresh-20260829
+    commit: eb29446
+    freeze_commit: e63c5a5
+    result_status: completed_zero_sample_ten_fold_batch_clustered_preoutcome_state_increment_reanalysis
+    paths:
+      - analysis/p250_adaptive_spatial_state_reanalysis_freeze.json
+      - scripts/score_p250_adaptive_spatial_state_reanalysis.py
+      - analysis/p250_adaptive_spatial_state_reanalysis_result.json
+      - notes/P250_ADAPTIVE_SPATIAL_STATE_REANALYSIS_20260830.md
+    claim_boundary: preoutcome_typed_state_adds_heldout_information_beyond_a_low_dimensional_sampled_nonzero_residue_Fourier_baseline_but_the_archive_cannot_reconstruct_terminal_DeltaPminus_or_test_the_complete_terminal_spectrum
   - id: SRC_P418_RADIUS_RESOLVED_ELIMINATION
     integration_status: branch_only
     ref: analysis/p418-radius-resolved-elimination-20260830
@@ -4603,16 +4616,16 @@ scientific_nodes:
     observer_sectors: [topology_typed, deck_charged, direction_character]
     geometries: [gaussian_cover]
     acquisition: [small_pilot, new_production, existing_data_reuse]
-    source_refs: [SRC_P250_ADAPTIVE_SUPPORT_WITNESS, SRC_P250_ADAPTIVE_MEDIUM_PILOT, SRC_PR416_P250_POSITIVE_SPATIAL_SPECTRUM, SRC_P250_ADAPTIVE_SPATIAL_N505_RESULT]
-    known_result: N325_N425_have_positive_Rminus_and_N505_200k_400_records_5351_defined_rows_zero_typed_failures_resolved_conditional_residue_heterogeneity_and_decisive_failure_of_the_source_frozen_amplitude_transfer
-    boundary: the_zero_distance_positive_Fourier_cone_is_nonidentifying_because_residue_zero_is_unobserved_and_the_result_is_not_intrinsic_memory_hidden_state_count_unique_spectrum_or_continuum_field
-    supports: [adaptive_state_dependent_order_as_a_real_production_observable, intermediate_state_versus_residue_Fourier_existing_data_discrimination]
+    source_refs: [SRC_P250_ADAPTIVE_SUPPORT_WITNESS, SRC_P250_ADAPTIVE_MEDIUM_PILOT, SRC_PR416_P250_POSITIVE_SPATIAL_SPECTRUM, SRC_P250_ADAPTIVE_SPATIAL_N505_RESULT, SRC_PR267_P250_ADAPTIVE_STATE_REANALYSIS]
+    known_result: N505_200k_400_resolves_conditional_residue_heterogeneity_and_the_zero_sample_ten_fold_clustered_reanalysis_finds_preoutcome_typed_state_reduces_joint_heldout_MSE_from_0p70173_to_0p48438_with_30p97_percent_row_weighted_gain_and_equal_batch_t_17p28
+    boundary: the_baseline_is_only_a_low_dimensional_conditional_Rminus_model_on_sampled_nonzero_residues_because_endpoint_fields_and_periodograms_are_absent_so_the_result_does_not_exclude_the_complete_terminal_spectrum_or_identify_intrinsic_memory_hidden_state_count_or_field
+    supports: [adaptive_state_dependent_order_as_a_real_production_observable, retained_preoutcome_state_beyond_the_declared_low_dimensional_residue_baseline]
     tensions: [endpoint_only_rank_as_state_count, fixed_overwrite_order, need_for_another_aggregate_pilot]
     excludes_only: [zero_or_sign_reversing_response_in_the_two_declared_medium_geometries_at_the_pilot_precision]
-    reusable_data_refs: [analysis/p250_adaptive_order_pilot_result.json, analysis/p250_adaptive_spatial_joint_production_result.json, results/server-20260830/P250-adaptive-spatial-joint-N505-200k/defined.csv]
+    reusable_data_refs: [analysis/p250_adaptive_order_pilot_result.json, analysis/p250_adaptive_spatial_joint_production_result.json, results/server-20260830/P250-adaptive-spatial-joint-N505-200k/defined.csv, analysis/p250_adaptive_spatial_state_reanalysis_result.json]
     dependency_group_refs: [p250-adaptive-order-N325-N425-20k, p250-adaptive-spatial-N505-200k]
-    missing_inputs: [full_terminal_DeltaPminus_is_not_reconstructible_from_the_archive_and_must_remain_not_scoreable]
-    next_discriminator: crossfit_a_compact_residue_Fourier_baseline_versus_archived_preoutcome_intermediate_state_on_the_400_batch_replica_clusters
+    missing_inputs: [full_terminal_endpoint_fields_or_periodograms_and_DeltaPminus_are_not_reconstructible_from_the_archive]
+    next_discriminator: only_if_this_lane_retains_priority_acquire_one_aligned_full_terminal_periodogram_plus_the_same_preoutcome_state_block_to_compare_complete_spectrum_against_state_without_repeating_the_current_archive
     information_gain: very_high
     compute_cost: moderate
     decision_experiments: [DX_P250_BIVARIATE_HANKEL]
@@ -5302,8 +5315,8 @@ dependency_groups:
     kind: branch_only_N505_two_child_two_hand_adaptive_spatial_production_with_400_batch_clusters
     member_sizes: [505]
     source_ref: SRC_P250_ADAPTIVE_SPATIAL_N505_RESULT
-    metadata_paths: [results/server-20260830/P250-adaptive-spatial-joint-N505-200k/run.json, results/server-20260830/P250-adaptive-spatial-joint-N505-200k/batches.csv, results/server-20260830/P250-adaptive-spatial-joint-N505-200k/defined.csv]
-    covariance_rule: hand_child_residue_intermediate_Fourier_and_outcome_views_share_replica_clusters_delete_or_hold_out_whole_batches_and_never_add_them_as_independent_evidence
+    metadata_paths: [results/server-20260830/P250-adaptive-spatial-joint-N505-200k/run.json, results/server-20260830/P250-adaptive-spatial-joint-N505-200k/batches.csv, results/server-20260830/P250-adaptive-spatial-joint-N505-200k/defined.csv, analysis/p250_adaptive_spatial_state_reanalysis_result.json]
+    covariance_rule: hand_child_residue_intermediate_Fourier_outcome_and_crossfit_views_share_replica_clusters_hold_out_whole_batches_and_never_add_the_production_and_reanalysis_as_independent_evidence
   - id: p337-risk-hazard-four-generation-reuse
     kind: open_pr_existing_data_reuse_of_four_independent_natural_current_generation_blocks
     member_sizes: [85, 170, 340, 680]
@@ -5318,54 +5331,66 @@ dependency_groups:
     covariance_rule: determinant_Gram_residual_mark12_and_risk_composition_views_share_batches_within_each_size_while_N325_and_N425_are_independent_blocks
 decision_experiments:
   - id: DX_ETOP_PRODUCTION_LOCALIZATION
-    attention_rank: 3
+    attention_rank: 5
     name: norm4_Phase_E_local_singlet_replacement_of_the_surviving_clock_plane
-    status: integrated_energy_is_exactly_Etop_over_two_the_radius1_one_point_pilot_stops_at_20k_and_A_plus_C_survives_so_PhaseE_requires_new_local_mixed_moments_not_recovery_or_another_mean_H4_row
+    status: completed_radius1_mixed_B_B2_I0B_I2B_row_is_not_selected_and_PhaseE_reopens_only_with_a_genuinely_distinct_singlet_scale_or_field_interface
     scientific_node_refs: [SN_NORM4_ETOP_PHASE_D, SN_PHASE_E_ALIAS_AND_LOCAL_ENERGY, SN_ETOP_CLOCK_PLANE]
     observer_sector_refs: [global_rank_projector, topology_typed, matching_even, bulk_energy_logpair, direction_character]
-    source_refs: [SRC_PR267_NORM4_PHASE_D, SRC_P154_PHASE_E_INTEGRATED_ALIAS, SRC_P154_PHASE_E_LOCAL_SINGLET_PILOT, SRC_ETOP_CLOCK_PLANE]
-    dependency_group_refs: [p154-phase-e-integrated-alias-existing-archives, p154-phase-e-local-singlet-N65-N130-20k, etop-clock-plane-production-plus-P205]
-    acquisition: new_production
+    source_refs: [SRC_PR267_NORM4_PHASE_D, SRC_P154_PHASE_E_INTEGRATED_ALIAS, SRC_P154_PHASE_E_LOCAL_SINGLET_PILOT, SRC_ETOP_CLOCK_PLANE, SRC_P154_PHASE_E_MIXED_PLANE]
+    dependency_group_refs: [p154-phase-e-integrated-alias-existing-archives, p154-phase-e-local-singlet-N65-N130-20k, p154-phase-e-mixed-plane-N65-N130-20k, etop-clock-plane-production-plus-P205]
+    acquisition: exact_construction
     expected_model_space_reduction: very_high
     compute_cost: high
-    decision_output: acquire_or_replay_theory_led_B_B2_I0B_I2B_with_A_E_C_in_one_covariance_and_test_whether_B_replaces_C_and_pins_the_plane_without_extending_the_integrated_alias_or_stopped_radius1_mean_row
+    decision_output: theory_define_a_distinct_local_singlet_scale_or_field_interface_before_any_new_PhaseE_acquisition
   - id: DX_P334_BRANCHING_PRODUCTION
-    attention_rank: 2
+    attention_rank: 1
     scientific_attention_rank: 1
     name: checkpoint_clustered_common_update_two_clone_branching_closure
-    status: four_static_or_local_proxy_families_fail_and_exact_1_over_98_delayed_fork_plus_1_over_66_uniform_growth_gaps_show_that_branching_aware_state_is_the_next_observation_while_the_production_runner_is_not_yet_frozen
+    status: N325_N425_100k_shared_update_two_clone_production_is_complete_with_a_positive_orientation_specific_common_safe_remainder_and_zero_sample_checkpoint_state_crossfit_is_the_next_output
     scientific_node_refs: [SN_P334_BRANCHING_CONTINUATION, SN_P334_BIRTH_AGE_COLLISION, SN_P334_COOPERATIVE_CONTINUATION_STATE]
     observer_sector_refs: [rank_birth_local, projective_completion, topology_typed]
     source_refs: [SRC_P429_BRANCHING_CONTINUATION, SRC_P334_ACTIVE_BOUNDARY_ORGANIZATION, SRC_P334_LOCAL_COMPLETION_MOTIF, SRC_P401_COOPERATIVE_CONTINUATION_EXACT]
-    dependency_group_refs: [p429-branching-continuation-exact, p334-active-boundary-organization-acquired, p334-local-completion-motif-acquired]
-    acquisition: new_production
+    dependency_group_refs: [p429-branching-continuation-exact, p429-branching-continuation-N325-N425-100k, p334-active-boundary-organization-acquired, p334-local-completion-motif-acquired]
+    acquisition: existing_data_reuse
     expected_model_space_reduction: very_high
     compute_cost: moderate
-    decision_output: implement_and_acquire_H2_b2_q_after_q_after2_Y1_Y2_Y1Y2_after_one_shared_update_and_two_conditionally_independent_clones_with_checkpoint_clustered_covariance_and_the_N16_1_over_98_case_as_an_implementation_control
+    decision_output: crossfit_fixed_precommon_exact_line_age_safe_count_local_multicontact_boundary_mass_core_and_organization_blocks_then_acquire_successor_state_only_if_a_stable_heldout_remainder_survives
   - id: DX_P250_BIVARIATE_HANKEL
-    attention_rank: 1
-    name: adaptive_support_ordered_morphism_production_against_spatial_Fourier_endpoint_baseline
-    status: the_N325_N425_two_geometry_pilot_is_complete_and_positive_with_all_1503_defined_rectangles_positive_so_the_next_output_is_N505_joint_spatial_spectrum_discrimination_not_a_first_or_third_aggregate_pilot
+    attention_rank: 4
+    name: completed_adaptive_support_state_increment_and_residual_high_frequency_discriminator
+    status: N505_200k_400_production_and_zero_sample_ten_fold_cluster_crossfit_are_complete_preoutcome_state_reduces_heldout_MSE_by_30p97_percent_beyond_the_low_dimensional_residue_baseline_but_both_hands_leave_a_common_k36_residual_peak
     scientific_node_refs: [SN_Z5_PROJECTIVE_LEG_PROPAGATION, SN_P250_RADIUS6_LEVEL_S_RANK_BOUND, SN_P250_SPATIAL_ENDPOINT_REINTERPRETATION, SN_P250_ADAPTIVE_MEDIUM_PILOT]
     observer_sector_refs: [topology_typed, deck_charged]
-    source_refs: [SRC_P250_RADIUS6_LEVEL_S_RANK_CERTIFICATE, SRC_P250_ENDPOINT_ORDER_NOGO, SRC_P250_PHYSICAL_TOGGLE_OBSTRUCTION, SRC_P250_ADAPTIVE_SUPPORT_WITNESS, SRC_P250_ADAPTIVE_MEDIUM_PILOT, SRC_PR416_P250_POSITIVE_SPATIAL_SPECTRUM, SRC_P406_SPATIAL_FOURIER_CONE_RESULT]
-    dependency_group_refs: [p250-projective-leg-N505-radius6-Level-S-old4-old5-fresh6, p250-adaptive-support-exact-witness, p250-adaptive-order-N325-N425-20k]
-    acquisition: new_production
+    source_refs: [SRC_P250_RADIUS6_LEVEL_S_RANK_CERTIFICATE, SRC_P250_ENDPOINT_ORDER_NOGO, SRC_P250_PHYSICAL_TOGGLE_OBSTRUCTION, SRC_P250_ADAPTIVE_SUPPORT_WITNESS, SRC_P250_ADAPTIVE_MEDIUM_PILOT, SRC_PR416_P250_POSITIVE_SPATIAL_SPECTRUM, SRC_P406_SPATIAL_FOURIER_CONE_RESULT, SRC_P250_ADAPTIVE_SPATIAL_N505_RESULT, SRC_PR267_P250_ADAPTIVE_STATE_REANALYSIS]
+    dependency_group_refs: [p250-projective-leg-N505-radius6-Level-S-old4-old5-fresh6, p250-adaptive-support-exact-witness, p250-adaptive-order-N325-N425-20k, p250-adaptive-spatial-N505-200k]
+    acquisition: small_pilot
     expected_model_space_reduction: very_high
     compute_cost: moderate
-    decision_output: run_N505_200k_400_batches_with_four_supports_typed_intermediates_defined_and_tie_rates_complement_pair_ids_and_joint_101_frequency_periodogram_covariance_then_test_whether_spatial_spectrum_predicts_the_adaptive_response
+    decision_output: if_this_lane_retains_priority_freeze_a_common_k36_orthogonal_readout_and_acquire_full_terminal_fields_or_periodograms_with_the_same_preoutcome_state_to_test_complete_spectrum_versus_state
   - id: DX_PROJECTIVE_BIRTH_EXIT_FLUX
-    attention_rank: 4
+    attention_rank: 24
     name: four_generation_component_resolved_birth_completion_recurrence
-    status: the_four_generation_state_current_prism_is_complete_with_N170_reinforcing_J01_J12_N340_completion_localization_and_unresolved_J02_the_component_recurrence_and_midpoint_composition_hazard_split_are_missing
+    status: completed_state_current_and_midpoint_risk_hazard_reuse_followup_moved_to_DX_P337_LINE_TYPED_OBSERVER
     scientific_node_refs: [SN_PROJECTIVE_ESSENTIAL_BIRTH_FLUX, SN_FINITE_ABELIAN_TWIST_TOMOGRAPHY, SN_P337_CHARGED_NATURAL_CURRENT_GEOMETRY, SN_P334_BIRTH_AGE_COLLISION, SN_TWO_ACTIVATION_H4_REANALYSIS, SN_ACTIVATION_TRANSPORT_SHAPE]
     observer_sector_refs: [topology_typed, rank_birth_local, projective_completion, direction_character, matching_odd]
-    source_refs: [SRC_P334_PROJECTIVE_ESSENTIAL_BIRTH, SRC_P334_PROJECTIVE_BIRTH_SMOKE, SRC_P334_CONDITIONAL_LINE_FLUX, SRC_P334_N13_MULTIORBIT_FLUX, SRC_P334_BIRTH_AGE_COLLISION, SRC_PR267_P337_BIRTH_STATE_CURRENT, SRC_P337_FINITE_ABELIAN_TWIST_TOMOGRAPHY, SRC_P337_P334_FLAT_TWIST_N65, SRC_P337_FLAT_TWIST_REPRESENTATION, SRC_P337_F3_TWIST_CURVES, SRC_P337_CHARGED_SOURCE_ACTIVITY_CHAIN, SRC_P337_NATURAL_CURRENT_GEOMETRY, SRC_P337_N170_ANGLE_FLIP_PREREG, SRC_P337_N170_ANGLE_FLIP_RESULT, SRC_P337_N340_SECOND_CHILD_RESULT, SRC_P337_THREE_GENERATION_RECURRENCE, SRC_P337_N680_PREREG, SRC_P337_N680_HELDOUT_RESULT, SRC_P337_FOUR_GENERATION_RECURRENCE, SRC_P337_THEORY_FIXED_DRESSING_ADVERSARY, SRC_PR267_F3_ACTIVATION_FLUX, SRC_DIGITAL_ALEXANDER_INTEGRAL_SATURATION, SRC_PR267_ACTIVATION_FRONTIER, SRC_PR267_P337_LITERATURE_TOMOGRAPHY, SRC_PR267_FRONTIER_LITERATURE]
-    dependency_group_refs: [p334-N13-multiorbit-exact, p334-N65-projective-birth-20k, p334-birth-age-collision-exact-review, p337-finite-abelian-exact, p337-N13-charged-source-exact, p337-natural-current-N85-200k, p337-natural-current-N145-2p4m, p337-N170-angle-flip-preregistered, p337-natural-current-N170-8m, p337-natural-current-N340-12m, p337-natural-current-N680-120m]
+    source_refs: [SRC_PR267_P337_BIRTH_STATE_CURRENT, SRC_P337_RISK_HAZARD_SPLIT]
+    dependency_group_refs: [p337-risk-hazard-four-generation-reuse]
     acquisition: existing_data_reuse
     expected_model_space_reduction: very_high
     compute_cost: low
-    decision_output: within_block_covariance_vector_recurrence_for_first_birth_and_line_weighted_completion_across_N85_N170_N340_N680_with_DIRECT_RANK2_used_only_as_a_line_free_bypass_modulator_N130_N170_as_cross_lineage_control_and_geometry_or_modulus_only_if_the_alias_survives
+    decision_output: completed_exact_state_current_and_midpoint_risk_composition_hazard_localization_preserved_as_input_to_the_line_typed_observer_lane
+  - id: DX_P337_LINE_TYPED_OBSERVER
+    attention_rank: 3
+    name: seam_winding_or_relative_landing_coupling_to_the_ambient_line_state
+    status: completed_Wline_pilot_constructs_a_nearly_JS_orthogonal_state_but_the_current_Ofar_Osep4_determinant_and_mark12_H4_control_are_unresolved
+    scientific_node_refs: [SN_P337_BIRTH_STATE_CURRENT, SN_P337_AMBIENT_LINE_OBSERVER_COUPLING, SN_P337_CHARGED_NATURAL_CURRENT_GEOMETRY]
+    observer_sector_refs: [topology_typed, projective_completion, direction_character]
+    source_refs: [SRC_P337_RISK_HAZARD_SPLIT, SRC_P337_AMBIENT_LINE_SOURCE_RESULT]
+    dependency_group_refs: [p337-risk-hazard-four-generation-reuse, p337-ambient-line-N325-N425-20k]
+    acquisition: exact_construction
+    expected_model_space_reduction: very_high
+    compute_cost: low
+    decision_output: define_a_genuinely_line_typed_seam_winding_or_relative_landing_observer_then_run_only_one_targeted_coupling_pilot_without_reusing_Ofar_Osep4
   - id: DX_P334_HOMOLOGY_BA_TM
     attention_rank: 8
     name: two_output_mark_source_injection_or_first_arbitrary_HNF_Hall_obstruction
@@ -5379,17 +5404,17 @@ decision_experiments:
     compute_cost: low
     decision_output: a_uniform_two_output_mark_MM_YN_source_injection_or_the_first_arbitrary_HNF_residual_coarse_min_cut_with_an_Alexander_overlap_bound_plus_a_separate_BA_discordance_to_concordance_injection
   - id: DX_ETOP_TAU_TOPOLOGY_MAP
-    attention_rank: 3
+    attention_rank: 2
     name: global_Etop_tau_by_topology_map_geometry_factorization
-    status: one_cross_geometry_global_ray_is_rejected_relative_to_four_lineage_rays_Delta_chi2_14p7004_over3_p_0p002091_while_absolute_global_GOF_survives_the_frozen_0p01_gate_and_no_modular_transport_law_is_identified
+    status: completed_N50_100k_two_by_two_factorial_resolves_tau_by_topology_map_interaction_at_chi2_236p756_over4_and_the_next_output_is_a_heldout_pair_prediction
     scientific_node_refs: [SN_ETOP_FULL_COVARIANCE_ELIMINATION, SN_TWO_ACTIVATION_H4_REANALYSIS]
     observer_sector_refs: [global_rank_projector, topology_typed, direction_character]
-    source_refs: [SRC_ETOP_GLOBAL_RAY_GEOMETRY, SRC_PR267_ACTIVATION_FRONTIER, SRC_PR267_ETOP_PRODUCTION_ELIMINATION]
-    dependency_group_refs: [two-activation-production-aligned-full-covariance]
+    source_refs: [SRC_ETOP_GLOBAL_RAY_GEOMETRY, SRC_PR267_ACTIVATION_FRONTIER, SRC_PR267_ETOP_PRODUCTION_ELIMINATION, SRC_P267_TAU_TOPOLOGY_FACTORIAL]
+    dependency_group_refs: [two-activation-production-aligned-full-covariance, p267-etop-tau-topology-factorial-N50-100k]
     acquisition: small_pilot
     expected_model_space_reduction: very_high
     compute_cost: moderate
-    decision_output: fixed_area_and_aspect_twist_scan_with_modular_equivalent_controls_and_joint_tau_winding_intersection_map_readout_scored_as_a_two_factor_model_not_another_global_ray
+    decision_output: freeze_an_interaction_bearing_low_rank_response_surface_and_predict_one_third_tau_pair_across_both_Smith_types_or_one_third_map_pair_across_both_moduli
   - id: DX_Z5_CHARGED_FUSION
     attention_rank: 9
     name: rank8_flatness_or_ordered_projective_leg_extension_after_Low_rank_elimination
@@ -5642,15 +5667,15 @@ attention_order:
   principle: priority_is_attention_not_permission
   parallel: true
   execution_basis: readiness_times_expected_mechanism_reduction
-  scientific_attention_refs: [DX_P334_BRANCHING_PRODUCTION, DX_ETOP_PRODUCTION_LOCALIZATION, DX_P250_BIVARIATE_HANKEL]
-  default_effort_hint: {production_acquisition_and_scoring: 0.60, existing_data_mechanism_synthesis: 0.25, exact_and_tool_support: 0.15}
+  scientific_attention_refs: [DX_P334_BRANCHING_PRODUCTION, DX_ETOP_TAU_TOPOLOGY_MAP, DX_P337_LINE_TYPED_OBSERVER, DX_P250_BIVARIATE_HANKEL]
+  default_effort_hint: {production_acquisition_and_scoring: 0.25, existing_data_mechanism_synthesis: 0.60, exact_and_tool_support: 0.15}
   effort_hint_boundary: coordination_default_not_quota_permission_lock_or_veto
   decision_experiment_refs:
-    - DX_P250_BIVARIATE_HANKEL
     - DX_P334_BRANCHING_PRODUCTION
-    - DX_ETOP_PRODUCTION_LOCALIZATION
     - DX_ETOP_TAU_TOPOLOGY_MAP
-    - DX_PROJECTIVE_BIRTH_EXIT_FLUX
+    - DX_P337_LINE_TYPED_OBSERVER
+    - DX_P250_BIVARIATE_HANKEL
+    - DX_ETOP_PRODUCTION_LOCALIZATION
     - DX_RHO_C3_SECTOR
     - DX_MIXED_CONTEXT_RECTANGLE
     - DX_REAL_GADGET_CERTIFICATE
