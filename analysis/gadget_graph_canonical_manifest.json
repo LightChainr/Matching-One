@@ -1,0 +1,33 @@
+{
+  "schema": "matching-one/gadget-graph-canonical/v1",
+  "issue": 13,
+  "status": "graph_encoding_only",
+  "encoding_contract": {
+    "graph_type": "finite_undirected_simple",
+    "terminals": "vertices_0_through_t_minus_1",
+    "edge_order": "lexicographic_upper_triangle",
+    "canonicalization": "lexicographic_minimum_over_explicit_terminal_group_and_all_internal_relabelings",
+    "terminal_permutation_convention": "old_terminal_to_new_terminal"
+  },
+  "exhaustive_checks": [
+    {
+      "terminal_count": 3,
+      "internal_count": 1,
+      "terminal_group": "S3",
+      "labeled_simple_graphs": 64,
+      "canonical_orbits": 20
+    },
+    {
+      "terminal_count": 4,
+      "internal_count": 1,
+      "terminal_group": "S4",
+      "labeled_simple_graphs": 1024,
+      "canonical_orbits": 90
+    }
+  ],
+  "claim_boundary": {
+    "included": "simple terminal-gadget validation, encoding, explicit terminal-group action, internal relabeling, and exact small-graph orbit accounting",
+    "excluded": "connectivity probability polynomials, planarity or tiling certification, reductions, self-duality, search ranking, or negative-result certificates",
+    "parent_issue": "remain open"
+  }
+}
