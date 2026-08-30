@@ -1,0 +1,82 @@
+{
+  "schema": "matching-one/p334-current-k0-geometry-pilot-freeze/v1",
+  "status": "frozen_before_runner_implementation_or_pilot_reveal",
+  "parent_result_commit": "742a8b0",
+  "source_engine_commit": "9f2033a2d205a01d3554bc2e9c93bed5760f5b29",
+  "question": "Does a compact geometry summary of the actual rank-one configuration at intrinsic k0 absorb the birth-age association, and does that summary transfer from N325 to held-out N425?",
+  "runs": {
+    "N325": {
+      "N": 325,
+      "k0": 193,
+      "samples": 50000,
+      "batches": 50,
+      "seed": 20260830334125,
+      "replica_counter_first": 34125000000,
+      "replica_counter_last_exclusive": 34125050000,
+      "first_matrix": [[325, 57], [0, 1]],
+      "second_matrix": [[325, 18], [0, 1]],
+      "role": "source_geometry_fit"
+    },
+    "N425": {
+      "N": 425,
+      "k0": 252,
+      "samples": 50000,
+      "batches": 50,
+      "seed": 20260830334225,
+      "replica_counter_first": 34225000000,
+      "replica_counter_last_exclusive": 34225050000,
+      "first_matrix": [[425, 132], [0, 1]],
+      "second_matrix": [[425, 268], [0, 1]],
+      "role": "heldout_cross_size_transfer"
+    }
+  },
+  "sampling": "At each size one counter-derived permutation is shared by the two orientations. The size streams are disjoint. Retain only paths with ambient rank exactly one after k0 occupied sites.",
+  "row_fields": [
+    "batch", "replica", "orientation", "k1", "age_steps", "ell_u", "ell_v",
+    "essential_size", "essential_carriers", "occupied_frontier", "vacant_frontier",
+    "H2", "H2_theta", "H2_figure8", "H2_separate", "H2_direction_positive",
+    "H2_direction_negative", "H2_direction_mixed", "next_site", "next_exit"
+  ],
+  "field_definitions": {
+    "essential_size": "sum of occupied vertices over all current rank-one connected components",
+    "essential_carriers": "number of current rank-one connected components; all must carry the frozen primitive line ell",
+    "occupied_frontier": "occupied vertices in a rank-one component with at least one vacant NN neighbour",
+    "vacant_frontier": "vacant vertices with at least one NN neighbour in a rank-one component",
+    "H2": "vacant vertices whose insertion makes the union of ambient H1 images rank two",
+    "H2_theta": "H2 vertices whose nonparallel closing cycle is formed inside an already rank-one incident component",
+    "H2_figure8": "H2 vertices whose nonparallel closing cycle is formed in a rank-zero incident component while the inserted site also joins a rank-one component",
+    "H2_separate": "H2 vertices whose nonparallel rank-zero closing carrier has no incident rank-one component; expected to vanish by torus carrier geometry but retained as an exact audit",
+    "H2_direction": "sign of det(ell,w) after the existing primitive sign convention for a completing winding w; mixed means both signs occur for one candidate",
+    "next_exit": "indicator that the actual uniformly next vacant site belongs to H2"
+  },
+  "model_ladder": {
+    "M0": "line-fixed-effect linear-probability age slope",
+    "Mcheap": "M0 plus fixed dimensionless current covariates essential_size/N, essential_carriers-1, occupied_frontier/k0, vacant_frontier/(N-k0)",
+    "Mtyped": "Mcheap plus H2_theta/(N-k0), H2_figure8/(N-k0), H2_separate/(N-k0)",
+    "MH2": "M0 plus H2/(N-k0); this is a diagnostic ceiling because H2 is the one-step hazard sufficient statistic"
+  },
+  "primary_score": "absolute age-slope retention |beta_Mcheap/beta_M0|, separately by size and orientation with one common-batch delete-one covariance per size",
+  "secondary_scores": [
+    "Mtyped and MH2 attenuation as mechanism diagnostics, not independent evidence",
+    "calibration of next_exit-H2/(N-k0)",
+    "N325 geometry-only coefficient fit transferred without refitting to N425, followed by held-out line-fixed age residual slopes; source and target jackknife covariance contributions are summed"
+  ],
+  "gates": {
+    "exact": [
+      "H2 equals brute-force one-step rank increments in exhaustive tiny tests",
+      "next_exit equals membership of the frozen next site in H2",
+      "H2 equals H2_theta+H2_figure8+H2_separate",
+      "all current rank-one carriers have the recorded ell"
+    ],
+    "support": "at least 1000 retained risk-set rows and 25 next exits per orientation; otherwise report underpowered",
+    "decision_alpha": 0.01
+  },
+  "interpretation_boundary": [
+    "A surviving Mcheap age slope rejects lumpability of the recorded cheap current-geometry state, not intrinsic temporal memory; other current geometry remains unrecorded.",
+    "H2 is nearly definitional: conditional on the current configuration the one-step exit probability is exactly H2/(N-k0). Its attenuation is an implementation/calibration ceiling, not a discovered mechanism.",
+    "The two orientations from one size share raw randomness and are one evidence block.",
+    "The pilot is limited to 50000 paths per size. No adaptive extension is authorized by this freeze."
+  ],
+  "score_once_after_raw_lock": true,
+  "no_phase_or_model_selection": true
+}
