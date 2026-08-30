@@ -1,0 +1,43 @@
+{
+  "schema": "matching-one/z5-charged-threepoint-production/v1",
+  "production_id": "P250-N325-Z5-charged-threepoint-v1",
+  "status": "frozen_after_20k_variance_smoke_before_production",
+  "production_authorized": true,
+  "issues": [250],
+  "runner_commit": "846e00011ecd0b331479e0205adadf16ef0a06fd",
+  "prediction": "predictions/z5_charged_ope_fusion_20260829.json",
+  "question": "Do the two primitive neutral Z5 cubic channels share one handed eigenphase, and if so which frozen H4/H8/H12 cubic phase is compatible?",
+  "score_order": [
+    "cross_product_closure",
+    "joint_H4_H8_H12_GLS",
+    "nonneutral_and_conjugacy_controls"
+  ],
+  "run": {
+    "samples": 1000000,
+    "batches": 100,
+    "workers": 16,
+    "p": 0.59274605079,
+    "seed": 25011312220260831,
+    "radius": 1,
+    "replica_offset": 0,
+    "output": "/workspace/p250-z5-charged-threepoint/results/huawei-20260830/P250-z5-charged-threepoint/charged_threepoint_1m.json",
+    "batches_output": "/workspace/p250-z5-charged-threepoint/results/huawei-20260830/P250-z5-charged-threepoint/charged_threepoint_1m.batches.csv"
+  },
+  "observable": {
+    "parent": "8+i",
+    "hands": ["(8+i)(2+i)", "(8+i)(2-i)"],
+    "anchor_offsets": [[0, 0], [1, 0], [0, 1]],
+    "fiber_DFT": "O_r=(1/5) sum_k zeta5^(-r k) local_H4(k)",
+    "primary_complex_order": ["C113_plus", "C113_minus", "C122_plus", "C122_minus"],
+    "covariance": "complete 8x8 covariance of the primary real vector; complete 24x24 joint covariance including conjugate and nonneutral controls"
+  },
+  "smoke": {
+    "samples": 20000,
+    "seed": 25011312220260830,
+    "combined_with_production": false,
+    "purpose": "engineering schema and variance budget only",
+    "largest_primary_variance_of_mean": 4.56793567131308e-12,
+    "projected_largest_component_se_at_production": 3.022560727e-7
+  },
+  "freeze_boundary": "No pilot-derived phase, model, anchor shape, observable, p, radius, or score change is permitted."
+}
