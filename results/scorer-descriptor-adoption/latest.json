@@ -13,7 +13,6 @@
     "scripts/score_p49_fullcurve_doubling.py": "scores matching tails, thermal even/odd contrasts, signed lineage root gaps, and normalized P4 projectors across doubled sizes without typed quantity families",
     "scripts/score_p50_fullcurve_n290.py": "scores thermal-even DeltaM, slope, signed root-gap, and four P4 quantities across independent N145/N290 lineages using implicit feature, order, sign, and stream semantics",
     "scripts/score_prequential_evidence.py": "validates scored blocks with free-form channel.source/channel.target strings and accepts any truthy exact_map instead of applying the registered descriptor map",
-    "scripts/score_v14_fixedp_scalar_projector.py": "projects a free-form matching-function channel into an H4-null fixed-p scalar with implicit sector, orientation-weight, p_ref, and N-scaling semantics",
     "scripts/score_v14_scalar_root_projector.py": "projects paired matching roots into H4-null scalar and H4 coordinates, then scores fixed-beta and doubling-lineage reconstructions without typed quantity, orientation, or lineage maps",
     "scripts/threshold_score_modes.py": "projects paired orientation threshold curves into intrinsic-center S/D Krawtchouk modes, DeltaCos4-normalized P4 coordinates, and parity towers with implicit sector, basis, normalization, and shared-evidence semantics"
   },
@@ -22,12 +21,12 @@
   ],
   "corpus_glob": "scripts/*score*.py",
   "counts": {
-    "channel_bearing_migration_required": 15,
-    "covered_frozen_kernel": 15,
+    "channel_bearing_migration_required": 14,
+    "covered_frozen_kernel": 16,
     "descriptor_not_applicable_generic_utility": 1,
-    "direct_typed_entrypoint": 16,
+    "direct_typed_entrypoint": 17,
     "outside_registered_typed_path": 0,
-    "total": 47
+    "total": 48
   },
   "descriptor_not_applicable_generic_utilities": {
     "scripts/kappa3_half_score.py": "generic Bernoulli score-polynomial and aggregation helper; intentionally accepts an opaque caller-supplied observable D(C) and defines no topology observable"
@@ -256,7 +255,12 @@
     {
       "git_blob_sha": "c7b745b60614f315955ec5bda5fd0ae152c33f24",
       "path": "scripts/score_v14_fixedp_scalar_projector.py",
-      "status": "channel_bearing_migration_required"
+      "status": "covered_frozen_kernel"
+    },
+    {
+      "path": "scripts/score_v14_fixedp_scalar_projector_typed.py",
+      "git_blob_sha": "734f448ee0fd206cadc68869654e1f4fd4b6b793",
+      "status": "direct_typed_entrypoint"
     },
     {
       "git_blob_sha": "2e4bb607777c6a75a24beeed412640b977622844",
@@ -285,6 +289,7 @@
     "scripts/score_p50_sprime_n290_typed.py": "scripts/score_p50_sprime_n290.py",
     "scripts/score_intrinsic_quantile_center_n145_n290_typed.py": "scripts/score_intrinsic_quantile_center_n145_n290.py",
     "scripts/score_rank_gap_boundary_targets_typed.py": "scripts/score_rank_gap_boundary_targets.py",
-    "scripts/score_threshold_rank_root_doubling_typed.py": "scripts/score_threshold_rank_root_doubling.py"
+    "scripts/score_threshold_rank_root_doubling_typed.py": "scripts/score_threshold_rank_root_doubling.py",
+    "scripts/score_v14_fixedp_scalar_projector_typed.py": "scripts/score_v14_fixedp_scalar_projector.py"
   }
 }
