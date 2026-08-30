@@ -1,0 +1,17 @@
+{
+  "schema_version": "p334-dual-hazard-ulc-manifest-v1",
+  "parent_commit": "04e8c05",
+  "question": "Can fixed-line ULC be reduced to an aggregate source/sink/current inequality after statewise matching fails?",
+  "frozen_scope": "existing honest-face connected HNF atlas N=4..12 only; primal and complementary matching carriers",
+  "primary_identity": "q_(k+1)/q_k=(1-xi_k)/(1-beta_(k+1))",
+  "conditional_criterion": "exit hazard xi is nondecreasing on both complementary carriers",
+  "allowed_tools": [
+    "rank monotonicity",
+    "fixed-line order-convexity",
+    "Alexander complement duality",
+    "aggregate internal/birth/exit edge double counts"
+  ],
+  "stop_rule": "if uniform exit-hazard monotonicity is not proved, expose the exact covariance correction and report bounded evidence without upgrading to theorem",
+  "status": "completed_conditional_lemma",
+  "production_required": false
+}
