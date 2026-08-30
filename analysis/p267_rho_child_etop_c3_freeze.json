@@ -1,0 +1,48 @@
+{
+  "schema": "matching-one/p267-rho-child-etop-c3-freeze/v1",
+  "status": "frozen_before_fresh_production",
+  "base_commit": "5ac456d7397bdf311c01bad2f6510bd425c93e0f",
+  "prior_work_boundary": {
+    "p205": "H4/H8/H12 quotient-character voting is closed and is not repeated.",
+    "p275_d931917": "The primitive delta-H4 row already resolved rho-child r0+r1 support; it is retained only as a same-stream secondary observer.",
+    "p275_9277fc9": "The opposite-Pell completion phase remained unresolved and is not rescored."
+  },
+  "estimand": {
+    "name": "delta_Etop_r1",
+    "endpoint": "E_top=P0+P2=1-P1",
+    "continuum_subtraction": "1-sum over all primitive Pinson-Arguin winding probabilities at each actual child modulus",
+    "child_transform": "r1=(1/3) sum_j exp(-2 pi i j/3) delta_Etop_j",
+    "sector": "Alexander-even rank redistribution, non-A_top complex C3"
+  },
+  "run": {
+    "samples": 2000000,
+    "batches": 100,
+    "workers": 16,
+    "seed": 2672751123001,
+    "replica_offset": 27500000000,
+    "host": "Huawei-CodeBuddy / DevEnvC_ZyTrST",
+    "common_field": "one 224-bit counter-derived bond mask scored on all three children"
+  },
+  "primary_gate": {
+    "null": "delta_Etop_r1=0",
+    "statistic": "two-real full-covariance chi-square",
+    "alpha": 0.01,
+    "decision": "resolve the named even C3 sector iff p<0.01"
+  },
+  "secondary_gate": {
+    "estimand": "D=deltaH4_r0*deltaEtop_r1-deltaH4_r1*deltaEtop_r0",
+    "statistic": "complex delete-one-batch jackknife chi-square",
+    "decision": "D nonzero at alpha=.01 means E_top supplies a second observer/character ray rather than copying the primitive-H4 child mixture"
+  },
+  "stop": "One fresh 2M common-field production only. Do not extend based on sign or marginal .05 results.",
+  "implementation": {
+    "runner": "scripts/p267_rho_child_etop_mc.py",
+    "runner_sha256": "4a5bf702437fb2aeee253f9d84455e2ad7937394a9020844f4da1cb55ef4849c",
+    "scorer": "scripts/score_p267_rho_child_etop.py",
+    "scorer_sha256": "34b47db2cb33f695c700a1b5ccb858ba9cc79057617ee6938813719db00c9a74",
+    "continuum_cutoff": 9,
+    "dps": 60
+  },
+  "alpha": 0.01,
+  "claim_boundary": "Finite N112 square-bond topology response only; no H4/H8/H12 vote, field identity, exponent, unique state count, or square-site matching transfer claim."
+}
