@@ -1,0 +1,155 @@
+{
+  "N": 6,
+  "boundary": "Synthetic exact covariance only: no production target covariance, fitted control coefficient, variance-reduction estimate, wall-time measurement, or >=2x promotion claim.",
+  "checked_K_values": 7,
+  "checked_subsets": 64,
+  "contrasts": {
+    "edge_difference": {
+      "ring_diagonals": "-1",
+      "ring_edges": "1"
+    },
+    "triangle_difference": {
+      "triangles_a": "1",
+      "triangles_b": "-1"
+    }
+  },
+  "data_class": "synthetic complete K-subset enumeration",
+  "family_sizes": {
+    "ring_diagonals": 6,
+    "ring_edges": 6,
+    "triangles_a": 3,
+    "triangles_b": 3
+  },
+  "issue": 40,
+  "oracle_vs_enumeration_failures": 0,
+  "rows": [
+    {
+      "K": 0,
+      "covariance": {
+        "edge_difference": {
+          "edge_difference": "0",
+          "triangle_difference": "0"
+        },
+        "triangle_difference": {
+          "edge_difference": "0",
+          "triangle_difference": "0"
+        }
+      },
+      "means": {
+        "edge_difference": "0",
+        "triangle_difference": "0"
+      },
+      "subset_count": 1
+    },
+    {
+      "K": 1,
+      "covariance": {
+        "edge_difference": {
+          "edge_difference": "0",
+          "triangle_difference": "0"
+        },
+        "triangle_difference": {
+          "edge_difference": "0",
+          "triangle_difference": "0"
+        }
+      },
+      "means": {
+        "edge_difference": "0",
+        "triangle_difference": "0"
+      },
+      "subset_count": 6
+    },
+    {
+      "K": 2,
+      "covariance": {
+        "edge_difference": {
+          "edge_difference": "4/5",
+          "triangle_difference": "0"
+        },
+        "triangle_difference": {
+          "edge_difference": "0",
+          "triangle_difference": "0"
+        }
+      },
+      "means": {
+        "edge_difference": "0",
+        "triangle_difference": "0"
+      },
+      "subset_count": 15
+    },
+    {
+      "K": 3,
+      "covariance": {
+        "edge_difference": {
+          "edge_difference": "6/5",
+          "triangle_difference": "0"
+        },
+        "triangle_difference": {
+          "edge_difference": "0",
+          "triangle_difference": "3/10"
+        }
+      },
+      "means": {
+        "edge_difference": "0",
+        "triangle_difference": "0"
+      },
+      "subset_count": 20
+    },
+    {
+      "K": 4,
+      "covariance": {
+        "edge_difference": {
+          "edge_difference": "4/5",
+          "triangle_difference": "0"
+        },
+        "triangle_difference": {
+          "edge_difference": "0",
+          "triangle_difference": "2/5"
+        }
+      },
+      "means": {
+        "edge_difference": "0",
+        "triangle_difference": "0"
+      },
+      "subset_count": 15
+    },
+    {
+      "K": 5,
+      "covariance": {
+        "edge_difference": {
+          "edge_difference": "0",
+          "triangle_difference": "0"
+        },
+        "triangle_difference": {
+          "edge_difference": "0",
+          "triangle_difference": "1"
+        }
+      },
+      "means": {
+        "edge_difference": "0",
+        "triangle_difference": "0"
+      },
+      "subset_count": 6
+    },
+    {
+      "K": 6,
+      "covariance": {
+        "edge_difference": {
+          "edge_difference": "0",
+          "triangle_difference": "0"
+        },
+        "triangle_difference": {
+          "edge_difference": "0",
+          "triangle_difference": "0"
+        }
+      },
+      "means": {
+        "edge_difference": "0",
+        "triangle_difference": "0"
+      },
+      "subset_count": 1
+    }
+  ],
+  "schema": "matching-one/fixed-k-motif-covariance-oracle/v1",
+  "theorem_checked": "E[1_{A subset X} 1_{B subset X}|K]=binom(K,|A union B|)/binom(N,|A union B|)"
+}
