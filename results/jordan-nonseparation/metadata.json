@@ -1,0 +1,38 @@
+{
+  "arithmetic": "fractions.Fraction; exact rational certificates; analytic theorems over R/C",
+  "baseline_commit": "4d70c1787ff97dbb98cb5e96022f947bb8fad97e",
+  "c4_exact_construction_checks": 20,
+  "claim_boundary": "Conditional model theorems and exact synthetic controls; C0 application to P250 until flatness/source/symmetry hypotheses hold.",
+  "commands": [
+    "python -m compileall -q scripts tests",
+    "python scripts/jordan_nonseparation.py --verify results/jordan-nonseparation/latest.json",
+    "python scripts/c4_five_state_obstruction.py --verify results/jordan-nonseparation/c4-five-state.json",
+    "python -m unittest discover -s tests -p 'test_*.py' -v (isolated new bundle only)"
+  ],
+  "dependency_versions": {
+    "stdlib_only": true
+  },
+  "exact_word_inequality_checks": 378,
+  "execution_scope": "New isolated contribution bundle only; complete repository suite not run; no repository production files or raw Monte Carlo consumed.",
+  "finite_word_witnesses": 6,
+  "interpreter": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "new_unit_tests": 28,
+  "recorded_date": "2026-08-30",
+  "repository": "LightChainr/Matching-One",
+  "result_id": "jordan-nonseparation-and-c4-five-state-v1",
+  "separate_verifiers": "Both read stored JSON; neither invokes the builder or a numerical optimizer.",
+  "source_paths": [
+    "scripts/c4_five_state_obstruction.py",
+    "scripts/jordan_nonseparation.py",
+    "tests/test_c4_five_state_obstruction.py",
+    "tests/test_jordan_nonseparation.py"
+  ],
+  "source_sha256": {
+    "scripts/c4_five_state_obstruction.py": "08e90b0998b7d9ba96cbd3e0fc7cff9e7db84ec1517a4050e18563e56269a3d7",
+    "scripts/jordan_nonseparation.py": "3739af47db17197be9b1c7a123c0a623c7fb3da716dcb6d06b7698fec346c8ab",
+    "tests/test_c4_five_state_obstruction.py": "dbfd2ca92d134d7edb8799be83b88ef93791c50fc233a213ea0483fefd8e88b8",
+    "tests/test_jordan_nonseparation.py": "8359f3b5aadc193feddf8b69bef213575fafba2a478851d568a3532297f33243"
+  },
+  "stochastic_samples": 0,
+  "word_contexts_per_witness": 63
+}
