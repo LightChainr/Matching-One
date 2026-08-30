@@ -1,0 +1,11 @@
+{
+  "schema": "matching-one/observer-bandwidth-high-pass/v1",
+  "status": "exact_six_level_filter_control",
+  "rho": "1/2",
+  "degree_cutoff": 4,
+  "basis_cube_n": 5,
+  "basis_cube_p": "2/5",
+  "euler_torus_L": 3,
+  "operator": "H_{rho,d}=product_{m=0}^d(I-rho^(-m)T_rho)",
+  "boundary": "Exact population contraction does not imply a low-variance Monte Carlo estimator. Alternating coefficients, common-noise coupling, and variance per wall time require a separate pilot."
+}
