@@ -1,0 +1,59 @@
+{
+  "schema": "matching-one/p250-projective-leg-annihilator-bridge-result-manifest/v1",
+  "issue": 250,
+  "status": "existing_data_two_sector_bridge_revealed",
+  "branch": "analysis/p250-two-sector-annihilator-bridge-20260830",
+  "parent_result_commit": "a770ac9",
+  "scorer_commit": "aa8f438c494278db5482ffa013bf79f2a7f5c3fd",
+  "freeze_commit": "75d6eeb",
+  "execution": {
+    "host": "local Mac",
+    "new_simulation": false,
+    "input_samples": 80000,
+    "input_batches": 400,
+    "elapsed_seconds": 2.89
+  },
+  "hashes": {
+    "input_batches": "dfbd83d680080939bcae5cad0090af95d82748ed780ce73807d4b002d6a9ca72",
+    "score.json": "74c8d768c3e39dbfeccac3bd9f6a385870e81240829666ee59118c9cf9ec4f7d",
+    "score.md": "8a4ac94ea81791b82d7aa53f4b824aea9d609b4c72953db97d3b754b62464fd5"
+  },
+  "primary_Alexander_reflection_conjugation_Hotelling_p": {
+    "R0": 0.1162662890946434,
+    "R1": 0.3862647050876934,
+    "R2": 0.35415503899878825,
+    "R3": 0.06120454377483496
+  },
+  "internal_C4_conjugating_line_Hotelling_p": {
+    "plus_R1": 0.9912587881565333,
+    "plus_R2": 0.7959240382434247,
+    "plus_R3": 0.8357512563936552,
+    "minus_R1": 0.7389821671740944,
+    "minus_R2": 0.8771991262759136,
+    "minus_R3": 0.6896451608065457
+  },
+  "non_identification_control": {
+    "orientation_preserving_identity_plus_conjugation_p": 0.9856094875077012,
+    "interpretation": "the data retain the Alexander family but do not uniquely select it over simpler coordinate identifications"
+  },
+  "exact_structure": {
+    "C4_fiber_multipliers_plus_minus": [3, 2],
+    "multipliers_are_inverse_mod5": true,
+    "same_parent_children_are_exact_D4_isomorphic": false,
+    "deck_character_maps_change_right_line": false
+  },
+  "decision": "the parameter-free Alexander reflection-conjugation family survives, but the sector intertwiner is not identified",
+  "minimal_truncated_realization": {
+    "plus": "Q_plus=C^6/<q_plus>, dimension 5",
+    "minus": "Q_minus=C^6/<q_minus>, dimension 5",
+    "combined": "Q_plus direct_sum Q_minus, dimension 10 with a candidate Alexander anti-linear intertwiner",
+    "shared_rank6_reinterpretation": "rank of the raw vertical stack is six whenever the two one-dimensional right kernels do not coincide in the identity column chart; it is a failed identity intertwiner, not a six-state physical dimension"
+  },
+  "claim_boundary": [
+    "Survival is compatibility, not proof that the Alexander intertwiner is present or unique.",
+    "The same-parent finite quotients are not exact reflected graphs; the bridge is a truncated Hecke-sector statement.",
+    "The null-line uncertainty is large enough that several orientation-preserving comparators also survive.",
+    "Only the degree-two truncated quotient is constructed; multiplication closure requires degree-five and degree-six rows."
+  ],
+  "next_discriminator": "the C4-closed degree-five shell extends all degree-three shifts of q_plus and q_minus; degree six then tests the full next flat-extension plateau"
+}
