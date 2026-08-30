@@ -1,0 +1,191 @@
+{
+  "claim_boundary": "The finite connectivity representation proves the algebraic obstruction and the crossed/ordinary trace decomposition.  Identifying these two formal closures with the physical Z_2D and Z_0D requires a calibrated affine-TL transfer representation with loop weights and homology bookkeeping.",
+  "data_class": "exact integer matrices and polynomial-in-Q residuals; no Monte Carlo",
+  "decision": {
+    "continuum_consequence": "the certificate names an additional homology-resolved module/trace; it does not determine F_t(tau) or the spinful identity-dressing shape",
+    "ordinary_center": "no from the first nondegenerate width 3",
+    "single_crossed_defect": "no; T is crossed, I is untwisted, and their Q-weighted difference obeys neither one law",
+    "valid_realization": "an exact difference of two closure traces, equivalently a central label only after adjoining the external direct sum M_cross plus M_trivial",
+    "width_two": "degenerate and therefore not evidence for centrality"
+  },
+  "exact_identity": {
+    "candidate": "D_hom=T-QI",
+    "candidate_pull_through": "D_hom e_i-e_(i+1)D_hom=Q(e_(i+1)-e_i)",
+    "crossed_pull_through": "T e_i=e_(i+1) T",
+    "translation_covariance": "T e_i T^-1=e_(i+1)"
+  },
+  "representation": {
+    "T": "one-site translation",
+    "basis": "circular noncrossing FK connectivity partitions",
+    "closure_functionals": {
+      "Phi_Q(A)": "Z_cross(A)-Q*Z_trivial(A)=Tr((T-QI)A)",
+      "Z_cross(A)": "Tr(T A)",
+      "Z_trivial(A)": "Tr(A)"
+    },
+    "e_i": "idempotent join of cyclic neighbours i and i+1"
+  },
+  "schema": "matching-one/p321-homology-trace-functional/v1",
+  "widths": [
+    {
+      "dimension": 2,
+      "local_generator_residuals": {
+        "D_hom_commutator": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "polynomial_factor": "1",
+          "rank_over_Q": 0
+        },
+        "D_hom_pull_through_residual": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "polynomial_factor": "Q",
+          "rank_over_Q": 0
+        },
+        "D_hom_translation_commutator": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "rank_over_Q": 0
+        },
+        "all_sites_equal": true,
+        "seam_covariance_residual": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "rank_over_Q": 0
+        },
+        "seam_pull_through_residual": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "rank_over_Q": 0
+        },
+        "sites_checked": 2
+      },
+      "trace_laws": {
+        "D_hom_ordinary_cyclicity_witness": {
+          "Q_coefficient": 0,
+          "available": false,
+          "constant_coefficient": 0,
+          "reason": "T acts as identity on the two Catalan connectivity states"
+        },
+        "D_hom_sigma_twisted_witness_A_equals_B_equals_e0": {
+          "Q_coefficient": 0,
+          "constant_coefficient": 0
+        },
+        "crossed_trace_sigma_twisted_max_abs_residual_on_generators": 0
+      },
+      "translation_order_residual": {
+        "frobenius_norm_squared": 0,
+        "nonzero_entries": 0,
+        "rank_over_Q": 0
+      },
+      "width": 2
+    },
+    {
+      "dimension": 5,
+      "local_generator_residuals": {
+        "D_hom_commutator": {
+          "frobenius_norm_squared": 6,
+          "nonzero_entries": 6,
+          "polynomial_factor": "1",
+          "rank_over_Q": 2
+        },
+        "D_hom_pull_through_residual": {
+          "frobenius_norm_squared": 6,
+          "nonzero_entries": 6,
+          "polynomial_factor": "Q",
+          "rank_over_Q": 2
+        },
+        "D_hom_translation_commutator": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "rank_over_Q": 0
+        },
+        "all_sites_equal": true,
+        "seam_covariance_residual": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "rank_over_Q": 0
+        },
+        "seam_pull_through_residual": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "rank_over_Q": 0
+        },
+        "sites_checked": 3
+      },
+      "trace_laws": {
+        "D_hom_ordinary_cyclicity_witness": {
+          "A": "e0",
+          "B": "T*T*e0",
+          "Q_coefficient": 0,
+          "available": true,
+          "constant_coefficient": -1
+        },
+        "D_hom_sigma_twisted_witness_A_equals_B_equals_e0": {
+          "Q_coefficient": -1,
+          "constant_coefficient": 0
+        },
+        "crossed_trace_sigma_twisted_max_abs_residual_on_generators": 0
+      },
+      "translation_order_residual": {
+        "frobenius_norm_squared": 0,
+        "nonzero_entries": 0,
+        "rank_over_Q": 0
+      },
+      "width": 3
+    },
+    {
+      "dimension": 14,
+      "local_generator_residuals": {
+        "D_hom_commutator": {
+          "frobenius_norm_squared": 20,
+          "nonzero_entries": 20,
+          "polynomial_factor": "1",
+          "rank_over_Q": 6
+        },
+        "D_hom_pull_through_residual": {
+          "frobenius_norm_squared": 20,
+          "nonzero_entries": 20,
+          "polynomial_factor": "Q",
+          "rank_over_Q": 6
+        },
+        "D_hom_translation_commutator": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "rank_over_Q": 0
+        },
+        "all_sites_equal": true,
+        "seam_covariance_residual": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "rank_over_Q": 0
+        },
+        "seam_pull_through_residual": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "rank_over_Q": 0
+        },
+        "sites_checked": 4
+      },
+      "trace_laws": {
+        "D_hom_ordinary_cyclicity_witness": {
+          "A": "e0",
+          "B": "T*e0",
+          "Q_coefficient": 0,
+          "available": true,
+          "constant_coefficient": -1
+        },
+        "D_hom_sigma_twisted_witness_A_equals_B_equals_e0": {
+          "Q_coefficient": -3,
+          "constant_coefficient": 0
+        },
+        "crossed_trace_sigma_twisted_max_abs_residual_on_generators": 0
+      },
+      "translation_order_residual": {
+        "frobenius_norm_squared": 0,
+        "nonzero_entries": 0,
+        "rank_over_Q": 0
+      },
+      "width": 4
+    }
+  ]
+}
