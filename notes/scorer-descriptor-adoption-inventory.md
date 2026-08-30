@@ -6,12 +6,12 @@ direct typed entrypoints importing both `ObservableDescriptor` and
 `map_observable` from `wrapping_channels`. Three frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Six paths are confirmed channel-bearing and
+a descriptor is not applicable. Seven paths are confirmed channel-bearing and
 require typed migrations: `score_angular_root_amplitude.py`,
 `score_axis_pair_annihilator.py`, its stable entrypoint,
-`score_c4_self_matching_n26.py`, `score_c4_tangent_orthogonal_holdout.py`, and
-`score_prequential_evidence.py`. The remaining 21 files are outside a
-registered typed path.
+`score_c4_self_matching_n26.py`, `score_c4_tangent_orthogonal_holdout.py`,
+`score_matching_odd_synthesis.py`, and `score_prequential_evidence.py`. The
+remaining 20 files are outside a registered typed path.
 
 This closes an inventory gap: the repository now has a deterministic list,
 including Git blob identities, rather than an informal claim that all scorers
@@ -20,7 +20,7 @@ import is added or removed without updating the manifest, or if a declared
 wrapped kernel disappears.
 
 `outside_registered_typed_path` is deliberately a triage label. Some of those
-21 scripts may not compare channel-bearing quantities, some may be historical,
+20 scripts may not compare channel-bearing quantities, some may be historical,
 and some may need a future typed wrapper. Static membership alone does not prove
 a semantic bug, data-provenance failure, or need for migration. Each candidate
 must be reviewed before modification; Issue #146 therefore remains open.
@@ -60,6 +60,14 @@ orthogonal and thermal residuals. A typed migration must bind both sizes to the
 same exact channel semantics and type the response-coordinate pair, without
 changing batch alignment, jackknife construction, or the frozen interpretation
 rule.
+
+`score_matching_odd_synthesis.py` is migration-required. It selects two frozen
+ledger blocks by requiring free-form `channel.source` and `channel.target`
+strings to equal `matching_odd`, then combines their already-primary scores.
+A later migration must parse both typed descriptors and verify their registered
+identity maps. That semantic gate must not change the frozen block selection,
+distinct raw-data-group requirement, block-diagonal synthesis, or the rule that
+the derived output cannot become a new primary evidence row.
 
 The axis-pair annihilator score path is migration-required as one operational
 unit. The base scorer reconstructs the cross matching function from

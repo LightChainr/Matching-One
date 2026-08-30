@@ -2,11 +2,11 @@
   "boundary": "outside_registered_typed_path is an inventory status, not proof that a scorer is channel-bearing or semantically invalid",
   "corpus_glob": "scripts/*score*.py",
   "counts": {
-    "channel_bearing_migration_required": 6,
+    "channel_bearing_migration_required": 7,
     "covered_frozen_kernel": 3,
     "descriptor_not_applicable_generic_utility": 1,
     "direct_typed_entrypoint": 4,
-    "outside_registered_typed_path": 21,
+    "outside_registered_typed_path": 20,
     "total": 35
   },
   "rows": [
@@ -24,7 +24,7 @@
     {"git_blob_sha":"067b0b613b9c2f412bc75aa0361d488ed68e44d3","path":"scripts/score_issue43_full_curve.py","status":"outside_registered_typed_path"},
     {"git_blob_sha":"be08124b54bf27c0ccf88ee9f43b48d66a791b4d","path":"scripts/score_issue43_secondary.py","status":"outside_registered_typed_path"},
     {"git_blob_sha":"d1349c92aa01dd1d4cbaf97d56a7034be5457f11","path":"scripts/score_issue50_n290.py","status":"outside_registered_typed_path"},
-    {"git_blob_sha":"7a448080609fed552150e26f73741b22719f9d8e","path":"scripts/score_matching_odd_synthesis.py","status":"outside_registered_typed_path"},
+    {"git_blob_sha":"7a448080609fed552150e26f73741b22719f9d8e","path":"scripts/score_matching_odd_synthesis.py","status":"channel_bearing_migration_required"},
     {"git_blob_sha":"017452c9e08c45cde9310c1f693dd97b20016866","path":"scripts/score_norm4_production.py","status":"outside_registered_typed_path"},
     {"git_blob_sha":"c7249c6b4c05c8d63bbb1d9ca2c4a0b236ba28f1","path":"scripts/score_norm4_thermal_jet.py","status":"outside_registered_typed_path"},
     {"git_blob_sha":"08ac4daaec99782b97ce148d7f3e22672bf81f0a","path":"scripts/score_norm5_harmonic_primary_typed.py","status":"direct_typed_entrypoint"},
@@ -53,6 +53,7 @@
     "scripts/score_axis_pair_annihilator_stable.py": "operational entrypoint patches the batch reader and delegates to the channel-bearing axis-pair annihilator without descriptor validation",
     "scripts/score_c4_self_matching_n26.py": "selects a wrapping observable through a free-form prediction geometry channel and scores its exact Bernstein/power law without binding the frozen hypothesis to a descriptor",
     "scripts/score_c4_tangent_orthogonal_holdout.py": "selects the cross response through a free-form channel string and transports a source-frozen tangent projection across sizes without descriptor validation",
+    "scripts/score_matching_odd_synthesis.py": "selects two ledger blocks by free-form matching_odd source/target strings and combines their scores without verifying registered descriptor identity maps",
     "scripts/score_prequential_evidence.py": "validates scored blocks with free-form channel.source/channel.target strings and accepts any truthy exact_map instead of applying the registered descriptor map"
   },
   "descriptor_not_applicable_generic_utilities": {
