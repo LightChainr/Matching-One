@@ -1,7 +1,18 @@
 {
   "schema": "matching-one/p334-birth-age-production-freeze/v1",
   "status": "frozen_retrospective_score_not_run",
-  "frozen_utc": "2026-08-30T11:30:00Z",
+  "frozen_utc": "2026-08-30T11:25:23Z",
+  "protocol_addenda": [
+    {
+      "utc": "2026-08-30T11:27:11Z",
+      "timing": "before either marked-birth table was opened locally or any count was scored",
+      "changes": [
+        "add a nested birth-mark-controlled age slope as a diagnostic only",
+        "freeze the N^-5/6 collision-ratio adversary without fitting an exponent",
+        "state explicitly that a slope rejects only coarse-state lumpability and may proxy unrecorded current geometry"
+      ]
+    }
+  ],
   "issues": [334, 337],
   "parent_commit": "fee33287",
   "source_engine_commit": "9f2033a2d205a01d3554bc2e9c93bed5760f5b29",
@@ -65,6 +76,23 @@
     "formula": "sum count*1[K1=K2]/total samples",
     "role": "separate direct 0->2 diagonal mass; estimated jointly with beta rather than used as a tail-law fit"
   },
+  "nested_mark_diagnostic": {
+    "status": "secondary_no_primary_decision",
+    "estimator": "the same one-degree age slope with fixed-effect strata refined from ell to (ell,mark01_axis,mark01_diagonal,mark01_landed,mark01_h4)",
+    "allowed_fields": "only strict 0->1 birth marks already known at K1; no K2/mark12 outcome-side field enters the control",
+    "purpose": "measure whether the primary slope attenuates after controlling recorded birth-local geometry",
+    "boundary": "survival after this control still may reflect unrecorded current configuration geometry at k0 and is not intrinsic temporal memory"
+  },
+  "six_arm_collision_adversary": {
+    "status": "conditional_high_risk_secondary",
+    "model": "Dbar_425/Dbar_325=(425/325)^(-5/6)",
+    "fixed_ratio": 0.7996722504772675,
+    "Dbar": "equal orientation mean (D_first+D_second)/2 within each size",
+    "score": "one-degree covariance-aware contrast Dbar_425-fixed_ratio*Dbar_325 using the full within-size batch covariance and block-diagonal cross-size covariance",
+    "no_free_exponent": true,
+    "geometry_caveat": "the two size designs are not a matched fixed-shape lineage, so failure may be amplitude/shape drift rather than failure of the conditional six-arm exponent",
+    "interpretation": "failure is not evidence against or for thermal Q4"
+  },
   "complement_check": {
     "mapping": "K1c=N+1-K2, K2c=N+1-K1, ell_c=ell",
     "center": "k0c=N-k0",
@@ -100,7 +128,8 @@
   },
   "claim_boundary": [
     "This is a retrospective reanalysis of two revealed P267 archives and creates no independent evidence rows.",
-    "A resolved birth-age slope is finite-size predictive memory after conditioning on current rank, k and primitive line; it is not a CFT field, Jordan block or proof of a non-Markov scaling limit.",
+    "A resolved birth-age slope rejects lumpability of the recorded coarse state (k,rank,ell); it may proxy unrecorded current geometry and is not by itself intrinsic temporal memory.",
+    "The nested birth-mark diagnostic controls recorded geometry at K1 only; it does not observe the full current configuration at k0.",
     "D_N is a separate collision channel and is not used to explain or subtract the age slope.",
     "No exact 1/57 witness, finite D_N census or six-arm exponent calculation is repeated.",
     "The two orientations of one size remain one covariance block."

@@ -61,6 +61,18 @@ conditioning on the current layer and primitive line.
 All site, landing and local-H4 mark fields are summed over.  They are not extra
 strata or evidence rows.
 
+As a secondary nested diagnostic only, repeat the same one-degree slope after
+refining each line stratum by the already-known strict `0->1` birth marks
+
+```text
+(mark01_axis, mark01_diagonal, mark01_landed, mark01_h4).
+```
+
+No `K2` or `mark12` outcome-side field may enter this control.  Attenuation
+would identify recorded birth-local geometry as part of the primary signal.
+Persistence would still not establish intrinsic temporal memory, because the
+archive does not record the full current microscopic geometry at `k0`.
+
 ## Collision mass and covariance
 
 In the same pass compute
@@ -83,6 +95,20 @@ covariance.  Orientation slopes receive one-degree Student-t tests; a two-
 degree joint slope-zero Wald test is reported once per size/archive.  The
 frozen alpha is `0.01`.  `D_N` receives a 99% interval but no size-law fit.
 
+Before reading collision counts, one conditional high-risk six-arm adversary
+is also frozen:
+
+```text
+Dbar_425 / Dbar_325 = (425/325)^(-5/6) = 0.7996722505,
+Dbar_N = (D_first+D_second)/2.
+```
+
+It is scored as the one-degree contrast
+`Dbar_425-0.7996722505 Dbar_325` with full within-size covariance and independent
+cross-size blocks.  No exponent is fitted from two points.  The geometries are
+not a fixed-shape lineage, so rejection may be caused by shape-dependent
+amplitudes; it cannot be assigned to thermal Q4.
+
 ## Complement view
 
 Use the exact stored mapping
@@ -102,8 +128,9 @@ unchanged by the mapping.
 
 ## Claim boundary
 
-A resolved slope would establish production-scale finite-size predictive
-memory beyond `(k,rank,ell)`.  It would not prove that memory survives a
-near-critical scaling limit, identify a Jordan/CFT state, or imply that a
-finite-dimensional spatial transfer description fails.  Collision mass is a
-separate channel and is not allowed to explain away or subtract the slope.
+A resolved slope rejects lumpability of the recorded coarse state
+`(k,rank,ell)`.  It may proxy unrecorded current geometry rather than intrinsic
+temporal memory.  It would not prove that memory survives a near-critical
+scaling limit, identify a Jordan/CFT state, or imply that a finite-dimensional
+spatial transfer description fails.  Collision mass is a separate channel and
+is not allowed to explain away or subtract the slope.
