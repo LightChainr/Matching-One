@@ -1,0 +1,70 @@
+{
+  "schema": "matching-one/p334-bottleneck-proxy-pilot-freeze/v1",
+  "status": "frozen_before_proxy_implementation_or_new_data",
+  "parent_current_geometry_result": "769d7aeca0176cc77801e76b99fd81544fc8cd0e",
+  "production_age_result": {
+    "commit": "742a8b0",
+    "path": "results/local-20260830/P334-age-iota-site-control/score.json",
+    "sha256": "43901ffdc597328207cc31a4e1307a2f801011652d443ed24abed8e7bd6ad6eb"
+  },
+  "question": "Can a one-pass bottleneck/shape summary of the current rank-one carrier absorb the production birth-age association without enumerating H2?",
+  "runs": {
+    "N325": {
+      "N": 325,
+      "k0": 193,
+      "samples": 20000,
+      "batches": 20,
+      "seed": 20260830334425,
+      "replica_counter_first": 34425000000,
+      "replica_counter_last_exclusive": 34425020000,
+      "first_matrix": [[325, 57], [0, 1]],
+      "second_matrix": [[325, 18], [0, 1]]
+    },
+    "N425": {
+      "N": 425,
+      "k0": 252,
+      "samples": 20000,
+      "batches": 20,
+      "seed": 20260830334525,
+      "replica_counter_first": 34525000000,
+      "replica_counter_last_exclusive": 34525020000,
+      "first_matrix": [[425, 132], [0, 1]],
+      "second_matrix": [[425, 268], [0, 1]]
+    }
+  },
+  "new_online_fields": {
+    "boundary_cut_edges": "number of NN primal edges with one endpoint in a current rank-one carrier and the other endpoint vacant",
+    "boundary_multicontact_sites": "vacant sites incident to at least two essential-carrier edges",
+    "boundary_contact_pairs": "sum over vacant sites of choose(number of incident essential-carrier edges,2)",
+    "core_vertices": "vertices remaining after degree-below-two peeling of the occupied essential-carrier induced multigraph",
+    "core_edges": "essential-carrier induced edges whose endpoints both survive the same 2-core peel",
+    "articulation_vertices": "Tarjan articulation vertices in the occupied essential-carrier induced multigraph",
+    "bridges": "Tarjan bridges in the occupied essential-carrier induced multigraph"
+  },
+  "complexity_boundary": "All new fields use one scan of current vertices/edges plus linear-time 2-core and Tarjan traversals. No configuration, adjacency list, or future insertion site is written to disk. H2 remains only the exact ceiling already implemented.",
+  "fundamental_cycle_boundary": "A rank-one state has only one independent ambient deck direction. Two independent deck cycles become defined only after a future rank-two completion, so no future-conditioned shortest-cycle or overlap statistic enters this current-state pilot.",
+  "models": {
+    "M0": "line-fixed age slope",
+    "Mcheap": "M0 plus the prior essential size/carrier and occupied/vacant frontier vector",
+    "Mshape": "Mcheap plus boundary_cut_edges/N, boundary_multicontact_sites/(N-k0), boundary_contact_pairs/(N-k0), core_vertices/N, core_edges/N, articulation_vertices/N, bridges/N",
+    "MH2": "M0 plus H2/(N-k0), retained only as the definition-level ceiling"
+  },
+  "primary_production_anchor": "For each orientation add the fresh paired delta beta_Mshape-beta_M0 to the independent 2M production beta_M0. Add the full 2x2 production covariance and fresh paired-delta covariance. N325 and N425 remain separate evidence blocks.",
+  "primary_decision": "The proxy absorbs the production association only if both size-level two-orientation anchored joint p-values are at least 0.01 and every anchored absolute slope retention is at most 0.25. Otherwise it fails as a common bottleneck state.",
+  "secondary": [
+    "report each proxy coefficient and paired Mshape-Mcheap shift without model selection",
+    "fit the complete N325 Mshape geometry-only coefficient vector and transfer it without refitting to N425 residual age slopes",
+    "report MH2 calibration but do not count it as mechanism evidence"
+  ],
+  "exact_gates": [
+    "2-core counts equal a direct iterative peel on tiny quotients",
+    "Tarjan articulation/bridge counts equal deletion-based tiny-graph oracles",
+    "boundary cut and contact-pair counts equal direct tiny enumeration",
+    "the existing virtual H2 exhaustive gate remains green"
+  ],
+  "support_gate": "at least 400 risk rows and 10 next exits per orientation; otherwise report underpowered",
+  "decision_alpha": 0.01,
+  "interpretation_boundary": "Failure to absorb excludes only this compact one-pass shape vector. It does not prove intrinsic temporal memory, complete-state non-Markovianity, or absence of a more targeted bottleneck coordinate.",
+  "no_adaptive_extension": true,
+  "score_once_after_raw_lock": true
+}
