@@ -1,0 +1,44 @@
+schema: matching-one/algebraic-model-certificate-envelope/v1
+issue: 370
+certificate_id: synthetic-m1-vs-m2d-envelope
+claim_level: exact
+status: verified
+inputs:
+  - path: results/model-certificates/synthetic/m1-vs-m2d/latest.json
+    sha256: 4f4e8ed87d5b6d66fb8d42e9a4825ab18745009db14de4fc6ac54ef7f0d5a411
+    descriptor: exact rational moments f0=2, f1=3, f2=5
+    dependency_group: synthetic-exact-m1-m2d
+    chronology: generated before envelope validation
+model_class:
+  id: M1-scalar-character-three-moment
+  state_dimension: 1
+  relations:
+    - f0*f2-f1^2=0
+  parameter_bounds: []
+gauge:
+  kind: invariant_coordinates
+  coverage: complete_for_declared_class
+  uncovered_set: none
+confidence_set:
+  kind: exact_point
+  covariance: not_applicable
+  threshold: zero
+  calibration: exact rational input; no statistical calibration
+certificate:
+  level: E
+  type: nonzero_hankel_minor
+  order: 2
+  result: excluded_declared_M1
+  dual_support:
+    - f0
+    - f1
+    - f2
+verification:
+  verifier: scripts/model_certificate_envelope.py
+  arithmetic: rational
+  status: verified_exact
+  residual: "0"
+claim_boundary:
+  included: fail-closed envelope validation for one exact synthetic M1 certificate
+  excluded: generic model compilation, SOS search, statistical confidence sets, physical interpretation, or other gauge classes
+  parent_issue: remain open
