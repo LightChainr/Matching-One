@@ -1,0 +1,57 @@
+{
+  "claim_boundary": {
+    "excluded": "witness search, Groebner or SOS completeness, multivariate monomial parsing, noisy constraints, selection-rule derivation, or model validation",
+    "included": "exact verification that the supplied rational univariate ideal witness combines the declared generators to one",
+    "parent_issue": "remain open"
+  },
+  "claim_level": "exact",
+  "coefficient_order": "univariate low degree to high degree",
+  "constraints": [
+    [
+      "0",
+      "1"
+    ],
+    [
+      "-1",
+      "7"
+    ]
+  ],
+  "issue": 370,
+  "multipliers": [
+    [
+      "7"
+    ],
+    [
+      "-1"
+    ]
+  ],
+  "schema": "matching-one/exact-linear-ideal-certificate/v1",
+  "solver_invoked": false,
+  "source": {
+    "dependency_group": "synthetic-exact-semantic-zero",
+    "path": "results/model-certificates/synthetic/semantic-zero-contradiction/latest.json",
+    "sha256": "23eaafc79065f54bc38db4c899ce3e185c25c11164b0052df59b79fe81a3095d"
+  },
+  "variable_order": [
+    "z"
+  ],
+  "verification": {
+    "cleared_multiplier_content": 1,
+    "multiplier_denominator_lcm": 1,
+    "primitive_after_common_denominator": true,
+    "result_coefficients_low_to_high": [
+      "1"
+    ],
+    "status": "exact_ideal_contains_one",
+    "term_products": [
+      [
+        "0",
+        "7"
+      ],
+      [
+        "1",
+        "-7"
+      ]
+    ]
+  }
+}
