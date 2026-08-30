@@ -1,7 +1,7 @@
 schema: matching-one/external-observer-rank-birth-manifest/v1
 issues: [215, 275, 276]
 target: PR267_Target1
-status: production_preregistered_N325_N425_authorized
+status: production_revealed_bulk_gate_passed_source_phase_unresolved
 
 base:
   main: 83e98fc
@@ -106,4 +106,13 @@ claim_boundary:
   exact: O_ext identity, matching parity, q-sigma escape, path-product Horvitz semantics
   implemented: production-compatible per-k sufficient-statistic columns
   conditional: O_ext is a useful lattice thermal scalar for a Q4-epsilon bridge
-  not_claimed: field identity or asymptotic exponent before a frozen N325_N425 score
+  not_claimed: field identity or asymptotic exponent from the two-size N325_N425 score
+
+production_result:
+  preregistration: 5ccab6f
+  path: results/server-20260830/P267-target1-external-Euler-2m
+  primary: pass_nonzero_external_D_at_both_sizes
+  mechanism_gate: pass_far_D_dominates_near_D
+  contact_phase_lock: not_rejected_z_minus_0p414
+  next: stored_data_batchwise_Gram_orthogonal_JD_perp_score
+  prohibited_next: [larger_N_same_scalar_repeat, qJ_primary_revival]
