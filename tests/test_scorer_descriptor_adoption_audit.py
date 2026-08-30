@@ -124,16 +124,24 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
             )
         )
         self.assertEqual(result, audit(ROOT, manifest))
-        self.assertEqual(result["counts"]["total"], 52)
-        self.assertEqual(result["counts"]["direct_typed_entrypoint"], 21)
-        self.assertEqual(result["counts"]["covered_frozen_kernel"], 20)
+        self.assertEqual(result["counts"]["total"], 53)
+        self.assertEqual(result["counts"]["direct_typed_entrypoint"], 22)
+        self.assertEqual(result["counts"]["covered_frozen_kernel"], 21)
         self.assertEqual(
             result["counts"]["descriptor_not_applicable_generic_utility"], 1
         )
-        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 10)
+        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 9)
         self.assertEqual(result["counts"]["outside_registered_typed_path"], 0)
-        self.assertEqual(len(result["rows"]), 52)
+        self.assertEqual(len(result["rows"]), 53)
         statuses = {row["path"]: row["status"] for row in result["rows"]}
+        self.assertEqual(
+            statuses["scripts/score_prequential_evidence.py"],
+            "covered_frozen_kernel",
+        )
+        self.assertEqual(
+            statuses["scripts/score_prequential_evidence_typed.py"],
+            "direct_typed_entrypoint",
+        )
         self.assertEqual(
             statuses["scripts/score_angular_root_amplitude.py"],
             "covered_frozen_kernel",
