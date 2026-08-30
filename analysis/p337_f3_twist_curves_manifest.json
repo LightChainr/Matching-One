@@ -1,0 +1,45 @@
+{
+  "schema": "matching-one/p337-f3-twist-curves/v1",
+  "issues": [337, 334],
+  "input_commit": "a7cb19a",
+  "dependency_group": "P334_N65_20k_projective_birth_smoke",
+  "new_samples": false,
+  "observer": "complete p-dependent F3 flat constraint partition curves",
+  "curve_basis": "degree-65 Bernstein coefficients from tau1, ell, tau2",
+  "identifiability": {
+    "zero_twist": "constant one",
+    "nonzero_twists": 8,
+    "distinct_nonzero_kernel_curves": 4,
+    "characters": ["balanced_H4", "axis_odd", "diagonal_odd"]
+  },
+  "exact_transport": {
+    "complement": "P0<->P2 and L_line even under p->1-p",
+    "S_on_HAD": [1, -1, -1],
+    "reflection_on_HAD": [1, 1, -1],
+    "maximum_residual": 2.4980018054066022e-15
+  },
+  "selected_crossing": {
+    "equation": "H_(7,4)(p)=H_(8,1)(p)",
+    "root": 0.5736333260803443,
+    "derivative": 0.060246233115848584,
+    "jackknife_standard_error": 0.022814328166633875,
+    "leave_one_bracket_survival": "20/20",
+    "complement_dual_root": 0.4263666739196557,
+    "root_minus_p_ref": -0.019112724709655637,
+    "status": "exploratory geometry selector; unresolved from p_ref"
+  },
+  "power": {
+    "two_sigma_samples_per_shape": 113988.26582877018,
+    "three_sigma_samples_per_shape": 256473.59811473283,
+    "model": "inverse-sample variance scaling from the reused 20k block",
+    "production_started": false
+  },
+  "artifacts": {
+    "scorer": "scripts/score_f3_twist_curves.py",
+    "score": "results/local-20260830/P337-F3-twist-curves/score.json",
+    "report": "results/local-20260830/P337-F3-twist-curves/REPORT.md",
+    "note": "notes/p337-f3-twist-curves.md",
+    "test": "tests/test_f3_twist_curves.py"
+  },
+  "claim_boundary": "exact archive curves and transports; crossing is exploratory reuse, not a resolved root split, universal value or independent twist-source experiment"
+}
