@@ -6,7 +6,7 @@ direct typed entrypoints importing both `ObservableDescriptor` and
 `map_observable` from `wrapping_channels`. Three frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Twenty-five paths are confirmed channel-bearing and
+a descriptor is not applicable. Twenty-six paths are confirmed channel-bearing and
 require typed migrations: `score_angular_root_amplitude.py`,
 `score_axis_pair_annihilator.py`, its stable entrypoint,
 `score_c4_self_matching_n26.py`, `score_c4_tangent_orthogonal_holdout.py`,
@@ -17,12 +17,13 @@ require typed migrations: `score_angular_root_amplitude.py`,
 `score_norm4_thermal_jet.py`, `score_norm5_thermal_jet.py`,
 `score_p159_pell_hex_filter.py`,
 `score_p231_vacuum_kdv_sector.py`,
+`score_p48_new_geometry_channels.py`,
 `score_p48_sprime_frozen.py`, `score_p49_fullcurve_doubling.py`,
 `score_p50_fullcurve_n290.py`, `score_p50_sprime_n290.py`,
 `score_prequential_evidence.py`,
 `score_rank_gap_boundary_targets.py`, `score_threshold_rank_root_doubling.py`,
 `score_v14_fixedp_scalar_projector.py`, and
-`score_v14_scalar_root_projector.py`. The remaining two files are outside a
+`score_v14_scalar_root_projector.py`. The remaining one file is outside a
 registered typed path.
 
 This closes an inventory gap: the repository now has a deterministic list,
@@ -219,6 +220,18 @@ coordinates, fixed-p and amplitude normalizations, cross-design phase map, and
 non-independent evidence relation. It must preserve the exact oracle, frozen
 continuum baselines, covariance transform, post-reveal boundary, and all
 existing gate conclusions.
+
+`score_p48_new_geometry_channels.py` is migration-required and is not covered
+by the typed wrapper for the separate prospective `P4_S_prime` kernel. This
+entrypoint jointly scores four intrinsic-center projectors (`P4_S`, `P4_D`,
+`P4_S_prime`, and `P4_D_prime`) with different powers, transports frozen
+source amplitudes from N=65/85/130 to independent N=185/265 targets, and adds
+the shared source-amplitude uncertainty as a correlated covariance component.
+A migration must type each projector quantity, intrinsic-center geometry,
+normalization power, source-to-target map, target-stream independence, and
+shared-source evidence relation. It must preserve the no-target-refit rule,
+two-by-two covariance construction, distinction from fixed-coordinate
+P31/P43 `either/even` DeltaS, and all numerical scores.
 
 The axis-pair annihilator score path is migration-required as one operational
 unit. The base scorer reconstructs the cross matching function from
