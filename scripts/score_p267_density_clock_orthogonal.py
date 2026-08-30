@@ -268,6 +268,10 @@ def chi2_survival_2d(value: float) -> float:
     return math.exp(-0.5 * value)
 
 
+def log10_chi2_survival_2d(value: float) -> float:
+    return -0.5 * value / math.log(10.0)
+
+
 def nonzero_summary(report: Mapping[str, object], prefix: str, alpha: float) -> dict[str, object]:
     names = [prefix + "_re", prefix + "_im"]
     value = complex_point(report, prefix)
@@ -279,6 +283,7 @@ def nonzero_summary(report: Mapping[str, object], prefix: str, alpha: float) -> 
         "covariance_re_im": covariance,
         "mahalanobis_chi2_2d": chi2,
         "p_value": p,
+        "log10_p_value": log10_chi2_survival_2d(chi2),
         "decision": "nonzero at frozen alpha" if p < alpha else "zero null survives",
     }
 

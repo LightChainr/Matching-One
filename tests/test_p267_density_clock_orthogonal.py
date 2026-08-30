@@ -85,6 +85,28 @@ class P267DensityClockTests(unittest.TestCase):
         self.assertIn("infer or score an O_far conditional mean", manifest["forbidden"])
         self.assertEqual(METRICS[:4], ("P4_raw_re", "P4_raw_im", "P4_clock_re", "P4_clock_im"))
 
+    def test_checked_in_result_reproduces_the_fixed_K_remainder(self) -> None:
+        result = ROOT / "results/server-20260830/P267-density-clock-orthogonal/score.json"
+        if not result.exists():
+            self.skipTest("density-clock score has not been revealed")
+        payload = json.loads(result.read_text(encoding="utf-8"))
+        self.assertEqual(payload["schema"], "matching-one/p267-density-clock-orthogonal-score/v1")
+        target = payload["block_summaries"]["target1_external_2m"]
+        second = payload["block_summaries"]["two_observer_2m"]
+        self.assertAlmostEqual(target["retained_fraction"]["N325"]["point"], 0.3212572947195287)
+        self.assertAlmostEqual(second["retained_fraction"]["N425"]["point"], 0.323114937526423)
+        self.assertGreater(target["single_size"]["N325"]["mahalanobis_chi2_2d"], 100000)
+        self.assertGreater(second["single_size"]["N425"]["mahalanobis_chi2_2d"], 100000)
+        self.assertGreater(
+            payload["independent_block_compatibility"]["N325"]["clock"]["p_value"],
+            0.9,
+        )
+        self.assertGreater(
+            payload["independent_block_compatibility"]["N425"]["clock"]["p_value"],
+            0.9,
+        )
+        self.assertIn("not defined or scored", payload["forbidden_observer"])
+
 
 if __name__ == "__main__":
     unittest.main()
