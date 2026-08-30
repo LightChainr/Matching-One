@@ -90,6 +90,42 @@ dual-number representation of the Gram form **and one transfer/algebra
 generator**, followed by the similarity class of its action on the radical.
 Repeating scalar Q-score derivatives cannot supply that information.
 
+## A sharp selector for a future transfer generator
+
+The universal radical still supplies one exact selection rule.  Let a regular
+operator family `T(Q)` be compatible with the Gram form.  On the endpoint
+radical, write `H` for the nondegenerate first-jet pairing.  Expanding Gram
+compatibility to first order gives
+
+```text
+H T0 = T0^T H.
+```
+
+Thus `T0` is self-adjoint for the indefinite form `H`.  If
+
+```text
+(T0-lambda)v=0,     (T0-lambda)w=v
+```
+
+is a nontrivial Jordan chain, then
+
+```text
+<v,v>_H
+ = <v,(T0-lambda)w>_H
+ = <(T0-lambda)v,w>_H
+ = 0.
+```
+
+So the bottom state of every possible Jordan chain must lie on the exact null
+cone of the first-radical form.  The gate is sharp: on the two-dimensional
+form `H=[[0,1],[1,0]]`, the Jordan matrix `[[2,1],[0,2]]` is H-self-adjoint and
+its bottom vector is isotropic.  The machine artifact includes this rational
+oracle.
+
+This changes the next search from "find an epsilon pivot" to "find a transfer
+eigenvector that is H-isotropic and has a generalized partner".  At four legs
+the signature `(8,6)` makes such vectors possible, but not automatic.
+
 ## Claim boundary
 
 This proves a finite algebra statement.  It does not prove a transfer-matrix

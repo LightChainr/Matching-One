@@ -13,6 +13,7 @@ from p333_dual_number_gram_extension import (  # noqa: E402
     mobius_pivot_jet,
     restricted_first_form,
     symmetric_inertia,
+    sharp_jordan_gate_oracle,
 )
 
 
@@ -31,6 +32,11 @@ class DualNumberGramExtensionTests(unittest.TestCase):
         self.assertTrue(all(row["prediction_exact"] for row in payload["checks"]))
         self.assertTrue(all(row["first_radical_form_inertia"]["zero"] == 0
                             for row in payload["checks"]))
+
+    def test_isotropic_jordan_gate_is_sharp(self):
+        oracle = sharp_jordan_gate_oracle()
+        self.assertTrue(oracle["gram_self_adjoint"])
+        self.assertEqual(oracle["bottom_norm"], "0")
 
 
 if __name__ == "__main__":

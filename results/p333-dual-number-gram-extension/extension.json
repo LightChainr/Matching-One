@@ -120,6 +120,35 @@
   "exact_statement": "The Q=1 connectivity Gram module has one unit pivot and, for each k-block partition with k>=2, one epsilon pivot with leading coefficient (-1)^(k-2)(k-2)!.",
   "interpretation_boundary": "This is a basis-invariant first-order pairing extension. It does not by itself identify a transfer-matrix Jordan block or LCFT field.",
   "issue": 333,
+  "jordan_selector": {
+    "necessary_condition": "For every Gram-compatible regular operator, the endpoint radical action is self-adjoint for the first-jet form. The bottom of any nontrivial Jordan chain must therefore be isotropic in that form.",
+    "proof_identity": "<v,v>_H=<v,(T-lambda)w>_H=<(T-lambda)v,w>_H=0",
+    "sharp_two_dimensional_oracle": {
+      "bottom_norm": "0",
+      "gram": [
+        [
+          "0",
+          "1"
+        ],
+        [
+          "1",
+          "0"
+        ]
+      ],
+      "gram_self_adjoint": true,
+      "jordan_eigenvalue": 2,
+      "operator": [
+        [
+          "2",
+          "1"
+        ],
+        [
+          "0",
+          "2"
+        ]
+      ]
+    }
+  },
   "ring": "Q[epsilon]/(epsilon^2), Q=1+epsilon",
   "schema_version": 1
 }

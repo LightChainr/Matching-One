@@ -136,6 +136,23 @@ def expected_inertia(n: int) -> tuple[int, int, int]:
     return positive, negative, 0
 
 
+def sharp_jordan_gate_oracle() -> dict:
+    """A two-dimensional exact oracle showing the isotropic-bottom gate is sharp."""
+    gram = [[Fraction(0), Fraction(1)], [Fraction(1), Fraction(0)]]
+    operator = [[Fraction(2), Fraction(1)], [Fraction(0), Fraction(2)]]
+    compatible = multiply(gram, operator) == multiply(transpose(operator), gram)
+    bottom = [Fraction(1), Fraction(0)]
+    bottom_norm = sum(bottom[i] * gram[i][j] * bottom[j]
+                      for i in range(2) for j in range(2))
+    return {
+        "gram": [[str(value) for value in row] for row in gram],
+        "operator": [[str(value) for value in row] for row in operator],
+        "gram_self_adjoint": compatible,
+        "jordan_eigenvalue": 2,
+        "bottom_norm": str(bottom_norm),
+    }
+
+
 def analyze(max_points: int = 5) -> dict:
     rows = []
     for n in range(2, max_points + 1):
@@ -179,6 +196,19 @@ def analyze(max_points: int = 5) -> dict:
             "This is a basis-invariant first-order pairing extension. It does "
             "not by itself identify a transfer-matrix Jordan block or LCFT field."
         ),
+        "jordan_selector": {
+            "necessary_condition": (
+                "For every Gram-compatible regular operator, the endpoint "
+                "radical action is self-adjoint for the first-jet form. The "
+                "bottom of any nontrivial Jordan chain must therefore be "
+                "isotropic in that form."
+            ),
+            "proof_identity": (
+                "<v,v>_H=<v,(T-lambda)w>_H="
+                "<(T-lambda)v,w>_H=0"
+            ),
+            "sharp_two_dimensional_oracle": sharp_jordan_gate_oracle(),
+        },
         "checks": rows,
     }
 
