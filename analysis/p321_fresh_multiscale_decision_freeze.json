@@ -1,0 +1,133 @@
+{
+  "schema": "matching-one/p321-fresh-multiscale-decision-freeze/v1",
+  "issue": 321,
+  "status": "preregistered_not_started",
+  "freeze_rule": "This file must be committed and the commit posted to Issue 321 before any listed counter is evaluated.",
+  "source_code_base_commit": "0a7d15f",
+  "pilot": {
+    "classification": "exploratory planning data; never pool with fresh score",
+    "artifact": "results/local-20260830/P321-equal-area-20k/multiscale_score.json in the shared pilot worktree",
+    "sha256": "d425d2f66025c54e5f7d9faa310df004d899d07bca9d2459ee3c02a8ecf1cbe6",
+    "samples_per_shape": 20000,
+    "batches": 20,
+    "fixed_scale_fit": {
+      "chi_square": 1.490179138584335,
+      "degrees_of_freedom": 4
+    },
+    "frozen_E4_residual": {
+      "rho_order": ["16/9", "9/4", "4"],
+      "values": [
+        83.23718955539628,
+        60.65219308159848,
+        100.27195086427044
+      ],
+      "covariance": [
+        [4805.840068016248, 5182.938767704378, 5218.00540238332],
+        [5182.938767704378, 6522.743483674421, 6457.2624081274835],
+        [5218.00540238332, 6457.2624081274835, 6650.6691353377355]
+      ],
+      "chi_square": 7.531750170483802,
+      "degrees_of_freedom": 3,
+      "p_value": 0.05674824191100037
+    }
+  },
+  "fresh_design": {
+    "samples_per_shape": 100000,
+    "batches": 50,
+    "samples_per_batch": 2000,
+    "N_order": [144, 576, 1296],
+    "rho_order": ["1", "16/9", "9/4", "4", "9"],
+    "primary_rho": ["16/9", "9/4", "4"],
+    "rho_9_role": "endpoint_diagnostic_only",
+    "root_semantics": "individual matching root of P2-P0",
+    "within_N_covariance": "all five shapes share seed, counter interval and batch boundaries; retain full aligned 5x5 covariance",
+    "across_N_covariance": "independent domain-separated RNG streams; use block-diagonal covariance",
+    "pilot_pooling": false,
+    "threads": 4,
+    "output_root": "results/local-20260830/P321-equal-area-fresh-100k"
+  },
+  "rng": {
+    "schema": "matching-one-rng-domain-v1",
+    "mode": "domain_separated",
+    "experiment_tag": "P321-fresh-multiscale-100k-v1",
+    "base_seed": 20260830321,
+    "domains": [
+      {
+        "N": 144,
+        "effective_seed": 6512046139770053406,
+        "replica_counter_first": 100000,
+        "replica_counter_last_exclusive": 200000
+      },
+      {
+        "N": 576,
+        "effective_seed": 9111365054197340087,
+        "replica_counter_first": 200000,
+        "replica_counter_last_exclusive": 300000
+      },
+      {
+        "N": 1296,
+        "effective_seed": 15228459834092891587,
+        "replica_counter_first": 300000,
+        "replica_counter_last_exclusive": 400000
+      }
+    ],
+    "pilot_domains_excluded": [
+      {"N": 144, "seed": 32114420260830, "counter": [0, 20000]},
+      {"N": 576, "seed": 32157620260830, "counter": [20000, 40000]},
+      {"N": 1296, "seed": 321129620260830, "counter": [40000, 60000]}
+    ]
+  },
+  "frozen_models": {
+    "scale_law": "p(N,rho)=pc+C_N(rho) N^-2+D_N(rho) N^-3",
+    "free_exponent_fit": false,
+    "width_conversion": "C_width(rho)=C_N(rho)/rho^2",
+    "conditional_E4_ratios": {
+      "16/9": 0.6892481080041541,
+      "9/4": 0.6870445687187882,
+      "4": 0.6869250536811942
+    },
+    "E4_amplitude_fit": false,
+    "E4_curve_refit": false,
+    "source_theory_commit": "65b3830"
+  },
+  "decision": {
+    "alpha": 0.01,
+    "scale_fit": {
+      "degrees_of_freedom": 4,
+      "critical_chi_square": 13.276704135987622,
+      "rule": "If exceeded, report scale-law failure and do not attribute an E4 residual to the shape curve. Still archive all scores."
+    },
+    "conditional_E4": {
+      "degrees_of_freedom": 3,
+      "critical_chi_square": 11.34486673014437,
+      "rule": "If the scale gate passes, chi-square above the critical value rejects the frozen conditional ordinary-thermal-Q4 E4 shape curve; otherwise do not reject it."
+    },
+    "rho_9": "never enters either primary decision"
+  },
+  "power_freeze": {
+    "alternative_role": "pilot residual is an explicit exploratory planning alternative, not a model to fit or confirm",
+    "pilot_noncentrality_estimator": "max(pilot_chi_square-df,0)",
+    "lambda_20k": 4.531750170483802,
+    "covariance_scaling": "Sigma_100k=Sigma_20k/5",
+    "planned_residual_covariance": [
+      [961.1680136032495, 1036.5877535408756, 1043.601080476664],
+      [1036.5877535408756, 1304.5486967348843, 1291.4524816254966],
+      [1043.601080476664, 1291.4524816254966, 1330.1338270675471]
+    ],
+    "lambda_100k": 22.65875085241901,
+    "expected_chi_square_100k": 25.65875085241901,
+    "power_100k_at_alpha_0.01": 0.9498366103759819,
+    "power_60k_at_alpha_0.01": 0.7279526360658312,
+    "sample_size_choice": "100k/shape selected before fresh data because the conservative pilot-based planning power is about 0.95; 60k is only about 0.73"
+  },
+  "execution": {
+    "authorized_by_this_file": false,
+    "launch_owner": "root agent after the freeze commit is public",
+    "binary": "build/threshold_rank_integer_period_mc",
+    "runner": "scripts/run_p321_equal_area_rectangles.py",
+    "scorer": "scripts/score_p321_equal_area_rectangles.py",
+    "git_commit_argument": "the public freeze commit reported on Issue 321",
+    "no_interim_scoring": true,
+    "no_optional_stopping": true
+  }
+}
