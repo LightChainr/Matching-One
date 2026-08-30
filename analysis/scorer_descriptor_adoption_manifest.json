@@ -2,6 +2,7 @@
   "schema": "scorer descriptor adoption inventory v1",
   "corpus_glob": "scripts/*score*.py",
   "typed_wrapper_kernels": {
+    "scripts/score_c4_self_matching_n26_typed.py": "scripts/score_c4_self_matching_n26.py",
     "scripts/score_intrinsic_functional_cocycle_typed.py": "scripts/score_intrinsic_functional_cocycle.py",
     "scripts/score_norm5_harmonic_primary_typed.py": "scripts/score_norm5_harmonic_primary.py",
     "scripts/score_p48_sprime_prospective_typed.py": "scripts/score_p48_sprime_prospective.py"
@@ -16,7 +17,6 @@
     "scripts/score_angular_root_amplitude.py": "reconstructs rank-2 cross K_minus/K_plus observables, forms signed orientation root gaps, divides by signed DeltaCos4, and scores the angular-normalized A_p across sizes",
     "scripts/score_axis_pair_annihilator.py": "reconstructs the cross matching function and implicit roots from K_minus/K_plus rank histograms, then forms and scores an adjacent-size annihilator",
     "scripts/score_axis_pair_annihilator_stable.py": "operational entrypoint patches the batch reader and delegates to the channel-bearing axis-pair annihilator without descriptor validation",
-    "scripts/score_c4_self_matching_n26.py": "selects a wrapping observable through a free-form prediction geometry channel and scores its exact Bernstein/power law without binding the frozen hypothesis to a descriptor",
     "scripts/score_c4_tangent_orthogonal_holdout.py": "selects the cross response through a free-form channel string and transports a source-frozen tangent projection across sizes without descriptor validation",
     "scripts/score_intrinsic_quantile_center_n145_n290.py": "scores intrinsic quantile-center Q, scaled widths, and centers across independent N145/N290 streams using implicit coordinate, scaling, level, and cross-size map semantics",
     "scripts/score_issue43_full_curve.py": "scores ordered orientation differences in matching-odd DeltaM and matching-even DeltaS sectors at frozen p_ref across N185/N265 without typed sector or cross-size descriptors",
