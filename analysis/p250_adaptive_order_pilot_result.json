@@ -1,0 +1,49 @@
+{
+  "schema": "matching-one/p250-adaptive-order-medium-result/v1",
+  "status": "completed_two_geometry_pilot",
+  "freeze_commit": "ab28bac",
+  "source_exact_witness": "6fbbe5e",
+  "environment": "Huawei DevEnvC_HZsCM6 033945d8bf8b47a7acf475c595169e07",
+  "results": {
+    "N325": {
+      "samples": 20000,
+      "defined": 764,
+      "defined_probability": [0.0382, 0.001180612618027672],
+      "Rminus_unconditional": [0.06785, 0.0023483627684639553],
+      "Rminus_given_defined": [1.7705794537535098, 0.014432759374593046],
+      "Rplus_unconditional": [-0.0029, 0.0008798309861004919],
+      "elapsed_seconds": 5.732445204994292,
+      "json_sha256": "a9bc4a95c789c72842993fa9ad73c3d1028106bf6570cfaeb317c5f9140c4860",
+      "batches_sha256": "f5127be480375d9226e2b1f54b283d99d9af6a2ecbc91ab7ae2a168a42393d05"
+    },
+    "N425": {
+      "samples": 20000,
+      "defined": 739,
+      "defined_probability": [0.03695, 0.001246507942727222],
+      "Rminus_unconditional": [0.06655, 0.002261140510949377],
+      "Rminus_given_defined": [1.8032049852723144, 0.014066132274889485],
+      "Rplus_unconditional": [-0.0019, 0.0007777350415609386],
+      "elapsed_seconds": 7.461365337003372,
+      "json_sha256": "070de20619d55462ea5de566088923e94974e8d0de0c9f25f86cf0ccf9028424",
+      "batches_sha256": "5f70875add2af083423ae7142e7941a6ffe9c20735f7a5b72a856a503d1624c1"
+    }
+  },
+  "cross_geometry": {
+    "Rminus_unconditional_N325_minus_N425": [0.0013, 0.003259994494253649, 0.39877367961556043],
+    "defined_probability_N325_minus_N425": [0.00125, 0.0017168658087131344, 0.7280708798883534],
+    "Rminus_conditional_N325_minus_N425": [-0.03262553151880465, 0.02015342701228729, -1.6188577505410506]
+  },
+  "exact_controls": {
+    "typed_defined_mismatch": 0,
+    "typed_support_mismatch": 0,
+    "typed_Rminus_residual_max": 0,
+    "typed_Rplus_sum_max": 0,
+    "fixed_support_order_null_failures": 0
+  },
+  "projection_leakage": {
+    "N325_max_abs_non_scalar_z": 0.8393710382242678,
+    "N425_max_abs_non_scalar_z": 1.0740188071265713
+  },
+  "reading": "The frozen adaptive intervention remains order-sensitive on both medium Gaussian tori. The two unconditional responses agree within 0.40 combined standard errors, while all exact typed and fixed-support controls pass and no non-scalar D4 leakage mode reaches 1.1 standard errors.",
+  "claim_boundary": "finite intervention response only; no CFT field, universality, Jordan, asymptotic scaling, or naturally occurring path-memory claim"
+}

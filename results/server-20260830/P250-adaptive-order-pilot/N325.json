@@ -1,0 +1,153 @@
+{
+  "claim_boundary": "A nonzero result shows only that the frozen adaptive intervention remains order-sensitive on this finite Gaussian torus. It is not a CFT-field, universality, Jordan, or scaling-exponent claim.",
+  "counts": {
+    "Rminus_histogram_on_defined": {
+      "-1": 0,
+      "-2": 0,
+      "0": 0,
+      "1": 171,
+      "2": 593
+    },
+    "defined": 764
+  },
+  "estimands": {
+    "Rminus_given_defined": {
+      "batches_used": 40,
+      "standard_error": 0.014432759374593046,
+      "value": 1.7705794537535098,
+      "z": 122.6778197986436
+    },
+    "Rminus_unconditional": {
+      "batches_used": 40,
+      "standard_error": 0.0023483627684639553,
+      "value": 0.06785,
+      "z": 28.892469643597746
+    },
+    "Rplus_given_defined": {
+      "batches_used": 40,
+      "standard_error": 0.022912141907656752,
+      "value": -0.07138451367996057,
+      "z": -3.115575748773858
+    },
+    "Rplus_unconditional": {
+      "batches_used": 40,
+      "standard_error": 0.0008798309861004919,
+      "value": -0.0029000000000000002,
+      "z": -3.2960875961565304
+    },
+    "defined_probability": {
+      "batches_used": 40,
+      "standard_error": 0.001180612618027672,
+      "value": 0.0382,
+      "z": 32.356083118793705
+    },
+    "nonzero_Rminus_given_defined": {
+      "batches_used": 40,
+      "standard_error": 0.0,
+      "value": 1.0,
+      "z": null
+    }
+  },
+  "fixed_support_order_null": {
+    "expected": "DJ and JD final fields coincide when D0/J0 supports are frozen",
+    "failures": 0
+  },
+  "geometry": {
+    "N": 325,
+    "a": 17,
+    "b": 6,
+    "id": "N325",
+    "period_matrix": [
+      [
+        17,
+        -6
+      ],
+      [
+        6,
+        17
+      ]
+    ],
+    "replica_offset": 10250000000,
+    "seed": 25033332520260830
+  },
+  "projection_leakage": {
+    "Rminus_unconditional_D4_modes": {
+      "reflection_odd": {
+        "standard_error": 0.0024809818588278536,
+        "value": 0.0003616231438812085,
+        "z": 0.14575807662376794
+      },
+      "rotation_q1_im": {
+        "standard_error": 0.0018835954227553312,
+        "value": 9.600614439322311e-06,
+        "z": 0.0050969620775986445
+      },
+      "rotation_q1_re": {
+        "standard_error": 0.0021036050681267114,
+        "value": 0.00024481566820276233,
+        "z": 0.11637910172025492
+      },
+      "rotation_q2": {
+        "standard_error": 0.002712680829854892,
+        "value": 0.0022769457245263693,
+        "z": 0.8393710382242678
+      },
+      "scalar": {
+        "standard_error": 0.0023519032246611267,
+        "value": 0.06789074500768048,
+        "z": 28.866300405477993
+      }
+    },
+    "defined_probability_D4_modes": {
+      "reflection_odd": {
+        "standard_error": 0.0013735519927138803,
+        "value": 0.00030321940604198673,
+        "z": 0.22075568136513146
+      },
+      "rotation_q1_im": {
+        "standard_error": 0.0010531830839241735,
+        "value": 4.000256016383906e-06,
+        "z": 0.003798253197800046
+      },
+      "rotation_q1_re": {
+        "standard_error": 0.001121279491674117,
+        "value": -3.200204813109306e-06,
+        "z": -0.0028540652325061856
+      },
+      "rotation_q2": {
+        "standard_error": 0.0014486944840234363,
+        "value": 0.0012152777777777776,
+        "z": 0.8388778939798306
+      },
+      "scalar": {
+        "standard_error": 0.0011824603760222866,
+        "value": 0.03822084613415259,
+        "z": 32.32315171754408
+      }
+    },
+    "interpretation": "q1/q2 and reflection-odd modes are leakage controls; the scalar is the intervention response, not a CFT projection"
+  },
+  "run": {
+    "batches": 40,
+    "batches_output": "results/server-20260830/P250-adaptive-order-pilot/N325.batches.csv",
+    "batches_sha256": "f5127be480375d9226e2b1f54b283d99d9af6a2ecbc91ab7ae2a168a42393d05",
+    "elapsed_seconds": 5.732445204994292,
+    "environment": "Huawei DevEnvC_HZsCM6 033945d8bf8b47a7acf475c595169e07",
+    "git_commit": "ab28bac",
+    "p": 0.59274605079,
+    "platform": "Linux-5.10.0-182.0.0.95.r3582_286.hce2.aarch64-aarch64-with-glibc2.34",
+    "python": "3.9.9",
+    "replica_offset": 10250000000,
+    "samples": 20000,
+    "seed": 25033332520260830,
+    "workers": 16
+  },
+  "schema": "matching-one/p250-adaptive-order-medium-pilot/v1",
+  "status": "completed_intervention_sensitive_pilot",
+  "typed_involution_controls": {
+    "defined_mismatch": 0,
+    "max_abs_Rminus_residual": 0,
+    "max_abs_Rplus_sum": 0,
+    "support_mismatch": 0
+  }
+}
