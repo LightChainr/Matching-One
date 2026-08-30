@@ -198,6 +198,21 @@ def chi_square_survival(value: float, degrees: int) -> float:
     return float(mp.gammainc(shape, mp.mpf(str(value)) / 2, mp.inf) / mp.gamma(shape))
 
 
+def chi_square_survival_payload(value: float, degrees: int) -> dict[str, Any]:
+    """Retain extreme tails even when the compatibility float underflows."""
+
+    if value < 0 or degrees <= 0:
+        raise ValueError("invalid chi-square arguments")
+    mp.mp.dps = max(mp.mp.dps, 80)
+    shape = mp.mpf(degrees) / 2
+    probability = mp.gammainc(shape, mp.mpf(str(value)) / 2, mp.inf) / mp.gamma(shape)
+    return {
+        "chi_square_survival_p": float(probability),
+        "chi_square_survival_p_text": mp.nstr(probability, 12, min_fixed=0, max_fixed=0),
+        "log10_chi_square_survival_p": float(mp.log10(probability)),
+    }
+
+
 def chi_square_critical(alpha: float, degrees: int) -> float:
     if not 0 < alpha < 1:
         raise ValueError("alpha must lie in (0,1)")
@@ -240,7 +255,7 @@ def score_residual(
         "dual_witness_Vplus_r": [_json_number(value) for value in dual],
         "mahalanobis_chi_square": chi_square,
         "degrees_of_freedom": degrees,
-        "chi_square_survival_p": chi_square_survival(chi_square, degrees),
+        **chi_square_survival_payload(chi_square, degrees),
         "decision": {
             "alpha": decision_alpha,
             "critical_chi_square": critical,
@@ -506,6 +521,7 @@ def build_report(
 
 def render_markdown(report: Mapping[str, Any]) -> str:
     models = report["models"]
+    size_count = len(report["by_N"])
     order = [
         "M0_PURE_ALEXANDER_ODD",
         "M1_SECOND_ACTIVATION_DIRECTIONAL_RESPONSE_ZERO",
@@ -514,13 +530,11 @@ def render_markdown(report: Mapping[str, Any]) -> str:
         "M4_SINGLE_FIXED_H4_POWER",
     ]
     lines = [
-        "# Production E_top model elimination",
+        "# Production E_top model elimination audit",
         "",
-        "The existing ten-size threshold-rank production block rejects a pure",
-        "Alexander-odd state response. Both activation-resolved directional H4",
-        "response components are nonzero on the declared production block,",
-        "and neither one common `E=lambda A` line nor one uncorrected",
-        "`E=c N^(-13/8)` amplitude describes the complete declared archive set.",
+        f"The existing {size_count}-size threshold-rank production block is scored",
+        "against five declared model images below. The table records which images",
+        "are excluded on this block; non-exclusion is not model confirmation.",
         "",
         "No Monte Carlo samples are generated here. The exact state transform is",
         "",
@@ -540,9 +554,13 @@ def render_markdown(report: Mapping[str, Any]) -> str:
         parameter_text = ", ".join(f"{key}={value:.9g}" for key, value in parameters.items()) or "none"
         score = row["score"]
         decision = "excluded" if score["decision"]["model_image_excluded"] else "not excluded"
+        p_display = score.get(
+            "chi_square_survival_p_text",
+            f"{score['chi_square_survival_p']:.6g}",
+        )
         lines.append(
             f"| `{model_id}` | {parameter_text} | {score['mahalanobis_chi_square']:.6f} / "
-            f"{score['degrees_of_freedom']} | {score['chi_square_survival_p']:.6g} | {decision} |"
+            f"{score['degrees_of_freedom']} | {p_display} | {decision} |"
         )
     lines.extend(
         [
@@ -584,6 +602,9 @@ def render_markdown(report: Mapping[str, Any]) -> str:
             "The F1/F2 rows are activation-resolved directional responses; their",
             "nonzero values do not assert the mere existence of K1 or K2, which was",
             "already part of the input construction.",
+            "This completes only the canonical Phase-D E_top production scoring. It",
+            "does not implement the Phase-E `J_top` versus `J_bulk` test and is not",
+            "the proof-carrying outward-interval/SOS certificate proposed in #370.",
             "",
         ]
     )
