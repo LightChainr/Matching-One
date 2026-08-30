@@ -16,6 +16,7 @@ from observer_bandwidth_product_walsh import (  # noqa: E402
     centered_basis,
     direct_covariance,
     evaluate_multilinear,
+    popcount,
     source_fixture,
     walsh_degree_coefficients,
 )
@@ -34,7 +35,7 @@ class ProductWalshBandwidthTests(unittest.TestCase):
             for mask in range(1 << n):
                 self.assertEqual(
                     transformed[mask],
-                    rho ** subset.bit_count() * values[mask],
+                    rho ** popcount(subset) * values[mask],
                 )
 
     def test_degree_two_observer_has_no_higher_covariance_modes(self) -> None:

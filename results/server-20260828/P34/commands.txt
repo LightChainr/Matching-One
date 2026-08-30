@@ -1,6 +1,0 @@
-g++ -O3 -std=c++17 -fopenmp -Wall -Wextra src/gaussian_orientation_mc.cpp -o build/gaussian_orientation_mc
-./build/gaussian_orientation_mc --self-test
-python3 scripts/euler_motif_controls.py --exact-json results/server-20260828/P34/identity_tests.json
-./build/gaussian_orientation_mc --samples 1000000 --batches 50 --n 65 --p-ref 0.592746050790 --seed 20260834 --replica-offset 0 --threads 8 --git-commit 28fd1d872f97a83c6ddd59bde996dae2343d3c77+p34-working-tree --euler-motifs --output-prefix results/server-20260828/P34/N65/mc
-./build/gaussian_orientation_mc --samples 1000000 --batches 50 --n 85 --p-ref 0.592746050790 --seed 20260834 --replica-offset 0 --threads 8 --git-commit 28fd1d872f97a83c6ddd59bde996dae2343d3c77+p34-working-tree --euler-motifs --output-prefix results/server-20260828/P34/N85/mc
-python3 scripts/analyze_euler_motifs.py --motifs results/server-20260828/P34/all.motifs.jsonl --batches results/server-20260828/P34/all.batches.csv --json results/server-20260828/P34/evaluation.json --weights-json results/server-20260828/P34/frozen_weights.json --variance-csv results/server-20260828/P34/evaluation_variance_ratios.csv --pilot-fraction 0.2

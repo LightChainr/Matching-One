@@ -1,6 +1,0 @@
-g++ -O3 -std=c++17 -fopenmp -Wall -Wextra -Wpedantic src/gaussian_orientation_mc.cpp -o build/gaussian_orientation_mc
-./build/gaussian_orientation_mc --self-test
-./build/gaussian_orientation_mc --samples 200000 --batches 40 --p-ref 0.592746050790 --seed 20260828 --replica-offset 0 --threads 16 --git-commit 107ddc9+working-tree-C01-C05 --output-prefix results/server-20260828/C01/pilot/all
-python3 scripts/analyze_gaussian_orientation_mc.py --batches results/server-20260828/C01/pilot/all.batches.csv --metadata results/server-20260828/C01/pilot/all.metadata.json --json results/server-20260828/C01/pilot/analysis.json --csv results/server-20260828/C01/pilot/sector_effects.csv --covariance-json results/server-20260828/C01/pilot/covariance_matrices.json --freeze-gls results/server-20260828/C01/pilot/frozen_weights.json --gls-target orientation_difference
-./build/gaussian_orientation_mc --samples 2000000 --batches 40 --p-ref 0.592746050790 --seed 20260828 --replica-offset 200000 --threads 16 --n 65 --git-commit 107ddc9+working-tree-C01-C05 --output-prefix results/server-20260828/C01/N65/eval
-./build/gaussian_orientation_mc --samples 2000000 --batches 40 --p-ref 0.592746050790 --seed 20260828 --replica-offset 200000 --threads 16 --n 85 --git-commit 107ddc9+working-tree-C01-C05 --output-prefix results/server-20260828/C01/N85/eval

@@ -1,7 +1,0 @@
-scp Huawei-CodeBuddy:/workspace/fullcurve-results-20260828/'n130.*' results/server-20260828/P49-fullcurve-doubling-100m/raw/
-scp Huawei-CodeBuddy:/workspace/fullcurve-results-20260828/'n170.*' results/server-20260828/P49-fullcurve-doubling-100m/raw/
-python3 scripts/analyze_matching_parity_derivatives_fast.py --histograms results/server-20260828/P49-fullcurve-doubling-100m/raw/n130.hist.csv --dps 40 --json results/server-20260828/P49-fullcurve-doubling-100m/analysis/n130.p48.json --csv results/server-20260828/P49-fullcurve-doubling-100m/analysis/n130.p48.csv
-python3 scripts/analyze_matching_parity_derivatives_fast.py --histograms results/server-20260828/P49-fullcurve-doubling-100m/raw/n170.hist.csv --dps 40 --json results/server-20260828/P49-fullcurve-doubling-100m/analysis/n170.p48.json --csv results/server-20260828/P49-fullcurve-doubling-100m/analysis/n170.p48.csv
-python3 scripts/score_p49_fullcurve_doubling.py --histograms results/server-20260828/P45-root-amplitude/n65.hist.csv results/server-20260828/P45-root-amplitude/n85.hist.csv results/server-20260828/P49-fullcurve-doubling-100m/raw/n130.hist.csv results/server-20260828/P49-fullcurve-doubling-100m/raw/n170.hist.csv --json results/server-20260828/P49-fullcurve-doubling-100m/analysis/score.json --csv results/server-20260828/P49-fullcurve-doubling-100m/analysis/residuals.csv
-python3 -m py_compile scripts/score_p49_fullcurve_doubling.py
-python3 tests/test_p48_retrospective.py

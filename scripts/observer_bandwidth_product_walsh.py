@@ -11,12 +11,18 @@ from pathlib import Path
 from typing import Mapping
 
 
+def popcount(mask: int) -> int:
+    """Return the Hamming weight on every supported Python version."""
+
+    return bin(mask).count("1")
+
+
 def fraction(value: object) -> Fraction:
     return Fraction(str(value))
 
 
 def product_weight(mask: int, n: int, p: Fraction) -> Fraction:
-    ones = mask.bit_count()
+    ones = popcount(mask)
     return p**ones * (1 - p) ** (n - ones)
 
 
@@ -97,7 +103,7 @@ def walsh_degree_coefficients(
     source_centered = center(source, n, p)
     coefficients = {degree: Fraction(0) for degree in range(1, n + 1)}
     for subset in range(1, 1 << n):
-        degree = subset.bit_count()
+        degree = popcount(subset)
         observer_projection = expectation(
             {
                 mask: observer_centered[mask] * centered_basis(mask, subset, p)
@@ -132,7 +138,7 @@ def evaluate_multilinear(
 
 def source_fixture(n: int) -> dict[int, Fraction]:
     return {
-        mask: Fraction((mask * mask + 3 * mask.bit_count() + 7) % 17 - 8)
+        mask: Fraction((mask * mask + 3 * popcount(mask) + 7) % 17 - 8)
         for mask in range(1 << n)
     }
 
@@ -148,7 +154,7 @@ def verify_basis_eigenvalues(n: int, p: Fraction, rhos: list[Fraction]) -> int:
             mask: centered_basis(mask, subset, p) for mask in range(1 << n)
         }
         transformed = apply_noise(values, n, p, rho)
-        eigenvalue = rho ** subset.bit_count()
+        eigenvalue = rho ** popcount(subset)
         for mask in range(1 << n):
             if transformed[mask] != eigenvalue * values[mask]:
                 raise AssertionError("p-biased centered basis is not a noise eigenfunction")
@@ -165,7 +171,7 @@ def build_report(manifest: Mapping[str, object]) -> dict[str, object]:
         subset_mask(list(row["subset"])): fraction(row["coefficient"])
         for row in manifest["observer_terms"]
     }
-    if max(mask.bit_count() for mask in terms) > cutoff:
+    if max(popcount(mask) for mask in terms) > cutoff:
         raise ValueError("observer fixture exceeds declared degree cutoff")
     observer = evaluate_multilinear(terms, n)
     source = source_fixture(n)
