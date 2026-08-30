@@ -124,6 +124,11 @@ This result proves lift ambiguity and an exact transition coefficient.  It
 does not prove that the CP-horizontal connection is the unique physical
 choice, nor identify the Matching-One H4 field with a logarithmic partner.
 
+Phase B registers the corresponding claim-bearing descriptor and exact
+transport in `notes/generic-q-lift-semantics.md`.  Raw tangents with different
+lift/path/normalization descriptors now fail comparison until an exact map is
+applied.
+
 ## Sources
 
 - Jacobsen--Scullard, critical polynomial restricted state sums:

@@ -1,0 +1,493 @@
+{
+  "affected_programs": [
+    258,
+    262,
+    263,
+    275
+  ],
+  "all_checks_passed": true,
+  "endpoint_observable_id": "A_top_Q1=P_2D-P_0D",
+  "issue": 333,
+  "phase": "B",
+  "phase_A_transport_checks": [
+    {
+      "L": 2,
+      "passed": true,
+      "path_id": "critical_square_bond_v_sqrt_Q",
+      "pi_0D": "69/256",
+      "raw_d_L_CP": "0",
+      "raw_d_L_hom": "69/256",
+      "transport": {
+        "derivation": "difference of explicit insertion-weight derivatives at Q=1; measure/path/normalization derivatives cancel",
+        "endpoint_weights_equal": true,
+        "exact": true,
+        "normalization_held_fixed": "normalized_probability",
+        "numeric_shift": "-69/256",
+        "path_held_fixed": "critical_square_bond_v_sqrt_Q",
+        "schema": "matching-one/generic-q-tangent-transport/v1",
+        "shift_basis_order": [
+          "pi_2D",
+          "pi_1D",
+          "pi_0D"
+        ],
+        "shift_coefficients": [
+          "0",
+          "0",
+          "-1"
+        ],
+        "source_descriptor_id": "A_top_Q1=P_2D-P_0D/L_hom/normalized_probability/critical_square_bond_v_sqrt_Q",
+        "source_tangent": "69/256",
+        "tangent_shift_target_minus_source": "-pi_0D",
+        "target_descriptor_id": "A_top_Q1=P_2D-P_0D/L_CP/normalized_probability/critical_square_bond_v_sqrt_Q",
+        "transported_tangent": "0"
+      }
+    },
+    {
+      "L": 2,
+      "passed": true,
+      "path_id": "fixed_v_1",
+      "pi_0D": "69/256",
+      "raw_d_L_CP": "-27/64",
+      "raw_d_L_hom": "-39/256",
+      "transport": {
+        "derivation": "difference of explicit insertion-weight derivatives at Q=1; measure/path/normalization derivatives cancel",
+        "endpoint_weights_equal": true,
+        "exact": true,
+        "normalization_held_fixed": "normalized_probability",
+        "numeric_shift": "-69/256",
+        "path_held_fixed": "fixed_v_1",
+        "schema": "matching-one/generic-q-tangent-transport/v1",
+        "shift_basis_order": [
+          "pi_2D",
+          "pi_1D",
+          "pi_0D"
+        ],
+        "shift_coefficients": [
+          "0",
+          "0",
+          "-1"
+        ],
+        "source_descriptor_id": "A_top_Q1=P_2D-P_0D/L_hom/normalized_probability/fixed_v_1",
+        "source_tangent": "-39/256",
+        "tangent_shift_target_minus_source": "-pi_0D",
+        "target_descriptor_id": "A_top_Q1=P_2D-P_0D/L_CP/normalized_probability/fixed_v_1",
+        "transported_tangent": "-27/64"
+      }
+    },
+    {
+      "L": 3,
+      "passed": true,
+      "path_id": "critical_square_bond_v_sqrt_Q",
+      "pi_0D": "18865/65536",
+      "raw_d_L_CP": "0",
+      "raw_d_L_hom": "18865/65536",
+      "transport": {
+        "derivation": "difference of explicit insertion-weight derivatives at Q=1; measure/path/normalization derivatives cancel",
+        "endpoint_weights_equal": true,
+        "exact": true,
+        "normalization_held_fixed": "normalized_probability",
+        "numeric_shift": "-18865/65536",
+        "path_held_fixed": "critical_square_bond_v_sqrt_Q",
+        "schema": "matching-one/generic-q-tangent-transport/v1",
+        "shift_basis_order": [
+          "pi_2D",
+          "pi_1D",
+          "pi_0D"
+        ],
+        "shift_coefficients": [
+          "0",
+          "0",
+          "-1"
+        ],
+        "source_descriptor_id": "A_top_Q1=P_2D-P_0D/L_hom/normalized_probability/critical_square_bond_v_sqrt_Q",
+        "source_tangent": "18865/65536",
+        "tangent_shift_target_minus_source": "-pi_0D",
+        "target_descriptor_id": "A_top_Q1=P_2D-P_0D/L_CP/normalized_probability/critical_square_bond_v_sqrt_Q",
+        "transported_tangent": "0"
+      }
+    },
+    {
+      "L": 3,
+      "passed": true,
+      "path_id": "fixed_v_1",
+      "pi_0D": "18865/65536",
+      "raw_d_L_CP": "-78489/131072",
+      "raw_d_L_hom": "-40759/131072",
+      "transport": {
+        "derivation": "difference of explicit insertion-weight derivatives at Q=1; measure/path/normalization derivatives cancel",
+        "endpoint_weights_equal": true,
+        "exact": true,
+        "normalization_held_fixed": "normalized_probability",
+        "numeric_shift": "-18865/65536",
+        "path_held_fixed": "fixed_v_1",
+        "schema": "matching-one/generic-q-tangent-transport/v1",
+        "shift_basis_order": [
+          "pi_2D",
+          "pi_1D",
+          "pi_0D"
+        ],
+        "shift_coefficients": [
+          "0",
+          "0",
+          "-1"
+        ],
+        "source_descriptor_id": "A_top_Q1=P_2D-P_0D/L_hom/normalized_probability/fixed_v_1",
+        "source_tangent": "-40759/131072",
+        "tangent_shift_target_minus_source": "-pi_0D",
+        "target_descriptor_id": "A_top_Q1=P_2D-P_0D/L_CP/normalized_probability/fixed_v_1",
+        "transported_tangent": "-78489/131072"
+      }
+    }
+  ],
+  "registered_connection": {
+    "claim": "same endpoint plus different lift forbids direct raw-tangent pooling; compare only after exact CP-horizontal transport",
+    "horizontal_lift": "L_CP",
+    "id": "CP-horizontal",
+    "normalized_L_hom_to_L_CP_tangent_shift": "-pi_0D",
+    "unnormalized_L_hom_to_L_CP_tangent_shift": "-W_0D"
+  },
+  "registered_descriptors": [
+    {
+      "Q_v_path": {
+        "Q": "Q",
+        "dv_dQ_at_1": "0",
+        "endpoint": {
+          "Q": "1",
+          "v": "1"
+        },
+        "id": "fixed_v_1",
+        "parameter": "Q",
+        "v": "1"
+      },
+      "counterterm_convention": "raw homology section; CP-horizontal transport subtracts the endpoint 0D sector",
+      "descriptor_id": "A_top_Q1=P_2D-P_0D/L_hom/normalized_probability/fixed_v_1",
+      "endpoint_observable_id": "A_top_Q1=P_2D-P_0D",
+      "explicit_insertion_Q_dependence": "none; the ambient homology-rank weights are Q-independent",
+      "field_normalization_convention": "no extra field rescaling; sector normalization only",
+      "insertion_weight_derivative_at_Q1": {
+        "0D": "0",
+        "1D": "0",
+        "2D": "0"
+      },
+      "lift_id": "L_hom",
+      "normalization": {
+        "denominator": "Z(Q,v)=W_0D+W_1D+W_2D",
+        "endpoint_sector_basis": "pi_rD=W_rD/Z",
+        "id": "normalized_probability",
+        "numerator": "sum_r w_r(Q) W_r(Q,v)"
+      },
+      "projector_convention": "unweighted ambient-homology projector P_2D-P_0D",
+      "schema": "matching-one/generic-q-lift-descriptor/v1",
+      "sector_order": [
+        "2D",
+        "1D",
+        "0D"
+      ],
+      "sector_weights_in_Q": {
+        "0D": "-1",
+        "1D": "0",
+        "2D": "1"
+      }
+    },
+    {
+      "Q_v_path": {
+        "Q": "Q",
+        "dv_dQ_at_1": "0",
+        "endpoint": {
+          "Q": "1",
+          "v": "1"
+        },
+        "id": "fixed_v_1",
+        "parameter": "Q",
+        "v": "1"
+      },
+      "counterterm_convention": "CP-horizontal reference section on the exact critical manifold",
+      "descriptor_id": "A_top_Q1=P_2D-P_0D/L_CP/normalized_probability/fixed_v_1",
+      "endpoint_observable_id": "A_top_Q1=P_2D-P_0D",
+      "explicit_insertion_Q_dependence": "the 0D projector carries the explicit coefficient -Q",
+      "field_normalization_convention": "no extra field rescaling; sector normalization only",
+      "insertion_weight_derivative_at_Q1": {
+        "0D": "-1",
+        "1D": "0",
+        "2D": "0"
+      },
+      "lift_id": "L_CP",
+      "normalization": {
+        "denominator": "Z(Q,v)=W_0D+W_1D+W_2D",
+        "endpoint_sector_basis": "pi_rD=W_rD/Z",
+        "id": "normalized_probability",
+        "numerator": "sum_r w_r(Q) W_r(Q,v)"
+      },
+      "projector_convention": "critical-polynomial / periodic-TL projector P_2D-Q P_0D",
+      "schema": "matching-one/generic-q-lift-descriptor/v1",
+      "sector_order": [
+        "2D",
+        "1D",
+        "0D"
+      ],
+      "sector_weights_in_Q": {
+        "0D": "-Q",
+        "1D": "0",
+        "2D": "1"
+      }
+    },
+    {
+      "Q_v_path": {
+        "Q": "Q",
+        "critical_constraint": "W_2D(Q,v(Q))=Q W_0D(Q,v(Q))",
+        "dv_dQ_at_1": "1/2",
+        "endpoint": {
+          "Q": "1",
+          "v": "1"
+        },
+        "id": "critical_square_bond_v_sqrt_Q",
+        "parameter": "Q",
+        "v": "sqrt(Q)"
+      },
+      "counterterm_convention": "raw homology section; CP-horizontal transport subtracts the endpoint 0D sector",
+      "descriptor_id": "A_top_Q1=P_2D-P_0D/L_hom/normalized_probability/critical_square_bond_v_sqrt_Q",
+      "endpoint_observable_id": "A_top_Q1=P_2D-P_0D",
+      "explicit_insertion_Q_dependence": "none; the ambient homology-rank weights are Q-independent",
+      "field_normalization_convention": "no extra field rescaling; sector normalization only",
+      "insertion_weight_derivative_at_Q1": {
+        "0D": "0",
+        "1D": "0",
+        "2D": "0"
+      },
+      "lift_id": "L_hom",
+      "normalization": {
+        "denominator": "Z(Q,v)=W_0D+W_1D+W_2D",
+        "endpoint_sector_basis": "pi_rD=W_rD/Z",
+        "id": "normalized_probability",
+        "numerator": "sum_r w_r(Q) W_r(Q,v)"
+      },
+      "projector_convention": "unweighted ambient-homology projector P_2D-P_0D",
+      "schema": "matching-one/generic-q-lift-descriptor/v1",
+      "sector_order": [
+        "2D",
+        "1D",
+        "0D"
+      ],
+      "sector_weights_in_Q": {
+        "0D": "-1",
+        "1D": "0",
+        "2D": "1"
+      }
+    },
+    {
+      "Q_v_path": {
+        "Q": "Q",
+        "critical_constraint": "W_2D(Q,v(Q))=Q W_0D(Q,v(Q))",
+        "dv_dQ_at_1": "1/2",
+        "endpoint": {
+          "Q": "1",
+          "v": "1"
+        },
+        "id": "critical_square_bond_v_sqrt_Q",
+        "parameter": "Q",
+        "v": "sqrt(Q)"
+      },
+      "counterterm_convention": "CP-horizontal reference section on the exact critical manifold",
+      "descriptor_id": "A_top_Q1=P_2D-P_0D/L_CP/normalized_probability/critical_square_bond_v_sqrt_Q",
+      "endpoint_observable_id": "A_top_Q1=P_2D-P_0D",
+      "explicit_insertion_Q_dependence": "the 0D projector carries the explicit coefficient -Q",
+      "field_normalization_convention": "no extra field rescaling; sector normalization only",
+      "insertion_weight_derivative_at_Q1": {
+        "0D": "-1",
+        "1D": "0",
+        "2D": "0"
+      },
+      "lift_id": "L_CP",
+      "normalization": {
+        "denominator": "Z(Q,v)=W_0D+W_1D+W_2D",
+        "endpoint_sector_basis": "pi_rD=W_rD/Z",
+        "id": "normalized_probability",
+        "numerator": "sum_r w_r(Q) W_r(Q,v)"
+      },
+      "projector_convention": "critical-polynomial / periodic-TL projector P_2D-Q P_0D",
+      "schema": "matching-one/generic-q-lift-descriptor/v1",
+      "sector_order": [
+        "2D",
+        "1D",
+        "0D"
+      ],
+      "sector_weights_in_Q": {
+        "0D": "-Q",
+        "1D": "0",
+        "2D": "1"
+      }
+    },
+    {
+      "Q_v_path": {
+        "Q": "Q",
+        "dv_dQ_at_1": "0",
+        "endpoint": {
+          "Q": "1",
+          "v": "1"
+        },
+        "id": "fixed_v_1",
+        "parameter": "Q",
+        "v": "1"
+      },
+      "counterterm_convention": "raw homology section; CP-horizontal transport subtracts the endpoint 0D sector",
+      "descriptor_id": "A_top_Q1=P_2D-P_0D/L_hom/restricted_state_sum/fixed_v_1",
+      "endpoint_observable_id": "A_top_Q1=P_2D-P_0D",
+      "explicit_insertion_Q_dependence": "none; the ambient homology-rank weights are Q-independent",
+      "field_normalization_convention": "no extra field rescaling; sector normalization only",
+      "insertion_weight_derivative_at_Q1": {
+        "0D": "0",
+        "1D": "0",
+        "2D": "0"
+      },
+      "lift_id": "L_hom",
+      "normalization": {
+        "denominator": "1",
+        "endpoint_sector_basis": "W_rD",
+        "id": "restricted_state_sum",
+        "numerator": "sum_r w_r(Q) W_r(Q,v)"
+      },
+      "projector_convention": "unweighted ambient-homology projector P_2D-P_0D",
+      "schema": "matching-one/generic-q-lift-descriptor/v1",
+      "sector_order": [
+        "2D",
+        "1D",
+        "0D"
+      ],
+      "sector_weights_in_Q": {
+        "0D": "-1",
+        "1D": "0",
+        "2D": "1"
+      }
+    },
+    {
+      "Q_v_path": {
+        "Q": "Q",
+        "dv_dQ_at_1": "0",
+        "endpoint": {
+          "Q": "1",
+          "v": "1"
+        },
+        "id": "fixed_v_1",
+        "parameter": "Q",
+        "v": "1"
+      },
+      "counterterm_convention": "CP-horizontal reference section on the exact critical manifold",
+      "descriptor_id": "A_top_Q1=P_2D-P_0D/L_CP/restricted_state_sum/fixed_v_1",
+      "endpoint_observable_id": "A_top_Q1=P_2D-P_0D",
+      "explicit_insertion_Q_dependence": "the 0D projector carries the explicit coefficient -Q",
+      "field_normalization_convention": "no extra field rescaling; sector normalization only",
+      "insertion_weight_derivative_at_Q1": {
+        "0D": "-1",
+        "1D": "0",
+        "2D": "0"
+      },
+      "lift_id": "L_CP",
+      "normalization": {
+        "denominator": "1",
+        "endpoint_sector_basis": "W_rD",
+        "id": "restricted_state_sum",
+        "numerator": "sum_r w_r(Q) W_r(Q,v)"
+      },
+      "projector_convention": "critical-polynomial / periodic-TL projector P_2D-Q P_0D",
+      "schema": "matching-one/generic-q-lift-descriptor/v1",
+      "sector_order": [
+        "2D",
+        "1D",
+        "0D"
+      ],
+      "sector_weights_in_Q": {
+        "0D": "-Q",
+        "1D": "0",
+        "2D": "1"
+      }
+    },
+    {
+      "Q_v_path": {
+        "Q": "Q",
+        "critical_constraint": "W_2D(Q,v(Q))=Q W_0D(Q,v(Q))",
+        "dv_dQ_at_1": "1/2",
+        "endpoint": {
+          "Q": "1",
+          "v": "1"
+        },
+        "id": "critical_square_bond_v_sqrt_Q",
+        "parameter": "Q",
+        "v": "sqrt(Q)"
+      },
+      "counterterm_convention": "raw homology section; CP-horizontal transport subtracts the endpoint 0D sector",
+      "descriptor_id": "A_top_Q1=P_2D-P_0D/L_hom/restricted_state_sum/critical_square_bond_v_sqrt_Q",
+      "endpoint_observable_id": "A_top_Q1=P_2D-P_0D",
+      "explicit_insertion_Q_dependence": "none; the ambient homology-rank weights are Q-independent",
+      "field_normalization_convention": "no extra field rescaling; sector normalization only",
+      "insertion_weight_derivative_at_Q1": {
+        "0D": "0",
+        "1D": "0",
+        "2D": "0"
+      },
+      "lift_id": "L_hom",
+      "normalization": {
+        "denominator": "1",
+        "endpoint_sector_basis": "W_rD",
+        "id": "restricted_state_sum",
+        "numerator": "sum_r w_r(Q) W_r(Q,v)"
+      },
+      "projector_convention": "unweighted ambient-homology projector P_2D-P_0D",
+      "schema": "matching-one/generic-q-lift-descriptor/v1",
+      "sector_order": [
+        "2D",
+        "1D",
+        "0D"
+      ],
+      "sector_weights_in_Q": {
+        "0D": "-1",
+        "1D": "0",
+        "2D": "1"
+      }
+    },
+    {
+      "Q_v_path": {
+        "Q": "Q",
+        "critical_constraint": "W_2D(Q,v(Q))=Q W_0D(Q,v(Q))",
+        "dv_dQ_at_1": "1/2",
+        "endpoint": {
+          "Q": "1",
+          "v": "1"
+        },
+        "id": "critical_square_bond_v_sqrt_Q",
+        "parameter": "Q",
+        "v": "sqrt(Q)"
+      },
+      "counterterm_convention": "CP-horizontal reference section on the exact critical manifold",
+      "descriptor_id": "A_top_Q1=P_2D-P_0D/L_CP/restricted_state_sum/critical_square_bond_v_sqrt_Q",
+      "endpoint_observable_id": "A_top_Q1=P_2D-P_0D",
+      "explicit_insertion_Q_dependence": "the 0D projector carries the explicit coefficient -Q",
+      "field_normalization_convention": "no extra field rescaling; sector normalization only",
+      "insertion_weight_derivative_at_Q1": {
+        "0D": "-1",
+        "1D": "0",
+        "2D": "0"
+      },
+      "lift_id": "L_CP",
+      "normalization": {
+        "denominator": "1",
+        "endpoint_sector_basis": "W_rD",
+        "id": "restricted_state_sum",
+        "numerator": "sum_r w_r(Q) W_r(Q,v)"
+      },
+      "projector_convention": "critical-polynomial / periodic-TL projector P_2D-Q P_0D",
+      "schema": "matching-one/generic-q-lift-descriptor/v1",
+      "sector_order": [
+        "2D",
+        "1D",
+        "0D"
+      ],
+      "sector_weights_in_Q": {
+        "0D": "-Q",
+        "1D": "0",
+        "2D": "1"
+      }
+    }
+  ],
+  "schema": "matching-one/generic-q-lift-transport-manifest/v1",
+  "scientific_boundary": "This registers one exact comparison connection; it neither declares CP-horizontal uniquely physical nor supplies missing representation-projector or field counterterms."
+}
