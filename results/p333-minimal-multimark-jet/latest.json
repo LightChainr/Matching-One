@@ -1,0 +1,600 @@
+{
+  "cases": [
+    {
+      "canonical_translation": {
+        "restricted_gram_skew": [
+          [
+            0,
+            3
+          ],
+          [
+            -3,
+            0
+          ]
+        ],
+        "restricted_gram_skew_rank": 2
+      },
+      "decision": "lower_bound_not_attained",
+      "extended_dimension": 7,
+      "final_solution": null,
+      "first_empty_restriction": {
+        "added_stage": "gram_self_adjoint",
+        "augmented_rank": 1,
+        "coefficient_rank": 0,
+        "consistent": false,
+        "from_stage": "endpoint_radical_normalized",
+        "inconsistency_witness": {
+          "identity": "y^T C=0 but y^T b=1",
+          "left_multiplier": [
+            "-1/3"
+          ],
+          "left_times_parameter_matrix": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "left_times_rhs": 1
+        },
+        "parameter_count_before_restriction": 8,
+        "remaining_dimension": null
+      },
+      "g0_rank": 5,
+      "g1_radical_rank": 2,
+      "mark_velocity_gate": {
+        "minimum_mark_emission_rank": 1,
+        "sites": [
+          {
+            "full_velocity_rank_on_radical": 1,
+            "mark_emission_block": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "mark_emission_rank_on_radical": 1,
+            "site": 0
+          },
+          {
+            "full_velocity_rank_on_radical": 1,
+            "mark_emission_block": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                0
+              ]
+            ],
+            "mark_emission_rank_on_radical": 1,
+            "site": 1
+          },
+          {
+            "full_velocity_rank_on_radical": 1,
+            "mark_emission_block": [
+              [
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1
+              ]
+            ],
+            "mark_emission_rank_on_radical": 1,
+            "site": 2
+          }
+        ]
+      },
+      "marks": 2,
+      "ordinary_dimension": 5,
+      "radical_dimension": 2,
+      "raised_bound_if_empty": {
+        "exceeds_available_independent_marks": false,
+        "further_independent_scalar_marks": 1,
+        "maximum_nonzero_falling_factorial_marks": 3,
+        "minimum_extended_dimension": 8,
+        "scope": "falling-factorial scalar endpoint-mark quotient family",
+        "total_scalar_marks": 3
+      },
+      "stages": {
+        "affine_q_jet": {
+          "affine_tangent_dimension": 10,
+          "canonical_X0_T_V0_nonzero_equations": 0,
+          "consistent": true,
+          "equations": 706,
+          "rank": 88
+        },
+        "endpoint_radical_normalized": {
+          "affine_tangent_dimension": 8,
+          "canonical_X0_T_V0_nonzero_equations": 0,
+          "consistent": true,
+          "equations": 734,
+          "rank": 90
+        },
+        "gram_self_adjoint": {
+          "affine_tangent_dimension": null,
+          "canonical_X0_T_V0_nonzero_equations": 1,
+          "consistent": false,
+          "equations": 735,
+          "rank": 90
+        },
+        "source_normalized": {
+          "affine_tangent_dimension": null,
+          "canonical_X0_T_V0_nonzero_equations": 1,
+          "consistent": false,
+          "equations": 777,
+          "rank": 98
+        }
+      },
+      "width": 3
+    },
+    {
+      "canonical_translation": {
+        "restricted_gram_skew": [
+          [
+            0,
+            1,
+            2,
+            2,
+            1,
+            2,
+            2,
+            2,
+            2,
+            4
+          ],
+          [
+            -1,
+            0,
+            0,
+            1,
+            0,
+            1,
+            2,
+            0,
+            1,
+            2
+          ],
+          [
+            -2,
+            0,
+            0,
+            2,
+            0,
+            2,
+            4,
+            0,
+            2,
+            4
+          ],
+          [
+            -2,
+            -1,
+            -2,
+            0,
+            -1,
+            0,
+            1,
+            -1,
+            0,
+            0
+          ],
+          [
+            -1,
+            0,
+            0,
+            1,
+            0,
+            1,
+            2,
+            0,
+            1,
+            2
+          ],
+          [
+            -2,
+            -1,
+            -2,
+            0,
+            -1,
+            0,
+            2,
+            -2,
+            0,
+            0
+          ],
+          [
+            -2,
+            -2,
+            -4,
+            -1,
+            -2,
+            -2,
+            0,
+            -2,
+            -1,
+            -2
+          ],
+          [
+            -2,
+            0,
+            0,
+            1,
+            0,
+            2,
+            2,
+            0,
+            1,
+            2
+          ],
+          [
+            -2,
+            -1,
+            -2,
+            0,
+            -1,
+            0,
+            1,
+            -1,
+            0,
+            0
+          ],
+          [
+            -4,
+            -2,
+            -4,
+            0,
+            -2,
+            0,
+            2,
+            -2,
+            0,
+            0
+          ]
+        ],
+        "restricted_gram_skew_rank": 4
+      },
+      "decision": "lower_bound_not_attained",
+      "extended_dimension": 17,
+      "final_solution": null,
+      "first_empty_restriction": {
+        "added_stage": "gram_self_adjoint",
+        "augmented_rank": 1,
+        "coefficient_rank": 0,
+        "consistent": false,
+        "from_stage": "endpoint_radical_normalized",
+        "inconsistency_witness": {
+          "identity": "y^T C=0 but y^T b=1",
+          "left_multiplier": [
+            -1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "left_times_parameter_matrix": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "left_times_rhs": 1
+        },
+        "parameter_count_before_restriction": 15,
+        "remaining_dimension": null
+      },
+      "g0_rank": 7,
+      "g1_radical_rank": 10,
+      "mark_velocity_gate": {
+        "minimum_mark_emission_rank": 2,
+        "sites": [
+          {
+            "full_velocity_rank_on_radical": 4,
+            "mark_emission_block": [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                1,
+                0,
+                1,
+                1
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                2,
+                0,
+                2,
+                2
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                2,
+                0,
+                2,
+                2
+              ]
+            ],
+            "mark_emission_rank_on_radical": 2,
+            "site": 0
+          },
+          {
+            "full_velocity_rank_on_radical": 4,
+            "mark_emission_block": [
+              [
+                0,
+                0,
+                1,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                1,
+                2,
+                0,
+                0,
+                0,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                0,
+                0,
+                2,
+                0,
+                0,
+                0,
+                2,
+                0,
+                2
+              ]
+            ],
+            "mark_emission_rank_on_radical": 2,
+            "site": 1
+          },
+          {
+            "full_velocity_rank_on_radical": 4,
+            "mark_emission_block": [
+              [
+                1,
+                0,
+                0,
+                -1,
+                0,
+                0,
+                -1,
+                0,
+                0,
+                -1
+              ],
+              [
+                1,
+                0,
+                0,
+                -2,
+                0,
+                0,
+                -2,
+                0,
+                0,
+                -2
+              ],
+              [
+                0,
+                0,
+                0,
+                -2,
+                0,
+                0,
+                -2,
+                0,
+                0,
+                -2
+              ]
+            ],
+            "mark_emission_rank_on_radical": 2,
+            "site": 2
+          },
+          {
+            "full_velocity_rank_on_radical": 4,
+            "mark_emission_block": [
+              [
+                -1,
+                -1,
+                -1,
+                0,
+                -1,
+                -1,
+                0,
+                -1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                -1,
+                -1,
+                0,
+                -1,
+                -1,
+                0,
+                -2,
+                -2,
+                -2
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                -2,
+                -2,
+                -2
+              ]
+            ],
+            "mark_emission_rank_on_radical": 2,
+            "site": 3
+          }
+        ]
+      },
+      "marks": 3,
+      "ordinary_dimension": 14,
+      "radical_dimension": 10,
+      "raised_bound_if_empty": {
+        "exceeds_available_independent_marks": true,
+        "further_independent_scalar_marks": 2,
+        "maximum_nonzero_falling_factorial_marks": 4,
+        "minimum_extended_dimension": 19,
+        "scope": "falling-factorial scalar endpoint-mark quotient family",
+        "total_scalar_marks": 5
+      },
+      "stages": {
+        "affine_q_jet": {
+          "affine_tangent_dimension": 17,
+          "canonical_X0_T_V0_nonzero_equations": 0,
+          "consistent": true,
+          "equations": 5286,
+          "rank": 561
+        },
+        "endpoint_radical_normalized": {
+          "affine_tangent_dimension": 15,
+          "canonical_X0_T_V0_nonzero_equations": 0,
+          "consistent": true,
+          "equations": 5490,
+          "rank": 563
+        },
+        "gram_self_adjoint": {
+          "affine_tangent_dimension": null,
+          "canonical_X0_T_V0_nonzero_equations": 33,
+          "consistent": false,
+          "equations": 5535,
+          "rank": 563
+        },
+        "source_normalized": {
+          "affine_tangent_dimension": null,
+          "canonical_X0_T_V0_nonzero_equations": 33,
+          "consistent": false,
+          "equations": 5671,
+          "rank": 578
+        }
+      },
+      "width": 4
+    }
+  ],
+  "claim_boundary": [
+    "Exact rational Q=1 first-jet algebra only for the two frozen cases.",
+    "Marks retain only falling-factorial endpoint responses, not rooted-cluster geometry or arbitrary matrix degrees of freedom.",
+    "No continuum LCFT, physical transfer matrix or formal-semigroup K identification is made.",
+    "If the bound fails, only a new lower bound is reported; no additional mark count is tested."
+  ],
+  "decision_summary": {
+    "w3_k2": "lower_bound_not_attained",
+    "w4_k3": "lower_bound_not_attained"
+  },
+  "deduplication": {
+    "081a5ed": "already excludes one terminal mark and gives the 2-mark/3-mark lower bounds now tested exactly",
+    "96df7c8": "already gives the join-only empty intersection",
+    "PR385_b5c761a": "is finite-noise identifiability, not this exact marked quotient",
+    "PR393_8923acd": "assumes a formal common K and does not supply these falling-factorial endpoint marks",
+    "ba3135e": "already excludes scalar loop fugacity without a marked response"
+  },
+  "global_decision": "Neither lower bound from 081a5ed is attained by the frozen falling-factorial marks. Width three with two marks has ladder 10 -> 8 -> empty; width four with three marks has 17 -> 15 -> empty. In both cases the Gram restriction has coefficient rank zero and augmented rank one, so every surviving affine modulus is invisible to the obstruction. The family-specific bounds rise to three total marks at width three and five at width four. The width-four bound exceeds its four nonzero falling-factorial responses, exhausting that scalar family without testing another case.",
+  "issues": [
+    333,
+    321,
+    370
+  ],
+  "protocol": {
+    "commit": "b4cf829",
+    "path": "analysis/p333_minimal_multimark_jet_protocol.json",
+    "sha256": "15c562c8d2f1e56aa097672b45102fdf71a3e160ee8a16c51c672b4acc798c86"
+  },
+  "schema": "matching-one/p333-minimal-multimark-jet/v1",
+  "status": "exact_rational_minimal_multimark_certificate"
+}
