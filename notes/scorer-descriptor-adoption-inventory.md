@@ -193,7 +193,23 @@ It must also preserve that width and cocycle diagnostics reuse the same raw
 curves and are not additive evidence. Prediction chronology, multipliers,
 numerical-rank cutoff, jackknife construction, and scores remain unchanged.
 
-`score_v14_fixedp_scalar_projector.py` is now a covered frozen kernel. Its typed entrypoint locks the basis-dependent `direction_1/matching` value, fixed-p coordinate, `p_ref=0.592746050790`, H4-null orientation weights, covariance reconstruction, and `N^(25/8)` normalization before delegating row projections. It remains a retrospective discovery/power diagnostic and neither proves the V_<1,4> assignment nor removes common thermal displacement.\n\n`score_v14_scalar_root_projector.py` is also now a covered frozen kernel. Its typed entrypoint validates the exact `direction_1/matching` identity before the implicit-root calculation, and freezes size order 65/85/130/170, lineages 65->130 then 85->170, first/second orientation order, the H4-null scalar-root formula, beta 7/2, q=2^(-7/2), synchronized delete-one covariance, and parameter-free lineage reconstruction. The implicit root remains a response coordinate rather than a topology observable; H8/H12 contamination, slope anisotropy, matching parity, and the V_<1,4> assignment remain unresolved.
+`score_v14_fixedp_scalar_projector.py` is now a covered frozen kernel. Its
+typed entrypoint locks the basis-dependent `direction_1/matching` value,
+fixed-p coordinate, `p_ref=0.592746050790`, H4-null orientation weights,
+covariance reconstruction, and `N^(25/8)` normalization before delegating row
+projections. It remains a retrospective discovery/power diagnostic and
+neither proves the `V_<1,4>` assignment nor removes common thermal
+displacement.
+
+`score_v14_scalar_root_projector.py` is also now a covered frozen kernel. Its
+typed entrypoint validates the exact `direction_1/matching` identity before
+the implicit-root calculation, and freezes size order 65/85/130/170,
+lineages 65->130 then 85->170, first/second orientation order, the H4-null
+scalar-root formula, beta 7/2, `q=2^(-7/2)`, synchronized delete-one
+covariance, and parameter-free lineage reconstruction. The implicit root
+remains a response coordinate rather than a topology observable; H8/H12
+contamination, slope anisotropy, matching parity, and the `V_<1,4>`
+assignment remain unresolved.
 
 `score_p159_pell_hex_filter.py` is migration-required despite serializing an
 `observable_descriptor` dictionary in its output. That dictionary is free-form

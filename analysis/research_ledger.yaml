@@ -53,23 +53,23 @@ semantic_transport:
   separate_from: [integration_status, evidence_role, dependency_group, attention_rank]
   registry_source_ref: SRC_OBSERVABLE_DESCRIPTOR_REGISTRY_MAIN
   inventory_source_ref: SRC_SCORER_INVENTORY_LATEST_MAIN
-  main_snapshot_commit: 8ba849c022a8f8f875d29a3d0b1b7d92b3a02d48
+  main_snapshot_commit: 79c9c2250ae4da560672b0402404bfbda2b9ee87
   current_main_inventory:
-    total_score_scripts: 51
-    direct_typed: 20
-    covered_kernels: 19
+    total_score_scripts: 54
+    direct_typed: 23
+    covered_kernels: 22
     generic_not_applicable: 1
-    migration_required: 11
+    migration_required: 8
     outside_registered_typed_path: 0
-    consistency_status: live_current_after_PR357
+    consistency_status: live_current_after_PR361
   integrated_components:
-    prs: [345, 346, 347, 348, 350, 352, 353, 355, 357]
-    source_refs: [SRC_P50_SPRIME_TYPED_MAIN, SRC_P48_NEW_GEOMETRY_TYPED_MAIN, SRC_SCORER_INVENTORY_COMPOSITION_MAIN, SRC_SCORER_INVENTORY_LATEST_MAIN]
-    scientific_boundary: post_score_identity_sign_and_normalization_wrappers_plus_derived_inventory_updates_without_new_data_refit_score_model_reordering_or_evidence
-  remaining_contract_gap: 11_channel_bearing_paths_still_require_migration_after_PR357_and_the_second_contract_must_name_units_model_space_size_map_chronology_dependency_relation_and_derived_response_semantics
+    prs: [345, 346, 347, 348, 350, 352, 353, 355, 357, 359, 360, 361]
+    source_refs: [SRC_P50_SPRIME_TYPED_MAIN, SRC_P48_NEW_GEOMETRY_TYPED_MAIN, SRC_SCORER_INVENTORY_COMPOSITION_MAIN, SRC_PREQUENTIAL_EVIDENCE_TYPED_MAIN, SRC_P231_VACUUM_KDV_TYPED_MAIN, SRC_V14_SCALAR_ROOT_TYPED_MAIN, SRC_SCORER_INVENTORY_LATEST_MAIN]
+    scientific_boundary: post_score_identity_sign_normalization_prequential_P231_and_v14_root_wrappers_plus_derived_inventory_updates_without_new_data_refit_score_model_reordering_or_evidence
+  remaining_contract_gap: 8_channel_bearing_paths_still_require_migration_after_PR361_and_the_second_contract_must_name_units_model_space_size_map_chronology_dependency_relation_and_derived_response_semantics
   allowed_statuses: [typed_direct, covered_by_typed_wrapper, migration_required, outside_registered_typed_path, not_applicable, not_in_main_inventory]
   interpretation: migration_required_is_a_future_reuse_contract_not_a_scientific_error_evidence_demotion_task_lock_or_rerun_request
-  migration_priority: [prequential_evidence, issue43_secondary, P49_P50_fullcurve, norm4, norm5, P159, P231, threshold_modes, v14_root_projector, current_frontier_scorers_when_integrated]
+  migration_priority: [issue43_secondary, norm4_production, norm4_thermal_jet, norm5_thermal_jet, P159_Pell_hex_filter, P49_fullcurve_doubling, P50_fullcurve_N290, threshold_modes]
 
 frontier_schema:
   integration_statuses: [main_integrated, open_pr, branch_only, hypothesis]
@@ -226,7 +226,7 @@ branch_sources:
     integration_status: open_pr
     pr: 267
     ref: research/navigation-priority-refresh-20260829
-    commit: 52bd8de9a0f6fb8d46d88080e058c2f8063794eb
+    commit: PR267_CONTENT_SNAPSHOT_PENDING
     commit_semantics: immutable_content_snapshot_before_registry_self_pin
     result_status: arxiv_backed_mechanism_design_brief_not_a_matching_field_or_lattice_dictionary_result
     paths:
@@ -862,11 +862,11 @@ branch_sources:
       - tests/test_scorer_descriptor_adoption_audit.py
   - id: SRC_SCORER_INVENTORY_LATEST_MAIN
     integration_status: main_integrated
-    pr: 357
+    pr: 361
     ref: main
-    commit: 8ba849c022a8f8f875d29a3d0b1b7d92b3a02d48
-    parent_commit: 0515f9bce8bd745cb56250cab0ff2901a0cec87e
-    result_status: live_51_path_inventory_20_direct_19_covered_11_migrations_one_utility_after_semantic_wrappers_without_new_data_rescore_or_scientific_change
+    commit: 79c9c2250ae4da560672b0402404bfbda2b9ee87
+    parent_commit: 8b1e359c2d19fd95c4ad21c5248c3d5263d3d888
+    result_status: live_54_path_inventory_23_direct_22_covered_8_migrations_one_utility_after_semantic_wrappers_without_new_data_rescore_or_scientific_change
     covered_family_commits:
       intrinsic_quantile_center: ab7b6df5108df626d0bce22beb2155cc60935fbc
       rank_gap_boundary: b3ad0efc59c57106297d1a7e422bb3328284cfb6
@@ -874,6 +874,9 @@ branch_sources:
       v14_fixed_p_scalar: 5ded6f0164b1068d1628188d5323118cc5be70d0
       axis_pair_base_and_stable: 0515f9bce8bd745cb56250cab0ff2901a0cec87e
       angular_root_amplitude: 8ba849c022a8f8f875d29a3d0b1b7d92b3a02d48
+      prequential_evidence: 95cc3ca24083bd903beb668ece4c3feae99dfe11
+      P231_vacuum_KdV: 8b1e359c2d19fd95c4ad21c5248c3d5263d3d888
+      v14_scalar_root: 79c9c2250ae4da560672b0402404bfbda2b9ee87
     paths:
       - analysis/scorer_descriptor_adoption_manifest.json
       - notes/scorer-descriptor-adoption-inventory.md
@@ -883,7 +886,38 @@ branch_sources:
       - predictions/v14_fixedp_scalar_projector_semantic_gate_20260830.json
       - predictions/axis_pair_annihilator_semantic_gate_20260830.json
       - predictions/angular_root_amplitude_semantic_gate_20260830.json
+      - predictions/prequential_evidence_semantic_gate_20260830.json
+      - predictions/p231_vacuum_kdv_sector_semantic_gate_20260830.json
+      - predictions/v14_scalar_root_projector_semantic_gate_20260830.json
       - results/scorer-descriptor-adoption/latest.json
+  - id: SRC_PREQUENTIAL_EVIDENCE_TYPED_MAIN
+    integration_status: main_integrated
+    pr: 359
+    ref: main
+    commit: 95cc3ca24083bd903beb668ece4c3feae99dfe11
+    result_status: typed_nine_block_registered_map_replay_preserving_all_scores_coverage_chronology_historical_mismatch_exclusion_and_P91_pending_status
+    paths:
+      - analysis/evidence_ledger_manifest.yaml
+      - predictions/prequential_evidence_semantic_gate_20260830.json
+      - scripts/score_prequential_evidence_typed.py
+  - id: SRC_P231_VACUUM_KDV_TYPED_MAIN
+    integration_status: main_integrated
+    pr: 360
+    ref: main
+    commit: 8b1e359c2d19fd95c4ad21c5248c3d5263d3d888
+    result_status: typed_retrospective_PR222_C_Q_S_replay_without_new_data_score_independent_evidence_or_topology_channel_equivalence
+    paths:
+      - predictions/p231_vacuum_kdv_sector_semantic_gate_20260830.json
+      - scripts/score_p231_vacuum_kdv_sector_typed.py
+  - id: SRC_V14_SCALAR_ROOT_TYPED_MAIN
+    integration_status: main_integrated
+    pr: 361
+    ref: main
+    commit: 79c9c2250ae4da560672b0402404bfbda2b9ee87
+    result_status: typed_existing_v14_H4_null_implicit_root_response_without_new_data_score_topology_identity_or_field_assignment
+    paths:
+      - predictions/v14_scalar_root_projector_semantic_gate_20260830.json
+      - scripts/score_v14_scalar_root_projector_typed.py
   - id: SRC_PARAMETRIC_MATCHING_PROFILE_MAIN
     integration_status: main_integrated
     pr: 349
@@ -1183,7 +1217,7 @@ branch_sources:
     integration_status: open_pr
     pr: 267
     ref: research/navigation-priority-refresh-20260829
-    commit: 52bd8de9a0f6fb8d46d88080e058c2f8063794eb
+    commit: PR267_CONTENT_SNAPSHOT_PENDING
     commit_semantics: immutable_content_snapshot_before_registry_self_pin
     archive_commit: a7cb19a1b0f1115a7e5dfd23421a5dd25892fe78
     result_status: zero_sample_signed_first_birth_and_first_line_exit_flux_tomography_with_full_A4_and_fixed_u_v_w_representation_basis_covariance_and_boundary_coefficients_not_physical_C3_transport
