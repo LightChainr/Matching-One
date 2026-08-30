@@ -1,0 +1,43 @@
+{
+  "schema": "matching-one/p250-projective-leg-annihilator-bridge-manifest/v1",
+  "status": "frozen_existing_data_reanalysis_before_scoring",
+  "parent_result_commit": "a770ac9",
+  "scorer_commit": "aa8f438c494278db5482ffa013bf79f2a7f5c3fd",
+  "input_batches": "results/huawei-20260830/P250-projective-leg-bivariate-80k/response_80k.batches.csv",
+  "input_batches_sha256": "dfbd83d680080939bcae5cad0090af95d82748ed780ce73807d4b002d6a9ca72",
+  "samples": 80000,
+  "batches": 400,
+  "annihilator": {
+    "basis": [[0, 0], [1, 0], [0, 1], [2, 0], [1, 1], [0, 2]],
+    "matrix_per_hand": "12x6 stack of charge-1 and charge-2 Hankel rows",
+    "line": "minimum right singular covector",
+    "uncertainty": "paired 400-batch delete-one re-extraction with full projective-residual covariance",
+    "normalization": "candidate-specific shared nonzero coefficient is set to one; that coordinate is omitted from the residual"
+  },
+  "maps": {
+    "spatial": "identity or Alexander reflection (a,b)->(a,-b), followed by R^k for k=0,1,2,3",
+    "coefficient": "linear or complex conjugation",
+    "primary_family": "Alexander reflection plus complex conjugation for all four R^k convention choices",
+    "comparators": "orientation-preserving R^k, and reflection without coefficient conjugation",
+    "deck_generator": [1, 2, 3, 4],
+    "deck_invariance": "charge relabeling and character phases are invertible row operations and cannot change the common right line"
+  },
+  "exact_geometry_boundary": {
+    "plus_C4_fiber_multiplier": 3,
+    "minus_C4_fiber_multiplier": 2,
+    "inverse_mod5": true,
+    "same_parent_children_exact_D4_reflections": false,
+    "interpretation": "Alexander is a Hecke-sector bridge hypothesis, not a finite-graph isomorphism"
+  },
+  "covariance_eigen_relative_cutoff": 1e-10,
+  "primary_probability": "finite-400-batch Hotelling survival probability",
+  "decision_alpha": 0.01,
+  "decision_rule": "the parameter-free Alexander family is rejected only if all four reflection+conjugation R^k candidates have p<0.01; otherwise report every survivor without selecting by fit quality",
+  "fallback_if_rejected": {
+    "minimal_new_degree5_boundary": [[5, 0], [4, 1], [3, 2], [2, 3], [1, 4], [0, 5]],
+    "C4_closed_radius5_points": 20,
+    "full_order2_flat_extension_also_requires_degree6": true
+  },
+  "no_new_simulation": true,
+  "score_once": true
+}
