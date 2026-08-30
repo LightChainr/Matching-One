@@ -137,6 +137,71 @@ def raw_moments(weights: Sequence[Fraction], maximum_order: int) -> list[Fractio
     ]
 
 
+def central_moments(raw: Sequence[Fraction]) -> list[Fraction]:
+    """Convert consecutive raw moments into exact central moments."""
+    _require(len(raw) >= 2, "raw moments must include orders zero and one")
+    values = [Fraction(value) for value in raw]
+    _require(values[0] == 1, "raw moment order zero must equal one")
+    mean = values[1]
+    return [
+        sum(
+            (
+                Fraction(math.comb(order, index))
+                * ((-mean) ** (order - index))
+                * values[index]
+                for index in range(order + 1)
+            ),
+            Fraction(0),
+        )
+        for order in range(len(values))
+    ]
+
+
+def _signed_standardized_square(
+    moment: Fraction, variance: Fraction, order: int
+) -> Fraction:
+    if moment == 0:
+        return Fraction(0)
+    sign = 1 if moment > 0 else -1
+    return sign * moment * moment / (variance ** order)
+
+
+def exact_shape_invariants(raw: Sequence[Fraction]) -> dict[str, Fraction]:
+    """Return rational standardized shape invariants through order six.
+
+    Odd standardized moments contain a square root of the variance.  Their
+    sign-preserving squares remain rational and retain the asymmetry sign.
+    """
+    _require(
+        len(raw) == 7,
+        "shape invariants require raw moments zero through six",
+    )
+    central = central_moments(raw)
+    variance = central[2]
+    _require(variance > 0, "shape invariants require positive variance")
+    _require(
+        central[4] >= variance * variance,
+        "fourth moment is inconsistent with variance",
+    )
+    _require(
+        central[6] * variance >= central[4] * central[4],
+        "sixth moment is inconsistent with lower even moments",
+    )
+    kurtosis = central[4] / (variance * variance)
+    return {
+        "variance": variance,
+        "signed_skewness_squared": _signed_standardized_square(
+            central[3], variance, 3
+        ),
+        "kurtosis": kurtosis,
+        "excess_kurtosis": kurtosis - 3,
+        "signed_standardized_fifth_squared": _signed_standardized_square(
+            central[5], variance, 5
+        ),
+        "standardized_sixth": central[6] / (variance ** 3),
+    }
+
+
 def parse_fraction_vector(values: Any, length: int, label: str) -> list[Fraction]:
     _require(isinstance(values, list) and len(values) == length, f"{label} must have length {length}")
     return [canonical_fraction(value, f"{label}[{index}]") for index, value in enumerate(values)]
@@ -155,6 +220,8 @@ def validate_contract(contract: Mapping[str, Any]) -> dict[str, Any]:
     density = density_coefficients(weights)
     cdf = integrate_density(density)
     moments = raw_moments(weights, 6)
+    central = central_moments(moments)
+    shape = exact_shape_invariants(moments)
 
     expected_density = parse_fraction_vector(
         contract.get("expected_density_power_coefficients"), n, "expected density"
@@ -165,11 +232,31 @@ def validate_contract(contract: Mapping[str, Any]) -> dict[str, Any]:
     expected_moments = parse_fraction_vector(
         contract.get("expected_raw_moments_0_through_6"), 7, "expected moments"
     )
+    expected_central = parse_fraction_vector(
+        contract.get("expected_central_moments_0_through_6"),
+        7,
+        "expected central moments",
+    )
+    expected_shape_raw = contract.get("expected_exact_shape_invariants")
+    _require(
+        isinstance(expected_shape_raw, dict),
+        "expected shape invariants must be an object",
+    )
+    _require(
+        set(expected_shape_raw) == set(shape),
+        "expected shape invariant keys drifted",
+    )
+    expected_shape = {
+        key: canonical_fraction(value, f"expected shape invariants.{key}")
+        for key, value in expected_shape_raw.items()
+    }
     expected_mean = canonical_fraction(contract.get("expected_mean_from_ranks"), "expected mean")
 
     _require(density == expected_density, "density coefficients drifted")
     _require(cdf == expected_cdf, "CDF coefficients drifted")
     _require(moments == expected_moments, "raw moments drifted")
+    _require(central == expected_central, "central moments drifted")
+    _require(shape == expected_shape, "exact shape invariants drifted")
     _require(evaluate_polynomial(cdf, Fraction(0)) == 0, "CDF does not start at zero")
     _require(evaluate_polynomial(cdf, Fraction(1)) == 1, "CDF does not end at one")
     _require(evaluate_polynomial(cdf, Fraction(1, 2)) == Fraction(1, 2), "synthetic median drifted")
@@ -189,6 +276,10 @@ def validate_contract(contract: Mapping[str, Any]) -> dict[str, Any]:
         "density_power_coefficients": [str(value) for value in density],
         "cdf_power_coefficients": [str(value) for value in cdf],
         "raw_moments_0_through_6": [str(value) for value in moments],
+        "central_moments_0_through_6": [str(value) for value in central],
+        "exact_shape_invariants": {
+            key: str(value) for key, value in shape.items()
+        },
         "mean_from_ranks": str(mean_from_ranks),
         "cdf_normalized_exactly": True,
         "contains_empirical_result": False,
