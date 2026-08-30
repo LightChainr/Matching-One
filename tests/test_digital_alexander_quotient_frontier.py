@@ -19,19 +19,19 @@ class DigitalAlexanderQuotientFrontierTests(unittest.TestCase):
         cls.artifact = frontier.build_artifact()
 
     def test_all_hnf_representatives_and_permutations_are_exhausted(self) -> None:
-        self.assertEqual(self.artifact["status"], "no_counterexample_through_index_11")
-        self.assertEqual(self.artifact["HNF_representatives"], 98)
-        self.assertEqual(self.artifact["filtration_paths"], 549692118)
-        self.assertEqual(len(self.artifact["geometries"]), 98)
+        self.assertEqual(self.artifact["status"], "no_counterexample_through_index_12")
+        self.assertEqual(self.artifact["HNF_representatives"], 126)
+        self.assertEqual(self.artifact["filtration_paths"], 13961736918)
+        self.assertEqual(len(self.artifact["geometries"]), 126)
 
     def test_face_degeneracy_partition_is_complete(self) -> None:
         self.assertEqual(
             self.artifact["honest_face_representatives"]
             + self.artifact["self_identifying_face_representatives"],
-            98,
+            126,
         )
-        self.assertEqual(self.artifact["honest_face_representatives"], 59)
-        self.assertEqual(self.artifact["self_identifying_face_representatives"], 39)
+        self.assertEqual(self.artifact["honest_face_representatives"], 83)
+        self.assertEqual(self.artifact["self_identifying_face_representatives"], 43)
 
     def test_index_seven_extension_is_complete(self) -> None:
         rows = [row for row in self.artifact["geometries"] if row["order"] == 7]
@@ -66,6 +66,13 @@ class DigitalAlexanderQuotientFrontierTests(unittest.TestCase):
         self.assertTrue(all(row["permutations"] == 39916800 for row in rows))
         self.assertEqual(sum(row["four_distinct_face_corners"] for row in rows), 8)
         self.assertEqual(sum(row["rank_one_plateau_steps"] for row in rows), 2167672320)
+
+    def test_index_twelve_extension_is_complete(self) -> None:
+        rows = [row for row in self.artifact["geometries"] if row["order"] == 12]
+        self.assertEqual(len(rows), 28)
+        self.assertTrue(all(row["permutations"] == 479001600 for row in rows))
+        self.assertEqual(sum(row["four_distinct_face_corners"] for row in rows), 24)
+        self.assertEqual(sum(row["rank_one_plateau_steps"] for row in rows), 51318696960)
 
     def test_subset_dp_matches_permutation_oracle_through_index_six(self) -> None:
         matrices = frontier.hnf_matrices(maximum_order=6)
@@ -122,12 +129,12 @@ class DigitalAlexanderQuotientFrontierTests(unittest.TestCase):
         geometries = self.artifact["geometries"]
         self.assertEqual(self.artifact["maximum_saturation_index"], 1)
         self.assertEqual(self.artifact["permutations_with_index_evolution"], 0)
-        self.assertEqual(self.artifact["rank_one_plateau_steps"], 2430574064)
-        self.assertEqual(self.artifact["cached_subsets"], 55644)
+        self.assertEqual(self.artifact["rank_one_plateau_steps"], 53749271024)
+        self.assertEqual(self.artifact["cached_subsets"], 170332)
         self.assertEqual(max(row["maximum_saturation_index"] for row in geometries), 1)
         self.assertEqual(sum(row["permutations_with_index_evolution"] for row in geometries), 0)
-        self.assertEqual(sum(row["rank_one_plateau_steps"] for row in geometries), 2430574064)
-        self.assertEqual(sum(row["cached_subsets"] for row in geometries), 55644)
+        self.assertEqual(sum(row["rank_one_plateau_steps"] for row in geometries), 53749271024)
+        self.assertEqual(sum(row["cached_subsets"] for row in geometries), 170332)
         self.assertTrue(all(row["cached_subsets"] == 1 << row["order"] for row in geometries))
 
     def test_failure_counts_match_stored_examples(self) -> None:
