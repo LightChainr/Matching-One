@@ -1,23 +1,20 @@
 # Scorer descriptor-adoption inventory
 
-In this checked snapshot, the exact `scripts/*score*.py` corpus contains 51
-files. Python-AST inspection finds twenty
+In this checked snapshot, the exact `scripts/*score*.py` corpus contains 54
+files. Python-AST inspection finds twenty-three
 direct typed entrypoints importing both `ObservableDescriptor` and
-`map_observable` from `wrapping_channels`. Nineteen frozen kernels are covered by
+`map_observable` from `wrapping_channels`. Twenty-two frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Eleven paths are confirmed channel-bearing and
+a descriptor is not applicable. Eight paths are confirmed channel-bearing and
 require typed migrations:
 `score_issue43_secondary.py`,
 `score_norm4_production.py`,
 `score_norm4_thermal_jet.py`, `score_norm5_thermal_jet.py`,
 `score_p159_pell_hex_filter.py`,
-`score_p231_vacuum_kdv_sector.py`,
 `score_p49_fullcurve_doubling.py`,
 `score_p50_fullcurve_n290.py`,
-`score_prequential_evidence.py`,
-`threshold_score_modes.py`,
-`score_v14_scalar_root_projector.py`. No scorer remains outside a registered
+`threshold_score_modes.py`. No scorer remains outside a registered
 audit class.
 
 This closes an inventory gap: the repository now has a deterministic list,
@@ -37,7 +34,7 @@ unchanged.
 but no current scorer has that status. Static membership alone would not prove
 a semantic bug, data-provenance failure, or need for migration; any future
 corpus addition must still be reviewed before modification. Issue #146 remains
-open because inventory classification is not the same as implementing the 11
+open because inventory classification is not the same as implementing the 8
 required typed migrations.
 
 `score_axis_pair_annihilator.py` and its stable-reader entrypoint are now
@@ -65,11 +62,16 @@ types the topology contrast without reinterpreting root location or finite-size
 normalization as a new exact topology identity; every completed P45 number is
 unchanged.
 
-`score_prequential_evidence.py` is also migration-required. Its scored-block
-gate currently compares free-form `channel.source` and `channel.target` strings
-and treats any truthy `exact_map` field as sufficient. A typed migration must
-parse source/target descriptors and verify the registered affine transform,
-while preserving historical ledger rows and chronology.
+`score_prequential_evidence.py` is now a covered frozen kernel. Its typed
+entrypoint binds the complete nine-block canonical manifest, parses every
+legacy source/target label into an `ObservableDescriptor`, and invokes the
+registered affine map before replaying any Gaussian score. The retrospective
+either-even/cross-even map is recorded as scale -1 but the historical mismatch
+row remains excluded; a truthy free-form `exact_map` is rejected. All block
+order, roles, raw-data groups, chronology, observations, model covariances,
+additive totals, coverage and pairwise intersections remain byte-for-byte
+equivalent after removing the added semantic annotation. The pending P91
+full-curve block remains pending and still needs quantity-level decomposition.
 
 `score_c4_self_matching_n26.py` is now a covered frozen kernel. Its typed
 entrypoint validates an exact identity map for the frozen `either` matching-odd
@@ -110,13 +112,7 @@ ordered Gaussian lineages `(13,11)` then `(17,1)`. The prospective target, run
 provenance, counter-range validation, sampling-error calculation, zero-control
 evidence reuse, and numerical outputs remain unchanged.
 
-`score_p231_vacuum_kdv_sector.py` is migration-required. It concatenates
-ordered `C_nontrivial_real`, `Q_reflection_null`, and `S_scalar` coordinates
-for two designs, then compares them with a theory vector normalized per unit
-`g4`. A typed migration must bind every sector coordinate, design order, and
-theory normalization. It must preserve the block covariance, one-amplitude
-GLS, non-scalar diagnostic, and the rule that the retrospective reuse is not
-new independent evidence.
+`score_p231_vacuum_kdv_sector.py` is now a covered frozen kernel. Its typed entrypoint validates an exact topology identity before the ordered two-design C/Q/S score. The semantic gate freezes N30/N56 design order, C/Q/S coordinate and six-vector order, per-unit-`g4` theory normalization, two independent 3x3 covariance blocks, and the C-only indices `[0,3]`. It preserves the post-reveal one-amplitude fit and the rule that this retrospective PR222 reuse is not independent evidence; C/Q/S are not declared interchangeable topology channels.
 
 `score_p48_sprime_frozen.py` is now a covered frozen kernel with its own typed
 entrypoint and semantic manifest. The gate proves that this chronological
@@ -197,7 +193,7 @@ It must also preserve that width and cocycle diagnostics reuse the same raw
 curves and are not additive evidence. Prediction chronology, multipliers,
 numerical-rank cutoff, jackknife construction, and scores remain unchanged.
 
-`score_v14_fixedp_scalar_projector.py` is now a covered frozen kernel. Its typed entrypoint locks the basis-dependent `direction_1/matching` value, fixed-p coordinate, `p_ref=0.592746050790`, H4-null orientation weights, covariance reconstruction, and `N^(25/8)` normalization before delegating row projections. It remains a retrospective discovery/power diagnostic and neither proves the V_<1,4> assignment nor removes common thermal displacement. The separate full-curve `score_v14_scalar_root_projector.py` remains migration-required because it solves implicit roots and scores two lineages.
+`score_v14_fixedp_scalar_projector.py` is now a covered frozen kernel. Its typed entrypoint locks the basis-dependent `direction_1/matching` value, fixed-p coordinate, `p_ref=0.592746050790`, H4-null orientation weights, covariance reconstruction, and `N^(25/8)` normalization before delegating row projections. It remains a retrospective discovery/power diagnostic and neither proves the V_<1,4> assignment nor removes common thermal displacement.\n\n`score_v14_scalar_root_projector.py` is also now a covered frozen kernel. Its typed entrypoint validates the exact `direction_1/matching` identity before the implicit-root calculation, and freezes size order 65/85/130/170, lineages 65->130 then 85->170, first/second orientation order, the H4-null scalar-root formula, beta 7/2, q=2^(-7/2), synchronized delete-one covariance, and parameter-free lineage reconstruction. The implicit root remains a response coordinate rather than a topology observable; H8/H12 contamination, slope anisotropy, matching parity, and the V_<1,4> assignment remain unresolved.
 
 `score_p159_pell_hex_filter.py` is migration-required despite serializing an
 `observable_descriptor` dictionary in its output. That dictionary is free-form
