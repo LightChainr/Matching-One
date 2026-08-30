@@ -5,6 +5,9 @@
     "scripts/scorer_descriptor_adoption_audit.py"
   ],
   "typed_wrapper_kernels": {
+    "scripts/score_angular_root_amplitude_typed.py": "scripts/score_angular_root_amplitude.py",
+    "scripts/score_axis_pair_annihilator_stable_typed.py": "scripts/score_axis_pair_annihilator_stable.py",
+    "scripts/score_axis_pair_annihilator_typed.py": "scripts/score_axis_pair_annihilator.py",
     "scripts/score_c4_self_matching_n26_typed.py": "scripts/score_c4_self_matching_n26.py",
     "scripts/score_c4_tangent_orthogonal_holdout_typed.py": "scripts/score_c4_tangent_orthogonal_holdout.py",
     "scripts/score_intrinsic_functional_cocycle_typed.py": "scripts/score_intrinsic_functional_cocycle.py",
@@ -16,7 +19,11 @@
     "scripts/score_p48_new_geometry_channels_typed.py": "scripts/score_p48_new_geometry_channels.py",
     "scripts/score_p48_sprime_frozen_typed.py": "scripts/score_p48_sprime_frozen.py",
     "scripts/score_p48_sprime_prospective_typed.py": "scripts/score_p48_sprime_prospective.py",
-    "scripts/score_p50_sprime_n290_typed.py": "scripts/score_p50_sprime_n290.py"
+    "scripts/score_p50_sprime_n290_typed.py": "scripts/score_p50_sprime_n290.py",
+    "scripts/score_intrinsic_quantile_center_n145_n290_typed.py": "scripts/score_intrinsic_quantile_center_n145_n290.py",
+    "scripts/score_rank_gap_boundary_targets_typed.py": "scripts/score_rank_gap_boundary_targets.py",
+    "scripts/score_threshold_rank_root_doubling_typed.py": "scripts/score_threshold_rank_root_doubling.py",
+    "scripts/score_v14_fixedp_scalar_projector_typed.py": "scripts/score_v14_fixedp_scalar_projector.py"
   },
   "direct_typed_standalone": [
     "scripts/score_issue43_cross_either_correction.py"
@@ -25,10 +32,6 @@
     "scripts/kappa3_half_score.py": "generic Bernoulli score-polynomial and aggregation helper; intentionally accepts an opaque caller-supplied observable D(C) and defines no topology observable"
   },
   "channel_bearing_migration_required": {
-    "scripts/score_angular_root_amplitude.py": "reconstructs rank-2 cross K_minus/K_plus observables, forms signed orientation root gaps, divides by signed DeltaCos4, and scores the angular-normalized A_p across sizes",
-    "scripts/score_axis_pair_annihilator.py": "reconstructs the cross matching function and implicit roots from K_minus/K_plus rank histograms, then forms and scores an adjacent-size annihilator",
-    "scripts/score_axis_pair_annihilator_stable.py": "operational entrypoint patches the batch reader and delegates to the channel-bearing axis-pair annihilator without descriptor validation",
-    "scripts/score_intrinsic_quantile_center_n145_n290.py": "scores intrinsic quantile-center Q, scaled widths, and centers across independent N145/N290 streams using implicit coordinate, scaling, level, and cross-size map semantics",
     "scripts/score_issue43_secondary.py": "orders and scores reused DeltaM/DeltaS, x17, H4/H12, and optional P48 S-prime stages without typed stage, quantity, model-map, or evidence-reuse semantics",
     "scripts/score_norm4_production.py": "scores ordered U, P4_D, and root-gap coordinates across two norm-4 lineages with implicit metric, size, transform, model-order, and shared-evidence semantics",
     "scripts/score_norm4_thermal_jet.py": "scores ordered ranks 2 through 6 thermal-jet coordinates across the same norm-4 lineages without typed mode, normalization, cocycle, or shared-evidence semantics",
@@ -38,10 +41,7 @@
     "scripts/score_p49_fullcurve_doubling.py": "scores matching tails, thermal even/odd contrasts, signed lineage root gaps, and normalized P4 projectors across doubled sizes without typed quantity families",
     "scripts/score_p50_fullcurve_n290.py": "scores thermal-even DeltaM, slope, signed root-gap, and four P4 quantities across independent N145/N290 lineages using implicit feature, order, sign, and stream semantics",
     "scripts/score_prequential_evidence.py": "validates scored blocks with free-form channel.source/channel.target strings and accepts any truthy exact_map instead of applying the registered descriptor map",
-    "scripts/score_rank_gap_boundary_targets.py": "scores the orientation-pooled paired rank gap K_plus-K_minus across sizes using implicit representation and rank-unit semantics rather than an explicit descriptor",
-    "scripts/score_threshold_rank_root_doubling.py": "scores signed threshold-rank root-gap lineages across doubled sizes with implicit genealogy, orientation-order, and sign-map semantics",
     "scripts/threshold_score_modes.py": "projects paired orientation threshold curves into intrinsic-center S/D Krawtchouk modes, DeltaCos4-normalized P4 coordinates, and parity towers with implicit sector, basis, normalization, and shared-evidence semantics",
-    "scripts/score_v14_fixedp_scalar_projector.py": "projects a free-form matching-function channel into an H4-null fixed-p scalar with implicit sector, orientation-weight, p_ref, and N-scaling semantics",
     "scripts/score_v14_scalar_root_projector.py": "projects paired matching roots into H4-null scalar and H4 coordinates, then scores fixed-beta and doubling-lineage reconstructions without typed quantity, orientation, or lineage maps"
   },
   "boundary": "outside_registered_typed_path is an inventory status, not proof that a scorer is channel-bearing or semantically invalid"

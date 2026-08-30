@@ -1,10 +1,6 @@
 {
   "boundary": "outside_registered_typed_path is an inventory status, not proof that a scorer is channel-bearing or semantically invalid",
   "channel_bearing_migration_required": {
-    "scripts/score_angular_root_amplitude.py": "reconstructs rank-2 cross K_minus/K_plus observables, forms signed orientation root gaps, divides by signed DeltaCos4, and scores the angular-normalized A_p across sizes",
-    "scripts/score_axis_pair_annihilator.py": "reconstructs the cross matching function and implicit roots from K_minus/K_plus rank histograms, then forms and scores an adjacent-size annihilator",
-    "scripts/score_axis_pair_annihilator_stable.py": "operational entrypoint patches the batch reader and delegates to the channel-bearing axis-pair annihilator without descriptor validation",
-    "scripts/score_intrinsic_quantile_center_n145_n290.py": "scores intrinsic quantile-center Q, scaled widths, and centers across independent N145/N290 streams using implicit coordinate, scaling, level, and cross-size map semantics",
     "scripts/score_issue43_secondary.py": "orders and scores reused DeltaM/DeltaS, x17, H4/H12, and optional P48 S-prime stages without typed stage, quantity, model-map, or evidence-reuse semantics",
     "scripts/score_norm4_production.py": "scores ordered U, P4_D, and root-gap coordinates across two norm-4 lineages with implicit metric, size, transform, model-order, and shared-evidence semantics",
     "scripts/score_norm4_thermal_jet.py": "scores ordered ranks 2 through 6 thermal-jet coordinates across the same norm-4 lineages without typed mode, normalization, cocycle, or shared-evidence semantics",
@@ -14,9 +10,6 @@
     "scripts/score_p49_fullcurve_doubling.py": "scores matching tails, thermal even/odd contrasts, signed lineage root gaps, and normalized P4 projectors across doubled sizes without typed quantity families",
     "scripts/score_p50_fullcurve_n290.py": "scores thermal-even DeltaM, slope, signed root-gap, and four P4 quantities across independent N145/N290 lineages using implicit feature, order, sign, and stream semantics",
     "scripts/score_prequential_evidence.py": "validates scored blocks with free-form channel.source/channel.target strings and accepts any truthy exact_map instead of applying the registered descriptor map",
-    "scripts/score_rank_gap_boundary_targets.py": "scores the orientation-pooled paired rank gap K_plus-K_minus across sizes using implicit representation and rank-unit semantics rather than an explicit descriptor",
-    "scripts/score_threshold_rank_root_doubling.py": "scores signed threshold-rank root-gap lineages across doubled sizes with implicit genealogy, orientation-order, and sign-map semantics",
-    "scripts/score_v14_fixedp_scalar_projector.py": "projects a free-form matching-function channel into an H4-null fixed-p scalar with implicit sector, orientation-weight, p_ref, and N-scaling semantics",
     "scripts/score_v14_scalar_root_projector.py": "projects paired matching roots into H4-null scalar and H4 coordinates, then scores fixed-beta and doubling-lineage reconstructions without typed quantity, orientation, or lineage maps",
     "scripts/threshold_score_modes.py": "projects paired orientation threshold curves into intrinsic-center S/D Krawtchouk modes, DeltaCos4-normalized P4 coordinates, and parity towers with implicit sector, basis, normalization, and shared-evidence semantics"
   },
@@ -25,12 +18,12 @@
   ],
   "corpus_glob": "scripts/*score*.py",
   "counts": {
-    "channel_bearing_migration_required": 18,
-    "covered_frozen_kernel": 12,
+    "channel_bearing_migration_required": 11,
+    "covered_frozen_kernel": 19,
     "descriptor_not_applicable_generic_utility": 1,
-    "direct_typed_entrypoint": 13,
+    "direct_typed_entrypoint": 20,
     "outside_registered_typed_path": 0,
-    "total": 44
+    "total": 51
   },
   "descriptor_not_applicable_generic_utilities": {
     "scripts/kappa3_half_score.py": "generic Bernoulli score-polynomial and aggregation helper; intentionally accepts an opaque caller-supplied observable D(C) and defines no topology observable"
@@ -44,17 +37,32 @@
     {
       "git_blob_sha": "a92e575de3a33621d4196ca45c22abdf83bd4111",
       "path": "scripts/score_angular_root_amplitude.py",
-      "status": "channel_bearing_migration_required"
+      "status": "covered_frozen_kernel"
+    },
+    {
+      "git_blob_sha": "164b99421fa4d29457c0ee2ea3b7eee5df64a4b2",
+      "path": "scripts/score_angular_root_amplitude_typed.py",
+      "status": "direct_typed_entrypoint"
     },
     {
       "git_blob_sha": "dcb0093cc1bd9b7379d24d92d7be094fea0e62cb",
       "path": "scripts/score_axis_pair_annihilator.py",
-      "status": "channel_bearing_migration_required"
+      "status": "covered_frozen_kernel"
     },
     {
       "git_blob_sha": "152b4d62d1c2bbf3f7eaabc1f3214498f2d82e95",
       "path": "scripts/score_axis_pair_annihilator_stable.py",
-      "status": "channel_bearing_migration_required"
+      "status": "covered_frozen_kernel"
+    },
+    {
+      "git_blob_sha": "2ecc8b882ccf42014a4382c71674a7239789cd4e",
+      "path": "scripts/score_axis_pair_annihilator_stable_typed.py",
+      "status": "direct_typed_entrypoint"
+    },
+    {
+      "git_blob_sha": "58cd5d0c78392806869f550ad4fd64bb0c452361",
+      "path": "scripts/score_axis_pair_annihilator_typed.py",
+      "status": "direct_typed_entrypoint"
     },
     {
       "git_blob_sha": "e1e382130063e77e208588ceef024110fe0811da",
@@ -89,7 +97,12 @@
     {
       "git_blob_sha": "837652a580ef915eb5649ea63e5b1d1ba73a3e7e",
       "path": "scripts/score_intrinsic_quantile_center_n145_n290.py",
-      "status": "channel_bearing_migration_required"
+      "status": "covered_frozen_kernel"
+    },
+    {
+      "git_blob_sha": "565341942274588a4c1a7665ab810c0a4adc0948",
+      "path": "scripts/score_intrinsic_quantile_center_n145_n290_typed.py",
+      "status": "direct_typed_entrypoint"
     },
     {
       "git_blob_sha": "fecd46ad417e75e6165ca396f4d7535d6911da12",
@@ -222,8 +235,8 @@
       "status": "covered_frozen_kernel"
     },
     {
-      "path": "scripts/score_p50_sprime_n290_typed.py",
       "git_blob_sha": "bf45773159c6e9a811f58073d4db193b975cf2db",
+      "path": "scripts/score_p50_sprime_n290_typed.py",
       "status": "direct_typed_entrypoint"
     },
     {
@@ -234,17 +247,32 @@
     {
       "git_blob_sha": "8f9d41b5ea77828b7683c3a48d7f0517654b980e",
       "path": "scripts/score_rank_gap_boundary_targets.py",
-      "status": "channel_bearing_migration_required"
+      "status": "covered_frozen_kernel"
+    },
+    {
+      "git_blob_sha": "6dc85aca783cbc9d2cfa38048b9d372d760977c2",
+      "path": "scripts/score_rank_gap_boundary_targets_typed.py",
+      "status": "direct_typed_entrypoint"
     },
     {
       "git_blob_sha": "463acbb63df93eb58792db5a7db012d8e6096daa",
       "path": "scripts/score_threshold_rank_root_doubling.py",
-      "status": "channel_bearing_migration_required"
+      "status": "covered_frozen_kernel"
+    },
+    {
+      "git_blob_sha": "c80fb62cd6126bb11a34b0835886ac1b1f274f91",
+      "path": "scripts/score_threshold_rank_root_doubling_typed.py",
+      "status": "direct_typed_entrypoint"
     },
     {
       "git_blob_sha": "c7b745b60614f315955ec5bda5fd0ae152c33f24",
       "path": "scripts/score_v14_fixedp_scalar_projector.py",
-      "status": "channel_bearing_migration_required"
+      "status": "covered_frozen_kernel"
+    },
+    {
+      "git_blob_sha": "734f448ee0fd206cadc68869654e1f4fd4b6b793",
+      "path": "scripts/score_v14_fixedp_scalar_projector_typed.py",
+      "status": "direct_typed_entrypoint"
     },
     {
       "git_blob_sha": "2e4bb607777c6a75a24beeed412640b977622844",
@@ -259,9 +287,13 @@
   ],
   "schema": "scorer descriptor adoption inventory v1",
   "typed_wrapper_kernels": {
+    "scripts/score_angular_root_amplitude_typed.py": "scripts/score_angular_root_amplitude.py",
+    "scripts/score_axis_pair_annihilator_stable_typed.py": "scripts/score_axis_pair_annihilator_stable.py",
+    "scripts/score_axis_pair_annihilator_typed.py": "scripts/score_axis_pair_annihilator.py",
     "scripts/score_c4_self_matching_n26_typed.py": "scripts/score_c4_self_matching_n26.py",
     "scripts/score_c4_tangent_orthogonal_holdout_typed.py": "scripts/score_c4_tangent_orthogonal_holdout.py",
     "scripts/score_intrinsic_functional_cocycle_typed.py": "scripts/score_intrinsic_functional_cocycle.py",
+    "scripts/score_intrinsic_quantile_center_n145_n290_typed.py": "scripts/score_intrinsic_quantile_center_n145_n290.py",
     "scripts/score_issue43_full_curve_locked_typed.py": "scripts/score_issue43_full_curve_locked.py",
     "scripts/score_issue43_full_curve_typed.py": "scripts/score_issue43_full_curve.py",
     "scripts/score_issue50_n290_typed.py": "scripts/score_issue50_n290.py",
@@ -270,6 +302,9 @@
     "scripts/score_p48_new_geometry_channels_typed.py": "scripts/score_p48_new_geometry_channels.py",
     "scripts/score_p48_sprime_frozen_typed.py": "scripts/score_p48_sprime_frozen.py",
     "scripts/score_p48_sprime_prospective_typed.py": "scripts/score_p48_sprime_prospective.py",
-    "scripts/score_p50_sprime_n290_typed.py": "scripts/score_p50_sprime_n290.py"
+    "scripts/score_p50_sprime_n290_typed.py": "scripts/score_p50_sprime_n290.py",
+    "scripts/score_rank_gap_boundary_targets_typed.py": "scripts/score_rank_gap_boundary_targets.py",
+    "scripts/score_threshold_rank_root_doubling_typed.py": "scripts/score_threshold_rank_root_doubling.py",
+    "scripts/score_v14_fixedp_scalar_projector_typed.py": "scripts/score_v14_fixedp_scalar_projector.py"
   }
 }

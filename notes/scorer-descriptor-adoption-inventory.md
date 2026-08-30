@@ -1,15 +1,13 @@
 # Scorer descriptor-adoption inventory
 
-In this checked snapshot, the exact `scripts/*score*.py` corpus contains 44
-files. Python-AST inspection finds thirteen
+In this checked snapshot, the exact `scripts/*score*.py` corpus contains 51
+files. Python-AST inspection finds twenty
 direct typed entrypoints importing both `ObservableDescriptor` and
-`map_observable` from `wrapping_channels`. Twelve frozen kernels are covered by
+`map_observable` from `wrapping_channels`. Nineteen frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Eighteen paths are confirmed channel-bearing and
-require typed migrations: `score_angular_root_amplitude.py`,
-`score_axis_pair_annihilator.py`, its stable entrypoint,
-`score_intrinsic_quantile_center_n145_n290.py`,
+a descriptor is not applicable. Eleven paths are confirmed channel-bearing and
+require typed migrations:
 `score_issue43_secondary.py`,
 `score_norm4_production.py`,
 `score_norm4_thermal_jet.py`, `score_norm5_thermal_jet.py`,
@@ -18,9 +16,7 @@ require typed migrations: `score_angular_root_amplitude.py`,
 `score_p49_fullcurve_doubling.py`,
 `score_p50_fullcurve_n290.py`,
 `score_prequential_evidence.py`,
-`score_rank_gap_boundary_targets.py`, `score_threshold_rank_root_doubling.py`,
 `threshold_score_modes.py`,
-`score_v14_fixedp_scalar_projector.py`, and
 `score_v14_scalar_root_projector.py`. No scorer remains outside a registered
 audit class.
 
@@ -41,8 +37,17 @@ unchanged.
 but no current scorer has that status. Static membership alone would not prove
 a semantic bug, data-provenance failure, or need for migration; any future
 corpus addition must still be reviewed before modification. Issue #146 remains
-open because inventory classification is not the same as implementing the 18
+open because inventory classification is not the same as implementing the 11
 required typed migrations.
+
+`score_axis_pair_annihilator.py` and its stable-reader entrypoint are now
+covered frozen kernels. Their two typed entrypoints share one semantic gate
+and validate the exact identity for a `cross` matching-odd raw value before
+delegating. The gate separately freezes the adjacent upper/lower roles,
+zero-based aligned batches, `p_ref`, the `L^(13/4)` annihilator, q/w ordering,
+and source-fit/held-out-no-refit boundary. The implicit root and candidate
+operator interpretation remain response/model coordinates rather than newly
+asserted topology identities; both historical numerical kernels are unchanged.
 
 The `kappa3_half_score.py` exception is narrow. It defines only exact Bernoulli
 likelihood-score polynomials at `p=1/2` and aggregates an opaque caller-supplied
@@ -50,12 +55,15 @@ likelihood-score polynomials at `p=1/2` and aggregates an opaque caller-supplied
 topology observable. Geometry-specific callers still must type their own
 `D(C)` before comparison.
 
-`score_angular_root_amplitude.py` is not eligible for the generic-utility
-exception. Its current blob reconstructs rank-2 cross `K_minus/K_plus`
-observables, forms signed orientation differences and root gaps, normalizes by
-signed `DeltaCos4`, and scores `A_p` across sizes. A later migration must decide
-explicitly whether the descriptor schema needs a root-location quantity; this
-inventory result does not retrofit or reinterpret the completed P45 score.
+`score_angular_root_amplitude.py` is now a covered frozen kernel. Its typed
+entrypoint applies the registered raw-to-angular-normalized map separately for
+the signed N=65 and N=85 orientation designs before replaying the scorer. The
+gate freezes first-minus-second order, signed `DeltaCos4`, the implicit-root
+response, the additional `-N^2` transform, aligned common-stream batches, full
+cross-size covariance, and the frozen prediction with zero target refits. This
+types the topology contrast without reinterpreting root location or finite-size
+normalization as a new exact topology identity; every completed P45 number is
+unchanged.
 
 `score_prequential_evidence.py` is also migration-required. Its scored-block
 gate currently compares free-form `channel.source` and `channel.target` strings
@@ -90,20 +98,9 @@ block selection, already-primary scores, distinct raw-data-group requirement,
 block-diagonal calculation, or the rule that derived output cannot become a
 new primary evidence row.
 
-`score_rank_gap_boundary_targets.py` is migration-required. It scores the
-orientation-pooled paired observable `G=K_plus-K_minus` in rank units from a
-frozen source fit against target sizes, while binding its meaning only through
-ordered representation arrays and metadata. A typed migration must represent
-the paired rank-gap quantity, rank units, orientation pooling, and cross-size
-identity. It must preserve the fixed `5/8` exponent, source/target chronology,
-production-metadata gate, and covariance calculation.
+`score_rank_gap_boundary_targets.py` is now a covered frozen kernel. Its typed entrypoint validates the exact cross/primal identity used by the same paired rank-gap observable across source and target sizes before replaying the frozen scorer. The semantic gate freezes `G=K_plus-K_minus`, rank units, equal first/second orientation pooling, source and target order, the unfitted `5/8` exponent, and `(A,B)` parameter order. It preserves pre-reveal chronology, disjoint counters, covariance, predictions, and all numerical results; rank units are not reinterpreted as probability values.
 
-`score_threshold_rank_root_doubling.py` is migration-required. It tests a
-fixed `-1/4` doubling ratio for two Gaussian threshold-rank root-gap lineages,
-reversing the stored child sign to follow multiplication by `1+i`. A typed
-migration must represent the root-gap quantity, genealogy, stored-versus-lineage
-orientation order, sign map, and cross-size relation. It must preserve both the
-full-covariance score and the diagonal-only diagnostic.
+`score_threshold_rank_root_doubling.py` is now a covered frozen kernel. Its typed entrypoint uses the registered raw orientation-order reversal to obtain the exact stored-child transform `(-1,0)` before evaluating the two `1+i` lineages. The semantic gate freezes sizes `[65,85,130,170]`, lineage order `(65,130)` then `(85,170)`, the threshold-rank root-gap quantity, fixed `-1/4` ratio, and full-versus-diagonal covariance order. The full covariance remains primary, the diagonal score remains diagnostic, and no numerical output changes.
 
 `score_issue50_n290.py` is now a covered frozen kernel. Its typed entrypoint
 validates an exact identity map for the fixed-p `either/matching-odd`
@@ -154,15 +151,7 @@ prediction identities, and the fact that this score reuses the P50 raw block.
 The scalar variance calculation, prediction hashes, chronology, numerical
 scores, and declared decision text are unchanged.
 
-`score_intrinsic_quantile_center_n145_n290.py` is migration-required. It scores
-the intrinsic quantile-center coordinate `Q`, two `N^(3/8)`-scaled widths, and
-two centers, then maps the first three coordinates from N145 to N290 under
-frozen scaling laws. The current contract relies on tuple order, string keys,
-and numeric transforms rather than typed quantities and maps. A migration must
-type the level-derived coordinates, units/scalings, cross-size transforms, and
-independent RNG domains. It must preserve the frozen u-grid, recomputation of
-all crossings inside every size-local delete-one replicate, covariance block
-construction, chronology, and primary-score separation.
+`score_intrinsic_quantile_center_n145_n290.py` is now a covered frozen kernel. Its typed entrypoint validates an exact identity map for the cross/matching scalar value before replaying the frozen N145-to-N290 coordinate score. The semantic gate freezes u={0.025,0.05}, feature and residual order, Q and width normalization powers, independent RNG domains, and the zero cross-size covariance contract. It does not create independent evidence, change delete-one reconstruction, refit the 2^{-3/4} target, or alter numerical results.
 
 The Issue #43 full-curve base scorer and locked wrapper are now covered as one
 operational unit. Their typed entrypoints validate exact N185-to-N265 identity
@@ -208,15 +197,7 @@ It must also preserve that width and cocycle diagnostics reuse the same raw
 curves and are not additive evidence. Prediction chronology, multipliers,
 numerical-rank cutoff, jackknife construction, and scores remain unchanged.
 
-The two v14 scalar projectors are migration-required. The fixed-p path selects
-a free-form matching-function channel, applies cos4 weights to cancel H4, and
-reports a `N^(25/8)`-scaled scalar at explicit `p_ref`. The full-curve path
-instead solves two orientation roots, forms H4-null scalar and H4 coordinates,
-then scores fixed `beta=7/2` GLS and two ordered norm-2 lineages. A migration
-must type sector, channel, orientation weights, fixed-p versus root quantities,
-units/scalings, and lineage maps. It must preserve covariance reconstruction,
-root solving, synchronized delete-one batches, the conditional parity boundary,
-and all limitations and numerical results.
+`score_v14_fixedp_scalar_projector.py` is now a covered frozen kernel. Its typed entrypoint locks the basis-dependent `direction_1/matching` value, fixed-p coordinate, `p_ref=0.592746050790`, H4-null orientation weights, covariance reconstruction, and `N^(25/8)` normalization before delegating row projections. It remains a retrospective discovery/power diagnostic and neither proves the V_<1,4> assignment nor removes common thermal displacement. The separate full-curve `score_v14_scalar_root_projector.py` remains migration-required because it solves implicit roots and scores two lineages.
 
 `score_p159_pell_hex_filter.py` is migration-required despite serializing an
 `observable_descriptor` dictionary in its output. That dictionary is free-form
