@@ -6,7 +6,7 @@ direct typed entrypoints importing both `ObservableDescriptor` and
 `map_observable` from `wrapping_channels`. Three frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Twenty-four paths are confirmed channel-bearing and
+a descriptor is not applicable. Twenty-five paths are confirmed channel-bearing and
 require typed migrations: `score_angular_root_amplitude.py`,
 `score_axis_pair_annihilator.py`, its stable entrypoint,
 `score_c4_self_matching_n26.py`, `score_c4_tangent_orthogonal_holdout.py`,
@@ -15,13 +15,14 @@ require typed migrations: `score_angular_root_amplitude.py`,
 `score_issue43_secondary.py`, `score_issue50_n290.py`,
 `score_matching_odd_synthesis.py`, `score_norm4_production.py`,
 `score_norm4_thermal_jet.py`, `score_norm5_thermal_jet.py`,
+`score_p159_pell_hex_filter.py`,
 `score_p231_vacuum_kdv_sector.py`,
 `score_p48_sprime_frozen.py`, `score_p49_fullcurve_doubling.py`,
 `score_p50_fullcurve_n290.py`, `score_p50_sprime_n290.py`,
 `score_prequential_evidence.py`,
 `score_rank_gap_boundary_targets.py`, `score_threshold_rank_root_doubling.py`,
 `score_v14_fixedp_scalar_projector.py`, and
-`score_v14_scalar_root_projector.py`. The remaining three files are outside a
+`score_v14_scalar_root_projector.py`. The remaining two files are outside a
 registered typed path.
 
 This closes an inventory gap: the repository now has a deterministic list,
@@ -205,6 +206,19 @@ must type sector, channel, orientation weights, fixed-p versus root quantities,
 units/scalings, and lineage maps. It must preserve covariance reconstruction,
 root solving, synchronized delete-one batches, the conditional parity boundary,
 and all limitations and numerical results.
+
+`score_p159_pell_hex_filter.py` is migration-required despite serializing an
+`observable_descriptor` dictionary in its output. That dictionary is free-form
+provenance, not a registered `ObservableDescriptor` checked through
+`map_observable`. The score orders three primitive rank-1 homology lines in a
+transported positive-rho basis, transforms their continuum-subtracted
+probabilities into C/Q/S character coordinates, compares two Pell designs
+through E4 phase transport, and explicitly reuses PR #222 evidence. A migration
+must type the primitive-sector channel, line-basis transport, character
+coordinates, fixed-p and amplitude normalizations, cross-design phase map, and
+non-independent evidence relation. It must preserve the exact oracle, frozen
+continuum baselines, covariance transform, post-reveal boundary, and all
+existing gate conclusions.
 
 The axis-pair annihilator score path is migration-required as one operational
 unit. The base scorer reconstructs the cross matching function from
