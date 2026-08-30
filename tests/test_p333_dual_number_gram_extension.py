@@ -15,6 +15,7 @@ from p333_dual_number_gram_extension import (  # noqa: E402
     symmetric_inertia,
     sharp_jordan_gate_oracle,
     join_semilattice_oracle,
+    detach_join_semigroup_oracle,
 )
 
 
@@ -48,6 +49,14 @@ class DualNumberGramExtensionTests(unittest.TestCase):
         self.assertTrue(oracle["all_idempotent"])
         self.assertTrue(oracle["all_commuting"])
         self.assertTrue(oracle["all_first_jet_gram_self_adjoint"])
+
+    def test_detach_is_minimal_noncoarsening_positive_control(self):
+        self.assertEqual(detach_join_semigroup_oracle(2)["defective_deterministic_elements"], 0)
+        n3 = detach_join_semigroup_oracle(3)
+        self.assertEqual(n3["first_defective_word"], ["D0", "J01", "D1"])
+        self.assertEqual(n3["first_defective_height"], 2)
+        self.assertEqual(n3["gram_self_adjoint_defective_elements"], 0)
+        self.assertEqual(detach_join_semigroup_oracle(4)["gram_self_adjoint_defective_elements"], 0)
 
 
 if __name__ == "__main__":

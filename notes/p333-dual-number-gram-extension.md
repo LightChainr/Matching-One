@@ -165,6 +165,34 @@ the join semilattice, such as detach/cut operations, a Q-dependent colour
 projector, or another operation that changes rather than only coarsens the
 connectivity partition.
 
+## Detach is sufficient for an algebraic transient, but not the physical gate
+
+Adding the standard detach move immediately changes the finite algebra.  The
+exact deterministic join/detach semigroup has no defective element at two
+marks.  At three marks the shortest defective word is
+
+```text
+D0, J01, D1
+```
+
+(operations applied from left to right).  It maps the chain
+
+```text
+{012} -> {02|1} -> {0|1|2},
+```
+
+so the differences of consecutive states form a length-two zero-eigenvalue
+Jordan chain.  This is the minimal finite positive control that a
+non-coarsening history/morphism operation can create nilpotent state.
+
+It does **not** yet pass the physical Gram gate.  Exhausting the entire
+deterministic semigroup gives 42 elements at three marks and 1,577 at four;
+none of the defective elements is self-adjoint for the first-jet Gram form.
+Thus a single bare join/detach word can create algebraic memory, but a
+Gram-compatible physical block requires a weighted sum of histories, an
+explicit Q-dependent action, or a larger state category.  This sharply
+separates "noncommutative morphism exists" from "LCFT Jordan block exists".
+
 ## Claim boundary
 
 This proves a finite algebra statement.  It does not prove a transfer-matrix

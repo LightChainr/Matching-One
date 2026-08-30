@@ -16,6 +16,10 @@
 - Join-only obstruction: connectivity joins form a commuting idempotent
   semilattice algebra and are simultaneously diagonalizable.  No join-only
   observable or transfer surrogate can contain the required Jordan block.
+- Minimal noncoarsening positive control: the three-mark word
+  `D0,J01,D1` creates a length-two zero-Jordan transient.  Yet no defective
+  deterministic join/detach element through four marks is first-jet-Gram
+  self-adjoint, so one bare morphism word still fails the physical gate.
 - Observer/sector/source/geometry: exact set-partition connectivity Gram;
   generic-Q colour/connectivity sector; no stochastic source or geometry.
 - Dependency group: Issue #262 low-leg connectivity Gram algebra.

@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from collections import deque
 from fractions import Fraction
 from math import factorial
 from pathlib import Path
@@ -74,6 +75,30 @@ def join_operator(n: int, i: int, j: int) -> Matrix:
     operator = [[Fraction(0) for _ in range(size)] for _ in range(size)]
     for source, partition in enumerate(partitions):
         operator[lookup[join_pair(partition, i, j)]][source] = Fraction(1)
+    return operator
+
+
+def detach_point(partition: tuple[tuple[int, ...], ...], i: int) -> tuple[tuple[int, ...], ...]:
+    """Detach i into a singleton, the standard non-coarsening partition move."""
+    blocks: list[tuple[int, ...]] = []
+    for block in partition:
+        if i in block:
+            remainder = tuple(value for value in block if value != i)
+            if remainder:
+                blocks.append(remainder)
+        else:
+            blocks.append(block)
+    blocks.append((i,))
+    return tuple(sorted(blocks, key=lambda block: block[0]))
+
+
+def detach_operator(n: int, i: int) -> Matrix:
+    partitions = set_partitions(n)
+    lookup = {partition: index for index, partition in enumerate(partitions)}
+    size = len(partitions)
+    operator = [[Fraction(0) for _ in range(size)] for _ in range(size)]
+    for source, partition in enumerate(partitions):
+        operator[lookup[detach_point(partition, i)]][source] = Fraction(1)
     return operator
 
 
@@ -215,6 +240,89 @@ def join_semilattice_oracle(n: int = 4) -> dict:
     }
 
 
+def deterministic_map(operator: Matrix) -> tuple[int, ...]:
+    mapping = []
+    for column in range(len(operator)):
+        targets = [row for row in range(len(operator)) if operator[row][column]]
+        if len(targets) != 1 or operator[targets[0]][column] != 1:
+            raise ValueError("operator is not a deterministic unit-weight map")
+        mapping.append(targets[0])
+    return tuple(mapping)
+
+
+def compose_maps(after: tuple[int, ...], before: tuple[int, ...]) -> tuple[int, ...]:
+    return tuple(after[value] for value in before)
+
+
+def operator_from_map(mapping: tuple[int, ...]) -> Matrix:
+    operator = [[Fraction(0) for _ in mapping] for _ in mapping]
+    for source, target in enumerate(mapping):
+        operator[target][source] = Fraction(1)
+    return operator
+
+
+def transient_height(mapping: tuple[int, ...]) -> int:
+    """Maximum distance to a cycle; height >=2 forces a zero Jordan block."""
+    maximum = 0
+    for source in range(len(mapping)):
+        first_seen: dict[int, int] = {}
+        value = source
+        step = 0
+        while value not in first_seen:
+            first_seen[value] = step
+            value = mapping[value]
+            step += 1
+        maximum = max(maximum, first_seen[value])
+    return maximum
+
+
+def detach_join_semigroup_oracle(n: int) -> dict:
+    """Enumerate the finite deterministic join/detach semigroup exactly."""
+    generators = {
+        **{f"D{i}": deterministic_map(detach_operator(n, i)) for i in range(n)},
+        **{
+            f"J{i}{j}": deterministic_map(join_operator(n, i, j))
+            for i in range(n) for j in range(i + 1, n)
+        },
+    }
+    identity_map = tuple(range(len(set_partitions(n))))
+    queue = deque([identity_map])
+    words: dict[tuple[int, ...], tuple[str, ...]] = {identity_map: ()}
+    while queue:
+        current = queue.popleft()
+        for name, generator in generators.items():
+            candidate = compose_maps(generator, current)
+            if candidate not in words:
+                words[candidate] = words[current] + (name,)
+                queue.append(candidate)
+
+    h = restricted_first_form(n)
+    defective = []
+    compatible_defective = []
+    for mapping, word in words.items():
+        height = transient_height(mapping)
+        if height < 2:
+            continue
+        defective.append((len(word), word, mapping, height))
+        operator = radical_operator(operator_from_map(mapping))
+        if multiply(h, operator) == multiply(transpose(operator), h):
+            compatible_defective.append((len(word), word, mapping, height))
+    defective.sort()
+    compatible_defective.sort()
+    first = defective[0] if defective else None
+    return {
+        "marked_points": n,
+        "semigroup_elements": len(words),
+        "defective_deterministic_elements": len(defective),
+        "first_defective_word": list(first[1]) if first else None,
+        "first_defective_height": first[3] if first else None,
+        "first_defective_is_first_jet_gram_self_adjoint": bool(
+            first and first in compatible_defective
+        ),
+        "gram_self_adjoint_defective_elements": len(compatible_defective),
+    }
+
+
 def analyze(max_points: int = 5) -> dict:
     rows = []
     for n in range(2, max_points + 1):
@@ -278,6 +386,18 @@ def analyze(max_points: int = 5) -> dict:
             ),
             "minimum_marked_points_for_indefinite_radical": 3,
             "join_only_obstruction": join_semilattice_oracle(4),
+            "detach_join_positive_control": {
+                "n2": detach_join_semigroup_oracle(2),
+                "n3": detach_join_semigroup_oracle(3),
+                "n4": detach_join_semigroup_oracle(4),
+                "boundary": (
+                    "Detach plus join creates deterministic Jordan transients, "
+                    "but no defective deterministic element through four marks "
+                    "is self-adjoint for the first-jet Gram form. A physical "
+                    "Gram-compatible block therefore needs a weighted sum or "
+                    "a larger Q-dependent action, not one bare morphism word."
+                ),
+            },
         },
         "checks": rows,
     }
