@@ -33,6 +33,13 @@ have or have not adopted descriptors. The audit fails closed if a direct typed
 import is added or removed without updating the manifest, or if a declared
 wrapped kernel disappears.
 
+The manifest explicitly excludes `scorer_descriptor_adoption_audit.py` from
+its own `scripts/*score*.py` glob. The exclusion is checked against the live
+corpus, and the regression test now recomputes the complete audit before
+comparing it with the checked result. This prevents the meta-tool from being
+silently counted as an unclassified scorer while keeping the scorer partition
+unchanged.
+
 `outside_registered_typed_path` remains a deliberate fail-closed triage label,
 but no current scorer has that status. Static membership alone would not prove
 a semantic bug, data-provenance failure, or need for migration; any future
