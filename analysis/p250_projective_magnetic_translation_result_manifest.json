@@ -1,0 +1,63 @@
+{
+  "schema": "matching-one/p250-projective-magnetic-translation-result-manifest/v1",
+  "issue": 250,
+  "status": "frozen_existing_data_reanalysis_revealed",
+  "branch": "analysis/p250-projective-magnetic-translation-20260830",
+  "parent_result_commit": "4c1f5d8",
+  "scorer_commit": "1622387ae73637e02f5988bbacc9361794433b76",
+  "freeze_commit": "6065312",
+  "execution": {
+    "host": "local Mac",
+    "new_simulation": false,
+    "input_samples": 80000,
+    "input_batches": 400,
+    "elapsed_seconds": 165.74,
+    "numpy": "2.4.6",
+    "scipy": "1.18.0"
+  },
+  "hashes": {
+    "input_batches": "dfbd83d680080939bcae5cad0090af95d82748ed780ce73807d4b002d6a9ca72",
+    "prior_bivariate_score": "4fec61d1252b32c3cf930b3ce01f379f13c0928d766e0da572f3065e9df89d0f",
+    "score.json": "37039ff8d6fe669dc55240ccfde4e2b20e34d523d44a94c18c84e9211861664d",
+    "score.md": "ec864ea38e5555696f0fdb434f4db1ce9130e6e788ce94f0cdc49c4ef2902126"
+  },
+  "exact_gates": {
+    "canonical_matrix_max_abs_residual": 3.412027522250407e-15,
+    "plus_zero_curvature_sites": 101,
+    "minus_zero_curvature_sites": 101,
+    "total_parent_sites_per_hand": 101,
+    "microscopic_center_charge": 0
+  },
+  "frozen_scores": {
+    "Weyl_m1_m4": {
+      "rho": 0.38821063185014715,
+      "mixed": {"chi_square": 1390.0381013678139, "degrees_of_freedom": 24, "survival_p": 6.680175642551681e-279},
+      "degree4": {"chi_square": 342.2378418219461, "degrees_of_freedom": 40, "survival_p": 1.2087274972767246e-49}
+    },
+    "Weyl_m2_m3": {
+      "rho": 0.38821063817528295,
+      "mixed": {"chi_square": 1428.7130646124288, "degrees_of_freedom": 24, "survival_p": 3.610266660079312e-287},
+      "degree4": {"chi_square": 312.8094736718709, "degrees_of_freedom": 40, "survival_p": 5.441990419508012e-44}
+    },
+    "Weyl_m3_m2": {
+      "rho": 0.3882106358272165,
+      "mixed": {"chi_square": 1939.9678273427444, "degrees_of_freedom": 24, "survival_p": 0.0},
+      "degree4": {"chi_square": 340.8902749890893, "degrees_of_freedom": 40, "survival_p": 2.2009251910375153e-49}
+    },
+    "Weyl_m4_m1": {
+      "rho": 0.38821062018519464,
+      "mixed": {"chi_square": 1269.1717428094248, "degrees_of_freedom": 24, "survival_p": 4.331898862828141e-253},
+      "degree4": {"chi_square": 329.1554278283878, "degrees_of_freedom": 40, "survival_p": 4.014714877329232e-47}
+    },
+    "free_commuting_rank4": {"chi_square": 107.86104615900096, "degrees_of_freedom": 40, "survival_p": 3.805957560743935e-08},
+    "free_commuting_rank5": {"chi_square": 74.89883269210031, "degrees_of_freedom": 40, "survival_p": 0.0006820498532251222}
+  },
+  "decision": "neither_canonical_Weyl_nor_free_commuting_rank5_closes",
+  "mechanism_update": "The data do not select magnetic translation.  Canonical rank-five clock/shift matrix elements are grossly incompatible, while the much closer but still rejected commuting-rank-five control redirects attention to dimension above five, non-normal/Jordan transfer, or periodic-image/context structure.",
+  "claim_boundary": [
+    "The exact microscopic spatial cover bundle is flat; nonzero-m was only an effective projected-state hypothesis.",
+    "The result excludes the frozen Hermitian one-vector canonical Weyl realization, not every rank-five projective representation.",
+    "The free commuting fits use unweighted nonlinear training and full-covariance heldout scoring; rejection is specific to that frozen shared-eigenpair realization.",
+    "No positive evidence for noncommuting translations was obtained."
+  ]
+}
