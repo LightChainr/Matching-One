@@ -1,0 +1,53 @@
+{
+  "schema": "matching-one/p250-projective-leg-insertion-prereg/v1",
+  "issue": 250,
+  "status": "frozen_before_random_smoke",
+  "base_commit": "842400d09b82d4e251cb42d011ab191359464320",
+  "candidate_screen": [
+    {
+      "name": "projective_leg_scalar",
+      "definition": "1{root lies in a black NN rank-one wrapping component} - 1{root lies in a white matching rank-one wrapping component}",
+      "selected": true,
+      "reason": "root-marked, deck-covariant, and two separated roots in the same wrapping component have an exact common contribution without angular cancellation"
+    },
+    {
+      "name": "projective_leg_chi4",
+      "definition": "the same root projectors weighted by Re[(P ell)^4/|P ell|^4]",
+      "selected": false,
+      "role": "exact-character diagnostic only",
+      "reason": "primitive-line support is exact, but signed line averaging can cancel the transport gate"
+    },
+    {
+      "name": "local_annulus_landing_H4",
+      "selected": false,
+      "reason": "R1-R4 common-counter scan already found no second resolved separation"
+    }
+  ],
+  "exact_gates": [
+    "rank-one component line is primitive up to sign",
+    "physical chi4 is independent of period-basis representative",
+    "fiber DFT transforms in the declared Z5 deck character",
+    "a constructed primitive wrapping component transports the scalar leg mark between separated roots"
+  ],
+  "fixed_stream": {
+    "geometry": "N325 norm-5 plus/minus hands",
+    "samples": 2000,
+    "batches": 40,
+    "workers": 8,
+    "p": 0.59274605079,
+    "seed": 25033433720260830,
+    "replica_counter": [0, 2000],
+    "separations": [1, 2, 3],
+    "triangles": "(0,0),(d,0),(0,d) after uniform parent translation"
+  },
+  "promotion_gate": {
+    "two_point": "at least two separations have all four G1/G2 x plus/minus abs(z)>=2",
+    "cubic_interface": "joint C113/C122 and pair covariance is finite and nondegenerate",
+    "phase_policy": "no phase or phase-closure score may choose the operator"
+  },
+  "claim_boundary": [
+    "The selected row is a root-marked topological leg insertion, not a local annulus field.",
+    "A 2k stream is an interface and propagation smoke only.",
+    "The secondary chi4 row is retained for exact semantics and is not used to choose the primary insertion."
+  ]
+}
