@@ -1,0 +1,22 @@
+{
+  "schema": "matching-one/p334-n17-multiorbit-flux-manifest/v1",
+  "issue": 334,
+  "parent_commit": "b8e286e",
+  "geometry": {
+    "gaussian_generator": [4, 1],
+    "N": 17,
+    "method": "full subset states and directed addition edges; no path enumeration"
+  },
+  "orbit_gate": "Require at least two inequivalent primitive-line D4 orbits before the full N17 boundary census.",
+  "comparison": "Use the unchanged N13 axis/diagonal basis and p_ref=0.59274605079 signed shares.",
+  "outputs": {
+    "json": "results/p334-n17-multiorbit-flux/latest.json",
+    "markdown": "results/p334-n17-multiorbit-flux/latest.md"
+  },
+  "commands": [
+    "PYTHONPATH=scripts python3 scripts/p334_n17_multiorbit_flux.py --format json --output results/p334-n17-multiorbit-flux/latest.json",
+    "PYTHONPATH=scripts python3 scripts/p334_n17_multiorbit_flux.py --format markdown --output results/p334-n17-multiorbit-flux/latest.md",
+    "PYTHONPATH=scripts python3 -m unittest discover -s tests -p test_p334_n17_multiorbit_flux.py"
+  ],
+  "claim_boundary": "Exact finite-volume cross-quotient mechanism comparison only; no continuum field or asymptotic limit is inferred."
+}

@@ -57,11 +57,23 @@ def orbit_label(line: Optional[Vector]) -> str:
         return "axis_orbit"
     if line in {(1, 1), (1, -1)}:
         return "diagonal_orbit"
-    raise AssertionError(f"unexpected N13 rank-one line {line}")
+    raise AssertionError(f"unexpected rank-one line {line}")
 
 
-def exact_census() -> dict[str, object]:
-    geometry = gaussian_integer_torus(3, 2)
+def exact_census(
+    a: int = 3,
+    b: int = 2,
+    *,
+    include_direct_rank2: bool = False,
+) -> dict[str, object]:
+    """Resolve the two declared line orbits on a modest Gaussian quotient.
+
+    The defaults preserve the checked-in N=13 certificate.  The optional
+    parameters let a stacked exact comparison reuse the identical orbit basis
+    and Bernstein source/sink convention without copying the census engine.
+    """
+
+    geometry = gaussian_integer_torus(a, b)
     marks = subset_marks(geometry, matching=False)
     n = geometry.n
     state_counts: Counter[tuple[int, str]] = Counter()
@@ -70,6 +82,7 @@ def exact_census() -> dict[str, object]:
     birth: Counter[tuple[int, str]] = Counter()
     exit_flux: Counter[tuple[int, str]] = Counter()
     total_edges = 0
+    direct_rank2 = 0
     rank_decrease = 0
     rank_one_line_change = 0
 
@@ -97,6 +110,8 @@ def exact_census() -> dict[str, object]:
             if old_rank == 0 and new_rank == 1:
                 assert new_line is not None
                 birth[(lower_k, orbit_label(new_line))] += 1
+            if old_rank == 0 and new_rank == 2:
+                direct_rank2 += 1
             if old_rank == 1 and new_rank == 2:
                 assert old_line is not None
                 exit_flux[(lower_k, orbit_label(old_line))] += 1
@@ -138,9 +153,9 @@ def exact_census() -> dict[str, object]:
         and _qadd(state_characters[labels[0]], state_characters[labels[1]])
         == (Fraction(0), Fraction(0))
     )
-    return {
+    result = {
         "geometry": {
-            "id": "gaussian-3-plus-2i",
+            "id": f"gaussian-{a}-plus-{b}i",
             "N": n,
             "period_matrix": [list(row) for row in geometry.periods.matrix],
             "subset_states": 1 << n,
@@ -180,6 +195,9 @@ def exact_census() -> dict[str, object]:
             ),
         },
     }
+    if include_direct_rank2:
+        result["direct_rank2_edge_count"] = direct_rank2
+    return result
 
 
 def _evaluate_incidence(
