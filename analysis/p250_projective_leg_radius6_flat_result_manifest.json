@@ -1,0 +1,46 @@
+{
+  "schema": "matching-one/p250-projective-leg-radius6-flat-result/v1",
+  "status": "fresh_frozen_score_complete",
+  "freeze_commit": "a6d3b7790fc92ee86ac157712905855e8e1f50bf",
+  "authorization_commit": "18d188d2120e2ac88c6379d0a41542bff4efc637",
+  "raw_lock_commit": "f04760653cd0d5f3455fdc02c76760065b49b9b4",
+  "runner_commit": "44a3a36d4b27b5b1649875cb5a87bfbcc25524fd",
+  "scorer_commit": "44a3a36d4b27b5b1649875cb5a87bfbcc25524fd",
+  "raw_batches_sha256": "8734a15e61a7358da66019cf26d75a3d4f2deb0185831526204967a0ee5a42cf",
+  "score": "results/huawei-20260830/P250-projective-leg-radius6-flat-1200k/score.json",
+  "score_sha256": "f85e70021de883a070d0441bd8dbe9eb593ede33578f7a8d2386a621d419c7fd",
+  "score_invocations_completed": 1,
+  "decision_alpha": 0.01,
+  "rank_ladders": {
+    "plus": {
+      "rank5": {"chi_square": 2753.8567889288956, "resolved_modes": 150, "finite_batch_p": 1.884530302994363e-61, "decision": "reject"},
+      "rank6": {"chi_square": 683.4216536706417, "resolved_modes": 112, "finite_batch_p": 2.8760740869573686e-24, "decision": "reject"},
+      "rank7": {"chi_square": 395.9512601294099, "resolved_modes": 78, "finite_batch_p": 2.5830555548408006e-19, "decision": "reject"},
+      "rank8": {"chi_square": 64.4586849331869, "resolved_modes": 48, "finite_batch_p": 0.19782849774006817, "decision": "do_not_reject"},
+      "rank9": {"chi_square": 13.181826331298657, "resolved_modes": 22, "finite_batch_p": 0.9435041428262612, "decision": "do_not_reject"},
+      "rank_lower_bound_at_alpha": 8
+    },
+    "minus_R2_gauge": {
+      "rank5": {"chi_square": 2045.024541684411, "resolved_modes": 150, "finite_batch_p": 5.4266116340559135e-49, "decision": "reject"},
+      "rank6": {"chi_square": 970.2062618068252, "resolved_modes": 112, "finite_batch_p": 3.030160605682578e-36, "decision": "reject"},
+      "rank7": {"chi_square": 250.46040993790317, "resolved_modes": 78, "finite_batch_p": 2.5488043844931895e-09, "decision": "reject"},
+      "rank8": {"chi_square": 68.85636518442334, "resolved_modes": 48, "finite_batch_p": 0.12143112558612462, "decision": "do_not_reject"},
+      "rank9": {"chi_square": 17.497062651210687, "resolved_modes": 22, "finite_batch_p": 0.7824548769924621, "decision": "do_not_reject"},
+      "rank_lower_bound_at_alpha": 8
+    }
+  },
+  "rank5_flat_extension": "rejected_in_both_hands",
+  "R2_conjugate_kernel_projector_bridge": "LOCKED_RANK5_FLAT_EXTENSION_FAILED",
+  "decision": "rank5_flat_extension_rejected",
+  "scientific_interpretation": [
+    "The radius-five Alexander R2 result remains a degree-two null-line morphism but cannot be promoted to a five-state flat commuting quotient through degree six.",
+    "Any path-independent realization of either observed two-charge H3 block requires at least eight states at alpha 0.01; rank eight is compatible but not proved exact or flat at the next order.",
+    "The frozen R2 full-kernel bridge was not scored because both rank-five support gates failed."
+  ],
+  "next_discriminant": "A separately frozen existing-data rank-eight kernel comparison can ask whether the two eight-dimensional truncated relation spaces share the selected R2 gauge; proving rank-eight flatness itself requires the next moment order rather than rescoring this rank-five bridge.",
+  "claim_boundary": [
+    "Rank eight is the first compatible frozen H3 rank, not an exact state count.",
+    "Endpoint Hankel rank assumes path-independent commuting moments and does not compare ordered TxTy with TyTx.",
+    "No identity/R0/R1/R3 candidate was reopened and no post-reveal threshold or pivot changed."
+  ]
+}
