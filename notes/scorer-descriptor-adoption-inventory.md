@@ -1,15 +1,14 @@
 # Scorer descriptor-adoption inventory
 
-In this checked snapshot, the exact `scripts/*score*.py` corpus contains 44
-files. Python-AST inspection finds thirteen
+In this checked snapshot, the exact `scripts/*score*.py` corpus contains 45
+files. Python-AST inspection finds fourteen
 direct typed entrypoints importing both `ObservableDescriptor` and
-`map_observable` from `wrapping_channels`. Twelve frozen kernels are covered by
+`map_observable` from `wrapping_channels`. Thirteen frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Eighteen paths are confirmed channel-bearing and
+a descriptor is not applicable. Seventeen paths are confirmed channel-bearing and
 require typed migrations: `score_angular_root_amplitude.py`,
 `score_axis_pair_annihilator.py`, its stable entrypoint,
-`score_intrinsic_quantile_center_n145_n290.py`,
 `score_issue43_secondary.py`,
 `score_norm4_production.py`,
 `score_norm4_thermal_jet.py`, `score_norm5_thermal_jet.py`,
@@ -41,7 +40,7 @@ unchanged.
 but no current scorer has that status. Static membership alone would not prove
 a semantic bug, data-provenance failure, or need for migration; any future
 corpus addition must still be reviewed before modification. Issue #146 remains
-open because inventory classification is not the same as implementing the 18
+open because inventory classification is not the same as implementing the 17
 required typed migrations.
 
 The `kappa3_half_score.py` exception is narrow. It defines only exact Bernoulli
@@ -154,15 +153,7 @@ prediction identities, and the fact that this score reuses the P50 raw block.
 The scalar variance calculation, prediction hashes, chronology, numerical
 scores, and declared decision text are unchanged.
 
-`score_intrinsic_quantile_center_n145_n290.py` is migration-required. It scores
-the intrinsic quantile-center coordinate `Q`, two `N^(3/8)`-scaled widths, and
-two centers, then maps the first three coordinates from N145 to N290 under
-frozen scaling laws. The current contract relies on tuple order, string keys,
-and numeric transforms rather than typed quantities and maps. A migration must
-type the level-derived coordinates, units/scalings, cross-size transforms, and
-independent RNG domains. It must preserve the frozen u-grid, recomputation of
-all crossings inside every size-local delete-one replicate, covariance block
-construction, chronology, and primary-score separation.
+`score_intrinsic_quantile_center_n145_n290.py` is now a covered frozen kernel. Its typed entrypoint validates an exact identity map for the cross/matching scalar value before replaying the frozen N145-to-N290 coordinate score. The semantic gate freezes u={0.025,0.05}, feature and residual order, Q and width normalization powers, independent RNG domains, and the zero cross-size covariance contract. It does not create independent evidence, change delete-one reconstruction, refit the 2^{-3/4} target, or alter numerical results.
 
 The Issue #43 full-curve base scorer and locked wrapper are now covered as one
 operational unit. Their typed entrypoints validate exact N185-to-N265 identity
