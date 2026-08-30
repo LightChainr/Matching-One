@@ -1,0 +1,53 @@
+{
+  "schema": "matching-one/p250-projective-leg-radius5-morphism-result/v1",
+  "status": "fresh_radius5_scored_once",
+  "freeze_commit": "efc0f64",
+  "authorization_commit": "d8a6941cb8cffd694be49eac6e635cb4b6118df5",
+  "raw_reveal_commit": "ad162d3",
+  "frozen_runner_commit": "fd64f78b08d3b0033b35b40295b514597a6c674b",
+  "frozen_scorer_commit": "8ae64df8c03625c178b0d73414c41c3a864e6a14",
+  "interface_fix_commit": "dfcfc53fc95fdc27b7ee98c48fe9ab6d436e2011",
+  "interface_fix_scope": "Represent the empty fresh-row append as shape (0,6), not shape (0,); no statistic, candidate, threshold, or decision rule changed.",
+  "production": {
+    "host": "Huawei-CodeBuddy-XPk2PZ",
+    "samples": 1200000,
+    "batches": 400,
+    "workers": 16,
+    "seed": 25050510120261250,
+    "counter_interval": [0, 1200000],
+    "started_utc": "2026-08-30T09:06:53Z",
+    "completed_utc": "2026-08-30T09:21:22Z",
+    "elapsed_seconds": 869,
+    "exit_code": 0,
+    "stderr_bytes": 0
+  },
+  "artifacts": {
+    "response": "results/huawei-20260830/P250-projective-leg-radius5-morphism-1200k/response_1200k.json",
+    "response_sha256": "e27f727a874e376b3872cbd062f3afe86f554dcd18de648a2d4a470887093d59",
+    "batches": "results/huawei-20260830/P250-projective-leg-radius5-morphism-1200k/response_1200k.batches.csv",
+    "batches_sha256": "50985e38c9c8afab0c8b0e78113184d33861d928aefaba1e8043e67fc348677e",
+    "exact_gate": "results/huawei-20260830/P250-projective-leg-radius5-morphism-1200k/exact_gate.json",
+    "exact_gate_sha256": "8f3fd95f432457ce7eb44eb66ba8a19ce6a48b18fca56309c0cd79fb4b0deed7",
+    "score": "results/huawei-20260830/P250-projective-leg-radius5-morphism-1200k/score.json",
+    "score_sha256": "3fdced15302a360567b65185c30fca1eee9cfdff03dedac4d9b6f32e6ba8b2ca"
+  },
+  "support_gates": {
+    "plus": {"chi_square": 0.00638254676822376, "degrees_of_freedom": 16, "finite_batch_p": 1.0},
+    "minus": {"chi_square": 0.002743405283957275, "degrees_of_freedom": 16, "finite_batch_p": 1.0}
+  },
+  "parameter_free_map_scores": {
+    "identity_conjugation": {"chi_square": 32.04060533306788, "degrees_of_freedom": 10, "finite_batch_p": 0.0007282733697480974},
+    "Alexander_R0_conjugation": {"chi_square": 35.8499739588865, "degrees_of_freedom": 10, "finite_batch_p": 0.00019231918172315306},
+    "Alexander_R1_conjugation": {"chi_square": 30.895280158373883, "degrees_of_freedom": 10, "finite_batch_p": 0.0010803583652779663},
+    "Alexander_R2_conjugation": {"chi_square": 23.298799387499656, "degrees_of_freedom": 10, "finite_batch_p": 0.013378782757372292},
+    "Alexander_R3_conjugation": {"chi_square": 24.31100716378112, "degrees_of_freedom": 10, "finite_batch_p": 0.009686256691275692}
+  },
+  "decision_alpha": 0.01,
+  "surviving_maps": ["Alexander_R2_conjugation"],
+  "decision": "Alexander_family_selected_over_identity",
+  "claim_boundary": [
+    "The fresh degree-five shell supports separate five-state extensions for both hands.",
+    "Within the five frozen parameter-free maps, only Alexander R2 plus conjugation survives at alpha 0.01; identity plus conjugation is rejected.",
+    "The R2 survival is close to the frozen threshold, and R3 lies just below it; this is a selected truncated line morphism, not yet a completed transfer algebra or microscopic quotient isomorphism."
+  ]
+}
