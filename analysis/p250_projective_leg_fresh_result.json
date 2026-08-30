@@ -1,0 +1,34 @@
+{
+  "schema": "matching-one/p250-projective-leg-fresh-result/v1",
+  "issue": 250,
+  "freeze_commit": "da65598599fc32a61621de5152eed3db76666d43",
+  "host": "Huawei-CodeBuddy-XPk2PZ",
+  "status": "support_not_confirmed_phase_locked",
+  "run": {
+    "samples": 10000,
+    "batches": 50,
+    "p": 0.59274605079,
+    "seed": 25033433720260930,
+    "replica_counter": [0, 10000]
+  },
+  "raw_sha256": {
+    "response_10k.json": "1e42be903d15b8bd791dc3bcb4d329816ed657720bcdc814c47d38d7edc313de",
+    "response_10k.batches.csv": "917d78a1a4b1f5d5ade8b6c38d46cf0f435dd6018b82abeffad82533ee9c74dc"
+  },
+  "support": {
+    "d1": {"minimum_pair_abs_z": 15.396799794945, "chi_square": 24.918425997195936, "df": 8, "p": 0.001604811278057845, "passed": true},
+    "d2": {"minimum_pair_abs_z": 8.608117358083954, "chi_square": 9.633171099816153, "df": 8, "p": 0.29172186542895995, "passed": false}
+  },
+  "phase": {"status": "locked_support_gate_failed", "computed": false},
+  "decision": "projective_leg_pair_propagation_replication_succeeds_but_two_separation_cubic_support_fails",
+  "next_selector": "do not add samples to recover the locked phase; treat pair-nonzero/cubic-null at d2 as a candidate Gaussianization or charge-selection mechanism requiring a separately frozen observable",
+  "failed_launches": [
+    {"attempt": 1, "stage": "pre_replica", "reason": "/usr/bin/time absent", "log": "run.stderr.txt"},
+    {"attempt": 2, "stage": "pre_replica", "reason": "2k smoke cap correctly rejected 10k", "log": "run.attempt2.stderr.txt"}
+  ],
+  "claim_boundary": [
+    "The fresh result confirms charged two-point propagation but not the d2 cubic vector.",
+    "The locked phase statistic was not computed and cannot be inferred from its absence.",
+    "The d2 null does not prove an exactly Gaussian field; Gaussianization is a next mechanism hypothesis only."
+  ]
+}

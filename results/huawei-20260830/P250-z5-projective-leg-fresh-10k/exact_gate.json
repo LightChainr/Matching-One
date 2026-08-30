@@ -1,0 +1,122 @@
+{
+  "base_cover_gate": {
+    "parent": [
+      8,
+      1
+    ],
+    "parent_order": 65,
+    "plus_child_periods": [
+      [
+        15,
+        -10
+      ],
+      [
+        10,
+        15
+      ]
+    ],
+    "minus_child_periods": [
+      [
+        17,
+        6
+      ],
+      [
+        -6,
+        17
+      ]
+    ],
+    "child_order": 325,
+    "common_field": "(deterministic parent representative j, fiber k in Z/5)",
+    "fiber_representative": "u_k=(k,0) modulo M_(2+/-i)",
+    "unique_labels_per_child": 325,
+    "deck_step": [
+      8,
+      1
+    ],
+    "deck_action": "k -> k+1 mod 5",
+    "true_reflection_pair": "(8+i)(2+i) <-> (8-i)(2-i)",
+    "same_parent_hands_are_reflections": false,
+    "passed": true
+  },
+  "insertion": "black NN rank-one root membership minus white matching rank-one root membership",
+  "integral_saturation_use": "rank-one component basis is reduced to a primitive line up to sign",
+  "constructed_same_component_propagation": [
+    {
+      "context": "N325-parent8+i-times2+i",
+      "orbit_vertices": 25,
+      "component_rank": 1,
+      "primitive_line": [
+        1,
+        0
+      ],
+      "physical_line": [
+        15,
+        10
+      ],
+      "line_gcd": 1,
+      "black_separated_scalar_values": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "white_separated_scalar_values": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "white_component_rank": 1,
+      "chi4_abs_residual": 0.0,
+      "chi4_sign_residual": 0.0,
+      "basis_change_physical_residual": [
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "context": "N325-parent8+i-times2-i",
+      "orbit_vertices": 23,
+      "component_rank": 1,
+      "primitive_line": [
+        1,
+        0
+      ],
+      "physical_line": [
+        17,
+        -6
+      ],
+      "line_gcd": 1,
+      "black_separated_scalar_values": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "white_separated_scalar_values": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "white_component_rank": 1,
+      "chi4_abs_residual": 0.0,
+      "chi4_sign_residual": 0.0,
+      "basis_change_physical_residual": [
+        0,
+        0
+      ],
+      "passed": true
+    }
+  ],
+  "deck_shift": "v_k -> v_(k-1)",
+  "deck_character_residuals": {
+    "1": 7.850462293418876e-17,
+    "2": 1.1102230246251565e-16,
+    "3": 2.482534153247273e-16,
+    "4": 1.0007415106216802e-16
+  },
+  "secondary_character": "Re[(P ell)^4/|P ell|^4], sign-invariant and not used for candidate selection",
+  "passed": true
+}

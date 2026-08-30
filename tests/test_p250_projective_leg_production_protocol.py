@@ -11,11 +11,12 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from p250_projective_leg_power_freeze import freeze  # noqa: E402
 from score_z5_charged_multiseparation import read_batches  # noqa: E402
-from score_z5_projective_leg_production import support_then_phase  # noqa: E402
+from score_z5_projective_leg_production import score, support_then_phase  # noqa: E402
 from z5_projective_leg_multiseparation_mc import run  # noqa: E402
 
 
 SMOKE = ROOT / "results/local-20260830/P250-z5-projective-leg-smoke"
+FRESH = ROOT / "results/huawei-20260830/P250-z5-projective-leg-fresh-10k"
 
 
 class P250ProjectiveLegProductionProtocolTests(unittest.TestCase):
@@ -63,6 +64,21 @@ class P250ProjectiveLegProductionProtocolTests(unittest.TestCase):
     def test_runner_cap_requires_explicit_production_authorization(self) -> None:
         with self.assertRaisesRegex(ValueError, "authorized cap 2000"):
             run(2001, 23, 1, 0.59274605079, 1, 0)
+
+    def test_fresh_checked_score_is_reproducible_and_phase_locked(self) -> None:
+        payload = json.loads((FRESH / "response_10k.json").read_text())
+        batches = read_batches(FRESH / "response_10k.batches.csv")
+        manifest = json.loads(
+            (ROOT / "analysis/p250_projective_leg_fresh_production_manifest.json").read_text()
+        )
+        observed = score(payload, batches, manifest)
+        checked = json.loads((FRESH / "score_10k.json").read_text())
+        self.assertEqual(observed, checked)
+        self.assertTrue(checked["support_stage"]["1"]["support_stage_pass"])
+        self.assertFalse(checked["support_stage"]["2"]["support_stage_pass"])
+        self.assertFalse(checked["support_gate_passed"])
+        self.assertFalse(checked["phase_closure"]["computed"])
+        self.assertEqual(checked["phase_closure"]["status"], "locked_support_gate_failed")
 
 
 if __name__ == "__main__":

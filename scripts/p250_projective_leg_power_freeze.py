@@ -49,6 +49,7 @@ def noncentral_chi2_sf(value: mp.mpf, degrees: int, noncentrality: mp.mpf) -> mp
 
 
 def freeze(smoke: dict) -> dict:
+    previous_dps = mp.mp.dps
     mp.mp.dps = 70
     degrees = 8
     critical = critical_value(ALPHA, degrees)
@@ -83,7 +84,7 @@ def freeze(smoke: dict) -> dict:
         )
         table.append({"samples": samples, "forecasts": forecasts, "qualifies": qualifies})
     selected = next(row for row in table if row["qualifies"])
-    return {
+    result = {
         "schema": "matching-one/p250-projective-leg-power-freeze/v1",
         "source": "frozen 2k projective-leg smoke denominator and 8-real support covariance only",
         "grid": list(GRID),
@@ -98,6 +99,8 @@ def freeze(smoke: dict) -> dict:
         "selected_samples": selected["samples"],
         "selection_rule": "first frozen grid point satisfying both d1/d2 denominator and support-power thresholds",
     }
+    mp.mp.dps = previous_dps
+    return result
 
 
 def main() -> int:
