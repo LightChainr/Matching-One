@@ -1,0 +1,41 @@
+{
+  "schema": "matching-one/p334-two-time-birth-kernel-result/v1",
+  "status": "completed_existing_production_reanalysis",
+  "issues": [334, 337],
+  "chronology": {
+    "freeze_and_scorer_commit": "6c431ab",
+    "completed_score_runs": 1,
+    "new_monte_carlo": false
+  },
+  "results": {
+    "N325_rank1_chi_square": 52921105.9554817,
+    "N325_rank1_df": 12,
+    "N425_rank1_chi_square": 50318991.72456174,
+    "N425_rank1_df": 12,
+    "rank1_decision": "rejected_in_both_independent_size_archives",
+    "leading_eigen_fraction_range": [0.6329110855224062, 0.637972158578236],
+    "top3_trace_fraction_range": [0.9657196961333382, 0.9662614066123212],
+    "exact_identity_max_abs_residual": 4.440892098500626e-16,
+    "frozen_exact_scale_equality": {
+      "chi_square": 6395.392514885954,
+      "df": 28,
+      "p": 0.0,
+      "decision": "rejected"
+    },
+    "post_reveal_descriptive_shape": {
+      "optimal_N425_over_N325_amplitude": 1.0313556352136573,
+      "relative_frobenius_residual": 0.03665423718917961,
+      "correlation_matrix_relative_frobenius_difference": 0.020316122120587036,
+      "interpretation": "stable approximate three-mode hierarchy, not an exact collapse or exact rank-three fit"
+    }
+  },
+  "artifacts": {
+    "freeze_sha256": "999e9981c999ca02a210cc72b6d282b26756029db53f03c54b0e2b2331093b40",
+    "summary_script_sha256": "94d48f935c7240513d7e8d1a916d50c49fd38502c7a14534bdcb70e69ebda7dc",
+    "score_script_sha256": "8edb26faccdc2f0d2bfc7b55a8e7b276825b70f1997ece1b1b127d070fc883a3",
+    "N325_summary_sha256": "fa47d3ae596053700a07f411fa4b43ede8de271c030acb4b82e0328dd8644e60",
+    "N425_summary_sha256": "2c08e87de30bb11191d9091d7ee1c3b1d427f429cdbb4592d94747ca737ecf9c",
+    "score_sha256": "bc66cdc3495bf6b8a0c2b134cca4232f64581bb7ebf34eaa4f953a74c64c3451"
+  },
+  "next": "project current-k0 geometry summaries onto the second and third temporal modes"
+}
