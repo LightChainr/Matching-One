@@ -1,0 +1,53 @@
+{
+  "schema": "matching-one/p267-rho-child-etop-c3-result/v1",
+  "status": "completed_fresh_production_stop",
+  "freeze_commit": "11b0f73",
+  "run": {
+    "environment": "Huawei DevEnvC_ZyTrST f415a4bcbd9a438b85f5f29e4a507ea4",
+    "samples": 2000000,
+    "batches": 100,
+    "elapsed_seconds": 223.14711836600327,
+    "all_invariant_failures_zero": true,
+    "batch_sha256": "39f9eebec3ac3ce5d41c8874ecf4482760074e4a9f10ac69026a98201cb7c857",
+    "run_sha256": "aa509f75050d4910a95b240133ab5bcc2b3b663399a02727b1cd34c86cb721f7"
+  },
+  "primary_nontrivial_Etop_r1": {
+    "value_re_im": [-0.0017446307362800637, -0.000047198384506250046],
+    "magnitude": 0.0017452690604812533,
+    "chi_square": 142.199239404773,
+    "dof": 2,
+    "p": 1.3238156099792117e-31,
+    "decision": "resolved"
+  },
+  "scalar_Etop_r0": {
+    "value": -0.0005064279321668354,
+    "chi_square": 5.715749582090434,
+    "dof": 1,
+    "p": 0.016813384483823392,
+    "decision_at_alpha_0_01": "unresolved"
+  },
+  "same_stream_character_means_re_im": {
+    "Etop_r0": [-0.0005064279321668353, 0.0],
+    "Etop_r1": [-0.0017446307362800637, -0.00004719838450625006],
+    "H4_r0": [0.0025561778638264697, 0.0001557612879413199],
+    "H4_r1": [0.0022814398071847888, -0.00017407973505188364]
+  },
+  "secondary_observer_ray_determinant": {
+    "estimand": "H4_r0*Etop_r1-H4_r1*Etop_r0",
+    "value_re_im": [-3.2971460760194775e-6, -4.797244050665041e-7],
+    "chi_square": 21.202316278511617,
+    "dof": 2,
+    "p": 0.000024887170225840352,
+    "decision": "two_observer_rays_distinct"
+  },
+  "reading": "The rho-child finite-lattice correction contains a strong Alexander-even nontrivial C3 direction while its scalar row remains below the frozen alpha=.01 gate. The same-stream determinant rejects a common child-character ray with primitive H4, so the even rank redistribution is a second observer direction rather than a scalar copy or amplitude rescaling of the previously measured primitive-polarization mixture.",
+  "mechanism_change": "The N112 rho child state needs at least two topology-defined observer coordinates: primitive rank-one polarization and Alexander-even rank redistribution.",
+  "stop": "The frozen 2M acquisition resolves both the primary sector and the secondary ray discriminator; no top-up is authorized.",
+  "scorer_amendment": {
+    "frozen_scorer_sha256": "34b47db2cb33f695c700a1b5ccb858ba9cc79057617ee6938813719db00c9a74",
+    "final_scorer_sha256": "bdef1f9fa46c5ae8c9dcc2a67cb03815700d2131227cc28caa39e781754a62f5",
+    "reason": "Before any score was emitted, the auxiliary scalar r0 row was corrected from a singular complex 2df gate to its declared real 1df gate. The frozen complex r1 primary and determinant estimands were unchanged. Character means were then added for reporting."
+  },
+  "environment_note": "The first launch stopped before replica generation because the fresh Zy image lacked mpmath. The failure log is retained. After installing mpmath 1.4.1, the identical frozen seed/counter run completed; it was not restarted after data generation.",
+  "claim_boundary": "Finite N112 square-bond topology response only; no ordinary harmonic vote, continuum field identity, exponent, unique state count, or square-site matching transfer claim."
+}

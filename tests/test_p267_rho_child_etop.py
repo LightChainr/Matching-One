@@ -6,7 +6,7 @@ import unittest
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1] / "scripts"))
 
 from p267_rho_child_etop_mc import CHILD_ORDER, exact_gate
-from score_p267_rho_child_etop import complex_zero_score, dft
+from score_p267_rho_child_etop import complex_zero_score, dft, real_zero_score
 
 
 class RhoChildEtopTest(unittest.TestCase):
@@ -24,6 +24,11 @@ class RhoChildEtopTest(unittest.TestCase):
         score = complex_zero_score(values)
         self.assertAlmostEqual(score["chi_square"], 0.0)
         self.assertAlmostEqual(score["p"], 1.0)
+
+    def test_scalar_gate_is_one_dimensional(self):
+        score = real_zero_score([-1.0, -1.0, 1.0, 1.0])
+        self.assertEqual(score["dof"], 1)
+        self.assertAlmostEqual(score["chi_square"], 0.0)
 
 
 if __name__ == "__main__":

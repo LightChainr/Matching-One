@@ -5,7 +5,7 @@ from __future__ import annotations
 
 import argparse
 import csv
-from math import exp, gcd, sqrt
+from math import erfc, exp, gcd, sqrt
 import hashlib
 import json
 from pathlib import Path
@@ -92,6 +92,22 @@ def complex_zero_score(values):
     }
 
 
+def real_zero_score(values):
+    rows = [float(mp.re(value)) for value in values]
+    mean = sum(rows) / len(rows)
+    variance = sum((value - mean) ** 2 for value in rows) / (len(rows) * (len(rows) - 1))
+    if variance <= 0:
+        raise ValueError("real covariance is not positive")
+    chi_square = mean * mean / variance
+    return {
+        "value": mean,
+        "variance": variance,
+        "chi_square": chi_square,
+        "dof": 1,
+        "p": erfc(sqrt(chi_square / 2)),
+    }
+
+
 def jackknife_determinant(e0, e1, h0, h1):
     batches = len(e0)
 
@@ -175,12 +191,17 @@ def score(run_path, batch_path, manifest_path, cutoff, dps):
         h0.append(dft(delta_h, 0)); h1.append(dft(delta_h, 1))
     primary = complex_zero_score(e1)
     primary["decision"] = "resolved" if primary["p"] < manifest["alpha"] else "unresolved"
-    scalar = complex_zero_score(e0)
+    scalar = real_zero_score(e0)
     determinant = jackknife_determinant(e0, e1, h0, h1)
     determinant["decision"] = (
         "two_observer_rays_distinct" if determinant["p"] < manifest["alpha"]
         else "common_ray_not_rejected"
     )
+    character_means = {}
+    for name, values in (("Etop_r0", e0), ("Etop_r1", e1),
+                         ("H4_r0", h0), ("H4_r1", h1)):
+        value = sum(values) / len(values)
+        character_means[name] = [float(mp.re(value)), float(mp.im(value))]
     return {
         "schema": SCHEMA,
         "status": "frozen_production_reveal",
@@ -197,6 +218,7 @@ def score(run_path, batch_path, manifest_path, cutoff, dps):
         ],
         "primary_nontrivial_Etop_r1": primary,
         "scalar_Etop_r0": scalar,
+        "same_stream_character_means_re_im": character_means,
         "secondary_observer_ray_determinant": determinant,
         "batch_sha256": actual_hash,
         "run_sha256": sha256(run_path),
