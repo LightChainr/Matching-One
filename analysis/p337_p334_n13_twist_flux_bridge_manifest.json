@@ -1,0 +1,40 @@
+{
+  "schema": "matching-one/p337-p334-n13-twist-flux-bridge/v1",
+  "issues": [337, 334],
+  "input_commit": "b8e286e",
+  "geometry": "Gaussian quotient 3+2i, N=13",
+  "method": "exact 2^13 state and 13*2^12 directed-boundary census",
+  "normalization": {
+    "H_F3_orbit": "T_01+T_10-T_12-T_11",
+    "H_F3_unit_a7cb19a": "H_F3_orbit/2",
+    "z_axis": {"real": "-119/169", "imag": "120/169"},
+    "bridge": "A4=z_axis*H_F3_orbit=2*z_axis*H_F3_unit"
+  },
+  "source_sink_bridge": [
+    "dH_F3/dp=J_H_birth1-J_H_exit2",
+    "J4_birth1=z_axis*J_H_birth1",
+    "J4_exit2=z_axis*J_H_exit2",
+    "dA4/dp=z_axis*dH_F3/dp"
+  ],
+  "odd_sector_result": {
+    "A_axis_odd": "exact coefficientwise zero in state, birth and exit",
+    "D_diagonal_odd": "exact coefficientwise zero in state, birth and exit",
+    "reason": "quarter-turn R commutes with every Gaussian-ideal P(a,b), while A and D are R-odd",
+    "implication": "a7cb19a N65 approximately two-sigma diagonal odd is an exact-null fluctuation for the unweighted ensemble"
+  },
+  "gates": {
+    "state_bridge_failures": 0,
+    "flux_bridge_failures": 0,
+    "odd_state_failures": 0,
+    "odd_flux_failures": 0,
+    "quarter_turn_transport_failures": 0
+  },
+  "artifacts": {
+    "script": "scripts/p337_n13_twist_flux_bridge.py",
+    "certificate": "results/p337-n13-twist-flux-bridge/latest.json",
+    "summary": "results/p337-n13-twist-flux-bridge/latest.md",
+    "note": "notes/p337-p334-n13-twist-flux-bridge.md",
+    "test": "tests/test_p337_n13_twist_flux_bridge.py"
+  },
+  "claim_boundary": "exact finite bridge and Gaussian symmetry selection rule; no continuum-field identity or exponent"
+}
