@@ -1,0 +1,206 @@
+{
+  "claim_boundary": "same-lineage three-generation mechanism coordinate and N680 prediction; no cross-geometry exponent fit and no unique asymptotic correction claim",
+  "comparators": {
+    "scale_neutral": {
+      "N680_H4_amplitude_prediction": -0.008911963637122733,
+      "N680_prediction_standard_error": 0.0007598046002416294,
+      "coefficient": -0.008911963637122733,
+      "coefficient_standard_error": 0.0007598046002416294,
+      "df": 2,
+      "fitted": [
+        -0.008911963637122733,
+        -0.008911963637122733,
+        -0.008911963637122733
+      ],
+      "lambda": 1.0,
+      "quadratic": 17.685506716379017
+    },
+    "single_free_lambda": {
+      "N680_H4_amplitude_prediction": -0.003037819395650872,
+      "N680_prediction_standard_error": 0.0010232569183002067,
+      "coefficient": -0.019745665202205925,
+      "df": 1,
+      "interpretation": "same-lineage descriptive transfer, not a cross-geometry exponent fit",
+      "lambda": 0.5358337449894466,
+      "lambda_standard_error": 0.08902103108089228,
+      "parameter_covariance": [
+        [
+          1.3979301744562784e-05,
+          0.00030119352323319413
+        ],
+        [
+          0.00030119352323319413,
+          0.00792474397470519
+        ]
+      ],
+      "quadratic": 1.2714702525829424
+    },
+    "single_frozen_lambda0": {
+      "N680_H4_amplitude_prediction": -0.0010271538030730638,
+      "N680_prediction_standard_error": 8.574068695453124e-05,
+      "coefficient": -0.030140934093153732,
+      "coefficient_standard_error": 0.002515985811342437,
+      "df": 2,
+      "fitted": [
+        -0.030140934093153732,
+        -0.00977198888653273,
+        -0.0031681754289164302
+      ],
+      "lambda": 0.3242098886627524,
+      "quadratic": 11.746685053978748
+    },
+    "two_mode": {
+      "N680_H4_amplitude_prediction": -0.001841297042231899,
+      "N680_prediction_standard_error": 0.0009550667265132098,
+      "df": 0,
+      "quadratic": 0.0,
+      "warning": "three parameters interpolate three generations; use the N680 prediction, not in-sample q, as the discriminator"
+    }
+  },
+  "data": {
+    "H4_amplitude": [
+      -0.01605092257680157,
+      -0.011111494145226835,
+      -0.0048572599119938095
+    ],
+    "covariance": [
+      [
+        2.4715787546734945e-05,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        9.518466362688542e-07,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.559714078164142e-06
+      ]
+    ],
+    "generation_order": [
+      "N85",
+      "N170",
+      "N340"
+    ],
+    "standard_error": [
+      0.004971497515511292,
+      0.0009756262789966525,
+      0.0012488851340952626
+    ]
+  },
+  "reading": {
+    "cancellation": "the correction cancels the leading H4 term and its relative magnitude decreases generation by generation",
+    "dominant_lambda1_uncertainty_source": "N340",
+    "point_estimate": "lambda1 is a decaying opposite-sign correction faster than frozen lambda0",
+    "uncertainty": "lambda1 lies in (0,1) at the point estimate but is not resolved above zero by delta propagation"
+  },
+  "schema": "matching-one/P337-three-generation-H4-recurrence/v1",
+  "sign_alignment": {
+    "method": "divide each pair contrast by its exact alternating H4 covector difference",
+    "result": "geometry sign is removed; A0,A1,A2 are one signed H4-amplitude lineage"
+  },
+  "source": {
+    "N170": "results/server-20260830/P337-N170-angle-flip/score.json",
+    "N340": "results/server-20260830/P337-N340-second-child/score.json",
+    "N340_reveal_commit": "e819f5e",
+    "N85": "results/server-20260830/P337-natural-current-scale-N85/score.json",
+    "independence": "three independent seed/counter blocks; each amplitude retains its full within-pair covariance"
+  },
+  "status": "post-reveal same-lineage algebra; no new simulation",
+  "two_mode_recurrence": {
+    "N680_H4_amplitude_prediction": -0.001841297042231899,
+    "N680_H4_covectors_exact": [
+      "-4633/7225",
+      "6887/7225"
+    ],
+    "N680_geometry": [
+      [
+        22,
+        14
+      ],
+      [
+        26,
+        2
+      ]
+    ],
+    "N680_pair_prediction": -0.0029358812355033187,
+    "N680_prediction_standard_error_delta": 0.0009550667265132098,
+    "absolute_correction_to_leading_ratio": [
+      0.7670037069650696,
+      0.5024975586060465,
+      0.3292080522063715,
+      0.21567854366926456
+    ],
+    "c0": -0.06888917573635066,
+    "c0_standard_error_delta": 0.10678234843120407,
+    "c1": 0.052838253159549084,
+    "c1_standard_error_delta": 0.10606028131348395,
+    "correction_term_n0_to_n3": [
+      0.052838253159549084,
+      0.011223057850324196,
+      0.0023838227038162456,
+      0.0005063335464376711
+    ],
+    "definition": "A_n=c0*lambda0^n+c1*lambda1^n",
+    "delta_covariance": [
+      [
+        0.05590276728650714,
+        -0.025098414763100613,
+        0.024810309996426555,
+        -0.0002177761654332132
+      ],
+      [
+        -0.025098414763100613,
+        0.011402469936483072,
+        -0.01131326871061581,
+        0.00010067528713864715
+      ],
+      [
+        0.024810309996426555,
+        -0.01131326871061581,
+        0.011248783272295353,
+        -0.00010031377223093038
+      ],
+      [
+        -0.0002177761654332132,
+        0.00010067528713864716,
+        -0.00010031377223093039,
+        9.121524520926582e-07
+      ]
+    ],
+    "lambda0_frozen": 0.3242098886627524,
+    "lambda1": 0.21240402888481813,
+    "lambda1_95pct_delta_interval": [
+      -0.25101378562800986,
+      0.6758218433976462
+    ],
+    "lambda1_exact_formula": "(A2-lambda0*A1)/(A1-lambda0*A0)",
+    "lambda1_standard_error_delta": 0.23643766046572856,
+    "lambda1_variance_fraction_by_generation": [
+      0.06007490977616091,
+      0.14048550068836715,
+      0.7994395895354719
+    ],
+    "leading_term_n0_to_n3": [
+      -0.06888917573635066,
+      -0.02233455199555103,
+      -0.007241082615810054,
+      -0.00234763058866957
+    ],
+    "parameter_and_prediction_order": [
+      "lambda1",
+      "c0",
+      "c1",
+      "A3_N680"
+    ],
+    "point_in_open_unit_interval": true,
+    "ratio_denominator_A1_minus_lambda0_A0": -0.005907626323667539,
+    "ratio_denominator_standard_error": 0.0018840843345765022,
+    "ratio_denominator_z": -3.135542403942037,
+    "z_above_zero": 0.8983510852984689,
+    "z_below_one": 3.3310935726727986
+  }
+}

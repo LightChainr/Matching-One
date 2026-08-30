@@ -1,0 +1,23 @@
+{
+  "schema": "matching-one/p337-three-generation-recurrence-manifest/v1",
+  "issues": [337, 334],
+  "source_reveal_commit": "e819f5e",
+  "new_simulation": false,
+  "artifacts": {
+    "script": "scripts/analyze_three_generation_recurrence.py",
+    "result": "results/p337-three-generation-recurrence/latest.json",
+    "report": "results/p337-three-generation-recurrence/latest.md",
+    "science_card": "results/p337-three-generation-recurrence/SCIENTIFIC_CARD.md",
+    "test": "tests/test_analyze_three_generation_recurrence.py"
+  },
+  "result": {
+    "lambda0": 0.3242098886627524,
+    "lambda1": 0.21240402888481813,
+    "lambda1_standard_error_delta": 0.23643766046572856,
+    "c0": -0.06888917573635066,
+    "c1": 0.052838253159549084,
+    "N680_H4_amplitude_prediction": -0.001841297042231899,
+    "N680_prediction_standard_error_delta": 0.0009550667265132098
+  },
+  "claim_boundary": "same-lineage two-mode mechanism coordinate and heldout N680 prediction; no cross-geometry exponent fit"
+}
