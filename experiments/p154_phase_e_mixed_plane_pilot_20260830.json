@@ -1,0 +1,31 @@
+{
+  "issue": 154,
+  "phase": "E local-singlet mixed plane",
+  "status": "frozen before target pilot values",
+  "base_commit": "b239871bf8398ae7497f497b4706ebe15d8bbf49",
+  "fixed_probability": 0.59274605079,
+  "observable": {
+    "B": "configurationwise translation average (black primal-NN radius-one axis connectivity plus white matching radius-one axis connectivity)/2",
+    "stored_sufficient_statistics": ["B", "B^2", "I0*B", "I2*B", "I0", "I2", "K1", "K2"],
+    "derived": {
+      "J0": "Cov(I0,B)",
+      "J2": "Cov(I2,B)",
+      "J_top": "J2-J0",
+      "J_bulk": "J2+J0"
+    },
+    "claim_boundary": "finite-lattice mixed local-singlet plane; not a continuum energy-field identity"
+  },
+  "runs": [
+    {"N": 65, "first": [8, 1], "second": [7, 4], "host": "Huawei-CodeBuddy", "samples": 20000, "batches": 100, "seed": 202615465, "counter": [15466000000, 15466020000]},
+    {"N": 130, "first": [11, 3], "second": [9, 7], "host": "Huawei-CodeBuddy-XPk2PZ", "samples": 20000, "batches": 100, "seed": 2026154130, "counter": [15466200000, 15466220000]}
+  ],
+  "score": {
+    "projector": "P4[X]=(X_first-X_second)/(cos(4theta_first)-cos(4theta_second))",
+    "primary_candidates": [["A", "E", "C"], ["A", "E", "J_bulk"]],
+    "secondary_candidates": [["A", "E", "J_top"], ["A", "E", "B"]],
+    "decision": "whether the independent mixed local-singlet coordinate can replace clock C in the two-size common plane",
+    "covariance": "100 aligned batch vectors per size; independent blocks across sizes",
+    "report_all_candidates": true,
+    "no_post_target_observable_selection": true
+  }
+}

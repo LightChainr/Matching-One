@@ -1,5 +1,6 @@
-// Issue #154 Phase-E pilot: a fixed-p local connectivity singlet measured on
-// the same counter/permutation stream as the ambient-H1 birth clocks.
+// Issue #154 Phase-E mixed-plane pilot: a fixed-p local connectivity singlet
+// and its I0/I2 mixed moments, measured on the same counter/permutation stream
+// as the ambient-H1 birth clocks.
 //
 // This deliberately reuses the production integer-period backend in one
 // translation unit.  The local rows are not functions of K: at fixed K they
@@ -137,6 +138,9 @@ struct PilotStats {
     std::uint64_t sum_i2 = 0;
     std::uint64_t sum_black = 0;
     std::uint64_t sum_white = 0;
+    std::uint64_t sum_even_numerator_squared = 0;
+    std::uint64_t sum_i0_even_numerator = 0;
+    std::uint64_t sum_i2_even_numerator = 0;
 
     void add(int k1, int k2, int k, const LocalCounts& local) {
         ++samples;
@@ -147,6 +151,11 @@ struct PilotStats {
         sum_i2 += k2 <= k;
         sum_black += local.black_axis_pairs;
         sum_white += local.white_matching_axis_pairs;
+        const std::uint64_t even_numerator =
+            local.black_axis_pairs + local.white_matching_axis_pairs;
+        sum_even_numerator_squared += even_numerator * even_numerator;
+        sum_i0_even_numerator += static_cast<std::uint64_t>(k < k1) * even_numerator;
+        sum_i2_even_numerator += static_cast<std::uint64_t>(k2 <= k) * even_numerator;
     }
 };
 
@@ -162,6 +171,15 @@ void pilot_self_test() {
     if (empty.black_axis_pairs != 0 || empty.white_matching_axis_pairs != 2ULL * geometry.n ||
         full.black_axis_pairs != 2ULL * geometry.n || full.white_matching_axis_pairs != 0) {
         throw std::runtime_error("local connectivity empty/full regression failed");
+    }
+    PilotStats stats;
+    stats.add(1, 3, 0, empty);
+    stats.add(1, 3, geometry.n, full);
+    const std::uint64_t even = 2ULL * geometry.n;
+    if (stats.sum_black != even || stats.sum_white != even ||
+        stats.sum_even_numerator_squared != 2ULL * even * even ||
+        stats.sum_i0_even_numerator != even || stats.sum_i2_even_numerator != even) {
+        throw std::runtime_error("mixed local-energy moment regression failed");
     }
     const int first = fixed_p_count(65, 0.59274605079, 17, 23);
     const int second = fixed_p_count(65, 0.59274605079, 17, 23);
@@ -212,11 +230,14 @@ int pilot_run(int argc, char** argv) {
     std::ofstream csv(csv_path);
     if (!csv) throw std::runtime_error("cannot open batch output");
     csv << "n,a,b,orientation,batch,samples,sum_k1,sum_k2,sum_i0,sum_i1,sum_i2,"
-           "sum_black_axis_pairs,sum_white_matching_axis_pairs\n";
+           "sum_black_axis_pairs,sum_white_matching_axis_pairs,"
+           "sum_even_numerator_squared,sum_i0_even_numerator,sum_i2_even_numerator\n";
     auto write = [&](int batch, const char* orientation, int a, int b, const PilotStats& row) {
         csv << options.n << ',' << a << ',' << b << ',' << orientation << ',' << batch << ','
             << row.samples << ',' << row.sum_k1 << ',' << row.sum_k2 << ',' << row.sum_i0 << ','
-            << row.sum_i1 << ',' << row.sum_i2 << ',' << row.sum_black << ',' << row.sum_white << '\n';
+            << row.sum_i1 << ',' << row.sum_i2 << ',' << row.sum_black << ',' << row.sum_white << ','
+            << row.sum_even_numerator_squared << ',' << row.sum_i0_even_numerator << ','
+            << row.sum_i2_even_numerator << '\n';
     };
     for (int batch = 0; batch < options.batches; ++batch) {
         write(batch, "first", design.a1, design.b1, output[batch].first);
@@ -225,7 +246,7 @@ int pilot_run(int argc, char** argv) {
     csv.close();
     std::ofstream metadata(metadata_path);
     metadata << "{\n"
-             << "  \"engine\": \"P154 fixed-p local connectivity singlet pilot\",\n"
+             << "  \"engine\": \"P154 fixed-p local-singlet mixed-plane pilot\",\n"
              << "  \"generated_utc\": \"" << utc_now() << "\",\n"
              << "  \"git_commit\": \"" << json_escape(options.git_commit) << "\",\n"
              << "  \"N\": " << options.n << ",\n"
@@ -242,6 +263,8 @@ int pilot_run(int argc, char** argv) {
              << "  \"fixed_p_stream\": \"independent counter-derived SplitMix64 Bernoulli prefix length; same K shared by orientation pair\",\n"
              << "  \"black_row\": \"mean over 2N axis placements of NN cluster connectivity between z-e and z+e\",\n"
              << "  \"white_row\": \"mean over 2N axis placements of white matching-cluster connectivity between z-e and z+e\",\n"
+             << "  \"B\": \"(black_axis_pairs+white_matching_axis_pairs)/(4N), configurationwise\",\n"
+             << "  \"mixed_rows\": [\"B^2\",\"I0*B\",\"I2*B\"],\n"
              << "  \"elapsed_seconds\": " << elapsed << ",\n"
              << "  \"batches_csv\": \"" << json_escape(csv_path.string()) << "\"\n"
              << "}\n";
