@@ -1,0 +1,217 @@
+{
+  "claim_boundary": {
+    "excluded": "raw archives, empirical covariance, model selection, rejection, or physics claims",
+    "included": "exact wedge and delete-one aligned-batch jackknife algebra",
+    "parent_issue": "remain open"
+  },
+  "common_ray_control": {
+    "batch_count": 4,
+    "covariance_principal_minors": {
+      "0": "0",
+      "0,1": "0",
+      "0,1,2": "0",
+      "0,2": "0",
+      "1": "0",
+      "1,2": "0",
+      "2": "0"
+    },
+    "covariance_rank": 0,
+    "delete_one_replicates": [
+      {
+        "omitted_batch": "b0",
+        "wedges": {
+          "170": "0",
+          "340": "0",
+          "85": "0"
+        }
+      },
+      {
+        "omitted_batch": "b1",
+        "wedges": {
+          "170": "0",
+          "340": "0",
+          "85": "0"
+        }
+      },
+      {
+        "omitted_batch": "b2",
+        "wedges": {
+          "170": "0",
+          "340": "0",
+          "85": "0"
+        }
+      },
+      {
+        "omitted_batch": "b3",
+        "wedges": {
+          "170": "0",
+          "340": "0",
+          "85": "0"
+        }
+      }
+    ],
+    "exact_checks": {
+      "all_replicates_recomputed_from_aligned_batches": true,
+      "covariance_psd": true,
+      "covariance_symmetric": true
+    },
+    "full_coordinates": {
+      "170": {
+        "A_K": "5/2",
+        "A_M": "5/4"
+      },
+      "340": {
+        "A_K": "5/4",
+        "A_M": "5/8"
+      },
+      "680": {
+        "A_K": "5/8",
+        "A_M": "5/16"
+      },
+      "85": {
+        "A_K": "5",
+        "A_M": "5/2"
+      }
+    },
+    "full_wedges": {
+      "170": "0",
+      "340": "0",
+      "85": "0"
+    },
+    "jackknife_center": [
+      "0",
+      "0",
+      "0"
+    ],
+    "jackknife_covariance": [
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "sizes": [
+      85,
+      170,
+      340,
+      680
+    ]
+  },
+  "issue": 439,
+  "loading_drift_control": {
+    "batch_count": 4,
+    "covariance_principal_minors": {
+      "0": "1129/1728",
+      "0,1": "0",
+      "0,1,2": "0",
+      "0,2": "0",
+      "1": "1129/27648",
+      "1,2": "0",
+      "2": "1129/442368"
+    },
+    "covariance_rank": 1,
+    "delete_one_replicates": [
+      {
+        "omitted_batch": "b0",
+        "wedges": {
+          "170": "-9/16",
+          "340": "-9/64",
+          "85": "-9/4"
+        }
+      },
+      {
+        "omitted_batch": "b1",
+        "wedges": {
+          "170": "-4/9",
+          "340": "-1/9",
+          "85": "-16/9"
+        }
+      },
+      {
+        "omitted_batch": "b2",
+        "wedges": {
+          "170": "-49/144",
+          "340": "-49/576",
+          "85": "-49/36"
+        }
+      },
+      {
+        "omitted_batch": "b3",
+        "wedges": {
+          "170": "-1/4",
+          "340": "-1/16",
+          "85": "-1"
+        }
+      }
+    ],
+    "exact_checks": {
+      "all_replicates_recomputed_from_aligned_batches": true,
+      "covariance_psd": true,
+      "covariance_symmetric": true
+    },
+    "full_coordinates": {
+      "170": {
+        "A_K": "25/8",
+        "A_M": "5/4"
+      },
+      "340": {
+        "A_K": "15/8",
+        "A_M": "5/8"
+      },
+      "680": {
+        "A_K": "35/32",
+        "A_M": "5/16"
+      },
+      "85": {
+        "A_K": "5",
+        "A_M": "5/2"
+      }
+    },
+    "full_wedges": {
+      "170": "-25/64",
+      "340": "-25/256",
+      "85": "-25/16"
+    },
+    "jackknife_center": [
+      "-115/72",
+      "-115/288",
+      "-115/1152"
+    ],
+    "jackknife_covariance": [
+      [
+        "1129/1728",
+        "1129/6912",
+        "1129/27648"
+      ],
+      [
+        "1129/6912",
+        "1129/27648",
+        "1129/110592"
+      ],
+      [
+        "1129/27648",
+        "1129/110592",
+        "1129/442368"
+      ]
+    ],
+    "sizes": [
+      85,
+      170,
+      340,
+      680
+    ]
+  },
+  "schema": "matching-one/projective-common-ray-wedge/v1",
+  "status": "exact_aligned_batch_wedge_jackknife_control",
+  "wedge_definition": "D_N=A_M(2N)*A_K(N)-A_K(2N)*A_M(N)"
+}
