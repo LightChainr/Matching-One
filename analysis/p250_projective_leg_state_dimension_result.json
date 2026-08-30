@@ -1,0 +1,58 @@
+{
+  "schema": "matching-one/p250-projective-leg-state-dimension-result/v1",
+  "issue": 250,
+  "status": "retrospective_existing_batches_scored",
+  "branch": "analysis/p250-projective-leg-minimal-state-dimension-20260830",
+  "freeze_commit": "d3f636aedd34e96148c43ae657ad1490cd79df79",
+  "scorer_commit": "c38c6650cebe6a35d5dbb0e5dca5ee79dd541b8b",
+  "inputs": {
+    "N505_batches_sha256": "8b0e06f3fdc577c362e6f2404db60933d0cf489ee532c053288a03c44dc7fe5c",
+    "N325_batches_sha256": "6a5ab14f7a26accdd1329d3ee7704e84400685ab6634738bc9065b2487e1da4b"
+  },
+  "outputs": {
+    "score_json_sha256": "d6348e76a022b9aac1f072ccb4ddb193b877dee40901df3a46f275d7c904e7d0",
+    "score_markdown_sha256": "895471ed81b50a091bbcb557f109bebd04dbd043e26e4af03440e578464734cf"
+  },
+  "block_hankel": {
+    "singular_values": [0.025257715956403658, 0.0011548764179046375],
+    "s2_over_s1": 0.04572370755526842
+  },
+  "rank1": {
+    "N505_training": {"chi_square": 76.7253020146684, "degrees_of_freedom": 22, "survival_p": 5.5573921308787757e-08},
+    "N505_heldout_d5": {"chi_square": 16.504609532544123, "degrees_of_freedom": 8, "survival_p": 0.03570141342684776},
+    "N325_lattice_fixed": {"chi_square": 34.52669364904785, "degrees_of_freedom": 16, "survival_p": 0.004610939891194336},
+    "N325_conformal_scaled": {"chi_square": 29.330744224117765, "degrees_of_freedom": 16, "survival_p": 0.02179898557457277},
+    "decision": "fails N505 training and therefore cannot rescue the single-exponential model"
+  },
+  "rank2": {
+    "N505_training": {"chi_square": 18.829778669814864, "degrees_of_freedom": 12, "survival_p": 0.09272002615322979},
+    "N505_heldout_d5": {"chi_square": 8.89411616853442, "degrees_of_freedom": 8, "survival_p": 0.3513068545315037},
+    "N325_lattice_fixed": {"chi_square": 9.54810591513759, "degrees_of_freedom": 8, "survival_p": 0.29818499419022143},
+    "N325_conformal_scaled": {"chi_square": 9.5746985602004, "degrees_of_freedom": 8, "survival_p": 0.29615346541148513},
+    "eigenvalues": [
+      {"re": 0.5701779756721976, "im": -0.036493408243922665, "abs": 0.5713446357382755, "phase": -0.06391635724835357, "jackknife_abs_se": 0.027842556144874575, "jackknife_phase_se": 0.04491433662452589},
+      {"re": -0.004506510128360175, "im": -0.40174069449584265, "abs": 0.4017659694990841, "phase": -1.58201331622166, "jackknife_abs_se": 0.2646470988908275, "jackknife_phase_se": 0.49373057984527624}
+    ],
+    "decision": "minimal identifiable cross-geometry state dimension"
+  },
+  "rank3": {
+    "N505_training": {"chi_square": 1.1181145582284262, "degrees_of_freedom": 2, "survival_p": 0.571747808466458},
+    "N505_heldout_d5": {"chi_square": 8.33966122905057, "degrees_of_freedom": 8, "survival_p": 0.40101369573057216},
+    "N325_constraint": "not identifiable from d1-d3",
+    "decision": "unnecessary because rank2 already closes"
+  },
+  "nearest_image_kernel": {
+    "fitted_alpha": 1.5947665773530462,
+    "N505_heldout_d5": {"chi_square": 60.648869147876844, "degrees_of_freedom": 8, "survival_p": 3.4763046953812266e-10},
+    "N325_heldout_d3": {"chi_square": 31.15546958985695, "degrees_of_freedom": 8, "survival_p": 0.00013182681258284057},
+    "decision": "simple nearest periodic images do not explain the curvature"
+  },
+  "decision": "minimal_cross_geometry_recurrence_rank_2",
+  "mechanism_update": "one leading nearly real decay plus one weaker approximately quarter-turn oscillatory charged state",
+  "claim_boundary": [
+    "The second root is noisy in magnitude but its retained complex phase is near minus pi over two; this is a transfer-spectrum fingerprint, not an OPE phase.",
+    "The current N325 distances cannot distinguish lattice-fixed from conformal 1/L transport of the two roots.",
+    "Rank two is a minimal recurrence dimension for this observable and distance window, not a proof of exactly two continuum primary fields.",
+    "No new simulation was performed."
+  ]
+}
