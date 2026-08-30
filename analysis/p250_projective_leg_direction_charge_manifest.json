@@ -1,0 +1,58 @@
+{
+  "schema": "matching-one/p250-projective-leg-direction-charge-manifest/v1",
+  "issue": 250,
+  "status": "retrospective_direction_tomography_freeze_no_new_simulation",
+  "scorer_commit": "b61c5ac98a670ec6256f3aaf541c7274d8b55b72",
+  "rank2_source_commit": "c28fd7da33a6abd3ab64130a39ed0cab49e80805",
+  "input": {
+    "batches": "results/huawei-20260830/P250-z5-projective-leg-cross-scale-n505-80k/response_80k.batches.csv",
+    "sha256": "8b0e06f3fdc577c362e6f2404db60933d0cf489ee532c053288a03c44dc7fe5c",
+    "samples": 80000,
+    "batches_count": 160,
+    "parent_norm": 101,
+    "retained_rows": ["T=(X+Y)/2", "A=(X-Y)/2"],
+    "exact_reconstruction": ["X=T+A", "Y=T-A"]
+  },
+  "frozen_rank2": {
+    "fit_source": "axis-average T rows at d=1..4",
+    "heldout_source": "axis-average T row at d=5",
+    "leading_mode_direction_character": "q1=1",
+    "tested_mode": "second shared rank-two eigenmode",
+    "direction_relation": "A_y=q A_x",
+    "difference_over_average": "(1-q)/(1+q)"
+  },
+  "direction_candidates": {
+    "internal_direction_invariant": "q=1",
+    "spatial_C4": ["q=-i", "q=+i"],
+    "one_step_Z5": ["q=exp(2*pi*i*j/5), j=1,2,3,4"]
+  },
+  "root_phase_alphabet": {
+    "spatial_C4": ["-pi/2", "+pi/2"],
+    "one_step_Z5": ["2*pi*j/5, j=0,1,2,3,4"],
+    "prior_point_phase": -1.58201331622166,
+    "prior_jackknife_standard_error": 0.49373057984527624,
+    "logical_boundary": "a one-step Z5 deck generator cannot have phase -pi/2; an internal-only account would therefore require a compound or non-generator transfer step"
+  },
+  "score": {
+    "coordinates": "complex A rows, four hand-charge channels, d=1..5",
+    "covariance": "delete-one covariance from the original 160 batches, refitting the rank-two recurrence in every deletion",
+    "primary": "all d1-d5 residuals",
+    "heldout_diagnostic": "d5 residuals",
+    "additional_comparator": "Y=conjugate(X)"
+  },
+  "decision_alpha": 0.01,
+  "decision_rule": [
+    "rank candidates by the frozen all-distance covariance score",
+    "if only q=1 has p>=0.01, call the second state direction invariant and reject a spatial C4 direction character for this row",
+    "if exactly one q=+i or q=-i candidate has p>=0.01, retain the corresponding spatial C4 direction character",
+    "if multiple candidates pass, report unresolved direction character; do not pick by root-phase proximity",
+    "if none passes, the one-character relation is insufficient"
+  ],
+  "claim_boundary": [
+    "The rank-two dimension and roots are not reselected.",
+    "The exact phase alphabet is frozen before looking at reconstructed X/Y means.",
+    "Root phase and displacement-direction character are separate tests.",
+    "A direction-invariant outcome does not identify the state as a one-step Z5 deck generator.",
+    "No new random stream is generated."
+  ]
+}
