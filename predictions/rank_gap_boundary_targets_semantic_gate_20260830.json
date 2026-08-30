@@ -1,0 +1,35 @@
+{
+  "schema": "matching-one/observable-semantic-gate/v1",
+  "status": "semantic_gate_added_after_frozen_rank_gap_boundary_score",
+  "frozen_kernel": "scripts/score_rank_gap_boundary_targets.py",
+  "frozen_kernel_git_blob": "8f9d41b5ea77828b7683c3a48d7f0517654b980e",
+  "source_size_order": [65, 85, 130, 170, 185, 265],
+  "target_size_order": [325, 425],
+  "paired_quantity": "K_plus_minus_K_minus",
+  "units": "rank",
+  "orientation_pooling": "equal_mean_of_first_and_second",
+  "model": {
+    "expression": "E[G]=A*N^(5/8)+B",
+    "exponent_in_N": {"numerator": 5, "denominator": 8, "fitted": false},
+    "fit_parameters_in_order": ["A", "B"]
+  },
+  "source_descriptor": {
+    "channel": "cross",
+    "combination": "primal",
+    "coordinate": "p",
+    "orientation_order": "none",
+    "normalization": "raw",
+    "quantity": "value"
+  },
+  "target_descriptor": {
+    "channel": "cross",
+    "combination": "primal",
+    "coordinate": "p",
+    "orientation_order": "none",
+    "normalization": "raw",
+    "quantity": "value"
+  },
+  "exact_registered_map": {"scale": 1.0, "offset": 0.0},
+  "source_target_relation": "same_paired_rank_gap_observable_at_distinct_sizes",
+  "evidence_boundary": "The typed gate preserves the pre-reveal source fit, fixed 5/8 exponent, target order, disjoint counter intervals, target covariance, and all frozen predictions. It does not refit A or B, create independent evidence, or reinterpret rank units as a probability value."
+}
