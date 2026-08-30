@@ -1,0 +1,175 @@
+{
+  "claim_boundary": {
+    "excluded": "a rank upper bound, flat extension, latent realization, noisy confidence region, or physical state dimension",
+    "included": "all order-two minors of the declared 2x4 exact Hankel matrix",
+    "parent_issue": "remain open"
+  },
+  "claim_level": "exact",
+  "hankel_matrix": [
+    [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    [
+      "2",
+      "3",
+      "4",
+      "5"
+    ]
+  ],
+  "hankel_shape": [
+    2,
+    4
+  ],
+  "issue": 370,
+  "minor_order": 2,
+  "minors": [
+    {
+      "columns": [
+        0,
+        1
+      ],
+      "determinant": "-1",
+      "matrix": [
+        [
+          "1",
+          "2"
+        ],
+        [
+          "2",
+          "3"
+        ]
+      ],
+      "rows": [
+        0,
+        1
+      ]
+    },
+    {
+      "columns": [
+        0,
+        2
+      ],
+      "determinant": "-2",
+      "matrix": [
+        [
+          "1",
+          "3"
+        ],
+        [
+          "2",
+          "4"
+        ]
+      ],
+      "rows": [
+        0,
+        1
+      ]
+    },
+    {
+      "columns": [
+        0,
+        3
+      ],
+      "determinant": "-3",
+      "matrix": [
+        [
+          "1",
+          "4"
+        ],
+        [
+          "2",
+          "5"
+        ]
+      ],
+      "rows": [
+        0,
+        1
+      ]
+    },
+    {
+      "columns": [
+        1,
+        2
+      ],
+      "determinant": "-1",
+      "matrix": [
+        [
+          "2",
+          "3"
+        ],
+        [
+          "3",
+          "4"
+        ]
+      ],
+      "rows": [
+        0,
+        1
+      ]
+    },
+    {
+      "columns": [
+        1,
+        3
+      ],
+      "determinant": "-2",
+      "matrix": [
+        [
+          "2",
+          "4"
+        ],
+        [
+          "3",
+          "5"
+        ]
+      ],
+      "rows": [
+        0,
+        1
+      ]
+    },
+    {
+      "columns": [
+        2,
+        3
+      ],
+      "determinant": "-1",
+      "matrix": [
+        [
+          "3",
+          "4"
+        ],
+        [
+          "4",
+          "5"
+        ]
+      ],
+      "rows": [
+        0,
+        1
+      ]
+    }
+  ],
+  "moment_sequence": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5"
+  ],
+  "schema": "matching-one/exact-hankel-minor-certificate/v1",
+  "source": {
+    "dependency_group": "synthetic-exact-m2d-m2j",
+    "path": "results/model-certificates/synthetic/m2d-vs-m2j/latest.json",
+    "sha256": "edc057047975023a971b2d1c7ff5064bb701439993fad4bc557bcf5a9e81ef09"
+  },
+  "summary": {
+    "certified_rank_lower_bound": 2,
+    "minor_count": 6,
+    "nonzero_minor_count": 6,
+    "status": "rank_at_most_one_exactly_excluded"
+  }
+}
