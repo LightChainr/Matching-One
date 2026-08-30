@@ -1,0 +1,1815 @@
+{
+  "descriptive_nested_correction": {
+    "blocks": [
+      {
+        "N": 265,
+        "local_effective_exponent": {
+          "first_left": {
+            "beta_effective": [
+              1.6659449821700978,
+              1.6582917731882598,
+              1.6618865483579486
+            ],
+            "constant_beta_score": {
+              "chi_square": 644.2234971655537,
+              "constant_beta_hat": 1.6768082345876492,
+              "effective_df": 2,
+              "survival_probability": 1.2842365745519013e-140
+            },
+            "evaluation_z": [
+              2.747157621979489,
+              2.9973947020704497,
+              3.247595264191645
+            ],
+            "jackknife_se": [
+              0.0007044253744115257,
+              0.0009669548622667422,
+              0.0014796432674231302
+            ]
+          },
+          "first_right": {
+            "beta_effective": [
+              1.979591825558954,
+              2.0271302651641414,
+              2.099383202814618
+            ],
+            "constant_beta_score": {
+              "chi_square": 2567.3937017866842,
+              "constant_beta_hat": 1.979642995325349,
+              "effective_df": 2,
+              "survival_probability": 0.0
+            },
+            "evaluation_z": [
+              2.747157621979489,
+              2.9973947020704497,
+              3.247595264191645
+            ],
+            "jackknife_se": [
+              0.000965818659391686,
+              0.0015274375129813898,
+              0.0024716879481571676
+            ]
+          },
+          "second_left": {
+            "beta_effective": [
+              1.6924758006404046,
+              1.6908380927588842,
+              1.7014742364525226
+            ],
+            "constant_beta_score": {
+              "chi_square": 576.0871515958413,
+              "constant_beta_hat": 1.7048607115042274,
+              "effective_df": 2,
+              "survival_probability": 8.021664302217718e-126
+            },
+            "evaluation_z": [
+              2.747157621979489,
+              2.9973947020704497,
+              3.247595264191645
+            ],
+            "jackknife_se": [
+              0.000695850784117225,
+              0.000929992809254125,
+              0.0013833872931779112
+            ]
+          },
+          "second_right": {
+            "beta_effective": [
+              1.9448035513039326,
+              1.982833605366867,
+              2.045354373790424
+            ],
+            "constant_beta_score": {
+              "chi_square": 1353.3338067357915,
+              "constant_beta_hat": 1.951613271297349,
+              "effective_df": 2,
+              "survival_probability": 1.3405955725577585e-294
+            },
+            "evaluation_z": [
+              2.747157621979489,
+              2.9973947020704497,
+              3.247595264191645
+            ],
+            "jackknife_se": [
+              0.0009604276231575728,
+              0.001650002995330159,
+              0.0027569815093651494
+            ]
+          }
+        },
+        "marginal_nonadditive_decomposition": {
+          "curvature_mode": {
+            "2": {
+              "chi_square": 17507.768022788,
+              "correlation_eigenvalues": [
+                0.7960448002687077,
+                0.9325756885905245,
+                1.0621688484749556,
+                1.209210662665812
+              ],
+              "effective_df": 4,
+              "nominal_df": 4,
+              "survival_probability": 0.0
+            },
+            "3": {
+              "chi_square": 2241.4422890303795,
+              "correlation_eigenvalues": [
+                0.901620720190161,
+                0.9860333511053,
+                0.9908204405508465,
+                1.1215254881536927
+              ],
+              "effective_df": 4,
+              "nominal_df": 4,
+              "survival_probability": 0.0
+            }
+          },
+          "orientation": {
+            "first": {
+              "chi_square": 13149.686396336245,
+              "correlation_eigenvalues": [
+                0.35595665663766035,
+                0.40989192726823953,
+                1.498243729496694,
+                1.7359076865974075
+              ],
+              "effective_df": 4,
+              "nominal_df": 4,
+              "survival_probability": 0.0
+            },
+            "second": {
+              "chi_square": 8474.14856738648,
+              "correlation_eigenvalues": [
+                0.3416002831679595,
+                0.3700400280906896,
+                1.5236394141329814,
+                1.7647202746083683
+              ],
+              "effective_df": 4,
+              "nominal_df": 4,
+              "survival_probability": 0.0
+            }
+          },
+          "side": {
+            "left": {
+              "chi_square": 3784.598751472489,
+              "correlation_eigenvalues": [
+                0.319563934755056,
+                0.4324254151808028,
+                1.4426111004979385,
+                1.8053995495662027
+              ],
+              "effective_df": 4,
+              "nominal_df": 4,
+              "survival_probability": 0.0
+            },
+            "right": {
+              "chi_square": 18019.869702784796,
+              "correlation_eigenvalues": [
+                0.30055136509990654,
+                0.42506589244724546,
+                1.6158929730899725,
+                1.658489769362876
+              ],
+              "effective_df": 4,
+              "nominal_df": 4,
+              "survival_probability": 0.0
+            }
+          }
+        },
+        "model": "post_reveal_4_over_3_plus_2_over_3",
+        "overall": {
+          "chi_square": 19477.27414509017,
+          "correlation_eigenvalues": [
+            0.2962675911101907,
+            0.31362267010720213,
+            0.40046916080756384,
+            0.44176552811847314,
+            1.362538876050226,
+            1.5887350097323651,
+            1.7448712556762522,
+            1.8517299083977283
+          ],
+          "effective_df": 8,
+          "nominal_df": 8,
+          "survival_probability": 0.0
+        },
+        "signed_additive_gls_attribution": {
+          "by_side": {
+            "left": 2320.6107992801885,
+            "right": 17156.66334580989
+          },
+          "by_z": {
+            "2.5": 5484.113693179555,
+            "2.75": 6089.7029702735645,
+            "3.0": -183.30480494513773,
+            "3.25": 3770.347636246529,
+            "3.5": 4316.414650335568
+          },
+          "sum": 19477.27414509008,
+          "warning": "point contributions can be negative under correlated GLS; only grouped sums and the total are invariant"
+        }
+      },
+      {
+        "N": 290,
+        "local_effective_exponent": {
+          "first_left": {
+            "beta_effective": [
+              1.682695527731213,
+              1.67814003036791,
+              1.6848127173487883
+            ],
+            "constant_beta_score": {
+              "chi_square": 95.54447756592256,
+              "constant_beta_hat": 1.6929620997722459,
+              "effective_df": 2,
+              "survival_probability": 1.7897002897031516e-21
+            },
+            "evaluation_z": [
+              2.747157621979489,
+              2.9973947020704497,
+              3.247595264191645
+            ],
+            "jackknife_se": [
+              0.0016735197210160236,
+              0.0025132499617017212,
+              0.0038588758820309265
+            ]
+          },
+          "first_right": {
+            "beta_effective": [
+              1.9223481453128501,
+              1.953936562603963,
+              2.0037207641249783
+            ],
+            "constant_beta_score": {
+              "chi_square": 266.4117592906205,
+              "constant_beta_hat": 1.923416605012918,
+              "effective_df": 2,
+              "survival_probability": 1.410657275123231e-58
+            },
+            "evaluation_z": [
+              2.747157621979489,
+              2.9973947020704497,
+              3.247595264191645
+            ],
+            "jackknife_se": [
+              0.0024491794322542594,
+              0.003650080462197775,
+              0.005394636334854435
+            ]
+          },
+          "second_left": {
+            "beta_effective": [
+              1.65091659496971,
+              1.6392301083982046,
+              1.641585511857824
+            ],
+            "constant_beta_score": {
+              "chi_square": 250.22137213331558,
+              "constant_beta_hat": 1.666988954787565,
+              "effective_df": 2,
+              "survival_probability": 4.625081757080398e-55
+            },
+            "evaluation_z": [
+              2.747157621979489,
+              2.9973947020704497,
+              3.247595264191645
+            ],
+            "jackknife_se": [
+              0.0016341152537483674,
+              0.002148544579707634,
+              0.003225416690517758
+            ]
+          },
+          "second_right": {
+            "beta_effective": [
+              1.9539815388292183,
+              1.9956647766530224,
+              2.056759833485156
+            ],
+            "constant_beta_score": {
+              "chi_square": 410.88890695608956,
+              "constant_beta_hat": 1.9542148452281156,
+              "effective_df": 2,
+              "survival_probability": 5.978710393345574e-90
+            },
+            "evaluation_z": [
+              2.747157621979489,
+              2.9973947020704497,
+              3.247595264191645
+            ],
+            "jackknife_se": [
+              0.0023486417210338423,
+              0.0035954894363670145,
+              0.005398891568425915
+            ]
+          }
+        },
+        "marginal_nonadditive_decomposition": {
+          "curvature_mode": {
+            "2": {
+              "chi_square": 3348.4583237123425,
+              "correlation_eigenvalues": [
+                0.6675727488645041,
+                0.9267796699780348,
+                1.1712891144508357,
+                1.234358466706624
+              ],
+              "effective_df": 4,
+              "nominal_df": 4,
+              "survival_probability": 0.0
+            },
+            "3": {
+              "chi_square": 385.56918677631006,
+              "correlation_eigenvalues": [
+                0.8547469885724592,
+                0.8786632905705155,
+                1.0223019277815588,
+                1.2442877930754657
+              ],
+              "effective_df": 4,
+              "nominal_df": 4,
+              "survival_probability": 3.647826227865253e-82
+            }
+          },
+          "orientation": {
+            "first": {
+              "chi_square": 2340.3774671600104,
+              "correlation_eigenvalues": [
+                0.35039279777930005,
+                0.47248288572075686,
+                1.2935641275691778,
+                1.883560188930764
+              ],
+              "effective_df": 4,
+              "nominal_df": 4,
+              "survival_probability": 0.0
+            },
+            "second": {
+              "chi_square": 2213.657638989749,
+              "correlation_eigenvalues": [
+                0.3527372582145796,
+                0.42920189611256976,
+                1.4515294632303661,
+                1.7665313824424838
+              ],
+              "effective_df": 4,
+              "nominal_df": 4,
+              "survival_probability": 0.0
+            }
+          },
+          "side": {
+            "left": {
+              "chi_square": 377.562445179615,
+              "correlation_eigenvalues": [
+                0.3604098765438632,
+                0.40102902466605506,
+                1.59190041176373,
+                1.646660687026351
+              ],
+              "effective_df": 4,
+              "nominal_df": 4,
+              "survival_probability": 1.957086325114391e-80
+            },
+            "right": {
+              "chi_square": 3401.999031045153,
+              "correlation_eigenvalues": [
+                0.40415082196070456,
+                0.4202079716908708,
+                1.5071443582572883,
+                1.668496848091136
+              ],
+              "effective_df": 4,
+              "nominal_df": 4,
+              "survival_probability": 0.0
+            }
+          }
+        },
+        "model": "post_reveal_4_over_3_plus_2_over_3",
+        "overall": {
+          "chi_square": 3840.381322304256,
+          "correlation_eigenvalues": [
+            0.305589098296713,
+            0.35089468831112813,
+            0.4099483710421138,
+            0.48940746139121355,
+            1.2312628901716505,
+            1.4460120889453274,
+            1.8342460418890059,
+            1.932639359952849
+          ],
+          "effective_df": 8,
+          "nominal_df": 8,
+          "survival_probability": 0.0
+        },
+        "signed_additive_gls_attribution": {
+          "by_side": {
+            "left": 373.5630956842335,
+            "right": 3466.8182266199965
+          },
+          "by_z": {
+            "2.5": 1074.2710649232142,
+            "2.75": 1196.2335230856202,
+            "3.0": 13.567817505793032,
+            "3.25": 721.3556659078172,
+            "3.5": 834.9532508817847
+          },
+          "sum": 3840.3813223042293,
+          "warning": "point contributions can be negative under correlated GLS; only grouped sums and the total are invariant"
+        }
+      },
+      {
+        "N": 325,
+        "local_effective_exponent": {
+          "first_left": {
+            "beta_effective": [
+              1.6515979872429,
+              1.640064160434398,
+              1.639340815793755
+            ],
+            "constant_beta_score": {
+              "chi_square": 673.4566553471701,
+              "constant_beta_hat": 1.6658270148569743,
+              "effective_df": 2,
+              "survival_probability": 5.764284278281357e-147
+            },
+            "evaluation_z": [
+              2.747157621979489,
+              2.9973947020704497,
+              3.247595264191645
+            ],
+            "jackknife_se": [
+              0.000821702368327075,
+              0.0012362393721941955,
+              0.0018618324637027998
+            ]
+          },
+          "first_right": {
+            "beta_effective": [
+              1.9107902223981679,
+              1.9411656568774,
+              1.992915206762065
+            ],
+            "constant_beta_score": {
+              "chi_square": 1302.6027141419027,
+              "constant_beta_hat": 1.9164390114474508,
+              "effective_df": 2,
+              "survival_probability": 1.3912800829845015e-283
+            },
+            "evaluation_z": [
+              2.747157621979489,
+              2.9973947020704497,
+              3.247595264191645
+            ],
+            "jackknife_se": [
+              0.0010024753756469672,
+              0.0014616206379315883,
+              0.0022904914272248588
+            ]
+          },
+          "second_left": {
+            "beta_effective": [
+              1.640565532451757,
+              1.6277637112443732,
+              1.6261336953558745
+            ],
+            "constant_beta_score": {
+              "chi_square": 768.3217445028396,
+              "constant_beta_hat": 1.6529317631460028,
+              "effective_df": 2,
+              "survival_probability": 1.4489487284004516e-167
+            },
+            "evaluation_z": [
+              2.747157621979489,
+              2.9973947020704497,
+              3.247595264191645
+            ],
+            "jackknife_se": [
+              0.0007118843641307402,
+              0.001085198245968572,
+              0.0016210578447618785
+            ]
+          },
+          "second_right": {
+            "beta_effective": [
+              1.921030251655327,
+              1.9541971474683866,
+              2.0095373315219023
+            ],
+            "constant_beta_score": {
+              "chi_square": 1535.9764363113452,
+              "constant_beta_hat": 1.9281366825662192,
+              "effective_df": 2,
+              "survival_probability": 0.0
+            },
+            "evaluation_z": [
+              2.747157621979489,
+              2.9973947020704497,
+              3.247595264191645
+            ],
+            "jackknife_se": [
+              0.0011080162940786278,
+              0.0015865233099113722,
+              0.0023316919638496016
+            ]
+          }
+        },
+        "marginal_nonadditive_decomposition": {
+          "curvature_mode": {
+            "2": {
+              "chi_square": 14808.836025776163,
+              "correlation_eigenvalues": [
+                0.8848203983215622,
+                0.9302548483627819,
+                1.0230427964947388,
+                1.161881956820917
+              ],
+              "effective_df": 4,
+              "nominal_df": 4,
+              "survival_probability": 0.0
+            },
+            "3": {
+              "chi_square": 1721.9867534063696,
+              "correlation_eigenvalues": [
+                0.7040542559134927,
+                0.963789705593697,
+                1.1014632827229123,
+                1.2306927557698988
+              ],
+              "effective_df": 4,
+              "nominal_df": 4,
+              "survival_probability": 0.0
+            }
+          },
+          "orientation": {
+            "first": {
+              "chi_square": 9066.039772781021,
+              "correlation_eigenvalues": [
+                0.3498508843487191,
+                0.46554701887814043,
+                1.404686250120245,
+                1.7799158466528948
+              ],
+              "effective_df": 4,
+              "nominal_df": 4,
+              "survival_probability": 0.0
+            },
+            "second": {
+              "chi_square": 9373.698653940683,
+              "correlation_eigenvalues": [
+                0.3992367597048432,
+                0.48988404998225143,
+                1.4605342087620725,
+                1.6503449815508324
+              ],
+              "effective_df": 4,
+              "nominal_df": 4,
+              "survival_probability": 0.0
+            }
+          },
+          "side": {
+            "left": {
+              "chi_square": 831.3406279391164,
+              "correlation_eigenvalues": [
+                0.42919965302880786,
+                0.49689791585902104,
+                1.4476108587684102,
+                1.6262915723437605
+              ],
+              "effective_df": 4,
+              "nominal_df": 4,
+              "survival_probability": 1.2487310535070383e-178
+            },
+            "right": {
+              "chi_square": 17218.255571593774,
+              "correlation_eigenvalues": [
+                0.3332459887468093,
+                0.4714405793263248,
+                1.5498653874099353,
+                1.6454480445169302
+              ],
+              "effective_df": 4,
+              "nominal_df": 4,
+              "survival_probability": 0.0
+            }
+          }
+        },
+        "model": "post_reveal_4_over_3_plus_2_over_3",
+        "overall": {
+          "chi_square": 18017.50113784356,
+          "correlation_eigenvalues": [
+            0.31253082610193306,
+            0.38616397978858197,
+            0.42759968597515696,
+            0.5345876112435965,
+            1.2669994815102381,
+            1.5498143247925373,
+            1.673783905476437,
+            1.8485201851115178
+          ],
+          "effective_df": 8,
+          "nominal_df": 8,
+          "survival_probability": 0.0
+        },
+        "signed_additive_gls_attribution": {
+          "by_side": {
+            "left": 538.110967946118,
+            "right": 17479.390169897302
+          },
+          "by_z": {
+            "2.5": 5134.371870641848,
+            "2.75": 5815.144009497449,
+            "3.0": 21.676428387266,
+            "3.25": 3220.8876129187784,
+            "3.5": 3825.4212163980815
+          },
+          "sum": 18017.50113784342,
+          "warning": "point contributions can be negative under correlated GLS; only grouped sums and the total are invariant"
+        }
+      },
+      {
+        "N": 425,
+        "local_effective_exponent": {
+          "first_left": {
+            "beta_effective": [
+              1.6390764688239838,
+              1.6262852116356883,
+              1.6226100653496611
+            ],
+            "constant_beta_score": {
+              "chi_square": 498.5793054293922,
+              "constant_beta_hat": 1.6486141500457876,
+              "effective_df": 2,
+              "survival_probability": 5.43099534347437e-109
+            },
+            "evaluation_z": [
+              2.747157621979489,
+              2.9973947020704497,
+              3.247595264191645
+            ],
+            "jackknife_se": [
+              0.0007484977271586403,
+              0.0011483788799935577,
+              0.001819023732430541
+            ]
+          },
+          "first_right": {
+            "beta_effective": [
+              1.832168220654883,
+              1.842985220087653,
+              1.8720798314695535
+            ],
+            "constant_beta_score": {
+              "chi_square": 383.42365049748435,
+              "constant_beta_hat": 1.8421977616071916,
+              "effective_df": 2,
+              "survival_probability": 5.503160495574665e-84
+            },
+            "evaluation_z": [
+              2.747157621979489,
+              2.9973947020704497,
+              3.247595264191645
+            ],
+            "jackknife_se": [
+              0.0011422474351036839,
+              0.0018879572112329801,
+              0.002604172319827944
+            ]
+          },
+          "second_left": {
+            "beta_effective": [
+              1.6287136385608236,
+              1.613764116025917,
+              1.6092157063186203
+            ],
+            "constant_beta_score": {
+              "chi_square": 559.0445559619627,
+              "constant_beta_hat": 1.6416629258327624,
+              "effective_df": 2,
+              "survival_probability": 4.0273289485514884e-122
+            },
+            "evaluation_z": [
+              2.747157621979489,
+              2.9973947020704497,
+              3.247595264191645
+            ],
+            "jackknife_se": [
+              0.000850848077284189,
+              0.001305138229160273,
+              0.0019005777421073136
+            ]
+          },
+          "second_right": {
+            "beta_effective": [
+              1.8427449852587647,
+              1.858928746158345,
+              1.8937497418752187
+            ],
+            "constant_beta_score": {
+              "chi_square": 436.5522269274341,
+              "constant_beta_hat": 1.8506447840259541,
+              "effective_df": 2,
+              "survival_probability": 1.5991470138057772e-95
+            },
+            "evaluation_z": [
+              2.747157621979489,
+              2.9973947020704497,
+              3.247595264191645
+            ],
+            "jackknife_se": [
+              0.0011497689393063213,
+              0.001741015675469672,
+              0.0025812800755196787
+            ]
+          }
+        },
+        "marginal_nonadditive_decomposition": {
+          "curvature_mode": {
+            "2": {
+              "chi_square": 7457.037169563602,
+              "correlation_eigenvalues": [
+                0.7996428213527448,
+                0.9501661767661282,
+                1.0304393922574413,
+                1.2197516096236842
+              ],
+              "effective_df": 4,
+              "nominal_df": 4,
+              "survival_probability": 0.0
+            },
+            "3": {
+              "chi_square": 763.0408899508463,
+              "correlation_eigenvalues": [
+                0.9182271412019982,
+                0.9392101145667138,
+                0.9809643303886562,
+                1.1615984138426325
+              ],
+              "effective_df": 4,
+              "nominal_df": 4,
+              "survival_probability": 7.770172604503184e-164
+            }
+          },
+          "orientation": {
+            "first": {
+              "chi_square": 2952.6134597306855,
+              "correlation_eigenvalues": [
+                0.4309656713610242,
+                0.6524781328545438,
+                1.3462876839812414,
+                1.570268511803191
+              ],
+              "effective_df": 4,
+              "nominal_df": 4,
+              "survival_probability": 0.0
+            },
+            "second": {
+              "chi_square": 4164.230391610282,
+              "correlation_eigenvalues": [
+                0.4166044829288969,
+                0.49987465439370077,
+                1.4535417909329813,
+                1.629979071744423
+              ],
+              "effective_df": 4,
+              "nominal_df": 4,
+              "survival_probability": 0.0
+            }
+          },
+          "side": {
+            "left": {
+              "chi_square": 496.6127550649216,
+              "correlation_eigenvalues": [
+                0.43920510544224833,
+                0.5005203109882238,
+                1.376984742074066,
+                1.6832898414954633
+              ],
+              "effective_df": 4,
+              "nominal_df": 4,
+              "survival_probability": 3.6194601933851966e-106
+            },
+            "right": {
+              "chi_square": 7436.3945597249085,
+              "correlation_eigenvalues": [
+                0.41340829341761154,
+                0.6547732435117259,
+                1.3621796030407942,
+                1.5696388600298672
+              ],
+              "effective_df": 4,
+              "nominal_df": 4,
+              "survival_probability": 0.0
+            }
+          }
+        },
+        "model": "post_reveal_4_over_3_plus_2_over_3",
+        "overall": {
+          "chi_square": 8558.119164160269,
+          "correlation_eigenvalues": [
+            0.379686467671576,
+            0.43368262548196923,
+            0.5000030100408673,
+            0.6554121050271323,
+            1.318318142206053,
+            1.380381447065993,
+            1.599997845709309,
+            1.7325183567971023
+          ],
+          "effective_df": 8,
+          "nominal_df": 8,
+          "survival_probability": 0.0
+        },
+        "signed_additive_gls_attribution": {
+          "by_side": {
+            "left": 717.5759043479786,
+            "right": 7840.543259812338
+          },
+          "by_z": {
+            "2.5": 2294.9862673361986,
+            "2.75": 2435.5609984923603,
+            "3.0": -4.742352607465428,
+            "3.25": 1838.904521171206,
+            "3.5": 1993.4097297680178
+          },
+          "sum": 8558.119164160316,
+          "warning": "point contributions can be negative under correlated GLS; only grouped sums and the total are invariant"
+        }
+      }
+    ],
+    "global": {
+      "chi_square": 49893.27576939826,
+      "effective_df": 32,
+      "survival_probability": 0.0
+    },
+    "name": "a-c*z^(4/3)+d*z^(2/3)",
+    "not_a_model_vote": true,
+    "post_reveal": true
+  },
+  "frozen_model": {
+    "blocks": [
+      {
+        "N": 265,
+        "local_effective_exponent": {
+          "first_left": {
+            "beta_effective": [
+              1.6659449821700978,
+              1.6582917731882598,
+              1.6618865483579486
+            ],
+            "constant_beta_score": {
+              "chi_square": 644.2234971655537,
+              "constant_beta_hat": 1.6768082345876492,
+              "effective_df": 2,
+              "survival_probability": 1.2842365745519013e-140
+            },
+            "evaluation_z": [
+              2.747157621979489,
+              2.9973947020704497,
+              3.247595264191645
+            ],
+            "jackknife_se": [
+              0.0007044253744115257,
+              0.0009669548622667422,
+              0.0014796432674231302
+            ]
+          },
+          "first_right": {
+            "beta_effective": [
+              1.979591825558954,
+              2.0271302651641414,
+              2.099383202814618
+            ],
+            "constant_beta_score": {
+              "chi_square": 2567.3937017866842,
+              "constant_beta_hat": 1.979642995325349,
+              "effective_df": 2,
+              "survival_probability": 0.0
+            },
+            "evaluation_z": [
+              2.747157621979489,
+              2.9973947020704497,
+              3.247595264191645
+            ],
+            "jackknife_se": [
+              0.000965818659391686,
+              0.0015274375129813898,
+              0.0024716879481571676
+            ]
+          },
+          "second_left": {
+            "beta_effective": [
+              1.6924758006404046,
+              1.6908380927588842,
+              1.7014742364525226
+            ],
+            "constant_beta_score": {
+              "chi_square": 576.0871515958413,
+              "constant_beta_hat": 1.7048607115042274,
+              "effective_df": 2,
+              "survival_probability": 8.021664302217718e-126
+            },
+            "evaluation_z": [
+              2.747157621979489,
+              2.9973947020704497,
+              3.247595264191645
+            ],
+            "jackknife_se": [
+              0.000695850784117225,
+              0.000929992809254125,
+              0.0013833872931779112
+            ]
+          },
+          "second_right": {
+            "beta_effective": [
+              1.9448035513039326,
+              1.982833605366867,
+              2.045354373790424
+            ],
+            "constant_beta_score": {
+              "chi_square": 1353.3338067357915,
+              "constant_beta_hat": 1.951613271297349,
+              "effective_df": 2,
+              "survival_probability": 1.3405955725577585e-294
+            },
+            "evaluation_z": [
+              2.747157621979489,
+              2.9973947020704497,
+              3.247595264191645
+            ],
+            "jackknife_se": [
+              0.0009604276231575728,
+              0.001650002995330159,
+              0.0027569815093651494
+            ]
+          }
+        },
+        "marginal_nonadditive_decomposition": {
+          "curvature_mode": {
+            "2": {
+              "chi_square": 515372.80454664165,
+              "correlation_eigenvalues": [
+                0.8158279800218653,
+                0.9343839488352736,
+                0.9610825595778305,
+                1.2887055115650314
+              ],
+              "effective_df": 4,
+              "nominal_df": 4,
+              "survival_probability": 0.0
+            },
+            "3": {
+              "chi_square": 6028.04848540431,
+              "correlation_eigenvalues": [
+                0.8017434202899231,
+                0.9289820669767201,
+                1.0698082309915098,
+                1.1994662817418462
+              ],
+              "effective_df": 4,
+              "nominal_df": 4,
+              "survival_probability": 0.0
+            },
+            "4": {
+              "chi_square": 1722.419577359141,
+              "correlation_eigenvalues": [
+                0.9036887792525555,
+                0.9596930478293834,
+                0.9950986394224473,
+                1.1415195334956152
+              ],
+              "effective_df": 4,
+              "nominal_df": 4,
+              "survival_probability": 0.0
+            }
+          },
+          "orientation": {
+            "first": {
+              "chi_square": 1358914.1131730624,
+              "correlation_eigenvalues": [
+                0.06468481182950997,
+                0.13010915553011737,
+                1.0323491632413893,
+                1.281354260239737,
+                1.5930104901976136,
+                1.898492118961633
+              ],
+              "effective_df": 6,
+              "nominal_df": 6,
+              "survival_probability": 0.0
+            },
+            "second": {
+              "chi_square": 1400496.7464474554,
+              "correlation_eigenvalues": [
+                0.05081755851520482,
+                0.08830860711372468,
+                1.0911864848084563,
+                1.1736209650234384,
+                1.5476220735540314,
+                2.048444310985143
+              ],
+              "effective_df": 6,
+              "nominal_df": 6,
+              "survival_probability": 0.0
+            }
+          },
+          "side": {
+            "left": {
+              "chi_square": 1098224.3518977242,
+              "correlation_eigenvalues": [
+                0.08569989768971596,
+                0.12823296967957484,
+                1.0835009675721357,
+                1.2933588433317067,
+                1.55229734093464,
+                1.8569099807922276
+              ],
+              "effective_df": 6,
+              "nominal_df": 6,
+              "survival_probability": 0.0
+            },
+            "right": {
+              "chi_square": 1631386.147937197,
+              "correlation_eigenvalues": [
+                0.05319340229266873,
+                0.06930920597698048,
+                0.8939056598600974,
+                1.238089314808909,
+                1.8542311201529211,
+                1.8912712969084249
+              ],
+              "effective_df": 6,
+              "nominal_df": 6,
+              "survival_probability": 0.0
+            }
+          }
+        },
+        "model": "stretched_4_over_3",
+        "overall": {
+          "chi_square": 2716635.3001292925,
+          "correlation_eigenvalues": [
+            0.04949946964589803,
+            0.06045155738343637,
+            0.08518002399575941,
+            0.12772548569142508,
+            0.8657961430466474,
+            1.0562602504042489,
+            1.2272792699782464,
+            1.2795792610254326,
+            1.3749032162237476,
+            1.8485694044880372,
+            1.8783153023284582,
+            2.146440615788665
+          ],
+          "effective_df": 12,
+          "nominal_df": 12,
+          "survival_probability": 0.0
+        },
+        "signed_additive_gls_attribution": {
+          "by_side": {
+            "left": 1012869.9630014632,
+            "right": 1703765.3371278443
+          },
+          "by_z": {
+            "2.5": -2949948.56341384,
+            "2.75": 11529812.746957267,
+            "3.0": -13296574.48844116,
+            "3.25": 7375718.6084370855,
+            "3.5": 57626.99658995599
+          },
+          "sum": 2716635.300129308,
+          "warning": "point contributions can be negative under correlated GLS; only grouped sums and the total are invariant"
+        }
+      },
+      {
+        "N": 290,
+        "local_effective_exponent": {
+          "first_left": {
+            "beta_effective": [
+              1.682695527731213,
+              1.67814003036791,
+              1.6848127173487883
+            ],
+            "constant_beta_score": {
+              "chi_square": 95.54447756592256,
+              "constant_beta_hat": 1.6929620997722459,
+              "effective_df": 2,
+              "survival_probability": 1.7897002897031516e-21
+            },
+            "evaluation_z": [
+              2.747157621979489,
+              2.9973947020704497,
+              3.247595264191645
+            ],
+            "jackknife_se": [
+              0.0016735197210160236,
+              0.0025132499617017212,
+              0.0038588758820309265
+            ]
+          },
+          "first_right": {
+            "beta_effective": [
+              1.9223481453128501,
+              1.953936562603963,
+              2.0037207641249783
+            ],
+            "constant_beta_score": {
+              "chi_square": 266.4117592906205,
+              "constant_beta_hat": 1.923416605012918,
+              "effective_df": 2,
+              "survival_probability": 1.410657275123231e-58
+            },
+            "evaluation_z": [
+              2.747157621979489,
+              2.9973947020704497,
+              3.247595264191645
+            ],
+            "jackknife_se": [
+              0.0024491794322542594,
+              0.003650080462197775,
+              0.005394636334854435
+            ]
+          },
+          "second_left": {
+            "beta_effective": [
+              1.65091659496971,
+              1.6392301083982046,
+              1.641585511857824
+            ],
+            "constant_beta_score": {
+              "chi_square": 250.22137213331558,
+              "constant_beta_hat": 1.666988954787565,
+              "effective_df": 2,
+              "survival_probability": 4.625081757080398e-55
+            },
+            "evaluation_z": [
+              2.747157621979489,
+              2.9973947020704497,
+              3.247595264191645
+            ],
+            "jackknife_se": [
+              0.0016341152537483674,
+              0.002148544579707634,
+              0.003225416690517758
+            ]
+          },
+          "second_right": {
+            "beta_effective": [
+              1.9539815388292183,
+              1.9956647766530224,
+              2.056759833485156
+            ],
+            "constant_beta_score": {
+              "chi_square": 410.88890695608956,
+              "constant_beta_hat": 1.9542148452281156,
+              "effective_df": 2,
+              "survival_probability": 5.978710393345574e-90
+            },
+            "evaluation_z": [
+              2.747157621979489,
+              2.9973947020704497,
+              3.247595264191645
+            ],
+            "jackknife_se": [
+              0.0023486417210338423,
+              0.0035954894363670145,
+              0.005398891568425915
+            ]
+          }
+        },
+        "marginal_nonadditive_decomposition": {
+          "curvature_mode": {
+            "2": {
+              "chi_square": 110613.12921024456,
+              "correlation_eigenvalues": [
+                0.6982550076308262,
+                0.9631517509695804,
+                1.0758606183626995,
+                1.262732623036894
+              ],
+              "effective_df": 4,
+              "nominal_df": 4,
+              "survival_probability": 0.0
+            },
+            "3": {
+              "chi_square": 1053.2541658016587,
+              "correlation_eigenvalues": [
+                0.6811746329222421,
+                0.9198154427590435,
+                1.1714482298354256,
+                1.22756169448329
+              ],
+              "effective_df": 4,
+              "nominal_df": 4,
+              "survival_probability": 1.025866752658609e-226
+            },
+            "4": {
+              "chi_square": 328.73079119316037,
+              "correlation_eigenvalues": [
+                0.8487778554871416,
+                0.8751298033032714,
+                1.0154805597634806,
+                1.2606117814461053
+              ],
+              "effective_df": 4,
+              "nominal_df": 4,
+              "survival_probability": 6.846369126623931e-70
+            }
+          },
+          "orientation": {
+            "first": {
+              "chi_square": 196559.5824507439,
+              "correlation_eigenvalues": [
+                0.08405702101027959,
+                0.11397495608764636,
+                1.0442990324864552,
+                1.213866731831557,
+                1.3480777094942182,
+                2.1957245490898467
+              ],
+              "effective_df": 6,
+              "nominal_df": 6,
+              "survival_probability": 0.0
+            },
+            "second": {
+              "chi_square": 248334.41536525707,
+              "correlation_eigenvalues": [
+                0.07089784737557915,
+                0.10766697328292427,
+                1.065979789637163,
+                1.3594968647710461,
+                1.550986071584462,
+                1.844972453348823
+              ],
+              "effective_df": 6,
+              "nominal_df": 6,
+              "survival_probability": 0.0
+            }
+          },
+          "side": {
+            "left": {
+              "chi_square": 154637.0511380824,
+              "correlation_eigenvalues": [
+                0.10348874788672424,
+                0.11322313025708672,
+                1.0455263395669923,
+                1.2490314965569755,
+                1.612771593143674,
+                1.8759586925885492
+              ],
+              "effective_df": 6,
+              "nominal_df": 6,
+              "survival_probability": 0.0
+            },
+            "right": {
+              "chi_square": 218945.03495549294,
+              "correlation_eigenvalues": [
+                0.07118850042154096,
+                0.08859798432466374,
+                1.1179584440967454,
+                1.2312151536183982,
+                1.533512866110933,
+                1.9575270514277199
+              ],
+              "effective_df": 6,
+              "nominal_df": 6,
+              "survival_probability": 0.0
+            }
+          }
+        },
+        "model": "stretched_4_over_3",
+        "overall": {
+          "chi_square": 462070.80166857236,
+          "correlation_eigenvalues": [
+            0.06849004637452145,
+            0.07746298876965763,
+            0.10239902860920974,
+            0.10646439560402332,
+            0.9009267592657457,
+            1.0077473810723452,
+            1.1033286367294506,
+            1.2459220008657765,
+            1.5362943851716675,
+            1.6113184972944439,
+            1.9906193652042294,
+            2.2490265150389286
+          ],
+          "effective_df": 12,
+          "nominal_df": 12,
+          "survival_probability": 0.0
+        },
+        "signed_additive_gls_attribution": {
+          "by_side": {
+            "left": 194472.2357788949,
+            "right": 267598.5658897235
+          },
+          "by_z": {
+            "2.5": -484454.70724207605,
+            "2.75": 1931334.3826482801,
+            "3.0": -2210889.030426858,
+            "3.25": 1254908.2070511123,
+            "3.5": -28828.05036184007
+          },
+          "sum": 462070.8016686184,
+          "warning": "point contributions can be negative under correlated GLS; only grouped sums and the total are invariant"
+        }
+      },
+      {
+        "N": 325,
+        "local_effective_exponent": {
+          "first_left": {
+            "beta_effective": [
+              1.6515979872429,
+              1.640064160434398,
+              1.639340815793755
+            ],
+            "constant_beta_score": {
+              "chi_square": 673.4566553471701,
+              "constant_beta_hat": 1.6658270148569743,
+              "effective_df": 2,
+              "survival_probability": 5.764284278281357e-147
+            },
+            "evaluation_z": [
+              2.747157621979489,
+              2.9973947020704497,
+              3.247595264191645
+            ],
+            "jackknife_se": [
+              0.000821702368327075,
+              0.0012362393721941955,
+              0.0018618324637027998
+            ]
+          },
+          "first_right": {
+            "beta_effective": [
+              1.9107902223981679,
+              1.9411656568774,
+              1.992915206762065
+            ],
+            "constant_beta_score": {
+              "chi_square": 1302.6027141419027,
+              "constant_beta_hat": 1.9164390114474508,
+              "effective_df": 2,
+              "survival_probability": 1.3912800829845015e-283
+            },
+            "evaluation_z": [
+              2.747157621979489,
+              2.9973947020704497,
+              3.247595264191645
+            ],
+            "jackknife_se": [
+              0.0010024753756469672,
+              0.0014616206379315883,
+              0.0022904914272248588
+            ]
+          },
+          "second_left": {
+            "beta_effective": [
+              1.640565532451757,
+              1.6277637112443732,
+              1.6261336953558745
+            ],
+            "constant_beta_score": {
+              "chi_square": 768.3217445028396,
+              "constant_beta_hat": 1.6529317631460028,
+              "effective_df": 2,
+              "survival_probability": 1.4489487284004516e-167
+            },
+            "evaluation_z": [
+              2.747157621979489,
+              2.9973947020704497,
+              3.247595264191645
+            ],
+            "jackknife_se": [
+              0.0007118843641307402,
+              0.001085198245968572,
+              0.0016210578447618785
+            ]
+          },
+          "second_right": {
+            "beta_effective": [
+              1.921030251655327,
+              1.9541971474683866,
+              2.0095373315219023
+            ],
+            "constant_beta_score": {
+              "chi_square": 1535.9764363113452,
+              "constant_beta_hat": 1.9281366825662192,
+              "effective_df": 2,
+              "survival_probability": 0.0
+            },
+            "evaluation_z": [
+              2.747157621979489,
+              2.9973947020704497,
+              3.247595264191645
+            ],
+            "jackknife_se": [
+              0.0011080162940786278,
+              0.0015865233099113722,
+              0.0023316919638496016
+            ]
+          }
+        },
+        "marginal_nonadditive_decomposition": {
+          "curvature_mode": {
+            "2": {
+              "chi_square": 444098.0244262614,
+              "correlation_eigenvalues": [
+                0.6531946948008905,
+                0.985874951710662,
+                1.0632802112009647,
+                1.2976501422874827
+              ],
+              "effective_df": 4,
+              "nominal_df": 4,
+              "survival_probability": 0.0
+            },
+            "3": {
+              "chi_square": 5044.461648714911,
+              "correlation_eigenvalues": [
+                0.9011800004912057,
+                0.9276429594643613,
+                1.0210796308284182,
+                1.1500974092160148
+              ],
+              "effective_df": 4,
+              "nominal_df": 4,
+              "survival_probability": 0.0
+            },
+            "4": {
+              "chi_square": 1454.610261542257,
+              "correlation_eigenvalues": [
+                0.7068834625703696,
+                0.9387427628745184,
+                1.0833205911965138,
+                1.2710531833585978
+              ],
+              "effective_df": 4,
+              "nominal_df": 4,
+              "survival_probability": 9.947373287e-314
+            }
+          },
+          "orientation": {
+            "first": {
+              "chi_square": 763558.5028035893,
+              "correlation_eigenvalues": [
+                0.08801889988130103,
+                0.10682944970772652,
+                1.0641997234313607,
+                1.1865650385493038,
+                1.738794579269239,
+                1.815592309161072
+              ],
+              "effective_df": 6,
+              "nominal_df": 6,
+              "survival_probability": 0.0
+            },
+            "second": {
+              "chi_square": 738338.1723262015,
+              "correlation_eigenvalues": [
+                0.1043599948824967,
+                0.13323138901054862,
+                0.9026408970077178,
+                1.269748247048898,
+                1.7032868882609917,
+                1.8867325837893476
+              ],
+              "effective_df": 6,
+              "nominal_df": 6,
+              "survival_probability": 0.0
+            }
+          },
+          "side": {
+            "left": {
+              "chi_square": 914152.6459425598,
+              "correlation_eigenvalues": [
+                0.0697559701244897,
+                0.13351380908879026,
+                1.120455313401844,
+                1.2491701398123283,
+                1.5546892916622301,
+                1.872415475910319
+              ],
+              "effective_df": 6,
+              "nominal_df": 6,
+              "survival_probability": 0.0
+            },
+            "right": {
+              "chi_square": 852759.821469828,
+              "correlation_eigenvalues": [
+                0.0925889612251269,
+                0.1324676349481177,
+                0.8812334811146817,
+                1.3765903739103458,
+                1.6526441459463443,
+                1.864475402855382
+              ],
+              "effective_df": 6,
+              "nominal_df": 6,
+              "survival_probability": 0.0
+            }
+          }
+        },
+        "model": "stretched_4_over_3",
+        "overall": {
+          "chi_square": 1474144.9583152467,
+          "correlation_eigenvalues": [
+            0.05175047891731526,
+            0.09669087878601786,
+            0.12488888399425303,
+            0.1387317287431853,
+            0.7646636361231288,
+            0.9374944466680172,
+            1.0957685665956112,
+            1.2843518260815006,
+            1.6873246035695875,
+            1.7754058160075366,
+            1.8449104993604428,
+            2.198018635153405
+          ],
+          "effective_df": 12,
+          "nominal_df": 12,
+          "survival_probability": 0.0
+        },
+        "signed_additive_gls_attribution": {
+          "by_side": {
+            "left": 804491.903350882,
+            "right": 669653.054964418
+          },
+          "by_z": {
+            "2.5": -1225426.428662193,
+            "2.75": 5446914.0722012855,
+            "3.0": -5644039.423818889,
+            "3.25": 3013757.2773765433,
+            "3.5": -117060.53878144783
+          },
+          "sum": 1474144.9583153,
+          "warning": "point contributions can be negative under correlated GLS; only grouped sums and the total are invariant"
+        }
+      },
+      {
+        "N": 425,
+        "local_effective_exponent": {
+          "first_left": {
+            "beta_effective": [
+              1.6390764688239838,
+              1.6262852116356883,
+              1.6226100653496611
+            ],
+            "constant_beta_score": {
+              "chi_square": 498.5793054293922,
+              "constant_beta_hat": 1.6486141500457876,
+              "effective_df": 2,
+              "survival_probability": 5.43099534347437e-109
+            },
+            "evaluation_z": [
+              2.747157621979489,
+              2.9973947020704497,
+              3.247595264191645
+            ],
+            "jackknife_se": [
+              0.0007484977271586403,
+              0.0011483788799935577,
+              0.001819023732430541
+            ]
+          },
+          "first_right": {
+            "beta_effective": [
+              1.832168220654883,
+              1.842985220087653,
+              1.8720798314695535
+            ],
+            "constant_beta_score": {
+              "chi_square": 383.42365049748435,
+              "constant_beta_hat": 1.8421977616071916,
+              "effective_df": 2,
+              "survival_probability": 5.503160495574665e-84
+            },
+            "evaluation_z": [
+              2.747157621979489,
+              2.9973947020704497,
+              3.247595264191645
+            ],
+            "jackknife_se": [
+              0.0011422474351036839,
+              0.0018879572112329801,
+              0.002604172319827944
+            ]
+          },
+          "second_left": {
+            "beta_effective": [
+              1.6287136385608236,
+              1.613764116025917,
+              1.6092157063186203
+            ],
+            "constant_beta_score": {
+              "chi_square": 559.0445559619627,
+              "constant_beta_hat": 1.6416629258327624,
+              "effective_df": 2,
+              "survival_probability": 4.0273289485514884e-122
+            },
+            "evaluation_z": [
+              2.747157621979489,
+              2.9973947020704497,
+              3.247595264191645
+            ],
+            "jackknife_se": [
+              0.000850848077284189,
+              0.001305138229160273,
+              0.0019005777421073136
+            ]
+          },
+          "second_right": {
+            "beta_effective": [
+              1.8427449852587647,
+              1.858928746158345,
+              1.8937497418752187
+            ],
+            "constant_beta_score": {
+              "chi_square": 436.5522269274341,
+              "constant_beta_hat": 1.8506447840259541,
+              "effective_df": 2,
+              "survival_probability": 1.5991470138057772e-95
+            },
+            "evaluation_z": [
+              2.747157621979489,
+              2.9973947020704497,
+              3.247595264191645
+            ],
+            "jackknife_se": [
+              0.0011497689393063213,
+              0.001741015675469672,
+              0.0025812800755196787
+            ]
+          }
+        },
+        "marginal_nonadditive_decomposition": {
+          "curvature_mode": {
+            "2": {
+              "chi_square": 369834.8116241753,
+              "correlation_eigenvalues": [
+                0.7815200912402305,
+                0.9406254348120591,
+                1.0476497271649878,
+                1.2302047467827224
+              ],
+              "effective_df": 4,
+              "nominal_df": 4,
+              "survival_probability": 0.0
+            },
+            "3": {
+              "chi_square": 1487.3393578518546,
+              "correlation_eigenvalues": [
+                0.8169530384589859,
+                0.9463944507503224,
+                1.0383410800712012,
+                1.1983114307194902
+              ],
+              "effective_df": 4,
+              "nominal_df": 4,
+              "survival_probability": 7.95e-321
+            },
+            "4": {
+              "chi_square": 754.7422733248309,
+              "correlation_eigenvalues": [
+                0.9115797736729886,
+                0.9224638358785993,
+                1.0000539036388942,
+                1.1659024868095194
+              ],
+              "effective_df": 4,
+              "nominal_df": 4,
+              "survival_probability": 4.872094659795035e-162
+            }
+          },
+          "orientation": {
+            "first": {
+              "chi_square": 677528.9081298963,
+              "correlation_eigenvalues": [
+                0.08450032261188663,
+                0.0986297767715218,
+                1.1531804772241692,
+                1.290387696572091,
+                1.6656892965448535,
+                1.7076124302754792
+              ],
+              "effective_df": 6,
+              "nominal_df": 6,
+              "survival_probability": 0.0
+            },
+            "second": {
+              "chi_square": 771135.1194652254,
+              "correlation_eigenvalues": [
+                0.07600195551806274,
+                0.08799089755851319,
+                1.112888528663087,
+                1.3135183184860912,
+                1.4439993995670592,
+                1.9656009002071875
+              ],
+              "effective_df": 6,
+              "nominal_df": 6,
+              "survival_probability": 0.0
+            }
+          },
+          "side": {
+            "left": {
+              "chi_square": 591723.844321556,
+              "correlation_eigenvalues": [
+                0.07648827327974408,
+                0.09411692938743961,
+                1.194606254721011,
+                1.3043282589886154,
+                1.5988625195912594,
+                1.731597764031931
+              ],
+              "effective_df": 6,
+              "nominal_df": 6,
+              "survival_probability": 0.0
+            },
+            "right": {
+              "chi_square": 822657.8767840035,
+              "correlation_eigenvalues": [
+                0.08815192842726416,
+                0.0945655483182816,
+                0.9929635220040812,
+                1.3188029334049638,
+                1.6073343690232926,
+                1.8981816988221178
+              ],
+              "effective_df": 6,
+              "nominal_df": 6,
+              "survival_probability": 0.0
+            }
+          }
+        },
+        "model": "stretched_4_over_3",
+        "overall": {
+          "chi_square": 1627487.8072393858,
+          "correlation_eigenvalues": [
+            0.0650957379242303,
+            0.07226465237980695,
+            0.09528676617100718,
+            0.10863624664963083,
+            0.9485595768408671,
+            1.1131912535415005,
+            1.2273115581888692,
+            1.353358063955368,
+            1.5067409886826706,
+            1.6691609490055452,
+            1.7489915633747166,
+            2.091402643285784
+          ],
+          "effective_df": 12,
+          "nominal_df": 12,
+          "survival_probability": 0.0
+        },
+        "signed_additive_gls_attribution": {
+          "by_side": {
+            "left": 712456.4291493103,
+            "right": 915031.3780896969
+          },
+          "by_z": {
+            "2.5": -1517905.2331133625,
+            "2.75": 6094505.468677175,
+            "3.0": -6574507.878336601,
+            "3.25": 3686813.9759043204,
+            "3.5": -61418.52589252453
+          },
+          "sum": 1627487.8072390072,
+          "warning": "point contributions can be negative under correlated GLS; only grouped sums and the total are invariant"
+        }
+      }
+    ],
+    "by_lineage": {
+      "P43": {
+        "chi_square": 2716635.3001292925,
+        "effective_df": 12,
+        "survival_probability": 0.0
+      },
+      "P50": {
+        "chi_square": 462070.80166857236,
+        "effective_df": 12,
+        "survival_probability": 0.0
+      },
+      "P57": {
+        "chi_square": 3101632.7655546325,
+        "effective_df": 24,
+        "survival_probability": 0.0
+      }
+    },
+    "global": {
+      "chi_square": 6280338.867352498,
+      "effective_df": 48,
+      "survival_probability": 0.0
+    },
+    "name": "stretched_4_over_3"
+  },
+  "issue": 28,
+  "manifest_sha256": "50ed00a12218eda23b18086cfd5740f6ae0593ffe5617f46d33dc2d00f2c0ed1",
+  "new_monte_carlo": false,
+  "schema": "matching-one/p28-tail-rejection-diagnostic/v1",
+  "status": "post_reveal_diagnostic_no_new_vote",
+  "structural_attribution": "The frozen score fits intercept and decay separately for every size, orientation, and side. Its rejection therefore cannot be caused by left/right amplitude asymmetry, geometry amplitude, or cross-size coefficient drift; it is within-tail curvature on the five frozen z points."
+}

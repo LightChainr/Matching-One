@@ -43,6 +43,36 @@ this score supplies no reason to generate additional Monte Carlo.
 This is a Level-S production statistical model-elimination result.  It is not an exact no-go
 theorem for an eventual `4/3` asymptotic tail and not a cross-microscopic universality proof.
 
+## Post-reveal rejection decomposition
+
+The frozen fit already gives every size, orientation, and tail side its own intercept and decay
+constant.  Consequently the rejection cannot be produced by a left/right amplitude mismatch,
+geometry amplitude, or cross-size coefficient drift.  It is a within-tail curvature failure on
+the five frozen `z` points.
+
+The covariance-aware marginal side scores are `2,758,737.89` on the left and `3,525,748.88` on
+the right (these correlated marginal scores are not additive).  Both sides reject enormously.
+The two orientation totals, `2,996,561.11` and `3,158,304.45`, are close, so no single geometry
+drives the result.  P43, P50, and P57 all reject independently.
+
+The lowest curvature mode dominates the marginal diagnostic (`1,439,918.77`), versus
+`13,613.10` and `4,260.50` for the next two modes.  Signed GLS attribution alternates most strongly
+over `z=2.75,3.0,3.25`, rather than accumulating at the sparse outer endpoint.  This identifies a
+smooth missing correction, not an extreme-count accident.
+
+Secant-based local effective exponents also make the failure concrete.  Across orientations they
+range from `1.658..1.701` (left) and `1.945..2.099` (right) at `N=265`, drifting to
+`1.609..1.639` and `1.832..1.894` at `N=425`.  Every single-side constant-effective-exponent score
+rejects (`p<2e-21`), so neither side is locally a pure power on this window.  The side split and
+size drift are real descriptive features, but the main rejection remains present inside each
+individual size/orientation/side.
+
+One explicitly post-reveal nested description,
+`a-c z^(4/3)+d z^(2/3)`, reduces chi-square from `6,280,338.87 / 48` to
+`49,893.28 / 32`, a factor of about 126.  It still fails overwhelmingly
+(`log10 p approximately -10780`) and therefore does not close or receive a new model vote.
+It only shows that one smooth low-order correction captures most of the visible curvature.
+
 ## Provenance
 
 - base: `939f7ecc26f18c68977aed626821767207a46c89`;
