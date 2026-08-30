@@ -1,0 +1,33 @@
+{
+  "schema": "matching-one/p337-flat-twist-representation/v1",
+  "issues": [337, 334],
+  "input_commit": "a7cb19a",
+  "dependency_group": "P334_N65_20k_projective_birth_smoke",
+  "new_random_data": false,
+  "line_orders": {
+    "F2": ["x", "diag", "y"],
+    "F3": ["x", "diag+", "diag-", "y"]
+  },
+  "exact_decomposition": {
+    "F2_D4": "2 A1 + B1",
+    "F2_modular": "1 + irreducible 2D standard of PSL(2,F2)=S3",
+    "F3_D4": "2 A1 + B1 + B2",
+    "F3_modular": "1 + irreducible 3D standard of PSL(2,F3)=A4",
+    "F3_T_restriction": "neutral 1D + real charged 2D"
+  },
+  "observed_placement": {
+    "D4_basis": ["balanced_H4_alias_A1", "axis_odd_B1", "diagonal_odd_B2"],
+    "D4_vector": [0.0011029842067728016, 0.005129985113886593, 0.0020775612521830144],
+    "T_cyclic_basis": ["neutral_u", "charged_v", "charged_w"],
+    "T_cyclic_vector": [0.004825423534390718, -0.0020612154527939255, 0.0020775612521830144],
+    "charged_quadratic": 5.905028130859152,
+    "charged_df": 2,
+    "neutral_z": 1.602434341574003
+  },
+  "no_fit_T_prediction": [0.0021583896116662287, 0.004383700795185517, -0.0028238455708840906],
+  "script": "scripts/flat_twist_representation.py",
+  "certificate": "results/local-20260830/P334-projective-birth-N65-smoke/flat_twist_representation.json",
+  "note": "notes/p337-flat-twist-representation.md",
+  "test": "tests/test_flat_twist_representation.py",
+  "claim_boundary": "exact finite representation and exploratory placement; roughly two sigma is not a discovery or continuum-field identity"
+}

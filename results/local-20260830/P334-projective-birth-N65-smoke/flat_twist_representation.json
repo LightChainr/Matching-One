@@ -1,0 +1,834 @@
+{
+  "schema": "matching-one/flat-twist-projective-representation/v1",
+  "issues": [
+    337,
+    334
+  ],
+  "status": "exact finite representation plus placement of exploratory N65 contrast",
+  "conventions": {
+    "line_action": "column homology vector ell maps by g ell",
+    "twist_action": "covector alpha maps contragrediently; its kernel line maps by g",
+    "S": [
+      [
+        0,
+        -1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "T": [
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "reflection": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        -1
+      ]
+    ],
+    "D4_labels": "A1:(S=+1,reflection=+1), B1:(-1,+1), B2:(-1,-1)"
+  },
+  "fields": [
+    {
+      "q": 2,
+      "line_order": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "generators": {
+        "S_rotation_permutation_old_to_new": [
+          2,
+          1,
+          0
+        ],
+        "reflection_permutation_old_to_new": [
+          0,
+          1,
+          2
+        ],
+        "T_shear_permutation_old_to_new": [
+          0,
+          2,
+          1
+        ]
+      },
+      "D4_projective_image_order": 2,
+      "D4_decomposition": "2 A1 + B1",
+      "D4_eigenlines": [
+        {
+          "name": "scalar_A1",
+          "vector": [
+            1,
+            1,
+            1
+          ],
+          "rotation_eigenvalue": 1,
+          "reflection_eigenvalue": 1
+        },
+        {
+          "name": "balanced_H4_alias_A1",
+          "vector": [
+            1,
+            -2,
+            1
+          ],
+          "rotation_eigenvalue": 1,
+          "reflection_eigenvalue": 1
+        },
+        {
+          "name": "axis_odd_B1",
+          "vector": [
+            1,
+            0,
+            -1
+          ],
+          "rotation_eigenvalue": -1,
+          "reflection_eigenvalue": 1
+        }
+      ],
+      "projectors": {
+        "scalar_A1": [
+          [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          [
+            "1/3",
+            "1/3",
+            "1/3"
+          ]
+        ],
+        "balanced_H4_alias_A1": [
+          [
+            "1/6",
+            "-1/3",
+            "1/6"
+          ],
+          [
+            "-1/3",
+            "2/3",
+            "-1/3"
+          ],
+          [
+            "1/6",
+            "-1/3",
+            "1/6"
+          ]
+        ],
+        "axis_odd_B1": [
+          [
+            "1/2",
+            "0",
+            "-1/2"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "-1/2",
+            "0",
+            "1/2"
+          ]
+        ]
+      },
+      "D4_character_isotypic_projectors": {
+        "A1_multiplicity_2": [
+          [
+            "1/2",
+            "0",
+            "1/2"
+          ],
+          [
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "1/2",
+            "0",
+            "1/2"
+          ]
+        ],
+        "B1": [
+          [
+            "1/2",
+            "0",
+            "-1/2"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "-1/2",
+            "0",
+            "1/2"
+          ]
+        ]
+      },
+      "modular_character_isotypic_projectors": {
+        "trivial": [
+          [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          [
+            "1/3",
+            "1/3",
+            "1/3"
+          ]
+        ],
+        "standard": [
+          [
+            "2/3",
+            "-1/3",
+            "-1/3"
+          ],
+          [
+            "-1/3",
+            "2/3",
+            "-1/3"
+          ],
+          [
+            "-1/3",
+            "-1/3",
+            "2/3"
+          ]
+        ]
+      },
+      "T_cyclic_real_isotypic_projectors": null,
+      "projector_gates": {
+        "sum_to_identity": true,
+        "idempotent": true,
+        "pairwise_orthogonal": true,
+        "D4_character_isotypic_complete": true,
+        "modular_character_isotypic_complete": true
+      },
+      "modular_projective_image_order": 6,
+      "modular_group": "PSL(2,F2)=S3",
+      "modular_decomposition": "1 + 2D standard irreducible of PSL(2,F2)=S3",
+      "standard_character_values_over_group": [
+        2,
+        0,
+        0,
+        -1,
+        -1,
+        0
+      ],
+      "standard_character_inner_product": "1",
+      "standard_is_irreducible": true,
+      "orthonormal_generator_matrices": {
+        "S_on_nontrivial_basis_[H4,axis_odd]": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "-1"
+          ]
+        ],
+        "T_on_nontrivial_basis_[H4,axis_odd]": [
+          [
+            "-1/2",
+            "sqrt(3)/2"
+          ],
+          [
+            "sqrt(3)/2",
+            "1/2"
+          ]
+        ]
+      }
+    },
+    {
+      "q": 3,
+      "line_order": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "generators": {
+        "S_rotation_permutation_old_to_new": [
+          3,
+          2,
+          1,
+          0
+        ],
+        "reflection_permutation_old_to_new": [
+          0,
+          2,
+          1,
+          3
+        ],
+        "T_shear_permutation_old_to_new": [
+          0,
+          2,
+          3,
+          1
+        ]
+      },
+      "D4_projective_image_order": 4,
+      "D4_decomposition": "2 A1 + B1 + B2",
+      "D4_eigenlines": [
+        {
+          "name": "scalar_A1",
+          "vector": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "rotation_eigenvalue": 1,
+          "reflection_eigenvalue": 1
+        },
+        {
+          "name": "balanced_H4_alias_A1",
+          "vector": [
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "rotation_eigenvalue": 1,
+          "reflection_eigenvalue": 1
+        },
+        {
+          "name": "axis_odd_B1",
+          "vector": [
+            1,
+            0,
+            0,
+            -1
+          ],
+          "rotation_eigenvalue": -1,
+          "reflection_eigenvalue": 1
+        },
+        {
+          "name": "diagonal_odd_B2",
+          "vector": [
+            0,
+            1,
+            -1,
+            0
+          ],
+          "rotation_eigenvalue": -1,
+          "reflection_eigenvalue": -1
+        }
+      ],
+      "projectors": {
+        "scalar_A1": [
+          [
+            "1/4",
+            "1/4",
+            "1/4",
+            "1/4"
+          ],
+          [
+            "1/4",
+            "1/4",
+            "1/4",
+            "1/4"
+          ],
+          [
+            "1/4",
+            "1/4",
+            "1/4",
+            "1/4"
+          ],
+          [
+            "1/4",
+            "1/4",
+            "1/4",
+            "1/4"
+          ]
+        ],
+        "balanced_H4_alias_A1": [
+          [
+            "1/4",
+            "-1/4",
+            "-1/4",
+            "1/4"
+          ],
+          [
+            "-1/4",
+            "1/4",
+            "1/4",
+            "-1/4"
+          ],
+          [
+            "-1/4",
+            "1/4",
+            "1/4",
+            "-1/4"
+          ],
+          [
+            "1/4",
+            "-1/4",
+            "-1/4",
+            "1/4"
+          ]
+        ],
+        "axis_odd_B1": [
+          [
+            "1/2",
+            "0",
+            "0",
+            "-1/2"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "-1/2",
+            "0",
+            "0",
+            "1/2"
+          ]
+        ],
+        "diagonal_odd_B2": [
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1/2",
+            "-1/2",
+            "0"
+          ],
+          [
+            "0",
+            "-1/2",
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ]
+      },
+      "D4_character_isotypic_projectors": {
+        "A1_multiplicity_2": [
+          [
+            "1/2",
+            "0",
+            "0",
+            "1/2"
+          ],
+          [
+            "0",
+            "1/2",
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2",
+            "1/2",
+            "0"
+          ],
+          [
+            "1/2",
+            "0",
+            "0",
+            "1/2"
+          ]
+        ],
+        "B1": [
+          [
+            "1/2",
+            "0",
+            "0",
+            "-1/2"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "-1/2",
+            "0",
+            "0",
+            "1/2"
+          ]
+        ],
+        "B2": [
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1/2",
+            "-1/2",
+            "0"
+          ],
+          [
+            "0",
+            "-1/2",
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ]
+      },
+      "modular_character_isotypic_projectors": {
+        "trivial": [
+          [
+            "1/4",
+            "1/4",
+            "1/4",
+            "1/4"
+          ],
+          [
+            "1/4",
+            "1/4",
+            "1/4",
+            "1/4"
+          ],
+          [
+            "1/4",
+            "1/4",
+            "1/4",
+            "1/4"
+          ],
+          [
+            "1/4",
+            "1/4",
+            "1/4",
+            "1/4"
+          ]
+        ],
+        "standard": [
+          [
+            "3/4",
+            "-1/4",
+            "-1/4",
+            "-1/4"
+          ],
+          [
+            "-1/4",
+            "3/4",
+            "-1/4",
+            "-1/4"
+          ],
+          [
+            "-1/4",
+            "-1/4",
+            "3/4",
+            "-1/4"
+          ],
+          [
+            "-1/4",
+            "-1/4",
+            "-1/4",
+            "3/4"
+          ]
+        ]
+      },
+      "T_cyclic_real_isotypic_projectors": {
+        "neutral_1D_inside_standard": [
+          [
+            "3/4",
+            "-1/4",
+            "-1/4",
+            "-1/4"
+          ],
+          [
+            "-1/4",
+            "1/12",
+            "1/12",
+            "1/12"
+          ],
+          [
+            "-1/4",
+            "1/12",
+            "1/12",
+            "1/12"
+          ],
+          [
+            "-1/4",
+            "1/12",
+            "1/12",
+            "1/12"
+          ]
+        ],
+        "charged_real_2D_inside_standard": [
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "2/3",
+            "-1/3",
+            "-1/3"
+          ],
+          [
+            "0",
+            "-1/3",
+            "2/3",
+            "-1/3"
+          ],
+          [
+            "0",
+            "-1/3",
+            "-1/3",
+            "2/3"
+          ]
+        ]
+      },
+      "projector_gates": {
+        "sum_to_identity": true,
+        "idempotent": true,
+        "pairwise_orthogonal": true,
+        "D4_character_isotypic_complete": true,
+        "modular_character_isotypic_complete": true,
+        "T_cyclic_splits_standard": true
+      },
+      "modular_projective_image_order": 12,
+      "modular_group": "PSL(2,F3)=A4",
+      "modular_decomposition": "1 + 3D standard irreducible of PSL(2,F3)=A4",
+      "standard_character_values_over_group": [
+        3,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        -1
+      ],
+      "standard_character_inner_product": "1",
+      "standard_is_irreducible": true,
+      "orthonormal_generator_matrices": {
+        "S_on_nontrivial_basis_[H4,axis_odd,diagonal_odd]": [
+          [
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-1"
+          ]
+        ],
+        "reflection_on_nontrivial_basis": [
+          [
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-1"
+          ]
+        ],
+        "T_on_nontrivial_basis": [
+          [
+            "0",
+            "1/sqrt(2)",
+            "-1/sqrt(2)"
+          ],
+          [
+            "1/sqrt(2)",
+            "1/2",
+            "1/2"
+          ],
+          [
+            "1/sqrt(2)",
+            "-1/2",
+            "-1/2"
+          ]
+        ],
+        "T_cyclic_restriction": {
+          "neutral_1D": "u=H4/sqrt(3)+sqrt(2/3)*axis_odd",
+          "charged_2D": [
+            "v=sqrt(2/3)*H4-axis_odd/sqrt(3)",
+            "w=diagonal_odd"
+          ],
+          "T_on_[v,w]": [
+            [
+              "-1/2",
+              "-sqrt(3)/2"
+            ],
+            [
+              "sqrt(3)/2",
+              "-1/2"
+            ]
+          ]
+        }
+      }
+    }
+  ],
+  "observed_F3": {
+    "source_score": "results/local-20260830/P334-projective-birth-N65-smoke/flat_twist_score.json",
+    "D4_basis_order": [
+      "balanced_H4_alias_A1",
+      "axis_odd_B1",
+      "diagonal_odd_B2"
+    ],
+    "orientation_contrast": [
+      0.0011029842067728016,
+      0.005129985113886593,
+      0.0020775612521830144
+    ],
+    "covariance": [
+      [
+        2.2686640642637534e-06,
+        6.533053547890622e-07,
+        7.301893547017008e-07
+      ],
+      [
+        6.533053547890622e-07,
+        1.1543719507854756e-05,
+        2.272123056909724e-07
+      ],
+      [
+        7.301893547017008e-07,
+        2.272123056909724e-07,
+        1.0829052786187956e-06
+      ]
+    ],
+    "T_cyclic_basis_order": [
+      "neutral_u",
+      "charged_v",
+      "charged_w"
+    ],
+    "T_cyclic_coordinates": [
+      0.004825423534390718,
+      -0.002061215452793925,
+      0.0020775612521830144
+    ],
+    "T_cyclic_covariance": [
+      [
+        9.067976555400194e-06,
+        -4.154534615099913e-06,
+        6.070930912378104e-07
+      ],
+      [
+        -4.154534615099912e-06,
+        4.744407016718316e-06,
+        4.650160256898828e-07
+      ],
+      [
+        6.070930912378104e-07,
+        4.650160256898828e-07,
+        1.0829052786187956e-06
+      ]
+    ],
+    "T_charged_doublet_quadratic": 5.905028130859151,
+    "T_charged_doublet_df": 2,
+    "T_neutral_z": 1.602434341574003,
+    "interpretation": "diagonal_odd is one coordinate of the real 2D T-charged doublet; it is not a standalone modular irrep",
+    "no_fit_T_shear_prediction_in_D4_basis": [
+      0.0021583896116662287,
+      0.004383700795185517,
+      -0.0028238455708840906
+    ]
+  },
+  "all_exact_gates_pass": true,
+  "prediction": {
+    "minimal": "a covariantly transported F3 twist source must obey the exact 3x3 T mixing matrix",
+    "charged": "under the order-3 T subgroup the A4 standard triplet is neutral 1D plus a real 2D charged rotation pair",
+    "falsifier": "a declared shear/source transport that leaves diagonal_odd invariant by itself violates projective covariance"
+  },
+  "claim_boundary": "the roughly 2-sigma diagonal-odd coordinate is placed in a charged doublet, not claimed as a discovery or field identity"
+}
