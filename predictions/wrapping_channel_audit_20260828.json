@@ -31,7 +31,9 @@
       "id": "p48_cross_even_normalized_identity",
       "status": "registered",
       "prediction_artifact": "predictions/p48_sprime_scoring_manifest_20260828.yaml",
-      "scorer": "scripts/score_p48_sprime_prospective.py",
+      "frozen_model_artifact": "predictions/p48_sprime_correction_20260828.yaml",
+      "semantic_manifest": "predictions/p48_sprime_semantic_gate_20260829.yaml",
+      "scorer": "scripts/score_p48_sprime_prospective_typed.py",
       "source_descriptor": {
         "channel": "cross",
         "combination": "even",

@@ -1,0 +1,206 @@
+# Scorer descriptor-adoption inventory
+
+At main commit `11ba86892fabd3349e322d198f23ef24d8cbe828`, the exact
+`scripts/*score*.py` corpus contains 35 files. Python-AST inspection finds four
+direct typed entrypoints importing both `ObservableDescriptor` and
+`map_observable` from `wrapping_channels`. Three frozen kernels are covered by
+those entrypoints through explicit semantic-manifest wrapper relationships.
+One path, `kappa3_half_score.py`, is classified as a generic utility for which
+a descriptor is not applicable. Twenty-two paths are confirmed channel-bearing and
+require typed migrations: `score_angular_root_amplitude.py`,
+`score_axis_pair_annihilator.py`, its stable entrypoint,
+`score_c4_self_matching_n26.py`, `score_c4_tangent_orthogonal_holdout.py`,
+`score_intrinsic_quantile_center_n145_n290.py`,
+`score_issue43_full_curve.py`, its locked wrapper,
+`score_issue43_secondary.py`, `score_issue50_n290.py`,
+`score_matching_odd_synthesis.py`, `score_norm4_production.py`,
+`score_norm4_thermal_jet.py`, `score_norm5_thermal_jet.py`,
+`score_p231_vacuum_kdv_sector.py`,
+`score_p48_sprime_frozen.py`, `score_p49_fullcurve_doubling.py`,
+`score_p50_fullcurve_n290.py`, `score_p50_sprime_n290.py`,
+`score_prequential_evidence.py`,
+`score_rank_gap_boundary_targets.py`, and
+`score_threshold_rank_root_doubling.py`. The remaining five files are outside a
+registered typed path.
+
+This closes an inventory gap: the repository now has a deterministic list,
+including Git blob identities, rather than an informal claim that all scorers
+have or have not adopted descriptors. The audit fails closed if a direct typed
+import is added or removed without updating the manifest, or if a declared
+wrapped kernel disappears.
+
+`outside_registered_typed_path` is deliberately a triage label. Some of those
+five scripts may not compare channel-bearing quantities, some may be historical,
+and some may need a future typed wrapper. Static membership alone does not prove
+a semantic bug, data-provenance failure, or need for migration. Each candidate
+must be reviewed before modification; Issue #146 therefore remains open.
+
+The `kappa3_half_score.py` exception is narrow. It defines only exact Bernoulli
+likelihood-score polynomials at `p=1/2` and aggregates an opaque caller-supplied
+`D(C)`; it intentionally does not define a wrapping, homology, or other
+topology observable. Geometry-specific callers still must type their own
+`D(C)` before comparison.
+
+`score_angular_root_amplitude.py` is not eligible for the generic-utility
+exception. Its current blob reconstructs rank-2 cross `K_minus/K_plus`
+observables, forms signed orientation differences and root gaps, normalizes by
+signed `DeltaCos4`, and scores `A_p` across sizes. A later migration must decide
+explicitly whether the descriptor schema needs a root-location quantity; this
+inventory result does not retrofit or reinterpret the completed P45 score.
+
+`score_prequential_evidence.py` is also migration-required. Its scored-block
+gate currently compares free-form `channel.source` and `channel.target` strings
+and treats any truthy `exact_map` field as sufficient. A typed migration must
+parse source/target descriptors and verify the registered affine transform,
+while preserving historical ledger rows and chronology.
+
+`score_c4_self_matching_n26.py` is migration-required even though its committed
+N=26 control finds all five wrapping-channel Bernstein vectors identical. It
+selects the scored observable from the prediction's free-form
+`geometry.wrapping_channel` string, then compares that exact law with frozen
+hypotheses. Numerical equality on one finite self-matching geometry does not
+establish semantic interchangeability. A typed migration must bind the frozen
+prediction and result to the exact channel descriptor while preserving the
+pre-target scoring order and stop-without-generalized-fit rule.
+
+`score_c4_tangent_orthogonal_holdout.py` is migration-required. It selects the
+`cross` response through a free-form channel string, freezes `lambda/t` on
+N=130, and applies that projection to aligned N=170 batches before scoring
+orthogonal and thermal residuals. A typed migration must bind both sizes to the
+same exact channel semantics and type the response-coordinate pair, without
+changing batch alignment, jackknife construction, or the frozen interpretation
+rule.
+
+`score_matching_odd_synthesis.py` is migration-required. It selects two frozen
+ledger blocks by requiring free-form `channel.source` and `channel.target`
+strings to equal `matching_odd`, then combines their already-primary scores.
+A later migration must parse both typed descriptors and verify their registered
+identity maps. That semantic gate must not change the frozen block selection,
+distinct raw-data-group requirement, block-diagonal synthesis, or the rule that
+the derived output cannot become a new primary evidence row.
+
+`score_rank_gap_boundary_targets.py` is migration-required. It scores the
+orientation-pooled paired observable `G=K_plus-K_minus` in rank units from a
+frozen source fit against target sizes, while binding its meaning only through
+ordered representation arrays and metadata. A typed migration must represent
+the paired rank-gap quantity, rank units, orientation pooling, and cross-size
+identity. It must preserve the fixed `5/8` exponent, source/target chronology,
+production-metadata gate, and covariance calculation.
+
+`score_threshold_rank_root_doubling.py` is migration-required. It tests a
+fixed `-1/4` doubling ratio for two Gaussian threshold-rank root-gap lineages,
+reversing the stored child sign to follow multiplication by `1+i`. A typed
+migration must represent the root-gap quantity, genealogy, stored-versus-lineage
+orientation order, sign map, and cross-size relation. It must preserve both the
+full-covariance score and the diagonal-only diagnostic.
+
+`score_issue50_n290.py` is migration-required. It computes the
+`either/matching_function` contrast between ordered Gaussian lineages
+`(13,11)` and `(17,1)` at fixed p, with channel, sector, lineage order, and
+subtraction sign encoded as strings and constants. A typed migration must bind
+the exact observable and ordered lineage map while preserving the prospective
+target, run provenance, counter-range validation, and sampling-error score.
+
+`score_p231_vacuum_kdv_sector.py` is migration-required. It concatenates
+ordered `C_nontrivial_real`, `Q_reflection_null`, and `S_scalar` coordinates
+for two designs, then compares them with a theory vector normalized per unit
+`g4`. A typed migration must bind every sector coordinate, design order, and
+theory normalization. It must preserve the block covariance, one-amplitude
+GLS, non-scalar diagnostic, and the rule that the retrospective reuse is not
+new independent evidence.
+
+`score_p48_sprime_frozen.py` is migration-required and is not the frozen kernel
+covered by `score_p48_sprime_prospective_typed.py`. It independently reads the
+chronological scoring manifest and compares `P4_S_prime` with four ordered
+models without a semantic gate. A migration must either prove that the existing
+cross/even identity descriptor applies to this separate contract or add its own
+typed manifest. It must preserve model order, bases, source/target covariance,
+and chronology.
+
+`score_p49_fullcurve_doubling.py` is migration-required. One entrypoint emits
+matching tails and slopes, thermal `X_even/X_odd` contrasts, signed lineage
+root gaps, and four normalized P4 projectors across two doubling lineages. It
+also distinguishes the unnormalized H4 sign reversal from the positive ratio
+for size-normalized P4 quantities. A migration needs separate typed quantity
+families plus explicit lineage, sign, and normalization maps; a single channel
+string is insufficient. Numerical full-curve, covariance, frozen-model, and
+report contracts remain unchanged.
+
+`score_p50_fullcurve_n290.py` is migration-required. It carries thermal-even
+DeltaM coordinates, a mean slope, a signed lineage root gap, and four P4
+diagnostics through independent N145/N290 streams. `FEATURE_ORDER`, ordered
+Gaussian representations, `LINEAGE_SIGN`, and frozen ratios jointly define the
+semantics. A migration needs distinct typed quantities plus explicit lineage
+and independent-stream maps. It must preserve size-local jackknifes, numerical
+covariance-rank handling, frozen prediction order, and provenance.
+
+`score_p50_sprime_n290.py` is migration-required. It extracts `P4_S_prime`
+from the P50 child histogram and compares that one coordinate with q2 and
+Jordan predictions in a frozen order, but it does not bind the observable or
+model contract to typed semantics. A migration must type the `P4_S_prime`
+quantity and the ordered model comparison, and record that this score reuses
+the same P50 raw block rather than supplying independent evidence. It must
+preserve the scalar variance calculation, prediction hashes, chronology, and
+the declared decision text.
+
+`score_intrinsic_quantile_center_n145_n290.py` is migration-required. It scores
+the intrinsic quantile-center coordinate `Q`, two `N^(3/8)`-scaled widths, and
+two centers, then maps the first three coordinates from N145 to N290 under
+frozen scaling laws. The current contract relies on tuple order, string keys,
+and numeric transforms rather than typed quantities and maps. A migration must
+type the level-derived coordinates, units/scalings, cross-size transforms, and
+independent RNG domains. It must preserve the frozen u-grid, recomputation of
+all crossings inside every size-local delete-one replicate, covariance block
+construction, chronology, and primary-score separation.
+
+The Issue #43 full-curve base scorer and locked wrapper form one operational
+migration unit. The base reconstructs ordered orientation differences in the
+matching-odd `DeltaM` and matching-even `DeltaS` sectors at frozen `p_ref`, then
+compares both N185/N265 coordinates with fully correlated source-amplitude
+uncertainty. The wrapper strengthens provenance and allocation gates but adds no
+semantic descriptor validation. A migration must type sector, orientation
+order/sign, reconstruction coordinate, and cross-size identity while preserving
+the production lock, source-error correlation, frozen prediction hashes, and
+no-refit rule. The separately typed cross/either correction is an erratum entry
+and does not by itself cover this two-sector full-curve contract.
+
+`score_issue43_secondary.py` is migration-required. It consumes the primary
+Issue #43 score and constructs a frozen ordered ledger containing reused
+`DeltaM/DeltaS`, an x17 radial competitor, a zero benchmark, an intentionally
+not-scorable H4+H12 stage, and an optional P48 `P4_S_prime` stage. The stage
+names, ordering, hashes, and numeric payloads act as the semantic contract.
+A migration must type the quantities, model/stage maps, excluded/not-scorable
+states, and evidence reuse. It must preserve the no-target-refit and raw-data
+boundaries. Its direct call to the untyped P48 kernel is not covered by the
+separate prospective typed wrapper.
+
+The norm-4 scalar production scorer and thermal-jet scorer are both
+migration-required and share one evidence boundary. The scalar path orders
+`U`, `P4_D`, and root-gap coordinates across two lineages and six sizes, then
+applies frozen q2/Jordan and secondary transforms. The jet path orders ranks
+2--6 after Hermite--Krawtchouk projection and width normalization, then applies
+one cocycle multiplier to both lineages. A migration must type every quantity,
+mode, normalization, lineage/size transform, and model order. It must also
+record that scalar and jet outputs reuse the same histograms and cannot be
+added as independent evidence. Existing covariance blocks, multipliers,
+provenance, delete-one construction, and numerical scores remain fixed.
+
+`score_norm5_thermal_jet.py` is migration-required. It recomputes the intrinsic
+center, ranks 2--6 Krawtchouk thermal jet, canonical rank-gap width, and three
+point lineage residuals before applying width-collapse and frozen q2/Jordan
+cocycles. Counter-identical runs use synchronized delete-one covariance groups,
+while disjoint groups contribute independent blocks. A migration must type the
+modes, normalization, lineage maps, model order, and covariance-group relation.
+It must also preserve that width and cocycle diagnostics reuse the same raw
+curves and are not additive evidence. Prediction chronology, multipliers,
+numerical-rank cutoff, jackknife construction, and scores remain unchanged.
+
+The axis-pair annihilator score path is migration-required as one operational
+unit. The base scorer reconstructs the cross matching function from
+`K_minus/K_plus` rank histograms, solves implicit ordinary and annihilator
+roots, and compares an `L^(13/4)`-rescaled adjacent-size combination. The
+stable entrypoint corrects batch-reader ordering and delegates to that base
+without adding a semantic gate. A future migration must type both the implicit
+root-location quantity and the ordered adjacent-size relationship, while
+preserving the stable reader contract; this audit does not change its frozen
+numerics or reinterpret existing score artifacts.
