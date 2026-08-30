@@ -1,0 +1,41 @@
+{
+  "schema": "matching-one/p250-radius-selector-prereg/v1",
+  "issue": 250,
+  "status": "frozen_before_radius_2_3_4_evaluation",
+  "base_commit": "c5bd02561f300b0c47880d15125a6295bceb190a",
+  "observable": "N325 norm-5 local landing-pivotal H4 charged rows",
+  "frozen_candidates": [
+    {"candidate": "R1", "radius": 1, "source": "reuse_c5bd025_same_counter_stream"},
+    {"candidate": "R2", "radius": 2, "source": "fresh_evaluation"},
+    {"candidate": "R3", "radius": 3, "source": "fresh_evaluation"},
+    {"candidate": "R4", "radius": 4, "source": "fresh_evaluation"}
+  ],
+  "fixed_geometry": {
+    "parent": [8, 1],
+    "child_order": 325,
+    "hands": ["plus", "minus"],
+    "translated_triangles": "(0,0),(d,0),(0,d)",
+    "separations": [1, 2, 3],
+    "charged_channels": ["113", "122"]
+  },
+  "fixed_stream": {
+    "samples_per_candidate": 4000,
+    "batches": 40,
+    "workers": 8,
+    "p": 0.59274605079,
+    "seed": 25011312220260901,
+    "replica_counter": [0, 4000]
+  },
+  "selection_rule": {
+    "two_point_ready": "all G1/G2 x plus/minus have abs(z)>=2 at a separation",
+    "cubic_nondegenerate": "local-variance-normalized 8-real covariance has positive diagonal and an invertible correlation matrix",
+    "candidate_pass": "at least two separations are simultaneously two_point_ready and cubic_nondegenerate",
+    "tie_break": "first candidate in the frozen R1,R2,R3,R4 order",
+    "phase_policy": "phase closure and phase p-values are not used for selection"
+  },
+  "claim_boundary": [
+    "This is a common-counter geometry selector, not production evidence.",
+    "The scan changes only the annular landing radius of the same local axis-minus-diagonal H4 insertion.",
+    "Failure of every candidate would reject this scanned local insertion family, not charged OPEs in general."
+  ]
+}
