@@ -1,0 +1,378 @@
+{
+  "lorentzian_support_gate": {
+    "N": 4,
+    "coordinates": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "family_masks": [
+      3,
+      12
+    ],
+    "fixed_lines_checked": 1,
+    "line": [
+      0,
+      1
+    ],
+    "matrix": [
+      [
+        2,
+        0
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "minimality_gate": "all honest-face connected HNFs in increasing N and lexicographic matrix/line order",
+    "witness": {
+      "candidate_exchanges": [
+        {
+          "left_in_support": false,
+          "left_mark": [
+            0,
+            null,
+            null
+          ],
+          "left_mask": 6,
+          "right_in_support": false,
+          "right_mark": [
+            0,
+            null,
+            null
+          ],
+          "right_mask": 9,
+          "target_coordinate": 3
+        },
+        {
+          "left_in_support": false,
+          "left_mark": [
+            1,
+            [
+              1,
+              0
+            ],
+            1
+          ],
+          "left_mask": 10,
+          "right_in_support": false,
+          "right_mark": [
+            1,
+            [
+              1,
+              0
+            ],
+            1
+          ],
+          "right_mask": 5,
+          "target_coordinate": 4
+        }
+      ],
+      "left_exponent": [
+        2,
+        1,
+        1,
+        0,
+        0
+      ],
+      "left_mask": 3,
+      "left_sites": [
+        0,
+        1
+      ],
+      "right_exponent": [
+        2,
+        0,
+        0,
+        1,
+        1
+      ],
+      "right_mask": 12,
+      "right_sites": [
+        2,
+        3
+      ],
+      "source_coordinate": 1
+    }
+  },
+  "normalized_matching_gate": {
+    "N": 11,
+    "cut_upper_masks": [],
+    "dead_end_additions": [
+      {
+        "coordinate": [
+          3,
+          0
+        ],
+        "new_mark": [
+          2,
+          null,
+          null
+        ],
+        "new_mask": 479,
+        "site": 3
+      },
+      {
+        "coordinate": [
+          0,
+          2
+        ],
+        "new_mark": [
+          2,
+          null,
+          null
+        ],
+        "new_mask": 503,
+        "site": 5
+      },
+      {
+        "coordinate": [
+          1,
+          1
+        ],
+        "new_mark": [
+          2,
+          null,
+          null
+        ],
+        "new_mask": 983,
+        "site": 9
+      },
+      {
+        "coordinate": [
+          2,
+          1
+        ],
+        "new_mark": [
+          2,
+          null,
+          null
+        ],
+        "new_mask": 1495,
+        "site": 10
+      }
+    ],
+    "dead_end_mask": 471,
+    "dead_end_sites": [
+      0,
+      1,
+      2,
+      4,
+      6,
+      7,
+      8
+    ],
+    "fixed_lines_checked": 138,
+    "layer_pairs_checked": 205,
+    "line": [
+      1,
+      -3
+    ],
+    "lower_layer": 7,
+    "lower_size": 66,
+    "matrix": [
+      [
+        11,
+        3
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "maximum_flow": 605,
+    "minimality_gate": "full exact normalized-matching max-flow test over honest HNFs in increasing order",
+    "neighbor_masks": [],
+    "required_flow": 726,
+    "upper_size": 11,
+    "violating_lower_masks": [
+      471,
+      743,
+      925,
+      942,
+      1259,
+      1395,
+      1486,
+      1653,
+      1721,
+      1850,
+      1884
+    ],
+    "violating_ratio": "11/66 > 0/11"
+  },
+  "normalized_q_real_root_gate": {
+    "N": 6,
+    "audit": {
+      "all_roots_real": false,
+      "coefficients_low_to_high": [
+        "1/5",
+        "3/5",
+        "3/5"
+      ],
+      "degree": 2,
+      "distinct_real_roots": 0,
+      "signs_at_negative_infinity": [
+        1,
+        -1,
+        -1
+      ],
+      "signs_at_positive_infinity": [
+        1,
+        1,
+        -1
+      ],
+      "squarefree_degree": 2,
+      "sturm_sequence": [
+        [
+          "1/5",
+          "3/5",
+          "3/5"
+        ],
+        [
+          "3/5",
+          "6/5"
+        ],
+        [
+          "-1/20"
+        ]
+      ]
+    },
+    "fixed_lines_checked": 10,
+    "layer_counts": [
+      0,
+      0,
+      3,
+      12,
+      9,
+      0,
+      0
+    ],
+    "line": [
+      1,
+      0
+    ],
+    "matrix": [
+      [
+        2,
+        0
+      ],
+      [
+        0,
+        3
+      ]
+    ],
+    "minimality_gate": "honest HNFs in increasing order; zero monomial factor removed",
+    "removed_zero_root_multiplicity": 2,
+    "transform": "normalized_q_generating"
+  },
+  "question": "Can standard Lorentzian, normalized-matching, or real-rooted sufficient structures prove the observed fixed-line ULC?",
+  "raw_count_real_root_gate": {
+    "N": 8,
+    "audit": {
+      "all_roots_real": false,
+      "coefficients_low_to_high": [
+        "4",
+        "24",
+        "54",
+        "48",
+        "12"
+      ],
+      "degree": 4,
+      "distinct_real_roots": 2,
+      "signs_at_negative_infinity": [
+        1,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      "signs_at_positive_infinity": [
+        1,
+        1,
+        1,
+        -1,
+        -1
+      ],
+      "squarefree_degree": 4,
+      "sturm_sequence": [
+        [
+          "4",
+          "24",
+          "54",
+          "48",
+          "12"
+        ],
+        [
+          "24",
+          "108",
+          "144",
+          "48"
+        ],
+        [
+          "2",
+          "9",
+          "9"
+        ],
+        [
+          "-8/3",
+          "-4/3"
+        ],
+        [
+          "-20"
+        ]
+      ]
+    },
+    "fixed_lines_checked": 36,
+    "layer_counts": [
+      0,
+      0,
+      4,
+      24,
+      54,
+      48,
+      12,
+      0,
+      0
+    ],
+    "line": [
+      1,
+      0
+    ],
+    "matrix": [
+      [
+        2,
+        0
+      ],
+      [
+        0,
+        4
+      ]
+    ],
+    "minimality_gate": "honest HNFs in increasing order; zero monomial factor removed",
+    "removed_zero_root_multiplicity": 2,
+    "transform": "raw_count_generating"
+  },
+  "schema_version": "p334-lorentzian-support-gate-v1",
+  "verdict": {
+    "fixed_line_normalized_matching_property": "closed_by_exact_N11_layer_cut",
+    "hessian_signature_test": "not_run_support_necessary_condition_already_fails",
+    "homogenized_multiaffine_lorentzian": "closed_by_minimal_N4_M_convex_exchange_failure",
+    "normalized_q_generating_real_rootedness": "closed_by_exact_N6_quadratic",
+    "raw_count_generating_real_rootedness": "closed_by_exact_N8_Sturm_count",
+    "remaining_claim": "ULC_through_N12_remains_exact_bounded_evidence_but_requires_a_weaker_direct_rank_sequence_mechanism"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": "p334-lorentzian-support-gate-manifest-v1",
+  "parent_commit": "be32ae0",
+  "question": "Can the fixed-line ULC conjecture inherit a standard Lorentzian, real-rooted, or normalized-matching proof?",
+  "geometry_gate": "honest-face connected HNF quotients, increasing N and lexicographic matrix/line order",
+  "primary_gate": "M-convex symmetric exchange for the homogenized multiaffine support",
+  "fallback_gates": [
+    "real-rooted normalized-q rank polynomial",
+    "real-rooted raw-count rank polynomial",
+    "full exact normalized-matching layer flow"
+  ],
+  "stop_rule": "close each route at its first exact counterexample; do not expand after a necessary condition fails",
+  "hessian_policy": "run only if M-convex support passes",
+  "status": "completed_exact",
+  "production_required": false
+}
