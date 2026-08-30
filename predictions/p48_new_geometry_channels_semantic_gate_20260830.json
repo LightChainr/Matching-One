@@ -1,0 +1,122 @@
+{
+  "schema": "matching-one/observable-semantic-gate/v1",
+  "status": "semantic_gate_added_after_frozen_p48_new_geometry_score",
+  "frozen_kernel": "scripts/score_p48_new_geometry_channels.py",
+  "frozen_kernel_git_blob": "6302d49471a9e78f311d8f492e7845c2b3f5ed7e",
+  "source_training_sizes": [65, 85, 130],
+  "target_sizes": [185, 265],
+  "projector_order": ["P4_S", "P4_D", "P4_S_prime", "P4_D_prime"],
+  "projectors": {
+    "P4_S": {
+      "sector": "matching_even",
+      "response_coordinate": "value",
+      "normalization_power_in_N": {"numerator": 1, "denominator": 1},
+      "scaled_key": "A_S_N1",
+      "source_descriptor": {
+        "channel": "cross",
+        "combination": "even",
+        "coordinate": "p",
+        "orientation_order": "second_minus_first",
+        "normalization": "angular_normalized",
+        "quantity": "orientation_contrast"
+      },
+      "target_descriptor": {
+        "channel": "cross",
+        "combination": "even",
+        "coordinate": "p",
+        "orientation_order": "second_minus_first",
+        "normalization": "angular_normalized",
+        "quantity": "orientation_contrast"
+      },
+      "exact_registered_map": {"scale": 1.0, "offset": 0.0}
+    },
+    "P4_D": {
+      "sector": "matching_odd",
+      "response_coordinate": "value",
+      "normalization_power_in_N": {"numerator": 13, "denominator": 8},
+      "scaled_key": "A_D_N13_8",
+      "source_descriptor": {
+        "channel": "cross",
+        "combination": "odd",
+        "coordinate": "p",
+        "orientation_order": "first_minus_second",
+        "normalization": "angular_normalized",
+        "quantity": "orientation_contrast"
+      },
+      "target_descriptor": {
+        "channel": "cross",
+        "combination": "odd",
+        "coordinate": "p",
+        "orientation_order": "first_minus_second",
+        "normalization": "angular_normalized",
+        "quantity": "orientation_contrast"
+      },
+      "exact_registered_map": {"scale": 1.0, "offset": 0.0}
+    },
+    "P4_S_prime": {
+      "sector": "matching_even",
+      "response_coordinate": "first_p_derivative",
+      "normalization_power_in_N": {"numerator": 5, "denominator": 4},
+      "scaled_key": "A_Sprime_N5_4",
+      "source_descriptor": {
+        "channel": "cross",
+        "combination": "even",
+        "coordinate": "p",
+        "orientation_order": "second_minus_first",
+        "normalization": "angular_normalized",
+        "quantity": "orientation_contrast"
+      },
+      "target_descriptor": {
+        "channel": "cross",
+        "combination": "even",
+        "coordinate": "p",
+        "orientation_order": "second_minus_first",
+        "normalization": "angular_normalized",
+        "quantity": "orientation_contrast"
+      },
+      "exact_registered_map": {"scale": 1.0, "offset": 0.0}
+    },
+    "P4_D_prime": {
+      "sector": "matching_odd",
+      "response_coordinate": "first_p_derivative",
+      "normalization_power_in_N": {"numerator": 5, "denominator": 8},
+      "scaled_key": "A_Dprime_N5_8",
+      "source_descriptor": {
+        "channel": "cross",
+        "combination": "odd",
+        "coordinate": "p",
+        "orientation_order": "first_minus_second",
+        "normalization": "angular_normalized",
+        "quantity": "orientation_contrast"
+      },
+      "target_descriptor": {
+        "channel": "cross",
+        "combination": "odd",
+        "coordinate": "p",
+        "orientation_order": "first_minus_second",
+        "normalization": "angular_normalized",
+        "quantity": "orientation_contrast"
+      },
+      "exact_registered_map": {"scale": 1.0, "offset": 0.0}
+    }
+  },
+  "canonical_inputs": {
+    "source": {
+      "path": "results/server-20260828/P48-retrospective/summary.json",
+      "sha256": "5f364725adb773c60f720107bf5b1b9f2213ee2de8ff131fe1701cf3ed98838b"
+    },
+    "185": {
+      "path": "results/server-20260828/P43-heldout-fullcurve-500m/analysis/n185.p48.json",
+      "sha256": "bc7cf25e11a4284f332b0e2f2abe6b0298dc4a5c567464bb03d0cc5c3cc58ad9"
+    },
+    "265": {
+      "path": "results/server-20260828/P43-heldout-fullcurve-500m/analysis/n265.p48.json",
+      "sha256": "dbcd2d857bba8741217fae987116e0205b46913fba8f6074f14d9efc91a13d27"
+    }
+  },
+  "target_refit_parameters": 0,
+  "target_relation": "N=185 and N=265 use independent disjoint counter domains",
+  "source_error_relation": "within each projector the single frozen source-amplitude uncertainty is shared across both target predictions",
+  "covariance_contract": "diag(target_scaled_se^2) + Var(source_amplitude) * 11^T, separately for each projector",
+  "evidence_boundary": "The four projectors are correlated summaries of shared source and target blocks, not four independent evidence rows. They remain distinct from the fixed-coordinate P31/P43 either/even DeltaS observable and from the separate prospective P4_S_prime scorer."
+}

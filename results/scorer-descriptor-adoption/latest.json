@@ -11,7 +11,6 @@
     "scripts/score_norm5_thermal_jet.py": "scores intrinsic-center ranks 2 through 6 thermal jets, canonical widths, lineage width collapse, and q2/Jordan cocycles without typed mode, normalization, lineage, covariance-group, or shared-evidence semantics",
     "scripts/score_p159_pell_hex_filter.py": "scores primitive rank-1 homology line probabilities through transported C/Q/S character coordinates across two Pell designs with implicit basis, phase, normalization, and reused-evidence semantics",
     "scripts/score_p231_vacuum_kdv_sector.py": "scores ordered C/Q/S sector coordinates across two designs against a per-unit-g4 theory vector without typed coordinate or normalization descriptors",
-    "scripts/score_p48_new_geometry_channels.py": "scores four intrinsic-center P4 projector channels from retrospective source amplitudes on independent N185/N265 targets with implicit quantity, geometry, scaling, and shared-source-covariance semantics",
     "scripts/score_p49_fullcurve_doubling.py": "scores matching tails, thermal even/odd contrasts, signed lineage root gaps, and normalized P4 projectors across doubled sizes without typed quantity families",
     "scripts/score_p50_fullcurve_n290.py": "scores thermal-even DeltaM, slope, signed root-gap, and four P4 quantities across independent N145/N290 lineages using implicit feature, order, sign, and stream semantics",
     "scripts/score_p50_sprime_n290.py": "reuses the P50 histogram to score P4_S_prime against ordered q2 and Jordan frozen models without typed quantity, model-order, or shared-evidence semantics",
@@ -27,12 +26,12 @@
   ],
   "corpus_glob": "scripts/*score*.py",
   "counts": {
-    "channel_bearing_migration_required": 20,
-    "covered_frozen_kernel": 10,
+    "channel_bearing_migration_required": 19,
+    "covered_frozen_kernel": 11,
     "descriptor_not_applicable_generic_utility": 1,
-    "direct_typed_entrypoint": 11,
+    "direct_typed_entrypoint": 12,
     "outside_registered_typed_path": 0,
-    "total": 42
+    "total": 43
   },
   "descriptor_not_applicable_generic_utilities": {
     "scripts/kappa3_half_score.py": "generic Bernoulli score-polynomial and aggregation helper; intentionally accepts an opaque caller-supplied observable D(C) and defines no topology observable"
@@ -181,7 +180,12 @@
     {
       "git_blob_sha": "6302d49471a9e78f311d8f492e7845c2b3f5ed7e",
       "path": "scripts/score_p48_new_geometry_channels.py",
-      "status": "channel_bearing_migration_required"
+      "status": "covered_frozen_kernel"
+    },
+    {
+      "git_blob_sha": "ce751744be378731e2e0c63ffe251dde234a332a",
+      "path": "scripts/score_p48_new_geometry_channels_typed.py",
+      "status": "direct_typed_entrypoint"
     },
     {
       "git_blob_sha": "18046c546b87e0feebbf43cb6060820630b281c4",
@@ -259,6 +263,7 @@
     "scripts/score_issue50_n290_typed.py": "scripts/score_issue50_n290.py",
     "scripts/score_matching_odd_synthesis_typed.py": "scripts/score_matching_odd_synthesis.py",
     "scripts/score_norm5_harmonic_primary_typed.py": "scripts/score_norm5_harmonic_primary.py",
+    "scripts/score_p48_new_geometry_channels_typed.py": "scripts/score_p48_new_geometry_channels.py",
     "scripts/score_p48_sprime_frozen_typed.py": "scripts/score_p48_sprime_frozen.py",
     "scripts/score_p48_sprime_prospective_typed.py": "scripts/score_p48_sprime_prospective.py"
   }

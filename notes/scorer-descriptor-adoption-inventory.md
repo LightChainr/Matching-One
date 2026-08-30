@@ -1,12 +1,12 @@
 # Scorer descriptor-adoption inventory
 
-In this checked snapshot, the exact `scripts/*score*.py` corpus contains 42
-files. Python-AST inspection finds eleven
+In this checked snapshot, the exact `scripts/*score*.py` corpus contains 43
+files. Python-AST inspection finds twelve
 direct typed entrypoints importing both `ObservableDescriptor` and
-`map_observable` from `wrapping_channels`. Ten frozen kernels are covered by
+`map_observable` from `wrapping_channels`. Eleven frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Twenty paths are confirmed channel-bearing and
+a descriptor is not applicable. Nineteen paths are confirmed channel-bearing and
 require typed migrations: `score_angular_root_amplitude.py`,
 `score_axis_pair_annihilator.py`, its stable entrypoint,
 `score_intrinsic_quantile_center_n145_n290.py`,
@@ -15,7 +15,6 @@ require typed migrations: `score_angular_root_amplitude.py`,
 `score_norm4_thermal_jet.py`, `score_norm5_thermal_jet.py`,
 `score_p159_pell_hex_filter.py`,
 `score_p231_vacuum_kdv_sector.py`,
-`score_p48_new_geometry_channels.py`,
 `score_p49_fullcurve_doubling.py`,
 `score_p50_fullcurve_n290.py`, `score_p50_sprime_n290.py`,
 `score_prequential_evidence.py`,
@@ -42,7 +41,7 @@ unchanged.
 but no current scorer has that status. Static membership alone would not prove
 a semantic bug, data-provenance failure, or need for migration; any future
 corpus addition must still be reviewed before modification. Issue #146 remains
-open because inventory classification is not the same as implementing the 20
+open because inventory classification is not the same as implementing the 19
 required typed migrations.
 
 The `kappa3_half_score.py` exception is narrow. It defines only exact Bernoulli
@@ -233,17 +232,17 @@ non-independent evidence relation. It must preserve the exact oracle, frozen
 continuum baselines, covariance transform, post-reveal boundary, and all
 existing gate conclusions.
 
-`score_p48_new_geometry_channels.py` is migration-required and is not covered
-by the typed wrapper for the separate prospective `P4_S_prime` kernel. This
-entrypoint jointly scores four intrinsic-center projectors (`P4_S`, `P4_D`,
-`P4_S_prime`, and `P4_D_prime`) with different powers, transports frozen
-source amplitudes from N=65/85/130 to independent N=185/265 targets, and adds
-the shared source-amplitude uncertainty as a correlated covariance component.
-A migration must type each projector quantity, intrinsic-center geometry,
-normalization power, source-to-target map, target-stream independence, and
-shared-source evidence relation. It must preserve the no-target-refit rule,
-two-by-two covariance construction, distinction from fixed-coordinate
-P31/P43 `either/even` DeltaS, and all numerical scores.
+`score_p48_new_geometry_channels.py` is now a covered frozen kernel, separate
+from the typed wrappers for the prospective `P4_S_prime` scorer. Its typed
+entrypoint validates four exact cross-size identities: angular-normalized
+matching-even `P4_S/P4_S_prime` use the frozen second-minus-first order, while
+matching-odd `P4_D/P4_D_prime` use first-minus-second. The semantic gate also
+freezes value-versus-first-derivative coordinates, the four exact N powers,
+scaled keys, N=65/85/130 source, independent N=185/265 targets, canonical input
+hashes, and shared-source covariance contract. It preserves every numerical
+score, the no-target-refit rule, and the distinction from fixed-coordinate
+P31/P43 `either/even` DeltaS. The four summaries share source and target blocks
+and are not promoted to four independent evidence rows.
 
 `threshold_score_modes.py` is migration-required rather than a generic
 Krawtchouk helper. Although it exposes reusable basis functions, its operational
