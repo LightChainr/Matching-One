@@ -1,0 +1,66 @@
+version: 1
+frozen_date: 2026-08-30
+status: pre_score_protocol_freeze
+issue: 13
+claim_level: exploratory_exact_screen
+source_commit: e7d63b4c08cfb63a9c027959087c8beaa6228fdf
+purpose: >
+  Apply the exact terminal-reliability evaluator to the complete connected
+  three-terminal, one-internal-vertex census.  This is a production screen of
+  the newly frozen candidate space, not another graph-enumeration utility.
+
+candidate_space:
+  terminals: 3
+  internal_vertices: 1
+  quotient: full_terminal_symmetric_group
+  inclusion: connected_carrier
+  expected_orbits: 11
+  primary_subset:
+    rule: internal_degree_at_least_3
+    expected_orbits: 4
+  secondary_subset:
+    rule: all_connected_carriers
+    expected_orbits: 11
+
+formal_balance:
+  equation: P(all_three_connected) - P(all_three_separate) = 0
+  probability_model: one_shared_independent_bond_probability_p
+  representation: exact_integer_Bernstein_counts_then_primitive_integer_power_polynomial
+  root_interval: open_unit_interval
+  root_rule: unique_crossing_if_present
+
+ranking:
+  target: "0.5927460507896"
+  target_role: square_site_reference_only
+  primary_order:
+    - absolute_root_distance_to_target
+    - edge_count
+    - canonical_graph_encoding
+  report:
+    - canonical_graph_encoding
+    - edges
+    - orbit_multiplicity
+    - internal_degree
+    - exact_balance_polynomial
+    - isolated_root_interval
+    - decimal_root
+    - target_distance
+    - proper_partial_partition_mass_at_root
+
+decision:
+  retained_for_structural_followup: >
+    primary-subset candidate with the smallest target distance, provided its
+    root is in (0,1); ties follow the frozen ranking order
+  eliminated_as_exact_square_site_claim: all_candidates
+  reason: >
+    planarity, periodic tiling, dual-cell correspondence, and preservation of
+    the square-site probability law are not certified by this screen
+
+claim_boundary:
+  included: >
+    exact reliability polynomials and formal three-terminal balance roots for
+    the complete bounded connected census, plus a frozen exploratory ranking
+  excluded: >
+    a square-site threshold formula, a percolation bound, a periodic tiling,
+    a self-dual embedding, a critical manifold, or convergence of a gadget family
+  parent_issue: remain_open
