@@ -118,6 +118,17 @@ VALUE_COLUMNS = (
     "sum_O_sep4_J_S_im",
     "sum_O_sep4_J_D_re",
     "sum_O_sep4_J_D_im",
+    "sum_W_line_re",
+    "sum_W_line_im",
+    "sum_abs_W_line2",
+    "sum_W_line_conj_J_S_re",
+    "sum_W_line_conj_J_S_im",
+    "sum_O_ext_W_line_re",
+    "sum_O_ext_W_line_im",
+    "sum_O_near_W_line_re",
+    "sum_O_near_W_line_im",
+    "sum_O_sep4_W_line_re",
+    "sum_O_sep4_W_line_im",
 )
 
 
