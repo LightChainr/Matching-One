@@ -1,0 +1,32 @@
+{
+  "schema": "matching-one/p337-N65-charged-activity-net-manifest/v1",
+  "issues": [337, 334],
+  "parent_commit": "83207c7",
+  "archive_commit": "1714141",
+  "method": "fixed covariance transport from (W,birth,exit) to (W,birth-exit,birth+exit)",
+  "new_simulation": false,
+  "dependency_group": "N65 projective-birth 20k shared-counter block at 1714141",
+  "main_result": {
+    "A_full_quadratic_3df": 12.153148777336364,
+    "A_net_only_quadratic_1df": 11.493595890500796,
+    "A_activity_only_quadratic_1df": 0.28593072697357413,
+    "A_activity_increment_given_W_net": 0.236066813998453,
+    "D_full_quadratic_3df": 1.5091860895963016,
+    "classification": "A net-timing counterflow; no D mode"
+  },
+  "crosswalk": {
+    "J_plus": "#334 common positive activity",
+    "J_minus": "#334 source-sink counterflow residual",
+    "sector_boundary": "A/B1 and D/B2 are intra-orbit; 77aa3fe H4 is inter-orbit",
+    "pooling": "none across dependency groups"
+  },
+  "artifacts": {
+    "script": "scripts/score_n65_charged_activity_net.py",
+    "certificate": "results/p337-n65-charged-activity-net/latest.json",
+    "summary": "results/p337-n65-charged-activity-net/latest.md",
+    "science_card": "results/p337-n65-charged-activity-net/SCIENTIFIC_CARD.md",
+    "note": "notes/p337-n65-charged-activity-net.md",
+    "test": "tests/test_n65_charged_activity_net.py"
+  },
+  "claim_boundary": "mechanism localization inside one exploratory archive; no additive evidence or scaling claim"
+}
