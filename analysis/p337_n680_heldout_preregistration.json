@@ -1,0 +1,250 @@
+{
+  "claim_boundary": "one preregistered N680 same-lineage heldout discriminator; model point forecasts and projective zero control only",
+  "frozen_models_in_scoring_order": [
+    {
+      "H4_amplitude": -0.001841297042231899,
+      "H4_amplitude_target_variance": 9.121524520926583e-07,
+      "absolute_K_A": [
+        0.0011807237642436524,
+        -0.001755157471259666
+      ],
+      "absolute_target_covariance": [
+        [
+          3.750734537135582e-07,
+          -5.5755037248549e-07
+        ],
+        [
+          -5.575503724854901e-07,
+          8.288041043184913e-07
+        ]
+      ],
+      "name": "two_mode_recurrence",
+      "pair_second_minus_first": -0.0029358812355033187,
+      "pair_sign": "negative",
+      "role": "primary recurrence target"
+    },
+    {
+      "H4_amplitude": -0.0010271538030730638,
+      "H4_amplitude_target_variance": 7.351465399434923e-09,
+      "absolute_K_A": [
+        0.0006586579335138415,
+        -0.000979101486749369
+      ],
+      "absolute_target_covariance": [
+        [
+          3.022893279402908e-09,
+          -4.493560547215158e-09
+        ],
+        [
+          -4.493560547215158e-09,
+          6.679721884021323e-09
+        ]
+      ],
+      "name": "single_frozen_lambda0",
+      "pair_second_minus_first": -0.0016377594202632104,
+      "pair_sign": "negative",
+      "role": "frozen nominal H4 single mode"
+    },
+    {
+      "H4_amplitude": -0.003037819395650872,
+      "H4_amplitude_target_variance": 1.0470547208492358e-06,
+      "absolute_K_A": [
+        0.001947988548103874,
+        -0.0028957041076605613
+      ],
+      "absolute_target_covariance": [
+        [
+          4.305447290910916e-07,
+          -6.400089681092915e-07
+        ],
+        [
+          -6.400089681092916e-07,
+          9.513796165268058e-07
+        ]
+      ],
+      "name": "single_free_lambda",
+      "pair_second_minus_first": -0.004843692655764435,
+      "pair_sign": "negative",
+      "role": "same-lineage descriptive free transfer"
+    },
+    {
+      "H4_amplitude": -0.008911963637122733,
+      "H4_amplitude_target_variance": 5.773030305483423e-07,
+      "absolute_K_A": [
+        0.0057147581357494285,
+        -0.008495044092576369
+      ],
+      "absolute_target_covariance": [
+        [
+          2.373847058244545e-07,
+          -3.5287469652773975e-07
+        ],
+        [
+          -3.528746965277398e-07,
+          5.245517019180972e-07
+        ]
+      ],
+      "name": "scale_neutral",
+      "pair_second_minus_first": -0.014209802228325798,
+      "pair_sign": "negative",
+      "role": "no-decay control"
+    }
+  ],
+  "geometry": {
+    "F3_reduction_nondegenerate": true,
+    "H4_covectors_exact": [
+      "-4633/7225",
+      "6887/7225"
+    ],
+    "N": 680,
+    "Smith_classes": [
+      [
+        2,
+        340
+      ],
+      [
+        2,
+        340
+      ]
+    ],
+    "canonicalization": "D4-equivalent canonical representatives only",
+    "charged_projective_scalar": {
+      "frozen_amplitude_target": 0.0,
+      "value": 0.5
+    },
+    "common_multiplier": [
+      1,
+      1
+    ],
+    "exact_angle_flip": true,
+    "first": [
+      22,
+      14
+    ],
+    "first_period_matrix": [
+      [
+        22,
+        -14
+      ],
+      [
+        14,
+        22
+      ]
+    ],
+    "parent_H4_covectors_exact": [
+      "4633/7225",
+      "-6887/7225"
+    ],
+    "parent_N340": [
+      [
+        18,
+        4
+      ],
+      [
+        14,
+        12
+      ]
+    ],
+    "raw_multiplier_images": [
+      [
+        14,
+        22
+      ],
+      [
+        2,
+        26
+      ]
+    ],
+    "second": [
+      26,
+      2
+    ],
+    "second_period_matrix": [
+      [
+        26,
+        -2
+      ],
+      [
+        2,
+        26
+      ]
+    ]
+  },
+  "observable": {
+    "decomposition": {
+      "A_projective_scalar": "2(c_second*K_first-c_first*K_second)/(c_second-c_first)",
+      "H4_amplitude": "(K_second-K_first)/(c_second-c_first)",
+      "transform": [
+        [
+          -0.6271701388888888,
+          0.6271701388888888
+        ],
+        [
+          1.1956597222222223,
+          0.8043402777777778
+        ]
+      ]
+    },
+    "definition": "K_A=p(1-p)Jminus_A/W_A=d_eta log W_A",
+    "vector_order": [
+      "K_A_first_22_plus_14i",
+      "K_A_second_26_plus_2i"
+    ]
+  },
+  "power": {
+    "fixed_amplitude_gaps": {
+      "two_mode_vs_fixed_lambda0": 0.0008141432391588351,
+      "two_mode_vs_free_single": 0.0011965223534189731,
+      "two_mode_vs_scale_neutral": 0.007070666594890834
+    },
+    "projected_measurement_standard_error": 0.00039493215596658396,
+    "projected_measurement_z_for_gaps": {
+      "two_mode_vs_fixed_lambda0": 2.0614761975161158,
+      "two_mode_vs_free_single": 3.0296908857434577,
+      "two_mode_vs_scale_neutral": 17.903496810953772
+    },
+    "required_samples_for_3sigma_two_mode_vs_free_single": 117659531.46241818,
+    "target_uncertainty_note": "power is for fixed point forecasts; source-fit uncertainty is retained separately in predictive scoring",
+    "variance_source": "N340 12M/shape observed H4-amplitude variance",
+    "why_120m": "smallest round design above the N340-variance 3-sigma requirement; 80M would project only 2.47 sigma"
+  },
+  "production": {
+    "archive_policy": "retain exact raw remotely; commit lossless compressed raw only if below GitHub hard limit",
+    "batches": 80,
+    "engine": "1714141 projective-birth integer-period runner",
+    "full_batch_covariance_required": true,
+    "machine": {
+      "class": "Kunpeng AArch64, 16 vCPU, 32 GiB",
+      "id": "033945d8bf8b47a7acf475c595169e07",
+      "name": "DevEnvC_HZsCM6",
+      "selection": "idle at freeze audit"
+    },
+    "replica_offset": 0,
+    "samples_per_shape": 120000000,
+    "seed": 202608337680,
+    "threads": 16
+  },
+  "schema": "matching-one/P337-N680-heldout-preregistration/v1",
+  "scoring_contract": {
+    "fixed_model_order": [
+      "two_mode_recurrence",
+      "single_frozen_lambda0",
+      "single_free_lambda",
+      "scale_neutral"
+    ],
+    "no_exponent_fit": true,
+    "no_model_refit": true,
+    "no_post_reveal_basis_change": true,
+    "pair_expected_sign": "negative",
+    "primary_coordinate": "H4_amplitude",
+    "projective_scalar_zero_control": true,
+    "report_measurement_only_and_source_uncertainty_aware_residuals": true
+  },
+  "source": {
+    "N340_variance_source": "results/server-20260830/P337-N340-second-child/score.json",
+    "p_ref": 0.59274605079,
+    "recurrence": "results/p337-three-generation-recurrence/latest.json",
+    "recurrence_commit": "4024a7c"
+  },
+  "status": "frozen before any N680 projective-birth generation or inspection"
+}
