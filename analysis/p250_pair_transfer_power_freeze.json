@@ -1,0 +1,88 @@
+{
+  "schema": "matching-one/p250-pair-transfer-power-freeze/v1",
+  "source": {
+    "path": "results/huawei-20260830/P250-z5-projective-leg-fresh-10k/response_10k.batches.csv",
+    "samples": 10000,
+    "uses": "Hermitian two-point rows only; these equal Re(T_r) exactly",
+    "excluded": [
+      "cubic support",
+      "cubic phase",
+      "transfer-shape residuals"
+    ]
+  },
+  "primary_separations": [
+    1,
+    2,
+    3
+  ],
+  "minimum_real_abs_z": 5.0,
+  "source_resolution": {
+    "1": {
+      "channel_abs_z": {
+        "G1_plus": 19.025641010043696,
+        "G2_plus": 19.073798905462535,
+        "G1_minus": 17.759980579814084,
+        "G2_minus": 15.396799794945
+      },
+      "minimum_real_abs_z": 15.396799794945
+    },
+    "2": {
+      "channel_abs_z": {
+        "G1_plus": 8.755899860301419,
+        "G2_plus": 8.73231712728891,
+        "G1_minus": 11.7742835574592,
+        "G2_minus": 8.608117358083954
+      },
+      "minimum_real_abs_z": 8.608117358083954
+    },
+    "3": {
+      "channel_abs_z": {
+        "G1_plus": 3.086245986409422,
+        "G2_plus": 4.572372734333059,
+        "G1_minus": 3.816381927069282,
+        "G2_minus": 2.5037420795104333
+      },
+      "minimum_real_abs_z": 2.5037420795104333
+    }
+  },
+  "grid": [
+    {
+      "samples": 10000,
+      "projected_minimum_real_abs_z": {
+        "1": 15.396799794945,
+        "2": 8.608117358083954,
+        "3": 2.5037420795104333
+      },
+      "qualifies": false
+    },
+    {
+      "samples": 20000,
+      "projected_minimum_real_abs_z": {
+        "1": 21.77436308715451,
+        "2": 12.173716314301585,
+        "3": 3.540826005527871
+      },
+      "qualifies": false
+    },
+    {
+      "samples": 40000,
+      "projected_minimum_real_abs_z": {
+        "1": 30.79359958989,
+        "2": 17.216234716167907,
+        "3": 5.0074841590208665
+      },
+      "qualifies": true
+    },
+    {
+      "samples": 80000,
+      "projected_minimum_real_abs_z": {
+        "1": 43.54872617430902,
+        "2": 24.34743262860317,
+        "3": 7.081652011055742
+      },
+      "qualifies": true
+    }
+  ],
+  "selection_rule": "first grid point with projected weakest Re(T) z>=5 at every d=1,2,3",
+  "selected_samples": 40000
+}

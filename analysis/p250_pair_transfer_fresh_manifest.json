@@ -1,0 +1,50 @@
+{
+  "schema": "matching-one/p250-pair-transfer-fresh-manifest/v1",
+  "issue": 250,
+  "status": "authorized_fresh_pair_transfer",
+  "runner_commit": "47d086f35f71ec70e66d4bce0610d72de0b447bf",
+  "scorer_commit": "47d086f35f71ec70e66d4bce0610d72de0b447bf",
+  "operator": "projective-leg rank-one root-membership charged row",
+  "run": {
+    "samples": 40000,
+    "batches": 100,
+    "workers": 16,
+    "p": 0.59274605079,
+    "seed": 25025033720260931,
+    "replica_offset": 0,
+    "replica_last_exclusive": 40000
+  },
+  "separations": [1, 2, 3, 4, 5, 6],
+  "transfer_gate": {
+    "primary_separations": [1, 2, 3],
+    "minimum_real_abs_z": 5.0,
+    "source": "analysis/p250_pair_transfer_power_freeze.json"
+  },
+  "frozen_score": {
+    "complex_row": "T_r(d)=[O_r(0)O_-r(d xhat)+O_r(0)O_-r(d yhat)]/2",
+    "axis_diagnostic": "A_r(d)=[O_r(0)O_-r(d xhat)-O_r(0)O_-r(d yhat)]/2",
+    "primary_shape_window": [1, 2, 3],
+    "exponential": "zero of (m23-m12, wrapped phase23-phase12) in all four hand-charge channels",
+    "power": "zero of (eta23-eta12, wrapped phase23-phase12) in all four hand-charge channels",
+    "deck_phase": [
+      "joint phase12/phase23 against zero",
+      "phase23-phase12 against zero"
+    ],
+    "amplitudes": "cancelled by adjacent complex ratios",
+    "cubic_fields": [],
+    "cubic_phase": "not computed"
+  },
+  "execution": {
+    "host": "Huawei-CodeBuddy-XPk2PZ",
+    "remote_directory": "/workspace/p250-projective-leg-pair-transfer-40k",
+    "response": "response_40k.json",
+    "batches": "response_40k.batches.csv",
+    "required_runner_flag": "--production-manifest analysis/p250_pair_transfer_fresh_manifest.json"
+  },
+  "claim_boundary": [
+    "The 40k choice uses only real two-point resolution from the existing 10k stream.",
+    "The fresh counter stream and amplitude-free shape scores were frozen before collection.",
+    "d4-d6 are retained tail diagnostics and need not pass the primary resolution gate.",
+    "A failed single-exponential or single-power score permits a transfer-state mixture; it is not absence of charged propagation."
+  ]
+}
