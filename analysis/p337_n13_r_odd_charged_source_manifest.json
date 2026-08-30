@@ -1,0 +1,40 @@
+{
+  "schema": "matching-one/p337-N13-R-odd-F3-charged-source-manifest/v1",
+  "issues": [337, 334],
+  "input_commit": "770fe27",
+  "geometry": "Gaussian quotient 3+2i, N=13",
+  "method": "exact 2^13 subset-state and 13*2^12 directed-boundary census",
+  "representation": {
+    "projective_lines": ["axis_x", "axis_y", "diag_plus", "diag_minus"],
+    "R_action": "(axis_x axis_y)(diag_plus diag_minus)",
+    "charged_basis": ["q_A=T_01-T_10", "q_D=T_12-T_11"],
+    "C4_charge": 2,
+    "D4_blocks": {"q_A": "B1", "q_D": "B2"}
+  },
+  "source": {
+    "continuous": "exp(s_C*q_C)",
+    "F3_phase": "u^q_C at u=omega, omega^3=1",
+    "one_point": "O_C(u)=E[q_C*u^q_C]",
+    "susceptibility": "W_C=E[q_C^2]"
+  },
+  "selection_rule": {
+    "A_source": "A only",
+    "D_source": "D only",
+    "H_response": "zero",
+    "A_D_cross_response": "zero"
+  },
+  "current_identity": "dW_C/dp=J_C_birth-J_C_exit coefficientwise for C=A,D",
+  "minimal_production_tuple": [
+    "W_A", "J_A_birth", "J_A_exit",
+    "W_D", "J_D_birth", "J_D_exit"
+  ],
+  "artifacts": {
+    "script": "scripts/p337_n13_r_odd_charged_source.py",
+    "certificate": "results/p337-n13-r-odd-charged-source/latest.json",
+    "summary": "results/p337-n13-r-odd-charged-source/latest.md",
+    "science_card": "results/p337-n13-r-odd-charged-source/SCIENTIFIC_CARD.md",
+    "note": "notes/p337-n13-r-odd-charged-source.md",
+    "test": "tests/test_p337_n13_r_odd_charged_source.py"
+  },
+  "claim_boundary": "exact finite charged-defect response and selection rule; no continuum-field identity or scaling claim"
+}
