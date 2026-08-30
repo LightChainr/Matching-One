@@ -59,14 +59,15 @@ def centered_fit(rows, predictors, outcome=lambda row: row["y"],
             y_rows.append(outcome(row) - ybar)
     x, y = np.asarray(x_rows), np.asarray(y_rows)
     active = np.sum(x * x, axis=0) > 1e-14
-    if not active[0]:
+    if names[0] == "age" and not active[0]:
         raise ValueError("age is unidentifiable after line centering")
     xa = x[:, active]
     rank = int(np.linalg.matrix_rank(xa))
-    age_position = list(np.flatnonzero(active)).index(0)
-    without_age = np.delete(xa, age_position, axis=1)
-    if rank != int(np.linalg.matrix_rank(without_age)) + 1:
-        raise ValueError("age lies in the frozen proxy column span")
+    if names[0] == "age":
+        age_position = list(np.flatnonzero(active)).index(0)
+        without_age = np.delete(xa, age_position, axis=1)
+        if rank != int(np.linalg.matrix_rank(without_age)) + 1:
+            raise ValueError("age lies in the frozen proxy column span")
     coefficients, _, _, singular = np.linalg.lstsq(xa, y, rcond=None)
     by_name = {name: 0.0 for name in names}
     for index, value in zip(np.flatnonzero(active), coefficients):

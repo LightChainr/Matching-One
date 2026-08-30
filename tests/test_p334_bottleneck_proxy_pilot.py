@@ -43,3 +43,5 @@ def test_collinear_frozen_proxy_span_keeps_age_identifiable():
     fit = MODULE.centered_fit(rows, ("age", "g_size", "duplicate"))
     assert abs(fit["coefficients"]["age"] + 4) < 1e-10
     assert fit["collinear_deficiency"] == 1
+    geometry_only = MODULE.centered_fit(rows, ("g_size", "duplicate"))
+    assert geometry_only["collinear_deficiency"] == 1
