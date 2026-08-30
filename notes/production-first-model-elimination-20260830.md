@@ -30,7 +30,7 @@ The current boundary is uneven and should be read literally:
 | Issue #275 Phase D, canonical `A_top/E_top` coordinates | **production-scored** on ten archived aligned direction pairs, including the P57 norm-5 N325/N425 blocks | full delete-one covariance and finite-model Mahalanobis exclusion; not a finite-sample theorem or a field identification | localize the surviving even response by activation, geometry and state current |
 | P154 norm-4 production | **Phase-D production-scored** at N65/N85/N130/N170/N260/N340 | immutable PR #273 blobs supply `K1/K2`, canonical `A_top/E_top` and full aligned-delete-one covariance for the declared 1.9B/1B blocks; all six are K1-dominant and reinforcing, but `E_top=1-P1` is topology, not the energy operator | treat this as the topological arm of Phase E; do not repeat scalar/common-line scoring or call it an energy projection |
 | Issue #275 Phase E, `J_top` versus `J_bulk` | **not done and not identifiable from the present observer set** | P154 stores only threshold-rank histograms and Kminus/Kplus moments. It has no same-batch ordinary bulk-energy/singlet row, cross-moment or joint covariance; an unconstrained `J_bulk` can therefore be changed without changing any stored statistic | recover a compatible same-batch energy row if it exists outside P154, otherwise minimally acquire `B,B2,A*B,E*B` and freeze explicit `J_top/J_bulk` transfer images |
-| Issue #370 M1/M2d/M2j synthetic ladder | **five exact-rational Level-E controls are main-integrated through PR #414** | M1 -> M2d, minimal M2d -> M2j, endpoint-M2j -> morphism-forced generic rank 3, semantic zero and one reachable-source gauge boundary are covered; this is not yet a generic compiler, physical M3c or independent verifier | use the fixtures as regression controls for one typed production compiler; do not build another toy example |
+| Issue #370 exact certificate framework | **five exact-rational Level-E controls plus basic envelope/recurrence/Hankel/ideal/realization primitives are main-integrated through `cc3c204`** | the canonical adapters remain fixture-shaped; arbitrary typed problem building, witness search, a separately implemented verifier, physical M3c, full gauge coverage and noisy production confidence sets are absent | connect one real frozen production covariance to the existing framework; do not build another toy example or parallel abstract compiler |
 | Issue #370 production elimination | **statistical Level-S applications exist** for E_top and P250, plus an observer-wise E_top outer audit | the outer audit is floating Gaussian Bonferroni/Fieller, not directed rational interval arithmetic, Positivstellensatz or SOS | escalate one bounded survivor only when the stronger proof object would change the survivor set |
 
 In particular, the norm-5 request is no longer waiting for a synthetic harness:
@@ -59,10 +59,16 @@ The former toy-fixture gap is now closed on main:
 | #412 / `58e01a4` | reachable-source minor `1/1024` exposes exact gauge amplification `1024` while responses, trace and determinant remain invariant | the zero-minor boundary and full chart atlas remain uncovered |
 
 These are main-integrated exact controls, not five independent scientific results.
-They should now become regression fixtures for a shared model manifest, flat
-extraction and production-confidence interface. A separately implemented
-certificate verifier, directed intervals/SOS and a physical M3c construction
-remain open.
+Main commits `dafc5e1 -> 2193eb7 -> cf4c4b5 -> c9b069a -> cc3c204` now add a
+fail-closed envelope, a finite order-two recurrence compiler, exact Hankel-minor
+enumeration, verification of a supplied univariate Bezout witness and verification
+of a supplied rational realization. These are reusable arithmetic primitives,
+but their canonical adapters are still tied to the synthetic fixtures: they do
+not build arbitrary typed model problems, search witnesses, consume Level-S
+covariance regions or constitute an implementation-independent verifier. The
+next output is the production-confidence adapter for one real frozen block.
+A separately implemented final verifier, directed intervals/SOS and a physical
+M3c construction remain survivor-dependent follow-ups.
 
 ## First production application: this archive requires an even topological coordinate
 
@@ -212,10 +218,10 @@ or reversible Gram rotation.
    fails exactly at the Gram gate (`7b40ec7`). Run the frozen one-dimensional C4
    charge-two alternating landing gate `a572058`; add rooted history/full-Q state
    only if this minimum missing irrep fails.
-5. **Issue #370 compiler/production lift:** compose the five exact-rational
-   fixtures behind one typed manifest and independent verifier, then feed the
-   actual Phase-E and adaptive-P250 production confidence problems into it.
-   Interval/SOS strengthening
+5. **Issue #370 production lift:** feed the actual Phase-E or adaptive-P250
+   typed covariance problem into the main exact certificate primitives. Add an
+   arbitrary problem builder or implementation-independent final verifier only
+   where that real survivor needs it. Interval/SOS strengthening
    starts only for a bounded survivor that would change the decision.
 6. **Continuum passports:** normalization-free three-point and modulus ratios
    remain high-value orthogonal discriminators after a lattice observable map is

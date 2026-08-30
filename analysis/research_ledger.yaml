@@ -53,7 +53,7 @@ semantic_transport:
   separate_from: [integration_status, evidence_role, dependency_group, attention_rank]
   registry_source_ref: SRC_OBSERVABLE_DESCRIPTOR_REGISTRY_MAIN
   inventory_source_ref: SRC_SCORER_INVENTORY_LATEST_MAIN
-  main_snapshot_commit: c64bfabde8c8bb13290d4f5d8e5f44c1779d4d30
+  main_snapshot_commit: cc3c204b94b389eeb0eb91dbac35d6534c7d4586
   current_main_inventory:
     total_score_scripts: 59
     direct_typed: 28
@@ -61,7 +61,7 @@ semantic_transport:
     generic_not_applicable: 1
     migration_required: 3
     outside_registered_typed_path: 0
-    consistency_status: scorer_inventory_unchanged_after_PR409_while_non_scorer_exact_controls_advanced
+    consistency_status: scorer_inventory_unchanged_through_main_cc3c204_while_non_scorer_exact_controls_and_the_Issue370_basic_framework_advanced
   current_draft_inventory:
     total_score_scripts: 65
     direct_typed: 28
@@ -72,9 +72,9 @@ semantic_transport:
     draft_only_additions: [score_z5_projective_leg_joint_ta_rank, score_z5_projective_leg_joint_annihilation, score_etop_production_elimination, score_z5_projective_leg_augmented_joint, score_euler_occupancy_clock, score_p334_birth_age_production]
     interpretation: draft_registration_preserves_existing_data_evidence_role_and_creates_no_task_gate
   integrated_components:
-    prs: [345, 346, 347, 348, 350, 352, 353, 355, 357, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 399, 402, 404, 407, 409, 410, 411, 412, 413, 414]
-    source_refs: [SRC_P50_SPRIME_TYPED_MAIN, SRC_P48_NEW_GEOMETRY_TYPED_MAIN, SRC_SCORER_INVENTORY_COMPOSITION_MAIN, SRC_PREQUENTIAL_EVIDENCE_TYPED_MAIN, SRC_P231_VACUUM_KDV_TYPED_MAIN, SRC_V14_SCALAR_ROOT_TYPED_MAIN, SRC_ISSUE43_SECONDARY_TYPED_MAIN, SRC_THRESHOLD_SCORE_MODES_TYPED_MAIN, SRC_SCORER_INVENTORY_LATEST_MAIN, SRC_PRODUCTION_PAIR_MOTIF_COVARIANCE_MAIN, SRC_THRESHOLD_PROFILE_SYMMETRY_MAIN, SRC_PLANAR_STATE_OPERATIONS_MAIN, SRC_DEGREE1_RATIONAL_EXCLUSION_MAIN, SRC_TERMINAL_GADGET_GRAPH_MAIN, SRC_RATIONAL_JORDAN_GEOMETRY_MAIN, SRC_EXACT_PROFILE_DISTANCE_MAIN, SRC_TERMINAL_RELIABILITY_STAR4_MAIN, SRC_BOUNDED_TERMINAL_GADGET_CENSUS_MAIN, SRC_MAIN_EXACT_CONTROLS_THROUGH_PR396, SRC_MAIN_EXACT_METHOD_CONTROLS_PR397_409, SRC_ISSUE370_EXACT_RATIONAL_FIXTURE_LADDER_MAIN]
-    scientific_boundary: typed_entrypoints_and_exact_controls_through_PR409_including_the_five_Issue370_exact_rational_toy_fixtures_logit_hazard_and_rank_one_survival_controls_without_new_production_data_a_generic_model_compiler_independent_verifier_physical_M3c_full_gauge_atlas_interval_SOS_certificate_or_field_identification
+    prs: [345, 346, 347, 348, 350, 352, 353, 355, 357, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 399, 402, 404, 407, 409, 410, 411, 412, 413, 414, 421, 422, 423, 424, 425, 426, 428, 427]
+    source_refs: [SRC_P50_SPRIME_TYPED_MAIN, SRC_P48_NEW_GEOMETRY_TYPED_MAIN, SRC_SCORER_INVENTORY_COMPOSITION_MAIN, SRC_PREQUENTIAL_EVIDENCE_TYPED_MAIN, SRC_P231_VACUUM_KDV_TYPED_MAIN, SRC_V14_SCALAR_ROOT_TYPED_MAIN, SRC_ISSUE43_SECONDARY_TYPED_MAIN, SRC_THRESHOLD_SCORE_MODES_TYPED_MAIN, SRC_SCORER_INVENTORY_LATEST_MAIN, SRC_PRODUCTION_PAIR_MOTIF_COVARIANCE_MAIN, SRC_THRESHOLD_PROFILE_SYMMETRY_MAIN, SRC_PLANAR_STATE_OPERATIONS_MAIN, SRC_DEGREE1_RATIONAL_EXCLUSION_MAIN, SRC_TERMINAL_GADGET_GRAPH_MAIN, SRC_RATIONAL_JORDAN_GEOMETRY_MAIN, SRC_EXACT_PROFILE_DISTANCE_MAIN, SRC_TERMINAL_RELIABILITY_STAR4_MAIN, SRC_BOUNDED_TERMINAL_GADGET_CENSUS_MAIN, SRC_MAIN_EXACT_CONTROLS_THROUGH_PR396, SRC_MAIN_EXACT_METHOD_CONTROLS_PR397_409, SRC_ISSUE370_EXACT_RATIONAL_FIXTURE_LADDER_MAIN, SRC_MAIN_EXACT_DESIGN_FILTERS_PR421_423, SRC_ISSUE370_EXACT_FRAMEWORK_PR424_428_MAIN]
+    scientific_boundary: typed_entrypoints_and_exact_controls_through_main_cc3c204_include_the_Issue370_fixture_ladder_fail_closed_envelope_basic_exact_certificate_primitives_and_PR421_to_PR423_design_filters_without_new_production_data_arbitrary_typed_problem_building_witness_search_LevelS_covariance_input_implementation_independent_verification_physical_M3c_full_gauge_atlas_interval_SOS_certificate_or_field_identification
   remaining_contract_gap: 3_main_and_9_draft_channel_bearing_paths_still_require_migration_after_PR409_and_PR267_respectively_and_the_second_contract_must_name_units_model_space_size_map_chronology_dependency_relation_and_derived_response_semantics
   allowed_statuses: [typed_direct, covered_by_typed_wrapper, migration_required, outside_registered_typed_path, not_applicable, not_in_main_inventory]
   interpretation: migration_required_is_a_future_reuse_contract_not_a_scientific_error_evidence_demotion_task_lock_or_rerun_request
@@ -2124,7 +2124,50 @@ branch_sources:
       - scripts/exact_semantic_zero_oracle.py
       - scripts/exact_morphism_rank3_oracle.py
     dependency_group_refs: [issue370-exact-rational-fixture-ladder-main]
-    claim_boundary: closes_the_toy_fixture_gap_only_not_a_generic_compiler_independent_verifier_physical_M3c_full_gauge_chart_atlas_production_confidence_lift_flat_extension_hierarchy_or_interval_SOS_certificate
+    claim_boundary: closes_the_toy_fixture_gap_only_the_downstream_main_framework_adds_basic_exact_primitives_but_not_arbitrary_typed_problem_building_witness_search_LevelS_covariance_input_implementation_independent_verification_physical_M3c_full_gauge_chart_atlas_or_interval_SOS
+  - id: SRC_MAIN_EXACT_DESIGN_FILTERS_PR421_423
+    integration_status: main_integrated
+    ref: main
+    commit: e5a6d1d84e70965dfadca29e639e44a7ac627fa6
+    prs: [421, 422, 423]
+    component_commits:
+      adjacent_annihilator: c2c215c9847cd89678ab536b5a05d2b9ce9585be
+      gaussian_channel_fingerprints: f854f823a90be3395178fdfce04f1bae21435d46
+      h16_orientation_no_go: e5a6d1d84e70965dfadca29e639e44a7ac627fa6
+    result_status: exact_single_correction_shift_power_map_distinct_four_channel_Gaussian_fingerprints_and_N1105_four_orientation_capacity_no_go_with_N32045_the_first_eight_orbit_layer
+    paths:
+      - analysis/adjacent_annihilator_asymptotics_contract.json
+      - analysis/gaussian_channel_fingerprint_contract.json
+      - analysis/h16_orientation_no_go_contract.json
+      - notes/adjacent-annihilator-formal-asymptotics.md
+      - notes/gaussian-channel-fingerprint-certificate.md
+      - notes/h16-orientation-count-no-go.md
+    claim_boundary: no_historical_or_production_root_covariance_exponent_selection_physical_channel_selection_projector_weights_or_recommendation_to_run_N32045
+  - id: SRC_ISSUE370_EXACT_FRAMEWORK_PR424_428_MAIN
+    integration_status: main_integrated
+    ref: main
+    commit: cc3c204b94b389eeb0eb91dbac35d6534c7d4586
+    prs: [424, 425, 426, 428, 427]
+    component_commits:
+      envelope: dafc5e1cc8952115caf4f7dc3cc63dd85442acd2
+      finite_recurrence: 2193eb7347d2935cdcf01d277d856cc8a5b526cd
+      rational_realization: cf4c4b5314503c0a018086810bac2e084e1c3b3f
+      linear_ideal: c9b069a6de1ade12986279eeb1f49af576a5ecf7
+      hankel_minor: cc3c204b94b389eeb0eb91dbac35d6534c7d4586
+    result_status: fail_closed_envelope_and_basic_exact_arithmetic_primitives_for_order2_recurrence_Hankel_minors_supplied_univariate_Bezout_witness_and_supplied_typed_rational_realization
+    dependency_group_refs: [issue370-exact-framework-main]
+    paths:
+      - analysis/algebraic_model_certificate_manifest.yaml
+      - results/model-certificates/framework/finite-recurrence/latest.json
+      - results/model-certificates/framework/hankel-minor/latest.json
+      - results/model-certificates/framework/linear-ideal/latest.json
+      - results/model-certificates/framework/rational-realization/latest.json
+      - scripts/model_certificate_envelope.py
+      - scripts/exact_recurrence_certificate.py
+      - scripts/exact_hankel_minor_certificate.py
+      - scripts/exact_linear_ideal_certificate.py
+      - scripts/exact_rational_realization_certificate.py
+    claim_boundary: canonical_adapters_remain_fixture_shaped_without_arbitrary_typed_problem_building_witness_search_LevelS_production_covariance_regions_implementation_independent_verification_physical_M3c_full_gauge_atlas_or_interval_SOS
   - id: SRC_PR267_P334_BIRTH_AGE_PRODUCTION
     integration_status: open_pr
     pr: 267
@@ -3870,16 +3913,16 @@ scientific_nodes:
     observer_sectors: [global_unmarked, topology_typed, deck_charged]
     geometries: [gaussian_cover, finite_transfer_cylinder, square_controls]
     acquisition: [exact_construction, existing_data_reuse]
-    source_refs: [SRC_ISSUE370_EXACT_RATIONAL_FIXTURE_LADDER_MAIN, SRC_MAIN_EXACT_METHOD_CONTROLS_PR397_409, SRC_PR267_PROOF_CARRYING_PASSPORT, SRC_PR267_ETOP_PRODUCTION_ELIMINATION, SRC_PR267_ETOP_OUTER_CERTIFICATE, SRC_PR267_NORM4_PHASE_D, SRC_P250_BIVARIATE_STATE_RESULT, SRC_P250_MAGNETIC_TRANSLATION_RESULT, SRC_P250_MODEL_FREE_HANKEL_RESULT, SRC_P250_TWO_SECTOR_BRIDGE_RESULT, SRC_P250_RADIUS5_MORPHISM_RESULT, SRC_PR267_P250_JOINT_ANNIHILATION, SRC_PR267_P250_AUGMENTED_JOINT, SRC_P250_RADIUS6_LEVEL_S_RANK_CERTIFICATE, SRC_P321_HOMOLOGY_TRACE_FUNCTIONAL, SRC_P321_GRADED_CLOSURE_EXTENSION, SRC_P333_DUAL_NUMBER_GRAM_RADICAL, SRC_P333_GENERIC_Q_DETACH_GATE, SRC_P333_SCALAR_MULTIMARK_OBSTRUCTION]
-    known_result: the_five_Issue370_exact_rational_Level_E_toy_fixtures_are_main_integrated_and_cover_M1_to_M2d_M2d_to_M2j_semantic_zero_gauge_boundary_and_morphism_forced_generic_rank3_controls_while_norm4_Phase_D_Etop_full_covariance_P250_augmented_scoring_and_the_radius6_Level_S_certificate_already_remove_sharply_declared_production_model_images
-    boundary: the_toy_fixture_gap_is_closed_but_a_shared_typed_manifest_generic_compiler_independently_implemented_verifier_physical_M3c_full_gauge_atlas_production_confidence_lift_flat_extension_hierarchy_and_directed_interval_or_SOS_layer_are_not_delivered_and_the_current_production_scores_are_not_exact_probability_or_Positivstellensatz_certificates
+    source_refs: [SRC_ISSUE370_EXACT_RATIONAL_FIXTURE_LADDER_MAIN, SRC_ISSUE370_EXACT_FRAMEWORK_PR424_428_MAIN, SRC_MAIN_EXACT_METHOD_CONTROLS_PR397_409, SRC_PR267_PROOF_CARRYING_PASSPORT, SRC_PR267_ETOP_PRODUCTION_ELIMINATION, SRC_PR267_ETOP_OUTER_CERTIFICATE, SRC_PR267_NORM4_PHASE_D, SRC_P250_BIVARIATE_STATE_RESULT, SRC_P250_MAGNETIC_TRANSLATION_RESULT, SRC_P250_MODEL_FREE_HANKEL_RESULT, SRC_P250_TWO_SECTOR_BRIDGE_RESULT, SRC_P250_RADIUS5_MORPHISM_RESULT, SRC_PR267_P250_JOINT_ANNIHILATION, SRC_PR267_P250_AUGMENTED_JOINT, SRC_P250_RADIUS6_LEVEL_S_RANK_CERTIFICATE, SRC_P321_HOMOLOGY_TRACE_FUNCTIONAL, SRC_P321_GRADED_CLOSURE_EXTENSION, SRC_P333_DUAL_NUMBER_GRAM_RADICAL, SRC_P333_GENERIC_Q_DETACH_GATE, SRC_P333_SCALAR_MULTIMARK_OBSTRUCTION]
+    known_result: the_five_Issue370_exact_rational_Level_E_toy_fixtures_and_a_fail_closed_envelope_plus_basic_exact_order2_recurrence_Hankel_supplied_ideal_witness_and_supplied_realization_primitives_are_main_integrated_while_norm4_Phase_D_Etop_full_covariance_P250_augmented_scoring_and_the_radius6_Level_S_certificate_already_remove_sharply_declared_production_model_images
+    boundary: the_toy_fixture_and_basic_exact_primitive_gaps_are_closed_but_arbitrary_typed_problem_building_witness_search_LevelS_production_covariance_input_an_implementation_independent_final_verifier_physical_M3c_full_gauge_atlas_flat_extension_hierarchy_and_directed_interval_or_SOS_layer_are_not_delivered_and_the_current_production_scores_are_not_exact_probability_or_Positivstellensatz_certificates
     supports: [global_exclusion_of_a_sharply_declared_low_rank_class_instead_of_one_optimizer_initialization, dual_coordinates_as_a_candidate_measurement_design_aid]
     tensions: [certificate_work_as_a_permission_system, certifying_an_ornate_model_ladder_before_model_free_rank_structure, treating_relaxation_failure_as_model_support]
     excludes_only: [the_declared_single_module_P321_central_or_transparent_defect_stories_the_five_ten_size_and_five_norm4_Phase_D_Etop_parameterizations_the_three_outer_set_zero_lines_the_sixteen_P250_fixed_maps_the_plus_hand_augmented_rank_at_most_five_chart_the_two_hand_radius6_endpoint_H3_rank_at_most_5_6_7_classes_and_the_P333_scalar_detach_or_minimal_endpoint_mark_families_while_no_exact_physical_dimension_generic_compiled_class_or_SOS_class_is_excluded]
-    reusable_data_refs: [results/model-certificates/synthetic/m1-vs-m2d/latest.json, results/model-certificates/synthetic/m2d-vs-m2j/latest.json, results/model-certificates/synthetic/morphism-forces-rank3/latest.json, notes/proof-carrying-operator-passport.md, notes/production-first-model-elimination-20260830.md, results/norm4-etop-production-elimination/latest.json, results/etop-production-elimination/latest.json, results/etop-production-model-certificate/latest.json, results/local-20260830/P250-projective-leg-augmented-joint/score.json, analysis/p250_radius6_level_s_elimination_certificate.json, analysis/p321_homology_trace_certificate.json, analysis/p321_graded_closure_extension.json, results/p333-dual-number-gram-extension/extension.json]
-    dependency_group_refs: [issue370-exact-rational-fixture-ladder-main, crn-2026104501-5100000000-7000000000, crn-2026105401-8200000000-9200000000, crn-2026105402-8200000000-9200000000, two-activation-production-aligned-full-covariance, rank-plane-crosswalk-eight-row-outer-audit, p250-projective-leg-N505-radius6-Level-S-old4-old5-fresh6, p321-closure-module-exact-chain, p333-dual-number-gram-exact]
-    missing_inputs: [one_shared_typed_model_manifest_and_generic_compiler, one_independently_implemented_certificate_verifier, first_production_confidence_certificate_with_dependency_aware_covariance, physical_M3c_and_full_gauge_chart_coverage, one_verified_low_order_interval_or_SOS_certificate_only_if_it_changes_a_survivor_set]
-    next_discriminator: compile_the_completed_norm4_Phase_D_and_one_P250_surviving_bounded_class_into_a_shared_manifest_with_an_independent_verifier_then_add_interval_or_SOS_only_where_the_statistical_confidence_set_still_leaves_a_real_model_choice
+    reusable_data_refs: [results/model-certificates/synthetic/m1-vs-m2d/latest.json, results/model-certificates/synthetic/m2d-vs-m2j/latest.json, results/model-certificates/synthetic/morphism-forces-rank3/latest.json, results/model-certificates/framework/finite-recurrence/latest.json, results/model-certificates/framework/hankel-minor/latest.json, results/model-certificates/framework/linear-ideal/latest.json, results/model-certificates/framework/rational-realization/latest.json, notes/proof-carrying-operator-passport.md, notes/production-first-model-elimination-20260830.md, results/norm4-etop-production-elimination/latest.json, results/etop-production-elimination/latest.json, results/etop-production-model-certificate/latest.json, results/local-20260830/P250-projective-leg-augmented-joint/score.json, analysis/p250_radius6_level_s_elimination_certificate.json, analysis/p321_homology_trace_certificate.json, analysis/p321_graded_closure_extension.json, results/p333-dual-number-gram-extension/extension.json]
+    dependency_group_refs: [issue370-exact-rational-fixture-ladder-main, issue370-exact-framework-main, crn-2026104501-5100000000-7000000000, crn-2026105401-8200000000-9200000000, crn-2026105402-8200000000-9200000000, two-activation-production-aligned-full-covariance, rank-plane-crosswalk-eight-row-outer-audit, p250-projective-leg-N505-radius6-Level-S-old4-old5-fresh6, p321-closure-module-exact-chain, p333-dual-number-gram-exact]
+    missing_inputs: [first_real_typed_production_confidence_adapter_with_dependency_aware_covariance, arbitrary_problem_builder_or_implementation_independent_final_verifier_only_if_the_real_survivor_requires_it, physical_M3c_and_full_gauge_chart_coverage, one_verified_low_order_interval_or_SOS_certificate_only_if_it_changes_a_survivor_set]
+    next_discriminator: connect_one_real_frozen_PhaseE_or_adaptive_P250_covariance_problem_to_the_main_exact_primitives_then_add_independent_final_verification_or_interval_SOS_only_if_the_survivor_set_requires_it
     information_gain: high
     compute_cost: low
     decision_experiments: [DX_PROOF_CARRYING_MODEL_ELIMINATION]
@@ -4645,6 +4688,12 @@ dependency_groups:
     source_ref: SRC_ISSUE370_EXACT_RATIONAL_FIXTURE_LADDER_MAIN
     metadata_paths: [results/model-certificates/synthetic/m1-vs-m2d/latest.json, results/model-certificates/synthetic/m2d-vs-m2j/latest.json, results/model-certificates/synthetic/gauge-chart-boundary/latest.json, results/model-certificates/synthetic/semantic-zero-contradiction/latest.json, results/model-certificates/synthetic/morphism-forces-rank3/latest.json]
     covariance_rule: five_toy_fixtures_are_semantic_regression_controls_not_independent_scientific_votes_or_production_confidence_certificates
+  - id: issue370-exact-framework-main
+    kind: main_integrated_cumulative_basic_exact_certificate_primitives
+    member_sizes: []
+    source_ref: SRC_ISSUE370_EXACT_FRAMEWORK_PR424_428_MAIN
+    metadata_paths: [analysis/algebraic_model_certificate_manifest.yaml, results/model-certificates/framework/finite-recurrence/latest.json, results/model-certificates/framework/hankel-minor/latest.json, results/model-certificates/framework/linear-ideal/latest.json, results/model-certificates/framework/rational-realization/latest.json]
+    covariance_rule: the_envelope_and_four_arithmetic_primitives_are_one_cumulative_method_framework_not_five_scientific_votes_and_their_canonical_adapters_share_the_synthetic_fixture_lineage
   - id: crn-2026104501-5100000000-7000000000
     kind: open_PR_reconstructed_P154_aligned_orientation_batches
     member_sizes: [65, 85, 130, 170]
@@ -4849,15 +4898,15 @@ decision_experiments:
   - id: DX_PROOF_CARRYING_MODEL_ELIMINATION
     attention_rank: 11
     name: exact_or_interval_verified_small_model_class_exclusion
-    status: the_five_Issue370_exact_rational_toy_fixtures_are_main_integrated_and_norm4_Phase_D_P250_and_P321_production_or_physical_controls_exist_so_the_next_value_is_a_shared_production_compiler_and_independent_verifier_not_more_toy_fixtures
+    status: the_five_Issue370_exact_rational_toy_fixtures_and_basic_exact_envelope_recurrence_Hankel_ideal_and_realization_primitives_are_main_integrated_so_the_next_value_is_a_real_production_confidence_adapter_not_more_toy_fixtures_or_another_abstract_compiler
     scientific_node_refs: [SN_PROOF_CARRYING_MODEL_ELIMINATION, SN_NORM4_ETOP_PHASE_D, SN_ETOP_FULL_COVARIANCE_ELIMINATION, SN_P250_SPATIAL_ENDPOINT_REINTERPRETATION, SN_P250_RADIUS6_LEVEL_S_RANK_BOUND, SN_P321_CLOSURE_MODULE_EXTENSION, SN_CONNECTIVITY_RADICAL_HYPOTHESIS]
     observer_sector_refs: [global_unmarked, topology_typed, deck_charged]
-    source_refs: [SRC_ISSUE370_EXACT_RATIONAL_FIXTURE_LADDER_MAIN, SRC_PR267_PROOF_CARRYING_PASSPORT, SRC_PR267_NORM4_PHASE_D, SRC_PR267_ETOP_PRODUCTION_ELIMINATION, SRC_P406_SPATIAL_FOURIER_CONE_RESULT, SRC_P250_ADAPTIVE_SUPPORT_WITNESS, SRC_P250_RADIUS6_LEVEL_S_RANK_CERTIFICATE, SRC_P321_HOMOLOGY_TRACE_FUNCTIONAL, SRC_P321_GRADED_CLOSURE_EXTENSION]
-    dependency_group_refs: [issue370-exact-rational-fixture-ladder-main, crn-2026104501-5100000000-7000000000, crn-2026105401-8200000000-9200000000, crn-2026105402-8200000000-9200000000, p250-projective-leg-N505-radius6-Level-S-old4-old5-fresh6, p321-closure-module-exact-chain]
+    source_refs: [SRC_ISSUE370_EXACT_RATIONAL_FIXTURE_LADDER_MAIN, SRC_ISSUE370_EXACT_FRAMEWORK_PR424_428_MAIN, SRC_PR267_PROOF_CARRYING_PASSPORT, SRC_PR267_NORM4_PHASE_D, SRC_PR267_ETOP_PRODUCTION_ELIMINATION, SRC_P406_SPATIAL_FOURIER_CONE_RESULT, SRC_P250_ADAPTIVE_SUPPORT_WITNESS, SRC_P250_RADIUS6_LEVEL_S_RANK_CERTIFICATE, SRC_P321_HOMOLOGY_TRACE_FUNCTIONAL, SRC_P321_GRADED_CLOSURE_EXTENSION]
+    dependency_group_refs: [issue370-exact-rational-fixture-ladder-main, issue370-exact-framework-main, crn-2026104501-5100000000-7000000000, crn-2026105401-8200000000-9200000000, crn-2026105402-8200000000-9200000000, p250-projective-leg-N505-radius6-Level-S-old4-old5-fresh6, p321-closure-module-exact-chain]
     acquisition: existing_data_reuse
     expected_model_space_reduction: high
     compute_cost: low
-    decision_output: implement_one_shared_typed_manifest_compiler_and_independently_coded_verifier_for_the_norm4_Phase_E_and_P250_adaptive_production_confidence_problems_then_add_interval_or_SOS_only_if_it_changes_a_real_survivor_set
+    decision_output: connect_one_real_norm4_PhaseE_or_P250_adaptive_typed_covariance_problem_to_the_main_exact_primitives_then_add_arbitrary_problem_building_independent_final_verification_or_interval_SOS_only_if_it_changes_a_real_survivor_set
   - id: DX_ASPECT_RATIO_Q4_SHAPE
     attention_rank: 13
     name: generic_Q_closure_extension_then_typed_modulus_fingerprint

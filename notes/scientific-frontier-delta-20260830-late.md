@@ -1,6 +1,6 @@
 # Late-frontier control note: from anomaly collection to identifiable mechanisms
 
-Snapshot used here: `main@c64bfabde8c8bb13290d4f5d8e5f44c1779d4d30`, plus the immutable branch commits named below. This note ranks attention; it grants no permission, closes no issue and treats every reused random block once.
+Snapshot used here: `main@cc3c204b94b389eeb0eb91dbac35d6534c7d4586`, plus the immutable branch commits named below. This note ranks attention; it grants no permission, closes no issue and treats every reused random block once.
 
 ## Executive decision
 
@@ -54,7 +54,7 @@ Branch `96df7c8` computes the exact affine-Hom, Gram and source intersection at 
 
 The P334 current-`k0` and bottleneck pilots are both complete. Result `769d7ae` shows cheap essential-size/frontier/carrier summaries do not absorb production-anchored age slopes and explain only about `0.9%--2.3%` of temporal modes 2/3. Result `f97b906` shows the compact bottleneck/2-core/articulation vector also fails common absorption: N325 retains `75.6%/67.0%`, N425 `30.4%/27.2%`. Main PR #409 identifies `H2=b1` and cooperative pairs `b2`; open PR #415 shows overlaps/triangles and minimal triples enter at longer horizons. The next production object is checkpoint-clustered cooperative survival, not another one-pass shape proxy or an intrinsic-memory claim.
 
-PRs #410--#414 are now main-integrated and close the requested exact-rational toy ladder: M1 impossible/M2d feasible, minimal M2d impossible/M2j feasible, endpoint M2j plus a morphism-forced rank-three row, semantic-zero contradiction and one reachable-source gauge boundary. The next #370 deliverable is a shared typed compiler, independent verifier and production-confidence adapter; physical M3c, full chart coverage and interval/SOS remain open.
+PRs #410--#414 are main-integrated and close the requested exact-rational toy ladder. Main commits through `cc3c204` additionally provide a fail-closed envelope and exact finite-recurrence, Hankel-minor, linear-ideal and supplied-realization primitives. Their canonical adapters remain fixture-shaped: arbitrary typed problem building, witness search, Level-S covariance input and an implementation-independent verifier are not complete. The next #370 deliverable is therefore one production-confidence adapter for a real frozen block—not another abstract compiler. Physical M3c, full chart coverage and interval/SOS remain open.
 
 ### The bounded gadget family has been used, not merely enumerated
 
@@ -91,7 +91,7 @@ These reduce implementation and low-complexity hypothesis risk. They should be u
 4. Acquire the smallest semantics-matched Gaussian/annulus `AU` versus `UA` rectangle that can distinguish the common matching-odd context covector from path memory.
 5. Run P333's frozen width-4 C4 charge-two alternating landing gate; replace it with a rooted/history full-Q module only if this minimum missing irrep fails.
 6. Compute joint W5/disk-relative-dual boundary connectivity and require an explicit periodic embedding/comparison map; spherical W5 self-duality is closed.
-7. Apply #370's main-integrated fixtures through one typed compiler/independent verifier to real production confidence problems; keep arbitrary-HNF Hall on its own exact lane.
+7. Feed one real frozen covariance problem through #370's main-integrated exact primitives; add an independent final verifier only for a surviving claim. Keep arbitrary-HNF Hall on its own exact lane.
 8. Turn the global topological E ray split into a `tau x topology-map` design and give the external Euler residual one genuinely new current-geometry, cross-boundary or winding coordinate.
 
 All eight routes may run in parallel. Priority changes attention only.
