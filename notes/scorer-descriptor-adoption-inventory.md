@@ -1,19 +1,18 @@
 # Scorer descriptor-adoption inventory
 
-In this checked snapshot, the exact `scripts/*score*.py` corpus contains 48
-files. Python-AST inspection finds seventeen
+In this checked snapshot, the exact `scripts/*score*.py` corpus contains 49
+files. Python-AST inspection finds eighteen
 direct typed entrypoints importing both `ObservableDescriptor` and
-`map_observable` from `wrapping_channels`. Sixteen frozen kernels are covered by
+`map_observable` from `wrapping_channels`. Seventeen frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Fourteen paths are confirmed channel-bearing and
+a descriptor is not applicable. Thirteen paths are confirmed channel-bearing and
 require typed migrations: `score_angular_root_amplitude.py`,
 `score_axis_pair_annihilator.py`, its stable entrypoint,
 `score_issue43_secondary.py`,
 `score_norm4_production.py`,
 `score_norm4_thermal_jet.py`, `score_norm5_thermal_jet.py`,
 `score_p159_pell_hex_filter.py`,
-`score_p231_vacuum_kdv_sector.py`,
 `score_p49_fullcurve_doubling.py`,
 `score_p50_fullcurve_n290.py`,
 `score_prequential_evidence.py`,
@@ -38,7 +37,7 @@ unchanged.
 but no current scorer has that status. Static membership alone would not prove
 a semantic bug, data-provenance failure, or need for migration; any future
 corpus addition must still be reviewed before modification. Issue #146 remains
-open because inventory classification is not the same as implementing the 14
+open because inventory classification is not the same as implementing the 13
 required typed migrations.
 
 The `kappa3_half_score.py` exception is narrow. It defines only exact Bernoulli
@@ -99,13 +98,7 @@ ordered Gaussian lineages `(13,11)` then `(17,1)`. The prospective target, run
 provenance, counter-range validation, sampling-error calculation, zero-control
 evidence reuse, and numerical outputs remain unchanged.
 
-`score_p231_vacuum_kdv_sector.py` is migration-required. It concatenates
-ordered `C_nontrivial_real`, `Q_reflection_null`, and `S_scalar` coordinates
-for two designs, then compares them with a theory vector normalized per unit
-`g4`. A typed migration must bind every sector coordinate, design order, and
-theory normalization. It must preserve the block covariance, one-amplitude
-GLS, non-scalar diagnostic, and the rule that the retrospective reuse is not
-new independent evidence.
+`score_p231_vacuum_kdv_sector.py` is now a covered frozen kernel. Its typed entrypoint validates an exact topology identity before the ordered two-design C/Q/S score. The semantic gate freezes N30/N56 design order, C/Q/S coordinate and six-vector order, per-unit-`g4` theory normalization, two independent 3x3 covariance blocks, and the C-only indices `[0,3]`. It preserves the post-reveal one-amplitude fit and the rule that this retrospective PR222 reuse is not independent evidence; C/Q/S are not declared interchangeable topology channels.
 
 `score_p48_sprime_frozen.py` is now a covered frozen kernel with its own typed
 entrypoint and semantic manifest. The gate proves that this chronological
