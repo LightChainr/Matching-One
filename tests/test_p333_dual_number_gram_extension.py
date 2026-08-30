@@ -14,6 +14,7 @@ from p333_dual_number_gram_extension import (  # noqa: E402
     restricted_first_form,
     symmetric_inertia,
     sharp_jordan_gate_oracle,
+    join_semilattice_oracle,
 )
 
 
@@ -41,6 +42,12 @@ class DualNumberGramExtensionTests(unittest.TestCase):
     def test_indefinite_radical_starts_at_three_marks(self):
         self.assertEqual(expected_inertia(2), (1, 0, 0))
         self.assertEqual(expected_inertia(3), (3, 1, 0))
+
+    def test_join_only_algebra_is_semisimple(self):
+        oracle = join_semilattice_oracle(4)
+        self.assertTrue(oracle["all_idempotent"])
+        self.assertTrue(oracle["all_commuting"])
+        self.assertTrue(oracle["all_first_jet_gram_self_adjoint"])
 
 
 if __name__ == "__main__":

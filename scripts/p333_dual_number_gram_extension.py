@@ -52,6 +52,38 @@ def radical_basis(size: int) -> Matrix:
     ]
 
 
+def join_pair(partition: tuple[tuple[int, ...], ...], i: int, j: int) -> tuple[tuple[int, ...], ...]:
+    """Join the blocks containing i,j and return the repository canonical order."""
+    if i == j:
+        return partition
+    merged: set[int] = set()
+    keep: list[tuple[int, ...]] = []
+    for block in partition:
+        if i in block or j in block:
+            merged.update(block)
+        else:
+            keep.append(block)
+    keep.append(tuple(sorted(merged)))
+    return tuple(sorted(keep, key=lambda block: block[0]))
+
+
+def join_operator(n: int, i: int, j: int) -> Matrix:
+    partitions = set_partitions(n)
+    lookup = {partition: index for index, partition in enumerate(partitions)}
+    size = len(partitions)
+    operator = [[Fraction(0) for _ in range(size)] for _ in range(size)]
+    for source, partition in enumerate(partitions):
+        operator[lookup[join_pair(partition, i, j)]][source] = Fraction(1)
+    return operator
+
+
+def radical_operator(operator: Matrix) -> Matrix:
+    """Matrix induced on the e_i-e_last radical coordinates."""
+    basis = radical_basis(len(operator))
+    image = multiply(operator, basis)
+    return [row[:] for row in image[:-1]]
+
+
 def restricted_first_form(n: int) -> Matrix:
     _, g1 = first_jet_gram(n)
     basis = radical_basis(len(g1))
@@ -153,6 +185,36 @@ def sharp_jordan_gate_oracle() -> dict:
     }
 
 
+def join_semilattice_oracle(n: int = 4) -> dict:
+    """Verify the exact join-only no-Jordan algebra on a low-leg carrier."""
+    joins = {(i, j): join_operator(n, i, j)
+             for i in range(n) for j in range(i + 1, n)}
+    _, g1 = first_jet_gram(n)
+    basis = radical_basis(len(g1))
+    h = multiply(transpose(basis), multiply(g1, basis))
+    idempotent = all(multiply(op, op) == op for op in joins.values())
+    commuting = all(multiply(left, right) == multiply(right, left)
+                    for left in joins.values() for right in joins.values())
+    gram_compatible = True
+    for op in joins.values():
+        restricted = radical_operator(op)
+        if multiply(h, restricted) != multiply(transpose(restricted), h):
+            gram_compatible = False
+            break
+    return {
+        "marked_points": n,
+        "generators": len(joins),
+        "all_idempotent": idempotent,
+        "all_commuting": commuting,
+        "all_first_jet_gram_self_adjoint": gram_compatible,
+        "consequence": (
+            "The join-only semilattice algebra is simultaneously "
+            "diagonalizable in characteristic zero and cannot contain a "
+            "nontrivial Jordan block."
+        ),
+    }
+
+
 def analyze(max_points: int = 5) -> dict:
     rows = []
     for n in range(2, max_points + 1):
@@ -215,6 +277,7 @@ def analyze(max_points: int = 5) -> dict:
                 "nontrivial Jordan-chain bottom."
             ),
             "minimum_marked_points_for_indefinite_radical": 3,
+            "join_only_obstruction": join_semilattice_oracle(4),
         },
         "checks": rows,
     }
