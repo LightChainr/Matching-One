@@ -1,0 +1,34 @@
+{
+  "schema": "matching-one/p334-two-orbit-exact-atlas-manifest/v1",
+  "issues": [334, 337],
+  "parent_commit": "2ec9f19",
+  "geometry_gate": {
+    "HNF_index": [4, 12],
+    "requirements": [
+      "four distinct face corners",
+      "connected primal graph",
+      "no physical quarter-turn lattice symmetry",
+      "exactly two projective line orbits",
+      "distinct nonzero effective orbit characters"
+    ],
+    "forbidden_during_gate": "source/sink boundary counts and roots"
+  },
+  "included_HNFs": 6,
+  "revealed_compute": {
+    "subset_states": 1024,
+    "directed_boundary_edges": 3840
+  },
+  "root_contract": "exact rational Sturm isolation inherited from 77aa3fe",
+  "close_contract": "unchanged maximum N13/N17 root separation",
+  "theorem": "Re[(chi1 J1) conjugate(chi2 J2)] = Gram(chi1,chi2) J1 J2",
+  "outputs": {
+    "json": "results/p334-two-orbit-exact-atlas/latest.json",
+    "markdown": "results/p334-two-orbit-exact-atlas/latest.md"
+  },
+  "commands": [
+    "PYTHONPATH=scripts python3 scripts/p334_two_orbit_exact_atlas.py --format json --output results/p334-two-orbit-exact-atlas/latest.json",
+    "PYTHONPATH=scripts python3 scripts/p334_two_orbit_exact_atlas.py --format markdown --output results/p334-two-orbit-exact-atlas/latest.md",
+    "PYTHONPATH=scripts python3 -m unittest discover -s tests -p test_p334_two_orbit_exact_atlas.py"
+  ],
+  "claim_boundary": "Exhaustive only under the declared HNF gate through N=12; no Monte Carlo or continuum claim."
+}
