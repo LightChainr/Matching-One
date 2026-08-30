@@ -1,0 +1,31 @@
+{
+  "schema": "matching-one/threshold-histogram-profile/v1",
+  "issue": 28,
+  "status": "exact_synthetic_histogram_only",
+  "rank_convention": "transition at the k-th occupied site gives Beta(k,N+1-k)",
+  "N": 4,
+  "K_minus_counts": {
+    "1": 1,
+    "2": 3
+  },
+  "K_plus_counts": {
+    "3": 3,
+    "4": 1
+  },
+  "expected_density_power_coefficients": ["1/2", "3", "-3", "0"],
+  "expected_cdf_power_coefficients": ["0", "1/2", "3/2", "-1", "0"],
+  "expected_raw_moments_0_through_6": [
+    "1",
+    "1/2",
+    "19/60",
+    "9/40",
+    "6/35",
+    "23/168",
+    "19/168"
+  ],
+  "expected_mean_from_ranks": "1/2",
+  "claim_boundary": {
+    "conclusion": "The equal-weight order-statistic mixture is reconstructed exactly from two synthetic integer rank histograms.",
+    "unresolved": "No production histogram, standardized cross-model profile, tail fit, bootstrap distance, or empirical invariant is supplied; issue #28 remains open."
+  }
+}
