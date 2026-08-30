@@ -6,15 +6,15 @@ direct typed entrypoints importing both `ObservableDescriptor` and
 `map_observable` from `wrapping_channels`. Three frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Eleven paths are confirmed channel-bearing and
+a descriptor is not applicable. Twelve paths are confirmed channel-bearing and
 require typed migrations: `score_angular_root_amplitude.py`,
 `score_axis_pair_annihilator.py`, its stable entrypoint,
 `score_c4_self_matching_n26.py`, `score_c4_tangent_orthogonal_holdout.py`,
 `score_issue50_n290.py`,
 `score_matching_odd_synthesis.py`, `score_p231_vacuum_kdv_sector.py`,
-`score_prequential_evidence.py`,
+`score_p48_sprime_frozen.py`, `score_prequential_evidence.py`,
 `score_rank_gap_boundary_targets.py`, and
-`score_threshold_rank_root_doubling.py`. The remaining 16 files are outside a
+`score_threshold_rank_root_doubling.py`. The remaining 15 files are outside a
 registered typed path.
 
 This closes an inventory gap: the repository now has a deterministic list,
@@ -24,7 +24,7 @@ import is added or removed without updating the manifest, or if a declared
 wrapped kernel disappears.
 
 `outside_registered_typed_path` is deliberately a triage label. Some of those
-16 scripts may not compare channel-bearing quantities, some may be historical,
+15 scripts may not compare channel-bearing quantities, some may be historical,
 and some may need a future typed wrapper. Static membership alone does not prove
 a semantic bug, data-provenance failure, or need for migration. Each candidate
 must be reviewed before modification; Issue #146 therefore remains open.
@@ -102,6 +102,14 @@ for two designs, then compares them with a theory vector normalized per unit
 theory normalization. It must preserve the block covariance, one-amplitude
 GLS, non-scalar diagnostic, and the rule that the retrospective reuse is not
 new independent evidence.
+
+`score_p48_sprime_frozen.py` is migration-required and is not the frozen kernel
+covered by `score_p48_sprime_prospective_typed.py`. It independently reads the
+chronological scoring manifest and compares `P4_S_prime` with four ordered
+models without a semantic gate. A migration must either prove that the existing
+cross/even identity descriptor applies to this separate contract or add its own
+typed manifest. It must preserve model order, bases, source/target covariance,
+and chronology.
 
 The axis-pair annihilator score path is migration-required as one operational
 unit. The base scorer reconstructs the cross matching function from
