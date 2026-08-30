@@ -1,0 +1,69 @@
+{
+  "schema": "matching-one/p334-morphology-state-transport-result/v1",
+  "status": "completed_post_reveal_zero_new_sample_exploration",
+  "physical_normalization": {
+    "area_like": "essential/core vertices and core edges divided by N",
+    "boundary_like": "frontiers, carrier cut/contact counts, articulations, and bridges divided by L=sqrt(N)",
+    "dimensionless": "essential carrier count minus one",
+    "age": "(k0-K1)/N"
+  },
+  "rank1_heldout_transport": {
+    "N325_to_N425": {
+      "training_coefficient_energy": 0.8118759956496358,
+      "absolute_production_age_retention": [0.45056361809869644, 0.4647417602261643],
+      "anchored_joint_p": 0.8999509641050205
+    },
+    "N425_to_N325": {
+      "training_coefficient_energy": 0.9530071255092931,
+      "absolute_production_age_retention": [0.43217997521244084, 0.5304509557100222],
+      "anchored_joint_p": 0.016611863438725807
+    },
+    "first_to_second": {
+      "training_coefficient_energy": 0.8346674371138566,
+      "absolute_production_age_retention": [0.638555717330279, 0.48577841444717523],
+      "anchored_joint_p": 0.09857165018337126
+    },
+    "second_to_first": {
+      "training_coefficient_energy": 0.9443102675593325,
+      "absolute_production_age_retention": [0.5907180681896105, 0.5755341598697089],
+      "anchored_joint_p": 0.6915510195801795
+    }
+  },
+  "rank2_boundary": {
+    "absolute_production_age_retention_range": [0.43677663566211816, 0.717903548611815],
+    "interpretation": "rank two does not consistently improve transport over rank one and is reported as a fixed descriptive ceiling, not selected by target p value"
+  },
+  "global_rotation": {
+    "rank1_coefficient_energy": 0.8664888897875044,
+    "rank1_coefficient_energy_jackknife_se": 0.10803973207245439,
+    "rank2_coefficient_energy": 0.9382282178914803,
+    "rank2_coefficient_energy_jackknife_se": 0.05461878600629681,
+    "coefficient_cosines": {
+      "scale_first": 0.444934451474231,
+      "scale_second": -0.8656565938949249,
+      "orientation_N325": -0.5704655946737038,
+      "orientation_N425": 0.9028265723212666
+    },
+    "scale_rotation_energy_share": {
+      "boundary": 0.8572853287651515,
+      "boundary_jackknife_se": 0.034500795641797,
+      "mass_core": 0.1195816063683911,
+      "bottleneck": 0.023133064866457508
+    },
+    "orientation_rotation_energy_share": {
+      "boundary": 0.7955637789011879,
+      "boundary_jackknife_se": 0.20908116101123822,
+      "mass_core": 0.11206402929005697,
+      "bottleneck": 0.09237219180875522
+    }
+  },
+  "decision": "a partial rank-one morphology direction transports, but no tested rank-one or rank-two morphology state closes the production birth-age association across both scales and orientations",
+  "mechanism_localization": "the dominant scale rotation lies in frontier/boundary/contact coordinates, not articulation/bridge bottleneck counts",
+  "artifacts": {
+    "score": "results/local-20260830/P334-morphology-state-transport/score.json",
+    "score_sha256": "b384b79b127c13eaad492d41fc6eab22d745d39aa4b57145ab8c401adaf9dab2",
+    "scorer": "scripts/score_p334_morphology_state_transport.py",
+    "scorer_sha256": "4a0c47c7431d207f51f9f05b24c95bc0b0ab2bc4c91bfdc70dd368e0e4e55016"
+  },
+  "claim_boundary": "This is a post-reveal mechanism exploration on the existing 20k morphology blocks and disjoint production precision anchor. Held-out refers to learning the morphology subspace without target outcomes; target amplitudes are fitted inside that fixed subspace, so this is not a point forecast or independent evidence block."
+}
