@@ -1,0 +1,630 @@
+{
+  "schema": "matching-one/p334-birth-age-production-score/v1",
+  "status": "retrospective_existing_production_reveal",
+  "freeze_manifest_sha256": "44a4aacdc30f0f943b9c933c8d46ce5da8f83f2a71037953b5e7ddedc8603142",
+  "dependency_groups": {
+    "N325": "one 2M paired-orientation archive",
+    "N425": "one independent 2M paired-orientation archive"
+  },
+  "input_audits": {
+    "N325": {
+      "raw_path": "/Volumes/Mac Data/Research/\u8bba\u6587\u9879\u76ee\u603b\u5e93/Matching-One-large-artifacts/P267-two-observer-source-rank-2m/N325_2m/N325_2m.marked_births.csv",
+      "raw_sha256": "c9bfb3ee791474491ad6b81e55259d9906befe9dac1c461f72087658f4c7219b",
+      "complement_audit": {
+        "rows": 200,
+        "failure_sums": {
+          "endpoint_failures": 0,
+          "site_failures": 0,
+          "line_failures": 0,
+          "local_mark_failures": 0,
+          "index_mismatches": 0,
+          "separated_mark_failures": 0
+        }
+      }
+    },
+    "N425": {
+      "raw_path": "/Volumes/Mac Data/Research/\u8bba\u6587\u9879\u76ee\u603b\u5e93/Matching-One-large-artifacts/P267-two-observer-source-rank-2m/N425_2m/N425_2m.marked_births.csv",
+      "raw_sha256": "4f1315ceb790962c9c24b67baa7644dab4ffba781920fe8d468b1ebe490ad4d0",
+      "complement_audit": {
+        "rows": 200,
+        "failure_sums": {
+          "endpoint_failures": 0,
+          "site_failures": 0,
+          "line_failures": 0,
+          "local_mark_failures": 0,
+          "index_mismatches": 0,
+          "separated_mark_failures": 0
+        }
+      }
+    }
+  },
+  "sizes": {
+    "N325": {
+      "N": 325,
+      "k0": 193,
+      "complement_k0": 132,
+      "orientations": {
+        "first": {
+          "primary": {
+            "beta_age_per_density": -0.06725262331784872,
+            "next_step_hazard": 0.06318974255461993,
+            "survivors": 911572,
+            "next_step_exits": 57602,
+            "strata": 8,
+            "contributing_strata": 8,
+            "delete_one_se": 0.009518770381567117,
+            "student_t": -7.065263749620633,
+            "two_sided_p_df99": 2.2661112508039237e-10,
+            "resolved_at_alpha_0_01": true
+          },
+          "collision_count": 9779,
+          "samples": 2000000,
+          "D_N": 0.0048895,
+          "complement": {
+            "beta_age_per_density": -0.06875463539657944,
+            "next_step_hazard": 0.06132592927382587,
+            "survivors": 911572,
+            "next_step_exits": 55903,
+            "strata": 8,
+            "contributing_strata": 8,
+            "delete_one_se": 0.00901358701488641,
+            "student_t": -7.627888351555,
+            "two_sided_p_df99": 1.4908228746938337e-11,
+            "resolved_at_alpha_0_01": true
+          },
+          "nested_birth_mark_control": {
+            "beta_age_per_density": -0.06717252476127905,
+            "next_step_hazard": 0.06318974255461993,
+            "survivors": 911572,
+            "next_step_exits": 57602,
+            "strata": 32,
+            "contributing_strata": 32,
+            "delete_one_se": 0.009517458576300469,
+            "two_sided_p_df99": 2.348266878228959e-10,
+            "difference_from_primary": 8.009855656966602e-05,
+            "difference_delete_one_se": 0.00031286413130872577
+          },
+          "complement_nested_birth_mark_control": {
+            "beta_age_per_density": -0.06946944455070651,
+            "next_step_hazard": 0.06132592927382587,
+            "survivors": 911572,
+            "next_step_exits": 55903,
+            "strata": 32,
+            "contributing_strata": 30,
+            "delete_one_se": 0.00896183991935137,
+            "two_sided_p_df99": 8.13604155692889e-12,
+            "difference_from_primary": -0.000714809154127069,
+            "difference_delete_one_se": 0.00032046775650049236
+          },
+          "D_N_delete_one_se": 5.097184308889341e-05,
+          "D_N_99pct_interval": [
+            0.004755627273143668,
+            0.005023372726856331
+          ],
+          "beta_D_correlation": 0.050127819498575615
+        },
+        "second": {
+          "primary": {
+            "beta_age_per_density": -0.08139932820232665,
+            "next_step_hazard": 0.06311285180280972,
+            "survivors": 913047,
+            "next_step_exits": 57625,
+            "strata": 8,
+            "contributing_strata": 8,
+            "delete_one_se": 0.008956938912033915,
+            "student_t": -9.087851218116965,
+            "two_sided_p_df99": 1.0668465601639618e-14,
+            "resolved_at_alpha_0_01": true
+          },
+          "collision_count": 9879,
+          "samples": 2000000,
+          "D_N": 0.0049395,
+          "complement": {
+            "beta_age_per_density": -0.08069549856222213,
+            "next_step_hazard": 0.061336382464429545,
+            "survivors": 913047,
+            "next_step_exits": 56003,
+            "strata": 8,
+            "contributing_strata": 8,
+            "delete_one_se": 0.009681440110699928,
+            "student_t": -8.33507181158281,
+            "two_sided_p_df99": 4.571838240042596e-13,
+            "resolved_at_alpha_0_01": true
+          },
+          "nested_birth_mark_control": {
+            "beta_age_per_density": -0.08193585184525924,
+            "next_step_hazard": 0.06311285180280972,
+            "survivors": 913047,
+            "next_step_exits": 57625,
+            "strata": 32,
+            "contributing_strata": 32,
+            "delete_one_se": 0.00894058075379839,
+            "two_sided_p_df99": 7.265026766195019e-15,
+            "difference_from_primary": -0.0005365236429325931,
+            "difference_delete_one_se": 0.0002885715607005054
+          },
+          "complement_nested_birth_mark_control": {
+            "beta_age_per_density": -0.08158168720706972,
+            "next_step_hazard": 0.061336382464429545,
+            "survivors": 913047,
+            "next_step_exits": 56003,
+            "strata": 32,
+            "contributing_strata": 32,
+            "delete_one_se": 0.009693971962997198,
+            "two_sided_p_df99": 3.0624894260156173e-13,
+            "difference_from_primary": -0.0008861886448475881,
+            "difference_delete_one_se": 0.00030913356890866715
+          },
+          "D_N_delete_one_se": 5.523272617211658e-05,
+          "D_N_99pct_interval": [
+            0.004794436466561055,
+            0.005084563533438945
+          ],
+          "beta_D_correlation": -0.08547552963698614
+        }
+      },
+      "point_vector_order": [
+        "first_beta_age",
+        "first_D_N",
+        "first_complement_beta_age",
+        "second_beta_age",
+        "second_D_N",
+        "second_complement_beta_age",
+        "first_nested_beta_age",
+        "first_complement_nested_beta_age",
+        "second_nested_beta_age",
+        "second_complement_nested_beta_age"
+      ],
+      "point_vector": [
+        -0.06725262331784872,
+        0.0048895,
+        -0.06875463539657944,
+        -0.08139932820232665,
+        0.0049395,
+        -0.08069549856222213,
+        -0.06717252476127905,
+        -0.06946944455070651,
+        -0.08193585184525924,
+        -0.08158168720706972
+      ],
+      "delete_one_covariance": [
+        [
+          9.06069895769994e-05,
+          2.4321480163664792e-08,
+          4.792725947540827e-06,
+          3.2082628630387e-06,
+          -4.3494366151592557e-08,
+          -5.137401930271966e-06,
+          9.05455616819676e-05,
+          4.932755031269219e-06,
+          3.2907051788480846e-06,
+          -4.904838515711719e-06
+        ],
+        [
+          2.4321480163664785e-08,
+          2.5981287878787708e-09,
+          2.9406359633393435e-09,
+          1.6205003479457007e-08,
+          -2.445479797979546e-10,
+          -3.761993591821478e-08,
+          2.2979053102970858e-08,
+          1.961600550962832e-09,
+          1.3932520299375392e-08,
+          -3.876882095490419e-08
+        ],
+        [
+          4.7927259475408255e-06,
+          2.940635963339347e-09,
+          8.12447508749289e-05,
+          3.5429153242966916e-06,
+          1.0276675204358283e-08,
+          -5.517062523427632e-06,
+          4.408417399414599e-06,
+          8.072831301602611e-05,
+          3.461254664574694e-06,
+          -5.4437261842040005e-06
+        ],
+        [
+          3.2082628630387004e-06,
+          1.6205003479457e-08,
+          3.542915324296692e-06,
+          8.022675467390728e-05,
+          -4.2286125306093926e-08,
+          -8.083611224685903e-07,
+          3.372939960524883e-06,
+          3.196375866024496e-06,
+          8.003873267172618e-05,
+          -5.125738332449775e-07
+        ],
+        [
+          -4.3494366151592557e-08,
+          -2.4454797979795456e-10,
+          1.0276675204358276e-08,
+          -4.228612530609391e-08,
+          3.050654040404012e-09,
+          1.8990357003178896e-08,
+          -4.490696611478653e-08,
+          8.795122587122169e-09,
+          -4.331446094822137e-08,
+          1.8166496187091494e-08
+        ],
+        [
+          -5.137401930271968e-06,
+          -3.761993591821479e-08,
+          -5.517062523427633e-06,
+          -8.083611224685933e-07,
+          1.89903570031789e-08,
+          9.373028261706942e-05,
+          -5.033828168480751e-06,
+          -5.927945205980001e-06,
+          -6.879644961440098e-07,
+          9.380390573650947e-05
+        ],
+        [
+          9.05455616819676e-05,
+          2.2979053102970864e-08,
+          4.4084173994146e-06,
+          3.372939960524884e-06,
+          -4.490696611478654e-08,
+          -5.033828168480752e-06,
+          9.058201775159535e-05,
+          4.551160452989845e-06,
+          3.464591472826683e-06,
+          -4.7899132307706225e-06
+        ],
+        [
+          4.932755031269217e-06,
+          1.961600550962838e-09,
+          8.072831301602611e-05,
+          3.196375866024495e-06,
+          8.795122587122162e-09,
+          -5.927945205979999e-06,
+          4.551160452989846e-06,
+          8.031457474007976e-05,
+          3.1237426157113374e-06,
+          -5.84667242780503e-06
+        ],
+        [
+          3.2907051788480854e-06,
+          1.3932520299375388e-08,
+          3.4612546645746937e-06,
+          8.003873267172618e-05,
+          -4.331446094822137e-08,
+          -6.879644961440089e-07,
+          3.4645914728266836e-06,
+          3.123742615711337e-06,
+          7.993398421519019e-05,
+          -3.7689415525029826e-07
+        ],
+        [
+          -4.904838515711717e-06,
+          -3.876882095490419e-08,
+          -5.4437261842040005e-06,
+          -5.125738332449792e-07,
+          1.8166496187091494e-08,
+          9.380390573650947e-05,
+          -4.789913230770622e-06,
+          -5.846672427805031e-06,
+          -3.7689415525029783e-07,
+          9.397309241937574e-05
+        ]
+      ],
+      "primary_two_orientation_joint": {
+        "chi_square": 127.85578729754505,
+        "df": 2,
+        "survival_p": 1.7237272551574198e-28
+      },
+      "complement_two_orientation_joint": {
+        "chi_square": 136.24189048614915,
+        "df": 2,
+        "survival_p": 2.6028514269118302e-30
+      },
+      "Dbar_orientation_mean": 0.0049145000000000005,
+      "Dbar_delete_one_se": 3.591548018851646e-05,
+      "Dbar_variance": 1.2899217171717184e-09
+    },
+    "N425": {
+      "N": 425,
+      "k0": 252,
+      "complement_k0": 173,
+      "orientations": {
+        "first": {
+          "primary": {
+            "beta_age_per_density": -0.06943758436664527,
+            "next_step_hazard": 0.05244552477742203,
+            "survivors": 900134,
+            "next_step_exits": 47208,
+            "strata": 8,
+            "contributing_strata": 8,
+            "delete_one_se": 0.00848453307239685,
+            "student_t": -8.184019529907896,
+            "two_sided_p_df99": 9.668519294164711e-13,
+            "resolved_at_alpha_0_01": true
+          },
+          "collision_count": 7815,
+          "samples": 2000000,
+          "D_N": 0.0039075,
+          "complement": {
+            "beta_age_per_density": -0.06666907821245062,
+            "next_step_hazard": 0.05267771242948272,
+            "survivors": 900134,
+            "next_step_exits": 47417,
+            "strata": 8,
+            "contributing_strata": 8,
+            "delete_one_se": 0.008804808703919914,
+            "student_t": -7.571894001827597,
+            "two_sided_p_df99": 1.9591366174666412e-11,
+            "resolved_at_alpha_0_01": true
+          },
+          "nested_birth_mark_control": {
+            "beta_age_per_density": -0.06949452808366392,
+            "next_step_hazard": 0.05244552477742203,
+            "survivors": 900134,
+            "next_step_exits": 47208,
+            "strata": 32,
+            "contributing_strata": 31,
+            "delete_one_se": 0.008484427196097407,
+            "two_sided_p_df99": 9.347773933891916e-13,
+            "difference_from_primary": -5.6943717018656526e-05,
+            "difference_delete_one_se": 0.00027710098692253834
+          },
+          "complement_nested_birth_mark_control": {
+            "beta_age_per_density": -0.06723517157822703,
+            "next_step_hazard": 0.05267771242948272,
+            "survivors": 900134,
+            "next_step_exits": 47417,
+            "strata": 32,
+            "contributing_strata": 30,
+            "delete_one_se": 0.008795225974944884,
+            "two_sided_p_df99": 1.3745965607860935e-11,
+            "difference_from_primary": -0.0005660933657764128,
+            "difference_delete_one_se": 0.00030649584352436407
+          },
+          "D_N_delete_one_se": 4.637558025992206e-05,
+          "D_N_99pct_interval": [
+            0.003785698922920776,
+            0.004029301077079225
+          ],
+          "beta_D_correlation": -0.07917205352238084
+        },
+        "second": {
+          "primary": {
+            "beta_age_per_density": -0.06691803647825126,
+            "next_step_hazard": 0.05241093174989778,
+            "survivors": 899984,
+            "next_step_exits": 47169,
+            "strata": 8,
+            "contributing_strata": 8,
+            "delete_one_se": 0.007810778281220991,
+            "student_t": -8.56739675214421,
+            "two_sided_p_df99": 1.4392501719361437e-13,
+            "resolved_at_alpha_0_01": true
+          },
+          "collision_count": 7596,
+          "samples": 2000000,
+          "D_N": 0.003798,
+          "complement": {
+            "beta_age_per_density": -0.06949967972618303,
+            "next_step_hazard": 0.05233204145851482,
+            "survivors": 899984,
+            "next_step_exits": 47098,
+            "strata": 8,
+            "contributing_strata": 8,
+            "delete_one_se": 0.008713511344846613,
+            "student_t": -7.976081854450888,
+            "two_sided_p_df99": 2.700693447969942e-12,
+            "resolved_at_alpha_0_01": true
+          },
+          "nested_birth_mark_control": {
+            "beta_age_per_density": -0.06769807614378077,
+            "next_step_hazard": 0.05241093174989778,
+            "survivors": 899984,
+            "next_step_exits": 47169,
+            "strata": 32,
+            "contributing_strata": 32,
+            "delete_one_se": 0.007855704323841325,
+            "two_sided_p_df99": 1.1200179865364107e-13,
+            "difference_from_primary": -0.0007800396655295166,
+            "difference_delete_one_se": 0.0002820276452225527
+          },
+          "complement_nested_birth_mark_control": {
+            "beta_age_per_density": -0.06998269606875332,
+            "next_step_hazard": 0.05233204145851482,
+            "survivors": 899984,
+            "next_step_exits": 47098,
+            "strata": 32,
+            "contributing_strata": 29,
+            "delete_one_se": 0.008740352566805127,
+            "two_sided_p_df99": 2.3205663537745172e-12,
+            "difference_from_primary": -0.00048301634257029435,
+            "difference_delete_one_se": 0.0003110102051048157
+          },
+          "D_N_delete_one_se": 4.278156876813464e-05,
+          "D_N_99pct_interval": [
+            0.0036856382543163364,
+            0.003910361745683664
+          ],
+          "beta_D_correlation": -0.04207815457328347
+        }
+      },
+      "point_vector_order": [
+        "first_beta_age",
+        "first_D_N",
+        "first_complement_beta_age",
+        "second_beta_age",
+        "second_D_N",
+        "second_complement_beta_age",
+        "first_nested_beta_age",
+        "first_complement_nested_beta_age",
+        "second_nested_beta_age",
+        "second_complement_nested_beta_age"
+      ],
+      "point_vector": [
+        -0.06943758436664527,
+        0.0039075,
+        -0.06666907821245062,
+        -0.06691803647825126,
+        0.003798,
+        -0.06949967972618303,
+        -0.06949452808366392,
+        -0.06723517157822703,
+        -0.06769807614378077,
+        -0.06998269606875332
+      ],
+      "delete_one_covariance": [
+        [
+          7.198730145659592e-05,
+          -3.1152235197460194e-08,
+          1.4909519898392696e-05,
+          -4.940095818290941e-06,
+          -3.290725659720094e-09,
+          8.074393012189405e-06,
+          7.194801067275989e-05,
+          1.4561967956593883e-05,
+          -5.419526431401979e-06,
+          8.684109114919066e-06
+        ],
+        [
+          -3.1152235197460194e-08,
+          2.1506944444444725e-09,
+          1.1621887296608481e-09,
+          2.7281452753747107e-08,
+          -7.676767676767618e-12,
+          1.2668775412758844e-08,
+          -3.154878573343048e-08,
+          1.9772894674573434e-09,
+          2.8811966307574643e-08,
+          1.2543233612113106e-08
+        ],
+        [
+          1.4909519898392699e-05,
+          1.1621887296608374e-09,
+          7.752465631262389e-05,
+          2.0652367740741577e-06,
+          -1.4643076892145246e-08,
+          9.75363051364493e-06,
+          1.4772092850173263e-05,
+          7.739335828043568e-05,
+          1.7940470904979618e-06,
+          1.002070390737204e-05
+        ],
+        [
+          -4.940095818290939e-06,
+          2.7281452753747107e-08,
+          2.065236774074158e-06,
+          6.1008257358393544e-05,
+          -1.4060724548125569e-08,
+          3.666041359615962e-07,
+          -4.913811354528731e-06,
+          1.7567453056014785e-06,
+          6.132040409467153e-05,
+          5.433735133430704e-07
+        ],
+        [
+          -3.290725659720094e-09,
+          -7.67676767676762e-12,
+          -1.4643076892145239e-08,
+          -1.4060724548125562e-08,
+          1.8302626262626334e-09,
+          -8.219449816508807e-08,
+          -3.4580676533869104e-09,
+          -1.3800786220177682e-08,
+          -1.3642196043539069e-08,
+          -8.018388444271145e-08
+        ],
+        [
+          8.074393012189405e-06,
+          1.2668775412758838e-08,
+          9.75363051364493e-06,
+          3.6660413596159625e-07,
+          -8.219449816508807e-08,
+          7.592527995677063e-05,
+          7.96066085342908e-06,
+          1.0094219270910846e-05,
+          1.2404844867065648e-07,
+          7.611115780057414e-05
+        ],
+        [
+          7.194801067275989e-05,
+          -3.1548785733430484e-08,
+          1.4772092850173263e-05,
+          -4.913811354528732e-06,
+          -3.4580676533869124e-09,
+          7.96066085342908e-06,
+          7.19855048458773e-05,
+          1.4413703350650573e-05,
+          -5.406822222336959e-06,
+          8.568488391101893e-06
+        ],
+        [
+          1.456196795659388e-05,
+          1.977289467457343e-09,
+          7.739335828043568e-05,
+          1.7567453056014793e-06,
+          -1.3800786220177688e-08,
+          1.0094219270910845e-05,
+          1.4413703350650573e-05,
+          7.735599995034519e-05,
+          1.49920904723772e-06,
+          1.0343257854350389e-05
+        ],
+        [
+          -5.419526431401979e-06,
+          2.881196630757463e-08,
+          1.7940470904979633e-06,
+          6.132040409467153e-05,
+          -1.3642196043539072e-08,
+          1.2404844867065648e-07,
+          -5.406822222336959e-06,
+          1.49920904723772e-06,
+          6.17120904236193e-05,
+          2.940102702503177e-07
+        ],
+        [
+          8.684109114919067e-06,
+          1.2543233612113106e-08,
+          1.0020703907372043e-05,
+          5.433735133430696e-07,
+          -8.018388444271145e-08,
+          7.611115780057412e-05,
+          8.568488391101893e-06,
+          1.0343257854350389e-05,
+          2.9401027025031867e-07,
+          7.639376299205696e-05
+        ]
+      ],
+      "primary_two_orientation_joint": {
+        "chi_square": 151.67471765660179,
+        "df": 2,
+        "survival_p": 1.1594540415648842e-33
+      },
+      "complement_two_orientation_joint": {
+        "chi_square": 107.33020470582007,
+        "df": 2,
+        "survival_p": 4.937898712901701e-24
+      },
+      "Dbar_orientation_mean": 0.0038527500000000003,
+      "Dbar_delete_one_se": 3.1486519081003424e-05,
+      "Dbar_variance": 9.914008838383926e-10
+    }
+  },
+  "six_arm_collision_adversary": {
+    "fixed_ratio": 0.7996722504772675,
+    "observed_ratio": 0.783955641469122,
+    "contrast_Dbar425_minus_ratio_Dbar325": -7.723927497053137e-05,
+    "contrast_se": 4.261777196696111e-05,
+    "chi_square": 3.284693827540312,
+    "df": 1,
+    "survival_p": 0.06992866974648525,
+    "status": "conditional_high_risk_secondary"
+  },
+  "decision_alpha": 0.01,
+  "claim_boundary": [
+    "This is a retrospective reanalysis of two revealed P267 archives and creates no independent evidence rows.",
+    "A resolved birth-age slope rejects lumpability of the recorded coarse state (k,rank,ell); it may proxy unrecorded current geometry and is not by itself intrinsic temporal memory.",
+    "The nested birth-mark diagnostic controls recorded geometry at K1 only; it does not observe the full current configuration at k0.",
+    "D_N is a separate collision channel and is not used to explain or subtract the age slope.",
+    "No exact 1/57 witness, finite D_N census or six-arm exponent calculation is repeated.",
+    "The two orientations of one size remain one covariance block."
+  ]
+}
