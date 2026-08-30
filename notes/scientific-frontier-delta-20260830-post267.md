@@ -1,5 +1,11 @@
 # Scientific-frontier delta after the PR267 snapshot
 
+> Historical handoff boundary: the P250 augmented gate and subsequent
+> production-first decisions now supersede the action column below. Use
+> [`production-first-model-elimination-20260830.md`](production-first-model-elimination-20260830.md)
+> and `docs/NEXT-TARGETS.md` for current attention; retain this note for pinned
+> chronology and pre-augmentation evidence.
+
 This note is the compact handoff for scientific work that landed after the
 immutable PR267 content snapshot `3080d8bf`.  Every item below is pinned to a
 commit.  A citation records provenance; it does not promote a branch result to

@@ -1,15 +1,19 @@
 # Scorer descriptor-adoption inventory
 
-In this checked snapshot, the exact `scripts/*score*.py` corpus contains 59
+In this checked Draft snapshot, the exact `scripts/*score*.py` corpus contains 63
 files. Python-AST inspection finds twenty-eight
 direct typed entrypoints importing both `ObservableDescriptor` and
 `map_observable` from `wrapping_channels`. Twenty-seven frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Three paths are confirmed channel-bearing and
+a descriptor is not applicable. Seven paths are confirmed channel-bearing and
 require typed migrations:
+`score_etop_production_elimination.py`,
 `score_norm4_production.py`,
-`score_norm4_thermal_jet.py`, `score_norm5_thermal_jet.py`. No scorer remains outside a registered
+`score_norm4_thermal_jet.py`, `score_norm5_thermal_jet.py`,
+`score_z5_projective_leg_augmented_joint.py`,
+`score_z5_projective_leg_joint_ta_rank.py` and
+`score_z5_projective_leg_joint_annihilation.py`. No scorer remains outside a registered
 audit class.
 
 This closes an inventory gap: the repository now has a deterministic list,
@@ -25,12 +29,19 @@ comparing it with the checked result. This prevents the meta-tool from being
 silently counted as an unclassified scorer while keeping the scorer partition
 unchanged.
 
+The integrated `main@9572bcf` snapshot remains 59/28/27/3/1. The four extra
+paths are post-snapshot existing-data analyses: three P250 projective-leg
+scorers and one activation-resolved E_top model eliminator. Registering them
+here changes future composability status, not their numerical results or
+evidence role.
+
 `outside_registered_typed_path` remains a deliberate fail-closed triage label,
 but no current scorer has that status. Static membership alone would not prove
 a semantic bug, data-provenance failure, or need for migration; any future
 corpus addition must still be reviewed before modification. Issue #146 remains
 open because inventory classification is not the same as implementing the 3
-required typed migrations.
+required typed migrations in that main snapshot and four additional
+post-snapshot migrations.
 
 `score_axis_pair_annihilator.py` and its stable-reader entrypoint are now
 covered frozen kernels. Their two typed entrypoints share one semantic gate
