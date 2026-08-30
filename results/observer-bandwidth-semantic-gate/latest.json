@@ -1,0 +1,120 @@
+{
+  "boundary": [
+    "A marked-birth or Palm sample is not converted into a product or Johnson clock by relabeling.",
+    "A degree cutoff applies to the complete transformed source function, not selected factors.",
+    "Adaptive marks require a separately derived conditional polynomial degree.",
+    "Degenerate quotients require an explicit incidence polynomial.",
+    "The archived P267 aggregates do not contain coupled six-level noise statistics."
+  ],
+  "fixture_count": 7,
+  "fixtures": [
+    {
+      "accepted": true,
+      "name": "valid_product_walsh",
+      "reasons": [],
+      "status": "accept_product_walsh",
+      "theorem": "product_walsh"
+    },
+    {
+      "accepted": true,
+      "name": "valid_johnson_slice",
+      "reasons": [],
+      "status": "accept_johnson_slice",
+      "theorem": "johnson_slice"
+    },
+    {
+      "accepted": false,
+      "name": "palm_without_reversible_kernel",
+      "reasons": [
+        "palm_reversible_kernel_missing"
+      ],
+      "status": "reject",
+      "theorem": null
+    },
+    {
+      "accepted": false,
+      "name": "adaptive_mark_without_degree",
+      "reasons": [
+        "adaptive_mark_degree_not_derived"
+      ],
+      "status": "reject",
+      "theorem": null
+    },
+    {
+      "accepted": false,
+      "name": "partial_source_transform",
+      "reasons": [
+        "complete_source_transform_missing"
+      ],
+      "status": "reject",
+      "theorem": null
+    },
+    {
+      "accepted": false,
+      "name": "degenerate_quotient_without_incidence",
+      "reasons": [
+        "degenerate_quotient_incidence_missing"
+      ],
+      "status": "reject",
+      "theorem": null
+    },
+    {
+      "accepted": true,
+      "name": "palm_with_declared_custom_kernel",
+      "reasons": [],
+      "status": "accept_custom_kernel_only",
+      "theorem": "custom_kernel_only"
+    }
+  ],
+  "p267_layers": [
+    {
+      "accepted": false,
+      "name": "marked_birth_product_walsh",
+      "reasons": [
+        "adaptive_mark_degree_not_derived",
+        "palm_conditioning_not_removed",
+        "product_resample_clock_missing"
+      ],
+      "status": "reject",
+      "theorem": null
+    },
+    {
+      "accepted": true,
+      "name": "retrospective_fixed_k_O_ext",
+      "reasons": [],
+      "status": "accept_johnson_slice",
+      "theorem": "johnson_slice"
+    },
+    {
+      "accepted": false,
+      "name": "retrospective_fixed_k_O_far",
+      "reasons": [
+        "conditional_mean_missing"
+      ],
+      "status": "reject",
+      "theorem": null
+    },
+    {
+      "accepted": false,
+      "name": "six_level_high_pass",
+      "reasons": [
+        "coupled_noise_statistics_missing"
+      ],
+      "status": "reject",
+      "theorem": null
+    }
+  ],
+  "p267_provenance": {
+    "branch": "analysis/p267-density-clock-orthogonal-20260830",
+    "commit": "9d07e820ea12c3263ff9edde3cf50ca0d819972f",
+    "files": {
+      "analysis/external_observer_rank_birth_manifest.yaml": "c0b84fac4ffd2998695517f1005df3d2cfad432b",
+      "analysis/p267_density_clock_orthogonal_20260830.json": "d4eb726f36b0e68ec49bd4a2abf2768fb9330cd0",
+      "experiments/p267_target1_external_observer_20260830.yaml": "fa5c024ca59e41e473350ba348cccb2ce74d951a",
+      "experiments/p267_two_observer_source_rank_20260830.yaml": "3045b71b51b995637441820ae7a0a34b3ed7992f",
+      "notes/p267-density-clock-orthogonal.md": "fc28d68086b9c69144ea44aa2f436adcd86bd697"
+    }
+  },
+  "schema": "matching-one.observer-bandwidth-semantic-gate.v1",
+  "status": "fail_closed_contract_verified"
+}
