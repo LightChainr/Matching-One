@@ -6,20 +6,19 @@
     "scripts/score_norm5_thermal_jet.py": "scores intrinsic-center ranks 2 through 6 thermal jets, canonical widths, lineage width collapse, and q2/Jordan cocycles without typed mode, normalization, lineage, covariance-group, or shared-evidence semantics",
     "scripts/score_p159_pell_hex_filter.py": "scores primitive rank-1 homology line probabilities through transported C/Q/S character coordinates across two Pell designs with implicit basis, phase, normalization, and reused-evidence semantics",
     "scripts/score_p49_fullcurve_doubling.py": "scores matching tails, thermal even/odd contrasts, signed lineage root gaps, and normalized P4 projectors across doubled sizes without typed quantity families",
-    "scripts/score_p50_fullcurve_n290.py": "scores thermal-even DeltaM, slope, signed root-gap, and four P4 quantities across independent N145/N290 lineages using implicit feature, order, sign, and stream semantics",
-    "scripts/threshold_score_modes.py": "projects paired orientation threshold curves into intrinsic-center S/D Krawtchouk modes, DeltaCos4-normalized P4 coordinates, and parity towers with implicit sector, basis, normalization, and shared-evidence semantics"
+    "scripts/score_p50_fullcurve_n290.py": "scores thermal-even DeltaM, slope, signed root-gap, and four P4 quantities across independent N145/N290 lineages using implicit feature, order, sign, and stream semantics"
   },
   "corpus_exclusions": [
     "scripts/scorer_descriptor_adoption_audit.py"
   ],
   "corpus_glob": "scripts/*score*.py",
   "counts": {
-    "channel_bearing_migration_required": 7,
-    "covered_frozen_kernel": 23,
+    "channel_bearing_migration_required": 6,
+    "covered_frozen_kernel": 24,
     "descriptor_not_applicable_generic_utility": 1,
-    "direct_typed_entrypoint": 24,
+    "direct_typed_entrypoint": 25,
     "outside_registered_typed_path": 0,
-    "total": 55
+    "total": 56
   },
   "descriptor_not_applicable_generic_utilities": {
     "scripts/kappa3_half_score.py": "generic Bernoulli score-polynomial and aggregation helper; intentionally accepts an opaque caller-supplied observable D(C) and defines no topology observable"
@@ -298,7 +297,12 @@
     {
       "git_blob_sha": "0e8157bad50fb265efb3a0ca9cde1c795f34d995",
       "path": "scripts/threshold_score_modes.py",
-      "status": "channel_bearing_migration_required"
+      "status": "covered_frozen_kernel"
+    },
+    {
+      "git_blob_sha": "a2d311de11e15acc1964a4bfcf75ffd40c95dd41",
+      "path": "scripts/threshold_score_modes_typed.py",
+      "status": "direct_typed_entrypoint"
     }
   ],
   "schema": "scorer descriptor adoption inventory v1",
@@ -325,6 +329,7 @@
     "scripts/score_v14_fixedp_scalar_projector_typed.py": "scripts/score_v14_fixedp_scalar_projector.py",
     "scripts/score_p231_vacuum_kdv_sector_typed.py": "scripts/score_p231_vacuum_kdv_sector.py",
     "scripts/score_v14_scalar_root_projector_typed.py": "scripts/score_v14_scalar_root_projector.py",
-    "scripts/score_issue43_secondary_typed.py": "scripts/score_issue43_secondary.py"
+    "scripts/score_issue43_secondary_typed.py": "scripts/score_issue43_secondary.py",
+    "scripts/threshold_score_modes_typed.py": "scripts/threshold_score_modes.py"
   }
 }
