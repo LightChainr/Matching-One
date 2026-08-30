@@ -1,0 +1,481 @@
+{
+  "claim_boundary": [
+    "All root counts and isolating intervals come from exact rational polynomial arithmetic.",
+    "Decimal root locations and slopes summarize exact rational brackets; they are not fitted values.",
+    "The next-quotient statement is a mechanism prediction, not evidence already supplied by N13/N17.",
+    "No new size enumeration, Monte Carlo sample, Huawei production, PR, or merge is used."
+  ],
+  "exactness_gates": {
+    "all_root_intervals_width_below_2^-111": true,
+    "birth_and_exit_have_no_interior_roots": true,
+    "character_source_and_sink_have_no_interior_roots": true
+  },
+  "geometries": {
+    "N13": {
+      "N": 13,
+      "chi4_axis": {
+        "imag": "120/169",
+        "real": "-119/169"
+      },
+      "id": "gaussian-3-plus-2i",
+      "nearest_roots_to_p_ref": {
+        "axis_net": {
+          "p_ref_minus_root": "-0.00802036291313893042745037298934",
+          "root": "0.600766413703138930427450372989",
+          "slope_at_root": "-11.9376375733762853306214721146"
+        },
+        "diagonal_net": {
+          "p_ref_minus_root": "0.0329295601998877412938363360234",
+          "root": "0.559816490590112258706163663977",
+          "slope_at_root": "-0.935779767199983341635757875766"
+        },
+        "total_net": {
+          "p_ref_minus_root": "-0.0114435590451201718574404047083",
+          "root": "0.604189609835120171857440404708",
+          "slope_at_root": "-11.1183939571956699259684489046"
+        }
+      },
+      "p_ref_metrics": {
+        "activity_cancellation": {
+          "axis": "0.0250814086426450741951889288385",
+          "diagonal": "0.0772372831586056705241752447749"
+        },
+        "axis_signed_share": "0.755739917417081006371404207413",
+        "axis_signed_share_slope_dp": "-28.3067163546693481222514871725",
+        "orbit_composition": {
+          "axis_fraction_of_birth": "0.913676469271463056475843148820",
+          "axis_fraction_of_exit": "0.896080912852695726473173675327"
+        },
+        "p": "59274605079/100000000000",
+        "slopes_dp": {
+          "axis_birth": "-4.73507234472339180225643780398",
+          "axis_exit": "7.02430316377112097301697481221",
+          "axis_net": "-11.7593755084945127752734126162",
+          "birth_character_total": "-4.11114525324472081170225169426",
+          "diagonal_birth": "-0.623927091478670990554186109716",
+          "diagonal_exit": "0.287287899777823953072043333724",
+          "diagonal_net": "-0.911214991256494943626229443440",
+          "exit_character_total": "6.73701526399329701994493147849",
+          "total_net": "-10.8481605172380178316471831727"
+        },
+        "values": {
+          "axis_birth": "1.94280746873770765925623426249",
+          "axis_exit": "1.84773531617195843163842967700",
+          "axis_net": "0.0950721525657492276178045854905",
+          "birth_character_total": "1.75925234187651435800294555894",
+          "diagonal_birth": "0.183555126861193301253288703550",
+          "diagonal_exit": "0.214283068183141152705487446421",
+          "diagonal_net": "-0.0307279413219478514521987428713",
+          "exit_character_total": "1.63345224798881727893294223058",
+          "total_net": "0.125800093887697079070003328362"
+        }
+      },
+      "period_matrix": [
+        [
+          3,
+          -2
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "phase_intervals": [
+        {
+          "axis_net_sign": "positive",
+          "axis_signed_share_at_midpoint": "1.08346446482570108127247403572",
+          "diagonal_net_sign": "positive",
+          "lower": "0",
+          "orbit_contributions": "cancel",
+          "total_net_sign": "positive",
+          "upper": "0.559816490590112258706163663977"
+        },
+        {
+          "axis_net_sign": "positive",
+          "axis_signed_share_at_midpoint": "0.925625667545780164220432434666",
+          "diagonal_net_sign": "negative",
+          "lower": "0.559816490590112258706163663977",
+          "orbit_contributions": "reinforce",
+          "total_net_sign": "positive",
+          "upper": "0.600766413703138930427450372989"
+        },
+        {
+          "axis_net_sign": "negative",
+          "axis_signed_share_at_midpoint": "-1.07660954588920795994749616822",
+          "diagonal_net_sign": "negative",
+          "lower": "0.600766413703138930427450372989",
+          "orbit_contributions": "cancel",
+          "total_net_sign": "positive",
+          "upper": "0.604189609835120171857440404708"
+        },
+        {
+          "axis_net_sign": "negative",
+          "axis_signed_share_at_midpoint": "1.04968138112517484488290573672",
+          "diagonal_net_sign": "negative",
+          "lower": "0.604189609835120171857440404708",
+          "orbit_contributions": "cancel",
+          "total_net_sign": "negative",
+          "upper": "1"
+        }
+      ],
+      "polynomial_basis": "ascending monomial expansion of exact degree-(N-1) subset-boundary Bernstein sums",
+      "roots": {
+        "axis_birth": {
+          "degree_after_trim": 12,
+          "endpoint_one_order": 4,
+          "endpoint_zero_order": 4,
+          "interior_root_count": 0,
+          "roots": []
+        },
+        "axis_exit": {
+          "degree_after_trim": 12,
+          "endpoint_one_order": 2,
+          "endpoint_zero_order": 6,
+          "interior_root_count": 0,
+          "roots": []
+        },
+        "axis_net": {
+          "degree_after_trim": 11,
+          "endpoint_one_order": 2,
+          "endpoint_zero_order": 4,
+          "interior_root_count": 1,
+          "roots": [
+            {
+              "decimal": "0.600766413703138930427450372989",
+              "kind": "rational_isolating_interval",
+              "lower": "389919695323005361192194004515837/649037107316853453566312041152512",
+              "upper": "3119357562584042889537552036126697/5192296858534827628530496329220096",
+              "width": "1/5192296858534827628530496329220096"
+            }
+          ]
+        },
+        "birth_character_total": {
+          "degree_after_trim": 11,
+          "endpoint_one_order": 4,
+          "endpoint_zero_order": 4,
+          "interior_root_count": 0,
+          "roots": []
+        },
+        "diagonal_birth": {
+          "degree_after_trim": 12,
+          "endpoint_one_order": 5,
+          "endpoint_zero_order": 5,
+          "interior_root_count": 0,
+          "roots": []
+        },
+        "diagonal_exit": {
+          "degree_after_trim": 12,
+          "endpoint_one_order": 4,
+          "endpoint_zero_order": 6,
+          "interior_root_count": 0,
+          "roots": []
+        },
+        "diagonal_net": {
+          "degree_after_trim": 11,
+          "endpoint_one_order": 4,
+          "endpoint_zero_order": 5,
+          "interior_root_count": 1,
+          "roots": [
+            {
+              "decimal": "0.559816490590112258706163663977",
+              "kind": "rational_isolating_interval",
+              "lower": "181670837840439485801366961910747/324518553658426726783156020576256",
+              "upper": "2906733405447031772821871390571953/5192296858534827628530496329220096",
+              "width": "1/5192296858534827628530496329220096"
+            }
+          ]
+        },
+        "exit_character_total": {
+          "degree_after_trim": 11,
+          "endpoint_one_order": 2,
+          "endpoint_zero_order": 6,
+          "interior_root_count": 0,
+          "roots": []
+        },
+        "total_net": {
+          "degree_after_trim": 11,
+          "endpoint_one_order": 2,
+          "endpoint_zero_order": 4,
+          "interior_root_count": 1,
+          "roots": [
+            {
+              "decimal": "0.604189609835120171857440404708",
+              "kind": "rational_isolating_interval",
+              "lower": "3137131813106277662598691000069171/5192296858534827628530496329220096",
+              "upper": "784282953276569415649672750017293/1298074214633706907132624082305024",
+              "width": "1/5192296858534827628530496329220096"
+            }
+          ]
+        }
+      },
+      "signed_share_singularities": {
+        "axis_share_zero": [
+          {
+            "decimal": "0.600766413703138930427450372989",
+            "kind": "rational_isolating_interval",
+            "lower": "389919695323005361192194004515837/649037107316853453566312041152512",
+            "upper": "3119357562584042889537552036126697/5192296858534827628530496329220096",
+            "width": "1/5192296858534827628530496329220096"
+          }
+        ],
+        "common_pole": [
+          {
+            "decimal": "0.604189609835120171857440404708",
+            "kind": "rational_isolating_interval",
+            "lower": "3137131813106277662598691000069171/5192296858534827628530496329220096",
+            "upper": "784282953276569415649672750017293/1298074214633706907132624082305024",
+            "width": "1/5192296858534827628530496329220096"
+          }
+        ],
+        "diagonal_share_zero": [
+          {
+            "decimal": "0.559816490590112258706163663977",
+            "kind": "rational_isolating_interval",
+            "lower": "181670837840439485801366961910747/324518553658426726783156020576256",
+            "upper": "2906733405447031772821871390571953/5192296858534827628530496329220096",
+            "width": "1/5192296858534827628530496329220096"
+          }
+        ]
+      }
+    },
+    "N17": {
+      "N": 17,
+      "chi4_axis": {
+        "imag": "240/289",
+        "real": "161/289"
+      },
+      "id": "gaussian-4-plus-1i",
+      "nearest_roots_to_p_ref": {
+        "axis_net": {
+          "p_ref_minus_root": "0.00419255913089349082424431057375",
+          "root": "0.588553491659106509175755689426",
+          "slope_at_root": "-14.7400148493281370545377173581"
+        },
+        "diagonal_net": {
+          "p_ref_minus_root": "-0.0140643427516985346116586671466",
+          "root": "0.606810393541698534611658667147",
+          "slope_at_root": "-1.37746164349983798864423886120"
+        },
+        "total_net": {
+          "p_ref_minus_root": "0.00602396753811840610054506996756",
+          "root": "0.586722083251881593899454930032",
+          "slope_at_root": "-13.4002409713082302649979900745"
+        }
+      },
+      "p_ref_metrics": {
+        "activity_cancellation": {
+          "axis": "0.0145781334309210676639707490300",
+          "diagonal": "0.0365181005705846071197749362461"
+        },
+        "axis_signed_share": "0.764844997919214789577486300717",
+        "axis_signed_share_slope_dp": "55.5339941988900181529328636280",
+        "orbit_composition": {
+          "axis_fraction_of_birth": "0.885660450193297078642394926669",
+          "axis_fraction_of_exit": "0.895611586626106671319832305845"
+        },
+        "p": "59274605079/100000000000",
+        "slopes_dp": {
+          "axis_birth": "-6.42295668599711041092987535509",
+          "axis_exit": "8.40124170712613480905666931545",
+          "axis_net": "-14.8241983931232452199865446705",
+          "birth_character_total": "-6.04252913001823406411232078924",
+          "diagonal_birth": "-0.380427555978876346817554565851",
+          "diagonal_exit": "0.946143557720818200585978536965",
+          "diagonal_net": "-1.32657111369969454740353310282",
+          "exit_character_total": "7.45509814940531660847069077849",
+          "total_net": "-13.4976272794235506725830115677"
+        },
+        "values": {
+          "axis_birth": "2.09496013433569769544463561000",
+          "axis_exit": "2.15694497434566961170904012920",
+          "axis_net": "-0.0619848400099719162644045191984",
+          "birth_character_total": "1.82449892251275337466983982097",
+          "diagonal_birth": "0.270461211822944320774795789031",
+          "diagonal_exit": "0.251403696612441957381262824427",
+          "diagonal_net": "0.0190575152105023633935329646040",
+          "exit_character_total": "1.90554127773322765432777730478",
+          "total_net": "-0.0810423552204742796579374838023"
+        }
+      },
+      "period_matrix": [
+        [
+          4,
+          -1
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "phase_intervals": [
+        {
+          "axis_net_sign": "positive",
+          "axis_signed_share_at_midpoint": "1.04618205788347609480647002773",
+          "diagonal_net_sign": "positive",
+          "lower": "0",
+          "orbit_contributions": "cancel",
+          "total_net_sign": "positive",
+          "upper": "0.586722083251881593899454930032"
+        },
+        {
+          "axis_net_sign": "positive",
+          "axis_signed_share_at_midpoint": "-1.09840898271090918433932348980",
+          "diagonal_net_sign": "positive",
+          "lower": "0.586722083251881593899454930032",
+          "orbit_contributions": "cancel",
+          "total_net_sign": "negative",
+          "upper": "0.588553491659106509175755689426"
+        },
+        {
+          "axis_net_sign": "negative",
+          "axis_signed_share_at_midpoint": "0.915727178937903931295096852067",
+          "diagonal_net_sign": "positive",
+          "lower": "0.588553491659106509175755689426",
+          "orbit_contributions": "reinforce",
+          "total_net_sign": "negative",
+          "upper": "0.606810393541698534611658667147"
+        },
+        {
+          "axis_net_sign": "negative",
+          "axis_signed_share_at_midpoint": "1.08711300359576818588751070154",
+          "diagonal_net_sign": "negative",
+          "lower": "0.606810393541698534611658667147",
+          "orbit_contributions": "cancel",
+          "total_net_sign": "negative",
+          "upper": "1"
+        }
+      ],
+      "polynomial_basis": "ascending monomial expansion of exact degree-(N-1) subset-boundary Bernstein sums",
+      "roots": {
+        "axis_birth": {
+          "degree_after_trim": 16,
+          "endpoint_one_order": 5,
+          "endpoint_zero_order": 4,
+          "interior_root_count": 0,
+          "roots": []
+        },
+        "axis_exit": {
+          "degree_after_trim": 16,
+          "endpoint_one_order": 3,
+          "endpoint_zero_order": 7,
+          "interior_root_count": 0,
+          "roots": []
+        },
+        "axis_net": {
+          "degree_after_trim": 15,
+          "endpoint_one_order": 3,
+          "endpoint_zero_order": 4,
+          "interior_root_count": 1,
+          "roots": [
+            {
+              "decimal": "0.588553491659106509175755689426",
+              "kind": "rational_isolating_interval",
+              "lower": "3055944445821282602888007621760201/5192296858534827628530496329220096",
+              "upper": "1527972222910641301444003810880101/2596148429267413814265248164610048",
+              "width": "1/5192296858534827628530496329220096"
+            }
+          ]
+        },
+        "birth_character_total": {
+          "degree_after_trim": 16,
+          "endpoint_one_order": 5,
+          "endpoint_zero_order": 4,
+          "interior_root_count": 0,
+          "roots": []
+        },
+        "diagonal_birth": {
+          "degree_after_trim": 16,
+          "endpoint_one_order": 5,
+          "endpoint_zero_order": 7,
+          "interior_root_count": 0,
+          "roots": []
+        },
+        "diagonal_exit": {
+          "degree_after_trim": 16,
+          "endpoint_one_order": 4,
+          "endpoint_zero_order": 8,
+          "interior_root_count": 0,
+          "roots": []
+        },
+        "diagonal_net": {
+          "degree_after_trim": 15,
+          "endpoint_one_order": 4,
+          "endpoint_zero_order": 7,
+          "interior_root_count": 1,
+          "roots": [
+            {
+              "decimal": "0.606810393541698534611658667147",
+              "kind": "rational_isolating_interval",
+              "lower": "3150739700112843756992883380257525/5192296858534827628530496329220096",
+              "upper": "1575369850056421878496441690128763/2596148429267413814265248164610048",
+              "width": "1/5192296858534827628530496329220096"
+            }
+          ]
+        },
+        "exit_character_total": {
+          "degree_after_trim": 16,
+          "endpoint_one_order": 3,
+          "endpoint_zero_order": 7,
+          "interior_root_count": 0,
+          "roots": []
+        },
+        "total_net": {
+          "degree_after_trim": 15,
+          "endpoint_one_order": 3,
+          "endpoint_zero_order": 4,
+          "interior_root_count": 1,
+          "roots": [
+            {
+              "decimal": "0.586722083251881593899454930032",
+              "kind": "rational_isolating_interval",
+              "lower": "3046435229701754402984248071959625/5192296858534827628530496329220096",
+              "upper": "1523217614850877201492124035979813/2596148429267413814265248164610048",
+              "width": "1/5192296858534827628530496329220096"
+            }
+          ]
+        }
+      },
+      "signed_share_singularities": {
+        "axis_share_zero": [
+          {
+            "decimal": "0.588553491659106509175755689426",
+            "kind": "rational_isolating_interval",
+            "lower": "3055944445821282602888007621760201/5192296858534827628530496329220096",
+            "upper": "1527972222910641301444003810880101/2596148429267413814265248164610048",
+            "width": "1/5192296858534827628530496329220096"
+          }
+        ],
+        "common_pole": [
+          {
+            "decimal": "0.586722083251881593899454930032",
+            "kind": "rational_isolating_interval",
+            "lower": "3046435229701754402984248071959625/5192296858534827628530496329220096",
+            "upper": "1523217614850877201492124035979813/2596148429267413814265248164610048",
+            "width": "1/5192296858534827628530496329220096"
+          }
+        ],
+        "diagonal_share_zero": [
+          {
+            "decimal": "0.606810393541698534611658667147",
+            "kind": "rational_isolating_interval",
+            "lower": "3150739700112843756992883380257525/5192296858534827628530496329220096",
+            "upper": "1575369850056421878496441690128763/2596148429267413814265248164610048",
+            "width": "1/5192296858534827628530496329220096"
+          }
+        ]
+      }
+    }
+  },
+  "issue": 334,
+  "mechanism_classification": {
+    "class": "common_activity_with_orbit_composition_counterflow",
+    "falsifiable_prediction": "On the next independently chosen two-orbit Gaussian quotient, the axis and diagonal net-flux zeros should remain a close ordered pair; between them the two chi4-weighted orbit contributions reinforce, while outside them they cancel. A quotient that lacks this paired-zero window falsifies the common-activity/counterflow classification.",
+    "statement": "The 76/24 split is not birth-dominated. At p_ref each orbit net is only a small residual of two large positive birth/exit currents. Birth and exit have similar axis/diagonal composition, and their small composition skew reverses between N13 and N17, making both orbit nets reverse together while their reinforcing signed share stays close. The signed-share slope itself reverses and roughly doubles, so 76/24 is not a geometry-independent constant."
+  },
+  "parents": [
+    "b8e286e",
+    "e34140d"
+  ],
+  "schema": "matching-one/p334-orbit-flux-phase-diagram/v1",
+  "status": "exact_orbit_source_sink_phase_diagram"
+}

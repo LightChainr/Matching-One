@@ -1,0 +1,26 @@
+{
+  "schema": "matching-one/p334-orbit-flux-phase-diagram-manifest/v1",
+  "issue": 334,
+  "parents": ["b8e286e", "e34140d"],
+  "compute": "reuse exact N13/N17 coefficient tables only; no new subset enumeration or production",
+  "domain": "all p in the open unit interval",
+  "objects": [
+    "axis/diagonal birth incidence",
+    "axis/diagonal exit incidence",
+    "orbit net flux",
+    "character-weighted total net flux",
+    "normalization-free signed share"
+  ],
+  "root_contract": "exact Fraction polynomial expansion, square-free Sturm root count, rational intervals of width at most 2^-112",
+  "p_ref": "59274605079/100000000000",
+  "outputs": {
+    "json": "results/p334-orbit-flux-phase-diagram/latest.json",
+    "markdown": "results/p334-orbit-flux-phase-diagram/latest.md"
+  },
+  "commands": [
+    "PYTHONPATH=scripts python3 scripts/p334_orbit_flux_phase_diagram.py --format json --output results/p334-orbit-flux-phase-diagram/latest.json",
+    "PYTHONPATH=scripts python3 scripts/p334_orbit_flux_phase_diagram.py --format markdown --output results/p334-orbit-flux-phase-diagram/latest.md",
+    "PYTHONPATH=scripts python3 -m unittest discover -s tests -p test_p334_orbit_flux_phase_diagram.py"
+  ],
+  "claim_boundary": "Exact finite-volume phase diagram and one explicit next-quotient prediction; no continuum or asymptotic claim."
+}
