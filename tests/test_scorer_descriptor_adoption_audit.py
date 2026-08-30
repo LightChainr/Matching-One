@@ -112,8 +112,8 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
         self.assertEqual(
             result["counts"]["descriptor_not_applicable_generic_utility"], 1
         )
-        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 25)
-        self.assertEqual(result["counts"]["outside_registered_typed_path"], 2)
+        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 26)
+        self.assertEqual(result["counts"]["outside_registered_typed_path"], 1)
         self.assertEqual(len(result["rows"]), 35)
         statuses = {row["path"]: row["status"] for row in result["rows"]}
         for path in (
@@ -132,6 +132,7 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
             "scripts/score_norm5_thermal_jet.py",
             "scripts/score_p159_pell_hex_filter.py",
             "scripts/score_p231_vacuum_kdv_sector.py",
+            "scripts/score_p48_new_geometry_channels.py",
             "scripts/score_p48_sprime_frozen.py",
             "scripts/score_p49_fullcurve_doubling.py",
             "scripts/score_p50_fullcurve_n290.py",
