@@ -360,6 +360,7 @@ struct BirthTrace {
 struct GeometryPilotRecord {
     bool at_risk = false;
     int k1 = 0;
+    int k2 = 0;
     Vector line{0, 0};
     int essential_size = 0;
     int essential_carriers = 0;
@@ -884,6 +885,28 @@ class ThresholdEngine {
                          record.h2_direction_negative + record.h2_direction_mixed) {
             throw std::logic_error("H2 trigger decompositions do not sum to H2");
         }
+        for (int offset = k0; offset < geometry_.n; ++offset) {
+            const int vertex = permutation[offset];
+            active_[vertex] = 1;
+            ++graph_components_;
+            for (const int edge_index : geometry_.primal_incident[vertex]) {
+                const Edge& edge = geometry_.primal_edges[edge_index];
+                if (active_[edge.i] && active_[edge.j] && union_find_.add_edge(edge)) {
+                    --graph_components_;
+                }
+            }
+            const HomologyUnionFind::ComponentMark component =
+                union_find_.component_mark(vertex);
+            const bool crossed = component.rank == 2 ||
+                (component.rank == 1 && !same_vector(component.line, plateau_line));
+            if (crossed) {
+                record.k2 = offset + 1;
+                break;
+            }
+        }
+        if (record.k2 == 0 || record.next_exit != static_cast<int>(record.k2 == k0 + 1)) {
+            throw std::logic_error("H2 next-site membership disagrees with realized K2");
+        }
         return record;
     }
 
@@ -1382,7 +1405,7 @@ void self_test() {
             brute_h2 += static_cast<int>(trace.k2 == 4);
         }
         const BirthTrace actual = gaussian_engine.trace(permutation, false, false);
-        if (pilot.h2 != brute_h2 ||
+        if (pilot.h2 != brute_h2 || pilot.k2 != actual.k2 ||
             pilot.next_exit != static_cast<int>(actual.k2 == 4)) {
             throw std::runtime_error("virtual H2 differs from one-step replay");
         }
@@ -1708,7 +1731,8 @@ void run_geometry_pilot_design(const PairDesign& design, const Options& options,
             const GeometryPilotRecord& value = row.record;
             output << design.n << ',' << a << ',' << b << ',' << orientation << ','
                    << batch << ',' << row.replica << ',' << options.geometry_pilot_k0 << ','
-                   << value.k1 << ',' << options.geometry_pilot_k0 - value.k1 << ','
+                   << value.k1 << ',' << value.k2 << ','
+                   << options.geometry_pilot_k0 - value.k1 << ','
                    << value.line.x << ',' << value.line.y << ','
                    << value.essential_size << ',' << value.essential_carriers << ','
                    << value.occupied_frontier << ',' << value.vacant_frontier << ','
@@ -1981,7 +2005,7 @@ int run(int argc, char** argv) {
         geometry_pilot.open(geometry_pilot_path);
         if (!geometry_pilot) throw std::runtime_error("cannot open geometry-pilot output");
         geometry_pilot
-            << "n,a,b,orientation,batch,replica,k0,k1,age_steps,ell_u,ell_v,"
+            << "n,a,b,orientation,batch,replica,k0,k1,k2,age_steps,ell_u,ell_v,"
                "essential_size,essential_carriers,occupied_frontier,vacant_frontier,"
                "H2,H2_theta,H2_figure8,H2_separate,H2_direction_positive,"
                "H2_direction_negative,H2_direction_mixed,next_site,next_exit\n";
