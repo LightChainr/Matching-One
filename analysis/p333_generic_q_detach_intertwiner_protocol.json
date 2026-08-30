@@ -1,0 +1,89 @@
+{
+  "schema": "matching-one/p333-generic-q-detach-intertwiner-protocol/v1",
+  "status": "frozen_before_exact_intersection",
+  "issues": [333, 321, 370],
+  "base_commit": "96df7c81c213d0f0c5fd73dc8afb45fd7b483422",
+  "latest_main_audited": "ca866f0802f94767b55888734ffca2a1e73f50c6",
+  "question": "Does the minimal physical generic-Q detach/loop-weight generator reopen, or uniquely select a direction in, the empty width-3/4 Gram/source affine-intertwiner intersection found at 96df7c8?",
+  "representation": {
+    "module": "V_w is the rational vector space on circular noncrossing connectivity states in repository order",
+    "widths": [2, 3, 4],
+    "join": "e_i joins periodic sites i and i+1 with unit coefficient",
+    "translation": "T rotates every site forward by one",
+    "detach": "D_i(Q)|pi> is |pi with i split into a singleton> if the block of i has size greater than one, and Q|pi> if i is already singleton",
+    "normalization": "The non-singleton detach coefficient is exactly one and the completed singleton loop coefficient is exactly Q; no additional edge, cluster or transfer weight is absorbed into D_i",
+    "full_Q_lift": "Work over Q[epsilon]/(epsilon^2) at Q=1+epsilon, with D_i=D_i(1)+epsilon P_i and X=X0+epsilon V; P_i projects columns whose state already has singleton i",
+    "radical": "R_w={x: one^T x=0}, B_a=e_a-e_last",
+    "gram": "G(Q)_(pi,sigma)=Q^{blocks(pi vee sigma)}; G0=all-ones and G1_(pi,sigma)=blocks(pi vee sigma); H=B^T G1 B",
+    "source": "s0 is the all-singleton connectivity state"
+  },
+  "frozen_equations": {
+    "affine_hom_order_zero": [
+      "X0 e_i=e_(i+1) X0",
+      "X0 T=T X0",
+      "X0 D_i(1)=D_(i+1)(1) X0"
+    ],
+    "affine_hom_velocity": [
+      "V e_i=e_(i+1) V",
+      "V T=T V",
+      "V D_i(1)+X0 P_i=D_(i+1)(1)V+P_(i+1)X0"
+    ],
+    "endpoint_normalization": [
+      "one^T X0=one^T",
+      "one^T V=0"
+    ],
+    "gram_radical": "For A0 induced by X0 B=B A0, require H A0=A0^T H. This is exactly the radical projection of the epsilon coefficient of G(Q)X(Q)=X(Q)^T G(Q); the V terms vanish because B^T G0=G0 B=0.",
+    "source_normalization": [
+      "X0 s0=s0",
+      "V s0=0"
+    ],
+    "secondary_full_gram_check": "Separately report whether the unprojected epsilon equation G1 X0+G0 V=X0^T G1+V^T G0 is solvable; it cannot weaken the primary radical condition.",
+    "canonical_full_Q_candidate": "X(Q)=T, so X0=T and V=0"
+  },
+  "analysis_ladder": [
+    "generic-Q affine Hom jet: joins plus translation plus detach",
+    "plus endpoint normalization through first order",
+    "plus first-jet radical Gram self-adjointness",
+    "plus all-singleton source normalization through first order"
+  ],
+  "outputs": {
+    "dimensions": "Report exact affine tangent dimensions at every stage for the joint variables (X0,V).",
+    "base_and_velocity": "When nonempty, give exact particular X0,V and primitive-integer tangent directions.",
+    "velocity_radical_overlap": "When the final intersection is nonempty, report the rank and exact matrix of the induced radical velocity B^{-1}VB.",
+    "empty_certificate": "When inconsistent, give an exact left-null witness y^T C=0 but y^T b=1 and identify whether its support is purely order-zero or uses velocity equations.",
+    "full_Q_boundary": "Record the polynomial detach definition and the Q=1 first jet; do not infer a continuum LCFT or Jordan identity."
+  },
+  "decision_rule": {
+    "reopened_unique": "The final joint affine system is consistent with tangent dimension zero.",
+    "reopened_moduli": "The final joint affine system is consistent with positive tangent dimension.",
+    "remains_empty": "The final joint affine system is inconsistent.",
+    "zeroth_order_no_go": "The inconsistency is already implied by the order-zero projection and therefore no allowed velocity can repair it."
+  },
+  "deduplication": {
+    "96df7c8": "already proves that the join-only width-3/4 Gram/source intersection is empty; this calculation adds the missing detach/loop-weight generator and its Q velocity without changing the old Gram or source conventions",
+    "d0fca79": "already computes the join-only affine Hom spaces",
+    "6c60b0e": "already constructs a different signed-history nilpotent in a three-mark endpoint radical",
+    "PR385_b5c761a": "already gives finite-noise Jordan nonseparation and is not an exact connectivity representation",
+    "PR393_8923acd": "already proves a formal Gaussian multiplier semigroup with a declared common square-zero K; it supplies neither this microscopic detach representation nor a Gram/source overlap"
+  },
+  "claim_boundary": [
+    "This is exact rational first-jet algebra at Q=1 in widths 2,3,4 only.",
+    "The detach operator is the minimal FK connectivity detach; no occupied-edge transfer matrix, marked cluster fugacity, or higher Q jet is included.",
+    "A nonempty microscopic intersection would not by itself identify an LCFT field or the formal K of PR #393.",
+    "An empty intersection rules out this declared minimal lift only; a larger marked or direct-sum module can carry additional extension data."
+  ],
+  "compute_contract": {
+    "arithmetic": "fractions.Fraction exact row reduction",
+    "monte_carlo": false,
+    "fit": false,
+    "server": false,
+    "expected_cost": "local seconds"
+  },
+  "frozen_inputs": {
+    "96df7c8:scripts/p333_gram_source_intertwiner.py": "ac4e9577ab482adec6bc41d3d6810a5de69e9997",
+    "96df7c8:analysis/p333_gram_source_intertwiner_protocol.json": "a9688f2e59f43e7434bbac132aeeba9845e7bb36",
+    "8923acd:scripts/formal_jordan_multiplier_semigroup.py": "7265925150aa236df1ca9f9027c13ce03defe247",
+    "8923acd:analysis/formal_jordan_multiplier_semigroup_contract.json": "2733afd159cc82820db97f70fa739a021865aef6",
+    "PR385-b5c761a:notes/jordan-identifiability-and-c4-five-state-obstruction.md": "ba9ebc967696407f330b494dd279841a865bc2ee"
+  }
+}
