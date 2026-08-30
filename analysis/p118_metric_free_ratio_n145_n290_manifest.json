@@ -1,0 +1,69 @@
+{
+  "schema": "matching-one/p118-metric-free-ratio-heldout-manifest/v1",
+  "issue": 118,
+  "status": "protocol_locked_before_p118_score_execution",
+  "created_utc": "2026-08-30",
+  "chronology": {
+    "definition_freeze_commit": "920c6393f6db7927887df0905dfaed81838ca062",
+    "definition_freeze_committed_at": "2026-08-29T13:36:57+08:00",
+    "definition_freeze_path": "predictions/dimensionless_amplitude_ratios_20260829.yaml",
+    "definition_freeze_sha256": "684f7e909875892ccf89cf03d6573342b297e4e320ff1f23e47bf67d2d657b20",
+    "first_target_result_commit": "9675bce5b406247e15c03bca20abef954f26a3a2",
+    "first_target_result_committed_at": "2026-08-29T14:47:18+08:00",
+    "order": "definition freeze precedes first N145-to-N290 target result by 1 hour 10 minutes 21 seconds"
+  },
+  "inputs": {
+    "parent_N": 145,
+    "child_N": 290,
+    "independent_random_streams": true,
+    "parent_histogram": {
+      "path": "results/server-20260829/P50-n145-n290-fullcurve/raw/n145_100m.hist.csv",
+      "sha256": "c685dae9bddc005224fe5dd052945482cd3b8c5bb26744dad4e44996a8318b42"
+    },
+    "parent_metadata": {
+      "path": "results/server-20260829/P50-n145-n290-fullcurve/raw/n145_100m.metadata.json",
+      "sha256": "596b74853030dfbdb6c225a86b11c2c5124318acb9f7bab2a97fab6556c78257"
+    },
+    "child_histogram": {
+      "path": "results/server-20260829/P50-n145-n290-fullcurve/raw/n290_100m.hist.csv",
+      "sha256": "e5f62077407f5c989e1b2907171c5f844b770812212bde616f63c621dbf97eb9"
+    },
+    "child_metadata": {
+      "path": "results/server-20260829/P50-n145-n290-fullcurve/raw/n290_100m.metadata.json",
+      "sha256": "a38377490496004809c9b1c71a388cb7c4ecda2588f8fc1ed7c2e0aaf5ea253d"
+    }
+  },
+  "observables": {
+    "R_I": "P4_D_prime / (P4_S * Mbar_prime)",
+    "R_T": "P4_S_prime / (P4_D * Mbar_prime)",
+    "size_power": 0,
+    "same_modulus_target": "R(290)-R(145)=0",
+    "feature_order": ["R_I", "R_T"],
+    "semantic_source": "predictions/dimensionless_amplitude_ratios_20260829.yaml"
+  },
+  "estimation": {
+    "rule": "recompute Mbar_prime and all four P4 factors, then both nonlinear ratios, inside every size-local delete-one replicate",
+    "parent_child_covariance": "sum independent size-local jackknife covariance blocks",
+    "joint_score": "correlation-eigenbasis generalized chi-square",
+    "relative_eigenvalue_cutoff": 1e-10,
+    "decision_alpha": 0.01
+  },
+  "scoring_order": [
+    "joint two-vector constant-response null",
+    "R_I marginal constant-response null",
+    "R_T marginal constant-response null",
+    "descriptive observed child-over-parent ratios"
+  ],
+  "decision_language": {
+    "p_below_alpha": "eliminated at the frozen alpha for this N145-to-N290 block",
+    "p_at_or_above_alpha": "survives this block; not established as a universal ratio",
+    "low_precision": "underpowered only when a declared effect-size or precision gate supports that statement"
+  },
+  "forbidden": [
+    "refit a size exponent",
+    "drop one ratio from the joint primary after reveal",
+    "replace delete-one nonlinear ratios by independent-error propagation",
+    "count the two ratios or this reuse of P50 raw as independent primary evidence",
+    "claim cross-microscopic universality from one square-site lineage"
+  ]
+}
