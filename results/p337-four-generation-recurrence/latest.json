@@ -1,0 +1,261 @@
+{
+  "N1360_forecast_freeze": {
+    "H4_covectors_exact": [
+      "4633/7225",
+      "-6887/7225"
+    ],
+    "Smith_classes": [
+      [
+        4,
+        340
+      ],
+      [
+        4,
+        340
+      ]
+    ],
+    "geometry": [
+      [
+        36,
+        8
+      ],
+      [
+        28,
+        24
+      ]
+    ],
+    "model_order": [
+      "fixed_lambda0_single",
+      "free_single_lambda",
+      "scale_neutral",
+      "fixed_lambda0_plus_correction"
+    ],
+    "pair_expected_sign": "positive",
+    "period_matrices": [
+      [
+        [
+          36,
+          -8
+        ],
+        [
+          8,
+          36
+        ]
+      ],
+      [
+        [
+          28,
+          -24
+        ],
+        [
+          24,
+          28
+        ]
+      ]
+    ],
+    "predictions": {
+      "fixed_lambda0_plus_correction": {
+        "H4_amplitude": -0.0007955691750350654,
+        "pair_second_minus_first": 0.001268506144830997,
+        "standard_error": 0.0002994382124001789
+      },
+      "fixed_lambda0_single": {
+        "H4_amplitude": -0.0003415736626203477,
+        "pair_second_minus_first": 0.0005446267949323745,
+        "standard_error": 2.7474294923085744e-05
+      },
+      "free_single_lambda": {
+        "H4_amplitude": -0.0011777666939835145,
+        "pair_second_minus_first": 0.0018779062027252716,
+        "standard_error": 0.0003344064071558957
+      },
+      "scale_neutral": {
+        "H4_amplitude": -0.004524709788844298,
+        "pair_second_minus_first": 0.00721448536574205,
+        "standard_error": 0.0004491836658839499
+      }
+    },
+    "projective_scalar_target": 0.0,
+    "status": "frozen for a future heldout; production not authorized or started"
+  },
+  "claim_boundary": "four-generation same-lineage recurrence GOF and frozen N1360 forecasts; no cross-geometry exponent or unique correction-field identification",
+  "data": {
+    "H4_amplitude": [
+      -0.01605092257680157,
+      -0.011111494145226835,
+      -0.0048572599119938095,
+      -0.0021675562817575636
+    ],
+    "covariance": [
+      [
+        2.4715787546734945e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        9.518466362688542e-07,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.559714078164142e-06,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        3.1016939301171325e-07
+      ]
+    ],
+    "generation_order": [
+      "N85",
+      "N170",
+      "N340",
+      "N680"
+    ],
+    "standard_error": [
+      0.004971497515511292,
+      0.0009756262789966525,
+      0.0012488851340952626,
+      0.00055692853492321
+    ]
+  },
+  "models": {
+    "fixed_lambda0_plus_correction": {
+      "AIC_descriptive": 6.077301040706695,
+      "N1360_H4_amplitude_prediction": -0.0007955691750350654,
+      "N1360_prediction_standard_error": 0.0002994382124001789,
+      "absolute_correction_to_leading_ratio": [
+        0.8703003147842542,
+        0.726609772854389,
+        0.6066431932043914,
+        0.5064836417153035,
+        0.42286088791367493
+      ],
+      "c0": -0.12476489703963398,
+      "c0_standard_error": 0.2417552880646773,
+      "c1": 0.10858292916761851,
+      "c1_standard_error": 0.2400164495388828,
+      "correction_term_n0_to_n4": [
+        0.10858292916761851,
+        0.029391375032719602,
+        0.007955697391257986,
+        0.002153458996416765,
+        0.0005829012116956624
+      ],
+      "definition": "A_n=c0*lambda0^n+c1*lambda1^n",
+      "delta_AIC_descriptive": 0.09782752641251591,
+      "df": 1,
+      "gof_p": 0.7809888329163177,
+      "lambda0_frozen": 0.3242098886627524,
+      "lambda1": 0.27068136085506034,
+      "lambda1_95pct_profile_interval": [
+        2.7886205916826285e-05,
+        0.6416617920164405
+      ],
+      "lambda1_95pct_wald_interval": [
+        0.019784592173426097,
+        0.5215781295366946
+      ],
+      "lambda1_standard_error_wald": 0.12800855544981338,
+      "leading_term_n0_to_n4": [
+        -0.12476489703963398,
+        -0.0404500133782395,
+        -0.013114294333765873,
+        -0.004251783905840799,
+        -0.0013784703867307279
+      ],
+      "parameter_covariance": [
+        [
+          0.0584456193072351,
+          -0.05801451086232888,
+          -0.03079683636792338
+        ],
+        [
+          -0.0580145108623289,
+          0.057607896049251074,
+          0.030524077418322356
+        ],
+        [
+          -0.0307968363679233,
+          0.03052407741832227,
+          0.016386190268347943
+        ]
+      ],
+      "parameter_order": [
+        "c0",
+        "c1",
+        "lambda1"
+      ],
+      "profile_boundary_note": "lower endpoint is close to zero and should be read as marginal exclusion, not a robust sign discovery",
+      "quadratic": 0.07730104070669545
+    },
+    "fixed_lambda0_single": {
+      "AIC_descriptive": 17.84253507119478,
+      "N1360_H4_amplitude_prediction": -0.0003415736626203477,
+      "N1360_prediction_standard_error": 2.7474294923085744e-05,
+      "coefficient": -0.030915718798537453,
+      "coefficient_standard_error": 0.0024866893117994325,
+      "delta_AIC_descriptive": 11.863061556900602,
+      "df": 3,
+      "gof_p": 0.0012214667609636823,
+      "lambda": 0.3242098886627524,
+      "quadratic": 15.842535071194781
+    },
+    "free_single_lambda": {
+      "AIC_descriptive": 5.979473514294179,
+      "N1360_H4_amplitude_prediction": -0.0011777666939835145,
+      "N1360_prediction_standard_error": 0.0003344064071558957,
+      "coefficient": -0.02156627899410658,
+      "delta_AIC_descriptive": 0.0,
+      "df": 2,
+      "gof_p": 0.37167451880593294,
+      "interpretation": "same-lineage transfer only; not a cross-geometry exponent",
+      "lambda": 0.48341599097773635,
+      "lambda_standard_error": 0.04738748033245702,
+      "parameter_covariance": [
+        [
+          9.328708994438652e-06,
+          0.00012143861504224768
+        ],
+        [
+          0.00012143861504224768,
+          0.002245573292259001
+        ]
+      ],
+      "quadratic": 1.9794735142941788
+    },
+    "scale_neutral": {
+      "AIC_descriptive": 70.94009149844427,
+      "N1360_H4_amplitude_prediction": -0.004524709788844298,
+      "N1360_prediction_standard_error": 0.0004491836658839499,
+      "coefficient": -0.004524709788844298,
+      "coefficient_standard_error": 0.0004491836658839499,
+      "delta_AIC_descriptive": 64.96061798415009,
+      "df": 3,
+      "gof_p": 7.197691874924372e-15,
+      "lambda": 1.0,
+      "quadratic": 68.94009149844427
+    }
+  },
+  "reading": {
+    "AIC_boundary": "AIC is descriptive only and leaves recurrence/free-single tied; the heldout residual and GOF carry the scientific weight",
+    "heldout_GOF": "the recurrence passes the fourth-generation one-df GOF; fixed single H4 and scale-neutral fail, free-single remains acceptable",
+    "lambda1": "positive decaying correction is now marginally separated from zero by profile likelihood, but the boundary is too close for a strong sign claim"
+  },
+  "schema": "matching-one/P337-four-generation-H4-recurrence-fit/v1",
+  "source": {
+    "N170": "results/server-20260830/P337-N170-angle-flip/score.json",
+    "N340": "results/server-20260830/P337-N340-second-child/score.json",
+    "N680": "results/server-20260830/P337-N680-heldout/score.json",
+    "N680_reveal_commit": "02080a4",
+    "N85": "results/server-20260830/P337-natural-current-scale-N85/score.json",
+    "independence": "four independent seed/counter blocks; full within-pair covariance retained before H4 projection"
+  },
+  "status": "post-heldout covariance-aware same-lineage fit; no new simulation"
+}

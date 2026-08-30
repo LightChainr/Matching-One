@@ -1,0 +1,26 @@
+{
+  "schema": "matching-one/p337-four-generation-recurrence-manifest/v1",
+  "issues": [337, 334],
+  "source_N680_reveal_commit": "02080a4",
+  "new_simulation": false,
+  "artifacts": {
+    "script": "scripts/fit_four_generation_recurrence.py",
+    "result": "results/p337-four-generation-recurrence/latest.json",
+    "report": "results/p337-four-generation-recurrence/latest.md",
+    "science_card": "results/p337-four-generation-recurrence/SCIENTIFIC_CARD.md",
+    "test": "tests/test_fit_four_generation_recurrence.py"
+  },
+  "result": {
+    "lambda0": 0.3242098886627524,
+    "lambda1": 0.27068136085506034,
+    "lambda1_standard_error_wald": 0.12800855544981338,
+    "lambda1_profile_95": [0.000027886205916826285, 0.6416617920164405],
+    "recurrence_quadratic": 0.07730104070669545,
+    "recurrence_df": 1,
+    "recurrence_gof_p": 0.7809888329163177,
+    "N1360_recurrence_prediction": -0.0007955691750350654,
+    "N1360_recurrence_prediction_standard_error": 0.0002994382124001789
+  },
+  "N1360_status": "forecasts and exact geometry frozen; no production authorized or running",
+  "claim_boundary": "four-generation same-lineage recurrence GOF; free-single remains viable and AIC-tied"
+}
