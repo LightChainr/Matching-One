@@ -1,0 +1,233 @@
+{
+  "claim_boundary": "one heldout second child in the same Gaussian lineage; discriminates fixed scale transfers and scalar leakage, not a fitted continuum exponent",
+  "frozen_models_in_scoring_order": [
+    {
+      "H4_amplitude": -0.0036024562797008176,
+      "H4_amplitude_target_variance": 1.0005055303872322e-07,
+      "absolute_K_A": [
+        -0.002310059507799846,
+        0.003433926145093361
+      ],
+      "absolute_target_covariance": [
+        [
+          4.114038874542592e-08,
+          -6.115559190367975e-08
+        ],
+        [
+          -6.115559190367975e-08,
+          9.090838796474044e-08
+        ]
+      ],
+      "name": "nominal_area_H4",
+      "pair_second_minus_first": 0.005743985652893207,
+      "pair_sign": "positive",
+      "role": "primary asymptotic H4 target"
+    },
+    {
+      "H4_amplitude": -0.007692100036533407,
+      "H4_amplitude_target_variance": 7.500904160324245e-06,
+      "absolute_K_A": [
+        -0.00493252587809817,
+        0.0073322481593917745
+      ],
+      "absolute_target_covariance": [
+        [
+          3.084341902422932e-06,
+          -4.584904528812159e-06
+        ],
+        [
+          -4.584904528812159e-06,
+          6.815505609740846e-06
+        ]
+      ],
+      "name": "observed_N85_to_N170_effective",
+      "pair_second_minus_first": 0.012264774037489944,
+      "pair_sign": "positive",
+      "role": "secondary descriptive two-state/slow-state continuation"
+    },
+    {
+      "H4_amplitude": -0.011111494145226835,
+      "H4_amplitude_target_variance": 9.518466362688542e-07,
+      "absolute_K_A": [
+        -0.007125197560530924,
+        0.010591676149228681
+      ],
+      "absolute_target_covariance": [
+        [
+          3.9139554408030704e-07,
+          -5.818133201124702e-07
+        ],
+        [
+          -5.818133201124702e-07,
+          8.648712142487766e-07
+        ]
+      ],
+      "name": "scale_neutral",
+      "pair_second_minus_first": 0.017716873709759606,
+      "pair_sign": "positive",
+      "role": "fixed scale-neutral comparator"
+    }
+  ],
+  "frozen_source_amplitudes": {
+    "N170_H4_amplitude": -0.011111494145226835,
+    "N170_measurement_variance": 9.518466362688542e-07,
+    "N85_H4_amplitude": -0.01605092257680157,
+    "N85_measurement_variance": 2.4715787546734945e-05,
+    "nominal_area_ratio": 0.3242098886627524,
+    "observed_N85_to_N170_ratio": 0.6922651387831313,
+    "ratio_is_secondary_descriptive": true
+  },
+  "geometry": {
+    "F3_reduction_nondegenerate": true,
+    "H4_covectors_exact": [
+      "4633/7225",
+      "-6887/7225"
+    ],
+    "N": 340,
+    "Smith_classes": [
+      [
+        2,
+        170
+      ],
+      [
+        2,
+        170
+      ]
+    ],
+    "canonicalization": "D4-equivalent canonical representatives used by the runner",
+    "charged_projective_scalar": {
+      "frozen_amplitude_target": 0.0,
+      "transport": "unchanged along the Gaussian 1+i lineage",
+      "value": 0.5
+    },
+    "common_multiplier": [
+      1,
+      1
+    ],
+    "exact_angle_flip": true,
+    "first": [
+      18,
+      4
+    ],
+    "first_period_matrix": [
+      [
+        18,
+        -4
+      ],
+      [
+        4,
+        18
+      ]
+    ],
+    "parent_H4_covectors_exact": [
+      "-4633/7225",
+      "6887/7225"
+    ],
+    "parent_N170": [
+      [
+        11,
+        7
+      ],
+      [
+        13,
+        1
+      ]
+    ],
+    "raw_multiplier_images": [
+      [
+        4,
+        18
+      ],
+      [
+        12,
+        14
+      ]
+    ],
+    "second": [
+      14,
+      12
+    ],
+    "second_period_matrix": [
+      [
+        14,
+        -12
+      ],
+      [
+        12,
+        14
+      ]
+    ]
+  },
+  "observable": {
+    "decomposition": {
+      "A_projective_scalar": "2(c_second*K_first-c_first*K_second)/(c_second-c_first)",
+      "H4_amplitude": "(K_second-K_first)/(c_second-c_first)",
+      "transform": [
+        [
+          0.6271701388888888,
+          -0.6271701388888888
+        ],
+        [
+          1.1956597222222223,
+          0.8043402777777778
+        ]
+      ]
+    },
+    "definition": "K_A=p(1-p)Jminus_A/W_A=d_eta log W_A",
+    "vector_order": [
+      "K_A_first_18_plus_4i",
+      "K_A_second_14_plus_12i"
+    ]
+  },
+  "power": {
+    "fixed_amplitude_gaps": {
+      "effective_vs_neutral": 0.0034193941086934285,
+      "nominal_vs_effective": 0.004089643756832589,
+      "nominal_vs_neutral": 0.007509037865526018
+    },
+    "projected_measurement_standard_error": 0.0007965955210640066,
+    "projected_measurement_z_for_gaps": {
+      "effective_vs_neutral": 4.292509835011588,
+      "nominal_vs_effective": 5.13390252479713,
+      "nominal_vs_neutral": 9.426412359808717
+    },
+    "variance_source": "N170 8M/shape H4-amplitude covariance",
+    "why_12m": "resolves nominal versus effective at >5 SE and effective versus neutral at >4 SE under N170 variance"
+  },
+  "production": {
+    "batches": 80,
+    "engine": "1714141 projective-birth integer-period runner",
+    "full_batch_covariance_required": true,
+    "machine": {
+      "class": "Kunpeng AArch64, 16 vCPU, 32 GiB",
+      "id": "033945d8bf8b47a7acf475c595169e07",
+      "name": "DevEnvC_HZsCM6"
+    },
+    "replica_offset": 0,
+    "samples_per_shape": 12000000,
+    "seed": 202608337340,
+    "threads": 16
+  },
+  "schema": "matching-one/P337-N340-second-child-preregistration/v1",
+  "scoring_contract": {
+    "fixed_model_order": [
+      "nominal_area_H4",
+      "observed_N85_to_N170_effective",
+      "scale_neutral"
+    ],
+    "no_H4_H8_vote": true,
+    "no_exponent_fit": true,
+    "no_post_reveal_model_or_basis_change": true,
+    "primary_coordinate": "H4_amplitude",
+    "projective_scalar_zero_control": true,
+    "report_measurement_only_and_source_uncertainty_aware_residuals": true
+  },
+  "source": {
+    "N170_reveal_commit": "0db21b7",
+    "N170_score": "results/server-20260830/P337-N170-angle-flip/score.json",
+    "N85_score": "results/server-20260830/P337-natural-current-scale-N85/score.json",
+    "independence": "N85 and N170 are independent seed/counter blocks",
+    "p_ref": 0.59274605079
+  },
+  "status": "frozen before any N340 projective-birth generation or inspection"
+}
