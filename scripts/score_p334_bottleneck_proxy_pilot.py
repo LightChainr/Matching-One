@@ -11,10 +11,10 @@ from pathlib import Path
 from typing import Mapping, Sequence
 
 import mpmath as mp
+import numpy as np
 
 from score_p334_current_k0_geometry_pilot import (
     add_matrix,
-    centered_fit,
     covariance,
     joint_two,
     sha256,
@@ -35,6 +35,54 @@ MODELS = {
     "Mshape": ("age",) + SHAPE,
     "MH2": ("age", "h2_rate"),
 }
+
+
+def centered_fit(rows, predictors, outcome=lambda row: row["y"],
+                 stratum=lambda row: (row["ell_u"], row["ell_v"])):
+    """Fixed-effect OLS with a fail-closed age-identifiability gate.
+
+    The frozen proxy columns may span exact linear identities.  A pseudoinverse
+    keeps their full frozen column space without selecting one representative;
+    the age coefficient is accepted only when age adds one independent rank.
+    """
+    names = list(predictors)
+    groups = {}
+    for row in rows:
+        groups.setdefault(stratum(row), []).append(row)
+    x_rows, y_rows = [], []
+    for members in groups.values():
+        means = [sum(float(row[name]) for row in members) / len(members) for name in names]
+        ybar = sum(outcome(row) for row in members) / len(members)
+        for row in members:
+            x_rows.append([float(row[name]) - means[index]
+                           for index, name in enumerate(names)])
+            y_rows.append(outcome(row) - ybar)
+    x, y = np.asarray(x_rows), np.asarray(y_rows)
+    active = np.sum(x * x, axis=0) > 1e-14
+    if not active[0]:
+        raise ValueError("age is unidentifiable after line centering")
+    xa = x[:, active]
+    rank = int(np.linalg.matrix_rank(xa))
+    age_position = list(np.flatnonzero(active)).index(0)
+    without_age = np.delete(xa, age_position, axis=1)
+    if rank != int(np.linalg.matrix_rank(without_age)) + 1:
+        raise ValueError("age lies in the frozen proxy column span")
+    coefficients, _, _, singular = np.linalg.lstsq(xa, y, rcond=None)
+    by_name = {name: 0.0 for name in names}
+    for index, value in zip(np.flatnonzero(active), coefficients):
+        by_name[names[index]] = float(value)
+    residual = y - xa @ coefficients
+    return {
+        "coefficients": by_name,
+        "dropped_zero_information": [names[index] for index in range(len(names))
+                                     if not active[index]],
+        "collinear_deficiency": int(xa.shape[1] - rank),
+        "resolved_rank": rank,
+        "singular_values": singular.tolist(),
+        "rows": len(rows), "strata": len(groups),
+        "residual_ss": float(residual @ residual),
+        "age_information": float(x[:, 0] @ x[:, 0]),
+    }
 
 
 def load_rows(path: Path, metadata_path: Path, frozen: Mapping[str, object], commit: str):
