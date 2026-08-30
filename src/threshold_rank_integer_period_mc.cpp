@@ -366,6 +366,13 @@ struct GeometryPilotRecord {
     int essential_carriers = 0;
     int occupied_frontier = 0;
     int vacant_frontier = 0;
+    int boundary_cut_edges = 0;
+    int boundary_multicontact_sites = 0;
+    int boundary_contact_pairs = 0;
+    int core_vertices = 0;
+    int core_edges = 0;
+    int articulation_vertices = 0;
+    int bridges = 0;
     int h2 = 0;
     int h2_theta = 0;
     int h2_figure8 = 0;
@@ -376,6 +383,103 @@ struct GeometryPilotRecord {
     int next_site = -1;
     int next_exit = 0;
 };
+
+struct CarrierShapeMetrics {
+    int boundary_cut_edges = 0;
+    int boundary_multicontact_sites = 0;
+    int boundary_contact_pairs = 0;
+    int core_vertices = 0;
+    int core_edges = 0;
+    int articulation_vertices = 0;
+    int bridges = 0;
+};
+
+CarrierShapeMetrics carrier_shape_metrics(
+    int n, const std::vector<std::uint8_t>& active,
+    const std::vector<std::uint8_t>& essential, const std::vector<Edge>& edges) {
+    if (static_cast<int>(active.size()) != n ||
+        static_cast<int>(essential.size()) != n) {
+        throw std::invalid_argument("carrier shape mask length differs from N");
+    }
+    CarrierShapeMetrics output;
+    std::vector<int> vacant_contacts(n, 0);
+    std::vector<std::vector<std::pair<int, int>>> adjacency(n);
+    std::vector<int> degree(n, 0);
+    for (int edge_index = 0; edge_index < static_cast<int>(edges.size()); ++edge_index) {
+        const Edge& edge = edges[edge_index];
+        if (essential[edge.i] && !active[edge.j]) {
+            ++output.boundary_cut_edges;
+            ++vacant_contacts[edge.j];
+        }
+        if (essential[edge.j] && !active[edge.i]) {
+            ++output.boundary_cut_edges;
+            ++vacant_contacts[edge.i];
+        }
+        if (!(essential[edge.i] && essential[edge.j])) continue;
+        adjacency[edge.i].push_back({edge.j, edge_index});
+        adjacency[edge.j].push_back({edge.i, edge_index});
+        ++degree[edge.i];
+        ++degree[edge.j];
+    }
+    for (int vertex = 0; vertex < n; ++vertex) {
+        if (!active[vertex] && vacant_contacts[vertex] >= 2) {
+            ++output.boundary_multicontact_sites;
+            output.boundary_contact_pairs +=
+                vacant_contacts[vertex] * (vacant_contacts[vertex] - 1) / 2;
+        }
+    }
+
+    std::vector<std::uint8_t> core = essential;
+    std::vector<int> queue;
+    queue.reserve(n);
+    for (int vertex = 0; vertex < n; ++vertex) {
+        if (core[vertex] && degree[vertex] < 2) queue.push_back(vertex);
+    }
+    for (std::size_t offset = 0; offset < queue.size(); ++offset) {
+        const int vertex = queue[offset];
+        if (!core[vertex]) continue;
+        core[vertex] = 0;
+        for (const auto& item : adjacency[vertex]) {
+            const int other = item.first;
+            if (other != vertex && core[other] && --degree[other] < 2) {
+                queue.push_back(other);
+            }
+        }
+    }
+    for (const std::uint8_t value : core) output.core_vertices += value;
+    for (const Edge& edge : edges) {
+        if (core[edge.i] && core[edge.j]) ++output.core_edges;
+    }
+
+    std::vector<int> discovery(n, -1), low(n, -1);
+    std::vector<std::uint8_t> articulation(n, 0);
+    int clock = 0;
+    auto visit = [&](auto&& self, int vertex, int parent_edge) -> void {
+        discovery[vertex] = low[vertex] = clock++;
+        int children = 0;
+        for (const auto& item : adjacency[vertex]) {
+            const int other = item.first;
+            const int edge_index = item.second;
+            if (discovery[other] < 0) {
+                ++children;
+                self(self, other, edge_index);
+                low[vertex] = std::min(low[vertex], low[other]);
+                if (parent_edge >= 0 && low[other] >= discovery[vertex]) {
+                    articulation[vertex] = 1;
+                }
+                if (low[other] > discovery[vertex]) ++output.bridges;
+            } else if (edge_index != parent_edge) {
+                low[vertex] = std::min(low[vertex], discovery[other]);
+            }
+        }
+        if (parent_edge < 0 && children > 1) articulation[vertex] = 1;
+    };
+    for (int vertex = 0; vertex < n; ++vertex) {
+        if (essential[vertex] && discovery[vertex] < 0) visit(visit, vertex, -1);
+    }
+    for (const std::uint8_t value : articulation) output.articulation_vertices += value;
+    return output;
+}
 
 struct PairDesign {
     int n;
@@ -845,9 +949,16 @@ class ThresholdEngine {
             }
         }
 
+        std::vector<std::uint8_t> essential(geometry_.n, 0);
+        for (int vertex = 0; vertex < geometry_.n; ++vertex) {
+            if (active_[vertex] && union_find_.component_mark(vertex).rank == 1) {
+                essential[vertex] = 1;
+            }
+        }
+
         for (int vertex = 0; vertex < geometry_.n; ++vertex) {
             if (active_[vertex]) {
-                if (union_find_.component_mark(vertex).rank != 1) continue;
+                if (!essential[vertex]) continue;
                 bool frontier = false;
                 for (const int edge_index : geometry_.primal_incident[vertex]) {
                     const Edge& edge = geometry_.primal_edges[edge_index];
@@ -860,12 +971,21 @@ class ThresholdEngine {
                 for (const int edge_index : geometry_.primal_incident[vertex]) {
                     const Edge& edge = geometry_.primal_edges[edge_index];
                     const int other = edge.i == vertex ? edge.j : edge.i;
-                    if (active_[other] &&
-                        union_find_.component_mark(other).rank == 1) frontier = true;
+                    if (essential[other]) frontier = true;
                 }
                 record.vacant_frontier += static_cast<int>(frontier);
             }
         }
+
+        const CarrierShapeMetrics shape = carrier_shape_metrics(
+            geometry_.n, active_, essential, geometry_.primal_edges);
+        record.boundary_cut_edges = shape.boundary_cut_edges;
+        record.boundary_multicontact_sites = shape.boundary_multicontact_sites;
+        record.boundary_contact_pairs = shape.boundary_contact_pairs;
+        record.core_vertices = shape.core_vertices;
+        record.core_edges = shape.core_edges;
+        record.articulation_vertices = shape.articulation_vertices;
+        record.bridges = shape.bridges;
 
         for (int vertex = 0; vertex < geometry_.n; ++vertex) {
             if (active_[vertex]) continue;
@@ -1535,9 +1655,61 @@ void self_test() {
     if (direct_births == 0) {
         throw std::runtime_error("N=4 direct-birth control found no simultaneous births");
     }
+
+    // One-pass bottleneck summaries are checked against a direct tiny graph:
+    // a four-cycle with one leaf and one vacant site touching two cycle sites.
+    const std::vector<Edge> shape_edges = {
+        {0, 1, 0, 0}, {1, 2, 0, 0}, {2, 3, 0, 0}, {3, 0, 0, 0},
+        {3, 4, 0, 0}, {0, 5, 0, 0}, {1, 5, 0, 0}};
+    const std::vector<std::uint8_t> shape_active = {1, 1, 1, 1, 1, 0};
+    const std::vector<std::uint8_t> shape_essential = {1, 1, 1, 1, 1, 0};
+    const CarrierShapeMetrics shape = carrier_shape_metrics(
+        6, shape_active, shape_essential, shape_edges);
+    auto components_after = [&](int removed_vertex, int removed_edge) {
+        std::vector<std::uint8_t> seen(6, 0);
+        int components = 0;
+        for (int start = 0; start < 6; ++start) {
+            if (!shape_essential[start] || start == removed_vertex || seen[start]) continue;
+            ++components;
+            seen[start] = 1;
+            std::vector<int> stack{start};
+            while (!stack.empty()) {
+                const int vertex = stack.back();
+                stack.pop_back();
+                for (int index = 0; index < static_cast<int>(shape_edges.size()); ++index) {
+                    if (index == removed_edge) continue;
+                    const Edge& edge = shape_edges[index];
+                    if (!(shape_essential[edge.i] && shape_essential[edge.j])) continue;
+                    int other = -1;
+                    if (edge.i == vertex) other = edge.j;
+                    else if (edge.j == vertex) other = edge.i;
+                    if (other >= 0 && other != removed_vertex && !seen[other]) {
+                        seen[other] = 1;
+                        stack.push_back(other);
+                    }
+                }
+            }
+        }
+        return components;
+    };
+    const int base_components = components_after(-1, -1);
+    int brute_articulations = 0;
+    for (int vertex = 0; vertex < 5; ++vertex) {
+        brute_articulations += components_after(vertex, -1) > base_components;
+    }
+    int brute_bridges = 0;
+    for (int edge = 0; edge < 5; ++edge) {
+        brute_bridges += components_after(-1, edge) > base_components;
+    }
+    if (shape.boundary_cut_edges != 2 || shape.boundary_multicontact_sites != 1 ||
+        shape.boundary_contact_pairs != 1 || shape.core_vertices != 4 ||
+        shape.core_edges != 4 || shape.articulation_vertices != brute_articulations ||
+        shape.bridges != brute_bridges || brute_articulations != 1 || brute_bridges != 1) {
+        throw std::runtime_error("tiny carrier bottleneck/2-core oracle failed");
+    }
     std::cout << "self-test passed: arbitrary integer periods, exact HNF quotient/winding, "
                  "basis invariance, saturation gcd, lifted chi4, direct births, "
-                 "Euler external observer/Gram, exact virtual H2, "
+                 "Euler external observer/Gram, exact virtual H2, carrier bottleneck/core, "
                  "Smith(2,130)/(2,170), N=5 all permutations\n";
 }
 
@@ -1736,6 +1908,11 @@ void run_geometry_pilot_design(const PairDesign& design, const Options& options,
                    << value.line.x << ',' << value.line.y << ','
                    << value.essential_size << ',' << value.essential_carriers << ','
                    << value.occupied_frontier << ',' << value.vacant_frontier << ','
+                   << value.boundary_cut_edges << ','
+                   << value.boundary_multicontact_sites << ','
+                   << value.boundary_contact_pairs << ',' << value.core_vertices << ','
+                   << value.core_edges << ',' << value.articulation_vertices << ','
+                   << value.bridges << ','
                    << value.h2 << ',' << value.h2_theta << ',' << value.h2_figure8 << ','
                    << value.h2_separate << ',' << value.h2_direction_positive << ','
                    << value.h2_direction_negative << ',' << value.h2_direction_mixed << ','
@@ -2007,6 +2184,8 @@ int run(int argc, char** argv) {
         geometry_pilot
             << "n,a,b,orientation,batch,replica,k0,k1,k2,age_steps,ell_u,ell_v,"
                "essential_size,essential_carriers,occupied_frontier,vacant_frontier,"
+               "boundary_cut_edges,boundary_multicontact_sites,boundary_contact_pairs,"
+               "core_vertices,core_edges,articulation_vertices,bridges,"
                "H2,H2_theta,H2_figure8,H2_separate,H2_direction_positive,"
                "H2_direction_negative,H2_direction_mixed,next_site,next_exit\n";
     }
