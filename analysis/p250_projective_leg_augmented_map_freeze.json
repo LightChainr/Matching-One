@@ -1,0 +1,57 @@
+{
+  "schema": "matching-one/p250-projective-leg-augmented-map-freeze/v1",
+  "status": "frozen_existing_data_not_scored",
+  "question": "Does one fixed parameter-free cross-hand map simultaneously satisfy the radius-four joint annihilation rows and the radius-five degree-three-shift extension rows?",
+  "parent_results": {
+    "radius_four_joint_annihilation": "99d23a7",
+    "radius_five_extension": "11130ae"
+  },
+  "old_batches": {
+    "path": "results/huawei-20260830/P250-projective-leg-bivariate-80k/response_80k.batches.csv",
+    "sha256": "dfbd83d680080939bcae5cad0090af95d82748ed780ce73807d4b002d6a9ca72",
+    "samples": 80000,
+    "batches": 400,
+    "dependency_group": "p250-projective-leg-N505-bivariate-80k"
+  },
+  "fresh_batches": {
+    "path": "results/huawei-20260830/P250-projective-leg-radius5-morphism-1200k/response_1200k.batches.csv",
+    "sha256": "50985e38c9c8afab0c8b0e78113184d33861d928aefaba1e8043e67fc348677e",
+    "samples": 1200000,
+    "batches": 400,
+    "dependency_group": "p250-projective-leg-radius5-morphism-1200k"
+  },
+  "basis_degree_le_2": [[0, 0], [1, 0], [0, 1], [2, 0], [1, 1], [0, 2]],
+  "degree_three_shifts": [[3, 0], [2, 1], [1, 2], [0, 3]],
+  "candidate_maps": [
+    {"name": "identity_conjugation", "alexander_reflection": false, "rotation_power": 0},
+    {"name": "Alexander_R0_conjugation", "alexander_reflection": true, "rotation_power": 0},
+    {"name": "Alexander_R1_conjugation", "alexander_reflection": true, "rotation_power": 1},
+    {"name": "Alexander_R2_conjugation", "alexander_reflection": true, "rotation_power": 2},
+    {"name": "Alexander_R3_conjugation", "alexander_reflection": true, "rotation_power": 3}
+  ],
+  "candidate_scope": "The exact intersection of the five parameter-free maps frozen for the radius-five acquisition with the previously declared radius-four maps; no post-reveal map is added.",
+  "augmented_null": {
+    "matrix": "stack conjugate(H_plus_old+extension) above the candidate-transformed H_minus_old+extension",
+    "shape_complex": [40, 6],
+    "rank": 5,
+    "residual": "maximum-volume fixed-pivot Schur complement with 35 complex / 70 real locally complete coordinates",
+    "spatial_action": "The candidate D4 map acts on both coefficient monomials and left shifts."
+  },
+  "covariance": {
+    "old_influence": "For each old delete-one replicate, recompute all old Hankel entries and every degree-3/4 entry inside the extension rows while holding the fresh degree-five stream fixed.",
+    "fresh_influence": "For each fresh delete-one replicate, recompute the degree-five extension entries while holding the old stream fixed.",
+    "combine": "Add the two separately estimated 70x70 jackknife covariance matrices; never align or pool their batch indices.",
+    "cross_candidate": "Save the sum of separately computed old and fresh cross-candidate covariance matrices for audit only; form no combined candidate vote.",
+    "resolved_modes": "correlation eigenvalues greater than 1e-10 times the largest",
+    "finite_batch_calibration": "Use the conservative existing-project Hotelling convention with effective batch count min(400,400)=400."
+  },
+  "decision_alpha": 0.01,
+  "decision_rule": "Report one augmented survival decision per frozen candidate. Do not separately recount the published radius-four annihilation or radius-five direction gates, do not multiply p-values, and do not select the largest p-value. The Alexander family survives iff at least one of R0..R3 survives the augmented gate.",
+  "claim_boundary": [
+    "This is a Level-S truncated rank-five map test through total degree five, not exact rank five, flatness, a physical state dimension, an ordered-word test, or a microscopic graph isomorphism.",
+    "The later radius-six rank-five rejection and rank-eight R2 bridge rejection remain separate higher-order results and are not rescored here.",
+    "No new simulation is authorized or needed."
+  ],
+  "score_once_after_freeze_commit": true,
+  "no_new_simulation": true
+}
