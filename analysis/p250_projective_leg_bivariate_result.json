@@ -1,0 +1,71 @@
+{
+  "schema": "matching-one/p250-projective-leg-bivariate-result/v1",
+  "issues": [249, 250, 255],
+  "status": "fresh_frozen_bivariate_reveal_complete",
+  "branch": "analysis/p250-projective-leg-bivariate-state-20260830",
+  "runner_scorer_commit": "0d0115da2820eeebf219d8ced61a522d709fec4c",
+  "production_freeze_commit": "9ae37aebabdecb7807570cb4c4fb53fea73d9d51",
+  "reveal_hash_commit": "6c941d7a40c7af066965b8f1f2a8a8f4d0f04b24",
+  "run": {
+    "host": "Huawei-CodeBuddy-XPk2PZ",
+    "remote_directory": "/workspace/p250-projective-leg-bivariate-80k",
+    "samples": 80000,
+    "batches": 400,
+    "workers": 16,
+    "seed": 25050510120261130,
+    "replica_range": [0, 80000],
+    "elapsed_seconds": 76,
+    "exit_code": 0,
+    "stderr_bytes": 0
+  },
+  "outputs": {
+    "response_sha256": "1dcb88e9914c6c0b735938ff8574bfb056169ed6cbc7716bb57efd3b3e2fe8f8",
+    "batches_sha256": "dfbd83d680080939bcae5cad0090af95d82748ed780ce73807d4b002d6a9ca72",
+    "score_sha256": "4fec61d1252b32c3cf930b3ce01f379f13c0928d766e0da572f3065e9df89d0f",
+    "score_markdown_sha256": "00a5e34253f33f33109808fc0ef01e90502ec7637af1cabc3f58505350de109a",
+    "exact_gate_sha256": "abc635623fdb336c15293546663836a2f4fc68899143a4d42b2969f05ba81f0b"
+  },
+  "exact_C4_gauge": {
+    "raw_fiber_action": "j'=k*j+s(x) mod 5",
+    "fiber_multipliers": {"plus": 3, "minus": 2},
+    "covariant_gauge_equation": "t(Rx)=s(x)+k*t(x) mod 5",
+    "failures": 0,
+    "scientific_use": "removes a position-dependent section cocycle before testing a constant rotation action"
+  },
+  "rank_scores": {
+    "1": {
+      "mixed_commuting": {"chi_square": 1203.3587508159487, "degrees_of_freedom": 24, "survival_p": 4.718758087803582e-239},
+      "degree4_heldout": {"chi_square": 335.67288507240806, "degrees_of_freedom": 40, "survival_p": 2.234157193662301e-48},
+      "C4_characteristic_p": 7.097628182421738e-05
+    },
+    "2": {
+      "mixed_commuting": {"chi_square": 221.6679141465323, "degrees_of_freedom": 24, "survival_p": 6.318228635856178e-34},
+      "degree4_heldout": {"chi_square": 150.85773604798942, "degrees_of_freedom": 40, "survival_p": 8.981398309883251e-15},
+      "C4_characteristic_p": 0.8506659021768755
+    },
+    "3": {
+      "mixed_commuting": {"chi_square": 66.98134887780971, "degrees_of_freedom": 24, "survival_p": 6.205430532339722e-06},
+      "degree4_heldout": {"chi_square": 141.73152553771163, "degrees_of_freedom": 40, "survival_p": 2.686796725843202e-13},
+      "C4_characteristic_p": 0.9603241367309253
+    }
+  },
+  "signed_C4_orbit_score": {
+    "chi_square": 66.85772038761357,
+    "degrees_of_freedom": 64,
+    "survival_p": 0.37916355143870695
+  },
+  "decision": "no_commuting_common_rank_le_3",
+  "mechanism_update": "C4 covariance and x/y isospectrality survive, but the mixed moments reject every axis-fitted commuting diagonal common state through rank three",
+  "next_target": {
+    "existing_data_first": "freeze a covariance-whitened block-Hankel rank lower-bound using the degree<=4 diamond",
+    "if_more_data_needed": "extend to degree five so rank 4-6 transfer realizations have an independent shifted holdout",
+    "alternatives_kept": ["commuting rank >=4", "Jordan or other non-diagonal realization", "finite-torus image structure", "context-enriched effective state"],
+    "warning": "physical lattice translations commute; rejection of the diagonal realization is not evidence that exact translations fail to commute"
+  },
+  "claim_boundary": [
+    "The result establishes only a greater-than-three lower bound within the frozen shared commuting diagonal model.",
+    "It does not prove a unique rank, noncommutation, Jordan structure, or continuum field count.",
+    "C4 characteristic equality is a necessary similarity condition, not a unique reconstruction of latent R.",
+    "D^5 remains unidentifiable in this neutral charged-pair stream."
+  ]
+}
