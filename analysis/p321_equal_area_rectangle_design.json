@@ -1,0 +1,324 @@
+{
+  "schema": "matching-one.p321-equal-area-rectangle-design.v1",
+  "status": "geometry_frozen; variance pilot and sample count not authorized",
+  "source_theory_commit": "81818ec",
+  "observable": "matching root of P2-P0",
+  "scaling_contract": {
+    "leading_root_shift": "N^-2 at fixed aspect ratio (equivalently linear-scale^-4)",
+    "first_relative_correction": "N^-1, producing root term N^-3",
+    "free_exponent_fit": false
+  },
+  "common_randomness": {
+    "rule": "At each N, run the square as first matrix against every non-square second matrix with identical seed, counter interval, and batch boundaries.",
+    "exact_gate": "The repeated square threshold histograms must be byte-identical; align delete-one-batch root vectors across all aspect ratios for full covariance."
+  },
+  "rows": [
+    {
+      "id": "s1_rho_1",
+      "scale": 1,
+      "N": 144,
+      "width": 12,
+      "height": 12,
+      "aspect_ratio": "1/1",
+      "aspect_ratio_decimal": 1.0,
+      "period_matrix_row_major": [
+        [
+          12,
+          0
+        ],
+        [
+          0,
+          12
+        ]
+      ],
+      "role": "primary"
+    },
+    {
+      "id": "s1_rho_16_9",
+      "scale": 1,
+      "N": 144,
+      "width": 9,
+      "height": 16,
+      "aspect_ratio": "16/9",
+      "aspect_ratio_decimal": 1.7777777777777777,
+      "period_matrix_row_major": [
+        [
+          9,
+          0
+        ],
+        [
+          0,
+          16
+        ]
+      ],
+      "role": "primary"
+    },
+    {
+      "id": "s1_rho_9_4",
+      "scale": 1,
+      "N": 144,
+      "width": 8,
+      "height": 18,
+      "aspect_ratio": "9/4",
+      "aspect_ratio_decimal": 2.25,
+      "period_matrix_row_major": [
+        [
+          8,
+          0
+        ],
+        [
+          0,
+          18
+        ]
+      ],
+      "role": "primary"
+    },
+    {
+      "id": "s1_rho_4",
+      "scale": 1,
+      "N": 144,
+      "width": 6,
+      "height": 24,
+      "aspect_ratio": "4/1",
+      "aspect_ratio_decimal": 4.0,
+      "period_matrix_row_major": [
+        [
+          6,
+          0
+        ],
+        [
+          0,
+          24
+        ]
+      ],
+      "role": "primary"
+    },
+    {
+      "id": "s1_rho_9",
+      "scale": 1,
+      "N": 144,
+      "width": 4,
+      "height": 36,
+      "aspect_ratio": "9/1",
+      "aspect_ratio_decimal": 9.0,
+      "period_matrix_row_major": [
+        [
+          4,
+          0
+        ],
+        [
+          0,
+          36
+        ]
+      ],
+      "role": "endpoint_diagnostic"
+    },
+    {
+      "id": "s2_rho_1",
+      "scale": 2,
+      "N": 576,
+      "width": 24,
+      "height": 24,
+      "aspect_ratio": "1/1",
+      "aspect_ratio_decimal": 1.0,
+      "period_matrix_row_major": [
+        [
+          24,
+          0
+        ],
+        [
+          0,
+          24
+        ]
+      ],
+      "role": "primary"
+    },
+    {
+      "id": "s2_rho_16_9",
+      "scale": 2,
+      "N": 576,
+      "width": 18,
+      "height": 32,
+      "aspect_ratio": "16/9",
+      "aspect_ratio_decimal": 1.7777777777777777,
+      "period_matrix_row_major": [
+        [
+          18,
+          0
+        ],
+        [
+          0,
+          32
+        ]
+      ],
+      "role": "primary"
+    },
+    {
+      "id": "s2_rho_9_4",
+      "scale": 2,
+      "N": 576,
+      "width": 16,
+      "height": 36,
+      "aspect_ratio": "9/4",
+      "aspect_ratio_decimal": 2.25,
+      "period_matrix_row_major": [
+        [
+          16,
+          0
+        ],
+        [
+          0,
+          36
+        ]
+      ],
+      "role": "primary"
+    },
+    {
+      "id": "s2_rho_4",
+      "scale": 2,
+      "N": 576,
+      "width": 12,
+      "height": 48,
+      "aspect_ratio": "4/1",
+      "aspect_ratio_decimal": 4.0,
+      "period_matrix_row_major": [
+        [
+          12,
+          0
+        ],
+        [
+          0,
+          48
+        ]
+      ],
+      "role": "primary"
+    },
+    {
+      "id": "s2_rho_9",
+      "scale": 2,
+      "N": 576,
+      "width": 8,
+      "height": 72,
+      "aspect_ratio": "9/1",
+      "aspect_ratio_decimal": 9.0,
+      "period_matrix_row_major": [
+        [
+          8,
+          0
+        ],
+        [
+          0,
+          72
+        ]
+      ],
+      "role": "endpoint_diagnostic"
+    },
+    {
+      "id": "s3_rho_1",
+      "scale": 3,
+      "N": 1296,
+      "width": 36,
+      "height": 36,
+      "aspect_ratio": "1/1",
+      "aspect_ratio_decimal": 1.0,
+      "period_matrix_row_major": [
+        [
+          36,
+          0
+        ],
+        [
+          0,
+          36
+        ]
+      ],
+      "role": "primary"
+    },
+    {
+      "id": "s3_rho_16_9",
+      "scale": 3,
+      "N": 1296,
+      "width": 27,
+      "height": 48,
+      "aspect_ratio": "16/9",
+      "aspect_ratio_decimal": 1.7777777777777777,
+      "period_matrix_row_major": [
+        [
+          27,
+          0
+        ],
+        [
+          0,
+          48
+        ]
+      ],
+      "role": "primary"
+    },
+    {
+      "id": "s3_rho_9_4",
+      "scale": 3,
+      "N": 1296,
+      "width": 24,
+      "height": 54,
+      "aspect_ratio": "9/4",
+      "aspect_ratio_decimal": 2.25,
+      "period_matrix_row_major": [
+        [
+          24,
+          0
+        ],
+        [
+          0,
+          54
+        ]
+      ],
+      "role": "primary"
+    },
+    {
+      "id": "s3_rho_4",
+      "scale": 3,
+      "N": 1296,
+      "width": 18,
+      "height": 72,
+      "aspect_ratio": "4/1",
+      "aspect_ratio_decimal": 4.0,
+      "period_matrix_row_major": [
+        [
+          18,
+          0
+        ],
+        [
+          0,
+          72
+        ]
+      ],
+      "role": "primary"
+    },
+    {
+      "id": "s3_rho_9",
+      "scale": 3,
+      "N": 1296,
+      "width": 12,
+      "height": 108,
+      "aspect_ratio": "9/1",
+      "aspect_ratio_decimal": 9.0,
+      "period_matrix_row_major": [
+        [
+          12,
+          0
+        ],
+        [
+          0,
+          108
+        ]
+      ],
+      "role": "endpoint_diagnostic"
+    }
+  ],
+  "primary_aspect_ratios": [
+    "1",
+    "16/9",
+    "9/4",
+    "4"
+  ],
+  "endpoint_diagnostic": "rho=9 is not treated as the TL endpoint; it only constrains approach"
+}

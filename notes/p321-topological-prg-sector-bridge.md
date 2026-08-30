@@ -211,6 +211,28 @@ and compare the normalized `C(rho)` curve with the TL endpoint.  Preserve
 cross-`rho` covariance.  This directly estimates the open/closed channel
 interpolation and creates the amplitude-ratio fingerprint.
 
+### Equal-area implementation already supported by the repository
+
+The general integer-period threshold-rank engine requires paired matrices of
+equal determinant.  This is an advantage: compare several rectangles at the
+same area, reusing one square reference and the exact same counter permutation.
+`scripts/p321_equal_area_rectangle_design.py` freezes three scaled copies of
+
+\[
+(12,12),\ (9,16),\ (8,18),\ (6,24),\ (4,36),
+\]
+
+with aspect ratios `1`, `16/9`, `9/4`, `4`, and diagnostic `9`.  At scales
+one, two, and three the common areas are `N=144,576,1296`.  The root law is
+`N^-2` with a first `N^-3` correction.
+
+Run the square as the first matrix against each rectangle using identical
+seed, replica interval, and batch boundaries.  The repeated square histograms
+must then be byte-identical.  The aligned delete-one-batch roots provide the
+full cross-aspect covariance without adding a new Monte Carlo engine.  The
+`rho=9` row is only an endpoint diagnostic, not a claim that the TL limit has
+already been reached.
+
 ## Sources used
 
 - Jacobsen, *Critical points of Potts and O(N) models from eigenvalue
@@ -218,4 +240,3 @@ interpolation and creates the amplitude-ratio fingerprint.
   https://arxiv.org/abs/1507.03027
 - Arguin, *Homology of Fortuin--Kasteleyn clusters of Potts models on the
   torus*, https://arxiv.org/abs/hep-th/0111193
-
