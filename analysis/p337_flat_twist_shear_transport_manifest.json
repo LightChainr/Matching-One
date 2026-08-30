@@ -1,0 +1,40 @@
+{
+  "schema": "matching-one/p337-flat-twist-shear-transport/v1",
+  "issues": [337, 334],
+  "frozen_theory_commit": "3cb06ab",
+  "branch": "analysis/p337-shear-transport-smoke-20260830",
+  "dependency_group": "P337_N65_10k_identity_Tshear_basis_smoke",
+  "archive_audit": "no pre-existing legal identity/T-shear projective-birth pair",
+  "execution": {
+    "location": "local Mac",
+    "huawei_used": false,
+    "N": 65,
+    "samples_per_shape_basis_pair": 10000,
+    "batches": 20,
+    "seed": 202608337,
+    "counter_range": [3370000, 3380000],
+    "engine_seconds": [0.0756175, 0.061731625]
+  },
+  "basis_contract": {
+    "T": [[1, 1], [0, 1]],
+    "period_map": "P_shear=P_identity*T^-1",
+    "line_map": "ell_shear=primitive(T*ell_identity)",
+    "F3_triplet_order": ["H4_axis_diag", "axis_odd", "diagonal_odd"]
+  },
+  "result": {
+    "identity_contrast": [-0.0056598827325885686, -0.00046029306568180946, -0.0002831596221587625],
+    "predicted_shear": [-0.00012525225909007084, -0.004373867804854309, -0.0036304151170137374],
+    "measured_shear": [-0.00012525225909007037, -0.004373867804854318, -0.003630415117013745],
+    "transport_residual": [4.87890977618477e-19, -8.79287961885744e-18, -7.979727989493312e-18],
+    "max_batch_absolute_residual": 6.548581121812447e-17,
+    "exact_sparse_cell_transport": true
+  },
+  "artifacts": {
+    "score": "results/local-20260830/P337-flat-twist-shear-smoke/score.json",
+    "report": "results/local-20260830/P337-flat-twist-shear-smoke/REPORT.md",
+    "scorer": "scripts/score_flat_twist_shear_transport.py",
+    "test": "tests/test_flat_twist_shear_transport.py",
+    "note": "notes/p337-flat-twist-shear-transport-smoke.md"
+  },
+  "claim_boundary": "exact period-basis covariance gate only; no independent charged-field evidence; larger basis-shear production has zero information value"
+}
