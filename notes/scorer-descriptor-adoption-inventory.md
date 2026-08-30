@@ -1,16 +1,15 @@
 # Scorer descriptor-adoption inventory
 
-In this checked snapshot, the exact `scripts/*score*.py` corpus contains 56
-files. Python-AST inspection finds twenty-five
+In this checked snapshot, the exact `scripts/*score*.py` corpus contains 57
+files. Python-AST inspection finds twenty-six
 direct typed entrypoints importing both `ObservableDescriptor` and
-`map_observable` from `wrapping_channels`. Twenty-four frozen kernels are covered by
+`map_observable` from `wrapping_channels`. Twenty-five frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Six paths are confirmed channel-bearing and
+a descriptor is not applicable. Five paths are confirmed channel-bearing and
 require typed migrations:
 `score_norm4_production.py`,
 `score_norm4_thermal_jet.py`, `score_norm5_thermal_jet.py`,
-`score_p159_pell_hex_filter.py`,
 `score_p49_fullcurve_doubling.py`,
 `score_p50_fullcurve_n290.py`. No scorer remains outside a registered
 audit class.
@@ -32,7 +31,7 @@ unchanged.
 but no current scorer has that status. Static membership alone would not prove
 a semantic bug, data-provenance failure, or need for migration; any future
 corpus addition must still be reviewed before modification. Issue #146 remains
-open because inventory classification is not the same as implementing the 6
+open because inventory classification is not the same as implementing the 5
 required typed migrations.
 
 `score_axis_pair_annihilator.py` and its stable-reader entrypoint are now
@@ -193,18 +192,17 @@ numerical-rank cutoff, jackknife construction, and scores remain unchanged.
 
 `score_v14_fixedp_scalar_projector.py` is now a covered frozen kernel. Its typed entrypoint locks the basis-dependent `direction_1/matching` value, fixed-p coordinate, `p_ref=0.592746050790`, H4-null orientation weights, covariance reconstruction, and `N^(25/8)` normalization before delegating row projections. It remains a retrospective discovery/power diagnostic and neither proves the V_<1,4> assignment nor removes common thermal displacement.\n\n`score_v14_scalar_root_projector.py` is also now a covered frozen kernel. Its typed entrypoint validates the exact `direction_1/matching` identity before the implicit-root calculation, and freezes size order 65/85/130/170, lineages 65->130 then 85->170, first/second orientation order, the H4-null scalar-root formula, beta 7/2, q=2^(-7/2), synchronized delete-one covariance, and parameter-free lineage reconstruction. The implicit root remains a response coordinate rather than a topology observable; H8/H12 contamination, slope anisotropy, matching parity, and the V_<1,4> assignment remain unresolved.
 
-`score_p159_pell_hex_filter.py` is migration-required despite serializing an
-`observable_descriptor` dictionary in its output. That dictionary is free-form
-provenance, not a registered `ObservableDescriptor` checked through
-`map_observable`. The score orders three primitive rank-1 homology lines in a
-transported positive-rho basis, transforms their continuum-subtracted
-probabilities into C/Q/S character coordinates, compares two Pell designs
-through E4 phase transport, and explicitly reuses PR #222 evidence. A migration
-must type the primitive-sector channel, line-basis transport, character
-coordinates, fixed-p and amplitude normalizations, cross-design phase map, and
-non-independent evidence relation. It must preserve the exact oracle, frozen
-continuum baselines, covariance transform, post-reveal boundary, and all
-existing gate conclusions.
+`score_p159_pell_hex_filter.py` is now a covered frozen kernel. Its typed
+entrypoint validates an exact identity map for the unchanged full-configuration
+rank-positive topology envelope before replaying the canonical PR222 pilot.
+The semantic gate separately freezes the two Pell designs, primitive-line
+order, positive-rho basis, identity cross-design transport, C3 cycle, C/Q/S
+transform, sampling contract, canonical input hashes, decisions, and evidence
+boundary. Individual primitive homology lines and C/Q/S remain response-sector
+coordinates rather than registered topology channels. The replay creates no
+new simulation or independent evidence, preserves the failed ordinary-H4 sign
+gate and blocked square-site-H4 promotion, and leaves the post-reveal minus-two
+diagnostic unpreregistered for C.
 
 `score_p48_new_geometry_channels.py` is now a covered frozen kernel, separate
 from the typed wrappers for the prospective `P4_S_prime` scorer. Its typed
