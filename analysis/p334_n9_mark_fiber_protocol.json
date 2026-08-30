@@ -1,0 +1,81 @@
+{
+  "schema": "matching-one/p334-n9-mark-fiber-protocol/v1",
+  "status": "frozen_before_fiber_enumeration",
+  "issue": 334,
+  "parent_commit": "a5de4d61df8f4abf5e96cb81b57bcf54565691e2",
+  "question": "Does the common N9 Y=0 Hall signature factor through an exact output-mark fiber count that explains 11/16 coverage, 5/16 deficiency, and the 48M two-mark image without another max-flow argument?",
+  "population": {
+    "order": 9,
+    "carrier": "matching",
+    "lower_layer": 4,
+    "motif_gate": {
+      "D": 216,
+      "M": 432,
+      "Y": 0,
+      "F": 72
+    },
+    "frozen_row_indices": [
+      1,
+      3,
+      6,
+      9,
+      15,
+      24
+    ]
+  },
+  "target_semantics": {
+    "target_type": "ordinary untagged normalized MM translation orbit",
+    "normalization": "translate the left mark of the first ordered M face to site zero, using normalize_target from p334_tm_translation_orbit_hall.py",
+    "ordered_faces": true,
+    "provenance_labels_add_capacity": false,
+    "old_image": "union of normalized targets from the frozen one-carrier plus at-most-one-output-mark builder",
+    "two_mark_image": "union of normalized targets after keeping both bases fixed and releasing exactly two of the four ordered output marks"
+  },
+  "predeclared_decomposition": {
+    "primary_anchor": "the normalized first ordered M face target[1]",
+    "partner": "the second ordered M face target[2] in the same normalized coordinate frame",
+    "primary_histogram": "for every possible normalized first-M anchor, count distinct partners in the old and two-mark images, including zero-count anchors",
+    "activity_signature": "for each ordered M face, record whether its left or right added mark is the unique rank-2-producing mark; tabulate the ordered pair of active sides",
+    "base_pair_signature": "record the translation-orbit-normalized ordered pair of lower bases before the output marks are discarded",
+    "no_posthoc_partition": "The theorem may use only these frozen target coordinates and exact translation/D4 orbit equivalences; a new data-selected partition requires a new protocol."
+  },
+  "frozen_identities_to_test": {
+    "M": 432,
+    "source_demand": "4*D*F/N = 6912 = 16*M",
+    "old_image": "4752 = 11*M",
+    "hall_deficiency": "6912-4752 = 2160 = 5*M = (5/16)*source_demand",
+    "full_MM_orbit_reservoir": "M^2/N = 20736 = 48*M",
+    "two_mark_gain": "20736-4752 = 15984 = 37*M",
+    "row_invariance": "the complete fiber histograms and their deterministic hashes agree on all six frozen rows after the already-certified D4 maps within each Smith class"
+  },
+  "decision_rule": {
+    "fiber_theorem": "upgraded only if the exact primary/activity/base-pair histograms yield a row-independent finite fiber formula whose sums imply 11*M and 48*M without invoking maximum flow",
+    "otherwise": "report the exact frozen histograms as a bounded N9 decomposition and state that 11/16 remains a global image count rather than a proved local fiber theorem"
+  },
+  "planned_artifacts": [
+    "scripts/p334_n9_mark_fiber_theorem.py",
+    "tests/test_p334_n9_mark_fiber_theorem.py",
+    "results/p334-n9-mark-fiber-theorem/latest.json",
+    "results/p334-n9-mark-fiber-theorem/latest.md",
+    "results/p334-n9-mark-fiber-theorem/SCIENTIFIC_CARD.md"
+  ],
+  "compute_contract": {
+    "arithmetic": "finite exact integer/set enumeration only",
+    "monte_carlo": false,
+    "server": false,
+    "expected_cost": "local seconds to minutes"
+  },
+  "claim_boundary": [
+    "No arbitrary-HNF saturation theorem is claimed.",
+    "No target multiplicity is created by source, slot, phase, or provenance labels.",
+    "The result is exact only for the six frozen N9 matching/layer4/Y=0 rows unless a separate symbolic argument states broader hypotheses.",
+    "A target-image count is not called a source injection unless Hall saturation is independently established."
+  ],
+  "frozen_inputs_sha256": {
+    "scripts/p334_n9_reservoir_obstruction.py": "1ce1540f9554b22979dedd9c0f65ef114bcee1f9aa27077780f9b1bc543d3283",
+    "scripts/p334_tm_coarse_reservoir_hall.py": "f133bc6abcdff3747fd7770d5bab3ad1fa7fd452aec08858974412a7e40a0b94",
+    "scripts/p334_tm_translation_orbit_hall.py": "a69148edefc227ba9dc6cdb97c10a1b58cdab251cf6d1429387a2bbe5357c9f5",
+    "scripts/p334_tm_configuration_cross_switch.py": "46fa31275380afce977481e7beb2d333956c5d6bcf13159cf8311222d580e403",
+    "results/p334-n9-hybrid-certificate/latest.json": "81351949ee38e94079ee3651415e2f359d8b4f5e3e7f76b21c38010d7d2ef87d"
+  }
+}
