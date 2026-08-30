@@ -1,0 +1,91 @@
+{
+  "schema": "matching-one/p250-radius6-level-s-elimination-certificate/v1",
+  "certificate_id": "P250-N505-radius6-H3-rank-20260830",
+  "claim_level": "Level-S statistical elimination certificate",
+  "status": "verified_by_dedicated_recomputation_required",
+  "issue": 250,
+  "method_issue": 370,
+  "dependency_group": "P250 projective-leg N505 old4-80k plus radius5-1200k plus independent radius6-1200k",
+  "chronology": {
+    "freeze_commit": "a6d3b7790fc92ee86ac157712905855e8e1f50bf",
+    "authorization_commit": "18d188d2120e2ac88c6379d0a41542bff4efc637",
+    "raw_lock_commit": "f04760653cd0d5f3455fdc02c76760065b49b9b4",
+    "result_commit": "2646e8fb1692b5a3167deef99c206d380ebdca03"
+  },
+  "immutable_inputs": {
+    "authorized_manifest": {"path": "analysis/p250_projective_leg_radius6_flat_freeze.json", "sha256": "40b19ae90438d03dc58f3608ebdb47060cb8db9d7096749d73b17331ee5c2127"},
+    "raw_lock_manifest": {"path": "analysis/p250_projective_leg_radius6_flat_raw_lock.json", "sha256": "e76dd175d56ff87c798887806203dd675b7bafd30a8a67a428ab6a05221f39e6"},
+    "result_manifest": {"path": "analysis/p250_projective_leg_radius6_flat_result_manifest.json", "sha256": "ebdea973b8a0626431eb609ba4c30e3e494d0945411fb863f1328aa2f315afba"},
+    "old4_batches": {"path": "results/huawei-20260830/P250-projective-leg-bivariate-80k/response_80k.batches.csv", "sha256": "dfbd83d680080939bcae5cad0090af95d82748ed780ce73807d4b002d6a9ca72"},
+    "old5_batches": {"path": "results/huawei-20260830/P250-projective-leg-radius5-morphism-1200k/response_1200k.batches.csv", "sha256": "50985e38c9c8afab0c8b0e78113184d33861d928aefaba1e8043e67fc348677e"},
+    "fresh6_batches": {"path": "results/huawei-20260830/P250-projective-leg-radius6-flat-1200k/response_1200k.batches.csv", "sha256": "8734a15e61a7358da66019cf26d75a3d4f2deb0185831526204967a0ee5a42cf"},
+    "fresh6_response": {"path": "results/huawei-20260830/P250-projective-leg-radius6-flat-1200k/response_1200k.json", "sha256": "b061d6dceabb3da4df2efdddb4e87eafef4206b7e1f3dbce4ea56ad5ceaf4e33"},
+    "fresh6_exact_gate": {"path": "results/huawei-20260830/P250-projective-leg-radius6-flat-1200k/exact_gate.json", "sha256": "edac49cc6723e13371dcbc71736ad0dd9b0395ae29973a2e568ec1f699a83c0b"},
+    "frozen_scorer": {"path": "scripts/score_z5_projective_leg_radius6_flat.py", "sha256": "6259d9a3cf11b5df1d086e537cb47d49a9aa8675e8eaffcdd77a7fdcdcf43d83"},
+    "frozen_score": {"path": "results/huawei-20260830/P250-projective-leg-radius6-flat-1200k/score.json", "sha256": "f85e70021de883a070d0441bd8dbe9eb593ede33578f7a8d2386a621d419c7fd"}
+  },
+  "typed_observer": {
+    "observable": "fixed-p C4-gauged projective-leg Z5 charged two-point endpoint moment",
+    "geometry": "norm-505 child pair over norm-101 parent",
+    "hands": ["plus", "minus in frozen Alexander-R2 gauge"],
+    "charges": [1, 2],
+    "moment_matrix": "H3[(charge,u),v]=G_charge(u+v), total degrees |u|,|v|<=3",
+    "matrix_shape_per_hand": [20, 10],
+    "fresh_geometry": "minimal degree3-by-degree3 endpoint block; 13 spatial points and 28 complex coordinates per batch"
+  },
+  "invariant_model_class": {
+    "rank_null": "rank(H3)<=r",
+    "kernel_form": "dim ker(H3)>=10-r",
+    "minor_form": "all (r+1)-by-(r+1) minors vanish",
+    "gauge_invariance": "The rank, kernel dimension and determinantal variety are unchanged by invertible row/readout and column/state basis transformations.",
+    "statistical_chart": "For each r and hand, the pre-reveal maximum-volume pivot defines the locally complete Schur residual S-R P^-1 Q. Pivot indices and conditioning are frozen in the raw-lock manifest.",
+    "covariance": "The old4, old5 and fresh6 delete-one covariance contributions are computed separately and summed; singular directions are retained through the scorer's frozen relative eigenvalue cutoff.",
+    "not_assumed": ["diagonalizability", "positive latent Gram form", "a common plus/minus basis", "ordered TxTy equals TyTx"]
+  },
+  "decision_rule": {
+    "alpha": 0.01,
+    "batches_per_dependency_block": 400,
+    "primary_p": "finite_batch_survival_p",
+    "eliminated_if": "finite_batch_survival_p < 0.01",
+    "compatible_if": "finite_batch_survival_p >= 0.01; compatible does not mean accepted or proved",
+    "critical_statistic": "F_(resolved_modes,400-resolved_modes)(0.99)",
+    "candidate_selection": "Ranks 5 through 9 and their pivots were frozen before fresh degree-six reveal."
+  },
+  "hand_certificates": {
+    "plus": {
+      "rank_le_5": {"status": "eliminated", "T_squared": 2753.8567889288956, "Hotelling_F": 11.50316119017918, "df_numerator": 150, "df_denominator": 250, "critical_F_alpha_0_01": 1.3972153603277313, "p": 1.884530302994363e-61},
+      "rank_le_6": {"status": "eliminated", "T_squared": 683.4216536706417, "Hotelling_F": 4.404436006470301, "df_numerator": 112, "df_denominator": 288, "critical_F_alpha_0_01": 1.4255925594307337, "p": 2.8760740869573686e-24},
+      "rank_le_7": {"status": "eliminated", "T_squared": 395.9512601294099, "Hotelling_F": 4.096661710740633, "df_numerator": 78, "df_denominator": 322, "critical_F_alpha_0_01": 1.4826932588145953, "p": 2.5830555548408006e-19},
+      "rank_le_8": {"status": "compatible_not_eliminated", "T_squared": 64.4586849331869, "Hotelling_F": 1.1847043179031846, "df_numerator": 48, "df_denominator": 352, "critical_F_alpha_0_01": 1.5951752640946115, "p": 0.19782849774006817},
+      "certified_rank_lower_bound": 8
+    },
+    "minus_R2_gauge": {
+      "rank_le_5": {"status": "eliminated", "T_squared": 2045.024541684411, "Hotelling_F": 8.542291318648333, "df_numerator": 150, "df_denominator": 250, "critical_F_alpha_0_01": 1.3972153603277313, "p": 5.4266116340559135e-49},
+      "rank_le_6": {"status": "eliminated", "T_squared": 970.2062618068252, "Hotelling_F": 6.252671934308219, "df_numerator": 112, "df_denominator": 288, "critical_F_alpha_0_01": 1.4255925594307337, "p": 3.030160605682578e-36},
+      "rank_le_7": {"status": "eliminated", "T_squared": 250.46040993790317, "Hotelling_F": 2.5913582674636855, "df_numerator": 78, "df_denominator": 322, "critical_F_alpha_0_01": 1.4826932588145953, "p": 2.5488043844931895e-09},
+      "rank_le_8": {"status": "compatible_not_eliminated", "T_squared": 68.85636518442334, "Hotelling_F": 1.265530521351139, "df_numerator": 48, "df_denominator": 352, "critical_F_alpha_0_01": 1.5951752640946115, "p": 0.12143112558612462},
+      "certified_rank_lower_bound": 8
+    }
+  },
+  "classification": {
+    "eliminated": ["plus rank<=5", "plus rank<=6", "plus rank<=7", "minus-R2 rank<=5", "minus-R2 rank<=6", "minus-R2 rank<=7"],
+    "survives_as_compatible_only": ["plus rank<=8", "minus-R2 rank<=8"],
+    "untested": ["exact physical state dimension", "rank-eight flatness at the next moment order", "R2-conjugate full kernel-projector bridge", "ordered-path or noncommutative translation algebra"]
+  },
+  "bridge_gate": {
+    "required_support": "rank(H3)<=5 survives in both hands",
+    "observed_support": false,
+    "status": "not_reached",
+    "scorer_payload": "LOCKED_RANK5_FLAT_EXTENSION_FAILED"
+  },
+  "claim_boundary": [
+    "This is a Level-S statistical elimination certificate, not an exact SOS, Positivstellensatz, interval, or rational infeasibility proof.",
+    "The certificate excludes only the declared endpoint-Hankel rank classes in this single dependency group and covariance convention.",
+    "Rank eight is the first compatible truncation and hence a lower bound conclusion; it is not an exact physical dimension or field count.",
+    "Failure to eliminate rank eight does not validate it. The R2 bridge was not reached and is not certified either way."
+  ],
+  "verifier": {
+    "path": "scripts/verify_p250_radius6_elimination_certificate.py",
+    "mode": "fail closed; verify all immutable hashes, recompute the frozen score from locked batches, and compare every certified statistic and status"
+  }
+}
