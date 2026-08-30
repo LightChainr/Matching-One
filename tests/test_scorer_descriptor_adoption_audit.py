@@ -124,15 +124,15 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
             )
         )
         self.assertEqual(result, audit(ROOT, manifest))
-        self.assertEqual(result["counts"]["total"], 56)
-        self.assertEqual(result["counts"]["direct_typed_entrypoint"], 25)
-        self.assertEqual(result["counts"]["covered_frozen_kernel"], 24)
+        self.assertEqual(result["counts"]["total"], 58)
+        self.assertEqual(result["counts"]["direct_typed_entrypoint"], 27)
+        self.assertEqual(result["counts"]["covered_frozen_kernel"], 26)
         self.assertEqual(
             result["counts"]["descriptor_not_applicable_generic_utility"], 1
         )
-        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 6)
+        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 4)
         self.assertEqual(result["counts"]["outside_registered_typed_path"], 0)
-        self.assertEqual(len(result["rows"]), 56)
+        self.assertEqual(len(result["rows"]), 58)
         statuses = {row["path"]: row["status"] for row in result["rows"]}
         self.assertEqual(
             statuses["scripts/score_prequential_evidence.py"],
@@ -170,13 +170,27 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
             "scripts/score_norm4_production.py",
             "scripts/score_norm4_thermal_jet.py",
             "scripts/score_norm5_thermal_jet.py",
-            "scripts/score_p159_pell_hex_filter.py",
             "scripts/score_p49_fullcurve_doubling.py",
-            "scripts/score_p50_fullcurve_n290.py",
         ):
             self.assertEqual(
                 statuses[path], "channel_bearing_migration_required"
             )
+        self.assertEqual(
+            statuses["scripts/score_p159_pell_hex_filter.py"],
+            "covered_frozen_kernel",
+        )
+        self.assertEqual(
+            statuses["scripts/score_p159_pell_hex_filter_typed.py"],
+            "direct_typed_entrypoint",
+        )
+        self.assertEqual(
+            statuses["scripts/score_p50_fullcurve_n290.py"],
+            "covered_frozen_kernel",
+        )
+        self.assertEqual(
+            statuses["scripts/score_p50_fullcurve_n290_typed.py"],
+            "direct_typed_entrypoint",
+        )
         for path in (
             "scripts/score_axis_pair_annihilator.py",
             "scripts/score_axis_pair_annihilator_stable.py",

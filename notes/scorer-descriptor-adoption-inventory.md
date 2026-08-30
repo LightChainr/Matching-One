@@ -1,18 +1,16 @@
 # Scorer descriptor-adoption inventory
 
-In this checked snapshot, the exact `scripts/*score*.py` corpus contains 56
-files. Python-AST inspection finds twenty-five
+In this checked snapshot, the exact `scripts/*score*.py` corpus contains 58
+files. Python-AST inspection finds twenty-seven
 direct typed entrypoints importing both `ObservableDescriptor` and
-`map_observable` from `wrapping_channels`. Twenty-four frozen kernels are covered by
+`map_observable` from `wrapping_channels`. Twenty-six frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Six paths are confirmed channel-bearing and
+a descriptor is not applicable. Four paths are confirmed channel-bearing and
 require typed migrations:
 `score_norm4_production.py`,
 `score_norm4_thermal_jet.py`, `score_norm5_thermal_jet.py`,
-`score_p159_pell_hex_filter.py`,
-`score_p49_fullcurve_doubling.py`,
-`score_p50_fullcurve_n290.py`. No scorer remains outside a registered
+`score_p49_fullcurve_doubling.py`. No scorer remains outside a registered
 audit class.
 
 This closes an inventory gap: the repository now has a deterministic list,
@@ -32,7 +30,7 @@ unchanged.
 but no current scorer has that status. Static membership alone would not prove
 a semantic bug, data-provenance failure, or need for migration; any future
 corpus addition must still be reviewed before modification. Issue #146 remains
-open because inventory classification is not the same as implementing the 6
+open because inventory classification is not the same as implementing the 4
 required typed migrations.
 
 `score_axis_pair_annihilator.py` and its stable-reader entrypoint are now
@@ -129,15 +127,7 @@ families plus explicit lineage, sign, and normalization maps; a single channel
 string is insufficient. Numerical full-curve, covariance, frozen-model, and
 report contracts remain unchanged.
 
-`score_p50_fullcurve_n290.py` is migration-required. It carries thermal-even
-DeltaM coordinates, a mean slope, a signed lineage root gap, and four P4
-diagnostics through independent N145/N290 streams. `FEATURE_ORDER`, ordered
-Gaussian representations, `LINEAGE_SIGN`, and frozen ratios jointly define the
-semantics. A migration needs distinct typed quantities plus explicit lineage
-and independent-stream maps. It must preserve size-local jackknifes, numerical
-covariance-rank handling, frozen prediction order, and provenance.
-
-`score_p50_sprime_n290.py` is now a covered frozen kernel. Its typed
+`score_p50_fullcurve_n290.py` is now a covered frozen kernel. Its typed entrypoint validates four exact identity maps for the raw thermal-even contrast, raw matching-function value, angular-normalized P4_S, and angular-normalized P4_D before replaying the scorer. The quantity contract separately freezes N145/N290 representation order, lineage signs, independent RNG streams, nine-feature order, five scoring stages, response coordinates, and `Cov_child + ratio^2 Cov_parent`. The wrapper rejects kernel, prediction, schema, size, feature, P4, scoring-order, or covariance drift before adding semantic annotations; all nine quantities at a size remain correlated views of one histogram block, not independent evidence.\n\n`score_p50_sprime_n290.py` is now a covered frozen kernel. Its typed
 entrypoint validates the registered exact identity map for the cross/even,
 angular-normalized `P4_S_prime` observable before replaying the kernel. The
 semantic gate separately freezes N=290, the q2-before-Jordan order, both source
@@ -209,18 +199,17 @@ remains a response coordinate rather than a topology observable; H8/H12
 contamination, slope anisotropy, matching parity, and the `V_<1,4>`
 assignment remain unresolved.
 
-`score_p159_pell_hex_filter.py` is migration-required despite serializing an
-`observable_descriptor` dictionary in its output. That dictionary is free-form
-provenance, not a registered `ObservableDescriptor` checked through
-`map_observable`. The score orders three primitive rank-1 homology lines in a
-transported positive-rho basis, transforms their continuum-subtracted
-probabilities into C/Q/S character coordinates, compares two Pell designs
-through E4 phase transport, and explicitly reuses PR #222 evidence. A migration
-must type the primitive-sector channel, line-basis transport, character
-coordinates, fixed-p and amplitude normalizations, cross-design phase map, and
-non-independent evidence relation. It must preserve the exact oracle, frozen
-continuum baselines, covariance transform, post-reveal boundary, and all
-existing gate conclusions.
+`score_p159_pell_hex_filter.py` is now a covered frozen kernel. Its typed
+entrypoint validates an exact identity map for the unchanged full-configuration
+rank-positive topology envelope before replaying the canonical PR222 pilot.
+The semantic gate separately freezes the two Pell designs, primitive-line
+order, positive-rho basis, identity cross-design transport, C3 cycle, C/Q/S
+transform, sampling contract, canonical input hashes, decisions, and evidence
+boundary. Individual primitive homology lines and C/Q/S remain response-sector
+coordinates rather than registered topology channels. The replay creates no
+new simulation or independent evidence, preserves the failed ordinary-H4 sign
+gate and blocked square-site-H4 promotion, and leaves the post-reveal minus-two
+diagnostic unpreregistered for C.
 
 `score_p48_new_geometry_channels.py` is now a covered frozen kernel, separate
 from the typed wrappers for the prospective `P4_S_prime` scorer. Its typed
