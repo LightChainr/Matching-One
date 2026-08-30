@@ -1,0 +1,100 @@
+{
+  "N": 8,
+  "boundary": "The Johnson eigenvalues are fixed by finite sampling algebra. They are not fitted scaling dimensions and are not comparable to Bernoulli-noise powers without an exact clock map.",
+  "degree_spaces": [
+    {
+      "degree_at_most": 0,
+      "evaluation_rank": 1,
+      "expected_rank": 1,
+      "rank_after_adjoining_P_images": 1
+    },
+    {
+      "degree_at_most": 1,
+      "evaluation_rank": 8,
+      "expected_rank": 8,
+      "rank_after_adjoining_P_images": 8
+    },
+    {
+      "degree_at_most": 2,
+      "evaluation_rank": 28,
+      "expected_rank": 28,
+      "rank_after_adjoining_P_images": 28
+    },
+    {
+      "degree_at_most": 3,
+      "evaluation_rank": 56,
+      "expected_rank": 56,
+      "rank_after_adjoining_P_images": 56
+    },
+    {
+      "degree_at_most": 4,
+      "evaluation_rank": 70,
+      "expected_rank": 70,
+      "rank_after_adjoining_P_images": 70
+    }
+  ],
+  "endpoint_slices": [
+    {
+      "generator_eigenvalue": "0",
+      "k": 0,
+      "states": 1,
+      "swap_matrix": [
+        [
+          "1"
+        ]
+      ]
+    },
+    {
+      "generator_eigenvalue": "0",
+      "k": 8,
+      "states": 1,
+      "swap_matrix": [
+        [
+          "1"
+        ]
+      ]
+    }
+  ],
+  "k": 4,
+  "schema": "matching-one/observer-bandwidth-johnson-swap/v1",
+  "slice_states": 70,
+  "spectrum": [
+    {
+      "degree": 0,
+      "exact_nullity": 1,
+      "expected_multiplicity": 1,
+      "generator_eigenvalue": "0",
+      "swap_eigenvalue": "1"
+    },
+    {
+      "degree": 1,
+      "exact_nullity": 7,
+      "expected_multiplicity": 7,
+      "generator_eigenvalue": "-1/2",
+      "swap_eigenvalue": "1/2"
+    },
+    {
+      "degree": 2,
+      "exact_nullity": 20,
+      "expected_multiplicity": 20,
+      "generator_eigenvalue": "-7/8",
+      "swap_eigenvalue": "1/8"
+    },
+    {
+      "degree": 3,
+      "exact_nullity": 28,
+      "expected_multiplicity": 28,
+      "generator_eigenvalue": "-9/8",
+      "swap_eigenvalue": "-1/8"
+    },
+    {
+      "degree": 4,
+      "exact_nullity": 14,
+      "expected_multiplicity": 14,
+      "generator_eigenvalue": "-5/4",
+      "swap_eigenvalue": "-1/4"
+    }
+  ],
+  "status": "exact_johnson_spectrum_and_degree_cutoff_verified",
+  "swap_denominator": 16
+}
