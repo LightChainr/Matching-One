@@ -1,0 +1,85 @@
+{
+  "schema": "matching-one.p250-joint-ta-hankel-manifest.v1",
+  "analysis_schema": "matching-one.z5-projective-leg-joint-ta-rank.v1",
+  "title": "P250 N505 joint T/A common-annihilator rank gate",
+  "status": "exploratory_existing_data_reuse",
+  "new_samples": false,
+  "source": {
+    "repository": "light-chain/Matching-One",
+    "branch": "analysis/p250-cross-scale-projective-leg-propagator-20260830",
+    "commit": "b62b4efd4997bd5f9923949b4e07d8011823c9ed",
+    "path": "results/huawei-20260830/P250-z5-projective-leg-cross-scale-n505-80k/response_80k.batches.csv",
+    "sha256": "8b0e06f3fdc577c362e6f2404db60933d0cf489ee532c053288a03c44dc7fe5c",
+    "samples": 80000,
+    "aligned_batches": 160,
+    "samples_per_batch": 500,
+    "parent_norm": 101,
+    "child_order": 505,
+    "p_ref": 0.59274605079,
+    "dependency_group": "p250-projective-leg-N505-80k"
+  },
+  "semantics": {
+    "exact_reconstruction_source": {
+      "branch": "analysis/p250-projective-leg-direction-charge-tomography-20260830",
+      "commit": "186393e1cc4ec25d76e54f784779e23aed041fb4"
+    },
+    "stored_coordinates": {
+      "T": "(X + Y) / 2",
+      "A": "(X - Y) / 2"
+    },
+    "exact_inverse": {
+      "X": "T + A",
+      "Y": "T - A"
+    },
+    "sequence_order": [
+      "T_plus_r1",
+      "T_plus_r2",
+      "T_minus_r1",
+      "T_minus_r2",
+      "A_plus_r1",
+      "A_plus_r2",
+      "A_minus_r1",
+      "A_minus_r2"
+    ],
+    "distance_order": [1, 2, 3, 4, 5],
+    "inference_unit": "aligned batch shared by all eight complex sequences"
+  },
+  "models": [
+    {
+      "rank": 2,
+      "fit_distances": [1, 2, 3, 4],
+      "training_targets": [3, 4],
+      "heldout_distance": 5,
+      "coefficient_order": ["lag_1", "lag_2"]
+    },
+    {
+      "rank": 3,
+      "fit_distances": [1, 2, 3, 4],
+      "training_targets": [4],
+      "heldout_distance": 5,
+      "coefficient_order": ["lag_1", "lag_2", "lag_3"]
+    }
+  ],
+  "decision": {
+    "alpha": 0.01,
+    "order": [2, 3],
+    "closure_rule": "training and strict d5 holdout covariance-aware scores must both have p >= alpha",
+    "rank2_pass": "joint_rank2_closes",
+    "rank2_fail_rank3_pass": "joint_rank3_closes_target_only",
+    "rank3_fail": "rank3_fails_common_annihilator"
+  },
+  "stop_boundaries": [
+    "Do not fit rank 4: five distances leave no honest held-out distance.",
+    "Never use d5 to fit or select coefficients; d5 is the strict holdout for both ranks.",
+    "Do not import the branch-only CSV into the Draft branch; read the pinned git blob directly.",
+    "Do not pool T, A, hand, charge, or earlier P250 reports as independent evidence; all share one dependency group.",
+    "A rank-3 pass is a finite-sequence closure result, not proof of three continuum fields, C4 covariance, or a Z5 fusion law.",
+    "A rank-3 failure excludes this shared scalar rank-at-most-3 recurrence on d1..d5; it does not prove that directional transfer operators fail to commute.",
+    "Roots are descriptive only and become root_not_interpretable if delete-one matching is ambiguous.",
+    "Any schema, hash, batch-alignment, finite-value, or covariance-rank failure is not_scoreable rather than silently repaired."
+  ],
+  "outputs": {
+    "json": "results/p250-projective-leg-joint-ta-rank/latest.json",
+    "markdown": "results/p250-projective-leg-joint-ta-rank/latest.md"
+  }
+}

@@ -1,8 +1,14 @@
-version: 15
+version: 16
 updated: 2026-08-30
 purpose: >
   Lightweight navigation/provenance index. Registry conflicts never block
   science; claim strength lives in STATUS and priority lives in ROADMAP.
+
+main_snapshot:
+  commit: 28133bc62bed38d77d21991bdbbd70e00577ece6
+  latest_integrated_pr: 363
+  scorer_inventory: {total: 56, direct_typed: 25, covered_frozen_kernel: 24, migration_required: 6, utility: 1, outside_registered_path: 0}
+  boundary: threshold_Krawtchouk_typed_wrapper_changes_semantic_coverage_only_without_new_data_score_or_scientific_evidence
 
 integration_policy:
   registry_conflicts_block_science: false
@@ -65,7 +71,7 @@ evidence_archives:
   - {id: SPIN4_DIRECTION_ALIAS_GATE, path: results/discrete-holomorphic-spin4-alias, status: exact_result, role: main_integrated_one_C4_orbit_scalar_spin4_alias_boundary}
   - {id: PAIRED_MOTIF_MICROCANONICAL, path: results/paired-motif-microcanonical, status: exact_result, role: fixed_rank_equal_multiplicity_zero_mean_control_not_threshold_origin}
   - {id: OBSERVABLE_DESCRIPTOR_REGISTRY, path: results/observable-descriptor-map-audit, status: exact_semantic_infrastructure, role: 200_descriptor_952_map_registry_coherence}
-  - {id: SCORER_ADOPTION_INVENTORY, path: results/scorer-descriptor-adoption, status: current_main_semantic_adoption_inventory, role: all_55_paths_classified_24_direct_23_covered_7_migration_required_and_one_utility_without_scientific_demotion}
+  - {id: SCORER_ADOPTION_INVENTORY, path: results/scorer-descriptor-adoption, status: current_main_semantic_adoption_inventory, role: all_56_paths_classified_25_direct_24_covered_6_migration_required_and_one_utility_without_scientific_demotion}
   - {id: DIGITAL_ALEXANDER_INDEX11, path: results/digital-alexander-quotient-frontier, status: exact_result, role: main_integrated_cached_subset_DP_HNF_frontier_through_index11}
   - {id: DIGITAL_ALEXANDER_INDEX12, path: results/digital-alexander-quotient-frontier, status: exact_result, role: main_integrated_cached_subset_DP_HNF_frontier_through_index12}
   - {id: DIGITAL_ALEXANDER_INDEX13, path: results/digital-alexander-quotient-frontier, status: exact_result, role: main_integrated_cached_subset_DP_HNF_frontier_through_index13_without_unrestricted_integral_saturation_theorem}
@@ -98,6 +104,7 @@ evidence_archives:
   - {id: P231_VACUUM_KDV_TYPED_WRAPPER, path: predictions/p231_vacuum_kdv_sector_semantic_gate_20260830.json, status: exact_semantic_infrastructure, role: main_integrated_identity_gate_for_retrospective_PR222_C_Q_S_reuse_without_new_data_score_independent_evidence_or_topology_channel_equivalence}
   - {id: V14_SCALAR_ROOT_TYPED_WRAPPER, path: predictions/v14_scalar_root_projector_semantic_gate_20260830.json, status: exact_semantic_infrastructure, role: main_integrated_identity_gate_for_existing_v14_H4_null_implicit_root_response_without_new_data_score_topology_identity_or_field_assignment}
   - {id: ISSUE43_SECONDARY_TYPED_WRAPPER, path: predictions/issue43_secondary_semantic_gate_20260830.json, status: exact_semantic_infrastructure, role: main_integrated_identity_gate_for_frozen_Issue43_secondary_stage_ledger_preserving_order_excluded_states_reuse_dependencies_and_no_refit_boundary_without_new_score_or_evidence}
+  - {id: THRESHOLD_SCORE_MODES_TYPED_WRAPPER, path: predictions/threshold_score_modes_semantic_gate_20260830.json, status: exact_semantic_infrastructure, role: main_integrated_PR363_registered_angular_maps_for_threshold_S_even_D_odd_Krawtchouk_value_derivative_and_higher_response_modes_without_new_data_score_independent_evidence_or_field_assignment}
   - {id: F3_ACTIVATION_FLUX, path: results/f3-activation-flux/latest.json, status: open_pr_existing_data_reanalysis, role: same_N65_20_batch_first_birth_minus_first_line_exit_at_tau2_tomography_with_no_new_samples_no_independent_vote_and_no_completion_line}
 
 topic_derivations:
@@ -140,6 +147,7 @@ channel_semantics:
   p231_vacuum_kdv_entrypoint: scripts/score_p231_vacuum_kdv_sector_typed.py
   v14_scalar_root_entrypoint: scripts/score_v14_scalar_root_projector_typed.py
   issue43_secondary_entrypoint: scripts/score_issue43_secondary_typed.py
+  threshold_score_modes_entrypoint: scripts/threshold_score_modes_typed.py
   required_fields: [topology_channel, combination, probability_coordinate, orientation_order, normalization, quantity]
 
 registered_reanalyses:
@@ -208,6 +216,23 @@ registered_reanalyses:
     schema: matching-one.f3-activation-flux.v1
     role: same_20_batch_zero_sample_first_birth_minus_first_line_exit_at_tau2_tomography_with_full_covariance
     result_summary: H_reinforces_at_the_fixed_crossing_and_p_ref_then_nearly_cancels_at_p_0p65_completion_representative_absent_and_charged_projection_is_descriptive_only
+  - id: P250_JOINT_TA_HANKEL_RANK
+    status: open_pr_worktree_existing_data_reanalysis
+    pr: 267
+    branch: research/navigation-priority-refresh-20260829
+    worktree_base_commit: 9ae950869becf0e3faf9794f06e20af72314d267
+    artifact_commit_status: pending_PR267_content_commit
+    manifest: analysis/p250_joint_ta_hankel_manifest.json
+    entrypoint: scripts/score_z5_projective_leg_joint_ta_rank.py
+    outputs: [results/p250-projective-leg-joint-ta-rank/latest.json, results/p250-projective-leg-joint-ta-rank/latest.md]
+    source_branch: analysis/p250-cross-scale-projective-leg-propagator-20260830
+    source_commit: b62b4efd4997bd5f9923949b4e07d8011823c9ed
+    exact_reconstruction_commit: 186393e1cc4ec25d76e54f784779e23aed041fb4
+    dependency_group: p250-projective-leg-N505-80k
+    new_samples: false
+    role: one_common_complex_annihilator_for_joint_T_A_hand_charge_sequences_with_synchronized_160_batch_delete_one_and_strict_d5_holdout
+    result_summary: joint_rank2_fails_training_p_3p8841e_6_while_joint_rank3_closes_training_p_0p206664_and_d5_p_0p657693_without_three_field_C4_or_Z5_claim
+    boundary: branch_only_N505_80k_input_is_not_copied_or_promoted_and_all_T_A_hand_charge_views_are_one_dependency_group
 
 frontier_branch_assets:
   - {id: MARKED_BIRTH_CONTACT_CHAIN, status: branch_only, branch: analysis/marked-birth-stream-20260829, commit: 0b3cebf9cd1b536c859d3fad1591345725a068f7, representative_path: results/server-20260829/marked-birth-pilot/REPORT.md, role: common_birth_pilot_mean_source_lead_and_all_order_q_only_contact_closure}
@@ -232,15 +257,52 @@ frontier_branch_assets:
   - {id: P321_FRESH_MULTISCALE_RESULT, status: branch_only, branch: analysis/p321-fresh-multiscale-result-20260830, commit: ca72994f14ff2c8ec00dfca51b664f3b95b1dcb0, parent_commit: 82060874d54c832c9bc000d8f16f52104e78445e, representative_path: results/local-20260830/P321-equal-area-fresh-100k/multiscale_score.json, role: fresh_preregistered_N144_N576_N1296_five_shape_100k_scale_gate_pass_and_conditional_E4_do_not_reject_with_full_primary_covariance_not_field_identification, provenance_boundary: recorded_remote_alias_Huawei_CodeBuddy_TgFr7R_not_declared_TV2N0X_pending_reconciliation}
   - {id: P333_Q_LIFT_COVARIANCE, status: branch_only, branch: theory/p333-q-lift-covariance-20260830, commit: 502719c62b8dc6d7ede45a100ddaaeb08a6d93ca, shared_parent_commit: de0219886eeb1d336d6250e8e2a487771740b9ab, representative_path: notes/q-lift-covariance.md, role: exact_lift_section_dependence_and_conditional_bottom_field_projected_LCFT_target}
   - {id: P333_GENERIC_Q_LIFT_DESCRIPTOR, status: branch_only, branch: theory/p333-generic-q-lift-descriptor-20260830, commit: c34c838cd391fae890de72d732cc53279757263b, shared_parent_commit: de0219886eeb1d336d6250e8e2a487771740b9ab, representative_path: analysis/generic_q_lift_transport_manifest.json, role: typed_lift_sector_weight_normalization_Qv_path_insertion_projector_field_transport_protocol}
+  - id: P333_DUAL_NUMBER_GRAM_EXTENSION
+    status: branch_only
+    branch: theory/p333-dual-number-gram-extension-20260830
+    commit: b024177123d8375c9b878c60b3576725cd755d4b
+    parent_commit: d006f9c1c2f19933e5510fe2289ae418f3424be0
+    representative_path: results/p333-dual-number-gram-extension/extension.json
+    paths: [notes/p333-dual-number-gram-extension.md, results/p333-dual-number-gram-extension/extension.json, results/p333-dual-number-gram-extension/manifest.json]
+    role: exact_Q1_partition_Gram_dual_number_diagonalization_with_Bell_n_minus_one_nondegenerate_first_jet_radical_and_no_selected_log_pair
+    dependency_boundary: finite_connectivity_algebra_only_without_transfer_generator_Jordan_block_scaling_velocity_or_continuum_field_identity
   - {id: P334_PROJECTIVE_ESSENTIAL_BIRTH, status: branch_only, branch: analysis/p334-projective-essential-birth-oracle-20260830, commit: 6f54935f4a8b2ce5ba045b43948aab00d6e065b3, parent_commit: c1a72e5f0568b1e423ece5d870635030d83f2c7d, representative_path: results/projective-essential-birth/latest.json, role: conditional_projective_first_born_line_and_first_birth_minus_first_line_exit_at_tau2_flux_oracle}
   - {id: P334_PROJECTIVE_BIRTH_PRODUCTION_SMOKE, status: branch_only, branch: analysis/p334-projective-birth-production-smoke-20260830, commit: 17141418583f74dacc45c8423a6fade028f2c182, parent_commit: 6f54935f4a8b2ce5ba045b43948aab00d6e065b3, representative_path: results/local-20260830/P334-projective-birth-N65-smoke/score.json, role: production_capable_sparse_N65_20k_stream_with_tau1_ell_birth_tau2_DIRECT_RANK2_but_no_canonical_or_gauge_audited_completion_representative_not_field_or_radial_model_selection}
   - {id: P334_CONDITIONAL_PROJECTIVE_FLUX, status: branch_only, branch: analysis/p334-conditional-line-flux-20260830, commit: 381984d4ea37b21858aa109f5a51086008ad0fa7, parent_commit: 17141418583f74dacc45c8423a6fade028f2c182, representative_path: results/local-20260830/P334-projective-birth-N65-smoke/conditional_flux.json, role: exploratory_same_20k_block_projective_line_lifetime_sorting_contrast_7p25_over_1df_not_independent_evidence_or_field_identification}
   - {id: P337_FINITE_ABELIAN_TWIST_TOMOGRAPHY, status: branch_only, branch: theory/p337-finite-abelian-twist-tomography-20260830, commit: 4b17955946207f39762f836156aa063f64fbf67d, parent_commit: c1a72e5f0568b1e423ece5d870635030d83f2c7d, representative_path: results/finite-abelian-twist-tomography/latest.json, role: exact_F2_F3_flat_twist_source_inversion_and_prime_projective_line_encoding_without_local_CFT_or_affine_TL_identity}
   - {id: P337_P334_FLAT_TWIST_N65, status: branch_only, branch: analysis/p337-p334-flat-twist-n65-20260830, commit: a7cb19a1b0f1115a7e5dfd23421a5dd25892fe78, parent_commit: 17141418583f74dacc45c8423a6fade028f2c182, theory_commit: 4b17955946207f39762f836156aa063f64fbf67d, representative_path: results/local-20260830/P334-projective-birth-N65-smoke/flat_twist_score.json, role: exact_F2_F3_archive_reconstruction_plus_exploratory_reflection_odd_sector_from_the_same_N65_20k_dependency_block}
   - {id: P334_N13_MULTIORBIT_FLUX, status: branch_only, branch: analysis/p334-n13-multiorbit-flux-20260830, commit: b8e286e83d62648fb8880961a8f76343bda90e25, parent_commit: 6f54935f4a8b2ce5ba045b43948aab00d6e065b3, representative_path: results/p334-n13-multiorbit-flux/latest.json, role: exact_N13_axis_diagonal_birth_exit_flux_with_75p574_24p426_signed_shares_and_no_continuum_identity}
+  - id: P334_TWO_CARRIER_ABSTRACT_THEOREM
+    status: branch_only
+    branch: theory/p334-two-carrier-abstract-theorem-20260830
+    commit: a9da7cde448e72855aa7ff161e2197b10532b40e
+    parent_commit: 874142c649afc686d1b5839a18bb38f5bb0486b5
+    representative_path: results/p334-two-carrier-abstract-theorem/latest.json
+    paths: [analysis/p334_two_carrier_abstract_theorem_manifest.json, notes/p334-two-carrier-abstract-theorem.md, results/p334-two-carrier-abstract-theorem/latest.json]
+    role: exact_BA_plus_TM_on_both_complementary_carriers_implies_ULC_with_independent_N4_axiom_witnesses_and_984_of_984_existing_torus_pairs_passing
+    dependency_boundary: abstract_sufficiency_theorem_and_bounded_exact_scan_not_a_proof_that_homology_carriers_universally_satisfy_BA_and_TM
   - {id: P337_FLAT_TWIST_REPRESENTATION, status: branch_only, branch: theory/p337-flat-twist-representation-20260830, commit: 3cb06ab03ac3f7d65d6e5abb76b564e3ff448ce7, parent_commit: a7cb19a1b0f1115a7e5dfd23421a5dd25892fe78, representative_path: results/local-20260830/P334-projective-birth-N65-smoke/flat_twist_representation.json, role: exact_F3_A4_standard_triplet_to_C3_neutral_plus_charged_plane_using_reused_N65_placement_not_three_fields}
   - {id: P337_SHEAR_TRANSPORT_SMOKE, status: branch_only, branch: analysis/p337-shear-transport-smoke-20260830, commit: bd139138719c118b9763c958638ade423029252f, parent_commit: 3cb06ab03ac3f7d65d6e5abb76b564e3ff448ce7, representative_path: results/local-20260830/P337-flat-twist-shear-smoke/score.json, role: fresh_N65_10k_deterministic_basis_relabel_pathwise_transport_closure_with_zero_physical_source_evidence}
   - {id: P337_F3_TWIST_CURVES, status: branch_only, branch: analysis/p337-f3-twist-curves-20260830, commit: 62b2b86191bf8dfe53807df469c3c650047b64d4, parent_commit: a7cb19a1b0f1115a7e5dfd23421a5dd25892fe78, sibling_boundary: not_a_child_of_3cb06ab_or_bd13913, representative_path: results/local-20260830/P337-F3-twist-curves/score.json, role: zero_sample_complete_F3_curves_unique_20_of_20_LOO_H_crossing_0p573633326_unresolved_from_p_ref_with_fixed_archive_dependency}
+  - id: P337_NATURAL_CURRENT_GEOMETRY_CROSSWALK
+    status: branch_only
+    branch: analysis/p337-geometry-aware-current-crosswalk-20260830
+    commit: 186d72afcfa484279dda7264f7d0dee1c68e19e5
+    parent_commit: 75f74f99c0a3e587bc1a39753f711fde9bfa1121
+    representative_path: results/p337-natural-current-geometry-crosswalk/latest.json
+    paths: [analysis/p337_natural_current_geometry_crosswalk_manifest.json, notes/p337-natural-current-geometry-crosswalk.md, results/p337-natural-current-geometry-crosswalk/latest.json]
+    role: N65_N85_fit_and_heldout_N145_geometry_crosswalk_in_which_exact_H4_predicts_the_target_and_an_added_projective_scalar_is_not_required
+    dependency_boundary: N65_20k_archive_reuse_plus_independent_N85_200k_per_shape_and_N145_2p4m_per_shape_blocks_with_N145_held_out_not_three_additive_votes
+  - id: P337_N170_ANGLE_FLIP_FREEZE
+    status: branch_only_frozen_protocol
+    branch: analysis/p337-n170-angle-flip-production-20260830
+    commit: cf1bdf86b225909d825c35ad003e51037c102bef
+    parent_commit: 186d72afcfa484279dda7264f7d0dee1c68e19e5
+    representative_path: analysis/p337_n170_angle_flip_preregistration.json
+    paths: [analysis/p337_n170_angle_flip_preregistration.json, notes/p337-n170-angle-flip-preregistration.md]
+    role: preregistered_N170_exact_H4_angle_flip_DeltaK_minus0p00978574_versus_scalar_zero_with_8M_per_shape_design_and_no_data_at_this_snapshot
+    dependency_boundary: N145_covariance_used_for_power_only_and_future_N170_would_be_one_new_dependency_group_not_an_H4_H8_vote
+    operational_boundary: snapshot_names_DevEnvC_HZsCM6_but_current_user_scope_allows_only_DevEnvC_TV2N0X_so_this_registry_entry_does_not_authorize_execution
   - {id: P158_GAUSSIAN_ROOT_CHARACTER_POWER, status: branch_only, branch: analysis/p158-gaussian-root-character-power-20260830, commit: 2cfde0b837fb7bfb18c7c328b88318964d6949dd, representative_path: results/local-20260830/P158-gaussian-root-character-power/power.json, role: source_only_power_gate_deferring_N650_N850_production_pending_target_variance_pilot}
   - {id: THRESHOLD_TAIL_FLOW, status: branch_only, branch: analysis/p122-production-shape-collapse-20260829, commit: bc19bcb6bdf2b486691e4eeffec80d78b3406889, representative_path: results/threshold-shape-collapse/production-norm2-norm5.md, role: rejected_exact_shape_collapse_and_nearly_rankone_tail_direction}
   - {id: CONTEXT_RECTANGLE_RESULT, status: branch_only, branch: analysis/p267-target3-context-rectangle-20260829, commit: 5873de87fd14b58650ce35422fe3acf3828be2f8, representative_path: results/server-20260830/P267-gaussian-annulus-context/REPORT.md, role: no_evidence_for_same_semantics_context_enrichment_without_path_order}
@@ -249,8 +311,13 @@ frontier_branch_assets:
   - {id: Z5_CUBIC_PRODUCTION_RESULT, status: branch_only, branch: analysis/p250-z5-charged-threepoint-20260830, commit: be80f25a9551bdd3dbfbabd4900363504c2aea8f, parent_commit: 59099873f80a1631f46e282f98ebcbc829ac3c7b, representative_path: results/huawei-20260830/P250-z5-charged-threepoint/score_1m.json, role: N325_one_million_closure_survives_H12_H8_H4_all_survive_and_primary_charged_cubic_vector_remains_signal_limited_without_field_identification}
   - {id: Z5_SEPARATION_NORMALIZED_SMOKE, status: branch_only, branch: analysis/p250-separation-normalized-cubic-smoke-20260830, commit: c5bd02561f300b0c47880d15125a6295bceb190a, representative_path: results/local-20260830/P250-z5-multiseparation-smoke/score_4k.json, role: normalized_multiseparation_interface_with_initial_R1_only_d1_support_resolved}
   - {id: Z5_LOCAL_RADIUS_SELECTOR, status: branch_only, branch: analysis/p250-insertion-radius-selector-20260830, commit: 842400d09b82d4e251cb42d011ab191359464320, representative_path: results/local-20260830/P250-z5-radius-selector/selection.json, role: common_counter_R1_R4_selector_closing_the_declared_local_annulus_landing_H4_family}
-  - {id: Z5_PROJECTIVE_LEG_PROPAGATION, status: branch_only, branch: analysis/p250-projective-leg-insertion-smoke-20260830, commit: 114f8444e299077ba0ca08eddc7da6d23d49776d, protocol_parent_commit: 057f913f42e69cc6d45c39f27af875713a3eba28, representative_path: results/local-20260830/P250-z5-projective-leg-smoke/score_2k.json, role: root_marked_projective_leg_d1_d2_propagation_pass_d3_unresolved_with_no_phase_selection}
-  - {id: ISSUE55_H4_H12_VARIANCE_PILOT, status: branch_only, branch: analysis/issue55-h4-h12-acquisition-20260830, commit: 0b8bb6300554e2fbd6e6e2712c2a882dab5f6417, scientific_commit: df2c25d98ad4d6a72a056d78ac6adca34f827a26, representative_path: results/local-20260830/P55-h4-h12-orthogonal-smoke/variance_power.json, role: target_blind_20k_variance_power_pilot_freezing_600M_per_design_without_target_score}
+  - {id: Z5_PROJECTIVE_LEG_SMOKE, status: branch_only_historical_smoke, branch: analysis/p250-projective-leg-insertion-smoke-20260830, commit: 114f8444e299077ba0ca08eddc7da6d23d49776d, protocol_parent_commit: 057f913f42e69cc6d45c39f27af875713a3eba28, representative_path: results/local-20260830/P250-z5-projective-leg-smoke/score_2k.json, role: initial_root_marked_d1_d2_propagation_smoke_superseded_by_fresh_support_and_transfer_chain, superseded_by: Z5_PROJECTIVE_LEG_FRESH_RESULT}
+  - {id: Z5_PROJECTIVE_LEG_FRESH_RESULT, status: branch_only, branch: analysis/p250-projective-leg-fresh-production-20260830, commit: eea7bc76526abad9c1b9af45d8c052a413498db3, freeze_commit: da65598599fc32a61621de5152eed3db76666d43, representative_path: results/huawei-20260830/P250-z5-projective-leg-fresh-10k/score_10k.json, role: fresh_N325_10k_pair_propagation_confirmed_but_d2_cubic_support_failed_and_phase_remained_locked, dependency_boundary: one_fresh_50_batch_stream_not_evidence_for_the_later_pair_only_or_N505_models}
+  - {id: Z5_PROJECTIVE_LEG_PAIR_TRANSFER, status: branch_only, branch: analysis/p250-projective-leg-transfer-spectrum-20260830, commit: 8868a7cdfe25c38e2de5996d5aad699577cc3091, freeze_commit: f35a0c0cd8de1656efa064b03a4aeb21d6dae41e, representative_path: results/huawei-20260830/P250-z5-projective-leg-pair-transfer-40k/score_40k.json, role: fresh_N325_40k_pair_only_d1_d3_propagation_with_single_exponential_tension_power_like_local_shape_and_unresolved_deck_phase, dependency_group: p250-projective-leg-N325-40k}
+  - {id: Z5_PROJECTIVE_LEG_CROSS_SCALE, status: branch_only, branch: analysis/p250-cross-scale-projective-leg-propagator-20260830, commit: b62b4efd4997bd5f9923949b4e07d8011823c9ed, freeze_commit: dc3d036bdfca24ac2a283637a2af7a5d2533d7a5, representative_path: results/huawei-20260830/P250-z5-projective-leg-cross-scale-n505-80k/score_80k.json, role: fresh_N505_80k_d1_d5_propagation_rejecting_fixed_thermal_sine_source_fitted_sine_and_single_exponential_while_resolving_a_small_joint_phase, dependency_group: p250-projective-leg-N505-80k}
+  - {id: Z5_PROJECTIVE_LEG_STATE_DIMENSION, status: branch_only, branch: analysis/p250-projective-leg-minimal-state-dimension-20260830, commit: c28fd7da33a6abd3ab64130a39ed0cab49e80805, freeze_commit: d3f636aedd34e96148c43ae657ad1490cd79df79, representative_path: results/local-20260830/P250-projective-leg-state-dimension/score.json, role: covariance_reuse_identifying_rank2_as_the_minimal_T_row_recurrence_across_N505_fit_d5_holdout_and_N325_transport_without_two_continuum_field_claim, dependency_groups: [p250-projective-leg-N325-40k, p250-projective-leg-N505-80k]}
+  - {id: Z5_PROJECTIVE_LEG_DIRECTION_CHARGE, status: branch_only, branch: analysis/p250-projective-leg-direction-charge-tomography-20260830, commit: 186393e1cc4ec25d76e54f784779e23aed041fb4, parent_commit: bbef835e1a3f6125327aab223279376550923448, representative_path: results/local-20260830/P250-projective-leg-direction-charge/score.json, role: exact_X_T_plus_A_Y_T_minus_A_reconstruction_rejecting_all_scalar_direction_or_deck_characters_and_showing_A_not_closed_by_the_T_rank2_roots, dependency_group: p250-projective-leg-N505-80k}
+  - {id: ISSUE55_H4_H12_PRODUCTION_RESULT, status: branch_only, branch: analysis/issue55-h4-h12-acquisition-20260830, commit: 86e77dbc806f26b63bb71be394deee5ed1790b6b, freeze_commit: 0b8bb6300554e2fbd6e6e2712c2a882dab5f6417, representative_path: results/server-20260830/P55-h4-h12-orthogonal-production/final_score.json, role: N305_N325_600M_per_design_opposite_alias_result_with_H4_only_p_0p329_zero_p_0p425_and_unresolved_A12_0p147_plusminus_0p191_so_heldout_third_alias_not_run, dependency_boundary: six_shards_form_one_frozen_two_size_campaign_and_H4_zero_A12_views_are_correlated_not_independent_evidence}
   - {id: SURFACE_POLYNOMIAL_CLASSIFICATION, status: branch_only, branch: theory/p144-surface-polynomial-classification-20260830, commit: 5d8343d97d04cbc32b0769a26b0e03f0f3436bdf, representative_path: notes/p144-surface-polynomial-classification.md, role: typed_site_rank_image_quotient_and_no_direct_named_edge_subset_specialization_under_declared_contract}
 
 frontier_open_as_of_2026_08_30:
@@ -350,6 +417,7 @@ canonical_integration_history:
   - {pr: 360, merge_commit: 8b1e359c2d19fd95c4ad21c5248c3d5263d3d888, role: typed_P231_vacuum_KdV_retrospective_PR222_replay_without_new_data_score_independent_evidence_or_channel_equivalence}
   - {pr: 361, merge_commit: 79c9c2250ae4da560672b0402404bfbda2b9ee87, role: typed_v14_scalar_root_projector_replay_and_live_54_23_22_8_1_inventory_without_new_data_score_topology_identity_or_field_assignment}
   - {pr: 362, merge_commit: 84ec3f182691faa9c34524b045f5d2234150cf60, role: typed_Issue43_secondary_stage_ledger_replay_and_live_55_24_23_7_1_inventory_preserving_excluded_states_reuse_dependencies_and_no_refit_boundary_without_new_score_or_evidence}
+  - {pr: 363, merge_commit: 28133bc62bed38d77d21991bdbbd70e00577ece6, role: typed_threshold_Krawtchouk_S_even_D_odd_value_derivative_and_higher_mode_replay_with_live_56_25_24_6_1_inventory_without_new_data_score_independent_evidence_or_field_assignment}
 
 manual_integrations:
   - {pr: 223, role: hexagonal_degree2_Hecke_unique_assets}
