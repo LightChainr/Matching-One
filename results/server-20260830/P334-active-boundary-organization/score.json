@@ -1,0 +1,541 @@
+{
+  "age_primary": {
+    "absolute_retention_vs_old_rank1": [
+      1.0843921084609758,
+      0.9266885270374229,
+      1.0011462406323752,
+      1.014638275435927
+    ],
+    "combined_covariance": [
+      [
+        0.0002784200986852008,
+        6.025367027589612e-05,
+        0.0,
+        0.0
+      ],
+      [
+        6.0253670275896114e-05,
+        0.0002862570039777173,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.005833142908007411,
+        0.005168072002246132
+      ],
+      [
+        0.0,
+        0.0,
+        0.005168072002246132,
+        0.004870041405057537
+      ]
+    ],
+    "decision": "organization_fails_common_absorption_of_remaining_rank1_age",
+    "fresh_fits": {
+      "N325_first": {
+        "baseline_R2": 0.013729565459666748,
+        "baseline_beta_age": -0.16978572439902834,
+        "delta_beta_age": -0.0024528766399710134,
+        "incremental_R2": 0.00084607387567649,
+        "organization_R2": 0.014575639335343227,
+        "organization_beta_age": -0.17223860103899935,
+        "organization_coefficients": {
+          "axis_anisotropy": -0.041426148141184845,
+          "corner_balance": -0.010310117018051167,
+          "frontier_components_L": -0.023220836752603943,
+          "frontier_concentration": -0.015191830018608105,
+          "largest_frontier_arc_L": 0.0011694293445221723
+        },
+        "rows": 9086
+      },
+      "N325_second": {
+        "baseline_R2": 0.008750271316292801,
+        "baseline_beta_age": 0.0545872332127103,
+        "delta_beta_age": 0.0031654685440946143,
+        "incremental_R2": 0.00039958669765273577,
+        "organization_R2": 0.009149858013945522,
+        "organization_beta_age": 0.057752701756804914,
+        "organization_coefficients": {
+          "axis_anisotropy": -0.08395758732566634,
+          "corner_balance": -0.042929789501332125,
+          "frontier_components_L": 0.017387612217172936,
+          "frontier_concentration": 0.9409338515877458,
+          "largest_frontier_arc_L": -0.04183444681445297
+        },
+        "rows": 9164
+      },
+      "N425_first": {
+        "baseline_R2": 0.008668075593374236,
+        "baseline_beta_age": -0.17582923438692952,
+        "delta_beta_age": -3.5861340870274594e-05,
+        "incremental_R2": 0.0010015029515554094,
+        "organization_R2": 0.009669578544929669,
+        "organization_beta_age": -0.1758650957277998,
+        "organization_coefficients": {
+          "axis_anisotropy": 0.013996237001390436,
+          "corner_balance": -0.18951437566853127,
+          "frontier_components_L": -0.015567704107509614,
+          "frontier_concentration": -0.4401004444941884,
+          "largest_frontier_arc_L": 0.007355274370183746
+        },
+        "rows": 8896
+      },
+      "N425_second": {
+        "baseline_R2": 0.008863420072721784,
+        "baseline_beta_age": 0.004741218809731112,
+        "delta_beta_age": -0.0004552445995104574,
+        "incremental_R2": 0.0018447239091215952,
+        "organization_R2": 0.010708143981843388,
+        "organization_beta_age": 0.004285974210220655,
+        "organization_coefficients": {
+          "axis_anisotropy": -0.06932321638107056,
+          "corner_balance": -0.1615296802838036,
+          "frontier_components_L": -0.028494794590903184,
+          "frontier_concentration": -0.06806016449298968,
+          "largest_frontier_arc_L": -0.00501384218081812
+        },
+        "rows": 8972
+      }
+    },
+    "fresh_paired_delta": [
+      -0.0024528766399710134,
+      0.0031654685440946143,
+      -3.5861340870274594e-05,
+      -0.0004552445995104574
+    ],
+    "fresh_paired_delta_covariance": [
+      [
+        1.5823821648299682e-05,
+        -5.277800431869931e-07,
+        0.0,
+        0.0
+      ],
+      [
+        -5.277800431869931e-07,
+        5.2932079041917355e-06,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.8776643649034446e-05,
+        -2.063695354469823e-06
+      ],
+      [
+        0.0,
+        0.0,
+        -2.063695354469823e-06,
+        1.952328172928284e-05
+      ]
+    ],
+    "old_rank1_anchor_age_slopes": [
+      -0.02906523707847948,
+      -0.04317835143907794,
+      -0.03128604924426917,
+      -0.031099606063781163
+    ],
+    "old_rank1_anchor_covariance": [
+      [
+        0.0002625962770369011,
+        6.0781450319083116e-05,
+        0.0,
+        0.0
+      ],
+      [
+        6.078145031908311e-05,
+        0.0002809637960735256,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.005814366264358377,
+        0.0051701356976006025
+      ],
+      [
+        0.0,
+        0.0,
+        0.0051701356976006025,
+        0.004850518123328255
+      ]
+    ],
+    "organization_anchor_age_slopes": [
+      -0.031518113718450494,
+      -0.04001288289498332,
+      -0.031321910585139445,
+      -0.03155485066329162
+    ],
+    "size_joint": {
+      "N325": {
+        "age_slopes": [
+          -0.031518113718450494,
+          -0.04001288289498332
+        ],
+        "chi2": 7.600302651265135,
+        "covariance": [
+          [
+            0.0002784200986852008,
+            6.025367027589612e-05
+          ],
+          [
+            6.0253670275896114e-05,
+            0.0002862570039777173
+          ]
+        ],
+        "df": 2,
+        "p": 0.02236738684108967
+      },
+      "N425": {
+        "age_slopes": [
+          -0.031321910585139445,
+          -0.03155485066329162
+        ],
+        "chi2": 0.21788146563455713,
+        "covariance": [
+          [
+            0.005833142908007411,
+            0.005168072002246132
+          ],
+          [
+            0.005168072002246132,
+            0.004870041405057537
+          ]
+        ],
+        "df": 2,
+        "p": 0.8967835657586994
+      }
+    },
+    "vector_order": [
+      [
+        "N325",
+        "first"
+      ],
+      [
+        "N325",
+        "second"
+      ],
+      [
+        "N425",
+        "first"
+      ],
+      [
+        "N425",
+        "second"
+      ]
+    ]
+  },
+  "claim_boundary": "This is a fresh small mechanism pilot but its hypothesis was motivated by the revealed 8fd596d boundary-rotation result. It is not an independent discovery block, and failure to absorb does not prove intrinsic temporal memory.",
+  "freeze_sha256": "4c7d759b17d3d02bc2856d7c98a15c1c13c4bf8031fa03fac10eace0beb92bf4",
+  "inputs": {
+    "N325": {
+      "checks": {
+        "batches": true,
+        "commit": true,
+        "k0": true,
+        "replica_first": true,
+        "replica_last": true,
+        "samples": true,
+        "seed": true
+      },
+      "csv_sha256": "ae84a4c1ead7091af38a3a7fb724fec7d239c259b4d8b43504fcb250029f9cfa",
+      "metadata_sha256": "35ee731508f043de73cced76c05f59b9f5e426dcba02febbf5ea3fad6b2ef703",
+      "rows": 18250
+    },
+    "N425": {
+      "checks": {
+        "batches": true,
+        "commit": true,
+        "k0": true,
+        "replica_first": true,
+        "replica_last": true,
+        "samples": true,
+        "seed": true
+      },
+      "csv_sha256": "b6965ecd4f08f5aed9a16b58ee5e7e946b8bdf525cb83ff5dacda28a4fbd525b",
+      "metadata_sha256": "6928e01d41c9cdd6e57d89161d97ac05bddf209aa6be23c118012b5823ecabaa",
+      "rows": 17868
+    }
+  },
+  "runner_commit": "3f190ed66f1f45f2b39457f886a8ef34ac5e3f09",
+  "schema": "matching-one/p334-active-boundary-organization-score/v1",
+  "temporal_secondary": {
+    "delete_one_covariance": [
+      [
+        6.403016993709197e-08,
+        8.288280258848556e-08,
+        -2.8690634440711902e-08,
+        -3.6208069390193186e-08,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        8.288280258848556e-08,
+        4.107990055016922e-07,
+        -4.954557323192107e-08,
+        -5.1199545759428054e-08,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        -2.8690634440711902e-08,
+        -4.954557323192107e-08,
+        1.1760226567509577e-07,
+        5.263360629327672e-08,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        -3.6208069390193186e-08,
+        -5.1199545759428054e-08,
+        5.263360629327672e-08,
+        8.531571148194692e-08,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.09344819364077e-07,
+        1.5248409601736013e-07,
+        -2.7138742606551333e-08,
+        -3.1276265586072188e-09
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.5248409601736013e-07,
+        5.190685758442135e-07,
+        2.1437978479030443e-08,
+        -8.680900817927089e-10
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -2.7138742606551333e-08,
+        2.1437978479030443e-08,
+        3.62940783941709e-08,
+        6.619287943090337e-09
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -3.1276265586072188e-09,
+        -8.680900817927089e-10,
+        6.619287943090337e-09,
+        8.417336252103489e-08
+      ]
+    ],
+    "fits": {
+      "N325_first_mode2": {
+        "baseline_R2": 0.5439586370211891,
+        "baseline_beta_age": 9.888585528082814,
+        "delta_beta_age": 0.0006989849320362396,
+        "incremental_R2": 0.00031138933536951495,
+        "organization_R2": 0.5442700263565586,
+        "organization_beta_age": 9.88928451301485,
+        "organization_coefficients": {
+          "axis_anisotropy": 0.13320149072978762,
+          "corner_balance": -0.01351229482058043,
+          "frontier_components_L": 0.02418316841436621,
+          "frontier_concentration": 0.3732913761439838,
+          "largest_frontier_arc_L": -0.018726872240163978
+        },
+        "rows": 9086
+      },
+      "N325_first_mode3": {
+        "baseline_R2": 0.11663735863564784,
+        "baseline_beta_age": -3.9082954118842115,
+        "delta_beta_age": -0.002367921444102361,
+        "incremental_R2": 0.0007039961547782036,
+        "organization_R2": 0.11734135479042607,
+        "organization_beta_age": -3.910663333328314,
+        "organization_coefficients": {
+          "axis_anisotropy": 0.024851267460425923,
+          "corner_balance": -0.26218024586371763,
+          "frontier_components_L": 0.01726808836372035,
+          "frontier_concentration": 0.3674899339035493,
+          "largest_frontier_arc_L": -0.02872084283440752
+        },
+        "rows": 9086
+      },
+      "N325_second_mode2": {
+        "baseline_R2": 0.5518705562259487,
+        "baseline_beta_age": 9.974617468833518,
+        "delta_beta_age": 0.004254813642557309,
+        "incremental_R2": 0.0005746956366073882,
+        "organization_R2": 0.5524452518625562,
+        "organization_beta_age": 9.978872282476075,
+        "organization_coefficients": {
+          "axis_anisotropy": -0.07853717829077807,
+          "corner_balance": -0.07553977342645607,
+          "frontier_components_L": 0.030177541580204147,
+          "frontier_concentration": 2.3075744756292913,
+          "largest_frontier_arc_L": -0.0847521370240404
+        },
+        "rows": 9164
+      },
+      "N325_second_mode3": {
+        "baseline_R2": 0.11448721440733223,
+        "baseline_beta_age": -3.958072961806005,
+        "delta_beta_age": 0.002341628403096596,
+        "incremental_R2": 0.00025177694087089784,
+        "organization_R2": 0.11473899134820309,
+        "organization_beta_age": -3.9557313334029085,
+        "organization_coefficients": {
+          "axis_anisotropy": -0.07385356715607445,
+          "corner_balance": -0.04106527712642799,
+          "frontier_components_L": 0.005462751478000768,
+          "frontier_concentration": 1.119628491049838,
+          "largest_frontier_arc_L": -0.05242931480642709
+        },
+        "rows": 9164
+      },
+      "N425_first_mode2": {
+        "baseline_R2": 0.4352491395361323,
+        "baseline_beta_age": -9.728935370540775,
+        "delta_beta_age": 4.174504324616635e-05,
+        "incremental_R2": 0.0006155715184998263,
+        "organization_R2": 0.4358647110546321,
+        "organization_beta_age": -9.728893625497529,
+        "organization_coefficients": {
+          "axis_anisotropy": -0.15084641858578587,
+          "corner_balance": -0.2314147891515102,
+          "frontier_components_L": -0.014386206262484711,
+          "frontier_concentration": 0.15661867630124043,
+          "largest_frontier_arc_L": 0.0008570744792694282
+        },
+        "rows": 8896
+      },
+      "N425_first_mode3": {
+        "baseline_R2": 0.23285590858934835,
+        "baseline_beta_age": 6.495755944600255,
+        "delta_beta_age": -0.004855741671422109,
+        "incremental_R2": 0.0012887749539145607,
+        "organization_R2": 0.2341446835432629,
+        "organization_beta_age": 6.490900202928833,
+        "organization_coefficients": {
+          "axis_anisotropy": -0.14566405871865373,
+          "corner_balance": -0.23561365152323518,
+          "frontier_components_L": -0.03806376553184128,
+          "frontier_concentration": -0.5837415669754734,
+          "largest_frontier_arc_L": 0.019090955824492006
+        },
+        "rows": 8896
+      },
+      "N425_second_mode2": {
+        "baseline_R2": 0.4350807389390219,
+        "baseline_beta_age": 9.897953863389237,
+        "delta_beta_age": -0.0005643291996673128,
+        "incremental_R2": 0.0002641868554824901,
+        "organization_R2": 0.43534492579450434,
+        "organization_beta_age": 9.89738953418957,
+        "organization_coefficients": {
+          "axis_anisotropy": -0.16342119094901672,
+          "corner_balance": 0.11884801126189234,
+          "frontier_components_L": 0.015573560284277359,
+          "frontier_concentration": 0.6065846036250733,
+          "largest_frontier_arc_L": -0.012831271154153338
+        },
+        "rows": 8972
+      },
+      "N425_second_mode3": {
+        "baseline_R2": 0.2372230324066088,
+        "baseline_beta_age": -6.629767956654372,
+        "delta_beta_age": -0.003604886506197502,
+        "incremental_R2": 0.00034445498863975595,
+        "organization_R2": 0.23756748739524858,
+        "organization_beta_age": -6.633372843160569,
+        "organization_coefficients": {
+          "axis_anisotropy": -0.1805878139464397,
+          "corner_balance": -0.025462644403474944,
+          "frontier_components_L": 0.01718513513377879,
+          "frontier_concentration": 0.04187677843157508,
+          "largest_frontier_arc_L": -0.0005261681482185307
+        },
+        "rows": 8972
+      }
+    },
+    "incremental_R2": [
+      0.00031138933536951495,
+      0.0007039961547782036,
+      0.0005746956366073882,
+      0.00025177694087089784,
+      0.0006155715184998263,
+      0.0012887749539145607,
+      0.0002641868554824901,
+      0.00034445498863975595
+    ],
+    "standard_errors": [
+      0.0002530418343616169,
+      0.0006409360385418284,
+      0.00034293186739510777,
+      0.0002920885336365447,
+      0.0004575421503687688,
+      0.0007204641391798855,
+      0.00019051004801367012,
+      0.0002901264595327956
+    ],
+    "vector_order": [
+      [
+        "N325",
+        "first",
+        "mode2"
+      ],
+      [
+        "N325",
+        "first",
+        "mode3"
+      ],
+      [
+        "N325",
+        "second",
+        "mode2"
+      ],
+      [
+        "N325",
+        "second",
+        "mode3"
+      ],
+      [
+        "N425",
+        "first",
+        "mode2"
+      ],
+      [
+        "N425",
+        "first",
+        "mode3"
+      ],
+      [
+        "N425",
+        "second",
+        "mode2"
+      ],
+      [
+        "N425",
+        "second",
+        "mode3"
+      ]
+    ]
+  }
+}
