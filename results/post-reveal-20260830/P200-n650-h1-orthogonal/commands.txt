@@ -1,0 +1,2 @@
+python3 scripts/analyze_p200_n650_h1_orthogonal_residual.py --batches results/local-20260829/P200-n650-mixed-join-smoke/n650_20k.batches.csv --metadata results/local-20260829/P200-n650-mixed-join-smoke/n650_20k.metadata.json --prediction predictions/p200_n650_mixed_join_phaseB_20260829.json --output results/post-reveal-20260830/P200-n650-h1-orthogonal/analysis.json
+python3 -m unittest discover -s tests -p 'test_p200_n650_h1_orthogonal_residual.py'

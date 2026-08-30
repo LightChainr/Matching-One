@@ -1,0 +1,354 @@
+{
+  "input": {
+    "batch_csv": "results/local-20260829/P200-n650-mixed-join-smoke/n650_20k.batches.csv",
+    "batches": 100,
+    "metadata": "results/local-20260829/P200-n650-mixed-join-smoke/n650_20k.metadata.json",
+    "prediction": "predictions/p200_n650_mixed_join_phaseB_20260829.json",
+    "samples": 20000,
+    "sha256": {
+      "batch_csv": "db5be1d870135053691e34605703f15e99e95df2da88dc279c0a55e26130d0af",
+      "metadata": "8f3d3605d5a99c043e2d465be0d2e4753d719d6388822048f6f4d365c05abbd7",
+      "prediction": "8c043677605f9c8d0a00ee11fcc93539da9ea87bbacb93553e76ea26ec27ba5f"
+    }
+  },
+  "interpretation": {
+    "changed_mechanism_space": "the N650 static interaction is not exhausted by one ambient-H1 endpoint direction",
+    "does_not_show": "chronological memory, noncommuting joins, a Jordan block, or a new continuum field",
+    "minimal_next_acquisition": {
+      "covariance": "archive all cell means and one complete delete-one covariance",
+      "design": "semantics-matched Gaussian-by-annulus 2x2 rectangle",
+      "observer_tuple": [
+        "typed colour layer",
+        "ambient H1 before/after each context",
+        "local incidence J_local",
+        "connected R=J_full-J_local",
+        "ED/OD geometry label"
+      ],
+      "randomness": "one common random block for all four cells",
+      "reason": "the N650 archive has no synonymous annulus context or ordered intermediate state"
+    }
+  },
+  "issues": [
+    200,
+    249,
+    255
+  ],
+  "joint_same_stream_state": {
+    "delete_one_covariance": [
+      [
+        0.0032725951704545455,
+        -0.00013198828914141414,
+        0.0031804243371212123,
+        -0.00016408753156565655,
+        1.500631313131313e-07,
+        -1.284469696969697e-06,
+        -9.74050505050505e-05,
+        3.767190656565657e-05
+      ],
+      [
+        -0.00013198828914141414,
+        0.0004141576452020202,
+        -0.00016138861742424242,
+        0.0001713776957070707,
+        -3.0761363636363637e-07,
+        1.1558080808080808e-07,
+        4.3831363636363636e-05,
+        -8.739103535353536e-06
+      ],
+      [
+        0.0031804243371212123,
+        -0.00016138861742424242,
+        0.008112231180555556,
+        -0.00010159917297979798,
+        -3.1286616161616164e-07,
+        -2.7641161616161614e-06,
+        -0.0002684059090909091,
+        3.012473484848485e-05
+      ],
+      [
+        -0.00016408753156565655,
+        0.0001713776957070707,
+        -0.00010159917297979798,
+        0.0003423023926767677,
+        -8.625e-08,
+        -7.601010101010101e-09,
+        3.4102626262626264e-05,
+        -1.745036616161616e-05
+      ],
+      [
+        1.500631313131313e-07,
+        -3.0761363636363637e-07,
+        -3.1286616161616164e-07,
+        -8.625e-08,
+        2.1186868686868686e-08,
+        -3.0303030303030305e-10,
+        -7.53030303030303e-08,
+        -4.643939393939394e-08
+      ],
+      [
+        -1.284469696969697e-06,
+        1.1558080808080808e-07,
+        -2.7641161616161614e-06,
+        -7.601010101010101e-09,
+        -3.0303030303030305e-10,
+        2.01010101010101e-08,
+        2.4141414141414143e-08,
+        -7.272727272727273e-09
+      ],
+      [
+        -9.74050505050505e-05,
+        4.3831363636363636e-05,
+        -0.0002684059090909091,
+        3.4102626262626264e-05,
+        -7.53030303030303e-08,
+        2.4141414141414143e-08,
+        5.3510505050505053e-05,
+        -1.7656060606060606e-06
+      ],
+      [
+        3.767190656565657e-05,
+        -8.739103535353536e-06,
+        3.012473484848485e-05,
+        -1.745036616161616e-05,
+        -4.643939393939394e-08,
+        -7.272727272727273e-09,
+        -1.7656060606060606e-06,
+        3.608179292929293e-05
+      ]
+    ],
+    "mean": [
+      -53.707875,
+      -0.005575,
+      -34.323975,
+      -0.028775,
+      -1.99905,
+      -0.0001,
+      0.0064,
+      -0.00095
+    ],
+    "state_order": [
+      "ES",
+      "ED",
+      "OS",
+      "OD",
+      "ambient_ES",
+      "ambient_ED",
+      "ambient_OS",
+      "ambient_OD"
+    ]
+  },
+  "observable_boundary": {
+    "ambient_H1": "same-stream convention-labelled endpoint rank diagnostic",
+    "exact_local_baseline_per_source_fiber": {
+      "black": 0.8715704194687932,
+      "white": 0.233115541701882
+    },
+    "local_incidence_subtraction": "already configurationwise in R_c=J_full,c-J_local,c",
+    "path_or_state_memory": "not identified; no ordered intermediate state is stored"
+  },
+  "one_gain_H1_projection": {
+    "all_unfitted_directions": {
+      "chi_square": 20751.643960342255,
+      "covariance": [
+        [
+          0.061194672090438565,
+          -0.0012477976462778328,
+          -0.0031084259118929094
+        ],
+        [
+          -0.0012477976462778328,
+          0.0004224657377859278,
+          0.00040123338862575183
+        ],
+        [
+          -0.0031084259118929094,
+          0.00040123338862575183,
+          0.02732679227428769
+        ]
+      ],
+      "degrees_of_freedom": 3,
+      "log10_p_value": -4504.101743956855,
+      "marginal": [
+        {
+          "mean": -34.495921874765514,
+          "name": "H1_orthogonal_OS",
+          "se": 0.24737556890371887,
+          "z": -139.4475696514383
+        },
+        {
+          "mean": -0.0028883300817888497,
+          "name": "H1_residual_ED",
+          "se": 0.020553971338549828,
+          "z": -0.1405241855315652
+        },
+        {
+          "mean": -0.003251635776994072,
+          "name": "H1_residual_OD",
+          "se": 0.16530817364633754,
+          "z": -0.019670145191674936
+        }
+      ],
+      "mean": [
+        -34.495921874765514,
+        -0.0028883300817888497,
+        -0.003251635776994072
+      ],
+      "p_value": 0.0,
+      "state_order": [
+        "H1_orthogonal_OS",
+        "H1_residual_ED",
+        "H1_residual_OD"
+      ]
+    },
+    "decision": "reject one shared endpoint-H1 gain; a large matching-odd static mixed-factor direction remains, while ED/OD remain null",
+    "derived_delete_one_covariance": [
+      [
+        0.0008207354339989651,
+        -0.0028823903295988273,
+        4.4820400481401555e-05,
+        0.0006048217692776502,
+        0.005754805594243869
+      ],
+      [
+        -0.0028823903295988273,
+        0.061194672090438565,
+        -0.0012477976462778328,
+        -0.0031084259118929094,
+        -0.12239010336468553
+      ],
+      [
+        4.4820400481401555e-05,
+        -0.0012477976462778328,
+        0.0004224657377859278,
+        0.00040123338862575183,
+        0.0025047443151262963
+      ],
+      [
+        0.0006048217692776502,
+        -0.0031084259118929094,
+        0.00040123338862575183,
+        0.02732679227428769,
+        0.006173782189316214
+      ],
+      [
+        0.005754805594243869,
+        -0.12239010336468553,
+        0.0025047443151262963,
+        0.006173782189316214,
+        0.24480687914532254
+      ]
+    ],
+    "derived_mean": [
+      26.866699182111503,
+      -34.495921874765514,
+      -0.0028883300817888497,
+      -0.003251635776994072,
+      68.95907262375
+    ],
+    "derived_state_order": [
+      "beta_ES",
+      "H1_orthogonal_OS",
+      "H1_residual_ED",
+      "H1_residual_OD",
+      "S_plane_determinant"
+    ],
+    "gain_fixed_by": "beta=primary_ES/ambient_ES",
+    "gain_free_collinearity_certificate": {
+      "estimate": 68.95907262375,
+      "formula": "primary_OS*ambient_ES-primary_ES*ambient_OS",
+      "log10_p_value": -4220.309738944362,
+      "se": 0.494779626849492,
+      "two_sided_p_value": 0.0,
+      "z": 139.3733065826633
+    },
+    "geometry_difference_after_same_gain": {
+      "chi_square": 0.01975664154568959,
+      "covariance": [
+        [
+          0.0004224657377859278,
+          0.00040123338862575183
+        ],
+        [
+          0.00040123338862575183,
+          0.02732679227428769
+        ]
+      ],
+      "degrees_of_freedom": 2,
+      "log10_p_value": -0.00429010020211676,
+      "marginal": [
+        {
+          "mean": -0.0028883300817888497,
+          "name": "H1_residual_ED",
+          "se": 0.020553971338549828,
+          "z": -0.1405241855315652
+        },
+        {
+          "mean": -0.003251635776994072,
+          "name": "H1_residual_OD",
+          "se": 0.16530817364633754,
+          "z": -0.019670145191674936
+        }
+      ],
+      "mean": [
+        -0.0028883300817888497,
+        -0.003251635776994072
+      ],
+      "p_value": 0.990170309577338,
+      "state_order": [
+        "H1_residual_ED",
+        "H1_residual_OD"
+      ]
+    },
+    "hypothesis": "(primary_ES,primary_OS)=beta*(ambient_ES,ambient_OS)",
+    "orthogonal_common_mode": {
+      "chi_square": 19445.624681692738,
+      "covariance": [
+        [
+          0.061194672090438565
+        ]
+      ],
+      "degrees_of_freedom": 1,
+      "log10_p_value": -4224.806241429459,
+      "marginal": [
+        {
+          "mean": -34.495921874765514,
+          "name": "H1_orthogonal_OS",
+          "se": 0.24737556890371887,
+          "z": -139.4475696514383
+        }
+      ],
+      "mean": [
+        -34.495921874765514
+      ],
+      "p_value": 0.0,
+      "state_order": [
+        "H1_orthogonal_OS"
+      ]
+    },
+    "saturated_alternative": "separate unconstrained even/odd gains are not identifiable with only the two common S rows",
+    "split_half_direction_check": [
+      {
+        "beta_ES_training": 26.843087234893957,
+        "heldout_batch_parity": 1,
+        "heldout_residual": {
+          "H1_orthogonal_OS": -34.361806912765104,
+          "H1_residual_ED": -0.008965691276510604,
+          "H1_residual_OD": 0.0015617046818727491
+        },
+        "training_batch_parity": 0
+      },
+      {
+        "beta_ES_training": 26.89031467307019,
+        "heldout_batch_parity": 0,
+        "heldout_residual": {
+          "H1_orthogonal_OS": -34.63038634248837,
+          "H1_residual_ED": 0.0031890314673070188,
+          "H1_residual_OD": -0.008076779728850868
+        },
+        "training_batch_parity": 1
+      }
+    ]
+  },
+  "schema": "matching-one.p200-n650-h1-orthogonal-residual.v1",
+  "status": "post_reveal_model_elimination_no_new_production"
+}
