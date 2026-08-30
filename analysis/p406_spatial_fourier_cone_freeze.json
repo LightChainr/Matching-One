@@ -1,0 +1,48 @@
+{
+  "schema": "matching-one/p406-spatial-fourier-cone-freeze/v1",
+  "status": "frozen_before_cone_score",
+  "frozen_utc": "2026-08-30T13:10:00Z",
+  "issue": 406,
+  "parent": "33c557b",
+  "new_monte_carlo": false,
+  "inputs": [
+    {
+      "name": "radius4",
+      "path": "results/huawei-20260830/P250-projective-leg-bivariate-80k/response_80k.batches.csv",
+      "sha256": "dfbd83d680080939bcae5cad0090af95d82748ed780ce73807d4b002d6a9ca72"
+    },
+    {
+      "name": "radius5",
+      "path": "results/huawei-20260830/P250-projective-leg-radius5-morphism-1200k/response_1200k.batches.csv",
+      "sha256": "50985e38c9c8afab0c8b0e78113184d33861d928aefaba1e8043e67fc348677e"
+    },
+    {
+      "name": "radius6",
+      "path": "results/huawei-20260830/P250-projective-leg-radius6-flat-1200k/response_1200k.batches.csv",
+      "sha256": "8734a15e61a7358da66019cf26d75a3d4f2deb0185831526204967a0ee5a42cf"
+    }
+  ],
+  "group": "H=Z^2/<(10,1),(-1,10)> is Z/101 with j(a,b)=a-10b mod 101",
+  "model": "C(d)=sum_k w_k exp(-2*pi*i*k*j(d)/101), w_k>=0",
+  "blocks": "fit plus/minus hands and charges r1/r2 separately; never pool their spectra",
+  "covariance": "one full batch covariance per independent radius block; exact/singular modes removed only by a fixed relative eigenvalue cutoff 1e-10",
+  "primary": "minimum block-whitened squared distance to the known-support nonnegative Fourier cone",
+  "calibration": {
+    "method": "plug-in Gaussian bootstrap in every resolved whitened block, refitting the nonnegative cone",
+    "replicates": 250,
+    "seed": 40610120260830,
+    "decision_alpha": 0.01
+  },
+  "controls": [
+    "unconstrained 101-frequency WLS residual is reported only as a fit floor",
+    "exact displacement aliases must share Fourier design rows",
+    "zero-variance identities are not regularized into evidence",
+    "no active frequency or fitted spectrum is interpreted as unique when the cone completion is nonidentifiable"
+  ],
+  "claim_boundary": [
+    "Passing supports the finite-group spatial-autocorrelation representation, not an eight-state physical transfer or a CFT field count.",
+    "Failure would diagnose acquisition/gauge/stationarity/covariance incompatibility before physical interpretation.",
+    "The four hand/charge scores are correlated views of archived streams, not four independent votes."
+  ],
+  "scorer": "scripts/score_p406_spatial_fourier_cone.py"
+}
