@@ -1,0 +1,100 @@
+{
+  "base_cover_gate": {
+    "parent": [
+      8,
+      1
+    ],
+    "parent_order": 65,
+    "plus_child_periods": [
+      [
+        15,
+        -10
+      ],
+      [
+        10,
+        15
+      ]
+    ],
+    "minus_child_periods": [
+      [
+        17,
+        6
+      ],
+      [
+        -6,
+        17
+      ]
+    ],
+    "child_order": 325,
+    "common_field": "(deterministic parent representative j, fiber k in Z/5)",
+    "fiber_representative": "u_k=(k,0) modulo M_(2+/-i)",
+    "unique_labels_per_child": 325,
+    "deck_step": [
+      8,
+      1
+    ],
+    "deck_action": "k -> k+1 mod 5",
+    "true_reflection_pair": "(8+i)(2+i) <-> (8-i)(2-i)",
+    "same_parent_hands_are_reflections": false,
+    "passed": true
+  },
+  "anchor_offsets": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      1
+    ]
+  ],
+  "parent_translations_checked": 65,
+  "root_labels_checked": 1950,
+  "projection_failures": 0,
+  "anchor_failures": 0,
+  "DFT_convention": "O_r=(1/5) sum_k zeta5^(-r k) local_H4(k)",
+  "DFT_probe_conjugacy_residual": 6.280369834735101e-16,
+  "charges": {
+    "neutral": {
+      "A": [
+        1,
+        1,
+        3
+      ],
+      "B": [
+        1,
+        2,
+        2
+      ]
+    },
+    "conjugates": {
+      "Abar": [
+        4,
+        4,
+        2
+      ],
+      "Bbar": [
+        4,
+        3,
+        3
+      ]
+    },
+    "nonneutral_controls": {
+      "N111": [
+        1,
+        1,
+        1
+      ],
+      "N112": [
+        1,
+        1,
+        2
+      ]
+    }
+  },
+  "passed": true
+}
