@@ -1,0 +1,85 @@
+{
+  "schema": "matching-one/p250-cross-scale-fresh-manifest/v1",
+  "issue": 250,
+  "status": "authorized_fresh_cross_scale_transfer",
+  "runner_commit": "56c228da6ff13d157bbde16ceb4f6a149e28e603",
+  "scorer_commit": "56c228da6ff13d157bbde16ceb4f6a149e28e603",
+  "source_commit": "8868a7cdfe25c38e2de5996d5aad699577cc3091",
+  "target": {
+    "parent": [10, 1],
+    "parent_order": 101,
+    "parent_length": 10.04987562112089,
+    "children": [[19, 12], [21, -8]],
+    "child_order": 505,
+    "separations": [1, 2, 3, 4, 5]
+  },
+  "run": {
+    "samples": 80000,
+    "batches": 160,
+    "workers": 16,
+    "p": 0.59274605079,
+    "seed": 25050510120261031,
+    "replica_offset": 0,
+    "replica_last_exclusive": 80000
+  },
+  "transfer_gate": {
+    "distances": [1, 2, 3, 4, 5],
+    "minimum_real_abs_z": 5.0,
+    "resolution_refreeze": {
+      "locked_40k_score_sha256": "f670fe0d0879d4a098ffa455182c17bb8c34f84bdd597562de02d10d58af9134",
+      "locked_40k_minimum_z": 3.919702336404555,
+      "models_computed": false,
+      "sqrt_N_projected_80k_minimum_z": 5.54329620460883,
+      "continuous_samples_for_z5": 65086.93555297841,
+      "rule": "next grid point above the transfer-resolution gate; no shape residual was available"
+    }
+  },
+  "source_fit": {
+    "source_parent_order": 65,
+    "source_length": 8.06225774829855,
+    "fit_distances": [1, 2, 3],
+    "common_cylinder_alpha": 1.414538684433616,
+    "common_cylinder_alpha_standard_error": 0.05264563788017381,
+    "common_exponential_mass": 0.7120974786219539,
+    "common_exponential_mass_standard_error": 0.026708960036055145,
+    "source_only": true
+  },
+  "frozen_models_in_order": [
+    {
+      "name": "fixed_thermal_sine",
+      "formula": "|T(d)/T(1)|=[sin(pi*d/L)/sin(pi/L)]^(-5/4)",
+      "alpha_2x": 1.25,
+      "parameters_from_target": 0,
+      "primary": true
+    },
+    {
+      "name": "source_fitted_sine",
+      "formula": "|T(d)/T(1)|=[sin(pi*d/L)/sin(pi/L)]^(-alpha_source)",
+      "alpha_2x": 1.414538684433616,
+      "parameters_from_target": 0
+    },
+    {
+      "name": "single_exponential",
+      "formula": "|T(d)/T(1)|=exp[-mass_source*(d-1)]",
+      "mass": 0.7120974786219539,
+      "parameters_from_target": 0
+    }
+  ],
+  "heldout": {
+    "geometry": "all N101 rows are held out from source parameter selection",
+    "decisive_distance": 5
+  },
+  "execution": {
+    "host": "Huawei-CodeBuddy-XPk2PZ",
+    "remote_directory": "/workspace/p250-projective-leg-cross-scale-n505-80k",
+    "response": "response_80k.json",
+    "batches": "response_80k.batches.csv",
+    "required_runner_flag": "--production-manifest analysis/p250_cross_scale_fresh80k_manifest.json"
+  },
+  "claim_boundary": [
+    "The first N101 stream revealed only a failed resolution gate; all three shape models remained uncomputed.",
+    "The independent 80k seed and size were selected only by the predeclared square-root resolution rule.",
+    "The fixed thermal 5/4 sine law remains the parameter-free primary target frozen before either N101 stream.",
+    "No cubic or OPE row is present."
+  ]
+}
