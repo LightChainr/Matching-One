@@ -151,6 +151,18 @@ def unrestricted_mode_payload(values: Mapping[str, float]) -> dict:
     return output
 
 
+def unrestricted_shared_roots_heldout_residual(values: Mapping[str, float]) -> list[float]:
+    """Predict A(d5) after fitting both A amplitudes at the frozen T roots."""
+    roots, _ = sorted_rank2_fit(values)
+    amplitudes = fit_difference_amplitudes(values, roots)
+    output = []
+    for channel in CHANNELS:
+        prediction = sum(amplitudes[channel][index] * roots[index] ** (LAST - 1) for index in range(2))
+        residual = axis_average_difference(values, LAST, *channel)[1] - prediction
+        output.extend((residual.real, residual.imag))
+    return output
+
+
 def conjugate_residual(values: Mapping[str, float]) -> list[float]:
     output = []
     for hand, charge in CHANNELS:
@@ -280,6 +292,10 @@ def score(batches: Sequence[dict], manifest: Mapping[str, object]) -> dict:
         conjugate_residual(full_values),
         [conjugate_residual(values) for values in deleted_values],
     )
+    unrestricted_shared_roots = vector_score(
+        unrestricted_shared_roots_heldout_residual(full_values),
+        [unrestricted_shared_roots_heldout_residual(values) for values in deleted_values],
+    )
     strict_ranking = sorted(strict_rows, key=lambda name: strict_rows[name]["all_distances_zero_score"]["chi_square"])
     ranking = sorted(mode_rows, key=lambda name: mode_rows[name]["zero_score"]["chi_square"])
     alpha = float(manifest["decision_alpha"])
@@ -288,7 +304,9 @@ def score(batches: Sequence[dict], manifest: Mapping[str, object]) -> dict:
         if mode_rows[name]["zero_score"]["survival_p"] >= alpha
         and mode_rows[name]["heldout_d5"]["zero_score"]["survival_p"] >= alpha
     ]
-    if passing == ["internal_direction_invariant"]:
+    if unrestricted_shared_roots["zero_score"]["survival_p"] < alpha:
+        decision = "axis_difference_requires_additional_or_different_transfer_state_no_q_identification"
+    elif passing == ["internal_direction_invariant"]:
         decision = "direction_invariant_second_state_not_spatial_C4_character"
     elif not passing:
         decision = "no_frozen_direction_character_closes"
@@ -308,6 +326,7 @@ def score(batches: Sequence[dict], manifest: Mapping[str, object]) -> dict:
         "strict_ranking": strict_ranking,
         "mode_resolved_direction_candidates": mode_rows,
         "unrestricted_second_mode_direction_characters": unrestricted_mode_payload(full_values),
+        "unrestricted_A_at_frozen_T_roots_heldout_d5": unrestricted_shared_roots,
         "conjugate_direction_candidate": conjugate,
         "ranking": ranking,
         "decision_alpha": alpha,
@@ -319,6 +338,7 @@ def score(batches: Sequence[dict], manifest: Mapping[str, object]) -> dict:
             "The pair observable is C4-even in ensemble, so a spatial character must appear through the frozen mode-resolved x/y relation to survive this score.",
             "No new random stream or rank selection is used.",
             "The mode-resolved score leaves the leading axis-difference amplitude free in each channel and tests only the second root.",
+            "Failure of the unrestricted A-row d5 check means the T-row rank-two roots cannot be used as a complete direction-tomography basis.",
         ],
     }
 
@@ -332,6 +352,7 @@ def render(result) -> str:
         lines.append(f"| {name} | {full['chi_square']:.6g}/{full['degrees_of_freedom']} | {full['survival_p']:.6g} | {held['survival_p']:.6g} |")
     conjugate = result["conjugate_direction_candidate"]
     lines += [
+        "", f"Unrestricted A amplitudes at the frozen T roots, d5: p `{result['unrestricted_A_at_frozen_T_roots_heldout_d5']['zero_score']['survival_p']}`.",
         "", f"Conjugate x/y candidate: p `{conjugate['all_distances_zero_score']['survival_p']}`; d5 p `{conjugate['heldout_d5']['zero_score']['survival_p']}`.",
         f"Decision: `{result['decision']}`.", "",
     ]
