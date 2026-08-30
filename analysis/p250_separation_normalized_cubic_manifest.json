@@ -1,0 +1,57 @@
+{
+  "schema": "matching-one/p250-separation-normalized-cubic-manifest/v1",
+  "issue": 250,
+  "status": "existing_archive_reanalysis_plus_capped_local_smoke",
+  "source_commit": "be80f25",
+  "existing_archive_result": {
+    "cubic_support_chi_square": 8.564036420118496,
+    "cubic_support_df": 8,
+    "cubic_support_p": 0.3803958155142504,
+    "phase_closure_reclassification": "not_interpretable_until_nonzero_support",
+    "same_operator_separation_ratio_recoverable": false
+  },
+  "observable": {
+    "separations": [1, 2, 3],
+    "anchors": "(0,0),(d,0),(0,d)",
+    "two_point": "Hermitian axis average G_r(d)",
+    "separation_normalization": "Omega113=C113/sqrt(|G1|^2|G2|); Omega122=C122/sqrt(|G1||G2|^2)",
+    "stability_normalization": "replace G by positive local V=E|O|^2",
+    "connectedness": "raw 113/122 cubics are connected cumulants by exact Z5 charge conservation"
+  },
+  "score_order": [
+    "two_point_denominator_nonzero",
+    "local_variance_normalized_cubic_support_vs_zero",
+    "conditional_separation_normalized_phase_closure"
+  ],
+  "smoke": {
+    "samples": 4000,
+    "batches": 40,
+    "workers": 8,
+    "p": 0.59274605079,
+    "seed": 25011312220260901,
+    "replica_counter": [0, 4000],
+    "radius": 1,
+    "hard_sample_cap": 5000,
+    "production_authorized": false
+  },
+  "result": {
+    "d1": {"minimum_two_point_abs_z": 4.50733723484605, "support_chi_square": 11.47874157188787, "support_df": 8, "support_p": 0.17601983530747634},
+    "d2": {"minimum_two_point_abs_z": 0.47981142873175076, "support_chi_square": 9.766320847466515, "support_df": 8, "support_p": 0.28181175351467597},
+    "d3": {"minimum_two_point_abs_z": 0.0038732957595051204, "support_chi_square": 8.542113530821638, "support_df": 8, "support_p": 0.38238061482010455},
+    "phase_status_all_separations": "not_interpretable_until_nonzero_support"
+  },
+  "outputs": {
+    "note": "notes/p250-separation-normalized-near-zero-reveal.md",
+    "archive_audit": "results/local-20260830/P250-z5-multiseparation-smoke/existing_archive_reveal.json",
+    "response": "results/local-20260830/P250-z5-multiseparation-smoke/response_4k.json",
+    "batches": "results/local-20260830/P250-z5-multiseparation-smoke/response_4k.batches.csv",
+    "score": "results/local-20260830/P250-z5-multiseparation-smoke/score_4k.json",
+    "checksums": "results/local-20260830/P250-z5-multiseparation-smoke/SHA256SUMS"
+  },
+  "next_selector": "change to an insertion with a resolved two-point tail before any larger cubic acquisition",
+  "claim_boundary": [
+    "The 4k stream is model-development plumbing and variance evidence only.",
+    "No phase closure is interpreted without nonzero cubic support.",
+    "Failure of this radius-one local-H4 insertion is not rejection of a continuum charged OPE."
+  ]
+}

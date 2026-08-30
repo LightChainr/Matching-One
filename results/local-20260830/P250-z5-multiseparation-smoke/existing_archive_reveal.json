@@ -1,0 +1,87 @@
+{
+  "schema": "matching-one/p250-near-zero-reveal-audit/v1",
+  "status": "existing_archives_reanalyzed",
+  "existing_1m_cubic_support": {
+    "chi_square": 8.564036420118496,
+    "degrees_of_freedom": 8,
+    "survival_p": 0.3803958155142504,
+    "decision_at_0.05": "not_detected"
+  },
+  "existing_phase_closure": {
+    "chi_square": 0.8396327481811326,
+    "degrees_of_freedom": 2,
+    "survival_p": 0.6571674817128721,
+    "point_re_im": [
+      1.28653570732157e-13,
+      8.082496109381615e-14
+    ],
+    "covariance_2x2": [
+      [
+        2.9692821371335885e-26,
+        -1.2679258217121636e-27
+      ],
+      [
+        -1.2679258217121636e-27,
+        2.6457051587005445e-26
+      ]
+    ],
+    "relation": "C113_plus*C122_minus-C113_minus*C122_plus",
+    "reclassified_status": "not_interpretable_until_nonzero_support"
+  },
+  "field_inventory": {
+    "be80f25_threepoint_batch_fields": [
+      "batch",
+      "replica_first",
+      "samples",
+      "conjugacy_max_abs",
+      "C113_plus_re",
+      "C113_plus_im",
+      "C113_minus_re",
+      "C113_minus_im",
+      "C122_plus_re",
+      "C122_plus_im",
+      "C122_minus_re",
+      "C122_minus_im",
+      "C244_plus_re",
+      "C244_plus_im",
+      "C244_minus_re",
+      "C244_minus_im",
+      "C334_plus_re",
+      "C334_plus_im",
+      "C334_minus_re",
+      "C334_minus_im",
+      "C111_plus_re",
+      "C111_plus_im",
+      "C111_minus_re",
+      "C111_minus_im",
+      "C112_plus_re",
+      "C112_plus_im",
+      "C112_minus_re",
+      "C112_minus_im",
+      "field_sha256",
+      "translation_sha256"
+    ],
+    "P226_charged_batch_fields": [
+      "batch",
+      "start_replica",
+      "samples",
+      "plus_re",
+      "plus_im",
+      "minus_re",
+      "minus_im",
+      "mirror_plus_re",
+      "mirror_plus_im",
+      "reflection_null_re",
+      "reflection_null_im"
+    ],
+    "P226_semantics": "global marked-row one-point response under a different root schedule; not the local O_r(x) used by the cubic"
+  },
+  "normalization_requirements_present": {
+    "same_replica_local_pair_products": false,
+    "separation_label": false,
+    "local_cubic_pair_cross_covariance": false
+  },
+  "can_construct_same_operator_separation_ratio": false,
+  "exact_reason": "The retained cubic batches contain only products after the three local rows were multiplied. P226 contains a different global charged response. Neither archive retains O_r(x)O_-r(y), a separation, or its joint covariance with C_rst.",
+  "consequence": "Do not add replicas to the compact cubic. Acquire pair products and cubics jointly at multiple separations, and gate phase closure behind cubic support."
+}

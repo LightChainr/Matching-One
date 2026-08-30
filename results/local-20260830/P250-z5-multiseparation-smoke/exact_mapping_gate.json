@@ -1,0 +1,53 @@
+{
+  "base_cover_gate": {
+    "parent": [
+      8,
+      1
+    ],
+    "parent_order": 65,
+    "plus_child_periods": [
+      [
+        15,
+        -10
+      ],
+      [
+        10,
+        15
+      ]
+    ],
+    "minus_child_periods": [
+      [
+        17,
+        6
+      ],
+      [
+        -6,
+        17
+      ]
+    ],
+    "child_order": 325,
+    "common_field": "(deterministic parent representative j, fiber k in Z/5)",
+    "fiber_representative": "u_k=(k,0) modulo M_(2+/-i)",
+    "unique_labels_per_child": 325,
+    "deck_step": [
+      8,
+      1
+    ],
+    "deck_action": "k -> k+1 mod 5",
+    "true_reflection_pair": "(8+i)(2+i) <-> (8-i)(2-i)",
+    "same_parent_hands_are_reflections": false,
+    "passed": true
+  },
+  "separations": [
+    1,
+    2,
+    3
+  ],
+  "anchor_rule": "(0,0),(d,0),(0,d) after uniform parent translation",
+  "translations_checked": 65,
+  "root_labels_checked": 5850,
+  "collapse_failures": 0,
+  "projection_failures": 0,
+  "charged_connectedness": "113 and 122 have no neutral proper charge subset; their raw third moments are connected cumulants by exact Z5 charge conservation",
+  "passed": true
+}
