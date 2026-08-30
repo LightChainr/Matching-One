@@ -1,0 +1,39 @@
+{
+  "schema": "matching-one/p337-natural-current-geometry-crosswalk-manifest/v1",
+  "issues": [337, 334],
+  "source_scales": [65, 85],
+  "heldout_scale": 145,
+  "observable": "K_A=p(1-p)Jminus_A/W_A=d_eta log W_A",
+  "fixed_area_power": -1.625,
+  "models": [
+    "pure_N_law",
+    "one_H4_geometry_covector",
+    "H4_geometry_plus_A_projective_scalar"
+  ],
+  "result": {
+    "pure_N_training_quadratic": 23.13380739606576,
+    "H4_training_quadratic": 2.57523951510026,
+    "H4_N145_predictive_quadratic": 1.5191488422420671,
+    "H4_N145_pair_residual_z": 1.1187917811670134,
+    "projective_increment_training_delta_quadratic": 0.12079491259408659,
+    "H4_plus_projective_N145_predictive_quadratic": 1.029332608984998,
+    "central_geometry_fraction_of_rebound": 0.22770036221460632,
+    "central_curvature_fraction_of_rebound": 0.7722996377853937
+  },
+  "next_geometry": {
+    "N": 170,
+    "pair": [[11, 7], [13, 1]],
+    "parent_N": 85,
+    "multiplier": [1, 1],
+    "status": "selected, not run"
+  },
+  "artifacts": {
+    "script": "scripts/crosswalk_natural_current_geometry.py",
+    "result": "results/p337-natural-current-geometry-crosswalk/latest.json",
+    "report": "results/p337-natural-current-geometry-crosswalk/latest.md",
+    "science_card": "results/p337-natural-current-geometry-crosswalk/SCIENTIFIC_CARD.md",
+    "note": "notes/p337-natural-current-geometry-crosswalk.md",
+    "test": "tests/test_crosswalk_natural_current_geometry.py"
+  },
+  "claim_boundary": "existing-data geometry crosswalk; N145 did not select direction; no exponent fit or new simulation"
+}
