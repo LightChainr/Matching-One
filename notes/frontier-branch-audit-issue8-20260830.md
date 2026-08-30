@@ -1,6 +1,6 @@
 # Frontier branch audit: Issue 8 and adjacent exact/reuse heads
 
-Date: 2026-08-30. Refreshed base: `origin/main@6834af4`. Lifecycle: navigation only. Issue-8's formerly branch-only patch is now `main_integrated` via PR #397; adjacent results retain the explicit states below.
+Date: 2026-08-30. Refreshed base: `origin/main@5ac456d`. Lifecycle: navigation only. Issue-8's formerly branch-only patch is now `main_integrated` via PR #397; adjacent results retain the explicit states below.
 
 Several branches descend from older side histories, so the raw `main...head` diff contains inherited files. The ranges below isolate the branch-local scientific delta.
 
