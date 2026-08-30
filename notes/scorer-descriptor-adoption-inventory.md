@@ -1,17 +1,15 @@
 # Scorer descriptor-adoption inventory
 
-At main commit `11ba86892fabd3349e322d198f23ef24d8cbe828`, the exact
-`scripts/*score*.py` corpus contains 39 files. Python-AST inspection finds eight
+In this checked snapshot, the exact `scripts/*score*.py` corpus contains 42
+files. Python-AST inspection finds eleven
 direct typed entrypoints importing both `ObservableDescriptor` and
-`map_observable` from `wrapping_channels`. Seven frozen kernels are covered by
+`map_observable` from `wrapping_channels`. Ten frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Twenty-three paths are confirmed channel-bearing and
+a descriptor is not applicable. Twenty paths are confirmed channel-bearing and
 require typed migrations: `score_angular_root_amplitude.py`,
 `score_axis_pair_annihilator.py`, its stable entrypoint,
-`score_c4_tangent_orthogonal_holdout.py`,
 `score_intrinsic_quantile_center_n145_n290.py`,
-`score_issue43_full_curve.py`, its locked wrapper,
 `score_issue43_secondary.py`,
 `score_norm4_production.py`,
 `score_norm4_thermal_jet.py`, `score_norm5_thermal_jet.py`,
@@ -44,7 +42,7 @@ unchanged.
 but no current scorer has that status. Static membership alone would not prove
 a semantic bug, data-provenance failure, or need for migration; any future
 corpus addition must still be reviewed before modification. Issue #146 remains
-open because inventory classification is not the same as implementing the 23
+open because inventory classification is not the same as implementing the 20
 required typed migrations.
 
 The `kappa3_half_score.py` exception is narrow. It defines only exact Bernoulli
@@ -76,13 +74,14 @@ numerical identity, not permission to exchange channel labels. The frozen
 hypotheses, scoring order, enumeration artifacts, and
 stop-without-generalized-fit rule are unchanged.
 
-`score_c4_tangent_orthogonal_holdout.py` is migration-required. It selects the
-`cross` response through a free-form channel string, freezes `lambda/t` on
-N=130, and applies that projection to aligned N=170 batches before scoring
-orthogonal and thermal residuals. A typed migration must bind both sizes to the
-same exact channel semantics and type the response-coordinate pair, without
-changing batch alignment, jackknife construction, or the frozen interpretation
-rule.
+`score_c4_tangent_orthogonal_holdout.py` is now a covered frozen kernel. Its
+typed entrypoint validates an exact identity map for the same `cross/primal`
+event at N=130 and N=170 before replaying the kernel. The semantic gate also
+freezes ordered `(t, lambda)` response coordinates, the source-frozen
+`lambda/t` projection, synchronized delete-one batches, and the fixed
+`N^(3/8)` thermal map. These response coordinates are not reinterpreted as
+topology channels or continuum spin eigenfields; frozen numerics and the
+interpretation rule are unchanged.
 
 `score_matching_odd_synthesis.py` is now a covered frozen kernel. Its typed
 entrypoint validates the registered exact identity `D_either=D_cross` for both
@@ -167,16 +166,18 @@ independent RNG domains. It must preserve the frozen u-grid, recomputation of
 all crossings inside every size-local delete-one replicate, covariance block
 construction, chronology, and primary-score separation.
 
-The Issue #43 full-curve base scorer and locked wrapper form one operational
-migration unit. The base reconstructs ordered orientation differences in the
-matching-odd `DeltaM` and matching-even `DeltaS` sectors at frozen `p_ref`, then
-compares both N185/N265 coordinates with fully correlated source-amplitude
-uncertainty. The wrapper strengthens provenance and allocation gates but adds no
-semantic descriptor validation. A migration must type sector, orientation
-order/sign, reconstruction coordinate, and cross-size identity while preserving
-the production lock, source-error correlation, frozen prediction hashes, and
-no-refit rule. The separately typed cross/either correction is an erratum entry
-and does not by itself cover this two-sector full-curve contract.
+The Issue #43 full-curve base scorer and locked wrapper are now covered as one
+operational unit. Their typed entrypoints validate exact N185-to-N265 identity
+maps for the `cross`, matching-odd `DeltaM` and matching-even `DeltaS` raw
+first-minus-second contrasts before scoring. The semantic gate freezes
+`p_ref`, sector order, both kernel identities, prediction hash, source-error
+correlation, independent target streams, and the exact production allocation.
+The locked entrypoint still activates the original metadata and joint-moment
+validators; neither entrypoint refits amplitudes or changes reconstruction,
+covariance, numerical scoring, or the no-refit rule. Both sectors come from
+the same runs and are not declared independent evidence. The separately typed
+cross/either correction remains an erratum entry rather than a replacement for
+this two-sector contract.
 
 `score_issue43_secondary.py` is migration-required. It consumes the primary
 Issue #43 score and constructs a frozen ordered ledger containing reused
