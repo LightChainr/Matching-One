@@ -12,8 +12,7 @@ require typed migrations:
 `score_norm4_thermal_jet.py`, `score_norm5_thermal_jet.py`,
 `score_p159_pell_hex_filter.py`,
 `score_p49_fullcurve_doubling.py`,
-`score_p50_fullcurve_n290.py`,
-No scorer remains outside a registered
+`score_p50_fullcurve_n290.py`. No scorer remains outside a registered
 audit class.
 
 This closes an inventory gap: the repository now has a deterministic list,
