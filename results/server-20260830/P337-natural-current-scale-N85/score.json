@@ -1,0 +1,234 @@
+{
+  "batch_means": {
+    "first": {
+      "Jminus_A": -0.014785600460727077,
+      "Jplus_A": 7.667106410775159,
+      "W_A": 0.3371130081075337
+    },
+    "second": {
+      "Jminus_A": 0.02085381855710049,
+      "Jplus_A": 7.643962395500338,
+      "W_A": 0.33549273773919125
+    }
+  },
+  "claim_boundary": "one independent N85 scale point; discriminates frozen transfers but does not fit an exponent or authorize a new normalization",
+  "dependency": {
+    "N65_target_fit": "source-fitted target uncertainty included only in predictive residuals",
+    "N85": "new seed/counter block, independent of N65 archive 1714141",
+    "no_pooling": "N65 and N85 are combined only through the preregistered transfer equations"
+  },
+  "exact_gates": {
+    "max_A_continuity_residual": 7.865019399644346e-15,
+    "passed": true,
+    "tolerance": 3e-12
+  },
+  "freeze_gates": {
+    "items": {
+      "N": true,
+      "batches": true,
+      "engine_freeze": true,
+      "first": true,
+      "first_period_matrix": true,
+      "projective_births": true,
+      "replica_offset": true,
+      "samples": true,
+      "second": true,
+      "second_period_matrix": true,
+      "seed": true
+    },
+    "passed": true
+  },
+  "natural_coordinate": {
+    "covariance": [
+      [
+        3.235313333256932e-05,
+        -4.838409405890027e-06,
+        -3.719154273845934e-05
+      ],
+      [
+        -4.838409405890027e-06,
+        2.0805350146422315e-05,
+        2.5643759552312337e-05
+      ],
+      [
+        -3.719154273845934e-05,
+        2.5643759552312337e-05,
+        6.283530229077167e-05
+      ]
+    ],
+    "jackknife_replicates": [
+      [
+        -0.007967701132419347,
+        0.015737461671073975,
+        0.023705162803493322
+      ],
+      [
+        -0.010009958116873116,
+        0.013974181390212326,
+        0.023984139507085445
+      ],
+      [
+        -0.008511098182151419,
+        0.013360259177309208,
+        0.02187135735946063
+      ],
+      [
+        -0.009513865495055649,
+        0.015853355268222763,
+        0.025367220763278412
+      ],
+      [
+        -0.009584317929157808,
+        0.01359744349656055,
+        0.02318176142571836
+      ],
+      [
+        -0.010744792235189921,
+        0.015699901899345465,
+        0.026444694134535388
+      ],
+      [
+        -0.011573047097374807,
+        0.014428145463405371,
+        0.02600119256078018
+      ],
+      [
+        -0.012810952579856049,
+        0.015389032092931501,
+        0.028199984672787552
+      ],
+      [
+        -0.010271393088533066,
+        0.015732422939084487,
+        0.026003816027617553
+      ],
+      [
+        -0.01121816238075405,
+        0.014721207473029404,
+        0.025939369853783454
+      ],
+      [
+        -0.012200243040067943,
+        0.014858903048710665,
+        0.02705914608877861
+      ],
+      [
+        -0.012615712237812566,
+        0.01500947504444954,
+        0.027625187282262105
+      ],
+      [
+        -0.010748215197295711,
+        0.015224625394781364,
+        0.025972840592077075
+      ],
+      [
+        -0.010665023903597845,
+        0.014034195285495536,
+        0.02469921918909338
+      ],
+      [
+        -0.010790996905995835,
+        0.01774986263225237,
+        0.028540859538248205
+      ],
+      [
+        -0.010618264240476807,
+        0.014845316346366565,
+        0.025463580586843372
+      ],
+      [
+        -0.01009513689854932,
+        0.016249310994882322,
+        0.02634444789343164
+      ],
+      [
+        -0.01205314574848165,
+        0.01443574347633377,
+        0.026488889224815418
+      ],
+      [
+        -0.008507799902009732,
+        0.013471202404040756,
+        0.021979002306050488
+      ],
+      [
+        -0.0112557842065572,
+        0.01573001410448644,
+        0.02698579831104364
+      ]
+    ],
+    "order": [
+      "K_A_first",
+      "K_A_second",
+      "Delta_K_A_second_minus_first"
+    ],
+    "standard_error": [
+      0.0056879814813841755,
+      0.004561288211286622,
+      0.007926872163140496
+    ],
+    "value": [
+      -0.010587597656159131,
+      0.01500501522754386,
+      0.025592612883702993
+    ]
+  },
+  "reading": {
+    "closest_frozen_predictive_target": "source_fitted_project_H4",
+    "closest_predictive_quadratic": 1.5825884510814792,
+    "independent_nonzero": {
+      "standard_error": 0.007926872163140496,
+      "value": 0.025592612883702993,
+      "z": 3.228589077380002
+    },
+    "summary": "N85 remains nonzero, is much smaller than scale-neutral transfer, and lies below but predictively compatible with the source-fitted H4 target",
+    "variance_design_ratio": 1.230780149800914
+  },
+  "schema": "matching-one/P337-natural-current-scale-N85-score/v1",
+  "source": {
+    "N": 85,
+    "batches": 20,
+    "births": "results/server-20260830/P337-natural-current-scale-N85/raw/n85_200k.births.csv",
+    "births_sha256": "e04f6483f936db3c54cead03a153298db377dbaf21cc8f39d35b2771803979b6",
+    "elapsed_seconds": 0.36969066,
+    "engine_commit": "1714141+freeze-5e601dc",
+    "environment": "Huawei DevEnvC_ZyTrST f415a4bcbd9a438b85f5f29e4a507ea4",
+    "metadata": "results/server-20260830/P337-natural-current-scale-N85/raw/n85_200k.metadata.json",
+    "metadata_sha256": "d28295d909476e2f83f022b624fdb65486816db2fa49ba74e08a1f805777b11c",
+    "preregistration": "analysis/p337_natural_current_scale_preregistration.json",
+    "preregistration_commit": "5e601dc",
+    "samples_per_shape": 200000,
+    "seed": 202608337
+  },
+  "status": "fresh independent N85 scale reveal scored against preregistered targets",
+  "target_comparison": [
+    {
+      "frozen_target": 0.0,
+      "measurement_only_quadratic": 10.423787430577455,
+      "measurement_standard_error": 0.007926872163140496,
+      "name": "zero",
+      "predictive_quadratic": 10.423787430577455,
+      "predictive_standard_error": 0.007926872163140496,
+      "residual": 0.025592612883702993
+    },
+    {
+      "frozen_target": 0.06948065966042533,
+      "measurement_only_quadratic": 30.654116072560914,
+      "measurement_standard_error": 0.007926872163140496,
+      "name": "source_fitted_scale_neutral",
+      "predictive_quadratic": 4.032669392685822,
+      "predictive_standard_error": 0.02185495635996661,
+      "residual": -0.04388804677672233
+    },
+    {
+      "frozen_target": 0.04493061708536974,
+      "measurement_only_quadratic": 5.951406182040477,
+      "measurement_standard_error": 0.007926872163140496,
+      "name": "source_fitted_project_H4",
+      "predictive_quadratic": 1.5825884510814792,
+      "predictive_standard_error": 0.015371903668090587,
+      "residual": -0.019338004201666745
+    }
+  ]
+}

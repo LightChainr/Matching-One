@@ -1,0 +1,43 @@
+{
+  "schema": "matching-one/p337-natural-current-scale-result-manifest/v1",
+  "issues": [337, 334],
+  "preregistration_commit": "5e601dc",
+  "engine_commit": "1714141+freeze-5e601dc",
+  "environment": {
+    "name": "DevEnvC_ZyTrST",
+    "id": "f415a4bcbd9a438b85f5f29e4a507ea4",
+    "architecture": "aarch64",
+    "vcpus": 16
+  },
+  "production": {
+    "N": 85,
+    "orientations": ["9+2i", "7+6i"],
+    "samples_per_shape": 200000,
+    "batches": 20,
+    "seed": 202608337,
+    "elapsed_seconds": 0.36969066,
+    "births_sha256": "e04f6483f936db3c54cead03a153298db377dbaf21cc8f39d35b2771803979b6",
+    "metadata_sha256": "d28295d909476e2f83f022b624fdb65486816db2fa49ba74e08a1f805777b11c"
+  },
+  "result": {
+    "Delta_K_A_N85": 0.025592612883702993,
+    "standard_error": 0.007926872163140496,
+    "z_vs_zero": 3.228589077380002,
+    "closest_frozen_predictive_target": "source_fitted_project_H4",
+    "zero_predictive_quadratic": 10.423787430577454,
+    "scale_neutral_predictive_quadratic": 4.032669392685821,
+    "H4_predictive_quadratic": 1.5825884510814792
+  },
+  "artifacts": {
+    "preregistration": "analysis/p337_natural_current_scale_preregistration.json",
+    "script": "scripts/score_natural_current_scale.py",
+    "score": "results/server-20260830/P337-natural-current-scale-N85/score.json",
+    "report": "results/server-20260830/P337-natural-current-scale-N85/REPORT.md",
+    "raw": "results/server-20260830/P337-natural-current-scale-N85/raw",
+    "checksums": "results/server-20260830/P337-natural-current-scale-N85/CHECKSUMS.sha256",
+    "science_card": "results/server-20260830/P337-natural-current-scale-N85/SCIENTIFIC_CARD.md",
+    "note": "notes/p337-natural-current-scale-reveal.md",
+    "test": "tests/test_score_natural_current_scale.py"
+  },
+  "claim_boundary": "one preregistered independent scale point; no exponent fit or normalization selection"
+}
