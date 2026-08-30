@@ -1,0 +1,626 @@
+{
+  "claim_boundary": [
+    "Exact local-Q Gram algebra for the repository's declared unmarked connectivity modules at widths three and four only.",
+    "The associated-graded projections classify already-tested response covectors; they do not construct a fixed-Q extension.",
+    "J2=0 rules out a deeper base-Q filtration in these modules, not nonsemisimple rooted, direct-sum or physical transfer modules.",
+    "No continuum LCFT field, periodic-TL cell-module dictionary or physical Jordan block is identified."
+  ],
+  "global_decision": "The unmarked width-three and width-four Gram degenerations have Loewy/Jantzen length two only: all positive local invariant-factor valuations equal one and J2 vanishes. Width three's tested scalar plus C3-charge-one responses span the entire grade-one layer. At width four the tested scalar, C4-charge-one and C4-charge-two responses cover only 6 of 13 grade-one dimensions, leaving exact deficits 2, 2 and 3 in the trivial, charge-one and charge-two sectors. The missing datum is therefore multiplicity/rooted-connectivity within existing sectors, not a deeper Q-adic order or another terminal C4 irrep.",
+  "issues": [
+    398,
+    333
+  ],
+  "nilpotent_separation": {
+    "base_parameter_nilpotent": {
+      "automatic_for_every_differentiable_family": true,
+      "construction": "multiplication by t on V tensor Q[t]/(t^2)",
+      "rank_after_Q_equals_1_specialization": 0,
+      "rank_before_specialization": {
+        "3": 5,
+        "4": 14
+      },
+      "square_zero": true
+    },
+    "fixed_Q_extension": {
+      "construction": "a separate marked/rooted module after t acts trivially",
+      "existing_countercontrols": [
+        "width-three scalar responses project with full trivial-sector rank but their frozen scalar endpoint extensions fail",
+        "all three width-four tested sector families project nontrivially but their individual fixed-Q closure tests fail",
+        "the width-three C3 charge-one doublet succeeds only after its separate affine/endpoint/Gram/source test"
+      ],
+      "not_implied_by_nonzero_Jantzen_projection": true
+    }
+  },
+  "protocol": {
+    "commit": "916ea59",
+    "path": "analysis/p398_qadic_jantzen_protocol.json",
+    "sha256": "096c636632d3661c1ce90b7a99b850eb62592343ae44bb73aa7b404481d37c19"
+  },
+  "schema": "matching-one/p398-qadic-jantzen/v1",
+  "status": "exact_q_adic_filtration_certificate",
+  "widths": [
+    {
+      "G0_rank": 1,
+      "associated_graded_dimensions": {
+        "grade_0": 1,
+        "grade_1": 4
+      },
+      "basis_dimension": 5,
+      "combined_tested_projection_rank": 4,
+      "combined_uncovered_dimension": 0,
+      "exact_polynomial_degree_available": 3,
+      "grade_one_sector_dimensions": {
+        "charge1_rational": 2,
+        "trivial": 2
+      },
+      "higher_coefficients_needed": false,
+      "highest_nonzero_layer": 1,
+      "jantzen_filtration_dimensions": {
+        "J0": 5,
+        "J1": 4,
+        "J2": 0
+      },
+      "leading_radical_form": {
+        "determinant": -1,
+        "rank": 4,
+        "unimodular": true
+      },
+      "local_invariant_factor_valuations": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mark_projections": {
+        "C3_charge1_landing": {
+          "grade_one_H_dual_B_coordinates": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "grade_one_functional_B_coordinates": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "grade_one_functional_rank": 2,
+          "mark_dimension": 2,
+          "provenance": "b82e8cc",
+          "sector": "C3 charge-one rational doublet",
+          "translation_covariance": {
+            "H_dual_state_residual_rank": 0,
+            "raw_response_residual_rank": 0
+          }
+        },
+        "scalar_falling_factorial": {
+          "derivative_orders": [
+            1,
+            2
+          ],
+          "grade_one_H_dual_B_coordinates": [
+            [
+              -1,
+              -6
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "grade_one_functional_B_coordinates": [
+            [
+              -2,
+              -6
+            ],
+            [
+              -1,
+              -4
+            ],
+            [
+              -1,
+              -4
+            ],
+            [
+              -1,
+              -4
+            ]
+          ],
+          "grade_one_functional_rank": 2,
+          "mark_dimension": 2,
+          "provenance": "081a5ed/e7e6c80",
+          "sector": "C3 trivial",
+          "translation_covariance": {
+            "H_dual_state_residual_rank": 0,
+            "raw_response_residual_rank": 0
+          }
+        }
+      },
+      "proof": "rank G(1)=1 gives exactly dim(V)-1 positive local Smith valuations; the nonsingular leading radical form forces their sum to dim(V)-1, so every positive valuation is exactly one and J2=0.",
+      "radical_dimension": 4,
+      "sector_coverage": {
+        "charge1_rational": {
+          "layer_dimension": 2,
+          "tested_projection_rank": 2,
+          "uncovered_dimension": 0
+        },
+        "trivial": {
+          "layer_dimension": 2,
+          "tested_projection_rank": 2,
+          "uncovered_dimension": 0
+        }
+      },
+      "translation_traces_on_V": [
+        5,
+        2,
+        2
+      ],
+      "width": 3
+    },
+    {
+      "G0_rank": 1,
+      "associated_graded_dimensions": {
+        "grade_0": 1,
+        "grade_1": 13
+      },
+      "basis_dimension": 14,
+      "combined_tested_projection_rank": 6,
+      "combined_uncovered_dimension": 7,
+      "exact_polynomial_degree_available": 4,
+      "grade_one_sector_dimensions": {
+        "charge1_rational": 4,
+        "charge2": 4,
+        "trivial": 5
+      },
+      "higher_coefficients_needed": false,
+      "highest_nonzero_layer": 1,
+      "jantzen_filtration_dimensions": {
+        "J0": 14,
+        "J1": 13,
+        "J2": 0
+      },
+      "leading_radical_form": {
+        "determinant": -1,
+        "rank": 13,
+        "unimodular": true
+      },
+      "local_invariant_factor_valuations": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "mark_projections": {
+        "C4_charge1_landing": {
+          "grade_one_H_dual_B_coordinates": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              -1
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "grade_one_functional_B_coordinates": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              -1
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "grade_one_functional_rank": 2,
+          "mark_dimension": 2,
+          "provenance": "7b40ec7",
+          "sector": "C4 charge-one rational doublet",
+          "translation_covariance": {
+            "H_dual_state_residual_rank": 0,
+            "raw_response_residual_rank": 0
+          }
+        },
+        "C4_charge2_landing": {
+          "grade_one_H_dual_B_coordinates": [
+            [
+              0
+            ],
+            [
+              -1
+            ],
+            [
+              1
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              -1
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "grade_one_functional_B_coordinates": [
+            [
+              0
+            ],
+            [
+              -1
+            ],
+            [
+              1
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              -1
+            ],
+            [
+              -2
+            ],
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              2
+            ],
+            [
+              0
+            ]
+          ],
+          "grade_one_functional_rank": 1,
+          "mark_dimension": 1,
+          "provenance": "ab3eed8",
+          "sector": "C4 charge-two sign character",
+          "translation_covariance": {
+            "H_dual_state_residual_rank": 0,
+            "raw_response_residual_rank": 0
+          }
+        },
+        "scalar_falling_factorial": {
+          "derivative_orders": [
+            1,
+            2,
+            3
+          ],
+          "grade_one_H_dual_B_coordinates": [
+            [
+              -1,
+              -8,
+              -36
+            ],
+            [
+              0,
+              0,
+              6
+            ],
+            [
+              0,
+              0,
+              6
+            ],
+            [
+              0,
+              2,
+              12
+            ],
+            [
+              0,
+              0,
+              -6
+            ],
+            [
+              0,
+              0,
+              6
+            ],
+            [
+              0,
+              2,
+              6
+            ],
+            [
+              0,
+              2,
+              12
+            ],
+            [
+              0,
+              0,
+              6
+            ],
+            [
+              0,
+              0,
+              -6
+            ],
+            [
+              0,
+              0,
+              -6
+            ],
+            [
+              0,
+              2,
+              6
+            ],
+            [
+              0,
+              0,
+              -6
+            ]
+          ],
+          "grade_one_functional_B_coordinates": [
+            [
+              -3,
+              -12,
+              -24
+            ],
+            [
+              -2,
+              -10,
+              -24
+            ],
+            [
+              -2,
+              -10,
+              -24
+            ],
+            [
+              -2,
+              -10,
+              -24
+            ],
+            [
+              -1,
+              -6,
+              -18
+            ],
+            [
+              -2,
+              -10,
+              -24
+            ],
+            [
+              -1,
+              -6,
+              -18
+            ],
+            [
+              -2,
+              -10,
+              -24
+            ],
+            [
+              -2,
+              -10,
+              -24
+            ],
+            [
+              -1,
+              -6,
+              -18
+            ],
+            [
+              -1,
+              -6,
+              -18
+            ],
+            [
+              -1,
+              -6,
+              -18
+            ],
+            [
+              -1,
+              -6,
+              -18
+            ]
+          ],
+          "grade_one_functional_rank": 3,
+          "mark_dimension": 3,
+          "provenance": "081a5ed/e7e6c80",
+          "sector": "C4 trivial",
+          "translation_covariance": {
+            "H_dual_state_residual_rank": 0,
+            "raw_response_residual_rank": 0
+          }
+        }
+      },
+      "proof": "rank G(1)=1 gives exactly dim(V)-1 positive local Smith valuations; the nonsingular leading radical form forces their sum to dim(V)-1, so every positive valuation is exactly one and J2=0.",
+      "radical_dimension": 13,
+      "sector_coverage": {
+        "charge1_rational": {
+          "layer_dimension": 4,
+          "tested_projection_rank": 2,
+          "uncovered_dimension": 2
+        },
+        "charge2": {
+          "layer_dimension": 4,
+          "tested_projection_rank": 1,
+          "uncovered_dimension": 3
+        },
+        "trivial": {
+          "layer_dimension": 5,
+          "tested_projection_rank": 3,
+          "uncovered_dimension": 2
+        }
+      },
+      "translation_traces_on_V": [
+        14,
+        2,
+        6,
+        2
+      ],
+      "width": 4
+    }
+  ]
+}
