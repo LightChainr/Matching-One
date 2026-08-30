@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from norm5_chiral_hecke_phase import gaussian_ratio_power  # noqa: E402
-from score_z5_charged_threepoint import gls_model  # noqa: E402
+from score_z5_charged_threepoint import gls_model, zero_score  # noqa: E402
 from z5_charged_threepoint_mc import (  # noqa: E402
     JOINT_REAL_ORDER,
     PRIMARY_REAL_ORDER,
@@ -62,6 +62,14 @@ class Z5ChargedThreePointTests(unittest.TestCase):
                 mean.extend(((q * amplitude).real, (q * amplitude).imag, amplitude.real, amplitude.imag))
             own = gls_model(mean, covariance, q)
             self.assertLess(own["chi_square"], 1e-20)
+
+    def test_cubic_scale_covariance_is_not_rejected_as_singular(self):
+        score = zero_score(
+            [2e-11, -1e-11],
+            [[7e-23, 1e-23], [1e-23, 6e-23]],
+        )
+        self.assertGreater(score["chi_square"], 0.0)
+        self.assertGreater(score["survival_p"], 0.0)
 
 
 if __name__ == "__main__":

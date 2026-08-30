@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from math import sqrt
 from pathlib import Path
 
 import mpmath as mp
@@ -22,8 +23,31 @@ def chi_square_survival(chi_square: float, dof: int) -> float:
     return float(value)
 
 
+def covariance_precision(covariance) -> list[list[float]]:
+    """Invert a covariance after scale-free correlation normalization.
+
+    The repository's small dense inverse intentionally rejects pivots below
+    1e-15 in absolute units.  Cubic observables naturally have covariances of
+    order 1e-12--1e-22, so invert the dimensionless correlation matrix and
+    transport the precision back instead of changing that shared helper.
+    """
+
+    scales = [sqrt(float(covariance[i][i])) for i in range(len(covariance))]
+    if any(not scale > 0.0 for scale in scales):
+        raise ValueError("covariance diagonal must be positive")
+    correlation = [
+        [float(covariance[i][j]) / (scales[i] * scales[j]) for j in range(len(scales))]
+        for i in range(len(scales))
+    ]
+    correlation_precision = inverse(correlation)
+    return [
+        [correlation_precision[i][j] / (scales[i] * scales[j]) for j in range(len(scales))]
+        for i in range(len(scales))
+    ]
+
+
 def gls_model(mean, covariance, q: complex) -> dict:
-    precision = inverse(covariance)
+    precision = covariance_precision(covariance)
     design = [
         [q.real, -q.imag, 0.0, 0.0],
         [q.imag, q.real, 0.0, 0.0],
@@ -59,7 +83,7 @@ def gls_model(mean, covariance, q: complex) -> dict:
 
 
 def zero_score(point, covariance) -> dict:
-    chi_square = quadratic(point, inverse(covariance))
+    chi_square = quadratic(point, covariance_precision(covariance))
     return {
         "chi_square": chi_square,
         "degrees_of_freedom": len(point),
