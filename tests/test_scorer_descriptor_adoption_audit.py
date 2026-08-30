@@ -124,15 +124,15 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
             )
         )
         self.assertEqual(result, audit(ROOT, manifest))
-        self.assertEqual(result["counts"]["total"], 42)
-        self.assertEqual(result["counts"]["direct_typed_entrypoint"], 11)
-        self.assertEqual(result["counts"]["covered_frozen_kernel"], 10)
+        self.assertEqual(result["counts"]["total"], 43)
+        self.assertEqual(result["counts"]["direct_typed_entrypoint"], 12)
+        self.assertEqual(result["counts"]["covered_frozen_kernel"], 11)
         self.assertEqual(
             result["counts"]["descriptor_not_applicable_generic_utility"], 1
         )
-        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 20)
+        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 19)
         self.assertEqual(result["counts"]["outside_registered_typed_path"], 0)
-        self.assertEqual(len(result["rows"]), 42)
+        self.assertEqual(len(result["rows"]), 43)
         statuses = {row["path"]: row["status"] for row in result["rows"]}
         for path in (
             "scripts/score_axis_pair_annihilator.py",
@@ -144,10 +144,8 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
             "scripts/score_norm5_thermal_jet.py",
             "scripts/score_p159_pell_hex_filter.py",
             "scripts/score_p231_vacuum_kdv_sector.py",
-            "scripts/score_p48_new_geometry_channels.py",
             "scripts/score_p49_fullcurve_doubling.py",
             "scripts/score_p50_fullcurve_n290.py",
-            "scripts/score_p50_sprime_n290.py",
             "scripts/score_rank_gap_boundary_targets.py",
             "scripts/score_threshold_rank_root_doubling.py",
             "scripts/threshold_score_modes.py",
@@ -198,11 +196,27 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
             "direct_typed_entrypoint",
         )
         self.assertEqual(
+            statuses["scripts/score_p50_sprime_n290.py"],
+            "covered_frozen_kernel",
+        )
+        self.assertEqual(
+            statuses["scripts/score_p50_sprime_n290_typed.py"],
+            "direct_typed_entrypoint",
+        )
+        self.assertEqual(
             statuses["scripts/score_p48_sprime_frozen.py"],
             "covered_frozen_kernel",
         )
         self.assertEqual(
             statuses["scripts/score_p48_sprime_frozen_typed.py"],
+            "direct_typed_entrypoint",
+        )
+        self.assertEqual(
+            statuses["scripts/score_p48_new_geometry_channels.py"],
+            "covered_frozen_kernel",
+        )
+        self.assertEqual(
+            statuses["scripts/score_p48_new_geometry_channels_typed.py"],
             "direct_typed_entrypoint",
         )
         self.assertEqual(
