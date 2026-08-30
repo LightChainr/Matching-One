@@ -1,0 +1,26 @@
+{
+  "schema": "matching-one/p418-root-translation-semantics-freeze/v1",
+  "status": "frozen_before_exact_configuration_enumeration",
+  "issues": [418, 250],
+  "base_commit": "8704eee790403e14e5ad75d3465ee1496eaa9c0e",
+  "new_monte_carlo": false,
+  "contexts": ["N505-parent10+i-times2+i", "N505-parent10+i-times2-i"],
+  "configurations": [
+    "black period-column 0 Manhattan loop",
+    "color complement of period-column 0",
+    "black period-column 1 Manhattan loop",
+    "color complement of period-column 1"
+  ],
+  "translations": "all 101 parent translations lifted through s_CRT(x)=405*s_BFS(x)",
+  "root_gate": "compare active color, selected black-NN/white-matching component rank and size, primitive rank-one line, and scalar at all 505 translated roots",
+  "section_gate": "compare BFS roots, CRT roots, fiber offset b, runner gauge t, and residual u=t-b pointwise",
+  "pair_gate": "use exact Z[zeta5]/Phi5 coefficients at the four frozen attenuation-witness displacements from the committed P418 certificate",
+  "anchor_comparisons": [
+    "one fixed configuration and one anchor",
+    "one fixed configuration averaged over all 101 anchors",
+    "all 101 configuration translations at one fixed anchor",
+    "the full 101x101 configuration-translation times anchor orbit"
+  ],
+  "decision": "a root/component, section/gauge, or full-orbit identity failure is a causal counterexample; fixed-configuration failure alone is expected because mask factorization is an ensemble statement",
+  "claim_boundary": "if all exact semantic gates pass, localize the remaining P418 mismatch to archive one-anchor/covariance/scorer assembly without choosing between finite sampling and scoring"
+}

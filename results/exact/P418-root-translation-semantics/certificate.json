@@ -1,0 +1,1486 @@
+{
+  "schema": "matching-one/p418-root-translation-semantics/v1",
+  "status": "exact_fixed_configuration_semantic_certificate",
+  "issues": [
+    418,
+    250
+  ],
+  "base_commit": "8704eee790403e14e5ad75d3465ee1496eaa9c0e",
+  "new_monte_carlo": false,
+  "geometry": {
+    "parent_order": 101,
+    "child_order": 505,
+    "translations": "all 101 parent translations lifted by the unique CRT section s_CRT(x)=405*s_BFS(x)",
+    "configurations_per_child": 4,
+    "configuration_family": "both period-column black loops and their color complements"
+  },
+  "exact_arithmetic": {
+    "root_field": "integer values {-1,0,+1}",
+    "charged_pairs": "integer coefficients in Z[zeta5]/(1+zeta5+...+zeta5^4)",
+    "floating_point_role": "reported DFT roundoff residual only; no exact decision uses it"
+  },
+  "archive_provenance": {
+    "archive_runner_commits": {
+      "radius4": {
+        "response": "results/huawei-20260830/P250-projective-leg-bivariate-80k/response_80k.json",
+        "manifest_runner_commit": "0d0115da2820eeebf219d8ced61a522d709fec4c",
+        "semantic_blob_sha256": {
+          "scripts/z5_projective_leg_bivariate_mc.py": "5a772bcfe28edab58d43054dc3c91e3b914ee956d02bbbad30828a3f3541a961",
+          "scripts/z5_projective_leg_cross_scale_mc.py": "15b5271a5eb95e9388c1aec2e23d116723609ec2f87abd38b30b72c0b62bdc48",
+          "scripts/z5_projective_leg_multiseparation_mc.py": "a42d3498fc37e398af7fd15ab1eee03fc570256b8d2acd9c4e64f706a323b1fd",
+          "scripts/z5_charged_threepoint_mc.py": "72b7dd25b25a9035fb33d94d1befeeeff6621d30d44550abf4f8412db18dcff1",
+          "scripts/norm5_chiral_fixedp_mc.py": "b10097a8ee067177047febb974527df7b8b925a5711077c0f08d607821921328",
+          "scripts/integer_period_torus.py": "edc3223bf3244e4a8a6957aebe90e03b1f9f52770e2fe186cce867839c22a673"
+        }
+      },
+      "radius5": {
+        "response": "results/huawei-20260830/P250-projective-leg-radius5-morphism-1200k/response_1200k.json",
+        "manifest_runner_commit": "fd64f78b08d3b0033b35b40295b514597a6c674b",
+        "semantic_blob_sha256": {
+          "scripts/z5_projective_leg_bivariate_mc.py": "5a772bcfe28edab58d43054dc3c91e3b914ee956d02bbbad30828a3f3541a961",
+          "scripts/z5_projective_leg_cross_scale_mc.py": "15b5271a5eb95e9388c1aec2e23d116723609ec2f87abd38b30b72c0b62bdc48",
+          "scripts/z5_projective_leg_multiseparation_mc.py": "a42d3498fc37e398af7fd15ab1eee03fc570256b8d2acd9c4e64f706a323b1fd",
+          "scripts/z5_charged_threepoint_mc.py": "72b7dd25b25a9035fb33d94d1befeeeff6621d30d44550abf4f8412db18dcff1",
+          "scripts/norm5_chiral_fixedp_mc.py": "b10097a8ee067177047febb974527df7b8b925a5711077c0f08d607821921328",
+          "scripts/integer_period_torus.py": "edc3223bf3244e4a8a6957aebe90e03b1f9f52770e2fe186cce867839c22a673"
+        }
+      },
+      "radius6": {
+        "response": "results/huawei-20260830/P250-projective-leg-radius6-flat-1200k/response_1200k.json",
+        "manifest_runner_commit": "44a3a36d4b27b5b1649875cb5a87bfbcc25524fd",
+        "semantic_blob_sha256": {
+          "scripts/z5_projective_leg_bivariate_mc.py": "5a772bcfe28edab58d43054dc3c91e3b914ee956d02bbbad30828a3f3541a961",
+          "scripts/z5_projective_leg_cross_scale_mc.py": "15b5271a5eb95e9388c1aec2e23d116723609ec2f87abd38b30b72c0b62bdc48",
+          "scripts/z5_projective_leg_multiseparation_mc.py": "a42d3498fc37e398af7fd15ab1eee03fc570256b8d2acd9c4e64f706a323b1fd",
+          "scripts/z5_charged_threepoint_mc.py": "72b7dd25b25a9035fb33d94d1befeeeff6621d30d44550abf4f8412db18dcff1",
+          "scripts/norm5_chiral_fixedp_mc.py": "b10097a8ee067177047febb974527df7b8b925a5711077c0f08d607821921328",
+          "scripts/integer_period_torus.py": "edc3223bf3244e4a8a6957aebe90e03b1f9f52770e2fe186cce867839c22a673"
+        }
+      }
+    },
+    "semantic_files_identical_across_radius4_radius5_radius6": {
+      "scripts/z5_projective_leg_bivariate_mc.py": true,
+      "scripts/z5_projective_leg_cross_scale_mc.py": true,
+      "scripts/z5_projective_leg_multiseparation_mc.py": true,
+      "scripts/z5_charged_threepoint_mc.py": true,
+      "scripts/norm5_chiral_fixedp_mc.py": true,
+      "scripts/integer_period_torus.py": true
+    },
+    "radius4_archived_gauge_equals_reconstructed_gauge": {
+      "plus": true,
+      "minus": true
+    },
+    "note": "radius5/radius6 response exact_gate payloads omit the imported gauge array, so equality is certified by the identical historical source blobs; radius4 stores the array and also matches reconstruction exactly",
+    "passed": true
+  },
+  "hands": {
+    "plus": {
+      "context": "N505-parent10+i-times2+i",
+      "configurations": {
+        "black_period_column_0": {
+          "occupied_vertices": 31,
+          "translation": {
+            "component_signature_checks": 51005,
+            "component_signature_failures": 0,
+            "CRT_root_scalar_checks": 51005,
+            "root_scalar_failures": 0,
+            "first_failure": null
+          },
+          "section_gauge": {
+            "fiber_scalar_checks": 505,
+            "fiber_offset_failures": 0,
+            "charged_DFT_checks": 808,
+            "charged_DFT_failures": 0,
+            "max_complex_roundoff_residual": 1.6711069443220838e-16,
+            "passed": true
+          },
+          "pair_factorization": {
+            "r1": {
+              "charge": 1,
+              "displacement_residue": 27,
+              "displacement_coordinate": [
+                6,
+                8
+              ],
+              "phase_counts": [
+                9,
+                30,
+                14,
+                20,
+                28
+              ],
+              "pointwise_pair_failures": 0,
+              "one_anchor": {
+                "distinct_exact_values_across_101_anchors": 4,
+                "anchor0_minus_full_anchor_mean": {
+                  "canonical_Phi5_coefficients": [
+                    -4,
+                    0,
+                    4,
+                    4
+                  ],
+                  "common_denominator": 2525,
+                  "complex_abs": 0.004147380576237453,
+                  "exact_zero": false
+                }
+              },
+              "fixed_configuration_factorization": {
+                "formula": "mean_x m(x)m(x+d)^* C_config(x,d) versus A(d) mean_x C_config(x,d)",
+                "gap": {
+                  "canonical_Phi5_coefficients": [
+                    492,
+                    72,
+                    -372,
+                    -292
+                  ],
+                  "common_denominator": 255025,
+                  "complex_abs": 0.004123734333747735,
+                  "exact_zero": false
+                },
+                "expected_to_hold_per_configuration": false
+              },
+              "translation_orbit_factorization": {
+                "formula": "mean_config_translation mean_anchor stored pair = A(d) mean_anchor latent pair",
+                "gap": {
+                  "canonical_Phi5_coefficients": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "common_denominator": 255025,
+                  "complex_abs": 0.0,
+                  "exact_zero": true
+                },
+                "passed": true
+              },
+              "fixed_anchor_translation_orbit": {
+                "formula": "mean_config_translation at one fixed anchor uses that anchor's phase, not A(d)",
+                "local_phase_identity_gap": {
+                  "canonical_Phi5_coefficients": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "common_denominator": 2525,
+                  "complex_abs": 0.0,
+                  "exact_zero": true
+                },
+                "passed": true
+              }
+            },
+            "r2": {
+              "charge": 2,
+              "displacement_residue": 33,
+              "displacement_coordinate": [
+                2,
+                7
+              ],
+              "phase_counts": [
+                9,
+                30,
+                14,
+                20,
+                28
+              ],
+              "pointwise_pair_failures": 0,
+              "one_anchor": {
+                "distinct_exact_values_across_101_anchors": 4,
+                "anchor0_minus_full_anchor_mean": {
+                  "canonical_Phi5_coefficients": [
+                    -8,
+                    0,
+                    -4,
+                    -4
+                  ],
+                  "common_denominator": 2525,
+                  "complex_abs": 0.0006050946712872882,
+                  "exact_zero": false
+                }
+              },
+              "fixed_configuration_factorization": {
+                "formula": "mean_x m(x)m(x+d)^* C_config(x,d) versus A(d) mean_x C_config(x,d)",
+                "gap": {
+                  "canonical_Phi5_coefficients": [
+                    592,
+                    -152,
+                    356,
+                    124
+                  ],
+                  "common_denominator": 255025,
+                  "complex_abs": 0.0006152940665978023,
+                  "exact_zero": false
+                },
+                "expected_to_hold_per_configuration": false
+              },
+              "translation_orbit_factorization": {
+                "formula": "mean_config_translation mean_anchor stored pair = A(d) mean_anchor latent pair",
+                "gap": {
+                  "canonical_Phi5_coefficients": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "common_denominator": 255025,
+                  "complex_abs": 0.0,
+                  "exact_zero": true
+                },
+                "passed": true
+              },
+              "fixed_anchor_translation_orbit": {
+                "formula": "mean_config_translation at one fixed anchor uses that anchor's phase, not A(d)",
+                "local_phase_identity_gap": {
+                  "canonical_Phi5_coefficients": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "common_denominator": 2525,
+                  "complex_abs": 0.0,
+                  "exact_zero": true
+                },
+                "passed": true
+              }
+            }
+          }
+        },
+        "white_period_column_0": {
+          "occupied_vertices": 474,
+          "translation": {
+            "component_signature_checks": 51005,
+            "component_signature_failures": 0,
+            "CRT_root_scalar_checks": 51005,
+            "root_scalar_failures": 0,
+            "first_failure": null
+          },
+          "section_gauge": {
+            "fiber_scalar_checks": 505,
+            "fiber_offset_failures": 0,
+            "charged_DFT_checks": 808,
+            "charged_DFT_failures": 0,
+            "max_complex_roundoff_residual": 1.6711069443220838e-16,
+            "passed": true
+          },
+          "pair_factorization": {
+            "r1": {
+              "charge": 1,
+              "displacement_residue": 27,
+              "displacement_coordinate": [
+                6,
+                8
+              ],
+              "phase_counts": [
+                9,
+                30,
+                14,
+                20,
+                28
+              ],
+              "pointwise_pair_failures": 0,
+              "one_anchor": {
+                "distinct_exact_values_across_101_anchors": 4,
+                "anchor0_minus_full_anchor_mean": {
+                  "canonical_Phi5_coefficients": [
+                    -4,
+                    0,
+                    4,
+                    4
+                  ],
+                  "common_denominator": 2525,
+                  "complex_abs": 0.004147380576237453,
+                  "exact_zero": false
+                }
+              },
+              "fixed_configuration_factorization": {
+                "formula": "mean_x m(x)m(x+d)^* C_config(x,d) versus A(d) mean_x C_config(x,d)",
+                "gap": {
+                  "canonical_Phi5_coefficients": [
+                    492,
+                    72,
+                    -372,
+                    -292
+                  ],
+                  "common_denominator": 255025,
+                  "complex_abs": 0.004123734333747735,
+                  "exact_zero": false
+                },
+                "expected_to_hold_per_configuration": false
+              },
+              "translation_orbit_factorization": {
+                "formula": "mean_config_translation mean_anchor stored pair = A(d) mean_anchor latent pair",
+                "gap": {
+                  "canonical_Phi5_coefficients": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "common_denominator": 255025,
+                  "complex_abs": 0.0,
+                  "exact_zero": true
+                },
+                "passed": true
+              },
+              "fixed_anchor_translation_orbit": {
+                "formula": "mean_config_translation at one fixed anchor uses that anchor's phase, not A(d)",
+                "local_phase_identity_gap": {
+                  "canonical_Phi5_coefficients": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "common_denominator": 2525,
+                  "complex_abs": 0.0,
+                  "exact_zero": true
+                },
+                "passed": true
+              }
+            },
+            "r2": {
+              "charge": 2,
+              "displacement_residue": 33,
+              "displacement_coordinate": [
+                2,
+                7
+              ],
+              "phase_counts": [
+                9,
+                30,
+                14,
+                20,
+                28
+              ],
+              "pointwise_pair_failures": 0,
+              "one_anchor": {
+                "distinct_exact_values_across_101_anchors": 4,
+                "anchor0_minus_full_anchor_mean": {
+                  "canonical_Phi5_coefficients": [
+                    -8,
+                    0,
+                    -4,
+                    -4
+                  ],
+                  "common_denominator": 2525,
+                  "complex_abs": 0.0006050946712872882,
+                  "exact_zero": false
+                }
+              },
+              "fixed_configuration_factorization": {
+                "formula": "mean_x m(x)m(x+d)^* C_config(x,d) versus A(d) mean_x C_config(x,d)",
+                "gap": {
+                  "canonical_Phi5_coefficients": [
+                    592,
+                    -152,
+                    356,
+                    124
+                  ],
+                  "common_denominator": 255025,
+                  "complex_abs": 0.0006152940665978023,
+                  "exact_zero": false
+                },
+                "expected_to_hold_per_configuration": false
+              },
+              "translation_orbit_factorization": {
+                "formula": "mean_config_translation mean_anchor stored pair = A(d) mean_anchor latent pair",
+                "gap": {
+                  "canonical_Phi5_coefficients": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "common_denominator": 255025,
+                  "complex_abs": 0.0,
+                  "exact_zero": true
+                },
+                "passed": true
+              },
+              "fixed_anchor_translation_orbit": {
+                "formula": "mean_config_translation at one fixed anchor uses that anchor's phase, not A(d)",
+                "local_phase_identity_gap": {
+                  "canonical_Phi5_coefficients": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "common_denominator": 2525,
+                  "complex_abs": 0.0,
+                  "exact_zero": true
+                },
+                "passed": true
+              }
+            }
+          }
+        },
+        "black_period_column_1": {
+          "occupied_vertices": 31,
+          "translation": {
+            "component_signature_checks": 51005,
+            "component_signature_failures": 0,
+            "CRT_root_scalar_checks": 51005,
+            "root_scalar_failures": 0,
+            "first_failure": null
+          },
+          "section_gauge": {
+            "fiber_scalar_checks": 505,
+            "fiber_offset_failures": 0,
+            "charged_DFT_checks": 808,
+            "charged_DFT_failures": 0,
+            "max_complex_roundoff_residual": 2.0014830212433605e-16,
+            "passed": true
+          },
+          "pair_factorization": {
+            "r1": {
+              "charge": 1,
+              "displacement_residue": 27,
+              "displacement_coordinate": [
+                6,
+                8
+              ],
+              "phase_counts": [
+                9,
+                30,
+                14,
+                20,
+                28
+              ],
+              "pointwise_pair_failures": 0,
+              "one_anchor": {
+                "distinct_exact_values_across_101_anchors": 4,
+                "anchor0_minus_full_anchor_mean": {
+                  "canonical_Phi5_coefficients": [
+                    -8,
+                    0,
+                    -4,
+                    -4
+                  ],
+                  "common_denominator": 2525,
+                  "complex_abs": 0.0006050946712872882,
+                  "exact_zero": false
+                }
+              },
+              "fixed_configuration_factorization": {
+                "formula": "mean_x m(x)m(x+d)^* C_config(x,d) versus A(d) mean_x C_config(x,d)",
+                "gap": {
+                  "canonical_Phi5_coefficients": [
+                    592,
+                    -152,
+                    356,
+                    124
+                  ],
+                  "common_denominator": 255025,
+                  "complex_abs": 0.0006152940665978023,
+                  "exact_zero": false
+                },
+                "expected_to_hold_per_configuration": false
+              },
+              "translation_orbit_factorization": {
+                "formula": "mean_config_translation mean_anchor stored pair = A(d) mean_anchor latent pair",
+                "gap": {
+                  "canonical_Phi5_coefficients": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "common_denominator": 255025,
+                  "complex_abs": 0.0,
+                  "exact_zero": true
+                },
+                "passed": true
+              },
+              "fixed_anchor_translation_orbit": {
+                "formula": "mean_config_translation at one fixed anchor uses that anchor's phase, not A(d)",
+                "local_phase_identity_gap": {
+                  "canonical_Phi5_coefficients": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "common_denominator": 2525,
+                  "complex_abs": 0.0,
+                  "exact_zero": true
+                },
+                "passed": true
+              }
+            },
+            "r2": {
+              "charge": 2,
+              "displacement_residue": 33,
+              "displacement_coordinate": [
+                2,
+                7
+              ],
+              "phase_counts": [
+                9,
+                30,
+                14,
+                20,
+                28
+              ],
+              "pointwise_pair_failures": 0,
+              "one_anchor": {
+                "distinct_exact_values_across_101_anchors": 4,
+                "anchor0_minus_full_anchor_mean": {
+                  "canonical_Phi5_coefficients": [
+                    -4,
+                    0,
+                    4,
+                    4
+                  ],
+                  "common_denominator": 2525,
+                  "complex_abs": 0.004147380576237453,
+                  "exact_zero": false
+                }
+              },
+              "fixed_configuration_factorization": {
+                "formula": "mean_x m(x)m(x+d)^* C_config(x,d) versus A(d) mean_x C_config(x,d)",
+                "gap": {
+                  "canonical_Phi5_coefficients": [
+                    492,
+                    72,
+                    -372,
+                    -292
+                  ],
+                  "common_denominator": 255025,
+                  "complex_abs": 0.004123734333747735,
+                  "exact_zero": false
+                },
+                "expected_to_hold_per_configuration": false
+              },
+              "translation_orbit_factorization": {
+                "formula": "mean_config_translation mean_anchor stored pair = A(d) mean_anchor latent pair",
+                "gap": {
+                  "canonical_Phi5_coefficients": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "common_denominator": 255025,
+                  "complex_abs": 0.0,
+                  "exact_zero": true
+                },
+                "passed": true
+              },
+              "fixed_anchor_translation_orbit": {
+                "formula": "mean_config_translation at one fixed anchor uses that anchor's phase, not A(d)",
+                "local_phase_identity_gap": {
+                  "canonical_Phi5_coefficients": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "common_denominator": 2525,
+                  "complex_abs": 0.0,
+                  "exact_zero": true
+                },
+                "passed": true
+              }
+            }
+          }
+        },
+        "white_period_column_1": {
+          "occupied_vertices": 474,
+          "translation": {
+            "component_signature_checks": 51005,
+            "component_signature_failures": 0,
+            "CRT_root_scalar_checks": 51005,
+            "root_scalar_failures": 0,
+            "first_failure": null
+          },
+          "section_gauge": {
+            "fiber_scalar_checks": 505,
+            "fiber_offset_failures": 0,
+            "charged_DFT_checks": 808,
+            "charged_DFT_failures": 0,
+            "max_complex_roundoff_residual": 2.0014830212433605e-16,
+            "passed": true
+          },
+          "pair_factorization": {
+            "r1": {
+              "charge": 1,
+              "displacement_residue": 27,
+              "displacement_coordinate": [
+                6,
+                8
+              ],
+              "phase_counts": [
+                9,
+                30,
+                14,
+                20,
+                28
+              ],
+              "pointwise_pair_failures": 0,
+              "one_anchor": {
+                "distinct_exact_values_across_101_anchors": 4,
+                "anchor0_minus_full_anchor_mean": {
+                  "canonical_Phi5_coefficients": [
+                    -8,
+                    0,
+                    -4,
+                    -4
+                  ],
+                  "common_denominator": 2525,
+                  "complex_abs": 0.0006050946712872882,
+                  "exact_zero": false
+                }
+              },
+              "fixed_configuration_factorization": {
+                "formula": "mean_x m(x)m(x+d)^* C_config(x,d) versus A(d) mean_x C_config(x,d)",
+                "gap": {
+                  "canonical_Phi5_coefficients": [
+                    592,
+                    -152,
+                    356,
+                    124
+                  ],
+                  "common_denominator": 255025,
+                  "complex_abs": 0.0006152940665978023,
+                  "exact_zero": false
+                },
+                "expected_to_hold_per_configuration": false
+              },
+              "translation_orbit_factorization": {
+                "formula": "mean_config_translation mean_anchor stored pair = A(d) mean_anchor latent pair",
+                "gap": {
+                  "canonical_Phi5_coefficients": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "common_denominator": 255025,
+                  "complex_abs": 0.0,
+                  "exact_zero": true
+                },
+                "passed": true
+              },
+              "fixed_anchor_translation_orbit": {
+                "formula": "mean_config_translation at one fixed anchor uses that anchor's phase, not A(d)",
+                "local_phase_identity_gap": {
+                  "canonical_Phi5_coefficients": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "common_denominator": 2525,
+                  "complex_abs": 0.0,
+                  "exact_zero": true
+                },
+                "passed": true
+              }
+            },
+            "r2": {
+              "charge": 2,
+              "displacement_residue": 33,
+              "displacement_coordinate": [
+                2,
+                7
+              ],
+              "phase_counts": [
+                9,
+                30,
+                14,
+                20,
+                28
+              ],
+              "pointwise_pair_failures": 0,
+              "one_anchor": {
+                "distinct_exact_values_across_101_anchors": 4,
+                "anchor0_minus_full_anchor_mean": {
+                  "canonical_Phi5_coefficients": [
+                    -4,
+                    0,
+                    4,
+                    4
+                  ],
+                  "common_denominator": 2525,
+                  "complex_abs": 0.004147380576237453,
+                  "exact_zero": false
+                }
+              },
+              "fixed_configuration_factorization": {
+                "formula": "mean_x m(x)m(x+d)^* C_config(x,d) versus A(d) mean_x C_config(x,d)",
+                "gap": {
+                  "canonical_Phi5_coefficients": [
+                    492,
+                    72,
+                    -372,
+                    -292
+                  ],
+                  "common_denominator": 255025,
+                  "complex_abs": 0.004123734333747735,
+                  "exact_zero": false
+                },
+                "expected_to_hold_per_configuration": false
+              },
+              "translation_orbit_factorization": {
+                "formula": "mean_config_translation mean_anchor stored pair = A(d) mean_anchor latent pair",
+                "gap": {
+                  "canonical_Phi5_coefficients": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "common_denominator": 255025,
+                  "complex_abs": 0.0,
+                  "exact_zero": true
+                },
+                "passed": true
+              },
+              "fixed_anchor_translation_orbit": {
+                "formula": "mean_config_translation at one fixed anchor uses that anchor's phase, not A(d)",
+                "local_phase_identity_gap": {
+                  "canonical_Phi5_coefficients": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "common_denominator": 2525,
+                  "complex_abs": 0.0,
+                  "exact_zero": true
+                },
+                "passed": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "minus": {
+      "context": "N505-parent10+i-times2-i",
+      "configurations": {
+        "black_period_column_0": {
+          "occupied_vertices": 29,
+          "translation": {
+            "component_signature_checks": 51005,
+            "component_signature_failures": 0,
+            "CRT_root_scalar_checks": 51005,
+            "root_scalar_failures": 0,
+            "first_failure": null
+          },
+          "section_gauge": {
+            "fiber_scalar_checks": 505,
+            "fiber_offset_failures": 0,
+            "charged_DFT_checks": 808,
+            "charged_DFT_failures": 0,
+            "max_complex_roundoff_residual": 2.0014830212433605e-16,
+            "passed": true
+          },
+          "pair_factorization": {
+            "r1": {
+              "charge": 1,
+              "displacement_residue": 14,
+              "displacement_coordinate": [
+                3,
+                9
+              ],
+              "phase_counts": [
+                28,
+                8,
+                24,
+                15,
+                26
+              ],
+              "pointwise_pair_failures": 0,
+              "one_anchor": {
+                "distinct_exact_values_across_101_anchors": 5,
+                "anchor0_minus_full_anchor_mean": {
+                  "canonical_Phi5_coefficients": [
+                    -4,
+                    388,
+                    -4,
+                    4
+                  ],
+                  "common_denominator": 2525,
+                  "complex_abs": 0.15140555481212545,
+                  "exact_zero": false
+                }
+              },
+              "fixed_configuration_factorization": {
+                "formula": "mean_x m(x)m(x+d)^* C_config(x,d) versus A(d) mean_x C_config(x,d)",
+                "gap": {
+                  "canonical_Phi5_coefficients": [
+                    604,
+                    1448,
+                    332,
+                    36
+                  ],
+                  "common_denominator": 255025,
+                  "complex_abs": 0.006762283077380673,
+                  "exact_zero": false
+                },
+                "expected_to_hold_per_configuration": false
+              },
+              "translation_orbit_factorization": {
+                "formula": "mean_config_translation mean_anchor stored pair = A(d) mean_anchor latent pair",
+                "gap": {
+                  "canonical_Phi5_coefficients": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "common_denominator": 255025,
+                  "complex_abs": 0.0,
+                  "exact_zero": true
+                },
+                "passed": true
+              },
+              "fixed_anchor_translation_orbit": {
+                "formula": "mean_config_translation at one fixed anchor uses that anchor's phase, not A(d)",
+                "local_phase_identity_gap": {
+                  "canonical_Phi5_coefficients": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "common_denominator": 2525,
+                  "complex_abs": 0.0,
+                  "exact_zero": true
+                },
+                "passed": true
+              }
+            },
+            "r2": {
+              "charge": 2,
+              "displacement_residue": 39,
+              "displacement_coordinate": [
+                8,
+                7
+              ],
+              "phase_counts": [
+                28,
+                8,
+                24,
+                15,
+                26
+              ],
+              "pointwise_pair_failures": 0,
+              "one_anchor": {
+                "distinct_exact_values_across_101_anchors": 4,
+                "anchor0_minus_full_anchor_mean": {
+                  "canonical_Phi5_coefficients": [
+                    -4,
+                    4,
+                    4,
+                    0
+                  ],
+                  "common_denominator": 2525,
+                  "complex_abs": 0.003404294878019219,
+                  "exact_zero": false
+                }
+              },
+              "fixed_configuration_factorization": {
+                "formula": "mean_x m(x)m(x+d)^* C_config(x,d) versus A(d) mean_x C_config(x,d)",
+                "gap": {
+                  "canonical_Phi5_coefficients": [
+                    260,
+                    -316,
+                    -532,
+                    -72
+                  ],
+                  "common_denominator": 255025,
+                  "complex_abs": 0.00339525868195456,
+                  "exact_zero": false
+                },
+                "expected_to_hold_per_configuration": false
+              },
+              "translation_orbit_factorization": {
+                "formula": "mean_config_translation mean_anchor stored pair = A(d) mean_anchor latent pair",
+                "gap": {
+                  "canonical_Phi5_coefficients": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "common_denominator": 255025,
+                  "complex_abs": 0.0,
+                  "exact_zero": true
+                },
+                "passed": true
+              },
+              "fixed_anchor_translation_orbit": {
+                "formula": "mean_config_translation at one fixed anchor uses that anchor's phase, not A(d)",
+                "local_phase_identity_gap": {
+                  "canonical_Phi5_coefficients": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "common_denominator": 2525,
+                  "complex_abs": 0.0,
+                  "exact_zero": true
+                },
+                "passed": true
+              }
+            }
+          }
+        },
+        "white_period_column_0": {
+          "occupied_vertices": 476,
+          "translation": {
+            "component_signature_checks": 51005,
+            "component_signature_failures": 0,
+            "CRT_root_scalar_checks": 51005,
+            "root_scalar_failures": 0,
+            "first_failure": null
+          },
+          "section_gauge": {
+            "fiber_scalar_checks": 505,
+            "fiber_offset_failures": 0,
+            "charged_DFT_checks": 808,
+            "charged_DFT_failures": 0,
+            "max_complex_roundoff_residual": 2.0014830212433605e-16,
+            "passed": true
+          },
+          "pair_factorization": {
+            "r1": {
+              "charge": 1,
+              "displacement_residue": 14,
+              "displacement_coordinate": [
+                3,
+                9
+              ],
+              "phase_counts": [
+                28,
+                8,
+                24,
+                15,
+                26
+              ],
+              "pointwise_pair_failures": 0,
+              "one_anchor": {
+                "distinct_exact_values_across_101_anchors": 5,
+                "anchor0_minus_full_anchor_mean": {
+                  "canonical_Phi5_coefficients": [
+                    -4,
+                    388,
+                    -4,
+                    4
+                  ],
+                  "common_denominator": 2525,
+                  "complex_abs": 0.15140555481212545,
+                  "exact_zero": false
+                }
+              },
+              "fixed_configuration_factorization": {
+                "formula": "mean_x m(x)m(x+d)^* C_config(x,d) versus A(d) mean_x C_config(x,d)",
+                "gap": {
+                  "canonical_Phi5_coefficients": [
+                    604,
+                    1448,
+                    332,
+                    36
+                  ],
+                  "common_denominator": 255025,
+                  "complex_abs": 0.006762283077380673,
+                  "exact_zero": false
+                },
+                "expected_to_hold_per_configuration": false
+              },
+              "translation_orbit_factorization": {
+                "formula": "mean_config_translation mean_anchor stored pair = A(d) mean_anchor latent pair",
+                "gap": {
+                  "canonical_Phi5_coefficients": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "common_denominator": 255025,
+                  "complex_abs": 0.0,
+                  "exact_zero": true
+                },
+                "passed": true
+              },
+              "fixed_anchor_translation_orbit": {
+                "formula": "mean_config_translation at one fixed anchor uses that anchor's phase, not A(d)",
+                "local_phase_identity_gap": {
+                  "canonical_Phi5_coefficients": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "common_denominator": 2525,
+                  "complex_abs": 0.0,
+                  "exact_zero": true
+                },
+                "passed": true
+              }
+            },
+            "r2": {
+              "charge": 2,
+              "displacement_residue": 39,
+              "displacement_coordinate": [
+                8,
+                7
+              ],
+              "phase_counts": [
+                28,
+                8,
+                24,
+                15,
+                26
+              ],
+              "pointwise_pair_failures": 0,
+              "one_anchor": {
+                "distinct_exact_values_across_101_anchors": 4,
+                "anchor0_minus_full_anchor_mean": {
+                  "canonical_Phi5_coefficients": [
+                    -4,
+                    4,
+                    4,
+                    0
+                  ],
+                  "common_denominator": 2525,
+                  "complex_abs": 0.003404294878019219,
+                  "exact_zero": false
+                }
+              },
+              "fixed_configuration_factorization": {
+                "formula": "mean_x m(x)m(x+d)^* C_config(x,d) versus A(d) mean_x C_config(x,d)",
+                "gap": {
+                  "canonical_Phi5_coefficients": [
+                    260,
+                    -316,
+                    -532,
+                    -72
+                  ],
+                  "common_denominator": 255025,
+                  "complex_abs": 0.00339525868195456,
+                  "exact_zero": false
+                },
+                "expected_to_hold_per_configuration": false
+              },
+              "translation_orbit_factorization": {
+                "formula": "mean_config_translation mean_anchor stored pair = A(d) mean_anchor latent pair",
+                "gap": {
+                  "canonical_Phi5_coefficients": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "common_denominator": 255025,
+                  "complex_abs": 0.0,
+                  "exact_zero": true
+                },
+                "passed": true
+              },
+              "fixed_anchor_translation_orbit": {
+                "formula": "mean_config_translation at one fixed anchor uses that anchor's phase, not A(d)",
+                "local_phase_identity_gap": {
+                  "canonical_Phi5_coefficients": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "common_denominator": 2525,
+                  "complex_abs": 0.0,
+                  "exact_zero": true
+                },
+                "passed": true
+              }
+            }
+          }
+        },
+        "black_period_column_1": {
+          "occupied_vertices": 29,
+          "translation": {
+            "component_signature_checks": 51005,
+            "component_signature_failures": 0,
+            "CRT_root_scalar_checks": 51005,
+            "root_scalar_failures": 0,
+            "first_failure": null
+          },
+          "section_gauge": {
+            "fiber_scalar_checks": 505,
+            "fiber_offset_failures": 0,
+            "charged_DFT_checks": 808,
+            "charged_DFT_failures": 0,
+            "max_complex_roundoff_residual": 1.8619006149354548e-16,
+            "passed": true
+          },
+          "pair_factorization": {
+            "r1": {
+              "charge": 1,
+              "displacement_residue": 14,
+              "displacement_coordinate": [
+                3,
+                9
+              ],
+              "phase_counts": [
+                28,
+                8,
+                24,
+                15,
+                26
+              ],
+              "pointwise_pair_failures": 0,
+              "one_anchor": {
+                "distinct_exact_values_across_101_anchors": 4,
+                "anchor0_minus_full_anchor_mean": {
+                  "canonical_Phi5_coefficients": [
+                    -4,
+                    4,
+                    4,
+                    0
+                  ],
+                  "common_denominator": 2525,
+                  "complex_abs": 0.003404294878019219,
+                  "exact_zero": false
+                }
+              },
+              "fixed_configuration_factorization": {
+                "formula": "mean_x m(x)m(x+d)^* C_config(x,d) versus A(d) mean_x C_config(x,d)",
+                "gap": {
+                  "canonical_Phi5_coefficients": [
+                    260,
+                    -316,
+                    -532,
+                    -72
+                  ],
+                  "common_denominator": 255025,
+                  "complex_abs": 0.00339525868195456,
+                  "exact_zero": false
+                },
+                "expected_to_hold_per_configuration": false
+              },
+              "translation_orbit_factorization": {
+                "formula": "mean_config_translation mean_anchor stored pair = A(d) mean_anchor latent pair",
+                "gap": {
+                  "canonical_Phi5_coefficients": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "common_denominator": 255025,
+                  "complex_abs": 0.0,
+                  "exact_zero": true
+                },
+                "passed": true
+              },
+              "fixed_anchor_translation_orbit": {
+                "formula": "mean_config_translation at one fixed anchor uses that anchor's phase, not A(d)",
+                "local_phase_identity_gap": {
+                  "canonical_Phi5_coefficients": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "common_denominator": 2525,
+                  "complex_abs": 0.0,
+                  "exact_zero": true
+                },
+                "passed": true
+              }
+            },
+            "r2": {
+              "charge": 2,
+              "displacement_residue": 39,
+              "displacement_coordinate": [
+                8,
+                7
+              ],
+              "phase_counts": [
+                28,
+                8,
+                24,
+                15,
+                26
+              ],
+              "pointwise_pair_failures": 0,
+              "one_anchor": {
+                "distinct_exact_values_across_101_anchors": 5,
+                "anchor0_minus_full_anchor_mean": {
+                  "canonical_Phi5_coefficients": [
+                    -4,
+                    388,
+                    -4,
+                    4
+                  ],
+                  "common_denominator": 2525,
+                  "complex_abs": 0.15140555481212545,
+                  "exact_zero": false
+                }
+              },
+              "fixed_configuration_factorization": {
+                "formula": "mean_x m(x)m(x+d)^* C_config(x,d) versus A(d) mean_x C_config(x,d)",
+                "gap": {
+                  "canonical_Phi5_coefficients": [
+                    604,
+                    1448,
+                    332,
+                    36
+                  ],
+                  "common_denominator": 255025,
+                  "complex_abs": 0.006762283077380673,
+                  "exact_zero": false
+                },
+                "expected_to_hold_per_configuration": false
+              },
+              "translation_orbit_factorization": {
+                "formula": "mean_config_translation mean_anchor stored pair = A(d) mean_anchor latent pair",
+                "gap": {
+                  "canonical_Phi5_coefficients": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "common_denominator": 255025,
+                  "complex_abs": 0.0,
+                  "exact_zero": true
+                },
+                "passed": true
+              },
+              "fixed_anchor_translation_orbit": {
+                "formula": "mean_config_translation at one fixed anchor uses that anchor's phase, not A(d)",
+                "local_phase_identity_gap": {
+                  "canonical_Phi5_coefficients": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "common_denominator": 2525,
+                  "complex_abs": 0.0,
+                  "exact_zero": true
+                },
+                "passed": true
+              }
+            }
+          }
+        },
+        "white_period_column_1": {
+          "occupied_vertices": 476,
+          "translation": {
+            "component_signature_checks": 51005,
+            "component_signature_failures": 0,
+            "CRT_root_scalar_checks": 51005,
+            "root_scalar_failures": 0,
+            "first_failure": null
+          },
+          "section_gauge": {
+            "fiber_scalar_checks": 505,
+            "fiber_offset_failures": 0,
+            "charged_DFT_checks": 808,
+            "charged_DFT_failures": 0,
+            "max_complex_roundoff_residual": 1.8619006149354548e-16,
+            "passed": true
+          },
+          "pair_factorization": {
+            "r1": {
+              "charge": 1,
+              "displacement_residue": 14,
+              "displacement_coordinate": [
+                3,
+                9
+              ],
+              "phase_counts": [
+                28,
+                8,
+                24,
+                15,
+                26
+              ],
+              "pointwise_pair_failures": 0,
+              "one_anchor": {
+                "distinct_exact_values_across_101_anchors": 4,
+                "anchor0_minus_full_anchor_mean": {
+                  "canonical_Phi5_coefficients": [
+                    -4,
+                    4,
+                    4,
+                    0
+                  ],
+                  "common_denominator": 2525,
+                  "complex_abs": 0.003404294878019219,
+                  "exact_zero": false
+                }
+              },
+              "fixed_configuration_factorization": {
+                "formula": "mean_x m(x)m(x+d)^* C_config(x,d) versus A(d) mean_x C_config(x,d)",
+                "gap": {
+                  "canonical_Phi5_coefficients": [
+                    260,
+                    -316,
+                    -532,
+                    -72
+                  ],
+                  "common_denominator": 255025,
+                  "complex_abs": 0.00339525868195456,
+                  "exact_zero": false
+                },
+                "expected_to_hold_per_configuration": false
+              },
+              "translation_orbit_factorization": {
+                "formula": "mean_config_translation mean_anchor stored pair = A(d) mean_anchor latent pair",
+                "gap": {
+                  "canonical_Phi5_coefficients": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "common_denominator": 255025,
+                  "complex_abs": 0.0,
+                  "exact_zero": true
+                },
+                "passed": true
+              },
+              "fixed_anchor_translation_orbit": {
+                "formula": "mean_config_translation at one fixed anchor uses that anchor's phase, not A(d)",
+                "local_phase_identity_gap": {
+                  "canonical_Phi5_coefficients": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "common_denominator": 2525,
+                  "complex_abs": 0.0,
+                  "exact_zero": true
+                },
+                "passed": true
+              }
+            },
+            "r2": {
+              "charge": 2,
+              "displacement_residue": 39,
+              "displacement_coordinate": [
+                8,
+                7
+              ],
+              "phase_counts": [
+                28,
+                8,
+                24,
+                15,
+                26
+              ],
+              "pointwise_pair_failures": 0,
+              "one_anchor": {
+                "distinct_exact_values_across_101_anchors": 5,
+                "anchor0_minus_full_anchor_mean": {
+                  "canonical_Phi5_coefficients": [
+                    -4,
+                    388,
+                    -4,
+                    4
+                  ],
+                  "common_denominator": 2525,
+                  "complex_abs": 0.15140555481212545,
+                  "exact_zero": false
+                }
+              },
+              "fixed_configuration_factorization": {
+                "formula": "mean_x m(x)m(x+d)^* C_config(x,d) versus A(d) mean_x C_config(x,d)",
+                "gap": {
+                  "canonical_Phi5_coefficients": [
+                    604,
+                    1448,
+                    332,
+                    36
+                  ],
+                  "common_denominator": 255025,
+                  "complex_abs": 0.006762283077380673,
+                  "exact_zero": false
+                },
+                "expected_to_hold_per_configuration": false
+              },
+              "translation_orbit_factorization": {
+                "formula": "mean_config_translation mean_anchor stored pair = A(d) mean_anchor latent pair",
+                "gap": {
+                  "canonical_Phi5_coefficients": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "common_denominator": 255025,
+                  "complex_abs": 0.0,
+                  "exact_zero": true
+                },
+                "passed": true
+              },
+              "fixed_anchor_translation_orbit": {
+                "formula": "mean_config_translation at one fixed anchor uses that anchor's phase, not A(d)",
+                "local_phase_identity_gap": {
+                  "canonical_Phi5_coefficients": [
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "common_denominator": 2525,
+                  "complex_abs": 0.0,
+                  "exact_zero": true
+                },
+                "passed": true
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "summary": {
+    "component_signature_failures": 0,
+    "root_scalar_failures": 0,
+    "section_or_gauge_failures": 0,
+    "translation_orbit_factorization_failures": 0,
+    "archive_semantic_provenance_failures": 0,
+    "fixed_configuration_factorization_counterexamples": 16,
+    "first_fixed_configuration_counterexample": {
+      "hand": "plus",
+      "configuration": "black_period_column_0",
+      "charge": 1,
+      "displacement_residue": 27,
+      "gap": {
+        "canonical_Phi5_coefficients": [
+          492,
+          72,
+          -372,
+          -292
+        ],
+        "common_denominator": 255025,
+        "complex_abs": 0.004123734333747735,
+        "exact_zero": false
+      }
+    },
+    "passed": true
+  },
+  "localization": {
+    "root_component_selection": "not the break: active color, rank, size and primitive rank-one line are exactly translation covariant",
+    "section_and_gauge": "not the break: BFS and CRT roots plus the stored rotation gauge obey the frozen pointwise relation",
+    "single_configuration_warning": "A(d) cannot be pulled outside a full-anchor average for one fixed configuration because C_config(x,d) is not translation constant",
+    "sampling_contract": "factorization is restored exactly by the full 101x101 configuration-translation x anchor orbit; one random anchor is unbiased only jointly with the translation-invariant configuration law",
+    "remaining_P418_target": "the archive one-anchor/covariance/scorer assembly, not the projective-leg definition or CRT gauge algebra"
+  },
+  "claim_boundary": [
+    "The finite translation-orbit identity is an exact synthetic ensemble, not a Monte Carlo precision claim.",
+    "A per-configuration factorization counterexample is expected and does not contradict ensemble stationarity.",
+    "This certificate does not by itself identify whether the remaining archive mismatch is sampling variance or covariance/scorer assembly."
+  ]
+}
