@@ -1,0 +1,49 @@
+{
+  "schema": "matching-one/p250-projective-magnetic-translation-manifest/v1",
+  "status": "frozen_existing_data_reanalysis_before_scoring",
+  "parent_result_commit": "4c1f5d8",
+  "scorer_commit": "1622387ae73637e02f5988bbacc9361794433b76",
+  "input_batches": "results/huawei-20260830/P250-projective-leg-bivariate-80k/response_80k.batches.csv",
+  "input_batches_sha256": "dfbd83d680080939bcae5cad0090af95d82748ed780ce73807d4b002d6a9ca72",
+  "prior_bivariate_score": "results/huawei-20260830/P250-projective-leg-bivariate-80k/score.json",
+  "prior_bivariate_score_sha256": "4fec61d1252b32c3cf930b3ce01f379f13c0928d766e0da572f3065e9df89d0f",
+  "environment": {
+    "python": "3",
+    "numpy": "2.4.6",
+    "scipy": "1.18.0"
+  },
+  "canonical_Weyl_contract": {
+    "dimension": 5,
+    "omega": "exp(2 pi i / 5)",
+    "convention": "Tx=X, Ty=Z_m, Tx Ty=omega^(-m) Ty Tx",
+    "flux_pairs_plus_minus": [[1, 4], [2, 3], [3, 2], [4, 1]],
+    "rotation": "fixed Weil R with R X R^-1=Z_m, R Z_m R^-1=X^-1, R^4=I",
+    "center": "D=omega^(-m)I, D^5=I",
+    "matrix_element": "G(a,b)=rho^(|a|+|b|) v^* W_m(a,b) v",
+    "fit_freedom": "one complex Hermitian source/sink vector per hand and one shared real rho; charge-2 rows are fixed by the exact C4 channel map",
+    "axis_training_points": [[0, 0], [1, 0], [2, 0], [3, 0], [0, 1], [0, 2], [0, 3]],
+    "mixed_gate_points": [[1, 1], [2, 1], [1, 2]],
+    "degree4_heldout_points": [[4, 0], [3, 1], [2, 2], [1, 3], [0, 4]]
+  },
+  "free_commuting_comparator": {
+    "ranks": [4, 5],
+    "shared_eigenpairs": true,
+    "channel_specific_complex_amplitudes": true,
+    "training_points": [[0, 0], [0, 1], [1, 0], [0, 2], [1, 1], [2, 0], [0, 3], [1, 2], [2, 1], [3, 0]],
+    "heldout_points": [[4, 0], [3, 1], [2, 2], [1, 3], [0, 4]],
+    "favorable_bias": "The free ranks consume all first-quadrant degree<=3 mixed points because four axis moments cannot identify rank-4/5 roots."
+  },
+  "exact_gate": {
+    "spatial_cover_bundle": "unit-translation plaquette curvature must be zero at all 101 parent sites in both hands",
+    "claim_boundary": "A nonzero-m survivor would be an effective projected-state representation, not literal deck holonomy."
+  },
+  "decision_alpha": 0.01,
+  "decision_rule": [
+    "A canonical Weyl model survives only when both its mixed gate and degree-4 heldout p values are >=0.01.",
+    "A free commuting comparator survives when its degree-4 heldout p value is >=0.01.",
+    "Weyl survival with commuting rank-5 failure is evidence for projective state algebra; survival of commuting rank-4/5 instead diagnoses prior rank<=3 insufficiency.",
+    "Failure of both excludes only these minimal forms, not a general rank-5 projective representation, Jordan sector, or image kernel."
+  ],
+  "no_new_simulation": true,
+  "score_once": true
+}
