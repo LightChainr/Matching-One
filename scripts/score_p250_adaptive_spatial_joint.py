@@ -44,29 +44,25 @@ def read_profiles(path: Path, expected_sha256: str | None):
         raise ValueError("at least ten batches are required")
     output = {}
     for hand in HANDS:
-        samples = np.asarray([
-            [float(row[f"{hand}_j{j}_samples"]) for j in RESIDUES]
-            for row in rows
-        ])
-        if np.any(samples <= 0):
-            where = np.argwhere(samples <= 0)[0]
-            raise ValueError(
-                f"empty spatial cell at batch={where[0]}, residue={where[1] + 1}; "
-                "increase samples per batch"
-            )
+        batch_samples = np.asarray([float(row["samples"]) for row in rows])[:, None]
+        # Each nonzero residue is sampled with known probability 1/100.  The
+        # Horvitz-Thompson profile is unbiased per batch even when a cell is
+        # empty, so covariance rank is controlled by batches rather than by an
+        # accidental minimum cell count.
+        scale = len(RESIDUES) / batch_samples
         output[hand] = {
             "response": np.asarray([
                 [float(row[f"{hand}_j{j}_sum_Rminus"]) for j in RESIDUES]
                 for row in rows
-            ]) / samples,
+            ]) * scale,
             "defined": np.asarray([
                 [float(row[f"{hand}_j{j}_defined"]) for j in RESIDUES]
                 for row in rows
-            ]) / samples,
+            ]) * scale,
             "tie": np.asarray([
                 [float(row[f"{hand}_j{j}_ties"]) for j in RESIDUES]
                 for row in rows
-            ]) / samples,
+            ]) * scale,
         }
     return rows, output, actual
 
@@ -177,6 +173,93 @@ def definition_only(profiles: dict[str, dict[str, np.ndarray]]):
         "covariance_eigen_cutoff": cutoff,
         "maximum_absolute_spatial_residual": float(np.max(np.abs(mean))),
         "decision": "definition_only_not_rejected" if p >= 0.01 else "definition_only_rejected",
+        "identifiability_warning": (
+            "The 100-coordinate spatial covariance has at most batches-1 stochastic modes; "
+            "this saturated diagnostic is not used as the production decision."
+        ),
+    }
+
+
+def global_definition_transfer(rows):
+    residual, defined = [], []
+    for row in rows:
+        sample_count = float(row["samples"])
+        residual.append([
+            (float(row[f"{hand}_sum_Rminus"]) - ALPHA * float(row[f"{hand}_defined"]))
+            / sample_count for hand in HANDS
+        ])
+        defined.append([
+            float(row[f"{hand}_defined"]) / sample_count for hand in HANDS
+        ])
+    residual = np.asarray(residual)
+    mean = residual.mean(axis=0)
+    defined_mean = np.asarray(defined).mean(axis=0)
+    covariance = covariance_of_mean(residual)
+    covariance += ALPHA_SE * ALPHA_SE * np.outer(defined_mean, defined_mean)
+    statistic = float(mean @ np.linalg.inv(covariance) @ mean)
+    p = float(chi2.sf(statistic, len(HANDS)))
+    return {
+        "ordering": list(HANDS),
+        "mean_residual": mean.tolist(),
+        "covariance_of_mean": covariance.tolist(),
+        "marginal_z": (mean / np.sqrt(np.diag(covariance))).tolist(),
+        "chi_square": statistic,
+        "degrees_of_freedom": len(HANDS),
+        "asymptotic_p": p,
+        "decision": "source_alpha_transfer_rejected" if p < 0.01 else "source_alpha_transfer_not_rejected",
+        "interpretation": (
+            "Stable two-coordinate projection of the preregistered zero profile. Rejection says "
+            "the N325/N425 conditional amplitude does not transfer to N505; it does not by itself "
+            "show spatial shape dependence."
+        ),
+    }
+
+
+def conditional_spatial_randomization(path: Path, permutations: int, seed: int):
+    with path.open(encoding="utf-8", newline="") as stream:
+        rows = list(csv.DictReader(stream))
+    grouped = {}
+    for row in rows:
+        replica = int(row["replica"])
+        item = grouped.setdefault(replica, {"residue": int(row["residue"])})
+        if item["residue"] != int(row["residue"]):
+            raise ValueError("shared replica has inconsistent residues")
+        item[row["hand"]] = float(row["R_minus"])
+    groups = list(grouped.values())
+    residues = np.asarray([row["residue"] for row in groups], dtype=int)
+    phase = np.exp(
+        2j * math.pi * np.arange(1, 51)[:, None] * np.arange(ORDER)[None, :] / ORDER
+    )
+
+    def statistic(labels):
+        hand_values = []
+        for hand in HANDS:
+            indices = np.asarray([index for index, row in enumerate(groups) if hand in row])
+            response = np.asarray([groups[index][hand] for index in indices], dtype=float)
+            response -= response.mean()
+            spectrum = phase[:, labels[indices]] @ response
+            hand_values.append(float(np.max(np.abs(spectrum) ** 2 / np.sum(response * response))))
+        return max(hand_values), hand_values
+
+    observed, by_hand = statistic(residues)
+    rng = np.random.default_rng(seed)
+    reference = np.asarray([statistic(rng.permutation(residues))[0] for _ in range(permutations)])
+    p = float((1 + np.sum(reference >= observed)) / (permutations + 1))
+    return {
+        "status": "post_reveal_descriptive_randomization",
+        "defined_rows": len(rows),
+        "shared_replica_clusters": len(groups),
+        "statistic": "maximum centered conditional-response Fourier power over hands and k=1..50",
+        "observed": observed,
+        "observed_by_hand": dict(zip(HANDS, by_hand)),
+        "permutations": permutations,
+        "randomization_p": p,
+        "reference_quantiles": {
+            "q50": float(np.quantile(reference, 0.50)),
+            "q90": float(np.quantile(reference, 0.90)),
+            "q99": float(np.quantile(reference, 0.99)),
+        },
+        "decision": "conditional_spatial_heterogeneity_not_resolved" if p >= 0.01 else "conditional_spatial_heterogeneity_resolved",
     }
 
 
@@ -226,13 +309,19 @@ def joint_cosine_archive(profiles):
     }
 
 
-def score(batch_path: Path, expected_hash: str | None, bootstrap: int, seed: int):
+def score(batch_path: Path, expected_hash: str | None, defined_path: Path,
+          bootstrap: int, permutations: int, seed: int):
     rows, profiles, source_hash = read_profiles(batch_path, expected_hash)
     cone = fit_cone(
         {hand: symmetrize(profiles[hand]["response"]) for hand in HANDS},
         bootstrap, seed,
     )
     definition = definition_only(profiles)
+    transfer = global_definition_transfer(rows)
+    randomization = conditional_spatial_randomization(defined_path, permutations, seed + 1)
+    cone["identifiability"] = (
+        "underidentified_at_20_batches" if cone["resolved_modes"] < 51 else "resolved"
+    )
     return {
         "schema": SCHEMA,
         "source": {"batch_path": str(batch_path), "sha256": source_hash,
@@ -244,11 +333,10 @@ def score(batch_path: Path, expected_hash: str | None, bootstrap: int, seed: int
         "global": global_summary(rows),
         "ordinary_positive_fourier_cone_adversary": cone,
         "definition_only_model": definition,
+        "source_alpha_global_transfer": transfer,
+        "conditional_spatial_randomization": randomization,
         "joint_cosine_periodogram": joint_cosine_archive(profiles),
-        "primary_mechanism_decision": (
-            "adaptive_spatial_increment" if definition["decision"] == "definition_only_rejected"
-            else "definition_rate_exhausts_pilot_resolution"
-        ),
+        "primary_mechanism_decision": transfer["decision"],
         "boundary": (
             "The cone is an ordinary spatial-state adversary, not an exact theorem for an adaptive "
             "intervention. Rejection does not identify a field or memory state. The zero residue was "
@@ -260,12 +348,15 @@ def score(batch_path: Path, expected_hash: str | None, bootstrap: int, seed: int
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--batches", type=Path, required=True)
+    parser.add_argument("--defined", type=Path, required=True)
     parser.add_argument("--batches-sha256")
     parser.add_argument("--bootstrap", type=int, default=500)
+    parser.add_argument("--permutations", type=int, default=5000)
     parser.add_argument("--seed", type=int, default=25050510120263001)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
-    result = score(args.batches, args.batches_sha256, args.bootstrap, args.seed)
+    result = score(args.batches, args.batches_sha256, args.defined,
+                   args.bootstrap, args.permutations, args.seed)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n")
 

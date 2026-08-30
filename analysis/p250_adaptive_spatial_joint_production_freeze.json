@@ -1,0 +1,30 @@
+{
+  "schema": "matching-one/p250-adaptive-spatial-joint-production-freeze/v1",
+  "status": "frozen_after_20k_power_pilot_before_fresh_production",
+  "pilot_boundary": "The 20k pilot rejected transfer of the N325/N425 global conditional amplitude but had only 19 covariance modes for 100 symmetrized coordinates. It did not score spatial-cone escape.",
+  "production": {
+    "samples": 200000,
+    "batches": 400,
+    "workers": 16,
+    "seed": 25050510120263002,
+    "replica_offset": 25050600000,
+    "dependency": "fresh stream; not pooled with the 20k pilot",
+    "host": "Huawei-CodeBuddy-HZsCM6",
+    "runner": "scripts/p250_adaptive_spatial_joint_mc.py",
+    "runner_sha256": "6ad792da7d86e5798dd44005bd42715ff04083dc72dd2a4d2f824295f5d641da",
+    "scorer": "scripts/score_p250_adaptive_spatial_joint.py",
+    "scorer_sha256": "4459c6e070c26d13bc84a992bd5674b47dc09a890716428fd19e25f8a601b5b1"
+  },
+  "profile_estimator": {
+    "name": "per-batch Horvitz-Thompson",
+    "formula": "100 * sum(response at residue j) / batch_samples",
+    "reason": "residue is uniform on the 100 nonzero CRT classes; empty batch cells remain valid zeros and 400 batch vectors identify the full 100-coordinate covariance"
+  },
+  "frozen_gates": {
+    "primary_cone": "joint plus/minus nonnegative cosine cone, separate 51-weight spectra, full 100-coordinate covariance, 500 parametric bootstrap replicates",
+    "primary_conditional_shape": "cluster-preserving max-Fourier randomization over both hands and k=1..50, 5000 permutations",
+    "amplitude_transfer": "N325/N425 source-frozen alpha is reported as a separate global projection and never called spatial rejection",
+    "decision": "spatial mechanism increment only if cone p<0.01 or conditional-shape p<0.01; otherwise stop"
+  },
+  "claim_boundary": "Adaptive intervention only. A cone rejection would eliminate the ordinary positive spatial adversary for this observable, not identify a physical state or spontaneous memory."
+}

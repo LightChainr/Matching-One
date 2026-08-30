@@ -1,0 +1,51 @@
+{
+  "schema": "matching-one/p250-adaptive-spatial-joint-result/v1",
+  "status": "completed_20k_stop",
+  "freeze_commit": "f35557f",
+  "environment": "Huawei DevEnvC_HZsCM6 033945d8bf8b47a7acf475c595169e07",
+  "run": {
+    "samples": 20000,
+    "batches": 20,
+    "elapsed_seconds": 16.362620568994316,
+    "defined_rows": 540,
+    "typed_control_failures": 0,
+    "batch_sha256": "4741ab0e7736ec5c924d9a5a4e82bba0182e2d154ea756494f940b5c72b5b022",
+    "defined_sha256": "75ecf9cd69edfdef86cf3418b418ec4c206b419900d477755281a093d0dcba9e"
+  },
+  "global": {
+    "plus": {
+      "defined_rate": [0.013150000000000004, 0.0008744170990768048],
+      "Rminus_unconditional": [0.017150000000000006, 0.001422146265332789],
+      "Rminus_given_defined": [1.2836471657427542, 0.044400092921775464]
+    },
+    "minus": {
+      "defined_rate": [0.013850000000000001, 0.0005678908345800273],
+      "Rminus_unconditional": [0.019400000000000004, 0.001037202715810275],
+      "Rminus_given_defined": [1.403812715062715, 0.04712967994092783]
+    }
+  },
+  "source_frozen_definition_transfer": {
+    "alpha_N325_N425": [1.7873118647707438, 0.010073378702833143],
+    "mean_residual_plus_minus": [-0.00635315102173528, -0.005354269327074801],
+    "marginal_z_plus_minus": [-10.111207132665614, -7.529982631536962],
+    "joint_chi_square": 168.65765512310125,
+    "degrees_of_freedom": 2,
+    "p": 2.3793346249053068e-37,
+    "decision": "source_alpha_transfer_rejected"
+  },
+  "spatial_shape": {
+    "ordinary_positive_fourier_cone": "underidentified_at_20_batches",
+    "cone_resolved_modes": 19,
+    "cone_distance_squared": 0.0,
+    "conditional_response_randomization_p": 0.36012797440511896,
+    "conditional_spatial_heterogeneity": "not_resolved"
+  },
+  "reading": "The medium-geometry conditional amplitude does not transfer to the N505 cover: both children are lower by 7.5-10.1 marginal standard errors and the joint two-coordinate gate rejects. This is a scale/geometry-dependent adaptive amplitude, not evidence for a new spatial Fourier state. At 20 batches the full cone is covariance-rank saturated, and an independent cluster-preserving conditional-response randomization resolves no residue dependence.",
+  "stop": "No expansion. The frozen rule requires a mechanism increment beyond definition rate; the increment is global amplitude transfer failure, while spatial shape remains unresolved.",
+  "score": {
+    "sha256": "c14810601ae8c44cc638ad8a1dfd58715ea335c3e6514619d062d6bb71145be4",
+    "scorer_sha256_after_identifiability_amendment": "3611e18209f6ce6b4d09f8b2c577a7d2b2a39a0776b8432858f6d6084ce2ceb1",
+    "amendment": "After reveal, the preregistered 100-coordinate/20-batch inverse was marked saturated. The production decision uses its stable pre-specified global linear projection; cluster-preserving conditional randomization is explicitly descriptive."
+  },
+  "claim_boundary": "Finite adaptive intervention amplitude only. No positive-cone escape, field identity, state count, universality, or naturally occurring path-memory claim."
+}
