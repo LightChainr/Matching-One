@@ -124,20 +124,19 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
             )
         )
         self.assertEqual(result, audit(ROOT, manifest))
-        self.assertEqual(result["counts"]["total"], 44)
-        self.assertEqual(result["counts"]["direct_typed_entrypoint"], 13)
-        self.assertEqual(result["counts"]["covered_frozen_kernel"], 12)
+        self.assertEqual(result["counts"]["total"], 45)
+        self.assertEqual(result["counts"]["direct_typed_entrypoint"], 14)
+        self.assertEqual(result["counts"]["covered_frozen_kernel"], 13)
         self.assertEqual(
             result["counts"]["descriptor_not_applicable_generic_utility"], 1
         )
-        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 18)
+        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 17)
         self.assertEqual(result["counts"]["outside_registered_typed_path"], 0)
-        self.assertEqual(len(result["rows"]), 44)
+        self.assertEqual(len(result["rows"]), 45)
         statuses = {row["path"]: row["status"] for row in result["rows"]}
         for path in (
             "scripts/score_axis_pair_annihilator.py",
             "scripts/score_axis_pair_annihilator_stable.py",
-            "scripts/score_intrinsic_quantile_center_n145_n290.py",
             "scripts/score_issue43_secondary.py",
             "scripts/score_norm4_production.py",
             "scripts/score_norm4_thermal_jet.py",
@@ -155,6 +154,14 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
             self.assertEqual(
                 statuses[path], "channel_bearing_migration_required"
             )
+        self.assertEqual(
+            statuses["scripts/score_intrinsic_quantile_center_n145_n290.py"],
+            "covered_frozen_kernel",
+        )
+        self.assertEqual(
+            statuses["scripts/score_intrinsic_quantile_center_n145_n290_typed.py"],
+            "direct_typed_entrypoint",
+        )
         self.assertEqual(
             statuses["scripts/score_c4_self_matching_n26.py"],
             "covered_frozen_kernel",
