@@ -1,0 +1,81 @@
+{
+  "schema": "matching-one/p250-projective-leg-radius5-morphism-freeze/v1",
+  "status": "frozen_not_authorized_to_execute",
+  "execution_authorized": false,
+  "parent_result_commit": "a46ed63",
+  "runner_commit": "fd64f78b08d3b0033b35b40295b514597a6c674b",
+  "scorer_commit": "8ae64df8c03625c178b0d73414c41c3a864e6a14",
+  "old_batches": "results/huawei-20260830/P250-projective-leg-bivariate-80k/response_80k.batches.csv",
+  "old_batches_sha256": "dfbd83d680080939bcae5cad0090af95d82748ed780ce73807d4b002d6a9ca72",
+  "target_host": "Huawei-CodeBuddy-XPk2PZ",
+  "remote_directory": "/workspace/p250-projective-leg-radius5-morphism-1200k",
+  "response_output": "/workspace/p250-projective-leg-radius5-morphism-1200k/response_1200k.json",
+  "new_batches": "/workspace/p250-projective-leg-radius5-morphism-1200k/response_1200k.batches.csv",
+  "run": {
+    "samples": 1200000,
+    "batches": 400,
+    "workers": 16,
+    "p": 0.59274605079,
+    "seed": 25050510120261250,
+    "replica_offset": 0,
+    "replica_last_exclusive": 1200000
+  },
+  "geometry": {
+    "parent": [10, 1],
+    "parent_order": 101,
+    "child_order": 505,
+    "radius": 5,
+    "shell": [[-5, 0], [-4, -1], [-4, 1], [-3, -2], [-3, 2], [-2, -3], [-2, 3], [-1, -4], [-1, 4], [0, -5], [0, 5], [1, -4], [1, 4], [2, -3], [2, 3], [3, -2], [3, 2], [4, -1], [4, 1], [5, 0]],
+    "shell_points": 20,
+    "source_new_endpoints": [[5, 0], [4, 1], [3, 2]],
+    "closure": "C4 plus Alexander reflection of the three source endpoints is exactly the full 20-point shell",
+    "hands": ["plus", "minus"],
+    "charges": [1, 2],
+    "complex_rows_per_batch": 80,
+    "real_coordinates_per_batch": 160,
+    "minimality": "Removing a spatial C4 orbit loses either a source shift or the reflected target of at least one Alexander convention; removing a hand or charge changes the two-sector/two-charge observer."
+  },
+  "power_planning": {
+    "status": "exploratory_current-residual alternative; not a claimed effect size",
+    "alpha": 0.01,
+    "degrees_of_freedom": 10,
+    "chi_square_critical": 23.209251158954356,
+    "old_samples": 80000,
+    "sample_information_factor": 15.0,
+    "row_information_factor": 1.6666666666666667,
+    "combined_information_factor": 25.0,
+    "noncentrality_from_old_score_max_T2_minus_df": {
+      "identity_conjugation": 0.0,
+      "Alexander_R0_conjugation": 5.965249947524494,
+      "Alexander_R1_conjugation": 0.9221099392291663,
+      "Alexander_R2_conjugation": 1.342208481821915,
+      "Alexander_R3_conjugation": 8.27917761556619
+    },
+    "forecast_power_at_1200000": {
+      "identity_conjugation_size_if_true": 0.01,
+      "Alexander_R0_conjugation_if_current_residual_persists": 0.9999999999999994,
+      "Alexander_R1_conjugation_if_current_residual_persists": 0.8224366689816857,
+      "Alexander_R2_conjugation_if_current_residual_persists": 0.9664499949951555,
+      "Alexander_R3_conjugation_if_current_residual_persists": 1.0
+    },
+    "sample_choice": "1.2M is the first compact round count exceeding 80% forecast power for the weakest current Alexander R1 residual after the 20/12 row-information gain."
+  },
+  "score_contract": {
+    "stage1_support": "old degree-two q_plus and q_minus must separately annihilate the fresh degree-five shifted rows at p>=0.01",
+    "support_lock": "if either hand fails stage1, all cross-hand morphism interpretation is locked and the decision is five_plus_five_direct_sum_extension_fails",
+    "general_5_plus_5": "two independent hand extension gates with no cross-hand line equality",
+    "parameter_free_candidates": ["identity_conjugation", "Alexander_R0_conjugation", "Alexander_R1_conjugation", "Alexander_R2_conjugation", "Alexander_R3_conjugation"],
+    "updated_lines": "after support, re-extract each hand line from the old 12 rows plus 8 fresh degree-three-shift rows",
+    "covariance": "old and fresh seeds are independent; add their separate 400-batch delete-one covariance matrices before one Hotelling score",
+    "selection": [
+      "identity only survives -> identity_conjugation_identified",
+      "identity fails and at least one Alexander survives -> Alexander_family_selected_over_identity",
+      "all parameter-free maps fail but support passes -> general_five_plus_five_bridge_only",
+      "multiple identity/Alexander maps survive -> parameter_free_bridge_remains_nonidentified"
+    ],
+    "no_smallest_p_or_best_fit_selection": true,
+    "decision_alpha": 0.01
+  },
+  "decision_alpha": 0.01,
+  "do_not_run_from_this_commit": true
+}
