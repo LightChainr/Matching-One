@@ -1,0 +1,2628 @@
+{
+  "bounded_counts": {
+    "adjacent_pairs": 984,
+    "association_nonnegative": 984,
+    "cauchy_worst_case_pass": 980,
+    "first_order_transport_pass": 968,
+    "negative_degree_bias": 484,
+    "uniform_equalities": 78,
+    "variance_domination_pass": 984
+  },
+  "conditional_variance_association_lemma": {
+    "bounded_gate": "both hypotheses pass on every audited adjacent pair",
+    "proof_status": "exact algebraic implication; the two hypotheses are not proved for arbitrary quotient size",
+    "statement": "Uniform exit hazard is nondecreasing if Delta_edge >= Var_k(h_x)/(1-xi_k) and Cov_(k+1)(h_beta,h_x) >= 0."
+  },
+  "negative_bias_ratio_extreme": {
+    "achiever_count": 8,
+    "achievers": [
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "matching",
+        "cauchy_left_square": "324/60025",
+        "cauchy_variance_product": "0",
+        "degree_bias": "-1/21",
+        "edge_slack": "2/15",
+        "line": [
+          0,
+          1
+        ],
+        "lower_layer": 6,
+        "matrix": [
+          [
+            3,
+            0
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "negative_bias_over_slack": "5/14",
+        "uniform_delta": "3/35",
+        "variance_penalty": "1/21"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "matching",
+        "cauchy_left_square": "324/60025",
+        "cauchy_variance_product": "0",
+        "degree_bias": "-1/21",
+        "edge_slack": "2/15",
+        "line": [
+          1,
+          0
+        ],
+        "lower_layer": 6,
+        "matrix": [
+          [
+            4,
+            0
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "negative_bias_over_slack": "5/14",
+        "uniform_delta": "3/35",
+        "variance_penalty": "1/21"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "matching",
+        "cauchy_left_square": "324/60025",
+        "cauchy_variance_product": "0",
+        "degree_bias": "-1/21",
+        "edge_slack": "2/15",
+        "line": [
+          1,
+          0
+        ],
+        "lower_layer": 6,
+        "matrix": [
+          [
+            4,
+            1
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "negative_bias_over_slack": "5/14",
+        "uniform_delta": "3/35",
+        "variance_penalty": "1/21"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "matching",
+        "cauchy_left_square": "324/60025",
+        "cauchy_variance_product": "0",
+        "degree_bias": "-1/21",
+        "edge_slack": "2/15",
+        "line": [
+          1,
+          0
+        ],
+        "lower_layer": 6,
+        "matrix": [
+          [
+            4,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "negative_bias_over_slack": "5/14",
+        "uniform_delta": "3/35",
+        "variance_penalty": "1/21"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "matching",
+        "cauchy_left_square": "324/60025",
+        "cauchy_variance_product": "0",
+        "degree_bias": "-1/21",
+        "edge_slack": "2/15",
+        "line": [
+          1,
+          0
+        ],
+        "lower_layer": 6,
+        "matrix": [
+          [
+            4,
+            3
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "negative_bias_over_slack": "5/14",
+        "uniform_delta": "3/35",
+        "variance_penalty": "1/21"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "matching",
+        "cauchy_left_square": "324/60025",
+        "cauchy_variance_product": "0",
+        "degree_bias": "-1/21",
+        "edge_slack": "2/15",
+        "line": [
+          1,
+          -2
+        ],
+        "lower_layer": 6,
+        "matrix": [
+          [
+            6,
+            3
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "negative_bias_over_slack": "5/14",
+        "uniform_delta": "3/35",
+        "variance_penalty": "1/21"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "matching",
+        "cauchy_left_square": "324/60025",
+        "cauchy_variance_product": "0",
+        "degree_bias": "-1/21",
+        "edge_slack": "2/15",
+        "line": [
+          1,
+          -4
+        ],
+        "lower_layer": 6,
+        "matrix": [
+          [
+            12,
+            3
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "negative_bias_over_slack": "5/14",
+        "uniform_delta": "3/35",
+        "variance_penalty": "1/21"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "matching",
+        "cauchy_left_square": "324/60025",
+        "cauchy_variance_product": "0",
+        "degree_bias": "-1/21",
+        "edge_slack": "2/15",
+        "line": [
+          3,
+          -4
+        ],
+        "lower_layer": 6,
+        "matrix": [
+          [
+            12,
+            9
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "negative_bias_over_slack": "5/14",
+        "uniform_delta": "3/35",
+        "variance_penalty": "1/21"
+      }
+    ],
+    "maximum": "5/14"
+  },
+  "radon_nikodym": {
+    "lower_edge_over_uniform": "d nu_k^up / d mu_k = u/E_k[u] = (1-h_x)/(1-xi_k)",
+    "transport_identity": "xi_(k+1)-xi_k = Delta_edge - Var_k(h_x)/(1-xi_k) + Cov_(k+1)(h_beta,h_x)/(1-beta_(k+1))",
+    "upper_edge_over_uniform": "d nu_(k+1)^down / d mu_(k+1) = d/E_(k+1)[d] = (1-h_beta)/(1-beta_(k+1))"
+  },
+  "schema_version": "p334-hazard-transport-bound-v1",
+  "stronger_route_counterexamples": {
+    "cauchy_worst_case_failure_count": 4,
+    "cauchy_worst_case_failures": [
+      {
+        "N": 12,
+        "association_covariance": "142/103041",
+        "association_reward": "71/31458",
+        "carrier": "primal",
+        "cauchy_left_square": "4/103041",
+        "cauchy_variance_product": "50545/1179716409",
+        "degree_bias": "71/31458",
+        "edge_slack": "1/98",
+        "line": [
+          0,
+          1
+        ],
+        "lower_layer": 5,
+        "matrix": [
+          [
+            6,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "uniform_delta": "4/321",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "142/103041",
+        "association_reward": "71/31458",
+        "carrier": "primal",
+        "cauchy_left_square": "4/103041",
+        "cauchy_variance_product": "50545/1179716409",
+        "degree_bias": "71/31458",
+        "edge_slack": "1/98",
+        "line": [
+          1,
+          -1
+        ],
+        "lower_layer": 5,
+        "matrix": [
+          [
+            6,
+            5
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "uniform_delta": "4/321",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "142/103041",
+        "association_reward": "71/31458",
+        "carrier": "primal",
+        "cauchy_left_square": "4/103041",
+        "cauchy_variance_product": "50545/1179716409",
+        "degree_bias": "71/31458",
+        "edge_slack": "1/98",
+        "line": [
+          0,
+          1
+        ],
+        "lower_layer": 5,
+        "matrix": [
+          [
+            12,
+            2
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "4/321",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "142/103041",
+        "association_reward": "71/31458",
+        "carrier": "primal",
+        "cauchy_left_square": "4/103041",
+        "cauchy_variance_product": "50545/1179716409",
+        "degree_bias": "71/31458",
+        "edge_slack": "1/98",
+        "line": [
+          1,
+          -1
+        ],
+        "lower_layer": 5,
+        "matrix": [
+          [
+            12,
+            10
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "4/321",
+        "variance_penalty": "0"
+      }
+    ],
+    "first_order_stochastic_transport": {
+      "N": 12,
+      "association_covariance": "0",
+      "association_nonnegative": true,
+      "association_reward": "0",
+      "carrier": "matching",
+      "cauchy_left_square": "576/225625",
+      "cauchy_variance_product": "0",
+      "cauchy_worst_case_pass": true,
+      "degree_bias": "-93/1520",
+      "edge_slack": "3/16",
+      "first_order_edge_to_uniform_pass": false,
+      "internal_edges": 240,
+      "line": [
+        0,
+        1
+      ],
+      "lower_layer": 4,
+      "lower_size": 57,
+      "lower_uniform_exit_histogram": [
+        {
+          "value": "0",
+          "weight": 3
+        },
+        {
+          "value": "3/8",
+          "weight": 24
+        },
+        {
+          "value": "1/2",
+          "weight": 18
+        },
+        {
+          "value": "3/4",
+          "weight": 12
+        }
+      ],
+      "matrix": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "tail_table": [
+        {
+          "difference": "0",
+          "edge_upper_tail": "1",
+          "threshold": "0",
+          "uniform_lower_tail": "1"
+        },
+        {
+          "difference": "1/19",
+          "edge_upper_tail": "1",
+          "threshold": "3/8",
+          "uniform_lower_tail": "18/19"
+        },
+        {
+          "difference": "9/19",
+          "edge_upper_tail": "1",
+          "threshold": "3/7",
+          "uniform_lower_tail": "10/19"
+        },
+        {
+          "difference": "26/95",
+          "edge_upper_tail": "4/5",
+          "threshold": "1/2",
+          "uniform_lower_tail": "10/19"
+        },
+        {
+          "difference": "56/95",
+          "edge_upper_tail": "4/5",
+          "threshold": "4/7",
+          "uniform_lower_tail": "4/19"
+        },
+        {
+          "difference": "-1/95",
+          "edge_upper_tail": "1/5",
+          "threshold": "3/4",
+          "uniform_lower_tail": "4/19"
+        },
+        {
+          "difference": "1/5",
+          "edge_upper_tail": "1/5",
+          "threshold": "6/7",
+          "uniform_lower_tail": "0"
+        }
+      ],
+      "uniform_delta": "12/95",
+      "upper_edge_exit_histogram": [
+        {
+          "value": "3/7",
+          "weight": 48
+        },
+        {
+          "value": "4/7",
+          "weight": 144
+        },
+        {
+          "value": "6/7",
+          "weight": 48
+        }
+      ],
+      "upper_size": 120,
+      "variance_domination_pass": true,
+      "variance_penalty": "93/1520"
+    },
+    "pointwise_birth_exit_comonotonicity": {
+      "N": 8,
+      "carrier": "primal",
+      "layer": 5,
+      "layer_birth_exit_covariance": "1/90",
+      "left_birth_exit_degrees": [
+        0,
+        2
+      ],
+      "left_mask": 87,
+      "line": [
+        1,
+        0
+      ],
+      "matrix": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "right_birth_exit_degrees": [
+        2,
+        1
+      ],
+      "right_mask": 91
+    }
+  },
+  "uniform_hazard_equalities": {
+    "all_trivial_zero_slack_zero_bias": true,
+    "count": 78,
+    "rows": [
+      {
+        "N": 8,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          0
+        ],
+        "lower_layer": 2,
+        "matrix": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 8,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          0
+        ],
+        "lower_layer": 2,
+        "matrix": [
+          [
+            2,
+            1
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 8,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          0,
+          1
+        ],
+        "lower_layer": 2,
+        "matrix": [
+          [
+            4,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 8,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          -2
+        ],
+        "lower_layer": 2,
+        "matrix": [
+          [
+            8,
+            4
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 9,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          0,
+          1
+        ],
+        "lower_layer": 3,
+        "matrix": [
+          [
+            9,
+            2
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 9,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          -2
+        ],
+        "lower_layer": 3,
+        "matrix": [
+          [
+            9,
+            4
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 9,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          -2
+        ],
+        "lower_layer": 3,
+        "matrix": [
+          [
+            9,
+            5
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 9,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          -1
+        ],
+        "lower_layer": 3,
+        "matrix": [
+          [
+            9,
+            7
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 10,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          0
+        ],
+        "lower_layer": 2,
+        "matrix": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 10,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          0
+        ],
+        "lower_layer": 3,
+        "matrix": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 10,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "matching",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          0
+        ],
+        "lower_layer": 2,
+        "matrix": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 10,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          0
+        ],
+        "lower_layer": 2,
+        "matrix": [
+          [
+            2,
+            1
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 10,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          0
+        ],
+        "lower_layer": 3,
+        "matrix": [
+          [
+            2,
+            1
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 10,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "matching",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          0
+        ],
+        "lower_layer": 2,
+        "matrix": [
+          [
+            2,
+            1
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 10,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          0,
+          1
+        ],
+        "lower_layer": 2,
+        "matrix": [
+          [
+            5,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 10,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          0,
+          1
+        ],
+        "lower_layer": 3,
+        "matrix": [
+          [
+            5,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 10,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "matching",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          0,
+          1
+        ],
+        "lower_layer": 2,
+        "matrix": [
+          [
+            5,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 10,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          0,
+          1
+        ],
+        "lower_layer": 3,
+        "matrix": [
+          [
+            5,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 10,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          -1
+        ],
+        "lower_layer": 3,
+        "matrix": [
+          [
+            5,
+            4
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 10,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          0,
+          1
+        ],
+        "lower_layer": 3,
+        "matrix": [
+          [
+            10,
+            2
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 10,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          -2
+        ],
+        "lower_layer": 2,
+        "matrix": [
+          [
+            10,
+            5
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 10,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          -2
+        ],
+        "lower_layer": 3,
+        "matrix": [
+          [
+            10,
+            5
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 10,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "matching",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          -2
+        ],
+        "lower_layer": 2,
+        "matrix": [
+          [
+            10,
+            5
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 10,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          -1
+        ],
+        "lower_layer": 3,
+        "matrix": [
+          [
+            10,
+            8
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 11,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          0,
+          1
+        ],
+        "lower_layer": 3,
+        "matrix": [
+          [
+            11,
+            2
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 11,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          0,
+          1
+        ],
+        "lower_layer": 4,
+        "matrix": [
+          [
+            11,
+            2
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 11,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "matching",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          0,
+          1
+        ],
+        "lower_layer": 2,
+        "matrix": [
+          [
+            11,
+            2
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 11,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          -2
+        ],
+        "lower_layer": 3,
+        "matrix": [
+          [
+            11,
+            5
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 11,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          -2
+        ],
+        "lower_layer": 4,
+        "matrix": [
+          [
+            11,
+            5
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 11,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "matching",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          -2
+        ],
+        "lower_layer": 2,
+        "matrix": [
+          [
+            11,
+            5
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 11,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          -2
+        ],
+        "lower_layer": 3,
+        "matrix": [
+          [
+            11,
+            6
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 11,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          -2
+        ],
+        "lower_layer": 4,
+        "matrix": [
+          [
+            11,
+            6
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 11,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "matching",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          -2
+        ],
+        "lower_layer": 2,
+        "matrix": [
+          [
+            11,
+            6
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 11,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          -1
+        ],
+        "lower_layer": 3,
+        "matrix": [
+          [
+            11,
+            9
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 11,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          -1
+        ],
+        "lower_layer": 4,
+        "matrix": [
+          [
+            11,
+            9
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 11,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "matching",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          -1
+        ],
+        "lower_layer": 2,
+        "matrix": [
+          [
+            11,
+            9
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          0
+        ],
+        "lower_layer": 2,
+        "matrix": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            6
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          0
+        ],
+        "lower_layer": 3,
+        "matrix": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            6
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          0
+        ],
+        "lower_layer": 4,
+        "matrix": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            6
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "matching",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          0
+        ],
+        "lower_layer": 2,
+        "matrix": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            6
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "matching",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          0
+        ],
+        "lower_layer": 3,
+        "matrix": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            6
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          0
+        ],
+        "lower_layer": 2,
+        "matrix": [
+          [
+            2,
+            1
+          ],
+          [
+            0,
+            6
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          0
+        ],
+        "lower_layer": 3,
+        "matrix": [
+          [
+            2,
+            1
+          ],
+          [
+            0,
+            6
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          0
+        ],
+        "lower_layer": 4,
+        "matrix": [
+          [
+            2,
+            1
+          ],
+          [
+            0,
+            6
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "matching",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          0
+        ],
+        "lower_layer": 2,
+        "matrix": [
+          [
+            2,
+            1
+          ],
+          [
+            0,
+            6
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "matching",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          0
+        ],
+        "lower_layer": 3,
+        "matrix": [
+          [
+            2,
+            1
+          ],
+          [
+            0,
+            6
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          0
+        ],
+        "lower_layer": 3,
+        "matrix": [
+          [
+            3,
+            0
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          0
+        ],
+        "lower_layer": 3,
+        "matrix": [
+          [
+            3,
+            1
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          0
+        ],
+        "lower_layer": 3,
+        "matrix": [
+          [
+            3,
+            2
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          0,
+          1
+        ],
+        "lower_layer": 3,
+        "matrix": [
+          [
+            4,
+            0
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          0,
+          1
+        ],
+        "lower_layer": 2,
+        "matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          0,
+          1
+        ],
+        "lower_layer": 3,
+        "matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          0,
+          1
+        ],
+        "lower_layer": 4,
+        "matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "matching",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          0,
+          1
+        ],
+        "lower_layer": 2,
+        "matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "matching",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          0,
+          1
+        ],
+        "lower_layer": 3,
+        "matrix": [
+          [
+            6,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          0,
+          1
+        ],
+        "lower_layer": 3,
+        "matrix": [
+          [
+            6,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          0,
+          1
+        ],
+        "lower_layer": 4,
+        "matrix": [
+          [
+            6,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "matching",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          0,
+          1
+        ],
+        "lower_layer": 2,
+        "matrix": [
+          [
+            6,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          0,
+          1
+        ],
+        "lower_layer": 4,
+        "matrix": [
+          [
+            6,
+            2
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          -1
+        ],
+        "lower_layer": 4,
+        "matrix": [
+          [
+            6,
+            4
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          -1
+        ],
+        "lower_layer": 3,
+        "matrix": [
+          [
+            6,
+            5
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          -1
+        ],
+        "lower_layer": 4,
+        "matrix": [
+          [
+            6,
+            5
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "matching",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          -1
+        ],
+        "lower_layer": 2,
+        "matrix": [
+          [
+            6,
+            5
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          0,
+          1
+        ],
+        "lower_layer": 3,
+        "matrix": [
+          [
+            12,
+            2
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          0,
+          1
+        ],
+        "lower_layer": 4,
+        "matrix": [
+          [
+            12,
+            2
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "matching",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          0,
+          1
+        ],
+        "lower_layer": 2,
+        "matrix": [
+          [
+            12,
+            2
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          -3
+        ],
+        "lower_layer": 3,
+        "matrix": [
+          [
+            12,
+            4
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          -2
+        ],
+        "lower_layer": 4,
+        "matrix": [
+          [
+            12,
+            5
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          -2
+        ],
+        "lower_layer": 2,
+        "matrix": [
+          [
+            12,
+            6
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          -2
+        ],
+        "lower_layer": 3,
+        "matrix": [
+          [
+            12,
+            6
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          -2
+        ],
+        "lower_layer": 4,
+        "matrix": [
+          [
+            12,
+            6
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "matching",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          -2
+        ],
+        "lower_layer": 2,
+        "matrix": [
+          [
+            12,
+            6
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "matching",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          -2
+        ],
+        "lower_layer": 3,
+        "matrix": [
+          [
+            12,
+            6
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          -2
+        ],
+        "lower_layer": 4,
+        "matrix": [
+          [
+            12,
+            7
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          2,
+          -3
+        ],
+        "lower_layer": 3,
+        "matrix": [
+          [
+            12,
+            8
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          -1
+        ],
+        "lower_layer": 3,
+        "matrix": [
+          [
+            12,
+            10
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "primal",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          -1
+        ],
+        "lower_layer": 4,
+        "matrix": [
+          [
+            12,
+            10
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      },
+      {
+        "N": 12,
+        "association_covariance": "0",
+        "association_reward": "0",
+        "carrier": "matching",
+        "cauchy_left_square": "0",
+        "cauchy_variance_product": "0",
+        "degree_bias": "0",
+        "edge_slack": "0",
+        "line": [
+          1,
+          -1
+        ],
+        "lower_layer": 2,
+        "matrix": [
+          [
+            12,
+            10
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "uniform_delta": "0",
+        "variance_penalty": "0"
+      }
+    ]
+  },
+  "verdict": {
+    "general_ULC_closed": false,
+    "new_exact_progress": "the RN bias splits into a universal lower-layer variance penalty and an upper-layer birth-exit association reward",
+    "remaining_proof_target": "prove the two aggregate inequalities in the conditional variance-association lemma, possibly by two-step path summation rather than statewise transport",
+    "routes_closed": [
+      "first-order stochastic dominance: exact N12 counterexample",
+      "pointwise birth-exit comonotonicity: exact N8 counterexample",
+      "worst-case Cauchy certificate: four exact N12 failures"
+    ],
+    "sharp_bounded_pattern": "variance penalty uses at most 5/14 of edge slack; association covariance is nonnegative on all 984 pairs"
+  }
+}
