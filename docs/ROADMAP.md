@@ -8,11 +8,11 @@ For scientific coordinates use `docs/RESEARCH-MAP.md`; for claim and branch stat
 
 ## Current inventory and default attention
 
-The integrated control-plane snapshot is `main@81b4963`. It inventories 59 score paths: 28 direct typed entrypoints, 27 wrapper-covered frozen kernels, 3 migration-required paths and 1 non-applicable utility. Later exact controls—including the #370 envelope and recurrence/Hankel/ideal/realization framework plus PRs #420/#430/#431—do not change scorer counts or production evidence. Draft PR #267 inventories 65 paths: 28 direct, 27 covered, 9 migration-required and 1 utility. Semantic adoption is a composability layer, not a scientific grade, permission or task lock.
+The integrated control-plane snapshot is `main@6834af4`. It inventories 59 score paths: 28 direct typed entrypoints, 27 wrapper-covered frozen kernels, 3 migration-required paths and 1 non-applicable utility. Later exact controls—including the #370 framework at component tip `cc3c204` and observer/acquisition gates through PR #436—do not change scorer counts or production evidence. Draft PR #267 inventories 65 paths: 28 direct, 27 covered, 9 migration-required and 1 utility. Semantic adoption is a composability layer, not a scientific grade, permission or task lock.
 
 | Attention | Live object | Immediate discriminator |
 |---:|---|---|
-| 1 | True norm-4 Phase E plus P334 cooperative continuation | `E_top=1-P1` is topology, not energy; recover/minimally acquire the same-batch bulk-energy row and score `J_top/J_bulk`. In parallel move P334 from two failed shape absorbers to checkpoint-clustered `b2`/two-future survival |
+| 1 | True norm-4 Phase E plus P334 cooperative continuation | `E_top=1-P1` is topology, not energy; recover/minimally acquire the same-batch bulk-energy row and score `J_top/J_bulk`. In parallel move P334 from two failed shape absorbers and unbranched-trace ambiguity to checkpoint `b2` plus common-update-then-clone branching |
 | 2 | P250 adaptive ordered production | the archived endpoint window is compatible with the positive 101-frequency cone, endpoint/fixed toggles are order-blind, and exact `6fbbe5e` supplies the adaptive D/J interface. Run it at N505 with unconditional defined/tie rates and joint periodogram covariance |
 | 3 | E_top `tau x topology-map` | one universal cross-geometry A/E ray is rejected relative to four lineage rays. Use fixed-area, twist and modular-equivalent controls to separate modulus response from the discrete topology map rather than fit another universal ray |
 | 4 | P337/P334 completion-current localization | split `J12` into risk composition and conditional hazard, score age-standardized `mark12_h4`, and keep cooperative continuation separate from the additive E channel |
@@ -48,13 +48,7 @@ A_top' = J01 + J12 + 2 J02.
 
 Thus direct `0->2` current cancels from fixed-p `E_top`; it is not a third additive E component. P334's leading-three temporal subspace is stable across N325/N425, but temporal rank is not a field count. Cheap current geometry at `769d7ae` does not absorb production age slopes, and the completed bottleneck score `f97b906` also fails its common rule: N325 retains `75.6%/67.0%`, N425 `30.4%/27.2%`. Main PR #409 and open PR #415 identify the next state hierarchy as `H2=b1`, cooperative pairs `b2`, pair overlap/triangles and minimal triples.
 
-**Immediate decision output:** run checkpoint-clustered `b2`/continuation sketches with at least two future orders and predeclared held-out horizons. Use horizon two as exact calibration. Separately use the midpoint decomposition
-
-```text
-Delta J12 = hbar Delta R + Rbar Delta h
-```
-
-to separate risk-age composition from conditional completion hazard, then use `mark12_h4` for an age-standardized completion-cause score. Do not add another one-pass shape proxy, aggregate exponent or N1360 block.
+Main direct commit `d9f813b` now gives the decisive acquisition warning: two N16 states have the same complete unbranched survival vector but, after one common update and cloning, branching probabilities `95/196` and `93/196`. **Immediate decision output:** record checkpoint `b2`, perform one common update, then launch two conditionally independent clone continuations and score the branching law separately from unbranched horizons. This is one finite counterexample, not intrinsic memory or a field count. Do not add another one-pass shape proxy, aggregate exponent or N1360 block.
 
 ### 2. Replace P250 endpoint rank with adaptive ordered production
 
@@ -64,13 +58,13 @@ Exact branch `af7dd01` now proves a harder boundary: every current endpoint-only
 
 Exact `3128e3e` rules out fixed-site overwrites. Exact `6fbbe5e` then constructs a covariant adaptive state-dependent D/J pair: 8,136 of 82,944 admissible L3 states have all four operations defined, and every defined rectangle has nonzero `R_minus`. **Immediate decision output:** run that frozen interface at N505, retaining four branch-specific supports, typed intermediate states, `R_plus/R_minus`, complement pairs and periodograms. Report unconditional `I_defined*R_minus`, conditional response and defined/tie rates. Final endpoint labels and more rank shells are insufficient.
 
-### 3. Score the frozen width-4 P333 charge-two landing character
+### Parallel exact: score the frozen width-4 P333 charge-two landing character
 
 The crossed/trivial trace and graded direct sum remain useful, but regular Q differentiation is semisimple. Scalar detach and scalar marks fail. The width-3 C3 charge-one doublet at `b82e8cc` repairs the exact gate, but its width-4 C4 continuation `7b40ec7` fails at Gram self-adjointness after a `4 -> 2 -> empty` ladder. The smallest untested irrep is the one-dimensional C4 charge-two alternating landing character, frozen at `a572058`.
 
 **Immediate decision output:** run the single charge-two gate. If it succeeds, derive its complete Q-family source and test positivity/dimension velocity. If it fails, escalate to rooted first/subsequent/nested history using the accumulated left-null witnesses. Do not reopen scalar or charge-one marks.
 
-### 4. Keep the P334 Hall theorem independent of the acquired geometry block
+### Parallel theory: keep the P334 Hall theorem independent of the acquired geometry block
 
 P334 production shows strong negative birth-age slopes at N325/N425. Recorded strict-birth geometry changes them by at most `7.80e-4`; branch `742a8b0` further finds `iota01=iota12=1` on every risk-set survivor and that the exact birth-site Smith class preserves more than `99.8%` of each slope. These are nested controls on the same paths. They remove recorded birth-local and site-pair explanations but do not distinguish intrinsic temporal memory from unrecorded current configuration.
 
@@ -78,11 +72,25 @@ P334 production shows strong negative birth-age slopes at N325/N425. Recorded st
 
 **Independent Hall output:** prove mixed corrected-reservoir orbit-Hall saturation for arbitrary HNF or expose its minimum-cut witness and carrier bound. Pure channels, mark-only, base-only and union-preserving switches are resolved failures; BA remains a separate concordance injection. Hall priority never blocks the current-geometry acquisition, and neither line licenses the other.
 
-### 5. Replace a universal E_top ray with `tau x topology-map`
+### 3. Replace a universal E_top ray with `tau x topology-map`
 
 Branch `62585f2` rejects one gauge-free global A/E ray relative to four lineage rays (`Delta chi2=14.7004/3`, `p=.00209`), while the global ray's absolute fit alone survives the `.01` gate. The largest split is P43 versus P50. This is geometry dependence of the finite response, not rejection of H4, a field or an asymptotic modular law.
 
 **Immediate decision output:** construct a factorial `tau x topology-map` design with fixed area, matched twist and modular-equivalent controls. The topology-map factor must distinguish cover multiplication, ordinary size transfer or another registered map without conflating it with `tau`. Score interaction and main effects with the existing lineage covariance before adding a universal ray or exponent.
+
+### 4. Separate P337 risk composition from conditional completion hazard
+
+Draft `7e5fcf1` already verifies `E_top'=J12-J01`, so direct `0->2` current is not a third additive E component. Use the exact midpoint decomposition
+
+```text
+Delta J12 = hbar Delta R + Rbar Delta h
+```
+
+on the existing N85/N170/N340/N680 component schema, with N130 only as cross-lineage control. Then score age-standardized `mark12_h4`. Acquire only the conditional-hazard row that is genuinely absent; do not substitute a larger N1360 endpoint block.
+
+### 5. Strengthen the typed complex `rho`-C3 response
+
+The current real ordinary rows alias conjugate characters, while the typed complex character is parameter-free. Strengthen N112 or change observer/geometry; do not repeat the proved-low-power N60-only opposite-Pell row. Preserve real/imaginary covariance and declare the sector in the manifest.
 
 ### 6. Acquire actual `AU` and `UA`
 
@@ -98,7 +106,7 @@ Branch `5f5afd3` preserves a positive fact: spherical W5 duality exchanges rim a
 
 **Immediate decision output:** compute the joint primal/disk-relative-dual boundary connectivity, retaining the internal cycle datum that the terminal projection loses, then give an explicit periodic embedding and stochastic/comparison map. Do not fit another homogeneous balance root or call spherical self-duality a disk-cell threshold equation.
 
-### 8. Run production-first elimination as a parallel method lane
+### Parallel method: run production-first elimination on real covariance
 
 For fixed state dimension, real and imaginary matrix entries and their word predictions form a polynomial model. The project has direct production examples in cross-geometry E_top, six-size P154 Phase D, P250 and the Euler clock. But the P154 result is topological A/E only; the actual energy-operator `J_top/J_bulk` projection is still undone because no same-batch ordinary-energy row was measured. That missing production observer now outranks stronger algebraic packaging.
 
@@ -106,9 +114,9 @@ The default ladder is exact semantic/module identities, complete production cova
 
 PRs #410--#414 are main-integrated and provide the bounded exact-rational regression ladder. Main commits `dafc5e1 -> 2193eb7 -> cf4c4b5 -> c9b069a -> cc3c204` now add a fail-closed certificate envelope and exact finite-recurrence, rational-realization, linear-ideal and Hankel-minor primitives. The toy-fixture gap is closed and the basic arithmetic layer has landed; arbitrary typed problem building and implementation-independent final verification remain open. The next method deliverable is nevertheless the production-confidence adapter that ingests an actual Phase-E or adaptive-P250 typed covariance problem. A physical M3c, full gauge atlas and directed-interval/SOS hierarchy remain later survivor-dependent layers.
 
-PRs #420/#430/#431 add exact product-Walsh bandwidth, two-sided hexagonal Pell and mixed-log-curvature oracles. They are useful only as declared design filters: Walsh applies to its Bernoulli retain/resample clock rather than the P334 age/permutation clock; Pell fixes geometry displacement but no E4 amplitude; `H25` is scoreable only with the same observable at N/2N/5N/10N and joint covariance. None is a reason to start N650/N850 or postpone the three production rows above.
+PRs #420/#430/#431 add exact product-Walsh bandwidth, two-sided hexagonal Pell and mixed-log-curvature oracles; a nonzero `H25` also occurs for ordinary powers and does not identify a log/Jordan block. PRs #432/#433/#436 then make the semantic boundary fail-closed: P267 marked birth is Palm-like/path-adaptive, fixed-K `O_ext` alone supports Johnson-slice semantics, `O_far` and the six-level high-pass are not scoreable from current aggregates, and exact K-centering removes degree-one Euler projections without turning the remaining degrees 2/3/4 into fields. None is a reason to start N650/N850 or postpone the production rows above.
 
-### 9. Use the Operator Passport as a six-coordinate dashboard
+### Dashboard: use the Operator Passport as six separable coordinates
 
 Track representation/projector zeros, finite TL/partition-algebra action, propagation words and rank, normalization-free sphere fusion, torus/modulus response and a cross-microscopic positive control. Each coordinate may redirect attention independently; “passport complete” is not a lifecycle state or a prerequisite.
 
@@ -116,7 +124,7 @@ The literature boundary is exact. Loop-model three-point work motivates normaliz
 
 P321's fresh scale/E4 pass remains ordinary scalar compatibility, not transparency or field identity. Its exact closure descendants require crossed plus trivial modules. P333 now shows that neither the minimal scalar detach nor one terminal mark repairs the Gram/source intersection; the live interface is a typed multi-mark/direct-sum module with a full-Q source. The exact Q=4 colour ratios and the single-orbit spatial alias gate remain distinct coordinates and must not be pooled.
 
-### 10. Preserve the remaining orthogonal lanes
+### Preserve the remaining orthogonal lanes
 
 The completed Gaussian-annulus rectangle does not reject one effective generator on its local pivotal rows, but it still lacks path order. A maximin `AU` versus `UA` cell or intermediate state is more informative than another replica. The external Euler N325/N425 determinant likewise leaves the current source/observer basis projectively rank one. The exact occupation clock now explains 53%/56% but leaves 47%/44% after fixed-occupation and JS projection, so the next source must be physically new: K1-age/K2-completion/collision semantics, cross-boundary connectivity or winding/seam character rather than another density clock.
 
@@ -152,7 +160,7 @@ Reuse the information-per-CPU optimizer, sequential-stopping calibration, thresh
 
 Issue #40's exact production-pair certificate now supplies the full control/control Gram for the four declared fixed-K motif contrasts on five Gaussian pairs. All conditional means are exactly zero; the Gram is full rank for every `4<=K<=N-3`, and the N130/N170 `nn_edge` versus `diagonal_pair` entry is exactly zero for every K. This removes the need to estimate the control Gram from production, but it measures no target/control covariance, fitted coefficient, variance reduction or wall time and does not satisfy the `>=2x` promotion gate. **Minimum pilot:** retain paired batches, estimate only target/control cross-covariance, fit without leakage, and report held-out variance reduction. Motif control remains a shared method lane, not a scientific mainline.
 
-Main also has a coherent 200-descriptor/952-map registry. At `main@81b49634abcc50721ef80c04366618a0f2e2c9d6`—including numbered PRs through #431 in nonmonotone merge order—the live corpus contains 59 paths: 28 direct typed entrypoints, 27 wrapper-covered frozen kernels, 3 migrations and 1 utility. The newer exact controls do not modify frozen scorer kernels or production results. Draft PR #267 contains 65 paths after six additional channel-bearing scorers, giving 28 direct + 27 covered + 9 migration + 1 utility. Those six are migration-required because their reusable typed adapters remain future work, not because their evidence is weaker.
+Main also has a coherent 200-descriptor/952-map registry. At `main@6834af440619ea79c97a9ad47262140fdccd64ec`—including numbered PRs through #436 in nonmonotone merge order—the live corpus contains 59 paths: 28 direct typed entrypoints, 27 wrapper-covered frozen kernels, 3 migrations and 1 utility. The newer exact controls do not modify frozen scorer kernels or production results. Draft PR #267 contains 65 paths after six additional channel-bearing scorers, giving 28 direct + 27 covered + 9 migration + 1 utility. Those six are migration-required because their reusable typed adapters remain future work, not because their evidence is weaker.
 
 PR #339 provides a reusable exact odd-jet normalization under linear thermal-coordinate rescaling, and PR #349 supplies exact order-five synthetic nonlinear bare-coordinate elimination. Do not schedule either as a separate production line. The remaining methods gap is a typed real-observable adapter with common normalization, delete-one recomputation, root uncertainty and full joint nonlinear covariance on an existing shared-observable block.
 
@@ -185,14 +193,14 @@ x nuisance cancellation and archive reuse
 - **P321/P333 closure interface:** scalar detach and endpoint marks fail. Charge one repairs width 3 but fails width 4 at `7b40ec7`; score the frozen C4 charge-two alternating landing gate `a572058` before a larger rooted/history full-Q module.
 - **Projective birth/twist flux:** P337 localizes first-birth/completion currents. P334's cheap current-geometry and completed bottleneck scores both fail as common absorbers. Main PR #409 and open PR #415 identify `H2=b1`, cooperative pairs `b2`, overlaps/triangles and minimal triples as the next continuation hierarchy. Run checkpoint-clustered survival; keep midpoint composition/hazard, `mark12_h4` and corrected-reservoir Hall separate.
 - **P250 spatial endpoint and ordered intervention:** the older finite-window eliminations remain valid, but PR #416 and branch `dbeb29c` show that the N505 endpoint ranks are compatible with an ordinary positive spatial spectrum. Exact `af7dd01` removes endpoint order, `3128e3e` removes fixed overwrites, and `6fbbe5e` supplies a viable adaptive D/J witness. The next object is its N505 production pilot with retained supports, typed intermediate states, defined/tie rates and joint periodogram covariance.
-- **Issue #370 exact ladder and framework:** the five toy fixtures and the fail-closed recurrence/Hankel/ideal/realization framework are `main_integrated` in current `main@81b4963` (framework component tip `cc3c204`). Build the production-confidence adapter and use it on a real bounded class; do not describe the compiler as missing or treat the fixtures as independent scientific votes.
+- **Issue #370 exact ladder and framework:** the five toy fixtures and the fail-closed recurrence/Hankel/ideal/realization framework land at component tip `cc3c204` and remain available in current `main@6834af4`. Build the production-confidence adapter and use it on a real bounded class; do not describe the compiler as missing or treat the fixtures as independent scientific votes.
 - **P250/Jordan identifiability:** open PR #385 proves that unrestricted near-colliding ordinary modes are not positively separated from a Jordan semigroup on finite noisy data, and gives a conditional C4 character obstruction for a cyclic flat length-five Laurent quotient. Retain those exact premise gates, but discard its now-stale R2-gauge application. First obtain the candidate-independent rank/path row; use the character obstruction only if flatness, cyclic source and internal C4 are established.
 - **Q-lift and connected-history transport:** P333 proves raw Q jets are lift-dependent and supplies the exact signed nilpotent `K=(D-J)^2` as a Gram-compatible Jordan positive control. Scalar detach and one endpoint mark are now exact failures, with restricted-skew lower bounds requiring more typed marks. Full-Q source definition, retained marked connectivity, positivity and dimension velocity outrank another free endpoint block.
 - **Gaussian norm-10 power:** source-only planning projects 27.21B/55.18B samples per lineage and negligible ideal-CRN gain. Defer production; only a target variance/runtime pilot can reopen it.
 - **Issue #40 motif covariance:** exact geometry fixes the control/control Gram, including full central-K rank and the N130/N170 `nn_edge`--`diagonal_pair` zero. The remaining pilot is target/control cross-covariance plus held-out variance reduction; no production target or `>=2x` result exists.
 - **Terminal-gadget bounded family:** PRs #394--#396 complete all 27 probability polynomials, vulnerability and abstract planarity. Branch `5f5afd3` then closes W5 disk self-duality while preserving spherical orbit exchange. The next object is joint primal/disk-relative-dual boundary connectivity and a periodic comparison map, not another candidate polynomial or planarity census.
 - **Global E_top ray:** branch `62585f2` rejects one universal ray relative to four lineage rays while leaving its absolute fit and H4 open. The next design is `tau x topology-map` with matched area/twist/modular controls, not another universal-ray fit.
-- **Semantic control plane:** `main@81b49634abcc50721ef80c04366618a0f2e2c9d6` inventories 59 paths: 28 direct, 27 covered, 3 migrations and 1 utility; Draft PR #267 inventories 65 = 28 + 27 + 9 + 1. Exact controls and framework components through the current main do not change scorer counts or production evidence.
+- **Semantic control plane:** `main@6834af440619ea79c97a9ad47262140fdccd64ec` inventories 59 paths: 28 direct, 27 covered, 3 migrations and 1 utility; Draft PR #267 inventories 65 = 28 + 27 + 9 + 1. Exact controls and framework components through the current main do not change scorer counts or production evidence.
 - **Norm-4:** analytic q2/common generator fail; generation four keeps a small-state family live. Canonical six-size Phase D now finds reinforcing K1/K2 and excludes five A/E-plane images. It still cannot compare `J_top/J_bulk` without a separately measured same-batch ordinary-even singlet and explicit transfer images.
 - **PR #247 / annulus:** the ordinary plus-shell control passes, the matching-odd minus-shell scalar law fails and matched-delta equality is marginally tense inside one correlated block; a distinct two-state recurrence survives held-out N365. The sector score rejects rank one specifically for `A_minus` but leaves several rank-two dynamics aliased. A discriminating context is higher value than more same-row replicas.
 - **Triangular log pair:** the cross-cutoff shear is measured; repeat production without gauge closure is lower value.

@@ -1,6 +1,6 @@
 # Late-frontier control note: from anomaly collection to identifiable mechanisms
 
-Snapshot used here: `main@81b49634abcc50721ef80c04366618a0f2e2c9d6`, plus the immutable branch commits named below. This note ranks attention; it grants no permission, closes no issue and treats every reused random block once.
+Snapshot used here: `main@6834af440619ea79c97a9ad47262140fdccd64ec`, plus the immutable branch commits named below. This note ranks attention; it grants no permission, closes no issue and treats every reused random block once.
 
 ## Executive decision
 
@@ -54,7 +54,7 @@ Branch `96df7c8` computes the exact affine-Hom, Gram and source intersection at 
 
 The P334 current-`k0` and bottleneck pilots are both complete. Result `769d7ae` shows cheap essential-size/frontier/carrier summaries do not absorb production-anchored age slopes and explain only about `0.9%--2.3%` of temporal modes 2/3. Result `f97b906` shows the compact bottleneck/2-core/articulation vector also fails common absorption: N325 retains `75.6%/67.0%`, N425 `30.4%/27.2%`. Main PR #409 identifies `H2=b1` and cooperative pairs `b2`; open PR #415 shows overlaps/triangles and minimal triples enter at longer horizons. The next production object is checkpoint-clustered cooperative survival, not another one-pass shape proxy or an intrinsic-memory claim.
 
-PRs #410--#414 are main-integrated and close the requested exact-rational toy ladder. Main commits through `81b4963` additionally provide a fail-closed envelope and exact finite-recurrence, Hankel-minor, linear-ideal and supplied-realization primitives. Their canonical adapters remain fixture-shaped: arbitrary typed problem building, witness search, Level-S covariance input and an implementation-independent verifier are not complete. PRs #420/#430/#431 add exact observer-bandwidth, Pell-geometry and mixed-log-curvature filters without reading production observations. The next #370 deliverable is therefore one production-confidence adapter for a real frozen block—not another abstract compiler. Physical M3c, full chart coverage and interval/SOS remain open.
+PRs #410--#414 are main-integrated and close the requested exact-rational toy ladder. The #370 framework lands at component tip `cc3c204`; current main additionally contains observer/geometry/scale/acquisition filters through PR #436 without new production observations. Their canonical adapters remain fixture-shaped: arbitrary typed problem building, witness search, Level-S covariance input and an implementation-independent verifier are not complete. The next #370 deliverable is therefore one production-confidence adapter for a real frozen block—not another abstract compiler. Physical M3c, full chart coverage and interval/SOS remain open.
 
 ### The bounded gadget family has been used, not merely enumerated
 

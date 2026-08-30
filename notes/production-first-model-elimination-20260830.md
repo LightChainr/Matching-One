@@ -30,7 +30,7 @@ The current boundary is uneven and should be read literally:
 | Issue #275 Phase D, canonical `A_top/E_top` coordinates | **production-scored** on ten archived aligned direction pairs, including the P57 norm-5 N325/N425 blocks | full delete-one covariance and finite-model Mahalanobis exclusion; not a finite-sample theorem or a field identification | localize the surviving even response by activation, geometry and state current |
 | P154 norm-4 production | **Phase-D production-scored** at N65/N85/N130/N170/N260/N340 | immutable PR #273 blobs supply `K1/K2`, canonical `A_top/E_top` and full aligned-delete-one covariance for the declared 1.9B/1B blocks; all six are K1-dominant and reinforcing, but `E_top=1-P1` is topology, not the energy operator | treat this as the topological arm of Phase E; do not repeat scalar/common-line scoring or call it an energy projection |
 | Issue #275 Phase E, `J_top` versus `J_bulk` | **not done and not identifiable from the present observer set** | P154 stores only threshold-rank histograms and Kminus/Kplus moments. It has no same-batch ordinary bulk-energy/singlet row, cross-moment or joint covariance; an unconstrained `J_bulk` can therefore be changed without changing any stored statistic | recover a compatible same-batch energy row if it exists outside P154, otherwise minimally acquire `B,B2,A*B,E*B` and freeze explicit `J_top/J_bulk` transfer images |
-| Issue #370 exact certificate framework | **five exact-rational Level-E controls plus basic envelope/recurrence/Hankel/ideal/realization primitives are main-integrated through `81b4963`** | the canonical adapters remain fixture-shaped; arbitrary typed problem building, witness search, a separately implemented verifier, physical M3c, full gauge coverage and noisy production confidence sets are absent | connect one real frozen production covariance to the existing framework; do not build another toy example or parallel abstract compiler |
+| Issue #370 exact certificate framework | **five exact-rational Level-E controls plus basic envelope/recurrence/Hankel/ideal/realization primitives land at component tip `cc3c204` and remain in current `main@6834af4`** | the canonical adapters remain fixture-shaped; arbitrary typed problem building, witness search, a separately implemented verifier, physical M3c, full gauge coverage and noisy production confidence sets are absent | connect one real frozen production covariance to the existing framework; do not build another toy example or parallel abstract compiler |
 | Issue #370 production elimination | **statistical Level-S applications exist** for E_top and P250, plus an observer-wise E_top outer audit | the outer audit is floating Gaussian Bonferroni/Fieller, not directed rational interval arithmetic, Positivstellensatz or SOS | escalate one bounded survivor only when the stronger proof object would change the survivor set |
 
 In particular, the norm-5 request is no longer waiting for a synthetic harness:
@@ -70,13 +70,15 @@ next output is the production-confidence adapter for one real frozen block.
 A separately implemented final verifier, directed intervals/SOS and a physical
 M3c construction remain survivor-dependent follow-ups.
 
-The later main commits `bd80702`, `2deea8c` and `81b4963` provide exact
-two-sided Pell geometry, a mixed-scale log-curvature transform and a
-product-Walsh observer-bandwidth theorem. They are design oracles, not new
-production rows: none reads the norm-4, P334 or P250 archives. Apply them only
-where they change a declared production contrast; do not use their arrival to
-postpone the missing `J_bulk` acquisition or the two intervention-sensitive
-pilots.
+Later main through `6834af4` adds exact Pell, mixed-curvature, product-Walsh,
+Johnson-slice, acquisition-semantic and K-centered Euler controls. They are
+design oracles, not new production rows. The semantic gate is concrete: P267
+marked birth is Palm-like/path-adaptive; only retrospective fixed-K `O_ext`
+supports Johnson, while `O_far` and the six-level high-pass are not scoreable.
+The direct N16 branching counterexample `d9f813b` also shows that a complete
+unbranched survival law can miss a common-update-then-clone gap. Apply these
+facts to sharpen acquisition; do not use them to postpone `J_bulk`, P334
+branching production or adaptive P250.
 
 ## First production application: this archive requires an even topological coordinate
 
