@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import csv
 from dataclasses import dataclass
+import gzip
 import json
 from pathlib import Path
 from typing import Any, Iterable, Sequence
@@ -128,7 +129,9 @@ def cos4(a: int, b: int) -> mp.mpf:
 
 def read_path(path: Path) -> dict[tuple[int, str, int], list[PathRow]]:
     groups: dict[tuple[int, str, int], list[PathRow]] = {}
-    with path.open(newline="", encoding="utf-8") as handle:
+    opener = gzip.open if path.suffix == ".gz" else Path.open
+    mode = "rt" if path.suffix == ".gz" else "r"
+    with opener(path, mode, newline="", encoding="utf-8") as handle:
         for raw in csv.DictReader(handle):
             row = PathRow(
                 n=int(raw["n"]),
