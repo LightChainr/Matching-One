@@ -2,7 +2,7 @@
   "schema": "matching-one/p250-projective-leg-state-dimension-manifest/v1",
   "issue": 250,
   "status": "retrospective_model_freeze_no_new_simulation",
-  "scorer_commit": "1cbd344c31abe773ac320d0bd6446dd8d378ca4d",
+  "scorer_commit": "c38c6650cebe6a35d5dbb0e5dca5ee79dd541b8b",
   "inputs": {
     "target_batches": "results/huawei-20260830/P250-z5-projective-leg-cross-scale-n505-80k/response_80k.batches.csv",
     "target_sha256": "8b0e06f3fdc577c362e6f2404db60933d0cf489ee532c053288a03c44dc7fe5c",
@@ -38,7 +38,8 @@
   },
   "decision_alpha": 0.01,
   "decision_rule": [
-    "rank K closes only if N505 d5 and at least one declared N325 eigenvalue transport have p>=0.01",
+    "rank K closes only if its covariance-aware N505 d1-d4 training residual, N505 d5 holdout, and at least one declared N325 eigenvalue transport have p>=0.01",
+    "the N505 training score subtracts the 2K fitted real recurrence parameters from its degrees of freedom",
     "choose the first closing K among ranks 1 and 2",
     "if neither closes, rank3 can establish only a target-side dimension because N325 d1-d3 cannot constrain it"
   ],

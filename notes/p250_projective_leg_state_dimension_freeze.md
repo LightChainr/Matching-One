@@ -28,7 +28,9 @@ fit amplitudes and d3 is held out.  This is a deliberately simple finite-image
 model, not a claim that conformal symmetry fixes the full torus two-point
 function.
 
-The first rank whose N505 holdout and at least one N325 transport both have
-`p>=0.01` is the minimal identifiable cross-geometry dimension.  All complex
+The first rank whose covariance-aware N505 fit residual, N505 holdout, and at
+least one N325 transport all have `p>=0.01` is the minimal identifiable
+cross-geometry dimension.  The fit score subtracts the `2K` fitted real
+recurrence parameters from its degrees of freedom.  All complex
 phases and delete-one batch covariance are retained.  No simulation, cubic
 row, OPE phase, or single-power rescue is allowed in this score.
