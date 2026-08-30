@@ -1,0 +1,26 @@
+{
+  "schema": "matching-one/noncrossing-connectivity-codec/v1",
+  "issue": 11,
+  "status": "exact_small_width_oracle_only",
+  "point_order": "cyclic labels 0..width-1",
+  "encoding": "canonical restricted-growth string",
+  "maximum_checked_width": 8,
+  "expected_counts": {
+    "1": 1,
+    "2": 2,
+    "3": 5,
+    "4": 14,
+    "5": 42,
+    "6": 132,
+    "7": 429,
+    "8": 1430
+  },
+  "independent_enumerators": [
+    "restricted_growth_strings",
+    "recursive_unlabelled_blocks"
+  ],
+  "claim_boundary": {
+    "conclusion": "The canonical codec and two independent small-width enumerators agree exactly through width eight.",
+    "unresolved": "No transfer transitions, topological sectors, eigenvalues, published-width reproduction, resource model, or frontier extension is supplied; issue #11 remains open."
+  }
+}
