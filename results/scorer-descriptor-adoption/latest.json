@@ -8,7 +8,6 @@
     "scripts/score_p159_pell_hex_filter.py": "scores primitive rank-1 homology line probabilities through transported C/Q/S character coordinates across two Pell designs with implicit basis, phase, normalization, and reused-evidence semantics",
     "scripts/score_p49_fullcurve_doubling.py": "scores matching tails, thermal even/odd contrasts, signed lineage root gaps, and normalized P4 projectors across doubled sizes without typed quantity families",
     "scripts/score_p50_fullcurve_n290.py": "scores thermal-even DeltaM, slope, signed root-gap, and four P4 quantities across independent N145/N290 lineages using implicit feature, order, sign, and stream semantics",
-    "scripts/score_v14_scalar_root_projector.py": "projects paired matching roots into H4-null scalar and H4 coordinates, then scores fixed-beta and doubling-lineage reconstructions without typed quantity, orientation, or lineage maps",
     "scripts/threshold_score_modes.py": "projects paired orientation threshold curves into intrinsic-center S/D Krawtchouk modes, DeltaCos4-normalized P4 coordinates, and parity towers with implicit sector, basis, normalization, and shared-evidence semantics"
   },
   "corpus_exclusions": [
@@ -16,12 +15,12 @@
   ],
   "corpus_glob": "scripts/*score*.py",
   "counts": {
-    "channel_bearing_migration_required": 9,
-    "covered_frozen_kernel": 21,
+    "channel_bearing_migration_required": 8,
+    "covered_frozen_kernel": 22,
     "descriptor_not_applicable_generic_utility": 1,
-    "direct_typed_entrypoint": 22,
+    "direct_typed_entrypoint": 23,
     "outside_registered_typed_path": 0,
-    "total": 53
+    "total": 54
   },
   "descriptor_not_applicable_generic_utilities": {
     "scripts/kappa3_half_score.py": "generic Bernoulli score-polynomial and aggregation helper; intentionally accepts an opaque caller-supplied observable D(C) and defines no topology observable"
@@ -285,7 +284,12 @@
     {
       "git_blob_sha": "2e4bb607777c6a75a24beeed412640b977622844",
       "path": "scripts/score_v14_scalar_root_projector.py",
-      "status": "channel_bearing_migration_required"
+      "status": "covered_frozen_kernel"
+    },
+    {
+      "path": "scripts/score_v14_scalar_root_projector_typed.py",
+      "git_blob_sha": "b6970aca1101d49ffcc8d1c662545f4b937d9cc9",
+      "status": "direct_typed_entrypoint"
     },
     {
       "git_blob_sha": "0e8157bad50fb265efb3a0ca9cde1c795f34d995",
@@ -315,6 +319,7 @@
     "scripts/score_rank_gap_boundary_targets_typed.py": "scripts/score_rank_gap_boundary_targets.py",
     "scripts/score_threshold_rank_root_doubling_typed.py": "scripts/score_threshold_rank_root_doubling.py",
     "scripts/score_v14_fixedp_scalar_projector_typed.py": "scripts/score_v14_fixedp_scalar_projector.py",
-    "scripts/score_p231_vacuum_kdv_sector_typed.py": "scripts/score_p231_vacuum_kdv_sector.py"
+    "scripts/score_p231_vacuum_kdv_sector_typed.py": "scripts/score_p231_vacuum_kdv_sector.py",
+    "scripts/score_v14_scalar_root_projector_typed.py": "scripts/score_v14_scalar_root_projector.py"
   }
 }
