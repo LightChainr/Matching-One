@@ -1,0 +1,85 @@
+{
+  "schema": "matching-one/p418-crt-degauging-freeze/v1",
+  "status": "frozen_before_archive_reveal",
+  "issues": [418, 406, 250],
+  "base_commit": "dbeb29c",
+  "new_monte_carlo": false,
+  "inputs": [
+    {
+      "name": "radius4",
+      "path": "results/huawei-20260830/P250-projective-leg-bivariate-80k/response_80k.batches.csv",
+      "sha256": "dfbd83d680080939bcae5cad0090af95d82748ed780ce73807d4b002d6a9ca72"
+    },
+    {
+      "name": "radius5",
+      "path": "results/huawei-20260830/P250-projective-leg-radius5-morphism-1200k/response_1200k.batches.csv",
+      "sha256": "50985e38c9c8afab0c8b0e78113184d33861d928aefaba1e8043e67fc348677e"
+    },
+    {
+      "name": "radius6",
+      "path": "results/huawei-20260830/P250-projective-leg-radius6-flat-1200k/response_1200k.batches.csv",
+      "sha256": "8734a15e61a7358da66019cf26d75a3d4f2deb0185831526204967a0ee5a42cf"
+    }
+  ],
+  "exact_geometry": {
+    "parent": "H=Z^2/<(10,1),(-1,10)>, order 101, j(a,b)=a-10b mod101",
+    "children": "E_plus and E_minus are the order-505 Gaussian child translation groups used by the pinned runners",
+    "kernel": "K=< (10,1) >, order 5",
+    "CRT_section": "s_CRT(x)=405*s(x), with 405=0 mod5 and 405=1 mod101",
+    "section_checks": [
+      "well-defined against the deck kernel",
+      "projection is identity on all 101 parent sites",
+      "homomorphism on all 101^2 parent pairs",
+      "C4 covariance on all 101 sites",
+      "uniqueness from Hom(Z/101,Z/5)=0"
+    ],
+    "fiber_offset": "b_h(x) is the unique fiber residue satisfying s_CRT(x)=s_BFS(x)+b_h(x)*(10,1) in the child quotient",
+    "residual_phase": "u_h(x)=t_h(x)-b_h(x) mod5, using the runner's frozen rotation_gauges()",
+    "mask": "A_h,r(d)=101^-1 sum_x zeta5^[r*(u_h(x)-u_h(x+d))]",
+    "forward_model": "G_stored(d)=A_h,r(d)*sum_k w_h,r(k)*exp(-2*pi*i*k*j(d)/101), w>=0"
+  },
+  "score": {
+    "coordinates": "fit in the original stored real/imaginary coordinates; never divide by A",
+    "blocks": "radius4/radius5/radius6 covariance blocks are whitened exactly as P406, with relative eigenvalue cutoff 1e-10",
+    "channels": "plus/minus hands and charges r1/r2 remain separate",
+    "primary": "minimum block-whitened squared distance to mask-times-positive-Fourier cone",
+    "raw_comparator": "recompute the P406 raw positive cone on the identical means/covariance and require exact numerical reproduction before comparison",
+    "increment": "masked cone distance minus raw cone distance",
+    "bootstrap": {
+      "replicates": 250,
+      "seed": 40610120260830,
+      "channel_offsets": "same +1000*hand_index+charge convention as P406",
+      "method": "same standard-normal draws in each resolved whitened channel, centered on that model's fitted vector and refitting its cone",
+      "decision_alpha": 0.01
+    }
+  },
+  "identifiability_and_envelopes": {
+    "linear": "report masked design rank and nullity out of 101 spectral coordinates; do not call either a state count",
+    "spectral_mass": "report 1%,50%,99% plug-in-bootstrap quantiles for total mass and per-frequency mass widths",
+    "prediction": "report 1%-99% plug-in-bootstrap stored-coordinate prediction envelopes on all 101 parent residues",
+    "rejection_boundary": "if the masked cone is rejected, label every spectral/prediction envelope model-conditional and state that there is no accepted CRT-degauged prediction envelope"
+  },
+  "controls": [
+    "reproduce the published P406 raw distances and p values from the same archives",
+    "A(0)=1 in every channel",
+    "the exact residual-phase counts are (21,20,20,20,20) in both hands",
+    "no mask value vanishes; a zero would require equal phase counts, impossible because 5 does not divide 101",
+    "the pinned attenuation witnesses in Issue 418 must reproduce exactly",
+    "the mask Fourier spectrum is nonnegative up to floating roundoff"
+  ],
+  "claim_boundary": [
+    "This tests the section/gauge factorization and covariance contract before any physical interpretation.",
+    "A rejection does not identify a field count, a Jordan block, ordered memory or a continuum operator.",
+    "The four channel scores are correlated archive views and are not pooled as four independent votes.",
+    "No new random production, server use or rank-eight premise is introduced."
+  ],
+  "frozen_inputs": {
+    "scripts/score_p406_spatial_fourier_cone.py": "22ab6d987be98af44637aaf5b687bcf40f7b17ee94f28d4a146cf9263af62336",
+    "scripts/z5_projective_leg_bivariate_mc.py": "5a772bcfe28edab58d43054dc3c91e3b914ee956d02bbbad30828a3f3541a961",
+    "scripts/z5_projective_leg_cross_scale_mc.py": "15b5271a5eb95e9388c1aec2e23d116723609ec2f87abd38b30b72c0b62bdc48",
+    "scripts/z5_charged_threepoint_mc.py": "72b7dd25b25a9035fb33d94d1befeeeff6621d30d44550abf4f8412db18dcff1",
+    "scripts/integer_period_torus.py": "edc3223bf3244e4a8a6957aebe90e03b1f9f52770e2fe186cce867839c22a673",
+    "analysis/p406_spatial_fourier_cone_result.json": "79745b699e9340cccb4cf9cd694a77283efcd34ef299dbb543786af9ea66a4ea",
+    "results/huawei-20260830/P406-spatial-fourier-cone/score.json": "545973507f9df20732b0a0af914884aadc004d6d1a3707a3d6c3ecacb71c7f04"
+  }
+}
