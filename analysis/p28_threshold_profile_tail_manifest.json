@@ -1,0 +1,85 @@
+{
+  "schema": "matching-one/p28-production-tail-elimination/v1",
+  "issue": 28,
+  "base_commit": "939f7ecc26f18c68977aed626821767207a46c89",
+  "status": "frozen_before_heldout_score",
+  "profile": {
+    "definition": "equal-weight Beta(K_minus,N+1-K_minus)/Beta(K_plus,N+1-K_plus) order-statistic mixture",
+    "center": "mixture mean",
+    "scale": "mixture standard deviation",
+    "standardized_density": "scale*rho(center+scale*z)"
+  },
+  "tail_design": {
+    "absolute_z_grid": [2.5, 2.75, 3.0, 3.25, 3.5],
+    "sides_scored_separately": true,
+    "minimum_expected_tail_count_per_curve": 10000,
+    "minimum_expected_tail_count_per_batch": 100,
+    "count_gate_endpoint": "one-sided probability beyond abs(z)=3.5",
+    "models": {
+      "stretched_4_over_3": 1.3333333333333333,
+      "gaussian": 2.0,
+      "exponential": 1.0
+    },
+    "fit": "For each held-out orientation and side, OLS fits log standardized density = intercept - c*abs(z)^alpha; the three orthogonal lack-of-fit contrasts are scored.",
+    "decision_alpha": 0.01,
+    "covariance_relative_eigenvalue_cutoff": 1e-10,
+    "underpowered_if": "any held-out count gate fails or retained covariance rank is below 75 percent of nominal contrast dimension",
+    "eliminated_if": "powered and global covariance-aware chi-square survival probability is below 0.01",
+    "survives_if": "powered and not eliminated; this means not rejected, not proved"
+  },
+  "source_archives": [
+    {
+      "N": 130,
+      "path": "results/server-20260828/P49-fullcurve-doubling-100m/raw/n130.hist.csv",
+      "sha256": "b49c8fef1d7ddf1c902fc50e9d4c7b0d90b5b8e049998cdb6cc592d3c9cfd4a3",
+      "dependency_group": "P49-shared-counter-5.0b-5.1b"
+    },
+    {
+      "N": 145,
+      "path": "results/server-20260829/P50-n145-n290-fullcurve/raw/n145_100m.hist.csv",
+      "sha256": "c685dae9bddc005224fe5dd052945482cd3b8c5bb26744dad4e44996a8318b42",
+      "dependency_group": "P50-N145-seed-2026105003"
+    },
+    {
+      "N": 170,
+      "path": "results/server-20260828/P49-fullcurve-doubling-100m/raw/n170.hist.csv",
+      "sha256": "5d6f5600399b80e25be2171dead9e823c5104dd1278052c24f39951fbfae29a1",
+      "dependency_group": "P49-shared-counter-5.0b-5.1b"
+    },
+    {
+      "N": 185,
+      "path": "results/server-20260828/P43-heldout-fullcurve-500m/raw/n185.hist.csv",
+      "sha256": "3c6d7b7c20683b16fa983a08147ae36f21cc54fcc3de9f8f5164480190ba1031",
+      "dependency_group": "P43-N185-counter-7.0b-7.5b"
+    }
+  ],
+  "heldout_archives": [
+    {
+      "N": 265,
+      "path": "results/server-20260828/P43-heldout-fullcurve-500m/raw/n265.hist.csv",
+      "sha256": "57e0bb194e38fd975bebfe16d6862b4b61e38e5e21d13f9164dab42697f931ff",
+      "dependency_group": "P43-N265-counter-7.5b-8.0b"
+    },
+    {
+      "N": 290,
+      "path": "results/server-20260829/P50-n145-n290-fullcurve/raw/n290_100m.hist.csv",
+      "sha256": "e5f62077407d5c989e1b2907171c5f844b770812212bde616f63c621dbf97eb9",
+      "dependency_group": "P50-N290-seed-2026105004"
+    },
+    {
+      "N": 325,
+      "path": "results/server-20260829/P57-norm5-500m/raw/n325_500m.hist.csv",
+      "sha256": "19778d91af4bf865436bf0dcf5aebfe772d1a60384927a495eb148051d54e934",
+      "dependency_group": "P57-N325-counter-10.0b-10.5b"
+    },
+    {
+      "N": 425,
+      "path": "results/server-20260829/P57-norm5-500m/raw/n425_500m.hist.csv",
+      "sha256": "291203341dc5d2988fce2f8d9e00995df36f4a46f6a53df5e3327ac812785693",
+      "dependency_group": "P57-N425-counter-10.5b-11.0b"
+    }
+  ],
+  "covariance": "Within each held-out size, delete one of the 100 shared-randomness batches synchronously across both orientations and both tails. Different held-out dependency groups have disjoint RNG domains and contribute independent chi-square blocks.",
+  "interpretation_level": "Level-S production statistical model-elimination score; not an exact tail theorem or universality proof",
+  "new_monte_carlo": false
+}
