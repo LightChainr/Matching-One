@@ -50,24 +50,19 @@ semantic_transport:
   separate_from: [integration_status, evidence_role, dependency_group, attention_rank]
   registry_source_ref: SRC_OBSERVABLE_DESCRIPTOR_REGISTRY_MAIN
   inventory_source_ref: SRC_SCORER_ADOPTION_MAIN
-  main_snapshot_commit: 76ebad5c9727238904091de67cf4510ee9dbe955
-  checked_main_inventory_after_independent_merges:
-    total_score_scripts: 43
-    direct_typed: 12
-    covered_kernels: 11
+  main_snapshot_commit: 42c1563e8b705db20d98511195e18c6bcffd096b
+  current_main_inventory:
+    total_score_scripts: 44
+    direct_typed: 13
+    covered_kernels: 12
     generic_not_applicable: 1
-    migration_required: 19
+    migration_required: 18
     outside_registered_typed_path: 0
-    consistency_status: stale_derived_totals_after_two_independently_green_wrapper_branches_merged
+    consistency_status: composed_current_after_PR347
   integrated_components:
-    prs: [345, 346]
-    source_refs: [SRC_P50_SPRIME_TYPED_MAIN, SRC_P48_NEW_GEOMETRY_TYPED_MAIN]
-    scientific_boundary: two_post_score_identity_wrappers_without_new_data_refit_score_model_reordering_or_evidence
-  open_pr_overlay:
-    pr: 347
-    source_ref: SRC_SCORER_INVENTORY_COMPOSITION_OPEN_PR
-    prospective_inventory: {total_score_scripts: 44, direct_typed: 13, covered_kernels: 12, generic_not_applicable: 1, migration_required: 18, outside_registered_typed_path: 0}
-    boundary: derived_inventory_composition_repair_only_no_scorer_contract_number_or_scientific_change
+    prs: [345, 346, 347]
+    source_refs: [SRC_P50_SPRIME_TYPED_MAIN, SRC_P48_NEW_GEOMETRY_TYPED_MAIN, SRC_SCORER_INVENTORY_COMPOSITION_MAIN]
+    scientific_boundary: two_post_score_identity_wrappers_and_one_derived_inventory_composition_without_new_data_refit_score_model_reordering_or_evidence
   remaining_contract_gap: 18_channel_bearing_paths_still_require_migration_after_PR347_and_the_second_contract_must_name_units_model_space_size_map_chronology_and_dependency_relation
   allowed_statuses: [typed_direct, covered_by_typed_wrapper, migration_required, outside_registered_typed_path, not_applicable, not_in_main_inventory]
   interpretation: migration_required_is_a_future_reuse_contract_not_a_scientific_error_evidence_demotion_task_lock_or_rerun_request
@@ -838,11 +833,12 @@ branch_sources:
       - predictions/p48_new_geometry_channels_semantic_gate_20260830.json
       - results/scorer-descriptor-adoption/latest.json
       - scripts/score_p48_new_geometry_channels_typed.py
-  - id: SRC_SCORER_INVENTORY_COMPOSITION_OPEN_PR
-    integration_status: open_pr
+  - id: SRC_SCORER_INVENTORY_COMPOSITION_MAIN
+    integration_status: main_integrated
     pr: 347
-    ref: protocol/issue-146-compose-p48-p50-inventory
-    commit: 44ca017747ef3bf511c1d37fa368252dabcb654e
+    ref: main
+    commit: 42c1563e8b705db20d98511195e18c6bcffd096b
+    source_commit: 44ca017747ef3bf511c1d37fa368252dabcb654e
     parent_commit: 76ebad5c9727238904091de67cf4510ee9dbe955
     result_status: composed_live_44_path_inventory_13_direct_12_covered_18_migrations_one_utility_without_scorer_or_scientific_change
     paths:

@@ -21,7 +21,7 @@ The newest results close several proposed shortcuts while opening cheaper shared
 11. P333 proves raw Q tangents depend on the chosen generic-Q lift/section. Its two sibling heads share one exact Phase-A bundle; the next meaningful Q observable needs a complete descriptor and bottom-field projection, not another untransported derivative.
 12. P158 projects norm-10 commuting-square target cost to roughly 27.21B/55.18B samples per lineage with negligible ideal-CRN gain. It has no target data and moves large production down, leaving only a target variance/runtime pilot.
 
-Main also adds exact fixed-rank motif controls. PRs #345/#346 put both P50/P48 wrappers on main; open #347 composes the live scorer corpus to 44 paths, 13 direct, 12 covered, 18 migrations and one utility. PR #339 remains a synthetic-only odd-jet primitive and PR #342 a resource gate. These improve variance design, resource discipline and claim composability; they do not add scientific evidence, demote untyped historical scores or turn protocol migration into a permission gate.
+Main also adds exact fixed-rank motif controls. PRs #345/#346 put both P50/P48 wrappers on main, and merged #347 composes the live scorer corpus to 44 paths, 13 direct, 12 covered, 18 migrations and one utility. PR #339 remains a synthetic-only odd-jet primitive and PR #342 a resource gate. These improve variance design, resource discipline and claim composability; they do not add scientific evidence, demote untyped historical scores or turn protocol migration into a permission gate.
 
 ## Three-object synthesis
 
