@@ -49,11 +49,12 @@ class Z5ProjectiveLegRadius6FlatTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "not authorized"):
             validate_manifest(args, {"status": "frozen_unexecuted_radius6_flat_extension", "execution_authorized": False})
 
-    def test_repository_freeze_matches_exact_geometry(self) -> None:
+    def test_repository_authorization_preserves_frozen_geometry(self) -> None:
         manifest = json.loads((ROOT / "analysis/p250_projective_leg_radius6_flat_freeze.json").read_text())
         gate = json.loads((ROOT / "analysis/p250_projective_leg_radius6_flat_exact_gate.json").read_text())
-        self.assertFalse(manifest["execution_authorized"])
-        self.assertTrue(manifest["do_not_run_from_this_commit"])
+        self.assertTrue(manifest["execution_authorized"])
+        self.assertFalse(manifest["do_not_run_from_this_commit"])
+        self.assertEqual(manifest["authorization_parent_commit"], "a6d3b7790fc92ee86ac157712905855e8e1f50bf")
         self.assertEqual(manifest["geometry"]["points_by_hand"], gate["hands"] if "hands" in gate else {
             "plus": gate["source_degree6_endpoints"],
             "minus": gate["target_degree6_endpoints"],

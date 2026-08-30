@@ -1,8 +1,10 @@
 {
   "schema": "matching-one/p250-projective-leg-radius6-flat-freeze/v1",
   "issue": 250,
-  "status": "frozen_unexecuted_radius6_flat_extension",
-  "execution_authorized": false,
+  "status": "authorized_fresh_radius6_flat_extension",
+  "execution_authorized": true,
+  "authorized_utc": "2026-08-30T09:48:00Z",
+  "authorization_parent_commit": "a6d3b7790fc92ee86ac157712905855e8e1f50bf",
   "parent_result_commit": "11130aef3ee46df8d52e59c8bfe486eadcdbbaf5",
   "runner_commit": "44a3a36d4b27b5b1649875cb5a87bfbcc25524fd",
   "scorer_commit": "44a3a36d4b27b5b1649875cb5a87bfbcc25524fd",
@@ -12,7 +14,7 @@
   "old5_sha256": "50985e38c9c8afab0c8b0e78113184d33861d928aefaba1e8043e67fc348677e",
   "new6_batches": "results/huawei-20260830/P250-projective-leg-radius6-flat-1200k/response_1200k.batches.csv",
   "new6_sha256": "LOCK_ON_REVEAL_BEFORE_SCORING",
-  "target_host": "Huawei-CodeBuddy-XPk2PZ",
+  "target_host": "Huawei-CodeBuddy-HZsCM6",
   "remote_directory": "/workspace/p250-projective-leg-radius6-flat-1200k",
   "run": {
     "samples": 1200000,
@@ -88,5 +90,5 @@
     "sample_choice": "Reuse 1.2M/400. Doubling only the fresh stream improves the median total standard error by roughly 2-4 percent because the 80k/radius5 predictor uncertainty dominates."
   },
   "decision_alpha": 0.01,
-  "do_not_run_from_this_commit": true
+  "do_not_run_from_this_commit": false
 }
