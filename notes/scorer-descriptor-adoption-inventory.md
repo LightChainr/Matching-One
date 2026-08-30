@@ -1,14 +1,13 @@
 # Scorer descriptor-adoption inventory
 
-In this checked snapshot, the exact `scripts/*score*.py` corpus contains 54
-files. Python-AST inspection finds twenty-three
+In this checked snapshot, the exact `scripts/*score*.py` corpus contains 55
+files. Python-AST inspection finds twenty-four
 direct typed entrypoints importing both `ObservableDescriptor` and
-`map_observable` from `wrapping_channels`. Twenty-two frozen kernels are covered by
+`map_observable` from `wrapping_channels`. Twenty-three frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Eight paths are confirmed channel-bearing and
+a descriptor is not applicable. Seven paths are confirmed channel-bearing and
 require typed migrations:
-`score_issue43_secondary.py`,
 `score_norm4_production.py`,
 `score_norm4_thermal_jet.py`, `score_norm5_thermal_jet.py`,
 `score_p159_pell_hex_filter.py`,
@@ -34,7 +33,7 @@ unchanged.
 but no current scorer has that status. Static membership alone would not prove
 a semantic bug, data-provenance failure, or need for migration; any future
 corpus addition must still be reviewed before modification. Issue #146 remains
-open because inventory classification is not the same as implementing the 8
+open because inventory classification is not the same as implementing the 7
 required typed migrations.
 
 `score_axis_pair_annihilator.py` and its stable-reader entrypoint are now
@@ -162,15 +161,15 @@ the same runs and are not declared independent evidence. The separately typed
 cross/either correction remains an erratum entry rather than a replacement for
 this two-sector contract.
 
-`score_issue43_secondary.py` is migration-required. It consumes the primary
-Issue #43 score and constructs a frozen ordered ledger containing reused
-`DeltaM/DeltaS`, an x17 radial competitor, a zero benchmark, an intentionally
-not-scorable H4+H12 stage, and an optional P48 `P4_S_prime` stage. The stage
-names, ordering, hashes, and numeric payloads act as the semantic contract.
-A migration must type the quantities, model/stage maps, excluded/not-scorable
-states, and evidence reuse. It must preserve the no-target-refit and raw-data
-boundaries. Its direct call to the untyped P48 kernel is not covered by the
-separate prospective typed wrapper.
+`score_issue43_secondary.py` is now a covered frozen kernel. Its typed
+entrypoint validates exact identity maps for DeltaM, DeltaS, and optional
+angular-normalized P48 `P4_S_prime` before constructing the ledger. The gate
+freezes the five-stage order, artifact hashes, copied/scored/not-scorable
+statuses, excluded wrong-Kac branch, and raw-data boundary. Stages 1 and 3 copy
+the primary score, stage 2 reuses its DeltaM observations, stage 4 remains
+locked, and stage 5 remains optional and last; the annotation does not make
+those summaries independent evidence or replace the standalone typed P48
+entrypoint.
 
 The norm-4 scalar production scorer and thermal-jet scorer are both
 migration-required and share one evidence boundary. The scalar path orders
