@@ -224,11 +224,20 @@ def _run_batch(task: tuple[int, int, int, float, int]) -> dict:
     }
 
 
-def run(samples: int, batches: int, workers: int, p: float, seed: int, replica_offset: int):
+def run(
+    samples: int,
+    batches: int,
+    workers: int,
+    p: float,
+    seed: int,
+    replica_offset: int,
+    *,
+    sample_cap: int = SMOKE_CAP,
+):
     if samples <= 0 or batches < 2 or samples % batches:
         raise ValueError("samples must be divisible by batches>=2")
-    if samples > SMOKE_CAP:
-        raise ValueError("projective-leg branch is capped at the frozen 2k smoke")
+    if samples > sample_cap:
+        raise ValueError(f"projective-leg run exceeds authorized cap {sample_cap}")
     per_batch = samples // batches
     tasks = [
         (batch, replica_offset + batch * per_batch, per_batch, p, seed)
@@ -261,13 +270,40 @@ def main() -> int:
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--batches-output", type=Path)
     parser.add_argument("--exact-gate", action="store_true")
+    parser.add_argument("--production-manifest", type=Path)
     args = parser.parse_args()
     args.output.parent.mkdir(parents=True, exist_ok=True)
     if args.exact_gate:
         args.output.write_text(json.dumps(exact_gate(), indent=2) + "\n")
         return 0
+    manifest = None
+    sample_cap = SMOKE_CAP
+    if args.production_manifest is not None:
+        manifest = json.loads(args.production_manifest.read_text())
+        if manifest.get("status") != "authorized_fresh_production":
+            raise ValueError("production manifest is not authorized")
+        expected = manifest["run"]
+        observed = {
+            "samples": args.samples,
+            "batches": args.batches,
+            "workers": args.workers,
+            "p": args.p,
+            "seed": args.seed,
+            "replica_offset": args.replica_offset,
+            "replica_last_exclusive": args.replica_offset + args.samples,
+        }
+        for key, value in observed.items():
+            if expected.get(key) != value:
+                raise ValueError(f"run differs from production manifest for {key}")
+        sample_cap = int(expected["samples"])
     rows, analysis = run(
-        args.samples, args.batches, args.workers, args.p, args.seed, args.replica_offset
+        args.samples,
+        args.batches,
+        args.workers,
+        args.p,
+        args.seed,
+        args.replica_offset,
+        sample_cap=sample_cap,
     )
     batches_path = args.batches_output or args.output.with_suffix(".batches.csv")
     write_batches(batches_path, rows)
@@ -296,6 +332,9 @@ def main() -> int:
             "joint_interface": ["G1", "G2", "V1", "V2", "C113", "C122"],
         },
         "analysis": analysis,
+        "production_manifest": (
+            str(args.production_manifest) if args.production_manifest is not None else None
+        ),
     }
     args.output.write_text(json.dumps(payload, indent=2) + "\n")
     return 0

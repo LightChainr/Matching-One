@@ -12,6 +12,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from p250_projective_leg_power_freeze import freeze  # noqa: E402
 from score_z5_charged_multiseparation import read_batches  # noqa: E402
 from score_z5_projective_leg_production import support_then_phase  # noqa: E402
+from z5_projective_leg_multiseparation_mc import run  # noqa: E402
 
 
 SMOKE = ROOT / "results/local-20260830/P250-z5-projective-leg-smoke"
@@ -58,6 +59,10 @@ class P250ProjectiveLegProductionProtocolTests(unittest.TestCase):
         self.assertEqual(manifest["run"]["seed"], 25033433720260930)
         self.assertEqual(manifest["run"]["replica_offset"], 0)
         self.assertEqual(manifest["phase_policy"], "locked_until_both_support_stages_pass")
+
+    def test_runner_cap_requires_explicit_production_authorization(self) -> None:
+        with self.assertRaisesRegex(ValueError, "authorized cap 2000"):
+            run(2001, 23, 1, 0.59274605079, 1, 0)
 
 
 if __name__ == "__main__":
