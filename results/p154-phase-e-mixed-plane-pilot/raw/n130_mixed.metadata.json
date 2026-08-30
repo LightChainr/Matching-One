@@ -1,0 +1,23 @@
+{
+  "engine": "P154 fixed-p local-singlet mixed-plane pilot",
+  "generated_utc": "2026-08-30T15:12:41Z",
+  "git_commit": "0578105d92d3822cb48f5c421bd23ff339295cc6",
+  "N": 130,
+  "first": [11,3],
+  "second": [9,7],
+  "first_period_matrix": [[11,-3],[3,11]],
+  "second_period_matrix": [[9,-7],[7,9]],
+  "samples": 20000,
+  "batches": 100,
+  "seed": 2026154130,
+  "replica_counter_first": 15466200000,
+  "replica_counter_last_exclusive": 15466220000,
+  "p_ref": 0.59274605078999998,
+  "fixed_p_stream": "independent counter-derived SplitMix64 Bernoulli prefix length; same K shared by orientation pair",
+  "black_row": "mean over 2N axis placements of NN cluster connectivity between z-e and z+e",
+  "white_row": "mean over 2N axis placements of white matching-cluster connectivity between z-e and z+e",
+  "B": "(black_axis_pairs+white_matching_axis_pairs)/(4N), configurationwise",
+  "mixed_rows": ["B^2","I0*B","I2*B"],
+  "elapsed_seconds": 0.074767378999999995,
+  "batches_csv": "results/live/n130_mixed.batches.csv"
+}
