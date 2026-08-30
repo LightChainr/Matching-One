@@ -1,6 +1,9 @@
 {
   "schema": "scorer descriptor adoption inventory v1",
   "corpus_glob": "scripts/*score*.py",
+  "corpus_exclusions": [
+    "scripts/scorer_descriptor_adoption_audit.py"
+  ],
   "typed_wrapper_kernels": {
     "scripts/score_c4_self_matching_n26_typed.py": "scripts/score_c4_self_matching_n26.py",
     "scripts/score_intrinsic_functional_cocycle_typed.py": "scripts/score_intrinsic_functional_cocycle.py",
