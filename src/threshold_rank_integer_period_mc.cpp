@@ -387,6 +387,13 @@ struct GeometryPilotRecord {
     int h2_direction_mixed = 0;
     int next_site = -1;
     int next_exit = 0;
+    int checkpoint_b1_safe_count = -1;
+    int branch_common_safe = 0;
+    int branch_suffix_site1 = -1;
+    int branch_suffix_site2 = -1;
+    int branch_clone1_survives = 0;
+    int branch_clone2_survives = 0;
+    int branch_both_survive = 0;
 };
 
 struct CarrierShapeMetrics {
@@ -948,7 +955,9 @@ class ThresholdEngine {
         return trace;
     }
 
-    GeometryPilotRecord geometry_pilot(const std::vector<int>& permutation, int k0) {
+    GeometryPilotRecord geometry_pilot(const std::vector<int>& permutation, int k0,
+                                        int branch_suffix_offset1 = -1,
+                                        int branch_suffix_offset2 = -1) {
         if (static_cast<int>(permutation.size()) != geometry_.n ||
             k0 <= 0 || k0 >= geometry_.n) {
             throw std::invalid_argument("invalid current-geometry pilot layer");
@@ -1073,6 +1082,40 @@ class ThresholdEngine {
                          record.h2_direction_negative + record.h2_direction_mixed) {
             throw std::logic_error("H2 trigger decompositions do not sum to H2");
         }
+        record.checkpoint_b1_safe_count = geometry_.n - k0 - record.h2;
+
+        const bool branching = branch_suffix_offset1 >= k0 + 1 &&
+                               branch_suffix_offset1 < geometry_.n &&
+                               branch_suffix_offset2 >= k0 + 1 &&
+                               branch_suffix_offset2 < geometry_.n;
+        if (branching) {
+            record.branch_suffix_site1 = permutation[branch_suffix_offset1];
+            record.branch_suffix_site2 = permutation[branch_suffix_offset2];
+            record.branch_common_safe = 1 - record.next_exit;
+            if (record.branch_common_safe) {
+                // The common update is applied once, then this exact successor
+                // state is cloned.  The two suffix sites come from independent
+                // counter streams; equality across clones is allowed, as it is
+                // under two independent draws from the same remaining pool.
+                ThresholdEngine successor = *this;
+                const HomologyUnionFind::ComponentMark after_common =
+                    successor.insert_occupied(record.next_site);
+                if (after_common.rank == 2 ||
+                    (after_common.rank == 1 &&
+                     !same_vector(after_common.line, plateau_line))) {
+                    throw std::logic_error(
+                        "safe common update did not preserve the plateau line");
+                }
+                record.branch_clone1_survives = static_cast<int>(
+                    !successor.one_step_completion(
+                        record.branch_suffix_site1, plateau_line).crosses);
+                record.branch_clone2_survives = static_cast<int>(
+                    !successor.one_step_completion(
+                        record.branch_suffix_site2, plateau_line).crosses);
+                record.branch_both_survive =
+                    record.branch_clone1_survives * record.branch_clone2_survives;
+            }
+        }
         for (int offset = k0; offset < geometry_.n; ++offset) {
             const int vertex = permutation[offset];
             active_[vertex] = 1;
@@ -1104,6 +1147,19 @@ class ThresholdEngine {
         int type = 2;       // 0 theta, 1 joined figure-eight, 2 separate carrier
         int direction = 0;  // +1/-1, or 0 for mixed completing signs
     };
+
+    HomologyUnionFind::ComponentMark insert_occupied(int vertex) {
+        if (active_[vertex]) throw std::logic_error("attempted duplicate insertion");
+        active_[vertex] = 1;
+        ++graph_components_;
+        for (const int edge_index : geometry_.primal_incident[vertex]) {
+            const Edge& edge = geometry_.primal_edges[edge_index];
+            if (active_[edge.i] && active_[edge.j] && union_find_.add_edge(edge)) {
+                --graph_components_;
+            }
+        }
+        return union_find_.component_mark(vertex);
+    }
 
     Completion one_step_completion(int vertex, Vector plateau_line) {
         struct RootContacts {
@@ -1798,6 +1854,7 @@ struct Options {
     bool marked_births = false;
     int far_radius = 0;
     int geometry_pilot_k0 = 0;
+    bool branching_clones = false;
     bool custom = false;
     Matrix first_matrix;
     Matrix second_matrix;
@@ -1827,6 +1884,7 @@ struct Options {
         << "  --marked-births      also writes sparse birth and microcanonical path streams\n"
         << "  --far-radius R       add paired axis/diagonal local-arm observer at distance R\n"
         << "  --geometry-pilot-k0 K  write current rank-one geometry rows after K sites\n"
+        << "  --branching-clones   after the common next update, draw two independent suffix sites\n"
         << "  --self-test          exact tiny and Smith regressions, then exit\n";
     std::exit(status);
 }
@@ -1893,6 +1951,7 @@ Options parse_options(int argc, char** argv) {
         else if (arg == "--geometry-pilot-k0") {
             options.geometry_pilot_k0 = parse_number<int>(need(i, arg), arg);
         }
+        else if (arg == "--branching-clones") options.branching_clones = true;
         else if (arg == "--help") usage(argv[0], 0);
         else throw std::invalid_argument("unknown option: " + arg);
     }
@@ -1910,6 +1969,9 @@ Options parse_options(int argc, char** argv) {
         (options.geometry_pilot_k0 > 0 && options.marked_births)) {
         throw std::invalid_argument(
             "geometry-pilot-k0 must be nonnegative and is exclusive with --marked-births");
+    }
+    if (options.branching_clones && options.geometry_pilot_k0 <= 0) {
+        throw std::invalid_argument("branching-clones requires --geometry-pilot-k0");
     }
     if (first_matrix_set != second_matrix_set) {
         throw std::invalid_argument("custom runs require both period matrices");
@@ -1960,10 +2022,29 @@ void run_geometry_pilot_design(const PairDesign& design, const Options& options,
         second_rows[batch].reserve(per_batch);
         for (std::uint64_t replica = begin; replica < begin + per_batch; ++replica) {
             counter_permutation(design.n, options.seed, replica, permutation);
+            int suffix_offset1 = -1;
+            int suffix_offset2 = -1;
+            if (options.branching_clones) {
+                const std::uint64_t remaining = static_cast<std::uint64_t>(
+                    design.n - options.geometry_pilot_k0 - 1);
+                if (remaining == 0) {
+                    throw std::logic_error("branching pilot has no suffix site");
+                }
+                SplitMixStream suffix1(splitmix64(
+                    options.seed ^ splitmix64(replica ^ 0x429b2c101ULL)));
+                SplitMixStream suffix2(splitmix64(
+                    options.seed ^ splitmix64(replica ^ 0x429b2c202ULL)));
+                suffix_offset1 = options.geometry_pilot_k0 + 1 +
+                    static_cast<int>(suffix1.below(remaining));
+                suffix_offset2 = options.geometry_pilot_k0 + 1 +
+                    static_cast<int>(suffix2.below(remaining));
+            }
             const GeometryPilotRecord first =
-                first_engine.geometry_pilot(permutation, options.geometry_pilot_k0);
+                first_engine.geometry_pilot(permutation, options.geometry_pilot_k0,
+                                            suffix_offset1, suffix_offset2);
             const GeometryPilotRecord second =
-                second_engine.geometry_pilot(permutation, options.geometry_pilot_k0);
+                second_engine.geometry_pilot(permutation, options.geometry_pilot_k0,
+                                             suffix_offset1, suffix_offset2);
             if (first.at_risk) first_rows[batch].push_back({replica, first});
             if (second.at_risk) second_rows[batch].push_back({replica, second});
         }
@@ -1991,7 +2072,13 @@ void run_geometry_pilot_design(const PairDesign& design, const Options& options,
                    << value.h2 << ',' << value.h2_theta << ',' << value.h2_figure8 << ','
                    << value.h2_separate << ',' << value.h2_direction_positive << ','
                    << value.h2_direction_negative << ',' << value.h2_direction_mixed << ','
-                   << value.next_site << ',' << value.next_exit << '\n';
+                   << value.next_site << ',' << value.next_exit << ','
+                   << value.checkpoint_b1_safe_count << ','
+                   << value.branch_common_safe << ',' << value.branch_suffix_site1 << ','
+                   << value.branch_suffix_site2 << ','
+                   << value.branch_clone1_survives << ','
+                   << value.branch_clone2_survives << ','
+                   << value.branch_both_survive << '\n';
         }
     };
     for (int batch = 0; batch < options.batches; ++batch) {
@@ -2264,7 +2351,10 @@ int run(int argc, char** argv) {
                "boundary_axis_imbalance,boundary_corner_balance,frontier_components,"
                "largest_frontier_component,frontier_component_sumsq,"
                "H2,H2_theta,H2_figure8,H2_separate,H2_direction_positive,"
-               "H2_direction_negative,H2_direction_mixed,next_site,next_exit\n";
+               "H2_direction_negative,H2_direction_mixed,next_site,next_exit,"
+               "checkpoint_b1_safe_count,branch_common_safe,branch_suffix_site1,"
+               "branch_suffix_site2,branch_clone1_survives,"
+               "branch_clone2_survives,branch_both_survive\n";
     }
     histogram << "n,a,b,orientation,batch,samples,kind,k,count\n";
     moments << "n,a,b,orientation,batch,samples,sum_kminus,sum_kplus,sum_kminus2,"
@@ -2354,6 +2444,9 @@ int run(int argc, char** argv) {
              << "  \"marked_birth_schema\": " << (options.marked_births ? "true" : "false") << ",\n"
              << "  \"geometry_pilot_k0\": " << options.geometry_pilot_k0 << ",\n"
              << "  \"geometry_pilot_semantics\": \"rank-one state after k0 occupied sites; H2 is the exact number of vacant sites whose one-step insertion gives ambient rank two\",\n"
+             << "  \"branching_clones\": " << (options.branching_clones ? "true" : "false") << ",\n"
+             << "  \"branching_semantics\": \"per rank-one checkpoint: permutation[k0] is one common uniform update; two independently tagged counter streams draw one uniform remaining site each from the identical successor clone; common absorption scores both clone survivals zero\",\n"
+             << "  \"branching_suffix_stream_tags\": [\"0x429b2c101\", \"0x429b2c202\"],\n"
              << "  \"marked_birth_semantics\": \"strict 0->1 uses post-line; strict 1->2 uses pre-line; direct 0->2 has null line, D=0, S=2\",\n"
              << "  \"line_coordinates\": \"ell_u,ell_v are primitive period-basis winding coordinates\",\n"
              << "  \"chi4_frame\": \"physical lifted Euclidean direction primitive(P*ell), never raw period coordinates\",\n"

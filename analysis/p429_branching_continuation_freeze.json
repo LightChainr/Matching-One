@@ -1,0 +1,43 @@
+{
+  "schema": "matching-one/p429-branching-continuation-freeze/v1",
+  "status": "frozen_before_fresh_data",
+  "exact_parent": "d9f813b8024f7e1a0dad10a945fe36e5e177ce5c",
+  "production_runner_parent": "7d254ed",
+  "runner_source_sha256": "cf53e118c85e104157661df3c0b64fdea811a9154a86ed45348af5eae73d0ce2",
+  "checkpoint": "Condition on ambient rank one after fixed k0. H2 and b1_safe=(N-k0)-H2 are exact current-state counts. No per-configuration O(N^2) b2 enumeration is performed.",
+  "clustered_draw": "permutation[k0] is one common uniform update after the shared checkpoint prefix. From the identical safe successor, suffix stream tags 0x429b2c101 and 0x429b2c202 independently select one uniform site from permutation positions k0+1..N-1. The same prefix, common update and two suffix counters are shared by the paired orientations.",
+  "estimands": {
+    "b2_survival_estimate": "E[U | checkpoint rank1], U=(y1+y2)/2; common absorption sets y1=y2=0",
+    "branch_success": "E[B | checkpoint rank1], B=y1*y2",
+    "clone_dependence_gap": "E[B]-E[y1]E[y2], computed separately from b2 survival",
+    "risk_rate": "rank-one checkpoint rows / all replicas",
+    "defined_rate": "common update remains rank one / rank-one checkpoint rows"
+  },
+  "runs": {
+    "N325": {
+      "host": "Huawei-CodeBuddy-HZsCM6",
+      "samples": 20000,
+      "batches": 20,
+      "seed": 20260830429325,
+      "replica_counter_first": 42932500000,
+      "replica_counter_last_exclusive": 42932520000,
+      "k0": 193,
+      "first_matrix": [325, 57, 0, 1],
+      "second_matrix": [325, 18, 0, 1]
+    },
+    "N425": {
+      "host": "Huawei-CodeBuddy-TgFr7R",
+      "samples": 20000,
+      "batches": 20,
+      "seed": 20260830429425,
+      "replica_counter_first": 42942500000,
+      "replica_counter_last_exclusive": 42942520000,
+      "k0": 252,
+      "first_matrix": [425, 132, 0, 1],
+      "second_matrix": [425, 268, 0, 1]
+    }
+  },
+  "covariance": "Delete-one-batch covariance of the joint eight-vector [four b2 survival estimates, four clone-dependence gaps], block diagonal across independently generated sizes and fully coupled across orientations and estimands within size.",
+  "extension_rule": "Extend to 100k only if all four gap estimates are positive and the covariance-weighted common gap is at least 3 standard errors above zero at each of N325 and N425. Otherwise stop.",
+  "claim_boundary": "This pilot tests a one-common-update/one-site-per-clone branching language at one checkpoint per size. It does not estimate the exact microscopic b2 count, prove Markov closure or nonclosure at scale, or identify a continuum memory field."
+}
