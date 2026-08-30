@@ -1,0 +1,47 @@
+{
+  "schema": "matching-one/p334-current-k0-geometry-pilot-raw-lock/v1",
+  "status": "raw_locked_before_single_frozen_score",
+  "freeze_commit": "cf85536",
+  "pre_reveal_k2_amendment_commit": "12c79dccbf343dab787a3e8658c7048c5fa1ce9f",
+  "scorer_commit": "a4f4f963fa915f926a293c44998f086592dc8e3b",
+  "runner_source_sha256": "d74b6dce324e54b4ec72f5d6e7e9c45340909ec6d3ab680e471279eea6b88437",
+  "freeze_sha256": "01eccf411f853d2a5be364f6b61c58dfd05f362da69a3d769353a0af7aca9dab",
+  "scorer_sha256": "f258984555afe75444369416b282d23a626415109752e01c90d635037e868209",
+  "runs": {
+    "N325": {
+      "host_devenv_id": "f415a4bcbd9a438b85f5f29e4a507ea4",
+      "csv": "results/server-20260830/P334-current-k0-geometry-pilot/raw/N325/N325_50k.geometry_pilot.csv",
+      "csv_sha256": "3db383c1228ff4c4951b92c534a29ffe5999487fc0c53ebccb8b4613497b5a83",
+      "metadata": "results/server-20260830/P334-current-k0-geometry-pilot/raw/N325/N325_50k.metadata.json",
+      "metadata_sha256": "1f0ce31ef152567dbfe534cb20bfbca3002dc9c44e4a64200542da3257e55ede",
+      "rows_excluding_header": 45432,
+      "first_rows": 22805,
+      "second_rows": 22627,
+      "first_next_exits": 1452,
+      "second_next_exits": 1370,
+      "batches": 50,
+      "exit_code": 0
+    },
+    "N425": {
+      "host_devenv_id": "f550f3cb1f774374b6842aa648fda796",
+      "csv": "results/server-20260830/P334-current-k0-geometry-pilot/raw/N425/N425_50k.geometry_pilot.csv",
+      "csv_sha256": "d5fb81c4ba4b18ea0c64ede0675770b7c3429e680aa511f4e6db4188662734ed",
+      "metadata": "results/server-20260830/P334-current-k0-geometry-pilot/raw/N425/N425_50k.metadata.json",
+      "metadata_sha256": "85c6af7c4da3f7d85c8125d1ea1753d553ac1540488903d91b2820c83c8c4056",
+      "rows_excluding_header": 44817,
+      "first_rows": 22482,
+      "second_rows": 22335,
+      "first_next_exits": 1180,
+      "second_next_exits": 1218,
+      "batches": 50,
+      "exit_code": 0
+    }
+  },
+  "attempt1": {
+    "status": "protocol_refusal_preserved",
+    "both_exit_codes": 127,
+    "stderr_sha256": "5fdf03370ed63b1b2dedd0118d4951d5f133b8c2c8d7070fb8769d90bf137a26",
+    "reason": "/usr/bin/time absent; runner was never invoked and no pilot data or metadata existed"
+  },
+  "raw_reveal_boundary": "No means, slopes, geometry distributions, or model scores were inspected before this lock. Only completion, exit codes, file sizes, row/support counts, provenance, and exact row identities were checked."
+}
