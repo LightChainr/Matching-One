@@ -1,0 +1,104 @@
+{
+  "schema": "matching-one/p337-direct-birth-six-arm-scaling-freeze/v1",
+  "status": "frozen_existing_archives_not_scored",
+  "frozen_hypothesis_commit": "652bf15",
+  "question": "Do same-lineage direct 0-to-2 essential-birth collision masses follow the conditional area law D_N=A N^(-5/6) across four exact doubling generations?",
+  "inputs": {
+    "N85": {
+      "N": 85,
+      "births": "results/server-20260830/P337-natural-current-scale-N85/raw/n85_200k.births.csv",
+      "births_sha256": "e04f6483f936db3c54cead03a153298db377dbaf21cc8f39d35b2771803979b6",
+      "metadata": "results/server-20260830/P337-natural-current-scale-N85/raw/n85_200k.metadata.json",
+      "metadata_sha256": "d28295d909476e2f83f022b624fdb65486816db2fa49ba74e08a1f805777b11c",
+      "samples_per_orientation": 200000,
+      "batches": 20,
+      "seed": 202608337,
+      "replica_counter": [0, 200000]
+    },
+    "N170": {
+      "N": 170,
+      "births": "results/server-20260830/P337-N170-angle-flip/raw/n170_8m.births.csv",
+      "births_sha256": "d317bd01d8ba33f04e8c85c28a713309a8b83483742c4c82a64052dd9ed8f8ea",
+      "metadata": "results/server-20260830/P337-N170-angle-flip/raw/n170_8m.metadata.json",
+      "metadata_sha256": "f750f5b0f779dc56643c06e563514b417c4957a4365cfad5bec86c2332d0db0c",
+      "samples_per_orientation": 8000000,
+      "batches": 80,
+      "seed": 202608337170,
+      "replica_counter": [0, 8000000]
+    },
+    "N340": {
+      "N": 340,
+      "births": "results/server-20260830/P337-N340-second-child/raw/n340_12m.births.csv",
+      "births_sha256": "4e179b6aaee4012fb80403a6a1558f4cc4a50205f00be85f70fb74fb40b10ceb",
+      "metadata": "results/server-20260830/P337-N340-second-child/raw/n340_12m.metadata.json",
+      "metadata_sha256": "8b42289e487302dc7718fe6a657c62e072461548bf90d8c7e1527a0e215689d9",
+      "samples_per_orientation": 12000000,
+      "batches": 80,
+      "seed": 202608337340,
+      "replica_counter": [0, 12000000]
+    },
+    "N680": {
+      "N": 680,
+      "births": "results/server-20260830/P337-N680-heldout/raw/n680_120m.births.csv.gz",
+      "compression": "gzip",
+      "births_sha256": "80cd32714150fa6d168bc3df31f81074d616b480e086876dad0ea5c5e7ab7a6a",
+      "births_uncompressed_sha256": "037575489db0b7139c9cc4af95aafa200aa976a7d67e1cad16ddbf198e54f4c6",
+      "metadata": "results/server-20260830/P337-N680-heldout/raw/n680_120m.metadata.json",
+      "metadata_sha256": "6c8f712f929283b024141c5b9750d5fd8539fb09db1ea1cbcdc32bd2404c7b31",
+      "samples_per_orientation": 120000000,
+      "batches": 80,
+      "seed": 202608337680,
+      "replica_counter": [0, 120000000]
+    }
+  },
+  "lineage": {
+    "generation_order": [85, 170, 340, 680],
+    "area_ratio": 2,
+    "geometry": "the exact 1+i Gaussian-child sequence already used by P337",
+    "orientations": ["first", "second"],
+    "within_size_coupling": "first and second share the same counter-keyed permutation and are one paired covariance block",
+    "cross_size": "independent seeds and counter domains"
+  },
+  "estimator": {
+    "event": "kind=DIRECT_RANK2, equivalently K1=K2 with no projective line",
+    "per_orientation": "D_N,o=sum DIRECT_RANK2 count / samples_per_orientation",
+    "lineage_scalar": "Dbar_N=(D_N,first+D_N,second)/2",
+    "delete_one": "delete one common batch index from both orientations within a size",
+    "covariance": "retain the 2x2 first/second jackknife covariance within every size; cross-size covariance is zero by independent RNG domains"
+  },
+  "models": {
+    "fixed_primary": {
+      "form": "log Dbar_N = log A - (5/6) log N",
+      "parameters": 1,
+      "joint_df": 3,
+      "origin": "conditional six-arm adversary frozen at 652bf15; not selected from these four values"
+    },
+    "free_power_diagnostic": {
+      "form": "log Dbar_N = log A - beta log N",
+      "parameters": 2,
+      "joint_df": 2,
+      "role": "estimate the effective exponent without replacing the fixed primary target"
+    },
+    "minimal_curvature_diagnostic": {
+      "form": "log Dbar_N = a - beta log N + kappa*(log2(N/85)-1.5)^2",
+      "parameters": 3,
+      "joint_df": 1,
+      "role": "one additional log-curvature coordinate; post-fit diagnostic, not a new scaling claim"
+    }
+  },
+  "secondary_scores": {
+    "doubling": "jointly score the three adjacent log ratios against -(5/6)log 2 with their shared-size covariance",
+    "heldout": "fit only the fixed-exponent amplitude on N85/N170/N340, then score N680 using source-amplitude plus N680 variance",
+    "external_lineage": "report N325/N425 Dbar from 2e99533 as an external-lineage comparison only; do not include it in the same-lineage fit or evidence count"
+  },
+  "decision_alpha": 0.01,
+  "decision_rule": "The fixed 5/6 line survives only if the four-size GLS goodness-of-fit p is at least 0.01. Report free beta and curvature regardless. Do not select a model by largest p and do not call compatibility an arm correspondence proof.",
+  "claim_boundary": [
+    "The 5/6 exponent is a conditional six-arm scaling line, not an exact arm-event correspondence or universality theorem.",
+    "First and second orientations are paired views of one random block at each size, not independent evidence.",
+    "N325/N425 use a different geometry lineage and are external controls only.",
+    "No new Monte Carlo is authorized."
+  ],
+  "score_once_after_freeze_commit": true,
+  "no_new_simulation": true
+}
