@@ -1,0 +1,833 @@
+{
+  "schema": "matching-one/p218-production-coalescence/v1",
+  "issue": 218,
+  "status": "production_empirical_transfer_diagnostic",
+  "conclusion": "no_positive_joint_coalescence_signature_but_second_response_direction_is_underpowered",
+  "alpha": 0.01,
+  "state_contract": {
+    "coordinate_order": [
+      "H=N^(13/8)*P4_D",
+      "U=N^(13/8)*P4_S_prime/mean_M_prime"
+    ],
+    "basis_selection": "exact source-declared coordinates; no PCA or target rotation",
+    "whitening": "inverse square root of the average N65/N85 state covariance, frozen before N520/N680",
+    "covariance": "full same-batch jackknife within the aligned N65/N130/N85/N170 source; independent committed blocks for N260/N340/N520/N680"
+  },
+  "provenance": {
+    "raw_histograms": [
+      {
+        "path": "results/server-20260828/P45-root-amplitude/n65.hist.csv",
+        "sha256": "998ecb82ea8d3d6b8d37a1ddc4aae479b550054a8b4bfe9bf23fe49810e5138f"
+      },
+      {
+        "path": "results/server-20260829/P154-norm4-production/raw/n65_1900m.hist.csv",
+        "sha256": "5b791d7875dbdbe43b09e9eb53be3ac50107403cc7922022b94e78e6b22bc3eb"
+      },
+      {
+        "path": "results/server-20260828/P49-fullcurve-doubling-100m/raw/n130.hist.csv",
+        "sha256": "b49c8fef1d7ddf1c902fc50e9d4c7b0d90b5b8e049998cdb6cc592d3c9cfd4a3"
+      },
+      {
+        "path": "results/server-20260829/P154-norm4-production/raw/n130_1900m.hist.csv",
+        "sha256": "1d0a986624f1896333310c3ee8b4f34c0e582cd26a0e7af6f728f53778d9e361"
+      },
+      {
+        "path": "results/server-20260828/P45-root-amplitude/n85.hist.csv",
+        "sha256": "a83dfb90980e8e1fdeb94beeaa8b33fd002e1943d6dabb39a5c89f68207ffac7"
+      },
+      {
+        "path": "results/server-20260829/P154-norm4-production/raw/n85_1900m.hist.csv",
+        "sha256": "926de368bc65782273218b78b57753c9791fb8e104ea4e6a2fd26c39e14777ae"
+      },
+      {
+        "path": "results/server-20260828/P49-fullcurve-doubling-100m/raw/n170.hist.csv",
+        "sha256": "5d6f5600399c80e25be2171dead9e823c5104dd1278052c24f39951fbfae29a1"
+      },
+      {
+        "path": "results/server-20260829/P154-norm4-production/raw/n170_1900m.hist.csv",
+        "sha256": "b66e5f4d8d7a7614d04a0d0d2603b0e0aa24d831de7aa0e2a3538744d947cae1"
+      },
+      {
+        "path": "results/server-20260829/P154-norm4-production/raw/n260_1b.hist.csv",
+        "sha256": "02f74c5c2983d597ef9b6e91517a5d730075811fd4af6aa2309cef3f5b74729c"
+      },
+      {
+        "path": "results/server-20260829/P154-norm4-production/raw/n340_1b.hist.csv",
+        "sha256": "c3d9323e7c62c2f982b0c31d7a3dbe4f727fe45590569fa918e9c6d5c4f3ae92"
+      },
+      {
+        "path": "results/server-20260829/P154-norm4-generation4-pilot/raw/n520_100m.hist.csv",
+        "sha256": "c806949ccbe4070ccfdef5e618fb322ea0c46e42ab2edb52386f707e07b1ea59"
+      },
+      {
+        "path": "results/server-20260829/P154-norm4-generation4-pilot/raw/n680_100m.hist.csv",
+        "sha256": "10e3f525303f283f784c6ae66dd3ee7361f5a7dd25d64720850112084299c131"
+      }
+    ],
+    "committed_scorers": [
+      {
+        "path": "results/server-20260829/P154-norm4-production/analysis/scalar_score.json",
+        "sha256": "06984dc8d8e1a4f96ccf5e695932fb81dd9e968bc921122d3e394a3b907a8ae5"
+      },
+      {
+        "path": "results/server-20260829/P154-norm4-production/analysis/thermal_jet_score.json",
+        "sha256": "5ab42909c67fca87a9c9b27df3bd1e4e89ce7ac0e1bdd5d7fcb8cec7b4be7c95"
+      },
+      {
+        "path": "results/server-20260829/P154-norm4-generation4-pilot/analysis/score.json",
+        "sha256": "27ec7c18da5f1b8441899e4566e21a382bc8d3a7434fc4db7d7fb2fe67b7b02e"
+      }
+    ]
+  },
+  "state_points": {
+    "65": {
+      "H": 0.37970236195423884,
+      "U": 1.148147298614282
+    },
+    "85": {
+      "H": 0.3767035899189572,
+      "U": 1.2286046608068135
+    },
+    "130": {
+      "H": 0.38373912705301483,
+      "U": 1.3990777789752291
+    },
+    "170": {
+      "H": 0.39836990528080657,
+      "U": 1.5015218451014178
+    },
+    "260": {
+      "H": 0.32960981618284585,
+      "U": 1.6607937928433711
+    },
+    "340": {
+      "H": 0.545225726734294,
+      "U": 1.9845090198288815
+    },
+    "520": {
+      "H": 1.0288558900560176,
+      "U": 2.5579375542885527
+    },
+    "680": {
+      "H": 0.15151630593807003,
+      "U": 2.0810445163868
+    }
+  },
+  "frozen_whitener": [
+    [
+      -237.07661793485994,
+      351.18542592606536
+    ],
+    [
+      125.37637137646729,
+      84.63849550845416
+    ]
+  ],
+  "response_vector_geometry": [
+    {
+      "generation": 0,
+      "sizes": [
+        65,
+        85
+      ],
+      "covariance_whitened_principal_angle_degrees": 0.9672132549674063,
+      "response_matrix_condition_2norm": 118.86042819830412,
+      "rank_gate": {
+        "determinant": -2178.813323739945,
+        "delta_method_standard_error": 518.6716487441864,
+        "absolute_z": 4.200756546102553
+      }
+    },
+    {
+      "generation": 1,
+      "sizes": [
+        130,
+        170
+      ],
+      "covariance_whitened_principal_angle_degrees": 0.3412300166332651,
+      "response_matrix_condition_2norm": 336.77857345219905,
+      "rank_gate": {
+        "determinant": -1207.7127029351832,
+        "delta_method_standard_error": 1872.2728910540386,
+        "absolute_z": 0.6450516421541914
+      }
+    },
+    {
+      "generation": 2,
+      "sizes": [
+        260,
+        340
+      ],
+      "covariance_whitened_principal_angle_degrees": 2.797829284318761,
+      "response_matrix_condition_2norm": 41.327366306799604,
+      "rank_gate": {
+        "determinant": 16113.38106040364,
+        "delta_method_standard_error": 11048.38689618768,
+        "absolute_z": 1.4584374363250867
+      }
+    },
+    {
+      "generation": 3,
+      "sizes": [
+        520,
+        680
+      ],
+      "covariance_whitened_principal_angle_degrees": 12.147446153305916,
+      "response_matrix_condition_2norm": 9.401008573402294,
+      "rank_gate": {
+        "determinant": -112394.26584858075,
+        "delta_method_standard_error": 159839.79317746672,
+        "absolute_z": 0.7031682387363438
+      }
+    }
+  ],
+  "plug_in_transfer_geometry": [
+    {
+      "transition": "generation_0_to_1",
+      "parent_sizes": [
+        65,
+        85
+      ],
+      "child_sizes": [
+        130,
+        170
+      ],
+      "matrix": [
+        [
+          0.9779653023543133,
+          0.6497111840428857
+        ],
+        [
+          0.20632722024279637,
+          0.7038608468428365
+        ]
+      ],
+      "trace": 1.6818261491971498,
+      "determinant": 0.554298383333793,
+      "discriminant": 0.6113456627881417,
+      "eigenvalues": [
+        1.2318560572661699,
+        0.44997009193098
+      ],
+      "relative_eigenvalue_gap": 0.6347218579014919,
+      "right_eigenvector_principal_angle_degrees": 60.44373457763565,
+      "right_eigenbasis_condition_2norm": 1.7166646674416493,
+      "common_eigenvalue_trace_over_2": 0.8409130745985749,
+      "J1_frobenius": 0.7087045722648821,
+      "J2_frobenius": 0.21614333190323956,
+      "J2_over_J1": 0.3049836848272157
+    },
+    {
+      "transition": "generation_1_to_2",
+      "parent_sizes": [
+        130,
+        170
+      ],
+      "child_sizes": [
+        260,
+        340
+      ],
+      "matrix": [
+        [
+          4.233554369325688,
+          -7.145015367538576
+        ],
+        [
+          5.923285585301219,
+          -13.14829724846905
+        ]
+      ],
+      "trace": -8.914742879143361,
+      "determinant": -13.342064732152132,
+      "discriminant": 132.84089952984579,
+      "eigenvalues": [
+        1.3054598856070676,
+        -10.220202764750429
+      ],
+      "relative_eigenvalue_gap": 1.127733266712634,
+      "right_eigenvector_principal_angle_degrees": 41.41086633581216,
+      "right_eigenbasis_condition_2norm": 2.645664450160727,
+      "common_eigenvalue_trace_over_2": -4.457371439571681,
+      "J1_frobenius": 15.40132914909997,
+      "J2_frobenius": 46.96635043823739,
+      "J2_over_J1": 3.0494998180713533
+    },
+    {
+      "transition": "generation_2_to_3",
+      "parent_sizes": [
+        260,
+        340
+      ],
+      "child_sizes": [
+        520,
+        680
+      ],
+      "matrix": [
+        [
+          1.7531877253074732,
+          -1.2708012868942227
+        ],
+        [
+          2.864417946280624,
+          -6.05486731904485
+        ]
+      ],
+      "trace": -4.301679593737377,
+      "determinant": -6.975213049778477,
+      "discriminant": 46.40529952629046,
+      "eigenvalues": [
+        1.255231970075252,
+        -5.556911563812628
+      ],
+      "relative_eigenvalue_gap": 1.225886619871638,
+      "right_eigenvector_principal_angle_degrees": 58.74072432216383,
+      "right_eigenbasis_condition_2norm": 1.7768625696215339,
+      "common_eigenvalue_trace_over_2": -2.1508397968686883,
+      "J1_frobenius": 6.348439798057819,
+      "J2_frobenius": 16.406750989016434,
+      "J2_over_J1": 2.58437529706681
+    }
+  ],
+  "rank_identifiability": {
+    "identifiable_at_3sigma": false,
+    "source_input_generation_absolute_determinant_z": 0.6450516421541914,
+    "heldout_parent_generation_absolute_determinant_z": 1.4584374363250867,
+    "consequence": "a second response direction is not resolved at the 3-sigma production gate; plug-in eigen geometry is descriptive only"
+  },
+  "heldout_model_table": {
+    "normal_diagonalizable": {
+      "source_fit": {
+        "source_fit_squared_residual": 612.4259816781037
+      },
+      "transfer": {
+        "matrix": [
+          [
+            -0.3707308559464895,
+            4.025316112854864
+          ],
+          [
+            4.025316112854864,
+            -8.544012023196931
+          ]
+        ],
+        "trace": -8.91474287914342,
+        "determinant": -13.035640917832097,
+        "discriminant": 131.6152042725667,
+        "eigenvalues": [
+          1.2788120536702623,
+          -10.193554932813683
+        ],
+        "relative_eigenvalue_gap": 1.125453000655707,
+        "right_eigenvector_principal_angle_degrees": 90.0,
+        "right_eigenbasis_condition_2norm": 1.0,
+        "common_eigenvalue_trace_over_2": -4.45737143957171,
+        "J1_frobenius": 8.112188492403474,
+        "J2_frobenius": 46.533001724192296,
+        "J2_over_J1": 5.736183493241973
+      },
+      "heldout_prediction_order": [
+        "N520_H",
+        "N520_U",
+        "N680_H",
+        "N680_U"
+      ],
+      "heldout_prediction": [
+        544.9167282974606,
+        479.1118427232807,
+        740.827012331194,
+        265.8952056661201
+      ],
+      "heldout_residual": [
+        109.47598644080199,
+        -133.61763835919373,
+        -45.915480846574155,
+        -70.76216407014087
+      ],
+      "heldout_residual_covariance": [
+        [
+          62423.316950344604,
+          -77086.42116868407,
+          -4153.926003823668,
+          12815.537395228126
+        ],
+        [
+          -77086.42116868407,
+          210938.60240001278,
+          12170.152710555529,
+          -29656.01300611132
+        ],
+        [
+          -4153.926003823668,
+          12170.152710555529,
+          65137.624215816024,
+          -2480.8118434063304
+        ],
+        [
+          12815.53739522813,
+          -29656.013006111327,
+          -2480.8118434063394,
+          56178.9130927098
+        ]
+      ],
+      "heldout_score": {
+        "chi_square": 0.3838637582034607,
+        "degrees_of_freedom": 4,
+        "chi_square_survival": 0.9837765800586513,
+        "numerical_rank": 4,
+        "relative_eigenvalue_cutoff": 1e-10,
+        "active_condition_number": 5.661667761016173,
+        "correlation_eigenvalues": [
+          0.32447886162623074,
+          0.8560537583185843,
+          0.9823758700547264,
+          1.8370915100004586
+        ],
+        "component_standardized_residuals": [
+          0.4381728316965801,
+          -0.29092815943613937,
+          -0.17990497762787644,
+          -0.29854818818162415
+        ]
+      },
+      "optimistic_target_only_pairwise_chi2": {
+        "rank2_Jordan": 7.257010095053325,
+        "generic_2x2": 3.5723568902843494
+      },
+      "decision": "underpowered",
+      "decision_rule": "eliminate at p<alpha; otherwise call underpowered when even the target-only nearest-rival separation is below chi2=9"
+    },
+    "rank2_Jordan": {
+      "source_fit": {
+        "source_fit_squared_residual": 691.0128891384018,
+        "theta_degrees": 22.643444019543367,
+        "common_eigenvalue": 1.2230891784066333,
+        "nilpotent_strength": -13.140035351590505
+      },
+      "transfer": {
+        "matrix": [
+          [
+            5.891996589715602,
+            -11.192401892288538
+          ],
+          [
+            1.9476334593019675,
+            -3.4458182329023357
+          ]
+        ],
+        "trace": 2.4461783568132667,
+        "determinant": 1.4959471383354064,
+        "discriminant": 2.7533531010703882e-14,
+        "eigenvalues": [
+          1.2230892613727875,
+          1.2230890954404792
+        ],
+        "relative_eigenvalue_gap": 1.356665564636024e-07,
+        "right_eigenvector_principal_angle_degrees": 8.537736462515939e-07,
+        "right_eigenbasis_condition_2norm": 134217728.0,
+        "common_eigenvalue_trace_over_2": 1.2230891784066333,
+        "J1_frobenius": 13.140035351590507,
+        "J2_frobenius": 1.0048591735576161e-14,
+        "J2_over_J1": 7.647309513790502e-16
+      },
+      "heldout_prediction_order": [
+        "N520_H",
+        "N520_U",
+        "N680_H",
+        "N680_U"
+      ],
+      "heldout_prediction": [
+        940.2573239185695,
+        356.9890042912331,
+        699.6755787331258,
+        291.2832981971742
+      ],
+      "heldout_residual": [
+        -285.86460918030684,
+        -11.494799927146119,
+        -4.7640472485059036,
+        -96.15025660119497
+      ],
+      "heldout_residual_covariance": [
+        [
+          311004.39929807076,
+          117696.6116994148,
+          -1830.9448387244481,
+          -1161.367271529611
+        ],
+        [
+          117696.61169941482,
+          63000.294421756815,
+          -1508.898337014224,
+          -709.8801290161202
+        ],
+        [
+          -1830.9448387244554,
+          -1508.898337014224,
+          104169.99331541148,
+          20653.016711872562
+        ],
+        [
+          -1161.3672715296118,
+          -709.8801290161201,
+          20653.01671187256,
+          35477.01955659836
+        ]
+      ],
+      "heldout_score": {
+        "chi_square": 1.05910532230938,
+        "degrees_of_freedom": 4,
+        "chi_square_survival": 0.9007051280248045,
+        "numerical_rank": 4,
+        "relative_eigenvalue_cutoff": 1e-10,
+        "active_condition_number": 11.5778926074506,
+        "correlation_eigenvalues": [
+          0.159124948152203,
+          0.6602748148186373,
+          1.3382686761568088,
+          1.842331560872351
+        ],
+        "component_standardized_residuals": [
+          -0.5125982576519231,
+          -0.045796272093863846,
+          -0.014760624828701182,
+          -0.5104778281694863
+        ]
+      },
+      "optimistic_target_only_pairwise_chi2": {
+        "normal_diagonalizable": 7.257010095053325,
+        "generic_2x2": 4.470792438662993
+      },
+      "decision": "underpowered",
+      "decision_rule": "eliminate at p<alpha; otherwise call underpowered when even the target-only nearest-rival separation is below chi2=9"
+    },
+    "generic_2x2": {
+      "source_fit": {
+        "source_fit_squared_residual": 0.0
+      },
+      "transfer": {
+        "matrix": [
+          [
+            4.233554369325688,
+            -7.145015367538576
+          ],
+          [
+            5.923285585301219,
+            -13.14829724846905
+          ]
+        ],
+        "trace": -8.914742879143361,
+        "determinant": -13.342064732152132,
+        "discriminant": 132.84089952984579,
+        "eigenvalues": [
+          1.3054598856070676,
+          -10.220202764750429
+        ],
+        "relative_eigenvalue_gap": 1.127733266712634,
+        "right_eigenvector_principal_angle_degrees": 41.41086633581216,
+        "right_eigenbasis_condition_2norm": 2.645664450160727,
+        "common_eigenvalue_trace_over_2": -4.457371439571681,
+        "J1_frobenius": 15.40132914909997,
+        "J2_frobenius": 46.96635043823739,
+        "J2_over_J1": 3.0494998180713533
+      },
+      "heldout_prediction_order": [
+        "N520_H",
+        "N520_U",
+        "N680_H",
+        "N680_U"
+      ],
+      "heldout_prediction": [
+        838.760594640429,
+        600.2990711573075,
+        714.7227733285035,
+        255.21185087873982
+      ],
+      "heldout_residual": [
+        -184.36787990216635,
+        -254.80486679322053,
+        -19.811241843883636,
+        -60.0788092827606
+      ],
+      "heldout_residual_covariance": [
+        [
+          183084.02924588288,
+          198805.66881026732,
+          9556.218323437799,
+          10514.644155944876
+        ],
+        [
+          198805.6688102673,
+          418612.9362616413,
+          -20994.971403308442,
+          -46643.392406069026
+        ],
+        [
+          9556.21832343779,
+          -20994.971403308446,
+          79363.23740320481,
+          39298.23989837123
+        ],
+        [
+          10514.64415594487,
+          -46643.392406069026,
+          39298.23989837122,
+          88201.87946351104
+        ]
+      ],
+      "heldout_score": {
+        "chi_square": 0.26135995465771145,
+        "degrees_of_freedom": 4,
+        "chi_square_survival": 0.9921700393662768,
+        "numerical_rank": 4,
+        "relative_eigenvalue_cutoff": 1e-10,
+        "active_condition_number": 8.237100165489334,
+        "correlation_eigenvalues": [
+          0.2137686429117035,
+          0.5405054804586519,
+          1.4848921527252215,
+          1.7608337239044232
+        ],
+        "component_standardized_residuals": [
+          -0.43088366571287295,
+          -0.3938232902810983,
+          -0.07032374847723377,
+          -0.20229371823074993
+        ]
+      },
+      "optimistic_target_only_pairwise_chi2": {
+        "normal_diagonalizable": 3.5723568902843494,
+        "rank2_Jordan": 4.470792438662993
+      },
+      "decision": "underpowered",
+      "decision_rule": "eliminate at p<alpha; otherwise call underpowered when even the target-only nearest-rival separation is below chi2=9"
+    }
+  },
+  "frozen_existing_recurrence_crosscheck": {
+    "scalar_U": {
+      "secondary_eigenvalue": 0.5,
+      "residual_order": [
+        "N65_U",
+        "N85_U"
+      ],
+      "residual": [
+        0.6300349808234424,
+        -0.49148667338597507
+      ],
+      "covariance": [
+        [
+          0.39418801457016556,
+          1.7889617399692756e-05
+        ],
+        [
+          1.7889617399692756e-05,
+          0.7863996753790207
+        ]
+      ],
+      "score": {
+        "chi_square": 1.3141984566639096,
+        "degrees_of_freedom": 2,
+        "chi_square_survival": 0.5183527788201465,
+        "numerical_rank": 2,
+        "relative_eigenvalue_cutoff": 1e-10,
+        "active_condition_number": 1.0000642645739146,
+        "correlation_eigenvalues": [
+          0.9999678687454934,
+          1.0000321312545066
+        ],
+        "component_standardized_residuals": [
+          1.0034897837262224,
+          -0.5542300684341769
+        ]
+      }
+    },
+    "thermal_jet": {
+      "secondary_eigenvalue": 0.5,
+      "residual_order": [
+        "N65_r2",
+        "N65_r3",
+        "N65_r4",
+        "N65_r5",
+        "N65_r6",
+        "N85_r2",
+        "N85_r3",
+        "N85_r4",
+        "N85_r5",
+        "N85_r6"
+      ],
+      "residual": [
+        -0.5036917150401097,
+        -1.0566596525694842,
+        3.7770312815004425,
+        5.310187279720682,
+        -108.7291416802945,
+        -0.18929137545945196,
+        0.8915692691257755,
+        1.0166671092819954,
+        -0.3908359639902519,
+        49.64209338457122
+      ],
+      "covariance": [
+        [
+          1.321900948302484,
+          1.4108744709486298,
+          -8.274403944910546,
+          -17.175038979941423,
+          76.9585739156153,
+          0.00045619224201700964,
+          0.00034309641777853554,
+          -0.0015876927279732111,
+          -0.002729986144321392,
+          0.005596712303184218
+        ],
+        [
+          1.4108744709486298,
+          6.664848756729891,
+          -5.324581897275899,
+          -71.11063801123981,
+          4.762681835009721,
+          -0.0002816821879699249,
+          -0.0006277992467387405,
+          0.0009234336745623822,
+          0.005798512618009906,
+          -0.00414854004087172
+        ],
+        [
+          -8.274403944910546,
+          -5.324581897275899,
+          67.72280924043721,
+          92.5420256352559,
+          -770.328931873225,
+          -0.0021883781584595675,
+          -0.0017126416232175776,
+          0.007580016288459832,
+          0.014951506608879542,
+          -0.02489625204857691
+        ],
+        [
+          -17.175038979941423,
+          -71.11063801123981,
+          92.5420256352559,
+          885.3224167014133,
+          -468.6663644384961,
+          0.0021871697403783525,
+          0.004289136925270635,
+          -0.008770292351339063,
+          -0.036516067197793926,
+          0.0643687032127942
+        ],
+        [
+          76.9585739156153,
+          4.762681835009721,
+          -770.328931873225,
+          -468.6663644384961,
+          10444.299290114053,
+          0.016422129500793393,
+          0.014731861790971074,
+          -0.05546234010729581,
+          -0.11864163192353896,
+          0.1690214760228727
+        ],
+        [
+          0.00045619224201700964,
+          -0.0002816821879699249,
+          -0.0021883781584595675,
+          0.0021871697403783525,
+          0.016422129500793393,
+          2.547667928784624,
+          2.960653759924243,
+          -15.674855689860076,
+          -33.11139331716499,
+          164.58812564552164
+        ],
+        [
+          0.00034309641777853554,
+          -0.0006277992467387405,
+          -0.0017126416232175776,
+          0.004289136925270635,
+          0.014731861790971074,
+          2.960653759924243,
+          13.331944554726329,
+          -16.894015608363055,
+          -146.8671183183473,
+          172.39082535207453
+        ],
+        [
+          -0.0015876927279732111,
+          0.0009234336745623822,
+          0.007580016288459832,
+          -0.008770292351339063,
+          -0.05546234010729581,
+          -15.674855689860076,
+          -16.894015608363055,
+          132.2295883708872,
+          246.6231756616381,
+          -1784.7697066456797
+        ],
+        [
+          -0.002729986144321392,
+          0.005798512618009906,
+          0.014951506608879542,
+          -0.036516067197793926,
+          -0.11864163192353896,
+          -33.11139331716499,
+          -146.8671183183473,
+          246.6231756616381,
+          1923.6438528895442,
+          -2875.0811743673185
+        ],
+        [
+          0.005596712303184218,
+          -0.00414854004087172,
+          -0.02489625204857691,
+          0.0643687032127942,
+          0.1690214760228727,
+          164.58812564552164,
+          172.39082535207453,
+          -1784.7697066456797,
+          -2875.0811743673185,
+          29343.9222092745
+        ]
+      ],
+      "score": {
+        "chi_square": 9.298096669227004,
+        "degrees_of_freedom": 10,
+        "chi_square_survival": 0.504066128356021,
+        "numerical_rank": 10,
+        "relative_eigenvalue_cutoff": 1e-10,
+        "active_condition_number": 303.9842185478143,
+        "correlation_eigenvalues": [
+          0.01098097305261605,
+          0.011555704602695996,
+          0.06204818538475118,
+          0.07280315130213333,
+          0.24512986821209543,
+          0.3862242591533221,
+          1.1919493371979586,
+          1.5745820942470838,
+          3.1066839145532468,
+          3.3380425122940967
+        ],
+        "component_standardized_residuals": [
+          -0.43809202801183894,
+          -0.40929833256887443,
+          0.45896873165862534,
+          0.17846748668485632,
+          -1.0639134651859652,
+          -0.11859309874165051,
+          0.24417901711776635,
+          0.08841265871275096,
+          -0.008911117810154136,
+          0.2897950786111473
+        ]
+      }
+    }
+  },
+  "scientific_card": [
+    "MECHANISM SPACE: empirical 2D Jordan coalescence versus stable diagonalizable or generic mixing in the leading-H4/S-prime state.",
+    "RESULT: report plug-in gap, response angle, eigenbasis condition and minimal-polynomial ratio, but gate interpretation on the source response determinant and held-out rival separation.",
+    "NOT PROVED: the empirical curve-transfer matrix is not the microscopic Potts transfer matrix; target reuse is one mechanism analysis, not an independent evidence vote.",
+    "OBSERVER-SECTOR-SOURCE-GEOMETRY: (N^(13/8)P4[D], U) | thermal H4/S-prime | threshold-rank curves | two dyadic Gaussian lineages.",
+    "DEPENDENCY GROUP: PR277/P154 N65 through N680; scalar and jet scorers are correlated views of the same histograms.",
+    "UPWEIGHT OBSERVATION: resolve the source response determinant and a held-out pairwise model separation above chi2=9 using the same semantic two-coordinate block."
+  ]
+}
