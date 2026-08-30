@@ -58,6 +58,7 @@ def environment_estimate(rows):
     safe = common == 1
     conditional_gap = float(
         np.mean(both[safe]) - np.mean(y1[safe]) * np.mean(y2[safe]))
+    successor_component = float(np.mean(common) * conditional_gap)
     return {
         "at_risk_rows": len(rows),
         "b1_safe_mean": float(np.mean(b1)),
@@ -69,6 +70,10 @@ def environment_estimate(rows):
         "branch_success": float(np.mean(both)),
         "clone_dependence_gap": gap,
         "successor_heterogeneity_gap_given_common_safe": conditional_gap,
+        "successor_heterogeneity_component_of_unconditional_gap": successor_component,
+        "shared_common_gate_component_of_unconditional_gap": gap - successor_component,
+        "successor_heterogeneity_fraction_of_unconditional_gap":
+            successor_component / gap if gap != 0 else None,
     }
 
 
@@ -179,6 +184,11 @@ def main():
                 values[key]["successor_heterogeneity_gap_given_common_safe"]
                 for key in ENVIRONMENTS])
         conditional_cov += covariance(deleted)
+    conditional_size_common = {}
+    for si, size in enumerate(SIZES):
+        conditional_size_common[size] = common_gap(
+            conditional_vector[2 * si:2 * si + 2],
+            conditional_cov[2 * si:2 * si + 2, 2 * si:2 * si + 2])
 
     payload = {
         "schema": "matching-one/p429-branching-continuation-score/v1",
@@ -196,6 +206,7 @@ def main():
             "batch_jackknife_covariance": conditional_cov.tolist(),
             "standard_errors": np.sqrt(
                 np.maximum(np.diag(conditional_cov), 0.0)).tolist(),
+            "size_common_gap": conditional_size_common,
             "claim_boundary": "secondary decomposition; the frozen unconditional gap remains primary"
         },
         "extension_decision": "extend_to_100k" if extend else "stop_at_20k",
