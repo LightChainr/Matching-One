@@ -1,0 +1,68 @@
+{
+  "schema": "matching-one/p337-ambient-line-source-pilot-freeze/v1",
+  "status": "frozen_before_pilot_reveal",
+  "issues": [337, 334],
+  "question": "Does the current typed ambient-H1 line state add a source direction beyond the occupancy clock and the existing JS column, and is its appearance related to the age-standardized rank-one completion cause?",
+  "source": {
+    "name": "W_line",
+    "definition": "At pre-insertion rank k, W_line=1[K1<=k<K2] exp(i 4 arg(P ell)), where ell is the primitive rank-one homology line and P ell is its lifted Euclidean representative; W_line=0 outside the rank-one plateau.",
+    "not_a_repeat_of": ["qJ_D", "q^2J_D", "local motif", "endpoint-only birth mark"],
+    "stored_products": [
+      "W_line", "abs(W_line)^2", "conj(W_line) JS",
+      "O_ext W_line", "O_near W_line", "O_sep4 W_line"
+    ],
+    "clock_control": "All connected products are evaluated at the fixed pre-insertion k0, so n_occ is constant within a size/orientation row.",
+    "old_source_control": "JS and its same-batch Gram entries use the existing canonical-site normalization. Column scaling cannot change whether the frozen 2x2 determinant is zero."
+  },
+  "observers": {
+    "radius": 6,
+    "rows": ["O_far=O_ext-O_near", "O_sep4=axis_landing-diagonal_landing"],
+    "rotation": "counter-derived common C4 turn per replica and pre-insertion k",
+    "mapping_gate": "results/separated-two-orbit-observer/exact_mapping_gate.json"
+  },
+  "runs": {
+    "N325": {
+      "samples": 20000,
+      "batches": 20,
+      "k0": 193,
+      "seed": 20260830337025,
+      "replica_offset": 34725000000,
+      "first_matrix": [[17, -6], [6, 17]],
+      "second_matrix": [[18, -1], [1, 18]],
+      "first_rep": [17, 6],
+      "second_rep": [18, 1],
+      "planned_host": "Huawei-CodeBuddy-TgFr7R"
+    },
+    "N425": {
+      "samples": 20000,
+      "batches": 20,
+      "k0": 252,
+      "seed": 20260830337125,
+      "replica_offset": 34825000000,
+      "first_matrix": [[16, -13], [13, 16]],
+      "second_matrix": [[19, -8], [8, 19]],
+      "first_rep": [16, 13],
+      "second_rep": [19, 8],
+      "planned_host": "Huawei-CodeBuddy-XPk2PZ"
+    }
+  },
+  "primary_source_rank_gate": {
+    "matrix_rows": ["O_far", "O_sep4"],
+    "matrix_columns": ["W_line", "JS"],
+    "statistic": "complex determinant after the existing across-orientation P4 projection",
+    "null": "the new W_line column lies in the same observer-space source direction as JS",
+    "decision": "within each size, reject the rank-one source lane only when the two-real-component delete-one chi-square exceeds 9.21034037198 (alpha=0.01)",
+    "sizes": "N325 and N425 are separate evidence blocks and are not pooled"
+  },
+  "secondary": {
+    "gram": "report the same-batch residual norm fraction 1-|<W_line,JS>|^2/(<|W_line|^2><|JS|^2>)",
+    "completion": "at k0, decompose mark12_h4 completion into risk-composition and age-standardized conditional-hazard terms using common (ell,age) support across orientations",
+    "joint_covariance": "delete one aligned batch from path and sparse streams and publish the full covariance of determinant, Gram residual, risk composition and conditional hazard"
+  },
+  "stop_rules": [
+    "do not pool the two sizes or treat them as replicas",
+    "do not change k0, radius, matrices, source definition or alpha after reveal",
+    "do not interpret a pilot source-rank lift as a CFT field identity",
+    "stop without scoring if complement or separated-mark audits fail"
+  ]
+}

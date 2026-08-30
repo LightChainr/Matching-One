@@ -1292,9 +1292,21 @@ struct PathMoments {
     long double sum_O_sep4_J_S_imaginary = 0;
     long double sum_O_sep4_J_D_real = 0;
     long double sum_O_sep4_J_D_imaginary = 0;
+    long double sum_W_line_real = 0;
+    long double sum_W_line_imaginary = 0;
+    long double sum_abs_W_line2 = 0;
+    long double sum_W_line_conj_J_S_real = 0;
+    long double sum_W_line_conj_J_S_imaginary = 0;
+    long double sum_O_ext_W_line_real = 0;
+    long double sum_O_ext_W_line_imaginary = 0;
+    long double sum_O_near_W_line_real = 0;
+    long double sum_O_near_W_line_imaginary = 0;
+    long double sum_O_sep4_W_line_real = 0;
+    long double sum_O_sep4_W_line_imaginary = 0;
 
     void add(const PathInsertion& active, const PathInsertion& inactive,
-             const QuotientCoordinates& quotient, int n) {
+             const QuotientCoordinates& quotient, int n,
+             const Spin4& current_line_state) {
         if (active.site != inactive.site ||
             active.gate01 != inactive.gate12 ||
             active.gate12 != inactive.gate01 ||
@@ -1339,6 +1351,8 @@ struct PathMoments {
         const long double j_s_imaginary = site_s * chi_imaginary;
         const long double j_d_real = site_d * chi_real;
         const long double j_d_imaginary = site_d * chi_imaginary;
+        const long double w_real = current_line_state.real;
+        const long double w_imaginary = current_line_state.imaginary;
         ++samples;
         sum_q += active.q_before;
         sum_q2 += static_cast<std::uint64_t>(active.q_before * active.q_before);
@@ -1376,6 +1390,16 @@ struct PathMoments {
         sum_J_D_conj_J_S_imaginary +=
             j_d_imaginary * j_s_real - j_d_real * j_s_imaginary;
         sum_abs_J_S2 += j_s_real * j_s_real + j_s_imaginary * j_s_imaginary;
+        sum_W_line_real += w_real;
+        sum_W_line_imaginary += w_imaginary;
+        sum_abs_W_line2 += w_real * w_real + w_imaginary * w_imaginary;
+        sum_W_line_conj_J_S_real += w_real * j_s_real + w_imaginary * j_s_imaginary;
+        sum_W_line_conj_J_S_imaginary +=
+            w_real * j_s_imaginary - w_imaginary * j_s_real;
+        sum_O_ext_W_line_real += o_ext * w_real;
+        sum_O_ext_W_line_imaginary += o_ext * w_imaginary;
+        sum_O_near_W_line_real += o_near * w_real;
+        sum_O_near_W_line_imaginary += o_near * w_imaginary;
         if (active.local.valid && inactive.local.valid) {
             const int local_s = (active_s * active.local.h4 +
                                  inactive_s * inactive.local.h4) / 2;
@@ -1407,6 +1431,8 @@ struct PathMoments {
             sum_O_sep4_J_S_imaginary += o_sep4 * j_s_imaginary;
             sum_O_sep4_J_D_real += o_sep4 * j_d_real;
             sum_O_sep4_J_D_imaginary += o_sep4 * j_d_imaginary;
+            sum_O_sep4_W_line_real += o_sep4 * w_real;
+            sum_O_sep4_W_line_imaginary += o_sep4 * w_imaginary;
         }
     }
 };
@@ -1471,8 +1497,12 @@ struct MarkedOrientation {
         ++sparse[key];
         for (const PathInsertion& insertion : primal.path) {
             const PathInsertion& inactive = matching.path[geometry.n - 1 - insertion.k_before];
+            const Spin4 current_line_state =
+                primal.k1 <= insertion.k_before && insertion.k_before < primal.k2
+                ? chi : Spin4{};
             path[insertion.k_before].add(
-                insertion, inactive, geometry.quotient, geometry.n);
+                insertion, inactive, geometry.quotient, geometry.n,
+                current_line_state);
         }
         complement.add(primal, matching, geometry.n);
     }
@@ -1641,8 +1671,11 @@ void self_test() {
         std::vector<std::uint8_t> active(axis_l2.n, 0);
         for (int k = 0; k < axis_l2.n; ++k) {
             PathMoments one;
+            const Spin4 current_line_state =
+                primal.k1 <= k && k < primal.k2
+                ? spin4_mark(axis_l2.quotient, primal.line) : Spin4{};
             one.add(primal.path[k], matching.path[axis_l2.n - 1 - k],
-                    axis_l2.quotient, axis_l2.n);
+                    axis_l2.quotient, axis_l2.n, current_line_state);
             if (one.sum_O_ext != euler_cell_residue(axis_l2, active) ||
                 one.sum_O_near != euler_local_residue_r2(
                     axis_l2, active, axis_permutation[k]) ||
@@ -2127,7 +2160,17 @@ void run_design(const PairDesign& design, const Options& options,
                     << row.sum_O_sep4_J_S_real << ','
                     << row.sum_O_sep4_J_S_imaginary << ','
                     << row.sum_O_sep4_J_D_real << ','
-                    << row.sum_O_sep4_J_D_imaginary << '\n';
+                    << row.sum_O_sep4_J_D_imaginary << ','
+                    << row.sum_W_line_real << ',' << row.sum_W_line_imaginary << ','
+                    << row.sum_abs_W_line2 << ','
+                    << row.sum_W_line_conj_J_S_real << ','
+                    << row.sum_W_line_conj_J_S_imaginary << ','
+                    << row.sum_O_ext_W_line_real << ','
+                    << row.sum_O_ext_W_line_imaginary << ','
+                    << row.sum_O_near_W_line_real << ','
+                    << row.sum_O_near_W_line_imaginary << ','
+                    << row.sum_O_sep4_W_line_real << ','
+                    << row.sum_O_sep4_W_line_imaginary << '\n';
             }
             const ComplementAudit& audit = marked.complement;
             *complement_audit << design.n << ',' << a << ',' << b << ',' << orientation
@@ -2214,7 +2257,12 @@ int run(int argc, char** argv) {
                "sum_O_sep_axis,sum_O_sep_diagonal,sum_O_sep4,sum_O_sep4_2,"
                "sum_O_sep_axis_internal_h4,sum_O_sep_diagonal_internal_h4,"
                "sum_O_sep4_J_S_re,sum_O_sep4_J_S_im,"
-               "sum_O_sep4_J_D_re,sum_O_sep4_J_D_im\n";
+               "sum_O_sep4_J_D_re,sum_O_sep4_J_D_im,"
+               "sum_W_line_re,sum_W_line_im,sum_abs_W_line2,"
+               "sum_W_line_conj_J_S_re,sum_W_line_conj_J_S_im,"
+               "sum_O_ext_W_line_re,sum_O_ext_W_line_im,"
+               "sum_O_near_W_line_re,sum_O_near_W_line_im,"
+               "sum_O_sep4_W_line_re,sum_O_sep4_W_line_im\n";
         complement_audit
             << "n,a,b,orientation,batch,samples,endpoint_failures,site_failures,"
                "line_failures,local_mark_failures,index_mismatches,"
@@ -2289,6 +2337,7 @@ int run(int argc, char** argv) {
              << "  \"separated_observer_radius\": " << options.far_radius << ",\n"
              << "  \"separated_observer\": \"at every pre-insertion root a counter-random common C4 rotation samples one axis anchor R*(1,0) and one diagonal anchor R*(1,1); their local arm landing values are retained as the typed complex pair axis+i*diagonal and O_sep4=axis-diagonal is the twice-normalized spatial H4 projection\",\n"
              << "  \"separated_products\": \"O_sep axis/diagonal means, O_sep4 first/second moments, internal local-H4 type controls, and O_sep4 times J_S4/J_D4 in the same path batch\",\n"
+             << "  \"ambient_line_source\": \"W_line=1[K1<=k<K2] exp(i4 theta(P ell)); current rank-one ambient-H1 state, zero outside the plateau, with full O_ext/O_near/O_sep4 and J_S Gram products\",\n"
              << "  \"sparse_joint_histogram\": " << (options.marked_births ? "true" : "false") << ",\n"
              << "  \"per_batch_joint_moments\": true,\n"
              << "  \"elapsed_seconds\": " << std::setprecision(17) << elapsed << ",\n"
