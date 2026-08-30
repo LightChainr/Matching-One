@@ -51,12 +51,30 @@ Dual weights may suggest which observations create the contradiction, but
 their acquisition value is a project hypothesis rather than a theorem of the
 SOS framework.
 
-The immediate P250 result also shows why certificates should follow, not
-replace, model-free structure discovery.  Canonical Weyl and free commuting
-rank five both fail, while the archive lacks path order.  Before encoding a
-large ladder of increasingly ornate matrix classes, estimate the bivariate
-Hankel rank and flat-extension defect directly.  Then certify only the small
-classes that the data make scientifically live.
+The P250 sequence also shows why certificates should follow, not replace,
+model-free structure discovery.  Canonical Weyl and free shared-eigenpair rank
+five fail, while the model-free degree-two Hankel score keeps separate
+hand-specific rank-five charts compatible and rejects one raw shared chart.
+The next short certificate is not a larger SOS ladder: jointly test each
+candidate sector map against both hand-specific annihilation residuals.  A
+direction-only singular-vector match is insufficient, and the archive still
+lacks path order.
+
+For rank one through three, the compiler should also be invariant-first.  Use
+the shortest witness that avoids a latent similarity gauge:
+
+1. exact semantic zeros and algebraic identities;
+2. gauge-free Hankel minors and determinantal rank bounds;
+3. trace/determinant invariant ideals and Cayley--Hamilton reductions;
+4. bounded latent-matrix SOS only for the factorization classes that survive;
+5. noncommutative or locality-bounded certificates only when ordered words or
+   local tensor structure are actually observed.
+
+This order is not a hierarchy of permission.  It is a cost hierarchy for
+finding the smallest independently checkable contradiction.  The P250
+bivariate archive now supplies the first statistical rank witness and a live
+joint-null audit target, while the P333 signed connected-history construction
+is already a non-artificial exact Jordan positive control.
 
 ## Literature-backed routes and exact boundaries
 

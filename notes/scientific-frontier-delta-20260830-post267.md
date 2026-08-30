@@ -9,10 +9,10 @@ commit.  A citation records provenance; it does not promote a branch result to
 
 | Line | New result | What it removes | Live discriminator |
 |---|---|---|---|
-| P250 | Fresh N505 bivariate data preserve the exact signed C4 envelope but reject a common commuting diagonal state through rank three.  A frozen reuse then rejects all four canonical five-dimensional Z5 Weyl models and the favorable free commuting rank-four and rank-five controls. | A two-dimensional three-state continuation of the axis recurrence; the minimal clock/shift explanation; the frozen shared-eigenpair rank-five explanation. | A covariance-aware model-free bivariate Hankel rank lower bound with a flat-extension check, followed by an ordered-word/path observation only if rank alone cannot decide. |
+| P250 | A model-free degree-two Hankel score keeps separate plus/minus two-charge rank-five charts compatible while rejecting a raw shared rank-five chart.  A later null-direction comparison leaves both Alexander reflection-conjugation and identity maps compatible, but does not jointly enforce the two annihilation residuals. | Common raw state dimension at most five; the claim that one fitted Weyl spectrum explains the split.  It does not yet remove the identity map or identify an Alexander bridge. | Jointly score `H_plus q=0` and `H_minus A(q)=0` for every frozen map using the same 400-batch covariance; only then consider a radius-five shell. |
 | P333 | The universal first-jet connectivity radical now has an exact Gram-compatible Jordan positive control, `K=D+J-DJ-JD=(D-J)^2`, on three marks. | Join-only dynamics, a single deterministic detach/join history, and the idea that an epsilon pivot alone selects a log pair. | Embed the signed connected-history subtraction in a physical Q-dependent transfer expansion and test the dimension-velocity collision separately. |
-| P334 | Translation regularity gives `g(U)=|U|/N g(V)+(D_cut(U)+S_cut(U))/2`; aggregate TM implies every proper Hall cut. | Larger proper-cut atlases, line-coset classifications, and an independent Hall-family conjecture. | Prove aggregate TM and the separate BA concordance inequality from digital Alexander homology geometry. |
-| P337 | N170 flips with exact H4 sign but exceeds the frozen magnitude; N340 flips back and returns toward nominal H4 while the projective scalar remains null.  A three-generation two-mode coordinate is plausible but unresolved. | Scale-neutral charged amplitude; another scalar/projective common mode as the N170 residual. | The frozen N680 same-lineage forecast, rerouted to the only permitted TV2N0X environment before any production, or a zero-production N130/N170 common-subset current comparison. |
+| P334 | Translation regularity collapses every proper Hall cut; aggregate TM is exactly `4DF<=M^2+4Y(T-D)`, and the finite typed rewrite has one unclosed global `D x F` critical pair. | Larger Hall atlases, displacement-local, quotient-order and Fourier-SOS proof routes. | Realize `D x F -> M x M` or `Y x nonD` globally across displacement classes; pursue BA independently. |
+| P337 | The preregistered N680 child lands closest to the two-mode recurrence and excludes scale-neutral, but remains unresolved against free-single.  Four-generation recurrence, fixed identity dressing and same-base Jordan all survive; N1360 is source-covariance limited across them. | Fixed nominal single H4 and no decay on this lineage; not the live correction mechanisms. | Decompose all four archived generations into first-birth, completion and direct-rank-two recurrence components; if still aliased, add a geometry/modulus covector rather than another size. |
 
 These moves change the project's center of gravity.  It is no longer useful to
 say merely that a compact rank-two or rank-three state “survives.”  Survival is
@@ -20,8 +20,9 @@ word-, observer- and geometry-dependent.  The axis P250 recurrence closes at
 rank three, while a statistically independent bivariate block excludes a
 common diagonal rank at most three and then excludes the two frozen minimal
 rank-five families.  The next state description must say which words are
-observed, whether path order is retained, and which source/readout projection
-is being represented.
+observed, whether path order is retained, which source/readout projection is
+being represented and whether a claimed sector map was tested against the
+full annihilation residual or only an extracted singular-vector direction.
 
 ## P250: no minimal Weyl state
 
@@ -53,6 +54,23 @@ dimension, non-normal/Jordan transfer, finite periodic images or a
 context-dependent projection.  The archive does not record `TxTy` versus
 `TyTx` path order; the model-fixed center `D` is not an independently observed
 coordinate.  Those two facts must remain visible in every interpretation.
+
+The invariant-first Hankel result at
+`a770ac9f71460564dd2090210e1e0e64a1cd4979` removes the exponential-root
+assumption.  For the two-charge blocks, rank at most four fails within each
+hand (`p=2.80e-11` plus, `.00235` minus), while rank at most five remains
+compatible at the frozen `.01` level (`p=.0543/.0655`).  The raw shared block
+rejects rank at most five (`p=2.84e-5`).  This means “compatible truncated
+five-dimensional chart in each hand,” not exact rank five.
+
+The subsequent direction-only bridge result
+`a46ed6343b4b6874259a0f24defeedf16800a8d0` keeps all four frozen Alexander
+reflection-plus-conjugation maps, but also keeps identity comparators.  It
+compares separately extracted smallest-singular-vector lines and does not
+jointly require `H_plus q=0` and `H_minus A(q)=0`.  It therefore cannot by
+itself reinterpret the shared-rank rejection as a coordinate mismatch or
+identify an Alexander intertwiner.  The clean zero-production repair is a
+candidate-constrained joint-null score with the complete paired covariance.
 
 ## P333: a minimal weighted-history Jordan mechanism
 
@@ -87,6 +105,16 @@ assumptions.  In all 688 positive-demand rows the all-site cut is the unique
 worst ratio.  Only aggregate TM and the independent BA concordance inequality
 remain to be derived from arbitrary digital Alexander quotients.
 
+The later branch tip `7ef99ae48a354c3a2199075746feef8081e637d0`
+reduces aggregate TM to one four-face inequality,
+`4DF<=M^2+4Y(T-D)`.  Ordinary Rayleigh and synergy-only coverage each fail on
+bounded rows, and the inequality fails displacement by displacement, after
+quotient-order grouping and under a Fourier-SOS attempt.  A terminating
+count-level rewrite closes all 984 atlas rows but is not a configuration
+injection.  The sole general TM problem is the global, collision-free critical
+pair `D x F -> M x M` or `Y x nonD`; BA remains a separate marked-pair
+concordance problem.
+
 ## P337: H4 sign is stable, radial transfer is curved
 
 - `0db21b7c21fe7912b28804582411dc5966dd957d`: N170 gives
@@ -100,24 +128,37 @@ remain to be derived from arbitrary digital Alexander quotients.
 - `4024a7c381d7c269880734bbe61355aa8a4232c2`: fixing the leading transfer to
   `2^-13/8` yields `lambda1=.212+/-.236`.  This zero-residual three-point
   interpolation is a useful coordinate, not a resolved second eigenvalue.
-- `ba4ca6f87c7fa97fd6a2d878de83f03e4309b209`: the N680 forecast is frozen,
-  but its old infrastructure binding is not executable under the current
-  server constraint.  Scientific forecasts may be copied to a new manifest;
-  the old server must not be contacted.
+- `02080a4c574914439e080299ad28ab66f5172826`: the preregistered N680 child
+  gives `A_H=-.00216756+/-.00055693`.  It lands at `-.295` predictive SE from
+  two-mode, `+.747` from free-single, `-2.024` from fixed single and `+7.159`
+  from scale-neutral; its projective scalar is null.  The recorded historical
+  server is outside the permitted environment and is not contacted here; only
+  the committed compressed archive is used as provenance.
+- `7263fbc49d641f9b20af8f19a5aa46280cda6e2c`: the four-generation fit gives
+  `lambda1=.27068+/-.12801`, recurrence `q=.0773/1` (`p=.781`) and free-single
+  `q=1.979/2` (`p=.372`).  Their descriptive AIC differs by only `.098`; the
+  secondary mode is boundary-marginal, not a discovered eigenvalue.
+- `efd6d31`: the theory-fixed adversary uses no new samples.  Fixed identity
+  dressing with eigenvalues `2^-13/8` and `2^-21/8` passes (`.803/2`,
+  `p=.669`) and leads descriptive AIC; a same-base rank-three Jordan
+  polynomial also passes (`.084/1`, `p=.772`).  Source covariance makes a
+  lone N1360 child unable to separate these mechanisms universally.
 
 ## Default attention after this delta
 
-1. Build the model-free P250 bivariate Hankel lower bound before inventing a
-   sixth hand-picked spectrum.  Add ordered words only if rank/flat-extension
-   information cannot distinguish the survivors.
+1. Repair the P250 bridge comparison with one candidate-constrained joint-null
+   score on the existing 400 batches.  Add a radius-five shell only for maps
+   that survive; ordered words remain later.
 2. Transport P333's exact signed connected-history nilpotent into a physical
    Q-dependent transfer expansion; keep positivity and dimension velocity as
    separate checks.
-3. Prove P334 aggregate TM and BA from topology.  Do not spend on larger Hall
-   cut scans.
-4. Decide whether the N680 forecast is worth a TV2N0X reroute.  In parallel,
-   reuse the N130/N170 common archive subset and label the missing completion
-   winding/lift/transporter fields as not recoverable.
+3. Realize P334's unique global `D x F` critical pair across displacement
+   classes and pursue BA as an independent concordance injection.
+4. Use the committed N85/N170/N340/N680 birth archives to locate the P337
+   correction in first activation, second completion or `DIRECT_RANK2`.
+   Retain N130/N170 as a cross-lineage control and missing path fields as
+   `not_scoreable`; if aggregate aliases survive, add a geometry/modulus
+   covector.  Do not contact the historical N680 server or assume N1360.
 5. Use proof-carrying model elimination where it cheaply converts a declared
    low-rank class into a verifiable no-go.  An inconclusive relaxation does not
    demote the mechanism or block exploratory work.
