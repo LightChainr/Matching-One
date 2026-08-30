@@ -2,8 +2,9 @@
   "schema": "matching-one/p250-projective-leg-fresh-production-manifest/v1",
   "issue": 250,
   "status": "authorized_fresh_production",
-  "runner_commit": "114f8444e299077ba0ca08eddc7da6d23d49776d",
-  "protocol_commit": "2ed3c1c",
+  "runner_commit": "288e102",
+  "scorer_commit": "2ed3c1c",
+  "protocol_commit": "288e102",
   "operator": "black NN rank-one root membership minus white matching rank-one root membership",
   "run": {
     "samples": 10000,
@@ -33,11 +34,17 @@
     "host": "Huawei-CodeBuddy-XPk2PZ",
     "remote_directory": "/workspace/p250-projective-leg-fresh-10k",
     "response": "response_10k.json",
-    "batches": "response_10k.batches.csv"
+    "batches": "response_10k.batches.csv",
+    "required_runner_flag": "--production-manifest analysis/p250_projective_leg_fresh_production_manifest.json",
+    "pre_replica_failed_logs_to_preserve": [
+      "run.stderr.txt",
+      "run.attempt2.stderr.txt"
+    ]
   },
   "claim_boundary": [
     "The sample size uses only the 2k denominator and support covariance, not a phase estimate.",
     "The fresh seed has no overlap with the smoke stream.",
+    "The runner remains capped at 2k unless this exact manifest authorizes every run parameter.",
     "Phase code is conditional and cannot execute unless both frozen support stages pass.",
     "The topological projective-leg row is not automatically a local primary."
   ]

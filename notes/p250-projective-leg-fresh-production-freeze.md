@@ -29,3 +29,10 @@ a locked record and never computes a phase statistic.
 
 The run is assigned to `Huawei-CodeBuddy-XPk2PZ`.  Results are revealed once,
 after completion and checksum transfer.
+
+The production runner keeps its default 2k cap.  A larger run is legal only
+with `--production-manifest`, after exact equality checks for samples,
+batches, workers, probability, seed and counter interval.  Two deployment
+attempts failed before any replica was generated: the first requested an
+unavailable `/usr/bin/time`; the second correctly hit the old 2k cap.  Both
+logs are retained, and neither changes the fresh counter contract.
