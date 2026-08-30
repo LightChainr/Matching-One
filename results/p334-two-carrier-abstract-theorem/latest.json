@@ -1,0 +1,835 @@
+{
+  "abstract_class": {
+    "basic_axioms": [
+      "a monotone rank map r:2^E->{0,1,2} with r(empty)=0 and r(E)=2",
+      "a nonempty rank-one sector F with contiguous layer support",
+      "the complementary carrier r*(W)=2-r(E\\W)",
+      "Boolean boundary degrees b,d,x,u with b+d=|S| and x+u=N-|S|"
+    ],
+    "moment_axioms": [
+      "BA: A_(k+1) sum_T b(T)x(T) >= (sum_T b(T))(sum_T x(T))",
+      "TM: (N-k)A_k sum_T d(T)x(T) >= (N-k-1)I_k sum_S x(S)"
+    ],
+    "name": "boundary-regular two-carrier rank system"
+  },
+  "schema_version": "p334-two-carrier-abstract-theorem-v1",
+  "symbolic_boolean_scan": {
+    "association_axiom_independence_witness": {
+      "N": 4,
+      "audit": {
+        "adjacent_rows": [
+          {
+            "boundary_association_left": 32,
+            "boundary_association_pass": false,
+            "boundary_association_right": 35,
+            "internal_edges": 1,
+            "local_degrees": {
+              "1": {
+                "birth": 1,
+                "down_internal": 0,
+                "exit": 2,
+                "up_internal": 1
+              },
+              "10": {
+                "birth": 2,
+                "down_internal": 0,
+                "exit": 1,
+                "up_internal": 1
+              },
+              "12": {
+                "birth": 2,
+                "down_internal": 0,
+                "exit": 1,
+                "up_internal": 1
+              },
+              "6": {
+                "birth": 2,
+                "down_internal": 0,
+                "exit": 1,
+                "up_internal": 1
+              },
+              "9": {
+                "birth": 1,
+                "down_internal": 1,
+                "exit": 2,
+                "up_internal": 0
+              }
+            },
+            "lower_exit_sum": 2,
+            "lower_layer": 1,
+            "lower_masks": [
+              1
+            ],
+            "lower_size": 1,
+            "transport_moment_left": 6,
+            "transport_moment_pass": true,
+            "transport_moment_right": 4,
+            "upper_birth_exit_sum": 8,
+            "upper_birth_sum": 7,
+            "upper_down_exit_sum": 2,
+            "upper_exit_sum": 5,
+            "upper_masks": [
+              6,
+              9,
+              10,
+              12
+            ],
+            "upper_size": 4,
+            "xi_delta": "-1/24",
+            "xi_lower": "2/3",
+            "xi_upper": "5/8"
+          },
+          {
+            "boundary_association_left": 0,
+            "boundary_association_pass": true,
+            "boundary_association_right": 0,
+            "internal_edges": 3,
+            "local_degrees": {
+              "10": {
+                "birth": 2,
+                "down_internal": 0,
+                "exit": 1,
+                "up_internal": 1
+              },
+              "12": {
+                "birth": 2,
+                "down_internal": 0,
+                "exit": 1,
+                "up_internal": 1
+              },
+              "14": {
+                "birth": 0,
+                "down_internal": 3,
+                "exit": 1,
+                "up_internal": 0
+              },
+              "6": {
+                "birth": 2,
+                "down_internal": 0,
+                "exit": 1,
+                "up_internal": 1
+              },
+              "9": {
+                "birth": 1,
+                "down_internal": 1,
+                "exit": 2,
+                "up_internal": 0
+              }
+            },
+            "lower_exit_sum": 5,
+            "lower_layer": 2,
+            "lower_masks": [
+              6,
+              9,
+              10,
+              12
+            ],
+            "lower_size": 4,
+            "transport_moment_left": 24,
+            "transport_moment_pass": true,
+            "transport_moment_right": 15,
+            "upper_birth_exit_sum": 0,
+            "upper_birth_sum": 0,
+            "upper_down_exit_sum": 3,
+            "upper_exit_sum": 1,
+            "upper_masks": [
+              14
+            ],
+            "upper_size": 1,
+            "xi_delta": "3/8",
+            "xi_lower": "5/8",
+            "xi_upper": "1"
+          }
+        ],
+        "all_boundary_association": false,
+        "all_transport_moment": true,
+        "counts": [
+          0,
+          1,
+          4,
+          1,
+          0
+        ],
+        "exit_hazard_nondecreasing": false,
+        "layers": [
+          [],
+          [
+            1
+          ],
+          [
+            6,
+            9,
+            10,
+            12
+          ],
+          [
+            14
+          ],
+          []
+        ],
+        "q": [
+          "0",
+          "1/4",
+          "2/3",
+          "1/4",
+          "0"
+        ],
+        "ulc": true,
+        "ulc_rows": [
+          {
+            "layer": 2,
+            "margin": "55/144",
+            "pass": true,
+            "q": "2/3",
+            "q_next": "1/4",
+            "q_previous": "1/4"
+          }
+        ]
+      },
+      "dual_rank_at_least_one_masks": [
+        1,
+        3,
+        5,
+        6,
+        7,
+        9,
+        11,
+        13,
+        14,
+        15
+      ],
+      "dual_rank_one_sector_masks": [
+        1,
+        3,
+        5,
+        6,
+        9,
+        14
+      ],
+      "dual_rank_two_masks": [
+        7,
+        11,
+        13,
+        15
+      ],
+      "rank_at_least_one_masks": [
+        1,
+        3,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "rank_one_sector_masks": [
+        1,
+        6,
+        9,
+        10,
+        12,
+        14
+      ],
+      "rank_two_masks": [
+        3,
+        5,
+        7,
+        11,
+        13,
+        15
+      ],
+      "witness_row": {
+        "boundary_association_left": 32,
+        "boundary_association_pass": false,
+        "boundary_association_right": 35,
+        "internal_edges": 1,
+        "local_degrees": {
+          "1": {
+            "birth": 1,
+            "down_internal": 0,
+            "exit": 2,
+            "up_internal": 1
+          },
+          "10": {
+            "birth": 2,
+            "down_internal": 0,
+            "exit": 1,
+            "up_internal": 1
+          },
+          "12": {
+            "birth": 2,
+            "down_internal": 0,
+            "exit": 1,
+            "up_internal": 1
+          },
+          "6": {
+            "birth": 2,
+            "down_internal": 0,
+            "exit": 1,
+            "up_internal": 1
+          },
+          "9": {
+            "birth": 1,
+            "down_internal": 1,
+            "exit": 2,
+            "up_internal": 0
+          }
+        },
+        "lower_exit_sum": 2,
+        "lower_layer": 1,
+        "lower_masks": [
+          1
+        ],
+        "lower_size": 1,
+        "transport_moment_left": 6,
+        "transport_moment_pass": true,
+        "transport_moment_right": 4,
+        "upper_birth_exit_sum": 8,
+        "upper_birth_sum": 7,
+        "upper_down_exit_sum": 2,
+        "upper_exit_sum": 5,
+        "upper_masks": [
+          6,
+          9,
+          10,
+          12
+        ],
+        "upper_size": 4,
+        "xi_delta": "-1/24",
+        "xi_lower": "2/3",
+        "xi_upper": "5/8"
+      }
+    },
+    "first_ULC_failure": {
+      "N": 4,
+      "audit": {
+        "adjacent_rows": [
+          {
+            "boundary_association_left": 4,
+            "boundary_association_pass": true,
+            "boundary_association_right": 4,
+            "internal_edges": 2,
+            "local_degrees": {
+              "1": {
+                "birth": 1,
+                "down_internal": 0,
+                "exit": 1,
+                "up_internal": 2
+              },
+              "5": {
+                "birth": 1,
+                "down_internal": 1,
+                "exit": 1,
+                "up_internal": 1
+              },
+              "9": {
+                "birth": 1,
+                "down_internal": 1,
+                "exit": 1,
+                "up_internal": 1
+              }
+            },
+            "lower_exit_sum": 1,
+            "lower_layer": 1,
+            "lower_masks": [
+              1
+            ],
+            "lower_size": 1,
+            "transport_moment_left": 6,
+            "transport_moment_pass": true,
+            "transport_moment_right": 4,
+            "upper_birth_exit_sum": 2,
+            "upper_birth_sum": 2,
+            "upper_down_exit_sum": 2,
+            "upper_exit_sum": 2,
+            "upper_masks": [
+              5,
+              9
+            ],
+            "upper_size": 2,
+            "xi_delta": "1/6",
+            "xi_lower": "1/3",
+            "xi_upper": "1/2"
+          },
+          {
+            "boundary_association_left": 8,
+            "boundary_association_pass": true,
+            "boundary_association_right": 8,
+            "internal_edges": 2,
+            "local_degrees": {
+              "13": {
+                "birth": 1,
+                "down_internal": 2,
+                "exit": 1,
+                "up_internal": 0
+              },
+              "14": {
+                "birth": 3,
+                "down_internal": 0,
+                "exit": 1,
+                "up_internal": 0
+              },
+              "5": {
+                "birth": 1,
+                "down_internal": 1,
+                "exit": 1,
+                "up_internal": 1
+              },
+              "9": {
+                "birth": 1,
+                "down_internal": 1,
+                "exit": 1,
+                "up_internal": 1
+              }
+            },
+            "lower_exit_sum": 2,
+            "lower_layer": 2,
+            "lower_masks": [
+              5,
+              9
+            ],
+            "lower_size": 2,
+            "transport_moment_left": 8,
+            "transport_moment_pass": true,
+            "transport_moment_right": 4,
+            "upper_birth_exit_sum": 4,
+            "upper_birth_sum": 4,
+            "upper_down_exit_sum": 2,
+            "upper_exit_sum": 2,
+            "upper_masks": [
+              13,
+              14
+            ],
+            "upper_size": 2,
+            "xi_delta": "1/2",
+            "xi_lower": "1/2",
+            "xi_upper": "1"
+          }
+        ],
+        "all_boundary_association": true,
+        "all_transport_moment": true,
+        "counts": [
+          0,
+          1,
+          2,
+          2,
+          0
+        ],
+        "exit_hazard_nondecreasing": true,
+        "layers": [
+          [],
+          [
+            1
+          ],
+          [
+            5,
+            9
+          ],
+          [
+            13,
+            14
+          ],
+          []
+        ],
+        "q": [
+          "0",
+          "1/4",
+          "1/3",
+          "1/2",
+          "0"
+        ],
+        "ulc": false,
+        "ulc_rows": [
+          {
+            "layer": 2,
+            "margin": "-1/72",
+            "pass": false,
+            "q": "1/3",
+            "q_next": "1/2",
+            "q_previous": "1/4"
+          }
+        ]
+      },
+      "dual_rank_at_least_one_masks": [
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        13,
+        14,
+        15
+      ],
+      "dual_rank_one_sector_masks": [
+        1,
+        2,
+        6,
+        10,
+        14
+      ],
+      "dual_rank_two_masks": [
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15
+      ],
+      "failing_rows": [
+        {
+          "layer": 2,
+          "margin": "-1/72",
+          "pass": false,
+          "q": "1/3",
+          "q_next": "1/2",
+          "q_previous": "1/4"
+        }
+      ],
+      "rank_at_least_one_masks": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        14,
+        15
+      ],
+      "rank_one_sector_masks": [
+        1,
+        5,
+        9,
+        13,
+        14
+      ],
+      "rank_two_masks": [
+        3,
+        7,
+        11,
+        15
+      ]
+    },
+    "summary": [
+      {
+        "N": 2,
+        "admissible_systems": 5,
+        "boundary_association_failures": 0,
+        "exit_hazard_decrease_systems": 0,
+        "transport_moment_failures": 0,
+        "ulc_failures": 0,
+        "upsets": 6
+      },
+      {
+        "N": 3,
+        "admissible_systems": 111,
+        "boundary_association_failures": 0,
+        "exit_hazard_decrease_systems": 0,
+        "transport_moment_failures": 0,
+        "ulc_failures": 0,
+        "upsets": 20
+      },
+      {
+        "N": 4,
+        "admissible_systems": 7076,
+        "boundary_association_failures": 746,
+        "exit_hazard_decrease_systems": 76,
+        "transport_moment_failures": 36,
+        "ulc_failures": 48,
+        "upsets": 168
+      }
+    ],
+    "transport_axiom_independence_witness": {
+      "N": 4,
+      "audit": {
+        "adjacent_rows": [
+          {
+            "boundary_association_left": 4,
+            "boundary_association_pass": true,
+            "boundary_association_right": 4,
+            "internal_edges": 2,
+            "local_degrees": {
+              "1": {
+                "birth": 1,
+                "down_internal": 0,
+                "exit": 3,
+                "up_internal": 0
+              },
+              "10": {
+                "birth": 1,
+                "down_internal": 1,
+                "exit": 1,
+                "up_internal": 1
+              },
+              "2": {
+                "birth": 1,
+                "down_internal": 0,
+                "exit": 1,
+                "up_internal": 2
+              },
+              "6": {
+                "birth": 1,
+                "down_internal": 1,
+                "exit": 1,
+                "up_internal": 1
+              }
+            },
+            "lower_exit_sum": 4,
+            "lower_layer": 1,
+            "lower_masks": [
+              1,
+              2
+            ],
+            "lower_size": 2,
+            "transport_moment_left": 12,
+            "transport_moment_pass": false,
+            "transport_moment_right": 16,
+            "upper_birth_exit_sum": 2,
+            "upper_birth_sum": 2,
+            "upper_down_exit_sum": 2,
+            "upper_exit_sum": 2,
+            "upper_masks": [
+              6,
+              10
+            ],
+            "upper_size": 2,
+            "xi_delta": "-1/6",
+            "xi_lower": "2/3",
+            "xi_upper": "1/2"
+          },
+          {
+            "boundary_association_left": 1,
+            "boundary_association_pass": true,
+            "boundary_association_right": 1,
+            "internal_edges": 2,
+            "local_degrees": {
+              "10": {
+                "birth": 1,
+                "down_internal": 1,
+                "exit": 1,
+                "up_internal": 1
+              },
+              "14": {
+                "birth": 1,
+                "down_internal": 2,
+                "exit": 1,
+                "up_internal": 0
+              },
+              "6": {
+                "birth": 1,
+                "down_internal": 1,
+                "exit": 1,
+                "up_internal": 1
+              }
+            },
+            "lower_exit_sum": 2,
+            "lower_layer": 2,
+            "lower_masks": [
+              6,
+              10
+            ],
+            "lower_size": 2,
+            "transport_moment_left": 8,
+            "transport_moment_pass": true,
+            "transport_moment_right": 4,
+            "upper_birth_exit_sum": 1,
+            "upper_birth_sum": 1,
+            "upper_down_exit_sum": 2,
+            "upper_exit_sum": 1,
+            "upper_masks": [
+              14
+            ],
+            "upper_size": 1,
+            "xi_delta": "1/2",
+            "xi_lower": "1/2",
+            "xi_upper": "1"
+          }
+        ],
+        "all_boundary_association": true,
+        "all_transport_moment": false,
+        "counts": [
+          0,
+          2,
+          2,
+          1,
+          0
+        ],
+        "exit_hazard_nondecreasing": false,
+        "layers": [
+          [],
+          [
+            1,
+            2
+          ],
+          [
+            6,
+            10
+          ],
+          [
+            14
+          ],
+          []
+        ],
+        "q": [
+          "0",
+          "1/2",
+          "1/3",
+          "1/4",
+          "0"
+        ],
+        "ulc": false,
+        "ulc_rows": [
+          {
+            "layer": 2,
+            "margin": "-1/72",
+            "pass": false,
+            "q": "1/3",
+            "q_next": "1/4",
+            "q_previous": "1/2"
+          }
+        ]
+      },
+      "dual_rank_at_least_one_masks": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        14,
+        15
+      ],
+      "dual_rank_one_sector_masks": [
+        1,
+        5,
+        9,
+        13,
+        14
+      ],
+      "dual_rank_two_masks": [
+        3,
+        7,
+        11,
+        15
+      ],
+      "rank_at_least_one_masks": [
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        13,
+        14,
+        15
+      ],
+      "rank_one_sector_masks": [
+        1,
+        2,
+        6,
+        10,
+        14
+      ],
+      "rank_two_masks": [
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15
+      ],
+      "witness_row": {
+        "boundary_association_left": 4,
+        "boundary_association_pass": true,
+        "boundary_association_right": 4,
+        "internal_edges": 2,
+        "local_degrees": {
+          "1": {
+            "birth": 1,
+            "down_internal": 0,
+            "exit": 3,
+            "up_internal": 0
+          },
+          "10": {
+            "birth": 1,
+            "down_internal": 1,
+            "exit": 1,
+            "up_internal": 1
+          },
+          "2": {
+            "birth": 1,
+            "down_internal": 0,
+            "exit": 1,
+            "up_internal": 2
+          },
+          "6": {
+            "birth": 1,
+            "down_internal": 1,
+            "exit": 1,
+            "up_internal": 1
+          }
+        },
+        "lower_exit_sum": 4,
+        "lower_layer": 1,
+        "lower_masks": [
+          1,
+          2
+        ],
+        "lower_size": 2,
+        "transport_moment_left": 12,
+        "transport_moment_pass": false,
+        "transport_moment_right": 16,
+        "upper_birth_exit_sum": 2,
+        "upper_birth_sum": 2,
+        "upper_down_exit_sum": 2,
+        "upper_exit_sum": 2,
+        "upper_masks": [
+          6,
+          10
+        ],
+        "upper_size": 2,
+        "xi_delta": "-1/6",
+        "xi_lower": "2/3",
+        "xi_upper": "1/2"
+      }
+    }
+  },
+  "theorem": {
+    "minimality": "BA and TM are logically independent under the basic axioms; deleting either admits an N=4 exit-hazard decrease.",
+    "proof": [
+      "TM is exactly E_(upper edge)[h_x] >= E_(lower uniform)[h_x].",
+      "BA is exactly E_(upper uniform)[h_x] >= E_(upper edge)[h_x], because d=(k+1)-b.",
+      "Their sum gives xi_(k+1)>=xi_k.",
+      "Apply the same to the complementary carrier and use q_(k+1)/q_k=(1-xi_k)/(1-beta_(k+1))."
+    ],
+    "statement": "If BA and TM hold on every adjacent rank-one layer of both complementary carriers, then each carrier has nondecreasing exit hazard; complement duality makes birth hazard nonincreasing, so the normalized layer sequence q_k is ULC.",
+    "status": "exact theorem for the named abstract class"
+  },
+  "topological_instantiation": {
+    "BA_pass": 984,
+    "TM_pass": 984,
+    "audited_pairs": 984,
+    "scope": "existing honest torus quotients through N=12 only",
+    "status": "exact bounded evidence that the topological sectors lie in the abstract class; not a proof for all quotients"
+  },
+  "verdict": {
+    "basic_monotone_two_carrier_axioms_imply_ULC": false,
+    "minimal_abstract_counterexample_size": 4,
+    "new_exact_result": "BA+TM is a modular sufficient theorem, and both moment axioms are independently necessary for that modular proof under the basic axioms",
+    "remaining_topological_problem": "derive BA and TM from homology-carrier geometry, likely by separate aggregate pair and two-step path injections"
+  }
+}
