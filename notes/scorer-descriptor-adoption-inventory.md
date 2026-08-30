@@ -1,19 +1,19 @@
 # Scorer descriptor-adoption inventory
 
 At main commit `11ba86892fabd3349e322d198f23ef24d8cbe828`, the exact
-`scripts/*score*.py` corpus contains 37 files. Python-AST inspection finds six
+`scripts/*score*.py` corpus contains 38 files. Python-AST inspection finds seven
 direct typed entrypoints importing both `ObservableDescriptor` and
-`map_observable` from `wrapping_channels`. Five frozen kernels are covered by
+`map_observable` from `wrapping_channels`. Six frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Twenty-five paths are confirmed channel-bearing and
+a descriptor is not applicable. Twenty-four paths are confirmed channel-bearing and
 require typed migrations: `score_angular_root_amplitude.py`,
 `score_axis_pair_annihilator.py`, its stable entrypoint,
 `score_c4_tangent_orthogonal_holdout.py`,
 `score_intrinsic_quantile_center_n145_n290.py`,
 `score_issue43_full_curve.py`, its locked wrapper,
 `score_issue43_secondary.py`,
-`score_matching_odd_synthesis.py`, `score_norm4_production.py`,
+`score_norm4_production.py`,
 `score_norm4_thermal_jet.py`, `score_norm5_thermal_jet.py`,
 `score_p159_pell_hex_filter.py`,
 `score_p231_vacuum_kdv_sector.py`,
@@ -37,7 +37,7 @@ wrapped kernel disappears.
 but no current scorer has that status. Static membership alone would not prove
 a semantic bug, data-provenance failure, or need for migration; any future
 corpus addition must still be reviewed before modification. Issue #146 remains
-open because inventory classification is not the same as implementing the 25
+open because inventory classification is not the same as implementing the 24
 required typed migrations.
 
 The `kappa3_half_score.py` exception is narrow. It defines only exact Bernoulli
@@ -77,13 +77,13 @@ same exact channel semantics and type the response-coordinate pair, without
 changing batch alignment, jackknife construction, or the frozen interpretation
 rule.
 
-`score_matching_odd_synthesis.py` is migration-required. It selects two frozen
-ledger blocks by requiring free-form `channel.source` and `channel.target`
-strings to equal `matching_odd`, then combines their already-primary scores.
-A later migration must parse both typed descriptors and verify their registered
-identity maps. That semantic gate must not change the frozen block selection,
-distinct raw-data-group requirement, block-diagonal synthesis, or the rule that
-the derived output cannot become a new primary evidence row.
+`score_matching_odd_synthesis.py` is now a covered frozen kernel. Its typed
+entrypoint validates the registered exact identity `D_either=D_cross` for both
+frozen matching-odd orientation-contrast blocks before synthesis. It records
+the two source/target descriptors and applied maps without changing the frozen
+block selection, already-primary scores, distinct raw-data-group requirement,
+block-diagonal calculation, or the rule that derived output cannot become a
+new primary evidence row.
 
 `score_rank_gap_boundary_targets.py` is migration-required. It scores the
 orientation-pooled paired observable `G=K_plus-K_minus` in rank units from a

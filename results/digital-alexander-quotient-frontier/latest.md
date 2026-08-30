@@ -1,13 +1,13 @@
 # Short-period digital Alexander quotient frontier
 
-Every permutation of every two-dimensional HNF quotient of index 2 through 12 is exhausted.
+Every permutation of every two-dimensional HNF quotient of index 2 through 13 is exhausted.
 
-- HNF representatives: `126`;
-- honest four-corner representatives: `83`;
-- self-identifying face representatives: `43`;
-- complete filtration paths: `13961736918`.
-- cached occupied-site subsets: `170332`;
-- rank-one plateau steps: `53749271024`;
+- HNF representatives: `140`;
+- honest four-corner representatives: `93`;
+- self-identifying face representatives: `47`;
+- complete filtration paths: `101140028118`.
+- cached occupied-site subsets: `285020`;
+- rank-one plateau steps: `500805335024`;
 - maximum saturation index: `1`;
 - paths with saturation-index evolution: `0`.
 
@@ -26,5 +26,5 @@ quotient is not confused with the already proved regular square-cell theorem.
 
 ## Boundary
 
-The result is exhaustive only through index 12. It does not prove an unrestricted theorem
+The result is exhaustive only through index 13. It does not prove an unrestricted theorem
 for all degenerate quotients or alter production data semantics.

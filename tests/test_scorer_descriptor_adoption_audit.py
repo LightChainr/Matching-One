@@ -106,15 +106,15 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
                 encoding="utf-8"
             )
         )
-        self.assertEqual(result["counts"]["total"], 37)
-        self.assertEqual(result["counts"]["direct_typed_entrypoint"], 6)
-        self.assertEqual(result["counts"]["covered_frozen_kernel"], 5)
+        self.assertEqual(result["counts"]["total"], 38)
+        self.assertEqual(result["counts"]["direct_typed_entrypoint"], 7)
+        self.assertEqual(result["counts"]["covered_frozen_kernel"], 6)
         self.assertEqual(
             result["counts"]["descriptor_not_applicable_generic_utility"], 1
         )
-        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 25)
+        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 24)
         self.assertEqual(result["counts"]["outside_registered_typed_path"], 0)
-        self.assertEqual(len(result["rows"]), 37)
+        self.assertEqual(len(result["rows"]), 38)
         statuses = {row["path"]: row["status"] for row in result["rows"]}
         for path in (
             "scripts/score_axis_pair_annihilator.py",
@@ -124,7 +124,6 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
             "scripts/score_issue43_full_curve.py",
             "scripts/score_issue43_full_curve_locked.py",
             "scripts/score_issue43_secondary.py",
-            "scripts/score_matching_odd_synthesis.py",
             "scripts/score_norm4_production.py",
             "scripts/score_norm4_thermal_jet.py",
             "scripts/score_norm5_thermal_jet.py",
@@ -158,6 +157,14 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
         )
         self.assertEqual(
             statuses["scripts/score_issue50_n290_typed.py"],
+            "direct_typed_entrypoint",
+        )
+        self.assertEqual(
+            statuses["scripts/score_matching_odd_synthesis.py"],
+            "covered_frozen_kernel",
+        )
+        self.assertEqual(
+            statuses["scripts/score_matching_odd_synthesis_typed.py"],
             "direct_typed_entrypoint",
         )
 
