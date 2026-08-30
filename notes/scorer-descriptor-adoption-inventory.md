@@ -6,7 +6,7 @@ direct typed entrypoints importing both `ObservableDescriptor` and
 `map_observable` from `wrapping_channels`. Three frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Twenty-six paths are confirmed channel-bearing and
+a descriptor is not applicable. Twenty-seven paths are confirmed channel-bearing and
 require typed migrations: `score_angular_root_amplitude.py`,
 `score_axis_pair_annihilator.py`, its stable entrypoint,
 `score_c4_self_matching_n26.py`, `score_c4_tangent_orthogonal_holdout.py`,
@@ -22,9 +22,10 @@ require typed migrations: `score_angular_root_amplitude.py`,
 `score_p50_fullcurve_n290.py`, `score_p50_sprime_n290.py`,
 `score_prequential_evidence.py`,
 `score_rank_gap_boundary_targets.py`, `score_threshold_rank_root_doubling.py`,
+`threshold_score_modes.py`,
 `score_v14_fixedp_scalar_projector.py`, and
-`score_v14_scalar_root_projector.py`. The remaining one file is outside a
-registered typed path.
+`score_v14_scalar_root_projector.py`. No scorer remains outside a registered
+audit class.
 
 This closes an inventory gap: the repository now has a deterministic list,
 including Git blob identities, rather than an informal claim that all scorers
@@ -32,11 +33,12 @@ have or have not adopted descriptors. The audit fails closed if a direct typed
 import is added or removed without updating the manifest, or if a declared
 wrapped kernel disappears.
 
-`outside_registered_typed_path` is deliberately a triage label. Some of those
-three scripts may not compare channel-bearing quantities, some may be historical,
-and some may need a future typed wrapper. Static membership alone does not prove
-a semantic bug, data-provenance failure, or need for migration. Each candidate
-must be reviewed before modification; Issue #146 therefore remains open.
+`outside_registered_typed_path` remains a deliberate fail-closed triage label,
+but no current scorer has that status. Static membership alone would not prove
+a semantic bug, data-provenance failure, or need for migration; any future
+corpus addition must still be reviewed before modification. Issue #146 remains
+open because inventory classification is not the same as implementing the 27
+required typed migrations.
 
 The `kappa3_half_score.py` exception is narrow. It defines only exact Bernoulli
 likelihood-score polynomials at `p=1/2` and aggregates an opaque caller-supplied
@@ -232,6 +234,17 @@ normalization power, source-to-target map, target-stream independence, and
 shared-source evidence relation. It must preserve the no-target-refit rule,
 two-by-two covariance construction, distinction from fixed-coordinate
 P31/P43 `either/even` DeltaS, and all numerical scores.
+
+`threshold_score_modes.py` is migration-required rather than a generic
+Krawtchouk helper. Although it exposes reusable basis functions, its operational
+entrypoint reconstructs the intrinsic center inside synchronized delete-one
+replicates, pairs two ordered orientations, forms matching S/D sectors, divides
+by `DeltaCos4`, emits four P4 value/derivative views, and assigns a parity-tower
+scaling convention. A migration must type the threshold-rank channel, intrinsic
+center, orientation pair, S/D sector, Krawtchouk order, angular normalization,
+derivative coordinate, and parity-tower units. It must preserve the exact mode
+0/mode 1 identities, aligned jackknife covariance, and the guard that those
+views reuse existing evidence rather than creating independent blocks.
 
 The axis-pair annihilator score path is migration-required as one operational
 unit. The base scorer reconstructs the cross matching function from
