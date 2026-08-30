@@ -1,0 +1,355 @@
+{
+  "batch_means": {
+    "first": {
+      "Jminus_A": -0.01500596701938015,
+      "Jplus_A": 9.360737153772462,
+      "W_A": 0.33779250245156894
+    },
+    "second": {
+      "Jminus_A": 0.013393047719910855,
+      "Jplus_A": 9.361935967806797,
+      "W_A": 0.3372091094355819
+    }
+  },
+  "claim_boundary": "one held-out N145 point supports curvature away from the fast descriptive transfer; it does not identify a unique asymptotic state or refit an exponent",
+  "dependency": {
+    "N145": "new seed/counter block, independent of N65 and N85 archives",
+    "frozen_targets": "all targets fixed at commit 3d238af before N145 generation",
+    "no_refit": "N145 does not change any exponent, target, observable, or normalization",
+    "predictive_uncertainty": "N65/N85 target-fit variance included only in predictive residuals"
+  },
+  "exact_gates": {
+    "max_A_continuity_residual": 1.3633191797701727e-14,
+    "passed": true,
+    "tolerance": 3e-12
+  },
+  "freeze_gates": {
+    "items": {
+      "N": true,
+      "batches": true,
+      "engine_freeze": true,
+      "first": true,
+      "first_period_matrix": true,
+      "projective_births": true,
+      "replica_offset": true,
+      "samples": true,
+      "second": true,
+      "second_period_matrix": true,
+      "seed": true
+    },
+    "passed": true
+  },
+  "natural_coordinate": {
+    "covariance": [
+      [
+        4.21506209781253e-06,
+        -9.303044955436842e-07,
+        -5.145366593356214e-06
+      ],
+      [
+        -9.303044955436842e-07,
+        3.761660278956331e-06,
+        4.691964774500015e-06
+      ],
+      [
+        -5.145366593356214e-06,
+        4.691964774500015e-06,
+        9.83733136785623e-06
+      ]
+    ],
+    "jackknife_replicates": [
+      [
+        -0.010527872257981203,
+        0.00987708905127935,
+        0.020404961309260554
+      ],
+      [
+        -0.010936167299745869,
+        0.009669071387766293,
+        0.020605238687512163
+      ],
+      [
+        -0.011213468666129009,
+        0.009343612323017553,
+        0.02055708098914656
+      ],
+      [
+        -0.010631282274365933,
+        0.00911361715391792,
+        0.019744899428283853
+      ],
+      [
+        -0.01040404870722108,
+        0.009395351012281821,
+        0.0197993997195029
+      ],
+      [
+        -0.011092435886191696,
+        0.009544092324700743,
+        0.020636528210892437
+      ],
+      [
+        -0.010588555081142068,
+        0.009526642726545397,
+        0.020115197807687467
+      ],
+      [
+        -0.010237452725752558,
+        0.009166312266956285,
+        0.019403764992708843
+      ],
+      [
+        -0.010608105437774235,
+        0.009449825594409164,
+        0.0200579310321834
+      ],
+      [
+        -0.010926488441261912,
+        0.00920491653317625,
+        0.02013140497443816
+      ],
+      [
+        -0.010350704634662818,
+        0.009523687685746613,
+        0.019874392320409433
+      ],
+      [
+        -0.010856076685076014,
+        0.009593028869938465,
+        0.02044910555501448
+      ],
+      [
+        -0.010811474812980313,
+        0.009402099096693343,
+        0.020213573909673654
+      ],
+      [
+        -0.010156045406326046,
+        0.009236814929781338,
+        0.019392860336107383
+      ],
+      [
+        -0.010442320336041644,
+        0.009708088234337877,
+        0.020150408570379523
+      ],
+      [
+        -0.011115940039244706,
+        0.009800040499408936,
+        0.020915980538653643
+      ],
+      [
+        -0.010481855411532556,
+        0.010035959889669696,
+        0.020517815301202252
+      ],
+      [
+        -0.010651190954775284,
+        0.00936136249177846,
+        0.020012553446553744
+      ],
+      [
+        -0.0107461215874564,
+        0.009460289143050837,
+        0.02020641073050724
+      ],
+      [
+        -0.01111472494910344,
+        0.009259931842977834,
+        0.020374656792081274
+      ],
+      [
+        -0.010593927820194821,
+        0.009490559944744098,
+        0.02008448776493892
+      ],
+      [
+        -0.011095466880287314,
+        0.009714395652872406,
+        0.02080986253315972
+      ],
+      [
+        -0.010943128824029537,
+        0.010053804278164123,
+        0.02099693310219366
+      ],
+      [
+        -0.010919610370306195,
+        0.009751071236211528,
+        0.02067068160651772
+      ],
+      [
+        -0.010685370913378182,
+        0.009999928978986442,
+        0.020685299892364624
+      ],
+      [
+        -0.010190718769091571,
+        0.009691157193288745,
+        0.019881875962380315
+      ],
+      [
+        -0.010058677911223004,
+        0.009384706161476066,
+        0.01944338407269907
+      ],
+      [
+        -0.01023971935372497,
+        0.00984008218800812,
+        0.02007980154173309
+      ],
+      [
+        -0.011416227640461369,
+        0.009807333986216395,
+        0.021223561626677764
+      ],
+      [
+        -0.011073842335618995,
+        0.010197850623686427,
+        0.02127169295930542
+      ],
+      [
+        -0.01093288117109622,
+        0.01042126376195019,
+        0.02135414493304641
+      ],
+      [
+        -0.0109387884813651,
+        0.00982392699320833,
+        0.02076271547457343
+      ],
+      [
+        -0.010994848628776869,
+        0.009945063695627214,
+        0.020939912324404085
+      ],
+      [
+        -0.011213486064221142,
+        0.009194948752759563,
+        0.020408434816980705
+      ],
+      [
+        -0.010425870990984104,
+        0.0094779677585366,
+        0.019903838749520703
+      ],
+      [
+        -0.010941326922478036,
+        0.00940027582268524,
+        0.02034160274516328
+      ],
+      [
+        -0.010846435054936,
+        0.009637489054171713,
+        0.020483924109107713
+      ],
+      [
+        -0.010603303047191204,
+        0.009432386121169851,
+        0.020035689168361057
+      ],
+      [
+        -0.01041611805578904,
+        0.00894197072868093,
+        0.01935808878446997
+      ],
+      [
+        -0.010529590425253949,
+        0.009629572605343894,
+        0.020159163030597844
+      ]
+    ],
+    "order": [
+      "K_A_first",
+      "K_A_second",
+      "Delta_K_A_second_minus_first"
+    ],
+    "standard_error": [
+      0.002053061640042142,
+      0.001939500007464896,
+      0.003136452035000094
+    ],
+    "value": [
+      -0.010723781470020469,
+      0.009587692386372628,
+      0.0203114738563931
+    ]
+  },
+  "primary_target_comparison": [
+    {
+      "frozen_target": 0.0,
+      "measurement_only_quadratic": 41.93779337015922,
+      "measurement_standard_error": 0.003136452035000094,
+      "name": "zero",
+      "predictive_quadratic": 41.93779337015922,
+      "predictive_standard_error": 0.003136452035000094,
+      "residual": 0.0203114738563931,
+      "tier": "primary"
+    },
+    {
+      "frozen_target": 0.025592612883702993,
+      "measurement_only_quadratic": 2.8351621372548754,
+      "measurement_standard_error": 0.003136452035000094,
+      "name": "source_fitted_scale_neutral",
+      "predictive_quadratic": 0.3837817349070914,
+      "predictive_standard_error": 0.008524824552952857,
+      "residual": -0.005281139027309895,
+      "tier": "primary"
+    },
+    {
+      "frozen_target": 0.010744776300914267,
+      "measurement_only_quadratic": 9.303509122103431,
+      "measurement_standard_error": 0.003136452035000094,
+      "name": "source_fitted_project_H4",
+      "predictive_quadratic": 4.376310674077399,
+      "predictive_standard_error": 0.00457307129095996,
+      "residual": 0.009566697555478832,
+      "tier": "primary"
+    }
+  ],
+  "reading": {
+    "closest_primary_predictive_quadratic": 0.3837817349070914,
+    "closest_primary_predictive_target": "source_fitted_scale_neutral",
+    "frozen_H4_ratio": 0.4198389726652875,
+    "frozen_effective_ratio": 0.13691638877959,
+    "independent_nonzero": {
+      "standard_error": 0.003136452035000094,
+      "value": 0.0203114738563931,
+      "z": 6.475939574313461
+    },
+    "ratio_to_N85": 0.793645961383144,
+    "secondary_effective_predictive_quadratic": 11.503940581216956,
+    "summary": "N145 stays nonzero and attenuates only weakly from N85. It bends away from the frozen continuation of the fast N65-to-N85 transfer and is closest to scale-neutral propagation; the pure N85-anchored H4 transfer is also low.",
+    "variance_design_ratio": 1.370652678211149
+  },
+  "schema": "matching-one/P337-natural-current-third-scale-N145-score/v1",
+  "secondary_target_comparison": [
+    {
+      "frozen_target": 0.003504048135470623,
+      "measurement_only_quadratic": 28.71607642367007,
+      "measurement_standard_error": 0.003136452035000094,
+      "name": "secondary_post_reveal_effective_transfer",
+      "predictive_quadratic": 11.503940581216956,
+      "predictive_standard_error": 0.004955390519993823,
+      "residual": 0.016807425720922475,
+      "tier": "secondary"
+    }
+  ],
+  "source": {
+    "N": 145,
+    "batches": 40,
+    "births": "results/server-20260830/P337-natural-current-third-scale-N145/raw/n145_2p4m.births.csv",
+    "births_sha256": "2128d60c935a5b38d85b2ff5a637780fca5079d4b35ba0890cc83838d02033ba",
+    "elapsed_seconds": 5.329555412,
+    "engine_commit": "1714141+freeze-3d238af",
+    "environment": "Huawei DevEnvC_ZyTrST f415a4bcbd9a438b85f5f29e4a507ea4",
+    "metadata": "results/server-20260830/P337-natural-current-third-scale-N145/raw/n145_2p4m.metadata.json",
+    "metadata_sha256": "9ecbf24a9c683e24ac5cdbe5157c2a23c4a2bc56440fbe8929c285f305f5b85b",
+    "p_ref": 0.59274605079,
+    "preregistration": "analysis/p337_natural_current_third_scale_preregistration.json",
+    "preregistration_commit": "3d238af",
+    "samples_per_shape": 2400000,
+    "seed": 202608337145
+  },
+  "status": "fresh held-out N145 scale reveal scored against all frozen targets"
+}

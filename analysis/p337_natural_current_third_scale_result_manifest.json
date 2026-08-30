@@ -1,0 +1,45 @@
+{
+  "schema": "matching-one/p337-natural-current-third-scale-result-manifest/v1",
+  "issues": [337, 334],
+  "preregistration_commit": "3d238af",
+  "engine_commit": "1714141+freeze-3d238af",
+  "environment": {
+    "name": "DevEnvC_ZyTrST",
+    "id": "f415a4bcbd9a438b85f5f29e4a507ea4",
+    "architecture": "aarch64",
+    "vcpus": 16
+  },
+  "production": {
+    "N": 145,
+    "orientations": ["12+i", "9+8i"],
+    "samples_per_shape": 2400000,
+    "batches": 40,
+    "seed": 202608337145,
+    "elapsed_seconds": 5.3295554120000004,
+    "births_sha256": "2128d60c935a5b38d85b2ff5a637780fca5079d4b35ba0890cc83838d02033ba",
+    "metadata_sha256": "9ecbf24a9c683e24ac5cdbe5157c2a23c4a2bc56440fbe8929c285f305f5b85b"
+  },
+  "result": {
+    "Delta_K_A_N145": 0.0203114738563931,
+    "standard_error": 0.003136452035000094,
+    "z_vs_zero": 6.475939574313461,
+    "ratio_to_N85": 0.793645961383144,
+    "closest_primary_predictive_target": "source_fitted_scale_neutral",
+    "zero_predictive_quadratic": 41.93779337015922,
+    "scale_neutral_predictive_quadratic": 0.3837817349070914,
+    "H4_predictive_quadratic": 4.376310674077399,
+    "secondary_effective_predictive_quadratic": 11.503940581216956
+  },
+  "artifacts": {
+    "preregistration": "analysis/p337_natural_current_third_scale_preregistration.json",
+    "script": "scripts/score_natural_current_third_scale.py",
+    "score": "results/server-20260830/P337-natural-current-third-scale-N145/score.json",
+    "report": "results/server-20260830/P337-natural-current-third-scale-N145/REPORT.md",
+    "raw": "results/server-20260830/P337-natural-current-third-scale-N145/raw",
+    "checksums": "results/server-20260830/P337-natural-current-third-scale-N145/CHECKSUMS.sha256",
+    "science_card": "results/server-20260830/P337-natural-current-third-scale-N145/SCIENTIFIC_CARD.md",
+    "note": "notes/p337-natural-current-third-scale-reveal.md",
+    "test": "tests/test_score_natural_current_third_scale.py"
+  },
+  "claim_boundary": "one preregistered held-out third scale; no exponent fit or normalization selection"
+}
