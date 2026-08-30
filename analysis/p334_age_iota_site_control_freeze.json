@@ -1,0 +1,80 @@
+{
+  "schema": "matching-one/p334-age-iota-site-control-freeze/v1",
+  "status": "frozen_existing_archive_not_scored",
+  "parent_result_commit": "2e99533",
+  "source_engine_commit": "9f2033a2d205a01d3554bc2e9c93bed5760f5b29",
+  "question": "Does the production birth-age slope remain after exact saturation-index and translation-invariant birth-site-pair Smith-class fixed effects?",
+  "inputs": {
+    "N325": {
+      "N": 325,
+      "path": "/Volumes/Mac Data/Research/论文项目总库/Matching-One-large-artifacts/P267-two-observer-source-rank-2m/N325_2m/N325_2m.marked_births.csv",
+      "sha256": "c9bfb3ee791474491ad6b81e55259d9906befe9dac1c461f72087658f4c7219b",
+      "lines_including_header": 3999921,
+      "batches": 100,
+      "samples_per_batch": 20000,
+      "k0": 193,
+      "HNF": {
+        "first": [[325, 57], [0, 1]],
+        "second": [[325, 18], [0, 1]]
+      },
+      "smith_invariants": [1, 325]
+    },
+    "N425": {
+      "N": 425,
+      "path": "/Volumes/Mac Data/Research/论文项目总库/Matching-One-large-artifacts/P267-two-observer-source-rank-2m/N425_2m/N425_2m.marked_births.csv",
+      "sha256": "4f1315ceb790962c9c24b67baa7644dab4ffba781920fe8d468b1ebe490ad4d0",
+      "lines_including_header": 3999960,
+      "batches": 100,
+      "samples_per_batch": 20000,
+      "k0": 252,
+      "HNF": {
+        "first": [[425, 132], [0, 1]],
+        "second": [[425, 268], [0, 1]]
+      },
+      "smith_invariants": [1, 425]
+    }
+  },
+  "risk_and_outcome": {
+    "risk_set": "K1<=k0<K2",
+    "age": "(k0-K1)/N",
+    "outcome": "1[K2=k0+1]",
+    "orientation": "fit first and second separately; retain their common-batch covariance"
+  },
+  "fixed_effect_ladder": {
+    "primary_replay": "primitive line ell=(ell_u,ell_v)",
+    "iota_pair": "(ell_u,ell_v,iota01,iota12)",
+    "smith_site_pair": "(ell_u,ell_v,iota01,iota12,gcd((site12-site01) mod N,N))"
+  },
+  "site_class_justification": "Every production quotient has HNF [[N,h12],[0,1]] and Smith invariants [1,N], so site labels are one cyclic coordinate. gcd(delta_site,N) is invariant under translation, sign, and cyclic-generator changes and gives the minimal exact Smith order class of the two birth sites.",
+  "estimator": "Within every frozen stratum, center integer age steps by survivor-count mean and fit the same one-degree linear-probability slope used at 2e99533; no interaction, nonlinear basis, model selection, or flexible learner.",
+  "identifiability_gate": "A controlled slope is mechanism-interpretable only if its summed within-stratum age denominator is at least 25 percent of the primary line-only denominator in every orientation; otherwise report underidentified.",
+  "covariance": {
+    "delete_one": "remove one common batch index simultaneously from first and second orientations and recompute all three slopes",
+    "vector_order": [
+      "first_primary", "first_iota_pair", "first_smith_site_pair",
+      "second_primary", "second_iota_pair", "second_smith_site_pair"
+    ],
+    "cross_size": "zero because N325 and N425 use disjoint seeds and replica domains"
+  },
+  "scores": {
+    "replay": "primary point/covariance must reproduce 2e99533 before new controls are interpreted",
+    "individual": "two-sided Student t with 99 df for each controlled slope and paired difference from primary",
+    "archive_joint": "two-degree covariance-aware Wald score of the two orientation slopes, reported once per size",
+    "attenuation": "report beta_control-beta_primary, absolute-magnitude retention abs(beta_control)/abs(beta_primary), and age-denominator retention"
+  },
+  "decision_alpha": 0.01,
+  "decision_rule": "The strong age association survives a control when the identifiability gate passes and its two-orientation joint p is below 0.01. Controls are nested diagnostics on the same archives, never independent evidence votes.",
+  "temporal_boundary": {
+    "iota01_site01": "known at first birth",
+    "iota12_site12": "future/outcome-side relative to the k0 risk-set prediction",
+    "interpretation": "The full pair control can diagnose omitted two-birth embedding structure but cannot establish a predictive state available at k0 or support a causal mediation claim."
+  },
+  "claim_boundary": [
+    "A surviving controlled slope still rejects only lumpability of the recorded coarse state and may proxy unrecorded current geometry.",
+    "Attenuation under the site-pair control is descriptive because second-birth fields are future relative to k0.",
+    "iota support may be exactly degenerate at one under the integral saturation theorem; if so, report that exact no-op rather than inventing an index effect.",
+    "No new Monte Carlo is authorized."
+  ],
+  "score_once_after_freeze_commit": true,
+  "no_new_simulation": true
+}
