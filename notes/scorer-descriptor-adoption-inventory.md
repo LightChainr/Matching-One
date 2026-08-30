@@ -6,16 +6,17 @@ direct typed entrypoints importing both `ObservableDescriptor` and
 `map_observable` from `wrapping_channels`. Three frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Fourteen paths are confirmed channel-bearing and
+a descriptor is not applicable. Fifteen paths are confirmed channel-bearing and
 require typed migrations: `score_angular_root_amplitude.py`,
 `score_axis_pair_annihilator.py`, its stable entrypoint,
 `score_c4_self_matching_n26.py`, `score_c4_tangent_orthogonal_holdout.py`,
 `score_issue50_n290.py`,
 `score_matching_odd_synthesis.py`, `score_p231_vacuum_kdv_sector.py`,
 `score_p48_sprime_frozen.py`, `score_p49_fullcurve_doubling.py`,
-`score_p50_fullcurve_n290.py`, `score_prequential_evidence.py`,
+`score_p50_fullcurve_n290.py`, `score_p50_sprime_n290.py`,
+`score_prequential_evidence.py`,
 `score_rank_gap_boundary_targets.py`, and
-`score_threshold_rank_root_doubling.py`. The remaining 13 files are outside a
+`score_threshold_rank_root_doubling.py`. The remaining 12 files are outside a
 registered typed path.
 
 This closes an inventory gap: the repository now has a deterministic list,
@@ -25,7 +26,7 @@ import is added or removed without updating the manifest, or if a declared
 wrapped kernel disappears.
 
 `outside_registered_typed_path` is deliberately a triage label. Some of those
-13 scripts may not compare channel-bearing quantities, some may be historical,
+12 scripts may not compare channel-bearing quantities, some may be historical,
 and some may need a future typed wrapper. Static membership alone does not prove
 a semantic bug, data-provenance failure, or need for migration. Each candidate
 must be reviewed before modification; Issue #146 therefore remains open.
@@ -128,6 +129,15 @@ Gaussian representations, `LINEAGE_SIGN`, and frozen ratios jointly define the
 semantics. A migration needs distinct typed quantities plus explicit lineage
 and independent-stream maps. It must preserve size-local jackknifes, numerical
 covariance-rank handling, frozen prediction order, and provenance.
+
+`score_p50_sprime_n290.py` is migration-required. It extracts `P4_S_prime`
+from the P50 child histogram and compares that one coordinate with q2 and
+Jordan predictions in a frozen order, but it does not bind the observable or
+model contract to typed semantics. A migration must type the `P4_S_prime`
+quantity and the ordered model comparison, and record that this score reuses
+the same P50 raw block rather than supplying independent evidence. It must
+preserve the scalar variance calculation, prediction hashes, chronology, and
+the declared decision text.
 
 The axis-pair annihilator score path is migration-required as one operational
 unit. The base scorer reconstructs the cross matching function from
