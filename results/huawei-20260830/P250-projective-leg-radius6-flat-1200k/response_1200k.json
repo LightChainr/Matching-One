@@ -1,0 +1,301 @@
+{
+  "schema": "matching-one/z5-projective-leg-radius6-flat-response/v1",
+  "status": "fresh_radius6_flat_extension",
+  "issues": [
+    249,
+    250,
+    255
+  ],
+  "exact_gate": {
+    "selected_gauge": "Alexander reflection followed by R2 and coefficient conjugation",
+    "spatial_map": "phi(a,b)=(-a,b)",
+    "degree3_monomials": [
+      [
+        3,
+        0
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        0,
+        3
+      ]
+    ],
+    "source_degree6_endpoints": [
+      [
+        6,
+        0
+      ],
+      [
+        5,
+        1
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        0,
+        6
+      ]
+    ],
+    "target_degree6_endpoints": [
+      [
+        -6,
+        0
+      ],
+      [
+        -5,
+        1
+      ],
+      [
+        -4,
+        2
+      ],
+      [
+        -3,
+        3
+      ],
+      [
+        -2,
+        4
+      ],
+      [
+        -1,
+        5
+      ],
+      [
+        0,
+        6
+      ]
+    ],
+    "acquired_endpoint_union": [
+      [
+        -6,
+        0
+      ],
+      [
+        -5,
+        1
+      ],
+      [
+        -4,
+        2
+      ],
+      [
+        -3,
+        3
+      ],
+      [
+        -2,
+        4
+      ],
+      [
+        -1,
+        5
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        5,
+        1
+      ],
+      [
+        6,
+        0
+      ]
+    ],
+    "acquired_spatial_points": 13,
+    "full_radius6_shell_points": 24,
+    "omitted_full_shell_points": 11,
+    "distinct_parent_vertices": 13,
+    "source_is_exact_degree3_plus_degree3_sumset": true,
+    "selected_map_is_involution": true,
+    "hands": {
+      "plus": [
+        [
+          6,
+          0
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          0,
+          6
+        ]
+      ],
+      "minus": [
+        [
+          -6,
+          0
+        ],
+        [
+          -5,
+          1
+        ],
+        [
+          -4,
+          2
+        ],
+        [
+          -3,
+          3
+        ],
+        [
+          -2,
+          4
+        ],
+        [
+          -1,
+          5
+        ],
+        [
+          0,
+          6
+        ]
+      ]
+    },
+    "charges": [
+      1,
+      2
+    ],
+    "complex_coordinates_per_batch": 28,
+    "real_coordinates_per_batch": 56,
+    "minimality": "Every acquired endpoint is a distinct entry of the missing degree3-by-degree3 Hankel block in the fixed plus/R2-minus gauges; the other 11 radius-six shell points do not enter either block.",
+    "passed": true
+  },
+  "run": {
+    "samples": 1200000,
+    "batches": 400,
+    "workers": 16,
+    "p": 0.59274605079,
+    "seed": 25060610120261250,
+    "replica_offset": 0,
+    "replica_last_exclusive": 1200000,
+    "batches_output": "response_1200k.batches.csv"
+  },
+  "manifest_runner_commit": "44a3a36d4b27b5b1649875cb5a87bfbcc25524fd",
+  "observable": {
+    "operator": "minimal R2-gauged projective-leg degree-six flat-extension endpoints",
+    "points_by_hand": {
+      "plus": [
+        [
+          6,
+          0
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          0,
+          6
+        ]
+      ],
+      "minus": [
+        [
+          -6,
+          0
+        ],
+        [
+          -5,
+          1
+        ],
+        [
+          -4,
+          2
+        ],
+        [
+          -3,
+          3
+        ],
+        [
+          -2,
+          4
+        ],
+        [
+          -1,
+          5
+        ],
+        [
+          0,
+          6
+        ]
+      ]
+    },
+    "charges": [
+      1,
+      2
+    ]
+  }
+}

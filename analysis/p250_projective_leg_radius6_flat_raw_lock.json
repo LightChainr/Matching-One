@@ -1,0 +1,80 @@
+{
+  "schema": "matching-one/p250-projective-leg-radius6-flat-raw-lock/v1",
+  "status": "raw_locked_before_frozen_score",
+  "freeze_commit": "a6d3b7790fc92ee86ac157712905855e8e1f50bf",
+  "authorization_commit": "18d188d2120e2ac88c6379d0a41542bff4efc637",
+  "runner_commit": "44a3a36d4b27b5b1649875cb5a87bfbcc25524fd",
+  "scorer_commit": "44a3a36d4b27b5b1649875cb5a87bfbcc25524fd",
+  "authorized_manifest_sha256": "40b19ae90438d03dc58f3608ebdb47060cb8db9d7096749d73b17331ee5c2127",
+  "old4_batches": "results/huawei-20260830/P250-projective-leg-bivariate-80k/response_80k.batches.csv",
+  "old4_sha256": "dfbd83d680080939bcae5cad0090af95d82748ed780ce73807d4b002d6a9ca72",
+  "old5_batches": "results/huawei-20260830/P250-projective-leg-radius5-morphism-1200k/response_1200k.batches.csv",
+  "old5_sha256": "50985e38c9c8afab0c8b0e78113184d33861d928aefaba1e8043e67fc348677e",
+  "new6_batches": "results/huawei-20260830/P250-projective-leg-radius6-flat-1200k/response_1200k.batches.csv",
+  "new6_sha256": "8734a15e61a7358da66019cf26d75a3d4f2deb0185831526204967a0ee5a42cf",
+  "response": "results/huawei-20260830/P250-projective-leg-radius6-flat-1200k/response_1200k.json",
+  "response_sha256": "b061d6dceabb3da4df2efdddb4e87eafef4206b7e1f3dbce4ea56ad5ceaf4e33",
+  "exact_gate": "results/huawei-20260830/P250-projective-leg-radius6-flat-1200k/exact_gate.json",
+  "exact_gate_sha256": "edac49cc6723e13371dcbc71736ad0dd9b0395ae29973a2e568ec1f699a83c0b",
+  "remote_local_sha256_match": true,
+  "execution": {
+    "host": "Huawei-CodeBuddy-HZsCM6",
+    "remote_directory": "/workspace/p250-projective-leg-radius6-flat-1200k",
+    "started_utc": "2026-08-30T09:53:16Z",
+    "completed_utc": "2026-08-30T10:06:24Z",
+    "elapsed_seconds": 788,
+    "exit_code": 0,
+    "stderr_bytes": 0,
+    "samples": 1200000,
+    "batches": 400,
+    "samples_per_batch": 3000,
+    "workers": 16,
+    "p": 0.59274605079,
+    "seed": 25060610120261250,
+    "replica_offset": 0,
+    "replica_last_exclusive": 1200000,
+    "batch_rows": 400,
+    "csv_fields": 61
+  },
+  "protocol_rejection_attempt": {
+    "path": "results/huawei-20260830/P250-projective-leg-radius6-flat-1200k/logs/attempt1_manifest_default_rejection",
+    "started_utc": "2026-08-30T09:52:56Z",
+    "completed_utc": "2026-08-30T09:52:56Z",
+    "elapsed_seconds": 0,
+    "exit_code": 1,
+    "reason": "The runner rejected a default-argument invocation because samples did not match the authorized manifest.",
+    "run_stderr_sha256": "7aa50385a4b0bda40fd7bccb80b66edf2279ed559f183ca23fcc6837be1b3bbf",
+    "scientific_samples_generated": 0
+  },
+  "response_contract_checks": {
+    "schema": "matching-one/z5-projective-leg-radius6-flat-response/v1",
+    "status": "fresh_radius6_flat_extension",
+    "exact_gate_passed": true,
+    "acquired_spatial_points": 13,
+    "complex_coordinates_per_batch": 28,
+    "real_coordinates_per_batch": 56,
+    "runner_commit_matches": true,
+    "run_matches_authorized_manifest": true,
+    "geometry_matches_authorized_manifest": true
+  },
+  "frozen_pivots": {
+    "selection": "maximum-volume charts chosen from the existing 12x10 degree<=5 top block before any degree-six data",
+    "plus": {
+      "5": {"rows": [0, 2, 6, 7, 8], "columns": [0, 1, 2, 5, 8], "condition_number": 112.83175285300123},
+      "6": {"rows": [0, 2, 6, 7, 8, 11], "columns": [0, 1, 2, 3, 5, 8], "condition_number": 124.1785097965452},
+      "7": {"rows": [0, 1, 2, 6, 7, 8, 11], "columns": [0, 1, 2, 3, 5, 7, 8], "condition_number": 203.33290248735094},
+      "8": {"rows": [0, 1, 2, 6, 7, 8, 9, 11], "columns": [0, 1, 2, 3, 5, 7, 8, 9], "condition_number": 280.1660237529615},
+      "9": {"rows": [0, 1, 2, 6, 7, 8, 9, 10, 11], "columns": [0, 1, 2, 3, 4, 5, 7, 8, 9], "condition_number": 292.8771767496421}
+    },
+    "minus": {
+      "5": {"rows": [0, 1, 2, 3, 6], "columns": [0, 1, 2, 4, 5], "condition_number": 88.05365905490854},
+      "6": {"rows": [0, 1, 2, 3, 5, 6], "columns": [0, 1, 2, 3, 4, 5], "condition_number": 133.65984988827253},
+      "7": {"rows": [0, 1, 2, 4, 5, 6, 7], "columns": [0, 1, 2, 3, 4, 5, 7], "condition_number": 196.38337777885704},
+      "8": {"rows": [0, 1, 2, 3, 5, 6, 7, 9], "columns": [0, 1, 2, 3, 4, 5, 7, 9], "condition_number": 325.35369865620777},
+      "9": {"rows": [0, 1, 2, 4, 5, 6, 7, 8, 9], "columns": [0, 1, 2, 3, 4, 5, 6, 7, 9], "condition_number": 278.0469870598202}
+    }
+  },
+  "decision_alpha": 0.01,
+  "score_once": true,
+  "score_status": "NOT_RUN_AT_RAW_LOCK"
+}

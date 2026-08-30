@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspace/p250-projective-leg-radius6-flat-1200k/code_sync/scripts/z5_projective_leg_radius6_flat_mc.py", line 238, in <module>
+    raise SystemExit(main())
+  File "/workspace/p250-projective-leg-radius6-flat-1200k/code_sync/scripts/z5_projective_leg_radius6_flat_mc.py", line 207, in main
+    cap = validate_manifest(args, manifest)
+  File "/workspace/p250-projective-leg-radius6-flat-1200k/code_sync/scripts/z5_projective_leg_radius6_flat_mc.py", line 158, in validate_manifest
+    raise ValueError(f"run differs from manifest for {key}")
+ValueError: run differs from manifest for samples
