@@ -41,6 +41,18 @@ def test_nonmatching_kernel_plane_is_detected():
     assert np.linalg.norm(bridge.bridge_matrix(plus, minus)) > 0.1
 
 
+def test_exactly_constant_coordinates_are_removed_before_whitening():
+    point = [0.1, 0.0, -0.2]
+    group = []
+    for index in range(12):
+        delta = (index - 5.5) * 0.001
+        group.append([point[0] + delta, 0.0, point[2] - 2.0 * delta])
+    result = bridge.score_identifiable_coordinates(point, [group])
+    assert result["frozen_vector_coordinates"] == 3
+    assert result["identifiable_input_coordinates"] == 2
+    assert result["algebraically_zero_variance_coordinates_removed"] == 1
+
+
 def test_frozen_hashes_and_upstream_gate_are_live():
     manifest = json.loads((ROOT / "analysis/p250_rank8_r2_kernel_bridge_freeze.json").read_text())
     paths = bridge.checked_inputs(manifest)

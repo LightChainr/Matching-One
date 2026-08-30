@@ -68,6 +68,34 @@ def bridge_residual(plus: np.ndarray, minus: np.ndarray) -> list[float]:
     return base.realify(bridge_matrix(plus, minus))
 
 
+def score_identifiable_coordinates(
+    point: Sequence[float], deleted_groups: Sequence[Sequence[Sequence[float]]]
+) -> dict[str, object]:
+    """Remove only exactly zero-variance coordinates before inherited whitening.
+
+    A Hermitian projector has algebraically real diagonal entries, so the
+    frozen real/imag vectorization contains ten identically zero imaginary
+    coordinates.  Removing them does not change the identifiable covariance
+    subspace or the frozen null.
+    """
+
+    covariance = base.covariance_sum(deleted_groups)
+    keep = np.diag(covariance) > 0.0
+    if not np.any(keep):
+        raise ValueError("projector residual has no variable coordinates")
+    point_kept = np.asarray(point, dtype=float)[keep].tolist()
+    deleted_kept = [
+        [np.asarray(row, dtype=float)[keep].tolist() for row in group]
+        for group in deleted_groups
+    ]
+    result = base.score_vector(point_kept, deleted_kept)
+    result["frozen_vector_coordinates"] = int(len(point))
+    result["identifiable_input_coordinates"] = int(np.count_nonzero(keep))
+    result["algebraically_zero_variance_coordinates_removed"] = int(np.count_nonzero(~keep))
+    result["identifiable_coordinate_indices"] = np.flatnonzero(keep).tolist()
+    return result
+
+
 def descriptive_geometry(plus: np.ndarray, minus: np.ndarray) -> dict[str, object]:
     plus_values = np.linalg.svd(plus, compute_uv=False)
     minus_values = np.linalg.svd(minus, compute_uv=False)
@@ -126,7 +154,7 @@ def score(manifest: Mapping[str, object]) -> dict[str, object]:
         [bridge_residual(row["plus"], row["minus"]) for row in deleted_by_source[source]]
         for source in ("old4", "old5", "fresh6")
     ]
-    bridge_score = base.score_vector(point, deleted)
+    bridge_score = score_identifiable_coordinates(point, deleted)
     finite_p = float(bridge_score["finite_batch_survival_p"])
     decision = (
         manifest["decision"]["p_below_alpha"]
