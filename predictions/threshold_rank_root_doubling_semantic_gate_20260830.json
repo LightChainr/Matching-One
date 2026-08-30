@@ -1,0 +1,33 @@
+{
+  "schema": "matching-one/observable-semantic-gate/v1",
+  "status": "semantic_gate_added_after_frozen_threshold_root_doubling_score",
+  "frozen_kernel": "scripts/score_threshold_rank_root_doubling.py",
+  "frozen_kernel_git_blob": "463acbb63df93eb58792db5a7db012d8e6096daa",
+  "size_order": [65, 85, 130, 170],
+  "lineages_in_order": [[65, 130], [85, 170]],
+  "genealogy": "multiplication_by_1_plus_i",
+  "paired_quantity": "threshold_rank_root_gap",
+  "target_ratio": {"numerator": -1, "denominator": 4, "fitted": false},
+  "source_descriptor": {
+    "channel": "cross",
+    "combination": "matching",
+    "coordinate": "p",
+    "orientation_order": "first_minus_second",
+    "normalization": "raw",
+    "quantity": "orientation_contrast"
+  },
+  "stored_child_descriptor": {
+    "channel": "cross",
+    "combination": "matching",
+    "coordinate": "p",
+    "orientation_order": "second_minus_first",
+    "normalization": "raw",
+    "quantity": "orientation_contrast"
+  },
+  "exact_registered_stored_child_map": {"scale": -1.0, "offset": 0.0},
+  "covariance_modes_in_order": [
+    "full_cross_size_covariance",
+    "diagonal_cross_size_covariance"
+  ],
+  "evidence_boundary": "The full-covariance score is primary and the diagonal result is diagnostic only. The typed gate preserves the measured covariance, fixed -1/4 prediction, two ordered lineages, stored child sign reversal, and every numerical result."
+}
