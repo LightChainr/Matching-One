@@ -2,6 +2,10 @@
 
 Date: 2026-08-30. Integration status: **open PR #267**. Acquisition: **existing-data reuse only**.
 
+## Late branch update: production now leads the queue
+
+The first production adapter and the first adaptive intervention pilot are no longer missing. Branch `f5779b9` certifies eight real A/E rows and eliminates three fixed lines; branch `f54fb8c` gives positive P250 adaptive response at N325/N425. Conversely, `54b3e8` proves integrated Bernoulli energy is exactly E_top/2, `b239871` stops the radius-1 one-point singlet pilot, and `36bf1fe` leaves an A+C clock plane. The current executable order is therefore P250 N505 adaptive x spectrum, P334 shared-update nested forks, then a theory-led Phase-E mixed-correlator acquisition. See [`production-priority-pivot-20260830.md`](production-priority-pivot-20260830.md).
+
 ## Decision
 
 Matching One has enough mature observables, covariance bundles and exact maps to
@@ -29,8 +33,8 @@ The current boundary is uneven and should be read literally:
 |---|---|---|---|
 | Issue #275 Phase D, canonical `A_top/E_top` coordinates | **production-scored** on ten archived aligned direction pairs, including the P57 norm-5 N325/N425 blocks | full delete-one covariance and finite-model Mahalanobis exclusion; not a finite-sample theorem or a field identification | localize the surviving even response by activation, geometry and state current |
 | P154 norm-4 production | **Phase-D production-scored** at N65/N85/N130/N170/N260/N340 | immutable PR #273 blobs supply `K1/K2`, canonical `A_top/E_top` and full aligned-delete-one covariance for the declared 1.9B/1B blocks; all six are K1-dominant and reinforcing, but `E_top=1-P1` is topology, not the energy operator | treat this as the topological arm of Phase E; do not repeat scalar/common-line scoring or call it an energy projection |
-| Issue #275 Phase E, `J_top` versus `J_bulk` | **not done and not identifiable from the present observer set** | P154 stores only threshold-rank histograms and Kminus/Kplus moments. It has no same-batch ordinary bulk-energy/singlet row, cross-moment or joint covariance; an unconstrained `J_bulk` can therefore be changed without changing any stored statistic | recover a compatible same-batch energy row if it exists outside P154, otherwise minimally acquire `B,B2,A*B,E*B` and freeze explicit `J_top/J_bulk` transfer images |
-| Issue #370 exact certificate framework | **five exact-rational Level-E controls plus basic envelope/recurrence/Hankel/ideal/realization primitives land at component tip `cc3c204` and remain in current `main@5ac456d`** | the canonical adapters remain fixture-shaped; arbitrary typed problem building, witness search, a separately implemented verifier, physical M3c, full gauge coverage and noisy production confidence sets are absent | connect one real frozen production covariance to the existing framework; do not build another toy example or parallel abstract compiler |
+| Issue #275 Phase E, local energy versus clock plane | **integrated alias answered; radius-1 mean pilot stopped; mixed production still missing** | P154 has no local row or `B2,I0*B,I2*B`; `J_bulk,integrated=E_top/2` is not independent, and A+C currently survives | acquire a theory-led local B with mixed moments and ask whether it replaces C; do not extend the stopped mean-H4 row |
+| Issue #370 exact certificate framework | **main framework plus first real branch-only production adapter `f5779b9`** | eight high-statistics rows eliminate `E=0,-A,+A`; a free ray survives. Exact margins remain conditional on the declared Gaussian outer set | reuse on the next new scientific covariance problem; do not build another fixture or adapter in front of acquisition |
 | Issue #370 production elimination | **statistical Level-S applications exist** for E_top and P250, plus an observer-wise E_top outer audit | the outer audit is floating Gaussian Bonferroni/Fieller, not directed rational interval arithmetic, Positivstellensatz or SOS | escalate one bounded survivor only when the stronger proof object would change the survivor set |
 
 In particular, the norm-5 request is no longer waiting for a synthetic harness:
@@ -165,10 +169,10 @@ radius-4/5/6 production blocks; all four hand-charge channels remain compatible
 with the nonnegative 101-frequency cone (`p=.163--.378`). Endpoint rank growth
 therefore cannot be used as a hidden-state count.
 
-The order-sensitive escape is already constructed. Exact branch `6fbbe5e`
-defines covariant state-dependent cut/join supports; 8,136 of 82,944 admissible
-L3 marked states have all four operations defined, and every such rectangle has
-nonzero `R_minus`. The next experiment is the frozen N505 adaptive pilot. It
+The order-sensitive escape is already in production. Exact branch `6fbbe5e`
+defines covariant state-dependent cut/join supports, and branch `f54fb8c`
+finds positive response at N325/N425 with all 1,503 defined rectangles positive.
+The next experiment is N505 adaptive x spatial-spectrum joint covariance. It
 must report unconditional `I_defined*R_minus`, the conditional response,
 defined/tie rates, all four selected supports, complement partners and joint
 periodogram covariance. Another endpoint rank or shell vote has lower value.
@@ -214,27 +218,17 @@ or reversible Gram rotation.
 
 ## Consequences for the next portfolio
 
-1. **Norm-4 Phase E:** stop calling the canonical Alexander-even coordinate an
-   energy projection. Recover or minimally acquire the same-batch square-site
-   ordinary-energy row, its cross-moments and explicit `J_top/J_bulk` images,
-   then score the real observer comparison on one joint covariance.
-2. **P334/P337 continuation:** cheap current geometry and the completed bottleneck
-   score `f97b906` both fail to absorb production age. Move to checkpoint-clustered
-   `H2=b1`, `b2`, overlap/triangle/minimal-triple sketches and at least two future
-   orders; keep risk composition, conditional hazard and `mark12_h4` separate.
-3. **P250 adaptive morphism:** the positive Fourier cone explains endpoint rank
-   growth and the exact adaptive D/J interface exists. Run its N505 production
-   pilot with unconditional defined/tie rates and joint spatial-spectrum control;
-   stop endpoint-only rank escalation.
-4. **P333 typed radical:** width-3 charge-one succeeds but width-4 charge-one
-   fails exactly at the Gram gate (`7b40ec7`). Run the frozen one-dimensional C4
-   charge-two alternating landing gate `a572058`; add rooted history/full-Q state
-   only if this minimum missing irrep fails.
-5. **Issue #370 production lift:** feed the actual Phase-E or adaptive-P250
-   typed covariance problem into the main exact certificate primitives. Add an
-   arbitrary problem builder or implementation-independent final verifier only
-   where that real survivor needs it. Interval/SOS strengthening
-   starts only for a bounded survivor that would change the decision.
+1. **P250 adaptive morphism:** run N505 adaptive x 101-frequency spectrum on one
+   covariance, with supports, typed intermediates, ties and complement IDs.
+2. **P334/P337 continuation:** four proxy families fail. Move to checkpoint `b2`,
+   one common update and two clones; keep risk composition, conditional hazard
+   and `mark12_h4` separate.
+3. **Norm-4 Phase E:** integrated energy is aliased and the radius-1 mean pilot
+   stopped. Acquire theory-led `B,B2,I0*B,I2*B` only to test whether B replaces C.
+4. **P333 typed radical:** charge one and charge two both fail at width 4. Retain
+   rooted/landing connectivity after emission or couple irreps.
+5. **Issue #370 production lift:** the first real adapter is complete. Reuse it
+   only when a new observation creates a survivor-changing certification need.
 6. **Continuum passports:** normalization-free three-point and modulus ratios
    remain high-value orthogonal discriminators after a lattice observable map is
    explicit. They should not delay production scoring of already typed finite

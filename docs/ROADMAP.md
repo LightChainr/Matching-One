@@ -12,28 +12,39 @@ The integrated control-plane snapshot is `main@5ac456d`. It inventories 59 score
 
 | Attention | Live object | Immediate discriminator |
 |---:|---|---|
-| 1 | True norm-4 Phase E plus P334 cooperative continuation | `E_top=1-P1` is topology, not energy; recover/minimally acquire the same-batch bulk-energy row and score `J_top/J_bulk`. In parallel move P334 from two failed shape absorbers and unbranched-trace ambiguity to checkpoint `b2` plus common-update-then-clone branching |
-| 2 | P250 adaptive ordered production | the archived endpoint window is compatible with the positive 101-frequency cone, endpoint/fixed toggles are order-blind, and exact `6fbbe5e` supplies the adaptive D/J interface. Run it at N505 with unconditional defined/tie rates and joint periodogram covariance |
-| 3 | E_top `tau x topology-map` | one universal cross-geometry A/E ray is rejected relative to four lineage rays. Use fixed-area, twist and modular-equivalent controls to separate modulus response from the discrete topology map rather than fit another universal ray |
-| 4 | P337/P334 completion-current localization | split `J12` into risk composition and conditional hazard, score age-standardized `mark12_h4`, and keep cooperative continuation separate from the additive E channel |
-| 5 | typed rho-C3 response | strengthen the nondegenerate complex sector/geometry rather than repeat a real-only or N60-aliased row |
-| 6 | Gaussian/annulus `AU-UA` order | a static common matching-odd residual exists, but endpoints are chronology-blind. Acquire the semantics-matched ordered rectangle or an intermediate state selected for maximal model separation |
-| 7 | W5 disk-relative dual and periodic comparison | spherical W5 duality is exact but does not close the terminal partition; the disk-relative dual is an eight-vertex cycle-with-leaves cell. Compute the joint primal/relative-dual boundary state and an explicit periodic embedding/comparison map |
-| parallel exact | P333 charge-two and P334 Hall | score the already-frozen minimal C4 charge-two gate and continue mixed arbitrary-HNF Hall independently; neither precedes the production rows above |
-| parallel method | production-first elimination | the #370 fixtures, fail-closed envelope and basic exact compilers/verifiers are now main regression infrastructure. Build only the missing production-confidence adapter around a real typed covariance problem; an inconclusive relaxation never serializes or demotes exploration |
+| 1 executable | P250 adaptive x spatial-spectrum production | `f54fb8c` already gives positive N325/N425 response and 1,503/1,503 positive defined rectangles. Run N505 200k/400 with typed intermediates, ties, complement IDs and joint 101-frequency covariance; do not repeat an aggregate-only pilot |
+| 1 scientific | P334 cooperative branching closure | three proxy families fail and `ffd91ebd` adds a real uniform-growth `1/66` successor gap. Implement one common update plus two clones with checkpoint `b2` and clustered covariance |
+| 3 executable | Phase-E local energy x clock plane | integrated energy is exactly E_top/2, the radius-1 mean-H4 pilot stopped, and A+C survives. Acquire `B,B^2,I0*B,I2*B` only for a theory-led local singlet and test whether it replaces C |
+| 4 | E_top `tau x topology-map` plus P337 hazard reuse | separate modulus from topology map; in parallel split completion current into risk composition and conditional hazard without new N1360 production |
+| 5 | typed rho-C3 and Gaussian/annulus order | strengthen a nondegenerate complex row or acquire actual `AU-UA`; do not repeat aliased real/static cells |
+| 6 | W5 disk-relative dual and periodic comparison | retain the internal-cycle datum in a joint primal/relative-dual boundary state and construct an explicit periodic comparison |
+| parallel exact | P333 rooted/landing lift and P334 Hall | `ab3eed81` closes the last terminal charge-two irrep; retain rooted/landing connectivity after emission while mixed arbitrary-HNF Hall continues independently |
+| parallel method | survivor-driven certificates | `f5779b9` completes the first #370 production-confidence adapter. Build another compiler or certificate only when a new observation leaves a model class whose fate depends on it |
 | dashboard | six-coordinate Operator Passport | expose orthogonal missing information across representation, finite algebra, propagation, sphere fusion, torus/modulus and microscopic control; it is not an admission checklist |
 
-### 1. Run the actual norm-4 energy projection and cooperative-continuation production
+The table intentionally separates scientific attention from execution readiness. P334 asks the deepest immediate state question; P250 is first on the compute queue because its real pilot and runner already exist.
+
+### 1. Run P250 adaptive order against the spatial spectrum
+
+The N325/N425 branch pilot at `f54fb8c` has already crossed the “is there a signal?” boundary: `Rminus=.06785+/-.00235` and `.06655+/-.00226`, with every defined rectangle positive and only `.40` SE geometry difference. The next run is not another pilot. It must join the adaptive intervention rows to the 101-frequency endpoint baseline at N505, save typed intermediate states and complement-pair IDs, and carry one aligned covariance.
+
+### 2. Acquire P334 branching after a shared update
+
+Current geometry, compact bottleneck, aggregate active-boundary organization and radius-1 completion-site motifs do not close the production age response. Exact `ffd91ebd` strengthens the earlier `1/98` delayed-fork witness with a `1/66` uniform-growth successor-signature gap. The production object is therefore checkpoint `b2`, one common update and two conditionally independent clone continuations—not a fourth static proxy.
+
+### 3. Reframe Phase E as an independent mixed-correlator test
 
 Canonical Phase D is complete on six declared P154 frozen blocks, but its
 `E_top=P2+P0=1-P1` is an Alexander-even topological coordinate—not the energy
 operator. The P154 files retain Kminus/Kplus histograms and joint moments only;
 they contain no same-batch ordinary bulk-energy/singlet row or cross-moment.
-Therefore the requested `J_top` versus `J_bulk` projection has never been done.
-The first output is to recover a semantically compatible square-site energy row
-if one exists outside P154, otherwise minimally acquire its mean, square and
-cross-moments with A/E on the same orientation/batch stream, then freeze the two
-common-transfer images and score one joint covariance.
+Branch `54b3e8` proves that the zero-cost integrated Bernoulli score is exactly
+`E_top/2`, while `b239871` stops the radius-1 one-point singlet pilot. Branch
+`36bf1fe` further changes the alternative: A-only fails, but A+C survives. A
+meaningful Phase-E restart must therefore acquire an independently motivated
+local row `B` with `B^2,I0*B,I2*B` and test whether it replaces C and fixes the
+plane. Replaying the full preserved P154 streams is a heavy production choice,
+not a data-recovery or tooling task.
 
 In parallel, join the P337 current split to the P334 continuation state:
 
@@ -50,19 +61,19 @@ Thus direct `0->2` current cancels from fixed-p `E_top`; it is not a third addit
 
 Main direct commit `d9f813b` now gives the decisive acquisition warning: two N16 states have the same complete unbranched survival vector but, after one common update and cloning, branching probabilities `95/196` and `93/196`. **Immediate decision output:** record checkpoint `b2`, perform one common update, then launch two conditionally independent clone continuations and score the branching law separately from unbranched horizons. This is one finite counterexample, not intrinsic memory or a field count. Do not add another one-pass shape proxy, aggregate exponent or N1360 block.
 
-### 2. Replace P250 endpoint rank with adaptive ordered production
+### P250 evidence boundary: endpoint rank is not the ordered observable
 
 The old finite-window eliminations remain valid, but PR #416 supplies their correct baseline: complete N505 endpoint autocorrelation has at least 100 positive nonzero spatial modes. Branch `dbeb29c` applies the positive 101-frequency cone to the archived radius-4/5/6 blocks; all four hand-charge channels are compatible (`p=.163--.378`). Endpoint rank growth is therefore a spatial-spectrum measurement, not a hidden-state count.
 
 Exact branch `af7dd01` now proves a harder boundary: every current endpoint-only observable factors through the abelianized displacement counts, so `O(xy)=O(yx)` identically regardless of radius, moment order, charge precision or sample size. Endpoint failure is therefore not evidence of noncommutation.
 
-Exact `3128e3e` rules out fixed-site overwrites. Exact `6fbbe5e` then constructs a covariant adaptive state-dependent D/J pair: 8,136 of 82,944 admissible L3 states have all four operations defined, and every defined rectangle has nonzero `R_minus`. **Immediate decision output:** run that frozen interface at N505, retaining four branch-specific supports, typed intermediate states, `R_plus/R_minus`, complement pairs and periodograms. Report unconditional `I_defined*R_minus`, conditional response and defined/tie rates. Final endpoint labels and more rank shells are insufficient.
+Exact `3128e3e` rules out fixed-site overwrites. Exact `6fbbe5e` constructs a covariant adaptive state-dependent D/J pair, and `f54fb8c` carries it into N325/N425 production with positive response at both geometries. **Immediate decision output:** run the N505 joint-spectrum discriminator, retaining four branch-specific supports, typed intermediate states, `R_plus/R_minus`, complement pairs and periodograms. Report unconditional `I_defined*R_minus`, conditional response and defined/tie rates. Final endpoint labels, more rank shells and a third aggregate-only pilot are insufficient.
 
-### Parallel exact: score the frozen width-4 P333 charge-two landing character
+### Parallel exact: move P333 beyond terminal endpoint irreps
 
-The crossed/trivial trace and graded direct sum remain useful, but regular Q differentiation is semisimple. Scalar detach and scalar marks fail. The width-3 C3 charge-one doublet at `b82e8cc` repairs the exact gate, but its width-4 C4 continuation `7b40ec7` fails at Gram self-adjointness after a `4 -> 2 -> empty` ladder. The smallest untested irrep is the one-dimensional C4 charge-two alternating landing character, frozen at `a572058`.
+The crossed/trivial trace and graded direct sum remain useful, but regular Q differentiation is semisimple. Scalar detach and scalar marks fail. The width-3 C3 charge-one doublet at `b82e8cc` repairs the exact gate, but its width-4 C4 continuation `7b40ec7` fails. Branch `ab3eed81` now also fails the final one-dimensional C4 charge-two terminal landing character at the Gram-self-adjoint gate.
 
-**Immediate decision output:** run the single charge-two gate. If it succeeds, derive its complete Q-family source and test positivity/dimension velocity. If it fails, escalate to rooted first/subsequent/nested history using the accumulated left-null witnesses. Do not reopen scalar or charge-one marks.
+**Immediate decision output:** retain rooted/landing connectivity after emission, or couple multiple irreps in one registry. Do not reopen scalar, charge-one, charge-two or another terminal endpoint mark.
 
 ### Parallel theory: keep the P334 Hall theorem independent of the acquired geometry block
 
@@ -183,17 +194,17 @@ x nuisance cancellation and archive reuse
 - **#50 N145->290 full curve — complete:** the resolved shape direction already rejects one scalar multiplier. Its archive remains reusable for new typed coordinates, while another endpoint-only repeat has lower information gain.
 - **Digital Alexander frontier:** main-integrated PR #330 is exact through index 13 with 140 quotients and 101,140,028,118 weighted paths. Branch-only `73d4960` supplies the rational-cover theorem and child `c1a72e5` claims integral saturation. Review the child; if it holds, use the finite frontier as regression rather than evidence for saturation.
 - **P205 ordinary prism:** H4 beats the frozen H8/H12 lines. A `rho`/C3 run gains more information from a distinct typed observer than from repeating this selector.
-- **PR #267 activation reuse, state current and E_top elimination:** all ten cross-geometry pairs and, separately, all six P154 norm-4 pairs now have canonical Phase-D scores. Both full covariances reject pure odd, either zero activation response, one common line and one fixed-power amplitude. Phase E is not scoreable from A/E alone because no same-batch ordinary-even bulk-singlet row exists. Draft `7e5fcf1` gives `E_top'=J12-J01`; the next reuse is midpoint composition-versus-hazard, component recurrences and `mark12_h4`.
+- **PR #267 activation reuse, state current and E_top elimination:** all ten cross-geometry pairs and all six P154 norm-4 pairs have canonical Phase-D scores. Integrated energy is exactly E_top/2, the radius-1 mean pilot stops and A+C survives. Phase E now requires a theory-led B-versus-C mixed-moment plane. Draft `7e5fcf1` gives `E_top'=J12-J01`; the next reuse is midpoint composition-versus-hazard, component recurrences and `mark12_h4`.
 - **Marked-birth and external-observer chain:** q-only contact closure, bare mean-line q2 and the two-radius local rejection retire three narrow carriers. The exact occupation clock explains 53%/56% of raw far-D magnitude, while 47%/44% survives fixed-occupation plus JS and the completed `26cecb4` two-observer result does not reject the current rank-one lane (`4.279/4`, `p=.370`). The next discriminator is K1-age/K2-completion/collision localization followed by a physically new connectivity/winding source, not another density transform, observer design or repeat.
 - **PR #288 mixing audit:** parity gives the four powers but the amplitude map is rank four. Two external Taylor ratios, not another parity argument, are the live closure variables.
 - **Q=4 seam plus main-integrated PR #291 alias gate:** colour characters and normalization are exact, and a single C4 orbit aliases scalar/spin 4. The missing spatial kernel needs calibrated phase diversity or typed internal data; six raw seam values alone certify colour sector, not pure H4.
 - **Same-semantics context rectangle:** one shared generator is not rejected (`p=.4002`), but lambda and path order remain unidentified. The next row must separate models or measure `AU/UA`.
 - **Topology-typed C3:** N112 is genuinely multi-character; the E4-squared completion phase remains viable but unresolved, and N60-only replication has a proved power ceiling. Strengthen N112 or change geometry.
 - **Threshold shape flow:** exact collapse fails, while an almost rank-one upper-tail direction replicates across cover and independent-size blocks. Freeze its direction before a fresh-lineage amplitude test.
-- **P321/P333 closure interface:** scalar detach and endpoint marks fail. Charge one repairs width 3 but fails width 4 at `7b40ec7`; score the frozen C4 charge-two alternating landing gate `a572058` before a larger rooted/history full-Q module.
-- **Projective birth/twist flux:** P337 localizes first-birth/completion currents. P334's cheap current-geometry and completed bottleneck scores both fail as common absorbers. Main PR #409 and open PR #415 identify `H2=b1`, cooperative pairs `b2`, overlaps/triangles and minimal triples as the next continuation hierarchy. Run checkpoint-clustered survival; keep midpoint composition/hazard, `mark12_h4` and corrected-reservoir Hall separate.
-- **P250 spatial endpoint and ordered intervention:** the older finite-window eliminations remain valid, but PR #416 and branch `dbeb29c` show that the N505 endpoint ranks are compatible with an ordinary positive spatial spectrum. Exact `af7dd01` removes endpoint order, `3128e3e` removes fixed overwrites, and `6fbbe5e` supplies a viable adaptive D/J witness. The next object is its N505 production pilot with retained supports, typed intermediate states, defined/tie rates and joint periodogram covariance.
-- **Issue #370 exact ladder and framework:** the five toy fixtures and the fail-closed recurrence/Hankel/ideal/realization framework land at component tip `cc3c204` and remain available in current `main@5ac456d`. Build the production-confidence adapter and use it on a real bounded class; do not describe the compiler as missing or treat the fixtures as independent scientific votes.
+- **P321/P333 closure interface:** scalar detach and endpoint marks fail. Charge one and charge two both fail at width 4. Retain rooted/landing connectivity after emission or couple irreps before a full-Q module.
+- **Projective birth/twist flux:** P337 localizes first-birth/completion currents. Four P334 static/local proxy families fail; exact continuation adds `1/98` and `1/66` gaps. Run checkpoint `b2` plus one shared update and two clones; keep midpoint composition/hazard, `mark12_h4` and Hall separate.
+- **P250 spatial endpoint and ordered intervention:** endpoint ranks are compatible with ordinary positive spectrum, while `f54fb8c` gives positive adaptive response at N325/N425. The next object is N505 adaptive x spectrum with retained supports, typed intermediates, ties, complement IDs and joint covariance.
+- **Issue #370 exact ladder and framework:** main holds the fixture/framework layer and `f5779b9` completes the first real production adapter. Reuse it when a new observation leaves a survivor-changing certification question; do not put another compiler in front of production.
 - **P250/Jordan identifiability:** open PR #385 proves that unrestricted near-colliding ordinary modes are not positively separated from a Jordan semigroup on finite noisy data, and gives a conditional C4 character obstruction for a cyclic flat length-five Laurent quotient. Retain those exact premise gates, but discard its now-stale R2-gauge application. First obtain the candidate-independent rank/path row; use the character obstruction only if flatness, cyclic source and internal C4 are established.
 - **Q-lift and connected-history transport:** P333 proves raw Q jets are lift-dependent and supplies the exact signed nilpotent `K=(D-J)^2` as a Gram-compatible Jordan positive control. Scalar detach and one endpoint mark are now exact failures, with restricted-skew lower bounds requiring more typed marks. Full-Q source definition, retained marked connectivity, positivity and dimension velocity outrank another free endpoint block.
 - **Gaussian norm-10 power:** source-only planning projects 27.21B/55.18B samples per lineage and negligible ideal-CRN gain. Defer production; only a target variance/runtime pilot can reopen it.
