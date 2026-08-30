@@ -1,0 +1,236 @@
+{
+  "claim_boundary": "N65 normalization and variance design only; N85 values absent from this artifact",
+  "design": {
+    "archive_search_result": "no N85 or larger tau1/primitive-ell/tau2 projective archive exists",
+    "batches": 20,
+    "geometry": {
+      "N": 85,
+      "first": [
+        9,
+        2
+      ],
+      "first_period_matrix": [
+        [
+          9,
+          -2
+        ],
+        [
+          2,
+          9
+        ]
+      ],
+      "reason": "smallest existing-project design above N65 with two primitive Gaussian representations",
+      "second": [
+        7,
+        6
+      ],
+      "second_period_matrix": [
+        [
+          7,
+          -6
+        ],
+        [
+          6,
+          7
+        ]
+      ]
+    },
+    "power_extrapolation": {
+      "N65_samples": 20000,
+      "N65_standard_error": 0.020366733051848874,
+      "assumption": "N85 per-sample Delta_K variance no worse than N65",
+      "planned_standard_error": 0.0064405264940474655,
+      "required_samples_3sigma": {
+        "scale_neutral_vs_H4": 123882.72450821598,
+        "zero_vs_H4": 36985.413684742314,
+        "zero_vs_scale_neutral": 15466.333876821876
+      },
+      "required_samples_5sigma": {
+        "scale_neutral_vs_H4": 344118.6791894888,
+        "zero_vs_H4": 102737.26023539531,
+        "zero_vs_scale_neutral": 42962.03854672742
+      },
+      "why_200k": "exceeds the N65-variance 3-sigma scale-neutral-vs-H4 requirement without pretending fitted-target uncertainty vanishes"
+    },
+    "rejected_old_N85": [
+      "results/server-20260828/C01/N85/eval.metadata.json: no projective_births/births_csv",
+      "results/server-20260828/P34/N85/mc.metadata.json: no projective_births/births_csv"
+    ],
+    "replica_offset": 0,
+    "samples_per_shape": 200000,
+    "seed": 202608337
+  },
+  "frozen_targets_at_N85": {
+    "source_fitted_project_H4": {
+      "exponent_in_area_N": -1.625,
+      "fit_variance": 0.0001734601200902852,
+      "scale_ratio": 0.6466636515105115,
+      "value": 0.04493061708536974
+    },
+    "source_fitted_scale_neutral": {
+      "fit_variance": 0.00041480381520527334,
+      "value": 0.06948065966042533
+    },
+    "zero": {
+      "fit_variance": 0.0,
+      "value": 0.0
+    }
+  },
+  "natural_coordinate": {
+    "covariance": [
+      [
+        0.00022030132595607496,
+        -5.268648078315856e-09,
+        -0.00022030659460415327
+      ],
+      [
+        -5.268648078315856e-09,
+        0.0001944919519530421,
+        0.0001944972206011203
+      ],
+      [
+        -0.00022030659460415327,
+        0.0001944972206011203,
+        0.0004148038152052734
+      ]
+    ],
+    "definition": "K_A=p(1-p) Jminus_A/W_A=d_eta log W_A",
+    "jackknife_replicates": [
+      [
+        -0.04778353061589481,
+        0.029116324764609684,
+        0.07689985538050449
+      ],
+      [
+        -0.042764154915090925,
+        0.03702673364580342,
+        0.07979088856089434
+      ],
+      [
+        -0.0351299106476899,
+        0.024004123162475754,
+        0.05913403381016566
+      ],
+      [
+        -0.045084530022269795,
+        0.030181755391192725,
+        0.07526628541346252
+      ],
+      [
+        -0.04224915575613336,
+        0.024721680811423945,
+        0.06697083656755731
+      ],
+      [
+        -0.04223033957331601,
+        0.026454241807636756,
+        0.06868458138095276
+      ],
+      [
+        -0.03646367111397418,
+        0.028304655676857932,
+        0.06476832679083211
+      ],
+      [
+        -0.04411396731420645,
+        0.029672157252713716,
+        0.07378612456692016
+      ],
+      [
+        -0.04437467147972786,
+        0.024648497020389386,
+        0.06902316850011725
+      ],
+      [
+        -0.038339382717107726,
+        0.02754296160212518,
+        0.0658823443192329
+      ],
+      [
+        -0.04352375573390028,
+        0.026524095272769055,
+        0.07004785100666933
+      ],
+      [
+        -0.039692481596009875,
+        0.030737382425159276,
+        0.07042986402116916
+      ],
+      [
+        -0.0419826759948875,
+        0.027818068678784908,
+        0.06980074467367241
+      ],
+      [
+        -0.04322533625800607,
+        0.021746529107247795,
+        0.06497186536525387
+      ],
+      [
+        -0.03985930524885747,
+        0.02788112838159574,
+        0.0677404336304532
+      ],
+      [
+        -0.040740315862963054,
+        0.03110614251630663,
+        0.07184645837926969
+      ],
+      [
+        -0.034360496283975826,
+        0.028777525420565924,
+        0.06313802170454175
+      ],
+      [
+        -0.045542912103662646,
+        0.025286059812592184,
+        0.07082897191625483
+      ],
+      [
+        -0.0404088317095501,
+        0.03027787764639494,
+        0.07068670935594504
+      ],
+      [
+        -0.04339014489465842,
+        0.02647747395787183,
+        0.06986761885253025
+      ]
+    ],
+    "order": [
+      "K_A_first",
+      "K_A_second",
+      "Delta_K_A_second_minus_first"
+    ],
+    "standard_error": [
+      0.014842551194322186,
+      0.013946037141533866,
+      0.020366733051848874
+    ],
+    "value": [
+      -0.04156368093109216,
+      0.027916978729333172,
+      0.06948065966042533
+    ]
+  },
+  "schema": "matching-one/P337-natural-current-scale-preregistration/v1",
+  "scoring_contract": {
+    "measurement_only_residual": "(observed-target)^2/Var_N85 for the three fixed numeric targets",
+    "model_order": [
+      "zero",
+      "source_fitted_scale_neutral",
+      "source_fitted_project_H4"
+    ],
+    "no_selection": "all three targets and H4 exponent -13/8 are frozen before N85",
+    "normalization": "p(1-p)/W_A fixed from N65 definition; no N85 normalization selection",
+    "observable": "Delta_K_A=K_A_second-K_A_first from aligned delete-one-batch jackknife",
+    "predictive_residual": "for fitted targets divide by Var_N85+fit_variance; zero has fit_variance 0"
+  },
+  "source": {
+    "activity_certificate": "results/p337-n65-charged-activity-net/latest.json",
+    "activity_commit": "f3384f4",
+    "archive_commit": "1714141",
+    "p_ref": 0.59274605079
+  },
+  "status": "frozen before N85 generation or inspection"
+}
