@@ -1,0 +1,254 @@
+{
+  "claim_boundary": "The intertwiner multiplicities are for the checked periodic connectivity-join quotient. The block pull-through identity is representation-independent for any affine-TL action with T e_i T^-1=e_(i+1), but a fuller detach/loop-weight algebra may reduce the Hom spaces.",
+  "construction": {
+    "closure_seam": "C=diag(T,I)",
+    "evaluation": "Tr(D_Q diag(A,A))=Tr(TA)-QTr(A)",
+    "graded_closure_defect": "D_Q=J_Q C=diag(T,-Q I)",
+    "grading": "Gamma=diag(I,-I)",
+    "module": "M_cross direct_sum M_trivial",
+    "supertrace_label": "J_Q=Gamma W_Q=diag(I,-Q I)",
+    "weight": "W_Q=diag(I,QI)"
+  },
+  "data_class": "exact integer/rational block matrices; symbolic Q split into coefficients",
+  "decision": {
+    "F_t_classification": "the exact homology trace first requires independent scalar amplitudes in the crossed and trivial modules; a Jordan matrix element is additional extension data, not forced by Q differentiation",
+    "Jordan_uniqueness": "no: a Jordan limit requires singular confluent identification, and the admissible off-diagonal intertwiner space has dimension greater than one at every checked width",
+    "block_pull_through": "yes: separating the closures converts the failed single-space sum into an exact blockwise intertwiner from diag(e_i,e_i) to diag(e_(i+1),e_i)",
+    "regular_Q_derivative": "does not generate a nilpotent; it is the diagonal sector projector with an explicit sign"
+  },
+  "q_lift_crosswalk": "The L_hom to L_CP tangent shift -pi_0D is the diagonal derivative of the sector weight. It is not evidence for an off-diagonal logarithmic partner.",
+  "schema": "matching-one/p321-graded-closure-extension/v1",
+  "widths": [
+    {
+      "block_pull_through": {
+        "J_Q_coefficient_commutator": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "rank_over_Q": 0
+        },
+        "J_constant_commutator": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "rank_over_Q": 0
+        },
+        "all_sites_equal": true,
+        "closure_seam_pull_through": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "rank_over_Q": 0
+        },
+        "graded_defect_Q_coefficient_pull_through": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "rank_over_Q": 0
+        },
+        "graded_defect_constant_pull_through": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "rank_over_Q": 0
+        },
+        "sites_checked": 2
+      },
+      "canonical_off_diagonal": {
+        "N_X_squared": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "rank_over_Q": 0
+        },
+        "X": "T",
+        "pull_through": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "rank_over_Q": 0
+        },
+        "rank_N_X": 2,
+        "translation_commutator": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "rank_over_Q": 0
+        }
+      },
+      "doubled_dimension": 4,
+      "intertwiner_dimensions_over_Q": {
+        "affine_commutant": 2,
+        "affine_sigma_intertwiners_also_XT=TX": 2,
+        "join_commutant": 2,
+        "join_sigma_intertwiners_Xe_i=e_(i+1)X": 2
+      },
+      "module_dimension": 2,
+      "regular_Q_derivative": {
+        "J_prime": "diag(0,-I)",
+        "W_prime": "diag(0,I)",
+        "W_prime_idempotency_residual": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "rank_over_Q": 0
+        },
+        "decision": "diagonal/idempotent, not nilpotent",
+        "rank_J_prime": 2,
+        "rank_J_prime_squared": 2
+      },
+      "singular_confluence": {
+        "identity": "S_X(delta) diag(I,(1+delta)I) S_X(delta)^-1=[[I,X],[0,(1+delta)I]]",
+        "limit": "I+N_X with N_X=[[0,X],[0,0]] and N_X^2=0",
+        "rational_check_delta": "2/3",
+        "residual_rank": 0
+      },
+      "width": 2
+    },
+    {
+      "block_pull_through": {
+        "J_Q_coefficient_commutator": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "rank_over_Q": 0
+        },
+        "J_constant_commutator": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "rank_over_Q": 0
+        },
+        "all_sites_equal": true,
+        "closure_seam_pull_through": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "rank_over_Q": 0
+        },
+        "graded_defect_Q_coefficient_pull_through": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "rank_over_Q": 0
+        },
+        "graded_defect_constant_pull_through": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "rank_over_Q": 0
+        },
+        "sites_checked": 3
+      },
+      "canonical_off_diagonal": {
+        "N_X_squared": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "rank_over_Q": 0
+        },
+        "X": "T",
+        "pull_through": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "rank_over_Q": 0
+        },
+        "rank_N_X": 5,
+        "translation_commutator": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "rank_over_Q": 0
+        }
+      },
+      "doubled_dimension": 10,
+      "intertwiner_dimensions_over_Q": {
+        "affine_commutant": 3,
+        "affine_sigma_intertwiners_also_XT=TX": 3,
+        "join_commutant": 5,
+        "join_sigma_intertwiners_Xe_i=e_(i+1)X": 5
+      },
+      "module_dimension": 5,
+      "regular_Q_derivative": {
+        "J_prime": "diag(0,-I)",
+        "W_prime": "diag(0,I)",
+        "W_prime_idempotency_residual": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "rank_over_Q": 0
+        },
+        "decision": "diagonal/idempotent, not nilpotent",
+        "rank_J_prime": 5,
+        "rank_J_prime_squared": 5
+      },
+      "singular_confluence": {
+        "identity": "S_X(delta) diag(I,(1+delta)I) S_X(delta)^-1=[[I,X],[0,(1+delta)I]]",
+        "limit": "I+N_X with N_X=[[0,X],[0,0]] and N_X^2=0",
+        "rational_check_delta": "2/3",
+        "residual_rank": 0
+      },
+      "width": 3
+    },
+    {
+      "block_pull_through": {
+        "J_Q_coefficient_commutator": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "rank_over_Q": 0
+        },
+        "J_constant_commutator": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "rank_over_Q": 0
+        },
+        "all_sites_equal": true,
+        "closure_seam_pull_through": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "rank_over_Q": 0
+        },
+        "graded_defect_Q_coefficient_pull_through": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "rank_over_Q": 0
+        },
+        "graded_defect_constant_pull_through": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "rank_over_Q": 0
+        },
+        "sites_checked": 4
+      },
+      "canonical_off_diagonal": {
+        "N_X_squared": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "rank_over_Q": 0
+        },
+        "X": "T",
+        "pull_through": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "rank_over_Q": 0
+        },
+        "rank_N_X": 14,
+        "translation_commutator": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "rank_over_Q": 0
+        }
+      },
+      "doubled_dimension": 28,
+      "intertwiner_dimensions_over_Q": {
+        "affine_commutant": 9,
+        "affine_sigma_intertwiners_also_XT=TX": 9,
+        "join_commutant": 20,
+        "join_sigma_intertwiners_Xe_i=e_(i+1)X": 20
+      },
+      "module_dimension": 14,
+      "regular_Q_derivative": {
+        "J_prime": "diag(0,-I)",
+        "W_prime": "diag(0,I)",
+        "W_prime_idempotency_residual": {
+          "frobenius_norm_squared": 0,
+          "nonzero_entries": 0,
+          "rank_over_Q": 0
+        },
+        "decision": "diagonal/idempotent, not nilpotent",
+        "rank_J_prime": 14,
+        "rank_J_prime_squared": 14
+      },
+      "singular_confluence": {
+        "identity": "S_X(delta) diag(I,(1+delta)I) S_X(delta)^-1=[[I,X],[0,(1+delta)I]]",
+        "limit": "I+N_X with N_X=[[0,X],[0,0]] and N_X^2=0",
+        "rational_check_delta": "2/3",
+        "residual_rank": 0
+      },
+      "width": 4
+    }
+  ]
+}
