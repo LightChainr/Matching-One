@@ -1,4 +1,4 @@
-version: 12
+version: 13
 updated: 2026-08-30
 purpose: >
   Lightweight navigation/provenance index. Registry conflicts never block
@@ -45,7 +45,7 @@ continuum_controls:
 evidence_archives:
   - {id: P57, path: results/server-20260829/P57-norm5-500m, status: immutable_result, role: prospective_norm5}
   - {id: P50_FULLCURVE, path: results/server-20260829/P50-n145-n290-fullcurve, status: immutable_result, role: heldout_fullcurve}
-  - {id: MATCHING_ODD_SYNTHESIS, path: results/evidence-ledger/issue212-matching-odd-synthesis.json, status: post_reveal_synthesis, role: independent_primary_meta}
+  - {id: MATCHING_ODD_SYNTHESIS, path: results/evidence-ledger/issue212-matching-odd-synthesis.json, status: post_reveal_synthesis, role: derived_meta_over_two_distinct_primary_raw_groups_not_a_new_primary_row}
   - {id: NORM4_PILOT, path: results/server-20260829/P154-norm4-variance-pilot, status: calibration_result, role: covariance_and_cost}
   - {id: NEUTRAL_AREA, path: results/local-20260829/neutral-area-mode-front, status: negative_result, role: low_order_mode_front_failure}
   - {id: LOCAL_TANGENT_LARGEN, path: results/local-20260829/P155-c4-local-odd-pivotal-largeN, status: negative_result, role: one_direction_rank_gate}
@@ -65,17 +65,27 @@ evidence_archives:
   - {id: SPIN4_DIRECTION_ALIAS_GATE, path: results/discrete-holomorphic-spin4-alias, status: exact_result, role: main_integrated_one_C4_orbit_scalar_spin4_alias_boundary}
   - {id: PAIRED_MOTIF_MICROCANONICAL, path: results/paired-motif-microcanonical, status: exact_result, role: fixed_rank_equal_multiplicity_zero_mean_control_not_threshold_origin}
   - {id: OBSERVABLE_DESCRIPTOR_REGISTRY, path: results/observable-descriptor-map-audit, status: exact_semantic_infrastructure, role: 200_descriptor_952_map_registry_coherence}
-  - {id: SCORER_ADOPTION_INVENTORY, path: results/scorer-descriptor-adoption, status: semantic_adoption_inventory, role: all_37_paths_classified_6_direct_5_covered_25_migration_required_without_scientific_demotion}
+  - {id: SCORER_ADOPTION_INVENTORY, path: results/scorer-descriptor-adoption, status: semantic_adoption_inventory, role: all_42_paths_classified_11_direct_10_covered_20_migration_required_without_scientific_demotion}
   - {id: DIGITAL_ALEXANDER_INDEX11, path: results/digital-alexander-quotient-frontier, status: exact_result, role: main_integrated_cached_subset_DP_HNF_frontier_through_index11}
   - {id: DIGITAL_ALEXANDER_INDEX12, path: results/digital-alexander-quotient-frontier, status: exact_result, role: main_integrated_cached_subset_DP_HNF_frontier_through_index12}
+  - {id: DIGITAL_ALEXANDER_INDEX13, path: results/digital-alexander-quotient-frontier, status: exact_result, role: main_integrated_cached_subset_DP_HNF_frontier_through_index13_without_unrestricted_integral_saturation_theorem}
   - {id: PSLQ_BOUNDED_CONTRACT, path: analysis/pslq_search_contract.json, status: frozen_protocol, role: bounded_integer_relation_search_without_result}
   - {id: H4_H12_ORTHOGONAL_DESIGN, path: analysis/h4_h12_orthogonal_design_manifest.json, status: frozen_protocol, role: orthogonal_acquisition_design_without_production_result}
   - {id: GAUSSIAN_COMMUTING_SQUARE_DESIGN, path: analysis/gaussian_commuting_square_root_contract.json, status: frozen_protocol, role: exact_direct_two_step_H4_character_composition_without_target_roots}
   - {id: TERMINAL_PARTITION_CANONICALIZER, path: analysis/terminal_partition_canonical_manifest.json, status: exact_infrastructure, role: main_integrated_RGS_and_explicit_group_orbit_key_without_gadget_or_radical_result}
   - {id: SYNTHETIC_GADGET_COMPARISON_CERTIFICATE, path: analysis/synthetic_gadget_comparison_certificate.json, status: synthetic_protocol, role: main_integrated_fail_closed_exact_rational_interval_plumbing_without_real_gadget_or_bound}
   - {id: ISSUE50_N290_TYPED_WRAPPER, path: predictions/issue50_n290_semantic_gate_20260830.json, status: exact_semantic_infrastructure, role: main_integrated_identity_gate_for_existing_fixed_p_score_without_new_data_or_H4_H12_discrimination}
+  - {id: MATCHING_ODD_SYNTHESIS_TYPED_WRAPPER, path: predictions/matching_odd_synthesis_semantic_gate_20260830.json, status: exact_semantic_infrastructure, role: main_integrated_identity_gate_for_two_existing_matching_odd_primary_blocks_without_new_data_rescore_or_additive_evidence}
+  - {id: P48_CHRONOLOGICAL_TYPED_WRAPPER, path: predictions/p48_sprime_frozen_semantic_gate_20260830.json, status: exact_semantic_infrastructure, role: main_integrated_identity_gate_for_the_existing_chronological_P48_Sprime_score_without_new_data_refit_model_reordering_or_numerical_change}
+  - {id: SCORER_INVENTORY_SELF_EXCLUSION, path: results/scorer-descriptor-adoption, status: exact_semantic_infrastructure, role: main_integrated_PR338_meta_tool_self_exclusion_and_full_live_recomputation_with_39_8_7_23_counts_unchanged}
+  - {id: ODD_JET_LINEAR_METRIC_INVARIANTS, path: analysis/odd_jet_invariant_contract.json, status: exact_analysis_primitive, role: main_integrated_linear_thermal_coordinate_invariants_and_delta_method_covariance_without_data_estimate_or_field_assignment}
+  - {id: RATIONAL_STAGE_B_QUARANTINE, path: analysis/rational_stage_b_quarantine_manifest.json, status: frozen_prereveal_protocol, role: main_integrated_width1_21_knowledge_boundary_and_width22_24_target_absence_without_target_or_score}
+  - {id: C4_TANGENT_TYPED_WRAPPER, path: predictions/c4_tangent_orthogonal_semantic_gate_20260830.json, status: exact_semantic_infrastructure, role: main_integrated_identity_gate_for_existing_C4_tangent_holdout_without_new_data_score_or_evidence}
+  - {id: GPU_RENTAL_GATE, path: analysis/gpu_rental_gate_manifest.json, status: exact_resource_protocol, role: main_integrated_CPU_baseline_and_fivefold_GPU_threshold_without_GPU_measurement_rental_or_production}
+  - {id: ISSUE43_FULL_CURVE_TYPED_WRAPPERS, path: predictions/issue43_full_curve_semantic_gate_20260830.json, status: exact_semantic_infrastructure, role: main_integrated_identity_gates_for_two_frozen_Issue43_full_curve_kernels_without_new_data_refit_score_or_independent_evidence}
 
 topic_derivations:
+  - {path: notes/p321-modulus-literature-brief.md, status: open_pr_design_brief, role: primary_arxiv_boundary_for_finite_projector_conditional_E4_and_third_rho_sector_tomography}
   - {path: notes/pivotal-russo-finite-volume.md, status: topic_derivation, role: pivotal_identity}
   - {path: notes/post-n290-two-generator-thermal-transfer.md, status: topic_derivation, role: non_scalar_thermal_transfer}
   - {path: notes/q4-jordan-log-slope-shape.md, status: topic_derivation, role: Q4_Jordan_shape}
@@ -95,6 +105,12 @@ channel_semantics:
   audit: predictions/wrapping_channel_audit_20260828.json
   primary_norm5_entrypoint: scripts/score_norm5_harmonic_primary_typed.py
   fullcurve_norm5_entrypoint: scripts/score_intrinsic_functional_cocycle_typed.py
+  matching_odd_synthesis_entrypoint: scripts/score_matching_odd_synthesis_typed.py
+  chronological_p48_entrypoint: scripts/score_p48_sprime_frozen_typed.py
+  odd_jet_invariant_entrypoint: scripts/odd_jet_invariants.py
+  c4_tangent_entrypoint: scripts/score_c4_tangent_orthogonal_holdout_typed.py
+  issue43_fullcurve_entrypoints: [scripts/score_issue43_full_curve_typed.py, scripts/score_issue43_full_curve_locked_typed.py]
+  p50_sprime_open_pr_entrypoint: scripts/score_p50_sprime_n290_typed.py
   required_fields: [topology_channel, combination, probability_coordinate, orientation_order, normalization, quantity]
 
 registered_reanalyses:
@@ -156,15 +172,26 @@ frontier_branch_assets:
   - {id: TWO_CLOCK_GENERATOR_GATE, status: branch_only, branch: analysis/p255-two-clock-generator-20260829, commit: 356fd8841a50deca0817804070f5cade04350e2e, representative_path: notes/two-clock-dilation-consistency.md, role: commutator_and_commensurate_power_mixed_context_gate}
   - {id: P200_STATIC_CONTEXT_MAP, status: branch_only, branch: analysis/p200-context-morphism-map-20260829, commit: 7fc89df8051f56426e5038bde368df10c2651146, representative_path: results/post-reveal-20260829/P200-n650-context-morphism/SCIENTIFIC_CARD.md, role: static_mixed_factor_interaction_without_chronology}
   - {id: DIGITAL_ALEXANDER_UNRESTRICTED_RATIONAL, status: branch_only, branch: theory/p269-unrestricted-degenerate-quotient-20260830, commit: 73d4960d6bb330e97130e4060a1885371884398f, representative_path: notes/digital-alexander-unrestricted-degenerate-quotients.md, role: unrestricted_rational_duality_with_integral_saturation_gap}
+  - {id: DIGITAL_ALEXANDER_INTEGRAL_SATURATION, status: branch_only, branch: theory/p269-integral-saturation-20260830, commit: c1a72e5f0568b1e423ece5d870635030d83f2c7d, parent_commit: 73d4960d6bb330e97130e4060a1885371884398f, representative_path: results/digital-alexander-integral/SCIENTIFIC_CARD.md, role: claimed_all_qL_honest_carrier_and_coprime_prime_Smith_integral_saturation_theorem_pending_review}
   - {id: HOMOLOGICAL_BALANCE_CONVERGENCE, status: branch_only, branch: theory/p276-homological-balance-convergence-20260830, commit: 23fd682f4c39ad80062cc5836d8bc8971604e172, representative_path: notes/homological-balance-convergence.md, role: honest_torus_balance_root_consistency_without_rate}
   - {id: MARKED_BIRTH_MEAN_CHAIN, status: branch_only, branch: analysis/marked-birth-stream-20260829, commit: 936cff2c43fef8dd4d5b4105f1326d391dfb1318, representative_path: results/server-20260829/mean-jd4-q2-chain/REPORT.md, role: two_one_step_q2_mean_line_rejections}
   - {id: LOCAL_D4_UV_Q2, status: branch_only, branch: research/p275-q2-local-d4-uv-annihilator-20260829, commit: eea85c47f1d8010ad45d97544c42b28cc4350d9d, representative_path: results/server-20260829/P275-q2-local-d4-uv/REPORT.md, role: declared_two_radius_local_q2_rejection}
   - {id: P275_CARTAN_CONTACT, status: branch_only, branch: analysis/p275-cartan-contact-background-20260829, commit: 7faa317d0f0d05432e8984b6eb7681d946632c6b, representative_path: results/p275-cartan-contact-background/REPORT.md, role: global_line_thermal_contact_dominance_without_identified_remainder}
   - {id: EXTERNAL_EULER_BULK, status: branch_only, branch: analysis/external-observer-stream-20260829, result_commit: 48a8818047bfcbdbe3ef3af5466463d12dd89fa3, parent_bulk_commit: e9a06ec9ac6f32247439cfe16b2f8f6a3b49b736, representative_path: results/server-20260830/P267-target1-external-Euler-2m/GRAM_ORTHOGONAL_REPORT.md, role: bulk_Euler_rank_birth_response_survives_local_contact_and_direct_JS_Gram_projection_without_Q4_identity}
+  - {id: TWO_OBSERVER_SOURCE_RANK_FREEZE, status: branch_only, branch: analysis/external-observer-stream-20260829, commit: 9f2033a2d205a01d3554bc2e9c93bed5760f5b29, representative_path: notes/p267-two-observer-source-rank.md, role: exact_radius6_observer_gate_20k_engineering_smoke_and_frozen_N325_N425_2m_determinant_production_not_acquired}
+  - {id: P321_TOPOLOGICAL_PRG_BRIDGE, status: branch_only, branch: theory/p321-topological-prg-bridge-20260830, commit: bc343f401101fd445d31ebc4a533c49cbe76fe0c, representative_path: notes/p321-topological-prg-sector-bridge.md, role: exact_Q1_P2_minus_P0_graph_polynomial_matching_dictionary_plus_conditional_TL_and_scaling_bridge}
+  - {id: P321_THERMAL_Q4_ASPECT_RATIO, status: branch_only, branch: theory/p321-aspect-ratio-amplitude-20260830, commit: 65b383084ce0068e722315f5d979320a3fdb221e, representative_path: predictions/p321_thermal_q4_aspect_ratio_20260830.json, role: conditional_parameter_free_E4_modulus_fingerprint_with_projector_transparency_and_defect_Jordan_boundaries}
+  - {id: P321_EQUAL_AREA_COVARIANCE_SMOKE, status: branch_only, branch: analysis/p321-equal-area-covariance-smoke-20260830, commit: 0a7d15f91bce6ba7ee5d351970431f6a912ada88, representative_path: results/local-20260830/P321-equal-area-20k/score.json, role: N144_20k_full_cross_rho_covariance_smoke_without_multiscale_or_E4_score}
+  - {id: P321_FRESH_MULTISCALE_FREEZE, status: branch_only, branch: analysis/p321-fresh-multiscale-decision-freeze-20260830, commit: 82060874d54c832c9bc000d8f16f52104e78445e, representative_path: analysis/p321_fresh_multiscale_decision_freeze.json, role: fresh_100k_three_scale_five_shape_scale_then_E4_decision_contract_not_started}
+  - {id: P333_Q_LIFT_COVARIANCE, status: branch_only, branch: theory/p333-q-lift-covariance-20260830, commit: 502719c62b8dc6d7ede45a100ddaaeb08a6d93ca, shared_parent_commit: de0219886eeb1d336d6250e8e2a487771740b9ab, representative_path: notes/q-lift-covariance.md, role: exact_lift_section_dependence_and_conditional_bottom_field_projected_LCFT_target}
+  - {id: P333_GENERIC_Q_LIFT_DESCRIPTOR, status: branch_only, branch: theory/p333-generic-q-lift-descriptor-20260830, commit: c34c838cd391fae890de72d732cc53279757263b, shared_parent_commit: de0219886eeb1d336d6250e8e2a487771740b9ab, representative_path: analysis/generic_q_lift_transport_manifest.json, role: typed_lift_sector_weight_normalization_Qv_path_insertion_projector_field_transport_protocol}
+  - {id: P334_PROJECTIVE_ESSENTIAL_BIRTH, status: branch_only, branch: analysis/p334-projective-essential-birth-oracle-20260830, commit: 6f54935f4a8b2ce5ba045b43948aab00d6e065b3, parent_commit: c1a72e5f0568b1e423ece5d870635030d83f2c7d, representative_path: results/projective-essential-birth/latest.json, role: conditional_projective_first_born_line_and_birth1_minus_exit2_flux_oracle}
+  - {id: P158_GAUSSIAN_ROOT_CHARACTER_POWER, status: branch_only, branch: analysis/p158-gaussian-root-character-power-20260830, commit: 2cfde0b837fb7bfb18c7c328b88318964d6949dd, representative_path: results/local-20260830/P158-gaussian-root-character-power/power.json, role: source_only_power_gate_deferring_N650_N850_production_pending_target_variance_pilot}
   - {id: THRESHOLD_TAIL_FLOW, status: branch_only, branch: analysis/p122-production-shape-collapse-20260829, commit: bc19bcb6bdf2b486691e4eeffec80d78b3406889, representative_path: results/threshold-shape-collapse/production-norm2-norm5.md, role: rejected_exact_shape_collapse_and_nearly_rankone_tail_direction}
   - {id: CONTEXT_RECTANGLE_RESULT, status: branch_only, branch: analysis/p267-target3-context-rectangle-20260829, commit: 5873de87fd14b58650ce35422fe3acf3828be2f8, representative_path: results/server-20260830/P267-gaussian-annulus-context/REPORT.md, role: no_evidence_for_same_semantics_context_enrichment_without_path_order}
   - {id: PRIMITIVE_C3_MULTI_CHARACTER, status: branch_only, branch: research/p267-rho-c3-primitive-h4-20260829, commit: 63d81fbf40fcb636ef8a8a68b40b7090720bc4b8, representative_path: results/server-20260830/P267-rho-C3-primitive-H4-independent/REPORT.md, role: N112_multi_character_response_and_N60_only_power_boundary}
   - {id: Z5_CUBIC_STREAM, status: branch_only, branch: analysis/p250-z5-charged-threepoint-20260830, commit: 59099873f80a1631f46e282f98ebcbc829ac3c7b, representative_path: notes/p250-z5-charged-threepoint-stream.md, role: closure_first_20k_engineering_smoke_and_frozen_sharded_1M_production_without_reveal}
+  - {id: ISSUE55_H4_H12_VARIANCE_PILOT, status: branch_only, branch: analysis/issue55-h4-h12-acquisition-20260830, commit: 0b8bb6300554e2fbd6e6e2712c2a882dab5f6417, scientific_commit: df2c25d98ad4d6a72a056d78ac6adca34f827a26, representative_path: results/local-20260830/P55-h4-h12-orthogonal-smoke/variance_power.json, role: target_blind_20k_variance_power_pilot_freezing_600M_per_design_without_target_score}
   - {id: SURFACE_POLYNOMIAL_CLASSIFICATION, status: branch_only, branch: theory/p144-surface-polynomial-classification-20260830, commit: 5d8343d97d04cbc32b0769a26b0e03f0f3436bdf, representative_path: notes/p144-surface-polynomial-classification.md, role: typed_site_rank_image_quotient_and_no_direct_named_edge_subset_specialization_under_declared_contract}
 
 frontier_open_as_of_2026_08_30:
@@ -180,7 +207,7 @@ frontier_open_as_of_2026_08_30:
   - {pr: 267, state: open, draft: true, branch: research/navigation-priority-refresh-20260829, commit: a191f38f63c64a50e669ef52ad15e234c270dfed, commit_semantics: immutable_content_snapshot_before_registry_self_pin, classification: overview_reanalysis, role: scientific_frontier_atlas_contact_escape_hypothesis_board_and_activation_reanalyses, representative_path: results/activation-transport-shape/latest.json}
   - {pr: 273, state: open, draft: false, branch: results/p154-norm4-production-reveal-20260829, commit: 8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc, classification: production_reveal, role: norm4_q2_versus_Jordan_score, representative_path: results/server-20260829/P154-norm4-production/analysis/scalar_score.json}
   - {pr: 277, state: open, draft: false, branch: analysis/p154-even-rank2-transfer-20260829, commit: 3e855ced4fd98d8979c0b712636b45c2fa54f969, classification: prospective_pilot_score_of_post_reveal_frozen_recurrence, role: generation4_Jordan_plus_even_mode_survival_without_eigenvalue_identification, representative_path: results/server-20260829/P154-norm4-generation4-pilot/REPORT.md}
-  - {pr: 330, state: open, draft: false, branch: exact/issue-269-index13-frontier, commit: 4a790fc210f8233f6d5981ba4fd1ee9da618db9d, scientific_commit: 247c53789258fc0584c41941b1632360b75de556, classification: exact_finite_frontier, role: index13_integral_nonsaturation_counterexample_search_without_unrestricted_theorem, representative_path: results/digital-alexander-quotient-frontier/latest.json}
+  - {pr: 345, state: open, draft: false, branch: protocol/issue-146-p50-sprime-n290-typed-v2, commit: ed98e40361ec88b1f71bbeff7f61ec857f9134ea, classification: post_score_semantic_migration_for_existing_prospective_score, role: typed_P50_Sprime_identity_wrapper_without_new_data_score_or_scientific_evidence, representative_path: predictions/p50_sprime_n290_semantic_gate_20260830.json}
 
 canonical_integration_history_scope: selected_scientifically_material_integrations_not_an_exhaustive_merge_log
 canonical_integration_history:
@@ -240,6 +267,15 @@ canonical_integration_history:
   - {pr: 329, merge_commit: 7da6013c347d767130d32a42bff2d7b6d36fd608, role: terminal_partition_RGS_and_group_orbit_encoding_primitive}
   - {pr: 331, merge_commit: c05efb9d7151cea3f49a1a449ff5284ff87ff4ce, role: synthetic_fail_closed_rational_interval_comparison_protocol_without_real_bound}
   - {pr: 332, merge_commit: e28a0ca6e484f6afea40724062184fbd9fdebe36, role: Issue50_N290_typed_identity_wrapper_without_new_science}
+  - {pr: 330, merge_commit: c4a99553d8b4d49d867b3d1aa5898585ce9b7882, role: cached_subset_DP_HNF_exhaustion_through_index13_without_unrestricted_integral_theorem}
+  - {pr: 335, merge_commit: cbdd7e60f430b7bc3ce443dfbe9f73fad7950363, role: typed_matching_odd_synthesis_wrapper_without_new_data_rescore_or_primary_evidence}
+  - {pr: 336, merge_commit: 7b64cc199da4446ca84dcf5901ddf70fe3f0edd7, role: typed_chronological_P48_Sprime_wrapper_without_new_data_refit_model_reordering_or_score}
+  - {pr: 338, merge_commit: 78c1ad564e4f59623d4cd86b9f6ce9b2efb172a7, role: scorer_inventory_meta_tool_self_exclusion_and_full_live_recomputation_with_counts_unchanged}
+  - {pr: 339, merge_commit: 2e4c2b7410eedc940f4eb82b6ed937d3b571e5d7, role: exact_odd_jet_linear_metric_invariant_primitive_with_synthetic_fixture_only}
+  - {pr: 341, merge_commit: 3aebee05c4cedc9ac4aaff198aa000430d13a942, role: typed_C4_tangent_holdout_identity_wrapper_without_new_data_score_or_scientific_evidence}
+  - {pr: 340, merge_commit: 1c7f54bef366d3949510c5ee1b2400d7c723c932, role: Issue27_width1_21_prereveal_quarantine_and_width22_24_target_absence_without_target_or_score}
+  - {pr: 342, merge_commit: b6c81d0194845a656a2f332ccd6f493907de3c80, role: exact_CPU_to_GPU_rental_threshold_protocol_without_GPU_measurement_rental_or_production}
+  - {pr: 344, merge_commit: 4a776500632e45381b85feb9e80021787a24be10, role: typed_Issue43_full_curve_identity_wrappers_without_new_data_refit_score_or_independent_evidence}
 
 manual_integrations:
   - {pr: 223, role: hexagonal_degree2_Hecke_unique_assets}

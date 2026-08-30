@@ -6,7 +6,7 @@ This is the fast decision board. It asks:
 
 > Which next output would most change the scientific model space, given the state, source, observer, geometry and acquisition already available?
 
-It is not a queue or permission system. The seven lanes may run in parallel; priority changes attention, not authorization. Lower-ranked or unlisted work is not rejected, locked or required to merge.
+It is not a queue or permission system. The eight lanes may run in parallel; priority changes attention, not authorization. Lower-ranked or unlisted work is not rejected, locked or required to merge.
 
 ## Read lifecycle before priority
 
@@ -21,29 +21,33 @@ hypothesis      proposed mechanism/discriminator
 
 An old issue title does not override a completed result. A post-reveal fit is not a new independent block. Several derived coordinates from one histogram remain one dependency group.
 
-## Seven current decision targets
+Integration, readiness, acquisition and result status are separate. In particular, `branch_only + exact_gate + protocol_frozen + implementation_ready + smoke_only` means acquisition-ready; it is not a production result or an accepted mechanism.
+
+## Eight current decision targets
 
 | Rank | Decision target | Five-axis vector | Actual maturity | Exact next output | Acquisition |
 |---:|---|---|---|---|---|
-| 1 | **Is the source-orthogonal bulk Euler bridge rank one or rank two across observers?** | finite topology / Bernoulli+birth+Euler source / `J_Dperp,J_S` x `O_far,separated arm-H4` / Gaussian cover / one common-flow acquisition | Mean/local carriers fail; `O_far J_Dperp` retains >99.8% after direct `J_S` projection with huge significance, yet D/S share one transport phase | A 2x2 coupling determinant using `O_far` and one macroscopically separated calibrated axis+diagonal local-H4/arm observer | one redesigned shared stream; no larger-N one-observer repeat |
-| 2 | **Can a typed seam distinguish singlet from charged spin 4 without scaling?** | continuum module / colour seam / calibrated multi-orbit or typed numerator / Q=4 tiny torus / exact construction | Exact preflight has colour ratios 1/0; main-integrated PR #291 proves one C4 direction orbit aliases scalar/spin 4 | Necessary angular-rank repair with calibration/typed law, constituent orbit numerators and six raw seam `Z/N` values, with spatial and colour certificates separate | low exact work |
-| 3 | **One dilation generator or context-dependent ordered action?** | low-dimensional dynamics / common source / shared readout / Gaussian×annulus mixed order / targeted pilot | The first same-semantics rectangle does not reject a shared generator (`p=.4002`) but all lambdas remain weakly separated; P200 still lacks chronology | A maximin covector with actual `AU-UA` order or intermediate state, not more samples of the completed rectangle | reuse completed rectangle; acquire one separating row |
-| 4 | **Is the charged/primitive r2 remainder quadratic `E4^2` or a separate field?** | topology-typed module / primitive-line or deck source / complex C3+Z5 rows / rho children+N325 cover / engine reuse | N112 is multi-character; N60-only precision cannot cross its zero boundary. The Z5 `113/122` closure-first stream has engineering smoke and a frozen 1M plan, but no production reveal | Strengthen N112 or choose a nondegenerate covector; independently reveal Z5 closure before any phase ranking | no N60-only repeat; one redesigned geometry plus frozen Z5 production |
-| 5 | **What supplies the two external operator-mixing Taylor ratios and the full Q derivative?** | confluent module / Q measure+projector+field / typed seam,boundary,VJS / transfer+cross-ratio / exact+pilot | Main PR #288 proves rank four; parity does not give the two ratios. Q velocities and stopped estimator are already exact inputs | Continuum or frozen train/held-out ratios, plus one complete typed measure-projector-field tangent after Pascal subtraction | low exact then paired pilot |
-| 6 | **Does the log-pair statistic survive gauge and microscopic change?** | continuum Jordan control / cutoff shear / normalized top+H4/E6 / triangular+typed square / targeted production | Triangular cross-cutoff result is open PR; raw square global line is contact/projective, so a separated observer is required | Gauge-invariant `CL`, shear gate and two-modulus weight-12 null | moderate shared control |
-| 7 | **Where can nonsemisimple deformation and tunable anisotropy live?** | connectivity radical+microscopic structure / junction+oblique source / defect and ordinary+charged rows / exact finite algebra / theory | Scalar source is semisimple with `HH^2=0`; axis-only stencil cannot tune through zero | Tiny radical/Jordan algebra and exact-critical oblique family; then three-point linear/quadratic/independent response gate | low exact work |
+| 1 | **Does matching H4 enter at first homology birth, second completion, or their cancellation?** | finite topology / birth geometric tilt / projective first-born line / multi-orbit quotient / exact | P334 gives exact `dA4/dp=j4_birth1-j4_exit2` on tiny controls, conditional on branch-only saturation; current line orbits are symmetry-aliased | One modest quotient with multiple inequivalent D4 primitive-line orbits and orbit-resolved birth/exit flux | low exact work; no global production |
+| 2 | **Is the source-orthogonal bulk Euler bridge rank one or rank two across observers?** | finite topology / Bernoulli+birth+Euler source / `J_Dperp,J_S` x `O_far,O_sep4` / Gaussian cover / one common-flow acquisition | Exact R=6 gate, implementation and frozen protocol are complete on `9f2033a`; N325/N425 20k smoke is unresolved and the 2M blocks are not acquired | Joint N325/N425 2x2 determinant with the frozen four-real-degree threshold | two frozen production blocks; no observer redesign |
+| 3 | **Is the ordinary root shift one transparent `E4` modulus function, and which typed sector carries it?** | continuum module / thermal-Q4 plus projector or defect source / `P2-P0` and typed seam / equal-area rectangles+Q=4 tiny torus / fresh production+exact | N144 full-covariance smoke is complete; `8206087` freezes N144/576/1296 x five shapes x 100k with scale gate before E4, but no fresh result | Execute the frozen fresh score once; add sector/seam enrichment only after it | one moderate frozen acquisition plus low exact work |
+| 4 | **One dilation generator or context-dependent ordered action?** | low-dimensional dynamics / common source / shared readout / Gaussian×annulus mixed order / targeted pilot | The first same-semantics rectangle does not reject a shared generator (`p=.4002`) but all lambdas remain weakly separated; P200 still lacks chronology | A maximin covector with actual `AU-UA` order or intermediate state, not more samples of the completed rectangle | reuse completed rectangle; acquire one separating row |
+| 5 | **Is the charged/primitive r2 remainder quadratic `E4^2` or a separate field?** | topology-typed module / primitive-line or deck source / complex C3+Z5 rows / rho children+N325 cover / engine reuse | N112 is multi-character; N60-only precision cannot cross its zero boundary. The Z5 `113/122` closure-first stream has engineering smoke and a frozen 1M plan, but no production reveal | Strengthen N112 or choose a nondegenerate covector; independently reveal Z5 closure before any phase ranking | no N60-only repeat; one redesigned geometry plus frozen Z5 production |
+| 6 | **Which Q lift, projector and field connection defines the operator-mixing tangent?** | confluent module / Q measure+lift+projector+field / typed seam,boundary,VJS / transfer+cross-ratio / exact+pilot | Main PR #288 proves rank four; P333 proves raw Q jets are lift-dependent and supplies a complete descriptor, but bottom-field projection/connection is missing | Positive-control descriptor+projection and projected scale/modulus log slope, plus the two external Taylor ratios | low exact then paired pilot |
+| 7 | **Does the log-pair statistic survive gauge and microscopic change?** | continuum Jordan control / cutoff shear / normalized top+H4/E6 / triangular+typed square / targeted production | Triangular cross-cutoff result is open PR; raw square global line is contact/projective, so a separated observer is required | Gauge-invariant `CL`, shear gate and two-modulus weight-12 null | moderate shared control |
+| 8 | **Where can nonsemisimple deformation and tunable anisotropy live?** | connectivity radical+microscopic structure / junction+oblique source / defect and ordinary+charged rows / exact finite algebra / theory | Scalar source is semisimple with `HH^2=0`; axis-only stencil cannot tune through zero | Tiny radical/Jordan algebra and exact-critical oblique family; then three-point linear/quadratic/independent response gate | low exact work |
 
 ## Team execution advice
 
 These are coordination defaults, not task locks. A team may depart from them whenever it introduces a sharper observer, source, geometry or exact map.
 
-1. **Run a live lifecycle drift pass at the start and end of each work block.** Compare open PR head/state with the registry and compare latest `origin/main` with the navigation base. PRs #291-#329 and #331-#332 landed during this refresh; #330 remains the separately classified index-13 finite-search frontier. The control plane should treat such drift as routine state change rather than wait for another cleanup.
-2. **Publish the lifecycle tuple with every result:** `input_status`, `output_status`, immutable `snapshot_commit`, and `base_or_parent`. This keeps branch-only input -> open-PR analysis, stacked post-reveal work, and main-integrated facts distinguishable.
+1. **Run a live lifecycle drift pass at the start and end of each work block.** Compare open PR head/state with the registry and compare latest `origin/main` with the navigation base. PRs #340/#341/#342/#344 are now on main; #345 is open, while integral saturation/P334, P321, P333, two-observer, P158 and Issue55 remain separately classified branch-only objects. The control plane should treat such drift as routine state change rather than wait for another cleanup.
+2. **Publish the lifecycle tuple with every result:** `input_status`, `output_status`, immutable `snapshot_commit`, `base_or_parent`, readiness flags, acquisition stage and result stage. This keeps branch-only theory, smoke-only implementation, stacked post-reveal work and main-integrated facts distinguishable.
 3. **Give each raw dependency block one covariance bundle and one statistical coordinator.** Root split, Bernstein curves, areas and node spectra from the same histograms are coordinates of one block. Teams may analyze them in parallel, but downstream synthesis should consume the shared covariance rather than add the views as independent evidence.
-4. **Treat semantic adoption as a composability layer, not a scientific grade.** Main audits 200 legal descriptors and 37 scorer paths; merged PR #332 adds only an Issue 50 identity wrapper and leaves 25 migrations. Migrate evidence hubs first—Issue43/P50 full curves, prequential, norm4/norm5 and matching-odd—while the second scorer contract records full-versus-half units, harmonic/model, size map, chronology and dependency group. Typed replay should preserve the old number; it does not require new production.
+4. **Treat semantic adoption as a composability layer, not a scientific grade.** Main audits 200 legal descriptors and 42 scorer paths: 11 direct, 10 covered, 20 migrations and 1 utility through PR #344. The C4 and Issue43 wrappers change no data, score or primary evidence. Open PR #345 projects 43/12/11/19 only if merged and is a post-score semantic gate around an existing prospective P50 result. Typed replay should preserve the old number; it does not require new production.
 5. **Do not revive resolved q-only, bare-line or local-shell parameterizations.** The escape is an observer outside sigma(q), such as the branch-only Euler residue, or a genuinely separated/charged/modular covector. Preserve the failed rows as controls.
 6. **Attach exact-zero motif contrasts opportunistically to new same-N paired streams.** Their fixed-K mean is known, but weights must be pilot-frozen or cross-fitted and useful directional variance reduction must be demonstrated on held-out batches.
-7. **Share schemas across contexts, C3 rows and tangents.** Actual `AU/UA` cells need the completed rectangle's source/readout schema; C3 work must retain complex characters and zero order; Q tangents need one measure/projector/explicit-field/Pascal-subtraction interface.
+7. **Share schemas across contexts, C3 rows and tangents.** Actual `AU/UA` cells need the completed rectangle's source/readout schema; C3 work must retain complex characters and zero order; Q tangents need P333's full lift/sector-weight/normalization/Q-v-path/insertion/projector/field descriptor plus Pascal subtraction and bottom-field projection.
+8. **Keep resource gates separate from science priority.** PR #342 records a fivefold end-to-end GPU threshold with output equality and deterministic regression, but no GPU measurement. CPU remains the measured default; a qualifying benchmark can raise GPU attention without unlocking or forbidding any research lane.
 
 ## Minimum sufficient parallel acquisition matrix
 
@@ -51,10 +55,12 @@ This is the current smallest high-information starting design, not a requirement
 
 | Module | Minimum starting cells | Same-stream readouts | Primary decision |
 |---|---|---|---|
-| activation/external bridge | existing ten K1/K2 archives and completed source-orthogonal Euler result | common tail/K2 Jacobian, then `O_far` plus one separated calibrated observer against `J_Dperp/J_S` | lifetime/shape attribution and rank of the field bridge outside q-contact |
+| projective activation flux | one modest quotient with at least two inequivalent D4 primitive-line orbits | K1/K2, first-born line, direct-rank2 atom, birth1 and exit2 character flux | H4 entering at first birth versus second completion versus cancellation |
+| activation/external bridge | existing ten K1/K2 archives, source-orthogonal Euler result and exact-gated two-observer implementation | common tail/K2 Jacobian, then the frozen N325/N425 `O_far,O_sep4` against `J_Dperp,J_S` blocks | lifetime/shape attribution and joint source rank outside q-contact |
 | fixed-rank motif control | main exact N65/85/130/145/170 multiplicity gates | one N130 paired joint Gram with four motif contrasts and cross-fitted weights | useful variance reduction versus a local-motif projection of K2 deformation |
 | tail-flow reuse | norm-2/norm-5 and independent P43 curves | one frozen tail direction and fresh-lineage amplitude with thermal-jet cross-moments | one shared shape fiber versus lineage-specific deformation |
 | Q=4 typed seam | exact 2x2 transfer plus main-integrated PR #291 alias gate | calibrated multi-orbit constituents or typed-edge law, then `Z_id,Z_trans,N_[4],N_[2,2]` | necessary spatial angular rank reported separately from singlet 1 versus charged 0 colour character |
+| P321 modulus shape | branch-only finite `P2-P0` bridge, N144 covariance smoke and fresh freeze `8206087` | frozen N144/576/1296 x five shapes x 100k, scale gate then E4; sector/seam only after the fresh result | one transparent modulus function versus defect/Jordan/map enrichment |
 | Gaussian-annulus mixed order | completed same-semantics rectangle | one maximin row with `AU`, `UA`; add intermediate ranks only for chronology | shared transport versus ordered context action, distinct from static interaction |
 | charged complex geometry | completed N112/N60 phase work and N325 basis | strengthen N112 or use a nondegenerate covector, then `113/122` cubic rows | resolved quadratic E4-squared character versus separate charged field |
 
@@ -67,6 +73,7 @@ The activation state is now exact and the first two proposed field carriers have
 - exact q-only contact closure and the P275 Cartan decomposition show that more nonlinear rank projectors cannot create a field matrix element;
 - `branch_only` `analysis/marked-birth-stream-20260829@936cff2` rejects the preregistered primitive-line mean-`J_D4` q2 phase on both one-step edges;
 - `branch_only` `research/p275-q2-local-d4-uv-annihilator-20260829@eea85c4` rejects the declared radius-4-minus-radius-2 local landing selector at held-out N130.
+- stacked `branch_only` P334 / `6f54935` adds the projective first-born line and exact `birth1-exit2` flux split, conditional on the unmerged integral-saturation parent.
 
 The endpoint identities remain
 
@@ -133,16 +140,28 @@ The immediate decision sequence is:
 
 | Step | Output | Why it changes the mechanism space |
 |---|---|---|
+| exact multi-orbit discriminator | one modest quotient with inequivalent D4 primitive-line orbits and orbit-resolved `j4_birth1,j4_exit2` | directly localizes matching H4 to first homology birth, second completion or cancellation; avoids another unmarked plateau curve |
 | existing-data | push the cover/size tail vector and the directional K2 deformation through one Bernstein-to-standardized-quantile Jacobian | tests one lifetime/shape fiber versus separate thermal and H4 directions |
 | small paired pilot | N130 replica-level joint Gram for K1/K2 indicators and the four exact-zero motif contrasts, with cross-fitted weights | tests variance gain and local-motif projection without changing the expected curve |
 | completed stored-data source plane | `J_Dperp` retains 99.8792%/99.9144% of far-D magnitude; transfer `1.054088+/-.001956` at phase `1.373908+/-.002803` | direct JS projection is not the explanation; no source-energy fraction or Q4 identity follows |
-| next shared acquisition | `O_far` plus a macroscopically separated calibrated axis+diagonal local-H4/arm observer against `J_Dperp` and `J_S` | rank-two determinant separates source directions; rank one identifies one shared projective lane |
+| frozen implementation and smoke | `9f2033a` defines R=6 `O_sep4`, exact mapping determinant `-2` and unresolved N325/N425 20k determinant scores | observer design is identifiable, but smoke does not decide coupling rank |
+| next shared acquisition | acquire the frozen N325/N425 2M `[O_far,O_sep4] x [J_Dperp,J_S]` blocks and joint score | rank-two determinant separates source directions; rank one identifies one shared projective lane |
 
-Do not repeat `qJ`, `q^2J`, the rejected one-step mean-line phase, the same R4-R2 selector, a larger-N copy of the same Euler scalar row, or an N60-only C3 increment. A new parameterization remains welcome when it introduces a genuinely new observer, separation or exact map.
+Repeats of `qJ`, `q^2J`, the rejected one-step mean-line phase, the same R4-R2 selector, a larger-N copy of the same Euler scalar row or an N60-only C3 increment currently have low mechanism gain. A new parameterization remains welcome when it introduces a genuinely new observer, separation or exact map.
 
 The four reproducible Draft outputs are [`results/two-activation-h4/latest.md`](../results/two-activation-h4/latest.md), [`results/activation-curve-nodes/latest.md`](../results/activation-curve-nodes/latest.md), [`results/activation-transport-shape/latest.md`](../results/activation-transport-shape/latest.md) and [`results/two-activation-prism/latest.md`](../results/two-activation-prism/latest.md). Their source lifecycles differ: the first three reuse main-integrated archives; the prism reuses immutable branch-only P205 files and remains retrospective at the component-character level.
 
-## Target 2 contract: exact Q=4 seam H4 kernel
+## Target 2 contract: P321 modulus shape plus exact Q=4 seam
+
+The two subrows answer different questions and should travel together without being pooled. P321 asks whether one transparent modulus function explains the ordinary root shift. The seam asks which typed module/map carries the response and whether its spatial kernel is identifiable.
+
+The N144 20k branch has already established a non-diagonal five-shape root covariance; it is a variance smoke, has only one scale and contains no E4 score. Direct child `8206087` freezes fresh N=144,576,1296 x five shapes x 100k, the exact conversion `C_width=C_N/rho^2`, fixed `N^-2+N^-3` corrections and complete covariance. The scale-law gate is scored before the E4 gate, with no pilot pooling, refit, interim or optional stopping. The frozen one-function target includes
+
+```text
+C_width(16/9)/C_width(1) = 0.689248108004...
+```
+
+The fresh contract is not started. Its hash-pinned multiscale planning score is not present in the branch tree and remains planning evidence. Fresh failure rejects the transparent ordinary single-block Q4 model; agreement is compatibility, not field identification. Only after that score should resolved homology and typed seam/charge rows be used to identify sector/map mixing. The primary-source boundary and six arXiv links are in [`notes/p321-modulus-literature-brief.md`](../notes/p321-modulus-literature-brief.md).
 
 The branch-only preflight already verifies the tiny transfer, direct spin sum, central projectors, seam action and partition normalization:
 
@@ -289,12 +308,20 @@ These lines remain active and may overtake the default order whenever they obtai
 | essential-H1 filtration oracle | `main_integrated` PR #282 `3bb4054`, `notes/digital-alexander-filtration-oracle.md` |
 | essential-birth archive reconstruction | `main_integrated` PR #283 `bedc94b`, `results/essential-birth-histogram/latest.json` |
 | cached quotient frontier through index 9 | `main_integrated` PRs #284/#285/#286/#287 `84035cf`, `results/digital-alexander-quotient-frontier/latest.json` |
-| cached quotient frontier through index 12 | `main_integrated` PR #326 / merge `49d30fb`, `results/digital-alexander-quotient-frontier/latest.md` |
-| cached quotient frontier through index 13 | `open_pr` #330 / head `4a790fc` / scientific commit `247c537`, `results/digital-alexander-quotient-frontier/latest.md`; finite integral counterexample locator only |
+| cached quotient frontier through index 13 | `main_integrated` PR #330 / merge `c4a9955` / scientific commit `247c537`, `results/digital-alexander-quotient-frontier/latest.md`; finite regression/counterexample locator only |
 | unrestricted rational Digital Alexander theorem | `branch_only` `theory/p269-unrestricted-degenerate-quotient-20260830@73d4960`, `notes/digital-alexander-unrestricted-degenerate-quotients.md` |
+| unrestricted integral carrier saturation claim | `branch_only` `theory/p269-integral-saturation-20260830@c1a72e5`, `results/digital-alexander-integral/SCIENTIFIC_CARD.md`; no PR, pending proof review |
+| projective first-born line and birth/exit flux | `branch_only` stacked child `analysis/p334-projective-essential-birth-oracle-20260830@6f54935`, parent `c1a72e5`, `results/projective-essential-birth/latest.md` |
 | homological-balance root consistency | `branch_only` `theory/p276-homological-balance-convergence-20260830@23fd682`, `notes/homological-balance-convergence.md` |
+| P321 finite projector and conditional modulus shape | `branch_only` parent `bc343f4`, oracle `65b3830`, N144 covariance smoke `0a7d15f`, fresh decision freeze `8206087`; no fresh E4 result, Draft literature boundary `notes/p321-modulus-literature-brief.md` |
 | fixed-rank paired motif certificate | `main_integrated` PR #293 / `6265931`, `results/paired-motif-microcanonical/latest.md` |
-| descriptor registry and scorer-adoption inventory | `main_integrated` PR #294 / `74b9a5f`; latest main adoption through PR #332 / merge `e28a0ca`, 37 paths with 25 migrations and no new score, `notes/scorer-descriptor-adoption-inventory.md` |
+| descriptor registry and scorer-adoption inventory | `main_integrated` through PR #344 / `4a77650`; 42 paths, 11 direct, 10 covered, 20 migrations, 1 utility and no new science. Open PR #345 projects 43/12/11/19 only if merged |
+| odd-jet linear-metric primitive | `main_integrated` PR #339 / `2e4c2b7`, `analysis/odd_jet_invariant_contract.json`; exact linear-coordinate invariant and delta-method Jacobian, synthetic fixture only |
+| generic-Q lift transport | `branch_only` sibling heads `theory/p333-q-lift-covariance-20260830@502719c` and `theory/p333-generic-q-lift-descriptor-20260830@c34c838`, shared Phase-A parent `de02198` |
+| Issue-27 rational-width prereveal | `main_integrated` PR #340 / `1c7f54b`, `analysis/rational_stage_b_quarantine_manifest.json`; target absent, no score |
+| C4 tangent and Issue43 typed wrappers | `main_integrated` PR #341 / `3aebee0` and PR #344 / `4a77650`; exact identity transport only, no new data or score |
+| GPU rental gate | `main_integrated` PR #342 / `b6c81d0`; exact 5x end-to-end threshold, output equality and determinism, no GPU measurement or science |
+| P50 S-prime typed overlay | `open_pr` #345 / `ed98e40`; post-score semantic migration for an existing prospective score, no new data/score/science |
 | two activation | `branch_only` `theory/p28-two-activation-rank-mixture-20260829@b8004bc`, `notes/two-activation-rank-mixture.md` |
 | endpoint, full-curve-node, transport/shape and P205 activation splits | `open_pr` #267, `results/two-activation-h4/latest.json`, `results/activation-curve-nodes/latest.json`, `results/activation-transport-shape/latest.json`, `results/two-activation-prism/latest.json` |
 | P205 ordinary quotient prism | `branch_only` `results/p205-quotient-character-prism-20260829@fc14817` |
@@ -304,6 +331,7 @@ These lines remain active and may overtake the default order whenever they obtai
 | local D4 UV q2 rejection | `branch_only` `research/p275-q2-local-d4-uv-annihilator-20260829@eea85c4`, `results/server-20260829/P275-q2-local-d4-uv/REPORT.md` |
 | P275 global-line and Cartan contact decomposition | `branch_only` `research/p275-atop-field-identity-pipeline-20260829@4d7ecd5`; `analysis/p275-cartan-contact-background-20260829@7faa317` |
 | external Euler bulk bridge and source-orthogonal result | `branch_only` `analysis/external-observer-stream-20260829@48a8818`, `results/server-20260830/P267-target1-external-Euler-2m/GRAM_ORTHOGONAL_REPORT.md` |
+| two-observer source-rank freeze | `branch_only` `analysis/external-observer-stream-20260829@9f2033a`, `notes/p267-two-observer-source-rank.md`; exact gate + implementation + 20k smoke, production missing |
 | threshold tail-flow production reuse | `branch_only` `analysis/p122-production-shape-collapse-20260829@bc19bcb`, `results/threshold-shape-collapse/production-norm2-norm5.md` |
 | same-semantics context rectangle | `branch_only` `analysis/p267-target3-context-rectangle-20260829@5873de8`, `results/server-20260830/P267-gaussian-annulus-context/REPORT.md` |
 | primitive C3 multi-character response | `branch_only` `research/p267-rho-c3-primitive-h4-20260829@63d81fb`, `results/server-20260830/P267-rho-C3-primitive-H4-independent/REPORT.md` |
@@ -313,7 +341,8 @@ These lines remain active and may overtake the default order whenever they obtai
 | Q=4 seam numerator preflight | `branch_only` `analysis/p257-p258-q4-seam-preflight-20260829@192e794`, `results/q4-seam-numerator-preflight/SCIENTIFIC_CARD.md` |
 | spin-4 direction-character alias gate | `main_integrated` PR #291 / merge `83e98fc`, `results/discrete-holomorphic-spin4-alias/latest.md` |
 | ordinary H4/H12 opposite-alias acquisition design | `main_integrated` PR #325 / `c1a353a`, `analysis/h4_h12_orthogonal_design_manifest.json`; design only, no target data |
-| Gaussian norm2/norm5 commuting-square contract | `main_integrated` PR #328 / `033ebe1`, `analysis/gaussian_commuting_square_root_contract.json`; exact design only, no target roots |
+| ordinary H4/H12 variance/power pilot | `branch_only` `analysis/issue55-h4-h12-acquisition-20260830@0b8bb63`, scientific commit `df2c25d`, `results/local-20260830/P55-h4-h12-orthogonal-smoke/variance_power.json`; target-blind pilot, no score or production |
+| Gaussian norm2/norm5 commuting-square contract | `main_integrated` PR #328 / `033ebe1`; source-only power gate `branch_only` `analysis/p158-gaussian-root-character-power-20260830@2cfde0b`, projected 27.21B/55.18B per lineage, no target roots |
 | double-projector staircase | `branch_only` `theory/p275-double-projector-selection-20260829@ddf41aa` |
 | norm-4 reveal / generation-four score | `open_pr` #273 `8b26a30`; #277 `3e855ce`, `results/server-20260829/P154-norm4-generation4-pilot/REPORT.md` |
 | Q=1 spin-sector velocity oracle | `main_integrated` PR #264 `540a115`, `results/q-velocity-spin4/latest.md` |

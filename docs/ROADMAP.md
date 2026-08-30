@@ -8,17 +8,30 @@ For scientific coordinates use `docs/RESEARCH-MAP.md`; for claim and branch stat
 
 ## Default attention now
 
-### 1. Turn the source-orthogonal bulk Euler bridge into a two-observer rank test
+| Tomography lane | Roadmap homes | Immediate discriminator |
+|---|---|---|
+| activation flux | 1 | one multi-orbit projective first-birth versus second-exit exact score |
+| source rank | 1 | frozen N325/N425 two-observer production plus joint determinant |
+| modulus shape | 2, 3, 4 and threshold-shape parallel line | frozen fresh P321 scale-then-E4 score first; sector/seam enrichment only after that result |
+| typed charge-spatial | 2, 4, 6 and 7 | calibrated charge x spatial tensor, closure first and neutral normalization where required |
+
+### 1. Split activation flux and source rank with two independent rows
 
 The existing archive establishes two activations, positive integrated K2 response, local K2 nodes and an H4/H4 P205 component character. The mean primitive-line q2 transfer and the frozen two-radius local landing selector have now both rejected their preregistered maps. Together with exact q-contact closure, they resolve narrow carriers rather than negate the global signal.
 
 A branch-only external Euler observer changes the line. `O_ext=C_black-C_white-q=V-E+F0` is exactly outside `sigma(q)`. Its completed N325/N425 reveal leaves far-field amplitudes about `31.0/32.7` after the radius-two nuisance is removed, proving a genuinely bulk Euler-to-rank-birth response. The preregistered Gram continuation removes the direct `J_S` projection yet retains 99.8792%/99.9144% of the far magnitude, with transfer amplitude `1.054088+/-.001956`. The D and S transfer phases remain locked, so a source component is resolved in the lattice metric while continuum identity remains open.
 
-**Design now:** in one common flow, keep `O_far` and add a macroscopically separated, calibrated axis+diagonal local-H4/arm observer satisfying the two-orbit gate. Score both against `J_D_perp` and `J_S`; the 2x2 coupling determinant separates a rank-two source plane from one shared projective transport lane. In parallel, push the replicated tail-flow and directional K2 deformation through one Bernstein/quantile Jacobian. Main's exact-zero motif contrasts can be added to one small paired N130 joint-Gram pilot if the existing archive lacks their products.
+**Frozen lane now:** branch head `9f2033a` supplies the exact R=6 two-orbit gate, implementation, launcher/scorer and unresolved N325/N425 20k smoke. The claim-bearing objects still missing are the two frozen 2M blocks and their joint four-real-degree determinant score. Exact response determinant `-2` certifies observer design rank, not source-coupling rank. In parallel, push the replicated tail-flow and directional K2 deformation through one Bernstein/quantile Jacobian. Main's exact-zero motif contrasts can be added to one small paired N130 joint-Gram pilot if the existing archive lacks their products.
 
-**Do not acquire:** a larger-N copy of the same one-observer scalar row. A charged seam remains a separate sector test, not a substitute for the ordinary two-observer determinant.
+Stacked branch P334 supplies the lower-cost companion. Conditional on the unmerged integral-saturation parent, it proves that K1/K2 do not recover the projective first-born line and that `dA4/dp=j4_birth1-j4_exit2`. Its tiny controls do not distinguish spin because all support lines are quarter-turn related. **Immediate exact output:** choose one modest quotient with multiple inequivalent D4 primitive-line orbits and score the birth/exit flux by orbit. This localizes matching H4 to first birth, second completion or cancellation without waiting for the two-observer production.
 
-### 2. Add the tiny typed Q=4 seam H4 kernel
+A larger-N copy of the same one-observer scalar row currently has lower information. A charged seam remains a separate sector test, not a substitute for the ordinary two-observer determinant.
+
+### 2. Test the P321 modulus fingerprint and the orthogonal typed Q=4 seam
+
+P321 identifies the Q=1 finite graph-polynomial and matching root as the same `P2-P0` projector and connects its cylinder endpoint to the TL open/closed crossing. Its fixed-aspect prediction is deliberately conditional: if the homology projector is Virasoro-transparent and one ordinary thermal-Q4 block moves the root, then `C_width(rho)/C_width(infinity)=E4(i rho)` after `C_width=C_N/rho^2`. The literature supports the ingredients, not this full lattice formula; defect/contact, multiple torus maps or a Jordan partner can supply another modulus function.
+
+The N144 20k covariance smoke is complete and shows why all five shapes require one full covariance block; it is one scale and has no E4 score. Child `8206087` freezes fresh N144/576/1296 x five shapes x 100k, with a scale gate before E4 and no pilot pooling, refit, interim or optional stopping. **Decision output:** execute that single frozen score. Passing means compatibility, not field identification. Sector/seam enrichment then asks which module/map carries the response; the branch-external hash-pinned planning score remains planning evidence only. See `notes/p321-modulus-literature-brief.md`.
 
 The branch-only 2x2 preflight already closes the representation and normalization plumbing:
 
@@ -43,7 +56,7 @@ A=exp(-t_A G), U=exp(-t_U G)  =>  [A,U]=0,
 A^p=U^q when p*t_A=q*t_U.
 ```
 
-The first same-semantics Gaussian-annulus rectangle is now complete. Its best context-specific pair improves the best shared candidate by only `.2162`, with composite-null bootstrap `p=.4002`. One effective generator is adequate for those local pivotal rows, but `lambda=0,1/2,1` remain weakly separated.
+The first same-semantics Gaussian-annulus rectangle is now complete. Its best context-specific pair improves the best shared candidate by only `.2162`, with composite-null bootstrap `p=.4002`. One effective generator is adequate for those local pivotal rows, but `lambda=0,1/2,1` remain weakly separated. This is the context/shape side of modulus tomography; it does not share an evidence vote with P321 unless observable semantics and covariance are explicitly transported.
 
 **Next decision output:** choose a Mahalanobis-maximin source/readout and measure actual `c^T A U b` versus `c^T U A b`, one commensurate clock cell or an intermediate state. More samples of the completed rectangle cannot answer chronology or noncommutation.
 
@@ -51,7 +64,7 @@ Keep two questions separate. P200 already identifies a static mixed-factor inter
 
 ### 4. Resolve the topology-typed C3 source plane before Z5
 
-P205 already answers the ordinary global H4/H8/H12 selector within its frozen family. The charged N325 row instead ranks H8/H12/H4 about `71/21/8`; these are different observer sectors, not votes to pool.
+P205 already answers the ordinary global H4/H8/H12 selector within its frozen family. The charged N325 row instead ranks H8/H12/H4 about `71/21/8`; these are different observer sectors, not votes to pool. This is the intersection of modulus-shape and typed charge-spatial tomography: N112 supplies a complex geometry row, while Z5 supplies a charge-fusion row, and they must meet in a transported basis rather than be counted as repeated harmonic evidence.
 
 The non-`A_top` N112 primitive-line row is now a resolved multi-character response: pure E4, E6 and E4-squared all fail; r0 and r1 are nonzero while r2 alone is unresolved. E4+E6 is the unique near-fit but narrowly fails its frozen `.05` gate. The opposite-Pell N60 completion keeps the phase-preserving E4-squared ray viable with an interior scale, yet N60 zero and the collapsed flip remain unresolved at alpha `.01`. A power calculation proves that no N60-only increment can cross the fixed N112-zero boundary.
 
@@ -71,6 +84,8 @@ measure score + finite confluent projector + explicit operator derivative,
 
 with the forced Pascal jet subtracted. The Q=4 seam is the typed normalization control. P263's paired stopped/global variance ratio is an efficiency decision, not a permission gate for semantic work.
 
+P333 adds a necessary transport layer: homology and critical-polynomial lifts have the same Q=1 endpoint but normalized first jets differing by `-pi0D`. The two sibling heads share one Phase-A L2/L3 evidence bundle; one proposes a bottom-field-projected log-slope target and the other freezes the full lift/sector/normalization/Q-v/insertion/projector/field descriptor. **Next decision output:** instantiate that descriptor and projection on one boundary or VJS positive control. Do not call the exact lift counterterm a Jordan gauge relation before this connection exists.
+
 ### 6. Close gauge-free cross-microscopic and Q-tangent controls
 
 The triangular cross-cutoff log-pair result is positive, but `kappa_proxy` is gauge dependent and the global square `Gamma` is not a field row.
@@ -87,9 +102,9 @@ An independent exact opportunity is to construct an exactly critical oblique fam
 
 ## Parallel exact-topology promotion
 
-Two branch-only theorems change the role of brute-force frontier growth. `23fd682` proves that the unique honest-torus homological balance root converges to square-site `p_c` using strict finite-volume monotonicity, subcritical exponential decay on the square and matching lattices, and the exact complement identity. It gives consistency, not a root-shift rate; the next theorem is a two-sided near-critical homology bound at `p_c+/-lambda L^-3/4`.
+Three branch-only theorem claims change the role of brute-force frontier growth. `23fd682` proves that the unique honest-torus homological balance root converges to square-site `p_c` using strict finite-volume monotonicity, subcritical exponential decay on the square and matching lattices, and the exact complement identity. It gives consistency, not a root-shift rate; the next theorem is a two-sided near-critical homology bound at `p_c+/-lambda L^-3/4`.
 
-`73d4960` proposes an unrestricted rational Digital Alexander theorem for every nonsingular integer period matrix via the canonical four-sheeted `2L -> L` cover. Its finite checks are regression; the remaining unproved integral refinement is saturation index one. Main-integrated PR #326 extends the finite certificate to index 12—126 HNF representatives and 13,961,736,918 weighted paths with zero failures. Open PR #330 pushes the same counterexample locator through index 13—140 HNFs and 101,140,028,118 weighted paths, still with `iota=1`—but does not add an unrestricted proof. If the cover proof survives review, the finite frontier's independent scientific role is counterexample localization for `iota>1`, not another proof of rational rank balance. Review the theorem and keep the finite search in parallel; neither route blocks the other.
+`73d4960` proposes unrestricted rational Digital Alexander duality for every nonsingular integer period matrix via the canonical four-sheeted `2L -> L` cover. Child `c1a72e5` proposes the integral refinement: honest carrier images on every `qL` cover plus a prime coprime to any hypothetical Smith defect force saturation and `iota=1`. Main-integrated PR #330 now places the finite regression through index 13—140 HNFs and 101,140,028,118 weighted paths with zero failures. The highest-value exact action is line-by-line review of carrier embedding, matching-diagonal component preservation and `H_up=H intersect qL`. If those hold, higher-index growth has regression value rather than inferential weight for saturation; if one fails, the index-13 backend is the counterexample locator.
 
 Main-integrated PR #319 separately freezes a bounded PSLQ search contract. It contains no integer-relation result, exclusion, preferred decimal or closed-form claim. It is a low-cost side sprint after the higher-value stored-data and topology work, not threshold evidence.
 
@@ -101,7 +116,9 @@ The block-event line has separately moved from feasibility to an auditable execu
 
 Main-integrated PR #331 adds a fail-closed exact-rational comparison schema, but only for two hard-coded synthetic artifacts. It is not a bound, a real gadget certificate or evidence about `p_c`, and its rational arithmetic is unrelated to rational Digital Alexander homology. The next claim-bearing step is deliberately small: reproduce one published baseline end to end, bind the actual artifact bytes, independently derive its certified probability interval and compare one canonical real candidate before broad enumeration.
 
-The shape-contract line has now acquired branch-only retrospective production evidence. Exact finite-size collapse is strongly rejected, but after median/IQR removal the norm-2, norm-5 and independent N185-to-N265 residuals lie on an almost common upper-tail direction, with cosines `.9915` to `.9996`. Freeze that vector and score only its amplitude on a fresh lineage; connect the amplitude to the thermal jet and activation-shape fiber. Do not fit a universal exponent from the current `.632/.429` effective powers or count two norm-5 views as independent votes. Correlated-hyperedge/self-dual closures and symbolic obstructions may run beside all seven priorities.
+Main-integrated PR #340 separately freezes the Issue-27 rational-width prereveal boundary through width 21 plus the existing width-22..24 forecast. No primary 22..24 artifact or score exists. Treat arrival of that source as an external trigger: bind it and score the frozen metrics once before any refit. Its “Stage B” is unrelated to P321 modulus enrichment.
+
+The shape-contract line has now acquired branch-only retrospective production evidence. Exact finite-size collapse is strongly rejected, but after median/IQR removal the norm-2, norm-5 and independent N185-to-N265 residuals lie on an almost common upper-tail direction, with cosines `.9915` to `.9996`. Freeze that vector and score only its amplitude on a fresh lineage; connect the amplitude to the thermal jet and activation-shape fiber. Do not fit a universal exponent from the current `.632/.429` effective powers or count two norm-5 views as independent votes. Correlated-hyperedge/self-dual closures and symbolic obstructions may run beside all eight priorities.
 
 The exact anisotropy-stencil gate supplies a second microscopic design filter. A nonempty nonnegative axis-only fourth-moment proxy cannot cross zero; in the declared axis-plus-integer-diagonal normalization cancellation requires `4:1`, and a more general positive-weight search needs a negative-phase oblique orbit. This prevents a blind axis-only scan while leaving exactly-critical oblique constructions and the renormalized H4 coupling fully open.
 
@@ -109,7 +126,13 @@ The exact anisotropy-stencil gate supplies a second microscopic design filter. A
 
 Reuse the information-per-CPU optimizer, sequential-stopping calibration, threshold-rank histograms, aligned batches, full curves, joint moments, Krawtchouk modes, topology/deck labels and transported frames. Add main's exact fixed-rank motif contrasts to same-N paired streams when their joint Gram is retained. A new coordinate on an old archive may be decisive while remaining dependent on that archive.
 
-Main also has a coherent 200-descriptor/952-map registry and, after merged PR #332, a 37-path scorer-adoption inventory with 6 direct typed entrypoints, 5 covered kernels and 25 migrations. This is a semantic transport layer, not a new evidence grade: the Issue 50 N290 wrapper contributes no data or new H4/H12 score, and `migration_required` does not invalidate a result. It also exposes the next schema layer: `odd` does not by itself say full `matching_function` versus half-odd units, harmonic/model, size map, chronology or dependency group. Prioritize typed replay of the evidence hubs—Issue43/P50 full curves, prequential, norm4/norm5 and matching-odd—then the active root/lineage scorers; no N290 rerun is needed for this migration.
+Main also has a coherent 200-descriptor/952-map registry and, through merged PR #344, a 42-path scorer-adoption inventory with 11 direct typed entrypoints, 10 covered kernels and 20 migrations. PR #338 hardens the audit; PR #341 types the frozen C4 holdout; PR #344 types both frozen Issue43 full-curve kernels while leaving their cross/either erratum boundary and correlated evidence block explicit. This is a semantic transport layer, not a new evidence grade. `Migration_required` does not invalidate a result. Open PR #345 is a post-score P50 S-prime overlay projecting 43/12/11/19 if merged, not current main state or new science.
+
+PR #339 provides a reusable exact odd-jet normalization under linear thermal-coordinate rescaling. Do not schedule it as a separate production line: attach a typed adapter, common observable normalization and delete-one/full nonlinear covariance when an existing shared-observable block is next reused. Nonlinear parametric-curve invariance remains the actual methods gap.
+
+Merged PR #341 types the existing C4 tangent holdout and PR #344 types both frozen Issue43 full-curve kernels; neither changes data, score or scientific priority. Open PR #345 would type the existing P50 S-prime scorer after its prospective score was already complete. Its model chronology remains prospective, but the semantic gate itself is post-score and creates no evidence vote.
+
+PR #342 records a CPU-to-GPU resource gate, not a scientific lane. CPU remains the measured default; GPU attention rises only after the identical end-to-end workload exceeds 5x while preserving exact output and determinism. The current absence of such a measurement is not a prohibition.
 
 Current utility should reward
 
@@ -124,16 +147,20 @@ x nuisance cancellation and archive reuse
 ## Completed results that change repetition value
 
 - **#50 N145->290 full curve — complete:** the resolved shape direction already rejects one scalar multiplier. Its archive remains reusable for new typed coordinates, while another endpoint-only repeat has lower information gain.
-- **Digital Alexander frontier:** main-integrated PR #326 is exact through index 12 with 126 quotients and 13,961,736,918 weighted paths; open PR #330 extends the same finite search to index 13, 140 quotients and 101,140,028,118 paths. Branch-only `73d4960` supplies an unrestricted rational-cover theorem. Review the theorem; use index 12+ primarily to locate integral nonsaturation unless the proof boundary changes.
+- **Digital Alexander frontier:** main-integrated PR #330 is exact through index 13 with 140 quotients and 101,140,028,118 weighted paths. Branch-only `73d4960` supplies the rational-cover theorem and child `c1a72e5` claims integral saturation. Review the child; if it holds, use the finite frontier as regression rather than evidence for saturation.
 - **P205 ordinary prism:** H4 beats the frozen H8/H12 lines. A `rho`/C3 run gains more information from a distinct typed observer than from repeating this selector.
 - **PR #267 activation reuse:** all ten archived pairs are scored, the full curves turn three negative root points into stable local node crossings, and the P205 subset resolves H4/H4. The new transport/shape reuse shows that the K2 pointwise sign split is positive translation plus negative zero-area deformation; `W/ell/landing` attribution is now more valuable than another root split.
-- **Marked-birth and external-observer chain:** q-only contact closure, bare mean-line q2 and the two-radius local rejection retire three narrow carriers. External Euler/far coupling is strongly nonzero and survives direct `J_S` Gram projection; the missing discriminator is the common-flow two-observer coupling rank, not more of the same scalar production.
+- **Marked-birth and external-observer chain:** q-only contact closure, bare mean-line q2 and the two-radius local rejection retire three narrow carriers. External Euler/far coupling is strongly nonzero and survives direct `J_S` Gram projection; `9f2033a` adds the exact gate, frozen implementation and unresolved smoke. The missing discriminator is the acquired joint determinant, not another observer design.
 - **PR #288 mixing audit:** parity gives the four powers but the amplitude map is rank four. Two external Taylor ratios, not another parity argument, are the live closure variables.
 - **Q=4 seam plus main-integrated PR #291 alias gate:** colour characters and normalization are exact, and a single C4 orbit aliases scalar/spin 4. The missing spatial kernel needs calibrated phase diversity or typed internal data; six raw seam values alone certify colour sector, not pure H4.
 - **Same-semantics context rectangle:** one shared generator is not rejected (`p=.4002`), but lambda and path order remain unidentified. The next row must separate models or measure `AU/UA`.
 - **Topology-typed C3:** N112 is genuinely multi-character; the E4-squared completion phase remains viable but unresolved, and N60-only replication has a proved power ceiling. Strengthen N112 or change geometry.
 - **Threshold shape flow:** exact collapse fails, while an almost rank-one upper-tail direction replicates across cover and independent-size blocks. Freeze its direction before a fresh-lineage amplitude test.
-- **Semantic control plane:** main audits descriptor maps and all 37 scorer paths; 6 entrypoints are directly typed, 5 kernels covered and 25 migrations remain after PR #332. The wrapper adds no new data or score. Migration changes future composability, not historical evidence role; the next layer must record units, model/harmonic, size map, chronology and dependencies.
+- **P321 modulus shape:** the finite projector and cylinder endpoint are supported, while fixed-aspect `E4` is a conditional prediction. The full-covariance N144 smoke and fresh 100k three-scale/five-shape freeze are complete; no fresh score exists. Execute once before adding sector/seam enrichment.
+- **Projective birth flux:** P334 adds the first-born line and exact birth1-minus-exit2 split conditional on its branch-only saturation parent. A multi-D4-orbit quotient is higher information than another unmarked rank/root curve.
+- **Q-lift transport:** P333 proves raw Q jets are lift-dependent and supplies a full descriptor; bottom-field projection and a positive control now outrank another untransported bulk derivative.
+- **Gaussian norm-10 power:** source-only planning projects 27.21B/55.18B samples per lineage and negligible ideal-CRN gain. Defer production; only a target variance/runtime pilot can reopen it.
+- **Semantic control plane:** main audits descriptor maps and all 42 scorer paths; 11 entrypoints are directly typed, 10 kernels covered and 20 migrations remain through PR #344. PR #339 adds a synthetic-only linear-metric odd-jet primitive; PR #342 adds a resource gate; open PR #345 is a post-score P50 semantic overlay. None is new scientific evidence. Migration changes future composability, not historical evidence role; the next layer must record units, model/harmonic, size map, chronology and dependencies.
 - **Norm-4:** analytic q2 and the frozen common generator fail; the frozen generation-four target keeps the small-state family live but does not separate pure Jordan, an analytic even mode or persistent curvature, nor establish a nonzero extra mode.
 - **PR #247 / annulus:** the ordinary plus-shell control passes, the matching-odd minus-shell scalar law fails and matched-delta equality is marginally tense inside one correlated block; a distinct two-state recurrence survives held-out N365. The sector score rejects rank one specifically for `A_minus` but leaves several rank-two dynamics aliased. A discriminating context is higher value than more same-row replicas.
 - **Triangular log pair:** the cross-cutoff shear is measured; repeat production without gauge closure is lower value.
@@ -146,8 +173,8 @@ These are information judgments, not prohibitions. New semantics, a new observer
 - **Same-N coalescence:** the exact amplitude-free interpolation remains ready when a new Smith class can fill the Gaussian/annulus context rectangle or distinguish an eigenvalue alias.
 - **Local pivotal N130/N170:** the current two response rows are nearly rank one. The historical signal to “stop adding replicas” means that replicas of the same readout have low present information gain, not that the task is forbidden; a thermal-null, representation-typed or line-versus-landing row can immediately raise its priority.
 - **Third primitive norm-2 generation:** it remains an independent opportunity when its new phase, character or Smith geometry separates mechanisms rather than extending the same marginal fit.
-- **Ordinary H4/H12 opposite-alias design:** main-integrated PR #325 freezes exact N305/N325 geometries, signs, H4-only targets and scoring order but no target data or sample count. It is a clean high-cost prospective confirmation lane after a variance-only pilot, not a current H4 win or a substitute for charged/C3 discrimination.
-- **Gaussian character commuting square:** main-integrated PR #328 freezes exact norm2/norm5/norm10 H4 root factors for N65->650 and N85->850, with direct and two-step paths scored as one correlated block. It has no target roots or empirical commutation result. Use it as a prospective geometry-character composition test; keep it distinct from ordered Gaussian/annulus `AU-UA` dynamics.
+- **Ordinary H4/H12 opposite-alias design:** main PR #325 freezes the design; branch `0b8bb63` completes a target-blind variance/power pilot and freezes 600M/design as standby. No target score or production exists. The future A12 result is a two-row zero-residual-df contrast, not an H12-only or charged/C3 conclusion.
+- **Gaussian character commuting square:** main PR #328 freezes exact root factors, but branch P158's source-only gate projects 27.21B/55.18B samples per lineage, expected 500M z only `.470/.337` and no useful covering-CRN gain. It has no target roots or empirical commutation result. Use only a target variance/runtime pilot before reconsidering production; keep it distinct from ordered Gaussian/annulus `AU-UA` dynamics.
 - **Scalar width and free exponent repeats:** the declared scalar-width shortcuts have failed and another free exponent alone is weak discrimination; a new observer, source or exact typed map remains welcome.
 - **Microscopic H4 design:** an exactly-critical negative-phase oblique orbit can immediately raise this lane; axis-only nonnegative proxy scans cannot realize the declared cancellation and therefore add little mechanism information.
 - **Threshold confidence acquisition:** the frozen 400/373 plan is ready for fresh IID trials. New closures or symbolic arguments remain parallel alternatives rather than prerequisites or vetoes.
@@ -155,5 +182,7 @@ These are information judgments, not prohibitions. New semantics, a new observer
 ## Lifecycle maintenance and decision rule
 
 Frozen predictions and preregistrations remain immutable. Every unmerged pointer must carry branch, commit, path and `open_pr` or `branch_only`; every shared-line claim must be reproducible from `main_integrated` artifacts. Retrospective reuse must keep dependency groups and full covariance visible.
+
+Keep four statuses separate when a lane advances: `integration_status`, readiness flags (`exact_gate`, `protocol_frozen`, `implementation_ready`), acquisition stage (`no_data`, `smoke_only`, `production_acquired`) and result stage (`no_score`, `engineering_score`, `claim_score`). Main integration is not mechanism acceptance, and an exact mapping gate plus smoke is acquisition readiness rather than an empirical coupling result.
 
 Prefer observations that force different zeros, signs, parity channels, representations, ranks, complex characters, composition laws or function-valued shapes. Slightly different fitted exponents are lower information when a typed algebraic discriminator is available.

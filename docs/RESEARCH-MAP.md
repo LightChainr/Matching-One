@@ -25,16 +25,28 @@ measure covariance
 + boundary prefactor/gauge term where applicable.
 ```
 
-Semantic transport is deliberately **not a sixth scientific axis**. The main registry exhausts 200 legal observable descriptors and 952 exact affine maps, while all 37 scorer paths have an audit class after merged PR #332: 6 direct typed entrypoints, 5 covered kernels, 1 non-applicable utility and 25 migration-required paths. The Issue 50 identity wrapper adds no new score. Record this as `semantic_adoption_status`, separately from `integration_status`, evidence role and dependency group. Migrate the evidence hubs that a live analysis actually reuses; the label never invalidates a score or locks a task.
+Semantic transport is deliberately **not a sixth scientific axis**. The main registry exhausts 200 legal observable descriptors and 952 exact affine maps, while all 42 scorer paths have an audit class through merged PR #344: 11 direct typed entrypoints, 10 covered kernels, 1 non-applicable utility and 20 migration-required paths. PR #338 hardens inventory self-exclusion; PR #341 types the frozen C4 holdout; PR #344 types both frozen Issue43 full-curve kernels. These change no data, refit, score or evidence role, and the two Issue43 sectors remain correlated coordinates from one production block. The Issue43 N185-to-N265 identity gates do not replace the separately typed P31 `either` to target `cross` sign correction. Open PR #345 is a post-score semantic overlay around an existing prospective P50 score, not main state or new science.
+
+PR #339 adds `kappa_r=d_r/d_1^r` as an exact invariant of linear thermal-coordinate rescaling, together with a sparse Jacobian and delta-method covariance propagation. Its fixture is synthetic and the ratio still depends on observable amplitude and nonlinear thermal coordinates. It is therefore a transport primitive for the next typed shared-observable reanalysis, not evidence for H4, a Jordan partner or cross-lattice universality.
+
+## Three-axis operator tomography
+
+These are decision matrices assembled from the five coordinates, not new ontology axes, permission gates or additive evidence grades. They are most informative in parallel: agreement sharpens an operator assignment; disagreement localizes mixing.
+
+| Tomography lane | Matrix or frozen null | Current frontier | Next claim-bearing output |
+|---|---|---|---|
+| **source rank** | observer x source complex matrix; `rank(C)<=1` iff `det(C)=0` | `O_far-J_D_perp` is a scored branch result; `9f2033a` adds an exact R=6 gate, implementation, frozen protocol and unresolved 20k smoke | acquire frozen N325/N425 2M blocks and apply the joint four-real-degree determinant rule |
+| **modulus shape** | aspect ratio x frozen function shape after equal-area normalization | P321 gives the exact `P2-P0` projector and a conditional `E4(i rho)` one-function curve; Gaussian/annulus and C3 show where a single function can fail | score aligned square versus `rho=16/9` at three scales with full covariance; add a third `rho` only to resolve a second defect/Jordan function |
+| **typed charge-spatial** | charge/fusion channel x calibrated spatial phase or typed edge | colour ratios and the one-orbit alias gate are exact; ordinary P205, charged N325 and C3 remain sector-specific | add calibrated axis+diagonal or typed-internal rows, reveal Z5 closure first and score tensor rank without pooling sectors |
 
 ## The main mechanism chain
 
 The highest-information line is now a connected chain rather than a collection of H4 fits:
 
 ```text
-Digital Alexander rank balance and cached index-2..11 frontier    [main]
+Digital Alexander rank balance and cached index-2..13 frontier    [main]
     -> unrestricted rational four-sheet descent                   [branch_only]
-    -> integral stabilizer primitivity/saturation                 [next exact gap]
+    -> all-qL integral carrier saturation claim                   [branch_only review]
     -> essential H1 births K1,K2 and P0/P1/P2 reconstruction      [main]
     -> complement coordinates C (clock translation), W (lifetime) [branch_only]
     -> full finite K2 curve: positive area, three local node crossings [open_pr]
@@ -45,7 +57,10 @@ Digital Alexander rank balance and cached index-2..11 frontier    [main]
     -> q-only contact closure and P275/Cartan reclassification     [branch_only]
     -> bulk external Euler-to-rank-birth response                  [branch_only]
     -> source-orthogonal J_D_perp coupling survives                [branch_only]
-    -> two-observer coupling determinant                           [next]
+    -> operator tomography                                        [parallel]
+         |- source rank: exact gate + frozen implementation + 20k smoke; 2M determinant missing
+         |- modulus shape: exact P2-P0 bridge + conditional E4 curve; aligned roots missing
+         `- typed charge-spatial: alias gates + sector rows; calibrated tensor missing
     -> P205 ordinary H4/H4 K1/K2 prism                             [branch_only + PR #267 reuse]
     -> fixed-q shape/clock/lifetime + separated typed covector      [next]
 ```
@@ -59,11 +74,9 @@ r_black + r_white = 2,
 q = r_black - 1 = A_top.
 ```
 
-`main` contains the filtration oracle, essential-birth reconstruction and, after merged PR #326, exhaustive HNF checks through quotient index 12: 126 representatives and 13,961,736,918 weighted paths have zero birth/reflection/rank-sum/reconstruction/line failures; 170,332 cached subsets generate 53,749,271,024 plateau steps with maximum `iota=1` and no evolution. Honest and self-identifying faces are kept separate.
+`main` contains the filtration oracle, essential-birth reconstruction and, after merged PR #330, exhaustive HNF checks through quotient index 13: 140 representatives and 101,140,028,118 weighted paths have zero birth/reflection/rank-sum/reconstruction/line failures; 285,020 cached subsets generate 500,805,335,024 plateau steps with maximum `iota=1` and no evolution. Honest and self-identifying faces are kept separate. This is exact finite regression, not an unrestricted theorem.
 
-Open PR #330 extends this same finite counterexample locator through index 13: 140 representatives, 101,140,028,118 weighted paths, 285,020 subsets and 500,805,335,024 plateau steps, with the same zero-failure and `iota=1` outcome. Its lifecycle and logical role matter: it is an `open_pr` finite integral search, not a `main` claim and not another unrestricted rational proof.
-
-A newer `branch_only` theorem uses the canonical four-sheet cover `T_(2L) -> T_L` and rational-homology descent to claim the same rank balance, reflections and two-activation identities for arbitrary nonsingular integer periods. That is a major closure if the proof survives review, but `p_*=2I` does not establish integral graph-image saturation. The exact frontier has therefore changed shape: index 12 is a finite integral certificate and regression oracle; the live theorem/counterexample question is whether every rank-one component stabilizer `H_C=m Z ell` has `m=1`.
+The `branch_only` parent `73d4960` uses the canonical four-sheet cover `T_(2L) -> T_L` and rational-homology descent to claim the same rank balance, reflections and two-activation identities for arbitrary nonsingular integer periods. Its child `c1a72e5` claims the integral refinement by classifying honest carrier images on every `qL` cover and choosing a prime coprime to any hypothetical downstairs Smith defect. The exact frontier has therefore changed shape: review component preservation under matching-diagonal pruning and the identity `H_up=H intersect qL`. If they hold, `iota=1` is theorem-driven and index 13 is a regression/counterexample alarm, not saturation evidence.
 
 A second branch-only theorem proves that the unique honest-torus homological-balance root `p_L` converges to square-site `p_c`. This promotes the root from an empirical polynomial zero to a consistent topological coordinate, without supplying a rate. The next scaling theorem is a two-sided activation window around `p_c +/- lambda L^-3/4`, not another convergence check.
 
@@ -147,7 +160,9 @@ J_D_perp = J_D - Re<JD,JS>/<|JS|^2> J_S,
 
 with root and coefficient recomputed inside each delete-one batch. The result is decisive in its declared lattice metric: 99.8792%/99.9144% of the far-D magnitude remains, with two-dimensional `chi-square=641994/589232`; the transfer is `1.054088+/-.001956` at phase `1.373908+/-.002803`. Direct projection onto `J_S` therefore does not explain the coupling. The stored aggregates lack `|J_D|^2`, so no residual source-energy fraction is claimed, and Gram orthogonality is not CFT field orthogonality.
 
-The remaining ambiguity is whether an independent JD source shares the same geometric C4 transport phase as JS or realizes the thermal-Q4 bridge. The next acquisition should form a two-observer coupling matrix in one common flow: retain `O_far` and add one macroscopically separated calibrated axis+diagonal local-H4/arm observer satisfying the main alias gate; couple both to `J_D_perp` and `J_S`. Rank two separates source directions, while rank one identifies a shared projective transport lane.
+Branch head `analysis/external-observer-stream-20260829@9f2033a` now freezes and implements the two-observer lane. The exact R=6 axis/diagonal gate has response matrix `[[1,1],[1,-1]]` and determinant `-2`; this is observer-design rank, not coupling rank. The N325/N425 20k complex determinants are unresolved engineering smoke (`chi-square_2=1.882/2.641`). The missing objects are the frozen 2M path aggregates and the joint `chi-square_4>18.4668269529` score. Thus the source-rank line is acquisition-ready, not result-complete; even a resolved rank-two matrix would name a two-dimensional lattice source plane rather than Q4, H4 or an exponent.
+
+P334 supplies an orthogonal, lower-cost activation discriminator. Conditional on its branch-only integral-saturation parent, the first rank-one state carries an up-to-sign primitive line `ell1`; direct 0-to-2 jumps are a separate atom and contribute to neither oriented flux. The exact derivative `dA4/dp=j4_birth1-j4_exit2` separates H4 entering at first nontrivial homology from H4 leaving at second-direction completion. The tiny controls verify covariance and marginal recovery but have only quarter-turn-related support lines. One quotient with multiple inequivalent D4 primitive-line orbits is the next mechanism test; another fixed-p plateau curve is not.
 
 ### 4. P205 resolves the ordinary character competition
 
@@ -181,6 +196,17 @@ gap                       =  sqrt(3)/(4 pi).
 
 The generic-loop spin-8 and spin-12 rows in that oracle are controls rather than H8/H12 angular-alias assignments. The other sharp fingerprint is the thermal-Q4 positive-mode Ward vector `4:-6:3`; an ordinary primary gives zero, and Jordan residues add a second gate. Main's PR #288 adds a rank-four identifiability boundary: parity fixes four powers but not the Taylor ratios `f_I1/f_I0` and `f_T1/f_T0`. Modulus/phase dependence, the log-partner response, an independent covector and those two external dynamical relations must accompany any scaling power.
 
+P321 now supplies a parameter-free modulus fingerprint without promoting the field assignment. At Q=1, the graph polynomial and matching/homology root use the same finite `P2-P0` projector, while the TL open/closed crossing is its controlled infinite-length endpoint. Conditional on a Virasoro-transparent homology restriction and ordinary thermal `Q4 epsilon`,
+
+```text
+C_width(rho)/C_width(infinity) = E4(i rho),
+C_width(rho) = C_N(rho)/rho^2.
+```
+
+The oracle certifies the modular numbers and normalization, not projector transparency. An additive `H4_defect(rho)` or logarithmic partner supplies a second modulus function. The N144 20k branch now proves that all five shape roots share material covariance and that a diagonal approximation is invalid; it has one scale and no E4 score. Its child freezes fresh N=144,576,1296, five shapes and 100k per shape, with a scale-law gate before the E4 gate and no pilot pooling, refit, interim or optional stopping. The multiscale planning artifact is hash-pinned but absent from the branch tree, so it remains planning evidence. If the fresh one-function score fails, sector/seam enrichment becomes informative; failure does not retroactively identify Jordan structure.
+
+P333 makes the Q-direction interface equally explicit. Two generic-Q lifts share the same Q=1 endpoint but differ by `-(Q-1)W0D`, so their normalized first jets differ by `-pi0D`. Raw Q tangents are therefore section-dependent. The covariance and descriptor heads share one L2/L3 Phase-A bundle; one proposes a bottom-field-projected LCFT log-slope target, while the other records lift, sector weights, normalization, Q-v path, insertion, projector and field counterterm. Until the bottom-field/representation projection and connection are constructed, the exact counterterm is not a Jordan gauge transformation and neither head is H4 evidence.
+
 ## Rank-1 reuse and escape contract
 
 The marked-birth program already retains most of the common field below. Its bare mean-line q2 and simple local-UV q2 continuations failed; its external Euler continuation is positive and survives direct `J_S` Gram projection. Reuse those results before producing another stream. Any continuation should retain, in the same orientation-paired replicas and delete-one batches:
@@ -195,13 +221,15 @@ K1,K2,C,W and their line/landing-conditioned curve bins;
 two-root field products when an independent observer is used.
 ```
 
-The zero-production Draft analysis already decomposes each activation response into a same-area translation mode and a zero-area shape mode. The external stored-data residual has now succeeded; a new production is justified only for the missing two-observer determinant or another separated/charged/modular decision coordinate. More `qJ`, `q^2J`, mean-line q2 or nonlinear q-only connected rows are either rejected parameterizations or exact contact transforms, not new field evidence.
+The zero-production Draft analysis already decomposes each activation response into a same-area translation mode and a zero-area shape mode. The external stored-data residual has now succeeded and the second observer is exact-gated, implemented and smoke-complete. Its new production has one declared purpose: the missing joint determinant. Other useful acquisition must add a separated, charged or modulus-shape coordinate. More `qJ`, `q^2J`, mean-line q2 or nonlinear q-only connected rows are either rejected parameterizations or exact contact transforms, not new field evidence.
 
 ## Parallel programs
 
 ### Ordinary versus charged sectors
 
 The ordinary P205 prism selects H4, while the branch-only N325 deck-charged likelihood weights H8/H12/H4 at approximately `71/21/8`. The charged H8 row is a likelihood leader, not a discovered spin-8 field; H12 and H4 are not both rejected at strict 5%. This is sector tension, not contradictory replications.
+
+This is the typed charge-spatial tomography lane. Its target is not another pooled H4/H8/H12 vote but the rank of `charge type x calibrated spatial phase` after normalization. The ordinary H4/H12 opposite-alias branch has only a target-blind variance pilot and frozen 600M/design standby; it supplies no target harmonic score, and the two-row/two-column A12 contrast has zero residual degrees of freedom.
 
 The two primitive Z5 cubic fusion channels are now implemented on a branch with a closure-first scorer. Exact charge bookkeeping leaves `113` and `122` plus conjugates, and freezes `C113_plus*C122_minus-C113_minus*C122_plus=0` as the zero-parameter single-eigenphase gate. A 20k smoke block passes closure and every tested phase but is engineering-only; the 1M/100-batch production is frozen and not acquired. Reveal closure first: failure kills the one-eigenfield mechanism before any H4/H8/H12 ranking; survival permits the four-degree-of-freedom phase score. All hands and channels share one 24-real covariance block, and bare cubic phases remain gauge-dependent without neutral two-point normalization.
 
@@ -253,26 +281,36 @@ The exact microscopic H4 stencil gate also removes one uninformative search fami
 
 The mechanism chain deliberately mixes lifecycle states:
 
+`integration_status` says where an artifact lives, not whether a mechanism is accepted. Readiness (`exact_gate`, `protocol_frozen`, `implementation_ready`), acquisition (`no_data`, `smoke_only`, `production_acquired`) and result stage (`no_score`, `engineering_score`, `claim_score`) are recorded separately.
+
 | Layer | Current status | Scientific use |
 |---|---|---|
-| Digital Alexander theorem, filtration and cached quotient frontier | `main_integrated` through index 12, including PR #326; index 13 `open_pr` #330 | exact finite-state backbone and reusable subset/line/`iota` oracle; the open extension strengthens finite counterexample localization but finite exhaustion does not establish unrestricted rational duality or integral saturation |
-| unrestricted rational duality and root consistency | `branch_only` `73d4960` and `23fd682` | claimed all-period rational closure plus `p_L -> p_c`; review the proofs, then target integral stabilizer primitivity and the near-critical activation window |
+| Digital Alexander theorem, filtration and cached quotient frontier | `main_integrated` through index 13, including PR #330 / `c4a9955` | exact finite-state backbone and reusable subset/line/`iota` regression oracle; finite exhaustion does not establish the unrestricted theorems |
+| unrestricted rational, integral, projective-birth and root-consistency claims | `branch_only` `73d4960`, child `c1a72e5`, stacked oracle `6f54935` and `23fd682` | review the all-period rational/integral parents; independently run one multi-orbit birth1/exit2 flux discriminator and target the near-critical activation window rather than higher-index saturation inference |
 | `C/W`, `I01/I12`, `S/D`, tiny `Cov(A_top,J_D4)` | `branch_only` | exact coordinates and finite contact controls; the later all-order theorem excludes q-only connected rows as independent field matrices |
-| marked-birth q/local closures and external Euler bridge | `branch_only` mean/local results `936cff2`/`eea85c4`, Euler and Gram continuation through `48a8818` | bare mean-line/local-UV q2 parameterizations fail; bulk Euler coupling survives local removal and direct `J_S` projection; build the two-observer coupling determinant next |
+| marked-birth q/local closures and external Euler bridge | `branch_only` mean/local results `936cff2`/`eea85c4`, Euler result `48a8818`, two-observer head `9f2033a` | bare q2 parameterizations fail; bulk Euler coupling survives direct `J_S` projection; the two-observer lane has exact gate, frozen implementation and smoke only, while the 2M joint determinant is missing |
 | P275 global-line and Cartan contact map | `branch_only` `4d7ecd5` and `7faa317` | rejects declared Q4/Jordan/H4 maps and reclassifies `Gamma` as contact/projective polarization |
 | P205 total prism | `branch_only` | frozen ordinary character selection at small N |
 | ten-size K1/K2 root, full-curve and transport/shape reuse | `open_pr` #267 | retrospective component, area, stable-node and same-area-translation/zero-area-deformation decomposition with shared covariance |
 | P205 K1/K2 prism reuse | `open_pr` #267 | retrospective component-character decomposition with branch-only source data |
 | Q=1 spin-sector velocity oracle | `main_integrated` PR #264 | exact continuum-family discriminator; lattice overlaps and field-definition terms remain missing |
 | four-channel operator-mixing audit | `main_integrated` PR #288 | exact rank four; two external Taylor ratios remain missing |
+| P321 projector and modulus shape | `branch_only` `bc343f4`/`65b3830`, covariance smoke `0a7d15f`, fresh freeze `8206087`; literature brief `open_pr` #267 | finite `P2-P0` dictionary and conditional E4 oracle persist; N144 smoke establishes full covariance but no E4 result. The fresh three-scale/five-shape 100k scale-then-E4 contract is frozen and not started |
+| generic-Q lift transport | `branch_only` siblings `502719c`/`c34c838`, shared Phase-A parent `de02198` | raw Q jets are lift/section dependent; freeze the complete descriptor and bottom-field projection on a positive control before any H4/Jordan interpretation |
 | spin-4 alias, Q=4 seam, annulus and mixed-context gates | spin-4 alias `main_integrated` PR #291; other sources `branch_only`, rectangle result `5873de8` | two-orbit/typed-edge identifiability and numerator normalization remain; same-semantics context enrichment is unsupported, so move to `AU-UA` or an intermediate-state readout |
 | anisotropy stencil and threshold-confidence chains | `main_integrated` PRs #272/#278-#281 | exact microscopic feasibility/protocol infrastructure, not renormalized H4 or a new threshold bound |
 | threshold shape contract, production tail fiber and exact-route map | contract/map `main_integrated` PRs #289/#290; production `branch_only` `bc19bcb` | exact collapse fails, nearly rank-one tail deformation survives; freeze its direction and hold out amplitude, with no universal exponent or exhaustive exactness no-go |
 | primitive C3 and Z5 cubic frontier | C3 `branch_only` `63d81fb`; Z5 stream frozen `branch_only` `5909987` | C3 is multi-character and needs N112/new geometry; Z5 has closure-first protocol plus engineering smoke but no production reveal |
+| ordinary H4/H12 opposite-alias lane | design `main_integrated` PR #325; target-blind variance pilot `branch_only` `0b8bb63` | 600M/design is frozen standby; no target score exists and the future A12 row is a zero-residual-df contrast, not an omnibus or charged-sector result |
 | typed-site polynomial and terminal-state infrastructure | classification `branch_only` `5d8343d`; RGS/group canonicalizer `main_integrated` PR #329 | ordinary product-local named edge-polynomial route fails under its declared contract; develop typed-port junction composition and the scalar-quotient radical, while keeping the canonicalizer's encoding-only boundary explicit |
 | real-gadget comparison infrastructure | synthetic exact-rational certificate `main_integrated` PR #331 | fail-closed schema only; bind and derive one real published baseline before candidate enumeration or any threshold claim |
-| scorer semantic transport | descriptor registry and complete 37-path audit inventory `main_integrated` through PR #332; 25 migrations remain | infrastructure status is separate from evidence and lifecycle; add units/model/size-map/chronology/dependency contracts and migrate live evidence hubs without rerunning or demoting completed science |
-| Q4/Jordan overlap and fingerprint | `hypothesis` plus branch-only exact predictions | requires an independent within-q or typed covector; global line `Gamma` is not that covector |
+| Issue-27 rational-width prereveal | `main_integrated` PR #340 / `1c7f54b` | width-1..21 knowledge and width-22..24 forecasts are frozen while the primary target is absent; score once on arrival before any refit, with no current model winner or threshold claim |
+| scorer semantic transport | complete 42-path inventory `main_integrated` through PR #344 / `4a77650`; 11 direct, 10 covered, 20 migrations, 1 utility | infrastructure status is separate from evidence and lifecycle; open PR #345 is a post-score overlay projecting 43/12/11/19 only if merged, and live evidence hubs can migrate without rerunning or demoting completed science |
+| odd-jet linear metric | `main_integrated` PR #339 | exact linear thermal-coordinate invariant with synthetic fixture only; next value is typed data adaptation, common observable normalization and delete-one/nonlinear covariance, not a standalone production run |
+| C4 tangent and Issue43 typed wrappers | `main_integrated` PR #341 / `3aebee0` and PR #344 / `4a77650` | exact identity transport for frozen scores only; no new data or score, and the science still needs a different observer/geometry rather than repeated production |
+| GPU rental gate | `main_integrated` PR #342 / `b6c81d0` | exact fivefold end-to-end resource threshold plus output/determinism requirements, but no GPU measurement or scientific result; resource attention stays separate from science priority |
+| Gaussian norm-10 commuting-square power | design `main_integrated` PR #328; source-only power gate `branch_only` `2cfde0b` | projected 27.21B/55.18B per lineage and negligible covering-CRN gain defer N650/N850 production; use only a target variance/runtime pilot because no target data exist |
+| Q4/Jordan overlap and fingerprint | `hypothesis` plus branch-only exact predictions | source rank, modulus shape and typed charge-spatial rows are three orthogonal axes; no single passing row identifies the field |
 
 Use `docs/STATUS.md` and `analysis/research_ledger.yaml` for exact commit/path pointers. Citation here never promotes an unmerged result to `main`.
 
