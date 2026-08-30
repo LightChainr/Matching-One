@@ -240,6 +240,21 @@ branch_sources:
     paths:
       - notes/proof-carrying-operator-passport.md
       - notes/scientific-frontier-delta-20260830-post267.md
+  - id: SRC_PR267_P250_JOINT_ANNIHILATION
+    integration_status: open_pr
+    pr: 267
+    ref: research/navigation-priority-refresh-20260829
+    commit: 99d23a705188ba9771523f1f10dc6d6bf9942ec4
+    result_status: replay_verified_radius_four_joint_annihilation_rejects_identity_and_radius_five_selected_R2_keeps_only_R3_in_the_primary_Alexander_conjugation_family_so_the_two_frozen_survivor_sets_have_empty_intersection
+    dependency_group_refs: [p250-projective-leg-N505-bivariate-80k]
+    paths:
+      - analysis/p250_projective_leg_joint_annihilation_manifest.json
+      - analysis/p250_projective_leg_joint_annihilation_result_manifest.json
+      - notes/p250_projective_leg_joint_annihilation_freeze.md
+      - notes/p250_projective_leg_joint_annihilation_result.md
+      - results/local-20260830/P250-projective-leg-joint-annihilation/score.json
+      - results/local-20260830/P250-projective-leg-joint-annihilation/score.md
+      - scripts/score_z5_projective_leg_joint_annihilation.py
   - id: SRC_MATCHING_POLYNOMIAL_MAIN
     integration_status: main_integrated
     ref: main
@@ -1153,6 +1168,34 @@ branch_sources:
       - results/local-20260830/P321-equal-area-fresh-100k/multiscale_score.json
       - results/local-20260830/P321-equal-area-fresh-100k/checksums.sha256
       - results/local-20260830/P321-equal-area-fresh-100k/remote_source_checksums.sha256
+  - id: SRC_P321_TTBAR_SHAPE_OBSTRUCTION
+    integration_status: branch_only
+    ref: theory/p321-ttbar-shape-obstruction-20260830
+    commit: c2a5e2d543cb6d402e27e6ea3e3814bd33208b8a
+    parent_commit: ca72994f14ff2c8ec00dfca51b664f3b95b1dcb0
+    result_status: exact_first_order_operator_obstruction_showing_the_leading_E4_ratio_does_not_cancel_the_unknown_homology_resolved_thermal_one_point_from_the_identity_dressed_correction
+    paths:
+      - notes/p321-ttbar-shape-obstruction.md
+      - scripts/p321_ttbar_shape_operator.py
+  - id: SRC_P321_HOMOLOGY_TRACE_FUNCTIONAL
+    integration_status: branch_only
+    ref: theory/p321-homology-trace-functional-20260830
+    commit: 9dda24ecccdc22dc73a3cbc55eb02d8236b15b6e
+    result_status: exact_width_2_3_4_certificate_identifying_TrTA_minus_QTrA_as_a_crossed_minus_trivial_closure_functional_not_one_ordinary_central_element_or_one_transparent_crossed_defect
+    paths:
+      - notes/p321-homology-trace-functional.md
+      - analysis/p321_homology_trace_certificate.json
+      - scripts/p321_homology_trace_certificate.py
+  - id: SRC_P321_GRADED_CLOSURE_EXTENSION
+    integration_status: branch_only
+    ref: theory/p321-graded-homology-defect-20260830
+    commit: d0fca795c89338e16b732334c87d7885bc7fcfd0
+    parent_commit: 9dda24ecccdc22dc73a3cbc55eb02d8236b15b6e
+    result_status: exact_graded_direct_sum_repairs_blockwise_pullthrough_while_regular_Q_differentiation_is_semisimple_and_singular_Jordan_intertwiners_remain_nonunique
+    paths:
+      - notes/p321-graded-closure-extension.md
+      - analysis/p321_graded_closure_extension.json
+      - scripts/p321_graded_closure_extension.py
   - id: SRC_P333_Q_LIFT_COVARIANCE
     integration_status: branch_only
     ref: theory/p333-q-lift-covariance-20260830
@@ -1285,6 +1328,21 @@ branch_sources:
       - notes/p334-tm-typed-rewrite-critical-pair.md
       - results/p334-tm-typed-rewrite-system/latest.json
       - results/p334-tm-typed-rewrite-system/SCIENTIFIC_CARD.md
+  - id: SRC_P334_CORRECTED_ORBIT_HALL_RESERVOIR
+    integration_status: branch_only
+    ref: theory/p334-two-carrier-abstract-theorem-20260830
+    commit: 6a7b04273052cfc37a88222329eec7d9a2a93582
+    branch_tip_at_refresh: 4bb75176c56558084c8397917995026e54420b9f
+    parent_commit: 7ef99ae48a354c3a2199075746feef8081e637d0
+    lineage_commits:
+      configuration_cross_switch_refutation: c2d8170f4f789a1ebfdcca1d1982419570ff2d04
+      corrected_output_base_and_orbit_hall: 6a7b04273052cfc37a88222329eec7d9a2a93582
+    result_status: exact_N6_refutation_of_mark_only_union_preserving_and_base_only_injections_plus_factor_N_orbit_Hall_equivalence_and_a_corrected_base_exchange_plus_transverse_mark_reservoir_saturating_all_minimal_N6_rows_and_the_first_Smith_2_4_N8_gate
+    paths:
+      - results/p334-tm-configuration-cross-switch/latest.json
+      - results/p334-tm-configuration-cross-switch/latest.md
+      - results/p334-tm-translation-orbit-hall/latest.json
+      - results/p334-tm-translation-orbit-hall/latest.md
   - id: SRC_P337_FINITE_ABELIAN_TWIST_TOMOGRAPHY
     integration_status: branch_only
     ref: theory/p337-finite-abelian-twist-tomography-20260830
@@ -1685,6 +1743,25 @@ branch_sources:
       - notes/p250_projective_leg_annihilator_bridge_result.md
       - results/local-20260830/P250-projective-leg-annihilator-bridge/score.json
       - results/local-20260830/P250-projective-leg-annihilator-bridge/score.md
+  - id: SRC_P250_RADIUS5_MORPHISM_RESULT
+    integration_status: branch_only
+    ref: analysis/p250-two-sector-annihilator-bridge-20260830
+    commit: 11130aef3ee46df8d52e59c8bfe486eadcdbbaf5
+    parent_commit: a46ed6343b4b6874259a0f24defeedf16800a8d0
+    freeze_commit: efc0f64646c747e02d32509d238cfafaabaa772b
+    reveal_hash_commit: ad162d3e1ac1620d9959df2380aaeacb14330430
+    scorer_shape_fix_commit: dfcfc53fc95fdc27b7ee98c48fe9ab6d436e2011
+    result_status: independent_radius_five_extensions_survive_identity_plus_conjugation_is_rejected_and_Alexander_R2_conjugation_is_the_only_frozen_map_above_alpha_0p01_with_a_thin_R2_R3_margin
+    provenance_exception: recorded_Huawei_CodeBuddy_XPk2PZ_is_not_the_designated_TV2N0X_environment_and_was_not_contacted_or_inspected_by_this_refresh
+    dependency_group_refs: [p250-projective-leg-N505-bivariate-80k, p250-projective-leg-N505-radius5-1p2m]
+    paths:
+      - analysis/p250_projective_leg_radius5_morphism_freeze.json
+      - analysis/p250_projective_leg_radius5_morphism_result_manifest.json
+      - analysis/p250_projective_leg_radius5_morphism_reveal.json
+      - notes/p250_projective_leg_radius5_morphism_freeze.md
+      - notes/p250_projective_leg_radius5_morphism_result.md
+      - results/huawei-20260830/P250-projective-leg-radius5-morphism-1200k/score.json
+      - results/huawei-20260830/P250-projective-leg-radius5-morphism-1200k/score.md
   - id: SRC_PSLQ_CONTRACT
     integration_status: main_integrated
     pr: 319
@@ -2697,19 +2774,40 @@ scientific_nodes:
     observer_sectors: [topology_typed, global_rank_projector, direction_character]
     geometries: [aspect_ratio_rectangle, finite_transfer_cylinder, moduli_hecke_child]
     acquisition: [exact_construction, small_pilot, new_production]
-    source_refs: [SRC_P321_TOPOLOGICAL_PRG_BRIDGE, SRC_P321_THERMAL_Q4_ASPECT_RATIO, SRC_P321_EQUAL_AREA_COVARIANCE_SMOKE, SRC_P321_FRESH_MULTISCALE_FREEZE, SRC_P321_FRESH_MULTISCALE_RESULT, SRC_PR267_P321_LITERATURE_TOMOGRAPHY]
+    source_refs: [SRC_P321_TOPOLOGICAL_PRG_BRIDGE, SRC_P321_THERMAL_Q4_ASPECT_RATIO, SRC_P321_EQUAL_AREA_COVARIANCE_SMOKE, SRC_P321_FRESH_MULTISCALE_FREEZE, SRC_P321_FRESH_MULTISCALE_RESULT, SRC_P321_TTBAR_SHAPE_OBSTRUCTION, SRC_P321_HOMOLOGY_TRACE_FUNCTIONAL, SRC_P321_GRADED_CLOSURE_EXTENSION, SRC_PR267_P321_LITERATURE_TOMOGRAPHY]
     known_result: fresh_N144_N576_N1296_five_shape_100k_data_pass_the_fixed_Nminus2_plus_Nminus3_scale_gate_chi2_2p000226_over4_p_0p735717_and_do_not_reject_the_conditional_no_refit_E4_residual_chi2_4p027464_over3_p_0p258514_while_the_pilot_tension_does_not_reproduce
-    boundary: compatibility_under_a_fixed_three_scale_model_does_not_measure_the_exponent_resolve_the_square_amplitude_prove_projector_transparency_identify_thermal_Q4_or_exclude_defect_contact_Jordan_or_a_second_modulus_function_and_the_recorded_TgFr7R_remote_requires_governance_review_before_integration
-    supports: [ordinary_P2_minus_P0_shape_compatibility_with_the_frozen_one_function_E4_constraint, moving_the_next_information_axis_from_scalar_shape_to_sector_or_projector]
-    tensions: [vacuum_KdV_as_the_root_numerator_because_it_is_Alexander_even, using_equal_area_CN_without_dividing_by_rho_squared, repeating_ordinary_shape_samples_as_if_they_proved_transparency]
+    boundary: compatibility_under_a_fixed_three_scale_model_does_not_measure_the_exponent_resolve_the_square_amplitude_or_prove_projector_transparency_and_exact_followup_requires_two_closure_modules_while_regular_Q_differentiation_does_not_select_a_unique_Jordan_extension_and_the_recorded_TgFr7R_remote_requires_governance_review_before_integration
+    supports: [ordinary_P2_minus_P0_shape_compatibility_with_the_frozen_one_function_E4_constraint, moving_the_next_information_axis_from_scalar_shape_to_the_typed_closure_extension]
+    tensions: [vacuum_KdV_as_the_root_numerator_because_it_is_Alexander_even, using_equal_area_CN_without_dividing_by_rho_squared, repeating_ordinary_shape_samples_as_if_they_proved_transparency, automatic_Jordan_mixing_from_regular_Q_differentiation]
     excludes_only: [the_pilot_near_threshold_E4_tension_as_a_replicated_fresh_result]
-    reusable_data_refs: [predictions/p321_thermal_q4_aspect_ratio_20260830.json, analysis/p321_equal_area_rectangle_design.json, results/local-20260830/P321-equal-area-20k/score.json, analysis/p321_fresh_multiscale_decision_freeze.json, results/local-20260830/P321-equal-area-fresh-100k/multiscale_score.json]
-    dependency_group_refs: [p321-equal-area-N144-smoke, p321-fresh-multiscale-acquired]
-    missing_inputs: [sector_resolved_homology_or_typed_seam_or_independent_defect_Jordan_projector_and_a_transparency_proof_or_obstruction]
-    next_discriminator: keep_the_geometry_convention_but_change_the_observer_to_resolved_homology_typed_seam_or_an_independent_second_function_projector_without_more_ordinary_P2_minus_P0_replication
+    reusable_data_refs: [predictions/p321_thermal_q4_aspect_ratio_20260830.json, analysis/p321_equal_area_rectangle_design.json, results/local-20260830/P321-equal-area-20k/score.json, analysis/p321_fresh_multiscale_decision_freeze.json, results/local-20260830/P321-equal-area-fresh-100k/multiscale_score.json, analysis/p321_homology_trace_certificate.json, analysis/p321_graded_closure_extension.json]
+    dependency_group_refs: [p321-equal-area-N144-smoke, p321-fresh-multiscale-acquired, p321-closure-module-exact-chain]
+    missing_inputs: [the_smallest_generic_Q_detach_or_loop_weight_generator_and_its_exact_affine_Hom_and_first_jet_Gram_action]
+    next_discriminator: add_one_generic_Q_detach_loop_weight_generator_and_test_whether_the_crossed_trivial_affine_Hom_space_collapses_to_one_normalized_line_before_naming_a_Jordan_thermal_matrix_element
     information_gain: very_high
     compute_cost: moderate
     decision_experiments: [DX_ASPECT_RATIO_Q4_SHAPE]
+  - id: SN_P321_CLOSURE_MODULE_EXTENSION
+    title: crossed_minus_trivial_closure_trace_and_noncanonical_Jordan_extension
+    integration_status: branch_only
+    state: continuum_module
+    sources: [potts_Q_measure, projector_derivative, explicit_operator_derivative]
+    observer_sectors: [topology_typed, global_rank_projector]
+    geometries: [finite_transfer_cylinder, aspect_ratio_rectangle]
+    acquisition: [exact_construction]
+    source_refs: [SRC_P321_TTBAR_SHAPE_OBSTRUCTION, SRC_P321_HOMOLOGY_TRACE_FUNCTIONAL, SRC_P321_GRADED_CLOSURE_EXTENSION, SRC_P333_DUAL_NUMBER_GRAM_RADICAL]
+    known_result: the_finite_homology_contrast_is_TrTA_minus_QTrA_and_requires_crossed_plus_trivial_closure_modules_their_graded_direct_sum_has_exact_pullthrough_regular_Q_differentiation_is_semisimple_and_singular_Jordan_intertwiner_dimensions_are_2_3_9_at_widths_2_3_4
+    boundary: the_formal_closures_are_not_yet_calibrated_to_physical_weighted_Z2D_Z0D_the_current_join_translation_algebra_does_not_select_one_intertwiner_and_no_thermal_matrix_element_modulus_curve_or_LCFT_field_identity_follows
+    supports: [two_scalar_closure_amplitudes_as_the_minimal_current_model, a_Jordan_extension_only_as_additional_confluent_data, exact_invariant_first_mechanism_elimination]
+    tensions: [one_ordinary_central_defect, one_transparent_crossed_defect, automatic_nilpotency_from_the_regular_Q_derivative]
+    excludes_only: [the_declared_single_module_central_or_transparent_defect_realizations_and_regular_Q_differentiation_as_a_unique_Jordan_selector_in_the_current_algebra]
+    reusable_data_refs: [analysis/p321_homology_trace_certificate.json, analysis/p321_graded_closure_extension.json, results/p333-dual-number-gram-extension/extension.json]
+    dependency_group_refs: [p321-closure-module-exact-chain, p333-dual-number-gram-exact]
+    missing_inputs: [one_generic_Q_detach_loop_weight_generator_full_Q_lift_first_jet_Gram_and_typed_thermal_insertion]
+    next_discriminator: compute_exact_affine_Hom_after_adding_the_smallest_generic_Q_generator_then_test_any_unique_line_against_the_P333_radical_Gram_and_dimension_velocity
+    information_gain: very_high
+    compute_cost: low
+    decision_experiments: [DX_ASPECT_RATIO_Q4_SHAPE, DX_PROOF_CARRYING_MODEL_ELIMINATION]
   - id: SN_Q_LIFT_SECTION_DEPENDENCE
     title: generic_Q_lift_section_dependence_and_typed_transport_connection
     integration_status: branch_only
@@ -2781,16 +2879,16 @@ scientific_nodes:
     observer_sectors: [topology_typed, projective_completion, direction_character]
     geometries: [square_controls, gaussian_cover]
     acquisition: [exact_construction]
-    source_refs: [SRC_P334_N13_MULTIORBIT_FLUX, SRC_P334_TWO_CARRIER_ULC_CHAIN]
-    known_result: exact_HNF_examples_separate_scalar_orbit_current_timing_from_character_Gram_reinforcement_BA_plus_TM_implies_ULC_translation_regularity_collapses_every_proper_Hall_cut_and_aggregate_TM_is_exactly_4DF_less_equal_M2_plus_4Y_times_TminusD_with_one_negative_D_times_F_token_type
-    boundary: the_count_level_typed_rewrite_closes_all_984_rows_but_is_not_a_configuration_injection_the_inequality_fails_displacement_local_order_grouped_and_Fourier_SOS_routes_and_BA_is_a_separate_marked_pair_concordance_problem
-    supports: [current_timing_times_exact_character_Gram_as_the_finite_two_orbit_mechanism, one_global_cross_displacement_D_times_F_critical_pair_as_the_remaining_TM_target, aggregate_BA_as_an_independent_target]
-    tensions: [one_universal_axis_diagonal_amplitude_share, Boolean_order_axioms_alone_as_a_ULC_proof, local_or_quotient_order_pairing_as_a_TM_proof]
-    excludes_only: [the_declared_global_exchange_M_convex_real_rooted_normalized_matching_displacement_local_quotient_order_and_Fourier_SOS_proof_routes]
-    reusable_data_refs: [results/p334-two-orbit-exact-atlas/latest.json, results/p334-single-root-mechanism/latest.json, results/p334-hazard-transport-bound/latest.json, results/p334-two-carrier-abstract-theorem/latest.json, results/p334-tm-hall-uncrossing-theorem/latest.json, results/p334-tm-aggregate-motif-cone/latest.json, results/p334-tm-typed-rewrite-system/latest.json]
+    source_refs: [SRC_P334_N13_MULTIORBIT_FLUX, SRC_P334_TWO_CARRIER_ULC_CHAIN, SRC_P334_CORRECTED_ORBIT_HALL_RESERVOIR]
+    known_result: exact_HNF_examples_separate_current_timing_from_character_Gram_BA_plus_TM_implies_ULC_every_proper_Hall_cut_collapses_to_aggregate_TM_and_mark_only_union_preserving_and_base_only_configuration_injections_fail_at_N6_while_one_base_exchange_plus_one_transverse_output_mark_saturates_all_minimal_N6_rows_and_the_first_Smith_2_4_N8_gate_with_full_Hall_exactly_equivalent_to_factor_N_orbit_Hall
+    boundary: corrected_reservoir_saturation_is_proved_only_on_all_minimal_N6_rows_and_one_N8_Smith_gate_not_arbitrary_HNF_and_BA_remains_a_separate_marked_pair_concordance_problem
+    supports: [current_timing_times_exact_character_Gram_as_the_finite_two_orbit_mechanism, base_exchange_plus_transverse_mark_as_the_minimal_tested_configuration_resource, orbit_Hall_compression_as_the_general_theorem_interface, aggregate_BA_as_an_independent_target]
+    tensions: [one_universal_axis_diagonal_amplitude_share, Boolean_order_axioms_alone_as_a_ULC_proof, mark_only_union_preserving_or_base_only_pairing_as_a_TM_proof]
+    excludes_only: [the_declared_global_exchange_M_convex_real_rooted_normalized_matching_displacement_local_quotient_order_Fourier_SOS_mark_only_union_preserving_and_base_only_proof_routes]
+    reusable_data_refs: [results/p334-two-orbit-exact-atlas/latest.json, results/p334-single-root-mechanism/latest.json, results/p334-hazard-transport-bound/latest.json, results/p334-two-carrier-abstract-theorem/latest.json, results/p334-tm-hall-uncrossing-theorem/latest.json, results/p334-tm-aggregate-motif-cone/latest.json, results/p334-tm-typed-rewrite-system/latest.json, results/p334-tm-configuration-cross-switch/latest.json, results/p334-tm-translation-orbit-hall/latest.json]
     dependency_group_refs: [p334-two-carrier-exact-chain]
-    missing_inputs: [a_global_collision_free_cross_displacement_realization_of_D_times_F_to_M_times_M_or_Y_times_nonD, an_independent_BA_discordance_to_concordance_injection]
-    next_discriminator: solve_the_unique_global_TM_critical_pair_and_the_separate_BA_marked_pair_injection_or_find_the_first_exact_torus_counterexample_without_more_local_Hall_or_cone_scans
+    missing_inputs: [a_uniform_arbitrary_HNF_orbit_Hall_saturation_proof_for_the_corrected_base_exchange_plus_transverse_mark_graph, an_independent_BA_discordance_to_concordance_injection]
+    next_discriminator: prove_uniform_Alexander_saturation_of_the_corrected_orbit_graph_or_find_its_next_minimal_Hall_obstruction_and_pursue_BA_separately_without_revisiting_refuted_switches
     information_gain: very_high
     compute_cost: low
     decision_experiments: [DX_P334_HOMOLOGY_BA_TM]
@@ -3082,16 +3180,16 @@ scientific_nodes:
     observer_sectors: [topology_typed, deck_charged]
     geometries: [gaussian_cover]
     acquisition: [small_pilot, new_production, existing_data_reuse]
-    source_refs: [SRC_Z5_PROJECTIVE_LEG_PROPAGATION, SRC_Z5_PROJECTIVE_LEG_FRESH_10K, SRC_Z5_PROJECTIVE_LEG_PAIR_TRANSFER_40K, SRC_Z5_PROJECTIVE_LEG_CROSS_SCALE_80K, SRC_Z5_PROJECTIVE_LEG_RANK2_REUSE, SRC_Z5_PROJECTIVE_LEG_DIRECTION_CHARGE_REUSE, SRC_PR267_Z5_PROJECTIVE_LEG_JOINT_RANK3, SRC_P250_BIVARIATE_STATE_RESULT, SRC_P250_MAGNETIC_TRANSLATION_RESULT, SRC_P250_MODEL_FREE_HANKEL_RESULT, SRC_P250_TWO_SECTOR_BRIDGE_RESULT, SRC_Z5_CHARGED_FUSION, SRC_PR267_PROOF_CARRYING_PASSPORT]
-    known_result: the_axis_T_A_window_closes_at_common_rank_three_an_independent_400_batch_bivariate_block_rejects_the_frozen_diagonal_and_Weyl_minimal_families_and_the_model_free_degree_two_Hankel_score_rejects_rank_at_most_four_within_each_hand_keeps_rank_at_most_five_compatible_at_alpha_0p01_and_rejects_one_raw_shared_rank_at_most_five_chart
-    boundary: the_later_bridge_score_compares_extracted_null_directions_without_jointly_enforcing_both_annihilation_residuals_so_Alexander_and_identity_maps_all_survive_the_archive_has_no_TxTy_versus_TyTx_path_order_degree_six_flat_extension_or_observed_center_D_and_no_exact_rank_five_unique_bridge_noncommutation_or_closed_algebra_is_identified
-    supports: [a_topology_typed_projective_leg_pair_observer, hand_specific_truncated_five_dimensional_charts_as_live_coordinates, one_candidate_constrained_joint_null_test_before_new_data]
-    tensions: [one_component_transfer, scalar_C4_Z5_q1_character_closure, a_two_dimensional_common_rank_three_continuation, canonical_Z5_magnetic_translation, free_shared_eigenpair_commuting_rank_five, interpreting_direction_only_map_compatibility_as_a_physical_intertwiner]
-    excludes_only: [the_declared_one_component_models_rank_at_most_two_axis_T_A_recurrence_common_commuting_diagonal_rank_at_most_three_the_frozen_minimal_rank_five_Weyl_or_shared_eigenpair_realizations_and_one_raw_four_channel_shared_degree_two_rank_at_most_five_chart]
-    reusable_data_refs: [results/huawei-20260830/P250-z5-projective-leg-fresh-10k/score_10k.json, results/huawei-20260830/P250-z5-projective-leg-pair-transfer-40k/score_40k.json, results/huawei-20260830/P250-z5-projective-leg-cross-scale-n505-80k/score_80k.json, results/p250-projective-leg-joint-ta-rank/latest.json, results/huawei-20260830/P250-projective-leg-bivariate-80k/score.json, results/local-20260830/P250-projective-magnetic-translation/score.json, results/local-20260830/P250-projective-leg-hankel-rank/score.json, results/local-20260830/P250-projective-leg-annihilator-bridge/score.json]
-    dependency_group_refs: [p250-projective-leg-N325-10k, p250-projective-leg-N325-40k, p250-projective-leg-N505-80k, p250-projective-leg-N505-bivariate-80k]
-    missing_inputs: [a_candidate_constrained_joint_null_score_that_retains_both_hand_specific_annihilation_residuals_and_full_covariance, degree_five_shell_only_for_surviving_maps, degree_six_only_for_full_order_two_flat_extension]
-    next_discriminator: jointly_fit_one_projective_q_for_each_frozen_sector_map_and_score_Hplus_q_equals_zero_with_Hminus_Aq_equals_zero_on_the_same_400_delete_one_batches_using_identity_as_a_regression_control
+    source_refs: [SRC_Z5_PROJECTIVE_LEG_PROPAGATION, SRC_Z5_PROJECTIVE_LEG_FRESH_10K, SRC_Z5_PROJECTIVE_LEG_PAIR_TRANSFER_40K, SRC_Z5_PROJECTIVE_LEG_CROSS_SCALE_80K, SRC_Z5_PROJECTIVE_LEG_RANK2_REUSE, SRC_Z5_PROJECTIVE_LEG_DIRECTION_CHARGE_REUSE, SRC_PR267_Z5_PROJECTIVE_LEG_JOINT_RANK3, SRC_P250_BIVARIATE_STATE_RESULT, SRC_P250_MAGNETIC_TRANSLATION_RESULT, SRC_P250_MODEL_FREE_HANKEL_RESULT, SRC_P250_TWO_SECTOR_BRIDGE_RESULT, SRC_P250_RADIUS5_MORPHISM_RESULT, SRC_PR267_P250_JOINT_ANNIHILATION, SRC_Z5_CHARGED_FUSION, SRC_PR267_PROOF_CARRYING_PASSPORT]
+    known_result: the_axis_T_A_window_closes_at_common_rank_three_each_hand_has_a_compatible_truncated_rank_five_chart_and_the_replay_verified_radius_four_joint_annihilation_gate_keeps_Alexander_R3_while_the_independent_radius_five_direction_gate_keeps_Alexander_R2_so_the_two_frozen_survivor_sets_have_empty_intersection
+    boundary: the_radius_five_combined_map_score_reuses_the_old_80k_moments_so_the_two_gates_are_correlated_neither_marginal_survivor_is_an_identified_physical_intertwiner_and_the_archive_has_no_TxTy_versus_TyTx_path_order_degree_six_flat_extension_or_closed_algebra
+    supports: [a_topology_typed_projective_leg_pair_observer, hand_specific_truncated_five_dimensional_charts_as_live_coordinates, an_augmented_annihilation_plus_extension_operator_as_the_next_zero_sample_object]
+    tensions: [one_component_transfer, scalar_C4_Z5_q1_character_closure, a_two_dimensional_common_rank_three_continuation, canonical_Z5_magnetic_translation, free_shared_eigenpair_commuting_rank_five, every_single_fixed_parameter_free_R2_or_R3_bridge_as_a_common_explanation_of_current_annihilation_and_extension_gates]
+    excludes_only: [the_declared_one_component_models_rank_at_most_two_axis_T_A_recurrence_common_commuting_diagonal_rank_at_most_three_the_frozen_minimal_rank_five_Weyl_or_shared_eigenpair_realizations_one_raw_four_channel_shared_degree_two_rank_at_most_five_chart_and_R2_as_a_survivor_of_the_radius_four_joint_null]
+    reusable_data_refs: [results/huawei-20260830/P250-z5-projective-leg-fresh-10k/score_10k.json, results/huawei-20260830/P250-z5-projective-leg-pair-transfer-40k/score_40k.json, results/huawei-20260830/P250-z5-projective-leg-cross-scale-n505-80k/score_80k.json, results/p250-projective-leg-joint-ta-rank/latest.json, results/huawei-20260830/P250-projective-leg-bivariate-80k/score.json, results/local-20260830/P250-projective-magnetic-translation/score.json, results/local-20260830/P250-projective-leg-hankel-rank/score.json, results/local-20260830/P250-projective-leg-annihilator-bridge/score.json, results/huawei-20260830/P250-projective-leg-radius5-morphism-1200k/score.json, results/local-20260830/P250-projective-leg-joint-annihilation/score.json]
+    dependency_group_refs: [p250-projective-leg-N325-10k, p250-projective-leg-N325-40k, p250-projective-leg-N505-80k, p250-projective-leg-N505-bivariate-80k, p250-projective-leg-N505-radius5-1p2m]
+    missing_inputs: [one_augmented_candidate_constrained_operator_combining_radius_four_Hankel_rows_and_already_acquired_degree_five_shift_rows_with_old_and_fresh_influence_covariance_separated, degree_six_only_for_full_order_two_flat_extension]
+    next_discriminator: test_all_frozen_maps_in_one_augmented_annihilation_plus_extension_operator_and_preserve_the_empty_R2_R3_marginal_survivor_intersection_until_that_result
     information_gain: very_high
     compute_cost: low
     decision_experiments: [DX_Z5_CHARGED_FUSION]
@@ -3103,16 +3201,16 @@ scientific_nodes:
     observer_sectors: [global_unmarked, topology_typed, deck_charged]
     geometries: [gaussian_cover, finite_transfer_cylinder, square_controls]
     acquisition: [exact_construction, existing_data_reuse]
-    source_refs: [SRC_PR267_PROOF_CARRYING_PASSPORT, SRC_P250_BIVARIATE_STATE_RESULT, SRC_P250_MAGNETIC_TRANSLATION_RESULT, SRC_P250_MODEL_FREE_HANKEL_RESULT, SRC_P250_TWO_SECTOR_BRIDGE_RESULT, SRC_P333_DUAL_NUMBER_GRAM_RADICAL]
-    known_result: Issue_370_and_the_PR267_passport_define_a_bounded_model_image_versus_typed_confidence_set_question_P250_now_supplies_a_gauge_free_statistical_Hankel_rank_witness_and_an_audited_joint_null_target_but_no_matching_specific_exact_or_interval_SOS_certificate_has_yet_been_constructed
+    source_refs: [SRC_PR267_PROOF_CARRYING_PASSPORT, SRC_P250_BIVARIATE_STATE_RESULT, SRC_P250_MAGNETIC_TRANSLATION_RESULT, SRC_P250_MODEL_FREE_HANKEL_RESULT, SRC_P250_TWO_SECTOR_BRIDGE_RESULT, SRC_P250_RADIUS5_MORPHISM_RESULT, SRC_PR267_P250_JOINT_ANNIHILATION, SRC_P321_HOMOLOGY_TRACE_FUNCTIONAL, SRC_P321_GRADED_CLOSURE_EXTENSION, SRC_P333_DUAL_NUMBER_GRAM_RADICAL]
+    known_result: Issue_370_and_the_PR267_passport_define_a_bounded_model_image_question_P321_supplies_exact_module_extension_witnesses_and_P250_supplies_a_replay_verified_statistical_joint_annihilation_result_whose_survivor_set_is_disjoint_from_the_radius_five_direction_gate_but_no_matching_specific_exact_or_interval_SOS_certificate_has_yet_been_constructed
     boundary: convergent_moment_lower_bounds_require_boundedness_complete_gauge_coverage_and_correct_semialgebraic_encoding_a_numerical_SDP_optimum_is_not_a_proof_and_an_inconclusive_relaxation_is_not_evidence_for_or_against_the_physical_mechanism
     supports: [global_exclusion_of_a_sharply_declared_low_rank_class_instead_of_one_optimizer_initialization, dual_coordinates_as_a_candidate_measurement_design_aid]
     tensions: [certificate_work_as_a_permission_system, certifying_an_ornate_model_ladder_before_model_free_rank_structure, treating_relaxation_failure_as_model_support]
-    excludes_only: [nothing_until_an_exact_or_interval_verified_certificate_is_bound_to_a_frozen_typed_artifact]
-    reusable_data_refs: [notes/proof-carrying-operator-passport.md, results/local-20260830/P250-projective-magnetic-translation/score.json, results/local-20260830/P250-projective-leg-hankel-rank/score.json, results/local-20260830/P250-projective-leg-annihilator-bridge/score.json, results/p333-dual-number-gram-extension/extension.json]
-    dependency_group_refs: [p250-projective-leg-N505-bivariate-80k, p333-dual-number-gram-exact]
-    missing_inputs: [one_candidate_constrained_P250_joint_null_witness_with_full_covariance, one_exact_synthetic_positive_and_negative_control_with_invariant_or_full_gauge_coverage, one_verified_low_order_certificate_on_a_small_frozen_real_class]
-    next_discriminator: compile_the_P250_joint_null_first_in_gauge_free_observable_coordinates_then_certify_or_leave_explicitly_undecided_one_surviving_small_class_with_exact_or_interval_reconstruction
+    excludes_only: [the_declared_single_module_P321_central_or_transparent_defect_stories_and_R2_as_a_radius_four_joint_annihilation_survivor_while_no_generic_SOS_class_is_excluded_without_exact_or_interval_reconstruction]
+    reusable_data_refs: [notes/proof-carrying-operator-passport.md, results/local-20260830/P250-projective-leg-hankel-rank/score.json, results/local-20260830/P250-projective-leg-joint-annihilation/score.json, analysis/p321_homology_trace_certificate.json, analysis/p321_graded_closure_extension.json, results/p333-dual-number-gram-extension/extension.json]
+    dependency_group_refs: [p250-projective-leg-N505-bivariate-80k, p250-projective-leg-N505-radius5-1p2m, p321-closure-module-exact-chain, p333-dual-number-gram-exact]
+    missing_inputs: [one_augmented_P250_annihilation_plus_extension_operator, one_verified_low_order_exact_or_interval_certificate_on_a_residual_small_class]
+    next_discriminator: compile_the_augmented_P250_old_plus_degree_five_operator_or_the_P321_generic_Q_Hom_gate_in_invariant_coordinates_then_escalate_only_a_surviving_small_class_to_exact_or_interval_SOS
     information_gain: high
     compute_cost: low
     decision_experiments: [DX_PROOF_CARRYING_MODEL_ELIMINATION]
@@ -3323,6 +3421,15 @@ dependency_groups:
     source_ref: SRC_P321_FRESH_MULTISCALE_RESULT
     metadata_paths: [analysis/p321_fresh_multiscale_decision_freeze.json, results/local-20260830/P321-equal-area-fresh-100k/multiscale_score.json]
     covariance_rule: five_shapes_share_one_counter_domain_within_each_N_cross_N_domains_are_independent_root_and_E4_primary_covariances_are_retained_and_the_pilot_is_not_pooled_while_the_fit_does_not_serialize_the_full_11x11_parameter_covariance
+  - id: p321-closure-module-exact-chain
+    kind: branch_only_exact_TTbar_obstruction_two_closure_trace_and_graded_extension_chain
+    member_sizes: [2, 3, 4]
+    derived_source_refs: [SRC_P321_TTBAR_SHAPE_OBSTRUCTION, SRC_P321_HOMOLOGY_TRACE_FUNCTIONAL, SRC_P321_GRADED_CLOSURE_EXTENSION]
+    metadata_paths: [analysis/p321_homology_trace_certificate.json, analysis/p321_graded_closure_extension.json]
+    metadata_source_refs:
+      analysis/p321_homology_trace_certificate.json: SRC_P321_HOMOLOGY_TRACE_FUNCTIONAL
+      analysis/p321_graded_closure_extension.json: SRC_P321_GRADED_CLOSURE_EXTENSION
+    covariance_rule: these_are_cumulative_exact_algebraic_constraints_on_one_P321_closure_module_problem_not_independent_statistical_votes_and_width2_is_a_declared_degenerate_false_positive_for_centrality
   - id: p333-shared-phaseA-exact
     kind: shared_exact_Q_lift_transport_derivation_not_two_independent_evidence_rows
     member_sizes: [2, 3]
@@ -3375,12 +3482,22 @@ dependency_groups:
     metadata_paths: [results/p334-n13-multiorbit-flux/latest.json]
     covariance_rule: axis_diagonal_orbit_censuses_and_their_75p574_24p426_signed_shares_are_one_exact_finite_enumeration_not_statistical_votes_or_continuum_amplitudes
   - id: p334-two-carrier-exact-chain
-    kind: branch_only_cumulative_exact_HNF_atlas_two_carrier_theorem_Hall_collapse_four_face_TM_reduction_and_typed_critical_pair_classification
-    member_sizes: [7, 8, 13, 17]
+    kind: branch_only_cumulative_exact_HNF_atlas_two_carrier_theorem_Hall_collapse_four_face_TM_reduction_configuration_obstruction_and_corrected_orbit_Hall_reservoir
+    member_sizes: [6, 7, 8, 13, 17]
     enumerated_HNF_indices: [4, 5, 6, 7, 8, 9, 10, 11, 12]
-    source_ref: SRC_P334_TWO_CARRIER_ULC_CHAIN
-    metadata_paths: [results/p334-two-orbit-exact-atlas/latest.json, results/p334-single-root-mechanism/latest.json, results/p334-hazard-transport-bound/latest.json, results/p334-two-carrier-abstract-theorem/latest.json, results/p334-tm-hall-uncrossing-theorem/latest.json, results/p334-tm-aggregate-motif-cone/latest.json, results/p334-tm-typed-rewrite-system/latest.json]
-    covariance_rule: all_lineage_cards_are_cumulative_exact_transforms_of_one_mechanism_chain_984_rows_and_2470440_cuts_are_regression_checks_and_the_remaining_targets_are_one_global_D_times_F_TM_critical_pair_plus_independent_BA
+    derived_source_refs: [SRC_P334_TWO_CARRIER_ULC_CHAIN, SRC_P334_CORRECTED_ORBIT_HALL_RESERVOIR]
+    metadata_paths: [results/p334-two-orbit-exact-atlas/latest.json, results/p334-single-root-mechanism/latest.json, results/p334-hazard-transport-bound/latest.json, results/p334-two-carrier-abstract-theorem/latest.json, results/p334-tm-hall-uncrossing-theorem/latest.json, results/p334-tm-aggregate-motif-cone/latest.json, results/p334-tm-typed-rewrite-system/latest.json, results/p334-tm-configuration-cross-switch/latest.json, results/p334-tm-translation-orbit-hall/latest.json]
+    metadata_source_refs:
+      results/p334-two-orbit-exact-atlas/latest.json: SRC_P334_TWO_CARRIER_ULC_CHAIN
+      results/p334-single-root-mechanism/latest.json: SRC_P334_TWO_CARRIER_ULC_CHAIN
+      results/p334-hazard-transport-bound/latest.json: SRC_P334_TWO_CARRIER_ULC_CHAIN
+      results/p334-two-carrier-abstract-theorem/latest.json: SRC_P334_TWO_CARRIER_ULC_CHAIN
+      results/p334-tm-hall-uncrossing-theorem/latest.json: SRC_P334_TWO_CARRIER_ULC_CHAIN
+      results/p334-tm-aggregate-motif-cone/latest.json: SRC_P334_TWO_CARRIER_ULC_CHAIN
+      results/p334-tm-typed-rewrite-system/latest.json: SRC_P334_TWO_CARRIER_ULC_CHAIN
+      results/p334-tm-configuration-cross-switch/latest.json: SRC_P334_CORRECTED_ORBIT_HALL_RESERVOIR
+      results/p334-tm-translation-orbit-hall/latest.json: SRC_P334_CORRECTED_ORBIT_HALL_RESERVOIR
+    covariance_rule: all_lineage_cards_are_cumulative_exact_transforms_of_one_mechanism_chain_the_984_rows_and_2470440_cuts_are_regression_checks_mark_only_union_preserving_and_base_only_switches_are_refuted_and_the_remaining_targets_are_uniform_corrected_orbit_Hall_saturation_plus_independent_BA
   - id: p337-N13-charged-source-exact
     kind: branch_only_exact_twist_flux_and_R_odd_source_construction
     member_sizes: [13]
@@ -3476,17 +3593,24 @@ dependency_groups:
       results/p250-projective-leg-joint-ta-rank/latest.json: SRC_PR267_Z5_PROJECTIVE_LEG_JOINT_RANK3
     covariance_rule: every_T_A_hand_charge_distance_model_and_delete_one_rank_gate_uses_the_same_160_aligned_batches_and_rank_two_direction_charge_and_rank_three_results_are_correlated_views_of_one_N505_block
   - id: p250-projective-leg-N505-bivariate-80k
-    kind: branch_only_fresh_400_batch_bivariate_block_with_zero_new_sample_diagonal_Weyl_model_free_Hankel_and_direction_only_bridge_reuse
+    kind: branch_only_fresh_400_batch_bivariate_block_with_diagonal_Weyl_model_free_Hankel_direction_only_bridge_and_open_PR_joint_annihilation_reuse
     member_sizes: [505]
-    derived_source_refs: [SRC_P250_MAGNETIC_TRANSLATION_RESULT, SRC_P250_MODEL_FREE_HANKEL_RESULT, SRC_P250_TWO_SECTOR_BRIDGE_RESULT]
-    metadata_paths: [results/huawei-20260830/P250-projective-leg-bivariate-80k/response_80k.batches.csv, results/huawei-20260830/P250-projective-leg-bivariate-80k/score.json, results/local-20260830/P250-projective-magnetic-translation/score.json, results/local-20260830/P250-projective-leg-hankel-rank/score.json, results/local-20260830/P250-projective-leg-annihilator-bridge/score.json]
+    derived_source_refs: [SRC_P250_MAGNETIC_TRANSLATION_RESULT, SRC_P250_MODEL_FREE_HANKEL_RESULT, SRC_P250_TWO_SECTOR_BRIDGE_RESULT, SRC_PR267_P250_JOINT_ANNIHILATION]
+    metadata_paths: [results/huawei-20260830/P250-projective-leg-bivariate-80k/response_80k.batches.csv, results/huawei-20260830/P250-projective-leg-bivariate-80k/score.json, results/local-20260830/P250-projective-magnetic-translation/score.json, results/local-20260830/P250-projective-leg-hankel-rank/score.json, results/local-20260830/P250-projective-leg-annihilator-bridge/score.json, results/local-20260830/P250-projective-leg-joint-annihilation/score.json]
     metadata_source_refs:
       results/huawei-20260830/P250-projective-leg-bivariate-80k/response_80k.batches.csv: SRC_P250_BIVARIATE_STATE_RESULT
       results/huawei-20260830/P250-projective-leg-bivariate-80k/score.json: SRC_P250_BIVARIATE_STATE_RESULT
       results/local-20260830/P250-projective-magnetic-translation/score.json: SRC_P250_MAGNETIC_TRANSLATION_RESULT
       results/local-20260830/P250-projective-leg-hankel-rank/score.json: SRC_P250_MODEL_FREE_HANKEL_RESULT
       results/local-20260830/P250-projective-leg-annihilator-bridge/score.json: SRC_P250_TWO_SECTOR_BRIDGE_RESULT
-    covariance_rule: all_41_displacements_four_hand_charge_channels_C4_diagonal_Weyl_model_free_Hankel_and_direction_only_bridge_views_share_the_same_400_aligned_batches_and_are_one_dependency_group_not_additive_evidence
+      results/local-20260830/P250-projective-leg-joint-annihilation/score.json: SRC_PR267_P250_JOINT_ANNIHILATION
+    covariance_rule: all_41_displacements_four_hand_charge_channels_C4_diagonal_Weyl_model_free_Hankel_direction_only_and_joint_annihilation_views_share_the_same_400_aligned_batches_and_are_one_dependency_group_not_additive_evidence
+  - id: p250-projective-leg-N505-radius5-1p2m
+    kind: branch_only_fresh_400_batch_degree_five_extension_stream_with_combined_old_plus_new_direction_map_score
+    member_sizes: [505]
+    source_ref: SRC_P250_RADIUS5_MORPHISM_RESULT
+    metadata_paths: [results/huawei-20260830/P250-projective-leg-radius5-morphism-1200k/score.json]
+    covariance_rule: the_fresh_degree_five_replica_stream_is_seed_independent_from_the_old_80k_block_but_the_published_map_score_reuses_old_moments_so_the_radius_five_and_joint_annihilation_p_values_are_not_independent_and_must_be_combined_only_through_an_augmented_operator
   - id: two-observer-source-rank-production-acquired
     kind: branch_only_completed_frozen_two_size_primary_decision
     member_sizes: [325, 425]
@@ -3496,16 +3620,16 @@ dependency_groups:
 decision_experiments:
   - id: DX_P250_BIVARIATE_HANKEL
     attention_rank: 1
-    name: candidate_constrained_two_sector_joint_Hankel_null
-    status: model_free_hand_specific_rank_split_complete_direction_only_bridge_nonidentifying_joint_annihilation_score_missing
+    name: augmented_two_sector_annihilation_plus_extension_operator
+    status: radius_four_joint_annihilation_complete_and_replay_verified_radius_five_direction_complete_with_empty_R3_R2_survivor_intersection_augmented_combined_operator_missing
     scientific_node_refs: [SN_Z5_PROJECTIVE_LEG_PROPAGATION, SN_PROOF_CARRYING_MODEL_ELIMINATION]
     observer_sector_refs: [topology_typed, deck_charged]
-    source_refs: [SRC_P250_BIVARIATE_STATE_RESULT, SRC_P250_MAGNETIC_TRANSLATION_RESULT, SRC_P250_MODEL_FREE_HANKEL_RESULT, SRC_P250_TWO_SECTOR_BRIDGE_RESULT, SRC_PR267_PROOF_CARRYING_PASSPORT]
-    dependency_group_refs: [p250-projective-leg-N505-bivariate-80k]
+    source_refs: [SRC_P250_BIVARIATE_STATE_RESULT, SRC_P250_MAGNETIC_TRANSLATION_RESULT, SRC_P250_MODEL_FREE_HANKEL_RESULT, SRC_P250_TWO_SECTOR_BRIDGE_RESULT, SRC_P250_RADIUS5_MORPHISM_RESULT, SRC_PR267_P250_JOINT_ANNIHILATION, SRC_PR267_PROOF_CARRYING_PASSPORT]
+    dependency_group_refs: [p250-projective-leg-N505-bivariate-80k, p250-projective-leg-N505-radius5-1p2m]
     acquisition: existing_data_reuse
     expected_model_space_reduction: very_high
     compute_cost: low
-    decision_output: one_joint_projective_q_fit_for_each_frozen_Alexander_and_identity_map_scoring_Hplus_q_and_Hminus_Aq_with_the_full_400_batch_covariance_before_radius_five_degree_six_or_ordered_path_acquisition
+    decision_output: one_augmented_candidate_constrained_rank_operator_combining_old_radius_four_Hankel_rows_and_already_acquired_degree_five_shift_rows_with_old_and_fresh_jackknife_influence_covariance_separated_and_all_survivors_reported_without_best_p_selection
   - id: DX_PROJECTIVE_BIRTH_EXIT_FLUX
     attention_rank: 2
     name: four_generation_component_resolved_birth_completion_recurrence
@@ -3517,31 +3641,31 @@ decision_experiments:
     acquisition: existing_data_reuse
     expected_model_space_reduction: very_high
     compute_cost: low
-    decision_output: within_block_covariance_component_recurrences_for_first_birth_second_completion_and_DIRECT_RANK2_across_N85_N170_N340_N680_with_N130_N170_as_a_separate_cross_lineage_control_missing_path_fields_not_scoreable_and_a_geometry_or_modulus_covector_only_if_the_alias_survives
+    decision_output: within_block_covariance_vector_recurrence_for_first_birth_and_line_weighted_completion_across_N85_N170_N340_N680_with_DIRECT_RANK2_used_only_as_a_line_free_bypass_modulator_N130_N170_as_cross_lineage_control_and_geometry_or_modulus_only_if_the_alias_survives
   - id: DX_P334_HOMOLOGY_BA_TM
     attention_rank: 3
-    name: global_D_times_F_TM_critical_pair_and_independent_BA_injection
-    status: aggregate_TM_reduced_to_one_four_face_inequality_and_one_global_typed_critical_pair_BA_still_independent
+    name: corrected_orbit_Hall_reservoir_saturation_and_independent_BA_injection
+    status: mark_only_union_preserving_and_base_only_switches_refuted_corrected_base_exchange_plus_transverse_mark_saturates_all_N6_and_first_Smith_N8_gates_general_HNF_and_BA_open
     scientific_node_refs: [SN_P334_TWO_CARRIER_ULC_MECHANISM]
     observer_sector_refs: [topology_typed, projective_completion, direction_character]
-    source_refs: [SRC_P334_N13_MULTIORBIT_FLUX, SRC_P334_TWO_CARRIER_ULC_CHAIN]
+    source_refs: [SRC_P334_N13_MULTIORBIT_FLUX, SRC_P334_TWO_CARRIER_ULC_CHAIN, SRC_P334_CORRECTED_ORBIT_HALL_RESERVOIR]
     dependency_group_refs: [p334-N13-multiorbit-exact, p334-two-carrier-exact-chain]
     acquisition: exact_construction
     expected_model_space_reduction: very_high
     compute_cost: low
-    decision_output: collision_free_cross_displacement_D_times_F_to_M_times_M_or_Y_times_nonD_realization_plus_a_separate_BA_discordance_to_concordance_injection_or_the_first_exact_torus_counterexample
+    decision_output: uniform_arbitrary_HNF_orbit_Hall_saturation_proof_for_the_corrected_base_exchange_plus_transverse_mark_graph_or_its_next_minimal_Hall_obstruction_plus_a_separate_BA_discordance_to_concordance_injection
   - id: DX_Z5_CHARGED_FUSION
     attention_rank: 4
-    name: radius_five_or_ordered_projective_leg_extension_after_joint_sector_map
-    status: model_free_Hankel_complete_direction_only_bridge_nonidentifying_joint_sector_map_score_precedes_new_data
+    name: higher_degree_or_ordered_projective_leg_extension_after_augmented_joint_gate
+    status: radius_five_and_radius_four_joint_gates_complete_with_empty_survivor_intersection_augmented_old_plus_new_operator_precedes_degree_six_or_ordered_words
     scientific_node_refs: [SN_GLOBAL_CHARGED_SECTOR_TENSION, SN_Z5_CHARGED_CUBIC_CLOSURE, SN_Z5_PROJECTIVE_LEG_PROPAGATION]
     observer_sector_refs: [topology_typed, deck_charged]
-    source_refs: [SRC_NORM5_CHARGED, SRC_Z5_CHARGED_FUSION, SRC_Z5_CUBIC_STREAM, SRC_Z5_SEPARATION_NORMALIZED_SMOKE, SRC_Z5_LOCAL_RADIUS_SELECTOR, SRC_Z5_PROJECTIVE_LEG_PROPAGATION, SRC_Z5_PROJECTIVE_LEG_FRESH_10K, SRC_Z5_PROJECTIVE_LEG_PAIR_TRANSFER_40K, SRC_Z5_PROJECTIVE_LEG_CROSS_SCALE_80K, SRC_Z5_PROJECTIVE_LEG_RANK2_REUSE, SRC_Z5_PROJECTIVE_LEG_DIRECTION_CHARGE_REUSE, SRC_PR267_Z5_PROJECTIVE_LEG_JOINT_RANK3, SRC_P250_BIVARIATE_STATE_RESULT, SRC_P250_MAGNETIC_TRANSLATION_RESULT, SRC_P250_MODEL_FREE_HANKEL_RESULT, SRC_P250_TWO_SECTOR_BRIDGE_RESULT]
-    dependency_group_refs: [z5-cubic-smoke, z5-cubic-production-acquired, z5-linear-charged-200k, z5-normalized-multiseparation-smoke-4k, z5-local-H4-radius-common-counter-4k, z5-projective-leg-smoke-2k, p250-projective-leg-N325-10k, p250-projective-leg-N325-40k, p250-projective-leg-N505-80k, p250-projective-leg-N505-bivariate-80k]
+    source_refs: [SRC_NORM5_CHARGED, SRC_Z5_CHARGED_FUSION, SRC_Z5_CUBIC_STREAM, SRC_Z5_SEPARATION_NORMALIZED_SMOKE, SRC_Z5_LOCAL_RADIUS_SELECTOR, SRC_Z5_PROJECTIVE_LEG_PROPAGATION, SRC_Z5_PROJECTIVE_LEG_FRESH_10K, SRC_Z5_PROJECTIVE_LEG_PAIR_TRANSFER_40K, SRC_Z5_PROJECTIVE_LEG_CROSS_SCALE_80K, SRC_Z5_PROJECTIVE_LEG_RANK2_REUSE, SRC_Z5_PROJECTIVE_LEG_DIRECTION_CHARGE_REUSE, SRC_PR267_Z5_PROJECTIVE_LEG_JOINT_RANK3, SRC_P250_BIVARIATE_STATE_RESULT, SRC_P250_MAGNETIC_TRANSLATION_RESULT, SRC_P250_MODEL_FREE_HANKEL_RESULT, SRC_P250_TWO_SECTOR_BRIDGE_RESULT, SRC_P250_RADIUS5_MORPHISM_RESULT, SRC_PR267_P250_JOINT_ANNIHILATION]
+    dependency_group_refs: [z5-cubic-smoke, z5-cubic-production-acquired, z5-linear-charged-200k, z5-normalized-multiseparation-smoke-4k, z5-local-H4-radius-common-counter-4k, z5-projective-leg-smoke-2k, p250-projective-leg-N325-10k, p250-projective-leg-N325-40k, p250-projective-leg-N505-80k, p250-projective-leg-N505-bivariate-80k, p250-projective-leg-N505-radius5-1p2m]
     acquisition: exact_construction
     expected_model_space_reduction: high
     compute_cost: low
-    decision_output: only_after_DX_P250_BIVARIATE_HANKEL_a_C4_closed_radius_five_shell_for_surviving_sector_maps_then_degree_six_for_full_flat_extension_or_one_actual_TxTy_versus_TyTx_word_if_path_memory_remains_the_live_ambiguity
+    decision_output: only_after_the_augmented_old_plus_degree_five_operator_resolves_or_types_the_empty_R2_R3_intersection_use_degree_six_for_full_flat_extension_or_one_actual_TxTy_versus_TyTx_word_if_path_memory_remains_live
   - id: DX_INDEPENDENT_SOURCE_RANK_ESCAPE
     attention_rank: 5
     name: physically_independent_cross_boundary_winding_or_endpoint_hazard_source_rank_escape
@@ -3557,27 +3681,27 @@ decision_experiments:
   - id: DX_PROOF_CARRYING_MODEL_ELIMINATION
     attention_rank: 6
     name: exact_or_interval_verified_small_model_class_exclusion
-    status: invariant_first_P250_Hankel_witness_exists_joint_null_audit_is_the_first_live_certificate_target_no_exact_or_interval_SOS_certificate_yet_exists
-    scientific_node_refs: [SN_PROOF_CARRYING_MODEL_ELIMINATION, SN_Z5_PROJECTIVE_LEG_PROPAGATION, SN_CONNECTIVITY_RADICAL_HYPOTHESIS]
+    status: exact_P321_module_witnesses_and_replay_verified_P250_joint_annihilation_result_exist_augmented_cross_round_operator_and_exact_or_interval_SOS_residual_class_remain
+    scientific_node_refs: [SN_PROOF_CARRYING_MODEL_ELIMINATION, SN_Z5_PROJECTIVE_LEG_PROPAGATION, SN_P321_CLOSURE_MODULE_EXTENSION, SN_CONNECTIVITY_RADICAL_HYPOTHESIS]
     observer_sector_refs: [global_unmarked, topology_typed, deck_charged]
-    source_refs: [SRC_PR267_PROOF_CARRYING_PASSPORT, SRC_P250_BIVARIATE_STATE_RESULT, SRC_P250_MAGNETIC_TRANSLATION_RESULT, SRC_P250_MODEL_FREE_HANKEL_RESULT, SRC_P250_TWO_SECTOR_BRIDGE_RESULT, SRC_P333_DUAL_NUMBER_GRAM_RADICAL]
-    dependency_group_refs: [p250-projective-leg-N505-bivariate-80k, p333-dual-number-gram-exact]
+    source_refs: [SRC_PR267_PROOF_CARRYING_PASSPORT, SRC_P250_BIVARIATE_STATE_RESULT, SRC_P250_MODEL_FREE_HANKEL_RESULT, SRC_P250_RADIUS5_MORPHISM_RESULT, SRC_PR267_P250_JOINT_ANNIHILATION, SRC_P321_HOMOLOGY_TRACE_FUNCTIONAL, SRC_P321_GRADED_CLOSURE_EXTENSION, SRC_P333_DUAL_NUMBER_GRAM_RADICAL]
+    dependency_group_refs: [p250-projective-leg-N505-bivariate-80k, p250-projective-leg-N505-radius5-1p2m, p321-closure-module-exact-chain, p333-dual-number-gram-exact]
     acquisition: exact_construction
     expected_model_space_reduction: high
     compute_cost: low
-    decision_output: one_gauge_free_or_gauge_complete_P250_candidate_joint_null_certificate_then_one_exact_or_interval_reconstructed_small_class_certificate_or_an_explicit_undecided_result_without_turning_relaxation_order_into_a_permission_rule
+    decision_output: one_augmented_P250_cross_round_operator_or_one_P321_generic_Q_Hom_gate_in_invariant_coordinates_then_one_exact_or_interval_reconstructed_residual_small_class_certificate_or_explicit_undecided_result_without_permission_semantics
   - id: DX_ASPECT_RATIO_Q4_SHAPE
     attention_rank: 7
-    name: typed_or_second_function_aspect_ratio_projector_fingerprint
-    status: fresh_100k_three_scale_primary_complete_scale_gate_passed_conditional_E4_not_rejected
-    scientific_node_refs: [SN_P321_TOPOLOGICAL_PRG_PROJECTOR_BRIDGE, SN_P321_THERMAL_Q4_ASPECT_RATIO_SHAPE]
+    name: generic_Q_closure_extension_then_typed_modulus_fingerprint
+    status: fresh_shape_primary_complete_conditional_E4_not_rejected_two_closure_and_graded_extension_exact_regular_Q_Jordan_selector_refuted_generic_Q_Hom_gate_missing
+    scientific_node_refs: [SN_P321_TOPOLOGICAL_PRG_PROJECTOR_BRIDGE, SN_P321_THERMAL_Q4_ASPECT_RATIO_SHAPE, SN_P321_CLOSURE_MODULE_EXTENSION]
     observer_sector_refs: [topology_typed, global_rank_projector, direction_character]
-    source_refs: [SRC_P321_TOPOLOGICAL_PRG_BRIDGE, SRC_P321_THERMAL_Q4_ASPECT_RATIO, SRC_P321_EQUAL_AREA_COVARIANCE_SMOKE, SRC_P321_FRESH_MULTISCALE_FREEZE, SRC_P321_FRESH_MULTISCALE_RESULT]
-    dependency_group_refs: [p321-published-TL-sequence, p321-equal-area-N144-smoke, p321-fresh-multiscale-acquired]
-    acquisition: small_pilot
+    source_refs: [SRC_P321_TOPOLOGICAL_PRG_BRIDGE, SRC_P321_THERMAL_Q4_ASPECT_RATIO, SRC_P321_EQUAL_AREA_COVARIANCE_SMOKE, SRC_P321_FRESH_MULTISCALE_FREEZE, SRC_P321_FRESH_MULTISCALE_RESULT, SRC_P321_TTBAR_SHAPE_OBSTRUCTION, SRC_P321_HOMOLOGY_TRACE_FUNCTIONAL, SRC_P321_GRADED_CLOSURE_EXTENSION]
+    dependency_group_refs: [p321-published-TL-sequence, p321-equal-area-N144-smoke, p321-fresh-multiscale-acquired, p321-closure-module-exact-chain]
+    acquisition: exact_construction
     expected_model_space_reduction: very_high
-    compute_cost: moderate
-    decision_output: same_geometry_resolved_homology_typed_seam_or_independent_second_modulus_function_projector_distinguishing_ordinary_E4_compatibility_from_defect_contact_Jordan_or_nontransparent_sector_response_without_more_P2_minus_P0_replication
+    compute_cost: low
+    decision_output: smallest_generic_Q_detach_loop_weight_generator_and_exact_affine_Hom_Gram_gate_before_any_typed_second_modulus_acquisition_with_two_scalar_closure_amplitudes_retained_if_no_unique_extension_line_emerges
   - id: DX_Q4_SEAM_H4
     attention_rank: 8
     name: exact_Q4_singlet_charged_orientation_resolved_H4_seam

@@ -55,10 +55,31 @@ The P250 sequence also shows why certificates should follow, not replace,
 model-free structure discovery.  Canonical Weyl and free shared-eigenpair rank
 five fail, while the model-free degree-two Hankel score keeps separate
 hand-specific rank-five charts compatible and rejects one raw shared chart.
-The next short certificate is not a larger SOS ladder: jointly test each
-candidate sector map against both hand-specific annihilation residuals.  A
-direction-only singular-vector match is insufficient, and the archive still
-lacks path order.
+An independent radius-five shell rejects identity and selects
+`Alexander_R2_conjugation` within its frozen five-map family, but only at a
+thin `.01` boundary and only for the observed annihilator-line domain.  The
+Draft 400-batch joint-annihilation certificate then restores the residual
+magnitude that the direction scorer discarded.  Its identity-linear replay
+matches the old raw shared-rank statistic exactly; scientifically it rejects
+R2 (`p=.005824`) and retains R3 (`p=.077486`).  The radius-four joint and
+radius-five direction survivor sets are disjoint.  This is precisely the kind
+of proof-carrying outcome the method lane should expose: a fixed map cannot be
+promoted merely because one projection survives.  The next compiler input is
+an augmented joint operator over the old radius-four rows and the already
+acquired degree-five shifts, with old/fresh influence covariance separated.
+The archive still lacks path order.
+
+P321 supplies an even cheaper proof-carrying example without any SOS layer.
+Exact width-three/four matrices show that the homology contrast is a
+crossed-minus-trivial closure trace rather than one central defect.  A graded
+direct sum repairs pull-through exactly, while its regular Q derivative is
+semisimple and the allowed singular Jordan intertwiners remain multi-
+dimensional.  This is already a Level-0/Level-2 mechanism elimination: it
+requires an additional module and rejects automatic Jordan mixing without
+solving a generic polynomial optimization problem.  The next compiler input
+is the smallest generic-Q detach/loop-weight generator, which may reduce the
+intertwiner space to one line or certify that the extension remains extra
+data.
 
 For rank one through three, the compiler should also be invariant-first.  Use
 the shortest witness that avoids a latent similarity gauge:
@@ -72,9 +93,13 @@ the shortest witness that avoids a latent similarity gauge:
 
 This order is not a hierarchy of permission.  It is a cost hierarchy for
 finding the smallest independently checkable contradiction.  The P250
-bivariate archive now supplies the first statistical rank witness and a live
-joint-null audit target, while the P333 signed connected-history construction
-is already a non-artificial exact Jordan positive control.
+bivariate archive supplies a statistical rank witness and an exact replay-
+checked empty survivor intersection across the joint-annihilation and
+radius-five direction gates; P321 now
+supplies exact module/extension no-go witnesses; and the P333 signed
+connected-history construction is a non-artificial exact Jordan positive
+control.  Generic SOS should be reserved for the factorization classes that
+survive these smaller invariant witnesses.
 
 ## Literature-backed routes and exact boundaries
 
