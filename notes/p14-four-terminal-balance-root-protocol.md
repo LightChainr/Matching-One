@@ -43,3 +43,11 @@ baseline. No root from this screen is a rigorous percolation bound or a claim
 about the square-site threshold. Its purpose is to decide whether the frozen
 bounded family contains a structurally credible target for a later real
 comparison construction.
+
+## Pre-score algebra addendum
+
+The certificate always reports the exact primitive square-free balance
+polynomial. It labels a factor as the root's minimal polynomial only when an
+exact rational factorization certificate is supplied; otherwise it makes no
+irreducibility claim. This narrows the wording above without changing any
+candidate, root, reference value or structural gate.
