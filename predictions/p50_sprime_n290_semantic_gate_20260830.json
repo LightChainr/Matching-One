@@ -1,0 +1,41 @@
+{
+  "schema": "matching-one/observable-semantic-gate/v1",
+  "status": "semantic_gate_added_after_frozen_p50_sprime_score",
+  "frozen_kernel": "scripts/score_p50_sprime_n290.py",
+  "frozen_kernel_git_blob": "1d6d044f35758088e67b959c0a33a432a8c43b5b",
+  "target_size": 290,
+  "observable": "P4_S_prime",
+  "leading_power_in_N": 1.25,
+  "models_in_scoring_order": [
+    "q2_even_scalar_correction",
+    "rank2_jordan_log"
+  ],
+  "prediction_files": [
+    {
+      "path": "predictions/p48_sprime_q2_correction_20260828.yaml",
+      "git_blob_sha": "a1be4d846ecd0f955bce8a8f2e2d95308c5825e6"
+    },
+    {
+      "path": "predictions/p48_sprime_jordan_log_20260828.yaml",
+      "git_blob_sha": "b0bf553d4b356ad96a40a3ef2ac18d7860be5bc1"
+    }
+  ],
+  "source_descriptor": {
+    "channel": "cross",
+    "combination": "even",
+    "coordinate": "p",
+    "orientation_order": "first_minus_second",
+    "normalization": "angular_normalized",
+    "quantity": "orientation_contrast"
+  },
+  "target_descriptor": {
+    "channel": "cross",
+    "combination": "even",
+    "coordinate": "p",
+    "orientation_order": "first_minus_second",
+    "normalization": "angular_normalized",
+    "quantity": "orientation_contrast"
+  },
+  "exact_registered_map": {"scale": 1.0, "offset": 0.0},
+  "evidence_boundary": "This ordered secondary score reuses the P50 N=290 histogram. The typed gate does not turn it into independent evidence, change q2-before-Jordan chronology, refit either source prediction, or alter the frozen numerical score."
+}
