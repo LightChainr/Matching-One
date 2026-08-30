@@ -1,0 +1,190 @@
+{
+  "claim_boundary": {
+    "excluded": "transfer weights, row propagation, topological sectors, eigensolvers, published widths, resource extrapolation, checkpointing, or frontier extension",
+    "included": "exact width-1..8 detach/join transition records, rank targets, counts, row degrees, and content hashes",
+    "parent_issue": "remain open"
+  },
+  "issue": 11,
+  "maximum_width": 8,
+  "operation_order": [
+    "detach",
+    "join_cyclic_adjacent"
+  ],
+  "schema": "matching-one/planar-transition-table/v1",
+  "serialization": {
+    "format": "UTF-8 JSON Lines",
+    "json": "sorted keys and compact separators",
+    "record_order": "width, source_rank, point, operation_order",
+    "state_rank_source": "lexicographically enumerated canonical noncrossing RGS"
+  },
+  "status": "exact_small_width_transition_table_only",
+  "totals": {
+    "canonical_jsonl_sha256": "c18df595b0ff3d34a6d761b024f69fccc021e9bbf6bc6e5cc390b43ad48c462f",
+    "cases_per_operation": 15521,
+    "serialized_records": 31042,
+    "states": 2055
+  },
+  "validation": {
+    "all_targets_have_canonical_ranks": true,
+    "content_hash_algorithm": "SHA-256",
+    "independent_block_set_targets_agree": true
+  },
+  "widths": [
+    {
+      "canonical_jsonl_sha256": "b0841864fb76da261d39fe9f0e12806b257e7156a606669759a195303e537468",
+      "cases_per_operation": 1,
+      "changed_cases": {
+        "detach": 0,
+        "join_cyclic_adjacent": 0
+      },
+      "row_unique_target_degree_histogram": {
+        "1": 1
+      },
+      "serialized_records": 2,
+      "states": 1,
+      "unique_source_target_edges": {
+        "detach": 1,
+        "join_cyclic_adjacent": 1
+      },
+      "width": 1
+    },
+    {
+      "canonical_jsonl_sha256": "de75c93463d327b9b40efc7ace76a102ca00b52d3bb8934584c80ca67b1825db",
+      "cases_per_operation": 4,
+      "changed_cases": {
+        "detach": 2,
+        "join_cyclic_adjacent": 2
+      },
+      "row_unique_target_degree_histogram": {
+        "2": 2
+      },
+      "serialized_records": 8,
+      "states": 2,
+      "unique_source_target_edges": {
+        "detach": 2,
+        "join_cyclic_adjacent": 2
+      },
+      "width": 2
+    },
+    {
+      "canonical_jsonl_sha256": "90dc3ff1a64fcf746b91180de4e1b7033a51217d9443f4fd755e3c71d7401e0b",
+      "cases_per_operation": 15,
+      "changed_cases": {
+        "detach": 9,
+        "join_cyclic_adjacent": 9
+      },
+      "row_unique_target_degree_histogram": {
+        "3": 3,
+        "4": 2
+      },
+      "serialized_records": 30,
+      "states": 5,
+      "unique_source_target_edges": {
+        "detach": 10,
+        "join_cyclic_adjacent": 10
+      },
+      "width": 3
+    },
+    {
+      "canonical_jsonl_sha256": "e6669b5643c1e3033f2927441da57a0cbf7d95db82db547180cbf8ebb017091c",
+      "cases_per_operation": 56,
+      "changed_cases": {
+        "detach": 36,
+        "join_cyclic_adjacent": 36
+      },
+      "row_unique_target_degree_histogram": {
+        "4": 4,
+        "5": 10
+      },
+      "serialized_records": 112,
+      "states": 14,
+      "unique_source_target_edges": {
+        "detach": 37,
+        "join_cyclic_adjacent": 37
+      },
+      "width": 4
+    },
+    {
+      "canonical_jsonl_sha256": "319db0f70052ff27f08584d529852b3096660c88de7bf1a50ef21a0f65f4f036",
+      "cases_per_operation": 210,
+      "changed_cases": {
+        "detach": 140,
+        "join_cyclic_adjacent": 140
+      },
+      "row_unique_target_degree_histogram": {
+        "5": 5,
+        "6": 32,
+        "7": 5
+      },
+      "serialized_records": 420,
+      "states": 42,
+      "unique_source_target_edges": {
+        "detach": 141,
+        "join_cyclic_adjacent": 141
+      },
+      "width": 5
+    },
+    {
+      "canonical_jsonl_sha256": "7bf671af08f4becc7c8559390c108ee16dfd1c74d41f379bb0d4627d06ac7df4",
+      "cases_per_operation": 792,
+      "changed_cases": {
+        "detach": 540,
+        "join_cyclic_adjacent": 540
+      },
+      "row_unique_target_degree_histogram": {
+        "6": 6,
+        "7": 84,
+        "8": 42
+      },
+      "serialized_records": 1584,
+      "states": 132,
+      "unique_source_target_edges": {
+        "detach": 531,
+        "join_cyclic_adjacent": 531
+      },
+      "width": 6
+    },
+    {
+      "canonical_jsonl_sha256": "356a360af2c804b7c6c6f213b89d7bd647f9a19e1741af047830e660f76cbcee",
+      "cases_per_operation": 3003,
+      "changed_cases": {
+        "detach": 2079,
+        "join_cyclic_adjacent": 2079
+      },
+      "row_unique_target_degree_histogram": {
+        "10": 14,
+        "7": 7,
+        "8": 198,
+        "9": 210
+      },
+      "serialized_records": 6006,
+      "states": 429,
+      "unique_source_target_edges": {
+        "detach": 2010,
+        "join_cyclic_adjacent": 2010
+      },
+      "width": 7
+    },
+    {
+      "canonical_jsonl_sha256": "f1f1121b466e159eaa1855910a1ff8a67749ba208ea0b5f1c9775a1dbfd43abf",
+      "cases_per_operation": 11440,
+      "changed_cases": {
+        "detach": 8008,
+        "join_cyclic_adjacent": 8008
+      },
+      "row_unique_target_degree_histogram": {
+        "10": 816,
+        "11": 168,
+        "8": 8,
+        "9": 438
+      },
+      "serialized_records": 22880,
+      "states": 1430,
+      "unique_source_target_edges": {
+        "detach": 7631,
+        "join_cyclic_adjacent": 7631
+      },
+      "width": 8
+    }
+  ]
+}
