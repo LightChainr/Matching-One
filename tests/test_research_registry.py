@@ -146,7 +146,7 @@ class ResearchRegistryTests(unittest.TestCase):
         self.assertTrue({"orientation_order", "normalization", "quantity"}.issubset(semantics["required_fields"]))
 
     def test_frontier_is_disjoint_from_integrated_and_closed_history(self) -> None:
-        rows = self.registry["frontier_open_as_of_2026_08_29"]
+        rows = self.registry["frontier_open_as_of_2026_08_30"]
         frontier = [int(row["pr"]) for row in rows]
         self.assertEqual(len(frontier), len(set(frontier)))
         self.assertTrue(
@@ -267,9 +267,16 @@ class ResearchRegistryTests(unittest.TestCase):
         self.assertEqual(metadata_in_manifest, metadata_in_ledger)
         sources = {row["id"]: row for row in self.ledger["branch_sources"]}
         for group in groups.values():
+            per_path_sources = group.get("metadata_source_refs")
+            if per_path_sources is not None:
+                self.assertEqual(set(per_path_sources), set(group["metadata_paths"]))
             for relative in group["metadata_paths"]:
                 assert_repo_relative(self, relative)
-                source_ref = group.get("source_ref")
+                source_ref = (
+                    per_path_sources[relative]
+                    if per_path_sources is not None
+                    else group.get("source_ref")
+                )
                 if source_ref is None:
                     self.assertTrue((ROOT / relative).is_file(), relative)
                 else:

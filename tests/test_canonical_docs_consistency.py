@@ -132,7 +132,7 @@ class CanonicalDocsConsistencyTest(unittest.TestCase):
         self.assertGreaterEqual(len(numbered), 7)
         self.assertIn("K1/K2", self.roadmap)
         self.assertIn("connectivity/defect radical", self.roadmap)
-        self.assertIn("Next decision output", self.roadmap)
+        self.assertIn("Immediate decision output", self.roadmap)
 
 
 if __name__ == "__main__":
