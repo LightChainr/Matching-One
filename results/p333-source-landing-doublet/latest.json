@@ -1,0 +1,126 @@
+{
+  "canonical_restricted_gram_skew_rank": 0,
+  "claim_boundary": [
+    "Exact rational Q=1 first-jet algebra at width three only.",
+    "The mark is the fixed C3 source/landing doublet; no arbitrary two-column extension is searched.",
+    "No continuum LCFT, physical transfer matrix or formal Gaussian-K identification is made.",
+    "A width-three failure stops this line and raises only the typed-family mark-dimension lower bound."
+  ],
+  "decision": "doublet_breaks_obstruction_unique",
+  "deduplication": {
+    "081a5ed": "already excludes one scalar terminal response mark",
+    "PR385_b5c761a": "is finite-noise identifiability, not this exact landing doublet",
+    "PR393_8923acd": "is a formal Gaussian semigroup and supplies no source/landing representation",
+    "ba3135e": "already excludes unmarked scalar loop fugacity",
+    "e7e6c80": "exhausts the width-four scalar falling-factorial family and leaves the width-three scalar Gram obstruction untouched"
+  },
+  "extended_dimension": 7,
+  "final_velocity": {
+    "all_tangent_velocities_zero": true,
+    "particular_is_zero": true
+  },
+  "first_empty_restriction": null,
+  "g0_rank": 5,
+  "global_decision": "The frozen width-three source/landing doublet is genuinely non-scalar and translation covariant, and it breaks the obstruction uniquely. The dimension ladder is 4 -> 2 -> 2 -> 0; the canonical X0=T_bar,V=0 satisfies every gate and is the unique final solution. The landing columns add rank two beyond the entire scalar falling-factorial span and reduce the canonical restricted Gram-skew rank to zero.",
+  "issues": [
+    333,
+    321,
+    370
+  ],
+  "landing_dimension": 2,
+  "mark_velocity_gate": [
+    {
+      "landing_emission_block": [
+        [
+          2,
+          2
+        ],
+        [
+          -1,
+          -1
+        ]
+      ],
+      "landing_emission_rank_on_radical": 1,
+      "site": 0
+    },
+    {
+      "landing_emission_block": [
+        [
+          -1,
+          -1
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "landing_emission_rank_on_radical": 1,
+      "site": 1
+    },
+    {
+      "landing_emission_block": [
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          -1
+        ]
+      ],
+      "landing_emission_rank_on_radical": 1,
+      "site": 2
+    }
+  ],
+  "non_scalar_gate": {
+    "combined_scalar_plus_landing_rank": 4,
+    "new_non_scalar_rank": 2,
+    "passes": true,
+    "scalar_falling_factorial_rank": 2
+  },
+  "ordinary_dimension": 5,
+  "protocol": {
+    "commit": "565d276",
+    "path": "analysis/p333_source_landing_doublet_protocol.json",
+    "sha256": "3c4755239fc7262c692a3b355a002d9db0a7d9f76c5719c6fe55cd72ce86d87c"
+  },
+  "radical_dimension": 2,
+  "schema": "matching-one/p333-source-landing-doublet/v1",
+  "stages": {
+    "affine_q_jet": {
+      "affine_tangent_dimension": 4,
+      "canonical_X0_T_V0_nonzero_equations": 0,
+      "consistent": true,
+      "equations": 706,
+      "rank": 94
+    },
+    "endpoint_radical_normalized": {
+      "affine_tangent_dimension": 2,
+      "canonical_X0_T_V0_nonzero_equations": 0,
+      "consistent": true,
+      "equations": 734,
+      "rank": 96
+    },
+    "gram_self_adjoint": {
+      "affine_tangent_dimension": 2,
+      "canonical_X0_T_V0_nonzero_equations": 0,
+      "consistent": true,
+      "equations": 735,
+      "rank": 96
+    },
+    "source_landing_normalized": {
+      "affine_tangent_dimension": 0,
+      "canonical_X0_T_V0_nonzero_equations": 0,
+      "consistent": true,
+      "equations": 757,
+      "rank": 98
+    }
+  },
+  "status": "exact_rational_source_landing_doublet_certificate",
+  "translation_covariance": {
+    "G0_residual_rank": 0,
+    "G1_residual_rank": 0
+  },
+  "typed_lower_bound_if_failure": null,
+  "width": 3
+}
