@@ -112,8 +112,8 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
         self.assertEqual(
             result["counts"]["descriptor_not_applicable_generic_utility"], 1
         )
-        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 18)
-        self.assertEqual(result["counts"]["outside_registered_typed_path"], 9)
+        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 19)
+        self.assertEqual(result["counts"]["outside_registered_typed_path"], 8)
         self.assertEqual(len(result["rows"]), 35)
         statuses = {row["path"]: row["status"] for row in result["rows"]}
         for path in (
@@ -124,6 +124,7 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
             "scripts/score_intrinsic_quantile_center_n145_n290.py",
             "scripts/score_issue43_full_curve.py",
             "scripts/score_issue43_full_curve_locked.py",
+            "scripts/score_issue43_secondary.py",
             "scripts/score_issue50_n290.py",
             "scripts/score_matching_odd_synthesis.py",
             "scripts/score_p231_vacuum_kdv_sector.py",
