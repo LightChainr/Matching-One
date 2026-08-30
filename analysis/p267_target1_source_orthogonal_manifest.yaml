@@ -1,0 +1,47 @@
+schema: matching-one/post-reveal-frozen-analysis/v1
+id: P267-Target1-source-orthogonal
+issues: [215, 275]
+pull_request: 267
+parent_preregistration: 5ccab6f
+parent_result: e9a06ec
+status: rule_frozen_before_orthogonal_score
+
+inputs:
+  - results/server-20260830/P267-target1-external-Euler-2m/raw-summary/N325_2m/N325_2m.path.csv.gz
+  - results/server-20260830/P267-target1-external-Euler-2m/raw-summary/N425_2m/N425_2m.path.csv.gz
+  - results/server-20260830/P267-target1-external-Euler-2m/raw-summary/*/N*_2m.complement_audit.csv
+
+rule:
+  unit: size_and_orientation
+  center: same intrinsic matching root used by the parent score
+  beta: Re_expectation_JD_conjugate_JS / expectation_abs_JS_squared
+  beta_imaginary_policy: exact_audit_only_and_must_be_zero_at_scorer_precision
+  training: full_same_size_same_orientation_Gram_only_no_O_far_or_transfer_input
+  delete_one: recompute_intrinsic_root_and_beta_after_omitting_each_aligned_batch
+  source: J_D_perp = J_D - beta J_S
+  coupling: connected_O_far_J_D_perp = connected_O_far_J_D - beta_connected_O_far_J_S
+  P4: orientation_difference_divided_by_the_same_frozen_cos4_leverage
+
+primary:
+  - complex_P4_connected_O_far_J_D_perp_at_N325
+  - complex_P4_connected_O_far_J_D_perp_at_N425
+  - complex_transfer_N425_over_N325
+
+nulls:
+  - each_complex_coupling_is_zero_with_2d_Mahalanobis_score
+  - Gram_normal_equation_residual_is_zero_by_construction
+
+claim_boundary:
+  allowed: source_component_orthogonal_to_JS_in_the_recorded_same_next_site_Gram_metric
+  not_allowed:
+    - CFT_field_orthogonality
+    - Q4_epsilon_identity
+    - asymptotic_exponent_from_two_sizes
+    - qJ_rescue
+
+sufficiency:
+  coupling_and_transfer: fully_reconstructible_from_existing_path_aggregates
+  missing: abs_J_D_squared
+  consequence_of_missing: residual_source_norm_and_fractional_L2_energy_not_reconstructible
+  new_acquisition: forbidden
+
