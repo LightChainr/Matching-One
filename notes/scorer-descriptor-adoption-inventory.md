@@ -6,7 +6,7 @@ direct typed entrypoints importing both `ObservableDescriptor` and
 `map_observable` from `wrapping_channels`. Three frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Twenty-two paths are confirmed channel-bearing and
+a descriptor is not applicable. Twenty-four paths are confirmed channel-bearing and
 require typed migrations: `score_angular_root_amplitude.py`,
 `score_axis_pair_annihilator.py`, its stable entrypoint,
 `score_c4_self_matching_n26.py`, `score_c4_tangent_orthogonal_holdout.py`,
@@ -19,8 +19,9 @@ require typed migrations: `score_angular_root_amplitude.py`,
 `score_p48_sprime_frozen.py`, `score_p49_fullcurve_doubling.py`,
 `score_p50_fullcurve_n290.py`, `score_p50_sprime_n290.py`,
 `score_prequential_evidence.py`,
-`score_rank_gap_boundary_targets.py`, and
-`score_threshold_rank_root_doubling.py`. The remaining five files are outside a
+`score_rank_gap_boundary_targets.py`, `score_threshold_rank_root_doubling.py`,
+`score_v14_fixedp_scalar_projector.py`, and
+`score_v14_scalar_root_projector.py`. The remaining three files are outside a
 registered typed path.
 
 This closes an inventory gap: the repository now has a deterministic list,
@@ -30,7 +31,7 @@ import is added or removed without updating the manifest, or if a declared
 wrapped kernel disappears.
 
 `outside_registered_typed_path` is deliberately a triage label. Some of those
-five scripts may not compare channel-bearing quantities, some may be historical,
+three scripts may not compare channel-bearing quantities, some may be historical,
 and some may need a future typed wrapper. Static membership alone does not prove
 a semantic bug, data-provenance failure, or need for migration. Each candidate
 must be reviewed before modification; Issue #146 therefore remains open.
@@ -194,6 +195,16 @@ modes, normalization, lineage maps, model order, and covariance-group relation.
 It must also preserve that width and cocycle diagnostics reuse the same raw
 curves and are not additive evidence. Prediction chronology, multipliers,
 numerical-rank cutoff, jackknife construction, and scores remain unchanged.
+
+The two v14 scalar projectors are migration-required. The fixed-p path selects
+a free-form matching-function channel, applies cos4 weights to cancel H4, and
+reports a `N^(25/8)`-scaled scalar at explicit `p_ref`. The full-curve path
+instead solves two orientation roots, forms H4-null scalar and H4 coordinates,
+then scores fixed `beta=7/2` GLS and two ordered norm-2 lineages. A migration
+must type sector, channel, orientation weights, fixed-p versus root quantities,
+units/scalings, and lineage maps. It must preserve covariance reconstruction,
+root solving, synchronized delete-one batches, the conditional parity boundary,
+and all limitations and numerical results.
 
 The axis-pair annihilator score path is migration-required as one operational
 unit. The base scorer reconstructs the cross matching function from

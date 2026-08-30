@@ -2,11 +2,11 @@
   "boundary": "outside_registered_typed_path is an inventory status, not proof that a scorer is channel-bearing or semantically invalid",
   "corpus_glob": "scripts/*score*.py",
   "counts": {
-    "channel_bearing_migration_required": 22,
+    "channel_bearing_migration_required": 24,
     "covered_frozen_kernel": 3,
     "descriptor_not_applicable_generic_utility": 1,
     "direct_typed_entrypoint": 4,
-    "outside_registered_typed_path": 5,
+    "outside_registered_typed_path": 3,
     "total": 35
   },
   "rows": [
@@ -42,8 +42,8 @@
     {"git_blob_sha":"364878808083c88dae6a5d9ba4ecd7eb987e2c16","path":"scripts/score_prequential_evidence.py","status":"channel_bearing_migration_required"},
     {"git_blob_sha":"8f9d41b5ea77828b7683c3a48d7f0517654b980e","path":"scripts/score_rank_gap_boundary_targets.py","status":"channel_bearing_migration_required"},
     {"git_blob_sha":"463acbb63df93eb58792db5a7db012d8e6096daa","path":"scripts/score_threshold_rank_root_doubling.py","status":"channel_bearing_migration_required"},
-    {"git_blob_sha":"c7b745b60614f315955ec5bda5fd0ae152c33f24","path":"scripts/score_v14_fixedp_scalar_projector.py","status":"outside_registered_typed_path"},
-    {"git_blob_sha":"2e4bb607777c6a75a24beeed412640b977622844","path":"scripts/score_v14_scalar_root_projector.py","status":"outside_registered_typed_path"},
+    {"git_blob_sha":"c7b745b60614f315955ec5bda5fd0ae152c33f24","path":"scripts/score_v14_fixedp_scalar_projector.py","status":"channel_bearing_migration_required"},
+    {"git_blob_sha":"2e4bb607777c6a75a24beeed412640b977622844","path":"scripts/score_v14_scalar_root_projector.py","status":"channel_bearing_migration_required"},
     {"git_blob_sha":"0e8157bad50fb265efb3a0ca9cde1c795f34d995","path":"scripts/threshold_score_modes.py","status":"outside_registered_typed_path"}
   ],
   "schema": "scorer descriptor adoption inventory v1",
@@ -69,7 +69,9 @@
     "scripts/score_p50_sprime_n290.py": "reuses the P50 histogram to score P4_S_prime against ordered q2 and Jordan frozen models without typed quantity, model-order, or shared-evidence semantics",
     "scripts/score_prequential_evidence.py": "validates scored blocks with free-form channel.source/channel.target strings and accepts any truthy exact_map instead of applying the registered descriptor map",
     "scripts/score_rank_gap_boundary_targets.py": "scores the orientation-pooled paired rank gap K_plus-K_minus across sizes using implicit representation and rank-unit semantics rather than an explicit descriptor",
-    "scripts/score_threshold_rank_root_doubling.py": "scores signed threshold-rank root-gap lineages across doubled sizes with implicit genealogy, orientation-order, and sign-map semantics"
+    "scripts/score_threshold_rank_root_doubling.py": "scores signed threshold-rank root-gap lineages across doubled sizes with implicit genealogy, orientation-order, and sign-map semantics",
+    "scripts/score_v14_fixedp_scalar_projector.py": "projects a free-form matching-function channel into an H4-null fixed-p scalar with implicit sector, orientation-weight, p_ref, and N-scaling semantics",
+    "scripts/score_v14_scalar_root_projector.py": "projects paired matching roots into H4-null scalar and H4 coordinates, then scores fixed-beta and doubling-lineage reconstructions without typed quantity, orientation, or lineage maps"
   },
   "descriptor_not_applicable_generic_utilities": {
     "scripts/kappa3_half_score.py": "generic Bernoulli score-polynomial and aggregation helper; intentionally accepts an opaque caller-supplied observable D(C) and defines no topology observable"
