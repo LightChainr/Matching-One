@@ -124,15 +124,15 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
             )
         )
         self.assertEqual(result, audit(ROOT, manifest))
-        self.assertEqual(result["counts"]["total"], 48)
-        self.assertEqual(result["counts"]["direct_typed_entrypoint"], 17)
-        self.assertEqual(result["counts"]["covered_frozen_kernel"], 16)
+        self.assertEqual(result["counts"]["total"], 49)
+        self.assertEqual(result["counts"]["direct_typed_entrypoint"], 18)
+        self.assertEqual(result["counts"]["covered_frozen_kernel"], 17)
         self.assertEqual(
             result["counts"]["descriptor_not_applicable_generic_utility"], 1
         )
-        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 14)
+        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 13)
         self.assertEqual(result["counts"]["outside_registered_typed_path"], 0)
-        self.assertEqual(len(result["rows"]), 48)
+        self.assertEqual(len(result["rows"]), 49)
         statuses = {row["path"]: row["status"] for row in result["rows"]}
         for path in (
             "scripts/score_axis_pair_annihilator.py",
@@ -142,7 +142,6 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
             "scripts/score_norm4_thermal_jet.py",
             "scripts/score_norm5_thermal_jet.py",
             "scripts/score_p159_pell_hex_filter.py",
-            "scripts/score_p231_vacuum_kdv_sector.py",
             "scripts/score_p49_fullcurve_doubling.py",
             "scripts/score_p50_fullcurve_n290.py",
             "scripts/threshold_score_modes.py",
@@ -181,6 +180,14 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
         )
         self.assertEqual(
             statuses["scripts/score_v14_fixedp_scalar_projector_typed.py"],
+            "direct_typed_entrypoint",
+        )
+        self.assertEqual(
+            statuses["scripts/score_p231_vacuum_kdv_sector.py"],
+            "covered_frozen_kernel",
+        )
+        self.assertEqual(
+            statuses["scripts/score_p231_vacuum_kdv_sector_typed.py"],
             "direct_typed_entrypoint",
         )
         self.assertEqual(
