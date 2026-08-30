@@ -1,0 +1,11 @@
+{
+  "schema": "matching-one/observer-bandwidth-k-centered-euler/v1",
+  "status": "exact_tiny_torus_control",
+  "L": 3,
+  "p_values": ["1/3", "2/5", "1/2"],
+  "observer": "O_E = K - E_NN + F_0",
+  "conditional_mean": "mu_N(k)=k-2N*(k)_2/(N)_2+N*(k)_4/(N)_4",
+  "centered_observer": "O_tilde=O_E-mu_N(K)",
+  "geometry_contract": "periodic LxL square cells with N sites, 2N distinct nearest-neighbor edges, N faces, and four distinct vertices per face",
+  "boundary": "K-centering removes the occupation-count sector and, by transitivity, the degree-one Walsh projection. The remaining degree-two through degree-four envelope is kinematic and is not a three-field claim."
+}
