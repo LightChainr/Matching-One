@@ -1,0 +1,778 @@
+{
+  "schema": "matching-one/p337-risk-hazard-split/v1",
+  "status": "completed_zero_new_sample_mechanism_split",
+  "new_samples": false,
+  "issues": [
+    337,
+    334
+  ],
+  "state_current_midpoint_splits": [
+    {
+      "id": "N85",
+      "N": 85,
+      "role": "four_generation_primary",
+      "dependency_group": "p337-natural-current-N85-200k",
+      "p": 0.5927390476591579,
+      "vector_order": [
+        "angular_J12_log",
+        "angular_risk_composition_log",
+        "angular_conditional_hazard_log"
+      ],
+      "vector": [
+        0.0007217794752479717,
+        -0.0013004815220249264,
+        0.0020222609972729076
+      ],
+      "standard_error": [
+        0.0011717129995159614,
+        0.0012843924620981057,
+        0.002087948963215782
+      ],
+      "delete_one_covariance": [
+        [
+          1.3729113532346915e-06,
+          -6.684777615323233e-07,
+          2.041389114767052e-06
+        ],
+        [
+          -6.684777615323232e-07,
+          1.6496639966944337e-06,
+          -2.318141758226762e-06
+        ],
+        [
+          2.041389114767052e-06,
+          -2.318141758226762e-06,
+          4.359530872993858e-06
+        ]
+      ],
+      "delete_one_unit": "same batch removed from both orientations",
+      "coordinate_tests": {
+        "J12": {
+          "student_t": 0.6160036421428636,
+          "degrees_of_freedom": 19,
+          "two_sided_p": 0.5452019237765136,
+          "resolved_at_alpha_0_01": false
+        },
+        "risk_composition": {
+          "student_t": -1.0125265916778572,
+          "degrees_of_freedom": 19,
+          "two_sided_p": 0.3240077239040353,
+          "resolved_at_alpha_0_01": false
+        },
+        "conditional_hazard": {
+          "student_t": 0.968539477209393,
+          "degrees_of_freedom": 19,
+          "two_sided_p": 0.3449433785713707,
+          "resolved_at_alpha_0_01": false
+        }
+      },
+      "exact_midpoint_split": {
+        "delta_J12": -0.004767413756299098,
+        "risk_composition": 0.008589789139936957,
+        "conditional_hazard": -0.013357202896236119,
+        "closure_residual": 6.418476861114186e-17
+      },
+      "support_extension": {
+        "rule": "absent_side_hazard_equals_present_side_hazard; unmatched support assigned to composition",
+        "unmatched_cells": 12,
+        "absolute_weighted_J12_mass": 3.850256045242394e-09,
+        "fraction_of_absolute_delta_J12": 8.076194435935249e-07
+      },
+      "composition_minus_hazard": {
+        "estimate": -0.003322742519297834,
+        "standard_error": 0.003262740931508632,
+        "student_t": -1.0183899332030197,
+        "two_sided_p": 0.32128596561972705
+      },
+      "dominant_absolute_component": "conditional_hazard",
+      "mark12_h4": {
+        "status": "not_scoreable",
+        "reason": "the primary state-current birth archive has no mark12 columns"
+      }
+    },
+    {
+      "id": "N170",
+      "N": 170,
+      "role": "four_generation_primary",
+      "dependency_group": "p337-natural-current-N170-8m",
+      "p": 0.5927324658065016,
+      "vector_order": [
+        "angular_J12_log",
+        "angular_risk_composition_log",
+        "angular_conditional_hazard_log"
+      ],
+      "vector": [
+        0.0011444982656130564,
+        -0.00038451517179352167,
+        0.0015290134374065954
+      ],
+      "standard_error": [
+        0.00027807641574548024,
+        0.00036170201701873564,
+        0.0005422202842694858
+      ],
+      "delete_one_covariance": [
+        [
+          7.732649299385318e-08,
+          -4.292399728201839e-08,
+          1.2025049027586692e-07
+        ],
+        [
+          -4.29239972820184e-08,
+          1.3082834911542172e-07,
+          -1.7375234639742991e-07
+        ],
+        [
+          1.2025049027586692e-07,
+          -1.7375234639742991e-07,
+          2.9400283667328196e-07
+        ]
+      ],
+      "delete_one_unit": "same batch removed from both orientations",
+      "coordinate_tests": {
+        "J12": {
+          "student_t": 4.11576890670441,
+          "degrees_of_freedom": 79,
+          "two_sided_p": 9.407137338943369e-05,
+          "resolved_at_alpha_0_01": true
+        },
+        "risk_composition": {
+          "student_t": -1.0630716824938367,
+          "degrees_of_freedom": 79,
+          "two_sided_p": 0.2909882632915158,
+          "resolved_at_alpha_0_01": false
+        },
+        "conditional_hazard": {
+          "student_t": 2.8199119099105285,
+          "degrees_of_freedom": 79,
+          "two_sided_p": 0.006070493599652756,
+          "resolved_at_alpha_0_01": true
+        }
+      },
+      "exact_midpoint_split": {
+        "delta_J12": 0.007559468467240154,
+        "risk_composition": -0.002539742001960617,
+        "conditional_hazard": 0.010099210469200887,
+        "closure_residual": -1.1622647289044608e-16
+      },
+      "support_extension": {
+        "rule": "absent_side_hazard_equals_present_side_hazard; unmatched support assigned to composition",
+        "unmatched_cells": 21,
+        "absolute_weighted_J12_mass": 2.8011107881505687e-13,
+        "fraction_of_absolute_delta_J12": 3.705433523917074e-11
+      },
+      "composition_minus_hazard": {
+        "estimate": -0.001913528609200117,
+        "standard_error": 0.0008788264211911039,
+        "student_t": -2.177368093470205,
+        "two_sided_p": 0.03243763564940246
+      },
+      "dominant_absolute_component": "conditional_hazard",
+      "mark12_h4": {
+        "status": "not_scoreable",
+        "reason": "the primary state-current birth archive has no mark12 columns"
+      }
+    },
+    {
+      "id": "N340",
+      "N": 340,
+      "role": "four_generation_primary",
+      "dependency_group": "p337-natural-current-N340-12m",
+      "p": 0.5927470821267353,
+      "vector_order": [
+        "angular_J12_log",
+        "angular_risk_composition_log",
+        "angular_conditional_hazard_log"
+      ],
+      "vector": [
+        0.0006657924691391759,
+        -0.00029413758634356754,
+        0.0009599300554827319
+      ],
+      "standard_error": [
+        0.0002936509290917764,
+        0.00040555260553525486,
+        0.00057804055129388
+      ],
+      "delete_one_covariance": [
+        [
+          8.623086815646349e-08,
+          -4.171354746360123e-08,
+          1.2794441562007208e-07
+        ],
+        [
+          -4.1713547463601226e-08,
+          1.6447291585643404e-07,
+          -2.0618646332004436e-07
+        ],
+        [
+          1.2794441562007208e-07,
+          -2.0618646332004436e-07,
+          3.3413087894013266e-07
+        ]
+      ],
+      "delete_one_unit": "same batch removed from both orientations",
+      "coordinate_tests": {
+        "J12": {
+          "student_t": 2.2672922275382685,
+          "degrees_of_freedom": 79,
+          "two_sided_p": 0.02610537867155947,
+          "resolved_at_alpha_0_01": false
+        },
+        "risk_composition": {
+          "student_t": -0.7252760365214767,
+          "degrees_of_freedom": 79,
+          "two_sided_p": 0.4704256685386341,
+          "resolved_at_alpha_0_01": false
+        },
+        "conditional_hazard": {
+          "student_t": 1.6606621340562258,
+          "degrees_of_freedom": 79,
+          "two_sided_p": 0.10074552422800347,
+          "resolved_at_alpha_0_01": false
+        }
+      },
+      "exact_midpoint_split": {
+        "delta_J12": -0.004397642050761993,
+        "risk_composition": 0.0019428153341634088,
+        "conditional_hazard": -0.006340457384925326,
+        "closure_residual": -7.546047120499111e-17
+      },
+      "support_extension": {
+        "rule": "absent_side_hazard_equals_present_side_hazard; unmatched support assigned to composition",
+        "unmatched_cells": 31,
+        "absolute_weighted_J12_mass": 2.0050198631266362e-17,
+        "fraction_of_absolute_delta_J12": 4.559306646568063e-15
+      },
+      "composition_minus_hazard": {
+        "estimate": -0.0012540676418262993,
+        "standard_error": 0.0009544510052572921,
+        "student_t": -1.3139151563764546,
+        "two_sided_p": 0.192677435478932
+      },
+      "dominant_absolute_component": "conditional_hazard",
+      "mark12_h4": {
+        "status": "not_scoreable",
+        "reason": "the primary state-current birth archive has no mark12 columns"
+      }
+    },
+    {
+      "id": "N680",
+      "N": 680,
+      "role": "four_generation_primary",
+      "dependency_group": "p337-natural-current-N680-120m",
+      "p": 0.592746229335313,
+      "vector_order": [
+        "angular_J12_log",
+        "angular_risk_composition_log",
+        "angular_conditional_hazard_log"
+      ],
+      "vector": [
+        0.00015564914295233877,
+        -0.00014162713009665566,
+        0.0002972762730490148
+      ],
+      "standard_error": [
+        0.00015127082957385395,
+        0.00016368353234860722,
+        0.0002467266799027423
+      ],
+      "delete_one_covariance": [
+        [
+          2.2882863879961965e-08,
+          -5.599445966875569e-09,
+          2.848230984683645e-08
+        ],
+        [
+          -5.599445966875569e-09,
+          2.6792298762117545e-08,
+          -3.239174472899403e-08
+        ],
+        [
+          2.8482309846836455e-08,
+          -3.239174472899403e-08,
+          6.087405457583027e-08
+        ]
+      ],
+      "delete_one_unit": "same batch removed from both orientations",
+      "coordinate_tests": {
+        "J12": {
+          "student_t": 1.0289435404751794,
+          "degrees_of_freedom": 79,
+          "two_sided_p": 0.30664627536345956,
+          "resolved_at_alpha_0_01": false
+        },
+        "risk_composition": {
+          "student_t": -0.865249717332733,
+          "degrees_of_freedom": 79,
+          "two_sided_p": 0.3895216837675792,
+          "resolved_at_alpha_0_01": false
+        },
+        "conditional_hazard": {
+          "student_t": 1.2048809361281834,
+          "degrees_of_freedom": 79,
+          "two_sided_p": 0.23184632084194082,
+          "resolved_at_alpha_0_01": false
+        }
+      },
+      "exact_midpoint_split": {
+        "delta_J12": 0.0010280812706616915,
+        "risk_composition": -0.0009354641927872602,
+        "conditional_hazard": 0.001963545463449086,
+        "closure_residual": -1.3444106938820255e-16
+      },
+      "support_extension": {
+        "rule": "absent_side_hazard_equals_present_side_hazard; unmatched support assigned to composition",
+        "unmatched_cells": 75,
+        "absolute_weighted_J12_mass": 1.8646719741797216e-28,
+        "fraction_of_absolute_delta_J12": 1.813739854417915e-25
+      },
+      "composition_minus_hazard": {
+        "estimate": -0.0004389034031456704,
+        "standard_error": 0.0003904482587948573,
+        "student_t": -1.124101320109284,
+        "two_sided_p": 0.2643741666678517
+      },
+      "dominant_absolute_component": "conditional_hazard",
+      "mark12_h4": {
+        "status": "not_scoreable",
+        "reason": "the primary state-current birth archive has no mark12 columns"
+      }
+    },
+    {
+      "id": "N130-control",
+      "N": 130,
+      "role": "independent_cross_lineage_control",
+      "dependency_group": "marked-birth-pilot-634040d",
+      "p": 0.5930232479629189,
+      "vector_order": [
+        "angular_J12_log",
+        "angular_risk_composition_log",
+        "angular_conditional_hazard_log"
+      ],
+      "vector": [
+        -0.007524227450868195,
+        -0.000243172594716533,
+        -0.007281054856151664
+      ],
+      "standard_error": [
+        0.004962383303667399,
+        0.007205226720332216,
+        0.010127539862041113
+      ],
+      "delete_one_covariance": [
+        [
+          2.462524805251697e-05,
+          -1.3013261756662702e-05,
+          3.76385098091796e-05
+        ],
+        [
+          -1.3013261756662702e-05,
+          5.1915292091389345e-05,
+          -6.49285538480521e-05
+        ],
+        [
+          3.763850980917961e-05,
+          -6.492855384805211e-05,
+          0.00010256706365723174
+        ]
+      ],
+      "delete_one_unit": "same batch removed from both orientations",
+      "coordinate_tests": {
+        "J12": {
+          "student_t": -1.5162527742078067,
+          "degrees_of_freedom": 19,
+          "two_sided_p": 0.14591695761334883,
+          "resolved_at_alpha_0_01": false
+        },
+        "risk_composition": {
+          "student_t": -0.03374947162041847,
+          "degrees_of_freedom": 19,
+          "two_sided_p": 0.9734289637666668,
+          "resolved_at_alpha_0_01": false
+        },
+        "conditional_hazard": {
+          "student_t": -0.718936183449811,
+          "degrees_of_freedom": 19,
+          "two_sided_p": 0.4809295341122042,
+          "resolved_at_alpha_0_01": false
+        }
+      },
+      "exact_midpoint_split": {
+        "delta_J12": -0.04250268486240002,
+        "risk_composition": -0.001373627821314246,
+        "conditional_hazard": -0.041129057041085784,
+        "closure_residual": 1.3877787807814457e-17
+      },
+      "support_extension": {
+        "rule": "absent_side_hazard_equals_present_side_hazard; unmatched support assigned to composition",
+        "unmatched_cells": 18,
+        "absolute_weighted_J12_mass": 1.2467021860965232e-07,
+        "fraction_of_absolute_delta_J12": 2.9332316067388434e-06
+      },
+      "composition_minus_hazard": {
+        "estimate": 0.007037882261435131,
+        "standard_error": 0.016862368263228192,
+        "student_t": 0.4173721123611479,
+        "two_sided_p": 0.681084590662202
+      },
+      "dominant_absolute_component": "conditional_hazard",
+      "mark12_h4": {
+        "status": "available_in_source_and_scored_separately_below"
+      }
+    }
+  ],
+  "age_standardized_mark12_h4": [
+    {
+      "id": "N325",
+      "N": 325,
+      "k0": 193,
+      "role": "independent_P334_production_age_block_not_four_generation_replica",
+      "delta_cos4": 0.7634556213017751,
+      "vector_order": [
+        "first_age_standardized_mark12_h4_hazard",
+        "second_age_standardized_mark12_h4_hazard",
+        "angular_age_standardized_mark12_h4_conditional_hazard",
+        "angular_age_standardized_unmarked_completion_hazard",
+        "angular_observed_mark12_h4_hazard",
+        "angular_mark12_h4_risk_composition_remainder"
+      ],
+      "vector": [
+        0.001366376375948323,
+        0.0013660050903286454,
+        -4.863224650104016e-07,
+        -0.00011382346016478522,
+        -4.329187759658835e-06,
+        -3.842865294648433e-06
+      ],
+      "standard_error": [
+        0.00017924062886452122,
+        0.0001524943547292652,
+        0.0003278356423190878,
+        0.0004193573954534249,
+        0.00032822098168739885,
+        7.706723525043569e-06
+      ],
+      "delete_one_covariance": [
+        [
+          3.212720303574904e-08,
+          -3.6311668295046414e-09,
+          -4.683752253245809e-08,
+          -9.94097451633894e-09,
+          -4.674421337266174e-08,
+          9.330915979635186e-11
+        ],
+        [
+          -3.631166829504642e-09,
+          2.3254528224294967e-08,
+          3.521579290746011e-08,
+          -1.7457027790982025e-08,
+          3.538293237047638e-08,
+          1.671394630162626e-10
+        ],
+        [
+          -4.683752253245809e-08,
+          3.521579290746011e-08,
+          1.0747620837476887e-07,
+          -9.844780842437697e-09,
+          1.0757291380355855e-07,
+          9.670542878972048e-11
+        ],
+        [
+          -9.940974516338936e-09,
+          -1.7457027790982025e-08,
+          -9.844780842437697e-09,
+          1.758606251214802e-07,
+          -1.0028001330479044e-08,
+          -1.8322048804134669e-10
+        ],
+        [
+          -4.674421337266176e-08,
+          3.5382932370476374e-08,
+          1.0757291380355859e-07,
+          -1.002800133047904e-08,
+          1.077290128198398e-07,
+          1.5609901628118052e-10
+        ],
+        [
+          9.330915979635182e-11,
+          1.6713946301626256e-10,
+          9.670542878972053e-11,
+          -1.8322048804134656e-10,
+          1.5609901628118052e-10,
+          5.939358749145996e-11
+        ]
+      ],
+      "delete_one_unit": "same batch removed from both orientations",
+      "conditional_mark12_test": {
+        "student_t": -0.0014834337766637833,
+        "degrees_of_freedom": 99,
+        "two_sided_p": 0.9988193766199955,
+        "resolved_at_alpha_0_01": false
+      },
+      "standardization": {
+        "common_age_line_strata": 321,
+        "common_support_coverage": {
+          "first": 0.9999692838305696,
+          "second": 0.9999518097096863
+        },
+        "target_distribution": "equal-orientation mixture of risk distributions on common (ell,age) support",
+        "observed_marked_hazard": {
+          "first": 0.0013679665457034661,
+          "second": 0.0013646614029726837
+        },
+        "standardized_marked_hazard": {
+          "first": 0.001366376375948323,
+          "second": 0.0013660050903286454
+        },
+        "standardized_unmarked_hazard": {
+          "first": 0.06319131133882759,
+          "second": 0.06310441217832877
+        }
+      },
+      "source": {
+        "path": "/Volumes/Mac Data/Research/\u8bba\u6587\u9879\u76ee\u603b\u5e93/Matching-One-large-artifacts/P267-two-observer-source-rank-2m/N325_2m/N325_2m.marked_births.csv",
+        "sha256": "c9bfb3ee791474491ad6b81e55259d9906befe9dac1c461f72087658f4c7219b",
+        "hash_verification": "reused_from_p334_frozen_production_score"
+      }
+    },
+    {
+      "id": "N425",
+      "N": 425,
+      "k0": 252,
+      "role": "independent_P334_production_age_block_not_four_generation_replica",
+      "delta_cos4": 0.8928996539792388,
+      "vector_order": [
+        "first_age_standardized_mark12_h4_hazard",
+        "second_age_standardized_mark12_h4_hazard",
+        "angular_age_standardized_mark12_h4_conditional_hazard",
+        "angular_age_standardized_unmarked_completion_hazard",
+        "angular_observed_mark12_h4_hazard",
+        "angular_mark12_h4_risk_composition_remainder"
+      ],
+      "vector": [
+        0.0011361270043993665,
+        0.0006368668171709135,
+        -0.0005591447874388598,
+        -2.1960920937410356e-05,
+        -0.0005547941465245955,
+        4.350640914264339e-06
+      ],
+      "standard_error": [
+        0.0001274899969699705,
+        0.00014820066223544958,
+        0.00023302239506513094,
+        0.00038764920935126164,
+        0.00023286885009404183,
+        7.442829389191086e-06
+      ],
+      "delete_one_covariance": [
+        [
+          1.6253699327403084e-08,
+          -2.537082457508554e-09,
+          -2.1044673610488994e-08,
+          9.107525037848144e-09,
+          -2.1016983512157853e-08,
+          2.7690098331141504e-11
+        ],
+        [
+          -2.537082457508554e-09,
+          2.196343628702581e-08,
+          2.7439274542606143e-08,
+          -1.1784724826664641e-08,
+          2.741029633264246e-08,
+          -2.8978209963688843e-11
+        ],
+        [
+          -2.1044673610488994e-08,
+          2.7439274542606143e-08,
+          5.4299436601889954e-08,
+          -2.339820580219259e-08,
+          5.423597111834732e-08,
+          -6.34654835426201e-11
+        ],
+        [
+          9.107525037848146e-09,
+          -1.1784724826664641e-08,
+          -2.3398205802192593e-08,
+          1.502719095106583e-07,
+          -2.321721496317321e-08,
+          1.809908390193873e-10
+        ],
+        [
+          -2.1016983512157853e-08,
+          2.741029633264245e-08,
+          5.423597111834732e-08,
+          -2.321721496317321e-08,
+          5.422790134412133e-08,
+          -8.069774226013413e-12
+        ],
+        [
+          2.7690098331141546e-11,
+          -2.897820996368884e-11,
+          -6.346548354262005e-11,
+          1.8099083901938737e-10,
+          -8.069774226013425e-12,
+          5.5395709316606554e-11
+        ]
+      ],
+      "delete_one_unit": "same batch removed from both orientations",
+      "conditional_mark12_test": {
+        "student_t": -2.399532402379505,
+        "degrees_of_freedom": 99,
+        "two_sided_p": 0.018286592757907404,
+        "resolved_at_alpha_0_01": false
+      },
+      "standardization": {
+        "common_age_line_strata": 367,
+        "common_support_coverage": {
+          "first": 0.9999455636605217,
+          "second": 0.9999466657185017
+        },
+        "target_distribution": "equal-orientation mixture of risk distributions on common (ell,age) support",
+        "observed_marked_hazard": {
+          "first": 0.001133164617712474,
+          "second": 0.0006377891162509555
+        },
+        "standardized_marked_hazard": {
+          "first": 0.0011361270043993665,
+          "second": 0.0006368668171709135
+        },
+        "standardized_unmarked_hazard": {
+          "first": 0.05243953081116915,
+          "second": 0.05241992191246307
+        }
+      },
+      "source": {
+        "path": "/Volumes/Mac Data/Research/\u8bba\u6587\u9879\u76ee\u603b\u5e93/Matching-One-large-artifacts/P267-two-observer-source-rank-2m/N425_2m/N425_2m.marked_births.csv",
+        "sha256": "4f1315ceb790962c9c24b67baa7644dab4ffba781920fe8d468b1ebe490ad4d0",
+        "hash_verification": "reused_from_p334_frozen_production_score"
+      }
+    },
+    {
+      "id": "N130-control",
+      "N": 130,
+      "k0": 77,
+      "role": "independent_low_statistics_cross_lineage_control",
+      "delta_cos4": 1.3633136094674556,
+      "vector_order": [
+        "first_age_standardized_mark12_h4_hazard",
+        "second_age_standardized_mark12_h4_hazard",
+        "angular_age_standardized_mark12_h4_conditional_hazard",
+        "angular_age_standardized_unmarked_completion_hazard",
+        "angular_observed_mark12_h4_hazard",
+        "angular_mark12_h4_risk_composition_remainder"
+      ],
+      "vector": [
+        0.0013793933034347166,
+        0.0008837000633951899,
+        -0.0003635944338831598,
+        -0.004838508624345256,
+        -0.0005331448175448389,
+        -0.00016955038366167917
+      ],
+      "standard_error": [
+        0.002068452713377038,
+        0.0022618691518560643,
+        0.0020666342036193518,
+        0.002673306269772515,
+        0.0021988637263389557,
+        0.0002776105012496336
+      ],
+      "delete_one_covariance": [
+        [
+          4.278496627476832e-06,
+          7.282042343520777e-07,
+          -2.6041641251652923e-06,
+          6.401751351679016e-07,
+          -2.8643053525193326e-06,
+          -2.6014122735404024e-07
+        ],
+        [
+          7.282042343520778e-07,
+          5.1160520601180715e-06,
+          3.2185168513648133e-06,
+          3.007551160392433e-07,
+          3.290313289171253e-06,
+          7.179643780643982e-08
+        ],
+        [
+          -2.6041641251652923e-06,
+          3.2185168513648133e-06,
+          4.270976931569392e-06,
+          -2.489669411143373e-07,
+          4.514455514087278e-06,
+          2.434785825178869e-07
+        ],
+        [
+          6.401751351679016e-07,
+          3.007551160392432e-07,
+          -2.489669411143374e-07,
+          7.146566412005037e-06,
+          -9.677309767108571e-08,
+          1.521938434432514e-07
+        ],
+        [
+          -2.8643053525193326e-06,
+          3.290313289171253e-06,
+          4.514455514087278e-06,
+          -9.677309767108578e-08,
+          4.835001687009238e-06,
+          3.2054617292195977e-07
+        ],
+        [
+          -2.601412273540402e-07,
+          7.179643780643987e-08,
+          2.434785825178869e-07,
+          1.5219384344325142e-07,
+          3.2054617292195977e-07,
+          7.706759040407283e-08
+        ]
+      ],
+      "delete_one_unit": "same batch removed from both orientations",
+      "conditional_mark12_test": {
+        "student_t": -0.1759355541713125,
+        "degrees_of_freedom": 19,
+        "two_sided_p": 0.8622061706216119,
+        "resolved_at_alpha_0_01": false
+      },
+      "standardization": {
+        "common_age_line_strata": 101,
+        "common_support_coverage": {
+          "first": 0.9988538084818173,
+          "second": 0.999267629211132
+        },
+        "target_distribution": "equal-orientation mixture of risk distributions on common (ell,age) support",
+        "observed_marked_hazard": {
+          "first": 0.0013545899760341773,
+          "second": 0.0006277463904582549
+        },
+        "standardized_marked_hazard": {
+          "first": 0.0013793933034347166,
+          "second": 0.0008837000633951899
+        },
+        "standardized_unmarked_hazard": {
+          "first": 0.11416437228722469,
+          "second": 0.10756796763012914
+        }
+      }
+    }
+  ],
+  "decision": {
+    "primary_absolute_dominance_by_size": {
+      "N85": "conditional_hazard",
+      "N170": "conditional_hazard",
+      "N340": "conditional_hazard",
+      "N680": "conditional_hazard"
+    },
+    "primary_mark12_status": "not_scoreable_in_all_four_primary_archives",
+    "point_direction": "all_four_primary_generations_have_positive_angular_conditional_hazard_and_negative_angular_risk_composition_so_composition_partially_cancels_the_completion_H4",
+    "interpretation_rule": "Each generation is scored as its own covariance block; no cross-generation vote, pooled replicate, shared-amplitude fit or cross-lineage substitution is made."
+  },
+  "claim_boundary": [
+    "The midpoint identity is an exact algebraic attribution on observed (primitive line,current-age layer) cells.",
+    "Off-support hazard is not identified; assigning unmatched support entirely to composition avoids fabricating a hazard contrast and its weighted mass is reported.",
+    "N85/N170/N340/N680 contain no mark12 field; N130 and P334 N325/N425 mark scores are controls, not replacements or extra generation votes.",
+    "No field, exponent, intrinsic memory variable or continuum mechanism is identified."
+  ]
+}
