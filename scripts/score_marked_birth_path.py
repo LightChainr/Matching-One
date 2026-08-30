@@ -129,6 +129,19 @@ VALUE_COLUMNS = (
     "sum_O_near_W_line_im",
     "sum_O_sep4_W_line_re",
     "sum_O_sep4_W_line_im",
+    "sum_F3_H",
+    "sum_F3_D",
+    "sum_F3_H2",
+    "sum_F3_D2",
+    "sum_F3_H_D",
+    "sum_F3_H_W_line_re",
+    "sum_F3_H_W_line_im",
+    "sum_F3_D_W_line_re",
+    "sum_F3_D_W_line_im",
+    "sum_F3_H_J_S_re",
+    "sum_F3_H_J_S_im",
+    "sum_F3_D_J_S_re",
+    "sum_F3_D_J_S_im",
 )
 
 

@@ -1,0 +1,64 @@
+{
+  "schema": "matching-one/p337-f3-line-observer-pilot-freeze/v1",
+  "status": "frozen_before_pilot_reveal",
+  "issues": [337, 334],
+  "question": "Does an exact projective-winding observer read the W_line state as a coupling direction distinct from JS?",
+  "observer": {
+    "backend": "existing P1(F3) flat-twist/projective-line topology lane",
+    "support": "current strict rank-one plateau K1<=k<K2; zero elsewhere",
+    "rows": {
+      "F3_H": "+1 for ell mod 3 on either projective axis, -1 on either projective diagonal",
+      "F3_D": "+1 on projective (1,1), -1 on projective (1,-1), zero on axes"
+    },
+    "exactness": "primitive integral ell never vanishes modulo 3; the four projective classes are exhaustive and sign invariant",
+    "relation_to_previous_null": "these rows use the ambient-H1 line itself, not O_far, O_sep4, qJ, q^2J or a local motif"
+  },
+  "source_columns": {
+    "W_line": "1[K1<=k<K2] exp(i4 arg(P ell))",
+    "JS": "existing even canonical-site spin-4 birth source, evaluated in the same pre-insertion batch"
+  },
+  "runs": {
+    "N325": {
+      "samples": 20000,
+      "batches": 20,
+      "k0": 193,
+      "seed": 20260830337225,
+      "replica_offset": 34925000000,
+      "first_matrix": [[17, -6], [6, 17]],
+      "second_matrix": [[18, -1], [1, 18]],
+      "first_rep": [17, 6],
+      "second_rep": [18, 1],
+      "planned_host": "Huawei-CodeBuddy-TgFr7R"
+    },
+    "N425": {
+      "samples": 20000,
+      "batches": 20,
+      "k0": 252,
+      "seed": 20260830337325,
+      "replica_offset": 35025000000,
+      "first_matrix": [[16, -13], [13, 16]],
+      "second_matrix": [[19, -8], [8, 19]],
+      "first_rep": [16, 13],
+      "second_rep": [19, 8],
+      "planned_host": "Huawei-CodeBuddy-XPk2PZ"
+    }
+  },
+  "primary": {
+    "per_orientation_matrix_rows": ["F3_H", "F3_D"],
+    "per_orientation_matrix_columns": ["W_line", "JS"],
+    "statistic": "two complex determinants, first and second orientation, scored jointly with the aligned delete-one 4x4 covariance",
+    "null": "both projective-observer coupling matrices have rank at most one",
+    "decision": "within each size, coupling-rank lift requires joint chi-square_4 > 13.27670413599 (alpha=0.01)",
+    "size_policy": "N325 and N425 remain independent evidence blocks and are not pooled"
+  },
+  "secondary": [
+    "per-orientation normalized complex wedge",
+    "F3_H/F3_D means, variances and covariance",
+    "same-batch W_line residual norm after JS projection"
+  ],
+  "stop_rules": [
+    "stop after 20k per size when the joint gate is clearly resolved or clearly null",
+    "do not change k0, characters, source columns, matrices, gate or counters after reveal",
+    "do not name a CFT field or exponent from this finite projective-line rank test"
+  ]
+}
