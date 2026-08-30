@@ -1,0 +1,24 @@
+{
+  "makes_e4_or_production_claim": false,
+  "negative_family": [
+    {"approaches_limit_from": "above", "limit": "-1", "p": 1, "pell_residual": -2, "q": 1, "scaled_shape_defect": {"rational": "1", "sqrt3": "-1"}, "shape_side": "below", "site_count": 2},
+    {"approaches_limit_from": "above", "limit": "-1", "p": 5, "pell_residual": -2, "q": 3, "scaled_shape_defect": {"rational": "25", "sqrt3": "-15"}, "shape_side": "below", "site_count": 30},
+    {"approaches_limit_from": "above", "limit": "-1", "p": 19, "pell_residual": -2, "q": 11, "scaled_shape_defect": {"rational": "361", "sqrt3": "-209"}, "shape_side": "below", "site_count": 418},
+    {"approaches_limit_from": "above", "limit": "-1", "p": 71, "pell_residual": -2, "q": 41, "scaled_shape_defect": {"rational": "5041", "sqrt3": "-2911"}, "shape_side": "below", "site_count": 5822}
+  ],
+  "negative_limit": "-1",
+  "negative_over_positive_limit": "-2",
+  "parent_issue": "remain open",
+  "positive_family": [
+    {"approaches_limit_from": "above", "limit": "1/2", "p": 2, "pell_residual": 1, "q": 1, "scaled_shape_defect": {"rational": "4", "sqrt3": "-2"}, "shape_side": "above", "site_count": 4},
+    {"approaches_limit_from": "above", "limit": "1/2", "p": 7, "pell_residual": 1, "q": 4, "scaled_shape_defect": {"rational": "49", "sqrt3": "-28"}, "shape_side": "above", "site_count": 56},
+    {"approaches_limit_from": "above", "limit": "1/2", "p": 26, "pell_residual": 1, "q": 15, "scaled_shape_defect": {"rational": "676", "sqrt3": "-390"}, "shape_side": "above", "site_count": 780},
+    {"approaches_limit_from": "above", "limit": "1/2", "p": 97, "pell_residual": 1, "q": 56, "scaled_shape_defect": {"rational": "9409", "sqrt3": "-5432"}, "shape_side": "above", "site_count": 10864}
+  ],
+  "positive_limit": "1/2",
+  "recurrence": "(p,q)->(2p+3q,p+2q)",
+  "scaled_defect_identity": "N*delta=p^2-pq*sqrt(3)",
+  "schema": "matching-one/two-sided-hexagonal-pell/v1",
+  "site_count_identity": "N=2pq",
+  "status": "valid_exact_two_sided_pell_defect"
+}
