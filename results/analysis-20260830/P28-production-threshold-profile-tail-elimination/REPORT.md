@@ -73,6 +73,44 @@ One explicitly post-reveal nested description,
 (`log10 p approximately -10780`) and therefore does not close or receive a new model vote.
 It only shows that one smooth low-order correction captures most of the visible curvature.
 
+## Post-reveal K1/K2 mechanism decomposition
+
+The marginal histograms identify `K1=K_minus` as the first ambient-H1 birth and `K2=K_plus` as
+the second.  Their separately standardized `4/3` scores are even larger than the composite:
+
+| birth clock | chi-square / df |
+|---|---:|
+| K1 | `14,918,477.15 / 48` |
+| K2 | `15,965,901.67 / 48` |
+
+Thus the composite curvature is not created by superposing two individually simple clocks.
+Both clocks already have strong internal curvature.  The directional split is complementary:
+K1 is dominated by its right tail (`11,950,834.22` versus `1,809,197.88` on the left), while K2
+is dominated by its left tail (`12,517,817.38` versus `2,730,295.64` on the right).  These are
+correlated marginal scores and are not additive model evidence.
+
+On the composite coordinates the exact pointwise identity
+
+```text
+log rho_mix = w1 log rho_K1 + w2 log rho_K2 + H(w)-log 2
+```
+
+closes for every archived curve (maximum CDF/density/log reconstruction error below `1.6e-15`).
+With the frozen composite covariance, the responsibility-weighted component shape contributes
+`+9,110,751.10` to the composite quadratic form, while the clock-separation entropy contributes
+`-2,830,412.23`; the latter cancels about 31% of the former and leaves the observed
+`6,280,338.87`.  Mixing therefore masks part of the clock curvature rather than causing it.
+
+Effective exponents drift downward with size in all four clock/side channels.  From `N=265` to
+`N=425`, K1-left moves from `1.618–1.657` to `1.568–1.599`, K1-right from `2.195–2.238` to
+`2.116–2.118`, K2-left from `1.917–1.939` to `1.880–1.914`, and K2-right from `1.873–1.997` to
+`1.767–1.814`.  All component constant-beta diagnostics reject at `p<0.01`.
+
+One boundary is explicit: the self-standardized `N=290` K1 right tails contain only
+`6.6–6.8k` events (`66–68` per batch), below the original `10k/100` composite gate.  They are
+diagnostic only and cannot independently carry elimination.  K1 curvature is nevertheless
+resolved with ample counts in the independent `N=265,325,425` blocks; all K2 component gates pass.
+
 ## Provenance
 
 - base: `939f7ecc26f18c68977aed626821767207a46c89`;

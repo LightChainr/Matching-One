@@ -1,0 +1,4141 @@
+{
+  "blocks": [
+    {
+      "N": 265,
+      "component_count_gates": [
+        {
+          "clock": "K1",
+          "expected_tail_count": 426279.21132847364,
+          "expected_tail_count_per_batch": 4262.792113284737,
+          "orientation": "first",
+          "passed": true,
+          "side": "left"
+        },
+        {
+          "clock": "K1",
+          "expected_tail_count": 31822.684206150865,
+          "expected_tail_count_per_batch": 318.22684206150865,
+          "orientation": "first",
+          "passed": true,
+          "side": "right"
+        },
+        {
+          "clock": "K1",
+          "expected_tail_count": 404950.2272356944,
+          "expected_tail_count_per_batch": 4049.502272356944,
+          "orientation": "second",
+          "passed": true,
+          "side": "left"
+        },
+        {
+          "clock": "K1",
+          "expected_tail_count": 32881.63566073088,
+          "expected_tail_count_per_batch": 328.81635660730876,
+          "orientation": "second",
+          "passed": true,
+          "side": "right"
+        },
+        {
+          "clock": "K2",
+          "expected_tail_count": 120300.97603410292,
+          "expected_tail_count_per_batch": 1203.0097603410293,
+          "orientation": "first",
+          "passed": true,
+          "side": "left"
+        },
+        {
+          "clock": "K2",
+          "expected_tail_count": 162045.5804050569,
+          "expected_tail_count_per_batch": 1620.4558040505692,
+          "orientation": "first",
+          "passed": true,
+          "side": "right"
+        },
+        {
+          "clock": "K2",
+          "expected_tail_count": 117998.29240807841,
+          "expected_tail_count_per_batch": 1179.9829240807842,
+          "orientation": "second",
+          "passed": true,
+          "side": "left"
+        },
+        {
+          "clock": "K2",
+          "expected_tail_count": 173216.90630250907,
+          "expected_tail_count_per_batch": 1732.1690630250907,
+          "orientation": "second",
+          "passed": true,
+          "side": "right"
+        }
+      ],
+      "component_local_effective_exponents": {
+        "K1_first_left": {
+          "beta_effective": [
+            1.6259748749097351,
+            1.6176462088954051,
+            1.6186750706719208
+          ],
+          "constant_beta_score": {
+            "chi_square": 526.133792017121,
+            "constant_beta_hat": 1.6381341980318325,
+            "effective_df": 2,
+            "survival_probability": 5.642852419240334e-115
+          },
+          "jackknife_se": [
+            0.0007694388057042057,
+            0.0011254622888070566,
+            0.0016335978984990975
+          ]
+        },
+        "K1_first_right": {
+          "beta_effective": [
+            2.1994261426680515,
+            2.2157151586335795,
+            2.2375842493756757
+          ],
+          "constant_beta_score": {
+            "chi_square": 771.2876176578834,
+            "constant_beta_hat": 2.188264272991017,
+            "effective_df": 2,
+            "survival_probability": 3.288681728513432e-168
+          },
+          "jackknife_se": [
+            0.0006902650265919996,
+            0.0011142766726615738,
+            0.0020439974621360275
+          ]
+        },
+        "K1_second_left": {
+          "beta_effective": [
+            1.6520906715611035,
+            1.6492146783895345,
+            1.656774814205417
+          ],
+          "constant_beta_score": {
+            "chi_square": 670.1092011446495,
+            "constant_beta_hat": 1.6656343743273434,
+            "effective_df": 2,
+            "survival_probability": 3.0735185253956506e-146
+          },
+          "jackknife_se": [
+            0.0007314302099132322,
+            0.0010231676316482072,
+            0.0015682149655702538
+          ]
+        },
+        "K1_second_right": {
+          "beta_effective": [
+            2.195002505473485,
+            2.2101834012763586,
+            2.23060698767672
+          ],
+          "constant_beta_score": {
+            "chi_square": 675.0546844847383,
+            "constant_beta_hat": 2.185019375054096,
+            "effective_df": 2,
+            "survival_probability": 2.592613467481665e-147
+          },
+          "jackknife_se": [
+            0.0007788576031928794,
+            0.0011615909750234733,
+            0.0018413981689069752
+          ]
+        },
+        "K2_first_left": {
+          "beta_effective": [
+            1.9359462894191823,
+            1.9260655046145683,
+            1.9173433801878592
+          ],
+          "constant_beta_score": {
+            "chi_square": 924.1461420137126,
+            "constant_beta_hat": 1.9466504506307025,
+            "effective_df": 2,
+            "survival_probability": 2.1096724214692695e-201
+          },
+          "jackknife_se": [
+            0.0005601544005334718,
+            0.0008133625827999639,
+            0.0012059941220605153
+          ]
+        },
+        "K2_first_right": {
+          "beta_effective": [
+            1.9045617120083274,
+            1.9407847879185351,
+            1.996519740409274
+          ],
+          "constant_beta_score": {
+            "chi_square": 1735.2501023877555,
+            "constant_beta_hat": 1.901860831692852,
+            "effective_df": 2,
+            "survival_probability": 0.0
+          },
+          "jackknife_se": [
+            0.0010194014373923691,
+            0.0015336427064779447,
+            0.0024077935305314062
+          ]
+        },
+        "K2_second_left": {
+          "beta_effective": [
+            1.9386947855020755,
+            1.9298888380079529,
+            1.9223592589986396
+          ],
+          "constant_beta_score": {
+            "chi_square": 878.1317688296443,
+            "constant_beta_hat": 1.9507514259209826,
+            "effective_df": 2,
+            "survival_probability": 2.070661967132964e-191
+          },
+          "jackknife_se": [
+            0.0005071413499162226,
+            0.0007799753819213401,
+            0.0012150245607039864
+          ]
+        },
+        "K2_second_right": {
+          "beta_effective": [
+            1.8726704639389518,
+            1.9014185690445888,
+            1.9497982832059946
+          ],
+          "constant_beta_score": {
+            "chi_square": 1029.723549758339,
+            "constant_beta_hat": 1.8775530843375499,
+            "effective_df": 2,
+            "survival_probability": 2.5024892875448833e-224
+          },
+          "jackknife_se": [
+            0.0010570920296558996,
+            0.001738543600341014,
+            0.0026781248775906235
+          ]
+        }
+      },
+      "component_pure_4_over_3_scores": {
+        "K1": {
+          "chi_square": 6063149.245778573,
+          "correlation_eigenvalues": [
+            0.03228746915175116,
+            0.03378856362812509,
+            0.07910041324654059,
+            0.10786069681796925,
+            0.5251770680303128,
+            0.8436866054016003,
+            0.9958169813157475,
+            1.3223675163910784,
+            1.4383663222482879,
+            1.9371860795449842,
+            2.0763308633471365,
+            2.608031420876464
+          ],
+          "effective_df": 12,
+          "nominal_df": 12,
+          "survival_probability": 0.0
+        },
+        "K2": {
+          "chi_square": 6545643.5129608195,
+          "correlation_eigenvalues": [
+            0.028990925430958877,
+            0.05053861093349306,
+            0.0601310682036711,
+            0.0942517296594576,
+            0.6240695062598086,
+            0.8797183635245173,
+            0.9513323356179477,
+            1.2316179960073883,
+            1.6723642190969712,
+            1.818513344914843,
+            2.253265593656515,
+            2.3352063066944266
+          ],
+          "effective_df": 12,
+          "nominal_df": 12,
+          "survival_probability": 0.0
+        }
+      },
+      "component_pure_4_over_3_side_scores": {
+        "K1": {
+          "left": {
+            "chi_square": 783716.1803353558,
+            "correlation_eigenvalues": [
+              0.08045647229502435,
+              0.11558806020147325,
+              0.9829813481978721,
+              1.3327676042989827,
+              1.485013934322057,
+              2.0031925806845923
+            ],
+            "effective_df": 6,
+            "nominal_df": 6,
+            "survival_probability": 0.0
+          },
+          "right": {
+            "chi_square": 4541991.903941332,
+            "correlation_eigenvalues": [
+              0.034812740519853176,
+              0.03562630703154897,
+              0.5494017066063598,
+              0.9059982808525725,
+              1.9602476649366363,
+              2.513913300053028
+            ],
+            "effective_df": 6,
+            "nominal_df": 6,
+            "survival_probability": 0.0
+          }
+        },
+        "K2": {
+          "left": {
+            "chi_square": 4636222.241775051,
+            "correlation_eigenvalues": [
+              0.033106871443094904,
+              0.09426600357827054,
+              0.6661172327714479,
+              0.937915008465692,
+              2.0516913867773385,
+              2.216903496964157
+            ],
+            "effective_df": 6,
+            "nominal_df": 6,
+            "survival_probability": 0.0
+          },
+          "right": {
+            "chi_square": 1223196.9560369898,
+            "correlation_eigenvalues": [
+              0.04893976489735135,
+              0.06809061057113706,
+              0.9338172580948876,
+              1.2598029658657544,
+              1.8097760714176354,
+              1.8795733291532368
+            ],
+            "effective_df": 6,
+            "nominal_df": 6,
+            "survival_probability": 0.0
+          }
+        }
+      },
+      "component_standardized_profiles": {
+        "K1": {
+          "first": {
+            "cdf": {
+              "left": [
+                0.00976107067504718,
+                0.0055257721144001005,
+                0.003044141677356852,
+                0.0016326830052236507,
+                0.0008525584226569473
+              ],
+              "right": [
+                0.996163151033941,
+                0.9984252267434762,
+                0.9994074276055853,
+                0.9997963473816602,
+                0.9999363546315877
+              ]
+            },
+            "center": 0.566063420037594,
+            "expected_tail_count": {
+              "left": 426279.21132847364,
+              "right": 31822.684206150865
+            },
+            "log_density": {
+              "left": [
+                -3.831622961039317,
+                -4.352126299636598,
+                -4.9031304545096726,
+                -5.483254924751622,
+                -6.091669527476285
+              ],
+              "right": [
+                -4.341338401531083,
+                -5.1363082677042025,
+                -6.022929738282209,
+                -7.004139660550838,
+                -8.083401060302105
+              ]
+            },
+            "sample_count": 500000000,
+            "scale": 0.05201282209734449,
+            "standardized_density": {
+              "left": [
+                0.02167441034563268,
+                0.012879397985730569,
+                0.007423308330633375,
+                0.0041557809055844,
+                0.0022616299078417803
+              ],
+              "right": [
+                0.013019091765210902,
+                0.005879354701691903,
+                0.0024225617161954156,
+                0.0009081148863489143,
+                0.0003086196145397586
+              ]
+            },
+            "tail_probability": {
+              "left": 0.0008525584226569473,
+              "right": 6.364536841230173e-05
+            }
+          },
+          "second": {
+            "cdf": {
+              "left": [
+                0.009634237555152251,
+                0.005418795705338075,
+                0.002960514967955163,
+                0.0015713005035221403,
+                0.0008099004544713888
+              ],
+              "right": [
+                0.9961159644580235,
+                0.9983999453400474,
+                0.999395195695073,
+                0.9997909977542243,
+                0.9999342367286785
+              ]
+            },
+            "center": 0.5661468403383458,
+            "expected_tail_count": {
+              "left": 404950.2272356944,
+              "right": 32881.63566073088
+            },
+            "log_density": {
+              "left": [
+                -3.8345781866919486,
+                -4.359159806984346,
+                -4.915802126896573,
+                -5.5034074148695815,
+                -6.121477289632601
+              ],
+              "right": [
+                -4.333073483019246,
+                -5.124760673996647,
+                -6.007365756867161,
+                -6.983680380653243,
+                -8.056980806126841
+              ]
+            },
+            "sample_count": 500000000,
+            "scale": 0.05190948851719934,
+            "standardized_density": {
+              "left": [
+                0.021610452124209423,
+                0.01278912847314086,
+                0.0073298360750837415,
+                0.004072869810453435,
+                0.002195210604598009
+              ],
+              "right": [
+                0.013127139385085064,
+                0.005947640611211227,
+                0.0024605613675817276,
+                0.0009268856261441187,
+                0.0003168820909471114
+              ]
+            },
+            "tail_probability": {
+              "left": 0.0008099004544713888,
+              "right": 6.576327132146176e-05
+            }
+          }
+        },
+        "K2": {
+          "first": {
+            "cdf": {
+              "left": [
+                0.006080809131110727,
+                0.002935392945875146,
+                0.0013439252380313123,
+                0.0005837311921926397,
+                0.00024060195206820583
+              ],
+              "right": [
+                0.9930266684345701,
+                0.9964925511708801,
+                0.9983237021135735,
+                0.9992410915154822,
+                0.9996759088391899
+              ]
+            },
+            "center": 0.6176798941503759,
+            "expected_tail_count": {
+              "left": 120300.97603410292,
+              "right": 162045.5804050569
+            },
+            "log_density": {
+              "left": [
+                -4.070523029826138,
+                -4.725898978671958,
+                -5.439521211704445,
+                -6.210430389499611,
+                -7.037732775532236
+              ],
+              "right": [
+                -3.991233112011077,
+                -4.6057827212097004,
+                -5.273042366978475,
+                -5.994752365037927,
+                -6.773990420437532
+              ]
+            },
+            "sample_count": 500000000,
+            "scale": 0.05040886981552093,
+            "standardized_density": {
+              "left": [
+                0.017068458859382556,
+                0.00886274291073415,
+                0.004341561462004809,
+                0.002008372895427278,
+                0.0008781151913194372
+              ],
+              "right": [
+                0.018476915959368186,
+                0.009993876523397918,
+                0.005127985602571992,
+                0.002491793952562194,
+                0.001143123992200424
+              ]
+            },
+            "tail_probability": {
+              "left": 0.00024060195206820583,
+              "right": 0.0003240911608101138
+            }
+          },
+          "second": {
+            "cdf": {
+              "left": [
+                0.006033165943511329,
+                0.002905981738441704,
+                0.0013270025597691916,
+                0.0005746155047430134,
+                0.00023599658481615683
+              ],
+              "right": [
+                0.9929179052224054,
+                0.996408791075393,
+                0.9982649856672472,
+                0.9992033391188854,
+                0.999653566187395
+              ]
+            },
+            "center": 0.6177284042030076,
+            "expected_tail_count": {
+              "left": 117998.29240807841,
+              "right": 173216.90630250907
+            },
+            "log_density": {
+              "left": [
+                -4.07550432394175,
+                -4.732805438623946,
+                -5.448702913323728,
+                -6.2223165661351425,
+                -7.052841807254051
+              ],
+              "right": [
+                -3.9863000208049675,
+                -4.595444653162035,
+                -5.254919686813284,
+                -5.9658723470030495,
+                -6.730740377904625
+              ]
+            },
+            "sample_count": 500000000,
+            "scale": 0.050483136916608676,
+            "standardized_density": {
+              "left": [
+                0.016983647256843246,
+                0.00880174361880766,
+                0.004301880986011251,
+                0.00198464233266209,
+                0.0008649474474647302
+              ],
+              "right": [
+                0.018568289462615305,
+                0.01009772979510452,
+                0.005221765651778178,
+                0.002564806230178472,
+                0.0011936488796490973
+              ]
+            },
+            "tail_probability": {
+              "left": 0.00023599658481615683,
+              "right": 0.00034643381260501815
+            }
+          }
+        }
+      },
+      "mixture_labels": [
+        {
+          "curvature_mode": 2,
+          "orientation": "first",
+          "side": "left"
+        },
+        {
+          "curvature_mode": 3,
+          "orientation": "first",
+          "side": "left"
+        },
+        {
+          "curvature_mode": 4,
+          "orientation": "first",
+          "side": "left"
+        },
+        {
+          "curvature_mode": 2,
+          "orientation": "first",
+          "side": "right"
+        },
+        {
+          "curvature_mode": 3,
+          "orientation": "first",
+          "side": "right"
+        },
+        {
+          "curvature_mode": 4,
+          "orientation": "first",
+          "side": "right"
+        },
+        {
+          "curvature_mode": 2,
+          "orientation": "second",
+          "side": "left"
+        },
+        {
+          "curvature_mode": 3,
+          "orientation": "second",
+          "side": "left"
+        },
+        {
+          "curvature_mode": 4,
+          "orientation": "second",
+          "side": "left"
+        },
+        {
+          "curvature_mode": 2,
+          "orientation": "second",
+          "side": "right"
+        },
+        {
+          "curvature_mode": 3,
+          "orientation": "second",
+          "side": "right"
+        },
+        {
+          "curvature_mode": 4,
+          "orientation": "second",
+          "side": "right"
+        }
+      ],
+      "mixture_on_composite_coordinates": {
+        "reconstruction_gate": {
+          "maximum_cdf_absolute_error": 1.1102230246251565e-16,
+          "maximum_density_absolute_error": 6.938893903907228e-18,
+          "maximum_log_identity_error": 7.771561172376096e-16,
+          "passed": true
+        },
+        "rows": {
+          "first": {
+            "left": [
+              {
+                "cdf": {
+                  "K1": 0.01640058702448308,
+                  "K2": 0.0004029844475238465
+                },
+                "component_shape": -3.3940809034004653,
+                "log_composite": -3.9171728562073302,
+                "p": 0.4484915022332318,
+                "reconstruction_error": -6.661338147750939e-16,
+                "responsibility_K1": 0.9593339237001621,
+                "responsibility_K2": 0.04066607629983783,
+                "separation_entropy": -0.5230919528068643,
+                "standardized_density": {
+                  "K1": 0.038176247862643016,
+                  "K2": 0.0016182876160949623
+                },
+                "z": 2.5
+              },
+              {
+                "cdf": {
+                  "K1": 0.009006453403784588,
+                  "K2": 0.0001427599845075274
+                },
+                "component_shape": -3.9034127661811833,
+                "log_composite": -4.4730945081318465,
+                "p": 0.4341534867471565,
+                "reconstruction_error": 0.0,
+                "responsibility_K1": 0.9731918877260036,
+                "responsibility_K2": 0.026808112273996373,
+                "separation_entropy": -0.5696817419506632,
+                "standardized_density": {
+                  "K1": 0.022212028081614554,
+                  "K2": 0.0006118655017115516
+                },
+                "z": 2.75
+              },
+              {
+                "cdf": {
+                  "K1": 0.004780897572245813,
+                  "K2": 4.727251068309157e-05
+                },
+                "component_shape": -4.45684856543324,
+                "log_composite": -5.063736206212922,
+                "p": 0.4198154712610812,
+                "reconstruction_error": 5.551115123125783e-16,
+                "responsibility_K1": 0.9829660651332923,
+                "responsibility_K2": 0.017033934866707665,
+                "separation_entropy": -0.6068876407796827,
+                "standardized_density": {
+                  "K1": 0.012428417347092852,
+                  "K2": 0.0002153735099267457
+                },
+                "z": 3.0
+              },
+              {
+                "cdf": {
+                  "K1": 0.0024556228320562834,
+                  "K2": 1.4629545699157887e-05
+                },
+                "component_shape": -5.052501060645594,
+                "log_composite": -5.687704151258982,
+                "p": 0.4054774557750058,
+                "reconstruction_error": -4.440892098500626e-16,
+                "responsibility_K1": 0.9895753015864236,
+                "responsibility_K2": 0.010424698413576398,
+                "separation_entropy": -0.6352030906133881,
+                "standardized_density": {
+                  "K1": 0.00670409740253008,
+                  "K2": 7.062443196043465e-05
+                },
+                "z": 3.25
+              },
+              {
+                "cdf": {
+                  "K1": 0.0012209436267176207,
+                  "K2": 4.22841617220665e-06
+                },
+                "component_shape": -5.688532397991781,
+                "log_composite": -6.344280165928088,
+                "p": 0.39113944028893055,
+                "reconstruction_error": -1.1102230246251565e-16,
+                "responsibility_K1": 0.9938584847336615,
+                "responsibility_K2": 0.006141515266338627,
+                "separation_entropy": -0.6557477679363063,
+                "standardized_density": {
+                  "K1": 0.0034919553155795544,
+                  "K2": 2.157842108250584e-05
+                },
+                "z": 3.5
+              }
+            ],
+            "right": [
+              {
+                "cdf": {
+                  "K1": 0.9997988942051662,
+                  "K2": 0.989245482357231
+                },
+                "component_shape": -3.5862878459504177,
+                "log_composite": -4.140866004770868,
+                "p": 0.735251811954738,
+                "reconstruction_error": 2.220446049250313e-16,
+                "responsibility_K1": 0.031106889986202046,
+                "responsibility_K2": 0.968893110013798,
+                "separation_entropy": -0.5545781588204506,
+                "standardized_density": {
+                  "K1": 0.000989763269071207,
+                  "K2": 0.030828373147337898
+                },
+                "z": 2.5
+              },
+              {
+                "cdf": {
+                  "K1": 0.9999446013721245,
+                  "K2": 0.9949101978000721
+                },
+                "component_shape": -4.216228421643121,
+                "log_composite": -4.81730022725443,
+                "p": 0.7495898274408134,
+                "reconstruction_error": 2.220446049250313e-16,
+                "responsibility_K1": 0.018483093454708766,
+                "responsibility_K2": 0.9815169065452913,
+                "separation_entropy": -0.6010718056113087,
+                "standardized_density": {
+                  "K1": 0.0002990045166793445,
+                  "K2": 0.015878185595572667
+                },
+                "z": 2.75
+              },
+              {
+                "cdf": {
+                  "K1": 0.9999865027153612,
+                  "K2": 0.997741863752916
+                },
+                "component_shape": -4.921108852292638,
+                "log_composite": -5.556782582195079,
+                "p": 0.7639278429268886,
+                "reconstruction_error": 5.551115123125783e-16,
+                "responsibility_K1": 0.0103214454501624,
+                "responsibility_K2": 0.9896785545498377,
+                "separation_entropy": -0.6356737299024419,
+                "standardized_density": {
+                  "K1": 7.970590637112969e-05,
+                  "K2": 0.007642653016707379
+                },
+                "z": 3.0
+              },
+              {
+                "cdf": {
+                  "K1": 0.9999971184844182,
+                  "K2": 0.9990643985105032
+                },
+                "component_shape": -5.702778891204963,
+                "log_composite": -6.36238810360648,
+                "p": 0.778265858412964,
+                "reconstruction_error": -3.3306690738754696e-16,
+                "responsibility_K1": 0.00539180523262427,
+                "responsibility_K2": 0.9946081947673757,
+                "separation_entropy": -0.659609212401517,
+                "standardized_density": {
+                  "K1": 1.8604334800325183e-05,
+                  "K2": 0.0034318791299501592
+                },
+                "z": 3.25
+              },
+              {
+                "cdf": {
+                  "K1": 0.9999994678232521,
+                  "K2": 0.9996400298392741
+                },
+                "component_shape": -6.5641652482461,
+                "log_composite": -7.239122306506311,
+                "p": 0.7926038738990393,
+                "reconstruction_error": -7.771561172376096e-16,
+                "responsibility_K1": 0.002619790538918284,
+                "responsibility_K2": 0.9973802094610816,
+                "separation_entropy": -0.6749570582602101,
+                "standardized_density": {
+                  "K1": 3.761713307987599e-06,
+                  "K2": 0.0014321215193800793
+                },
+                "z": 3.5
+              }
+            ]
+          },
+          "second": {
+            "left": [
+              {
+                "cdf": {
+                  "K1": 0.01613409774461328,
+                  "K2": 0.0004051534798545408
+                },
+                "component_shape": -3.4009060882156597,
+                "log_composite": -3.922532116398471,
+                "p": 0.4486124786240926,
+                "reconstruction_error": 5.551115123125783e-16,
+                "responsibility_K1": 0.9588692752754595,
+                "responsibility_K2": 0.04113072472454058,
+                "separation_entropy": -0.5216260281828121,
+                "standardized_density": {
+                  "K1": 0.03795380704388052,
+                  "K2": 0.00162802962825326
+                },
+                "z": 2.5
+              },
+              {
+                "cdf": {
+                  "K1": 0.008797702230874617,
+                  "K2": 0.00014340480440878562
+                },
+                "component_shape": -3.9150030574771586,
+                "log_composite": -4.4831745598204495,
+                "p": 0.43427996425943416,
+                "reconstruction_error": 0.0,
+                "responsibility_K1": 0.9727704852654043,
+                "responsibility_K2": 0.027229514734595662,
+                "separation_entropy": -0.568171502343291,
+                "standardized_density": {
+                  "K1": 0.021979732780511733,
+                  "K2": 0.0006152504282098253
+                },
+                "z": 2.75
+              },
+              {
+                "cdf": {
+                  "K1": 0.004627736883081449,
+                  "K2": 4.7425254277410956e-05
+                },
+                "component_shape": -4.474848537280751,
+                "log_composite": -5.080271274565505,
+                "p": 0.4199474498947758,
+                "reconstruction_error": 5.551115123125783e-16,
+                "responsibility_K1": 0.9826038799869677,
+                "responsibility_K2": 0.017396120013032253,
+                "separation_entropy": -0.6054227372847546,
+                "standardized_density": {
+                  "K1": 0.012220098013004785,
+                  "K2": 0.00021634587032982988
+                },
+                "z": 3.0
+              },
+              {
+                "cdf": {
+                  "K1": 0.0023496761368901335,
+                  "K2": 1.4653746617384222e-05
+                },
+                "component_shape": -5.078917212402046,
+                "log_composite": -5.712772585491906,
+                "p": 0.4056149355301174,
+                "reconstruction_error": 7.771561172376096e-16,
+                "responsibility_K1": 0.9892783716156428,
+                "responsibility_K2": 0.010721628384357243,
+                "separation_entropy": -0.6338553730898607,
+                "standardized_density": {
+                  "K1": 0.006536163384325885,
+                  "K2": 7.0837811557263e-05
+                },
+                "z": 3.25
+              },
+              {
+                "cdf": {
+                  "K1": 0.0011515139404989138,
+                  "K2": 4.22865248144895e-06
+                },
+                "component_shape": -5.725792835581344,
+                "log_composite": -6.380358758965021,
+                "p": 0.39128242116545897,
+                "reconstruction_error": 5.551115123125783e-16,
+                "responsibility_K1": 0.9936252714431099,
+                "responsibility_K2": 0.0063747285568901664,
+                "separation_entropy": -0.6545659233836775,
+                "standardized_density": {
+                  "K1": 0.003367425704914546,
+                  "K2": 2.1604145366741327e-05
+                },
+                "z": 3.5
+              }
+            ],
+            "right": [
+              {
+                "cdf": {
+                  "K1": 0.9997982028592378,
+                  "K2": 0.9890094958239568
+                },
+                "component_shape": -3.5759727585564565,
+                "log_composite": -4.131422308202592,
+                "p": 0.7352627659172608,
+                "reconstruction_error": 7.771561172376096e-16,
+                "responsibility_K1": 0.030853794624747792,
+                "responsibility_K2": 0.9691462053752523,
+                "separation_entropy": -0.5554495496461364,
+                "standardized_density": {
+                  "K1": 0.0009910251342784163,
+                  "K2": 0.031129015409568216
+                },
+                "z": 2.5
+              },
+              {
+                "cdf": {
+                  "K1": 0.9999442268960284,
+                  "K2": 0.9947462442889758
+                },
+                "component_shape": -4.198771927801717,
+                "log_composite": -4.80078056088538,
+                "p": 0.7495952802819192,
+                "reconstruction_error": 6.661338147750939e-16,
+                "responsibility_K1": 0.0182476362782295,
+                "responsibility_K2": 0.9817523637217704,
+                "separation_entropy": -0.602008633083664,
+                "standardized_density": {
+                  "K1": 0.0003001125140856288,
+                  "K2": 0.01614653895954554
+                },
+                "z": 2.75
+              },
+              {
+                "cdf": {
+                  "K1": 0.9999863388033836,
+                  "K2": 0.9976376768093476
+                },
+                "component_shape": -4.893643509070895,
+                "log_composite": -5.530215282827141,
+                "p": 0.7639277946465777,
+                "reconstruction_error": -4.440892098500626e-16,
+                "responsibility_K1": 0.010125058564173723,
+                "responsibility_K2": 0.9898749414358262,
+                "separation_entropy": -0.6365717737562462,
+                "standardized_density": {
+                  "K1": 8.029445570558912e-05,
+                  "K2": 0.00784997628758682
+                },
+                "z": 3.0
+              },
+              {
+                "cdf": {
+                  "K1": 0.9999970546370621,
+                  "K2": 0.9990037921468994
+                },
+                "component_shape": -5.661580980788555,
+                "log_composite": -6.321945048004425,
+                "p": 0.778260309011236,
+                "reconstruction_error": -6.661338147750939e-16,
+                "responsibility_K1": 0.005247502329798053,
+                "responsibility_K2": 0.9947524976702019,
+                "separation_entropy": -0.660364067215869,
+                "standardized_density": {
+                  "K1": 1.8853708430022622e-05,
+                  "K2": 0.0035740381561359903
+                },
+                "z": 3.25
+              },
+              {
+                "cdf": {
+                  "K1": 0.9999994441656774,
+                  "K2": 0.9996078116899818
+                },
+                "component_shape": -6.504521918244274,
+                "log_composite": -7.180003041739389,
+                "p": 0.7925928233758944,
+                "reconstruction_error": 4.440892098500626e-16,
+                "responsibility_K1": 0.0025318462217592394,
+                "responsibility_K2": 0.9974681537782408,
+                "separation_entropy": -0.6754811234951155,
+                "standardized_density": {
+                  "K1": 3.856839965250387e-06,
+                  "K2": 0.001519474210753337
+                },
+                "z": 3.5
+              }
+            ]
+          }
+        }
+      },
+      "mixture_residual_attribution": {
+        "additivity_error": -1.8370337784290314e-07,
+        "component_shape_contribution": 3810115.669954098,
+        "composite_chi_square": 2716635.3002519757,
+        "effective_df": 12,
+        "separation_entropy_contribution": -1093480.3697019385,
+        "warning": "bilinear GLS contributions are exactly additive but can be signed"
+      }
+    },
+    {
+      "N": 290,
+      "component_count_gates": [
+        {
+          "clock": "K1",
+          "expected_tail_count": 82599.34941115277,
+          "expected_tail_count_per_batch": 825.9934941115276,
+          "orientation": "first",
+          "passed": true,
+          "side": "left"
+        },
+        {
+          "clock": "K1",
+          "expected_tail_count": 6812.2912263435255,
+          "expected_tail_count_per_batch": 68.12291226343525,
+          "orientation": "first",
+          "passed": false,
+          "side": "right"
+        },
+        {
+          "clock": "K1",
+          "expected_tail_count": 87149.15629262064,
+          "expected_tail_count_per_batch": 871.4915629262064,
+          "orientation": "second",
+          "passed": true,
+          "side": "left"
+        },
+        {
+          "clock": "K1",
+          "expected_tail_count": 6618.243988409933,
+          "expected_tail_count_per_batch": 66.18243988409932,
+          "orientation": "second",
+          "passed": false,
+          "side": "right"
+        },
+        {
+          "clock": "K2",
+          "expected_tail_count": 23522.70441383537,
+          "expected_tail_count_per_batch": 235.2270441383537,
+          "orientation": "first",
+          "passed": true,
+          "side": "left"
+        },
+        {
+          "clock": "K2",
+          "expected_tail_count": 36753.64075795828,
+          "expected_tail_count_per_batch": 367.53640757958283,
+          "orientation": "first",
+          "passed": true,
+          "side": "right"
+        },
+        {
+          "clock": "K2",
+          "expected_tail_count": 23895.20626943192,
+          "expected_tail_count_per_batch": 238.9520626943192,
+          "orientation": "second",
+          "passed": true,
+          "side": "left"
+        },
+        {
+          "clock": "K2",
+          "expected_tail_count": 34556.77851852412,
+          "expected_tail_count_per_batch": 345.56778518524123,
+          "orientation": "second",
+          "passed": true,
+          "side": "right"
+        }
+      ],
+      "component_local_effective_exponents": {
+        "K1_first_left": {
+          "beta_effective": [
+            1.641597836593499,
+            1.6356758007889907,
+            1.639965357860183
+          ],
+          "constant_beta_score": {
+            "chi_square": 102.22581122679307,
+            "constant_beta_hat": 1.6550463385432328,
+            "effective_df": 2,
+            "survival_probability": 6.337925618922034e-23
+          },
+          "jackknife_se": [
+            0.001924146366801442,
+            0.0029002996804595293,
+            0.00418726015238608
+          ]
+        },
+        "K1_first_right": {
+          "beta_effective": [
+            2.178356558236936,
+            2.189905932204687,
+            2.207325377539157
+          ],
+          "constant_beta_score": {
+            "chi_square": 61.31840154912557,
+            "constant_beta_hat": 2.1722004396653367,
+            "effective_df": 2,
+            "survival_probability": 4.8403669179737574e-14
+          },
+          "jackknife_se": [
+            0.0016126724949041772,
+            0.0026296287016501657,
+            0.004688954566568869
+          ]
+        },
+        "K1_second_left": {
+          "beta_effective": [
+            1.6101731404809048,
+            1.6000691759904657,
+            1.6019774156672715
+          ],
+          "constant_beta_score": {
+            "chi_square": 219.11119807895975,
+            "constant_beta_hat": 1.6261080650619062,
+            "effective_df": 2,
+            "survival_probability": 2.6339521167206887e-48
+          },
+          "jackknife_se": [
+            0.0017033019330010895,
+            0.002396501878529926,
+            0.003655681514782408
+          ]
+        },
+        "K1_second_right": {
+          "beta_effective": [
+            2.1824203646208202,
+            2.1960329132063414,
+            2.2156139599459346
+          ],
+          "constant_beta_score": {
+            "chi_square": 90.15951398834368,
+            "constant_beta_hat": 2.174413568829858,
+            "effective_df": 2,
+            "survival_probability": 2.6430798993274148e-20
+          },
+          "jackknife_se": [
+            0.0016827439112915823,
+            0.0027410579543997397,
+            0.004492271337910143
+          ]
+        },
+        "K2_first_left": {
+          "beta_effective": [
+            1.9306859314294282,
+            1.9191273389902306,
+            1.9088676422090418
+          ],
+          "constant_beta_score": {
+            "chi_square": 205.25323063362225,
+            "constant_beta_hat": 1.944651087355541,
+            "effective_df": 2,
+            "survival_probability": 2.6904645339917084e-45
+          },
+          "jackknife_se": [
+            0.0013393304826220006,
+            0.001991033088064511,
+            0.002967545685066692
+          ]
+        },
+        "K2_first_right": {
+          "beta_effective": [
+            1.8514930938525742,
+            1.8737707205640775,
+            1.9103532116459554
+          ],
+          "constant_beta_score": {
+            "chi_square": 165.91223097403045,
+            "constant_beta_hat": 1.853619582141142,
+            "effective_df": 2,
+            "survival_probability": 9.38894519176032e-37
+          },
+          "jackknife_se": [
+            0.002538106999082281,
+            0.003630332607213034,
+            0.005188675956168839
+          ]
+        },
+        "K2_second_left": {
+          "beta_effective": [
+            1.9298298123011643,
+            1.9177163934019745,
+            1.907131187603921
+          ],
+          "constant_beta_score": {
+            "chi_square": 323.09969243723424,
+            "constant_beta_hat": 1.9435741829546753,
+            "effective_df": 2,
+            "survival_probability": 6.915016726322357e-71
+          },
+          "jackknife_se": [
+            0.0011642209339867075,
+            0.0017512310442443974,
+            0.0028885321596075846
+          ]
+        },
+        "K2_second_right": {
+          "beta_effective": [
+            1.881394006412906,
+            1.911867647866036,
+            1.9574795741047857
+          ],
+          "constant_beta_score": {
+            "chi_square": 272.95381752010104,
+            "constant_beta_hat": 1.8806067214176048,
+            "effective_df": 2,
+            "survival_probability": 5.355889623421544e-60
+          },
+          "jackknife_se": [
+            0.002446601135015274,
+            0.0035727309915632014,
+            0.005155389908346134
+          ]
+        }
+      },
+      "component_pure_4_over_3_scores": {
+        "K1": {
+          "chi_square": 1022282.111655484,
+          "correlation_eigenvalues": [
+            0.03147033544314599,
+            0.03461207360222546,
+            0.09394146523514535,
+            0.12060209310830225,
+            0.5361095378528696,
+            0.705144426231165,
+            1.0858632230435379,
+            1.1437789648761456,
+            1.3903718841509807,
+            1.8147628971209482,
+            2.3561626931970943,
+            2.6871804061384403
+          ],
+          "effective_df": 12,
+          "nominal_df": 12,
+          "survival_probability": 0.0
+        },
+        "K2": {
+          "chi_square": 935348.6597854557,
+          "correlation_eigenvalues": [
+            0.044301531088758526,
+            0.05326159394951572,
+            0.07884023854682944,
+            0.08975230495685878,
+            0.6726633874034412,
+            0.8470258177857951,
+            1.0447891959248343,
+            1.230831986556743,
+            1.424451848645201,
+            1.73730531692658,
+            2.2123122047164014,
+            2.5644645734990412
+          ],
+          "effective_df": 12,
+          "nominal_df": 12,
+          "survival_probability": 0.0
+        }
+      },
+      "component_pure_4_over_3_side_scores": {
+        "K1": {
+          "left": {
+            "chi_square": 111500.70737097935,
+            "correlation_eigenvalues": [
+              0.09240767226747452,
+              0.12604041147029918,
+              1.1365555340497453,
+              1.1454606044783653,
+              1.6853166583995562,
+              1.814219119334558
+            ],
+            "effective_df": 6,
+            "nominal_df": 6,
+            "survival_probability": 0.0
+          },
+          "right": {
+            "chi_square": 849092.1859144825,
+            "correlation_eigenvalues": [
+              0.03275071791520141,
+              0.042225101252293874,
+              0.6002162184588405,
+              0.7572589125210228,
+              2.0385209307112935,
+              2.529028119141348
+            ],
+            "effective_df": 6,
+            "nominal_df": 6,
+            "survival_probability": 0.0
+          }
+        },
+        "K2": {
+          "left": {
+            "chi_square": 744465.8448435407,
+            "correlation_eigenvalues": [
+              0.050708284773297724,
+              0.061286007665954226,
+              0.6918104109953905,
+              0.9209387450855718,
+              2.010725612072471,
+              2.2645309394073165
+            ],
+            "effective_df": 6,
+            "nominal_df": 6,
+            "survival_probability": 0.0
+          },
+          "right": {
+            "chi_square": 176408.3849881263,
+            "correlation_eigenvalues": [
+              0.0777277052477775,
+              0.08721087844780817,
+              1.1344688562845264,
+              1.2163426376605897,
+              1.5876793858629143,
+              1.8965705364963836
+            ],
+            "effective_df": 6,
+            "nominal_df": 6,
+            "survival_probability": 0.0
+          }
+        }
+      },
+      "component_standardized_profiles": {
+        "K1": {
+          "first": {
+            "cdf": {
+              "left": [
+                0.009676324110947116,
+                0.005456296205557424,
+                0.002990861576039396,
+                0.001594105094473672,
+                0.0008259934941115276
+              ],
+              "right": [
+                0.9960938646300865,
+                0.9983837428180519,
+                0.9993852706770188,
+                0.9997857882919134,
+                0.9999318770877366
+              ]
+            },
+            "center": 0.567023518281787,
+            "expected_tail_count": {
+              "left": 82599.34941115277,
+              "right": 6812.2912263435255
+            },
+            "log_density": {
+              "left": [
+                -3.834152782871571,
+                -4.3571836343294095,
+                -4.9116508870951705,
+                -5.496299741920813,
+                -6.110464863153307
+              ],
+              "right": [
+                -4.331700320859381,
+                -5.120339432149701,
+                -5.998216006226215,
+                -6.967659586808449,
+                -8.031498537900376
+              ]
+            },
+            "sample_count": 100000000,
+            "scale": 0.050214797919508544,
+            "standardized_density": {
+              "left": [
+                0.02161964724878504,
+                0.01281442698799348,
+                0.007360327226589951,
+                0.004101921559890467,
+                0.0022195188004362227
+              ],
+              "right": [
+                0.01314517745792111,
+                0.005973994784930381,
+                0.0024831782019431865,
+                0.0009418546573915723,
+                0.00032506072793656065
+              ]
+            },
+            "tail_probability": {
+              "left": 0.0008259934941115276,
+              "right": 6.812291226343525e-05
+            }
+          },
+          "second": {
+            "cdf": {
+              "left": [
+                0.009804785898482764,
+                0.005567040520100769,
+                0.003078766968132304,
+                0.00165923081542457,
+                0.0008714915629262064
+              ],
+              "right": [
+                0.9961370819609785,
+                0.9984068462670023,
+                0.9993964747490393,
+                0.9997907104873686,
+                0.9999338175601159
+              ]
+            },
+            "center": 0.5669397830584192,
+            "expected_tail_count": {
+              "left": 87149.15629262064,
+              "right": 6618.243988409933
+            },
+            "log_density": {
+              "left": [
+                -3.831759097547176,
+                -4.350553996150124,
+                -4.898960690640335,
+                -5.4755048225892144,
+                -6.079387959298446
+              ],
+              "right": [
+                -4.339314501260145,
+                -5.130839298350935,
+                -6.012253875783266,
+                -6.986101881529882,
+                -8.05545604089849
+              ]
+            },
+            "sample_count": 100000000,
+            "scale": 0.050315507115255065,
+            "standardized_density": {
+              "left": [
+                0.02167145986793674,
+                0.012899664236260327,
+                0.007454326397566398,
+                0.004188113761799911,
+                0.0022895775388219685
+              ],
+              "right": [
+                0.013045467790781135,
+                0.00591159679752707,
+                0.0024485631991437154,
+                0.0009246438870698342,
+                0.0003173656302891805
+              ]
+            },
+            "tail_probability": {
+              "left": 0.0008714915629262064,
+              "right": 6.618243988409933e-05
+            }
+          }
+        },
+        "K2": {
+          "first": {
+            "cdf": {
+              "left": [
+                0.005995875609932878,
+                0.002887130335051302,
+                0.0013187435952237148,
+                0.0005716242768587219,
+                0.00023522704413835371
+              ],
+              "right": [
+                0.9928092992611718,
+                0.9963281019264477,
+                0.998209718639155,
+                0.9991680623967795,
+                0.9996324635924204
+              ]
+            },
+            "center": 0.6169666229553264,
+            "expected_tail_count": {
+              "left": 23522.70441383537,
+              "right": 36753.64075795828
+            },
+            "log_density": {
+              "left": [
+                -4.080946970998406,
+                -4.739244056339984,
+                -5.455704100954264,
+                -6.229231272456475,
+                -7.058801855754173
+              ],
+              "right": [
+                -3.9804338274022304,
+                -4.58463550554534,
+                -5.237500190549716,
+                -5.9397058306985615,
+                -6.692873617023969
+              ]
+            },
+            "sample_count": 100000000,
+            "scale": 0.04886722692879073,
+            "standardized_density": {
+              "left": [
+                0.01689146235160255,
+                0.008745254607136857,
+                0.0042718678962951236,
+                0.0019709664506233947,
+                0.0008598076506616197
+              ],
+              "right": [
+                0.018677534753482345,
+                0.010207469675861303,
+                0.00531352304258367,
+                0.0026328040272302743,
+                0.0012397151828181362
+              ]
+            },
+            "tail_probability": {
+              "left": 0.00023522704413835371,
+              "right": 0.00036753640757958284
+            }
+          },
+          "second": {
+            "cdf": {
+              "left": [
+                0.006038428242298537,
+                0.0029127923575029977,
+                0.0013331384669765182,
+                0.0005791788963471624,
+                0.0002389520626943192
+              ],
+              "right": [
+                0.992907142163735,
+                0.996404547555662,
+                0.9982643455525377,
+                0.9992040526566347,
+                0.9996544322148148
+              ]
+            },
+            "center": 0.6169080717525773,
+            "expected_tail_count": {
+              "left": 23895.20626943192,
+              "right": 34556.77851852412
+            },
+            "log_density": {
+              "left": [
+                -4.076252910967153,
+                -4.732889336210161,
+                -5.447486338425467,
+                -6.218911312276208,
+                -7.04611683538517
+              ],
+              "right": [
+                -3.9845916827864856,
+                -4.593456690202323,
+                -5.25315231922519,
+                -5.964962696665077,
+                -6.731206328970415
+              ]
+            },
+            "sample_count": 100000000,
+            "scale": 0.048799310660746054,
+            "standardized_density": {
+              "left": [
+                0.01697093827634521,
+                0.00880100520473957,
+                0.004307117731234642,
+                0.00199141206340819,
+                0.0008707837973655937
+              ],
+              "right": [
+                0.0186000374879006,
+                0.010117823674240516,
+                0.005231002591273123,
+                0.0025671403684964923,
+                0.001193092827238113
+              ]
+            },
+            "tail_probability": {
+              "left": 0.0002389520626943192,
+              "right": 0.00034556778518524123
+            }
+          }
+        }
+      },
+      "mixture_labels": [
+        {
+          "curvature_mode": 2,
+          "orientation": "first",
+          "side": "left"
+        },
+        {
+          "curvature_mode": 3,
+          "orientation": "first",
+          "side": "left"
+        },
+        {
+          "curvature_mode": 4,
+          "orientation": "first",
+          "side": "left"
+        },
+        {
+          "curvature_mode": 2,
+          "orientation": "first",
+          "side": "right"
+        },
+        {
+          "curvature_mode": 3,
+          "orientation": "first",
+          "side": "right"
+        },
+        {
+          "curvature_mode": 4,
+          "orientation": "first",
+          "side": "right"
+        },
+        {
+          "curvature_mode": 2,
+          "orientation": "second",
+          "side": "left"
+        },
+        {
+          "curvature_mode": 3,
+          "orientation": "second",
+          "side": "left"
+        },
+        {
+          "curvature_mode": 4,
+          "orientation": "second",
+          "side": "left"
+        },
+        {
+          "curvature_mode": 2,
+          "orientation": "second",
+          "side": "right"
+        },
+        {
+          "curvature_mode": 3,
+          "orientation": "second",
+          "side": "right"
+        },
+        {
+          "curvature_mode": 4,
+          "orientation": "second",
+          "side": "right"
+        }
+      ],
+      "mixture_on_composite_coordinates": {
+        "reconstruction_gate": {
+          "maximum_cdf_absolute_error": 2.220446049250313e-16,
+          "maximum_density_absolute_error": 6.938893903907228e-18,
+          "maximum_log_identity_error": 1.5543122344752192e-15,
+          "passed": true
+        },
+        "rows": {
+          "first": {
+            "left": [
+              {
+                "cdf": {
+                  "K1": 0.016149056357918003,
+                  "K2": 0.0004040133374096723
+                },
+                "component_shape": -3.4021809659814943,
+                "log_composite": -3.9242616240658346,
+                "p": 0.45328799786693963,
+                "reconstruction_error": 0.0,
+                "responsibility_K1": 0.9590135641787555,
+                "responsibility_K2": 0.040986435821244435,
+                "separation_entropy": -0.5220806580843402,
+                "standardized_density": {
+                  "K1": 0.037893923725277,
+                  "K2": 0.001619515021261681
+                },
+                "z": 2.5
+              },
+              {
+                "cdf": {
+                  "K1": 0.008821748140315722,
+                  "K2": 0.00014344754601502133
+                },
+                "component_shape": -3.9155646364575034,
+                "log_composite": -4.483976382254836,
+                "p": 0.4394172905917779,
+                "reconstruction_error": 0.0,
+                "responsibility_K1": 0.9728376464897215,
+                "responsibility_K2": 0.027162353510278493,
+                "separation_entropy": -0.5684117457973326,
+                "standardized_density": {
+                  "K1": 0.021963632291827174,
+                  "K2": 0.0006132410138865664
+                },
+                "z": 2.75
+              },
+              {
+                "cdf": {
+                  "K1": 0.004652330389583674,
+                  "K2": 4.765532428794985e-05
+                },
+                "component_shape": -4.47409806453408,
+                "log_composite": -5.079554952300371,
+                "p": 0.4255465833166162,
+                "reconstruction_error": 4.440892098500626e-16,
+                "responsibility_K1": 0.9826123452158262,
+                "responsibility_K2": 0.01738765478417386,
+                "separation_entropy": -0.6054568877662914,
+                "standardized_density": {
+                  "K1": 0.01222896002999914,
+                  "K2": 0.0002163955464292296
+                },
+                "z": 3.0
+              },
+              {
+                "cdf": {
+                  "K1": 0.002370493734138521,
+                  "K2": 1.4810983953414056e-05
+                },
+                "component_shape": -5.076044168346814,
+                "log_composite": -5.7097804741589115,
+                "p": 0.4116758760414545,
+                "reconstruction_error": -6.661338147750939e-16,
+                "responsibility_K1": 0.9892520495218343,
+                "responsibility_K2": 0.010747950478165654,
+                "separation_entropy": -0.6337363058120966,
+                "standardized_density": {
+                  "K1": 0.006555575169076414,
+                  "K2": 7.122451483136461e-05
+                },
+                "z": 3.25
+              },
+              {
+                "cdf": {
+                  "K1": 0.0011671475813067917,
+                  "K2": 4.301128540501096e-06
+                },
+                "component_shape": -5.719742023889498,
+                "log_composite": -6.374112209572499,
+                "p": 0.3978051687662928,
+                "reconstruction_error": -1.1102230246251565e-15,
+                "responsibility_K1": 0.993586480490433,
+                "responsibility_K2": 0.006413519509566928,
+                "separation_entropy": -0.6543701856830004,
+                "standardized_density": {
+                  "K1": 0.0033883940428831765,
+                  "K2": 2.1871806558202115e-05
+                },
+                "z": 3.5
+              }
+            ],
+            "right": [
+              {
+                "cdf": {
+                  "K1": 0.999794628162457,
+                  "K2": 0.9888628272237718
+                },
+                "component_shape": -3.571644690226244,
+                "log_composite": -4.126556683868581,
+                "p": 0.7307021433701738,
+                "reconstruction_error": 4.440892098500626e-16,
+                "responsibility_K1": 0.031009854468100652,
+                "responsibility_K2": 0.9689901455318994,
+                "separation_entropy": -0.5549119936423375,
+                "standardized_density": {
+                  "K1": 0.0010008959378419468,
+                  "K2": 0.031275809484028146
+                },
+                "z": 2.5
+              },
+              {
+                "cdf": {
+                  "K1": 0.9999426305779732,
+                  "K2": 0.994638473157322
+                },
+                "component_shape": -4.1896555749711375,
+                "log_composite": -4.7909673690183805,
+                "p": 0.7445728506453355,
+                "reconstruction_error": -3.3306690738754696e-16,
+                "responsibility_K1": 0.01842270243047907,
+                "responsibility_K2": 0.9815772975695208,
+                "separation_entropy": -0.6013117940472427,
+                "standardized_density": {
+                  "K1": 0.0003059797191113781,
+                  "K2": 0.016302860393572417
+                },
+                "z": 2.75
+              },
+              {
+                "cdf": {
+                  "K1": 0.9999857704979609,
+                  "K2": 0.9975662527432286
+                },
+                "component_shape": -4.877679450298978,
+                "log_composite": -5.513532896188045,
+                "p": 0.7584435579204972,
+                "reconstruction_error": -8.881784197001252e-16,
+                "responsibility_K1": 0.010282077956217764,
+                "responsibility_K2": 0.9897179220437822,
+                "separation_entropy": -0.6358534458890661,
+                "standardized_density": {
+                  "K1": 8.291134784939978e-05,
+                  "K2": 0.00798076490537933
+                },
+                "z": 3.0
+              },
+              {
+                "cdf": {
+                  "K1": 0.9999968981055044,
+                  "K2": 0.9989604907088383
+                },
+                "component_shape": -5.636134657265126,
+                "log_composite": -6.295919405861274,
+                "p": 0.7723142651956589,
+                "reconstruction_error": 7.771561172376096e-16,
+                "responsibility_K1": 0.00535818153882268,
+                "responsibility_K2": 0.9946418184611774,
+                "separation_entropy": -0.6597847485961487,
+                "standardized_density": {
+                  "K1": 1.9758972778111183e-05,
+                  "K2": 0.0036678676286999528
+                },
+                "z": 3.25
+              },
+              {
+                "cdf": {
+                  "K1": 0.9999994149919418,
+                  "K2": 0.9995836014339445
+                },
+                "component_shape": -6.465960188190119,
+                "log_composite": -7.141138833521593,
+                "p": 0.7861849724708206,
+                "reconstruction_error": -5.551115123125783e-16,
+                "responsibility_K1": 0.002582543999963596,
+                "responsibility_K2": 0.9974174560000364,
+                "separation_entropy": -0.6751786453314729,
+                "standardized_density": {
+                  "K1": 4.089973887774117e-06,
+                  "K2": 0.0015796096214847615
+                },
+                "z": 3.5
+              }
+            ]
+          },
+          "second": {
+            "left": [
+              {
+                "cdf": {
+                  "K1": 0.01641134460370036,
+                  "K2": 0.0004011644295762656
+                },
+                "component_shape": -3.3959878386344102,
+                "log_composite": -3.919547963270651,
+                "p": 0.4531633657045444,
+                "reconstruction_error": 5.551115123125783e-16,
+                "responsibility_K1": 0.9594819507852328,
+                "responsibility_K2": 0.04051804921476729,
+                "separation_entropy": -0.5235601246362412,
+                "standardized_density": {
+                  "K1": 0.03809155947487183,
+                  "K2": 0.0016085718759034382
+                },
+                "z": 2.5
+              },
+              {
+                "cdf": {
+                  "K1": 0.009031355257830258,
+                  "K2": 0.00014241225280303655
+                },
+                "component_shape": -3.9045856542142836,
+                "log_composite": -4.474603515436762,
+                "p": 0.439287309534449,
+                "reconstruction_error": 1.1102230246251565e-16,
+                "responsibility_K1": 0.9732854186158207,
+                "responsibility_K2": 0.026714581384179165,
+                "separation_entropy": -0.5700178612224783,
+                "standardized_density": {
+                  "K1": 0.022180666765973276,
+                  "K2": 0.0006088113683215919
+                },
+                "z": 2.75
+              },
+              {
+                "cdf": {
+                  "K1": 0.004808903044915212,
+                  "K2": 4.7328413187456565e-05
+                },
+                "component_shape": -4.456415324438479,
+                "log_composite": -5.063519329314736,
+                "p": 0.4254112533643536,
+                "reconstruction_error": 1.1102230246251565e-16,
+                "responsibility_K1": 0.9830193966987564,
+                "responsibility_K2": 0.01698060330124366,
+                "separation_entropy": -0.6071040048762565,
+                "standardized_density": {
+                  "K1": 0.012431787535425166,
+                  "K2": 0.00021474576511239598
+                },
+                "z": 3.0
+              },
+              {
+                "cdf": {
+                  "K1": 0.002480316126985647,
+                  "K2": 1.4737823775401528e-05
+                },
+                "component_shape": -5.049361223364591,
+                "log_composite": -5.684675962672628,
+                "p": 0.41153519719425824,
+                "reconstruction_error": -4.440892098500626e-16,
+                "responsibility_K1": 0.9895998166622073,
+                "responsibility_K2": 0.010400183337792728,
+                "separation_entropy": -0.6353147393080367,
+                "standardized_density": {
+                  "K1": 0.00672459602936705,
+                  "K2": 7.067203368519098e-05
+                },
+                "z": 3.25
+              },
+              {
+                "cdf": {
+                  "K1": 0.001239792930004274,
+                  "K2": 4.30586317017265e-06
+                },
+                "component_shape": -5.681529359367992,
+                "log_composite": -6.337273340903147,
+                "p": 0.39765914102416283,
+                "reconstruction_error": 2.220446049250313e-16,
+                "responsibility_K1": 0.9938577403260775,
+                "responsibility_K2": 0.006142259673922509,
+                "separation_entropy": -0.6557439815351558,
+                "standardized_density": {
+                  "K1": 0.003516506121953305,
+                  "K2": 2.173278213729949e-05
+                },
+                "z": 3.5
+              }
+            ],
+            "right": [
+              {
+                "cdf": {
+                  "K1": 0.999794705011948,
+                  "K2": 0.9890837412344516
+                },
+                "component_shape": -3.581489515299302,
+                "log_composite": -4.135343858954219,
+                "p": 0.7306844891064521,
+                "reconstruction_error": -1.1102230246251565e-16,
+                "responsibility_K1": 0.031317593104814245,
+                "responsibility_K2": 0.9686824068951858,
+                "separation_entropy": -0.5538543436549167,
+                "standardized_density": {
+                  "K1": 0.0010019853093922735,
+                  "K2": 0.030992341522775586
+                },
+                "z": 2.5
+              },
+              {
+                "cdf": {
+                  "K1": 0.999942763971077,
+                  "K2": 0.9947922099138334
+                },
+                "component_shape": -4.205775113368237,
+                "log_composite": -4.80604047953872,
+                "p": 0.7445605452765476,
+                "reconstruction_error": -7.771561172376096e-16,
+                "responsibility_K1": 0.018686397881066234,
+                "responsibility_K2": 0.9813136021189337,
+                "separation_entropy": -0.6002653661704828,
+                "standardized_density": {
+                  "K1": 0.0003057163933740757,
+                  "K2": 0.016054654145660582
+                },
+                "z": 2.75
+              },
+              {
+                "cdf": {
+                  "K1": 0.9999858214317067,
+                  "K2": 0.9976648708059472
+                },
+                "component_shape": -4.902655562198819,
+                "log_composite": -5.537544196267527,
+                "p": 0.7584366014466429,
+                "reconstruction_error": 1.5543122344752192e-15,
+                "responsibility_K1": 0.010493813457002928,
+                "responsibility_K2": 0.9895061865429972,
+                "separation_entropy": -0.6348886340687094,
+                "standardized_density": {
+                  "K1": 8.261110810898713e-05,
+                  "K2": 0.007789751827202918
+                },
+                "z": 3.0
+              },
+              {
+                "cdf": {
+                  "K1": 0.9999968983596368,
+                  "K2": 0.999018857613113
+                },
+                "component_shape": -5.673462101672633,
+                "log_composite": -6.332369568103112,
+                "p": 0.7723126576167383,
+                "reconstruction_error": 3.3306690738754696e-16,
+                "responsibility_K1": 0.0055266267102413195,
+                "responsibility_K2": 0.9944733732897587,
+                "separation_entropy": -0.6589074664304796,
+                "standardized_density": {
+                  "K1": 1.9650652083991282e-05,
+                  "K2": 0.0035359815833222678
+                },
+                "z": 3.25
+              },
+              {
+                "cdf": {
+                  "K1": 0.9999994039942065,
+                  "K2": 0.9996154566238639
+                },
+                "component_shape": -6.52019938577142,
+                "log_composite": -7.194538966719828,
+                "p": 0.7861887137868337,
+                "reconstruction_error": 2.220446049250313e-16,
+                "responsibility_K1": 0.002724052833991872,
+                "responsibility_K2": 0.9972759471660082,
+                "separation_entropy": -0.6743395809484085,
+                "standardized_density": {
+                  "K1": 4.089751771548614e-06,
+                  "K2": 0.0014972584308022175
+                },
+                "z": 3.5
+              }
+            ]
+          }
+        }
+      },
+      "mixture_residual_attribution": {
+        "additivity_error": -6.50179572403431e-08,
+        "component_shape_contribution": 662752.6901028313,
+        "composite_chi_square": 462070.8017936043,
+        "effective_df": 12,
+        "separation_entropy_contribution": -200681.88830916205,
+        "warning": "bilinear GLS contributions are exactly additive but can be signed"
+      }
+    },
+    {
+      "N": 325,
+      "component_count_gates": [
+        {
+          "clock": "K1",
+          "expected_tail_count": 434914.2758898976,
+          "expected_tail_count_per_batch": 4349.142758898976,
+          "orientation": "first",
+          "passed": true,
+          "side": "left"
+        },
+        {
+          "clock": "K1",
+          "expected_tail_count": 35254.36520973591,
+          "expected_tail_count_per_batch": 352.5436520973591,
+          "orientation": "first",
+          "passed": true,
+          "side": "right"
+        },
+        {
+          "clock": "K1",
+          "expected_tail_count": 443355.02499895403,
+          "expected_tail_count_per_batch": 4433.55024998954,
+          "orientation": "second",
+          "passed": true,
+          "side": "left"
+        },
+        {
+          "clock": "K1",
+          "expected_tail_count": 34991.93530942524,
+          "expected_tail_count_per_batch": 349.91935309425236,
+          "orientation": "second",
+          "passed": true,
+          "side": "right"
+        },
+        {
+          "clock": "K2",
+          "expected_tail_count": 117386.33305398632,
+          "expected_tail_count_per_batch": 1173.8633305398632,
+          "orientation": "first",
+          "passed": true,
+          "side": "left"
+        },
+        {
+          "clock": "K2",
+          "expected_tail_count": 189762.86292993193,
+          "expected_tail_count_per_batch": 1897.6286292993193,
+          "orientation": "first",
+          "passed": true,
+          "side": "right"
+        },
+        {
+          "clock": "K2",
+          "expected_tail_count": 118022.79864363937,
+          "expected_tail_count_per_batch": 1180.2279864363936,
+          "orientation": "second",
+          "passed": true,
+          "side": "left"
+        },
+        {
+          "clock": "K2",
+          "expected_tail_count": 185969.41981208205,
+          "expected_tail_count_per_batch": 1859.6941981208206,
+          "orientation": "second",
+          "passed": true,
+          "side": "right"
+        }
+      ],
+      "component_local_effective_exponents": {
+        "K1_first_left": {
+          "beta_effective": [
+            1.61065364333533,
+            1.5989001970260066,
+            1.5965302869111622
+          ],
+          "constant_beta_score": {
+            "chi_square": 576.6882890660007,
+            "constant_beta_hat": 1.6266943011932458,
+            "effective_df": 2,
+            "survival_probability": 5.939216273903687e-126
+          },
+          "jackknife_se": [
+            0.0009435884565684636,
+            0.001409009403063616,
+            0.001977142438082329
+          ]
+        },
+        "K1_first_right": {
+          "beta_effective": [
+            2.15993177377702,
+            2.167949461534527,
+            2.1806863996690833
+          ],
+          "constant_beta_score": {
+            "chi_square": 157.71055946590238,
+            "constant_beta_hat": 2.1569857917023465,
+            "effective_df": 2,
+            "survival_probability": 5.670053321501969e-35
+          },
+          "jackknife_se": [
+            0.0007783217410389499,
+            0.0011771626524463045,
+            0.0019756009865468304
+          ]
+        },
+        "K1_second_left": {
+          "beta_effective": [
+            1.6005846201581568,
+            1.587989526668316,
+            1.5845677364312993
+          ],
+          "constant_beta_score": {
+            "chi_square": 665.8157737557418,
+            "constant_beta_hat": 1.6156664652221002,
+            "effective_df": 2,
+            "survival_probability": 2.6299152103668062e-145
+          },
+          "jackknife_se": [
+            0.0008404809745921808,
+            0.0012362145781314518,
+            0.001730785282172074
+          ]
+        },
+        "K1_second_right": {
+          "beta_effective": [
+            2.1602491169722953,
+            2.1672046991768275,
+            2.178399691148498
+          ],
+          "constant_beta_score": {
+            "chi_square": 134.18054411721127,
+            "constant_beta_hat": 2.156959739014473,
+            "effective_df": 2,
+            "survival_probability": 7.29566788228459e-30
+          },
+          "jackknife_se": [
+            0.0007866452900577576,
+            0.0012218906143273143,
+            0.001939024040318283
+          ]
+        },
+        "K2_first_left": {
+          "beta_effective": [
+            1.9243018393976807,
+            1.910647364475913,
+            1.8981835333602972
+          ],
+          "constant_beta_score": {
+            "chi_square": 1387.842951173152,
+            "constant_beta_hat": 1.93761831378165,
+            "effective_df": 2,
+            "survival_probability": 4.3026129357492126e-302
+          },
+          "jackknife_se": [
+            0.0005162516375994469,
+            0.0008087231969391407,
+            0.0012689478474104334
+          ]
+        },
+        "K2_first_right": {
+          "beta_effective": [
+            1.8408542270616572,
+            1.8628865977323046,
+            1.902116443807231
+          ],
+          "constant_beta_score": {
+            "chi_square": 822.1704688235025,
+            "constant_beta_hat": 1.8463467678663896,
+            "effective_df": 2,
+            "survival_probability": 2.9373189225498106e-179
+          },
+          "jackknife_se": [
+            0.0010114683630338074,
+            0.0014701696921582052,
+            0.002244209335217668
+          ]
+        },
+        "K2_second_left": {
+          "beta_effective": [
+            1.9237118379678986,
+            1.9100084644880737,
+            1.8973106262900363
+          ],
+          "constant_beta_score": {
+            "chi_square": 1038.7178126075576,
+            "constant_beta_hat": 1.9374130291226737,
+            "effective_df": 2,
+            "survival_probability": 2.7880006132966856e-226
+          },
+          "jackknife_se": [
+            0.0006487539126358459,
+            0.0009554297353808259,
+            0.001359083940753778
+          ]
+        },
+        "K2_second_right": {
+          "beta_effective": [
+            1.8501485058346971,
+            1.8746076294731169,
+            1.9167561898790235
+          ],
+          "constant_beta_score": {
+            "chi_square": 1034.250266713273,
+            "constant_beta_hat": 1.8550393406501755,
+            "effective_df": 2,
+            "survival_probability": 2.6026042205441558e-225
+          },
+          "jackknife_se": [
+            0.0011207704367835261,
+            0.001553520443368618,
+            0.0022484059838036472
+          ]
+        }
+      },
+      "component_pure_4_over_3_scores": {
+        "K1": {
+          "chi_square": 4176914.5862235124,
+          "correlation_eigenvalues": [
+            0.04716401489614941,
+            0.054494055137449995,
+            0.07592365471170077,
+            0.120590500671715,
+            0.722608891552355,
+            0.8057295447318508,
+            1.1069211986281182,
+            1.3113483424193149,
+            1.3917463833649475,
+            1.8220676235897941,
+            2.1606917971487576,
+            2.3807139931478463
+          ],
+          "effective_df": 12,
+          "nominal_df": 12,
+          "survival_probability": 0.0
+        },
+        "K2": {
+          "chi_square": 4649770.021719027,
+          "correlation_eigenvalues": [
+            0.04937665243002614,
+            0.07354301367718061,
+            0.08612563162749229,
+            0.12482864649471738,
+            0.7599820959942442,
+            0.8923327091060901,
+            1.0537713859320117,
+            1.220901551597292,
+            1.509143557734146,
+            1.6390499834398358,
+            2.1301593026484835,
+            2.460785469318482
+          ],
+          "effective_df": 12,
+          "nominal_df": 12,
+          "survival_probability": 0.0
+        }
+      },
+      "component_pure_4_over_3_side_scores": {
+        "K1": {
+          "left": {
+            "chi_square": 524502.5289765459,
+            "correlation_eigenvalues": [
+              0.07874806421979653,
+              0.1253469953321907,
+              1.1436762874935558,
+              1.253957205019746,
+              1.5124891577009378,
+              1.885782290233772
+            ],
+            "effective_df": 6,
+            "nominal_df": 6,
+            "survival_probability": 0.0
+          },
+          "right": {
+            "chi_square": 3536049.7186637023,
+            "correlation_eigenvalues": [
+              0.05156514215829183,
+              0.055604465273205485,
+              0.8040723059900419,
+              0.8628672319669292,
+              2.063214294843068,
+              2.162676559768461
+            ],
+            "effective_df": 6,
+            "nominal_df": 6,
+            "survival_probability": 0.0
+          }
+        },
+        "K2": {
+          "left": {
+            "chi_square": 3870730.175432148,
+            "correlation_eigenvalues": [
+              0.05342451652625514,
+              0.07471309728732012,
+              0.815230755550685,
+              1.0972086869678952,
+              1.8763053429996301,
+              2.0831176006682153
+            ],
+            "effective_df": 6,
+            "nominal_df": 6,
+            "survival_probability": 0.0
+          },
+          "right": {
+            "chi_square": 699391.2663541138,
+            "correlation_eigenvalues": [
+              0.09020290699027644,
+              0.12670657988905062,
+              0.9402848455120014,
+              1.3304518417374276,
+              1.6481565429797167,
+              1.8641972828915248
+            ],
+            "effective_df": 6,
+            "nominal_df": 6,
+            "survival_probability": 0.0
+          }
+        }
+      },
+      "component_standardized_profiles": {
+        "K1": {
+          "first": {
+            "cdf": {
+              "left": [
+                0.009784157206826903,
+                0.005554115385984061,
+                0.0030712605875123176,
+                0.0016553510962199903,
+                0.0008698285517797953
+              ],
+              "right": [
+                0.9960824966807322,
+                0.9983720936184349,
+                0.9993769528598164,
+                0.9997809705725841,
+                0.9999294912695805
+              ]
+            },
+            "center": 0.5680385668282208,
+            "expected_tail_count": {
+              "left": 434914.2758898976,
+              "right": 35254.36520973591
+            },
+            "log_density": {
+              "left": [
+                -3.8334269685609805,
+                -4.352562014648165,
+                -4.901352259878436,
+                -5.478243388543798,
+                -6.08223671894962
+              ],
+              "right": [
+                -4.332885822970018,
+                -5.118787220298786,
+                -5.992151194056115,
+                -6.954847401415355,
+                -8.009118338117293
+              ]
+            },
+            "sample_count": 500000000,
+            "scale": 0.048198584907177495,
+            "standardized_density": {
+              "left": [
+                0.021635344794210552,
+                0.012873787461071913,
+                0.00743652016077434,
+                0.0041766600266008955,
+                0.0022830643643502236
+              ],
+              "right": [
+                0.013129603055867353,
+                0.005983274890914841,
+                0.002498283971849837,
+                0.0009539995087861297,
+                0.00033241766981178633
+              ]
+            },
+            "tail_probability": {
+              "left": 0.0008698285517797953,
+              "right": 7.050873041947181e-05
+            }
+          },
+          "second": {
+            "cdf": {
+              "left": [
+                0.009833976812016941,
+                0.005596466812847478,
+                0.0031044316815900925,
+                0.0016796726567418372,
+                0.000886710049997908
+              ],
+              "right": [
+                0.9960972230896498,
+                0.998379790959614,
+                0.9993805328795363,
+                0.9997824393581982,
+                0.9999300161293811
+              ]
+            },
+            "center": 0.5680139557177915,
+            "expected_tail_count": {
+              "left": 443355.02499895403,
+              "right": 34991.93530942524
+            },
+            "log_density": {
+              "left": [
+                -3.832376167758801,
+                -4.349847385388044,
+                -4.896377907569786,
+                -5.470371176194839,
+                -6.070777487013064
+              ],
+              "right": [
+                -4.3355486273284445,
+                -5.122426225496556,
+                -5.996900286067637,
+                -6.960760268658238,
+                -8.016119936177756
+              ]
+            },
+            "sample_count": 500000000,
+            "scale": 0.04823609377126561,
+            "standardized_density": {
+              "left": [
+                0.021658091180743334,
+                0.012908782498988781,
+                0.007473604190049939,
+                0.004209669338927604,
+                0.0023093770018009344
+              ],
+              "right": [
+                0.013094687998240097,
+                0.005961541290812657,
+                0.002486447519842926,
+                0.0009483752803850208,
+                0.0003300983438684797
+              ]
+            },
+            "tail_probability": {
+              "left": 0.000886710049997908,
+              "right": 6.998387061885047e-05
+            }
+          }
+        },
+        "K2": {
+          "first": {
+            "cdf": {
+              "left": [
+                0.0059675563110005445,
+                0.0028730626893466032,
+                0.0013127322707247985,
+                0.0005695500711270378,
+                0.00023477266610797263
+              ],
+              "right": [
+                0.9927281142089042,
+                0.9962707516003175,
+                0.9981726133495251,
+                0.9991460178214021,
+                0.9996204742741401
+              ]
+            },
+            "center": 0.615980290411043,
+            "expected_tail_count": {
+              "left": 117386.33305398632,
+              "right": 189762.86292993193
+            },
+            "log_density": {
+              "left": [
+                -4.08520606866595,
+                -4.744205114210705,
+                -5.461012716940625,
+                -6.234368117288427,
+                -7.063072793259081
+              ],
+              "right": [
+                -3.97521630230851,
+                -4.575853210925291,
+                -5.224238181807051,
+                -5.920992931781112,
+                -6.66784064840504
+              ]
+            },
+            "sample_count": 500000000,
+            "scale": 0.04686099015639004,
+            "standardized_density": {
+              "left": [
+                0.016819672951254316,
+                0.008701976334707736,
+                0.004249250277332358,
+                0.001960867861446464,
+                0.000856143296603086
+              ],
+              "right": [
+                0.018775239927697893,
+                0.01029750948120864,
+                0.005384460377701017,
+                0.0026825352796090557,
+                0.001271140629147337
+              ]
+            },
+            "tail_probability": {
+              "left": 0.00023477266610797263,
+              "right": 0.0003795257258598639
+            }
+          },
+          "second": {
+            "cdf": {
+              "left": [
+                0.005981109017775677,
+                0.0028813641010800124,
+                0.00131746383320884,
+                0.0005720764177504405,
+                0.00023604559728727874
+              ],
+              "right": [
+                0.9927635283864967,
+                0.9962981844172566,
+                0.9981920002728919,
+                0.9991586365635305,
+                0.9996280611603758
+              ]
+            },
+            "center": 0.6159676613619632,
+            "expected_tail_count": {
+              "left": 118022.79864363937,
+              "right": 185969.41981208205
+            },
+            "log_density": {
+              "left": [
+                -4.083750313679673,
+                -4.742195241170601,
+                -5.458361677458935,
+                -6.23098417014194,
+                -7.058847866412321
+              ],
+              "right": [
+                -3.9767579369604578,
+                -4.5790924815385505,
+                -5.229860045702349,
+                -5.929858919018446,
+                -6.681029854481381
+              ]
+            },
+            "sample_count": 500000000,
+            "scale": 0.04683932844012112,
+            "standardized_density": {
+              "left": [
+                0.016844176104987466,
+                0.008719483790326431,
+                0.004260530152676335,
+                0.0019675145743707815,
+                0.0008597680912558167
+              ],
+              "right": [
+                0.018746317666734718,
+                0.010264207028304785,
+                0.005354274603966341,
+                0.002658857076483036,
+                0.0012544853697003754
+              ]
+            },
+            "tail_probability": {
+              "left": 0.00023604559728727874,
+              "right": 0.0003719388396241641
+            }
+          }
+        }
+      },
+      "mixture_labels": [
+        {
+          "curvature_mode": 2,
+          "orientation": "first",
+          "side": "left"
+        },
+        {
+          "curvature_mode": 3,
+          "orientation": "first",
+          "side": "left"
+        },
+        {
+          "curvature_mode": 4,
+          "orientation": "first",
+          "side": "left"
+        },
+        {
+          "curvature_mode": 2,
+          "orientation": "first",
+          "side": "right"
+        },
+        {
+          "curvature_mode": 3,
+          "orientation": "first",
+          "side": "right"
+        },
+        {
+          "curvature_mode": 4,
+          "orientation": "first",
+          "side": "right"
+        },
+        {
+          "curvature_mode": 2,
+          "orientation": "second",
+          "side": "left"
+        },
+        {
+          "curvature_mode": 3,
+          "orientation": "second",
+          "side": "left"
+        },
+        {
+          "curvature_mode": 4,
+          "orientation": "second",
+          "side": "left"
+        },
+        {
+          "curvature_mode": 2,
+          "orientation": "second",
+          "side": "right"
+        },
+        {
+          "curvature_mode": 3,
+          "orientation": "second",
+          "side": "right"
+        },
+        {
+          "curvature_mode": 4,
+          "orientation": "second",
+          "side": "right"
+        }
+      ],
+      "mixture_on_composite_coordinates": {
+        "reconstruction_gate": {
+          "maximum_cdf_absolute_error": 1.1102230246251565e-16,
+          "maximum_density_absolute_error": 6.938893903907228e-18,
+          "maximum_log_identity_error": 1.1102230246251565e-15,
+          "passed": true
+        },
+        "rows": {
+          "first": {
+            "left": [
+              {
+                "cdf": {
+                  "K1": 0.016287289410949816,
+                  "K2": 0.00039965854559272313
+                },
+                "component_shape": -3.401258409566388,
+                "log_composite": -3.924762776957578,
+                "p": 0.45891805474981795,
+                "reconstruction_error": -4.440892098500626e-16,
+                "responsibility_K1": 0.9594643307297733,
+                "responsibility_K2": 0.04053566927022656,
+                "separation_entropy": -0.5235043673911899,
+                "standardized_density": {
+                  "K1": 0.037892740246173354,
+                  "K2": 0.0016009011874294392
+                },
+                "z": 2.5
+              },
+              {
+                "cdf": {
+                  "K1": 0.00895063416932198,
+                  "K2": 0.00014207946024857241
+                },
+                "component_shape": -3.911449867577114,
+                "log_composite": -4.481219899563483,
+                "p": 0.44560891736283653,
+                "reconstruction_error": -3.3306690738754696e-16,
+                "responsibility_K1": 0.9732164649769446,
+                "responsibility_K2": 0.026783535023055447,
+                "separation_entropy": -0.5697700319863684,
+                "standardized_density": {
+                  "K1": 0.022032834327235018,
+                  "K2": 0.0006063575895981756
+                },
+                "z": 2.75
+              },
+              {
+                "cdf": {
+                  "K1": 0.004759227474258527,
+                  "K2": 4.731814215886808e-05
+                },
+                "component_shape": -4.464959844319512,
+                "log_composite": -5.071659383121176,
+                "p": 0.4322997799758551,
+                "reconstruction_error": 1.1102230246251565e-15,
+                "responsibility_K1": 0.9829196658291921,
+                "responsibility_K2": 0.017080334170807905,
+                "separation_entropy": -0.6066995388016647,
+                "standardized_density": {
+                  "K1": 0.012329751843989486,
+                  "K2": 0.0002142558431373088
+                },
+                "z": 3.0
+              },
+              {
+                "cdf": {
+                  "K1": 0.0024514585903754583,
+                  "K2": 1.4768094686258683e-05
+                },
+                "component_shape": -5.05963594120899,
+                "log_composite": -5.694466412428026,
+                "p": 0.41899064258887375,
+                "reconstruction_error": -5.551115123125783e-16,
+                "responsibility_K1": 0.9894933917005053,
+                "responsibility_K2": 0.010506608299494664,
+                "separation_entropy": -0.6348304712190357,
+                "standardized_density": {
+                  "K1": 0.006658364306274661,
+                  "K2": 7.069963909626447e-05
+                },
+                "z": 3.25
+              },
+              {
+                "cdf": {
+                  "K1": 0.0012240511728008985,
+                  "K2": 4.319972840582774e-06
+                },
+                "component_shape": -5.69339721067074,
+                "log_composite": -6.348684695111107,
+                "p": 0.40568150520189233,
+                "reconstruction_error": 8.881784197001252e-16,
+                "responsibility_K1": 0.9937678623316532,
+                "responsibility_K2": 0.006232137668346831,
+                "separation_entropy": -0.6552874844403682,
+                "standardized_density": {
+                  "K1": 0.003476291713036454,
+                  "K2": 2.1800592826724134e-05
+                },
+                "z": 3.5
+              }
+            ],
+            "right": [
+              {
+                "cdf": {
+                  "K1": 0.9997890786796221,
+                  "K2": 0.9887973316932995
+                },
+                "component_shape": -3.571441487342951,
+                "log_composite": -4.124774390857904,
+                "p": 0.7251008024894459,
+                "reconstruction_error": 1.1102230246251565e-15,
+                "responsibility_K1": 0.03146964951545493,
+                "responsibility_K2": 0.9685303504845452,
+                "separation_entropy": -0.5533329035149539,
+                "standardized_density": {
+                  "K1": 0.0010175485616326946,
+                  "K2": 0.0313167347017691
+                },
+                "z": 2.5
+              },
+              {
+                "cdf": {
+                  "K1": 0.999940207623846,
+                  "K2": 0.9945873137084864
+                },
+                "component_shape": -4.1868429467395,
+                "log_composite": -4.7864069901892865,
+                "p": 0.7384099398764272,
+                "reconstruction_error": -4.440892098500626e-16,
+                "responsibility_K1": 0.018863666211921783,
+                "responsibility_K2": 0.9811363337880781,
+                "separation_entropy": -0.5995640434497864,
+                "standardized_density": {
+                  "K1": 0.00031473566208491317,
+                  "K2": 0.016370020023742538
+                },
+                "z": 2.75
+              },
+              {
+                "cdf": {
+                  "K1": 0.9999848532717981,
+                  "K2": 0.9975318704651506
+                },
+                "component_shape": -4.871080217933006,
+                "log_composite": -5.505195106486169,
+                "p": 0.7517190772634087,
+                "reconstruction_error": -4.440892098500626e-16,
+                "responsibility_K1": 0.010664307551267491,
+                "responsibility_K2": 0.9893356924487324,
+                "separation_entropy": -0.6341148885531624,
+                "standardized_density": {
+                  "K1": 8.671351687880173e-05,
+                  "K2": 0.008044477042089606
+                },
+                "z": 3.0
+              },
+              {
+                "cdf": {
+                  "K1": 0.9999965916558374,
+                  "K2": 0.9989401673094063
+                },
+                "component_shape": -5.624479583753841,
+                "log_composite": -6.282663140052196,
+                "p": 0.7650282146503901,
+                "reconstruction_error": -6.661338147750939e-16,
+                "responsibility_K1": 0.005666376964231872,
+                "responsibility_K2": 0.9943336230357681,
+                "separation_entropy": -0.6581835562983545,
+                "standardized_density": {
+                  "K1": 2.1174322602975577e-05,
+                  "K2": 0.0037156618844893536
+                },
+                "z": 3.25
+              },
+              {
+                "cdf": {
+                  "K1": 0.9999993238531069,
+                  "K2": 0.9995730051296452
+                },
+                "component_shape": -6.44809955925317,
+                "log_composite": -7.121870910923961,
+                "p": 0.7783373520373715,
+                "reconstruction_error": 4.440892098500626e-16,
+                "responsibility_K1": 0.002820602745109682,
+                "responsibility_K2": 0.9971793972548904,
+                "separation_entropy": -0.673771351670791,
+                "standardized_density": {
+                  "K1": 4.55389153634285e-06,
+                  "K2": 0.0016099561787804777
+                },
+                "z": 3.5
+              }
+            ]
+          },
+          "second": {
+            "left": [
+              {
+                "cdf": {
+                  "K1": 0.016386593995118545,
+                  "K2": 0.00039845465877027397
+                },
+                "component_shape": -3.3989075816856555,
+                "log_composite": -3.923012992701957,
+                "p": 0.4588740555848117,
+                "reconstruction_error": 0.0,
+                "responsibility_K1": 0.9596541357814069,
+                "responsibility_K2": 0.040345864218593125,
+                "separation_entropy": -0.5241054110163015,
+                "standardized_density": {
+                  "K1": 0.037966611629939175,
+                  "K2": 0.0015961956506489769
+                },
+                "z": 2.5
+              },
+              {
+                "cdf": {
+                  "K1": 0.009029903682950835,
+                  "K2": 0.00014165376875948857
+                },
+                "component_shape": -3.907212354451457,
+                "log_composite": -4.477626602679177,
+                "p": 0.44556238028930517,
+                "reconstruction_error": 4.440892098500626e-16,
+                "responsibility_K1": 0.9733955998935121,
+                "responsibility_K2": 0.0266044001064879,
+                "separation_entropy": -0.5704142482277201,
+                "standardized_density": {
+                  "K1": 0.022116217322758137,
+                  "K2": 0.0006044702632321996
+                },
+                "z": 2.75
+              },
+              {
+                "cdf": {
+                  "K1": 0.004818091428495374,
+                  "K2": 4.718935944272006e-05
+                },
+                "component_shape": -4.458181339002287,
+                "log_composite": -5.065519661493546,
+                "p": 0.4322507049937986,
+                "reconstruction_error": -2.220446049250313e-16,
+                "responsibility_K1": 0.9830771063075678,
+                "responsibility_K2": 0.01692289369243218,
+                "separation_entropy": -0.6073383224912587,
+                "standardized_density": {
+                  "K1": 0.012407673054090488,
+                  "K2": 0.00021358826354271314
+                },
+                "z": 3.0
+              },
+              {
+                "cdf": {
+                  "K1": 0.0024924560787166717,
+                  "K2": 1.4737536042410607e-05
+                },
+                "component_shape": -5.049591814664701,
+                "log_composite": -5.685004983111163,
+                "p": 0.418939029698292,
+                "reconstruction_error": -2.220446049250313e-16,
+                "responsibility_K1": 0.989621418450269,
+                "responsibility_K2": 0.010378581549730991,
+                "separation_entropy": -0.6354131684464617,
+                "standardized_density": {
+                  "K1": 0.0067225306054278745,
+                  "K2": 7.050204331496266e-05
+                },
+                "z": 3.25
+              },
+              {
+                "cdf": {
+                  "K1": 0.0012510282971775971,
+                  "K2": 4.315697279609411e-06
+                },
+                "component_shape": -5.679295098715763,
+                "log_composite": -6.335072940956015,
+                "p": 0.40562735440278547,
+                "reconstruction_error": 6.661338147750939e-16,
+                "responsibility_K1": 0.9938643967167562,
+                "responsibility_K2": 0.006135603283243839,
+                "separation_entropy": -0.655777842240252,
+                "standardized_density": {
+                  "K1": 0.00352427596490594,
+                  "K2": 2.1757051819914206e-05
+                },
+                "z": 3.5
+              }
+            ],
+            "right": [
+              {
+                "cdf": {
+                  "K1": 0.9997887679242287,
+                  "K2": 0.9888779711390325
+                },
+                "component_shape": -3.5750592230789455,
+                "log_composite": -4.127933714271088,
+                "p": 0.7251075614949429,
+                "reconstruction_error": 0.0,
+                "responsibility_K1": 0.03160350959569866,
+                "responsibility_K2": 0.9683964904043014,
+                "separation_entropy": -0.5528744911921426,
+                "standardized_density": {
+                  "K1": 0.0010186534864618188,
+                  "K2": 0.031213636518457787
+                },
+                "z": 2.5
+              },
+              {
+                "cdf": {
+                  "K1": 0.9999400755705405,
+                  "K2": 0.9946433237017782
+                },
+                "component_shape": -4.192825563262153,
+                "log_composite": -4.791876553665561,
+                "p": 0.7384192367904494,
+                "reconstruction_error": 3.3306690738754696e-16,
+                "responsibility_K1": 0.018993619816407483,
+                "responsibility_K2": 0.9810063801835925,
+                "separation_entropy": -0.5990509904034077,
+                "standardized_density": {
+                  "K1": 0.0003151753118330466,
+                  "K2": 0.016278571160905392
+                },
+                "z": 2.75
+              },
+              {
+                "cdf": {
+                  "K1": 0.9999847956458436,
+                  "K2": 0.9975675751265128
+                },
+                "component_shape": -4.880258967655738,
+                "log_composite": -5.513846722254919,
+                "p": 0.751730912085956,
+                "reconstruction_error": 1.1102230246251565e-16,
+                "responsibility_K1": 0.010780810772014194,
+                "responsibility_K2": 0.9892191892279859,
+                "separation_entropy": -0.6335877545991809,
+                "standardized_density": {
+                  "K1": 8.690569026190011e-05,
+                  "K2": 0.007974240368205036
+                },
+                "z": 3.0
+              },
+              {
+                "cdf": {
+                  "K1": 0.9999965669319061,
+                  "K2": 0.9989611211067583
+                },
+                "component_shape": -5.637921844155912,
+                "log_composite": -6.295605569650357,
+                "p": 0.7650425873814626,
+                "reconstruction_error": -2.220446049250313e-16,
+                "responsibility_K1": 0.00576326267722559,
+                "responsibility_K2": 0.9942367373227744,
+                "separation_entropy": -0.6576837254944452,
+                "standardized_density": {
+                  "K1": 2.1259431692486517e-05,
+                  "K2": 0.0036675246621674725
+                },
+                "z": 3.25
+              },
+              {
+                "cdf": {
+                  "K1": 0.9999993136113261,
+                  "K2": 0.9995843119148675
+                },
+                "component_shape": -6.467202132276315,
+                "log_composite": -7.140525070706311,
+                "p": 0.778354262676969,
+                "reconstruction_error": -9.992007221626409e-16,
+                "responsibility_K1": 0.002897195853173108,
+                "responsibility_K2": 0.9971028041468268,
+                "separation_entropy": -0.6733229384299956,
+                "standardized_density": {
+                  "K1": 4.5911048852761605e-06,
+                  "K2": 0.0015800808047641266
+                },
+                "z": 3.5
+              }
+            ]
+          }
+        }
+      },
+      "mixture_residual_attribution": {
+        "additivity_error": -3.223540261387825e-07,
+        "component_shape_contribution": 2200775.8364751744,
+        "composite_chi_square": 1474144.958064634,
+        "effective_df": 12,
+        "separation_entropy_contribution": -726630.8784102182,
+        "warning": "bilinear GLS contributions are exactly additive but can be signed"
+      }
+    },
+    {
+      "N": 425,
+      "component_count_gates": [
+        {
+          "clock": "K1",
+          "expected_tail_count": 442301.23663497384,
+          "expected_tail_count_per_batch": 4423.012366349739,
+          "orientation": "first",
+          "passed": true,
+          "side": "left"
+        },
+        {
+          "clock": "K1",
+          "expected_tail_count": 39540.27805386229,
+          "expected_tail_count_per_batch": 395.4027805386229,
+          "orientation": "first",
+          "passed": true,
+          "side": "right"
+        },
+        {
+          "clock": "K1",
+          "expected_tail_count": 449511.019199683,
+          "expected_tail_count_per_batch": 4495.11019199683,
+          "orientation": "second",
+          "passed": true,
+          "side": "left"
+        },
+        {
+          "clock": "K1",
+          "expected_tail_count": 39299.231373801646,
+          "expected_tail_count_per_batch": 392.99231373801643,
+          "orientation": "second",
+          "passed": true,
+          "side": "right"
+        },
+        {
+          "clock": "K2",
+          "expected_tail_count": 113469.22709481147,
+          "expected_tail_count_per_batch": 1134.6922709481148,
+          "orientation": "first",
+          "passed": true,
+          "side": "left"
+        },
+        {
+          "clock": "K2",
+          "expected_tail_count": 225978.67629259304,
+          "expected_tail_count_per_batch": 2259.7867629259304,
+          "orientation": "first",
+          "passed": true,
+          "side": "right"
+        },
+        {
+          "clock": "K2",
+          "expected_tail_count": 113904.6166474186,
+          "expected_tail_count_per_batch": 1139.046166474186,
+          "orientation": "second",
+          "passed": true,
+          "side": "left"
+        },
+        {
+          "clock": "K2",
+          "expected_tail_count": 221721.5864822597,
+          "expected_tail_count_per_batch": 2217.2158648225973,
+          "orientation": "second",
+          "passed": true,
+          "side": "right"
+        }
+      ],
+      "component_local_effective_exponents": {
+        "K1_first_left": {
+          "beta_effective": [
+            1.5988568481271672,
+            1.5852755075415974,
+            1.5789063640166217
+          ],
+          "constant_beta_score": {
+            "chi_square": 492.34854586444817,
+            "constant_beta_hat": 1.6114877766273699,
+            "effective_df": 2,
+            "survival_probability": 1.2242544153127374e-107
+          },
+          "jackknife_se": [
+            0.0008731950864976971,
+            0.0013369921353238094,
+            0.001981786009722392
+          ]
+        },
+        "K1_first_right": {
+          "beta_effective": [
+            2.1177178966475325,
+            2.116262022130963,
+            2.117996149137898
+          ],
+          "constant_beta_score": {
+            "chi_square": 25.460585737190012,
+            "constant_beta_hat": 2.1214050965425346,
+            "effective_df": 2,
+            "survival_probability": 2.960084127454054e-06
+          },
+          "jackknife_se": [
+            0.0009890365674653586,
+            0.0016859699028463106,
+            0.0027109645011045764
+          ]
+        },
+        "K1_second_left": {
+          "beta_effective": [
+            1.5887548791573751,
+            1.5739260561716595,
+            1.5677569305004493
+          ],
+          "constant_beta_score": {
+            "chi_square": 538.271389443324,
+            "constant_beta_hat": 1.6043435130414774,
+            "effective_df": 2,
+            "survival_probability": 1.3057285471047056e-117
+          },
+          "jackknife_se": [
+            0.0010121120064384124,
+            0.0014527591824641693,
+            0.0020271941389262776
+          ]
+        },
+        "K1_second_right": {
+          "beta_effective": [
+            2.117809592994541,
+            2.116242916097601,
+            2.1168792079498475
+          ],
+          "constant_beta_score": {
+            "chi_square": 21.850318452131027,
+            "constant_beta_hat": 2.1210805530073755,
+            "effective_df": 2,
+            "survival_probability": 1.799963233580169e-05
+          },
+          "jackknife_se": [
+            0.0009742238984709407,
+            0.001486778056331409,
+            0.0023668909742631345
+          ]
+        },
+        "K2_first_left": {
+          "beta_effective": [
+            1.9129340229528506,
+            1.8968095137590626,
+            1.8821883760596612
+          ],
+          "constant_beta_score": {
+            "chi_square": 1178.8185585896367,
+            "constant_beta_hat": 1.930064414895795,
+            "effective_df": 2,
+            "survival_probability": 1.0539073169364866e-256
+          },
+          "jackknife_se": [
+            0.0007390734523702619,
+            0.001079688994404507,
+            0.0016238229698120668
+          ]
+        },
+        "K2_first_right": {
+          "beta_effective": [
+            1.7673392623679356,
+            1.7734214161497437,
+            1.7942131368826728
+          ],
+          "constant_beta_score": {
+            "chi_square": 239.5038049208178,
+            "constant_beta_hat": 1.7769817533352863,
+            "effective_df": 2,
+            "survival_probability": 9.826742230314248e-53
+          },
+          "jackknife_se": [
+            0.001268614921106851,
+            0.0018990626390193365,
+            0.002421548596168024
+          ]
+        },
+        "K2_second_left": {
+          "beta_effective": [
+            1.9135115346550076,
+            1.8962988742866456,
+            1.8803855126816336
+          ],
+          "constant_beta_score": {
+            "chi_square": 1480.3148545933343,
+            "constant_beta_hat": 1.9302277190334542,
+            "effective_df": 2,
+            "survival_probability": 3.56e-322
+          },
+          "jackknife_se": [
+            0.0006835990024212687,
+            0.0010053464796938286,
+            0.001487027975403725
+          ]
+        },
+        "K2_second_right": {
+          "beta_effective": [
+            1.778246222986926,
+            1.7887385813217214,
+            1.8136266308243072
+          ],
+          "constant_beta_score": {
+            "chi_square": 278.80845774845324,
+            "constant_beta_hat": 1.7865435466919213,
+            "effective_df": 2,
+            "survival_probability": 2.867560873050943e-61
+          },
+          "jackknife_se": [
+            0.001210351525106021,
+            0.0017390388607901955,
+            0.002504861941786801
+          ]
+        }
+      },
+      "component_pure_4_over_3_scores": {
+        "K1": {
+          "chi_square": 3656131.204064694,
+          "correlation_eigenvalues": [
+            0.027595347263260874,
+            0.047099355854187154,
+            0.07748790265030216,
+            0.08356167758276577,
+            0.6225548890170672,
+            0.9143666974836157,
+            1.158663097667133,
+            1.4327874181228557,
+            1.507150904527363,
+            1.6617092899703385,
+            2.1409813791583483,
+            2.3260420407027604
+          ],
+          "effective_df": 12,
+          "nominal_df": 12,
+          "survival_probability": 0.0
+        },
+        "K2": {
+          "chi_square": 3835139.4742964483,
+          "correlation_eigenvalues": [
+            0.03891747000490745,
+            0.06885249804474645,
+            0.07641927415188503,
+            0.09717455733334553,
+            0.822093428191197,
+            0.946249144190727,
+            1.075740426384807,
+            1.455555299338005,
+            1.567283448920621,
+            1.6942574110800985,
+            2.0585465133413354,
+            2.0989105290183243
+          ],
+          "effective_df": 12,
+          "nominal_df": 12,
+          "survival_probability": 0.0
+        }
+      },
+      "component_pure_4_over_3_side_scores": {
+        "K1": {
+          "left": {
+            "chi_square": 389478.46097932867,
+            "correlation_eigenvalues": [
+              0.08039048654394415,
+              0.08858833048237558,
+              1.1624041015076945,
+              1.404946586939715,
+              1.5250101157692064,
+              1.738660378757065
+            ],
+            "effective_df": 6,
+            "nominal_df": 6,
+            "survival_probability": 0.0
+          },
+          "right": {
+            "chi_square": 3023700.411524559,
+            "correlation_eigenvalues": [
+              0.02919510807972066,
+              0.04936479934924177,
+              0.7149750071081634,
+              0.9780186363515142,
+              1.9681832447842125,
+              2.260263204327147
+            ],
+            "effective_df": 6,
+            "nominal_df": 6,
+            "survival_probability": 0.0
+          }
+        },
+        "K2": {
+          "left": {
+            "chi_square": 3266399.1135817105,
+            "correlation_eigenvalues": [
+              0.048517021669552685,
+              0.07928717240901599,
+              0.8927931517018782,
+              1.080139559117759,
+              1.9002393415010217,
+              1.9990237536007713
+            ],
+            "effective_df": 6,
+            "nominal_df": 6,
+            "survival_probability": 0.0
+          },
+          "right": {
+            "chi_square": 631299.0333279977,
+            "correlation_eigenvalues": [
+              0.07717772533076758,
+              0.08775817095034488,
+              0.9928181387764152,
+              1.3790159771483603,
+              1.6363210321564483,
+              1.8269089556376636
+            ],
+            "effective_df": 6,
+            "nominal_df": 6,
+            "survival_probability": 0.0
+          }
+        }
+      },
+      "component_standardized_profiles": {
+        "K1": {
+          "first": {
+            "cdf": {
+              "left": [
+                0.00980129271672979,
+                0.005577269793976637,
+                0.0030939662949808233,
+                0.0016745408332876277,
+                0.0008846024732699477
+              ],
+              "right": [
+                0.9959843771521241,
+                0.9983079176715061,
+                0.9993400720421086,
+                0.9997621527216333,
+                0.9999209194438923
+              ]
+            },
+            "center": 0.5704242466995305,
+            "expected_tail_count": {
+              "left": 442301.23663497384,
+              "right": 39540.27805386229
+            },
+            "log_density": {
+              "left": [
+                -3.8353977334985756,
+                -4.353221065159873,
+                -4.900037520277289,
+                -5.4742011422342705,
+                -6.074524024671875
+              ],
+              "right": [
+                -4.322345679045118,
+                -5.097917614803895,
+                -5.956499041428694,
+                -6.8988306576162595,
+                -7.925832901091521
+              ]
+            },
+            "sample_count": 500000000,
+            "scale": 0.04359776401667742,
+            "standardized_density": {
+              "left": [
+                0.02159274860260445,
+                0.012865305780093175,
+                0.007446303678304141,
+                0.004193577284004915,
+                0.0023007410215095956
+              ],
+              "right": [
+                0.013268722845100866,
+                0.0061094555682350985,
+                0.002588959966043413,
+                0.0010089645645366058,
+                0.0003612888066366252
+              ]
+            },
+            "tail_probability": {
+              "left": 0.0008846024732699477,
+              "right": 7.908055610772458e-05
+            }
+          },
+          "second": {
+            "cdf": {
+              "left": [
+                0.009842043670230852,
+                0.005612548956377527,
+                0.003122015045700087,
+                0.0016952934036088302,
+                0.000899022038399366
+              ],
+              "right": [
+                0.9959972870691696,
+                0.9983146178377115,
+                0.9993432083151486,
+                0.9997634662319642,
+                0.9999214015372524
+              ]
+            },
+            "center": 0.5704040593849765,
+            "expected_tail_count": {
+              "left": 449511.019199683,
+              "right": 39299.231373801646
+            },
+            "log_density": {
+              "left": [
+                -3.834681076547565,
+                -4.351143757103209,
+                -4.896022407333522,
+                -5.467610141879609,
+                -6.064727188521368
+              ],
+              "right": [
+                -4.324701209082069,
+                -5.101023904904699,
+                -5.9604436145287405,
+                -6.903693781212914,
+                -7.931608744673111
+              ]
+            },
+            "sample_count": 500000000,
+            "scale": 0.04362405852009018,
+            "standardized_density": {
+              "left": [
+                0.021608228742294244,
+                0.01289205876091251,
+                0.007476261530419822,
+                0.004221308441014246,
+                0.0023233917760231847
+              ],
+              "right": [
+                0.013237504751899892,
+                0.006090507271571429,
+                0.0025787677394113885,
+                0.001004069756828886,
+                0.0003592080737799683
+              ]
+            },
+            "tail_probability": {
+              "left": 0.000899022038399366,
+              "right": 7.859846274760329e-05
+            }
+          }
+        },
+        "K2": {
+          "first": {
+            "cdf": {
+              "left": [
+                0.005831708801356107,
+                0.002797463341121,
+                0.00127415646137397,
+                0.0005514384030716319,
+                0.00022693845418962294
+              ],
+              "right": [
+                0.9923817444272001,
+                0.9960080655858865,
+                0.9979889807783738,
+                0.9990266841361869,
+                0.9995480426474148
+              ]
+            },
+            "center": 0.6139042064413146,
+            "expected_tail_count": {
+              "left": 113469.22709481147,
+              "right": 225978.67629259304
+            },
+            "log_density": {
+              "left": [
+                -4.102840478098481,
+                -4.7663482783383095,
+                -5.487314178780929,
+                -6.2642589447146175,
+                -7.09578563528955
+              ],
+              "right": [
+                -3.9582722336448684,
+                -4.543810213404072,
+                -5.171682804422907,
+                -5.841380484915871,
+                -6.55328931623042
+              ]
+            },
+            "sample_count": 500000000,
+            "scale": 0.04255184667003785,
+            "standardized_density": {
+              "left": [
+                0.01652566787378211,
+                0.008511404760008506,
+                0.004138945727447688,
+                0.0019031232155383346,
+                0.0008285895539316835
+              ],
+              "right": [
+                0.019096079368883866,
+                0.010632815975295102,
+                0.005675010846023626,
+                0.0029048297829168362,
+                0.0014254192240234695
+              ]
+            },
+            "tail_probability": {
+              "left": 0.00022693845418962294,
+              "right": 0.0004519573525851861
+            }
+          },
+          "second": {
+            "cdf": {
+              "left": [
+                0.00584263323966937,
+                0.0028035781534797534,
+                0.0012774239953790925,
+                0.000553139104702369,
+                0.0002278092332948372
+              ],
+              "right": [
+                0.992411654662646,
+                0.996032730737817,
+                0.9980076975802169,
+                0.9990398146491384,
+                0.9995565568270355
+              ]
+            },
+            "center": 0.6138932764460094,
+            "expected_tail_count": {
+              "left": 113904.6166474186,
+              "right": 221721.5864822597
+            },
+            "log_density": {
+              "left": [
+                -4.1013906667149085,
+                -4.76460395016688,
+                -5.485287691170607,
+                -6.261895322546206,
+                -7.092945877719612
+              ],
+              "right": [
+                -3.959197652698982,
+                -4.546000181201377,
+                -5.175853394840446,
+                -5.848522199051429,
+                -6.564658592571216
+              ]
+            },
+            "sample_count": 500000000,
+            "scale": 0.04253464339481044,
+            "standardized_density": {
+              "left": [
+                0.01654964435167217,
+                0.008526264399385855,
+                0.004147341754032784,
+                0.0019076268000492091,
+                0.0008309458915200822
+              ],
+              "right": [
+                0.0190784156676005,
+                0.010609555929386472,
+                0.005651391986699136,
+                0.0028841582220451197,
+                0.0014093050159832757
+              ]
+            },
+            "tail_probability": {
+              "left": 0.0002278092332948372,
+              "right": 0.0004434431729645194
+            }
+          }
+        }
+      },
+      "mixture_labels": [
+        {
+          "curvature_mode": 2,
+          "orientation": "first",
+          "side": "left"
+        },
+        {
+          "curvature_mode": 3,
+          "orientation": "first",
+          "side": "left"
+        },
+        {
+          "curvature_mode": 4,
+          "orientation": "first",
+          "side": "left"
+        },
+        {
+          "curvature_mode": 2,
+          "orientation": "first",
+          "side": "right"
+        },
+        {
+          "curvature_mode": 3,
+          "orientation": "first",
+          "side": "right"
+        },
+        {
+          "curvature_mode": 4,
+          "orientation": "first",
+          "side": "right"
+        },
+        {
+          "curvature_mode": 2,
+          "orientation": "second",
+          "side": "left"
+        },
+        {
+          "curvature_mode": 3,
+          "orientation": "second",
+          "side": "left"
+        },
+        {
+          "curvature_mode": 4,
+          "orientation": "second",
+          "side": "left"
+        },
+        {
+          "curvature_mode": 2,
+          "orientation": "second",
+          "side": "right"
+        },
+        {
+          "curvature_mode": 3,
+          "orientation": "second",
+          "side": "right"
+        },
+        {
+          "curvature_mode": 4,
+          "orientation": "second",
+          "side": "right"
+        }
+      ],
+      "mixture_on_composite_coordinates": {
+        "reconstruction_gate": {
+          "maximum_cdf_absolute_error": 1.1102230246251565e-16,
+          "maximum_density_absolute_error": 6.938893903907228e-18,
+          "maximum_log_identity_error": 1.5543122344752192e-15,
+          "passed": true
+        },
+        "rows": {
+          "first": {
+            "left": [
+              {
+                "cdf": {
+                  "K1": 0.016142161644286963,
+                  "K2": 0.0003946644442537444
+                },
+                "component_shape": -3.4096014655965785,
+                "log_composite": -3.9337219321933374,
+                "p": 0.4715320618627631,
+                "reconstruction_error": 2.220446049250313e-16,
+                "responsibility_K1": 0.9596588864566005,
+                "responsibility_K2": 0.04034111354339956,
+                "separation_entropy": -0.5241204665967591,
+                "standardized_density": {
+                  "K1": 0.03756238471267198,
+                  "K2": 0.0015790073410874253
+                },
+                "z": 2.5
+              },
+              {
+                "cdf": {
+                  "K1": 0.008872842764500536,
+                  "K2": 0.00014058087344727527
+                },
+                "component_shape": -3.9208753209084923,
+                "log_composite": -4.490979004264683,
+                "p": 0.45946884539199717,
+                "reconstruction_error": -5.551115123125783e-16,
+                "responsibility_K1": 0.9733092851001462,
+                "responsibility_K2": 0.026690714899853706,
+                "separation_entropy": -0.5701036833561902,
+                "standardized_density": {
+                  "K1": 0.021820940355135585,
+                  "K2": 0.0005983878986685204
+                },
+                "z": 2.75
+              },
+              {
+                "cdf": {
+                  "K1": 0.00472245552628838,
+                  "K2": 4.6994110291549633e-05
+                },
+                "component_shape": -4.474817955469148,
+                "log_composite": -5.081594133666594,
+                "p": 0.4474056289212312,
+                "reconstruction_error": 1.1102230246251565e-16,
+                "responsibility_K1": 0.9829385743695452,
+                "responsibility_K2": 0.017061425630454773,
+                "separation_entropy": -0.6067761781974462,
+                "standardized_density": {
+                  "K1": 0.012208100138005197,
+                  "K2": 0.0002119029591725155
+                },
+                "z": 3.0
+              },
+              {
+                "cdf": {
+                  "K1": 0.0024371094252336007,
+                  "K2": 1.4751721493352975e-05
+                },
+                "component_shape": -5.069163378587658,
+                "log_composite": -5.703871085974751,
+                "p": 0.43534241245046523,
+                "reconstruction_error": -4.440892098500626e-16,
+                "responsibility_K1": 0.9894663743603869,
+                "responsibility_K2": 0.01053362563961313,
+                "separation_entropy": -0.634707707387093,
+                "standardized_density": {
+                  "K1": 0.006595858002165381,
+                  "K2": 7.021794855006469e-05
+                },
+                "z": 3.25
+              },
+              {
+                "cdf": {
+                  "K1": 0.0012205792919150358,
+                  "K2": 4.349539103188212e-06
+                },
+                "component_shape": -5.701646320263026,
+                "log_composite": -6.356691433928677,
+                "p": 0.4232791959796993,
+                "reconstruction_error": -7.771561172376096e-16,
+                "responsibility_K1": 0.9937200379478619,
+                "responsibility_K2": 0.006279962052138085,
+                "separation_entropy": -0.6550451136656498,
+                "standardized_density": {
+                  "K1": 0.0034484031252826294,
+                  "K2": 2.1792698084231965e-05
+                },
+                "z": 3.5
+              }
+            ],
+            "right": [
+              {
+                "cdf": {
+                  "K1": 0.9997774024985373,
+                  "K2": 0.9882733374931577
+                },
+                "component_shape": -3.555381032565389,
+                "log_composite": -4.107209764151392,
+                "p": 0.712796391278082,
+                "reconstruction_error": 4.440892098500626e-16,
+                "responsibility_K1": 0.03190952083378501,
+                "responsibility_K2": 0.968090479166215,
+                "separation_entropy": -0.5518287315860033,
+                "standardized_density": {
+                  "K1": 0.0010500542614532797,
+                  "K2": 0.031857185772734525
+                },
+                "z": 2.5
+              },
+              {
+                "cdf": {
+                  "K1": 0.9999348863344828,
+                  "K2": 0.9942028331406105
+                },
+                "component_shape": -4.155002552552857,
+                "log_composite": -4.752788554276129,
+                "p": 0.724859607748848,
+                "reconstruction_error": 5.551115123125783e-16,
+                "responsibility_K1": 0.019315017491921247,
+                "responsibility_K2": 0.9806849825080788,
+                "separation_entropy": -0.597786001723272,
+                "standardized_density": {
+                  "K1": 0.00033328460912244654,
+                  "K2": 0.016921921567203672
+                },
+                "z": 2.75
+              },
+              {
+                "cdf": {
+                  "K1": 0.9999827980676773,
+                  "K2": 0.9972752759467268
+                },
+                "component_shape": -4.816838796549761,
+                "log_composite": -5.4491376342240185,
+                "p": 0.736922824219614,
+                "reconstruction_error": -8.881784197001252e-16,
+                "responsibility_K1": 0.011066864722656864,
+                "responsibility_K2": 0.9889331352773431,
+                "separation_entropy": -0.6322988376742567,
+                "standardized_density": {
+                  "K1": 9.517528616969965e-05,
+                  "K2": 0.00850484726356384
+                },
+                "z": 3.0
+              },
+              {
+                "cdf": {
+                  "K1": 0.9999959105403042,
+                  "K2": 0.9987830681157919
+                },
+                "component_shape": -5.539647518754187,
+                "log_composite": -6.196193934059249,
+                "p": 0.7489860406903799,
+                "reconstruction_error": -6.661338147750939e-16,
+                "responsibility_K1": 0.005984901232284592,
+                "responsibility_K2": 0.9940150987677154,
+                "separation_entropy": -0.6565464153050613,
+                "standardized_density": {
+                  "K1": 2.4384516514920155e-05,
+                  "K2": 0.004049954485669742
+                },
+                "z": 3.25
+              },
+              {
+                "cdf": {
+                  "K1": 0.9999991286339192,
+                  "K2": 0.9994843731309737
+                },
+                "component_shape": -6.322658687359297,
+                "log_composite": -6.995110663605586,
+                "p": 0.7610492571611458,
+                "reconstruction_error": -7.771561172376096e-16,
+                "responsibility_K1": 0.003046958329996452,
+                "responsibility_K2": 0.9969530416700035,
+                "separation_entropy": -0.672451976246288,
+                "standardized_density": {
+                  "K1": 5.5841689444580685e-06,
+                  "K2": 0.0018271185921939165
+                },
+                "z": 3.5
+              }
+            ]
+          },
+          "second": {
+            "left": [
+              {
+                "cdf": {
+                  "K1": 0.016222056555952536,
+                  "K2": 0.00039342539702994823
+                },
+                "component_shape": -3.4077227852602947,
+                "log_composite": -3.9323957353771553,
+                "p": 0.47150054356752097,
+                "reconstruction_error": 1.1102230246251565e-16,
+                "responsibility_K1": 0.9598330912577405,
+                "responsibility_K2": 0.040166908742259484,
+                "separation_entropy": -0.5246729501168607,
+                "standardized_density": {
+                  "K1": 0.03761906054186494,
+                  "K2": 0.0015742751375393757
+                },
+                "z": 2.5
+              },
+              {
+                "cdf": {
+                  "K1": 0.008937289717055513,
+                  "K2": 0.0001401439149941021
+                },
+                "component_shape": -3.9174934369453074,
+                "log_composite": -4.488184622948546,
+                "p": 0.4594357311327238,
+                "reconstruction_error": -3.3306690738754696e-16,
+                "responsibility_K1": 0.9734725014167411,
+                "responsibility_K2": 0.026527498583258834,
+                "separation_entropy": -0.5706911860032379,
+                "standardized_density": {
+                  "K1": 0.021885671097391226,
+                  "K2": 0.0005963929214074154
+                },
+                "z": 2.75
+              },
+              {
+                "cdf": {
+                  "K1": 0.004770904008558441,
+                  "K2": 4.687339778555266e-05
+                },
+                "component_shape": -4.469341997918415,
+                "log_composite": -5.076688621534762,
+                "p": 0.44737091869792656,
+                "reconstruction_error": 5.551115123125783e-16,
+                "responsibility_K1": 0.9830791498718964,
+                "responsibility_K2": 0.016920850128103678,
+                "separation_entropy": -0.6073466236163482,
+                "standardized_density": {
+                  "K1": 0.012269888783968742,
+                  "K2": 0.0002111904715190935
+                },
+                "z": 3.0
+              },
+              {
+                "cdf": {
+                  "K1": 0.0024712110453280417,
+                  "K2": 1.4734015353632424e-05
+                },
+                "component_shape": -5.060882741208904,
+                "log_composite": -5.6960942538763515,
+                "p": 0.4353061062631294,
+                "reconstruction_error": 5.551115123125783e-16,
+                "responsibility_K1": 0.9895771512914321,
+                "responsibility_K2": 0.010422848708567982,
+                "separation_entropy": -0.6352115126674477,
+                "standardized_density": {
+                  "K1": 0.0066480970688862625,
+                  "K2": 7.002193801508775e-05
+                },
+                "z": 3.25
+              },
+              {
+                "cdf": {
+                  "K1": 0.0012431281911182365,
+                  "K2": 4.354961678429568e-06
+                },
+                "component_shape": -5.689790020597834,
+                "log_composite": -6.345232842535092,
+                "p": 0.4232412938283322,
+                "reconstruction_error": -1.1102230246251565e-16,
+                "responsibility_K1": 0.9937984751708475,
+                "responsibility_K2": 0.006201524829152471,
+                "separation_entropy": -0.6554428219372576,
+                "standardized_density": {
+                  "K1": 0.0034884195507197823,
+                  "K2": 2.1768518466050713e-05
+                },
+                "z": 3.5
+              }
+            ],
+            "right": [
+              {
+                "cdf": {
+                  "K1": 0.9997772246572603,
+                  "K2": 0.9883395348567386
+                },
+                "component_shape": -3.557974471260212,
+                "log_composite": -4.109495634561444,
+                "p": 0.7127967922634648,
+                "reconstruction_error": -1.1102230246251565e-16,
+                "responsibility_K1": 0.03199969134777943,
+                "responsibility_K2": 0.9680003086522205,
+                "separation_entropy": -0.5515211633012321,
+                "standardized_density": {
+                  "K1": 0.0010506172024888328,
+                  "K2": 0.031781487053471086
+                },
+                "z": 2.5
+              },
+              {
+                "cdf": {
+                  "K1": 0.9999347984001753,
+                  "K2": 0.9942508745843796
+                },
+                "component_shape": -4.159296153439181,
+                "log_composite": -4.7567313826705195,
+                "p": 0.7248616046982621,
+                "reconstruction_error": 5.551115123125783e-16,
+                "responsibility_K1": 0.019404385985139667,
+                "responsibility_K2": 0.9805956140148604,
+                "separation_entropy": -0.5974352292313393,
+                "standardized_density": {
+                  "K1": 0.00033350911592713536,
+                  "K2": 0.016853796691251945
+                },
+                "z": 2.75
+              },
+              {
+                "cdf": {
+                  "K1": 0.999982752026145,
+                  "K2": 0.9973078651945599
+                },
+                "component_shape": -4.823627524419168,
+                "log_composite": -5.455539789891871,
+                "p": 0.7369264171330593,
+                "reconstruction_error": -1.2212453270876722e-15,
+                "responsibility_K1": 0.01115298501754738,
+                "responsibility_K2": 0.9888470149824526,
+                "separation_entropy": -0.631912265472702,
+                "standardized_density": {
+                  "K1": 9.530381547337121e-05,
+                  "K2": 0.00844983592276051
+                },
+                "z": 3.0
+              },
+              {
+                "cdf": {
+                  "K1": 0.9999958903433491,
+                  "K2": 0.9988036919456063
+                },
+                "component_shape": -5.550094346199246,
+                "log_composite": -6.206231806516037,
+                "p": 0.7489912295678565,
+                "reconstruction_error": -1.5543122344752192e-15,
+                "responsibility_K1": 0.006064997231718122,
+                "responsibility_K2": 0.9939350027682817,
+                "separation_entropy": -0.6561374603167895,
+                "standardized_density": {
+                  "K1": 2.4464051124912163e-05,
+                  "K2": 0.004009181833653483
+                },
+                "z": 3.25
+              },
+              {
+                "cdf": {
+                  "K1": 0.9999991227282612,
+                  "K2": 0.9994964671339873
+                },
+                "component_shape": -6.338312282063577,
+                "log_composite": -7.010376629137658,
+                "p": 0.7610560420026536,
+                "reconstruction_error": 1.1102230246251565e-15,
+                "responsibility_K1": 0.0031140268389175654,
+                "responsibility_K2": 0.9968859731610825,
+                "separation_entropy": -0.6720643470740824,
+                "standardized_density": {
+                  "K1": 5.620623060233919e-06,
+                  "K2": 0.0017993166337386336
+                },
+                "z": 3.5
+              }
+            ]
+          }
+        }
+      },
+      "mixture_residual_attribution": {
+        "additivity_error": -1.8882565200328827e-07,
+        "component_shape_contribution": 2437106.902211952,
+        "composite_chi_square": 1627487.806816716,
+        "effective_df": 12,
+        "separation_entropy_contribution": -809619.0953950472,
+        "warning": "bilinear GLS contributions are exactly additive but can be signed"
+      }
+    }
+  ],
+  "clock_convention": {
+    "K1": "histogram kind minus; first ambient-H1 birth",
+    "K2": "histogram kind plus; second ambient-H1 birth"
+  },
+  "component_count_gate_summary": {
+    "all_passed": false,
+    "boundary": "Component scores are post-reveal diagnostics. A clock/side cell below the frozen composite count gate cannot independently carry a formal elimination.",
+    "failed": [
+      {
+        "N": 290,
+        "clock": "K1",
+        "expected_tail_count": 6812.2912263435255,
+        "expected_tail_count_per_batch": 68.12291226343525,
+        "orientation": "first",
+        "passed": false,
+        "side": "right"
+      },
+      {
+        "N": 290,
+        "clock": "K1",
+        "expected_tail_count": 6618.243988409933,
+        "expected_tail_count_per_batch": 66.18243988409932,
+        "orientation": "second",
+        "passed": false,
+        "side": "right"
+      }
+    ]
+  },
+  "component_global_pure_4_over_3_scores": {
+    "K1": {
+      "chi_square": 14918477.147722263,
+      "effective_df": 48,
+      "survival_probability": 0.0
+    },
+    "K2": {
+      "chi_square": 15965901.66876175,
+      "effective_df": 48,
+      "survival_probability": 0.0
+    }
+  },
+  "global_mixture_residual_attribution": {
+    "additivity_error": -7.59901013225317e-07,
+    "component_shape_contribution": 9110751.098744055,
+    "composite_chi_square": 6280338.86692693,
+    "separation_entropy_contribution": -2830412.231816366
+  },
+  "interpretation": "Self-standardized K1 and K2 scores test intrinsic clock curvature.  The exact log-mixture identity separates responsibility-weighted component shape from the entropy of clock separation on the composite coordinates; its GLS contributions use the frozen composite covariance.",
+  "issue": 28,
+  "manifest_sha256": "50ed00a12218eda23b18086cfd5740f6ae0593ffe5617f46d33dc2d00f2c0ed1",
+  "new_monte_carlo": false,
+  "related_issue": 337,
+  "schema": "matching-one/p28-birth-clock-mixture-diagnostic/v1",
+  "status": "post_reveal_mechanism_diagnostic_no_new_model_vote"
+}
