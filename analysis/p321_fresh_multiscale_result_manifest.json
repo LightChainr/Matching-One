@@ -1,0 +1,64 @@
+{
+  "schema": "matching-one/p321-fresh-multiscale-result/v1",
+  "issue": 321,
+  "status": "fresh_preregistered_score_complete",
+  "freeze_commit": "82060874d54c832c9bc000d8f16f52104e78445e",
+  "freeze_manifest": "analysis/p321_fresh_multiscale_decision_freeze.json",
+  "remote": {
+    "alias": "Huawei-CodeBuddy-TgFr7R",
+    "path": "/workspace/p321-fresh-100k",
+    "source_files": 42,
+    "transfer": "read-only scp copy because rsync was unavailable remotely",
+    "remote_preserved": true,
+    "remote_local_sha256_match": true
+  },
+  "acquisition": {
+    "N": [144, 576, 1296],
+    "samples_per_shape": 100000,
+    "batches": 50,
+    "samples_per_batch": 2000,
+    "root_order": ["1", "16/9", "9/4", "4", "9"],
+    "all_repeated_square_histograms_byte_identical": true,
+    "all_repeated_square_moments_byte_identical": true,
+    "interim_scores_viewed": false,
+    "scorer_launch_count": 1
+  },
+  "decision": {
+    "alpha": 0.01,
+    "scale_fit": {
+      "chi_square": 2.0002264951440183,
+      "degrees_of_freedom": 4,
+      "p_value": 0.735717220889469,
+      "critical_chi_square": 13.276704135987622,
+      "decision": "pass"
+    },
+    "conditional_E4": {
+      "chi_square": 4.027463739637316,
+      "degrees_of_freedom": 3,
+      "p_value": 0.2585137726342605,
+      "critical_chi_square": 11.34486673014437,
+      "decision": "do_not_reject"
+    },
+    "rho_9": "diagnostic_only"
+  },
+  "pilot_comparison": {
+    "pilot_E4_chi_square": 7.531750170483802,
+    "pilot_degrees_of_freedom": 3,
+    "planned_alternative_expected_chi_square_100k": 25.65875085241901,
+    "classification": "the exploratory tension did not strengthen; no replacement curve is inferred"
+  },
+  "outputs": {
+    "raw_root": "results/local-20260830/P321-equal-area-fresh-100k",
+    "score": "results/local-20260830/P321-equal-area-fresh-100k/multiscale_score.json",
+    "report": "results/local-20260830/P321-equal-area-fresh-100k/REPORT.md",
+    "remote_checksums": "results/local-20260830/P321-equal-area-fresh-100k/remote_source_checksums.sha256",
+    "package_checksums": "results/local-20260830/P321-equal-area-fresh-100k/checksums.sha256"
+  },
+  "claim_boundary": [
+    "The fresh streams do not reject the frozen conditional E4 shape under the frozen scale law.",
+    "The result does not prove the transparent-projector assumption or a CFT field identity.",
+    "The pilot residual is a power-planning alternative only and is not validated as a curve.",
+    "The rho=9 endpoint is excluded from the primary decision.",
+    "The frozen scorer status string variance_smoke is preserved as an implementation label."
+  ]
+}
