@@ -64,3 +64,19 @@ interior nonzero amplitude.  A sign-flipped or Jordan/incoherent completion
 is not selected, but cannot be excluded at the frozen threshold because the
 N60 annihilator coefficient itself is not resolved.  This is an informative
 power boundary, not permission to rescore at `.05`.
+
+## Frozen increment power gate
+
+An equal-size independent N60 replication would halve the N60 covariance.
+At the first-batch means, the projected preserving-ray score is
+`1.40573/1` (`p=.23577`), while the flipping-ray optimizer moves to the
+opposite scale boundary and gives `6.06454/1` (`p=.013792`).
+
+This is a structural rather than budget-limited obstruction.  With N112
+held fixed, arbitrarily precise N60 data let the negative ray send its scale
+to infinity, fit N60, and collapse the latent N112 coefficient to zero.  The
+limiting score is exactly the unchanged N112 zero score, `6.06453/1`, whose
+`p=.013792` remains above `.01`.  Therefore no amount of N60-only replication
+can meet the frozen flip-rejection gate.  The proposed second 2M/child block
+is not authorized or run; the next useful input must resolve N112 or add a
+non-degenerate geometry constraint.

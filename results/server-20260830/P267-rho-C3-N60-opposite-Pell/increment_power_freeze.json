@@ -1,0 +1,58 @@
+{
+  "schema": "matching-one/rho-child-opposite-pell-increment-power/v1",
+  "status": "frozen_power_gate_no_go",
+  "source_result_commit": "9277fc91ff7b765707971d7c827ad43513df4df3",
+  "proposal": "one additional independent 2M/child N60 replication combined by equal-information inverse covariance",
+  "plug_in_contract": "first-batch c60 is the projection mean; independent equal-size replication halves C60; N112 is unchanged",
+  "decision_alpha": 0.01,
+  "projected_phase_preserving_ray": {
+    "ray_sign": 1,
+    "best_positive_scale": "0.88040027202795400954",
+    "chi_square": "1.4057252349648961685",
+    "dof": 1,
+    "survival_p": "0.23576732680258426563",
+    "latent_reference_re_im": [
+      "-0.000046941825715159992418",
+      "7.1627728666968382862e-6"
+    ],
+    "joint_residual": [
+      "-0.000010315782389893389375",
+      "-4.7678361221734683151e-6",
+      "5.3065510146324380664e-6",
+      "3.5256696002753970559e-6"
+    ]
+  },
+  "projected_phase_flipping_ray": {
+    "ray_sign": -1,
+    "best_positive_scale": "999999.99999999989589",
+    "chi_square": "6.0645381767712161026",
+    "dof": 1,
+    "survival_p": "0.013792281458070404864",
+    "latent_reference_re_im": [
+      "3.602101943856409532e-11",
+      "-9.8317752961306682196e-12"
+    ],
+    "joint_residual": [
+      "-0.000057257644126072820357",
+      "2.3949465762986661018e-6",
+      "-2.5675919134455614869e-11",
+      "1.4844590742496262663e-12"
+    ]
+  },
+  "projected_combined_N60_zero": {
+    "chi_square": "9.0676154473046459895",
+    "dof": 2,
+    "survival_p": "0.010739704291586284484"
+  },
+  "N112_zero_boundary_for_flip": {
+    "chi_square": "6.0645295813993249205",
+    "effective_ray_dof": 1,
+    "survival_p": "0.013792348582286189202"
+  },
+  "finite_increment_gate_passed": false,
+  "N60_only_asymptotic_gate_passed": false,
+  "increment_authorized": false,
+  "decision": "do_not_run_N60_only_increment",
+  "reason": "the negative ray can send its scale to infinity and fit N60 while collapsing the unchanged N112 coefficient to zero; its best possible N60-only limit remains above alpha",
+  "next_information_needed": "independent N112 information or a new non-degenerate geometry constraint, not more N60 samples alone"
+}
