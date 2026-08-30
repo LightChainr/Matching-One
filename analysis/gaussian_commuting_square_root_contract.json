@@ -1,0 +1,56 @@
+{
+  "schema": "matching-one/gaussian-commuting-square-root-contract/v1",
+  "issue": 158,
+  "status": "exact_design_only_no_target_data",
+  "arithmetic_source": {
+    "path": "scripts/gaussian_harmonic_arithmetic.py",
+    "sha256": "177958aab9db8b64a915c96b79a789612a9b92ccc505c540fdbab9cd6029e218"
+  },
+  "character_contract": {
+    "level": 4,
+    "root_factor_formula": "DeltaCos4_child/DeltaCos4_parent/norm(multiplier)^2",
+    "norm2_factor": "-1/4",
+    "norm5_factor": "-14/625",
+    "norm10_factor": "7/1250",
+    "fit_parameters": 0
+  },
+  "lineages": [
+    {
+      "id": "n65-to-n650",
+      "parent_N": 65,
+      "parent": [[8, 1], [7, 4]],
+      "multipliers": {"norm2": [1, 1], "norm5": [2, -1], "norm10": [3, 1]},
+      "canonical_children": {
+        "norm2": [[9, 7], [11, 3]],
+        "norm5": [[17, 6], [18, 1]],
+        "norm10": [[23, 11], [19, 17]]
+      },
+      "target_N": 650,
+      "direct_root_factor": "7/1250"
+    },
+    {
+      "id": "n85-to-n850",
+      "parent_N": 85,
+      "parent": [[9, 2], [7, 6]],
+      "multipliers": {"norm2": [1, 1], "norm5": [2, 1], "norm10": [1, 3]},
+      "canonical_children": {
+        "norm2": [[11, 7], [13, 1]],
+        "norm5": [[16, 13], [19, 8]],
+        "norm10": [[29, 3], [27, 11]]
+      },
+      "target_N": 850,
+      "direct_root_factor": "7/1250"
+    }
+  ],
+  "scoring_protocol": {
+    "score_fixed_ratio_before_finite_size_corrections": true,
+    "direct_and_two_step_paths_form_one_correlated_block": true,
+    "freeze_corrections_from_source_data_before_target_read": true,
+    "claim_depends_on_crn": false
+  },
+  "claim_boundary": {
+    "included": "Gaussian multiplication, deterministic D4 representatives, exact H4 contrasts, and direct/two-step character composition",
+    "excluded": "threshold ranks, roots, covariance, CRN construction, finite-size correction fits, scores, or empirical support/falsification",
+    "parent_issue": "remain open"
+  }
+}
