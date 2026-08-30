@@ -124,15 +124,15 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
             )
         )
         self.assertEqual(result, audit(ROOT, manifest))
-        self.assertEqual(result["counts"]["total"], 53)
-        self.assertEqual(result["counts"]["direct_typed_entrypoint"], 22)
-        self.assertEqual(result["counts"]["covered_frozen_kernel"], 21)
+        self.assertEqual(result["counts"]["total"], 54)
+        self.assertEqual(result["counts"]["direct_typed_entrypoint"], 23)
+        self.assertEqual(result["counts"]["covered_frozen_kernel"], 22)
         self.assertEqual(
             result["counts"]["descriptor_not_applicable_generic_utility"], 1
         )
-        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 9)
+        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 8)
         self.assertEqual(result["counts"]["outside_registered_typed_path"], 0)
-        self.assertEqual(len(result["rows"]), 53)
+        self.assertEqual(len(result["rows"]), 54)
         statuses = {row["path"]: row["status"] for row in result["rows"]}
         self.assertEqual(
             statuses["scripts/score_prequential_evidence.py"],
@@ -159,7 +159,6 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
             "scripts/score_p49_fullcurve_doubling.py",
             "scripts/score_p50_fullcurve_n290.py",
             "scripts/threshold_score_modes.py",
-            "scripts/score_v14_scalar_root_projector.py",
         ):
             self.assertEqual(
                 statuses[path], "channel_bearing_migration_required"
@@ -204,6 +203,14 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
         )
         self.assertEqual(
             statuses["scripts/score_v14_fixedp_scalar_projector_typed.py"],
+            "direct_typed_entrypoint",
+        )
+        self.assertEqual(
+            statuses["scripts/score_v14_scalar_root_projector.py"],
+            "covered_frozen_kernel",
+        )
+        self.assertEqual(
+            statuses["scripts/score_v14_scalar_root_projector_typed.py"],
             "direct_typed_entrypoint",
         )
         self.assertEqual(
