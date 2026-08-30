@@ -250,8 +250,13 @@ def score_size(parsed: Mapping[str, object], spec: Mapping[str, object]) -> tupl
                 / details[orientation]["primary"]["within_stratum_age_denominator_steps2"]
             )
             denominator_retentions.append(denominator_retention)
-            exact_noop = abs(difference_variance) < 1e-24 and abs(difference) < 1e-14
+            zero_difference_variance = abs(difference_variance) < 1e-24
+            exact_noop = zero_difference_variance and abs(difference) < 1e-12
             difference_se = math.sqrt(max(difference_variance, 0.0))
+            if zero_difference_variance:
+                difference_p = 1.0 if exact_noop else 0.0
+            else:
+                difference_p = float(2 * t.sf(abs(difference / difference_se), df))
             orientation_rows[orientation] = {
                 **details[orientation][control],
                 "delete_one_standard_error": standard_error,
@@ -259,9 +264,7 @@ def score_size(parsed: Mapping[str, object], spec: Mapping[str, object]) -> tupl
                 "two_sided_p_df99": float(2 * t.sf(abs(estimate / standard_error), df)),
                 "difference_from_primary": difference,
                 "difference_standard_error": difference_se,
-                "difference_two_sided_p_df99": (
-                    1.0 if exact_noop else float(2 * t.sf(abs(difference / difference_se), df))
-                ),
+                "difference_two_sided_p_df99": difference_p,
                 "exact_noop_vs_primary": exact_noop,
                 "absolute_magnitude_retention": (
                     abs(estimate) / abs(float(point[primary_index]))

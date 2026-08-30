@@ -8,7 +8,11 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from score_p334_age_iota_site_control import add_sufficient, slope  # noqa: E402
+from score_p334_age_iota_site_control import (  # noqa: E402
+    add_sufficient,
+    jackknife_covariance,
+    slope,
+)
 
 
 class P334AgeIotaSiteControlTests(unittest.TestCase):
@@ -39,6 +43,11 @@ class P334AgeIotaSiteControlTests(unittest.TestCase):
             slope(controlled, 100)["within_stratum_age_denominator_steps2"],
             slope(primary, 100)["within_stratum_age_denominator_steps2"],
         )
+
+    def test_identical_delete_one_columns_have_exact_zero_difference_variance(self) -> None:
+        covariance = jackknife_covariance([[1.0, 1.0], [0.9, 0.9], [1.1, 1.1]])
+        difference_variance = covariance[1, 1] + covariance[0, 0] - 2 * covariance[1, 0]
+        self.assertEqual(difference_variance, 0.0)
 
 
 if __name__ == "__main__":
