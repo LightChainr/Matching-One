@@ -1,0 +1,163 @@
+{
+  "character_conversion": {
+    "delta_cos4_child_over_parent": "14/25",
+    "fixed_p_delta_M_child_over_parent": 0.013279692751705272,
+    "identity": "root_factor = fixed_p_factor / slope_factor",
+    "norm": 10,
+    "root_child_over_parent": "7/1250",
+    "slope_child_over_parent": 2.371373705661655
+  },
+  "contains_target_data": false,
+  "crn_conclusion": {
+    "classification": "power_no_go_for_new_norm10_covering_crn",
+    "minimum_new_coupling_if_still_requested": "ten-fiber child uniforms plus an audited symmetric measure-preserving parent rank map, with joint batch moments; pilot only, because the absolute-correlation bound already rules out material gain",
+    "reason": "the transported parent coefficient is only 0.01328 in fixed-p M (0.0056 in roots), so Cauchy-Schwarz caps even perfect fresh parent-child CRN at less than 2.4 percent variance reduction"
+  },
+  "design": {
+    "interpretation": "power to distinguish the leading character target from a zero child contrast, not precision on the exact rational ratio",
+    "normal_z_sum": 3.4174505371218142,
+    "power": 0.8,
+    "two_sided_alpha": 0.01
+  },
+  "joint_equal_target_depth": {
+    "samples_per_lineage": 17877994113.493584,
+    "score": "one known-direction contrast against zero using both independent target streams and archived parent covariance",
+    "total_target_samples": 35755988226.98717,
+    "warning": "this does not establish per-lineage commuting-square closure"
+  },
+  "lineages": [
+    {
+      "archived_parent_standard_errors_after_transport": {
+        "delta_M": 7.745341438676154e-07,
+        "root_gap": 3.898112916607713e-08
+      },
+      "leading_targets": {
+        "delta_M_at_fixed_p": 1.5091265192646443e-05,
+        "mean_M_prime": 19.870267704770214,
+        "root_gap": -7.595490736603176e-07,
+        "root_gap_from_minus_delta_M_over_slope": -7.594897772325188e-07,
+        "root_linearization_relative_mismatch": 7.806793511455634e-05
+      },
+      "no_parent_child_crn": {
+        "estimated_8_thread_hours_from_P57_inverse_N_rate": 96.51851943019112,
+        "expected_z_at_500M_from_delta_M": 0.47039265910475014,
+        "target_samples_for_relative_standard_error": {
+          "0.05": null,
+          "0.1": 306597810133.1357,
+          "0.2": 60439396082.04886
+        },
+        "target_samples_from_delta_M": 27212622872.788273,
+        "target_samples_from_root_gap": 27208309191.10477
+      },
+      "parent_N": 65,
+      "per_replica_variance_coefficients": {
+        "delta_M": 0.5143361338003651,
+        "root_gap_via_slope": 0.0013026855612629288
+      },
+      "target_N": 650,
+      "unattainable_perfect_parent_child_crn_bound": {
+        "assumption": "fresh parent rerun, equal replica depth, absolute correlation one",
+        "equal_depth_samples_lower_bound": 25808845098.773396,
+        "maximum_variance_reduction_fraction": 0.021483030079829657
+      },
+      "variance_proxy_N": 325
+    },
+    {
+      "archived_parent_standard_errors_after_transport": {
+        "delta_M": 8.350474129609396e-07,
+        "root_gap": 3.804063569570275e-08
+      },
+      "leading_targets": {
+        "delta_M_at_fixed_p": 1.0715235119122925e-05,
+        "mean_M_prime": 21.95119801554618,
+        "root_gap": -4.880960975681243e-07,
+        "root_gap_from_minus_delta_M_over_slope": -4.881389667905246e-07,
+        "root_linearization_relative_mismatch": 8.782947172458755e-05
+      },
+      "no_parent_child_crn": {
+        "estimated_8_thread_hours_from_P57_inverse_N_rate": 251.60522584246752,
+        "expected_z_at_500M_from_delta_M": 0.3373847706725659,
+        "target_samples_for_relative_standard_error": {
+          "0.05": null,
+          "0.1": 1117845833581.5808,
+          "0.2": 129382652518.44437
+        },
+        "target_samples_from_delta_M": 55179054308.3227,
+        "target_samples_from_root_gap": 55189387796.00216
+      },
+      "parent_N": 85,
+      "per_replica_variance_coefficients": {
+        "delta_M": 0.5039902451081167,
+        "root_gap_via_slope": 0.0010459373596988539
+      },
+      "target_N": 850,
+      "unattainable_perfect_parent_child_crn_bound": {
+        "assumption": "fresh parent rerun, equal replica depth, absolute correlation one",
+        "equal_depth_samples_lower_bound": 50066340051.75677,
+        "maximum_variance_reduction_fraction": 0.023386666780429777
+      },
+      "variance_proxy_N": 425
+    }
+  ],
+  "runner_reuse": {
+    "N650_matrices": [
+      [
+        [
+          23,
+          -11
+        ],
+        [
+          11,
+          23
+        ]
+      ],
+      [
+        [
+          19,
+          -17
+        ],
+        [
+          17,
+          19
+        ]
+      ]
+    ],
+    "N850_matrices": [
+      [
+        [
+          29,
+          -3
+        ],
+        [
+          3,
+          29
+        ]
+      ],
+      [
+        [
+          27,
+          -11
+        ],
+        [
+          11,
+          27
+        ]
+      ]
+    ],
+    "direct_and_two_step_paths_are_the_same_target_quotient": true,
+    "engine": "src/threshold_rank_integer_period_mc.cpp",
+    "parent_child_cover_crn_present": false,
+    "same_N_orientation_crn_already_present": true,
+    "scorer_gap": "score_angular_root_amplitude.py hard-codes [65,85]; parameterize sizes/provenance before production"
+  },
+  "schema": "matching-one/gaussian-commuting-square-power-gate/v1",
+  "source_paths": {
+    "P45": "results/server-20260828/P45-root-amplitude/score.json",
+    "P57": "results/server-20260829/P57-norm5-500m/primary_score.json",
+    "P57_metadata": {
+      "325": "results/server-20260829/P57-norm5-500m/raw/n325_500m.metadata.json",
+      "425": "results/server-20260829/P57-norm5-500m/raw/n425_500m.metadata.json"
+    }
+  },
+  "status": "source_only_power_no_target_data"
+}
