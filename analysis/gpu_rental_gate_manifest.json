@@ -1,0 +1,38 @@
+{
+  "schema": "matching-one/gpu-rental-gate/v1",
+  "issue": 30,
+  "status": "not_authorized",
+  "baseline_source": {
+    "path": "experiments/server_compute_queue_overrides_20260828_v3.yaml",
+    "sha256": "253b96df634186d8611b6e361216153bb78a31023afd4eac31d418e6bebd2f6a"
+  },
+  "cpu_baseline": {
+    "pair_count": 5,
+    "paired_permutations_per_pair": 10000000,
+    "paired_permutations_total": 50000000,
+    "elapsed_seconds": "326/5",
+    "environment": "16-core ARM",
+    "exact_output_oracle_passed": true
+  },
+  "derived_exact": {
+    "cpu_paired_permutations_per_second": "125000000/163",
+    "minimum_gpu_paired_permutations_per_second": "625000000/163"
+  },
+  "end_to_end_gate": {
+    "minimum_speedup": "5",
+    "timing_scope": "end_to_end",
+    "output_contract_equality_required": true,
+    "deterministic_regression_required": true
+  },
+  "gpu_measurement": {
+    "status": "absent"
+  },
+  "decision": {
+    "rental": "not_authorized",
+    "reason": "No qualifying end-to-end GPU measurement is checked in."
+  },
+  "claim_boundary": {
+    "conclusion": "The measured CPU baseline implies an exact route-1 GPU threshold of 625000000/163 paired permutations per second.",
+    "unresolved": "No GPU benchmark, rental, production run, impractical-CPU calculation, or fused-kernel information-efficiency result is supplied; issue #30 remains open."
+  }
+}

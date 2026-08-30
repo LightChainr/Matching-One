@@ -1,0 +1,38 @@
+# Square-lattice site percolation threshold and exact relatives.
+# Numerical estimates are method-specific evidence, not definitions.
+# Canonical source/provenance metadata live in data/literature_threshold_sources.json.
+
+square_site:
+  approximate_reference: "0.59274605079"
+  exact: false
+  closed_form_known: false
+  provenance_manifest: "data/literature_threshold_sources.json"
+  published_estimates:
+    - value: "0.59274605079210(2)"
+      source: "Jacobsen 2015"
+      method: "eigenvalue identity on n x infinity periodic cylinders"
+      status: "historical estimate; challenged in 2024"
+    - value: "0.592746050786(3)"
+      source: "Mertens 2022"
+      method: "exact finite-square p_med estimator and rational extrapolation"
+    - value: "0.5927460507896(1)"
+      source: "Yang and Zhou 2024"
+      method: "helical/cylindrical exact finite-size analysis"
+      status: "primary abstract verified; finite-size table transcription pending"
+  note: "Do not average or collapse quoted uncertainties without a model that makes them comparable."
+
+matching_site:
+  relation: "pc_square_site + pc_matching_site = 1"
+  exact_relation: true
+  lattice: "square with nearest + next-nearest neighbors (8-neighbor / king move)"
+  note: "Any decimal for this threshold inherits the numerical uncertainty/provenance of square_site through the exact complement relation."
+
+square_bond:
+  pc: "1/2"
+  exact: true
+  source: "Harris-Kesten"
+
+triangular_site:
+  pc: "1/2"
+  exact: true
+  source: "self-matching"

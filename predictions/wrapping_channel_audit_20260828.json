@@ -1,0 +1,133 @@
+{
+  "schema": "wrapping-channel semantic audit v1",
+  "status": "protocol layer added after PR #134; frozen artifacts are not rewritten",
+  "records": [
+    {
+      "id": "issue43_even_cross_either_correction",
+      "status": "registered",
+      "prediction_artifact": "predictions/two_spin4_heldout_20260828.yaml",
+      "prediction_artifact_sha256": "a370e79a10854341fac3ee75e8c518dbf3533e8c077cba2c2ec1018178144f44",
+      "target_artifact": "results/server-20260828/P43-heldout-fullcurve-500m/analysis/primary_score.json",
+      "scorer": "scripts/score_issue43_cross_either_correction.py",
+      "source_descriptor": {
+        "channel": "either",
+        "combination": "even",
+        "coordinate": "p",
+        "orientation_order": "first_minus_second",
+        "normalization": "raw",
+        "quantity": "orientation_contrast"
+      },
+      "target_descriptor": {
+        "channel": "cross",
+        "combination": "even",
+        "coordinate": "p",
+        "orientation_order": "first_minus_second",
+        "normalization": "raw",
+        "quantity": "orientation_contrast"
+      },
+      "expected_transform": {"scale": -1.0, "offset": 0.0}
+    },
+    {
+      "id": "p48_cross_even_normalized_identity",
+      "status": "registered",
+      "prediction_artifact": "predictions/p48_sprime_scoring_manifest_20260828.yaml",
+      "frozen_model_artifact": "predictions/p48_sprime_correction_20260828.yaml",
+      "semantic_manifest": "predictions/p48_sprime_semantic_gate_20260829.yaml",
+      "scorer": "scripts/score_p48_sprime_prospective_typed.py",
+      "source_descriptor": {
+        "channel": "cross",
+        "combination": "even",
+        "coordinate": "p",
+        "orientation_order": "first_minus_second",
+        "normalization": "angular_normalized",
+        "quantity": "orientation_contrast"
+      },
+      "target_descriptor": {
+        "channel": "cross",
+        "combination": "even",
+        "coordinate": "p",
+        "orientation_order": "first_minus_second",
+        "normalization": "angular_normalized",
+        "quantity": "orientation_contrast"
+      },
+      "expected_transform": {"scale": 1.0, "offset": 0.0}
+    },
+    {
+      "id": "issue57_norm5_fixed_p_raw_deltaM",
+      "status": "registered",
+      "prediction_artifact": "predictions/gaussian_norm5_harmonic_discrimination_20260828.yaml",
+      "frozen_kernel_contract": "predictions/norm5_harmonic_primary_scorer_20260828.yaml",
+      "semantic_manifest": "predictions/norm5_harmonic_semantic_gate_20260829.yaml",
+      "scorer": "scripts/score_norm5_harmonic_primary_typed.py",
+      "source_descriptor": {
+        "channel": "either",
+        "combination": "odd",
+        "coordinate": "p",
+        "orientation_order": "first_minus_second",
+        "normalization": "raw",
+        "quantity": "orientation_contrast"
+      },
+      "target_descriptor": {
+        "channel": "cross",
+        "combination": "odd",
+        "coordinate": "p",
+        "orientation_order": "first_minus_second",
+        "normalization": "raw",
+        "quantity": "orientation_contrast"
+      },
+      "expected_transform": {"scale": 1.0, "offset": 0.0},
+      "exact_identity": "D_either = D_cross"
+    },
+    {
+      "id": "issue57_norm5_full_curve_projectors",
+      "status": "registered",
+      "frozen_kernel_contract": "predictions/intrinsic_functional_cocycle_scorer_20260828.yaml",
+      "semantic_manifest": "predictions/intrinsic_functional_cocycle_semantic_gate_20260829.yaml",
+      "scorer": "scripts/score_intrinsic_functional_cocycle_typed.py",
+      "primitive_descriptors": {
+        "Mbar_center": {
+          "channel": "cross",
+          "combination": "odd",
+          "coordinate": "p",
+          "orientation_order": "none",
+          "normalization": "raw",
+          "quantity": "value"
+        },
+        "P4_S": {
+          "channel": "cross",
+          "combination": "even",
+          "coordinate": "p",
+          "orientation_order": "first_minus_second",
+          "normalization": "angular_normalized",
+          "quantity": "orientation_contrast"
+        },
+        "P4_D": {
+          "channel": "cross",
+          "combination": "odd",
+          "coordinate": "p",
+          "orientation_order": "first_minus_second",
+          "normalization": "angular_normalized",
+          "quantity": "orientation_contrast"
+        },
+        "P4_S_prime": {
+          "channel": "cross",
+          "combination": "even",
+          "coordinate": "p",
+          "orientation_order": "first_minus_second",
+          "normalization": "angular_normalized",
+          "quantity": "orientation_contrast"
+        },
+        "P4_D_prime": {
+          "channel": "cross",
+          "combination": "odd",
+          "coordinate": "p",
+          "orientation_order": "first_minus_second",
+          "normalization": "angular_normalized",
+          "quantity": "orientation_contrast"
+        }
+      },
+      "expected_transform": {"scale": 1.0, "offset": 0.0},
+      "semantic_rule": "same cross-channel primitive descriptor at every N; size-local P4 normalization occurs before cocycle comparison"
+    }
+  ]
+}

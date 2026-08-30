@@ -1,0 +1,546 @@
+{
+  "blocks": [
+    {
+      "channel": {
+        "exact_map": null,
+        "source": "matching_odd",
+        "target": "matching_odd"
+      },
+      "id": "issue43_n185_n265_deltaM",
+      "raw_data_group": "issue43_n185_n265_500m_histograms",
+      "role": "primary",
+      "scores": {
+        "H4_x17_over_4": {
+          "chi_square": 30.246125012414854,
+          "dimension": 2,
+          "log_determinant": -40.85885529836254,
+          "nlpd": -3.4684880765644985
+        },
+        "H4_x21_over_4": {
+          "chi_square": 3.0459757732860746,
+          "dimension": 2,
+          "log_determinant": -41.004776884684546,
+          "nlpd": -17.14152348928989
+        },
+        "zero_effect": {
+          "chi_square": 29.409384312149555,
+          "dimension": 2,
+          "log_determinant": -41.103304143282514,
+          "nlpd": -4.009082849157134
+        }
+      },
+      "status": "SCORED"
+    },
+    {
+      "channel": {
+        "exact_map": null,
+        "source": "matching_even_derivative",
+        "target": "matching_even_derivative"
+      },
+      "id": "issue43_n185_n265_sprime_training_only",
+      "raw_data_group": "issue43_n185_n265_500m_histograms",
+      "role": "sensitivity",
+      "scores": {
+        "analytic_inverse_N": {
+          "chi_square": 0.862213788756995,
+          "dimension": 2,
+          "log_determinant": -6.321225400725154,
+          "nlpd": -0.8916287395747338
+        },
+        "rank2_Jordan_log": {
+          "chi_square": 1.2036032710036646,
+          "dimension": 2,
+          "log_determinant": -5.632775520149536,
+          "nlpd": -0.37670905816359035
+        }
+      },
+      "status": "SCORED"
+    },
+    {
+      "channel": {
+        "exact_map": null,
+        "source": "either_even",
+        "target": "cross_even"
+      },
+      "id": "issue43_deltaS_literal_channel_mismatch",
+      "raw_data_group": "issue43_n185_n265_500m_histograms",
+      "role": "protocol_history",
+      "scores": {},
+      "status": "PROTOCOL_FAILURE_CHANNEL_MISMATCH"
+    },
+    {
+      "channel": {
+        "exact_map": null,
+        "source": "matching_odd",
+        "target": "matching_odd"
+      },
+      "id": "p37_two_lineage_fixed_coordinate",
+      "raw_data_group": "p37_two_lineage_fixed_coordinate",
+      "role": "primary",
+      "scores": {
+        "H4_x21_over_4": {
+          "chi_square": 0.03445322174120495,
+          "dimension": 2,
+          "log_determinant": -36.82012719273711,
+          "nlpd": -16.55495991908861
+        }
+      },
+      "status": "SCORED"
+    },
+    {
+      "channel": {
+        "exact_map": null,
+        "source": "matching_odd",
+        "target": "matching_odd"
+      },
+      "id": "p50_third_fixed_coordinate",
+      "raw_data_group": "p50_third_fixed_coordinate",
+      "role": "primary",
+      "scores": {
+        "H4_x21_over_4": {
+          "chi_square": 0.23302834173694265,
+          "dimension": 1,
+          "log_determinant": -19.904168093533332,
+          "nlpd": -8.916631342693522
+        },
+        "zero_effect": {
+          "chi_square": 15.70176313687156,
+          "dimension": 1,
+          "log_determinant": -20.22636285156869,
+          "nlpd": -1.3433613241438933
+        }
+      },
+      "status": "SCORED"
+    },
+    {
+      "channel": {
+        "exact_map": null,
+        "source": "matching_root",
+        "target": "matching_root"
+      },
+      "id": "p45_angular_normalized_root",
+      "raw_data_group": "p45_p49_shared_fullcurve_histograms",
+      "role": "sensitivity",
+      "scores": {
+        "H4_x21_over_4": {
+          "chi_square": 2.4266687318922746,
+          "dimension": 2,
+          "log_determinant": -13.937714860664713,
+          "nlpd": -3.917645997976874
+        },
+        "zero_effect": {
+          "chi_square": 461.2750346841349,
+          "dimension": 2,
+          "log_determinant": -14.677203414339605,
+          "nlpd": 225.13679270130697
+        }
+      },
+      "status": "SCORED"
+    },
+    {
+      "channel": {
+        "exact_map": null,
+        "source": "matching_odd",
+        "target": "matching_odd"
+      },
+      "id": "issue57_norm5",
+      "raw_data_group": "issue57_norm5_production",
+      "role": "primary",
+      "scores": {
+        "H12_norm5": {
+          "chi_square": 35.19307887805103,
+          "dimension": 2,
+          "log_determinant": -41.32472518150189,
+          "nlpd": -1.2279460853160833
+        },
+        "H4_norm5": {
+          "chi_square": 0.416303764018355,
+          "dimension": 2,
+          "log_determinant": -41.398222773119656,
+          "nlpd": -18.653082438141308
+        },
+        "H8_norm5": {
+          "chi_square": 16.012022412848534,
+          "dimension": 2,
+          "log_determinant": -41.30336547035954,
+          "nlpd": -10.807794462346155
+        },
+        "zero_effect": {
+          "chi_square": 1.7763512393600975,
+          "dimension": 2,
+          "log_determinant": -41.410313949268726,
+          "nlpd": -17.97910428854497
+        }
+      },
+      "status": "SCORED"
+    },
+    {
+      "channel": {
+        "exact_map": null,
+        "source": "matching_even_derivative",
+        "target": "matching_even_derivative"
+      },
+      "id": "p49_clean_full_curve",
+      "raw_data_group": "p45_p49_shared_fullcurve_histograms",
+      "role": "primary",
+      "scores": {
+        "H4_pure_N_minus_5_over_4": {
+          "chi_square": 37.88682662885448,
+          "dimension": 2,
+          "log_determinant": -33.01476768111945,
+          "nlpd": 4.273906540276859
+        },
+        "q2_even_scalar": {
+          "chi_square": 1.7899341032300053,
+          "dimension": 2,
+          "log_determinant": -32.0097071981903,
+          "nlpd": -13.2720094810708
+        },
+        "rank2_Jordan_log": {
+          "chi_square": 0.6767060803820557,
+          "dimension": 2,
+          "log_determinant": -31.86875645844262,
+          "nlpd": -13.758148122620938
+        },
+        "zero_effect": {
+          "chi_square": 1044.572021134037,
+          "dimension": 2,
+          "log_determinant": -33.66776612170262,
+          "nlpd": 507.29000457257655
+        }
+      },
+      "status": "SCORED"
+    },
+    {
+      "channel": {
+        "exact_map": null,
+        "source": "matching_full_curve",
+        "target": "matching_full_curve"
+      },
+      "id": "p91_n145_to_n290_full_curve",
+      "raw_data_group": "p91_n145_n290_fullcurve_histograms",
+      "role": "primary",
+      "scores": {},
+      "status": "PENDING_REVEAL"
+    }
+  ],
+  "coverage": {
+    "H12_norm5": {
+      "additive": [
+        "issue57_norm5"
+      ],
+      "predicted": [
+        "issue57_norm5"
+      ]
+    },
+    "H4_norm5": {
+      "additive": [
+        "issue57_norm5"
+      ],
+      "predicted": [
+        "issue57_norm5"
+      ]
+    },
+    "H4_pure_N_minus_5_over_4": {
+      "additive": [
+        "p49_clean_full_curve"
+      ],
+      "predicted": [
+        "p49_clean_full_curve"
+      ]
+    },
+    "H4_x17_over_4": {
+      "additive": [
+        "issue43_n185_n265_deltaM"
+      ],
+      "predicted": [
+        "issue43_n185_n265_deltaM"
+      ]
+    },
+    "H4_x21_over_4": {
+      "additive": [
+        "issue43_n185_n265_deltaM",
+        "p37_two_lineage_fixed_coordinate",
+        "p50_third_fixed_coordinate"
+      ],
+      "predicted": [
+        "issue43_n185_n265_deltaM",
+        "p37_two_lineage_fixed_coordinate",
+        "p50_third_fixed_coordinate",
+        "p45_angular_normalized_root"
+      ]
+    },
+    "H8_norm5": {
+      "additive": [
+        "issue57_norm5"
+      ],
+      "predicted": [
+        "issue57_norm5"
+      ]
+    },
+    "analytic_inverse_N": {
+      "additive": [],
+      "predicted": [
+        "issue43_n185_n265_sprime_training_only"
+      ]
+    },
+    "q2_even_scalar": {
+      "additive": [
+        "p49_clean_full_curve"
+      ],
+      "predicted": [
+        "p49_clean_full_curve"
+      ]
+    },
+    "rank2_Jordan_log": {
+      "additive": [
+        "p49_clean_full_curve"
+      ],
+      "predicted": [
+        "issue43_n185_n265_sprime_training_only",
+        "p49_clean_full_curve"
+      ]
+    },
+    "zero_effect": {
+      "additive": [
+        "issue43_n185_n265_deltaM",
+        "p50_third_fixed_coordinate",
+        "issue57_norm5",
+        "p49_clean_full_curve"
+      ],
+      "predicted": [
+        "issue43_n185_n265_deltaM",
+        "p50_third_fixed_coordinate",
+        "p45_angular_normalized_root",
+        "issue57_norm5",
+        "p49_clean_full_curve"
+      ]
+    }
+  },
+  "cumulative_primary_only": {
+    "H12_norm5": {
+      "blocks": [
+        "issue57_norm5"
+      ],
+      "chi_square": 35.19307887805103,
+      "dimensions": 2,
+      "nlpd": -1.2279460853160833
+    },
+    "H4_norm5": {
+      "blocks": [
+        "issue57_norm5"
+      ],
+      "chi_square": 0.416303764018355,
+      "dimensions": 2,
+      "nlpd": -18.653082438141308
+    },
+    "H4_pure_N_minus_5_over_4": {
+      "blocks": [
+        "p49_clean_full_curve"
+      ],
+      "chi_square": 37.88682662885448,
+      "dimensions": 2,
+      "nlpd": 4.273906540276859
+    },
+    "H4_x17_over_4": {
+      "blocks": [
+        "issue43_n185_n265_deltaM"
+      ],
+      "chi_square": 30.246125012414854,
+      "dimensions": 2,
+      "nlpd": -3.4684880765644985
+    },
+    "H4_x21_over_4": {
+      "blocks": [
+        "issue43_n185_n265_deltaM",
+        "p37_two_lineage_fixed_coordinate",
+        "p50_third_fixed_coordinate"
+      ],
+      "chi_square": 3.3134573367642224,
+      "dimensions": 5,
+      "nlpd": -42.61311475107202
+    },
+    "H8_norm5": {
+      "blocks": [
+        "issue57_norm5"
+      ],
+      "chi_square": 16.012022412848534,
+      "dimensions": 2,
+      "nlpd": -10.807794462346155
+    },
+    "q2_even_scalar": {
+      "blocks": [
+        "p49_clean_full_curve"
+      ],
+      "chi_square": 1.7899341032300053,
+      "dimensions": 2,
+      "nlpd": -13.2720094810708
+    },
+    "rank2_Jordan_log": {
+      "blocks": [
+        "p49_clean_full_curve"
+      ],
+      "chi_square": 0.6767060803820557,
+      "dimensions": 2,
+      "nlpd": -13.758148122620938
+    },
+    "zero_effect": {
+      "blocks": [
+        "issue43_n185_n265_deltaM",
+        "p50_third_fixed_coordinate",
+        "issue57_norm5",
+        "p49_clean_full_curve"
+      ],
+      "chi_square": 1091.459519822418,
+      "dimensions": 7,
+      "nlpd": 483.95845611073054
+    }
+  },
+  "governance": {
+    "additive_role": "primary",
+    "channel_rule": "source and target semantics must match or cite a registered exact_map",
+    "derived_view_rule": "one primary view per raw_data_group; sensitivities and diagnostics are non-additive",
+    "no_prediction_rule": "NO_PREDICTION is coverage metadata, never a score",
+    "pairwise_rule": "compare only the intersection of additive endpoints predicted by both models"
+  },
+  "manifest_version": 1,
+  "pairwise_primary_intersections": [
+    {
+      "delta_nlpd_left_minus_right": 17.425136352825223,
+      "intersection": [
+        "issue57_norm5"
+      ],
+      "left": "H12_norm5",
+      "preferred": "H4_norm5",
+      "right": "H4_norm5"
+    },
+    {
+      "delta_nlpd_left_minus_right": 9.579848377030071,
+      "intersection": [
+        "issue57_norm5"
+      ],
+      "left": "H12_norm5",
+      "preferred": "H8_norm5",
+      "right": "H8_norm5"
+    },
+    {
+      "delta_nlpd_left_minus_right": 16.751158203228886,
+      "intersection": [
+        "issue57_norm5"
+      ],
+      "left": "H12_norm5",
+      "preferred": "zero_effect",
+      "right": "zero_effect"
+    },
+    {
+      "delta_nlpd_left_minus_right": -7.845287975795152,
+      "intersection": [
+        "issue57_norm5"
+      ],
+      "left": "H4_norm5",
+      "preferred": "H4_norm5",
+      "right": "H8_norm5"
+    },
+    {
+      "delta_nlpd_left_minus_right": -0.6739781495963371,
+      "intersection": [
+        "issue57_norm5"
+      ],
+      "left": "H4_norm5",
+      "preferred": "H4_norm5",
+      "right": "zero_effect"
+    },
+    {
+      "delta_nlpd_left_minus_right": 17.545916021347658,
+      "intersection": [
+        "p49_clean_full_curve"
+      ],
+      "left": "H4_pure_N_minus_5_over_4",
+      "preferred": "q2_even_scalar",
+      "right": "q2_even_scalar"
+    },
+    {
+      "delta_nlpd_left_minus_right": 18.032054662897796,
+      "intersection": [
+        "p49_clean_full_curve"
+      ],
+      "left": "H4_pure_N_minus_5_over_4",
+      "preferred": "rank2_Jordan_log",
+      "right": "rank2_Jordan_log"
+    },
+    {
+      "delta_nlpd_left_minus_right": -503.0160980322997,
+      "intersection": [
+        "p49_clean_full_curve"
+      ],
+      "left": "H4_pure_N_minus_5_over_4",
+      "preferred": "H4_pure_N_minus_5_over_4",
+      "right": "zero_effect"
+    },
+    {
+      "delta_nlpd_left_minus_right": 13.673035412725394,
+      "intersection": [
+        "issue43_n185_n265_deltaM"
+      ],
+      "left": "H4_x17_over_4",
+      "preferred": "H4_x21_over_4",
+      "right": "H4_x21_over_4"
+    },
+    {
+      "delta_nlpd_left_minus_right": 0.5405947725926357,
+      "intersection": [
+        "issue43_n185_n265_deltaM"
+      ],
+      "left": "H4_x17_over_4",
+      "preferred": "zero_effect",
+      "right": "zero_effect"
+    },
+    {
+      "delta_nlpd_left_minus_right": -20.70571065868239,
+      "intersection": [
+        "issue43_n185_n265_deltaM",
+        "p50_third_fixed_coordinate"
+      ],
+      "left": "H4_x21_over_4",
+      "preferred": "H4_x21_over_4",
+      "right": "zero_effect"
+    },
+    {
+      "delta_nlpd_left_minus_right": 7.171309826198815,
+      "intersection": [
+        "issue57_norm5"
+      ],
+      "left": "H8_norm5",
+      "preferred": "zero_effect",
+      "right": "zero_effect"
+    },
+    {
+      "delta_nlpd_left_minus_right": 0.48613864155013786,
+      "intersection": [
+        "p49_clean_full_curve"
+      ],
+      "left": "q2_even_scalar",
+      "preferred": "rank2_Jordan_log",
+      "right": "rank2_Jordan_log"
+    },
+    {
+      "delta_nlpd_left_minus_right": -520.5620140536473,
+      "intersection": [
+        "p49_clean_full_curve"
+      ],
+      "left": "q2_even_scalar",
+      "preferred": "q2_even_scalar",
+      "right": "zero_effect"
+    },
+    {
+      "delta_nlpd_left_minus_right": -521.0481526951975,
+      "intersection": [
+        "p49_clean_full_curve"
+      ],
+      "left": "rank2_Jordan_log",
+      "preferred": "rank2_Jordan_log",
+      "right": "zero_effect"
+    }
+  ],
+  "schema_version": 1
+}

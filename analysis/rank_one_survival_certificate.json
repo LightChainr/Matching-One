@@ -1,0 +1,118 @@
+{
+  "claim_boundary": {
+    "excluded": "production pilot changes, sampling, scaled horizons, predictive-state learning, continuum or field identification",
+    "included": "finite N=10 rank-one survival identities and counterexample",
+    "parent_issue": "remain open"
+  },
+  "exhaustive_checks": {
+    "rank_one_states": 310,
+    "subset_vs_killed_kernel_horizon_checks": 1650,
+    "two_step_identity_states": 310
+  },
+  "geometry": {
+    "gaussian_period": "3+i",
+    "label_rule": "label j is the coset represented by (0,j)",
+    "period_matrix": [
+      [
+        3,
+        -1
+      ],
+      [
+        1,
+        3
+      ]
+    ],
+    "site_count": 10
+  },
+  "issue": 403,
+  "schema": "matching-one/rank-one-survival-certificate/v1",
+  "status": "exact_rank_one_survival_certificate",
+  "witnesses": {
+    "A": {
+      "b1": 1,
+      "b2": 2,
+      "future_permutation_exit_counts": {
+        "1": 24,
+        "2": 48,
+        "3": 48
+      },
+      "k": 5,
+      "minimal_trigger_pair_labels": [
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          9
+        ]
+      ],
+      "occupied_labels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "primitive_line": [
+        0,
+        1
+      ],
+      "rank": 1,
+      "singleton_trigger_labels": [
+        7
+      ],
+      "survival_s0_to_s3": [
+        "1",
+        "4/5",
+        "2/5",
+        "0"
+      ]
+    },
+    "B": {
+      "b1": 1,
+      "b2": 3,
+      "future_permutation_exit_counts": {
+        "1": 24,
+        "2": 60,
+        "3": 36
+      },
+      "k": 5,
+      "minimal_trigger_pair_labels": [
+        [
+          4,
+          7
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          9
+        ]
+      ],
+      "occupied_labels": [
+        0,
+        1,
+        2,
+        3,
+        5
+      ],
+      "primitive_line": [
+        0,
+        1
+      ],
+      "rank": 1,
+      "singleton_trigger_labels": [
+        8
+      ],
+      "survival_s0_to_s3": [
+        "1",
+        "4/5",
+        "3/10",
+        "0"
+      ]
+    }
+  }
+}

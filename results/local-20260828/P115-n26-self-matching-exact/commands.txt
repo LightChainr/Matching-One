@@ -1,0 +1,15 @@
+/Users/lc/python-envs/research-py311/bin/python -m unittest discover -s tests -p 'test_c4_self_matching_beta_targets.py' -v
+/Users/lc/python-envs/research-py311/bin/python scripts/c4_self_matching_beta_targets.py --json predictions/c4_self_matching_n26_beta_targets_20260828.json
+git commit -m 'Freeze N26 self-matching Beta targets'
+git push -u origin research/n26-selfmatching-exact-20260828
+
+/Users/lc/python-envs/research-py311/bin/python -m unittest discover -s tests -p 'test_exact_c4_self_matching_polynomial_cpp.py' -v
+git commit -m 'Add exact C4 self-matching enumerator'
+git push
+
+clang++ -O3 -std=c++17 -pthread scripts/exact_c4_self_matching_polynomial.cpp -o /tmp/matching-one-p115/exact_c4_self_matching_polynomial
+/usr/bin/time -lp /tmp/matching-one-p115/exact_c4_self_matching_polynomial --a 5 --b 1 --threads 10 --json results/local-20260828/P115-n26-self-matching-exact/raw/n26_threads10.json
+/usr/bin/time -lp /tmp/matching-one-p115/exact_c4_self_matching_polynomial --a 5 --b 1 --threads 1 --json results/local-20260828/P115-n26-self-matching-exact/raw/n26_threads1.json
+
+/Users/lc/python-envs/research-py311/bin/python scripts/score_c4_self_matching_n26.py --prediction predictions/c4_self_matching_n26_beta_targets_20260828.json --primary results/local-20260828/P115-n26-self-matching-exact/raw/n26_threads10.json --reproduction results/local-20260828/P115-n26-self-matching-exact/raw/n26_threads1.json --json results/local-20260828/P115-n26-self-matching-exact/score.json
+/Users/lc/python-envs/research-py311/bin/python -m unittest discover -s tests -p 'test_score_c4_self_matching_n26.py' -v

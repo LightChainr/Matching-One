@@ -1,0 +1,27 @@
+{
+  "engine": "same-N Gaussian threshold-rank Newman-Ziff",
+  "generated_utc": "2026-08-28T13:10:53Z",
+  "git_commit": "6d2d68a62b433e337b97eadaf1870cb58e2f7666",
+  "command": "/workspace/rootamp-build-6d2d68a/threshold_rank_orientation_mc --samples 100000000 --batches 100 --seed 2026104501 --replica-offset 5000000000 --threads 8 --n 130 --git-commit 6d2d68a62b433e337b97eadaf1870cb58e2f7666 --output-prefix /workspace/fullcurve-results-20260828/n130",
+  "compiler": "10.3.1",
+  "openmp": true,
+  "threads_requested": 8,
+  "samples_per_pair": 100000000,
+  "batches": 100,
+  "seed": 2026104501,
+  "replica_counter_first": 5000000000,
+  "replica_counter_last_exclusive": 5100000000,
+  "rng": "counter-derived SplitMix64 stream plus unbiased Fisher-Yates",
+  "coupling": "same cyclic permutation shared by same-N orientations",
+  "channel": "rank-2 cross wrapping",
+  "K_plus": "first black primal cross rank, 1-based",
+  "K_minus": "first black rank after white matching cross is lost; N-r+1",
+  "sparse_joint_histogram": false,
+  "per_batch_joint_moments": true,
+  "elapsed_seconds": 261.33005192299998,
+  "designs": [
+    {"N": 130, "first": [11,3], "second": [9,7]}
+  ],
+  "histogram_csv": "/workspace/fullcurve-results-20260828/n130.hist.csv",
+  "moments_csv": "/workspace/fullcurve-results-20260828/n130.moments.csv"
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "matching-one/c4-multiradius-pivotal/v1",
+  "generated_utc": "2026-08-29T09:06:00Z",
+  "git_commit": "c6d9768",
+  "command": "build/c4_multiradius_pivotal_mc --samples 20000 --batches 100 --radii 1,2,4 --threads 1 --seed 22520260829 --replica-offset 0 --git-commit c6d9768 --output-prefix results/local-20260829/P225-multiradius-pivotal/raw/n130_n170_20k",
+  "compiler": "Apple LLVM 21.0.0 (clang-2100.1.1.101)",
+  "samples_per_size": 20000,
+  "batches": 100,
+  "seed": 22520260829,
+  "replica_counter_first": 0,
+  "replica_counter_last_exclusive": 20000,
+  "radii": [1,2,4],
+  "radius_semantics": "fixed lattice R; physical delta=R/sqrt(N)",
+  "cross_radius_coupling": "same configuration and pivotal flag",
+  "cross_size_coupling": "same seed/counter and prefix-coupled site bits",
+  "channels": ["black_h4","white_h4","h4_plus","h4_minus"],
+  "designs": [{"N":130,"a":11,"b":3},{"N":170,"a":13,"b":1}],
+  "elapsed_seconds": 0.61707320899999996,
+  "batch_csv": "results/local-20260829/P225-multiradius-pivotal/raw/n130_n170_20k.batches.csv"
+}

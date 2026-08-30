@@ -1,0 +1,62 @@
+{
+  "channels": {
+    "P4_D": {
+      "chi_square": 0.2808531455704667,
+      "df": 2,
+      "frozen_source_amplitude": 0.2649144360529555,
+      "frozen_source_amplitude_se": 0.055562785813705294,
+      "law": "P4[D] ~ N^-13/8",
+      "marginal_signed_z": [0.1754014823338356, 0.5299540587421626],
+      "observed_scaled": [0.28061965975173864, 0.3197224855785104],
+      "observed_scaled_se": [0.07021366452168873, 0.08722701183155196],
+      "residual": [0.015705223698783133, 0.0548080495255549],
+      "residual_covariance": [[0.008017181852943941, 0.0030872231673796905], [0.0030872231673796905, 0.010695774760441396]],
+      "zero_chi_square": 29.408443260647466
+    },
+    "P4_D_prime": {
+      "chi_square": 0.08760655046918807,
+      "df": 2,
+      "frozen_source_amplitude": -0.02452382758100583,
+      "frozen_source_amplitude_se": 0.004878980676876985,
+      "law": "P4[D'] ~ N^-5/8",
+      "marginal_signed_z": [0.12431658533021266, 0.29169958010478975],
+      "observed_scaled": [-0.023706915387134764, -0.022662752131365007],
+      "observed_scaled_se": [0.004401879059920777, 0.004111125513449419],
+      "residual": [0.0008169121938710645, 0.0018610754496408213],
+      "residual_covariance": [[4.3180991703508026e-05, 2.3804452445339e-05], [2.3804452445339e-05, 4.0705805432673746e-05]],
+      "zero_chi_square": 59.3931874093622
+    },
+    "P4_S": {
+      "chi_square": 1.1387820575181482,
+      "df": 2,
+      "frozen_source_amplitude": -0.008125795093585865,
+      "frozen_source_amplitude_se": 0.002136941877466713,
+      "law": "P4[S] ~ N^-1",
+      "marginal_signed_z": [-0.5724966939778082, -1.0398928887480643],
+      "observed_scaled": [-0.009549018390697469, -0.010807660431042037],
+      "observed_scaled_se": [0.0012702933336919335, 0.0014438244471184415],
+      "residual": [-0.001423223297111604, -0.0026818653374561727],
+      "residual_covariance": [[6.180165741293126e-06, 4.56652058767096e-06], [4.56652058767096e-06, 6.651149621767833e-06]],
+      "zero_chi_square": 112.53973629986675
+    },
+    "P4_S_prime": {
+      "chi_square": 52.71633588357711,
+      "df": 2,
+      "frozen_source_amplitude": 1.9434247576878727,
+      "frozen_source_amplitude_se": 0.0766048795577632,
+      "law": "P4[S'] ~ N^-5/4",
+      "marginal_signed_z": [5.044653383060313, 6.614281166188612],
+      "observed_scaled": [2.579707985721759, 2.8584391240168143],
+      "observed_scaled_se": [0.10020241601555671, 0.11519299777223244],
+      "residual": [0.6362832280338862, 0.9150143663289416],
+      "residual_covariance": [[0.0159088317474141, 0.005868307572059406], [0.005868307572059406, 0.019137734307812952]],
+      "zero_chi_square": 1278.5552355620234
+    }
+  },
+  "important_observable_boundary": "P48 intrinsic-center S/D projectors; not the fixed-coordinate P31/P43 either/even DeltaS observable",
+  "schema": "P48 prospective new-geometry pure-law score v1",
+  "source_training_sizes": [65, 85, 130],
+  "target_independence": "N=185 and N=265 use disjoint counter domains",
+  "target_refit_parameters": 0,
+  "target_sizes": [185, 265]
+}

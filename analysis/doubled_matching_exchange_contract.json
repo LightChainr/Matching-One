@@ -1,0 +1,16 @@
+{
+  "schema": "matching-one/doubled-matching-exchange/v1",
+  "issue": 61,
+  "status": "exact_finite_dimensional_linearization_only",
+  "matching_map_A": [["1", "1"], ["0", "1"]],
+  "matching_map_A_inverse": [["1", "-1"], ["0", "1"]],
+  "RG_G": [["2", "1"], ["0", "3"]],
+  "RG_G_star": [["2", "2"], ["0", "3"]],
+  "probe_vector": ["1", "2"],
+  "degenerate_RG": [["2", "0"], ["0", "2"]],
+  "alternative_identification_B": [["1", "0"], ["1", "1"]],
+  "claim_boundary": {
+    "conclusion": "On an explicitly doubled tangent space, pair exchange is an involution and commutes with RG exactly when A intertwines the two RG maps.",
+    "unresolved": "No physical microscopic map F, measured RG matrix, continuum field parity, degenerate-block basis, or OPE automorphism is constructed; issue #61 remains open."
+  }
+}

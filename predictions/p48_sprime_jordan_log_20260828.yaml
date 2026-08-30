@@ -1,0 +1,117 @@
+schema_version: 1
+status: frozen_tertiary_model
+freeze_date: '2026-08-28'
+issue: 48
+purpose: >-
+  Freeze a logarithmic LCFT adversary for the P4[S'] derivative channel before
+  fresh N=185/265 target statistics are scored. This artifact is lower priority
+  than the already-frozen q=2 ordinary-RG correction and does not alter the
+  original P48 primary laws.
+
+source:
+  dataset_commit: 84f1464b8163cce51b573f80b9ac7300d710bf35
+  projectors: results/server-20260828/P48-retrospective/projectors.csv
+  covariance: results/server-20260828/P48-retrospective/stacked_covariance.csv
+  sizes_N: [65, 85, 130, 145, 170]
+  status: retrospective_model_development_only
+
+observable:
+  name: P4_S_prime
+  leading_power: 'N^(-5/4)'
+  scaled_observable: 'Y_N = N^(5/4) * P4_S_prime'
+
+model:
+  name: rank2_jordan_log
+  equation_scaled: 'Y_N = A + B_logN * log(N)'
+  equation_raw: 'P4_S_prime = N^(-5/4) * (A + B_logN * log(N))'
+  equivalent_length_form: 'P4_S_prime = N^(-5/4) * (A_tilde + B_logL * log(L)) with L proportional to sqrt(N)'
+  B_logL_in_same_origin_convention: 2.033293798562784
+  theory_status: conditional
+  rationale: >-
+    At Q=1 the percolation energy operator mixes with a logarithmic partner of
+    the same bulk scaling dimension x=5/4. For a rank-2 Virasoro Jordan pair,
+    applying a non-null level-n descendant preserves the Jordan action because
+    [L0,U_n]=n U_n. A surviving chiral level-4 spin-4 descendant therefore has
+    x=21/4 and permits the same N^-13/8 radial power multiplied by a logarithm.
+    The matching-parity application remains conditional on the unresolved
+    matching/interchiral automorphism discussed in issue 61.
+  references:
+    - 'R. Vasseur, J. L. Jacobsen, H. Saleur, Logarithmic observables in critical percolation, arXiv:1206.2312, J. Stat. Mech. L07001 (2012).'
+    - 'K. Kytola, D. Ridout, On Staggered Indecomposable Virasoro Modules, arXiv:0905.0108, J. Math. Phys. 50, 123503 (2009).'
+
+fit:
+  method: GLS
+  covariance: full_synchronized_delete_one_batch
+  used_all_retrospective_sizes: true
+  A: -2.422594685734799
+  B_logN: 1.016646899281392
+  covariance_AB:
+    - [1.251237089769748, -0.286289830474317]
+    - [-0.286289830474317, 0.065785221364566]
+  chi_square: 1.3757723552490904
+  dof: 3
+  warning: >-
+    This fit uses all already-known P48-retrospective sizes. Its goodness of fit
+    is not a confirmatory p-value and must not be compared as if it were a
+    prospective model-selection result.
+
+retrospective_train_holdout_diagnostic:
+  train_N: [65, 85, 130]
+  heldout_N: [145, 170]
+  train_A: -2.753949388463443
+  train_B_logN: 1.092329622789345
+  heldout_chi_square: 0.9914259507591816
+  heldout_dof: 2
+  pure_power_heldout_chi_square: 10.190811422597028
+  q2_model_heldout_chi_square: 1.1249401555843164
+  warning: >-
+    All three values above are retrospective development diagnostics. The log
+    model is not promoted ahead of q=2 because q=2 was frozen first and has a
+    simpler ordinary-RG mechanism.
+
+frozen_predictions:
+  - N: 185
+    scaled_Y: 2.8846638769766297
+    source_fit_se_scaled: 0.23442255741266776
+    P4_S_prime: 0.004227956940935452
+    source_fit_se_P4_S_prime: 0.000343585430051391
+  - N: 265
+    scaled_Y: 3.250020340681992
+    source_fit_se_scaled: 0.3232860920851056
+    P4_S_prime: 0.003039686093874871
+    source_fit_se_P4_S_prime: 0.000302363719436918
+  - N: 290
+    scaled_Y: 3.341672173908061
+    source_fit_se_scaled: 0.34585006194710294
+    P4_S_prime: 0.0027923274452254804
+    source_fit_se_P4_S_prime: 0.00028899502095037
+
+cross_channel_guard:
+  statement: >-
+    A small or null logarithmic coefficient in central P4[D] does not force the
+    derivative coefficient in P4[S'] to vanish. In a scaling-function form the
+    two probe different Taylor coefficients: D samples the even z coefficient
+    at z=0, while S' samples the first derivative of the odd z coefficient.
+  implication: >-
+    Gaussian-doubling success of central D constrains but does not by itself
+    exclude a derivative-specific Jordan logarithm in S'.
+
+prospective_scoring_order:
+  - 'Original P48 four pure-power laws, unchanged.'
+  - 'Zero-effect benchmark, unchanged.'
+  - 'Previously frozen q=2 correction P4[S prime]=N^-5/4(A+B/N), no target refit.'
+  - 'This rank-2 Jordan-log adversary, no target refit.'
+  - 'Only afterward: free exponent or additional-sector models.'
+
+interpretation_gates:
+  q2_wins: >-
+    Prefer an ordinary omega=2 even-scalar correction over a Jordan explanation
+    for the observed S' drift; do not claim that logarithmic structure is absent
+    elsewhere in the theory.
+  log_wins: >-
+    Treat as evidence that the level-4 thermal spin-4 sector couples to a
+    logarithmic partner. Then test a shared scaling-function/Jordan structure
+    across D, S', Gaussian-multiplier residuals, and additional derivatives.
+  both_fail: >-
+    Do not retune either correction. Enlarge the operator-sector model under a
+    new preregistration.

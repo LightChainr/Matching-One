@@ -1,0 +1,23 @@
+{
+  "counterexample_search": {
+    "entry_bound": 9,
+    "matrix_count": 160,
+    "max_order": 31,
+    "min_order": 5,
+    "samples_per_matrix": 640,
+    "seed": 2690829
+  },
+  "exhaustive_geometries": [
+    {"id": "axis-L2", "kind": "axis", "L": 2},
+    {"id": "axis-L3", "kind": "axis", "L": 3},
+    {"id": "gaussian-2-1", "kind": "gaussian", "a": 2, "b": 1},
+    {"id": "diamond-L2", "kind": "diamond", "L": 2},
+    {"id": "c4-self-matching-3-1", "kind": "c4_self_matching", "a": 3, "b": 1}
+  ],
+  "scientific_boundary": [
+    "The exhaustive checks establish finite configuration identities only on the declared quotients.",
+    "The fixed-seed general-period scan is a counterexample search, not statistical evidence or a proof.",
+    "A general result still requires a periodic digital Alexander/relative-homology argument with the 4/8 adjacency pair.",
+    "No CFT field, universal amplitude, or closed form for square-site p_c is inferred."
+  ]
+}

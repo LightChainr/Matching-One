@@ -1,0 +1,75 @@
+version: 1
+added_at: 2026-08-29
+status: semantic_gate_added_before_norm5_target_reveal
+claim_level: protocol_only
+related_issues: [48, 57, 101, 119, 125, 138, 146]
+frozen_kernel_contract: predictions/intrinsic_functional_cocycle_scorer_20260828.yaml
+kernel_scorer: scripts/score_intrinsic_functional_cocycle.py
+canonical_entrypoint: scripts/score_intrinsic_functional_cocycle_typed.py
+
+purpose: >-
+  Add explicit primitive observable descriptors to the already-frozen intrinsic
+  full-curve q=2/Jordan cocycle scorer without changing levels, lineages,
+  model constants, covariance grouping, target data, or score order.
+
+primitive_descriptors:
+  Mbar_center:
+    channel: cross
+    combination: odd
+    coordinate: p
+    orientation_order: none
+    normalization: raw
+    quantity: value
+  P4_S:
+    channel: cross
+    combination: even
+    coordinate: p
+    orientation_order: first_minus_second
+    normalization: angular_normalized
+    quantity: orientation_contrast
+  P4_D:
+    channel: cross
+    combination: odd
+    coordinate: p
+    orientation_order: first_minus_second
+    normalization: angular_normalized
+    quantity: orientation_contrast
+  P4_S_prime:
+    channel: cross
+    combination: even
+    coordinate: p
+    orientation_order: first_minus_second
+    normalization: angular_normalized
+    quantity: orientation_contrast
+  P4_D_prime:
+    channel: cross
+    combination: odd
+    coordinate: p
+    orientation_order: first_minus_second
+    normalization: angular_normalized
+    quantity: orientation_contrast
+
+semantic_rule: >-
+  Every source and target curve is reconstructed from the cross-channel
+  threshold-rank K_minus/K_plus contract. Each P4 is normalized locally by its
+  own signed DeltaCos4 before cross-size comparison. Therefore no cross/either
+  map and no cross-size angular sign factor is applied: every primitive
+  descriptor maps identically to itself with scale +1 and offset 0.
+
+semantic_requirements:
+  - validate every primitive descriptor through the registered map layer
+  - require identity scale and zero offset for every primitive cross-size comparison
+  - fail before the frozen kernel if any descriptor changes
+  - append the primitive descriptors and applied identity maps to score output
+  - preserve the 2026-08-28 frozen kernel contract byte-for-byte
+
+scientific_invariants_unchanged:
+  - levels_0_0_025_0_05
+  - lineages_65_130_325_and_85_170_425
+  - q2_then_Jordan_order
+  - q2_c_equals_8_over_5
+  - Jordan_c_equals_log5_over_log2
+  - covariance_source_group_65_85_130_170
+  - independent_target_groups_325_and_425
+  - delete_one_recomputation_of_intrinsic_coordinates_and_projectors
+  - pseudoinverse_relative_eigenvalue_cutoff_1e_10

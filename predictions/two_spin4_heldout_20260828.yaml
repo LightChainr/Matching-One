@@ -1,0 +1,78 @@
+version: 1
+frozen_date: 2026-08-28
+status: preregistered_before_target_runs
+source_evidence:
+  matching_odd:
+    source: results/server-20260828/P31/pooled_deltaM_with_covariance.csv
+    model: 'DeltaM = A_M * DeltaCos4 * N^(-13/8)'
+    A_M: 0.7885
+    A_M_standard_error: 0.0352
+    source_common_amplitude_chi_square: '1.53/4'
+  matching_even:
+    source: results/server-20260828/P31/p31_confirmation_seed2026093001.analysis.csv
+    channel: either
+    sector: even
+    model: 'DeltaS = A_I * DeltaCos4 * N^(-1)'
+    A_I: 0.010603216462677735
+    A_I_standard_error: 0.000936687018246324
+    diagnostic_common_amplitude_chi_square: '4.66/4'
+
+rules:
+  orientation_order: first_minus_second
+  delta_cos4: 'cos(4 theta_first) - cos(4 theta_second)'
+  no_refit_before_scoring: true
+  score_both_sectors: true
+  do_not_select_sizes_by_observed_target_effect: true
+  coefficient_uncertainty: propagate_from_frozen_source_fit
+  primary_matching_odd_exponent: '13/8 in N = 13/4 in linear length'
+  primary_matching_even_exponent: '1 in N = 2 in linear length'
+
+heldout_targets:
+  - N: 185
+    first: [13,4]
+    second: [11,8]
+    delta_cos4: 1.1780861943024106
+    predictions:
+      delta_M_matching_function:
+        mean: 0.00019223156676869253
+        coefficient_only_standard_error: 0.000008581548700390585
+      delta_S_matching_even:
+        mean: 0.00006752163745881449
+        coefficient_only_standard_error: 0.000005964854295017754
+  - N: 265
+    first: [16,3]
+    second: [12,11]
+    delta_cos4: 1.7224635101459596
+    predictions:
+      delta_M_matching_function:
+        mean: 0.0001567390401230751
+        coefficient_only_standard_error: 0.000006997101093636327
+      delta_S_matching_even:
+        mean: 0.00006891944697034459
+        coefficient_only_standard_error: 0.000006088336639081946
+  - N: 290
+    role: secondary_confirmation_do_not_use_for_model_selection
+    first: [17,1]
+    second: [13,11]
+    delta_cos4: 1.9177170035671818
+    predictions:
+      delta_M_matching_function:
+        mean: 0.00015072644984137683
+        coefficient_only_standard_error: 0.000006728688692982201
+      delta_S_matching_even:
+        mean: 0.00007011713276889848
+        coefficient_only_standard_error: 0.000006194140075557306
+
+acceptance:
+  primary_sizes: [185,265]
+  matching_odd:
+    - signed effects must agree with frozen positive signs
+    - covariance-aware residuals must be scored against the fixed predicted means
+    - do not refit exponent 13/8 before reporting fixed-model score
+  matching_even:
+    - signed effects must agree with frozen positive signs
+    - score fixed N^-1 predictions before any alternative exponent fit
+  joint:
+    - publish zero-effect benchmark
+    - compare only after fixed-model score to free-exponent/log/H8 alternatives
+    - preserve failures and all batch aggregates

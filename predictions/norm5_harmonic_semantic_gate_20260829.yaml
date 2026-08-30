@@ -1,0 +1,58 @@
+version: 1
+added_at: 2026-08-29
+status: semantic_gate_added_before_norm5_target_reveal
+claim_level: protocol_only
+related_issue: 57
+related_protocol_issue: 146
+source_prediction: predictions/gaussian_norm5_harmonic_discrimination_20260828.yaml
+frozen_kernel_contract: predictions/norm5_harmonic_primary_scorer_20260828.yaml
+kernel_scorer: scripts/score_norm5_harmonic_primary.py
+canonical_entrypoint: scripts/score_norm5_harmonic_primary_typed.py
+
+purpose: >-
+  Add explicit source/target observable semantics to the already-frozen norm-5
+  primary scorer without changing the H4/H12/H8/zero model order, multiplier
+  ratios, covariance treatment, target data, or fitted parameter count.
+
+source_descriptor:
+  channel: either
+  combination: odd
+  coordinate: p
+  orientation_order: first_minus_second
+  normalization: raw
+  quantity: orientation_contrast
+
+target_descriptor:
+  channel: cross
+  combination: odd
+  coordinate: p
+  orientation_order: first_minus_second
+  normalization: raw
+  quantity: orientation_contrast
+
+exact_registered_map:
+  identity: D_either = D_cross
+  scale: 1.0
+  offset: 0.0
+  rationale: >-
+    The frozen raw matching-function orientation contrast is matching-odd.
+    The historical source convention is represented by the P31 either/odd
+    channel, while threshold-rank K_minus/K_plus production reconstructs the
+    cross/odd channel. Complementary torus topology makes these odd channels
+    exactly identical for the declared orientation order.
+
+semantic_requirements:
+  - validate the map before invoking the frozen scoring kernel
+  - fail if the descriptor map is not exact and unit-scale
+  - append source_descriptor target_descriptor and applied_transform to score output
+  - do not rewrite the frozen source prediction artifact
+  - do not rewrite the 2026-08-28 frozen kernel contract
+
+scientific_invariants_unchanged:
+  - fixed_probability
+  - lineage_order
+  - H4_H12_H8_zero_scoring_order
+  - radial_exponent_13_over_8
+  - exact_harmonic_multiplier_ratios
+  - target_refit_parameters_zero
+  - counter_group_covariance_rules

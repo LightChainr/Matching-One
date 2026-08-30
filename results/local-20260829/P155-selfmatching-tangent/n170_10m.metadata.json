@@ -1,0 +1,17 @@
+{
+  "engine": "C4 self-matching p=1/2 score-function tangent",
+  "generated_utc": "2026-08-29T07:38:06Z",
+  "git_commit": "97685c9",
+  "command": "build/c4_self_matching_tangent_mc --a 13 --b 1 --samples 10000000 --batches 100 --seed 2026105501 --replica-offset 1000000000 --threads 1 --git-commit 97685c9 --output-prefix results/local-20260829/P155-selfmatching-tangent/n170_10m",
+  "N": 170,
+  "a": 13, "b": 1,
+  "samples": 10000000, "batches": 100,
+  "seed": 2026105501,
+  "replica_counter_first": 1000000000,
+  "replica_counter_last_exclusive": 1010000000,
+  "threads_requested": 1,
+  "elapsed_seconds": 37.885534542000002,
+  "score_order": ["t","lambda"],
+  "exact_Fisher_per_sample": [[680,0],[0,680]],
+  "response_csv": "results/local-20260829/P155-selfmatching-tangent/n170_10m.responses.csv"
+}

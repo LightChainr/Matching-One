@@ -1,0 +1,21 @@
+{
+  "schema": "matching-one/predictable-arm-eprocess/v1",
+  "issue": 126,
+  "status": "exact_finite_bernoulli_only",
+  "horizon": 4,
+  "stopping_threshold": "4",
+  "arms": {
+    "A": {"null_success": "1/3", "alternative_success": "2/3"},
+    "B": {"null_success": "1/4", "alternative_success": "1/2"}
+  },
+  "predictable_policy": {
+    "initial_arm": "A",
+    "after_failure": "A",
+    "after_success": "B"
+  },
+  "peek_both_negative_control_expected_factor": "4/3",
+  "claim_boundary": {
+    "conclusion": "Exact finite enumeration verifies likelihood-ratio martingale and bounded-stopping identities under a past-measurable arm policy, while a current-outcome peek breaks calibration.",
+    "unresolved": "No Gaussian approximation, covariance contract, information-per-wall-time allocator, simulation calibration, or production stopping rule is supplied; issue #126 remains open."
+  }
+}

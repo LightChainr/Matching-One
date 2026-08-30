@@ -1,0 +1,24 @@
+{
+  "engine": "same-N Gaussian site-orientation discovery",
+  "generated_utc": "2026-08-28T13:05:52Z",
+  "git_commit": "4bbbe90180a9960dfae613b47548897ae1defa8b",
+  "command": "/workspace/p50-build-4bbbe90/gaussian_orientation_mc --samples 500000000 --batches 100 --p-ref 0.592746050790 --seed 2026105001 --replica-offset 6100000000 --threads 16 --n 290 --git-commit 4bbbe90180a9960dfae613b47548897ae1defa8b --output-prefix /workspace/p50-results-20260828/production_n290",
+  "compiler": "10.3.1",
+  "openmp": true,
+  "threads_requested": 16,
+  "samples_per_pair": 500000000,
+  "batches": 100,
+  "p_ref": 0.59274605078999998,
+  "seed": 2026105001,
+  "replica_counter_first": 6100000000,
+  "replica_counter_last_exclusive": 6600000000,
+  "rng": "stateless SplitMix64-derived mapping (seed,N,replica,cyclic-site)",
+  "coupling": "same cyclic labels j in Z/NZ share U_j across representations",
+  "channels": ["cross", "both", "either", "direction_0", "direction_1"],
+  "euler_motifs": false,
+  "euler_observable_names": ["q", "C_black", "C_white", "V", "E", "F0", "nnn_pos", "nnn_neg", "path3_x", "path3_y", "corners", "E_mc", "F0_mc", "nnn_pos_mc", "nnn_neg_mc", "path3_x_mc", "path3_y_mc", "corners_mc"],
+  "elapsed_seconds": 1259.707464178,
+  "designs": [
+    {"N": 290, "first": [13,11], "second": [17,1], "theta_first": 0.70225693150900703, "theta_second": 0.058755822715722696, "cos4_first": -0.94520808561236613, "cos4_second": 0.97250891795481564}
+  ]
+}

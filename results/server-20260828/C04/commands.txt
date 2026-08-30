@@ -1,0 +1,3 @@
+python3 scripts/square_bond_kappa3.py --model triangular_site_rhombic_torus --mode exact --sizes 2 3 4 --output results/server-20260828/C04/exact_regression/triangular.json
+python3 scripts/square_bond_kappa3.py --model triangular_site_rhombic_torus --mode monte-carlo --sizes 8 12 16 24 32 --samples 20000 --blocks 20 --workers 16 --seed 20260828 --output results/server-20260828/C04/triangular_pilot.json
+python3 scripts/square_bond_kappa3.py --model triangular_site_rhombic_torus --mode monte-carlo --sizes 8 12 16 24 32 --samples 300000 --blocks 60 --workers 16 --seed 20260829 --output results/server-20260828/C04/triangular_production.json

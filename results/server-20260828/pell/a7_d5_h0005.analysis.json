@@ -1,0 +1,143 @@
+{
+  "analysis": "three-point central-difference with delete-one-batch jackknife",
+  "source_batches": "results/server-20260828/pell/a7_d5_h0005.batches.csv",
+  "source_metadata": "results/server-20260828/pell/a7_d5_h0005.metadata.json",
+  "batch_count": 50,
+  "probabilities": [
+    0.5922460500000001,
+    0.59274605,
+    0.59324605
+  ],
+  "point_estimates": [
+    {
+      "point": 0,
+      "p": 0.5922460500000001,
+      "channel": "axis",
+      "estimate": -0.0016908000000000001,
+      "batch_se": 0.0003620406832477955
+    },
+    {
+      "point": 0,
+      "p": 0.5922460500000001,
+      "channel": "diamond",
+      "estimate": -0.0052212000000000005,
+      "batch_se": 0.00038469809419006666
+    },
+    {
+      "point": 0,
+      "p": 0.5922460500000001,
+      "channel": "difference",
+      "estimate": -0.0035304000000000004,
+      "batch_se": 0.0003755846555297324
+    },
+    {
+      "point": 1,
+      "p": 0.59274605,
+      "channel": "axis",
+      "estimate": 0.0020388,
+      "batch_se": 0.0003606596722447264
+    },
+    {
+      "point": 1,
+      "p": 0.59274605,
+      "channel": "diamond",
+      "estimate": -0.0014463999999999998,
+      "batch_se": 0.00038039139456778523
+    },
+    {
+      "point": 1,
+      "p": 0.59274605,
+      "channel": "difference",
+      "estimate": -0.0034852,
+      "batch_se": 0.000381615389241737
+    },
+    {
+      "point": 2,
+      "p": 0.59324605,
+      "channel": "axis",
+      "estimate": 0.005803,
+      "batch_se": 0.00035612302964691564
+    },
+    {
+      "point": 2,
+      "p": 0.59324605,
+      "channel": "diamond",
+      "estimate": 0.0023358000000000003,
+      "batch_se": 0.0003802547041129143
+    },
+    {
+      "point": 2,
+      "p": 0.59324605,
+      "channel": "difference",
+      "estimate": -0.0034672,
+      "batch_se": 0.00037501031713698714
+    }
+  ],
+  "derived": {
+    "axis_M_p_ref": {
+      "estimate": 0.0020388,
+      "jackknife_se": 0.0003606596722447265
+    },
+    "axis_derivative": {
+      "estimate": 7.493800000000825,
+      "jackknife_se": 0.049741281668664414
+    },
+    "axis_curvature": {
+      "estimate": 138.40000000003167,
+      "jackknife_se": 155.4924658585939
+    },
+    "axis_linear_root": {
+      "estimate": 0.5924739850930103,
+      "jackknife_se": 4.83673328782331e-05
+    },
+    "diamond_M_p_ref": {
+      "estimate": -0.0014464,
+      "jackknife_se": 0.00038039139456778523
+    },
+    "diamond_derivative": {
+      "estimate": 7.557000000000832,
+      "jackknife_se": 0.03424432025005031
+    },
+    "diamond_curvature": {
+      "estimate": 29.60000000000767,
+      "jackknife_se": 142.92482967904462
+    },
+    "diamond_linear_root": {
+      "estimate": 0.5929374487031891,
+      "jackknife_se": 5.022511896072802e-05
+    },
+    "orientation_root_gap_diamond_minus_axis": {
+      "estimate": 0.00046346361017879367,
+      "jackknife_se": 5.085763104885948e-05
+    },
+    "simple_mean_root": {
+      "estimate": 0.5927057168980997,
+      "jackknife_se": 4.224163909236765e-05
+    },
+    "L4_axis_weight": {
+      "estimate": 0.48990002040399916,
+      "jackknife_se": 0.0
+    },
+    "L4_diamond_weight": {
+      "estimate": 0.5100999795960008,
+      "jackknife_se": 0.0
+    },
+    "L4_weighted_root": {
+      "estimate": 0.5927103978711059,
+      "jackknife_se": 4.226665198886507e-05
+    },
+    "paired_difference_M_p_ref": {
+      "estimate": -0.0034852,
+      "jackknife_se": 0.0003816153892417376
+    },
+    "paired_difference_derivative": {
+      "estimate": 0.06320000000000633,
+      "jackknife_se": 0.053435018709554256
+    }
+  },
+  "caveats": [
+    "linear_root uses only M(p_ref) and the central finite-difference derivative",
+    "finite-difference truncation error is not included in the jackknife standard error",
+    "fixed-p discovery scans are not a replacement for a full Newman-Ziff production run"
+  ]
+}

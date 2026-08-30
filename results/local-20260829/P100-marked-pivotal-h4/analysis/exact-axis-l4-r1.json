@@ -1,0 +1,40 @@
+{
+  "schema": "matching-one/marked-pivotal-h4-exact/v1",
+  "geometry": "axis-L4",
+  "N": 16,
+  "radius": 1,
+  "probability": "0.5",
+  "fixed_root_configurations": 32768,
+  "totals": {
+    "primal": {
+      "pivotal": 3121,
+      "axis": 892,
+      "diagonal": 474,
+      "both": 88,
+      "landed": 1278,
+      "h4": 418
+    },
+    "matching": {
+      "pivotal": 5297,
+      "axis": 1522,
+      "diagonal": 1006,
+      "both": 240,
+      "landed": 2288,
+      "h4": 516
+    }
+  },
+  "russo_control": {
+    "fixed_root_primal_mass": "1.52392578125",
+    "all_site_primal_mass": "1.52392578125",
+    "primal_difference": "0.0",
+    "fixed_root_matching_mass": "2.58642578125",
+    "all_site_matching_mass": "2.58642578125",
+    "matching_difference": "0.0"
+  },
+  "symmetry_violations": {
+    "rotation_C4": 0,
+    "reflection": 0,
+    "registry_pi_over_4": 0
+  },
+  "interpretation": "R=1 is a schema/orientation oracle only; total pivotal mass is a Russo control, while h4 is the new marked observable."
+}

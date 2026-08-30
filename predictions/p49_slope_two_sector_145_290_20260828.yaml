@@ -1,0 +1,76 @@
+status: frozen_before_fullcurve_N290_reveal
+created_date: 2026-08-28
+purpose: >-
+  Predict the full-curve center-slope ratio on the third Gaussian doubling lineage
+  145->290 using only the clean fresh N65->130 and N85->170 P49 slope data.
+
+source:
+  report: results/server-20260828/P49-fullcurve-doubling-100m/REPORT.md
+  score: results/server-20260828/P49-fullcurve-doubling-100m/analysis/score.json
+  clean_seed: 2026104501
+  clean_counters: "[5000000000,5100000000)"
+  lineages_used:
+    - parent_N: 65
+      child_N: 130
+      slope_parent: 8.379157434038998
+      slope_child: 10.842491563759214
+      slope_ratio: 1.2939835119594856
+      mean_cos4_parent_exact: "833/4225"
+    - parent_N: 85
+      child_N: 170
+      slope_parent: 9.256815842345812
+      slope_child: 11.981814832961861
+      slope_ratio: 1.294377573998004
+      mean_cos4_parent_exact: "-1127/7225"
+
+model:
+  equation: >-
+    MbarPrime(N,cbar)=Binf*N^(3/8)*(1+(a+b*cbar)/N+...),
+    with Gaussian doubling cbar_child=-cbar_parent.
+  ratio_equation: >-
+    r(N,cbar)=2^(3/8)*(1+(a-b*cbar)/(2*N))/(1+(a+b*cbar)/N).
+  motivation:
+    - "the raw universal slope ratio is resolved as incomplete at 100M precision"
+    - "a scalar relative L^-2 correction contributes a/N"
+    - "the already observed P4[D_prime] orientation correction contributes b*cbar/N and flips under pi/4 rotation"
+  fitted_from_two_source_lineages_only:
+    a: 0.30789201
+    b: -0.03426210
+  caution: >-
+    The two source lineages exactly determine a and b; this is a minimal interpolation
+    motivated by known parity sectors, not evidence that higher 1/N powers or harmonics vanish.
+
+target:
+  parent_N: 145
+  child_N: 290
+  parent_pair: [[12,1],[9,8]]
+  child_lineage_order: [[13,11],[17,1]]
+  mean_cos4_parent_exact: "-287/21025"
+  asymptotic_ratio_2pow3over8: 1.2968395546510096
+  frozen_slope_ratio: 1.2954593652984558
+  linearized_source_se_approx: 1.81e-5
+  source_se_note: >-
+    This SE is a first-order propagation of the committed P49 fixed-slope residual
+    covariance divided by the parent slopes. The production scorer must recompute the
+    full delete-one-jackknife transformation and use that exact source covariance.
+
+induced_root_prediction_if_primary_deltaM_doubling_holds:
+  deltaM_lineage_ratio: -0.3242098886627524
+  frozen_root_gap_ratio: -0.2502663513402128
+  linearized_slope_source_se_only_approx: 3.49e-6
+  note: >-
+    Target root sampling covariance and DeltaM-source uncertainty must be included in
+    the final score; the number above is not a complete prediction interval.
+
+scoring_order:
+  - "score the existing P50/P49 primary full-curve DeltaM lineage residual first"
+  - "score the raw asymptotic slope ratio 2^(3/8) as the historical baseline"
+  - "score this frozen scalar-plus-H4 1/N slope correction without refitting"
+  - "score the induced finite-slope root ratio"
+  - "only afterward fit extra powers/logarithms or orientation terms"
+
+rules:
+  - "do not use any N290 full-curve value to alter a,b or the frozen target"
+  - "preserve Gaussian lineage order; display order may reverse the DeltaM/root sign but not the positive slope ratio"
+  - "recompute the source prediction with delete-one pseudovalues for publication-facing uncertainty"
+  - "a pass supports the correction structure, not a unique identification of its scalar operator"

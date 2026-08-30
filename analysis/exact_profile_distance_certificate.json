@@ -1,0 +1,41 @@
+{
+  "boundary": "Exact synthetic polynomial distances only: no production histogram, bootstrap uncertainty, cross-model universality, or tail claim.",
+  "control_gram": {
+    "basis": [
+      "frozen-minus-uniform",
+      "beta22-minus-uniform"
+    ],
+    "determinant": "0",
+    "matrix": [
+      [
+        "1/20",
+        "1/10"
+      ],
+      [
+        "1/10",
+        "1/5"
+      ]
+    ],
+    "positive_semidefinite_certified": true
+  },
+  "data_class": "exact synthetic rational polynomial profiles",
+  "distance": {
+    "cdf_Cramer_von_Mises_squared": "1/840",
+    "density_L2_squared": "1/20"
+  },
+  "exact_affine_mixture_identity": "frozen = (uniform + Beta(2,2))/2",
+  "frozen_density_power_coefficients": [
+    "1/2",
+    "3",
+    "-3",
+    "0"
+  ],
+  "identity_zero_certified": true,
+  "issue": 28,
+  "reference_density": "uniform_on_[0,1]",
+  "reference_density_power_coefficients": [
+    "1"
+  ],
+  "schema": "matching-one/exact-profile-distance-certificate/v1",
+  "symmetry_certified": true
+}

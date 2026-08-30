@@ -1,0 +1,264 @@
+{
+  "claim_boundary": {
+    "excluded": "baseline bound reproduction, broad enumeration, optimization, domination certification, theorem assumptions, or a new percolation bound",
+    "included": "exact terminal-connectivity polynomials for one declared four-terminal independent-bond star",
+    "parent_issue": "remain open"
+  },
+  "conclusion": {
+    "exact_result": "all 16 bond configurations of the four-terminal star are partitioned into exact terminal-connectivity Bernstein polynomials",
+    "new_percolation_bound": false,
+    "theorem_claim": false
+  },
+  "endpoint_checks": {
+    "both_have_probability_one": true,
+    "p_one_partition": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "p_zero_partition": [
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  "enumeration": {
+    "arithmetic": "integer Bernstein counts and fractions.Fraction evaluations",
+    "configurations": 16,
+    "edge_count": 4,
+    "nonzero_terminal_partitions": 12,
+    "terminal_partition_encoding": "restricted_growth_string"
+  },
+  "gadget": {
+    "edge_probability": "one shared symbolic p; edges mutually independent",
+    "edges": [
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    "id": "four-terminal-independent-bond-star",
+    "terminal_count": 4,
+    "vertex_count": 5
+  },
+  "gadget_sha256": "3a28481a8bab9cbf4f4254ada25715bef5e49dfa9468daabd840c55b94c25a7d",
+  "issue": 14,
+  "normalization_counts": [
+    1,
+    4,
+    6,
+    4,
+    1
+  ],
+  "probability_basis": "sum_k count[k] * p^k * (1-p)^(m-k)",
+  "schema": "matching-one/terminal-reliability-polynomial/v1",
+  "status": "exact_small_gadget_baseline",
+  "terminal_partition_polynomials": [
+    {
+      "bernstein_counts_by_open_edge_count": [
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "probability_at_one_half": "1/16",
+      "terminal_partition_rgs": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "bernstein_counts_by_open_edge_count": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "probability_at_one_half": "1/16",
+      "terminal_partition_rgs": [
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "bernstein_counts_by_open_edge_count": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "probability_at_one_half": "1/16",
+      "terminal_partition_rgs": [
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "bernstein_counts_by_open_edge_count": [
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "probability_at_one_half": "1/16",
+      "terminal_partition_rgs": [
+        0,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "bernstein_counts_by_open_edge_count": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "probability_at_one_half": "1/16",
+      "terminal_partition_rgs": [
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "bernstein_counts_by_open_edge_count": [
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "probability_at_one_half": "1/16",
+      "terminal_partition_rgs": [
+        0,
+        1,
+        0,
+        2
+      ]
+    },
+    {
+      "bernstein_counts_by_open_edge_count": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "probability_at_one_half": "1/16",
+      "terminal_partition_rgs": [
+        0,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "bernstein_counts_by_open_edge_count": [
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "probability_at_one_half": "1/16",
+      "terminal_partition_rgs": [
+        0,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "bernstein_counts_by_open_edge_count": [
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "probability_at_one_half": "1/16",
+      "terminal_partition_rgs": [
+        0,
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "bernstein_counts_by_open_edge_count": [
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "probability_at_one_half": "1/16",
+      "terminal_partition_rgs": [
+        0,
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "bernstein_counts_by_open_edge_count": [
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "probability_at_one_half": "1/16",
+      "terminal_partition_rgs": [
+        0,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "bernstein_counts_by_open_edge_count": [
+        1,
+        4,
+        0,
+        0,
+        0
+      ],
+      "probability_at_one_half": "5/16",
+      "terminal_partition_rgs": [
+        0,
+        1,
+        2,
+        3
+      ]
+    }
+  ]
+}
