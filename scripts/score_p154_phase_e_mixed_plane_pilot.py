@@ -12,7 +12,7 @@ from pathlib import Path
 from score_p154_local_singlet_pilot import cos4, fit_ray, mean_cov, sha256
 
 
-FREEZE_COMMIT = "__FREEZE_COMMIT__"
+FREEZE_COMMIT = "0578105d92d3822cb48f5c421bd23ff339295cc6"
 FIELDS = ("A", "E", "C", "W", "B", "J_top", "J_bulk", "B_var")
 CANDIDATES = (
     ("A", "E", "C"),
