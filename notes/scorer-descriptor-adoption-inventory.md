@@ -6,19 +6,20 @@ direct typed entrypoints importing both `ObservableDescriptor` and
 `map_observable` from `wrapping_channels`. Three frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Nineteen paths are confirmed channel-bearing and
+a descriptor is not applicable. Twenty-one paths are confirmed channel-bearing and
 require typed migrations: `score_angular_root_amplitude.py`,
 `score_axis_pair_annihilator.py`, its stable entrypoint,
 `score_c4_self_matching_n26.py`, `score_c4_tangent_orthogonal_holdout.py`,
 `score_intrinsic_quantile_center_n145_n290.py`,
 `score_issue43_full_curve.py`, its locked wrapper,
 `score_issue43_secondary.py`, `score_issue50_n290.py`,
-`score_matching_odd_synthesis.py`, `score_p231_vacuum_kdv_sector.py`,
+`score_matching_odd_synthesis.py`, `score_norm4_production.py`,
+`score_norm4_thermal_jet.py`, `score_p231_vacuum_kdv_sector.py`,
 `score_p48_sprime_frozen.py`, `score_p49_fullcurve_doubling.py`,
 `score_p50_fullcurve_n290.py`, `score_p50_sprime_n290.py`,
 `score_prequential_evidence.py`,
 `score_rank_gap_boundary_targets.py`, and
-`score_threshold_rank_root_doubling.py`. The remaining eight files are outside a
+`score_threshold_rank_root_doubling.py`. The remaining six files are outside a
 registered typed path.
 
 This closes an inventory gap: the repository now has a deterministic list,
@@ -28,7 +29,7 @@ import is added or removed without updating the manifest, or if a declared
 wrapped kernel disappears.
 
 `outside_registered_typed_path` is deliberately a triage label. Some of those
-eight scripts may not compare channel-bearing quantities, some may be historical,
+six scripts may not compare channel-bearing quantities, some may be historical,
 and some may need a future typed wrapper. Static membership alone does not prove
 a semantic bug, data-provenance failure, or need for migration. Each candidate
 must be reviewed before modification; Issue #146 therefore remains open.
@@ -171,6 +172,17 @@ A migration must type the quantities, model/stage maps, excluded/not-scorable
 states, and evidence reuse. It must preserve the no-target-refit and raw-data
 boundaries. Its direct call to the untyped P48 kernel is not covered by the
 separate prospective typed wrapper.
+
+The norm-4 scalar production scorer and thermal-jet scorer are both
+migration-required and share one evidence boundary. The scalar path orders
+`U`, `P4_D`, and root-gap coordinates across two lineages and six sizes, then
+applies frozen q2/Jordan and secondary transforms. The jet path orders ranks
+2--6 after Hermite--Krawtchouk projection and width normalization, then applies
+one cocycle multiplier to both lineages. A migration must type every quantity,
+mode, normalization, lineage/size transform, and model order. It must also
+record that scalar and jet outputs reuse the same histograms and cannot be
+added as independent evidence. Existing covariance blocks, multipliers,
+provenance, delete-one construction, and numerical scores remain fixed.
 
 The axis-pair annihilator score path is migration-required as one operational
 unit. The base scorer reconstructs the cross matching function from
