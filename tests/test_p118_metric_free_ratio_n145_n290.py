@@ -77,7 +77,12 @@ class P118MetricFreeRatioTests(unittest.TestCase):
             self.skipTest("result has not been revealed yet")
         payload = json.loads(result.read_text(encoding="utf-8"))
         self.assertEqual(payload["feature_order"], ["R_I", "R_T"])
-        self.assertEqual(payload["constant_response_null"]["joint"]["degrees_of_freedom"], 2)
+        null = payload["constant_response_null"]
+        self.assertEqual(null["joint"]["degrees_of_freedom"], 2)
+        self.assertAlmostEqual(null["joint"]["p_value"], 0.6513308592017554)
+        self.assertAlmostEqual(null["marginals"]["R_I"]["p_value"], 0.6542491284447434)
+        self.assertAlmostEqual(null["marginals"]["R_T"]["p_value"], 0.407918403537996)
+        self.assertIn("survives", null["joint"]["decision"])
 
 
 if __name__ == "__main__":

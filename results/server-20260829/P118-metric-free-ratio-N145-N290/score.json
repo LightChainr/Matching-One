@@ -1,0 +1,176 @@
+{
+  "schema": "matching-one/p118-metric-free-ratio-heldout-score/v1",
+  "status": "frozen held-out score completed",
+  "issue": 118,
+  "feature_order": [
+    "R_I",
+    "R_T"
+  ],
+  "decision_alpha": 0.01,
+  "chronology": {
+    "definition_freeze_commit": "920c6393f6db7927887df0905dfaed81838ca062",
+    "definition_freeze_committed_at": "2026-08-29T13:36:57+08:00",
+    "definition_freeze_path": "predictions/dimensionless_amplitude_ratios_20260829.yaml",
+    "definition_freeze_sha256": "684f7e909875892ccf89cf03d6573342b297e4e320ff1f23e47bf67d2d657b20",
+    "first_target_result_commit": "9675bce5b406247e15c03bca20abef954f26a3a2",
+    "first_target_result_committed_at": "2026-08-29T14:47:18+08:00",
+    "order": "definition freeze precedes first N145-to-N290 target result by 1 hour 10 minutes 21 seconds"
+  },
+  "protocol": {
+    "manifest": "analysis/p118_metric_free_ratio_n145_n290_manifest.json",
+    "manifest_sha256": "8e0e0e681c820fd4489db2ff81f87dea3918d138aeaeb80e1bc484f73277d0a7",
+    "nonlinear_delete_one_rule": "recompute Mbar_prime and all four P4 factors, then both nonlinear ratios, inside every size-local delete-one replicate",
+    "covariance_rule": "sum independent size-local jackknife covariance blocks",
+    "scoring_order": [
+      "joint two-vector constant-response null",
+      "R_I marginal constant-response null",
+      "R_T marginal constant-response null",
+      "descriptive observed child-over-parent ratios"
+    ]
+  },
+  "provenance": {
+    "parent_histogram": {
+      "path": "results/server-20260829/P50-n145-n290-fullcurve/raw/n145_100m.hist.csv",
+      "sha256": "c685dae9bddc005224fe5dd052945482cd3b8c5bb26744dad4e44996a8318b42"
+    },
+    "parent_metadata": {
+      "path": "results/server-20260829/P50-n145-n290-fullcurve/raw/n145_100m.metadata.json",
+      "sha256": "596b74853030dfbdb6d225a86b11c2c5124318acb9f7bab2a97fab6556c78257"
+    },
+    "child_histogram": {
+      "path": "results/server-20260829/P50-n145-n290-fullcurve/raw/n290_100m.hist.csv",
+      "sha256": "e5f62077407f5c989e1b2907171c5f844b770812212bde616f63c621dbf97eb9"
+    },
+    "child_metadata": {
+      "path": "results/server-20260829/P50-n145-n290-fullcurve/raw/n290_100m.metadata.json",
+      "sha256": "a38377490496004809c9b1c71a388cb7c4ecda2588f8fc1ed7c2e0aaf5ea253d"
+    }
+  },
+  "replica_domains": {
+    "parent": [
+      2026105003,
+      7000000000,
+      7100000000
+    ],
+    "child": [
+      2026105004,
+      7000000000,
+      7100000000
+    ],
+    "independent": true
+  },
+  "observations": {
+    "N145": {
+      "batches": 100,
+      "coordinates": {
+        "R_I": 1.3355495339230488,
+        "R_T": 3.2363153774669535
+      },
+      "covariance": [
+        [
+          0.08664080054773089,
+          -0.004711447423260796
+        ],
+        [
+          -0.004711447423260796,
+          0.1469277702705104
+        ]
+      ],
+      "source_factors": {
+        "p0": 0.5927419914140803,
+        "mean_slope": 11.292023884491694,
+        "P4_S": -5.84890309503116e-05,
+        "P4_D": 0.0001373518697218634,
+        "P4_S_prime": 0.005019462344828499,
+        "P4_D_prime": -0.0008820764234387027
+      }
+    },
+    "N290": {
+      "batches": 100,
+      "coordinates": {
+        "R_I": 1.8746555533438445,
+        "R_T": 2.6830853370064123
+      },
+      "covariance": [
+        [
+          1.362298127276144,
+          -0.027105887098082745
+        ],
+        [
+          -0.027105887098082745,
+          0.29997193757727947
+        ]
+      ],
+      "source_factors": {
+        "p0": 0.5927515789148523,
+        "mean_slope": 14.627867166946704,
+        "P4_S": -2.0962147940596202e-05,
+        "P4_D": 7.261071855632147e-05,
+        "P4_S_prime": 0.002849812114796165,
+        "P4_D_prime": -0.0005748284735665141
+      }
+    }
+  },
+  "constant_response_null": {
+    "residual_definition": "R(N290)-R(N145)",
+    "residual": {
+      "R_I": 0.5391060194207957,
+      "R_T": -0.5532300404605413
+    },
+    "residual_covariance": [
+      [
+        1.448938927823875,
+        -0.03181733452134354
+      ],
+      [
+        -0.03181733452134354,
+        0.4468997078477899
+      ]
+    ],
+    "joint": {
+      "chi_square": 0.8574750672381604,
+      "degrees_of_freedom": 2,
+      "chi_square_survival": 0.6513308592017554,
+      "numerical_rank": 2,
+      "relative_eigenvalue_cutoff": 1e-10,
+      "active_condition_number": 1.0823349659352217,
+      "correlation_eigenvalues": [
+        0.9604602682651283,
+        1.0395397317348716
+      ],
+      "component_standardized_residuals": [
+        0.4478670794610563,
+        -0.827562340013196
+      ],
+      "p_value": 0.6513308592017554,
+      "decision": "survives this block; not established as a universal ratio"
+    },
+    "marginals": {
+      "R_I": {
+        "residual": 0.5391060194207957,
+        "variance": 1.448938927823875,
+        "standard_error": 1.2037187910072165,
+        "signed_z": 0.44786707946105636,
+        "chi_square": 0.20058492086497617,
+        "degrees_of_freedom": 1,
+        "p_value": 0.6542491284447434,
+        "decision": "survives this block; not established as a universal ratio"
+      },
+      "R_T": {
+        "residual": -0.5532300404605413,
+        "variance": 0.4468997078477899,
+        "standard_error": 0.6685055780229435,
+        "signed_z": -0.827562340013196,
+        "chi_square": 0.6848594266081165,
+        "degrees_of_freedom": 1,
+        "p_value": 0.407918403537996,
+        "decision": "survives this block; not established as a universal ratio"
+      }
+    }
+  },
+  "descriptive_child_over_parent": {
+    "R_I": 1.4036585732894709,
+    "R_T": 0.8290555845352898
+  },
+  "interpretation_boundary": "This held-out block reuses P50 raw and is not independent primary evidence. Survival does not establish cross-microscopic universality; rejection only rejects a size-constant response over N145 to N290 for this lineage."
+}
