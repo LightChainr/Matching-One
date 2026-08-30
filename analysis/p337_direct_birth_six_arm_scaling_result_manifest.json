@@ -1,0 +1,58 @@
+{
+  "schema": "matching-one/p337-direct-birth-six-arm-scaling-result/v1",
+  "status": "existing_archives_scored_once",
+  "freeze_commit": "9e73388",
+  "scorer_commit": "95b14ce",
+  "artifacts": {
+    "score": "results/local-20260830/P337-direct-birth-six-arm-scaling/score.json",
+    "score_sha256": "e0eb9b88e80b967626b12989d919779e264f6c934bc69640327758d6ad60a7c6",
+    "batch_sufficient_statistics": "results/local-20260830/P337-direct-birth-six-arm-scaling/batch_direct_rates.csv",
+    "batch_sufficient_statistics_sha256": "594ca85d0c718a713dee7b25c0566e68263fb55a3531d58081bddeacddb3e83d"
+  },
+  "Dbar": {
+    "N85": 0.0154425,
+    "N170": 0.0084875625,
+    "N340": 0.004712791666666667,
+    "N680": 0.00264445
+  },
+  "scaled_amplitude_Dbar_times_N_to_5_over_6": {
+    "N85": 0.625989018739,
+    "N170": 0.613042268768,
+    "N340": 0.606518435422,
+    "N680": 0.606400364847
+  },
+  "fixed_5_6": {
+    "amplitude": 0.6075755853552057,
+    "amplitude_standard_error": 0.0006663054627565332,
+    "chi_square": 16.886367874602676,
+    "degrees_of_freedom": 3,
+    "survival_p": 0.0007458079814009333,
+    "decision": "rejected"
+  },
+  "free_power": {
+    "beta": 0.8406953986881263,
+    "beta_standard_error": 0.00204128838281044,
+    "chi_square": 3.878964482701919,
+    "degrees_of_freedom": 2,
+    "survival_p": 0.14377837300557397,
+    "beta_equals_5_over_6_p": 0.0003102618698759247
+  },
+  "minimal_curvature": {
+    "kappa": 0.0052232183066664994,
+    "kappa_standard_error": 0.002652122789620071,
+    "two_sided_p": 0.048901651786001046,
+    "resolved_at_alpha_0_01": false
+  },
+  "doubling_ratios": [0.5496236036911123, 0.555258552342521, 0.5611217696517453],
+  "fixed_doubling_ratio": 0.5612310241546865,
+  "N680_heldout": {
+    "predicted_Dbar": 0.0026609017840084907,
+    "observed_Dbar": 0.00264445,
+    "z": -2.6205847381094602,
+    "two_sided_p": 0.00877791120542389
+  },
+  "decision_alpha": 0.01,
+  "decision": "conditional_fixed_5_6_line_rejected",
+  "interpretation": "The no-correction single-amplitude line fails, while scaled amplitudes and doubling ratios converge sharply toward a 5/6 plateau. This is a conditional correction-bearing six-arm clue, not an arm correspondence proof.",
+  "no_new_simulation": true
+}
