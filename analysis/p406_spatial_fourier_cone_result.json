@@ -1,0 +1,35 @@
+{
+  "schema": "matching-one/p406-spatial-fourier-cone-result/v1",
+  "issue": 406,
+  "status": "archived_production_data_scored_once",
+  "branch": "analysis/p406-spatial-fourier-cone-20260830",
+  "freeze_and_scorer_commit": "df812661dae895d44f2d5f53d1d1e968e509788a",
+  "new_simulation": false,
+  "group_order": 101,
+  "coordinate_map": "j(a,b)=a-10b mod 101",
+  "inputs": {
+    "radius4_batches_sha256": "dfbd83d680080939bcae5cad0090af95d82748ed780ce73807d4b002d6a9ca72",
+    "radius5_batches_sha256": "50985e38c9c8afab0c8b0e78113184d33861d928aefaba1e8043e67fc348677e",
+    "radius6_batches_sha256": "8734a15e61a7358da66019cf26d75a3d4f2deb0185831526204967a0ee5a42cf"
+  },
+  "artifacts": {
+    "freeze_sha256": "f2c481d2b3219a217c7567aee0b2dcd1055de0c4b6b235a67995180fca918211",
+    "scorer_sha256": "22ab6d987be98af44637aaf5b687bcf40f7b17ee94f28d4a146cf9263af62336",
+    "score_sha256": "545973507f9df20732b0a0af914884aadc004d6d1a3707a3d6c3ecacb71c7f04"
+  },
+  "channels": {
+    "plus_r1": {"distance_squared": 70.87804908695776, "bootstrap_p": 0.3147410358565737, "resolved_rank": 69, "effective_modes_descriptive": 48.57916619386346},
+    "plus_r2": {"distance_squared": 75.6919514180294, "bootstrap_p": 0.2151394422310757, "resolved_rank": 69, "effective_modes_descriptive": 47.50494285790201},
+    "minus_r1": {"distance_squared": 76.76575099053947, "bootstrap_p": 0.16334661354581673, "resolved_rank": 69, "effective_modes_descriptive": 44.114016637394954},
+    "minus_r2": {"distance_squared": 68.06717419758105, "bootstrap_p": 0.3784860557768924, "resolved_rank": 69, "effective_modes_descriptive": 45.22894290278774}
+  },
+  "maximum_absolute_cone_increment": 1.2946088645549025e-11,
+  "decision": "positive_fourier_cone_not_rejected_in_all_channels",
+  "mechanism_update": "The archived endpoint rank growth is fully compatible with ordinary finite-group spatial spectral content; finite-window Hankel rank is not a physical field count.",
+  "claim_boundary": [
+    "The positive completion is underdetermined and the reported NNLS weights are not a unique spectrum.",
+    "The score does not identify physical transfer states, CFT fields, ordered memory, or a Jordan dilation sector.",
+    "Earlier frozen finite-window low-rank exclusions remain valid within their observer contract."
+  ],
+  "next_discriminator": "Use held-out mesoscopic or log-radius endpoints, or an explicitly intervention-sensitive ordered observable, rather than another endpoint-only rank escalation."
+}
