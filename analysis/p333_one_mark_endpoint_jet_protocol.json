@@ -31,12 +31,9 @@
     "compatibility": "For a radical basis B require B^T(G_bar1 X0-X0^T G_bar1)B=0. The velocity terms vanish on ker(G_bar0), but D_bar_i1 must act nontrivially on R_bar for the mark to count as a genuine Q-sensitive extension."
   },
   "endpoint_and_source": {
-    "endpoint_covectors": [
-      "U=(one^T,0)",
-      "K=(block_count(pi),0)",
-      "M=(0,...,0,1)"
-    ],
-    "endpoint_normalization": "Each of U,K,M is fixed by X0 and annihilates V. These covectors span the row space of G_bar0 and therefore make R_bar invariant.",
+    "endpoint_covector": "U=(one^T,0)",
+    "endpoint_normalization": "U is fixed by X0 and annihilates V, matching the single ordinary endpoint normalization used at 96df7c8 and ba3135e.",
+    "radical_invariance": "Require G_bar0 X0 B=0 for a basis B of R_bar. This preserves the extended radical without artificially fixing all three quotient covectors U, block_count and M separately; fixing M as a covector would forbid the ordinary-to-mark response that is being tested.",
     "sources": [
       "S=(s0,0)",
       "mu=(0,...,0,1)"
@@ -51,7 +48,7 @@
   },
   "analysis_ladder": [
     "marked generic-Q affine Hom jet plus mark filtration",
-    "plus three endpoint covector normalizations",
+    "plus ordinary endpoint normalization and extended-radical invariance",
     "plus extended first-jet radical Gram self-adjointness",
     "plus ordinary and marked source normalization"
   ],
