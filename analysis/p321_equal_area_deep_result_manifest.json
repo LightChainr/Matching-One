@@ -1,0 +1,48 @@
+{
+  "schema": "matching-one/p321-equal-area-deep-result/v1",
+  "issues": [321, 337],
+  "status": "scored_independent_precision_pool",
+  "runner_commits": [
+    "ca72994f14ff2c8ec00dfca51b664f3b95b1dcb0",
+    "bece595"
+  ],
+  "scorer_commits": [
+    "7ef8900",
+    "5c39f3f"
+  ],
+  "components": [
+    {"path": "results/exploratory-20260830/P321-equal-area-deep-2m/N144", "N": 144, "samples_per_shape": 2000000, "batches": 100, "seed": 832114420260830, "replica_first": 1200000000, "replica_last_exclusive": 1202000000},
+    {"path": "results/exploratory-20260830/P321-equal-area-deep-extra8m/N144", "N": 144, "samples_per_shape": 8000000, "batches": 400, "seed": 932114420260830, "replica_first": 2200000000, "replica_last_exclusive": 2208000000},
+    {"path": "results/exploratory-20260830/P321-equal-area-deep-2m/N576", "N": 576, "samples_per_shape": 2000000, "batches": 100, "seed": 832157620260830, "replica_first": 1300000000, "replica_last_exclusive": 1302000000},
+    {"path": "results/exploratory-20260830/P321-equal-area-deep-extra4m/N576", "N": 576, "samples_per_shape": 4000000, "batches": 200, "seed": 932157620260830, "replica_first": 2300000000, "replica_last_exclusive": 2304000000},
+    {"path": "results/exploratory-20260830/P321-equal-area-deep-2m/N1296", "N": 1296, "samples_per_shape": 2000000, "batches": 100, "seed": 8321129620260830, "replica_first": 1400000000, "replica_last_exclusive": 1402000000},
+    {"path": "results/exploratory-20260830/P321-equal-area-deep-extra4m/N1296", "N": 1296, "samples_per_shape": 4000000, "batches": 200, "seed": 9321129620260830, "replica_first": 2400000000, "replica_last_exclusive": 2404000000}
+  ],
+  "integrity": {
+    "declared_replica_intervals_pairwise_disjoint": true,
+    "within_component_square_histograms_byte_identical": true,
+    "within_component_square_moments_byte_identical": true,
+    "huawei_extra_campaign_remote_local_sha256_equal": true,
+    "portable_raw_hashes": "results/huawei-20260830/P321-equal-area-deep-independent-pool/RAW_INPUT_SHA256SUMS"
+  },
+  "outputs": {
+    "precision_pool": {"path": "results/huawei-20260830/P321-equal-area-deep-independent-pool/precision_pool.json", "sha256": "54e1b3e494b0e163ae8c9911e49023fe588b276d9a9a3c40ac1b9c98d95368e2"},
+    "full_gls_covariance": {"path": "results/huawei-20260830/P321-equal-area-deep-independent-pool/gls_full_covariance.json", "sha256": "f0190ed1f4c76cec45c7ac4f91816c118318fc8a4ba7b4757751f6b950160382"},
+    "old100k_sensitivity": {"path": "results/huawei-20260830/P321-equal-area-deep-independent-pool/with_old100k_sensitivity.json", "sha256": "b41d56e4bef70ece1dac747f4bfeabc8368d4c8457097d77e4041514040ae311"},
+    "old100k_full_gls_covariance": {"path": "results/huawei-20260830/P321-equal-area-deep-independent-pool/with_old100k_gls_full_covariance.json", "sha256": "d1b01b8efb2ac9f4715297acb0d162f45f29aa41f62a7ae755a037a404a2f5f9"},
+    "subleading_shape_ratio": {"path": "results/huawei-20260830/P321-equal-area-deep-independent-pool/subleading_shape_ratio.json", "sha256": "3a5d86ad91eb1caa4828bbe7f680b821e6da4456712f19738dd0e47d52b4eea0"}
+  },
+  "result": {
+    "pc": 0.5927426869933164,
+    "pc_standard_error": 0.000007120689849653413,
+    "fixed_fit_chi_square": 4.89733349434932,
+    "fixed_fit_degrees_of_freedom": 4,
+    "fixed_fit_p_value": 0.297995,
+    "conditional_E4_chi_square": 3.662852448722673,
+    "conditional_E4_degrees_of_freedom": 3,
+    "conditional_E4_p_value": 0.300247,
+    "D_width_over_C_width_99_percent": "only rho=9 has a bounded Fieller set, and that set includes zero; the five-geometry ratio curve is not identified"
+  },
+  "decision": "The frozen conditional E4 relation remains compatible but is not strongly confirmed. The subleading D/C curve cannot be compared to a continuum model from this three-scale stream because four denominators include zero and the sole bounded Fieller set includes zero.",
+  "claim_boundary": "No F_t model, identity-dressing selection, Jordan selection, or universal subleading curve is inferred."
+}
