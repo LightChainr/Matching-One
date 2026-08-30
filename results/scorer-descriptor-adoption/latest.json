@@ -2,11 +2,11 @@
   "boundary": "outside_registered_typed_path is an inventory status, not proof that a scorer is channel-bearing or semantically invalid",
   "corpus_glob": "scripts/*score*.py",
   "counts": {
-    "channel_bearing_migration_required": 25,
+    "channel_bearing_migration_required": 26,
     "covered_frozen_kernel": 3,
     "descriptor_not_applicable_generic_utility": 1,
     "direct_typed_entrypoint": 4,
-    "outside_registered_typed_path": 2,
+    "outside_registered_typed_path": 1,
     "total": 35
   },
   "rows": [
@@ -32,7 +32,7 @@
     {"git_blob_sha":"e952a10c30a7c7288a8721ebf3288aa361b7a667","path":"scripts/score_norm5_thermal_jet.py","status":"channel_bearing_migration_required"},
     {"git_blob_sha":"52dc0a79130ca25e5ced80d176ce28c34b2203ae","path":"scripts/score_p159_pell_hex_filter.py","status":"channel_bearing_migration_required"},
     {"git_blob_sha":"7f4166167d4a37a93912d4816d12c1447923ff59","path":"scripts/score_p231_vacuum_kdv_sector.py","status":"channel_bearing_migration_required"},
-    {"git_blob_sha":"6302d49471a9e78f311d8f492e7845c2b3f5ed7e","path":"scripts/score_p48_new_geometry_channels.py","status":"outside_registered_typed_path"},
+    {"git_blob_sha":"6302d49471a9e78f311d8f492e7845c2b3f5ed7e","path":"scripts/score_p48_new_geometry_channels.py","status":"channel_bearing_migration_required"},
     {"git_blob_sha":"18046c546b87e0feebbf43cb6060820630b281c4","path":"scripts/score_p48_sprime_frozen.py","status":"channel_bearing_migration_required"},
     {"git_blob_sha":"1ad106387f0df31376e8c8de80793639d2d2d38f","path":"scripts/score_p48_sprime_prospective_typed.py","status":"direct_typed_entrypoint"},
     {"git_blob_sha":"c80c708d0da959306e4e86f55ae74c95570d6956","path":"scripts/score_p48_sprime_prospective.py","status":"covered_frozen_kernel"},
@@ -64,6 +64,7 @@
     "scripts/score_norm5_thermal_jet.py": "scores intrinsic-center ranks 2 through 6 thermal jets, canonical widths, lineage width collapse, and q2/Jordan cocycles without typed mode, normalization, lineage, covariance-group, or shared-evidence semantics",
     "scripts/score_p159_pell_hex_filter.py": "scores primitive rank-1 homology line probabilities through transported C/Q/S character coordinates across two Pell designs with implicit basis, phase, normalization, and reused-evidence semantics",
     "scripts/score_p231_vacuum_kdv_sector.py": "scores ordered C/Q/S sector coordinates across two designs against a per-unit-g4 theory vector without typed coordinate or normalization descriptors",
+    "scripts/score_p48_new_geometry_channels.py": "scores four intrinsic-center P4 projector channels from retrospective source amplitudes on independent N185/N265 targets with implicit quantity, geometry, scaling, and shared-source-covariance semantics",
     "scripts/score_p48_sprime_frozen.py": "independent chronological P4_S_prime scorer is not delegated by the existing typed prospective wrapper and performs no semantic descriptor gate",
     "scripts/score_p49_fullcurve_doubling.py": "scores matching tails, thermal even/odd contrasts, signed lineage root gaps, and normalized P4 projectors across doubled sizes without typed quantity families",
     "scripts/score_p50_fullcurve_n290.py": "scores thermal-even DeltaM, slope, signed root-gap, and four P4 quantities across independent N145/N290 lineages using implicit feature, order, sign, and stream semantics",
