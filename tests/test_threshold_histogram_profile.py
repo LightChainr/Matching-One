@@ -3,6 +3,7 @@ from __future__ import annotations
 from copy import deepcopy
 from fractions import Fraction
 import json
+import math
 from pathlib import Path
 import sys
 import unittest
@@ -14,7 +15,9 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from threshold_histogram_profile import (  # noqa: E402
     beta_density_coefficients,
     beta_raw_moment,
+    central_moments,
     density_coefficients,
+    exact_shape_invariants,
     evaluate_polynomial,
     integrate_density,
     mixture_weights,
@@ -37,6 +40,21 @@ class ThresholdHistogramProfileTests(unittest.TestCase):
         result = validate_contract(self.contract)
         self.assertEqual(result["mixture_weights_by_rank"], ["1/8", "3/8", "3/8", "1/8"])
         self.assertEqual(result["mean_from_ranks"], "1/2")
+        self.assertEqual(
+            result["central_moments_0_through_6"],
+            ["1", "0", "1/15", "0", "1/112", "0", "1/672"],
+        )
+        self.assertEqual(
+            result["exact_shape_invariants"],
+            {
+                "variance": "1/15",
+                "signed_skewness_squared": "0",
+                "kurtosis": "225/112",
+                "excess_kurtosis": "-111/112",
+                "signed_standardized_fifth_squared": "0",
+                "standardized_sixth": "1125/224",
+            },
+        )
         self.assertTrue(result["cdf_normalized_exactly"])
         self.assertFalse(result["contains_empirical_result"])
 
@@ -62,6 +80,57 @@ class ThresholdHistogramProfileTests(unittest.TestCase):
         cdf = integrate_density(density_coefficients(weights))
         self.assertEqual(evaluate_polynomial(cdf, Fraction(1)), 1)
 
+    def test_shape_invariants_are_exact_under_positive_affine_change(self) -> None:
+        weights = mixture_weights({1: 2, 3: 1, 5: 2}, {2: 1, 4: 3, 5: 1}, 5)
+        raw = raw_moments(weights, 6)
+        scale, offset = Fraction(7, 3), Fraction(-2, 5)
+        transformed = [
+            sum(
+                (
+                    Fraction(math.comb(order, index))
+                    * (scale ** index)
+                    * (offset ** (order - index))
+                    * raw[index]
+                    for index in range(order + 1)
+                ),
+                Fraction(0),
+            )
+            for order in range(7)
+        ]
+        original_shape = exact_shape_invariants(raw)
+        transformed_shape = exact_shape_invariants(transformed)
+        self.assertEqual(
+            transformed_shape["variance"], scale * scale * original_shape["variance"]
+        )
+        for key in set(original_shape) - {"variance"}:
+            self.assertEqual(transformed_shape[key], original_shape[key])
+        central = central_moments(raw)
+        transformed_central = central_moments(transformed)
+        self.assertEqual(
+            transformed_central,
+            [central[order] * (scale ** order) for order in range(7)],
+        )
+
+    def test_shape_invariants_reject_degenerate_or_inconsistent_moments(self) -> None:
+        with self.assertRaisesRegex(ValueError, "positive variance"):
+            exact_shape_invariants([Fraction(1), *([Fraction(0)] * 6)])
+        with self.assertRaisesRegex(ValueError, "positive variance"):
+            exact_shape_invariants(
+                [Fraction(1), Fraction(0), Fraction(-1), *([Fraction(0)] * 4)]
+            )
+        with self.assertRaisesRegex(ValueError, "fourth moment"):
+            exact_shape_invariants(
+                [
+                    Fraction(1),
+                    Fraction(0),
+                    Fraction(1),
+                    Fraction(0),
+                    Fraction(0),
+                    Fraction(0),
+                    Fraction(1),
+                ]
+            )
+
     def test_histogram_validation_fails_closed(self) -> None:
         for raw, message in [({"0": 1}, "out of range"), ({"01": 1}, "canonical"), ({"1": -1}, "nonnegative")]:
             with self.subTest(raw=raw):
@@ -80,6 +149,10 @@ class ThresholdHistogramProfileTests(unittest.TestCase):
         changed = deepcopy(self.contract)
         changed["expected_raw_moments_0_through_6"][4] = "0"
         with self.assertRaisesRegex(ValueError, "raw moments drifted"):
+            validate_contract(changed)
+        changed = deepcopy(self.contract)
+        changed["expected_exact_shape_invariants"]["kurtosis"] = "3"
+        with self.assertRaisesRegex(ValueError, "shape invariants drifted"):
             validate_contract(changed)
 
     def test_empirical_result_fields_are_rejected(self) -> None:

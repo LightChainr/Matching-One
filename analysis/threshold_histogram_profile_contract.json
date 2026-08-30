@@ -23,9 +23,26 @@
     "23/168",
     "19/168"
   ],
+  "expected_central_moments_0_through_6": [
+    "1",
+    "0",
+    "1/15",
+    "0",
+    "1/112",
+    "0",
+    "1/672"
+  ],
+  "expected_exact_shape_invariants": {
+    "variance": "1/15",
+    "signed_skewness_squared": "0",
+    "kurtosis": "225/112",
+    "excess_kurtosis": "-111/112",
+    "signed_standardized_fifth_squared": "0",
+    "standardized_sixth": "1125/224"
+  },
   "expected_mean_from_ranks": "1/2",
   "claim_boundary": {
-    "conclusion": "The equal-weight order-statistic mixture is reconstructed exactly from two synthetic integer rank histograms.",
+    "conclusion": "The equal-weight order-statistic mixture and its rational central shape invariants through order six are reconstructed exactly from two synthetic integer rank histograms.",
     "unresolved": "No production histogram, standardized cross-model profile, tail fit, bootstrap distance, or empirical invariant is supplied; issue #28 remains open."
   }
 }

@@ -1,0 +1,42 @@
+{
+  "N": 4,
+  "boundary": "Exact synthetic low-degree certificate only: no production histogram, empirical median/mode, bootstrap distance, tail fit, or universality claim.",
+  "cdf_power_coefficients": [
+    "0",
+    "1/2",
+    "3/2",
+    "-1",
+    "0"
+  ],
+  "data_class": "exact synthetic histogram only",
+  "density_power_coefficients": [
+    "1/2",
+    "3",
+    "-3",
+    "0"
+  ],
+  "derivative_power_coefficients": [
+    "3",
+    "-6"
+  ],
+  "derivative_sign": "positive on [0,1/2), negative on (1/2,1]",
+  "issue": 28,
+  "median": "1/2",
+  "mixture_weights_by_rank": [
+    "1/8",
+    "3/8",
+    "3/8",
+    "1/8"
+  ],
+  "mode": "1/2",
+  "reflection_gates": {
+    "cdf_complement_reflection": true,
+    "density_reflection_symmetric": true,
+    "midpoint_cdf_is_half": true,
+    "rank_weights_reflection_symmetric": true
+  },
+  "schema": "matching-one/threshold-profile-symmetry-certificate/v1",
+  "unique_median_certified": true,
+  "unique_mode_certified": true
+}
+
