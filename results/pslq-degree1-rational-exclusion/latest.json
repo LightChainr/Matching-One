@@ -1,0 +1,130 @@
+{
+  "claim_boundary": {
+    "excluded": "degrees 2-4, PSLQ constant bases, near-hit promotion, synthetic calibration, or closed-form claims",
+    "included": "exact exhaustive degree-one integer-polynomial exclusion at frozen height 100",
+    "parent_issue": "remain open"
+  },
+  "conclusion": {
+    "all_method_intervals_excluded": true,
+    "does_not_imply": [
+      "exclusion at algebraic degree two through four",
+      "exclusion of the frozen standard-constant bases",
+      "transcendence or absence of a more complex exact representation"
+    ],
+    "meaning": "no primitive degree-one integer polynomial in the frozen height bound has a root in any declared method-specific interval"
+  },
+  "contract": {
+    "path": "analysis/pslq_search_contract.json",
+    "provenance_sha256": "95ea5cf00c124652c7347da99a83d464cf176224d81973a10b5e181379bfb1f2",
+    "sha256": "fbeead4ae587fdc417a08393f27e701aabae45209f2478a24656ed63675ad2ac"
+  },
+  "interval_results": [
+    {
+      "closest_polynomial": {
+        "coefficients_ascending": [
+          -16,
+          27
+        ],
+        "height": 27,
+        "minimum_absolute_residual": "51792142327/12500000000000",
+        "residual_interval": [
+          "51792142327/12500000000000",
+          "103584284681/25000000000000"
+        ],
+        "root": "16/27",
+        "root_condition_to_additive_residual": "1/27",
+        "slope_abs": 27
+      },
+      "excluded": true,
+      "interval_id": "jacobsen-2015-eigenvalue",
+      "lower": "0.59274605079208",
+      "primitive_polynomials_checked": 12175,
+      "source_id": "jacobsen_2015_eigenvalue_identity",
+      "upper": "0.59274605079212",
+      "zero_containing_residuals": 0
+    },
+    {
+      "closest_polynomial": {
+        "coefficients_ascending": [
+          -16,
+          27
+        ],
+        "height": 27,
+        "minimum_absolute_residual": "4143371141/1000000000000",
+        "residual_interval": [
+          "4143371141/1000000000000",
+          "4143371303/1000000000000"
+        ],
+        "root": "16/27",
+        "root_condition_to_additive_residual": "1/27",
+        "slope_abs": 27
+      },
+      "excluded": true,
+      "interval_id": "mertens-2022-p-med",
+      "lower": "0.592746050783",
+      "primitive_polynomials_checked": 12175,
+      "source_id": "mertens_2022_exact_spanning",
+      "upper": "0.592746050789",
+      "zero_containing_residuals": 0
+    },
+    {
+      "closest_polynomial": {
+        "coefficients_ascending": [
+          -16,
+          27
+        ],
+        "height": 27,
+        "minimum_absolute_residual": "103584101/25000000000",
+        "residual_interval": [
+          "103584101/25000000000",
+          "103584209/25000000000"
+        ],
+        "root": "16/27",
+        "root_condition_to_additive_residual": "1/27",
+        "slope_abs": 27
+      },
+      "excluded": true,
+      "interval_id": "mertens-2022-p-cell",
+      "lower": "0.59274605052",
+      "primitive_polynomials_checked": 12175,
+      "source_id": "mertens_2022_exact_spanning",
+      "upper": "0.59274605068",
+      "zero_containing_residuals": 0
+    },
+    {
+      "closest_polynomial": {
+        "coefficients_ascending": [
+          -16,
+          27
+        ],
+        "height": 27,
+        "minimum_absolute_residual": "8286742633/2000000000000",
+        "residual_interval": [
+          "8286742633/2000000000000",
+          "41433713219/10000000000000"
+        ],
+        "root": "16/27",
+        "root_condition_to_additive_residual": "1/27",
+        "slope_abs": 27
+      },
+      "excluded": true,
+      "interval_id": "yang-zhou-2024-corrected",
+      "lower": "0.5927460507895",
+      "primitive_polynomials_checked": 12175,
+      "source_id": "yang_zhou_2024_comment",
+      "upper": "0.5927460507897",
+      "zero_containing_residuals": 0
+    }
+  ],
+  "issue": 1,
+  "schema": "matching-one/degree1-rational-exclusion/v1",
+  "search": {
+    "arithmetic": "fractions.Fraction exact rational endpoints",
+    "coefficient_height_max": 100,
+    "degree": 1,
+    "primitive_coefficients_only": true,
+    "sign_normalization": "a1_positive",
+    "unique_polynomials_checked_per_interval": 12175
+  },
+  "status": "degree1_exact_exclusion_complete"
+}
