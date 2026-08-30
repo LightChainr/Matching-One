@@ -1,0 +1,62 @@
+{
+  "schema": "matching-one/p250-cross-scale-result-manifest/v1",
+  "issue": 250,
+  "status": "fresh_cross_scale_revealed",
+  "branch": "analysis/p250-cross-scale-projective-leg-propagator-20260830",
+  "initial_freeze_commit": "a740bddf4cca27550b8c4af9e06ce129e3dbe2ed",
+  "resolution_refreeze_commit": "dc3d036bdfca24ac2a283637a2af7a5d2533d7a5",
+  "protocol_commit": "56c228da6ff13d157bbde16ceb4f6a149e28e603",
+  "fixed_thermal_target_frozen_before_any_N101_data": true,
+  "execution": {
+    "host": "Huawei-CodeBuddy-XPk2PZ",
+    "remote_directory": "/workspace/p250-projective-leg-cross-scale-n505-80k",
+    "started_utc": "2026-08-30T07:05:32Z",
+    "completed_utc": "2026-08-30T07:06:28Z",
+    "elapsed_seconds": 56,
+    "samples": 80000,
+    "batches": 160,
+    "workers": 16,
+    "seed": 25050510120261031,
+    "replica_first": 0,
+    "replica_last_exclusive": 80000
+  },
+  "hashes": {
+    "response_80k.json": "dcbc5241d9ee9a727c8eea1d5403a34a0d1df968b82c9cdf3b7ef7c6b99e3e55",
+    "response_80k.batches.csv": "8b0e06f3fdc577c362e6f2404db60933d0cf489ee532c053288a03c44dc7fe5c",
+    "exact_gate.json": "82ac4604a8df1f83bf8cbd131e067754c292412ba2afc6c1c4aeec199c9d332f",
+    "score_80k.json": "073ce5730c39d2805402be4ed9463f64260d18c87d738ecb6621a09e56d1d92b",
+    "score_80k.md": "e4e6ba89ac311c481600bd3950187fd82e9f60fb641829314e3b1c23b21b4033"
+  },
+  "transfer_gate": {
+    "minimum_d1_d5_real_abs_z": 7.247111876834684,
+    "threshold": 5.0,
+    "passed": true
+  },
+  "frozen_scores": {
+    "fixed_thermal_sine_2x_5_over_4": {
+      "all_target": {"chi_square": 90.40555861782165, "degrees_of_freedom": 16, "survival_p": 2.106283508723723e-12},
+      "heldout_d5": {"chi_square": 30.82813146111645, "degrees_of_freedom": 4, "survival_p": 3.3187342530325533e-06}
+    },
+    "source_fitted_sine_alpha_1_4145386844": {
+      "all_target": {"chi_square": 96.81304337883995, "degrees_of_freedom": 16, "survival_p": 1.3657412798731278e-13},
+      "heldout_d5": {"chi_square": 6.673040754713533, "degrees_of_freedom": 4, "survival_p": 0.15420874503181684}
+    },
+    "source_fitted_single_exponential_mass_0_7120974786": {
+      "all_target": {"chi_square": 77.52558491730395, "degrees_of_freedom": 16, "survival_p": 4.6313347948629155e-10},
+      "heldout_d5": {"chi_square": 40.908242329517066, "degrees_of_freedom": 4, "survival_p": 2.808010807572149e-08}
+    },
+    "target_deck_phase_zero": {
+      "chi_square": 39.558688195366834,
+      "degrees_of_freedom": 16,
+      "survival_p": 0.0009027718712431187
+    }
+  },
+  "decision": "resolved cross-scale propagation but none of the three frozen one-component shapes closes; fixed thermal 5/4 sine and fixed correlation mass are both excluded",
+  "mechanism_update": "the projective-leg propagator carries scale-dependent transfer-state mixing or a genuinely torus two-point shape, rather than one pure thermal cylinder primary or one finite correlation length",
+  "claim_boundary": [
+    "The result rejects the frozen projective-leg propagator shapes, not the existence of the thermal x=5/8 field elsewhere in the project.",
+    "Compatibility of source-fitted sine at d5 alone does not rescue its rejected 16-coordinate joint score.",
+    "The small but joint nonzero phase is a secondary charged-transfer fact; it is not an OPE phase.",
+    "No target parameter or post-reveal exponent was fitted."
+  ]
+}
