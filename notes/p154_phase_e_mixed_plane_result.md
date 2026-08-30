@@ -1,7 +1,7 @@
 ### Science card — Phase-E local-singlet mixed plane
 
 Branch `analysis/p154-phase-e-mixed-plane-pilot-20260830`; freeze `0578105`,
-result commit pending. The same-stream pilot records the matching-even local
+result `247e15c`. The same-stream pilot records the matching-even local
 connectivity row `B` together with `B^2`, `I0*B`, and `I2*B`, making
 `J_top=Cov(I2-I0,B)` and `J_bulk=Cov(I2+I0,B)` directly scoreable rather than
 inferring energy from the topological `E_top` coordinate.
