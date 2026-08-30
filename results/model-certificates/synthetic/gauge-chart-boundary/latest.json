@@ -1,0 +1,130 @@
+{
+  "boundary_diagnostic": {
+    "amplification_factor": "1024",
+    "at_epsilon_zero": "reachable-source chart undefined",
+    "status": "exact_near_boundary_positive_control"
+  },
+  "claim_boundary": {
+    "excluded": "coverage of the epsilon=0 boundary, a numerically stable chart, all similarity orbits, SOS completeness, or physical model selection",
+    "included": "one exact nonzero reachable-source chart with explicit amplification and invariant observable checks",
+    "parent_issue": "remain open"
+  },
+  "claim_level": "exact_synthetic_control",
+  "exact_invariant_checks": {
+    "determinant_before_after": [
+      "2",
+      "2"
+    ],
+    "normalized_response_rows": [
+      [
+        "1/1024",
+        "1"
+      ],
+      [
+        "1/1024",
+        "3"
+      ],
+      [
+        "1/1024",
+        "7"
+      ],
+      [
+        "1/1024",
+        "15"
+      ]
+    ],
+    "original_response_rows": [
+      [
+        "1/1024",
+        "1"
+      ],
+      [
+        "1/1024",
+        "3"
+      ],
+      [
+        "1/1024",
+        "7"
+      ],
+      [
+        "1/1024",
+        "15"
+      ]
+    ],
+    "responses_identical": true,
+    "trace_before_after": [
+      "3",
+      "3"
+    ]
+  },
+  "issue": 370,
+  "reachable_source_chart": {
+    "boundary_value": "0",
+    "chart_open": true,
+    "distance_parameter": "1/1024",
+    "largest_normalized_entry": "1024",
+    "normalized_generator": [
+      [
+        "1",
+        "1024"
+      ],
+      [
+        "0",
+        "2"
+      ]
+    ],
+    "normalized_source_matrix": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ],
+    "normalizing_similarity": [
+      [
+        "1024",
+        "0"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ],
+    "source_minor": "1/1024"
+  },
+  "schema": "matching-one.synthetic-model-certificate.gauge-boundary.v1",
+  "synthetic_input": {
+    "dependency_group": "synthetic-exact-gauge-boundary",
+    "epsilon": "1/1024",
+    "generator": [
+      [
+        "1",
+        "1"
+      ],
+      [
+        "0",
+        "2"
+      ]
+    ],
+    "readout": [
+      [
+        "1",
+        "1"
+      ]
+    ],
+    "source_matrix": [
+      [
+        "1/1024",
+        "0"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ]
+  },
+  "synthetic_input_sha256": "534ffba6f5c969e2a09a4d7f4ade30feac75057a83500e1f732eb36c828426eb"
+}
