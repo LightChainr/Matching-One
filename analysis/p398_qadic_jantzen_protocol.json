@@ -1,0 +1,57 @@
+{
+  "schema": "matching-one/p398-qadic-jantzen-protocol/v1",
+  "status": "frozen_before_exact_filtration",
+  "issues": [398, 333],
+  "base_commit": "ab3eed814748687bbe03ba3aaf7d9c956154aedd",
+  "latest_main_audited": "fe9305ca2f6679896991d8312f5168807d96b645",
+  "question": "What is the canonical Q-adic filtration of the unmarked width-three and width-four connectivity Gram family at Q=1, and which associated-graded directions are seen by the already-tested mark response covectors?",
+  "scope": {
+    "widths": [3, 4],
+    "base_module": "The circular noncrossing connectivity basis already used by the P333 exact certificates.",
+    "gram_family": "G(Q)_(pi,sigma)=Q^b(pi,sigma), where b is the exact join-block count and t=Q-1.",
+    "marks": "Only previously tested scalar falling-factorial responses, the width-three C3 charge-one landing doublet, the width-four C4 charge-one landing doublet, and the width-four C4 charge-two landing character.",
+    "exclusions": "No new mark, fitted endpoint column, width, Monte Carlo calculation, physical transfer claim or LCFT identification."
+  },
+  "filtration_contract": {
+    "lattice": "V over Q[t] localized at (t), specialized at t=0.",
+    "jantzen_layer": "J^k consists of specialized vectors admitting a polynomial lift whose Gram image is divisible by t^k.",
+    "invariant_factors": "Record the t-valuations a_i of the local Smith factors; dim J^k/J^(k+1) is the number of a_i equal to k.",
+    "first_order_stop": "Let B span ker G(1). If B^T (dG/dt)(1) B is nonsingular, all positive valuations equal one, J^2=0, and no second or higher Gram coefficient is needed to identify the filtration.",
+    "fallback": "Only if that leading radical form is singular may the already-known exact polynomial G(1+t) be expanded further; no invented higher jet is allowed."
+  },
+  "projection_contract": {
+    "response": "Each tested mark supplies its already-declared exact polynomial cross-Gram response c(t).",
+    "grade_one_functional": "Restrict c(0) to J^1 using B^T c(0).",
+    "canonical_state_projection": "When the leading radical form H=B^T G1 B is nonsingular, identify the functional with the unique associated-graded vector x satisfying H x=B^T c(0), and report exact rational coordinates and family rank.",
+    "sector_check": "Verify the declared C3/C4 translation covariance exactly on the projected vectors.",
+    "interpretation": "A nonzero projection means the response sees a base-family Jantzen direction; it does not construct a fixed-Q extension or repair an endpoint/Gram/source obstruction."
+  },
+  "nilpotent_separation": {
+    "base_parameter": "Multiplication by t on the dual-number thickening V tensor Q[t]/(t^2) is the automatic square-zero Q-adic nilpotent.",
+    "fixed_Q": "After specialization t=0 this nilpotent acts trivially. Any fixed-Q marked extension must still satisfy its separately tested algebra, endpoint, radical, Gram and source constraints.",
+    "decision_rule": "Do not identify a Jantzen layer or nonzero mark projection with a physical Jordan/transfer nilpotent."
+  },
+  "outputs": {
+    "base": "Exact G0 rank, leading-radical determinant/rank, invariant-factor valuations and associated-graded dimensions at each width.",
+    "marks": "Exact B-basis functionals, H-dual state coordinates, span ranks and translation-sector residuals.",
+    "boundary": "A machine-readable statement separating base-parameter thickening from fixed-Q extensions."
+  },
+  "frozen_inputs": {
+    "scripts/p333_gram_source_intertwiner.py": "d7a5f889ab958e32783f8c60f4fd089a52801576ea06ce689448779f364e6bab",
+    "scripts/p333_minimal_multimark_jet.py": "78abcf9b588a27f16cc25a3d2e773ab2f9ffd7e3f8da5e7df5db9387eb0eb970",
+    "scripts/p333_source_landing_doublet.py": "91229ebe81460b47580e251a537467ef363111c0364b677b94bcb9bd1dce4bae",
+    "scripts/p333_source_landing_doublet_width4.py": "a800bcd692ab3fa7fe58643e8ec20b3826bcbe67737ef507d7a7aaadd8f5fff5",
+    "scripts/p333_charge2_landing.py": "017dc041e46161d49214c8285833b75300f6770bc897d1225386b3e571a56219",
+    "results/p333-minimal-multimark-jet/latest.json": "3177af6009dd6bcf76e29338933df7597fd6111da687e97ff7823d36aa0b3ce5",
+    "results/p333-source-landing-doublet/latest.json": "83a4a30434de6f2841797c2d7a7cb3d5be6163b73151e2623cff5b07920912eb",
+    "results/p333-source-landing-doublet-width4/latest.json": "5a7afd3da52d7d0bf997b67de5bae42caf25ce676fc766ebf31e648c4cdb8a89",
+    "results/p333-charge2-landing/latest.json": "22b177d16e906e257bbbd8f5914b146cc60731f6ba8b9c6691493776308df7d6"
+  },
+  "compute_contract": {
+    "arithmetic": "Python standard-library exact integers and fractions",
+    "expected_cost": "local seconds",
+    "monte_carlo": false,
+    "fit": false,
+    "server": false
+  }
+}
