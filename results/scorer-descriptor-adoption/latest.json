@@ -1,7 +1,6 @@
 {
   "boundary": "outside_registered_typed_path is an inventory status, not proof that a scorer is channel-bearing or semantically invalid",
   "channel_bearing_migration_required": {
-    "scripts/score_issue43_secondary.py": "orders and scores reused DeltaM/DeltaS, x17, H4/H12, and optional P48 S-prime stages without typed stage, quantity, model-map, or evidence-reuse semantics",
     "scripts/score_norm4_production.py": "scores ordered U, P4_D, and root-gap coordinates across two norm-4 lineages with implicit metric, size, transform, model-order, and shared-evidence semantics",
     "scripts/score_norm4_thermal_jet.py": "scores ordered ranks 2 through 6 thermal-jet coordinates across the same norm-4 lineages without typed mode, normalization, cocycle, or shared-evidence semantics",
     "scripts/score_norm5_thermal_jet.py": "scores intrinsic-center ranks 2 through 6 thermal jets, canonical widths, lineage width collapse, and q2/Jordan cocycles without typed mode, normalization, lineage, covariance-group, or shared-evidence semantics",
@@ -15,12 +14,12 @@
   ],
   "corpus_glob": "scripts/*score*.py",
   "counts": {
-    "channel_bearing_migration_required": 8,
-    "covered_frozen_kernel": 22,
+    "channel_bearing_migration_required": 7,
+    "covered_frozen_kernel": 23,
     "descriptor_not_applicable_generic_utility": 1,
-    "direct_typed_entrypoint": 23,
+    "direct_typed_entrypoint": 24,
     "outside_registered_typed_path": 0,
-    "total": 54
+    "total": 55
   },
   "descriptor_not_applicable_generic_utilities": {
     "scripts/kappa3_half_score.py": "generic Bernoulli score-polynomial and aggregation helper; intentionally accepts an opaque caller-supplied observable D(C) and defines no topology observable"
@@ -129,7 +128,12 @@
     {
       "git_blob_sha": "be08124b54bf27c0ccf88ee9f43b48d66a791b4d",
       "path": "scripts/score_issue43_secondary.py",
-      "status": "channel_bearing_migration_required"
+      "status": "covered_frozen_kernel"
+    },
+    {
+      "git_blob_sha": "edbcc7a09e5e0bdf68c652cf3af6ffe49bd51b83",
+      "path": "scripts/score_issue43_secondary_typed.py",
+      "status": "direct_typed_entrypoint"
     },
     {
       "git_blob_sha": "d1349c92aa01dd1d4cbaf97d56a7034be5457f11",
@@ -320,6 +324,7 @@
     "scripts/score_threshold_rank_root_doubling_typed.py": "scripts/score_threshold_rank_root_doubling.py",
     "scripts/score_v14_fixedp_scalar_projector_typed.py": "scripts/score_v14_fixedp_scalar_projector.py",
     "scripts/score_p231_vacuum_kdv_sector_typed.py": "scripts/score_p231_vacuum_kdv_sector.py",
-    "scripts/score_v14_scalar_root_projector_typed.py": "scripts/score_v14_scalar_root_projector.py"
+    "scripts/score_v14_scalar_root_projector_typed.py": "scripts/score_v14_scalar_root_projector.py",
+    "scripts/score_issue43_secondary_typed.py": "scripts/score_issue43_secondary.py"
   }
 }
