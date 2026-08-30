@@ -1,0 +1,60 @@
+{
+  "schema": "matching-one/p250-projective-leg-hankel-rank-result-manifest/v1",
+  "issue": 250,
+  "status": "model_free_existing_data_reanalysis_revealed",
+  "branch": "analysis/p250-model-free-hankel-rank-20260830",
+  "parent_result_commit": "ded78bb",
+  "scorer_commit": "ad5eb84819f2de1fea63633464e2e8fcd8c7b502",
+  "freeze_commit": "9ceec17",
+  "execution": {
+    "host": "local Mac",
+    "new_simulation": false,
+    "input_samples": 80000,
+    "input_batches": 400,
+    "elapsed_seconds": 8.89
+  },
+  "hashes": {
+    "input_batches": "dfbd83d680080939bcae5cad0090af95d82748ed780ce73807d4b002d6a9ca72",
+    "score.json": "cf7c4936bb2cc85af55479913ce0c30c10ed6463a0707eb4bca6642719370efe",
+    "score.md": "866f75273d218c60cd7046ddb173cc8815a03f34cc14c17ea988623b519c1ba5"
+  },
+  "primary_finite_batch_Hotelling_scores": {
+    "plus_charge1_rank_le_2": 8.374122630934728e-111,
+    "plus_charge1_rank_le_3": 0.11660211441879198,
+    "plus_charge2_rank_le_4": 0.0001711395942773226,
+    "plus_charge2_rank_le_5": 0.3885997835872416,
+    "minus_charge1_rank_le_2": 1.2264170409025788e-39,
+    "minus_charge1_rank_le_3": 0.21454405807702848,
+    "minus_charge2_rank_le_4": 6.9976802613192495e-06,
+    "minus_charge2_rank_le_5": 0.012567510975018015,
+    "plus_block_rank_le_4": 2.8049044885902875e-11,
+    "plus_block_rank_le_5": 0.05426234738329748,
+    "minus_block_rank_le_4": 0.0023537550919802567,
+    "minus_block_rank_le_5": 0.0655065398328803,
+    "shared_block_rank_le_4": 1.7970196830292787e-13,
+    "shared_block_rank_le_5": 2.8401996780954676e-05
+  },
+  "rank_lower_bounds_at_alpha_0_01": {
+    "plus_charge1": 3,
+    "plus_charge2": 5,
+    "minus_charge1": 3,
+    "minus_charge2": 5,
+    "plus_block": 5,
+    "minus_block": 5,
+    "shared_block": 6
+  },
+  "decision": "each hand is compatible with a five-dimensional commuting moment state, but one raw common state across plus and minus requires dimension at least six",
+  "mechanism_update": "The free shared-rank-five failure is localized to cross-hand pooling.  It is not evidence that either hand separately needs more than five states, and it is not positive evidence for noncommutation.",
+  "flat_extension": {
+    "order1_rank_le_3": "fails for both hand blocks and the shared block",
+    "order2": "unidentified because total-degree-six moments are absent",
+    "ordered_path": "unidentified because only endpoint displacement is recorded"
+  },
+  "claim_boundary": [
+    "The Hankel rank constraints include diagonalizable and Jordan commuting realizations.",
+    "The shared-block lower bound applies only when plus and minus are forced to use the same raw transfer state/basis.",
+    "Within-hand rank five survives at the frozen threshold; this is compatibility, not proof of exact rank five.",
+    "Endpoint Hankel consistency is built into the acquisition and cannot distinguish xy from yx path history."
+  ],
+  "next_discriminator": "extract the covariance-aware degree-two annihilating polynomial/null line separately for plus and minus and test its exact Alexander/C4 transformation, rather than forcing raw shared eigenpairs"
+}
