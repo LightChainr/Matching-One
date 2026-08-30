@@ -1,0 +1,990 @@
+{
+  "schema": "matching-one/p418-radius-resolved-elimination/v1",
+  "status": "archived_production_radius_resolved_once",
+  "issues": [
+    418,
+    406,
+    250
+  ],
+  "new_monte_carlo": false,
+  "inputs": [
+    {
+      "path": "results/huawei-20260830/P250-projective-leg-bivariate-80k/response_80k.batches.csv",
+      "sha256": "dfbd83d680080939bcae5cad0090af95d82748ed780ce73807d4b002d6a9ca72"
+    },
+    {
+      "path": "results/huawei-20260830/P250-projective-leg-radius5-morphism-1200k/response_1200k.batches.csv",
+      "sha256": "50985e38c9c8afab0c8b0e78113184d33861d928aefaba1e8043e67fc348677e"
+    },
+    {
+      "path": "results/huawei-20260830/P250-projective-leg-radius6-flat-1200k/response_1200k.batches.csv",
+      "sha256": "8734a15e61a7358da66019cf26d75a3d4f2deb0185831526204967a0ee5a42cf"
+    }
+  ],
+  "bootstrap": {
+    "replicates": 250,
+    "seed": 40610120260830,
+    "decision_alpha": 0.01
+  },
+  "shared_score_replay": {
+    "source": "results/huawei-20260830/P418-crt-degauging/score.json",
+    "maximum_distance_error": 0.0,
+    "maximum_p_error": 0.0,
+    "passed": true
+  },
+  "channels": {
+    "plus_r1": {
+      "per_radius": [
+        {
+          "radius": "radius4",
+          "raw_cone": {
+            "radius": "radius4",
+            "distance_squared": 48.32483389192372,
+            "resolved_modes": 81,
+            "design_rank": 41,
+            "positive_weights": 41,
+            "bootstrap_p": 0.1593625498007968,
+            "bootstrap_quantiles": {
+              "q01": 22.706419902805337,
+              "q50": 38.34974165262608,
+              "q99": 61.736959688731005
+            },
+            "decision": "cone_not_rejected"
+          },
+          "masked_cone": {
+            "radius": "radius4",
+            "distance_squared": 48.324833891945744,
+            "resolved_modes": 81,
+            "design_rank": 41,
+            "positive_weights": 41,
+            "bootstrap_p": 0.1593625498007968,
+            "bootstrap_quantiles": {
+              "q01": 22.706419902827758,
+              "q50": 38.34974165264933,
+              "q99": 61.736959688738466
+            },
+            "decision": "cone_not_rejected"
+          },
+          "mask_penalty_over_raw": 2.2026824808563106e-11
+        },
+        {
+          "radius": "radius5",
+          "raw_cone": {
+            "radius": "radius5",
+            "distance_squared": 6.709663711818562,
+            "resolved_modes": 40,
+            "design_rank": 20,
+            "positive_weights": 33,
+            "bootstrap_p": 0.05976095617529881,
+            "bootstrap_quantiles": {
+              "q01": 0.0,
+              "q50": 2.1918348115906885,
+              "q99": 10.584306552393352
+            },
+            "decision": "cone_not_rejected"
+          },
+          "masked_cone": {
+            "radius": "radius5",
+            "distance_squared": 8.655419767604222,
+            "resolved_modes": 40,
+            "design_rank": 20,
+            "positive_weights": 28,
+            "bootstrap_p": 0.41434262948207173,
+            "bootstrap_quantiles": {
+              "q01": 1.9823316034330898,
+              "q50": 7.907539939382052,
+              "q99": 22.211460091462246
+            },
+            "decision": "cone_not_rejected"
+          },
+          "mask_penalty_over_raw": 1.94575605578566
+        },
+        {
+          "radius": "radius6",
+          "raw_cone": {
+            "radius": "radius6",
+            "distance_squared": 0.0,
+            "resolved_modes": 14,
+            "design_rank": 14,
+            "positive_weights": 14,
+            "bootstrap_p": 1.0,
+            "bootstrap_quantiles": {
+              "q01": 0.0,
+              "q50": 0.0,
+              "q99": 0.0
+            },
+            "decision": "cone_not_rejected"
+          },
+          "masked_cone": {
+            "radius": "radius6",
+            "distance_squared": 0.0,
+            "resolved_modes": 14,
+            "design_rank": 14,
+            "positive_weights": 14,
+            "bootstrap_p": 1.0,
+            "bootstrap_quantiles": {
+              "q01": 0.0,
+              "q50": 0.0,
+              "q99": 0.0
+            },
+            "decision": "cone_not_rejected"
+          },
+          "mask_penalty_over_raw": 0.0
+        }
+      ],
+      "raw_family": {
+        "per_radius_separate_spectra": [
+          {
+            "radius": "radius4",
+            "distance_squared": 48.32483389192372,
+            "resolved_modes": 81,
+            "design_rank": 41,
+            "positive_weights": 41,
+            "bootstrap_p": 0.1593625498007968,
+            "bootstrap_quantiles": {
+              "q01": 22.706419902805337,
+              "q50": 38.34974165262608,
+              "q99": 61.736959688731005
+            },
+            "decision": "cone_not_rejected"
+          },
+          {
+            "radius": "radius5",
+            "distance_squared": 6.709663711818562,
+            "resolved_modes": 40,
+            "design_rank": 20,
+            "positive_weights": 33,
+            "bootstrap_p": 0.05976095617529881,
+            "bootstrap_quantiles": {
+              "q01": 0.0,
+              "q50": 2.1918348115906885,
+              "q99": 10.584306552393352
+            },
+            "decision": "cone_not_rejected"
+          },
+          {
+            "radius": "radius6",
+            "distance_squared": 0.0,
+            "resolved_modes": 14,
+            "design_rank": 14,
+            "positive_weights": 14,
+            "bootstrap_p": 1.0,
+            "bootstrap_quantiles": {
+              "q01": 0.0,
+              "q50": 0.0,
+              "q99": 0.0
+            },
+            "decision": "cone_not_rejected"
+          }
+        ],
+        "sum_separate_distance_squared": 55.03449760374228,
+        "shared_spectrum": {
+          "distance_squared": 70.87804908695776,
+          "bootstrap_p": 0.3147410358565737,
+          "bootstrap_quantiles": {
+            "q01": 43.40241726069373,
+            "q50": 65.4502856837994,
+            "q99": 98.8021676880142
+          },
+          "decision": "cone_not_rejected"
+        },
+        "cross_radius_sharing_penalty": {
+          "distance_squared": 15.843551483215478,
+          "bootstrap_p_under_shared_spectrum": 0.9123505976095617,
+          "bootstrap_quantiles_under_shared_spectrum": {
+            "q01": 12.535439506456067,
+            "q50": 22.751306990199012,
+            "q99": 41.56828509875378
+          },
+          "decision": "shared_spectrum_not_rejected"
+        }
+      },
+      "masked_family": {
+        "per_radius_separate_spectra": [
+          {
+            "radius": "radius4",
+            "distance_squared": 48.324833891945744,
+            "resolved_modes": 81,
+            "design_rank": 41,
+            "positive_weights": 41,
+            "bootstrap_p": 0.1593625498007968,
+            "bootstrap_quantiles": {
+              "q01": 22.706419902827758,
+              "q50": 38.34974165264933,
+              "q99": 61.736959688738466
+            },
+            "decision": "cone_not_rejected"
+          },
+          {
+            "radius": "radius5",
+            "distance_squared": 8.655419767604222,
+            "resolved_modes": 40,
+            "design_rank": 20,
+            "positive_weights": 28,
+            "bootstrap_p": 0.41434262948207173,
+            "bootstrap_quantiles": {
+              "q01": 1.9823316034330898,
+              "q50": 7.907539939382052,
+              "q99": 22.211460091462246
+            },
+            "decision": "cone_not_rejected"
+          },
+          {
+            "radius": "radius6",
+            "distance_squared": 0.0,
+            "resolved_modes": 14,
+            "design_rank": 14,
+            "positive_weights": 14,
+            "bootstrap_p": 1.0,
+            "bootstrap_quantiles": {
+              "q01": 0.0,
+              "q50": 0.0,
+              "q99": 0.0
+            },
+            "decision": "cone_not_rejected"
+          }
+        ],
+        "sum_separate_distance_squared": 56.980253659549966,
+        "shared_spectrum": {
+          "distance_squared": 584.0220861795226,
+          "bootstrap_p": 0.00398406374501992,
+          "bootstrap_quantiles": {
+            "q01": 52.296869234480305,
+            "q50": 75.79757492453598,
+            "q99": 112.19236229165786
+          },
+          "decision": "cone_rejected"
+        },
+        "cross_radius_sharing_penalty": {
+          "distance_squared": 527.0418325199727,
+          "bootstrap_p_under_shared_spectrum": 0.00398406374501992,
+          "bootstrap_quantiles_under_shared_spectrum": {
+            "q01": 15.313587211979215,
+            "q50": 29.960352376952475,
+            "q99": 50.916329511717755
+          },
+          "decision": "shared_spectrum_rejected"
+        }
+      }
+    },
+    "plus_r2": {
+      "per_radius": [
+        {
+          "radius": "radius4",
+          "raw_cone": {
+            "radius": "radius4",
+            "distance_squared": 41.262681898761485,
+            "resolved_modes": 81,
+            "design_rank": 41,
+            "positive_weights": 41,
+            "bootstrap_p": 0.4302788844621514,
+            "bootstrap_quantiles": {
+              "q01": 23.16090450469399,
+              "q50": 40.092336896140715,
+              "q99": 63.345880004309436
+            },
+            "decision": "cone_not_rejected"
+          },
+          "masked_cone": {
+            "radius": "radius4",
+            "distance_squared": 41.2626818987776,
+            "resolved_modes": 81,
+            "design_rank": 41,
+            "positive_weights": 41,
+            "bootstrap_p": 0.4302788844621514,
+            "bootstrap_quantiles": {
+              "q01": 23.160904504710466,
+              "q50": 40.0923368961635,
+              "q99": 63.345880004337474
+            },
+            "decision": "cone_not_rejected"
+          },
+          "mask_penalty_over_raw": 1.6115109247039072e-11
+        },
+        {
+          "radius": "radius5",
+          "raw_cone": {
+            "radius": "radius5",
+            "distance_squared": 4.275542819304815,
+            "resolved_modes": 40,
+            "design_rank": 20,
+            "positive_weights": 33,
+            "bootstrap_p": 0.21912350597609562,
+            "bootstrap_quantiles": {
+              "q01": 0.0,
+              "q50": 2.4776674440055455,
+              "q99": 8.414878809835777
+            },
+            "decision": "cone_not_rejected"
+          },
+          "masked_cone": {
+            "radius": "radius5",
+            "distance_squared": 10.21808826443914,
+            "resolved_modes": 40,
+            "design_rank": 20,
+            "positive_weights": 29,
+            "bootstrap_p": 0.20717131474103587,
+            "bootstrap_quantiles": {
+              "q01": 1.6594013331625173,
+              "q50": 6.461106495338608,
+              "q99": 17.790024077410447
+            },
+            "decision": "cone_not_rejected"
+          },
+          "mask_penalty_over_raw": 5.942545445134326
+        },
+        {
+          "radius": "radius6",
+          "raw_cone": {
+            "radius": "radius6",
+            "distance_squared": 0.0,
+            "resolved_modes": 14,
+            "design_rank": 14,
+            "positive_weights": 14,
+            "bootstrap_p": 1.0,
+            "bootstrap_quantiles": {
+              "q01": 0.0,
+              "q50": 0.0,
+              "q99": 0.0
+            },
+            "decision": "cone_not_rejected"
+          },
+          "masked_cone": {
+            "radius": "radius6",
+            "distance_squared": 0.0,
+            "resolved_modes": 14,
+            "design_rank": 14,
+            "positive_weights": 14,
+            "bootstrap_p": 1.0,
+            "bootstrap_quantiles": {
+              "q01": 0.0,
+              "q50": 0.0,
+              "q99": 0.0
+            },
+            "decision": "cone_not_rejected"
+          },
+          "mask_penalty_over_raw": 0.0
+        }
+      ],
+      "raw_family": {
+        "per_radius_separate_spectra": [
+          {
+            "radius": "radius4",
+            "distance_squared": 41.262681898761485,
+            "resolved_modes": 81,
+            "design_rank": 41,
+            "positive_weights": 41,
+            "bootstrap_p": 0.4302788844621514,
+            "bootstrap_quantiles": {
+              "q01": 23.16090450469399,
+              "q50": 40.092336896140715,
+              "q99": 63.345880004309436
+            },
+            "decision": "cone_not_rejected"
+          },
+          {
+            "radius": "radius5",
+            "distance_squared": 4.275542819304815,
+            "resolved_modes": 40,
+            "design_rank": 20,
+            "positive_weights": 33,
+            "bootstrap_p": 0.21912350597609562,
+            "bootstrap_quantiles": {
+              "q01": 0.0,
+              "q50": 2.4776674440055455,
+              "q99": 8.414878809835777
+            },
+            "decision": "cone_not_rejected"
+          },
+          {
+            "radius": "radius6",
+            "distance_squared": 0.0,
+            "resolved_modes": 14,
+            "design_rank": 14,
+            "positive_weights": 14,
+            "bootstrap_p": 1.0,
+            "bootstrap_quantiles": {
+              "q01": 0.0,
+              "q50": 0.0,
+              "q99": 0.0
+            },
+            "decision": "cone_not_rejected"
+          }
+        ],
+        "sum_separate_distance_squared": 45.5382247180663,
+        "shared_spectrum": {
+          "distance_squared": 75.6919514180294,
+          "bootstrap_p": 0.2151394422310757,
+          "bootstrap_quantiles": {
+            "q01": 41.412547667682226,
+            "q50": 66.2269397492665,
+            "q99": 95.10187054168658
+          },
+          "decision": "cone_not_rejected"
+        },
+        "cross_radius_sharing_penalty": {
+          "distance_squared": 30.1537266999631,
+          "bootstrap_p_under_shared_spectrum": 0.18326693227091634,
+          "bootstrap_quantiles_under_shared_spectrum": {
+            "q01": 11.493698984684327,
+            "q50": 23.223316307738266,
+            "q99": 41.354408390494896
+          },
+          "decision": "shared_spectrum_not_rejected"
+        }
+      },
+      "masked_family": {
+        "per_radius_separate_spectra": [
+          {
+            "radius": "radius4",
+            "distance_squared": 41.2626818987776,
+            "resolved_modes": 81,
+            "design_rank": 41,
+            "positive_weights": 41,
+            "bootstrap_p": 0.4302788844621514,
+            "bootstrap_quantiles": {
+              "q01": 23.160904504710466,
+              "q50": 40.0923368961635,
+              "q99": 63.345880004337474
+            },
+            "decision": "cone_not_rejected"
+          },
+          {
+            "radius": "radius5",
+            "distance_squared": 10.21808826443914,
+            "resolved_modes": 40,
+            "design_rank": 20,
+            "positive_weights": 29,
+            "bootstrap_p": 0.20717131474103587,
+            "bootstrap_quantiles": {
+              "q01": 1.6594013331625173,
+              "q50": 6.461106495338608,
+              "q99": 17.790024077410447
+            },
+            "decision": "cone_not_rejected"
+          },
+          {
+            "radius": "radius6",
+            "distance_squared": 0.0,
+            "resolved_modes": 14,
+            "design_rank": 14,
+            "positive_weights": 14,
+            "bootstrap_p": 1.0,
+            "bootstrap_quantiles": {
+              "q01": 0.0,
+              "q50": 0.0,
+              "q99": 0.0
+            },
+            "decision": "cone_not_rejected"
+          }
+        ],
+        "sum_separate_distance_squared": 51.48077016321674,
+        "shared_spectrum": {
+          "distance_squared": 668.6463090971538,
+          "bootstrap_p": 0.00398406374501992,
+          "bootstrap_quantiles": {
+            "q01": 50.314636827282115,
+            "q50": 74.21036577008601,
+            "q99": 104.3131526458355
+          },
+          "decision": "cone_rejected"
+        },
+        "cross_radius_sharing_penalty": {
+          "distance_squared": 617.165538933937,
+          "bootstrap_p_under_shared_spectrum": 0.00398406374501992,
+          "bootstrap_quantiles_under_shared_spectrum": {
+            "q01": 13.564656678242898,
+            "q50": 26.871444343136915,
+            "q99": 45.31023742298468
+          },
+          "decision": "shared_spectrum_rejected"
+        }
+      }
+    },
+    "minus_r1": {
+      "per_radius": [
+        {
+          "radius": "radius4",
+          "raw_cone": {
+            "radius": "radius4",
+            "distance_squared": 41.23938555524284,
+            "resolved_modes": 81,
+            "design_rank": 41,
+            "positive_weights": 41,
+            "bootstrap_p": 0.4701195219123506,
+            "bootstrap_quantiles": {
+              "q01": 21.860738070710294,
+              "q50": 40.392666113389105,
+              "q99": 61.30560825367953
+            },
+            "decision": "cone_not_rejected"
+          },
+          "masked_cone": {
+            "radius": "radius4",
+            "distance_squared": 41.239385555258835,
+            "resolved_modes": 81,
+            "design_rank": 41,
+            "positive_weights": 41,
+            "bootstrap_p": 0.4701195219123506,
+            "bootstrap_quantiles": {
+              "q01": 21.860738070720807,
+              "q50": 40.39266611342264,
+              "q99": 61.305608253715135
+            },
+            "decision": "cone_not_rejected"
+          },
+          "mask_penalty_over_raw": 1.5994316981959855e-11
+        },
+        {
+          "radius": "radius5",
+          "raw_cone": {
+            "radius": "radius5",
+            "distance_squared": 3.406953015926097,
+            "resolved_modes": 40,
+            "design_rank": 20,
+            "positive_weights": 34,
+            "bootstrap_p": 0.26693227091633465,
+            "bootstrap_quantiles": {
+              "q01": 0.0,
+              "q50": 2.0833163729151347,
+              "q99": 10.682171771251294
+            },
+            "decision": "cone_not_rejected"
+          },
+          "masked_cone": {
+            "radius": "radius5",
+            "distance_squared": 1.4387618473361423,
+            "resolved_modes": 40,
+            "design_rank": 20,
+            "positive_weights": 32,
+            "bootstrap_p": 0.8167330677290837,
+            "bootstrap_quantiles": {
+              "q01": 0.029387930439582193,
+              "q50": 3.164032056839453,
+              "q99": 11.645089655456264
+            },
+            "decision": "cone_not_rejected"
+          },
+          "mask_penalty_over_raw": -1.9681911685899547
+        },
+        {
+          "radius": "radius6",
+          "raw_cone": {
+            "radius": "radius6",
+            "distance_squared": 0.0,
+            "resolved_modes": 14,
+            "design_rank": 14,
+            "positive_weights": 14,
+            "bootstrap_p": 1.0,
+            "bootstrap_quantiles": {
+              "q01": 0.0,
+              "q50": 0.0,
+              "q99": 0.0
+            },
+            "decision": "cone_not_rejected"
+          },
+          "masked_cone": {
+            "radius": "radius6",
+            "distance_squared": 0.0,
+            "resolved_modes": 14,
+            "design_rank": 14,
+            "positive_weights": 14,
+            "bootstrap_p": 1.0,
+            "bootstrap_quantiles": {
+              "q01": 0.0,
+              "q50": 0.0,
+              "q99": 0.0
+            },
+            "decision": "cone_not_rejected"
+          },
+          "mask_penalty_over_raw": 0.0
+        }
+      ],
+      "raw_family": {
+        "per_radius_separate_spectra": [
+          {
+            "radius": "radius4",
+            "distance_squared": 41.23938555524284,
+            "resolved_modes": 81,
+            "design_rank": 41,
+            "positive_weights": 41,
+            "bootstrap_p": 0.4701195219123506,
+            "bootstrap_quantiles": {
+              "q01": 21.860738070710294,
+              "q50": 40.392666113389105,
+              "q99": 61.30560825367953
+            },
+            "decision": "cone_not_rejected"
+          },
+          {
+            "radius": "radius5",
+            "distance_squared": 3.406953015926097,
+            "resolved_modes": 40,
+            "design_rank": 20,
+            "positive_weights": 34,
+            "bootstrap_p": 0.26693227091633465,
+            "bootstrap_quantiles": {
+              "q01": 0.0,
+              "q50": 2.0833163729151347,
+              "q99": 10.682171771251294
+            },
+            "decision": "cone_not_rejected"
+          },
+          {
+            "radius": "radius6",
+            "distance_squared": 0.0,
+            "resolved_modes": 14,
+            "design_rank": 14,
+            "positive_weights": 14,
+            "bootstrap_p": 1.0,
+            "bootstrap_quantiles": {
+              "q01": 0.0,
+              "q50": 0.0,
+              "q99": 0.0
+            },
+            "decision": "cone_not_rejected"
+          }
+        ],
+        "sum_separate_distance_squared": 44.64633857116894,
+        "shared_spectrum": {
+          "distance_squared": 76.76575099053947,
+          "bootstrap_p": 0.16334661354581673,
+          "bootstrap_quantiles": {
+            "q01": 42.28735544292371,
+            "q50": 66.29266048453127,
+            "q99": 100.92678921615976
+          },
+          "decision": "cone_not_rejected"
+        },
+        "cross_radius_sharing_penalty": {
+          "distance_squared": 32.11941241937053,
+          "bootstrap_p_under_shared_spectrum": 0.1394422310756972,
+          "bootstrap_quantiles_under_shared_spectrum": {
+            "q01": 11.381939370593873,
+            "q50": 22.89433074273855,
+            "q99": 46.29038720432251
+          },
+          "decision": "shared_spectrum_not_rejected"
+        }
+      },
+      "masked_family": {
+        "per_radius_separate_spectra": [
+          {
+            "radius": "radius4",
+            "distance_squared": 41.239385555258835,
+            "resolved_modes": 81,
+            "design_rank": 41,
+            "positive_weights": 41,
+            "bootstrap_p": 0.4701195219123506,
+            "bootstrap_quantiles": {
+              "q01": 21.860738070720807,
+              "q50": 40.39266611342264,
+              "q99": 61.305608253715135
+            },
+            "decision": "cone_not_rejected"
+          },
+          {
+            "radius": "radius5",
+            "distance_squared": 1.4387618473361423,
+            "resolved_modes": 40,
+            "design_rank": 20,
+            "positive_weights": 32,
+            "bootstrap_p": 0.8167330677290837,
+            "bootstrap_quantiles": {
+              "q01": 0.029387930439582193,
+              "q50": 3.164032056839453,
+              "q99": 11.645089655456264
+            },
+            "decision": "cone_not_rejected"
+          },
+          {
+            "radius": "radius6",
+            "distance_squared": 0.0,
+            "resolved_modes": 14,
+            "design_rank": 14,
+            "positive_weights": 14,
+            "bootstrap_p": 1.0,
+            "bootstrap_quantiles": {
+              "q01": 0.0,
+              "q50": 0.0,
+              "q99": 0.0
+            },
+            "decision": "cone_not_rejected"
+          }
+        ],
+        "sum_separate_distance_squared": 42.67814740259498,
+        "shared_spectrum": {
+          "distance_squared": 1135.9942850398108,
+          "bootstrap_p": 0.00398406374501992,
+          "bootstrap_quantiles": {
+            "q01": 47.34414505186152,
+            "q50": 73.34615047880092,
+            "q99": 108.28502319160037
+          },
+          "decision": "cone_rejected"
+        },
+        "cross_radius_sharing_penalty": {
+          "distance_squared": 1093.316137637216,
+          "bootstrap_p_under_shared_spectrum": 0.00398406374501992,
+          "bootstrap_quantiles_under_shared_spectrum": {
+            "q01": 14.994385671991525,
+            "q50": 28.379189942409045,
+            "q99": 50.44870692981959
+          },
+          "decision": "shared_spectrum_rejected"
+        }
+      }
+    },
+    "minus_r2": {
+      "per_radius": [
+        {
+          "radius": "radius4",
+          "raw_cone": {
+            "radius": "radius4",
+            "distance_squared": 39.21543010102722,
+            "resolved_modes": 81,
+            "design_rank": 41,
+            "positive_weights": 41,
+            "bootstrap_p": 0.5059760956175299,
+            "bootstrap_quantiles": {
+              "q01": 23.57126416430811,
+              "q50": 39.40282642183872,
+              "q99": 62.32940358339219
+            },
+            "decision": "cone_not_rejected"
+          },
+          "masked_cone": {
+            "radius": "radius4",
+            "distance_squared": 39.215430101054146,
+            "resolved_modes": 81,
+            "design_rank": 41,
+            "positive_weights": 41,
+            "bootstrap_p": 0.5059760956175299,
+            "bootstrap_quantiles": {
+              "q01": 23.571264164322713,
+              "q50": 39.40282642185458,
+              "q99": 62.32940358343378
+            },
+            "decision": "cone_not_rejected"
+          },
+          "mask_penalty_over_raw": 2.6922464257950196e-11
+        },
+        {
+          "radius": "radius5",
+          "raw_cone": {
+            "radius": "radius5",
+            "distance_squared": 1.937438045536296,
+            "resolved_modes": 40,
+            "design_rank": 20,
+            "positive_weights": 33,
+            "bootstrap_p": 0.6892430278884463,
+            "bootstrap_quantiles": {
+              "q01": 0.0,
+              "q50": 2.8301954886330063,
+              "q99": 13.27491011566111
+            },
+            "decision": "cone_not_rejected"
+          },
+          "masked_cone": {
+            "radius": "radius5",
+            "distance_squared": 2.4569131690734642,
+            "resolved_modes": 40,
+            "design_rank": 20,
+            "positive_weights": 31,
+            "bootstrap_p": 0.7330677290836654,
+            "bootstrap_quantiles": {
+              "q01": 0.20903751693467248,
+              "q50": 3.8296997625542257,
+              "q99": 12.319727017800469
+            },
+            "decision": "cone_not_rejected"
+          },
+          "mask_penalty_over_raw": 0.5194751235371682
+        },
+        {
+          "radius": "radius6",
+          "raw_cone": {
+            "radius": "radius6",
+            "distance_squared": 0.0,
+            "resolved_modes": 14,
+            "design_rank": 14,
+            "positive_weights": 14,
+            "bootstrap_p": 1.0,
+            "bootstrap_quantiles": {
+              "q01": 0.0,
+              "q50": 0.0,
+              "q99": 0.0
+            },
+            "decision": "cone_not_rejected"
+          },
+          "masked_cone": {
+            "radius": "radius6",
+            "distance_squared": 0.0,
+            "resolved_modes": 14,
+            "design_rank": 14,
+            "positive_weights": 14,
+            "bootstrap_p": 1.0,
+            "bootstrap_quantiles": {
+              "q01": 0.0,
+              "q50": 0.0,
+              "q99": 0.0
+            },
+            "decision": "cone_not_rejected"
+          },
+          "mask_penalty_over_raw": 0.0
+        }
+      ],
+      "raw_family": {
+        "per_radius_separate_spectra": [
+          {
+            "radius": "radius4",
+            "distance_squared": 39.21543010102722,
+            "resolved_modes": 81,
+            "design_rank": 41,
+            "positive_weights": 41,
+            "bootstrap_p": 0.5059760956175299,
+            "bootstrap_quantiles": {
+              "q01": 23.57126416430811,
+              "q50": 39.40282642183872,
+              "q99": 62.32940358339219
+            },
+            "decision": "cone_not_rejected"
+          },
+          {
+            "radius": "radius5",
+            "distance_squared": 1.937438045536296,
+            "resolved_modes": 40,
+            "design_rank": 20,
+            "positive_weights": 33,
+            "bootstrap_p": 0.6892430278884463,
+            "bootstrap_quantiles": {
+              "q01": 0.0,
+              "q50": 2.8301954886330063,
+              "q99": 13.27491011566111
+            },
+            "decision": "cone_not_rejected"
+          },
+          {
+            "radius": "radius6",
+            "distance_squared": 0.0,
+            "resolved_modes": 14,
+            "design_rank": 14,
+            "positive_weights": 14,
+            "bootstrap_p": 1.0,
+            "bootstrap_quantiles": {
+              "q01": 0.0,
+              "q50": 0.0,
+              "q99": 0.0
+            },
+            "decision": "cone_not_rejected"
+          }
+        ],
+        "sum_separate_distance_squared": 41.15286814656352,
+        "shared_spectrum": {
+          "distance_squared": 68.06717419758105,
+          "bootstrap_p": 0.3784860557768924,
+          "bootstrap_quantiles": {
+            "q01": 42.73054806755617,
+            "q50": 64.45302411922586,
+            "q99": 97.60745955880262
+          },
+          "decision": "cone_not_rejected"
+        },
+        "cross_radius_sharing_penalty": {
+          "distance_squared": 26.914306051017533,
+          "bootstrap_p_under_shared_spectrum": 0.23107569721115537,
+          "bootstrap_quantiles_under_shared_spectrum": {
+            "q01": 11.687207289889743,
+            "q50": 23.007907371919142,
+            "q99": 39.798848075299716
+          },
+          "decision": "shared_spectrum_not_rejected"
+        }
+      },
+      "masked_family": {
+        "per_radius_separate_spectra": [
+          {
+            "radius": "radius4",
+            "distance_squared": 39.215430101054146,
+            "resolved_modes": 81,
+            "design_rank": 41,
+            "positive_weights": 41,
+            "bootstrap_p": 0.5059760956175299,
+            "bootstrap_quantiles": {
+              "q01": 23.571264164322713,
+              "q50": 39.40282642185458,
+              "q99": 62.32940358343378
+            },
+            "decision": "cone_not_rejected"
+          },
+          {
+            "radius": "radius5",
+            "distance_squared": 2.4569131690734642,
+            "resolved_modes": 40,
+            "design_rank": 20,
+            "positive_weights": 31,
+            "bootstrap_p": 0.7330677290836654,
+            "bootstrap_quantiles": {
+              "q01": 0.20903751693467248,
+              "q50": 3.8296997625542257,
+              "q99": 12.319727017800469
+            },
+            "decision": "cone_not_rejected"
+          },
+          {
+            "radius": "radius6",
+            "distance_squared": 0.0,
+            "resolved_modes": 14,
+            "design_rank": 14,
+            "positive_weights": 14,
+            "bootstrap_p": 1.0,
+            "bootstrap_quantiles": {
+              "q01": 0.0,
+              "q50": 0.0,
+              "q99": 0.0
+            },
+            "decision": "cone_not_rejected"
+          }
+        ],
+        "sum_separate_distance_squared": 41.67234327012761,
+        "shared_spectrum": {
+          "distance_squared": 1153.1816711255865,
+          "bootstrap_p": 0.00398406374501992,
+          "bootstrap_quantiles": {
+            "q01": 46.66185643531793,
+            "q50": 70.14973687463294,
+            "q99": 100.41998147525254
+          },
+          "decision": "cone_rejected"
+        },
+        "cross_radius_sharing_penalty": {
+          "distance_squared": 1111.5093278554589,
+          "bootstrap_p_under_shared_spectrum": 0.00398406374501992,
+          "bootstrap_quantiles_under_shared_spectrum": {
+            "q01": 15.000606178541782,
+            "q50": 27.274401369487055,
+            "q99": 43.694911390634964
+          },
+          "decision": "shared_spectrum_rejected"
+        }
+      }
+    }
+  },
+  "decision": {
+    "mechanism": "each_radius_survives_but_one_shared_cross_radius_masked_spectrum_fails",
+    "single_radius_mask_rejections": [],
+    "shared_mask_rejections": [
+      "plus_r1",
+      "plus_r2",
+      "minus_r1",
+      "minus_r2"
+    ],
+    "masked_sharing_penalty_rejections": [
+      "plus_r1",
+      "plus_r2",
+      "minus_r1",
+      "minus_r2"
+    ]
+  },
+  "claim_boundary": "This separates per-radius cone compatibility from one shared spectrum using the pinned archive means and complete within-radius covariance. It adds no samples and identifies no state count, field, Jordan block or ordered-memory mechanism."
+}
