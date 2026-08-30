@@ -98,6 +98,24 @@ class DigitalAlexanderUnrestrictedTheoremTests(unittest.TestCase):
         self.assertIsNone(result["extra_honest_cell_hypothesis"])
         self.assertTrue(self.artifact["machine_certificates"]["all_pass"])
 
+    def test_integral_saturation_is_theorem_not_finite_inference(self) -> None:
+        result = self.artifact["theorem"]
+        integral = self.artifact["machine_certificates"]["integral_saturation"]
+        self.assertEqual(
+            result["saturation_index"],
+            "exactly one for every rank-one connected carrier, proved by "
+            "honest qL carriers and coprime-prime Smith descent",
+        )
+        self.assertEqual(
+            integral["status"],
+            "unrestricted_integral_saturation_theorem",
+        )
+        self.assertTrue(integral["machine_certificates"]["all_pass"])
+        self.assertIn(
+            "101,140,028,118 paths",
+            self.artifact["proof_vs_search"]["search"],
+        )
+
     def test_checked_in_artifacts_reproduce(self) -> None:
         expected_json = json.loads(
             (ROOT / "results/digital-alexander-unrestricted/latest.json")

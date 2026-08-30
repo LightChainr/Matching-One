@@ -29,6 +29,7 @@ from integer_period_torus import (
     IntegerPeriods,
     integer_torus_geometry,
 )
+from digital_alexander_integral_saturation import build_certificate as integral_certificate
 
 
 Vector = Tuple[int, int]
@@ -358,8 +359,8 @@ def subset_state_regression(maximum_order: int) -> dict[str, Any]:
         "primitive_line_failures": counters["primitive_line_failures"],
         "nonsaturated_rank_one_states": counters["nonsaturated_rank_one_states"],
         "saturation_claim": (
-            "diagnostic only: no nonsaturated rank-one graph image occurs in "
-            "the exact HNF index-2-through-10 regression"
+            "theorem-predicted regression: no nonsaturated rank-one graph image "
+            "occurs in the exact HNF index-2-through-10 states"
         ),
         "first_failure": first_failure,
         "rows": rows,
@@ -465,6 +466,7 @@ def build_artifact(config: dict[str, Any]) -> dict[str, Any]:
     states = subset_state_regression(maximum_order)
     symplectic = symplectic_line_audit()
     filtration = filtration_consequence_audit()
+    integral = integral_certificate()
     all_machine_gates = (
         face["all_patterns_pass"]
         and projection["failure_count"] == 0
@@ -474,11 +476,12 @@ def build_artifact(config: dict[str, Any]) -> dict[str, Any]:
         and states["primitive_line_failures"] == 0
         and symplectic["failure_count"] == 0
         and filtration["failure_count"] == 0
+        and integral["machine_certificates"]["all_pass"]
     )
     return {
-        "schema": "matching-one/digital-alexander-unrestricted-theorem/v1",
+        "schema": "matching-one/digital-alexander-unrestricted-theorem/v2",
         "issue": 269,
-        "status": "unrestricted_finite_index_theorem",
+        "status": "unrestricted_integral_finite_index_theorem",
         "theorem": {
             "period_lattice": "L=P Z^2 for every nonsingular integer 2x2 matrix P",
             "configuration": "every L-periodic black subset of Z^2",
@@ -492,8 +495,8 @@ def build_artifact(config: dict[str, Any]) -> dict[str, Any]:
                 "integral generator up to the fixed sign convention"
             ),
             "saturation_index": (
-                "not fixed by finite-cover descent; index one through quotient "
-                "index 10 is retained only as an exact finite diagnostic"
+                "exactly one for every rank-one connected carrier, proved by "
+                "honest qL carriers and coprime-prime Smith descent"
             ),
             "extra_honest_cell_hypothesis": None,
         },
@@ -543,12 +546,37 @@ def build_artifact(config: dict[str, Any]) -> dict[str, Any]:
                 ),
             },
             {
-                "lemma": "symplectic and primitive-line descent",
+                "lemma": "symplectic rational descent",
                 "statement": (
                     "In compatible period bases p_*=2I, hence omega(p_*u,p_*v)=4omega(u,v). "
-                    "It carries orthogonal complements to orthogonal complements. A "
-                    "rank-one rational line has a canonical primitive integral generator; "
-                    "this does not assert that the graph-image subgroup has index one."
+                    "It carries rational orthogonal complements to orthogonal complements."
+                ),
+            },
+            {
+                "lemma": "honest integral carrier classification",
+                "statement": (
+                    "On every honest qL cover, black regular neighborhoods and the "
+                    "integrally pruned white complementary carriers have the same Z-H1 "
+                    "images as their graphs. A connected torus subsurface has image 0, "
+                    "one primitive line, or all H1(T2;Z), according to rank 0,1,2."
+                ),
+            },
+            {
+                "lemma": "exact component stabilizer on qL covers",
+                "statement": (
+                    "For a universal-lift component with stabilizer H<=L, a loop in its "
+                    "qL-cover component has endpoint displacement in H intersect qL; "
+                    "connectedness gives a loop for every such displacement. Thus the "
+                    "integral upstairs image is exactly H intersect qL."
+                ),
+            },
+            {
+                "lemma": "coprime-prime Smith descent",
+                "statement": (
+                    "If S=Sat_L(H) and d=[S:H]>1, choose a prime q not dividing d. "
+                    "In a basis of the direct summand S extended to L, Smith coordinates "
+                    "give H=sum d_i Z e_i, H intersect qL=qH, and index d in qS. "
+                    "This contradicts honest-carrier saturation upstairs, so d=1."
                 ),
             },
             {
@@ -569,16 +597,18 @@ def build_artifact(config: dict[str, Any]) -> dict[str, Any]:
             "cached_subset_regression": states,
             "symplectic_line": symplectic,
             "filtration_algebra": filtration,
+            "integral_saturation": integral,
             "all_pass": all_machine_gates,
         },
         "proof_vs_search": {
             "proof": (
                 "four-sheeted honest regular cover plus rational graph-image and "
-                "conformally symplectic descent; independent of quotient index"
+                "conformally symplectic descent, together with the family of honest qL "
+                "covers and coprime-prime Smith descent for integral saturation"
             ),
             "search": (
-                "the existing exact state cache is reused through index 10 only as a "
-                "regression and executable counterexample locator"
+                "the merged index-2-through-13 frontier (101,140,028,118 paths) is "
+                "regression and implementation-convention audit only"
             ),
         },
         "claim_boundary": config["claim_boundary"],
@@ -606,8 +636,8 @@ def render_markdown(artifact: dict[str, Any]) -> str:
         "q = r_black - 1 = 1 - r_white = (r_black-r_white)/2.",
         "```",
         "",
-        "No honest quotient-cell hypothesis is needed. A rank-one rational image has a canonical",
-        "primitive integral direction; saturation of the actual graph-image subgroup is not asserted.",
+        "No honest quotient-cell hypothesis is needed. Every connected integral carrier image is",
+        "saturated: rank zero gives 0, rank one gives one primitive line, and rank two gives all Z2.",
         "",
         "## Why self-identifying faces are harmless",
         "",
@@ -638,12 +668,13 @@ def render_markdown(artifact: dict[str, Any]) -> str:
         f"- cached subset states: {states['states']}; rank-one states: {states['rank_one_states']}",
         "- rank-sum, rank-mark, primitive-line and projection failures: zero",
         f"- nonsaturated rank-one states in the finite regression: "
-        f"{states['nonsaturated_rank_one_states']} (diagnostic only)",
+        f"{states['nonsaturated_rank_one_states']} (theorem-predicted regression)",
         f"- symbolic threshold pairs: {machine['filtration_algebra']['threshold_pairs_checked']}; failures: zero",
         f"- all machine gates: `{machine['all_pass']}`",
         "",
-        "The finite HNF layer is a regression certificate, not the unrestricted inference. The unrestricted",
-        "step is finite honest-cover descent over rational homology.",
+        "The finite HNF layer is a regression certificate, not the unrestricted inference. Rational",
+        "duality uses the four-sheeted cover; integral saturation uses all honest qL covers and a",
+        "coprime-prime Smith contradiction.",
         "",
         "## Boundary",
         "",
