@@ -13,7 +13,7 @@ from typing import Any, Mapping, Sequence
 import mpmath as mp
 
 from analyze_threshold_rank_orientation import add_histograms, read_histograms, validate_moments
-from analyze_threshold_ranks import matching_root
+from analyze_threshold_ranks import matching_derivative, matching_root, matching_value
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -56,7 +56,8 @@ def _aggregate_root(
     n: int,
     orientation: str,
     drop_batch: int | None = None,
-) -> float:
+    initial: float | mp.mpf | None = None,
+) -> mp.mpf:
     selected = [
         dict(records[key]) for key in sorted(records)
         if key[0] == n and key[1] == orientation and key[2] != drop_batch
@@ -66,7 +67,23 @@ def _aggregate_root(
     samples = sum(int(row["samples"]) for row in selected)
     minus = add_histograms(selected, "minus")
     plus = add_histograms(selected, "plus")
-    return float(matching_root(n, samples, minus, plus))
+    if initial is None:
+        return matching_root(n, samples, minus, plus)
+    root = mp.mpf(initial)
+    for _ in range(12):
+        value = matching_value(n, samples, minus, plus, root)
+        derivative = matching_derivative(n, samples, minus, plus, root)
+        if derivative <= 0:
+            return matching_root(n, samples, minus, plus)
+        candidate = root - value / derivative
+        if not 0 < candidate < 1:
+            return matching_root(n, samples, minus, plus)
+        if abs(candidate - root) < mp.mpf(10) ** (-(mp.mp.dps - 8)):
+            return candidate
+        root = candidate
+    if abs(matching_value(n, samples, minus, plus, root)) > mp.mpf(10) ** (-(mp.mp.dps - 8)):
+        return matching_root(n, samples, minus, plus)
+    return root
 
 
 def score_campaign(campaign_dir: Path, design: Mapping[str, Any]) -> dict[str, Any]:
@@ -126,13 +143,24 @@ def score_campaign(campaign_dir: Path, design: Mapping[str, Any]) -> dict[str, A
     if batch_ids != list(range(int(manifest["batches"]))):
         raise ValueError("batch ids are not complete and zero-based")
 
-    def root_vector(drop_batch: int | None = None) -> list[float]:
-        values = [_aggregate_root(baseline, n, "first", drop_batch)]
-        values.extend(_aggregate_root(loaded[rho], n, "second", drop_batch) for rho in RHO_ORDER[1:])
+    def root_vector(
+        drop_batch: int | None = None,
+        initial: Sequence[float | mp.mpf] | None = None,
+    ) -> list[mp.mpf]:
+        starts = [None] * 5 if initial is None else list(initial)
+        values = [_aggregate_root(baseline, n, "first", drop_batch, starts[0])]
+        values.extend(
+            _aggregate_root(loaded[rho], n, "second", drop_batch, starts[index])
+            for index, rho in enumerate(RHO_ORDER[1:], start=1)
+        )
         return values
 
-    roots = root_vector()
-    delete_one = [root_vector(batch) for batch in batch_ids]
+    roots_mp = root_vector()
+    roots = [float(value) for value in roots_mp]
+    delete_one = [
+        [float(value) for value in root_vector(batch, roots_mp)]
+        for batch in batch_ids
+    ]
     covariance = [
         [
             _jackknife_covariance(

@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from score_p321_independent_campaigns import combine_scored_campaigns  # noqa: E402
+from score_p321_equal_area_rectangles import _aggregate_root  # noqa: E402
 
 
 def campaign(mean: float, variance: float, samples: int) -> dict:
@@ -47,6 +48,38 @@ class IndependentP321CampaignTests(unittest.TestCase):
         other["N"] = 576
         with self.assertRaisesRegex(ValueError, "common N"):
             combine_scored_campaigns([campaign(1.0, 1.0, 10), other], ["a", "b"])
+
+    def test_nearby_newton_root_matches_full_bisection(self) -> None:
+        records = {
+            (4, "first", 0): {
+                "n": 4,
+                "orientation": "first",
+                "batch": 0,
+                "samples": 100,
+                "minus": [0, 0, 100, 0, 0],
+                "plus": [0, 0, 0, 100, 0],
+            },
+            (4, "first", 1): {
+                "n": 4,
+                "orientation": "first",
+                "batch": 1,
+                "samples": 100,
+                "minus": [0, 100, 0, 0, 0],
+                "plus": [0, 0, 0, 0, 100],
+            },
+            (4, "first", 2): {
+                "n": 4,
+                "orientation": "first",
+                "batch": 2,
+                "samples": 100,
+                "minus": [0, 0, 0, 100, 0],
+                "plus": [0, 0, 100, 0, 0],
+            },
+        }
+        full = _aggregate_root(records, 4, "first")
+        nearby = _aggregate_root(records, 4, "first", 0, full)
+        exact = _aggregate_root(records, 4, "first", 0)
+        self.assertAlmostEqual(float(nearby), float(exact), places=14)
 
 
 if __name__ == "__main__":
