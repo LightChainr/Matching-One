@@ -171,7 +171,6 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
             "scripts/score_norm4_thermal_jet.py",
             "scripts/score_norm5_thermal_jet.py",
             "scripts/score_p49_fullcurve_doubling.py",
-            "scripts/score_p50_fullcurve_n290.py",
         ):
             self.assertEqual(
                 statuses[path], "channel_bearing_migration_required"
@@ -182,6 +181,14 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
         )
         self.assertEqual(
             statuses["scripts/score_p159_pell_hex_filter_typed.py"],
+            "direct_typed_entrypoint",
+        )
+        self.assertEqual(
+            statuses["scripts/score_p50_fullcurve_n290.py"],
+            "covered_frozen_kernel",
+        )
+        self.assertEqual(
+            statuses["scripts/score_p50_fullcurve_n290_typed.py"],
             "direct_typed_entrypoint",
         )
         for path in (
