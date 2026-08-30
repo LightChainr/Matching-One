@@ -49,6 +49,11 @@ def build_design() -> dict[str, object]:
         "scaling_contract": {
             "leading_root_shift": "N^-2 at fixed aspect ratio (equivalently linear-scale^-4)",
             "first_relative_correction": "N^-1, producing root term N^-3",
+            "width_amplitude_conversion": (
+                "If p-pc=C_N(rho)*N^-2=C_width(rho)*n_width^-4 and "
+                "N=rho*n_width^2, then C_width(rho)=C_N(rho)/rho^2. "
+                "Apply this conversion before the rho->infinity TL comparison."
+            ),
             "free_exponent_fit": False,
         },
         "common_randomness": {

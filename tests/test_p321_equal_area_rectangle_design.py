@@ -34,6 +34,10 @@ class P321EqualAreaRectangleDesignTests(unittest.TestCase):
             determinant = matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]
             self.assertEqual(determinant, row["N"])
 
+    def test_width_amplitude_conversion_is_frozen(self) -> None:
+        contract = MODULE.build_design()["scaling_contract"]
+        self.assertIn("C_width(rho)=C_N(rho)/rho^2", contract["width_amplitude_conversion"])
+
 
 if __name__ == "__main__":
     unittest.main()

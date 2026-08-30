@@ -226,6 +226,24 @@ with aspect ratios `1`, `16/9`, `9/4`, `4`, and diagnostic `9`.  At scales
 one, two, and three the common areas are `N=144,576,1296`.  The root law is
 `N^-2` with a first `N^-3` correction.
 
+The equal-area coefficient is not yet the TL-width coefficient.  Since
+
+\[
+N=\rho n_{\rm width}^2,
+\qquad
+C_N(\rho)N^{-2}=C_{\rm width}(\rho)n_{\rm width}^{-4},
+\]
+
+one must convert
+
+\[
+\boxed{C_{\rm width}(\rho)=C_N(\rho)/\rho^2}
+\]
+
+before comparing the rectangle sequence with the `rho -> infinity` TL
+amplitude.  Otherwise the deterministic change of length convention would be
+mistaken for growth of the continuum shape function.
+
 Run the square as the first matrix against each rectangle using identical
 seed, replica interval, and batch boundaries.  The repeated square histograms
 must then be byte-identical.  The aligned delete-one-batch roots provide the
