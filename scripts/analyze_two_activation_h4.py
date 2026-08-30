@@ -22,9 +22,13 @@ import csv
 import hashlib
 import json
 import math
+import os
+import re
+import subprocess
+import tempfile
 from concurrent.futures import ProcessPoolExecutor
 from dataclasses import dataclass
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from typing import Any, Mapping, Optional, Sequence
 
 import yaml
@@ -87,6 +91,7 @@ DECISION_METRICS = (
     "angular_actual_root_gap",
     "angular_nonlinear_closure_residual",
 )
+GIT_INPUT_RE = re.compile(r"^git\+([0-9a-fA-F]{7,64}):(.+)$")
 
 
 class ArchiveNotScoreable(ValueError):
@@ -124,6 +129,13 @@ class Archive:
     moments: Mapping[str, tuple[MomentBatch, ...]]
     metadata: Mapping[str, Any]
     paths: Mapping[str, Path]
+    input_provenance: Mapping[str, Mapping[str, str]]
+
+
+@dataclass(frozen=True)
+class MaterializedInput:
+    path: Path
+    provenance: Mapping[str, str]
 
 
 def sha256(path: Path) -> str:
@@ -137,6 +149,98 @@ def sha256(path: Path) -> str:
 def _resolve(root: Path, value: object) -> Path:
     path = Path(str(value))
     return path if path.is_absolute() else root / path
+
+
+def _git_text(root: Path, arguments: Sequence[str]) -> str:
+    try:
+        completed = subprocess.run(
+            ["git", "-C", str(root), *arguments],
+            check=True,
+            capture_output=True,
+            text=True,
+            shell=False,
+        )
+    except (FileNotFoundError, subprocess.CalledProcessError) as exc:
+        detail = getattr(exc, "stderr", "") or str(exc)
+        raise ArchiveNotScoreable(f"git input lookup failed: {detail.strip()}") from exc
+    return completed.stdout.strip()
+
+
+def _materialize_input(root: Path, value: object) -> MaterializedInput:
+    """Resolve a local path or materialize one immutable git blob in ignored tmp/."""
+
+    source = str(value)
+    if not source.startswith("git+"):
+        path = _resolve(root, source)
+        display = str(path.relative_to(root)) if path.is_relative_to(root) else str(path)
+        return MaterializedInput(path=path, provenance={"path": display})
+
+    match = GIT_INPUT_RE.fullmatch(source)
+    if match is None:
+        raise ArchiveNotScoreable(
+            "git inputs must use git+<hex-commit>:<repository-relative-path>"
+        )
+    revision, repository_path_text = match.groups()
+    repository_path = PurePosixPath(repository_path_text)
+    if (
+        repository_path.is_absolute()
+        or not repository_path.parts
+        or any(part in ("", ".", "..") for part in repository_path.parts)
+    ):
+        raise ArchiveNotScoreable("git input path must be a normalized repository-relative path")
+
+    resolved_commit = _git_text(root, ["rev-parse", "--verify", f"{revision}^{{commit}}"])
+    if not re.fullmatch(r"[0-9a-fA-F]{40,64}", resolved_commit):
+        raise ArchiveNotScoreable("git input did not resolve to a full commit object id")
+    object_spec = f"{resolved_commit}:{repository_path.as_posix()}"
+    blob_oid = _git_text(root, ["rev-parse", "--verify", object_spec])
+    if not re.fullmatch(r"[0-9a-fA-F]{40,64}", blob_oid):
+        raise ArchiveNotScoreable("git input did not resolve to a blob object id")
+
+    cache_directory = root / "tmp" / "git-blobs" / resolved_commit
+    cache_directory.mkdir(parents=True, exist_ok=True)
+    suffix = Path(repository_path.name).suffix
+    cache_path = cache_directory / f"{blob_oid}{suffix}"
+    if not cache_path.is_file():
+        try:
+            completed = subprocess.run(
+                ["git", "-C", str(root), "cat-file", "blob", blob_oid],
+                check=True,
+                capture_output=True,
+                shell=False,
+            )
+        except (FileNotFoundError, subprocess.CalledProcessError) as exc:
+            detail = getattr(exc, "stderr", b"")
+            if isinstance(detail, bytes):
+                detail = detail.decode("utf-8", errors="replace")
+            raise ArchiveNotScoreable(f"git blob materialization failed: {str(detail).strip()}") from exc
+        temporary_name: Optional[str] = None
+        try:
+            with tempfile.NamedTemporaryFile(
+                dir=cache_directory, prefix=".materializing-", delete=False
+            ) as handle:
+                handle.write(completed.stdout)
+                temporary_name = handle.name
+            os.replace(temporary_name, cache_path)
+            temporary_name = None
+        finally:
+            if temporary_name is not None:
+                Path(temporary_name).unlink(missing_ok=True)
+
+    cached_oid = _git_text(root, ["hash-object", str(cache_path)])
+    if cached_oid != blob_oid:
+        raise ArchiveNotScoreable("cached git blob hash differs from the pinned object id")
+    return MaterializedInput(
+        path=cache_path,
+        provenance={
+            "path": source,
+            "uri": source,
+            "artifact_commit": resolved_commit,
+            "git_blob_oid": blob_oid,
+            "materialized_path": str(cache_path.relative_to(root)),
+            "cache_policy": "ignored_tmp/git-blobs",
+        },
+    )
 
 
 def load_manifest(path: Path) -> dict[str, Any]:
@@ -290,10 +394,11 @@ def _read_moments(path: Path, n: int) -> dict[str, tuple[MomentBatch, ...]]:
 
 def read_archive(root: Path, entry: Mapping[str, Any]) -> Archive:
     n = int(entry["N"])
-    paths = {
-        kind: _resolve(root, entry[kind])
+    materialized = {
+        kind: _materialize_input(root, entry[kind])
         for kind in ("histogram", "moments", "metadata")
     }
+    paths = {kind: item.path for kind, item in materialized.items()}
     for kind, path in paths.items():
         if not path.is_file():
             raise ArchiveNotScoreable(f"{kind} input is missing: {path}")
@@ -340,6 +445,9 @@ def read_archive(root: Path, entry: Mapping[str, Any]) -> Archive:
         moments=moments,
         metadata=metadata,
         paths=paths,
+        input_provenance={
+            kind: item.provenance for kind, item in materialized.items()
+        },
     )
 
 
@@ -742,7 +850,10 @@ def analyze_archive(root_text: str, entry: Mapping[str, Any]) -> dict[str, Any]:
                 "counter_first": archive.metadata["replica_counter_first"],
                 "counter_last_exclusive": archive.metadata["replica_counter_last_exclusive"],
                 "inputs": {
-                    kind: {"path": str(path.relative_to(root)), "sha256": sha256(path)}
+                    kind: {
+                        **archive.input_provenance[kind],
+                        "sha256": sha256(path),
+                    }
                     for kind, path in archive.paths.items()
                 },
             },
@@ -955,11 +1066,10 @@ def render_markdown(payload: Mapping[str, Any]) -> str:
         f"K1-dominant at {first_count}, K2-dominant at {second_count}, and shared at "
         f"{shared_count}; {cancelling} sizes show opposite-sign component cancellation.",
         f"Using the within-size delete-one standard errors only, K1 has |z|>=2 at "
-        f"{resolved_k1} sizes and K2 at {resolved_k2}. The opposite-sign K2 point "
-        "estimates at N=265,325,425 are individually unresolved, so the apparent "
-        "large-size sign change is a next-target clue rather than a confirmed transition.",
-        "This count is a map of the decomposition, not an independent-evidence vote: "
-        "N=65,85,130,170 share one counter stream and remain one dependency group.",
+        f"{resolved_k1} sizes and K2 at {resolved_k2}. Unresolved component point "
+        "estimates remain next-target clues rather than confirmed transitions.",
+        "These counts map the decomposition; they are not independent-evidence votes. "
+        "The dependency groups and their member sizes are recorded explicitly in JSON.",
         "",
         "The `nonlinear closure residual` is the observed orientation root gap minus "
         "`delta_p1+delta_p2`.  Its smallness diagnoses the local linearization only; it "
@@ -980,6 +1090,10 @@ def render_markdown(payload: Mapping[str, Any]) -> str:
         "Entries from distinct counter intervals are zero by design; shared streams use "
         "aligned delete-one covariance.  Input SHA256 values and source commits are "
         "stored under each size.",
+        "",
+        "This is a canonical Phase-D state-coordinate decomposition. It does not "
+        "construct the Phase-E `J_top` versus `J_bulk` comparison and is not an "
+        "outward-rounded interval or SOS certificate.",
         "",
     ])
     return "\n".join(lines)

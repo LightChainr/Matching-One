@@ -1,0 +1,74 @@
+schema: matching-one.two-activation-h4.manifest.v1
+status: retrospective_existing_data_reanalysis
+description: >-
+  Zero-new-sample canonical K1/K2 decomposition of the P154 norm-4 production
+  archive held on PR #273 at commit 8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc.
+  This completes the norm-4 Phase-D state-coordinate analysis only.
+
+source_archive:
+  issue: 154
+  pull_request: 273
+  artifact_commit: 8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc
+  generation_commit: bfab0330f5f56ca4d746b45d737f1607e3d229a0
+  acquisition: existing_production_data_reuse
+
+semantic_contract:
+  K1: K_minus
+  K2: K_plus
+  F1: E[Pr(Binomial(N,p) >= K1)]
+  F2: E[Pr(Binomial(N,p) >= K2)]
+  matching_curve: M(p) = -1 + F1(p) + F2(p)
+  pooled_root: >-
+    The zero of the equal-weight mean of the two orientation matching curves;
+    it is recomputed inside every aligned delete-one-batch replicate.
+  angular_normalization: exact Delta cos(4 theta) for the declared Gaussian-integer representatives
+  inference_boundary: >-
+    Phase-D canonical A_top/E_top decomposition on the six P154 production
+    sizes. No exponent refit, no new simulation, no Phase-E J_top/J_bulk
+    observer comparison, and no outward-interval or SOS certificate.
+
+required_sizes: [65, 85, 130, 170, 260, 340]
+
+runs:
+  - N: 65
+    histogram: git+8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc:results/server-20260829/P154-norm4-production/raw/n65_1900m.hist.csv
+    moments: git+8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc:results/server-20260829/P154-norm4-production/raw/n65_1900m.moments.csv
+    metadata: git+8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc:results/server-20260829/P154-norm4-production/raw/n65_1900m.metadata.json
+    dependency_group: crn-2026104501-5100000000-7000000000
+    expected_first: [8, 1]
+    expected_second: [7, 4]
+  - N: 85
+    histogram: git+8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc:results/server-20260829/P154-norm4-production/raw/n85_1900m.hist.csv
+    moments: git+8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc:results/server-20260829/P154-norm4-production/raw/n85_1900m.moments.csv
+    metadata: git+8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc:results/server-20260829/P154-norm4-production/raw/n85_1900m.metadata.json
+    dependency_group: crn-2026104501-5100000000-7000000000
+    expected_first: [9, 2]
+    expected_second: [7, 6]
+  - N: 130
+    histogram: git+8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc:results/server-20260829/P154-norm4-production/raw/n130_1900m.hist.csv
+    moments: git+8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc:results/server-20260829/P154-norm4-production/raw/n130_1900m.moments.csv
+    metadata: git+8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc:results/server-20260829/P154-norm4-production/raw/n130_1900m.metadata.json
+    dependency_group: crn-2026104501-5100000000-7000000000
+    expected_first: [11, 3]
+    expected_second: [9, 7]
+  - N: 170
+    histogram: git+8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc:results/server-20260829/P154-norm4-production/raw/n170_1900m.hist.csv
+    moments: git+8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc:results/server-20260829/P154-norm4-production/raw/n170_1900m.moments.csv
+    metadata: git+8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc:results/server-20260829/P154-norm4-production/raw/n170_1900m.metadata.json
+    dependency_group: crn-2026104501-5100000000-7000000000
+    expected_first: [13, 1]
+    expected_second: [11, 7]
+  - N: 260
+    histogram: git+8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc:results/server-20260829/P154-norm4-production/raw/n260_1b.hist.csv
+    moments: git+8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc:results/server-20260829/P154-norm4-production/raw/n260_1b.moments.csv
+    metadata: git+8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc:results/server-20260829/P154-norm4-production/raw/n260_1b.metadata.json
+    dependency_group: crn-2026105401-8200000000-9200000000
+    expected_first: [16, 2]
+    expected_second: [14, 8]
+  - N: 340
+    histogram: git+8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc:results/server-20260829/P154-norm4-production/raw/n340_1b.hist.csv
+    moments: git+8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc:results/server-20260829/P154-norm4-production/raw/n340_1b.moments.csv
+    metadata: git+8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc:results/server-20260829/P154-norm4-production/raw/n340_1b.metadata.json
+    dependency_group: crn-2026105402-8200000000-9200000000
+    expected_first: [18, 4]
+    expected_second: [14, 12]
