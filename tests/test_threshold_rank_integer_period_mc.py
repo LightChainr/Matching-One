@@ -17,6 +17,7 @@ sys.path.insert(0, str(SCRIPTS))
 
 from integer_period_torus import integer_torus_geometry  # noqa: E402
 from threshold_rank_nz import ThresholdRankEngine, counter_permutation  # noqa: E402
+import analyze_projective_birth_smoke as projective_score  # noqa: E402
 
 
 DESIGNS = {
@@ -156,6 +157,40 @@ class ThresholdRankIntegerPeriodMCTests(unittest.TestCase):
                 Path(str(first) + suffix).read_bytes(),
                 Path(str(second) + suffix).read_bytes(),
             )
+
+    def test_projective_birth_archive_and_exact_crosswalks(self) -> None:
+        prefix = Path(self.temporary.name) / "projective_n5"
+        subprocess.run(
+            [
+                str(self.binary), "--samples", "40", "--batches", "4",
+                "--seed", "17", "--first-matrix", "2", "-1", "1", "2",
+                "--second-matrix", "2", "-1", "1", "2",
+                "--projective-births", "--output-prefix", str(prefix),
+            ],
+            check=True,
+        )
+        births_path = Path(str(prefix) + ".births.csv")
+        with births_path.open(newline="", encoding="utf-8") as handle:
+            rows = list(csv.DictReader(handle))
+        self.assertTrue(rows)
+        self.assertEqual({row["kind"] for row in rows}, {"LINE"})
+        self.assertEqual({int(row["tau1"]) for row in rows}, {3})
+        self.assertEqual({int(row["tau2"]) for row in rows}, {4})
+        self.assertNotIn("iota", rows[0])
+
+        result = projective_score.analyze(
+            births_path,
+            Path(str(prefix) + ".hist.csv"),
+            Path(str(prefix) + ".metadata.json"),
+            0.5,
+        )
+        self.assertTrue(result["exact_crosswalk_gates"]["passed"])
+        self.assertTrue(
+            result["exact_crosswalk_gates"]["histogram_recovery"]["passed"]
+        )
+        self.assertEqual(
+            result["chi4_support"]["first"]["distinct_chi4_values"], 1
+        )
 
     def test_negative_unsigned_cli_value_is_rejected(self) -> None:
         completed = subprocess.run(

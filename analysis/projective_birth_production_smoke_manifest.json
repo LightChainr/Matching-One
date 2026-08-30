@@ -1,0 +1,45 @@
+{
+  "schema": "matching-one/projective-birth-production-smoke-manifest/v1",
+  "issue": 334,
+  "phase": "B/C prototype and local variance smoke",
+  "base_commits": ["6f54935", "c1a72e5"],
+  "runner": "src/threshold_rank_integer_period_mc.cpp",
+  "scorer": "scripts/analyze_projective_birth_smoke.py",
+  "note": "notes/p334-projective-birth-production-smoke.md",
+  "result_root": "results/local-20260830/P334-projective-birth-N65-smoke",
+  "raw_contract": [
+    "tau1",
+    "primitive projective ell1 canonical up to sign",
+    "tau2 retaining ell1 at exit",
+    "DIRECT_RANK2 without ell"
+  ],
+  "omitted_by_theorem": "iota is identically one by c1a72e5",
+  "design": {
+    "N": 65,
+    "first_period_matrix": [[8, -1], [1, 8]],
+    "second_period_matrix": [[7, -4], [4, 7]],
+    "samples_per_shape": 20000,
+    "batches": 20,
+    "seed": 20260830,
+    "counter_range": [0, 20000],
+    "execution": "local only; no Huawei allocation"
+  },
+  "exact_gates": [
+    "sum ell plus DIRECT_RANK2 recovers K1",
+    "tau2 recovers K2",
+    "A4 equals Issue 156 fixed-p primitive character",
+    "dA4/dp equals j4_birth1 minus j4_exit2",
+    "Mprime equals line activity plus twice direct flux"
+  ],
+  "scientific_result": {
+    "first_distinct_chi4_values": 4,
+    "second_distinct_chi4_values": 4,
+    "first_path_chi4_variance": 0.47371072736122644,
+    "second_path_chi4_variance": 0.4741367004884668,
+    "first_birth_flux_chi4_variance": 0.5308216181640029,
+    "second_birth_flux_chi4_variance": 0.5178560950487334,
+    "interpretation": "non-micro ell has nondegenerate chi4 support; A4 is redundant but source/sink flux is new"
+  },
+  "claim_boundary": "variance/runtime smoke only; no model selected from pilot mean",
+  "production_status": "not started"
+}

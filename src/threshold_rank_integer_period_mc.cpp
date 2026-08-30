@@ -25,11 +25,13 @@
 #include <iomanip>
 #include <iostream>
 #include <limits>
+#include <map>
 #include <numeric>
 #include <sstream>
 #include <stdexcept>
 #include <string>
 #include <type_traits>
+#include <tuple>
 #include <utility>
 #include <vector>
 
@@ -331,6 +333,16 @@ class HomologyUnionFind {
 
     bool component_crosses(int vertex) { return rank_[find(vertex).root] == 2; }
 
+    int component_rank(int vertex) { return rank_[find(vertex).root]; }
+
+    Vector component_line(int vertex) {
+        const int root = find(vertex).root;
+        if (rank_[root] != 1) {
+            throw std::logic_error("projective line requested outside rank one");
+        }
+        return primitive(basis_[root][0]);
+    }
+
   private:
     const QuotientCoordinates& quotient_;
     std::vector<int> parent_;
@@ -403,6 +415,52 @@ class ThresholdEngine {
         const int k_minus = geometry_.n - reverse_white + 1;
         if (k_minus > k_plus) throw std::logic_error("K_minus exceeds K_plus");
         return {k_minus, k_plus};
+    }
+
+    struct ProjectiveBirth {
+        int tau1 = 0;
+        int tau2 = 0;
+        Vector ell;
+        bool direct_rank2 = false;
+    };
+
+    ProjectiveBirth projective_birth(const std::vector<int>& permutation) {
+        std::fill(active_.begin(), active_.end(), 0);
+        union_find_.reset();
+        ProjectiveBirth result;
+        int ambient_rank = 0;
+        for (int offset = 0; offset < geometry_.n; ++offset) {
+            const int vertex = permutation[offset];
+            active_[vertex] = 1;
+            for (const int edge_index : geometry_.primal_incident[vertex]) {
+                const Edge& edge = geometry_.primal_edges[edge_index];
+                if (active_[edge.i] && active_[edge.j]) union_find_.add_edge(edge);
+            }
+            const int rank = union_find_.component_rank(vertex);
+            if (ambient_rank == 0 && rank == 1) {
+                result.tau1 = offset + 1;
+                result.ell = union_find_.component_line(vertex);
+                ambient_rank = 1;
+            } else if (ambient_rank == 0 && rank == 2) {
+                result.tau1 = result.tau2 = offset + 1;
+                result.direct_rank2 = true;
+                return result;
+            } else if (ambient_rank == 1 && rank == 1) {
+                const Vector current = union_find_.component_line(vertex);
+                if (current.x != result.ell.x || current.y != result.ell.y) {
+                    throw std::logic_error("rank-one projective line changed along filtration");
+                }
+            } else if (ambient_rank == 1 && rank == 2) {
+                result.tau2 = offset + 1;
+                return result;
+            }
+        }
+        throw std::logic_error("fully occupied graph did not reach ambient rank two");
+    }
+
+    int reverse_kminus(const std::vector<int>& permutation) {
+        const int reverse_white = first_cross(permutation, true, true);
+        return geometry_.n - reverse_white + 1;
     }
 
   private:
@@ -493,6 +551,42 @@ struct PairBatch {
     explicit PairBatch(int n = 0) : first(n), second(n) {}
 };
 
+using BirthKey = std::tuple<int, int, Int, Int, bool>;
+
+struct ProjectiveCounts {
+    RankCounts ranks;
+    std::map<BirthKey, std::uint64_t> births;
+
+    explicit ProjectiveCounts(int n = 0) : ranks(n) {}
+
+    void add(const ThresholdEngine::ProjectiveBirth& birth, int reverse_kminus) {
+        if (birth.tau1 != reverse_kminus) {
+            throw std::logic_error("projective tau1 disagrees with Alexander K_minus");
+        }
+        if (birth.direct_rank2) {
+            if (birth.tau1 != birth.tau2 || birth.ell.x != 0 || birth.ell.y != 0) {
+                throw std::logic_error("invalid DIRECT_RANK2 record");
+            }
+        } else {
+            if (!(birth.tau1 < birth.tau2) ||
+                std::gcd(safe_abs(birth.ell.x, "projective line"),
+                         safe_abs(birth.ell.y, "projective line")) != 1 ||
+                birth.ell.x < 0 || (birth.ell.x == 0 && birth.ell.y < 0)) {
+                throw std::logic_error("invalid primitive projective line record");
+            }
+        }
+        ranks.add(birth.tau1, birth.tau2);
+        ++births[{birth.tau1, birth.tau2, birth.ell.x, birth.ell.y,
+                  birth.direct_rank2}];
+    }
+};
+
+struct ProjectivePairBatch {
+    ProjectiveCounts first;
+    ProjectiveCounts second;
+    explicit ProjectivePairBatch(int n = 0) : first(n), second(n) {}
+};
+
 std::vector<int> remap_permutation(const Geometry& source, const Geometry& target,
                                    const std::vector<int>& permutation) {
     std::vector<int> mapped;
@@ -507,15 +601,40 @@ void self_test() {
     const Geometry gaussian = make_geometry({2, -1, 1, 2});
     ThresholdEngine gaussian_engine(gaussian);
     RankCounts counts(gaussian.n);
+    ProjectiveCounts marked_counts(gaussian.n);
     std::vector<int> permutation(gaussian.n);
     std::iota(permutation.begin(), permutation.end(), 0);
     do {
         const auto ranks = gaussian_engine.ranks(permutation);
         counts.add(ranks.first, ranks.second);
+        const auto birth = gaussian_engine.projective_birth(permutation);
+        marked_counts.add(birth, gaussian_engine.reverse_kminus(permutation));
     } while (std::next_permutation(permutation.begin(), permutation.end()));
     if (counts.samples != 120 || counts.minus[3] != 120 || counts.plus[4] != 120) {
         throw std::runtime_error("N=5 all-permutation rank histogram regression failed");
     }
+    if (marked_counts.ranks.minus != counts.minus || marked_counts.ranks.plus != counts.plus ||
+        std::any_of(marked_counts.births.begin(), marked_counts.births.end(),
+                    [](const auto& item) { return std::get<4>(item.first); })) {
+        throw std::runtime_error("N=5 projective birth reconstruction failed");
+    }
+
+    const Geometry axis = make_geometry({2, 0, 0, 2});
+    ThresholdEngine axis_engine(axis);
+    int direct_paths = 0;
+    permutation.resize(axis.n);
+    std::iota(permutation.begin(), permutation.end(), 0);
+    do {
+        const auto birth = axis_engine.projective_birth(permutation);
+        if (birth.direct_rank2) ++direct_paths;
+        if (birth.tau1 != axis_engine.reverse_kminus(permutation)) {
+            throw std::runtime_error("axis projective birth disagrees with K_minus");
+        }
+    } while (std::next_permutation(permutation.begin(), permutation.end()));
+    if (direct_paths != 8) {
+        throw std::runtime_error("axis L=2 DIRECT_RANK2 regression failed");
+    }
+    permutation.resize(gaussian.n);
 
     const QuotientCoordinates arbitrary({3, 1, 1, 2});
     if (arbitrary.order != 5 || arbitrary.smith1 != 1 || arbitrary.smith2 != 5) {
@@ -572,7 +691,8 @@ void self_test() {
         throw std::runtime_error("Python-compatible counter/permutation regression failed");
     }
     std::cout << "self-test passed: arbitrary integer periods, exact HNF quotient/winding, "
-                 "basis invariance, Smith(2,130)/(2,170), N=5 all permutations\n";
+                 "basis invariance, projective birth reconstruction, DIRECT_RANK2, "
+                 "Smith(2,130)/(2,170), N=5 all permutations\n";
 }
 
 struct Options {
@@ -594,6 +714,7 @@ struct Options {
     int second_b = 0;
     bool first_rep_set = false;
     bool second_rep_set = false;
+    bool projective_births = false;
 };
 
 [[noreturn]] void usage(const char* program, int status) {
@@ -611,6 +732,7 @@ struct Options {
         << "  --second-rep A B     optional Gaussian lineage label in CSV\n"
         << "  --git-commit SHA     provenance string\n"
         << "  --output-prefix PATH writes .hist.csv, .moments.csv, .metadata.json\n"
+        << "  --projective-births  also writes sparse .births.csv with tau1,ell1,tau2\n"
         << "  --self-test          exact tiny and Smith regressions, then exit\n";
     std::exit(status);
 }
@@ -671,6 +793,7 @@ Options parse_options(int argc, char** argv) {
             const auto value = parse_rep(i, arg); options.second_a = value.first;
             options.second_b = value.second; options.second_rep_set = true;
         }
+        else if (arg == "--projective-births") options.projective_births = true;
         else if (arg == "--self-test") options.self_test = true;
         else if (arg == "--help") usage(argv[0], 0);
         else throw std::invalid_argument("unknown option: " + arg);
@@ -751,14 +874,15 @@ PairDesign custom_design(const Options& options) {
 }
 
 void run_design(const PairDesign& design, const Options& options,
-                std::ofstream& histogram, std::ofstream& moments) {
+                std::ofstream& histogram, std::ofstream& moments,
+                std::ofstream* births) {
     const Geometry first_geometry = make_geometry(design.first);
     const Geometry second_geometry = make_geometry(design.second);
     if (first_geometry.n != design.n || second_geometry.n != design.n) {
         throw std::logic_error("design N does not match period determinant");
     }
     const std::uint64_t per_batch = options.samples / options.batches;
-    std::vector<PairBatch> output;
+    std::vector<ProjectivePairBatch> output;
     output.reserve(options.batches);
     for (int batch = 0; batch < options.batches; ++batch) output.emplace_back(design.n);
 
@@ -767,7 +891,7 @@ void run_design(const PairDesign& design, const Options& options,
 #endif
 #pragma omp parallel for schedule(static)
     for (int batch = 0; batch < options.batches; ++batch) {
-        PairBatch local(design.n);
+        ProjectivePairBatch local(design.n);
         ThresholdEngine first_engine(first_geometry);
         ThresholdEngine second_engine(second_geometry);
         std::vector<int> permutation;
@@ -775,16 +899,24 @@ void run_design(const PairDesign& design, const Options& options,
                                     static_cast<std::uint64_t>(batch) * per_batch;
         for (std::uint64_t replica = begin; replica < begin + per_batch; ++replica) {
             counter_permutation(design.n, options.seed, replica, permutation);
-            const auto first = first_engine.ranks(permutation);
-            const auto second = second_engine.ranks(permutation);
-            local.first.add(first.first, first.second);
-            local.second.add(second.first, second.second);
+            if (options.projective_births) {
+                const auto first = first_engine.projective_birth(permutation);
+                const auto second = second_engine.projective_birth(permutation);
+                local.first.add(first, first_engine.reverse_kminus(permutation));
+                local.second.add(second, second_engine.reverse_kminus(permutation));
+            } else {
+                const auto first = first_engine.ranks(permutation);
+                const auto second = second_engine.ranks(permutation);
+                local.first.ranks.add(first.first, first.second);
+                local.second.ranks.add(second.first, second.second);
+            }
         }
         output[batch] = std::move(local);
     }
 
     auto write_orientation = [&](int batch, const char* orientation, int a, int b,
-                                 const RankCounts& counts) {
+                                 const ProjectiveCounts& projective) {
+        const RankCounts& counts = projective.ranks;
         for (int rank = 1; rank <= design.n; ++rank) {
             if (counts.minus[rank]) {
                 histogram << design.n << ',' << a << ',' << b << ',' << orientation << ','
@@ -801,6 +933,16 @@ void run_design(const PairDesign& design, const Options& options,
                 << ',' << counts.samples << ',' << counts.sum_minus << ',' << counts.sum_plus
                 << ',' << counts.sum_minus2 << ',' << counts.sum_plus2 << ','
                 << counts.sum_product << ',' << counts.sum_gap << ',' << counts.sum_gap2 << '\n';
+        if (births != nullptr) {
+            for (const auto& item : projective.births) {
+                const auto& [key, count] = item;
+                const auto& [tau1, tau2, ell_x, ell_y, direct] = key;
+                *births << design.n << ',' << a << ',' << b << ',' << orientation << ','
+                        << batch << ',' << counts.samples << ',' << tau1 << ',' << tau2 << ','
+                        << (direct ? "DIRECT_RANK2" : "LINE") << ',' << ell_x << ','
+                        << ell_y << ',' << count << '\n';
+            }
+        }
     };
     for (int batch = 0; batch < options.batches; ++batch) {
         write_orientation(batch, "first", design.a1, design.b1, output[batch].first);
@@ -824,15 +966,24 @@ int run(int argc, char** argv) {
     const std::filesystem::path histogram_path = options.output_prefix.string() + ".hist.csv";
     const std::filesystem::path moments_path = options.output_prefix.string() + ".moments.csv";
     const std::filesystem::path metadata_path = options.output_prefix.string() + ".metadata.json";
+    const std::filesystem::path births_path = options.output_prefix.string() + ".births.csv";
     std::ofstream histogram(histogram_path), moments(moments_path);
     if (!histogram || !moments) throw std::runtime_error("cannot open output files");
     histogram << "n,a,b,orientation,batch,samples,kind,k,count\n";
     moments << "n,a,b,orientation,batch,samples,sum_kminus,sum_kplus,sum_kminus2,"
                "sum_kplus2,sum_product,sum_gap,sum_gap2\n";
+    std::ofstream births;
+    if (options.projective_births) {
+        births.open(births_path);
+        if (!births) throw std::runtime_error("cannot open projective birth output");
+        births << "n,a,b,orientation,batch,samples,tau1,tau2,kind,ell_x,ell_y,count\n";
+    }
     const auto started = std::chrono::steady_clock::now();
-    run_design(design, options, histogram, moments);
+    run_design(design, options, histogram, moments,
+               options.projective_births ? &births : nullptr);
     histogram.close();
     moments.close();
+    if (births) births.close();
     const double elapsed = std::chrono::duration<double>(
         std::chrono::steady_clock::now() - started).count();
 
@@ -872,6 +1023,10 @@ int run(int argc, char** argv) {
              << "  \"K_minus\": \"first black rank after white matching cross is lost; N-r+1\",\n"
              << "  \"sparse_joint_histogram\": false,\n"
              << "  \"per_batch_joint_moments\": true,\n"
+             << "  \"projective_births\": " << (options.projective_births ? "true" : "false") << ",\n"
+             << "  \"projective_line\": \"primitive period-basis vector canonical up to sign\",\n"
+             << "  \"DIRECT_RANK2\": \"typed 0-to-2 birth with no projective line\",\n"
+             << "  \"integral_saturation\": \"iota=1 by c1a72e5; no varying channel recorded\",\n"
              << "  \"elapsed_seconds\": " << std::setprecision(17) << elapsed << ",\n"
              << "  \"designs\": [\n"
              << "    {\"id\": \"" << json_escape(design.id) << "\", \"N\": " << design.n
@@ -885,7 +1040,10 @@ int run(int argc, char** argv) {
              << ", \"second_smith_invariants\": [" << second.smith1 << ',' << second.smith2 << "]}\n"
              << "  ],\n"
              << "  \"histogram_csv\": \"" << json_escape(histogram_path.string()) << "\",\n"
-             << "  \"moments_csv\": \"" << json_escape(moments_path.string()) << "\"\n"
+             << "  \"moments_csv\": \"" << json_escape(moments_path.string()) << "\",\n"
+             << "  \"births_csv\": "
+             << (options.projective_births ? "\"" + json_escape(births_path.string()) + "\"" : "null")
+             << "\n"
              << "}\n";
     std::cout << "wrote " << histogram_path << "\nwrote " << moments_path
               << "\nwrote " << metadata_path << '\n';
