@@ -1,0 +1,45 @@
+{
+  "schema": "matching-one/p337-N65-charged-source-archive-reveal-manifest/v1",
+  "issues": [337, 334],
+  "input_archive_commit": "1714141",
+  "input_archive_sha256": "254ebd802adb476240c6ac5e367bb580025ca56fbd5c64ca3746b2d10cf74587",
+  "source_freeze_commit": "539b629",
+  "method": "fixed-p reweighting of existing tau1,ell,tau2 cells; no new simulation",
+  "frozen_sources": {
+    "q_A": "T_01-T_10",
+    "q_D": "T_12-T_11"
+  },
+  "sample": {
+    "N": 65,
+    "orientations": ["8+i", "7+4i"],
+    "samples_per_shape": 20000,
+    "batches": 20,
+    "shared_counter_stream": true
+  },
+  "minimal_vector": [
+    "W_A", "J_A_birth", "J_A_exit",
+    "W_D", "J_D_birth", "J_D_exit"
+  ],
+  "main_result": {
+    "charged_activation_resolved": true,
+    "A_orientation_quadratic_3df": 12.153148777336366,
+    "D_orientation_quadratic_3df": 1.5091860895963012,
+    "joint_orientation_quadratic_6df": 15.530114140378442,
+    "new_archive_fields_required": []
+  },
+  "gates": {
+    "continuity_max_abs": 4.052314039881821e-15,
+    "A_D_cross_max_abs": 0.0,
+    "shear_vector_max_abs": 4.163336342344337e-17,
+    "shear_response_max_abs": 4.163336342344337e-17
+  },
+  "artifacts": {
+    "script": "scripts/reveal_n65_charged_source_archive.py",
+    "certificate": "results/p337-n65-charged-source-reveal/latest.json",
+    "summary": "results/p337-n65-charged-source-reveal/latest.md",
+    "science_card": "results/p337-n65-charged-source-reveal/SCIENTIFIC_CARD.md",
+    "note": "notes/p337-n65-charged-source-archive-reveal.md",
+    "test": "tests/test_n65_charged_source_archive_reveal.py"
+  },
+  "claim_boundary": "existing 20k engineering-block charged reveal; no continuum scaling or independent shear claim"
+}
