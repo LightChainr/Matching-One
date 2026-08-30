@@ -1,0 +1,530 @@
+{
+  "claim_boundary": "The reverse comparison holds for globally typed, landing-separated events. Ordinary six arms do not determine torus homology. No arm exponent, universality transfer, or asymptotic figure-eight suppression is claimed.",
+  "finite_energy": {
+    "figure_eight_fixed_gate_lower_factor": "p^8*(1-p)^16",
+    "scale_dependence": "none; the surgery block has 24 sampled sites",
+    "theta_fixed_gate_lower_factor": "p^6*(1-p)^18",
+    "uniform_factor_on_p_in_eta_1_minus_eta": "eta^24"
+  },
+  "local_surgery_templates": {
+    "figure_eight": {
+      "bernoulli_weight": "p^8*(1-p)^16",
+      "block": "[-2,2]^2 minus the birth site",
+      "forced_closed": 16,
+      "forced_open": 8,
+      "forced_total": 24,
+      "gates": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          -3,
+          0
+        ],
+        [
+          0,
+          -3
+        ]
+      ],
+      "kind": "figure_eight",
+      "open_corridors": [
+        [
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            -2,
+            0
+          ],
+          [
+            -1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            -2
+          ],
+          [
+            0,
+            -1
+          ]
+        ]
+      ],
+      "uniform_finite_energy_bound": "eta^24 for p in [eta,1-eta]",
+      "vacant_separator_seeds": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            -1,
+            1
+          ],
+          [
+            -2,
+            1
+          ],
+          [
+            -2,
+            2
+          ]
+        ],
+        [
+          [
+            -1,
+            -1
+          ],
+          [
+            -2,
+            -1
+          ],
+          [
+            -2,
+            -2
+          ]
+        ],
+        [
+          [
+            1,
+            -1
+          ],
+          [
+            2,
+            -1
+          ],
+          [
+            2,
+            -2
+          ]
+        ]
+      ]
+    },
+    "theta": {
+      "bernoulli_weight": "p^6*(1-p)^18",
+      "block": "[-2,2]^2 minus the birth site",
+      "forced_closed": 18,
+      "forced_open": 6,
+      "forced_total": 24,
+      "gates": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          -3,
+          0
+        ]
+      ],
+      "kind": "theta",
+      "open_corridors": [
+        [
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            -2,
+            0
+          ],
+          [
+            -1,
+            0
+          ]
+        ]
+      ],
+      "uniform_finite_energy_bound": "eta^24 for p in [eta,1-eta]",
+      "vacant_separator_seeds": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            -1,
+            1
+          ],
+          [
+            -2,
+            1
+          ],
+          [
+            -2,
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            -1
+          ],
+          [
+            0,
+            -2
+          ]
+        ]
+      ]
+    }
+  },
+  "minimal_typed_fields": {
+    "figure_eight": [
+      "ambient_rank_zero",
+      "two_pair_occupied_component_partition",
+      "one_nonzero_deck_difference_per_pair_with_nonzero_mutual_determinant",
+      "fixed_cyclic_landing_word_with_four_matching_vacant_separators"
+    ],
+    "theta": [
+      "ambient_rank_zero",
+      "common_occupied_component_id_for_three_landings",
+      "two_relative_deck_address_vectors_with_nonzero_determinant",
+      "fixed_cyclic_landing_word_with_three_matching_vacant_separators"
+    ]
+  },
+  "ordinary_six_arm_counterexample": {
+    "after_adding_origin_components": 1,
+    "after_adding_origin_rank": 0,
+    "before_components": 3,
+    "before_rank": 0,
+    "open_arms": [
+      [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      [
+        [
+          -1,
+          0
+        ],
+        [
+          -2,
+          0
+        ],
+        [
+          -3,
+          0
+        ],
+        [
+          -4,
+          0
+        ]
+      ]
+    ],
+    "radius": 4,
+    "side": 13,
+    "typed_failure": "occupied landings have three component IDs and no deck-address determinant",
+    "vacant_matching_arms": [
+      [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      [
+        [
+          -1,
+          1
+        ],
+        [
+          -2,
+          2
+        ],
+        [
+          -3,
+          3
+        ],
+        [
+          -4,
+          4
+        ]
+      ],
+      [
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -3
+        ],
+        [
+          0,
+          -4
+        ]
+      ]
+    ]
+  },
+  "schema": "p337-typed-arm-gluing-v1",
+  "small_quotient_fixtures": {
+    "figure_eight": {
+      "N": 9,
+      "birth_site": 0,
+      "descriptor": {
+        "birth_representative": [
+          0,
+          0
+        ],
+        "birth_site": 0,
+        "created_rank": 2,
+        "groups": [
+          {
+            "address_multiplicities": [
+              1,
+              1
+            ],
+            "affine_rank": 1,
+            "component": 0,
+            "distinct_deck_addresses": 2,
+            "incidences": 2,
+            "items": [
+              {
+                "deck_address": [
+                  1,
+                  0
+                ],
+                "step": [
+                  1,
+                  0
+                ],
+                "vertex": 1
+              },
+              {
+                "deck_address": [
+                  -2,
+                  0
+                ],
+                "step": [
+                  -1,
+                  0
+                ],
+                "vertex": 2
+              }
+            ]
+          },
+          {
+            "address_multiplicities": [
+              1,
+              1
+            ],
+            "affine_rank": 1,
+            "component": 1,
+            "distinct_deck_addresses": 2,
+            "incidences": 2,
+            "items": [
+              {
+                "deck_address": [
+                  0,
+                  1
+                ],
+                "step": [
+                  0,
+                  1
+                ],
+                "vertex": 3
+              },
+              {
+                "deck_address": [
+                  0,
+                  -2
+                ],
+                "step": [
+                  0,
+                  -1
+                ],
+                "vertex": 4
+              }
+            ]
+          }
+        ],
+        "occupied_arm_lower_bound": 4,
+        "occupied_degree": 4,
+        "topology": "two_carrier_figure_eight"
+      },
+      "generator": [
+        3,
+        0
+      ],
+      "old_mask": 30
+    },
+    "theta": {
+      "N": 10,
+      "birth_site": 7,
+      "descriptor": {
+        "birth_representative": [
+          1,
+          -1
+        ],
+        "birth_site": 7,
+        "created_rank": 2,
+        "groups": [
+          {
+            "address_multiplicities": [
+              1,
+              1,
+              1
+            ],
+            "affine_rank": 2,
+            "component": 0,
+            "distinct_deck_addresses": 3,
+            "incidences": 3,
+            "items": [
+              {
+                "deck_address": [
+                  -3,
+                  0
+                ],
+                "step": [
+                  -1,
+                  0
+                ],
+                "vertex": 4
+              },
+              {
+                "deck_address": [
+                  0,
+                  1
+                ],
+                "step": [
+                  0,
+                  1
+                ],
+                "vertex": 1
+              },
+              {
+                "deck_address": [
+                  1,
+                  -2
+                ],
+                "step": [
+                  0,
+                  -1
+                ],
+                "vertex": 3
+              }
+            ]
+          }
+        ],
+        "occupied_arm_lower_bound": 3,
+        "occupied_degree": 3,
+        "topology": "one_carrier_theta"
+      },
+      "generator": [
+        3,
+        1
+      ],
+      "old_mask": 122
+    }
+  },
+  "status": "deterministic_gluing_with_exact_fixtures"
+}
