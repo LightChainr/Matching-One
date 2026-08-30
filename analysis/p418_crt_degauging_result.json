@@ -1,0 +1,31 @@
+{
+  "schema": "matching-one/p418-crt-degauging-result/v1",
+  "issues": [418, 406, 250],
+  "status": "archived_production_data_scored_once",
+  "branch": "analysis/p418-crt-degauging-20260830",
+  "freeze_commit": "5977ce3",
+  "new_monte_carlo": false,
+  "artifacts": {
+    "freeze_sha256": "5311027099d9d65f1d1e3d2a55b1aa85c560d936628dbd6b7cb9ea612628a066",
+    "scorer_sha256": "b63ebe4764bce7e94d7eef39c18977e5d708a7c68e427fbc4d2597529398ea46",
+    "score_sha256": "4da8b8056ece044bd727473e992079a763be7e538fea11971887458732e88f11"
+  },
+  "exact_gate": {
+    "CRT_section": "s_CRT(x)=405*s(x)",
+    "parent_pairs_checked_per_hand": 10201,
+    "section_projection_C4_or_fiber_failures": 0,
+    "mask_zeros": 0,
+    "P406_raw_replay_maximum_distance_error": 0.0,
+    "P406_raw_replay_maximum_p_error": 0.0
+  },
+  "channels": {
+    "plus_r1": {"raw_distance_squared": 70.87804908695776, "raw_p": 0.3147410358565737, "masked_distance_squared": 584.0220861795226, "masked_p": 0.00398406374501992, "increment": 513.1440370925649},
+    "plus_r2": {"raw_distance_squared": 75.6919514180294, "raw_p": 0.2151394422310757, "masked_distance_squared": 668.6463090971538, "masked_p": 0.00398406374501992, "increment": 592.9543576791244},
+    "minus_r1": {"raw_distance_squared": 76.76575099053947, "raw_p": 0.16334661354581673, "masked_distance_squared": 1135.9942850398108, "masked_p": 0.00398406374501992, "increment": 1059.2285340492713},
+    "minus_r2": {"raw_distance_squared": 68.06717419758105, "raw_p": 0.3784860557768924, "masked_distance_squared": 1153.1816711255865, "masked_p": 0.00398406374501992, "increment": 1085.1144969280053}
+  },
+  "decision": "mask_times_positive_fourier_cone_rejected_in_all_channels",
+  "mechanism_update": "The raw positive Fourier cone survives, but the exact CRT-section mask-times-positive cone fails in all archived channels. The known deterministic phase mask does not explain the raw endpoint complexity under the frozen section/stationarity/observable-transport contract.",
+  "identifiability": "Every masked design has rank 69 of 101. Bootstrap spectral masses and 101-residue prediction envelopes are stored, but because the forward model is rejected they are model-conditional diagnostics, not accepted predictions or physical state counts.",
+  "next_gate": "Audit one-anchor ensemble factorization and projective-leg root translation transport before attributing the residual to a physical state mechanism."
+}
