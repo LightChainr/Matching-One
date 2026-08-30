@@ -1,0 +1,255 @@
+{
+  "checks": [
+    {
+      "bell_dimension": 2,
+      "endpoint_rank": 1,
+      "first_radical_form_inertia": {
+        "negative": 0,
+        "positive": 1,
+        "zero": 0
+      },
+      "marked_points": 2,
+      "mobius_prediction": {
+        "negative": 0,
+        "positive": 1,
+        "zero": 0
+      },
+      "pivot_multiplicities": {
+        "2": {
+          "epsilon_coefficient": 1,
+          "multiplicity": 1
+        }
+      },
+      "prediction_exact": true,
+      "radical_dimension": 1
+    },
+    {
+      "bell_dimension": 5,
+      "endpoint_rank": 1,
+      "first_radical_form_inertia": {
+        "negative": 1,
+        "positive": 3,
+        "zero": 0
+      },
+      "marked_points": 3,
+      "mobius_prediction": {
+        "negative": 1,
+        "positive": 3,
+        "zero": 0
+      },
+      "pivot_multiplicities": {
+        "2": {
+          "epsilon_coefficient": 1,
+          "multiplicity": 3
+        },
+        "3": {
+          "epsilon_coefficient": -1,
+          "multiplicity": 1
+        }
+      },
+      "prediction_exact": true,
+      "radical_dimension": 4
+    },
+    {
+      "bell_dimension": 15,
+      "endpoint_rank": 1,
+      "first_radical_form_inertia": {
+        "negative": 6,
+        "positive": 8,
+        "zero": 0
+      },
+      "marked_points": 4,
+      "mobius_prediction": {
+        "negative": 6,
+        "positive": 8,
+        "zero": 0
+      },
+      "pivot_multiplicities": {
+        "2": {
+          "epsilon_coefficient": 1,
+          "multiplicity": 7
+        },
+        "3": {
+          "epsilon_coefficient": -1,
+          "multiplicity": 6
+        },
+        "4": {
+          "epsilon_coefficient": 2,
+          "multiplicity": 1
+        }
+      },
+      "prediction_exact": true,
+      "radical_dimension": 14
+    },
+    {
+      "bell_dimension": 52,
+      "endpoint_rank": 1,
+      "first_radical_form_inertia": {
+        "negative": 26,
+        "positive": 25,
+        "zero": 0
+      },
+      "marked_points": 5,
+      "mobius_prediction": {
+        "negative": 26,
+        "positive": 25,
+        "zero": 0
+      },
+      "pivot_multiplicities": {
+        "2": {
+          "epsilon_coefficient": 1,
+          "multiplicity": 15
+        },
+        "3": {
+          "epsilon_coefficient": -1,
+          "multiplicity": 25
+        },
+        "4": {
+          "epsilon_coefficient": 2,
+          "multiplicity": 10
+        },
+        "5": {
+          "epsilon_coefficient": -6,
+          "multiplicity": 1
+        }
+      },
+      "prediction_exact": true,
+      "radical_dimension": 51
+    }
+  ],
+  "exact_statement": "The Q=1 connectivity Gram module has one unit pivot and, for each k-block partition with k>=2, one epsilon pivot with leading coefficient (-1)^(k-2)(k-2)!.",
+  "interpretation_boundary": "This is a basis-invariant first-order pairing extension. It does not by itself identify a transfer-matrix Jordan block or LCFT field.",
+  "issue": 333,
+  "jordan_selector": {
+    "detach_join_positive_control": {
+      "boundary": "Detach plus join creates deterministic Jordan transients, but no defective deterministic element through four marks is self-adjoint for the first-jet Gram form. A physical Gram-compatible block therefore needs a weighted sum or a larger Q-dependent action, not one bare morphism word.",
+      "n2": {
+        "defective_deterministic_elements": 0,
+        "first_defective_height": null,
+        "first_defective_is_first_jet_gram_self_adjoint": false,
+        "first_defective_word": null,
+        "gram_self_adjoint_defective_elements": 0,
+        "marked_points": 2,
+        "semigroup_elements": 3
+      },
+      "n3": {
+        "defective_deterministic_elements": 18,
+        "first_defective_height": 2,
+        "first_defective_is_first_jet_gram_self_adjoint": false,
+        "first_defective_word": [
+          "D0",
+          "J01",
+          "D1"
+        ],
+        "gram_self_adjoint_defective_elements": 0,
+        "marked_points": 3,
+        "semigroup_elements": 42
+      },
+      "n4": {
+        "defective_deterministic_elements": 1026,
+        "first_defective_height": 2,
+        "first_defective_is_first_jet_gram_self_adjoint": false,
+        "first_defective_word": [
+          "D0",
+          "J01",
+          "D1"
+        ],
+        "gram_self_adjoint_defective_elements": 0,
+        "marked_points": 4,
+        "semigroup_elements": 1577
+      }
+    },
+    "join_only_obstruction": {
+      "all_commuting": true,
+      "all_first_jet_gram_self_adjoint": true,
+      "all_idempotent": true,
+      "consequence": "The join-only semilattice algebra is simultaneously diagonalizable in characteristic zero and cannot contain a nontrivial Jordan block.",
+      "generators": 6,
+      "marked_points": 4
+    },
+    "minimum_marked_points_for_indefinite_radical": 3,
+    "mobius_grade_corollary": "Because the epsilon-pivot sign alternates with block number, an isotropic bottom must mix opposite-sign Mobius grades. A pure fixed-k exactified connectivity direction cannot be a nontrivial Jordan-chain bottom.",
+    "necessary_condition": "For every Gram-compatible regular operator, the endpoint radical action is self-adjoint for the first-jet form. The bottom of any nontrivial Jordan chain must therefore be isotropic in that form.",
+    "proof_identity": "<v,v>_H=<v,(T-lambda)w>_H=<(T-lambda)v,w>_H=0",
+    "sharp_two_dimensional_oracle": {
+      "bottom_norm": "0",
+      "gram": [
+        [
+          "0",
+          "1"
+        ],
+        [
+          "1",
+          "0"
+        ]
+      ],
+      "gram_self_adjoint": true,
+      "jordan_eigenvalue": 2,
+      "operator": [
+        [
+          "2",
+          "1"
+        ],
+        [
+          "0",
+          "2"
+        ]
+      ]
+    },
+    "weighted_history_jordan_control": {
+      "chain": {
+        "K_bottom_zero": true,
+        "K_partner_equals_bottom": true,
+        "bottom": [
+          "1",
+          "-1",
+          "-1",
+          "0"
+        ],
+        "bottom_H_norm": "0",
+        "bottom_partner_H_pairing": "1",
+        "partner": [
+          "0",
+          "0",
+          "0",
+          "1"
+        ]
+      },
+      "claim_boundary": "K is a signed connected-history combination, not a positive stochastic transfer matrix or a continuum LCFT identification.",
+      "first_jet_gram_self_adjoint": true,
+      "formula": "K=D1+J01-D1*J01-J01*D1=(D1-J01)^2",
+      "formula_exact": true,
+      "matrix": [
+        [
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "nonzero": true,
+      "rank": 1,
+      "square_zero": true
+    }
+  },
+  "ring": "Q[epsilon]/(epsilon^2), Q=1+epsilon",
+  "schema_version": 1
+}
