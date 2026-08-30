@@ -1,0 +1,35 @@
+{
+  "schema": "matching-one/terminal-partition-canonical/v1",
+  "issue": 13,
+  "status": "encoding_primitive_only",
+  "scope": {
+    "terminal_counts": [3, 4],
+    "encoding": "restricted_growth_string",
+    "terminal_labels": "0..n-1",
+    "first_label": 0,
+    "next_label_rule": "a[i] <= 1 + max(a[0:i])"
+  },
+  "group_contract": {
+    "permutation_convention": "old_terminal_to_new_terminal",
+    "composition": "p_after_q[i] = p[q[i]]",
+    "validation": ["bijection", "identity", "inverse", "composition_closure"],
+    "canonical_representative": "lexicographic_minimum_rgs_over_explicit_group"
+  },
+  "reference_counts": {
+    "3": {
+      "bell_number": 5,
+      "full_symmetric_orbits": 3,
+      "orbit_representatives": [[0, 0, 0], [0, 0, 1], [0, 1, 2]]
+    },
+    "4": {
+      "bell_number": 15,
+      "full_symmetric_orbits": 5,
+      "orbit_representatives": [[0, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 1], [0, 0, 1, 2], [0, 1, 2, 3]]
+    }
+  },
+  "claim_boundary": {
+    "included": "unique partition encoding, explicit permutation-group validation, group action, and orbit canonicalization for three or four terminals",
+    "excluded": "gadget graphs, planarity, graph isomorphism, probability polynomials, enumeration checkpoints, and replacement-gadget conclusions",
+    "parent_issue": "remain open"
+  }
+}
