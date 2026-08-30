@@ -1,0 +1,76 @@
+{
+  "attempts": [
+    {
+      "coefficient_rank": 1,
+      "coefficients_low_to_high": null,
+      "equation_count": 4,
+      "order": 1,
+      "residuals": [],
+      "status": "inconsistent"
+    },
+    {
+      "coefficient_rank": 2,
+      "coefficients_low_to_high": [
+        "-1",
+        "2"
+      ],
+      "equation_count": 3,
+      "order": 2,
+      "residuals": [
+        "0",
+        "0",
+        "0"
+      ],
+      "status": "supported_unique"
+    }
+  ],
+  "characteristic_polynomial_coefficients_low_to_high": [
+    "1",
+    "-2",
+    "1"
+  ],
+  "claim_boundary": {
+    "excluded": "infinite continuation, flat extension, diagonalizability by itself, noisy recurrence estimation, or physical transfer spectrum",
+    "included": "the first unique constant-coefficient recurrence supported by every declared finite-sequence equation through order two",
+    "parent_issue": "remain open"
+  },
+  "claim_level": "exact",
+  "issue": 370,
+  "maximum_order": 2,
+  "quadratic_discriminant": "0",
+  "schema": "matching-one/exact-finite-recurrence-certificate/v1",
+  "selected_recurrence": {
+    "coefficient_rank": 2,
+    "coefficients_low_to_high": [
+      "-1",
+      "2"
+    ],
+    "equation_count": 3,
+    "order": 2,
+    "residuals": [
+      "0",
+      "0",
+      "0"
+    ],
+    "status": "supported_unique"
+  },
+  "sequence": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5"
+  ],
+  "source": {
+    "dependency_group": "synthetic-exact-m2d-m2j",
+    "path": "results/model-certificates/synthetic/m2d-vs-m2j/latest.json",
+    "sha256": "edc057047975023a971b2d1c7ff5064bb701439993fad4bc557bcf5a9e81ef09"
+  },
+  "summary": {
+    "first_uniquely_supported_order": 2,
+    "lower_orders_rejected": [
+      1
+    ],
+    "status": "exact_finite_recurrence_verified"
+  }
+}
