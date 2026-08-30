@@ -7,7 +7,6 @@
     "scripts/score_norm4_thermal_jet.py": "scores ordered ranks 2 through 6 thermal-jet coordinates across the same norm-4 lineages without typed mode, normalization, cocycle, or shared-evidence semantics",
     "scripts/score_norm5_thermal_jet.py": "scores intrinsic-center ranks 2 through 6 thermal jets, canonical widths, lineage width collapse, and q2/Jordan cocycles without typed mode, normalization, lineage, covariance-group, or shared-evidence semantics",
     "scripts/score_p159_pell_hex_filter.py": "scores primitive rank-1 homology line probabilities through transported C/Q/S character coordinates across two Pell designs with implicit basis, phase, normalization, and reused-evidence semantics",
-    "scripts/score_p231_vacuum_kdv_sector.py": "scores ordered C/Q/S sector coordinates across two designs against a per-unit-g4 theory vector without typed coordinate or normalization descriptors",
     "scripts/score_p49_fullcurve_doubling.py": "scores matching tails, thermal even/odd contrasts, signed lineage root gaps, and normalized P4 projectors across doubled sizes without typed quantity families",
     "scripts/score_p50_fullcurve_n290.py": "scores thermal-even DeltaM, slope, signed root-gap, and four P4 quantities across independent N145/N290 lineages using implicit feature, order, sign, and stream semantics",
     "scripts/score_prequential_evidence.py": "validates scored blocks with free-form channel.source/channel.target strings and accepts any truthy exact_map instead of applying the registered descriptor map",
@@ -19,12 +18,12 @@
   ],
   "corpus_glob": "scripts/*score*.py",
   "counts": {
-    "channel_bearing_migration_required": 12,
-    "covered_frozen_kernel": 18,
+    "channel_bearing_migration_required": 11,
+    "covered_frozen_kernel": 19,
     "descriptor_not_applicable_generic_utility": 1,
-    "direct_typed_entrypoint": 19,
+    "direct_typed_entrypoint": 20,
     "outside_registered_typed_path": 0,
-    "total": 50
+    "total": 51
   },
   "descriptor_not_applicable_generic_utilities": {
     "scripts/kappa3_half_score.py": "generic Bernoulli score-polynomial and aggregation helper; intentionally accepts an opaque caller-supplied observable D(C) and defines no topology observable"
@@ -183,7 +182,12 @@
     {
       "git_blob_sha": "7f4166167d4a37a93912d4816d12c1447923ff59",
       "path": "scripts/score_p231_vacuum_kdv_sector.py",
-      "status": "channel_bearing_migration_required"
+      "status": "covered_frozen_kernel"
+    },
+    {
+      "path": "scripts/score_p231_vacuum_kdv_sector_typed.py",
+      "git_blob_sha": "90998d2846873ccd6b0a4154b84bfc5f54da0e99",
+      "status": "direct_typed_entrypoint"
     },
     {
       "git_blob_sha": "6302d49471a9e78f311d8f492e7845c2b3f5ed7e",
@@ -300,6 +304,7 @@
     "scripts/score_p50_sprime_n290_typed.py": "scripts/score_p50_sprime_n290.py",
     "scripts/score_rank_gap_boundary_targets_typed.py": "scripts/score_rank_gap_boundary_targets.py",
     "scripts/score_threshold_rank_root_doubling_typed.py": "scripts/score_threshold_rank_root_doubling.py",
-    "scripts/score_v14_fixedp_scalar_projector_typed.py": "scripts/score_v14_fixedp_scalar_projector.py"
+    "scripts/score_v14_fixedp_scalar_projector_typed.py": "scripts/score_v14_fixedp_scalar_projector.py",
+    "scripts/score_p231_vacuum_kdv_sector_typed.py": "scripts/score_p231_vacuum_kdv_sector.py"
   }
 }
