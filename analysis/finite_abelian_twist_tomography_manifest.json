@@ -1,0 +1,20 @@
+{
+  "schema": "matching-one/finite-abelian-twist-tomography-manifest/v1",
+  "issues": [269, 334, 337],
+  "inputs": {
+    "integral_saturation_theorem": "c1a72e5",
+    "coefficient_groups": ["Z/2", "Z/3", "Z/4", "Z/2 x Z/2", "Z/2 x Z/3", "(Z/2)^3"],
+    "prime_projective_audits": [2, 3, 5, 7]
+  },
+  "outputs": {
+    "json": "results/finite-abelian-twist-tomography/latest.json",
+    "markdown": "results/finite-abelian-twist-tomography/latest.md"
+  },
+  "commands": [
+    "python3 scripts/finite_abelian_twist_tomography.py --format json --output results/finite-abelian-twist-tomography/latest.json",
+    "python3 scripts/finite_abelian_twist_tomography.py --format markdown --output results/finite-abelian-twist-tomography/latest.md",
+    "python3 -m unittest discover -s tests -p test_finite_abelian_twist_tomography.py"
+  ],
+  "primary_result": "S_n=n^2 P0+n P1+P2; S_2 and S_3 invert the complete unmarked rank source; nonzero F_q twists resolve primitive rank-one lines modulo q.",
+  "claim_boundary": "Exact lattice/cohomology transform only; no local-CFT or affine-TL identification is asserted."
+}
