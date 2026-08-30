@@ -1,0 +1,53 @@
+{
+  "schema": "matching-one/p250-adaptive-spatial-joint-preregistration/v1",
+  "status": "frozen_before_n505_pilot",
+  "question": "Does the frozen adaptive Rminus response on the two N505 child geometries contain a spatial component not exhausted by its defined-rate profile, and does it escape an ordinary positive Fourier spatial cone adversary?",
+  "geometry": {
+    "parent": "Gaussian quotient (10+i), order 101",
+    "children": {
+      "plus": [[19, -12], [12, 19]],
+      "minus": [[21, 8], [-8, 21]]
+    },
+    "common_field": "one Bernoulli field on parent_site x fiber, transported to both children",
+    "spatial_coordinate": "j(a,b)=a-10b mod 101",
+    "sampling": "one uniform nonzero residue per replica; residue 0 excluded before reveal to avoid marked-location collision"
+  },
+  "adaptive_rule": {
+    "source": "analysis/p250_adaptive_order_pilot_preregistration.json",
+    "source_sha256": "dbca22e7e1cce3a70eb3b86b8ba0a08a728989cc18e4732b879d26b4ee3bbf13",
+    "support": "unique nearest transferable vertex from the state-dependent D or J source component toward the landing point",
+    "responses": ["L_D", "L_J", "L_DJ", "L_JD"],
+    "primary": "Rminus=L_DJ-L_JD",
+    "typed_controls": ["defined", "support", "Rminus", "Rplus"]
+  },
+  "run": {
+    "samples": 20000,
+    "batches": 20,
+    "workers": 16,
+    "seed": 25050510120263000,
+    "replica_offset": 25050500000,
+    "host": "Huawei-CodeBuddy-HZsCM6",
+    "runner": "scripts/p250_adaptive_spatial_joint_mc.py",
+    "runner_sha256": "6ad792da7d86e5798dd44005bd42715ff04083dc72dd2a4d2f824295f5d641da",
+    "scorer": "scripts/score_p250_adaptive_spatial_joint.py",
+    "scorer_sha256": "0a206047191eecd9b18e06d029d422bf565b60cd3e11f984adf27d9f2ad5e1c0"
+  },
+  "source_frozen_definition_model": {
+    "source": "analysis/p250_adaptive_order_pilot_result.json",
+    "source_sha256": "034e2b05602108c97493225b86a9261b3cec915f8ffa9280c6258317c34c40f7",
+    "alpha": 1.7873118647707438,
+    "alpha_se": 0.010073378702833143,
+    "model": "E[Rminus(j)]=alpha*Pr(defined(j)) jointly over plus/minus and j<->-j"
+  },
+  "frozen_tests": {
+    "primary": "joint covariance-whitened zero test of Rminus-alpha*defined at p<0.01",
+    "adversary": "joint covariance-whitened nonnegative cosine cone with separate plus/minus spectra and 500 Gaussian bootstrap replicates",
+    "periodogram": "full batch-covariant cosine coefficients for Rminus and defined profiles",
+    "stop": "stop after 20k unless the primary definition-only model is rejected; do not enlarge based on the cone alone"
+  },
+  "ordinary_cone_provenance": {
+    "source": "analysis/p406_spatial_fourier_cone_result.json",
+    "source_sha256": "79745b699e9340cccb4cf9cd694a77283efcd34ef299dbb543786af9ea66a4ea"
+  },
+  "claim_boundary": "The positive Fourier cone is an ordinary spatial-state adversary, not an exact constraint on adaptive intervention response. Rejection does not identify a field, state count, or path memory."
+}
