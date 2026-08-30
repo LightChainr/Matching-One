@@ -1,0 +1,53 @@
+{
+  "schema": "matching-one/observable-semantic-gate/v1",
+  "status": "semantic_gate_added_after_frozen_issue212_synthesis",
+  "frozen_kernel": "scripts/score_matching_odd_synthesis.py",
+  "frozen_kernel_git_blob": "7a448080609fed552150e26f73741b22719f9d8e",
+  "blocks": [
+    {
+      "id": "issue43_n185_n265_deltaM",
+      "raw_data_group": "issue43_n185_n265_500m_histograms",
+      "h4_score": "H4_x21_over_4",
+      "source_descriptor": {
+        "channel": "either",
+        "combination": "odd",
+        "coordinate": "p",
+        "orientation_order": "first_minus_second",
+        "normalization": "raw",
+        "quantity": "orientation_contrast"
+      },
+      "target_descriptor": {
+        "channel": "cross",
+        "combination": "odd",
+        "coordinate": "p",
+        "orientation_order": "first_minus_second",
+        "normalization": "raw",
+        "quantity": "orientation_contrast"
+      },
+      "exact_registered_map": {"scale": 1.0, "offset": 0.0}
+    },
+    {
+      "id": "issue57_norm5",
+      "raw_data_group": "issue57_norm5_production",
+      "h4_score": "H4_norm5",
+      "source_descriptor": {
+        "channel": "either",
+        "combination": "odd",
+        "coordinate": "p",
+        "orientation_order": "first_minus_second",
+        "normalization": "raw",
+        "quantity": "orientation_contrast"
+      },
+      "target_descriptor": {
+        "channel": "cross",
+        "combination": "odd",
+        "coordinate": "p",
+        "orientation_order": "first_minus_second",
+        "normalization": "raw",
+        "quantity": "orientation_contrast"
+      },
+      "exact_registered_map": {"scale": 1.0, "offset": 0.0}
+    }
+  ],
+  "evidence_boundary": "The synthesis reads two already-primary blocks with distinct frozen raw-data groups; it is derived post-reveal output and cannot be appended as a new primary ledger row."
+}
