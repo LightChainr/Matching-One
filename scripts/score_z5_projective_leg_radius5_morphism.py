@@ -80,10 +80,13 @@ def extension_matrix(
         [old_pair(old_values, (u[0] + v[0], u[1] + v[1]), (hand, charge)) for v in basis]
         for charge in (1, 2) for u in basis
     ], dtype=complex)
-    new_rows = np.asarray([
-        [moment(old_values, new_values, (u[0] + v[0], u[1] + v[1]), (hand, charge)) for v in basis]
-        for charge in (1, 2) for u in rows3
-    ], dtype=complex)
+    if rows3:
+        new_rows = np.asarray([
+            [moment(old_values, new_values, (u[0] + v[0], u[1] + v[1]), (hand, charge)) for v in basis]
+            for charge in (1, 2) for u in rows3
+        ], dtype=complex)
+    else:
+        new_rows = np.empty((0, len(basis)), dtype=complex)
     return np.vstack((old_rows, new_rows))
 
 
