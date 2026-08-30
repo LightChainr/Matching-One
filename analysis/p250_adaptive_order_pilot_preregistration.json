@@ -1,0 +1,61 @@
+{
+  "schema": "matching-one/p250-adaptive-order-medium-preregistration/v1",
+  "status": "frozen_before_medium_run",
+  "issues": [250, 333],
+  "source_exact_witness": "6fbbe5e",
+  "geometries": {
+    "N325": {
+      "gaussian_period": [17, 6],
+      "period_matrix": [[17, -6], [6, 17]],
+      "samples": 20000,
+      "batches": 40,
+      "seed": 25033332520260830,
+      "replica_interval": [10250000000, 10250020000]
+    },
+    "N425": {
+      "gaussian_period": [16, 13],
+      "period_matrix": [[16, -13], [13, 16]],
+      "samples": 20000,
+      "batches": 40,
+      "seed": 25033342520260830,
+      "replica_interval": [10260000000, 10260020000]
+    }
+  },
+  "p": 0.59274605079,
+  "marked_stencil": {
+    "base_offsets": {
+      "anchor_D": [0, 0],
+      "anchor_J": [1, 1],
+      "landing": [0, 1]
+    },
+    "translation": "counter-hash uniform quotient vertex",
+    "orientation": "replica modulo 8 over four rotations and their reflected partners"
+  },
+  "partial_rule": {
+    "anchors": "protected occupied D anchor and vacant J anchor",
+    "source": "ambient-rank-positive typed component",
+    "candidate": "non-anchor site entering the opposite-colour anchor component after flip",
+    "selector": "unique minimum nearest-image squared Euclidean distance to landing",
+    "ties": "undefined"
+  },
+  "primary_estimand": "unconditional mean Rminus with undefined rectangles scored zero",
+  "secondary_estimands": [
+    "defined probability",
+    "Rminus conditional on a defined rectangle",
+    "unconditional and conditional Rplus",
+    "nonzero Rminus probability conditional on definition"
+  ],
+  "exact_controls": [
+    "paired complement plus NN/matching-hand involution: equal Rminus and opposite Rplus",
+    "paired support-site exchange under the typed involution",
+    "fixed D0/J0 support order null: identical DJ and JD final fields"
+  ],
+  "projection_leakage_controls": [
+    "rotation q1 real and imaginary modes",
+    "rotation q2 mode",
+    "reflection-odd mode",
+    "the same modes for rectangle availability"
+  ],
+  "stopping_rule": "run 20000 per geometry; a 5000 smoke may be retained only if wall cost forces truncation",
+  "claim_boundary": "finite intervention sensitivity only; no CFT, universality, Jordan, or exponent interpretation"
+}
