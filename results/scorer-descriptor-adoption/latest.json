@@ -1,7 +1,6 @@
 {
   "boundary": "outside_registered_typed_path is an inventory status, not proof that a scorer is channel-bearing or semantically invalid",
   "channel_bearing_migration_required": {
-    "scripts/score_angular_root_amplitude.py": "reconstructs rank-2 cross K_minus/K_plus observables, forms signed orientation root gaps, divides by signed DeltaCos4, and scores the angular-normalized A_p across sizes",
     "scripts/score_issue43_secondary.py": "orders and scores reused DeltaM/DeltaS, x17, H4/H12, and optional P48 S-prime stages without typed stage, quantity, model-map, or evidence-reuse semantics",
     "scripts/score_norm4_production.py": "scores ordered U, P4_D, and root-gap coordinates across two norm-4 lineages with implicit metric, size, transform, model-order, and shared-evidence semantics",
     "scripts/score_norm4_thermal_jet.py": "scores ordered ranks 2 through 6 thermal-jet coordinates across the same norm-4 lineages without typed mode, normalization, cocycle, or shared-evidence semantics",
@@ -19,12 +18,12 @@
   ],
   "corpus_glob": "scripts/*score*.py",
   "counts": {
-    "channel_bearing_migration_required": 12,
-    "covered_frozen_kernel": 18,
+    "channel_bearing_migration_required": 11,
+    "covered_frozen_kernel": 19,
     "descriptor_not_applicable_generic_utility": 1,
-    "direct_typed_entrypoint": 19,
+    "direct_typed_entrypoint": 20,
     "outside_registered_typed_path": 0,
-    "total": 50
+    "total": 51
   },
   "descriptor_not_applicable_generic_utilities": {
     "scripts/kappa3_half_score.py": "generic Bernoulli score-polynomial and aggregation helper; intentionally accepts an opaque caller-supplied observable D(C) and defines no topology observable"
@@ -38,7 +37,12 @@
     {
       "git_blob_sha": "a92e575de3a33621d4196ca45c22abdf83bd4111",
       "path": "scripts/score_angular_root_amplitude.py",
-      "status": "channel_bearing_migration_required"
+      "status": "covered_frozen_kernel"
+    },
+    {
+      "git_blob_sha": "164b99421fa4d29457c0ee2ea3b7eee5df64a4b2",
+      "path": "scripts/score_angular_root_amplitude_typed.py",
+      "status": "direct_typed_entrypoint"
     },
     {
       "git_blob_sha": "dcb0093cc1bd9b7379d24d92d7be094fea0e62cb",
@@ -283,6 +287,7 @@
   ],
   "schema": "scorer descriptor adoption inventory v1",
   "typed_wrapper_kernels": {
+    "scripts/score_angular_root_amplitude_typed.py": "scripts/score_angular_root_amplitude.py",
     "scripts/score_axis_pair_annihilator_stable_typed.py": "scripts/score_axis_pair_annihilator_stable.py",
     "scripts/score_axis_pair_annihilator_typed.py": "scripts/score_axis_pair_annihilator.py",
     "scripts/score_c4_self_matching_n26_typed.py": "scripts/score_c4_self_matching_n26.py",

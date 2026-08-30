@@ -1,13 +1,13 @@
 # Scorer descriptor-adoption inventory
 
-In this checked snapshot, the exact `scripts/*score*.py` corpus contains 50
-files. Python-AST inspection finds nineteen
+In this checked snapshot, the exact `scripts/*score*.py` corpus contains 51
+files. Python-AST inspection finds twenty
 direct typed entrypoints importing both `ObservableDescriptor` and
-`map_observable` from `wrapping_channels`. Eighteen frozen kernels are covered by
+`map_observable` from `wrapping_channels`. Nineteen frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Twelve paths are confirmed channel-bearing and
-require typed migrations: `score_angular_root_amplitude.py`,
+a descriptor is not applicable. Eleven paths are confirmed channel-bearing and
+require typed migrations:
 `score_issue43_secondary.py`,
 `score_norm4_production.py`,
 `score_norm4_thermal_jet.py`, `score_norm5_thermal_jet.py`,
@@ -37,7 +37,7 @@ unchanged.
 but no current scorer has that status. Static membership alone would not prove
 a semantic bug, data-provenance failure, or need for migration; any future
 corpus addition must still be reviewed before modification. Issue #146 remains
-open because inventory classification is not the same as implementing the 12
+open because inventory classification is not the same as implementing the 11
 required typed migrations.
 
 `score_axis_pair_annihilator.py` and its stable-reader entrypoint are now
@@ -55,12 +55,15 @@ likelihood-score polynomials at `p=1/2` and aggregates an opaque caller-supplied
 topology observable. Geometry-specific callers still must type their own
 `D(C)` before comparison.
 
-`score_angular_root_amplitude.py` is not eligible for the generic-utility
-exception. Its current blob reconstructs rank-2 cross `K_minus/K_plus`
-observables, forms signed orientation differences and root gaps, normalizes by
-signed `DeltaCos4`, and scores `A_p` across sizes. A later migration must decide
-explicitly whether the descriptor schema needs a root-location quantity; this
-inventory result does not retrofit or reinterpret the completed P45 score.
+`score_angular_root_amplitude.py` is now a covered frozen kernel. Its typed
+entrypoint applies the registered raw-to-angular-normalized map separately for
+the signed N=65 and N=85 orientation designs before replaying the scorer. The
+gate freezes first-minus-second order, signed `DeltaCos4`, the implicit-root
+response, the additional `-N^2` transform, aligned common-stream batches, full
+cross-size covariance, and the frozen prediction with zero target refits. This
+types the topology contrast without reinterpreting root location or finite-size
+normalization as a new exact topology identity; every completed P45 number is
+unchanged.
 
 `score_prequential_evidence.py` is also migration-required. Its scored-block
 gate currently compares free-form `channel.source` and `channel.target` strings
