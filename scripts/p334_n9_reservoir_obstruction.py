@@ -35,6 +35,22 @@ SCHEMA = "p334-n9-reservoir-obstruction-v1"
 FAILURE_MOTIFS = {"D": 216, "M": 432, "Y": 0, "F": 72}
 
 
+def candidate_rows() -> list[tuple[int, tuple]]:
+    selected = [
+        (index, row)
+        for index, row in enumerate(rows_for_order(9))
+        if row[3] == "matching" and row[6] == 4 and len(row[7]["Y"]) == 0
+    ]
+    if [index for index, _row in selected] != [1, 3, 6, 9, 15, 24]:
+        raise AssertionError("the frozen N9 matching/layer4/Y=0 rows changed")
+    if any(
+        {key: len(row[7][key]) for key in "DMYF"} != FAILURE_MOTIFS
+        for _index, row in selected
+    ):
+        raise AssertionError("the frozen N9 candidate motif descriptor changed")
+    return selected
+
+
 def strict_descriptor(row) -> dict[str, Any]:
     n, matrix, _geometry, carrier, _marks, _line, lower_layer, faces = row
     payload = descriptor(n, matrix, carrier, (0, 0), lower_layer, faces)
@@ -208,10 +224,106 @@ def coordinate_swap_isomorphism(first_row, second_row) -> dict[str, Any]:
     }
 
 
+DIHEDRAL_MATRICES = (
+    ((1, 0), (0, 1)),
+    ((0, -1), (1, 0)),
+    ((-1, 0), (0, -1)),
+    ((0, 1), (-1, 0)),
+    ((-1, 0), (0, 1)),
+    ((1, 0), (0, -1)),
+    ((0, 1), (1, 0)),
+    ((0, -1), (-1, 0)),
+)
+
+
+def _apply_matrix(matrix, coordinate):
+    x, y = coordinate
+    return (
+        matrix[0][0] * x + matrix[0][1] * y,
+        matrix[1][0] * x + matrix[1][1] * y,
+    )
+
+
+def d4_isomorphism(first_index: int, first_row, second_index: int, second_row) -> dict[str, Any]:
+    n, _matrix, geometry, carrier, _marks, first_line, layer, first_faces = first_row
+    n2, _matrix2, geometry2, carrier2, _marks2, second_line, layer2, second_faces = second_row
+    if (n, carrier, layer) != (n2, carrier2, layer2):
+        raise AssertionError("candidate descriptors differ")
+    second_translations = set(translation_permutations(geometry2))
+    for coordinate_matrix in DIHEDRAL_MATRICES:
+        permutation = tuple(
+            geometry2.vertex(_apply_matrix(coordinate_matrix, coordinate))
+            for coordinate in geometry.coordinates
+        )
+        if len(set(permutation)) != n:
+            continue
+        face_checks = {
+            motif: {_map_face(face, permutation) for face in first_faces[motif]}
+            == set(second_faces[motif])
+            for motif in "DMYF"
+        }
+        if not all(face_checks.values()):
+            continue
+        inverse = [0] * n
+        for source, target in enumerate(permutation):
+            inverse[target] = source
+        conjugates = {
+            tuple(permutation[translation[inverse[site]]] for site in range(n))
+            for translation in translation_permutations(geometry)
+        }
+        if conjugates != second_translations:
+            continue
+        return {
+            "row_map": [first_index, second_index],
+            "line_map": [list(first_line), list(second_line)],
+            "coordinate_matrix": [list(row) for row in coordinate_matrix],
+            "site_permutation": list(permutation),
+            "face_family_bijections": face_checks,
+            "translation_groups_conjugated": True,
+            "replica_map": "identity",
+        }
+    raise AssertionError(f"no D4 face/translation isomorphism for rows {first_index}/{second_index}")
+
+
+def isomorphism_classification(selected: list[tuple[int, tuple]]) -> dict[str, Any]:
+    by_index = dict(selected)
+    smith_3_3 = [1, 3]
+    smith_1_9 = [6, 9, 15, 24]
+    return {
+        "equivariant_classes": [
+            {
+                "id": "Smith-3-3",
+                "rows": smith_3_3,
+                "translation_group": "Z3 x Z3",
+                "group_exponent": 3,
+                "explicit_D4_maps": [d4_isomorphism(1, by_index[1], 3, by_index[3])],
+            },
+            {
+                "id": "Smith-1-9",
+                "rows": smith_1_9,
+                "translation_group": "Z9",
+                "group_exponent": 9,
+                "explicit_D4_maps": [
+                    d4_isomorphism(6, by_index[6], index, by_index[index])
+                    for index in smith_1_9[1:]
+                ],
+            },
+        ],
+        "between_class_obstruction": (
+            "The translation groups have different Smith invariants and exponents (3 versus 9), so no "
+            "translation-equivariant isomorphism exists between the two classes. Their Hall signatures agree, "
+            "but an unlabelled incidence-graph isomorphism is neither needed nor asserted."
+        ),
+        "all_rows_share_flow_signature": True,
+    }
+
+
 def build_result() -> dict[str, Any]:
-    selected = selected_rows()
+    selected = candidate_rows()
     certificates = [row_certificate(index, row) for index, row in selected]
-    isomorphism = coordinate_swap_isomorphism(selected[0][1], selected[1][1])
+    strict = selected_rows()
+    isomorphism = coordinate_swap_isomorphism(strict[0][1], strict[1][1])
+    classification = isomorphism_classification(selected)
     first = certificates[0]
     old = first["existing_one_carrier_one_mark"]["channel_flows"]["combined"]
     repair = first["two_mark_fixed_base_repair"]
@@ -221,10 +333,25 @@ def build_result() -> dict[str, Any]:
         raise AssertionError("the minimum cut must contain every coarse class")
     if repair["new_MM_orbits_beyond_old_image"] != 15984 or repair["class_degree"] != 216:
         raise AssertionError("frozen two-mark reservoir count changed")
+    signatures = {
+        (
+            row["existing_one_carrier_one_mark"]["channel_flows"]["combined"]["total_demand"],
+            row["existing_one_carrier_one_mark"]["channel_flows"]["combined"]["maximum_flow"],
+            row["existing_one_carrier_one_mark"]["channel_flows"]["combined"]["reachable_targets"],
+            row["existing_one_carrier_one_mark"]["channel_flows"]["combined"]["Hall_deficiency"],
+            row["existing_one_carrier_one_mark"]["channel_flows"]["combined"]["minimum_cut_certificate"]["class_count"],
+            row["two_mark_fixed_base_repair"]["maximum_flow"],
+            row["two_mark_fixed_base_repair"]["reachable_MM_orbits"],
+            row["two_mark_fixed_base_repair"]["new_MM_orbits_beyond_old_image"],
+        )
+        for row in certificates
+    }
+    if signatures != {(6912, 4752, 4752, 2160, 768, 6912, 20736, 15984)}:
+        raise AssertionError("N9 candidate rows lost their common exact flow signature")
     return {
         "schema": SCHEMA,
         "parent_commit": "e2b489493e3ea064f38156b64ea7bf3f4ed4cde3",
-        "scope": "only the strict N9 row1/row3 reservoir obstruction; no larger-HNF scan",
+        "scope": "only all N9 matching/layer4/Y=0 rows; the remaining 22 rows are not searched",
         "obstruction": {
             "carrier": "matching",
             "lower_layer": 4,
@@ -263,13 +390,15 @@ def build_result() -> dict[str, Any]:
             ),
         },
         "same_descriptor_isomorphism": isomorphism,
+        "all_candidate_classification": classification,
+        "candidate_row_indices": [index for index, _row in selected],
         "rows": certificates,
         "scientific_card": {
             "question": "Why does the corrected combined reservoir first fail at N9, and what is the smallest local repair?",
             "answer": "Y=0 removes synergy and the one-mark MM image has a 5/16 all-site Hall deficit.",
             "repair": "A second output-mark release, with bases fixed and no decorated capacity, reaches every MM orbit and saturates.",
             "new_capacity": "15984 previously unreachable MM orbits (143856 raw tokens), all already present in M^2.",
-            "boundary": "Exact for the coordinate-swap-isomorphic N9 rows 1 and 3; not an arbitrary-HNF theorem.",
+            "boundary": "Exact for all six N9 matching/layer4/Y=0 rows; not an arbitrary-HNF theorem.",
         },
     }
 
@@ -283,14 +412,16 @@ def render_markdown(result: dict[str, Any]) -> str:
         "## Exact obstruction",
         "",
         (
-            "Rows `1` and `3` have `(D,M,Y,F)=(216,432,0,72)` in the matching carrier at layer 4. "
+            "All six deterministic matching/layer-4/Y=0 rows have `(D,M,Y,F)=(216,432,0,72)`. "
+            "Rows `1` and `3` are the Smith-(3,3) representatives. "
             "Because `Y=0`, the `YN` target channel is empty. The existing one-carrier plus one-output-mark "
             f"reservoir has coarse demand `{obstruction['source_demand']}`, reaches `{obstruction['reachable_targets']}` "
             f"ordinary `MM` targets, and leaves deficiency `{obstruction['deficiency']}={obstruction['deficiency_fraction']}`."
         ),
         "",
         (
-            "The residual minimum cut contains all 768 coarse classes (192 from each source replica). "
+            "On every candidate row the residual minimum cut contains all 768 coarse classes "
+            "(192 from each source replica). "
             "This is an all-site image-capacity obstruction, not a small exceptional family."
         ),
         "",
@@ -325,6 +456,28 @@ def render_markdown(result: dict[str, Any]) -> str:
             "to itself. Hence both old and repaired compatibility graphs are exactly isomorphic."
         ),
         "",
+        "## Complete N9 Y=0 candidate class",
+        "",
+        "| row | HNF | Smith | line | old flow | deficit | two-mark flow | MM orbits |",
+        "|---:|---|---|---|---:|---:|---:|---:|",
+    ]
+    for row in result["rows"]:
+        old = row["existing_one_carrier_one_mark"]["channel_flows"]["combined"]
+        fixed = row["two_mark_fixed_base_repair"]
+        lines.append(
+            f"| {row['row_index']} | `{row['matrix']}` | `{row['Smith_invariants']}` | `{row['line']}` | "
+            f"{old['maximum_flow']}/{old['total_demand']} | {old['Hall_deficiency']} | "
+            f"{fixed['maximum_flow']}/{fixed['total_demand']} | {fixed['reachable_MM_orbits']} |"
+        )
+    lines.extend([
+        "",
+        (
+            "There are two translation-equivariant classes. Rows 1/3 have group `Z3 x Z3` and are D4-isomorphic; "
+            "rows 6/9/15/24 have group `Z9` and explicit D4 maps from row 6. The classes cannot be translation-"
+            "equivariantly isomorphic because their group exponents are 3 and 9. Nevertheless all six have the "
+            "same exact old and repaired flow signature."
+        ),
+        "",
         "## Scientific card",
         "",
         f"- **Question:** {result['scientific_card']['question']}",
@@ -333,7 +486,7 @@ def render_markdown(result: dict[str, Any]) -> str:
         f"- **New capacity:** {result['scientific_card']['new_capacity']}",
         f"- **Boundary:** {result['scientific_card']['boundary']}",
         "",
-    ]
+    ])
     return "\n".join(lines)
 
 

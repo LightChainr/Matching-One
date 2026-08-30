@@ -2,9 +2,9 @@
 
 ## Exact obstruction
 
-Rows `1` and `3` have `(D,M,Y,F)=(216,432,0,72)` in the matching carrier at layer 4. Because `Y=0`, the `YN` target channel is empty. The existing one-carrier plus one-output-mark reservoir has coarse demand `6912`, reaches `4752` ordinary `MM` targets, and leaves deficiency `2160=5/16`.
+All six deterministic matching/layer-4/Y=0 rows have `(D,M,Y,F)=(216,432,0,72)`. Rows `1` and `3` are the Smith-(3,3) representatives. Because `Y=0`, the `YN` target channel is empty. The existing one-carrier plus one-output-mark reservoir has coarse demand `6912`, reaches `4752` ordinary `MM` targets, and leaves deficiency `2160=5/16`.
 
-The residual minimum cut contains all 768 coarse classes (192 from each source replica). This is an all-site image-capacity obstruction, not a small exceptional family.
+On every candidate row the residual minimum cut contains all 768 coarse classes (192 from each source replica). This is an all-site image-capacity obstruction, not a small exceptional family.
 
 ## Minimal legal repair
 
@@ -20,10 +20,23 @@ This is minimal along the output-mark axis: the failed existing builder already 
 
 The strict descriptor (including `3x3` HNF/Smith type but omitting the line label) selects exactly rows 1 and 3. The explicit site permutation induced by `(x,y)->(y,x)` is an involution, swaps lines `(0,1)` and `(1,0)`, maps every D/M/Y/F face family bijectively, and conjugates the translation group to itself. Hence both old and repaired compatibility graphs are exactly isomorphic.
 
+## Complete N9 Y=0 candidate class
+
+| row | HNF | Smith | line | old flow | deficit | two-mark flow | MM orbits |
+|---:|---|---|---|---:|---:|---:|---:|
+| 1 | `[[3, 0], [0, 3]]` | `[3, 3]` | `[0, 1]` | 4752/6912 | 2160 | 6912/6912 | 20736 |
+| 3 | `[[3, 0], [0, 3]]` | `[3, 3]` | `[1, 0]` | 4752/6912 | 2160 | 6912/6912 | 20736 |
+| 6 | `[[3, 1], [0, 3]]` | `[1, 9]` | `[1, 0]` | 4752/6912 | 2160 | 6912/6912 | 20736 |
+| 9 | `[[3, 2], [0, 3]]` | `[1, 9]` | `[1, 0]` | 4752/6912 | 2160 | 6912/6912 | 20736 |
+| 15 | `[[9, 3], [0, 1]]` | `[1, 9]` | `[1, -3]` | 4752/6912 | 2160 | 6912/6912 | 20736 |
+| 24 | `[[9, 6], [0, 1]]` | `[1, 9]` | `[2, -3]` | 4752/6912 | 2160 | 6912/6912 | 20736 |
+
+There are two translation-equivariant classes. Rows 1/3 have group `Z3 x Z3` and are D4-isomorphic; rows 6/9/15/24 have group `Z9` and explicit D4 maps from row 6. The classes cannot be translation-equivariantly isomorphic because their group exponents are 3 and 9. Nevertheless all six have the same exact old and repaired flow signature.
+
 ## Scientific card
 
 - **Question:** Why does the corrected combined reservoir first fail at N9, and what is the smallest local repair?
 - **Answer:** Y=0 removes synergy and the one-mark MM image has a 5/16 all-site Hall deficit.
 - **Repair:** A second output-mark release, with bases fixed and no decorated capacity, reaches every MM orbit and saturates.
 - **New capacity:** 15984 previously unreachable MM orbits (143856 raw tokens), all already present in M^2.
-- **Boundary:** Exact for the coordinate-swap-isomorphic N9 rows 1 and 3; not an arbitrary-HNF theorem.
+- **Boundary:** Exact for all six N9 matching/layer4/Y=0 rows; not an arbitrary-HNF theorem.

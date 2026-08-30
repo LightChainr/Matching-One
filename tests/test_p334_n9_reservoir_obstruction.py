@@ -8,7 +8,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from p334_n9_reservoir_obstruction import build_result, selected_rows  # noqa: E402
+from p334_n9_reservoir_obstruction import build_result, candidate_rows, selected_rows  # noqa: E402
 
 
 class P334N9ReservoirObstructionTests(unittest.TestCase):
@@ -20,6 +20,19 @@ class P334N9ReservoirObstructionTests(unittest.TestCase):
         self.assertEqual([index for index, _row in selected_rows()], [1, 3])
         self.assertTrue(all(self.result["same_descriptor_isomorphism"]["face_family_bijections"].values()))
         self.assertTrue(self.result["same_descriptor_isomorphism"]["translation_group_conjugated_to_itself"])
+
+    def test_complete_matching_layer4_Y0_gate_has_six_rows(self) -> None:
+        self.assertEqual([index for index, _row in candidate_rows()], [1, 3, 6, 9, 15, 24])
+        self.assertEqual(self.result["candidate_row_indices"], [1, 3, 6, 9, 15, 24])
+        classes = self.result["all_candidate_classification"]["equivariant_classes"]
+        self.assertEqual([row["rows"] for row in classes], [[1, 3], [6, 9, 15, 24]])
+        self.assertTrue(
+            all(
+                mapping["translation_groups_conjugated"]
+                for group in classes
+                for mapping in group["explicit_D4_maps"]
+            )
+        )
 
     def test_exact_all_site_minimum_cut(self) -> None:
         obstruction = self.result["obstruction"]
@@ -43,6 +56,8 @@ class P334N9ReservoirObstructionTests(unittest.TestCase):
             self.assertTrue(fixed["ordinary_untagged_targets_only"])
             self.assertTrue(fixed["saturates"])
             self.assertEqual(fixed["reachable_MM_orbits"], fixed["total_MM_orbits"])
+            old = row["existing_one_carrier_one_mark"]["channel_flows"]["combined"]
+            self.assertEqual((old["maximum_flow"], old["Hall_deficiency"]), (4752, 2160))
 
 
 if __name__ == "__main__":
