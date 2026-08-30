@@ -48,16 +48,16 @@ class P334TMConfigurationCrossSwitchTests(unittest.TestCase):
             one_carrier.add(
                 audits["one_carrier_transport"]["Hall_deficiency"]
             )
-        self.assertEqual(union, {840, 852})
-        self.assertEqual(one_carrier, {276, 336})
+        self.assertEqual(union, {1056})
+        self.assertEqual(one_carrier, {612})
 
-    def test_two_carrier_transport_saturates_minimal_rows(self):
+    def test_two_carrier_transport_still_fails_minimal_rows(self):
         for row in self.result["rows"]:
             audit = row["operation_audits"]["two_carrier_transport"]
             self.assertEqual(audit["source_tokens"], 1152)
-            self.assertEqual(audit["maximum_matching"], 1152)
-            self.assertEqual(audit["Hall_deficiency"], 0)
-            self.assertTrue(audit["collision_free_injection_exists"])
+            self.assertEqual(audit["maximum_matching"], 588)
+            self.assertEqual(audit["Hall_deficiency"], 564)
+            self.assertFalse(audit["collision_free_injection_exists"])
 
     def test_checked_artifact_reproduces(self):
         checked = json.loads(

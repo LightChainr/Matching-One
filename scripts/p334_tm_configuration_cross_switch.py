@@ -26,7 +26,9 @@ Face = tuple[int, int, int]
 def face_type(marks, line, face: Face) -> str | None:
     base, left, right = face
     if (
-        left == right
+        marks[base][0] != 1
+        or marks[base][1] != line
+        or left == right
         or base >> left & 1
         or base >> right & 1
     ):
@@ -394,7 +396,7 @@ def build_result():
         assert not audits["one_carrier_transport"][
             "collision_free_injection_exists"
         ]
-        assert audits["two_carrier_transport"][
+        assert not audits["two_carrier_transport"][
             "collision_free_injection_exists"
         ]
 
@@ -412,8 +414,8 @@ def build_result():
             for row in rows
         }
     )
-    assert union_deficiencies == [840, 852]
-    assert one_carrier_deficiencies == [276, 336]
+    assert union_deficiencies == [1056]
+    assert one_carrier_deficiencies == [612]
 
     result = {
         "schema_version": "p334-tm-configuration-cross-switch-v1",
@@ -433,18 +435,18 @@ def build_result():
             "lost_information": "The mark-only output forgets the quotient translation phase; M x M also forgets the fourfold source replica. Bare fibers have maximum size 24. Adding phase leaves maximum fiber 4; phase plus replica reconstructs the source but is a decorated certificate, not an unmarked TM injection.",
             "obstruction_invariant": "sitewise union multiplicity u in {0,1,2}^Q of the two lower configurations",
         },
-        "minimal_repair_on_the_counterexample": {
+        "failed_two_carrier_candidate": {
             "move": "one occupied-to-vacant replacement independently in each of the two lower configurations, followed by the ordered-mark cross",
-            "why_minimal": "all phase/ordering switches with zero carrier transports fail; arbitrary union-preserving base crossover fails; transport on only one carrier still has positive Hall deficiency; exactly one transport on each carrier saturates every minimal row",
-            "matching": "1152 of 1152 hard tokens on each of four N=6 rows",
-            "interpretation": "the second transport is the configuration-level information carried by an Alexander-dual birth square; a mark-only or one-carrier rule cannot represent it",
-            "status": "exact bounded theorem",
+            "matching": "588 of 1152 hard tokens on each of four N=6 rows",
+            "Hall_deficiency": 564,
+            "interpretation": "transporting the bases does not release the crossed ordered missing-mark invariant; an Alexander-dual birth-square reservoir must also contribute a fresh transverse mark",
+            "status": "exactly refuted after enforcing that every output base remains in the same fixed-line rank-one stratum",
         },
         "corrected_general_theorem": {
-            "statement": "For any fixed-line row, form the two-carrier transport graph whose left vertices are the 4DF hard tokens and whose right vertices are M x M plus four replicas of Y x nonD. Join tokens when some quotient translation and exactly one occupied-to-vacant replacement in each lower configuration realizes the crossed ordered faces. If this graph satisfies Hall, its matching is a collision-free configuration injection and aggregate TM follows.",
-            "proved": "the implication from Hall saturation to aggregate TM, and Hall saturation on every minimal N=6 obstruction row",
-            "open": "a topology proof of Hall saturation for the two-carrier transport graph on arbitrary HNF quotients",
-            "important_boundary": "the original mark-only universal injection is false and must not be restated as a conjectural proof strategy",
+            "statement": "Any configuration compatibility graph from the 4DF hard tokens to M x M plus four replicas of Y x nonD proves aggregate TM if it satisfies Hall.",
+            "proved": "the implication from Hall saturation to aggregate TM",
+            "open": "identify the minimal Alexander-dual reservoir that releases one crossed missing mark while retaining fixed-line base semantics",
+            "important_boundary": "mark-only, union-preserving, one-carrier, and two-carrier base transport all fail on the minimal N=6 rows",
         },
         "production_pair_covariance_crosscheck": {
             "commit": "a9f7d28",
@@ -456,8 +458,8 @@ def build_result():
             "question": "Can D x F be removed by a universal configuration-level cross-switch?",
             "answer": "Not by any two-face mark switch, nor by any sitewise-union-preserving base crossover; N=6 is an exact counterexample.",
             "obstruction": "The switch collapses translation phase and replica information and remains trapped in a fixed two-base union fiber.",
-            "minimal_repair": "One occupied-to-vacant transport in both carriers, not just one, gives a full 1152/1152 matching in all four minimal rows.",
-            "next_theorem": "Prove Hall for the two-carrier transport graph from Alexander complement; do not return to delta-local, mark-only, or one-carrier switching.",
+            "minimal_repair": "Base transport alone is not a repair: two-carrier transport reaches only 588/1152.",
+            "next_theorem": "Add exactly one fresh transverse output mark through the Alexander-dual birth square and re-test Hall; do not return to base-only switching.",
         },
     }
     return json.loads(json.dumps(result))
@@ -492,17 +494,17 @@ def render_markdown(result):
             "",
             "## Minimal corrected theorem",
             "",
-            "Allow exactly one occupied-to-vacant replacement independently in each lower configuration, then cross the ordered marks. The resulting two-carrier transport graph has a collision-free matching of `1152/1152` on every one of the four minimal rows. Zero transports, all union-preserving crossovers, and one-carrier transport have already failed, so two carrier transports are minimal within this explicit move hierarchy.",
+            "Allowing one occupied-to-vacant replacement independently in both lower configurations is still insufficient once every output base is required to remain in the same fixed-line stratum: maximum matching is only `588/1152`, with Hall deficiency `564`, on every minimal row.",
             "",
-            "For an arbitrary fixed-line HNF row, Hall saturation of this two-carrier transport graph is sufficient for aggregate TM. The implication is exact; the remaining open step is a topology proof of Hall saturation, naturally organized by the Alexander-dual birth square. The original universal mark-only injection should be considered refuted, not merely unfinished.",
+            "For an arbitrary fixed-line HNF row, Hall saturation of any genuine configuration compatibility graph remains sufficient for aggregate TM. But the base-only two-carrier graph is not that theorem: the Alexander-dual birth square must also release a fresh transverse output mark. The original universal mark-only and base-transport injections should be considered refuted, not merely unfinished.",
             "",
             "## Scientific card",
             "",
             "- **Question:** Can `D x F` be removed by a universal configuration-level cross-switch?",
             "- **Answer:** Not by a mark switch or a sitewise-union-preserving base crossover; `N=6` is an exact counterexample.",
             "- **Obstruction:** Translation phase and source replica are collapsed inside a fixed two-base union fiber.",
-            "- **Minimal repair:** One occupied-to-vacant transport in both carriers yields full matching on every minimal row.",
-            "- **Next theorem:** Prove Hall for that two-carrier transport graph from Alexander complement; do not return to delta-local or one-carrier switching.",
+            "- **Minimal repair:** Base transport alone fails: even two carriers reach only `588/1152`.",
+            "- **Next theorem:** Release one fresh transverse mark through Alexander complement and test the resulting orbit Hall graph.",
             "",
         ]
     )

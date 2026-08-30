@@ -1,0 +1,337 @@
+{
+  "corrected_general_theorem": {
+    "open": "derive orbit-Hall saturation of the corrected graph uniformly from digital Alexander complement, or find its next minimal HNF obstruction",
+    "proved": "orbit/full Hall equivalence for every HNF and saturation on all minimal N=6 hard rows plus the first Smith-(2,4) N=8 middle-layer obstruction",
+    "statement": "On an arbitrary HNF row, orbit-Hall saturation of the one-carrier-plus-one-transverse-mark compatibility graph is equivalent to a collision-free configuration injection and implies aggregate TM."
+  },
+  "exact_extra_reservoir": {
+    "Alexander_interpretation": "the base exchange supplies the translated birth-square configuration, while the released mark supplies the transverse line that the D/F four-mark data cannot reconstruct",
+    "minimality_in_move_lattice": "base transport without mark release fails 588/1152; mark release without base transport fails 768/1152; their conjunction succeeds 1152/1152 on every minimal row",
+    "move": "choose one carrier and replace one occupied base site by one vacant site; independently release exactly one of the four crossed output marks to an arbitrary transverse quotient site",
+    "status": "exact bounded reservoir and collision-free matching"
+  },
+  "minimal_HNF_obstruction": {
+    "conclusion": "base-only two-carrier transport and transverse-mark-only transport each violate Hall",
+    "hard_rows_below_N6": 0,
+    "minimal_N": 6,
+    "rows": [
+      {
+        "N": 6,
+        "Smith_invariants": [
+          1,
+          6
+        ],
+        "carrier": "matching",
+        "line": [
+          1,
+          0
+        ],
+        "lower_layer": 2,
+        "matrix": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "motifs": {
+          "D": 12,
+          "F": 24,
+          "M": 48,
+          "Y": 24
+        },
+        "one_carrier_plus_transverse_mark": {
+          "Hall_deficiency": 0,
+          "maximum_degree": 96,
+          "maximum_matching": 1152,
+          "minimum_degree": 89,
+          "reachable_cover_tokens": 4332,
+          "saturates": true,
+          "source_tokens": 1152,
+          "zero_degree_sources": 0
+        },
+        "transverse_mark_only": {
+          "Hall_deficiency": 384,
+          "maximum_degree": 11,
+          "maximum_matching": 768,
+          "minimum_degree": 9,
+          "reachable_cover_tokens": 960,
+          "saturates": false,
+          "source_tokens": 1152,
+          "zero_degree_sources": 0
+        },
+        "two_carrier_base_transport": {
+          "Hall_deficiency": 564,
+          "maximum_degree": 11,
+          "maximum_matching": 588,
+          "minimum_degree": 6,
+          "reachable_cover_tokens": 588,
+          "saturates": false,
+          "source_tokens": 1152,
+          "zero_degree_sources": 0
+        }
+      },
+      {
+        "N": 6,
+        "Smith_invariants": [
+          1,
+          6
+        ],
+        "carrier": "matching",
+        "line": [
+          1,
+          0
+        ],
+        "lower_layer": 2,
+        "matrix": [
+          [
+            2,
+            1
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "motifs": {
+          "D": 12,
+          "F": 24,
+          "M": 48,
+          "Y": 24
+        },
+        "one_carrier_plus_transverse_mark": {
+          "Hall_deficiency": 0,
+          "maximum_degree": 104,
+          "maximum_matching": 1152,
+          "minimum_degree": 86,
+          "reachable_cover_tokens": 4332,
+          "saturates": true,
+          "source_tokens": 1152,
+          "zero_degree_sources": 0
+        },
+        "transverse_mark_only": {
+          "Hall_deficiency": 384,
+          "maximum_degree": 11,
+          "maximum_matching": 768,
+          "minimum_degree": 9,
+          "reachable_cover_tokens": 960,
+          "saturates": false,
+          "source_tokens": 1152,
+          "zero_degree_sources": 0
+        },
+        "two_carrier_base_transport": {
+          "Hall_deficiency": 564,
+          "maximum_degree": 13,
+          "maximum_matching": 588,
+          "minimum_degree": 5,
+          "reachable_cover_tokens": 588,
+          "saturates": false,
+          "source_tokens": 1152,
+          "zero_degree_sources": 0
+        }
+      },
+      {
+        "N": 6,
+        "Smith_invariants": [
+          1,
+          6
+        ],
+        "carrier": "matching",
+        "line": [
+          0,
+          1
+        ],
+        "lower_layer": 2,
+        "matrix": [
+          [
+            3,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "motifs": {
+          "D": 12,
+          "F": 24,
+          "M": 48,
+          "Y": 24
+        },
+        "one_carrier_plus_transverse_mark": {
+          "Hall_deficiency": 0,
+          "maximum_degree": 96,
+          "maximum_matching": 1152,
+          "minimum_degree": 89,
+          "reachable_cover_tokens": 4332,
+          "saturates": true,
+          "source_tokens": 1152,
+          "zero_degree_sources": 0
+        },
+        "transverse_mark_only": {
+          "Hall_deficiency": 384,
+          "maximum_degree": 11,
+          "maximum_matching": 768,
+          "minimum_degree": 9,
+          "reachable_cover_tokens": 960,
+          "saturates": false,
+          "source_tokens": 1152,
+          "zero_degree_sources": 0
+        },
+        "two_carrier_base_transport": {
+          "Hall_deficiency": 564,
+          "maximum_degree": 11,
+          "maximum_matching": 588,
+          "minimum_degree": 6,
+          "reachable_cover_tokens": 588,
+          "saturates": false,
+          "source_tokens": 1152,
+          "zero_degree_sources": 0
+        }
+      },
+      {
+        "N": 6,
+        "Smith_invariants": [
+          1,
+          6
+        ],
+        "carrier": "matching",
+        "line": [
+          1,
+          -2
+        ],
+        "lower_layer": 2,
+        "matrix": [
+          [
+            6,
+            3
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "motifs": {
+          "D": 12,
+          "F": 24,
+          "M": 48,
+          "Y": 24
+        },
+        "one_carrier_plus_transverse_mark": {
+          "Hall_deficiency": 0,
+          "maximum_degree": 104,
+          "maximum_matching": 1152,
+          "minimum_degree": 86,
+          "reachable_cover_tokens": 4332,
+          "saturates": true,
+          "source_tokens": 1152,
+          "zero_degree_sources": 0
+        },
+        "transverse_mark_only": {
+          "Hall_deficiency": 384,
+          "maximum_degree": 11,
+          "maximum_matching": 768,
+          "minimum_degree": 9,
+          "reachable_cover_tokens": 960,
+          "saturates": false,
+          "source_tokens": 1152,
+          "zero_degree_sources": 0
+        },
+        "two_carrier_base_transport": {
+          "Hall_deficiency": 564,
+          "maximum_degree": 13,
+          "maximum_matching": 588,
+          "minimum_degree": 5,
+          "reachable_cover_tokens": 588,
+          "saturates": false,
+          "source_tokens": 1152,
+          "zero_degree_sources": 0
+        }
+      }
+    ],
+    "search_gate": "all connected honest-face HNFs through N=6, both carriers, every fixed line/layer"
+  },
+  "next_Smith_gate": {
+    "reason": "the first middle-layer nontrivial Smith-(2,4) quotient tests whether the repair is an N=6 accident",
+    "result": "base-only orbit Hall fails 2496/5760; the exact extra reservoir saturates 5760/5760",
+    "row": {
+      "N": 8,
+      "Smith_invariants": [
+        2,
+        4
+      ],
+      "carrier": "matching",
+      "line": [
+        1,
+        0
+      ],
+      "lower_layer": 4,
+      "matrix": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "motifs": {
+        "D": 96,
+        "F": 120,
+        "M": 384,
+        "Y": 48
+      },
+      "one_carrier_plus_transverse_mark_orbits": {
+        "Hall_deficiency": 0,
+        "compression_factor": 8,
+        "maximum_degree": 228,
+        "maximum_matching": 5760,
+        "minimum_degree": 192,
+        "raw_source_tokens": 46080,
+        "reachable_cover_tokens": 14856,
+        "saturates": true,
+        "source_action_free": true,
+        "source_tokens": 5760,
+        "target_action_free": true,
+        "zero_degree_sources": 0
+      },
+      "two_carrier_base_transport_orbits": {
+        "Hall_deficiency": 3264,
+        "compression_factor": 8,
+        "maximum_degree": 90,
+        "maximum_matching": 2496,
+        "minimum_degree": 23,
+        "raw_source_tokens": 46080,
+        "reachable_cover_tokens": 2496,
+        "saturates": false,
+        "source_action_free": true,
+        "source_tokens": 5760,
+        "target_action_free": true,
+        "zero_degree_sources": 0
+      }
+    }
+  },
+  "schema_version": "p334-tm-translation-orbit-hall-v1",
+  "scientific_card": {
+    "certificate": "1152/1152 on four N=6 rows and 5760/5760 after exact translation-orbit compression on the N=8 Smith-(2,4) middle layer",
+    "correction": "fixed-line output-base semantics invalidates the earlier base-only repair",
+    "general_step": "orbit Hall is exactly equivalent to full Hall for every HNF; only its Alexander-complement saturation remains open",
+    "obstruction": "N=6 base-only Hall deficiency is 564; transverse-only deficiency is 384",
+    "reservoir": "one carrier base exchange plus one free transverse output mark"
+  },
+  "semantic_correction": {
+    "effect": "two-carrier maximum matching changes from the invalid 1152 to the valid 588 on every N=6 hard row",
+    "missing_gate": "every output face base must itself remain rank one on the same fixed projective line",
+    "supersedes": "c2d8170 claim that base-only two-carrier transport saturated N=6"
+  },
+  "translation_orbit_theorem": {
+    "Smith_role": "the Smith decomposition names the finite translation group; no cyclic assumption is used",
+    "compression": "exact factor N on both sides",
+    "statement": "For any finite HNF quotient Q, simultaneous translation acts freely on every ordered face token because a stabilizer fixes its first marked site and hence is the identity. Source and cover orbits therefore all have size |Q|. Normalize a token by translating its first marked site to zero. A matching of the normalized orbit graph lifts uniformly to a fractional matching of the full graph; integrality of the bipartite matching polytope then gives a collision-free full matching. Conversely any full matching averages to an orbit flow, so orbit and full Hall saturation are equivalent.",
+    "status": "exact general theorem"
+  }
+}
