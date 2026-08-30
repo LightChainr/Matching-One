@@ -126,6 +126,16 @@ This changes the next search from "find an epsilon pivot" to "find a transfer
 eigenvector that is H-isotropic and has a generalized partner".  At four legs
 the signature `(8,6)` makes such vectors possible, but not automatic.
 
+There is also an immediate grade constraint.  In the exactified partition
+basis, fixed `k` has a definite first-jet sign
+`(-1)^(k-2)`.  Consequently an isotropic bottom must mix block-number grades
+of opposite sign; no pure fixed-`k` connectivity direction can be the bottom
+of a nontrivial Jordan chain.  The two-mark radical is positive definite, so
+this mechanism is impossible there.  Indefiniteness first appears at three
+marks, with signature `(3,1)`.  At four marks, any candidate must mix the
+positive `k=2,4` sector with the negative `k=3` sector.  This is a concrete
+connectivity-tensor test for a future VJS/Matching-One transfer eigenvector.
+
 ## Claim boundary
 
 This proves a finite algebra statement.  It does not prove a transfer-matrix

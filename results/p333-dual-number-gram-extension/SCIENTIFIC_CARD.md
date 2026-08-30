@@ -10,6 +10,9 @@
   self-adjoint for the first-jet form; every nontrivial Jordan-chain bottom
   must be isotropic.  A two-dimensional exact oracle shows this condition is
   sharp.
+- Grade corollary: an isotropic bottom must mix opposite-parity block-number
+  grades.  At four marks this means positive `k=2,4` and negative `k=3`
+  exactified connectivity sectors; a pure two-cluster grade cannot suffice.
 - Observer/sector/source/geometry: exact set-partition connectivity Gram;
   generic-Q colour/connectivity sector; no stochastic source or geometry.
 - Dependency group: Issue #262 low-leg connectivity Gram algebra.

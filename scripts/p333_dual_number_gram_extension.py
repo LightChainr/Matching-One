@@ -208,6 +208,13 @@ def analyze(max_points: int = 5) -> dict:
                 "<(T-lambda)v,w>_H=0"
             ),
             "sharp_two_dimensional_oracle": sharp_jordan_gate_oracle(),
+            "mobius_grade_corollary": (
+                "Because the epsilon-pivot sign alternates with block number, "
+                "an isotropic bottom must mix opposite-sign Mobius grades. A "
+                "pure fixed-k exactified connectivity direction cannot be a "
+                "nontrivial Jordan-chain bottom."
+            ),
+            "minimum_marked_points_for_indefinite_radical": 3,
         },
         "checks": rows,
     }

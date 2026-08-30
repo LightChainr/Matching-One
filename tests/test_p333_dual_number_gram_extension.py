@@ -38,6 +38,10 @@ class DualNumberGramExtensionTests(unittest.TestCase):
         self.assertTrue(oracle["gram_self_adjoint"])
         self.assertEqual(oracle["bottom_norm"], "0")
 
+    def test_indefinite_radical_starts_at_three_marks(self):
+        self.assertEqual(expected_inertia(2), (1, 0, 0))
+        self.assertEqual(expected_inertia(3), (3, 1, 0))
+
 
 if __name__ == "__main__":
     unittest.main()
