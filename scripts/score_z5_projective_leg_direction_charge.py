@@ -19,6 +19,7 @@ from score_z5_projective_leg_state_dimension import (
     fit_recurrence,
     recurrence_roots,
     series,
+    solve_complex,
 )
 
 
@@ -77,6 +78,79 @@ def candidate_residual(values: Mapping[str, float], q: complex) -> list[float]:
     return output
 
 
+def fit_difference_amplitudes(values: Mapping[str, float], roots: Sequence[complex]):
+    """Fit both rank-two amplitudes of the archived axis-difference row."""
+    design = [[root**distance for root in roots] for distance in range(FIT_LAST)]
+    normal = [[
+        sum(row[i].conjugate() * row[j] for row in design)
+        for j in range(len(roots))
+    ] for i in range(len(roots))]
+    output = {}
+    for channel in CHANNELS:
+        observed = [
+            axis_average_difference(values, distance, *channel)[1]
+            for distance in range(1, FIT_LAST + 1)
+        ]
+        rhs = [
+            sum(row[i].conjugate() * value for row, value in zip(design, observed))
+            for i in range(len(roots))
+        ]
+        output[channel] = solve_complex(normal, rhs)
+    return output
+
+
+def mode_candidate_residual(values: Mapping[str, float], q: complex) -> list[float]:
+    """Test only the second mode, leaving the leading A-mode unrestricted."""
+    roots, average_amplitudes = sorted_rank2_fit(values)
+    difference_amplitudes = fit_difference_amplitudes(values, roots)
+    factor = direction_factor(q)
+    output = []
+    for channel in CHANNELS:
+        residual = difference_amplitudes[channel][1] - factor * average_amplitudes[channel][1]
+        output.extend((residual.real, residual.imag))
+    return output
+
+
+def heldout_mode_residual(values: Mapping[str, float], q: complex) -> list[float]:
+    """Fit a channel-specific leading A amplitude on d1--4 and predict d5."""
+    roots, average_amplitudes = sorted_rank2_fit(values)
+    factor = direction_factor(q)
+    design = [roots[0] ** distance for distance in range(FIT_LAST)]
+    denominator = sum(abs(value) ** 2 for value in design)
+    output = []
+    for channel in CHANNELS:
+        second = factor * average_amplitudes[channel][1]
+        observed = [
+            axis_average_difference(values, distance, *channel)[1]
+            for distance in range(1, FIT_LAST + 1)
+        ]
+        leading = sum(
+            basis.conjugate() * (value - second * roots[1] ** distance)
+            for distance, (basis, value) in enumerate(zip(design, observed))
+        ) / denominator
+        prediction = leading * roots[0] ** (LAST - 1) + second * roots[1] ** (LAST - 1)
+        residual = axis_average_difference(values, LAST, *channel)[1] - prediction
+        output.extend((residual.real, residual.imag))
+    return output
+
+
+def unrestricted_mode_payload(values: Mapping[str, float]) -> dict:
+    roots, average_amplitudes = sorted_rank2_fit(values)
+    difference_amplitudes = fit_difference_amplitudes(values, roots)
+    output = {}
+    for channel in CHANNELS:
+        average = average_amplitudes[channel][1]
+        difference = difference_amplitudes[channel][1]
+        q = (average - difference) / (average + difference)
+        output[f"{channel[0]}_r{channel[1]}"] = {
+            "q_re": q.real,
+            "q_im": q.imag,
+            "q_abs": abs(q),
+            "q_phase": math.atan2(q.imag, q.real),
+        }
+    return output
+
+
 def conjugate_residual(values: Mapping[str, float]) -> list[float]:
     output = []
     for hand, charge in CHANNELS:
@@ -105,6 +179,16 @@ def residual_score(point, deleted):
             "covariance": heldout_covariance,
             "zero_score": zero_score(heldout, heldout_covariance),
         },
+    }
+
+
+def vector_score(point, deleted):
+    covariance = jackknife_covariance(deleted)
+    return {
+        "residual_order": [f"{hand}_r{charge}_{part}" for hand, charge in CHANNELS for part in ("re", "im")],
+        "residual": point,
+        "covariance": covariance,
+        "zero_score": zero_score(point, covariance),
     }
 
 
@@ -168,21 +252,42 @@ def score(batches: Sequence[dict], manifest: Mapping[str, object]) -> dict:
         "spatial_C4_plus_i": 1j,
         **{f"direction_Z5_j{index}": ZETA5**index for index in range(1, 5)},
     }
-    rows = {}
+    strict_rows = {}
+    mode_rows = {}
     for name, q in candidates.items():
         row = residual_score(
             candidate_residual(full_values, q),
             [candidate_residual(values, q) for values in deleted_values],
         )
         row.update({"q_re": q.real, "q_im": q.imag, "q_phase": math.atan2(q.imag, q.real)})
-        rows[name] = row
+        strict_rows[name] = row
+        mode = vector_score(
+            mode_candidate_residual(full_values, q),
+            [mode_candidate_residual(values, q) for values in deleted_values],
+        )
+        heldout = vector_score(
+            heldout_mode_residual(full_values, q),
+            [heldout_mode_residual(values, q) for values in deleted_values],
+        )
+        mode.update({
+            "q_re": q.real,
+            "q_im": q.imag,
+            "q_phase": math.atan2(q.imag, q.real),
+            "heldout_d5": heldout,
+        })
+        mode_rows[name] = mode
     conjugate = residual_score(
         conjugate_residual(full_values),
         [conjugate_residual(values) for values in deleted_values],
     )
-    ranking = sorted(rows, key=lambda name: rows[name]["all_distances_zero_score"]["chi_square"])
+    strict_ranking = sorted(strict_rows, key=lambda name: strict_rows[name]["all_distances_zero_score"]["chi_square"])
+    ranking = sorted(mode_rows, key=lambda name: mode_rows[name]["zero_score"]["chi_square"])
     alpha = float(manifest["decision_alpha"])
-    passing = [name for name in ranking if rows[name]["all_distances_zero_score"]["survival_p"] >= alpha]
+    passing = [
+        name for name in ranking
+        if mode_rows[name]["zero_score"]["survival_p"] >= alpha
+        and mode_rows[name]["heldout_d5"]["zero_score"]["survival_p"] >= alpha
+    ]
     if passing == ["internal_direction_invariant"]:
         decision = "direction_invariant_second_state_not_spatial_C4_character"
     elif not passing:
@@ -199,7 +304,10 @@ def score(batches: Sequence[dict], manifest: Mapping[str, object]) -> dict:
         },
         "rank2_source_commit": manifest["rank2_source_commit"],
         "phase_alphabet": phase_alphabet(full_values, deleted_values),
-        "direction_candidates": rows,
+        "strict_zero_leading_A_candidates": strict_rows,
+        "strict_ranking": strict_ranking,
+        "mode_resolved_direction_candidates": mode_rows,
+        "unrestricted_second_mode_direction_characters": unrestricted_mode_payload(full_values),
         "conjugate_direction_candidate": conjugate,
         "ranking": ranking,
         "decision_alpha": alpha,
@@ -210,15 +318,16 @@ def score(batches: Sequence[dict], manifest: Mapping[str, object]) -> dict:
             "If an internal-only account is retained despite a non-Z5 root phase, its transfer step cannot be identified with one deck generator.",
             "The pair observable is C4-even in ensemble, so a spatial character must appear through the frozen mode-resolved x/y relation to survive this score.",
             "No new random stream or rank selection is used.",
+            "The mode-resolved score leaves the leading axis-difference amplitude free in each channel and tests only the second root.",
         ],
     }
 
 
 def render(result) -> str:
-    lines = ["# P250 direction/internal-charge tomography", "", "| candidate | all d1-d5 chi2/df | p | heldout d5 p |", "|---|---:|---:|---:|"]
+    lines = ["# P250 direction/internal-charge tomography", "", "| candidate | second-mode chi2/df | p | heldout d5 p |", "|---|---:|---:|---:|"]
     for name in result["ranking"]:
-        row = result["direction_candidates"][name]
-        full = row["all_distances_zero_score"]
+        row = result["mode_resolved_direction_candidates"][name]
+        full = row["zero_score"]
         held = row["heldout_d5"]["zero_score"]
         lines.append(f"| {name} | {full['chi_square']:.6g}/{full['degrees_of_freedom']} | {full['survival_p']:.6g} | {held['survival_p']:.6g} |")
     conjugate = result["conjugate_direction_candidate"]
