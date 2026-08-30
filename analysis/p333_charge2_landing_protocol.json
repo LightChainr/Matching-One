@@ -1,0 +1,88 @@
+{
+  "schema": "matching-one/p333-charge2-landing-protocol/v1",
+  "status": "frozen_before_exact_intersection",
+  "issues": [333, 321, 370],
+  "base_commit": "7b40ec728f0b90ac65a57a6e63816cca478c70fd",
+  "latest_main_audited": "6f711e524d9b33693703109521e592ca893e9cb0",
+  "question": "Does the only untested one-dimensional C4 landing irrep, the charge-two alternating response, close the width-four affine/Gram/source intersection by itself?",
+  "scope": {
+    "width": 4,
+    "ordinary_module": "V_4 is the fourteen-dimensional circular noncrossing connectivity module",
+    "mark_module": "L_2 is one-dimensional with quarter-turn character -1",
+    "extended_module": "W=V_4 direct-sum L_2, dimension fifteen",
+    "only_case": "No charge-one combination, extra scalar mark, free endpoint column or further width is tested."
+  },
+  "charge2_semantics": {
+    "landing_positions": "lambda_i labels the complementary three-site landing registry opposite source site i",
+    "character": "q_i=(-1)^i for i=0,1,2,3",
+    "translation": "R=-1 on L_2",
+    "provenance": "This is the remaining C4 irrep in the four-position landing permutation after the scalar and charge-one sectors already tested."
+  },
+  "generic_Q_action": {
+    "join": "e_bar_i=diag(e_i,1)",
+    "translation": "T_bar=diag(T,-1)",
+    "ordinary_detach": "D_i(Q)=D_i(1)+(Q-1)P_i",
+    "mark_emission": "E_i(pi)=(-1)^i when site i is singleton and zero otherwise",
+    "marked_detach": "D_bar_i1 has P_i in the ordinary block and E_i in the charge-two-by-ordinary row",
+    "covariance": "(-1) E_i=E_(i+1) T"
+  },
+  "gram": {
+    "landing_reference_states": "tau_i has site i singleton and the complementary three sites joined",
+    "raw_columns": "g_i(Q)_pi=d/dQ G(Q)_(pi,tau_i)",
+    "charge2_column": "C_2(Q)=g_0(Q)-g_1(Q)+g_2(Q)-g_3(Q)",
+    "extended": "G_bar(Q)=[[G(Q),C_2(Q)],[C_2(Q)^T,0]]",
+    "radical": "R_bar=ker(G_bar(1))",
+    "compatibility": "For radical basis B require B^T(G_bar1 X0-X0^T G_bar1)B=0",
+    "non_scalar_gate": "C_2(1) must add rank outside the complete width-four falling-factorial scalar block-count span"
+  },
+  "normalization": {
+    "filtration": "X0 and V do not feed L_2 back into V_4",
+    "endpoint": "U=(one^T,0) is fixed by X0 and annihilates V",
+    "radical_invariance": "G_bar0 X0 B=0",
+    "ordinary_source": "The all-singleton source is fixed by X0 and killed by V",
+    "landing_transport": "X0 restricted to L_2 is -1 and V restricted to L_2 is zero",
+    "canonical_candidate": "X0=T_bar,V=0"
+  },
+  "analysis_ladder": [
+    "affine Q-jet plus charge-two filtration",
+    "plus endpoint normalization and radical invariance",
+    "plus radical Gram self-adjointness",
+    "plus ordinary-source and charge-two transport normalization"
+  ],
+  "decision_rule": {
+    "minimal_closed_unique": "The final system is consistent with tangent dimension zero.",
+    "minimal_closed_nonunique": "The final system is consistent with positive tangent dimension.",
+    "charge2_fails": "The final system is inconsistent.",
+    "failure_consequence": "Scalar, C4 charge-one and C4 charge-two endpoint irreps have then all failed individually. Any next construction must change from terminal endpoint marks to retained rooted/landing connectivity or a coupled multi-irrep registry; no further case is run here."
+  },
+  "outputs": {
+    "dimensions": "Exact affine tangent dimension or inconsistency at each gate",
+    "non_scalar": "Exact rank beyond scalar columns and translation covariance",
+    "canonical": "Final membership and velocity uniqueness",
+    "failure": "First left-null inconsistency witness and exhausted-irrep statement"
+  },
+  "deduplication": {
+    "7b40ec7": "already excludes the C4 charge-one landing doublet while identifying charge two as the only untested irrep",
+    "e7e6c80": "already exhausts scalar falling-factorial endpoint marks at width four",
+    "b82e8cc": "already shows the C3 source/landing doublet succeeds uniquely at width three",
+    "ba3135e": "already excludes the unmarked scalar loop fugacity"
+  },
+  "claim_boundary": [
+    "Exact rational Q=1 first-jet algebra at width four only.",
+    "The single mark is the fixed C4 charge-two landing character, not a fitted endpoint column.",
+    "Success would identify a minimal closed finite-width module only; it would not identify an LCFT field or physical transfer matrix.",
+    "Failure exhausts individual terminal landing irreps, not arbitrary rooted-connectivity or coupled-irrep modules."
+  ],
+  "compute_contract": {
+    "arithmetic": "Python standard-library fractions.Fraction row reduction",
+    "monte_carlo": false,
+    "fit": false,
+    "server": false,
+    "expected_cost": "local minutes"
+  },
+  "frozen_inputs": {
+    "7b40ec7:scripts/p333_source_landing_doublet_width4.py": "35b452c8b806e273ca624caae38ed6ca988ce3ec",
+    "7b40ec7:results/p333-source-landing-doublet-width4/latest.json": "4aafc04d2759d416a3b637df39ac9d746f7891c5",
+    "e7e6c80:results/p333-minimal-multimark-jet/latest.json": "5ffcea9a1058f37afabff8e7e4ff6ba11c8f902c"
+  }
+}
