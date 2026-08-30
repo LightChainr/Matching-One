@@ -1,0 +1,21 @@
+{
+  "schema": "matching-one/p334-n13-multiorbit-flux-manifest/v1",
+  "issue": 334,
+  "parent_commit": "6f54935f4a8b2ce5ba045b43948aab00d6e065b3",
+  "geometry": {
+    "gaussian_generator": [3, 2],
+    "N": 13,
+    "method": "full subset states and directed addition edges; no path enumeration"
+  },
+  "outputs": {
+    "json": "results/p334-n13-multiorbit-flux/latest.json",
+    "markdown": "results/p334-n13-multiorbit-flux/latest.md"
+  },
+  "commands": [
+    "python3 scripts/p334_n13_multiorbit_flux.py --format json --output results/p334-n13-multiorbit-flux/latest.json",
+    "python3 scripts/p334_n13_multiorbit_flux.py --format markdown --output results/p334-n13-multiorbit-flux/latest.md",
+    "python3 -m unittest discover -s tests -p test_p334_n13_multiorbit_flux.py"
+  ],
+  "primary_result": "Two exact opposite-chi4 line orbits have nonzero birth and exit flux and reinforce dA4/dp at p_ref.",
+  "claim_boundary": "Exact finite-volume orbit localization only; no continuum field or exponent is inferred."
+}
