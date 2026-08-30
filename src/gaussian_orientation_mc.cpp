@@ -326,6 +326,7 @@ struct SiteMotifs {
     int path3_x = 0;
     int path3_y = 0;
     int corners = 0;
+    int right_angle = 0;
 };
 
 SiteMotifs count_site_motifs(const std::vector<std::uint8_t>& active, const Geometry& geometry) {
@@ -354,11 +355,14 @@ SiteMotifs count_site_motifs(const std::vector<std::uint8_t>& active, const Geom
         if (i != ix && i != ixx && ix != ixx && s0 && s1 && active[ixx]) ++motifs.path3_x;
         if (i != iy && i != iyy && iy != iyy && s0 && s2 && active[iyy]) ++motifs.path3_y;
         motifs.corners += (s0 && s1 && s2) + (s0 && s1 && s3) + (s0 && s2 && s3) + (s1 && s2 && s3);
+        // The fixed-K Issue #40 oracle declares exactly the translated
+        // {i,i+x,i+y} family, with multiplicity N (not all four corners).
+        motifs.right_angle += s0 && s1 && s2;
     }
     return motifs;
 }
 
-constexpr int kEulerObs = 18;
+constexpr int kEulerObs = 20;
 double falling_ratio(int occupied, int n, int order) {
     if (order <= 0 || occupied < order || n < order) return 0.0;
     double value = 1.0;
@@ -373,6 +377,7 @@ const std::array<const char*, kEulerObs> kEulerNames = {
     "nnn_pos", "nnn_neg", "path3_x", "path3_y", "corners",
     "E_mc", "F0_mc", "nnn_pos_mc", "nnn_neg_mc",
     "path3_x_mc", "path3_y_mc", "corners_mc",
+    "right_angle", "right_angle_mc",
 };
 
 struct EulerGeometryAccum {
@@ -380,6 +385,11 @@ struct EulerGeometryAccum {
     std::array<std::array<double, kEulerObs>, kEulerObs> gram{};
     double wrapping_l1 = 0.0;
     double identity_l1 = 0.0;
+};
+
+struct EulerCrossAccum {
+    // first_second_gram[i][j] = sum_r first_r[i] * second_r[j].
+    std::array<std::array<double, kEulerObs>, kEulerObs> first_second_gram{};
 };
 
 void accumulate_euler(EulerGeometryAccum& acc, const std::array<double, kEulerObs>& values,
@@ -390,6 +400,16 @@ void accumulate_euler(EulerGeometryAccum& acc, const std::array<double, kEulerOb
     }
     acc.wrapping_l1 += wrapping_l1;
     acc.identity_l1 += identity_l1;
+}
+
+void accumulate_euler_cross(EulerCrossAccum& acc,
+                            const std::array<double, kEulerObs>& first,
+                            const std::array<double, kEulerObs>& second) {
+    for (int i = 0; i < kEulerObs; ++i) {
+        for (int j = 0; j < kEulerObs; ++j) {
+            acc.first_second_gram[i][j] += first[i] * second[j];
+        }
+    }
 }
 
 std::array<double, kEulerObs> pack_euler(int q, int c_black, int c_white,
@@ -416,6 +436,8 @@ std::array<double, kEulerObs> pack_euler(int q, int c_black, int c_white,
         static_cast<double>(motifs.path3_x) - n * k3,
         static_cast<double>(motifs.path3_y) - n * k3,
         static_cast<double>(motifs.corners) - 4.0 * n * k3,
+        static_cast<double>(motifs.right_angle),
+        static_cast<double>(motifs.right_angle) - n * k3,
     };
 }
 
@@ -637,7 +659,7 @@ void write_euler_geometry(std::ostream& out, const char* label, int a, int b,
         << ", \"identity_l1\": " << acc.identity_l1 << "}";
 }
 
-void fill_euler(EulerGeometryAccum& acc, const Geometry& geometry,
+std::array<double, kEulerObs> fill_euler(EulerGeometryAccum& acc, const Geometry& geometry,
                 const std::vector<std::uint8_t>& black,
                 const std::vector<std::uint8_t>& white,
                 const Channels& primal, const Channels& matching,
@@ -647,8 +669,9 @@ void fill_euler(EulerGeometryAccum& acc, const Geometry& geometry,
     const int c_white = component_count(white, matching_uf);
     const SiteMotifs motifs = count_site_motifs(black, geometry);
     const int residual = (c_black - c_white) - (q + motifs.V - motifs.E + motifs.F0);
-    accumulate_euler(acc, pack_euler(q, c_black, c_white, motifs, geometry.n),
-                     wrapping_spread(primal, matching), std::abs(residual));
+    const auto values = pack_euler(q, c_black, c_white, motifs, geometry.n);
+    accumulate_euler(acc, values, wrapping_spread(primal, matching), std::abs(residual));
+    return values;
 }
 
 void run_design(const PairDesign& design, const Options& options,
@@ -662,6 +685,7 @@ void run_design(const PairDesign& design, const Options& options,
     std::vector<BatchCounts> counts(options.batches);
     std::vector<EulerGeometryAccum> euler_first(options.euler_motifs ? options.batches : 0);
     std::vector<EulerGeometryAccum> euler_second(options.euler_motifs ? options.batches : 0);
+    std::vector<EulerCrossAccum> euler_cross(options.euler_motifs ? options.batches : 0);
 
 #ifdef _OPENMP
     if (options.threads > 0) omp_set_num_threads(options.threads);
@@ -693,8 +717,11 @@ void run_design(const PairDesign& design, const Options& options,
                 local.sums[3][channel] += channel_value(sm, channel);
             }
             if (options.euler_motifs) {
-                fill_euler(euler_first[batch], first, black, white, fp, fm, f_primal, f_matching);
-                fill_euler(euler_second[batch], second, black, white, sp, sm, s_primal, s_matching);
+                const auto first_values = fill_euler(
+                    euler_first[batch], first, black, white, fp, fm, f_primal, f_matching);
+                const auto second_values = fill_euler(
+                    euler_second[batch], second, black, white, sp, sm, s_primal, s_matching);
+                accumulate_euler_cross(euler_cross[batch], first_values, second_values);
             }
         }
         counts[batch] = local;
@@ -728,6 +755,19 @@ void run_design(const PairDesign& design, const Options& options,
             write_euler_geometry(*motif_file, "first", design.a1, design.b1, euler_first[batch]);
             *motif_file << ", ";
             write_euler_geometry(*motif_file, "second", design.a2, design.b2, euler_second[batch]);
+            *motif_file << ", \"cross_gram_semantics\": \"sum first[i]*second[j] over same replicas\", "
+                        << "\"cross_gram\": [";
+            for (int i = 0; i < kEulerObs; ++i) {
+                if (i) *motif_file << ", ";
+                *motif_file << "[";
+                for (int j = 0; j < kEulerObs; ++j) {
+                    if (j) *motif_file << ", ";
+                    *motif_file << std::setprecision(17)
+                                << euler_cross[batch].first_second_gram[i][j];
+                }
+                *motif_file << "]";
+            }
+            *motif_file << "]";
             *motif_file << "}\n";
         }
     }
@@ -804,7 +844,10 @@ int run(int argc, char** argv) {
              << "  \"euler_observable_names\": [\"q\", \"C_black\", \"C_white\", \"V\", \"E\", \"F0\", "
                 "\"nnn_pos\", \"nnn_neg\", \"path3_x\", \"path3_y\", \"corners\", "
                 "\"E_mc\", \"F0_mc\", \"nnn_pos_mc\", \"nnn_neg_mc\", "
-                "\"path3_x_mc\", \"path3_y_mc\", \"corners_mc\"],\n"
+                "\"path3_x_mc\", \"path3_y_mc\", \"corners_mc\", "
+                "\"right_angle\", \"right_angle_mc\"],\n"
+             << "  \"cross_geometry_joint_gram\": "
+             << (options.euler_motifs ? "true" : "false") << ",\n"
              << "  \"elapsed_seconds\": " << seconds << ",\n"
              << "  \"designs\": [\n";
     bool first_row = true;
