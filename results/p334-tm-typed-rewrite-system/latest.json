@@ -1,0 +1,629 @@
+{
+  "bounded_audit": {
+    "hard_tokens": 2549415552,
+    "line_layer_rows": 984,
+    "mixed_only_rows": 968,
+    "mixed_then_synergy_rows": 16,
+    "mixed_tokens_used": 2441677696,
+    "pattern_1111_F": 1708048,
+    "pattern_1112_Y": 310920,
+    "pattern_1122_M_right": 517168,
+    "pattern_1212_M_left": 517168,
+    "pattern_1222_D": 361632,
+    "rewrite_closed_rows": 984,
+    "rewrite_open_rows": 0,
+    "synergy_tokens_used": 107737856,
+    "unmatched_hard_tokens": 0
+  },
+  "bounded_motif_totals": {
+    "D_coexit": 361632,
+    "F_flat": 1708048,
+    "M_mixed": 1034336,
+    "T": 3414936,
+    "Y_synergy": 310920
+  },
+  "canonical_finite_rewrite_system": {
+    "R_M": "order hard and M x M tokens lexicographically and match as many as possible",
+    "R_Y": "match the remaining hard tokens to the lexicographically ordered four replicas of Y x nonD",
+    "bounded_status": "terminates with zero unmatched tokens on all 984 rows",
+    "hard_tokens": "four orientation replicas of D x F",
+    "priority": [
+      "R_M",
+      "R_Y"
+    ],
+    "scientific_boundary": "this is a machine-verifiable aggregate token rewrite; a general topology proof must realize R_M/R_Y by canonical operations on the underlying squares rather than by global lexicographic labels",
+    "termination_measure": "number of unmatched D x F hard tokens"
+  },
+  "conditional_classification_theorem": {
+    "statement": "If every D x F token admits one of the two typed rewrites R_M or R_Y with globally injective images, then aggregate TM holds; translation regularity then yields the one-mark Hall injection and all proper cuts.",
+    "status": "exact conditional theorem with one named critical pair"
+  },
+  "cover_cone_rays": [
+    {
+      "bounded_rows": 4,
+      "canonical_rule": "R_M then R_Y: exhaust M x M, then inject the residual into 4 Y x nonD",
+      "minimal_quotient_witness": {
+        "N": 12,
+        "carrier": "matching",
+        "line": [
+          1,
+          0
+        ],
+        "lower_layer": 5,
+        "matrix": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            6
+          ]
+        ],
+        "mixed_square_over_hard": "75/208",
+        "motifs": {
+          "D_coexit": 360,
+          "F_flat": 24960,
+          "M_mixed": 3600,
+          "T": 32760,
+          "Y_synergy": 3840
+        },
+        "synergy_over_hard": "180/13"
+      },
+      "mixed_square_over_hard": "75/208",
+      "on_exact_lower_hull": true,
+      "ray": "R0",
+      "synergy_over_hard": "180/13",
+      "synergy_pool_fraction_used_after_mixed": "133/2880",
+      "total_cover_over_hard": "2955/208"
+    },
+    {
+      "bounded_rows": 4,
+      "canonical_rule": "R_M then R_Y: exhaust M x M, then inject the residual into 4 Y x nonD",
+      "minimal_quotient_witness": {
+        "N": 10,
+        "carrier": "matching",
+        "line": [
+          1,
+          0
+        ],
+        "lower_layer": 4,
+        "matrix": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "mixed_square_over_hard": "16/27",
+        "motifs": {
+          "D_coexit": 140,
+          "F_flat": 3780,
+          "M_mixed": 1120,
+          "T": 6000,
+          "Y_synergy": 960
+        },
+        "synergy_over_hard": "4688/441"
+      },
+      "mixed_square_over_hard": "16/27",
+      "on_exact_lower_hull": false,
+      "ray": "R1",
+      "synergy_over_hard": "4688/441",
+      "synergy_pool_fraction_used_after_mixed": "539/14064",
+      "total_cover_over_hard": "14848/1323"
+    },
+    {
+      "bounded_rows": 4,
+      "canonical_rule": "R_M then R_Y: exhaust M x M, then inject the residual into 4 Y x nonD",
+      "minimal_quotient_witness": {
+        "N": 12,
+        "carrier": "primal",
+        "line": [
+          0,
+          1
+        ],
+        "lower_layer": 6,
+        "matrix": [
+          [
+            6,
+            2
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "mixed_square_over_hard": "128/173",
+        "motifs": {
+          "D_coexit": 288,
+          "F_flat": 6228,
+          "M_mixed": 2304,
+          "T": 10260,
+          "Y_synergy": 1440
+        },
+        "synergy_over_hard": "1385/173"
+      },
+      "mixed_square_over_hard": "128/173",
+      "on_exact_lower_hull": false,
+      "ray": "R2",
+      "synergy_over_hard": "1385/173",
+      "synergy_pool_fraction_used_after_mixed": "9/277",
+      "total_cover_over_hard": "1513/173"
+    },
+    {
+      "bounded_rows": 6,
+      "canonical_rule": "R_M: lexicographically inject every hard token into M x M",
+      "minimal_quotient_witness": {
+        "N": 12,
+        "carrier": "matching",
+        "line": [
+          1,
+          0
+        ],
+        "lower_layer": 4,
+        "matrix": [
+          [
+            3,
+            0
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "mixed_square_over_hard": "165/164",
+        "motifs": {
+          "D_coexit": 792,
+          "F_flat": 4920,
+          "M_mixed": 3960,
+          "T": 10752,
+          "Y_synergy": 1080
+        },
+        "synergy_over_hard": "1245/451"
+      },
+      "mixed_square_over_hard": "165/164",
+      "on_exact_lower_hull": true,
+      "ray": "R3",
+      "synergy_over_hard": "1245/451",
+      "synergy_pool_fraction_used_after_mixed": "0",
+      "total_cover_over_hard": "6795/1804"
+    },
+    {
+      "bounded_rows": 2,
+      "canonical_rule": "R_M: lexicographically inject every hard token into M x M",
+      "minimal_quotient_witness": {
+        "N": 12,
+        "carrier": "matching",
+        "line": [
+          0,
+          1
+        ],
+        "lower_layer": 4,
+        "matrix": [
+          [
+            3,
+            0
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "mixed_square_over_hard": "363/280",
+        "motifs": {
+          "D_coexit": 720,
+          "F_flat": 672,
+          "M_mixed": 1584,
+          "T": 3192,
+          "Y_synergy": 216
+        },
+        "synergy_over_hard": "309/280"
+      },
+      "mixed_square_over_hard": "363/280",
+      "on_exact_lower_hull": true,
+      "ray": "R4",
+      "synergy_over_hard": "309/280",
+      "synergy_pool_fraction_used_after_mixed": "0",
+      "total_cover_over_hard": "12/5"
+    },
+    {
+      "bounded_rows": 4,
+      "canonical_rule": "R_M: lexicographically inject every hard token into M x M",
+      "minimal_quotient_witness": {
+        "N": 12,
+        "carrier": "matching",
+        "line": [
+          0,
+          1
+        ],
+        "lower_layer": 4,
+        "matrix": [
+          [
+            3,
+            1
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "mixed_square_over_hard": "841/540",
+        "motifs": {
+          "D_coexit": 648,
+          "F_flat": 480,
+          "M_mixed": 1392,
+          "T": 2688,
+          "Y_synergy": 168
+        },
+        "synergy_over_hard": "119/108"
+      },
+      "mixed_square_over_hard": "841/540",
+      "on_exact_lower_hull": false,
+      "ray": "R5",
+      "synergy_over_hard": "119/108",
+      "synergy_pool_fraction_used_after_mixed": "0",
+      "total_cover_over_hard": "359/135"
+    },
+    {
+      "bounded_rows": 6,
+      "canonical_rule": "R_M: lexicographically inject every hard token into M x M",
+      "minimal_quotient_witness": {
+        "N": 12,
+        "carrier": "matching",
+        "line": [
+          1,
+          0
+        ],
+        "lower_layer": 5,
+        "matrix": [
+          [
+            3,
+            0
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "mixed_square_over_hard": "28/17",
+        "motifs": {
+          "D_coexit": 2016,
+          "F_flat": 4896,
+          "M_mixed": 8064,
+          "T": 15624,
+          "Y_synergy": 648
+        },
+        "synergy_over_hard": "243/272"
+      },
+      "mixed_square_over_hard": "28/17",
+      "on_exact_lower_hull": false,
+      "ray": "R6",
+      "synergy_over_hard": "243/272",
+      "synergy_pool_fraction_used_after_mixed": "0",
+      "total_cover_over_hard": "691/272"
+    },
+    {
+      "bounded_rows": 6,
+      "canonical_rule": "R_M: lexicographically inject every hard token into M x M",
+      "minimal_quotient_witness": {
+        "N": 12,
+        "carrier": "matching",
+        "line": [
+          0,
+          1
+        ],
+        "lower_layer": 5,
+        "matrix": [
+          [
+            3,
+            0
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "mixed_square_over_hard": "27/16",
+        "motifs": {
+          "D_coexit": 1728,
+          "F_flat": 576,
+          "M_mixed": 2592,
+          "T": 5040,
+          "Y_synergy": 144
+        },
+        "synergy_over_hard": "23/48"
+      },
+      "mixed_square_over_hard": "27/16",
+      "on_exact_lower_hull": false,
+      "ray": "R7",
+      "synergy_over_hard": "23/48",
+      "synergy_pool_fraction_used_after_mixed": "0",
+      "total_cover_over_hard": "13/6"
+    },
+    {
+      "bounded_rows": 8,
+      "canonical_rule": "R_M: lexicographically inject every hard token into M x M",
+      "minimal_quotient_witness": {
+        "N": 12,
+        "carrier": "matching",
+        "line": [
+          0,
+          1
+        ],
+        "lower_layer": 6,
+        "matrix": [
+          [
+            3,
+            0
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "mixed_square_over_hard": "32/17",
+        "motifs": {
+          "D_coexit": 1224,
+          "F_flat": 144,
+          "M_mixed": 1152,
+          "T": 2520,
+          "Y_synergy": 0
+        },
+        "synergy_over_hard": "0"
+      },
+      "mixed_square_over_hard": "32/17",
+      "on_exact_lower_hull": true,
+      "ray": "R8",
+      "synergy_over_hard": "0",
+      "synergy_pool_fraction_used_after_mixed": "0",
+      "total_cover_over_hard": "32/17"
+    }
+  ],
+  "finite_local_type_theorem": {
+    "observed_ordered_pattern_counts": {
+      "pattern_1111_F": 1708048,
+      "pattern_1112_Y": 310920,
+      "pattern_1122_M_right": 517168,
+      "pattern_1212_M_left": 517168,
+      "pattern_1222_D": 361632
+    },
+    "ordered_square_vertices": [
+      "00",
+      "10",
+      "01",
+      "11"
+    ],
+    "patterns": {
+      "D": {
+        "Alexander_dual_pattern": "0001",
+        "exit_pattern": "1222"
+      },
+      "F": {
+        "Alexander_dual_pattern": "1111",
+        "exit_pattern": "1111"
+      },
+      "M_left": {
+        "Alexander_dual_pattern": "0101",
+        "exit_pattern": "1212"
+      },
+      "M_right": {
+        "Alexander_dual_pattern": "0011",
+        "exit_pattern": "1122"
+      },
+      "Y": {
+        "Alexander_dual_pattern": "0111",
+        "exit_pattern": "1112"
+      }
+    },
+    "statement": "Above a rank-one fixed-line base, monotonicity permits exactly D, two oriented M types, Y, and F; Alexander complement reverses the square and sends r to 2-r.",
+    "status": "exact exhaustive local rank-pattern classification",
+    "unique_negative_product_type": "D x F"
+  },
+  "schema_version": "p334-tm-typed-rewrite-system-v1",
+  "synergy_rescue_classification": {
+    "maximum_row": {
+      "N": 12,
+      "carrier": "matching",
+      "hard_tokens": 35942400,
+      "line": [
+        1,
+        0
+      ],
+      "lower_layer": 5,
+      "matrix": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          6
+        ]
+      ],
+      "mixed_tokens_used": 12960000,
+      "motifs": {
+        "D_coexit": 360,
+        "F_flat": 24960,
+        "M_mixed": 3600,
+        "T": 32760,
+        "Y_synergy": 3840
+      },
+      "synergy_tokens_available": 497664000,
+      "synergy_tokens_used": 22982400
+    },
+    "maximum_synergy_pool_fraction_used": "133/2880",
+    "signature_count": 4,
+    "signatures": [
+      {
+        "T_D_M_Y_F": [
+          6000,
+          140,
+          1120,
+          960,
+          3780
+        ],
+        "minimal_quotient_witness": {
+          "N": 10,
+          "carrier": "matching",
+          "hard_tokens": 2116800,
+          "line": [
+            1,
+            0
+          ],
+          "lower_layer": 4,
+          "matrix": [
+            [
+              2,
+              0
+            ],
+            [
+              0,
+              5
+            ]
+          ],
+          "mixed_tokens_used": 1254400,
+          "motifs": {
+            "D_coexit": 140,
+            "F_flat": 3780,
+            "M_mixed": 1120,
+            "T": 6000,
+            "Y_synergy": 960
+          },
+          "synergy_tokens_available": 22502400,
+          "synergy_tokens_used": 862400
+        },
+        "rows": 4
+      },
+      {
+        "T_D_M_Y_F": [
+          10260,
+          288,
+          2304,
+          1440,
+          6228
+        ],
+        "minimal_quotient_witness": {
+          "N": 12,
+          "carrier": "primal",
+          "hard_tokens": 7174656,
+          "line": [
+            0,
+            1
+          ],
+          "lower_layer": 6,
+          "matrix": [
+            [
+              6,
+              2
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "mixed_tokens_used": 5308416,
+          "motifs": {
+            "D_coexit": 288,
+            "F_flat": 6228,
+            "M_mixed": 2304,
+            "T": 10260,
+            "Y_synergy": 1440
+          },
+          "synergy_tokens_available": 57438720,
+          "synergy_tokens_used": 1866240
+        },
+        "rows": 4
+      },
+      {
+        "T_D_M_Y_F": [
+          21840,
+          72,
+          1872,
+          3480,
+          16416
+        ],
+        "minimal_quotient_witness": {
+          "N": 12,
+          "carrier": "matching",
+          "hard_tokens": 4727808,
+          "line": [
+            0,
+            1
+          ],
+          "lower_layer": 4,
+          "matrix": [
+            [
+              6,
+              1
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "mixed_tokens_used": 3504384,
+          "motifs": {
+            "D_coexit": 72,
+            "F_flat": 16416,
+            "M_mixed": 1872,
+            "T": 21840,
+            "Y_synergy": 3480
+          },
+          "synergy_tokens_available": 303010560,
+          "synergy_tokens_used": 1223424
+        },
+        "rows": 4
+      },
+      {
+        "T_D_M_Y_F": [
+          32760,
+          360,
+          3600,
+          3840,
+          24960
+        ],
+        "minimal_quotient_witness": {
+          "N": 12,
+          "carrier": "matching",
+          "hard_tokens": 35942400,
+          "line": [
+            1,
+            0
+          ],
+          "lower_layer": 5,
+          "matrix": [
+            [
+              2,
+              0
+            ],
+            [
+              0,
+              6
+            ]
+          ],
+          "mixed_tokens_used": 12960000,
+          "motifs": {
+            "D_coexit": 360,
+            "F_flat": 24960,
+            "M_mixed": 3600,
+            "T": 32760,
+            "Y_synergy": 3840
+          },
+          "synergy_tokens_available": 497664000,
+          "synergy_tokens_used": 22982400
+        },
+        "rows": 4
+      }
+    ]
+  },
+  "unique_unclosed_general_critical_pair": {
+    "bounded_value": "K<=0 on every audited row",
+    "critical_residual": "K=max(0,4DF-M^2)-4Y(T-D)",
+    "missing_topology_rule": "given a coexit square and a flat square, canonically cross-switch their ordered missing marks or invoke the Alexander-dual birth square so that two mixed squares or a synergy-plus-noncoexit pair is produced without collisions",
+    "type": "D x F",
+    "why_local_patterns_do_not_close_it": "the N=6 opposite-pair counterexample has D and F but no M or Y at that displacement/order, so any realization of R_M/R_Y must exchange mass between relative-displacement classes"
+  }
+}
