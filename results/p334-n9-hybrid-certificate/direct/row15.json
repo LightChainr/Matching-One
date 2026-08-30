@@ -1,0 +1,64 @@
+{
+  "complete_order_row_count": 28,
+  "order": 9,
+  "rows": [
+    {
+      "N": 9,
+      "Smith_invariants": [
+        1,
+        9
+      ],
+      "carrier": "matching",
+      "corrected_reservoir_orbit_graph": {
+        "Hall_deficiency": 2160,
+        "compression_factor": 9,
+        "maximum_degree": 200,
+        "maximum_matching": 4752,
+        "minimum_degree": 143,
+        "raw_source_tokens": 62208,
+        "reachable_cover_tokens": 4752,
+        "saturates": false,
+        "source_action_free": true,
+        "source_tokens": 6912,
+        "target_action_free": true,
+        "zero_degree_sources": 0
+      },
+      "line": [
+        1,
+        -3
+      ],
+      "lower_layer": 4,
+      "matrix": [
+        [
+          9,
+          3
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "motifs": {
+        "D": 216,
+        "F": 72,
+        "M": 432,
+        "Y": 0
+      },
+      "row_index": 15
+    }
+  ],
+  "schema": "p334-tm-corrected-reservoir-scan-v1",
+  "scientific_boundary": "A complete order certificate requires every deterministic shard; saturation is a bounded exact result, not the general HNF theorem.",
+  "selected_row_count": 1,
+  "shard": {
+    "count": 28,
+    "index": 15
+  },
+  "summary": {
+    "failed_rows": 1,
+    "maximum_Hall_deficiency": 2160,
+    "minimum_Hall_deficiency": 2160,
+    "saturated_rows": 0,
+    "status": "counterexample_found"
+  }
+}
