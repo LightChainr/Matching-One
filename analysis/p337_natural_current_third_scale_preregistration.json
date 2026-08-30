@@ -1,0 +1,133 @@
+{
+  "claim_boundary": "held-out N145 targets only; no N145 values and no fitted new exponent",
+  "design": {
+    "batches": 40,
+    "engine": "1714141 projective-birth runner",
+    "projected_standard_error": 0.002288290888610458,
+    "replica_offset": 0,
+    "required_samples_3sigma": {
+      "H4_vs_effective": 2157305.880104035,
+      "scale_neutral_vs_H4": 513038.3803431451,
+      "scale_neutral_vs_effective": 231814.83152401596,
+      "zero_vs_H4": 979673.7184312162,
+      "zero_vs_effective": 9211621.54493297,
+      "zero_vs_scale_neutral": 172681.9557658885
+    },
+    "required_samples_5sigma": {
+      "H4_vs_effective": 5992516.333622322,
+      "scale_neutral_vs_H4": 1425106.6120642922,
+      "scale_neutral_vs_effective": 643930.087566711,
+      "zero_vs_H4": 2721315.8845311566,
+      "zero_vs_effective": 25587837.624813803,
+      "zero_vs_scale_neutral": 479672.0993496903
+    },
+    "samples_per_shape": 2400000,
+    "seed": 202608337145,
+    "variance_source": "N85 independent 200k block only",
+    "why_2_4m": "exceeds the N85-variance 3-sigma H4-versus-secondary-effective requirement; no larger block is justified for this held-out discriminator"
+  },
+  "frozen_targets_at_N145": {
+    "secondary_post_reveal_effective_transfer": {
+      "construction": "Delta85*(Delta85/Delta65)^[log(145/85)/log(85/65)]; descriptive ratio transport only, not a promoted exponent model",
+      "descriptive_ratio_65_to_85": 0.36834153574221157,
+      "fit_variance": 1.4718563837788418e-05,
+      "log_scale_power": 1.9908840269983918,
+      "tier": "secondary",
+      "value": 0.003504048135470623
+    },
+    "source_fitted_project_H4": {
+      "exponent_in_area_N": -1.625,
+      "fit_variance": 1.1075649664345964e-05,
+      "scale_ratio": 0.4198389726652875,
+      "tier": "primary",
+      "value": 0.010744776300914267
+    },
+    "source_fitted_scale_neutral": {
+      "fit_variance": 6.283530229077167e-05,
+      "tier": "primary",
+      "value": 0.025592612883702993
+    },
+    "zero": {
+      "fit_variance": 0.0,
+      "tier": "primary",
+      "value": 0.0
+    }
+  },
+  "geometry": {
+    "N": 145,
+    "audit": {
+      "F3_reduction_nondegenerate": true,
+      "equal_area": true,
+      "legal": true,
+      "nonassociate_under_Gaussian_units_and_conjugation": true,
+      "primitive_representations": true,
+      "same_square_modulus": true,
+      "smith_invariants": [
+        [
+          1,
+          145
+        ],
+        [
+          1,
+          145
+        ]
+      ]
+    },
+    "first": [
+      12,
+      1
+    ],
+    "first_period_matrix": [
+      [
+        12,
+        -1
+      ],
+      [
+        1,
+        12
+      ]
+    ],
+    "second": [
+      9,
+      8
+    ],
+    "second_period_matrix": [
+      [
+        9,
+        -8
+      ],
+      [
+        8,
+        9
+      ]
+    ]
+  },
+  "observable": {
+    "definition": "K_A=p(1-p)Jminus_A/W_A=d_eta log W_A",
+    "normalization_changed": false,
+    "orientation_contrast": "Delta_K_A=K_A(second)-K_A(first)"
+  },
+  "schema": "matching-one/P337-natural-current-third-scale-preregistration/v1",
+  "scoring_contract": {
+    "effective_transfer_boundary": "secondary diagnostic derived only from the already revealed N65/N85 ratio; it cannot replace or refit the project H4 target",
+    "measurement_only_residual": "(observed-target)^2/Var_N145",
+    "predictive_residual": "(observed-target)^2/(Var_N145+fit_variance)",
+    "primary_order": [
+      "zero",
+      "source_fitted_scale_neutral",
+      "source_fitted_project_H4"
+    ],
+    "scientific_question": "does the faster N85 attenuation bend back toward project H4 curvature, continue along the descriptive effective transfer, or disappear",
+    "secondary_order": [
+      "secondary_post_reveal_effective_transfer"
+    ]
+  },
+  "source": {
+    "N65_archive_commit": "1714141",
+    "N65_preregistration": "analysis/p337_natural_current_scale_preregistration.json",
+    "N85_result_commit": "8783977",
+    "N85_score": "results/server-20260830/P337-natural-current-scale-N85/score.json",
+    "p_ref": 0.59274605079
+  },
+  "status": "frozen before any N145 projective-birth generation or inspection"
+}
