@@ -1,0 +1,125 @@
+{
+  "checks": [
+    {
+      "bell_dimension": 2,
+      "endpoint_rank": 1,
+      "first_radical_form_inertia": {
+        "negative": 0,
+        "positive": 1,
+        "zero": 0
+      },
+      "marked_points": 2,
+      "mobius_prediction": {
+        "negative": 0,
+        "positive": 1,
+        "zero": 0
+      },
+      "pivot_multiplicities": {
+        "2": {
+          "epsilon_coefficient": 1,
+          "multiplicity": 1
+        }
+      },
+      "prediction_exact": true,
+      "radical_dimension": 1
+    },
+    {
+      "bell_dimension": 5,
+      "endpoint_rank": 1,
+      "first_radical_form_inertia": {
+        "negative": 1,
+        "positive": 3,
+        "zero": 0
+      },
+      "marked_points": 3,
+      "mobius_prediction": {
+        "negative": 1,
+        "positive": 3,
+        "zero": 0
+      },
+      "pivot_multiplicities": {
+        "2": {
+          "epsilon_coefficient": 1,
+          "multiplicity": 3
+        },
+        "3": {
+          "epsilon_coefficient": -1,
+          "multiplicity": 1
+        }
+      },
+      "prediction_exact": true,
+      "radical_dimension": 4
+    },
+    {
+      "bell_dimension": 15,
+      "endpoint_rank": 1,
+      "first_radical_form_inertia": {
+        "negative": 6,
+        "positive": 8,
+        "zero": 0
+      },
+      "marked_points": 4,
+      "mobius_prediction": {
+        "negative": 6,
+        "positive": 8,
+        "zero": 0
+      },
+      "pivot_multiplicities": {
+        "2": {
+          "epsilon_coefficient": 1,
+          "multiplicity": 7
+        },
+        "3": {
+          "epsilon_coefficient": -1,
+          "multiplicity": 6
+        },
+        "4": {
+          "epsilon_coefficient": 2,
+          "multiplicity": 1
+        }
+      },
+      "prediction_exact": true,
+      "radical_dimension": 14
+    },
+    {
+      "bell_dimension": 52,
+      "endpoint_rank": 1,
+      "first_radical_form_inertia": {
+        "negative": 26,
+        "positive": 25,
+        "zero": 0
+      },
+      "marked_points": 5,
+      "mobius_prediction": {
+        "negative": 26,
+        "positive": 25,
+        "zero": 0
+      },
+      "pivot_multiplicities": {
+        "2": {
+          "epsilon_coefficient": 1,
+          "multiplicity": 15
+        },
+        "3": {
+          "epsilon_coefficient": -1,
+          "multiplicity": 25
+        },
+        "4": {
+          "epsilon_coefficient": 2,
+          "multiplicity": 10
+        },
+        "5": {
+          "epsilon_coefficient": -6,
+          "multiplicity": 1
+        }
+      },
+      "prediction_exact": true,
+      "radical_dimension": 51
+    }
+  ],
+  "exact_statement": "The Q=1 connectivity Gram module has one unit pivot and, for each k-block partition with k>=2, one epsilon pivot with leading coefficient (-1)^(k-2)(k-2)!.",
+  "interpretation_boundary": "This is a basis-invariant first-order pairing extension. It does not by itself identify a transfer-matrix Jordan block or LCFT field.",
+  "issue": 333,
+  "ring": "Q[epsilon]/(epsilon^2), Q=1+epsilon",
+  "schema_version": 1
+}
