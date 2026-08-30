@@ -112,8 +112,8 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
         self.assertEqual(
             result["counts"]["descriptor_not_applicable_generic_utility"], 1
         )
-        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 10)
-        self.assertEqual(result["counts"]["outside_registered_typed_path"], 17)
+        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 11)
+        self.assertEqual(result["counts"]["outside_registered_typed_path"], 16)
         self.assertEqual(len(result["rows"]), 35)
         statuses = {row["path"]: row["status"] for row in result["rows"]}
         for path in (
@@ -123,6 +123,7 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
             "scripts/score_c4_tangent_orthogonal_holdout.py",
             "scripts/score_issue50_n290.py",
             "scripts/score_matching_odd_synthesis.py",
+            "scripts/score_p231_vacuum_kdv_sector.py",
             "scripts/score_rank_gap_boundary_targets.py",
             "scripts/score_threshold_rank_root_doubling.py",
         ):
