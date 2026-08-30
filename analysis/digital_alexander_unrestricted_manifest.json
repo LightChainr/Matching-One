@@ -1,0 +1,40 @@
+{
+  "schema": "matching-one/digital-alexander-unrestricted-manifest/v1",
+  "issue": 269,
+  "theorem_scope": "every nonsingular 2x2 integer period matrix and every periodic black-site configuration",
+  "coefficient_layers": {
+    "rank_and_orthogonality": "Q",
+    "primitive_line": "canonical primitive integral representative of the rational line",
+    "saturation_index": "finite-regression diagnostic only; no unrestricted index-one claim"
+  },
+  "proof_route": [
+    "replace L by 2L and pass to the four-sheeted regular cover T_(2L) -> T_L",
+    "observe that every unit square has four distinct corners in T_(2L)",
+    "apply the 16-pattern 4/8 diagonal pruning before quotienting",
+    "apply the existing honest-cell complementary-subsurface theorem upstairs",
+    "descend rational graph-image ranks and symplectic orthogonality through the finite cover",
+    "derive birth, reflection, reconstruction and projective primitive-line gates"
+  ],
+  "regression_search": {
+    "HNF_order_range": [2, 10],
+    "expected_representatives": 86,
+    "expected_cached_subset_states": 31068,
+    "purpose": "machine regression and counterexample localization, not the unrestricted proof"
+  },
+  "outputs": {
+    "json": "results/digital-alexander-unrestricted/latest.json",
+    "markdown": "results/digital-alexander-unrestricted/latest.md"
+  },
+  "commands": [
+    "python3 scripts/digital_alexander_unrestricted_theorem.py --format json",
+    "python3 scripts/digital_alexander_unrestricted_theorem.py --format markdown",
+    "python3 -m unittest discover -s tests -p test_digital_alexander_unrestricted_theorem.py"
+  ],
+  "claim_boundary": [
+    "The theorem concerns ambient H1 images of the NN and complementary matching graphs, not their graph cyclomatic numbers.",
+    "The common rank-one rational line has a canonical primitive integral representative; the actual graph-image subgroup need not be saturated by the cover argument.",
+    "Saturation index one through quotient index 10 remains an exact finite diagnostic, not an unrestricted theorem.",
+    "No continuum, threshold, CFT-field or finite-size-scaling consequence is claimed.",
+    "The index-2-through-10 subset audit is a regression certificate; finite honest-cover descent supplies the unrestricted step."
+  ]
+}
