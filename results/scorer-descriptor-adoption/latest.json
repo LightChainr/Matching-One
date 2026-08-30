@@ -4,7 +4,6 @@
     "scripts/score_angular_root_amplitude.py": "reconstructs rank-2 cross K_minus/K_plus observables, forms signed orientation root gaps, divides by signed DeltaCos4, and scores the angular-normalized A_p across sizes",
     "scripts/score_axis_pair_annihilator.py": "reconstructs the cross matching function and implicit roots from K_minus/K_plus rank histograms, then forms and scores an adjacent-size annihilator",
     "scripts/score_axis_pair_annihilator_stable.py": "operational entrypoint patches the batch reader and delegates to the channel-bearing axis-pair annihilator without descriptor validation",
-    "scripts/score_c4_tangent_orthogonal_holdout.py": "selects the cross response through a free-form channel string and transports a source-frozen tangent projection across sizes without descriptor validation",
     "scripts/score_intrinsic_quantile_center_n145_n290.py": "scores intrinsic quantile-center Q, scaled widths, and centers across independent N145/N290 streams using implicit coordinate, scaling, level, and cross-size map semantics",
     "scripts/score_issue43_full_curve.py": "scores ordered orientation differences in matching-odd DeltaM and matching-even DeltaS sectors at frozen p_ref across N185/N265 without typed sector or cross-size descriptors",
     "scripts/score_issue43_full_curve_locked.py": "operational provenance wrapper delegates to the channel-bearing Issue43 full-curve scorer without adding a semantic descriptor gate",
@@ -30,12 +29,12 @@
   ],
   "corpus_glob": "scripts/*score*.py",
   "counts": {
-    "channel_bearing_migration_required": 23,
-    "covered_frozen_kernel": 7,
+    "channel_bearing_migration_required": 22,
+    "covered_frozen_kernel": 8,
     "descriptor_not_applicable_generic_utility": 1,
-    "direct_typed_entrypoint": 8,
+    "direct_typed_entrypoint": 9,
     "outside_registered_typed_path": 0,
-    "total": 39
+    "total": 40
   },
   "descriptor_not_applicable_generic_utilities": {
     "scripts/kappa3_half_score.py": "generic Bernoulli score-polynomial and aggregation helper; intentionally accepts an opaque caller-supplied observable D(C) and defines no topology observable"
@@ -74,7 +73,12 @@
     {
       "git_blob_sha": "b58cbaade09aafa1378f2c70399146efaa67dd6f",
       "path": "scripts/score_c4_tangent_orthogonal_holdout.py",
-      "status": "channel_bearing_migration_required"
+      "status": "covered_frozen_kernel"
+    },
+    {
+      "git_blob_sha": "6e837a449cee78c5a8afb0af263e6ea1e5ed6341",
+      "path": "scripts/score_c4_tangent_orthogonal_holdout_typed.py",
+      "status": "direct_typed_entrypoint"
     },
     {
       "git_blob_sha": "d61b35eb593c51f137a5fa4883201d9260d5c612",
@@ -240,6 +244,7 @@
   "schema": "scorer descriptor adoption inventory v1",
   "typed_wrapper_kernels": {
     "scripts/score_c4_self_matching_n26_typed.py": "scripts/score_c4_self_matching_n26.py",
+    "scripts/score_c4_tangent_orthogonal_holdout_typed.py": "scripts/score_c4_tangent_orthogonal_holdout.py",
     "scripts/score_intrinsic_functional_cocycle_typed.py": "scripts/score_intrinsic_functional_cocycle.py",
     "scripts/score_issue50_n290_typed.py": "scripts/score_issue50_n290.py",
     "scripts/score_matching_odd_synthesis_typed.py": "scripts/score_matching_odd_synthesis.py",
