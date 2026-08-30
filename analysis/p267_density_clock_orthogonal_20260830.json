@@ -1,0 +1,97 @@
+{
+  "schema": "matching-one/p267-density-clock-orthogonal-retrospective/v1",
+  "issues": [275, 276],
+  "status": "retrospective_protocol_locked_before_density_clock_score",
+  "created_utc": "2026-08-30",
+  "base_commit": "26cecb4",
+  "question": "Does the external Euler response survive exact fixed-K density-clock removal and source conditional-mean removal?",
+  "fixed_K_contract": {
+    "falling_factorial": "(x)_r=x(x-1)...(x-r+1)",
+    "mu_N_k": "k - 2*N*(k)_2/(N)_2 + N*(k)_4/(N)_4",
+    "identity": "mu_N(k)=E[O_ext|K=k] for O_ext=V-E_NN+F0 on a translation-regular square quotient",
+    "observer": "O0=O_ext-mu_N(K)",
+    "source_D": "D0=J_D-E[J_D|K]",
+    "source_S": "S0=J_S-E[J_S|K]",
+    "beta0": "Re E[D0*conj(S0)] / E[|S0|^2]",
+    "clock_response": "Cov(O0,D0-beta0*S0)",
+    "within_K_product_identity": "E[(O_ext-mu_K)(J-E[J|K])|K]=E[O_ext*J|K]-E[O_ext|K]E[J|K]",
+    "root": "recompute the common intrinsic matching root from the two q paths inside every size-local delete-one",
+    "P4": "(first_orientation-second_orientation)/(cos4_first-cos4_second)"
+  },
+  "raw_comparator": {
+    "observer": "O_ext",
+    "source": "J_D-beta_raw*J_S",
+    "beta_raw": "Re E[J_D*conj(J_S)]/E[|J_S|^2]",
+    "response": "connected Cov(O_ext,J_D-beta_raw*J_S)",
+    "retained_fraction": "abs(P4_clock_response)/abs(P4_raw_response)"
+  },
+  "scoring_order": [
+    "per_block_per_size_clock_P4_nonzero_2d",
+    "per_block_N425_over_N325_complex_transfer",
+    "per_block_raw_over_clock_retained_fraction",
+    "same_size_independent_block_clock_P4_compatibility"
+  ],
+  "decision_alpha": 0.01,
+  "covariance": "full size-local delete-one covariance with all nonlinear roots, fixed-K means, beta_raw, beta0, transfer, and retained fractions recomputed; independent size/block covariance matrices add",
+  "blocks": {
+    "target1_external_2m": {
+      "N325": {
+        "path": "results/server-20260830/P267-target1-external-Euler-2m/raw-summary/N325_2m/N325_2m.path.csv.gz",
+        "path_sha256": "0715032f7014ed6ba4e296cdd8b13f92a82a5ea4ec1d038d027b6bfc8624bb7c",
+        "path_rows": 65000,
+        "metadata": "results/server-20260830/P267-target1-external-Euler-2m/raw-summary/N325_2m/N325_2m.metadata.json",
+        "metadata_sha256": "4912bf2549972fb8a6c406f20a9611b4a8a9265dad196bc433d402fd978677af",
+        "seed": 20260830325,
+        "counter": [11000000000, 11002000000],
+        "producer_commit": "01d8a4e"
+      },
+      "N425": {
+        "path": "results/server-20260830/P267-target1-external-Euler-2m/raw-summary/N425_2m/N425_2m.path.csv.gz",
+        "path_sha256": "797dac83ec998d9bd584a18cf8cccaa180ad3041222f10125b3090569b5c566a",
+        "path_rows": 85000,
+        "metadata": "results/server-20260830/P267-target1-external-Euler-2m/raw-summary/N425_2m/N425_2m.metadata.json",
+        "metadata_sha256": "6561347d192e99e9c96a4fd61504dbf9cf9b87a86b9432d4313e92cde8439565",
+        "seed": 20260830425,
+        "counter": [13000000000, 13002000000],
+        "producer_commit": "01d8a4e"
+      }
+    },
+    "two_observer_2m": {
+      "N325": {
+        "path": "results/server-20260830/P267-two-observer-source-rank-2m/raw-summary/N325_2m/N325_2m.path.csv.gz",
+        "path_sha256": "ae5d855224b55e718885baf0dadfcada8e8d365d2b9aaf1a3d140fa5a5e70b2d",
+        "path_rows": 65000,
+        "metadata": "results/server-20260830/P267-two-observer-source-rank-2m/raw-summary/N325_2m/N325_2m.metadata.json",
+        "metadata_sha256": "ea5b977cf14b4bdbcc179583c62439e28830a515300dac110f38a8abeb1ae142",
+        "seed": 202608303252,
+        "counter": [19000000000, 19002000000],
+        "producer_commit": "9f2033a2d205a01d3554bc2e9c93bed5760f5b29"
+      },
+      "N425": {
+        "path": "results/server-20260830/P267-two-observer-source-rank-2m/raw-summary/N425_2m/N425_2m.path.csv.gz",
+        "path_sha256": "14b30006bf6a2817c3ace2b49137a27b07f469050bcfd5fbb55d895c5ca47d08",
+        "path_rows": 85000,
+        "metadata": "results/server-20260830/P267-two-observer-source-rank-2m/raw-summary/N425_2m/N425_2m.metadata.json",
+        "metadata_sha256": "96f6caa1503e0209dadd448b4457d48e69225bd9ffbe6ba59f4c353806bf935f",
+        "seed": 202608304252,
+        "counter": [21000000000, 21002000000],
+        "producer_commit": "9f2033a2d205a01d3554bc2e9c93bed5760f5b29"
+      }
+    }
+  },
+  "required_path_columns": [
+    "sum_q", "sum_O_ext", "sum_O_ext2",
+    "sum_J_D_re", "sum_J_D_im", "sum_J_S_re", "sum_J_S_im",
+    "sum_O_ext_J_D_re", "sum_O_ext_J_D_im",
+    "sum_O_ext_J_S_re", "sum_O_ext_J_S_im",
+    "sum_J_D_conj_J_S_re", "sum_J_D_conj_J_S_im", "sum_abs_J_S2"
+  ],
+  "sufficiency": "complete for O_ext density-clock residual, conditional D0/S0 Gram, beta0, P4, transfer, retained fraction, and full delete-one covariance",
+  "forbidden": [
+    "infer or score an O_far conditional mean",
+    "replace fixed-K centering with a fitted polynomial in p",
+    "reuse the full-sample intrinsic root or beta inside delete-one replicates",
+    "pool the two independent blocks before reporting their compatibility",
+    "interpret survival as a continuum field identity or fitted exponent"
+  ]
+}
