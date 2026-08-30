@@ -149,9 +149,22 @@ def exact_share(value: ComplexQ, total: ComplexQ) -> Fraction:
     return candidates[0]
 
 
+def sign_variations(values: Iterable[int]) -> int:
+    nonzero = [value for value in values if value != 0]
+    return sum(left * right < 0 for left, right in zip(nonzero, nonzero[1:]))
+
+
 def quotient_certificate(identifier: str, census: Mapping[str, object]) -> dict[str, object]:
     labels = sorted(census["orbits"])
     orbit_polynomials = {label: orbit_coefficients(census, label) for label in labels}
+    scalar_states: dict[str, list[int]] = {}
+    scalar_nets: dict[str, list[int]] = {}
+    for label in labels:
+        rows = census["coefficient_rows"]
+        scalar_states[label] = [int(row[label]["rank_one_states_at_k"]) for row in rows] + [
+            int(rows[-1][label]["rank_one_states_at_k_plus_1"])
+        ]
+        scalar_nets[label] = [int(row[label]["birth_minus_exit_edges"]) for row in rows]
     totals = {
         key: [(Fraction(0), Fraction(0))]
         for key in ("state", "birth", "exit")
@@ -183,6 +196,12 @@ def quotient_certificate(identifier: str, census: Mapping[str, object]) -> dict[
                 "dA_dp_at_p_ref": qpayload(evaluate(net, P_REF)),
                 "dA_deta_at_p_ref": qpayload(evaluate(weighted_net, P_REF)),
                 "eta_derivatives": [qpayload(value) for value in state_eta],
+                "net_bernstein_sign_variations": sign_variations(scalar_nets[label]),
+                "amplitude_positive_in_open_interval": all(value >= 0 for value in scalar_states[label])
+                and any(value > 0 for value in scalar_states[label]),
+                "unique_open_interval_stationary_point_exact": sign_variations(scalar_nets[label]) == 1
+                and all(value >= 0 for value in scalar_states[label])
+                and any(value > 0 for value in scalar_states[label]),
             }
         )
 
@@ -216,6 +235,28 @@ def quotient_certificate(identifier: str, census: Mapping[str, object]) -> dict[
     integral_net = sum(
         value[0] / (degree + 1) for degree, value in enumerate(total_net)
     ), sum(value[1] / (degree + 1) for degree, value in enumerate(total_net))
+    if len(labels) != 2:
+        raise AssertionError("the frozen certificate requires exactly two line orbits")
+    first_character = parse_q(census["orbits"][labels[0]]["chi4"])
+    second_character = parse_q(census["orbits"][labels[1]]["chi4"])
+    if qadd(first_character, second_character) != (Fraction(0), Fraction(0)):
+        raise AssertionError("the two orbit characters must be exact opposites")
+    # Sorted labels put axis first.  After factoring out chi4(axis), the total
+    # character amplitude and current are axis minus diagonal.
+    total_scalar_states = [
+        left - right for left, right in zip(scalar_states[labels[0]], scalar_states[labels[1]])
+    ]
+    total_scalar_nets = [
+        left - right for left, right in zip(scalar_nets[labels[0]], scalar_nets[labels[1]])
+    ]
+    total_variations = sign_variations(total_scalar_nets)
+    total_positive = all(value >= 0 for value in total_scalar_states) and any(
+        value > 0 for value in total_scalar_states
+    )
+    unique_stationary = {
+        row["orbit"]: row["unique_open_interval_stationary_point_exact"] for row in rows
+    }
+    unique_stationary["total_h4"] = total_variations == 1 and total_positive
     return {
         "geometry": identifier,
         "N": census["geometry"]["N"],
@@ -226,9 +267,17 @@ def quotient_certificate(identifier: str, census: Mapping[str, object]) -> dict[
         "coordinate_free_orbit_shares": share_rows,
         "empty_and_full_state_zero": boundary_zero,
         "integrated_net_current_zero": integral_net == (Fraction(0), Fraction(0)),
+        "unique_stationary_point_certificate": {
+            "theorem": "Bernstein variation diminishing plus endpoint Rolle existence",
+            "orbit_and_total": unique_stationary,
+            "total_net_bernstein_sign_variations": total_variations,
+            "total_character_amplitude_positive_in_open_interval": total_positive,
+            "all_unique": all(unique_stationary.values()),
+        },
         "all_exact_gates_pass": boundary_zero
         and integral_net == (Fraction(0), Fraction(0))
-        and all(row["ward_polynomial_exact"] for row in rows),
+        and all(row["ward_polynomial_exact"] for row in rows)
+        and all(unique_stationary.values()),
     }
 
 
@@ -251,6 +300,7 @@ def build_certificate() -> dict[str, object]:
             "natural_coordinate": "dA_O/deta = p(1-p)(J_O,birth-J_O,exit)",
             "orbit_share": "(dA_orbit/du)/(dA_total/du) is unchanged by every regular scalar thermal coordinate u",
             "stationary_point": "a net-current zero is a stationary point of the corresponding finite-volume character amplitude",
+            "unique_root": "one Bernstein sign variation plus positive interior amplitude proves exactly one open-interval stationary point",
         },
         "quotients": quotients,
         "all_exact_gates_pass": all(row["all_exact_gates_pass"] for row in quotients),
@@ -281,6 +331,7 @@ def render_markdown(payload: Mapping[str, object]) -> str:
             f"- all exact gates: `{quotient['all_exact_gates_pass']}`",
             f"- empty/full rank-one amplitude vanishes: `{quotient['empty_and_full_state_zero']}`",
             f"- integrated net-current sum rule: `{quotient['integrated_net_current_zero']}`",
+            f"- exact unique orbit/total stationary points: `{quotient['unique_stationary_point_certificate']['all_unique']}`",
             "- coordinate-free shares at p_ref: "
             + ", ".join(
                 f"{row['orbit']}={row['decimal_share']}" for row in quotient["coordinate_free_orbit_shares"]

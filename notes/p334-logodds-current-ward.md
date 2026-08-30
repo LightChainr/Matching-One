@@ -33,6 +33,15 @@ Two consequences are more useful than another bare-p fit:
 2. a net-current zero is a stationary point of the finite character amplitude,
    while a total-current zero is a pole of signed orbit shares.
 
+For both N=13 and N=17, every orbit net-current coefficient sequence and the
+total H4 sequence has exactly one Bernstein sign variation.  Each corresponding
+amplitude vanishes at both endpoints and is strictly positive, after factoring
+its fixed character, in the open interval.  Bernstein variation diminishing
+gives at most one open-interval derivative zero, while Rolle gives at least one.
+Thus every orbit amplitude and the total H4 amplitude has exactly one interior
+stationary point.  The numerical phase diagram locates roots that are already
+known to be unique by exact arithmetic.
+
 This turns the orbit-resolved zero diagram into an intrinsic finite-volume
 object.  It does not identify the continuum field or assert that the N=13/N=17
 zero locations have converged.

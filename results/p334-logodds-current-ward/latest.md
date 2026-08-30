@@ -12,6 +12,7 @@ eta jet of order 6 at the frozen p_ref.
 - all exact gates: `True`
 - empty/full rank-one amplitude vanishes: `True`
 - integrated net-current sum rule: `True`
+- exact unique orbit/total stationary points: `True`
 - coordinate-free shares at p_ref: axis_orbit=0.755739917417081006, diagonal_orbit=0.244260082582918994
 
 ## gaussian-4-plus-1i (N=17)
@@ -19,6 +20,7 @@ eta jet of order 6 at the frozen p_ref.
 - all exact gates: `True`
 - empty/full rank-one amplitude vanishes: `True`
 - integrated net-current sum rule: `True`
+- exact unique orbit/total stationary points: `True`
 - coordinate-free shares at p_ref: axis_orbit=0.764844997919214790, diagonal_orbit=0.235155002080785210
 
 ## Consequence

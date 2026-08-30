@@ -38,6 +38,13 @@ class ProjectiveCurrentWardTests(unittest.TestCase):
             self.assertTrue(quotient["empty_and_full_state_zero"])
             self.assertTrue(quotient["integrated_net_current_zero"])
 
+    def test_each_orbit_and_total_has_one_exact_stationary_point(self) -> None:
+        for quotient in self.payload["quotients"]:
+            certificate = quotient["unique_stationary_point_certificate"]
+            self.assertTrue(certificate["all_unique"])
+            self.assertEqual(certificate["total_net_bernstein_sign_variations"], 1)
+            self.assertTrue(all(certificate["orbit_and_total"].values()))
+
 
 if __name__ == "__main__":
     unittest.main()
