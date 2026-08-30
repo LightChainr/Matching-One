@@ -1,0 +1,51 @@
+{
+  "schema": "matching-one/p250-projective-leg-state-dimension-manifest/v1",
+  "issue": 250,
+  "status": "retrospective_model_freeze_no_new_simulation",
+  "scorer_commit": "1cbd344c31abe773ac320d0bd6446dd8d378ca4d",
+  "inputs": {
+    "target_batches": "results/huawei-20260830/P250-z5-projective-leg-cross-scale-n505-80k/response_80k.batches.csv",
+    "target_sha256": "8b0e06f3fdc577c362e6f2404db60933d0cf489ee532c053288a03c44dc7fe5c",
+    "source_batches": "results/huawei-20260830/P250-z5-projective-leg-pair-transfer-40k/response_40k.batches.csv",
+    "source_sha256": "6a5ab14f7a26accdd1329d3ee7704e84400685ab6634738bc9065b2487e1da4b"
+  },
+  "channels": ["plus_r1", "plus_r2", "minus_r1", "minus_r2"],
+  "recurrence": {
+    "formula": "T_c(d)=sum_{j=1}^K a_j T_c(d-j)",
+    "shared": "complex coefficients/eigenvalues across four channels",
+    "channel_specific": "complex state amplitudes",
+    "target_fit_distances": [1, 2, 3, 4],
+    "target_heldout_distance": 5,
+    "rank_order": [1, 2, 3]
+  },
+  "source_geometry_constraints": {
+    "source_distances": [1, 2, 3],
+    "rank1": "d2 and d3 recurrence residuals",
+    "rank2": "d3 recurrence residual",
+    "rank3": "not identifiable",
+    "transports": [
+      "same complex eigenvalues in lattice units",
+      "complex log eigenvalues scaled by sqrt(101/65), as 1/L conformal gaps"
+    ]
+  },
+  "nearest_image_alternative": {
+    "definition": "axis-average 3x3 nearest lattice-image sum of |r+P n|^(-alpha)",
+    "target_alpha_and_amplitudes_fit": [1, 2, 3, 4],
+    "target_heldout": 5,
+    "source_amplitudes_fit": [1, 2],
+    "source_heldout": 3,
+    "scope": "simple finite-image comparator, not a universal torus CFT correlator"
+  },
+  "decision_alpha": 0.01,
+  "decision_rule": [
+    "rank K closes only if N505 d5 and at least one declared N325 eigenvalue transport have p>=0.01",
+    "choose the first closing K among ranks 1 and 2",
+    "if neither closes, rank3 can establish only a target-side dimension because N325 d1-d3 cannot constrain it"
+  ],
+  "claim_boundary": [
+    "This reanalysis is retrospective but its model definitions and score order are committed before execution.",
+    "Complex eigenphases are retained throughout.",
+    "No single-power, cubic, or OPE model is reopened.",
+    "No new random stream is generated."
+  ]
+}
