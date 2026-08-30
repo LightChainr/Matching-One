@@ -1,0 +1,30 @@
+{
+  "schema": "matching-one/p250-projective-leg-bivariate-reveal-manifest/v1",
+  "status": "authorized_single_frozen_reveal",
+  "production_freeze_commit": "9ae37aebabdecb7807570cb4c4fb53fea73d9d51",
+  "runner_commit": "0d0115da2820eeebf219d8ced61a522d709fec4c",
+  "scorer_commit": "0d0115da2820eeebf219d8ced61a522d709fec4c",
+  "response": "results/huawei-20260830/P250-projective-leg-bivariate-80k/response_80k.json",
+  "response_sha256": "1dcb88e9914c6c0b735938ff8574bfb056169ed6cbc7716bb57efd3b3e2fe8f8",
+  "input_batches": "results/huawei-20260830/P250-projective-leg-bivariate-80k/response_80k.batches.csv",
+  "input_batches_sha256": "dfbd83d680080939bcae5cad0090af95d82748ed780ce73807d4b002d6a9ca72",
+  "run": {
+    "samples": 80000,
+    "batches": 400,
+    "workers": 16,
+    "p": 0.59274605079,
+    "seed": 25050510120261130,
+    "replica_offset": 0,
+    "replica_last_exclusive": 80000,
+    "batches_output": "/workspace/p250-projective-leg-bivariate-80k/response_80k.batches.csv"
+  },
+  "score_contract": {
+    "source": "analysis/p250_projective_leg_bivariate_production_manifest.json",
+    "rank_order": [1, 2, 3],
+    "axis_fit_points": [[0, 0], [1, 0], [2, 0], [3, 0], [0, 1], [0, 2], [0, 3]],
+    "commuting_mixed_gate": [[1, 1], [2, 1], [1, 2]],
+    "degree4_heldout": [[4, 0], [3, 1], [2, 2], [1, 3], [0, 4]]
+  },
+  "decision_alpha": 0.01,
+  "reveal_once": true
+}
