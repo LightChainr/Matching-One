@@ -2,19 +2,20 @@
   "boundary": "outside_registered_typed_path is an inventory status, not proof that a scorer is channel-bearing or semantically invalid",
   "corpus_glob": "scripts/*score*.py",
   "counts": {
-    "channel_bearing_migration_required": 27,
-    "covered_frozen_kernel": 3,
+    "channel_bearing_migration_required": 26,
+    "covered_frozen_kernel": 4,
     "descriptor_not_applicable_generic_utility": 1,
-    "direct_typed_entrypoint": 4,
+    "direct_typed_entrypoint": 5,
     "outside_registered_typed_path": 0,
-    "total": 35
+    "total": 36
   },
   "rows": [
     {"git_blob_sha":"ee2441f12e4b2532a3882e942cfc4e68de8ede57","path":"scripts/kappa3_half_score.py","status":"descriptor_not_applicable_generic_utility"},
     {"git_blob_sha":"a92e575de3a33621d4196ca45c22abdf83bd4111","path":"scripts/score_angular_root_amplitude.py","status":"channel_bearing_migration_required"},
     {"git_blob_sha":"152b4d62d1c2bbf3f7eaabc1f3214498f2d82e95","path":"scripts/score_axis_pair_annihilator_stable.py","status":"channel_bearing_migration_required"},
     {"git_blob_sha":"dcb0093cc1bd9b7379d24d92d7be094fea0e62cb","path":"scripts/score_axis_pair_annihilator.py","status":"channel_bearing_migration_required"},
-    {"git_blob_sha":"e1e382130063e77e208588ceef024110fe0811da","path":"scripts/score_c4_self_matching_n26.py","status":"channel_bearing_migration_required"},
+    {"git_blob_sha":"e1e382130063e77e208588ceef024110fe0811da","path":"scripts/score_c4_self_matching_n26.py","status":"covered_frozen_kernel"},
+    {"git_blob_sha":"a9d954339ea7ff7b115e8020828ff523ca0b8b4f","path":"scripts/score_c4_self_matching_n26_typed.py","status":"direct_typed_entrypoint"},
     {"git_blob_sha":"b58cbaade09aafa1378f2c70399146efaa67dd6f","path":"scripts/score_c4_tangent_orthogonal_holdout.py","status":"channel_bearing_migration_required"},
     {"git_blob_sha":"3238be12380e416506fce9cb04d846b23172a80b","path":"scripts/score_intrinsic_functional_cocycle_typed.py","status":"direct_typed_entrypoint"},
     {"git_blob_sha":"d61b35eb593c51f137a5fa4883201d9260d5c612","path":"scripts/score_intrinsic_functional_cocycle.py","status":"covered_frozen_kernel"},
@@ -51,7 +52,6 @@
     "scripts/score_angular_root_amplitude.py": "reconstructs rank-2 cross K_minus/K_plus observables, forms signed orientation root gaps, divides by signed DeltaCos4, and scores the angular-normalized A_p across sizes",
     "scripts/score_axis_pair_annihilator.py": "reconstructs the cross matching function and implicit roots from K_minus/K_plus rank histograms, then forms and scores an adjacent-size annihilator",
     "scripts/score_axis_pair_annihilator_stable.py": "operational entrypoint patches the batch reader and delegates to the channel-bearing axis-pair annihilator without descriptor validation",
-    "scripts/score_c4_self_matching_n26.py": "selects a wrapping observable through a free-form prediction geometry channel and scores its exact Bernstein/power law without binding the frozen hypothesis to a descriptor",
     "scripts/score_c4_tangent_orthogonal_holdout.py": "selects the cross response through a free-form channel string and transports a source-frozen tangent projection across sizes without descriptor validation",
     "scripts/score_intrinsic_quantile_center_n145_n290.py": "scores intrinsic quantile-center Q, scaled widths, and centers across independent N145/N290 streams using implicit coordinate, scaling, level, and cross-size map semantics",
     "scripts/score_issue43_full_curve.py": "scores ordered orientation differences in matching-odd DeltaM and matching-even DeltaS sectors at frozen p_ref across N185/N265 without typed sector or cross-size descriptors",
@@ -80,6 +80,7 @@
     "scripts/kappa3_half_score.py": "generic Bernoulli score-polynomial and aggregation helper; intentionally accepts an opaque caller-supplied observable D(C) and defines no topology observable"
   },
   "typed_wrapper_kernels": {
+    "scripts/score_c4_self_matching_n26_typed.py": "scripts/score_c4_self_matching_n26.py",
     "scripts/score_intrinsic_functional_cocycle_typed.py": "scripts/score_intrinsic_functional_cocycle.py",
     "scripts/score_norm5_harmonic_primary_typed.py": "scripts/score_norm5_harmonic_primary.py",
     "scripts/score_p48_sprime_prospective_typed.py": "scripts/score_p48_sprime_prospective.py"
