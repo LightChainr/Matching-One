@@ -1,0 +1,67 @@
+{
+  "schema": "matching-one/p250-projective-leg-bivariate-production-manifest/v1",
+  "status": "authorized_fresh_bivariate_state",
+  "production_authorized": true,
+  "issues": [249, 250, 255],
+  "runner_commit": "0d0115da2820eeebf219d8ced61a522d709fec4c",
+  "scorer_commit": "0d0115da2820eeebf219d8ced61a522d709fec4c",
+  "host": "Huawei-CodeBuddy-XPk2PZ",
+  "remote_directory": "/workspace/p250-projective-leg-bivariate-80k",
+  "grid": [[0, 0], [-1, 0], [0, -1], [0, 1], [1, 0], [-2, 0], [-1, -1], [-1, 1], [0, -2], [0, 2], [1, -1], [1, 1], [2, 0], [-3, 0], [-2, -1], [-2, 1], [-1, -2], [-1, 2], [0, -3], [0, 3], [1, -2], [1, 2], [2, -1], [2, 1], [3, 0], [-4, 0], [-3, -1], [-3, 1], [-2, -2], [-2, 2], [-1, -3], [-1, 3], [0, -4], [0, 4], [1, -3], [1, 3], [2, -2], [2, 2], [3, -1], [3, 1], [4, 0]],
+  "run": {
+    "samples": 80000,
+    "batches": 400,
+    "workers": 16,
+    "p": 0.59274605079,
+    "seed": 25050510120261130,
+    "replica_offset": 0,
+    "replica_last_exclusive": 80000,
+    "batches_output": "/workspace/p250-projective-leg-bivariate-80k/response_80k.batches.csv"
+  },
+  "sample_size_basis": {
+    "source": "existing N505 axis-only 80k batches",
+    "source_sha256": "8b0e06f3fdc577c362e6f2404db60933d0cf489ee532c053288a03c44dc7fe5c",
+    "metric": "minimum two-real-coordinate Mahalanobis resolution across reconstructed X/Y rows",
+    "minimum_degree_le_3_z": 7.191777612075447,
+    "minimum_degree_4_z": 2.7368585902637577,
+    "choice": "80k keeps the primary degree<=3 mixed gate in the resolved regime; degree4 is a joint heldout score rather than an individual-row discovery gate"
+  },
+  "observable": {
+    "name": "C4-covariant-gauge neutral projective-leg pair G_r(a,b)",
+    "hands": ["plus", "minus"],
+    "charges": [1, 2],
+    "real_coordinates": 328,
+    "covariance": "all 328 coordinates from the same 400 fresh random batches",
+    "gauge_equation": "t(Rx)=s(x)+k*t(x) mod 5",
+    "fiber_multipliers": {"plus": 3, "minus": 2}
+  },
+  "rank_gate": {
+    "rank_order": [1, 2, 3],
+    "axis_fit_points": [[0, 0], [1, 0], [2, 0], [3, 0], [0, 1], [0, 2], [0, 3]],
+    "commuting_mixed_gate": [[1, 1], [2, 1], [1, 2]],
+    "degree4_heldout": [[4, 0], [3, 1], [2, 2], [1, 3], [0, 4]],
+    "shared": "paired complex x/y eigenvalues across four hand-charge channels",
+    "channel_specific": "complex amplitudes",
+    "minimal_rule": "first rank whose mixed commuting gate and degree4 heldout both have p>=0.01"
+  },
+  "algebra_gate": {
+    "commutator": "axis-fitted commuting joint realization must predict xy,x2y,xy2",
+    "Ty_equals_RTxRinv": "x/y characteristic-polynomial equality is scored as a necessary gauge-invariant condition",
+    "R4": "exact realified channel map has order four and signed C4 orbit residual is scored",
+    "D5": "not identifiable because the neutral pair cancels simultaneous deck phase"
+  },
+  "decision_alpha": 0.01,
+  "reveal_order": [
+    "exact gate and file hashes",
+    "rank-1 mixed and heldout score",
+    "rank-2 mixed and heldout score",
+    "rank-3 mixed and heldout score",
+    "C4 orbit and characteristic necessary scores"
+  ],
+  "claim_boundary": [
+    "Do not force rank two; rank greater than three remains a valid result.",
+    "The commuting model is tested by mixed moments not used in the axis fit.",
+    "A passing characteristic score does not uniquely identify latent R up to its centralizer.",
+    "No deck generator is inferred from this neutral pair stream."
+  ]
+}
