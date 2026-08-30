@@ -1,0 +1,159 @@
+{
+  "bounded_audit": {
+    "Hall_failures": 0,
+    "Hall_families_checked": 1176258,
+    "exact_pair_fail": 658,
+    "exact_pair_pass": 326,
+    "line_layer_rows": 984,
+    "one_common_site_flow_fail": 0,
+    "one_common_site_flow_pass": 984,
+    "rows_using_one_endpoint_switch": 658
+  },
+  "capacitated_Hall_theorem": {
+    "relation_to_TM": "U equal to all marked sites is the aggregate TM inequality; proper U give the strictly stronger local Hall cuts needed for a one-mark-preserving switch.",
+    "statement": "The one-common-site injection exists iff for every vertex set U, demand on all positive demand pairs contained in U is at most supply on all synergy/reservoir pairs incident to the vertices used by those demand pairs.",
+    "status": "exact finite capacitated Hall equivalence",
+    "why_sufficient": "the neighbor set of a demand family depends only on the union of its marked sites; for a fixed union, including every positive demand pair is the unique maximal left capacity. Integral bipartite max-flow then lifts to a token injection."
+  },
+  "exact_pair_locking": {
+    "first_failure": {
+      "N": 6,
+      "carrier": "matching",
+      "deficits": [
+        {
+          "demand": 144,
+          "pair": [
+            0,
+            3
+          ],
+          "same_pair_supply": 24
+        },
+        {
+          "demand": 144,
+          "pair": [
+            1,
+            4
+          ],
+          "same_pair_supply": 24
+        },
+        {
+          "demand": 144,
+          "pair": [
+            2,
+            5
+          ],
+          "same_pair_supply": 24
+        }
+      ],
+      "line": [
+        1,
+        0
+      ],
+      "lower_layer": 2,
+      "matrix": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ]
+    },
+    "status": "false"
+  },
+  "flow_digest": {
+    "demand_tokens": 466958184,
+    "exact_pair_tokens": 204115601,
+    "one_endpoint_switched_tokens": 262842583,
+    "reservoir_tokens_used": 268930492,
+    "synergy_tokens_used": 198027692
+  },
+  "largest_canonical_switch_fraction": {
+    "fraction": "88/91",
+    "row": {
+      "N": 12,
+      "active_flow_edges": 13,
+      "carrier": "matching",
+      "demand_tokens": 1965600,
+      "exact_pair_tokens": 64800,
+      "line": [
+        1,
+        0
+      ],
+      "lower_layer": 5,
+      "matrix": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          6
+        ]
+      ],
+      "one_endpoint_switched_tokens": 1900800,
+      "reservoir_tokens_used": 64800,
+      "synergy_tokens_used": 1900800
+    }
+  },
+  "local_switching_rule": {
+    "canonicalization": "sort demand bins lexicographically; prefer exact-pair then one-endpoint supply, synergy then reservoir, and take lex-first shortest augmenting paths; lift bin flow by increasing replica labels",
+    "compatibility": "a demand pair and a supply pair are compatible iff they share at least one marked site",
+    "status": "explicit deterministic integer injection on every bounded row",
+    "switch": "preserve the common mark and switch only the other mark; fixed ell supplies the ambient H1 channel"
+  },
+  "replicated_TM_multisets": {
+    "cardinality_identity": "total supply - total demand = m A N_new + (m-1) X^2 - m A E_2",
+    "demand": "for each unordered same-state exit pair {v,w}, 2mA replicas",
+    "independent_supply": "(m-1) replicas of all ordered pairs of exit marks; an off-diagonal site pair has multiplicity 2 X_v X_w and a diagonal pair X_v^2",
+    "synergy_supply": "for each unordered synergy square {v,w}, 2mA replicas"
+  },
+  "schema_version": "p334-tm-replicated-switching-oracle-v1",
+  "theorem_frontier": {
+    "bounded_exact": "all 984 topological line/carrier/layer rows satisfy every Hall cut and admit the canonical integer injection.",
+    "open": "derive the proper-subset Hall cuts uniformly from digital Alexander topology rather than checking them quotient by quotient.",
+    "proved": "TM is exactly a supply-demand cardinality inequality; one-common-site injection is exactly characterized by the displayed Hall family."
+  },
+  "tightest_Hall_cut": {
+    "required_over_available": "24/25",
+    "row": {
+      "N": 12,
+      "active_vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "available": 43200,
+      "carrier": "primal",
+      "demand_pair_bins": 48,
+      "line": [
+        1,
+        -1
+      ],
+      "lower_layer": 8,
+      "matrix": [
+        [
+          4,
+          1
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "required": 41472,
+      "slack": 1728
+    }
+  }
+}

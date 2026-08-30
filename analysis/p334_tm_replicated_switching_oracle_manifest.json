@@ -1,0 +1,28 @@
+{
+  "schema_version": "p334-tm-replicated-switching-manifest-v1",
+  "parent_result_commit": "127820751ecf4e5728a3047eb502f87f958bebd5",
+  "scope": {
+    "maximum_order": 12,
+    "geometry_gate": "existing connected honest-face HNF atlas only",
+    "carriers": ["primal", "matching"],
+    "new_topology_enumeration": false
+  },
+  "frozen_question": "Does the replicated TM supply admit a local integer injection into same-state exit-pair demand, and what is the weakest exact Hall family if exact-pair switching fails?",
+  "flow_order": [
+    "demand pair lexicographic",
+    "exact supply pair before one-endpoint switch",
+    "synergy before independent reservoir",
+    "supply pair lexicographic",
+    "lex-first shortest augmenting path"
+  ],
+  "locality_ladder": [
+    "same unordered marked pair",
+    "at least one common marked site"
+  ],
+  "primary_gates": [
+    "integer capacity identity equals the frozen TM determinant",
+    "one-common-site full flow on all 984 existing rows",
+    "all induced capacitated Hall cuts pass",
+    "no claim that proper Hall cuts are yet forced on arbitrary quotients"
+  ]
+}
