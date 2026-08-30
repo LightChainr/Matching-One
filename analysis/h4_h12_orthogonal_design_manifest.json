@@ -1,0 +1,58 @@
+{
+  "schema": "matching-one/h4-h12-orthogonal-design/v1",
+  "issue": 55,
+  "status": "design_only_no_target_data",
+  "source_note": {
+    "path": "notes/h4-h12-orthogonal-gaussian-design.md",
+    "sha256": "766ef25ea9d5c206f1479a3a7359325d5e5ddf3d865051f1024a98356b8b1365"
+  },
+  "frozen_model": {
+    "source_amplitude": "0.7885",
+    "source_amplitude_se": "0.0352",
+    "radial_exponent": "13/8",
+    "formula": "DeltaM=A4*DeltaCos4*N^(-13/8)",
+    "target_mc_uncertainty_included": false
+  },
+  "designs": [
+    {
+      "id": "n305-opposite-alias-a",
+      "N": 305,
+      "first": [17, 4],
+      "second": [16, 7],
+      "delta_cos4": "12672/18605",
+      "delta_cos12": "-187921184989824/161001169878125",
+      "alias_ratio_cos12_over_cos4": "-14829638967/8653650625",
+      "h4_only_target_mean": "4.9320781401e-5",
+      "source_coefficient_only_se": "2.20176e-6"
+    },
+    {
+      "id": "n325-opposite-alias-b",
+      "N": 325,
+      "first": [18, 1],
+      "second": [17, 6],
+      "delta_cos4": "16128/21125",
+      "delta_cos12": "25095083827968/18129541015625",
+      "alias_ratio_cos12_over_cos4": "1555994781/858203125",
+      "h4_only_target_mean": "4.9862612964e-5",
+      "source_coefficient_only_se": "2.22595e-6"
+    }
+  ],
+  "scoring_order": [
+    "frozen_h4_only_target_with_source_uncertainty_and_future_target_covariance",
+    "zero_effect",
+    "declared_two_column_h4_h12_model",
+    "held_out_third_alias_ratio_only_if_a12_is_resolved"
+  ],
+  "protocol": {
+    "orientation_order_is_signed": true,
+    "pilot_uses_variance_only_to_freeze_sample_count": true,
+    "preserve_batch_covariance": true,
+    "add_per_size_harmonic_mixtures": false,
+    "inspect_target_before_sample_count_freeze": false
+  },
+  "claim_boundary": {
+    "included": "ordered Gaussian geometries, exact H4/H12 contrasts, alias signs, source-only targets, and scoring order",
+    "excluded": "pilot or production samples, sample count, target observations, covariance estimates, scores, H4/H12 outcome, or a scientific conclusion",
+    "parent_issue": "remain open"
+  }
+}
