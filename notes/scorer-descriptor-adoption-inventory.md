@@ -1,12 +1,12 @@
 # Scorer descriptor-adoption inventory
 
-In this checked snapshot, the exact `scripts/*score*.py` corpus contains 43
-files. Python-AST inspection finds twelve
+In this checked snapshot, the exact `scripts/*score*.py` corpus contains 44
+files. Python-AST inspection finds thirteen
 direct typed entrypoints importing both `ObservableDescriptor` and
-`map_observable` from `wrapping_channels`. Eleven frozen kernels are covered by
+`map_observable` from `wrapping_channels`. Twelve frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Nineteen paths are confirmed channel-bearing and
+a descriptor is not applicable. Eighteen paths are confirmed channel-bearing and
 require typed migrations: `score_angular_root_amplitude.py`,
 `score_axis_pair_annihilator.py`, its stable entrypoint,
 `score_intrinsic_quantile_center_n145_n290.py`,
@@ -41,7 +41,7 @@ unchanged.
 but no current scorer has that status. Static membership alone would not prove
 a semantic bug, data-provenance failure, or need for migration; any future
 corpus addition must still be reviewed before modification. Issue #146 remains
-open because inventory classification is not the same as implementing the 19
+open because inventory classification is not the same as implementing the 18
 required typed migrations.
 
 The `kappa3_half_score.py` exception is narrow. It defines only exact Bernoulli
