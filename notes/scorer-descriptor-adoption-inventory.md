@@ -6,12 +6,13 @@ direct typed entrypoints importing both `ObservableDescriptor` and
 `map_observable` from `wrapping_channels`. Three frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Eight paths are confirmed channel-bearing and
+a descriptor is not applicable. Nine paths are confirmed channel-bearing and
 require typed migrations: `score_angular_root_amplitude.py`,
 `score_axis_pair_annihilator.py`, its stable entrypoint,
 `score_c4_self_matching_n26.py`, `score_c4_tangent_orthogonal_holdout.py`,
-`score_matching_odd_synthesis.py`, `score_prequential_evidence.py`, and
-`score_rank_gap_boundary_targets.py`. The remaining 19 files are outside a
+`score_matching_odd_synthesis.py`, `score_prequential_evidence.py`,
+`score_rank_gap_boundary_targets.py`, and
+`score_threshold_rank_root_doubling.py`. The remaining 18 files are outside a
 registered typed path.
 
 This closes an inventory gap: the repository now has a deterministic list,
@@ -21,7 +22,7 @@ import is added or removed without updating the manifest, or if a declared
 wrapped kernel disappears.
 
 `outside_registered_typed_path` is deliberately a triage label. Some of those
-19 scripts may not compare channel-bearing quantities, some may be historical,
+18 scripts may not compare channel-bearing quantities, some may be historical,
 and some may need a future typed wrapper. Static membership alone does not prove
 a semantic bug, data-provenance failure, or need for migration. Each candidate
 must be reviewed before modification; Issue #146 therefore remains open.
@@ -77,6 +78,13 @@ ordered representation arrays and metadata. A typed migration must represent
 the paired rank-gap quantity, rank units, orientation pooling, and cross-size
 identity. It must preserve the fixed `5/8` exponent, source/target chronology,
 production-metadata gate, and covariance calculation.
+
+`score_threshold_rank_root_doubling.py` is migration-required. It tests a
+fixed `-1/4` doubling ratio for two Gaussian threshold-rank root-gap lineages,
+reversing the stored child sign to follow multiplication by `1+i`. A typed
+migration must represent the root-gap quantity, genealogy, stored-versus-lineage
+orientation order, sign map, and cross-size relation. It must preserve both the
+full-covariance score and the diagonal-only diagnostic.
 
 The axis-pair annihilator score path is migration-required as one operational
 unit. The base scorer reconstructs the cross matching function from
