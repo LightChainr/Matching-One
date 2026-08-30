@@ -59,7 +59,8 @@ class ThresholdRankIntegerPeriodMCTests(unittest.TestCase):
         cls.temporary.cleanup()
 
     def run_predefined(
-        self, n: int, *, samples: int = 8, threads: int = 1, marked: bool = False
+        self, n: int, *, samples: int = 8, threads: int = 1, marked: bool = False,
+        far_radius: int = 0,
     ) -> Path:
         prefix = Path(self.temporary.name) / f"n{n}_{samples}_{threads}_{int(marked)}"
         command = [
@@ -70,6 +71,8 @@ class ThresholdRankIntegerPeriodMCTests(unittest.TestCase):
         ]
         if marked:
             command.append("--marked-births")
+        if far_radius:
+            command += ["--far-radius", str(far_radius)]
         subprocess.run(command, check=True)
         return prefix
 
@@ -253,6 +256,47 @@ class ThresholdRankIntegerPeriodMCTests(unittest.TestCase):
         ):
             self.assertIn(name, score["P4_point"])
             self.assertIn(name, score["covariance_metric_order"])
+
+    def test_separated_two_orbit_stream(self) -> None:
+        prefix = self.run_predefined(
+            65, samples=20, marked=True, far_radius=2
+        )
+        metadata = json.loads(
+            Path(str(prefix) + ".metadata.json").read_text(encoding="utf-8")
+        )
+        self.assertEqual(metadata["separated_observer_radius"], 2)
+        self.assertIn("axis+i*diagonal", metadata["separated_observer"])
+        with Path(str(prefix) + ".path.csv").open(newline="", encoding="utf-8") as handle:
+            rows = list(csv.DictReader(handle))
+        required = {
+            "sum_O_sep_axis", "sum_O_sep_diagonal", "sum_O_sep4",
+            "sum_O_sep4_2", "sum_O_sep_axis_internal_h4",
+            "sum_O_sep_diagonal_internal_h4", "sum_O_sep4_J_S_re",
+            "sum_O_sep4_J_S_im", "sum_O_sep4_J_D_re", "sum_O_sep4_J_D_im",
+        }
+        self.assertTrue(required.issubset(rows[0]))
+        self.assertTrue(any(float(row["sum_O_sep4_2"]) > 0 for row in rows))
+        with Path(str(prefix) + ".complement_audit.csv").open(
+            newline="", encoding="utf-8"
+        ) as handle:
+            audits = list(csv.DictReader(handle))
+        self.assertTrue(audits)
+        self.assertTrue(all(int(row["separated_mark_failures"]) == 0 for row in audits))
+        score_path = Path(self.temporary.name) / "two-observer-rank-score.json"
+        subprocess.run(
+            [
+                sys.executable,
+                str(ROOT / "scripts" / "score_two_observer_source_rank.py"),
+                "--prefix", str(prefix), "--output", str(score_path),
+            ],
+            check=True,
+        )
+        score = json.loads(score_path.read_text(encoding="utf-8"))
+        self.assertEqual(
+            score["schema"], "matching-one/two-observer-two-source-rank-score/v1"
+        )
+        self.assertEqual(score["matrix_rows"], ["O_far", "O_sep4_axis_minus_diagonal"])
+        self.assertIn("det_re", score["metric_order"])
 
 
 if __name__ == "__main__":
