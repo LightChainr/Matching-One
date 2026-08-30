@@ -1,0 +1,23 @@
+{
+  "schema": "matching-one/c4-general-period-thermal-null-score-stream/v1",
+  "generated_utc": "2026-08-30T13:57:15Z",
+  "git_commit": "0b25b15b61edbc40a987ff7cd7aef7063b933b6e",
+  "binary_sha256": "ac1a9b00bad980a705570ea124e55573046403a47e2ad93037ab76e3964ab54e",
+  "command": "./p155_mc --samples 20000 --batches 100 --threads 16 --radii 2,4,8 --seed 15583020260830 --replica-offset 15500000000 --git-commit 0b25b15b61edbc40a987ff7cd7aef7063b933b6e --binary-sha256 ac1a9b00bad980a705570ea124e55573046403a47e2ad93037ab76e3964ab54e --output-prefix results/n260_n340_20k",
+  "samples_per_design": 20000,
+  "batches": 100,
+  "seed": 15583020260830,
+  "replica_counter_first": 15500000000,
+  "replica_counter_last_exclusive": 15500020000,
+  "radii": [2,4,8],
+  "cutoff": "euclidean",
+  "alpha_star": "3/64",
+  "designs": [{"label":"N260_16_2","N":260,"period_matrix":[[16,-2],[2,16]]},{"label":"N340_18_4","N":340,"period_matrix":[[18,-4],[4,18]]}],
+  "graph_semantics": "self-matching checkerboard triangulation on parity-preserving general-period quotient",
+  "pairing": "configuration/complement half-differences; same seed/counter prefix field across sizes and radii",
+  "observable_rows": ["global_cross_half_difference","local_pivotal_h4_half_difference_plus_3_over_64_epsilon_cell"],
+  "score_columns": ["S_t","S_lambda"],
+  "epsilon_cell": "[(n_(0,0)-1/2)+(n_(1,0)-1/2)]/2",
+  "elapsed_seconds": 0.20197516300000001,
+  "batch_csv": "results/n260_n340_20k.batches.csv"
+}
