@@ -1,0 +1,24 @@
+{
+  "schema": "matching-one/p337-theory-fixed-dressing-adversary-manifest/v1",
+  "issues": [337, 321],
+  "new_simulation": false,
+  "artifacts": {
+    "script": "scripts/analyze_theory_fixed_dressing_adversary.py",
+    "result": "results/p337-theory-fixed-dressing-adversary/latest.json",
+    "report": "results/p337-theory-fixed-dressing-adversary/latest.md",
+    "science_card": "results/p337-theory-fixed-dressing-adversary/SCIENTIFIC_CARD.md",
+    "test": "tests/test_analyze_theory_fixed_dressing_adversary.py"
+  },
+  "identity_dressing": {
+    "lambda0": 0.3242098886627524,
+    "lambda_id4": 0.1621049443313762,
+    "quadratic": 0.8030746226926118,
+    "df": 2,
+    "gof_p": 0.6692903471099262,
+    "AIC_descriptive": 4.803074622692612,
+    "N1360_prediction": -0.0005830003059834112,
+    "N1360_prediction_standard_error": 0.00006804726040020046
+  },
+  "N1360_status": "current source covariance cannot broadly separate identity dressing, recurrence, rank-3 Jordan and free-single; no production authorized",
+  "claim_boundary": "theory-fixed same-lineage adversary and joint forecast identifiability, not identity-family field identification"
+}

@@ -1,0 +1,380 @@
+{
+  "N1360_forecast_joint": {
+    "Smith_classes": [
+      [
+        4,
+        340
+      ],
+      [
+        4,
+        340
+      ]
+    ],
+    "covariance": [
+      [
+        4.63042964797269e-09,
+        3.0450519850569427e-09,
+        3.778397504350517e-09,
+        1.3564562745300242e-08,
+        7.548368815206937e-10,
+        2.0301573893952655e-08
+      ],
+      [
+        3.0450519850569423e-09,
+        1.2246765864355955e-07,
+        1.0841605614969145e-07,
+        8.076650770014257e-08,
+        7.548368815206955e-10,
+        1.1371705135958827e-07
+      ],
+      [
+        3.778397504350517e-09,
+        1.0841605614969144e-07,
+        9.655038868579142e-08,
+        7.438105780972217e-08,
+        7.549552230486835e-10,
+        1.0355013531640935e-07
+      ],
+      [
+        1.3564562745300242e-08,
+        8.076650770014257e-08,
+        7.438105780972217e-08,
+        8.891672550707886e-08,
+        3.7710753670313405e-10,
+        1.0651745387555979e-07
+      ],
+      [
+        7.548368815206939e-10,
+        7.548368815206955e-10,
+        7.549552230486833e-10,
+        3.771075367031341e-10,
+        7.548368815206948e-10,
+        7.696436276919146e-09
+      ],
+      [
+        2.0301573893952655e-08,
+        1.1371705135958827e-07,
+        1.0355013531640935e-07,
+        1.0651745387555979e-07,
+        7.696436276919145e-09,
+        2.0176596569694394e-07
+      ]
+    ],
+    "geometry": [
+      [
+        36,
+        8
+      ],
+      [
+        28,
+        24
+      ]
+    ],
+    "order": [
+      "fixed_identity_dressing",
+      "rank3_same_base_jordan",
+      "free_lambda_recurrence",
+      "free_single_lambda",
+      "fixed_single_lambda0",
+      "scale_neutral"
+    ],
+    "pairwise_identity_dressing_separation": [
+      {
+        "forecast_difference": 0.00020658798200668413,
+        "future_measurement_standard_error_ceiling_for_3sigma": null,
+        "left": "fixed_identity_dressing",
+        "maximum_source_limited_z": 0.5938790976677724,
+        "right": "rank3_same_base_jordan",
+        "source_difference_standard_error": 0.00034786201908431795,
+        "three_sigma_possible_without_refitting_sources": false
+      },
+      {
+        "forecast_difference": 0.0002125688690516542,
+        "future_measurement_standard_error_ceiling_for_3sigma": null,
+        "left": "fixed_identity_dressing",
+        "maximum_source_limited_z": 0.6947139374209153,
+        "right": "free_lambda_recurrence",
+        "source_difference_standard_error": 0.00030598042964389584,
+        "three_sigma_possible_without_refitting_sources": false
+      },
+      {
+        "forecast_difference": 0.0005947663880001033,
+        "future_measurement_standard_error_ceiling_for_3sigma": null,
+        "left": "fixed_identity_dressing",
+        "maximum_source_limited_z": 2.3078279213432547,
+        "right": "free_single_lambda",
+        "source_difference_standard_error": 0.0002577169564938463,
+        "three_sigma_possible_without_refitting_sources": false
+      },
+      {
+        "forecast_difference": -0.0002414266433630635,
+        "future_measurement_standard_error_ceiling_for_3sigma": 5.099726488034854e-05,
+        "left": "fixed_identity_dressing",
+        "maximum_source_limited_z": 3.8780743221993763,
+        "right": "fixed_single_lambda0",
+        "source_difference_standard_error": 6.225425902259216e-05,
+        "three_sigma_possible_without_refitting_sources": true
+      },
+      {
+        "forecast_difference": 0.0039417094828608865,
+        "future_measurement_standard_error_ceiling_for_3sigma": 0.0012492190635780924,
+        "left": "fixed_identity_dressing",
+        "maximum_source_limited_z": 9.680575866724967,
+        "right": "scale_neutral",
+        "source_difference_standard_error": 0.00040717716973942845,
+        "three_sigma_possible_without_refitting_sources": true
+      }
+    ],
+    "production_status": "not authorized or started",
+    "value": [
+      -0.0005830003059834112,
+      -0.0007895882879900953,
+      -0.0007955691750350654,
+      -0.0011777666939835145,
+      -0.0003415736626203477,
+      -0.004524709788844298
+    ]
+  },
+  "claim_boundary": "same-lineage theory adversary and N1360 identifiability audit; no field identity, new exponent, or production authorization",
+  "data": {
+    "H4_amplitude": [
+      -0.01605092257680157,
+      -0.011111494145226835,
+      -0.0048572599119938095,
+      -0.0021675562817575636
+    ],
+    "covariance": [
+      [
+        2.4715787546734945e-05,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        9.518466362688542e-07,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.559714078164142e-06,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        3.1016939301171325e-07
+      ]
+    ],
+    "generation_order": [
+      "N85",
+      "N170",
+      "N340",
+      "N680"
+    ]
+  },
+  "models": {
+    "fixed_identity_dressing": {
+      "AIC_descriptive": 4.803074622692612,
+      "N1360_H4_amplitude_prediction": -0.0005830003059834112,
+      "N1360_data_influence": [
+        -0.007548625395437187,
+        0.046477518046085825,
+        0.02008041084371468,
+        0.04161011377864684
+      ],
+      "N1360_prediction_standard_error": 6.804726040020046e-05,
+      "absolute_dressing_to_leading_ratio_n0_to_n4": [
+        0.7279869373013664,
+        0.36399346865068327,
+        0.1819967343253416,
+        0.0909983671626708,
+        0.0454991835813354
+      ],
+      "coefficient_order": [
+        "c0",
+        "c_id4"
+      ],
+      "coefficients": [
+        -0.05528247145110568,
+        0.04024491707814065
+      ],
+      "definition": "c0*lambda0^n+c_id4*lambda_id4^n",
+      "delta_AIC_descriptive": 0.0,
+      "df": 2,
+      "gof_p": 0.6692903471099262,
+      "lambda0": 0.3242098886627524,
+      "lambda_id4": 0.1621049443313762,
+      "parameter_covariance": [
+        [
+          4.566234285798386e-05,
+          -6.520432985771373e-05
+        ],
+        [
+          -6.520432985771373e-05,
+          0.00010769358090819878
+        ]
+      ],
+      "quadratic": 0.8030746226926118
+    },
+    "fixed_single_lambda0": {
+      "AIC_descriptive": 17.84253507119478,
+      "N1360_H4_amplitude_prediction": -0.0003415736626203477,
+      "N1360_data_influence": [
+        0.0027642265254658282,
+        0.023270588212497556,
+        0.004604215107053273,
+        0.007506334514794795
+      ],
+      "N1360_prediction_standard_error": 2.7474294923085744e-05,
+      "coefficient": -0.030915718798537453,
+      "coefficient_standard_error": 0.0024866893117994325,
+      "delta_AIC_descriptive": 13.039460448502169,
+      "df": 3,
+      "gof_p": 0.0012214667609636823,
+      "lambda": 0.3242098886627524,
+      "quadratic": 15.842535071194781
+    },
+    "free_lambda_recurrence": {
+      "AIC_descriptive": 6.077301040706695,
+      "N1360_H4_amplitude_prediction": -0.0007955691750350654,
+      "N1360_data_influence": [
+        0.01039305714334372,
+        -0.07975797055328898,
+        0.09378693535322287,
+        0.48879701853624263
+      ],
+      "N1360_prediction_standard_error": 0.0003107255842150617,
+      "coefficients": [
+        -0.12476489703963398,
+        0.10858292916761851
+      ],
+      "definition": "c0*lambda0^n+c1*lambda1^n; lambda1 fitted",
+      "delta_AIC_descriptive": 1.2742264180140834,
+      "df": 1,
+      "gof_p": 0.7809888329163177,
+      "influence_method": "central refit derivative with full four-generation covariance",
+      "lambda1": 0.27068136085506034,
+      "quadratic": 0.07730104070669545
+    },
+    "free_single_lambda": {
+      "AIC_descriptive": 5.979473514294179,
+      "N1360_H4_amplitude_prediction": -0.0011777666939835145,
+      "N1360_data_influence": [
+        -0.023351054697285364,
+        0.011873849614562443,
+        0.09346528625164346,
+        0.44593769416006085
+      ],
+      "N1360_prediction_standard_error": 0.00029818907677357814,
+      "coefficient": -0.02156627899410658,
+      "delta_AIC_descriptive": 1.1763988916015675,
+      "df": 2,
+      "gof_p": 0.37167451880593294,
+      "influence_method": "central refit derivative with full four-generation covariance",
+      "interpretation": "same-lineage transfer only; not a cross-geometry exponent",
+      "lambda": 0.48341599097773635,
+      "lambda_standard_error": 0.04738748033245702,
+      "parameter_covariance": [
+        [
+          9.328708994438652e-06,
+          0.00012143861504224768
+        ],
+        [
+          0.00012143861504224768,
+          0.002245573292259001
+        ]
+      ],
+      "quadratic": 1.9794735142941788
+    },
+    "rank3_same_base_jordan": {
+      "AIC_descriptive": 6.083857646053175,
+      "N1360_H4_amplitude_prediction": -0.0007895882879900953,
+      "N1360_data_influence": [
+        0.01410746605577466,
+        -0.09646175457595527,
+        0.0873046204763359,
+        0.5586583567876803
+      ],
+      "N1360_prediction_standard_error": 0.0003499537950123695,
+      "coefficient_order": [
+        "c0",
+        "c1",
+        "c2"
+      ],
+      "coefficients": [
+        -0.016227452711595782,
+        -0.01785104538294855,
+        0.0026943767411885047
+      ],
+      "definition": "lambda0^n*(c0+c1*n+c2*n*(n-1)/2)",
+      "delta_AIC_descriptive": 1.2807830233605628,
+      "df": 1,
+      "gof_p": 0.772136156298051,
+      "lambda0": 0.3242098886627524,
+      "parameter_covariance": [
+        [
+          2.4344171004211133e-05,
+          -2.3935704634939332e-05,
+          1.715954985955503e-05
+        ],
+        [
+          -2.3935704634939332e-05,
+          3.213381034600413e-05,
+          -2.6965113601203616e-05
+        ],
+        [
+          1.715954985955503e-05,
+          -2.6965113601203616e-05,
+          4.8462955963621954e-05
+        ]
+      ],
+      "quadratic": 0.08385764605317438,
+      "rank": 3
+    },
+    "scale_neutral": {
+      "AIC_descriptive": 70.94009149844427,
+      "N1360_H4_amplitude_prediction": -0.004524709788844298,
+      "N1360_data_influence": [
+        0.008163444734076378,
+        0.21197318770579135,
+        0.12936086717536852,
+        0.6505025003847638
+      ],
+      "N1360_prediction_standard_error": 0.0004491836658839499,
+      "coefficient": -0.004524709788844298,
+      "coefficient_standard_error": 0.0004491836658839499,
+      "delta_AIC_descriptive": 66.13701687575167,
+      "df": 3,
+      "gof_p": 7.197691874924372e-15,
+      "lambda": 1.0,
+      "quadratic": 68.94009149844427
+    }
+  },
+  "models_in_fixed_order": [
+    "fixed_identity_dressing",
+    "rank3_same_base_jordan",
+    "free_lambda_recurrence",
+    "free_single_lambda",
+    "fixed_single_lambda0",
+    "scale_neutral"
+  ],
+  "reading": {
+    "AIC_boundary": "AIC is descriptive; fixed-theory GOF and preregistered lineage behavior carry the mechanism claim",
+    "N1360": "one N1360 measurement cannot broadly separate identity dressing from recurrence, rank-3, or free-single under current source covariance; it can target fixed-single and neutral",
+    "identity_dressing": "theory-fixed identity dressing passes two-df GOF and has the lowest descriptive AIC",
+    "rank3": "minimal same-base rank-3 Jordan also passes but is forecast-degenerate with free-lambda recurrence"
+  },
+  "schema": "matching-one/P337-theory-fixed-identity-dressing-adversary/v1",
+  "source": {
+    "N170": "results/server-20260830/P337-N170-angle-flip/score.json",
+    "N340": "results/server-20260830/P337-N340-second-child/score.json",
+    "N680": "results/server-20260830/P337-N680-heldout/score.json",
+    "N85": "results/server-20260830/P337-natural-current-scale-N85/score.json",
+    "independence": "four independent random blocks; full within-pair covariance projected before diagonal inter-generation fit"
+  },
+  "status": "existing-data theory adversary; no new simulation"
+}
