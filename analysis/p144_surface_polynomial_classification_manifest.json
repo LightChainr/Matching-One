@@ -1,0 +1,49 @@
+{
+  "schema": "matching-one/p144-surface-polynomial-classification-manifest/v1",
+  "issues": [144, 269],
+  "pull_requests": [229, 267],
+  "reviewed_dependencies": {
+    "matching_defect_PR229_head": "83a14f3",
+    "typed_incidence_spine": "e6953ba",
+    "relative_source_collapse": "011d332",
+    "unrestricted_degenerate_quotient_theorem": "73d4960"
+  },
+  "naturality_contract": {
+    "fixed_embedded_object": true,
+    "one_independent_ground_element_per_site": true,
+    "product_local_weights": true,
+    "allowed_readouts": ["specialization", "source derivative", "rank-image quotient"],
+    "excluded_escapes": [
+      "reverse-engineering an unrelated graph separately for each scalar polynomial",
+      "multi-edge site gadgets followed by undeclared coefficient extraction or cancellation",
+      "calling a block-correlated gadget an ordinary independent edge-subset specialization"
+    ]
+  },
+  "frozen_exact_oracles": {
+    "local_terminal_ports": 4,
+    "axis_L3_configurations": 512,
+    "minimal_topology_source_search_orders": [1, 4],
+    "expected_first_distinguishing_order": 2
+  },
+  "expected_decision": {
+    "direct_named_edge_subset_specialization": false,
+    "closest_named_readout": "Krushkal subgraph/complement genus variables",
+    "exact_positive_object": "typed site-state rank-image quotient",
+    "extra_terminal_topology_sources_beyond_occupation": 1,
+    "minimal_local_partition_extension": "typed J4 junction"
+  },
+  "outputs": {
+    "json": "results/p144-surface-polynomial-classification/latest.json",
+    "scientific_card": "results/p144-surface-polynomial-classification/SCIENTIFIC_CARD.md"
+  },
+  "commands": [
+    "python3 scripts/p144_surface_polynomial_classification.py",
+    "python3 -m unittest discover -s tests -p test_p144_surface_polynomial_classification.py",
+    "python3 -m unittest discover -s tests -p test_p144_typed_incidence_spine.py"
+  ],
+  "claim_boundary": [
+    "The no-go is for natural product-local specializations with one independent named-polynomial ground element per site, not for arbitrary graph encodings of an already-known scalar polynomial.",
+    "Krushkal genus variables provide the correct torus readout but its edge-subset state family does not provide the required site J4 state.",
+    "The exact positive object is a new site/partition-surface rank-image quotient; no universal width-independent deletion-contraction algorithm is claimed."
+  ]
+}

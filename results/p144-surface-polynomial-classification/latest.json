@@ -1,0 +1,1001 @@
+{
+  "all_machine_gates_pass": true,
+  "claim_contract": {
+    "allowed": "a fixed embedded object, one independent ground element per site, product local weights, specialization and source derivatives",
+    "excluded": "arbitrary graph gadgets with coefficient extraction, cancellations or a graph reverse-engineered separately from each final scalar polynomial",
+    "gadget_escape": "three or more ordinary edges can realize J4 only if their intermediate subsets are removed by a block projector; that projector is precisely the additional typed site-state structure"
+  },
+  "decision": {
+    "closest_named_readout": "Krushkal subgraph/complement genus variables; the readout is exact after replacing edge subsets by typed site junction states",
+    "exact_positive_object": "R_site or equivalently Z_rel/K_site, the rank-image quotient of the typed incidence-spine partition state sum",
+    "minimal_extension": "one typed J4 site element locally and one relative topology source Q at terminal output, in addition to occupation",
+    "named_polynomial": "no direct specialization or derivative under the declared natural one-ground-element-per-site, product-local state-sum contract"
+  },
+  "dependencies": {
+    "matching_defect_PR229_head": "83a14f3",
+    "relative_source_collapse": "011d332",
+    "typed_incidence_spine": "e6953ba",
+    "unrestricted_degenerate_quotient_theorem": "73d4960"
+  },
+  "exact_site_rank_image_quotient": {
+    "N": 9,
+    "all_derivative_routes_agree": true,
+    "carrier_genus_pairs": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "coefficient_rows": [
+      {
+        "count": 1,
+        "genus_black": 0,
+        "genus_white": 1,
+        "occupied": 0,
+        "q": -1,
+        "rank_black": 0,
+        "rank_white": 2
+      },
+      {
+        "count": 9,
+        "genus_black": 0,
+        "genus_white": 1,
+        "occupied": 1,
+        "q": -1,
+        "rank_black": 0,
+        "rank_white": 2
+      },
+      {
+        "count": 36,
+        "genus_black": 0,
+        "genus_white": 1,
+        "occupied": 2,
+        "q": -1,
+        "rank_black": 0,
+        "rank_white": 2
+      },
+      {
+        "count": 78,
+        "genus_black": 0,
+        "genus_white": 1,
+        "occupied": 3,
+        "q": -1,
+        "rank_black": 0,
+        "rank_white": 2
+      },
+      {
+        "count": 6,
+        "genus_black": 0,
+        "genus_white": 0,
+        "occupied": 3,
+        "q": 0,
+        "rank_black": 1,
+        "rank_white": 1
+      },
+      {
+        "count": 90,
+        "genus_black": 0,
+        "genus_white": 1,
+        "occupied": 4,
+        "q": -1,
+        "rank_black": 0,
+        "rank_white": 2
+      },
+      {
+        "count": 36,
+        "genus_black": 0,
+        "genus_white": 0,
+        "occupied": 4,
+        "q": 0,
+        "rank_black": 1,
+        "rank_white": 1
+      },
+      {
+        "count": 45,
+        "genus_black": 0,
+        "genus_white": 1,
+        "occupied": 5,
+        "q": -1,
+        "rank_black": 0,
+        "rank_white": 2
+      },
+      {
+        "count": 72,
+        "genus_black": 0,
+        "genus_white": 0,
+        "occupied": 5,
+        "q": 0,
+        "rank_black": 1,
+        "rank_white": 1
+      },
+      {
+        "count": 9,
+        "genus_black": 1,
+        "genus_white": 0,
+        "occupied": 5,
+        "q": 1,
+        "rank_black": 2,
+        "rank_white": 0
+      },
+      {
+        "count": 48,
+        "genus_black": 0,
+        "genus_white": 0,
+        "occupied": 6,
+        "q": 0,
+        "rank_black": 1,
+        "rank_white": 1
+      },
+      {
+        "count": 36,
+        "genus_black": 1,
+        "genus_white": 0,
+        "occupied": 6,
+        "q": 1,
+        "rank_black": 2,
+        "rank_white": 0
+      },
+      {
+        "count": 36,
+        "genus_black": 1,
+        "genus_white": 0,
+        "occupied": 7,
+        "q": 1,
+        "rank_black": 2,
+        "rank_white": 0
+      },
+      {
+        "count": 9,
+        "genus_black": 1,
+        "genus_white": 0,
+        "occupied": 8,
+        "q": 1,
+        "rank_black": 2,
+        "rank_white": 0
+      },
+      {
+        "count": 1,
+        "genus_black": 1,
+        "genus_white": 0,
+        "occupied": 9,
+        "q": 1,
+        "rank_black": 2,
+        "rank_white": 0
+      }
+    ],
+    "configurations": 512,
+    "exact_quotients": {
+      "black_rank": "R_site(a,b;z)=sum_B a^|B| b^(N-|B|) z^r_B; M=(z*d_z-1)R_site|z=1",
+      "relative_rank": "Z_rel(a,b;Q)=sum_B a^|B| b^(N-|B|) Q^q; M=Q*d_Q Z_rel|Q=1",
+      "site_Krushkal": "K_site(a,b;X,Y)=sum_B a^|B| b^(N-|B|) X^g_B Y^g_W; M=(X*d_X-Y*d_Y)K_site|X=Y=1"
+    },
+    "geometry": "axis_L3_honest_square_cell_torus",
+    "independent_output_sources": {
+      "equivalent_topology_source": "z^r_B with the affine derivative z*d_z-1",
+      "extra_topology_sources_beyond_occupation": 1,
+      "fixed_N_reduced_form": [
+        "t=a/b",
+        "Q_relative_topology"
+      ],
+      "homogeneous_form": [
+        "a_for_B",
+        "b_for_W",
+        "Q_relative_topology"
+      ]
+    },
+    "matching_Bernstein_coefficients": [
+      -1,
+      -9,
+      -36,
+      -78,
+      -90,
+      -36,
+      36,
+      36,
+      9,
+      1
+    ],
+    "matching_from_Krushkal_genus_derivative": [
+      -1,
+      -9,
+      -36,
+      -78,
+      -90,
+      -36,
+      36,
+      36,
+      9,
+      1
+    ],
+    "matching_from_black_rank_derivative": [
+      -1,
+      -9,
+      -36,
+      -78,
+      -90,
+      -36,
+      36,
+      36,
+      9,
+      1
+    ],
+    "matching_from_relative_rank_derivative": [
+      -1,
+      -9,
+      -36,
+      -78,
+      -90,
+      -36,
+      36,
+      36,
+      9,
+      1
+    ],
+    "occupation_only_Bernstein_counts": [
+      1,
+      9,
+      36,
+      84,
+      126,
+      126,
+      84,
+      36,
+      9,
+      1
+    ],
+    "rank_pairs": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        0
+      ]
+    ]
+  },
+  "issues": [
+    144,
+    269
+  ],
+  "local_partition_no_go": {
+    "derivative_boundary": "a specialization or derivative changes weights of existing states and cannot create the absent J4 terminal partition",
+    "independent_subsets_of_minimum_gadget": 8,
+    "minimal_extension": "promote one site to a typed four-terminal partition element; its two states are J_edge on edge-midpoint ports and J_face on face-center ports",
+    "minimum_J4_edge_gadgets": [
+      [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ]
+    ],
+    "minimum_independent_edges_needed_for_J4": 3,
+    "ordinary_single_edge_contains_J4": false,
+    "ordinary_single_ribbon_edge_partitions": [
+      [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      [
+        [
+          0,
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      [
+        [
+          0,
+          2
+        ],
+        [
+          1
+        ],
+        [
+          3
+        ]
+      ],
+      [
+        [
+          0,
+          3
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ]
+      ],
+      [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      [
+        [
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2
+        ]
+      ],
+      [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ]
+    ],
+    "required_partition": [
+      [
+        0,
+        1,
+        2,
+        3
+      ]
+    ],
+    "terminal_ports": [
+      "north",
+      "east",
+      "south",
+      "west"
+    ],
+    "topological_transition_pairings": [
+      [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ]
+    ],
+    "transition_pairings_contain_J4": false,
+    "unwanted_mixed_subsets_if_only_all_off_and_all_on_are_kept": 6
+  },
+  "minimal_topology_source_witness": {
+    "audits": [
+      {
+        "HNF_representatives": 1,
+        "distinct_matching_polynomials": 1,
+        "matching_classes": [
+          {
+            "bernstein": [
+              -1,
+              1
+            ],
+            "matrices": [
+              [
+                [
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1
+                ]
+              ]
+            ]
+          }
+        ],
+        "order": 1
+      },
+      {
+        "HNF_representatives": 3,
+        "distinct_matching_polynomials": 2,
+        "matching_classes": [
+          {
+            "bernstein": [
+              -1,
+              -2,
+              1
+            ],
+            "matrices": [
+              [
+                [
+                  2,
+                  1
+                ],
+                [
+                  0,
+                  1
+                ]
+              ]
+            ]
+          },
+          {
+            "bernstein": [
+              -1,
+              0,
+              1
+            ],
+            "matrices": [
+              [
+                [
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  2
+                ]
+              ],
+              [
+                [
+                  2,
+                  0
+                ],
+                [
+                  0,
+                  1
+                ]
+              ]
+            ]
+          }
+        ],
+        "order": 2
+      },
+      {
+        "HNF_representatives": 4,
+        "distinct_matching_polynomials": 2,
+        "matching_classes": [
+          {
+            "bernstein": [
+              -1,
+              -3,
+              0,
+              1
+            ],
+            "matrices": [
+              [
+                [
+                  3,
+                  1
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              [
+                [
+                  3,
+                  2
+                ],
+                [
+                  0,
+                  1
+                ]
+              ]
+            ]
+          },
+          {
+            "bernstein": [
+              -1,
+              0,
+              0,
+              1
+            ],
+            "matrices": [
+              [
+                [
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  3
+                ]
+              ],
+              [
+                [
+                  3,
+                  0
+                ],
+                [
+                  0,
+                  1
+                ]
+              ]
+            ]
+          }
+        ],
+        "order": 3
+      },
+      {
+        "HNF_representatives": 7,
+        "distinct_matching_polynomials": 4,
+        "matching_classes": [
+          {
+            "bernstein": [
+              -1,
+              -4,
+              -4,
+              4,
+              1
+            ],
+            "matrices": [
+              [
+                [
+                  2,
+                  1
+                ],
+                [
+                  0,
+                  2
+                ]
+              ],
+              [
+                [
+                  4,
+                  2
+                ],
+                [
+                  0,
+                  1
+                ]
+              ]
+            ]
+          },
+          {
+            "bernstein": [
+              -1,
+              -4,
+              -2,
+              0,
+              1
+            ],
+            "matrices": [
+              [
+                [
+                  4,
+                  1
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              [
+                [
+                  4,
+                  3
+                ],
+                [
+                  0,
+                  1
+                ]
+              ]
+            ]
+          },
+          {
+            "bernstein": [
+              -1,
+              -4,
+              -2,
+              4,
+              1
+            ],
+            "matrices": [
+              [
+                [
+                  2,
+                  0
+                ],
+                [
+                  0,
+                  2
+                ]
+              ]
+            ]
+          },
+          {
+            "bernstein": [
+              -1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "matrices": [
+              [
+                [
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  4
+                ]
+              ],
+              [
+                [
+                  4,
+                  0
+                ],
+                [
+                  0,
+                  1
+                ]
+              ]
+            ]
+          }
+        ],
+        "order": 4
+      }
+    ],
+    "conclusion": "the occupation-only site state sum is identical for every geometry of fixed order, but the matching defect already differs at order two; at least one topology source is necessary",
+    "first_distinguishing_order": 2,
+    "search_orders": [
+      1,
+      4
+    ],
+    "witness": {
+      "matching_A": [
+        -1,
+        0,
+        1
+      ],
+      "matching_B": [
+        -1,
+        -2,
+        1
+      ],
+      "matrix_A": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "matrix_B": [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "order": 2,
+      "shared_occupation_only_counts": [
+        1,
+        2,
+        1
+      ]
+    }
+  },
+  "named_family_classification": [
+    {
+      "direct_site_specialization": false,
+      "family": "multivariate Tutte / random-cluster",
+      "reason": "fails the one-ground-element-per-site local-state contract: an edge has two ends, whereas a selected site requires a typed four-terminal J4",
+      "state_index": "subsets of edges of a fixed graph",
+      "topological_readout": "component/matroid rank only"
+    },
+    {
+      "direct_site_specialization": false,
+      "family": "Bollobas-Riordan",
+      "reason": "fails the one-ground-element-per-site local-state contract: an edge has two ends, whereas a selected site requires a typed four-terminal J4",
+      "state_index": "spanning ribbon subgraphs indexed by edge subsets",
+      "topological_readout": "rank, nullity and ribbon boundary/genus data"
+    },
+    {
+      "direct_site_specialization": false,
+      "family": "Las Vergnas",
+      "reason": "fails the one-ground-element-per-site local-state contract: an edge has two ends, whereas a selected site requires a typed four-terminal J4",
+      "state_index": "edge subsets in a cycle-to-bond matroid perspective",
+      "topological_readout": "matroid-perspective ranks"
+    },
+    {
+      "direct_site_specialization": false,
+      "family": "Krushkal",
+      "reason": "closest named readout, but fails the one-ground-element-per-site local-state contract: an edge has two ends, whereas a selected site requires a typed four-terminal J4; K_site is therefore a site-state Krushkal analogue/rank-image quotient, not K_G itself",
+      "state_index": "spanning embedded subgraphs indexed by edge subsets",
+      "topological_readout": "subgraph and complement genus sources are sufficient for q on a torus"
+    },
+    {
+      "direct_site_specialization": false,
+      "family": "topological transition / 2025 embedded-graph vertex polynomial",
+      "reason": "its local four-valent states are pairwise smoothings; none is the J4 partition, and a boundary-count derivative cannot create that state",
+      "state_index": "ribbon-edge smoothings, partial dual/twist edge states",
+      "topological_readout": "boundary-component or twisted-dual vertex counts"
+    }
+  ],
+  "pull_requests": [
+    229,
+    267
+  ],
+  "schema": "matching-one.p144-surface-polynomial-classification.v1",
+  "status": "named_edge_subset_nogo_and_exact_site_rank_image_quotient"
+}
