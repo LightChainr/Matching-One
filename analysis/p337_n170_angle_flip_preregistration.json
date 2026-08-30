@@ -1,0 +1,168 @@
+{
+  "claim_boundary": "N170 held-out angle-flip test only; distinguishes geometry direction from scalar/common-mode and localizes residual curvature without reopening harmonic voting",
+  "frozen_H4_only_prediction": {
+    "A_projective_scalar": 0.0,
+    "H4_amplitude": -0.006137325766727707,
+    "H4_amplitude_fit_variance": 1.7351173355420177e-06,
+    "absolute_K_A": [
+      0.0039355336023874695,
+      -0.0058502093502358085
+    ],
+    "absolute_fit_covariance": [
+      [
+        7.134733345801523e-07,
+        -1.0605851187682945e-06
+      ],
+      [
+        -1.0605851187682943e-06,
+        1.5765701948968795e-06
+      ]
+    ],
+    "area_power": -1.625,
+    "model_parameter_beta": -25.849888449078552,
+    "model_parameter_variance": 30.781362774805235,
+    "pair_second_minus_first": -0.009785742952623279,
+    "pair_sign": "negative"
+  },
+  "geometry": {
+    "F3_reduction_nondegenerate": true,
+    "H4_covectors_exact": [
+      "-4633/7225",
+      "6887/7225"
+    ],
+    "N": 170,
+    "charged_projective_scalar": {
+      "transport": "unchanged from parent because q_A^2=(u+H_F3)/2",
+      "value": 0.5
+    },
+    "common_multiplier": [
+      1,
+      1
+    ],
+    "exact_angle_flip": true,
+    "first": [
+      11,
+      7
+    ],
+    "first_period_matrix": [
+      [
+        11,
+        -7
+      ],
+      [
+        7,
+        11
+      ]
+    ],
+    "parent_H4_covectors_exact": [
+      "4633/7225",
+      "-6887/7225"
+    ],
+    "parent_N85": [
+      [
+        9,
+        2
+      ],
+      [
+        7,
+        6
+      ]
+    ],
+    "second": [
+      13,
+      1
+    ],
+    "second_period_matrix": [
+      [
+        13,
+        -1
+      ],
+      [
+        1,
+        13
+      ]
+    ],
+    "tau": "i"
+  },
+  "observable": {
+    "decomposition": {
+      "A_projective_scalar": "2(c_second*K_first-c_first*K_second)/(c_second-c_first)",
+      "H4_amplitude": "(K_second-K_first)/(c_second-c_first)",
+      "transform": [
+        [
+          -0.6271701388888888,
+          0.6271701388888888
+        ],
+        [
+          1.1956597222222223,
+          0.8043402777777778
+        ]
+      ]
+    },
+    "definition": "K_A=p(1-p)Jminus_A/W_A=d_eta log W_A",
+    "vector_order": [
+      "K_A_first_11_plus_7i",
+      "K_A_second_13_plus_i"
+    ]
+  },
+  "power": {
+    "A_scalar_5sigma_sensitivity": 0.007072908632801433,
+    "projected_A_scalar_standard_error": 0.0014145817265602866,
+    "projected_H4_amplitude_standard_error": 0.0010774190499123965,
+    "projected_pair_standard_error": 0.001717905530102534,
+    "projected_pair_z_at_H4_target": 5.696321934559005,
+    "required_samples_for_5sigma_pair_vs_zero": 6163692.209856599,
+    "variance_source": "N145 2.4M/shape full paired covariance",
+    "why_8m": "exceeds the covariance-projected 5-sigma requirement for the parameter-free pair sign-flip versus scalar zero contrast"
+  },
+  "primary_contrasts": {
+    "curvature_vs_projective_split": {
+      "A_projective_scalar_target": 0.0,
+      "H4_amplitude_target": -0.006137325766727707,
+      "decision_reading": "departure along H4 amplitude is scale curvature; departure in the orthogonal A scalar is a charged/projective common mode"
+    },
+    "geometry_sign_flip_vs_scalar": {
+      "H4_target": -0.009785742952623279,
+      "decision_reading": "negative resolves the exact angle flip; zero is scalar/geometry-blind",
+      "scalar_or_geometry_blind_target": 0.0,
+      "statistic": "Delta_K_A=K_second-K_first"
+    }
+  },
+  "production": {
+    "batches": 80,
+    "engine": "1714141 projective-birth integer-period runner",
+    "full_batch_covariance_required": true,
+    "machine": {
+      "class": "Kunpeng AArch64, 16 vCPU, 32 GiB",
+      "id": "033945d8bf8b47a7acf475c595169e07",
+      "name": "DevEnvC_HZsCM6",
+      "selection": "idle at preregistration audit; no compute process"
+    },
+    "replica_offset": 0,
+    "samples_per_shape": 8000000,
+    "seed": 202608337170,
+    "threads": 16
+  },
+  "schema": "matching-one/P337-N170-angle-flip-preregistration/v1",
+  "scoring_contract": {
+    "no_H4_H8_vote": true,
+    "no_exponent_fit": true,
+    "no_post_reveal_basis_change": true,
+    "primary": [
+      "full two-component H4 predictive quadratic with model-fit covariance",
+      "Delta_K_A against H4 target and zero",
+      "H4_amplitude and A_projective_scalar with full transformed covariance"
+    ]
+  },
+  "source": {
+    "H4_model_fit_scales": [
+      65,
+      85
+    ],
+    "N145_role": "variance source only; not used to fit the frozen H4 direction",
+    "geometry_crosswalk": "results/p337-natural-current-geometry-crosswalk/latest.json",
+    "geometry_crosswalk_commit": "186d72a",
+    "p_ref": 0.59274605079
+  },
+  "status": "frozen before any N170 projective-birth generation or inspection"
+}
