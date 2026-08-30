@@ -106,15 +106,15 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
                 encoding="utf-8"
             )
         )
-        self.assertEqual(result["counts"]["total"], 38)
-        self.assertEqual(result["counts"]["direct_typed_entrypoint"], 7)
-        self.assertEqual(result["counts"]["covered_frozen_kernel"], 6)
+        self.assertEqual(result["counts"]["total"], 39)
+        self.assertEqual(result["counts"]["direct_typed_entrypoint"], 8)
+        self.assertEqual(result["counts"]["covered_frozen_kernel"], 7)
         self.assertEqual(
             result["counts"]["descriptor_not_applicable_generic_utility"], 1
         )
-        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 24)
+        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 23)
         self.assertEqual(result["counts"]["outside_registered_typed_path"], 0)
-        self.assertEqual(len(result["rows"]), 38)
+        self.assertEqual(len(result["rows"]), 39)
         statuses = {row["path"]: row["status"] for row in result["rows"]}
         for path in (
             "scripts/score_axis_pair_annihilator.py",
@@ -130,7 +130,6 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
             "scripts/score_p159_pell_hex_filter.py",
             "scripts/score_p231_vacuum_kdv_sector.py",
             "scripts/score_p48_new_geometry_channels.py",
-            "scripts/score_p48_sprime_frozen.py",
             "scripts/score_p49_fullcurve_doubling.py",
             "scripts/score_p50_fullcurve_n290.py",
             "scripts/score_p50_sprime_n290.py",
@@ -165,6 +164,14 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
         )
         self.assertEqual(
             statuses["scripts/score_matching_odd_synthesis_typed.py"],
+            "direct_typed_entrypoint",
+        )
+        self.assertEqual(
+            statuses["scripts/score_p48_sprime_frozen.py"],
+            "covered_frozen_kernel",
+        )
+        self.assertEqual(
+            statuses["scripts/score_p48_sprime_frozen_typed.py"],
             "direct_typed_entrypoint",
         )
 
