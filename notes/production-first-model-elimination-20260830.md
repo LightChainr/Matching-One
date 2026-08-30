@@ -76,6 +76,14 @@ continuum field. If P250 resumes, the discriminator should separate a larger
 state space from ordered/path-enriched memory rather than repeat another fixed
 D4 map vote.
 
+A later `branch_only` locked radius-six Level-S certificate at `33c557b`
+completes the candidate-independent rank ladder through eight. Endpoint-Hankel
+`rank<=5,6,7` rejects separately in plus and frozen minus-R2 coordinates;
+`rank<=8` is first compatible (`p=.1978/.1214`). This is a statistical lower
+bound of eight in one observer/dependency convention, not exact state dimension,
+rank-eight flatness, cross-hand closure, noncommutation or a field count. The R2
+bridge was not reached because its rank-five support prerequisite failed.
+
 ## Consequences for the next portfolio
 
 1. **P334/P337 birth age and collision:** the branch-only exact `1/57` witness
@@ -87,9 +95,15 @@ D4 map vote.
    primitives. The missing gate is now generic-Q weighting, closure traces,
    sector transport and first-jet Gram/radical compatibility, not another state
    codec or ordinary aspect-ratio replication.
-3. **P250 state versus memory:** build a rank ladder or ordered/context row on
-   the committed blocks. A radius-six campaign tied to one R2 map no longer has
-   the highest information gain.
+3. **P250 rank-eight flatness versus memory:** use next-order moments or a border
+   basis to test the first compatible rank-eight class, and compare it with one
+   ordered/context row before any cross-hand projector. Open PR #385 proves that unrestricted ordinary
+   near-collisions are not positively separated from a Jordan semigroup on a
+   finite noisy word set; use a physical spectral restriction or its conditional
+   C4-character obstruction only after flatness, cyclic source and internal
+   Laurent rotation are established. Its older R2-gauge continuation is
+   superseded by the augmented all-map rejection, and its five-state P250
+   application lacks support after the radius-six rank lower bound.
 4. **Continuum passports:** normalization-free three-point and modulus ratios
    remain high-value orthogonal discriminators after a lattice observable map is
    explicit. They should not delay production scoring of already typed finite

@@ -29,7 +29,7 @@ comparing it with the checked result. This prevents the meta-tool from being
 silently counted as an unclassified scorer while keeping the scorer partition
 unchanged.
 
-The integrated `main@9572bcf` snapshot remains 59/28/27/3/1. The four extra
+The integrated `main@0dc4430` snapshot remains 59/28/27/3/1. The four extra
 paths are post-snapshot existing-data analyses: three P250 projective-leg
 scorers and one activation-resolved E_top model eliminator. Registering them
 here changes future composability status, not their numerical results or
