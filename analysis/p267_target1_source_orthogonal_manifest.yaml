@@ -4,7 +4,7 @@ issues: [215, 275]
 pull_request: 267
 parent_preregistration: 5ccab6f
 parent_result: e9a06ec
-status: rule_frozen_before_orthogonal_score
+status: complete_JD_perp_bulk_coupling_persists
 
 inputs:
   - results/server-20260830/P267-target1-external-Euler-2m/raw-summary/N325_2m/N325_2m.path.csv.gz
@@ -44,4 +44,28 @@ sufficiency:
   missing: abs_J_D_squared
   consequence_of_missing: residual_source_norm_and_fractional_L2_energy_not_reconstructible
   new_acquisition: forbidden
+
+result:
+  commit_rule: cd0b3ca
+  implementation_fix_no_rule_change: c0cca42
+  artifact: results/server-20260830/P267-target1-external-Euler-2m/gram_orthogonal_score.json
+  N325:
+    beta_first: -0.0364051906239374
+    beta_second: -0.0366207505783810
+    coupling: [-21.8832161236, 21.9145244895]
+    chi2_2d: 641994.48997
+    retained_far_D_magnitude: 0.99879210457
+  N425:
+    beta_first: -0.0312733746802659
+    beta_second: -0.0314657005541904
+    coupling: [-27.1658553284, -18.1024105117]
+    chi2_2d: 589231.71815
+    retained_far_D_magnitude: 0.99914429641
+  transfer:
+    complex: [0.20619969249, 1.03372276701]
+    amplitude: 1.05408779152
+    amplitude_se: 0.00195627698
+    phase_radians: 1.37390763185
+    phase_se: 0.00280322891
+  decision: reject_direct_JS_Gram_projection_as_explanation_of_bulk_D_coupling
 
