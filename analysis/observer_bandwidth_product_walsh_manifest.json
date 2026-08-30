@@ -1,0 +1,18 @@
+{
+  "schema": "matching-one/observer-bandwidth-product-walsh/v1",
+  "status": "exact_synthetic_control",
+  "n": 5,
+  "p": "2/5",
+  "degree_cutoff": 4,
+  "rho_values": ["1/7", "2/5", "3/4"],
+  "observer_terms": [
+    {"subset": [], "coefficient": "7"},
+    {"subset": [0], "coefficient": "1"},
+    {"subset": [1, 2], "coefficient": "-2"},
+    {"subset": [0, 3, 4], "coefficient": "3"},
+    {"subset": [0, 1, 2, 3], "coefficient": "-1"}
+  ],
+  "source_fixture": "J(mask)=((mask^2+3*popcount(mask)+7) mod 17)-8",
+  "covariance_convention": "Hermitian; fixtures are real",
+  "boundary": "The exact number of noise modes is imposed by observer degree for this fixed product-measure clock. It is not a continuum-state, Jordan-rank, Gaussian-cover, or context-Hankel dimension claim."
+}
