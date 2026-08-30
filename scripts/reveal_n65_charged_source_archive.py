@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import csv
 from dataclasses import dataclass
+import gzip
 import hashlib
 import json
 import math
@@ -62,7 +63,12 @@ def sha256(path: Path) -> str:
 def read_births(path: Path) -> tuple[int, dict[tuple[str, int], list[BirthCell]]]:
     grouped: dict[tuple[str, int], list[BirthCell]] = {}
     n_values: set[int] = set()
-    with path.open(newline="", encoding="utf-8") as handle:
+    handle_context = (
+        gzip.open(path, "rt", newline="", encoding="utf-8")
+        if path.suffix == ".gz"
+        else path.open(newline="", encoding="utf-8")
+    )
+    with handle_context as handle:
         for row in csv.DictReader(handle):
             n_values.add(int(row["n"]))
             cell = BirthCell(
