@@ -1,0 +1,112 @@
+{
+  "schema": "matching-one/p334-birth-age-production-freeze/v1",
+  "status": "frozen_retrospective_score_not_run",
+  "frozen_utc": "2026-08-30T11:30:00Z",
+  "issues": [334, 337],
+  "parent_commit": "fee33287",
+  "source_engine_commit": "9f2033a2d205a01d3554bc2e9c93bed5760f5b29",
+  "source_result_commit": "26cecb4f2be8759ded1bedad345d2e9f198a2ded",
+  "new_monte_carlo": false,
+  "inputs": {
+    "N325": {
+      "N": 325,
+      "authoritative_host": "Huawei-CodeBuddy / DevEnvC_ZyTrST",
+      "remote_path": "/workspace/p267-two-observer-source-rank/N325_2m/N325_2m.marked_births.csv",
+      "sha256": "c9bfb3ee791474491ad6b81e55259d9906befe9dac1c461f72087658f4c7219b",
+      "lines_including_header": 3999921,
+      "samples_per_orientation": 2000000,
+      "batches": 100,
+      "samples_per_batch": 20000,
+      "seed": 202608303252,
+      "replica_counter": [19000000000, 19002000000],
+      "metadata_sha256": "ea5b977cf14b4bdbcc179583c62439e28830a515300dac110f38a8abeb1ae142",
+      "complement_audit_sha256": "b50c4c66f8fa7e6c6e5a6a8d6ca9371a7e3a294c9e7beaa47a430afbf724cc96",
+      "source_center_score_sha256": "cadc1d2b590d0dfa91f8a650edfd8f7bf62c14d51322c5240e35ff13196532c5",
+      "intrinsic_center": "0.592764740119115413030978",
+      "k0_rule": "round_half_up(N*intrinsic_center)",
+      "k0": 193,
+      "complement_k0": 132
+    },
+    "N425": {
+      "N": 425,
+      "authoritative_host": "Huawei-CodeBuddy-XPk2PZ / DevEnvC_XPk2PZ",
+      "remote_path": "/workspace/p267-two-observer-source-rank/N425_2m/N425_2m.marked_births.csv",
+      "sha256": "4f1315ceb790962c9c24b67baa7644dab4ffba781920fe8d468b1ebe490ad4d0",
+      "lines_including_header": 3999960,
+      "samples_per_orientation": 2000000,
+      "batches": 100,
+      "samples_per_batch": 20000,
+      "seed": 202608304252,
+      "replica_counter": [21000000000, 21002000000],
+      "metadata_sha256": "96f6caa1503e0209dadd448b4457d48e69225bd9ffbe6ba59f4c353806bf935f",
+      "complement_audit_sha256": "9ece5d199d52267306a1b7b8aaa6c29e1bbdd92d16977f0c927be332c2cd5d77",
+      "source_center_score_sha256": "aee8483d6339c2f277e5c9eabadd8b28daedf3bf9ef6e40b195415bf621951b8",
+      "intrinsic_center": "0.59275864900220295265658",
+      "k0_rule": "round_half_up(N*intrinsic_center)",
+      "k0": 252,
+      "complement_k0": 173
+    }
+  },
+  "orientations": ["first", "second"],
+  "sparse_weight": "count",
+  "primary_estimator": {
+    "risk_set": "K1<=k0<K2",
+    "outcome": "1[K2=k0+1]",
+    "birth_age": "x=(k0-K1)/N",
+    "stratum": "canonical primitive projective line (ell_u,ell_v) within size and orientation",
+    "aggregation": "sum over site/mark fields; direct rows and null lines cannot enter the rank-one risk set",
+    "line_center": "xbar_l=sum_j n_lj*x_j/sum_j n_lj",
+    "slope": "beta=sum_lj (x_j-xbar_l)*y_lj / sum_lj n_lj*(x_j-xbar_l)^2",
+    "interpretation": "linear-probability next-step hazard change per unit occupied-density age after line fixed effects; beta=0 is no continuous K1 dependence",
+    "free_parameters_of_interest": 1
+  },
+  "collision_estimator": {
+    "quantity": "D_N=P(K1=K2)",
+    "formula": "sum count*1[K1=K2]/total samples",
+    "role": "separate direct 0->2 diagonal mass; estimated jointly with beta rather than used as a tail-law fit"
+  },
+  "complement_check": {
+    "mapping": "K1c=N+1-K2, K2c=N+1-K1, ell_c=ell",
+    "center": "k0c=N-k0",
+    "score": "apply the identical line-stratified age estimator to (K1c,K2c,k0c)",
+    "exact_gates": [
+      "all six stored complement-audit failure sums are zero for each archive",
+      "K1c<=k0c<K2c iff K1<=k0<K2",
+      "direct-birth mass is invariant under the transform"
+    ],
+    "boundary": "forward and complement slopes are paired views of one archive, not independent evidence and not assumed equal"
+  },
+  "covariance": {
+    "delete_one_unit": "one common batch index removed simultaneously from first and second orientations within a size",
+    "vector_order_per_size": [
+      "first_beta_age",
+      "first_D_N",
+      "first_complement_beta_age",
+      "second_beta_age",
+      "second_D_N",
+      "second_complement_beta_age"
+    ],
+    "formula": "(B-1)/B sum_b (theta_-b-mean(theta_-b))(theta_-b-mean(theta_-b))^T",
+    "cross_orientation": "retained within each size because the two orientations share counter-keyed permutations",
+    "cross_size": "zero only because the N325 and N425 seeds and replica domains are disjoint"
+  },
+  "inference": {
+    "alpha": 0.01,
+    "orientation_test": "two-sided Student t test of beta_age=0 with 99 degrees of freedom",
+    "size_joint_test": "two-degree covariance-aware Wald test of first_beta_age=second_beta_age=0, reported once per archive",
+    "collision_interval": "two-sided 99 percent Student-t interval; no asymptotic D_N law is fitted",
+    "no_orientation_vote": true,
+    "no_cross_size_scaling_fit": true
+  },
+  "claim_boundary": [
+    "This is a retrospective reanalysis of two revealed P267 archives and creates no independent evidence rows.",
+    "A resolved birth-age slope is finite-size predictive memory after conditioning on current rank, k and primitive line; it is not a CFT field, Jordan block or proof of a non-Markov scaling limit.",
+    "D_N is a separate collision channel and is not used to explain or subtract the age slope.",
+    "No exact 1/57 witness, finite D_N census or six-arm exponent calculation is repeated.",
+    "The two orientations of one size remain one covariance block."
+  ],
+  "planned_scorer": "scripts/score_p334_birth_age_production.py",
+  "planned_output": "results/local-20260830/P334-birth-age-production/score.json",
+  "score_authorized": true,
+  "score_executed": false
+}
