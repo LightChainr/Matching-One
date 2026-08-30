@@ -1,0 +1,64 @@
+{
+  "claim_boundary": {
+    "excluded": "connected-filter preservation, probability or planar duality, tilings, critical manifolds, ranking, thresholds, or bounds",
+    "included": "complement involution on all one-internal-vertex canonical graph orbits for t in {3,4}",
+    "parent_issue": "remain open"
+  },
+  "derivation": "complementation commutes with every vertex relabeling, hence descends to the terminal-symmetry quotient and reverses k edges to M-k",
+  "issue": 13,
+  "rows": [
+    {
+      "canonical_orbits": 20,
+      "complement_pairs": 10,
+      "edge_reversal_certified": true,
+      "edge_slots": 6,
+      "internal_count": 1,
+      "involution_certified": true,
+      "orbit_accounting": 20,
+      "orbit_edge_count_histogram": [
+        1,
+        2,
+        4,
+        6,
+        4,
+        2,
+        1
+      ],
+      "palindromic_histogram_certified": true,
+      "self_complementary_encodings": [],
+      "self_complementary_orbits": 0,
+      "terminal_count": 3
+    },
+    {
+      "canonical_orbits": 90,
+      "complement_pairs": 44,
+      "edge_reversal_certified": true,
+      "edge_slots": 10,
+      "internal_count": 1,
+      "involution_certified": true,
+      "orbit_accounting": 90,
+      "orbit_edge_count_histogram": [
+        1,
+        2,
+        5,
+        11,
+        17,
+        18,
+        17,
+        11,
+        5,
+        2,
+        1
+      ],
+      "palindromic_histogram_certified": true,
+      "self_complementary_encodings": [
+        "4:5:0010100111",
+        "4:5:0011101100"
+      ],
+      "self_complementary_orbits": 2,
+      "terminal_count": 4
+    }
+  ],
+  "schema": "matching-one/gadget-complement-involution-certificate/v1",
+  "status": "exact_complement_involution_certificate"
+}
