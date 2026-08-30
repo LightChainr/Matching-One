@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from argparse import Namespace
+import json
 from pathlib import Path
 import sys
 import unittest
@@ -47,6 +48,18 @@ class Z5ProjectiveLegRadius6FlatTests(unittest.TestCase):
         )
         with self.assertRaisesRegex(ValueError, "not authorized"):
             validate_manifest(args, {"status": "frozen_unexecuted_radius6_flat_extension", "execution_authorized": False})
+
+    def test_repository_freeze_matches_exact_geometry(self) -> None:
+        manifest = json.loads((ROOT / "analysis/p250_projective_leg_radius6_flat_freeze.json").read_text())
+        gate = json.loads((ROOT / "analysis/p250_projective_leg_radius6_flat_exact_gate.json").read_text())
+        self.assertFalse(manifest["execution_authorized"])
+        self.assertTrue(manifest["do_not_run_from_this_commit"])
+        self.assertEqual(manifest["geometry"]["points_by_hand"], gate["hands"] if "hands" in gate else {
+            "plus": gate["source_degree6_endpoints"],
+            "minus": gate["target_degree6_endpoints"],
+        })
+        self.assertEqual(manifest["run"]["seed"], 25060610120261250)
+        self.assertEqual(manifest["run"]["replica_last_exclusive"], 1_200_000)
 
 
 if __name__ == "__main__":
