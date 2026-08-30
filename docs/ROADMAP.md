@@ -12,43 +12,42 @@ The integrated control-plane snapshot is `main@5ac456d`. It inventories 59 score
 
 | Attention | Live object | Immediate discriminator |
 |---:|---|---|
-| 1 executable | P250 adaptive x spatial-spectrum production | `f54fb8c` already gives positive N325/N425 response and 1,503/1,503 positive defined rectangles. Run N505 200k/400 with typed intermediates, ties, complement IDs and joint 101-frequency covariance; do not repeat an aggregate-only pilot |
-| 1 scientific | P334 cooperative branching closure | three proxy families fail and `ffd91ebd` adds a real uniform-growth `1/66` successor gap. Implement one common update plus two clones with checkpoint `b2` and clustered covariance |
-| 3 executable | Phase-E local energy x clock plane | integrated energy is exactly E_top/2, the radius-1 mean-H4 pilot stopped, and A+C survives. Acquire `B,B^2,I0*B,I2*B` only for a theory-led local singlet and test whether it replaces C |
-| 4 | E_top `tau x topology-map` plus P337 hazard reuse | separate modulus from topology map; in parallel split completion current into risk composition and conditional hazard without new N1360 production |
+| 1 zero-sample | P250 N505 intermediate-state discrimination | `0061e4e` completes 200k/400. Conditional residue structure resolves and source amplitude fails transfer, while the zero-distance positive cone is non-identifying because residue zero is missing. Cross-fit archived pre-outcome state against a compact residue-Fourier baseline |
+| 1 scientific / zero-sample | P429 common-safe branching remainder | `751f8b3` completes 100k per size. Common absorption explains 97--99%, but positive common-safe remainders survive. Cross-fit the stored H2/cooperative/boundary/age/line features before acquiring another path signature |
+| 3 held-out | P267 tau x topology-map transport | the 100k factorial resolves interaction at `236.756/4`, `p=4.63e-50`. Freeze an interaction-bearing response surface and predict a third-tau or third-map pair |
+| 4 observer design | P337 line-state coupling | `4dd62e3` completes the ambient-line pilot: `W_line` is almost JS-orthogonal but the present `O_far/O_sep4` determinant is unresolved. Replace the observer with seam/winding or relative-landing incidence |
+| theory opportunity | Phase-E microscopic singlet | the completed radius-1 mixed row is not selected. Reopen only with a different microscopic singlet, scale or field interface; the same B row has no default production slot |
 | 5 | typed rho-C3 and Gaussian/annulus order | strengthen a nondegenerate complex row or acquire actual `AU-UA`; do not repeat aliased real/static cells |
 | 6 | W5 disk-relative dual and periodic comparison | retain the internal-cycle datum in a joint primal/relative-dual boundary state and construct an explicit periodic comparison |
 | parallel exact | P333 rooted/landing lift and P334 Hall | `ab3eed81` closes the last terminal charge-two irrep; retain rooted/landing connectivity after emission while mixed arbitrary-HNF Hall continues independently |
 | parallel method | survivor-driven certificates | `f5779b9` completes the first #370 production-confidence adapter. Build another compiler or certificate only when a new observation leaves a model class whose fate depends on it |
 | dashboard | six-coordinate Operator Passport | expose orthogonal missing information across representation, finite algebra, propagation, sphere fusion, torus/modulus and microscopic control; it is not an admission checklist |
 
-The table intentionally separates scientific attention from execution readiness. P334 asks the deepest immediate state question; P250 is first on the compute queue because its real pilot and runner already exist.
+The table intentionally separates scientific attention from execution readiness. P334 asks the deepest immediate state question using already acquired rows; P250 now supplies a second large existing-data mechanism problem. Neither requires another production campaign before analysis.
 
-### 1. Run P250 adaptive order against the spatial spectrum
+### 1. Analyze completed P250 adaptive order against residue-Fourier structure
 
-The N325/N425 branch pilot at `f54fb8c` has already crossed the “is there a signal?” boundary: `Rminus=.06785+/-.00235` and `.06655+/-.00226`, with every defined rectangle positive and only `.40` SE geometry difference. The next run is not another pilot. It must join the adaptive intervention rows to the 101-frequency endpoint baseline at N505, save typed intermediate states and complement-pair IDs, and carry one aligned covariance.
+The N325/N425 branch pilot at `f54fb8c` crossed the “is there a signal?” boundary, and `0061e4e` has now completed the N505 response at 200k replicas and 400 batches. It records 5,351 defined rows, zero typed failures and significant conditional residue heterogeneity (`p=.00079984`), with different peak frequencies on the two children. The N325/N425 source amplitude fails transfer at `chi2=514.995/2`. The ordinary positive-cone distance of zero is not a mechanism selection because residue zero is unobserved and the completion is nonunique. **Immediate output:** use the archived `D0`, `J0`, `J_after_D`, `D_after_J` and dual pre-outcome fields in a cluster-held-out residue-Fourier versus intermediate-state comparison. No new samples.
 
-### 2. Acquire P334 branching after a shared update
+### 2. Explain the acquired P334 branching remainder
 
-Current geometry, compact bottleneck, aggregate active-boundary organization and radius-1 completion-site motifs do not close the production age response. Exact `ffd91ebd` strengthens the earlier `1/98` delayed-fork witness with a `1/66` uniform-growth successor-signature gap. The production object is therefore checkpoint `b2`, one common update and two conditionally independent clone continuations—not a fourth static proxy.
+Current geometry, compact bottleneck, aggregate active-boundary organization and radius-1 completion-site motifs do not close the production age response. Exact `ffd91ebd` strengthens the earlier `1/98` delayed-fork witness with a `1/66` uniform-growth successor-signature gap. The production object has now been acquired at `751f8b3`: after one shared update, two clones give large unconditional dependence, but 97--99% is the common-absorption gate. Positive common-safe remainders remain at N325/N425. The immediate output is a batch-aligned cross-fit of the stored `H2`, cooperative, boundary, age and line features. Only a stable held-out residual warrants a new multistep signature.
 
-### 3. Reframe Phase E as an independent mixed-correlator test
+### 3. Phase E leaves the default queue after its first mixed-correlator test
 
 Canonical Phase D is complete on six declared P154 frozen blocks, but its
 `E_top=P2+P0=1-P1` is an Alexander-even topological coordinate—not the energy
-operator. The P154 files retain Kminus/Kplus histograms and joint moments only;
-they contain no same-batch ordinary bulk-energy/singlet row or cross-moment.
-Branch `54b3e8` proves that the zero-cost integrated Bernoulli score is exactly
-`E_top/2`, while `b239871` stops the radius-1 one-point singlet pilot. Branch
-`36bf1fe` further changes the alternative: A-only fails, but A+C survives. A
-meaningful Phase-E restart must therefore acquire an independently motivated
-local row `B` with `B^2,I0*B,I2*B` and test whether it replaces C and fixes the
-plane. Replaying the full preserved P154 streams is a heavy production choice,
-not a data-recovery or tooling task.
+operator. Branch `54b3e8` proves that the zero-cost integrated Bernoulli score
+duplicates `E_top/2`. The actual same-stream radius-1 mixed row is now complete:
+it stores `B,B^2,I0*B,I2*B`, yet `J_bulk` is unresolved and changes sign from
+N65 to N130, and A/E/J_bulk improves over A/E/C by only `1.981<4`. This stops
+the declared B row at 20k. A meaningful restart must change the microscopic
+singlet, scale or field interface; extending or renaming the same row is not a
+research output.
 
 In parallel, join the P337 current split to the P334 continuation state:
 
-Draft commit `7e5fcf1` has already completed the zero-new-sample state-current prism on N85/N170/N340/N680, with one aligned delete-one covariance per size and N130 as a separate cross-lineage control. It verifies
+Draft commit `7e5fcf1` completes the state-current prism on N85/N170/N340/N680, with one aligned delete-one covariance per size and N130 as a separate cross-lineage control. It verifies
 
 ```text
 F1' = J01 + J02,
@@ -57,17 +56,17 @@ E_top' = J12 - J01,
 A_top' = J01 + J12 + 2 J02.
 ```
 
-Thus direct `0->2` current cancels from fixed-p `E_top`; it is not a third additive E component. P334's leading-three temporal subspace is stable across N325/N425, but temporal rank is not a field count. Cheap current geometry at `769d7ae` does not absorb production age slopes, and the completed bottleneck score `f97b906` also fails its common rule: N325 retains `75.6%/67.0%`, N425 `30.4%/27.2%`. Main PR #409 and open PR #415 identify the next state hierarchy as `H2=b1`, cooperative pairs `b2`, pair overlap/triangles and minimal triples.
+Thus direct `0->2` current cancels from fixed-p `E_top`; it is not a third additive E component. The subsequent risk/hazard split is also complete: composition opposes the observed completion H4 at all four sizes, conditional hazard has the same sign, and N170 resolves the hazard term at `p=.00607`. P334's 100k two-clone production supplies the complementary branching view. Temporal rank and conditional hazard are not field counts.
 
-Main direct commit `d9f813b` now gives the decisive acquisition warning: two N16 states have the same complete unbranched survival vector but, after one common update and cloning, branching probabilities `95/196` and `93/196`. **Immediate decision output:** record checkpoint `b2`, perform one common update, then launch two conditionally independent clone continuations and score the branching law separately from unbranched horizons. This is one finite counterexample, not intrinsic memory or a field count. Do not add another one-pass shape proxy, aggregate exponent or N1360 block.
+Main direct commit `d9f813b` gives the decisive acquisition warning: two N16 states have the same complete unbranched survival vector but, after one common update and cloning, branching probabilities `95/196` and `93/196`. That acquisition is now complete at large N. **Immediate decision outputs:** cross-fit the P429 remainder against its recorded pre-common state, and redesign P337 around a truly line-typed observer after the completed ambient-line coupling null. This is finite mechanism localization, not intrinsic memory or a field count. Do not add another one-pass shape proxy, aggregate exponent or N1360 block.
 
 ### P250 evidence boundary: endpoint rank is not the ordered observable
 
-The old finite-window eliminations remain valid, but PR #416 supplies their correct baseline: complete N505 endpoint autocorrelation has at least 100 positive nonzero spatial modes. Branch `dbeb29c` applies the positive 101-frequency cone to the archived radius-4/5/6 blocks; all four hand-charge channels are compatible (`p=.163--.378`). Endpoint rank growth is therefore a spatial-spectrum measurement, not a hidden-state count.
+The old finite-window eliminations remain valid, but PR #416 supplies their correct baseline: complete N505 endpoint autocorrelation has at least 100 positive nonzero spatial modes. Branch `dbeb29c` applies a positive 101-frequency cone to the archived radius-4/5/6 blocks. Its reader uses batch sums rather than per-replica means; a read-only normalized replay leaves the qualitative survival conclusion unchanged, but new acquisition must declare units explicitly. Endpoint rank growth is a spatial-spectrum measurement, not a hidden-state count.
 
 Exact branch `af7dd01` now proves a harder boundary: every current endpoint-only observable factors through the abelianized displacement counts, so `O(xy)=O(yx)` identically regardless of radius, moment order, charge precision or sample size. Endpoint failure is therefore not evidence of noncommutation.
 
-Exact `3128e3e` rules out fixed-site overwrites. Exact `6fbbe5e` constructs a covariant adaptive state-dependent D/J pair, and `f54fb8c` carries it into N325/N425 production with positive response at both geometries. **Immediate decision output:** run the N505 joint-spectrum discriminator, retaining four branch-specific supports, typed intermediate states, `R_plus/R_minus`, complement pairs and periodograms. Report unconditional `I_defined*R_minus`, conditional response and defined/tie rates. Final endpoint labels, more rank shells and a third aggregate-only pilot are insufficient.
+Exact `3128e3e` rules out fixed-site overwrites. Exact `6fbbe5e` constructs a covariant state-dependent D/J pair, `f54fb8c` carries it into positive N325/N425 production, and `0061e4e` completes N505 at 200k/400. Spatial heterogeneity is present, while the old amplitude does not transfer and the reported cone survival is non-identifying because residue zero is absent. **Immediate decision output:** use the 400 clustered batches to compare a compact residue-Fourier baseline with the same model enriched by recorded pre-outcome intermediate state. Final endpoint labels, more rank shells, a repeated cone or a third aggregate-only pilot are insufficient.
 
 ### Parallel exact: move P333 beyond terminal endpoint irreps
 
@@ -83,21 +82,21 @@ P334 production shows strong negative birth-age slopes at N325/N425. Recorded st
 
 **Independent Hall output:** prove mixed corrected-reservoir orbit-Hall saturation for arbitrary HNF or expose its minimum-cut witness and carrier bound. Pure channels, mark-only, base-only and union-preserving switches are resolved failures; BA remains a separate concordance injection. Hall priority never blocks the current-geometry acquisition, and neither line licenses the other.
 
-### 3. Replace a universal E_top ray with `tau x topology-map`
+### 4. Predict a held-out `tau x topology-map` cell
 
-Branch `62585f2` rejects one gauge-free global A/E ray relative to four lineage rays (`Delta chi2=14.7004/3`, `p=.00209`), while the global ray's absolute fit alone survives the `.01` gate. The largest split is P43 versus P50. This is geometry dependence of the finite response, not rejection of H4, a field or an asymptotic modular law.
+Branch `62585f2` rejects one gauge-free global A/E ray relative to four lineage rays. The completed N50 factorial now locates the failure: the normalized `tau x topology-map` interaction is `236.756/4`, `p=4.63e-50`. Its vector is `(.0027604,-.0005511,-.00133656,.00088322)` in `(A_top,E_top,C,W)`. `E_top` alone and the fixed A+C residual remain unresolved at the strict gate. This is finite geometry dependence, not rejection of H4, a field or an asymptotic modular law.
 
-**Immediate decision output:** construct a factorial `tau x topology-map` design with fixed area, matched twist and modular-equivalent controls. The topology-map factor must distinguish cover multiplication, ordinary size transfer or another registered map without conflating it with `tau`. Score interaction and main effects with the existing lineage covariance before adding a universal ray or exponent.
+**Immediate decision output:** freeze an interaction-bearing low-rank response surface and predict one third-tau pair across both Smith types, or one third topology map across both existing moduli. Do not repeat the resolved four cells or fit another universal ray before the held-out score.
 
-### 4. Separate P337 risk composition from conditional completion hazard
+### 4. Couple the completed P337 line state to a line-typed observer
 
-Draft `7e5fcf1` already verifies `E_top'=J12-J01`, so direct `0->2` current is not a third additive E component. Use the exact midpoint decomposition
+Draft `7e5fcf1` verifies `E_top'=J12-J01`, so direct `0->2` current is not a third additive E component. The exact midpoint decomposition
 
 ```text
 Delta J12 = hbar Delta R + Rbar Delta h
 ```
 
-on the existing N85/N170/N340/N680 component schema, with N130 only as cross-lineage control. Then score age-standardized `mark12_h4`. Acquire only the conditional-hazard row that is genuinely absent; do not substitute a larger N1360 endpoint block.
+is now scored on N85/N170/N340/N680: composition opposes completion H4 at all four sizes while hazard is same-sign, and N170 resolves the hazard term. The follow-up `4dd62e3` has also run: `W_line` retains 98.27--98.95% of its norm after JS projection, but the frozen `O_far/O_sep4` determinant and conditional mark12-H4 remain unresolved. **Immediate decision output:** define seam/winding incidence or a landing observable relative to the current lifted line, while keeping it in the shared P337/P334 dependency family. Do not repeat the split, upscale the same observer pair or substitute a larger N1360 endpoint block.
 
 ### 5. Strengthen the typed complex `rho`-C3 response
 
@@ -119,7 +118,7 @@ Branch `5f5afd3` preserves a positive fact: spherical W5 duality exchanges rim a
 
 ### Parallel method: run production-first elimination on real covariance
 
-For fixed state dimension, real and imaginary matrix entries and their word predictions form a polynomial model. The project has direct production examples in cross-geometry E_top, six-size P154 Phase D, P250 and the Euler clock. But the P154 result is topological A/E only; the actual energy-operator `J_top/J_bulk` projection is still undone because no same-batch ordinary-energy row was measured. That missing production observer now outranks stronger algebraic packaging.
+For fixed state dimension, real and imaginary matrix entries and their word predictions form a polynomial model. The project has direct production examples in cross-geometry E_top, six-size P154 Phase D, completed P250 N505 and the Euler clock. The first same-stream `J_top/J_bulk` radius-1 row is measured and not selected; its broader operator class remains open, but repeating that row no longer outranks scientific observations. Certificate work may now consume the P250 or P429 real covariance problems when it changes their survivor sets; it does not precede the zero-sample analyses.
 
 The default ladder is exact semantic/module identities, complete production covariance, outward interval/algebraic reconstruction and only then SOS for a surviving bounded class. A claim-bearing SOS/moment certificate still requires bounded or Archimedean parameter support, complete similarity-gauge coverage, explicit singular-covariance handling and exact or interval reconstruction. A numerical relaxation value is diagnostic, not proof, and finite-order success is not guaranteed. Proof-carrying elimination is high value when cheap and decision-changing; it does not sit in front of data analysis, invariant identities, model-free structure discovery, production, exact work or speculative mathematics.
 
@@ -194,7 +193,7 @@ x nuisance cancellation and archive reuse
 - **#50 N145->290 full curve — complete:** the resolved shape direction already rejects one scalar multiplier. Its archive remains reusable for new typed coordinates, while another endpoint-only repeat has lower information gain.
 - **Digital Alexander frontier:** main-integrated PR #330 is exact through index 13 with 140 quotients and 101,140,028,118 weighted paths. Branch-only `73d4960` supplies the rational-cover theorem and child `c1a72e5` claims integral saturation. Review the child; if it holds, use the finite frontier as regression rather than evidence for saturation.
 - **P205 ordinary prism:** H4 beats the frozen H8/H12 lines. A `rho`/C3 run gains more information from a distinct typed observer than from repeating this selector.
-- **PR #267 activation reuse, state current and E_top elimination:** all ten cross-geometry pairs and all six P154 norm-4 pairs have canonical Phase-D scores. Integrated energy is exactly E_top/2, the radius-1 mean pilot stops and A+C survives. Phase E now requires a theory-led B-versus-C mixed-moment plane. Draft `7e5fcf1` gives `E_top'=J12-J01`; the next reuse is midpoint composition-versus-hazard, component recurrences and `mark12_h4`.
+- **PR #267 activation reuse, state current and E_top elimination:** all ten cross-geometry pairs and all six P154 norm-4 pairs have canonical Phase-D scores. Integrated energy is exactly E_top/2 and the radius-1 mixed row stops. Draft `7e5fcf1` gives `E_top'=J12-J01`; the midpoint composition-versus-hazard split is complete, and the ambient-line follow-up now redirects attention to a line-typed observer.
 - **Marked-birth and external-observer chain:** q-only contact closure, bare mean-line q2 and the two-radius local rejection retire three narrow carriers. The exact occupation clock explains 53%/56% of raw far-D magnitude, while 47%/44% survives fixed-occupation plus JS and the completed `26cecb4` two-observer result does not reject the current rank-one lane (`4.279/4`, `p=.370`). The next discriminator is K1-age/K2-completion/collision localization followed by a physically new connectivity/winding source, not another density transform, observer design or repeat.
 - **PR #288 mixing audit:** parity gives the four powers but the amplitude map is rank four. Two external Taylor ratios, not another parity argument, are the live closure variables.
 - **Q=4 seam plus main-integrated PR #291 alias gate:** colour characters and normalization are exact, and a single C4 orbit aliases scalar/spin 4. The missing spatial kernel needs calibrated phase diversity or typed internal data; six raw seam values alone certify colour sector, not pure H4.
@@ -202,8 +201,8 @@ x nuisance cancellation and archive reuse
 - **Topology-typed C3:** N112 is genuinely multi-character; the E4-squared completion phase remains viable but unresolved, and N60-only replication has a proved power ceiling. Strengthen N112 or change geometry.
 - **Threshold shape flow:** exact collapse fails, while an almost rank-one upper-tail direction replicates across cover and independent-size blocks. Freeze its direction before a fresh-lineage amplitude test.
 - **P321/P333 closure interface:** scalar detach and endpoint marks fail. Charge one and charge two both fail at width 4. Retain rooted/landing connectivity after emission or couple irreps before a full-Q module.
-- **Projective birth/twist flux:** P337 localizes first-birth/completion currents. Four P334 static/local proxy families fail; exact continuation adds `1/98` and `1/66` gaps. Run checkpoint `b2` plus one shared update and two clones; keep midpoint composition/hazard, `mark12_h4` and Hall separate.
-- **P250 spatial endpoint and ordered intervention:** endpoint ranks are compatible with ordinary positive spectrum, while `f54fb8c` gives positive adaptive response at N325/N425. The next object is N505 adaptive x spectrum with retained supports, typed intermediates, ties, complement IDs and joint covariance.
+- **Projective birth/twist flux:** P337 localizes first-birth/completion currents and `4dd62e3` constructs a nearly JS-orthogonal line state without resolving its present observer coupling. P429 has already acquired one shared update and two clones at 100k. Cross-fit its recorded state, and redesign P337 with a line-typed observer; keep Hall separate.
+- **P250 spatial endpoint and ordered intervention:** endpoint ranks are compatible with ordinary positive spectrum, `f54fb8c` gives positive adaptive response at N325/N425, and `0061e4e` completes N505 200k/400. Conditional residue structure resolves but the cone is non-identifying. The next object is the archived intermediate-state versus residue-Fourier cross-fit, not another acquisition.
 - **Issue #370 exact ladder and framework:** main holds the fixture/framework layer and `f5779b9` completes the first real production adapter. Reuse it when a new observation leaves a survivor-changing certification question; do not put another compiler in front of production.
 - **P250/Jordan identifiability:** open PR #385 proves that unrestricted near-colliding ordinary modes are not positively separated from a Jordan semigroup on finite noisy data, and gives a conditional C4 character obstruction for a cyclic flat length-five Laurent quotient. Retain those exact premise gates, but discard its now-stale R2-gauge application. First obtain the candidate-independent rank/path row; use the character obstruction only if flatness, cyclic source and internal C4 are established.
 - **Q-lift and connected-history transport:** P333 proves raw Q jets are lift-dependent and supplies the exact signed nilpotent `K=(D-J)^2` as a Gram-compatible Jordan positive control. Scalar detach and one endpoint mark are now exact failures, with restricted-skew lower bounds requiring more typed marks. Full-Q source definition, retained marked connectivity, positivity and dimension velocity outrank another free endpoint block.
