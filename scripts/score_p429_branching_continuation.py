@@ -55,6 +55,9 @@ def environment_estimate(rows):
     common = np.asarray([row["common_safe"] for row in rows], dtype=float)
     b2 = float(np.mean((y1 + y2) / 2.0))
     gap = float(np.mean(both) - np.mean(y1) * np.mean(y2))
+    safe = common == 1
+    conditional_gap = float(
+        np.mean(both[safe]) - np.mean(y1[safe]) * np.mean(y2[safe]))
     return {
         "at_risk_rows": len(rows),
         "b1_safe_mean": float(np.mean(b1)),
@@ -65,6 +68,7 @@ def environment_estimate(rows):
         "b2_survival_estimate": b2,
         "branch_success": float(np.mean(both)),
         "clone_dependence_gap": gap,
+        "successor_heterogeneity_gap_given_common_safe": conditional_gap,
     }
 
 
@@ -139,7 +143,8 @@ def main():
     full_vector, estimates = vector(grouped)
     cov = np.zeros((8, 8))
     for size in SIZES:
-        deleted = [vector(grouped, size, batch)[0] for batch in range(20)]
+        deleted = [vector(grouped, size, batch)[0]
+                   for batch in range(freeze["runs"][size]["batches"])]
         cov += covariance(deleted)
     standard_errors = np.sqrt(np.maximum(np.diag(cov), 0.0))
 
@@ -162,6 +167,19 @@ def main():
     all_positive = all(value > 0 for value in full_vector[4:])
     extend = all_positive and all(size_common[size]["positive_3sigma"] for size in SIZES)
 
+    conditional_vector = [
+        estimates[key]["successor_heterogeneity_gap_given_common_safe"]
+        for key in ENVIRONMENTS]
+    conditional_cov = np.zeros((4, 4))
+    for size in SIZES:
+        deleted = []
+        for batch in range(freeze["runs"][size]["batches"]):
+            _, values = vector(grouped, size, batch)
+            deleted.append([
+                values[key]["successor_heterogeneity_gap_given_common_safe"]
+                for key in ENVIRONMENTS])
+        conditional_cov += covariance(deleted)
+
     payload = {
         "schema": "matching-one/p429-branching-continuation-score/v1",
         "freeze_sha256": sha256(args.freeze), "runner_commit": args.runner_commit,
@@ -171,6 +189,15 @@ def main():
         "vector": full_vector, "batch_jackknife_covariance": cov.tolist(),
         "standard_errors": standard_errors.tolist(),
         "environments": by_environment, "size_common_gap": size_common,
+        "secondary_successor_heterogeneity": {
+            "definition": "E[y1*y2|common safe]-E[y1|common safe]E[y2|common safe]",
+            "vector_order": [f"conditional_gap:{s}:{o}" for s, o in ENVIRONMENTS],
+            "vector": conditional_vector,
+            "batch_jackknife_covariance": conditional_cov.tolist(),
+            "standard_errors": np.sqrt(
+                np.maximum(np.diag(conditional_cov), 0.0)).tolist(),
+            "claim_boundary": "secondary decomposition; the frozen unconditional gap remains primary"
+        },
         "extension_decision": "extend_to_100k" if extend else "stop_at_20k",
         "claim_boundary": freeze["claim_boundary"],
     }

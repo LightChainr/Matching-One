@@ -1,0 +1,43 @@
+{
+  "schema": "matching-one/p429-branching-continuation-100k-freeze/v1",
+  "status": "frozen_after_pilot_gate_before_production",
+  "pilot_freeze": "analysis/p429_branching_continuation_freeze.json",
+  "pilot_score": {
+    "path": "results/server-20260830/P429-branching-continuation/score.json",
+    "sha256": "51253622d9502c142d8acc247ccfdee9856f5fcef51e92923446415294d68a62"
+  },
+  "pilot_gate": {
+    "all_four_gaps_positive": true,
+    "N325_common_gap_z": 40.447950831497344,
+    "N425_common_gap_z": 34.835994934333726,
+    "decision": "extend_to_fresh_100k"
+  },
+  "runner_commit": "c713477",
+  "runner_source_sha256": "cf53e118c85e104157661df3c0b64fdea811a9154a86ed45348af5eae73d0ce2",
+  "estimands_and_covariance": "Identical to the 20k freeze. The 100k block is disjoint and primary; the pilot is not pooled. A secondary conditional-on-common-safe clone gap may decompose the shared common gate but cannot replace the frozen unconditional primary.",
+  "runs": {
+    "N325": {
+      "host": "Huawei-CodeBuddy-HZsCM6",
+      "samples": 100000,
+      "batches": 100,
+      "seed": 20260830429326,
+      "replica_counter_first": 42932600000,
+      "replica_counter_last_exclusive": 42932700000,
+      "k0": 193,
+      "first_matrix": [325, 57, 0, 1],
+      "second_matrix": [325, 18, 0, 1]
+    },
+    "N425": {
+      "host": "Huawei-CodeBuddy-TgFr7R",
+      "samples": 100000,
+      "batches": 100,
+      "seed": 20260830429426,
+      "replica_counter_first": 42942600000,
+      "replica_counter_last_exclusive": 42942700000,
+      "k0": 252,
+      "first_matrix": [425, 132, 0, 1],
+      "second_matrix": [425, 268, 0, 1]
+    }
+  },
+  "claim_boundary": "Fresh confirmation of one fixed checkpoint/common-update/one-site-clone language. It is not an exact b2 census or a scale law."
+}

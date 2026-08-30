@@ -1,0 +1,227 @@
+{
+  "batch_jackknife_covariance": [
+    [
+      4.574076585407871e-06,
+      1.959355392483692e-06,
+      7.520178521558475e-35,
+      1.1710553079993957e-31,
+      -2.1149896554204794e-06,
+      -9.218337007835957e-07,
+      5.850785366131533e-33,
+      5.867793364664876e-33
+    ],
+    [
+      1.9593553924836925e-06,
+      9.608788438807933e-06,
+      8.195494548850813e-31,
+      -2.3421106159987914e-31,
+      -1.4646079947360948e-06,
+      -4.444455378199377e-06,
+      -1.1701570732263066e-32,
+      -1.1735586729329752e-32
+    ],
+    [
+      4.0356298848903707e-35,
+      8.195681871343098e-31,
+      7.778367864406043e-06,
+      9.22986061798838e-07,
+      -8.786047130321432e-33,
+      5.854486654659678e-33,
+      -3.3262101222805688e-06,
+      -3.874099572027405e-07
+    ],
+    [
+      1.171386703362774e-31,
+      -2.342773406725548e-31,
+      9.22986061798838e-07,
+      1.0451476248241436e-05,
+      0.0,
+      0.0,
+      7.487683197666604e-07,
+      -5.139752817997002e-06
+    ],
+    [
+      -2.11498965542048e-06,
+      -1.4646079947360948e-06,
+      -8.799092433419184e-33,
+      0.0,
+      3.258716379799496e-06,
+      6.618116334899974e-08,
+      0.0,
+      0.0
+    ],
+    [
+      -9.218337007835959e-07,
+      -4.444455378199377e-06,
+      5.843993675000019e-33,
+      0.0,
+      6.61811633489996e-08,
+      3.5602218690413973e-06,
+      0.0,
+      0.0
+    ],
+    [
+      5.850012206076229e-33,
+      -1.1700024412152458e-32,
+      -3.3262101222805688e-06,
+      7.487683197666603e-07,
+      0.0,
+      0.0,
+      3.5675175999751655e-06,
+      -1.6087178036474253e-07
+    ],
+    [
+      5.843993675000019e-33,
+      -1.1687987350000038e-32,
+      -3.874099572027407e-07,
+      -5.139752817997003e-06,
+      0.0,
+      0.0,
+      -1.6087178036474256e-07,
+      4.428103879486987e-06
+    ]
+  ],
+  "claim_boundary": "This pilot tests a one-common-update/one-site-per-clone branching language at one checkpoint per size. It does not estimate the exact microscopic b2 count, prove Markov closure or nonclosure at scale, or identify a continuum memory field.",
+  "environments": {
+    "N325_first": {
+      "at_risk_rows": 9047,
+      "b1_safe_mean": 123.70255333259644,
+      "b2_survival_estimate": 0.875925721233558,
+      "b2_survival_se": 0.002138709093216717,
+      "branch_success": 0.8213772521277771,
+      "clone1_survival": 0.8768652592019454,
+      "clone2_survival": 0.8749861832651707,
+      "clone_dependence_gap": 0.05413226574084229,
+      "clone_dependence_gap_se": 0.0018051915077906542,
+      "clone_dependence_gap_z": 29.986993350691044,
+      "defined_rate_given_risk": 0.9351166132419586,
+      "risk_rate": 0.45235,
+      "suffix_symmetry_difference": 0.0018790759367746102
+    },
+    "N325_second": {
+      "at_risk_rows": 9101,
+      "b1_safe_mean": 123.68157345346665,
+      "b2_survival_estimate": 0.8756180639490166,
+      "b2_survival_se": 0.00309980458074504,
+      "branch_success": 0.819030875727942,
+      "clone1_survival": 0.875068673772113,
+      "clone2_survival": 0.8761674541259202,
+      "clone_dependence_gap": 0.0523241836436843,
+      "clone_dependence_gap_se": 0.0018868550206736598,
+      "clone_dependence_gap_z": 27.73089774804378,
+      "defined_rate_given_risk": 0.9369300076914625,
+      "risk_rate": 0.45505,
+      "suffix_symmetry_difference": -0.0010987803538072827
+    },
+    "N425_first": {
+      "at_risk_rows": 9003,
+      "b1_safe_mean": 163.9553482172609,
+      "b2_survival_estimate": 0.8930911918249472,
+      "b2_survival_se": 0.002788972546370086,
+      "branch_success": 0.8468288348328336,
+      "clone1_survival": 0.8922581361768299,
+      "clone2_survival": 0.8939242474730645,
+      "clone_dependence_gap": 0.049217651899241766,
+      "clone_dependence_gap_se": 0.0018887873358255994,
+      "clone_dependence_gap_z": 26.05780490249235,
+      "defined_rate_given_risk": 0.9442408086193491,
+      "risk_rate": 0.45015,
+      "suffix_symmetry_difference": -0.001666111296234618
+    },
+    "N425_second": {
+      "at_risk_rows": 8996,
+      "b1_safe_mean": 163.82281013783904,
+      "b2_survival_estimate": 0.8970653623832815,
+      "b2_survival_se": 0.0032328743013364187,
+      "branch_success": 0.8511560693641619,
+      "clone1_survival": 0.8992885726989773,
+      "clone2_survival": 0.8948421520675856,
+      "clone_dependence_gap": 0.04643474764042166,
+      "clone_dependence_gap_se": 0.002104306032754501,
+      "clone_dependence_gap_z": 22.06653733708084,
+      "defined_rate_given_risk": 0.9471987550022232,
+      "risk_rate": 0.4498,
+      "suffix_symmetry_difference": 0.004446420631391779
+    }
+  },
+  "extension_decision": "extend_to_100k",
+  "freeze_sha256": "24add5c1d8c223f5e9475f4ecf5cb143e51e79c17f239f00555f5d3b05cfd512",
+  "inputs": {
+    "N325": {
+      "at_risk_rows": 18148,
+      "checks": {
+        "batches": true,
+        "branching_clones": true,
+        "commit": true,
+        "k0": true,
+        "replica_first": true,
+        "replica_last": true,
+        "samples": true,
+        "seed": true
+      },
+      "csv_sha256": "ee21191e25153a2ef936cc8af12f2bc4f415f8158fa5f9b84d913f617a92f68e",
+      "metadata_sha256": "288e9fb083b471d3e846fe020648c1042cb05a2d04b49112af92c96b955e948c"
+    },
+    "N425": {
+      "at_risk_rows": 17999,
+      "checks": {
+        "batches": true,
+        "branching_clones": true,
+        "commit": true,
+        "k0": true,
+        "replica_first": true,
+        "replica_last": true,
+        "samples": true,
+        "seed": true
+      },
+      "csv_sha256": "1a3f55a9081142d65e63929d07daa25d3cb104038c90f5ec89fb003261028378",
+      "metadata_sha256": "124531d882d6c26b37588511fda9f2f415977c4ddf90ea730ad2236ce10dfa4a"
+    }
+  },
+  "runner_commit": "c713477",
+  "schema": "matching-one/p429-branching-continuation-score/v1",
+  "size_common_gap": {
+    "N325": {
+      "estimate": 0.05326898895514169,
+      "positive_3sigma": true,
+      "se": 0.0013169762091794386,
+      "z": 40.447950831497344
+    },
+    "N425": {
+      "estimate": 0.04797017140091696,
+      "positive_3sigma": true,
+      "se": 0.0013770288889793823,
+      "z": 34.835994934333726
+    }
+  },
+  "standard_errors": [
+    0.002138709093216717,
+    0.00309980458074504,
+    0.002788972546370086,
+    0.0032328743013364187,
+    0.0018051915077906542,
+    0.0018868550206736598,
+    0.0018887873358255994,
+    0.002104306032754501
+  ],
+  "vector": [
+    0.875925721233558,
+    0.8756180639490166,
+    0.8930911918249472,
+    0.8970653623832815,
+    0.05413226574084229,
+    0.0523241836436843,
+    0.049217651899241766,
+    0.04643474764042166
+  ],
+  "vector_order": [
+    "b2_survival:N325:first",
+    "b2_survival:N325:second",
+    "b2_survival:N425:first",
+    "b2_survival:N425:second",
+    "clone_gap:N325:first",
+    "clone_gap:N325:second",
+    "clone_gap:N425:first",
+    "clone_gap:N425:second"
+  ]
+}
