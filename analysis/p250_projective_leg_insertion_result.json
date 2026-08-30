@@ -1,0 +1,37 @@
+{
+  "schema": "matching-one/p250-projective-leg-insertion-result/v1",
+  "issue": 250,
+  "prereg_commit": "057f913",
+  "status": "low_sample_propagation_gate_passed",
+  "selected_insertion": "black NN rank-one root membership minus white matching rank-one root membership",
+  "exact_result": {
+    "both_hands_constructed_black_transport": [1, 1, 1, 1],
+    "both_hands_constructed_white_transport": [-1, -1, -1, -1],
+    "deck_character_max_residual": 2.482534153247273e-16,
+    "primitive_line_and_basis_gates": true
+  },
+  "smoke": {
+    "samples": 2000,
+    "batches": 40,
+    "p": 0.59274605079,
+    "seed": 25033433720260830,
+    "replica_counter": [0, 2000],
+    "minimum_pair_abs_z": {"d1": 5.526511512862423, "d2": 2.89964844061552, "d3": 0.7094601514541328},
+    "usable_separations": [1, 2],
+    "cubic_interface_nondegenerate": [1, 2, 3],
+    "phase_score_computed": false
+  },
+  "decision": "projective_leg_operator_passes_low_sample_propagation_gate",
+  "next_step": "freeze a fresh support-first production block at d1 and d2 without changing the operator",
+  "outputs": {
+    "note": "notes/p250-projective-leg-insertion-result.md",
+    "exact_gate": "results/local-20260830/P250-z5-projective-leg-smoke/exact_gate.json",
+    "response": "results/local-20260830/P250-z5-projective-leg-smoke/response_2k.json",
+    "score": "results/local-20260830/P250-z5-projective-leg-smoke/score_2k.json"
+  },
+  "claim_boundary": [
+    "This is a 2k operator/interface smoke, not production evidence.",
+    "The row is root-marked and topological rather than microscopically local.",
+    "Passing propagation does not identify a continuum field or a universal OPE coefficient."
+  ]
+}
