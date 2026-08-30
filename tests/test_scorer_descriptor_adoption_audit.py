@@ -106,20 +106,19 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
                 encoding="utf-8"
             )
         )
-        self.assertEqual(result["counts"]["total"], 35)
-        self.assertEqual(result["counts"]["direct_typed_entrypoint"], 4)
-        self.assertEqual(result["counts"]["covered_frozen_kernel"], 3)
+        self.assertEqual(result["counts"]["total"], 36)
+        self.assertEqual(result["counts"]["direct_typed_entrypoint"], 5)
+        self.assertEqual(result["counts"]["covered_frozen_kernel"], 4)
         self.assertEqual(
             result["counts"]["descriptor_not_applicable_generic_utility"], 1
         )
-        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 27)
+        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 26)
         self.assertEqual(result["counts"]["outside_registered_typed_path"], 0)
-        self.assertEqual(len(result["rows"]), 35)
+        self.assertEqual(len(result["rows"]), 36)
         statuses = {row["path"]: row["status"] for row in result["rows"]}
         for path in (
             "scripts/score_axis_pair_annihilator.py",
             "scripts/score_axis_pair_annihilator_stable.py",
-            "scripts/score_c4_self_matching_n26.py",
             "scripts/score_c4_tangent_orthogonal_holdout.py",
             "scripts/score_intrinsic_quantile_center_n145_n290.py",
             "scripts/score_issue43_full_curve.py",
@@ -146,6 +145,14 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
             self.assertEqual(
                 statuses[path], "channel_bearing_migration_required"
             )
+        self.assertEqual(
+            statuses["scripts/score_c4_self_matching_n26.py"],
+            "covered_frozen_kernel",
+        )
+        self.assertEqual(
+            statuses["scripts/score_c4_self_matching_n26_typed.py"],
+            "direct_typed_entrypoint",
+        )
 
 
 if __name__ == "__main__":
