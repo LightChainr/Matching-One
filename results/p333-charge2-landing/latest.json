@@ -1,0 +1,167 @@
+{
+  "canonical_restricted_gram_skew_rank": 4,
+  "charge2_dimension": 1,
+  "claim_boundary": [
+    "Exact rational Q=1 first-jet algebra at width four only.",
+    "The single mark is the fixed C4 charge-two landing character, not a fitted endpoint column.",
+    "Success would identify a minimal closed finite-width module only; it would not identify an LCFT field or physical transfer matrix.",
+    "Failure exhausts individual terminal landing irreps, not arbitrary rooted-connectivity or coupled-irrep modules."
+  ],
+  "decision": "charge2_fails",
+  "deduplication": {
+    "7b40ec7": "already excludes the C4 charge-one landing doublet while identifying charge two as the only untested irrep",
+    "b82e8cc": "already shows the C3 source/landing doublet succeeds uniquely at width three",
+    "ba3135e": "already excludes the unmarked scalar loop fugacity",
+    "e7e6c80": "already exhausts scalar falling-factorial endpoint marks at width four"
+  },
+  "extended_dimension": 15,
+  "final_solution": null,
+  "first_empty_restriction": {
+    "added_stage": "gram_self_adjoint",
+    "augmented_rank": 1,
+    "coefficient_rank": 0,
+    "consistent": false,
+    "from_stage": "endpoint_radical_normalized",
+    "inconsistency_witness": {
+      "identity": "y^T C=0 but y^T b=1",
+      "left_multiplier": [
+        0,
+        0,
+        "-1/2",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "left_times_parameter_matrix": [
+        0
+      ],
+      "left_times_rhs": 1
+    },
+    "parameter_count_before_restriction": 1,
+    "remaining_dimension": null
+  },
+  "g0_rank": 3,
+  "global_decision": "The frozen C4 charge-two landing character fails exactly at the Gram gate: the unique endpoint/radical-normalized affine direction has no Gram-self-adjoint extension. Together with the prior scalar and C4 charge-one results, this exhausts all individual terminal landing irreps at width four.",
+  "irrep_exhaustion_if_failure": {
+    "C4_charge1_landing_irrep": "fails in 7b40ec7",
+    "C4_charge2_landing_irrep": "fails here",
+    "next_semantic_change": "Retain rooted/landing connectivity after emission, or couple multiple landing irreps in one registry, instead of collapsing each irrep to an independent terminal endpoint mark.",
+    "scalar_endpoint_irreps": "exhausted by e7e6c80"
+  },
+  "issues": [
+    333,
+    321,
+    370
+  ],
+  "minimal_closed_module_if_success": null,
+  "non_scalar_gate": {
+    "combined_scalar_plus_charge2_rank": 5,
+    "new_non_scalar_rank": 1,
+    "passes": true,
+    "scalar_falling_factorial_rank": 4
+  },
+  "ordinary_dimension": 14,
+  "protocol": {
+    "commit": "a572058",
+    "path": "analysis/p333_charge2_landing_protocol.json",
+    "sha256": "4b1f940a7535c5a718236ce3f9b79576a27e385ad3dbb300dbda979596e9303c"
+  },
+  "radical_dimension": 12,
+  "schema": "matching-one/p333-charge2-landing/v1",
+  "stages": {
+    "affine_q_jet": {
+      "affine_tangent_dimension": 3,
+      "canonical_X0_T_V0_nonzero_equations": 0,
+      "consistent": true,
+      "equations": 4078,
+      "rank": 447
+    },
+    "endpoint_radical_normalized": {
+      "affine_tangent_dimension": 1,
+      "canonical_X0_T_V0_nonzero_equations": 0,
+      "consistent": true,
+      "equations": 4288,
+      "rank": 449
+    },
+    "gram_self_adjoint": {
+      "affine_tangent_dimension": null,
+      "canonical_X0_T_V0_nonzero_equations": 27,
+      "consistent": false,
+      "equations": 4354,
+      "rank": 449
+    },
+    "source_landing_normalized": {
+      "affine_tangent_dimension": null,
+      "canonical_X0_T_V0_nonzero_equations": 27,
+      "consistent": false,
+      "equations": 4386,
+      "rank": 450
+    }
+  },
+  "status": "exact_rational_charge2_landing_certificate",
+  "translation_covariance": {
+    "G0_residual_rank": 0,
+    "G1_residual_rank": 0
+  },
+  "width": 4
+}
