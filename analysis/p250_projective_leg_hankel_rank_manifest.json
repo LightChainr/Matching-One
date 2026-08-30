@@ -1,0 +1,40 @@
+{
+  "schema": "matching-one/p250-projective-leg-hankel-rank-manifest/v1",
+  "status": "frozen_existing_data_reanalysis_before_scoring",
+  "parent_result_commit": "ded78bb",
+  "scorer_commit": "ad5eb84819f2de1fea63633464e2e8fcd8c7b502",
+  "input_batches": "results/huawei-20260830/P250-projective-leg-bivariate-80k/response_80k.batches.csv",
+  "input_batches_sha256": "dfbd83d680080939bcae5cad0090af95d82748ed780ce73807d4b002d6a9ca72",
+  "samples": 80000,
+  "batches": 400,
+  "monomial_basis_degree_le_2": [[0, 0], [1, 0], [0, 1], [2, 0], [1, 1], [0, 2]],
+  "matrix_definition": "H[(channel,u),v]=G_channel(u+v)",
+  "groups": {
+    "individual": ["plus_charge1", "plus_charge2", "minus_charge1", "minus_charge2"],
+    "within_hand_blocks": ["plus_block", "minus_block"],
+    "all_channel_block": ["shared_block"]
+  },
+  "rank_nulls": [1, 2, 3, 4, 5],
+  "rank_chart": {
+    "pivot": "maximum absolute determinant r-by-r submatrix of the full mean; lexicographic first on an exact tie",
+    "residual": "complete Schur complement S-R P^-1 Q",
+    "scope": "vanishing determinantal constraints, with no diagonalizability or exponential-root assumption",
+    "deleted_batches": "the full-mean pivot is held fixed through all 400 delete-one residuals"
+  },
+  "covariance_score": {
+    "covariance": "full delete-one jackknife covariance of every real and imaginary Schur coordinate",
+    "correlation_eigen_relative_cutoff": 1e-10,
+    "primary": "finite-400-batch Hotelling F survival probability",
+    "secondary": "asymptotic chi-square survival probability",
+    "decision_alpha": 0.01
+  },
+  "flat_extension_contract": {
+    "order1": "rank H_degree2 <=3 is the available rank(H2)=rank(H1) plateau test",
+    "order2": "not observable without moments through total degree six",
+    "ordered_path": "not observable because raw rows store only endpoint G(a,b), not separate xy and yx histories"
+  },
+  "decision_alpha": 0.01,
+  "decision_rule": "the lower bound is one plus the largest rejected rank null; shared rank<=5 rejection yields common-state dimension at least six",
+  "no_new_simulation": true,
+  "score_once": true
+}
