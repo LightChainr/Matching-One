@@ -118,6 +118,57 @@ known connection term `pi_0D`.  A Vasseur--Jacobsen--Saleur energy/log-pair
 positive control must decide whether the remaining transported residue is the
 same physical logarithmic observable across lattice representatives.
 
+## 5. VJS positive control: the invariant is the Jordan slope
+
+The explicit percolation collision makes the analogy precise and also limits
+it. At generic `Q`, the energy field `epsilon` and the symmetric two-cluster
+(four-leg) field `psi_hat` are distinct primaries. At `Q=1` their dimensions
+collide at `5/4`, while
+
+\[
+ \lim_{Q\to1}\frac{\Delta_{\hat\psi}-\Delta_\epsilon}{Q-1}
+ =\frac{\sqrt3}{\pi}.
+\]
+
+The finite logarithmic partner is obtained from a singular confluent mixture
+
+\[
+ \widetilde\psi_{ab}=\widehat\psi_{ab}
+ +\frac{2}{Q(Q-1)}\epsilon.
+\]
+
+It transforms as
+
+\[
+ \widetilde\psi(\Lambda r)=\Lambda^{-5/4}
+ \left[\widetilde\psi(r)+\frac{2\sqrt3}{\pi}
+ \log\Lambda\,\epsilon(r)\right].
+\]
+
+The basis change `D -> D+a C` for a logarithmic pair changes the additive,
+lattice-dependent constant in its correlator, but not the coefficient
+`2 sqrt(3)/pi` of `log r`. VJS isolate exactly this invariant using
+
+\[
+ \frac{P_0(r)+P_1(r)-P_{\ne}^2}{P_2(r)}
+ \sim \theta+\frac{2\sqrt3}{\pi}\log r.
+\]
+
+This is the correct positive-control lesson: the absolute representative of a
+log partner is affine, while the Jordan/logarithmic slope is invariant.
+
+Our lift transformation `D_Q O -> D_Q O+X_1` has the same affine algebraic
+form, but it is an LCFT log-partner gauge transformation **only if** `X_1` is
+shown to lie in the relevant collision bottom-field subspace. For
+`L_hom -> L_CP`, `X_1` is the trivial-homology probability `pi_0D`; its
+representation-theoretic projection has not yet been established. Therefore
+the exact result should currently be called a lift counterterm, not proof of a
+Jordan-cell equivalence.
+
+The corresponding high-value invariant target is a scale/modulus logarithmic
+slope after exact lift transport and bottom-field projection. A raw torus
+one-point `Q` derivative cannot play the role of the VJS slope by itself.
+
 ## Boundary
 
 This result proves lift ambiguity and an exact transition coefficient.  It
