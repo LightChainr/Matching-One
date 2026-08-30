@@ -2,8 +2,6 @@
   "boundary": "outside_registered_typed_path is an inventory status, not proof that a scorer is channel-bearing or semantically invalid",
   "channel_bearing_migration_required": {
     "scripts/score_angular_root_amplitude.py": "reconstructs rank-2 cross K_minus/K_plus observables, forms signed orientation root gaps, divides by signed DeltaCos4, and scores the angular-normalized A_p across sizes",
-    "scripts/score_axis_pair_annihilator.py": "reconstructs the cross matching function and implicit roots from K_minus/K_plus rank histograms, then forms and scores an adjacent-size annihilator",
-    "scripts/score_axis_pair_annihilator_stable.py": "operational entrypoint patches the batch reader and delegates to the channel-bearing axis-pair annihilator without descriptor validation",
     "scripts/score_issue43_secondary.py": "orders and scores reused DeltaM/DeltaS, x17, H4/H12, and optional P48 S-prime stages without typed stage, quantity, model-map, or evidence-reuse semantics",
     "scripts/score_norm4_production.py": "scores ordered U, P4_D, and root-gap coordinates across two norm-4 lineages with implicit metric, size, transform, model-order, and shared-evidence semantics",
     "scripts/score_norm4_thermal_jet.py": "scores ordered ranks 2 through 6 thermal-jet coordinates across the same norm-4 lineages without typed mode, normalization, cocycle, or shared-evidence semantics",
@@ -21,12 +19,12 @@
   ],
   "corpus_glob": "scripts/*score*.py",
   "counts": {
-    "channel_bearing_migration_required": 14,
-    "covered_frozen_kernel": 16,
+    "channel_bearing_migration_required": 12,
+    "covered_frozen_kernel": 18,
     "descriptor_not_applicable_generic_utility": 1,
-    "direct_typed_entrypoint": 17,
+    "direct_typed_entrypoint": 19,
     "outside_registered_typed_path": 0,
-    "total": 48
+    "total": 50
   },
   "descriptor_not_applicable_generic_utilities": {
     "scripts/kappa3_half_score.py": "generic Bernoulli score-polynomial and aggregation helper; intentionally accepts an opaque caller-supplied observable D(C) and defines no topology observable"
@@ -45,12 +43,22 @@
     {
       "git_blob_sha": "dcb0093cc1bd9b7379d24d92d7be094fea0e62cb",
       "path": "scripts/score_axis_pair_annihilator.py",
-      "status": "channel_bearing_migration_required"
+      "status": "covered_frozen_kernel"
     },
     {
       "git_blob_sha": "152b4d62d1c2bbf3f7eaabc1f3214498f2d82e95",
       "path": "scripts/score_axis_pair_annihilator_stable.py",
-      "status": "channel_bearing_migration_required"
+      "status": "covered_frozen_kernel"
+    },
+    {
+      "git_blob_sha": "2ecc8b882ccf42014a4382c71674a7239789cd4e",
+      "path": "scripts/score_axis_pair_annihilator_stable_typed.py",
+      "status": "direct_typed_entrypoint"
+    },
+    {
+      "git_blob_sha": "58cd5d0c78392806869f550ad4fd64bb0c452361",
+      "path": "scripts/score_axis_pair_annihilator_typed.py",
+      "status": "direct_typed_entrypoint"
     },
     {
       "git_blob_sha": "e1e382130063e77e208588ceef024110fe0811da",
@@ -88,8 +96,8 @@
       "status": "covered_frozen_kernel"
     },
     {
-      "path": "scripts/score_intrinsic_quantile_center_n145_n290_typed.py",
       "git_blob_sha": "565341942274588a4c1a7665ab810c0a4adc0948",
+      "path": "scripts/score_intrinsic_quantile_center_n145_n290_typed.py",
       "status": "direct_typed_entrypoint"
     },
     {
@@ -223,8 +231,8 @@
       "status": "covered_frozen_kernel"
     },
     {
-      "path": "scripts/score_p50_sprime_n290_typed.py",
       "git_blob_sha": "bf45773159c6e9a811f58073d4db193b975cf2db",
+      "path": "scripts/score_p50_sprime_n290_typed.py",
       "status": "direct_typed_entrypoint"
     },
     {
@@ -238,8 +246,8 @@
       "status": "covered_frozen_kernel"
     },
     {
-      "path": "scripts/score_rank_gap_boundary_targets_typed.py",
       "git_blob_sha": "6dc85aca783cbc9d2cfa38048b9d372d760977c2",
+      "path": "scripts/score_rank_gap_boundary_targets_typed.py",
       "status": "direct_typed_entrypoint"
     },
     {
@@ -248,8 +256,8 @@
       "status": "covered_frozen_kernel"
     },
     {
-      "path": "scripts/score_threshold_rank_root_doubling_typed.py",
       "git_blob_sha": "c80fb62cd6126bb11a34b0835886ac1b1f274f91",
+      "path": "scripts/score_threshold_rank_root_doubling_typed.py",
       "status": "direct_typed_entrypoint"
     },
     {
@@ -258,8 +266,8 @@
       "status": "covered_frozen_kernel"
     },
     {
-      "path": "scripts/score_v14_fixedp_scalar_projector_typed.py",
       "git_blob_sha": "734f448ee0fd206cadc68869654e1f4fd4b6b793",
+      "path": "scripts/score_v14_fixedp_scalar_projector_typed.py",
       "status": "direct_typed_entrypoint"
     },
     {
@@ -275,9 +283,12 @@
   ],
   "schema": "scorer descriptor adoption inventory v1",
   "typed_wrapper_kernels": {
+    "scripts/score_axis_pair_annihilator_stable_typed.py": "scripts/score_axis_pair_annihilator_stable.py",
+    "scripts/score_axis_pair_annihilator_typed.py": "scripts/score_axis_pair_annihilator.py",
     "scripts/score_c4_self_matching_n26_typed.py": "scripts/score_c4_self_matching_n26.py",
     "scripts/score_c4_tangent_orthogonal_holdout_typed.py": "scripts/score_c4_tangent_orthogonal_holdout.py",
     "scripts/score_intrinsic_functional_cocycle_typed.py": "scripts/score_intrinsic_functional_cocycle.py",
+    "scripts/score_intrinsic_quantile_center_n145_n290_typed.py": "scripts/score_intrinsic_quantile_center_n145_n290.py",
     "scripts/score_issue43_full_curve_locked_typed.py": "scripts/score_issue43_full_curve_locked.py",
     "scripts/score_issue43_full_curve_typed.py": "scripts/score_issue43_full_curve.py",
     "scripts/score_issue50_n290_typed.py": "scripts/score_issue50_n290.py",
@@ -287,7 +298,6 @@
     "scripts/score_p48_sprime_frozen_typed.py": "scripts/score_p48_sprime_frozen.py",
     "scripts/score_p48_sprime_prospective_typed.py": "scripts/score_p48_sprime_prospective.py",
     "scripts/score_p50_sprime_n290_typed.py": "scripts/score_p50_sprime_n290.py",
-    "scripts/score_intrinsic_quantile_center_n145_n290_typed.py": "scripts/score_intrinsic_quantile_center_n145_n290.py",
     "scripts/score_rank_gap_boundary_targets_typed.py": "scripts/score_rank_gap_boundary_targets.py",
     "scripts/score_threshold_rank_root_doubling_typed.py": "scripts/score_threshold_rank_root_doubling.py",
     "scripts/score_v14_fixedp_scalar_projector_typed.py": "scripts/score_v14_fixedp_scalar_projector.py"
