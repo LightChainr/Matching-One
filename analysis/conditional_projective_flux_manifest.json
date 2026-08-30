@@ -1,0 +1,24 @@
+{
+  "schema": "matching-one/conditional-projective-flux-manifest/v1",
+  "issues": [334, 333],
+  "dependency_group": "P334_N65_20k_projective_birth_smoke",
+  "observable": "Delta_mu4=J4_birth/J0_birth,line-J4_exit/J0_exit,line",
+  "direct_rank2": "excluded from projective denominators because it has no ell",
+  "same_modulus_projector": "align by conjugate((a+ib)^4/N^2), then subtract N65 orientations",
+  "result": {
+    "first_aligned_delta": -0.010005279631457822,
+    "first_se": 0.0028115284360421106,
+    "second_aligned_delta": 0.0017100503577792,
+    "second_se": 0.0026489925940390334,
+    "second_minus_first": 0.011715329989237022,
+    "contrast_se": 0.004350932247185126,
+    "contrast_quadratic": 7.250106914911767,
+    "contrast_df": 1
+  },
+  "q_lift_class": "intrinsic horizontal Q=1 p-response",
+  "q_normal_boundary": "future Q or mixed Q,p derivatives require Issue 333 transport",
+  "source": "results/local-20260830/P334-projective-birth-N65-smoke/n65_20k.births.csv",
+  "score": "results/local-20260830/P334-projective-birth-N65-smoke/conditional_flux.json",
+  "note": "notes/p334-conditional-projective-flux.md",
+  "claim_boundary": "exploratory reuse of one 20k block; no exponent or operator identity"
+}
