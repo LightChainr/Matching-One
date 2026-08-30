@@ -1,0 +1,434 @@
+{
+  "boundary": "Post-reveal descriptive reuse of the fresh pilot. It neither changes the frozen age decision nor turns temporal modes into exact states or memory variables.",
+  "inputs": {
+    "pilot_score_sha256": "fb22591aaada01fc45e6f5540611d3f34c31c9e2b5bb60aa4e495948ff425615",
+    "production_age_score_sha256": "43901ffdc597328207cc31a4e1307a2f801011652d443ed24abed8e7bd6ad6eb",
+    "temporal_result_commit": "5a7f2d9",
+    "temporal_score_sha256": "bc66cdc3495bf6b8a0c2b134cca4232f64581bb7ebf34eaa4f953a74c64c3451"
+  },
+  "production_anchored_age_attenuation": {
+    "N325": {
+      "boundary": "Post-reveal independent production anchor: it replaces the noisy 50k M0 point by the disjoint 2M production M0 and adds only the paired 50k control shift. It is not the frozen primary score.",
+      "combined_covariance": [
+        [
+          0.00014971775926471903,
+          -4.464325909951316e-06
+        ],
+        [
+          -4.464325909951318e-06,
+          0.00016336412083908276
+        ]
+      ],
+      "joint_chi_square": 45.48249169755332,
+      "joint_df": 2,
+      "joint_p": 1.3292369837306814e-10,
+      "orientations": [
+        {
+          "absolute_retention_vs_production_M0": 0.6231055906694196,
+          "orientation": "first",
+          "pilot_paired_delta_Mcheap_minus_M0": 0.025347137741312607,
+          "production_anchored_beta_Mcheap": -0.04190548557653611,
+          "production_beta_M0": -0.06725262331784872,
+          "se": 0.012235920858877727,
+          "two_sided_p": 0.0007999161885950941,
+          "welch_satterthwaite_df": 145.3343847661254
+        },
+        {
+          "absolute_retention_vs_production_M0": 0.8965309719573431,
+          "orientation": "second",
+          "pilot_paired_delta_Mcheap_minus_M0": 0.008422309372419966,
+          "production_anchored_beta_Mcheap": -0.07297701882990668,
+          "production_beta_M0": -0.08139932820232665,
+          "se": 0.012781397452512099,
+          "two_sided_p": 7.361861198246222e-08,
+          "welch_satterthwaite_df": 129.50793984399917
+        }
+      ]
+    },
+    "N425": {
+      "boundary": "Post-reveal independent production anchor: it replaces the noisy 50k M0 point by the disjoint 2M production M0 and adds only the paired 50k control shift. It is not the frozen primary score.",
+      "combined_covariance": [
+        [
+          0.00013405397560965692,
+          -3.4361760625966703e-06
+        ],
+        [
+          -3.436176062596671e-06,
+          0.00012842450104305264
+        ]
+      ],
+      "joint_chi_square": 59.41841649551476,
+      "joint_df": 2,
+      "joint_p": 1.251568996190152e-13,
+      "orientations": [
+        {
+          "absolute_retention_vs_production_M0": 0.8809421784143536,
+          "orientation": "first",
+          "pilot_paired_delta_Mcheap_minus_M0": 0.008267087530862319,
+          "production_anchored_beta_Mcheap": -0.06117049683578295,
+          "production_beta_M0": -0.06943758436664527,
+          "se": 0.011578168059311323,
+          "two_sided_p": 4.863260487220564e-07,
+          "welch_satterthwaite_df": 137.21794170223103
+        },
+        {
+          "absolute_retention_vs_production_M0": 0.9267914124412099,
+          "orientation": "second",
+          "pilot_paired_delta_Mcheap_minus_M0": 0.004898974932780367,
+          "production_anchored_beta_Mcheap": -0.06201906154547089,
+          "production_beta_M0": -0.06691803647825126,
+          "se": 0.011332453443233404,
+          "two_sided_p": 2.2830750483153146e-07,
+          "welch_satterthwaite_df": 126.5273336063847
+        }
+      ]
+    }
+  },
+  "schema": "matching-one/p334-current-geometry-post-reveal-description/v1",
+  "temporal_modes": {
+    "N325": {
+      "R2_jackknife_covariance": [
+        [
+          3.8262560562380975e-06,
+          4.546589246370744e-07,
+          -1.512672358367109e-06,
+          -5.726053306515496e-07
+        ],
+        [
+          4.546589246370744e-07,
+          2.537318232287361e-06,
+          -3.031200678601349e-07,
+          -1.3234847141524303e-07
+        ],
+        [
+          -1.512672358367109e-06,
+          -3.0312006786013497e-07,
+          3.021232090544528e-06,
+          5.424065161516199e-07
+        ],
+        [
+          -5.726053306515497e-07,
+          -1.3234847141524306e-07,
+          5.424065161516199e-07,
+          2.515951892564082e-06
+        ]
+      ],
+      "R2_vector_order": [
+        [
+          "first",
+          2
+        ],
+        [
+          "first",
+          3
+        ],
+        [
+          "second",
+          2
+        ],
+        [
+          "second",
+          3
+        ]
+      ],
+      "first": {
+        "mode2": {
+          "R2_jackknife_se": 0.0019560818122558417,
+          "cheap_coefficients": {
+            "g_carriers": 0.03133534130309294,
+            "g_occupied_frontier": -0.635753903678832,
+            "g_size": 2.1719002785627377,
+            "g_vacant_frontier": -1.1686889227047847
+          },
+          "cheap_geometry_R2": 0.01715658377785223,
+          "dropped_zero_information": [],
+          "line_centered_mode_variance": 0.15728335568382995,
+          "mode_geometry_correlation": {
+            "g_carriers": 0.0014033582264696514,
+            "g_occupied_frontier": -0.07972870388206953,
+            "g_size": -0.061030683278278354,
+            "g_vacant_frontier": -0.09555637151327981
+          },
+          "mode_geometry_covariance": {
+            "g_carriers": 2.017119739905056e-05,
+            "g_occupied_frontier": -0.003096949583353666,
+            "g_size": -0.0015034933202063637,
+            "g_vacant_frontier": -0.003417806649447571
+          },
+          "production_mode_index_one_based": 2,
+          "rows": 22805
+        },
+        "mode3": {
+          "R2_jackknife_se": 0.001592896177497881,
+          "cheap_coefficients": {
+            "g_carriers": 0.15558237269123892,
+            "g_occupied_frontier": -0.48558282996381535,
+            "g_size": 0.5478109959997044,
+            "g_vacant_frontier": -0.29653173503498903
+          },
+          "cheap_geometry_R2": 0.013097016228240776,
+          "dropped_zero_information": [],
+          "line_centered_mode_variance": 0.13216645560090193,
+          "mode_geometry_correlation": {
+            "g_carriers": 0.0135023303337269,
+            "g_occupied_frontier": -0.1097030308513372,
+            "g_size": -0.10174675095745771,
+            "g_vacant_frontier": -0.1095618393465294
+          },
+          "mode_geometry_covariance": {
+            "g_carriers": 0.0001779062075841167,
+            "g_occupied_frontier": -0.003906225368580827,
+            "g_size": -0.0022976985977002846,
+            "g_vacant_frontier": -0.003592248675095002
+          },
+          "production_mode_index_one_based": 3,
+          "rows": 22805
+        },
+        "production_kernel_eigenvalues": [
+          0.6047460769816775,
+          0.16882501234254632,
+          0.14236667869663533,
+          0.018855637917454954,
+          0.011883253972424183,
+          0.0009641423446723011,
+          0.00027842721283967404
+        ]
+      },
+      "second": {
+        "mode2": {
+          "R2_jackknife_se": 0.00173816917776853,
+          "cheap_coefficients": {
+            "g_carriers": 0.11401932285766846,
+            "g_occupied_frontier": -0.7113588334371228,
+            "g_size": 2.499493496394302,
+            "g_vacant_frontier": -1.1925580788951562
+          },
+          "cheap_geometry_R2": 0.01605200542418661,
+          "dropped_zero_information": [],
+          "line_centered_mode_variance": 0.1551132107492892,
+          "mode_geometry_correlation": {
+            "g_carriers": 0.009051007239585693,
+            "g_occupied_frontier": -0.05403697805664703,
+            "g_size": -0.03265619606799123,
+            "g_vacant_frontier": -0.07139728849590965
+          },
+          "mode_geometry_covariance": {
+            "g_carriers": 0.00014007490272121924,
+            "g_occupied_frontier": -0.0020493960826504583,
+            "g_size": -0.0007831671849911929,
+            "g_vacant_frontier": -0.002493440098429178
+          },
+          "production_mode_index_one_based": 2,
+          "rows": 22627
+        },
+        "mode3": {
+          "R2_jackknife_se": 0.0015861752401812614,
+          "cheap_coefficients": {
+            "g_carriers": -0.009059240255216608,
+            "g_occupied_frontier": -0.3878075688750571,
+            "g_size": 0.4463253113557652,
+            "g_vacant_frontier": -0.36249655645273565
+          },
+          "cheap_geometry_R2": 0.013875756723290111,
+          "dropped_zero_information": [],
+          "line_centered_mode_variance": 0.13272393530673518,
+          "mode_geometry_correlation": {
+            "g_carriers": -0.003493380640430398,
+            "g_occupied_frontier": -0.1138581436775151,
+            "g_size": -0.107060741159602,
+            "g_vacant_frontier": -0.1154682821291282
+          },
+          "mode_geometry_covariance": {
+            "g_carriers": -5.001031127680175e-05,
+            "g_occupied_frontier": -0.003994378157536811,
+            "g_size": -0.002375031445512523,
+            "g_vacant_frontier": -0.0037301831565985195
+          },
+          "production_mode_index_one_based": 3,
+          "rows": 22627
+        },
+        "production_kernel_eigenvalues": [
+          0.6040719656652579,
+          0.16895836616667373,
+          0.14208663622917606,
+          0.018947799651490557,
+          0.011855224661042055,
+          0.0010051387494579317,
+          0.00026117120740193464
+        ]
+      }
+    },
+    "N425": {
+      "R2_jackknife_covariance": [
+        [
+          3.415923140848259e-06,
+          5.201950005330581e-07,
+          -5.88217895486956e-07,
+          6.024406533246037e-08
+        ],
+        [
+          5.201950005330581e-07,
+          1.3748807086100366e-06,
+          2.216838318100284e-07,
+          -1.0452668563334357e-07
+        ],
+        [
+          -5.882178954869562e-07,
+          2.216838318100285e-07,
+          4.912478127561936e-06,
+          -2.665957254336475e-07
+        ],
+        [
+          6.02440653324604e-08,
+          -1.045266856333436e-07,
+          -2.665957254336475e-07,
+          1.93640828953307e-06
+        ]
+      ],
+      "R2_vector_order": [
+        [
+          "first",
+          2
+        ],
+        [
+          "first",
+          3
+        ],
+        [
+          "second",
+          2
+        ],
+        [
+          "second",
+          3
+        ]
+      ],
+      "first": {
+        "mode2": {
+          "R2_jackknife_se": 0.0018482216157290929,
+          "cheap_coefficients": {
+            "g_carriers": -0.2293145283396511,
+            "g_occupied_frontier": 0.3066110302342278,
+            "g_size": -2.166010785020059,
+            "g_vacant_frontier": 1.5502335544974242
+          },
+          "cheap_geometry_R2": 0.020279317112074202,
+          "dropped_zero_information": [],
+          "line_centered_mode_variance": 0.16010881370811417,
+          "mode_geometry_correlation": {
+            "g_carriers": -0.01953629135398028,
+            "g_occupied_frontier": 0.08685475985491083,
+            "g_size": 0.07344003745262342,
+            "g_vacant_frontier": 0.10737850739578576
+          },
+          "mode_geometry_covariance": {
+            "g_carriers": -0.0003167967175583729,
+            "g_occupied_frontier": 0.0033139875288180397,
+            "g_size": 0.0017938561859651787,
+            "g_vacant_frontier": 0.003898546779229635
+          },
+          "production_mode_index_one_based": 2,
+          "rows": 22482
+        },
+        "mode3": {
+          "R2_jackknife_se": 0.0011725530728329684,
+          "cheap_coefficients": {
+            "g_carriers": -0.027332081509117402,
+            "g_occupied_frontier": 0.4429586694194411,
+            "g_size": 0.056402759244005604,
+            "g_vacant_frontier": -0.07923732619753356
+          },
+          "cheap_geometry_R2": 0.011038197969415964,
+          "dropped_zero_information": [],
+          "line_centered_mode_variance": 0.13605713724307758,
+          "mode_geometry_correlation": {
+            "g_carriers": -0.0001879686922458464,
+            "g_occupied_frontier": 0.10487154464905463,
+            "g_size": 0.10234716191480954,
+            "g_vacant_frontier": 0.09885293449409485
+          },
+          "mode_geometry_covariance": {
+            "g_carriers": -2.8098110366266167e-06,
+            "g_occupied_frontier": 0.0036886543005860252,
+            "g_size": 0.002304536450184137,
+            "g_vacant_frontier": 0.0033084760683930806
+          },
+          "production_mode_index_one_based": 3,
+          "rows": 22482
+        },
+        "production_kernel_eigenvalues": [
+          0.6221568092185299,
+          0.17624554424577266,
+          0.15090806073057644,
+          0.01850419332024818,
+          0.013735605771891668,
+          0.0010269308652661403,
+          0.0004310910487153058
+        ]
+      },
+      "second": {
+        "mode2": {
+          "R2_jackknife_se": 0.002216411091734098,
+          "cheap_coefficients": {
+            "g_carriers": 0.09616269797664545,
+            "g_occupied_frontier": -0.611712355005337,
+            "g_size": 2.5879857094233185,
+            "g_vacant_frontier": -1.5504149719659055
+          },
+          "cheap_geometry_R2": 0.02315801013730534,
+          "dropped_zero_information": [],
+          "line_centered_mode_variance": 0.164380155788573,
+          "mode_geometry_correlation": {
+            "g_carriers": 0.006943457409985021,
+            "g_occupied_frontier": -0.09790272614113048,
+            "g_size": -0.08176822265272858,
+            "g_vacant_frontier": -0.1165625401871361
+          },
+          "mode_geometry_covariance": {
+            "g_carriers": 0.00013034498669882276,
+            "g_occupied_frontier": -0.0038445206273128325,
+            "g_size": -0.002054386811113061,
+            "g_vacant_frontier": -0.004359585048351609
+          },
+          "production_mode_index_one_based": 2,
+          "rows": 22335
+        },
+        "mode3": {
+          "R2_jackknife_se": 0.0013915488814745496,
+          "cheap_coefficients": {
+            "g_carriers": -0.0687351925959014,
+            "g_occupied_frontier": -0.3018369091623714,
+            "g_size": -0.1894015935503648,
+            "g_vacant_frontier": 0.06559840366249278
+          },
+          "cheap_geometry_R2": 0.009267916562398892,
+          "dropped_zero_information": [],
+          "line_centered_mode_variance": 0.13381904138494816,
+          "mode_geometry_correlation": {
+            "g_carriers": -0.011123302586283194,
+            "g_occupied_frontier": -0.0955890133698994,
+            "g_size": -0.09451876543397897,
+            "g_vacant_frontier": -0.09071244433303906
+          },
+          "mode_geometry_covariance": {
+            "g_carriers": -0.0001884024607930595,
+            "g_occupied_frontier": -0.003386800792568109,
+            "g_size": -0.0021426437294752576,
+            "g_vacant_frontier": -0.003061168841793609
+          },
+          "production_mode_index_one_based": 3,
+          "rows": 22335
+        },
+        "production_kernel_eigenvalues": [
+          0.6224185354641609,
+          0.17608450258416125,
+          0.15079201461902966,
+          0.018515199687552716,
+          0.013494667552186573,
+          0.001045996114257592,
+          0.0004141192814020283
+        ]
+      }
+    }
+  }
+}

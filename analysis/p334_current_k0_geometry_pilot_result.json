@@ -1,0 +1,67 @@
+{
+  "schema": "matching-one/p334-current-k0-geometry-pilot-result/v1",
+  "status": "completed_fresh_50k_per_size_pilot",
+  "chronology": {
+    "freeze_commit": "cf85536",
+    "runner_commit": "625d602",
+    "pre_reveal_k2_amendment_commit": "12c79dc",
+    "frozen_scorer_commit": "a4f4f96",
+    "raw_lock_commit": "424afdc",
+    "completed_frozen_scores": 1,
+    "first_launches": "both exited 127 before runner invocation because /usr/bin/time was absent; preserved under raw/*/attempt1"
+  },
+  "frozen_primary": {
+    "support_gate": "passed_all_four_orientation_rows",
+    "M0_joint_p": {"N325": 0.5289167363690357, "N425": 0.08587564046037577},
+    "Mcheap_absolute_slope_retention": {
+      "N325_first": 0.22636840410700562,
+      "N325_second": 0.8397634414435402,
+      "N425_first": 0.9068721594452921,
+      "N425_second": 0.945110522330845
+    },
+    "Mcheap_joint_p": {"N325": 0.7206625353799754, "N425": 0.1257029298187949},
+    "cross_size_N325_to_N425_residual_age": {
+      "first": -0.07200851221521258,
+      "second": -0.06502135935118633,
+      "joint_p": 0.23504210318686963,
+      "decision": "effect_size_survives_but_fresh_50k_transfer_score_is_underpowered"
+    }
+  },
+  "exact_H2_structure": {
+    "definition": "number of currently vacant sites whose next insertion makes ambient H1 rank two",
+    "conditional_hazard": "H2/(N-k0)",
+    "figure8_total_all_four_rows": 0,
+    "separate_carrier_total_all_four_rows": 0,
+    "decision": "every observed one-step completion is theta-like inside an already essential carrier",
+    "MH2_joint_p": {"N325": 0.5766715045727142, "N425": 0.9840258175278356},
+    "N425_age_retention_after_H2": {"first": 0.09170095231341426, "second": 0.07137526616543471},
+    "boundary": "H2 attenuation is the expected one-step sampling identity and a calibration ceiling, not an independently discovered mechanism"
+  },
+  "post_reveal_production_anchor": {
+    "method": "add the independent 50k paired Mcheap-M0 shift to the disjoint 2M production M0 slope",
+    "absolute_retention": {
+      "N325_first": 0.6231055906694196,
+      "N325_second": 0.8965309719573431,
+      "N425_first": 0.8809421784143536,
+      "N425_second": 0.9267914124412099
+    },
+    "joint_p": {"N325": 1.3292369837306814e-10, "N425": 1.251568996190152e-13},
+    "decision": "cheap_current_geometry_does_not_absorb_the_production_birth_age_association",
+    "boundary": "descriptive post-reveal precision anchor; not the frozen primary score"
+  },
+  "post_reveal_temporal_modes": {
+    "external_result_commit": "5a7f2d9",
+    "cheap_geometry_R2_range_mode2": [0.01605200542418661, 0.02315801013730534],
+    "cheap_geometry_R2_range_mode3": [0.009267916562398892, 0.013875756723290111],
+    "decision": "the four cheap current-geometry fields explain only about 1-2.3 percent of the nonleading temporal mode scores",
+    "boundary": "mode vectors are production-kernel descriptive coordinates, not exact states, memory variables, or a new independent evidence block"
+  },
+  "artifacts": {
+    "primary_score": "results/server-20260830/P334-current-k0-geometry-pilot/p334_current_k0_geometry_pilot_score.json",
+    "primary_score_sha256": "fb22591aaada01fc45e6f5540611d3f34c31c9e2b5bb60aa4e495948ff425615",
+    "post_reveal_description": "results/server-20260830/P334-current-k0-geometry-pilot/p334_current_geometry_post_reveal_description.json",
+    "post_reveal_description_sha256": "2b74290458fa10fb772c6d580eb459c52244941f9d7601dd5681c278aabfc071",
+    "raw_lock": "analysis/p334_current_k0_geometry_pilot_raw_lock.json"
+  },
+  "claim_boundary": "The cheap recorded current state is not lumpable for the one-step hazard. Unrecorded current shape remains a live proxy, so this does not prove intrinsic temporal memory or its scaling-limit survival."
+}
