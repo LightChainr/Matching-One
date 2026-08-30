@@ -1,0 +1,47 @@
+{
+  "schema": "matching-one/p337-n170-angle-flip-result-manifest/v1",
+  "issues": [337, 334],
+  "preregistration_commit": "cf1bdf8",
+  "source_model_commit": "186d72a",
+  "engine_commit": "1714141+freeze-cf1bdf8",
+  "environment": {
+    "name": "DevEnvC_HZsCM6",
+    "id": "033945d8bf8b47a7acf475c595169e07",
+    "architecture": "aarch64",
+    "vcpus": 16
+  },
+  "production": {
+    "N": 170,
+    "orientations": ["11+7i", "13+i"],
+    "samples_per_shape": 8000000,
+    "batches": 80,
+    "seed": 202608337170,
+    "elapsed_seconds": 17.987291516,
+    "births_sha256": "d317bd01d8ba33f04e8c85c28a713309a8b83483742c4c82a64052dd9ed8f8ea",
+    "metadata_sha256": "f750f5b0f779dc56643c06e563514b417c4957a4365cfad5bec86c2332d0db0c"
+  },
+  "result": {
+    "Delta_K_A_N170": -0.017716873709759606,
+    "standard_error": 0.0015556006552306509,
+    "z_vs_scalar_zero": -11.389088613576552,
+    "frozen_H4_pair_target": -0.009785742952623279,
+    "pair_residual_z_to_H4": -3.0345169011128563,
+    "H4_amplitude": -0.011111494145226835,
+    "H4_curvature_z": -3.034516901112856,
+    "A_projective_scalar": -0.0013809779393524303,
+    "A_projective_scalar_z": -0.7825145778596161,
+    "full_predictive_quadratic": 10.25198886404322
+  },
+  "artifacts": {
+    "preregistration": "analysis/p337_n170_angle_flip_preregistration.json",
+    "script": "scripts/score_n170_angle_flip.py",
+    "score": "results/server-20260830/P337-N170-angle-flip/score.json",
+    "report": "results/server-20260830/P337-N170-angle-flip/REPORT.md",
+    "raw": "results/server-20260830/P337-N170-angle-flip/raw",
+    "checksums": "results/server-20260830/P337-N170-angle-flip/CHECKSUMS.sha256",
+    "science_card": "results/server-20260830/P337-N170-angle-flip/SCIENTIFIC_CARD.md",
+    "note": "notes/p337-n170-angle-flip-reveal.md",
+    "test": "tests/test_score_n170_angle_flip.py"
+  },
+  "claim_boundary": "exact angle-flip sign and residual-direction result; no harmonic revote or exponent fit"
+}
