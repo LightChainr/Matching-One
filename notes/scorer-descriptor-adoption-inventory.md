@@ -1,12 +1,12 @@
 # Scorer descriptor-adoption inventory
 
-In this checked snapshot, the exact `scripts/*score*.py` corpus contains 42
-files. Python-AST inspection finds eleven
+In this checked snapshot, the exact `scripts/*score*.py` corpus contains 43
+files. Python-AST inspection finds twelve
 direct typed entrypoints importing both `ObservableDescriptor` and
-`map_observable` from `wrapping_channels`. Ten frozen kernels are covered by
+`map_observable` from `wrapping_channels`. Eleven frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Twenty paths are confirmed channel-bearing and
+a descriptor is not applicable. Nineteen paths are confirmed channel-bearing and
 require typed migrations: `score_angular_root_amplitude.py`,
 `score_axis_pair_annihilator.py`, its stable entrypoint,
 `score_intrinsic_quantile_center_n145_n290.py`,
@@ -17,7 +17,7 @@ require typed migrations: `score_angular_root_amplitude.py`,
 `score_p231_vacuum_kdv_sector.py`,
 `score_p48_new_geometry_channels.py`,
 `score_p49_fullcurve_doubling.py`,
-`score_p50_fullcurve_n290.py`, `score_p50_sprime_n290.py`,
+`score_p50_fullcurve_n290.py`,
 `score_prequential_evidence.py`,
 `score_rank_gap_boundary_targets.py`, `score_threshold_rank_root_doubling.py`,
 `threshold_score_modes.py`,
@@ -42,7 +42,7 @@ unchanged.
 but no current scorer has that status. Static membership alone would not prove
 a semantic bug, data-provenance failure, or need for migration; any future
 corpus addition must still be reviewed before modification. Issue #146 remains
-open because inventory classification is not the same as implementing the 20
+open because inventory classification is not the same as implementing the 19
 required typed migrations.
 
 The `kappa3_half_score.py` exception is narrow. It defines only exact Bernoulli
@@ -147,14 +147,13 @@ semantics. A migration needs distinct typed quantities plus explicit lineage
 and independent-stream maps. It must preserve size-local jackknifes, numerical
 covariance-rank handling, frozen prediction order, and provenance.
 
-`score_p50_sprime_n290.py` is migration-required. It extracts `P4_S_prime`
-from the P50 child histogram and compares that one coordinate with q2 and
-Jordan predictions in a frozen order, but it does not bind the observable or
-model contract to typed semantics. A migration must type the `P4_S_prime`
-quantity and the ordered model comparison, and record that this score reuses
-the same P50 raw block rather than supplying independent evidence. It must
-preserve the scalar variance calculation, prediction hashes, chronology, and
-the declared decision text.
+`score_p50_sprime_n290.py` is now a covered frozen kernel. Its typed
+entrypoint validates the registered exact identity map for the cross/even,
+angular-normalized `P4_S_prime` observable before replaying the kernel. The
+semantic gate separately freezes N=290, the q2-before-Jordan order, both source
+prediction identities, and the fact that this score reuses the P50 raw block.
+The scalar variance calculation, prediction hashes, chronology, numerical
+scores, and declared decision text are unchanged.
 
 `score_intrinsic_quantile_center_n145_n290.py` is migration-required. It scores
 the intrinsic quantile-center coordinate `Q`, two `N^(3/8)`-scaled widths, and
