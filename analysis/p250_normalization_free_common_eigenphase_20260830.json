@@ -1,0 +1,75 @@
+{
+  "schema": "matching-one/p250-normalization-free-common-eigenphase-retrospective/v1",
+  "issue": 250,
+  "status": "retrospective_protocol_locked_before_common_eigenphase_score",
+  "created_utc": "2026-08-30",
+  "base_branch": "analysis/p250-projective-leg-fresh-production-20260830",
+  "base_commit": "eea7bc7",
+  "question": "Do the two primitive Z5 charged cubic channels share one unit-modulus hand eigenphase after field-amplitude normalization?",
+  "input": {
+    "response": "results/huawei-20260830/P250-z5-projective-leg-fresh-10k/response_10k.json",
+    "response_sha256": "1e42be903d15b8bd791dc3bcb4d329816ed657720bcdc814c47d38d7edc313de",
+    "batches": "results/huawei-20260830/P250-z5-projective-leg-fresh-10k/response_10k.batches.csv",
+    "batches_sha256": "917d78a1a4b1f5d5ade8b6c38d46cf0f435dd6018b82abeffad82533ee9c74dc",
+    "prior_support_score": "results/huawei-20260830/P250-z5-projective-leg-fresh-10k/score_10k.json",
+    "prior_support_score_sha256": "84031a93c6562427a5a97e297f8ca97b03aa3abe05974d1afc92140198eab733",
+    "producer_manifest": "analysis/p250_projective_leg_fresh_production_manifest.json",
+    "producer_manifest_sha256": "6e62b077e45abe80835817e46ff0aaddd78a62dfaaebaeca67902311bbb64977",
+    "samples": 10000,
+    "batches_count": 50,
+    "seed": 25033433720260930,
+    "counter": [0, 10000]
+  },
+  "eligibility": {
+    "operator": "root-marked projective-leg Z5 insertion, not ordinary A_top",
+    "separation": 1,
+    "reason": "d1 passed the already-frozen four-denominator and eight-real cubic-support gate; d2 failed cubic support and d3 was a tail diagnostic",
+    "support_alpha": 0.01,
+    "prior_d1_cubic_support_p": 0.001604811278057845,
+    "prior_d1_minimum_pair_abs_z": 15.396799794945,
+    "not_used_for_contrast_selection": "No d1 common-eigenphase or normalized OPE contrast had been scored."
+  },
+  "charged_channels": {
+    "primitive": ["C113", "C122"],
+    "conjugate_controls": ["C244", "C334"],
+    "hands": ["plus", "minus"],
+    "deck_basis": "exact transported Z5 DFT basis from the producer exact gate",
+    "conjugacy_gate": "C244=conj(C113), C334=conj(C122), max absolute batch residual <=1e-12"
+  },
+  "normalization": {
+    "Omega113_h": "C113_h / (G1_h*sqrt(G2_h))",
+    "Omega122_h": "C122_h / (sqrt(G1_h)*G2_h)",
+    "positive_denominator_gate": "G1_h>0 and G2_h>0 in full and every delete-one",
+    "scope": "cancels independent positive field-amplitude normalizations; complex deck phase is retained in the frozen transported basis"
+  },
+  "primary_contrast": {
+    "A_h": "Omega113_h",
+    "B_h": "Omega122_h",
+    "cross": "A_plus*B_minus-A_minus*B_plus",
+    "norm_difference": "abs(A_plus)^2+abs(B_plus)^2-abs(A_minus)^2-abs(B_minus)^2",
+    "feature_order": ["cross_re", "cross_im", "norm_difference"],
+    "null": "one common unit-modulus q exists with (A_plus,B_plus)=q*(A_minus,B_minus)",
+    "score": "three-real generalized chi-square with full shared-batch delete-one covariance",
+    "decision_alpha": 0.01
+  },
+  "descriptive_eigenphase": {
+    "q_projection": "(A_plus*conj(A_minus)+B_plus*conj(B_minus))/(abs(A_minus)^2+abs(B_minus)^2)",
+    "reported": ["complex_q_projection", "amplitude", "phase_radians", "channelwise_q113", "channelwise_q122"],
+    "not_a_model_vote": true
+  },
+  "scoring_order": [
+    "input_and_exact_conjugacy_gates",
+    "reconfirm_d1_pair_denominators_and_cubic_support",
+    "primary_three_real_common_unit_eigenphase_contrast",
+    "descriptive_common_phase_and_channel_ratios"
+  ],
+  "covariance": "all nonlinear Omega values, the complex cross-product, norm difference, and q projection are recomputed in every shared-batch delete-one",
+  "forbidden": [
+    "score d2 or d3 after their support status is known",
+    "discard the imaginary character coordinate",
+    "treat conjugate channels as independent samples",
+    "reopen H4/H8/H12 ordinary-channel voting",
+    "claim a local primary or universal OPE coefficient from this topological projective-leg row",
+    "add or simulate new replicas"
+  ]
+}
