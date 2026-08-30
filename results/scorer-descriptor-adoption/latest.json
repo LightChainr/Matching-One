@@ -2,11 +2,11 @@
   "boundary": "outside_registered_typed_path is an inventory status, not proof that a scorer is channel-bearing or semantically invalid",
   "corpus_glob": "scripts/*score*.py",
   "counts": {
-    "channel_bearing_migration_required": 19,
+    "channel_bearing_migration_required": 21,
     "covered_frozen_kernel": 3,
     "descriptor_not_applicable_generic_utility": 1,
     "direct_typed_entrypoint": 4,
-    "outside_registered_typed_path": 8,
+    "outside_registered_typed_path": 6,
     "total": 35
   },
   "rows": [
@@ -25,8 +25,8 @@
     {"git_blob_sha":"be08124b54bf27c0ccf88ee9f43b48d66a791b4d","path":"scripts/score_issue43_secondary.py","status":"channel_bearing_migration_required"},
     {"git_blob_sha":"d1349c92aa01dd1d4cbaf97d56a7034be5457f11","path":"scripts/score_issue50_n290.py","status":"channel_bearing_migration_required"},
     {"git_blob_sha":"7a448080609fed552150e26f73741b22719f9d8e","path":"scripts/score_matching_odd_synthesis.py","status":"channel_bearing_migration_required"},
-    {"git_blob_sha":"017452c9e08c45cde9310c1f693dd97b20016866","path":"scripts/score_norm4_production.py","status":"outside_registered_typed_path"},
-    {"git_blob_sha":"c7249c6b4c05c8d63bbb1d9ca2c4a0b236ba28f1","path":"scripts/score_norm4_thermal_jet.py","status":"outside_registered_typed_path"},
+    {"git_blob_sha":"017452c9e08c45cde9310c1f693dd97b20016866","path":"scripts/score_norm4_production.py","status":"channel_bearing_migration_required"},
+    {"git_blob_sha":"c7249c6b4c05c8d63bbb1d9ca2c4a0b236ba28f1","path":"scripts/score_norm4_thermal_jet.py","status":"channel_bearing_migration_required"},
     {"git_blob_sha":"08ac4daaec99782b97ce148d7f3e22672bf81f0a","path":"scripts/score_norm5_harmonic_primary_typed.py","status":"direct_typed_entrypoint"},
     {"git_blob_sha":"e61abf5a09cea3838b3e097c8f70f2d8843c4ac4","path":"scripts/score_norm5_harmonic_primary.py","status":"covered_frozen_kernel"},
     {"git_blob_sha":"e952a10c30a7c7288a8721ebf3288aa361b7a667","path":"scripts/score_norm5_thermal_jet.py","status":"outside_registered_typed_path"},
@@ -59,6 +59,8 @@
     "scripts/score_issue43_secondary.py": "orders and scores reused DeltaM/DeltaS, x17, H4/H12, and optional P48 S-prime stages without typed stage, quantity, model-map, or evidence-reuse semantics",
     "scripts/score_issue50_n290.py": "scores an either/matching_function contrast between two ordered Gaussian lineages with implicit channel, sector, order, and sign semantics",
     "scripts/score_matching_odd_synthesis.py": "selects two ledger blocks by free-form matching_odd source/target strings and combines their scores without verifying registered descriptor identity maps",
+    "scripts/score_norm4_production.py": "scores ordered U, P4_D, and root-gap coordinates across two norm-4 lineages with implicit metric, size, transform, model-order, and shared-evidence semantics",
+    "scripts/score_norm4_thermal_jet.py": "scores ordered ranks 2 through 6 thermal-jet coordinates across the same norm-4 lineages without typed mode, normalization, cocycle, or shared-evidence semantics",
     "scripts/score_p231_vacuum_kdv_sector.py": "scores ordered C/Q/S sector coordinates across two designs against a per-unit-g4 theory vector without typed coordinate or normalization descriptors",
     "scripts/score_p48_sprime_frozen.py": "independent chronological P4_S_prime scorer is not delegated by the existing typed prospective wrapper and performs no semantic descriptor gate",
     "scripts/score_p49_fullcurve_doubling.py": "scores matching tails, thermal even/odd contrasts, signed lineage root gaps, and normalized P4 projectors across doubled sizes without typed quantity families",
