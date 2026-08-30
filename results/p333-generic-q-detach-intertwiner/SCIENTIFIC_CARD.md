@@ -1,0 +1,9 @@
+# Scientific card: minimal generic-Q detach does not repair the confluence
+
+- **Mechanism space changed:** `w2=reopened_unique, w3=remains_empty, w4=remains_empty` after adding the standard loop-weight detach and its exact Q velocity. Before Gram compatibility, endpoint normalization uniquely selects `X0=T,V=0` at all three widths.
+- **Result:** The standard generic-Q detach first makes the algebra sharper: its affine-Hom jet has two moduli at every tested width, and endpoint normalization uniquely selects X0=T,V=0. That selected line survives at translation-degenerate width two but fails the radical Gram equation at widths three and four, so the full physical intersection does not reopen. This is also a zeroth-order obstruction: every full-Q jet projects to the already inconsistent join/endpoint/radical-Gram/source system, hence no detach velocity V can repair it. A physical confluence requires a larger marked or direct-sum module, not merely the missing scalar loop weight.
+- **Observer/sector/source:** crossed-to-trivial affine connectivity map | Q=1 first-jet radical | all-singleton source.
+- **What this rules out:** scalar loop fugacity as the missing datum that could repair the width-3/4 join-only Gram/source obstruction; it selects the canonical translation but cannot make that line Gram-compatible.
+- **What it does not prove:** no LCFT/Jordan identification, no exclusion of marked-cluster or direct-sum extensions, and no relation to the formal K in PR #393.
+- **Dependency group:** exact finite-width connectivity representation; this is the declared continuation of `96df7c8`, not a new independent vote.
+- **Next discriminant:** add one physically named mark/closure block whose Q derivative has a nonzero radical projection; another scalar Q weight cannot change the zeroth-order no-go.
