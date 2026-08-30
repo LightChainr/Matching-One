@@ -1,12 +1,12 @@
 # Scorer descriptor-adoption inventory
 
-In this checked snapshot, the exact `scripts/*score*.py` corpus contains 47
-files. Python-AST inspection finds sixteen
+In this checked snapshot, the exact `scripts/*score*.py` corpus contains 48
+files. Python-AST inspection finds seventeen
 direct typed entrypoints importing both `ObservableDescriptor` and
-`map_observable` from `wrapping_channels`. Fifteen frozen kernels are covered by
+`map_observable` from `wrapping_channels`. Sixteen frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Fifteen paths are confirmed channel-bearing and
+a descriptor is not applicable. Fourteen paths are confirmed channel-bearing and
 require typed migrations: `score_angular_root_amplitude.py`,
 `score_axis_pair_annihilator.py`, its stable entrypoint,
 `score_issue43_secondary.py`,
@@ -18,7 +18,6 @@ require typed migrations: `score_angular_root_amplitude.py`,
 `score_p50_fullcurve_n290.py`,
 `score_prequential_evidence.py`,
 `threshold_score_modes.py`,
-`score_v14_fixedp_scalar_projector.py`, and
 `score_v14_scalar_root_projector.py`. No scorer remains outside a registered
 audit class.
 
@@ -39,7 +38,7 @@ unchanged.
 but no current scorer has that status. Static membership alone would not prove
 a semantic bug, data-provenance failure, or need for migration; any future
 corpus addition must still be reviewed before modification. Issue #146 remains
-open because inventory classification is not the same as implementing the 15
+open because inventory classification is not the same as implementing the 14
 required typed migrations.
 
 The `kappa3_half_score.py` exception is narrow. It defines only exact Bernoulli
@@ -187,15 +186,7 @@ It must also preserve that width and cocycle diagnostics reuse the same raw
 curves and are not additive evidence. Prediction chronology, multipliers,
 numerical-rank cutoff, jackknife construction, and scores remain unchanged.
 
-The two v14 scalar projectors are migration-required. The fixed-p path selects
-a free-form matching-function channel, applies cos4 weights to cancel H4, and
-reports a `N^(25/8)`-scaled scalar at explicit `p_ref`. The full-curve path
-instead solves two orientation roots, forms H4-null scalar and H4 coordinates,
-then scores fixed `beta=7/2` GLS and two ordered norm-2 lineages. A migration
-must type sector, channel, orientation weights, fixed-p versus root quantities,
-units/scalings, and lineage maps. It must preserve covariance reconstruction,
-root solving, synchronized delete-one batches, the conditional parity boundary,
-and all limitations and numerical results.
+`score_v14_fixedp_scalar_projector.py` is now a covered frozen kernel. Its typed entrypoint locks the basis-dependent `direction_1/matching` value, fixed-p coordinate, `p_ref=0.592746050790`, H4-null orientation weights, covariance reconstruction, and `N^(25/8)` normalization before delegating row projections. It remains a retrospective discovery/power diagnostic and neither proves the V_<1,4> assignment nor removes common thermal displacement. The separate full-curve `score_v14_scalar_root_projector.py` remains migration-required because it solves implicit roots and scores two lineages.
 
 `score_p159_pell_hex_filter.py` is migration-required despite serializing an
 `observable_descriptor` dictionary in its output. That dictionary is free-form
