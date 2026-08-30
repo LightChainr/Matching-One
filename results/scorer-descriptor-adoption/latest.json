@@ -16,7 +16,6 @@
     "scripts/score_p48_new_geometry_channels.py": "scores four intrinsic-center P4 projector channels from retrospective source amplitudes on independent N185/N265 targets with implicit quantity, geometry, scaling, and shared-source-covariance semantics",
     "scripts/score_p49_fullcurve_doubling.py": "scores matching tails, thermal even/odd contrasts, signed lineage root gaps, and normalized P4 projectors across doubled sizes without typed quantity families",
     "scripts/score_p50_fullcurve_n290.py": "scores thermal-even DeltaM, slope, signed root-gap, and four P4 quantities across independent N145/N290 lineages using implicit feature, order, sign, and stream semantics",
-    "scripts/score_p50_sprime_n290.py": "reuses the P50 histogram to score P4_S_prime against ordered q2 and Jordan frozen models without typed quantity, model-order, or shared-evidence semantics",
     "scripts/score_prequential_evidence.py": "validates scored blocks with free-form channel.source/channel.target strings and accepts any truthy exact_map instead of applying the registered descriptor map",
     "scripts/score_rank_gap_boundary_targets.py": "scores the orientation-pooled paired rank gap K_plus-K_minus across sizes using implicit representation and rank-unit semantics rather than an explicit descriptor",
     "scripts/score_threshold_rank_root_doubling.py": "scores signed threshold-rank root-gap lineages across doubled sizes with implicit genealogy, orientation-order, and sign-map semantics",
@@ -29,12 +28,12 @@
   ],
   "corpus_glob": "scripts/*score*.py",
   "counts": {
-    "channel_bearing_migration_required": 22,
-    "covered_frozen_kernel": 8,
+    "channel_bearing_migration_required": 21,
+    "covered_frozen_kernel": 9,
     "descriptor_not_applicable_generic_utility": 1,
-    "direct_typed_entrypoint": 9,
+    "direct_typed_entrypoint": 10,
     "outside_registered_typed_path": 0,
-    "total": 40
+    "total": 41
   },
   "descriptor_not_applicable_generic_utilities": {
     "scripts/kappa3_half_score.py": "generic Bernoulli score-polynomial and aggregation helper; intentionally accepts an opaque caller-supplied observable D(C) and defines no topology observable"
@@ -51,19 +50,14 @@
       "status": "channel_bearing_migration_required"
     },
     {
-      "git_blob_sha": "dcb0093cc1bd9b7379d24d92d7be094fea0e62cb",
-      "path": "scripts/score_axis_pair_annihilator.py",
-      "status": "channel_bearing_migration_required"
-    },
-    {
       "git_blob_sha": "152b4d62d1c2bbf3f7eaabc1f3214498f2d82e95",
       "path": "scripts/score_axis_pair_annihilator_stable.py",
       "status": "channel_bearing_migration_required"
     },
     {
-      "git_blob_sha": "e1e382130063e77e208588ceef024110fe0811da",
-      "path": "scripts/score_c4_self_matching_n26.py",
-      "status": "covered_frozen_kernel"
+      "git_blob_sha": "dcb0093cc1bd9b7379d24d92d7be094fea0e62cb",
+      "path": "scripts/score_axis_pair_annihilator.py",
+      "status": "channel_bearing_migration_required"
     },
     {
       "git_blob_sha": "a9d954339ea7ff7b115e8020828ff523ca0b8b4f",
@@ -71,8 +65,8 @@
       "status": "direct_typed_entrypoint"
     },
     {
-      "git_blob_sha": "b58cbaade09aafa1378f2c70399146efaa67dd6f",
-      "path": "scripts/score_c4_tangent_orthogonal_holdout.py",
+      "git_blob_sha": "e1e382130063e77e208588ceef024110fe0811da",
+      "path": "scripts/score_c4_self_matching_n26.py",
       "status": "covered_frozen_kernel"
     },
     {
@@ -81,14 +75,19 @@
       "status": "direct_typed_entrypoint"
     },
     {
-      "git_blob_sha": "d61b35eb593c51f137a5fa4883201d9260d5c612",
-      "path": "scripts/score_intrinsic_functional_cocycle.py",
+      "git_blob_sha": "b58cbaade09aafa1378f2c70399146efaa67dd6f",
+      "path": "scripts/score_c4_tangent_orthogonal_holdout.py",
       "status": "covered_frozen_kernel"
     },
     {
       "git_blob_sha": "3238be12380e416506fce9cb04d846b23172a80b",
       "path": "scripts/score_intrinsic_functional_cocycle_typed.py",
       "status": "direct_typed_entrypoint"
+    },
+    {
+      "git_blob_sha": "d61b35eb593c51f137a5fa4883201d9260d5c612",
+      "path": "scripts/score_intrinsic_functional_cocycle.py",
+      "status": "covered_frozen_kernel"
     },
     {
       "git_blob_sha": "837652a580ef915eb5649ea63e5b1d1ba73a3e7e",
@@ -101,13 +100,13 @@
       "status": "direct_typed_entrypoint"
     },
     {
-      "git_blob_sha": "067b0b613b9c2f412bc75aa0361d488ed68e44d3",
-      "path": "scripts/score_issue43_full_curve.py",
+      "git_blob_sha": "022ac040596eb4518773982975edd101ff3d0a26",
+      "path": "scripts/score_issue43_full_curve_locked.py",
       "status": "channel_bearing_migration_required"
     },
     {
-      "git_blob_sha": "022ac040596eb4518773982975edd101ff3d0a26",
-      "path": "scripts/score_issue43_full_curve_locked.py",
+      "git_blob_sha": "067b0b613b9c2f412bc75aa0361d488ed68e44d3",
+      "path": "scripts/score_issue43_full_curve.py",
       "status": "channel_bearing_migration_required"
     },
     {
@@ -116,24 +115,24 @@
       "status": "channel_bearing_migration_required"
     },
     {
-      "git_blob_sha": "d1349c92aa01dd1d4cbaf97d56a7034be5457f11",
-      "path": "scripts/score_issue50_n290.py",
-      "status": "covered_frozen_kernel"
-    },
-    {
       "git_blob_sha": "a89d2fd1f19c29a2b90753688d1a9690960e8942",
       "path": "scripts/score_issue50_n290_typed.py",
       "status": "direct_typed_entrypoint"
     },
     {
-      "git_blob_sha": "7a448080609fed552150e26f73741b22719f9d8e",
-      "path": "scripts/score_matching_odd_synthesis.py",
+      "git_blob_sha": "d1349c92aa01dd1d4cbaf97d56a7034be5457f11",
+      "path": "scripts/score_issue50_n290.py",
       "status": "covered_frozen_kernel"
     },
     {
       "git_blob_sha": "ec31232516bdcd5c9f8be4cbae7db9e56a2536a2",
       "path": "scripts/score_matching_odd_synthesis_typed.py",
       "status": "direct_typed_entrypoint"
+    },
+    {
+      "git_blob_sha": "7a448080609fed552150e26f73741b22719f9d8e",
+      "path": "scripts/score_matching_odd_synthesis.py",
+      "status": "covered_frozen_kernel"
     },
     {
       "git_blob_sha": "017452c9e08c45cde9310c1f693dd97b20016866",
@@ -146,14 +145,14 @@
       "status": "channel_bearing_migration_required"
     },
     {
-      "git_blob_sha": "e61abf5a09cea3838b3e097c8f70f2d8843c4ac4",
-      "path": "scripts/score_norm5_harmonic_primary.py",
-      "status": "covered_frozen_kernel"
-    },
-    {
       "git_blob_sha": "08ac4daaec99782b97ce148d7f3e22672bf81f0a",
       "path": "scripts/score_norm5_harmonic_primary_typed.py",
       "status": "direct_typed_entrypoint"
+    },
+    {
+      "git_blob_sha": "e61abf5a09cea3838b3e097c8f70f2d8843c4ac4",
+      "path": "scripts/score_norm5_harmonic_primary.py",
+      "status": "covered_frozen_kernel"
     },
     {
       "git_blob_sha": "e952a10c30a7c7288a8721ebf3288aa361b7a667",
@@ -176,24 +175,24 @@
       "status": "channel_bearing_migration_required"
     },
     {
-      "git_blob_sha": "18046c546b87e0feebbf43cb6060820630b281c4",
-      "path": "scripts/score_p48_sprime_frozen.py",
-      "status": "covered_frozen_kernel"
-    },
-    {
       "git_blob_sha": "8e98facceca57bdc92ede2f26fcd1e1996ec08a8",
       "path": "scripts/score_p48_sprime_frozen_typed.py",
       "status": "direct_typed_entrypoint"
     },
     {
-      "git_blob_sha": "c80c708d0da959306e4e86f55ae74c95570d6956",
-      "path": "scripts/score_p48_sprime_prospective.py",
+      "git_blob_sha": "18046c546b87e0feebbf43cb6060820630b281c4",
+      "path": "scripts/score_p48_sprime_frozen.py",
       "status": "covered_frozen_kernel"
     },
     {
       "git_blob_sha": "1ad106387f0df31376e8c8de80793639d2d2d38f",
       "path": "scripts/score_p48_sprime_prospective_typed.py",
       "status": "direct_typed_entrypoint"
+    },
+    {
+      "git_blob_sha": "c80c708d0da959306e4e86f55ae74c95570d6956",
+      "path": "scripts/score_p48_sprime_prospective.py",
+      "status": "covered_frozen_kernel"
     },
     {
       "git_blob_sha": "c68db6e90035561892be4eb88eac05b8623cb89d",
@@ -206,9 +205,14 @@
       "status": "channel_bearing_migration_required"
     },
     {
+      "git_blob_sha": "bf45773159c6e9a811f58073d4db193b975cf2db",
+      "path": "scripts/score_p50_sprime_n290_typed.py",
+      "status": "direct_typed_entrypoint"
+    },
+    {
       "git_blob_sha": "1d6d044f35758088e67b959c0a33a432a8c43b5b",
       "path": "scripts/score_p50_sprime_n290.py",
-      "status": "channel_bearing_migration_required"
+      "status": "covered_frozen_kernel"
     },
     {
       "git_blob_sha": "364878808083c88dae6a5d9ba4ecd7eb987e2c16",
@@ -250,6 +254,7 @@
     "scripts/score_matching_odd_synthesis_typed.py": "scripts/score_matching_odd_synthesis.py",
     "scripts/score_norm5_harmonic_primary_typed.py": "scripts/score_norm5_harmonic_primary.py",
     "scripts/score_p48_sprime_frozen_typed.py": "scripts/score_p48_sprime_frozen.py",
-    "scripts/score_p48_sprime_prospective_typed.py": "scripts/score_p48_sprime_prospective.py"
+    "scripts/score_p48_sprime_prospective_typed.py": "scripts/score_p48_sprime_prospective.py",
+    "scripts/score_p50_sprime_n290_typed.py": "scripts/score_p50_sprime_n290.py"
   }
 }
