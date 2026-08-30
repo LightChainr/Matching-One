@@ -1,15 +1,15 @@
 # Scorer descriptor-adoption inventory
 
 At main commit `11ba86892fabd3349e322d198f23ef24d8cbe828`, the exact
-`scripts/*score*.py` corpus contains 35 files. Python-AST inspection finds four
+`scripts/*score*.py` corpus contains 36 files. Python-AST inspection finds five
 direct typed entrypoints importing both `ObservableDescriptor` and
-`map_observable` from `wrapping_channels`. Three frozen kernels are covered by
+`map_observable` from `wrapping_channels`. Four frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Twenty-seven paths are confirmed channel-bearing and
+a descriptor is not applicable. Twenty-six paths are confirmed channel-bearing and
 require typed migrations: `score_angular_root_amplitude.py`,
 `score_axis_pair_annihilator.py`, its stable entrypoint,
-`score_c4_self_matching_n26.py`, `score_c4_tangent_orthogonal_holdout.py`,
+`score_c4_tangent_orthogonal_holdout.py`,
 `score_intrinsic_quantile_center_n145_n290.py`,
 `score_issue43_full_curve.py`, its locked wrapper,
 `score_issue43_secondary.py`, `score_issue50_n290.py`,
@@ -59,14 +59,15 @@ and treats any truthy `exact_map` field as sufficient. A typed migration must
 parse source/target descriptors and verify the registered affine transform,
 while preserving historical ledger rows and chronology.
 
-`score_c4_self_matching_n26.py` is migration-required even though its committed
-N=26 control finds all five wrapping-channel Bernstein vectors identical. It
-selects the scored observable from the prediction's free-form
-`geometry.wrapping_channel` string, then compares that exact law with frozen
-hypotheses. Numerical equality on one finite self-matching geometry does not
-establish semantic interchangeability. A typed migration must bind the frozen
-prediction and result to the exact channel descriptor while preserving the
-pre-target scoring order and stop-without-generalized-fit rule.
+`score_c4_self_matching_n26.py` is now a covered frozen kernel. Its typed
+entrypoint validates an exact identity map for the frozen `either` matching-odd
+value before replaying the kernel and annotates the output with both
+descriptors and the applied transform. The semantic gate binds the prediction
+file hash and declared channel. The fact that all five wrapping-channel
+Bernstein vectors coincide on this finite control remains only a reported
+numerical identity, not permission to exchange channel labels. The frozen
+hypotheses, scoring order, enumeration artifacts, and
+stop-without-generalized-fit rule are unchanged.
 
 `score_c4_tangent_orthogonal_holdout.py` is migration-required. It selects the
 `cross` response through a free-form channel string, freezes `lambda/t` on
