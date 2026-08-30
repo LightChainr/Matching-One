@@ -58,6 +58,19 @@ class P154LocalSingletPilotTests(unittest.TestCase):
         self.assertEqual(metadata["replica_counter_last_exclusive"], 15465000020)
         self.assertEqual(metadata["git_commit"], "freeze-test")
 
+    def test_locked_score_runs_and_reports_all_candidates(self) -> None:
+        output = Path(self.temporary.name) / "score.json"
+        report = Path(self.temporary.name) / "REPORT.md"
+        subprocess.run([
+            sys.executable, str(ROOT / "scripts" / "score_p154_local_singlet_pilot.py"),
+            "--raw-dir", str(ROOT / "results" / "p154-phase-e-local-singlet-pilot" / "raw"),
+            "--json", str(output), "--report", str(report),
+        ], check=True)
+        payload = json.loads(output.read_text())
+        self.assertEqual(set(payload["common_ray_candidates"]), {"A/E/C", "A/E/J_even", "A/E/J_odd"})
+        self.assertIn(payload["promotion_gate"]["decision"], {"extend_both_to_100k", "stop_at_20k"})
+        self.assertIn("continuum-energy identification", payload["interpretation_boundary"])
+
 
 if __name__ == "__main__":
     unittest.main()
