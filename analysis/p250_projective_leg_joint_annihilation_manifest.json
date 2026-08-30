@@ -1,0 +1,78 @@
+{
+  "schema": "matching-one/p250-projective-leg-joint-annihilation-manifest/v1",
+  "status": "frozen_zero_sample_existing_data_reanalysis",
+  "parent_results": {
+    "model_free_hankel": "a770ac9f71460564dd2090210e1e0e64a1cd4979",
+    "direction_only_bridge": "a46ed6343b4b6874259a0f24defeedf16800a8d0",
+    "radius_five_extension": "11130aef3ee46df8d52e59c8bfe486eadcdbbaf5"
+  },
+  "input_batches": {
+    "commit": "4c1f5d8cf98b9c39557acff0146332899777505b",
+    "path": "results/huawei-20260830/P250-projective-leg-bivariate-80k/response_80k.batches.csv",
+    "sha256": "dfbd83d680080939bcae5cad0090af95d82748ed780ce73807d4b002d6a9ca72"
+  },
+  "samples": 80000,
+  "batches": 400,
+  "monomial_basis_degree_le_2": [[0, 0], [1, 0], [0, 1], [2, 0], [1, 1], [0, 2]],
+  "joint_null": "H_plus q_plus=0 and H_minus(TB2) q_minus=0 with q_minus=q_plus for linear maps or q_minus=conjugate(q_plus) for conjugating maps; equivalently one mapped 24x6 complex matrix has rank<=5",
+  "projective_chart": {
+    "pivot": "maximum absolute determinant 5x5 submatrix of the full candidate-mapped joint mean, lexicographic first on an exact tie",
+    "normalization": "the unique nonpivot coefficient is one",
+    "delete_one": "hold the full-mean pivot rows and columns fixed and recompute q and the complete Schur residual after deleting the same aligned batch from both hands, both charges, and every displacement",
+    "residual": "19 complex locally complete rank-five Schur coordinates, realified to 38 coordinates"
+  },
+  "candidate_maps": [
+    {"name": "orientation_preserving_R0_linear", "alexander_reflection": false, "rotation_power": 0, "coefficient_conjugation": false, "role": "identity_linear_replay"},
+    {"name": "orientation_preserving_R0_conjugate", "alexander_reflection": false, "rotation_power": 0, "coefficient_conjugation": true, "role": "identity_conjugation_scientific_control"},
+    {"name": "orientation_preserving_R1_linear", "alexander_reflection": false, "rotation_power": 1, "coefficient_conjugation": false, "role": "frozen_secondary"},
+    {"name": "orientation_preserving_R1_conjugate", "alexander_reflection": false, "rotation_power": 1, "coefficient_conjugation": true, "role": "frozen_secondary"},
+    {"name": "orientation_preserving_R2_linear", "alexander_reflection": false, "rotation_power": 2, "coefficient_conjugation": false, "role": "frozen_secondary"},
+    {"name": "orientation_preserving_R2_conjugate", "alexander_reflection": false, "rotation_power": 2, "coefficient_conjugation": true, "role": "frozen_secondary"},
+    {"name": "orientation_preserving_R3_linear", "alexander_reflection": false, "rotation_power": 3, "coefficient_conjugation": false, "role": "frozen_secondary"},
+    {"name": "orientation_preserving_R3_conjugate", "alexander_reflection": false, "rotation_power": 3, "coefficient_conjugation": true, "role": "frozen_secondary"},
+    {"name": "alexander_reflection_R0_linear", "alexander_reflection": true, "rotation_power": 0, "coefficient_conjugation": false, "role": "frozen_secondary"},
+    {"name": "alexander_reflection_R0_conjugate", "alexander_reflection": true, "rotation_power": 0, "coefficient_conjugation": true, "role": "primary_family"},
+    {"name": "alexander_reflection_R1_linear", "alexander_reflection": true, "rotation_power": 1, "coefficient_conjugation": false, "role": "frozen_secondary"},
+    {"name": "alexander_reflection_R1_conjugate", "alexander_reflection": true, "rotation_power": 1, "coefficient_conjugation": true, "role": "primary_family"},
+    {"name": "alexander_reflection_R2_linear", "alexander_reflection": true, "rotation_power": 2, "coefficient_conjugation": false, "role": "frozen_secondary"},
+    {"name": "alexander_reflection_R2_conjugate", "alexander_reflection": true, "rotation_power": 2, "coefficient_conjugation": true, "role": "post_radius5_primary"},
+    {"name": "alexander_reflection_R3_linear", "alexander_reflection": true, "rotation_power": 3, "coefficient_conjugation": false, "role": "frozen_secondary"},
+    {"name": "alexander_reflection_R3_conjugate", "alexander_reflection": true, "rotation_power": 3, "coefficient_conjugation": true, "role": "primary_family"}
+  ],
+  "identity_linear_replay": {
+    "candidate": "orientation_preserving_R0_linear",
+    "required": "candidate matrix, pivot, residual, covariance, resolved modes, statistic, and finite-batch p must reproduce the a770ac9 shared-block rank-five score before any other candidate is emitted",
+    "reference_score": {
+      "commit": "a770ac9f71460564dd2090210e1e0e64a1cd4979",
+      "path": "results/local-20260830/P250-projective-leg-hankel-rank/score.json",
+      "sha256": "cf7c4936bb2cc85af55479913ce0c30c10ed6463a0707eb4bca6642719370efe"
+    }
+  },
+  "primary_family": [
+    "alexander_reflection_R0_conjugate",
+    "alexander_reflection_R1_conjugate",
+    "alexander_reflection_R2_conjugate",
+    "alexander_reflection_R3_conjugate"
+  ],
+  "post_radius5_primary_candidate": "alexander_reflection_R2_conjugate",
+  "core_cross_candidate_covariance": [
+    "orientation_preserving_R0_linear",
+    "orientation_preserving_R0_conjugate",
+    "alexander_reflection_R0_conjugate",
+    "alexander_reflection_R1_conjugate",
+    "alexander_reflection_R2_conjugate",
+    "alexander_reflection_R3_conjugate"
+  ],
+  "covariance": {
+    "per_candidate": "complete 38x38 paired delete-one jackknife covariance",
+    "core_cross_candidate": "complete 228x228 covariance for identity linear, identity conjugation, and the four primary Alexander maps",
+    "correlation_eigen_relative_cutoff": 1e-10,
+    "primary_probability": "finite-400-batch Hotelling survival probability"
+  },
+  "decision_alpha": 0.01,
+  "decision_rule": "report every candidate; reject the Alexander union only when all four primary candidates reject; never select by largest p; the post-radius-five R2 candidate receives its own fixed joint-null decision",
+  "dependency_group": "p250-projective-leg-N505-bivariate-80k",
+  "no_new_simulation": true,
+  "no_server": true,
+  "score_once": true
+}
