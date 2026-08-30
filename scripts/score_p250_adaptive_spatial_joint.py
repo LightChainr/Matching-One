@@ -145,6 +145,11 @@ def fit_cone(values_by_hand: dict[str, np.ndarray], bootstrap: int, seed: int):
             for index, hand in enumerate(HANDS)
         },
         "decision": "ordinary_cone_not_rejected" if p >= 0.01 else "ordinary_cone_rejected",
+        "completion_boundary": (
+            "Residue zero was not sampled. A common offset of all Fourier weights changes only "
+            "C(0), so the nonzero-coordinate spectrum is a nonunique positive completion, not a "
+            "unique state decomposition."
+        ),
     }
 
 
@@ -233,25 +238,35 @@ def conditional_spatial_randomization(path: Path, permutations: int, seed: int):
 
     def statistic(labels):
         hand_values = []
+        hand_details = {}
         for hand in HANDS:
             indices = np.asarray([index for index, row in enumerate(groups) if hand in row])
             response = np.asarray([groups[index][hand] for index in indices], dtype=float)
             response -= response.mean()
             spectrum = phase[:, labels[indices]] @ response
-            hand_values.append(float(np.max(np.abs(spectrum) ** 2 / np.sum(response * response))))
-        return max(hand_values), hand_values
+            power = np.abs(spectrum) ** 2 / np.sum(response * response)
+            winning = int(np.argmax(power))
+            hand_values.append(float(power[winning]))
+            hand_details[hand] = {
+                "frequency": winning + 1,
+                "power": float(power[winning]),
+                "coefficient_re": float(spectrum[winning].real),
+                "coefficient_im": float(spectrum[winning].imag),
+                "phase_radians": float(np.angle(spectrum[winning])),
+            }
+        return max(hand_values), hand_details
 
     observed, by_hand = statistic(residues)
     rng = np.random.default_rng(seed)
     reference = np.asarray([statistic(rng.permutation(residues))[0] for _ in range(permutations)])
     p = float((1 + np.sum(reference >= observed)) / (permutations + 1))
     return {
-        "status": "post_reveal_descriptive_randomization",
+        "status": "frozen_production_randomization",
         "defined_rows": len(rows),
         "shared_replica_clusters": len(groups),
         "statistic": "maximum centered conditional-response Fourier power over hands and k=1..50",
         "observed": observed,
-        "observed_by_hand": dict(zip(HANDS, by_hand)),
+        "observed_by_hand": by_hand,
         "permutations": permutations,
         "randomization_p": p,
         "reference_quantiles": {
@@ -272,13 +287,25 @@ def global_summary(rows):
         tie = np.asarray([float(row[f"{hand}_ties"]) for row in rows])
         batch_defined = defined / samples
         batch_unconditional = response / samples
-        batch_conditional = response / defined
+        total_ratio = float(response.sum() / defined.sum())
+        leave_one_out = np.asarray([
+            (response.sum() - response[index]) / (defined.sum() - defined[index])
+            for index in range(len(rows))
+        ])
+        jackknife_se = float(
+            math.sqrt((len(rows) - 1) / len(rows)
+                      * np.sum((leave_one_out - leave_one_out.mean()) ** 2))
+        )
         result[hand] = {
             "defined_rate": mean_se(batch_defined),
             "tie_rate": mean_se(tie / samples),
             "unconditional_Rminus": mean_se(batch_unconditional),
-            "conditional_Rminus": mean_se(batch_conditional),
-            "conditional_minus_source_alpha": mean_se(batch_conditional - ALPHA),
+            "conditional_Rminus": {"mean": total_ratio, "se": jackknife_se,
+                                    "estimator": "ratio_of_totals_with_delete_one_batch_jackknife"},
+            "conditional_minus_source_alpha": {
+                "mean": total_ratio - ALPHA,
+                "se": float(math.sqrt(jackknife_se * jackknife_se + ALPHA_SE * ALPHA_SE)),
+            },
         }
     return result
 

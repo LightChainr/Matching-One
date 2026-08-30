@@ -1,0 +1,69 @@
+{
+  "schema": "matching-one/p250-adaptive-spatial-joint-production-result/v1",
+  "status": "completed_fresh_200k_stop",
+  "freeze_commit": "bb1e852",
+  "environment": "Huawei DevEnvC_HZsCM6 033945d8bf8b47a7acf475c595169e07",
+  "run": {
+    "samples": 200000,
+    "batches": 400,
+    "elapsed_seconds": 111.82516778098943,
+    "defined_rows": 5351,
+    "typed_control_failures": 0,
+    "batch_sha256": "9d70559261ae82d6700857155d0955b084853971e61030cb45e29bd22c142870",
+    "defined_sha256": "444521afe22dc6332caad91613b5b775b099cb30efdbea4366ed74d63acd45a3"
+  },
+  "global": {
+    "plus": {
+      "defined_rate": [0.013265000000000002, 0.00024550992915416516],
+      "Rminus_unconditional": [0.018775, 0.00040513426407775557],
+      "Rminus_given_defined_ratio_of_totals": [1.4153788164342254, 0.015758592339300485]
+    },
+    "minus": {
+      "defined_rate": [0.013490000000000002, 0.0002572258985935673],
+      "Rminus_unconditional": [0.019100000000000002, 0.00042067495592959406],
+      "Rminus_given_defined_ratio_of_totals": [1.4158636026686435, 0.016042630954622807]
+    }
+  },
+  "ordinary_positive_fourier_cone": {
+    "resolved_covariance_modes": 100,
+    "minimum_distance_squared": 0.0,
+    "bootstrap_p": 1.0,
+    "decision": "not_rejected",
+    "completion_boundary": "Residue zero is unobserved, so the positive completion is nonunique and cannot identify a spectrum or state count."
+  },
+  "conditional_spatial_heterogeneity": {
+    "test": "cluster-preserving max-Fourier randomization over both hands and k=1..50",
+    "defined_rows": 5351,
+    "shared_replica_clusters": 4664,
+    "permutations": 5000,
+    "p": 0.0007998400319936012,
+    "plus_peak": {
+      "frequency": 1,
+      "power": 10.38425134096529,
+      "phase_radians": -0.28228439422601775
+    },
+    "minus_peak": {
+      "frequency": 10,
+      "power": 12.899534632865086,
+      "phase_radians": -0.01405757160640397
+    },
+    "decision": "resolved_inside_ordinary_cone"
+  },
+  "source_frozen_amplitude_transfer": {
+    "source_alpha": [1.7873118647707438, 0.010073378702833143],
+    "joint_chi_square": 514.9945589325615,
+    "degrees_of_freedom": 2,
+    "p": 1.4803091469722795e-112,
+    "marginal_z_plus_minus": [-18.65617125117465, -18.29237032390644],
+    "decision": "does_not_transfer_to_N505",
+    "boundary": "This is a global scale/geometry amplitude result and is not called spatial rejection."
+  },
+  "reading": "Adaptive Rminus has reproducible residue-dependent conditional structure, with different peak frequencies on the two N505 children, but the full profile admits an ordinary positive Fourier-cone completion. The N325/N425 conditional amplitude fails to transfer to N505. Thus spatial heterogeneity exists without requiring a cone-external state.",
+  "stop": "No additional samples. The frozen 200k/400 production answered the spatial-shape gate.",
+  "score": {
+    "sha256": "3a602dff3b25e15d7fc74d9ad56e2a5f19f9dece2c6ed885369623d33e53aa4d",
+    "scorer_sha256": "836e6b9404226226128f1bfb425aeaca7ed7e20b4c6ede734e4be1e511757f52",
+    "post_reveal_format_amendment": "The frozen scorer's per-batch conditional ratio produced NaN in batches with zero defined events. It was replaced only for reporting by the ratio of totals with delete-one-batch jackknife; frozen cone and randomization decisions are unchanged."
+  },
+  "claim_boundary": "Finite adaptive intervention structure only. No field identity, unique spectrum, state count, universality, or spontaneous path-memory claim."
+}
