@@ -111,6 +111,39 @@ One boundary is explicit: the self-standardized `N=290` K1 right tails contain o
 diagnostic only and cannot independently carry elimination.  K1 curvature is nevertheless
 resolved with ample counts in the independent `N=265,325,425` blocks; all K2 component gates pass.
 
+## Exact complement clock modes
+
+The digital-Alexander filtration identities give
+
+```text
+K1^G(pi) + K2^Ghat(reverse pi) = N+1,
+K2^G(pi) + K1^Ghat(reverse pi) = N+1.
+```
+
+After reflecting the standardized coordinate, K1-right is therefore K2-left on the matching
+graph, and K1-left is K2-right on the matching graph.  This fixes, rather than fits, the
+primal/matching even and odd curvature coordinates.  Their coordinate reconstruction closes to
+`2.8e-17`.
+
+The production result is neither one exact common mode nor two unrelated leading modes:
+
+| coordinate | chi-square / df |
+|---|---:|
+| complement even | `28,632,665.24 / 48` |
+| complement odd | `1,892,387.37 / 48` |
+
+The even sector dominates, and paired curvature vectors have cosine `0.9992–0.9999`; both point
+to a common leading direction.  But the odd sector is decisively nonzero, and after fitting one
+amplitude per pair the residual shape closure is still `26,071.06 / 32`
+(`log10 p approximately -5612`).  Relative shape mismatches are `1.5–2.1%` for the mapped-left
+pair and `2.6–3.9%` for the mapped-right pair.
+
+Both coordinates are dominated by the lowest smooth curvature mode.  The odd/even chi-square
+ratio is `0.074,0.069,0.073,0.049` at `N=265,290,325,425`; the matching-odd correction weakens at
+the largest size but is not closed.  The best compression is therefore one dominant
+complement-even Alexander/clock curvature plus a smaller, statistically resolved complement-odd
+large-deviation correction—not two independent leading channels, and not an exact single mode.
+
 ## Provenance
 
 - base: `939f7ecc26f18c68977aed626821767207a46c89`;
