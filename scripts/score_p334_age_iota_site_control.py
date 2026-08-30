@@ -250,7 +250,11 @@ def score_size(parsed: Mapping[str, object], spec: Mapping[str, object]) -> tupl
                 / details[orientation]["primary"]["within_stratum_age_denominator_steps2"]
             )
             denominator_retentions.append(denominator_retention)
-            zero_difference_variance = abs(difference_variance) < 1e-24
+            # Algebraically identical columns can leave a tiny negative value
+            # after covariance subtraction; treat any nonpositive/tiny value
+            # as the exact-zero branch rather than taking sqrt(max(...)) and
+            # then dividing by zero.
+            zero_difference_variance = difference_variance <= 1e-24
             exact_noop = zero_difference_variance and abs(difference) < 1e-12
             difference_se = math.sqrt(max(difference_variance, 0.0))
             if zero_difference_variance:

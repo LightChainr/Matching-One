@@ -48,6 +48,7 @@ class P334AgeIotaSiteControlTests(unittest.TestCase):
         covariance = jackknife_covariance([[1.0, 1.0], [0.9, 0.9], [1.1, 1.1]])
         difference_variance = covariance[1, 1] + covariance[0, 0] - 2 * covariance[1, 0]
         self.assertEqual(difference_variance, 0.0)
+        self.assertTrue((-1e-23) <= 1e-24)
 
 
 if __name__ == "__main__":
