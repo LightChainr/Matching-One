@@ -1,0 +1,93 @@
+{
+  "schema": "matching-one/p333-minimal-multimark-jet-protocol/v1",
+  "status": "frozen_before_exact_intersection",
+  "issues": [333, 321, 370],
+  "base_commit": "081a5ed6e3795088f593a9b7cb6a5f474bfddb98",
+  "latest_main_audited": "6f711e524d9b33693703109521e592ca893e9cb0",
+  "question": "Is the exact scalar endpoint-mark lower bound from 081a5ed attainable: exactly two marks at width three and exactly three marks at width four?",
+  "state_space": {
+    "ordinary": "V_w is the rational span of circular noncrossing connectivity states",
+    "marks": "Add k terminal scalar response states mu_r, r=1,...,k",
+    "module": "W_(w,k)=V_w direct-sum span(mu_1,...,mu_k)",
+    "frozen_cases": [
+      {"width": 3, "marks": 2},
+      {"width": 4, "marks": 3}
+    ],
+    "filtration": "The mark subspace is invariant; intertwiners and velocities may map ordinary states into marks but may not feed marks back into V_w.",
+    "no_more_cases": "No other width or mark count is tested in this protocol."
+  },
+  "mark_semantics": {
+    "falling_factorial": "(x)_r=x(x-1)...(x-r+1), with (x)_0=1",
+    "mark_r": "mu_r is the r-th falling-factorial scalar endpoint response to the all-singleton column",
+    "gram_column": "C_r(Q)_pi=(b(pi))_r Q^{b(pi)-r}",
+    "detach_emission": "E_(i,r)(pi)=1_{site i singleton} (b(pi)-1)_(r-1)",
+    "independence": "The frozen marks are the first k falling-factorial block-count responses; no result-dependent rotation or free mark covector is allowed."
+  },
+  "generic_Q_action": {
+    "join": "e_bar_i=diag(e_i,I_k)",
+    "translation": "T_bar=diag(T,I_k)",
+    "ordinary_detach": "D_i(Q)=D_i(1)+(Q-1)P_i",
+    "marked_detach": "D_bar_i(Q) has ordinary block D_i(Q), mark block I_k, zero mark-to-ordinary block and ordinary-to-mark block (Q-1)E_i",
+    "first_jet": "D_bar_i0=diag(D_i(1),I_k); D_bar_i1 has P_i in the ordinary block and E_i in the mark-by-ordinary block"
+  },
+  "gram": {
+    "ordinary": "G(Q)_(pi,sigma)=Q^{b(pi vee sigma)}",
+    "extended": "G_bar(Q)=[[G(Q),C(Q)],[C(Q)^T,0_(k by k)]]",
+    "first_jet_columns": "At Q=1, C0_(pi,r)=(b(pi))_r and C1_(pi,r)=(b(pi))_(r+1)",
+    "radical": "R_bar=ker(G_bar0), computed exactly over Q",
+    "compatibility": "For radical basis B require B^T(G_bar1 X0-X0^T G_bar1)B=0",
+    "genuine_velocity": "Report the exact rank of the k-by-dim(R_bar) mark-emission block D_bar_i1 B"
+  },
+  "normalization": {
+    "endpoint": "U=(one^T,0_marks) is fixed by X0 and annihilates V",
+    "radical_invariance": "G_bar0 X0 B=0",
+    "sources": "X0 fixes the all-singleton ordinary source and every mu_r; V kills them",
+    "canonical_candidate": "X0=T_bar, V=0",
+    "mark_filtration": "The ordinary components of X0 mu_r and V mu_r vanish"
+  },
+  "affine_jet": {
+    "order_zero": "X0 A_i0=B_i0 X0 for joins, translation and detach, with target site shifted by one",
+    "velocity": "V A_i0+X0 A_i1=B_i0 V+B_i1 X0"
+  },
+  "analysis_ladder": [
+    "affine Q-jet plus mark filtration",
+    "plus endpoint normalization and radical invariance",
+    "plus radical Gram self-adjointness",
+    "plus ordinary and all mark source normalizations"
+  ],
+  "decision_rule": {
+    "lower_bound_attained_unique": "The final system is consistent with tangent dimension zero.",
+    "lower_bound_attained_nonunique": "The final system is consistent with positive tangent dimension.",
+    "lower_bound_not_attained": "The final system is inconsistent.",
+    "canonical_velocity": "If nonempty, report whether the final affine space contains X0=T_bar,V=0 and whether V is uniquely zero."
+  },
+  "if_still_empty": {
+    "certificate": "Give the first exact inconsistent restriction and a left-null witness y^T C=0 but y^T b=1.",
+    "raised_bound": "For a canonical restricted skew residual of rank 2r, report at least r further independent scalar endpoint marks and update the total-mark lower bound. Do not test that larger case."
+  },
+  "deduplication": {
+    "081a5ed": "already excludes one terminal mark and gives the 2-mark/3-mark lower bounds now tested exactly",
+    "ba3135e": "already excludes scalar loop fugacity without a marked response",
+    "96df7c8": "already gives the join-only empty intersection",
+    "PR385_b5c761a": "is finite-noise identifiability, not this exact marked quotient",
+    "PR393_8923acd": "assumes a formal common K and does not supply these falling-factorial endpoint marks"
+  },
+  "claim_boundary": [
+    "Exact rational Q=1 first-jet algebra only for the two frozen cases.",
+    "Marks retain only falling-factorial endpoint responses, not rooted-cluster geometry or arbitrary matrix degrees of freedom.",
+    "No continuum LCFT, physical transfer matrix or formal-semigroup K identification is made.",
+    "If the bound fails, only a new lower bound is reported; no additional mark count is tested."
+  ],
+  "compute_contract": {
+    "arithmetic": "Python standard-library fractions.Fraction row reduction",
+    "monte_carlo": false,
+    "fit": false,
+    "server": false,
+    "expected_cost": "local minutes"
+  },
+  "frozen_inputs": {
+    "081a5ed:scripts/p333_one_mark_endpoint_jet.py": "21803ef072fe0cc80d84c5fbfe79bee634c3f9ec",
+    "081a5ed:results/p333-one-mark-endpoint-jet/latest.json": "bdd12e401cf35e316a7707833b2c588902f4ba7f",
+    "8923acd:analysis/formal_jordan_multiplier_semigroup_contract.json": "2733afd159cc82820db97f70fa739a021865aef6"
+  }
+}
