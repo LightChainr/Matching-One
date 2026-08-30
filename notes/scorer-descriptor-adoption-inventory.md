@@ -6,17 +6,17 @@ direct typed entrypoints importing both `ObservableDescriptor` and
 `map_observable` from `wrapping_channels`. Three frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Fifteen paths are confirmed channel-bearing and
+a descriptor is not applicable. Sixteen paths are confirmed channel-bearing and
 require typed migrations: `score_angular_root_amplitude.py`,
 `score_axis_pair_annihilator.py`, its stable entrypoint,
 `score_c4_self_matching_n26.py`, `score_c4_tangent_orthogonal_holdout.py`,
-`score_issue50_n290.py`,
+`score_intrinsic_quantile_center_n145_n290.py`, `score_issue50_n290.py`,
 `score_matching_odd_synthesis.py`, `score_p231_vacuum_kdv_sector.py`,
 `score_p48_sprime_frozen.py`, `score_p49_fullcurve_doubling.py`,
 `score_p50_fullcurve_n290.py`, `score_p50_sprime_n290.py`,
 `score_prequential_evidence.py`,
 `score_rank_gap_boundary_targets.py`, and
-`score_threshold_rank_root_doubling.py`. The remaining 12 files are outside a
+`score_threshold_rank_root_doubling.py`. The remaining 11 files are outside a
 registered typed path.
 
 This closes an inventory gap: the repository now has a deterministic list,
@@ -26,7 +26,7 @@ import is added or removed without updating the manifest, or if a declared
 wrapped kernel disappears.
 
 `outside_registered_typed_path` is deliberately a triage label. Some of those
-12 scripts may not compare channel-bearing quantities, some may be historical,
+11 scripts may not compare channel-bearing quantities, some may be historical,
 and some may need a future typed wrapper. Static membership alone does not prove
 a semantic bug, data-provenance failure, or need for migration. Each candidate
 must be reviewed before modification; Issue #146 therefore remains open.
@@ -138,6 +138,16 @@ quantity and the ordered model comparison, and record that this score reuses
 the same P50 raw block rather than supplying independent evidence. It must
 preserve the scalar variance calculation, prediction hashes, chronology, and
 the declared decision text.
+
+`score_intrinsic_quantile_center_n145_n290.py` is migration-required. It scores
+the intrinsic quantile-center coordinate `Q`, two `N^(3/8)`-scaled widths, and
+two centers, then maps the first three coordinates from N145 to N290 under
+frozen scaling laws. The current contract relies on tuple order, string keys,
+and numeric transforms rather than typed quantities and maps. A migration must
+type the level-derived coordinates, units/scalings, cross-size transforms, and
+independent RNG domains. It must preserve the frozen u-grid, recomputation of
+all crossings inside every size-local delete-one replicate, covariance block
+construction, chronology, and primary-score separation.
 
 The axis-pair annihilator score path is migration-required as one operational
 unit. The base scorer reconstructs the cross matching function from
