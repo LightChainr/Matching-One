@@ -1,0 +1,410 @@
+{
+  "archive_reconstructibility": {
+    "bedc94b_available": [
+      "K1/K2 marginals and joint histogram",
+      "unmarked B_N=M_prime",
+      "unmarked D_N=-partial_p P(rank=1)"
+    ],
+    "bedc94b_snapshot": {
+      "available_unmarked_D_equals_f12_minus_f01": "0.02033467424339790896303727060",
+      "available_unmarked_birth_mass_B_equals_M_prime": "8.3339594126152504344364296002156161509355933302841E+0",
+      "balance_root_p": "0.59258424993389151231186158469548399009472832417762",
+      "connected_D_H4_proxy": null,
+      "reason": "ell/local H4 and same-sample A_top times J cross moments were not retained",
+      "source": "results/essential-birth-histogram/latest.json",
+      "source_N": 64,
+      "source_sample_count": 100000
+    },
+    "conclusion": "the committed rank and marked-pivotal archives cannot reconstruct the connected coupling proxy",
+    "missing": [
+      "ell/iota at the two births",
+      "line or landing H4 source J_D4",
+      "same-sample A_top times J_D4 cross moment"
+    ]
+  },
+  "base_commit": "dabe28e mechanism assets rebased over main c500640",
+  "claim_layers": {
+    "conditional_CFT_bridge": "gamma_D4 scaling and modulus phase identify Q4 epsilon only if J_D4 flows to that field",
+    "conjecture": "the line-resolved D source has nonzero overlap with the thermal Q4 epsilon/Jordan module",
+    "exact": "finite exponential-tilt response equals the connected covariance; complement parity and tiny nonzero values"
+  },
+  "finite_lattice_definition": {
+    "A_top_sample": "q(omega)=rank(omega)-1",
+    "normalized_proxy": "gamma_D4=Cov(A_top,J_D4)/B_N with B_N=E[sum_v(I_01+I_12)]=M_prime",
+    "odd_spin4_source": "J_D4=sum_v chi4(ell_v) (I_12-I_01)_v, with a separate landing-H4 version",
+    "response": "partial_h E_h[A_top]|_0 = Cov_p(A_top, Re[e^(-4 i phi) J_D4])",
+    "tilted_measure": "P_h(omega) proportional to P_p(omega) exp(h Re[e^(-4 i phi) J_D4(omega)])"
+  },
+  "issues": [
+    215,
+    275
+  ],
+  "next_sufficient_statistics": {
+    "common_field": "reuse the same configuration counter, random root, and delete-one batch across paired orientations",
+    "estimator": "one uniform random root per Bernoulli configuration, multiplied by N, is unbiased for the site sum",
+    "per_aligned_batch_raw_moments": [
+      "sum q and sum q^2",
+      "sum J for every S/D line and landing coordinate",
+      "sum q*J for every coordinate",
+      "birth mass sum S"
+    ],
+    "per_sample": [
+      "global q=rank-1",
+      "root gate pair I_01/I_12 and direct-0-to-2 flag",
+      "ell, iota, chi4(ell) when non-null",
+      "landing H4 mark at the same root",
+      "J_S4 and J_D4 real/imaginary coordinates"
+    ]
+  },
+  "scaling_if_Q4_epsilon": {
+    "candidate_dimension_x": "21/4",
+    "direct_CFT_density_normalization": {
+      "derivation": "N^(-x/2) locally and N^(1-x/2) after summing N sites",
+      "one_local_insertion_N_power": "-21/8",
+      "sum_over_N_sites_N_power": "-13/8"
+    },
+    "jordan_variant": "multiply the declared powers by an affine A+B log N factor where the top partner is read out",
+    "rank_birth_measure_normalization": {
+      "assumption": "critical unmarked birth mass B_N=M_prime scales as L^(1/nu)=N^(3/8), nu=4/3",
+      "normalized_proxy_C_over_B_N_power": "-13/8",
+      "raw_connected_sum_C_N_power": "-5/4",
+      "raw_per_site_contribution_N_power": "-9/4",
+      "values": "C/B ~ N^-13/8; C ~ N^-5/4; C/N ~ N^-9/4"
+    }
+  },
+  "schema": "matching-one/rank-birth-atop-coupling-proxy/v1",
+  "status": "tiny_exact_connected_proxy_and_conditional_CFT_bridge",
+  "symmetry": {
+    "allowed": "A_top and J_D4 are both complement-odd, so their connected correlator is complement-even",
+    "null_sign_control": "A_top is odd while J_S4 is even, so the primal and matching connected responses have opposite sign",
+    "rotation": "chi4 supplies spin four and changes sign under multiplication of the physical line by 1+i"
+  },
+  "tiny_exact": [
+    {
+      "N": 4,
+      "complement_covariance_residuals": {
+        "D": "0",
+        "S": "0",
+        "landing_h4_D": "0",
+        "landing_h4_S": "0",
+        "line_cos4_D": "0",
+        "line_cos4_S": "0",
+        "line_sin4_D": "0",
+        "line_sin4_S": "0"
+      },
+      "finite_lattice_nonzero": {
+        "landing_D": false,
+        "line_D_complex": true
+      },
+      "id": "axis-L2-degenerate",
+      "matching": {
+        "configuration_count": 16,
+        "connected_covariance_with_A_top": {
+          "D": "1",
+          "S": "-3/8",
+          "landing_h4_D": "0",
+          "landing_h4_S": "0",
+          "line_cos4_D": "1",
+          "line_cos4_S": "-1/4",
+          "line_sin4_D": "0",
+          "line_sin4_S": "0"
+        },
+        "matching_backend": true,
+        "mean_A_top": "1/8",
+        "normalized_D_H4_proxy_over_birth_mass": {
+          "landing_h4_D": "0",
+          "line_cos4_D": "1/3",
+          "line_sin4_D": "0"
+        },
+        "root_reduction": {
+          "multiplicity": 1,
+          "roots": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "statement": "every root is summed explicitly"
+        },
+        "source_means": {
+          "D": "0",
+          "S": "3",
+          "landing_h4_D": "0",
+          "landing_h4_S": "0",
+          "line_cos4_D": "0",
+          "line_cos4_S": "2",
+          "line_sin4_D": "0",
+          "line_sin4_S": "0"
+        },
+        "variance_A_top": "47/64"
+      },
+      "period_matrix": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "primal": {
+        "configuration_count": 16,
+        "connected_covariance_with_A_top": {
+          "D": "1",
+          "S": "3/8",
+          "landing_h4_D": "0",
+          "landing_h4_S": "0",
+          "line_cos4_D": "1",
+          "line_cos4_S": "1/4",
+          "line_sin4_D": "0",
+          "line_sin4_S": "0"
+        },
+        "matching_backend": false,
+        "mean_A_top": "-1/8",
+        "normalized_D_H4_proxy_over_birth_mass": {
+          "landing_h4_D": "0",
+          "line_cos4_D": "1/3",
+          "line_sin4_D": "0"
+        },
+        "root_reduction": {
+          "multiplicity": 1,
+          "roots": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "statement": "every root is summed explicitly"
+        },
+        "source_means": {
+          "D": "0",
+          "S": "3",
+          "landing_h4_D": "0",
+          "landing_h4_S": "0",
+          "line_cos4_D": "0",
+          "line_cos4_S": "2",
+          "line_sin4_D": "0",
+          "line_sin4_S": "0"
+        },
+        "variance_A_top": "47/64"
+      }
+    },
+    {
+      "N": 5,
+      "complement_covariance_residuals": {
+        "D": "0",
+        "S": "0",
+        "landing_h4_D": "0",
+        "landing_h4_S": "0",
+        "line_cos4_D": "0",
+        "line_cos4_S": "0",
+        "line_sin4_D": "0",
+        "line_sin4_S": "0"
+      },
+      "finite_lattice_nonzero": {
+        "landing_D": false,
+        "line_D_complex": true
+      },
+      "id": "gaussian-2-1",
+      "matching": {
+        "configuration_count": 32,
+        "connected_covariance_with_A_top": {
+          "D": "175/128",
+          "S": "-85/128",
+          "landing_h4_D": "0",
+          "landing_h4_S": "0",
+          "line_cos4_D": "-49/128",
+          "line_cos4_S": "119/640",
+          "line_sin4_D": "21/16",
+          "line_sin4_S": "-51/80"
+        },
+        "matching_backend": true,
+        "mean_A_top": "5/16",
+        "normalized_D_H4_proxy_over_birth_mass": {
+          "landing_h4_D": "0",
+          "line_cos4_D": "-49/400",
+          "line_sin4_D": "21/50"
+        },
+        "root_reduction": {
+          "multiplicity": 1,
+          "roots": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "statement": "every root is summed explicitly"
+        },
+        "source_means": {
+          "D": "5/8",
+          "S": "25/8",
+          "landing_h4_D": "0",
+          "landing_h4_S": "0",
+          "line_cos4_D": "-7/40",
+          "line_cos4_S": "-7/8",
+          "line_sin4_D": "3/5",
+          "line_sin4_S": "3"
+        },
+        "variance_A_top": "151/256"
+      },
+      "period_matrix": [
+        [
+          2,
+          -1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "primal": {
+        "configuration_count": 32,
+        "connected_covariance_with_A_top": {
+          "D": "175/128",
+          "S": "85/128",
+          "landing_h4_D": "0",
+          "landing_h4_S": "0",
+          "line_cos4_D": "-49/128",
+          "line_cos4_S": "-119/640",
+          "line_sin4_D": "21/16",
+          "line_sin4_S": "51/80"
+        },
+        "matching_backend": false,
+        "mean_A_top": "-5/16",
+        "normalized_D_H4_proxy_over_birth_mass": {
+          "landing_h4_D": "0",
+          "line_cos4_D": "-49/400",
+          "line_sin4_D": "21/50"
+        },
+        "root_reduction": {
+          "multiplicity": 1,
+          "roots": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "statement": "every root is summed explicitly"
+        },
+        "source_means": {
+          "D": "-5/8",
+          "S": "25/8",
+          "landing_h4_D": "0",
+          "landing_h4_S": "0",
+          "line_cos4_D": "7/40",
+          "line_cos4_S": "-7/8",
+          "line_sin4_D": "-3/5",
+          "line_sin4_S": "3"
+        },
+        "variance_A_top": "151/256"
+      }
+    },
+    {
+      "N": 16,
+      "complement_covariance_residuals": {
+        "D": "0",
+        "S": "0",
+        "landing_h4_D": "0",
+        "landing_h4_S": "0",
+        "line_cos4_D": "0",
+        "line_cos4_S": "0",
+        "line_sin4_D": "0",
+        "line_sin4_S": "0"
+      },
+      "finite_lattice_nonzero": {
+        "landing_D": true,
+        "line_D_complex": true
+      },
+      "id": "axis-L4-fixed-root",
+      "matching": {
+        "configuration_count": 65536,
+        "connected_covariance_with_A_top": {
+          "D": "769651/524288",
+          "S": "-40077421/33554432",
+          "landing_h4_D": "6977235/33554432",
+          "landing_h4_S": "-5621703/33554432",
+          "line_cos4_D": "5013127/4194304",
+          "line_cos4_S": "-7365103/8388608",
+          "line_sin4_D": "0",
+          "line_sin4_S": "0"
+        },
+        "matching_backend": true,
+        "mean_A_top": "13757/32768",
+        "normalized_D_H4_proxy_over_birth_mass": {
+          "landing_h4_D": "2325745/45973504",
+          "line_cos4_D": "5013127/17240064",
+          "line_sin4_D": "0"
+        },
+        "root_reduction": {
+          "multiplicity": 16,
+          "roots": [
+            0
+          ],
+          "statement": "translation reduction is exact for means and covariance with the translation-invariant q"
+        },
+        "source_means": {
+          "D": "17/16",
+          "S": "4209/1024",
+          "landing_h4_D": "49/1024",
+          "landing_h4_S": "467/1024",
+          "line_cos4_D": "109/128",
+          "line_cos4_S": "795/256",
+          "line_sin4_D": "0",
+          "line_sin4_S": "0"
+        },
+        "variance_A_top": "557920887/1073741824"
+      },
+      "period_matrix": [
+        [
+          4,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "primal": {
+        "configuration_count": 65536,
+        "connected_covariance_with_A_top": {
+          "D": "769651/524288",
+          "S": "40077421/33554432",
+          "landing_h4_D": "6977235/33554432",
+          "landing_h4_S": "5621703/33554432",
+          "line_cos4_D": "5013127/4194304",
+          "line_cos4_S": "7365103/8388608",
+          "line_sin4_D": "0",
+          "line_sin4_S": "0"
+        },
+        "matching_backend": false,
+        "mean_A_top": "-13757/32768",
+        "normalized_D_H4_proxy_over_birth_mass": {
+          "landing_h4_D": "2325745/45973504",
+          "line_cos4_D": "5013127/17240064",
+          "line_sin4_D": "0"
+        },
+        "root_reduction": {
+          "multiplicity": 16,
+          "roots": [
+            0
+          ],
+          "statement": "translation reduction is exact for means and covariance with the translation-invariant q"
+        },
+        "source_means": {
+          "D": "-17/16",
+          "S": "4209/1024",
+          "landing_h4_D": "-49/1024",
+          "landing_h4_S": "467/1024",
+          "line_cos4_D": "-109/128",
+          "line_cos4_S": "795/256",
+          "line_sin4_D": "0",
+          "line_sin4_S": "0"
+        },
+        "variance_A_top": "557920887/1073741824"
+      }
+    }
+  ]
+}

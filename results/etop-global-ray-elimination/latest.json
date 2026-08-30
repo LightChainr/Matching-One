@@ -1,0 +1,1513 @@
+{
+  "alpha": 0.01,
+  "alternative": "four lineage-specific unoriented rays, each shared only by its parent and child",
+  "degrees_of_freedom": {
+    "four_rays": "16 observations - 8 amplitudes - 4 ray angles = 4",
+    "global_ray": "16 observations - 8 amplitudes - 1 ray angle = 7",
+    "nested_difference": 3
+  },
+  "dependency_contract": "full A_top/E_top covariance within every row; parent/child and P49/P43/P50/P57 blocks are block diagonal as declared by the production archives",
+  "fixed_center_sensitivity": {
+    "covariance_key": "covariance_fixed_center_exact_batch_estimator",
+    "four_lineage_specific_rays": {
+      "degrees_of_freedom": 4,
+      "fits": {
+        "P43": {
+          "E_over_A_slope": -0.9882378877663083,
+          "angle_degrees_from_A_axis": -44.66105085730143,
+          "min_chi2": 0.2704068355012112,
+          "optimizer_certificate": {
+            "best_grid_chi2": 0.27041118639246264,
+            "grid_size": 4096,
+            "local_basins": 1,
+            "method": "periodic grid isolation followed by high-precision golden minimization of every local basin",
+            "refined_minus_grid_chi2": -4.350891251459492e-06
+          },
+          "row_profiles": [
+            {
+              "N": 185,
+              "amplitude": 0.00014975598477990593,
+              "chi2_contribution": 0.13573861978209492,
+              "dependency_group": "P43",
+              "id": "P43-N185"
+            },
+            {
+              "N": 265,
+              "amplitude": 0.00011296838669791853,
+              "chi2_contribution": 0.13466821571911627,
+              "dependency_group": "P43",
+              "id": "P43-N265"
+            }
+          ],
+          "unit_direction_A_nonnegative": [
+            0.7112774708347599,
+            -0.7029113453935051
+          ]
+        },
+        "P49": {
+          "E_over_A_slope": -0.43182935233615755,
+          "angle_degrees_from_A_axis": -23.356104293559472,
+          "min_chi2": 0.1072052879450554,
+          "optimizer_certificate": {
+            "best_grid_chi2": 0.10723120724830615,
+            "grid_size": 4096,
+            "local_basins": 1,
+            "method": "periodic grid isolation followed by high-precision golden minimization of every local basin",
+            "refined_minus_grid_chi2": -2.591930325075006e-05
+          },
+          "row_profiles": [
+            {
+              "N": 130,
+              "amplitude": 0.00032542692031652755,
+              "chi2_contribution": 0.05361794227892368,
+              "dependency_group": "P49",
+              "id": "P49-N130"
+            },
+            {
+              "N": 170,
+              "amplitude": 0.00028072212303155956,
+              "chi2_contribution": 0.05358734566613172,
+              "dependency_group": "P49",
+              "id": "P49-N170"
+            }
+          ],
+          "unit_direction_A_nonnegative": [
+            0.9180586210883988,
+            -0.39644465975122917
+          ]
+        },
+        "P50": {
+          "E_over_A_slope": -0.39874975174669236,
+          "angle_degrees_from_A_axis": -21.73962947200846,
+          "min_chi2": 0.4341924470912055,
+          "optimizer_certificate": {
+            "best_grid_chi2": 0.43420229349332606,
+            "grid_size": 4096,
+            "local_basins": 1,
+            "method": "periodic grid isolation followed by high-precision golden minimization of every local basin",
+            "refined_minus_grid_chi2": -9.846402120559683e-06
+          },
+          "row_profiles": [
+            {
+              "N": 145,
+              "amplitude": 0.0003030655779386649,
+              "chi2_contribution": 0.07795952775550428,
+              "dependency_group": "P50",
+              "id": "P50-N145"
+            },
+            {
+              "N": 290,
+              "amplitude": 0.00014247825751095616,
+              "chi2_contribution": 0.3562329193357012,
+              "dependency_group": "P50",
+              "id": "P50-N290"
+            }
+          ],
+          "unit_direction_A_nonnegative": [
+            0.9288766085010178,
+            -0.3703893170430904
+          ]
+        },
+        "P57": {
+          "E_over_A_slope": -1.2740066227736737,
+          "angle_degrees_from_A_axis": -51.8707354144116,
+          "min_chi2": 0.0025172214046328394,
+          "optimizer_certificate": {
+            "best_grid_chi2": 0.002517677803100995,
+            "grid_size": 4096,
+            "local_basins": 1,
+            "method": "periodic grid isolation followed by high-precision golden minimization of every local basin",
+            "refined_minus_grid_chi2": -4.5639846815518447e-07
+          },
+          "row_profiles": [
+            {
+              "N": 325,
+              "amplitude": 5.722557901413936e-05,
+              "chi2_contribution": 0.001566212574186805,
+              "dependency_group": "P57",
+              "id": "P57-N325"
+            },
+            {
+              "N": 425,
+              "amplitude": 5.957509811433447e-05,
+              "chi2_contribution": 0.0009510088304460346,
+              "dependency_group": "P57",
+              "id": "P57-N425"
+            }
+          ],
+          "unit_direction_A_nonnegative": [
+            0.6174377322233059,
+            -0.7866197600028498
+          ]
+        }
+      },
+      "p_value": 0.9365177811620978,
+      "summed_chi2": 0.814321791942105
+    },
+    "global_ray": {
+      "E_over_A_slope": -0.591830213421873,
+      "angle_degrees_from_A_axis": -30.61832869222938,
+      "chi2_contribution_by_dependency_group": {
+        "P43": 7.602849690984645,
+        "P49": 2.6613719703629606,
+        "P50": 3.9866528534828807,
+        "P57": 1.263136924896933
+      },
+      "decision_at_alpha": "survives",
+      "decision_scope": "absolute goodness-of-fit against unrestricted row means",
+      "degrees_of_freedom": 7,
+      "min_chi2": 15.514011439727419,
+      "optimizer_certificate": {
+        "best_grid_chi2": 15.51402810757559,
+        "grid_size": 4096,
+        "local_basins": 1,
+        "method": "periodic grid isolation followed by high-precision golden minimization of every local basin",
+        "refined_minus_grid_chi2": -1.6667848172028585e-05
+      },
+      "p_value": 0.029946876721144326,
+      "profile_intervals": {
+        "delta_chi2_1": {
+          "absolute_angle_degrees_mod_ray": [
+            -33.55261041431807,
+            -27.882023664424356
+          ],
+          "angle_offset_degrees": [
+            -2.9342817220886896,
+            2.7363050278050207
+          ],
+          "delta_chi2": 1.0
+        },
+        "delta_chi2_3p841": {
+          "absolute_angle_degrees_mod_ray": [
+            -36.58925276689187,
+            -25.41212949018214
+          ],
+          "angle_offset_degrees": [
+            -5.970924074662487,
+            5.20619920204724
+          ],
+          "delta_chi2": 3.841458820694124
+        }
+      },
+      "row_profiles": [
+        {
+          "N": 130,
+          "amplitude": 0.00029084358177890933,
+          "chi2_contribution": 0.7719184884572076,
+          "dependency_group": "P49",
+          "id": "P49-N130"
+        },
+        {
+          "N": 170,
+          "amplitude": 0.0002567051818398251,
+          "chi2_contribution": 1.8894534819057531,
+          "dependency_group": "P49",
+          "id": "P49-N170"
+        },
+        {
+          "N": 185,
+          "amplitude": 0.00017662066677083988,
+          "chi2_contribution": 2.5560139353978433,
+          "dependency_group": "P43",
+          "id": "P43-N185"
+        },
+        {
+          "N": 265,
+          "amplitude": 0.0001259852833037471,
+          "chi2_contribution": 5.046835755586801,
+          "dependency_group": "P43",
+          "id": "P43-N265"
+        },
+        {
+          "N": 145,
+          "amplitude": 0.00026966254583222696,
+          "chi2_contribution": 2.039539795002207,
+          "dependency_group": "P50",
+          "id": "P50-N145"
+        },
+        {
+          "N": 290,
+          "amplitude": 0.00012438360019987574,
+          "chi2_contribution": 1.9471130584806735,
+          "dependency_group": "P50",
+          "id": "P50-N290"
+        },
+        {
+          "N": 325,
+          "amplitude": 6.521434256046158e-05,
+          "chi2_contribution": 0.523474271416716,
+          "dependency_group": "P57",
+          "id": "P57-N325"
+        },
+        {
+          "N": 425,
+          "amplitude": 6.82763234455125e-05,
+          "chi2_contribution": 0.7396626534802171,
+          "dependency_group": "P57",
+          "id": "P57-N425"
+        }
+      ],
+      "unit_direction_A_nonnegative": [
+        0.8605791426388925,
+        -0.5093167376543881
+      ]
+    },
+    "global_vs_four_ray_likelihood_ratio": {
+      "decision_at_alpha": "global_ray_eliminated",
+      "degrees_of_freedom": 3,
+      "delta_chi2": 14.699689647785315,
+      "p_value": 0.0020921286833158665
+    },
+    "largest_pairwise_incompatibility": {
+      "absolute_unit_ray_determinant": 0.3894683299353831,
+      "angle_difference_degrees_mod_ray": 22.921421385292977,
+      "common_ray_chi2": 10.841517744809266,
+      "degrees_of_freedom": 1,
+      "delta_chi2": 10.13691846221685,
+      "lineages": [
+        "P43",
+        "P50"
+      ],
+      "p_value": 0.0014532890995323834,
+      "pair_common_ray": {
+        "E_over_A_slope": -0.6676382706512505,
+        "angle_degrees_from_A_axis": -33.72859018912896,
+        "min_chi2": 10.841517744809266,
+        "optimizer_certificate": {
+          "best_grid_chi2": 10.841550600226933,
+          "grid_size": 4096,
+          "local_basins": 1,
+          "method": "periodic grid isolation followed by high-precision golden minimization of every local basin",
+          "refined_minus_grid_chi2": -3.285541766608549e-05
+        },
+        "row_profiles": [
+          {
+            "N": 185,
+            "amplitude": 0.00017077410337934935,
+            "chi2_contribution": 1.21381450195284,
+            "dependency_group": "P43",
+            "id": "P43-N185"
+          },
+          {
+            "N": 265,
+            "amplitude": 0.00012333411039746855,
+            "chi2_contribution": 3.1975058846608384,
+            "dependency_group": "P43",
+            "id": "P43-N265"
+          },
+          {
+            "N": 145,
+            "amplitude": 0.00025727935617053037,
+            "chi2_contribution": 3.7611966454873995,
+            "dependency_group": "P50",
+            "id": "P50-N145"
+          },
+          {
+            "N": 290,
+            "amplitude": 0.00011773852834438811,
+            "chi2_contribution": 2.669000712708188,
+            "dependency_group": "P50",
+            "id": "P50-N290"
+          }
+        ],
+        "unit_direction_A_nonnegative": [
+          0.8316771551173997,
+          -0.5552594975827325
+        ]
+      },
+      "separate_ray_chi2": 0.7045992825924167,
+      "signed_unit_ray_determinant": 0.3894683299353831
+    },
+    "leave_one_lineage_out_predictive_profiles": [
+      {
+        "decision_at_alpha": "survives",
+        "degrees_of_freedom": 2,
+        "heldout_lineage": "P49",
+        "optimizer_certificate": {
+          "best_grid_chi2": 3.8379850554618504,
+          "grid_size": 4096,
+          "local_basins": 1,
+          "method": "periodic grid isolation followed by high-precision golden minimization of every local basin",
+          "refined_minus_grid_chi2": -1.6667848172028585e-05
+        },
+        "p_value": 0.14675596205515354,
+        "predictive_profile_direction_angle_degrees": -30.61832869222938,
+        "profiled_predictive_chi2": 3.8379683876136785,
+        "training_direction_angle_degrees": -34.47651719476722
+      },
+      {
+        "decision_at_alpha": "eliminated",
+        "degrees_of_freedom": 2,
+        "heldout_lineage": "P43",
+        "optimizer_certificate": {
+          "best_grid_chi2": 12.307156818455224,
+          "grid_size": 4096,
+          "local_basins": 1,
+          "method": "periodic grid isolation followed by high-precision golden minimization of every local basin",
+          "refined_minus_grid_chi2": -1.6667848172028585e-05
+        },
+        "p_value": 0.0021258786593741923,
+        "predictive_profile_direction_angle_degrees": -30.61832869222938,
+        "profiled_predictive_chi2": 12.307140150607053,
+        "training_direction_angle_degrees": -23.53519452104108
+      },
+      {
+        "decision_at_alpha": "survives",
+        "degrees_of_freedom": 2,
+        "heldout_lineage": "P50",
+        "optimizer_certificate": {
+          "best_grid_chi2": 5.393547197519253,
+          "grid_size": 4096,
+          "local_basins": 1,
+          "method": "periodic grid isolation followed by high-precision golden minimization of every local basin",
+          "refined_minus_grid_chi2": -1.6667848172028585e-05
+        },
+        "p_value": 0.06742325675730589,
+        "predictive_profile_direction_angle_degrees": -30.61832869222938,
+        "profiled_predictive_chi2": 5.393530529671081,
+        "training_direction_angle_degrees": -34.77003007461869
+      },
+      {
+        "decision_at_alpha": "survives",
+        "degrees_of_freedom": 2,
+        "heldout_lineage": "P57",
+        "optimizer_certificate": {
+          "best_grid_chi2": 1.3026741746289026,
+          "grid_size": 4096,
+          "local_basins": 1,
+          "method": "periodic grid isolation followed by high-precision golden minimization of every local basin",
+          "refined_minus_grid_chi2": -1.6667848172028585e-05
+        },
+        "p_value": 0.5213525673194103,
+        "predictive_profile_direction_angle_degrees": -30.61832869222938,
+        "profiled_predictive_chi2": 1.3026575067807304,
+        "training_direction_angle_degrees": -30.053028367749963
+      }
+    ],
+    "pairwise_independent_geometry_determinants": [
+      {
+        "absolute_unit_ray_determinant": 0.3894683299353831,
+        "angle_difference_degrees_mod_ray": 22.921421385292977,
+        "common_ray_chi2": 10.841517744809266,
+        "degrees_of_freedom": 1,
+        "delta_chi2": 10.13691846221685,
+        "lineages": [
+          "P43",
+          "P50"
+        ],
+        "p_value": 0.0014532890995323834,
+        "pair_common_ray": {
+          "E_over_A_slope": -0.6676382706512505,
+          "angle_degrees_from_A_axis": -33.72859018912896,
+          "min_chi2": 10.841517744809266,
+          "optimizer_certificate": {
+            "best_grid_chi2": 10.841550600226933,
+            "grid_size": 4096,
+            "local_basins": 1,
+            "method": "periodic grid isolation followed by high-precision golden minimization of every local basin",
+            "refined_minus_grid_chi2": -3.285541766608549e-05
+          },
+          "row_profiles": [
+            {
+              "N": 185,
+              "amplitude": 0.00017077410337934935,
+              "chi2_contribution": 1.21381450195284,
+              "dependency_group": "P43",
+              "id": "P43-N185"
+            },
+            {
+              "N": 265,
+              "amplitude": 0.00012333411039746855,
+              "chi2_contribution": 3.1975058846608384,
+              "dependency_group": "P43",
+              "id": "P43-N265"
+            },
+            {
+              "N": 145,
+              "amplitude": 0.00025727935617053037,
+              "chi2_contribution": 3.7611966454873995,
+              "dependency_group": "P50",
+              "id": "P50-N145"
+            },
+            {
+              "N": 290,
+              "amplitude": 0.00011773852834438811,
+              "chi2_contribution": 2.669000712708188,
+              "dependency_group": "P50",
+              "id": "P50-N290"
+            }
+          ],
+          "unit_direction_A_nonnegative": [
+            0.8316771551173997,
+            -0.5552594975827325
+          ]
+        },
+        "separate_ray_chi2": 0.7045992825924167,
+        "signed_unit_ray_determinant": 0.3894683299353831
+      },
+      {
+        "absolute_unit_ray_determinant": 0.36333166558555124,
+        "angle_difference_degrees_mod_ray": 21.30494656374196,
+        "common_ray_chi2": 9.318935676633455,
+        "degrees_of_freedom": 1,
+        "delta_chi2": 8.941323553187189,
+        "lineages": [
+          "P49",
+          "P43"
+        ],
+        "p_value": 0.002787906388771827,
+        "pair_common_ray": {
+          "E_over_A_slope": -0.6759426706032015,
+          "angle_degrees_from_A_axis": -34.056438827792505,
+          "min_chi2": 9.318935676633455,
+          "optimizer_certificate": {
+            "best_grid_chi2": 9.318935778507996,
+            "grid_size": 4096,
+            "local_basins": 1,
+            "method": "periodic grid isolation followed by high-precision golden minimization of every local basin",
+            "refined_minus_grid_chi2": -1.0187453972610285e-07
+          },
+          "row_profiles": [
+            {
+              "N": 130,
+              "amplitude": 0.0002741355832933398,
+              "chi2_contribution": 1.7527563232568426,
+              "dependency_group": "P49",
+              "id": "P49-N130"
+            },
+            {
+              "N": 170,
+              "amplitude": 0.00024384590604178827,
+              "chi2_contribution": 3.428228772557464,
+              "dependency_group": "P49",
+              "id": "P49-N170"
+            },
+            {
+              "N": 185,
+              "amplitude": 0.00017013929582270282,
+              "chi2_contribution": 1.105763206307586,
+              "dependency_group": "P43",
+              "id": "P43-N185"
+            },
+            {
+              "N": 265,
+              "amplitude": 0.0001230390473042865,
+              "chi2_contribution": 3.0321873745115626,
+              "dependency_group": "P43",
+              "id": "P43-N265"
+            }
+          ],
+          "unit_direction_A_nonnegative": [
+            0.8284863411696028,
+            -0.5600092700084565
+          ]
+        },
+        "separate_ray_chi2": 0.3776121234462666,
+        "signed_unit_ray_determinant": -0.36333166558555124
+      },
+      {
+        "absolute_unit_ray_determinant": 0.5019803548965069,
+        "angle_difference_degrees_mod_ray": 30.131105942403135,
+        "common_ray_chi2": 3.095836042136989,
+        "degrees_of_freedom": 1,
+        "delta_chi2": 2.6591263736411506,
+        "lineages": [
+          "P50",
+          "P57"
+        ],
+        "p_value": 0.10295726905009736,
+        "pair_common_ray": {
+          "E_over_A_slope": -0.43954183687637255,
+          "angle_degrees_from_A_axis": -23.72749780522101,
+          "min_chi2": 3.095836042136989,
+          "optimizer_certificate": {
+            "best_grid_chi2": 3.0958365124331,
+            "grid_size": 4096,
+            "local_basins": 1,
+            "method": "periodic grid isolation followed by high-precision golden minimization of every local basin",
+            "refined_minus_grid_chi2": -4.702961114693406e-07
+          },
+          "row_profiles": [
+            {
+              "N": 145,
+              "amplitude": 0.00029623398706140345,
+              "chi2_contribution": 0.01852117085645304,
+              "dependency_group": "P50",
+              "id": "P50-N145"
+            },
+            {
+              "N": 290,
+              "amplitude": 0.00013871614618537762,
+              "chi2_contribution": 0.6259505288376309,
+              "dependency_group": "P50",
+              "id": "P50-N290"
+            },
+            {
+              "N": 325,
+              "amplitude": 6.570982236149316e-05,
+              "chi2_contribution": 0.9885646397549988,
+              "dependency_group": "P57",
+              "id": "P57-N325"
+            },
+            {
+              "N": 425,
+              "amplitude": 6.766493633551139e-05,
+              "chi2_contribution": 1.4627997026879058,
+              "dependency_group": "P57",
+              "id": "P57-N425"
+            }
+          ],
+          "unit_direction_A_nonnegative": [
+            0.9154695822082728,
+            -0.4023871817682696
+          ]
+        },
+        "separate_ray_chi2": 0.43670966849583837,
+        "signed_unit_ray_determinant": -0.5019803548965069
+      },
+      {
+        "absolute_unit_ray_determinant": 0.47738316052026447,
+        "angle_difference_degrees_mod_ray": 28.514631120852123,
+        "common_ray_chi2": 2.453319637637959,
+        "degrees_of_freedom": 1,
+        "delta_chi2": 2.3435971282882706,
+        "lineages": [
+          "P49",
+          "P57"
+        ],
+        "p_value": 0.125798766094557,
+        "pair_common_ray": {
+          "E_over_A_slope": -0.46903498991813736,
+          "angle_degrees_from_A_axis": -25.128220616628152,
+          "min_chi2": 2.453319637637959,
+          "optimizer_certificate": {
+            "best_grid_chi2": 2.4533236685392734,
+            "grid_size": 4096,
+            "local_basins": 1,
+            "method": "periodic grid isolation followed by high-precision golden minimization of every local basin",
+            "refined_minus_grid_chi2": -4.030901314325497e-06
+          },
+          "row_profiles": [
+            {
+              "N": 130,
+              "amplitude": 0.000317419387772815,
+              "chi2_contribution": 0.0038158982306998575,
+              "dependency_group": "P49",
+              "id": "P49-N130"
+            },
+            {
+              "N": 170,
+              "amplitude": 0.00027550787190536434,
+              "chi2_contribution": 0.2778734263098141,
+              "dependency_group": "P49",
+              "id": "P49-N170"
+            },
+            {
+              "N": 325,
+              "amplitude": 6.580008320891735e-05,
+              "chi2_contribution": 0.8789993642810213,
+              "dependency_group": "P57",
+              "id": "P57-N325"
+            },
+            {
+              "N": 425,
+              "amplitude": 6.80645300598762e-05,
+              "chi2_contribution": 1.2926309488164236,
+              "dependency_group": "P57",
+              "id": "P57-N425"
+            }
+          ],
+          "unit_direction_A_nonnegative": [
+            0.9053597528555641,
+            -0.4246454025528969
+          ]
+        },
+        "separate_ray_chi2": 0.10972250934968825,
+        "signed_unit_ray_determinant": -0.47738316052026447
+      },
+      {
+        "absolute_unit_ray_determinant": 0.12550092634967416,
+        "angle_difference_degrees_mod_ray": 7.20968455711016,
+        "common_ray_chi2": 0.3779471491327947,
+        "degrees_of_freedom": 1,
+        "delta_chi2": 0.10502309222695067,
+        "lineages": [
+          "P43",
+          "P57"
+        ],
+        "p_value": 0.745883021244111,
+        "pair_common_ray": {
+          "E_over_A_slope": -1.0080835866558504,
+          "angle_degrees_from_A_axis": -45.23064423215493,
+          "min_chi2": 0.3779471491327947,
+          "optimizer_certificate": {
+            "best_grid_chi2": 0.3779506171859524,
+            "grid_size": 4096,
+            "local_basins": 1,
+            "method": "periodic grid isolation followed by high-precision golden minimization of every local basin",
+            "refined_minus_grid_chi2": -3.468053157733141e-06
+          },
+          "row_profiles": [
+            {
+              "N": 185,
+              "amplitude": 0.00014872620554993781,
+              "chi2_contribution": 0.1890321736956219,
+              "dependency_group": "P43",
+              "id": "P43-N185"
+            },
+            {
+              "N": 265,
+              "amplitude": 0.00011243214319011399,
+              "chi2_contribution": 0.09014240952199552,
+              "dependency_group": "P43",
+              "id": "P43-N265"
+            },
+            {
+              "N": 325,
+              "amplitude": 6.000073995960014e-05,
+              "chi2_contribution": 0.05269647344952754,
+              "dependency_group": "P57",
+              "id": "P57-N325"
+            },
+            {
+              "N": 425,
+              "amplitude": 6.292833863177818e-05,
+              "chi2_contribution": 0.04607609246564975,
+              "dependency_group": "P57",
+              "id": "P57-N425"
+            }
+          ],
+          "unit_direction_A_nonnegative": [
+            0.7042546004364769,
+            -0.7099475035268864
+          ]
+        },
+        "separate_ray_chi2": 0.27292405690584404,
+        "signed_unit_ray_determinant": -0.12550092634967416
+      },
+      {
+        "absolute_unit_ray_determinant": 0.028209065337608332,
+        "angle_difference_degrees_mod_ray": 1.6164748215510132,
+        "common_ray_chi2": 0.6155154937313488,
+        "degrees_of_freedom": 1,
+        "delta_chi2": 0.0741177586950879,
+        "lineages": [
+          "P49",
+          "P50"
+        ],
+        "p_value": 0.7854330518606653,
+        "pair_common_ray": {
+          "E_over_A_slope": -0.4159806738437382,
+          "angle_degrees_from_A_axis": -22.58636657406358,
+          "min_chi2": 0.6155154937313488,
+          "optimizer_certificate": {
+            "best_grid_chi2": 0.6155157575811558,
+            "grid_size": 4096,
+            "local_basins": 1,
+            "method": "periodic grid isolation followed by high-precision golden minimization of every local basin",
+            "refined_minus_grid_chi2": -2.638498069537037e-07
+          },
+          "row_profiles": [
+            {
+              "N": 130,
+              "amplitude": 0.0003287330251332356,
+              "chi2_contribution": 0.13218080807330262,
+              "dependency_group": "P49",
+              "id": "P49-N130"
+            },
+            {
+              "N": 170,
+              "amplitude": 0.0002828031847744399,
+              "chi2_contribution": 0.009977129084828723,
+              "dependency_group": "P49",
+              "id": "P49-N170"
+            },
+            {
+              "N": 145,
+              "amplitude": 0.00030023001803373387,
+              "chi2_contribution": 0.00999577760323457,
+              "dependency_group": "P50",
+              "id": "P50-N145"
+            },
+            {
+              "N": 290,
+              "amplitude": 0.00014090849725711754,
+              "chi2_contribution": 0.46336177896998293,
+              "dependency_group": "P50",
+              "id": "P50-N290"
+            }
+          ],
+          "unit_direction_A_nonnegative": [
+            0.9233016333454642,
+            -0.3840756356000703
+          ]
+        },
+        "separate_ray_chi2": 0.5413977350362609,
+        "signed_unit_ray_determinant": 0.028209065337608332
+      }
+    ],
+    "primary_model_decision": "global_ray_eliminated_against_four_lineage_specific_rays"
+  },
+  "issues": [
+    337,
+    370
+  ],
+  "null": "all eight P4(A_top,E_top) means share one unoriented ray through the origin; each size/geometry has its own unrestricted scalar amplitude",
+  "primary": {
+    "covariance_key": "covariance_intrinsic_center_first_order_influence",
+    "four_lineage_specific_rays": {
+      "degrees_of_freedom": 4,
+      "fits": {
+        "P43": {
+          "E_over_A_slope": -0.988236651943096,
+          "angle_degrees_from_A_axis": -44.66101503468071,
+          "min_chi2": 0.27041499520508133,
+          "optimizer_certificate": {
+            "best_grid_chi2": 0.2704193215485966,
+            "grid_size": 4096,
+            "local_basins": 1,
+            "method": "periodic grid isolation followed by high-precision golden minimization of every local basin",
+            "refined_minus_grid_chi2": -4.32634351526948e-06
+          },
+          "row_profiles": [
+            {
+              "N": 185,
+              "amplitude": 0.00014975561374035254,
+              "chi2_contribution": 0.13574151939157947,
+              "dependency_group": "P43",
+              "id": "P43-N185"
+            },
+            {
+              "N": 265,
+              "amplitude": 0.00011296870451153088,
+              "chi2_contribution": 0.13467347581350186,
+              "dependency_group": "P43",
+              "id": "P43-N265"
+            }
+          ],
+          "unit_direction_A_nonnegative": [
+            0.7112779103107348,
+            -0.7029109006865623
+          ]
+        },
+        "P49": {
+          "E_over_A_slope": -0.4318215924672146,
+          "angle_degrees_from_A_axis": -23.355729563034135,
+          "min_chi2": 0.10720319494681665,
+          "optimizer_certificate": {
+            "best_grid_chi2": 0.10722820278789125,
+            "grid_size": 4096,
+            "local_basins": 1,
+            "method": "periodic grid isolation followed by high-precision golden minimization of every local basin",
+            "refined_minus_grid_chi2": -2.5007841074595658e-05
+          },
+          "row_profiles": [
+            {
+              "N": 130,
+              "amplitude": 0.00032542493796840536,
+              "chi2_contribution": 0.05363181825183136,
+              "dependency_group": "P49",
+              "id": "P49-N130"
+            },
+            {
+              "N": 170,
+              "amplitude": 0.0002807230380799341,
+              "chi2_contribution": 0.05357137669498529,
+              "dependency_group": "P49",
+              "id": "P49-N170"
+            }
+          ],
+          "unit_direction_A_nonnegative": [
+            0.9180612139284277,
+            -0.3964386553809578
+          ]
+        },
+        "P50": {
+          "E_over_A_slope": -0.39874627709605004,
+          "angle_degrees_from_A_axis": -21.73945770080855,
+          "min_chi2": 0.4341999241507299,
+          "optimizer_certificate": {
+            "best_grid_chi2": 0.43421002552020155,
+            "grid_size": 4096,
+            "local_basins": 1,
+            "method": "periodic grid isolation followed by high-precision golden minimization of every local basin",
+            "refined_minus_grid_chi2": -1.0101369471656483e-05
+          },
+          "row_profiles": [
+            {
+              "N": 145,
+              "amplitude": 0.000303064481359739,
+              "chi2_contribution": 0.07797131269038507,
+              "dependency_group": "P50",
+              "id": "P50-N145"
+            },
+            {
+              "N": 290,
+              "amplitude": 0.00014247822536361224,
+              "chi2_contribution": 0.35622861146034485,
+              "dependency_group": "P50",
+              "id": "P50-N290"
+            }
+          ],
+          "unit_direction_A_nonnegative": [
+            0.9288777189140149,
+            -0.37038653229443463
+          ]
+        },
+        "P57": {
+          "E_over_A_slope": -1.2740062038751514,
+          "angle_degrees_from_A_axis": -51.87072626447928,
+          "min_chi2": 0.002517218987107842,
+          "optimizer_certificate": {
+            "best_grid_chi2": 0.0025176748395797843,
+            "grid_size": 4096,
+            "local_basins": 1,
+            "method": "periodic grid isolation followed by high-precision golden minimization of every local basin",
+            "refined_minus_grid_chi2": -4.5585247194215354e-07
+          },
+          "row_profiles": [
+            {
+              "N": 325,
+              "amplitude": 5.722556123170848e-05,
+              "chi2_contribution": 0.0015662210061121178,
+              "dependency_group": "P57",
+              "id": "P57-N325"
+            },
+            {
+              "N": 425,
+              "amplitude": 5.95750873639422e-05,
+              "chi2_contribution": 0.0009509979809957243,
+              "dependency_group": "P57",
+              "id": "P57-N425"
+            }
+          ],
+          "unit_direction_A_nonnegative": [
+            0.6174378578436774,
+            -0.7866196614002289
+          ]
+        }
+      },
+      "p_value": 0.9365159464312481,
+      "summed_chi2": 0.8143353332897357
+    },
+    "global_ray": {
+      "E_over_A_slope": -0.5918349777828291,
+      "angle_degrees_from_A_axis": -30.61853085818113,
+      "chi2_contribution_by_dependency_group": {
+        "P43": 7.603045563055358,
+        "P49": 2.6618034376107973,
+        "P50": 3.9867659970758442,
+        "P57": 1.2631100234335666
+      },
+      "decision_at_alpha": "survives",
+      "decision_scope": "absolute goodness-of-fit against unrestricted row means",
+      "degrees_of_freedom": 7,
+      "min_chi2": 15.514725021175567,
+      "optimizer_certificate": {
+        "best_grid_chi2": 15.514741112096544,
+        "grid_size": 4096,
+        "local_basins": 1,
+        "method": "periodic grid isolation followed by high-precision golden minimization of every local basin",
+        "refined_minus_grid_chi2": -1.6090920977647434e-05
+      },
+      "p_value": 0.029939181956518082,
+      "profile_intervals": {
+        "delta_chi2_1": {
+          "absolute_angle_degrees_mod_ray": [
+            -33.552701233387204,
+            -27.882320155987
+          ],
+          "angle_offset_degrees": [
+            -2.934170375206071,
+            2.736210702194133
+          ],
+          "delta_chi2": 1.0
+        },
+        "delta_chi2_3p841": {
+          "absolute_angle_degrees_mod_ray": [
+            -36.589223617316584,
+            -25.412498578544994
+          ],
+          "angle_offset_degrees": [
+            -5.970692759135454,
+            5.206032279636137
+          ],
+          "delta_chi2": 3.841458820694124
+        }
+      },
+      "row_profiles": [
+        {
+          "N": 130,
+          "amplitude": 0.00029085385766414027,
+          "chi2_contribution": 0.7718223560023408,
+          "dependency_group": "P49",
+          "id": "P49-N130"
+        },
+        {
+          "N": 170,
+          "amplitude": 0.0002567005133399132,
+          "chi2_contribution": 1.8899810816084563,
+          "dependency_group": "P49",
+          "id": "P49-N170"
+        },
+        {
+          "N": 185,
+          "amplitude": 0.00017662214360699625,
+          "chi2_contribution": 2.556093159322406,
+          "dependency_group": "P43",
+          "id": "P43-N185"
+        },
+        {
+          "N": 265,
+          "amplitude": 0.00012598830662119813,
+          "chi2_contribution": 5.046952403732952,
+          "dependency_group": "P43",
+          "id": "P43-N265"
+        },
+        {
+          "N": 145,
+          "amplitude": 0.0002696678606652458,
+          "chi2_contribution": 2.0395355849955052,
+          "dependency_group": "P50",
+          "id": "P50-N145"
+        },
+        {
+          "N": 290,
+          "amplitude": 0.00012438206435023616,
+          "chi2_contribution": 1.947230412080339,
+          "dependency_group": "P50",
+          "id": "P50-N290"
+        },
+        {
+          "N": 325,
+          "amplitude": 6.521370635323458e-05,
+          "chi2_contribution": 0.5234513957085443,
+          "dependency_group": "P57",
+          "id": "P57-N325"
+        },
+        {
+          "N": 425,
+          "amplitude": 6.827631788393235e-05,
+          "chi2_contribution": 0.7396586277250224,
+          "dependency_group": "P57",
+          "id": "P57-N425"
+        }
+      ],
+      "unit_direction_A_nonnegative": [
+        0.8605773455290385,
+        -0.5093197741715846
+      ]
+    },
+    "global_vs_four_ray_likelihood_ratio": {
+      "decision_at_alpha": "global_ray_eliminated",
+      "degrees_of_freedom": 3,
+      "delta_chi2": 14.700389687885831,
+      "p_value": 0.0020914406346076602
+    },
+    "largest_pairwise_incompatibility": {
+      "absolute_unit_ray_determinant": 0.3894705153319047,
+      "angle_difference_degrees_mod_ray": 22.92155733387216,
+      "common_ray_chi2": 10.841686327964903,
+      "degrees_of_freedom": 1,
+      "delta_chi2": 10.137071408609092,
+      "lineages": [
+        "P43",
+        "P50"
+      ],
+      "p_value": 0.0014531685198302866,
+      "pair_common_ray": {
+        "E_over_A_slope": -0.6676478095583421,
+        "angle_degrees_from_A_axis": -33.728968221406355,
+        "min_chi2": 10.841686327964903,
+        "optimizer_certificate": {
+          "best_grid_chi2": 10.841718035808626,
+          "grid_size": 4096,
+          "local_basins": 1,
+          "method": "periodic grid isolation followed by high-precision golden minimization of every local basin",
+          "refined_minus_grid_chi2": -3.170784372373694e-05
+        },
+        "row_profiles": [
+          {
+            "N": 185,
+            "amplitude": 0.00017077468937508512,
+            "chi2_contribution": 1.2137668982761147,
+            "dependency_group": "P43",
+            "id": "P43-N185"
+          },
+          {
+            "N": 265,
+            "amplitude": 0.00012333603479328055,
+            "chi2_contribution": 3.197441686136469,
+            "dependency_group": "P43",
+            "id": "P43-N265"
+          },
+          {
+            "N": 145,
+            "amplitude": 0.0002572850292882807,
+            "chi2_contribution": 3.7612958914982353,
+            "dependency_group": "P50",
+            "id": "P50-N145"
+          },
+          {
+            "N": 290,
+            "amplitude": 0.00011773638247970244,
+            "chi2_contribution": 2.669181852054083,
+            "dependency_group": "P50",
+            "id": "P50-N290"
+          }
+        ],
+        "unit_direction_A_nonnegative": [
+          0.8316734915482609,
+          -0.5552649848999348
+        ]
+      },
+      "separate_ray_chi2": 0.7046149193558112,
+      "signed_unit_ray_determinant": 0.3894705153319047
+    },
+    "leave_one_lineage_out_predictive_profiles": [
+      {
+        "decision_at_alpha": "survives",
+        "degrees_of_freedom": 2,
+        "heldout_lineage": "P49",
+        "optimizer_certificate": {
+          "best_grid_chi2": 3.8385649876699195,
+          "grid_size": 4096,
+          "local_basins": 1,
+          "method": "periodic grid isolation followed by high-precision golden minimization of every local basin",
+          "refined_minus_grid_chi2": -1.6090920977647434e-05
+        },
+        "p_value": 0.14671337164816894,
+        "predictive_profile_direction_angle_degrees": -30.61853085818113,
+        "profiled_predictive_chi2": 3.838548896748942,
+        "training_direction_angle_degrees": -34.476825542858116
+      },
+      {
+        "decision_at_alpha": "eliminated",
+        "degrees_of_freedom": 2,
+        "heldout_lineage": "P43",
+        "optimizer_certificate": {
+          "best_grid_chi2": 12.307844503089598,
+          "grid_size": 4096,
+          "local_basins": 1,
+          "method": "periodic grid isolation followed by high-precision golden minimization of every local basin",
+          "refined_minus_grid_chi2": -1.6090920977647434e-05
+        },
+        "p_value": 0.002125147204956499,
+        "predictive_profile_direction_angle_degrees": -30.61853085818113,
+        "profiled_predictive_chi2": 12.307828412168618,
+        "training_direction_angle_degrees": -23.534984701795047
+      },
+      {
+        "decision_at_alpha": "survives",
+        "degrees_of_freedom": 2,
+        "heldout_lineage": "P50",
+        "optimizer_certificate": {
+          "best_grid_chi2": 5.393546036211981,
+          "grid_size": 4096,
+          "local_basins": 1,
+          "method": "periodic grid isolation followed by high-precision golden minimization of every local basin",
+          "refined_minus_grid_chi2": -1.6090920977647434e-05
+        },
+        "p_value": 0.0674232764577128,
+        "predictive_profile_direction_angle_degrees": -30.61853085818113,
+        "profiled_predictive_chi2": 5.393529945291003,
+        "training_direction_angle_degrees": -34.769872368696475
+      },
+      {
+        "decision_at_alpha": "survives",
+        "degrees_of_freedom": 2,
+        "heldout_lineage": "P57",
+        "optimizer_certificate": {
+          "best_grid_chi2": 1.3026425269917736,
+          "grid_size": 4096,
+          "local_basins": 1,
+          "method": "periodic grid isolation followed by high-precision golden minimization of every local basin",
+          "refined_minus_grid_chi2": -1.6090920977647434e-05
+        },
+        "p_value": 0.5213606667795205,
+        "predictive_profile_direction_angle_degrees": -30.61853085818113,
+        "profiled_predictive_chi2": 1.302626436070796,
+        "training_direction_angle_degrees": -30.05328111540523
+      }
+    ],
+    "pairwise_independent_geometry_determinants": [
+      {
+        "absolute_unit_ray_determinant": 0.3894705153319047,
+        "angle_difference_degrees_mod_ray": 22.92155733387216,
+        "common_ray_chi2": 10.841686327964903,
+        "degrees_of_freedom": 1,
+        "delta_chi2": 10.137071408609092,
+        "lineages": [
+          "P43",
+          "P50"
+        ],
+        "p_value": 0.0014531685198302866,
+        "pair_common_ray": {
+          "E_over_A_slope": -0.6676478095583421,
+          "angle_degrees_from_A_axis": -33.728968221406355,
+          "min_chi2": 10.841686327964903,
+          "optimizer_certificate": {
+            "best_grid_chi2": 10.841718035808626,
+            "grid_size": 4096,
+            "local_basins": 1,
+            "method": "periodic grid isolation followed by high-precision golden minimization of every local basin",
+            "refined_minus_grid_chi2": -3.170784372373694e-05
+          },
+          "row_profiles": [
+            {
+              "N": 185,
+              "amplitude": 0.00017077468937508512,
+              "chi2_contribution": 1.2137668982761147,
+              "dependency_group": "P43",
+              "id": "P43-N185"
+            },
+            {
+              "N": 265,
+              "amplitude": 0.00012333603479328055,
+              "chi2_contribution": 3.197441686136469,
+              "dependency_group": "P43",
+              "id": "P43-N265"
+            },
+            {
+              "N": 145,
+              "amplitude": 0.0002572850292882807,
+              "chi2_contribution": 3.7612958914982353,
+              "dependency_group": "P50",
+              "id": "P50-N145"
+            },
+            {
+              "N": 290,
+              "amplitude": 0.00011773638247970244,
+              "chi2_contribution": 2.669181852054083,
+              "dependency_group": "P50",
+              "id": "P50-N290"
+            }
+          ],
+          "unit_direction_A_nonnegative": [
+            0.8316734915482609,
+            -0.5552649848999348
+          ]
+        },
+        "separate_ray_chi2": 0.7046149193558112,
+        "signed_unit_ray_determinant": 0.3894705153319047
+      },
+      {
+        "absolute_unit_ray_determinant": 0.3633371764020646,
+        "angle_difference_degrees_mod_ray": 21.305285471646574,
+        "common_ray_chi2": 9.319635109617428,
+        "degrees_of_freedom": 1,
+        "delta_chi2": 8.94201691946553,
+        "lineages": [
+          "P49",
+          "P43"
+        ],
+        "p_value": 0.0027868483430422628,
+        "pair_common_ray": {
+          "E_over_A_slope": -0.6759402133752479,
+          "angle_degrees_from_A_axis": -34.0563421917179,
+          "min_chi2": 9.319635109617428,
+          "optimizer_certificate": {
+            "best_grid_chi2": 9.319635228897928,
+            "grid_size": 4096,
+            "local_basins": 1,
+            "method": "periodic grid isolation followed by high-precision golden minimization of every local basin",
+            "refined_minus_grid_chi2": -1.1928049982569558e-07
+          },
+          "row_profiles": [
+            {
+              "N": 130,
+              "amplitude": 0.00027415107882982096,
+              "chi2_contribution": 1.7524633006862145,
+              "dependency_group": "P49",
+              "id": "P49-N130"
+            },
+            {
+              "N": 170,
+              "amplitude": 0.00024383952064103843,
+              "chi2_contribution": 3.428949881889043,
+              "dependency_group": "P49",
+              "id": "P49-N170"
+            },
+            {
+              "N": 185,
+              "amplitude": 0.00017014074299436668,
+              "chi2_contribution": 1.1058666709839855,
+              "dependency_group": "P43",
+              "id": "P43-N185"
+            },
+            {
+              "N": 265,
+              "amplitude": 0.00012304131105553837,
+              "chi2_contribution": 3.0323552560581852,
+              "dependency_group": "P43",
+              "id": "P43-N265"
+            }
+          ],
+          "unit_direction_A_nonnegative": [
+            0.8284872856899592,
+            -0.5600078726679509
+          ]
+        },
+        "separate_ray_chi2": 0.37761819015189796,
+        "signed_unit_ray_determinant": -0.3633371764020646
+      },
+      {
+        "absolute_unit_ray_determinant": 0.5019828096603356,
+        "angle_difference_degrees_mod_ray": 30.131268563670734,
+        "common_ray_chi2": 3.0958564458883155,
+        "degrees_of_freedom": 1,
+        "delta_chi2": 2.6591393027504777,
+        "lineages": [
+          "P50",
+          "P57"
+        ],
+        "p_value": 0.10295643212749293,
+        "pair_common_ray": {
+          "E_over_A_slope": -0.43954128145336885,
+          "angle_degrees_from_A_axis": -23.72747113452056,
+          "min_chi2": 3.0958564458883155,
+          "optimizer_certificate": {
+            "best_grid_chi2": 3.095856924635062,
+            "grid_size": 4096,
+            "local_basins": 1,
+            "method": "periodic grid isolation followed by high-precision golden minimization of every local basin",
+            "refined_minus_grid_chi2": -4.787467462550998e-07
+          },
+          "row_profiles": [
+            {
+              "N": 145,
+              "amplitude": 0.0002962348443159751,
+              "chi2_contribution": 0.01851791565249684,
+              "dependency_group": "P50",
+              "id": "P50-N145"
+            },
+            {
+              "N": 290,
+              "amplitude": 0.0001387156888794069,
+              "chi2_contribution": 0.6259738902814245,
+              "dependency_group": "P50",
+              "id": "P50-N290"
+            },
+            {
+              "N": 325,
+              "amplitude": 6.57089881337928e-05,
+              "chi2_contribution": 0.9885375997460966,
+              "dependency_group": "P57",
+              "id": "P57-N325"
+            },
+            {
+              "N": 425,
+              "amplitude": 6.766460274701486e-05,
+              "chi2_contribution": 1.4628270402082977,
+              "dependency_group": "P57",
+              "id": "P57-N425"
+            }
+          ],
+          "unit_direction_A_nonnegative": [
+            0.9154697695160012,
+            -0.4023867556248834
+          ]
+        },
+        "separate_ray_chi2": 0.4367171431378377,
+        "signed_unit_ray_determinant": -0.5019828096603356
+      },
+      {
+        "absolute_unit_ray_determinant": 0.4773887671002164,
+        "angle_difference_degrees_mod_ray": 28.514996701445146,
+        "common_ray_chi2": 2.4533851845139445,
+        "degrees_of_freedom": 1,
+        "delta_chi2": 2.34366477058002,
+        "lineages": [
+          "P49",
+          "P57"
+        ],
+        "p_value": 0.12579330511221362,
+        "pair_common_ray": {
+          "E_over_A_slope": -0.4690275481788772,
+          "angle_degrees_from_A_axis": -25.127871121848653,
+          "min_chi2": 2.4533851845139445,
+          "optimizer_certificate": {
+            "best_grid_chi2": 2.453389553803929,
+            "grid_size": 4096,
+            "local_basins": 1,
+            "method": "periodic grid isolation followed by high-precision golden minimization of every local basin",
+            "refined_minus_grid_chi2": -4.369289984673724e-06
+          },
+          "row_profiles": [
+            {
+              "N": 130,
+              "amplitude": 0.0003174219395686838,
+              "chi2_contribution": 0.003807934747012635,
+              "dependency_group": "P49",
+              "id": "P49-N130"
+            },
+            {
+              "N": 170,
+              "amplitude": 0.0002755083240559055,
+              "chi2_contribution": 0.2778824329882035,
+              "dependency_group": "P49",
+              "id": "P49-N170"
+            },
+            {
+              "N": 325,
+              "amplitude": 6.579928810284324e-05,
+              "chi2_contribution": 0.8790010268711578,
+              "dependency_group": "P57",
+              "id": "P57-N325"
+            },
+            {
+              "N": 425,
+              "amplitude": 6.806421804341921e-05,
+              "chi2_contribution": 1.2926937899075706,
+              "dependency_group": "P57",
+              "id": "P57-N425"
+            }
+          ],
+          "unit_direction_A_nonnegative": [
+            0.9053623431054488,
+            -0.42463988000023206
+          ]
+        },
+        "separate_ray_chi2": 0.1097204139339245,
+        "signed_unit_ray_determinant": -0.4773887671002164
+      },
+      {
+        "absolute_unit_ray_determinant": 0.12550138819521167,
+        "angle_difference_degrees_mod_ray": 7.209711229798573,
+        "common_ray_chi2": 0.3779566832319127,
+        "degrees_of_freedom": 1,
+        "delta_chi2": 0.10502446903972353,
+        "lineages": [
+          "P43",
+          "P57"
+        ],
+        "p_value": 0.7458814130609736,
+        "pair_common_ray": {
+          "E_over_A_slope": -1.0080819329978545,
+          "angle_degrees_from_A_axis": -45.230597239706675,
+          "min_chi2": 0.3779566832319127,
+          "optimizer_certificate": {
+            "best_grid_chi2": 0.37796012158178643,
+            "grid_size": 4096,
+            "local_basins": 1,
+            "method": "periodic grid isolation followed by high-precision golden minimization of every local basin",
+            "refined_minus_grid_chi2": -3.4383498737107527e-06
+          },
+          "row_profiles": [
+            {
+              "N": 185,
+              "amplitude": 0.0001487257774142132,
+              "chi2_contribution": 0.1890355958587977,
+              "dependency_group": "P43",
+              "id": "P43-N185"
+            },
+            {
+              "N": 265,
+              "amplitude": 0.00011243241275228001,
+              "chi2_contribution": 0.09014706691268844,
+              "dependency_group": "P43",
+              "id": "P43-N265"
+            },
+            {
+              "N": 325,
+              "amplitude": 6.00006127269327e-05,
+              "chi2_contribution": 0.05269654087405735,
+              "dependency_group": "P57",
+              "id": "P57-N325"
+            },
+            {
+              "N": 425,
+              "amplitude": 6.292844983971626e-05,
+              "chi2_contribution": 0.04607747958636925,
+              "dependency_group": "P57",
+              "id": "P57-N425"
+            }
+          ],
+          "unit_direction_A_nonnegative": [
+            0.7042551827159752,
+            -0.7099469259160774
+          ]
+        },
+        "separate_ray_chi2": 0.27293221419218916,
+        "signed_unit_ray_determinant": -0.12550138819521167
+      },
+      {
+        "absolute_unit_ray_determinant": 0.028205524438633906,
+        "angle_difference_degrees_mod_ray": 1.6162718622255847,
+        "common_ray_chi2": 0.6154976291667674,
+        "degrees_of_freedom": 1,
+        "delta_chi2": 0.07409451006922085,
+        "lineages": [
+          "P49",
+          "P50"
+        ],
+        "p_value": 0.785465883179853,
+        "pair_common_ray": {
+          "E_over_A_slope": -0.4159753456770607,
+          "angle_degrees_from_A_axis": -22.5861063254271,
+          "min_chi2": 0.6154976291667674,
+          "optimizer_certificate": {
+            "best_grid_chi2": 0.6154979907960393,
+            "grid_size": 4096,
+            "local_basins": 1,
+            "method": "periodic grid isolation followed by high-precision golden minimization of every local basin",
+            "refined_minus_grid_chi2": -3.616292718313549e-07
+          },
+          "row_profiles": [
+            {
+              "N": 130,
+              "amplitude": 0.00032872835484702527,
+              "chi2_contribution": 0.13217353613355476,
+              "dependency_group": "P49",
+              "id": "P49-N130"
+            },
+            {
+              "N": 170,
+              "amplitude": 0.00028280384227008385,
+              "chi2_contribution": 0.009970690764936696,
+              "dependency_group": "P49",
+              "id": "P49-N170"
+            },
+            {
+              "N": 145,
+              "amplitude": 0.0003002303275016099,
+              "chi2_contribution": 0.010005641306525644,
+              "dependency_group": "P50",
+              "id": "P50-N145"
+            },
+            {
+              "N": 290,
+              "amplitude": 0.00014090857403077503,
+              "chi2_contribution": 0.4633477609617504,
+              "dependency_group": "P50",
+              "id": "P50-N290"
+            }
+          ],
+          "unit_direction_A_nonnegative": [
+            0.9233033778825942,
+            -0.3840714417795099
+          ]
+        },
+        "separate_ray_chi2": 0.5414031190975466,
+        "signed_unit_ray_determinant": 0.028205524438633906
+      }
+    ],
+    "primary_model_decision": "global_ray_eliminated_against_four_lineage_specific_rays"
+  },
+  "schema": "matching-one/etop-global-ray-elimination/v1",
+  "scientific_card": [
+    "MECHANISM SPACE: one universal cross-geometry A_top/E_top ray versus four geometry-family rays.",
+    "RESULT: the test changes only the geometry-sharing constraint; every size retains a free scalar amplitude and no field name is assigned.",
+    "NOT PROVED: ray incompatibility does not identify a field, operator, exponent or asymptotic geometry law.",
+    "OBSERVER-SECTOR-SOURCE-GEOMETRY: P4(A_top,E_top) | Alexander odd/even state plane | threshold-rank source | P49/P43/P50/P57 production geometries.",
+    "DEPENDENCY GROUPS: four named blocks remain explicit; the global statistic is their block-diagonal joint profile, not eight independent narrative votes.",
+    "UPWEIGHT OBSERVATION: a new independent geometry should be frozen near the largest pairwise determinant direction, then scored against the source-profiled global ray."
+  ],
+  "source": {
+    "crosswalk": "results/rank-plane-crosswalk/latest.json",
+    "crosswalk_sha256": "d3739f34c0ba982edea580d71990deb1e2ef24f292c7497b31b2346e14a8c299",
+    "lineage_rank1_result": "results/etop-rank1-elimination/latest.json",
+    "lineage_rank1_result_sha256": "e806fec466bb3d3b9a54b00e8d08def85b324fed690ba9f3b271209352a6a477"
+  },
+  "status": "cross_geometry_global_ray_model_elimination"
+}
