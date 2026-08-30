@@ -1,0 +1,42 @@
+{
+  "schema": "matching-one/p250-projective-leg-augmented-map-result/v1",
+  "status": "existing_data_scored_once",
+  "freeze_commit": "2bca045",
+  "scorer_commit": "be65bd57fedd9a53df443630aadb23b2b7c9932c",
+  "parent_results": {
+    "radius_four_joint_annihilation": "99d23a7",
+    "radius_five_extension": "11130ae"
+  },
+  "inputs": {
+    "old_80k_batches_sha256": "dfbd83d680080939bcae5cad0090af95d82748ed780ce73807d4b002d6a9ca72",
+    "fresh_1200k_batches_sha256": "50985e38c9c8afab0c8b0e78113184d33861d928aefaba1e8043e67fc348677e"
+  },
+  "artifacts": {
+    "score": "results/local-20260830/P250-projective-leg-augmented-map/score.json",
+    "score_sha256": "0069244ce4d26e209adbb5551c84955184d31baf0fbaa4ef07c9771683dc54c3",
+    "influences": "results/local-20260830/P250-projective-leg-augmented-map/influences.npz",
+    "influences_sha256": "da2a37fdb06295b70bf69ce1068b5542ff8ebdf6eec76448cfcc00ab9dc767c7"
+  },
+  "candidate_scores": {
+    "identity_conjugation": {"chi_square": 290.59476133387693, "df": 70, "finite_batch_p": 3.669966473111424e-14, "decision": "rejected"},
+    "Alexander_R0_conjugation": {"chi_square": 266.28445942581004, "df": 70, "finite_batch_p": 2.4634927102664572e-12, "decision": "rejected"},
+    "Alexander_R1_conjugation": {"chi_square": 189.9932335662472, "df": 70, "finite_batch_p": 1.031311737649099e-6, "decision": "rejected"},
+    "Alexander_R2_conjugation": {"chi_square": 210.36610589932977, "df": 70, "finite_batch_p": 3.549696660651404e-8, "decision": "rejected"},
+    "Alexander_R3_conjugation": {"chi_square": 216.61099427848333, "df": 70, "finite_batch_p": 1.240437779075286e-8, "decision": "rejected"}
+  },
+  "decision_alpha": 0.01,
+  "surviving_maps": [],
+  "decision": "all_frozen_parameter_free_maps_rejected",
+  "influence_contract": {
+    "old_shape": [5, 400, 70],
+    "fresh_shape": [5, 400, 70],
+    "combination": "candidate covariance = old influence transpose times old influence + fresh influence transpose times fresh influence",
+    "maximum_recorded_addition_error": 6.617444900424222e-24
+  },
+  "claim_boundary": [
+    "The old R2/R3 annihilation scores and radius-five R2/R3 direction scores are not additional votes; each candidate is counted once here.",
+    "This eliminates the five frozen fixed parameter-free maps within the degree-five rank-five truncation.",
+    "It does not eliminate hand-specific, modulus-dependent, higher-rank, noncommutative, or context-dependent maps and does not prove a physical state dimension."
+  ],
+  "no_new_simulation": true
+}
