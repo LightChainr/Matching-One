@@ -339,6 +339,9 @@ struct PathInsertion {
     Vector line{0, 0};
     Int index = 0;
     LocalMark local;
+    LocalMark far_axis;
+    LocalMark far_diagonal;
+    int far_rotation = -1;
 };
 
 struct BirthTrace {
@@ -628,7 +631,9 @@ class ThresholdEngine {
         return {k_minus, k_plus};
     }
 
-    BirthTrace trace(const std::vector<int>& permutation, bool matching, bool reverse) {
+    BirthTrace trace(const std::vector<int>& permutation, bool matching, bool reverse,
+                     int far_radius = 0,
+                     const std::vector<int>* far_rotations = nullptr) {
         std::fill(active_.begin(), active_.end(), 0);
         union_find_.reset();
         graph_components_ = 0;
@@ -645,6 +650,31 @@ class ThresholdEngine {
             const int vertex = permutation[reverse ? geometry_.n - 1 - offset : offset];
             const LocalMark local = local_landing_mark(
                 geometry_, active_, vertex, matching);
+            LocalMark far_axis;
+            LocalMark far_diagonal;
+            int far_rotation = -1;
+            if (far_radius > 0) {
+                if (!far_rotations || static_cast<int>(far_rotations->size()) != geometry_.n) {
+                    throw std::logic_error("separated observer lacks its C4 rotation stream");
+                }
+                const int black_k = reverse ? geometry_.n - 1 - offset : offset;
+                far_rotation = (*far_rotations)[black_k];
+                Vector axis{far_radius, 0};
+                Vector diagonal{far_radius, far_radius};
+                for (int turn = 0; turn < far_rotation; ++turn) {
+                    axis = {-axis.y, axis.x};
+                    diagonal = {-diagonal.y, diagonal.x};
+                }
+                const Vector root = geometry_.quotient.representative(vertex);
+                const int axis_root = geometry_.quotient.label(
+                    {root.x + axis.x, root.y + axis.y});
+                const int diagonal_root = geometry_.quotient.label(
+                    {root.x + diagonal.x, root.y + diagonal.y});
+                far_axis = local_landing_mark(
+                    geometry_, active_, axis_root, matching);
+                far_diagonal = local_landing_mark(
+                    geometry_, active_, diagonal_root, matching);
+            }
             const int before_rank = global_rank;
             const int components_before = graph_components_;
             const int euler_near = euler_local_residue_r2(geometry_, active_, vertex);
@@ -676,6 +706,9 @@ class ThresholdEngine {
             insertion.components_after = graph_components_;
             insertion.euler_near = euler_near;
             insertion.local = local;
+            insertion.far_axis = far_axis;
+            insertion.far_diagonal = far_diagonal;
+            insertion.far_rotation = far_rotation;
 
             if (gate01 && gate12) {
                 trace.k1 = trace.k2 = offset + 1;
@@ -738,6 +771,17 @@ std::uint64_t splitmix64(std::uint64_t value) {
     value = (value ^ (value >> 30)) * 0xbf58476d1ce4e5b9ULL;
     value = (value ^ (value >> 27)) * 0x94d049bb133111ebULL;
     return value ^ (value >> 31);
+}
+
+void separated_rotations(int n, std::uint64_t seed, std::uint64_t replica,
+                         std::vector<int>& rotations) {
+    rotations.resize(n);
+    const std::uint64_t stream = splitmix64(
+        seed ^ splitmix64(replica + 0x4f1bbcdc6765d7f5ULL));
+    for (int k = 0; k < n; ++k) {
+        rotations[k] = static_cast<int>(
+            splitmix64(stream ^ splitmix64(static_cast<std::uint64_t>(k))) & 3ULL);
+    }
 }
 
 class SplitMixStream {
@@ -903,6 +947,16 @@ struct PathMoments {
     long double sum_abs_J_S2 = 0;
     std::int64_t sum_local_S = 0;
     std::int64_t sum_local_D = 0;
+    long double sum_O_sep_axis = 0;
+    long double sum_O_sep_diagonal = 0;
+    long double sum_O_sep4 = 0;
+    long double sum_O_sep4_2 = 0;
+    long double sum_O_sep_axis_internal_h4 = 0;
+    long double sum_O_sep_diagonal_internal_h4 = 0;
+    long double sum_O_sep4_J_S_real = 0;
+    long double sum_O_sep4_J_S_imaginary = 0;
+    long double sum_O_sep4_J_D_real = 0;
+    long double sum_O_sep4_J_D_imaginary = 0;
 
     void add(const PathInsertion& active, const PathInsertion& inactive,
              const QuotientCoordinates& quotient, int n) {
@@ -995,6 +1049,30 @@ struct PathMoments {
             sum_local_S += static_cast<std::int64_t>(absent) * local_s;
             sum_local_D += static_cast<std::int64_t>(absent) * local_d;
         }
+        if (active.far_axis.valid && active.far_diagonal.valid &&
+            inactive.far_axis.valid && inactive.far_diagonal.valid) {
+            // The two direction orbits are deliberately retained rather than
+            // collapsed. Packed as axis+i*diagonal they form the exact rank-2
+            // scalar/spin-4 response basis. O_sep4 is twice the normalized H4
+            // projection, so it stays integral on every complement-paired path.
+            const long double axis =
+                (active.far_axis.landed + inactive.far_axis.landed) / 2.0L;
+            const long double diagonal =
+                (active.far_diagonal.landed + inactive.far_diagonal.landed) / 2.0L;
+            const long double o_sep4 = axis - diagonal;
+            sum_O_sep_axis += axis;
+            sum_O_sep_diagonal += diagonal;
+            sum_O_sep4 += o_sep4;
+            sum_O_sep4_2 += o_sep4 * o_sep4;
+            sum_O_sep_axis_internal_h4 +=
+                (active.far_axis.h4 + inactive.far_axis.h4) / 2.0L;
+            sum_O_sep_diagonal_internal_h4 +=
+                (active.far_diagonal.h4 + inactive.far_diagonal.h4) / 2.0L;
+            sum_O_sep4_J_S_real += o_sep4 * j_s_real;
+            sum_O_sep4_J_S_imaginary += o_sep4 * j_s_imaginary;
+            sum_O_sep4_J_D_real += o_sep4 * j_d_real;
+            sum_O_sep4_J_D_imaginary += o_sep4 * j_d_imaginary;
+        }
     }
 };
 
@@ -1004,6 +1082,7 @@ struct ComplementAudit {
     std::uint64_t line_failures = 0;
     std::uint64_t local_mark_failures = 0;
     std::uint64_t index_mismatches = 0;
+    std::uint64_t separated_mark_failures = 0;
 
     void add(const BirthTrace& primal, const BirthTrace& matching, int n) {
         if (primal.k1 + matching.k2 != n + 1 ||
@@ -1016,6 +1095,16 @@ struct ComplementAudit {
             !same_local(primal.mark2, matching.mark1)) ++local_mark_failures;
         if (primal.index1 != matching.index2 || primal.index2 != matching.index1) {
             ++index_mismatches;
+        }
+        if (primal.path.size() == matching.path.size()) {
+            for (const PathInsertion& active : primal.path) {
+                const PathInsertion& inactive = matching.path[n - 1 - active.k_before];
+                if (active.far_rotation != inactive.far_rotation ||
+                    !same_local(active.far_axis, inactive.far_axis) ||
+                    !same_local(active.far_diagonal, inactive.far_diagonal)) {
+                    ++separated_mark_failures;
+                }
+            }
         }
     }
 };
@@ -1224,6 +1313,7 @@ struct Options {
     std::filesystem::path output_prefix;
     bool self_test = false;
     bool marked_births = false;
+    int far_radius = 0;
     bool custom = false;
     Matrix first_matrix;
     Matrix second_matrix;
@@ -1251,6 +1341,7 @@ struct Options {
         << "  --git-commit SHA     provenance string\n"
         << "  --output-prefix PATH writes .hist.csv, .moments.csv, .metadata.json\n"
         << "  --marked-births      also writes sparse birth and microcanonical path streams\n"
+        << "  --far-radius R       add paired axis/diagonal local-arm observer at distance R\n"
         << "  --self-test          exact tiny and Smith regressions, then exit\n";
     std::exit(status);
 }
@@ -1313,6 +1404,7 @@ Options parse_options(int argc, char** argv) {
         }
         else if (arg == "--self-test") options.self_test = true;
         else if (arg == "--marked-births") options.marked_births = true;
+        else if (arg == "--far-radius") options.far_radius = parse_number<int>(need(i, arg), arg);
         else if (arg == "--help") usage(argv[0], 0);
         else throw std::invalid_argument("unknown option: " + arg);
     }
@@ -1323,6 +1415,9 @@ Options parse_options(int argc, char** argv) {
         throw std::invalid_argument("samples must be positive and divisible by batches>=2");
     }
     if (options.threads < 0) throw std::invalid_argument("threads must be nonnegative");
+    if (options.far_radius < 0 || (options.far_radius > 0 && !options.marked_births)) {
+        throw std::invalid_argument("far-radius must be nonnegative and requires --marked-births");
+    }
     if (first_matrix_set != second_matrix_set) {
         throw std::invalid_argument("custom runs require both period matrices");
     }
@@ -1423,15 +1518,24 @@ void run_design(const PairDesign& design, const Options& options,
         ThresholdEngine first_engine(first_geometry);
         ThresholdEngine second_engine(second_geometry);
         std::vector<int> permutation;
+        std::vector<int> far_rotations;
         const std::uint64_t begin = options.replica_offset +
                                     static_cast<std::uint64_t>(batch) * per_batch;
         for (std::uint64_t replica = begin; replica < begin + per_batch; ++replica) {
             counter_permutation(design.n, options.seed, replica, permutation);
             if (options.marked_births) {
-                const BirthTrace first_primal = first_engine.trace(permutation, false, false);
-                const BirthTrace first_matching = first_engine.trace(permutation, true, true);
-                const BirthTrace second_primal = second_engine.trace(permutation, false, false);
-                const BirthTrace second_matching = second_engine.trace(permutation, true, true);
+                if (options.far_radius > 0) {
+                    separated_rotations(design.n, options.seed, replica, far_rotations);
+                }
+                const auto* rotations = options.far_radius > 0 ? &far_rotations : nullptr;
+                const BirthTrace first_primal = first_engine.trace(
+                    permutation, false, false, options.far_radius, rotations);
+                const BirthTrace first_matching = first_engine.trace(
+                    permutation, true, true, options.far_radius, rotations);
+                const BirthTrace second_primal = second_engine.trace(
+                    permutation, false, false, options.far_radius, rotations);
+                const BirthTrace second_matching = second_engine.trace(
+                    permutation, true, true, options.far_radius, rotations);
                 if (first_primal.k1 != design.n - first_matching.k2 + 1 ||
                     first_primal.k2 != design.n - first_matching.k1 + 1 ||
                     second_primal.k1 != design.n - second_matching.k2 + 1 ||
@@ -1523,13 +1627,22 @@ void run_design(const PairDesign& design, const Options& options,
                     << row.sum_O_near_J_D_imaginary << ','
                     << row.sum_J_D_conj_J_S_real << ','
                     << row.sum_J_D_conj_J_S_imaginary << ',' << row.sum_abs_J_S2 << ','
-                    << row.sum_local_S << ',' << row.sum_local_D << '\n';
+                    << row.sum_local_S << ',' << row.sum_local_D << ','
+                    << row.sum_O_sep_axis << ',' << row.sum_O_sep_diagonal << ','
+                    << row.sum_O_sep4 << ',' << row.sum_O_sep4_2 << ','
+                    << row.sum_O_sep_axis_internal_h4 << ','
+                    << row.sum_O_sep_diagonal_internal_h4 << ','
+                    << row.sum_O_sep4_J_S_real << ','
+                    << row.sum_O_sep4_J_S_imaginary << ','
+                    << row.sum_O_sep4_J_D_real << ','
+                    << row.sum_O_sep4_J_D_imaginary << '\n';
             }
             const ComplementAudit& audit = marked.complement;
             *complement_audit << design.n << ',' << a << ',' << b << ',' << orientation
                 << ',' << batch << ',' << per_batch << ',' << audit.endpoint_failures << ','
                 << audit.site_failures << ',' << audit.line_failures << ','
-                << audit.local_mark_failures << ',' << audit.index_mismatches << '\n';
+                << audit.local_mark_failures << ',' << audit.index_mismatches << ','
+                << audit.separated_mark_failures << '\n';
         };
         for (int batch = 0; batch < options.batches; ++batch) {
             write_marked_orientation(batch, "first", design.a1, design.b1,
@@ -1591,10 +1704,15 @@ int run(int argc, char** argv) {
                "sum_O_ext_J_D_im,sum_O_near_J_S_re,sum_O_near_J_S_im,"
                "sum_O_near_J_D_re,sum_O_near_J_D_im,"
                "sum_J_D_conj_J_S_re,sum_J_D_conj_J_S_im,"
-               "sum_abs_J_S2,sum_local_S,sum_local_D\n";
+               "sum_abs_J_S2,sum_local_S,sum_local_D,"
+               "sum_O_sep_axis,sum_O_sep_diagonal,sum_O_sep4,sum_O_sep4_2,"
+               "sum_O_sep_axis_internal_h4,sum_O_sep_diagonal_internal_h4,"
+               "sum_O_sep4_J_S_re,sum_O_sep4_J_S_im,"
+               "sum_O_sep4_J_D_re,sum_O_sep4_J_D_im\n";
         complement_audit
             << "n,a,b,orientation,batch,samples,endpoint_failures,site_failures,"
-               "line_failures,local_mark_failures,index_mismatches\n";
+               "line_failures,local_mark_failures,index_mismatches,"
+               "separated_mark_failures\n";
     }
     const auto started = std::chrono::steady_clock::now();
     run_design(design, options, histogram, moments,
@@ -1655,6 +1773,9 @@ int run(int argc, char** argv) {
              << "  \"external_observer\": \"O_ext=C_black_NN-C_white_matching-q=V-E+F0; evaluated on the pre-insertion configuration and outside the q-only algebra\",\n"
              << "  \"external_contact_split\": \"O_near is the Chebyshev-radius-2 D4-symmetric sum of southwest-anchored local V-E+F0 densities around the next insertion site; O_far=O_ext-O_near\",\n"
              << "  \"external_products\": \"O_ext/O_near first and second moments, O_ext*O_near, both times J_S4/J_D4, plus J_D4*conj(J_S4) and |J_S4|^2 same-path Gram rows; q*J_D4 retained only as contact control\",\n"
+             << "  \"separated_observer_radius\": " << options.far_radius << ",\n"
+             << "  \"separated_observer\": \"at every pre-insertion root a counter-random common C4 rotation samples one axis anchor R*(1,0) and one diagonal anchor R*(1,1); their local arm landing values are retained as the typed complex pair axis+i*diagonal and O_sep4=axis-diagonal is the twice-normalized spatial H4 projection\",\n"
+             << "  \"separated_products\": \"O_sep axis/diagonal means, O_sep4 first/second moments, internal local-H4 type controls, and O_sep4 times J_S4/J_D4 in the same path batch\",\n"
              << "  \"sparse_joint_histogram\": " << (options.marked_births ? "true" : "false") << ",\n"
              << "  \"per_batch_joint_moments\": true,\n"
              << "  \"elapsed_seconds\": " << std::setprecision(17) << elapsed << ",\n"

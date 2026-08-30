@@ -1,0 +1,77 @@
+schema: matching-one/two-observer-two-source-preregistration/v1
+status: frozen_before_production
+issues: [215, 275]
+pull_request_context: 267
+engine: src/threshold_rank_integer_period_mc.cpp
+scorer: scripts/score_two_observer_source_rank.py
+launcher: scripts/run_p267_two_observer_source_rank.sh
+
+observer_semantics:
+  radius: 6
+  rotation: counter-derived common C4 turn per replica and pre-insertion k
+  axis_anchor: root + C4^turn * (6, 0)
+  diagonal_anchor: root + C4^turn * (6, 6)
+  typed_complex: axis_landing + i * diagonal_landing
+  scalar_projection: (axis_landing + diagonal_landing) / 2
+  spatial_h4_projection: (axis_landing - diagonal_landing) / 2
+  stored_normalization: O_sep4 = axis_landing - diagonal_landing
+  external_row: O_far = O_ext - O_near
+  authorization_gate: results/separated-two-orbit-observer/exact_mapping_gate.json
+
+source_semantics:
+  source_columns: [JD_perp, JS]
+  beta_rule: per orientation beta = Re<JD,JS> / <|JS|^2>
+  delete_one_rule: recompute intrinsic root and beta after omitting each batch
+  shared_stream: all observer, source, Gram, and product fields use the same permutation batch
+
+primary:
+  matrix_rows: [O_far, O_sep4]
+  matrix_columns: [JD_perp, JS]
+  statistic: complex determinant of the P4-projected 2x2 coupling matrix
+  null: rank(C) <= 1, equivalently det(C) = 0
+  joint_sizes: [325, 425]
+  joint_covariance: block diagonal because size streams use disjoint counters
+  decision: reject rank-one lane when joint determinant chi2_4 > 18.4668269529
+  interpretation: projective source separation only; no individual nonzero entry names a field
+
+secondary:
+  - normalized complex wedge magnitude at each size
+  - determinant N425/N325 complex transfer, only if both determinants are resolved
+  - axis and diagonal orbit means and internal-H4 types as alias controls
+  - complement, Russo, Euler, Horvitz, and Gram audits
+
+production:
+  - id: N325_2m
+    samples: 2000000
+    batches: 100
+    seed: 202608303252
+    replica_offset: 19000000000
+    first_matrix: [[17, -6], [6, 17]]
+    second_matrix: [[18, -1], [1, 18]]
+    first_rep: [17, 6]
+    second_rep: [18, 1]
+  - id: N425_2m
+    samples: 2000000
+    batches: 100
+    seed: 202608304252
+    replica_offset: 21000000000
+    first_matrix: [[16, -13], [13, 16]]
+    second_matrix: [[19, -8], [8, 19]]
+    first_rep: [16, 13]
+    second_rep: [19, 8]
+
+smoke_power:
+  samples_per_size: 20000
+  batches: 20
+  N325_det: [-1.26301899148, -2.24581064064]
+  N325_det_se: [2.51762644225, 1.72992613047]
+  N425_det: [1.65987243078, -3.05060946107]
+  N425_det_se: [2.21291454683, 1.87730677789]
+  projected_sample_multiplier: 100
+  production_choice: 2M per size is sufficient unless an exact audit fails
+
+stop_rules:
+  - do not score production if separated_mark_failures is nonzero
+  - do not change radius, source orthogonalization, matrix order, or decision threshold after reveal
+  - do not promote a single coupling entry to a field identification
+  - raw sparse streams stay on the execution host; Git stores batch path aggregates, metadata, checksums, and scores

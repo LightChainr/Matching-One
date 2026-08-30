@@ -48,6 +48,14 @@ METRICS = (
     "P4_gamma_D_im",
     "P4_local_S",
     "P4_local_D",
+    "P4_O_sep_axis",
+    "P4_O_sep_diagonal",
+    "P4_O_sep4",
+    "P4_var_O_sep4",
+    "P4_connected_O_sep4_J_S_re",
+    "P4_connected_O_sep4_J_S_im",
+    "P4_connected_O_sep4_J_D_re",
+    "P4_connected_O_sep4_J_D_im",
 )
 
 
@@ -100,6 +108,16 @@ VALUE_COLUMNS = (
     "sum_abs_J_S2",
     "sum_local_S",
     "sum_local_D",
+    "sum_O_sep_axis",
+    "sum_O_sep_diagonal",
+    "sum_O_sep4",
+    "sum_O_sep4_2",
+    "sum_O_sep_axis_internal_h4",
+    "sum_O_sep_diagonal_internal_h4",
+    "sum_O_sep4_J_S_re",
+    "sum_O_sep4_J_S_im",
+    "sum_O_sep4_J_D_re",
+    "sum_O_sep4_J_D_im",
 )
 
 
@@ -294,6 +312,14 @@ def orientation_observables(rows: Sequence[PathRow], p: mp.mpf) -> dict[str, mp.
             rows, "sum_J_D_conj_J_S_im", p
         ),
         "Gram_abs_J_S2": preinsertion_column(rows, "sum_abs_J_S2", p),
+        "O_sep_axis": preinsertion_column(rows, "sum_O_sep_axis", p),
+        "O_sep_diagonal": preinsertion_column(rows, "sum_O_sep_diagonal", p),
+        "O_sep4": preinsertion_column(rows, "sum_O_sep4", p),
+        "O_sep4_2": preinsertion_column(rows, "sum_O_sep4_2", p),
+        "O_sep4_J_S_re": canonical_site_sum(rows, "sum_O_sep4_J_S_re", p),
+        "O_sep4_J_S_im": canonical_site_sum(rows, "sum_O_sep4_J_S_im", p),
+        "O_sep4_J_D_re": canonical_site_sum(rows, "sum_O_sep4_J_D_re", p),
+        "O_sep4_J_D_im": canonical_site_sum(rows, "sum_O_sep4_J_D_im", p),
     }
     q_pre = preinsertion_q(rows, p)
     values["connected_q_J_D_re"] = (
@@ -314,6 +340,7 @@ def orientation_observables(rows: Sequence[PathRow], p: mp.mpf) -> dict[str, mp.
         values["O_ext2"] + values["O_near2"]
         - 2 * values["O_ext_O_near"] - values["O_far"] ** 2
     )
+    values["var_O_sep4"] = values["O_sep4_2"] - values["O_sep4"] ** 2
     for source in ("J_S", "J_D"):
         for part in ("re", "im"):
             values[f"connected_O_ext_{source}_{part}"] = (
@@ -327,6 +354,10 @@ def orientation_observables(rows: Sequence[PathRow], p: mp.mpf) -> dict[str, mp.
             values[f"connected_O_far_{source}_{part}"] = (
                 values[f"connected_O_ext_{source}_{part}"]
                 - values[f"connected_O_near_{source}_{part}"]
+            )
+            values[f"connected_O_sep4_{source}_{part}"] = (
+                values[f"O_sep4_{source}_{part}"]
+                - values["O_sep4"] * values[f"{source}_{part}"]
             )
 
     n = len(rows)
@@ -417,6 +448,24 @@ def projected(first: Sequence[PathRow], second: Sequence[PathRow]) -> tuple[mp.m
         "P4_gamma_D_im": (left["gamma_D_im"] - right["gamma_D_im"]) / delta,
         "P4_local_S": (left["local_S"] - right["local_S"]) / delta,
         "P4_local_D": (left["local_D"] - right["local_D"]) / delta,
+        "P4_O_sep_axis": (left["O_sep_axis"] - right["O_sep_axis"]) / delta,
+        "P4_O_sep_diagonal": (
+            left["O_sep_diagonal"] - right["O_sep_diagonal"]
+        ) / delta,
+        "P4_O_sep4": (left["O_sep4"] - right["O_sep4"]) / delta,
+        "P4_var_O_sep4": (left["var_O_sep4"] - right["var_O_sep4"]) / delta,
+        "P4_connected_O_sep4_J_S_re": (
+            left["connected_O_sep4_J_S_re"] - right["connected_O_sep4_J_S_re"]
+        ) / delta,
+        "P4_connected_O_sep4_J_S_im": (
+            left["connected_O_sep4_J_S_im"] - right["connected_O_sep4_J_S_im"]
+        ) / delta,
+        "P4_connected_O_sep4_J_D_re": (
+            left["connected_O_sep4_J_D_re"] - right["connected_O_sep4_J_D_re"]
+        ) / delta,
+        "P4_connected_O_sep4_J_D_im": (
+            left["connected_O_sep4_J_D_im"] - right["connected_O_sep4_J_D_im"]
+        ) / delta,
     }
     return p, point, {"first": left, "second": right}
 
