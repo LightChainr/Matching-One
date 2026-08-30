@@ -1,0 +1,10 @@
+{
+  "schema": "matching-one/observer-bandwidth-johnson-swap/v1",
+  "status": "exact_slice_clock_control",
+  "N": 8,
+  "k": 4,
+  "degree_cutoff": 4,
+  "clock": "one occupied-empty swap per discrete step; continuous generator L=P_swap-I",
+  "endpoint_contract": "k=0 and k=N are one-state absorbing slices and are handled without dividing by k(N-k)",
+  "boundary": "The Johnson eigenvalues are fixed by finite sampling algebra. They are not fitted scaling dimensions and are not comparable to Bernoulli-noise powers without an exact clock map."
+}
