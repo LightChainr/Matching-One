@@ -124,16 +124,24 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
             )
         )
         self.assertEqual(result, audit(ROOT, manifest))
-        self.assertEqual(result["counts"]["total"], 50)
-        self.assertEqual(result["counts"]["direct_typed_entrypoint"], 19)
-        self.assertEqual(result["counts"]["covered_frozen_kernel"], 18)
+        self.assertEqual(result["counts"]["total"], 51)
+        self.assertEqual(result["counts"]["direct_typed_entrypoint"], 20)
+        self.assertEqual(result["counts"]["covered_frozen_kernel"], 19)
         self.assertEqual(
             result["counts"]["descriptor_not_applicable_generic_utility"], 1
         )
-        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 12)
+        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 11)
         self.assertEqual(result["counts"]["outside_registered_typed_path"], 0)
-        self.assertEqual(len(result["rows"]), 50)
+        self.assertEqual(len(result["rows"]), 51)
         statuses = {row["path"]: row["status"] for row in result["rows"]}
+        self.assertEqual(
+            statuses["scripts/score_angular_root_amplitude.py"],
+            "covered_frozen_kernel",
+        )
+        self.assertEqual(
+            statuses["scripts/score_angular_root_amplitude_typed.py"],
+            "direct_typed_entrypoint",
+        )
         for path in (
             "scripts/score_issue43_secondary.py",
             "scripts/score_norm4_production.py",
