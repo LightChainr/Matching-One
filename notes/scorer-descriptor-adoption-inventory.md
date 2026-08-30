@@ -1,15 +1,14 @@
 # Scorer descriptor-adoption inventory
 
 At main commit `11ba86892fabd3349e322d198f23ef24d8cbe828`, the exact
-`scripts/*score*.py` corpus contains 39 files. Python-AST inspection finds eight
+`scripts/*score*.py` corpus contains 40 files. Python-AST inspection finds nine
 direct typed entrypoints importing both `ObservableDescriptor` and
-`map_observable` from `wrapping_channels`. Seven frozen kernels are covered by
+`map_observable` from `wrapping_channels`. Eight frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Twenty-three paths are confirmed channel-bearing and
+a descriptor is not applicable. Twenty-two paths are confirmed channel-bearing and
 require typed migrations: `score_angular_root_amplitude.py`,
 `score_axis_pair_annihilator.py`, its stable entrypoint,
-`score_c4_tangent_orthogonal_holdout.py`,
 `score_intrinsic_quantile_center_n145_n290.py`,
 `score_issue43_full_curve.py`, its locked wrapper,
 `score_issue43_secondary.py`,
@@ -44,7 +43,7 @@ unchanged.
 but no current scorer has that status. Static membership alone would not prove
 a semantic bug, data-provenance failure, or need for migration; any future
 corpus addition must still be reviewed before modification. Issue #146 remains
-open because inventory classification is not the same as implementing the 23
+open because inventory classification is not the same as implementing the 22
 required typed migrations.
 
 The `kappa3_half_score.py` exception is narrow. It defines only exact Bernoulli
@@ -76,13 +75,14 @@ numerical identity, not permission to exchange channel labels. The frozen
 hypotheses, scoring order, enumeration artifacts, and
 stop-without-generalized-fit rule are unchanged.
 
-`score_c4_tangent_orthogonal_holdout.py` is migration-required. It selects the
-`cross` response through a free-form channel string, freezes `lambda/t` on
-N=130, and applies that projection to aligned N=170 batches before scoring
-orthogonal and thermal residuals. A typed migration must bind both sizes to the
-same exact channel semantics and type the response-coordinate pair, without
-changing batch alignment, jackknife construction, or the frozen interpretation
-rule.
+`score_c4_tangent_orthogonal_holdout.py` is now a covered frozen kernel. Its
+typed entrypoint validates an exact identity map for the same `cross/primal`
+event at N=130 and N=170 before replaying the kernel. The semantic gate also
+freezes ordered `(t, lambda)` response coordinates, the source-frozen
+`lambda/t` projection, synchronized delete-one batches, and the fixed
+`N^(3/8)` thermal map. These response coordinates are not reinterpreted as
+topology channels or continuum spin eigenfields; frozen numerics and the
+interpretation rule are unchanged.
 
 `score_matching_odd_synthesis.py` is now a covered frozen kernel. Its typed
 entrypoint validates the registered exact identity `D_either=D_cross` for both
