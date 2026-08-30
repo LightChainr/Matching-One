@@ -1,0 +1,257 @@
+{
+  "schema": "matching-one/p250-radius-selector-result/v1",
+  "status": "common_counter_geometry_selector_complete",
+  "common_counter_certificate": {
+    "reference": "R1",
+    "checked_fields": [
+      "batch",
+      "replica_first",
+      "samples",
+      "field_sha256",
+      "translation_sha256"
+    ],
+    "failures": [],
+    "passed": true
+  },
+  "selection_rule": {
+    "candidate_pass": "at least two separations have all four abs(G z)>=2 and nondegenerate cubic covariance",
+    "tie_break": "first in frozen R1,R2,R3,R4 order",
+    "phase_policy": "phase scores ignored"
+  },
+  "candidates": {
+    "R1": {
+      "radius": 1,
+      "annulus_injectivity": {
+        "radius": 1,
+        "hands": {
+          "plus": {
+            "points": 8,
+            "unique_images": 8,
+            "injective": true
+          },
+          "minus": {
+            "points": 8,
+            "unique_images": 8,
+            "injective": true
+          }
+        },
+        "passed": true
+      },
+      "usable_separation_count": 1,
+      "candidate_pass_at_least_two": false,
+      "separations": {
+        "1": {
+          "minimum_two_point_abs_z": 4.50733723484605,
+          "all_four_two_point_denominators_ready": true,
+          "cubic_covariance_nondegenerate": true,
+          "cubic_covariance_reason": "positive_diagonal_and_invertible_correlation",
+          "usable_for_production_selector": true,
+          "descriptive_cubic_support_chi_square": 11.47874157188787,
+          "descriptive_cubic_support_df": 8,
+          "descriptive_cubic_support_p": 0.17601983530747634,
+          "phase_score_used_for_selection": false
+        },
+        "2": {
+          "minimum_two_point_abs_z": 0.47981142873175076,
+          "all_four_two_point_denominators_ready": false,
+          "cubic_covariance_nondegenerate": true,
+          "cubic_covariance_reason": "positive_diagonal_and_invertible_correlation",
+          "usable_for_production_selector": false,
+          "descriptive_cubic_support_chi_square": 9.766320847466515,
+          "descriptive_cubic_support_df": 8,
+          "descriptive_cubic_support_p": 0.28181175351467597,
+          "phase_score_used_for_selection": false
+        },
+        "3": {
+          "minimum_two_point_abs_z": 0.0038732957595051204,
+          "all_four_two_point_denominators_ready": false,
+          "cubic_covariance_nondegenerate": true,
+          "cubic_covariance_reason": "positive_diagonal_and_invertible_correlation",
+          "usable_for_production_selector": false,
+          "descriptive_cubic_support_chi_square": 8.542113530821638,
+          "descriptive_cubic_support_df": 8,
+          "descriptive_cubic_support_p": 0.38238061482010455,
+          "phase_score_used_for_selection": false
+        }
+      }
+    },
+    "R2": {
+      "radius": 2,
+      "annulus_injectivity": {
+        "radius": 2,
+        "hands": {
+          "plus": {
+            "points": 24,
+            "unique_images": 24,
+            "injective": true
+          },
+          "minus": {
+            "points": 24,
+            "unique_images": 24,
+            "injective": true
+          }
+        },
+        "passed": true
+      },
+      "usable_separation_count": 1,
+      "candidate_pass_at_least_two": false,
+      "separations": {
+        "1": {
+          "minimum_two_point_abs_z": 4.598907034663782,
+          "all_four_two_point_denominators_ready": true,
+          "cubic_covariance_nondegenerate": true,
+          "cubic_covariance_reason": "positive_diagonal_and_invertible_correlation",
+          "usable_for_production_selector": true,
+          "descriptive_cubic_support_chi_square": 5.873027241141637,
+          "descriptive_cubic_support_df": 8,
+          "descriptive_cubic_support_p": 0.6614522735964118,
+          "phase_score_used_for_selection": false
+        },
+        "2": {
+          "minimum_two_point_abs_z": 0.6417429576557587,
+          "all_four_two_point_denominators_ready": false,
+          "cubic_covariance_nondegenerate": true,
+          "cubic_covariance_reason": "positive_diagonal_and_invertible_correlation",
+          "usable_for_production_selector": false,
+          "descriptive_cubic_support_chi_square": 5.102352036599503,
+          "descriptive_cubic_support_df": 8,
+          "descriptive_cubic_support_p": 0.7465827032613485,
+          "phase_score_used_for_selection": false
+        },
+        "3": {
+          "minimum_two_point_abs_z": 0.12222957342126348,
+          "all_four_two_point_denominators_ready": false,
+          "cubic_covariance_nondegenerate": true,
+          "cubic_covariance_reason": "positive_diagonal_and_invertible_correlation",
+          "usable_for_production_selector": false,
+          "descriptive_cubic_support_chi_square": 11.037773135917215,
+          "descriptive_cubic_support_df": 8,
+          "descriptive_cubic_support_p": 0.19956809379174847,
+          "phase_score_used_for_selection": false
+        }
+      }
+    },
+    "R3": {
+      "radius": 3,
+      "annulus_injectivity": {
+        "radius": 3,
+        "hands": {
+          "plus": {
+            "points": 48,
+            "unique_images": 48,
+            "injective": true
+          },
+          "minus": {
+            "points": 48,
+            "unique_images": 48,
+            "injective": true
+          }
+        },
+        "passed": true
+      },
+      "usable_separation_count": 1,
+      "candidate_pass_at_least_two": false,
+      "separations": {
+        "1": {
+          "minimum_two_point_abs_z": 4.522160989493904,
+          "all_four_two_point_denominators_ready": true,
+          "cubic_covariance_nondegenerate": true,
+          "cubic_covariance_reason": "positive_diagonal_and_invertible_correlation",
+          "usable_for_production_selector": true,
+          "descriptive_cubic_support_chi_square": 13.863845149436381,
+          "descriptive_cubic_support_df": 8,
+          "descriptive_cubic_support_p": 0.08538399885387211,
+          "phase_score_used_for_selection": false
+        },
+        "2": {
+          "minimum_two_point_abs_z": 0.7564015358592543,
+          "all_four_two_point_denominators_ready": false,
+          "cubic_covariance_nondegenerate": true,
+          "cubic_covariance_reason": "positive_diagonal_and_invertible_correlation",
+          "usable_for_production_selector": false,
+          "descriptive_cubic_support_chi_square": 5.625124634511919,
+          "descriptive_cubic_support_df": 8,
+          "descriptive_cubic_support_p": 0.6891412949119863,
+          "phase_score_used_for_selection": false
+        },
+        "3": {
+          "minimum_two_point_abs_z": 0.42978303033486454,
+          "all_four_two_point_denominators_ready": false,
+          "cubic_covariance_nondegenerate": true,
+          "cubic_covariance_reason": "positive_diagonal_and_invertible_correlation",
+          "usable_for_production_selector": false,
+          "descriptive_cubic_support_chi_square": 3.6600017942766985,
+          "descriptive_cubic_support_df": 8,
+          "descriptive_cubic_support_p": 0.8864234924921371,
+          "phase_score_used_for_selection": false
+        }
+      }
+    },
+    "R4": {
+      "radius": 4,
+      "annulus_injectivity": {
+        "radius": 4,
+        "hands": {
+          "plus": {
+            "points": 80,
+            "unique_images": 80,
+            "injective": true
+          },
+          "minus": {
+            "points": 80,
+            "unique_images": 80,
+            "injective": true
+          }
+        },
+        "passed": true
+      },
+      "usable_separation_count": 1,
+      "candidate_pass_at_least_two": false,
+      "separations": {
+        "1": {
+          "minimum_two_point_abs_z": 6.085805919698653,
+          "all_four_two_point_denominators_ready": true,
+          "cubic_covariance_nondegenerate": true,
+          "cubic_covariance_reason": "positive_diagonal_and_invertible_correlation",
+          "usable_for_production_selector": true,
+          "descriptive_cubic_support_chi_square": 13.256560491308862,
+          "descriptive_cubic_support_df": 8,
+          "descriptive_cubic_support_p": 0.10332176706131428,
+          "phase_score_used_for_selection": false
+        },
+        "2": {
+          "minimum_two_point_abs_z": 1.1055470282254893,
+          "all_four_two_point_denominators_ready": false,
+          "cubic_covariance_nondegenerate": true,
+          "cubic_covariance_reason": "positive_diagonal_and_invertible_correlation",
+          "usable_for_production_selector": false,
+          "descriptive_cubic_support_chi_square": 17.66320208735075,
+          "descriptive_cubic_support_df": 8,
+          "descriptive_cubic_support_p": 0.023898217280116592,
+          "phase_score_used_for_selection": false
+        },
+        "3": {
+          "minimum_two_point_abs_z": 0.21372275233708043,
+          "all_four_two_point_denominators_ready": false,
+          "cubic_covariance_nondegenerate": true,
+          "cubic_covariance_reason": "positive_diagonal_and_invertible_correlation",
+          "usable_for_production_selector": false,
+          "descriptive_cubic_support_chi_square": 703.6684359026908,
+          "descriptive_cubic_support_df": 8,
+          "descriptive_cubic_support_p": 1.1612130912437242e-146,
+          "phase_score_used_for_selection": false
+        }
+      }
+    }
+  },
+  "advancing_candidates": [],
+  "selected_candidate": null,
+  "decision": "no_production_candidate_in_radius_1_to_4_local_landing_h4_family",
+  "next_selector": "freeze a different charged insertion, such as a leg-defect or mesoscopic row, before acquiring more cubic replicas",
+  "claim_boundary": [
+    "The scan is a 4k common-counter geometry selector, not a production result.",
+    "A small cubic support p-value at an unresolved two-point separation cannot select a candidate.",
+    "No phase statistic was used in the selection.",
+    "The result concerns only radii 1 through 4 of the current local landing-H4 insertion."
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "schema": "matching-one/p250-radius-selector-result-manifest/v1",
+  "issue": 250,
+  "prereg_commit": "abd2cbd",
+  "status": "complete_no_advancing_candidate",
+  "common_counter": {
+    "samples_per_candidate": 4000,
+    "batches": 40,
+    "p": 0.59274605079,
+    "seed": 25011312220260901,
+    "replica_counter": [0, 4000],
+    "field_and_translation_digests_equal_across_candidates": true
+  },
+  "candidates": [
+    {"name": "R1", "radius": 1, "usable_separations": [1]},
+    {"name": "R2", "radius": 2, "usable_separations": [1]},
+    {"name": "R3", "radius": 3, "usable_separations": [1]},
+    {"name": "R4", "radius": 4, "usable_separations": [1]}
+  ],
+  "selected_candidate": null,
+  "decision": "no_production_candidate_in_radius_1_to_4_local_landing_h4_family",
+  "next_selector": "freeze a genuinely different charged insertion before acquiring more cubic replicas",
+  "outputs": {
+    "note": "notes/p250-radius-selector-result.md",
+    "selection": "results/local-20260830/P250-z5-radius-selector/selection.json",
+    "human_score": "results/local-20260830/P250-z5-radius-selector/selection.md",
+    "checksums": "results/local-20260830/P250-z5-radius-selector/SHA256SUMS"
+  },
+  "claim_boundary": [
+    "No phase score selected a radius.",
+    "The result excludes only the requested separation-normalized production design within the scanned radius family.",
+    "R4 raw cubic support is an alternate observable lead, not a passing two-point-normalized candidate."
+  ]
+}
