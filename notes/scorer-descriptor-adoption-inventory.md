@@ -1,14 +1,13 @@
 # Scorer descriptor-adoption inventory
 
-In this checked snapshot, the exact `scripts/*score*.py` corpus contains 48
-files. Python-AST inspection finds seventeen
+In this checked snapshot, the exact `scripts/*score*.py` corpus contains 50
+files. Python-AST inspection finds nineteen
 direct typed entrypoints importing both `ObservableDescriptor` and
-`map_observable` from `wrapping_channels`. Sixteen frozen kernels are covered by
+`map_observable` from `wrapping_channels`. Eighteen frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Fourteen paths are confirmed channel-bearing and
+a descriptor is not applicable. Twelve paths are confirmed channel-bearing and
 require typed migrations: `score_angular_root_amplitude.py`,
-`score_axis_pair_annihilator.py`, its stable entrypoint,
 `score_issue43_secondary.py`,
 `score_norm4_production.py`,
 `score_norm4_thermal_jet.py`, `score_norm5_thermal_jet.py`,
@@ -38,8 +37,17 @@ unchanged.
 but no current scorer has that status. Static membership alone would not prove
 a semantic bug, data-provenance failure, or need for migration; any future
 corpus addition must still be reviewed before modification. Issue #146 remains
-open because inventory classification is not the same as implementing the 14
+open because inventory classification is not the same as implementing the 12
 required typed migrations.
+
+`score_axis_pair_annihilator.py` and its stable-reader entrypoint are now
+covered frozen kernels. Their two typed entrypoints share one semantic gate
+and validate the exact identity for a `cross` matching-odd raw value before
+delegating. The gate separately freezes the adjacent upper/lower roles,
+zero-based aligned batches, `p_ref`, the `L^(13/4)` annihilator, q/w ordering,
+and source-fit/held-out-no-refit boundary. The implicit root and candidate
+operator interpretation remain response/model coordinates rather than newly
+asserted topology identities; both historical numerical kernels are unchanged.
 
 The `kappa3_half_score.py` exception is narrow. It defines only exact Bernoulli
 likelihood-score polynomials at `p=1/2` and aggregates an opaque caller-supplied

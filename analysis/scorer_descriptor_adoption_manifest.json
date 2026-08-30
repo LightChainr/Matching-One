@@ -5,6 +5,8 @@
     "scripts/scorer_descriptor_adoption_audit.py"
   ],
   "typed_wrapper_kernels": {
+    "scripts/score_axis_pair_annihilator_stable_typed.py": "scripts/score_axis_pair_annihilator_stable.py",
+    "scripts/score_axis_pair_annihilator_typed.py": "scripts/score_axis_pair_annihilator.py",
     "scripts/score_c4_self_matching_n26_typed.py": "scripts/score_c4_self_matching_n26.py",
     "scripts/score_c4_tangent_orthogonal_holdout_typed.py": "scripts/score_c4_tangent_orthogonal_holdout.py",
     "scripts/score_intrinsic_functional_cocycle_typed.py": "scripts/score_intrinsic_functional_cocycle.py",
@@ -30,8 +32,6 @@
   },
   "channel_bearing_migration_required": {
     "scripts/score_angular_root_amplitude.py": "reconstructs rank-2 cross K_minus/K_plus observables, forms signed orientation root gaps, divides by signed DeltaCos4, and scores the angular-normalized A_p across sizes",
-    "scripts/score_axis_pair_annihilator.py": "reconstructs the cross matching function and implicit roots from K_minus/K_plus rank histograms, then forms and scores an adjacent-size annihilator",
-    "scripts/score_axis_pair_annihilator_stable.py": "operational entrypoint patches the batch reader and delegates to the channel-bearing axis-pair annihilator without descriptor validation",
     "scripts/score_issue43_secondary.py": "orders and scores reused DeltaM/DeltaS, x17, H4/H12, and optional P48 S-prime stages without typed stage, quantity, model-map, or evidence-reuse semantics",
     "scripts/score_norm4_production.py": "scores ordered U, P4_D, and root-gap coordinates across two norm-4 lineages with implicit metric, size, transform, model-order, and shared-evidence semantics",
     "scripts/score_norm4_thermal_jet.py": "scores ordered ranks 2 through 6 thermal-jet coordinates across the same norm-4 lineages without typed mode, normalization, cocycle, or shared-evidence semantics",

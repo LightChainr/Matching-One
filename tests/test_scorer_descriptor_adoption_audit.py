@@ -124,19 +124,17 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
             )
         )
         self.assertEqual(result, audit(ROOT, manifest))
-        self.assertEqual(result["counts"]["total"], 48)
-        self.assertEqual(result["counts"]["direct_typed_entrypoint"], 17)
-        self.assertEqual(result["counts"]["covered_frozen_kernel"], 16)
+        self.assertEqual(result["counts"]["total"], 50)
+        self.assertEqual(result["counts"]["direct_typed_entrypoint"], 19)
+        self.assertEqual(result["counts"]["covered_frozen_kernel"], 18)
         self.assertEqual(
             result["counts"]["descriptor_not_applicable_generic_utility"], 1
         )
-        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 14)
+        self.assertEqual(result["counts"]["channel_bearing_migration_required"], 12)
         self.assertEqual(result["counts"]["outside_registered_typed_path"], 0)
-        self.assertEqual(len(result["rows"]), 48)
+        self.assertEqual(len(result["rows"]), 50)
         statuses = {row["path"]: row["status"] for row in result["rows"]}
         for path in (
-            "scripts/score_axis_pair_annihilator.py",
-            "scripts/score_axis_pair_annihilator_stable.py",
             "scripts/score_issue43_secondary.py",
             "scripts/score_norm4_production.py",
             "scripts/score_norm4_thermal_jet.py",
@@ -151,6 +149,16 @@ class ScorerDescriptorAdoptionAuditTests(unittest.TestCase):
             self.assertEqual(
                 statuses[path], "channel_bearing_migration_required"
             )
+        for path in (
+            "scripts/score_axis_pair_annihilator.py",
+            "scripts/score_axis_pair_annihilator_stable.py",
+        ):
+            self.assertEqual(statuses[path], "covered_frozen_kernel")
+        for path in (
+            "scripts/score_axis_pair_annihilator_typed.py",
+            "scripts/score_axis_pair_annihilator_stable_typed.py",
+        ):
+            self.assertEqual(statuses[path], "direct_typed_entrypoint")
         self.assertEqual(
             statuses["scripts/score_intrinsic_quantile_center_n145_n290.py"],
             "covered_frozen_kernel",
