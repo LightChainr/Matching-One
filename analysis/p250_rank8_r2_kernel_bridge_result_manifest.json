@@ -1,0 +1,69 @@
+{
+  "schema": "matching-one/p250-rank8-r2-kernel-bridge-result/v1",
+  "status": "completed_existing_data_reveal",
+  "completed_utc": "2026-08-30T11:15:39Z",
+  "issue": 250,
+  "method_issue": 370,
+  "chronology": {
+    "parent_certificate_commit": "33c557b9aebed1bc9c07019b9cd5cee6c04be947",
+    "freeze_commit": "aaf350e",
+    "initial_scorer_commit": "1923aa1",
+    "scoring_commit": "c0dc4f3d1ad101699570ef5cc840287168c3fe56",
+    "first_attempt": "stopped before any statistic or output because ten algebraically zero Hermitian-projector coordinates triggered the inherited zero-scale guard",
+    "interface_fix": "removed only exactly zero-variance coordinates before the unchanged covariance whitening; committed and pushed before the completed score",
+    "completed_score_runs": 1
+  },
+  "immutable_artifacts": {
+    "freeze_manifest": {
+      "path": "analysis/p250_rank8_r2_kernel_bridge_freeze.json",
+      "sha256": "610594b8f2e47a08560b763ff964029c1e3dcd4d5f1eb1b479c904aa27394c6b"
+    },
+    "scorer": {
+      "path": "scripts/score_p250_rank8_r2_kernel_bridge.py",
+      "sha256": "60941e8ca0b38b8167f5f61c8c0c05f0c287f6aaf8fcfe8a415766aff8f6e5a9"
+    },
+    "score": {
+      "path": "results/local-20260830/P250-rank8-R2-kernel-bridge/score.json",
+      "sha256": "fd80c3a7f3b43fdf56526187c08b15f76b387b34f870153f861d0598a4a5099f"
+    }
+  },
+  "dependency_group": "P250 projective-leg N505 old4-80k plus radius5-1200k plus independent radius6-1200k",
+  "conditional_model": {
+    "rank": 8,
+    "kernel_dimension": 2,
+    "matrix_shape_per_hand": [20, 10],
+    "fixed_gauge": "plus identity; minus Alexander R2; coefficient-space comparison by conjugation",
+    "null": "conjugate(Pker8(H3_plus)) = Pker8(H3_minus_R2)"
+  },
+  "score_summary": {
+    "frozen_vector_coordinates": 200,
+    "algebraically_zero_variance_coordinates_removed": 10,
+    "identifiable_input_coordinates": 190,
+    "resolved_covariance_modes": 99,
+    "asymptotic_chi_square": 7373.681066670113,
+    "finite_batch_Hotelling_F": 56.18789400439746,
+    "finite_batch_p": 4.2173127059124615e-149,
+    "alpha": 0.01,
+    "decision": "rank8_R2_kernel_plane_bridge_rejected"
+  },
+  "descriptive_geometry": {
+    "principal_cosines": [0.8987049445442095, 0.14512583259651743],
+    "principal_angles_radians": [0.45398881961675586, 1.4251561764618397],
+    "principal_angles_degrees": [26.011643310166146, 81.65543405826502],
+    "projector_frobenius_distance": 1.5305344918458745,
+    "plus_rank8_to_rank9_singular_ratio": 1.2585662111770195,
+    "minus_rank8_to_rank9_singular_ratio": 1.4134222492134951
+  },
+  "scientific_decision": [
+    "The radius-five R2 map does not extend from its single degree-two null line to the complete two-dimensional degree-three relation plane of the first compatible rank-eight truncation.",
+    "One principal direction retains moderate alignment while the second is nearly orthogonal; this is the structural reason a one-line bridge could survive before the full plane was observed.",
+    "Do not use the radius-five R2 selection as a shared rank-eight quotient identification or as justification for a rank-eight flatness production in that fixed gauge."
+  ],
+  "claim_boundary": [
+    "Rank eight remains a first-compatible statistical lower-bound truncation, not an exact or flat state dimension.",
+    "The result rejects only the frozen R2-conjugate kernel-plane equality; identity and R0/R1/R3 were not reopened.",
+    "The result does not establish noncommuting or context-dependent translations because ordered paths were not recorded.",
+    "The radius-five degree-two null-line result remains an accurate statement about that lower-order truncation."
+  ],
+  "next_discriminant": "A genuinely ordered connected two-morphism rectangle is now higher value than another endpoint-moment extension or a new Alexander-map vote."
+}
