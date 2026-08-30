@@ -234,7 +234,13 @@ int local_join(const Geometry& geometry, const std::vector<std::uint8_t>& active
     return total;
 }
 
-struct ColorStats { int residual; int ambient_delta; };
+struct ColorStats {
+    int residual;
+    int ambient_delta;
+    int j_local;
+    Corner c0, c2, c5, c25;
+    int activation_order;
+};
 ColorStats color_stats(Geometry& geometry, const std::vector<std::uint8_t>& active,
                        const std::vector<Edge>& edges, bool check_order=false) {
     const Corner c0=corner(geometry,active,edges,false,false);
@@ -247,7 +253,12 @@ ColorStats color_stats(Geometry& geometry, const std::vector<std::uint8_t>& acti
             throw std::logic_error("join order changed typed corner");
     }
     const int j_full=c2.partition_rank+c5.partition_rank-c25.partition_rank-c0.partition_rank;
-    return {j_full-local_join(geometry,active), c25.ambient_rank-c2.ambient_rank-c5.ambient_rank+c0.ambient_rank};
+    const int j_local=local_join(geometry,active);
+    const int activation_order=(c25.ambient_rank==2)*(
+        static_cast<int>(c2.ambient_rank==2)-static_cast<int>(c5.ambient_rank==2));
+    return {j_full-j_local,
+            c25.ambient_rank-c2.ambient_rank-c5.ambient_rank+c0.ambient_rank,
+            j_local,c0,c2,c5,c25,activation_order};
 }
 
 struct OrientationStats { int even, odd, ambient_even, ambient_odd; };
@@ -266,6 +277,66 @@ std::array<int,8> paired_state(Geometry& first, Geometry& second,
     return {a.even+b.even,a.even-b.even,a.odd+b.odd,a.odd-b.odd,
             a.ambient_even+b.ambient_even,a.ambient_even-b.ambient_even,
             a.ambient_odd+b.ambient_odd,a.ambient_odd-b.ambient_odd};
+}
+
+constexpr int ordered_field_count=10;
+constexpr std::array<const char*,ordered_field_count> ordered_field_names{{
+    "Jlocal","ambient_h0","ambient_h2","ambient_h5","ambient_h25",
+    "partition_r0","partition_r2","partition_r5","partition_r25","Cact"
+}};
+
+int ordered_field(const ColorStats& value,int field){
+    switch(field){
+      case 0:return value.j_local;
+      case 1:return value.c0.ambient_rank;
+      case 2:return value.c2.ambient_rank;
+      case 3:return value.c5.ambient_rank;
+      case 4:return value.c25.ambient_rank;
+      case 5:return value.c0.partition_rank;
+      case 6:return value.c2.partition_rank;
+      case 7:return value.c5.partition_rank;
+      case 8:return value.c25.partition_rank;
+      case 9:return value.activation_order;
+      default:throw std::logic_error("ordered field index out of range");
+    }
+}
+
+std::array<int,4> paired_projection(const ColorStats& first_black,
+                                    const ColorStats& first_white,
+                                    const ColorStats& second_black,
+                                    const ColorStats& second_white,int field){
+    const int first_even=ordered_field(first_black,field)+ordered_field(first_white,field);
+    const int first_odd=ordered_field(first_black,field)-ordered_field(first_white,field);
+    const int second_even=ordered_field(second_black,field)+ordered_field(second_white,field);
+    const int second_odd=ordered_field(second_black,field)-ordered_field(second_white,field);
+    return {first_even+second_even,first_even-second_even,
+            first_odd+second_odd,first_odd-second_odd};
+}
+
+struct DetailedState {
+    std::array<int,8> legacy{};
+    std::array<int,4*ordered_field_count> ordered{};
+};
+
+DetailedState detailed_state(Geometry& first,Geometry& second,
+                              const std::vector<std::uint8_t>& black,bool check=false){
+    std::vector<std::uint8_t> white(black.size());
+    for(std::size_t i=0;i<black.size();++i)white[i]=!black[i];
+    const ColorStats fb=color_stats(first,black,first.primal_edges,check);
+    const ColorStats fw=color_stats(first,white,first.matching_edges,check);
+    const ColorStats sb=color_stats(second,black,second.primal_edges,check);
+    const ColorStats sw=color_stats(second,white,second.matching_edges,check);
+    DetailedState state;
+    const int fe=fb.residual+fw.residual,fo=fb.residual-fw.residual;
+    const int se=sb.residual+sw.residual,so=sb.residual-sw.residual;
+    const int fae=fb.ambient_delta+fw.ambient_delta,fao=fb.ambient_delta-fw.ambient_delta;
+    const int sae=sb.ambient_delta+sw.ambient_delta,sao=sb.ambient_delta-sw.ambient_delta;
+    state.legacy={fe+se,fe-se,fo+so,fo-so,fae+sae,fae-sae,fao+sao,fao-sao};
+    for(int field=0;field<ordered_field_count;++field){
+        const auto values=paired_projection(fb,fw,sb,sw,field);
+        for(int channel=0;channel<4;++channel)state.ordered[4*field+channel]=values[channel];
+    }
+    return state;
 }
 
 std::uint64_t splitmix64(std::uint64_t x) {
@@ -314,12 +385,14 @@ void self_test(){
     std::array<std::array<int,6>,6> residual_hist{};
     std::array<std::array<int,4>,4> ambient_hist{};
     Int local_black_sum=0,local_white_sum=0,local_difference_square=0;
+    Int activation_black_sum=0,activation_white_sum=0;
     bool balanced_residual=false,balanced_ambient=false;
     for(int mask=0;mask<(1<<10);++mask){
         std::vector<std::uint8_t> black(10),white(10);
         for(int i=0;i<10;++i){black[i]=(mask>>i)&1;white[i]=!black[i];}
         const ColorStats b=color_stats(tiny,black,tiny.primal_edges,true);
         const ColorStats w=color_stats(tiny,white,tiny.matching_edges,true);
+        activation_black_sum+=b.activation_order;activation_white_sum+=w.activation_order;
         if(b.residual>=-4&&b.residual<=1&&w.residual>=-4&&w.residual<=1)++residual_hist[b.residual+4][w.residual+4];
         if(b.ambient_delta>=-2&&b.ambient_delta<=1&&w.ambient_delta>=-2&&w.ambient_delta<=1)++ambient_hist[b.ambient_delta+2][w.ambient_delta+2];
         const int jb=local_join(tiny,black),jw=local_join(tiny,white);local_black_sum+=jb;local_white_sum+=jw;local_difference_square+=(jb-jw)*(jb-jw);
@@ -330,16 +403,22 @@ void self_test(){
     if(local_black_sum!=499||local_white_sum!=499||local_difference_square!=1362||
        residual_hist[0][4]!=1||residual_hist[5][4]!=50||residual_hist[4][0]!=1||
        ambient_hist[0][2]!=32||ambient_hist[3][2]!=32||ambient_hist[2][2]!=509||
-       !balanced_residual||!balanced_ambient)
-        throw std::runtime_error("tiny exact mixed-join regression failed");
+       activation_black_sum!=-133||activation_white_sum!=-87||
+       !balanced_residual||!balanced_ambient){
+        std::ostringstream message;message<<"tiny exact mixed-join regression failed activation="
+          <<activation_black_sum<<','<<activation_white_sum;
+        throw std::runtime_error(message.str());
+    }
     Geometry first=first_geometry(),second=second_geometry();
     if(first.final_q.h11!=650||first.final_q.h12!=593||second.final_q.h12!=343)throw std::runtime_error("N650 HNF regression failed");
     std::vector<int> permutation(650);std::vector<std::uint8_t> active(650);Binomial650 binomial;
     sample_configuration(200,17,binomial,permutation,active);
     const auto state=paired_state(first,second,active,true);
+    const auto detailed=detailed_state(first,second,active,true);
+    if(detailed.legacy!=state)throw std::runtime_error("detailed legacy projection mismatch");
     const std::array<int,8> expected{{0,0,0,0,0,0,0,0}};
     if(state==expected){} // zero is allowed; the exhaustive gate above proves nondegeneracy.
-    std::cout<<"self-test passed: N10 exhaustive typed joins, local moments, matching odd swap, N650 HNF/lifts\n";
+    std::cout<<"self-test passed: N10 exhaustive typed joins, HNF activation order (-133,-87), local moments, matching odd swap, N650 HNF/lifts\n";
 }
 
 struct Options{
@@ -361,7 +440,11 @@ Options parse(int argc,char**argv){
     return o;
 }
 
-struct Batch { std::uint64_t samples=0; std::array<Int,8> sums{}; };
+struct Batch {
+    std::uint64_t samples=0;
+    std::array<Int,8> sums{};
+    std::array<Int,4*ordered_field_count> ordered_sums{};
+};
 
 void run(const Options&o){
     const auto start=std::chrono::steady_clock::now();const std::uint64_t per_batch=o.samples/o.batches;
@@ -374,20 +457,31 @@ void run(const Options&o){
         Geometry first=first_geometry(),second=second_geometry();Binomial650 binomial;
         std::vector<int> permutation(650);std::vector<std::uint8_t> active(650);Batch local;local.samples=per_batch;
         const std::uint64_t begin=o.replica_offset+static_cast<std::uint64_t>(batch)*per_batch;
-        for(std::uint64_t r=begin;r<begin+per_batch;++r){sample_configuration(o.seed,r,binomial,permutation,active);const auto state=paired_state(first,second,active);for(int k=0;k<8;++k)local.sums[k]+=state[k];}
+        for(std::uint64_t r=begin;r<begin+per_batch;++r){
+            sample_configuration(o.seed,r,binomial,permutation,active);
+            const auto state=detailed_state(first,second,active);
+            for(int k=0;k<8;++k)local.sums[k]+=state.legacy[k];
+            for(int k=0;k<4*ordered_field_count;++k)local.ordered_sums[k]+=state.ordered[k];
+        }
         output[batch]=local;
     }
     const std::filesystem::path csv_path=o.output_prefix+".batches.csv",meta_path=o.output_prefix+".metadata.json";
     if(csv_path.has_parent_path())std::filesystem::create_directories(csv_path.parent_path());
     std::ofstream csv(csv_path);if(!csv)throw std::runtime_error("cannot open batch output");
-    csv<<"batch,counter_first,counter_last_exclusive,samples,ES_num_sum,ED_num_sum,OS_num_sum,OD_num_sum,ambient_ES_num_sum,ambient_ED_num_sum,ambient_OS_num_sum,ambient_OD_num_sum\n";
-    for(int b=0;b<o.batches;++b){const std::uint64_t first=o.replica_offset+static_cast<std::uint64_t>(b)*per_batch;csv<<b<<','<<first<<','<<first+per_batch<<','<<output[b].samples;for(Int v:output[b].sums)csv<<','<<v;csv<<'\n';}
+    csv<<"batch,counter_first,counter_last_exclusive,samples,ES_num_sum,ED_num_sum,OS_num_sum,OD_num_sum,ambient_ES_num_sum,ambient_ED_num_sum,ambient_OS_num_sum,ambient_OD_num_sum";
+    for(const char* field:ordered_field_names)for(const char* channel:std::array<const char*,4>{{"ES","ED","OS","OD"}})csv<<','<<field<<'_'<<channel<<"_num_sum";
+    csv<<'\n';
+    for(int b=0;b<o.batches;++b){const std::uint64_t first=o.replica_offset+static_cast<std::uint64_t>(b)*per_batch;csv<<b<<','<<first<<','<<first+per_batch<<','<<output[b].samples;for(Int v:output[b].sums)csv<<','<<v;for(Int v:output[b].ordered_sums)csv<<','<<v;csv<<'\n';}
     const double seconds=std::chrono::duration<double>(std::chrono::steady_clock::now()-start).count();
     std::ofstream meta(meta_path);meta<<std::setprecision(17)
-      <<"{\n  \"schema\": \"matching-one.p200-n650-mixed-join-run.v1\",\n  \"git_commit\": \""<<o.git_commit
+      <<"{\n  \"schema\": \"matching-one.p255-n650-ordered-proxy-replay.v1\",\n  \"git_commit\": \""<<o.git_commit
       <<"\",\n  \"samples\": "<<o.samples<<",\n  \"batches\": "<<o.batches<<",\n  \"threads\": "<<o.threads
       <<",\n  \"seed\": "<<o.seed<<",\n  \"replica_offset\": "<<o.replica_offset
       <<",\n  \"p_ref\": \"0.592746050790\",\n  \"state_order\": [\"ES\",\"ED\",\"OS\",\"OD\"],\n  \"stored_sum_divisor\": 2,\n"
+      <<"  \"ordered_fields\": [\"Jlocal\",\"ambient_h0\",\"ambient_h2\",\"ambient_h5\",\"ambient_h25\",\"partition_r0\",\"partition_r2\",\"partition_r5\",\"partition_r25\",\"Cact\"],\n"
+      <<"  \"Cact_definition\": \"1{ambient_h25=2}(1{ambient_h2=2}-1{ambient_h5=2})\",\n"
+      <<"  \"replay_source_commit\": \"308097b\",\n"
+      <<"  \"replay_source_batch_sha256\": \"db5be1d870135053691e34605703f15e99e95df2da88dc279c0a55e26130d0af\",\n"
       <<"  \"first_periods\": [[23,-11],[11,23]],\n  \"second_periods\": [[17,-19],[19,17]],\n"
       <<"  \"lift_convention\": \"raw displacement between C++ column-HNF representatives; ambient-H1 is convention-sensitive secondary\",\n"
       <<"  \"rng\": \"counter SplitMix64; inverse-CDF Binomial(650,p_ref); conditional Fisher-Yates prefix\",\n"
