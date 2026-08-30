@@ -1,19 +1,18 @@
 # Scorer descriptor-adoption inventory
 
-In this checked snapshot, the exact `scripts/*score*.py` corpus contains 55
-files. Python-AST inspection finds twenty-four
+In this checked snapshot, the exact `scripts/*score*.py` corpus contains 56
+files. Python-AST inspection finds twenty-five
 direct typed entrypoints importing both `ObservableDescriptor` and
-`map_observable` from `wrapping_channels`. Twenty-three frozen kernels are covered by
+`map_observable` from `wrapping_channels`. Twenty-four frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Seven paths are confirmed channel-bearing and
+a descriptor is not applicable. Six paths are confirmed channel-bearing and
 require typed migrations:
 `score_norm4_production.py`,
 `score_norm4_thermal_jet.py`, `score_norm5_thermal_jet.py`,
 `score_p159_pell_hex_filter.py`,
 `score_p49_fullcurve_doubling.py`,
-`score_p50_fullcurve_n290.py`,
-`threshold_score_modes.py`. No scorer remains outside a registered
+`score_p50_fullcurve_n290.py`. No scorer remains outside a registered
 audit class.
 
 This closes an inventory gap: the repository now has a deterministic list,
@@ -33,7 +32,7 @@ unchanged.
 but no current scorer has that status. Static membership alone would not prove
 a semantic bug, data-provenance failure, or need for migration; any future
 corpus addition must still be reviewed before modification. Issue #146 remains
-open because inventory classification is not the same as implementing the 7
+open because inventory classification is not the same as implementing the 6
 required typed migrations.
 
 `score_axis_pair_annihilator.py` and its stable-reader entrypoint are now
@@ -219,16 +218,15 @@ score, the no-target-refit rule, and the distinction from fixed-coordinate
 P31/P43 `either/even` DeltaS. The four summaries share source and target blocks
 and are not promoted to four independent evidence rows.
 
-`threshold_score_modes.py` is migration-required rather than a generic
-Krawtchouk helper. Although it exposes reusable basis functions, its operational
-entrypoint reconstructs the intrinsic center inside synchronized delete-one
-replicates, pairs two ordered orientations, forms matching S/D sectors, divides
-by `DeltaCos4`, emits four P4 value/derivative views, and assigns a parity-tower
-scaling convention. A migration must type the threshold-rank channel, intrinsic
-center, orientation pair, S/D sector, Krawtchouk order, angular normalization,
-derivative coordinate, and parity-tower units. It must preserve the exact mode
-0/mode 1 identities, aligned jackknife covariance, and the guard that those
-views reuse existing evidence rather than creating independent blocks.
+`threshold_score_modes.py` is now a covered frozen kernel. Its typed
+entrypoint validates exact angular-normalized identity maps for matching-even
+S and matching-odd D before mode projection. The gate freezes intrinsic-center
+recomputation, first/second orientation order, the signed DeltaCos4 denominator,
+the orthonormal Krawtchouk convention, mode-0/value and mode-1/derivative
+identities, parity-tower powers, and synchronized delete-one covariance. Higher
+modes remain response coordinates rather than new topology identities, and all
+views reuse the same threshold histograms rather than becoming independent
+evidence blocks.
 
 The axis-pair annihilator score path is migration-required as one operational
 unit. The base scorer reconstructs the cross matching function from
