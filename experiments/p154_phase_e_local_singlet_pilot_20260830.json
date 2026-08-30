@@ -1,0 +1,49 @@
+{
+  "issue": 154,
+  "phase": "E local singlet pilot",
+  "status": "frozen before any pilot values",
+  "base_commit": "5ac456d7397bdf311c01bad2f6510bd425c93e0f",
+  "fixed_probability": 0.59274605079,
+  "observable": {
+    "black": "translation average over the 2N axis placements of the indicator that z-e and z+e lie in one occupied primal-NN cluster",
+    "white": "the exact same placement average for vacant endpoints connected in the white matching graph (NN plus diagonals)",
+    "claim_boundary": "finite-lattice local singlet rows; neither row is named as continuum energy",
+    "derived_rows": ["A=I2-I0", "E=I2+I0", "C=(K1+K2)/(2(N+1))-1/2", "W=(K2-K1)/(N+1)", "J_even=(J_black+J_white)/2", "J_odd=(J_black-J_white)/2"]
+  },
+  "runs": [
+    {
+      "N": 65,
+      "first": [8, 1],
+      "second": [7, 4],
+      "first_period_matrix": [[8, -1], [1, 8]],
+      "second_period_matrix": [[7, -4], [4, 7]],
+      "host": "Huawei-CodeBuddy",
+      "pilot_samples": 20000,
+      "batches": 100,
+      "seed": 202615465,
+      "pilot_counter": [15465000000, 15465020000],
+      "authorized_extension_counter": [15465020000, 15465100000]
+    },
+    {
+      "N": 130,
+      "first": [11, 3],
+      "second": [9, 7],
+      "first_period_matrix": [[11, -3], [3, 11]],
+      "second_period_matrix": [[9, -7], [7, 9]],
+      "host": "Huawei-CodeBuddy-XPk2PZ",
+      "pilot_samples": 20000,
+      "batches": 100,
+      "seed": 2026154130,
+      "pilot_counter": [15465200000, 15465220000],
+      "authorized_extension_counter": [15465220000, 15465300000]
+    }
+  ],
+  "score": {
+    "projector": "P4[X]=(X_first-X_second)/(cos(4theta_first)-cos(4theta_second))",
+    "covariance": "sample covariance of the 100 aligned batch P4 vectors divided by 100; sizes are independent blocks",
+    "frozen_ray_candidates": [["A", "E", "C"], ["A", "E", "J_even"], ["A", "E", "J_odd"]],
+    "report_all_candidates": true,
+    "promotion_gate": "extend both sizes to 100k iff one fixed local row has absolute z at least 3 at both sizes and its common-ray chi-square is at least 4 lower than the A/E/C common-ray chi-square; otherwise stop",
+    "no_phase_or_candidate_selection": true
+  }
+}
