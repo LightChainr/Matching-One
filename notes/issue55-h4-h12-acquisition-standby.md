@@ -80,7 +80,9 @@ N325  11868444676518621238
 ```
 
 Each machine runs both sizes concurrently with eight threads per size. One
-machine receives exactly one shard:
+machine receives exactly one shard. The operational assignment is
+`Huawei-CodeBuddy` (Zy), `Huawei-CodeBuddy-XPk2PZ` (XP), and
+`Huawei-CodeBuddy-HZsCM6` (HZ), in shard order 0, 1, 2:
 
 ```text
 shard 0  [15551000000,15751000000)  200M/design
