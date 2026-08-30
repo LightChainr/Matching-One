@@ -1,0 +1,58 @@
+{
+  "schema": "matching-one/p334-active-boundary-organization-freeze/v1",
+  "status": "frozen_before_fresh_data",
+  "parent_result_commit": "8fd596d240e6910796073e38772e4a4659cb6941",
+  "runner_source_sha256": "94fe2882da300dcb5be785455c2a825036655baaadb82c2fcf7d0e39b946b341",
+  "old_transport_score": {
+    "path": "results/local-20260830/P334-morphology-state-transport/score.json",
+    "sha256": "b384b79b127c13eaad492d41fc6eab22d745d39aa4b57145ab8c401adaf9dab2"
+  },
+  "old_raw_lock": {
+    "path": "analysis/p334_bottleneck_proxy_pilot_raw_lock.json",
+    "sha256": "fbe6eba4655b8d4ce21e0d74d9c24ee5bde77e9ec025ddae2faa699f39ad024d"
+  },
+  "temporal_score": {
+    "git_spec": "5a7f2d9:results/huawei-20260830/P334-two-time-birth-kernel/score.json",
+    "sha256": "bc66cdc3495bf6b8a0c2b134cca4232f64581bb7ebf34eaa4f953a74c64c3451"
+  },
+  "raw_organization_fields": [
+    "boundary_axis_imbalance",
+    "boundary_corner_balance",
+    "frontier_components",
+    "largest_frontier_component",
+    "frontier_component_sumsq"
+  ],
+  "scored_organization_coordinates": {
+    "axis_anisotropy": "abs(boundary_axis_imbalance)/boundary_cut_edges",
+    "corner_balance": "boundary_corner_balance/max(boundary_contact_pairs,1)",
+    "frontier_components_L": "frontier_components/sqrt(N)",
+    "largest_frontier_arc_L": "largest_frontier_component/sqrt(N)",
+    "frontier_concentration": "frontier_component_sumsq/vacant_frontier^2"
+  },
+  "runs": {
+    "N325": {
+      "samples": 20000,
+      "batches": 20,
+      "seed": 20260830334625,
+      "replica_counter_first": 34625000000,
+      "replica_counter_last_exclusive": 34625020000,
+      "k0": 193,
+      "first_matrix": [325, 57, 0, 1],
+      "second_matrix": [325, 18, 0, 1]
+    },
+    "N425": {
+      "samples": 20000,
+      "batches": 20,
+      "seed": 20260830334725,
+      "replica_counter_first": 34725000000,
+      "replica_counter_last_exclusive": 34725020000,
+      "k0": 252,
+      "first_matrix": [425, 132, 0, 1],
+      "second_matrix": [425, 268, 0, 1]
+    }
+  },
+  "primary_age_score": "Keep the two cross-size rank-one morphology subspaces from 8fd596d fixed. On the fresh target block compare age+fixed-rank1 with age+fixed-rank1+all five organization coordinates. Add the paired fresh age-coefficient shift and full two-orientation covariance to the corresponding 8fd596d production-anchor residual.",
+  "primary_decision": "Organization absorbs the remaining cross-size rank-one age association only if both size-level joint p values are at least 0.01 and all four absolute residual retentions relative to the 8fd596d rank-one residual are at most 0.25.",
+  "temporal_secondary": "Using the external fixed production eigenvectors, report the line-centered incremental R2 of the five organization coordinates beyond the opposite-size rank-one morphology score for modes 2 and 3, with the full four-environment/two-mode common-batch delete-one covariance. This cannot alter the primary gate.",
+  "claim_boundary": "This is a fresh small mechanism pilot but its hypothesis was motivated by the revealed 8fd596d boundary-rotation result. It is not an independent discovery block, and failure to absorb does not prove intrinsic temporal memory."
+}

@@ -373,6 +373,11 @@ struct GeometryPilotRecord {
     int core_edges = 0;
     int articulation_vertices = 0;
     int bridges = 0;
+    int boundary_axis_imbalance = 0;
+    int boundary_corner_balance = 0;
+    int frontier_components = 0;
+    int largest_frontier_component = 0;
+    int frontier_component_sumsq = 0;
     int h2 = 0;
     int h2_theta = 0;
     int h2_figure8 = 0;
@@ -392,6 +397,11 @@ struct CarrierShapeMetrics {
     int core_edges = 0;
     int articulation_vertices = 0;
     int bridges = 0;
+    int boundary_axis_imbalance = 0;
+    int boundary_corner_balance = 0;
+    int frontier_components = 0;
+    int largest_frontier_component = 0;
+    int frontier_component_sumsq = 0;
 };
 
 CarrierShapeMetrics carrier_shape_metrics(
@@ -403,6 +413,7 @@ CarrierShapeMetrics carrier_shape_metrics(
     }
     CarrierShapeMetrics output;
     std::vector<int> vacant_contacts(n, 0);
+    std::vector<std::uint8_t> vacant_contact_directions(n, 0);
     std::vector<std::vector<std::pair<int, int>>> adjacency(n);
     std::vector<int> degree(n, 0);
     for (int edge_index = 0; edge_index < static_cast<int>(edges.size()); ++edge_index) {
@@ -410,10 +421,14 @@ CarrierShapeMetrics carrier_shape_metrics(
         if (essential[edge.i] && !active[edge.j]) {
             ++output.boundary_cut_edges;
             ++vacant_contacts[edge.j];
+            vacant_contact_directions[edge.j] |= edge.dx != 0 ? (1U << 2) : (1U << 3);
+            output.boundary_axis_imbalance += edge.dx != 0 ? 1 : -1;
         }
         if (essential[edge.j] && !active[edge.i]) {
             ++output.boundary_cut_edges;
             ++vacant_contacts[edge.i];
+            vacant_contact_directions[edge.i] |= edge.dx != 0 ? (1U << 0) : (1U << 1);
+            output.boundary_axis_imbalance += edge.dx != 0 ? 1 : -1;
         }
         if (!(essential[edge.i] && essential[edge.j])) continue;
         adjacency[edge.i].push_back({edge.j, edge_index});
@@ -427,6 +442,54 @@ CarrierShapeMetrics carrier_shape_metrics(
             output.boundary_contact_pairs +=
                 vacant_contacts[vertex] * (vacant_contacts[vertex] - 1) / 2;
         }
+        if (!active[vertex] && vacant_contacts[vertex] > 0) {
+            const std::uint8_t mask = vacant_contact_directions[vertex];
+            int adjacent = 0;
+            for (int direction = 0; direction < 4; ++direction) {
+                adjacent += static_cast<int>((mask & (1U << direction)) &&
+                    (mask & (1U << ((direction + 1) % 4))));
+            }
+            const int opposite = static_cast<int>((mask & 1U) && (mask & 4U)) +
+                                 static_cast<int>((mask & 2U) && (mask & 8U));
+            output.boundary_corner_balance += adjacent - opposite;
+        }
+    }
+
+    // Organization of the active boundary: connected vacant-frontier arcs in
+    // the same nearest-neighbour quotient graph.  Only aggregate sizes leave
+    // this traversal; no configuration or component labels are persisted.
+    std::vector<std::uint8_t> frontier(n, 0), frontier_seen(n, 0);
+    std::vector<std::vector<int>> frontier_adjacency(n);
+    for (int vertex = 0; vertex < n; ++vertex) {
+        frontier[vertex] = static_cast<std::uint8_t>(
+            !active[vertex] && vacant_contacts[vertex] > 0);
+    }
+    for (const Edge& edge : edges) {
+        if (frontier[edge.i] && frontier[edge.j] && edge.i != edge.j) {
+            frontier_adjacency[edge.i].push_back(edge.j);
+            frontier_adjacency[edge.j].push_back(edge.i);
+        }
+    }
+    for (int start = 0; start < n; ++start) {
+        if (!frontier[start] || frontier_seen[start]) continue;
+        ++output.frontier_components;
+        frontier_seen[start] = 1;
+        std::vector<int> stack{start};
+        int component_size = 0;
+        while (!stack.empty()) {
+            const int vertex = stack.back();
+            stack.pop_back();
+            ++component_size;
+            for (const int other : frontier_adjacency[vertex]) {
+                if (!frontier_seen[other]) {
+                    frontier_seen[other] = 1;
+                    stack.push_back(other);
+                }
+            }
+        }
+        output.largest_frontier_component =
+            std::max(output.largest_frontier_component, component_size);
+        output.frontier_component_sumsq += component_size * component_size;
     }
 
     std::vector<std::uint8_t> core = essential;
@@ -986,6 +1049,11 @@ class ThresholdEngine {
         record.core_edges = shape.core_edges;
         record.articulation_vertices = shape.articulation_vertices;
         record.bridges = shape.bridges;
+        record.boundary_axis_imbalance = shape.boundary_axis_imbalance;
+        record.boundary_corner_balance = shape.boundary_corner_balance;
+        record.frontier_components = shape.frontier_components;
+        record.largest_frontier_component = shape.largest_frontier_component;
+        record.frontier_component_sumsq = shape.frontier_component_sumsq;
 
         for (int vertex = 0; vertex < geometry_.n; ++vertex) {
             if (active_[vertex]) continue;
@@ -1660,15 +1728,16 @@ void self_test() {
     // a four-cycle with one leaf and one vacant site touching two cycle sites.
     const std::vector<Edge> shape_edges = {
         {0, 1, 0, 0}, {1, 2, 0, 0}, {2, 3, 0, 0}, {3, 0, 0, 0},
-        {3, 4, 0, 0}, {0, 5, 0, 0}, {1, 5, 0, 0}};
-    const std::vector<std::uint8_t> shape_active = {1, 1, 1, 1, 1, 0};
-    const std::vector<std::uint8_t> shape_essential = {1, 1, 1, 1, 1, 0};
+        {3, 4, 0, 0}, {0, 5, 1, 0}, {1, 5, 0, 1},
+        {2, 6, 1, 0}, {5, 6, 0, 1}};
+    const std::vector<std::uint8_t> shape_active = {1, 1, 1, 1, 1, 0, 0};
+    const std::vector<std::uint8_t> shape_essential = {1, 1, 1, 1, 1, 0, 0};
     const CarrierShapeMetrics shape = carrier_shape_metrics(
-        6, shape_active, shape_essential, shape_edges);
+        7, shape_active, shape_essential, shape_edges);
     auto components_after = [&](int removed_vertex, int removed_edge) {
-        std::vector<std::uint8_t> seen(6, 0);
+        std::vector<std::uint8_t> seen(7, 0);
         int components = 0;
-        for (int start = 0; start < 6; ++start) {
+        for (int start = 0; start < 7; ++start) {
             if (!shape_essential[start] || start == removed_vertex || seen[start]) continue;
             ++components;
             seen[start] = 1;
@@ -1701,10 +1770,13 @@ void self_test() {
     for (int edge = 0; edge < 5; ++edge) {
         brute_bridges += components_after(-1, edge) > base_components;
     }
-    if (shape.boundary_cut_edges != 2 || shape.boundary_multicontact_sites != 1 ||
+    if (shape.boundary_cut_edges != 3 || shape.boundary_multicontact_sites != 1 ||
         shape.boundary_contact_pairs != 1 || shape.core_vertices != 4 ||
         shape.core_edges != 4 || shape.articulation_vertices != brute_articulations ||
-        shape.bridges != brute_bridges || brute_articulations != 1 || brute_bridges != 1) {
+        shape.bridges != brute_bridges || brute_articulations != 1 || brute_bridges != 1 ||
+        shape.boundary_axis_imbalance != 1 || shape.boundary_corner_balance != 1 ||
+        shape.frontier_components != 1 || shape.largest_frontier_component != 2 ||
+        shape.frontier_component_sumsq != 4) {
         throw std::runtime_error("tiny carrier bottleneck/2-core oracle failed");
     }
     std::cout << "self-test passed: arbitrary integer periods, exact HNF quotient/winding, "
@@ -1912,7 +1984,10 @@ void run_geometry_pilot_design(const PairDesign& design, const Options& options,
                    << value.boundary_multicontact_sites << ','
                    << value.boundary_contact_pairs << ',' << value.core_vertices << ','
                    << value.core_edges << ',' << value.articulation_vertices << ','
-                   << value.bridges << ','
+                   << value.bridges << ',' << value.boundary_axis_imbalance << ','
+                   << value.boundary_corner_balance << ',' << value.frontier_components << ','
+                   << value.largest_frontier_component << ','
+                   << value.frontier_component_sumsq << ','
                    << value.h2 << ',' << value.h2_theta << ',' << value.h2_figure8 << ','
                    << value.h2_separate << ',' << value.h2_direction_positive << ','
                    << value.h2_direction_negative << ',' << value.h2_direction_mixed << ','
@@ -2186,6 +2261,8 @@ int run(int argc, char** argv) {
                "essential_size,essential_carriers,occupied_frontier,vacant_frontier,"
                "boundary_cut_edges,boundary_multicontact_sites,boundary_contact_pairs,"
                "core_vertices,core_edges,articulation_vertices,bridges,"
+               "boundary_axis_imbalance,boundary_corner_balance,frontier_components,"
+               "largest_frontier_component,frontier_component_sumsq,"
                "H2,H2_theta,H2_figure8,H2_separate,H2_direction_positive,"
                "H2_direction_negative,H2_direction_mixed,next_site,next_exit\n";
     }
