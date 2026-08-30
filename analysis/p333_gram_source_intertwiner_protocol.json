@@ -1,0 +1,68 @@
+{
+  "schema": "matching-one/p333-gram-source-intertwiner-protocol/v1",
+  "status": "frozen_before_exact_intersection",
+  "issues": [333, 370],
+  "base_commit": "d0fca795c89338e16b732334c87d7885bc7fcfd0",
+  "latest_main_audited": "75da8839446afff472a3d96ec572a96e55707278",
+  "question": "Do first-jet Gram compatibility and a fixed connectivity source select the canonical affine sigma-intertwiner X=T uniquely at widths 2,3,4?",
+  "spaces": {
+    "module": "V_w is the rational vector space on circular noncrossing connectivity states in repository order",
+    "widths": [2, 3, 4],
+    "radical": "R_w={x: one^T x=0}, with columns B_a=e_a-e_last",
+    "first_jet_gram": "G1(pi,sigma)=number of blocks of the join pi vee sigma; H=B^T G1 B",
+    "distinguished_source": "s0 is the all-singleton connectivity state (0,1,...,w-1)"
+  },
+  "frozen_equations": {
+    "affine_sigma_intertwiner": [
+      "X e_i = e_(i+1 mod w) X for every periodic join generator",
+      "X T = T X"
+    ],
+    "endpoint_normalization": "one^T X=one^T; equivalently X preserves the Q=1 endpoint quotient and maps R_w to itself",
+    "gram_self_adjoint": "for the induced radical map A defined by X B=B A, require H A=A^T H",
+    "source_normalization": "X s0=s0",
+    "canonical_candidate": "X=T"
+  },
+  "analysis_ladder": [
+    "affine sigma-intertwiners",
+    "plus endpoint normalization",
+    "plus first-jet Gram self-adjointness",
+    "plus distinguished-source normalization"
+  ],
+  "outputs": {
+    "dimension": "For homogeneous stages report vector-space nullity; for normalized stages report affine-solution tangent dimension or inconsistency.",
+    "basis": "Give a deterministic rational particular solution and primitive-integer tangent basis in row-major matrix coordinates.",
+    "canonical_test": "At each stage report exact residual ranks for X=T.",
+    "remaining_moduli": "If the final tangent dimension is positive, parameterize X=X0+sum_a theta_a Y_a. If zero, state uniqueness. If inconsistent, state that no normalized Gram-compatible confluence exists in this quotient."
+  },
+  "decision_rule": {
+    "canonical_unique": "The final affine solution exists, has tangent dimension zero, and its particular solution equals T.",
+    "canonical_not_unique": "The final affine solution exists with positive tangent dimension and contains T.",
+    "canonical_excluded": "The final affine solution exists but T violates at least one frozen equation.",
+    "empty_intersection": "The final affine equation system is inconsistent."
+  },
+  "deduplication": {
+    "d0fca79": "already proves affine Hom dimensions 2,3,9 and nonuniqueness before Gram/source constraints",
+    "6c60b0e": "already constructs a separate three-mark Gram-self-adjoint signed-history nilpotent K; it does not intersect the affine sigma-Hom space",
+    "PR385_b5c761a": "already proves finite-noise Jordan nonseparation and a conditional C4 character obstruction; it does not choose an exact closure-module intertwiner"
+  },
+  "claim_boundary": [
+    "This is exact rational algebra only in the width-2,3,4 noncrossing join representation.",
+    "The first-jet Gram is restricted from the full connectivity pairing; no generic-Q detach or loop-weight generator is added.",
+    "Source normalization fixes the declared all-singleton source and must not be reinterpreted as a measured thermal insertion.",
+    "Uniqueness here would not overcome PR385 finite-noise nonseparation without an independently justified physical spectral or symmetry condition."
+  ],
+  "compute_contract": {
+    "arithmetic": "fractions.Fraction exact row reduction",
+    "monte_carlo": false,
+    "fit": false,
+    "server": false,
+    "expected_cost": "local seconds"
+  },
+  "frozen_inputs": {
+    "d0fca79:scripts/p321_graded_closure_extension.py": "bd9ecb918ef9c94c5eb58b55f46a51ff24876cc6",
+    "d0fca79:analysis/p321_graded_closure_extension.json": "91cf2982c24c984b14469da395ef8d2e3d314028",
+    "6c60b0e:scripts/p333_dual_number_gram_extension.py": "5c6cbd98a62d3f51f7def5ef254a9304e3308a39",
+    "6c60b0e:results/p333-dual-number-gram-extension/extension.json": "e0c5342f2239504ad4b2bb0e290805ec49e74afa",
+    "PR385-b5c761a:notes/jordan-identifiability-and-c4-five-state-obstruction.md": "ba9ebc967696407f330b494dd279841a865bc2ee"
+  }
+}
