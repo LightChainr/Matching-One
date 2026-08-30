@@ -1,0 +1,109 @@
+{
+  "field_hypothesis": "ordinary thermal Q4 epsilon, h=hbar=5/8",
+  "issue": 321,
+  "limit_strategy": [
+    "At each fixed rho, first take n_width to infinity and extract C_width(rho).",
+    "Only then take rho to infinity; E4(i*rho)=1+240 exp(-2*pi*rho)+O(exp(-4*pi*rho)).",
+    "For equal-area fits, divide the N^-2 coefficient C_N(rho) by rho^2 before taking the cylinder limit.",
+    "rho=9 is a numerical cusp check for this continuum formula, not proof that finite lattice data have reached the TL endpoint."
+  ],
+  "normalization_free_prediction": {
+    "cylinder_cusp": "E4(i*infinity)=1",
+    "equal_area_conversion": "if N=rho*n_width^2 and p-pc=C_N(rho)N^-2, then C_width(rho)=C_N(rho)/rho^2",
+    "equal_area_descaling": "C_N(rho)/rho^2 has the finite cylinder limit and is the quantity to compare with E4(i*rho)",
+    "ratio": "C_width(rho)/C_width(infinity)=E4(i*rho)",
+    "width_law": "p_n(rho)-pc=C_width(rho)n_width^-4+..."
+  },
+  "operator_boundary": {
+    "absolute_missing_input": "the lattice coupling ratio g_u/g_t; it cancels from aspect-ratio ratios",
+    "logarithmic_loophole": "a top Jordan-partner readout can add a second modulus function and is not covered by the plain E4 curve",
+    "thermal_Q4": "The nonzero candidate is the descendant of the thermal insertion that defines F_t, not a descendant of the vacuum partition function.",
+    "unconditional_missing_input": "a proof that the homology projector is Virasoro-transparent for the restricted thermal one-point, excluding defect/contact terms in the descendant Ward recursion",
+    "vacuum_KdV": "Applying D2D0 to critical Pinson-Arguin sector probabilities is Alexander-even and gives exactly zero in P2-P0."
+  },
+  "projector": "A_top=P2-P0",
+  "records": [
+    {
+      "E4_i_rho": "1.455762892268709322462422003598869287432394585528203495718848898300052",
+      "absolute_tail_bound": "6.499057692125383889585014260263981906909396989155898678620075809536166e-100",
+      "distance_from_cylinder_cusp": "0.4557628922687093224624220035988692874323945855282034957188488983000518",
+      "equal_area_C_over_square_C": "1.0",
+      "equal_area_descaled_C_over_cylinder_C": "1.455762892268709322462422003598869287432394585528203495718848898300052",
+      "q_series_terms": 38,
+      "rho": "1",
+      "rho_decimal": "1.0",
+      "tau": "i*(1)",
+      "width_C_over_cylinder_C": "1.455762892268709322462422003598869287432394585528203495718848898300052",
+      "width_C_over_square_C": "1.0"
+    },
+    {
+      "E4_i_rho": "1.003381819198863101065858000007377567535673588370181756025829973817935",
+      "absolute_tail_bound": "5.792432183164620484031201896259885611062332924156433922038574573879467e-101",
+      "distance_from_cylinder_cusp": "0.003381819198863101065858000007377567535673588370181756025829973817935036",
+      "equal_area_C_over_square_C": "2.178364390729178364778720641232925975391411958283686806702436053013665",
+      "equal_area_descaled_C_over_cylinder_C": "1.003381819198863101065858000007377567535673588370181756025829973817935",
+      "q_series_terms": 21,
+      "rho": "16/9",
+      "rho_decimal": "1.777777777777777777777777777777777777777777777777777777777777777777778",
+      "tau": "i*(16/9)",
+      "width_C_over_cylinder_C": "1.003381819198863101065858000007377567535673588370181756025829973817935",
+      "width_C_over_square_C": "0.6892481080041540919807670778901054844011889399256977786831926573988548"
+    },
+    {
+      "E4_i_rho": "1.00017398847557106882291969602311469749702884295946539324314968614686",
+      "absolute_tail_bound": "5.979878190335238640723078443595195984455964098642294178210698308332117e-99",
+      "distance_from_cylinder_cusp": "0.0001739884755710688229196960231146974970288429594653932431496861468597163",
+      "equal_area_C_over_square_C": "3.478163129138865065995478693905175525993986438511720053385378908529818",
+      "equal_area_descaled_C_over_cylinder_C": "1.00017398847557106882291969602311469749702884295946539324314968614686",
+      "q_series_terms": 16,
+      "rho": "9/4",
+      "rho_decimal": "2.25",
+      "tau": "i*(9/4)",
+      "width_C_over_cylinder_C": "1.00017398847557106882291969602311469749702884295946539324314968614686",
+      "width_C_over_square_C": "0.6870445687187881611842920876849729434062195434097224796810625004503345"
+    },
+    {
+      "E4_i_rho": "1.000000002918773610577705492437165323187622709531113292817558586628113",
+      "absolute_tail_bound": "2.041869402321503859264983601878154814534052340542938637033600842294848e-104",
+      "distance_from_cylinder_cusp": "0.000000002918773610577705492437165323187622709531113292817558586628113108776756",
+      "equal_area_C_over_square_C": "10.99080085889910643300633271578636779463626953266355527441254901746525",
+      "equal_area_descaled_C_over_cylinder_C": "1.000000002918773610577705492437165323187622709531113292817558586628113",
+      "q_series_terms": 9,
+      "rho": "4",
+      "rho_decimal": "4.0",
+      "tau": "i*(4)",
+      "width_C_over_cylinder_C": "1.000000002918773610577705492437165323187622709531113292817558586628113",
+      "width_C_over_square_C": "0.6869250536811941520628957947366479871647668457914722046507843135915779"
+    },
+    {
+      "E4_i_rho": "1.00000000000000000000006628829864453647571701761740370592502337815995",
+      "absolute_tail_bound": "5.796614726144477995578046577986405933926649784297557007234746408990789e-119",
+      "distance_from_cylinder_cusp": "6.628829864453647571701761740370592502337815995038068414693229388687879e-23",
+      "equal_area_C_over_square_C": "55.64092918577345054163984244170270477439077068598075595661796979046518",
+      "equal_area_descaled_C_over_cylinder_C": "1.00000000000000000000006628829864453647571701761740370592502337815995",
+      "q_series_terms": 4,
+      "rho": "9",
+      "rho_decimal": "9.0",
+      "tau": "i*(9)",
+      "width_C_over_cylinder_C": "1.00000000000000000000006628829864453647571701761740370592502337815995",
+      "width_C_over_square_C": "0.6869250516762154387856770671815148737579107492096389624273823430921627"
+    }
+  ],
+  "schema": "matching-one/p321-thermal-q4-aspect-ratio-oracle/v1",
+  "sources": [
+    "https://arxiv.org/abs/hep-th/0111193",
+    "https://arxiv.org/abs/2112.01563",
+    "https://arxiv.org/abs/2604.24491"
+  ],
+  "square_exact_value": {
+    "decimal": "1.455762892268709322462422003598869287432394585528203495718848898300052",
+    "identity": "E4(i)=3*Gamma(1/4)^8/(64*pi^6)"
+  },
+  "status": "conditional_parameter_free_shape_prediction",
+  "ward_identity": {
+    "Q4": "40 L_-2^2 - 60 L_-3 L_-1 - 9 L_-4",
+    "holomorphic_prefactor_decimal": "666.9816927744889105217372779934947200849402741199154568596340927674393",
+    "holomorphic_ratio": "<Q4 epsilon>/<epsilon>=(493*pi^4/72) E4(tau)",
+    "real_aligned_ratio": "add the antiholomorphic conjugate; its factor two is absorbed by the real lattice coupling"
+  }
+}

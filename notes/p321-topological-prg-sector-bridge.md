@@ -251,6 +251,98 @@ full cross-aspect covariance without adding a new Monte Carlo engine.  The
 `rho=9` row is only an endpoint diagnostic, not a claim that the TL limit has
 already been reached.
 
+## 7. The ordinary thermal-Q4 hypothesis fixes the whole shape curve
+
+There are two distinct level-four operations in the repository and they must
+not be conflated.  Applying the vacuum operator `K4=D2D0` to the critical
+Pinson--Arguin rank probabilities gives an Alexander-even response.  It is
+killed exactly by `A_top=P2-P0` and cannot be the root-moving numerator.
+
+The thermal candidate instead inserts `epsilon` first and then takes its
+non-null level-four descendant
+
+\[
+Q_4\epsilon=(40L_{-2}^2-60L_{-3}L_{-1}-9L_{-4})\epsilon.
+\]
+
+Brehm--Runkel's torus Ward recursion is local and gives, at
+`c=0,h=5/8`,
+
+\[
+\frac{\langle Q_4\epsilon\rangle_\tau}
+     {\langle\epsilon\rangle_\tau}
+=\frac{493\pi^4}{72}E_4(\tau).
+\]
+
+Consequently, if the homology restriction is Virasoro-transparent so that
+this recursion acts componentwise on its thermal one-point function, then
+the unknown sector-resolved energy matrix element cancels:
+
+\[
+\frac{F_u(\rho)}{F_t(\rho)}\mathrel{\propto}E_4(i\rho).
+\]
+
+For a real aligned perturbation the antiholomorphic conjugate only supplies a
+common factor two.  The lattice coupling and this convention both cancel in
+the width-normalized coefficient, giving
+
+\[
+\boxed{\frac{C_{\rm width}(\rho)}{C_{\rm width}(\infty)}=E_4(i\rho)}.
+\]
+
+The normalized Eisenstein series has cusp value one, so the cylinder endpoint
+is fixed without fitting.  The equal-area coefficient must first be converted
+using the boxed `C_width=C_N/rho^2` rule above.  The limits are ordered: first
+extract `C_width(rho)` as `n_width -> infinity` at fixed `rho`, then take
+`rho -> infinity`.  The continuum approach is exponentially fast,
+
+\[
+E_4(i\rho)=1+240e^{-2\pi\rho}+O(e^{-4\pi\rho}).
+\]
+
+The registered values are:
+
+| rho | `C_width(rho)/C_width(infinity)` | `C_width(rho)/C_width(1)` |
+|---:|---:|---:|
+| `1` | `1.45576289226870932246` | `1` |
+| `16/9` | `1.00338181919886310107` | `0.689248108004154091981` |
+| `9/4` | `1.00017398847557106882` | `0.687044568718788161184` |
+| `4` | `1.00000000291877361058` | `0.686925053681194152063` |
+| `9` | `1.00000000000000000000006629` | `0.686925051676215438786` |
+
+At `rho=9` the continuum formula is within `6.63e-23` of its cusp.  This does
+not imply that finite lattice data at `rho=9` have lost all finite-length or
+subleading-field corrections.
+
+### Exact remaining boundary
+
+Pinson--Arguin supplies the critical topological projector, and the full Potts
+energy torus block is known (`eta^(2 Delta)` holomorphically), but neither fact
+alone proves that conditioning on the homology projector introduces no
+defect/contact term in the descendant Ward recursion.  An unconditional CFT
+theorem still needs either a Virasoro-transparent seam representation of the
+rank projector or a direct sector-resolved thermal one-point derivation.
+
+Without that statement the precise extra unknown is an additive spin-four
+defect matrix element,
+
+\[
+F_u(\tau)=\kappa E_4(\tau)F_t(\tau)+H_4^{\rm defect}(\tau),
+\]
+
+not a vague missing normalization.  The absolute lattice ratio `g_u/g_t` is
+also unknown, but it cancels from the shape ratios.  A logarithmic top-partner
+readout can add a second modulus function and is a separate frozen alternative.
+
+Reproduce the high-precision curve and its explicit q-series tail bounds with
+
+```bash
+python scripts/p321_aspect_ratio_q4_oracle.py \
+  --output predictions/p321_thermal_q4_aspect_ratio_20260830.json
+python -m unittest discover -s tests \
+  -p 'test_p321_aspect_ratio_q4_oracle.py'
+```
+
 ## Sources used
 
 - Jacobsen, *Critical points of Potts and O(N) models from eigenvalue
@@ -258,3 +350,7 @@ already been reached.
   https://arxiv.org/abs/1507.03027
 - Arguin, *Homology of Fortuin--Kasteleyn clusters of Potts models on the
   torus*, https://arxiv.org/abs/hep-th/0111193
+- Brehm and Runkel, *Lattice models from CFT on surfaces with holes I*,
+  https://arxiv.org/abs/2112.01563
+- Roux, Ribault, and Jacobsen, *Torus one-point functions in critical loop
+  models*, https://arxiv.org/abs/2604.24491
