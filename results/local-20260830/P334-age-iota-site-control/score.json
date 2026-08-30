@@ -1,0 +1,574 @@
+{
+  "schema": "matching-one/p334-age-iota-site-control-score/v1",
+  "status": "existing_archives_nested_control_scored_once",
+  "freeze_commit": "cccc10f",
+  "scorer_commit": "aebd32983be0846680e2084a236bffee7f4fe691",
+  "primary_replay": {
+    "passed": true,
+    "maximum_point_abs_difference": 0.0,
+    "maximum_covariance_abs_difference": 1.3552527156068805e-20,
+    "tolerances": {
+      "point": 1e-13,
+      "covariance": 1e-13
+    }
+  },
+  "sizes": {
+    "N325": {
+      "N": 325,
+      "point_vector_order": [
+        "first_primary",
+        "first_iota_pair",
+        "first_smith_site_pair",
+        "second_primary",
+        "second_iota_pair",
+        "second_smith_site_pair"
+      ],
+      "point_vector": [
+        -0.06725262331784872,
+        -0.06725262331784872,
+        -0.06728673571206896,
+        -0.08139932820232665,
+        -0.08139932820232665,
+        -0.08133957329477096
+      ],
+      "delete_one_covariance": [
+        [
+          9.060698957699941e-05,
+          9.060698957699941e-05,
+          9.077551702049467e-05,
+          3.208262863038699e-06,
+          3.2082628630387e-06,
+          3.1851197294145e-06
+        ],
+        [
+          9.060698957699941e-05,
+          9.060698957699941e-05,
+          9.077551702049467e-05,
+          3.208262863038699e-06,
+          3.2082628630387e-06,
+          3.1851197294145e-06
+        ],
+        [
+          9.077551702049467e-05,
+          9.077551702049467e-05,
+          9.094783893271396e-05,
+          3.3365959848439046e-06,
+          3.336595984843907e-06,
+          3.31337254343319e-06
+        ],
+        [
+          3.2082628630386966e-06,
+          3.2082628630386966e-06,
+          3.336595984843908e-06,
+          8.022675467390728e-05,
+          8.022675467390728e-05,
+          8.017538905388864e-05
+        ],
+        [
+          3.2082628630386966e-06,
+          3.2082628630386966e-06,
+          3.336595984843908e-06,
+          8.022675467390728e-05,
+          8.022675467390728e-05,
+          8.017538905388864e-05
+        ],
+        [
+          3.185119729414497e-06,
+          3.185119729414497e-06,
+          3.3133725434331874e-06,
+          8.017538905388864e-05,
+          8.017538905388864e-05,
+          8.012779701611599e-05
+        ]
+      ],
+      "controls": {
+        "primary": {
+          "orientations": {
+            "first": {
+              "beta_age_per_density": -0.06725262331784872,
+              "within_stratum_age_denominator_steps2": 83657114.82348198,
+              "survivors": 911572,
+              "identifying_survivors": 911572,
+              "next_step_exits": 57602,
+              "next_step_hazard": 0.06318974255461993,
+              "strata": 8,
+              "contributing_strata": 8,
+              "delete_one_standard_error": 0.009518770381567117,
+              "student_t": -7.065263749620633,
+              "two_sided_p_df99": 2.2661112508039237e-10,
+              "difference_from_primary": 0.0,
+              "difference_standard_error": 0.0,
+              "difference_two_sided_p_df99": 1.0,
+              "exact_noop_vs_primary": true,
+              "absolute_magnitude_retention": 1.0,
+              "age_denominator_retention": 1.0
+            },
+            "second": {
+              "beta_age_per_density": -0.08139932820232665,
+              "within_stratum_age_denominator_steps2": 84251250.78779025,
+              "survivors": 913047,
+              "identifying_survivors": 913047,
+              "next_step_exits": 57625,
+              "next_step_hazard": 0.06311285180280972,
+              "strata": 8,
+              "contributing_strata": 8,
+              "delete_one_standard_error": 0.008956938912033915,
+              "student_t": -9.087851218116965,
+              "two_sided_p_df99": 1.0668465601639618e-14,
+              "difference_from_primary": 0.0,
+              "difference_standard_error": 0.0,
+              "difference_two_sided_p_df99": 1.0,
+              "exact_noop_vs_primary": true,
+              "absolute_magnitude_retention": 1.0,
+              "age_denominator_retention": 1.0
+            }
+          },
+          "two_orientation_joint_slope": {
+            "chi_square": 127.85578729754496,
+            "degrees_of_freedom": 2,
+            "survival_p": 1.7237272551574945e-28
+          },
+          "two_orientation_joint_difference_from_primary": {
+            "chi_square": 0.0,
+            "degrees_of_freedom": 0,
+            "survival_p": 1.0
+          },
+          "minimum_age_denominator_retention": 1.0,
+          "identifiability_gate_passed": true,
+          "association_survives": true
+        },
+        "iota_pair": {
+          "orientations": {
+            "first": {
+              "beta_age_per_density": -0.06725262331784872,
+              "within_stratum_age_denominator_steps2": 83657114.82348198,
+              "survivors": 911572,
+              "identifying_survivors": 911572,
+              "next_step_exits": 57602,
+              "next_step_hazard": 0.06318974255461993,
+              "strata": 8,
+              "contributing_strata": 8,
+              "delete_one_standard_error": 0.009518770381567117,
+              "student_t": -7.065263749620633,
+              "two_sided_p_df99": 2.2661112508039237e-10,
+              "difference_from_primary": 0.0,
+              "difference_standard_error": 0.0,
+              "difference_two_sided_p_df99": 1.0,
+              "exact_noop_vs_primary": true,
+              "absolute_magnitude_retention": 1.0,
+              "age_denominator_retention": 1.0
+            },
+            "second": {
+              "beta_age_per_density": -0.08139932820232665,
+              "within_stratum_age_denominator_steps2": 84251250.78779025,
+              "survivors": 913047,
+              "identifying_survivors": 913047,
+              "next_step_exits": 57625,
+              "next_step_hazard": 0.06311285180280972,
+              "strata": 8,
+              "contributing_strata": 8,
+              "delete_one_standard_error": 0.008956938912033915,
+              "student_t": -9.087851218116965,
+              "two_sided_p_df99": 1.0668465601639618e-14,
+              "difference_from_primary": 0.0,
+              "difference_standard_error": 0.0,
+              "difference_two_sided_p_df99": 1.0,
+              "exact_noop_vs_primary": true,
+              "absolute_magnitude_retention": 1.0,
+              "age_denominator_retention": 1.0
+            }
+          },
+          "two_orientation_joint_slope": {
+            "chi_square": 127.85578729754496,
+            "degrees_of_freedom": 2,
+            "survival_p": 1.7237272551574945e-28
+          },
+          "two_orientation_joint_difference_from_primary": {
+            "chi_square": 0.0,
+            "degrees_of_freedom": 0,
+            "survival_p": 1.0
+          },
+          "minimum_age_denominator_retention": 1.0,
+          "identifiability_gate_passed": true,
+          "association_survives": true
+        },
+        "smith_site_pair": {
+          "orientations": {
+            "first": {
+              "beta_age_per_density": -0.06728673571206896,
+              "within_stratum_age_denominator_steps2": 83655699.11278822,
+              "survivors": 911572,
+              "identifying_survivors": 911569,
+              "next_step_exits": 57602,
+              "next_step_hazard": 0.06318974255461993,
+              "strata": 40,
+              "contributing_strata": 37,
+              "delete_one_standard_error": 0.009536657639483236,
+              "student_t": -7.055588892432447,
+              "two_sided_p_df99": 2.3734851966610507e-10,
+              "difference_from_primary": -3.411239422024259e-05,
+              "difference_standard_error": 6.159925911921902e-05,
+              "difference_two_sided_p_df99": 0.5809785345481745,
+              "exact_noop_vs_primary": false,
+              "absolute_magnitude_retention": 1.000507227711535,
+              "age_denominator_retention": 0.9999830772230581
+            },
+            "second": {
+              "beta_age_per_density": -0.08133957329477096,
+              "within_stratum_age_denominator_steps2": 84249309.16977175,
+              "survivors": 913047,
+              "identifying_survivors": 913043,
+              "next_step_exits": 57625,
+              "next_step_hazard": 0.06311285180280972,
+              "strata": 38,
+              "contributing_strata": 34,
+              "delete_one_standard_error": 0.008951413129563175,
+              "student_t": -9.086785752982031,
+              "two_sided_p_df99": 1.0725589671186438e-14,
+              "difference_from_primary": 5.975490755569246e-05,
+              "difference_standard_error": 6.14294900352995e-05,
+              "difference_two_sided_p_df99": 0.33305340372570813,
+              "exact_noop_vs_primary": false,
+              "absolute_magnitude_retention": 0.9992659041680643,
+              "age_denominator_retention": 0.9999769544309389
+            }
+          },
+          "two_orientation_joint_slope": {
+            "chi_square": 127.56631983186738,
+            "degrees_of_freedom": 2,
+            "survival_p": 1.9921663961938065e-28
+          },
+          "two_orientation_joint_difference_from_primary": {
+            "chi_square": 1.23058355784355,
+            "degrees_of_freedom": 2,
+            "survival_p": 0.5404831707032924
+          },
+          "minimum_age_denominator_retention": 0.9999769544309389,
+          "identifiability_gate_passed": true,
+          "association_survives": true
+        }
+      },
+      "iota_pair_support": [
+        {
+          "iota01": 1,
+          "iota12": 1,
+          "count": 1824619
+        }
+      ],
+      "smith_site_pair_support": [
+        {
+          "gcd_delta_site_N": 1,
+          "count": 1346619
+        },
+        {
+          "gcd_delta_site_N": 5,
+          "count": 268066
+        },
+        {
+          "gcd_delta_site_N": 13,
+          "count": 113463
+        },
+        {
+          "gcd_delta_site_N": 25,
+          "count": 71131
+        },
+        {
+          "gcd_delta_site_N": 65,
+          "count": 25340
+        }
+      ],
+      "iota_exactly_saturated": true,
+      "input_audit": {
+        "lines_including_header": 3999921
+      }
+    },
+    "N425": {
+      "N": 425,
+      "point_vector_order": [
+        "first_primary",
+        "first_iota_pair",
+        "first_smith_site_pair",
+        "second_primary",
+        "second_iota_pair",
+        "second_smith_site_pair"
+      ],
+      "point_vector": [
+        -0.06943758436664527,
+        -0.06943758436664527,
+        -0.06931623690604055,
+        -0.06691803647825126,
+        -0.06691803647825126,
+        -0.06684086895275462
+      ],
+      "delete_one_covariance": [
+        [
+          7.19873014565959e-05,
+          7.19873014565959e-05,
+          7.192816499189476e-05,
+          -4.940095818290941e-06,
+          -4.940095818290941e-06,
+          -4.934222582084864e-06
+        ],
+        [
+          7.19873014565959e-05,
+          7.19873014565959e-05,
+          7.192816499189476e-05,
+          -4.940095818290941e-06,
+          -4.940095818290941e-06,
+          -4.934222582084864e-06
+        ],
+        [
+          7.192816499189477e-05,
+          7.192816499189477e-05,
+          7.187229932803461e-05,
+          -4.9549969642355205e-06,
+          -4.954996964235515e-06,
+          -4.949227868646541e-06
+        ],
+        [
+          -4.940095818290942e-06,
+          -4.940095818290942e-06,
+          -4.954996964235519e-06,
+          6.100825735839356e-05,
+          6.1008257358393544e-05,
+          6.097553915458305e-05
+        ],
+        [
+          -4.940095818290942e-06,
+          -4.940095818290942e-06,
+          -4.954996964235519e-06,
+          6.100825735839356e-05,
+          6.1008257358393544e-05,
+          6.097553915458305e-05
+        ],
+        [
+          -4.934222582084868e-06,
+          -4.934222582084868e-06,
+          -4.949227868646541e-06,
+          6.0975539154583045e-05,
+          6.097553915458306e-05,
+          6.094600535462183e-05
+        ]
+      ],
+      "controls": {
+        "primary": {
+          "orientations": {
+            "first": {
+              "beta_age_per_density": -0.06943758436664527,
+              "within_stratum_age_denominator_steps2": 115947395.57845467,
+              "survivors": 900134,
+              "identifying_survivors": 900134,
+              "next_step_exits": 47208,
+              "next_step_hazard": 0.05244552477742203,
+              "strata": 8,
+              "contributing_strata": 8,
+              "delete_one_standard_error": 0.008484533072396848,
+              "student_t": -8.184019529907898,
+              "two_sided_p_df99": 9.668519294164619e-13,
+              "difference_from_primary": 0.0,
+              "difference_standard_error": 0.0,
+              "difference_two_sided_p_df99": 1.0,
+              "exact_noop_vs_primary": true,
+              "absolute_magnitude_retention": 1.0,
+              "age_denominator_retention": 1.0
+            },
+            "second": {
+              "beta_age_per_density": -0.06691803647825126,
+              "within_stratum_age_denominator_steps2": 115984931.86600037,
+              "survivors": 899984,
+              "identifying_survivors": 899984,
+              "next_step_exits": 47169,
+              "next_step_hazard": 0.05241093174989778,
+              "strata": 8,
+              "contributing_strata": 8,
+              "delete_one_standard_error": 0.007810778281220992,
+              "student_t": -8.56739675214421,
+              "two_sided_p_df99": 1.4392501719361437e-13,
+              "difference_from_primary": 0.0,
+              "difference_standard_error": 0.0,
+              "difference_two_sided_p_df99": 1.0,
+              "exact_noop_vs_primary": true,
+              "absolute_magnitude_retention": 1.0,
+              "age_denominator_retention": 1.0
+            }
+          },
+          "two_orientation_joint_slope": {
+            "chi_square": 151.67471765660184,
+            "degrees_of_freedom": 2,
+            "survival_p": 1.1594540415648507e-33
+          },
+          "two_orientation_joint_difference_from_primary": {
+            "chi_square": 0.0,
+            "degrees_of_freedom": 0,
+            "survival_p": 1.0
+          },
+          "minimum_age_denominator_retention": 1.0,
+          "identifiability_gate_passed": true,
+          "association_survives": true
+        },
+        "iota_pair": {
+          "orientations": {
+            "first": {
+              "beta_age_per_density": -0.06943758436664527,
+              "within_stratum_age_denominator_steps2": 115947395.57845467,
+              "survivors": 900134,
+              "identifying_survivors": 900134,
+              "next_step_exits": 47208,
+              "next_step_hazard": 0.05244552477742203,
+              "strata": 8,
+              "contributing_strata": 8,
+              "delete_one_standard_error": 0.008484533072396848,
+              "student_t": -8.184019529907898,
+              "two_sided_p_df99": 9.668519294164619e-13,
+              "difference_from_primary": 0.0,
+              "difference_standard_error": 0.0,
+              "difference_two_sided_p_df99": 1.0,
+              "exact_noop_vs_primary": true,
+              "absolute_magnitude_retention": 1.0,
+              "age_denominator_retention": 1.0
+            },
+            "second": {
+              "beta_age_per_density": -0.06691803647825126,
+              "within_stratum_age_denominator_steps2": 115984931.86600037,
+              "survivors": 899984,
+              "identifying_survivors": 899984,
+              "next_step_exits": 47169,
+              "next_step_hazard": 0.05241093174989778,
+              "strata": 8,
+              "contributing_strata": 8,
+              "delete_one_standard_error": 0.007810778281220991,
+              "student_t": -8.56739675214421,
+              "two_sided_p_df99": 1.4392501719361437e-13,
+              "difference_from_primary": 0.0,
+              "difference_standard_error": 0.0,
+              "difference_two_sided_p_df99": 1.0,
+              "exact_noop_vs_primary": true,
+              "absolute_magnitude_retention": 1.0,
+              "age_denominator_retention": 1.0
+            }
+          },
+          "two_orientation_joint_slope": {
+            "chi_square": 151.67471765660184,
+            "degrees_of_freedom": 2,
+            "survival_p": 1.1594540415648507e-33
+          },
+          "two_orientation_joint_difference_from_primary": {
+            "chi_square": 0.0,
+            "degrees_of_freedom": 0,
+            "survival_p": 1.0
+          },
+          "minimum_age_denominator_retention": 1.0,
+          "identifiability_gate_passed": true,
+          "association_survives": true
+        },
+        "smith_site_pair": {
+          "orientations": {
+            "first": {
+              "beta_age_per_density": -0.06931623690604055,
+              "within_stratum_age_denominator_steps2": 115945835.31919412,
+              "survivors": 900134,
+              "identifying_survivors": 900131,
+              "next_step_exits": 47208,
+              "next_step_hazard": 0.05244552477742203,
+              "strata": 40,
+              "contributing_strata": 37,
+              "delete_one_standard_error": 0.008477753200467363,
+              "student_t": -8.176250861162044,
+              "two_sided_p_df99": 1.0047611072588149e-12,
+              "difference_from_primary": 0.00012134746060471491,
+              "difference_standard_error": 5.719091572070553e-05,
+              "difference_two_sided_p_df99": 0.03635108457991614,
+              "exact_noop_vs_primary": false,
+              "absolute_magnitude_retention": 0.99825242393278,
+              "age_denominator_retention": 0.9999865433867422
+            },
+            "second": {
+              "beta_age_per_density": -0.06684086895275462,
+              "within_stratum_age_denominator_steps2": 115982282.84244965,
+              "survivors": 899984,
+              "identifying_survivors": 899980,
+              "next_step_exits": 47169,
+              "next_step_hazard": 0.05241093174989778,
+              "strata": 38,
+              "contributing_strata": 35,
+              "delete_one_standard_error": 0.007806792257683166,
+              "student_t": -8.561886463287431,
+              "two_sided_p_df99": 1.4793218762477445e-13,
+              "difference_from_primary": 7.71675254966353e-05,
+              "difference_standard_error": 5.643052231999012e-05,
+              "difference_two_sided_p_df99": 0.17457194870702972,
+              "exact_noop_vs_primary": false,
+              "absolute_magnitude_retention": 0.9988468351799038,
+              "age_denominator_retention": 0.9999771606232973
+            }
+          },
+          "two_orientation_joint_slope": {
+            "chi_square": 151.47380541903175,
+            "degrees_of_freedom": 2,
+            "survival_p": 1.2819794891757733e-33
+          },
+          "two_orientation_joint_difference_from_primary": {
+            "chi_square": 6.566107912105013,
+            "degrees_of_freedom": 2,
+            "survival_p": 0.03751351705880725
+          },
+          "minimum_age_denominator_retention": 0.9999771606232973,
+          "identifiability_gate_passed": true,
+          "association_survives": true
+        }
+      },
+      "iota_pair_support": [
+        {
+          "iota01": 1,
+          "iota12": 1,
+          "count": 1800118
+        }
+      ],
+      "smith_site_pair_support": [
+        {
+          "gcd_delta_site_N": 1,
+          "count": 1354819
+        },
+        {
+          "gcd_delta_site_N": 5,
+          "count": 269900
+        },
+        {
+          "gcd_delta_site_N": 17,
+          "count": 85524
+        },
+        {
+          "gcd_delta_site_N": 25,
+          "count": 70573
+        },
+        {
+          "gcd_delta_site_N": 85,
+          "count": 19302
+        }
+      ],
+      "iota_exactly_saturated": true,
+      "input_audit": {
+        "lines_including_header": 3999960
+      }
+    }
+  },
+  "decision_alpha": 0.01,
+  "decision": "age_association_survives_exact_iota_and_site_pair_control",
+  "temporal_boundary": {
+    "iota01_site01": "known at first birth",
+    "iota12_site12": "future/outcome-side relative to the k0 risk-set prediction",
+    "interpretation": "The full pair control can diagnose omitted two-birth embedding structure but cannot establish a predictive state available at k0 or support a causal mediation claim."
+  },
+  "claim_boundary": [
+    "A surviving controlled slope still rejects only lumpability of the recorded coarse state and may proxy unrecorded current geometry.",
+    "Attenuation under the site-pair control is descriptive because second-birth fields are future relative to k0.",
+    "iota support may be exactly degenerate at one under the integral saturation theorem; if so, report that exact no-op rather than inventing an index effect.",
+    "No new Monte Carlo is authorized."
+  ],
+  "batch_delete_one_slopes": {
+    "path": "results/local-20260830/P334-age-iota-site-control/batch_delete_one_slopes.csv",
+    "sha256": "984d966ad167796015a5d5faa4b79ca22f847885da65256199064db24ec8f5d9",
+    "rows": 200,
+    "contract": "one common batch deletion across both orientations within each size; sufficient to reconstruct both 6x6 covariance matrices"
+  }
+}

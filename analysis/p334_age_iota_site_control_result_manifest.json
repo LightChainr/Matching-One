@@ -1,0 +1,56 @@
+{
+  "schema": "matching-one/p334-age-iota-site-control-result/v1",
+  "status": "existing_archives_scored_once_after_two_preoutput_interface_stops",
+  "freeze_commit": "cccc10f",
+  "scorer_commit": "5d7bbb8",
+  "interface_fixes": [
+    {
+      "commit": "4f25a62",
+      "reason": "represent exact zero-variance iota difference as a no-op instead of dividing by zero",
+      "scientific_output_written_before_fix": false
+    },
+    {
+      "commit": "aebd329",
+      "reason": "treat roundoff-negative algebraic difference variance as zero",
+      "scientific_output_written_before_fix": false
+    }
+  ],
+  "artifacts": {
+    "score": "results/local-20260830/P334-age-iota-site-control/score.json",
+    "score_sha256": "43901ffdc597328207cc31a4e1307a2f801011652d443ed24abed8e7bd6ad6eb",
+    "batch_delete_one_slopes": "results/local-20260830/P334-age-iota-site-control/batch_delete_one_slopes.csv",
+    "batch_delete_one_slopes_sha256": "984d966ad167796015a5d5faa4b79ca22f847885da65256199064db24ec8f5d9"
+  },
+  "primary_replay": {
+    "passed": true,
+    "maximum_point_abs_difference": 0.0,
+    "maximum_covariance_abs_difference": 1.3552527156068805e-20
+  },
+  "iota_gate": {
+    "N325_support": [[1, 1, 1824619]],
+    "N425_support": [[1, 1, 1800118]],
+    "decision": "exact_noop_integral_saturation_confirmed_on_all_risk_set_survivors"
+  },
+  "smith_site_pair": {
+    "N325": {
+      "beta_first": -0.06728673571206896,
+      "beta_second": -0.08133957329477096,
+      "joint_p": 1.9921663961938065e-28,
+      "difference_from_primary_joint_p": 0.5404831707032924,
+      "minimum_magnitude_retention": 0.9992659041680643,
+      "minimum_age_information_retention": 0.9999769544309389
+    },
+    "N425": {
+      "beta_first": -0.06931623690604055,
+      "beta_second": -0.06684086895275462,
+      "joint_p": 1.2819794891757733e-33,
+      "difference_from_primary_joint_p": 0.03751351705880725,
+      "minimum_magnitude_retention": 0.99825242393278,
+      "minimum_age_information_retention": 0.9999771606232973
+    }
+  },
+  "decision_alpha": 0.01,
+  "decision": "age_association_survives_exact_iota_and_site_pair_control",
+  "interpretation": "Recorded integral index and translation-invariant two-birth Smith displacement class do not explain the production age slope. Unrecorded current microscopic geometry at k0 remains a live proxy explanation.",
+  "no_new_simulation": true
+}
