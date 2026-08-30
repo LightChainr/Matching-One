@@ -1,0 +1,24 @@
+{
+  "schema": "matching-one/formal-jordan-multiplier-semigroup/v1",
+  "issue": 145,
+  "status": "exact_formal_rank2_only",
+  "multipliers": {
+    "norm2": [1, 1],
+    "norm5": [2, -1],
+    "norm10": [3, 1]
+  },
+  "expected_quartic_characters": {
+    "norm2": ["-1/4", "0"],
+    "norm5": ["-7/625", "24/625"],
+    "norm10": ["7/2500", "-6/625"]
+  },
+  "expected_formal_log_vectors": {
+    "norm2": [1, 0],
+    "norm5": [0, 1],
+    "norm10": [1, 1]
+  },
+  "claim_boundary": {
+    "conclusion": "The exact Gaussian quartic character and a common square-zero rank-2 formal logarithmic transfer compose identically along direct, norm-2-then-norm-5, and norm-5-then-norm-2 paths.",
+    "unresolved": "No Hecke identification, physical Jordan-pair claim, target data, fitted amplitude, finite-size correction, or lattice-to-continuum overlap is supplied; issue #145 remains open."
+  }
+}
