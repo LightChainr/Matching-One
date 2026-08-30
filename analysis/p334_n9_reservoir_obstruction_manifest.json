@@ -1,0 +1,20 @@
+{
+  "schema": "p334-n9-reservoir-obstruction-manifest-v1",
+  "issue": 334,
+  "parent_commit": "e2b489493e3ea064f38156b64ea7bf3f4ed4cde3",
+  "scope": "strict N9 matching-carrier 3x3 HNF row1/row3 descriptor only",
+  "frozen_obstruction": {
+    "motifs": {"D": 216, "M": 432, "Y": 0, "F": 72},
+    "source_demand": 6912,
+    "reachable_targets": 4752,
+    "deficiency": 2160
+  },
+  "candidate_order": [
+    "existing one-carrier plus one-output-mark builder",
+    "fixed bases plus exactly two released output-mark slots"
+  ],
+  "legality_gate": "ordinary untagged MM/YN target_token only; reapply fixed-line face_type; no capacity decoration",
+  "isomorphism_gate": "coordinate swap on the 3x3 quotient maps row1 to row3",
+  "stop_rule": "stop after exact saturation or a minimum-cut no-go; do not scan larger HNF orders",
+  "production_required": false
+}

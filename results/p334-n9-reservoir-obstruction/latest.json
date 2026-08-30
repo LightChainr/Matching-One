@@ -1,0 +1,482 @@
+{
+  "minimal_legal_repair": {
+    "all_MM_orbits_formula": "M^2/N = 432^2/9 = 20736",
+    "capacity_rule": "ordinary untagged MM targets only; no slot, phase, source, or provenance decoration",
+    "coarse_matching": [
+      6912,
+      6912
+    ],
+    "minimality": "The existing builder strictly contains every fixed-base <=1-mark release and still fails. Exactly two released slots with fixed bases saturate, so two is minimal on the mark-release axis.",
+    "move": "keep both lower bases fixed and release two of the four ordered output-mark slots to arbitrary quotient sites; reapply the fixed-line topology gate",
+    "new_MM_orbits": 15984,
+    "proof": "The exact capacitated max flow is integral and saturates 6912/6912. Translation-orbit lifting therefore gives a collision-free raw injection. The builder reaches the entire ordinary MM orbit reservoir without adding target multiplicity.",
+    "raw_new_MM_tokens": 143856,
+    "reachable_MM_orbits": 20736,
+    "regular_degree": 216
+  },
+  "obstruction": {
+    "carrier": "matching",
+    "classification": "all-site image-capacity obstruction, not a localized bad-class cut",
+    "deficiency": 2160,
+    "deficiency_fraction": "5/16",
+    "lower_layer": 4,
+    "mechanism": "Y=0 deletes the YN channel exactly. The surviving one-carrier/one-mark builder reaches only 4752 ordinary MM target orbits for 6912 units of coarse demand.",
+    "minimum_cut": {
+      "Hall_deficiency": 2160,
+      "class_count": 768,
+      "class_descriptor_sha256": "cc1ce20bcfed630893e823015a153a540a95dab55b38edffac32a196b0d7f18d",
+      "class_index_ranges": [
+        "0-767"
+      ],
+      "demand": 6912,
+      "neighbor_target_count": 4752,
+      "neighbor_target_sha256": "4b4c3418ab494a52a1735a124a055ece4324f017bfe3af70b02a4e29bc4b8aa5",
+      "replica_histogram": {
+        "0": 192,
+        "1": 192,
+        "2": 192,
+        "3": 192
+      },
+      "status": "exact_residual_minimum_cut"
+    },
+    "motifs": {
+      "D": 216,
+      "F": 72,
+      "M": 432,
+      "Y": 0
+    },
+    "reachable_targets": 4752,
+    "source_demand": 6912
+  },
+  "parent_commit": "e2b489493e3ea064f38156b64ea7bf3f4ed4cde3",
+  "rows": [
+    {
+      "N": 9,
+      "Smith_invariants": [
+        3,
+        3
+      ],
+      "carrier": "matching",
+      "existing_one_carrier_one_mark": {
+        "N": 9,
+        "Smith_invariants": [
+          3,
+          3
+        ],
+        "carrier": "matching",
+        "channel_flows": {
+          "MM": {
+            "Hall_deficiency": 2160,
+            "channel": "MM",
+            "coarse_classes": 768,
+            "demand_per_class": 9,
+            "maximum_class_degree": 200,
+            "maximum_flow": 4752,
+            "minimum_class_degree": 143,
+            "minimum_cut_certificate": {
+              "Hall_deficiency": 2160,
+              "class_count": 768,
+              "class_descriptor_sha256": "cc1ce20bcfed630893e823015a153a540a95dab55b38edffac32a196b0d7f18d",
+              "class_index_ranges": [
+                "0-767"
+              ],
+              "demand": 6912,
+              "neighbor_target_count": 4752,
+              "neighbor_target_sha256": "4b4c3418ab494a52a1735a124a055ece4324f017bfe3af70b02a4e29bc4b8aa5",
+              "replica_histogram": {
+                "0": 192,
+                "1": 192,
+                "2": 192,
+                "3": 192
+              },
+              "status": "exact_residual_minimum_cut"
+            },
+            "reachable_targets": 4752,
+            "saturates": false,
+            "total_demand": 6912
+          },
+          "YN": {
+            "Hall_deficiency": 6912,
+            "channel": "YN",
+            "coarse_classes": 768,
+            "demand_per_class": 9,
+            "maximum_class_degree": 0,
+            "maximum_flow": 0,
+            "minimum_class_degree": 0,
+            "minimum_cut_certificate": {
+              "Hall_deficiency": 6912,
+              "class_count": 768,
+              "class_descriptor_sha256": "cc1ce20bcfed630893e823015a153a540a95dab55b38edffac32a196b0d7f18d",
+              "class_index_ranges": [
+                "0-767"
+              ],
+              "demand": 6912,
+              "neighbor_target_count": 0,
+              "neighbor_target_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "replica_histogram": {
+                "0": 192,
+                "1": 192,
+                "2": 192,
+                "3": 192
+              },
+              "status": "exact_residual_minimum_cut"
+            },
+            "reachable_targets": 0,
+            "saturates": false,
+            "total_demand": 6912
+          },
+          "combined": {
+            "Hall_deficiency": 2160,
+            "channel": "combined",
+            "coarse_classes": 768,
+            "demand_per_class": 9,
+            "maximum_class_degree": 200,
+            "maximum_flow": 4752,
+            "minimum_class_degree": 143,
+            "minimum_cut_certificate": {
+              "Hall_deficiency": 2160,
+              "class_count": 768,
+              "class_descriptor_sha256": "cc1ce20bcfed630893e823015a153a540a95dab55b38edffac32a196b0d7f18d",
+              "class_index_ranges": [
+                "0-767"
+              ],
+              "demand": 6912,
+              "neighbor_target_count": 4752,
+              "neighbor_target_sha256": "4b4c3418ab494a52a1735a124a055ece4324f017bfe3af70b02a4e29bc4b8aa5",
+              "replica_histogram": {
+                "0": 192,
+                "1": 192,
+                "2": 192,
+                "3": 192
+              },
+              "status": "exact_residual_minimum_cut"
+            },
+            "reachable_targets": 4752,
+            "saturates": false,
+            "total_demand": 6912
+          }
+        },
+        "line": [
+          0,
+          1
+        ],
+        "lower_layer": 4,
+        "matrix": [
+          [
+            3,
+            0
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "motifs": {
+          "D": 216,
+          "F": 72,
+          "M": 432,
+          "Y": 0
+        },
+        "pure_channel_classification": "none_combined_failure",
+        "source_compression": {
+          "all_twin_sizes_exact": true,
+          "class_order_sha256": "cc1ce20bcfed630893e823015a153a540a95dab55b38edffac32a196b0d7f18d",
+          "coarse_twin_classes": 768,
+          "extra_twins_compared": 0,
+          "neighborhood_equality": "exact_by_translation_reindexing",
+          "raw_sources": 62208,
+          "raw_to_coarse_factor": 81,
+          "translation_orbit_sources": 6912,
+          "twin_class_size": 9
+        }
+      },
+      "line": [
+        0,
+        1
+      ],
+      "lower_layer": 4,
+      "matrix": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "motifs": {
+        "D": 216,
+        "F": 72,
+        "M": 432,
+        "Y": 0
+      },
+      "row_index": 1,
+      "two_mark_fixed_base_repair": {
+        "Hall_deficiency": 0,
+        "all_class_degrees_equal": true,
+        "channel": "MM",
+        "class_degree": 216,
+        "coarse_classes": 768,
+        "demand_per_class": 9,
+        "maximum_class_degree": 216,
+        "maximum_flow": 6912,
+        "minimum_class_degree": 216,
+        "minimum_cut_certificate": {
+          "Hall_deficiency": 0,
+          "class_count": 0,
+          "class_index_ranges": [],
+          "demand": 0,
+          "neighbor_target_count": 0,
+          "status": "empty_cut_only_at_zero_deficiency"
+        },
+        "new_MM_orbits_beyond_old_image": 15984,
+        "old_reachable_MM_orbits": 4752,
+        "ordinary_untagged_targets_only": true,
+        "raw_new_MM_tokens": 143856,
+        "reachable_MM_orbits": 20736,
+        "reachable_targets": 20736,
+        "saturates": true,
+        "total_MM_orbits": 20736,
+        "total_demand": 6912
+      }
+    },
+    {
+      "N": 9,
+      "Smith_invariants": [
+        3,
+        3
+      ],
+      "carrier": "matching",
+      "existing_one_carrier_one_mark": {
+        "N": 9,
+        "Smith_invariants": [
+          3,
+          3
+        ],
+        "carrier": "matching",
+        "channel_flows": {
+          "MM": {
+            "Hall_deficiency": 2160,
+            "channel": "MM",
+            "coarse_classes": 768,
+            "demand_per_class": 9,
+            "maximum_class_degree": 200,
+            "maximum_flow": 4752,
+            "minimum_class_degree": 143,
+            "minimum_cut_certificate": {
+              "Hall_deficiency": 2160,
+              "class_count": 768,
+              "class_descriptor_sha256": "2fe648c1f94b8e151818a8127f51274f564ec5278c43339ec9c7d95d68e667ff",
+              "class_index_ranges": [
+                "0-767"
+              ],
+              "demand": 6912,
+              "neighbor_target_count": 4752,
+              "neighbor_target_sha256": "99cb35c048d34e4a721acbc6e77f16719416c7cf57129c93786f652beeed9025",
+              "replica_histogram": {
+                "0": 192,
+                "1": 192,
+                "2": 192,
+                "3": 192
+              },
+              "status": "exact_residual_minimum_cut"
+            },
+            "reachable_targets": 4752,
+            "saturates": false,
+            "total_demand": 6912
+          },
+          "YN": {
+            "Hall_deficiency": 6912,
+            "channel": "YN",
+            "coarse_classes": 768,
+            "demand_per_class": 9,
+            "maximum_class_degree": 0,
+            "maximum_flow": 0,
+            "minimum_class_degree": 0,
+            "minimum_cut_certificate": {
+              "Hall_deficiency": 6912,
+              "class_count": 768,
+              "class_descriptor_sha256": "2fe648c1f94b8e151818a8127f51274f564ec5278c43339ec9c7d95d68e667ff",
+              "class_index_ranges": [
+                "0-767"
+              ],
+              "demand": 6912,
+              "neighbor_target_count": 0,
+              "neighbor_target_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "replica_histogram": {
+                "0": 192,
+                "1": 192,
+                "2": 192,
+                "3": 192
+              },
+              "status": "exact_residual_minimum_cut"
+            },
+            "reachable_targets": 0,
+            "saturates": false,
+            "total_demand": 6912
+          },
+          "combined": {
+            "Hall_deficiency": 2160,
+            "channel": "combined",
+            "coarse_classes": 768,
+            "demand_per_class": 9,
+            "maximum_class_degree": 200,
+            "maximum_flow": 4752,
+            "minimum_class_degree": 143,
+            "minimum_cut_certificate": {
+              "Hall_deficiency": 2160,
+              "class_count": 768,
+              "class_descriptor_sha256": "2fe648c1f94b8e151818a8127f51274f564ec5278c43339ec9c7d95d68e667ff",
+              "class_index_ranges": [
+                "0-767"
+              ],
+              "demand": 6912,
+              "neighbor_target_count": 4752,
+              "neighbor_target_sha256": "99cb35c048d34e4a721acbc6e77f16719416c7cf57129c93786f652beeed9025",
+              "replica_histogram": {
+                "0": 192,
+                "1": 192,
+                "2": 192,
+                "3": 192
+              },
+              "status": "exact_residual_minimum_cut"
+            },
+            "reachable_targets": 4752,
+            "saturates": false,
+            "total_demand": 6912
+          }
+        },
+        "line": [
+          1,
+          0
+        ],
+        "lower_layer": 4,
+        "matrix": [
+          [
+            3,
+            0
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "motifs": {
+          "D": 216,
+          "F": 72,
+          "M": 432,
+          "Y": 0
+        },
+        "pure_channel_classification": "none_combined_failure",
+        "source_compression": {
+          "all_twin_sizes_exact": true,
+          "class_order_sha256": "2fe648c1f94b8e151818a8127f51274f564ec5278c43339ec9c7d95d68e667ff",
+          "coarse_twin_classes": 768,
+          "extra_twins_compared": 0,
+          "neighborhood_equality": "exact_by_translation_reindexing",
+          "raw_sources": 62208,
+          "raw_to_coarse_factor": 81,
+          "translation_orbit_sources": 6912,
+          "twin_class_size": 9
+        }
+      },
+      "line": [
+        1,
+        0
+      ],
+      "lower_layer": 4,
+      "matrix": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "motifs": {
+        "D": 216,
+        "F": 72,
+        "M": 432,
+        "Y": 0
+      },
+      "row_index": 3,
+      "two_mark_fixed_base_repair": {
+        "Hall_deficiency": 0,
+        "all_class_degrees_equal": true,
+        "channel": "MM",
+        "class_degree": 216,
+        "coarse_classes": 768,
+        "demand_per_class": 9,
+        "maximum_class_degree": 216,
+        "maximum_flow": 6912,
+        "minimum_class_degree": 216,
+        "minimum_cut_certificate": {
+          "Hall_deficiency": 0,
+          "class_count": 0,
+          "class_index_ranges": [],
+          "demand": 0,
+          "neighbor_target_count": 0,
+          "status": "empty_cut_only_at_zero_deficiency"
+        },
+        "new_MM_orbits_beyond_old_image": 15984,
+        "old_reachable_MM_orbits": 4752,
+        "ordinary_untagged_targets_only": true,
+        "raw_new_MM_tokens": 143856,
+        "reachable_MM_orbits": 20736,
+        "reachable_targets": 20736,
+        "saturates": true,
+        "total_MM_orbits": 20736,
+        "total_demand": 6912
+      }
+    }
+  ],
+  "same_descriptor_isomorphism": {
+    "conclusion": "The site coordinate swap x<->y maps every D/M/Y/F face and every translation phase bijectively, so both the old and two-mark compatibility graphs are exactly isomorphic.",
+    "face_family_bijections": {
+      "D": true,
+      "F": true,
+      "M": true,
+      "Y": true
+    },
+    "involution": true,
+    "line_map": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "replica_map": "identity",
+    "site_permutation": [
+      0,
+      3,
+      6,
+      1,
+      4,
+      7,
+      2,
+      5,
+      8
+    ],
+    "strict_descriptor_row_indices": [
+      1,
+      3
+    ],
+    "translation_group_conjugated_to_itself": true
+  },
+  "schema": "p334-n9-reservoir-obstruction-v1",
+  "scientific_card": {
+    "answer": "Y=0 removes synergy and the one-mark MM image has a 5/16 all-site Hall deficit.",
+    "boundary": "Exact for the coordinate-swap-isomorphic N9 rows 1 and 3; not an arbitrary-HNF theorem.",
+    "new_capacity": "15984 previously unreachable MM orbits (143856 raw tokens), all already present in M^2.",
+    "question": "Why does the corrected combined reservoir first fail at N9, and what is the smallest local repair?",
+    "repair": "A second output-mark release, with bases fixed and no decorated capacity, reaches every MM orbit and saturates."
+  },
+  "scope": "only the strict N9 row1/row3 reservoir obstruction; no larger-HNF scan"
+}
