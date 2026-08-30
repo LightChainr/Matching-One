@@ -1,0 +1,116 @@
+{
+  "claim_boundary": "This rules out the natural fixed-site embedding of formal P333 D/J into the existing projective-leg runners. It does not rule out a declared state-dependent cut/connector morphism, and it makes no continuum or path-memory claim.",
+  "decision": {
+    "minimum_escape_from_no_go": [
+      "a connector-selection rule whose microscopic support is a function of the intermediate typed state",
+      "the selected support before each branch, so equality is auditable rather than inferred",
+      "black-NN and white-matching component IDs/ranks/primitive lines after the first move",
+      "L_D,L_J,L_DJ,L_JD on the same base field and marked triple"
+    ],
+    "pilot_runner_added": false,
+    "reason": "Distinct physical D/J site overwrites can have a nonzero symmetric mixed response R_plus, but R_minus is identically zero because the final fields coincide. Same-site overwrites make R_plus identically zero by absorption."
+  },
+  "overwrite_operator_algebra": {
+    "disjoint_support_identity": "DJ=JD, hence R_minus=0 for every L",
+    "disjoint_support_state_checks": 59384,
+    "same_support_identity": "DJ=J and JD=D, hence R_plus=0 for every L",
+    "same_support_state_checks": 8194,
+    "word_convention": "DJ means D first, then J"
+  },
+  "runner_semantic_audit": {
+    "P215": {
+      "operation": "force a fixed root absent, then present, on one frozen field",
+      "order_state": "none; one binary counterfactual toggle",
+      "source_lineages": [
+        "3881e88 scripts/homology_rank_birth_insertion.py",
+        "dabe28e scripts/rank_birth_parity_channels.py"
+      ],
+      "typed_pair": "black NN insertion and complement-reversed white matching insertion"
+    },
+    "P225": {
+      "operation": "force the fixed pivotal root absent/present and compare wrapping",
+      "order_state": "none; one binary counterfactual toggle",
+      "source_lineages": [
+        "f9bc73a/89b86f4 scripts/marked_pivotal_h4_reference.py",
+        "28042d8 multiradius extension"
+      ],
+      "typed_pair": "black NN root and complementary white matching root"
+    },
+    "P334": {
+      "operation": "monotone addition of the next fixed permutation site",
+      "order_state": "K1/K2 and the first projective line retain path timing, but no physical delete/join pair or common four-corner rectangle is emitted",
+      "source_lineages": [
+        "6f54935 scripts/projective_essential_birth_oracle.py",
+        "9b8ec23 scripts/marked_birth_path_oracle.py"
+      ],
+      "typed_pair": "P215 complement_pair is evaluated at the next absent site"
+    },
+    "search_result": "No runner contains a state-dependent connector whose support changes after the first morphism. All available physical candidates reduce to fixed site overwrites."
+  },
+  "schema": "matching-one/p250-physical-toggle-obstruction/v1",
+  "smallest_honest_torus_certificate": {
+    "R_minus_histogram": {
+      "0": 64512
+    },
+    "R_minus_nonzero_exists": false,
+    "R_plus_histogram": {
+      "-1": 15696,
+      "-2": 4212,
+      "0": 25956,
+      "1": 16056,
+      "2": 2592
+    },
+    "R_plus_nonzero_exists": true,
+    "eligible_rectangles_checked": 64512,
+    "geometry": "axis L=3 square torus",
+    "marked_triple_contract": "root, occupied delete_site, vacant join_site are distinct",
+    "minimal_R_plus_witness": {
+      "R_minus": 0,
+      "R_plus": 1,
+      "base_mask": 3,
+      "base_occupied_vertices": [
+        0,
+        1
+      ],
+      "coordinates": {
+        "delete_site": [
+          0,
+          1
+        ],
+        "join_site": [
+          0,
+          2
+        ],
+        "root": [
+          0,
+          0
+        ]
+      },
+      "delete_site": 1,
+      "interpretation": "adding the third site closes a rank-one vertical loop; deleting the middle occupied site destroys that closure",
+      "join_site": 2,
+      "responses": {
+        "L_0": 0,
+        "L_D": 0,
+        "L_DJ": 0,
+        "L_J": 1,
+        "L_JD": 0
+      },
+      "root": 0
+    },
+    "observable": "black-NN rank-one root leg minus white-matching rank-one root leg",
+    "why_L3": "L=2 has collided nearest-neighbour images; L=3 is the first honest local square quotient"
+  },
+  "status": "exact_obstruction_no_pilot_interface",
+  "typed_involution_gate": {
+    "involution": "(field, NN-hand) -> (complement field, matching-hand)",
+    "leg_checks": 4608,
+    "leg_identity": "L_NN(omega,r)=-L_matching(C omega,r)",
+    "morphism_checks": 9216,
+    "morphism_conjugacy": [
+      "C D_v = J_v C",
+      "C J_v = D_v C"
+    ],
+    "passed": true
+  }
+}
