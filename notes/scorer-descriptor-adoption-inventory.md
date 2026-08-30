@@ -1,12 +1,12 @@
 # Scorer descriptor-adoption inventory
 
 At main commit `11ba86892fabd3349e322d198f23ef24d8cbe828`, the exact
-`scripts/*score*.py` corpus contains 38 files. Python-AST inspection finds seven
+`scripts/*score*.py` corpus contains 39 files. Python-AST inspection finds eight
 direct typed entrypoints importing both `ObservableDescriptor` and
-`map_observable` from `wrapping_channels`. Six frozen kernels are covered by
+`map_observable` from `wrapping_channels`. Seven frozen kernels are covered by
 those entrypoints through explicit semantic-manifest wrapper relationships.
 One path, `kappa3_half_score.py`, is classified as a generic utility for which
-a descriptor is not applicable. Twenty-four paths are confirmed channel-bearing and
+a descriptor is not applicable. Twenty-three paths are confirmed channel-bearing and
 require typed migrations: `score_angular_root_amplitude.py`,
 `score_axis_pair_annihilator.py`, its stable entrypoint,
 `score_c4_tangent_orthogonal_holdout.py`,
@@ -18,7 +18,7 @@ require typed migrations: `score_angular_root_amplitude.py`,
 `score_p159_pell_hex_filter.py`,
 `score_p231_vacuum_kdv_sector.py`,
 `score_p48_new_geometry_channels.py`,
-`score_p48_sprime_frozen.py`, `score_p49_fullcurve_doubling.py`,
+`score_p49_fullcurve_doubling.py`,
 `score_p50_fullcurve_n290.py`, `score_p50_sprime_n290.py`,
 `score_prequential_evidence.py`,
 `score_rank_gap_boundary_targets.py`, `score_threshold_rank_root_doubling.py`,
@@ -37,7 +37,7 @@ wrapped kernel disappears.
 but no current scorer has that status. Static membership alone would not prove
 a semantic bug, data-provenance failure, or need for migration; any future
 corpus addition must still be reviewed before modification. Issue #146 remains
-open because inventory classification is not the same as implementing the 24
+open because inventory classification is not the same as implementing the 23
 required typed migrations.
 
 The `kappa3_half_score.py` exception is narrow. It defines only exact Bernoulli
@@ -116,13 +116,13 @@ theory normalization. It must preserve the block covariance, one-amplitude
 GLS, non-scalar diagnostic, and the rule that the retrospective reuse is not
 new independent evidence.
 
-`score_p48_sprime_frozen.py` is migration-required and is not the frozen kernel
-covered by `score_p48_sprime_prospective_typed.py`. It independently reads the
-chronological scoring manifest and compares `P4_S_prime` with four ordered
-models without a semantic gate. A migration must either prove that the existing
-cross/even identity descriptor applies to this separate contract or add its own
-typed manifest. It must preserve model order, bases, source/target covariance,
-and chronology.
+`score_p48_sprime_frozen.py` is now a covered frozen kernel with its own typed
+entrypoint and semantic manifest. The gate proves that this chronological
+contract uses the same cross/even, angular-normalized `P4_S_prime` descriptor
+as the separate prospective path, and validates an exact identity map before
+scoring. Target sizes, leading power, four-model chronological order,
+source-plus-target covariance, target independence, and no-refit semantics are
+unchanged.
 
 `score_p49_fullcurve_doubling.py` is migration-required. One entrypoint emits
 matching tails and slopes, thermal `X_even/X_odd` contrasts, signed lineage
