@@ -1,0 +1,311 @@
+{
+  "claim_boundary": {
+    "excluded": "P250 production data, inferred Q-sector excursions, microscopic noncommutation, or memory claims",
+    "included": "finite exact projection-leakage algebra",
+    "parent_issue": "remain open"
+  },
+  "commuting_projection_zero_control": {
+    "P": [
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "Q": [
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "U": [
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "V": [
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-1"
+      ]
+    ],
+    "compressed_commutator": [
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "compressed_commutator_frobenius_norm_squared": "0",
+    "dimension": 3,
+    "exact_checks": {
+      "P_idempotent": true,
+      "P_symmetric": true,
+      "U_involution": true,
+      "U_orthogonal": true,
+      "V_involution": true,
+      "V_orthogonal": true,
+      "compressed_equals_intrinsic_plus_leakage": true,
+      "full_UV_commutator_zero": true
+    },
+    "full_commutator": [
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "intrinsic_projected_commutator": [
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "leakage_PVQUP_minus_PUQVP": [
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ]
+    ]
+  },
+  "identity": "[PUP,PVP]=P[U,V]P+PVQUP-PUQVP",
+  "issue": 400,
+  "schema": "matching-one/projection-leakage-commutator/v1",
+  "status": "exact_projection_leakage_commutator_control",
+  "witness": {
+    "P": [
+      [
+        "2/3",
+        "1/3",
+        "-1/3"
+      ],
+      [
+        "1/3",
+        "2/3",
+        "1/3"
+      ],
+      [
+        "-1/3",
+        "1/3",
+        "2/3"
+      ]
+    ],
+    "Q": [
+      [
+        "1/3",
+        "-1/3",
+        "1/3"
+      ],
+      [
+        "-1/3",
+        "1/3",
+        "-1/3"
+      ],
+      [
+        "1/3",
+        "-1/3",
+        "1/3"
+      ]
+    ],
+    "U": [
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "V": [
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-1"
+      ]
+    ],
+    "compressed_commutator": [
+      [
+        "0",
+        "4/9",
+        "4/9"
+      ],
+      [
+        "-4/9",
+        "0",
+        "4/9"
+      ],
+      [
+        "-4/9",
+        "-4/9",
+        "0"
+      ]
+    ],
+    "compressed_commutator_frobenius_norm_squared": "32/27",
+    "dimension": 3,
+    "exact_checks": {
+      "P_idempotent": true,
+      "P_symmetric": true,
+      "U_involution": true,
+      "U_orthogonal": true,
+      "V_involution": true,
+      "V_orthogonal": true,
+      "compressed_equals_intrinsic_plus_leakage": true,
+      "full_UV_commutator_zero": true
+    },
+    "full_commutator": [
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "intrinsic_projected_commutator": [
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "leakage_PVQUP_minus_PUQVP": [
+      [
+        "0",
+        "4/9",
+        "4/9"
+      ],
+      [
+        "-4/9",
+        "0",
+        "4/9"
+      ],
+      [
+        "-4/9",
+        "-4/9",
+        "0"
+      ]
+    ]
+  }
+}
