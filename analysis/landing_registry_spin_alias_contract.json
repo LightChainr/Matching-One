@@ -1,0 +1,42 @@
+{
+  "schema": "matching-one/landing-registry-spin-alias/v1",
+  "status": "valid_exact_two_registry_alias_certificate",
+  "parent_issue": "remain open",
+  "registry_angles": ["0", "pi/4"],
+  "observable": "axis minus diagonal",
+  "response_formula": "(cos(0), cos(s*pi/4)) = (1, (-1)^(s/4)) for s divisible by 4",
+  "selection_rule": {
+    "selected": "s congruent to 4 modulo 8",
+    "annihilated": "s congruent to 0 modulo 8"
+  },
+  "low_spin_maximum": 32,
+  "low_spin_table": [
+    {"spin": 0, "cosine_response": [1, 1], "sine_response": [0, 0], "axis_minus_diagonal": 0, "alias_class": "axis_equals_diagonal"},
+    {"spin": 4, "cosine_response": [1, -1], "sine_response": [0, 0], "axis_minus_diagonal": 2, "alias_class": "axis_opposes_diagonal"},
+    {"spin": 8, "cosine_response": [1, 1], "sine_response": [0, 0], "axis_minus_diagonal": 0, "alias_class": "axis_equals_diagonal"},
+    {"spin": 12, "cosine_response": [1, -1], "sine_response": [0, 0], "axis_minus_diagonal": 2, "alias_class": "axis_opposes_diagonal"},
+    {"spin": 16, "cosine_response": [1, 1], "sine_response": [0, 0], "axis_minus_diagonal": 0, "alias_class": "axis_equals_diagonal"},
+    {"spin": 20, "cosine_response": [1, -1], "sine_response": [0, 0], "axis_minus_diagonal": 2, "alias_class": "axis_opposes_diagonal"},
+    {"spin": 24, "cosine_response": [1, 1], "sine_response": [0, 0], "axis_minus_diagonal": 0, "alias_class": "axis_equals_diagonal"},
+    {"spin": 28, "cosine_response": [1, -1], "sine_response": [0, 0], "axis_minus_diagonal": 2, "alias_class": "axis_opposes_diagonal"},
+    {"spin": 32, "cosine_response": [1, 1], "sine_response": [0, 0], "axis_minus_diagonal": 0, "alias_class": "axis_equals_diagonal"}
+  ],
+  "complete_low_spin_alias_classes": {
+    "axis_equals_diagonal": [0, 8, 16, 24, 32],
+    "axis_opposes_diagonal": [4, 12, 20, 28]
+  },
+  "h4_h12_no_go": {
+    "columns": ["H4", "H12"],
+    "response_matrix": [[1, 1], [-1, -1]],
+    "rank": 1,
+    "determinant": 0,
+    "conclusion": "no linear statistic of these two registry means distinguishes H4 from H12"
+  },
+  "sine_quadrature_available": false,
+  "claim_boundary": {
+    "runs_new_landing_simulation": false,
+    "derives_arm_exponent": false,
+    "derives_ope_coefficient": false,
+    "identifies_x_21_over_4": false
+  }
+}
