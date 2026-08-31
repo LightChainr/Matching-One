@@ -6,9 +6,18 @@ For scientific coordinates use `docs/RESEARCH-MAP.md`; for claim and branch stat
 
 ## One ranked queue; scientific rationale below
 
-Current main is `e300609`. [NEXT-TARGETS](NEXT-TARGETS.md) owns the single attention order and concrete handoffs; this roadmap preserves the supporting scientific history rather than a second copy of that queue. The leading question is the original norm-4 **second physical direction**: canonical E_top is measured topology, not the energy operator. P398 physical response and a realizable P267 response model follow; all other routes stay open.
+This Draft incorporates main through `e300609`; later observed main changes are recorded separately in the context inventory. [NEXT-TARGETS](NEXT-TARGETS.md) owns the single attention order and concrete handoffs; this roadmap preserves the supporting scientific history rather than a second copy of that queue. The leading question is the original norm-4 **second physical direction**: canonical E_top is measured topology, not the energy operator. Physical interpretation of the completed P398 width comparison and a realizable P267 response model follow; all other routes stay open.
 
 The first #370 real-data adapter, P267 amplitude comparison, P334 graph/capacity analysis and first F5/C3 typed observers are completed inputs. No Monte Carlo is launched by this navigation update, and tool/test completion is not an independent scientific milestone.
+
+The [next physical analyses are now results](../notes/physical-analysis-progress-20260831.md),
+too: `c0880c2` measures an unresolved E_top × fixed-K local-edge response on
+existing configurations; `8f7a587` extends AP/landing to width five and finds
+exact rank8 alongside an accurate two-slow-mode approximation. Follow-up can
+use these actual matrices and mixed moments. It need not start by rebuilding
+the interface, and it should distinguish approximation error in a named
+readout from a claim about how many fields exist. The separate `dbd4081`
+width-four continuous fingerprint is available without assuming it universal.
 
 ### Original norm-4 identity: a second physical direction after the completed Phase-E row
 
@@ -17,11 +26,12 @@ Canonical Phase D is complete on six declared P154 frozen blocks, but its
 operator. Branch `54b3e8` proves that the zero-cost integrated Bernoulli score
 duplicates `P4[E_top']/2`. The actual same-stream radius-1 mixed row is now complete:
 it stores `B,B^2,I0*B,I2*B`, yet `J_bulk` is unresolved and changes sign from
-N65 to N130, and A/E/J_bulk improves over A/E/C by only `1.981<4`. This stops
-the declared B row at 20k. A meaningful restart must change the microscopic
-singlet, scale or field interface; extending or renaming the same row is not a
-research output. Completed Phase D therefore does not settle the original norm-4
-energy-operator identity question.
+N65 to N130, and A/E/J_bulk improves over A/E/C by only `1.981<4`. That records
+the declared B-row outcome at 20k, not a task lock. The subsequent Q/R/H
+local-edge replay is also complete and unresolved (joint .8173/2, p=.66455).
+Future attention can compare explicitly distinct singlets, scales or
+connectivity emissions against the original residual; neither completed
+measurement settles the norm-4 energy-operator identity question.
 
 In parallel, join the P337 current split to the P334 continuation state:
 
@@ -38,11 +48,13 @@ Thus direct `0->2` current cancels from fixed-p `E_top`; it is not a third addit
 
 Main direct commit `d9f813b` gives the decisive state warning: two N16 states have the same complete unbranched survival vector but different common-update/cloning probabilities. Large-N acquisition, pre-common-state cross-fit and the newer cooperative checkpoint decomposition are complete. The P334 line now consumes the saved microscopic states; the P337/P439 transport question seeks a discriminating transported/line-relative readout. These are finite mechanism questions, not intrinsic memory or field counts.
 
-### P398: consume the completed nine-mark module
+### P398: transport the completed physical AP/landing response
 
 Branch-only `5389200` completes the previously requested rooted lift: rooted7 alone fails, but coupling the already-defined landing charge-one doublet gives a 23-dimensional/nine-mark accumulator with radical dimension four and unique `X0=diag(T,R), V=0` in the inherited affine/endpoint/radical-Gram/source intersection. Child `afc619c` fixes `X2=0`, valuations `0^19,1^4`, `J2=0` and leading radical determinant `14`. The remaining radical action is an involution, so further fixed-radical projected-Gram coefficients pass automatically; they provide no new selection.
 
-**Immediate scientific output:** use the existing rooted and landing charge-one readouts on one explicitly positive-weight width-four finite strip and calculate `C_ab(l,p)=<S_a(0) conjugate(S_b(l))>_c`, for `a,b` in `{rooted,landing}`. Report the 2x2 response matrix, cross term and determinant, which distinguish separately excitable responses from representation labels alone. Under the corresponding C4-invariant finite measure, a charged one-point mean vanishes by symmetry; the measure and readout action must be stated in the calculation. This proposed physical application is not yet a result: the accumulator is not a physical transfer matrix, unprojected Gram residuals remain nonzero, and no continuum/Jordan identification follows.
+**The physical application is now complete.** Branch-only [`e38fe76`](https://github.com/LightChainr/Matching-One/blob/e38fe7634354b0cb2201fa55fd9b4d37ccedeef2/notes/p398-positive-cylinder-propagation.md) uses a genuine positive Q=1 square-bond width-four cylinder with 14 frontier-connectivity states, not the signed 23-dimensional accumulator. The original AP/landing functions have zero means, `lambda±=(3±sqrt(5))/64`, `C(d)=C(0) conjugate(B)^d` and `det C(d)=73216/1940449·1024^(-d)>0` at every finite separation. The ordered cross-term difference at one row is `(1-i)/1393`; past-frontier readout nonreversibility is not intrinsic temporal memory.
+
+Child [`b35e100`](https://github.com/LightChainr/Matching-One/blob/b35e100a3903c706dceba57c4667386eb4510ac3/notes/p398-anisotropic-cylinder-spectrum.md) derives the same readouts' complete horizontal/vertical probability family. The two modes stay distinct throughout `0<h,v<1`; even the collision boundary is scalar, not Jordan. A fixed fast eigenobservable has correlation `.00711273` at d=8 for `h=.05,v=.95`, an exact finite-model prediction rather than a sample-power claim. **Next scientific output:** compare width or microstructure transport while preserving these microscopic AP/landing definitions and the readout slice. Do not repeat the first matrix or look again for a positive-h/v Jordan point in this solved family. Full-Q realization, site-Matching overlap and continuum interpretation remain separate questions.
 
 ### P267: use the completed amplitude comparison to define a physical response model
 
@@ -124,7 +136,7 @@ Track representation/projector zeros, finite TL/partition-algebra action, propag
 
 The literature boundary is exact. Loop-model three-point work motivates normalization-free OPE ratios, and torus one-point work motivates modulus ratios, but both are **candidate discriminators** for Matching One rather than established fingerprints for its current lattice row or arbitrary Jordan/defect fields. Finite-lattice singular-vector relations are an exact **ADE RSOS/root-of-unity TL template**; transport to percolation/Q4 is a new theorem problem, and even the ADE paper leaves convergence to Virasoro singular-vector relations open. For Jordan structure, the supported finite-width dashboard is the eigenvalue gap, positive-metric eigenvector overlap and Gram-Schmidt generalized-vector coupling, not the presence of a literal finite-size Jordan block.
 
-P321's fresh scale/E4 pass remains ordinary scalar compatibility, not transparency or field identity. Its exact closure descendants require crossed plus trivial modules. P398 now closes the inherited rooted/landing accumulator intersection; higher fixed-radical projected-Gram jets are automatic. Consume its physical response under the P398 physical-response question while retaining the unprojected/full-Q boundary. The exact Q=4 colour ratios and the single-orbit spatial alias gate remain distinct coordinates.
+P321's fresh scale/E4 pass remains ordinary scalar compatibility, not transparency or field identity. Its exact closure descendants require crossed plus trivial modules. P398's inherited accumulator closure and positive width-four AP/landing response are both complete; the anisotropic positive family remains ordinary. Compare width/microstructure transport of the same readouts while retaining the unprojected/full-Q and P321-specific physical-overlap boundaries. The exact Q=4 colour ratios and the single-orbit spatial alias gate remain distinct coordinates.
 
 ### Preserve the remaining orthogonal lanes
 
@@ -192,7 +204,7 @@ x nuisance cancellation and archive reuse
 - **Same-semantics context rectangle:** one shared generator is not rejected (`p=.4002`). The N650 intermediate-filtration proxy is also measured (`43.1466/3`, exact rank three), but is not physical Gaussian/annulus `AU-UA`.
 - **Topology-typed C3:** fresh 2M N112 `2402a33` resolves E_top r1 (`142.199/2`) and its non-common-ray determinant with primitive H4 (`21.202/2`). The first named non-A_top complex observer is complete; consume its finite square-bond matrix before choosing another geometry.
 - **Threshold shape flow:** exact collapse fails, while an almost rank-one upper-tail direction replicates across cover and independent-size blocks. Freeze its direction before a fresh-lineage amplitude test.
-- **P333/P398 closure interface:** `5389200` completes the nine-mark rooted/landing accumulator intersection; `afc619c` shows higher fixed-radical projected-Gram passes are automatic. The next object is the physical rooted/landing connected-response matrix, not another closure tool.
+- **P333/P398 physical propagation:** `e38fe76` completes the positive width-four AP/landing connected matrix after the formal `5389200`/`afc619c` chain. `b35e100` gives the anisotropic spectrum and excludes positive-domain Jordan collisions in that family. The next comparison preserves the readouts across width or microstructure, not another matrix baseline, collision scan or closure tool.
 - **Branching and transported response:** P334 scalar nonclosure, graph/Ferrers/trigger replay and selected support/side allocation are complete; its directional carrier is unresolved. F5 resolves line-source response rank, while P439 matching pieces stay weak. Explain physical graph cuts and transport the existing F5 rows/M loading; keep Hall separate.
 - **P250 spatial endpoint and ordered intervention:** `0061e4e` completes N505 and Draft `eb29446` finds a 30.97% held-out increment from retained pre-outcome state beyond a low-dimensional residue baseline. The complete terminal-spectrum comparison is absent and both residuals peak at `k=36`. Preserve this as a positive mechanism result; default attention for the next block targets those two missing coordinates.
 - **Issue #370 exact ladder and framework:** main holds the fixture/framework layer and `f5779b9` completes the first real production adapter. Reuse it for a concrete surviving physical model; synthetic/compiler/validator work is on demand rather than a separate next milestone.

@@ -79,6 +79,20 @@ The three opinions and both 2026-08-30 research bundles were reread as scientifi
 
 ## Integration and team handoff
 
+### Scientific continuation after this dated review
+
+The [physical-response continuation](../notes/physical-analysis-progress-20260831.md)
+records subsequent completed work. P398's positive width-four response and
+anisotropic/continuous kernels are now recovered from `e38fe76`, `b35e100`
+and `dbd4081`; the first physical matrix is **not** still pending. New Draft
+`8f7a587` extends the same microscopic A/L indicators to width five: exact
+propagation rank eight coexists with a parameter-fixed two-slow-mode
+whole-matrix error below .90% already at separation one. Neither rank is a
+continuum field count. New Draft `c0880c2` measures the missing E_top × fixed-K
+edge-interaction moment on old Phase-E configurations; it remains unresolved,
+without implying that every physical singlet is excluded. These updates do
+not rewrite the earlier discussion snapshot or restart completed analyses.
+
 Draft PR #267 remains the control-plane delivery. Open PRs are grouped in the index by their actual GitHub lifecycle, not scheduled for automatic merge. In particular, #273/#277 retain norm-4 production; #246/#247 retain local positive/negative controls; #385/#415/#416/#417/#435 retain exact interpretation results; #438 and #451 carry concrete new graph/cross-observable results. Their code and conclusions may be useful before integration without becoming `main` facts.
 
 At handoff, a short result card should link **the last result, its exact question, and the remaining question** back to the parent Issue. A new tool card should say which real result it consumed, or explicitly say it did not consume one. An inconclusive measurement remains a completed measurement. No extra testing, generic framework or task approval is implied by these editorial conventions.

@@ -2926,6 +2926,31 @@ branch_sources:
       - results/local-20260831/P437-N112-fixed-S5-20k/batches.json
       - results/local-20260831/P437-N112-fixed-S5-20k/run.json
     claim_boundary: B_S_is_a_fixed_support_contribution_to_square_bond_product_noise_energy_not_total_highpass_energy_a_CFT_energy_field_P267_Euler_Palm_observer_or_a_statistically_certain_numeric_lower_bound
+  - id: SRC_P398_POSITIVE_CYLINDER_PROPAGATION
+    integration_status: branch_only
+    ref: theory/p398-positive-cylinder-propagation-20260831
+    commit: e38fe7634354b0cb2201fa55fd9b4d37ccedeef2
+    parent_commit: afc619c35188af718d450c19935f4d8dd8d39ff1
+    result_status: completed_exact_positive_square_bond_width4_AP_landing_connected_propagation_with_two_distinct_nonzero_ordinary_modes
+    dependency_group_refs: [p398-positive-cylinder-exact-chain]
+    paths:
+      - analysis/p398_positive_cylinder_protocol.json
+      - notes/p398-positive-cylinder-propagation.md
+      - results/p398-positive-cylinder/latest.json
+      - scripts/p398_positive_cylinder.py
+    claim_boundary: fourteen_state_past_frontier_probability_transfer_with_the_existing_AP_landing_functions_not_the_signed_twenty_three_state_accumulator_as_a_stochastic_matrix_site_Matching_overlap_or_a_continuum_field
+  - id: SRC_P398_ANISOTROPIC_CYLINDER_SPECTRUM
+    integration_status: branch_only
+    ref: theory/p398-anisotropic-cylinder-spectrum-20260831
+    commit: b35e100a3903c706dceba57c4667386eb4510ac3
+    parent_commit: e38fe7634354b0cb2201fa55fd9b4d37ccedeef2
+    result_status: completed_exact_two_parameter_positive_domain_distinct_modes_scalar_collision_boundary_and_fixed_fast_eigenobservable
+    dependency_group_refs: [p398-positive-cylinder-exact-chain]
+    paths:
+      - notes/p398-anisotropic-cylinder-spectrum.md
+      - results/p398-anisotropic-cylinder/latest.json
+      - scripts/p398_anisotropic_cylinder.py
+    claim_boundary: no_Jordan_collision_for_this_width4_square_bond_AP_landing_family_in_the_positive_probability_domain_or_its_boundary_not_a_no_go_for_other_widths_representations_dilation_or_Q_lifts_signed_h_minus_one_eighth_is_not_a_probability_measure
   - id: SRC_P437_FIXED_SUPPORT_COHERENT_DECOMPOSITION
     integration_status: branch_only
     ref: analysis/p437-fixed-support-coherent-decomposition-20260831
@@ -3061,6 +3086,34 @@ branch_sources:
       - results/p334-trigger-capacity-allocation/REPORT.md
       - results/p334-trigger-capacity-allocation/latest.json
     claim_boundary: selected_pair_W2_contributions_are_exact_benchmark_arithmetic_not_causal_shares_new_independent_evidence_or_population_prevalence_and_block_nulls_allow_disconnection_and_new_isolates
+
+  - id: SRC_PR267_P154_FIXED_K_INTERACTION
+    integration_status: open_pr
+    pr: 267
+    ref: research/navigation-priority-refresh-20260829
+    commit: c0880c297b40699563e8be537e777ac8cd4084c8
+    result_status: completed_same_stream_fixed_K_interaction_replay_JR_unresolved_joint_chi2_0p8173_over2_p_0p66455
+    dependency_group_refs: [p154-phase-e-mixed-plane-N65-N130-20k]
+    paths: [results/p154-fixed-k-interaction/latest.json, results/p154-fixed-k-interaction/REPORT.md, analysis/p154_fixed_k_interaction_replay.json, notes/p154-local-source-versus-connectivity-emission.md]
+    claim_boundary: same_PhaseE_twenty_thousand_samples_per_size_not_new_production_R_is_fixed_K_centered_with_a_global_K_counterterm_not_a_strictly_local_canonical_field_and_unresolved_JR_does_not_prove_all_response_is_H
+  - id: SRC_PR267_P398_WIDTH5_PROPAGATION
+    integration_status: open_pr
+    pr: 267
+    ref: research/navigation-priority-refresh-20260829
+    commit: 8f7a5875157265e32e9db08c5f3991a9b9ddb86e
+    result_status: completed_exact_width5_AP_landing_Krylov_2_4_6_8_positive_separation_Hankel_rank8_and_numerical_two_slow_mode_visibility
+    dependency_group_refs: [p398-positive-cylinder-exact-chain]
+    paths: [results/p398-physical-two-point/latest.json, results/p398-physical-two-point/REPORT.md, results/p398-physical-two-point/mode-visibility.json, results/p398-physical-two-point/mode-visibility.md]
+    claim_boundary: positive_square_bond_forty_two_state_frontier_chain_eight_simple_observable_components_are_not_eight_continuum_fields_numerical_mode_visibility_is_not_a_new_exact_certificate_and_the_two_by_two_U_semigroup_defect_does_not_reject_the_full_Markov_chain
+  - id: SRC_P398_CONTINUOUS_TWO_CHANNEL_KERNEL
+    integration_status: branch_only
+    ref: theory/p398-continuous-two-channel-kernel-20260831
+    commit: dbd408154b4215ca41fbf26c0fd962997074f05d
+    parent_commit: b35e100a3903c706dceba57c4667386eb4510ac3
+    result_status: completed_width4_continuous_distance_two_channel_kernel_with_fixed_amplitudes_and_25_Im_squared_times_2_minus_Ic_equals2
+    dependency_group_refs: [p398-positive-cylinder-exact-chain]
+    paths: [notes/p398-continuous-two-channel-kernel.md, results/p398-continuous-kernel/latest.json]
+    claim_boundary: width4_h_epsilon_v_1_minus_kappa_epsilon_s_epsilon_d_limit_not_a_width5_or_universal_law_Ic_is_channel_rescaling_invariant_not_arbitrary_readout_mixing_invariant
 
 scientific_nodes:
   - id: SN_DIGITAL_ALEXANDER_RANK_BALANCE
@@ -3565,11 +3618,11 @@ scientific_nodes:
     excludes_only: [a_distinguished_logarithmic_pair_from_the_raw_endpoint_Gram_thickening_alone_every_join_only_generator_and_every_single_deterministic_join_detach_word_through_four_marks_the_minimal_scalar_detach_one_mark_and_the_frozen_minimal_multimark_endpoint_quotients]
     reusable_data_refs: [results/exact-relative-source-observer-closure/latest.json, results/exact-relative-source-hochschild-rigidity/latest.json, results/p333-dual-number-gram-extension/extension.json, results/p333-generic-q-detach-intertwiner/latest.json, results/p333-one-mark-endpoint-jet/latest.json, results/p333-minimal-multimark-jet/latest.json, results/p333-source-landing-doublet/latest.json, results/p333-source-landing-doublet-width4/latest.json, results/p333-charge2-landing/latest.json]
     dependency_group_refs: [p333-dual-number-gram-exact]
-    downstream_source_refs: [SRC_P398_COUPLED_ROOTED_NINE_MARK_CLOSURE, SRC_P398_ROOTED_SECOND_JET]
-    downstream_data_refs: [results/p398-rooted-module-closure/latest.json, results/p398-rooted-second-jet/latest.json]
-    downstream_dependency_group_refs: [p398-coupled-rooted-nine-mark-exact-chain]
-    missing_inputs: [positive_weight_width4_transfer_with_two_charged_readouts_and_its_two_by_two_connected_response_not_another_rooted_closure_or_projected_Gram_jet]
-    next_discriminator: consume_the_completed_nine_mark_construction_in_one_positive_weight_width4_two_readout_connected_response_and_report_quotient_physical_emission_coupling
+    downstream_source_refs: [SRC_P398_COUPLED_ROOTED_NINE_MARK_CLOSURE, SRC_P398_ROOTED_SECOND_JET, SRC_P398_POSITIVE_CYLINDER_PROPAGATION, SRC_P398_ANISOTROPIC_CYLINDER_SPECTRUM, SRC_PR267_P398_WIDTH5_PROPAGATION, SRC_P398_CONTINUOUS_TWO_CHANNEL_KERNEL]
+    downstream_data_refs: [results/p398-rooted-module-closure/latest.json, results/p398-rooted-second-jet/latest.json, results/p398-positive-cylinder/latest.json, results/p398-anisotropic-cylinder/latest.json, results/p398-physical-two-point/latest.json, results/p398-physical-two-point/mode-visibility.json, results/p398-continuous-kernel/latest.json]
+    downstream_dependency_group_refs: [p398-coupled-rooted-nine-mark-exact-chain, p398-positive-cylinder-exact-chain]
+    missing_inputs: [fixed_readout_physical_interpretation_of_effective_slow_modes_versus_exact_state_closure_and_a_separate_full_Q_module_interpretation]
+    next_discriminator: consume_completed_width5_rank8_and_two_slow_mode_residuals_to_distinguish_effective_propagation_from_exact_state_closure_with_fixed_AP_landing_readouts_not_repeat_width4_width5_matrices_or_automatic_Gram_jets
     information_gain: high
     compute_cost: low
     decision_experiments: [DX_CONNECTIVITY_RADICAL, DX_INDEPENDENT_SOURCE_RANK_ESCAPE]
@@ -4914,23 +4967,23 @@ scientific_nodes:
     compute_cost: none
     decision_experiments: []
   - id: SN_PHASE_E_ALIAS_AND_LOCAL_ENERGY
-    title: norm4_Phase_E_integrated_alias_stopped_radius1_pilot_and_mixed_correlator_frontier
+    title: norm4_Phase_E_alias_mixed_row_and_completed_unresolved_fixed_K_interaction
     integration_status: open_pr
     state: microscopic_threshold_structure
     sources: [bernoulli_thermal]
     observer_sectors: [global_rank_projector, matching_even, bulk_energy_logpair]
     geometries: [gaussian_cover, square_controls]
     acquisition: [existing_data_reuse, small_pilot, new_production]
-    source_refs: [SRC_PR267_NORM4_PHASE_D, SRC_P154_PHASE_E_INTEGRATED_ALIAS, SRC_P154_PHASE_E_LOCAL_SINGLET_PILOT, SRC_ETOP_CLOCK_PLANE, SRC_P154_PHASE_E_MIXED_PLANE]
-    known_result: Jbulk_integrated_equals_P4_Sprime_equals_half_P4_Etop_prime_the_radius1_one_point_pilot_is_complete_and_the_completed_same_stream_B_B2_I0B_I2B_row_has_unresolved_sign_changing_Jbulk_with_A_E_Jbulk_improvement_only_1p981_below_the_frozen_gate
-    boundary: the_completed_result_stops_only_the_declared_radius1_singlet_and_does_not_reject_every_local_energy_scale_or_field_interface
+    source_refs: [SRC_PR267_NORM4_PHASE_D, SRC_P154_PHASE_E_INTEGRATED_ALIAS, SRC_P154_PHASE_E_LOCAL_SINGLET_PILOT, SRC_ETOP_CLOCK_PLANE, SRC_P154_PHASE_E_MIXED_PLANE, SRC_PR267_P154_FIXED_K_INTERACTION]
+    known_result: Jbulk_integrated_equals_P4_Sprime_equals_half_P4_Etop_prime_the_completed_radius1_mixed_row_gains_only_1p981_below4_and_the_same_twenty_thousand_per_size_fixed_K_replay_resolves_JQ_equals_JR_plus_JH_algebraically_but_JR_has_z_0p152_0p891_and_joint_chi2_0p8173_over2_p_0p66455
+    boundary: the_replayed_Q_R_H_views_are_not_new_random_evidence_R_has_a_global_K_counterterm_and_fixed_K_orthogonality_is_not_zero_RG_thermal_overlap_unresolved_JR_neither_proves_all_H_nor_rejects_every_local_energy_field
     supports: [local_energy_must_be_a_separately_declared_microscopic_observer, mixed_correlations_are_more_discriminating_than_another_one_point_mean]
     tensions: [integrated_occupation_score_as_Jbulk, extending_the_same_radius1_mean_H4_row, treating_C_as_an_identified_continuum_field]
     excludes_only: [the_integrated_score_as_independent_Jbulk, the_frozen_radius1_one_point_extension]
-    reusable_data_refs: [results/p154-phase-e-bulk-energy-alias/latest.json, results/p154-phase-e-local-singlet-pilot/score.json, results/etop-clock-plane-elimination/latest.json, results/p154-phase-e-mixed-plane-pilot/score.json]
+    reusable_data_refs: [results/p154-phase-e-bulk-energy-alias/latest.json, results/p154-phase-e-local-singlet-pilot/score.json, results/etop-clock-plane-elimination/latest.json, results/p154-phase-e-mixed-plane-pilot/score.json, results/p154-fixed-k-interaction/latest.json, notes/p154-local-source-versus-connectivity-emission.md]
     dependency_group_refs: [p154-phase-e-integrated-alias-existing-archives, p154-phase-e-local-singlet-N65-N130-20k, p154-phase-e-mixed-plane-N65-N130-20k, etop-clock-plane-production-plus-P205]
     missing_inputs: [the_original_norm4_physical_direction_pair_topology_or_a_genuinely_distinct_microscopic_singlet_scale_or_field_interface]
-    next_discriminator: identify_the_missing_physical_direction_pair_topology_or_distinct_microscopic_singlet_with_an_explicit_predicted_response_not_repeat_the_derivative_alias_or_radius1_row
+    next_discriminator: predict_the_original_missing_norm4_physical_direction_with_a_distinct_singlet_scale_or_connectivity_readout_using_completed_Q_R_H_responses_not_repeat_a_first_local_edge_measurement_or_infer_all_H_from_unresolved_JR
     information_gain: very_high
     compute_cost: high
     decision_experiments: [DX_ETOP_PRODUCTION_LOCALIZATION]
@@ -5037,10 +5090,10 @@ scientific_nodes:
     excludes_only: [individual_terminal_endpoint_irrep_families_at_the_declared_width4_gate]
     reusable_data_refs: [results/p333-charge2-landing/latest.json]
     dependency_group_refs: [p333-dual-number-gram-exact]
-    downstream_source_refs: [SRC_P398_COUPLED_ROOTED_NINE_MARK_CLOSURE, SRC_P398_ROOTED_SECOND_JET]
-    downstream_dependency_group_refs: [p398-coupled-rooted-nine-mark-exact-chain]
-    missing_inputs: [positive_weight_width4_two_charged_readout_connected_response_for_the_completed_nine_mark_object]
-    next_discriminator: consume_the_completed_rooted_coupled_module_in_a_physical_emission_response_instead_of_rebuilding_Hom_or_testing_another_automatic_projected_jet
+    downstream_source_refs: [SRC_P398_COUPLED_ROOTED_NINE_MARK_CLOSURE, SRC_P398_ROOTED_SECOND_JET, SRC_P398_POSITIVE_CYLINDER_PROPAGATION, SRC_P398_ANISOTROPIC_CYLINDER_SPECTRUM, SRC_PR267_P398_WIDTH5_PROPAGATION, SRC_P398_CONTINUOUS_TWO_CHANNEL_KERNEL]
+    downstream_dependency_group_refs: [p398-coupled-rooted-nine-mark-exact-chain, p398-positive-cylinder-exact-chain]
+    missing_inputs: [physical_interpretation_of_the_completed_width5_exact_rank8_versus_effective_two_slow_mode_response_with_fixed_readouts]
+    next_discriminator: retain_AP_landing_definitions_and_consume_the_existing_mode_residuals_and_width4_continuous_kernel_without_repeating_terminal_marks_width5_baselines_or_automatic_projected_jets
     information_gain: high
     compute_cost: low
     decision_experiments: [DX_CONNECTIVITY_RADICAL]
@@ -5087,23 +5140,23 @@ scientific_nodes:
     compute_cost: low
     decision_experiments: [DX_P337_LINE_TYPED_OBSERVER]
   - id: SN_P398_COUPLED_NINE_MARK_PHYSICAL_RESPONSE
-    title: completed_nine_mark_projected_module_and_next_positive_weight_connected_response
-    integration_status: branch_only
-    state: continuum_module
-    sources: [potts_Q_measure, projector_derivative, explicit_operator_derivative]
+    title: positive_AP_landing_exact_state_rank_versus_effective_slow_mode_propagation
+    integration_status: open_pr
+    state: low_dimensional_dynamics
+    sources: [bernoulli_thermal, potts_Q_measure, projector_derivative, explicit_operator_derivative]
     observer_sectors: [topology_typed, boundary]
     geometries: [finite_transfer_cylinder]
     acquisition: [exact_construction]
-    source_refs: [SRC_P398_COUPLED_ROOTED_NINE_MARK_CLOSURE, SRC_P398_ROOTED_SECOND_JET]
-    known_result: rooted7_alone_fails_but_rooted7_plus_existing_charge1_landing2_gives_a_unique_source_normalized_first_jet_at_width4_with_23_states_Gram_rank19_radical_dimension4_second_jet_X2_zero_and_J2_zero
-    boundary: the_surviving_radical_translation_is_an_involution_so_higher_fixed_radical_Gram_projection_conditions_are_automatic_in_the_fixed_linear_emission_family_not_physical_all_Q_unprojected_Gram_or_transfer_closure
-    supports: [consuming_the_existing_coupled_object_in_a_new_physical_emission_measurement, positive_weight_transfer_and_typed_quotient_readouts]
-    tensions: [repeating_generic_Hom_rooted_closure_or_projected_higher_jet_tests_as_new_science]
-    excludes_only: [the_isolated_rooted7_full_intersection_and_an_additional_hidden_Jantzen_layer_for_the_declared_nine_mark_Gram]
-    reusable_data_refs: [results/p398-rooted-module-closure/latest.json, results/p398-rooted-second-jet/latest.json]
-    dependency_group_refs: [p398-coupled-rooted-nine-mark-exact-chain]
-    missing_inputs: [one_positive_weight_width4_two_charged_readout_two_by_two_connected_response_with_source_and_emission_named]
-    next_discriminator: produce_the_two_by_two_connected_response_of_the_completed_nine_mark_object_and_compare_physical_emission_coupling_not_another_automatic_Gram_jet
+    source_refs: [SRC_P398_COUPLED_ROOTED_NINE_MARK_CLOSURE, SRC_P398_ROOTED_SECOND_JET, SRC_P398_POSITIVE_CYLINDER_PROPAGATION, SRC_P398_ANISOTROPIC_CYLINDER_SPECTRUM, SRC_PR267_P398_WIDTH5_PROPAGATION, SRC_P398_CONTINUOUS_TWO_CHANNEL_KERNEL]
+    known_result: width4_has_two_distinct_ordinary_modes_and_a_fixed_continuous_kernel_with_25_Im_squared_times_2_minus_Ic_equals2_width5_same_AP_landing_has_Krylov_2_4_6_8_and_positive_separation_Hankel_rank8_with_simple_charge_one_polynomial_while_two_fixed_slow_modes_approximate_Cd_with_Frobenius_error_percent_0p8996_0p1523_0p00405_at_d1_d2_d4
+    boundary: eight_finite_propagating_components_are_not_eight_continuum_fields_the_7p8838_percent_U_semigroup_defect_rejects_two_by_two_linear_closure_not_the_full_forty_two_state_Markov_chain_the_continuous_fingerprint_is_width4_specific_and_numerical_visibility_is_not_a_new_exact_certificate
+    supports: [completed_positive_width4_and_width5_physical_propagation_with_unchanged_local_AP_landing_definitions, effective_two_slow_modes_can_coexist_with_exact_rank8, width4_parameter_fixed_continuous_kernel_fingerprints]
+    tensions: [first_width5_matrix_as_still_missing, treating_two_readouts_or_two_visible_slow_modes_as_exact_state_dimension, another_positive_h_v_Jordan_search_in_the_solved_width4_family, repeating_automatic_projected_Gram_jets]
+    excludes_only: [one_common_width4_propagating_response_ray_positive_domain_width4_Jordan_collision_and_exact_width5_two_by_two_linear_semigroup_closure_not_all_Jordan_or_Markov_mechanisms]
+    reusable_data_refs: [results/p398-rooted-module-closure/latest.json, results/p398-rooted-second-jet/latest.json, results/p398-positive-cylinder/latest.json, results/p398-anisotropic-cylinder/latest.json, results/p398-physical-two-point/latest.json, results/p398-physical-two-point/mode-visibility.json, results/p398-continuous-kernel/latest.json]
+    dependency_group_refs: [p398-coupled-rooted-nine-mark-exact-chain, p398-positive-cylinder-exact-chain]
+    missing_inputs: [a_fixed_readout_physical_prediction_distinguishing_effective_slow_mode_propagation_from_exact_state_closure_and_controlling_cancelling_projection_errors]
+    next_discriminator: consume_completed_width5_mode_residuals_with_fixed_AP_landing_projections_to_distinguish_effective_two_slow_modes_from_exact_rank8_keep_width4_continuous_fingerprints_model_specific_not_repeat_first_width5_or_refit_amplitudes
     information_gain: very_high
     compute_cost: low
     decision_experiments: [DX_CONNECTIVITY_RADICAL]
@@ -5860,8 +5913,11 @@ dependency_groups:
     kind: open_pr_same_stream_radius1_local_singlet_mixed_moment_pilot
     member_sizes: [65, 130]
     source_ref: SRC_P154_PHASE_E_MIXED_PLANE
+    derived_source_refs: [SRC_PR267_P154_FIXED_K_INTERACTION]
+    path_source_refs:
+      results/p154-fixed-k-interaction/latest.json: SRC_PR267_P154_FIXED_K_INTERACTION
     metadata_paths: [results/p154-phase-e-mixed-plane-pilot/raw/n65_mixed.metadata.json, results/p154-phase-e-mixed-plane-pilot/raw/n130_mixed.metadata.json]
-    covariance_rule: B_B2_I0B_I2B_A_E_C_Jtop_and_Jbulk_views_within_each_size_share_one_batch_stream_and_are_not_independent_votes
+    covariance_rule: B_B2_I0B_I2B_A_E_C_Jtop_Jbulk_and_replayed_Q_R_H_views_within_each_size_share_the_original_twenty_thousand_sample_batch_stream_paired_delete_one_replays_are_not_new_independent_votes_sizes_keep_their_separate_covariance_blocks
   - id: p429-branching-continuation-N325-N425-100k
     kind: branch_only_shared_update_two_clone_production_with_100_batch_clusters_per_size
     member_sizes: [325, 425]
@@ -5923,6 +5979,19 @@ dependency_groups:
     derived_source_refs: [SRC_P437_FIXED_SUPPORT_COHERENT_DECOMPOSITION]
     metadata_paths: [results/local-20260831/P437-N112-fixed-S5-20k/run.json, results/local-20260831/P437-N112-fixed-S5-20k/batches.json, results/p437-fixed-support-coherent-decomposition/latest.json]
     covariance_rule: all_three_children_32_support_states_complex_mean_BS_U_statistic_and_strengthened_bound_share_the_same_twenty_thousand_backgrounds_and_one_hundred_batches_delete_whole_aligned_batches_and_do_not_add_parent_child_decompositions_as_independent_evidence
+  - id: p398-positive-cylinder-exact-chain
+    kind: nested_open_pr_and_branch_only_exact_positive_AP_landing_family_with_numerical_visibility_of_exact_outputs
+    member_sizes: []
+    member_widths: [4, 5]
+    source_ref: SRC_P398_POSITIVE_CYLINDER_PROPAGATION
+    derived_source_refs: [SRC_P398_ANISOTROPIC_CYLINDER_SPECTRUM, SRC_PR267_P398_WIDTH5_PROPAGATION, SRC_P398_CONTINUOUS_TWO_CHANNEL_KERNEL]
+    path_source_refs:
+      results/p398-anisotropic-cylinder/latest.json: SRC_P398_ANISOTROPIC_CYLINDER_SPECTRUM
+      results/p398-physical-two-point/latest.json: SRC_PR267_P398_WIDTH5_PROPAGATION
+      results/p398-physical-two-point/mode-visibility.json: SRC_PR267_P398_WIDTH5_PROPAGATION
+      results/p398-continuous-kernel/latest.json: SRC_P398_CONTINUOUS_TWO_CHANNEL_KERNEL
+    metadata_paths: [analysis/p398_positive_cylinder_protocol.json, results/p398-anisotropic-cylinder/latest.json, results/p398-physical-two-point/latest.json, results/p398-physical-two-point/mode-visibility.json, results/p398-continuous-kernel/latest.json]
+    covariance_rule: width4_width5_stationary_Cd_spectra_and_width4_continuous_kernel_belong_to_one_nested_physical_model_family_not_independent_samples_numerical_mode_visibility_reuses_the_width5_exact_output_readouts_are_inherited_from_the_formal_chain_but_positive_fourteen_and_forty_two_state_transfers_are_not_the_signed_accumulator
   - id: p40-motif-N65-N85-shared-counter-1m
     kind: branch_only_two_size_target_control_pilot_with_the_same_seed_and_counter_domain
     member_sizes: [65, 85]
@@ -5958,27 +6027,27 @@ decision_experiments:
   - id: DX_ETOP_PRODUCTION_LOCALIZATION
     attention_rank: 1
     name: norm4_missing_physical_direction_pair_topology_or_distinct_microscopic_singlet
-    status: canonical_Etop_PhaseD_and_radius1_mixed_B_B2_I0B_I2B_are_completed_the_original_norm4_physical_direction_topology_or_distinct_microscopic_singlet_remains_unidentified
+    status: canonical_Etop_PhaseD_radius1_mixed_row_and_same_stream_Q_R_H_interaction_replay_are_completed_JR_joint_p_0p66455_is_unresolved_and_the_original_norm4_physical_direction_remains_unidentified
     scientific_node_refs: [SN_NORM4_ETOP_PHASE_D, SN_PHASE_E_ALIAS_AND_LOCAL_ENERGY, SN_ETOP_CLOCK_PLANE]
     observer_sector_refs: [global_rank_projector, topology_typed, matching_even, bulk_energy_logpair, direction_character]
-    source_refs: [SRC_PR267_NORM4_PHASE_D, SRC_P154_PHASE_E_INTEGRATED_ALIAS, SRC_P154_PHASE_E_LOCAL_SINGLET_PILOT, SRC_ETOP_CLOCK_PLANE, SRC_P154_PHASE_E_MIXED_PLANE]
+    source_refs: [SRC_PR267_NORM4_PHASE_D, SRC_P154_PHASE_E_INTEGRATED_ALIAS, SRC_P154_PHASE_E_LOCAL_SINGLET_PILOT, SRC_ETOP_CLOCK_PLANE, SRC_P154_PHASE_E_MIXED_PLANE, SRC_PR267_P154_FIXED_K_INTERACTION]
     dependency_group_refs: [p154-phase-e-integrated-alias-existing-archives, p154-phase-e-local-singlet-N65-N130-20k, p154-phase-e-mixed-plane-N65-N130-20k, etop-clock-plane-production-plus-P205]
     acquisition: exact_construction
     expected_model_space_reduction: very_high
     compute_cost: high
-    decision_output: identify_the_missing_physical_direction_pair_topology_or_distinct_microscopic_singlet_and_its_explicit_response_prediction_not_another_Etop_nonzero_test_or_integrated_alias
+    decision_output: identify_the_missing_physical_direction_pair_topology_or_distinct_microscopic_singlet_and_its_explicit_response_prediction_using_completed_Q_R_H_outputs_not_another_Etop_nonzero_test_first_local_edge_response_or_all_H_claim_from_unresolved_JR
   - id: DX_CONNECTIVITY_RADICAL
     attention_rank: 2
-    name: positive_weight_width4_two_charged_readout_connected_response
-    status: coupled_nine_mark_first_and_second_jets_are_complete_X2_zero_J2_zero_and_higher_projected_Gram_constraints_are_automatic_the_missing_output_is_a_physical_connected_response
+    name: fixed_AP_landing_effective_slow_modes_versus_exact_state_closure
+    status: width4_anisotropic_and_continuous_kernels_and_width5_rank8_are_completed_two_fixed_slow_modes_give_subpercent_matrix_error_at_d1_but_the_two_by_two_U_semigroup_defect_is_7p8838_percent
     scientific_node_refs: [SN_RELATIVE_SOURCE_SEMISIMPLE_CLOSURE, SN_CONNECTIVITY_RADICAL_HYPOTHESIS, SN_P333_ENDPOINT_IRREP_CLOSURE, SN_RATIONAL_JORDAN_GEOMETRY_ORACLE, SN_P398_COUPLED_NINE_MARK_PHYSICAL_RESPONSE]
     observer_sector_refs: [topology_typed, boundary, direction_character]
-    source_refs: [SRC_RELATIVE_SOURCE_RANK3, SRC_RELATIVE_SOURCE_HH2, SRC_P333_DUAL_NUMBER_GRAM_RADICAL, SRC_P333_GENERIC_Q_DETACH_GATE, SRC_P333_SCALAR_MULTIMARK_OBSTRUCTION, SRC_P333_SOURCE_LANDING_DOUBLET, SRC_P333_CHARGE2_LANDING_RESULT, SRC_P398_COUPLED_ROOTED_NINE_MARK_CLOSURE, SRC_P398_ROOTED_SECOND_JET]
-    dependency_group_refs: [p333-dual-number-gram-exact, rational-Jordan-geometry-exact-main, jordan-nonseparation-C4-five-state-exact-PR385, p398-coupled-rooted-nine-mark-exact-chain]
+    source_refs: [SRC_RELATIVE_SOURCE_RANK3, SRC_RELATIVE_SOURCE_HH2, SRC_P333_DUAL_NUMBER_GRAM_RADICAL, SRC_P333_GENERIC_Q_DETACH_GATE, SRC_P333_SCALAR_MULTIMARK_OBSTRUCTION, SRC_P333_SOURCE_LANDING_DOUBLET, SRC_P333_CHARGE2_LANDING_RESULT, SRC_P398_COUPLED_ROOTED_NINE_MARK_CLOSURE, SRC_P398_ROOTED_SECOND_JET, SRC_P398_POSITIVE_CYLINDER_PROPAGATION, SRC_P398_ANISOTROPIC_CYLINDER_SPECTRUM, SRC_PR267_P398_WIDTH5_PROPAGATION, SRC_P398_CONTINUOUS_TWO_CHANNEL_KERNEL]
+    dependency_group_refs: [p333-dual-number-gram-exact, rational-Jordan-geometry-exact-main, jordan-nonseparation-C4-five-state-exact-PR385, p398-coupled-rooted-nine-mark-exact-chain, p398-positive-cylinder-exact-chain]
     acquisition: exact_construction
     expected_model_space_reduction: high
     compute_cost: low
-    decision_output: consume_the_completed_nine_mark_module_in_one_positive_weight_width4_transfer_and_output_two_charged_readouts_two_by_two_connected_response_with_source_emission_and_quotient_roles_explicit_no_more_rooted_closure_or_projected_jet_repetition
+    decision_output: distinguish_effective_two_slow_mode_propagation_from_exact_rank8_using_fixed_AP_landing_projected_residuals_and_the_completed_Cd_sequence_keep_width4_continuous_fingerprints_separate_and_do_not_reinterpret_U_defect_as_failure_of_the_full_Markov_chain
   - id: DX_ETOP_TAU_TOPOLOGY_MAP
     attention_rank: 3
     name: explicit_physical_response_prediction_on_a_realisable_geometry_design

@@ -615,6 +615,27 @@ registered_reanalyses:
     outputs: [results/p337-risk-hazard-split/latest.json, results/p337-risk-hazard-split/SCIENTIFIC_CARD.md]
     dependency_group: p337-risk-hazard-four-generation-reuse
     result_summary: Eprime_equals_J12_minus_J01_risk_composition_opposes_H4_and_conditional_hazard_has_the_same_sign
+  - id: P154_FIXED_K_INTERACTION_RESULT
+    status: completed_same_stream_zero_new_sample_interaction_replay
+    integration_status: open_pr
+    pr: 267
+    commit: c0880c297b40699563e8be537e777ac8cd4084c8
+    contract: analysis/p154_fixed_k_interaction_replay.json
+    outputs: [results/p154-fixed-k-interaction/latest.json, results/p154-fixed-k-interaction/REPORT.md, notes/p154-local-source-versus-connectivity-emission.md]
+    dependency_group: p154-phase-e-mixed-plane-N65-N130-20k
+    result_summary: same_PhaseE20k_per_size_JR_z_0p152_0p891_joint_chi2_0p8173_over2_p_0p66455_unresolved_not_all_H
+    boundary: R_has_a_fixed_K_global_counterterm_and_is_not_a_strictly_local_canonical_field_Q_R_H_and_parent_mixed_views_are_one_random_stream_not_new_evidence
+    next_output: explicit_physical_response_prediction_for_the_original_norm4_residual_using_completed_interaction_rows_not_first_local_edge_measurement
+  - id: P398_WIDTH5_PHYSICAL_PROPAGATION
+    status: completed_exact_width5_propagation_and_numerical_mode_visibility
+    integration_status: open_pr
+    pr: 267
+    commit: 8f7a5875157265e32e9db08c5f3991a9b9ddb86e
+    outputs: [results/p398-physical-two-point/latest.json, results/p398-physical-two-point/REPORT.md, results/p398-physical-two-point/mode-visibility.json, results/p398-physical-two-point/mode-visibility.md]
+    dependency_group: p398-positive-cylinder-exact-chain
+    result_summary: same_AP_landing_width5_Krylov_2_4_6_8_positive_separation_Hankel_rank8_simple_polynomial_two_slow_mode_matrix_error_percent_0p8996_0p1523_0p00405_at_d1_d2_d4
+    boundary: eight_finite_observable_modes_not_eight_fields_numerical_visibility_not_a_new_exact_certificate_7p8838_percent_two_by_two_U_semigroup_defect_not_failure_of_the_full_forty_two_state_Markov_chain
+    next_output: fixed_readout_effective_slow_modes_versus_exact_state_closure_with_projected_residuals_not_first_width5
   - id: P250_ADAPTIVE_STATE_INCREMENT
     status: completed_post_reveal_zero_new_sample_reanalysis
     integration_status: open_pr
@@ -677,6 +698,39 @@ frontier_branch_assets:
   - {id: P334_COOPERATIVE_SCALAR_NONCLOSURE, status: branch_only, branch: experiment/p334-cooperative-closure-pilot-20260830, commit: 6147e22f53902a94e5f133739f2c1d423691d0b8, representative_path: notes/p334-real-checkpoint-scalar-nonclosure.md, role: real_checkpoint_H2_b2_age_line_matched_safe_graph_degree_second_moment_nonclosure_with_replayable_microscopic_identifiers}
   - {id: P398_ROOTED_MODULE_COMPLETED, status: branch_only, branch: theory/p398-rooted-module-closure-20260830, commit: 5389200f6f75262d5327c5c52ba1c19826e177a8, representative_path: results/p398-rooted-module-closure/latest.md, role: coupled_nine_mark_unique_declared_intersection_not_a_physical_transfer}
   - {id: P398_SECOND_JET_COMPLETED, status: branch_only, branch: theory/p398-rooted-second-jet-20260831, commit: afc619c35188af718d450c19935f4d8dd8d39ff1, representative_path: results/p398-rooted-second-jet/latest.md, role: X2_zero_J2_zero_and_higher_fixed_radical_Gram_automatic_not_an_independent_gate_or_all_Gram_realization}
+  - id: P398_POSITIVE_CYLINDER_PROPAGATION
+    status: branch_only
+    branch: theory/p398-positive-cylinder-propagation-20260831
+    commit: e38fe7634354b0cb2201fa55fd9b4d37ccedeef2
+    parent_commit: afc619c35188af718d450c19935f4d8dd8d39ff1
+    representative_path: notes/p398-positive-cylinder-propagation.md
+    paths: [analysis/p398_positive_cylinder_protocol.json, notes/p398-positive-cylinder-propagation.md, results/p398-positive-cylinder/latest.json]
+    role: completed_positive_square_bond_width4_AP_landing_connected_matrix_with_two_distinct_nonzero_ordinary_propagation_modes
+    dependency_group: p398-positive-cylinder-exact-chain
+    dependency_boundary: exact_physical_fourteen_state_frontier_transfer_inherits_the_readouts_not_a_stochastic_interpretation_of_the_signed_twenty_three_state_accumulator_or_new_independent_samples
+    next_output: consume_completed_width5_rank8_and_two_slow_mode_residuals_with_fixed_AP_landing_readouts_not_first_width4_or_width5
+  - id: P398_ANISOTROPIC_CYLINDER_SPECTRUM
+    status: branch_only
+    branch: theory/p398-anisotropic-cylinder-spectrum-20260831
+    commit: b35e100a3903c706dceba57c4667386eb4510ac3
+    parent_commit: e38fe7634354b0cb2201fa55fd9b4d37ccedeef2
+    representative_path: notes/p398-anisotropic-cylinder-spectrum.md
+    paths: [notes/p398-anisotropic-cylinder-spectrum.md, results/p398-anisotropic-cylinder/latest.json]
+    role: completed_exact_positive_h_v_family_with_distinct_ordinary_modes_scalar_boundary_collisions_and_a_fixed_fast_eigenobservable
+    dependency_group: p398-positive-cylinder-exact-chain
+    dependency_boundary: same_nested_width4_AP_landing_physical_family_not_independent_evidence_or_a_Jordan_no_go_for_other_widths_observers_or_Q_lifts
+    next_output: distinguish_effective_slow_modes_from_exact_state_closure_with_unchanged_readout_definitions_not_another_positive_h_v_Jordan_search
+  - id: P398_CONTINUOUS_TWO_CHANNEL_KERNEL
+    status: branch_only
+    branch: theory/p398-continuous-two-channel-kernel-20260831
+    commit: dbd408154b4215ca41fbf26c0fd962997074f05d
+    parent_commit: b35e100a3903c706dceba57c4667386eb4510ac3
+    representative_path: notes/p398-continuous-two-channel-kernel.md
+    paths: [notes/p398-continuous-two-channel-kernel.md, results/p398-continuous-kernel/latest.json]
+    role: completed_width4_continuous_distance_kernel_with_fixed_amplitudes_and_25_Im_squared_times_2_minus_Ic_equals2
+    dependency_group: p398-positive-cylinder-exact-chain
+    dependency_boundary: one_nested_width4_limit_not_width5_universality_or_independent_evidence_Ic_is_channel_rescaling_invariant_not_arbitrary_readout_mixing_invariant
+    next_output: use_named_channel_fingerprints_as_a_width4_model_prediction_while_distinguishing_width5_effective_modes_from_exact_state
   - {id: MARKED_BIRTH_CONTACT_CHAIN, status: branch_only, branch: analysis/marked-birth-stream-20260829, commit: 0b3cebf9cd1b536c859d3fad1591345725a068f7, representative_path: results/server-20260829/marked-birth-pilot/REPORT.md, role: common_birth_pilot_mean_source_lead_and_all_order_q_only_contact_closure}
   - {id: P275_GLOBAL_LINE_FIELD_IDENTITY, status: branch_only, branch: research/p275-atop-field-identity-pipeline-20260829, commit: 4d7ecd5202a86d8ec42e9cdf4cf9453f1197f464, representative_path: results/server-20260829/P275-atop-field-identity/REPORT.md, role: nine_geometry_rejection_of_global_line_local_field_map}
   - {id: Q4_SEAM_PREFLIGHT, status: branch_only, branch: analysis/p257-p258-q4-seam-preflight-20260829, commit: 192e7942bbf84c941fbb3b88b6ae39447bd91854, representative_path: results/q4-seam-numerator-preflight/SCIENTIFIC_CARD.md, role: exact_singlet_one_charged_zero_numerator_and_partition_normalization_gate}
