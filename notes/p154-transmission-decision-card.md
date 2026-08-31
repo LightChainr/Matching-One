@@ -1,54 +1,55 @@
-# Source → birth clocks → original U: a high-gain transmission map
+# P154: fresh weak transmission activates the stop rule; no clock rescue
 
-**Theory delivered before inspecting fresh output:** four effective
-birth-clock enrichments reduce to three contrast jets after the exact
-common-clock cancellation. The previous geometry-even two-clock model
-sampled only one weak direction; it does not bound angular transmission.
+The official independent block is complete: **5M N85 and160M N340 new
+permutations**, with200 batches per size. Both net-response simultaneous
+intervals lie wholly within the frozen[-.50,.50] band. Stop prioritizing
+this lag1 rank-centered CB+CW source as the main H4 explanation at that
+declared resolution. Both entry-selective and completion-selective
+numerical templates fail; the weak-channel template is not excluded, with
+all four component intervals inside its band.
 
-[Combined derivation and saved gains, c2828e34](https://github.com/LightChainr/Matching-One/blob/c2828e3430fe1ac7e02fbe0e5ddc0e6a24c99847/notes/p154-birth-clock-transmission-map.md).
+| N | Entry | Completion | Net | Original net simultaneous95% interval |
+|---:|---:|---:|---:|---:|
+|85| .04449 | -.00102 | .04347 |[-.07164,.15858]|
+|340| -.05357 | .11425 | .06068 |[-.15739,.27875]|
 
-For each birth/geometry, the **actual lag1 source** obeys
-`alpha=N*J/Fprime=E_birth-posterior[(Np/K)*centered_source_mark]`.
-Decompose `alpha=a00+eta*a10+tau*a01+eta*tau*a11`, with geometry signs
-eta=±1 and birth signs tau=−1,+1. The full original-U derivative is
-`v=sum_m(C_m*a_m+L_m*a_m')`, m=10,01,11. The entire a00 function cancels.
-These are simultaneous contrast coordinates, not three mutually exclusive
-physical theories or fitted archive features.
+[Official frozen production and primary result, f4999e29](https://github.com/LightChainr/Matching-One/blob/f4999e29612da16a3650f24d124fb59137f053d7/experiments/p154-prospective-transmission-20260831/REPORT.md).
+This is a finite-scale numerical decision for the specified source, not
+exact zero or rejection of all H4 mechanisms. No old discovery data were
+pooled and no new lag, fourth numerical template or extra sample was added.
 
-Using **only already published unmarked baseline jets**, nominal N340
-value gains are C10=246.388, C01=.2694, C11=12.323; the a11 derivative
-gain is23.964. The orientation/common-birth direction is about915 times
-the previously retained geometry-even relative-clock gain. A locally flat
-pure a10=.002029 would nominally give v=.5. This is an inverse sensitivity,
-not a measured source amplitude; gain uncertainty was not newly propagated.
+## Pre-output clock predictions, now scored
 
-Two explicitly stated first-jet restrictions give amplitude-free directions
-for the **already planned** entry/completion readout:
+The exact [source→birth-clock→U map, c2828e34](https://github.com/LightChainr/Matching-One/blob/c2828e3430fe1ac7e02fbe0e5ddc0e6a24c99847/notes/p154-birth-clock-transmission-map.md)
+identifies a high-gain angular/common-birth direction. Large sensitivity
+does not establish that the actual source excites it. Before inspecting
+fresh outcomes, we fixed two pure locally flat first-jet restrictions:
+M10 predicts aligned entry/completion responses; M11 predicts opposite
+responses, with amplitude-free directions from unmarked baseline jets.
 
-| Restriction | N85 completion/entry | N340 completion/entry |
-|---|---:|---:|
-| Pure locally flat orientation/common-birth clock | +1.18610 | +1.10530 |
-| Pure locally flat orientation/relative-birth clock | −1.18610 | −1.10530 |
+The four-residual rule was frozen in83f3eba8 and the implementation pushed
+in4129d47d before outcome inspection. This is an **outcome-blind secondary
+registration during/after production**, not another pre-production primary.
+One local pass then reused the official response/omission vectors and
+recomputed only the unmarked baseline gains with the same omissions.
 
-Formal comparisons use a linear gain-line residual with shared uncertainty,
-not a noisy response ratio. Both lines include zero. Non-flat clocks and
-mixtures can violate either restriction, and cancelling channels do not
-uniquely identify a clock: the companion current algebra proves that purely
-geometry-antisymmetric direct0→2 currents give exactly opposite readout
-responses with zero net U. The existing01/02/12 marks distinguish event
-support after the common root/slope feedback is removed.
+| N | Restriction | Line residual | Secondary simultaneous95% interval |
+|---:|---|---:|---:|
+|85|M10|-.03462|[-.11385,.04460]|
+|85|M11|-.03330|[-.11134,.04473]|
+|340|M10|.11640|[-.04931,.28210]|
+|340|M11|-.03699|[-.18320,.10923]|
 
-**Operational consequence:** keep the present fresh N85/N340 net-U and
-channel experiment. This note does not change its contract, add a fourth
-rescue rectangle, refit source coefficients, or combine old/fresh evidence.
-If the original numerical templates fail, they remain failed. These theory
-restrictions are recorded now on their own terms, without increasing the
-observer set, lag list, sampling budget, or primary family.
+**Neither line is excluded, and neither is identified.** Both contain zero;
+the weak fresh response cannot choose between them. The lines therefore
+provide no rescue of the failed primary predictions or the source's main
+H4 priority. An arbitrary two-amplitude mixture would saturate the two
+readout coordinates and is not fitted.
 
-The [earlier two-rigid-clock budget](https://github.com/LightChainr/Matching-One/blob/6909d9c23ddb30eb638f2073bca95702fbe92d2e/notes/p154-prospective-birth-clock-transmission-decision.md)
-still applies to that narrowly screened direction: nominal v=.0098/.0175
-atN260/N340 was too small for a bounded discrimination run. The new map
-identifies why that no-launch conclusion cannot be generalized to all
-angular clocks. No old paths, source fits, fresh result, or test suite were
-replayed here. All three theory agents and this local calculation are done;
-no cloud job was started and no other team's process was touched.
+Full result and covariance: `notes/p154-clock-line-secondary-result.md` and
+`results/p154-clock-line-secondary/score.json` on
+`analysis/p334-paired-clock-loading-20260831` (linked below after delivery).
+The joint10x10 covariance preserves the original six primary coordinates
+and four secondary residuals; all share the same size-specific dependency
+blocks. The official primary scorer was not rerun. No additional sampling,
+test campaign, cloud operation or cross-task DM was performed here.
