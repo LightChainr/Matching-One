@@ -1,0 +1,17 @@
+{
+  "schema": "matching-one/p267-maximal-common-gaussian-three-center/v1",
+  "analysis_stage": "post-reveal exploratory moment realization on existing N100/N400; no new MC and no change to the N900 width target",
+  "source_commits": {
+    "100": "7b30648be558df0652a7ff22143cc87ed399d042",
+    "400": "3e01b495b5b637b0070705e37b4137a9a0ef0d8b"
+  },
+  "observer": "D_A=P4[A_top](4i)-P4[A_top](2i), normalized signed rank-step profile",
+  "coordinate": "u=(p-mean_rank_step)/sqrt(variance_rank_step), recalculated in each leave-one-batch-out replicate",
+  "construction_orders": [0, 1, 2, 3, 4, 5, 6],
+  "construction": "m'_r(t)=sum_j (-t)^j*r!/(2^j*j!*(r-2j)!)*m_(r-2j). Starting at t=0, find the first PSD boundary of H3(t)=[m'_(i+j)]_i,j=0..3 within 0<=t<=1. Require H2 positive definite, H3 flat rank3, three real distinct centers, positive weights, and reproduction of m0..m6. Otherwise report failure rather than change atom count or model family.",
+  "model": "sum_a=1..3 w_a Normal(center_a,t), center-ordered; maximum common Gaussian variance permitted by the truncated positive moment problem",
+  "unused_readouts": ["standardized moment 7", "standardized moment 8"],
+  "uncertainty": "Refit normalization, first PSD boundary, three centers and weights inside every original common-batch LOO; retain full covariance. Source sizes are independent blocks. No independent validation claim for unused moments from the same data.",
+  "numerical_gate": "Standardized H2 minimum eigenvalue >1e-10; H3 boundary absolute minimum eigenvalue <1e-9; three-center moment reconstruction max absolute residual <1e-8. A gate failure is an unresolved construction, not a request to scan another family.",
+  "boundary": "Three atoms are a positive truncated-moment representation, not three fields or proof of Gaussian components in the full signed profile. The existing finite-support rank-step profile is not literally an unbounded Gaussian mixture. No window, component-number, or mixture-family scan. N900 is not read."
+}
