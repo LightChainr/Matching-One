@@ -10,16 +10,18 @@ This Draft incorporates main through `e300609`; later observed main changes are 
 
 The first #370 real-data adapter, P267 amplitude comparison, P334 graph/capacity analysis and first F5/C3 typed observers are completed inputs. No Monte Carlo is launched by this navigation update, and tool/test completion is not an independent scientific milestone.
 
-The [million-sample P40 analysis](../results/p40-absolute-cluster/REPORT.md)
-has completed the previous direct-reuse assignment. Global q/source coupling
-is strong but its orientation difference is unresolved. Next target the
-explicitly absent E_top/source and control products on existing counters,
-then their actual norm-4 child/thermal relation; do not repeat q-only source
-detection. These small sufficient-statistic analyses do not call for a GPU.
+The [million-sample P40 even response](../results/p40-even-given-odd/REPORT.md)
+has completed the missing E_top/source assignment too. At fixed matching,
+the raw source moves rank-1 probability at110–138 SE; raw H4 C remains
+unresolved, with an auxiliary full-control hint. Next use the [actual U
+source interface](../notes/p40-even-response-norm4-interface.md): root/slope
+and thermal derivatives, then the real three-size norm-4 residual.
+Bare fixed-p C does not inherit U's scaling law. No first q/E source
+detection remains, and this work needed no GPU.
 
 The earlier [Phase-E source replay](../results/p154-absolute-cluster/REPORT.md)
 already measured E_top/source at N65/N13020k. Its unresolved result is not
-replaced by P40's q-only result at different scope. The [e increment](../notes/frontier-increment-20260831e.md)
+replaced by P40's different geometries or stronger sample block. The [e increment](../notes/frontier-increment-20260831e.md)
 also completes uniform-blockade mean closure and the instantaneous-current
 observer. Spatial marked variance/collisions and named hidden reversible
 geometry transport remain distinct beyond those completed means.
@@ -27,16 +29,16 @@ geometry transport remain distinct beyond those completed means.
 The [d increment](../notes/frontier-increment-20260831d.md) also removes
 first all147-prefix clocks/noise, first canonical crossings and first P398
 current deletion from the queue. Use their actual outputs for population
-loading or a specified physical-response prediction. N900 is author-reported
-running without a published target at the captured head; consume the existing
-handoff and keep the later two-lobe obstruction separate from its width test.
+loading or a specified physical-response prediction. [N900 is now completed](../notes/frontier-increment-20260831f.md),
+with32M/800 and compatible conditional width predictions; keep the separate
+two-lobe obstruction distinct from that completed width test.
 
 The [preceding context reconciliation](../notes/context-reconciliation-20260831c.md)
 now supersedes more old first-work requests: N400 production, canonical/rank
 width decomposition, P398 memory/motifs, full physical and canonical birth
 clocks, and tiny VJS's complete finite derivative are all delivered. N900
-already has a published plan/runner in #484; runtime is unconfirmed. This
-roadmap update coordinates those results and does not launch new work.
+has progressed from that historical plan/runner state to a published report
+and successful receipts. This roadmap update does not launch another campaign.
 
 The [preceding output block](../notes/research-output-update-20260831b.md) also completes
 N100 central/tail moments and P398 fixed-readout errors. Open PR #491 supplies
@@ -104,7 +106,7 @@ is not that derivative. First memory, R/T2 and triplet analyses are not pending.
 
 Branch `62585f2` rejects one global A/E ray relative to four lineage rays. The N50 factorial resolves interaction at `236.756/4`; Draft `a09758e`, [response-ray report](../results/p267-response-ray/REPORT.md), now completes the amplitude-only comparison: best lambda `3.321708`, full four-coordinate residual `19.87177/3`, nominal p `.00018045`. A/E alone survives (`.19674/1`, p `.6574`), so the result is not a local E_top failure. The subsets are dependent retrospective diagnostics, not additional discoveries.
 
-**This geometry question has advanced again:** PR #484 has acquired both N1002M and independent N4008M at three moduli. N400 common density transport is unresolved (3.90086/6, p=.69009), while its signed clock profile broadens. `fb1a944` shows96.895%±.507pp of that increase remains before canonicalization. The separate ordinary scalar-height target is weak; no recovery or resolved sign reversal follows. N900 has a frozen two-shape width plan/runner at the captured branch, not a verified completion or runtime. **Next handoff:** consume that existing campaign's eventual result with both shared-anchor and target covariance; do not assign another first N400, de-smoothing or N900 launch. The two-size quarter-power fingerprint is conditional, not an identified exponent; a two-shape width comparison does not measure three-shape transport.
+**This geometry question has advanced again:** PR #484 has acquired N1002M and independent N4008M at three moduli, then N90032M at two modulus pairs. N400 common density transport is unresolved (3.90086/6, p=.69009); `fb1a944` shows96.895%±.507pp of broadening remains before canonicalization. N900 Vz2.33946±.12039 leaves both frozen conditional width predictions compatible (p=.13497/.08418), including shared-anchor and target covariance. **Next handoff:** require additional joint area/center/shape or source predictions from the candidate mechanism, using existing outputs. No first N900 launch or width comparison remains. Effective N400→900 width.30688±.03861 is finite-scale, and a two-shape width comparison does not measure three-shape transport.
 
 ### P334: use the completed physical cut network
 

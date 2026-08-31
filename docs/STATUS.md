@@ -8,7 +8,22 @@
 
 ## Evidence and lifecycle contract
 
-The [P40 million-sample source result](../results/p40-absolute-cluster/REPORT.md)
+The [P40 even-given-odd result](../results/p40-even-given-odd/REPORT.md)
+(`56a6267d`, `open_pr #267`) now supplies the missing E_top/source moments.
+At fixed matching mean, raw-source C is positive at110–138 SE on all four
+geometries; its H4 contrast has nominal joint p=.21156. The full-compensated
+auxiliary p=.04911 is one of six correlated views, not a field identification.
+The same old million counters per N were reobserved once, about42 CPU seconds.
+The [norm-4 bridge](../notes/p40-even-response-norm4-interface.md) specifies
+`L4[partial_lambda U]`, including root/slope/thermal derivatives; bare C
+cannot inherit the old U law. The full chains end at N260/N340.
+
+[N900 is completed](../notes/frontier-increment-20260831f.md), `5f30397c`,
+`open_pr #484`:32M shared counters/800 batches, Vz2.33946±.12039,
+conditional prediction p=.13497/.08418. Successful run receipts supersede
+old running labels; no process or server was inspected here.
+
+The preceding [P40 million-sample q/source result](../results/p40-absolute-cluster/REPORT.md)
 (`a4cbf02a`, `open_pr #267`) now resolves global q/source coupling at each
 orientation but not its H4 difference (full-control z=−.189/1.360,
 nominal joint p=.38964). This is an existing-Gram analysis, not new samples.
@@ -36,8 +51,8 @@ six further completed analyses, including all147 P334 clocks/noise and
 P398 current deletion. The current-deleted finite process retains fast/slow
 inversion; N100/N400 moments obstruct a common symmetric positive two-lobe
 kernel. Each retains its actual `open_pr`/`branch_only` status and original
-data dependency. N900 is author-reported running, with no completed result
-at the captured head and no independent process inspection.
+data dependency. Its dated N900 running report is superseded by the
+completed f increment above; no independent process inspection was made.
 
 The preceding [context reconciliation](../notes/context-reconciliation-20260831c.md)
 corrects several completed-but-still-listed-as-next items: N400 production and
@@ -45,8 +60,8 @@ rank-clock de-smoothing; width8 memory/motifs; full physical and canonical
 two-prefix clocks; and tiny VJS's three-term Q derivative. The
 [dated #492–497 / active-work capture](ISSUE-PR-INCREMENT-20260831c.md) records
 subsequent PR lifecycle changes without changing the Draft's main incorporation.
-N900 has a frozen plan and runner; runtime is unconfirmed and no completion
-artifact was present at that earlier captured head. That c update ran no new analysis.
+N900's plan/runner-only state belongs to that earlier capture, not the
+current completed state. That c update ran no new analysis.
 
 The earlier [research-output update](../notes/research-output-update-20260831b.md)
 consumes PR #484 production and completes fixed thermal windows (`d973a39`)
@@ -85,7 +100,7 @@ This delta is placed before the main claim ledger because it changes what the te
 | N100 and N400 three-shape production | `open_pr` #484; N400 raw `3e01b49`, captured head `705819e`; #485 is N100 same-stream reuse | N100 necessary common density-map statistic53.91436/6 becomes3.90086/6 at N400, p=.69009. One N1002M block and one independent N4008M block, with shapes paired inside each. Nonrejection is not model recovery; a fitted negative cross-scale amplitude has an interval spanning zero |
 | Intrinsic rank-clock broadening | `branch_only` / `fb1a944`, [source](https://github.com/LightChainr/Matching-One/blob/fb1a944e1ef34e9b9dfcf32c59af25f44ce43d9a/notes/p267-rank-clock-width-decomposition.md); cited by #484, not in its captured tree | Rank-step centered z variance1.432585±.016441→2.094751±.074748;96.895%±.507pp of the canonical increase remains. This is a signed profile, not a threshold probability distribution; the selected two-size .237960±.013519 width fingerprint is not a critical exponent |
 | Ordinary scalar transport at N400 | `branch_only` / `162fe94`, [source](https://github.com/LightChainr/Matching-One/blob/162fe94e7986eaed177e58af42900acfffbf4e4d/notes/p267-ordinary-scalar-clock-n400.md); cited by #484, not in its captured tree | Source-defined ordered height-ratio comparison .0769793/2 is weak, as is its cross-scale change. This no-Jacobian class differs from density transport; no scalar recovery or resolved sign reversal |
-| N900 acquisition handoff | `open_pr` #484 / manifest in `ecde7c9`, retained at captured `705819e` | Frozen32M counters/800 batches, two shapes, conditional width predictions2.565535 versus2.094751 with shared N400-anchor covariance. Manifest/runner are published; runtime unconfirmed and no N900 completion artifact in captured tree. Not an unassigned first campaign or a three-shape transport result |
+| N900 completed width result | `open_pr` #484 / `5f30397c`, [source review](../notes/frontier-increment-20260831f.md) | 32M shared counters/800 batches, two modulus pairs; Vz2.33946±.12039, conditional predictions p=.13497/.08418 with shared target and N400-anchor covariance. Both receipts succeed. No winner, new asymptotic exponent or three-shape transport result |
 | N100 center/tail decomposition | `open_pr` #267 / `d973a39`, [result](../results/etop-critical-window-n100/REPORT.md) | At fixed finite-N window, A area is −3.46029e−4±4.62677e−5 and E dipole −1.35802e−4±1.16777e−5. Weak A dipole does not mean a silent center. One 2M-counter dependency block; not a scaling limit or norm-4 energy identity |
 | P398 fixed equal-time innovation | `open_pr` #267 / `4846adf`, [result](../results/p398-fixed-readout/REPORT.md) | At d1, J's unit-variance signal is .020216 and two-mode error77.98%, while whole-matrix error is .90%. The observer is chosen from C0 only. Spectrum-null filters are separate constructed exploration, not independent evidence |
 | P398 width8 protected rays | `branch_only` / `552c45d`, [source](https://github.com/LightChainr/Matching-One/blob/552c45d7595ebcb0d04555cec03b2a5bfd8da44a/notes/p398-width8-source-spectrum.md) | Continuous fixed-i model has two Kreweras-protected rays with93 directions each, plus explicit contact/size-two leakage. This is not the width5 discrete C5 model or186 fields |

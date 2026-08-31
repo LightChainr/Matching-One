@@ -1,4 +1,4 @@
-version: 28
+version: 29
 updated: 2026-08-31
 scientific_main_snapshot_commit: e30060995a9eb5c4d93f565ae09af4f54a56270f
 observed_remote_main_snapshot_commit: 2ee16678b64a065d6d235ef69941c8a46f3a3878
@@ -3129,6 +3129,17 @@ branch_sources:
     dependency_group_refs: [p40-motif-N65-N85-shared-counter-1m]
     paths: [analysis/p40_absolute_cluster_reanalysis.json, scripts/analyze_p40_absolute_cluster.py, results/p40-absolute-cluster/REPORT.md, results/p40-absolute-cluster/latest.json]
     claim_boundary: all_orientation_full_compensated_q_source_responses_exceed160_SE_but_directional_H4_joint_p0p38964_is_unresolved_N85_is_not_N130_Etop_and_thermal_third_moments_are_absent_cross_geometry_cancellation_is_coupling_dependent_N_streams_are_domain_separated_by_splitmix64_N
+  - id: SRC_PR267_P40_EVEN_GIVEN_ODD_RESPONSE
+    integration_status: open_pr
+    pr: 267
+    ref: research/navigation-priority-refresh-20260829
+    commit: 56a6267d6a6826a165f93ed3a64a670ca7088180
+    scientific_commit: 464f33f14c4b58ad9233afad002c4a7447b3ba4c
+    input_commit: 291854a518b03eef4293431b89254f0f4429da53
+    result_status: completed_same_million_counter_Etop_source_supplement_fixed_matching_mean_even_response_and_explicit_original_norm4_source_bridge
+    dependency_group_refs: [p40-motif-N65-N85-shared-counter-1m]
+    paths: [analysis/p40_even_given_odd_replay.json, src/p40_even_given_odd_replay.cpp, scripts/replay_p40_even_given_odd.py, scripts/analyze_p40_even_given_odd.py, results/p40-even-given-odd/latest.json, results/p40-even-given-odd/REPORT.md, results/p40-even-given-odd/run.json, results/p40-even-given-odd/raw/n65.csv, results/p40-even-given-odd/raw/n85.csv, notes/p40-even-response-norm4-interface.md]
+    claim_boundary: raw_orientation_C_positive110_to138_SE_full_compensated28_to35_SE_distinguishes_finite_first_order_pure_q_tangent_raw_H4_joint_p0p211562_and_auxiliary_full_p0p049109_are_correlated_views_not_unique_H4_mechanism_energy_identity_or_original_norm4_source_transfer
   - id: SRC_PR484_P334_UNIFORM_BLOCKADE_SEMIGROUP
     integration_status: open_pr
     pr: 484
@@ -3283,12 +3294,24 @@ branch_sources:
     commit: ecde7c9132ed35ec1575bd82f11e816722912e6f
     observed_pr_head: 8b3c4e4b175826805238f2585ca470d746a80610
     observed_pr_head_at: '2026-08-31T06:41:26Z'
-    result_status: author_reports_two_local_single_thread_N900_processes_running_no_target_result_or_completion_receipt
-    acquisition_status: author_reported_running_runtime_not_independently_inspected_completion_not_established
+    result_status: historical_prerequisite_freeze_and_author_running_capture_now_followed_by_completed_target
+    acquisition_status: historical_capture_only_current_completion_is_recorded_in_SRC_PR484_N900_RANK_WIDTH_RESULT
+    completed_followup_source_refs: [SRC_PR484_N900_RANK_WIDTH_RESULT]
     previous_observation: head705819e_manifest_and_runner_only_execution_unknown_preserved_as_historical_capture
     existing_assignment: PR484_N900_rank_width_followup_do_not_duplicate_the_existing_team
     paths: [experiments/etop_n900_rank_width_20260831.json, scripts/run_etop_n900_rank_width.py]
     claim_boundary: author_reported_thirty_two_million_counter_eight_hundred_batch_two_shape_campaign_has_no_archived_target_at_the_capture_predictions2p565535388_and2p094750873_share_N400_anchor_covariance_no_independent_runtime_verification_or_duplicate_launch
+  - id: SRC_PR484_N900_RANK_WIDTH_RESULT
+    integration_status: open_pr
+    pr: 484
+    ref: analysis/etop-modulus-survivors-20260831
+    commit: 5f30397c5ba277fb0799fb2f7491c823de07a13d
+    freeze_commit: ecde7c9132ed35ec1575bd82f11e816722912e6f
+    observed_at: '2026-08-31T07:29:32Z'
+    result_status: completed_N900_thirty_two_million_shared_counter_eight_hundred_batch_two_modulus_rank_width_comparison_with_two_success_receipts
+    dependency_group_refs: [N900_two_modulus_seed20260831141001_offset267900000000, N400_three_modulus_seed20260831134001_offset267400000000]
+    paths: [results/etop-n900-rank-width/REPORT.md, results/etop-n900-rank-width/score.json, results/etop-n900-rank-width/raw/tau_2i.hist.csv, results/etop-n900-rank-width/raw/tau_2i.moments.csv, results/etop-n900-rank-width/raw/tau_2i.metadata.json, results/etop-n900-rank-width/raw/tau_4i.metadata.json, results/etop-n900-rank-width/logs/tau_2i.receipt.json, results/etop-n900-rank-width/logs/tau_4i.receipt.json]
+    claim_boundary: signed_profile_Vz2p339461729_plusminus0p120385154_two_frozen_prediction_p0p134967_and0p084182_share_target_and_N400_anchor_neither_is_a_winner_finite_width_descriptor0p306876850_plusminus0p038610154_not_asymptotic_exponent_no_shear_or_three_shape_transport_test
   - id: SRC_P398_WIDTH8_PROJECTED_MEMORY
     integration_status: branch_only
     ref: theory/p398-width8-projected-memory-20260831
@@ -5317,7 +5340,7 @@ scientific_nodes:
     reusable_data_refs: [results/p154-phase-e-bulk-energy-alias/latest.json, results/p154-phase-e-local-singlet-pilot/score.json, results/etop-clock-plane-elimination/latest.json, results/p154-phase-e-mixed-plane-pilot/score.json, results/p154-fixed-k-interaction/latest.json, notes/p154-local-source-versus-connectivity-emission.md]
     dependency_group_refs: [p154-phase-e-integrated-alias-existing-archives, p154-phase-e-local-singlet-N65-N130-20k, p154-phase-e-mixed-plane-N65-N130-20k, etop-clock-plane-production-plus-P205]
     missing_inputs: [the_original_norm4_physical_direction_pair_topology_or_a_genuinely_distinct_microscopic_singlet_scale_or_field_interface]
-    next_discriminator: use_completed_PhaseE20k_and_P40_million_sample_source_results_to_target_named_Etop_child_or_thermal_mixed_readouts_not_another_q_only_source_detection_or_an_alias_claim_from_unresolved_directional_response
+    next_discriminator: connect_completed_PhaseE20k_and_P40_even_given_odd_results_to_source_derivative_of_original_pooled_root_and_slope_normalized_U_not_direct_L4_of_C_or_another_first_Etop_source_detection
     information_gain: very_high
     compute_cost: high
     decision_experiments: [DX_ETOP_PRODUCTION_LOCALIZATION]
@@ -5341,7 +5364,7 @@ scientific_nodes:
     reusable_data_refs: [results/p154-absolute-cluster/latest.json, results/p154-absolute-cluster/raw/n65.csv, results/p154-absolute-cluster/raw/n130.csv, results/p154-absolute-cluster/REPORT.md, results/p154-absolute-cluster/run.json]
     dependency_group_refs: [p154-phase-e-mixed-plane-N65-N130-20k]
     missing_inputs: [source_rank_moments_on_additional_norm4_generations_or_thermal_coordinates, third_mixed_moment_for_d_p_Cov_O_S_not_reconstructible_from_saved_second_moments]
-    next_discriminator: consume_completed_P40_q_source_analysis_and_target_named_q_squared_source_and_q_squared_control_moments_on_actual_norm4_child_or_thermal_coordinates_not_repeat_q_only_analysis_or_substitute_N85_for_N130
+    next_discriminator: existing_seven_coordinate20k_N65_N130_Gram_can_supply_its_own_fixed_p_C_without_replay_but_original_norm4_requires_L4_source_derivative_of_U_with_moving_pooled_root_and_slope_response_not_C_scaling_or_N130_as_norm4_endpoint
     completed_followup_input:
       source_ref: SRC_P40_PRODUCTION_MOTIF_PROJECTION
       commit: 291854a518b03eef4293431b89254f0f4429da53
@@ -5353,26 +5376,31 @@ scientific_nodes:
     compute_cost: low
     decision_experiments: [DX_ETOP_PRODUCTION_LOCALIZATION]
   - id: SN_P40_ABSOLUTE_CLUSTER_MATCHING_RESPONSE
-    title: million_sample_absolute_cluster_coupling_is_strong_while_directional_H4_is_unresolved
+    title: completed_positive_Etop_response_at_fixed_matching_mean_distinguishes_finite_pure_q_tangent_not_norm4_operator
     integration_status: open_pr
     state: microscopic_threshold_structure
     sources: [bernoulli_thermal, absolute_paired_cluster_fugacity]
-    observer_sectors: [global_rank_projector, matching_odd, direction_character]
+    observer_sectors: [global_rank_projector, matching_odd, matching_even, direction_character]
     geometries: [gaussian_cover, square_controls]
     acquisition: [existing_data_reuse]
-    source_refs: [SRC_PR267_P40_ABSOLUTE_CLUSTER_RESPONSE, SRC_P40_PRODUCTION_MOTIF_PROJECTION]
+    source_refs: [SRC_PR267_P40_ABSOLUTE_CLUSTER_RESPONSE, SRC_P40_PRODUCTION_MOTIF_PROJECTION, SRC_PR267_P40_EVEN_GIVEN_ODD_RESPONSE]
     known_result: all_four_orientation_full_compensated_Cov_q_S_exceed160_SE_source_retains65_to68_percent_variance_directional_raw_joint_p0p89234_full_control_joint_chi2_1p88505_over2_p0p38964_remains_unresolved
+    even_given_odd_result: common_raw_source_C_is_positive_in_all_four_orientations110_to138_SE_full_compensated_C28_to35_SE_rank1_probability_response_is_negative_when_matching_mean_is_held_fixed_first_order_raw_H4_joint_p0p211562_full_H4_joint_p0p049109
+    even_given_odd_readout:
+      N65: {first_C_raw: 0.001414733980, first_C_raw_se: 0.000011675969, second_C_raw: 0.001442630647, second_C_raw_se: 0.000010898865, H4_C_raw_z: -1.737650, H4_C_full_z: -2.391853}
+      N85: {first_C_raw: 0.001101347552, first_C_raw_se: 0.000007955820, second_C_raw: 0.001097286885, second_C_raw_se: 0.000009961367, H4_C_raw_z: 0.295031, H4_C_full_z: -0.553608}
+    even_given_odd_boundary: six_predeclared_C_JE_raw_clock_full_tests_are_correlated_auxiliary_p0p049109_is_not_sole_mechanism_evidence_after_source_control_then_q_compensation_original_Z_means_are_not_simultaneously_fixed_nonzero_C_is_a_finite_topological_first_order_distinction_not_energy_identity
     numerical_readout:
       N65: {directional_J_full: -0.00000213821, se: 0.00001132698, paired_first_term: 0.00008130310, paired_second_term: -0.00008344131}
       N85: {directional_J_full: 0.00001171787, se: 0.00000861650, paired_first_term: -0.00005072097, paired_second_term: 0.00006243884}
     boundary: raw_negative_and_compensated_positive_J_are_different_perturbations_not_sign_change_of_one_coupling_paired_allocation_depends_on_common_cyclic_site_lift_and_is_not_two_independent_fields_or_causal_mechanisms_N85_is_not_N130
     supports: [completed_million_sample_physical_source_response_without_replay, distinction_between_strong_global_coupling_and_small_anisotropic_coupling, full_twenty_seven_output_paired_delete_one_covariance]
     tensions: [first_q_source_detection_as_pending, E_edges_relabelled_as_Etop, source_cancellation_summands_as_independent_H4_signals]
-    excludes_only: [exact_absence_of_orientationwise_q_coupling_for_the_declared_sources_not_zero_H4_or_any_continuum_energy_candidate]
-    reusable_data_refs: [results/p40-absolute-cluster/latest.json, results/p40-absolute-cluster/REPORT.md]
+    excludes_only: [exact_absence_of_orientationwise_q_coupling_for_the_declared_sources, pure_q_first_order_tangent_in_the_measured_finite_topological_marginal_not_a_continuum_field_or_norm4_model]
+    reusable_data_refs: [results/p40-absolute-cluster/latest.json, results/p40-even-given-odd/latest.json, results/p40-even-given-odd/REPORT.md, notes/p40-even-response-norm4-interface.md]
     dependency_group_refs: [p40-motif-N65-N85-shared-counter-1m]
-    missing_inputs: [q_squared_times_source_and_all_q_squared_control_moments, actual_norm4_child_source_responses, mixed_third_moments_for_thermal_transport_of_the_named_source]
-    next_discriminator: measure_even_given_odd_response_for_common_raw_cluster_source_first_with_explicit_geometry_adapted_compensated_auxiliary_readout_then_actual_child_or_thermal_transport_not_repeat_completed_million_sample_q_only_analysis
+    missing_inputs: [q_S_K_and_Etop_S_K_moments_at_original_lineage_pooled_roots, source_response_of_root_and_slope_normalization, explicit_mechanism_prediction_for_source_deformation_of_original_U_law]
+    next_discriminator: measure_raw_source_U_dot_on_one_available_component_of65_130_260_or85_170_340_and_predict_L4_U_dot_with_root_motion_and_slope_response_not_L4_C_or_inheriting13_over8_q2_Jordan_or_root1_over16_for_C_full_chain_is_not_a_permission_prerequisite
     information_gain: very_high
     compute_cost: low
     decision_experiments: [DX_ETOP_PRODUCTION_LOCALIZATION]
@@ -5736,24 +5764,25 @@ scientific_nodes:
     decision_experiments: [DX_P429_SUCCESSOR_STATE]
 
   - id: SN_ETOP_N100_N400_SCALE_AND_RANK_WIDTH
-    title: completed_rank_clock_broadening_and_common_symmetric_two_lobe_obstruction_with_existing_N900_followup
+    title: completed_three_scale_rank_width_comparison_requires_joint_area_center_and_shape_predictions
     integration_status: open_pr
     state: microscopic_threshold_structure
     sources: [bernoulli_thermal]
     observer_sectors: [global_rank_projector, topology_typed, matching_odd, matching_even, direction_character]
     geometries: [gaussian_cover, moduli_hecke_child]
     acquisition: [new_production, existing_data_reuse, exact_construction]
-    source_refs: [SRC_PR484_ETOP_N100_THERMAL_PRODUCTION, SRC_PR484_ETOP_N400_PRODUCTION, SRC_PR484_ETOP_N100_N400_SCALE_TRANSPORT, SRC_PR484_P267_RANK_CLOCK_WIDTH, SRC_PR484_P267_ORDINARY_SCALAR_CLOCK, SRC_PR484_P267_N900_RANK_WIDTH_FREEZE, SRC_PR484_ETOP_COMMON_SYMMETRIC_KERNEL_OBSTRUCTION]
+    source_refs: [SRC_PR484_ETOP_N100_THERMAL_PRODUCTION, SRC_PR484_ETOP_N400_PRODUCTION, SRC_PR484_ETOP_N100_N400_SCALE_TRANSPORT, SRC_PR484_P267_RANK_CLOCK_WIDTH, SRC_PR484_P267_ORDINARY_SCALAR_CLOCK, SRC_PR484_P267_N900_RANK_WIDTH_FREEZE, SRC_PR484_ETOP_COMMON_SYMMETRIC_KERNEL_OBSTRUCTION, SRC_PR484_N900_RANK_WIDTH_RESULT]
     known_result: independent_N400_eight_million_four_hundred_batch_archive_completes_three_homothetic_shapes_finite_A_E_Jacobian_transport_chi2_3p9008588_over6_p0p690091_and_ordinary_scalar_A_only_gate0p076979261_over2_p0p96224168_are_compatible_rank_step_z_variance_increases1p43258464_to2p09475087_retaining96p8948227_percent_of_canonical_broadening
     two_lobe_result: equal_width_Gaussian_residuals848p387_over2_and177p594_over2_are_followed_by_arbitrary_common_symmetric_kernel_obstruction_sixth_moments_minus1p757800_plusminus0p074189_and_minus3p849346_plusminus1p20234
-    boundary: common_symmetric_positive_kernel_is_a_candidate_representation_of_signed_rank_difference_not_an_assumed_probability_law_post_reveal_mean_obstruction_is_not_a_strict_finite_sample_boundary_test_or_energy_identity_N900_is_author_reported_running_at8b3c4e4b_without_result_or_independent_runtime_inspection
+    N900_result: completed32M_counter800_batch_two_modulus_archive_Vz2p339461729_plusminus0p120385154_quarter_power_prediction_p0p134967_and_fixed_profile_p0p084182_both_within1p96_total_SE_finite_width_descriptor0p306876850_plusminus0p038610154
+    boundary: signed_profile_not_positive_probability_or_local_energy_field_two_N900_residuals_share_target_and_fully_correlated_N400_anchor_their_pvalues_are_not_votes_posteriors_or_a_unique_winner_effective_width_is_not_asymptotic_exponent_N900_has_no_shear
     supports: [observed_width_change_is_mainly_rank_clock_not_Binomial_kernel_broadening, separate_ordinary_scalar_and_signed_density_transport_questions, completed_N400_input_is_available_for_physical_interpretation]
     tensions: [N400_as_unacquired_or_first_scale_analysis_as_missing, interpreting_N400_nonrejection_as_sign_reversal_or_a_confirmed_scalar_model, duplicate_N900_acquisition_before_consuming_existing_assignment]
     excludes_only: [explaining_the_observed_canonical_width_increase_entirely_by_the_Binomial_kernel, representation_of_current_mean_moments_as_two_translated_copies_of_one_common_symmetric_positive_kernel_not_unequal_asymmetric_more_component_or_signed_shapes]
-    reusable_data_refs: [results/etop-n400-three-modulus/raw/tau_2i.hist.csv, results/etop-n400-three-modulus/raw/tau_4i.hist.csv, results/etop-n400-three-modulus/raw/tau_half_plus_i.hist.csv, results/etop-n100-n400-scale-transport/scale_transport.json, results/etop-n400-finite-transport-invariants/invariants.json, results/p267-rank-clock-width/score.json, results/p267-scalar-clock-n400/score.json, experiments/etop_n900_rank_width_20260831.json]
-    dependency_group_refs: [N100_three_modulus_seed20260831125401_offset267100000000, N400_three_modulus_seed20260831134001_offset267400000000]
-    missing_inputs: [archived_target_result_of_existing_author_reported_running_N900_frozen_two_shape_followup, an_explicit_exploratory_shape_model_outside_the_excluded_common_symmetric_kernel_family]
-    next_discriminator: keep_existing_N900_frozen_width_predictions_with_shared_anchor_uncertainty_separate_from_post_reveal_unequal_asymmetric_or_signed_shape_hypotheses_not_another_common_symmetric_weight_separation_scan_or_duplicate_N900_production
+    reusable_data_refs: [results/etop-n400-three-modulus/raw/tau_2i.hist.csv, results/etop-n400-three-modulus/raw/tau_4i.hist.csv, results/etop-n400-three-modulus/raw/tau_half_plus_i.hist.csv, results/etop-n100-n400-scale-transport/scale_transport.json, results/etop-n400-finite-transport-invariants/invariants.json, results/p267-rank-clock-width/score.json, results/p267-scalar-clock-n400/score.json, experiments/etop_n900_rank_width_20260831.json, results/etop-two-lobe-moment-closure/score.json, results/etop-n900-rank-width/score.json, results/etop-n900-rank-width/raw/tau_2i.moments.csv, results/etop-n900-rank-width/raw/tau_4i.moments.csv]
+    dependency_group_refs: [N100_three_modulus_seed20260831125401_offset267100000000, N400_three_modulus_seed20260831134001_offset267400000000, N900_two_modulus_seed20260831141001_offset267900000000]
+    missing_inputs: [mechanism_specific_joint_area_center_and_standardized_shape_predictions_beyond_one_width_moment]
+    next_discriminator: distinguish_intrinsic_clock_rescaling_from_scale_dependent_component_weights_through_joint_area_center_and_dewidthed_shape_predictions_using_saved_covariance_and_completed_shape_work_not_first_N900_first_shape_or_automatic_more_samples
     information_gain: very_high
     compute_cost: low
     decision_experiments: [DX_ETOP_TAU_TOPOLOGY_MAP]
@@ -5784,7 +5813,13 @@ dependency_groups:
       results/p267-scalar-clock-n400/score.json: SRC_PR484_P267_ORDINARY_SCALAR_CLOCK
       results/etop-two-lobe-moment-closure/score.json: SRC_PR484_ETOP_COMMON_SYMMETRIC_KERNEL_OBSTRUCTION
     metadata_paths: [results/etop-n400-three-modulus/raw/tau_2i.metadata.json, results/etop-n400-three-modulus/raw/tau_4i.metadata.json, results/etop-n400-three-modulus/raw/tau_half_plus_i.metadata.json]
-    covariance_rule: three_geometry_pairs_share_eight_million_counters267400000000_to267408000000_seed20260831134001_and_four_hundred_aligned_batches_all_transport_window_rank_width_and_scalar_extrema_views_reuse_this_block_N100_is_independent_N900_frozen_predictions_share_N400_anchor_uncertainty_but_N900_is_not_registered_as_acquired_data
+    covariance_rule: three_geometry_pairs_share_eight_million_counters267400000000_to267408000000_seed20260831134001_and_four_hundred_aligned_batches_all_derived_views_reuse_this_block_N100_and_completed_N900_raw_blocks_are_independent_both_N900_frozen_prediction_residuals_share_this_N400_anchor_uncertainty
+  - id: N900_two_modulus_seed20260831141001_offset267900000000
+    kind: completed_two_modulus_same_counter_production_with_one_distinct_N900_random_block
+    member_sizes: [900]
+    source_ref: SRC_PR484_N900_RANK_WIDTH_RESULT
+    metadata_paths: [results/etop-n900-rank-width/raw/tau_2i.metadata.json, results/etop-n900-rank-width/raw/tau_4i.metadata.json, results/etop-n900-rank-width/logs/tau_2i.receipt.json, results/etop-n900-rank-width/logs/tau_4i.receipt.json]
+    covariance_rule: tau2i_and_tau4i_pairs_share32M_counters267900000000_to267932000000_seed20260831141001_in800_aligned_batches_64M_pair_evaluations_are_not64M_independent_samples_N100_N400_raw_blocks_are_independent_two_prediction_residuals_share_one_N900_target_and_one_N400_anchor
   - id: crn-2026104501-5000000000-5100000000
     kind: shared_counter_rng_domain
     member_sizes: [65, 85, 130, 170]
@@ -6507,11 +6542,12 @@ dependency_groups:
     kind: two_size_million_sample_source_with_same_seed_counter_labels_and_N_domain_separated_random_streams
     member_sizes: [65, 85]
     source_ref: SRC_P40_PRODUCTION_MOTIF_PROJECTION
-    derived_source_refs: [SRC_PR267_P40_ABSOLUTE_CLUSTER_RESPONSE]
+    derived_source_refs: [SRC_PR267_P40_ABSOLUTE_CLUSTER_RESPONSE, SRC_PR267_P40_EVEN_GIVEN_ODD_RESPONSE]
     path_source_refs:
       results/p40-absolute-cluster/latest.json: SRC_PR267_P40_ABSOLUTE_CLUSTER_RESPONSE
+      results/p40-even-given-odd/latest.json: SRC_PR267_P40_EVEN_GIVEN_ODD_RESPONSE
     metadata_paths: [results/local-20260830/P40-production-motif-projection/N65/mc.metadata.json, results/local-20260830/P40-production-motif-projection/N85/mc.metadata.json]
-    covariance_rule: within_N_orientations_targets_controls_and_all_derived_views_share_aligned_batches_both_N_use_seed4020260830_counters40000000_to41000000_but_counter_uniform_includes_splitmix64_N_so_N65_N85_are_distinct_domain_streams_treated_as_independent_under_the_usual_PRNG_model
+    covariance_rule: original_Gram_and_even_given_odd_supplement_share_same_million_counters_within_N_orientations_sources_C_JE_controls_and_all_views_share100_aligned_batches_two_million_configuration_replays_add_zero_new_samples_splitmix64_N_domain_separates_N65_N85_under_ordinary_PRNG_independence_assumption_six_zero_tests_are_not_six_votes
     historical_inference: ID_and_same_seed_counter_facts_preserved_previous_metadata_only_shared_uniform_warning_is_superseded_by_generator_inspection_not_a_claim_of_measured_cross_N_correlation
   - id: p155-N260-N340-injective-R8-20k
     kind: branch_only_joint_general_period_thermal_null_pilot
@@ -6542,7 +6578,7 @@ decision_experiments:
   - id: DX_ETOP_PRODUCTION_LOCALIZATION
     attention_rank: 1
     name: norm4_missing_physical_direction_pair_topology_or_distinct_microscopic_singlet
-    status: PhaseD_PhaseE20k_and_P40_million_sample_source_analyses_are_completed_P40_orientationwise_q_coupling_exceeds160_SE_but_directional_full_control_p0p38964_remains_unresolved_original_norm4_Etop_child_and_thermal_interface_is_still_missing
+    status: first_million_sample_even_given_odd_measurement_completed_positive_raw_C110_to138_SE_and_full_C28_to35_SE_distinguish_finite_pure_q_tangent_directional_raw_p0p21156_auxiliary_full_p0p04911_do_not_identify_original_norm4_mechanism
     scientific_node_refs: [SN_NORM4_ETOP_PHASE_D, SN_PHASE_E_ALIAS_AND_LOCAL_ENERGY, SN_ETOP_CLOCK_PLANE, SN_P154_ABSOLUTE_CLUSTER_PHYSICAL_RESPONSE, SN_P40_ABSOLUTE_CLUSTER_MATCHING_RESPONSE]
     observer_sector_refs: [global_rank_projector, topology_typed, matching_even, bulk_energy_logpair, direction_character]
     source_refs: [SRC_PR267_NORM4_PHASE_D, SRC_P154_PHASE_E_INTEGRATED_ALIAS, SRC_P154_PHASE_E_LOCAL_SINGLET_PILOT, SRC_ETOP_CLOCK_PLANE, SRC_P154_PHASE_E_MIXED_PLANE, SRC_PR267_P154_FIXED_K_INTERACTION, SRC_PR267_P154_ABSOLUTE_CLUSTER_RESPONSE]
@@ -6550,9 +6586,20 @@ decision_experiments:
     acquisition: existing_data_reuse
     expected_model_space_reduction: very_high
     compute_cost: low
-    completed_followup_source_refs: [SRC_PR267_P40_ABSOLUTE_CLUSTER_RESPONSE]
+    completed_followup_source_refs: [SRC_PR267_P40_ABSOLUTE_CLUSTER_RESPONSE, SRC_PR267_P40_EVEN_GIVEN_ODD_RESPONSE]
     completed_followup_dependency_group_refs: [p40-motif-N65-N85-shared-counter-1m]
-    decision_output: supplement_existing_P40_million_counters_once_with_q_squared_source_and_q_squared_control_moments_then_measure_coupling_invariant_Etop_given_q_response_for_common_raw_source_first_geometry_adapted_compensated_source_is_auxiliary_not_repeat_strong_q_coupling_or_cyclic_cancellation_allocation_N130_child_and_thermal_third_moments_are_separate_scopes
+    decision_output: measure_explicit_common_raw_source_derivative_U_dot_on_one_available_component_of_original65_130_260_or85_170_340_lineages_including_pooled_root_motion_slope_response_and_kappa_E_S_K_kappa_q_S_K_then_compare_mechanism_predicted_L4_U_dot_not_L4_C_or_assumed_source_stability_of_the_unperturbed_law
+    original_norm4_contract:
+      commit: 2236d36c80c8a466d9317c929bc33e92a7ca9d33
+      path: predictions/norm4_two_generator_transfer_20260829.yaml
+      U: 'U_N = N^(13/8) P4_std[partial_p <E_top>](p0(N)) / (2 Mbar_prime_N(p0(N)))'
+      lineages: [[65, 130, 260], [85, 170, 340]]
+      q2_residual: 'U_N - 3 U_2N + 2 U_4N'
+      Jordan_residual: 'U_N - 2 U_2N + U_4N'
+      boundary: N130_N170_are_norm2_intermediate_steps_N260_N340_are_norm4_endpoints_pooled_root_is_refound_inside_each_aligned_delete_one
+      source_bridge: notes/p40-even-response-norm4-interface.md
+      deformation_boundary: source_law_is_an_additional_mechanism_prediction_not_automatic_preservation_of_q2_Jordan_for_arbitrary_lambda_C_cannot_inherit_U_normalization_or_root_character1_over16
+      immediate_reuse: PhaseE20k_N65_N130_seven_coordinate_Gram_supports_its_own_C_without_replay_but_not_original_U_dot_no_full_chain_approval_prerequisite
     named_finite_readout: 'C_even_given_odd = Cov(E_top,S) - Cov(E_top,q)/Var(q) * Cov(q,S), S=(CB+CW)/N'
     physical_interpretation: positive_exp_lambda_S_plus_h_q_measure_with_h_prime_minus_Cov_q_S_over_Var_q_keeps_matching_mean_fixed_first_order_rank1_probability_response_equals_minus_C
     readout_boundary: raw_S_is_common_across_geometries_compensated_S_res_uses_separate_counterterms_report_paired_direction_difference_and_covariance_nonzero_distinguishes_finite_topological_tangent_not_new_field_or_norm4_child_P40_E_edges_is_not_Etop
@@ -6571,8 +6618,10 @@ decision_experiments:
     decision_output: identify_named_hidden_QSe_reversible_geometry_transport_or_distinct_microscopic_matching_overlap_after_completed_Je_capture_not_repeat_first_current_observer_current_deletion_or_claim_autonomous_two_state_closure
   - id: DX_ETOP_TAU_TOPOLOGY_MAP
     attention_rank: 3
-    name: physical_transport_interpretation_and_existing_N900_followup_after_completed_N100_N400
-    status: N100_N400_transport_rank_width_and_common_symmetric_two_lobe_obstruction_are_complete_N900_author_reported_running_without_target_result_or_independently_inspected_runtime_no_original_norm4_energy_identity
+    name: joint_area_center_and_shape_physical_predictions_after_completed_N900
+    status: N90032M_target_and_two_success_receipts_are_complete_Vz2p33946_plusminus0p12039_two_correlated_frozen_width_pvalues0p13497_and0p08418_do_not_choose_a_unique_mechanism
+    completed_followup_source_refs: [SRC_PR484_N900_RANK_WIDTH_RESULT]
+    completed_followup_dependency_group_refs: [N900_two_modulus_seed20260831141001_offset267900000000]
     scientific_node_refs: [SN_ETOP_FULL_COVARIANCE_ELIMINATION, SN_TWO_ACTIVATION_H4_REANALYSIS, SN_NORM4_ETOP_PHASE_D, SN_ETOP_CLOCK_PLANE, SN_P370_FIRST_PRODUCTION_CONFIDENCE, SN_P267_FOUR_COORDINATE_RESPONSE_RAY, SN_ETOP_N100_SHAPE_AND_WINDOW_REDISTRIBUTION, SN_ETOP_N100_N400_SCALE_AND_RANK_WIDTH]
     observer_sector_refs: [global_rank_projector, topology_typed, direction_character]
     source_refs: [SRC_ETOP_GLOBAL_RAY_GEOMETRY, SRC_PR267_ACTIVATION_FRONTIER, SRC_PR267_ETOP_PRODUCTION_ELIMINATION, SRC_PR267_NORM4_PHASE_D, SRC_ETOP_CLOCK_PLANE, SRC_P267_TAU_TOPOLOGY_FACTORIAL, SRC_P370_FIRST_PRODUCTION_CONFIDENCE, SRC_PR267_P267_RESPONSE_RAY, SRC_PR484_ETOP_N100_THERMAL_PRODUCTION, SRC_PR485_P267_CLOCK_SHAPE_QUOTIENT, SRC_PR267_ETOP_N100_CRITICAL_WINDOW, SRC_PR484_ETOP_N400_PRODUCTION, SRC_PR484_ETOP_N100_N400_SCALE_TRANSPORT, SRC_PR484_P267_RANK_CLOCK_WIDTH, SRC_PR484_P267_ORDINARY_SCALAR_CLOCK, SRC_PR484_P267_N900_RANK_WIDTH_FREEZE, SRC_PR484_ETOP_COMMON_SYMMETRIC_KERNEL_OBSTRUCTION]
@@ -6580,7 +6629,7 @@ decision_experiments:
     acquisition: existing_data_reuse
     expected_model_space_reduction: very_high
     compute_cost: moderate
-    decision_output: consume_existing_N900_frozen_width_prediction_when_result_arrives_and_keep_post_reveal_unequal_asymmetric_or_signed_shape_candidates_separate_from_that_test_not_repeat_common_symmetric_kernel_weight_separation_scans_or_duplicate_N900_production
+    decision_output: require_each_width_mechanism_to_predict_joint_area_center_and_dewidthed_shape_with_shared_covariance_using_saved_moments_histograms_and_completed_shape_results_not_first_N900_first_shape_another_free_exponent_or_automatic_more_samples
   - id: DX_P429_SUCCESSOR_STATE
     attention_rank: 4
     name: population_or_geometry_loading_after_completed_full_clock_channel_and_marked_laws

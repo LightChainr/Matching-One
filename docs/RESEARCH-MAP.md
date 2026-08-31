@@ -6,13 +6,22 @@ This map is the repository's scientific coordinate system. It is not a permissio
 
 ## The five axes
 
-The [P40 production readout](../results/p40-absolute-cluster/REPORT.md)
+The new [P40 even tangent](../results/p40-even-given-odd/REPORT.md)
+connects source and observer explicitly: absolute-cluster fugacity changes
+rank-1 probability even at fixed matching mean (raw C positive at110–138 SE).
+This distinguishes a pure-q tangent in the finite marginal, not a field count.
+Raw directional C is unresolved; the full-compensated auxiliary p=.04911
+retains its correlated-view and geometry-adapted-source boundary.
+The [original norm-4 interface](../notes/p40-even-response-norm4-interface.md)
+requires the source derivative of root/slope-normalized thermal U, not bare C.
+
+The preceding [P40 production q readout](../results/p40-absolute-cluster/REPORT.md)
 now distinguishes **global source response** from **directional response**:
 q couples strongly to the raw and separately compensated cluster source,
 but their H4 difference is unresolved. The saved common-label Gram exposes
 cancelling readout/source terms; that allocation depends on the coupling and
-is not a basis-independent field decomposition. E_top/source remains a
-different, missing moment in P40, not a square of the measured q response.
+is not a basis-independent field decomposition. The new E_top/source
+supplement above is a distinct measurement, not a square of the q response.
 
 The [e increment](../notes/frontier-increment-20260831e.md) sharpens two
 more coordinates: unmarked uniform blockade means close on the full clock,
@@ -27,15 +36,17 @@ unresolved at20k. The three-state q/E readout still sees this source only
 through `E[S|q]`; nontrivial microscopic variation is not a count of fields.
 This new-mark replay is an `open_pr #267` result using an existing dependency
 block, not new Monte Carlo evidence. The high-statistics P40 q-only check
-above is now complete; its missing E_top and child/thermal moments are
-different information, not another first source pilot.
+above is complete, as is the subsequent E_top supplement. Source responses
+of the actual root-normalized thermal observable remain different information.
 
 The [d frontier increment](../notes/frontier-increment-20260831d.md) extends
 the **state** axis to complete147 continuation laws and irreducible triples,
 the **observer** axis to actual conditional-noise and canonical-order results,
 and the **generator** comparison to completed current deletion. The common
 symmetric-kernel obstruction narrows the **rank-clock mechanism**, not the
-frozen N900 width target. These are separately pinned completed results.
+frozen N900 width target. That [N900 target is now complete](../notes/frontier-increment-20260831f.md):
+32M/800, Vz2.33946±.12039, both conditional predictions compatible with
+correlated comparison errors. These are separately pinned completed results.
 
 The [preceding context reconciliation](../notes/context-reconciliation-20260831c.md)
 recovers completed N400 production and intrinsic rank-clock broadening,
@@ -90,7 +101,7 @@ measure covariance
 | common spatial spectrum versus cross-radius deformation | [P418 normalized reuse](../results/p418-normalized-archive/REPORT.md) removes the old unequal-exposure common-mask rejection; common fits are stable and compatible. Radius5-only/sharing outputs are numerically unreliable, not new physical evidence | compare genuinely separating readout predictions of the normalized family; retain independent P250 state/rank and exact CRT results rather than replacing the old penalty with an unsupported mechanism |
 | cooperative continuation versus a nonclosed transition law | PR #491 cut, #492 dual blocker, `6358ba4` full two-prefix physical clocks and `7401c93` canonical K2/suffix covariance are done. #484 `705819e` gives the embedded-graph parallel-two-port theorem and winning-channel law | use the full physical law for population direction response and computational information gain; [source crosswalk](../notes/context-reconciliation-p334-20260831c.md) separates selected examples, later prefix samples, paired archives and general theorem scope |
 | completion hazard versus a new physical source | Risk/hazard and the F3/F5 sequence are complete. F5 `2d2a9ab` resolves W_line/JS response rank at N325/N425 (`149.93/4`, `246.93/4`); F3 lacked a second even contrast | transport the existing F5 rows across geometry and resolve matching loading; the first winding observer is not missing |
-| modulus versus topology-map transport | PR #484 completes N1002M and independent N4008M. N400 necessary density transport is unresolved, but96.895%±.507pp of clock broadening survives removal of canonicalization. Ordinary no-Jacobian scalar-height transport is separately measured and weak | existing N900 handoff has frozen width predictions2.565535/2.094751 with shared-anchor covariance; runtime is unconfirmed, not presumed idle. Explain intrinsic rank-clock shape, not another first scale/de-smoothing or a claim of scalar recovery |
+| modulus versus topology-map transport | PR #484 completes N1002M, N4008M and N90032M. N400 necessary density transport is unresolved, but96.895%±.507pp of broadening is intrinsic. N900 Vz2.33946±.12039 does not separate the two conditional width predictions | Make additional joint area/center/shape or physical-source predictions with shared covariance. No first N900 or de-smoothing task remains; two-point effective width is not an asymptotic exponent or scalar recovery |
 | charged source versus observable overlap | P439 #451 plus Draft `8498d62` leave matching direct/plateau weak (`p=.79013`), despite separately resolved P337 F5 source-response rank | same-stream M loading and cross-geometry transport in an existing typed basis, not a first line observer or more K_A-only scales |
 | finite module versus physical propagation | Draft `4846adf` gives fixed-readout visibility; width8 `39e0660`/`c9dc218` gives memory and triplet/contact budgets. Strong normalized plus feedback reflects a near-dark source, not stronger bare feedback | a changed-rate/geometry prediction including its stationary-measure/projection response, or an explicit site-Matching overlap bridge. First R/T2/triplet analysis is already complete; a budget is not a causal rate derivative |
 | microscopic energy versus measured clock translation | Canonical E_top topology score is complete; integrated energy is the derivative alias `P4[S']=P4[E_top']/2`, and actual radius-1 mixed J_bulk is not selected. Original norm-4 operator identity is still open | obtain a genuinely distinct second microscopic singlet/field direction with an explicit contrast to A/E/C; this is the leading scientific question |
@@ -118,7 +129,7 @@ These are decision matrices assembled from the five coordinates, not new ontolog
 |---|---|---|---|
 | **activation boundary** | first-line character x birth/exit plus age, cooperative completion and collision | P334 cut-network explanation is now in open PR #491; P337 F5 source response is resolved, while population P334 directional loading remains unresolved | cut-covariant component/overlap response and transport/matching loading of existing F5 rows |
 | **source rank** | observer x physically distinct source complex matrix | The old 2M Euler basis gave `4.279/4`, p `.370`; the later two-even-row F5 basis resolves W_line/JS rank at each size. The occupation residual is not itself a field | preserve the observer-specific contrast; test cross-geometry transport and M loading instead of repeating the old matrix or constructing the first winding observer |
-| **modulus shape** | aspect ratio x frozen function shape after equal-area normalization | P321 remains E4-compatible; N100/N400 topology and intrinsic rank-clock width are measured; P398 memory/motifs are complete. These are different observers | continue the existing N900 width handoff or make a changed-geometry/rate prediction from named P398 emissions; do not repeat first scale transport or equate these field tests |
+| **modulus shape** | aspect ratio x frozen function shape after equal-area normalization | P321 remains E4-compatible; N100/N400/N900 topology and intrinsic rank-clock width are measured; P398 memory/motifs are complete. These are different observers | use additional joint shape/source predictions after completed N900, or changed-geometry/rate predictions from named P398 emissions; do not repeat first scale transport or equate these field tests |
 | **typed charge-spatial** | charge/fusion channel x calibrated spatial phase or typed edge | Draft `eb29446` finds a 30.97% held-out pre-outcome state increment beyond a low-dimensional residue baseline; complete endpoint spectrum remains unobserved and both enriched residuals peak at `k=36` | preserve the state increment; default attention for the next block targets full terminal periodograms plus a common-high-frequency covector |
 
 ### Cross-cutting method lane: production-first model elimination

@@ -6,7 +6,23 @@ This is a navigation index, not a new task queue. Original titles and GitHub sta
 
 No Issue is closed, locked, demoted or renamed by this index. No PR is merged or newly approved. The snapshot is historical as soon as GitHub changes.
 
-## Latest scientific handoff — 2026-08-31 e
+## Latest scientific handoff — 2026-08-31 f
+
+The [P40 even-given-odd measurement](../results/p40-even-given-odd/REPORT.md),
+`56a6267d6a6826a165f93ed3a64a670ca7088180` in Draft #267, now supplies
+the missing million-sample E_top/source moments. Its finite raw even
+tangent is strongly positive, while raw H4 C remains unresolved. The
+[norm-4 source interface](../notes/p40-even-response-norm4-interface.md)
+keeps the original U's thermal/root/slope definition and three-size chains
+distinct from this fixed-p response.
+
+The [f source read](../notes/frontier-increment-20260831f.md) at15:29:32
+Asia/Shanghai confirms N900 completion in open PR #484, fixed at
+`5f30397c5ba277fb0799fb2f7491c823de07a13d`: actual report, score and
+successful receipts, not merely a running claim. This bounded update
+does not replace the earlier full index or recount current open PRs.
+
+## Previous scientific handoff — 2026-08-31 e
 
 The [million-sample P40 source analysis](../results/p40-absolute-cluster/REPORT.md)
 at `a4cbf02a48c3f78ee8fb3a1e4141bd985c0bf845` completes the previous

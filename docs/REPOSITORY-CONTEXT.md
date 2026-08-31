@@ -2,7 +2,17 @@
 
 **Snapshot:** 2026-08-31 12:03:52 Asia/Shanghai. This is the user-requested context recovery, not a new prerequisite before every research block.
 
-**Later updates are separate:** the [#469–490 increment](ISSUE-PR-INCREMENT-20260831b.md)
+**Current scientific follow-through:** the [P40 even-given-odd result](../results/p40-even-given-odd/REPORT.md)
+now completes the previously missing million-sample E_top/source products.
+At fixed matching mean, all four raw-source C responses are positive at
+110–138 SE; raw H4 C remains unresolved. The [actual norm-4 interface](../notes/p40-even-response-norm4-interface.md)
+derives the needed root/slope/thermal source response, rather than assigning
+bare C the old U law. [N900 is also completed](../notes/frontier-increment-20260831f.md),
+with a report and successful receipts at `5f30397c`; both frozen width
+predictions remain compatible. These updates supersede first-replay and
+running labels below without changing the original capture counts.
+
+**Earlier updates are separate:** the [#469–490 increment](ISSUE-PR-INCREMENT-20260831b.md)
 and [#492–497 / active-PR refresh](ISSUE-PR-INCREMENT-20260831c.md) preserve
 their capture times, complete text and heads. The [new reconciliation](../notes/context-reconciliation-20260831c.md)
 recovers completed N400 production, rank-clock de-smoothing, P398 memory/motifs,
