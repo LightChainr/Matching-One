@@ -1,0 +1,107 @@
+{
+  "schema": "matching-one.regular-pair-joint-u.run.v1",
+  "definition_commit": "99b58fc18666cfa6d35b96b52bb84c78dec43a55",
+  "started_utc": "2026-08-31T16:13:59.504621+00:00",
+  "finished_utc": "2026-08-31T16:14:04.134033+00:00",
+  "command": [
+    "/Users/lc/python-envs/research-py311/bin/python",
+    "scripts/analyze_regular_pair_joint_u.py",
+    "--output-dir",
+    "results/regular-pair-joint-u"
+  ],
+  "python": "3.11.15 (main, Jun 23 2026, 15:46:51) [Clang 22.1.3 ]",
+  "machine": "arm64",
+  "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)",
+  "compile_command": [
+    "clang++",
+    "-O3",
+    "-std=c++17",
+    "/private/tmp/matching-pr267-fix/scripts/regular_pair_joint_u_exact.cpp",
+    "-o",
+    "/var/folders/qv/09841bwx4x9b1gqkht0f9nt40000gn/T/matching-regular-joint-4z27fqit/joint-exact"
+  ],
+  "compile_count": 1,
+  "geometry_runs": [
+    {
+      "status": "completed",
+      "a": 5,
+      "b": 0,
+      "N": 25,
+      "fixed_origin": 0,
+      "origin_occupied": false,
+      "configurations": 16777216,
+      "kernel_rows": 1874,
+      "max_abs_g16": 43,
+      "elapsed_seconds": 2.775741917,
+      "geometry": "axis",
+      "command": [
+        "/var/folders/qv/09841bwx4x9b1gqkht0f9nt40000gn/T/matching-regular-joint-4z27fqit/joint-exact",
+        "5",
+        "0",
+        "/var/folders/qv/09841bwx4x9b1gqkht0f9nt40000gn/T/matching-regular-joint-4z27fqit/kernel.tsv",
+        "/private/tmp/matching-pr267-fix/results/regular-pair-joint-u/axis.csv"
+      ],
+      "output": "axis.csv",
+      "output_sha256": "d1369a8b6fdb782be78cbe52ae2923e41f993325717a6f113eea02a0b19bdcce"
+    },
+    {
+      "status": "completed",
+      "a": 4,
+      "b": 3,
+      "N": 25,
+      "fixed_origin": 0,
+      "origin_occupied": false,
+      "configurations": 16777216,
+      "kernel_rows": 1874,
+      "max_abs_g16": 43,
+      "elapsed_seconds": 2.65815025,
+      "geometry": "tilted",
+      "command": [
+        "/var/folders/qv/09841bwx4x9b1gqkht0f9nt40000gn/T/matching-regular-joint-4z27fqit/joint-exact",
+        "4",
+        "3",
+        "/var/folders/qv/09841bwx4x9b1gqkht0f9nt40000gn/T/matching-regular-joint-4z27fqit/kernel.tsv",
+        "/private/tmp/matching-pr267-fix/results/regular-pair-joint-u/tilted.csv"
+      ],
+      "output": "tilted.csv",
+      "output_sha256": "ea464ad416054aefba92a45ba459e64b506257a0c54ea49d17b3a462696c553f"
+    }
+  ],
+  "source_files": [
+    {
+      "commit": "c29d8bce07e6381be0f948b2c0dd1f640e42d395",
+      "path": "analysis/regular_pair_spatial_kernel.tsv",
+      "sha256": "36ae069d370b1d7a4398861c928afb41aa76885c8895c696b1bc0c97e9c314fd"
+    },
+    {
+      "commit": "a237968f1d7a82d26b46e83c58179dbba7f1a908",
+      "path": "results/p337-closed-source-n25/latest.json",
+      "sha256": "df4ab225ff499131b744c70ec569ad21b0229f2256e71a585c680faae51bac3a"
+    },
+    {
+      "commit": "a237968f1d7a82d26b46e83c58179dbba7f1a908",
+      "path": "results/p337-closed-source-finite-coupling/axis.csv",
+      "sha256": "2d23fecc98d276d9ad15ad1867199cd308f0570cb5040ef94eb6b923b4c53458"
+    },
+    {
+      "commit": "a237968f1d7a82d26b46e83c58179dbba7f1a908",
+      "path": "results/p337-closed-source-finite-coupling/tilted.csv",
+      "sha256": "225031e612929ed922ba75c55e76703d59990f5283e7ac39b94f022841798da5"
+    }
+  ],
+  "contract_sha256": "6b5ecd8f24318b99e55ed985aabe1931fc3a0ff602425851f5fc6060bbd18767",
+  "script_sha256": "25103dd68ea4479f2c40b7f799d937c40d6d7f7a3eb71dc954cf427bc9dc69ae",
+  "producer_sha256": "4dcd642010229a21dd99551043568fd25440c3c952149138af007352d929356a",
+  "interval_helper_sha256": "88c4a56bc1c45f966cb0b836553dd6320bb3a0f4ea97677429f4c334749da251",
+  "output_sha256": {
+    "latest.json": "d7687079814711233802909a634c82c03a6f87ef757534a67514dc9402ff3166",
+    "REPORT.md": "fbd4751e114dae9fea4fbc671f58abec429248e8264e2c8d9af908a08bc4fd15"
+  },
+  "elapsed_seconds": 4.628810042049736,
+  "score_seconds": 0.2949527919990942,
+  "new_random_samples": 0,
+  "old_scores_rerun": 0,
+  "new_root_searches": 0,
+  "tests_run": 0,
+  "cloud_jobs": 0
+}
