@@ -1,0 +1,9 @@
+# P334: common-label thermal response separates strong parity channels from weak plus-H4 coupling
+
+- **Lifecycle:** full-p score of signed integer histograms `4db356e1b026853468f94d59d938895a2367ceb7`; old `7c60b8a7` Bernstein/root algorithm reused, not its histogram or orientation-specific perturbation. No MC, raw-hist extraction, DP, plot campaign or independent evidence block.
+- **Primary plus->D:** remains weak. Largest A lobes are1.70/1.63 pointwise SE; largest E lobes2.02/1.47SE. The N325 preceding E lobe has only0.47SE. No weak primary root is assigned physical meaning.
+- **Strong minus->D A:** peaks atp=.63313/.62934 with amplitudes+3.0600e-4 (4.27SE)/+3.1422e-4 (6.91SE). Its full integrals are+2.7322e-5 +/-6.9598e-6 and+2.4873e-5 +/-3.4922e-6.
+- **New cancellation-hidden shape:** N425 minus->D E changes from-6.3189e-5 +/-2.0901e-5 nearp=.60629 to+4.7656e-5 +/-2.0240e-5 nearp=.66784. The paired H1/H2 dominance switches; A remains positive. Opposite lobe areas nearly cancel to integral-5.2580e-7 +/-2.2112e-6. The descriptive crossing is.63793 +/-.00871 local-delta SE; not a certified/selection-adjusted root. N325's negative counterpart is too weak to claim the same resolved exchange.
+- **Separate even channel:** common plus->S has early-positive/later-negative E lobes at both sizes (each main extremum about2.7–2.9SE), and negative A integrals. It must not be presented as common plus->D evidence.
+- **Reciprocity / dependence:** all four mark/output channels plus exact reciprocal linear combinations share the same20 batches; no Onsager symmetry or exact diagonal closure is imposed. Curves, peaks and integrals are different readouts of the identical source.
+- **Artifacts:** full numeric F1/F2/A/E curve CSV; joint20batch p_ref/integral vectors and covariance; lobe batch amplitudes/areas; source hash and compact note. No multi-panel figure, PR, or comments.
