@@ -1,0 +1,528 @@
+{
+  "schema": "p337.local-pair-insertion.score.v1",
+  "status": "completed_one_fixed_response",
+  "decision": "local_pair_original_U_zero_response_rejected",
+  "contract": {
+    "schema": "p337.local-pair-insertion.v1",
+    "base_commit": "bea717e826df5a22518774b1725ae7bcbe2cb801",
+    "question": "Does a specified C4-averaged local four-port pair projector have nonzero response in the original pooled-root U at Q1?",
+    "N": 25,
+    "geometries": [
+      [
+        5,
+        0
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    "colour_kernel": "At a vacant site replace constant four-port tensor 1 by 1+epsilon*Pi2, where Pi2=i P_[Q-2,2] i^dagger on ordered V tensor V, i is the symmetric unequal-pair embedding, inputs N,E and outputs S,W; average its four C4 rotations.",
+    "source_normalization": "Uniform site average: perturb each local tensor with epsilon/N and take the first derivative at zero. Original occupation, occupied-vertex tensor, rank projection and q/E definitions stay fixed.",
+    "theory_gate": "Prove the exact outside-partition contraction, including zero singleton and incoming-pair contractions, and the resulting weight beta_x(Q)=(Q-3)/(2Q)*t_x. If this formula fails, stop before counting or scoring; do not change the source after reveal.",
+    "mark_t": "Zero unless origin is vacant, all four NN neighbors are occupied, and their occupied NN components form exactly two distinct pairs. t=1 for (N,S)|(E,W), t=1/2 for (N,E)|(S,W) or (N,W)|(E,S).",
+    "primary_source_Q1": "S=-mean_x(t_x). A fixed origin gives all first-source joint moments with translation-invariant K,q,E exactly; it does not replace multi-insertion moments.",
+    "primary_null": "d_epsilon U at the original Q1 pooled root is zero",
+    "root": "Import root_enclosure, matching_slope_enclosure and U25_over_A_enclosure from results/p337-closed-source-n25/latest.json unchanged; no new root search.",
+    "sufficient_statistics": [
+      "count",
+      "sum_q",
+      "sum_e",
+      "sum_s2",
+      "sum_qs2",
+      "sum_es2"
+    ],
+    "integer_source": "s2=-2*t_origin; coefficients divide the last three sums by two before exact scoring",
+    "counts": "One complete 2^25 occupation traversal per fixed geometry for the missing local-source crossmoments; preserve the inherited NN/matching graph and Alexander rank evaluation.",
+    "decision": "One exact rational score after the theory and source-code gates. Report nonzero or unresolved; no new support radius, source mixture, Q, geometry or sample extension.",
+    "response": "Full separately normalized q/E source covariances, thermal derivatives, moving pooled root and slope denominator. The source may contribute direct q/E numerators; do not reuse the rank1-only shortcut.",
+    "boundary": "This is an invariant End(pair) local tensor perturbation, not a free-index four-leg primary, not the full isotypic seam trace, and not a regular one-endpoint Q activation.",
+    "dependency": "Same complete exact N25 configuration populations; new prescribed local crossmoments, no independent stochastic evidence.",
+    "new_random_samples": 0,
+    "forbidden": [
+      "rescore old Sstar/Bvac/seam sources",
+      "root search",
+      "post-result source change",
+      "continuum field identification",
+      "new support-radius scan"
+    ]
+  },
+  "freeze_commit": "d7f15e68d593719e274fe9f0d5c7841a553beade",
+  "code_commit": "15372a22d7395f591ab5e681de1bedf3938eb956",
+  "accepted_theory_gates": {
+    "kernel": "9dc3c4269c1c44a0a0a82b15f8cd13f922a8b2d4",
+    "topology": "ba7d0632023ff6985182da29df99a5cb908ad6df"
+  },
+  "created_utc": "2026-08-31T15:17:16.593327+00:00",
+  "inputs": [
+    {
+      "geometry": "axis",
+      "new_source_path": "/private/tmp/matching-p334-paired-loading/results/p337-local-four-port-insertion/axis.csv",
+      "new_source_sha256": "bcee8a767ca3a24577bf853148896c128362736344f7b5a49ea0c96122e9affc",
+      "old_population_path": "results/p337-closed-source-finite-coupling/axis.csv",
+      "old_population_sha256": "2d23fecc98d276d9ad15ad1867199cd308f0570cb5040ef94eb6b923b4c53458",
+      "source_coefficients_y": {
+        "s": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "-1",
+          "-16",
+          "-119",
+          "-540",
+          "-1659",
+          "-3610",
+          "-5599",
+          "-5988",
+          "-4126",
+          "-1656",
+          "-348",
+          "-36",
+          "-2",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "qs": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "16",
+          "119",
+          "540",
+          "1659",
+          "3598",
+          "5495",
+          "5608",
+          "3440",
+          "1036",
+          "92",
+          "-12",
+          "-2",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "es": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "-1",
+          "-16",
+          "-119",
+          "-540",
+          "-1659",
+          "-3598",
+          "-5495",
+          "-5608",
+          "-3452",
+          "-1084",
+          "-164",
+          "-16",
+          "-2",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      },
+      "old_q_E_marginals_retained": true,
+      "configurations": 33554432
+    },
+    {
+      "geometry": "tilted",
+      "new_source_path": "/private/tmp/matching-p334-paired-loading/results/p337-local-four-port-insertion/tilted.csv",
+      "new_source_sha256": "32064cf189fc376487b380302faa23bc34b2ca0129ecd5f54f2fab436f14c26b",
+      "old_population_path": "results/p337-closed-source-finite-coupling/tilted.csv",
+      "old_population_sha256": "225031e612929ed922ba75c55e76703d59990f5283e7ac39b94f022841798da5",
+      "source_coefficients_y": {
+        "s": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "-1",
+          "-16",
+          "-117",
+          "-524",
+          "-1610",
+          "-3544",
+          "-5593",
+          "-6116",
+          "-4326",
+          "-1822",
+          "-421",
+          "-48",
+          "-2",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "qs": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "16",
+          "117",
+          "524",
+          "1604",
+          "3472",
+          "5249",
+          "5228",
+          "2990",
+          "726",
+          "-8",
+          "-20",
+          "-2",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "es": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "-1",
+          "-16",
+          "-117",
+          "-524",
+          "-1604",
+          "-3472",
+          "-5249",
+          "-5228",
+          "-2998",
+          "-782",
+          "-84",
+          "-20",
+          "-2",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      },
+      "old_q_E_marginals_retained": true,
+      "configurations": 33554432
+    }
+  ],
+  "V_over_A": {
+    "lower_fraction": "194261171154185056275142086990429099/10000000000000000000000000000000000000000",
+    "upper_fraction": "97130585577092528137571043495214601/5000000000000000000000000000000000000000",
+    "midpoint_approx": 1.9426117115418505e-05,
+    "width_approx": 1.03e-38,
+    "excludes_zero": true,
+    "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+  },
+  "numerical_values": {
+    "V": 0.0018155512845251097,
+    "terms": {
+      "direct_centered": 0.001814054032654995,
+      "root_motion": 0.00027404148892317846,
+      "slope_source": 1.9303930697475565e-06,
+      "slope_root": -0.0002744746301228115
+    }
+  },
+  "terms_over_A": {
+    "direct_centered": {
+      "lower_fraction": "194100967526625553447291366887713021/10000000000000000000000000000000000000000",
+      "upper_fraction": "97050483763312776723645683443856517/5000000000000000000000000000000000000000",
+      "midpoint_approx": 1.9410096752662555e-05,
+      "width_approx": 1.3e-39,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "root_motion": {
+      "lower_fraction": "29322014220588659990050759855213121/10000000000000000000000000000000000000000",
+      "upper_fraction": "7330503555147164997512689963803303/2500000000000000000000000000000000000000",
+      "midpoint_approx": 2.932201422058866e-06,
+      "width_approx": 9.1e-39,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "slope_source": {
+      "lower_fraction": "206549064029976369843344128666071/10000000000000000000000000000000000000000",
+      "upper_fraction": "25818633003747046230418016083259/1250000000000000000000000000000000000000",
+      "midpoint_approx": 2.0654906402997638e-08,
+      "width_approx": 1e-40,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "slope_root": {
+      "lower_fraction": "-5873671931411826706408676776232623/2000000000000000000000000000000000000000",
+      "upper_fraction": "-14684179828529566766021691940581557/5000000000000000000000000000000000000000",
+      "midpoint_approx": -2.9368359657059133e-06,
+      "width_approx": 1e-40,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    }
+  },
+  "root_h_tangent": {
+    "lower_fraction": "-428481247573981976129324435711239023/1000000000000000000000000000000000000000",
+    "upper_fraction": "-4284812475739819761293244357112390229/10000000000000000000000000000000000000000",
+    "midpoint_approx": -0.00042848124757398196,
+    "width_approx": 1e-40,
+    "excludes_zero": true,
+    "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+  },
+  "root_p_tangent": {
+    "lower_fraction": "-355470962767354365840525608003653489/5000000000000000000000000000000000000000",
+    "upper_fraction": "-710941925534708731681051216007306977/10000000000000000000000000000000000000000",
+    "midpoint_approx": -7.109419255347087e-05,
+    "width_approx": 1e-40,
+    "excludes_zero": true,
+    "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+  },
+  "geometry_source": [
+    {
+      "j_q": {
+        "lower_fraction": "1118810349860919449183499151887642251/2500000000000000000000000000000000000000",
+        "upper_fraction": "2237620699721838898366998303775284503/5000000000000000000000000000000000000000",
+        "midpoint_approx": 0.00044752413994436776,
+        "width_approx": 2e-40,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "j_q_h": {
+        "lower_fraction": "-281313721544329777720882519677219271/10000000000000000000000000000000000000000",
+        "upper_fraction": "-56262744308865955544176503935443853/2000000000000000000000000000000000000000",
+        "midpoint_approx": -2.8131372154432978e-05,
+        "width_approx": 6e-40,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "j_e": {
+        "lower_fraction": "-1167974091327609567064277724174919679/10000000000000000000000000000000000000000",
+        "upper_fraction": "-583987045663804783532138862087459839/5000000000000000000000000000000000000000",
+        "midpoint_approx": -0.00011679740913276095,
+        "width_approx": 1e-40,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "j_e_h": {
+        "lower_fraction": "966775074211908836718206124131366367/5000000000000000000000000000000000000000",
+        "upper_fraction": "386710029684763534687282449652546549/2000000000000000000000000000000000000000",
+        "midpoint_approx": 0.00019335501484238178,
+        "width_approx": 1.1e-39,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "mean_s": {
+        "lower_fraction": "-213437124482365957231578039554966303/400000000000000000000000000000000000000",
+        "upper_fraction": "-2667964056029574465394725494437078787/5000000000000000000000000000000000000000",
+        "midpoint_approx": -0.0005335928112059149,
+        "width_approx": 1e-40,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "mean_s_h": {
+        "lower_fraction": "2733936040983567648748410483712238041/5000000000000000000000000000000000000000",
+        "upper_fraction": "683484010245891912187102620928059511/1250000000000000000000000000000000000000",
+        "midpoint_approx": 0.0005467872081967135,
+        "width_approx": 6e-40,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "raw_qs": {
+        "lower_fraction": "2226993373492120657506075528629548231/5000000000000000000000000000000000000000",
+        "upper_fraction": "4453986746984241315012151057259096463/10000000000000000000000000000000000000000",
+        "midpoint_approx": 0.00044539867469842414,
+        "width_approx": 1e-40,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "raw_es": {
+        "lower_fraction": "-456834598670516892639481432798658793/1000000000000000000000000000000000000000",
+        "upper_fraction": "-4568345986705168926394814327986587929/10000000000000000000000000000000000000000",
+        "midpoint_approx": -0.0004568345986705169,
+        "width_approx": 1e-40,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      }
+    },
+    {
+      "j_q": {
+        "lower_fraction": "121909178979404358953356205590218167/312500000000000000000000000000000000000",
+        "upper_fraction": "1950546863670469743253699289443490673/5000000000000000000000000000000000000000",
+        "midpoint_approx": 0.00039010937273409394,
+        "width_approx": 2e-40,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "j_q_h": {
+        "lower_fraction": "238453411616381183902182110595186189/10000000000000000000000000000000000000000",
+        "upper_fraction": "47690682323276236780436422119037239/2000000000000000000000000000000000000000",
+        "midpoint_approx": 2.3845341161638117e-05,
+        "width_approx": 6e-40,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "j_e": {
+        "lower_fraction": "-126915071031058839588871071751466683/2500000000000000000000000000000000000000",
+        "upper_fraction": "-50766028412423535835548428700586673/1000000000000000000000000000000000000000",
+        "midpoint_approx": -5.076602841242354e-05,
+        "width_approx": 2e-40,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "j_e_h": {
+        "lower_fraction": "12670822066569957183900178980467223/80000000000000000000000000000000000000",
+        "upper_fraction": "1583852758321244647987522372558402887/10000000000000000000000000000000000000000",
+        "midpoint_approx": 0.00015838527583212446,
+        "width_approx": 1.2e-39,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "mean_s": {
+        "lower_fraction": "-2783383712917313669295108513846301531/5000000000000000000000000000000000000000",
+        "upper_fraction": "-5566767425834627338590217027692603061/10000000000000000000000000000000000000000",
+        "midpoint_approx": -0.0005566767425834627,
+        "width_approx": 1e-40,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "mean_s_h": {
+        "lower_fraction": "2717347373429008832507323844752134491/5000000000000000000000000000000000000000",
+        "upper_fraction": "1358673686714504416253661922376067247/2500000000000000000000000000000000000000",
+        "midpoint_approx": 0.0005434694746858017,
+        "width_approx": 6e-40,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "raw_qs": {
+        "lower_fraction": "3923267884202465674297077773786540547/10000000000000000000000000000000000000000",
+        "upper_fraction": "980816971050616418574269443446635137/2500000000000000000000000000000000000000",
+        "midpoint_approx": 0.0003923267884202466,
+        "width_approx": 1e-40,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "raw_es": {
+        "lower_fraction": "-2033502685930642704692540788523137089/5000000000000000000000000000000000000000",
+        "upper_fraction": "-31773479467666292260820949820674017/78125000000000000000000000000000000000",
+        "midpoint_approx": -0.00040670053718612855,
+        "width_approx": 2e-40,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      }
+    }
+  ],
+  "source_covariances": {
+    "jQ": {
+      "lower_fraction": "2094083781696154320810348796609387587/5000000000000000000000000000000000000000",
+      "upper_fraction": "523520945424038580202587199152346897/1250000000000000000000000000000000000000",
+      "midpoint_approx": 0.00041881675633923085,
+      "width_approx": 2e-40,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "jQ_h": {
+      "lower_fraction": "-21430154963974296909350204541016541/10000000000000000000000000000000000000000",
+      "upper_fraction": "-4286030992794859381870040908203307/2000000000000000000000000000000000000000",
+      "midpoint_approx": -2.1430154963974295e-06,
+      "width_approx": 6e-40,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "jY_h": {
+      "lower_fraction": "2371537205014194237256468883628539/125000000000000000000000000000000000000",
+      "upper_fraction": "189722976401135538980517510690283133/10000000000000000000000000000000000000000",
+      "midpoint_approx": 1.8972297640113555e-05,
+      "width_approx": 1.3e-39,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    }
+  },
+  "baseline": {
+    "path": "results/p337-closed-source-n25/latest.json",
+    "sha256": "df4ab225ff499131b744c70ec569ad21b0229f2256e71a585c680faae51bac3a",
+    "imported_root_p": {
+      "lower_fraction": "1185331078656453492302851399693093801267/2000000000000000000000000000000000000000",
+      "upper_fraction": "5926655393282267461514256998465469006339/10000000000000000000000000000000000000000",
+      "midpoint_approx": 0.5926655393282267,
+      "width_approx": 4e-40,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "converted_root_h": {
+      "lower_fraction": "2909970044522168458058553823340144555193/2000000000000000000000000000000000000000",
+      "upper_fraction": "1454985022261084229029276911670072277599/1000000000000000000000000000000000000000",
+      "midpoint_approx": 1.4549850222610843,
+      "width_approx": 2.5e-39,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "imported_Dp": {
+      "lower_fraction": "2356404883699794733526408361574426941739/400000000000000000000000000000000000000",
+      "upper_fraction": "58910122092494868338160209039360673547099/10000000000000000000000000000000000000000",
+      "midpoint_approx": 5.891012209249487,
+      "width_approx": 3.624e-37,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "converted_Dh": {
+      "lower_fraction": "9774447743291672716666938761431508469003/10000000000000000000000000000000000000000",
+      "upper_fraction": "1221805967911459089583367345178938558703/1250000000000000000000000000000000000000",
+      "midpoint_approx": 0.9774447743291673,
+      "width_approx": 6.21e-38,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "imported_U_over_A": {
+      "lower_fraction": "47104256506328061033501906588386497037/5000000000000000000000000000000000000000",
+      "upper_fraction": "9420851301265612206700381317677299491/1000000000000000000000000000000000000000",
+      "midpoint_approx": 0.009420851301265612,
+      "width_approx": 8.36e-38,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "new_root_search": false
+  },
+  "normalization": "S=-site-average(t); fixed-origin first-source global moments are exactly equal by translation symmetry",
+  "interval_scope": "exact rational outward bounds for finite count polynomials, not statistical confidence intervals",
+  "new_random_samples": 0,
+  "old_sources_rescored": false,
+  "response_scores": 1,
+  "boundary": "local C4-averaged End(pair) tensor; not a pure fixed-cut central projector, a free-index primary, or the full seam trace",
+  "elapsed_seconds": 0.20906187500804663
+}

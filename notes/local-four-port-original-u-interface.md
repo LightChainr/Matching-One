@@ -39,6 +39,16 @@ contraction zeros, but recouples different input/output groupings. Kbar
 need not itself be a projector or remain in a pure Pi2 block of one
 chosen cut. This distinction matters for any eventual field assignment.
 
+There is also a configurationwise separation from the global seam
+projector. Two separated occupied winding rows have a nonzero full seam
+trace while every unit-site mark t_x is zero. Conversely the local
+two-contractible-path example in the topology note has rank0 and a
+nonzero local contraction, while its full nontrivial seam character is
+zero. A local pair carrier contracted with its exterior can contribute
+to a globally invariant configuration. It does not project the entire
+global cut onto that same irrep. This accounts for the different raw
+q/E selection rules without modifying either observable.
+
 ## 2. The contracted local source and its site-average unit
 
 With x vacant, partition its four incident edge-nodes according to their
@@ -139,9 +149,10 @@ Unlike the completed seam trace, this local insertion is not restricted
 to rank1. Its direct q/E numerators must be retained. Equation (2) is
 the existing full observable functional, not a new estimator definition.
 
-The only frozen numerical question is whether this specified V_S is zero
-on the original N25 pair. A nonzero value establishes one concrete local
-tensor-to-global-U route; it would not turn Kbar into the full central
-seam projector or a named continuum primary. The kernel and topology
-proofs are complete; the missing moments have been released for one
-fixed enumeration under the contract.
+The only frozen numerical question was whether this specified V_S is zero
+on the original N25 pair. The [completed one-score result](local-four-port-transmission-result.md)
+is strictly positive, `V_S=+0.0018155512845251097`. It establishes one
+concrete local tensor-to-global-U route without turning Kbar into the
+full central seam projector or a named continuum primary. Both geometry
+traversals and the fixed response calculation are complete; this is not
+an outstanding enumeration request.
