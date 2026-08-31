@@ -1,0 +1,35 @@
+{
+  "schema": "matching-one.norm4-global-source-projection-contract.v1",
+  "status": "Exploratory definition after reading PR509 angular bridge fb01c44a, before computing this decomposition",
+  "question": "Which part of the original global source response comes from occupancy mixing and which from rank-selective reweighting at fixed occupancy?",
+  "source_result": "results/norm4-source-endpoint-1m/latest.json",
+  "source_result_sha256": "8aa36f48c3229f258981652c7b6da8aba23c75120ffce3b7217cecf2a2f7f867",
+  "trigger_commit": "fb01c44aa45e4f8d37d52144e2ad7c4adfe6ce40",
+  "trigger_path": "experiments/p154-spatial-localization-20260831/REPORT.md",
+  "Ns": [65, 85, 130, 170, 260, 340],
+  "source_units": "bulk s=CB+CW; all response derivatives couple to exp(t*s), no extra factor N",
+  "projection": {
+    "occupancy": "m_g(K)=E[s|K,g]",
+    "rank_selective": "a_g(K,r)=E[s|K,r,g]-m_g(K), r=q+1, E=q^2",
+    "spatial_residual": "s-E[s|K,r,g]",
+    "global_identity": "For every p and every readout f(K,q), its first source response under s equals occupancy plus rank_selective; spatial_residual response is identically zero",
+    "finite_strength_boundary": "This is a first-order projection. Exponentiating the projected conditional mean generally does not reproduce the finite-strength source measure",
+    "field_boundary": "Arbitrary K- and geometry-dependent projection is a sufficient readout representation, not a scalar-field identity, constant q/E closure, or microscopic causal explanation"
+  },
+  "computation": {
+    "occupancy_source_sum": "sum_s",
+    "occupancy_qs_sum": "sum_q*sum_s/samples at each K,g",
+    "occupancy_es_sum": "sum_e*sum_s/samples at each K,g",
+    "rank_source_sum": "0 at each K,g",
+    "rank_qs_sum": "sum_qs-occupancy_qs_sum",
+    "rank_es_sum": "sum_es-occupancy_es_sum",
+    "root": "reuse original saved pooled p0 for the same retained sample; no root finder",
+    "responses": "full moving-root/slopenormalized v=partial_t U, root motion and root-comoving rank1 population; all are linear in the source tangent at the common baseline",
+    "unperturbed_U": "original N^(13/8)*P4[E_p]/(2D), retained without refitting exponent",
+    "uncertainty": "recompute conditional means and entire decomposition in each original aligned delete-one group; same source three groups, 100 omissions; keep full covariance and chain contrasts",
+    "sampling": "cyclic100k and endpoint1M same old source marks; endpoint batch is old1000 union increment9000; no new counters, no replay, no server",
+    "plug_in_boundary": "Empirical projection and its jackknife are data-adaptive descriptive source components; they are not independently sampled fixed interventions or extra evidence"
+  },
+  "comparison_policy": "Report signed components with joint uncertainty. Do not convert a weak total into unstable percentage attribution; no free exponent, high-dimensional model search or new significance selection",
+  "outputs": ["results/norm4-global-source-projection/latest.json", "results/norm4-global-source-projection/REPORT.md"]
+}

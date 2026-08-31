@@ -71,15 +71,21 @@ observations. No other team's jobs, tunnels or keys were inspected or changed.
 Current use does not reserve a research question or grant authority to stop a job.
 The local workspace index points here; it need not duplicate this scientific queue.
 
-## Lightweight collaboration convention
+## Repository-first collaboration convention
 
-1. Before a new overlapping source replay or cloud job, send the other teams a
-   short question/source-SHA/dependency/compute note. Independent work proceeds;
-   this is communication, not approval or a task lock.
-2. At a scientific handoff, send **what changed**, exact result commit + report
+User preference updated 2026-08-31: **write routine coordination in the repository;
+reduce cross-task messages.** No periodic team pings or per-commit notifications.
+
+1. Before a potentially overlapping source replay or cloud job, record a short
+   question/source-SHA/dependency/compute note here or in the result package.
+   Independent work proceeds; this is not approval or a task lock.
+2. At a scientific handoff, write **what changed**, exact result commit + report
    and JSON paths, input lineage, original batch IDs/covariance location, and
    actual execution/release state. Mark proposed / implementing / completed
    separately from branch_only / open_pr / main_integrated.
+   Other teams consume the repository at their next relevant scientific handoff;
+   ordinary progress does not require a message or acknowledgement. Directly
+   interrupt only for an actual resource conflict or a decision needing the user.
 3. Keep one covariance bundle per reused random block. Different observers and
    post-analysis decompositions can discriminate mechanisms without becoming
    independent votes. Return new P334 columns to the existing batch coordinator.
