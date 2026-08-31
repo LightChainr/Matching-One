@@ -1,0 +1,30 @@
+{
+  "schema": "matching-one.p154-fixed-k-interaction-replay.v1",
+  "purpose": "Topological-sector response to a local pair interaction after removing its entire occupation-count conditional mean",
+  "analysis_status": "retrospective new-observable reanalysis of existing Phase-E samples, not a preregistered new trial",
+  "parent_commit": "0578105d92d3822cb48f5c421bd23ff339295cc6",
+  "parent_backend_blob": "22058703c12b168e844088277c9b61d64b9c1d2c",
+  "p": 0.59274605079,
+  "samples_per_size": 20000,
+  "batches_per_size": 100,
+  "runs": [
+    {"N":65,"seed":202615465,"counter_start":15466000000,"counter_end_exclusive":15466020000,"first":[8,1],"second":[7,4]},
+    {"N":130,"seed":2026154130,"counter_start":15466200000,"counter_end_exclusive":15466220000,"first":[11,3],"second":[9,7]}
+  ],
+  "definitions": {
+    "T_nn": "sum eta_i eta_j over the 2N simple undirected Euclidean nearest-neighbour edges",
+    "Q": "(T_nn - 4pK + 2Np^2)/(2N): genuinely local centered pair potential",
+    "R": "(T_nn - 2K(K-1)/(N-1))/(2N): fixed-K residual, not a strictly local canonical potential",
+    "H": "Q-R: a function of K only",
+    "E": "I(rank=0)+I(rank=2)",
+    "J_Q": "Cov(E,Q)",
+    "J_R": "Cov(E,R)",
+    "J_H": "Cov(E,H)",
+    "matching_parity": "fixed Euclidean stencil under (G_black,G_white,eta,p)->(G_white,G_black,1-eta,1-p); not a claim that the current-black-graph NN edge set stays unchanged",
+    "physical_measure": "P_lambda(eta) proportional to P_p(eta) exp(lambda Q(eta)); conditional on K, its tangent equals that of R"
+  },
+  "primary_question": "Is the finite directional E_top interaction response carried by occupation-count changes H or the fixed-K geometry R?",
+  "estimation": "paired pooled sample covariances; delete the same one of 100 batches in both orientations, recompute all nonlinear statistics; save full covariance and leave-one-out vectors",
+  "cost_scope": "deterministic replay of exactly 40000 old configurations with two paired geometries each; no additional random samples or servers",
+  "limitations": ["two existing sizes only", "no free exponent fit", "no new independent evidence beyond the source stream", "fixed-K orthogonality does not imply zero continuum thermal overlap", "no continuum energy-field identification or permission gate"]
+}
