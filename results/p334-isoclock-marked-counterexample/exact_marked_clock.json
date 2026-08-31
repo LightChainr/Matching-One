@@ -1,0 +1,927 @@
+{
+  "common_birth_probabilities": {
+    "2": "2/5",
+    "3": "2/5",
+    "4": "1/5"
+  },
+  "graph_selection": "Exactly the prescribed double star and C4+one inert isolate; no family search",
+  "mark_interpretation": "V is the actual final insertion site at the first pair-trigger birth; all five sites retain their insertion labels, including the inert isolate.",
+  "new_Monte_Carlo_samples": 0,
+  "new_N425_samples": 0,
+  "origin": "Exact independence-polynomial factor discovered in the actual P334 residual pair core; the alternate C4+isolate graph is a constructed finite mechanism counterexample, not another N425 checkpoint.",
+  "parent_commit": "0143632db59d867cfb658a6ad4465e5036684fff",
+  "polynomial_identity": "I_double-star=1+5z+6z^2+2z^3=(1+z)(1+4z+2z^2)=I_C4+isolated-site",
+  "records": [
+    {
+      "birth_probabilities_by_T": [
+        {
+          "exact": "0",
+          "value": 0.0
+        },
+        {
+          "exact": "0",
+          "value": 0.0
+        },
+        {
+          "exact": "2/5",
+          "value": 0.4
+        },
+        {
+          "exact": "2/5",
+          "value": 0.4
+        },
+        {
+          "exact": "1/5",
+          "value": 0.2
+        },
+        {
+          "exact": "0",
+          "value": 0.0
+        }
+      ],
+      "birth_sequence_counts_by_T": [
+        0,
+        0,
+        48,
+        48,
+        24,
+        0
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "independence_polynomial": [
+        1,
+        5,
+        6,
+        2,
+        0,
+        0
+      ],
+      "mean_birth_step": {
+        "exact": "14/5",
+        "value": 2.8
+      },
+      "name": "double_star",
+      "normalized_mean_knockout_concentration": {
+        "exact": "113/392",
+        "value": 0.288265306122449
+      },
+      "pi_multiset": [
+        "1/12",
+        "1/12",
+        "1/6",
+        "1/4",
+        "5/12"
+      ],
+      "positive_pivotal_support": 5,
+      "safe_subset_masks": [
+        0,
+        1,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        17,
+        20,
+        24,
+        28
+      ],
+      "subsets_evaluated": 32,
+      "sum_pi_squared": {
+        "exact": "5/18",
+        "value": 0.2777777777777778
+      },
+      "survival": [
+        {
+          "exact": "1",
+          "value": 1.0
+        },
+        {
+          "exact": "1",
+          "value": 1.0
+        },
+        {
+          "exact": "3/5",
+          "value": 0.6
+        },
+        {
+          "exact": "1/5",
+          "value": 0.2
+        },
+        {
+          "exact": "0",
+          "value": 0.0
+        },
+        {
+          "exact": "0",
+          "value": 0.0
+        }
+      ],
+      "time_conditional_final_vertex_collision": {
+        "2": {
+          "exact": "1/4",
+          "value": 0.25
+        },
+        "3": {
+          "exact": "5/18",
+          "value": 0.2777777777777778
+        },
+        "4": {
+          "exact": "3/8",
+          "value": 0.375
+        }
+      },
+      "two_independent_continuations_same_final_vertex_probability": {
+        "exact": "5/18",
+        "value": 0.2777777777777778
+      },
+      "uniform_sequence_denominator": 120,
+      "vertices": [
+        {
+          "degree": 3,
+          "inert_knockout_mean_increase": {
+            "exact": "6/5",
+            "value": 1.2
+          },
+          "joint_T_final_vertex_probabilities": [
+            {
+              "exact": "0",
+              "value": 0.0
+            },
+            {
+              "exact": "0",
+              "value": 0.0
+            },
+            {
+              "exact": "3/20",
+              "value": 0.15
+            },
+            {
+              "exact": "1/6",
+              "value": 0.16666666666666666
+            },
+            {
+              "exact": "1/10",
+              "value": 0.1
+            },
+            {
+              "exact": "0",
+              "value": 0.0
+            }
+          ],
+          "joint_T_final_vertex_sequence_counts_out_of120": [
+            0,
+            0,
+            18,
+            20,
+            12,
+            0
+          ],
+          "mean_T_conditional_final_vertex": {
+            "exact": "72/25",
+            "value": 2.88
+          },
+          "normalized_mean_knockout_weight": {
+            "exact": "3/7",
+            "value": 0.42857142857142855
+          },
+          "pi": {
+            "exact": "5/12",
+            "value": 0.4166666666666667
+          },
+          "pivotal_preceding_subset_counts": [
+            0,
+            3,
+            5,
+            2,
+            0
+          ],
+          "role": "degree3 hub",
+          "vertex": 0
+        },
+        {
+          "degree": 2,
+          "inert_knockout_mean_increase": {
+            "exact": "7/10",
+            "value": 0.7
+          },
+          "joint_T_final_vertex_probabilities": [
+            {
+              "exact": "0",
+              "value": 0.0
+            },
+            {
+              "exact": "0",
+              "value": 0.0
+            },
+            {
+              "exact": "1/10",
+              "value": 0.1
+            },
+            {
+              "exact": "1/10",
+              "value": 0.1
+            },
+            {
+              "exact": "1/20",
+              "value": 0.05
+            },
+            {
+              "exact": "0",
+              "value": 0.0
+            }
+          ],
+          "joint_T_final_vertex_sequence_counts_out_of120": [
+            0,
+            0,
+            12,
+            12,
+            6,
+            0
+          ],
+          "mean_T_conditional_final_vertex": {
+            "exact": "14/5",
+            "value": 2.8
+          },
+          "normalized_mean_knockout_weight": {
+            "exact": "1/4",
+            "value": 0.25
+          },
+          "pi": {
+            "exact": "1/4",
+            "value": 0.25
+          },
+          "pivotal_preceding_subset_counts": [
+            0,
+            2,
+            3,
+            1,
+            0
+          ],
+          "role": "degree2 hub",
+          "vertex": 1
+        },
+        {
+          "degree": 1,
+          "inert_knockout_mean_increase": {
+            "exact": "1/5",
+            "value": 0.2
+          },
+          "joint_T_final_vertex_probabilities": [
+            {
+              "exact": "0",
+              "value": 0.0
+            },
+            {
+              "exact": "0",
+              "value": 0.0
+            },
+            {
+              "exact": "1/20",
+              "value": 0.05
+            },
+            {
+              "exact": "1/30",
+              "value": 0.03333333333333333
+            },
+            {
+              "exact": "0",
+              "value": 0.0
+            },
+            {
+              "exact": "0",
+              "value": 0.0
+            }
+          ],
+          "joint_T_final_vertex_sequence_counts_out_of120": [
+            0,
+            0,
+            6,
+            4,
+            0,
+            0
+          ],
+          "mean_T_conditional_final_vertex": {
+            "exact": "12/5",
+            "value": 2.4
+          },
+          "normalized_mean_knockout_weight": {
+            "exact": "1/14",
+            "value": 0.07142857142857142
+          },
+          "pi": {
+            "exact": "1/12",
+            "value": 0.08333333333333333
+          },
+          "pivotal_preceding_subset_counts": [
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          "role": "degree3-side leaf",
+          "vertex": 2
+        },
+        {
+          "degree": 1,
+          "inert_knockout_mean_increase": {
+            "exact": "1/5",
+            "value": 0.2
+          },
+          "joint_T_final_vertex_probabilities": [
+            {
+              "exact": "0",
+              "value": 0.0
+            },
+            {
+              "exact": "0",
+              "value": 0.0
+            },
+            {
+              "exact": "1/20",
+              "value": 0.05
+            },
+            {
+              "exact": "1/30",
+              "value": 0.03333333333333333
+            },
+            {
+              "exact": "0",
+              "value": 0.0
+            },
+            {
+              "exact": "0",
+              "value": 0.0
+            }
+          ],
+          "joint_T_final_vertex_sequence_counts_out_of120": [
+            0,
+            0,
+            6,
+            4,
+            0,
+            0
+          ],
+          "mean_T_conditional_final_vertex": {
+            "exact": "12/5",
+            "value": 2.4
+          },
+          "normalized_mean_knockout_weight": {
+            "exact": "1/14",
+            "value": 0.07142857142857142
+          },
+          "pi": {
+            "exact": "1/12",
+            "value": 0.08333333333333333
+          },
+          "pivotal_preceding_subset_counts": [
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          "role": "degree3-side leaf",
+          "vertex": 3
+        },
+        {
+          "degree": 1,
+          "inert_knockout_mean_increase": {
+            "exact": "1/2",
+            "value": 0.5
+          },
+          "joint_T_final_vertex_probabilities": [
+            {
+              "exact": "0",
+              "value": 0.0
+            },
+            {
+              "exact": "0",
+              "value": 0.0
+            },
+            {
+              "exact": "1/20",
+              "value": 0.05
+            },
+            {
+              "exact": "1/15",
+              "value": 0.06666666666666667
+            },
+            {
+              "exact": "1/20",
+              "value": 0.05
+            },
+            {
+              "exact": "0",
+              "value": 0.0
+            }
+          ],
+          "joint_T_final_vertex_sequence_counts_out_of120": [
+            0,
+            0,
+            6,
+            8,
+            6,
+            0
+          ],
+          "mean_T_conditional_final_vertex": {
+            "exact": "3",
+            "value": 3.0
+          },
+          "normalized_mean_knockout_weight": {
+            "exact": "5/28",
+            "value": 0.17857142857142858
+          },
+          "pi": {
+            "exact": "1/6",
+            "value": 0.16666666666666666
+          },
+          "pivotal_preceding_subset_counts": [
+            0,
+            1,
+            2,
+            1,
+            0
+          ],
+          "role": "degree2-side leaf",
+          "vertex": 4
+        }
+      ]
+    },
+    {
+      "birth_probabilities_by_T": [
+        {
+          "exact": "0",
+          "value": 0.0
+        },
+        {
+          "exact": "0",
+          "value": 0.0
+        },
+        {
+          "exact": "2/5",
+          "value": 0.4
+        },
+        {
+          "exact": "2/5",
+          "value": 0.4
+        },
+        {
+          "exact": "1/5",
+          "value": 0.2
+        },
+        {
+          "exact": "0",
+          "value": 0.0
+        }
+      ],
+      "birth_sequence_counts_by_T": [
+        0,
+        0,
+        48,
+        48,
+        24,
+        0
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "independence_polynomial": [
+        1,
+        5,
+        6,
+        2,
+        0,
+        0
+      ],
+      "mean_birth_step": {
+        "exact": "14/5",
+        "value": 2.8
+      },
+      "name": "C4_plus_isolate",
+      "normalized_mean_knockout_concentration": {
+        "exact": "1/4",
+        "value": 0.25
+      },
+      "pi_multiset": [
+        "0",
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/4"
+      ],
+      "positive_pivotal_support": 4,
+      "safe_subset_masks": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        8,
+        10,
+        16,
+        17,
+        18,
+        20,
+        21,
+        24,
+        26
+      ],
+      "subsets_evaluated": 32,
+      "sum_pi_squared": {
+        "exact": "1/4",
+        "value": 0.25
+      },
+      "survival": [
+        {
+          "exact": "1",
+          "value": 1.0
+        },
+        {
+          "exact": "1",
+          "value": 1.0
+        },
+        {
+          "exact": "3/5",
+          "value": 0.6
+        },
+        {
+          "exact": "1/5",
+          "value": 0.2
+        },
+        {
+          "exact": "0",
+          "value": 0.0
+        },
+        {
+          "exact": "0",
+          "value": 0.0
+        }
+      ],
+      "time_conditional_final_vertex_collision": {
+        "2": {
+          "exact": "1/4",
+          "value": 0.25
+        },
+        "3": {
+          "exact": "1/4",
+          "value": 0.25
+        },
+        "4": {
+          "exact": "1/4",
+          "value": 0.25
+        }
+      },
+      "two_independent_continuations_same_final_vertex_probability": {
+        "exact": "1/4",
+        "value": 0.25
+      },
+      "uniform_sequence_denominator": 120,
+      "vertices": [
+        {
+          "degree": 2,
+          "inert_knockout_mean_increase": {
+            "exact": "7/10",
+            "value": 0.7
+          },
+          "joint_T_final_vertex_probabilities": [
+            {
+              "exact": "0",
+              "value": 0.0
+            },
+            {
+              "exact": "0",
+              "value": 0.0
+            },
+            {
+              "exact": "1/10",
+              "value": 0.1
+            },
+            {
+              "exact": "1/10",
+              "value": 0.1
+            },
+            {
+              "exact": "1/20",
+              "value": 0.05
+            },
+            {
+              "exact": "0",
+              "value": 0.0
+            }
+          ],
+          "joint_T_final_vertex_sequence_counts_out_of120": [
+            0,
+            0,
+            12,
+            12,
+            6,
+            0
+          ],
+          "mean_T_conditional_final_vertex": {
+            "exact": "14/5",
+            "value": 2.8
+          },
+          "normalized_mean_knockout_weight": {
+            "exact": "1/4",
+            "value": 0.25
+          },
+          "pi": {
+            "exact": "1/4",
+            "value": 0.25
+          },
+          "pivotal_preceding_subset_counts": [
+            0,
+            2,
+            3,
+            1,
+            0
+          ],
+          "role": "cycle vertex",
+          "vertex": 0
+        },
+        {
+          "degree": 2,
+          "inert_knockout_mean_increase": {
+            "exact": "7/10",
+            "value": 0.7
+          },
+          "joint_T_final_vertex_probabilities": [
+            {
+              "exact": "0",
+              "value": 0.0
+            },
+            {
+              "exact": "0",
+              "value": 0.0
+            },
+            {
+              "exact": "1/10",
+              "value": 0.1
+            },
+            {
+              "exact": "1/10",
+              "value": 0.1
+            },
+            {
+              "exact": "1/20",
+              "value": 0.05
+            },
+            {
+              "exact": "0",
+              "value": 0.0
+            }
+          ],
+          "joint_T_final_vertex_sequence_counts_out_of120": [
+            0,
+            0,
+            12,
+            12,
+            6,
+            0
+          ],
+          "mean_T_conditional_final_vertex": {
+            "exact": "14/5",
+            "value": 2.8
+          },
+          "normalized_mean_knockout_weight": {
+            "exact": "1/4",
+            "value": 0.25
+          },
+          "pi": {
+            "exact": "1/4",
+            "value": 0.25
+          },
+          "pivotal_preceding_subset_counts": [
+            0,
+            2,
+            3,
+            1,
+            0
+          ],
+          "role": "cycle vertex",
+          "vertex": 1
+        },
+        {
+          "degree": 2,
+          "inert_knockout_mean_increase": {
+            "exact": "7/10",
+            "value": 0.7
+          },
+          "joint_T_final_vertex_probabilities": [
+            {
+              "exact": "0",
+              "value": 0.0
+            },
+            {
+              "exact": "0",
+              "value": 0.0
+            },
+            {
+              "exact": "1/10",
+              "value": 0.1
+            },
+            {
+              "exact": "1/10",
+              "value": 0.1
+            },
+            {
+              "exact": "1/20",
+              "value": 0.05
+            },
+            {
+              "exact": "0",
+              "value": 0.0
+            }
+          ],
+          "joint_T_final_vertex_sequence_counts_out_of120": [
+            0,
+            0,
+            12,
+            12,
+            6,
+            0
+          ],
+          "mean_T_conditional_final_vertex": {
+            "exact": "14/5",
+            "value": 2.8
+          },
+          "normalized_mean_knockout_weight": {
+            "exact": "1/4",
+            "value": 0.25
+          },
+          "pi": {
+            "exact": "1/4",
+            "value": 0.25
+          },
+          "pivotal_preceding_subset_counts": [
+            0,
+            2,
+            3,
+            1,
+            0
+          ],
+          "role": "cycle vertex",
+          "vertex": 2
+        },
+        {
+          "degree": 2,
+          "inert_knockout_mean_increase": {
+            "exact": "7/10",
+            "value": 0.7
+          },
+          "joint_T_final_vertex_probabilities": [
+            {
+              "exact": "0",
+              "value": 0.0
+            },
+            {
+              "exact": "0",
+              "value": 0.0
+            },
+            {
+              "exact": "1/10",
+              "value": 0.1
+            },
+            {
+              "exact": "1/10",
+              "value": 0.1
+            },
+            {
+              "exact": "1/20",
+              "value": 0.05
+            },
+            {
+              "exact": "0",
+              "value": 0.0
+            }
+          ],
+          "joint_T_final_vertex_sequence_counts_out_of120": [
+            0,
+            0,
+            12,
+            12,
+            6,
+            0
+          ],
+          "mean_T_conditional_final_vertex": {
+            "exact": "14/5",
+            "value": 2.8
+          },
+          "normalized_mean_knockout_weight": {
+            "exact": "1/4",
+            "value": 0.25
+          },
+          "pi": {
+            "exact": "1/4",
+            "value": 0.25
+          },
+          "pivotal_preceding_subset_counts": [
+            0,
+            2,
+            3,
+            1,
+            0
+          ],
+          "role": "cycle vertex",
+          "vertex": 3
+        },
+        {
+          "degree": 0,
+          "inert_knockout_mean_increase": {
+            "exact": "0",
+            "value": 0.0
+          },
+          "joint_T_final_vertex_probabilities": [
+            {
+              "exact": "0",
+              "value": 0.0
+            },
+            {
+              "exact": "0",
+              "value": 0.0
+            },
+            {
+              "exact": "0",
+              "value": 0.0
+            },
+            {
+              "exact": "0",
+              "value": 0.0
+            },
+            {
+              "exact": "0",
+              "value": 0.0
+            },
+            {
+              "exact": "0",
+              "value": 0.0
+            }
+          ],
+          "joint_T_final_vertex_sequence_counts_out_of120": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "mean_T_conditional_final_vertex": null,
+          "normalized_mean_knockout_weight": {
+            "exact": "0",
+            "value": 0.0
+          },
+          "pi": {
+            "exact": "0",
+            "value": 0.0
+          },
+          "pivotal_preceding_subset_counts": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "role": "inert isolate",
+          "vertex": 4
+        }
+      ]
+    }
+  ]
+}
