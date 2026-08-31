@@ -57,10 +57,14 @@ cannot exclude a post-hoc fitted c*q source. A nonzero beta_null contribution
 can still act through its occupancy/rank conditional means; it does not imply
 that a source centered within every K/rank becomes visible to global U.
 
-This equilibrium decomposition does not compute the interior one-hole Xi or
-the stronger gain residual U*U_st−U_s*U_t. That separately frozen calculation
-requires actual defect q/E/source counts. Its existing scorer is not a result;
-consume the completed packet rather than start a duplicate run.
+This equilibrium decomposition does not itself compute interior Xi. The later
+[execution delivery f5c4a74a](https://github.com/LightChainr/Matching-One/blob/f5c4a74a20bad8589c39e1034cfb209462110dbe/results/p337-endpoint-defect/score/REPORT.md)
+now completes that separate calculation: Xi=-10.755718407564073 and
+R=U*U_st−U_s*U_t=27.766563581230237 have nonzero rational enclosures.
+The fixed source-independent gain model and mixed thermal-only null fail.
+That delivered result supersedes the earlier scorer-only snapshot; no duplicate
+defect run is the next assignment. This later narrative update does not change
+the coefficient reduction or its stored runtime/hash receipt.
 
 ## Sources and reproduction
 

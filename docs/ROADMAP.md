@@ -1,10 +1,13 @@
 # Roadmap: Default Attention, Not Permission
 
-**Current move, 2026-08-31:** use the now-explicit closed checkerboard source
-to compute its fixed one-hole mixed original-U derivative Xi. The common
-thermal-only interior extension predicts zero; nonzero would exclude it.
-Its plaquette contribution and exact endpoint closure are completed results,
-not the next first-source task. #154's165M primary and its declared secondary,
+**Current move, 2026-08-31:** test the weighted-jump-only model's fixed
+prediction `Xi_reweight=0` using two prescribed cross-moments.
+Execution's `branch_only` [report, `f5c4a74a`](https://github.com/LightChainr/Matching-One/blob/f5c4a74a20bad8589c39e1034cfb209462110dbe/results/p337-endpoint-defect/score/REPORT.md)
+rejects source-independent gain: `R=27.766563581230237>0`.
+The companion `Xi=−10.755718407564073` rejects the mixed thermal-only null.
+Both share the same coefficients; hard-endpoint closure remains true.
+First Xi, complete Sstar transmission and its cycle/rank split are done.
+#154's165M primary and its declared secondary,
 plus both distinct P334 comparisons, are delivered; none remains a production request. The
 [decision register](DECISION-EXPERIMENTS.md) and
 [final decision record](../notes/independent-decisions-final-20260831.md)
@@ -12,21 +15,38 @@ supersede the pre-score handoff. No new production, feature expansion or third
 default P0 follows automatically; other lines remain parallel exploration,
 without task locks or Issue closure.
 
-The [new exact plaquette result](../results/decimation-plaquette-u/score/REPORT.md),
-local `b8d043fc493ab6d7f808d0c074571d2fdd8fb60f`, exhausts2^25 configurations for each N25
-Gaussian quotient(5,0)/(4,3). `V_F4=+.19441468646090693` is nonzero by
-rational bounds, and its forced N50 endpoint correction is
-`+.5996568681566026`. Bare-C transport fails for the actual global U, not
-just configuration closure. The [closed family](../notes/decimation-closed-source-and-global-u.md)
-has the exact endpoint-invariant `C+F4+T_NN−4K+2N`; modulo thermal K and
-constants, bare C reaches the C+F4+T_NN fixed ray in two admissible reductions.
-The source coefficients are forced by the finite dictionary, not fitted to
-the observed correction. Interior transmission is still open; endpoint
-closure and a mixed-Smith finite pair do not identify a continuum operator
-or prove same-Smith scaling. This route neither reopens lag1 nor defaults
-to new production, another source feature or another endpoint enumeration.
-The one-hole insertion formula is already in the note; computing its Xi,
-including root/slope motion, is the next result rather than rederiving the formula.
+The [new exact source split](../results/decimation-cycle-rank/REPORT.md),
+Draft #267 `5483aa82047df34c2c9508d4930b6e20961ed9ca`, rejects the fixed unit-q alias:
+`V_Sstar=.12616536341416915`, `V_q=.05324753511465212`, and
+`2V_beta_null=.07291782829951701`, with a rational enclosure excluding zero.
+Execution's `branch_only` [action, `0d19179f`](https://github.com/LightChainr/Matching-One/blob/0d19179f6c6c36fdbb34b2d93e35a9d5fe10dad3/notes/decimation-closed-cluster-gas-action.md)
+fixes `Sstar=2*beta_null+q−3K+2N+2`; its [complete-source result,
+`ec01768f`](https://github.com/LightChainr/Matching-One/blob/ec01768f520e85f1acfd9d3fde9bcf855477254e/results/p337-closed-source-n25/REPORT.md)
+also measures `V_Bvac=.33291070842057197`. The new .281-second read uses
+saved exact coefficients, with no enumeration, root search or random samples.
+Ambient-null graph cycles are not cellular holes; their response need not
+come from a source centered within fixed K/rank. A freely fitted rank source,
+larger-N scaling and a continuum field remain outside this finite exclusion.
+
+The [defect mechanism, `branch_only` `bc17b81d`](https://github.com/LightChainr/Matching-One/blob/bc17b81d502fb1ca3323f5c20f63c544bb31602d/notes/checkerboard-single-defect-global-u-result.md)
+gives `DeltaSstar=3−2k_null−ell`, with `ell≤1` and rank loss possible only
+at an alternating child face. Actual `U_st=10.755718407564073` exceeds
+the gain prediction`.5313680267777353` by10.224350380786337. A proposed
+interior theory must account for this fixed source-dependent coefficient.
+The normalized insertion has weighted-jump and baseline-reweighting
+contributions; the latter can involve both rank-preserving and rank-changing
+configurations. Their contributions are not yet separated. The fixed zero
+prediction narrows the next model question without a generic feature catalogue
+or extrapolating a finite-interior curve from one endpoint jet.
+
+The separate `branch_only` [F4 independent80M result, `25ca3635`](https://github.com/LightChainr/Matching-One/blob/25ca3635ea64655923c32adee4b62d683579cdcd/results/p337-f4-transmission-20260831/scored/REPORT.md)
+uses20M/100 batches per N65/85/130/170. All four simultaneous intervals
+contain zero, and none is wholly inside±.5: `NOT_EXCLUDED` and
+`INCONCLUSIVE_STOP_FIXED_BLOCK_WITHOUT_TOP_UP`. The earlier exact N25
+[plaquette result](../results/decimation-plaquette-u/score/REPORT.md), `b8d043fc`,
+and [endpoint closure](../notes/decimation-closed-source-and-global-u.md)
+do not settle this larger-N question. They are completed inputs, not requests
+for another first-source calculation, endpoint enumeration or extra sampling.
 
 Execution's `branch_only` [fresh1M source-normal result, `d0a9daf1132779205f119e9b4470f4eea9cb89c1`](https://github.com/LightChainr/Matching-One/blob/d0a9daf1132779205f119e9b4470f4eea9cb89c1/notes/p334-independent-normal-intervention-result.md),
 score `1164ba91035bb0ee37bcea52f700312475c257b5`, gives

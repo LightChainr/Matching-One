@@ -8,7 +8,7 @@ policy:
   primary_lines: [P154_TEMPORAL_TRANSMISSION, P334_INDEPENDENT_INTERVENTIONS]
   pending_primary_scores: []
   completed_experiments: [P154_TEMPORAL_TRANSMISSION, P334_SOURCE_NORMAL_INTERVENTION, P334_CONTACT_RESIDUAL_FORECAST]
-  next_primary: compute_fixed_one_hole_mixed_original_U_Xi_common_thermal_only_extension_predicts_zero_no_automatic_production
+  next_primary: weighted_rank_jump_only_vs_normalized_baseline_reweighting_mixed_U_prediction_zero_two_fixed_cross_moments_no_automatic_production
   issue_locks: false
   automatic_issue_closure_or_PR_merge: false
   parallel_exploration: true
@@ -29,8 +29,49 @@ completed_exact_comparison:
   configurations: 67108864
   new_random_samples: 0
   exact_source_completion: C_plus_F4_plus_T_NN_minus4K_plus2N_is_endpoint_invariant
-  next_named_discriminator: compute_Xi_partial_t_partial_epsilon_U_from_completed_normalized_insertion_nonzero_rejects_common_thermal_only_interior_extension
+  next_named_discriminator: first_Xi_and_gain_comparison_completed_new_fixed_reweighting_term_question_below
   boundary: finite_degree4_square_site_endpoint_different_Smith_classes_no_continuum_or_interior_RG_claim_no_independent_N50_run
+completed_cycle_rank_comparison:
+  commit: 5483aa82047df34c2c9508d4930b6e20961ed9ca
+  report: results/decimation-cycle-rank/REPORT.md
+  status: fixed_unit_q_alias_rejected
+  prediction: V_Sstar_equals_Vq
+  V_q: 0.05324753511465212
+  V_Sstar: 0.12616536341416915
+  residual_twice_V_beta_null: 0.07291782829951701
+  boundary: exact_same_configuration_populations_not_arbitrary_rank_coefficient_or_within_K_rank_centered_transmission
+completed_single_defect_comparison:
+  freeze_commit: 9024fdbf62c0295f2284991c77dbd1fc68f267b3
+  result_commit: f5c4a74a20bad8589c39e1034cfb209462110dbe
+  result_path: results/p337-endpoint-defect/score/score.json
+  status: source_independent_gain_and_mixed_thermal_only_null_rejected
+  primary_prediction: R_equals_U_times_Ust_minus_Us_times_Ut_equals_zero
+  R: 27.766563581230237
+  secondary_Xi: -10.755718407564073
+  observed_Ust: 10.755718407564073
+  gain_predicted_Ust: 0.5313680267777353
+  boundary: shared_exact_coefficients_one_sided_endpoint_first_jet_not_independent_confirmation_or_finite_epsilon_crossing
+completed_F4_independent_block:
+  protocol_commit: 0f7a083770d31095e7b4d688d544637d8fc09658
+  result_commit: 25ca3635ea64655923c32adee4b62d683579cdcd
+  result_path: results/p337-f4-transmission-20260831/scored/score.json
+  status: INCONCLUSIVE_STOP_FIXED_BLOCK_WITHOUT_TOP_UP
+  zero_model: NOT_EXCLUDED
+  sizes: [65, 85, 130, 170]
+  samples_per_size: 20000000
+  batches_per_size: 100
+  interval_rule: four_coordinate_simultaneous95percent_z2p497705474412374
+  intervals: [[-0.542228153481, 0.672008390881], [-0.144373202661, 1.761454589653], [-3.370319518088, 3.464690121643], [-6.311295822230, 4.840750512188]]
+  practical_band: [-0.5, 0.5]
+  boundary: no_interval_excludes_zero_none_wholly_within_practical_band_not_negligibility_or_nonzero_coupling_no_topup
+next_fixed_operator_prediction:
+  model: weighted_jump_only_response_omits_normalized_Cov_w_Oplus_term
+  predicted_Xi_reweight: 0
+  definition: A_over_D_partial_p_of_hY_minus_r_hQ_with_hO_M_times1minusp_Cov_DeltaS_Oplus
+  missing_per_KB_cross_moments: [Sminus_qplus, Sminus_Eplus]
+  scope: fixed_positive_Sstar_same_chart_same_q_E_no_fitted_fraction
+  primary_output: exact_Xi_reweight_enclosure_zero_exclusion_rejects_weighted_jump_only_zero_does_not_prove_full_closure
+  random_production_requested: false
 experiments:
   - id: P154_TEMPORAL_TRANSMISSION
     issue_refs: [154, 275]

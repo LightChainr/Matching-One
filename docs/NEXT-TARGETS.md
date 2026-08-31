@@ -1,17 +1,19 @@
-# Next Targets: A Closed Microscopic Source Now Reaches the Original U
+# Next Targets: A Fixed Mechanism Test After the Single-Defect Result
 
 **Updated 2026-08-31.** Both requested primary lines have delivered decisions:
 #154's independent165M-permutation transmission experiment and two distinct
 #334 interventions are complete. The #154 secondary interpretation is also
 complete. There is no missing first production or pending official score.
 
-**New completed calculation, Draft #267:** the decimation-forced F4 source has
-original-global-U derivative **+.19441468646** on the fixed exhaustive N25
-Gaussian pair. Bare cluster-only N50 endpoint transport misses **+.59965686816**.
-The [result](../results/decimation-plaquette-u/score/REPORT.md) rejects that
-specified finite-pair transport law; the [exact source completion](../notes/decimation-closed-source-and-global-u.md)
-gives the invariant combination `S_hat=C+F4+T_NN−4K+2N`. These are actual
-mechanism results, not another readiness exercise or a new fit on the old archives.
+**New completed decisions:** the fixed closed source has N25 response
+`V_Sstar=+.126165363414`. [Our exact rank-bias subtraction](../results/decimation-cycle-rank/REPORT.md),
+`5483aa82`, leaves `2*V_beta_null=+.072917828300`, excluding the explicit
+unit-q-only alias. [The completed N50 single-defect result, `f5c4a74a`](https://github.com/LightChainr/Matching-One/blob/f5c4a74a20bad8589c39e1034cfb209462110dbe/results/p337-endpoint-defect/score/REPORT.md),
+gives `Xi=−10.7557184076` and `R=+27.7665635812`: the common thermal-only
+mixed null and source-independent overall-gain extension both fail.
+These finite exact claims do not resolve the larger-N F4 production:
+[its completed80M block, `25ca3635`](https://github.com/LightChainr/Matching-One/blob/25ca3635ea64655923c32adee4b62d683579cdcd/results/p337-f4-transmission-20260831/scored/REPORT.md),
+remains `INCONCLUSIVE_STOP_FIXED_BLOCK_WITHOUT_TOP_UP`, not zero coupling.
 
 [Final scientific handoff](../notes/independent-decisions-final-20260831.md) ·
 [Frozen decisions](DECISION-EXPERIMENTS.md) · [Claim boundaries](STATUS.md).
@@ -43,24 +45,31 @@ This page owns attention, not permission. No Issue is closed or locked here.
    The same165M block supplies the primary and secondary covariance, not an
    extra evidence vote or a revised ten-test primary family.
 
-## The next substantive target: endpoint closure versus interior transport
+## The next substantive target: weighted jumps versus baseline reweighting
 
 The requested named microscopic family is now concrete: normalized
 `exp(t*S_hat)` under checkerboard decimation. Its endpoint dictionary fixes
 the cluster/plaquette/edge coefficients, and the exact F4 result shows that
 the omitted term is visible in the original U after root and slope motion.
-Both the original C-only closure question and the finite source-basis completion
-are answered; repeating them is not the next assignment.
+The C-only closure, full closed-source response and first one-hole gain comparison
+are answered; their first calculation is no longer the next assignment.
 
-**Highest attention: compute the fixed one-hole mixed U response
-`Xi_N=partial_t partial_epsilon U_N(1−epsilon,t)|0`.** The source note already
-derives the normalized A-vacancy insertion, retaining the actual q/E readouts.
-Do not rederive that interface as the next deliverable. A common thermal-only
-interior extension requires one `b(p,t)` with `J_O=b*partial_p E[O]` for both
-q and E and therefore predicts **Xi=0**. A nonzero exact enclosure removes
-that extension; zero alone would not establish full profile closure. Include
-root motion and the common thermal slope when computing Xi: a source-measure
-identity alone does not establish observer transport.
+The [fixed one-hole operator, `bc17b81d`](https://github.com/LightChainr/Matching-One/blob/bc17b81d502fb1ca3323f5c20f63c544bb31602d/notes/checkerboard-single-defect-source.md)
+has exactly two terms: `E[w*Delta O] + Cov(w,O_intact)`, with
+`w=exp(t*Delta Sstar)` and `Delta Sstar=3−2*k_null−ell`.
+Only alternating child faces can lose ambient rank, with ell≤1. Yet the
+normalized weight-redistribution term can affect the global observer even
+when the hole leaves rank unchanged. It also includes rank-changing holes;
+it must not be labeled their complement or a measured population share.
+
+**Highest attention: the fixed weighted-rank-jump-only model predicts zero original-U
+mixed contribution from `Cov(w,O_intact)`.** Compute that contribution with
+the unchanged source/chart and full root/slope normalization; a nonzero exact
+enclosure excludes this model. The two required per-K cross moments are
+`E[S_defect*q_intact]` and `E[S_defect*E_intact]`. This is the prescribed
+operator split, not a descriptor search, fitted percentage or another first Xi.
+The full Xi and gain residual remain completed reference values. No new
+random-production assignment is implied; the exact finite prediction comes first.
 
 This is one specified mechanism question, not a scan over descriptors, sources,
 lags or exponents. Endpoint source invariance alone does not identify a continuum
@@ -107,10 +116,10 @@ team permission messages. The producing team's20:02:29 CST receipt records
 its five P154 machines returned Ready and all ten then observed Ready; this
 is dated delivery metadata, not current availability or an instruction to start.
 
-This overview completed one fixed two-geometry exhaustive calculation locally:
-67,108,864 configurations, no random sampling, cloud job or science test suite.
-The successful reader reused the saved counts after an output-format repair;
-it did not enumerate again. PR #267 stays Draft; no merges, history rewrite or
+This overview's latest computation consumed saved exact N25 coefficients in
+0.281seconds: no enumeration, root search, random sample, cloud job or science
+test suite. The separate execution single-defect result is cited, not rerun.
+PR #267 stays Draft; no merges, history rewrite or
 Issue lifecycle changes. [The preceding queue](https://github.com/LightChainr/Matching-One/blob/f670d26e8056116ec1787e0a2f29009b5db24a7d/docs/NEXT-TARGETS.md)
 and [pre-score handoff](../notes/independent-decisions-handoff-20260831.md)
 retain history, not additional assignments.

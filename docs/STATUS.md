@@ -6,38 +6,57 @@
 
 `docs/NEXT-TARGETS.md` owns the single attention order, while `docs/ROADMAP.md` preserves its scientific rationale. Neither locks a task, serializes theory work or treats a lower priority as a scientific rejection.
 
-**New finite global-U result, local `b8d043fc493ab6d7f808d0c074571d2fdd8fb60f`, not `main_integrated`:**
-[the plaquette-source report](../results/decimation-plaquette-u/score/REPORT.md)
-enumerates all2^25 configurations of each N25 quotient(5,0)/(4,3), giving
-`V_F4=+.19441468646090693` in bulk units. Exact rational root/response bounds
-exclude zero; there is no Monte Carlo SE. The forced N50 endpoint correction
-is `2^(13/8)*V_F4=+.5996568681566026`, so bare-cluster endpoint transport
-fails for original U, including its moving root and slope normalization.
-These are theorem-transported parent endpoint derivatives, not N50 endpoint
-simulations. The child pair is Z5×Z5 versus Z25; the result does not establish
-a same-Smith family law, the N65/N85 production mechanism or a continuum field.
+**Completed fixed cycle/rank separation, `open_pr #267`, `5483aa82047df34c2c9508d4930b6e20961ed9ca`, not `main_integrated`:**
+[the exact N25 result](../results/decimation-cycle-rank/REPORT.md) gives
+`V_q=+.05324753511465212`, `V_Sstar=+.12616536341416915`, and
+`2V_beta_null=+.07291782829951701` (`V_beta_null=+.036458914149758506`).
+The rational enclosure excludes zero, rejecting precisely `V_Sstar=V_q`.
+This .281-second calculation consumes saved exact coefficients and the
+committed complete-source response: no enumeration, root search, random
+samples or test suite. These are dependent coordinates of one finite ensemble.
 
-The [closed-source note](../notes/decimation-closed-source-and-global-u.md),
-also `open_pr #267`, fixes the endpoint dictionary with parent
-area N=2M and right-hand quantities on the complemented child:
+Execution's `branch_only` [action dictionary, `0d19179f6c6c36fdbb34b2d93e35a9d5fe10dad3`](https://github.com/LightChainr/Matching-One/blob/0d19179f6c6c36fdbb34b2d93e35a9d5fe10dad3/notes/decimation-closed-cluster-gas-action.md)
+fixes `Sstar=C+F4+Bvac=2*beta_null+q−3K+2N+2`.
+Here beta_null is the ambient-zero kernel rank of occupied **graph** H1,
+not cellular holes or just filled faces. Common K tilt drops out of the
+moving-root, slope-normalized U. Its [complete-source result,
+`ec01768f520e85f1acfd9d3fde9bcf855477254e`](https://github.com/LightChainr/Matching-One/blob/ec01768f520e85f1acfd9d3fde9bcf855477254e/results/p337-closed-source-n25/REPORT.md)
+also gives `V_Bvac=+.33291070842057197`; first Sstar transmission is complete.
+The earlier [F4 result](../results/decimation-plaquette-u/score/REPORT.md),
+`b8d043fc493ab6d7f808d0c074571d2fdd8fb60f`, gives+.19441468646090693
+and the forced N50 correction+.5996568681566026. These exact N25
+Gaussian(5,0)/(4,3) calculations retain different Smith classes. They
+exclude the fixed unit-q alias, not arbitrary fitted rank sources, and do
+not establish fixed-K/rank residual transmission or a continuum field.
 
-```text
-C_parent=C+F4,       F4_parent=T_NN−4K+2M,
-T_NN,parent=4M−4K,   K_parent=2M−K.
-S_hat(X)=C_X+F4_X+T_NN,X−4K_X+2*area(X).
-S_hat(parent)=S_hat(child)=C+F4+T_NN−4K+2M.
-```
+**Completed independent80M F4 block, `branch_only`, `25ca3635ea64655923c32adee4b62d683579cdcd`:**
+[the production report](https://github.com/LightChainr/Matching-One/blob/25ca3635ea64655923c32adee4b62d683579cdcd/results/p337-f4-transmission-20260831/scored/REPORT.md)
+uses20M/100 batches at each N65/85/130/170. Four simultaneous intervals
+contain zero; none is wholly inside±.5. Its states are `NOT_EXCLUDED` and
+`INCONCLUSIVE_STOP_FIXED_BLOCK_WITHOUT_TOP_UP`, not exact zero or successful
+large-N transmission. The finite N25 positive results do not change that decision.
 
-The coupling family closes. Modulo the thermal K and constant directions,
-two admissible checkerboard reductions send bare C to the fixed source ray
-C+F4+T_NN; this does not mean the odd-area N25 pair was decimated twice.
-The measured F4 response and this exact endpoint closure are separate
-completed claims; interior transmission of S_hat has not been calculated.
-Source dictionaries: `branch_only` [207436518db46dd13ef0ec91168cb1c99d52eaea](https://github.com/LightChainr/Matching-One/blob/207436518db46dd13ef0ec91168cb1c99d52eaea/notes/p337-checkerboard-decimation-global-u.md)
-and [56838d5f068f6f0ba7795926dc9343229bdd28ce](https://github.com/LightChainr/Matching-One/blob/56838d5f068f6f0ba7795926dc9343229bdd28ce/notes/square-checkerboard-endpoint-homology.md).
-Their parity-preserving periods, lifted-edge and endpoint thermal conventions
-remain part of the claim. This finite candidate does not reopen the completed
-P154/P334 comparisons or imply a new production campaign.
+**Completed distinct one-hole result, execution `branch_only`, `f5c4a74a20bad8589c39e1034cfb209462110dbe`:**
+[the exact report](https://github.com/LightChainr/Matching-One/blob/f5c4a74a20bad8589c39e1034cfb209462110dbe/results/p337-endpoint-defect/score/REPORT.md)
+delivers `U=2.715728877348466`, `U_s=3.708240929282322`,
+`U_t=.38914717849771724`, `U_st=10.755718407564073` on the fixed N50 pair.
+Primary `R=U*U_st−U_s*U_t=27.766563581230237` and secondary
+`Xi=−U_st=−10.755718407564073` have exact enclosures excluding zero.
+The source-independent gain prediction was`.5313680267777353`, missing
+actual U_st by10.224350380786337. Both decisions share one exact defect
+block and the original N25 endpoint coefficients; neither rejects the
+hard-endpoint identity. Freeze `9024fdbf` and scorer `ebc3b790` now have
+a delivered result, not a pending first-Xi task.
+
+The `branch_only` [interpretation, `bc17b81d502fb1ca3323f5c20f63c544bb31602d`](https://github.com/LightChainr/Matching-One/blob/bc17b81d502fb1ca3323f5c20f63c544bb31602d/notes/checkerboard-single-defect-global-u-result.md)
+identifies the exact insertion `DeltaSstar=3−2k_null−ell`: `ell≤1`, and
+only an alternating child face can change ambient rank. The normalized
+insertion has weighted-jump and baseline-reweighting contributions, not yet
+separately measured; reweighting can involve both rank-preserving and
+rank-changing configurations. Next is the fixed weighted-jump-only prediction
+`Xi_reweight=0`, determined by two prescribed cross-moments. This endpoint first jet is not
+a finite-interior curve or large-N law; no new production or change to
+P154/P334/F4 decisions follows from it.
 
 **Completed independent #154 decision, `open_pr #509` (Draft), `f4999e29612da16a3650f24d124fb59137f053d7`:**
 the [official report](https://github.com/LightChainr/Matching-One/blob/f4999e29612da16a3650f24d124fb59137f053d7/experiments/p154-prospective-transmission-20260831/REPORT.md)
@@ -72,11 +91,10 @@ independent observations. Neither clock is identified, and neither supplies
 a rescue of B/C. The earlier high gain is unmarked-baseline sensitivity,
 not a measured source amplitude. [The final decision record](../notes/independent-decisions-final-20260831.md)
 now supersedes the [pre-score handoff](../notes/independent-decisions-handoff-20260831.md).
-The named microscopic candidate is now the closed checkerboard source above:
-its forced plaquette contribution reaches original U and its endpoint algebra
-closes. The next fixed readout is the one-hole mixed derivative Xi: a common
-thermal-only interior extension predicts zero; nonzero would reject it,
-without automatic new production or any change to research Issue lifecycle.
+The closed checkerboard source's original-U response, fixed cycle/rank
+separation and one-hole R/Xi decisions above are completed. Next is the
+weighted-jump-only model's zero prediction for the baseline-reweighting
+contribution to Xi. Research Issue lifecycles are unchanged.
 
 **Earlier finite-model elimination, `open_pr #267`, `3847a5cfb0a7fe4454a86cc1bfd8ce4ee2e813f4`:**
 [The two-clock comparison](../results/p154-fixed-clock-models/REPORT.md) uses

@@ -2,6 +2,16 @@
 
 ## A completed global-U mechanism result
 
+**Subsequent completed decisions:** the positive count version of this source
+is `Sstar=Ŝ=C+F4+Bvac`. Execution's [full-source result `ec01768f`](https://github.com/LightChainr/Matching-One/blob/ec01768f520e85f1acfd9d3fde9bcf855477254e/results/p337-closed-source-n25/REPORT.md)
+gives V_Sstar=+.126165363414 at N25. [The exact cycle/rank subtraction](../results/decimation-cycle-rank/REPORT.md)
+leaves 2V_beta_null=+.072917828300 after removing the fixed q term.
+The [one-hole result `f5c4a74a`](https://github.com/LightChainr/Matching-One/blob/f5c4a74a20bad8589c39e1034cfb209462110dbe/results/p337-endpoint-defect/score/REPORT.md)
+now gives Xi=−10.755718407564 and R=+27.766563581230 at N50, excluding
+thermal-only and source-independent gain extensions. The endpoint identities
+proved below remain exact. The original one-hole question at the end is retained
+as its derivation; its first calculation is no longer an open assignment.
+
 The [exhaustive N25 calculation](../results/decimation-plaquette-u/score/REPORT.md)
 has already measured the missing term:
 
@@ -206,7 +216,7 @@ unit cells. These statements do not supply an interior decimation semigroup,
 a critical fixed point, a continuum field identity or a revival of the
 completed P154/P334 source decisions.
 
-## One next theoretical question: does a single saturation defect leave the fixed family?
+## The completed one-hole question: does a saturation defect leave the fixed family?
 
 The endpoint-fixed source suggests a specific interior question, without
 choosing new features or launching production. Put `ε=1−s`, and use the
@@ -238,7 +248,53 @@ U_N(s=1-\epsilon,t)\right|_{\epsilon=t=0}=0.
 \]
 
 Whether the exact one-hole operator instead gives a nonzero Ξ after all
-root/slope terms is the next mechanism question. Endpoint closure alone
-does not decide it. Nonzero Ξ would locate source-dependent interior
-transmission; zero would not prove the stronger profile closure. No value,
-additional field, intermediate curve or production decision is supplied here.
+root/slope terms was the specified question. It is now answered by the pinned
+result above; endpoint closure alone did not decide it. Nonzero Ξ locates
+source-dependent interior transmission in this finite chart, not a full
+intermediate curve or a continuum operator.
+
+## A fixed next discriminator: weighted rank jumps versus baseline reweighting
+
+The [exact defect operator, `bc17b81d`](https://github.com/LightChainr/Matching-One/blob/bc17b81d502fb1ca3323f5c20f63c544bb31602d/notes/checkerboard-single-defect-source.md)
+gives, for each geometry and one translated A site,
+
+`j_epsilon,O=M(1−p)[E(w*Delta O)+Cov(w,O_plus)]`,
+
+with `w=exp(t*Delta S)`, `Delta S=S_minus−S_plus=3−2k_null−ell`.
+Only an alternating child face can lose ambient rank, and ell≤1. Both
+rank-changing and rank-preserving holes may contribute to the covariance
+term; it is not a population share assigned only to the latter.
+
+The **weighted-rank-jump-only response model** drops that covariance term.
+It predicts zero mixed original-U contribution from baseline reweighting.
+Since the covariance term is identically zero for every p at t=0, its
+t derivative is simply
+
+`h_O=M(1−p) Cov_0(Delta S,O_plus)`.
+
+On the same baseline root put hQ=mean(hq), hY=P4(hE), D=Q_p and r=Y_p/D.
+The source derivative of the projection operator/root multiplies an
+identically zero function and drops out. The required mixed response is
+
+`Xi_reweight=A/D * partial_p(hY−r*hQ)`
+
+`=A[hY_p/D−Y_pp*hQ/D^2−Y_p*hQ_p/D^2+Y_p*Q_pp*hQ/D^3]`.
+
+The four terms retain the mixed root displacement `−hQ/D`, the slope
+response and the derivative of the dose M(1−p). Only two additional
+per-K_B cross sums are needed beyond the existing exact packets:
+
+```text
+sum(S_minus*q_plus), sum(S_minus*E_plus).
+Cov(Delta S,O_plus)
+ = E(S_minus*O_plus)−E(S_plus*O_plus)
+   −[E(S_minus)−E(S_plus)] E(O_plus).
+```
+
+A nonzero rational Xi_reweight enclosure would exclude this weighted-jump-only
+model without fitting a share or changing the source. Zero would not prove
+full profile closure: projection cancellations remain possible. This is a
+fixed two-term identity with one missing cross-moment packet, not a request
+for a generic descriptor, source or production search. Keep the original
+Sstar and saturation chart; removing a K term without transforming that
+two-parameter chart can change its mixed derivative.

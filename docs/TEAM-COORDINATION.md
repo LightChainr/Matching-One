@@ -1,21 +1,20 @@
 # Three-team scientific handoff / 三队协作入口
 
-Updated: **2026-08-31**, new exact delivery `b8d043fc493ab6d7f808d0c074571d2fdd8fb60f`, execution theory head `89f4383d`; prior completed results `f4999e29` / `612df8ec` retained. This is a result-routing entry, not a second
+Updated: **2026-08-31**, local exact split `5483aa82`, execution one-hole result `f5c4a74a` and theory head `bc17b81d`; prior independent decisions retained. This is a result-routing entry, not a second
 priority board or a live process monitor. [Next Targets](NEXT-TARGETS.md) remains
 the single attention order; [the machine-readable handoff](../analysis/team_coordination.yaml)
 records source pins and the state reported by each team.
 
-**New scientific handoff:** execution's [checkerboard endpoint theory `20743651`](https://github.com/LightChainr/Matching-One/blob/207436518db46dd13ef0ec91168cb1c99d52eaea/notes/p337-checkerboard-decimation-global-u.md)
-forces an F4 source correction. The overview has now [computed its original-U
-response](../results/decimation-plaquette-u/score/REPORT.md): +.19441468646 on
-the complete fixed N25 pair, producing a +.59965686816 missing N50 endpoint
-term. [The completed exact dictionary](../notes/decimation-closed-source-and-global-u.md)
-closes at `S_hat=C+F4+T_NN−4K+2N`, without a new fitted source coefficient.
-The result and fixed one-hole mixed-U derivative Xi are on [Next Targets](NEXT-TARGETS.md);
-the insertion formula is already derived, and a common thermal-only interior
-extension predicts Xi=0. Computing Xi is the next result, not another interface.
-This local exhaustive calculation used no production archive, cloud job, random
-sample or science test suite; no separate team permission message was needed.
+**New scientific handoff:** execution's [completed one-hole result `f5c4a74a`](https://github.com/LightChainr/Matching-One/blob/f5c4a74a20bad8589c39e1034cfb209462110dbe/results/p337-endpoint-defect/score/REPORT.md)
+gives Xi=−10.755718407564 and R=+27.766563581230, rejecting the thermal-only
+mixed null and source-independent gain. The overview's [fixed cycle/rank split](../results/decimation-cycle-rank/REPORT.md)
+leaves +.072917828300 after the explicit q bias, rejecting that unit-q alias.
+It took .281seconds on saved coefficients, with no enumeration or root search.
+The separate [80M F4 block](https://github.com/LightChainr/Matching-One/blob/25ca3635ea64655923c32adee4b62d683579cdcd/results/p337-f4-transmission-20260831/scored/REPORT.md)
+is completed and inconclusive; its fixed stop remains in force.
+[Next Targets](NEXT-TARGETS.md) now names the weighted-jump-only versus
+normalized reweighting comparison. No first Xi or duplicate block remains assigned.
+No cloud job, random sample or science test suite was started by this handoff.
 
 **The two previously prioritized comparison routes are delivered.** #154's
 [official result `f4999e29`](https://github.com/LightChainr/Matching-One/blob/f4999e29612da16a3650f24d124fb59137f053d7/experiments/p154-prospective-transmission-20260831/REPORT.md)
@@ -39,14 +38,14 @@ create a second priority queue.
 
 | Team | Delivered / active contribution | Next handoff |
 |---|---|---|
-| **数学研究执行** | `20743651` / `56838d5f`, delivered at `89f4383d`: exact checkerboard original-U endpoint and ambient-homology/source dictionary. P334 independent and P154 secondary decisions remain complete. | Endpoint correspondence is now consumed by the overview's explicit F4 calculation; no duplicate first-source enumeration. Its interior extension remains a distinct physical question. |
-| **数学研究总览** | Draft [PR #267](https://github.com/LightChainr/Matching-One/pull/267): completed exhaustive F4 global-U response and exact closed source, `b8d043fc493ab6d7f808d0c074571d2fdd8fb60f`; all earlier independent decisions retained. | Canonical next question is the same closed source's first A-vacancy q/E transport. No new descriptor search, automatic production or post-result rescue; coordination stays repository-first. |
+| **数学研究执行** | `ec01768f` full closed-source response; `f5c4a74a` exact one-hole gain rejection; `bc17b81d` alternating-face surgery. The independent80M F4 block is inconclusive and finished. | One-hole U/Xi/R are delivered, not pending inputs. Preserve fixed source/chart, hard endpoint closure and the distinct larger-N decision. |
+| **数学研究总览** | Draft [PR #267](https://github.com/LightChainr/Matching-One/pull/267): `5483aa82` eliminates the explicit unit-q alias with the exact cycle remainder; prior F4 closure and independent decisions retained. | Route the completed results and fixed weighted-jump/reweighting prediction through Next Targets; no repeat Xi, descriptor search, automatic production or team-permission pings. |
 | **数学研究俯瞰** | `f4999e29` delivers all 165M P154 permutations, nine shards, 200 batches/N, official six-coordinate decisions and full covariance. B/C fail; W is not excluded; both net intervals meet the frozen weak-transmission band. The separate P334 contact-residual result `14b2c98e` is complete. | The frozen experiment is finished. Retain all delivered data and decisions; no extra samples, replacement lag/source or fourth numerical template. |
 
 The execution result is **branch_only**, on
 `analysis/p334-paired-clock-loading-20260831`, with no corresponding PR in the
 historical 17:58 query; the current local delivery pin is
-`89f4383d376a53121a14aee725cd9da5d8167674`. Its earlier [Issue #334 result card](https://github.com/LightChainr/Matching-One/issues/334#issuecomment-5476674429)
+`bc17b81d502fb1ca3323f5c20f63c544bb31602d`. Its earlier [Issue #334 result card](https://github.com/LightChainr/Matching-One/issues/334#issuecomment-5476674429)
 and [PR #267 pointer](https://github.com/LightChainr/Matching-One/pull/267#issuecomment-5476674567)
 are discussion links, not code integration. PR #509 retains its observed
 open/Draft lifecycle; the current delivery pin is

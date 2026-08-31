@@ -1,9 +1,14 @@
-version: 40
+version: 41
 updated: 2026-08-31
 latest_scientific_handoff:
   entry: docs/TEAM-COORDINATION.md
-  local_result_commit: b8d043fc493ab6d7f808d0c074571d2fdd8fb60f
-  local_result_report: results/decimation-plaquette-u/score/REPORT.md
+  local_result_commit: 5483aa82047df34c2c9508d4930b6e20961ed9ca
+  local_result_report: results/decimation-cycle-rank/REPORT.md
+  latest_defect_result_commit: f5c4a74a20bad8589c39e1034cfb209462110dbe
+  latest_defect_result_report: results/p337-endpoint-defect/score/REPORT.md
+  latest_defect_operator_commit: bc17b81d502fb1ca3323f5c20f63c544bb31602d
+  latest_closed_source_result_commit: ec01768f520e85f1acfd9d3fde9bcf855477254e
+  latest_independent_F4_result_commit: 25ca3635ea64655923c32adee4b62d683579cdcd
   local_theory_note: notes/decimation-closed-source-and-global-u.md
   local_source_dictionary: analysis/decimation_source_dictionary.json
   local_budget_report: results/p154-clock-transmission-budget/REPORT.md
@@ -31,8 +36,8 @@ latest_scientific_handoff:
   current_secondary_theory_commit: 83f3eba88d7f1290704f82610c28669dc5e12f3c
   current_secondary_result_commit: 612df8ec1cbe3be3938ee2e1f6183a1aefc6510b
   current_secondary_result_report: notes/p154-clock-line-secondary-result.md
-  current_synthesis_commit: b8d043fc493ab6d7f808d0c074571d2fdd8fb60f
-  current_synthesis_report: notes/decimation-closed-source-and-global-u.md
+  current_synthesis_commit: 5483aa82047df34c2c9508d4930b6e20961ed9ca
+  current_synthesis_report: results/decimation-cycle-rank/REPORT.md
   preceding_synthesis_commit: 95d5d662afcef2d9d4b5167f82612a70cb4e83c7
   preceding_synthesis_report: notes/independent-decisions-final-20260831.md
   latest_external_reports: [experiments/p154-prospective-transmission-20260831/REPORT.md, experiments/p334-prospective-intervention-20260831/REPORT.md]
@@ -40,7 +45,7 @@ latest_scientific_handoff:
   decision_sheet: docs/DECISION-EXPERIMENTS.md
   decision_contract: analysis/prospective_mechanism_decisions.yaml
   execution_freeze_report: notes/p334-independent-intervention-freeze.md
-  boundary: finite_exact_global_U_source_result_and_endpoint_closed_family_not_interior_RG_the_three_previous_independent_decisions_remain_unchanged_no_main_integration
+  boundary: exact_unit_rank_alias_and_single_defect_gain_exclusions_not_continuum_identity_F4_80M_inconclusive_and_previous_independent_decisions_unchanged_no_main_integration
 purpose: >
   Lightweight navigation/provenance index. Registry conflicts never block
   science; claim strength lives in STATUS and priority lives in NEXT-TARGETS.
@@ -314,6 +319,36 @@ channel_semantics:
   required_fields: [topology_channel, combination, probability_coordinate, orientation_order, normalization, quantity]
 
 registered_reanalyses:
+  - id: PR267_DECIMATION_CYCLE_RANK
+    integration_status: open_pr
+    pr: 267
+    branch: research/navigation-priority-refresh-20260829
+    commit: 5483aa82047df34c2c9508d4930b6e20961ed9ca
+    status: completed_fixed_unit_q_alias_elimination
+    outputs: [results/decimation-cycle-rank/REPORT.md, results/decimation-cycle-rank/latest.json, results/decimation-cycle-rank/run.json]
+    scripts: [scripts/analyze_decimation_cycle_rank_split.py]
+    contracts: [analysis/decimation_cycle_rank_contract.json]
+    dependency_groups: [decimation-N25-exact-configuration-pair]
+    result_summary: Vq0p053247535115_VSstar0p126165363414_twice_Vbeta_null0p072917828300_exact_positive
+    boundary: fixed_coefficient_q_only_not_refitted_rank_source_or_within_K_rank_centered_transmission_no_new_enumeration
+  - id: P337_SINGLE_DEFECT_GLOBAL_U
+    integration_status: branch_only
+    branch: analysis/p334-paired-clock-loading-20260831
+    commit: f5c4a74a20bad8589c39e1034cfb209462110dbe
+    status: completed_source_independent_gain_and_thermal_only_mixed_null_rejected
+    outputs: [results/p337-endpoint-defect/score/REPORT.md, results/p337-endpoint-defect/score/score.json, results/p337-endpoint-defect/score/run.json]
+    dependency_groups: [decimation-N50-single-defect-exact]
+    result_summary: Xi_minus10p755718407564_R27p766563581230_gain_predicted_Ust0p531368026778_actual10p755718407564
+    boundary: exact_one_sided_first_jet_same_fixed_source_chart_not_full_interior_curve_or_hard_endpoint_failure
+  - id: P337_F4_FRESH_FIXED_BLOCK
+    integration_status: branch_only
+    branch: analysis/p334-paired-clock-loading-20260831
+    commit: 25ca3635ea64655923c32adee4b62d683579cdcd
+    status: INCONCLUSIVE_STOP_FIXED_BLOCK_WITHOUT_TOP_UP
+    outputs: [results/p337-f4-transmission-20260831/scored/REPORT.md, results/p337-f4-transmission-20260831/scored/score.json]
+    dependency_groups: [p337-f4-fresh-N65, p337-f4-fresh-N85, p337-f4-fresh-N130, p337-f4-fresh-N170]
+    result_summary: 20M100batches_each_N_all_four_joint_intervals_contain0_none_wholly_inside_plusminus0p5
+    boundary: zero_not_excluded_not_zero_coupling_or_successful_large_N_transmission_not_overturned_by_exact_N25_result
   - id: PR267_DECIMATION_FORCED_PLAQUETTE_GLOBAL_U
     status: completed_exhaustive_original_U_source_response_and_exact_closed_source_dictionary
     integration_status: open_pr
@@ -328,7 +363,7 @@ registered_reanalyses:
     dependency_groups: [decimation-N25-exact-configuration-pair]
     result_summary: VF4_0p1944146864609_N50_endpoint_missing0p5996568681566_Shat_C_F_T_minus4K_plus2N_exact_invariant
     boundary: all2pow25_each_fixed_geometry_different_Smith_classes_not_same_family_asymptotic_H4_or_interior_RG_no_new_random_samples
-    next_output: compute_fixed_one_hole_mixed_original_U_Xi_nonzero_excludes_common_thermal_only_extension_no_repeat_F4_or_descriptor_scan
+    next_output: Xi_and_R_completed_test_fixed_weighted_jump_only_Xi_reweight_zero_with_two_prescribed_cross_moments
   - id: PR509_FRESH_P154_TRANSMISSION_RESULT
     status: open_pr
     pr: 509

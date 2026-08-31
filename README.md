@@ -10,18 +10,19 @@ The repository is organized to expose the next mechanism-changing observation, n
 
 ## Start here
 
-**Current result:** the forced plaquette source reaches the original global U.
-The exact N25 pair gives `V_F4=+.19441468646`; the missing N50 endpoint
-correction is `+.59965686816`. The completed source is
-`S_hat=C+F4+T_NN−4K+2N`, exactly invariant at the checkerboard endpoint.
-See [the calculation](results/decimation-plaquette-u/score/REPORT.md) and
-[the closed-source proof](notes/decimation-closed-source-and-global-u.md),
-Draft #267, result `b8d043fc`. This finite mixed-Smith pair is not a continuum
-field identification or replication of the N65/N85 production lineages.
+**Current result:** one saturation defect rejects source-independent
+geometric gain of the closed source: `R=U*U_st−U_s*U_t=+27.766563581230237`.
+The [exact result, execution `branch_only` `f5c4a74a`](https://github.com/LightChainr/Matching-One/blob/f5c4a74a20bad8589c39e1034cfb209462110dbe/results/p337-endpoint-defect/score/REPORT.md)
+retains hard-endpoint closure but requires source-dependent interior
+transport. The [completed cycle/rank split](results/decimation-cycle-rank/REPORT.md),
+Draft #267 `5483aa82047df34c2c9508d4930b6e20961ed9ca`, also excludes the
+explicit unit-q alias. Both are finite mixed-Smith results, not continuum identification.
 
 | Mechanism question | Delivered decision | Attention now |
 |---|---|---|
-| Can bare cluster source alone transport original U through decimation? | No on the fixed N25 pair: the forced F4 contribution is nonzero. The finite source family closes exactly. | Compute the fixed one-hole mixed derivative Xi. A common thermal-only interior extension predicts zero. |
+| Can endpoint closure extend as source-independent gain? | No: exact N50 one-hole `R>0`; companion `Xi=−10.755718407564073` also excludes its mixed thermal-only null. Hard-endpoint closure remains true. | Test the fixed weighted-jump-only prediction `Xi_reweight=0`, using two prescribed cross-moments; the baseline-reweighting term can contain both rank-preserving and rank-changing configurations. |
+| Is Sstar's global response only its explicit unit q term? | No on the fixed N25 pair: `2V_beta_null=+.07291782829951701`, with zero excluded by exact bounds. | Keep the fixed-coefficient exclusion distinct from arbitrary fitted rank sources and within-K/rank residual claims. |
+| Does the N25 plaquette result establish larger-N F4 transmission? | No: the independent80M block at N65/85/130/170 is `NOT_EXCLUDED`, with all four intervals still inconclusive against±.5. | Preserve `INCONCLUSIVE_STOP_FIXED_BLOCK_WITHOUT_TOP_UP`; no automatic extra sampling. |
 | Does #154's fixed lag1 source provide strong entry/completion/global transmission? | Independent165M block rejects B/C; both net intervals are inside the declared weak band. | This source leaves primary H4 attention; the completed secondary does not rescue it. |
 | Do #334's frozen closure and residual-amplitude forecasts transfer? | Two distinct new-population experiments eliminate their specified closure/amplitude models. | Preserve their different estimands; no pooled residual, fitted half-law or automatic extra descriptor. |
 
@@ -33,7 +34,7 @@ Exploration remains open; priority is not a task lock or permission gate.
 <details>
 <summary>Earlier discoveries and full repository navigation</summary>
 
-- **A named microscopic source now reaches original global U:** [the exact N25 plaquette result](results/decimation-plaquette-u/score/REPORT.md), local result `b8d043fc493ab6d7f808d0c074571d2fdd8fb60f`, gives `V_F4=+.19441468646090693` and a forced N50 endpoint correction `+.5996568681566026`. The [closed checkerboard source](notes/decimation-closed-source-and-global-u.md), `S_hat=C+F4+T_NN−4K+2N`, is exactly invariant under each admissible endpoint map; modulo thermal K/constants, two admissible reductions take bare C to the fixed ray C+F4+T_NN. This is a concrete finite mechanism with no fitted extra source coefficient. Next is its interior original-U transmission or a separating prediction, not another first plaquette calculation, added feature or default production. The two N25 quotients have different Smith classes; no continuum or same-Smith-family claim follows.
+- **Earlier exact endpoint result:** [N25 plaquette transmission](results/decimation-plaquette-u/score/REPORT.md), `b8d043fc493ab6d7f808d0c074571d2fdd8fb60f`, gives `V_F4=+.19441468646090693` and the forced N50 correction `+.5996568681566026`. The [closed checkerboard source](notes/decimation-closed-source-and-global-u.md) is exactly endpoint-invariant. Its complete-source response and fixed cycle/rank split are now completed above; the odd-area, mixed-Smith child pair does not establish a repeated finite decimation or a continuum law.
 - **#334's independent1M intervention is complete:** [the result, `d0a9daf1`](https://github.com/LightChainr/Matching-One/blob/d0a9daf1132779205f119e9b4470f4eea9cb89c1/notes/p334-independent-normal-intervention-result.md), with score `1164ba91`, gives T=(3.08520±.39187)e−8. Its3SE interval lies above the frozen δ=1e−8, eliminating complete two-score conditional-label mean closure; the old3.6565e−8 forecast survives. Separately, [#509's600k experiment, `14b2c98e`](https://github.com/LightChainr/Matching-One/blob/14b2c98ed3a252a2fe79ce5e124d9484b23a264f/experiments/p334-prospective-intervention-20260831/REPORT.md), rejects both frozen residual-projection bands. Different sources and estimands keep these as separate decisions, not pooled votes.
 - **#154's independent165M decision is complete:** [the official result, `f4999e29`, Draft #509](https://github.com/LightChainr/Matching-One/blob/f4999e29612da16a3650f24d124fb59137f053d7/experiments/p154-prospective-transmission-20260831/REPORT.md) excludes both entry-dominant B and completion-dominant C at N85/N340. All four simultaneous channel intervals lie within±.30, and both net intervals within±.50; W remains `not_excluded`, not an identified theory. This lag1 source no longer receives primary H4 attention: no additional samples, changed lag/source or rescue template follows this result. The [completed M10/M11 secondary, `612df8ec`, `branch_only`](https://github.com/LightChainr/Matching-One/blob/612df8ec1cbe3be3938ee2e1f6183a1aefc6510b/notes/p154-clock-line-secondary-result.md) leaves both lines `not_excluded` on the same fresh data and identifies neither clock. The [completed decisions and next microscopic-to-U target](notes/independent-decisions-final-20260831.md) are now recorded, with [Decision Experiments](docs/DECISION-EXPERIMENTS.md) retaining the fixed rules. The [earlier handoff](notes/independent-decisions-handoff-20260831.md) is pre-score history. No new production or third default P0 is implied.
 - **Parallel exploratory result:** [P398 stationary arrangement](results/p398-stationary-arrangement/REPORT.md), Draft #267 `58db48dd`, finds99.7344% static-score compression by primal/dual sizes, yet32/60 profile classes fail exact transition closure. A two-versus-four detach witness motivates incidence predictions; the small arrangement residual supplies10.17% of one integrated response. This finite-model line is not a third default top-priority experiment.
@@ -60,18 +61,36 @@ Exploration remains open; priority is not a task lock or permission gate.
 
 ### Completed production is not the same as identified mechanism
 
-**New finite mechanism, local result `b8d043fc493ab6d7f808d0c074571d2fdd8fb60f`:** all2^25
-configurations of each Gaussian quotient(5,0)/(4,3) give a nonzero bulk
-plaquette-source response in the unchanged root/slope-normalized U:
-`V_F4=+.19441468646090693`. Exact rational bounds exclude zero. Checkerboard
-decimation forces `C_parent=C_child+F4`; the measured term therefore adds
-`+.5996568681566026` to the N50 endpoint source derivative. Bare-C endpoint
-transport fails at the global observer, not only at configuration level.
-The [closed-source derivation](notes/decimation-closed-source-and-global-u.md)
-supplies the exact endpoint-invariant `C+F4+T_NN−4K+2N`, distinct from the
-completed lag1 and P334 interventions. Its interior transmission remains
-uncomputed. The [enumeration report](results/decimation-plaquette-u/score/REPORT.md)
-is a finite mixed-Smith-pair result, not an asymptotic or CFT identification.
+**Completed finite source separation:** execution's `branch_only`
+[complete-source report, `ec01768f`](https://github.com/LightChainr/Matching-One/blob/ec01768f520e85f1acfd9d3fde9bcf855477254e/results/p337-closed-source-n25/REPORT.md)
+gives `V_Sstar=+.12616536341416915` and `V_Bvac=+.33291070842057197`
+on Gaussian(5,0)/(4,3), from exact2^25 configurations per geometry.
+The [fixed action, `0d19179f`](https://github.com/LightChainr/Matching-One/blob/0d19179f6c6c36fdbb34b2d93e35a9d5fe10dad3/notes/decimation-closed-cluster-gas-action.md)
+is `Sstar=C+F4+Bvac=2*beta_null+q−3K+2N+2`. Since common K tilt is a thermal
+coordinate change, [the new coefficient-only calculation](results/decimation-cycle-rank/REPORT.md)
+gives `V_q=+.05324753511465212` and `V_beta_null=+.036458914149758506`.
+The fixed unit-q alias fails by exact bounds; arbitrary fitted rank sources
+and fixed-K/rank conditional-mean mediation remain distinct questions.
+This .281-second reuse adds no enumeration, root search or random samples.
+
+**Larger-N F4 remains unresolved:** the independent80M result
+[`25ca3635`, `branch_only`](https://github.com/LightChainr/Matching-One/blob/25ca3635ea64655923c32adee4b62d683579cdcd/results/p337-f4-transmission-20260831/scored/REPORT.md)
+uses20M/100 batches at each N65/85/130/170. All four simultaneous intervals
+contain zero, and none lies wholly inside±.5: `NOT_EXCLUDED` and
+`INCONCLUSIVE_STOP_FIXED_BLOCK_WITHOUT_TOP_UP`. N25 positivity does not
+settle these production sizes. The [one-hole gain comparison, now completed
+at `f5c4a74a`](https://github.com/LightChainr/Matching-One/blob/f5c4a74a20bad8589c39e1034cfb209462110dbe/results/p337-endpoint-defect/score/REPORT.md),
+has `U_st=10.755718407564073` against gain prediction`.5313680267777353`:
+`R=27.766563581230237>0` and companion `Xi=−10.755718407564073`.
+These are dependent exact decisions from one defect block, not separate votes.
+The [mechanistic interpretation, `bc17b81d`](https://github.com/LightChainr/Matching-One/blob/bc17b81d502fb1ca3323f5c20f63c544bb31602d/notes/checkerboard-single-defect-global-u-result.md)
+keeps the hard-endpoint identity intact: only an alternating child face can
+lose ambient rank (`ell≤1`), with `DeltaSstar=3−2k_null−ell`.
+The normalized insertion splits into a weighted observable jump and baseline
+reweighting; the latter can contain both rank-preserving and rank-changing
+configurations. Their separate contributions have not been measured. The
+[next fixed comparison](docs/NEXT-TARGETS.md) asks whether the reweighting
+contribution `Xi_reweight` vanishes, as a weighted-jump-only model requires.
 
 **Newest independent decision, `open_pr #509`, `f4999e29`:** the fixed lag1
 conditional policy has net original-U responses+.043470±.043631 at N85 and
@@ -141,7 +160,7 @@ The [P418 per-sample archive reanalysis](results/p418-normalized-archive/REPORT.
 
 The 2026-08-31 review read **all 464 Issue/PR bodies, 1,354 discussion comments and seven reviews**. It recovered results that old opening bodies and earlier overview updates had left as “next”: real E_top and #370 production analysis, P218 coalescence, P155 local thermal-null, P40 motif covariance, P255 ordered-filtration proxy, P334 trigger-graph structure, F5 source separation, N112 E_top C3 and W5 periodic gluing. [The context crosswalk](docs/REPOSITORY-CONTEXT.md) distinguishes completed positive, completed inconclusive, and genuinely unrun work. It is a dated recovery, not a recurring audit prerequisite.
 
-**Highest attention is the closed checkerboard source's interior original-U transmission or a genuinely separating finite prediction. Its forced plaquette term and endpoint closure are already results.** The completed decisions keep lag1 out of primary H4 attention; P334's distinct estimands and P398's parallel exploration remain separate. Canonical E_top is not an identified energy operator. [Decision Experiments](docs/DECISION-EXPERIMENTS.md) preserves the fixed decisions, and [Next Targets](docs/NEXT-TARGETS.md) owns the queue; no new production or source-feature search follows automatically.
+**Highest attention is the fixed weighted-jump-only prediction `Xi_reweight=0`.** First Xi, complete Sstar transmission and its fixed cycle/rank split are results; hard-endpoint closure remains true, while its scalar-gain extension fails. The completed decisions keep lag1 out of primary H4 attention; P334's distinct estimands and P398's parallel exploration remain separate. Canonical E_top is not an identified energy operator. [Decision Experiments](docs/DECISION-EXPERIMENTS.md) preserves the fixed decisions, and [Next Targets](docs/NEXT-TARGETS.md) owns the queue; no new production or source-feature search follows automatically.
 
 Several positive results now sharpen this choice. P337's F5 even rows separate W_line/JS response vectors at N325/N425 (`chi2/df=149.93/4,246.93/4`), although [P439's matching loading](results/p439-direct-plateau-transport/REPORT.md) remains unresolved. P267's square-bond N112 E_top C3 response is measured and not collinear with the primitive-line readout; it is not a square-site field identification. P437 measures fixed-support high-order topology at 14.97 SE; the earlier noisy estimator is not a general impossibility result. These remain explicitly unmerged source results.
 

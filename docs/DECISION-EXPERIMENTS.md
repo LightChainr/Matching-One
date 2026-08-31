@@ -5,6 +5,34 @@
 研究路线失败。[最终科学交接](../notes/independent-decisions-final-20260831.md)
 给出定义、数据独立性和精确来源。
 
+## 最新已完成：循环/rank分离与一孔传输淘汰两类延伸
+
+[本总览的精确分离 `5483aa82`](../results/decimation-cycle-rank/REPORT.md)得到
+`V_q=.053247535115`、`V_Sstar=.126165363414`、
+`2V_beta_null=.072917828300>0`。显式单位系数q不能解释完整响应；
+不扩大为任意重拟合rank源或固定K/rank内中心化源的排除。
+
+[执行的一孔结果 `f5c4a74a`](https://github.com/LightChainr/Matching-One/blob/f5c4a74a20bad8589c39e1034cfb209462110dbe/results/p337-endpoint-defect/score/REPORT.md)
+已完成：`R=U U_st−U_s U_t=27.766563581230>0`，
+`Xi=−U_st=−10.755718407564`。源无关整体gain预报的U_st为
+`.531368026778`，实际为`10.755718407564`。主gain模型与次级thermal-only
+mixed null都失败，硬端点闭合仍成立。两判决来自同一exact packet，不能合票。
+
+下一项固定模型只保留加权rank跳变 `E[w Delta O]`，省去
+`Cov(w,O_intact)`，因此预测后者的混合原U贡献为零。所需两个
+同构型cross moments及完整移根公式已写入[源note](../notes/decimation-closed-source-and-global-u.md)。
+这里的baseline重加权包含rank-changing和rank-preserving构型，
+不能误称仅后者份额；不拟合份额，不再派“首次Xi”。
+
+## 新独立F4块：80M已结束，未分辨
+
+[固定结果 `25ca3635`](https://github.com/LightChainr/Matching-One/blob/25ca3635ea64655923c32adee4b62d683579cdcd/results/p337-f4-transmission-20260831/scored/REPORT.md)
+在N65/85/130/170各20M、100批。四个共同95%区间均含零，也均未全部
+落入±.5实用带：零模型`NOT_EXCLUDED`，决定为
+`INCONCLUSIVE_STOP_FIXED_BLOCK_WITHOUT_TOP_UP`。这不是零耦合或成功传输；
+N25精确正结果不覆盖此判决。各N独立seed，同N ordinary/forced-face与
+两个方向共享排列并配对，不能按四条流独立计票。
+
 ## 新增已完成判决：抽稀强制项确实进入原global U
 
 [固定N25完整枚举](../results/decimation-plaquette-u/score/REPORT.md)给出
@@ -20,11 +48,9 @@ bulk F4源的 `V_F4=+.1944146864609`；移根和热斜率修正全部包含。
 新结果范围是degree4 square-site、合法checkerboard端点和固定N25方向对；
 不同Smith组不能当作同一生产lineage的连续场证据。
 
-源note已导出归一化的单A-vacancy插入。下一计算固定为
-`Xi_N=partial_t partial_epsilon U_N(1−epsilon,t)|0`，保留原q/E、移根和热斜率。
-共同thermal-only内部延伸预测Xi=0；非零精确包围就排除这个延伸，零本身
-不证明完整profile闭合。不要把已经得到的插入公式再登记为下一准备任务。
-源测度闭合不能单独替代global observer闭合，不自动启动新采样。
+源note导出的单A-vacancy原U计算已由上述f5c4a74a完成。
+其非零Xi排除了共同thermal-only延伸，非零R进一步排除了源无关gain。
+不重复接口、首次评分或新采样；下一固定算子分离见本页顶部。
 
 ## 1. 已完成：#154原U弱传输触发停止优先投入规则
 

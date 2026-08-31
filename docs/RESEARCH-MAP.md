@@ -8,35 +8,55 @@ This map is the repository's scientific coordinate system. It is not a permissio
 secondary, plus both distinct P334 comparisons.**
 [Decision Experiments](DECISION-EXPERIMENTS.md) and the
 [final decision record](../notes/independent-decisions-final-20260831.md) own these
-states; the earlier handoff is pre-score history. Attention now goes to the
-closed checkerboard source's one-hole mixed original-U derivative Xi. A common
-thermal-only interior extension predicts zero, so nonzero would exclude it;
-the forced plaquette response, endpoint closure and insertion formula are complete.
-No new production or source-feature expansion follows automatically.
+states; the earlier handoff is pre-score history. The one-hole comparison
+is now completed: source-independent gain fails (`R=27.766563581230237>0`),
+as does the companion mixed null (`Xi=−10.755718407564073`). Attention goes
+to the fixed weighted-jump-only prediction `Xi_reweight=0`.
+First Xi, complete Sstar transmission and its fixed cycle/rank split are
+results; no duplicate calculation, new production or source-feature expansion
+follows automatically.
 The old2.4M norm4 permutations and
 20-batch P334 archive remain discovery data; correct covariance and held-out
 reuse do not make them independent population confirmation. Other lines stay
 open as parallel exploration, without Issue locks or whole-line rejection.
 
-**Concrete microscopic-to-global candidate, local `b8d043fc493ab6d7f808d0c074571d2fdd8fb60f`:**
-[exact N25 enumeration](../results/decimation-plaquette-u/score/REPORT.md)
-gives bulk `V_F4=+.19441468646090693`; the rational enclosure excludes zero.
-The forced N50 endpoint correction is `+.5996568681566026`. Thus bare-C
-decimation failure is visible in original U, not only in component counts.
-State: finite occupied NN/vacant matching topology. Source: equilibrium
-cluster/plaquette/NN-edge family. Observer: the unchanged pooled-root,
-slope-normalized U. Geometry: Gaussian(5,0)/(4,3), different Smith classes;
-acquisition: exhaustive2^25 per geometry, not fresh statistical confirmation.
+**Measured microscopic-to-global separation, Draft #267 `5483aa82047df34c2c9508d4930b6e20961ed9ca`:**
+[the exact cycle/rank split](../results/decimation-cycle-rank/REPORT.md) gives
+`V_Sstar=.12616536341416915`, `V_q=.05324753511465212`, and
+`2V_beta_null=.07291782829951701`, with zero excluded by rational bounds.
+The source is fixed by execution's `branch_only` [action dictionary,
+`0d19179f`](https://github.com/LightChainr/Matching-One/blob/0d19179f6c6c36fdbb34b2d93e35a9d5fe10dad3/notes/decimation-closed-cluster-gas-action.md):
+`Sstar=C+F4+Bvac=2*beta_null+q−3K+2N+2`. State: occupied graph cycle
+space and its ambient-zero kernel, distinct from cellular holes. Observer:
+the original common-root, slope-normalized U. Geometry: N25
+Gaussian(5,0)/(4,3), different Smith classes. Acquisition: .281-second
+reuse of exact coefficients, no new enumeration or random samples.
 
-The [closed-source derivation](../notes/decimation-closed-source-and-global-u.md)
-gives endpoint-invariant `S_hat=C+F4+T_NN−4K+2N`. Its exact coupling map
-takes bare C, modulo thermal K/constants, to the fixed ray C+F4+T_NN after
-two admissible reductions. No fitted extra coupling is introduced; endpoint
-closure is not interior closure or CFT identification. The finite source
-and P154 lag1/P334 interventions are distinct. The local result builds on
-the `branch_only` [20743651 global-U dictionary](https://github.com/LightChainr/Matching-One/blob/207436518db46dd13ef0ec91168cb1c99d52eaea/notes/p337-checkerboard-decimation-global-u.md)
-and [56838d5f homology proof](https://github.com/LightChainr/Matching-One/blob/56838d5f068f6f0ba7795926dc9343229bdd28ce/notes/square-checkerboard-endpoint-homology.md),
-not a `main_integrated` or same-Smith scaling claim.
+The `branch_only` [complete-source result, `ec01768f`](https://github.com/LightChainr/Matching-One/blob/ec01768f520e85f1acfd9d3fde9bcf855477254e/results/p337-closed-source-n25/REPORT.md)
+already measures Sstar and `V_Bvac=.33291070842057197`; the earlier
+[F4 result](../results/decimation-plaquette-u/score/REPORT.md), `b8d043fc`,
+and [endpoint closure](../notes/decimation-closed-source-and-global-u.md)
+remain completed inputs. The new separation excludes the explicit unit-q
+alias, not arbitrary fitted rank sources or within-K/rank residual closure.
+The distinct `branch_only` [one-hole result, `f5c4a74a`](https://github.com/LightChainr/Matching-One/blob/f5c4a74a20bad8589c39e1034cfb209462110dbe/results/p337-endpoint-defect/score/REPORT.md)
+now measures interior first-jet transport on the N50 parents: actual
+`U_st=10.755718407564073` versus source-independent gain`.5313680267777353`.
+The hard-endpoint identity survives. [The exact defect interpretation,
+`bc17b81d`](https://github.com/LightChainr/Matching-One/blob/bc17b81d502fb1ca3323f5c20f63c544bb31602d/notes/checkerboard-single-defect-global-u-result.md)
+has `DeltaSstar=3−2k_null−ell`, `ell≤1`; only alternating child faces can
+change rank. The normalized insertion separates weighted observable jumps
+from baseline reweighting, whose covariance term can contain both rank types.
+These contributions are unmeasured; two prescribed cross-moments test the
+weighted-jump-only prediction `Xi_reweight=0`. This is not a new field count
+or a complete finite-interior law.
+
+**Different acquisition, unresolved larger-N result:** `branch_only`
+[F4 independent80M block, `25ca3635`](https://github.com/LightChainr/Matching-One/blob/25ca3635ea64655923c32adee4b62d683579cdcd/results/p337-f4-transmission-20260831/scored/REPORT.md)
+has20M/100 batches at each N65/85/130/170. All four simultaneous intervals
+contain zero; none lies wholly inside±.5. `NOT_EXCLUDED` and
+`INCONCLUSIVE_STOP_FIXED_BLOCK_WITHOUT_TOP_UP` remain its decisions.
+Finite N25 positivity is not larger-N confirmation or a continuum field;
+these sources also remain distinct from the completed P154/P334 interventions.
 
 **P334 source-normal response survives an independent finite intervention:**
 execution `branch_only`, score `1164ba91035bb0ee37bcea52f700312475c257b5`,

@@ -33,6 +33,25 @@
       "result_sha256": "61b7dd20330acc76bc06f7acef0b14c37841b7eba25bcb2fd4cf38e11529d6e9",
       "numerical_reader_commit": "c76b038b2f99b266eb9cfc255219440e04c64c8f",
       "bundle_commit_pointer": "analysis/research_ledger.yaml: SRC_PR267_DECIMATION_GLOBAL_U_AND_CLOSED_SOURCE; a bundle does not contain its own future commit hash"
+    },
+    {
+      "id": "completed_closed_source_N25",
+      "commit": "ec01768f520e85f1acfd9d3fde9bcf855477254e",
+      "path": "results/p337-closed-source-n25/latest.json",
+      "integration_status": "branch_only"
+    },
+    {
+      "id": "completed_cycle_rank_split",
+      "commit": "5483aa82047df34c2c9508d4930b6e20961ed9ca",
+      "path": "results/decimation-cycle-rank/latest.json",
+      "integration_status": "open_pr",
+      "pr": 267
+    },
+    {
+      "id": "completed_single_defect",
+      "commit": "f5c4a74a20bad8589c39e1034cfb209462110dbe",
+      "path": "results/p337-endpoint-defect/score/score.json",
+      "integration_status": "branch_only"
     }
   ],
   "geometry": {
@@ -120,6 +139,8 @@
     "one_level_identity": "S_star_parent_2M=S_star_child_M-2M",
     "constant_completed_name": "S_hat",
     "constant_completed_definition": "S_hat_N=S_star_N+2N",
+    "positive_count_definition": "S_hat=Ctot+F4+Bvac, where Bvac=2N-4K+T_NN; this is execution's Sstar",
+    "cycle_gas_definition": "S_hat=2*beta_null+q-3K+2N+2; beta_null is ambient-zero graph cycle kernel dimension",
     "constant_completed_identity": "S_hat_parent_2M=S_hat_child_M",
     "normalized_measure_identity": "exp(t*S_star_parent) maps to exp(t*S_star_child), up to the cancelling factor exp(-2M*t)",
     "uniqueness_scope": "fixed coupling ray in the declared Ctot,F4,T_NN,K span, up to scale and constants; not uniqueness over all microscopic sources"
@@ -180,8 +201,9 @@
     "uncertainty_type": "exact rational enclosure conditional on exhaustive integer graph counts; not sampling confidence or independent endpoint production",
     "mechanism_boundary": "finite pair with different Smith classes; not original N65/N85 lineage replication, asymptotic H4 or a CFT field"
   },
-  "next_theoretical_question": {
-    "status": "specified_open_question_no_execution_requested",
+  "completed_single_defect_question": {
+    "status": "completed_exact_primary_gain_and_secondary_thermal_only_null_rejected",
+    "source_id": "completed_single_defect",
     "question": "Does a single saturation defect create a nonthermal mixed original-U response in the endpoint-fixed S_hat family?",
     "epsilon": "1-s",
     "defect": "remove one saturated A site a, retaining its four-terminal connectivity; Delta_a S_hat=S_hat(X_minus_a)-S_hat(X_plus)",
@@ -190,8 +212,30 @@
     "candidate_prediction": "Xi_N=partial_t partial_epsilon U_N(s=1-epsilon,t) at epsilon=t=0 equals zero",
     "nonzero_implication": "source-dependent interior transmission beyond the proposed common thermal extension",
     "zero_boundary": "zero Xi alone does not prove full profile closure",
-    "value_available": false,
+    "value_available": true,
+    "U": 2.715728877348466,
+    "U_s": 3.708240929282322,
+    "U_t": 0.38914717849771724,
+    "U_st": 10.755718407564073,
+    "Xi": -10.755718407564073,
+    "R": 27.766563581230237,
+    "gain_predicted_U_st": 0.5313680267777353,
+    "boundary": "one sided endpoint first jet only; exact hard endpoint identity remains valid; shared coefficients not independent decisions",
     "new_production_or_feature_search_requested": false
+  },
+  "next_theoretical_question": {
+    "status": "specified_fixed_operator_split_not_first_Xi_again",
+    "model": "weighted_rank_jump_only_retains_E_w_DeltaO_but_drops_Cov_w_Oplus",
+    "prediction": "Xi_reweight=0",
+    "h_O": "M*(1-p)*Cov_0(Sminus-Splus,Oplus)",
+    "mixed_U": "Xi_reweight=A/D*partial_p(hY-r*hQ) at baseline root, r=Y_p/D",
+    "expanded_mixed_U": "A*(hY_p/D-Y_pp*hQ/D^2-Y_p*hQ_p/D^2+Y_p*Q_pp*hQ/D^3)",
+    "new_required_per_KB_cross_sums": ["Sminus*qplus", "Sminus*Eplus"],
+    "existing_required_moments": ["Splus*Oplus", "Sminus*Ominus", "Splus", "Sminus", "Oplus", "Ominus"],
+    "decision": "nonzero exact Xi_reweight excludes weighted-jump-only model; zero does not prove full profile closure",
+    "boundary": "reweighting includes both rank-changing and rank-preserving holes, not a population-share split; fixed source and saturation chart; no independent evidence votes or fitted fraction",
+    "value_available": false,
+    "new_random_production_requested": false
   },
   "limits": [
     "dictionary applies to saturated endpoints and explicitly legal nested endpoint constraints",
