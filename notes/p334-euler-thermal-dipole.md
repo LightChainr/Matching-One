@@ -1,5 +1,11 @@
 # Euler-invisible controls reshape the joint birth clock
 
+The subsequent [nested covariance decomposition](p334-birth-covariance-hierarchy.md)
+now locates this response: prefix mean transport dominates, mostly between
+fixed rank-cell means, with a resolved within-rank-cell residual. Its complete
+census score improves the estimator on the same data; the earlier numbers
+below retain their original matched-mask provenance.
+
 The common-label perturbation changes the intrinsic covariance of the two
 birth ranks at both sizes, even after the shared uniform-order-statistic
 timing contribution is removed. The common source increases the even

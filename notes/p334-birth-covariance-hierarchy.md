@@ -29,6 +29,13 @@ response; between-rank-cell mean transport alone accounts for about85--90%.
 These are **signed response contributions**, not fractions of baseline
 variance explained or independent evidence counts.
 
+The [same-batch coordinator](https://github.com/LightChainr/Matching-One/blob/ce20158a5928e55b67324cba7ed3a18a5c163b39/notes/p334-birth-covariance-hierarchy-joint.md)
+reports between-rank-cell shares of89.612+/-2.176% and89.498+/-2.759%
+for plus -> S, and86.009+/-2.458% and85.061+/-2.172% for minus -> D
+(errors in percentage points). Old matched-mask versus new exact-score
+total differences are at most1.95 paired SE; those same-source changes
+are not a new physical effect.
+
 The same-rank-cell prefix term is positive for plus -> S and negative for
 minus -> D at both sizes, about3.8--5.0 SE from zero. If each conditional
 mean response depended only on the rank pair G, this term would vanish.
@@ -102,6 +109,21 @@ nonzero, a model that merely translates both birth distributions by constants
 depending on Z is insufficient. Label- or suffix-dependent motion remains
 possible, as does a change of conditional spread or correlation.
 
+For G=(first_rank,second_rank), the final prefix term has the further
+conditional-covariance split
+
+```
+prefix transport
+ = E_G[Cov_Z(mu_X,h_Y|G)+Cov_Z(mu_Y,h_X|G)]
+ + Cov_G(E_Z[mu_X|G],E_Z[h_Y|G])
+ + Cov_G(E_Z[mu_Y|G],E_Z[h_X|G]).
+```
+
+The first line is the measured same-cell prefix residual; the last two
+terms give transport among rank-cell means. The observed cell masses are
+retained. Within-cell mean products use distinct-prefix U-products at the
+cell's own retained prefix count, then return to the full population weight.
+
 ## The saved experiment already contains the necessary products
 
 Each prefix has eight independent quartets, each comprising independent U,V
@@ -165,8 +187,10 @@ source-population and fixed-empirical-mixture U-products.
 
 The old matched-mask result and new exact-score result share an estimand
 and the original e32a8593/959a7fa2 block; they are not separate confirmations.
-All new raw batch vectors and derived LOO are retained for the common
-covariance coordinator. Results are branch deliveries, not an assertion of
+All new raw batch vectors and derived LOO are now appended to the common
+factor at `ce20158a5928e55b67324cba7ed3a18a5c163b39`, under
+`results/p334-birth-covariance-hierarchy-joint/`; it includes old/new paired
+estimator contrasts and the response-share uncertainty. Results are branch deliveries, not an assertion of
 integration into main. No other team's local-rank or finite-q_t calculation
 was repeated, and no cloud machine was used.
 
