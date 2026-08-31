@@ -251,6 +251,39 @@ analysis `e3d978216220b5c55ff8da3062473e713c1246c7`. This section is an
 algebraic consequence of their event definition; no further reliability
 evaluation or random sampling was used.
 
+### The initial collective acceleration is exactly the safe-site pair count
+
+Write n=d-h and let m2 be the number of minimal two-site triggers among the
+n initially safe sites. In terms of the complete safe coefficients,
+`m2=binom(n,2)-f_2`. Under Bernoulli occupation of these sites,
+
+`Pr(C>s)=1-m2 s^2+O(s^3)`,
+`-log Pr(L_birth>s)=h s+m2 s^2+O(s^3)`.
+
+Thus the full hazard starts at h but its initial derivative is **2m2**,
+independently of h. This is exact, not a fit to a trajectory. Original
+single-site gates control the intercept; two-site cooperation controls the
+first acceleration of the logarithmic-time clock.
+
+For B=83 versus A=1006, `(h_B,h_A)=(6,5)` and `(m2_B,m2_A)=(16,34)`, so
+
+`log(S_B/S_A)=-s+18s^2+O(s^3)`.
+
+The leading two terms predict hazard crossing at `s=1/36` and cumulative
+survival crossing at `s=1/18`. Their expected occupied-site counts
+`173(1-exp(-s))` are approximately 4.74 and 9.35. The complete discrete
+clock has its early hazard reversal between steps5/6 and its survival
+reversal between10/11. This comparison is a post-hoc short-time explanation,
+not an error-controlled approximation to those discrete crossing positions.
+It nevertheless identifies why the two reversals occur at different times:
+the cumulative clock integrates the growing collective advantage.
+
+Higher coefficients can be read from the same polynomial without a new
+trigger census. If `a3=f_3-binom(n,3)+(n-2)m2`, then
+`-log Pr(L_birth>s)=h s+m2 s^2-(m2+a3)s^3+O(s^4)`.
+The exact entire polynomial, rather than this short series, governs late
+crossings and eventual completion.
+
 ## What is new here, and what is not
 
 The established torus homology classification is the backdrop, not a new
