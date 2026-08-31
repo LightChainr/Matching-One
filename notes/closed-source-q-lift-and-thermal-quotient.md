@@ -88,6 +88,13 @@ the sector sums and the explicit term `-A_0 dQ`. In the projected measure
 this same term is included automatically by `-r/2` in its log-Q score.
 The two descriptions agree; dropping either counterterm changes the lift.
 
+Deleting the rank factor instead gives `(A_2-A_0)/(A_0+A_1+A_2)` and the
+single-geometry section `A_2=A_0`. This connects the two fixed source laws
+directly to two different Q-lift sections. The overview team's
+[opposite-sign tail result at fbbaa2aa](https://github.com/LightChainr/Matching-One/blob/fbbaa2aa/notes/topological-projection-reverses-global-u-tail.md)
+already shows that this change has a real consequence for original U;
+it is not repeated or counted as new numerical evidence here.
+
 ## 3. The root-adjusted response is an exact linear functional
 
 At Q=1 use z=logit(p), denote the separately normalized pooled matching
