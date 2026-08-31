@@ -30,6 +30,11 @@ suffix replicas. The conditional covariance of the 32-tail mean is therefore
 whether next-label randomness or the remaining suffix limits conditional
 averaging.
 
+The removed covariance is `(15/16)Dnext+(31/32)Vafter`. In contrast, an old
+baseline minus a fresh finite-fork mean contains both sources of suffix noise;
+its outer product is not removed noise. The single signed first/completion
+cross readout is `Gamma=(Dnext_AA-Dnext_EE)/4`, with the same complete covariance.
+
 Every matrix and mean is retained for all nine original joint-rank cells and
 their six transpose groups, with the full-population denominator. The main
 allocation readouts are the 01+10 shares in K1, canonical E and integrated E.

@@ -17,6 +17,8 @@
   "b": "X_Ub-X_Vb",
   "exact_identity": "Vtot=Dnext+Vafter, before averaging",
   "conditional_covariance_of_32_tail_mean": "Dnext/16+Vafter/32",
+  "named_cross_response": "Gamma=(Dnext_AA-Dnext_EE)/4, canonical and integrated, requested before final score",
+  "removed_suffix_covariance": "(15/16)Dnext+(31/32)Vafter; baseline-minus-fresh-mean outer product is not removed noise",
   "negative_Dnext": "retain without PSD clipping or eigenvalue selection",
   "primary_resource_readouts": ["all next-label fraction in each named coordinate", "01+10 K1/canonical E/integrated E total/next/after contributions and next fraction"],
   "group_denominator": "all original prefixes, never only selected cells",

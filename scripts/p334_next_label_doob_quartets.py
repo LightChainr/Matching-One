@@ -87,7 +87,8 @@ def block_summary(mass, means, matrices):
         return {"mean": b.mean(axis=0).tolist(), "se": (b.std(axis=0, ddof=1)/np.sqrt(20)).tolist()}
     return {"mass": summary(mass), "observer_contribution": summary(means),
             "conditional_covariance_contribution": {name: summary(matrices[:, i]) for i, name in enumerate(MATRIX_NAMES)},
-            "new_32_tail_mean_conditional_covariance": summary(matrices[:, 1]/16+matrices[:, 2]/32)}
+            "new_32_tail_mean_conditional_covariance": summary(matrices[:, 1]/16+matrices[:, 2]/32),
+            "removed_suffix_covariance": summary((15/16)*matrices[:, 1]+(31/32)*matrices[:, 2])}
 
 
 def flatten_raw(mass, means, matrices, old_base, old_safe):
@@ -134,6 +135,10 @@ def primary_readout(matrices, new_mean, old_base, old_safe):
                 ("next_fraction_within_group", gd[1, j], gd[0, j])):
             labels.append("01+10."+name+"."+coordinate)
             values.append(numerator/denominator if denominator != 0 else np.nan)
+    for ep in ("p_ref", "p_integral"):
+        ia, ie = LABELS.index(ep+".A"), LABELS.index(ep+".E")
+        labels.append("all.next_first_completion_Gamma."+ep)
+        values.append((global_m[1, ia, ia]-global_m[1, ie, ie])/4)
     return labels, np.array(values)
 
 
@@ -216,7 +221,9 @@ def main():
         "source_directory": args.source_directory, "source_sha256": hashes, "old_complete_AE_commit": OLD_COMMIT,
         "p_ref": p, "observer_labels": LABELS, "sizes": sizes,
         "matrix_targets": {"Vtot": "E_Z Cov(X|Z)", "Dnext": "E_Z Cov_U(E[X|Z,U]|Z)",
-            "Vafter": "E_Z E_U Cov(X|Z,U)", "new32_mean_noise": "Dnext/16+Vafter/32; 16 independent next labels with two suffix replicas each"},
+            "Vafter": "E_Z E_U Cov(X|Z,U)", "new32_mean_noise": "Dnext/16+Vafter/32; 16 independent next labels with two suffix replicas each",
+            "removed_suffix_covariance": "(15/16)Dnext+(31/32)Vafter; never inferred from the outer product of old baseline minus fresh MC mean",
+            "Gamma": "(Dnext_AA-Dnext_EE)/4 = next-label paired first/completion cross covariance"},
         "boundary": "Fresh suffix production on the original prefix population, not old-tail replay or independent new prefixes. All errors use twenty original paired batches. Cell/group covariance terms use whole-population denominators, not conditional cell denominators. Dnext remains signed and may be non-PSD at finite samples; no clipping, covariance inversion, new DP or simulation by the scorer."}
     (args.output/"score.json").write_text(json.dumps(result, indent=2, allow_nan=False)+"\n")
     lines = ["# Next-label versus after-next suffix covariance", ""]
