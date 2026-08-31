@@ -86,7 +86,10 @@ def positive_bound(rows, x, h, derivative=0, rankone=False, excited=False, offse
 
 def serial(x):
     if isinstance(x, F):
-        return {"exact": str(x), "decimal": float(x)}
+        scale = 10**12
+        lower = x.numerator*scale//x.denominator
+        return {"rational_enclosure": [str(F(lower, scale)), str(F(lower+1, scale))],
+                "decimal": float(x)}
     if isinstance(x, dict):
         return {k: serial(v) for k, v in x.items()}
     if isinstance(x, (list, tuple)):
