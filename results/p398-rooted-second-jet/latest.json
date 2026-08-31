@@ -1,0 +1,252 @@
+{
+  "Gram_Taylor_coefficients": [
+    {
+      "C4_covariance_residual_rank": 0,
+      "degree": 0,
+      "extended_coefficient_rank": 19,
+      "projected_Gram_skew_rank": 0,
+      "radical_coefficient": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "radical_coefficient_rank": 0
+    },
+    {
+      "C4_covariance_residual_rank": 0,
+      "degree": 1,
+      "extended_coefficient_rank": 20,
+      "projected_Gram_skew_rank": 0,
+      "radical_coefficient": [
+        [
+          4,
+          1,
+          6,
+          2
+        ],
+        [
+          1,
+          -1,
+          1,
+          0
+        ],
+        [
+          6,
+          1,
+          6,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          -1
+        ]
+      ],
+      "radical_coefficient_rank": 4
+    },
+    {
+      "C4_covariance_residual_rank": 0,
+      "degree": 2,
+      "extended_coefficient_rank": 18,
+      "projected_Gram_skew_rank": 0,
+      "radical_coefficient": [
+        [
+          8,
+          5,
+          14,
+          4
+        ],
+        [
+          5,
+          4,
+          9,
+          3
+        ],
+        [
+          14,
+          9,
+          26,
+          8
+        ],
+        [
+          4,
+          3,
+          8,
+          2
+        ]
+      ],
+      "radical_coefficient_rank": 4
+    },
+    {
+      "C4_covariance_residual_rank": 0,
+      "degree": 3,
+      "extended_coefficient_rank": 7,
+      "projected_Gram_skew_rank": 0,
+      "radical_coefficient": [
+        [
+          4,
+          4,
+          8,
+          2
+        ],
+        [
+          4,
+          5,
+          8,
+          3
+        ],
+        [
+          8,
+          8,
+          20,
+          8
+        ],
+        [
+          2,
+          3,
+          8,
+          4
+        ]
+      ],
+      "radical_coefficient_rank": 4
+    },
+    {
+      "C4_covariance_residual_rank": 0,
+      "degree": 4,
+      "extended_coefficient_rank": 1,
+      "projected_Gram_skew_rank": 0,
+      "radical_coefficient": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "radical_coefficient_rank": 1
+    }
+  ],
+  "Jantzen_certificate": {
+    "G0_rank": 19,
+    "J1_dimension": 4,
+    "J2_dimension": 0,
+    "leading_form_determinant": 14,
+    "leading_form_rank": 4,
+    "reason": "The induced first coefficient on ker Gamma0 is nondegenerate; the Schur complement starts t*H1 with invertible H1, so no valuation exceeds one.",
+    "valuation_multiplicities": {
+      "0": 19,
+      "1": 4
+    }
+  },
+  "all_order_fixed_radical_identity": {
+    "affine_extension": "X(Q)=diag(T,R) intertwines the constant joins/translation and exact linear detach family for every Q; all positive Taylor coefficients are zero under the same source/transport normalization.",
+    "all_five_coefficient_skew_ranks_zero": true,
+    "polynomial_degree": 4,
+    "proof": "C4 covariance gives R_B^T H(Q) R_B=H(Q). Since R_B^2=I on the remaining radical, H(Q)R_B=R_B^T H(Q) identically. Thus the second projected Gram gate and every higher coefficient are automatic in this family."
+  },
+  "base_commit": "5389200f6f75262d5327c5c52ba1c19826e177a8",
+  "claim_boundary": [
+    "No added observable, new mark, fitted deformation, or changed Gram convention.",
+    "The conclusion is conditional on the already declared constant-emission retained family; first-jet data alone would not identify arbitrary additional t^2 emission terms.",
+    "Do not repeat or try to repair the known unprojected Gram failure.",
+    "An all-order fixed-radical identity is not an all-order unprojected Gram module or physical transfer/Jordan realization."
+  ],
+  "coefficient_convention": "t=Q-1; F(Q)=sum_k t^k F_k. F_2 is half the second derivative, not the raw second derivative.",
+  "decision": "second_jet_unique_but_no_new_Jantzen_or_projected_Gram_discriminator",
+  "family_definition_audit": {
+    "action": "analysis/p333_one_mark_endpoint_jet_protocol.json generic_Q_action.marked_detach and analysis/p333_minimal_multimark_jet_protocol.json generic_Q_action.marked_detach explicitly define lower emission as (Q-1)E_i, with a constant retained row and identity mark block.",
+    "gram": "analysis/p333_source_landing_doublet_width4_protocol.json gram.extended and gram.raw_columns explicitly define Gbar(Q)=[[G(Q),C(Q)],[C(Q)^T,0]], C(Q)=d_Q G(Q) times frozen reference combinations.",
+    "new_row": "5389200 fixes E_i=C0^T P_i and the nine reference combinations; no Q-dependent replacement of E_i is introduced.",
+    "normalization": "Continue the same fixed ordinary source and fixed mark transport: X(Q)S=S, X_mark,mark(Q)=R. Thus the second Taylor coefficient kills S and has zero mark block."
+  },
+  "fixed_radical_translation": {
+    "charge1_dimension": 0,
+    "involution_residual_rank": 0,
+    "matrix": [
+      [
+        2,
+        "3/2",
+        2,
+        1
+      ],
+      [
+        -2,
+        -2,
+        -4,
+        -2
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "sign_dimension": 1,
+    "trivial_dimension": 3
+  },
+  "parent_result_sha256": "79200d83caaa3a82e994a64d615f7966d45f0f484b08428225f82c37f30a5a44",
+  "protocol_sha256": "1721905e1558b7295cbeca74967ad350746463c3f80a6e5a54a10b1a25b567a3",
+  "schema": "matching-one/p398-rooted-second-jet/v1",
+  "scientific_change": "The nine-mark success is stable through second order, but repeating the same projected gate cannot reveal new structure: charge-one removal has turned it into an involution identity, and J2 is already zero.",
+  "scorer_sha256": "e361884b710a255983596cec41e7c3b120397c5791ade1033ab111d91b7de843",
+  "second_jet_affine_certificate": {
+    "decision": "unique_second_jet_extension",
+    "detach_second_coefficient": "0 by the existing exact linear retained-emission formula",
+    "fixed_filtration_and_transport_variables": 207,
+    "full_matrix_variable_count": 529,
+    "independent_source_normalizations": 10,
+    "inhomogeneous_second_jet_rhs": "0 because X1=0 and D2=0",
+    "remaining_ordinary_and_emission_variables": 322,
+    "sufficient_homogeneous_subsystem_rank": 312,
+    "total_rank_in_remaining_variables": 322,
+    "unique_solution": "X2=0"
+  },
+  "status": "exact_same_family_second_jet_and_Jantzen_stop"
+}
