@@ -134,7 +134,7 @@ public:
         visit(0,0,0,0);
         std::ofstream out(path);
         if (!out) throw std::runtime_error("cannot create output");
-        out << "k,count,sum_q,sum_e,sum_2s,sum_q2s,sum_e2s\n";
+        out << "k,count,sum_q,sum_e,sum_s2,sum_qs2,sum_es2\n";
         for (int k=0;k<=n;++k) {
             const auto& row=histogram[k];
             out << k << ',' << row.count << ',' << row.q << ',' << row.e << ','

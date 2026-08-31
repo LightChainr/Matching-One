@@ -1,6 +1,7 @@
 # Local four-port producer staged; execution awaits contract and GO
 
 Base: `bea717e826df5a22518774b1725ae7bcbe2cb801`.
+Root's subsequent frozen contract: `d7f15e68:analysis/p337_local_pair_insertion_contract.json`.
 Producer: `scripts/p337_local_four_port_exact.cpp`.
 Only source code and a syntax check are delivered at this stage. No
 configuration or response has been read out. The final tensor/contract
@@ -33,7 +34,7 @@ that definition; this staged code does not itself certify its tensor origin.
 There will be26 rows K=0,...,25 per geometry, with header
 
 ```text
-k,count,sum_q,sum_e,sum_2s,sum_q2s,sum_e2s
+k,count,sum_q,sum_e,sum_s2,sum_qs2,sum_es2
 ```
 
 Divide the last three columns by2 exactly once to obtain S,qS,ES sums.
