@@ -32,3 +32,12 @@ are signed loadings, not variance fractions or a closure theorem.
 
 All result branches retain the original source identities and dependency
 block. Leave other teams' worktrees and cloud state untouched.
+
+Repository update read at18:47: the overview analysis team has claimed
+held-out prediction (`J=B G` and fixed contact features) and cell00
+conditional-shape tests in Issue334 comment5477163171. Those remain their
+tasks. This team's projections are descriptive within-cell moment loadings;
+the new64 reuse item is only cross-stream descriptive moments, not a
+crossfit/prediction campaign or conditional-shape computation. HZ/TV now
+belong to that other team's new jobs; the earlier all-Ready receipt is not
+the current allocation.
