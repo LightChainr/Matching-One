@@ -1,0 +1,412 @@
+{
+  "schema": "matching-one/cubic-witness-audit/v1",
+  "commit": "29902bbd4692f789547f252d121858102f1f6650",
+  "status": "existing_witness_independently_audited_no_search_replay",
+  "coefficients_ascending": [
+    -63,
+    40,
+    65,
+    79
+  ],
+  "height": 79,
+  "primitive_gcd": 1,
+  "monotonicity": {
+    "derivative_coefficients_ascending": [
+      40,
+      130,
+      237
+    ],
+    "derivative_discriminant": -21020,
+    "derivative_vertex": {
+      "exact": "-65/237",
+      "decimal": "-0.2742616033755274261603375527426160337553"
+    },
+    "global_minimum_derivative": {
+      "exact": "5255/237",
+      "decimal": "22.17299578059071729957805907172995780591"
+    },
+    "conclusion": "P strictly increasing on R; exactly one real root"
+  },
+  "root": {
+    "decimal_150_digits": "0.592746052235312760519106030300078166085605945066077470250068889987767809961248206237636450173174047991535165384115712148162592484909833910574135058958",
+    "decimal_derivation": "midpoint of exact 600-bit dyadic bracket, rounded to 150 significant digits",
+    "bracket_80bit": [
+      "716586007021911276627445/1208925819614629174706176",
+      "358293003510955638313723/604462909807314587353088"
+    ],
+    "bracket_80bit_width": "1/1208925819614629174706176",
+    "bracket_80bit_endpoint_polynomials": [
+      "-86264289070525444299449785275329371130377422593213/1766847064778384329583297500742918515827483896875618958121606201292619776",
+      "25814140447358932614251063735534889680557423351917/220855883097298041197912187592864814478435487109452369765200775161577472"
+    ],
+    "bracket_600bit": [
+      "1229804486071588298664212336727496463707041609012385917035784277838485488352419904224134149160707016189549678838772186551258489649721133339666239618052452716299346485320547664549357/2074757784440496479256203931845580575506223116121218449997828664845326405706454073199853524473551897144098943305650394591197575537705887653943437417056981843530590901700754761842688",
+      "2459608972143176597328424673454992927414083218024771834071568555676970976704839808448268298321414032379099357677544373102516979299442266679332479236104905432598692970641095329098715/4149515568880992958512407863691161151012446232242436899995657329690652811412908146399707048947103794288197886611300789182395151075411775307886874834113963687061181803401509523685376"
+    ],
+    "unrounded_midpoint_absolute_error_bound": "1/8299031137761985917024815727382322302024892464484873799991314659381305622825816292799414097894207588576395773222601578364790302150823550615773749668227927374122363606803019047370752"
+  },
+  "rational_root_test": {
+    "candidate_count": 24,
+    "candidates_and_exact_values": [
+      [
+        "-63/1",
+        "-19498311/1"
+      ],
+      [
+        "-21/1",
+        "-703857/1"
+      ],
+      [
+        "-9/1",
+        "-52749/1"
+      ],
+      [
+        "-7/1",
+        "-24255/1"
+      ],
+      [
+        "-3/1",
+        "-1731/1"
+      ],
+      [
+        "-1/1",
+        "-117/1"
+      ],
+      [
+        "-63/79",
+        "-584325/6241"
+      ],
+      [
+        "-21/79",
+        "-440139/6241"
+      ],
+      [
+        "-9/79",
+        "-417087/6241"
+      ],
+      [
+        "-7/79",
+        "-412461/6241"
+      ],
+      [
+        "-3/79",
+        "-402105/6241"
+      ],
+      [
+        "-1/79",
+        "-396279/6241"
+      ],
+      [
+        "1/79",
+        "-389957/6241"
+      ],
+      [
+        "3/79",
+        "-383091/6241"
+      ],
+      [
+        "7/79",
+        "-367535/6241"
+      ],
+      [
+        "9/79",
+        "-358749/6241"
+      ],
+      [
+        "21/79",
+        "-288897/6241"
+      ],
+      [
+        "63/79",
+        "313929/6241"
+      ],
+      [
+        "1/1",
+        "121/1"
+      ],
+      [
+        "3/1",
+        "2775/1"
+      ],
+      [
+        "7/1",
+        "30499/1"
+      ],
+      [
+        "9/1",
+        "63153/1"
+      ],
+      [
+        "21/1",
+        "761061/1"
+      ],
+      [
+        "63/1",
+        "20014155/1"
+      ]
+    ],
+    "rational_roots": [],
+    "irreducible_over_Q": true,
+    "reason": "primitive cubic with no rational root"
+  },
+  "complement": {
+    "coefficients_of_P_1_minus_p_ascending": [
+      121,
+      -407,
+      302,
+      -79
+    ],
+    "positive_leading_coefficients_ascending": [
+      -121,
+      407,
+      -302,
+      79
+    ],
+    "height": 407,
+    "primitive_gcd": 1,
+    "inside_original_height_100_box": false,
+    "root_decimal_100_digits": "0.4072539477646872394808939696999218339143940549339225297499311100122321900387517937623635498268259520",
+    "claim": "algebraic substitution of the same witness; no independent evidence"
+  },
+  "intervals": [
+    {
+      "interval_id": "jacobsen-2015-eigenvalue",
+      "lower": "7409325634901/12500000000000",
+      "upper": "14818651269803/25000000000000",
+      "width": {
+        "exact": "1/25000000000000",
+        "decimal": "4E-14"
+      },
+      "root_side": "above",
+      "root_distance_to_interval_80bit_bounds": [
+        "10648883000930537130901757/7378697629483820646400000000000000",
+        "5324441500465271617208691/3689348814741910323200000000000000"
+      ],
+      "root_distance_to_interval_decimal": "1.443192760519106030300078166085605945066E-9",
+      "root_minus_central_decimal": "1.443212760519106030300078166085605945066E-9",
+      "signed_residual_interval": [
+        {
+          "exact": "-564682955585023996903763225158621/1953125000000000000000000000000000000000",
+          "decimal": "-2.89117673259532286414726771281213952E-7"
+        },
+        {
+          "exact": "-4517338440658732040543887133074467/15625000000000000000000000000000000000000",
+          "decimal": "-2.89109660202158850594808776516765888E-7"
+        }
+      ],
+      "minimum_absolute_residual": {
+        "exact": "4517338440658732040543887133074467/15625000000000000000000000000000000000000",
+        "decimal": "2.89109660202158850594808776516765888E-7"
+      },
+      "derivative_interval": [
+        {
+          "exact": "31301005364982387299579312837/156250000000000000000000000",
+          "decimal": "200.3264343358872787173076021568"
+        },
+        {
+          "exact": "125204021459939823239019137733/625000000000000000000000000",
+          "decimal": "200.3264343359037171824306203728"
+        }
+      ],
+      "width_over_root_distance_decimal": "0.00002771632528534323329519737399078163804929",
+      "source_witness_endpoint_residual_and_80bit_certificate_match": true,
+      "reported_full_search": {
+        "primitive_cubics_checked": 749507743,
+        "coefficient_fibers_checked": 4040100,
+        "root_containing_polynomials": 0,
+        "derivative_stationary_fibers": 0,
+        "excluded": true
+      }
+    },
+    {
+      "interval_id": "mertens-2022-p-med",
+      "lower": "592746050783/1000000000000",
+      "upper": "592746050789/1000000000000",
+      "width": {
+        "exact": "3/500000000000",
+        "decimal": "6E-12"
+      },
+      "root_side": "above",
+      "root_distance_to_interval_80bit_bounds": [
+        "426876181501381066052741/295147905179352825856000000000000",
+        "213438090750690655096683/147573952589676412928000000000000"
+      ],
+      "root_distance_to_interval_decimal": "1.446312760519106030300078166085605945066E-9",
+      "root_minus_central_decimal": "1.449312760519106030300078166085605945066E-9",
+      "signed_residual_interval": [
+        {
+          "exact": "-290936637283285201752093503727/1000000000000000000000000000000000000",
+          "decimal": "-2.90936637283285201752093503727E-7"
+        },
+        {
+          "exact": "-289734678677284869959981793549/1000000000000000000000000000000000000",
+          "decimal": "-2.89734678677284869959981793549E-7"
+        }
+      ],
+      "minimum_absolute_residual": {
+        "exact": "289734678677284869959981793549/1000000000000000000000000000000000000",
+        "decimal": "2.89734678677284869959981793549E-7"
+      },
+      "derivative_interval": [
+        {
+          "exact": "200326434332155747134402093/1000000000000000000000000",
+          "decimal": "200.326434332155747134402093"
+        },
+        {
+          "exact": "200326434334621516902837477/1000000000000000000000000",
+          "decimal": "200.326434334621516902837477"
+        }
+      ],
+      "width_over_root_distance_decimal": "0.004148480303697589488022965128736633543923",
+      "source_witness_endpoint_residual_and_80bit_certificate_match": true,
+      "reported_full_search": {
+        "primitive_cubics_checked": 749507743,
+        "coefficient_fibers_checked": 4040100,
+        "root_containing_polynomials": 0,
+        "derivative_stationary_fibers": 0,
+        "excluded": true
+      }
+    },
+    {
+      "interval_id": "mertens-2022-p-cell",
+      "lower": "14818651263/25000000000",
+      "upper": "14818651267/25000000000",
+      "width": {
+        "exact": "1/6250000000",
+        "decimal": "1.6E-10"
+      },
+      "root_side": "above",
+      "root_distance_to_interval_80bit_bounds": [
+        "91809460633186104814209/59029581035870565171200000000000",
+        "45904730316593076821167/29514790517935282585600000000000"
+      ],
+      "root_distance_to_interval_decimal": "1.555312760519106030300078166085605945066E-9",
+      "root_minus_central_decimal": "1.635312760519106030300078166085605945066E-9",
+      "signed_residual_interval": [
+        {
+          "exact": "-5369101398412957200372687/15625000000000000000000000000000",
+          "decimal": "-3.43622489498429260823851968E-7"
+        },
+        {
+          "exact": "-4868285312770582777358123/15625000000000000000000000000000",
+          "decimal": "-3.11570260017317297750919872E-7"
+        }
+      ],
+      "minimum_absolute_residual": {
+        "exact": "4868285312770582777358123/15625000000000000000000000000000",
+        "decimal": "3.11570260017317297750919872E-7"
+      },
+      "derivative_interval": [
+        {
+          "exact": "125204021390045524355053/625000000000000000000",
+          "decimal": "200.3264342240728389680848"
+        },
+        {
+          "exact": "125204021431141687153493/625000000000000000000",
+          "decimal": "200.3264342898266994455888"
+        }
+      ],
+      "width_over_root_distance_decimal": "0.1028731995657245824622238596303846697810",
+      "source_witness_endpoint_residual_and_80bit_certificate_match": true,
+      "reported_full_search": {
+        "primitive_cubics_checked": 749507743,
+        "coefficient_fibers_checked": 4040100,
+        "root_containing_polynomials": 0,
+        "derivative_stationary_fibers": 0,
+        "excluded": true
+      }
+    },
+    {
+      "interval_id": "yang-zhou-2024-corrected",
+      "lower": "1185492101579/2000000000000",
+      "upper": "5927460507897/10000000000000",
+      "width": {
+        "exact": "1/5000000000000",
+        "decimal": "2E-13"
+      },
+      "root_side": "above",
+      "root_distance_to_interval_80bit_bounds": [
+        "2133347889838777595373209/1475739525896764129280000000000000",
+        "1066673944919389408038167/737869762948382064640000000000000"
+      ],
+      "root_distance_to_interval_decimal": "1.445612760519106030300078166085605945066E-9",
+      "root_minus_central_decimal": "1.445712760519106030300078166085605945066E-9",
+      "signed_residual_interval": [
+        {
+          "exact": "-2317076123680940062650614924419/8000000000000000000000000000000000000",
+          "decimal": "-2.89634515460117507831326865552375E-7"
+        },
+        {
+          "exact": "-289594450173250534212550929161433/1000000000000000000000000000000000000000",
+          "decimal": "-2.89594450173250534212550929161433E-7"
+        }
+      ],
+      "minimum_absolute_residual": {
+        "exact": "289594450173250534212550929161433/1000000000000000000000000000000000000000",
+        "decimal": "2.89594450173250534212550929161433E-7"
+      },
+      "derivative_interval": [
+        {
+          "exact": "801305737339307990867498117/4000000000000000000000000",
+          "decimal": "200.32643433482699771687452925"
+        },
+        {
+          "exact": "20032643433490919004248938333/100000000000000000000000000",
+          "decimal": "200.32643433490919004248938333"
+        }
+      ],
+      "width_over_root_distance_decimal": "0.0001383496365431790110794343810072218198943",
+      "source_witness_endpoint_residual_and_80bit_certificate_match": true,
+      "reported_full_search": {
+        "primitive_cubics_checked": 749507743,
+        "coefficient_fibers_checked": 4040100,
+        "root_containing_polynomials": 0,
+        "derivative_stationary_fibers": 0,
+        "excluded": true
+      }
+    }
+  ],
+  "four_interval_geometry": {
+    "hull_lower": "14818651263/25000000000",
+    "hull_upper": "14818651269803/25000000000000",
+    "hull_width": {
+      "exact": "6803/25000000000000",
+      "decimal": "2.7212E-10"
+    },
+    "hull_width_over_nearest_root_distance_decimal": "0.1885541609161900161072277352592874836493",
+    "witness_has_no_root_in_hull": true,
+    "not_a_combined_statistical_interval": true,
+    "ranking_stability_proved": false,
+    "reason": "No runner-up gap supplied; witness geometry alone cannot certify winner ranking across the hull"
+  },
+  "engine_audit": {
+    "implementation": "Python",
+    "arithmetic": "arbitrary precision integers and fractions.Fraction",
+    "imports": [
+      "__future__",
+      "argparse",
+      "bisect",
+      "exact_polynomial_root_certificate",
+      "fractions",
+      "functools",
+      "hashlib",
+      "json",
+      "math",
+      "pathlib",
+      "scripts.exact_polynomial_root_certificate",
+      "typing"
+    ],
+    "cpp17_search_engine": false,
+    "objective": "minimum over candidate P of minimum over p in the method interval of abs(P(p))",
+    "tie_break": "lexicographic ascending coefficient tuple",
+    "root_isolation": "only the residual-minimizing selected polynomial is passed to the Sturm root certificate",
+    "globally_smallest_root_distance_certified": false,
+    "execution_receipt_or_CI_environment_in_supplied_inputs": false
+  },
+  "boundaries": [
+    "No 749,507,743-candidate enumeration rerun; cached full-search conclusions are reported, not independently regenerated.",
+    "Four method intervals remain separate and quoted uncertainties are not confidence-homogenized.",
+    "No p-values, coefficient physics, closed-form threshold identification, transcendence claim, runner-up gap or globally nearest-root claim.",
+    "Finite degree-3 height-100 exclusions do not settle other degrees/heights or the parent scientific question."
+  ]
+}

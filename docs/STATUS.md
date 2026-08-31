@@ -1,6 +1,19 @@
 # 当前成果：从取向信号到微观机制
 
-**整理日期：2026-08-31，本轮四机计算。** 新增角权桥、有限空间源及精确动态响应已推送；[新交付](../notes/analysis-delivery-20260831.md)记录同prefix局部检验的实际进展及机器状态。[下一步](NEXT-TARGETS.md)只保留尚未回答的科学问题；[清理记录](REPOSITORY-TRIAGE-20260831.md)保存原Issue操作。所有新增结果在Draft #509，不合并。
+**整理日期：2026-08-31。** 四机首轮之后，三机继续完成prefix响应预测、条件形状与滞后簇源分析；[新交付](../notes/analysis-delivery-20260831.md)记录实际结果和运行回执。原账号五台现已返回Ready。[下一步](NEXT-TARGETS.md)只保留尚未回答的科学问题；[清理记录](REPOSITORY-TRIAGE-20260831.md)保存原Issue操作。本任务新增结果统一交付Draft #509，不合并。
+
+## 当前决策：探索停止扩张，两个前瞻实验准备中
+
+用户在本轮交付期间要求收缩研究自由度。本页是当前科学判断的唯一入口；PR267与Issue评论保存沿革，PR509交付资产，不分别维护竞争的“当前真相”。上面的时间记录和下面既有结论按其证据状态保留。
+
+| 主实验 | 要消除的不确定性 | 当前状态 | 失败如何改变研究 |
+|---|---|---|---|
+| #154 temporal transmission | 早期隐藏结构的影响是否进入原global U，由哪个birth通道承担？ | 原2.4M archive只作训练/预算；正在核对first-birth/completion精确传递分解，未冻结、未生成新块 | 采样前限定效应范围；拒绝后停止相应source/channel作为主要解释的优先投入，不能只换lag继续 |
+| #334 independent intervention | 既有contact机制能否预测新的coarse-state保持干预，20%残余是否有可迁移意义？ | 固定四feature定义和既有模型为起点，正在确定两个可区分预测；未冻结、未生成新块 | 预测失败即降级该contact closure/传递假说；不在同一验证块上增添第五个descriptor |
+
+刚完成的组外prefix预测、条件形状和时序补观测全部归入**探索C2**。即使局部检验正确、训练测试按批分开，问题和模型仍经过同一archive生成；这些结果不充当最终独立确认。contact研究最新`323de7d5`显示原00约80%的signed loading落在四feature span内、约20%残留；它不是response R²或精确充分状态。[来源](https://github.com/LightChainr/Matching-One/blob/323de7d5ee4a980b3c77e1a972cb6c812a9f88e5/notes/p334-new64-feature-loading.md)
+
+支持线#275/#419/#370/#398及#1保留已有产物。只有能说明“哪种结果停止哪个候选”的具体任务才进入P0；跨N旧数据回归、进一步projection/Hessian/descriptor及generic certificate目前均属exploratory/support。详细冻结合同完成后，本表只更新其固定引用与结果，不把每个新坐标增加成一个主实验。
 
 ## 取向与物理响应
 
@@ -15,6 +28,8 @@
 P40实际引擎在随机键中包含N：N65/N85是不同N-domain，通常PRNG独立假设下可作nominal联合统计；同N两方向共享随机数。早期仅凭seed标签判断跨N共流的说法已经更正。
 
 P154的源全链、两阶段及百万端点已经完成。条件line响应进一步拒绝具名E-plus-clock模型，固定K/rank1空间关联也强；这两项在[Draft267固定提交](https://github.com/LightChainr/Matching-One/blob/764595ea5c838c110e416382a3a90e2ecf7297bb/results/norm4-source-line-fixed-k/REPORT.md)。本轮[角权桥](../experiments/p154-spatial-localization-20260831/REPORT.md)用同100k/1M源子集完成六N U±/v±及全部共同协方差。U−中心值均负，原总source链仍未分辨；固定K/rank1内中心化的空间源对原U严格为零，两个角权分配相反。这个精确抵消约束说明，仅加强同层O4关联不能识别原全局H4机制，下一步要触及rank人口或进入退出。源子集误差不替代原高精度普通生产。
+
+**新的时序机制读数已经完成。** [单lag路径源](../experiments/p154-temporal-source-20260831/REPORT.md)在原2.4M排列上补出L=max(0,K−ceil√N)的早期簇数与rank。按早期rank中心化后，固定p的一阶直接响应保持早rank分布，但后期进入/退出均明确为负；早rank1不影响首次进入，只影响退出。沿共同matching根，N260的早rank0/1人口贡献为−0.06240±0.00048与+0.04733±0.00027，N340同样部分抵消。这支持rank以外的早期结构改变后期拓扑，但新的原U导数在N260/N340仍为0.843±4.882、12.249±9.922，尚未定位H4来源。这是K依赖的正路径测度源，中心化采用经验条件均值；不是旧同层源的分解，也不是逐路径hazard或有限强度结论。原三组100次共同删批与670维协方差完整保留。
 
 ## 完整分布：N100、N400、N900均已完成
 
@@ -43,6 +58,10 @@ P154的源全链、两阶段及百万端点已经完成。条件line响应进一
 
 **R1之后的完整P334分析也已推进。** 全A/E九层、128万辅助续接、SS/mixed/BB、接触坐标、共同Euler不可见源和全热曲线均已完成，旧mask总体rank2不等于同prefix rank2。本轮[有限q_t](../experiments/p334-finite-source-20260831/REPORT.md)在t=±1仍有可测future S(A)/D(A)响应，即时两rank与Euler增量的联合分布保持不变；使用原数据的精确importance估计，没有按新策略重采样。完整census恢复了局部检验的抽样支持：全部1502/1551双R0 prefix有两个独立允许源，固定781568条定向续接进一步给出A局部行列式均值约5.4/7.6SE的正证据，积分A对应的两个出生中心也支持局部二维响应。E/间隔和四阶平方量仍弱。[最终报告](../experiments/p334-mechanism-response-20260831/REPORT.md)明确区分E[det J(Z)]和det(E[J(Z)])，并保留原20批。
 
+**P334的预测与条件形状已继续完成。** 同一cell00原prefix、旧8+新64续接上，以完整census源Gram G(Z)预测局部J(Z)=BG(Z)，与同为四参数的常数矩阵比较。原20批分为五折，全部删一重拟合；组外A平方误差降低38.17%±9.33个百分点、39.37%±10.59个百分点，出生中心误差降低54.42%±15.47、58.65%±15.71个百分点。这支持微观特征携带可预测信息，尚未证明跨N运输或完全闭合。[预测报告](../experiments/p334-prefix-prediction-20260831/REPORT.md)
+
+同一批续接的无偏条件协方差检验中，minus→D的出生中心方差响应为−2.43469e−8±5.32765e−9、−1.27127e−8±3.30315e−9，两N全部20次删一保持负号。固定prefix的两出生位置若仅作确定性平移，此量应为零；该纯平移类已不足。总体形状能量仍未分辨，且不能断言每个prefix同时具有rank2和形状变化。所有读数仍是cell00对原20000分母的贡献，未把未测其他cell置零。[条件形状报告](../experiments/p334-conditional-shape-20260831/README.md)
+
 147-prefix噪声预算仅适用于固定经验mixture。P398的93维Krylov空间和Boolean谱degree按各自生成过程解释；现有width4/8的i^j权重保持波长4，并非固定模式序号的尺度外推。
 
 **P398固定干预与解析线性响应均已完成。** 固定η=0,±1/4干预出现cross传播，旧16维几何字典整体近似改善但未闭合；随后[精确η0导数与零频分析](../experiments/p398-linear-response-20260831/README.md)给出U′+−在旧lag括号内的反号时刻t≈1.04798965。负平稳重加权与正动态项竞争，零频两cross仍为负；16维模型积分误差0.467%/0.551%，两源模型不反号。投影借用完整π及π′，不声称盲预测、精确闭合或square-site映射；保持P2。
@@ -60,6 +79,8 @@ P154的源全链、两阶段及百万端点已经完成。条件line响应进一
 
 阈值rank引擎、协方差、exact certificate、Q4表示、W5周期配对及15态terminal serial代数均已可用。#498–502新增的是有限子群/作用/理想/闭合集分类。W5已实现的两图并非自对偶，当前没有新的严格p_c界；这些资产接具体概率比较时才成为阈值推进。
 
+#1三次四区间有限排除已经main，发布前复查时四次Jacobsen PR524也已由其他执行者合并，Mertens p-med PR525已打开。该路线没有推出次数或高度上界的理论，区间也不是已证明包含真实阈值的严格界。保留P2候选验证能力，暂停自动扩搜，具体事实、最近见证与恢复条件见[专项审查](../notes/cubic-search-review-20260831.md)。
+
 目前尚未给出square-site p_c闭式、唯一连续场/Jordan身份、总体方向响应的几何归因。相容性不等于模型确认；有限图证明、有限尺度数据、表示论选择规则和晶格到连续场重叠各按其实际范围使用。重分析共用原块，不增加独立证据。
 
-旧状态全文保存在[整理前固定commit](https://github.com/LightChainr/Matching-One/blob/8a68cca866d7fbca7463e2167c3ff06128d5851f/docs/STATUS.md)。本次没有改动旧结果、冻结文件或其他分支；当前分析顺序见[三个问题](NEXT-TARGETS.md)。
+旧状态全文保存在[整理前固定commit](https://github.com/LightChainr/Matching-One/blob/8a68cca866d7fbca7463e2167c3ff06128d5851f/docs/STATUS.md)。本次没有改动旧结果、冻结文件或其他分支；当前分析顺序见[下一步分析](NEXT-TARGETS.md)。

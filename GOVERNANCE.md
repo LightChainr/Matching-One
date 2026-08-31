@@ -2,6 +2,12 @@
 
 Matching One is an exploratory computational-mathematics project. Governance exists to increase discovery speed while keeping the evidence chain legible. The default is **do the useful work, integrate it quickly, and control claim strength afterward**.
 
+## Current phase — user-directed contraction, 2026-08-31
+
+The user has now asked this workstream to stop automatically adding archive observables, prefix features and generic certificates. The current P0 queue consists only of prospective P154 transmission and P334 independent intervention tests. A new P0 analysis must state, before target generation, which outcome ends a specified mechanism line; freeze its predictions, score and fixed budget first. Archive analyses remain C2 even when individual calculations have valid covariance or cross-validation, because hypothesis generation has repeatedly used that archive. Failed candidates are downgraded before any post-result replacement model is proposed.
+
+This dated instruction governs the present workstream and supersedes the automatic-expansion and merge defaults below. It does not change frozen history or erase exploratory assets. The user also requests Draft delivery without merging. Current scientific status and execution order remain in `docs/STATUS.md` and `docs/NEXT-TARGETS.md`; the older general policy below is retained for provenance.
+
 ## 1. Default mode: run and integrate
 
 `main` is the shared research line, not a publication-only branch.

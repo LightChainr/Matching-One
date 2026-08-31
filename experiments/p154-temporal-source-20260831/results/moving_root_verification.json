@@ -1,0 +1,178 @@
+{
+  "status": "passed",
+  "method": "finite-difference U at newly solved roots of the first-order (1+t*z) auxiliary measure; L(K) and its conditional source means stay fixed",
+  "checks": [
+    {
+      "N": 65,
+      "source": "early_raw",
+      "analytic_v": -0.4114618897005743,
+      "symmetric_steps": [
+        1e-05,
+        5e-06
+      ],
+      "finite_differences": [
+        -0.4114618932460345,
+        -0.41146189715401954
+      ],
+      "last_absolute_error": 7.453445249883117e-09
+    },
+    {
+      "N": 65,
+      "source": "early_centered",
+      "analytic_v": -0.13805029768728885,
+      "symmetric_steps": [
+        1e-05,
+        5e-06
+      ],
+      "finite_differences": [
+        -0.13805030224522952,
+        -0.13805030354419046
+      ],
+      "last_absolute_error": 5.856901602596665e-09
+    },
+    {
+      "N": 85,
+      "source": "early_raw",
+      "analytic_v": 0.03506393978353821,
+      "symmetric_steps": [
+        1e-05,
+        5e-06
+      ],
+      "finite_differences": [
+        0.03506394918861844,
+        0.03506394107843924
+      ],
+      "last_absolute_error": 1.2949010336216205e-09
+    },
+    {
+      "N": 85,
+      "source": "early_centered",
+      "analytic_v": -0.04606724403748518,
+      "symmetric_steps": [
+        1e-05,
+        5e-06
+      ],
+      "finite_differences": [
+        -0.04606724329503375,
+        -0.046067242193137396
+      ],
+      "last_absolute_error": 1.8443477856067148e-09
+    },
+    {
+      "N": 130,
+      "source": "early_raw",
+      "analytic_v": -4.860389906247386,
+      "symmetric_steps": [
+        1e-05,
+        5e-06
+      ],
+      "finite_differences": [
+        -4.860390011240945,
+        -4.860389921268471
+      ],
+      "last_absolute_error": 1.5021084820432407e-08
+    },
+    {
+      "N": 130,
+      "source": "early_centered",
+      "analytic_v": -1.9428194331707622,
+      "symmetric_steps": [
+        1e-05,
+        5e-06
+      ],
+      "finite_differences": [
+        -1.9428194246828843,
+        -1.9428194270920682
+      ],
+      "last_absolute_error": 6.078693992606077e-09
+    },
+    {
+      "N": 170,
+      "source": "early_raw",
+      "analytic_v": -0.5982252420946715,
+      "symmetric_steps": [
+        1e-05,
+        5e-06
+      ],
+      "finite_differences": [
+        -0.5982252464176163,
+        -0.5982252333947002
+      ],
+      "last_absolute_error": 8.699971298931075e-09
+    },
+    {
+      "N": 170,
+      "source": "early_centered",
+      "analytic_v": -3.040130337762026,
+      "symmetric_steps": [
+        1e-05,
+        5e-06
+      ],
+      "finite_differences": [
+        -3.0401303318106083,
+        -3.0401303485527715
+      ],
+      "last_absolute_error": 1.0790745630373522e-08
+    },
+    {
+      "N": 260,
+      "source": "early_raw",
+      "analytic_v": -1.0799439354838454,
+      "symmetric_steps": [
+        1e-05,
+        5e-06
+      ],
+      "finite_differences": [
+        -1.0799440793851645,
+        -1.0799439635000851
+      ],
+      "last_absolute_error": 2.801623977255474e-08
+    },
+    {
+      "N": 260,
+      "source": "early_centered",
+      "analytic_v": 0.8425467889990518,
+      "symmetric_steps": [
+        1e-05,
+        5e-06
+      ],
+      "finite_differences": [
+        0.8425468067674301,
+        0.8425468788875178
+      ],
+      "last_absolute_error": 8.988846600388456e-08
+    },
+    {
+      "N": 340,
+      "source": "early_raw",
+      "analytic_v": 14.836455509754384,
+      "symmetric_steps": [
+        1e-05,
+        5e-06
+      ],
+      "finite_differences": [
+        14.836455865596674,
+        14.836455662914359
+      ],
+      "last_absolute_error": 1.531599753690216e-07
+    },
+    {
+      "N": 340,
+      "source": "early_centered",
+      "analytic_v": 12.249335292730928,
+      "symmetric_steps": [
+        1e-05,
+        5e-06
+      ],
+      "finite_differences": [
+        12.249335322689346,
+        12.249335110503521
+      ],
+      "last_absolute_error": 1.8222740649775915e-07
+    }
+  ],
+  "root_solves": 48,
+  "production_replays": 0,
+  "new_random_samples": 0,
+  "scope": "algebraic derivative check on same archived moments, not finite-strength experimental evidence"
+}
