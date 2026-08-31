@@ -1,6 +1,6 @@
 # 当前成果：从取向信号到微观机制
 
-**整理日期：2026-08-31。** 四机首轮之后，三机继续完成prefix响应预测、条件形状与滞后簇源分析；[新交付](../notes/analysis-delivery-20260831.md)记录实际结果和运行回执。原账号五台现已返回Ready。[下一步](NEXT-TARGETS.md)只保留尚未回答的科学问题；[清理记录](REPOSITORY-TRIAGE-20260831.md)保存原Issue操作。本任务新增结果统一交付Draft #509，不合并。
+**整理日期：2026-08-31。** 四机首轮之后，三机继续完成prefix响应预测、条件形状与滞后簇源分析；[新交付](../notes/analysis-delivery-20260831.md)记录实际结果和运行回执。此前三项完成时原账号五台已返回Ready；新决策实验随后按实际准备状态重新开机。[下一步](NEXT-TARGETS.md)只保留尚未回答的科学问题；[清理记录](REPOSITORY-TRIAGE-20260831.md)保存原Issue操作。本任务新增结果统一交付Draft #509，不合并。
 
 ## 当前决策：探索停止扩张，两个前瞻实验准备中
 
@@ -8,12 +8,14 @@
 
 | 主实验 | 要消除的不确定性 | 当前状态 | 失败如何改变研究 |
 |---|---|---|---|
-| #154 temporal transmission | 早期隐藏结构的影响是否进入原global U，由哪个birth通道承担？ | 原2.4M archive只作训练/预算；正在核对first-birth/completion精确传递分解，未冻结、未生成新块 | 采样前限定效应范围；拒绝后停止相应source/channel作为主要解释的优先投入，不能只换lag继续 |
-| #334 independent intervention | 既有contact机制能否预测新的coarse-state保持干预，20%残余是否有可迁移意义？ | 固定四feature定义和既有模型为起点，正在确定两个可区分预测；未冻结、未生成新块 | 预测失败即降级该contact closure/传递假说；不在同一验证块上增添第五个descriptor |
+| #154 temporal transmission | 早期隐藏结构的影响是否进入原global U，由哪个birth通道承担？ | 执行队lag=1事件核4daae57e已作为训练/预算输入；冻结两个端点的净U与readout出生通道限制，未冻结、未生成新块 | 采样前限定效应范围；拒绝后停止相应source/channel作为主要解释的优先投入，不能只换lag继续 |
+| #334 independent intervention | 既有contact机制能否预测新的coarse-state保持干预，20%残余是否有可迁移意义？ | [合同与代码已定稿](../experiments/p334-prospective-intervention-20260831/CONTRACT.md)：每N300k全新prefix，主残余比值范围±0.25或0.75–1.25；本次提交冻结，之后运行 | 预测失败即降级所声明的残余loading消失/传递限制；不在同一验证块上增添第五个descriptor |
+
+执行队的[一次激活事件核4daae57e](https://github.com/LightChainr/Matching-One/commit/4daae57eef5c945aa050a95cd3d5d5d77582161b)也已完成；当前前瞻#154使用这个固定lag=1接口，不再重复sqrtN-lag或做lag扫描。规范化U的entry/completion读出分解共享完整源的根/分母导数，不能改称源的因果事件归因。
 
 刚完成的组外prefix预测、条件形状和时序补观测全部归入**探索C2**。即使局部检验正确、训练测试按批分开，问题和模型仍经过同一archive生成；这些结果不充当最终独立确认。contact研究最新`323de7d5`显示原00约80%的signed loading落在四feature span内、约20%残留；它不是response R²或精确充分状态。[来源](https://github.com/LightChainr/Matching-One/blob/323de7d5ee4a980b3c77e1a972cb6c812a9f88e5/notes/p334-new64-feature-loading.md)
 
-支持线#275/#419/#370/#398及#1保留已有产物。只有能说明“哪种结果停止哪个候选”的具体任务才进入P0；跨N旧数据回归、进一步projection/Hessian/descriptor及generic certificate目前均属exploratory/support。详细冻结合同完成后，本表只更新其固定引用与结果，不把每个新坐标增加成一个主实验。
+支持线#275/#419/#370/#398及#1保留已有产物；#275已由P1调整为P2，保持开放。只有能说明“哪种结果停止哪个候选”的具体任务才进入P0；跨N旧数据回归、进一步projection/Hessian/descriptor及generic certificate目前均属exploratory/support。详细冻结合同完成后，本表只更新其固定引用与结果，不把每个新坐标增加成一个主实验。
 
 ## 取向与物理响应
 
