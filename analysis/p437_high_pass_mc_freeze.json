@@ -1,0 +1,22 @@
+{
+  "schema": "matching-one/p437-high-pass-pilot/v1",
+  "base_commit": "eca7d4e7484854ffc1278e92b870a2fa037aafa2",
+  "source_baseline_commit": "2402a33",
+  "measure": "224 independent square-bond Bernoulli(1/2) bits, unchanged from N112 rho-child production",
+  "child_period_matrices": [[[8,8],[0,14]],[[16,4],[0,7]],[[16,12],[0,7]]],
+  "child_order": ["2omega", "omega_over_2", "omega_plus_1_over_2"],
+  "observer": "F=(E0+exp(-2pi i/3)E1+exp(-4pi i/3)E2)/3; E=1_rank0+1_rank2",
+  "non_low_degree_witness": "Five free horizontal-cycle bonds 0,28,56,84,112 in child0; bonds140,168,196 fixed open, all remaining closed. Exact fifth mixed difference of F is -1/3, proving nonzero Walsh content above degree4 under the full-support measure.",
+  "levels": ["1", "1/2", "1/4", "1/8", "1/16", "1/32"],
+  "coefficients": [1,-31,310,-1240,1984,-1024],
+  "coupling": "X,Y independent product bits; nested retention masks R_l formed by AND of l independent fair masks; X_l=(X&R_l)|(Y&~R_l); same masks on all three children",
+  "primary": "Re E[conj(F(X))*sum_l c_l F(X_l)]=sum_{j>=5}h_j ||F_j||^2; imaginary part exact zero",
+  "unfiltered_comparator": "E[|F(X)-F(Y)|^2/2]=Var(F), same replica",
+  "not_an_estimand": "unconditional high-pass mean is identically zero; continuum delta subtraction cancels since sum(c)=0",
+  "controls": ["K-centered L3 Euler on first nine bits: E[O(X)*HO(X)]=0", "normalized centered degree5 product on first five bits: response=9765/32768", "raw high-pass F mean and self-response imaginary part are zero"],
+  "run": {"samples": 20000,"batches": 100,"workers": 16,"seed": 43711231001,"replica_offset": 43700000000,"host": "Huawei-CodeBuddy-HZsCM6"},
+  "alpha": 0.01,
+  "stop_gate": "Stop after this fixed 20k variance pilot regardless of p. No automatic extension. Report high-pass energy/SE, variance inflation, SNR-squared per CPU-second and point-estimate projected 5-sigma count only if energy positive. A non-resolved energy is underpowered, not evidence of zero high-degree content.",
+  "dependency_group": "p437-N112-six-noise-fresh-20k-20260831",
+  "boundary": "Self spectral energy, not independent external-source coupling or physical field identity; coefficient estimator variance is not population high-pass L2 energy. Euler control is a nine-bit product-field control, not N112 physical Euler. No Palm conditioning."
+}
