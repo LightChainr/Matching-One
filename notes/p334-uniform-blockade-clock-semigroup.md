@@ -128,6 +128,38 @@ single-site mean-knockout effects differ as well: their normalized squared
 concentrations are113/392 and1/4. These are spatial response statistics,
 not another linear transform of the unmarked clock.
 
+## A response-variance identity exposes the missing geometry
+
+Choose one blocked site v uniformly among the original d labels and retain
+its identity while evaluating the conditional clock response. Put
+`p_k=P(T=k)` and, when p_k>0,
+`c_k=sum_v P(V=v | T=k)^2`. The singleton identity immediately gives
+
+\[
+ E_v[\Delta S_v(k)]=\frac{k p_k}{d},\qquad
+ \boxed{\operatorname{Var}_v[\Delta S_v(k)]
+ =\frac{k^2 p_k^2}{d}\left(c_k-\frac1d\right).}
+\]
+
+Thus the mean intervention response belongs to the closed clock semigroup,
+whereas its spatial variance directly measures the conditional final-site
+collision. This variance is over the chosen site's **exact conditional
+response**, not the unseparated Bernoulli noise of one sampled suffix.
+
+In the five-site pair at k=4, both have p4=1/5 and mean single-block survival
+increase4/25. The double-star's per-site increases are
+`(2/5,1/5,0,0,1/5)`; the cycle-plus-isolate's are
+`(1/5,1/5,1/5,1/5,0)`. Their spatial response variances are therefore
+
+\[
+ \frac{14}{625}\quad\hbox{versus}\quad\frac4{625}.
+\]
+
+The variance ratio is7/2 even though every uniform-blockade **mean** curve
+agrees. This is an explicit finite response observable that detects the
+hidden trigger geometry without assigning a geometric meaning to an
+unmarked clock difference.
+
 ## Consequence for the next data stream
 
 Averaging more uniformly chosen blockade masks cannot distinguish
