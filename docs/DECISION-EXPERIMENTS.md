@@ -14,14 +14,43 @@ cross-fit 和更精确的条件均值有价值，但不变成新的 prefix 总�
 同时，项目已经开始转向：执行团队的
 [独立干预冻结稿，`bc0a18c2`](https://github.com/LightChainr/Matching-One/blob/bc0a18c207e3b09f49ea6b6af6601471114d654a/notes/p334-independent-intervention-freeze.md)
 已有固定模型、效应容忍度、独立随机域和生产预算。本页直接承接该冻结稿，
-不另建第三套 #334 计划。该提交尚无生产结果，producer SHA 待发车前补录。
+不另建第三套 #334 计划。后续
+[dispatch，`bde1a51ca95c74448265b670ba0d9a0d87915479:notes/p334-independent-intervention-dispatch.json`](https://github.com/LightChainr/Matching-One/blob/bde1a51ca95c74448265b670ba0d9a0d87915479/notes/p334-independent-intervention-dispatch.json)
+已记录封存并集成的 producer；状态仅为 **frozen before formal generation**，
+不表示正式生成已经完成，也没有该独立块的结果。
 
 | 主线 | 已完成、只作探索输入 | 当前需要的下一项交付 |
 |---|---|---|
-| #154 | [一步 lagged source](../results/norm4-lagged-source/REPORT.md)，`4daae57e`：未来 rank 响应强，原 U H4 未分辨 | 把下面的通道判别框架变成冻结的带符号预测与联合精度预算，再采新随机块 |
-| #334 | hierarchy、contact loading、local A-rank、source-normal discovery | 执行已有 `bc0a18c2` 冻结干预；发布新100万 prefixes 的固定主统计量，不继续寻找第五特征 |
+| #154 | [两条固定时钟律](../results/p154-fixed-clock-models/REPORT.md)，`3847a5cf`：纯 cos4 相对位移不符旧方向读数；标量位移暂存但 U 预测仅约.01/.018 | 给出可负担且能区分原 U 机制的预报；不要为已不符的角律追加生产，或声称8M可分辨微小标量预报 |
+| #334 | hierarchy、contact loading、local A-rank、source-normal、旧prefix held-out/shape均已交付 | 按 `bde1a51c` 已封存producer执行原 `bc0a18c2` 干预；发布新100万 prefixes 的固定主统计量，不重做设计或旧档案跟进 |
 
-## 1. #154：已有完整 transmission map，缺的是区分性预测
+## 1. #154：显式传输律已有一项淘汰，独立 U 比较仍需可分辨预报
+
+**本轮直接分析，`open_pr #267`，`3847a5cf`：**
+[固定时钟比较](../results/p154-fixed-clock-models/REPORT.md) 只比较
+`e_g=−(m−delta w_g/2)F1'_g`、`x_g=−(m+delta w_g/2)F2'_g`，
+其中 `w=1` 或精确 `cos4theta`，位移在根附近不随 p 变。
+每 N 只用 pooled rank1 与 root 响应校准 m、delta；不拟合方向增益。
+纯 cos4 律对 entry/completion 方向差的偏离为31–35个配对 SE，
+其 U 预报 +2.777/−4.081 也与观测有张力。停止推广这个具体角律；
+不等于排除所有 H4 机制，更不关闭 #154。
+
+标量律方向差残差为0.19–1.21 SE，但 U 预报仅
+`+.00980±.02328`、`+.01753±.02817`（N260/N340）。
+[完整配对预算](../results/p154-clock-transmission-budget/REPORT.md) 已补齐：
+8M新排列的边际3SE分辨率约.766/1.254；只用点预报外推就需约
+489亿/410亿样本，固定校准不确定性更使两预报的3SE区间覆盖零。
+这撤回了“有公式就可投产”的推断。保留标量律作为基线，下一独立
+生产要有可负担的机制差异；不追加新角系数来挽救已失败模型。
+以上都是同一旧块上的回顾性模型比较，非独立确认或 exact certificate。
+
+执行团队的[单系数推导](https://github.com/LightChainr/Matching-One/blob/bde1a51ca95c74448265b670ba0d9a0d87915479/notes/p154-prospective-birth-clock-transmission-decision.md)
+已完成，不能再写“没有任何数值预测”。#509 的
+[较长 lag](https://github.com/LightChainr/Matching-One/blob/04743caf1450d5f88cae2747e0dbee36d7cd8ca1/experiments/p154-temporal-source-20260831/REPORT.md)
+也已完成：`K−ceil(sqrt(N))` 早期源给出强 entry/exit 响应而 U 未分辨。
+它不是下面的 lag=1 或平衡源，也不是新的独立排列。当前不扫描更多 lag。
+
+### 保留的通道判别框架
 
 固定原 square-site 方向对、lag=1、bulk 源单位和原 U；建议第一比较仅用
 N130→260，作为有限规模比较，不拟合自由指数，也不把一对规模叫作完整
@@ -78,9 +107,10 @@ A/B/C互斥，但不穷尽所有机制。只有置信域完整进入相应区域
 混合、跨尺度不一致、全模型失败或精度不足均保留原名，不补第四个模型
 解释同一 confirmation 结果。零附近的不显著不能替代等价性。
 
-**未完成项写明：** s_N、科学容忍度与微观模型的数值向量尚未给出。
-上式不会自动产生它们。不能把这些候选区写成已冻结、已投产或已识别机制。
-下一交付是这几项具体预测，不是另一个 feature/lag 扫描或工具框架。
+**未完成项写明：** 这个 A/B/C 框架的 s_N、科学容忍度与可分辨数值
+向量尚未冻结；它与上面已算过的两条具体时钟律不同。不能把候选区
+写成已投产或已识别机制。下一交付是可负担的具体预报，
+不是另一个 feature/lag 扫描或工具框架。
 
 预算示例只说明成本：若选 `delta_U=0.5`，单 N、真值零、正态近似下，要
 有约80%概率让95%区间整体进入该带，需 SE约0.154。由旧 SE按
@@ -120,7 +150,17 @@ G⁺按确切源空间秩投影；奇异 prefix 不丢弃，B=0贡献零。
 每个 active prefix/own-source8对± draws，non00保留为零贡献而不改分母。
 新 prefix/label/suffix 随机域按 N、batch、prefix、source、rep 分离，
 base seed `202608311920334`，旧数据不参与新块生成或加权。
-源稿计划 NePnUn / 551oUR；这是执行记录，不是服务器锁。
+dispatch 已明确 NePnUn（`1e313eebd1a947b8b38714aeea1404d5`）负责N325，
+551oUR（`9b3eb563ddc64f2680be17501ec4fe6a`）负责N425，各14 workers；
+记录的每机实际限额为14.5 CPU cores、25GiB，目录为
+`/workspace/p334-independent-normal-20260831`。这些是该提交的调度记录，不是服务器锁或实时探测。
+
+producer 提交为 `513552c77f035526efb99075b54032d288b2f4bb`，已由
+`6928b3d861d2f4ce1ee93446c02e6a44e56832a6`集成进执行分支；
+上述 `bde1a51c:notes/p334-independent-intervention-dispatch.json`封存其引用。
+精确整数、rank-aware源投影不筛掉奇异prefix；有限两臂采用精确有理共同逆CDF耦合。
+预算、seed、四个预测、主T及delta均沿用原冻结稿。**producer准备已完成；
+dispatch状态仍仅是正式生成之前，不是已完成实验或 `main` 集成声明。**
 
 固定判读为新块主量 T±3SE、`delta=1e−8`：下端>delta，停止推广 M0 的
 完整闭合；上端<delta，停止推广具有实质正效应的 M1 预报；其余记未分辨，
@@ -134,6 +174,26 @@ base seed `202608311920334`，旧数据不参与新块生成或加权。
 更早 receiver-R0汇总的80–99%是另一总体，不能覆盖此结果。
 两者都是 signed loading，均不等于未解释方差或独立机制比例。
 
+### 旧prefix预测与shape已经交付，仍不能替新normal实验判决
+
+`open_pr #509`固定 `04743caf1450d5f88cae2747e0dbee36d7cd8ca1` 的
+[`experiments/p334-prefix-prediction-20260831/REPORT.md`](https://github.com/LightChainr/Matching-One/blob/04743caf1450d5f88cae2747e0dbee36d7cd8ca1/experiments/p334-prefix-prediction-20260831/REPORT.md)
+给出既定5折、原批次留出的 BG 相对常数模型风险改善：A为38.17%/39.37%，
+出生中心为54.42%/58.65%（N325/N425）。两个模型每输出均4参数；
+这是原cell00的1502/1551个prefix上的预测增益，两个N分别训练，尚无跨N零重拟合结论。
+
+同提交的
+[`experiments/p334-conditional-shape-20260831/results/REPORT.md`](https://github.com/LightChainr/Matching-One/blob/04743caf1450d5f88cae2747e0dbee36d7cd8ca1/experiments/p334-conditional-shape-20260831/results/REPORT.md)
+也已交付：combined72的 `VarC.D.minus` 为
+`−2.43469e−8±5.32765e−9` / `−1.27127e−8±3.30315e−9`，
+保留原20000-prefix分母和20批误差；总体shape energy仍弱且未截零。
+old8/new64/combined72共享原prefix，局部均值det只是追加到同factor，没有重跑。
+
+这两份完成结果可以更新 discovery 机制解释，不应再登记为待交付。
+BG只约束原两-score的第一Jacobian近似；上述shape也不是新 source-normal 主T。
+它们既不直接裁决更强的完整标签闭合M0，也不把新M1预报变成独立总体确认。
+固定独立块的两模型、主量和判读规则保持不变。
+
 ## 冻结、收口与仓库职责
 
 冻结包含 source、readout、模型预测、统计单位、随机域、预算和失败/未分辨
@@ -143,5 +203,5 @@ base seed `202608311920334`，旧数据不参与新块生成或加权。
 
 执行团队承接已有 #334生产；总览维护这两个问题与结果入口；其他团队的
 旧档案交付按发现材料吸收。沟通留在仓库，不等待团队许可或逐条确认。
-更新后的 Huawei Skill 已读、十机实时列表均Ready；本任务未开机、未运行
-新 production，也未触碰其他作业。PR #267保持Draft。
+更新后的 Huawei Skill 已读；此前十机列表均Ready，当前未重新探测。
+本任务未开机、未运行新 production，也未触碰其他作业。PR #267保持Draft。

@@ -6,6 +6,19 @@
 
 `docs/NEXT-TARGETS.md` owns the single attention order, while `docs/ROADMAP.md` preserves its scientific rationale. Neither locks a task, serializes theory work or treats a lower priority as a scientific rejection.
 
+**New finite-model elimination, `open_pr #267`, `3847a5cfb0a7fe4454a86cc1bfd8ce4ee2e813f4`:**
+[The two-clock comparison](../results/p154-fixed-clock-models/REPORT.md) uses
+only pooled root/rank1 responses to calibrate two fixed laws. A pure cos4
+relative shift misses the unchanged entry/completion direction contrasts by
+31–35 paired SE at N260/N340. Scalar-shift residuals stay within1.22 SE,
+but this does not prove the law across p or identify global H4. Its U forecasts
+are +.00980±.02328 /+.01753±.02817; the
+[joint uncertainty/budget](../results/p154-clock-transmission-budget/REPORT.md)
+shows that an8M new block cannot affordably separate these forecasts from zero.
+No new samples were generated; all uncertainty is paired old-block discovery.
+The excluded object is the specified pure-fourfold rigid-clock response law,
+not all H4 theories or the #154 research line.
+
 **New norm4 temporal discovery, `open_pr #267`, `4daae57eef5c945aa050a95cd3d5d5d77582161b`:**
 [The one-step lagged source](../results/norm4-lagged-source/REPORT.md) centers
 cluster count within previous occupancy/rank and measures the next activation.
@@ -41,9 +54,11 @@ with exact finite paired interventions preserving class masses, immediate
 rank/Euler and both original score means. M0 is complete two-score label
 closure; M1 forecasts transportable source-normal center response.
 The four-coordinate primary mean T has forecast3.6565e−8, practical margin
-δ=1e−8 and fixed T±3SE rule. Producer SHA is to be appended before dispatch;
-this pin contains no new-block result. The execution team's design is already
-available and should be consumed, not redesigned as a missing first plan.
+δ=1e−8 and fixed T±3SE rule. The later
+[dispatch, `bde1a51c`](https://github.com/LightChainr/Matching-One/blob/bde1a51ca95c74448265b670ba0d9a0d87915479/notes/p334-independent-intervention-dispatch.json)
+seals producer `513552c7`, integration `6928b3d8`, NePnUn/551oUR and the seed.
+Its status is frozen before formal generation, with no result at this pin;
+this is not a live job observation or a missing producer-freeze task.
 
 **P334 contact/local-rank discovery is completed:** [the preceding handoff](../notes/p334-contact-and-local-rank-handoff-20260831.md)
 pins earlier `branch_only` execution `43a30e49` and `open_pr #509` `8ad30617`;
@@ -60,10 +75,23 @@ two populations must not be interchanged.
 The completed targeted64 result (`7beb99ce`) gives local A determinant means
 `1.15937e−8±2.14282e−9` / `1.49767e−8±1.97301e−9` at N325/N425.
 It supports a locally two-dimensional conditional-mean component; E/gap and
-the determinant-square targets remain weak. Already-claimed held-out
-`J=B G_score`/contact and cell00 shape work is not delivered at the current card,
-with live execution unobserved. Its old-prefix readouts remain discovery;
-the next independent mechanism comparison is the new-block intervention above.
+the determinant-square targets remain weak. #509 `04743caf` now delivers
+[held-out J=BG prediction](https://github.com/LightChainr/Matching-One/blob/04743caf1450d5f88cae2747e0dbee36d7cd8ca1/experiments/p334-prefix-prediction-20260831/REPORT.md):
+A risk falls38.17±9.33 /39.37±10.59 percentage points and center risk
+54.42±15.47 /58.65±15.71 points, with each N separately trained. Its
+[conditional shape](https://github.com/LightChainr/Matching-One/blob/04743caf1450d5f88cae2747e0dbee36d7cd8ca1/experiments/p334-conditional-shape-20260831/results/REPORT.md)
+gives minus→D center-variance derivatives −2.43469e−8±5.32765e−9 /
+−1.27127e−8±3.30315e−9. This challenges deterministic translation within
+fixed prefixes; the full shape energy remains unresolved. Both retain old20
+batches and original00 selection. Neither is independent confirmation or
+a direct adjudication of the frozen complete-label-mean closure M0.
+
+**Distinct longer temporal source, `open_pr #509`, `04743caf`:**
+[K−ceil(sqrt(N)) injection](https://github.com/LightChainr/Matching-One/blob/04743caf1450d5f88cae2747e0dbee36d7cd8ca1/experiments/p154-temporal-source-20260831/REPORT.md)
+gives strong cumulative entry/exit responses and moving-root rank1 slopes
+−.01507687±.00059341 /−.01461907±.00077046 at N260/N340, while original U
+is unresolved. This is a different source from lag1, not an instantaneous
+hazard, lag-independent limit or a new2.4M-sample replication.
 
 **Earlier P334 joint-clock and plateau analysis, `branch_only`:**
 [`a6304bad`](https://github.com/LightChainr/Matching-One/blob/a6304bad15214cac841b76f41e7b61ac61838786/notes/p334-euler-thermal-dipole.md)

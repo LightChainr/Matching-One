@@ -1,24 +1,26 @@
-version: 36
+version: 37
 updated: 2026-08-31
 latest_scientific_handoff:
   entry: docs/TEAM-COORDINATION.md
-  local_result_commit: 4daae57eef5c945aa050a95cd3d5d5d77582161b
-  local_result_report: results/norm4-lagged-source/REPORT.md
+  local_result_commit: 3847a5cfb0a7fe4454a86cc1bfd8ce4ee2e813f4
+  local_result_report: results/p154-fixed-clock-models/REPORT.md
+  local_budget_report: results/p154-clock-transmission-budget/REPORT.md
   preceding_local_result_commit: 58db48dd7b6257930ee5e704a37e438c0cf2faf1
   preceding_local_result_report: results/p398-stationary-arrangement/REPORT.md
-  execution_synthesis_commit: bc0a18c207e3b09f49ea6b6af6601471114d654a
+  execution_synthesis_commit: bde1a51ca95c74448265b670ba0d9a0d87915479
   execution_synthesis_report: notes/p334-prefix-response-projection-scientific-card.md
   execution_covariance_commit: ce20158a5928e55b67324cba7ed3a18a5c163b39
   execution_covariance_report: results/p334-birth-covariance-hierarchy-joint/score.json
   execution_integration_status: branch_only
   external_completed_commit: fb01c44aa45e4f8d37d52144e2ad7c4adfe6ce40
   external_pr: 509
-  latest_external_handoff_commit: 8ad30617b0a3076a5c01a208eb213096d8879b32
+  latest_external_handoff_commit: 04743caf1450d5f88cae2747e0dbee36d7cd8ca1
+  latest_external_reports: [experiments/p154-temporal-source-20260831/REPORT.md, experiments/p334-prefix-prediction-20260831/REPORT.md, experiments/p334-conditional-shape-20260831/results/REPORT.md]
   external_local_rank_result_commit: 7beb99ce86df903ec41ee2ec2a1de59184cf5b6b
   decision_sheet: docs/DECISION-EXPERIMENTS.md
   decision_contract: analysis/prospective_mechanism_decisions.yaml
   execution_freeze_report: notes/p334-independent-intervention-freeze.md
-  boundary: local_results_open_PR267_old_archives_discovery_P334_branch_only_scientific_comparison_frozen_producer_SHA_pending_no_new_production_result_at_cited_pin
+  boundary: local_clock_comparison_open_PR267_discovery_P334_producer_sealed_dispatch_reports_pre_generation_no_result_at_cited_pin_PR509_three_new_discovery_reports_completed
 purpose: >
   Lightweight navigation/provenance index. Registry conflicts never block
   science; claim strength lives in STATUS and priority lives in NEXT-TARGETS.
@@ -290,6 +292,29 @@ channel_semantics:
   required_fields: [topology_channel, combination, probability_coordinate, orientation_order, normalization, quantity]
 
 registered_reanalyses:
+  - id: PR267_P154_FIXED_CLOCK_MODELS_AND_BUDGET
+    status: completed_two_fixed_laws_pooled_calibration_and_joint_uncertainty
+    integration_status: open_pr
+    pr: 267
+    branch: research/navigation-priority-refresh-20260829
+    commit: 3847a5cfb0a7fe4454a86cc1bfd8ce4ee2e813f4
+    scripts: [scripts/analyze_p154_fixed_clock_models.py, scripts/analyze_p154_clock_transmission_budget.py]
+    contracts: [analysis/p154_fixed_clock_models.json, analysis/p154_clock_transmission_budget.json]
+    outputs: [results/p154-fixed-clock-models/REPORT.md, results/p154-fixed-clock-models/latest.json, results/p154-clock-transmission-budget/REPORT.md, results/p154-clock-transmission-budget/latest.json]
+    dependency_groups: [crn-2026105401-8200000000-9200000000, crn-2026105402-8200000000-9200000000]
+    result_summary: pure_cos4_relative_clock_directional_predictions_fail31to35SE_scalar_U_forecast0p01to0p018_calibration_uncertainty_covers_zero_and8M_resolution_is_much_larger
+    boundary: old_archive_finite_law_elimination_not_scalar_confirmation_or_CFT_identity_no_new_random_samples
+    next_output: explicit_affordable_original_U_prediction_not_angular_gain_or_lag_scan_or_automatic_huge_production
+  - id: PR509_LONGER_SOURCE_BG_PREDICTION_AND_SHAPE
+    status: completed_three_discovery_analyses
+    integration_status: open_pr
+    pr: 509
+    branch: research/results-first-synthesis-20260831
+    commit: 04743caf1450d5f88cae2747e0dbee36d7cd8ca1
+    outputs: [experiments/p154-temporal-source-20260831/REPORT.md, experiments/p334-prefix-prediction-20260831/REPORT.md, experiments/p334-conditional-shape-20260831/results/REPORT.md]
+    result_summary: longer_lag_population_response_U_unresolved_BG_heldout_gain_and_conditional_shape_response_completed
+    boundary: different_sources_and_populations_old2p4M_norm4_and_old20batch_P334_not_independent_confirmation_or_direct_source_normal_M0_verdict
+    next_output: consume_as_discovery_in_existing_two_comparisons_no_repeat_requested
   - id: PR484_ETOP_N400_PRODUCTION_AND_SCALE_TRANSPORT
     status: completed_fresh_eight_million_four_hundred_batch_three_shape_production_and_N100_N400_analysis
     integration_status: open_pr

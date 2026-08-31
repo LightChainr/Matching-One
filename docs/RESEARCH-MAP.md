@@ -14,9 +14,20 @@ or treating failure of one parameterization as failure of its whole research lin
 The execution team's [#334 freeze at `bc0a18c207e3b09f49ea6b6af6601471114d654a`](https://github.com/LightChainr/Matching-One/blob/bc0a18c207e3b09f49ea6b6af6601471114d654a/notes/p334-independent-intervention-freeze.md)
 already declares M0 complete two-score label closure versus M1 transportable
 source-normal response,1M fresh prefixes, primary T with forecast3.6565e−8,
-δ=1e−8 and T±3SE at fixed budget. Producer SHA awaits dispatch; no result
-exists at this pin. It is a `branch_only` frozen design, not another missing
-planning task. #154 remains a candidate, not yet frozen or prospective evidence.
+δ=1e−8 and T±3SE at fixed budget. The later
+[dispatch at `bde1a51c`](https://github.com/LightChainr/Matching-One/blob/bde1a51ca95c74448265b670ba0d9a0d87915479/notes/p334-independent-intervention-dispatch.json)
+seals producer `513552c7`, integration `6928b3d8` and two-machine allocation.
+It reports pre-generation, with no result at that pin; it is not a live monitor.
+
+**#154 now has a concrete model elimination**, `open_pr #267`, `3847a5cf`:
+[pure cos4 relative birth-clock shifts](../results/p154-fixed-clock-models/REPORT.md)
+fail the fixed entry/completion directional predictions by31–35 paired SE.
+Scalar shifts remain compatible at the root but predict tiny U responses,
+with [calibration uncertainty](../results/p154-clock-transmission-budget/REPORT.md)
+covering zero. State: two activation clocks; source: lag1 rank-centered bulk
+cluster count; observer: entry/completion versus original root-comoving U;
+geometry: original N260/N340 direction pairs; acquisition: old-data model
+comparison. This is neither a new field identity nor prospective confirmation.
 
 **New norm4 temporal measurement, `open_pr #267`, `4daae57eef5c945aa050a95cd3d5d5d77582161b`:**
 [A source centered within previous occupancy/rank](../results/norm4-lagged-source/REPORT.md)
@@ -57,9 +68,12 @@ The different populations are explicit; neither share is response R² or predict
 PR #509 `7beb99ce` also completes targeted64: local A determinant means are
 `1.15937e−8±2.14282e−9` / `1.49767e−8±1.97301e−9`; E/gap remains weak.
 [The contact/local-rank handoff](../notes/p334-contact-and-local-rank-handoff-20260831.md)
-records already-claimed held-out `J=B G_score`/contact and cell00 shape work,
-still undelivered in the current card. These old-prefix analyses refine discovery;
-the independent decision now has the execution team's frozen two-model protocol above.
+records the preceding state. The later #509 `04743caf` delivers held-out
+`J=BG` (A risk reduction38–39%, center54–59%) and nonzero cell00
+center-variance response, detailed in [Status](STATUS.md). These refine an
+approximate local-mean prediction and challenge deterministic conditional
+translation respectively. They remain old-prefix discovery and do not directly
+judge the frozen source-normal complete-mean closure above.
 
 All views retain the original twenty batches per N325/N425. Common covariance
 extends `b582015e`→`e2ef9983`→`ce20158a` (20,754 coordinates per N),

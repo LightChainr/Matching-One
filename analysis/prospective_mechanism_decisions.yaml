@@ -15,7 +15,7 @@ policy:
 experiments:
   - id: P154_TEMPORAL_TRANSMISSION
     issue_refs: [154, 275]
-    status: candidate_decision_regions_numerical_model_predictions_not_frozen
+    status: fixed_clock_comparison_completed_pure_fourfold_law_incompatible_scalar_U_forecast_not_affordably_separated
     production_launched: false
     discovery_commit: 4daae57eef5c945aa050a95cd3d5d5d77582161b
     discovery_paths: [results/norm4-lagged-source/REPORT.md, results/norm4-lagged-source/latest.json]
@@ -26,6 +26,16 @@ experiments:
     primary_readout_candidate: original_U_source_derivative_V_and_additive_V0_V1
     supporting_readout: moving_root_rank1_response
     prediction_map: docs/DECISION-EXPERIMENTS.md
+    completed_clock_comparison:
+      commit: 3847a5cfb0a7fe4454a86cc1bfd8ce4ee2e813f4
+      paths: [results/p154-fixed-clock-models/REPORT.md, results/p154-fixed-clock-models/latest.json, results/p154-clock-transmission-budget/REPORT.md, results/p154-clock-transmission-budget/latest.json]
+      integration_status: open_pr
+      sizes: [260, 340]
+      rejected_parameterization: pure_cos4_relative_rigid_birth_clock_after_only_pooled_calibration_entry_completion_residuals31to35SE
+      surviving_baseline: scalar_relative_rigid_birth_clock_not_confirmed
+      U_forecasts: [{N: 260, value: 0.0098017095, SE: 0.0232779337}, {N: 340, value: 0.0175267424, SE: 0.0281690266}]
+      reference8M_3SE_resolution: [0.7659938618, 1.2539905237]
+      boundary: discovery_model_elimination_no_new_samples_or_adaptive_search_adjusted_certificate
     regions:
       A: abs_V_le_delta_U_and_Rdot_lt_minus_delta_R_at_both_sizes_allows_channel_cancellation
       B: predicted_sign_V_gt_delta_U_and_predicted_sign_V0_minus_abs_V1_gt_eta_at_both_sizes
@@ -40,13 +50,16 @@ experiments:
     next_deliverable: numerical_prediction_and_affordable_joint_separation_then_new_random_block_not_more_discovery_coordinates
   - id: P334_SOURCE_NORMAL_INTERVENTION
     issue_refs: [334, 429]
-    status: scientific_prediction_and_budget_frozen_producer_SHA_pending_no_result_at_source_pin
-    source_commit: bc0a18c207e3b09f49ea6b6af6601471114d654a
+    status: scientific_prediction_budget_and_producer_sealed_dispatch_reports_pre_generation_no_result_at_pin
+    source_commit: bde1a51ca95c74448265b670ba0d9a0d87915479
     source_path: notes/p334-independent-intervention-freeze.md
     integration_status: branch_only
     branch: analysis/p334-paired-clock-loading-20260831
     scientific_freeze_commit: 43079652788ad39236219d2b712e33f1b320a71d
     projection_clarification_commit: bc0a18c207e3b09f49ea6b6af6601471114d654a
+    dispatch_path: notes/p334-independent-intervention-dispatch.json
+    producer_commit: 513552c77f035526efb99075b54032d288b2f4bb
+    producer_integrated_commit: 6928b3d861d2f4ce1ee93446c02e6a44e56832a6
     owner_in_source: mathematics_execution_team
     duplicate_production_by_PR267: false
     production_observation: no_result_at_fixed_source_pin_not_live_job_monitor
@@ -76,4 +89,4 @@ experiments:
     old_data_pooled_into_confirmation: false
     source_host_plan: {N325: NePnUn, N425: 551oUR}
     host_plan_is_reservation: false
-    next_deliverable: producer_SHA_before_dispatch_then_fixed_new_population_score_and_uncertainty
+    next_deliverable: fixed_new_population_score_and_uncertainty_from_the_existing_sealed_producer

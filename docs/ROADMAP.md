@@ -15,8 +15,17 @@ The [P398 size/arrangement comparison](../results/p398-stationary-arrangement/RE
 transition closure (32/60 classes fail). P334 hierarchy/contact/local A-rank
 are complete at `43a30e49`/`7beb99ce`; old-prefix held-out or new-suffix views
 do not substitute for a new population intervention. Execution's later
-`bc0a18c2` already freezes the independent1M-prefix M0/M1 comparison; its
-producer SHA and new result are the next delivery, not another design round.
+`bc0a18c2` freezes the independent1M-prefix M0/M1 comparison; `bde1a51c`
+now seals its producer and two-machine dispatch, still pre-generation at that
+pin. #509 `04743caf` completes old-prefix prediction/shape and longer-lag
+source, so none remains a first-readiness task.
+
+The new [two-clock comparison](../results/p154-fixed-clock-models/REPORT.md),
+`3847a5cf`, removes the pure-fourfold relative shift before new production.
+The surviving scalar baseline predicts original-U effects around.01/.018;
+[paired calibration uncertainty and budget](../results/p154-clock-transmission-budget/REPORT.md)
+do not support an affordable separation from zero. #154 next needs a
+discriminating U prediction, not a new descriptor or an automatic huge run.
 [Repository handoff](TEAM-COORDINATION.md)
 records these results without routine cross-task messages.
 

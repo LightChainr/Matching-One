@@ -1,6 +1,6 @@
 # Three-team scientific handoff / 三队协作入口
 
-Updated: **2026-08-31**, pinned deliveries `bc0a18c2` / `8ad30617`. This is a result-routing entry, not a second
+Updated: **2026-08-31**, pinned handoffs `bde1a51c` / `04743caf` / `3847a5cf`. This is a result-routing entry, not a second
 priority board or a live process monitor. [Next Targets](NEXT-TARGETS.md) remains
 the single attention order; [the machine-readable handoff](../analysis/team_coordination.yaml)
 records source pins and the state reported by each team.
@@ -12,13 +12,24 @@ already-delivered/claimed old-prefix work as discovery; further descriptors,
 Hessians and generic certificates do not automatically enter the primary queue.
 This changes attention, not Issue state or another team's running process.
 
+**Only these two comparisons remain P0.** The new [fixed-clock comparison](../results/p154-fixed-clock-models/REPORT.md)
+removes the pure cos(4θ) relative-clock law on old data (31–35-SE paired
+entry/completion residuals). The scalar law is not excluded, but its U
+forecasts `.00980±.02328` / `.01753±.02817` do not support claiming that an8M
+block can distinguish them from zero. [The budget calculation](../results/p154-clock-transmission-budget/REPORT.md)
+includes calibration uncertainty. #334 retains its frozen independent
+population comparison; its dispatch record seals the producer and two hosts,
+but still says **frozen before formal generation**, with no production result
+at the recorded pin. This handoff only reads repository artifacts; it does not
+start, inspect or alter a machine.
+
 ## Current complementary work
 
 | Team | Delivered / active contribution | Next handoff |
 |---|---|---|
-| **数学研究执行** | Branch-only `bc0a18c2` adds a frozen source-normal M0/M1 intervention after completing original00≈20% residual and curvature discovery. The earlier hierarchy/contact stages are complete. | Existing1M-fresh-prefix comparison: append producer SHA before dispatch and publish fixed T±3SE against delta1e−8. No result at this pin; no duplicate #267 launch. |
-| **数学研究总览** | Draft [PR #267](https://github.com/LightChainr/Matching-One/pull/267): [norm4 lagged-source response](../results/norm4-lagged-source/REPORT.md) `4daae57e` and [P398 size/arrangement](../results/p398-stationary-arrangement/REPORT.md) `58db48dd` complete. | Compress the two prospective comparisons. The new results are discovery inputs; no new cloud production launched. |
-| **数学研究俯瞰** | Three packages at `fb01c44a` plus completed targeted64 local-rank package `7beb99ce`, included in `8ad30617`: local A and integrated-A determinant means positive at both N; E/gap and fourth-order square remain weak. | Already-claimed held-out `J=B G_score`/fixed-contact prediction and cell00 conditional-shape analysis; not delivered at these pins, live execution unobserved. Reuse existing census/new64, without repeating the completed increment. |
+| **数学研究执行** | Branch-only `bde1a51c` retains the `bc0a18c2` source-normal M0/M1 freeze and seals producer `513552c7` plus NePnUn/551oUR in the dispatch JSON. Hierarchy, contact and curvature discovery are complete. | The planned1M-fresh-prefix comparison remains frozen before formal generation at this pin; no production result. Publish fixed T±3SE against delta1e−8 when actually delivered; no duplicate #267 launch. |
+| **数学研究总览** | Draft [PR #267](https://github.com/LightChainr/Matching-One/pull/267), `3847a5cf`: fixed scalar/fourfold clock comparison and calibrated U budget are complete. Pure fourfold fails; scalar survives these root-level contrasts without confirmation. | Keep #154 on a measurable original-U transmission prediction. The present tiny scalar forecast does not justify an8M zero-versus-clock production claim. Two P0 comparisons only; repository-only coordination. |
+| **数学研究俯瞰** | `04743caf` completes three further analyses: lag `ceil(sqrt N)` temporal source on old permutations, held-out constant-versus-BG prediction, and cell00 conditional shape on old prefixes. | These are completed discovery inputs, not fresh-prefix confirmation. Carry their model distinctions into the existing #154/#334 comparisons; do not repeat their first analysis or relabel BG as a completed four-contact held-out model. |
 
 The execution result is **branch_only**, on
 `analysis/p334-paired-clock-loading-20260831`, with no corresponding PR in the
@@ -26,10 +37,50 @@ The execution result is **branch_only**, on
 and [PR #267 pointer](https://github.com/LightChainr/Matching-One/pull/267#issuecomment-5476674567)
 are discussion links, not code integration. PR #509 retains its observed
 open/Draft lifecycle; the current delivery pin is
-`8ad30617b0a3076a5c01a208eb213096d8879b32`, including final targeted64 result
+`04743caf1450d5f88cae2747e0dbee36d7cd8ca1`. Earlier `8ad30617` includes final targeted64 result
 `7beb99ce86df903ec41ee2ec2a1de59184cf5b6b`. The earlier `ac5761ce` running
 report is history, superseded by that completed package; this is not a new live API/process check.
 PR #267 also remains open and Draft; references to #509 do not merge its code.
+
+## Latest completed fixed-clock and prediction handoffs
+
+At `3847a5cfb0a7fe4454a86cc1bfd8ce4ee2e813f4`, #267 calibrates exactly two
+clock laws from pooled rank1 response/root motion, leaving direction contrasts
+and original U as predictions. Pure cos4 relative shifts miss N260/N340
+entry/completion contrasts by31–35 SE. Scalar contrasts remain compatible
+(absolute residuals.19–1.21 SE), but scalar U forecasts are only
+`.00980±.02328` / `.01753±.02817`. For a hypothetical8M new permutations per N,
+the unchanged-efficiency3SE resolutions are.766/1.254; including the fixed
+prediction uncertainty yields no finite zero-separation budget under that
+formula. This is old-data elimination of one fixed law, not scalar confirmation
+or an instruction to launch more production. Reports: [models](../results/p154-fixed-clock-models/REPORT.md),
+[transmission budget](../results/p154-clock-transmission-budget/REPORT.md).
+
+At `04743caf1450d5f88cae2747e0dbee36d7cd8ca1`, #509 supplies:
+
+- **Temporal source, lag `ceil(sqrt N)` — completed:** earlier-rank-centered
+  cluster geometry suppresses later entry/exit on all six tori; the early-rank1
+  source affects exit only. Original U remains unresolved. This is a distinct
+  time/source definition on the same2.4M old permutations, not another sample
+  block or the previous one-step derivative.
+- **Held-out BG prediction — completed:** compared with an equal-parameter
+  constant response in old cell00, A risk falls38.17%/39.37% and normalized
+  center risk54.42%/58.65%. Original batches are held out, with all folds refit
+  under deletion. This is genuine group-held-out improvement in the discovery
+  block, not fresh-population confirmation, cross-N transfer, four-contact
+  R-squared or full conditional-label closure.
+- **Conditional shape — completed:** combined72 gives center-variance
+  `minus→D` responses `−2.43469e−8±5.32765e−9` / `−1.27127e−8±3.30315e−9`.
+  Fixed-prefix deterministic translation cannot explain those shape responses;
+  the squared shape energy remains unresolved. Cell00 contributions retain the
+  original20000 denominator and old-prefix dependence.
+
+Exact report paths at that pin are
+`experiments/p154-temporal-source-20260831/REPORT.md`,
+`experiments/p334-prefix-prediction-20260831/REPORT.md`, and
+`experiments/p334-conditional-shape-20260831/results/REPORT.md`.
+BG success and conditional shape do not settle the source-normal center
+question: the `bc0a18c2` M0 zero / M1 T=3.6565e−8 forecasts remain unchanged.
 
 ## New global-source result and its scientific implication
 
@@ -57,8 +108,12 @@ motivate a prospective transmission comparison; they are not its confirmation.
 New64/old8 original00 reuse now leaves about20% signed loading outside the
 four-contact span. It is not the earlier broader receiver-R0 pool below.
 The forecast T=3.6565e−8 is a separate source-normal response, not that loading
-residual's numerical value. The frozen comparison has no production result at
-this pin; #267 routes the existing plan rather than commissioning another one.
+residual's numerical value. The `bde1a51ca95c74448265b670ba0d9a0d87915479`
+dispatch record `notes/p334-independent-intervention-dispatch.json` now seals
+producer `513552c77f035526efb99075b54032d288b2f4bb` and planned hosts
+NePnUn/551oUR. Its status remains `frozen before formal generation`, with no
+production result at the pin. #267 routes this existing plan rather than
+commissioning another one; a dispatch filename is not evidence of a completed run.
 
 **Preceding mechanism handoff: [contact and local rank](../notes/p334-contact-and-local-rank-handoff-20260831.md).**
 The hierarchy has already located most covariance response between prefix
@@ -70,9 +125,11 @@ Targeted64 separately gives local A determinant means
 `1.15937e−8±2.14282e−9` / `1.49767e−8±1.97301e−9` at N325/N425;
 integrated A supports two birth-center responses. It challenges pointwise
 rank≤1 for this conditional-mean Jacobian, not every scalar latent-law model.
-The already-claimed prediction work is recorded in
+The original prediction claim is recorded in
 [`43a30e49`'s scientific card](https://github.com/LightChainr/Matching-One/blob/43a30e49fdfcd38cdc9e085346c9e7eb49fa7650/notes/p334-prefix-response-projection-scientific-card.md);
-its completed result is not present at the fixed delivery pins.
+its BG-versus-constant result and conditional-shape companion are now completed
+at `04743caf`, as summarized above. The historical claim also mentioned fixed
+contact prediction; the new BG report does not claim that separate model.
 
 **Earlier joint-clock result:** [a6304bad](https://github.com/LightChainr/Matching-One/blob/a6304bad15214cac841b76f41e7b61ac61838786/notes/p334-euler-thermal-dipole.md)
 separates continuous uniform-order timing from intrinsic birth-rank covariance.
@@ -147,8 +204,9 @@ The local workspace index points here; it need not duplicate this scientific que
 User preference updated 2026-08-31: **write routine coordination in the repository;
 reduce cross-task messages.** No periodic team pings or per-commit notifications.
 
-The updated Huawei Skill was read and its two-account list queried: all ten
-independent containers were Ready in this work block. The user authorizes
+An earlier work block read the updated Huawei Skill and reported all ten
+independent containers Ready. That is a historical observation, not a query
+performed for this repository-only update. The user authorizes
 direct named-machine use without team permission messages. Record unique run
 directories, frozen prediction/code pins and random domains; schedule by actual
 cgroup limits. No startup, SSH, tunnel or cloud job occurred here. Old five-host
