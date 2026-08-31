@@ -1,0 +1,106 @@
+{
+  "candidates": [
+    {
+      "cost": "4",
+      "feasible_interval": [
+        "0",
+        "0"
+      ],
+      "forecast_interval": [
+        "1",
+        "1"
+      ],
+      "id": "morphism-sensitive-row"
+    },
+    {
+      "cost": "1",
+      "feasible_interval": [
+        "0",
+        "0"
+      ],
+      "forecast_interval": [
+        "1/7",
+        "1/7"
+      ],
+      "id": "semantic-zero-row"
+    },
+    {
+      "cost": "1/2",
+      "feasible_interval": [
+        "-1/10",
+        "1/10"
+      ],
+      "forecast_interval": [
+        "0",
+        "1/5"
+      ],
+      "id": "overlapping-endpoint-row"
+    }
+  ],
+  "claim_boundary": {
+    "excluded": "forecast probabilities, variance estimation, multidimensional certificate sensitivity, candidate generation, CPU benchmarking, acquisition authorization, or physical conclusions",
+    "included": "exact deterministic ranking for supplied one-dimensional feasible/forecast intervals and declared rational costs",
+    "parent_issue": "remain open"
+  },
+  "claim_level": "exact_design_control",
+  "dependency_group": "synthetic-exact-certificate-boundary-ranking",
+  "issue": 370,
+  "ranking": [
+    {
+      "cost": "4",
+      "disjoint": true,
+      "feasible_interval": [
+        "0",
+        "0"
+      ],
+      "forecast_interval": [
+        "1",
+        "1"
+      ],
+      "id": "morphism-sensitive-row",
+      "margin_per_cost": "1/4",
+      "rank": 1,
+      "separation_margin": "1"
+    },
+    {
+      "cost": "1",
+      "disjoint": true,
+      "feasible_interval": [
+        "0",
+        "0"
+      ],
+      "forecast_interval": [
+        "1/7",
+        "1/7"
+      ],
+      "id": "semantic-zero-row",
+      "margin_per_cost": "1/7",
+      "rank": 2,
+      "separation_margin": "1/7"
+    },
+    {
+      "cost": "1/2",
+      "disjoint": false,
+      "feasible_interval": [
+        "-1/10",
+        "1/10"
+      ],
+      "forecast_interval": [
+        "0",
+        "1/5"
+      ],
+      "id": "overlapping-endpoint-row",
+      "margin_per_cost": "0",
+      "rank": 3,
+      "separation_margin": "0"
+    }
+  ],
+  "schema": "matching-one/exact-certificate-boundary-ranking/v1",
+  "utility": "closed-interval separation margin divided by declared positive cost",
+  "verification": {
+    "candidate_count": 3,
+    "disjoint_count": 2,
+    "status": "exact_boundary_ranking_verified",
+    "top_candidate": "morphism-sensitive-row"
+  }
+}
