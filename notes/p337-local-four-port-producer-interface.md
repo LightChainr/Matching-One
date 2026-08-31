@@ -1,5 +1,10 @@
 # Local four-port producer staged; execution awaits contract and GO
 
+Execution update: both theory gates were accepted and the coordinator gave
+explicit GO. The single enumeration per geometry is now complete; see
+[raw outputs and receipts](../results/p337-local-four-port-insertion/README.md).
+The text below records the original staging interface. No response was scored.
+
 Base: `bea717e826df5a22518774b1725ae7bcbe2cb801`.
 Root's subsequent frozen contract: `d7f15e68:analysis/p337_local_pair_insertion_contract.json`.
 Producer: `scripts/p337_local_four_port_exact.cpp`.
