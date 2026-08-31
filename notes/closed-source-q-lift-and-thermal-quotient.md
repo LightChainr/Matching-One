@@ -12,6 +12,11 @@ after observing a derivative. It does not prove Potts universality for
 the resulting family. All statements through section 4 are finite-volume
 identities; section 5 is an explicit conditional scaling prediction.
 
+The earlier [Q-lift transport](https://github.com/LightChainr/Matching-One/blob/c34c838cd391fae890de72d732cc53279757263b/notes/generic-q-lift-semantics.md)
+already distinguished the homology and critical-polynomial lifts. The new
+step here is the fixed microscopic source selecting one complete measure,
+path and sector normalization, not a new proof that generic lifts differ.
+
 ## 1. An exact three-parameter positive family
 
 Use the same honest square torus, occupied site count K, occupied NN edge
@@ -134,6 +139,11 @@ is the response to an independent local occupied-edge coupling at fixed
 Q. Therefore the difference between two named Q continuations is exactly
 one existing microscopic statistic, not an unspecified normalization
 ambiguity or a new feature search.
+
+At the iid root, B itself has an exact density-free representative. With
+`T_2=sum_(ij NN) (n_i-p0)(n_j-p0)` and the same fixed p0 in all terms,
+four-regularity gives `B=T_2+4p0 K-2N p0^2`. Hence `D_B U=D_(T_2)U`
+by (6). No assumption about CFT scaling is needed for this local control.
 
 For reference, the fixed-density rank score is already determined by
 the existing q/E state, geometry by geometry:
