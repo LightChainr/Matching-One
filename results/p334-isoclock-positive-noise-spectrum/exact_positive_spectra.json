@@ -1,0 +1,370 @@
+{
+  "degree_energy_difference_double_star_minus_cycle": [
+    {
+      "exact": "0",
+      "value": 0.0
+    },
+    {
+      "exact": "1/64",
+      "value": 0.015625
+    },
+    {
+      "exact": "-1/32",
+      "value": -0.03125
+    },
+    {
+      "exact": "1/64",
+      "value": 0.015625
+    },
+    {
+      "exact": "0",
+      "value": 0.0
+    },
+    {
+      "exact": "0",
+      "value": 0.0
+    }
+  ],
+  "exact_variance_difference_for_fixed_p_half": "rho*(1-rho)^2/64",
+  "fixed_p": {
+    "exact": "1/2",
+    "value": 0.5
+  },
+  "mask_active_probability_a": {
+    "exact": "2/3",
+    "value": 0.6666666666666666
+  },
+  "network_DP_solves": 0,
+  "new_N425_samples": 0,
+  "new_samples": 0,
+  "parent_commit": "a11d649991340bb77af850bb59713a86ffe90c9b",
+  "records": [
+    {
+      "degree_energies_including_E0": [
+        {
+          "exact": "49/256",
+          "value": 0.19140625
+        },
+        {
+          "exact": "5/32",
+          "value": 0.15625
+        },
+        {
+          "exact": "7/128",
+          "value": 0.0546875
+        },
+        {
+          "exact": "1/32",
+          "value": 0.03125
+        },
+        {
+          "exact": "1/256",
+          "value": 0.00390625
+        },
+        {
+          "exact": "0",
+          "value": 0.0
+        }
+      ],
+      "degree_energy_numerators_over256": [
+        49,
+        40,
+        14,
+        8,
+        1,
+        0
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "name": "double_star",
+      "nonconstant_total_energy": {
+        "exact": "63/256",
+        "value": 0.24609375
+      },
+      "pivotal_probabilities_at_p_half": [
+        {
+          "exact": "5/8",
+          "value": 0.625
+        },
+        {
+          "exact": "3/8",
+          "value": 0.375
+        },
+        {
+          "exact": "1/8",
+          "value": 0.125
+        },
+        {
+          "exact": "1/8",
+          "value": 0.125
+        },
+        {
+          "exact": "1/4",
+          "value": 0.25
+        }
+      ],
+      "safe_mean": {
+        "exact": "7/16",
+        "value": 0.4375
+      },
+      "safe_variance": {
+        "exact": "63/256",
+        "value": 0.24609375
+      },
+      "same_mask_conditional_response_variance_rho_half": {
+        "exact": "393/4096",
+        "value": 0.095947265625
+      },
+      "same_mask_two_replica_safe_product_expectation": {
+        "exact": "1177/4096",
+        "value": 0.287353515625
+      },
+      "singleton_walsh_coefficients": [
+        {
+          "exact": "5/16",
+          "value": 0.3125
+        },
+        {
+          "exact": "3/16",
+          "value": 0.1875
+        },
+        {
+          "exact": "1/16",
+          "value": 0.0625
+        },
+        {
+          "exact": "1/16",
+          "value": 0.0625
+        },
+        {
+          "exact": "1/8",
+          "value": 0.125
+        }
+      ],
+      "truth_table_size": 32,
+      "walsh_basis": "chi_S(x)=(-1)^sum_{i in S}x_i; p=1/2 orthonormal product basis",
+      "walsh_numerators_over32": [
+        14,
+        10,
+        6,
+        2,
+        2,
+        -2,
+        2,
+        -2,
+        2,
+        -2,
+        2,
+        -2,
+        2,
+        -2,
+        2,
+        -2,
+        4,
+        4,
+        -4,
+        -4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "degree_energies_including_E0": [
+        {
+          "exact": "49/256",
+          "value": 0.19140625
+        },
+        {
+          "exact": "9/64",
+          "value": 0.140625
+        },
+        {
+          "exact": "11/128",
+          "value": 0.0859375
+        },
+        {
+          "exact": "1/64",
+          "value": 0.015625
+        },
+        {
+          "exact": "1/256",
+          "value": 0.00390625
+        },
+        {
+          "exact": "0",
+          "value": 0.0
+        }
+      ],
+      "degree_energy_numerators_over256": [
+        49,
+        36,
+        22,
+        4,
+        1,
+        0
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "name": "C4_plus_isolate",
+      "nonconstant_total_energy": {
+        "exact": "63/256",
+        "value": 0.24609375
+      },
+      "pivotal_probabilities_at_p_half": [
+        {
+          "exact": "3/8",
+          "value": 0.375
+        },
+        {
+          "exact": "3/8",
+          "value": 0.375
+        },
+        {
+          "exact": "3/8",
+          "value": 0.375
+        },
+        {
+          "exact": "3/8",
+          "value": 0.375
+        },
+        {
+          "exact": "0",
+          "value": 0.0
+        }
+      ],
+      "safe_mean": {
+        "exact": "7/16",
+        "value": 0.4375
+      },
+      "safe_variance": {
+        "exact": "63/256",
+        "value": 0.24609375
+      },
+      "same_mask_conditional_response_variance_rho_half": {
+        "exact": "385/4096",
+        "value": 0.093994140625
+      },
+      "same_mask_two_replica_safe_product_expectation": {
+        "exact": "1169/4096",
+        "value": 0.285400390625
+      },
+      "singleton_walsh_coefficients": [
+        {
+          "exact": "3/16",
+          "value": 0.1875
+        },
+        {
+          "exact": "3/16",
+          "value": 0.1875
+        },
+        {
+          "exact": "3/16",
+          "value": 0.1875
+        },
+        {
+          "exact": "3/16",
+          "value": 0.1875
+        },
+        {
+          "exact": "0",
+          "value": 0.0
+        }
+      ],
+      "truth_table_size": 32,
+      "walsh_basis": "chi_S(x)=(-1)^sum_{i in S}x_i; p=1/2 orthonormal product basis",
+      "walsh_numerators_over32": [
+        14,
+        6,
+        6,
+        -2,
+        6,
+        6,
+        -2,
+        -2,
+        6,
+        -2,
+        6,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "replica_proposal_probability_u": {
+    "exact": "3/4",
+    "value": 0.75
+  },
+  "scope": "Exact constructed finite pair-trigger example. It is not an observed N425 spectrum or the P437 N112 C3 observer; only the positive noise-degree identity is shared.",
+  "selected_rho": {
+    "exact": "1/2",
+    "value": 0.5
+  },
+  "selection": "Only the prescribed double-star and C4+isolate safe indicators; no graph-family scan",
+  "source_artifact": "results/p334-isoclock-marked-counterexample/exact_marked_clock.json",
+  "strict_variance_order": "double_star > C4_plus_isolate for every 0<rho<1; equal at rho0 and rho1",
+  "truth_table_source_commit": "250c589958fc09c52380feb4c99276c8e9c9455b",
+  "variance_difference_at_rho_half": {
+    "exact": "1/512",
+    "value": 0.001953125
+  }
+}
