@@ -1,6 +1,6 @@
-# Regular-pair spatial producer: prepared, not run
+# Regular-pair spatial producer and completed fixed run
 
-`scripts/p337_regular_pair_spatial_sampler.cpp` is the minimal fresh-iid reader of the prescribed two-site regular-pair Q-jet kernel. It has not sampled configurations. Contract `3210aeb338ca7bb52c799d1de9048232f50ab921:analysis/p337_regular_pair_spatial_contract.json` fixes `L=32,64`, `p_ref=0.592746050790` and 200 batches of 1000 configurations per size. Seeds are `2026083123593201` and `2026083123596401`, respectively. The final accepted exact kernel and root GO are still required before execution.
+`scripts/p337_regular_pair_spatial_sampler.cpp` is the minimal fresh-iid reader of the prescribed two-site regular-pair Q-jet kernel. Contract `3210aeb338ca7bb52c799d1de9048232f50ab921:analysis/p337_regular_pair_spatial_contract.json` fixes `L=32,64`, `p_ref=0.592746050790` and 200 batches of 1000 configurations per size. Seeds are `2026083123593201` and `2026083123596401`, respectively. After acceptance of kernel `32ff99fa` and theorem `7f60e92d`, the root gave GO and these two fixed blocks completed once. Raw results and the complete execution receipt are in `results/p337-regular-pair-spatial/`; no scoring was done by this producer task.
 
 ## Fixed geometry and observable
 
@@ -16,7 +16,7 @@ Each CSV row is one batch of configurations. It stores `samples`, `pairs=32*samp
 
 SE/covariance will be calculated across the original batches. The kernel lookup and production contract hashes belong in the root's run receipt. This producer saves an adjacent `OUTPUT.metadata.json` only after completing the CSV, with the exact RNG rule, implemented probability, seed, sample count and elapsed time.
 
-## Reproducible invocation, pending frozen values
+## Reproducible invocation
 
 ```sh
 clang++ -std=c++17 -O3 scripts/p337_regular_pair_spatial_sampler.cpp -o /private/tmp/p337_regular_pair_spatial_sampler
