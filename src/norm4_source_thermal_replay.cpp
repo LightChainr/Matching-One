@@ -1,4 +1,5 @@
-// Reobserve the first 100,000 OLD norm-4 production permutations at every K.
+// Reobserve OLD norm-4 production permutations at every K. The default remains
+// the original first 100,000; an explicit endpoint increment cannot repeat them.
 // The driver includes the immutable bfab0330 backend, including its original
 // quotient labels, homology arithmetic and counter-keyed Fisher--Yates RNG.
 // No Bernoulli draw, probability point, or new permutation counter is added.
@@ -12,9 +13,7 @@
 namespace {
 using ReplayInt = std::int64_t;
 using ReplayCell = std::array<ReplayInt, 6>;
-constexpr std::uint64_t replay_samples = 100000;
 constexpr int replay_batches = 100;
-constexpr std::uint64_t replay_batch_samples = replay_samples / replay_batches;
 
 // This is the old activation loop continued after the first rank-2 crossing.
 // Inactive UF singleton entries never count as occupied components.  A new
@@ -98,8 +97,19 @@ void write_filtration(std::ostream& out, int n, int a, int b, const char* direct
 
 int main(int argc, char** argv) {
     try {
-        if (argc != 3) throw std::invalid_argument("usage: norm4-source-thermal-replay N output.csv");
+        if (argc != 3 && argc != 5) {
+            throw std::invalid_argument("usage: norm4-source-thermal-replay N output.csv [old_offset samples]");
+        }
         const int n = std::stoi(argv[1]);
+        const std::uint64_t offset = argc == 5 ? std::stoull(argv[3]) : 0;
+        const std::uint64_t replay_samples = argc == 5 ? std::stoull(argv[4]) : 100000;
+        const std::uint64_t archive_size = n == 260 || n == 340 ? 1000000000ULL : 1900000000ULL;
+        if (replay_samples == 0 || replay_samples % replay_batches != 0 ||
+            offset > archive_size || replay_samples > archive_size - offset ||
+            (argc == 5 && (offset < 100000 || (n != 260 && n != 340)))) {
+            throw std::invalid_argument("increment must partition an unmarked old endpoint interval into 100 equal batches");
+        }
+        const std::uint64_t replay_batch_samples = replay_samples / replay_batches;
 #ifdef MATCHING_NORM4_INTEGER
         if (n != 260 && n != 340) throw std::invalid_argument("integer-period variant supports N260/N340 only");
 #else
@@ -120,7 +130,7 @@ int main(int argc, char** argv) {
 #endif
         const std::uint64_t seed = n == 260 ? 2026105401ULL :
                                    n == 340 ? 2026105402ULL : 2026104501ULL;
-        const std::uint64_t counter_begin = n == 260 || n == 340 ? 8200000000ULL : 5100000000ULL;
+        const std::uint64_t counter_begin = (n == 260 || n == 340 ? 8200000000ULL : 5100000000ULL) + offset;
         if (std::filesystem::exists(argv[2])) throw std::runtime_error("refusing to overwrite a replay artifact");
         std::ofstream out(argv[2]);
         if (!out) throw std::runtime_error("cannot create replay output");
