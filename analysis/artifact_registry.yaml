@@ -1,5 +1,5 @@
 version: 6
-updated: 2026-08-31
+updated: 2026-09-01
 purpose: >
   Lightweight navigation/provenance index. Registry conflicts never block
   science. Current claim strength lives only in docs/STATUS.md and current
@@ -127,6 +127,20 @@ current_decision_assets:
     sha: ef3b2c68f824e29421747c805ea7a505aca41908
     path: experiments/p337-homogeneous-n50-20260831/RESULT.md
     status: completed_exact_finite_transmission_no_automatic_extension
+    independent_primary: false
+
+  - id: P337_REGULAR_LOCAL_U
+    issue: 337
+    sha: 2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb
+    path: notes/regular-pair-interaction-result.md
+    status: completed_canonical_Q1_zero_mixed_original_U_nonzero
+    independent_primary: false
+  - id: P337_REGULAR_SPATIAL_SUPPORT
+    issue: 337
+    sha: baa5d33b2f87b2868aa0cb9d3f6518c93dbf3bff
+    path: experiments/p337-regular-spatial-support-20260901/RESULT.md
+    companion_path: notes/p337-fixed-m-relative-bound.md
+    status: completed_single_component_exclusion_and_canonical_probability_bound
     independent_primary: false
 
 continuum_controls:

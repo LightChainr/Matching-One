@@ -1,5 +1,5 @@
-version: 6
-updated: 2026-08-31
+version: 7
+updated: 2026-09-01
 purpose: >
   Compact machine-readable map of durable evidence and the current decision.
   Claim language lives in docs/STATUS.md; this ledger must not become a second
@@ -22,12 +22,12 @@ hard_constraints:
   - do_not_add_correlated_views_of_one_raw_random_block_as_independent_primary_evidence
 
 weekly_decision:
-  date: 2026-08-31
+  date: 2026-09-01
   objective: completed_transmission_decisions_and_named_policy_stops
   keep_live_issues: []
   broader_open_P1_issues: [154, 334, 337]
-  next_attention: fixed_m_oblique_twist_or_restricted_sector_odds_and_sampling_feasibility
-  frontier_sha: 2690f665bc8029cb2370d3f1efcef5eb2853705c
+  next_attention: fixed_canonical_multicomponent_spatial_transmission_and_actual_fixed_m_phase_control
+  frontier_sha: baa5d33b2f87b2868aa0cb9d3f6518c93dbf3bff
   historical_model_vocabulary:
     M0: lifecycle_current_only
     M1: contact_regulated_current
@@ -305,7 +305,33 @@ decision_evidence_blocks:
     parent_block: complete_N50_finite_population
     independent_primary: false
     outcome: V_S_strictly_positive_finite_zero_excluded_sign_continuation_survives
-    remaining: general_scale_or_local_pair_to_cut_mechanism_not_finite_N50_score
+    remaining: general_scale_and_continuum_mechanism_not_finite_N50_score
+
+  - id: D_P337_REGULAR_LOCAL_U
+    issue: 337
+    claim_level: exact_finite_canonical_mixed_original_U_response
+    geometry: original_N25_5_0_and_4_3
+    n_samples: 0
+    score_path: notes/regular-pair-interaction-result.md
+    sha: 2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb
+    parent_block: complete_N25_finite_population
+    independent_primary: false
+    outcome: direct_Q1_all_orders_zero_canonical_mixed_W_negative
+    remaining: specified_occupation_summed_spatial_response_not_another_single_mark_score
+
+  - id: D_P337_REGULAR_SPATIAL_SUPPORT
+    issue: 337
+    claim_level: exact_spatial_support_and_canonical_probability_bound
+    n_samples: 0
+    abstract_exterior_partitions: 4140
+    score_path: experiments/p337-regular-spatial-support-20260901/RESULT.md
+    companion_path: notes/p337-fixed-m-relative-bound.md
+    sha: baa5d33b2f87b2868aa0cb9d3f6518c93dbf3bff
+    parent_block: fixed_2ba8863f_canonical_kernel
+    independent_primary: false
+    outcome: at_most_one_shared_component_first_Q_transmission_excluded
+    canonical_bound: abs_Cxy_le_43_over_16_times_two_vacant_two_component_event_probability
+    remaining: weighted_multicomponent_spatial_probabilities_and_same_original_U_transmission
 
 active_execution: []
 
