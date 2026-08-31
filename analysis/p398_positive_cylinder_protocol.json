@@ -1,0 +1,17 @@
+{
+  "schema": "matching-one/p398-positive-cylinder/v1",
+  "status": "declared_before_calculation",
+  "parent_commit": "afc619c35188af718d450c19935f4d8dd8d39ff1",
+  "measure": "Q=1 independent square-bond percolation on a width-four cylinder, p_horizontal=p_vertical=1/2",
+  "state": "14 circular noncrossing partitions of the four frontier vertices; connectivity is through the entire past half-cylinder",
+  "matrix_convention": "Columns are source states; a full row acts as T=H V. V=product_i (I+D_i(1))/2 first advances the four vertical bonds; H=product_i (I+J_i)/2 then adds the four horizontal bonds of the new row. Products use sites 0,1,2,3; generators within each layer commute.",
+  "readout_slice": "Immediately after a complete horizontal layer; use the unique stationary probability on frontier states.",
+  "readouts": {
+    "A": "AP_0-AP_2 + i(AP_1-AP_3), AP_j=blocks(pi join rooted_adjacent_pair_j); exactly the existing rooted charge-one Gram-derivative columns",
+    "L": "landing_0-landing_2 + i(landing_1-landing_3), landing_j=blocks(pi join triple_complement_of_j); exactly the existing landing charge-one columns"
+  },
+  "target": "C_ab(d)=E[O_a(X_0) conjugate(O_b(X_d))]-E[O_a]conjugate(E[O_b]), a,b in (A,L), d=0,...,8. d=0 is a definition baseline, not a new physical independence result.",
+  "primary_structure": "Compute the exact charge-one restriction of the backward transfer, its characteristic polynomial, and whether the d>=1 response is rank one or two. Preserve the two ordered cross terms.",
+  "boundary": "Finite width-four square-bond frontier response, not the site-Matching observable, continuum scaling, a physical Jordan identification, or the signed retained-derivative Gram as a probability measure.",
+  "acquisition": "Exact finite rational arithmetic only; no Monte Carlo or remote machine."
+}
