@@ -80,6 +80,34 @@ are not continuum-field identities or coordinate-free manifold curvature.
 Mixed derivatives commute here. A nonzero entry does not demonstrate
 temporal memory or a noncommuting order of operations.
 
+## Why a rank-two Jacobian does not answer this question
+
+An elementary finite-probability example separates the hypotheses exactly.
+It is an abstract one-class example, not a constructed percolation lattice.
+Let four equiprobable labels have `(L_f,L_s)` equal to the four binary pairs,
+so `s_i=L_i-1/2` and the two-source tilted label law factorizes. Define
+
+```
+C_f = 1/2 + s_f/4 + gamma s_f s_s,
+C_s = 1/2 + s_s/4,                 0 <= gamma <= 1/2.
+```
+
+Both centers lie inside[1/4,3/4]. One may give each a fixed small lifetime
+and form valid ordered birth-clock pairs around these centers. At zero
+source, the two-center Jacobian is `diag(1/16,1/16)` for **every** gamma;
+the exact source Gram is also unchanged. Yet
+
+```
+H_fs C_f = gamma/16,   H_fs C_s = 0,
+R_Cf = gamma tanh(1/4)^2,   R_Cs = 0
+```
+
+for the same +/-1/2 source rectangle. Thus identical source strength and
+first-order local rank can coexist with either zero or nonzero mixed
+response. The new coordinate probes how the future observable combines
+the two inputs, even when the input law factorizes. It does not merely
+repeat the first-order rank test.
+
 ## Provenance
 
 The rectangle reader `c3a1b414` consumes saved20-batch finite-source vectors
