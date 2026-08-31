@@ -1,0 +1,352 @@
+{
+  "claim_boundary": {
+    "excluded": "noncrossing selection, planar duality, self-duality, reliability, composition search, thresholds, or bounds",
+    "included": "D4 relabeling action and covariance of join and explicitly declared two-port gluing",
+    "parent_issue": "remain open"
+  },
+  "counts": {
+    "declared_interface_covariance_cases": 1800,
+    "group_order": 8,
+    "join_covariance_cases": 1800,
+    "orbit_size_histogram": {
+      "1": 3,
+      "2": 2,
+      "4": 2
+    },
+    "partition_orbits": 7
+  },
+  "d4_group": [
+    [
+      0,
+      1,
+      2,
+      3
+    ],
+    [
+      0,
+      3,
+      2,
+      1
+    ],
+    [
+      1,
+      0,
+      3,
+      2
+    ],
+    [
+      1,
+      2,
+      3,
+      0
+    ],
+    [
+      2,
+      1,
+      0,
+      3
+    ],
+    [
+      2,
+      3,
+      0,
+      1
+    ],
+    [
+      3,
+      0,
+      1,
+      2
+    ],
+    [
+      3,
+      2,
+      1,
+      0
+    ]
+  ],
+  "d4_orbits": [
+    {
+      "members": [
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "orbit_size": 1,
+      "representative": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "stabilizer_size": 8
+    },
+    {
+      "members": [
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "orbit_size": 4,
+      "representative": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "stabilizer_size": 2
+    },
+    {
+      "members": [
+        [
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      "orbit_size": 2,
+      "representative": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "stabilizer_size": 4
+    },
+    {
+      "members": [
+        [
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          2
+        ]
+      ],
+      "orbit_size": 4,
+      "representative": [
+        0,
+        0,
+        1,
+        2
+      ],
+      "stabilizer_size": 2
+    },
+    {
+      "members": [
+        [
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      "orbit_size": 1,
+      "representative": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "stabilizer_size": 8
+    },
+    {
+      "members": [
+        [
+          0,
+          1,
+          0,
+          2
+        ],
+        [
+          0,
+          1,
+          2,
+          1
+        ]
+      ],
+      "orbit_size": 2,
+      "representative": [
+        0,
+        1,
+        0,
+        2
+      ],
+      "stabilizer_size": 4
+    },
+    {
+      "members": [
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ],
+      "orbit_size": 1,
+      "representative": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "stabilizer_size": 8
+    }
+  ],
+  "exact_checks": {
+    "d4_has_order_eight": true,
+    "declared_interface_covariance_failures_are_zero": true,
+    "join_covariance_failures_are_zero": true,
+    "orbit_stabilizer_products_are_eight": true,
+    "orbits_partition_all_15_states": true
+  },
+  "issue": 13,
+  "partition_catalog": [
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      1
+    ],
+    [
+      0,
+      0,
+      1,
+      2
+    ],
+    [
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      0,
+      2
+    ],
+    [
+      0,
+      1,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      1
+    ],
+    [
+      0,
+      1,
+      1,
+      2
+    ],
+    [
+      0,
+      1,
+      2,
+      0
+    ],
+    [
+      0,
+      1,
+      2,
+      1
+    ],
+    [
+      0,
+      1,
+      2,
+      2
+    ],
+    [
+      0,
+      1,
+      2,
+      3
+    ]
+  ],
+  "schema": "matching-one/terminal-partition-d4-equivariance/v1",
+  "status": "exact_four_terminal_d4_equivariance",
+  "terminal_cycle": [
+    0,
+    1,
+    2,
+    3
+  ]
+}
