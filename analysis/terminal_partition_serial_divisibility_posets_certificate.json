@@ -1,0 +1,307 @@
+{
+  "claim_boundary": {
+    "excluded": "full one-sided ideal lattices already certified, congruences, planarity, reliability, or thresholds",
+    "included": "principal left, right, and two-sided ideal classes and their inclusion covers",
+    "parent_issue": "remain open"
+  },
+  "exact_checks": {
+    "left_and_right_cover_profiles_match": true,
+    "left_and_right_have_six_classes": true,
+    "two_sided_has_three_classes": true,
+    "two_sided_is_three_element_chain": true
+  },
+  "issue": 13,
+  "left": {
+    "class_count": 6,
+    "classes": [
+      [
+        3,
+        13
+      ],
+      [
+        4,
+        14
+      ],
+      [
+        0,
+        5,
+        9
+      ],
+      [
+        1,
+        7,
+        10
+      ],
+      [
+        2,
+        11,
+        12
+      ],
+      [
+        6,
+        8
+      ]
+    ],
+    "cover_relations": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    "name": "left",
+    "principal_ideals": [
+      [
+        3,
+        13
+      ],
+      [
+        4,
+        14
+      ],
+      [
+        0,
+        3,
+        5,
+        9,
+        13
+      ],
+      [
+        1,
+        4,
+        7,
+        10,
+        14
+      ],
+      [
+        2,
+        4,
+        11,
+        12,
+        14
+      ],
+      [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
+    ]
+  },
+  "right": {
+    "class_count": 6,
+    "classes": [
+      [
+        3,
+        4
+      ],
+      [
+        13,
+        14
+      ],
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        5,
+        7,
+        11
+      ],
+      [
+        9,
+        10,
+        12
+      ],
+      [
+        6,
+        8
+      ]
+    ],
+    "cover_relations": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    "name": "right",
+    "principal_ideals": [
+      [
+        3,
+        4
+      ],
+      [
+        13,
+        14
+      ],
+      [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      [
+        5,
+        7,
+        11,
+        13,
+        14
+      ],
+      [
+        9,
+        10,
+        12,
+        13,
+        14
+      ],
+      [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
+    ]
+  },
+  "schema": "matching-one/terminal-partition-serial-divisibility-posets/v1",
+  "status": "complete_principal_divisibility_posets",
+  "two_sided": {
+    "class_count": 3,
+    "classes": [
+      [
+        3,
+        4,
+        13,
+        14
+      ],
+      [
+        0,
+        1,
+        2,
+        5,
+        7,
+        9,
+        10,
+        11,
+        12
+      ],
+      [
+        6,
+        8
+      ]
+    ],
+    "cover_relations": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "name": "two_sided",
+    "principal_ideals": [
+      [
+        3,
+        4,
+        13,
+        14
+      ],
+      [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
+    ]
+  }
+}
