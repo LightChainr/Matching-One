@@ -1,0 +1,163 @@
+{
+  "schema": "matching-one.decimation-cycle-rank.v1",
+  "status": "completed_saved_exact_coefficient_reduction",
+  "contract": {
+    "schema": "matching-one.decimation-cycle-rank.contract.v1",
+    "question": "Does the closed source's original-U response reduce to its explicit ambient-rank bias, or is its ambient-null graph-cycle term visible?",
+    "chronology": "Specified after the exact Sstar response was known, before computing its q-source split; deterministic finite model elimination, not a new prospective random experiment",
+    "N": 25,
+    "geometries": [
+      [
+        5,
+        0
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    "delta_cos4": "1152/625",
+    "baseline_commit": "b8d043fc493ab6d7f808d0c074571d2fdd8fb60f",
+    "baseline_directory": "results/decimation-plaquette-u",
+    "closed_source_commit": "ec01768f520e85f1acfd9d3fde9bcf855477254e",
+    "closed_source_directory": "results/p337-closed-source-n25",
+    "action_commit": "0d19179f6c6c36fdbb34b2d93e35a9d5fe10dad3",
+    "action_path": "notes/decimation-closed-cluster-gas-action.md",
+    "source_identity": "Sstar=C+F4+Bvac=2*beta_null+q-3*K+2*N+2",
+    "beta_null": "dim ker[H1(occupied NN graph;R) -> H1(ambient torus;R)] = T_NN-K+CB-(q+1); not cellular hole count or only elementary plaquettes",
+    "source_units": "normalized exp(t*S), bulk units, no divided-by-N or fitted coefficients",
+    "original_U": "A*P4(E_p)/Q_p at the common pooled root; A=N^(13/8)/2; q=rank-1 and E=q^2",
+    "thermal_alias": "V_K=0 for a common equilibrium K source after root/slope normalization",
+    "q_covariances": "Cov(q,q)=E[q^2]-E[q]^2; Cov(q^2,q)=E[q]*(1-E[q^2])",
+    "primary_prediction": "rank-bias-only original-U response: V_Sstar=V_q, equivalently 2*V_beta_null=0",
+    "primary_residual": "V_Sstar-V_q=2*V_beta_null",
+    "decision": "An exact rational residual/A enclosure excluding zero rejects this fixed rank-bias-only alias; otherwise report unresolved, without fitting another rank coefficient",
+    "secondary_identity": "2*V_beta1=V_Sstar+V_q, a fixed graph-cycle basis conversion, not another hypothesis scan",
+    "root_handling": "reuse the saved exact root enclosures after exact equality of both source packages' q/E coefficient profiles; no root search",
+    "acquisition": "one rational reduction of saved exact coefficients, no enumeration, random sampling, replay or cloud job",
+    "dependency": "same two complete finite configuration populations; C/F4/Sstar/Bvac/q/cycle splits are not independent evidence votes",
+    "alias_scope": "fixed unit coefficient q only; a single scalar response cannot exclude a post-hoc fitted c*q effective source",
+    "transmission_scope": "a nonzero beta_null response can act through occupancy/rank conditional means; it does not make a within-K/rank centered source globally visible",
+    "boundary": "different Smith groups Z5xZ5 and Z25; not homogeneous large-N F4 confirmation, an interior Xi result, or continuum-field identity"
+  },
+  "code_commit": "e90d78fb9c387d6f9f8226e644b5e71500cf76be",
+  "source_profile_identity": [
+    {
+      "name": "axis.csv",
+      "local_sha256": "b7bc24b5e66bd6058433aff384a46c064b3845e4511a8e61a01214047ad4a451",
+      "external_sha256": "29991f11aaa5bea53bc8193fb0990dcb0c4c9fa98af8c0bdea975f4144763189",
+      "q_E_and_count_coefficients_identical": true
+    },
+    {
+      "name": "tilted.csv",
+      "local_sha256": "abae046b4d16fdc8ab6aa909f4c841d95d142a457478f073d825ba2da25851b4",
+      "external_sha256": "09073ec9ebcf6d8aca804019f57d5141bfa93c58017f2f59df0b7461b217cc25",
+      "q_E_and_count_coefficients_identical": true
+    }
+  ],
+  "root_enclosure": {
+    "lower_fraction": "1185331078656453492302851399693093801267/2000000000000000000000000000000000000000",
+    "upper_fraction": "5926655393282267461514256998465469006339/10000000000000000000000000000000000000000",
+    "midpoint_approx": 0.5926655393282267,
+    "width_approx": 4e-40,
+    "excludes_zero": true,
+    "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+  },
+  "source_enclosures_over_A": {
+    "V_q": {
+      "lower_fraction": "5697403659490432169864590391037249647/10000000000000000000000000000000000000000",
+      "upper_fraction": "5697403659490432169864590391037255873/10000000000000000000000000000000000000000",
+      "midpoint_approx": 0.0005697403659490432,
+      "width_approx": 6.226e-37,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "V_Sstar": {
+      "lower_fraction": "13499498177128414246884681685766010631/10000000000000000000000000000000000000000",
+      "upper_fraction": "13499498177128414246884681685766055947/10000000000000000000000000000000000000000",
+      "midpoint_approx": 0.0013499498177128415,
+      "width_approx": 4.5316e-36,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "two_V_beta_null": {
+      "lower_fraction": "3901047258818991038510045647364377379/5000000000000000000000000000000000000000",
+      "upper_fraction": "78020945176379820770200912947288063/100000000000000000000000000000000000000",
+      "midpoint_approx": 0.0007802094517637982,
+      "width_approx": 5.1542e-36,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "V_beta_null": {
+      "lower_fraction": "3901047258818991038510045647364377379/10000000000000000000000000000000000000000",
+      "upper_fraction": "78020945176379820770200912947288063/200000000000000000000000000000000000000",
+      "midpoint_approx": 0.0003901047258818991,
+      "width_approx": 2.5771e-36,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "two_V_beta1": {
+      "lower_fraction": "9598450918309423208374636038401630139/5000000000000000000000000000000000000000",
+      "upper_fraction": "959845091830942320837463603840165591/500000000000000000000000000000000000000",
+      "midpoint_approx": 0.0019196901836618847,
+      "width_approx": 5.1542e-36,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    }
+  },
+  "q_source_terms_over_A": {
+    "direct": {
+      "lower_fraction": "2927244590643948154488212593400077601/5000000000000000000000000000000000000000",
+      "upper_fraction": "1463622295321974077244106296700038919/2500000000000000000000000000000000000000",
+      "midpoint_approx": 0.0005854489181287896,
+      "width_approx": 4.74e-38,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "root_motion": {
+      "lower_fraction": "-5430880343203095037468939082242632633/10000000000000000000000000000000000000000",
+      "upper_fraction": "-2715440171601547518734469541121313499/5000000000000000000000000000000000000000",
+      "midpoint_approx": -0.0005430880343203095,
+      "width_approx": 5.635e-37,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "slope_source": {
+      "lower_fraction": "-17290282554438115366175937935434937/2000000000000000000000000000000000000000",
+      "upper_fraction": "-86451412772190576830879689677174671/10000000000000000000000000000000000000000",
+      "midpoint_approx": -8.645141277219057e-06,
+      "width_approx": 1.4e-39,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "slope_root": {
+      "lower_fraction": "2680123117088910737593991988078450881/5000000000000000000000000000000000000000",
+      "upper_fraction": "1340061558544455368796995994039225467/2500000000000000000000000000000000000000",
+      "midpoint_approx": 0.0005360246234177821,
+      "width_approx": 1.06e-38,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    }
+  },
+  "q_source_root_tangent": {
+    "lower_fraction": "-216706339623532893272401194578783242877/2000000000000000000000000000000000000000",
+    "upper_fraction": "-1083531698117664466362005972893916214271/10000000000000000000000000000000000000000",
+    "midpoint_approx": -0.10835316981176644,
+    "width_approx": 1.14e-38,
+    "excludes_zero": true,
+    "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+  },
+  "numerical_values": {
+    "V_q": 0.05324753511465212,
+    "V_Sstar": 0.12616536341416915,
+    "two_V_beta_null": 0.07291782829951701,
+    "V_beta_null": 0.036458914149758506,
+    "two_V_beta1": 0.17941289852882125,
+    "U25": 0.8804661569633677
+  },
+  "decision": "fixed_rank_bias_only_U_alias_rejected",
+  "interpretation": "the residual is the fixed twice-ambient-null-cycle response, not regression remainder or independent evidence",
+  "new_configurations": 0,
+  "new_random_samples": 0,
+  "root_searches": 0
+}
