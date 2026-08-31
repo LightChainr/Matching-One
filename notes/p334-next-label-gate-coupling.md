@@ -1,8 +1,10 @@
 # P334: shared next-label birth gates and the complete even clock response
 
-Status: fixed thin analysis **before** new quartet counts are read. The producer
-will supply the immutable completed source identity and exact long-CSV schema;
-this commit does not consume partial production or start sampling.
+Status: fixed thin analysis **before** new quartet counts are read. The exact
+long-CSV schema is supplied by producer `a3249a59`; the producer will separately
+supply the immutable completed source identity. The reader takes only that
+commit and requires all forty gzip batches. It does not consume partial
+production or start sampling.
 
 ## One within-prefix spatial question
 
@@ -67,9 +69,11 @@ columns. The second X coordinate directly addresses the full even response
 already identified with the lifetime difference.
 
 Keep01 and10 separate. Their sum describes gate covariance against the old
-global orientation contrast. For a role-aligned low-minus-high observer, the
-same saved vectors give01-minus10. Neither combination is chosen after
-looking at signs.
+global orientation contrast. For a **raw unscaled** role-aligned low-minus-high
+observer, the same saved vectors give `delta_cos4*(01-minus10)`; this removes
+the old normalization and is not a new H4 coefficient. Neither combination is
+chosen after looking at signs. The delta values remain those in `bb79fd47`:
+N325=-0.7634556213017751 and N425=-0.8928996539792388.
 
 ## Batch handoff and interpretation
 
@@ -86,3 +90,11 @@ coupling and the selected geometry pair. It is not an intrinsic or universal
 covariance of space. These cross moments do not determine a reliable fraction
 of full Doob information without the needed conditional gate probabilities
 and response covariance; no such ratio will be substituted.
+
+The completed-source command is:
+
+```sh
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 \
+/Users/lc/python-envs/research-py311/bin/python scripts/p334_next_label_gate_coupling.py \
+  --source-commit PRODUCER_CONFIRMED_COMPLETE_SHA
+```
