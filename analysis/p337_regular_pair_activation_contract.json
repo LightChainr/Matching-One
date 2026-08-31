@@ -1,0 +1,40 @@
+{
+  "schema": "p337.regular-pair-activation.v1",
+  "base_commit": "7681eedd938019d977ede41a7d74ee1b88ffbc50",
+  "question": "Does the canonical coefficientwise-Q1-regular local pair completion have a nonzero mixed logQ/epsilon response in the original pooled-root U?",
+  "motivation": "A finite single-insertion contraction does not establish a regular interacting tensor family. First settle the four-path double-insertion pole and its singlet cancellation; only then score the induced, fixed activation source.",
+  "kernel": "Kreg=average_C4 i(P2+P0)i^dagger=average_C4 i(I-P1)i^dagger, with the same ordered unequal-pair embedding and N,E;S,W cut as the completed local insertion. The singlet coefficient is identically one for every Q, not fitted.",
+  "normalization": "Add epsilon*Kreg/N to the vacant summand at each original vertex. Keep original occupation, rank, q=r-1 and E=q^2. Projector diagrams never change the occupied lattice.",
+  "theory_gates": [
+    "Give an actual finite original-lattice occupation with four distinct paths connecting two vacant insertions; derive its two-insertion contraction and any Q1 pole before drawing a family-level conclusion.",
+    "Prove Kreg is coefficientwise regular at Q1; every nonempty marked contraction on a finite colour network vanishes at Q1.",
+    "Prove the relative single-vertex closure has derivative a_x at Q1 with exactly the table below. If the table fails, do not count or score a revised source in this contract."
+  ],
+  "scheme_boundary": "Within K2+c(Q)K0, regularity forces c(1)=1 but not c'(1). This contract fixes c(Q)=1 identically. It makes no uniqueness claim over other regular local tensors or finite counterterms.",
+  "activation_source": "a_x=d_logQ beta_reg,x at Q1. It is zero if x is occupied. If x is vacant, partition its four incident edge-nodes by exterior hypergraph component, including an independent singleton for each vacant NN neighbour.",
+  "activation_table": {
+    "four_distinct_components": "1",
+    "one_equal_pair_opposite_NS_or_EW": "1",
+    "one_equal_pair_adjacent": "1/2",
+    "two_equal_pairs_opposite_NS_EW": "-1/2",
+    "two_equal_pairs_adjacent": "-1/4",
+    "three_plus_one_or_all_four_equal": "0"
+  },
+  "N": 25,
+  "geometries": [[5, 0], [4, 3]],
+  "primary_quantity": "W=d_logQ d_epsilon U at Q1,epsilon0 along the original common-root family. Since beta_reg(1)=0 identically, this equals the existing complete first-source response functional evaluated on the site-average a; it is not a fixed-gauge raw Q attribution.",
+  "exact_zero": "d_epsilon U at Q1 is identically zero for this completion, at every size and thermal activity with a regular observer denominator. This is a theorem, not the numerical hypothesis.",
+  "numerical_null": "The one specified mixed response W is zero on the fixed original N25 pair.",
+  "root": "Import root_enclosure, matching_slope_enclosure and U25_over_A_enclosure from results/p337-closed-source-n25/latest.json; no new root search.",
+  "statistics": ["count", "sum_q", "sum_e", "sum_a4", "sum_qa4", "sum_ea4"],
+  "integer_source": "a4=4*a_origin takes 4,2,-2,-1,0. Divide the three new crossmoment sums by four. A fixed-origin first-source moment equals the site-average source moment against translation-invariant K,q,E.",
+  "population": "One complete 2^25 occupation traversal per geometry for missing prescribed crossmoments, after theory and producer-code commits. No change to the old q/E populations. This is the same exact finite population, not independent stochastic evidence.",
+  "decision": "One exact rational mixed-response score. A strictly signed interval rejects the finite zero-transmission null for this completion; an interval containing zero ends this fixed question unresolved. Neither outcome triggers new c, Q, geometry, support radius or precision choices.",
+  "mechanism_stops": [
+    "A proven coefficientwise two-insertion pole rejects the uncompleted K2 local tensor as a coefficientwise-Q1-regular interaction family; the earlier first-tangent result remains correct.",
+    "The completed family has no epsilon effect in the Q1 finite colour law itself. Any proposed explanation by that direct epsilon response is excluded; a nonzero mixed response belongs specifically to Q activation.",
+    "No conclusion here identifies a continuum primary, a Jordan pair, the global seam trace or the asymptotic Matching-One anomaly."
+  ],
+  "forbidden": ["rescore completed old sources", "new root search", "fit a completion coefficient", "choose a new source after scoring", "repeat an old fixed grid", "restart retired P154/P334/F4 production"],
+  "new_random_samples": 0
+}
