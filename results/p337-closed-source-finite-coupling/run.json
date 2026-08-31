@@ -1,0 +1,98 @@
+{
+  "schema": "matching-one.p337-closed-source-finite-coupling.run.v1",
+  "started_utc": "2026-08-31T13:26:19.369449+00:00",
+  "contract_commit": "b70dc4bd2fddd7676e9536b42bf912ee00ad302f",
+  "contract_sha256": "be0afba248732c40619edd1a085c48262f27e5052ed35fe1b6fe7a3951fb960b",
+  "code_commit": "693d0d4a9b300d415a2f29766067387bc46891ce",
+  "branch": "experiment/p337-closed-source-finite-coupling-20260831",
+  "git_status_before": "",
+  "backend_source": "b70dc4bd:scripts/p337_closed_source_exact.cpp",
+  "cpp_sha256": "a0af197ed6f66ed11c3322bb8980264097715aaac8046768700a9386970182a2",
+  "runner_sha256": "50b739de5c05195f8cb87e9fe95fd7a7b6d66f059657c1beaf9e2ed20e72558f",
+  "python_executable": "/Users/lc/python-envs/research-py311/bin/python",
+  "python_version": "3.11.15 (main, Jun 23 2026, 15:46:51) [Clang 22.1.3 ]",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "workers": 2,
+  "new_random_samples": 0,
+  "scores_computed": false,
+  "histogram_schema": [
+    "k",
+    "g",
+    "q",
+    "count"
+  ],
+  "zero_bins": "omitted; every nonzero integer bin is retained",
+  "compile": {
+    "command": [
+      "/usr/bin/clang++",
+      "-std=c++17",
+      "-O3",
+      "/private/tmp/matching-p337-closed-source-finite-coupling/scripts/p337_closed_source_finite_exact.cpp",
+      "-o",
+      "/var/folders/qv/09841bwx4x9b1gqkht0f9nt40000gn/T/p337-finite-exact-u4_b5sb0/enumerate"
+    ],
+    "elapsed_seconds": 0.8123308339854702,
+    "compiler_version": "Apple clang version 21.0.0 (clang-2100.1.1.101)\nTarget: arm64-apple-darwin25.5.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin",
+    "binary_sha256": "d70cc9d1aa06ec019a20cfd477daf940aeb41d699d05af6696dedce22fed9360"
+  },
+  "jobs": [
+    {
+      "name": "axis",
+      "geometry": [
+        5,
+        0
+      ],
+      "N": 25,
+      "command": [
+        "/var/folders/qv/09841bwx4x9b1gqkht0f9nt40000gn/T/p337-finite-exact-u4_b5sb0/enumerate",
+        "5",
+        "0",
+        "/private/tmp/matching-p337-closed-source-finite-coupling/results/p337-closed-source-finite-coupling/axis.csv"
+      ],
+      "started_utc": "2026-08-31T13:26:20.235323+00:00",
+      "finished_utc": "2026-08-31T13:26:22.435293+00:00",
+      "wall_seconds": 2.1997351249447092,
+      "exit_code": 0,
+      "stdout": {
+        "configurations": 33554432,
+        "elapsed_seconds": 1.31712
+      },
+      "stderr": "",
+      "output": "results/p337-closed-source-finite-coupling/axis.csv",
+      "sha256": "2d23fecc98d276d9ad15ad1867199cd308f0570cb5040ef94eb6b923b4c53458",
+      "nonzero_bins": 269,
+      "count_sum": 33554432
+    },
+    {
+      "name": "tilted",
+      "geometry": [
+        4,
+        3
+      ],
+      "N": 25,
+      "command": [
+        "/var/folders/qv/09841bwx4x9b1gqkht0f9nt40000gn/T/p337-finite-exact-u4_b5sb0/enumerate",
+        "4",
+        "3",
+        "/private/tmp/matching-p337-closed-source-finite-coupling/results/p337-closed-source-finite-coupling/tilted.csv"
+      ],
+      "started_utc": "2026-08-31T13:26:20.235406+00:00",
+      "finished_utc": "2026-08-31T13:26:22.297279+00:00",
+      "wall_seconds": 2.061485957936384,
+      "exit_code": 0,
+      "stdout": {
+        "configurations": 33554432,
+        "elapsed_seconds": 1.17866
+      },
+      "stderr": "",
+      "output": "results/p337-closed-source-finite-coupling/tilted.csv",
+      "sha256": "225031e612929ed922ba75c55e76703d59990f5283e7ac39b94f022841798da5",
+      "nonzero_bins": 247,
+      "count_sum": 33554432
+    }
+  ],
+  "finished_utc": "2026-08-31T13:26:22.435637+00:00",
+  "wall_seconds": 3.0661109579959884,
+  "status": "complete_no_scores"
+}
