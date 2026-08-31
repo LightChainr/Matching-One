@@ -1,0 +1,66 @@
+N 325 ensemble J reproduction max error 1.8973538018496328e-18
+all.p_ref.A.E_det_JZ 1.11464570655e-07 +/- 1.36695e-07
+all.p_ref.A.E_det_JZ_squared 0 +/- 0
+all.p_ref.E.E_det_JZ -1.0356663988e-08 +/- 4.94293e-08
+all.p_ref.E.E_det_JZ_squared 0 +/- 0
+all.p_integral.A.E_det_JZ 4.78559364297e-09 +/- 4.11639e-09
+all.p_integral.A.E_det_JZ_squared 0 +/- 0
+all.p_integral.E.E_det_JZ 1.33580757381e-09 +/- 2.00819e-09
+all.p_integral.E.E_det_JZ_squared 0 +/- 0
+all.input_G.E_det_JZ 3.25892857143e-05 +/- 1.0232e-05
+all.input_G.E_det_JZ_squared 0 +/- 0
+all.diagnostic.noncollinear_source_quartet_pairs 0.00275 +/- 0.000527531
+all.diagnostic.usable_four_quartet_pairings 0 +/- 0
+all.diagnostic.at_least_one_noncollinear_pair 0.0023 +/- 0.000377666
+all.diagnostic.at_least_one_usable_four_pairing 0 +/- 0
+all.p_ref.A.det_mean_JZ 1.22718725055e-08 +/- 4.0719e-09
+all.p_ref.E.det_mean_JZ 5.51487579552e-10 +/- 5.59596e-10
+all.p_integral.A.det_mean_JZ 4.20205031813e-10 +/- 1.62825e-10
+all.p_integral.E.det_mean_JZ 1.52987379265e-11 +/- 1.94331e-11
+all.input_G.det_mean_JZ 2.4473515625e-05 +/- 1.07839e-06
+N 425 ensemble J reproduction max error 2.168404344971009e-18
+all.p_ref.A.E_det_JZ 1.06366403858e-07 +/- 1.15322e-07
+all.p_ref.A.E_det_JZ_squared 0 +/- 0
+all.p_ref.E.E_det_JZ 2.74278498031e-08 +/- 4.65332e-08
+all.p_ref.E.E_det_JZ_squared 0 +/- 0
+all.p_integral.A.E_det_JZ 1.32839289257e-10 +/- 3.57248e-09
+all.p_integral.A.E_det_JZ_squared 0 +/- 0
+all.p_integral.E.E_det_JZ 1.58976649411e-09 +/- 8.12288e-10
+all.p_integral.E.E_det_JZ_squared 0 +/- 0
+all.input_G.E_det_JZ 2.16517857143e-05 +/- 5.68649e-06
+all.input_G.E_det_JZ_squared 0 +/- 0
+all.diagnostic.noncollinear_source_quartet_pairs 0.00195 +/- 0.000311828
+all.diagnostic.usable_four_quartet_pairings 0 +/- 0
+all.diagnostic.at_least_one_noncollinear_pair 0.0018 +/- 0.00028654
+all.diagnostic.at_least_one_usable_four_pairing 0 +/- 0
+all.p_ref.A.det_mean_JZ 1.55912384062e-08 +/- 4.69216e-09
+all.p_ref.E.det_mean_JZ 1.41785157971e-09 +/- 9.22216e-10
+all.p_integral.A.det_mean_JZ 5.14307849247e-10 +/- 1.28723e-10
+all.p_integral.E.det_mean_JZ -1.96788838039e-11 +/- 1.97889e-11
+all.input_G.det_mean_JZ 2.82998339844e-05 +/- 1.46264e-06
+Traceback (most recent call last):
+  File "/workspace/matching-p334-local-rank-20260831/analyze_prefix_local_rank.py", line 222, in <module>
+    main()
+  File "/workspace/matching-p334-local-rank-20260831/analyze_prefix_local_rank.py", line 211, in main
+    (args.output / "score.json").write_text(json.dumps(result, indent=2, allow_nan=False) + "\n")
+  File "/usr/lib64/python3.9/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/usr/lib64/python3.9/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/usr/lib64/python3.9/json/encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib64/python3.9/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib64/python3.9/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib64/python3.9/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib64/python3.9/json/encoder.py", line 325, in _iterencode_list
+    yield from chunks
+  File "/usr/lib64/python3.9/json/encoder.py", line 325, in _iterencode_list
+    yield from chunks
+  File "/usr/lib64/python3.9/json/encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "/usr/lib64/python3.9/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type int64 is not JSON serializable

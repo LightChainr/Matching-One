@@ -41,7 +41,7 @@ P154的源全链、两阶段及百万端点已经完成。条件line响应进一
 
 **P334总体配对分析也已完成。** N325/N425各20k配对counter，共40批。所有counter进入分母，目标为checkpoint rank1分层对F2及其积分的贡献，尚未覆盖rank0/rank2和完整F2。对该贡献的H4方向差，可移除后缀噪声占原个体观察方差的估计比例，canonical为49.15%/50.03%，integrated为0.816%/0.681%；比例定义为mean[(X−Y)²]/sampleVar(X)，并非标准误下降率或运行加速比。两个N的这一H4贡献均未分辨。N325/N425分别47和164个困难配对保留双向原观察，不丢样或单边替换。[完整报告](https://github.com/LightChainr/Matching-One/blob/c3bb43f1b078c5f9f76f71b25cdb3e2e331eb115/results/p334-paired-clock-loading/REPORT.md)，独立分支；后续已完成的分解见下。
 
-**R1之后的完整P334分析也已推进。** 全A/E九层、128万辅助续接、SS/mixed/BB、接触坐标、共同Euler不可见源和全热曲线均已完成，旧mask总体rank2不等于同prefix rank2。本轮[有限q_t](../experiments/p334-finite-source-20260831/REPORT.md)在t=±1仍有可测future S(A)/D(A)响应，即时两rank与Euler增量的联合分布保持不变；使用原数据的精确importance估计，没有按新策略重采样。完整census恢复了局部检验的抽样支持：全部1502/1551双R0 prefix有两个独立允许源，未来响应是否局部rank2仍需[当前定向分析](../notes/analysis-delivery-20260831.md)回答。
+**R1之后的完整P334分析也已推进。** 全A/E九层、128万辅助续接、SS/mixed/BB、接触坐标、共同Euler不可见源和全热曲线均已完成，旧mask总体rank2不等于同prefix rank2。本轮[有限q_t](../experiments/p334-finite-source-20260831/REPORT.md)在t=±1仍有可测future S(A)/D(A)响应，即时两rank与Euler增量的联合分布保持不变；使用原数据的精确importance估计，没有按新策略重采样。完整census恢复了局部检验的抽样支持：全部1502/1551双R0 prefix有两个独立允许源，固定781568条定向续接进一步给出A局部行列式均值约5.4/7.6SE的正证据，积分A对应的两个出生中心也支持局部二维响应。E/间隔和四阶平方量仍弱。[最终报告](../experiments/p334-mechanism-response-20260831/REPORT.md)明确区分E[det J(Z)]和det(E[J(Z)])，并保留原20批。
 
 147-prefix噪声预算仅适用于固定经验mixture。P398的93维Krylov空间和Boolean谱degree按各自生成过程解释；现有width4/8的i^j权重保持波长4，并非固定模式序号的尺度外推。
 
