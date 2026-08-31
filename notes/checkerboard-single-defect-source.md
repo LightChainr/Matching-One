@@ -14,6 +14,10 @@ already supplies the normalized one-hole insertion formula. Here its weight,
 cycle/rank meaning and fixed-t thermal derivative are made explicit. No new
 numerical outcome, enumeration or sampling is used.
 
+The separately completed [global-U calculation](checkerboard-single-defect-global-u-result.md)
+now answers the last section's numerical question. The proof below was
+obtained independently of its values and is not an additional evidence vote.
+
 ## 1. Exact loss of cycles and winding
 
 Let X_plus have all M=N/2 checkerboard A sites occupied; X_minus_a deletes

@@ -105,6 +105,19 @@ E_defect-E_intact = ell^2-2ell*q_intact.
 These follow directly from S*=2beta1-3K-q+2N and E=q^2. The graph and
 ambient-image inclusions give k_null>=0. Thus the elementary insertion
 has a specified topological meaning; no fitted contact feature is added.
+The [single-defect proof](checkerboard-single-defect-source.md) narrows the
+mechanism further at this saturated endpoint: **ell is at most1, and only
+an alternating child face can change rank**. All other neighbor patterns
+have local lifted bypasses or cannot carry a cycle. The alternating case
+switches the local diagonal connection; exterior winding decides whether
+the global rank changes.
+
+At zero source only these rank-changing switches directly alter q/E.
+At nonzero source, rank-preserving holes can also enter through the exact
+weight-redistribution term `Cov(exp(t Delta S),O_intact)`. The present
+mixed result includes both terms, without claiming a separately measured
+share for either. This is a two-term insertion identity, not a proposal
+to add another empirical descriptor catalogue.
 The defect must be evaluated on the parent graph: replacing it by an
 ordinary independent child site would remove the four-terminal surgery
 that this question is testing.
@@ -128,7 +141,9 @@ and can change R. This is why the same source units are retained throughout.
 
 - **Lifecycle:** freeze9024fdbf; producer contract6c65157f/code393ea7c4;
   committed exact counts13a2c197; root scorer695cadba/ebc3b790;
-  one score at6b5e66bc, resultf5c4a74a. All branch-delivered, not main.
+  one score at6b5e66bc, resultf5c4a74a. The outcome-blind theory companions
+  are1df9b35d (mixed derivative) and4981e625 (cycle/rank defect).
+  All branch-delivered, not main.
 - **Cost:** two enumerations1.020/1.090seconds; compilation and both runs
   together2.497seconds; one rational score0.300seconds. Local Mac only,
   no Monte Carlo, cloud job, baseline replay or test campaign.
