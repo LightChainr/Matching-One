@@ -173,6 +173,11 @@ Decision: **{decision}** on the fixed N50 parent pair.
 | Weighted observable jump | {values['Xi_weighted_jump']:+.15g} |
 | Total, imported from the completed one-hole result | {values['Xi_total']:+.15g} |
 
+The two prescribed terms oppose each other: baseline reweighting partially
+offsets the negative weighted jump. The one-term model misses a real positive
+contribution; the full normalized defect operator already contains it, without
+an added source or an adjustable mixing coefficient.
+
 The reweighting contribution has a rational enclosure excluding zero:
 {bounds['Xi_reweight']['excludes_zero']}. This is the prescribed contribution
 of Cov(w,O_intact), not a newly fitted residual or a rank-preserving population

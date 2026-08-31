@@ -1,0 +1,171 @@
+{
+  "schema": "matching-one.defect-reweight.v1",
+  "status": "completed_exact_subset_reconstruction",
+  "decision": "weighted_rank_jump_only_rejected",
+  "contract": {
+    "schema": "matching-one.defect-reweight.contract.v1",
+    "question": "Can the weighted observable jump alone carry the fixed single-defect mixed original-U response?",
+    "prior_definition_commit": "7132f0c2dcb07f59d0807e72f9e433af58cb95d0",
+    "prior_definition_path": "notes/decimation-closed-source-and-global-u.md",
+    "source_commit": "bc17b81d502fb1ca3323f5c20f63c544bb31602d",
+    "baseline_commit": "ec01768f520e85f1acfd9d3fde9bcf855477254e",
+    "baseline_directory": "results/p337-closed-source-n25",
+    "defect_result_commit": "f5c4a74a20bad8589c39e1034cfb209462110dbe",
+    "defect_directory": "results/p337-endpoint-defect",
+    "parent_geometries": [
+      [
+        5,
+        5
+      ],
+      [
+        1,
+        7
+      ]
+    ],
+    "parent_N": 50,
+    "free_B_degree": 25,
+    "delta_cos4": "-1152/625",
+    "source": "normalized exp(t*Sstar), Sstar=C+F4+Bvac",
+    "chart": "pA=s+(1-s)*p, pB=p, epsilon=1-s; source fixed without removing a K term",
+    "identity": "j_epsilon,O=25*(1-p)*(E[w*DeltaO]+Cov(w,Oplus)), w=exp(t*(Sminus-Splus))",
+    "null_prediction": "Xi_reweight=0 for the weighted-rank-jump-only response model",
+    "reweight_jet": "hO=25*(1-p)*Cov_0(Sminus-Splus,Oplus); baseline-reweighting term vanishes at t=0 for every p",
+    "projection": "Xi_reweight/A=hY_p/D-Y_pp*hQ/D^2-Y_p*hQ_p/D^2+Y_p*Q_pp*hQ/D^3; D=Q_p, hQ=mean(hq), hY=P4(he), A=50^(13/8)/2",
+    "new_cross_moments": [
+      "sum(Sminus*qplus)",
+      "sum(Sminus*Eplus)"
+    ],
+    "acquisition": "one exhaustive pass over 2 alternating four-neighbor patterns times 2^21 remaining B bits per geometry, one eighth of the full population; no Monte Carlo or repeated baseline enumeration",
+    "exact_subset_reconstruction": "only alternating neighbors allow rank gain ell=qplus-qminus; full sum(Sminus*qplus)=old full sum(Sminus*qminus)+alternating sum(Sminus*ell), analogously Eplus-Eminus=ell*(2*qminus+1)",
+    "alignment": "intact and defect configurations share exactly the same 25 free B bits; normalize each geometry before pooling",
+    "root_handling": "complement the saved N25 rational root enclosure, no root search",
+    "decision": "a nonzero rational Xi_reweight/A enclosure excludes the fixed jump-only model; zero does not prove profile closure",
+    "secondary_output": "Xi_weighted_jump=previous_total_Xi-Xi_reweight; algebraic dependent decomposition, not a second evidence vote",
+    "no_extra_fit": "no fitted fraction, extra class, coupling scan or source substitution",
+    "boundary": "one finite N50 endpoint jet, mixed Smith pair; not an independent random experiment, continuum field, whole interior law or rank-preserving population share"
+  },
+  "code_commit": "e9aed6ff21759f4377f67bd5468998e2b45f11d1",
+  "numerical_values": {
+    "Xi_total": -10.755718407564073,
+    "Xi_reweight": 4.550327123236791,
+    "Xi_weighted_jump": -15.306045530800864
+  },
+  "enclosures_over_A": {
+    "Xi_total": {
+      "lower_fraction": "-46639423674206811571298564289359593909/1250000000000000000000000000000000000000",
+      "upper_fraction": "-373115389393654492570388514314872016641/10000000000000000000000000000000000000000",
+      "midpoint_approx": -0.03731153893936545,
+      "width_approx": 4.734631e-34,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "Xi_reweight": {
+      "lower_fraction": "157850643919889999970673927460822414083/10000000000000000000000000000000000000000",
+      "upper_fraction": "31570128783977999994134785492164577543/2000000000000000000000000000000000000000",
+      "midpoint_approx": 0.015785064391989,
+      "width_approx": 4.73632e-35,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "Xi_weighted_jump": {
+      "lower_fraction": "-530966033313544492541062441775699638987/10000000000000000000000000000000000000000",
+      "upper_fraction": "-132741508328386123135265610443923607681/2500000000000000000000000000000000000000",
+      "midpoint_approx": -0.05309660333135445,
+      "width_approx": 5.208263e-34,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    }
+  },
+  "reweight_terms_over_A": {
+    "direct": {
+      "lower_fraction": "192213122366092265883108228984258529797/10000000000000000000000000000000000000000",
+      "upper_fraction": "38442624473218453176621645796851775893/2000000000000000000000000000000000000000",
+      "midpoint_approx": 0.019221312236609226,
+      "width_approx": 3.49668e-35,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "root_motion": {
+      "lower_fraction": "-48010628194831579522649201715273636601/10000000000000000000000000000000000000000",
+      "upper_fraction": "-48010628194831579522649201715273517927/10000000000000000000000000000000000000000",
+      "midpoint_approx": -0.004801062819483158,
+      "width_approx": 1.18674e-35,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "slope_source": {
+      "lower_fraction": "-33738051515027143055287014048595835009/10000000000000000000000000000000000000000",
+      "upper_fraction": "-8434512878756785763821753512148958091/2500000000000000000000000000000000000000",
+      "midpoint_approx": -0.003373805151502714,
+      "width_approx": 2.645e-37,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "slope_root": {
+      "lower_fraction": "23693100631828228332750957120216677947/5000000000000000000000000000000000000000",
+      "upper_fraction": "23693100631828228332750957120216679271/5000000000000000000000000000000000000000",
+      "midpoint_approx": 0.004738620126365646,
+      "width_approx": 2.648e-37,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    }
+  },
+  "root_enclosure": {
+    "lower_fraction": "4073344606717732538485743001534530993661/10000000000000000000000000000000000000000",
+    "upper_fraction": "814668921343546507697148600306906198733/2000000000000000000000000000000000000000",
+    "midpoint_approx": 0.40733446067177326,
+    "width_approx": 4e-40,
+    "excludes_zero": true,
+    "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+  },
+  "source_files": [
+    {
+      "commit": "ec01768f520e85f1acfd9d3fde9bcf855477254e",
+      "path": "results/p337-closed-source-n25/latest.json",
+      "sha256": "df4ab225ff499131b744c70ec569ad21b0229f2256e71a585c680faae51bac3a"
+    },
+    {
+      "commit": "f5c4a74a20bad8589c39e1034cfb209462110dbe",
+      "path": "results/p337-endpoint-defect/score/score.json",
+      "sha256": "dd5aeeea31f2683257463796b3e27c36327c9dbd887bb2e6bf7588778f05c2dd"
+    },
+    {
+      "commit": "ec01768f520e85f1acfd9d3fde9bcf855477254e",
+      "path": "results/p337-closed-source-n25/axis.csv",
+      "sha256": "29991f11aaa5bea53bc8193fb0990dcb0c4c9fa98af8c0bdea975f4144763189"
+    },
+    {
+      "commit": "f5c4a74a20bad8589c39e1034cfb209462110dbe",
+      "path": "results/p337-endpoint-defect/first.csv",
+      "sha256": "dfd7cd7ebe9ee6bd0a2f0f97db2f286979301d103bb7809ae7bfafb44ab6e219"
+    },
+    {
+      "commit": "ec01768f520e85f1acfd9d3fde9bcf855477254e",
+      "path": "results/p337-closed-source-n25/tilted.csv",
+      "sha256": "09073ec9ebcf6d8aca804019f57d5141bfa93c58017f2f59df0b7461b217cc25"
+    },
+    {
+      "commit": "f5c4a74a20bad8589c39e1034cfb209462110dbe",
+      "path": "results/p337-endpoint-defect/second.csv",
+      "sha256": "4cd38c8da231ea79f3839e98115c6b0234cded17366a65322ae763230b0da8b3"
+    }
+  ],
+  "population": {
+    "new_subset_configurations_per_geometry": 4194304,
+    "full_population_per_geometry": 33554432,
+    "complement_cross_correction": "exactly_zero_by_alternating_face_rank_surgery",
+    "new_random_samples": 0,
+    "new_root_searches": 0
+  },
+  "subset_files": [
+    {
+      "path": "first.csv",
+      "sha256": "d9f4d1686583eac0b3eeaf9b71d49f568d92e269ae6ea487a8cffb47a76238ff"
+    },
+    {
+      "path": "second.csv",
+      "sha256": "39af780ee15be9fa6be8bee308241f998ef8ba4572d24499eab6f16f7dbea648"
+    }
+  ],
+  "dependency": "same paired exact finite populations as the prior full Xi, no independent evidence vote"
+}
