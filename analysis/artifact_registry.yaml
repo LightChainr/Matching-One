@@ -1,4 +1,4 @@
-version: 25
+version: 26
 updated: 2026-08-31
 purpose: >
   Lightweight navigation/provenance index. Registry conflicts never block
@@ -13,9 +13,20 @@ main_snapshot:
   boundary: main_through_e300609_includes_ordered_serial_composition_failure_of_the_seven_D4_orbit_quotient_and_typed_port_reversal_as_exact_support_not_new_production_covariance_or_field_assignment
 
 observed_remote_main_snapshot:
-  commit: 694586b6612b4366afd7d3edc6a158806abd790b
-  observed_by: analysis/github-context-increment-20260831b.json
+  commit: 2ee16678b64a065d6d235ef69941c8a46f3a3878
+  observed_at: '2026-08-31T06:21:03Z'
+  observed_by: analysis/github-context-increment-20260831c.json
   boundary: observed_remote_history_only_does_not_rewrite_the_scientific_main_snapshot_or_historical_scorer_counts
+
+latest_lifecycle_overlay:
+  source: analysis/github-context-increment-20260831c.json
+  captured_pr484_at: '2026-08-31T06:19:59Z'
+  pr484_head: 705819e95d1146fdedb06e9c7628344f108b80af
+  pr484_status: open_pr
+  merged_prs: [488, 489, 490, 493, 494, 495, 496, 497]
+  open_related_prs: [491, 492]
+  N900_acquisition_status: frozen_manifest_and_runner_published_execution_unknown_no_archived_result_or_receipt
+  boundary: initial_capture_open_states_for493_to497_are_historical_rank_width_and_ordinary_scalar_analysis_are_branch_only_despite_PR484_discussion
 
 draft_pr267_snapshot:
   pr: 267
@@ -57,6 +68,10 @@ canonical_documents:
   - {path: docs/REPOSITORY-CONTEXT.md, status: canonical_current, role: full_discussion_recovery_and_completed_vs_remaining_crosswalk}
   - {path: docs/ISSUE-PR-INDEX.md, status: dated_snapshot, role: complete_464_item_navigation_without_task_state_changes}
   - {path: analysis/github_context_inventory.json, status: dated_snapshot, role: exact_PR_heads_discussion_hashes_and_file_overlap_not_merge_recommendations}
+  - {path: analysis/github-context-increment-20260831c.json, status: dated_snapshot, role: bounded_complete_increment_with_final_lifecycle_overlay_at_fixed_PR484_705819e_and_remote_main2ee166}
+  - {path: docs/ISSUE-PR-INCREMENT-20260831c.md, status: dated_handoff, role: latest_completed_vs_remaining_Issue_PR_crosswalk_without_replacing_older_captures}
+  - {path: notes/context-reconciliation-20260831c.md, status: dated_handoff, role: current_scientific_context_reconciliation_and_completed_work_recovery}
+  - {path: notes/context-reconciliation-p334-20260831c.md, status: dated_handoff, role: general_two_port_full_clock_channel_site_and_canonical_noise_completion_crosswalk}
   - {path: docs/NEXT-TARGETS.md, status: canonical_current, role: decision_experiment_board}
   - {path: docs/STATUS.md, status: canonical_current, role: claim_ledger}
   - {path: docs/RESEARCH-MAP.md, status: canonical_current, role: research_navigation}
@@ -248,6 +263,136 @@ channel_semantics:
   required_fields: [topology_channel, combination, probability_coordinate, orientation_order, normalization, quantity]
 
 registered_reanalyses:
+  - id: PR484_ETOP_N400_PRODUCTION_AND_SCALE_TRANSPORT
+    status: completed_fresh_eight_million_four_hundred_batch_three_shape_production_and_N100_N400_analysis
+    integration_status: open_pr
+    pr: 484
+    branch: analysis/etop-modulus-survivors-20260831
+    commit: b892d9e69bbdb8f5a57dd7d79b951621be4b0522
+    raw_commit: 3e01b495b5b637b0070705e37b4137a9a0ef0d8b
+    observed_pr_head: 705819e95d1146fdedb06e9c7628344f108b80af
+    manifest: experiments/etop_n400_three_modulus_20260831.json
+    outputs: [results/etop-n400-three-modulus/raw/tau_2i.hist.csv, results/etop-n400-three-modulus/raw/tau_2i.moments.csv, results/etop-n400-three-modulus/raw/tau_2i.metadata.json, results/etop-n400-three-modulus/raw/tau_4i.hist.csv, results/etop-n400-three-modulus/raw/tau_half_plus_i.hist.csv, notes/etop-n400-scale-separation.md, results/etop-n100-n400-scale-transport/scale_transport.json, results/etop-n100-n400-scale-transport/REPORT.md, results/etop-n400-finite-transport-invariants/invariants.json]
+    dependency_groups: [N100_three_modulus_seed20260831125401_offset267100000000, N400_three_modulus_seed20260831134001_offset267400000000]
+    result_summary: N400_finite_A_E_Jacobian_transport_chi2_3p9008588_over6_p0p690091_amplitude_ratio_minus0p0302614_interval_minus0p20682_to0p18347_includes_zero_D_A_area0p0040849104_to0p0005264897_and_centered_z_variance1p4399945_to2p1233811
+    boundary: N400_is_independent_of_N100_but_all_its_three_shapes_and_derived_views_share_one_block_weak_target_compatibility_not_scalar_model_recovery_sign_reversal_energy_identity_or_an_exponent_fit
+    next_output: interpret_completed_scale_change_and_consume_existing_N900_assignment_not_reacquire_N400_or_repeat_first_scale_analysis
+  - id: P267_RANK_CLOCK_WIDTH
+    status: completed_same_archive_exact_Bernstein_Beta_versus_rank_step_width_decomposition
+    integration_status: branch_only
+    discussed_in_pr: 484
+    branch: analysis/p267-scalar-clock-transport-20260831
+    commit: fb1a944e1ef34e9b9dfcf32c59af25f44ce43d9a
+    script: scripts/p267_rank_clock_width.py
+    outputs: [notes/p267-rank-clock-width-decomposition.md, results/p267-rank-clock-width/REPORT.md, results/p267-rank-clock-width/score.json]
+    dependency_groups: [N100_three_modulus_seed20260831125401_offset267100000000, N400_three_modulus_seed20260831134001_offset267400000000]
+    result_summary: rank_step_z_variance1p43258464_to2p09475087_increase0p662166232_SE0p0765352_retains96p8948227_percent_SE0p507419_of_canonical_broadening
+    boundary: branch_commit_is_not_in_fixed_PR484_head705819e_two_post_reveal_sizes_and_quarter_power_coordinate_do_not_establish_an_exponent_or_extra_independent_evidence
+    next_output: use_the_published_N900_two_shape_prediction_with_shared_N400_anchor_uncertainty_not_first_Binomial_kernel_removal
+  - id: P267_ORDINARY_SCALAR_CLOCK_N400
+    status: completed_A_only_ordinary_scalar_ordered_critical_height_necessary_condition
+    integration_status: branch_only
+    discussed_in_pr: 484
+    branch: analysis/p267-scalar-clock-transport-20260831
+    commit: 162fe94e7986eaed177e58af42900acfffbf4e4d
+    script: scripts/p267_scalar_clock_transport.py
+    outputs: [notes/p267-ordinary-scalar-clock-n400.md, results/p267-scalar-clock-n400/REPORT.md, results/p267-scalar-clock-n400/score.json]
+    dependency_group: N400_three_modulus_seed20260831134001_offset267400000000
+    result_summary: no_Jacobian_A_only_critical_height_chi2_0p076979261_over2_p0p96224168_with_extrema_recomputed_in_all400_delete_one_batches
+    boundary: branch_commit_not_in_fixed_PR484_head705819e_this_is_not_the_density_Jacobian_model_or_existence_of_a_common_A_E_scalar_map
+    next_output: compare_declared_physical_transport_predictions_using_existing_results_not_repeat_the_completed_necessary_gate
+  - id: PR484_N900_RANK_WIDTH_FROZEN_FOLLOWUP
+    status: frozen_manifest_and_runner_published_execution_unknown
+    integration_status: open_pr
+    pr: 484
+    branch: analysis/etop-modulus-survivors-20260831
+    commit: ecde7c9132ed35ec1575bd82f11e816722912e6f
+    observed_pr_head: 705819e95d1146fdedb06e9c7628344f108b80af
+    manifest: experiments/etop_n900_rank_width_20260831.json
+    script: scripts/run_etop_n900_rank_width.py
+    outputs: []
+    result_summary: planned32m_counters800_batches_two_shapes2i_4i_without_shear_predictions2p565535388_and2p094750873_are_frozen
+    boundary: no_archived_N900_raw_result_or_receipt_at_fixed_head_no_claim_running_or_completed_predictions_share_N400_anchor_covariance_not_a_critical_exponent_claim
+    next_output: consume_the_existing_PR484_team_followup_when_its_result_is_available_do_not_duplicate_the_assignment
+  - id: PR484_P334_GENERAL_TWO_PORT_THEOREM
+    status: completed_general_embedded_rank1_parallel_network_representation_and_channel_winning_law
+    integration_status: open_pr
+    pr: 484
+    branch: analysis/etop-modulus-survivors-20260831
+    commit: 705819e95d1146fdedb06e9c7628344f108b80af
+    scientific_parent_commit: d23e3f94d0d5c03560d9ec77a8a379a1e47b18d7
+    outputs: [notes/p334-general-two-port-birth-theorem.md]
+    result_summary: all_embedded_rank1_prefixes_reduce_to_parallel_site_disjoint_two_port_components_F_equals_1plusz_power_r_times_product_Fi_and_Bi_equals_ni_Fi_minus_1plusz_Fi_prime_gives_winning_channel_law
+    boundary: general_topological_representation_not_unjoined_crossing_graphs_small_treewidth_or_universal_tractability_not_a_new_random_block
+    next_output: use_completed_general_law_and_selected_prefix_channel_outputs_for_population_or_geometry_loading_not_another_first_two_port_proof
+  - id: PR492_P429_DUAL_CYCLE_BLOCKER
+    status: completed_exact_dual_essential_cycle_blocker_and_real_A_B_certificate
+    integration_status: open_pr
+    pr: 492
+    branch: research/p429-dual-cycle-blocker-20260831
+    commit: 0e52dbaeed53dfffa94592e53e38129c179c5078
+    outputs: [notes/p429-dual-cycle-blocker.md, results/p429-dual-cycle-blocker/certificate.json, results/p429-dual-cycle-blocker/metadata.json, results/p429-dual-cycle-blocker/verification.json]
+    dependency_group: p334-cooperative-N425-20260831
+    result_summary: minimal_completion_sets_are_blockers_of_essential_white_cycles_two_cycle_sufficient_bipartition_gives_A_B_sides12_14_and5_29_same108_edges_W2_926_1466
+    boundary: selected_original_two_prefixes_not_new_data_or_a_universal_Ferrers_law
+    next_output: population_or_geometry_directional_loading_not_repeat_original_two_cycle_pair_examples
+  - id: P334_FULL_PHYSICAL_CLOCK
+    status: completed_exact_whole_event_clock_for_original_two_N425_prefixes
+    integration_status: branch_only
+    branch: analysis/p334-contracted-full-clock-20260831
+    commit: 6358ba49ef390c10a3f501b589ba7ba1d4e05b09
+    outputs: [notes/p334-full-physical-birth-clock.md, results/p334-contracted-full-clock/SCIENTIFIC_CARD.md, results/p334-contracted-full-clock/full_physical_birth_clock.json, results/p334-contracted-full-clock/whole_event_networks.json]
+    dependency_group: p334-cooperative-N425-20260831
+    result_summary: exact_full_mean_waits17p73237780_and20p77877866_gap3p04640085_replace_the_truncated_pair_through_quartic_surrogates
+    boundary: same_two_selected_real_prefixes_no_population_or_new_sample_claim_their_all_time_order_is_not_universal_as_twelve_prefix_results_show
+    next_output: consume_completed_canonical_site_and_twelve_prefix_race_extensions_not_another_longer_horizon_on_original_pair
+  - id: P334_CONDITIONAL_THERMAL_AVERAGING
+    status: completed_zero_new_sample_canonical_K2_profile_and_exact_conditional_suffix_covariance
+    integration_status: branch_only
+    branch: analysis/p334-conditional-thermal-averaging-20260831
+    commit: 7401c931117b693250139d7523406ba181decb24
+    source_commit: 6358ba49ef390c10a3f501b589ba7ba1d4e05b09
+    script: scripts/p334_conditional_thermal_averaging.py
+    outputs: [notes/p334-conditional-second-birth-thermal-response.md, results/p334-conditional-thermal-averaging/REPORT.md, results/p334-conditional-thermal-averaging/score.json]
+    dependency_group: p334-cooperative-N425-20260831
+    result_summary: f2_A0p1016281483_B0p08617025757_at_pref_suffix_variances0p01185405546_0p01171741881_full19_by19_eighteen_p_plus_integral_covariance
+    boundary: Binomial_tail_variance_not_f2_times1_minus_f2_no_K1_cross_prefix_coupling_or_population_variance_reduction_is_inferred_second_birth_A_E_noise_is_common_plus_direction
+    next_output: ensemble_frequency_cost_and_suffix_noise_weight_or_geometry_directional_comparison_not_first_canonical_K2_projection
+  - id: P334_TWELVE_PREFIX_CLOCKS
+    status: completed_twelve_preselected_saved_prefix_complete_clocks_and_crossings
+    integration_status: branch_only
+    branch: analysis/p334-twelve-prefix-clocks-20260831
+    commit: bd95f2a048d5780568b689bd42e0a684daf74315
+    selection_commit: b9cbe13e05da778f385d633c2d6a716e080b06c9
+    manifest: analysis/p334_twelve_prefix_selection_manifest.json
+    outputs: [notes/p334-twelve-real-prefix-clocks.md, results/p334-twelve-prefix-clocks/full_clocks.json, results/p334-twelve-prefix-clocks/scientific_summary.json, results/p334-twelve-prefix-clocks/selected_prefixes.json]
+    dependency_group: p334-cooperative-N425-20260831
+    result_summary: all12_solved1_to14_parallel_factors_ET5p77269_to24p89885_total_clock_walltime0p56_seconds11_of66_fixed_pair_survival_crossings
+    boundary: first12_eligible_counter_ordered_old_stream_prefixes_exclude_original_A_B_no_H2_b2_outcome_selection_but_not_population_frequency_or_new_MC
+    next_output: population_or_geometry_comparison_using_completed_channels_not_first_twelve_clock_or_first_crossing
+  - id: P334_COMPONENT_BIRTH_RACE
+    status: completed_exact_twelve_prefix_forty_seven_factor_winner_time_and_direct_collective_allocation
+    integration_status: branch_only
+    branch: analysis/p334-component-race-20260831
+    commit: e3d978216220b5c55ff8da3062473e713c1246c7
+    scientific_commit: d519b71696616e7d19581580d440273c3553cef5
+    source_commit: bd95f2a048d5780568b689bd42e0a684daf74315
+    outputs: [notes/p334-exact-component-birth-races.md, results/p334-component-birth-race/SCIENTIFIC_CARD.md, results/p334-component-birth-race/summary.json]
+    dependency_group: p334-cooperative-N425-20260831
+    result_summary: crossing_pair83_collective_share32p2122_percent_versus1006_47p7172_percent_long_tail60p5392_versus71p6711_percent_all47_factors_saved
+    boundary: one_small_factor_export_DP_pass_then_algebraic_reuse_not_zero_DP_or_new_samples_not_causal_allocation_of_mean_wait_difference
+    next_output: transport_completed_channel_races_to_population_or_geometry_comparison_not_first_winner_or_direct_collective_split
+  - id: P334_EXACT_MARKED_BIRTH
+    status: completed_original_pair_exact_final_site_time_and_port_interior_allocation
+    integration_status: branch_only
+    branch: analysis/p334-exact-marked-birth-20260831
+    commit: 1c06230b8f7e13be98f128361ad72b23c0c425ae
+    source_commit: 6358ba49ef390c10a3f501b589ba7ba1d4e05b09
+    outputs: [notes/p334-exact-final-birth-sites.md, results/p334-exact-marked-birth/summary.json, results/p334-exact-marked-birth/marked_birth_43042505280.json, results/p334-exact-marked-birth/marked_birth_43042514269.json]
+    dependency_group: p334-cooperative-N425-20260831
+    result_summary: positive_birth_support83_127_effective_sites36p4300_21p9549_B_interior_birth_share23p6534_percent_to40p8146_percent_in_Tgt40_tail
+    boundary: original_two_fixed_prefixes_not_twelve_site_sweep_population_H4_or_unique_late_bottleneck
+    next_output: consume_existing_marked_law_for_population_or_geometry_predictions_not_first_site_pivotal
   - id: P418_NORMALIZED_ARCHIVE
     status: completed_zero_sample_unit_corrected_joint_spectrum_analysis
     integration_status: open_pr
@@ -271,8 +416,8 @@ registered_reanalyses:
     outputs: [results/etop-n100-three-modulus/score.json, results/etop-n100-three-modulus/REPORT.md, results/etop-thermal-redistribution/thermal_profiles.json, results/etop-thermal-transport/transport.json, results/etop-finite-transport-invariants/invariants.json, notes/etop-clock-redistribution-n100.md, notes/etop-common-thermal-coordinate-n100.md]
     dependency_group: N100_three_modulus_seed20260831125401_offset267100000000
     result_summary: three_shapes_share2m_counters200_batches_fixed_affine_E4_chi2_58p26869_over4_free_secant19p21808_over3_and_joint_A_E_finite_Jacobian_transport53p91436_over6_are_rejected
-    boundary: one_correlated_finite_N100_data_block_not_field_count_frozen_primary_and_retrospective_profiles_are_not_independent_votes_N400_is_a_design_not_acquired_production
-    next_output: homothetic_scale_prediction_for_named_window_and_relative_E_cumulative_moments_after_the_completed_N100_window_analysis
+    boundary: one_correlated_finite_N100_data_block_not_field_count_frozen_primary_and_retrospective_profiles_are_not_independent_votes_N400_was_design_only_at_this_historical_pin_but_is_now_completed_below
+    next_output: consume_completed_N100_N400_scale_and_rank_width_outputs_and_existing_N900_assignment_not_first_N400_or_window_analysis
   - id: PR485_P267_CLOCK_SHAPE_QUOTIENT
     status: completed_exact_three_shape_design_and_same_stream_clock_reanalysis
     integration_status: open_pr
@@ -283,7 +428,7 @@ registered_reanalyses:
     dependency_group: N100_three_modulus_seed20260831125401_offset267100000000
     result_summary: rC_minus0p277981748_plusminus0p019377_clock_closure17p8234_over3_and_source_selected_Psi_are_completed
     boundary: same_PR484_production_not_new_samples_two_profiles_saturate_three_shapes_W_only_survives_alpha0p01_Psi_in_sample_SNR_is_not_independent_evidence
-    next_output: test_the_frozen_direction_and_source_uncertainty_under_an_explicit_homothetic_scale_prediction_not_first_clock_quotient
+    next_output: interpret_completed_N100_N400_transport_with_its_source_uncertainty_and_existing_N900_followup_not_first_clock_quotient_or_first_homothetic_scale
   - id: ETOP_N100_CRITICAL_WINDOW
     status: completed_zero_sample_aligned_window_and_activation_reanalysis
     integration_status: open_pr
@@ -295,7 +440,7 @@ registered_reanalyses:
     dependency_group: N100_three_modulus_seed20260831125401_offset267100000000
     result_summary: core_A_area_minus3p46029e_minus4_plusminus4p62677e_minus5_core_A_first_moment_unresolved_minus1p01133e_minus5_plusminus2p24112e_minus5_core_E_first_moment_minus1p358016e_minus4_plusminus1p16777e_minus5
     boundary: no_zero_core_claim_no_critical_field_identity_all_windows_and_birth_coordinates_reuse_same200_batches_with_clock_refit_and_full_covariance_float64_beta_integrals_not_rigorous_numeric_enclosures
-    next_output: predict_same_named_window_and_relative_E_response_at_homothetic_scale_not_first_window_or_A_only_quantile_transport
+    next_output: consume_completed_N100_N400_window_and_rank_width_comparison_not_first_window_or_first_homothetic_scale
   - id: P398_FIXED_READOUT
     status: completed_saved_Cd_and_residue_numerical_projection
     integration_status: open_pr
@@ -307,7 +452,7 @@ registered_reanalyses:
     dependency_group: p398-positive-cylinder-exact-chain
     result_summary: equal_time_only_J_landing_innovation_has_d1_unit_variance_signal0p02021599642_and_two_slow_mode_error77p98237_percent_versus_matrix0p8996_AP0p07698_landing1p97589_percent
     boundary: unchanged_width5_discrete_zeta5_model_no_transfer_or_spectrum_recomputation_no_lag_selected_J_no_MC_constructed_two_end_slow_null100percent_error_is_not_new_evidence
-    next_output: explicit_same_character_generator_transport_and_duality_prediction_for_named_readouts_and_R_T2_leakage_not_first_projection
+    next_output: distinct_physical_geometry_or_generator_prediction_using_completed_width8_source_memory_and_triplet_motifs_not_first_projection_or_first_leakage_explanation
   - id: PR491_P487_CUT_NETWORK_MECHANISM
     status: completed_exact_cut_network_and_saved_N425_checkpoint_mechanism
     integration_status: open_pr
@@ -319,7 +464,7 @@ registered_reanalyses:
     dependency_group: p334-cooperative-N425-20260831
     result_summary: fixed_occupied_essential_cycle_cut_maps_every_future_rank2_event_to_vertex_connectivity_pair_edges_are_component_biclique_union_plus_direct_edges_real_A_B108_edges_each_W2gap540_equals472_plus68_and_c3_583_509_are_reproduced
     boundary: honest_embedded_NN_rank1_scope_not_crossing_matching_graph_or_field_count_two_saved_checkpoint_reuses_not_new_MC_biclique_allocation_not_population_H4_loading
-    next_output: cut_invariant_or_covariant_component_incidence_and_overlap_population_directional_loading_or_longer_horizon_vertex_reliability_not_first_cut_or_graph_replay
+    next_output: population_or_geometry_loading_using_completed_general_two_port_full_clocks_twelve_prefix_channel_races_and_original_pair_marked_laws_not_first_cut_longer_horizon_first_twelve_or_first_winner
   - id: P267_FIXED_P_RESPONSE_RAY
     status: completed_post_reveal_reanalysis
     integration_status: open_pr
@@ -713,7 +858,7 @@ registered_reanalyses:
     dependency_group: p398-positive-cylinder-exact-chain
     result_summary: same_AP_landing_width5_Krylov_2_4_6_8_positive_separation_Hankel_rank8_simple_polynomial_two_slow_mode_matrix_error_percent_0p8996_0p1523_0p00405_at_d1_d2_d4
     boundary: eight_finite_observable_modes_not_eight_fields_numerical_visibility_not_a_new_exact_certificate_7p8838_percent_two_by_two_U_semigroup_defect_not_failure_of_the_full_forty_two_state_Markov_chain
-    next_output: use_completed_fixed_J_projection_and_width8_protected_rays_for_explicit_character_generator_transport_and_R_T2_leakage_prediction_not_first_fixed_readout
+    next_output: use_completed_fixed_J_and_width8_source_memory_triplet_outputs_for_a_distinct_physical_character_generator_or_geometry_prediction_not_first_fixed_readout_or_first_memory
   - id: P250_ADAPTIVE_STATE_INCREMENT
     status: completed_post_reveal_zero_new_sample_reanalysis
     integration_status: open_pr
@@ -757,7 +902,7 @@ registered_reanalyses:
     outputs: [results/p334-fork-directional-allocation/score.json, results/p334-fork-directional-allocation/REPORT.md]
     result_summary: exact_scalar_state_nonclosure_does_not_yet_identify_a_direction_carrier_within_checkpoint_contrast_z_1p112_and_minus0p736
     boundary: linear_projection_of_parent_full_22_by22_covariance_not_new_random_evidence_or_a_pure_H4_identification
-    next_output: deterministic_saved_checkpoint_safe_graph_degree_and_boundary_organization_comparison
+    next_output: population_or_geometry_directional_loading_after_completed_saved_graph_general_two_port_full_clock_channel_race_and_marked_laws_not_first_replay
   - id: P439_DIRECT_PLATEAU_TRANSPORT
     status: completed_post_reveal_zero_new_sample_reanalysis
     integration_status: open_pr
@@ -773,6 +918,28 @@ registered_reanalyses:
     next_output: same_stream_M_KA_loading_on_a_matching_sensitive_geometry_not_more_KA_only_scales
 
 frontier_branch_assets:
+  - id: P398_WIDTH8_PROJECTED_MEMORY
+    status: branch_only
+    branch: theory/p398-width8-projected-memory-20260831
+    commit: 39e06607ec3a353b1130acebf770da591acaf340
+    parent_commit: 552c45d7595ebcb0d04555cec03b2a5bfd8da44a
+    representative_path: notes/p398-width8-projected-memory.md
+    paths: [notes/p398-width8-projected-memory.md, results/p398-width8-projected-memory/latest.json, results/p398-width8-projected-memory/SCIENTIFIC_CARD.md, scripts/p398_width8_projected_memory.py]
+    role: completed_stationary_L2_projected_memory_left_right_force_pairing_and_four_observable_no_fit_crossing0p2541213924_versus_full0p2656573200
+    dependency_group: p398-positive-cylinder-exact-chain
+    dependency_boundary: same_finite_width8_generator_no_new_MC_hidden_self_energy_poles_are_not_new_physical_states_and_projection_memory_is_not_path_order_memory
+    next_output: use_completed_source_variance_and_triplet_motif_extension_for_a_distinct_physical_geometry_or_generator_prediction_not_first_memory_kernel
+  - id: P398_WIDTH8_MEMORY_MOTIFS
+    status: branch_only
+    branch: theory/p398-width8-memory-motifs-20260831
+    commit: c9dc218f5522502cce8cca539b876ed5faa49b8a
+    parent_commit: 39e06607ec3a353b1130acebf770da591acaf340
+    representative_path: notes/p398-width8-memory-motifs.md
+    paths: [notes/p398-width8-memory-motifs.md, results/p398-width8-memory-motifs/latest.json, results/p398-width8-memory-motifs/SCIENTIFIC_CARD.md, scripts/p398_width8_memory_motifs.py]
+    role: normalized_plus_feedback6p812251365_equals_source_variance_factor12p47438663_times_bare_ratio0p5460991041_mixed_join_detach90p22_percent_of_initial_plus_signed_budget_and_G_T2_equals2T3_minus2T2_plusS11_minusB2
+    dependency_group: p398-positive-cylinder-exact-chain
+    dependency_boundary: mixed_motif_signed_budgets_are_not_causal_rates_duality_related_two_contact_and_triplet_coordinates_are_not_independent_evidence_frontier_detach_is_not_bulk_site_deletion_or_an_energy_operator
+    next_output: distinct_physical_response_prediction_after_completed_source_memory_triplet_explanation_not_first_R_T2_or_first_triplet
   - id: P398_WIDTH8_PROTECTED_RAYS
     status: branch_only
     branch: theory/p398-width8-source-spectrum-20260831
@@ -783,7 +950,7 @@ frontier_branch_assets:
     role: exact_character_i_dimension186_Kreweras_protected93_plus93_rays_and_current_state_R_T2_leakage_with_numerical_low_mass_order_reversal
     dependency_group: p398-positive-cylinder-exact-chain
     dependency_boundary: continuous_width8_i_character_is_not_discrete_width5_zeta5_186_source_directions_are_not_field_count_width4_mass_law_fails_but_Ic1_rays_survive_scalar_finite_lag_crossing_is_not_Jordan
-    next_output: named_duality_ray_and_R_T2_microscopic_leakage_prediction_under_explicit_same_character_scale_transport_not_first_width8_census
+    next_output: distinct_physical_prediction_after_completed_projected_memory_source_variance_and_triplet_motif_decomposition_not_first_width8_memory_or_triplet
   - {id: P334_COOPERATIVE_SCALAR_NONCLOSURE, status: branch_only, branch: experiment/p334-cooperative-closure-pilot-20260830, commit: 6147e22f53902a94e5f133739f2c1d423691d0b8, representative_path: notes/p334-real-checkpoint-scalar-nonclosure.md, role: real_checkpoint_H2_b2_age_line_matched_safe_graph_degree_second_moment_nonclosure_with_replayable_microscopic_identifiers}
   - {id: P398_ROOTED_MODULE_COMPLETED, status: branch_only, branch: theory/p398-rooted-module-closure-20260830, commit: 5389200f6f75262d5327c5c52ba1c19826e177a8, representative_path: results/p398-rooted-module-closure/latest.md, role: coupled_nine_mark_unique_declared_intersection_not_a_physical_transfer}
   - {id: P398_SECOND_JET_COMPLETED, status: branch_only, branch: theory/p398-rooted-second-jet-20260831, commit: afc619c35188af718d450c19935f4d8dd8d39ff1, representative_path: results/p398-rooted-second-jet/latest.md, role: X2_zero_J2_zero_and_higher_fixed_radical_Gram_automatic_not_an_independent_gate_or_all_Gram_realization}
@@ -1162,6 +1329,15 @@ canonical_integration_history:
   - {pr: 433, merge_commit: 46e4dd1cb34c65d512acf17d20d423e6dc49b664, role: fail_closed_acquisition_semantic_gates_with_P267_Palm_like_and_fixed_K_Oext_classification}
   - {pr: 436, merge_commit: 6834af440619ea79c97a9ad47262140fdccd64ec, role: exact_fixed_K_Euler_centering_removes_degree_one_product_noise_projection_without_field_count_claim}
   - {pr: 437, merge_commit: 5ac456d7397bdf311c01bad2f6510bd425c93e0f, role: exact_six_level_population_high_pass_without_coupled_P267_input_low_variance_estimator_or_production_claim}
+
+  - {pr: 488, merge_commit: 3b2bdb851ecc241548561a6454237d38ed4920da, role: finite_terminal_serial_congruence_lattice_certificate_not_new_production}
+  - {pr: 489, merge_commit: 60b2877418b311577dd0945aa6f22ed09fd3193c, role: finite_terminal_serial_shortlex_word_certificate_not_new_production}
+  - {pr: 490, merge_commit: 75fbfec706d5d6dc2210db16a0d41c01ffba6804, role: finite_terminal_serial_endomorphism_census_not_new_production}
+  - {pr: 493, merge_commit: 621368b39e28a1ec80aad4d80fcf4fc49bc1f638, role: finite_terminal_serial_local_monoid_certificate_merged_after_initial_context_capture}
+  - {pr: 494, merge_commit: d777be4508458598ef2853bb66b458a2bb9e9ee5, role: finite_terminal_serial_power_dynamics_certificate_merged_after_initial_context_capture}
+  - {pr: 495, merge_commit: ba1991ec05cc66fcd06ae3d57666172eef4506ca, role: finite_terminal_serial_idempotent_sector_certificate_merged_after_initial_context_capture}
+  - {pr: 496, merge_commit: 331ba6d17ce7acadbbfe97b5648d03b5c0fca513, role: finite_terminal_serial_generalized_inverse_certificate_merged_after_initial_context_capture}
+  - {pr: 497, merge_commit: 2ee16678b64a065d6d235ef69941c8a46f3a3878, role: finite_terminal_serial_stabilizer_cancellation_certificate_merged_after_initial_context_capture}
 
 manual_integrations:
   - {pr: 223, role: hexagonal_degree2_Hecke_unique_assets}

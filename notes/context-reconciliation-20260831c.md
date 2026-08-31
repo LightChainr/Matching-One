@@ -68,3 +68,14 @@ The increment observes newer remote `main` separately. Source citation is
 not integration. This handoff neither merges PRs nor closes, locks, renames,
 reassigns or demotes Issues. Original bodies and dated analyses remain
 preserved. No scientific test suite, new simulation, server or tunnel is used.
+
+## Delivered coordination update
+
+Documentation commit `7c5e36902bc4882d885c8e6ae9ef31ede9d58be6` was pushed
+to the existing Draft branch. The completed-result handoff was then placed
+at the top of Issues #154, #275, #205, #398, #334, #429, #487, #370 and #13,
+and PR #267. Each previous body was preserved in full; titles, labels,
+assignees, milestone, open/locked status and PR Draft/base/head-ref status
+were unchanged. The [body-only update receipt](../analysis/github_context_reconciliation_updates_20260831c.json)
+records before/after text hashes and lifecycle metadata. These are
+coordination edits, not new experiments or merge decisions.
