@@ -1,0 +1,20 @@
+{
+  "schema": "matching-one.p154-absolute-cluster-run.v1",
+  "declaration_commit": "3e7eb742",
+  "scope": "local deterministic replay of original Phase-E configurations; no new random samples or server activity",
+  "compiler": "Apple clang 21.0.0 (clang-2100.1.1.101), arm64-apple-darwin25.5.0",
+  "python": "/Users/lc/python-envs/research-py311/bin/python, 3.11.15",
+  "compile_command": "c++ -O3 -std=c++17 src/p154_absolute_cluster_replay.cpp -o /private/tmp/p154-absolute-lbnWIA/replay",
+  "score_command": "/Users/lc/python-envs/research-py311/bin/python scripts/analyze_p154_absolute_cluster.py",
+  "runs": [
+    {"N":65, "command":"/private/tmp/p154-absolute-lbnWIA/replay 65 results/p154-absolute-cluster/raw/n65.csv", "elapsed_seconds":0.626796, "old_counters":20000, "paired_geometry_configurations":40000, "new_random_samples":0, "cell_identity_failures":0, "raw_sha256":"a9074afb0253ca2a276a90803ec673a6cd2a51725c79b2232f01e5eabf21d445"},
+    {"N":130, "command":"/private/tmp/p154-absolute-lbnWIA/replay 130 results/p154-absolute-cluster/raw/n130.csv", "elapsed_seconds":1.20048, "old_counters":20000, "paired_geometry_configurations":40000, "new_random_samples":0, "cell_identity_failures":0, "raw_sha256":"b1ab68aa50c003ff64e486e38653b95de00cffd98aa99bb7d59b031e426fea1a"}
+  ],
+  "output_json_sha256": "78664ec4c9b64a7b060bad65015d151851eacea783732d52ab03260aee8f778b",
+  "scorer_sha256": "b849b1f299f5999a68f6b43fa601c4c20dec593e56ed3f147c743e42b46ed979",
+  "replay_source_sha256": "cef19dc52e70066c5127440dce75fb47578bc148c55b0e54bad0c011d126d912",
+  "declaration_sha256": "519ce15e97c24d6bc14d055dcdaaaa5932bc93e8b4d30c417099432b23a87065",
+  "checks_during_single_analysis": ["400 original Phase-E batch/orientation rows reproduced", "all old Q/R/H replay fields reproduced", "aligned K/KK reproduced between paired directions", "Euler identity counted independently on 80000 paired configurations"],
+  "test_suites_run": [],
+  "interpretation": "completed retrospective measurement; E_top directional response unresolved; no continuum field assignment"
+}
