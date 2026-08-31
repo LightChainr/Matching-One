@@ -1,16 +1,18 @@
-version: 5
-updated: 2026-08-29
+version: 6
+updated: 2026-08-31
 purpose: >
-  Compact map of durable evidence and next information axes. This ranks work;
-  it does not grant permission.
+  Compact machine-readable map of durable evidence and the current decision.
+  Claim language lives in docs/STATUS.md; this ledger must not become a second
+  prose roadmap.
 
 canonical_views:
   overview: README.md
   claim_ledger: docs/STATUS.md
   research_map: docs/RESEARCH-MAP.md
-  execution_synthesis: notes/SYNTHESIS-20260828.md
   roadmap: docs/ROADMAP.md
+  cleanup_audit: docs/CLEANUP-20260831.md
   artifact_registry: analysis/artifact_registry.yaml
+  predictive_evidence: analysis/evidence_ledger_manifest.yaml
   reproducibility: REPRODUCIBILITY.md
   governance: GOVERNANCE.md
 
@@ -19,44 +21,71 @@ hard_constraints:
   - require_identical_observable_semantics_or_a_registered_exact_map_for_claim_bearing_scores
   - do_not_add_correlated_views_of_one_raw_random_block_as_independent_primary_evidence
 
+weekly_decision:
+  date: 2026-08-31
+  objective: one_prospective_birth_current_to_global_U_transmission_decision
+  keep_live_issues: [334, 154]
+  keep_live_limit: 4
+  model_family:
+    M0: lifecycle_current_only
+    M1: contact_regulated_current
+    M2: extra_transfer_coordinate_only_if_frozen_before_validation
+  transmission_chain:
+    - microscopic_source_or_contact
+    - ingress_egress_birth_currents
+    - J_grad
+    - d_p_E_top
+    - pooled_root_slope_normalized_U
+  diagnostic_only:
+    - J_act
+  stop_rule: >
+    A failed validation demotes or eliminates the frozen model. Do not add a
+    feature on the same validation block. If #154 cannot freeze a
+    distinguishable prospective U prediction before new data, do not run a
+    fresh target block. Do not open a third P0 during this decision.
+  fallback_boundary: write_current_C3_finite_size_phenomenology_without_operator_identification
+
 research_tracks:
   - id: A
     name: exact_topology_semantics_and_cover_characters
-    state: exact
+    state: durable_exact_support
     evidence: [E_CHANNEL_SEMANTICS, E_RUSSO_PIVOTAL, E_COVER_CHARACTERS]
   - id: B
     name: threshold_rank_and_reusable_statistics
-    state: exact
+    state: durable_exact_support
     evidence: [E_PREQUENTIAL, E_KRAWTCHOUK_MODES, E_NEUTRAL_AREA]
   - id: C
     name: square_site_matching_odd_thermal_H4
-    state: predictive
+    state: C3_finite_size_predictive
     evidence: [E_P57, E_P50_FULLCURVE, E_MATCHING_ODD_SYNTHESIS]
   - id: D
-    name: thermal_derivative_mixing_and_intrinsic_coordinates
-    state: predictive
-    evidence: [E_P50_FULLCURVE, E_NEUTRAL_AREA, E_INTRINSIC_QUANTILE]
+    name: birth_current_to_global_transmission
+    state: active_decision
+    issues: [334, 154]
+    evidence: [D_P334_FULL_BIRTH_ARCHIVE, D_P334_INTERVENTION_FREEZE, D_P154_LAGGED_SOURCE]
   - id: E
     name: pivotal_and_self_matching_RG
-    state: mechanism_candidate
+    state: parked_support
     evidence: [E_RUSSO_PIVOTAL, E_LOCAL_TANGENT, E_MULTIRADIUS]
   - id: F
     name: Q4_Jordan_and_modular_shape
-    state: mechanism_candidate
+    state: parked_support
     evidence: [E_RECTANGULAR_Q4, E_Q4_JORDAN, E_HEX_HECKE]
   - id: G
     name: primitive_square_bond_spin4
-    state: predictive
+    state: parked_distinct_sector
     evidence: [E_PRIMITIVE_GEN2, E_PRIMITIVE_KDV]
   - id: H
     name: exact_finite_algebra_and_negative_controls
-    state: exact
+    state: parked_exact_support
     evidence: [E_N26_BETA_NEGATIVE]
   - id: I
     name: threshold_value_and_literature
-    state: observed
+    state: parked_observed_support
     evidence: [E_PREQUENTIAL]
 
+# These entries retain the pre-cleanup durable evidence IDs so downstream
+# references do not need a migration merely because priorities changed.
 evidence_blocks:
   - id: E_CHANNEL_SEMANTICS
     status: exact
@@ -113,31 +142,123 @@ evidence_blocks:
     status: mechanism_candidate
     paths: [results/local-20260829/P231-vacuum-kdv-sector-response/score.json]
 
-analysis_queue:
-  - {issue: 119, name: multi_u_coordinate_separation, state: analysis_ready}
-  - {issue: 227, name: Boolean_noise_semigroup, state: analysis_ready}
-  - {issue: 234, name: energy_logpair_sufficient_statistics, state: analysis_ready}
-  - {issue: 180, name: low_rank_fullcurve_transfer, state: analysis_ready}
-  - {issue: 118, name: metric_free_ratios, state: analysis_ready}
+# Every active decision/evidence entry carries the common provenance fields.
+decision_evidence_blocks:
+  - id: D_P334_FULL_BIRTH_ARCHIVE
+    issue: 334
+    claim_level: C2_discovery_with_C5_finite_controls
+    geometry: paired_square_site_birth_paths
+    N: [325, 425]
+    n_samples: 40000
+    raw_path: results/p334-full-birth-archive
+    score_path: null
+    sha: 9c495ab13e65f2bc93dc0849ee3b73f88724c4b1
+    parent_block: null
+    independent_primary: false
+    note: >
+      147 clocks, suffix-noise, contact/risk, W2/cut/blocker and related
+      projections derived from this archive remain one discovery dependency
+      family even when some finite statements are exact.
 
-new_compute_queue:
-  - {rank: 1, issue: 205, name: same_N_norm5_coalescence, state: active}
-  - {rank: 2, issue: 159, name: scalar_cancelled_Q4_Jordan_modulus_fingerprint, state: active}
-  - {rank: 3, issue: 154, name: norm4_dyadic_deck_character_closure, state: ready}
-  - {rank: 4, issue: 155, name: larger_injective_local_pivotal_geometry, state: ready}
-  - {rank: 5, issue: 156, name: primitive_x4_shape_correction_target, state: ready}
-  - {rank: 6, issue: 74, name: N1105_four_angle, state: later}
+  - id: D_P334_INTERVENTION_FREEZE
+    issue: 334
+    claim_level: C0_frozen_validation_protocol
+    geometry: fresh_population_prefix_intervention
+    N: null
+    n_samples: 0
+    planned_samples: 1000000
+    raw_path: null
+    score_path: notes/p334-independent-intervention-freeze.md
+    sha: bc0a18c207e3b09f49ea6b6af6601471114d654a
+    parent_block: D_P334_FULL_BIRTH_ARCHIVE
+    independent_primary: true
+    note: >
+      This is a freeze, not a result. Historical archives may train and
+      estimate variance but may not enter the independent target score.
+
+  - id: D_P154_LAGGED_SOURCE
+    issue: 154
+    claim_level: C2_retrospective_discovery
+    geometry: norm4_two_lineages_reused_permutations
+    N: [65, 85, 130, 170, 260, 340]
+    n_samples: 2400000
+    raw_path: results/norm4-lagged-source
+    score_path: results/norm4-lagged-source/REPORT.md
+    sha: dd48177340f169c18cd1fc9217101b54090e1e3a
+    parent_block: historical_norm4_archives
+    independent_primary: false
+    note: >
+      Resolves temporal entry/exit response on reused permutations; the
+      original global U source response remains unresolved. It may inform the
+      prospective mapping and variance budget, not validate it.
+
+  - id: D_P154_FROZEN_NORM4_PRODUCTION
+    issue: 154
+    claim_level: C3_frozen_finite_size_result
+    geometry: norm4_two_lineages
+    N: [65, 85, 130, 170, 260, 340]
+    n_samples: null
+    raw_path: null
+    score_path: pull/273
+    sha: 8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc
+    parent_block: historical_norm4_production
+    independent_primary: true
+    note: >
+      Declared scalar q2 completion is rejected; Jordan survives only as a
+      model family. PR #277 generation 4 is a later target block and does not
+      identify the secondary eigenvalue.
+
+active_execution:
+  - rank: 1
+    issue: 334
+    name: independent_birth_current_population_intervention
+    state: frozen_waiting_execution
+    freeze_sha: bc0a18c207e3b09f49ea6b6af6601471114d654a
+  - rank: 2
+    issue: 154
+    name: prospective_J_grad_to_global_U_transmission
+    state: prediction_freeze_required_before_new_data
+    discovery_sha: dd48177340f169c18cd1fc9217101b54090e1e3a
+
+parked_support_issues:
+  - 1
+  - 5
+  - 8
+  - 11
+  - 13
+  - 14
+  - 27
+  - 31
+  - 52
+  - 100
+  - 103
+  - 112
+  - 119
+  - 155
+  - 156
+  - 159
+  - 227
+  - 234
+  - 275
+  - 276
+  - 321
+  - 370
+  - 398
+  - 408
+  - 419
 
 completed_analysis_tasks:
   - {issue: 95, name: prequential_evidence_ledger, outcome: canonical_primary_only_evidence_aggregation}
   - {issue: 212, name: independent_matching_odd_synthesis, outcome: global_zero_disfavored_fixed_H4_compatible}
   - {issue: 101, name: intrinsic_quantile_N145_N290, outcome: frozen_N_minus_3_over_4_transfer_compatible}
   - {issue: 225, name: small_torus_multiradius_prototype, outcome: do_not_extend_N130_N170_same_design}
+  - {issue: 439, name: same_stream_M_projective_current_crosswalk, outcome: common_ray_not_rejected_but_zero_M_loading_also_survives}
 
 completed_production_tasks:
   - {issue: 50, name: N145_to_N290_full_curve, outcome: corrected_slope_survives_single_multiplier_shape_fails}
   - {issue: 57, name: norm5_H4_H12, outcome: H4_transfer_compatible_H12_H8_disfavored_child_zero_not_rejected}
   - {issue: 156, name: primitive_norm2_two_generations, outcome: negative_rank4_H4_phase_repeats_positive_phase_adversaries_fail}
+  - {issue: 205, name: same_N_norm5_coalescence, outcome: completed_or_archived_not_current_execution}
 
 completed_exact_tasks:
   - {issue: 115, name: N26_self_matching_Beta_falsification, outcome: both_frozen_Beta_laws_fail}
@@ -155,7 +276,8 @@ negative_results:
   - {id: NR_PRIMITIVE_SCALAR_E4, statement: scalar_E4_Pell_phase_bridge_fails_for_primitive_character}
 
 maintenance_rules:
-  - Integrate useful science first; refresh navigation afterward.
-  - Existing-data analysis, exact work, pilots and exploratory production are allowed by default.
-  - Prefer a new information axis over another unconstrained fit parameter.
-  - A negative result succeeds when it removes a mechanism or compute loop.
+  - STATUS_is_the_only_current_claim_ledger
+  - no_branch_local_NEXT_file_is_current_authority
+  - parked_issues_do_not_receive_new_handoff_blocks
+  - prefer_eliminating_a_model_over_adding_a_coordinate
+  - a_failed_discriminator_is_a_success_when_it_closes_a_mechanism_loop
