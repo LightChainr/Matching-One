@@ -49,8 +49,8 @@ def strip_one_plus_z(coefficients):
     return power, p
 
 
-def polynomial(graph, triples):
-    edges = [frozenset(e) for e in graph["minimal_trigger_pairs"] + triples]
+def polynomial(graph, triples, quartics=()):
+    edges = [frozenset(e) for e in graph["minimal_trigger_pairs"] + triples + list(quartics)]
     sites = set(graph["safe_sites"])
     active = set().union(*edges)
     # Equal links imply no edge contains two group members. Any nonempty
@@ -81,17 +81,23 @@ def polynomial(graph, triples):
         if forced_absent:
             return solve(vertices & ~forced_absent,
                          tuple(e for e in constraints if not e & forced_absent))
-        # A pair forbids its triple supersets too; remove those redundancies.
+        # After contraction, smaller edges also forbid their supersets.
         pairs = {e for e in constraints if e.bit_count() == 2}
+        triples_here = {e for e in constraints if e.bit_count() == 3}
         reduced = []
         for edge in constraints:
-            if edge.bit_count() == 3:
+            if edge.bit_count() >= 3:
                 bits, remaining = [], edge
                 while remaining:
                     bit = remaining & -remaining
                     bits.append(bit)
                     remaining ^= bit
-                if any(edge ^ bit in pairs for bit in bits):
+                if edge.bit_count() == 3 and any(edge ^ bit in pairs for bit in bits):
+                    continue
+                if edge.bit_count() == 4 and (
+                    any(edge ^ bit in triples_here for bit in bits) or
+                    any(edge ^ bits[i] ^ bits[j] in pairs for i in range(4) for j in range(i + 1, 4))
+                ):
                     continue
             reduced.append(edge)
         reduced = tuple(reduced)
@@ -128,7 +134,7 @@ def polynomial(graph, triples):
             return result
         # High incidence reduces the two bounded real hypergraphs rapidly.
         chosen = max((j for j in range(len(groups)) if vertices & (1 << j)),
-                     key=lambda j: sum(4 - e.bit_count() for e in constraints if e & (1 << j)))
+                     key=lambda j: sum(5 - e.bit_count() for e in constraints if e & (1 << j)))
         bit = 1 << chosen
         absent = solve(vertices ^ bit, tuple(e for e in constraints if not e & bit))
         present = solve(vertices ^ bit, tuple(sorted({e & ~bit for e in constraints})))
