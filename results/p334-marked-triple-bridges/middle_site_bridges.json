@@ -1,0 +1,3614 @@
+{
+  "global_triple_subset_enumerations": 0,
+  "method": "Fixed-node neighbor-clique elimination; local marked middle-site L/R nonedge count",
+  "new_reliability_solves": 0,
+  "new_samples": 0,
+  "parent_commit": "87b6ca5b39084c06143f31cafdaba53f90012e27",
+  "records": [
+    {
+      "chosen_essential_root": 0,
+      "counter": 43042508631,
+      "direct_sites": [
+        16,
+        59,
+        86,
+        103,
+        150,
+        172,
+        215,
+        242,
+        260,
+        285,
+        307,
+        328,
+        371,
+        398,
+        418
+      ],
+      "factors": [
+        {
+          "I": [],
+          "L": [
+            130,
+            286
+          ],
+          "R": [
+            127,
+            129,
+            284,
+            397
+          ],
+          "direct_sites": [
+            16,
+            285,
+            398
+          ],
+          "factor": 0,
+          "fixed_component_roots": [],
+          "fixed_eliminations": [],
+          "minimal_pair_edges": [
+            [
+              130,
+              129
+            ],
+            [
+              286,
+              129
+            ]
+          ],
+          "minimal_triples": 0,
+          "port_addresses": [
+            -121,
+            304
+          ],
+          "positive_middle_sites": [],
+          "reduced_edges_after_removing_direct": [
+            [
+              -2,
+              130
+            ],
+            [
+              -2,
+              286
+            ],
+            [
+              -1,
+              127
+            ],
+            [
+              -1,
+              129
+            ],
+            [
+              -1,
+              284
+            ],
+            [
+              -1,
+              397
+            ],
+            [
+              127,
+              284
+            ],
+            [
+              129,
+              130
+            ],
+            [
+              129,
+              286
+            ],
+            [
+              129,
+              397
+            ]
+          ]
+        },
+        {
+          "I": [
+            42,
+            44,
+            110,
+            198,
+            202,
+            311,
+            377
+          ],
+          "L": [
+            40,
+            45,
+            90,
+            109,
+            111,
+            154,
+            156,
+            199,
+            203,
+            219,
+            220,
+            221,
+            243,
+            247,
+            265,
+            266,
+            267,
+            309,
+            310,
+            312,
+            314,
+            355,
+            357,
+            359,
+            376,
+            379,
+            380,
+            419,
+            422
+          ],
+          "R": [
+            39,
+            195,
+            196,
+            354
+          ],
+          "direct_sites": [
+            86,
+            150,
+            242,
+            307,
+            418
+          ],
+          "factor": 1,
+          "fixed_component_roots": [
+            41,
+            43,
+            197,
+            313,
+            378
+          ],
+          "fixed_eliminations": [
+            {
+              "fixed_component_root": 41,
+              "neighbors_at_elimination": [
+                40,
+                42,
+                198,
+                309
+              ],
+              "new_clique_edges": [
+                [
+                  40,
+                  42
+                ],
+                [
+                  40,
+                  198
+                ],
+                [
+                  40,
+                  309
+                ],
+                [
+                  42,
+                  198
+                ],
+                [
+                  42,
+                  309
+                ],
+                [
+                  198,
+                  309
+                ]
+              ]
+            },
+            {
+              "fixed_component_root": 43,
+              "neighbors_at_elimination": [
+                42,
+                44,
+                90,
+                199,
+                202,
+                311,
+                357,
+                359
+              ],
+              "new_clique_edges": [
+                [
+                  42,
+                  44
+                ],
+                [
+                  42,
+                  90
+                ],
+                [
+                  42,
+                  202
+                ],
+                [
+                  42,
+                  311
+                ],
+                [
+                  42,
+                  357
+                ],
+                [
+                  42,
+                  359
+                ],
+                [
+                  44,
+                  90
+                ],
+                [
+                  44,
+                  199
+                ],
+                [
+                  44,
+                  202
+                ],
+                [
+                  44,
+                  311
+                ],
+                [
+                  44,
+                  357
+                ],
+                [
+                  44,
+                  359
+                ],
+                [
+                  90,
+                  199
+                ],
+                [
+                  90,
+                  202
+                ],
+                [
+                  90,
+                  311
+                ],
+                [
+                  90,
+                  357
+                ],
+                [
+                  90,
+                  359
+                ],
+                [
+                  199,
+                  202
+                ],
+                [
+                  199,
+                  311
+                ],
+                [
+                  199,
+                  357
+                ],
+                [
+                  199,
+                  359
+                ],
+                [
+                  202,
+                  311
+                ],
+                [
+                  202,
+                  357
+                ],
+                [
+                  311,
+                  357
+                ],
+                [
+                  311,
+                  359
+                ],
+                [
+                  357,
+                  359
+                ]
+              ]
+            },
+            {
+              "fixed_component_root": 197,
+              "neighbors_at_elimination": [
+                40,
+                196,
+                198,
+                354
+              ],
+              "new_clique_edges": [
+                [
+                  40,
+                  196
+                ],
+                [
+                  40,
+                  354
+                ],
+                [
+                  196,
+                  198
+                ],
+                [
+                  196,
+                  354
+                ],
+                [
+                  198,
+                  354
+                ]
+              ]
+            },
+            {
+              "fixed_component_root": 313,
+              "neighbors_at_elimination": [
+                45,
+                156,
+                312,
+                314
+              ],
+              "new_clique_edges": [
+                [
+                  45,
+                  156
+                ],
+                [
+                  45,
+                  312
+                ],
+                [
+                  45,
+                  314
+                ],
+                [
+                  156,
+                  312
+                ],
+                [
+                  156,
+                  314
+                ],
+                [
+                  312,
+                  314
+                ]
+              ]
+            },
+            {
+              "fixed_component_root": 378,
+              "neighbors_at_elimination": [
+                110,
+                221,
+                377,
+                379
+              ],
+              "new_clique_edges": [
+                [
+                  110,
+                  221
+                ],
+                [
+                  110,
+                  377
+                ],
+                [
+                  110,
+                  379
+                ],
+                [
+                  221,
+                  377
+                ],
+                [
+                  221,
+                  379
+                ],
+                [
+                  377,
+                  379
+                ]
+              ]
+            }
+          ],
+          "minimal_pair_edges": [
+            [
+              40,
+              39
+            ],
+            [
+              40,
+              196
+            ],
+            [
+              40,
+              354
+            ],
+            [
+              355,
+              354
+            ]
+          ],
+          "minimal_triples": 5,
+          "port_addresses": [
+            -109,
+            316
+          ],
+          "positive_middle_sites": [
+            {
+              "contracted_path_certificates": [
+                {
+                  "fixed_expanded_path": [
+                    -2,
+                    199,
+                    198,
+                    197,
+                    196,
+                    -1
+                  ],
+                  "ordered_sites_L_I_R": [
+                    199,
+                    198,
+                    196
+                  ]
+                },
+                {
+                  "fixed_expanded_path": [
+                    -2,
+                    199,
+                    198,
+                    197,
+                    354,
+                    -1
+                  ],
+                  "ordered_sites_L_I_R": [
+                    199,
+                    198,
+                    354
+                  ]
+                },
+                {
+                  "fixed_expanded_path": [
+                    -2,
+                    309,
+                    41,
+                    198,
+                    197,
+                    196,
+                    -1
+                  ],
+                  "ordered_sites_L_I_R": [
+                    309,
+                    198,
+                    196
+                  ]
+                },
+                {
+                  "fixed_expanded_path": [
+                    -2,
+                    309,
+                    41,
+                    198,
+                    197,
+                    354,
+                    -1
+                  ],
+                  "ordered_sites_L_I_R": [
+                    309,
+                    198,
+                    354
+                  ]
+                },
+                {
+                  "fixed_expanded_path": [
+                    -2,
+                    355,
+                    198,
+                    197,
+                    196,
+                    -1
+                  ],
+                  "ordered_sites_L_I_R": [
+                    355,
+                    198,
+                    196
+                  ]
+                }
+              ],
+              "excluded_existing_pair_edges": [
+                [
+                  40,
+                  196
+                ],
+                [
+                  40,
+                  354
+                ],
+                [
+                  355,
+                  354
+                ]
+              ],
+              "left_neighbors": [
+                40,
+                199,
+                309,
+                355
+              ],
+              "middle_site_id": 198,
+              "minimal_triple_contribution": 5,
+              "ordered_triples": [
+                [
+                  199,
+                  198,
+                  196
+                ],
+                [
+                  199,
+                  198,
+                  354
+                ],
+                [
+                  309,
+                  198,
+                  196
+                ],
+                [
+                  309,
+                  198,
+                  354
+                ],
+                [
+                  355,
+                  198,
+                  196
+                ]
+              ],
+              "potential_cross_pairs": 8,
+              "right_neighbors": [
+                196,
+                354
+              ]
+            }
+          ],
+          "reduced_edges_after_removing_direct": [
+            [
+              -2,
+              40
+            ],
+            [
+              -2,
+              45
+            ],
+            [
+              -2,
+              90
+            ],
+            [
+              -2,
+              109
+            ],
+            [
+              -2,
+              111
+            ],
+            [
+              -2,
+              154
+            ],
+            [
+              -2,
+              156
+            ],
+            [
+              -2,
+              199
+            ],
+            [
+              -2,
+              203
+            ],
+            [
+              -2,
+              219
+            ],
+            [
+              -2,
+              220
+            ],
+            [
+              -2,
+              221
+            ],
+            [
+              -2,
+              243
+            ],
+            [
+              -2,
+              247
+            ],
+            [
+              -2,
+              265
+            ],
+            [
+              -2,
+              266
+            ],
+            [
+              -2,
+              267
+            ],
+            [
+              -2,
+              309
+            ],
+            [
+              -2,
+              310
+            ],
+            [
+              -2,
+              312
+            ],
+            [
+              -2,
+              314
+            ],
+            [
+              -2,
+              355
+            ],
+            [
+              -2,
+              357
+            ],
+            [
+              -2,
+              359
+            ],
+            [
+              -2,
+              376
+            ],
+            [
+              -2,
+              379
+            ],
+            [
+              -2,
+              380
+            ],
+            [
+              -2,
+              419
+            ],
+            [
+              -2,
+              422
+            ],
+            [
+              -1,
+              39
+            ],
+            [
+              -1,
+              195
+            ],
+            [
+              -1,
+              196
+            ],
+            [
+              -1,
+              354
+            ],
+            [
+              39,
+              40
+            ],
+            [
+              39,
+              196
+            ],
+            [
+              40,
+              42
+            ],
+            [
+              40,
+              196
+            ],
+            [
+              40,
+              198
+            ],
+            [
+              40,
+              309
+            ],
+            [
+              40,
+              354
+            ],
+            [
+              42,
+              44
+            ],
+            [
+              42,
+              90
+            ],
+            [
+              42,
+              198
+            ],
+            [
+              42,
+              199
+            ],
+            [
+              42,
+              202
+            ],
+            [
+              42,
+              309
+            ],
+            [
+              42,
+              310
+            ],
+            [
+              42,
+              311
+            ],
+            [
+              42,
+              357
+            ],
+            [
+              42,
+              359
+            ],
+            [
+              44,
+              45
+            ],
+            [
+              44,
+              90
+            ],
+            [
+              44,
+              199
+            ],
+            [
+              44,
+              202
+            ],
+            [
+              44,
+              311
+            ],
+            [
+              44,
+              312
+            ],
+            [
+              44,
+              357
+            ],
+            [
+              44,
+              359
+            ],
+            [
+              45,
+              156
+            ],
+            [
+              45,
+              202
+            ],
+            [
+              45,
+              312
+            ],
+            [
+              45,
+              314
+            ],
+            [
+              90,
+              199
+            ],
+            [
+              90,
+              202
+            ],
+            [
+              90,
+              247
+            ],
+            [
+              90,
+              311
+            ],
+            [
+              90,
+              357
+            ],
+            [
+              90,
+              359
+            ],
+            [
+              109,
+              110
+            ],
+            [
+              109,
+              266
+            ],
+            [
+              109,
+              377
+            ],
+            [
+              110,
+              111
+            ],
+            [
+              110,
+              221
+            ],
+            [
+              110,
+              267
+            ],
+            [
+              110,
+              377
+            ],
+            [
+              110,
+              379
+            ],
+            [
+              111,
+              379
+            ],
+            [
+              154,
+              311
+            ],
+            [
+              154,
+              422
+            ],
+            [
+              156,
+              312
+            ],
+            [
+              156,
+              314
+            ],
+            [
+              195,
+              196
+            ],
+            [
+              196,
+              198
+            ],
+            [
+              196,
+              354
+            ],
+            [
+              198,
+              199
+            ],
+            [
+              198,
+              309
+            ],
+            [
+              198,
+              354
+            ],
+            [
+              198,
+              355
+            ],
+            [
+              199,
+              202
+            ],
+            [
+              199,
+              311
+            ],
+            [
+              199,
+              357
+            ],
+            [
+              199,
+              359
+            ],
+            [
+              202,
+              203
+            ],
+            [
+              202,
+              311
+            ],
+            [
+              202,
+              357
+            ],
+            [
+              202,
+              359
+            ],
+            [
+              219,
+              220
+            ],
+            [
+              219,
+              376
+            ],
+            [
+              220,
+              221
+            ],
+            [
+              220,
+              377
+            ],
+            [
+              221,
+              377
+            ],
+            [
+              221,
+              379
+            ],
+            [
+              265,
+              266
+            ],
+            [
+              265,
+              422
+            ],
+            [
+              266,
+              267
+            ],
+            [
+              309,
+              310
+            ],
+            [
+              310,
+              311
+            ],
+            [
+              311,
+              312
+            ],
+            [
+              311,
+              357
+            ],
+            [
+              311,
+              359
+            ],
+            [
+              312,
+              314
+            ],
+            [
+              354,
+              355
+            ],
+            [
+              357,
+              359
+            ],
+            [
+              376,
+              377
+            ],
+            [
+              377,
+              379
+            ],
+            [
+              379,
+              380
+            ]
+          ]
+        },
+        {
+          "I": [],
+          "L": [
+            60
+          ],
+          "R": [],
+          "direct_sites": [
+            59,
+            328
+          ],
+          "factor": 2,
+          "fixed_component_roots": [],
+          "fixed_eliminations": [],
+          "minimal_pair_edges": [],
+          "minimal_triples": 0,
+          "port_addresses": [
+            -154,
+            271
+          ],
+          "positive_middle_sites": [],
+          "reduced_edges_after_removing_direct": [
+            [
+              -2,
+              60
+            ]
+          ]
+        },
+        {
+          "I": [],
+          "L": [],
+          "R": [],
+          "direct_sites": [
+            103,
+            260,
+            371
+          ],
+          "factor": 3,
+          "fixed_component_roots": [],
+          "fixed_eliminations": [],
+          "minimal_pair_edges": [],
+          "minimal_triples": 0,
+          "port_addresses": [
+            -168,
+            257
+          ],
+          "positive_middle_sites": [],
+          "reduced_edges_after_removing_direct": []
+        },
+        {
+          "I": [],
+          "L": [],
+          "R": [],
+          "direct_sites": [
+            172
+          ],
+          "factor": 4,
+          "fixed_component_roots": [],
+          "fixed_eliminations": [],
+          "minimal_pair_edges": [],
+          "minimal_triples": 0,
+          "port_addresses": [
+            -132,
+            293
+          ],
+          "positive_middle_sites": [],
+          "reduced_edges_after_removing_direct": []
+        },
+        {
+          "I": [],
+          "L": [],
+          "R": [],
+          "direct_sites": [
+            215
+          ],
+          "factor": 5,
+          "fixed_component_roots": [],
+          "fixed_eliminations": [],
+          "minimal_pair_edges": [],
+          "minimal_triples": 0,
+          "port_addresses": [
+            -165,
+            260
+          ],
+          "positive_middle_sites": [],
+          "reduced_edges_after_removing_direct": []
+        }
+      ],
+      "genuine_minimal_triples": 5,
+      "minimal_pair_count": 6,
+      "original_row": {
+        "H2": "15",
+        "H2_direction_mixed": "0",
+        "H2_direction_negative": "15",
+        "H2_direction_positive": "0",
+        "H2_figure8": "0",
+        "H2_separate": "0",
+        "H2_theta": "15",
+        "a": "19",
+        "age_steps": "10",
+        "articulation_vertices": "64",
+        "b": "8",
+        "batch": "8",
+        "boundary_axis_imbalance": "-14",
+        "boundary_contact_pairs": "280",
+        "boundary_corner_balance": "96",
+        "boundary_cut_edges": "358",
+        "boundary_multicontact_sites": "122",
+        "branch_both_survive": "0",
+        "branch_clone1_survives": "0",
+        "branch_clone2_survives": "0",
+        "branch_common_safe": "0",
+        "branch_q_after_denominator": "172",
+        "branch_q_after_safe_count": "0",
+        "branch_suffix_site1": "172",
+        "branch_suffix_site2": "52",
+        "bridges": "59",
+        "checkpoint_b1_safe_count": "158",
+        "checkpoint_b2_safe_pairs": "12397",
+        "checkpoint_sum_child_b1_sq": "3890796",
+        "core_edges": "231",
+        "core_vertices": "181",
+        "ell_u": "12",
+        "ell_v": "-19",
+        "essential_carriers": "1",
+        "essential_size": "229",
+        "frontier_component_sumsq": "948",
+        "frontier_components": "52",
+        "k0": "252",
+        "k1": "242",
+        "k2": "253",
+        "largest_frontier_component": "16",
+        "n": "425",
+        "next_exit": "1",
+        "next_site": "150",
+        "occupied_frontier": "205",
+        "orientation": "second",
+        "q_after": "0",
+        "q_after2": "0",
+        "replica": "43042508631",
+        "vacant_frontier": "162"
+      },
+      "positive_middle_site_count": 1,
+      "positive_middle_sites": [
+        {
+          "contracted_path_certificates": [
+            {
+              "fixed_expanded_path": [
+                -2,
+                199,
+                198,
+                197,
+                196,
+                -1
+              ],
+              "ordered_sites_L_I_R": [
+                199,
+                198,
+                196
+              ]
+            },
+            {
+              "fixed_expanded_path": [
+                -2,
+                199,
+                198,
+                197,
+                354,
+                -1
+              ],
+              "ordered_sites_L_I_R": [
+                199,
+                198,
+                354
+              ]
+            },
+            {
+              "fixed_expanded_path": [
+                -2,
+                309,
+                41,
+                198,
+                197,
+                196,
+                -1
+              ],
+              "ordered_sites_L_I_R": [
+                309,
+                198,
+                196
+              ]
+            },
+            {
+              "fixed_expanded_path": [
+                -2,
+                309,
+                41,
+                198,
+                197,
+                354,
+                -1
+              ],
+              "ordered_sites_L_I_R": [
+                309,
+                198,
+                354
+              ]
+            },
+            {
+              "fixed_expanded_path": [
+                -2,
+                355,
+                198,
+                197,
+                196,
+                -1
+              ],
+              "ordered_sites_L_I_R": [
+                355,
+                198,
+                196
+              ]
+            }
+          ],
+          "excluded_existing_pair_edges": [
+            [
+              40,
+              196
+            ],
+            [
+              40,
+              354
+            ],
+            [
+              355,
+              354
+            ]
+          ],
+          "factor": 1,
+          "left_neighbors": [
+            40,
+            199,
+            309,
+            355
+          ],
+          "middle_site_id": 198,
+          "minimal_triple_contribution": 5,
+          "ordered_triples": [
+            [
+              199,
+              198,
+              196
+            ],
+            [
+              199,
+              198,
+              354
+            ],
+            [
+              309,
+              198,
+              196
+            ],
+            [
+              309,
+              198,
+              354
+            ],
+            [
+              355,
+              198,
+              196
+            ]
+          ],
+          "port_addresses": [
+            -109,
+            316
+          ],
+          "potential_cross_pairs": 8,
+          "right_neighbors": [
+            196,
+            354
+          ]
+        }
+      ],
+      "site_label_semantics": "Original quotient site IDs 0..424; HNF representative (id,0) modulo columns of [[425,268],[0,1]]. Fixed path nodes are occupied-component root IDs; -2/-1 denote the two address ports.",
+      "source_artifact": "results/p334-all147-prefix-clocks/prefixes/43042508631.json"
+    },
+    {
+      "chosen_essential_root": 1,
+      "counter": 43042514803,
+      "direct_sites": [
+        0,
+        46,
+        114,
+        115,
+        138,
+        157,
+        229,
+        251,
+        269,
+        270,
+        294,
+        313,
+        384,
+        385,
+        407
+      ],
+      "factors": [
+        {
+          "I": [],
+          "L": [],
+          "R": [
+            111,
+            268,
+            379
+          ],
+          "direct_sites": [
+            0,
+            157,
+            269,
+            270
+          ],
+          "factor": 0,
+          "fixed_component_roots": [],
+          "fixed_eliminations": [],
+          "minimal_pair_edges": [],
+          "minimal_triples": 0,
+          "port_addresses": [
+            -19,
+            406
+          ],
+          "positive_middle_sites": [],
+          "reduced_edges_after_removing_direct": [
+            [
+              -1,
+              111
+            ],
+            [
+              -1,
+              268
+            ],
+            [
+              -1,
+              379
+            ],
+            [
+              111,
+              268
+            ],
+            [
+              111,
+              379
+            ]
+          ]
+        },
+        {
+          "I": [
+            23,
+            24,
+            25,
+            184,
+            340,
+            391
+          ],
+          "L": [
+            8,
+            9,
+            27,
+            72,
+            74,
+            121,
+            123,
+            185,
+            231,
+            234,
+            235,
+            275,
+            276,
+            277,
+            278,
+            279,
+            280,
+            341,
+            342,
+            386,
+            388,
+            389,
+            390,
+            392
+          ],
+          "R": [
+            22,
+            70,
+            71,
+            136,
+            180,
+            291,
+            292,
+            338,
+            404
+          ],
+          "direct_sites": [
+            229,
+            294,
+            384,
+            385
+          ],
+          "factor": 1,
+          "fixed_component_roots": [
+            26,
+            122,
+            293
+          ],
+          "fixed_eliminations": [
+            {
+              "fixed_component_root": 26,
+              "neighbors_at_elimination": [
+                24,
+                25,
+                27,
+                71,
+                180,
+                184,
+                294,
+                338,
+                340
+              ],
+              "new_clique_edges": [
+                [
+                  24,
+                  27
+                ],
+                [
+                  24,
+                  71
+                ],
+                [
+                  24,
+                  180
+                ],
+                [
+                  24,
+                  184
+                ],
+                [
+                  24,
+                  294
+                ],
+                [
+                  24,
+                  338
+                ],
+                [
+                  24,
+                  340
+                ],
+                [
+                  25,
+                  27
+                ],
+                [
+                  25,
+                  71
+                ],
+                [
+                  25,
+                  180
+                ],
+                [
+                  25,
+                  184
+                ],
+                [
+                  25,
+                  294
+                ],
+                [
+                  25,
+                  338
+                ],
+                [
+                  25,
+                  340
+                ],
+                [
+                  27,
+                  71
+                ],
+                [
+                  27,
+                  180
+                ],
+                [
+                  27,
+                  294
+                ],
+                [
+                  27,
+                  338
+                ],
+                [
+                  27,
+                  340
+                ],
+                [
+                  71,
+                  180
+                ],
+                [
+                  71,
+                  184
+                ],
+                [
+                  71,
+                  294
+                ],
+                [
+                  71,
+                  338
+                ],
+                [
+                  71,
+                  340
+                ],
+                [
+                  180,
+                  184
+                ],
+                [
+                  180,
+                  294
+                ],
+                [
+                  180,
+                  338
+                ],
+                [
+                  180,
+                  340
+                ],
+                [
+                  184,
+                  294
+                ],
+                [
+                  184,
+                  338
+                ],
+                [
+                  184,
+                  340
+                ],
+                [
+                  294,
+                  338
+                ],
+                [
+                  294,
+                  340
+                ],
+                [
+                  338,
+                  340
+                ]
+              ]
+            },
+            {
+              "fixed_component_root": 122,
+              "neighbors_at_elimination": [
+                121,
+                123,
+                279,
+                390
+              ],
+              "new_clique_edges": [
+                [
+                  121,
+                  123
+                ],
+                [
+                  121,
+                  279
+                ],
+                [
+                  121,
+                  390
+                ],
+                [
+                  123,
+                  279
+                ],
+                [
+                  123,
+                  390
+                ],
+                [
+                  279,
+                  390
+                ]
+              ]
+            },
+            {
+              "fixed_component_root": 293,
+              "neighbors_at_elimination": [
+                25,
+                136,
+                292,
+                294
+              ],
+              "new_clique_edges": [
+                [
+                  25,
+                  136
+                ],
+                [
+                  25,
+                  292
+                ],
+                [
+                  136,
+                  292
+                ],
+                [
+                  136,
+                  294
+                ],
+                [
+                  292,
+                  294
+                ]
+              ]
+            }
+          ],
+          "minimal_pair_edges": [
+            [
+              27,
+              71
+            ],
+            [
+              27,
+              180
+            ],
+            [
+              27,
+              338
+            ],
+            [
+              72,
+              71
+            ]
+          ],
+          "minimal_triples": 14,
+          "port_addresses": [
+            133,
+            558
+          ],
+          "positive_middle_sites": [
+            {
+              "contracted_path_certificates": [
+                {
+                  "fixed_expanded_path": [
+                    -2,
+                    27,
+                    26,
+                    24,
+                    292,
+                    -1
+                  ],
+                  "ordered_sites_L_I_R": [
+                    27,
+                    24,
+                    292
+                  ]
+                }
+              ],
+              "excluded_existing_pair_edges": [
+                [
+                  27,
+                  71
+                ],
+                [
+                  27,
+                  180
+                ],
+                [
+                  27,
+                  338
+                ]
+              ],
+              "left_neighbors": [
+                27
+              ],
+              "middle_site_id": 24,
+              "minimal_triple_contribution": 1,
+              "ordered_triples": [
+                [
+                  27,
+                  24,
+                  292
+                ]
+              ],
+              "potential_cross_pairs": 4,
+              "right_neighbors": [
+                71,
+                180,
+                292,
+                338
+              ]
+            },
+            {
+              "contracted_path_certificates": [
+                {
+                  "fixed_expanded_path": [
+                    -2,
+                    27,
+                    26,
+                    25,
+                    293,
+                    136,
+                    -1
+                  ],
+                  "ordered_sites_L_I_R": [
+                    27,
+                    25,
+                    136
+                  ]
+                },
+                {
+                  "fixed_expanded_path": [
+                    -2,
+                    27,
+                    26,
+                    25,
+                    293,
+                    292,
+                    -1
+                  ],
+                  "ordered_sites_L_I_R": [
+                    27,
+                    25,
+                    292
+                  ]
+                }
+              ],
+              "excluded_existing_pair_edges": [
+                [
+                  27,
+                  71
+                ],
+                [
+                  27,
+                  180
+                ],
+                [
+                  27,
+                  338
+                ]
+              ],
+              "left_neighbors": [
+                27
+              ],
+              "middle_site_id": 25,
+              "minimal_triple_contribution": 2,
+              "ordered_triples": [
+                [
+                  27,
+                  25,
+                  136
+                ],
+                [
+                  27,
+                  25,
+                  292
+                ]
+              ],
+              "potential_cross_pairs": 5,
+              "right_neighbors": [
+                71,
+                136,
+                180,
+                292,
+                338
+              ]
+            },
+            {
+              "contracted_path_certificates": [
+                {
+                  "fixed_expanded_path": [
+                    -2,
+                    185,
+                    184,
+                    26,
+                    71,
+                    -1
+                  ],
+                  "ordered_sites_L_I_R": [
+                    185,
+                    184,
+                    71
+                  ]
+                },
+                {
+                  "fixed_expanded_path": [
+                    -2,
+                    185,
+                    184,
+                    26,
+                    180,
+                    -1
+                  ],
+                  "ordered_sites_L_I_R": [
+                    185,
+                    184,
+                    180
+                  ]
+                },
+                {
+                  "fixed_expanded_path": [
+                    -2,
+                    185,
+                    184,
+                    26,
+                    338,
+                    -1
+                  ],
+                  "ordered_sites_L_I_R": [
+                    185,
+                    184,
+                    338
+                  ]
+                },
+                {
+                  "fixed_expanded_path": [
+                    -2,
+                    341,
+                    184,
+                    26,
+                    71,
+                    -1
+                  ],
+                  "ordered_sites_L_I_R": [
+                    341,
+                    184,
+                    71
+                  ]
+                },
+                {
+                  "fixed_expanded_path": [
+                    -2,
+                    341,
+                    184,
+                    26,
+                    180,
+                    -1
+                  ],
+                  "ordered_sites_L_I_R": [
+                    341,
+                    184,
+                    180
+                  ]
+                },
+                {
+                  "fixed_expanded_path": [
+                    -2,
+                    341,
+                    184,
+                    26,
+                    338,
+                    -1
+                  ],
+                  "ordered_sites_L_I_R": [
+                    341,
+                    184,
+                    338
+                  ]
+                }
+              ],
+              "excluded_existing_pair_edges": [
+                [
+                  27,
+                  71
+                ],
+                [
+                  27,
+                  180
+                ],
+                [
+                  27,
+                  338
+                ]
+              ],
+              "left_neighbors": [
+                27,
+                185,
+                341
+              ],
+              "middle_site_id": 184,
+              "minimal_triple_contribution": 6,
+              "ordered_triples": [
+                [
+                  185,
+                  184,
+                  71
+                ],
+                [
+                  185,
+                  184,
+                  180
+                ],
+                [
+                  185,
+                  184,
+                  338
+                ],
+                [
+                  341,
+                  184,
+                  71
+                ],
+                [
+                  341,
+                  184,
+                  180
+                ],
+                [
+                  341,
+                  184,
+                  338
+                ]
+              ],
+              "potential_cross_pairs": 9,
+              "right_neighbors": [
+                71,
+                180,
+                338
+              ]
+            },
+            {
+              "contracted_path_certificates": [
+                {
+                  "fixed_expanded_path": [
+                    -2,
+                    72,
+                    340,
+                    26,
+                    180,
+                    -1
+                  ],
+                  "ordered_sites_L_I_R": [
+                    72,
+                    340,
+                    180
+                  ]
+                },
+                {
+                  "fixed_expanded_path": [
+                    -2,
+                    72,
+                    340,
+                    26,
+                    338,
+                    -1
+                  ],
+                  "ordered_sites_L_I_R": [
+                    72,
+                    340,
+                    338
+                  ]
+                },
+                {
+                  "fixed_expanded_path": [
+                    -2,
+                    341,
+                    340,
+                    26,
+                    71,
+                    -1
+                  ],
+                  "ordered_sites_L_I_R": [
+                    341,
+                    340,
+                    71
+                  ]
+                },
+                {
+                  "fixed_expanded_path": [
+                    -2,
+                    341,
+                    340,
+                    26,
+                    180,
+                    -1
+                  ],
+                  "ordered_sites_L_I_R": [
+                    341,
+                    340,
+                    180
+                  ]
+                },
+                {
+                  "fixed_expanded_path": [
+                    -2,
+                    341,
+                    340,
+                    26,
+                    338,
+                    -1
+                  ],
+                  "ordered_sites_L_I_R": [
+                    341,
+                    340,
+                    338
+                  ]
+                }
+              ],
+              "excluded_existing_pair_edges": [
+                [
+                  27,
+                  71
+                ],
+                [
+                  27,
+                  180
+                ],
+                [
+                  27,
+                  338
+                ],
+                [
+                  72,
+                  71
+                ]
+              ],
+              "left_neighbors": [
+                27,
+                72,
+                341
+              ],
+              "middle_site_id": 340,
+              "minimal_triple_contribution": 5,
+              "ordered_triples": [
+                [
+                  72,
+                  340,
+                  180
+                ],
+                [
+                  72,
+                  340,
+                  338
+                ],
+                [
+                  341,
+                  340,
+                  71
+                ],
+                [
+                  341,
+                  340,
+                  180
+                ],
+                [
+                  341,
+                  340,
+                  338
+                ]
+              ],
+              "potential_cross_pairs": 9,
+              "right_neighbors": [
+                71,
+                180,
+                338
+              ]
+            }
+          ],
+          "reduced_edges_after_removing_direct": [
+            [
+              -2,
+              8
+            ],
+            [
+              -2,
+              9
+            ],
+            [
+              -2,
+              27
+            ],
+            [
+              -2,
+              72
+            ],
+            [
+              -2,
+              74
+            ],
+            [
+              -2,
+              121
+            ],
+            [
+              -2,
+              123
+            ],
+            [
+              -2,
+              185
+            ],
+            [
+              -2,
+              231
+            ],
+            [
+              -2,
+              234
+            ],
+            [
+              -2,
+              235
+            ],
+            [
+              -2,
+              275
+            ],
+            [
+              -2,
+              276
+            ],
+            [
+              -2,
+              277
+            ],
+            [
+              -2,
+              278
+            ],
+            [
+              -2,
+              279
+            ],
+            [
+              -2,
+              280
+            ],
+            [
+              -2,
+              341
+            ],
+            [
+              -2,
+              342
+            ],
+            [
+              -2,
+              386
+            ],
+            [
+              -2,
+              388
+            ],
+            [
+              -2,
+              389
+            ],
+            [
+              -2,
+              390
+            ],
+            [
+              -2,
+              392
+            ],
+            [
+              -1,
+              22
+            ],
+            [
+              -1,
+              70
+            ],
+            [
+              -1,
+              71
+            ],
+            [
+              -1,
+              136
+            ],
+            [
+              -1,
+              180
+            ],
+            [
+              -1,
+              291
+            ],
+            [
+              -1,
+              292
+            ],
+            [
+              -1,
+              338
+            ],
+            [
+              -1,
+              404
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              8,
+              276
+            ],
+            [
+              9,
+              277
+            ],
+            [
+              22,
+              23
+            ],
+            [
+              23,
+              24
+            ],
+            [
+              23,
+              180
+            ],
+            [
+              23,
+              291
+            ],
+            [
+              24,
+              25
+            ],
+            [
+              24,
+              27
+            ],
+            [
+              24,
+              71
+            ],
+            [
+              24,
+              180
+            ],
+            [
+              24,
+              184
+            ],
+            [
+              24,
+              292
+            ],
+            [
+              24,
+              338
+            ],
+            [
+              24,
+              340
+            ],
+            [
+              25,
+              27
+            ],
+            [
+              25,
+              71
+            ],
+            [
+              25,
+              136
+            ],
+            [
+              25,
+              180
+            ],
+            [
+              25,
+              184
+            ],
+            [
+              25,
+              292
+            ],
+            [
+              25,
+              338
+            ],
+            [
+              25,
+              340
+            ],
+            [
+              27,
+              71
+            ],
+            [
+              27,
+              180
+            ],
+            [
+              27,
+              184
+            ],
+            [
+              27,
+              338
+            ],
+            [
+              27,
+              340
+            ],
+            [
+              70,
+              71
+            ],
+            [
+              70,
+              338
+            ],
+            [
+              71,
+              72
+            ],
+            [
+              71,
+              180
+            ],
+            [
+              71,
+              184
+            ],
+            [
+              71,
+              338
+            ],
+            [
+              71,
+              340
+            ],
+            [
+              72,
+              340
+            ],
+            [
+              74,
+              231
+            ],
+            [
+              74,
+              342
+            ],
+            [
+              121,
+              123
+            ],
+            [
+              121,
+              278
+            ],
+            [
+              121,
+              279
+            ],
+            [
+              121,
+              389
+            ],
+            [
+              121,
+              390
+            ],
+            [
+              123,
+              279
+            ],
+            [
+              123,
+              280
+            ],
+            [
+              123,
+              390
+            ],
+            [
+              123,
+              391
+            ],
+            [
+              136,
+              292
+            ],
+            [
+              136,
+              404
+            ],
+            [
+              180,
+              184
+            ],
+            [
+              180,
+              338
+            ],
+            [
+              180,
+              340
+            ],
+            [
+              184,
+              185
+            ],
+            [
+              184,
+              338
+            ],
+            [
+              184,
+              340
+            ],
+            [
+              184,
+              341
+            ],
+            [
+              185,
+              342
+            ],
+            [
+              231,
+              388
+            ],
+            [
+              234,
+              235
+            ],
+            [
+              234,
+              391
+            ],
+            [
+              235,
+              392
+            ],
+            [
+              275,
+              276
+            ],
+            [
+              276,
+              277
+            ],
+            [
+              277,
+              278
+            ],
+            [
+              278,
+              279
+            ],
+            [
+              279,
+              280
+            ],
+            [
+              279,
+              390
+            ],
+            [
+              291,
+              292
+            ],
+            [
+              338,
+              340
+            ],
+            [
+              340,
+              341
+            ],
+            [
+              341,
+              342
+            ],
+            [
+              388,
+              389
+            ],
+            [
+              389,
+              390
+            ],
+            [
+              390,
+              391
+            ],
+            [
+              391,
+              392
+            ]
+          ]
+        },
+        {
+          "I": [
+            94,
+            361
+          ],
+          "L": [
+            95,
+            204,
+            206,
+            362,
+            363,
+            408,
+            409,
+            410
+          ],
+          "R": [
+            91,
+            92,
+            93,
+            202,
+            360
+          ],
+          "direct_sites": [
+            46,
+            251,
+            407
+          ],
+          "factor": 2,
+          "fixed_component_roots": [
+            203
+          ],
+          "fixed_eliminations": [
+            {
+              "fixed_component_root": 203,
+              "neighbors_at_elimination": [
+                46,
+                202,
+                204,
+                360
+              ],
+              "new_clique_edges": [
+                [
+                  46,
+                  202
+                ],
+                [
+                  46,
+                  204
+                ],
+                [
+                  46,
+                  360
+                ],
+                [
+                  202,
+                  204
+                ],
+                [
+                  202,
+                  360
+                ],
+                [
+                  204,
+                  360
+                ]
+              ]
+            }
+          ],
+          "minimal_pair_edges": [
+            [
+              204,
+              202
+            ],
+            [
+              204,
+              360
+            ]
+          ],
+          "minimal_triples": 5,
+          "port_addresses": [
+            5,
+            430
+          ],
+          "positive_middle_sites": [
+            {
+              "contracted_path_certificates": [
+                {
+                  "fixed_expanded_path": [
+                    -2,
+                    95,
+                    94,
+                    93,
+                    -1
+                  ],
+                  "ordered_sites_L_I_R": [
+                    95,
+                    94,
+                    93
+                  ]
+                },
+                {
+                  "fixed_expanded_path": [
+                    -2,
+                    362,
+                    94,
+                    93,
+                    -1
+                  ],
+                  "ordered_sites_L_I_R": [
+                    362,
+                    94,
+                    93
+                  ]
+                }
+              ],
+              "excluded_existing_pair_edges": [],
+              "left_neighbors": [
+                95,
+                362
+              ],
+              "middle_site_id": 94,
+              "minimal_triple_contribution": 2,
+              "ordered_triples": [
+                [
+                  95,
+                  94,
+                  93
+                ],
+                [
+                  362,
+                  94,
+                  93
+                ]
+              ],
+              "potential_cross_pairs": 2,
+              "right_neighbors": [
+                93
+              ]
+            },
+            {
+              "contracted_path_certificates": [
+                {
+                  "fixed_expanded_path": [
+                    -2,
+                    204,
+                    361,
+                    93,
+                    -1
+                  ],
+                  "ordered_sites_L_I_R": [
+                    204,
+                    361,
+                    93
+                  ]
+                },
+                {
+                  "fixed_expanded_path": [
+                    -2,
+                    362,
+                    361,
+                    93,
+                    -1
+                  ],
+                  "ordered_sites_L_I_R": [
+                    362,
+                    361,
+                    93
+                  ]
+                },
+                {
+                  "fixed_expanded_path": [
+                    -2,
+                    362,
+                    361,
+                    360,
+                    -1
+                  ],
+                  "ordered_sites_L_I_R": [
+                    362,
+                    361,
+                    360
+                  ]
+                }
+              ],
+              "excluded_existing_pair_edges": [
+                [
+                  204,
+                  360
+                ]
+              ],
+              "left_neighbors": [
+                204,
+                362
+              ],
+              "middle_site_id": 361,
+              "minimal_triple_contribution": 3,
+              "ordered_triples": [
+                [
+                  204,
+                  361,
+                  93
+                ],
+                [
+                  362,
+                  361,
+                  93
+                ],
+                [
+                  362,
+                  361,
+                  360
+                ]
+              ],
+              "potential_cross_pairs": 4,
+              "right_neighbors": [
+                93,
+                360
+              ]
+            }
+          ],
+          "reduced_edges_after_removing_direct": [
+            [
+              -2,
+              95
+            ],
+            [
+              -2,
+              204
+            ],
+            [
+              -2,
+              206
+            ],
+            [
+              -2,
+              362
+            ],
+            [
+              -2,
+              363
+            ],
+            [
+              -2,
+              408
+            ],
+            [
+              -2,
+              409
+            ],
+            [
+              -2,
+              410
+            ],
+            [
+              -1,
+              91
+            ],
+            [
+              -1,
+              92
+            ],
+            [
+              -1,
+              93
+            ],
+            [
+              -1,
+              202
+            ],
+            [
+              -1,
+              360
+            ],
+            [
+              91,
+              92
+            ],
+            [
+              92,
+              93
+            ],
+            [
+              92,
+              360
+            ],
+            [
+              93,
+              94
+            ],
+            [
+              93,
+              361
+            ],
+            [
+              94,
+              95
+            ],
+            [
+              94,
+              362
+            ],
+            [
+              95,
+              363
+            ],
+            [
+              202,
+              204
+            ],
+            [
+              202,
+              360
+            ],
+            [
+              204,
+              360
+            ],
+            [
+              204,
+              361
+            ],
+            [
+              206,
+              363
+            ],
+            [
+              360,
+              361
+            ],
+            [
+              361,
+              362
+            ],
+            [
+              362,
+              363
+            ],
+            [
+              408,
+              409
+            ],
+            [
+              409,
+              410
+            ]
+          ]
+        },
+        {
+          "I": [],
+          "L": [],
+          "R": [],
+          "direct_sites": [
+            114,
+            115
+          ],
+          "factor": 3,
+          "fixed_component_roots": [],
+          "fixed_eliminations": [],
+          "minimal_pair_edges": [],
+          "minimal_triples": 0,
+          "port_addresses": [
+            22,
+            447
+          ],
+          "positive_middle_sites": [],
+          "reduced_edges_after_removing_direct": []
+        },
+        {
+          "I": [],
+          "L": [],
+          "R": [],
+          "direct_sites": [
+            138
+          ],
+          "factor": 4,
+          "fixed_component_roots": [],
+          "fixed_eliminations": [],
+          "minimal_pair_edges": [],
+          "minimal_triples": 0,
+          "port_addresses": [
+            53,
+            478
+          ],
+          "positive_middle_sites": [],
+          "reduced_edges_after_removing_direct": []
+        },
+        {
+          "I": [],
+          "L": [],
+          "R": [],
+          "direct_sites": [
+            313
+          ],
+          "factor": 5,
+          "fixed_component_roots": [],
+          "fixed_eliminations": [],
+          "minimal_pair_edges": [],
+          "minimal_triples": 0,
+          "port_addresses": [
+            -22,
+            403
+          ],
+          "positive_middle_sites": [],
+          "reduced_edges_after_removing_direct": []
+        }
+      ],
+      "genuine_minimal_triples": 19,
+      "minimal_pair_count": 6,
+      "original_row": {
+        "H2": "15",
+        "H2_direction_mixed": "0",
+        "H2_direction_negative": "15",
+        "H2_direction_positive": "0",
+        "H2_figure8": "0",
+        "H2_separate": "0",
+        "H2_theta": "15",
+        "a": "19",
+        "age_steps": "10",
+        "articulation_vertices": "53",
+        "b": "8",
+        "batch": "14",
+        "boundary_axis_imbalance": "-12",
+        "boundary_contact_pairs": "314",
+        "boundary_corner_balance": "110",
+        "boundary_cut_edges": "364",
+        "boundary_multicontact_sites": "117",
+        "branch_both_survive": "0",
+        "branch_clone1_survives": "1",
+        "branch_clone2_survives": "0",
+        "branch_common_safe": "1",
+        "branch_q_after_denominator": "172",
+        "branch_q_after_safe_count": "157",
+        "branch_suffix_site1": "147",
+        "branch_suffix_site2": "46",
+        "bridges": "55",
+        "checkpoint_b1_safe_count": "158",
+        "checkpoint_b2_safe_pairs": "12397",
+        "checkpoint_sum_child_b1_sq": "3890796",
+        "core_edges": "245",
+        "core_vertices": "190",
+        "ell_u": "12",
+        "ell_v": "-19",
+        "essential_carriers": "1",
+        "essential_size": "237",
+        "frontier_component_sumsq": "875",
+        "frontier_components": "64",
+        "k0": "252",
+        "k1": "242",
+        "k2": "262",
+        "largest_frontier_component": "18",
+        "n": "425",
+        "next_exit": "0",
+        "next_site": "347",
+        "occupied_frontier": "203",
+        "orientation": "second",
+        "q_after": "0.912790697674418561",
+        "q_after2": "0.833186857760951805",
+        "replica": "43042514803",
+        "vacant_frontier": "159"
+      },
+      "positive_middle_site_count": 6,
+      "positive_middle_sites": [
+        {
+          "contracted_path_certificates": [
+            {
+              "fixed_expanded_path": [
+                -2,
+                27,
+                26,
+                24,
+                292,
+                -1
+              ],
+              "ordered_sites_L_I_R": [
+                27,
+                24,
+                292
+              ]
+            }
+          ],
+          "excluded_existing_pair_edges": [
+            [
+              27,
+              71
+            ],
+            [
+              27,
+              180
+            ],
+            [
+              27,
+              338
+            ]
+          ],
+          "factor": 1,
+          "left_neighbors": [
+            27
+          ],
+          "middle_site_id": 24,
+          "minimal_triple_contribution": 1,
+          "ordered_triples": [
+            [
+              27,
+              24,
+              292
+            ]
+          ],
+          "port_addresses": [
+            133,
+            558
+          ],
+          "potential_cross_pairs": 4,
+          "right_neighbors": [
+            71,
+            180,
+            292,
+            338
+          ]
+        },
+        {
+          "contracted_path_certificates": [
+            {
+              "fixed_expanded_path": [
+                -2,
+                27,
+                26,
+                25,
+                293,
+                136,
+                -1
+              ],
+              "ordered_sites_L_I_R": [
+                27,
+                25,
+                136
+              ]
+            },
+            {
+              "fixed_expanded_path": [
+                -2,
+                27,
+                26,
+                25,
+                293,
+                292,
+                -1
+              ],
+              "ordered_sites_L_I_R": [
+                27,
+                25,
+                292
+              ]
+            }
+          ],
+          "excluded_existing_pair_edges": [
+            [
+              27,
+              71
+            ],
+            [
+              27,
+              180
+            ],
+            [
+              27,
+              338
+            ]
+          ],
+          "factor": 1,
+          "left_neighbors": [
+            27
+          ],
+          "middle_site_id": 25,
+          "minimal_triple_contribution": 2,
+          "ordered_triples": [
+            [
+              27,
+              25,
+              136
+            ],
+            [
+              27,
+              25,
+              292
+            ]
+          ],
+          "port_addresses": [
+            133,
+            558
+          ],
+          "potential_cross_pairs": 5,
+          "right_neighbors": [
+            71,
+            136,
+            180,
+            292,
+            338
+          ]
+        },
+        {
+          "contracted_path_certificates": [
+            {
+              "fixed_expanded_path": [
+                -2,
+                185,
+                184,
+                26,
+                71,
+                -1
+              ],
+              "ordered_sites_L_I_R": [
+                185,
+                184,
+                71
+              ]
+            },
+            {
+              "fixed_expanded_path": [
+                -2,
+                185,
+                184,
+                26,
+                180,
+                -1
+              ],
+              "ordered_sites_L_I_R": [
+                185,
+                184,
+                180
+              ]
+            },
+            {
+              "fixed_expanded_path": [
+                -2,
+                185,
+                184,
+                26,
+                338,
+                -1
+              ],
+              "ordered_sites_L_I_R": [
+                185,
+                184,
+                338
+              ]
+            },
+            {
+              "fixed_expanded_path": [
+                -2,
+                341,
+                184,
+                26,
+                71,
+                -1
+              ],
+              "ordered_sites_L_I_R": [
+                341,
+                184,
+                71
+              ]
+            },
+            {
+              "fixed_expanded_path": [
+                -2,
+                341,
+                184,
+                26,
+                180,
+                -1
+              ],
+              "ordered_sites_L_I_R": [
+                341,
+                184,
+                180
+              ]
+            },
+            {
+              "fixed_expanded_path": [
+                -2,
+                341,
+                184,
+                26,
+                338,
+                -1
+              ],
+              "ordered_sites_L_I_R": [
+                341,
+                184,
+                338
+              ]
+            }
+          ],
+          "excluded_existing_pair_edges": [
+            [
+              27,
+              71
+            ],
+            [
+              27,
+              180
+            ],
+            [
+              27,
+              338
+            ]
+          ],
+          "factor": 1,
+          "left_neighbors": [
+            27,
+            185,
+            341
+          ],
+          "middle_site_id": 184,
+          "minimal_triple_contribution": 6,
+          "ordered_triples": [
+            [
+              185,
+              184,
+              71
+            ],
+            [
+              185,
+              184,
+              180
+            ],
+            [
+              185,
+              184,
+              338
+            ],
+            [
+              341,
+              184,
+              71
+            ],
+            [
+              341,
+              184,
+              180
+            ],
+            [
+              341,
+              184,
+              338
+            ]
+          ],
+          "port_addresses": [
+            133,
+            558
+          ],
+          "potential_cross_pairs": 9,
+          "right_neighbors": [
+            71,
+            180,
+            338
+          ]
+        },
+        {
+          "contracted_path_certificates": [
+            {
+              "fixed_expanded_path": [
+                -2,
+                72,
+                340,
+                26,
+                180,
+                -1
+              ],
+              "ordered_sites_L_I_R": [
+                72,
+                340,
+                180
+              ]
+            },
+            {
+              "fixed_expanded_path": [
+                -2,
+                72,
+                340,
+                26,
+                338,
+                -1
+              ],
+              "ordered_sites_L_I_R": [
+                72,
+                340,
+                338
+              ]
+            },
+            {
+              "fixed_expanded_path": [
+                -2,
+                341,
+                340,
+                26,
+                71,
+                -1
+              ],
+              "ordered_sites_L_I_R": [
+                341,
+                340,
+                71
+              ]
+            },
+            {
+              "fixed_expanded_path": [
+                -2,
+                341,
+                340,
+                26,
+                180,
+                -1
+              ],
+              "ordered_sites_L_I_R": [
+                341,
+                340,
+                180
+              ]
+            },
+            {
+              "fixed_expanded_path": [
+                -2,
+                341,
+                340,
+                26,
+                338,
+                -1
+              ],
+              "ordered_sites_L_I_R": [
+                341,
+                340,
+                338
+              ]
+            }
+          ],
+          "excluded_existing_pair_edges": [
+            [
+              27,
+              71
+            ],
+            [
+              27,
+              180
+            ],
+            [
+              27,
+              338
+            ],
+            [
+              72,
+              71
+            ]
+          ],
+          "factor": 1,
+          "left_neighbors": [
+            27,
+            72,
+            341
+          ],
+          "middle_site_id": 340,
+          "minimal_triple_contribution": 5,
+          "ordered_triples": [
+            [
+              72,
+              340,
+              180
+            ],
+            [
+              72,
+              340,
+              338
+            ],
+            [
+              341,
+              340,
+              71
+            ],
+            [
+              341,
+              340,
+              180
+            ],
+            [
+              341,
+              340,
+              338
+            ]
+          ],
+          "port_addresses": [
+            133,
+            558
+          ],
+          "potential_cross_pairs": 9,
+          "right_neighbors": [
+            71,
+            180,
+            338
+          ]
+        },
+        {
+          "contracted_path_certificates": [
+            {
+              "fixed_expanded_path": [
+                -2,
+                95,
+                94,
+                93,
+                -1
+              ],
+              "ordered_sites_L_I_R": [
+                95,
+                94,
+                93
+              ]
+            },
+            {
+              "fixed_expanded_path": [
+                -2,
+                362,
+                94,
+                93,
+                -1
+              ],
+              "ordered_sites_L_I_R": [
+                362,
+                94,
+                93
+              ]
+            }
+          ],
+          "excluded_existing_pair_edges": [],
+          "factor": 2,
+          "left_neighbors": [
+            95,
+            362
+          ],
+          "middle_site_id": 94,
+          "minimal_triple_contribution": 2,
+          "ordered_triples": [
+            [
+              95,
+              94,
+              93
+            ],
+            [
+              362,
+              94,
+              93
+            ]
+          ],
+          "port_addresses": [
+            5,
+            430
+          ],
+          "potential_cross_pairs": 2,
+          "right_neighbors": [
+            93
+          ]
+        },
+        {
+          "contracted_path_certificates": [
+            {
+              "fixed_expanded_path": [
+                -2,
+                204,
+                361,
+                93,
+                -1
+              ],
+              "ordered_sites_L_I_R": [
+                204,
+                361,
+                93
+              ]
+            },
+            {
+              "fixed_expanded_path": [
+                -2,
+                362,
+                361,
+                93,
+                -1
+              ],
+              "ordered_sites_L_I_R": [
+                362,
+                361,
+                93
+              ]
+            },
+            {
+              "fixed_expanded_path": [
+                -2,
+                362,
+                361,
+                360,
+                -1
+              ],
+              "ordered_sites_L_I_R": [
+                362,
+                361,
+                360
+              ]
+            }
+          ],
+          "excluded_existing_pair_edges": [
+            [
+              204,
+              360
+            ]
+          ],
+          "factor": 2,
+          "left_neighbors": [
+            204,
+            362
+          ],
+          "middle_site_id": 361,
+          "minimal_triple_contribution": 3,
+          "ordered_triples": [
+            [
+              204,
+              361,
+              93
+            ],
+            [
+              362,
+              361,
+              93
+            ],
+            [
+              362,
+              361,
+              360
+            ]
+          ],
+          "port_addresses": [
+            5,
+            430
+          ],
+          "potential_cross_pairs": 4,
+          "right_neighbors": [
+            93,
+            360
+          ]
+        }
+      ],
+      "site_label_semantics": "Original quotient site IDs 0..424; HNF representative (id,0) modulo columns of [[425,268],[0,1]]. Fixed path nodes are occupied-component root IDs; -2/-1 denote the two address ports.",
+      "source_artifact": "results/p334-all147-prefix-clocks/prefixes/43042514803.json"
+    }
+  ],
+  "selection": "Only the unique all147 same-(H2,b2,degree-square) different-clock witness pair; no expansion"
+}
