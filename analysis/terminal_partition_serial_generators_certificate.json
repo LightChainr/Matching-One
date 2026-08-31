@@ -1,0 +1,359 @@
+{
+  "claim_boundary": {
+    "excluded": "physical generator interpretation, planar realization, reliability, thresholds, or asymptotic word growth",
+    "included": "exact finite-monoid rank, all minimum-cardinality generating sets, and right-Cayley shortest-word profiles",
+    "parent_issue": "remain open"
+  },
+  "exact_checks": {
+    "all_reported_sets_generate_all_states": true,
+    "exactly_eight_minimal_rank_sets": true,
+    "no_set_of_size_at_most_two_generates": true,
+    "shortest_word_diameters_split_four_and_five": true
+  },
+  "issue": 13,
+  "minimal_generating_set_count": 8,
+  "minimal_generating_sets": [
+    [
+      0,
+      7,
+      8
+    ],
+    [
+      0,
+      8,
+      10
+    ],
+    [
+      0,
+      8,
+      11
+    ],
+    [
+      0,
+      8,
+      12
+    ],
+    [
+      1,
+      5,
+      8
+    ],
+    [
+      1,
+      8,
+      9
+    ],
+    [
+      2,
+      5,
+      8
+    ],
+    [
+      2,
+      8,
+      9
+    ]
+  ],
+  "monoid_rank": 3,
+  "partition_catalog": [
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      1
+    ],
+    [
+      0,
+      0,
+      1,
+      2
+    ],
+    [
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      0,
+      2
+    ],
+    [
+      0,
+      1,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      1
+    ],
+    [
+      0,
+      1,
+      1,
+      2
+    ],
+    [
+      0,
+      1,
+      2,
+      0
+    ],
+    [
+      0,
+      1,
+      2,
+      1
+    ],
+    [
+      0,
+      1,
+      2,
+      2
+    ],
+    [
+      0,
+      1,
+      2,
+      3
+    ]
+  ],
+  "rejected_subset_counts_below_rank": {
+    "0": 1,
+    "1": 15,
+    "2": 105
+  },
+  "schema": "matching-one/terminal-partition-serial-generators/v1",
+  "status": "exact_serial_monoid_rank_and_generators",
+  "word_metric_profiles": [
+    {
+      "diameter": 5,
+      "generators": [
+        0,
+        7,
+        8
+      ],
+      "shortest_word_lengths": [
+        1,
+        2,
+        3,
+        5,
+        4,
+        2,
+        0,
+        1,
+        1,
+        3,
+        2,
+        2,
+        3,
+        4,
+        3
+      ]
+    },
+    {
+      "diameter": 4,
+      "generators": [
+        0,
+        8,
+        10
+      ],
+      "shortest_word_lengths": [
+        1,
+        2,
+        3,
+        4,
+        3,
+        3,
+        0,
+        2,
+        1,
+        2,
+        1,
+        3,
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "diameter": 4,
+      "generators": [
+        0,
+        8,
+        11
+      ],
+      "shortest_word_lengths": [
+        1,
+        3,
+        2,
+        4,
+        3,
+        2,
+        0,
+        2,
+        1,
+        3,
+        3,
+        1,
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "diameter": 5,
+      "generators": [
+        0,
+        8,
+        12
+      ],
+      "shortest_word_lengths": [
+        1,
+        3,
+        2,
+        5,
+        4,
+        3,
+        0,
+        3,
+        1,
+        2,
+        2,
+        2,
+        1,
+        4,
+        3
+      ]
+    },
+    {
+      "diameter": 5,
+      "generators": [
+        1,
+        5,
+        8
+      ],
+      "shortest_word_lengths": [
+        2,
+        1,
+        2,
+        3,
+        4,
+        1,
+        0,
+        2,
+        1,
+        2,
+        3,
+        3,
+        4,
+        4,
+        5
+      ]
+    },
+    {
+      "diameter": 4,
+      "generators": [
+        1,
+        8,
+        9
+      ],
+      "shortest_word_lengths": [
+        3,
+        1,
+        2,
+        2,
+        3,
+        2,
+        0,
+        3,
+        1,
+        1,
+        2,
+        4,
+        3,
+        3,
+        4
+      ]
+    },
+    {
+      "diameter": 4,
+      "generators": [
+        2,
+        5,
+        8
+      ],
+      "shortest_word_lengths": [
+        3,
+        2,
+        1,
+        2,
+        3,
+        1,
+        0,
+        3,
+        1,
+        2,
+        4,
+        2,
+        3,
+        3,
+        4
+      ]
+    },
+    {
+      "diameter": 5,
+      "generators": [
+        2,
+        8,
+        9
+      ],
+      "shortest_word_lengths": [
+        2,
+        2,
+        1,
+        3,
+        4,
+        2,
+        0,
+        4,
+        1,
+        1,
+        3,
+        3,
+        2,
+        4,
+        5
+      ]
+    }
+  ]
+}
