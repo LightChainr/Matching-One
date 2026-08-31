@@ -1,6 +1,6 @@
-# N25 canonical Kreg joint-source producer: prepared, not run
+# N25 canonical Kreg joint-source producer and completed run
 
-`scripts/p337_regular_pair_joint_exact.cpp` prepares the missing joint-source moments for the fixed contract `4ce4dfe894c9fe96f268c61cf21eb6585dba5418:analysis/p337_regular_pair_joint_contract.json`. The pre-data scorer is `5da4749245450048625a2da43e8f73da1ee9275c`. No configuration has been enumerated by this new producer; compilation for execution and both complete traversals await accepted theory gates and the root's explicit GO.
+`scripts/p337_regular_pair_joint_exact.cpp` provides the missing joint-source moments for the fixed contract `4ce4dfe894c9fe96f268c61cf21eb6585dba5418:analysis/p337_regular_pair_joint_contract.json`. The pre-data scorer is `5da4749245450048625a2da43e8f73da1ee9275c`. After acceptance of both theory gates and the root's explicit GO, the producer was compiled once and both complete traversals ran once. Raw outputs and the complete execution receipt are in `results/p337-regular-pair-joint/`. No score was calculated here.
 
 ## Fixed source and integer units
 
@@ -22,11 +22,11 @@ Ports are strictly `x:N,E,S,W,y:N,E,S,W`. At a vacant mark, occupied neighbors r
 
 The eight IDs are canonicalized in first-occurrence restricted-growth order and packed as `sum(label[i]<<(3*i))`. The signed exact Bell8 kernel is reused unchanged; sparse omissions are zero. A dense int16 lookup supports the fixed 24-bit key domain while keeping every accumulated source sum int64. Occupied-component roots are cached once per configuration; only origin-to-y pairs are inspected, never all O(N^2) pairs.
 
-## Provenance and invocation after GO
+## Provenance and executed invocation
 
 - New producer SHA256: `1db71a287d106f0c3eb60a3d02987737059c37842bcdf4fcba1003e95b227418`.
 - Kernel: `analysis/regular_pair_spatial_kernel.tsv`, SHA256 `36ae069d370b1d7a4398861c928afb41aa76885c8895c696b1bc0c97e9c314fd`.
-- Preparation performed only a compiler syntax check; no binary, benchmark, small-size run, old result scoring, Monte Carlo, root solve or cloud work was performed.
+- Preparation performed only a compiler syntax check. After GO, one compilation and one full traversal per geometry produced the fixed joint moments. No benchmark, small-size run, old result scoring, Monte Carlo, root solve or cloud work was performed.
 
 ```sh
 clang++ -std=c++17 -O3 scripts/p337_regular_pair_joint_exact.cpp -o /private/tmp/p337_regular_pair_joint_exact
@@ -34,4 +34,4 @@ clang++ -std=c++17 -O3 scripts/p337_regular_pair_joint_exact.cpp -o /private/tmp
 /private/tmp/p337_regular_pair_joint_exact 4 3 analysis/regular_pair_spatial_kernel.tsv results/p337-regular-pair-joint/tilted.csv
 ```
 
-These future runs each enumerate exactly `2^25` configurations and refuse existing output files. Scoring and importing the locked old root/D/U are the parent task's responsibility. The new source moments use the same exact finite occupation populations as earlier N25 work, not independent confirmation.
+These commands each enumerated exactly `2^25` configurations; the producer refuses existing output files. Scoring and importing the locked old root/D/U are the parent task's responsibility. The new source moments use the same exact finite occupation populations as earlier N25 work, not independent confirmation.
