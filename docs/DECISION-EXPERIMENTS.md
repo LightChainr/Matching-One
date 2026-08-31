@@ -1,18 +1,52 @@
 # Mechanism decisions / 独立实验与精确传输判决
 
-2026-08-31 · #334两项不同的独立实验、#154的165M固定新块和次级时钟线均已完成。
+2026-09-01 · #334两项不同的独立实验、#154的165M固定新块和次级时钟线均已完成。
 优先级只分配注意力，不锁Issue、不合并PR、不把一次参数化失败扩展为整条
 研究路线失败。[最终科学交接](../notes/independent-decisions-final-20260831.md)
 给出定义、数据独立性和精确来源。
 
-## 最新完成：局部传输非零；同一张量的双插入 Q1 正则性被排除
+## 最新判决：正则单点直接传输被整类排除，双点 Q 激活保留
+
+执行的`branch_only`
+[2ba8863f结果](https://github.com/LightChainr/Matching-One/blob/2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb/notes/regular-pair-interaction-result.md)
+已经构造并评分固定`Kreg=K2+K0`：直接`∂epsilon U|Q1=0`，完整
+混合`∂logQ∂epsilon U|Q1=−.04503611397592696`，精确区间排除零。
+它使用同一N25总体的新规定源矩，不是新的独立随机证据，也不是旧纯K2响应。
+
+本总览`open_pr #267`的[单点定理](../notes/regular-one-site-q1-thermal-quotient.md)
+和[统一counterterm判决](../notes/regular-pair-counterterm-gram.md)，科学提交
+`21563da4b0cf721a2aa512901f6ffc966ffa8384`，进一步压缩机制：
+
+- 所有entry-regular、homogeneous、one-original-binary-site equality张量
+  在Q1仅改变共同Bernoulli参数；允许同时扰动occupied/vacant张量。
+  完整移根/斜率U消去该参数，全部直接coupling导数为零。因此这个类别内
+  “消pole且保留旧非零直接V”的搜索已结束。多格点、奇异confluent、
+  占据connectivity重新加权及Q激活不在该排除中。
+- 对`K2+c(Q)K0`、`c=1+alpha(Q−1)+...`，相同counterterm的first-Q
+  双点Gram为`3/2+(alpha−1/2)^2/2 ≥ 3/2`。高阶Taylor项不影响它。
+  两孔求和后除以`(1+v_x)(1+v_y)`仍正，排除此物理外部条件中的独立可加源。
+  不同alpha的交叉配对没有正下界；条件正值也不保证global U为正或非零。
+
+**下一项命名比较：** 固定canonical `Kreg`、原N25方向对、site-average
+归一化，取得真正联合闭合的`J2=∂logQ∂epsilon²U|1,0`。
+保持Q1基线不变而first-Q有效log weight仅对epsilon线性可加的模型预报`J2=0`。
+非零则排除此global closure；为零则放下“条件双点正值必然进入global U”的
+主张，不增加可拟合counterterm挽救它。完整tensor的无条件符号尚未推导，
+不能预填为正。`Cov(a_x,a_y)`不能代替联合tensor，旧V的尺寸比也不能套用。
+这只规定一个可改变判断的输出，不展开新descriptor、source或certificate目录。
+
+本轮仅一次0.168秒有理化简及解析证明，无新occupation枚举、U评分、MC、
+根搜索或科学测试套件。旧bounded occupation tangent的固定尺寸比作为
+不同源并行保留，完整口径见[Next Targets](NEXT-TARGETS.md)。
+
+## 已完成的前一步：纯 K2 局部传输非零，其双插入有 Q1 极点
 
 执行[923f66b9](https://github.com/LightChainr/Matching-One/blob/923f66b979a6b6132875f783106c041ed3c0c1a9/notes/local-four-port-transmission-result.md)
 已交付固定局部四端口的site-average响应`V_av(25)=+.0018155512845251097`。
 这是完整原U响应，local与full seam的构型级等同性也已由双向反例排除；
 “首次局部插入接口/评分”移出待办，已有Q1/Q4 trace结果不重算。
 
-本轮[5864de49的精确结果](../notes/local-pair-two-insertion-obstruction.md)
+此前[5864de49的精确结果](../notes/local-pair-two-insertion-obstruction.md)
 给出`G(Q)=Tr(Kbar²)=Q(Q−3)(3Q²−9Q+8)/[8(Q−2)(Q−1)]`。
 在17×17方格torus的两孔、四条互不连接占据路径中，它就是实际双插入闭合。
 Q1留数为`1/2`；连通条件响应的留数是`1/[2(1+v_x)(1+v_y)]`，
@@ -24,11 +58,11 @@ Q1留数为`1/2`；连通条件响应的留数是`1/[2(1+v_x)(1+v_y)]`，
 新[固定cut分解](../notes/local-pair-crossing-sector-resolution.md)同时显示
 四个colour块非零，裸thermal零overlap来自singlet/standard抵消，不能当RG零耦合。
 
-下一比较已具体化：一条给出能消双插入pole且保留目标linear响应的有限/confluent
-组合；另一条对固定bounded占据tangent比较`W_N=N V_av(N)`，其[预先推导比例](../notes/local-pair-size-response-predictions.md)
+当时提出的“正则单点补全保留旧linear响应”现已由上节整类定理解答，
+不再列为下一任务。另一条对固定bounded占据tangent比较`W_N=N V_av(N)`，其[预先推导比例](../notes/local-pair-size-response-predictions.md)
 `W_(4N)/W_N`在明确single-field/nonzero-loading假设下分别趋向2（x17/4）
 或1（x21/4）。后者不唯一识别thermal-Q4；`Cov(t_x,t_y)`也不能替代joint tensor。
-本轮0.114秒符号代数与一个显式图，没有新MC、occupation枚举或测试套件。
+此前0.114秒符号代数与一个显式图，没有新MC、occupation枚举或测试套件。
 
 ## 已完成：稳定 Q1 通道的原 U 传输与完整颜色导数
 
@@ -94,8 +128,8 @@ Q路径响应−0.269828026713487。其差是已指定的局部B控制+0.3329107
 [整族选择推导](../notes/weak-q-paths-and-regular-selection.md)给出有理恒等式
 `ell P_[2](Q)=0`，所以此正则未标记一插入端点的所有正则Q导数都为零。
 排除的是这个机制定义下的四腿sqrt(N)激活。上面的Q4 trace/归一化接口
-与J22评分现已完成，指定stable Q1延拓及响应也已完成。有限confluent局部场
-仍需解决上节双插入pole，不能把它写成尚无任何Q1传输结果。
+与J22评分现已完成，指定stable Q1延拓及响应也已完成。canonical正则局部
+补全及其混合Q激活也已完成，不能把它写成尚无任何Q1附近传输结果。
 不能把这些对象等同于正则端点或自动算成一个已经识别的替代模型。
 
 ## 已完成：两套固定微观律给出相反的 U 强耦合尾

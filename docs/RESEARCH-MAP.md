@@ -1,38 +1,57 @@
 # Scientific Frontier Map
 
-**Updated:** 2026-08-31
+**Updated:** 2026-09-01
 
 This map is the repository's scientific coordinate system. It is not a permission system: exact work, reanalysis, pilots, production and independent theory may proceed in parallel. Priority moves attention; it does not lock, close, veto or demote a task. `STATUS` owns claim/lifecycle language, `ROADMAP` preserves rationale, and [NEXT-TARGETS](NEXT-TARGETS.md) owns the single ranked decision queue.
 
-**Current frontier: local first-order transmission is complete; its
-unrenormalized two-insertion family has a physical Q1 obstruction.**
-Execution's `branch_only` [local N25 result, `923f66b9`](https://github.com/LightChainr/Matching-One/blob/923f66b979a6b6132875f783106c041ed3c0c1a9/notes/local-four-port-transmission-result.md)
-gives `V_av=+.0018155512845251097`, with local≠full seam proved.
-Snapshot `7681eedd938019d977ede41a7d74ee1b88ffbc50` remains `branch_only`.
-State: [all four fixed-cut H⊗H colour blocks](../notes/local-pair-crossing-sector-resolution.md)
-are active; bare thermal orthogonality is singlet/standard cancellation,
-not absence of a thermal RG component. Source: the fixed C4 local tensor,
-distinct from its bounded Q1 occupation tangent beyond first order.
-Observer: original moving-root/slope U for one insertion; connected
-conditional mixed-log response for the joint two-insertion question.
-Geometry: N25 axis/tilted for V, a physical L17 four-path exterior for
-the pole. Acquisition: [exact symbolic closure](../notes/local-pair-two-insertion-obstruction.md),
-`open_pr #267` at `5864de49d19898e505e6aecc316b9cb824712c70`, about .114
-seconds, no new MC, cloud job or N25 score.
+**Current frontier: fixed canonical Kreg has a nonzero Q activation,
+while the entire regular homogeneous one-site direct-U class is zero.**
+Execution `2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb`, `branch_only`,
+delivers [W_Q=−.04503611397592696](https://github.com/LightChainr/Matching-One/blob/2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb/results/p337-regular-pair-activation/score/REPORT.md)
+for `∂logQ∂epsilon U`, with direct Q1 epsilon response exactly zero.
+Source: the specified regular K2+K0, not the old pure-K2 occupation tangent.
+Observer: complete original moving-root/slope U. Geometry: the fixed N25
+axis/tilted pair. Acquisition: one completed fixed-source exact score,
+0.244 seconds with imported root; no independent stochastic evidence.
 
-The joint Gram residue is `1/2`; conditional connected normalization
-leaves `1/[2(1+v_x)(1+v_y)]`. This excludes an unrenormalized regular Q1
-family valid in every exterior. Linear V remains valid; no homogeneous
-full-partition pole is proved. The two next outputs are the unchanged
-occupation tangent's [W=N V_av size ratio](../notes/local-pair-size-response-predictions.md),
-with conditional `W_(4N)/W_N -> 2` versus `1`, and an explicit finite or
-confluent combination canceling the pole while retaining linear V.
-A simple sqrt(Q−1) rescaling loses V; Cov(t_x,t_y) is not the joint
-colour contraction. These are separate mechanism questions, neither a
-pure-H4 certificate nor a uniquely identified local continuum field.
+Two new results at `open_pr #267`
+`21563da4b0cf721a2aa512901f6ffc966ffa8384` restrict the mechanism space.
+The [one-site theorem](../notes/regular-one-site-q1-thermal-quotient.md)
+covers entry-regular homogeneous original-binary-site tensors, including
+vacant and occupied perturbations: Q1 has only two scalar weights, and
+the common Bernoulli parameter cancels from U. A regular completion in
+that class cannot preserve old direct V. The [activated Gram proof](../notes/regular-pair-counterterm-gram.md)
+and [result](../results/regular-pair-counterterm/REPORT.md) give
+`3/2+(alpha−1/2)²/2 >= 3/2` for identical real counterterms in the fixed
+K2+c(Q)K0 family. This is a shared-four-line conditional interaction,
+not an occupation-summed global-U bound or a universal norm.
+
+The primary next output is `J2(N)=∂logQ∂epsilon²U|Q1,0` for this same
+canonical Kreg, beginning with the original N25 pair/root and epsilon/N
+per vacant vertex. It uses the joint physical tensor contraction, not
+covariance of single-mark scores. First-Q effective log weight linearity
+in epsilon predicts J2=0 exactly; nonzero rejects that global closure.
+Zero leaves the positive conditional interaction's transmission to U
+unestablished. No unconditional sign or fitted counterterm is supplied.
+The bounded old occupation tangent's [W_N=N V_av, ratio 2 versus 1](../notes/local-pair-size-response-predictions.md)
+remains a separate conditional comparison, not a scaling law for W_Q.
+The no-go does not cover specified singular completions or multi-site
+vertices; these are distinct mechanisms, not a regular one-site rescue.
 
 <details>
-<summary>Completed stable seam and weak-Q predecessors</summary>
+<summary>Completed pure-pair, stable seam and weak-Q predecessors</summary>
+
+Execution's `branch_only` [pure-K2 result, `923f66b9`](https://github.com/LightChainr/Matching-One/blob/923f66b979a6b6132875f783106c041ed3c0c1a9/notes/local-four-port-transmission-result.md)
+has `V_av=+.0018155512845251097` and proved local≠full seam.
+[Fixed-cut recoupling](../notes/local-pair-crossing-sector-resolution.md)
+activates all four H⊗H blocks; bare singlet/standard cancellation is not
+RG thermal orthogonality. The [L17 physical two-hole obstruction](../notes/local-pair-two-insertion-obstruction.md),
+`5864de49d19898e505e6aecc316b9cb824712c70`, has Gram residue 1/2 and
+conditional mixed-log residue `1/[2(1+v_x)(1+v_y)]`. It excludes the
+unrenormalized all-exterior regular family, not linear V or a necessarily
+divergent homogeneous partition. Its recorded symbolic run took about
+.114 seconds, with no MC, cloud work or old-score rerun. New no-go/Gram
+definition/script pin: `c4e4a821ab8adfc2d628b4cd65b4ce1d52535b56`.
 
 **The stable N25 full-central trace has a nonzero Q1 normalization
 response and mixed Q derivative.** The [completed result](../results/n25-stable-colour-q1/REPORT.md),
@@ -80,8 +99,8 @@ The independent #154/P334 decisions and one-hole split remain complete;
 [Decision Experiments](DECISION-EXPERIMENTS.md) owns their unchanged states.
 The Sstar/Sdrop N25 finite-coupling half-line is now complete as well:
 `Ustar<0<Udrop` for all real m≥64. Separate fixed-m and joint-limit results
-are mapped below; the current local outputs are the fixed-source size
-comparison and a linear-response-preserving pole cancellation.
+are mapped below; the primary local target is the fixed canonical
+interaction's occupation-summed J2, with the exact additive zero prediction.
 Other lines remain open without Issue locks or automatic feature expansion.
 
 **Measured microscopic-to-global separation, Draft #267 `5483aa82047df34c2c9508d4930b6e20961ed9ca`:**

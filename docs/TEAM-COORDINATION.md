@@ -1,11 +1,45 @@
 # Three-team scientific handoff / 三队协作入口
 
-Updated: **2026-08-31**, local two-insertion result `5864de49`, execution delivery `7681eedd`; prior independent decisions retained. This is a result-routing entry, not a second
+Updated: **2026-09-01**, regular one-site/activated-Gram result `21563da4`, execution delivery `2ba8863f`; prior independent decisions retained. This is a result-routing entry, not a second
 priority board or a live process monitor. [Next Targets](NEXT-TARGETS.md) remains
 the single attention order; [the machine-readable handoff](../analysis/team_coordination.yaml)
 records source pins and the state reported by each team.
 
-**New scientific handoff:** the [physical two-hole closure](../notes/local-pair-two-insertion-obstruction.md)
+**New scientific handoff:** the [regular one-original-site theorem](../notes/regular-one-site-q1-thermal-quotient.md)
+settles the previous retain-old-V completion question. Any homogeneous
+entry-regular four-port interaction, including changes to both vacant and
+occupied tensors, becomes two scalar site weights at Q1. With the original
+q/E and a regular common root, it is only a common thermal reparameterization
+and its complete direct U response is zero. No completion in that stated
+class retains the old nonzero pure-pair V. This is a completed class
+exclusion, not a restriction on singular, multi-site or occupation-dependent
+alternatives.
+
+Execution's [canonical regular interaction](https://github.com/LightChainr/Matching-One/blob/2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb/notes/regular-pair-interaction-result.md)
+`Kreg=K2+K0` is already delivered: direct Q1 U is unchanged at all finite
+insertion orders, while the N25 mixed response is
+`partial_logQ partial_epsilon U=−.04503611397592696`. Its shared-four-line
+Q activation is interacting. The [counterterm-robust Gram result](../results/regular-pair-counterterm/REPORT.md)
+gives `[[13/8,−1/4],[−1/4,1/2]]`, determinant3/4, and
+`H_alpha=3/2+(alpha−1/2)²/2≥3/2` for a common real regular counterterm.
+After summing the two holes, divide by `(1+v_x)(1+v_y)`. These conditional
+coefficients are neither global U, a CFT norm nor measured size exponents.
+Higher counterterm Taylor coefficients do not enter; no alpha was fitted.
+
+**Next:** keep canonical `Kreg` fixed and compute
+`J2(N)=partial_logQ partial_epsilon² U|_(Q1,epsilon=0)` on the original
+N25 pair/root, with epsilon/N at each vacant site. Contract the actual
+joint colour network, sum occupations and retain the complete U functional;
+`Cov(a_x,a_y)` of one-mark activation weights is not that derivative.
+An effective first-Q logweight purely linear/additive in epsilon predicts
+J2=0. Nonzero J2 excludes that global closure; zero J2 means the positive
+conditional two-mark result cannot be claimed to transmit into global U.
+No sign is predicted from the conditional Gram and no counterterm is fitted.
+The entry-regular one-site retain-old-V search is no longer pending.
+The current proof/symbolic reduction took0.168seconds, with no new U score,
+production, server operation or test.
+
+The preceding [physical two-hole closure](../notes/local-pair-two-insertion-obstruction.md)
 has `Tr(Kbar²)=Q(Q−3)(3Q²−9Q+8)/[8(Q−1)(Q−2)]`, with Q1 residue1/2.
 Its connected conditional response retains residue
 `1/[2(1+v_x)(1+v_y)]` in a realizable52-occupied-site exterior.
@@ -20,16 +54,16 @@ different scores. [Crossing-sector resolution](../notes/local-pair-crossing-sect
 also finds nonzero singlet, standard and both higher pair blocks;
 bare vertex orthogonality is not a thermal scaling-field selection zero.
 
-The next theory target is a **specified finite/confluent combination
-that cancels the separated-insertion pole and preserves this nonzero
-linear response**. Simple `sqrt(Q−1)` rescaling removes the Gram pole
-but kills that response. In parallel the bounded occupation tangent has
+The old pure-pair pole and its bounded single tangent remain different
+objects. Simple `sqrt(Q−1)` rescaling removes that Gram pole but kills
+the old response; the canonical regular completion is a different
+Q-activated interaction. Separately, the bounded occupation tangent keeps
 the [fixed linear-size comparison](../notes/local-pair-size-response-predictions.md)
 `W_N=N V_av(N)`, `W_(4N)/W_N→2` versus1 under the respective allowed
 single-field loadings x=17/4 and21/4. These are conditional predictions,
-not measured exponents or unique field identities. `Cov(t_x,t_y)` is
-not the joint two-tensor contraction. The recorded symbolic reduction
-took0.114seconds; no occupation enumeration, MC, cloud job or test was run.
+not measured exponents or unique field identities. This W_N is the old
+extensive first response, not the canonical mixed-Q response W_alpha.
+`Cov(t_x,t_y)` likewise does not equal the joint two-tensor contraction.
 
 The preceding [stable-Q1 transmission is scored](../results/n25-stable-colour-q1/REPORT.md):
 `B1=−.001904836180602413`, `B1_logQ=+.005036496028411871`, both exact
@@ -64,9 +98,10 @@ it is a second implementation on the same exact populations, not independent
 statistical evidence. No team needs to repeat its cross-moment task.
 The separate [80M F4 block](https://github.com/LightChainr/Matching-One/blob/25ca3635ea64655923c32adee4b62d683579cdcd/results/p337-f4-transmission-20260831/scored/REPORT.md)
 is completed and inconclusive; its fixed stop remains in force.
-[Next Targets](NEXT-TARGETS.md) now carries the finite/confluent local
-completion and the bounded-tangent size comparison, not a first local
-intertwiner or duplicate N25 score; B remains in parallel weak-Q work.
+[Next Targets](NEXT-TARGETS.md) now carries canonical Kreg's joint
+Q activation/size question and the separately defined bounded-tangent
+size comparison, not a retain-old-V entry-regular completion search or
+duplicate N25 score; B remains in parallel weak-Q work.
 Execution85d5e44b has completed the
 Sstar/Sdrop finite-coupling window: all real m≥64 on N25 have strictly
 opposite original-U signs, with uniform remainders. No new m point is needed
@@ -98,14 +133,14 @@ create a second priority queue.
 
 | Team | Delivered / active contribution | Next handoff |
 |---|---|---|
-| **数学研究执行** | `923f66b9` completes the positive original-U response of the fixed local C4 tensor; `7681eedd` retains its proved distinction from the seam trace. The Q4/Q1 trace and earlier fixed-m results remain complete. | Reuse the completed local source and exact units for bounded first-response size work; any nonlinear colour-field claim needs the finite/confluent cancellation now specified. |
-| **数学研究总览** | Draft [PR #267](https://github.com/LightChainr/Matching-One/pull/267): `5864de49` resolves the fixed-cut sectors and realizable connected two-hole Q1 pole; `5c1f9d3b` retains the stable-Q1 response and physical mixed colour derivative. | Find a stated pole-cancelling combination preserving the measured linear coefficient; in parallel retain the conditional W-ratio discriminator. Do not replace joint tensors by separately closed-mark covariance. |
+| **数学研究执行** | `2ba8863f` supplies the canonical regular Kreg family, its all-order Q1 zero and completed mixed-U response −.04503611397592696, plus nonadditive two-mark Q activation. Earlier pure-pair and seam scores remain distinct. | Fixed canonical J2(N25) tests transmission of joint Q activation to original U. Additive first-Q logweight predicts zero; no unconditional sign, single-mark covariance substitute or alpha fit. |
+| **数学研究总览** | Draft [PR #267](https://github.com/LightChainr/Matching-One/pull/267): `21563da4` proves the general regular one-site direct-U zero and counterterm-robust conditional activated Gram bound. | Remove the settled retain-old-V regular one-site question; route canonical joint-activation work and the separate old bounded-tangent size comparison with their different units and hypotheses. |
 | **数学研究俯瞰** | `f4999e29` delivers all 165M P154 permutations, nine shards, 200 batches/N, official six-coordinate decisions and full covariance. B/C fail; W is not excluded; both net intervals meet the frozen weak-transmission band. The separate P334 contact-residual result `14b2c98e` is complete. | The frozen experiment is finished. Retain all delivered data and decisions; no extra samples, replacement lag/source or fourth numerical template. |
 
 The execution result is **branch_only**, on
 `analysis/p334-paired-clock-loading-20260831`, with no corresponding PR in the
 current scoped branch-to-PR query; the current local delivery pin is
-`7681eedd938019d977ede41a7d74ee1b88ffbc50`. Its earlier [Issue #334 result card](https://github.com/LightChainr/Matching-One/issues/334#issuecomment-5476674429)
+`2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb`. Its earlier [Issue #334 result card](https://github.com/LightChainr/Matching-One/issues/334#issuecomment-5476674429)
 and [PR #267 pointer](https://github.com/LightChainr/Matching-One/pull/267#issuecomment-5476674567)
 are discussion links, not code integration. PR #509 retains its observed
 open/Draft lifecycle; the current delivery pin is

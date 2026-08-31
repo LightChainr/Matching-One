@@ -6,6 +6,16 @@ two-insertion conditional response has a nonremovable Q1 pole**. A concrete
 square-lattice exterior realizes the pole. This supplies a mechanism
 decision without another N25 source score or a new stochastic block.
 
+**Subsequent resolution.** The [regular one-site theorem](regular-one-site-q1-thermal-quotient.md)
+now rules out retaining that old direct U response throughout the stated
+entry-regular homogeneous one-original-site class. The canonical
+`Kreg=K2+K0` instead has a completed mixed Q activation, and the
+[uniform counterterm bound](regular-pair-counterterm-gram.md) proves its
+shared-line two-site interaction cannot be made additive by that finite
+counterterm family. The question at the end of this historical derivation
+is resolved for the regular one-site class; [Next Targets](../docs/NEXT-TARGETS.md)
+owns the current queue.
+
 The completed linear result is
 [`923f66b9`](https://github.com/LightChainr/Matching-One/blob/923f66b979a6b6132875f783106c041ed3c0c1a9/notes/local-four-port-transmission-result.md),
 `branch_only`, V_av(25)=+0.0018155512845251097. Nothing below negates it.
@@ -40,7 +50,8 @@ G(Q) = 1/[2(Q−1)] + O(Q−1).                           (2)
 
 The finite part is zero. Double poles of the individual sector terms
 cancel, but this simple pole remains. The independent
-[fixed-cut sector resolution](local-pair-crossing-sector-resolution.md)+explains the representation mixing behind (1); Kbar is not a single
+[fixed-cut sector resolution](local-pair-crossing-sector-resolution.md)
+explains the representation mixing behind (1); Kbar is not a single
 fixed-cut projector after its spatial average.
 
 ## 2. A realizable embedded exterior, not an abstract colour wiring

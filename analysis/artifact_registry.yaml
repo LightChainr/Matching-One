@@ -1,12 +1,14 @@
-version: 47
-updated: 2026-08-31
+version: 48
+updated: 2026-09-01
 latest_scientific_handoff:
   entry: docs/TEAM-COORDINATION.md
-  local_result_commit: 5864de49d19898e505e6aecc316b9cb824712c70
-  local_result_report: results/local-pair-two-insertion/REPORT.md
-  local_result_kind: exact_crossing_sector_resolution_and_physical_conditional_two_insertion_Q1_pole
-  local_definition: analysis/local_pair_two_insertion_contract.json
-  local_definition_commit: f393847ecbc018b0ec39c1613c4d7d40d715f95a
+  local_result_commit: 21563da4b0cf721a2aa512901f6ffc966ffa8384
+  local_result_report: results/regular-pair-counterterm/REPORT.md
+  local_result_kind: regular_one_site_direct_Q1_U_thermal_no_go_and_uniform_counterterm_positive_conditional_Q_Gram
+  local_definition: analysis/regular_pair_counterterm_contract.json
+  local_definition_commit: c4e4a821ab8adfc2d628b4cd65b4ce1d52535b56
+  previous_two_insertion_result_commit: 5864de49d19898e505e6aecc316b9cb824712c70
+  previous_two_insertion_result_report: results/local-pair-two-insertion/REPORT.md
   previous_stable_Q1_result_commit: 5c1f9d3b7971a41d07db3c9fa4ac86529c90c199
   previous_stable_Q1_result_report: results/n25-stable-colour-q1/REPORT.md
   preceding_trace_interface_commit: 041257b8c63f98c694397604617edbb58f31ef51
@@ -17,8 +19,18 @@ latest_scientific_handoff:
   specialization_gap_report: results/colour-specialization-gap/REPORT.md
   previous_weak_Q_result_commit: e87d5de2d0bc83ac8e5c12af83a337b829c3323b
   previous_weak_Q_result_report: results/weak-q-path-comparison/REPORT.md
-  current_execution_head: 7681eedd938019d977ede41a7d74ee1b88ffbc50
+  current_execution_head: 2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb
   current_execution_branch_prs: []
+  completed_regular_pair_commit: 2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb
+  completed_regular_pair_report: notes/regular-pair-interaction-result.md
+  completed_regular_pair_result: results/p337-regular-pair-activation/score/score.json
+  completed_regular_pair_definition: 25f70f6807a58578208b7c22b98b2e1887728630
+  completed_regular_pair_counts: aede8468cfbb9aeca3bd4b84e2b1c92935ec7e56
+  completed_regular_pair_prescore_code: 60a7f4811f4fad0c36a1506f41c02f64e998b9dd
+  regular_pair_algebra_commit: 7e46c74ce149d5a0a06d1085eb36eebb1bbe6bdb
+  regular_pair_two_site_Q_commit: 28960af19d1967ae7ea54b71dc8bd28de49716df
+  regular_pair_physical_L8_geometry_commit: dcabe53d31b35ae57ea8aa40826195d974b99dc9
+  regular_pair_result_boundary: canonical_c_equals1_all_finite_Q1_endpoint_zero_mixed_U_minus0p04503611397592696_completed_not_unique_completion_or_scale_exponent
   completed_local_interaction_commit: 923f66b979a6b6132875f783106c041ed3c0c1a9
   completed_local_interaction_report: notes/local-four-port-transmission-result.md
   completed_local_interaction_result: results/p337-local-four-port-insertion/score/score.json
@@ -31,8 +43,10 @@ latest_scientific_handoff:
   attribution_boundary: V_trace_is_same_B1_J_trace0p03826094250721058_is_gauge_dependent_not_invariant_mixed_B1_logQ0p005036496028411871
   finite_torus_closure_commit: 4a4390f2aeff3e79855fb11ef1185ba52c80a43a
   removable_twist_jet_commit: f43b3674ce29e12629dd790bcbb7370abc5cefbc
-  next_primary: specific_finite_or_confluent_completion_cancelling_physical_separated_insertion_pole_while_retaining_nonzero_linear_V
-  parallel_first_source: fixed_ratio_R_equals4Vav4N_overVavN_predicts2_or1_under_declared_single_field_nonzero_loading_not_a_two_insertion_mark_covariance
+  next_primary: fixed_canonical_Kreg_J2_equals_partial_logQ_partial_epsilon_squared_U_N25_global_additivity_comparison_not_single_mark_covariance_or_first_mixed_N25_score
+  completed_class_elimination: every_homogeneous_entry_regular_one_original_binary_site_tensor_is_common_thermal_at_Q1_and_has_zero_direct_complete_U_response_no_retain_old_V_search_in_this_class
+  completed_uniform_counterterm_bound: G1_13over8_minus1over4_minus1over4_1over2_determinant3over4_Halpha_ge3over2_in_identical_shared_four_line_firstQ_pairing_not_global_U
+  parallel_first_source: old_pure_K2_tangent_R_equals4Vav4N_overVavN_predicts2_or1_under_declared_single_field_nonzero_loading_not_automatically_canonical_Kreg_mixed_W_or_two_insertion_mark_covariance
   uniform_sign_window_commit: 85d5e44ba8aed471470373f972c670dc7c82bdcf
   uniform_sign_window_report: notes/closed-source-uniform-projection-tail.md
   uniform_sign_window_result: results/p337-uniform-projection-tail/score.json
@@ -54,7 +68,9 @@ latest_scientific_handoff:
   latest_defect_operator_commit: bc17b81d502fb1ca3323f5c20f63c544bb31602d
   latest_closed_source_result_commit: ec01768f520e85f1acfd9d3fde9bcf855477254e
   latest_independent_F4_result_commit: 25ca3635ea64655923c32adee4b62d683579cdcd
-  local_theory_note: notes/local-pair-two-insertion-obstruction.md
+  local_theory_note: notes/regular-one-site-q1-thermal-quotient.md
+  local_counterterm_note: notes/regular-pair-counterterm-gram.md
+  previous_two_insertion_theory_note: notes/local-pair-two-insertion-obstruction.md
   local_crossing_note: notes/local-pair-crossing-sector-resolution.md
   local_size_prediction_note: notes/local-pair-size-response-predictions.md
   local_source_dictionary: analysis/decimation_source_dictionary.json
@@ -83,8 +99,8 @@ latest_scientific_handoff:
   current_secondary_theory_commit: 83f3eba88d7f1290704f82610c28669dc5e12f3c
   current_secondary_result_commit: 612df8ec1cbe3be3938ee2e1f6183a1aefc6510b
   current_secondary_result_report: notes/p154-clock-line-secondary-result.md
-  current_synthesis_commit: 5864de49d19898e505e6aecc316b9cb824712c70
-  current_synthesis_report: notes/local-pair-two-insertion-obstruction.md
+  current_synthesis_commit: 21563da4b0cf721a2aa512901f6ffc966ffa8384
+  current_synthesis_report: notes/regular-one-site-q1-thermal-quotient.md
   preceding_synthesis_commit: 95d5d662afcef2d9d4b5167f82612a70cb4e83c7
   preceding_synthesis_report: notes/independent-decisions-final-20260831.md
   latest_external_reports: [experiments/p154-prospective-transmission-20260831/REPORT.md, experiments/p334-prospective-intervention-20260831/REPORT.md]
@@ -92,7 +108,7 @@ latest_scientific_handoff:
   decision_sheet: docs/DECISION-EXPERIMENTS.md
   decision_contract: analysis/prospective_mechanism_decisions.yaml
   execution_freeze_report: notes/p334-independent-intervention-freeze.md
-  boundary: conditional_Q1_pole_excludes_unrenormalized_all_exterior_regular_family_preserves_linear_V_does_not_establish_homogeneous_Z_pole_no_new_N25_statistics_prior_decisions_preserved
+  boundary: direct_Q1_thermal_no_go_covers_regular_homogeneous_one_original_site_class_not_Q_activation_or_bounded_occupation_tangent_uniform_Gram_bound_conditional_not_global_U_no_new_statistics_13over8_not_size_exponent_prior_decisions_preserved
 purpose: >
   Lightweight navigation/provenance index. Registry conflicts never block
   science; claim strength lives in STATUS and priority lives in NEXT-TARGETS.
@@ -366,6 +382,72 @@ channel_semantics:
   required_fields: [topology_channel, combination, probability_coordinate, orientation_order, normalization, quantity]
 
 registered_reanalyses:
+  - id: PR267_REGULAR_ONE_SITE_THERMAL_AND_GRAM
+    integration_status: open_pr
+    pr: 267
+    branch: research/navigation-priority-refresh-20260829
+    commit: 21563da4b0cf721a2aa512901f6ffc966ffa8384
+    definition_commit: c4e4a821ab8adfc2d628b4cd65b4ce1d52535b56
+    status: completed_whole_regular_one_site_direct_Q1_U_no_go_and_uniform_counterterm_conditional_Q_Gram_bound
+    acquisition: exact_construction
+    artifact_kind: finite_network_proof_and_one_symbolic_rational_Gram_reduction_not_population_production
+    outputs: [notes/regular-one-site-q1-thermal-quotient.md, notes/regular-pair-counterterm-gram.md, results/regular-pair-counterterm/REPORT.md, results/regular-pair-counterterm/latest.json, results/regular-pair-counterterm/run.json]
+    scripts: [scripts/analyze_regular_pair_counterterm.py]
+    contracts: [analysis/regular_pair_counterterm_contract.json]
+    dependency_groups: []
+    theory_basis_source_refs: [SRC_P337_REGULAR_PAIR_COMPLETION, SRC_P337_REGULAR_PAIR_ACTIVATION, SRC_PR267_LOCAL_PAIR_TWO_INSERTION]
+    elapsed_seconds: 0.16766479203943163
+    result_summary: 'entry-regular homogeneous one-original-binary-site occupied/vacant tensors reduce to common p_eff and all direct root-following U coupling responses vanish; G1=[[13/8,-1/4],[-1/4,1/2]], det=3/4; H_alpha=3/2+(alpha-1/2)^2/2>=3/2'
+    conditional_scope: same_real_counterterm_unit_K2_fixed_shared_four_line_exterior_hole_sum_divides_Halpha_by1plusvx_times1plusvy_not_occupation_summed_global_U
+    next_output: fixed_canonical_joint_physical_Q_activation_with_occupation_sum_and_declared_scale_or_separation_old_bounded_occupation_tangent_ratio_remains_parallel
+    boundary: higher_counterterm_Taylor_coefficients_do_not_enter_no_alpha_fit_scan_enumeration_samples_Uscore_new_roots_tests_or_cloud_regular_one_site_no_go_does_not_exclude_singular_confluent_multi_site_or_Q_activated_routes
+  - id: P337_REGULAR_PAIR_ACTIVATION
+    integration_status: branch_only
+    branch: analysis/p334-paired-clock-loading-20260831
+    commit: 2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb
+    observed_branch_prs: []
+    contract_commit: 25f70f6807a58578208b7c22b98b2e1887728630
+    predata_evaluator_commit: 5bff50084692a7d89fc4becf3cf2e14177b25429
+    prescore_code_commit: 60a7f4811f4fad0c36a1506f41c02f64e998b9dd
+    counts_commit: aede8468cfbb9aeca3bd4b84e2b1c92935ec7e56
+    status: completed_canonical_full_mixed_original_U_negative_zero_rejected_Q1_first_epsilon_U_identically_zero
+    acquisition: exact_construction
+    artifact_kind: prescribed_activation_crossmoments_same_N25_populations_and_one_exact_saved_root_response_score
+    outputs: [notes/regular-pair-interaction-result.md, notes/regular-pair-activation-original-u.md, results/p337-regular-pair-activation/axis.csv, results/p337-regular-pair-activation/tilted.csv, results/p337-regular-pair-activation/run.json, results/p337-regular-pair-activation/score/REPORT.md, results/p337-regular-pair-activation/score/score.json]
+    contracts: [analysis/p337_regular_pair_activation_contract.json]
+    dependency_groups: [decimation-N25-exact-configuration-pair]
+    enumeration_seconds_per_geometry: {axis: 1.18082, tilted: 1.1344}
+    score_elapsed_seconds: 0.24405604205094278
+    result_summary: 'canonical c(Q)=1: W=partial_logQ partial_epsilon U=-0.04503611397592696; Q1 partial_epsilon U=0 exactly; complete thermal contribution of1-K/N vanishes'
+    scheme_rule: 'c(Q)=1+alpha*(Q-1)+... gives W_alpha=W0-alpha*V_old with V_old=0.0018155512845251097; alpha is not fitted'
+    next_output: fixed_completion_scale_or_occupation_summed_joint_Q_response_not_repeat_first_mixed_score
+    boundary: same_exact_population_new_fixed_crossmoments_old_root_imported_no_MC_cloud_new_root_search_or_old_source_rescore_full_mixed_response_completion_dependent_not_raw_gauge_attribution
+  - id: P337_REGULAR_PAIR_COMPLETION
+    integration_status: branch_only
+    branch: analysis/p334-paired-clock-loading-20260831
+    commit: 7e46c74ce149d5a0a06d1085eb36eebb1bbe6bdb
+    status: completed_canonical_entry_regular_K2_plus_K0_and_all_finite_Q1_endpoint_zero_theorem
+    acquisition: exact_construction
+    artifact_kind: finite_equality_diagram_theorem_and_symbolic_15_Bell4_contractions
+    outputs: [notes/local-pair-two-insertion-algebra.md]
+    scripts: [scripts/local_pair_two_insertion_algebra.py]
+    dependency_groups: []
+    result_summary: 'Kreg=K2+K0; regularity iff c(1)=1 within K2+c(Q)K0; every nonempty finite ordinary-network marked term vanishes at Q1; Hreg(1)=0 and Hreg_prime(1)=13/8'
+    boundary: analytic_scalar_factors_and_simple_regular_original_pooled_root_no_singular_external_projectors_or_infinite_volume_first_claim_completion_not_unique_and_does_not_preserve_old_nonzero_linear_V
+  - id: P337_REGULAR_TWO_SITE_Q_INTERACTION
+    integration_status: branch_only
+    branch: analysis/p334-paired-clock-loading-20260831
+    commit: 28960af19d1967ae7ea54b71dc8bd28de49716df
+    geometry_commit: dcabe53d31b35ae57ea8aa40826195d974b99dc9
+    status: completed_physical_conditional_two_site_nonadditive_Q_activation
+    acquisition: exact_construction
+    artifact_kind: exact_two_mark_contraction_on_explicit_L8_four_path_exterior
+    outputs: [notes/regular-pair-two-site-q-susceptibility.md, notes/local-pair-two-insertion-geometry.md]
+    dependency_groups: []
+    result_summary: 'on fixed L8 occupation, partial_logQ log F_A at Q1=lambda_x+lambda_y+(13/8)*lambda_x*lambda_y'
+    geometry: L8_holes0_0_and3_0_K18_B14_CB4_rank0_70_spectators
+    next_output: occupation_summed_joint_Q_interaction_at_fixed_completion_with_separation_declared
+    boundary: finite13over8_contraction_coefficient_not_size_exponent_or_summed_correlation_L8_and_own_L17_are_physical_theory_witnesses_not_independent_statistics
   - id: PR267_LOCAL_PAIR_TWO_INSERTION
     integration_status: open_pr
     pr: 267
@@ -384,7 +466,7 @@ registered_reanalyses:
     scope: 15_Bell4_colour_equality_types_and_one_explicit_L17_52site_four_path_exterior_no_occupation_enumeration_MC_root_search_or_tests
     chronology: reproducible_recorded_calculation_after_symbolic_exploration_not_prospective_statistical_evidence
     result_summary: 'four fixed-cut blocks nonzero; Gram residue=1/2; connected conditional residue=1/(2*(1+vx)*(1+vy))'
-    next_output: specified_finite_confluent_completion_preserving_linear_V_and_cancelling_pole_parallel_first_source_R2_vs1_size_prediction
+    next_output: canonical_K2_plus_K0_completion_and_mixed_U_now_completed_fixed_completion_Q_interaction_next_old_first_source_R2_vs1_remains_parallel
     boundary: unrenormalized_regular_all_exterior_family_excluded_not_homogeneous_Z_divergence_or_refutation_of_linear_V_sqrtQminus1_rescaling_kills_V_mark_covariance_is_not_joint_tensor_response
   - id: P337_LOCAL_FOUR_PORT_TRANSMISSION
     integration_status: branch_only
@@ -403,7 +485,7 @@ registered_reanalyses:
     enumeration_seconds_per_geometry: {axis: 1.10562, tilted: 1.03976}
     score_elapsed_seconds: 0.20906187500804663
     result_summary: local_V_plus0p0018155512845251097_with_direct_q_E_covariances_pooled_root_and_slope_terms_local_seam_support_differs_in_both_directions
-    next_output: finite_confluent_joint_tensor_completion_primary_fixed_first_source_ratio_R2_vs1_parallel_no_repeat_local_score
+    next_output: old_pure_K2_first_source_ratio_R2_vs1_parallel_distinct_from_completed_canonical_Kreg_mixed_U_no_repeat_local_score
     boundary: site_average_first_response_extensive_units_multiply_by_N_C4_Endpair_not_pure_fixed_cut_projector_or_continuum_primary_same_exact_population_no_MC_or_overview_rescore
   - id: P337_Q1_TRACE_GAUGE_ATTRIBUTION
     integration_status: branch_only
@@ -434,7 +516,7 @@ registered_reanalyses:
     dependency_groups: [decimation-N25-exact-configuration-pair]
     elapsed_seconds: 6.759455249994062
     result_summary: N25_c_absu_le2_stability_beta_Q_fixed_B1_minus0p001904836180602413_B1logQ_plus0p005036496028411871
-    next_output: local_tensor_linear_response_and_two_insertion_obstruction_completed_specific_completion_or_parallel_fixed_first_source_size_comparison
+    next_output: canonical_local_regularization_and_mixed_U_also_completed_fixed_completion_scale_or_joint_Q_interaction_parallel_old_first_source_size_comparison
     boundary: B1_epsilon_response_not_total_Q_derivative_mixed_jet_includes_explicit_beta_measure_root_slope_no_new_enumeration_MC_root_search_or_Q_grid_not_unique_local_field
   - id: PR267_COLOUR_SPECIALIZATION_GAP
     integration_status: open_pr

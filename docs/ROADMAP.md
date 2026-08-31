@@ -1,36 +1,55 @@
 # Roadmap: Default Attention, Not Permission
 
-**Current move, 2026-08-31:** use the completed local transmission to compare
-fixed-source size predictions and define a pole-cancelling local completion.
-Execution's `branch_only` [N25 result, `923f66b9`](https://github.com/LightChainr/Matching-One/blob/923f66b979a6b6132875f783106c041ed3c0c1a9/notes/local-four-port-transmission-result.md)
-gives `V_av=+.0018155512845251097`; local≠full seam is proved. Snapshot
-`7681eedd938019d977ede41a7d74ee1b88ffbc50` remains `branch_only`.
+**Current move, 2026-09-01:** keep canonical Kreg=K2+K0 fixed and determine
+`J2(N)=∂logQ∂epsilon²U|Q1,0` on the original N25 pair/root. Execution
+snapshot `2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb` remains `branch_only`;
+its [completed result](https://github.com/LightChainr/Matching-One/blob/2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb/notes/regular-pair-interaction-result.md)
+and [score](https://github.com/LightChainr/Matching-One/blob/2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb/results/p337-regular-pair-activation/score/REPORT.md)
+give `W_Q=∂logQ∂epsilon U=−.04503611397592696`, while direct epsilon U
+at Q1 is zero. The 0.244-second N25 score is not an outstanding request.
 
-The [two-hole obstruction](../notes/local-pair-two-insertion-obstruction.md),
-`open_pr #267` at `5864de49d19898e505e6aecc316b9cb824712c70`, gives a
-physical L17 four-path conditional mixed-log residue
-`1/[2(1+v_x)(1+v_y)]`, with Gram residue `1/2`. It excludes an
-unrenormalized finite-strength Q1 family regular in all exteriors, without
-negating linear V or proving a homogeneous full-partition pole.
-[Fixed-cut recoupling](../notes/local-pair-crossing-sector-resolution.md)
-activates all four H⊗H irreps: bare singlet/standard cancellation is not
-thermal RG orthogonality. The recorded symbolic calculation took about
-.114 seconds; no new MC, cloud job or N25 rescore was required.
+The two new proofs, `open_pr #267`
+`21563da4b0cf721a2aa512901f6ffc966ffa8384`, definition/script
+`c4e4a821ab8adfc2d628b4cd65b4ce1d52535b56`, remove two diversions.
+[Every entry-regular homogeneous one-original-binary-site interaction](../notes/regular-one-site-q1-thermal-quotient.md),
+including simultaneous vacant/occupied changes, becomes a common
+Bernoulli reparameterization at Q1 and has zero direct U response.
+Retaining old pure-K2 V in that entire regular class is impossible.
+The [shared-line activated Gram](../notes/regular-pair-counterterm-gram.md),
+with [exact result](../results/regular-pair-counterterm/REPORT.md), is at
+least 3/2 for the same real counterterm at both marks in K2+c(Q)K0.
+That conditional bound excludes an additive replacement there; it is not
+a global-U lower bound or a universal field norm.
 
-The two focused outputs are:
+The frozen unit remains epsilon/N at every vacant vertex. A first-Q
+effective log weight linear in epsilon predicts J2=0 exactly. Nonzero J2
+excludes that occupation-summed global additive closure; a zero means the
+positive conditional two-mark interaction has not been shown to transmit
+to global U. Use joint physical contractions, not covariance of single-mark
+activation scores. The unconditional sign is not derived, and alpha is
+not fitted to improve the completed first N25 coefficient.
 
-- **Fixed bounded occupation tangent:** [compare](../notes/local-pair-size-response-predictions.md)
-  `W_N=N V_av(N)` and `R=W_(4N)/W_N`. Nonzero single-field loadings at
-  x=17/4 and x=21/4 conditionally predict 2 and 1. The same tensor,
-  units and homothetic axis/tilted family stay fixed; an order-one W also
-  permits modulation of existing anisotropy and is not a unique field.
-- **Specified finite/confluent completion:** cancel the physical
-  separated-insertion pole while keeping the nonzero linear U response.
-  Multiplying by sqrt(Q−1) kills that response. A covariance of separately
-  closed t marks is not the joint tensor and cannot supply this completion.
+**Separate bounded-occupation line:** the old pure-K2 tangent retains
+[W_N=N V_av and ratio W_(4N)/W_N](../notes/local-pair-size-response-predictions.md).
+Nonzero single-field loadings at x=17/4 and x=21/4 conditionally predict
+2 and 1; an order-one W_N also permits anisotropy-amplitude modulation.
+These are not predictions for W_Q. Specified singular/confluent or
+multi-site models are outside the one-site theorem, but are different
+mechanisms rather than additional regular counterterms preserving old V.
 
 <details>
-<summary>Completed seam and source predecessors</summary>
+<summary>Completed pure-pair, seam and source predecessors</summary>
+
+The `branch_only` [pure-K2 N25 result, `923f66b9`](https://github.com/LightChainr/Matching-One/blob/923f66b979a6b6132875f783106c041ed3c0c1a9/notes/local-four-port-transmission-result.md)
+remains `V_av=+.0018155512845251097`, with local≠full seam proved.
+[The L17 physical two-hole obstruction](../notes/local-pair-two-insertion-obstruction.md),
+`5864de49d19898e505e6aecc316b9cb824712c70`, gives conditional mixed-log
+residue `1/[2(1+v_x)(1+v_y)]` and Gram residue 1/2. It excludes the
+unrenormalized all-exterior regular family without negating linear V
+or proving a homogeneous full-partition pole. [Crossing recoupling](../notes/local-pair-crossing-sector-resolution.md)
+activates all four H⊗H irreps: bare thermal overlap zero is a
+singlet/standard cancellation, not an RG selection rule. That recorded
+symbolic run took about .114 seconds, without MC, cloud work or rescores.
 
 The [N25 Q1 seam result](../results/n25-stable-colour-q1/REPORT.md),
 `open_pr #267` at `5c1f9d3b7971a41d07db3c9fa4ac86529c90c199`, is complete:
@@ -128,8 +147,8 @@ already rejects monotone U amplification on N25: U_t is negative at each
 frozen m=2,4,8,16 after positive U_t(0). At least one local maximum lies in
 `(0,log2)`; uniqueness remains unproved. Reusing those exact populations for
 the tail is dependent analysis. More N25 peak points do not settle the
-local tangent's size law, its pole-cancelling completion or the remaining
-fixed-m oblique twist/odds estimates.
+canonical joint Q activation, the separate old occupation-tangent size
+law or the remaining fixed-m oblique twist/odds estimates.
 
 The separate `branch_only` [F4 independent80M result, `25ca3635`](https://github.com/LightChainr/Matching-One/blob/25ca3635ea64655923c32adee4b62d683579cdcd/results/p337-f4-transmission-20260831/scored/REPORT.md)
 uses20M/100 batches per N65/85/130/170. All four simultaneous intervals

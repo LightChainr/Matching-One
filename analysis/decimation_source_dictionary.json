@@ -72,6 +72,27 @@
       "commit": "bea717e826df5a22518774b1725ae7bcbe2cb801",
       "path": "notes/closed-source-two-trace-kernels-q1.md",
       "integration_status": "branch_only"
+    },
+    {
+      "id": "canonical_regular_pair_activation",
+      "commit": "2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb",
+      "path": "notes/regular-pair-interaction-result.md",
+      "integration_status": "branch_only"
+    },
+    {
+      "id": "regular_one_site_thermal_quotient",
+      "commit": "21563da4b0cf721a2aa512901f6ffc966ffa8384",
+      "path": "notes/regular-one-site-q1-thermal-quotient.md",
+      "integration_status": "open_pr",
+      "pr": 267
+    },
+    {
+      "id": "regular_pair_counterterm_gram",
+      "commit": "21563da4b0cf721a2aa512901f6ffc966ffa8384",
+      "path": "results/regular-pair-counterterm/latest.json",
+      "definition_commit": "c4e4a821ab8adfc2d628b4cd65b4ce1d52535b56",
+      "integration_status": "open_pr",
+      "pr": 267
     }
   ],
   "geometry": {
@@ -273,20 +294,58 @@
     "boundary": "saved N25 exact linear consequence, not a new random block or a universality decision"
   },
   "next_theoretical_question": {
-    "status": "local_linear_U_and_local_not_seam_completed_unrenormalized_conditional_two_site_Q1_family_excluded",
-    "question": "can an explicitly stated finite or confluent combination cancel the separated-insertion pole while retaining the measured nonzero local linear original-U response?",
-    "source_commit": "5864de49d19898e505e6aecc316b9cb824712c70",
-    "source_path": "notes/local-pair-two-insertion-obstruction.md",
-    "definition_commit": "f393847ecbc018b0ec39c1613c4d7d40d715f95a",
-    "definition": "analysis/local_pair_two_insertion_contract.json",
-    "known": "local Vav25=+0.0018155512845251097 completed at923f66b9; Kbar has nonzero singlet standard and both higher pair blocks; its physical two-hole connected conditional response has Q1 pole",
-    "required_output": "a named cancellation retaining the old single-insertion coefficient, not another first local score, bare-orthogonality claim or automatic occupation covariance substitution",
-    "boundary": "Gram residue1/2 is not proof of a homogeneous total-partition pole; sqrt(Q-1) rescaling kills the old linear V; bounded occupation tangent remains defined and is not the joint colour tensor family",
+    "status": "regular_one_site_retain_old_direct_V_class_excluded_canonical_regular_activation_and_counterterm_robust_conditional_interaction_completed",
+    "question": "is J2(N25)=partial_logQ partial_epsilon^2 U at Q1,epsilon0 zero for fixed canonical Kreg=K2+K0?",
+    "source_commit": "21563da4b0cf721a2aa512901f6ffc966ffa8384",
+    "source_path": "notes/regular-one-site-q1-thermal-quotient.md",
+    "definition_commit": "c4e4a821ab8adfc2d628b4cd65b4ce1d52535b56",
+    "definition": "analysis/regular_pair_counterterm_contract.json",
+    "known": "entry-regular homogeneous one-original-site interactions reduce to common Bernoulli thermal weights at Q1, including occupied and vacant tensors; direct U zero; canonical mixed Q U=-0.04503611397592696 already scored",
+    "required_output": "J2 on the original N25 pair and pooled root, epsilon/N at each vacant site; joint physical colour closure and occupation summation followed by complete original-U root/slope functional, not Cov(a_x,a_y)",
+    "null_model": "Q1 baseline unchanged and first-Q effective logweight purely linear/additive in epsilon implies J2=0",
+    "decision": "nonzero excludes that global additive closure; zero does not turn the conditional positive two-mark Gram into global-U transmission; no alpha fit",
+    "unconditional_sign_prediction": null,
+    "boundary": "conditional13/8 and common-counterterm bound3/2 are not global U or CFT norms; retain-old-V regular one-site question is settled while singular multi-site and connectivity-dependent alternatives lie outside the theorem",
     "new_production_requested": false
+  },
+  "completed_regular_one_site_no_go": {
+    "source_id": "regular_one_site_thermal_quotient",
+    "class": "same entry-regular equality-diagram tensors on every original binary site and both geometries, allowing both vacant and occupied tensors, with unchanged original q/E and regular common root",
+    "Q1_weight": "a0^(N-K)*a1^K",
+    "Q1_probability": "Bernoulli at common p_tilde=a1/(a0+a1)",
+    "exact_result": "all direct coupling derivatives of full moving-root/slope U vanish at Q1",
+    "settled_question": "no completion in this class can retain old nonzero pure-K2 V",
+    "outside_scope": ["singular/confluent diagrams", "multi-original-site vertices", "connectivity-dependent occupation reweighting", "inhomogeneous or geometry-specific couplings", "changed observers", "Q derivatives"]
+  },
+  "completed_canonical_regular_pair": {
+    "source_id": "canonical_regular_pair_activation",
+    "execution_head": "2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb",
+    "integration_status": "branch_only",
+    "kernel": "Kreg=K2+K0 with singlet coefficient identically one",
+    "direct_Q1_U_response": 0,
+    "all_orders_endpoint": "every nonempty finite-network Kreg insertion vanishes at Q1",
+    "mixed_logQ_epsilon_U_N25": -0.04503611397592696,
+    "result_path": "results/p337-regular-pair-activation/score/REPORT.md",
+    "counterterm_rule": "for c(Q)=1+alpha*(Q-1)+... the mixed response W_alpha=W_canonical-alpha*V_old; no alpha is fitted",
+    "boundary": "mixed Q activation is a distinct physical definition from the old pure-pair direct V and old bounded-tangent size W_N"
+  },
+  "completed_counterterm_robust_interaction": {
+    "source_id": "regular_pair_counterterm_gram",
+    "basis": ["Kreg", "L=(Q-1)*K0"],
+    "activated_gram": [["13/8", "-1/4"], ["-1/4", "1/2"]],
+    "determinant": "3/4",
+    "same_real_alpha": "H_alpha=3/2+(alpha-1/2)^2/2>=3/2",
+    "different_alphas": "H_xy=13/8-(alpha_x+alpha_y)/4+alpha_x*alpha_y/2; no positive cross lower bound",
+    "conditional_hole_normalization": "divide by (1+v_x)*(1+v_y) after summing both interior occupations in the contractible four-path exterior",
+    "higher_Taylor_coefficients": "do not enter the first Q derivative",
+    "decision": "no common real regular scalar singlet counterterm makes this shared-line Q activation additive",
+    "boundary": "not an occupation-summed homogeneous response, positive universal field norm or CFT identification",
+    "elapsed_seconds": 0.16766479203943163,
+    "acquisition": "symbolic reduction and one-site theorem only; no old U score, production, server operation, alpha scan or test"
   },
   "completed_local_pair_route": {
     "source_id": "completed_local_pair_U",
-    "execution_head": "7681eedd938019d977ede41a7d74ee1b88ffbc50",
+    "execution_head": "2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb",
     "integration_status": "branch_only",
     "Vav_N25": 0.0018155512845251097,
     "source": "S_av=-sum_x t_x/N, t_x=I_NS_EW+(I_NE_SW+I_NW_ES)/2 with x vacant",
@@ -308,11 +367,11 @@
   "parallel_local_pair_size_question": {
     "source_commit": "5864de49d19898e505e6aecc316b9cb824712c70",
     "source_path": "notes/local-pair-size-response-predictions.md",
-    "status": "derived_conditional_predictions_not_new_measurements",
+    "status": "separate_old_bounded_occupation_tangent_conditional_predictions_not_canonical_Kreg_activation_or_new_measurements",
     "exact_units": "W_N=N*Vav(N)",
     "geometry": "axis(5k,0), tilted(4k,3k), N=25*k^2, fixed local tensor and exact DeltaCos4",
     "comparison": "W_(4N)/W_N tends2 for x=17/4 or1 for x=21/4 under stated single-field nonzero-U-loading and controlled-window assumptions",
-    "boundary": "order-one W can also reflect modulation of existing anisotropy; ratios do not establish unique thermal Q4, pure spin4 or regular nonlinear Q1 field",
+    "boundary": "W_N is the old extensive direct response, not canonical mixed-Q W_alpha; order-one W can reflect existing anisotropy modulation; ratios do not identify unique thermal Q4, pure spin4 or regular nonlinear colour family",
     "new_production_requested": false
   },
   "trace_response_and_attribution_boundary": {

@@ -1,6 +1,6 @@
 {
   "schema": "matching-one.four-leg-trace-interface.v1",
-  "status": "Q4_and_stable_Q1_trace_completed_local_linear_U_completed_conditional_two_insertion_Q1_pole_resolved",
+  "status": "trace_and_pure_local_scores_completed_canonical_regular_Q_activation_scored_regular_one_site_direct_U_class_excluded",
   "source": {
     "commit": "977fea9272c780aea19cc47f8d33324c28a1293e",
     "path": "notes/closed-source-hypergraph-rc-twist-projection.md"
@@ -72,7 +72,7 @@
     "new_source_fit": false,
     "numerical_result_available": true,
     "status": "completed_nonzero_normalization_transmission_null_rejected_no_repeat_score",
-    "successor": "local_linear_response923f66b9_and_local_not_seam_completed_next_explicit_finite_confluent_completion_preserving_linear_V_and_cancelling_physical_two_site_pole",
+    "successor": "retain_old_V_entry_regular_one_site_class_excluded_next_fixed_canonical_Kreg_occupation_summed_joint_Q_activation_and_size",
     "completed_stable_Q1_result": "results/n25-stable-colour-q1/latest.json",
     "completed_stable_Q1_commit": "5c1f9d3b7971a41d07db3c9fa4ac86529c90c199"
   },
@@ -89,7 +89,7 @@
   "completed_local_pair_interface": {
     "result_commit": "923f66b979a6b6132875f783106c041ed3c0c1a9",
     "result_path": "notes/local-four-port-transmission-result.md",
-    "execution_head": "7681eedd938019d977ede41a7d74ee1b88ffbc50",
+    "execution_head": "2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb",
     "integration_status": "branch_only",
     "Vav_N25": 0.0018155512845251097,
     "source_units": "site-average C4 tensor insertion, S_av=-sum_x t_x/N at Q1",
@@ -115,13 +115,53 @@
     "acquisition": "symbolic equality-pattern algebra and physical witness, no occupation enumeration, MC, cloud or tests"
   },
   "current_next": {
-    "primary": "explicit finite or confluent combination retaining measured linear V and cancelling the separated-insertion pole",
-    "parallel": "bounded first-response comparison W_N=N*Vav(N), W4N/WN tends2 versus1 under specified x17/4 versus x21/4 nonzero-loading hypotheses",
+    "primary": "J2(N25)=partial_logQ partial_epsilon^2 U at Q1,epsilon0 for fixed canonical Kreg=K2+K0 on the original pair/root with epsilon/N at each vacant site",
+    "readout_order": "joint physical colour closure before Q continuation, occupation summation, then full original-U normalization and moving-root/slope functional",
+    "null_model": "unchanged Q1 baseline with first-Q effective logweight purely linear/additive in epsilon predicts J2=0",
+    "decision": "nonzero excludes that global closure; zero leaves conditional-two-mark-to-global-U transmission unestablished; no counterterm fit",
+    "unconditional_sign_prediction": null,
+    "settled": "all entry-regular homogeneous one-original-binary-site completions are thermal in direct Q1 U, including occupied and vacant tensors; retain-old-V search is finished in this class",
+    "not_a_substitute": "Cov(a_x,a_y) of separately closed one-mark activation weights is not the joint two-tensor Q derivative",
+    "parallel": "separate old bounded occupation first-response comparison W_N=N*Vav(N), W4N/WN tends2 versus1 conditionally; this W_N is not canonical mixed-Q W_alpha",
     "prediction_path": "notes/local-pair-size-response-predictions.md",
     "prediction_commit": "5864de49d19898e505e6aecc316b9cb824712c70",
-    "scope": "conditional radial prediction, not new measured sizes, unique continuum field or automatic production request"
+    "scope": "no alpha fit, duplicate N25 score or automatic production request; conditional activated Gram and bounded-tangent size predictions do not identify a universal field"
   },
-  "boundary": "finite_Q4_colour_irrep_and_completed_local_linear_response_do_not_identify_a_unique_continuum_four_leg_field_or_establish_a_regular_multi_insertion_Q1_family",
+  "completed_canonical_regular_interaction": {
+    "source_commit": "2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb",
+    "source_path": "notes/regular-pair-interaction-result.md",
+    "result_path": "results/p337-regular-pair-activation/score/REPORT.md",
+    "kernel_commit": "7e46c74ce149d5a0a06d1085eb36eebb1bbe6bdb",
+    "integration_status": "branch_only",
+    "kernel": "Kreg=K2+K0, constant singlet coefficient one",
+    "direct_Q1_U_response": 0,
+    "mixed_logQ_epsilon_U_N25": -0.04503611397592696,
+    "all_orders_Q1_scope": "every nonempty finite-network insertion vanishes at Q1 for regular closures; Q derivatives need not vanish",
+    "counterterm_dependence": "W_alpha=W_canonical-alpha*V_old for c(Q)=1+alpha*(Q-1)+...; no alpha selected"
+  },
+  "regular_one_site_direct_U_theorem": {
+    "source_commit": "21563da4b0cf721a2aa512901f6ffc966ffa8384",
+    "source_path": "notes/regular-one-site-q1-thermal-quotient.md",
+    "integration_status": "open_pr",
+    "class": "homogeneous entry-regular equality-diagram tensors for each original binary site's vacant and occupied states; same tensors in both geometries; old q/E and regular common root",
+    "reduction": "Q1 weight=a0^(N-K)*a1^K gives common Bernoulli p_tilde, so full U is coupling-independent",
+    "consequence": "no regular completion in this class retains old nonzero direct V",
+    "outside_scope": "singular/confluent, multi-site, connectivity-dependent occupation, inhomogeneous, changed-observer definitions and Q activation"
+  },
+  "counterterm_robust_activated_gram": {
+    "source_commit": "21563da4b0cf721a2aa512901f6ffc966ffa8384",
+    "definition_commit": "c4e4a821ab8adfc2d628b4cd65b4ce1d52535b56",
+    "result_path": "results/regular-pair-counterterm/latest.json",
+    "activated_gram": [["13/8", "-1/4"], ["-1/4", "1/2"]],
+    "determinant": "3/4",
+    "homogeneous_real_counterterm": "H_alpha=3/2+(alpha-1/2)^2/2>=3/2",
+    "conditional_hole_factor": "1/((1+v_x)*(1+v_y))",
+    "higher_Taylor_coefficients": "absent from this first Q derivative",
+    "boundary": "different alpha_x,alpha_y cross has no positive lower bound; neither13/8 nor3/2 is global U, a size exponent or a universal CFT norm",
+    "elapsed_seconds": 0.16766479203943163,
+    "acquisition": "symbolic reduction only, no old-source score, new production, server, alpha fit or test"
+  },
+  "boundary": "canonical_regular_Q1_endpoint_zero_and_nonzero_Q_activation_are_distinct_from_old_pure_pair_and_seam_responses; no_universal_four_leg_field_or_unconditional_joint_response_identification",
   "new_enumerations": 0,
   "new_random_samples": 0,
   "tests_run": 0,

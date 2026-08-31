@@ -1,43 +1,69 @@
 # Project Status and Scientific Claim Ledger
 
-**Status date:** 2026-08-31
+**Status date:** 2026-09-01
 
 `main` is the shared claim line. Unmerged work is included below because it changes the frontier, but it retains an explicit `open_pr` or `branch_only` label and a commit/path pointer. Mention in this ledger does not promote it to `main_integrated`.
 
 `docs/NEXT-TARGETS.md` owns the single attention order, while `docs/ROADMAP.md` preserves its scientific rationale. Neither locks a task, serializes theory work or treats a lower priority as a scientific rejection.
 
-**Current completed local response:** execution's `branch_only`
-[`923f66b9`](https://github.com/LightChainr/Matching-One/blob/923f66b979a6b6132875f783106c041ed3c0c1a9/notes/local-four-port-transmission-result.md)
-gives `V_av(25)=+.0018155512845251097` for the fixed C4 local pair
-insertion. Its difference from the full seam trace is proved, not a
-remaining identification task. Execution snapshot
-`7681eedd938019d977ede41a7d74ee1b88ffbc50` remains `branch_only`.
+**Canonical regular Q activation is completed.** Execution snapshot
+`2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb` remains `branch_only`:
+[result](https://github.com/LightChainr/Matching-One/blob/2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb/notes/regular-pair-interaction-result.md)
+and [score report](https://github.com/LightChainr/Matching-One/blob/2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb/results/p337-regular-pair-activation/score/REPORT.md)
+give `W_Q=∂logQ∂epsilon U=−.04503611397592696` for fixed Kreg=K2+K0,
+in site-average units. Its direct epsilon response at Q1 is exactly zero.
+The 0.244-second score retained all root/slope terms and reused the root;
+these are prescribed crossmoments on the same exact N25 population, not
+independent stochastic evidence or an outstanding calculation.
 
-**New mechanism exclusion, `open_pr #267`:**
-[the two-insertion result](../notes/local-pair-two-insertion-obstruction.md)
-at `5864de49d19898e505e6aecc316b9cb824712c70`, definition
-`f393847ecbc018b0ec39c1613c4d7d40d715f95a`, constructs an L17 physical
-four-path exterior with connected mixed-log Q1 residue
-`1/[2(1+v_x)(1+v_y)]`; `Tr(Kbar²)` has residue `1/2`.
-The unrenormalized tensor therefore cannot define a regular finite-strength
-Q1 family in every physical conditional exterior. This does not negate
-linear V or prove a pole in the summed homogeneous partition.
-[The fixed-cut resolution](../notes/local-pair-crossing-sector-resolution.md)
-has nonzero `[Q]`, `[Q−1,1]`, `[Q−2,2]`, `[Q−2,1,1]` blocks in H⊗H.
-The bare all-equal overlap zero cancels singlet against standard; it is
-not an RG thermal-zero theorem. The recorded symbolic run took about
-.114 seconds, with no new MC, cloud operation or N25 rescore.
+**New exact decisions, `open_pr #267`, `21563da4b0cf721a2aa512901f6ffc966ffa8384`:**
+definition/script `c4e4a821ab8adfc2d628b4cd65b4ce1d52535b56`.
+The [one-site thermal quotient](../notes/regular-one-site-q1-thermal-quotient.md)
+excludes nonzero direct U response for every entry-regular homogeneous
+one-original-binary-site tensor, even when vacant and occupied tensors
+both change. At Q1 it reduces to two scalar weights and a common Bernoulli
+parameter; the regular pooled-root/slope U removes that parameter.
+This ends the request to retain old pure-K2 V by such a regular completion.
+The theorem does not exclude bounded occupation reweighting, multi-site
+vertices, specified singular coefficients or mixed Q derivatives.
 
-**Next:** the fixed bounded occupation tangent has exact units
-`W_N=N V_av(N)` and conditional [size alternatives](../notes/local-pair-size-response-predictions.md)
-`W_(4N)/W_N -> 2` versus `1` for nonzero single-field loadings at x=17/4
-versus x=21/4. In parallel, specify a finite/confluent combination that
-cancels the separated-insertion pole while retaining the linear response.
-`sqrt(Q−1) Kbar` kills that response, and `Cov(t_x,t_y)` cannot replace
-the jointly contracted tensor. Neither branch identifies a unique field.
+The [counterterm proof](../notes/regular-pair-counterterm-gram.md) and
+[exact result](../results/regular-pair-counterterm/REPORT.md) give
+`g(alpha)=3/2+(alpha−1/2)²/2 >= 3/2` for the same real counterterm at both
+marks in K2+c(Q)K0 with unit K2 coefficient. Conditional hole normalization
+divides this by `(1+v_x)(1+v_y)`. Higher counterterm jets do not enter.
+This rules out additive first-Q activation in that shared-line exterior.
+Cancellation after occupation summation or zero global U remains possible;
+no universal field norm is asserted. The completed relation `W_alpha=W_Q-alpha V_old`
+still makes a single mixed-U coefficient completion-dependent.
+
+**Next:** `J2(N)=∂logQ∂epsilon²U|Q1,0` for unchanged canonical Kreg,
+with epsilon/N at each vacant vertex and the original N25 pair/root.
+Joint physical contractions cannot be replaced by covariance of single-mark
+scores. A first-Q effective log weight linear in epsilon predicts J2=0
+exactly. A nonzero value excludes that global additive closure; a zero
+leaves conditional-to-global transmission unestablished. The unconditional
+sign is not known and no counterterm is fitted. The old bounded
+occupation tangent separately retains [W_N=N V_av and conditional ratio
+2 versus 1](../notes/local-pair-size-response-predictions.md); this is not
+the mixed W_Q and supplies no automatic scaling law for it.
 
 <details>
-<summary>Completed Q1/Q4 seam, specialization and weak-Q source records</summary>
+<summary>Completed pure-pair, Q1/Q4 seam and weak-Q source records</summary>
+
+The `branch_only` [pure-K2 N25 result, `923f66b9`](https://github.com/LightChainr/Matching-One/blob/923f66b979a6b6132875f783106c041ed3c0c1a9/notes/local-four-port-transmission-result.md)
+remains `V_av=+.0018155512845251097`, with local≠full seam proved.
+The [L17 two-hole obstruction](../notes/local-pair-two-insertion-obstruction.md),
+`5864de49d19898e505e6aecc316b9cb824712c70`, definition
+`f393847ecbc018b0ec39c1613c4d7d40d715f95a`, has mixed-log residue
+`1/[2(1+v_x)(1+v_y)]` and Gram residue 1/2. It excludes all-exterior
+regularity of unrenormalized K2, without proving a homogeneous partition
+pole. [Fixed-cut recoupling](../notes/local-pair-crossing-sector-resolution.md)
+activates `[Q]`, `[Q−1,1]`, `[Q−2,2]`, `[Q−2,1,1]` in H⊗H; bare
+thermal orthogonality is singlet/standard cancellation, not an RG zero.
+That recorded symbolic calculation took about .114 seconds, without MC,
+cloud work or an old-score rerun. Its then-current execution snapshot
+was `7681eedd938019d977ede41a7d74ee1b88ffbc50`, `branch_only`.
 
 **Completed stable-Q1 response, `open_pr #267`, `5c1f9d3b7971a41d07db3c9fa4ac86529c90c199`:**
 [the exact result](../results/n25-stable-colour-q1/REPORT.md) gives

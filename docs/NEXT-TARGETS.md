@@ -1,11 +1,70 @@
-# Next Targets: Separate the Finite Local Tangent from Its Field Completion
+# Next Targets: Test the Fixed Regular Interaction's Global Transmission
 
-**Updated 2026-08-31.** This is the single attention board, not a permission
+**Updated 2026-09-01.** This is the single attention board, not a permission
 system. Parallel work remains open; no Issue is closed or locked.
 History and definitions remain in [Decisions](DECISION-EXPERIMENTS.md),
 [Status](STATUS.md) and the [scientific ledger](../analysis/research_ledger.yaml).
 
-## The local transmission is now completed too
+## Three resolved mechanism questions, one global question left
+
+The canonical regular completion **has been constructed and scored**.
+Execution's `branch_only`
+[2ba8863f result](https://github.com/LightChainr/Matching-One/blob/2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb/notes/regular-pair-interaction-result.md)
+uses the fixed `Kreg=K2+K0`, with no fitted counterterm. It gives
+`∂epsilon U|Q1=0` and the complete original-U activation
+**`∂logQ ∂epsilon U|Q1=−0.04503611397592696`** at N25.
+This is a different source from the old pure K2 tangent below.
+
+The new [one-site theorem](../notes/regular-one-site-q1-thermal-quotient.md),
+`open_pr #267` at `21563da4b0cf721a2aa512901f6ffc966ffa8384`,
+closes the entire **entry-regular, homogeneous, one-original-binary-site**
+class: even if both occupied and vacant tensors change, the Q1 law only
+changes by a common Bernoulli parameter. The moving-root/slope U removes
+that parameter exactly. Searching this class for a completion that
+preserves the old nonzero direct U response is therefore finished.
+
+The [counterterm-robust two-site result](../notes/regular-pair-counterterm-gram.md)
+at the same commit gives
+
+```text
+G1 = [[13/8, −1/4], [−1/4, 1/2]],   det(G1)=3/4,
+H_alpha = 3/2 + (alpha−1/2)^2/2 >= 3/2,
+K_c = K2 + c(Q)K0,   c(Q)=1+alpha(Q−1)+O((Q−1)^2).
+```
+
+No uniform real finite counterterm can make this shared-four-line first-Q
+interaction additive. Summing the two holes in the contractible L17
+exterior divides H_alpha by `(1+v_x)(1+v_y)` and preserves positivity.
+This is a conditional physical contraction, **not** a positive global-U
+coefficient or a universal field norm. Different counterterms at the two
+marks have no such positive lower bound.
+
+| Mechanism statement | Current decision |
+|---|---|
+| An entry-regular homogeneous one-site tensor retains the old direct Q1 U response | Excluded for the stated whole class, not merely one counterterm. |
+| One-site Q activation can be represented by additive independently closed marks in every exterior | Excluded by the uniform positive two-site bound. |
+| The irreducible joint activation survives occupation averaging and transmits into global U | Open. The canonical one-insertion mixed response is complete; it does not answer this two-insertion question. |
+
+## Default attention: one fixed global discriminator, one separate size comparison
+
+| Attention | Next mechanism-changing output | Fixed decision and boundary |
+|---|---|---|
+| Canonical joint transmission | For the unchanged `Kreg=K2+K0`, determine `J2(N)=∂logQ ∂epsilon² U|Q1,epsilon0`, using homogeneous site-average insertion and joint physical contractions. Start with the already defined N25 pair/root; do not scan c'(1). | A model whose first-Q effective log weight is additive and linear in epsilon predicts **J2=0**. Nonzero J2 excludes that global closure. If J2=0, stop claiming that the positive conditional pair interaction necessarily transmits to global U; do not add a fitted counterterm to rescue that claim. The tensor model's unconditional sign is not yet derived. |
+| Fixed occupation-tangent scaling | Separately compare **W_N=N V_av(N)** for the old bounded occupation source on `(5k,0)/(4k,3k)` with its k→2k dilation. | [Derived ratio](../notes/local-pair-size-response-predictions.md): R=W_(4N)/W_N=4V_av(4N)/V_av(N). Under the stated single-field/nonzero-loading assumptions, x=17/4 predicts R→2; x=21/4 predicts R→1. These predictions do not automatically apply to Kreg's mixed Q response. N25 is not an established scaling window. |
+| Parallel existing work | Named total weak-Q paths with B control; fixed-m oblique geometric twist penalty and restricted-sector odds. | Mixed Q activation is not a total Q-path derivative; the completed finite-m window is not the remaining fixed-m oblique theorem. |
+
+For the primary readout, a site-average tensor at every vacant site has
+`epsilon²/N²` times the sum over unordered distinct-site joint closures;
+the second derivative includes the factor two. At Q1 all canonical
+insertion weights vanish, so a product of separately closed marks would
+miss the first-Q joint term. Reuse the original q/E, normalization, pooled
+root and slope functional. **Neither Cov(a_x,a_y) nor the number 13/8 is
+J2.** A spatial/size analysis follows this fixed estimand, not a new
+descriptor search. No production job is started by this attention table;
+any new block should carry its stated precision/budget and predictions.
+Parallel lines do not require permission from this overview.
+
+## The old finite occupation tangent remains a separate valid object
 
 Execution's `branch_only`
 [923f66b9 result](https://github.com/LightChainr/Matching-One/blob/923f66b979a6b6132875f783106c041ed3c0c1a9/notes/local-four-port-transmission-result.md)
@@ -33,22 +92,15 @@ summed homogeneous partition diverges. The [fixed-cut resolution](../notes/local
 also shows four active colour blocks; bare thermal overlap zero is a
 singlet/standard cancellation, not a thermal RG selection theorem.
 
-## Default attention: two precise outputs, parallel and non-blocking
-
-| Attention | Next mechanism-changing output | Fixed decision and boundary |
-|---|---|---|
-| Local-field completion | Supply one explicit finite/confluent combination whose physical two-insertion pole cancels while its intended nonzero single-insertion U response is retained. | The unchanged Kbar family is excluded in the all-exterior regular sense. A common partition factor or separate single-site quadratic counterterms cannot remove this mixed pole. Multiplying Kbar by sqrt(Q−1) makes G finite but sends the linear response to zero, so that is a different mechanism. |
-| Fixed occupation-tangent scaling | Use the unchanged first-source mark and units to compare **W_N=N V_av(N)** on `(5k,0)/(4k,3k)` with its k→2k dilation. | [Derived ratio](../notes/local-pair-size-response-predictions.md): R=W_(4N)/W_N=4V_av(4N)/V_av(N). A single allowed x=17/4 loading predicts R→2; x=21/4 predicts R→1. N25 is not an established scaling window. An order-one W also permits modulation of an existing anisotropy amplitude. No free exponent or after-the-fact mixture is implied. |
-| Parallel existing work | Named total weak-Q paths with B control; fixed-m oblique geometric twist penalty and restricted-sector odds. | The new mixed trace derivative is not a total Q-path derivative; the completed finite-m window is not the remaining fixed-m oblique theorem. |
-
 The bounded occupation reweighting and the joint local tensor contraction
 are different nonlinear objects. **Cov(t_x,t_y) is not the tensor's
 two-insertion correlator**: both separate marks vanish in the explicit
 four-path exterior while the joint tensor closure has the pole. The linear
-size comparison does not wait for the nonlinear field completion, and
-neither route requires team permission. No new job is implied by this
-attention table; a numerical ratio decision still needs a stated size
-window, correction allowance and fixed precision/budget before collection.
+size comparison uses a different source from the canonical completion.
+A numerical ratio decision still needs a stated size window, correction
+allowance and fixed precision/budget; no free exponent or fitted mixture
+is implied. An order-one W can also reflect modulation of existing
+anisotropy, so it is not a unique thermal-Q4 assignment.
 
 ## The completed Q4 and stable-Q1 trace results remain inputs
 
@@ -127,10 +179,11 @@ Canonical E_top, first #370 production, K1/K2, defect reweight/jump and the
 strong-coupling tails are delivered inputs, not new first-run assignments.
 
 Complex C3, mixed geometry, triangular invariants, boundary Q and
-connectivity/defect radical remain parallel exploration. This turn completed
-the fixed two-insertion symbolic reduction in0.114seconds and one explicit
-physical graph construction; no occupation enumeration, random block or
-scientific test campaign. All ten Huawei machines
+connectivity/defect radical remain parallel exploration. This update absorbed
+the completed canonical mixed-U score and added an exact one-site theorem
+plus one counterterm-family reduction in0.168seconds. The latter used no
+occupation enumeration, random block, new U score or scientific test campaign.
+All ten Huawei machines
 are authorized through the updated Skill; no cloud action or live availability
 check was needed. Coordination stays [in the repo](TEAM-COORDINATION.md).
 Draft PR267 remains unmerged. [The older long queue](https://github.com/LightChainr/Matching-One/blob/f405719264c896aa873dd4aae7292795f544ba99/docs/NEXT-TARGETS.md)
