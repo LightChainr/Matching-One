@@ -91,7 +91,7 @@ def main():
               "code_commit": commit("HEAD"), "accepted_gates": gates,
               "created_utc": datetime.now(timezone.utc).isoformat(), "inputs": inputs,
               "W_over_A": interval_json(value), "numerical_values": numerical,
-              "direct_epsilon_response_at_Q1": "0 exactly for every finite graph and thermal activity",
+              "direct_epsilon_response_at_Q1": "0 exactly on finite graphs wherever original U and its regular pooled root are defined",
               "terms_over_A": {key: interval_json(v) for key, v in scored["terms"].items()},
               "root_h_mixed_tangent": interval_json(scored["root_h_tangent"]),
               "root_p_mixed_tangent": interval_json(scored["root_h_tangent"]/((1+h)**2)),
