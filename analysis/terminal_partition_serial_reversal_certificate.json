@@ -1,0 +1,219 @@
+{
+  "claim_boundary": {
+    "excluded": "planar duality, complement duality, periodic gluing, reliability polynomials, thresholds, or bounds",
+    "included": "typed left-right port reversal, all-state involution, full serial-table anti-automorphism, and orbit classification",
+    "parent_issue": "remain open"
+  },
+  "exact_checks": {
+    "all_225_products_reverse_order": true,
+    "full_cayley_table_has_anti_automorphism": true,
+    "orbits_partition_all_states": true,
+    "reversal_is_involutive_on_all_states": true,
+    "wire_identity_is_fixed": true
+  },
+  "exhaustive_pairs": {
+    "anti_homomorphism_failures": 0,
+    "cases": 225,
+    "cayley_table_anti_automorphism_failures": 0
+  },
+  "issue": 13,
+  "orbit_decomposition": {
+    "fixed_count": 7,
+    "fixed_indices": [
+      0,
+      3,
+      6,
+      7,
+      8,
+      12,
+      14
+    ],
+    "fixed_partitions": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        1,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        0,
+        2
+      ],
+      [
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        2,
+        1
+      ],
+      [
+        0,
+        1,
+        2,
+        3
+      ]
+    ],
+    "two_cycle_count": 4,
+    "two_cycles": [
+      [
+        1,
+        5
+      ],
+      [
+        2,
+        9
+      ],
+      [
+        4,
+        13
+      ],
+      [
+        10,
+        11
+      ]
+    ]
+  },
+  "partition_catalog": [
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      1
+    ],
+    [
+      0,
+      0,
+      1,
+      2
+    ],
+    [
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      0,
+      2
+    ],
+    [
+      0,
+      1,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      1
+    ],
+    [
+      0,
+      1,
+      1,
+      2
+    ],
+    [
+      0,
+      1,
+      2,
+      0
+    ],
+    [
+      0,
+      1,
+      2,
+      1
+    ],
+    [
+      0,
+      1,
+      2,
+      2
+    ],
+    [
+      0,
+      1,
+      2,
+      3
+    ]
+  ],
+  "permutation_convention": "old_terminal_to_new_terminal",
+  "port_reversal_permutation": [
+    2,
+    3,
+    0,
+    1
+  ],
+  "reversal_index_map": [
+    0,
+    5,
+    9,
+    3,
+    13,
+    1,
+    6,
+    7,
+    8,
+    2,
+    11,
+    10,
+    12,
+    4,
+    14
+  ],
+  "schema": "matching-one/terminal-partition-serial-reversal/v1",
+  "status": "exact_typed_serial_reversal_anti_involution",
+  "terminal_order": [
+    "L0",
+    "L1",
+    "R0",
+    "R1"
+  ]
+}
