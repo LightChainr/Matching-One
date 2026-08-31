@@ -167,6 +167,12 @@ four-leg field, or a scaling exponent. Those require the further generic-Q
 and spectral interface; no colour number or seam is changed to rescue the
 fixed calculation.
 
+**Completed:** the one frozen score now gives
+`V_beta=+5.440121494634842e-6`, with a strictly positive exact rational
+enclosure. The [result](closed-source-s4-trace-transmission-result.md)
+therefore establishes this finite normalization route; it does not supply
+a Q1 derivative or a continuum field assignment.
+
 ## Scientific card
 
 - **Changed mechanism space:** the canonical Q4 colour projection is

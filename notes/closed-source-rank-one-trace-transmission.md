@@ -161,6 +161,12 @@ the colour/spectral identification and the predicted nonzero value of
 trace character supplies the latter. This is an interface condition on
 a named operator, not an invitation to fit additional components.
 
+The fixed Q4 S4 `[2,2]` closure has now supplied precisely such an input.
+Its [one completed score](closed-source-s4-trace-transmission-result.md)
+gives `delta U=+5.440121494634842e-6`, while both raw q/E numerator
+variations are identically zero. Thus (8) has a nonzero actual lattice
+instance, not just a possible formal trace landing.
+
 ## Scientific card
 
 - **Mechanism changed:** the rank1 normalization route from a torus trace
