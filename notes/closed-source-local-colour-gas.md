@@ -178,7 +178,39 @@ for the rank correction in the already closed source.
 
 All strong-coupling assertions take fixed N before t->infinity. The
 remainders are not uniform in N; equations(2) and(6) must not be combined
-to infer a thermodynamic critical line, first-order transition, continuum
-field or a double-scaling crossover. The next size analysis must retain
-this limit order and the winding-sector costs, not promote local colour
-degeneracy alone to a universality-class claim.
+to infer a thermodynamic critical line, first-order transition or continuum
+field. The next size analysis must retain this limit order and the
+winding-sector costs, not promote local colour degeneracy alone to a
+universality-class claim.
+
+## A necessary scale for literal empty/full concentration
+
+There is already an exact obstruction to taking the preceding two-state
+limit uniformly in N. Let pi0 and piN be the probabilities of the single
+empty and single full occupancy configurations under the original law.
+Let pi_single be the probability of exactly one occupied site. The
+configuration weights alone give
+
+```text
+piN/pi0=h^N,
+pi_single/pi0=N h m^(-2),
+1-pi0-piN >= pi0 N h m^(-2).                                      (7)
+```
+
+Suppose along a growing-volume sequence both pi0 and piN tend to1/2.
+The first identity forces h->1, while the last forces
+
+```text
+N exp(-2t) -> 0,
+equivalently t-(1/2)log N -> +infinity.                            (8)
+```
+
+Thus t alone is not a uniform large-volume concentration criterion.
+The variable N exp(-2t) is selected already by the exact weight of
+single-site defects. Equation(8) is necessary, not a proved sufficient
+condition or a full double-scaling law. If it fails, a literal mixture
+of the two pure configurations cannot be the limiting measure. Rank-one
+suppression can still occur between two phases containing local defects;
+the argument does not equate absence of pure-state concentration with a
+nonzero global U. No further sampling or asymptotic fit is needed for
+this exclusion.
