@@ -187,3 +187,12 @@ The remaining continuum question is the local pair-to-cut intertwiner
 and its scaling content, not an absent finite partition/normalization
 map. This result does not identify an activated sqrt(N) field: the
 closed trace already has a nonzero Q1 value.
+
+A subsequent [explicit local four-port construction](local-four-port-transmission-result.md)
+now supplies one concrete microscopic End(pair) interaction and its
+strictly positive Q1 original-U response. Its outside-connectivity
+support is different from this full seam trace in both directions;
+the two-row and contractible-path witnesses rule out identifying the
+two configurationwise. Thus a local route is available, while the
+claimed continuum field and its relation to the global isotypic trace
+remain separate scale-dependent questions.
