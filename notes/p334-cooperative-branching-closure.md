@@ -3,6 +3,12 @@
 This is a fresh dynamic continuation experiment, not another static geometry
 proxy. Its parent is P429 production commit `751f8b3`.
 
+The zero-new-sample follow-up now supplies a stronger exact result:
+[real checkpoints with identical age, line, H2 and b2 have different branching
+probabilities](p334-real-checkpoint-scalar-nonclosure.md). The original pilot
+below establishes within-checkpoint heterogeneity; the follow-up separately
+establishes insufficiency of that matched scalar state.
+
 For a rank-one checkpoint C with d vacant sites, let b1 be the number of safe
 one-site insertions and b2 the number of safe unordered two-site sets. For each
 safe first site v let c_v count safe second sites. Monotonicity gives the exact
