@@ -104,6 +104,12 @@ description of the same discovery residual.
 - No additional sampling after the primary result; the fixed block is
   complete. Full replication and broader validation remain with the user's
   team. The3SE rule is a fixed-batch diagnostic, not an anytime guarantee.
+- After retrieval and confirming no remaining compute, both owned tunnels
+  were stopped and both machines returned to Ready, confirmed by the live
+  account API. The other team's five original-account Running machines
+  were not touched. No private key, account credential or old data was
+  uploaded; one stale local instance key was backed up and the existing
+  instance key re-downloaded without any server-side key reset.
 
 Lifecycle: independently sampled finite intervention / new random-prefix
 population / own C primary, A secondary / N325,N425 paired geometries /
