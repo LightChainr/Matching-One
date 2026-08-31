@@ -1,0 +1,43 @@
+{
+  "schema": "matching-one.n25-stable-colour-q1.run.v1",
+  "definition_commit": "170394ef65d34d60ecbd8921619dc6a9533190dc",
+  "command": [
+    "scripts/analyze_n25_stable_colour_q1.py",
+    "--output-dir",
+    "results/n25-stable-colour-q1"
+  ],
+  "python_executable": "/Users/lc/python-envs/research-py311/bin/python",
+  "python": "3.11.15 (main, Jun 23 2026, 15:46:51) [Clang 22.1.3 ]",
+  "machine": "arm64",
+  "created_utc": "2026-08-31T15:09:59.442886+00:00",
+  "elapsed_seconds": 6.759455249994062,
+  "source_files": [
+    {
+      "commit": "b8d043fc493ab6d7f808d0c074571d2fdd8fb60f",
+      "path": "results/decimation-plaquette-u/score/latest.json",
+      "sha256": "61b7dd20330acc76bc06f7acef0b14c37841b7eba25bcb2fd4cf38e11529d6e9"
+    },
+    {
+      "commit": "3dbdd91e20faf1c5e9985bcbbe8c26cfe65e70cf",
+      "path": "results/p337-s4-trace-transmission/axis.csv",
+      "sha256": "d589cf29ec770292674e510018d849bf44f10fb08b882d38ad30ba468db06127"
+    },
+    {
+      "commit": "3dbdd91e20faf1c5e9985bcbbe8c26cfe65e70cf",
+      "path": "results/p337-s4-trace-transmission/tilted.csv",
+      "sha256": "107f5081734d9f5d3259303b28a6f71083f5822d297ceed96f73348ac1ec1d5d"
+    }
+  ],
+  "contract_sha256": "cb47ce9b593a2926f705fea06703a2232c861f7fe7ef36618c5cc284683f25fa",
+  "script_sha256": "9fcba3d3370ff72bb8d7c9e56dfa64a7d5e04c7b94819b4c43126c7eafa3e8b8",
+  "interval_helper_sha256": "88c4a56bc1c45f966cb0b836553dd6320bb3a0f4ea97677429f4c334749da251",
+  "output_sha256": {
+    "latest.json": "49a920326eacfe5cd082760b0804daaab98948d25f29e17b4423aacdb16a1efa",
+    "REPORT.md": "13a3eabfc8f2e6a2397eec2bc611b71422356b237243f23ec8a6b660ba994440"
+  },
+  "new_enumerations": 0,
+  "new_random_samples": 0,
+  "root_searches": 0,
+  "tests_run": 0,
+  "cloud_jobs": 0
+}
