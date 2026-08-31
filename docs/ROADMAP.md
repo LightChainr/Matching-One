@@ -27,12 +27,31 @@ four cyclic sizes still100k, zero new counters/GPU/server use. First U source
 derivatives, complete-chain residuals, source splits and two-phase estimation
 are completed analyses; bare C was never substituted for U.
 
-Next distinguish **rank-population reweighting from conditional spatial
-rearrangement**: compare the [primitive winding-line O4 response conditional on rank1](../notes/norm4-root-comoving-rank1-source.md)
-with a named common E-plus-clock prediction that includes the moving matching
-root. The present q/E/cluster moments lack those line marks. This is a specific
-spatial question following a resolved physical source response, not another
-generic source search or an energy-field claim.
+The next spatial experiment is now a [completed conditional-line result](../results/norm4-source-line/REPORT.md).
+It rejects the named common E-plus-clock prediction, including moving-root
+transport, at all six sizes (four-real chi²=1049.13–8479.76). One112.14-second
+replay marks2.4M old permutations, and1.31-second aggregation saves the paired
+396-dimensional covariance; no new Monte Carlo samples are generated.
+Post-analysis exact rotation by `exp(-4i theta_period)` leaves positive real
+residuals.088750–.110265, with imaginary magnitude≤.0001164. This is a concrete
+conditional winding response; its large laboratory-frame angular contrast
+mainly accompanies the torus frame, and cannot be equated to the original
+global U H4 response. The first line experiment is no longer pending.
+
+The [fixed-K within/between decomposition](../results/norm4-source-line-fixed-k/REPORT.md)
+has also completed in1.39 seconds without replay: within-K/rank1 spatial
+covariance is strong across all six sizes (joint chi²=22534.76/24). Even an
+arbitrary geometry-specific `f_g(K,q,E)` cannot explain that within term.
+Attention first follows **how the measured angular content feeds global U**,
+using saved marks without replay. With `h=Re[exp(-4i theta_period) O4]`, the
+nonnegative soft weights `W±=R(1±h)/2` obey `W++W−=R=1−E`; their negative
+thermal derivatives, with the original root/slope normalization, add exactly
+to U. The same source moments support their source tangents and paired
+delete-one covariance. This bridge is defined but has not been run. The
+weights are not discrete line classes. Actual axis/diagonal/higher-winding
+classification and birth/lifetime selection are further questions requiring
+their own joint marks. Geometry reweighting and genuine lattice anisotropy
+remain distinct candidate mechanisms.
 
 The earlier [Phase-E source replay](../results/p154-absolute-cluster/REPORT.md)
 already measured E_top/source at N65/N13020k. Its unresolved result is not
@@ -80,9 +99,10 @@ it stores `B,B^2,I0*B,I2*B`, yet `J_bulk` is unresolved and changes sign from
 N65 to N130, and A/E/J_bulk improves over A/E/C by only `1.981<4`. That records
 the declared B-row outcome at 20k, not a task lock. The subsequent Q/R/H
 local-edge replay is also complete and unresolved (joint .8173/2, p=.66455).
-The later absolute-cluster source now resolves a root-comoving rank-population
-response, with million-mark endpoints as summarized above. Attention moves to
-the declared common-source map and a conditional primitive-line response;
+The later absolute-cluster source resolves a root-comoving rank-population
+response, and the completed conditional-line experiment rejects its common
+E-plus-clock prediction. Attention first moves to the existing-mark soft-angular
+split of original U/source response, then genuine class-resolved loading;
 none of these completed finite measurements settles the norm-4 energy-operator
 identity question.
 

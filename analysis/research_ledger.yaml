@@ -1,4 +1,4 @@
-version: 31
+version: 32
 updated: 2026-08-31
 scientific_main_snapshot_commit: e30060995a9eb5c4d93f565ae09af4f54a56270f
 observed_remote_main_snapshot_commit: 2ee16678b64a065d6d235ef69941c8a46f3a3878
@@ -166,6 +166,9 @@ observer_sectors:
   - id: bulk_euler_external
     name: external_bulk_Euler_and_component_count_observer
     semantic_boundary: O_ext_O_near_and_O_far_are_distinct_and_a_bulk_rank_birth_coupling_is_not_a_Q4_field_identity_or_exponent
+  - id: rank1_conditional_winding
+    name: physical_primitive_line_character_conditioned_on_rank1_and_optionally_fixed_K
+    semantic_boundary: condition_each_geometry_before_pairing_physical_and_torus_period_frames_are_distinct_intrinsic_cos4_line_loading_is_not_original_global_U_lattice_H4_fixed_K_within_and_between_views_share_one_source_archive
   - id: microcanonical_motif_control
     name: fixed_rank_equal_multiplicity_motif_contrast
     semantic_boundary: exact_zero_conditional_mean_does_not_certify_covariance_gain_causality_or_threshold_origin
@@ -3183,6 +3186,17 @@ branch_sources:
     execution_commits: {two_phase: 634499ce1b950e276f22f1538d4aab2c47a33ae4, endpoint_reobservation: 6f99f901cb919f488fcd6c2b4f4c357360b17764, endpoint_aggregation: 6bd46ad30bc8f583c3ca1f1c8a1b95e7d90571bc}
     paths: [analysis/norm4_source_two_phase_contract.json, analysis/norm4_source_endpoint_1m_contract.json, scripts/analyze_norm4_source_two_phase.py, scripts/norm4_source_two_phase_core.py, scripts/norm4_source_two_phase_inputs.py, scripts/replay_norm4_source_endpoint_increment.py, scripts/analyze_norm4_source_endpoint_1m.py, results/norm4-source-two-phase/latest.json, results/norm4-source-two-phase/REPORT.md, results/norm4-source-endpoint-1m/latest.json, results/norm4-source-endpoint-1m/REPORT.md, results/norm4-source-endpoint-1m/run.json, results/norm4-source-endpoint-1m/increment/raw/n260.csv, results/norm4-source-endpoint-1m/increment/raw/n340.csv, notes/norm4-root-comoving-rank1-source.md, notes/norm4-common-source-response-determinants.md]
     claim_boundary: finite_root_comoving_rank1_source_response_excludes_pure_common_affine_K_clock_not_energy_identity_or_H4_generator_identification_endpoint1M_and_prior100k_are_nested_complement_excludes_all_current_marks_no_new_random_samples
+  - id: SRC_PR267_NORM4_CONDITIONAL_LINE_SOURCE
+    integration_status: open_pr
+    pr: 267
+    ref: research/navigation-priority-refresh-20260829
+    commit: d2a3f445abcb99f9a21bc7b5cd70b5a22e6a77c7
+    input_commits: [b77f3e2a56df2b033561e6fe9164d09ab4698949, bfab0330f5f56ca4d746b45d737f1607e3d229a0, 8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc]
+    result_status: completed_conditional_winding_source_E_clock_rejection_and_fixed_K_spatial_covariance_localization
+    dependency_group_refs: [crn-2026104501-5100000000-7000000000, crn-2026105401-8200000000-9200000000, crn-2026105402-8200000000-9200000000]
+    execution_commits: {line_reobservation: 584559582ded1f55d06f69831b3f573cebf6e673, primary: 91fe30f3ebbe976d65db2538093af5e2c45b11d0, fixed_K: 1b3b65c57cc77546931d6c0f2152a1bfa78e126e}
+    paths: [analysis/norm4_source_line_contract.json, analysis/norm4_source_line_fixed_k_contract.json, src/norm4_source_line_replay.cpp, scripts/replay_norm4_source_line.py, scripts/norm4_source_line_core.py, scripts/analyze_norm4_source_line.py, scripts/analyze_norm4_source_line_fixed_k.py, notes/norm4-conditional-line-source-experiment.md, results/norm4-source-line/run.json, results/norm4-source-line/latest.json, results/norm4-source-line/REPORT.md, results/norm4-source-line/raw/n65.csv, results/norm4-source-line/raw/n85.csv, results/norm4-source-line/raw/n130.csv, results/norm4-source-line/raw/n170.csv, results/norm4-source-line/raw/n260.csv, results/norm4-source-line/raw/n340.csv, results/norm4-source-line-fixed-k/latest.json, results/norm4-source-line-fixed-k/REPORT.md]
+    claim_boundary: finite_rank1_line_source_and_same_K_spatial_coupling_not_original_global_U_H4_or_continuum_energy_identity_period_frame_rotation_is_a_posthoc_deterministic_view_fixed_K_is_a_same_archive_followup_not_new_independent_evidence
   - id: SRC_PR484_P334_UNIFORM_BLOCKADE_SEMIGROUP
     integration_status: open_pr
     pr: 484
@@ -5511,10 +5525,45 @@ scientific_nodes:
     excludes_only: [pure_pair_common_affine_K_thermal_clock_explanation_of_the_measured_root_comoving_rank_marginal]
     reusable_data_refs: [results/norm4-source-endpoint-1m/latest.json, results/norm4-source-endpoint-1m/REPORT.md, results/norm4-source-endpoint-1m/run.json, results/norm4-source-two-phase/latest.json, notes/norm4-common-source-response-determinants.md, notes/norm4-root-comoving-rank1-source.md]
     dependency_group_refs: [crn-2026104501-5100000000-7000000000, crn-2026105401-8200000000-9200000000, crn-2026105402-8200000000-9200000000]
-    missing_inputs: [rank1_conditional_primitive_winding_line_marks_with_common_cluster_source_and_thermal_transport]
-    next_discriminator: common_E_plus_clock_predicts_rank1_conditional_line_O4_response_including_root_thermal_transport_test_its_residual_not_another_equivalent_U_determinant_or_ordinary_baseline_precision_run
+    completed_conditional_line_followup: SN_NORM4_FIXED_K_LINE_SOURCE
+    missing_inputs: []
+    next_discriminator: use_completed_conditional_line_and_fixed_K_source_localization_to_define_primitive_line_class_and_original_global_U_bridge
     information_gain: very_high
-    compute_cost: targeted_old_permutation_reobservation_for_missing_line_marks
+    compute_cost: low
+    decision_experiments: [DX_ETOP_PRODUCTION_LOCALIZATION]
+  - id: SN_NORM4_FIXED_K_LINE_SOURCE
+    title: common_cluster_source_changes_winding_composition_even_at_fixed_occupancy_and_rank1
+    integration_status: open_pr
+    state: microscopic_threshold_structure
+    sources: [bernoulli_thermal, absolute_paired_cluster_fugacity]
+    observer_sectors: [rank1_conditional_winding, topology_typed, direction_character]
+    geometries: [gaussian_cover, square_controls]
+    acquisition: [existing_data_reuse]
+    source_refs: [SRC_PR267_NORM4_CONDITIONAL_LINE_SOURCE, SRC_PR267_NORM4_SOURCE_PRECISION_AND_COMPOSITION]
+    known_result: six_N_conditional_O4_source_responses_exceed_common_E_plus_clock_prediction_and_full_K_covariance_decomposition_resolves_a_same_K_same_rank1_spatial_configuration_coupling_beyond_any_geometry_specific_f_of_K_q_E_source
+    numerical_readout:
+      primary_E_clock_joint_chi2_df: [23948.48743, 24]
+      primary_single_N_chi2_range_df4: [1049.13033, 8479.75635]
+      primary_full_covariance_dimension: 396
+      fixed_K_within_joint_chi2_df: [22534.76234, 24]
+      fixed_K_within_max_component_abs_z: 56.27208
+      fixed_K_full_covariance_dimension: 288
+      fixed_K_max_Bessel_component_shift: 0.0000026112541
+      fixed_K_max_empirical_rank1_mass_fraction_a_le_one: 0.000000000011650123
+      posthoc_period_frame_radial_loading_range: [0.088750, 0.110265]
+      posthoc_period_frame_max_abs_imaginary_loading: 0.0001164
+      compute_seconds: {new_line_marks_on_old_samples: 112.14008, primary: 1.31019, fixed_K: 1.39418}
+    boundary: Gaussian_Wald_scores_are_nominal_p_underflow_is_not_mathematical_zero_strong_lab_frame_P4_contains_known_torus_rotation_not_an_identified_original_U_lattice_anisotropy_or_continuum_field_fixed_K_decomposition_is_static_association_not_separate_birth_lifetime_causal_attribution
+    supports: [primitive_line_composition_as_measured_spatial_source_information_beyond_rank_marginal, finite_same_K_spatial_cluster_winding_coupling, torus_intrinsic_angular_reweighting_as_named_mechanism_candidate]
+    tensions: [equating_large_conditional_P4_with_original_global_H4, interpreting_weak_thermal_wedges_as_source_closure, replacing_line_class_or_birth_lifetime_joint_marks_with_scalar_K_marginals]
+    excludes_only: [declared_common_E_plus_affine_K_clock_conditional_response_at_these_six_roots, any_geometry_specific_f_K_q_E_source_as_complete_explanation_of_the_measured_within_K_winding_covariance]
+    reusable_data_refs: [results/norm4-source-line/latest.json, results/norm4-source-line/raw/n65.csv, results/norm4-source-line/raw/n85.csv, results/norm4-source-line/raw/n130.csv, results/norm4-source-line/raw/n170.csv, results/norm4-source-line/raw/n260.csv, results/norm4-source-line/raw/n340.csv, results/norm4-source-line-fixed-k/latest.json]
+    dependency_group_refs: [crn-2026104501-5100000000-7000000000, crn-2026105401-8200000000-9200000000, crn-2026105402-8200000000-9200000000]
+    missing_inputs: [primitive_line_class_resolved_source_and_global_U_bridge, joint_birth_exit_line_source_marks_for_separate_birth_lifetime_attribution]
+    next_discriminator: use_existing_raw_soft_weights_Wplusminus_R_times1_plusminus_intrinsic_h_over2_to_split_original_global_U_and_its_source_tangent_with_exact_addback_then_acquire_true_line_classes_or_joint_birth_exit_marks_only_for_distinct_questions
+    next_zero_replay_bridge: 'h_g=Re[exp(-4i theta_period_g) O4]; Wplusminus=R(1+/-h_g)/2; Uplusminus=-N^(13/8) P4[d_p<Wplusminus>]/(2D), so Uplus+Uminus=U. Existing Rs/ROs give source tangents; these are soft angular weights, not discrete primitive-line classes.'
+    information_gain: very_high
+    compute_cost: low
     decision_experiments: [DX_ETOP_PRODUCTION_LOCALIZATION]
   - id: SN_ETOP_CLOCK_PLANE
     title: Etop_A_C_W_clock_plane_production_elimination
@@ -6378,7 +6427,8 @@ dependency_groups:
     kind: open_PR_reconstructed_P154_aligned_orientation_batches
     member_sizes: [65, 85, 130, 170]
     source_ref: SRC_PR267_NORM4_PHASE_D
-    derived_source_refs: [SRC_P218_PRODUCTION_COALESCENCE, SRC_PR267_NORM4_CLUSTER_SOURCE_THERMAL_RESPONSE, SRC_PR267_NORM4_SOURCE_PRECISION_AND_COMPOSITION]
+    derived_source_refs: [SRC_P218_PRODUCTION_COALESCENCE, SRC_PR267_NORM4_CLUSTER_SOURCE_THERMAL_RESPONSE, SRC_PR267_NORM4_SOURCE_PRECISION_AND_COMPOSITION, SRC_PR267_NORM4_CONDITIONAL_LINE_SOURCE]
+    conditional_line_followup: {primary: results/norm4-source-line/latest.json, fixed_K: results/norm4-source-line-fixed-k/latest.json, same_marked_samples: true, new_counters: 0}
     precision_followup: {source_marks: 100000, unmarked_complement: 1899900000, output: results/norm4-source-endpoint-1m/latest.json, new_counters: 0}
     marked_source_subset:
       counter_interval: [5100000000, 5100100000]
@@ -6393,7 +6443,8 @@ dependency_groups:
     kind: open_PR_reconstructed_P154_aligned_orientation_batches
     member_sizes: [260]
     source_ref: SRC_PR267_NORM4_PHASE_D
-    derived_source_refs: [SRC_P218_PRODUCTION_COALESCENCE, SRC_PR267_NORM4_CLUSTER_SOURCE_THERMAL_RESPONSE, SRC_PR267_NORM4_SOURCE_PRECISION_AND_COMPOSITION]
+    derived_source_refs: [SRC_P218_PRODUCTION_COALESCENCE, SRC_PR267_NORM4_CLUSTER_SOURCE_THERMAL_RESPONSE, SRC_PR267_NORM4_SOURCE_PRECISION_AND_COMPOSITION, SRC_PR267_NORM4_CONDITIONAL_LINE_SOURCE]
+    conditional_line_followup: {primary: results/norm4-source-line/latest.json, fixed_K: results/norm4-source-line-fixed-k/latest.json, same_nested_1M_union_batches: true, new_counters: 0}
     marked_source_extension:
       counter_interval: [8200000000, 8201000000]
       increment_interval: [8200100000, 8201000000]
@@ -6416,7 +6467,8 @@ dependency_groups:
     kind: open_PR_reconstructed_P154_aligned_orientation_batches
     member_sizes: [340]
     source_ref: SRC_PR267_NORM4_PHASE_D
-    derived_source_refs: [SRC_P218_PRODUCTION_COALESCENCE, SRC_PR267_NORM4_CLUSTER_SOURCE_THERMAL_RESPONSE, SRC_PR267_NORM4_SOURCE_PRECISION_AND_COMPOSITION]
+    derived_source_refs: [SRC_P218_PRODUCTION_COALESCENCE, SRC_PR267_NORM4_CLUSTER_SOURCE_THERMAL_RESPONSE, SRC_PR267_NORM4_SOURCE_PRECISION_AND_COMPOSITION, SRC_PR267_NORM4_CONDITIONAL_LINE_SOURCE]
+    conditional_line_followup: {primary: results/norm4-source-line/latest.json, fixed_K: results/norm4-source-line-fixed-k/latest.json, same_nested_1M_union_batches: true, new_counters: 0}
     marked_source_extension:
       counter_interval: [8200000000, 8201000000]
       increment_interval: [8200100000, 8201000000]
@@ -6736,18 +6788,18 @@ decision_experiments:
   - id: DX_ETOP_PRODUCTION_LOCALIZATION
     attention_rank: 1
     name: norm4_missing_physical_direction_pair_topology_or_distinct_microscopic_singlet
-    status: endpoint1M_source_marks_and_root_comoving_rank1_composition_completed_pure_common_clock_excluded_finer_angular_source_maps_unresolved
-    scientific_node_refs: [SN_NORM4_ETOP_PHASE_D, SN_PHASE_E_ALIAS_AND_LOCAL_ENERGY, SN_ETOP_CLOCK_PLANE, SN_P154_ABSOLUTE_CLUSTER_PHYSICAL_RESPONSE, SN_P40_ABSOLUTE_CLUSTER_MATCHING_RESPONSE, SN_NORM4_CLUSTER_SOURCE_THERMAL_RESPONSE, SN_NORM4_ROOT_COMOVING_SOURCE_COMPOSITION]
-    observer_sector_refs: [global_rank_projector, topology_typed, matching_even, bulk_energy_logpair, direction_character]
+    status: conditional_line_and_fixed_K_source_localization_completed_common_E_clock_and_scalar_K_q_E_explanations_insufficient_original_global_U_bridge_open
+    scientific_node_refs: [SN_NORM4_ETOP_PHASE_D, SN_PHASE_E_ALIAS_AND_LOCAL_ENERGY, SN_ETOP_CLOCK_PLANE, SN_P154_ABSOLUTE_CLUSTER_PHYSICAL_RESPONSE, SN_P40_ABSOLUTE_CLUSTER_MATCHING_RESPONSE, SN_NORM4_CLUSTER_SOURCE_THERMAL_RESPONSE, SN_NORM4_ROOT_COMOVING_SOURCE_COMPOSITION, SN_NORM4_FIXED_K_LINE_SOURCE]
+    observer_sector_refs: [global_rank_projector, topology_typed, matching_even, bulk_energy_logpair, direction_character, rank1_conditional_winding]
     source_refs: [SRC_PR267_NORM4_PHASE_D, SRC_P154_PHASE_E_INTEGRATED_ALIAS, SRC_P154_PHASE_E_LOCAL_SINGLET_PILOT, SRC_ETOP_CLOCK_PLANE, SRC_P154_PHASE_E_MIXED_PLANE, SRC_PR267_P154_FIXED_K_INTERACTION, SRC_PR267_P154_ABSOLUTE_CLUSTER_RESPONSE]
     dependency_group_refs: [p154-phase-e-integrated-alias-existing-archives, p154-phase-e-local-singlet-N65-N130-20k, p154-phase-e-mixed-plane-N65-N130-20k, etop-clock-plane-production-plus-P205]
     acquisition: existing_data_reuse
     expected_model_space_reduction: very_high
     compute_cost: low
-    completed_followup_source_refs: [SRC_PR267_P40_ABSOLUTE_CLUSTER_RESPONSE, SRC_PR267_P40_EVEN_GIVEN_ODD_RESPONSE, SRC_PR267_NORM4_CLUSTER_SOURCE_THERMAL_RESPONSE, SRC_PR267_NORM4_SOURCE_PRECISION_AND_COMPOSITION]
+    completed_followup_source_refs: [SRC_PR267_P40_ABSOLUTE_CLUSTER_RESPONSE, SRC_PR267_P40_EVEN_GIVEN_ODD_RESPONSE, SRC_PR267_NORM4_CLUSTER_SOURCE_THERMAL_RESPONSE, SRC_PR267_NORM4_SOURCE_PRECISION_AND_COMPOSITION, SRC_PR267_NORM4_CONDITIONAL_LINE_SOURCE]
     completed_followup_dependency_group_refs: [p40-motif-N65-N85-shared-counter-1m, crn-2026104501-5100000000-7000000000, crn-2026105401-8200000000-9200000000, crn-2026105402-8200000000-9200000000]
-    decision_output: use_measured_rank1_source_loading_to_predict_conditional_primitive_line_O4_under_common_E_plus_clock_including_thermal_root_transport_then_measure_a_spatial_response_residual_with_paired_source_covariance
-    current_readout: common_bulk_v_N_equals_N_times_Udot_density_and_its_explicit_source_rigidity_or_one_generator_drift_contrasts_with_joint_baseline_uncertainty
+    decision_output: zero_replay_soft_angular_Wplusminus_decomposition_of_original_U_and_source_tangent_with_exact_addback_and_shared_covariance_then_actual_line_class_or_joint_birth_exit_marks_for_further_attribution
+    current_readout: completed_rank1_conditional_O4_E_clock_residual_and_within_K_between_K_rootclock_decomposition_with_same_archive_full_covariance_original_global_U_remains_separate
     two_phase_estimator_status: completed_in2p52_seconds_zero_replay_no_stable_gain_marked_variance_dominates
     original_norm4_contract:
       commit: 2236d36c80c8a466d9317c929bc33e92a7ca9d33

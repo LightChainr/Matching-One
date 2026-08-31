@@ -1,4 +1,4 @@
-version: 31
+version: 32
 updated: 2026-08-31
 purpose: >
   Lightweight navigation/provenance index. Registry conflicts never block
@@ -1001,7 +1001,22 @@ registered_reanalyses:
     result_summary: root_comoving_rank1_response_minus0p093_to_minus0p098_at73_to160_SE_excludes_pure_common_thermal_clock_endpoint_Udot_SE19p98_25p87_to4p27_9p20_source_rigidity_q2_p0p48573_Jordan_p0p58735_and_common_source_determinants_unresolved_two_phase_no_stable_gain
     boundary: finite_root_composition_not_energy_identity_two_endpoint1M_nested_with_old100k_four_cyclic100k_shared_counters_full_complement_excludes_all_current_marks_348_dimensional_joint_covariance_all_views_correlated
     actual_compute: {two_phase_seconds: 2.51877, endpoint_reobservation_wall_seconds: 98.77715, endpoint_aggregation_seconds: 1.44086, newly_marked_old_permutations: 1800000, new_random_counters: 0, server_actions: 0}
-    next_output: common_E_plus_clock_predicts_rank1_conditional_primitive_line_O4_including_root_thermal_transport_then_target_missing_line_source_marks_not_an_equivalent_determinant_reexpression
+    completed_spatial_followup: NORM4_CONDITIONAL_LINE_FIXED_K_SOURCE
+    next_output: consume_completed_conditional_line_and_fixed_K_localization_then_define_primitive_line_class_and_original_global_U_bridge
+  - id: NORM4_CONDITIONAL_LINE_FIXED_K_SOURCE
+    status: completed_conditional_winding_source_and_fixed_K_spatial_localization
+    integration_status: open_pr
+    pr: 267
+    branch: research/navigation-priority-refresh-20260829
+    commit: d2a3f445abcb99f9a21bc7b5cd70b5a22e6a77c7
+    contracts: [analysis/norm4_source_line_contract.json, analysis/norm4_source_line_fixed_k_contract.json]
+    outputs: [results/norm4-source-line/REPORT.md, results/norm4-source-line/latest.json, results/norm4-source-line/run.json, results/norm4-source-line/raw/n65.csv, results/norm4-source-line/raw/n85.csv, results/norm4-source-line/raw/n130.csv, results/norm4-source-line/raw/n170.csv, results/norm4-source-line/raw/n260.csv, results/norm4-source-line/raw/n340.csv, results/norm4-source-line-fixed-k/REPORT.md, results/norm4-source-line-fixed-k/latest.json, scripts/replay_norm4_source_line.py, src/norm4_source_line_replay.cpp, scripts/norm4_source_line_core.py, scripts/analyze_norm4_source_line.py, scripts/analyze_norm4_source_line_fixed_k.py, notes/norm4-conditional-line-source-experiment.md]
+    dependency_groups: [crn-2026104501-5100000000-7000000000, crn-2026105401-8200000000-9200000000, crn-2026105402-8200000000-9200000000]
+    result_summary: common_E_clock_conditional_4real_response_fails_at_every_N_joint23948p49_over24_fixed_K_within_joint22534p76_over24_locates_spatial_configuration_coupling_beyond_any_geometry_specific_f_K_q_E_source_period_frame_rotation_gives_intrinsic_radial_loading0p089_to0p110
+    boundary: conditional_winding_character_is_not_original_U_lattice_H4_or_energy_field_identity_all_rotations_K_decomposition_and_model_views_are_correlated_one_archived_sample_bundle_no_separate_birth_lifetime_attribution
+    covariance_dimensions: {primary: 396, fixed_K: 288}
+    actual_compute: {line_mark_seconds: 112.14008, primary_aggregation_seconds: 1.31019, fixed_K_seconds: 1.39418, new_line_marks_on_old_permutations: 2400000, new_random_counters: 0, server_actions: 0}
+    next_output: existing_raw_Wplusminus_soft_angular_partition_of_original_U_and_source_tangent_with_exact_addback_then_true_line_class_or_birth_exit_acquisition_for_distinct_questions
   - id: PR484_P334_UNIFORM_BLOCKADE_SEMIGROUP
     status: completed_uniform_blockade_mean_clock_closure_and_spatial_variance_identity
     integration_status: open_pr
