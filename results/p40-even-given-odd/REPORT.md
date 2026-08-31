@@ -159,15 +159,33 @@ Both commands refuse to overwrite their existing outputs.
 
 The pure-q prediction is now explicit, geometry by geometry:
 `JE^(q)=Cov(E,q) Jq/Var(q)`. Its difference from the observed response
-is C. The next mechanism question is whether the **original norm-4
-projection of this difference** is nonzero, using the source definition,
-root/thermal coordinate and slope normalization of that comparison.
-Form the local ratio before applying the cross-size projection.
+is C. This is a fixed-p, first-order marginal distinction, and **bare C
+is not the original norm-4 observable**.
+
+The original frozen comparison at `2236d36c80c8a466d9317c929bc33e92a7ca9d33`
+uses, in the standard first-minus-second convention,
+
+```text
+U_N = N^(13/8) P4[partial_p <E_top>] / (2 Mbar'_N), at p=p0(N),
+R_q2 = U_N − 3 U_2N + 2 U_4N,
+R_J  = U_N − 2 U_2N + U_4N.
+```
+
+The factor1/2 and sign follow from the old `S_legacy=1−E_top/2`
+and its opposite direction convention. Each delete-one reestimates the
+pooled matching root p0. The relevant new physical experiment is the
+source response of that same object, **`L4[partial_lambda U]`**, including
+the root and slope responses; it is not `L4[C]`.
+For example, `partial_p Cov(E,S)=kappa(E,S,K)/[p(1−p)]` needs a
+third mixed moment absent from this supplement. The root moves by
+`partial_lambda p0=−Mbar_lambda/Mbar_p` under the common raw source,
+and differentiating the slope-normalized U adds further terms.
 
 The present N65/N85 are two parents, not a dyadic chain. The original
-three-size chains are65→130→260 and85→170→340; the existing N65/N13020k
-source matrices can supply a lower-statistics fixed-p follow-up, but do
-not alone implement that original root-normalized test. Thus the next
+three-size chains are65→130→260 and85→170→340: N130 is the first
+chain's intermediate norm-2 step, N260 its norm-4 endpoint. The existing
+N65/N13020k source matrices can supply a lower-statistics fixed-p follow-up,
+but do not alone implement that original root-normalized test. Thus the next
 missing output is a specific physical source-transport residual, not
 another first E_top source test, another generic certificate, or a
 new exponent fitted to these two parent sizes.
