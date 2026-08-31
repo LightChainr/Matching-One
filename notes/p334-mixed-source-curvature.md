@@ -1,5 +1,24 @@
 # Two local sources: mixed response beyond the first-order Jacobian
 
+## Result: own-source curvature hides an opposing normal response
+
+The exact new64 tensor resolves own-source center curvature at both sizes
+and orientations: `(-6.222±1.208,-5.985±1.148,-8.493±1.014,
+-6.520±0.836)×10^-8`. The corresponding A(p_ref) curvatures are positive.
+Mixed fs terms do not show a consistent cross-size direction. This
+describes predominantly own-source bending in the specified coordinates,
+not evidence for exact additivity.
+
+The stronger new result comes from decomposing that bending. An exact
+census projection removes the part aligned with the first two density
+scores. The remaining own-center response is **positive** in all four
+cases: `(4.116±0.949,3.233±0.669,3.300±0.954,3.977±0.682)×10^-8`.
+The larger negative first-score tangent term and this positive normal term
+partially cancel to produce the observed negative raw curvature.
+[Source-normal construction and full result](p334-source-normal-curvature.md)
+give an operational third kind of Euler-invisible perturbation, orthogonal
+to the two original scores; this does not imply a third independent field.
+
 ## The next mechanism question
 
 Two locally independent first-order birth-center response directions have
@@ -117,3 +136,8 @@ every corner, all physical/S/D readouts, cells, LOO and a factor on the
 same deleted-batch sign convention used by the execution-team archive.
 Original8 and new64 use the same prefix population; new64 only exists
 on original00. They are not independent population replications.
+
+The second-score tensor is delivered at
+[`c48fa360`](https://github.com/LightChainr/Matching-One/blob/c48fa360a37a9887ef32ff6d3ce947c4e4601b53/notes/p334-mixed-source-curvature.md).
+The exact policy/Hessian/rectangle identities and symmetry analysis are
+at [`a6e7141a`](https://github.com/LightChainr/Matching-One/blob/a6e7141ac4a7a0b34fca26373963681aa8534de6/notes/p334-fixed-source-mixed-curvature.md).
