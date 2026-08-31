@@ -60,6 +60,10 @@ def main():
                'architecture': platform.machine(), 'pid': os.getpid(), 'threads': args.threads,
                'source_sha256': {str(p.relative_to(package.parents[1])): sha(p) for p in sources},
                'contract': contract, 'old_data_pooled': False}
+    receipt['cgroup_v1'] = {name: Path(path).read_text().strip() for name, path in {
+        'cpu_quota_us': '/sys/fs/cgroup/cpu/cpu.cfs_quota_us',
+        'cpu_period_us': '/sys/fs/cgroup/cpu/cpu.cfs_period_us',
+        'memory_limit_bytes': '/sys/fs/cgroup/memory/memory.limit_in_bytes'}.items()}
     receipt_path.write_text(json.dumps(receipt, indent=2) + '\n')
     begin = time.monotonic()
     try:
@@ -76,7 +80,7 @@ def main():
                '--output-prefix', str(prefix), '--freeze-commit', args.freeze_commit]
         receipt['command'] = cmd
         receipt_path.write_text(json.dumps(receipt, indent=2) + '\n')
-        subprocess.run(cmd, check=True)
+        subprocess.run(['/usr/bin/time', '-v', '-o', str(prefix.with_suffix('.resource.txt'))] + cmd, check=True)
         csv_path = prefix.with_suffix('.hist.csv')
         gzip_path = csv_path.with_suffix(csv_path.suffix + '.gz')
         with csv_path.open('rb') as source, gzip_path.open('xb') as destination:
