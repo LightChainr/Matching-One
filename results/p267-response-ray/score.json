@@ -1,0 +1,837 @@
+{
+  "Schur_diagnostics_at_full_lambda": [
+    {
+      "conditional_covariance": [
+        [
+          3.8382164305768245e-09,
+          -2.900004755734811e-09
+        ],
+        [
+          -2.900004755734811e-09,
+          1.4782019708450617e-08
+        ]
+      ],
+      "conditional_distance": 19.472703566643528,
+      "conditional_indices": [
+        2,
+        3
+      ],
+      "conditional_residual": [
+        -8.606746307446107e-05,
+        0.0005350065719896347
+      ],
+      "first_indices": [
+        0,
+        1
+      ],
+      "marginal_distance": 0.3990675052737776
+    },
+    {
+      "conditional_covariance": [
+        [
+          1.3899534339088814e-07,
+          -3.1939356831236133e-08
+        ],
+        [
+          -3.193935683123614e-08,
+          1.0630128118823812e-07
+        ]
+      ],
+      "conditional_distance": 17.733725764614245,
+      "conditional_indices": [
+        0,
+        1
+      ],
+      "conditional_residual": [
+        -0.0003694938598641055,
+        0.0013724459293793182
+      ],
+      "first_indices": [
+        2,
+        3
+      ],
+      "marginal_distance": 2.138045307303062
+    }
+  ],
+  "amplitude_improvement": {
+    "chi_square_difference": 216.8846164329235,
+    "nominal_df": 1
+  },
+  "analysis_role": "post_reveal_finite_model_comparison_not_new_independent_confirmation",
+  "checks": {
+    "fixed_lambda_parent_absolute_difference": 8.526512829121202e-14,
+    "largest_Schur_sum_difference": 2.4868995751603507e-14
+  },
+  "coordinate_diagnostics": [
+    {
+      "chi_square": 0.1967397671183075,
+      "fields": [
+        "A_top",
+        "E_top"
+      ],
+      "fitted_latent_x": [
+        0.0013106421838319402,
+        -0.00041289083118892125
+      ],
+      "fitted_y": [
+        0.0039407796731378885,
+        -0.0012414614872360524
+      ],
+      "lambda": 3.006754796809747,
+      "lambda_one_chi_square": 9.16760475541589,
+      "nominal_df": 1,
+      "nominal_p": 0.6573653823987482,
+      "phi": 1.249719885926936,
+      "profile_confidence": 0.95,
+      "profile_interval_boundary": "conditional_parameter_range_inside_a_model_that_may_be_rejected",
+      "profile_intervals": [
+        {
+          "lambda": [
+            1.6827349291290832,
+            4.428043479062579
+          ],
+          "null_endpoint_means": "negative_or_positive_infinity",
+          "phi": [
+            1.0346002254096247,
+            1.348688808591733
+          ]
+        }
+      ],
+      "projective_infinity_chi_square": 245.40808339844455,
+      "refined_candidates_phi_distance": [
+        [
+          -1.5707963267948966,
+          245.40808339844475
+        ],
+        [
+          1.5707963267948966,
+          245.40808339844455
+        ],
+        [
+          1.249719885926936,
+          0.1967397671183075
+        ]
+      ],
+      "residual": [
+        0.00014269203466701994,
+        0.000292914167320044
+      ],
+      "residual_covariance_at_fit": [
+        [
+          9.334559120693105e-07,
+          -4.901726207821499e-08
+        ],
+        [
+          -4.901726207821499e-08,
+          5.184710393276016e-07
+        ]
+      ],
+      "search": "dense_compact_projective_grid_then_local_refinement_not_an_exact_global_certificate"
+    },
+    {
+      "chi_square": 2.0419929461063373,
+      "fields": [
+        "C",
+        "W"
+      ],
+      "fitted_latent_x": [
+        -0.0005564239923078044,
+        0.00021662268485543205
+      ],
+      "fitted_y": [
+        -0.0018976369997545238,
+        0.0007387733588964908
+      ],
+      "lambda": 3.410415485291984,
+      "lambda_one_chi_square": 77.50165728996137,
+      "nominal_df": 1,
+      "nominal_p": 0.1530090661447871,
+      "phi": 1.2855718117696489,
+      "profile_confidence": 0.95,
+      "profile_interval_boundary": "conditional_parameter_range_inside_a_model_that_may_be_rejected",
+      "profile_intervals": [
+        {
+          "lambda": [
+            2.8542016153240093,
+            3.979176267180057
+          ],
+          "null_endpoint_means": "negative_or_positive_infinity",
+          "phi": [
+            1.233800230932852,
+            1.324586707508567
+          ]
+        }
+      ],
+      "projective_infinity_chi_square": 2478.8977155517864,
+      "refined_candidates_phi_distance": [
+        [
+          -1.5707963267948966,
+          2478.8977155517887
+        ],
+        [
+          1.5707963267948966,
+          2478.8977155517864
+        ],
+        [
+          1.2855718117696489,
+          2.0419929461063373
+        ]
+      ],
+      "residual": [
+        8.317664542937912e-06,
+        0.0003741229910379821
+      ],
+      "residual_covariance_at_fit": [
+        [
+          2.5341063605438463e-08,
+          -8.328478832854227e-09
+        ],
+        [
+          -8.328478832854227e-09,
+          7.23804658497181e-08
+        ]
+      ],
+      "search": "dense_compact_projective_grid_then_local_refinement_not_an_exact_global_certificate"
+    },
+    {
+      "chi_square": 2.1431391009929546,
+      "fields": [
+        "A_top",
+        "C",
+        "W"
+      ],
+      "fitted_latent_x": [
+        0.001281056749801634,
+        -0.0005551170701654587,
+        0.00021680772990285835
+      ],
+      "fitted_y": [
+        0.004464601528185916,
+        -0.0019346344493845111,
+        0.000755595036985446
+      ],
+      "lambda": 3.4850927009105885,
+      "lambda_one_chi_square": 236.32125180407124,
+      "nominal_df": 2,
+      "nominal_p": 0.3424705705077522,
+      "phi": 1.2913671412680043,
+      "profile_confidence": 0.95,
+      "profile_interval_boundary": "conditional_parameter_range_inside_a_model_that_may_be_rejected",
+      "profile_intervals": [
+        {
+          "lambda": [
+            3.161709944723278,
+            3.810936316186033
+          ],
+          "null_endpoint_means": "negative_or_positive_infinity",
+          "phi": [
+            1.2644673387057095,
+            1.3141790209827469
+          ]
+        }
+      ],
+      "projective_infinity_chi_square": 15058.935325463193,
+      "refined_candidates_phi_distance": [
+        [
+          -1.5707963267948966,
+          15058.935325463206
+        ],
+        [
+          1.5707963267948966,
+          15058.935325463193
+        ],
+        [
+          1.2913671412680043,
+          2.1431391009929546
+        ]
+      ],
+      "residual": [
+        -0.0004812760622329342,
+        4.998351741949589e-05,
+        0.00035835054809778776
+      ],
+      "residual_covariance_at_fit": [
+        [
+          9.622361609937602e-07,
+          -1.4379288272846794e-07,
+          2.2841397935809795e-08
+        ],
+        [
+          -1.4379288272846794e-07,
+          2.5416140985041086e-08,
+          -8.315239202943455e-09
+        ],
+        [
+          2.2841397935809795e-08,
+          -8.315239202943455e-09,
+          7.252639059031958e-08
+        ]
+      ],
+      "search": "dense_compact_projective_grid_then_local_refinement_not_an_exact_global_certificate"
+    },
+    {
+      "chi_square": 19.82614858751226,
+      "fields": [
+        "E_top",
+        "C",
+        "W"
+      ],
+      "fitted_latent_x": [
+        -0.0003661367549450226,
+        -0.0005567881611115594,
+        0.00020261901795997386
+      ],
+      "fitted_y": [
+        -0.0012348476391234608,
+        -0.0018778462881819703,
+        0.0006833611009824929
+      ],
+      "lambda": 3.372640475029282,
+      "lambda_one_chi_square": 92.46097957560693,
+      "nominal_df": 2,
+      "nominal_p": 4.95229532544499e-05,
+      "phi": 1.2825503290357263,
+      "profile_confidence": 0.95,
+      "profile_interval_boundary": "conditional_parameter_range_inside_a_model_that_may_be_rejected",
+      "profile_intervals": [
+        {
+          "lambda": [
+            2.8147332123123414,
+            3.9433443371088783
+          ],
+          "null_endpoint_means": "negative_or_positive_infinity",
+          "phi": [
+            1.2294312963057452,
+            1.322439963026404
+          ]
+        }
+      ],
+      "projective_infinity_chi_square": 2639.297915644498,
+      "refined_candidates_phi_distance": [
+        [
+          -1.5707963267948966,
+          2639.297915644501
+        ],
+        [
+          1.5707963267948966,
+          2639.297915644498
+        ],
+        [
+          1.2825503290357263,
+          19.82614858751226
+        ]
+      ],
+      "residual": [
+        0.00044680391515253173,
+        -1.2758750893527128e-05,
+        0.0003821013843002141
+      ],
+      "residual_covariance_at_fit": [
+        [
+          5.282886082770645e-07,
+          1.3151407724491278e-08,
+          -1.7420646073717525e-07
+        ],
+        [
+          1.3151407724491278e-08,
+          2.5303705512159337e-08,
+          -8.335066800252736e-09
+        ],
+        [
+          -1.7420646073717525e-07,
+          -8.335066800252736e-09,
+          7.230785449727111e-08
+        ]
+      ],
+      "search": "dense_compact_projective_grid_then_local_refinement_not_an_exact_global_certificate"
+    },
+    {
+      "chi_square": 17.789801507261885,
+      "fields": [
+        "A_top",
+        "E_top",
+        "W"
+      ],
+      "fitted_latent_x": [
+        0.0012360706375690903,
+        -0.00035388205333286316,
+        0.00020048031277380987
+      ],
+      "fitted_y": [
+        0.00535556510419612,
+        -0.001533276754763797,
+        0.0008686278393290658
+      ],
+      "lambda": 4.3327338595540175,
+      "lambda_one_chi_square": 41.54143130075702,
+      "nominal_df": 2,
+      "nominal_p": 0.00013708618345183315,
+      "phi": 1.3439671642873687,
+      "profile_confidence": 0.95,
+      "profile_interval_boundary": "conditional_parameter_range_inside_a_model_that_may_be_rejected",
+      "profile_intervals": [
+        {
+          "lambda": [
+            2.9366809804207583,
+            5.863140441904416
+          ],
+          "null_endpoint_means": "negative_or_positive_infinity",
+          "phi": [
+            1.2425913520990286,
+            1.4018648057277585
+          ]
+        }
+      ],
+      "projective_infinity_chi_square": 648.8731979301454,
+      "refined_candidates_phi_distance": [
+        [
+          -1.5707963267948966,
+          648.873197930146
+        ],
+        [
+          1.5707963267948966,
+          648.8731979301454
+        ],
+        [
+          1.3439671642873687,
+          17.789801507261885
+        ]
+      ],
+      "residual": [
+        -0.0015869819577484009,
+        0.0008506145522868465,
+        0.00017932175467377342
+      ],
+      "residual_covariance_at_fit": [
+        [
+          1.023653289595869e-06,
+          -4.301539219144894e-08,
+          2.134480785763244e-08
+        ],
+        [
+          -4.301539219144894e-08,
+          5.59404786961788e-07,
+          -1.8174082391952312e-07
+        ],
+        [
+          2.134480785763244e-08,
+          -1.8174082391952312e-07,
+          7.440429119889336e-08
+        ]
+      ],
+      "search": "dense_compact_projective_grid_then_local_refinement_not_an_exact_global_certificate"
+    },
+    {
+      "chi_square": 0.7805163773951383,
+      "fields": [
+        "A_top",
+        "E_top",
+        "C"
+      ],
+      "fitted_latent_x": [
+        0.001287027768688546,
+        -0.00040749419137985445,
+        -0.0005560504232426493
+      ],
+      "fitted_y": [
+        0.004543182702613632,
+        -0.0014384464785704976,
+        -0.0019628470543655613
+      ],
+      "lambda": 3.529980326098977,
+      "lambda_one_chi_square": 236.75461148633005,
+      "nominal_df": 2,
+      "nominal_p": 0.6768820886303966,
+      "phi": 1.294741552126488,
+      "profile_confidence": 0.95,
+      "profile_interval_boundary": "conditional_parameter_range_inside_a_model_that_may_be_rejected",
+      "profile_intervals": [
+        {
+          "lambda": [
+            3.2023435324124514,
+            3.8599771784609764
+          ],
+          "null_endpoint_means": "negative_or_positive_infinity",
+          "phi": [
+            1.2681198187243141,
+            1.3173006190660366
+          ]
+        }
+      ],
+      "projective_infinity_chi_square": 15530.045873698744,
+      "refined_candidates_phi_distance": [
+        [
+          -1.5707963267948966,
+          15530.045873698757
+        ],
+        [
+          1.5707963267948966,
+          15530.045873698744
+        ],
+        [
+          1.294741552126488,
+          0.7805163773951383
+        ]
+      ],
+      "residual": [
+        -0.0005398297453574324,
+        0.0005129802960454414,
+        7.502838782052221e-05
+      ],
+      "residual_covariance_at_fit": [
+        [
+          9.651545976146014e-07,
+          -4.6907983610907786e-08,
+          -1.4414500634233739e-07
+        ],
+        [
+          -4.6907983610907786e-08,
+          5.328566681566029e-07,
+          1.3039505874106351e-08
+        ],
+        [
+          -1.4414500634233739e-07,
+          1.3039505874106351e-08,
+          2.546205164512265e-08
+        ]
+      ],
+      "search": "dense_compact_projective_grid_then_local_refinement_not_an_exact_global_certificate"
+    }
+  ],
+  "dependency": "square is the reused P205 N50 12M block; rectangle is an independent 100k block with internally paired directions; do not add prior P205 scores as independent evidence",
+  "elapsed_seconds": 0.14218741690274328,
+  "environment": {
+    "machine": "arm64",
+    "numpy": "2.4.6",
+    "python": "3.13.7",
+    "scipy": "1.18.0"
+  },
+  "field_order": [
+    "A_top",
+    "E_top",
+    "C",
+    "W"
+  ],
+  "full_ray": {
+    "chi_square": 19.871771071917284,
+    "fitted_latent_x": [
+      0.0012918357539771243,
+      -0.000366395897536486,
+      -0.0005576429311182163,
+      0.0002025753197620724
+    ],
+    "fitted_y": [
+      0.004291101049134573,
+      -0.001217060152946703,
+      -0.0018523269381551964,
+      0.0006728960430794776
+    ],
+    "lambda": 3.3217079152080498,
+    "lambda_one_chi_square": 236.7563875048408,
+    "nominal_df": 3,
+    "nominal_p": 0.0001804516603901437,
+    "phi": 1.2783765545062336,
+    "profile_confidence": 0.95,
+    "profile_interval_boundary": "conditional_parameter_range_inside_a_model_that_may_be_rejected",
+    "profile_intervals": [
+      {
+        "lambda": [
+          3.0087921019116686,
+          3.63660159784094
+        ],
+        "null_endpoint_means": "negative_or_positive_infinity",
+        "phi": [
+          1.2499226694336352,
+          1.3024468454573304
+        ]
+      }
+    ],
+    "projective_infinity_chi_square": 16863.787135381557,
+    "refined_candidates_phi_distance": [
+      [
+        -1.5707963267948966,
+        16863.787135381575
+      ],
+      [
+        1.5707963267948966,
+        16863.787135381557
+      ],
+      [
+        1.2783765545062336,
+        19.871771071917284
+      ]
+    ],
+    "residual": [
+      -0.0002681487040971514,
+      0.00042538192666286576,
+      -4.117636832286849e-05,
+      0.00039285876038773775
+    ],
+    "residual_covariance_at_fit": [
+      [
+        9.519288333158058e-07,
+        -4.778804596583638e-08,
+        -1.4254925336698757e-07,
+        2.3092563118657818e-08
+      ],
+      [
+        -4.778804596583638e-08,
+        5.268544969968402e-07,
+        1.3186538548111572e-08,
+        -1.7385921002433575e-07
+      ],
+      [
+        -1.4254925336698757e-07,
+        1.3186538548111572e-08,
+        2.5253993822415566e-08,
+        -8.343833280621794e-09
+      ],
+      [
+        2.3092563118657818e-08,
+        -1.7385921002433575e-07,
+        -8.343833280621794e-09,
+        7.221123197968837e-08
+      ]
+    ],
+    "search": "dense_compact_projective_grid_then_local_refinement_not_an_exact_global_certificate"
+  },
+  "future_geometry": {
+    "N": 250,
+    "N50_obstruction": "Smith(5,10) implies L=5B with detB=2; the three index-two sublattices have only square and rectangle shapes up to square-lattice symmetry",
+    "common_map": "(1/5)[[4,-3],[3,4]]",
+    "conditional_shape_candidates": {
+      "boundary": "two explicitly post-reveal phenomenological hypotheses, not identified laws, a model ranking or a sampling authorization",
+      "geometric_even": {
+        "definition": "f(rho)=2*(rho+1/rho-2)",
+        "f5": 6.4
+      },
+      "log_even": {
+        "definition": "f(rho)=(log(rho)/log(2))^2",
+        "f5": 5.391350077827255
+      },
+      "prediction": "u5=(1-f5)*u1+f5*u2, using anchors AT N250, not current N50 vectors",
+      "training_covariance_if_independent": "(1-f5)^2*C1+f5^2*C2; shared streams require cross terms"
+    },
+    "rows": [
+      {
+        "cyclic": [
+          [
+            13,
+            -9
+          ],
+          [
+            9,
+            13
+          ]
+        ],
+        "delta_cos4_cyclic_minus_noncyclic": "-16128/15625",
+        "noncyclic": [
+          [
+            5,
+            -15
+          ],
+          [
+            15,
+            5
+          ]
+        ],
+        "rho": 1,
+        "smith": [
+          [
+            1,
+            250
+          ],
+          [
+            5,
+            50
+          ]
+        ]
+      },
+      {
+        "cyclic": [
+          [
+            11,
+            4
+          ],
+          [
+            -2,
+            22
+          ]
+        ],
+        "delta_cos4_cyclic_minus_noncyclic": "16128/15625",
+        "noncyclic": [
+          [
+            10,
+            -10
+          ],
+          [
+            5,
+            20
+          ]
+        ],
+        "rho": 2,
+        "smith": [
+          [
+            1,
+            250
+          ],
+          [
+            5,
+            50
+          ]
+        ]
+      },
+      {
+        "cyclic": [
+          [
+            7,
+            -5
+          ],
+          [
+            1,
+            35
+          ]
+        ],
+        "delta_cos4_cyclic_minus_noncyclic": "1152/625",
+        "noncyclic": [
+          [
+            5,
+            -25
+          ],
+          [
+            5,
+            25
+          ]
+        ],
+        "rho": 5,
+        "smith": [
+          [
+            1,
+            250
+          ],
+          [
+            5,
+            50
+          ]
+        ]
+      }
+    ],
+    "status": "exact_feasible_future_design_not_acquired_or_powered"
+  },
+  "generated_at_utc": "2026-08-31T04:01:37.447327+00:00",
+  "inference": "Gaussian errors-in-variables profile conditional on saved batch covariance; nominal chi-square, not exact finite-sample probability",
+  "joint_covariance": [
+    [
+      9.268115566965081e-09,
+      6.167144240092387e-10,
+      -1.1182433512154287e-09,
+      -2.258420430362608e-10,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      6.167144240092387e-10,
+      4.20609461235073e-09,
+      -1.0303493877660962e-10,
+      -1.0184491068090403e-09,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      -1.1182433512154287e-09,
+      -1.0303493877660962e-10,
+      1.4579905568375846e-10,
+      2.571114693679948e-11,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      -2.258420430362608e-10,
+      -1.0184491068090403e-09,
+      2.571114693679948e-11,
+      2.833834837231098e-10,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      8.496668236629366e-07,
+      -5.459271471704274e-08,
+      -1.3021084308821984e-07,
+      2.558444628715401e-08
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -5.459271471704274e-08,
+      4.804455280169747e-07,
+      1.4323399631427424e-08,
+      -1.6262190383852538e-07
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -1.3021084308821984e-07,
+      1.4323399631427424e-08,
+      2.3645284443255976e-08,
+      -8.627523480343624e-09
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      2.558444628715401e-08,
+      -1.6262190383852538e-07,
+      -8.627523480343624e-09,
+      6.908445131553164e-08
+    ]
+  ],
+  "joint_covariance_order": [
+    "tau_i:A_top",
+    "tau_i:E_top",
+    "tau_i:C",
+    "tau_i:W",
+    "tau_2i:A_top",
+    "tau_2i:E_top",
+    "tau_2i:C",
+    "tau_2i:W"
+  ],
+  "schema": "matching-one.p267-response-ray.v1",
+  "scope": "No new Monte Carlo; no free exponent; no concatenation with intrinsic-center production rows; a saturated two-row rank-two model is not a mechanism result",
+  "script_sha256": "1247bd99ab9af60ac5bf7768b474bab17d77fcca4be3c4c52753bb2ff5552e30",
+  "source": {
+    "commit": "ce01e4d10abb03abf1b278192510937ee96db29d",
+    "integration_status": "open_pr",
+    "path": "results/p267-etop-tau-topology-factorial/score.json",
+    "pr": 267,
+    "sha256": "379eedf05559f259a237b10bc0a5b0d3e26540cd78f222218d4d31a56ae4467a"
+  },
+  "x_tau_i": [
+    0.0013044504555265416,
+    -0.00042059516672350437,
+    -0.0005579459883635167,
+    0.0002112082354643246
+  ],
+  "y_tau_2i": [
+    0.004064854699022108,
+    -0.0009717123677408481,
+    -0.0018945099741285404,
+    0.0010944308278867103
+  ]
+}

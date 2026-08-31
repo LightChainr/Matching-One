@@ -1,0 +1,19 @@
+{
+  "schema": "matching-one.p267-response-ray-manifest.v1",
+  "source": {
+    "commit": "ce01e4d10abb03abf1b278192510937ee96db29d",
+    "path": "results/p267-etop-tau-topology-factorial/score.json",
+    "sha256": "379eedf05559f259a237b10bc0a5b0d3e26540cd78f222218d4d31a56ae4467a",
+    "integration_status": "open_pr",
+    "pr": 267
+  },
+  "field_order": ["A_top", "E_top", "C", "W"],
+  "primary_question": "Can a common amplitude change alone explain the two fixed-p four-vector geometry responses?",
+  "analysis_role": "post_reveal_finite_model_comparison_not_new_independent_confirmation",
+  "dependency": "square is the reused P205 N50 12M block; rectangle is an independent 100k block with internally paired directions; do not add prior P205 scores as independent evidence",
+  "inference": "Gaussian errors-in-variables profile conditional on saved batch covariance; nominal chi-square, not exact finite-sample probability",
+  "projective_grid_points": 4097,
+  "profile_confidence": 0.95,
+  "coordinate_diagnostics": [["A_top", "E_top"], ["C", "W"], ["A_top", "C", "W"], ["E_top", "C", "W"], ["A_top", "E_top", "W"], ["A_top", "E_top", "C"]],
+  "scope": "No new Monte Carlo; no free exponent; no concatenation with intrinsic-center production rows; a saturated two-row rank-two model is not a mechanism result"
+}
