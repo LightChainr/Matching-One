@@ -1,0 +1,64 @@
+{
+  "critical_value": 2.638257273476751,
+  "simultaneous_intervals": {
+    "N85.entry.v": [
+      -0.04350209941140382,
+      0.1324867190672063
+    ],
+    "N85.completion.v": [
+      -0.07665303115659113,
+      0.07460882629714798
+    ],
+    "N85.total.v": [
+      -0.07164049941804962,
+      0.15858091421440895
+    ],
+    "N340.entry.v": [
+      -0.22026437238336966,
+      0.11312168704759373
+    ],
+    "N340.completion.v": [
+      -0.04879655186486251,
+      0.2772901806096987
+    ],
+    "N340.total.v": [
+      -0.15739417457108257,
+      0.2787451179801428
+    ]
+  },
+  "numerical_templates": {
+    "W_double_channel_weak": {
+      "contradicted": false,
+      "contradicting_coordinates": [],
+      "intervals_wholly_inside": true,
+      "status": "not_excluded"
+    },
+    "B_entry_selective": {
+      "contradicted": true,
+      "contradicting_coordinates": [
+        "N85.entry.v",
+        "N340.entry.v"
+      ],
+      "intervals_wholly_inside": false,
+      "status": "numerical_prediction_contradicted"
+    },
+    "C_completion_selective": {
+      "contradicted": true,
+      "contradicting_coordinates": [
+        "N85.completion.v",
+        "N340.completion.v"
+      ],
+      "intervals_wholly_inside": false,
+      "status": "numerical_prediction_contradicted"
+    }
+  },
+  "remaining_templates": [
+    "W_double_channel_weak"
+  ],
+  "all_three_numerical_templates_contradicted": false,
+  "net_equivalent_within_declared_band_at_both_N": true,
+  "stop_current_main_H4_priority_for_this_source": true,
+  "net_above_positive_target_at_both_N": false,
+  "net_below_negative_target_at_both_N": false,
+  "interpretation": "fixed finite-size numerical restrictions; no forced winner, no physical-theory identification, no fourth template or sample extension"
+}

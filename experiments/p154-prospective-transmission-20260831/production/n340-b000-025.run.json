@@ -1,0 +1,53 @@
+{
+  "status": "completed",
+  "freeze_commit": "0820b8d203e2dc534bb883d6fdb4d6d1e0acb11f",
+  "authorization_sha256": "144dab04b5993bea1ed65e361e581b80fe069489da7f1716042d20e5a84d8e63",
+  "hostname": "f415a4bcbd9a438b85f5f29e4a507ea4",
+  "python": "3.9.9",
+  "started_unix": 1788176841.1238198,
+  "N": 340,
+  "batch_begin": 0,
+  "batch_end": 25,
+  "workers": 14,
+  "frozen_sha256": {
+    "CONTRACT.json": "0201a6c20db366c25c9a3fbf10a74b6efb198cc47d8127eaa47c0ee21a352f6e",
+    "producer.cpp": "1bddf8aa3947b3a38a624bac669133680225af2765b648c9454659cfba3dd8ba",
+    "run_production.py": "598336939239e601d9d0bd7367ecf9e982aca4788f399568687bf0bb28097c54",
+    "score_production.py": "8fcd12bdf2954a342f2242c7b158a0779a74d09c05d79092629ec7fc2827e063",
+    "archive_channel_split.py": "1e9bba472c0e8f0b9d0bcae13e66b4476eda806642d43ca7ab21df64288e8c3d",
+    "vendor/primitive.cpp": "7893216c66802b28eb67eb27ac61976835291c4ad734f94a0d255a3e6d7e179a",
+    "vendor/integer_period.cpp": "7df0d9362b31111eab8fc73ab4032eea37458fde0ff2d720bded8e7b530fa94a"
+  },
+  "compile": {
+    "command": [
+      "g++",
+      "-O3",
+      "-std=c++17",
+      "-fopenmp",
+      "-DMATCHING_NORM4_BACKEND=\"/workspace/p154-prospective-transmission-20260831/vendor/integer_period.cpp\"",
+      "-DMATCHING_NORM4_INTEGER=1",
+      "/workspace/p154-prospective-transmission-20260831/producer.cpp",
+      "-o",
+      "/workspace/p154-prospective-transmission-20260831/build/integer_period"
+    ],
+    "stdout": "",
+    "stderr": "",
+    "binary_sha256": "70b18d2948d8c733a3066b5aa9e0fe1bdf782fc3fde833766bb8ecb06b611e14"
+  },
+  "command": [
+    "/workspace/p154-prospective-transmission-20260831/build/integer_period",
+    "340",
+    "0",
+    "25",
+    "/workspace/p154-prospective-transmission-20260831/production/n340-b000-025.csv",
+    "14",
+    "0820b8d203e2dc534bb883d6fdb4d6d1e0acb11f"
+  ],
+  "stdout": "domain=P154_PROSPECTIVE_TRANSMISSION_V1_20260831 N=340 N_seed=13169593633889103944 counters=[30000000000,30020000000) samples=20000000 freeze_commit=0820b8d203e2dc534bb883d6fdb4d6d1e0acb11f threads=14\n",
+  "stderr": "",
+  "uncompressed_sha256": "86b5589ef55577828c6576b6b3557c9a0019fea2707fe0e27b8d2a7b31e42a9e",
+  "gzip_sha256": "33237f5050e25da65598802a029306b132ce79f635e6947351655c02dbc1b0bb",
+  "samples": 20000000,
+  "elapsed_seconds": 287.398944063003,
+  "finished_unix": 1788177128.5228946
+}

@@ -1,0 +1,161 @@
+{
+  "status": "PASS_FROZEN_RESULT_CORRECTNESS_REVIEW",
+  "reviewer": "independent local_structure subagent",
+  "reviewed_at_utc": "2026-08-31T12:02:29.629485+00:00",
+  "freeze_commit": "0820b8d203e2dc534bb883d6fdb4d6d1e0acb11f",
+  "scope": "Independent deterministic re-evaluation of the original 32 coordinates and all400 paired leave-one-batch vectors from the nine delivered raw-moment shards; no new sampling, observable, source, model, tolerance or production score selection. Frozen code and manifests were not modified.",
+  "frozen_files": {
+    "seven_authorized_files_match_exact_git_blobs_and_sha256": true,
+    "original_result_matches_SCORE_RUN_sha256": true,
+    "result_sha256": "2c02bf3214ba4c9b31e8ad7ae65addf6d1ff0a82882518d1151556e7d0ce6821"
+  },
+  "production": {
+    "complete_shards": 9,
+    "new_permutations": 165000000,
+    "samples_per_N": {
+      "85": 5000000,
+      "340": 160000000
+    },
+    "batches_per_N": 200,
+    "batch_K_orientation_rows": {
+      "85": 34400,
+      "340": 136400
+    },
+    "all_rows_unique_complete_and_sample_counts_match": true,
+    "all_gzip_hashes_match_receipts": true,
+    "all_receipts_match_freeze_authorization_and_frozen_inputs": true,
+    "all_runs_start_after_authorization": true,
+    "counter_ranges": [
+      {
+        "N": 340,
+        "batch_begin": 0,
+        "batch_end": 25,
+        "counter_begin": 30000000000,
+        "counter_end_exclusive": 30020000000
+      },
+      {
+        "N": 340,
+        "batch_begin": 25,
+        "batch_end": 50,
+        "counter_begin": 30020000000,
+        "counter_end_exclusive": 30040000000
+      },
+      {
+        "N": 340,
+        "batch_begin": 50,
+        "batch_end": 75,
+        "counter_begin": 30040000000,
+        "counter_end_exclusive": 30060000000
+      },
+      {
+        "N": 340,
+        "batch_begin": 75,
+        "batch_end": 100,
+        "counter_begin": 30060000000,
+        "counter_end_exclusive": 30080000000
+      },
+      {
+        "N": 340,
+        "batch_begin": 100,
+        "batch_end": 125,
+        "counter_begin": 30080000000,
+        "counter_end_exclusive": 30100000000
+      },
+      {
+        "N": 340,
+        "batch_begin": 125,
+        "batch_end": 150,
+        "counter_begin": 30100000000,
+        "counter_end_exclusive": 30120000000
+      },
+      {
+        "N": 340,
+        "batch_begin": 150,
+        "batch_end": 175,
+        "counter_begin": 30120000000,
+        "counter_end_exclusive": 30140000000
+      },
+      {
+        "N": 340,
+        "batch_begin": 175,
+        "batch_end": 200,
+        "counter_begin": 30140000000,
+        "counter_end_exclusive": 30160000000
+      },
+      {
+        "N": 85,
+        "batch_begin": 0,
+        "batch_end": 200,
+        "counter_begin": 30000000000,
+        "counter_end_exclusive": 30005000000
+      }
+    ],
+    "old_discovery_observations_used_in_reconstruction": 0,
+    "raw_q_E_exactly_reconstruct_from_01_02_12_events": true
+  },
+  "numerical_reconstruction": {
+    "method": "Independent scipy binomial PMF quadrature, analytic score derivatives, conditional early-rank centering, independent pooled-root solves, full-source shared rootdot/Ddot, and channel formulas; no import of frozen scorer/core.",
+    "full_coordinates": 32,
+    "paired_LOO_vectors_recomputed": 400,
+    "max_absolute_point_error": 1.864064458345638e-12,
+    "max_absolute_LOO_error": 4.894640248664928e-12,
+    "max_absolute_full_covariance_error": 6.82884304659126e-13,
+    "max_absolute_SE_error": 1.6694146065532323e-12,
+    "max_expanded_FULL_E_vs_channel_addback_error": 4.445332990599127e-13,
+    "max_saved_LOO_channel_addback_error": 0.0,
+    "full_covariance_reconstructed_from_saved_LOO": true,
+    "primary_covariance_exact_submatrix_of_full": true,
+    "LOO_covariance_multiplier": "199/200, separate independent N blocks; paired geometries and all channels retained together"
+  },
+  "frozen_decisions": {
+    "six_coordinate_Bonferroni_critical": 2.638257273476751,
+    "intervals": {
+      "N85.entry.v": [
+        -0.04350209941140382,
+        0.1324867190672063
+      ],
+      "N85.completion.v": [
+        -0.07665303115659113,
+        0.07460882629714798
+      ],
+      "N85.total.v": [
+        -0.07164049941804962,
+        0.15858091421440895
+      ],
+      "N340.entry.v": [
+        -0.22026437238336966,
+        0.11312168704759373
+      ],
+      "N340.completion.v": [
+        -0.04879655186486251,
+        0.2772901806096987
+      ],
+      "N340.total.v": [
+        -0.15739417457108257,
+        0.2787451179801428
+      ]
+    },
+    "templates": {
+      "W_double_channel_weak": {
+        "contradicted": false,
+        "intervals_wholly_inside": true
+      },
+      "B_entry_selective": {
+        "contradicted": true,
+        "intervals_wholly_inside": false
+      },
+      "C_completion_selective": {
+        "contradicted": true,
+        "intervals_wholly_inside": false
+      }
+    },
+    "net_within_minus_half_plus_half_both_N": true,
+    "stop_current_main_H4_priority_for_this_lag1_source": true,
+    "positive_target_both_N": false,
+    "negative_target_both_N": false
+  },
+  "limits": [
+    "Both net intervals lie within the prespecified [-0.50,0.50] band and all four component intervals within [-0.30,0.30]; this establishes only bounded finite-scale compatibility under the stated asymptotic simultaneous intervals, not exact zero.",
+    "B/C are excluded only as the frozen positive-selective numerical restrictions. W compatibility and the main-priority stop do not identify a physical theory, refute every source/lag, or establish continuum scaling."
+  ]
+}

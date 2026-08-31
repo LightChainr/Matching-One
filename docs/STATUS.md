@@ -1,6 +1,6 @@
 # 当前成果：从取向信号到微观机制
 
-**整理日期：2026-08-31。** 四机首轮之后，三机继续完成prefix响应预测、条件形状与滞后簇源分析；[新交付](../notes/analysis-delivery-20260831.md)记录实际结果和运行回执。此前三项完成时原账号五台已返回Ready；新决策实验随后按实际准备状态重新开机。[下一步](NEXT-TARGETS.md)只保留尚未回答的科学问题；[清理记录](REPOSITORY-TRIAGE-20260831.md)保存原Issue操作。本任务新增结果统一交付Draft #509，不合并。
+**整理日期：2026-08-31。** 七项较早探索分析已封存于[交付沿革](../notes/analysis-delivery-20260831.md)。随后两个独立决策实验都已完成：#154新增165M路径，#334新增600k prefix；结果按事前规则停止对应预测的优先投入。[下一步](NEXT-TARGETS.md)只保留尚未回答的科学问题；[清理记录](REPOSITORY-TRIAGE-20260831.md)保存Issue操作。本任务新增结果统一交付Draft #509，不合并。
 
 ## 当前决策：独立实验开始淘汰冻结预测
 
@@ -8,10 +8,12 @@
 
 | 主实验 | 要消除的不确定性 | 当前状态 | 失败如何改变研究 |
 |---|---|---|---|
-| #154 temporal transmission | 早期隐藏结构的影响是否进入原global U，由哪个birth通道承担？ | [合同](../experiments/p154-prospective-transmission-20260831/CONTRACT.json)已冻结于`0820b8d2`并授权固定新生产：lag=1，N85=5M、N340=160M；六坐标共同区间，净U等效带±0.50 | 采样前限定效应范围；拒绝后停止相应source/channel作为主要解释的优先投入，不能只换lag继续 |
+| #154 temporal transmission | 早期隐藏结构的影响是否进入原global U，由哪个birth通道承担？ | `0820b8d2`冻结；N85=5M、N340=160M全部完成。净U导数为**0.04347±0.04363 / 0.06068±0.08266**；同时区间**[-0.07164,0.15858] / [-0.15739,0.27875]**均在±0.50内。[完整报告](../experiments/p154-prospective-transmission-20260831/REPORT.md) | **停止该lag=1源作为当前主要H4解释的优先投入**。强entry/强completion两预测被排除，双通道弱数值限制相容；不换lag、不补样、不称精确零 |
 | #334 independent intervention | 既有contact机制能否预测新的coarse-state保持干预，20%残余是否有可迁移意义？ | `4b3c21b7`冻结；每N300k新prefix、120/120分片完成。R_new/R_old为N325 **0.4989 [0.4361,0.5617]**、N425 **0.5169 [0.4507,0.5831]**；两个预定范围±0.25及0.75–1.25均被排除。[固定得分](../experiments/p334-prospective-intervention-20260831/results/latest.json) | **停止这两个残余投影预测的优先投入**；新块不重拟合、不加descriptor、不把观测到的约1/2注册为救场模型 |
 
 #334上表区间是每N97.5%渐近Student-t区间，两N按Bonferroni构成95%家族；结论条件于冻结的旧系数、均值和R_old点预测。它拒绝所声明的固定预测，不拒绝未知旧总体参数；单个signed-loading投影也不能证明或否定四feature完整充分性。旧数据只训练，未进入新得分。
+
+#154的±为一个新批次SE，区间采用预定六坐标Bonferroni共同95%渐近覆盖。四个entry/completion区间全部落在±0.30内，W/B/C是三个互斥但不穷尽的有限尺寸数值限制，不是三套完整物理理论。结果触发已冻结的主线降级规则，未证明精确零、未否定所有滞后源，也未改变已有H4基线证据。两个生产实验都已结束；#154/#334保留一般问题并列P1，当前没有自动续跑的P0。
 
 执行队另一个[已完成的新群体干预](https://github.com/LightChainr/Matching-One/issues/334#issuecomment-5477517774)使用不同的score-normal源，1M新prefix给T=(3.0852±0.3919)×10⁻⁸，触发其冻结的“停止完整两score标签均值闭合”规则。这个结果与本表的四feature残余检验各有源和目标，不能合并成一次重复验证；它也没有识别未扰动global anomaly的生成机制。两项结果共同要求下一步回到明确global读出的传递关系，不继续扩展contact目录。
 
@@ -19,7 +21,7 @@
 
 刚完成的组外prefix预测、条件形状和时序补观测全部归入**探索C2**。即使局部检验正确、训练测试按批分开，问题和模型仍经过同一archive生成；这些结果不充当最终独立确认。contact研究最新`323de7d5`显示原00约80%的signed loading落在四feature span内、约20%残留；它不是response R²或精确充分状态。[来源](https://github.com/LightChainr/Matching-One/blob/323de7d5ee4a980b3c77e1a972cb6c812a9f88e5/notes/p334-new64-feature-loading.md)
 
-支持线#275/#419/#370/#398及#1保留已有产物；#275已由P1调整为P2，保持开放。只有能说明“哪种结果停止哪个候选”的具体任务才进入P0；跨N旧数据回归、进一步projection/Hessian/descriptor及generic certificate目前均属exploratory/support。详细冻结合同完成后，本表只更新其固定引用与结果，不把每个新坐标增加成一个主实验。
+支持线#275/#419/#370/#398及#1保留已有产物；#275已由P1调整为P2，保持开放。只有能说明“哪种结果停止哪个候选”的具体任务才进入P0；跨N旧数据回归、进一步projection/Hessian/descriptor及generic certificate目前均属exploratory/support。下一项实际分析从[NEXT中的精确U传递接口](NEXT-TARGETS.md)出发；本轮验证块不再用于选择新模型。
 
 ## 取向与物理响应
 
