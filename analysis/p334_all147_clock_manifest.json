@@ -1,0 +1,20 @@
+{
+  "parent_commit": "e3d978216220b5c55ff8da3062473e713c1246c7",
+  "source_selection_manifest": "analysis/p334_twelve_prefix_selection_manifest.json",
+  "source_archive": "results/local-20260831/P334-cooperative-closure/raw/N425.geometry_pilot.csv",
+  "source_metadata": "results/local-20260831/P334-cooperative-closure/raw/N425.metadata.json",
+  "selection": "all 147 eligible rows under the original frozen filters: N425, second orientation, k0=252, age_steps=10, ell=(12,-19), k1<=k0<k2; exclude original witness counters43042514269 and43042505280",
+  "ordering": "ascending numeric replica counter, no outcome or runtime filtering",
+  "expected_eligible_rows": 147,
+  "reuse": "all 12 completed clocks, their maps and all 47 saved factor polynomials; do not rerun them",
+  "new_prefixes_expected": 135,
+  "per_prefix_limits": {"wall_seconds": 20, "maximum_dp_states": 200000},
+  "method": "existing balanced-gain/two-port map and product of site-disjoint factor safety polynomials; no algorithm changes for pass rate",
+  "incomplete_policy": "save actual mapping/factor progress and explicit reason; retain row in denominator; no replacement or extension",
+  "analysis": ["all-row conditional clock distribution", "within-H2 mean/tail widths", "all completed-pair exact survival crossing counts", "same-H2-and-b2 complete-clock collisions, or explicit none"],
+  "new_samples": 0,
+  "remote_hosts": false,
+  "maximum_heavy_processes": 1,
+  "sitewise_pivotal_sweep": false,
+  "selection_status": "frozen before evaluating the remaining 135 prefixes"
+}
