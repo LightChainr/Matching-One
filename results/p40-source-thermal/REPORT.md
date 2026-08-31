@@ -102,13 +102,36 @@ additional independent evidence. Input hashes, all derivative vectors and
 the analysis environment accompany the saved JSON and
 [`analyze_p40_source_thermal.py`](../../scripts/analyze_p40_source_thermal.py).
 
-## Next: the complete two-lineage source response
+## Same source quotient on an independent archived stream
+
+The same within-sector source `R=S-E[S|q]-b*(K-E[K|q])`, with one common
+within-sector clock coefficient b, has also been evaluated on these million
+configurations. No configurations or roots were recomputed; the saved full
+and100 delete-one roots were reused. All numbers below are in the common
+microscopic fugacity coordinate and retain the joint decomposition covariance.
+
+| N | Raw v | Within-sector W | Three-state remainder v-W |
+|---:|---:|---:|---:|
+| 65 | −0.70774 ± 0.57796 | −0.31101 ± 0.48405 | −0.39673 ± 0.34815 |
+| 85 | −1.04896 ± 1.05301 | −0.97277 ± 0.75961 | −0.07619 ± 0.57649 |
+
+The independent NZ100k source archive gives N85 W=+2.08799±.88163. Its positive
+2.37-SE hint does not receive same-direction support here. These are the same
+physical readout estimated from different old streams and finite estimators;
+the archive comparison was made after the NZ hint was seen, not prospectively.
+Neither the three components nor the two estimator views establish a field
+identity. [Saved six-coordinate covariance and root mappings](jet-split.json).
+
+## Completed follow-on: the complete two-lineage source response
 
 This report contains only N65/N85 parents, not the complete norm-4 test. The
-ongoing calculation reuses archived permutations for **65→130→260** and
-**85→170→340**; its destination is
+completed follow-on reuses archived permutations for **65→130→260** and
+**85→170→340**; its results are in
 [`the complete-lineage source report`](../norm4-source-thermal/REPORT.md)
-(in progress, not a result asserted here).
+using100k original production permutations per size, with a distinct RNG
+and complete-prefix Binomial estimator. It resolves the same-direction
+finite-root response at all six sizes; fixed-source coefficients and
+single-generator drift remain unresolved at that subset precision.
 
 That calculation asks whether the fixed transfer coefficients are rigid
 under one common microscopic cluster fugacity, or whether one common
