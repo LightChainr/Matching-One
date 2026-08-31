@@ -100,6 +100,39 @@ sampling or independent-source claim is involved.
 
 ## Source and reproducibility
 
+### Full thermal response: cancellation hidden by the lifetime integral
+
+The [complete common-label curves](https://github.com/LightChainr/Matching-One/blob/dcd63ace69eebbe80591e332a26830ca70560a85/notes/p334-paired-euler-thermal-response.md)
+are now available from these same signed histograms. The minus -> D A peaks
+are `+3.05999e-4 +/- 7.17445e-5` at p=.63313 and
+`+3.14221e-4 +/- 4.54777e-5` at p=.62934. Plus -> D remains weak across
+its principal thermal features; a physical root is not inferred for it.
+
+N425 minus -> D E has an earlier negative feature,
+`-6.31893e-5 +/- 2.09007e-5` at p=.60629, and a later positive feature,
+`+4.76565e-5 +/- 2.02398e-5` at p=.66784. Both paired birth responses
+are positive at these extrema, and which one dominates changes. These are
+paired contrast signs, not acceleration claims for both individual clocks.
+The corresponding main lobe areas `-3.08404e-6` and `+2.60091e-6` nearly
+cancel; the complete E integral is only
+`-5.25797e-7 +/- 2.21120e-6`. A small lifetime-integral response can
+therefore conceal a finite thermal redistribution in this data block.
+
+The numerical exchange at .63793 +/- .00871 is descriptive, with pointwise
+peak uncertainties rather than selection-adjusted confidence statements.
+N325's earlier negative feature is only1.34 pointwise SE, so the same
+resolved two-lobe structure is not claimed there. The complete curves,
+root descriptors and areas share the original20 batches.
+
+The [final joint response analysis](https://github.com/LightChainr/Matching-One/blob/b582015e64e2d8a59e591c4822b14dedaea58b0f/notes/p334-common-label-tangent-joint.md)
+retains the old trigger/contact factors, this common-policy response,
+explicit cross-geometry channels and the supplied rank LOO coordinates
+under one coordinator. The complete integer histograms separately preserve
+the covariance of any additional full-p readout; numerical peaks are not
+claimed to be extra independent evidence.
+
+### Immutable inputs
+
 Definition/code ffb70969; complete new response and signed histograms
 4db356e1b026853468f94d59d938895a2367ceb7. Both reuse original e32a8593
 suffixes and 959a7fa2 contact coordinates on the same40k paired prefixes.
@@ -116,3 +149,14 @@ of the joint-class mark covariance is a class-constant source, so its
 finite policy remains uniform and every future response vanishes. It also
 distinguishes raw orientation parity from the normalized D coordinate,
 whose denominator changes sign under exchange.
+
+### Coordinated next analysis, not yet a result
+
+The parallel research task `01a05696-fed1-7493-bd19-d581c88a3996` has
+reported assigning HZsCM6 to a genuinely different question: use distinct
+quartets of the same00 prefix to estimate local-Jacobian determinant and
+determinant-square U-statistics. That distinguishes within-prefix response
+dimension from mixture-generated ensemble rank. Its result is pending and
+is not inferred from this note. This team will not duplicate that assigned
+calculation. Finite-strength common policies and time-dependent response
+kernels remain possible subsequent directions, not completed measurements.
