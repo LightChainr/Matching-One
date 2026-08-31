@@ -1,6 +1,6 @@
 # Three-team scientific handoff / 三队协作入口
 
-Snapshot: **2026-08-31 17:58 CST**. This is a result-routing entry, not a second
+Updated: **2026-08-31 18:13 CST**. This is a result-routing entry, not a second
 priority board or a live process monitor. [Next Targets](NEXT-TARGETS.md) remains
 the single attention order; [the machine-readable handoff](../analysis/team_coordination.yaml)
 records source pins and the state reported by each team.
@@ -9,17 +9,36 @@ records source pins and the state reported by each team.
 
 | Team | Delivered / active contribution | Next handoff |
 |---|---|---|
-| **数学研究执行** | Completed P334 common-label responses, ensemble Jacobian rank, full thermal curves and their common covariance. Local work; reports no cloud job or tunnel. | E thermal-dipole / age-weighted lifetime moments are proposed, not yet delivered. They would expose redistribution hidden by a small integral. |
-| **数学研究总览** | Maintains Draft [PR #267](https://github.com/LightChainr/Matching-One/pull/267), the scientific atlas and this entry. Conditional-line and fixed-K results are complete at `d2a3f445`; now incorporates the execution team's P334 conclusions as cited frontier results. | Connect delivered results to the next discriminator; consume the four packages below without starting duplicate calculations. No server operation. |
-| **数学研究俯瞰** | Draft [PR #509](https://github.com/LightChainr/Matching-One/pull/509) is the delivery home for four new complementary calculations, currently **in progress** by team report. | Return question, source/result SHA, report/JSON, aligned batch statistics and compute-release state. An assignment or runner is not a completed measurement. |
+| **数学研究执行** | Completed P334 common-label responses, ensemble Jacobian rank, full thermal curves and common covariance. Thermal-moment work has advanced to committed partial results; final joint note remains pending at this handoff. Reports no cloud job or tunnel. | Record final thermal-dipole / age-weighted lifetime result with the original20-batch joint statistics in the repository. |
+| **数学研究总览** | Draft [PR #267](https://github.com/LightChainr/Matching-One/pull/267): [global occupancy/rank source decomposition](../results/norm4-global-source-projection/REPORT.md) now completed at `8799dfe1`, following line/fixed-K `d2a3f445`. | Prioritize a lag-resolved source-to-rank/birth bridge or a specific mechanism predicting fixed-K rank reweighting. No repeated soft-weight bridge or server operation. |
+| **数学研究俯瞰** | Draft [PR #509](https://github.com/LightChainr/Matching-One/pull/509) has delivered three packages at `fb01c44a`: angular bridge, exact linear response and finite source. Same-prefix improved response-rank estimate remains in progress. | Publish remaining rank result and actual compute-release state in its repository package; no routine cross-task notification required. |
 
 The execution result is **branch_only**, on
 `analysis/p334-paired-clock-loading-20260831`, with no corresponding PR in the
 17:58 query. Its [Issue #334 result card](https://github.com/LightChainr/Matching-One/issues/334#issuecomment-5476674429)
 and [PR #267 pointer](https://github.com/LightChainr/Matching-One/pull/267#issuecomment-5476674567)
 are discussion links, not code integration. PR #509 was independently checked
-open and Draft at `9690d7c1b9bcb19af3fb67b9c0bf5dc16bd5ef12`; its four ongoing
-outputs are not claimed present at that head. PR #267 also remains open and Draft.
+open and Draft at `fb01c44aa45e4f8d37d52144e2ad7c4adfe6ce40`; three completed
+packages are present there. This supersedes its17:58 runner-only snapshot.
+PR #267 also remains open and Draft; references to #509 do not merge its code.
+
+## New global-source result and its scientific implication
+
+The completed angular bridge finds an exact same-time null: a source centered
+within fixed K/rank cannot change a global q/E readout. The new
+[occupancy/rank decomposition](../results/norm4-global-source-projection/REPORT.md)
+therefore measures the two visible parts of the original source instead.
+Across six N, root motion receives +.02432–.02478 from occupancy mixing and
++.00409–.00458 from rank selection. Both also reduce root-comoving rank1
+population. Global H4 source derivatives and both chain contrasts remain
+unresolved; the endpoint uncertainty chiefly remains in the rank-selective part.
+
+The decisive distinction is **observation time**: P334's finite intervention
+preserves immediate rank/Euler while changing future birth. This is compatible
+with the static centered-source null. The next original-norm4 mechanism bridge
+needs an explicit earlier source / later rank readout, not another stronger
+same-time centered winding association. Existing marginal profiles alone cannot
+recover that joint two-time kernel.
 
 ## Completed P334 science that changes the next question
 
@@ -57,14 +76,14 @@ already includes 16,948 coordinates per N. First common-policy response,
 first ensemble rank, first complete thermal curve and first covariance assembly
 are completed inputs. Add genuinely new coordinates with the same batch IDs.
 
-## Four active follow-ups and why they are different
+## Four follow-ups: three delivered, one still active
 
 | Package (数学研究俯瞰) | Scientific discriminator | Input / reported compute |
 |---|---|---|
-| P154 angular bridge | Six-size soft `W±` components of original U and its source derivative, including moving root/slope and exact addback. Connects conditional winding to the original global observer. | Frozen `764595ea`; ZyTrST running/implementing, XPk2PZ spare Ready. Three norm-4 dependency groups. |
+| P154 angular bridge — **completed** | All six U− central values are negative; original total source derivative remains unresolved. Fixed-K/rank-centered spatial source has exactly zero global derivative and opposite soft-component derivatives. | [REPORT](https://github.com/LightChainr/Matching-One/blob/fb01c44aa45e4f8d37d52144e2ad7c4adfe6ce40/experiments/p154-spatial-localization-20260831/REPORT.md), `fb01c44a`, frozen `764595ea`. ZyTrST reported Ready; XPk2PZ spare Ready. |
 | P334 local response rank | Distinct-quartet unbiased det and det² **within the same 00 prefix**. Separates local two-direction response from mixture-generated ensemble rank; det² avoids signed cancellation. | `ffb70969` / `b582015e`; HZsCM6 reported Starting/input preparation. Same original prefixes. |
-| P398 linear response | Exact η=0 Fréchet and zero-frequency Poisson response of the finite process. Tests response to a changed generator, beyond the completed ±1/4 finite differences. | `9690d7c1`; TgFr7R running/implementing. Exact calculation, no Monte Carlo evidence count. |
-| P334 finite source | Positive common policies at fixed t=±1 with exact joint-class normalization and paired old-tail importance response. Tests nonlinear continuation/saturation beyond an infinitesimal signed histogram. | `0e4db1b8`, `e32a8593`, `959a7fa2`; TV2N0X newly started by that team. No new tails. |
+| P398 linear response — **completed** | η=0 response crosses zero at t=1.04798965, from competing stationary-measure and generator terms. Both integrated cross responses remain negative; frozen16-column geometry gives .467%/.551% error but imports full π and π′. | [README](https://github.com/LightChainr/Matching-One/blob/fb01c44aa45e4f8d37d52144e2ad7c4adfe6ce40/experiments/p398-linear-response-20260831/README.md), `fb01c44a`, frozen `9690d7c1`. TgFr7R reported Ready. |
+| P334 finite source — **completed** | Positive t=±1 common policies preserve immediate joint rank/Euler yet change future birth. Main finite responses stay close to the tangent; importance weights .7424–1.3307. Old-tail importance estimates, not new direct-policy samples. | [REPORT](https://github.com/LightChainr/Matching-One/blob/fb01c44aa45e4f8d37d52144e2ad7c4adfe6ce40/experiments/p334-finite-source-20260831/REPORT.md), `fb01c44a`; inputs `0e4db1b8`, `e32a8593`, `959a7fa2`. TV2N0X reported Ready. |
 
 Machine entries are **team-reported allocations at this snapshot**, not our SSH
 observations. No other team's jobs, tunnels or keys were inspected or changed.

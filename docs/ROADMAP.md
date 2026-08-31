@@ -1,5 +1,14 @@
 # Roadmap: Default Attention, Not Permission
 
+**Current move, 2026-08-31:** the W± bridge is completed in #509 at `fb01c44a`,
+and [occupancy/rank source projection](../results/norm4-global-source-projection/REPORT.md)
+is completed in #267 at `8799dfe1`. Same-time centered spatial sources are
+invisible to global q/E, while occupancy and fixed-K rank components both move
+root and population. Seek an explicit earlier-source/later-rank mechanism;
+do not repeat the angular allocation. P334 finite-source and P398 exact linear
+responses are also delivered. [Repository-first handoff](TEAM-COORDINATION.md)
+replaces routine cross-task messages; older stages below are not parallel queues.
+
 This roadmap starts with the next scientific outputs, using existing production before commissioning another tool or sample block. Priorities allocate attention; all research lanes remain open in parallel. Reused views keep their shared covariance and are not independent evidence.
 
 For scientific coordinates use `docs/RESEARCH-MAP.md`; for claim and branch status use `docs/STATUS.md`; for execution contracts use `docs/NEXT-TARGETS.md`; for bold mechanisms and sharp falsifiers use `docs/HYPOTHESIS-BOARD.md`.
@@ -152,8 +161,9 @@ Execution's branch-only `a5c39de3` now resolves source-even mean / source-odd
 direction responses and an almost diagonal rank2 ensemble Jacobian. Its completed
 N425 E curve has opposite-sign thermal lobes with a nearly cancelling integral.
 [The three-team handoff](TEAM-COORDINATION.md) therefore routes attention to
-same-prefix det/det² and finite positive t=±1 responses (俯瞰, in progress), plus
-thermal-dipole/age moments (执行, proposed). These reuse the existing paired
+same-prefix det/det² (俯瞰, improved estimate in progress), after its finite
+positive t=±1 response completed at `fb01c44a`, plus thermal-dipole/age moments
+(执行, partial results committed, final joint note pending). These reuse the paired
 prefixes and common covariance, without repeating the first response matrix or
 full curve. Ensemble rank and imposed source parity do not identify local field
 count or the unperturbed global H4 mechanism.

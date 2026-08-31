@@ -1,5 +1,5 @@
 schema: matching-one.team-coordination.v1
-updated_at: '2026-08-31T09:58:32Z'
+updated_at: '2026-08-31T10:13:04Z'
 canonical_entry: docs/TEAM-COORDINATION.md
 attention_board: docs/NEXT-TARGETS.md
 purpose: scientific_result_routing_and_duplicate_compute_avoidance_not_permissions
@@ -17,27 +17,39 @@ teams:
   - name: 数学研究执行
     role: finite_mechanism_execution_and_same_source_covariance_handoff
     completed: [p334_common_label_response_rank_thermal]
-    proposed: [p334_thermal_dipole_age_moments]
+    active: [p334_thermal_dipole_age_moments]
     reported_compute: local_only_no_cloud_job_or_tunnel
   - name: 数学研究总览
     role: shared_scientific_map_next_discriminator_and_cross_team_result_integration
     pr: 267
     branch: research/navigation-priority-refresh-20260829
     completed: [norm4_conditional_line_fixed_k]
-    active: [norm4_global_source_occupancy_rank_projection, absorb_committed_PR509_science]
+    completed_followup: norm4_global_source_occupancy_rank_projection
+    active: [absorb_committed_PR509_science]
     reported_compute: local_only_no_server_operations
   - name: 数学研究俯瞰
     role: complementary_mechanism_analyses_and_compute_delivery
     pr: 509
     branch: research/results-first-synthesis-20260831
-    active: [p154_soft_angular_bridge, p334_within_prefix_rank, p398_linear_response, p334_finite_source]
+    completed: [p154_soft_angular_bridge, p398_linear_response, p334_finite_source]
+    active: [p334_within_prefix_rank]
 github_snapshot:
   observed_at: '2026-08-31T09:58:32Z'
   pr267: {state: OPEN, is_draft: true, head: 7ebaa4bc8c44bf214b62fd8dc1dc87a2efd47b2a}
-  pr509: {state: OPEN, is_draft: true, head: 9690d7c1b9bcb19af3fb67b9c0bf5dc16bd5ef12}
+  pr509: {state: OPEN, is_draft: true, head: fb01c44aa45e4f8d37d52144e2ad7c4adfe6ce40, refreshed_at: '2026-08-31T10:13:04Z'}
   execution_branch_prs: []
   boundary: historical_pre_delivery_heads_not_a_claim_that_pending_outputs_are_committed
 sources:
+  norm4_global_projection:
+    integration_status: open_pr
+    pr: 267
+    commit: 8799dfe18782ca85ece4b69d508a27d7173bd28d
+    paths: [results/norm4-global-source-projection/REPORT.md, results/norm4-global-source-projection/latest.json, scripts/analyze_norm4_global_source_projection.py]
+  pr509_completed_three_packages:
+    integration_status: open_pr
+    pr: 509
+    commit: fb01c44aa45e4f8d37d52144e2ad7c4adfe6ce40
+    paths: [experiments/p154-spatial-localization-20260831/REPORT.md, experiments/p154-spatial-localization-20260831/results/latest.json, experiments/p398-linear-response-20260831/README.md, experiments/p398-linear-response-20260831/results/latest.json, experiments/p334-finite-source-20260831/REPORT.md, experiments/p334-finite-source-20260831/output/latest.json]
   norm4_line_fixed_k:
     integration_status: open_pr
     pr: 267
@@ -83,6 +95,13 @@ dependency_groups:
     ledger_group_refs: [crn-2026104501-5100000000-7000000000, crn-2026105401-8200000000-9200000000, crn-2026105402-8200000000-9200000000]
     rule: shared_cyclic_sizes_and_paired_geometries_use_aligned_deletion_endpoint_batches_are_original1000_union_increment9000_not_contiguous_rebin
 completed_outputs:
+  - id: norm4_global_source_occupancy_rank_projection
+    team: 数学研究总览
+    source_refs: [norm4_global_projection]
+    dependency_ref: norm4_source
+    result: occupancy_and_fixedK_rank_selection_both_move_root_and_rank_population_global_H4_source_and_chain_contrasts_remain_unresolved
+    boundary: empirical_first_order_projection_not_independent_source_or_causal_field_identity
+    next_question: lag_resolved_source_to_future_rank_birth_kernel_or_specific_fixedK_rank_mechanism
   - id: norm4_conditional_line_fixed_k
     team: 数学研究总览
     source_refs: [norm4_line_fixed_k]
@@ -97,10 +116,10 @@ completed_outputs:
     result: strong_plus_to_mean_and_minus_to_direction_mean_Jacobian_rank2_N425_E_thermal_lobes_cancel_in_integral
     boundary: ensemble_rank_not_within_prefix_rank_not_CFT_field_count_not_unperturbed_H4_attribution
     completed_first_calculations: [common_policy_response, ensemble_2x2_rank, complete_linear_thermal_curve, cross_geometry_channels, common_covariance_assembly]
-active_tasks:
+followup_tasks:
   - id: p154_soft_angular_bridge
     team: 数学研究俯瞰
-    execution_status: in_progress_team_report
+    execution_status: completed_committed_report_read
     delivery_pr: 509
     package_path: experiments/p154-spatial-localization-20260831
     frozen_input: 764595ea5c838c110e416382a3a90e2ecf7297bb
@@ -108,7 +127,8 @@ active_tasks:
     question: soft_Wplus_Wminus_original_U_and_source_tangent_with_exact_addback
     reported_machine: ZyTrST
     reported_spare: XPk2PZ
-    result_commit: null
+    result_commit: fb01c44aa45e4f8d37d52144e2ad7c4adfe6ce40
+    reported_release_state: Ready
   - id: p334_within_prefix_rank
     team: 数学研究俯瞰
     execution_status: in_progress_team_report
@@ -121,17 +141,18 @@ active_tasks:
     result_commit: null
   - id: p398_linear_response
     team: 数学研究俯瞰
-    execution_status: in_progress_team_report
+    execution_status: completed_committed_report_read
     delivery_pr: 509
     package_path: experiments/p398-linear-response-20260831
     frozen_input: 9690d7c1b9bcb19af3fb67b9c0bf5dc16bd5ef12
     question: exact_eta0_Frechet_and_zero_frequency_Poisson_generator_response
     acquisition: exact_construction
     reported_machine: TgFr7R
-    result_commit: null
+    result_commit: fb01c44aa45e4f8d37d52144e2ad7c4adfe6ce40
+    reported_release_state: Ready
   - id: p334_finite_source
     team: 数学研究俯瞰
-    execution_status: in_progress_team_report
+    execution_status: completed_committed_report_read
     delivery_pr: 509
     package_path: experiments/p334-finite-source-20260831
     input_commits: [0e4db1b8ccae26f2953522ff7428162b12e9e8fa, e32a85939279b8574278024d647b56d2d1485247, 959a7fa26677c416b874d272f1ba66523fb38f73]
@@ -139,11 +160,12 @@ active_tasks:
     question: exact_joint_class_normalization_of_positive_t_plusminus1_policies_and_old_tail_importance_response
     reported_machine: TV2N0X
     new_tails: false
-    result_commit: null
-proposed_tasks:
+    result_commit: fb01c44aa45e4f8d37d52144e2ad7c4adfe6ce40
+    reported_release_state: Ready
+execution_followups:
   - id: p334_thermal_dipole_age_moments
     team: 数学研究执行
-    execution_status: proposed_not_yet_delivered
+    execution_status: partial_commits_reported_final_joint_note_pending
     dependency_ref: p334_shared_prefix_archive
     question: extract_thermal_dipole_age_weighted_lifetime_moments_to_resolve_integral_cancellation
 handoff_fields: [scientific_change, source_commit_and_paths, observer_and_sector, dependency_and_batch_ids, result_commit_report_json, covariance_location, execution_and_release_state, next_discriminator]

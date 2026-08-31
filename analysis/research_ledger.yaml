@@ -1,4 +1,4 @@
-version: 33
+version: 34
 updated: 2026-08-31
 scientific_main_snapshot_commit: e30060995a9eb5c4d93f565ae09af4f54a56270f
 observed_remote_main_snapshot_commit: 2ee16678b64a065d6d235ef69941c8a46f3a3878
@@ -176,6 +176,38 @@ observer_sectors:
     semantic_boundary: exact_zero_conditional_mean_does_not_certify_covariance_gain_causality_or_threshold_origin
 
 branch_sources:
+  - id: SRC_PR267_GLOBAL_OCCUPANCY_RANK_SOURCE
+    integration_status: open_pr
+    pr: 267
+    ref: research/navigation-priority-refresh-20260829
+    commit: 8799dfe18782ca85ece4b69d508a27d7173bd28d
+    result_status: completed_zero_replay_global_source_projection_150dim_covariance
+    paths: [results/norm4-global-source-projection/REPORT.md, results/norm4-global-source-projection/latest.json, scripts/analyze_norm4_global_source_projection.py, analysis/norm4_global_source_projection_contract.json]
+    claim_boundary: occupancy_and_fixedK_rank_source_both_move_root_population_global_H4_and_chain_contrasts_unresolved_empirical_first_order_projection_not_microscopic_field_or_finite_strength_identity
+  - id: SRC_PR509_ANGULAR_GLOBAL_SOURCE_BRIDGE
+    integration_status: open_pr
+    pr: 509
+    ref: research/results-first-synthesis-20260831
+    commit: fb01c44aa45e4f8d37d52144e2ad7c4adfe6ce40
+    result_status: completed_sixN_soft_angular_U_source_and_centered_rank1_source_addback
+    paths: [experiments/p154-spatial-localization-20260831/REPORT.md, experiments/p154-spatial-localization-20260831/results/latest.json, experiments/p154-spatial-localization-20260831/SOURCES.json]
+    claim_boundary: same_time_fixedK_rank_centered_source_global_zero_is_structural_Uminus_centers_negative_global_source_unresolved_soft_weights_not_discrete_winding_classes
+  - id: SRC_PR509_P398_LINEAR_RESPONSE
+    integration_status: open_pr
+    pr: 509
+    ref: research/results-first-synthesis-20260831
+    commit: fb01c44aa45e4f8d37d52144e2ad7c4adfe6ce40
+    result_status: completed_eta0_Frechet_Poisson_and_frozen_compression_response
+    paths: [experiments/p398-linear-response-20260831/README.md, experiments/p398-linear-response-20260831/results/latest.json, experiments/p398-linear-response-20260831/SOURCE_MANIFEST.json]
+    claim_boundary: finite_width8_connectivity_model_not_square_site_matching_static_measure_and_generator_terms_compete_16column_dynamic_compression_imports_full_stationary_measure_and_derivative
+  - id: SRC_PR509_P334_FINITE_COMMON_SOURCE
+    integration_status: open_pr
+    pr: 509
+    ref: research/results-first-synthesis-20260831
+    commit: fb01c44aa45e4f8d37d52144e2ad7c4adfe6ce40
+    result_status: completed_t_plusminus1_exact_class_census_and_old_tail_importance_response
+    paths: [experiments/p334-finite-source-20260831/REPORT.md, experiments/p334-finite-source-20260831/output/latest.json, experiments/p334-finite-source-20260831/SOURCES.json]
+    claim_boundary: immediate_joint_rank_NNgraph_Euler_preserved_future_birth_response_measured_mild_finite_tilt_not_fresh_direct_policy_samples_or_within_prefix_rank_certificate
   - id: SRC_P334_COMMON_LABEL_ENSEMBLE_RESPONSE
     integration_status: branch_only
     ref: analysis/p334-paired-clock-loading-20260831
@@ -3551,6 +3583,27 @@ branch_sources:
     claim_boundary: finite_exact_algebra_support_merged_by_other_workflows_not_new_physical_production_covariance_W5_bound_or_a_reason_to_repeat_readiness_work_the_initial_capture_open_state_for493_to497_is_historical
 
 scientific_nodes:
+  - id: SN_GLOBAL_SOURCE_OCCUPANCY_RANK_PROJECTION
+    title: globally_visible_source_components_and_observation_time
+    integration_status: open_pr
+    state: microscopic_threshold_structure
+    sources: [absolute_paired_cluster_fugacity, rank_birth_geometric_tilt]
+    observer_sectors: [global_rank_projector, rank1_conditional_winding, direction_character]
+    geometries: [gaussian_cover, square_controls]
+    acquisition: [existing_data_reuse]
+    source_refs: [SRC_PR267_GLOBAL_OCCUPANCY_RANK_SOURCE, SRC_PR509_ANGULAR_GLOBAL_SOURCE_BRIDGE, SRC_PR509_P334_FINITE_COMMON_SOURCE]
+    known_result: occupancy_root_motion0p02432_to0p02478_and_fixedK_rank_motion0p00409_to0p00458_resolved_rank1_population_both_decrease_global_H4_source_and_chain_contrasts_unresolved
+    boundary: static_projection_residual_zero_does_not_exclude_future_rank_response_to_earlier_spatial_source_which_requires_a_joint_lagged_kernel_not_current_marginals
+    supports: [rank_population_selection_as_globally_visible_source_component, explicit_source_time_and_readout_time_as_mechanism_discriminator]
+    tensions: [identifying_strong_same_time_centered_line_covariance_with_original_global_H4_source]
+    excludes_only: [nonzero_global_q_E_first_derivative_from_source_centered_within_each_same_time_K_rank_geometry]
+    reusable_data_refs: [results/norm4-global-source-projection/latest.json, results/norm4-source-endpoint-1m/latest.json]
+    dependency_group_refs: [crn-2026104501-5100000000-7000000000, crn-2026105401-8200000000-9200000000, crn-2026105402-8200000000-9200000000, p334-common-label-e32a8593-shared-prefixes]
+    missing_inputs: [explicit_earlier_source_later_rank_birth_kernel_or_microscopic_prediction_of_fixedK_rank_covariance]
+    next_discriminator: use_joint_two_time_marks_if_available_not_another_same_time_centered_winding_detection_or_first_angular_bridge
+    information_gain: very_high
+    compute_cost: low
+    decision_experiments: [DX_ETOP_PRODUCTION_LOCALIZATION]
   - id: SN_P334_COMMON_LABEL_RESPONSE_DIMENSION
     title: common_label_source_parity_ensemble_rank_and_thermal_redistribution
     integration_status: branch_only
@@ -6850,7 +6903,9 @@ decision_experiments:
   - id: DX_ETOP_PRODUCTION_LOCALIZATION
     attention_rank: 1
     name: norm4_missing_physical_direction_pair_topology_or_distinct_microscopic_singlet
-    status: conditional_line_and_fixed_K_source_localization_completed_common_E_clock_and_scalar_K_q_E_explanations_insufficient_original_global_U_bridge_open
+    status: soft_angular_bridge_and_global_occupancy_rank_projection_completed_global_H4_source_unresolved_same_time_centered_spatial_source_invisible_to_global_q_E
+    completed_new_source_refs: [SRC_PR267_GLOBAL_OCCUPANCY_RANK_SOURCE, SRC_PR509_ANGULAR_GLOBAL_SOURCE_BRIDGE]
+    completed_new_node_refs: [SN_GLOBAL_SOURCE_OCCUPANCY_RANK_PROJECTION]
     scientific_node_refs: [SN_NORM4_ETOP_PHASE_D, SN_PHASE_E_ALIAS_AND_LOCAL_ENERGY, SN_ETOP_CLOCK_PLANE, SN_P154_ABSOLUTE_CLUSTER_PHYSICAL_RESPONSE, SN_P40_ABSOLUTE_CLUSTER_MATCHING_RESPONSE, SN_NORM4_CLUSTER_SOURCE_THERMAL_RESPONSE, SN_NORM4_ROOT_COMOVING_SOURCE_COMPOSITION, SN_NORM4_FIXED_K_LINE_SOURCE]
     observer_sector_refs: [global_rank_projector, topology_typed, matching_even, bulk_energy_logpair, direction_character, rank1_conditional_winding]
     source_refs: [SRC_PR267_NORM4_PHASE_D, SRC_P154_PHASE_E_INTEGRATED_ALIAS, SRC_P154_PHASE_E_LOCAL_SINGLET_PILOT, SRC_ETOP_CLOCK_PLANE, SRC_P154_PHASE_E_MIXED_PLANE, SRC_PR267_P154_FIXED_K_INTERACTION, SRC_PR267_P154_ABSOLUTE_CLUSTER_RESPONSE]
@@ -6860,9 +6915,9 @@ decision_experiments:
     compute_cost: low
     completed_followup_source_refs: [SRC_PR267_P40_ABSOLUTE_CLUSTER_RESPONSE, SRC_PR267_P40_EVEN_GIVEN_ODD_RESPONSE, SRC_PR267_NORM4_CLUSTER_SOURCE_THERMAL_RESPONSE, SRC_PR267_NORM4_SOURCE_PRECISION_AND_COMPOSITION, SRC_PR267_NORM4_CONDITIONAL_LINE_SOURCE]
     completed_followup_dependency_group_refs: [p40-motif-N65-N85-shared-counter-1m, crn-2026104501-5100000000-7000000000, crn-2026105401-8200000000-9200000000, crn-2026105402-8200000000-9200000000]
-    decision_output: zero_replay_soft_angular_Wplusminus_decomposition_of_original_U_and_source_tangent_with_exact_addback_and_shared_covariance_then_actual_line_class_or_joint_birth_exit_marks_for_further_attribution
-    current_readout: completed_rank1_conditional_O4_E_clock_residual_and_within_K_between_K_rootclock_decomposition_with_same_archive_full_covariance_original_global_U_remains_separate
-    execution_handoff: {date: 2026-08-31, team: parallel_analysis_team, frozen_input_commit: 764595ea5c838c110e416382a3a90e2ecf7297bb, task: Wplusminus_original_U_source_bridge, status: accepted_by_parallel_team_not_computed_in_PR267_bundle, duplicate_run_by_PR267: false, coordination_is_not_task_lock: true}
+    decision_output: explicit_earlier_microscopic_source_and_later_rank_birth_exit_readout_or_specific_fixedK_rank_covariance_prediction_current_marginals_cannot_recover_joint_lagged_kernel_no_repeat_first_soft_bridge
+    current_readout: global_occupancy_and_fixedK_rank_source_components_measured_with150dim_covariance_both_move_root_population_H4_source_and_chain_comparisons_unresolved
+    execution_handoff: {date: 2026-08-31, team: 数学研究俯瞰, frozen_input_commit: 764595ea5c838c110e416382a3a90e2ecf7297bb, result_commit: fb01c44aa45e4f8d37d52144e2ad7c4adfe6ce40, task: Wplusminus_original_U_source_bridge, status: completed_in_open_PR509_cited_not_merged_into_PR267, duplicate_run_by_PR267: false, coordination_is_not_task_lock: true}
     two_phase_estimator_status: completed_in2p52_seconds_zero_replay_no_stable_gain_marked_variance_dominates
     original_norm4_contract:
       commit: 2236d36c80c8a466d9317c929bc33e92a7ca9d33
@@ -6880,9 +6935,10 @@ decision_experiments:
     readout_boundary: raw_S_is_common_across_geometries_compensated_S_res_uses_separate_counterterms_report_paired_direction_difference_and_covariance_nonzero_distinguishes_finite_topological_tangent_not_new_field_or_norm4_child_P40_E_edges_is_not_Etop
   - id: DX_CONNECTIVITY_RADICAL
     attention_rank: 2
-    name: distinct_physical_prediction_after_completed_source_memory_and_triplet_motifs
-    status: current_deletion_and_Je_defined_observer_are_completed_full_instantaneous_current_capture_still_misses_plus_tail_and_norm_QSe_squared_curvature_not_first_current_observer_or_reversible_control_tasks
-    completed_followup_source_refs: [SRC_P398_WIDTH8_CURRENT_SOURCE_GEOMETRY]
+    name: stationary_measure_prediction_after_completed_eta0_response_and_geometry_compression
+    status: eta0_Frechet_Poisson_and_frozen16column_response_complete_measure_generator_competition_causes_reversal_integrated_cross_responses_still_negative_compression_imports_full_pi_and_pi_prime
+    completed_followup_source_refs: [SRC_P398_WIDTH8_CURRENT_SOURCE_GEOMETRY, SRC_PR509_P398_LINEAR_RESPONSE]
+    next_specific_hypothesis: unfit_block_count_fugacity_stationary_score_minus2_times_centered_partition_block_count_not_a_proven_measure_law
     scientific_node_refs: [SN_RELATIVE_SOURCE_SEMISIMPLE_CLOSURE, SN_CONNECTIVITY_RADICAL_HYPOTHESIS, SN_P333_ENDPOINT_IRREP_CLOSURE, SN_RATIONAL_JORDAN_GEOMETRY_ORACLE, SN_P398_COUPLED_NINE_MARK_PHYSICAL_RESPONSE]
     observer_sector_refs: [topology_typed, boundary, direction_character]
     source_refs: [SRC_RELATIVE_SOURCE_RANK3, SRC_RELATIVE_SOURCE_HH2, SRC_P333_DUAL_NUMBER_GRAM_RADICAL, SRC_P333_GENERIC_Q_DETACH_GATE, SRC_P333_SCALAR_MULTIMARK_OBSTRUCTION, SRC_P333_SOURCE_LANDING_DOUBLET, SRC_P333_CHARGE2_LANDING_RESULT, SRC_P398_COUPLED_ROOTED_NINE_MARK_CLOSURE, SRC_P398_ROOTED_SECOND_JET, SRC_P398_POSITIVE_CYLINDER_PROPAGATION, SRC_P398_ANISOTROPIC_CYLINDER_SPECTRUM, SRC_PR267_P398_WIDTH5_PROPAGATION, SRC_P398_CONTINUOUS_TWO_CHANNEL_KERNEL, SRC_P398_WIDTH8_PROTECTED_RAYS, SRC_PR267_P398_FIXED_READOUT, SRC_P398_WIDTH8_PROJECTED_MEMORY, SRC_P398_WIDTH8_MEMORY_MOTIFS, SRC_P398_WIDTH8_CURRENT_DELETION]
@@ -6890,7 +6946,7 @@ decision_experiments:
     acquisition: exact_construction
     expected_model_space_reduction: high
     compute_cost: low
-    decision_output: identify_named_hidden_QSe_reversible_geometry_transport_or_distinct_microscopic_matching_overlap_after_completed_Je_capture_not_repeat_first_current_observer_current_deletion_or_claim_autonomous_two_state_closure
+    decision_output: test_specified_stationary_measure_law_against_saved_pi_prime_static_cross_and_Poisson_response_or_build_explicit_matching_overlap_no_repeat_first_eta0_derivative_or_confuse_imported_measure_with_predicted_measure
   - id: DX_ETOP_TAU_TOPOLOGY_MAP
     attention_rank: 3
     name: joint_area_center_and_shape_physical_predictions_after_completed_N900
@@ -6908,7 +6964,8 @@ decision_experiments:
   - id: DX_P429_SUCCESSOR_STATE
     attention_rank: 4
     name: within_prefix_response_dimension_finite_source_and_thermal_redistribution_after_ensemble_rank
-    status: completed_common_label_response_near_diagonal_ensemble_rank_full_thermal_curves_and_common_covariance_PR509_reports_local_rank_and_finite_source_in_progress
+    status: completed_common_label_ensemble_rank_full_thermal_curves_covariance_and_PR509_finite_t_plusminus1_response_improved_same_prefix_rank_still_in_progress
+    completed_finite_source_ref: SRC_PR509_P334_FINITE_COMMON_SOURCE
     completed_followup_source_refs: [SRC_PR484_P334_UNIFORM_BLOCKADE_SEMIGROUP, SRC_P334_COMMON_LABEL_ENSEMBLE_RESPONSE, SRC_P334_COMMON_LABEL_THERMAL_CURVES, SRC_P334_COMMON_LABEL_JOINT_COVARIANCE]
     completed_followup_scientific_node_refs: [SN_P334_COMMON_LABEL_RESPONSE_DIMENSION]
     completed_followup_dependency_group_refs: [p334-common-label-e32a8593-shared-prefixes]
