@@ -1,5 +1,9 @@
 # Fixed Q1 trace scorer: code staged before theory-gate release
 
+Completed after the coordinator's explicit GO with both proof commits:
+see [the result note](p337-q1-closed-trace-transmission-result.md).
+The protocol below records the pre-release staging state and fixed CLI.
+
 This entry implements only contract `964ef2032effbe59f9158c158cf06a2c0844d7ee`.
 **Do not execute it until the packing and generic-character proofs are
 both complete and the coordinator explicitly releases the calculation.**
