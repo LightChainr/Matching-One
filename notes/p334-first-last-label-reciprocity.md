@@ -8,7 +8,7 @@ site-by-time readouts are equivalent information, not independent evidence.
 
 ## Fixed-cardinality identity
 
-Fix a prefix with d remaining labels and a hereditary family of safe subsets.
+Fix a safe prefix with d remaining labels and a hereditary family of safe subsets.
 Insert the labels once in a uniform random order. Let T be the first unsafe
 insertion and V its label. If absorption is impossible, retain T=d+1 as a
 cemetery time and do not invent a winner. Define
