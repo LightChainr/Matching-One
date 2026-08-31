@@ -6,6 +6,8 @@ The immediate priority is **physical mechanism discrimination**, not another sig
 
 This is the single current attention board. [Repository Context](REPOSITORY-CONTEXT.md) explains what the full review recovered; the [complete Issue/PR index](ISSUE-PR-INDEX.md) preserves all tasks; [the earlier detailed board](NEXT-TARGETS-history-20260831.md) is historical. Priorities do not lock, close, reject or require approval for any parallel line.
 
+**Execution handoff, 2026-08-31:** the parallel analysis team has taken the W± bridge on frozen input `764595ea5c838c110e416382a3a90e2ecf7297bb`. PR267 supplies the completed line/fixed-K results and will consume that team's output; it is not starting a duplicate calculation or Huawei connection. This is coordination to avoid duplicated work, not an exclusive task lock. The bridge remains uncomputed in this saved PR267 result bundle.
+
 ## Default attention
 
 | Attention | Question and discussion home | Completed input — do not repeat as a first step | Next scientific output |
