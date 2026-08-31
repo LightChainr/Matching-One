@@ -1,4 +1,4 @@
-version: 26
+version: 27
 updated: 2026-08-31
 purpose: >
   Lightweight navigation/provenance index. Registry conflicts never block
@@ -19,14 +19,15 @@ observed_remote_main_snapshot:
   boundary: observed_remote_history_only_does_not_rewrite_the_scientific_main_snapshot_or_historical_scorer_counts
 
 latest_lifecycle_overlay:
-  source: analysis/github-context-increment-20260831c.json
-  captured_pr484_at: '2026-08-31T06:19:59Z'
-  pr484_head: 705819e95d1146fdedb06e9c7628344f108b80af
+  source: notes/frontier-increment-20260831d.md
+  previous_snapshot_source: analysis/github-context-increment-20260831c.json
+  captured_pr484_at: '2026-08-31T06:41:26Z'
+  pr484_head: 8b3c4e4b175826805238f2585ca470d746a80610
   pr484_status: open_pr
   merged_prs: [488, 489, 490, 493, 494, 495, 496, 497]
   open_related_prs: [491, 492]
-  N900_acquisition_status: frozen_manifest_and_runner_published_execution_unknown_no_archived_result_or_receipt
-  boundary: initial_capture_open_states_for493_to497_are_historical_rank_width_and_ordinary_scalar_analysis_are_branch_only_despite_PR484_discussion
+  N900_acquisition_status: author_reported_running_no_target_result_or_completion_receipt_runtime_not_independently_inspected
+  boundary: earlier_captures_are_preserved_as_historical_rank_width_scalar_clock_all147_noise_canonical_and_current_deletion_inputs_remain_branch_only_despite_PR484_or_PR267_discussion_no_new_production_launch
 
 draft_pr267_snapshot:
   pr: 267
@@ -72,6 +73,7 @@ canonical_documents:
   - {path: docs/ISSUE-PR-INCREMENT-20260831c.md, status: dated_handoff, role: latest_completed_vs_remaining_Issue_PR_crosswalk_without_replacing_older_captures}
   - {path: notes/context-reconciliation-20260831c.md, status: dated_handoff, role: current_scientific_context_reconciliation_and_completed_work_recovery}
   - {path: notes/context-reconciliation-p334-20260831c.md, status: dated_handoff, role: general_two_port_full_clock_channel_site_and_canonical_noise_completion_crosswalk}
+  - {path: notes/frontier-increment-20260831d.md, status: dated_handoff, role: completed_all147_noise_canonical_current_deletion_symmetric_kernel_and_log_time_results_at_immutable_scientific_pins}
   - {path: docs/NEXT-TARGETS.md, status: canonical_current, role: decision_experiment_board}
   - {path: docs/STATUS.md, status: canonical_current, role: claim_ledger}
   - {path: docs/RESEARCH-MAP.md, status: canonical_current, role: research_navigation}
@@ -302,18 +304,34 @@ registered_reanalyses:
     boundary: branch_commit_not_in_fixed_PR484_head705819e_this_is_not_the_density_Jacobian_model_or_existence_of_a_common_A_E_scalar_map
     next_output: compare_declared_physical_transport_predictions_using_existing_results_not_repeat_the_completed_necessary_gate
   - id: PR484_N900_RANK_WIDTH_FROZEN_FOLLOWUP
-    status: frozen_manifest_and_runner_published_execution_unknown
+    status: author_reported_running_no_target_result_runtime_not_independently_inspected
     integration_status: open_pr
     pr: 484
     branch: analysis/etop-modulus-survivors-20260831
     commit: ecde7c9132ed35ec1575bd82f11e816722912e6f
-    observed_pr_head: 705819e95d1146fdedb06e9c7628344f108b80af
+    observed_pr_head: 8b3c4e4b175826805238f2585ca470d746a80610
+    observed_at: '2026-08-31T06:41:26Z'
+    previous_observation: head705819e_manifest_and_runner_only_execution_unknown
     manifest: experiments/etop_n900_rank_width_20260831.json
     script: scripts/run_etop_n900_rank_width.py
     outputs: []
-    result_summary: planned32m_counters800_batches_two_shapes2i_4i_without_shear_predictions2p565535388_and2p094750873_are_frozen
-    boundary: no_archived_N900_raw_result_or_receipt_at_fixed_head_no_claim_running_or_completed_predictions_share_N400_anchor_covariance_not_a_critical_exponent_claim
+    result_summary: author_reports_two_local_single_thread_processes_for32m_shared_counters800_batches_two_shapes2i_4i_without_shear_predictions2p565535388_and2p094750873_are_frozen_no_target_yet
+    boundary: author_progress_is_not_independently_verified_runtime_or_completed_artifact_predictions_share_N400_anchor_covariance_not_a_critical_exponent_claim_or_authorization_for_duplicate_production
     next_output: consume_the_existing_PR484_team_followup_when_its_result_is_available_do_not_duplicate_the_assignment
+  - id: PR484_ETOP_COMMON_SYMMETRIC_KERNEL_OBSTRUCTION
+    status: completed_post_reveal_two_lobe_positive_kernel_obstruction
+    integration_status: open_pr
+    pr: 484
+    branch: analysis/etop-modulus-survivors-20260831
+    commit: ddf7d564cb2a99bce4bbdba5eef90a9143e7d394
+    input_commit: 6d8a3ed9d961c66889c3c1e4575485443fdd1c39
+    input_branch: analysis/p267-scalar-clock-transport-20260831
+    script: scripts/etop_two_lobe_moment_closure.py
+    outputs: [notes/etop-two-lobe-moment-obstruction.md, results/etop-two-lobe-moment-closure/REPORT.md, results/etop-two-lobe-moment-closure/score.json]
+    dependency_groups: [N100_three_modulus_seed20260831125401_offset267100000000, N400_three_modulus_seed20260831134001_offset267400000000]
+    result_summary: common_symmetric_kernel_sixth_moments_minus1p757800_plusminus0p074189_and_minus3p849346_plusminus1p20234_follow_equal_width_Gaussian_residuals848p387_over2_and177p594_over2
+    boundary: signed_rank_difference_positive_two_lobe_representation_is_a_candidate_post_reveal_mean_obstruction_is_not_a_strict_confidence_certificate_unequal_asymmetric_more_component_and_signed_shapes_remain_distinct
+    next_output: keep_explicit_exploratory_shapes_outside_the_excluded_common_kernel_family_separate_from_existing_N900_frozen_width_predictions_not_another_weight_separation_scan
   - id: PR484_P334_GENERAL_TWO_PORT_THEOREM
     status: completed_general_embedded_rank1_parallel_network_representation_and_channel_winning_law
     integration_status: open_pr
@@ -325,6 +343,18 @@ registered_reanalyses:
     result_summary: all_embedded_rank1_prefixes_reduce_to_parallel_site_disjoint_two_port_components_F_equals_1plusz_power_r_times_product_Fi_and_Bi_equals_ni_Fi_minus_1plusz_Fi_prime_gives_winning_channel_law
     boundary: general_topological_representation_not_unjoined_crossing_graphs_small_treewidth_or_universal_tractability_not_a_new_random_block
     next_output: use_completed_general_law_and_selected_prefix_channel_outputs_for_population_or_geometry_loading_not_another_first_two_port_proof
+  - id: PR484_P334_LOG_TIME_RACE
+    status: completed_log_occupation_clock_factorization_and_hazard_acceleration
+    integration_status: open_pr
+    pr: 484
+    branch: analysis/etop-modulus-survivors-20260831
+    commit: 8b3c4e4b175826805238f2585ca470d746a80610
+    scientific_parent_commit: 0997a00c4639af90b806b6920489e32cc1e85227
+    outputs: [notes/p334-general-two-port-birth-theorem.md]
+    dependency_group: p334-cooperative-N425-20260831
+    result_summary: s_equals_minus_log_one_minus_u_direct_clock_Exp_h_is_independent_of_collective_event_direct_fraction_h_times_E_Hd_minus_Hd_minusT_and_initial_hazard_derivative2m2
+    boundary: independence_is_for_independent_marks_not_fixed_total_insertion_count_short_time_reversal_estimates_are_not_finite_step_error_bounds_or_new_samples
+    next_output: consume_complete_clock_harmonic_moment_and_marked_race_for_a_defined_population_or_geometry_prediction_not_another_first_direct_collective_or_sitewise_solver
   - id: PR492_P429_DUAL_CYCLE_BLOCKER
     status: completed_exact_dual_essential_cycle_blocker_and_real_A_B_certificate
     integration_status: open_pr
@@ -357,7 +387,7 @@ registered_reanalyses:
     dependency_group: p334-cooperative-N425-20260831
     result_summary: f2_A0p1016281483_B0p08617025757_at_pref_suffix_variances0p01185405546_0p01171741881_full19_by19_eighteen_p_plus_integral_covariance
     boundary: Binomial_tail_variance_not_f2_times1_minus_f2_no_K1_cross_prefix_coupling_or_population_variance_reduction_is_inferred_second_birth_A_E_noise_is_common_plus_direction
-    next_output: ensemble_frequency_cost_and_suffix_noise_weight_or_geometry_directional_comparison_not_first_canonical_K2_projection
+    next_output: consume_completed_fixed147_mixture_noise_for_population_stratum_weights_or_paired_geometry_loading_not_first_canonical_K2_projection_or_first_suffix_variance_budget
   - id: P334_TWELVE_PREFIX_CLOCKS
     status: completed_twelve_preselected_saved_prefix_complete_clocks_and_crossings
     integration_status: branch_only
@@ -369,7 +399,39 @@ registered_reanalyses:
     dependency_group: p334-cooperative-N425-20260831
     result_summary: all12_solved1_to14_parallel_factors_ET5p77269_to24p89885_total_clock_walltime0p56_seconds11_of66_fixed_pair_survival_crossings
     boundary: first12_eligible_counter_ordered_old_stream_prefixes_exclude_original_A_B_no_H2_b2_outcome_selection_but_not_population_frequency_or_new_MC
-    next_output: population_or_geometry_comparison_using_completed_channels_not_first_twelve_clock_or_first_crossing
+    next_output: consume_completed_all147_expansion_canonical_roots_and_mixture_noise_for_population_or_geometry_comparison_not_first_twelve_or_first_extra_prefix_clocks
+  - id: P334_ALL147_PREFIX_CLOCKS
+    status: completed_all147_fixed_eligible_prefix_full_clocks
+    integration_status: branch_only
+    branch: analysis/p334-all147-prefix-clocks-20260831
+    commit: 87b6ca5b39084c06143f31cafdaba53f90012e27
+    selection_commit: 8d7ac0e91323608053df3a8d8e06db02335fb315
+    execution_commit: 9cca7bc60e26db5ec47b5e00fbc5d98532447c29
+    outputs: [notes/p334-all147-real-prefix-clocks.md, results/p334-all147-prefix-clocks/SCIENTIFIC_CARD.md, results/p334-all147-prefix-clocks/selection.json, results/p334-all147-prefix-clocks/full_clocks.json, results/p334-all147-prefix-clocks/scientific_summary.json]
+    dependency_group: p334-cooperative-N425-20260831
+    result_summary: all147_solved535_factors_mean_wait5p77269_to30p86927_and3510_of10731_survival_crossings_equal_pair_second_moments_allow_minimal_triples5_versus19_recorded135_new_conditional_solves12_reused14p45890854_seconds
+    boundary: fixed_N425_second_orientation_k0_252_age10_line12_minus19_eligible_stratum_not_new_MC_population_frequency_or_universal_tractability
+    next_output: use_completed_all147_laws_and_noise_for_stratum_weighted_or_paired_geometry_prediction_not_first_expansion_full_clock_or_generic_triple_count
+  - id: P334_147_PREFIX_NOISE_MIXTURE
+    status: completed_uniform147_prefix_mixture_within_between_total_covariance
+    integration_status: branch_only
+    branch: analysis/p334-147-prefix-noise-mixture-20260831
+    commit: 5a8e26ec8cd63fb786e212db601c242d882c92bc
+    outputs: [notes/p334-147-prefix-conditional-noise-weight.md, results/p334-147-prefix-noise-mixture/REPORT.md, results/p334-147-prefix-noise-mixture/score.json]
+    dependency_group: p334-cooperative-N425-20260831
+    result_summary: pref_tail_mean0p1706204126_suffix_variance0p02092217261_between0p003543006813_removable85p5182_percent_integral_mean0p3744119018_removable83p9502_percent
+    boundary: uniform_fixed147_mixture_Binomial_tail_readout_not_Bernoulli_trial_or_global_MC_speedup_population_frequency_K1_and_cross_orientation_covariance_are_not_supplied
+    next_output: population_stratum_weights_and_paired_geometry_loading_not_first_mixture_variance_decomposition
+  - id: P334_TWELVE_CANONICAL_CROSSINGS
+    status: completed_exact_root_counts_for_original_twelve_prefix_canonical_orderings
+    integration_status: branch_only
+    branch: analysis/p334-twelve-canonical-crossings-20260831
+    commit: 1b4f5499b68c0b2a3881108b2219f703128d6594
+    outputs: [notes/p334-twelve-canonical-order-crossings.md, results/p334-twelve-canonical-crossings/REPORT.md, results/p334-twelve-canonical-crossings/score.json]
+    dependency_group: p334-cooperative-N425-20260831
+    result_summary: all11_survival_crossing_pairs_retain_reversals_with20_simple_roots_and21_order_cells_pair83_1006_root0p594353897611717_pref_difference0p0002979084441_integral_minus0p00275241089307
+    boundary: exact_Bernstein_root_counts_numerical_root_locations_twelve_nested_in147_not_new_evidence_not_p_equals_k_over_N_and_tiny_tail_roots_need_not_be_measurable
+    next_output: use_existing_thermal_order_cells_with_population_or_geometry_weights_not_first_canonicalization_or_first_crossing
   - id: P334_COMPONENT_BIRTH_RACE
     status: completed_exact_twelve_prefix_forty_seven_factor_winner_time_and_direct_collective_allocation
     integration_status: branch_only
@@ -849,6 +911,19 @@ registered_reanalyses:
     result_summary: same_PhaseE20k_per_size_JR_z_0p152_0p891_joint_chi2_0p8173_over2_p_0p66455_unresolved_not_all_H
     boundary: R_has_a_fixed_K_global_counterterm_and_is_not_a_strictly_local_canonical_field_Q_R_H_and_parent_mixed_views_are_one_random_stream_not_new_evidence
     next_output: explicit_physical_response_prediction_for_the_original_norm4_residual_using_completed_interaction_rows_not_first_local_edge_measurement
+  - id: P154_ABSOLUTE_CLUSTER_RESPONSE
+    status: completed_same_stream_zero_new_sample_physical_source_response
+    integration_status: open_pr
+    pr: 267
+    branch: research/navigation-priority-refresh-20260829
+    commit: eb7ef8c9f13a88d96f32c2da62ba7ef2145cb33e
+    contract: analysis/p154_absolute_cluster_replay.json
+    script: scripts/analyze_p154_absolute_cluster.py
+    outputs: [src/p154_absolute_cluster_replay.cpp, notes/p154-absolute-cluster-source-design.md, results/p154-absolute-cluster/latest.json, results/p154-absolute-cluster/REPORT.md, results/p154-absolute-cluster/run.json, results/p154-absolute-cluster/raw/n65.csv, results/p154-absolute-cluster/raw/n130.csv]
+    dependency_group: p154-phase-e-mixed-plane-N65-N130-20k
+    result_summary: raw_JE_N65_minus0p0000825911_plusminus0p0000814201_N130_minus0p0000134106_plusminus0p0000529152_joint_p0p578915_full_control_joint_p0p649610_source_retains64p5744_to69p7531_percent_variance_N130_auxiliary_JA_z2p4733_not_reproduced_at_N65
+    boundary: empirical_linear_clock_Euler_control_not_exact_fixed_K_or_RG_thermal_subtraction_finite_paired_site_cluster_tilt_not_bond_FK_Q_derivative_or_field_identity_full39_by39_covariance_and_delete_one_views_share_old20k_stream
+    next_output: extract_existing_P40_million_sample_q_cluster_Gram_with_full_controls_at_its_N65_N85_geometries_shared_counters_do_not_allow_cross_N_independent_pooling_Etop_moment_is_missing_and_N85_is_not_N130
   - id: P398_WIDTH5_PHYSICAL_PROPAGATION
     status: completed_exact_width5_propagation_and_numerical_mode_visibility
     integration_status: open_pr
@@ -918,6 +993,17 @@ registered_reanalyses:
     next_output: same_stream_M_KA_loading_on_a_matching_sensitive_geometry_not_more_KA_only_scales
 
 frontier_branch_assets:
+  - id: P398_WIDTH8_CURRENT_DELETION
+    status: branch_only
+    branch: theory/p398-width8-reversible-current-control-20260831
+    commit: 520a9d218a90ce46c34475e2ddd4ef0eb5d97e1a
+    declaration_commit: 5e47bdb643a608d8086bd30a28b6f7044d4ea5b1
+    representative_path: notes/p398-width8-current-deletion-result.md
+    paths: [notes/p398-width8-current-deletion-result.md, results/p398-width8-reversible-current-control/SCIENTIFIC_CARD.md, results/p398-width8-reversible-current-control/latest.json]
+    role: completed_same_pi_source_variance_exit_rate_and_real_initial_slope_preserving_current_deletion_inversion_survives_crossing0p2656573200_to0p2722634760_s4_ratio25p41893805_to14p42424134
+    dependency_group: p398-positive-cylinder-exact-chain
+    dependency_boundary: same1430_state_positive_generator_not_new_data_reversible_control_need_not_be_a_local_square_bond_word_self_correlations_do_not_determine_current_direction_unreviewed9339fe70_not_included
+    next_output: distinct_microscopic_matching_overlap_or_physical_generator_response_not_first_current_deletion_or_bulk_site_energy_alias
   - id: P398_WIDTH8_PROJECTED_MEMORY
     status: branch_only
     branch: theory/p398-width8-projected-memory-20260831
