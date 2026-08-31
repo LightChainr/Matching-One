@@ -1,0 +1,61 @@
+{
+  "schema": "matching-one/cover-section-occupancy-covariance/v1",
+  "status": "valid_exact_bernoulli_fiber_certificate",
+  "parent_issue": "remain open",
+  "child_statistic": "fiber occupancy mean Q^-1 sum_m 1[U_m<p]",
+  "section_parent": "1[U_0<p]",
+  "antithetic_parent": "1[1-U_0<p]",
+  "exact_formulas": {
+    "section_covariance": "p(1-p)/Q",
+    "section_squared_correlation": "1/Q",
+    "antithetic_covariance": "-min(p,1-p)^2/Q",
+    "antithetic_squared_correlation": "min(p,1-p)^4/(Q p^2(1-p)^2)"
+  },
+  "comparison_scope": "the declared section and antithetic-section pair only",
+  "section_squared_correlation_ceiling_within_pair": "1/Q",
+  "frozen_cases": [
+    {
+      "cover_degree": 2,
+      "occupancy_probability": "2/5",
+      "section_covariance": "3/25",
+      "section_squared_correlation": "1/2",
+      "antithetic_covariance": "-2/25",
+      "antithetic_squared_correlation": "2/9",
+      "antithetic_is_strictly_smaller_in_magnitude": true
+    },
+    {
+      "cover_degree": 2,
+      "occupancy_probability": "3/5",
+      "section_covariance": "3/25",
+      "section_squared_correlation": "1/2",
+      "antithetic_covariance": "-2/25",
+      "antithetic_squared_correlation": "2/9",
+      "antithetic_is_strictly_smaller_in_magnitude": true
+    },
+    {
+      "cover_degree": 5,
+      "occupancy_probability": "2/5",
+      "section_covariance": "6/125",
+      "section_squared_correlation": "1/5",
+      "antithetic_covariance": "-4/125",
+      "antithetic_squared_correlation": "4/45",
+      "antithetic_is_strictly_smaller_in_magnitude": true
+    },
+    {
+      "cover_degree": 5,
+      "occupancy_probability": "3/5",
+      "section_covariance": "6/125",
+      "section_squared_correlation": "1/5",
+      "antithetic_covariance": "-4/125",
+      "antithetic_squared_correlation": "4/45",
+      "antithetic_is_strictly_smaller_in_magnitude": true
+    }
+  ],
+  "claim_boundary": {
+    "covers_h0_h1_additive_couplings": false,
+    "proves_topological_observable_covariance": false,
+    "includes_wall_time_model": false,
+    "proves_residual_variance_gain": false,
+    "makes_production_recommendation": false
+  }
+}

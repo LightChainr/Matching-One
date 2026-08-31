@@ -1,0 +1,37 @@
+{
+  "schema": "matching-one/descendant-jordan-rank-survival/v1",
+  "status": "valid_exact_finite_jordan_chain_certificate",
+  "parent_issue": "remain open",
+  "theorem_scope": "finite equal-rank Jordan chains with an exact homogeneous intertwiner",
+  "full_rank_condition": "the image of the bottom vector is nonzero",
+  "proof_identity": "N_target^(r-1) A top = A N_source^(r-1) top = A bottom",
+  "q4_case": {
+    "parent_rank": 2,
+    "parent_eigenvalue": "5/4",
+    "descendant_level": 4,
+    "descendant_eigenvalue": "21/4",
+    "source_dilatation": [["5/4", "1"], ["0", "5/4"]],
+    "target_dilatation": [["21/4", "1"], ["0", "21/4"]],
+    "descendant_map": [["1", "0"], ["0", "1"]],
+    "intertwining_identity_holds": true,
+    "bottom_image_nonzero": true,
+    "image_chain_rank": 2,
+    "ordinary_q4_gram_norm": 4930
+  },
+  "commuting_collapse_control": {
+    "parent_rank": 3,
+    "descendant_level": 2,
+    "descendant_map": "N",
+    "intertwining_identity_holds": true,
+    "bottom_image_nonzero": false,
+    "image_chain_rank": 2,
+    "conclusion": "commutation alone does not preserve Jordan rank"
+  },
+  "claim_boundary": {
+    "proves_lattice_overlap": false,
+    "fixes_logarithmic_coefficient": false,
+    "derives_torus_ward_response": false,
+    "identifies_p4_sprime_readout": false
+  },
+  "uses_production_data": false
+}
