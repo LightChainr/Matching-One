@@ -10,14 +10,16 @@ This Draft incorporates main through `e300609`; later observed main changes are 
 
 The first #370 real-data adapter, P267 amplitude comparison, P334 graph/capacity analysis and first F5/C3 typed observers are completed inputs. No Monte Carlo is launched by this navigation update, and tool/test completion is not an independent scientific milestone.
 
-The [million-sample P40 even response](../results/p40-even-given-odd/REPORT.md)
-has completed the missing E_top/source assignment too. At fixed matching,
-the raw source moves rank-1 probability at110–138 SE; raw H4 C remains
-unresolved, with an auxiliary full-control hint. Next use the [actual U
-source interface](../notes/p40-even-response-norm4-interface.md): root/slope
-and thermal derivatives, then the real three-size norm-4 residual.
-Bare fixed-p C does not inherit U's scaling law. No first q/E source
-detection remains, and this work needed no GPU.
+The [actual original-U source experiment](../results/norm4-source-thermal/REPORT.md)
+now completes both full lineages, following the earlier P40 q/E source results.
+The common microscopic cluster fugacity moves all six pooled roots by about.029
+per unit log Q; source-rigidity and a common moving generator remain unresolved
+at the100k-per-size subset precision. A [thermal-clock source quotient](../notes/p40-thermal-clock-source-quotient.md)
+and an actual topology/within-sector split now identify the physical distinctions
+to pursue. Next extract more information from the new source marks using the
+existing high-precision full-production q/E baselines. First U source derivatives,
+first full-chain source residuals and first source decompositions are completed
+analyses; bare C was never substituted for U. This used no new counters or GPU.
 
 The earlier [Phase-E source replay](../results/p154-absolute-cluster/REPORT.md)
 already measured E_top/source at N65/N13020k. Its unresolved result is not

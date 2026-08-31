@@ -8,6 +8,10 @@
 
 ## Evidence and lifecycle contract
 
+**New scientific delivery, `open_pr #267`:** [the original-U source derivative](../results/p40-source-thermal/REPORT.md) and [both complete norm-4 source lineages](../results/norm4-source-thermal/REPORT.md) are now computed. The six-size old-production subset gives `dp0/dlog Q≈.029` for the common black-NN plus white-matching cluster fugacity, with106–182 SE per size. The q2/Jordan source-rigidity extensions have nominal p=.56165/.58952; their generator-drift contrasts are unresolved. The independently seeded P40 parent response has p=.28767. These are original root/slope-normalized U derivatives, not substituted bare C. The full-chain result uses100k archived permutations per N and three dependency groups; it does not inherit full1.9B/1B precision. [Definitions and the source-quotient prediction](../notes/p40-thermal-clock-source-quotient.md); first derivatives, all paired covariance and the topology/within-sector split are saved with the reports.
+
+This update comes from actual local source calculations, with zero new random counters and no server or repeated test suite. Earlier wording below that introduces the U source bridge is the preceding stage, not an instruction to repeat its first measurement.
+
 The [P40 even-given-odd result](../results/p40-even-given-odd/REPORT.md)
 (`56a6267d`, `open_pr #267`) now supplies the missing E_top/source moments.
 At fixed matching mean, raw-source C is positive at110–138 SE on all four

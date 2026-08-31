@@ -6,6 +6,8 @@ This map is the repository's scientific coordinate system. It is not a permissio
 
 ## The five axes
 
+**New source–observer connection, Draft #267:** [the original-U source response](../results/norm4-source-thermal/REPORT.md) is now measured on both full norm-4 lineages. State: the exact three homology ranks plus within-sector cluster/occupancy information. Source: a common microscopic paired-cluster fugacity `s=CB+CW`, distinct from its density coordinate `s/N` and from an assumed Potts/FK source. Observer: root/slope-normalized angular thermal U and its source derivative, with the common affine-K thermal clock exactly removed. Geometry:65→130→260 and85→170→340, retaining the original HNF children. Acquisition:100k old production permutations per N, exact full-K Binomial integration, three dependency groups. The root derivative is about.029 at all six sizes; source-rigidity and common-generator-drift diagnostics remain unresolved. [The source quotient and within-sector split](../notes/p40-thermal-clock-source-quotient.md) provide the next mechanism coordinates; first full-chain source acquisition is complete.
+
 The new [P40 even tangent](../results/p40-even-given-odd/REPORT.md)
 connects source and observer explicitly: absolute-cluster fugacity changes
 rank-1 probability even at fixed matching mean (raw C positive at110–138 SE).
