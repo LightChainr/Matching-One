@@ -1,88 +1,90 @@
-# Next Targets: Fix the Q Path and Resolve the Actual Operator Interface
+# Next Targets: One Finite Transmission Coefficient, Fixed Source Controls
 
 **Updated 2026-08-31.** This is the single attention board, not a permission
 system. Work may proceed in parallel; no Issue is closed or locked.
-Detailed history belongs in [Decisions](DECISION-EXPERIMENTS.md),
+History and definitions remain in [Decisions](DECISION-EXPERIMENTS.md),
 [Status](STATUS.md) and the [scientific ledger](../analysis/research_ledger.yaml).
 
-## What just changed the mechanism space
+## The missing finite interface is now explicit
 
-At the same N25 iid baseline, the [two named Q paths](../results/weak-q-path-comparison/REPORT.md)
-have **opposite original-U derivatives** (`open_pr #267`,
-`e87d5de2d0bc83ac8e5c12af83a337b829c3323b`):
+The [Q=4 trace derivation](../notes/four-leg-trace-denominator-interface.md)
+(`open_pr #267`, `041257b8c63f98c694397604617edbb58f31ef51`) isolates the
+full S4 `[22]` component using three partitions at the **same spatial
+identity colour seam**:
 
-| Fixed root-adjusted log-Q direction at Q=1 | Response |
-|---|---:|
-| Closed source, tied edge eta=log Q | +0.063082681707085 |
-| Rank-projected ordinary site-RC, eta=0 | −0.269828026713487 |
-| Their prescribed local B difference | +0.332910708420572 |
+```text
+Z22=(T+3 D2−4 C3)/6.
+```
 
-The identity is `V_Sstar/2=V_(C_B-r/2)+V_B`, with `V_B=V_Bvac`.
-No extra source was fitted: old complete rational bounds were transformed
-in0.0202seconds, without a root search, enumeration or new samples.
-Both paths retain the same rank projection. This finite result prevents
-equating the tied Q response with the ordinary projected site-RC tangent;
-it does not identify either continuum limit.
+T and D2 belong to the old construction; the temporal three-cycle C3 is
+one additional partition type. No claim is made that their numerical jets
+have already been collected. This signed component is supported on rank1.
+Consequently its unnormalized q/E numerators vanish exactly, but it enters
+the original normalizer through `z22=2 Z22/(T+R)`. The note gives the
+complete four-term root/slope formula for **J22=d_x U**, with a fixed
+component-attribution parameter x. Its value has not been computed.
 
-The [regular endpoint theorem](../notes/weak-q-paths-and-regular-selection.md)
-also removes a specific candidate: `ell P_[2](Q)=0` is a rational identity
-throughout the declared unlabelled one-insertion family. Its regular Q
-derivatives vanish. Thus **regular endpoint Q activation of the four-leg
-field is excluded in that mechanism definition**. A torus trace or a finite
-confluent insertion is different; its actual contribution to U remains
-unestablished, not silently eliminated or installed as a new rescue model.
+On an axis L×L, L≥5, the component itself is demonstrably nonzero:
+`Z22(a)=L(L−3)4^(2L)a^(2L)+...`. This is an exact two-column counting
+argument, not a measured root response. It does not imply J22≠0.
 
-## Default attention: one missing interface, one fixed control
+## Default attention: a specified coefficient, not another descriptor
 
-| Attention | Next result that changes a mechanism | Already available / missing |
+| Attention | Next mechanism-changing output | Definition and consequence |
 |---|---|---|
-| Highest | Express the actual orientation-resolved, thermal-differentiated torus U through the named trace/endpoint/confluent interface. Determine whether a four-leg residue survives with a finite specified coefficient. | The [hypergraph/twist construction](https://github.com/LightChainr/Matching-One/blob/977fea9272c780aea19cc47f8d33324c28a1293e/notes/closed-source-hypergraph-rc-twist-projection.md), `branch_only`, already reconstructs q/E at integer m. The regular endpoint is zero. The map to the actual U matrix element is missing. |
-| Parallel weak-Q decision | Use the declared Q family and B control in a matched-size response comparison, with the correction allowance specified before scoring. | [The exact Q-path identity and conditional scale law](https://github.com/LightChainr/Matching-One/blob/f85e6d6d8c56afcad27ff73dbf0a3578c2157829/notes/closed-source-q-lift-and-thermal-quotient.md), `branch_only`; N25 path separation is now complete. No new cross-size measurements are claimed. |
-| Parallel finite-law theory | Find a controlled finite-coupling/size window for Sstar versus Sdrop=Sstar+r, or an explicit accessibility bound. | [Opposite tails and size formulas](../results/projection-drop-tail/REPORT.md) are complete; N100/N225 remain unmeasured theory. This is not the weak-Q critical derivative. No finite-m point was added this turn. |
+| Highest finite transmission calculation | Evaluate J22 once at m=2 for the original N25 pair (5,0)/(4,3), with each geometry normalized before pooling. | [Fixed interface](../analysis/four_leg_trace_interface.json): exact seam p-jets or rank1 `(K,g,n mod6,c)` counts. A strict nonzero bound rejects complete normalizer-neutrality of this specified component. Zero retains that finite null; neither outcome uniquely identifies a continuum field. |
+| Parallel weak-Q comparison | Keep the named Q path and local B control together in matched-size responses. | Existing N25 tangents are opposite. The conditional regular single-thermal-field target is `L_S→9√3/(16π)`, `L_B→0`, with declared first-derivative corrections. No new size data are claimed. |
+| Parallel fixed-m geometry theory | Bound the oblique geometric translation penalty Δ_k and the restricted-sector odds mismatch d. | These are different quantities: Δ_k controls oblique winding; d controls the pooled denominator. Their sufficient inequalities are pinned below. This is not a request to add coupling-grid points. |
 
-For the named regular single-thermal-field hypothesis, the weak-Q target is
-`L_S -> 9 sqrt(3)/(16 pi)` together with **`L_B -> 0`**, assuming the
-specified critical continuation and controlled first-derivative corrections.
-N25 alone cannot score these limits. A constant shifted slope can also arise
-from a source-activated Jordan partner; constancy alone is not identification.
-The generic sqrt(N) shape remains conditional on an explicitly non-regular
-interface or another justified mechanism, not a surviving regular endpoint.
+The first comparison has a finite model consequence, not an advance claim
+that Q4 colour `[22]` is the continuum four-leg field. Q→1 continuation
+remains a separate mathematical problem. The old `(K,g,q)` histogram lacks
+the required winding/component data; it must not be silently used as a
+replacement. Geometric order-25 translation twists are also distinct from
+the colour three-cycle above.
 
-An actual finite trace/confluent definition would make that branch a
-specified competitor. Without it, adding a fitted sqrt(N) term only gives
-a shape fit. The next work is this missing mathematical map, not another
-generic certificate catalogue or a more favorable source coefficient.
+## Completed controls and windows: do not assign them again
 
-## Completed decisions remain completed
+- [Named Q paths](../results/weak-q-path-comparison/REPORT.md): tied-edge
+  log-Q response **+.063082681707085**, projected ordinary site-RC
+  **−.269828026713487**, prescribed local B difference **+.332910708420572**.
+  Same exact N25 population; no new independent evidence.
+- [Regular endpoint selection](../notes/weak-q-paths-and-regular-selection.md):
+  `ell P_[2](Q)=0` throughout the regular unlabelled one-insertion family,
+  including its regular Q derivatives. The finite trace interface above
+  is now derived; it does not undo this endpoint zero.
+- [Uniform N25 sign window](https://github.com/LightChainr/Matching-One/blob/85d5e44ba8aed471470373f972c670dc7c82bdcf/notes/closed-source-uniform-projection-tail.md),
+  `branch_only`: **all real m≥64 satisfy U_star<0<U_drop** at each law's
+  own original pooled root, with uniform rational remainders. This task is
+  complete. Minimum threshold, crossover locations and sampling accessibility
+  were not determined.
+- [Axis fixed-m winding](https://github.com/LightChainr/Matching-One/blob/575f35ccce850aff3e3120557a2f18475c2e5936/notes/closed-source-fixed-coupling-peierls.md),
+  `branch_only`: Sstar, integer m≥256, 4|L, L≥16, uniformly in activity.
+  [Poisson joint limit](https://github.com/LightChainr/Matching-One/blob/2690f665bc8029cb2370d3f1efcef5eb2853705c/notes/closed-source-poisson-double-scaling.md)
+  also controls the actual oblique pooled U when N/m²→ζ and systole grows.
+  It is not a fixed-m oblique theorem.
+- The remaining fixed-m pair problem is explicit:
+  [twist penalty](https://github.com/LightChainr/Matching-One/blob/70260cc3bb979fc4aa6e0496a71a065f575e9338/notes/closed-source-oblique-twist-comparison.md)
+  `limsup Δ_k/k<7τ∞`, plus
+  [sector odds](https://github.com/LightChainr/Matching-One/blob/c9d41971f972ceafd7b585c446e1cd93e2d3ebad/notes/closed-source-pooled-sector-odds-bound.md)
+  `d≤γL+o(L), γ<2τ` when winding is `e^(−τL+o(L))`.
+  Both sources are `branch_only`; pressure agreement alone does not suffice.
 
-- **P154:** the independent165M primary rejects B/C for the fixed lag1
-  policy; net responses meet its declared weak band. M10/M11 are dependent
-  secondary interpretations, neither identifies a clock or rescues B/C.
-- **P334:** both independent interventions delivered their distinct
-  model decisions. The normal-center estimand and contact-residual loading
-  are not pooled; the latter does not establish a new half-amplitude law.
-- **F4:** the independent80M block remains inconclusive at its fixed
-  budget; small-N exact results do not overrule it or imply automatic top-up.
-- **Finite source:** cycle/rank subtraction, one-hole R/Xi, opposing
-  reweight/jump contributions, turnover, and both strong-coupling size laws
-  are delivered. Execution9057325d and overviewe1b96895 are the same defect
-  result with `U_st=−Xi`, not independent votes or missing cross moments.
-- **Tools already used:** canonical E_top/Phase D, first #370 production
-  analysis, K1/K2 and the completed archive decompositions are inputs;
-  their first execution is not a new assignment.
+## Independent production decisions remain in force
 
-See [the independent decision handoff](../notes/independent-decisions-final-20260831.md)
-and [the decision register](DECISION-EXPERIMENTS.md) for numbers and sources.
-Complex C3, Gaussian/annulus order, triangular invariants, boundary Q and
-connectivity/defect radical remain open parallel exploration. Attention
-changes are not route bans or a demand for sequential approval.
+P154's165M fixed lag1 block rejects B/C and meets the net weak band; that
+source leaves the main-H4 attention allocation. P334's two fresh interventions
+eliminate their specified models with distinct estimands. F4's80M block
+remains inconclusive at its fixed budget. None is overturned by the finite
+trace theorem or by repeatedly reinterpreting old data. See the
+[decision handoff](../notes/independent-decisions-final-20260831.md).
+Canonical E_top, first #370 production, K1/K2, defect reweight/jump and the
+strong-coupling tails are delivered inputs, not new first-run assignments.
 
-## Execution and history
-
-All ten Huawei environments are user-authorized through the updated Skill
-with explicit machine selection and isolated run directories. This turn
-used local saved-bound algebra only; there was no cloud action, coupling
-grid extension or scientific test suite. Current server availability was
-not rechecked. Coordination stays in [the repository handoff](TEAM-COORDINATION.md).
-Draft PR267 remains unmerged. The [preceding longer queue](https://github.com/LightChainr/Matching-One/blob/f405719264c896aa873dd4aae7292795f544ba99/docs/NEXT-TARGETS.md)
-preserves historical detail; it is not a second current task list.
+Complex C3, mixed geometry, triangular invariants, boundary Q and
+connectivity/defect radical remain parallel exploration. This turn added
+a derivation, not simulation or a test campaign. All ten Huawei machines
+are authorized through the updated Skill; no cloud action or live availability
+check was needed. Coordination stays [in the repo](TEAM-COORDINATION.md).
+Draft PR267 remains unmerged. [The older long queue](https://github.com/LightChainr/Matching-One/blob/f405719264c896aa873dd4aae7292795f544ba99/docs/NEXT-TARGETS.md)
+is historical, not a second current priority list.

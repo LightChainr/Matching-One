@@ -4,32 +4,32 @@
 
 This map is the repository's scientific coordinate system. It is not a permission system: exact work, reanalysis, pilots, production and independent theory may proceed in parallel. Priority moves attention; it does not lock, close, veto or demote a task. `STATUS` owns claim/lifecycle language, `ROADMAP` preserves rationale, and [NEXT-TARGETS](NEXT-TARGETS.md) owns the single ranked decision queue.
 
-**Current frontier: the Q path changes the response sign, and a regular
-endpoint zero survives every Q derivative.** The [completed comparison](../results/weak-q-path-comparison/REPORT.md),
-`open_pr #267` at `e87d5de2d0bc83ac8e5c12af83a337b829c3323b`, gives
-`J_tied=+.06308268170708457`, `J_site=−.2698280267134874`, and
-`V_B=+.33291070842057197`. Source: two named Q paths, both retaining the
-same rank projection, distinguished only by tied local-edge coupling.
-Observer: original pooled-root/slope U. Geometry: the same N25 iid pair.
-Acquisition:0.020239-second reduction of saved exact bounds, no new roots,
-enumeration, samples or finite-coupling point; not independent evidence.
+**Current frontier: a rank1-only colour trace reaches the original readout
+through normalization.** The [finite interface](../notes/four-leg-trace-denominator-interface.md),
+`open_pr #267` at `041257b8c63f98c694397604617edbb58f31ef51`, fixes
+`Z22=(T+3D2−4C3)/6` at m=2/Q=4, using one spatial colour sector.
+State: rank1 essential-component count c and temporal deck winding n mod6.
+Source: a fixed signed central-component attribution, not a fitted positive
+source. Observer: original q/E have zero raw [22] numerators, while
+`z22=2Z22/(T+R)` enters the full four-term root/slope response J22.
+Geometry: N25 Gaussian(5,0)/(4,3). Acquisition next: compatible seam p-jets
+or the specified rank1 marks absent from old `(K,g,q)` bins. **J22 is not
+yet evaluated**; its nonzero activity polynomial does not fix the root value.
 
-The [endpoint identity](../notes/weak-q-paths-and-regular-selection.md),
-`f0e9159f4f8a2f23b9e736e7e02b425e593336f2`, rules out regular-endpoint
-four-leg `sqrt(N)` Q activation because `ell P_[2]=0` throughout Q.
-It does not identify actual torus U with that endpoint or remove trace,
-marked and finite-confluence contributions. The next concrete mechanism
-question is their explicit matrix element into U, using execution's
-`branch_only` [Q-family definition, `f85e6d6d`](https://github.com/LightChainr/Matching-One/blob/f85e6d6d8c56afcad27ff73dbf0a3578c2157829/notes/closed-source-q-lift-and-thermal-quotient.md)
-and [hypergraph/twist realization, `977fea92`](https://github.com/LightChainr/Matching-One/blob/977fea9272c780aea19cc47f8d33324c28a1293e/notes/closed-source-hypergraph-rc-twist-projection.md).
-Any later matched-size weak-Q comparison retains the fixed B control.
+The [weak-Q path comparison](../results/weak-q-path-comparison/REPORT.md),
+`e87d5de2d0bc83ac8e5c12af83a337b829c3323b`, retains the fixed B control:
+`J_tied=+.06308268170708457`, `J_site=−.2698280267134874`,
+`V_B=+.33291070842057197`. The [regular-endpoint zero](../notes/weak-q-paths-and-regular-selection.md)
+still excludes activation within that endpoint family. The new trace
+interface, based on the `branch_only` [hypergraph/twist realization, `977fea92`](https://github.com/LightChainr/Matching-One/blob/977fea9272c780aea19cc47f8d33324c28a1293e/notes/closed-source-hypergraph-rc-twist-projection.md),
+is finite Q=4; it is neither a Q=1 derivative nor a unique continuum field.
 
 The independent #154/P334 decisions and one-hole split remain complete;
 [Decision Experiments](DECISION-EXPERIMENTS.md) owns their unchanged states.
-The Sstar/Sdrop opposite strong-coupling tails remain a parallel fixed-law
-comparison with an unsolved finite-t/size window, not the weak-Q test.
-Discovery-archive reuse is not independent confirmation. Other lines remain
-open without Issue locks, automatic production or source-feature expansion.
+The Sstar/Sdrop N25 finite-coupling half-line is now complete as well:
+`Ustar<0<Udrop` for all real m≥64. Separate fixed-m and joint-limit results
+are mapped below; neither changes the primary next output, the defined J22.
+Other lines remain open without Issue locks or automatic feature expansion.
 
 **Measured microscopic-to-global separation, Draft #267 `5483aa82047df34c2c9508d4930b6e20961ed9ca`:**
 [the exact cycle/rank split](../results/decimation-cycle-rank/REPORT.md) gives
@@ -78,19 +78,20 @@ on each law's own root. Geometry: axis L×L plus same-area companion with
 ell1≥L+2, L≥5, Delta>0. Acquisition: 36.6-millisecond exact reuse of N25
 integer `(K,g,q)` histograms, no enumeration, randomness or root search.
 
-The [proof and size table](../notes/topological-projection-reverses-global-u-tail.md),
-`944c364c36cde17d6a0bae1c7d7b77db84e680a3`, derives
-`U_drop/A_N ~ +(L−2) lambda^(2L−2+2/L)/Delta` from execution's `branch_only`
-[minimal-layer classification, `762dbaf4`](https://github.com/LightChainr/Matching-One/blob/762dbaf4c3afd9925f7e39b27220274312db4dc4/notes/closed-source-square-family-leading-law.md).
-Its original law is `U_star/A_N ~ −(L²−6L+6) lambda^(2L+1)/Delta`.
-The `branch_only` [local-colour representation, `85fd4923`](https://github.com/LightChainr/Matching-One/blob/85fd492312b597b3fa102ea913e4bcc7aeae2acf/notes/closed-source-local-colour-gas.md)
-identifies the sole change as deleting `m^(−r)`: the bulk pressure-density
-discrepancy is at most2t/N, yet unequal stripe-width costs remove the original
-leading thermal cancellation. N100/N225 are theoretical, unmeasured rows.
-Fixed-N large-t signs do not give an arbitrary finite-t sign or commute the
-size/coupling limits. That finite-coupling/size window remains a parallel
-question with both microscopic laws held fixed; no new strong-m point is
-requested ahead of the weak-Q trace/confluent interface.
+The [proof and size table](../notes/topological-projection-reverses-global-u-tail.md)
+give unmeasured N100/N225 predictions. Execution's later `branch_only`
+[uniform theorem, `85d5e44b`](https://github.com/LightChainr/Matching-One/blob/85d5e44ba8aed471470373f972c670dc7c82bdcf/notes/closed-source-uniform-projection-tail.md)
+now establishes `Ustar<0<Udrop` on the whole N25 real-m≥64 half-line.
+This is a completed finite-coupling comparison, not a new size measurement.
+At `branch_only` snapshot `2690f665bc8029cb2370d3f1efcef5eb2853705c`,
+[axis Peierls](https://github.com/LightChainr/Matching-One/blob/2690f665bc8029cb2370d3f1efcef5eb2853705c/notes/closed-source-fixed-coupling-peierls.md)
+proves fixed-integer-m≥256 winding suppression for 4|L, L≥16, uniformly
+in activity. [Poisson double-scaling](https://github.com/LightChainr/Matching-One/blob/2690f665bc8029cb2370d3f1efcef5eb2853705c/notes/closed-source-poisson-double-scaling.md)
+closes original pooled-U superpolynomial suppression, including oblique
+geometry, only with growing systole and `N/m²→ζ<∞`. For fixed m the
+remaining oblique quantities are [order-25 twist penalty Δk](https://github.com/LightChainr/Matching-One/blob/2690f665bc8029cb2370d3f1efcef5eb2853705c/notes/closed-source-oblique-twist-comparison.md)
+and [restricted-sector odds mismatch d](https://github.com/LightChainr/Matching-One/blob/2690f665bc8029cb2370d3f1efcef5eb2853705c/notes/closed-source-pooled-sector-odds-bound.md).
+These different limit orders are not interchangeable or independent votes.
 
 **Earlier finite-coupling turnover is resolved:** `branch_only`
 [`a70eeff0:REPORT.md`](https://github.com/LightChainr/Matching-One/blob/a70eeff09f51ce2fa0fea5ae637e9191efbf2e1f/results/p337-closed-source-finite-coupling/score/REPORT.md)

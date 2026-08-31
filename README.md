@@ -10,25 +10,28 @@ The repository is organized to expose the next mechanism-changing observation, n
 
 ## Start here
 
-**Current result:** [two named Q paths give opposite original-U tangents](results/weak-q-path-comparison/REPORT.md),
-`open_pr #267` at `e87d5de2d0bc83ac8e5c12af83a337b829c3323b`. On the same
-N25 iid baseline, the tied-edge Q path gives `+.06308268170708457`, while
-ordinary site-RC **retaining the rank projection** gives `−.2698280267134874`.
-Their fixed local-edge control is `+.33291070842057197`. A 0.020239-second
-transformation of saved exact bounds adds no root search, enumeration or samples.
-The [regular-endpoint proof](notes/weak-q-paths-and-regular-selection.md)
-also excludes Q-activated four-leg `sqrt(N)` response **within that precise
-one-insertion endpoint family**: its overlap vanishes throughout regular Q.
-Whether actual torus U has only that endpoint interface remains unproved.
-Next: resolve its trace/marked/finite-confluence matrix element using the
-existing `branch_only` [Q family, `f85e6d6d`](https://github.com/LightChainr/Matching-One/blob/f85e6d6d8c56afcad27ff73dbf0a3578c2157829/notes/closed-source-q-lift-and-thermal-quotient.md)
-and [hypergraph/twist readout, `977fea92`](https://github.com/LightChainr/Matching-One/blob/977fea9272c780aea19cc47f8d33324c28a1293e/notes/closed-source-hypergraph-rc-twist-projection.md).
+**Current result:** [a definite finite colour trace has an explicit interface
+to original U](notes/four-leg-trace-denominator-interface.md), `open_pr #267`
+at `041257b8c63f98c694397604617edbb58f31ef51`. At m=2/Q=4,
+`Z22=(T+3D2−4C3)/6` is supported only on rank1: its raw q/E numerators
+vanish, but `z22=2Z22/(T+R)` enters their normalization. The full four-term
+moving-root/slope formula specifies **J22**, whose value remains uncomputed.
+Next: evaluate this fixed coefficient once on N25 Gaussian(5,0)/(4,3),
+using seam p-jets or the missing rank1 `(n mod6,c)` marks. The old `(K,g,q)`
+histogram alone cannot supply them. This is finite Q=4 sector attribution,
+not a Q=1 derivative or a uniquely identified continuum four-leg field.
+
+The [weak-Q path sign separation](results/weak-q-path-comparison/REPORT.md)
+and regular-endpoint zero remain intact. Separately, execution's `branch_only`
+[uniform bound, `85d5e44b`](https://github.com/LightChainr/Matching-One/blob/85d5e44ba8aed471470373f972c670dc7c82bdcf/notes/closed-source-uniform-projection-tail.md)
+now proves **N25 `Ustar<0<Udrop` for every real m≥64**. That finite-coupling
+half-line is complete; another m point is not pending.
 
 | Mechanism question | Delivered decision | Attention now |
 |---|---|---|
-| Does the tied source measure the ordinary site-RC Q tangent? | No at N25: the fixed local B control reverses its sign. Both paths retain the same rank projection and follow their own perturbed pooled root. | Keep B in any matched-size weak-Q comparison; no universality or field assignment follows from one size. |
-| Can a regular ordinary endpoint activate four-leg response by differentiating Q? | No for the specified endpoint: the rational identity `ell P_[2]=0` makes every regular Q derivative zero. | Determine whether the actual torus-U trace/marked/confluent interface supplies a different, explicitly normalized contribution; no blanket four-leg exclusion. |
-| Is deleting the winding projection harmless for global U? | No: the delivered Sstar/Sdrop strong-coupling tails have opposite signs. | Parallel finite-coupling/size question, distinct from weak Q; N100/N225 remain theory. No new coupling point was computed this turn. |
+| Does the finite [22] trace reach original U? | The normalizer-mediated interface is derived; raw q/E numerators vanish, but this does not force J22=0. | Evaluate the defined N25/m=2 J22 once; strict nonzero bounds reject only this finite normalizer-neutrality model. |
+| Does the tied source measure the ordinary site-RC Q tangent? | No at N25: tied Q `+.06308268` versus rank-projected site-RC `−.26982803`, with B control `+.33291071`. | Keep B in matched-size weak-Q work. Regular-endpoint Q activation remains excluded in that endpoint family, not in every torus trace. |
+| Is the strong-coupling comparison still waiting for a finite-m witness? | No: the entire N25 real-m≥64 half-line has opposite signs. Growing-systole `N/m²→ζ<∞` also suppresses pooled U superpolynomially. | The distinct fixed-m oblique problem retains the order-25 twist penalty and sector-odds mismatch, not an unknown first finite-m window. |
 | Can a weighted rank jump alone explain the one-hole response? | No: `Xi_reweight=+4.550327123237` offsets jump `−15.306045530801`, giving total `−10.755718407564073`. Source-independent gain also remains excluded by `R=+27.766563581230237`; hard-endpoint closure survives. | Preserve the full normalized defect operator; reweighting contains both rank types, not a fitted extra source or population share. |
 | Is Sstar's global response only its explicit unit q term? | No on the fixed N25 pair: `2V_beta_null=+.07291782829951701`, with zero excluded by exact bounds. | Keep the fixed-coefficient exclusion distinct from arbitrary fitted rank sources and within-K/rank residual claims. |
 | Does the N25 plaquette result establish larger-N F4 transmission? | No: the independent80M block at N65/85/130/170 is `NOT_EXCLUDED`, with all four intervals still inconclusive against±.5. | Preserve `INCONCLUSIVE_STOP_FIXED_BLOCK_WITHOUT_TOP_UP`; no automatic extra sampling. |
@@ -121,8 +124,16 @@ no fitted rank coefficient is introduced. The [colour-gas identity,
 `85fd4923`, `branch_only`](https://github.com/LightChainr/Matching-One/blob/85fd492312b597b3fa102ea913e4bcc7aeae2acf/notes/closed-source-local-colour-gas.md)
 bounds the pressure-density difference by2t/N, but that fixed-t bound
 does not preserve this topological observer. The [proof and size table](notes/topological-projection-reverses-global-u-tail.md)
-give N100/N225 predictions without new measurements. Strong-coupling tails
-take fixed N first; finite-t sign thresholds and a useful size window remain open.
+give N100/N225 predictions without new measurements. The later `branch_only`
+[uniform theorem, `85d5e44b`](https://github.com/LightChainr/Matching-One/blob/85d5e44ba8aed471470373f972c670dc7c82bdcf/notes/closed-source-uniform-projection-tail.md)
+proves opposite signs for all real m≥64 at N25, without locating the earliest
+crossover. At execution snapshot `2690f665bc8029cb2370d3f1efcef5eb2853705c`,
+the `branch_only` [Poisson theorem](https://github.com/LightChainr/Matching-One/blob/2690f665bc8029cb2370d3f1efcef5eb2853705c/notes/closed-source-poisson-double-scaling.md)
+also closes original pooled-U suppression, including oblique quotients,
+when the systole grows and `N/m²→ζ<∞`. This joint limit is not fixed m.
+The fixed-m oblique problem is reduced to an [order-25 twist penalty](https://github.com/LightChainr/Matching-One/blob/2690f665bc8029cb2370d3f1efcef5eb2853705c/notes/closed-source-oblique-twist-comparison.md)
+and [restricted-sector odds mismatch](https://github.com/LightChainr/Matching-One/blob/2690f665bc8029cb2370d3f1efcef5eb2853705c/notes/closed-source-pooled-sector-odds-bound.md);
+neither is controlled by pressure equality alone.
 
 **Newest independent decision, `open_pr #509`, `f4999e29`:** the fixed lag1
 conditional policy has net original-U responses+.043470±.043631 at N85 and
@@ -192,7 +203,7 @@ The [P418 per-sample archive reanalysis](results/p418-normalized-archive/REPORT.
 
 The 2026-08-31 review read **all 464 Issue/PR bodies, 1,354 discussion comments and seven reviews**. It recovered results that old opening bodies and earlier overview updates had left as “next”: real E_top and #370 production analysis, P218 coalescence, P155 local thermal-null, P40 motif covariance, P255 ordered-filtration proxy, P334 trigger-graph structure, F5 source separation, N112 E_top C3 and W5 periodic gluing. [The context crosswalk](docs/REPOSITORY-CONTEXT.md) distinguishes completed positive, completed inconclusive, and genuinely unrun work. It is a dated recovery, not a recurring audit prerequisite.
 
-**Highest attention is the explicit trace/marked/finite-confluence interface into original U.** The two named weak-Q tangents are now separated, and regular-endpoint Q activation is excluded within its stated mechanism. Establish a different finite interface before treating a `sqrt(N)` tangent as an active explanation. Matched-size weak-Q work retains the fixed B control; the Sstar/Sdrop finite-coupling window remains parallel and unsolved. P154/P334/F4 decisions stay unchanged. [Next Targets](docs/NEXT-TARGETS.md) owns the queue; no new strong-m point or production follows automatically.
+**Highest attention is the now-defined N25/m=2 J22 calculation.** Its normalizer-mediated interface is complete; its root value and sign are not. A finite Q=4 result will not itself identify a Q=1 field or undo the regular-endpoint zero. The N25 m≥64 sign half-line is complete; fixed-m oblique twist stability and sector-odds control remain parallel. P154/P334/F4 decisions stay unchanged. [Next Targets](docs/NEXT-TARGETS.md) owns the queue; no new strong-m point or arbitrary observable follows automatically.
 
 Several positive results now sharpen this choice. P337's F5 even rows separate W_line/JS response vectors at N325/N425 (`chi2/df=149.93/4,246.93/4`), although [P439's matching loading](results/p439-direct-plateau-transport/REPORT.md) remains unresolved. P267's square-bond N112 E_top C3 response is measured and not collinear with the primitive-line readout; it is not a square-site field identification. P437 measures fixed-support high-order topology at 14.97 SE; the earlier noisy estimator is not a general impossibility result. These remain explicitly unmerged source results.
 

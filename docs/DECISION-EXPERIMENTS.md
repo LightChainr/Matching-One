@@ -5,7 +5,38 @@
 研究路线失败。[最终科学交接](../notes/independent-decisions-final-20260831.md)
 给出定义、数据独立性和精确来源。
 
-## 最新已完成：弱 Q 路径异号，正则端点的 Q 激活被排除
+## 最新已完成：Q4 有限归一化传输接口，下一判别只剩指定 J22
+
+[041257b8 的解析推导](../notes/four-leg-trace-denominator-interface.md)
+在固定m=2、同一空间恒等颜色缝给出`Z22=(T+3D2−4C3)/6`，精确投影
+完整S4的`[22]`通道。其逐构型支撑仅在rank1，所以原q/E未归一化分子
+严格为零；但原分母中的份额为`z22=2Z22/(T+R)`，通过完整四项root/slope
+公式传入`J22=d_x U`。x是固定分量归因，不是拟合的新颜色数或局部正源。
+
+轴L≥5时`Z22(a)=L(L−3)4^(2L)a^(2L)+...`，由两个不相邻竖直列精确
+计数得到；它证明trace分量非零，**不证明matching根上的J22非零**。
+下一计算固定为N25原方向对、m=2的J22：严格非零界将排除这个有限通道的
+complete normalizer-neutrality；零则保留该有限null。需要三缝p-jets或
+rank1的`(K,g,n mod6,c)`信息，旧`(K,g,q)`档案不能替代。
+定义见[机器接口](../analysis/four_leg_trace_interface.json)。本轮没有新枚举、
+随机生产或测试。Q4颜色表示不等于唯一连续四腿场，也不自动给出Q→1延拓。
+
+## 已完成：N25 的统一有限 m 符号区间
+
+[85d5e44b 的统一余项](https://github.com/LightChainr/Matching-One/blob/85d5e44ba8aed471470373f972c670dc7c82bdcf/notes/closed-source-uniform-projection-tail.md)
+和[有理评分](https://github.com/LightChainr/Matching-One/blob/85d5e44ba8aed471470373f972c670dc7c82bdcf/results/p337-uniform-projection-tail/score.json)
+已对所有实m≥64证明各律自身原pooled根上`Ustar<0<Udrop`。
+归一化后有向外取整界`−.618102m^−11<Ustar/A<−.454124m^−11`及
+`1.376734m^(−42/5)<Udrop/A<1.844309m^(−42/5)`。
+计算复用同一N25整数总体，耗时0.444821秒，零枚举、零MC、零耦合点求值；
+不是新独立证据。最小阈值和可采样幅度仍未知，但“有限m窗口待建立”已过时。
+
+执行的轴fixed-m winding和轴/斜Poisson同步极限亦已完成，后者使实际pooled U
+超多项式小；它们适用不同极限。fixed-m斜几何仍需几何order25的twist penalty
+及rank2/rank0 odds mismatch两个界，见[统一注意力表](NEXT-TARGETS.md)。
+这些执行来源均为branch_only；没有因此合入代码或启动新的生产。
+
+## 已完成：弱 Q 路径异号，正则端点的 Q 激活被排除
 
 [e87d5de2 的精确结果](../results/weak-q-path-comparison/REPORT.md)在同一N25
 基线上得到闭合源Q路径响应+0.063082681707085、保留rank投影的普通site-RC
@@ -16,9 +47,9 @@ Q路径响应−0.269828026713487。其差是已指定的局部B控制+0.3329107
 
 [整族选择推导](../notes/weak-q-paths-and-regular-selection.md)给出有理恒等式
 `ell P_[2](Q)=0`，所以此正则未标记一插入端点的所有正则Q导数都为零。
-排除的是这个机制定义下的四腿sqrt(N)激活；实际torus U的trace/有限confluent
-接口尚未建立，不能把它等同于端点，也不能把缺少的接口自动算成第四个模型。
-下一明确产出是这个矩阵元的有限定义或归零证明，见[统一注意力表](NEXT-TARGETS.md)。
+排除的是这个机制定义下的四腿sqrt(N)激活。上面的Q4 trace/归一化接口
+现已建立；J22仍待计算，Q→1及有限confluent延拓仍需分别定义。
+不能把这些对象等同于正则端点或自动算成一个已经识别的替代模型。
 
 ## 已完成：两套固定微观律给出相反的 U 强耦合尾
 
@@ -33,7 +64,8 @@ pressure-density差不超过2t/N；这不保证有限拓扑观察者相同。
 `U_drop/A~+(L−2)lambda^(2L−2+2/L)/Delta`；执行的原模型为
 `U_star/A~−(L²−6L+6)lambda^(2L+1)/Delta`。
 N100/N225为理论预测，N25新首项只使用旧整数直方图，耗时0.0366秒。
-渐近符号已经分开；有限耦合的可判别窗口与统一尺寸余项仍未给出。
+渐近符号已经分开；后续85d5e44b已给出N25的m≥64统一区间。
+统一尺寸余项和可采样幅度不由这个固定N窗口确定。
 
 ## 已完成：循环/rank分离与一孔传输
 
@@ -63,8 +95,9 @@ baseline重新加权贡献 **+4.550327123237**，加权跳变 **−15.3060455308
 固定N强耦合的双态与rank1耗尽提供U→0的理论解释；完整证明提交晚于score，
 结构预测已在b70dc4bd冻结时提出。随后e3c8d3a的精确负尾和762dbaf4
 尺寸律进一步保证至少一次后续过零、负谷和从负侧回零；不定位或声称唯一。
-跨尺寸首项已给出，下一未解量是两个固定律的受控有限耦合判别窗口，
-详见[Next Targets](NEXT-TARGETS.md)，不自动增加峰附近采样点。
+跨尺寸首项及N25的m≥64窗口已给出，下一fixed-m斜几何问题已缩成
+twist penalty与sector odds，详见[Next Targets](NEXT-TARGETS.md)。
+不自动增加峰附近采样点。
 
 ## 新独立F4块：80M已结束，未分辨
 

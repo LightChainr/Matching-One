@@ -1,9 +1,24 @@
-version: 44
+version: 45
 updated: 2026-08-31
 latest_scientific_handoff:
   entry: docs/TEAM-COORDINATION.md
-  local_result_commit: e87d5de2d0bc83ac8e5c12af83a337b829c3323b
-  local_result_report: results/weak-q-path-comparison/REPORT.md
+  local_result_commit: 041257b8c63f98c694397604617edbb58f31ef51
+  local_result_report: notes/four-leg-trace-denominator-interface.md
+  local_result_kind: pure_theory_finite_Q4_normalizer_interface_J22_not_evaluated
+  local_definition: analysis/four_leg_trace_interface.json
+  previous_weak_Q_result_commit: e87d5de2d0bc83ac8e5c12af83a337b829c3323b
+  previous_weak_Q_result_report: results/weak-q-path-comparison/REPORT.md
+  current_execution_head: 2690f665bc8029cb2370d3f1efcef5eb2853705c
+  current_execution_branch_prs: []
+  uniform_sign_window_commit: 85d5e44ba8aed471470373f972c670dc7c82bdcf
+  uniform_sign_window_report: notes/closed-source-uniform-projection-tail.md
+  uniform_sign_window_result: results/p337-uniform-projection-tail/score.json
+  uniform_sign_window_scope: fixed_N25_every_real_m_ge64_opposite_original_U_signs_same_old_histograms_no_independent_data
+  fixed_m_axis_proof_commit: 575f35ccce850aff3e3120557a2f18475c2e5936
+  poisson_joint_limit_proof_commit: a4a565963e97176f3c2ff98d626d434af2cf7ee2
+  pooled_odds_proof_commit: c9d41971f972ceafd7b585c446e1cd93e2d3ebad
+  oblique_twist_reduction_commit: 70260cc3bb979fc4aa6e0496a71a065f575e9338
+  remaining_fixed_m_theory: oblique_order25_translation_twist_penalty_and_restricted_rank2_rank0_sector_odds_not_first_finite_N_window
   fixed_Q_lift_commit: f85e6d6d8c56afcad27ff73dbf0a3578c2157829
   fixed_Q_lift_report: notes/closed-source-q-lift-and-thermal-quotient.md
   projected_size_law_commit: 85fd492312b597b3fa102ea913e4bcc7aeae2acf
@@ -16,7 +31,7 @@ latest_scientific_handoff:
   latest_defect_operator_commit: bc17b81d502fb1ca3323f5c20f63c544bb31602d
   latest_closed_source_result_commit: ec01768f520e85f1acfd9d3fde9bcf855477254e
   latest_independent_F4_result_commit: 25ca3635ea64655923c32adee4b62d683579cdcd
-  local_theory_note: notes/weak-q-paths-and-regular-selection.md
+  local_theory_note: notes/four-leg-trace-denominator-interface.md
   local_source_dictionary: analysis/decimation_source_dictionary.json
   local_budget_report: results/p154-clock-transmission-budget/REPORT.md
   local_budget_scope: historical_fixed_clock_candidate_not_current_decimation_budget
@@ -43,8 +58,8 @@ latest_scientific_handoff:
   current_secondary_theory_commit: 83f3eba88d7f1290704f82610c28669dc5e12f3c
   current_secondary_result_commit: 612df8ec1cbe3be3938ee2e1f6183a1aefc6510b
   current_secondary_result_report: notes/p154-clock-line-secondary-result.md
-  current_synthesis_commit: e87d5de2d0bc83ac8e5c12af83a337b829c3323b
-  current_synthesis_report: results/weak-q-path-comparison/REPORT.md
+  current_synthesis_commit: 041257b8c63f98c694397604617edbb58f31ef51
+  current_synthesis_report: notes/four-leg-trace-denominator-interface.md
   preceding_synthesis_commit: 95d5d662afcef2d9d4b5167f82612a70cb4e83c7
   preceding_synthesis_report: notes/independent-decisions-final-20260831.md
   latest_external_reports: [experiments/p154-prospective-transmission-20260831/REPORT.md, experiments/p334-prospective-intervention-20260831/REPORT.md]
@@ -52,7 +67,7 @@ latest_scientific_handoff:
   decision_sheet: docs/DECISION-EXPERIMENTS.md
   decision_contract: analysis/prospective_mechanism_decisions.yaml
   execution_freeze_report: notes/p334-independent-intervention-freeze.md
-  boundary: exact_unit_rank_alias_and_single_defect_gain_exclusions_not_continuum_identity_F4_80M_inconclusive_and_previous_independent_decisions_unchanged_no_main_integration
+  boundary: finite_Q4_trace_theory_not_numerical_J22_or_Q1_continuation_uniform_N25_half_line_not_uniform_size_sign_F4_and_prior_independent_decisions_unchanged_no_main_integration
 purpose: >
   Lightweight navigation/provenance index. Registry conflicts never block
   science; claim strength lives in STATUS and priority lives in NEXT-TARGETS.
@@ -326,6 +341,83 @@ channel_semantics:
   required_fields: [topology_channel, combination, probability_coordinate, orientation_order, normalization, quantity]
 
 registered_reanalyses:
+  - id: PR267_FOUR_LEG_TRACE_INTERFACE
+    integration_status: open_pr
+    pr: 267
+    branch: research/navigation-priority-refresh-20260829
+    commit: 041257b8c63f98c694397604617edbb58f31ef51
+    definition_commit: 041257b8c63f98c694397604617edbb58f31ef51
+    status: exact_finite_Q4_normalizer_interface_derived_J22_not_yet_evaluated
+    acquisition: exact_construction
+    artifact_kind: mathematical_proof_and_fixed_response_definition_not_numerical_production
+    outputs: [notes/four-leg-trace-denominator-interface.md, analysis/four_leg_trace_interface.json]
+    dependency_groups: []
+    baseline_dependency_groups: [decimation-N25-exact-configuration-pair]
+    result_summary: Z22_equals_Tplus3D2minus4C3_over6_rank1_only_raw_q_E_numerators_zero_z22_equals2Z22_over_TplusR_transports_through_four_term_original_U_J22
+    response_value: null
+    next_output: fixed_N25_m2_pair_J22_exact_enclosure_from_compatible_seam_p_jets_or_rank1_temporal_winding_mod6_and_component_count
+    boundary: signed_character_component_not_population_share_not_Q1_derivative_or_unique_continuum_field_nonzero_trace_polynomial_does_not_prove_nonzero_root_J22
+  - id: P337_UNIFORM_PROJECTION_TAIL
+    integration_status: branch_only
+    branch: analysis/p334-paired-clock-loading-20260831
+    commit: 85d5e44ba8aed471470373f972c670dc7c82bdcf
+    definition_commit: 621ac9822b2f54f8759325c61b889019f5bab18d
+    receipt_code_commit: 9f3f7a57cfb49339de323af6b861493cfd06c510
+    status: completed_fixed_N25_uniform_original_Ustar_negative_Udrop_positive_all_real_m_ge64
+    acquisition: existing_data_reuse
+    artifact_kind: exact_rational_whole_interval_bound_not_coupling_grid_or_new_population
+    outputs: [notes/closed-source-uniform-projection-tail.md, results/p337-uniform-projection-tail/score.json]
+    scripts: [scripts/p337_uniform_projection_tail.py]
+    contracts: [analysis/p337_uniform_projection_tail_contract.json]
+    dependency_groups: [decimation-N25-exact-configuration-pair]
+    elapsed_seconds: 0.4448206248925999
+    result_summary: strict_signs_with_uniform_star_lambda13_remainder_at_most378_and_drop_lambda44over5_remainder_at_most1p322966
+    boundary: same_locked_histogram_zero_new_enumerations_samples_or_coupling_points_not_minimum_m_practical_sampling_window_or_uniform_size_sign
+  - id: P337_FIXED_COUPLING_AXIS_PEIERLS
+    integration_status: branch_only
+    branch: analysis/p334-paired-clock-loading-20260831
+    commit: 575f35ccce850aff3e3120557a2f18475c2e5936
+    status: completed_activity_uniform_Sstar_axis_rank1_exponential_bound
+    acquisition: exact_construction
+    artifact_kind: mathematical_proof_no_numerical_production
+    outputs: [notes/closed-source-fixed-coupling-peierls.md]
+    dependency_groups: []
+    result_summary: fixed_integer_m_ge256_axis_L_ge16_divisible_by4_all_h_rank_coexistence_and_own_root_Eh_over_Qh_suppression
+    boundary: not_pure_empty_full_concentration_oblique_pooled_U_or_transition_estimate
+  - id: P337_POISSON_POOLED_JOINT_LIMIT
+    integration_status: branch_only
+    branch: analysis/p334-paired-clock-loading-20260831
+    commit: a4a565963e97176f3c2ff98d626d434af2cf7ee2
+    status: completed_both_laws_oblique_pooled_denominator_and_original_U_joint_limit
+    acquisition: exact_construction
+    artifact_kind: mathematical_proof_no_numerical_production
+    outputs: [notes/closed-source-poisson-double-scaling.md]
+    dependency_groups: []
+    result_summary: N_over_m2_to_finite_zeta_growing_systole_Poisson_rank0_full_rank2_kappa_to1_original_U_superpolynomially_small_root_logit_gap2logm_overN
+    boundary: joint_limit_not_fixed_m_oblique_suppression_or_subleading_U_sign
+  - id: P337_POOLED_SECTOR_ODDS_BOUND
+    integration_status: branch_only
+    branch: analysis/p334-paired-clock-loading-20260831
+    commit: c9d41971f972ceafd7b585c446e1cd93e2d3ebad
+    status: completed_sharp_within_geometry_denominator_reduction
+    acquisition: exact_construction
+    artifact_kind: mathematical_proof_no_numerical_production
+    outputs: [notes/closed-source-pooled-sector-odds-bound.md]
+    dependency_groups: []
+    result_summary: kappa_ge_b_times1minusb_plus1minusb_squared_sech_squared_d_over4_with_d_restricted_sector_log_odds
+    boundary: actual_fixed_m_axis_oblique_d_bound_still_open_total_pressure_equality_insufficient
+  - id: P337_OBLIQUE_ORDER25_TWIST_COMPARISON
+    integration_status: branch_only
+    branch: analysis/p334-paired-clock-loading-20260831
+    commit: 70260cc3bb979fc4aa6e0496a71a065f575e9338
+    status: completed_surface_scale_twist_reduction_remaining_penalty_not_bounded
+    acquisition: exact_construction
+    artifact_kind: mathematical_proof_no_transfer_diagonalization_or_numerical_production
+    outputs: [notes/closed-source-oblique-twist-comparison.md]
+    dependency_groups: []
+    result_summary: oblique25k_by_k_shift7k_order25_P1_bound_expDelta_k_times_rho_k_power7k
+    next_output: fixed_m_Delta_k_growth_below7tau_infty_k_then_separate_restricted_sector_odds_control
+    boundary: PSD_and_order25_alone_do_not_close_twist_penalty_existing_vacant_seam_bound_has_insufficient_coefficient
   - id: PR267_WEAK_Q_PATH_COMPARISON
     integration_status: open_pr
     pr: 267
@@ -338,7 +430,7 @@ registered_reanalyses:
     contracts: [analysis/weak_q_path_comparison_contract.json]
     dependency_groups: [decimation-N25-exact-configuration-pair]
     result_summary: fixed_B_control_reverses_Q_tangent_and_regular_endpoint_four_leg_Q_activation_is_zero
-    boundary: same_N25_exact_inputs_both_paths_rank_projected_actual_U_trace_interface_unproved_no_new_data_or_critical_exponent_measurement
+    boundary: same_N25_exact_inputs_both_paths_rank_projected_finite_Q4_trace_normalizer_interface_now_derived_separately_J22_unmeasured_no_Q1_continuation_or_critical_exponent_measurement
   - id: PR267_PROJECTION_DROP_TAIL
     integration_status: open_pr
     pr: 267
@@ -427,7 +519,7 @@ registered_reanalyses:
     dependency_groups: [decimation-N25-exact-configuration-pair]
     result_summary: VF4_0p1944146864609_N50_endpoint_missing0p5996568681566_Shat_C_F_T_minus4K_plus2N_exact_invariant
     boundary: all2pow25_each_fixed_geometry_different_Smith_classes_not_same_family_asymptotic_H4_or_interior_RG_no_new_random_samples
-    next_output: Xi_R_operator_split_and_size_tails_completed_controlled_finite_coupling_window_remains_open
+    next_output: Xi_R_split_size_tails_and_uniform_N25_m_ge64_sign_window_completed_fixed_m_oblique_twist_and_sector_odds_remain_open
   - id: PR509_FRESH_P154_TRANSMISSION_RESULT
     status: open_pr
     pr: 509

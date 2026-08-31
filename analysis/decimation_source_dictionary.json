@@ -253,20 +253,25 @@
     "boundary": "saved N25 exact linear consequence, not a new random block or a universality decision"
   },
   "next_theoretical_question": {
-    "status": "regular_endpoint_Q_activation_excluded_actual_U_interface_open",
-    "question": "does the actual torus U numerator reduce to the regular zero endpoint or have an explicitly finite trace/confluent contribution?",
-    "source_commit": "f0e9159f4f8a2f23b9e736e7e02b425e593336f2",
-    "source_path": "notes/weak-q-paths-and-regular-selection.md",
-    "required_output": "finite normalized original-U matrix element or explicit regular-endpoint zero reduction, retaining the fixed B control in subsequent weak-Q size work",
+    "status": "finite_Q4_normalizer_interface_derived_J22_not_evaluated",
+    "question": "is the specified Q4 [22] component completely neutral to the original N25 m2 pooled-root U, J22=0?",
+    "source_commit": "041257b8c63f98c694397604617edbb58f31ef51",
+    "source_path": "notes/four-leg-trace-denominator-interface.md",
+    "definition": "analysis/four_leg_trace_interface.json",
+    "known": "Z22=(T+3D2-4C3)/6 has rank1 support and zero raw q/E numerators; z22=2Z22/(T+R) enters the full four-term root/slope derivative",
+    "required_output": "evaluate fixed J22 from seam p-jets or rank1 winding/component counts, without replacing them by old K,g,q marginals",
+    "boundary": "Q4 colour irrep and signed component attribution, not a measured J22 or unique continuum field or Q1 continuation; retain B in weak-Q comparison",
     "new_production_requested": false
   },
   "parallel_finite_coupling_question": {
-    "status": "asymptotic_size_signs_delivered_finite_coupling_window_open",
-    "question": "controlled finite-coupling comparison of fixed Sstar versus Sdrop=Sstar+r as size grows",
-    "completed_input": "original negative size law and projection-deleted positive size law; N25 drop leading625/384*lambda^(42/5)",
-    "source_commit": "fbbaa2aacce9895f0113bfc12a70e37152aec507",
-    "source_path": "notes/topological-projection-reverses-global-u-tail.md",
-    "required_output": "controlled N,t comparison window or accessibility bound retaining the same two laws and original U, without fitting rank fugacity",
+    "status": "N25_uniform_m_ge64_window_completed_fixed_m_oblique_twist_and_sector_odds_bounds_open",
+    "question": "control geometric order25 twist penalty and pooled restricted-sector odds mismatch for fixed m oblique geometry",
+    "completed_input": "N25 all real m>=64 Ustar<0<Udrop; axis fixed-m winding and growing-systole Poisson joint-limit original-U suppression",
+    "source_commit": "2690f665bc8029cb2370d3f1efcef5eb2853705c",
+    "source_paths": ["notes/closed-source-uniform-projection-tail.md", "notes/closed-source-fixed-coupling-peierls.md", "notes/closed-source-poisson-double-scaling.md", "notes/closed-source-pooled-sector-odds-bound.md", "notes/closed-source-oblique-twist-comparison.md"],
+    "integration_status": "branch_only",
+    "required_output": "Delta_k/k limsup<7tau_infty plus d<=gamma L with gamma<2tau for exponential winding suppression, without assuming total-pressure agreement bounds sector odds",
+    "boundary": "geometric translation seam distinct from colour3cycle; fixed-N window and Poisson joint limit do not solve fixed-m oblique limit",
     "new_production_requested": false
   },
   "limits": [

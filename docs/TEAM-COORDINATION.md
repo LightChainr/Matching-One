@@ -1,18 +1,26 @@
 # Three-team scientific handoff / 三队协作入口
 
-Updated: **2026-08-31**, local weak-Q comparison `e87d5de2`, execution Q-family head `f85e6d6d`; prior independent decisions retained. This is a result-routing entry, not a second
+Updated: **2026-08-31**, finite trace interface `041257b8`, execution delivery `2690f665`; prior independent decisions retained. This is a result-routing entry, not a second
 priority board or a live process monitor. [Next Targets](NEXT-TARGETS.md) remains
 the single attention order; [the machine-readable handoff](../analysis/team_coordination.yaml)
 records source pins and the state reported by each team.
 
-**New scientific handoff:** [two named Q paths](../results/weak-q-path-comparison/REPORT.md)
+**New scientific handoff:** [Q4 trace to original-U normalizer](../notes/four-leg-trace-denominator-interface.md)
+is derived. At the same spatial identity colour seam,
+`Z22=(T+3D2−4C3)/6` isolates the full S4 `[22]` component; rank1 support
+makes its raw q/E numerators zero, while `z22=2Z22/(T+R)` enters the
+complete root/slope response J22. The next finite task is to evaluate that
+specified J22 at m=2 on the original N25 pair. Its value is not known;
+the nonzero trace polynomial is not a nonzero U result. Q4 colour-sector
+attribution is distinct from a Q→1 continuation or continuum identification.
+
+The preceding [two named Q paths](../results/weak-q-path-comparison/REPORT.md)
 have opposite root-adjusted N25 original-U tangents: tied edge+.063082681707085,
 rank-projected ordinary site-RC−.269828026713487. The fixed B difference
 is+.332910708420572. Saved exact bounds suffice;0.020239seconds, no roots,
 enumeration or new samples. The [regular-endpoint identity](../notes/weak-q-paths-and-regular-selection.md)
-also excludes its regular four-leg Q activation throughout Q. Actual torus
-U may use a different trace/marked/finite-confluence interface; that map
-is the next named result, not an identified alternative contribution.
+also excludes its regular four-leg Q activation throughout Q. The finite
+trace interface above is now explicit; it does not undo that endpoint zero.
 
 The prior [operator split](../results/defect-reweight/REPORT.md) is complete.
 Execution's9057325d reports the same reweighting result using U_st=-Xi;
@@ -20,10 +28,14 @@ it is a second implementation on the same exact populations, not independent
 statistical evidence. No team needs to repeat its cross-moment task.
 The separate [80M F4 block](https://github.com/LightChainr/Matching-One/blob/25ca3635ea64655923c32adee4b62d683579cdcd/results/p337-f4-transmission-20260831/scored/REPORT.md)
 is completed and inconclusive; its fixed stop remains in force.
-[Next Targets](NEXT-TARGETS.md) prioritizes the actual U matrix element and
-keeps the fixed B control in parallel weak-Q size work. The Sstar/Sdrop
-finite-coupling window remains an open parallel problem, with its asymptotic
-signs already delivered. No first Xi or duplicate block remains assigned.
+[Next Targets](NEXT-TARGETS.md) prioritizes the fixed J22 coefficient and
+keeps B in parallel weak-Q size work. Execution85d5e44b has completed the
+Sstar/Sdrop finite-coupling window: all real m≥64 on N25 have strictly
+opposite original-U signs, with uniform remainders. No new m point is needed
+to establish that window. Axis fixed-m winding and oblique Poisson-limit
+pooled-U suppression are also delivered; fixed-m oblique geometry still
+needs its geometric twist penalty and restricted-sector odds bounds.
+No first Xi or duplicate block remains assigned.
 No cloud job, random sample or science test suite was started by this handoff.
 
 **The two previously prioritized comparison routes are delivered.** #154's
@@ -48,14 +60,14 @@ create a second priority queue.
 
 | Team | Delivered / active contribution | Next handoff |
 |---|---|---|
-| **数学研究执行** | `f85e6d6d` fixes the Q family, B control and conditional weak-colour targets; `977fea92` supplies the local hypergraph/twist q/E readout. | Its regular-endpoint activation candidate now has the exact refinement below; the actual trace/confluent U contribution remains to be constructed. |
-| **数学研究总览** | Draft [PR #267](https://github.com/LightChainr/Matching-One/pull/267): `e87d5de2` separates the two named Q tangents using old bounds and proves the whole-family regular endpoint zero. | Route the next work to the actual U interface, retaining B; no new strong-m point, duplicate scorer or new production assignment. |
+| **数学研究执行** | `2690f665` includes the m≥64 N25 sign window, axis fixed-m winding, Poisson joint-limit pooled-U suppression and sharp odds/twist reductions. | Fixed-m oblique theory now has two specific open bounds; the geometric order25 twist is not the Q4 colour three-cycle. |
+| **数学研究总览** | Draft [PR #267](https://github.com/LightChainr/Matching-One/pull/267): `041257b8` derives full S4 projection, rank1 support and the original-U normalizer interface; `e87d5de2` retains opposite named Q tangents. | Evaluate fixed N25 m2 J22 using prescribed seam jets or winding/component counts; retain B for weak-Q comparison. No new descriptors or duplicate production. |
 | **数学研究俯瞰** | `f4999e29` delivers all 165M P154 permutations, nine shards, 200 batches/N, official six-coordinate decisions and full covariance. B/C fail; W is not excluded; both net intervals meet the frozen weak-transmission band. The separate P334 contact-residual result `14b2c98e` is complete. | The frozen experiment is finished. Retain all delivered data and decisions; no extra samples, replacement lag/source or fourth numerical template. |
 
 The execution result is **branch_only**, on
 `analysis/p334-paired-clock-loading-20260831`, with no corresponding PR in the
 current scoped branch-to-PR query; the current local delivery pin is
-`f85e6d6d8c56afcad27ff73dbf0a3578c2157829`. Its earlier [Issue #334 result card](https://github.com/LightChainr/Matching-One/issues/334#issuecomment-5476674429)
+`2690f665bc8029cb2370d3f1efcef5eb2853705c`. Its earlier [Issue #334 result card](https://github.com/LightChainr/Matching-One/issues/334#issuecomment-5476674429)
 and [PR #267 pointer](https://github.com/LightChainr/Matching-One/pull/267#issuecomment-5476674567)
 are discussion links, not code integration. PR #509 retains its observed
 open/Draft lifecycle; the current delivery pin is
