@@ -9,12 +9,13 @@ secondary, plus both distinct P334 comparisons.**
 [Decision Experiments](DECISION-EXPERIMENTS.md) and the
 [final decision record](../notes/independent-decisions-final-20260831.md) own these
 states; the earlier handoff is pre-score history. The one-hole comparison
-is now completed: source-independent gain fails (`R=27.766563581230237>0`),
-as does the companion mixed null (`Xi=−10.755718407564073`). Attention goes
-to the fixed weighted-jump-only prediction `Xi_reweight=0`.
-First Xi, complete Sstar transmission and its fixed cycle/rank split are
-results; no duplicate calculation, new production or source-feature expansion
-follows automatically.
+and its prescribed split are complete: source-independent gain fails
+(`R=27.766563581230237>0`), and nonzero baseline reweighting also rejects
+the jump-only model. The same closed source has now produced a predeclared
+finite-coupling turnover. Attention goes to a fixed-source cross-size/order-of-limits
+prediction, distinguishing finite-volume two-state suppression from sector
+transmission persisting as N grows. No duplicate calculation, peak refinement,
+new production or source-feature expansion follows automatically.
 The old2.4M norm4 permutations and
 20-batch P334 archive remain discovery data; correct covariance and held-out
 reuse do not make them independent population confirmation. Other lines stay
@@ -44,11 +45,33 @@ now measures interior first-jet transport on the N50 parents: actual
 The hard-endpoint identity survives. [The exact defect interpretation,
 `bc17b81d`](https://github.com/LightChainr/Matching-One/blob/bc17b81d502fb1ca3323f5c20f63c544bb31602d/notes/checkerboard-single-defect-global-u-result.md)
 has `DeltaSstar=3−2k_null−ell`, `ell≤1`; only alternating child faces can
-change rank. The normalized insertion separates weighted observable jumps
-from baseline reweighting, whose covariance term can contain both rank types.
-These contributions are unmeasured; two prescribed cross-moments test the
-weighted-jump-only prediction `Xi_reweight=0`. This is not a new field count
-or a complete finite-interior law.
+change rank. The [completed insertion split](../results/defect-reweight/REPORT.md),
+`open_pr #267`, `e1b968959634b9b3999c727b83ed38d0b730cb20`, measures
+baseline reweighting `+4.550327123236791` opposing weighted observable jump
+`−15.306045530800864`; these add to the prior total Xi. The prescribed zero
+prediction fails by exact bounds. Reweighting's covariance can contain both
+rank types; it is not a rank-preserving population share or a new source.
+Acquisition: one-eighth alternating subset (2^22 per geometry),2.036 seconds,
+no random samples or root search. This is a dependent decomposition of
+the N50 one-hole model, not a complete finite-interior law.
+
+**Finite source law, resolved turnover:** `branch_only`
+[`a70eeff0:REPORT.md`](https://github.com/LightChainr/Matching-One/blob/a70eeff09f51ce2fa0fea5ae637e9191efbf2e1f/results/p337-closed-source-finite-coupling/score/REPORT.md)
+uses the same N25 populations with a full `(K,g,q)` histogram, where
+`g=2K−(beta1+beta_null)` and weight is `h^K exp(−tg)`.
+Source: the already fixed `Sstar`; observer: original separately normalized
+pooled-root/slope U; geometry: the same mixed-Smith direction pair.
+All prescribed m=2,4,8,16 have negative U_t, excluding all-positive-coupling
+monotone amplification. The fixed source itself survives this prediction.
+
+The `branch_only` [two-state theorem, `5a70f0a0`](https://github.com/LightChainr/Matching-One/blob/5a70f0a02d4ac5ba64db52608421f31e091f8cf5/notes/closed-source-two-state-turnover.md)
+identifies fixed-volume empty/full concentration: intermediate rank1
+disappears, `Q_h→N/2`, and `U=O(exp(−3t))→0`. Attraction orders q but not
+E=q² or its signed projection. The structural prediction was frozen at
+`b70dc4bd` before counting/scoring; the full proof was committed after scoring.
+Its constants can depend on N. Thus the next mechanism question is a
+size/limit-order prediction for this same source, not a fitted decay exponent,
+new field count or a request for more points around the peak.
 
 **Different acquisition, unresolved larger-N result:** `branch_only`
 [F4 independent80M block, `25ca3635`](https://github.com/LightChainr/Matching-One/blob/25ca3635ea64655923c32adee4b62d683579cdcd/results/p337-f4-transmission-20260831/scored/REPORT.md)

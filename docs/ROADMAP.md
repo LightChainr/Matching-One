@@ -1,12 +1,19 @@
 # Roadmap: Default Attention, Not Permission
 
-**Current move, 2026-08-31:** test the weighted-jump-only model's fixed
-prediction `Xi_reweight=0` using two prescribed cross-moments.
+**Current move, 2026-08-31:** derive a cross-size/order-of-limits prediction
+for the same fixed positive closed source. Its finite-volume U turns down,
+and the one-hole weighted-jump-only comparison is now resolved against the model.
+The [completed split](../results/defect-reweight/REPORT.md), `open_pr #267`,
+`e1b968959634b9b3999c727b83ed38d0b730cb20`, has baseline reweighting
+`+4.550327123236791` and weighted jump `−15.306045530800864`.
 Execution's `branch_only` [report, `f5c4a74a`](https://github.com/LightChainr/Matching-One/blob/f5c4a74a20bad8589c39e1034cfb209462110dbe/results/p337-endpoint-defect/score/REPORT.md)
 rejects source-independent gain: `R=27.766563581230237>0`.
 The companion `Xi=−10.755718407564073` rejects the mixed thermal-only null.
 Both share the same coefficients; hard-endpoint closure remains true.
-First Xi, complete Sstar transmission and its cycle/rank split are done.
+First Xi, its prescribed reweighting, complete Sstar transmission and the
+cycle/rank split are done. The next prediction must distinguish fixed-volume
+empty/full concentration from sector transmission persisting as N grows;
+no new peak points, descriptors or production tasks follow automatically.
 #154's165M primary and its declared secondary,
 plus both distinct P334 comparisons, are delivered; none remains a production request. The
 [decision register](DECISION-EXPERIMENTS.md) and
@@ -33,11 +40,26 @@ gives `DeltaSstar=3−2k_null−ell`, with `ell≤1` and rank loss possible only
 at an alternating child face. Actual `U_st=10.755718407564073` exceeds
 the gain prediction`.5313680267777353` by10.224350380786337. A proposed
 interior theory must account for this fixed source-dependent coefficient.
-The normalized insertion has weighted-jump and baseline-reweighting
-contributions; the latter can involve both rank-preserving and rank-changing
-configurations. Their contributions are not yet separated. The fixed zero
-prediction narrows the next model question without a generic feature catalogue
-or extrapolating a finite-interior curve from one endpoint jet.
+The measured normalized-insertion terms oppose each other; reweighting
+can involve both rank-preserving and rank-changing configurations.
+Its exact nonzero enclosure rejects the fixed jump-only prediction,
+without another source or fitted relative coefficient. Only the alternating
+one-eighth of each population was enumerated (2^22 per geometry,2.036 seconds);
+the saved total and root were reused. These dependent coefficients do not
+define a finite-interior curve or independent production effect.
+
+The `branch_only` [four-coupling result, `a70eeff0`](https://github.com/LightChainr/Matching-One/blob/a70eeff09f51ce2fa0fea5ae637e9191efbf2e1f/results/p337-closed-source-finite-coupling/score/REPORT.md)
+also rejects monotone U amplification for this same source on N25:
+U_t is negative at every fixed m=2,4,8,16, despite positive U_t(0).
+At least one local maximum lies in `(0,log2)`; its uniqueness is unproved.
+The [two-state proof, `5a70f0a0`](https://github.com/LightChainr/Matching-One/blob/5a70f0a02d4ac5ba64db52608421f31e091f8cf5/notes/closed-source-two-state-turnover.md)
+gives `U=O(exp(−3t))→0` as fixed-N rank1 disappears and `Q_h→N/2`.
+The structural prediction appears in freeze `b70dc4bd` before new counting
+and scoring; the full proof was committed after the score. This is not a
+uniform-in-N estimate or a fitted asymptotic exponent. The remaining theory
+must decide how size growth competes with this fixed-volume concentration,
+with source/observer unchanged; refining the resolved N25 peak does not
+answer that question.
 
 The separate `branch_only` [F4 independent80M result, `25ca3635`](https://github.com/LightChainr/Matching-One/blob/25ca3635ea64655923c32adee4b62d683579cdcd/results/p337-f4-transmission-20260831/scored/REPORT.md)
 uses20M/100 batches per N65/85/130/170. All four simultaneous intervals

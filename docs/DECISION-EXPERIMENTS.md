@@ -18,11 +18,21 @@
 `.531368026778`，实际为`10.755718407564`。主gain模型与次级thermal-only
 mixed null都失败，硬端点闭合仍成立。两判决来自同一exact packet，不能合票。
 
-下一项固定模型只保留加权rank跳变 `E[w Delta O]`，省去
-`Cov(w,O_intact)`，因此预测后者的混合原U贡献为零。所需两个
-同构型cross moments及完整移根公式已写入[源note](../notes/decimation-closed-source-and-global-u.md)。
-这里的baseline重加权包含rank-changing和rank-preserving构型，
-不能误称仅后者份额；不拟合份额，不再派“首次Xi”。
+[固定算子分离 `e1b96895`](../results/defect-reweight/REPORT.md)也已完成：
+baseline重新加权贡献 **+4.550327123237**，加权跳变 **−15.306045530801**，
+合计 **−10.755718407564**。省去 `Cov(w,O_intact)` 的jump-only模型被精确排除。
+重新加权包含rank-changing和rank-preserving构型，不能误称仅后者份额；
+两项异号、固定系数，不拟合份额或补第四个自由源。只补了交替邻点1/8构型，
+旧完整统计及根包围复用，共2.036秒；不重复“首次Xi”或“首次分离”。
+
+## 同一正源的四点转折已完成，尺寸问题尚未解决
+
+执行的 `branch_only` [a70eeff0四耦合结果](https://github.com/LightChainr/Matching-One/blob/a70eeff09f51ce2fa0fea5ae637e9191efbf2e1f/results/p337-closed-source-finite-coupling/score/REPORT.md)
+在事先固定m=2,4,8,16全部给出U_t<0；结合U_t(0)>0，排除“始终单调增强”。
+至少一局部峰位于(0,log2)，不声称峰唯一或这些点确定衰减指数。
+固定N强耦合的双态与rank1耗尽提供U→0的理论解释；完整证明提交晚于score，
+结构预测已在b70dc4bd冻结时提出。下一理论判别是同一源的明确跨尺寸/
+极限次序预测，详见[Next Targets](NEXT-TARGETS.md)，不自动增加峰附近采样点。
 
 ## 新独立F4块：80M已结束，未分辨
 
@@ -50,7 +60,7 @@ bulk F4源的 `V_F4=+.1944146864609`；移根和热斜率修正全部包含。
 
 源note导出的单A-vacancy原U计算已由上述f5c4a74a完成。
 其非零Xi排除了共同thermal-only延伸，非零R进一步排除了源无关gain。
-不重复接口、首次评分或新采样；下一固定算子分离见本页顶部。
+不重复接口、首次评分或新采样；固定算子分离已见本页顶部。
 
 ## 1. 已完成：#154原U弱传输触发停止优先投入规则
 

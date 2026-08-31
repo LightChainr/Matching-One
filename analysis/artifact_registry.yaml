@@ -1,9 +1,12 @@
-version: 41
+version: 42
 updated: 2026-08-31
 latest_scientific_handoff:
   entry: docs/TEAM-COORDINATION.md
-  local_result_commit: 5483aa82047df34c2c9508d4930b6e20961ed9ca
-  local_result_report: results/decimation-cycle-rank/REPORT.md
+  local_result_commit: e1b968959634b9b3999c727b83ed38d0b730cb20
+  local_result_report: results/defect-reweight/REPORT.md
+  finite_source_result_commit: a70eeff09f51ce2fa0fea5ae637e9191efbf2e1f
+  finite_source_result_report: results/p337-closed-source-finite-coupling/score/REPORT.md
+  positive_source_structure_commit: 359bde9be45d051b961110e03f0bd70f3ff82b91
   latest_defect_result_commit: f5c4a74a20bad8589c39e1034cfb209462110dbe
   latest_defect_result_report: results/p337-endpoint-defect/score/REPORT.md
   latest_defect_operator_commit: bc17b81d502fb1ca3323f5c20f63c544bb31602d
@@ -36,8 +39,8 @@ latest_scientific_handoff:
   current_secondary_theory_commit: 83f3eba88d7f1290704f82610c28669dc5e12f3c
   current_secondary_result_commit: 612df8ec1cbe3be3938ee2e1f6183a1aefc6510b
   current_secondary_result_report: notes/p154-clock-line-secondary-result.md
-  current_synthesis_commit: 5483aa82047df34c2c9508d4930b6e20961ed9ca
-  current_synthesis_report: results/decimation-cycle-rank/REPORT.md
+  current_synthesis_commit: e1b968959634b9b3999c727b83ed38d0b730cb20
+  current_synthesis_report: results/defect-reweight/REPORT.md
   preceding_synthesis_commit: 95d5d662afcef2d9d4b5167f82612a70cb4e83c7
   preceding_synthesis_report: notes/independent-decisions-final-20260831.md
   latest_external_reports: [experiments/p154-prospective-transmission-20260831/REPORT.md, experiments/p334-prospective-intervention-20260831/REPORT.md]
@@ -319,6 +322,29 @@ channel_semantics:
   required_fields: [topology_channel, combination, probability_coordinate, orientation_order, normalization, quantity]
 
 registered_reanalyses:
+  - id: PR267_DEFECT_REWEIGHT
+    integration_status: open_pr
+    pr: 267
+    branch: research/navigation-priority-refresh-20260829
+    commit: e1b968959634b9b3999c727b83ed38d0b730cb20
+    definition_commit: e9aed6ff21759f4377f67bd5468998e2b45f11d1
+    status: completed_weighted_rank_jump_only_rejected
+    outputs: [results/defect-reweight/REPORT.md, results/defect-reweight/latest.json, results/defect-reweight/run.json, results/defect-reweight/first.csv, results/defect-reweight/second.csv]
+    scripts: [scripts/analyze_defect_reweight.py, scripts/exact_defect_reweight_cross_moments.cpp]
+    contracts: [analysis/defect_reweight_contract.json]
+    dependency_groups: [decimation-N50-single-defect-exact]
+    result_summary: Xi_reweight4p550327123237_Xi_jump_minus15p306045530801_total_minus10p755718407564
+    boundary: exact1over8_subset_completes_same_population_cross_moments_not_random_confirmation_or_fitted_population_share
+  - id: P337_FINITE_SOURCE_TURNOVER
+    integration_status: branch_only
+    branch: analysis/p334-paired-clock-loading-20260831
+    commit: a70eeff09f51ce2fa0fea5ae637e9191efbf2e1f
+    definition_commit: b70dc4bd2fddd7676e9536b42bf912ee00ad302f
+    status: completed_positive_source_global_U_turnover_resolved
+    outputs: [results/p337-closed-source-finite-coupling/score/REPORT.md, results/p337-closed-source-finite-coupling/score/score.json, results/p337-closed-source-finite-coupling/axis.csv, results/p337-closed-source-finite-coupling/tilted.csv]
+    dependency_groups: [decimation-N25-exact-configuration-pair]
+    result_summary: all_four_fixed_m2_4_8_16_Ut_negative_after_Ut0_positive_one_local_peak_before_log2
+    boundary: fixed_N25_not_unique_peak_leading_decay_exponent_or_thermodynamic_limit_no_grid_extension
   - id: PR267_DECIMATION_CYCLE_RANK
     integration_status: open_pr
     pr: 267
@@ -363,7 +389,7 @@ registered_reanalyses:
     dependency_groups: [decimation-N25-exact-configuration-pair]
     result_summary: VF4_0p1944146864609_N50_endpoint_missing0p5996568681566_Shat_C_F_T_minus4K_plus2N_exact_invariant
     boundary: all2pow25_each_fixed_geometry_different_Smith_classes_not_same_family_asymptotic_H4_or_interior_RG_no_new_random_samples
-    next_output: Xi_and_R_completed_test_fixed_weighted_jump_only_Xi_reweight_zero_with_two_prescribed_cross_moments
+    next_output: Xi_R_and_fixed_operator_split_completed_same_source_cross_size_prediction_remains_open
   - id: PR509_FRESH_P154_TRANSMISSION_RESULT
     status: open_pr
     pr: 509

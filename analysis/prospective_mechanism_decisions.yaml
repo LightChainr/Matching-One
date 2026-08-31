@@ -8,7 +8,7 @@ policy:
   primary_lines: [P154_TEMPORAL_TRANSMISSION, P334_INDEPENDENT_INTERVENTIONS]
   pending_primary_scores: []
   completed_experiments: [P154_TEMPORAL_TRANSMISSION, P334_SOURCE_NORMAL_INTERVENTION, P334_CONTACT_RESIDUAL_FORECAST]
-  next_primary: weighted_rank_jump_only_vs_normalized_baseline_reweighting_mixed_U_prediction_zero_two_fixed_cross_moments_no_automatic_production
+  next_primary: quantitative_same_positive_source_cross_size_or_limit_order_prediction_not_yet_delivered_no_automatic_production
   issue_locks: false
   automatic_issue_closure_or_PR_merge: false
   parallel_exploration: true
@@ -29,7 +29,7 @@ completed_exact_comparison:
   configurations: 67108864
   new_random_samples: 0
   exact_source_completion: C_plus_F4_plus_T_NN_minus4K_plus2N_is_endpoint_invariant
-  next_named_discriminator: first_Xi_and_gain_comparison_completed_new_fixed_reweighting_term_question_below
+  next_named_discriminator: Xi_gain_and_fixed_reweighting_comparison_completed_cross_size_question_remains
   boundary: finite_degree4_square_site_endpoint_different_Smith_classes_no_continuum_or_interior_RG_claim_no_independent_N50_run
 completed_cycle_rank_comparison:
   commit: 5483aa82047df34c2c9508d4930b6e20961ed9ca
@@ -64,14 +64,38 @@ completed_F4_independent_block:
   intervals: [[-0.542228153481, 0.672008390881], [-0.144373202661, 1.761454589653], [-3.370319518088, 3.464690121643], [-6.311295822230, 4.840750512188]]
   practical_band: [-0.5, 0.5]
   boundary: no_interval_excludes_zero_none_wholly_within_practical_band_not_negligibility_or_nonzero_coupling_no_topup
-next_fixed_operator_prediction:
+completed_fixed_operator_prediction:
+  result_commit: e1b968959634b9b3999c727b83ed38d0b730cb20
+  result_path: results/defect-reweight/latest.json
+  contract_commit: e9aed6ff21759f4377f67bd5468998e2b45f11d1
+  status: weighted_rank_jump_only_rejected
+  observed_Xi_reweight: 4.550327123236791
+  observed_Xi_weighted_jump: -15.306045530800864
+  observed_Xi_total: -10.755718407564073
+  acquisition: exact_alternating_2pow22_subset_each_geometry_plus_old_full_marginals_no_random_samples_or_root_search
   model: weighted_jump_only_response_omits_normalized_Cov_w_Oplus_term
   predicted_Xi_reweight: 0
   definition: A_over_D_partial_p_of_hY_minus_r_hQ_with_hO_M_times1minusp_Cov_DeltaS_Oplus
-  missing_per_KB_cross_moments: [Sminus_qplus, Sminus_Eplus]
+  completed_per_KB_cross_moments: [Sminus_qplus, Sminus_Eplus]
   scope: fixed_positive_Sstar_same_chart_same_q_E_no_fitted_fraction
-  primary_output: exact_Xi_reweight_enclosure_zero_exclusion_rejects_weighted_jump_only_zero_does_not_prove_full_closure
+  primary_output: nonzero_exact_Xi_reweight_enclosure_rejects_weighted_jump_only_no_extra_source_or_fitted_share
   random_production_requested: false
+completed_finite_source_turnover:
+  freeze_commit: b70dc4bd2fddd7676e9536b42bf912ee00ad302f
+  result_commit: a70eeff09f51ce2fa0fea5ae637e9191efbf2e1f
+  result_path: results/p337-closed-source-finite-coupling/score/score.json
+  status: positive_source_global_U_turnover_resolved
+  fixed_m: [2, 4, 8, 16]
+  observed_Ut: [-1.370778221631, -0.00340200365326, -0.000000597094985292, -0.0000000000570475721983]
+  rejected_model: monotone_global_U_amplification_for_all_positive_t_on_fixed_N25_pair
+  structural_prediction: fixedN_two_state_limit_rank1_depletion_U_to_zero_proposed_in_freeze
+  proof_chronology: full_proof5a70f0a0_committed_after_score_structural_prediction_before_counts
+  boundary: one_local_peak_before_log2_not_unique_peak_or_leading_asymptotic_exponent_no_extra_grid
+next_size_question:
+  status: theory_target_no_quantitative_forecast_or_production_contract_yet
+  question: whether_same_source_fixed_positive_t_largeN_transport_is_controlled_by_the_fixedN_empty_full_limit
+  required_output: one_fixed_source_cross_size_ratio_sign_or_crossover_prediction_with_a_competing_finite_volume_explanation
+  automatic_production: false
 experiments:
   - id: P154_TEMPORAL_TRANSMISSION
     issue_refs: [154, 275]

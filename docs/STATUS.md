@@ -6,6 +6,29 @@
 
 `docs/NEXT-TARGETS.md` owns the single attention order, while `docs/ROADMAP.md` preserves its scientific rationale. Neither locks a task, serializes theory work or treats a lower priority as a scientific rejection.
 
+**Current completed mechanism decisions:** the [one-hole split](../results/defect-reweight/REPORT.md),
+`open_pr #267`, `e1b968959634b9b3999c727b83ed38d0b730cb20`, excludes the
+fixed weighted-rank-jump-only model. `Xi_reweight=+4.550327123236791`
+opposes the weighted jump `−15.306045530800864`; their sum is the prior
+total `−10.755718407564073`. Reweighting has an exact enclosure excluding
+zero, with no fitted source or mixing coefficient. The2.036-second calculation
+enumerated only2^22 alternating configurations per geometry, one-eighth of
+the same N50 one-hole populations; no new random block or root search.
+
+Separately, execution's `branch_only` [four-coupling result,
+`a70eeff09f51ce2fa0fea5ae637e9191efbf2e1f`](https://github.com/LightChainr/Matching-One/blob/a70eeff09f51ce2fa0fea5ae637e9191efbf2e1f/results/p337-closed-source-finite-coupling/score/REPORT.md)
+excludes monotone amplification of homogeneous N25 U by the same closed
+positive source: all four fixed m=2,4,8,16 have negative U_t enclosures.
+`U_t(0)=+.126165363414` and `U_t(log2)=−1.370778221631` imply at least one
+local maximum in `(0,log2)`, not a unique peak. Freeze `b70dc4bd` proposed
+the two-state limit before the new histogram and scores; the [full proof,
+`5a70f0a0`](https://github.com/LightChainr/Matching-One/blob/5a70f0a02d4ac5ba64db52608421f31e091f8cf5/notes/closed-source-two-state-turnover.md)
+was committed after scoring. At fixed N, rank1 vanishes while `Q_h→N/2`,
+so `U=O(exp(−3t))→0`. The bound is not uniform in N or a measured leading
+exponent. **Next:** a fixed-source size/order-of-limits prediction separating
+finite-volume empty/full concentration from sector transmission surviving
+as N grows. No peak scan, new descriptor or automatic production is implied.
+
 **Completed fixed cycle/rank separation, `open_pr #267`, `5483aa82047df34c2c9508d4930b6e20961ed9ca`, not `main_integrated`:**
 [the exact N25 result](../results/decimation-cycle-rank/REPORT.md) gives
 `V_q=+.05324753511465212`, `V_Sstar=+.12616536341416915`, and
@@ -51,12 +74,12 @@ a delivered result, not a pending first-Xi task.
 The `branch_only` [interpretation, `bc17b81d502fb1ca3323f5c20f63c544bb31602d`](https://github.com/LightChainr/Matching-One/blob/bc17b81d502fb1ca3323f5c20f63c544bb31602d/notes/checkerboard-single-defect-global-u-result.md)
 identifies the exact insertion `DeltaSstar=3−2k_null−ell`: `ell≤1`, and
 only an alternating child face can change ambient rank. The normalized
-insertion has weighted-jump and baseline-reweighting contributions, not yet
-separately measured; reweighting can involve both rank-preserving and
-rank-changing configurations. Next is the fixed weighted-jump-only prediction
-`Xi_reweight=0`, determined by two prescribed cross-moments. This endpoint first jet is not
-a finite-interior curve or large-N law; no new production or change to
-P154/P334/F4 decisions follows from it.
+insertion's now-measured weighted-jump and baseline-reweighting contributions
+oppose each other as recorded above. Reweighting can involve both
+rank-preserving and rank-changing configurations; it is not a population
+share. Their exact additivity is not independent evidence. This endpoint
+first jet is not a finite-interior curve or large-N law; P154/P334/F4 decisions
+are unchanged.
 
 **Completed independent #154 decision, `open_pr #509` (Draft), `f4999e29612da16a3650f24d124fb59137f053d7`:**
 the [official report](https://github.com/LightChainr/Matching-One/blob/f4999e29612da16a3650f24d124fb59137f053d7/experiments/p154-prospective-transmission-20260831/REPORT.md)
@@ -91,10 +114,9 @@ independent observations. Neither clock is identified, and neither supplies
 a rescue of B/C. The earlier high gain is unmarked-baseline sensitivity,
 not a measured source amplitude. [The final decision record](../notes/independent-decisions-final-20260831.md)
 now supersedes the [pre-score handoff](../notes/independent-decisions-handoff-20260831.md).
-The closed checkerboard source's original-U response, fixed cycle/rank
-separation and one-hole R/Xi decisions above are completed. Next is the
-weighted-jump-only model's zero prediction for the baseline-reweighting
-contribution to Xi. Research Issue lifecycles are unchanged.
+The closed source's cycle/rank split, one-hole R/Xi/reweighting and finite-coupling
+turnover are completed. The next theory question is the size/order-of-limits
+dependence of this same source and original U. Research Issue lifecycles are unchanged.
 
 **Earlier finite-model elimination, `open_pr #267`, `3847a5cfb0a7fe4454a86cc1bfd8ce4ee2e813f4`:**
 [The two-clock comparison](../results/p154-fixed-clock-models/REPORT.md) uses

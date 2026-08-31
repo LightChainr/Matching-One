@@ -253,7 +253,7 @@ result above; endpoint closure alone did not decide it. Nonzero Ξ locates
 source-dependent interior transmission in this finite chart, not a full
 intermediate curve or a continuum operator.
 
-## A fixed next discriminator: weighted rank jumps versus baseline reweighting
+## Completed discriminator: weighted rank jumps versus baseline reweighting
 
 The [exact defect operator, `bc17b81d`](https://github.com/LightChainr/Matching-One/blob/bc17b81d502fb1ca3323f5c20f63c544bb31602d/notes/checkerboard-single-defect-source.md)
 gives, for each geometry and one translated A site,
@@ -298,3 +298,23 @@ fixed two-term identity with one missing cross-moment packet, not a request
 for a generic descriptor, source or production search. Keep the original
 Sstar and saturation chart; removing a K term without transforming that
 two-parameter chart can change its mixed derivative.
+
+**Result now delivered:** [e1b96895](../results/defect-reweight/REPORT.md) gives
+Xi_reweight=+4.550327123236791 and Xi_weighted_jump=−15.306045530800864;
+their sum is the prior Xi=−10.755718407564073. The zero prediction fails by
+rational enclosure. This is opposing transmission within the already fixed
+normalized operator, not two independently adjustable sources.
+
+The missing cross moments admit an exact reduction. Outside the two alternating
+four-neighbor patterns, Oplus=Ominus for q/E. Hence their full cross sums equal
+the old Sminus*Ominus sums plus the alternating-subset correction
+Sminus*(Oplus−Ominus). Only2×2^21 configurations per geometry are needed;
+their weights retain degree25. The local calculation took2.036seconds including
+compilation, reusing the old full marginals and root with no random samples.
+
+The [subsequent homogeneous-source turnover](https://github.com/LightChainr/Matching-One/blob/359bde9be45d051b961110e03f0bd70f3ff82b91/notes/closed-source-global-u-turnover-result.md)
+is a different completed comparison: the same source weakly raises U but
+eventually depletes rank1 and suppresses U in fixed finite volume. It does not
+follow that either individual defect contribution has the same strong-coupling
+law. The next open connection is a quantitative size/limit-order prediction,
+not more coefficients for this resolved endpoint jet.

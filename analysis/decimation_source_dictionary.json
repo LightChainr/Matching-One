@@ -223,19 +223,33 @@
     "boundary": "one sided endpoint first jet only; exact hard endpoint identity remains valid; shared coefficients not independent decisions",
     "new_production_or_feature_search_requested": false
   },
-  "next_theoretical_question": {
-    "status": "specified_fixed_operator_split_not_first_Xi_again",
+  "completed_operator_split": {
+    "status": "weighted_rank_jump_only_rejected",
+    "result_commit": "e1b968959634b9b3999c727b83ed38d0b730cb20",
+    "result_path": "results/defect-reweight/latest.json",
+    "Xi_reweight": 4.550327123236791,
+    "Xi_weighted_jump": -15.306045530800864,
     "model": "weighted_rank_jump_only_retains_E_w_DeltaO_but_drops_Cov_w_Oplus",
     "prediction": "Xi_reweight=0",
     "h_O": "M*(1-p)*Cov_0(Sminus-Splus,Oplus)",
     "mixed_U": "Xi_reweight=A/D*partial_p(hY-r*hQ) at baseline root, r=Y_p/D",
     "expanded_mixed_U": "A*(hY_p/D-Y_pp*hQ/D^2-Y_p*hQ_p/D^2+Y_p*Q_pp*hQ/D^3)",
-    "new_required_per_KB_cross_sums": ["Sminus*qplus", "Sminus*Eplus"],
+    "completed_per_KB_cross_sums": ["Sminus*qplus", "Sminus*Eplus"],
+    "acquisition": "alternating1/8 subset correction added to old full Sminus*Ominus moments; paired configurations and degree25 weights retained",
     "existing_required_moments": ["Splus*Oplus", "Sminus*Ominus", "Splus", "Sminus", "Oplus", "Ominus"],
     "decision": "nonzero exact Xi_reweight excludes weighted-jump-only model; zero does not prove full profile closure",
     "boundary": "reweighting includes both rank-changing and rank-preserving holes, not a population-share split; fixed source and saturation chart; no independent evidence votes or fitted fraction",
-    "value_available": false,
+    "value_available": true,
     "new_random_production_requested": false
+  },
+  "next_theoretical_question": {
+    "status": "quantitative_size_prediction_not_yet_delivered",
+    "question": "same positive source: increasing N at fixed t versus fixed N then t to infinity",
+    "completed_input": "four predeclared couplings resolve turnover; finite-volume rank1 depletion gives U to zero",
+    "source_commit": "359bde9be45d051b961110e03f0bd70f3ff82b91",
+    "source_path": "notes/closed-source-two-state-turnover.md",
+    "required_output": "one cross-size ratio, sign or crossover forecast separating extreme-state finite-volume suppression from persistent sector transport",
+    "new_production_requested": false
   },
   "limits": [
     "dictionary applies to saturated endpoints and explicitly legal nested endpoint constraints",

@@ -1,4 +1,4 @@
-# Next Targets: A Fixed Mechanism Test After the Single-Defect Result
+# Next Targets: From Resolved Finite Mechanisms to a Size Prediction
 
 **Updated 2026-08-31.** Both requested primary lines have delivered decisions:
 #154's independent165M-permutation transmission experiment and two distinct
@@ -14,6 +14,12 @@ mixed null and source-independent overall-gain extension both fail.
 These finite exact claims do not resolve the larger-N F4 production:
 [its completed80M block, `25ca3635`](https://github.com/LightChainr/Matching-One/blob/25ca3635ea64655923c32adee4b62d683579cdcd/results/p337-f4-transmission-20260831/scored/REPORT.md),
 remains `INCONCLUSIVE_STOP_FIXED_BLOCK_WITHOUT_TOP_UP`, not zero coupling.
+
+The [prescribed defect split](../results/defect-reweight/REPORT.md) is now
+complete at `e1b968959634b9b3999c727b83ed38d0b730cb20`: reweighting contributes
+**+4.550327123237**, weighted jumps **−15.306045530801**, total **−10.755718407564**.
+The exact nonzero reweighting term rejects jump-only transmission. No missing
+cross-moment or first split remains assigned.
 
 [Final scientific handoff](../notes/independent-decisions-final-20260831.md) ·
 [Frozen decisions](DECISION-EXPERIMENTS.md) · [Claim boundaries](STATUS.md).
@@ -45,7 +51,7 @@ This page owns attention, not permission. No Issue is closed or locked here.
    The same165M block supplies the primary and secondary covariance, not an
    extra evidence vote or a revised ten-test primary family.
 
-## The next substantive target: weighted jumps versus baseline reweighting
+## The finite mechanism comparison is complete
 
 The requested named microscopic family is now concrete: normalized
 `exp(t*S_hat)` under checkerboard decimation. Its endpoint dictionary fixes
@@ -62,14 +68,33 @@ normalized weight-redistribution term can affect the global observer even
 when the hole leaves rank unchanged. It also includes rank-changing holes;
 it must not be labeled their complement or a measured population share.
 
-**Highest attention: the fixed weighted-rank-jump-only model predicts zero original-U
-mixed contribution from `Cov(w,O_intact)`.** Compute that contribution with
-the unchanged source/chart and full root/slope normalization; a nonzero exact
-enclosure excludes this model. The two required per-K cross moments are
-`E[S_defect*q_intact]` and `E[S_defect*E_intact]`. This is the prescribed
-operator split, not a descriptor search, fitted percentage or another first Xi.
-The full Xi and gain residual remain completed reference values. No new
-random-production assignment is implied; the exact finite prediction comes first.
+The fixed weighted-rank-jump-only model predicted zero mixed contribution
+from `Cov(w,O_intact)`. It is now excluded: the positive reweighting contribution
+partially offsets the negative jump contribution. The normalized operator
+already contains both with fixed coefficients; no extra source is needed.
+Only alternating four-neighbor patterns can change q/E, so the missing cross
+moments were reconstructed from a **1/8 exact subset** plus old full marginals.
+Each geometry required2^22 configurations; compilation and scoring took2.036seconds.
+
+## Highest attention: a cross-size prediction for the same positive source
+
+Execution's `branch_only` [four-coupling result, `a70eeff0`](https://github.com/LightChainr/Matching-One/blob/a70eeff09f51ce2fa0fea5ae637e9191efbf2e1f/results/p337-closed-source-finite-coupling/score/REPORT.md)
+finds U_t<0 at all fixed m=exp(t)=2,4,8,16, whereas U_t(0)>0.
+At least one local maximum therefore lies before log2. The
+[finite-volume argument, `359bde9b`](https://github.com/LightChainr/Matching-One/blob/359bde9be45d051b961110e03f0bd70f3ff82b91/notes/closed-source-two-state-turnover.md)
+gives an empty/full limiting mixture, rank-one depletion and U=O(exp(-3t))→0.
+The exponent is a bound, not a fitted leading power. The source is attractive
+and its matching root unique/simple; positive association does not order E=q².
+
+**The unresolved distinction is limit order:** fixed N followed by t→∞
+versus increasing N at a fixed positive coupling. Do the finite-volume
+extreme-state mixture and its suppression of rank1 still control the original
+U when the system grows? A next proposal should give one quantitative
+size-ratio, sign or crossover prediction for this same source and observer,
+with a competing finite-volume explanation and a result that separates them.
+No such numerical size forecast is claimed to be delivered here. Use the
+existing exact histogram and topology theory to derive it; extra points near
+the already resolved N25 peak are not the default next calculation.
 
 This is one specified mechanism question, not a scan over descriptors, sources,
 lags or exponents. Endpoint source invariance alone does not identify a continuum
@@ -116,9 +141,10 @@ team permission messages. The producing team's20:02:29 CST receipt records
 its five P154 machines returned Ready and all ten then observed Ready; this
 is dated delivery metadata, not current availability or an instruction to start.
 
-This overview's latest computation consumed saved exact N25 coefficients in
-0.281seconds: no enumeration, root search, random sample, cloud job or science
-test suite. The separate execution single-defect result is cited, not rerun.
+This overview's latest computation added only the missing alternating-face
+cross moments in2.036seconds, including compilation: no full-population repeat,
+root search, random sample, cloud job or science test suite. The separate
+execution turnover and full single-defect results are cited, not rerun.
 PR #267 stays Draft; no merges, history rewrite or
 Issue lifecycle changes. [The preceding queue](https://github.com/LightChainr/Matching-One/blob/f670d26e8056116ec1787e0a2f29009b5db24a7d/docs/NEXT-TARGETS.md)
 and [pre-score handoff](../notes/independent-decisions-handoff-20260831.md)

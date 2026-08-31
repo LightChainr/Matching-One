@@ -1,19 +1,22 @@
 # Three-team scientific handoff / 三队协作入口
 
-Updated: **2026-08-31**, local exact split `5483aa82`, execution one-hole result `f5c4a74a` and theory head `bc17b81d`; prior independent decisions retained. This is a result-routing entry, not a second
+Updated: **2026-08-31**, local defect split `e1b96895`, execution turnover `a70eeff0` and theory head `359bde9b`; prior independent decisions retained. This is a result-routing entry, not a second
 priority board or a live process monitor. [Next Targets](NEXT-TARGETS.md) remains
 the single attention order; [the machine-readable handoff](../analysis/team_coordination.yaml)
 records source pins and the state reported by each team.
 
-**New scientific handoff:** execution's [completed one-hole result `f5c4a74a`](https://github.com/LightChainr/Matching-One/blob/f5c4a74a20bad8589c39e1034cfb209462110dbe/results/p337-endpoint-defect/score/REPORT.md)
-gives Xi=−10.755718407564 and R=+27.766563581230, rejecting the thermal-only
-mixed null and source-independent gain. The overview's [fixed cycle/rank split](../results/decimation-cycle-rank/REPORT.md)
-leaves +.072917828300 after the explicit q bias, rejecting that unit-q alias.
-It took .281seconds on saved coefficients, with no enumeration or root search.
+**New scientific handoff:** the overview's [completed operator split](../results/defect-reweight/REPORT.md)
+gives baseline reweighting **+4.550327123237** against weighted jump
+**−15.306045530801**. The prescribed jump-only model fails. Only an exact
+alternating-face1/8 subset was added to the old full marginals;2.036seconds
+including compilation, no random sampling, root search or science test suite.
+Execution's [four-coupling result](https://github.com/LightChainr/Matching-One/blob/a70eeff09f51ce2fa0fea5ae637e9191efbf2e1f/results/p337-closed-source-finite-coupling/score/REPORT.md)
+also resolves turnover of the same homogeneous positive source. The
+finite-volume limit depletes rank1 while the matching root stays simple.
 The separate [80M F4 block](https://github.com/LightChainr/Matching-One/blob/25ca3635ea64655923c32adee4b62d683579cdcd/results/p337-f4-transmission-20260831/scored/REPORT.md)
 is completed and inconclusive; its fixed stop remains in force.
-[Next Targets](NEXT-TARGETS.md) now names the weighted-jump-only versus
-normalized reweighting comparison. No first Xi or duplicate block remains assigned.
+[Next Targets](NEXT-TARGETS.md) now asks for a quantitative same-source size/
+limit-order prediction. No first Xi, operator split or duplicate block remains assigned.
 No cloud job, random sample or science test suite was started by this handoff.
 
 **The two previously prioritized comparison routes are delivered.** #154's
@@ -38,14 +41,14 @@ create a second priority queue.
 
 | Team | Delivered / active contribution | Next handoff |
 |---|---|---|
-| **数学研究执行** | `ec01768f` full closed-source response; `f5c4a74a` exact one-hole gain rejection; `bc17b81d` alternating-face surgery. The independent80M F4 block is inconclusive and finished. | One-hole U/Xi/R are delivered, not pending inputs. Preserve fixed source/chart, hard endpoint closure and the distinct larger-N decision. |
-| **数学研究总览** | Draft [PR #267](https://github.com/LightChainr/Matching-One/pull/267): `5483aa82` eliminates the explicit unit-q alias with the exact cycle remainder; prior F4 closure and independent decisions retained. | Route the completed results and fixed weighted-jump/reweighting prediction through Next Targets; no repeat Xi, descriptor search, automatic production or team-permission pings. |
+| **数学研究执行** | `a70eeff0` resolves four-point finite-source turnover; `359bde9b` connects attraction, simple roots and the fixed-volume two-state limit. Earlier one-hole and F4 blocks are complete. | A new size/limit-order forecast would address the open question; more N25 peak points are not the default handoff. |
+| **数学研究总览** | Draft [PR #267](https://github.com/LightChainr/Matching-One/pull/267): `e1b96895` measures opposite-signed jump/reweighting contributions and excludes jump-only, using an exact1/8 subset. | Route these completed decisions into the same-source size question; no repeat Xi, cross-moment request, descriptor search or team-permission pings. |
 | **数学研究俯瞰** | `f4999e29` delivers all 165M P154 permutations, nine shards, 200 batches/N, official six-coordinate decisions and full covariance. B/C fail; W is not excluded; both net intervals meet the frozen weak-transmission band. The separate P334 contact-residual result `14b2c98e` is complete. | The frozen experiment is finished. Retain all delivered data and decisions; no extra samples, replacement lag/source or fourth numerical template. |
 
 The execution result is **branch_only**, on
 `analysis/p334-paired-clock-loading-20260831`, with no corresponding PR in the
-historical 17:58 query; the current local delivery pin is
-`bc17b81d502fb1ca3323f5c20f63c544bb31602d`. Its earlier [Issue #334 result card](https://github.com/LightChainr/Matching-One/issues/334#issuecomment-5476674429)
+current scoped branch-to-PR query; the current local delivery pin is
+`359bde9be45d051b961110e03f0bd70f3ff82b91`. Its earlier [Issue #334 result card](https://github.com/LightChainr/Matching-One/issues/334#issuecomment-5476674429)
 and [PR #267 pointer](https://github.com/LightChainr/Matching-One/pull/267#issuecomment-5476674567)
 are discussion links, not code integration. PR #509 retains its observed
 open/Draft lifecycle; the current delivery pin is
