@@ -1,0 +1,128 @@
+{
+  "claim_boundary": {
+    "excluded": "coverage of the zero-minor boundary, a complete gauge atlas, numerical conditioning guarantees, model search, noisy data, or physical interpretation",
+    "included": "exact verification of one supplied reachable-source chart, response invariance, amplification, and its zero-minor boundary",
+    "parent_issue": "remain open"
+  },
+  "claim_level": "exact",
+  "descriptor": {
+    "boundary_minor_value": "0",
+    "generator": [
+      [
+        "1",
+        "1"
+      ],
+      [
+        "0",
+        "2"
+      ]
+    ],
+    "normalizing_similarity": [
+      [
+        "1024",
+        "0"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ],
+    "readout": [
+      [
+        "1",
+        "1"
+      ]
+    ],
+    "response_count": 4,
+    "source_matrix": [
+      [
+        "1/1024",
+        "0"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ]
+  },
+  "issue": 370,
+  "schema": "matching-one/exact-gauge-chart-certificate/v1",
+  "source": {
+    "dependency_group": "synthetic-exact-gauge-boundary",
+    "path": "results/model-certificates/synthetic/gauge-chart-boundary/latest.json",
+    "sha256": "eed8abc51f9ae08d71e85b6ce199b49f827b1f1d6c2162910399778a4adc34d5"
+  },
+  "verification": {
+    "amplification_factor": "1024",
+    "chart_coverage": "nonzero_source_minor_only",
+    "determinant_before_after": [
+      "2",
+      "2"
+    ],
+    "dimension": 2,
+    "normalized_generator": [
+      [
+        "1",
+        "1024"
+      ],
+      [
+        "0",
+        "2"
+      ]
+    ],
+    "normalized_response_rows": [
+      [
+        "1/1024",
+        "1"
+      ],
+      [
+        "1/1024",
+        "3"
+      ],
+      [
+        "1/1024",
+        "7"
+      ],
+      [
+        "1/1024",
+        "15"
+      ]
+    ],
+    "normalized_source": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ],
+    "original_response_rows": [
+      [
+        "1/1024",
+        "1"
+      ],
+      [
+        "1/1024",
+        "3"
+      ],
+      [
+        "1/1024",
+        "7"
+      ],
+      [
+        "1/1024",
+        "15"
+      ]
+    ],
+    "responses_identical": true,
+    "source_minor": "1/1024",
+    "status": "exact_reachable_source_chart_verified",
+    "trace_before_after": [
+      "3",
+      "3"
+    ],
+    "uncovered_boundary": "source_minor=0"
+  }
+}
