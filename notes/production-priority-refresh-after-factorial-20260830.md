@@ -1,6 +1,6 @@
 # Production priority refresh after the completed factorial
 
-**Snapshot:** 2026-08-30  
+**Snapshot:** 2026-08-31 (production inputs acquired on 2026-08-30)
 **Purpose:** move attention when a result lands; do not turn priority into a lock.
 
 ## What has graduated out of the queue
@@ -22,11 +22,11 @@ Six items that were still described as preparation are now results.
    declared radius-1 row, not every microscopic energy definition. A restart
    needs a genuinely different local singlet, scale or field interface.
 
-3. **P429/P334 shared-update two-clone production is complete.** The large
+3. **P429/P334 shared-update two-clone production and reuse are complete.** The large
    unconditional clone gap is 97--99% common absorption, but a positive
    common-safe remainder survives at N325 and N425. The existing 100k rows
    already retain age, line, boundary, `H2`, cooperative and checkpoint
-   geometry. Consume those rows before requesting a longer path signature.
+   geometry. Draft `2d47d72` has now consumed those rows; see the result below.
 
 4. **P337 risk/hazard localization is complete.** Risk composition opposes the
    observed completion H4 while conditional completion hazard has the same
@@ -47,9 +47,9 @@ Six items that were still described as preparation are now results.
    remain unresolved at N325 and N425, as does the conditional mark12-H4
    control. The bottleneck is observer coupling, not absence of the state.
 
-## Default attention now
+## Two completed zero-new-sample analyses
 
-### Completed after the refresh: P250 state increment
+### P250: retained state adds predictive information
 
 The completed `defined.csv` stores typed intermediate objects together with
 outcomes on 400 batch clusters. Draft reanalysis `eb29446` has now used them in
@@ -73,14 +73,41 @@ common `k=36` peak. A future P250 row should target that orthogonal high-
 frequency coordinate while recording the complete terminal periodogram; the
 current production and zero-sample analysis leave the immediate queue.
 
-### 2. Consume P429 100k common-safe rows
+### P429: most common-safe dependence is already in checkpoint H2
 
-Cross-fit the surviving clone-dependence remainder against the already stored
-`H2`, cooperative, boundary, age and line features. Report how much each
-predeclared feature family absorbs on held-out batches. New multistep production
-is justified only by a stable residual outside those recorded coordinates.
+Draft `2d47d72` uses five batch-aligned folds across both orientations and
+sizes, retaining one paired-clone row as the unit. `H2` risk geometry absorbs
+70.4% and 97.9% of the N325/N425 common-safe clone gap. Multicontact and
+geometry reach 73.2% and 101.1%; age and line add no held-out gain. The final
+size means are `.0004315` and `-.0000073`.
 
-### 3. Redesign P337 around a line-typed observer
+N425 is not a closure certificate: its directions retain `+.0002342` and
+`-.0002488`, which cancel in the mean. The fractions are model/order-dependent
+predictive allocations, not causal mediation. Reported dispersion is conditional
+on the fitted fold models; nuisance-refit sampling uncertainty was not estimated.
+The existing checkpoint features are pre-common-update, not successor geometry,
+and the stored multicontact proxies are not exact cooperative `b2`.
+
+Reproducible outputs:
+
+- [P250 result and interpretation](P250_ADAPTIVE_SPATIAL_STATE_REANALYSIS_20260830.md).
+- [P429 scored report](../results/local-20260830/P429-common-safe-reanalysis/REPORT.md).
+
+Both analyses use the committed raw-source branches pinned by their contracts.
+The P250 `0061e4e` and P429 `751f8b3` inputs remain `branch_only`; their new
+derived results are `open_pr` in #267. A replay needs those pinned input files,
+not just the Draft checkout. No new Monte Carlo samples or server access were used.
+
+## Default attention now
+
+### 1. Turn the P267 discovery into a held-out prediction
+
+Freeze a low-rank response surface with the observed `tau x topology-map`
+interaction, then predict a third `tau` with both Smith types (or a third map
+across the two existing moduli). One new held-out pair is more informative
+than repeating the resolved four cells or fitting another universal ray.
+
+### 2. Redesign P337 around a line-typed observer
 
 The `W_line`/`J_S` source-rank pilot has already run. The new state coordinate
 is nearly orthogonal to JS, but `O_far/O_sep4` does not couple to it as a
@@ -89,17 +116,25 @@ incidence or a landing address relative to the current lifted line. Do not
 upscale the identical observer pair. The new design remains in the shared
 P337/P334 dependency family rather than becoming an independent vote.
 
-### 4. Turn the P267 discovery into a held-out prediction
+### 3. Target P429 successor state at N325
 
-Freeze a low-rank response surface with the observed `tau x topology-map`
-interaction, then predict a third `tau` with both Smith types (or a third Smith
-type across the two existing moduli). One new held-out pair is more informative
-than repeating the resolved four cells or fitting another universal ray.
+Record common-safe successor `H2`, geometry and exact cooperative `b2` in a
+direction-resolved N325 block. This changes the state observed at the fork and
+can separate a risk-set explanation from missing cooperative successor state.
+It is a sharper default than acquiring generic longer paths or repeating the
+completed checkpoint regressions. N425's cancelling directions remain visible.
+
+### 4. P250 common-k36 and complete endpoint spectrum
+
+When this lane rises, pair the same pre-outcome state with full terminal
+periodograms and freeze an orthogonal common-k36 covector. That compares a
+genuinely more complete spectral explanation with the retained-state increment;
+another fit to the current incomplete archive cannot make that distinction.
 
 ## Team operating guidance
 
-- A completed acquisition immediately leaves the runnable queue. Follow-on work must change
-  the model pair, observer or held-out geometry.
+- Completed acquisitions are shown as results, not default reruns. Follow-on
+  attention goes to a changed model pair, observer or held-out geometry.
 - Tests and certificate fixtures support a scientific output; they are not a
   headline work package.
 - Priority is an attention signal only. Parallel exact and speculative work

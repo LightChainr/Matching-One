@@ -3,6 +3,10 @@
 **Date:** 2026-08-30  
 **Lifecycle:** navigation synthesis in Draft PR #267; every scientific input below remains `branch_only` unless separately marked.
 
+**Historical queue:** the production and reanalysis advances after this snapshot
+are recorded in [the current priority refresh](production-priority-refresh-after-factorial-20260830.md).
+The executable list below explains the earlier decision; it is not today's runnable queue.
+
 Matching One is no longer blocked by a lack of exact tools. The latest branch sweep changes the operating question from “what infrastructure is still missing?” to:
 
 > Which already-positive or sharply motivated production acquisition will remove a live mechanism within the next work block?
