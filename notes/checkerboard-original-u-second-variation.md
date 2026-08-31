@@ -120,6 +120,18 @@ The temperature dependence of the physical saturation dose is part of the
 model. Even a transverse change invisible to U_hh at this root can be
 visible to this particular s path through its nonzero transverse value.
 
+The directly measurable saturation weights simplify to
+
+```
+W=cH=[Delta²-(1-2p)K-Np²]/(4p²),
+Z=W S_p+partial_p W=W S_p+V/(2p²)-2W/p.
+```
+
+Set j_Q=mean E[qW], j_Y=P4 E[EW] and replace W by Z for their p
+derivatives. Then U_ss=A_N/D*(j_Y,p-r j_Q,p-r'j_Q). These translation-even
+weights already remove the vanishing odd part of the transformed-family
+second score and retain the c' term exactly; no finite difference is needed.
+
 For an equivalent check in the original p coordinate, write w=(1-p)/2.
 At s=0, F_s=wF_p and F_ss=w²(F_pp+F_hh). The original pooled root obeys
 
