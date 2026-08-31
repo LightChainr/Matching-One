@@ -120,6 +120,13 @@ between those two mechanisms. This is also a different target from the
 previous approximately20% residual of a four-feature, across-prefix
 loading projection; the two percentages must not be identified.
 
+It also does not by itself refute a successful prediction of the first
+Jacobian by `J(Z)=B G(Z)`. A component orthogonal to both first scores is
+invisible to J. What is excluded is promoting that first-response relation
+to the stronger full conditional-label-mean closure written above. The
+PR509 first-response prediction task and this normal-response result can
+therefore coexist and constrain different pieces of the mechanism.
+
 Raw Hessians acquire first-derivative terms under nonlinear source-coordinate
 changes. This normal component has a stronger transformation property.
 For an invertible smooth reparameterization t=t(z), at the same base law,
