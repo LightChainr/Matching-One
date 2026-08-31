@@ -1,0 +1,12 @@
+{
+  "schema":"matching-one/p398-width8-T4-schur-bridge/v1",
+  "parent":"33c6028f8722d10122b95a6c02463680cef5df5b",
+  "fixed_span":"the archived 7-space, extended only by its normalized physical T4 residual w; same spaces for G and S",
+  "block_convention":"backward generator H8=[[A,b],[c,d]], A=old7 generator, w phase from T4 with positive real normalization; first old coordinate is e=psi/||psi||",
+  "schur_bridge":"b*(z-d)^(-1)*c; source resolvent correction=(e*R7 b)*(c R7 e)/(z-d-c R7 b)",
+  "moment_orders":[0,1,2,3,4,5,6],
+  "paper_input":"G psi=-3 psi+sqrt(2)*sign*zeta*T2_ray, and G T2=2T3-2T2+S11-B2; both G psi and G^2 psi already lie in old7",
+  "outputs":["left/right bridge couplings and pole","source moments old7/new8 for G and S","necessary cubic and quartic path terms"],
+  "not_claimed":"the single geometric bridge pole is not a full physical eigenmode or a Markov state transition",
+  "forbidden":["new span or observable","new lag","new simulation","width scan","test campaign","server operation"]
+}
