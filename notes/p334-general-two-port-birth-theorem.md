@@ -195,6 +195,62 @@ the first birth is `integral_0^1 [-S_i'(p)] product_(j!=i) S_j(p) dp`.
 This is a competing-channel attribution, not a claim that channel waiting
 times are independent under a fixed total insertion count.
 
+### An exact independent race appears in logarithmic occupation time
+
+There is a particularly simple physical decomposition for the h original
+single-site triggers at the checkpoint. Assign every remaining site an
+independent uniform occupation mark U_v. The ordering of these marks is the
+same uniform random permutation used by the discrete clock. Set
+
+`s=-log(1-u)`.
+
+Each transformed site mark is an independent Exp(1) time. Because a safe
+subset can contain none of the h original triggers, survival requires both
+(i) no original trigger has arrived and (ii) the other sites have not
+completed a collective path. These use disjoint sets of independent marks.
+Consequently
+
+`L_birth=min(D,C), D~Exp(h), D independent of C`,
+
+where C is the true collective completion clock after excluding the original
+trigger sites, and may be infinite if those sites are necessary. This is an
+exact independent race in s, even though the two mechanisms are not
+independent under a fixed total number of inserted sites. Its survival and
+hazard are
+
+`Pr(L_birth>s)=exp(-h s) Pr(C>s)`,
+`hazard_birth(s)=h+hazard_collective(s)`.
+
+For h>0, the original-direct winning probability therefore satisfies
+
+\[
+\boxed{\pi_{\rm direct}=h\,E[L_{\rm birth}]
+=h\sum_{k=0}^{d-1}\frac{f_k}{d\binom{d-1}{k}}
+=h\,E[H_d-H_{d-T}].}
+\]
+
+Here H_j is the harmonic number and H_0=0. The first identity integrates
+the direct hazard against survival; the second integrates
+`(1-u)^(d-1) F(u/(1-u))`; the third uses the independence of a uniform
+permutation and its ordered exponential marks. For h=0 the direct share
+is zero. Every original direct site has the same individual winning
+probability `E[L_birth]`, despite different geometric locations.
+
+This reveals a useful new clock coordinate: the original-direct fraction is
+an exact harmonic moment of the *complete* discrete birth law, not a function
+of H2 alone or an additional observable requiring sitewise solves.
+In the 83/1006 crossing example, h is 6/5 but the direct fractions are
+.677878/.522828, so their logarithmic mean waits are approximately
+.112980/.104566. The prefix with an extra constant direct hazard still has
+the longer complete mean: its collective clock differs. These independent
+clock variables clarify that reversal without treating between-prefix
+geometry changes as a one-parameter causal intervention.
+
+Numerical route allocations and full polynomials are in the component-race
+analysis `e3d978216220b5c55ff8da3062473e713c1246c7`. This section is an
+algebraic consequence of their event definition; no further reliability
+evaluation or random sampling was used.
+
 ## What is new here, and what is not
 
 The established torus homology classification is the backdrop, not a new
