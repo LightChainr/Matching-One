@@ -1,0 +1,19 @@
+{
+  "schema": "matching-one/p334-next-label-gate-coupling/v1",
+  "analysis_state": "formula frozen before new quartet counts; source identity pending producer completion",
+  "population": "Original 20,000 prefixes per N325/N425, twenty original batches of 1,000; no R1-only denominator",
+  "quartets_per_prefix": 8,
+  "replication": "Two independently chosen common next labels U,V; two independent suffixes per label; each suffix order paired across the original two orientations",
+  "cells": ["01", "10"],
+  "gate_order": ["R0 orientation next rank >= 1", "R1 orientation next rank == 2"],
+  "observer_order": ["paired integrated A", "paired integrated E"],
+  "observer_definition": "A=1-(K1+K2)/(N+1); E=1-(K2-K1)/(N+1); paired means (first-second)/the existing delta_cos4",
+  "orientation": "Keep the original first-minus-second sign in X and retain 01/10 separately; pooled low-minus-high alignment is the linear 01-minus-10 combination",
+  "gate_covariance": "half (g_U-g_V)(g_U-g_V)^T",
+  "gate_response_covariance": "half (g_U-g_V)(m_U-m_V)^T, where m averages the two independent suffixes of that label",
+  "denominator": "Average the eight quartets at each prefix, zero-pad noncell prefixes, then divide every original batch by 1000",
+  "uncertainty": "Retain joint twenty-batch sufficient vectors for the single shared covariance coordinator; no independent cell or agent evidence blocks",
+  "fixed_roles": "A 0->2 jump counts as the R0 first birth, including a simultaneous second birth; R1->2 is the higher-rank gate",
+  "forbidden": ["new sampling", "population rate-product substituted for within-prefix covariance", "unknown-pi Doob fractions", "intrinsic or universal spatial-covariance claim", "PR or comments"],
+  "boundary": "The common label is the pre-existing CRN coupling of these two geometries, not an intrinsic identification of positions in all embeddings"
+}
