@@ -1,8 +1,18 @@
 # 当前成果：从取向信号到微观机制
 
-**整理日期：2026-08-31，23时后续计算与复核。** 两个独立决策实验已完成并执行停线；首次Xi、jump/reweight分解和两套固定源的渐近反号也已完成，不再作为待办。[三份意见的核对与实际推进](../notes/reviews-response-20260831.md)记录本轮增量；[下一步](NEXT-TARGETS.md)只保留尚未回答的问题。本任务新增结果交付Draft #509，不合并。
+**整理日期：2026-09-01，正则局部 pair 空间传递复核。** 两个独立决策实验已完成并执行停线；首次Xi、jump/reweight分解和两套固定源的渐近反号也已完成，不再作为待办。[三份意见的核对与实际推进](../notes/reviews-response-20260831.md)记录本轮增量；[下一步](NEXT-TARGETS.md)只保留尚未回答的问题。本任务新增结果交付Draft #509，不合并。
 
-## 本轮：完整齐次 N50 已计算，有限零传递被排除
+## 当前机制取舍：局部有限传递已完成，单组件空间传递被排除
+
+执行分支 [2ba8863f](https://github.com/LightChainr/Matching-One/blob/2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb/notes/regular-pair-interaction-result.md) 已完成 canonical `Kreg=K2+K0`：所有有限网络的直接 Q1 响应为零，而固定 N25 的 `∂logQ∂epsilon U=-0.04503611398` 严格非零。旧 pure-K2 的一阶传递和固定四路径的13/8也已完成，不再等待“首次局部传入原U”。该数值依赖指定补全，不能称 completion-independent 或连续场确认。
+
+**[本次新增的空间选择规则](../experiments/p337-regular-spatial-support-20260901/RESULT.md)：两个非相邻标记若至多共享一个外部占据组件，首阶Q激活严格为零。** 对 canonical 核，占据总和后的 `Cxy=E[a_xy]` 满足 `|Cxy|≤(43/16)Pr{两点vacant且至少两个不同占据组件接触两处}`。两种独立精确算法的4140项全部一致；实际两组件构型给a=1/16，证明阈值可达到。原U的正确混合接口是完整 `W[a_xy]`，不是 `Cov(a_x,a_y)`。
+
+因此停止该正则Q1零值补全家族的单组件传播解释。剩余是固定核加权的多组件空间概率及其向同一原U的传递；没有测出距离曲线/连续指数，不加新counterterm或重新做N25。规则并未排除rank1 sector整体。当前P0随机生产仍为空。
+
+[固定m审查的新增结论](../notes/p337-fixed-m-relative-bound.md#7-2026-09-01实际组件气体的进一步取舍)则排除了裸组件气体在h=1使用标准非负KP判据的路线；任意非负控制函数都不能统一成立。rank2投影精确固定唯一绕行组件颜色，但实际两相内外partition比仍未控制，固定m原U定理没有被宣布完成。
+
+## 已完成：完整齐次 N50 与有限零传递判决
 
 | 问题 | 已得到的具体答案 | 尚未解决 |
 |---|---|---|
@@ -22,7 +32,7 @@
 
 [固定m相对界复核](../notes/p337-fixed-m-relative-bound.md)给实际局部模型`Delta_k≤50k log m`，改进到对h一致的表面阶，但常数仍大于已有轮廓界允许的阈值。另给完整三态热族反例：即便共同bulk精确消去、rank1对所有h指数小且pooled根唯一，若几何间受限sector odds未控制，仍可有`U/A→2/Delta`。它只否定这些摘要前提的充分性，不是原格点模型的反例。
 
-执行分支另于[0dda27ba](https://github.com/LightChainr/Matching-One/blob/0dda27ba/notes/closed-source-s4-trace-transmission-result.md)完成固定m2/Q4的S4 `[2,2]` seam插入：直接q/E分子恒零，原U仍经归一化与热导数得到`V_beta=+5.440121494634842e−6`。这个有限传递已完成，不再追加Q4点或seam；其epsilon是trace系数，不是孔密度或logQ。后续[bea717e8](https://github.com/LightChainr/Matching-One/blob/bea717e826df5a22518774b1725ae7bcbe2cb801/notes/p337-q1-closed-trace-transmission-result.md)已完成指定Q1闭合迹：固定beta1=−1_A−1_B给`V_beta1=−0.001904836180602413`，完整finite landing及有理证书均已交付。剩余是local pair到cut multiplicity的具体intertwiner及尺度内容，不再是缺失Q1有限传递。raw-Q分项依赖归一化规范，不能按其符号认定连续场；上述结果也不提供m64高效估计器。
+执行分支另于[0dda27ba](https://github.com/LightChainr/Matching-One/blob/0dda27ba/notes/closed-source-s4-trace-transmission-result.md)完成固定m2/Q4的S4 `[2,2]` seam插入：直接q/E分子恒零，原U仍经归一化与热导数得到`V_beta=+5.440121494634842e−6`。这个有限传递已完成，不再追加Q4点或seam；其epsilon是trace系数，不是孔密度或logQ。后续[bea717e8](https://github.com/LightChainr/Matching-One/blob/bea717e826df5a22518774b1725ae7bcbe2cb801/notes/p337-q1-closed-trace-transmission-result.md)已完成指定Q1闭合迹：固定beta1=−1_A−1_B给`V_beta1=−0.001904836180602413`，完整finite landing及有理证书均已交付。这些闭合迹之后，局部pair及其正则补全到原U的有限传递也已由上面的2ba8863f完成；尚未完成的是占据平均空间/尺度归属，不能再按旧的local-to-finite-U待办重算。raw-Q分项依赖归一化规范，不能按其符号认定连续场；上述结果也不提供m64高效估计器。
 
 ## 最新有限机制：端点闭合不能靠两个共同耦合延续
 

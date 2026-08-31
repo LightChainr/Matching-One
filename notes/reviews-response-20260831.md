@@ -41,7 +41,7 @@
 - [twist估计审查](p337-twist-estimator-access.md)：独立正partition差分病态，自然共享构型抵消还原稀有rank1指示量。m2的五个partition不能原样当成m64的五个partition；后者字面构造为4097项。缺失的是具体相关估计/桥接重叠/条件积分二阶矩控制，而不是再换一个算法名称。
 - [固定m相对界](p337-fixed-m-relative-bound.md)：实际局部模型已有对h一致的`Delta_k≤50k log m`，常数仍不足；完整三态热族进一步证明共同bulk精确消去、rank1一致指数小、FKG与唯一pooledroot仍不能替代受限sector odds控制。反例针对摘要前提，不否定原格点模型的固定m定理可能成立。
 
-同期[0dda27ba的固定Q4传递](https://github.com/LightChainr/Matching-One/blob/0dda27ba/notes/closed-source-s4-trace-transmission-result.md)已核对并接入STATUS：直接分子零也可经归一化改变原U，这一有限问题不重做；随后[bea717e8](https://github.com/LightChainr/Matching-One/blob/bea717e826df5a22518774b1725ae7bcbe2cb801/notes/p337-q1-closed-trace-transmission-result.md)又完成指定Q1闭合迹的完整finite landing和`V_beta1=−0.001904836180602413`。已读主结果与两连接核全文，移除这项过期待办；剩余local pair-to-cut归属和尺度内容尚未完成。上述后续全部没有新随机块或云任务。
+同期[0dda27ba的固定Q4传递](https://github.com/LightChainr/Matching-One/blob/0dda27ba/notes/closed-source-s4-trace-transmission-result.md)已核对并接入STATUS：直接分子零也可经归一化改变原U，这一有限问题不重做；随后[bea717e8](https://github.com/LightChainr/Matching-One/blob/bea717e826df5a22518774b1725ae7bcbe2cb801/notes/p337-q1-closed-trace-transmission-result.md)又完成指定Q1闭合迹的完整finite landing和`V_beta1=−0.001904836180602413`。已读主结果与两连接核全文，移除这项过期待办；这只是当时快照；local pair的后续有限传递现已完成，见下方2026-09-01更新。上述后续全部没有新随机块或云任务。
 
 
 ## 完整齐次N50已在本轮真正算完
@@ -50,4 +50,14 @@
 
 实现只保留活跃黑NN连通性与同调商空间位移，K收在值多项式中。N9/N13及两N25全表交叉核验后才完整运行N50；直接Bernstein p导数的Decimal120/160独立复核12项全部落在主Fraction区间内。[精确连通消元](p337-connectivity-reduction.md)还证明非循环A可同时积分，以及局部Russo界不能定原取向符号。未新开随机块或云任务，十台服务器查询时均Ready。
 
-本合同至此结束；删除“求齐次N50总体”的待办，不自动把资源转到N100、参数网格或新的descriptor。大尺度/有限耦合机制、local pair-to-cut归属、固定m受限扇区控制仍按各自实际边界保留，已完成的Q1有限迹传递也不再重做。
+本合同至此结束；删除“求齐次N50总体”的待办，不自动把资源转到N100、参数网格或新的descriptor。大尺度/有限耦合机制及固定m受限扇区控制仍按各自实际边界保留；后续局部pair进展见下，已完成的Q1有限迹传递也不再重做。
+
+## 2026-09-01：从局部有限传递转到可排除的空间机制
+
+再次全文读取三份意见，并核对执行快照[2ba8863f](https://github.com/LightChainr/Matching-One/blob/2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb/notes/regular-pair-interaction-result.md)：旧pure-K2一阶传递、正则补全的所有有限网络Q1零定理、canonical单点W=-0.04503611398，以及固定四路径13/8都已完成。不能把这些重新包装成下一次任务；其补全自由度也已明确，不作alpha扫描。
+
+本次[空间选择规则与固定核](../experiments/p337-regular-spatial-support-20260901/RESULT.md)则证明：正则、Q1逐配置零值的颜色对称局部插入，至多一个共享外部组件时不能产生首阶空间激活。canonical核的4140项由两种独立整数算法全部复核，得到占据平均上界 `|Cxy|≤43/16 Pr(两个vacant标记被至少两个不同占据组件接触)`；实际两组件见证给1/16。原U混合响应精确等于既有W[a_xy]，不另造source covariance。
+
+这给一个明确取舍：停止单组件传播解释，下一步约束固定核加权的多组件空间概率及同一原U读出；尚未给空间衰减或连续场确认。它不增加独立统计票，也不重开已失败P154/P334/F4。
+
+[实际固定m审查](p337-fixed-m-relative-bound.md#7-2026-09-01实际组件气体的进一步取舍)还证明裸组件KP判据在h=1也不能统一成立；继续改善旧裸活动度的计数常数不足。rank2固定carrier颜色恒等式和条件下等面积小簇逐项消去已写清，真正的两相归一化控制仍未被解决。本轮没有新增随机块或云作业。
