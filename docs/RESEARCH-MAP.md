@@ -4,31 +4,53 @@
 
 This map is the repository's scientific coordinate system. It is not a permission system: exact work, reanalysis, pilots, production and independent theory may proceed in parallel. Priority moves attention; it does not lock, close, veto or demote a task. `STATUS` owns claim/lifecycle language, `ROADMAP` preserves rationale, and [NEXT-TARGETS](NEXT-TARGETS.md) owns the single ranked decision queue.
 
-**Current frontier: a rank1-only colour trace reaches the original readout
-through normalization.** The [finite interface](../notes/four-leg-trace-denominator-interface.md),
-`open_pr #267` at `041257b8c63f98c694397604617edbb58f31ef51`, fixes
-`Z22=(T+3D2−4C3)/6` at m=2/Q=4, using one spatial colour sector.
-State: rank1 essential-component count c and temporal deck winding n mod6.
-Source: a fixed signed central-component attribution, not a fitted positive
-source. Observer: original q/E have zero raw [22] numerators, while
-`z22=2Z22/(T+R)` enters the full four-term root/slope response J22.
-Geometry: N25 Gaussian(5,0)/(4,3). Acquisition next: compatible seam p-jets
-or the specified rank1 marks absent from old `(K,g,q)` bins. **J22 is not
-yet evaluated**; its nonzero activity polynomial does not fix the root value.
+**Current frontier: the stable N25 full-central trace has a nonzero Q1
+normalization response and mixed Q derivative.** The [completed result](../results/n25-stable-colour-q1/REPORT.md),
+`open_pr #267` at `5c1f9d3b7971a41d07db3c9fa4ac86529c90c199`, gives
+`B1=−.001904836180602413` and `B1_logQ=+.005036496028411871`,
+both with zero excluded. State: packing restricts essential components and
+winding to `c|u|≤2`. Source: the fixed full stable central coefficient
+beta(Q), not a fitted local source. Observer: original pooled-root/slope U;
+the second response is `∂logQ∂epsilon U`, not total `∂logQ U`.
+Geometry: the same N25 pair. Acquisition: 6.759-second old-count/saved-root
+rational reduction, no new enumeration, MC, root search or tests.
+The [packing theorem and explicit completion](../notes/n25-stable-colour-completion.md)
+make the existing marks sufficient; the positive Q4 J22 remains the
+`branch_only` [earlier score, `54352b2e`](https://github.com/LightChainr/Matching-One/blob/54352b2eefa651ca482ca84837053c792e82c71e/results/p337-s4-trace-transmission/score/score.json).
+These dependent finite results do not identify one local continuum field
+or prove a crossing on a common Q1-to-Q4 regular-root branch.
+
+The [specialization comparison](../results/colour-specialization-gap/REPORT.md),
+`open_pr #267` at `ef7c3f58b9bbe2e21b1b4a9f5d8f57688ef121c2`, adds
+one 0.009302-second exact class sum on three specified physical closures.
+Their Q4/Q5 multiplicities are `1/1`, `5/6`, `−1/0`: dimension-only
+continuation fails for the full closure family. The counterexamples use
+N36/N49 patterns, not an assertion about support of the scored N25 packet.
+This is algebraic model elimination, not independent statistical evidence.
+N25 packing excludes those exceptional patterns, so its stable-Q1 score
+above is complete rather than obstructed. Next: specify local pair ports,
+spectator contractions and a multiplicity intertwiner deciding whether
+that local insertion equals the already scored full stable central trace.
+The `branch_only`
+[finite closure, `4a4390f2`](https://github.com/LightChainr/Matching-One/blob/4a4390f2aeff3e79855fb11ef1185ba52c80a43a/notes/closed-source-finite-torus-pair-closure.md)
+and [removable interface, `f43b3674`](https://github.com/LightChainr/Matching-One/blob/f43b3674ce29e12629dd790bcbb7370abc5cefbc/notes/closed-source-removable-twist-jet-interface.md)
+are completed inputs. A generic finite-interface request or another Q scan
+would not replace the specified local-to-full-trace intertwiner.
 
 The [weak-Q path comparison](../results/weak-q-path-comparison/REPORT.md),
 `e87d5de2d0bc83ac8e5c12af83a337b829c3323b`, retains the fixed B control:
 `J_tied=+.06308268170708457`, `J_site=−.2698280267134874`,
 `V_B=+.33291070842057197`. The [regular-endpoint zero](../notes/weak-q-paths-and-regular-selection.md)
-still excludes activation within that endpoint family. The new trace
-interface, based on the `branch_only` [hypergraph/twist realization, `977fea92`](https://github.com/LightChainr/Matching-One/blob/977fea9272c780aea19cc47f8d33324c28a1293e/notes/closed-source-hypergraph-rc-twist-projection.md),
-is finite Q=4; it is neither a Q=1 derivative nor a unique continuum field.
+still excludes activation within that endpoint family. The earlier finite-Q4
+interface used the `branch_only` [hypergraph/twist realization, `977fea92`](https://github.com/LightChainr/Matching-One/blob/977fea9272c780aea19cc47f8d33324c28a1293e/notes/closed-source-hypergraph-rc-twist-projection.md);
+the new N25 stable completion supplies its distinct Q1 packet without
+equating either full colour trace with a unique local continuum field.
 
 The independent #154/P334 decisions and one-hole split remain complete;
 [Decision Experiments](DECISION-EXPERIMENTS.md) owns their unchanged states.
 The Sstar/Sdrop N25 finite-coupling half-line is now complete as well:
 `Ustar<0<Udrop` for all real m≥64. Separate fixed-m and joint-limit results
-are mapped below; neither changes the primary next output, the defined J22.
+are mapped below; the primary next output is the local-to-full-trace intertwiner.
 Other lines remain open without Issue locks or automatic feature expansion.
 
 **Measured microscopic-to-global separation, Draft #267 `5483aa82047df34c2c9508d4930b6e20961ed9ca`:**

@@ -5,7 +5,27 @@
 研究路线失败。[最终科学交接](../notes/independent-decisions-final-20260831.md)
 给出定义、数据独立性和精确来源。
 
-## 最新已完成：Q4 有限归一化传输接口，下一判别只剩指定 J22
+## 最新完成：稳定 Q1 通道的原 U 传输与完整颜色导数
+
+[5c1f9d3b 的结果](../results/n25-stable-colour-q1/REPORT.md)已从既有seam计数
+与已有Q1根算出`B1=∂epsilon U=−.001904836180602413`及
+`B1_logQ=∂logQ∂epsilon U=+.005036496028411871`。两有理区间均排除零。
+第二项包含beta的显式Q导数、测度、移根与热斜率；它不是总U的Q切向。
+一次局部有理计算6.759秒，没有新枚举、随机生产、Q4重算或测试。
+
+[N25 packing证明](../notes/n25-stable-colour-completion.md)给出`c|u|≤2`，
+因此已有S4计数足以定义全stable通道：
+`beta(Q)=I12(Q−3)/(2Q)+I21(Q−3)/2`。B1中的两部分分别为
+`−.001945570733316785`和`+.00004073455271437206`；单独两essential簇的
+限制会漏掉第二项。完整颜色导数中显式beta项为`+.0028979888236179917`，
+测度/移根/斜率合计`+.002138507204793879`，均非拟合份额。
+
+[更大tori的精确反例](../results/colour-specialization-gap/REPORT.md)仍排除
+“任意closure只乘维数因子便可从Q4延拓”的一般说法；N25的几何证明解除
+本例的这个障碍。下一实际问题是指定局部pair插入到这个full stable trace的
+ports/spectator/multiplicity intertwiner，不再把Q1计算列为待办。
+
+## 已完成：Q4 有限归一化传输接口及其非零评分
 
 [041257b8 的解析推导](../notes/four-leg-trace-denominator-interface.md)
 在固定m=2、同一空间恒等颜色缝给出`Z22=(T+3D2−4C3)/6`，精确投影
@@ -15,11 +35,12 @@
 
 轴L≥5时`Z22(a)=L(L−3)4^(2L)a^(2L)+...`，由两个不相邻竖直列精确
 计数得到；它证明trace分量非零，**不证明matching根上的J22非零**。
-下一计算固定为N25原方向对、m=2的J22：严格非零界将排除这个有限通道的
-complete normalizer-neutrality；零则保留该有限null。需要三缝p-jets或
-rank1的`(K,g,n mod6,c)`信息，旧`(K,g,q)`档案不能替代。
-定义见[机器接口](../analysis/four_leg_trace_interface.json)。本轮没有新枚举、
-随机生产或测试。Q4颜色表示不等于唯一连续四腿场，也不自动给出Q→1延拓。
+执行[54352b2e](https://github.com/LightChainr/Matching-One/blob/54352b2eefa651ca482ca84837053c792e82c71e/results/p337-s4-trace-transmission/score/score.json)
+现已给出`J22=+.000005440121494634842`，严格正界排除该finite null。
+新的rank1 seam信息已取得；Gaussian90°旋转、rank分母因子及热变量的
+对应证明使它与我们的J22相同，不需要重复score。执行来源为branch_only。
+定义及完成指针见[机器接口](../analysis/four_leg_trace_interface.json)。
+Q4颜色表示不等于唯一连续四腿场；本例Q1延拓与评分已另见上节。
 
 ## 已完成：N25 的统一有限 m 符号区间
 

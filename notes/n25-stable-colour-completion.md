@@ -1,5 +1,11 @@
 # N25 admits an explicit stable colour completion
 
+**Completed evaluation:** [5c1f9d3b](../results/n25-stable-colour-q1/REPORT.md)
+now gives `B=−0.001904836180602413` and
+`B_logQ=+0.005036496028411871`, both with exact enclosures excluding zero.
+The same saved counts and Q1 root suffice; no new enumeration or root
+search was performed. The proof and the pre-score definition follow.
+
 **Result.** For the two scored N25 tori `(5,0)` and `(4,3)`, every
 rank-one occupation configuration with `c` essential components and
 first-period winding coordinate `u` satisfies `c |u| <= 2`. Consequently
@@ -366,9 +372,23 @@ acquire the same factor `Q^(-1/2)`, and the corresponding roots obey
 are unchanged by using y in place of h. Dropping the moving-root or
 slope response would destroy this coordinate-invariance check.
 
-The next calculation can therefore use the existing exact counts once,
-with the insertion and derivative objects fixed above. It needs neither
-a new Q4 score nor a new seam search. An eventual interpretation as a
-particular local continuum operator would still require the separate
-port, spectator and multiplicity intertwiners; the present completion
-does not assume that further identity.
+The completed calculation uses the existing exact counts once with
+these fixed derivative objects. It took6.759455seconds locally, with no
+Q4 rescore, root search or new seam counts. The two channel contributions
+to B are `−0.001945570733316785` from I12 and
+`+0.00004073455271437206` from I21. Hence a two-distinct-essential-cluster
+restriction omits a real, oppositely signed part of this full trace.
+These exact terms are not fitted fractions or independent evidence.
+
+The explicit beta(Q) derivative contributes `+0.0028979888236179917`
+to B_logQ; the remaining measure/root/slope contribution is
+`+0.002138507204793879`. The complete derivative includes both.
+All exact coefficient jets and rational intervals are saved in
+[the result packet](../results/n25-stable-colour-q1/latest.json).
+
+An interpretation as a particular local continuum operator still requires
+separate port, spectator and multiplicity intertwiners; the present
+completion does not assume that further identity. In particular B is
+already nonzero at Q1: this is not a baseline-zero activation established
+solely by differentiating a projector. Nor do the different Q1 and Q4
+signs alone establish a crossing on one globally regular root branch.

@@ -2,13 +2,13 @@ schema: matching-one.prospective-mechanism-decisions.v1
 updated: 2026-08-31
 entry: docs/DECISION-EXPERIMENTS.md
 scientific_handoff: notes/independent-decisions-final-20260831.md
-latest_exact_handoff: notes/four-leg-trace-denominator-interface.md
+latest_exact_handoff: notes/n25-stable-colour-completion.md
 purpose: consume_frozen_decisions_not_reopen_descriptor_search
 policy:
   primary_lines: [P154_TEMPORAL_TRANSMISSION, P334_INDEPENDENT_INTERVENTIONS]
   pending_primary_scores: []
   completed_experiments: [P154_TEMPORAL_TRANSMISSION, P334_SOURCE_NORMAL_INTERVENTION, P334_CONTACT_RESIDUAL_FORECAST]
-  next_primary: evaluate_fixed_N25_m2_Q4_J22_normalizer_transmission_coefficient_no_descriptor_fit_or_continuum_identification_claim
+  next_primary: identify_specified_local_pair_ports_spectators_and_multiplicity_intertwiner_after_completed_Q4_and_stable_Q1_trace_transmission
   issue_locks: false
   automatic_issue_closure_or_PR_merge: false
   parallel_exploration: true
@@ -29,7 +29,7 @@ completed_exact_comparison:
   configurations: 67108864
   new_random_samples: 0
   exact_source_completion: C_plus_F4_plus_T_NN_minus4K_plus2N_is_endpoint_invariant
-  next_named_discriminator: J22_finite_trace_normalizer_coefficient_defined_not_evaluated_N25_m_ge64_sign_window_completed
+  next_named_discriminator: local_pair_insertion_to_completed_stable_trace_identification_not_first_J22_Q1_score_or_finite_m_window
   boundary: finite_degree4_square_site_endpoint_different_Smith_classes_no_continuum_or_interior_RG_claim_no_independent_N50_run
 completed_cycle_rank_comparison:
   commit: 5483aa82047df34c2c9508d4930b6e20961ed9ca
@@ -116,17 +116,38 @@ completed_regular_endpoint_Q_selection:
   excludes_only: ordinary_regular_one_insertion_endpoint_four_leg_Q_activation
   not_excluded: actual_torus_trace_marked_or_finite_confluent_contributions_without_the_endpoint_identification
 next_operator_interface_question:
-  status: finite_Q4_normalizer_interface_derived_J22_not_evaluated_Q1_continuation_separate
-  definition_commit: 041257b8c63f98c694397604617edbb58f31ef51
-  definition_path: analysis/four_leg_trace_interface.json
-  required_output: fixed_N25_pair_m2_J22_from_seam_p_jets_or_rank1_K_g_temporal_winding_mod6_essential_component_counts
-  finite_null: complete_normalizer_neutrality_of_specified_22_component_predicts_J22_zero
-  discriminator: strict_nonzero_exact_bound_rejects_only_this_finite_null_zero_keeps_it_not_unique_continuum_identification
-  known: full_S4_Z22_equals_T_plus3D2_minus4C3_over6_rank1_support_raw_q_E_numerators_zero_normalizer_weight_2Z22_over_TplusR
-  trace_nonzero_proof: axis_L_ge5_leading_activity_L_times_Lminus3_times4power2L_apower2L_not_measured_J22
-  bookkeeping: fixed_signed_component_attribution_not_fitted_source_or_claimed_positive_local_family
+  status: Q4_J22_and_stable_Q1_response_and_colour_jet_completed_local_pair_identification_open
+  definition_commit: 170394ef65d34d60ecbd8921619dc6a9533190dc
+  definition_path: analysis/n25_stable_colour_q1_contract.json
+  required_output: explicit_local_pair_B_C_ports_spectator_contraction_and_homology_aware_multiplicity_resolution_or_a_failure_of_its_equality_with_full_central_trace
+  discriminator: full_trace_equality_requires_sum_Bnu_P_Cnu_equals_Pi_not_one_arbitrary_pair_of_ports
+  completed_Q4: {commit: 54352b2eefa651ca482ca84837053c792e82c71e, J22: 0.000005440121494634842, integration_status: branch_only}
+  completed_Q1: {commit: 5c1f9d3b7971a41d07db3c9fa4ac86529c90c199, B1: -0.001904836180602413, B1_logQ: 0.005036496028411871, integration_status: open_pr}
+  known: N25_packing_c_abs_u_le2_stable_beta_explicit_old_seam_counts_suffice_raw_q_E_numerators_zero_full_normalizer_response_nonzero
+  bookkeeping: beta_Q_fixed_by_stable_full_central_completion_not_a_local_field_or_total_U_Q_tangent
   fixed_control: retain_B_in_any_named_weak_Q_cross_size_comparison
   automatic_production: false
+completed_stable_Q1_trace_comparison:
+  result_commit: 5c1f9d3b7971a41d07db3c9fa4ac86529c90c199
+  definition_commit: 170394ef65d34d60ecbd8921619dc6a9533190dc
+  result_path: results/n25-stable-colour-q1/latest.json
+  proof: notes/n25-stable-colour-completion.md
+  status: B1_zero_and_B1_logQ_zero_both_excluded_by_exact_bounds
+  B1: -0.001904836180602413
+  B1_logQ: 0.005036496028411871
+  B1_channels: {I12: -0.001945570733316785, I21: 0.00004073455271437206}
+  B1_logQ_parts: {explicit_beta: 0.0028979888236179917, measure_root_slope: 0.002138507204793879}
+  elapsed_seconds: 6.759455249994062
+  dependency: same_complete_N25_population_new_prescribed_reduction_not_independent_evidence
+  new_enumerations: 0
+  new_root_searches: 0
+  boundary: epsilon_response_and_its_Q_derivative_not_total_Q_tangent_unique_local_field_or_new_large_N_production
+completed_general_specialization_comparison:
+  result_commit: ef7c3f58b9bbe2e21b1b4a9f5d8f57688ef121c2
+  result_path: results/colour-specialization-gap/latest.json
+  status: dimension_only_continuation_rejected_for_general_physical_closure_family
+  finite_coefficients_Q4_Q5: [[1, 1], [5, 6], [-1, 0]]
+  boundary: N25_packing_proves_stability_for_this_packet_general_counterexamples_do_not_block_its_Q1_completion
 completed_uniform_finite_coupling_window:
   result_commit: 85d5e44ba8aed471470373f972c670dc7c82bdcf
   result_path: results/p337-uniform-projection-tail/score.json

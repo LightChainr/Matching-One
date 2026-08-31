@@ -10,16 +10,25 @@ The repository is organized to expose the next mechanism-changing observation, n
 
 ## Start here
 
-**Current result:** [a definite finite colour trace has an explicit interface
-to original U](notes/four-leg-trace-denominator-interface.md), `open_pr #267`
-at `041257b8c63f98c694397604617edbb58f31ef51`. At m=2/Q=4,
-`Z22=(T+3D2−4C3)/6` is supported only on rank1: its raw q/E numerators
-vanish, but `z22=2Z22/(T+R)` enters their normalization. The full four-term
-moving-root/slope formula specifies **J22**, whose value remains uncomputed.
-Next: evaluate this fixed coefficient once on N25 Gaussian(5,0)/(4,3),
-using seam p-jets or the missing rank1 `(n mod6,c)` marks. The old `(K,g,q)`
-histogram alone cannot supply them. This is finite Q=4 sector attribution,
-not a Q=1 derivative or a uniquely identified continuum four-leg field.
+**Current result:** [the stable N25 colour trace has a nonzero Q1 response](results/n25-stable-colour-q1/REPORT.md),
+`open_pr #267` at `5c1f9d3b7971a41d07db3c9fa4ac86529c90c199`:
+`B1=∂epsilon U=−.001904836180602413` and
+`B1_logQ=∂logQ∂epsilon U=+.005036496028411871`.
+Both zero nulls are excluded by exact rational bounds. This 6.759-second
+reuse of old seam counts and the saved root adds no enumeration, samples,
+root search or tests. The [N25 packing theorem](notes/n25-stable-colour-completion.md)
+fixes the full stable central completion; B1_logQ is its mixed response,
+not the total Q derivative of U or a uniquely identified local field.
+
+The earlier Q4 result remains `J22=+5.440121494634842e−6`, execution
+`branch_only` [score `54352b2e`](https://github.com/LightChainr/Matching-One/blob/54352b2eefa651ca482ca84837053c792e82c71e/results/p337-s4-trace-transmission/score/score.json).
+No crossing between Q1 and Q4 is inferred without a common regular-root
+branch proof. The [dimension-only continuation counterexamples](results/colour-specialization-gap/REPORT.md)
+remain a larger-torus boundary; N25 packing removes that obstacle here.
+Next: specify local pair ports, spectator contractions and a multiplicity
+intertwiner, then decide whether that local insertion equals this already
+scored full stable central trace. Neither another Q scan nor a first Q1
+calculation is pending.
 
 The [weak-Q path sign separation](results/weak-q-path-comparison/REPORT.md)
 and regular-endpoint zero remain intact. Separately, execution's `branch_only`
@@ -29,7 +38,8 @@ half-line is complete; another m point is not pending.
 
 | Mechanism question | Delivered decision | Attention now |
 |---|---|---|
-| Does the finite [22] trace reach original U? | The normalizer-mediated interface is derived; raw q/E numerators vanish, but this does not force J22=0. | Evaluate the defined N25/m=2 J22 once; strict nonzero bounds reject only this finite normalizer-neutrality model. |
+| Does the stable colour trace reach original U at Q1? | Yes for the specified N25 completion: B1=−.00190483618 and B1_logQ=+.00503649603, both with zero excluded. | Identify the local pair-port/spectator/multiplicity intertwiner; a full central trace is not automatically one local four-leg field. |
+| Does the Q4 coefficient determine its generic-Q component by dimension alone? | No for the full physical closure family: multiplicities change `5→6` and `−1→0` in two exact examples. N25 packing proves its packet is already stable. | Preserve the larger-torus boundary; the completed N25 Q1 result needs no further enumeration or colour scan. |
 | Does the tied source measure the ordinary site-RC Q tangent? | No at N25: tied Q `+.06308268` versus rank-projected site-RC `−.26982803`, with B control `+.33291071`. | Keep B in matched-size weak-Q work. Regular-endpoint Q activation remains excluded in that endpoint family, not in every torus trace. |
 | Is the strong-coupling comparison still waiting for a finite-m witness? | No: the entire N25 real-m≥64 half-line has opposite signs. Growing-systole `N/m²→ζ<∞` also suppresses pooled U superpolynomially. | The distinct fixed-m oblique problem retains the order-25 twist penalty and sector-odds mismatch, not an unknown first finite-m window. |
 | Can a weighted rank jump alone explain the one-hole response? | No: `Xi_reweight=+4.550327123237` offsets jump `−15.306045530801`, giving total `−10.755718407564073`. Source-independent gain also remains excluded by `R=+27.766563581230237`; hard-endpoint closure survives. | Preserve the full normalized defect operator; reweighting contains both rank types, not a fitted extra source or population share. |
@@ -203,7 +213,7 @@ The [P418 per-sample archive reanalysis](results/p418-normalized-archive/REPORT.
 
 The 2026-08-31 review read **all 464 Issue/PR bodies, 1,354 discussion comments and seven reviews**. It recovered results that old opening bodies and earlier overview updates had left as “next”: real E_top and #370 production analysis, P218 coalescence, P155 local thermal-null, P40 motif covariance, P255 ordered-filtration proxy, P334 trigger-graph structure, F5 source separation, N112 E_top C3 and W5 periodic gluing. [The context crosswalk](docs/REPOSITORY-CONTEXT.md) distinguishes completed positive, completed inconclusive, and genuinely unrun work. It is a dated recovery, not a recurring audit prerequisite.
 
-**Highest attention is the now-defined N25/m=2 J22 calculation.** Its normalizer-mediated interface is complete; its root value and sign are not. A finite Q=4 result will not itself identify a Q=1 field or undo the regular-endpoint zero. The N25 m≥64 sign half-line is complete; fixed-m oblique twist stability and sector-odds control remain parallel. P154/P334/F4 decisions stay unchanged. [Next Targets](docs/NEXT-TARGETS.md) owns the queue; no new strong-m point or arbitrary observable follows automatically.
+**Highest attention is the local pair-port, spectator and multiplicity intertwiner.** The fixed N25 stable-Q1 response and its complete log-Q derivative are delivered; determine whether a specified local insertion equals this scored full central trace. Finite closure, Q4 J22 and Q1 scoring are no longer first-work requests. No unique CFT field, total-Q-response identification or Q1-to-Q4 crossing is inferred. Regular-endpoint zero and P154/P334/F4 decisions stand; fixed-m oblique twist/odds control remains parallel. [Next Targets](docs/NEXT-TARGETS.md) owns the queue.
 
 Several positive results now sharpen this choice. P337's F5 even rows separate W_line/JS response vectors at N325/N425 (`chi2/df=149.93/4,246.93/4`), although [P439's matching loading](results/p439-direct-plateau-transport/REPORT.md) remains unresolved. P267's square-bond N112 E_top C3 response is measured and not collinear with the primitive-line readout; it is not a square-site field identification. P437 measures fixed-support high-order topology at 14.97 SE; the earlier noisy estimator is not a general impossibility result. These remain explicitly unmerged source results.
 

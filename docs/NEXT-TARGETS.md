@@ -1,47 +1,55 @@
-# Next Targets: One Finite Transmission Coefficient, Fixed Source Controls
+# Next Targets: Identify the Local Operator Behind the Completed Trace Response
 
 **Updated 2026-08-31.** This is the single attention board, not a permission
-system. Work may proceed in parallel; no Issue is closed or locked.
+system. Parallel work remains open; no Issue is closed or locked.
 History and definitions remain in [Decisions](DECISION-EXPERIMENTS.md),
 [Status](STATUS.md) and the [scientific ledger](../analysis/research_ledger.yaml).
 
-## The missing finite interface is now explicit
+## The Q4 and stable-Q1 transmission calculations are completed
 
-The [Q=4 trace derivation](../notes/four-leg-trace-denominator-interface.md)
-(`open_pr #267`, `041257b8c63f98c694397604617edbb58f31ef51`) isolates the
-full S4 `[22]` component using three partitions at the **same spatial
-identity colour seam**:
+The [Q4 score](https://github.com/LightChainr/Matching-One/blob/54352b2eefa651ca482ca84837053c792e82c71e/results/p337-s4-trace-transmission/score/score.json),
+`branch_only`, gives **J22=+5.440121494634842e-6**. Gaussian90° rotation
+and the exact rank-normalization factor identify it with our specified
+J22; no duplicate enumeration or score is needed.
 
-```text
-Z22=(T+3 D2−4 C3)/6.
-```
+The new [N25 packing proof](../notes/n25-stable-colour-completion.md)
+makes the full stable-Q continuation explicit:
+`beta(Q)=I12(Q−3)/(2Q)+I21(Q−3)/2`. I12 means two once-winding essential
+components; I21 means one twice-winding component. Existing seam counts
+already separate them. The [completed Q1 result](../results/n25-stable-colour-q1/REPORT.md),
+`open_pr #267` at `5c1f9d3b7971a41d07db3c9fa4ac86529c90c199`, gives:
 
-T and D2 belong to the old construction; the temporal three-cycle C3 is
-one additional partition type. No claim is made that their numerical jets
-have already been collected. This signed component is supported on rank1.
-Consequently its unnormalized q/E numerators vanish exactly, but it enters
-the original normalizer through `z22=2 Z22/(T+R)`. The note gives the
-complete four-term root/slope formula for **J22=d_x U**, with a fixed
-component-attribution parameter x. Its value has not been computed.
+| Fixed complete original-U response | Value |
+|---|---:|
+| B1=∂epsilon U at Q1 | **−0.001904836180602413** |
+| ∂logQ B at Q1 | **+0.005036496028411871** |
+| B1 from I12 | −0.001945570733316785 |
+| B1 from I21 | +0.00004073455271437206 |
 
-On an axis L×L, L≥5, the component itself is demonstrably nonzero:
-`Z22(a)=L(L−3)4^(2L)a^(2L)+...`. This is an exact two-column counting
-argument, not a measured root response. It does not imply J22≠0.
+Both zero nulls are excluded by rational bounds. This took6.76seconds,
+using old counts and the saved root, retaining explicit beta(Q), measure,
+pooled-root and slope derivatives. B1 is not the total logQ derivative
+of U. A full trace is also not exhausted by the two-essential-cluster term.
 
-## Default attention: a specified coefficient, not another descriptor
+The [general specialization counterexamples](../results/colour-specialization-gap/REPORT.md)
+remain important for larger tori: full finite-colour projection need not
+commute with stable specialization. The N25 bound `c|u|≤2` resolves
+that obstacle **for this packet**. Do not reassign the Q1 landing as missing.
 
-| Attention | Next mechanism-changing output | Definition and consequence |
+## Default attention: one local-to-global identification
+
+| Attention | Next mechanism-changing output | What is already fixed |
 |---|---|---|
-| Highest finite transmission calculation | Evaluate J22 once at m=2 for the original N25 pair (5,0)/(4,3), with each geometry normalized before pooling. | [Fixed interface](../analysis/four_leg_trace_interface.json): exact seam p-jets or rank1 `(K,g,n mod6,c)` counts. A strict nonzero bound rejects complete normalizer-neutrality of this specified component. Zero retains that finite null; neither outcome uniquely identifies a continuum field. |
-| Parallel weak-Q comparison | Keep the named Q path and local B control together in matched-size responses. | Existing N25 tangents are opposite. The conditional regular single-thermal-field target is `L_S→9√3/(16π)`, `L_B→0`, with declared first-derivative corrections. No new size data are claimed. |
-| Parallel fixed-m geometry theory | Bound the oblique geometric translation penalty Δ_k and the restricted-sector odds mismatch d. | These are different quantities: Δ_k controls oblique winding; d controls the pooled denominator. Their sufficient inequalities are pinned below. This is not a request to add coupling-grid points. |
+| Highest | Specify an actual local pair insertion's ports, spectator contractions and homology-aware intertwiners; determine its original-U matrix element and whether it equals the full stable seam trace. | [The physical closure](https://github.com/LightChainr/Matching-One/blob/4a4390f2aeff3e79855fb11ef1185ba52c80a43a/notes/closed-source-finite-torus-pair-closure.md) already gives `Tr(P C T_O B)`. Equality with the full central trace requires the full multiplicity resolution `Σ Bν P Cν=Π`; one arbitrary pair of ports does not establish it. Failure of that equality rejects that local-to-full-trace identification, not the measured trace response. |
+| Parallel weak-Q comparison | Keep the named total Q path and local edge-B control together in matched-size responses. | The total tied/site-RC tangents differ. The stable trace's B1 and mixed derivative are different observables, not replacements for that control or a continuum exponent. |
+| Parallel fixed-m geometry theory | Bound the oblique geometric translation penalty Δ_k and restricted-sector odds mismatch d. | The finite-m window and Poisson joint limit are completed; these two fixed-m bounds remain distinct. |
 
-The first comparison has a finite model consequence, not an advance claim
-that Q4 colour `[22]` is the continuum four-leg field. Q→1 continuation
-remains a separate mathematical problem. The old `(K,g,q)` histogram lacks
-the required winding/component data; it must not be silently used as a
-replacement. Geometric order-25 translation twists are also distinct from
-the colour three-cycle above.
+The [finite-jet U functional](https://github.com/LightChainr/Matching-One/blob/f43b3674ce29e12629dd790bcbb7370abc5cefbc/notes/closed-source-removable-twist-jet-interface.md)
+is already available: a supplied local landing vector must be fully
+contracted and thermally differentiated. If using R/(√Q−1), retain
+R through quadratic Q order. No extra Q4 seam search, generic certificate
+catalogue or fitted colour dimension is required. Q1/Q4 opposite signs
+alone do not prove a crossing on a single globally regular root branch.
 
 ## Completed controls and windows: do not assign them again
 
@@ -51,8 +59,8 @@ the colour three-cycle above.
   Same exact N25 population; no new independent evidence.
 - [Regular endpoint selection](../notes/weak-q-paths-and-regular-selection.md):
   `ell P_[2](Q)=0` throughout the regular unlabelled one-insertion family,
-  including its regular Q derivatives. The finite trace interface above
-  is now derived; it does not undo this endpoint zero.
+  including its regular Q derivatives. The completed Q4 and stable-Q1 trace responses
+  do not undo this endpoint zero.
 - [Uniform N25 sign window](https://github.com/LightChainr/Matching-One/blob/85d5e44ba8aed471470373f972c670dc7c82bdcf/notes/closed-source-uniform-projection-tail.md),
   `branch_only`: **all real m≥64 satisfy U_star<0<U_drop** at each law's
   own original pooled root, with uniform rational remainders. This task is
@@ -82,8 +90,9 @@ Canonical E_top, first #370 production, K1/K2, defect reweight/jump and the
 strong-coupling tails are delivered inputs, not new first-run assignments.
 
 Complex C3, mixed geometry, triangular invariants, boundary Q and
-connectivity/defect radical remain parallel exploration. This turn added
-a derivation, not simulation or a test campaign. All ten Huawei machines
+connectivity/defect radical remain parallel exploration. This turn completed
+the stable-Q1 response in6.76seconds from existing exact counts; no new
+occupation enumeration, random block or scientific test campaign. All ten Huawei machines
 are authorized through the updated Skill; no cloud action or live availability
 check was needed. Coordination stays [in the repo](TEAM-COORDINATION.md).
 Draft PR267 remains unmerged. [The older long queue](https://github.com/LightChainr/Matching-One/blob/f405719264c896aa873dd4aae7292795f544ba99/docs/NEXT-TARGETS.md)

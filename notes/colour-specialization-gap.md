@@ -1,5 +1,12 @@
 # A finite colour-sector label does not fix its generic-Q continuation
 
+**N25 exception and completion:** the subsequent
+[packing theorem](n25-stable-colour-completion.md) proves `c|u|≤2` for
+the actual two N25 quotients, so their full S4 contraction is stable.
+Its [Q1 response and colour jet](../results/n25-stable-colour-q1/REPORT.md)
+are now computed. The counterexamples below delimit larger geometries;
+they do not leave the present N25 continuation unresolved.
+
 ## The completed Q4 decision, and the next actual distinction
 
 The [execution result](https://github.com/LightChainr/Matching-One/blob/54352b2eefa651ca482ca84837053c792e82c71e/results/p337-s4-trace-transmission/score/score.json)

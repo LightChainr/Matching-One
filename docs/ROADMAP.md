@@ -1,16 +1,26 @@
 # Roadmap: Default Attention, Not Permission
 
-**Current move, 2026-08-31:** compute the defined N25/m=2 J22 once.
-The [normalizer-mediated interface](../notes/four-leg-trace-denominator-interface.md),
-`open_pr #267` at `041257b8c63f98c694397604617edbb58f31ef51`, is complete:
-`Z22=(T+3D2−4C3)/6` has only rank1 support and zero raw q/E numerators,
-but `z22=2Z22/(T+R)` enters original U through the full four-term
-root/slope derivative. Obtain its p-jet from compatible seams or rank1
-`(n mod6,c)` marks on Gaussian(5,0)/(4,3); old `(K,g,q)` bins lack them.
-**J22's value and sign are uncomputed.** A nonzero bound would reject this
-finite normalizer-neutrality model, not identify a unique continuum field.
-The [weak-Q path control and regular-endpoint zero](../notes/weak-q-paths-and-regular-selection.md)
-remain intact; fixed Q=4 is not a Q=1 derivative. Execution's `branch_only`
+**Current move, 2026-08-31:** specify local pair ports, spectator contractions
+and a multiplicity intertwiner; decide whether that local insertion equals
+the already scored full stable central trace. The [N25 Q1 result](../results/n25-stable-colour-q1/REPORT.md),
+`open_pr #267` at `5c1f9d3b7971a41d07db3c9fa4ac86529c90c199`, is complete:
+`B1=−.001904836180602413`, `B1_logQ=+.005036496028411871`;
+both exact bounds exclude zero. One 6.759-second rational calculation reused
+the old seam counts and root without enumeration, MC, root search or tests.
+The [packing/completion proof](../notes/n25-stable-colour-completion.md)
+establishes the specific stable family. Its mixed derivative is not total
+`∂logQ U`, and the full central trace is not automatically a local field.
+
+Execution's `branch_only` [Q4 result, `54352b2e`](https://github.com/LightChainr/Matching-One/blob/54352b2eefa651ca482ca84837053c792e82c71e/results/p337-s4-trace-transmission/score/score.json)
+remains `J22=+5.440121494634842e−6`. No Q1-to-Q4 crossing follows without
+a common regular-root branch proof; no new Q scan is requested.
+The [dimension-only counterexamples](../results/colour-specialization-gap/REPORT.md),
+`ef7c3f58b9bbe2e21b1b4a9f5d8f57688ef121c2`, remain a larger-torus
+boundary; N25 packing has removed that obstruction in the scored packet.
+The `branch_only` [finite closure, `4a4390f2`](https://github.com/LightChainr/Matching-One/blob/4a4390f2aeff3e79855fb11ef1185ba52c80a43a/notes/closed-source-finite-torus-pair-closure.md)
+and [removable Q1 interface, `f43b3674`](https://github.com/LightChainr/Matching-One/blob/f43b3674ce29e12629dd790bcbb7370abc5cefbc/notes/closed-source-removable-twist-jet-interface.md)
+are completed inputs, not substitutes for the specified local intertwiner.
+The regular-endpoint zero and fixed B control stand. Execution's `branch_only`
 [N25 uniform sign half-line, `85d5e44b`](https://github.com/LightChainr/Matching-One/blob/85d5e44ba8aed471470373f972c670dc7c82bdcf/notes/closed-source-uniform-projection-tail.md)
 is also complete for every real m≥64. Do not request its first finite-m
 witness again; the distinct fixed-m oblique problem remains parallel.
@@ -82,8 +92,8 @@ The `branch_only` [four-coupling result, `a70eeff0`](https://github.com/LightCha
 already rejects monotone U amplification on N25: U_t is negative at each
 frozen m=2,4,8,16 after positive U_t(0). At least one local maximum lies in
 `(0,log2)`; uniqueness remains unproved. Reusing those exact populations for
-the tail is dependent analysis. More N25 peak points do not evaluate J22
-or settle the remaining fixed-m oblique twist/odds estimates.
+the tail is dependent analysis. More N25 peak points do not establish the
+local intertwiner or settle the remaining fixed-m oblique twist/odds estimates.
 
 The separate `branch_only` [F4 independent80M result, `25ca3635`](https://github.com/LightChainr/Matching-One/blob/25ca3635ea64655923c32adee4b62d683579cdcd/results/p337-f4-transmission-20260831/scored/REPORT.md)
 uses20M/100 batches per N65/85/130/170. All four simultaneous intervals

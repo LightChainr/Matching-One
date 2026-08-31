@@ -1,18 +1,23 @@
 # Three-team scientific handoff / 三队协作入口
 
-Updated: **2026-08-31**, finite trace interface `041257b8`, execution delivery `2690f665`; prior independent decisions retained. This is a result-routing entry, not a second
+Updated: **2026-08-31**, stable-Q1 result `5c1f9d3b`, execution delivery `0dda27ba`; prior independent decisions retained. This is a result-routing entry, not a second
 priority board or a live process monitor. [Next Targets](NEXT-TARGETS.md) remains
 the single attention order; [the machine-readable handoff](../analysis/team_coordination.yaml)
 records source pins and the state reported by each team.
 
-**New scientific handoff:** [Q4 trace to original-U normalizer](../notes/four-leg-trace-denominator-interface.md)
-is derived. At the same spatial identity colour seam,
-`Z22=(T+3D2−4C3)/6` isolates the full S4 `[22]` component; rank1 support
-makes its raw q/E numerators zero, while `z22=2Z22/(T+R)` enters the
-complete root/slope response J22. The next finite task is to evaluate that
-specified J22 at m=2 on the original N25 pair. Its value is not known;
-the nonzero trace polynomial is not a nonzero U result. Q4 colour-sector
-attribution is distinct from a Q→1 continuation or continuum identification.
+**New scientific handoff:** [stable-Q1 transmission is scored](../results/n25-stable-colour-q1/REPORT.md):
+`B1=−.001904836180602413`, `B1_logQ=+.005036496028411871`, both exact
+enclosures exclude zero. [N25 packing](../notes/n25-stable-colour-completion.md)
+fixes the stable completion from the already delivered seam counts.
+One6.76second rational reduction retains beta(Q), measure, root and slope;
+no enumeration or root search. This is an epsilon response and its colour
+derivative, not the total Q tangent or a local continuum field identity.
+
+Execution's [Q4 result54352b2e](https://github.com/LightChainr/Matching-One/blob/54352b2eefa651ca482ca84837053c792e82c71e/results/p337-s4-trace-transmission/score/score.json)
+already gives `J22=+5.440121494634842e-6`. The
+[seam/normalization correspondence](../notes/four-leg-trace-denominator-interface.md)
+identifies it exactly with our J22, without a repeat score. Both raw q/E
+numerators vanish; the full normalizer response is nonzero.
 
 The preceding [two named Q paths](../results/weak-q-path-comparison/REPORT.md)
 have opposite root-adjusted N25 original-U tangents: tied edge+.063082681707085,
@@ -28,7 +33,8 @@ it is a second implementation on the same exact populations, not independent
 statistical evidence. No team needs to repeat its cross-moment task.
 The separate [80M F4 block](https://github.com/LightChainr/Matching-One/blob/25ca3635ea64655923c32adee4b62d683579cdcd/results/p337-f4-transmission-20260831/scored/REPORT.md)
 is completed and inconclusive; its fixed stop remains in force.
-[Next Targets](NEXT-TARGETS.md) prioritizes the fixed J22 coefficient and
+[Next Targets](NEXT-TARGETS.md) now prioritizes the specified local pair
+ports/spectator/multiplicity identification with this completed trace and
 keeps B in parallel weak-Q size work. Execution85d5e44b has completed the
 Sstar/Sdrop finite-coupling window: all real m≥64 on N25 have strictly
 opposite original-U signs, with uniform remainders. No new m point is needed
@@ -60,14 +66,14 @@ create a second priority queue.
 
 | Team | Delivered / active contribution | Next handoff |
 |---|---|---|
-| **数学研究执行** | `2690f665` includes the m≥64 N25 sign window, axis fixed-m winding, Poisson joint-limit pooled-U suppression and sharp odds/twist reductions. | Fixed-m oblique theory now has two specific open bounds; the geometric order25 twist is not the Q4 colour three-cycle. |
-| **数学研究总览** | Draft [PR #267](https://github.com/LightChainr/Matching-One/pull/267): `041257b8` derives full S4 projection, rank1 support and the original-U normalizer interface; `e87d5de2` retains opposite named Q tangents. | Evaluate fixed N25 m2 J22 using prescribed seam jets or winding/component counts; retain B for weak-Q comparison. No new descriptors or duplicate production. |
+| **数学研究执行** | `54352b2e` delivers the nonzero Q4 trace response; `4a4390f2` supplies full homology-decorated closure and numerator spectrum; `f43b3674` gives the removable Q1 jet functional. Earlier fixed-m results remain complete. | Local-field identification still needs explicit ports and multiplicity contraction; fixed-m oblique twist/odds bounds remain separate. |
+| **数学研究总览** | Draft [PR #267](https://github.com/LightChainr/Matching-One/pull/267): `5c1f9d3b` scores nonzero stable-Q1 transmission and its full colour derivative; the N25 packing proof makes existing counts sufficient. | Carry the completed finite coefficients into a specified local pair insertion comparison, not another first Q4/Q1 score; retain B for total weak-Q comparisons. |
 | **数学研究俯瞰** | `f4999e29` delivers all 165M P154 permutations, nine shards, 200 batches/N, official six-coordinate decisions and full covariance. B/C fail; W is not excluded; both net intervals meet the frozen weak-transmission band. The separate P334 contact-residual result `14b2c98e` is complete. | The frozen experiment is finished. Retain all delivered data and decisions; no extra samples, replacement lag/source or fourth numerical template. |
 
 The execution result is **branch_only**, on
 `analysis/p334-paired-clock-loading-20260831`, with no corresponding PR in the
 current scoped branch-to-PR query; the current local delivery pin is
-`2690f665bc8029cb2370d3f1efcef5eb2853705c`. Its earlier [Issue #334 result card](https://github.com/LightChainr/Matching-One/issues/334#issuecomment-5476674429)
+`0dda27bab3d1b6a749a0a32b3dde666b7fe9a0dd`. Its earlier [Issue #334 result card](https://github.com/LightChainr/Matching-One/issues/334#issuecomment-5476674429)
 and [PR #267 pointer](https://github.com/LightChainr/Matching-One/pull/267#issuecomment-5476674567)
 are discussion links, not code integration. PR #509 retains its observed
 open/Draft lifecycle; the current delivery pin is

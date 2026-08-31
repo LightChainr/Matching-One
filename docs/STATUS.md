@@ -6,19 +6,48 @@
 
 `docs/NEXT-TARGETS.md` owns the single attention order, while `docs/ROADMAP.md` preserves its scientific rationale. Neither locks a task, serializes theory work or treats a lower priority as a scientific rejection.
 
-**Newest completed finite trace interface, `open_pr #267`, `041257b8c63f98c694397604617edbb58f31ef51`:**
-[the theorem](../notes/four-leg-trace-denominator-interface.md) and
-[machine-readable definition](../analysis/four_leg_trace_interface.json)
-specify `Z22=(T+3D2−4C3)/6` at fixed m=2/Q=4 and one common spatial colour
-sector. This signed central component has only rank1 support; its raw q/E
-numerators vanish. Its `z22=2Z22/(T+R)` normalization nevertheless enters
-the original U through the complete four-term pooled-root/slope formula.
-**J22 has not been evaluated.** The nonzero activity polynomial alone does
-not prove a nonzero matching-root response. Next: compute this fixed N25
-Gaussian(5,0)/(4,3) coefficient from compatible seam p-jets or rank1
-`(n mod6,c)` marks; the old `(K,g,q)` histogram lacks those marks.
-This finite Q=4 attribution is not a Q=1 derivative, a positive population
-share or a unique continuum four-leg identification.
+**Completed stable-Q1 response, `open_pr #267`, `5c1f9d3b7971a41d07db3c9fa4ac86529c90c199`:**
+[the exact result](../results/n25-stable-colour-q1/REPORT.md) gives
+`B1=∂epsilon U=−.001904836180602413` and
+`B1_logQ=∂logQ∂epsilon U=+.005036496028411871`; both exact bounds
+exclude zero. The [packing/completion proof](../notes/n25-stable-colour-completion.md),
+definition `170394ef65d34d60ecbd8921619dc6a9533190dc`, proves `c|u|≤2`
+on the two N25 tori, making their saved seam counts sufficient for the full
+stable central insertion. One 6.759-second rational reduction reused those
+counts and the saved root: no new enumeration, MC, root search or tests.
+
+B1's two fixed channels are `−.001945570733316785` and
+`+.00004073455271437206`. The mixed response splits into explicit-beta
+`+.0028979888236179917` and measure/root/slope `+.002138507204793879`.
+These are prescribed additive terms, not fitted fractions or independent
+votes. B1_logQ differentiates the trace-coefficient response, not total U's
+log-Q response. A local four-leg field has not been identified.
+
+The completed Q4 result remains `J22=V_beta=+5.440121494634842e−6`,
+execution `branch_only` [score `54352b2e`](https://github.com/LightChainr/Matching-One/blob/54352b2eefa651ca482ca84837053c792e82c71e/results/p337-s4-trace-transmission/score/score.json)
+and [interpretation `15d27da9`](https://github.com/LightChainr/Matching-One/blob/15d27da93b34bc95c1c40f7db78a00b381e18ad2/notes/closed-source-s4-trace-transmission-result.md).
+Our [equivalence](../notes/four-leg-trace-denominator-interface.md),
+`f81f70c8866e9165c2c9a3c0802b270e66133c24`, aligns the two seam/normalization
+conventions without another score. No Q1-to-Q4 crossing is claimed without
+a common regular-root branch proof; another colour scan is not requested.
+
+**New exact specialization obstruction, `open_pr #267`, `ef7c3f58b9bbe2e21b1b4a9f5d8f57688ef121c2`:**
+[three physical closure class sums](../results/colour-specialization-gap/REPORT.md)
+give Q4/Q5 multiplicities `1/1`, `5/6`, `−1/0`. Thus the full-family
+rule “continue a Q4 coefficient only by d(Q)/d(4)” fails. Runtime: 0.009302
+seconds of exact algebra, no independent production validation. The
+[proof](../notes/colour-specialization-gap.md) does not refute all
+continuations or assert the latter two topologies occur in the N25 packet.
+**Next:** use the already completed `branch_only` [physical closure,
+`4a4390f2`](https://github.com/LightChainr/Matching-One/blob/4a4390f2aeff3e79855fb11ef1185ba52c80a43a/notes/closed-source-finite-torus-pair-closure.md)
+to specify local pair ports, spectator contractions and the multiplicity
+intertwiner, and decide whether that local insertion equals the full stable
+central trace already scored. N25 packing has removed the general
+specialization obstruction for this packet. The `branch_only`
+[removable interface, `f43b3674`](https://github.com/LightChainr/Matching-One/blob/f43b3674ce29e12629dd790bcbb7370abc5cefbc/notes/closed-source-removable-twist-jet-interface.md)
+remains a completed jet interface, not another first-work request.
+Execution snapshot is
+`0dda27bab3d1b6a749a0a32b3dde666b7fe9a0dd`, still `branch_only`.
 
 The [weak-Q sign separation](../results/weak-q-path-comparison/REPORT.md),
 `open_pr #267` at `e87d5de2d0bc83ac8e5c12af83a337b829c3323b`, remains
@@ -149,7 +178,7 @@ not a measured source amplitude. [The final decision record](../notes/independen
 now supersedes the [pre-score handoff](../notes/independent-decisions-handoff-20260831.md).
 The cycle/rank split, one-hole R/Xi/reweighting, finite-coupling turnover and
 two fixed-law asymptotic size formulas are completed. The N25 m≥64 sign
-half-line is now complete too; the specified J22 value remains pending.
+half-line and strictly positive J22 are complete too; neither needs repeating.
 Research Issue lifecycles are unchanged.
 
 **Earlier finite-model elimination, `open_pr #267`, `3847a5cfb0a7fe4454a86cc1bfd8ce4ee2e813f4`:**
