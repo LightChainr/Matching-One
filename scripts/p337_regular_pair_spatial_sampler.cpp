@@ -40,9 +40,9 @@ Options parse_options(int argc, char** argv) {
         else if (key == "--output") o.output = value;
         else throw std::invalid_argument("unknown option: " + key);
     }
-    if ((o.L != 32 && o.L != 64) || !(o.p > 0 && o.p < 1) || !o.seed_given ||
+    if ((o.L != 32 && o.L != 64) || o.p != 0.592746050790 || !o.seed_given ||
         o.batches <= 0 || o.samples_per_batch <= 0 || o.lookup.empty() || o.output.empty())
-        throw std::invalid_argument("required: --L {32|64} --p P --seed U64 --batches B "
+        throw std::invalid_argument("required: --L {32|64} --p 0.592746050790 --seed U64 --batches B "
                                     "--samples-per-batch M --lookup kernel.tsv --output batches.csv");
     return o;
 }
@@ -67,11 +67,11 @@ std::unordered_map<std::uint32_t, std::int64_t> read_lookup(const std::string& p
         const auto fields = split_tsv(line);
         if (key_column < 0) {
             for (std::size_t i = 0; i < fields.size(); ++i) {
-                if (fields[i] == "key") key_column = static_cast<int>(i);
+                if (fields[i] == "key" || fields[i] == "packed_key") key_column = static_cast<int>(i);
                 if (fields[i] == "g16") g_column = static_cast<int>(i);
             }
             if (key_column < 0 || g_column < 0)
-                throw std::runtime_error("lookup TSV needs named key and g16 columns");
+                throw std::runtime_error("lookup TSV needs named packed_key (or key) and g16 columns");
             continue;
         }
         if (fields.size() <= static_cast<std::size_t>(std::max(key_column, g_column)))
@@ -128,12 +128,12 @@ class Sampler {
     std::vector<unsigned char> occupied;
     Components components;
     std::mt19937_64 rng;
-    const std::uint64_t threshold;
+    static constexpr std::uint64_t threshold = 10934234699625173385ULL;
     int site(int x, int y) const { return ((y+o.L)%o.L)*o.L + (x+o.L)%o.L; }
 
     void configuration(Batch& batch) {
         // One standardized RNG word per site, row-major x-fast order.
-        for (int v = 0; v < n; ++v) occupied[v] = (rng() >> 11) < threshold;
+        for (int v = 0; v < n; ++v) occupied[v] = rng() < threshold;
         components.reset();
         for (int v = 0; v < n; ++v) if (occupied[v]) {
             for (int direction : {0,1}) {
@@ -164,9 +164,8 @@ class Sampler {
                 shared += left && right;
             }
             const auto found = lookup.find(key);
-            if (found == lookup.end())
-                throw std::runtime_error("missing exact g16 lookup key: " + std::to_string(key));
-            const auto g16 = found->second;
+            // The frozen Bell8 TSV is sparse: omitted keys are exact zeros.
+            const std::int64_t g16 = found == lookup.end() ? 0 : found->second;
             batch.sum_g16 += g16;
             batch.by_shared[shared] += g16;
             ++batch.pairs_by_shared[shared];
@@ -177,8 +176,7 @@ class Sampler {
 public:
     Sampler(const Options& options, const std::unordered_map<std::uint32_t,std::int64_t>& table)
         : o(options), lookup(table), n(o.L*o.L), neighbors(n), occupied(n),
-          components(n), rng(o.seed),
-          threshold(static_cast<std::uint64_t>(o.p*9007199254740992.0)) {
+          components(n), rng(o.seed) {
         for (int y = 0; y < o.L; ++y) for (int x = 0; x < o.L; ++x)
             neighbors[site(x,y)] = {site(x,y+1),site(x+1,y),site(x,y-1),site(x-1,y)};
         const int r = o.L/4;
@@ -218,13 +216,14 @@ public:
         meta << std::setprecision(17)
              << "{\n  \"status\": \"completed\",\n  \"schema\": \"p337.regular-pair-spatial-batches.v1\",\n"
              << "  \"L\": " << o.L << ",\n  \"N\": " << n << ",\n  \"r\": " << o.L/4
-             << ",\n  \"p_requested\": " << o.p << ",\n  \"bernoulli_threshold_2pow53\": " << threshold
-             << ",\n  \"p_implemented\": " << static_cast<double>(threshold)/9007199254740992.0
-             << ",\n  \"seed\": " << o.seed << ",\n  \"rng\": \"std::mt19937_64; (word>>11)<threshold; one word/site\",\n"
+             << ",\n  \"p_requested_decimal\": \"0.592746050790\",\n  \"bernoulli_threshold_2pow64\": " << threshold
+             << ",\n  \"p_implemented_exact\": \"10934234699625173385/18446744073709551616\""
+             << ",\n  \"seed\": " << o.seed << ",\n  \"rng\": \"std::mt19937_64; word<threshold; one full uint64 word/site\",\n"
              << "  \"site_order\": \"x-fast row-major; N=(0,+1), E=(+1,0), S=(0,-1), W=(-1,0)\",\n"
              << "  \"batches\": " << o.batches << ",\n  \"samples_per_batch\": " << o.samples_per_batch
              << ",\n  \"samples\": " << static_cast<std::uint64_t>(o.batches)*o.samples_per_batch
              << ",\n  \"pairs_per_configuration\": 32,\n  \"lookup_rows\": " << lookup.size()
+             << ",\n  \"missing_lookup_key\": \"exact zero; sparse Bell8 nonzero table\""
              << ",\n  \"elapsed_seconds\": " << seconds
              << ",\n  \"inference_unit\": \"iid configuration; all 32 pairs are correlated readouts\",\n"
              << "  \"mean_g_denominator\": \"16*32*samples\",\n"
