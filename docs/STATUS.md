@@ -24,6 +24,8 @@ The old M0/M1/M2 wording was qualitative planning vocabulary, **not the actual c
 
 **Stop:** no top-up, new lag/source, fifth contact feature or same-block model rescue follows from these results. #337's existing finite theory is the next attention point, not a P0 production assignment. The established C3 finite-size evidence remains valid without unique operator identification.
 
+**Further completed finite calculations:** [homogeneous N50](https://github.com/LightChainr/Matching-One/blob/ef3b2c68f824e29421747c805ea7a505aca41908/experiments/p337-homogeneous-n50-20260831/RESULT.md) now gives original U=1.0615603877 and V_S=+0.0543457827, with full 2^50 counts per geometry and independent derivative review. The finite zero-transmission null is excluded; positive-sign continuation survives without mechanism confirmation. This contract is finished, with no N100/t/epsilon extension. The separate [specified Q1 closed trace](https://github.com/LightChainr/Matching-One/blob/bea717e826df5a22518774b1725ae7bcbe2cb801/notes/p337-q1-closed-trace-transmission-result.md) also has completed finite landing and V=-0.0019048362; only local pair-to-cut attribution/scaling remains, not an absent Q1 transmission map.
+
 ## Strongest current evidence
 
 | Statement | Level | Current evidence / provenance |
@@ -109,7 +111,7 @@ The [four-profile two-coupling test, f5aa94c3](https://github.com/LightChainr/Ma
 
 The frontier is now fixed at `2690f665`: [uniform rational bounds](https://github.com/LightChainr/Matching-One/blob/2690f665bc8029cb2370d3f1efcef5eb2853705c/notes/closed-source-uniform-projection-tail.md) prove U_star<0<U_drop for the locked N25 pair throughout every real m>=64, with explicit remainders and positive pooled denominators. The [Poisson coexistence theorem](https://github.com/LightChainr/Matching-One/blob/2690f665bc8029cb2370d3f1efcef5eb2853705c/notes/closed-source-poisson-double-scaling.md) separately proves superpolynomial suppression of original pooled-root U for both laws when N/m² tends to finite zeta on growing-systole quotients, including the oblique companion. Neither is a new sampling block or a uniform-in-size fixed-m result.
 
-The unresolved step is fixed-m oblique twist penalty/restricted-sector odds control or a practically accessible sampling regime. The joint-limit contour bound retains an exp[O(N/m²)] bulk factor and does not settle that fixed-m problem; the tiny N25 m>=64 amplitudes do not establish sampling feasibility. Do not reassign the first finite-window proof, fit another source coefficient or restart the stopped P154/P334/F4 blocks; the larger-N F4 fixed block remains inconclusive without top-up. These branch deliveries do not establish a continuum field or homogeneous H4 mechanism.
+The unresolved step is fixed-m oblique twist penalty/restricted-sector odds control or an estimator with demonstrated second-moment control at the fixed comparison. The joint-limit contour bound retains an exp[O(N/m²)] bulk factor and does not settle that fixed-m problem; the tiny N25 m>=64 amplitudes do not establish sampling feasibility. Do not reassign the first finite-window proof, fit another source coefficient or restart the stopped P154/P334/F4 blocks; the larger-N F4 fixed block remains inconclusive without top-up. These branch deliveries do not establish a continuum field or homogeneous H4 mechanism.
 
 ## Work explicitly stopped as a default
 

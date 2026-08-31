@@ -85,7 +85,7 @@ research_tracks:
     name: exact_finite_algebra_and_negative_controls
     state: finite_theory_attention_without_production
     issues: [337]
-    evidence: [E_N26_BETA_NEGATIVE, D_P337_TWO_COUPLING, D_P337_FINITE_FRONTIER]
+    evidence: [E_N26_BETA_NEGATIVE, D_P337_TWO_COUPLING, D_P337_FINITE_FRONTIER, D_P337_HOMOGENEOUS_N50]
   - id: I
     name: threshold_value_and_literature
     state: parked_observed_support
@@ -290,7 +290,22 @@ decision_evidence_blocks:
     parent_block: published_p337_finite_source_results
     independent_primary: false
     outcome: N25_all_real_m_ge64_opposite_signs_and_Poisson_joint_limit_U_suppression_proved
-    remaining: fixed_m_oblique_twist_penalty_or_restricted_sector_odds_or_accessible_sampling
+    remaining: fixed_m_oblique_twist_penalty_or_restricted_sector_odds_or_controlled_estimator
+
+  - id: D_P337_HOMOGENEOUS_N50
+    issue: 337
+    claim_level: exact_finite_original_U_response
+    geometry: homogeneous_N50_5_5_and_1_7
+    N: [50]
+    n_samples: 0
+    configurations_per_geometry: 1125899906842624
+    raw_path: experiments/p337-homogeneous-n50-20260831/results
+    score_path: experiments/p337-homogeneous-n50-20260831/RESULT.md
+    sha: ef3b2c68f824e29421747c805ea7a505aca41908
+    parent_block: complete_N50_finite_population
+    independent_primary: false
+    outcome: V_S_strictly_positive_finite_zero_excluded_sign_continuation_survives
+    remaining: general_scale_or_local_pair_to_cut_mechanism_not_finite_N50_score
 
 active_execution: []
 
