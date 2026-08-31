@@ -1,0 +1,82 @@
+{
+  "schema": "matching-one.p40-even-replay-run.v1",
+  "started_utc": "2026-08-31T07:34:20.545778+00:00",
+  "execution_commit": "9d0278c3333ab8f6763c97535117f2eb6f41871a",
+  "source_backend": {
+    "commit": "291854a518b03eef4293431b89254f0f4429da53",
+    "path": "src/gaussian_orientation_mc.cpp",
+    "git_blob": "b3d2047e35a6840cc7236e4a6088a291c734313b",
+    "sha256": "0e8ccfd0f042879db0e7898b748dc7e943bd5259e19e841712a0cfd113985c36"
+  },
+  "code": [
+    {
+      "path": "scripts/replay_p40_even_given_odd.py",
+      "sha256": "bf7bd444c20e04eba0d4ba7db7aecbf00b2e6d4438b4184af6c55539f2c00953"
+    },
+    {
+      "path": "analysis/p40_even_given_odd_replay.json",
+      "sha256": "e8652aa19b4c1c5320186cfa87de825a683a3ff06d3436f30f8a4c3b5d7f41ae"
+    },
+    {
+      "path": "src/p40_even_given_odd_replay.cpp",
+      "sha256": "5eedc8fe173ccda56848c697c9ca31816fcd0375a8d46b68634434f61e822f6b"
+    }
+  ],
+  "environment": {
+    "python": "3.11.15",
+    "machine": "arm64",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)"
+  },
+  "new_samples": 0,
+  "server_actions": 0,
+  "test_suites": [],
+  "runs": [
+    {
+      "N": 65,
+      "command": [
+        "/var/folders/qv/09841bwx4x9b1gqkht0f9nt40000gn/T/matching-p40-even-build-wbpats3v/p40-even-replay",
+        "65",
+        "/private/tmp/matching-pr267-fix/results/p40-even-given-odd/raw/n65.csv"
+      ],
+      "elapsed_seconds": 18.28678075002972,
+      "stdout": "Reobserved N=65: 100 aligned batches, 1000000 old counters, zero new samples\n",
+      "output": "results/p40-even-given-odd/raw/n65.csv",
+      "sha256": "2b6ee3f88958ce1a2128ca3426982468e09931f4c10b6130a518bc04cc03e5ca",
+      "old_counters": [
+        40000000,
+        41000000
+      ]
+    },
+    {
+      "N": 85,
+      "command": [
+        "/var/folders/qv/09841bwx4x9b1gqkht0f9nt40000gn/T/matching-p40-even-build-wbpats3v/p40-even-replay",
+        "85",
+        "/private/tmp/matching-pr267-fix/results/p40-even-given-odd/raw/n85.csv"
+      ],
+      "elapsed_seconds": 23.444153790944256,
+      "stdout": "Reobserved N=85: 100 aligned batches, 1000000 old counters, zero new samples\n",
+      "output": "results/p40-even-given-odd/raw/n85.csv",
+      "sha256": "5850050ff9b93857bf2e84b511a639e5696655c0dcdece45bbf85b7f72e7aaa0",
+      "old_counters": [
+        40000000,
+        41000000
+      ]
+    }
+  ],
+  "compile": {
+    "command": [
+      "c++",
+      "-O3",
+      "-std=c++17",
+      "-DMATCHING_P40_BACKEND=\"/var/folders/qv/09841bwx4x9b1gqkht0f9nt40000gn/T/matching-p40-even-build-wbpats3v/archived_gaussian.cpp\"",
+      "/private/tmp/matching-pr267-fix/src/p40_even_given_odd_replay.cpp",
+      "-o",
+      "/var/folders/qv/09841bwx4x9b1gqkht0f9nt40000gn/T/matching-p40-even-build-wbpats3v/p40-even-replay"
+    ],
+    "elapsed_seconds": 2.1510899589629844,
+    "binary_sha256": "26f98882b3656cb60d2da527870d9b727f2175b1162f7a96186ae37dbc1a1986"
+  },
+  "completed_utc": "2026-08-31T07:35:04.470765+00:00"
+}
