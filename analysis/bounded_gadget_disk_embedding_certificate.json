@@ -1,0 +1,6487 @@
+{
+  "claim_boundary": {
+    "excluded": "planar duality, self-duality, critical manifolds, periodic tilings, candidate ranking, thresholds, or bounds",
+    "included": "bounded connected one-internal-vertex disk embeddings with declared terminal cyclic order",
+    "parent_issue": "remain open"
+  },
+  "exact_checks": {
+    "all_disk_witnesses_have_zero_crossing_subgraphs": true,
+    "four_terminal_connected_orbits_complete": true,
+    "four_terminal_has_three_cyclic_order_classes": true,
+    "three_terminal_connected_orbits_complete": true
+  },
+  "issue": 13,
+  "method": "exhaust orientable rotation systems and require one face to contain terminals in the declared cyclic order",
+  "rows": [
+    {
+      "connected_orbits": 11,
+      "crossing_edge_subgraphs_checked": 0,
+      "cyclic_order_classes_per_orbit": 1,
+      "degree_at_least_3": {
+        "disk_planar_orbit_order_pairs": 4,
+        "orbits": 4
+      },
+      "disk_planar_orbit_order_pairs": 11,
+      "disk_planar_order_class_histogram": {
+        "1": 11
+      },
+      "internal_count": 1,
+      "non_disk_orbit_order_pairs": 0,
+      "records": [
+        {
+          "disk_planar_order_classes": 1,
+          "edge_count": 3,
+          "encoding": "3:4:001011",
+          "internal_degree": 3,
+          "orders": [
+            {
+              "disk_planar": true,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                2
+              ],
+              "witness_face": [
+                0,
+                3,
+                1,
+                3,
+                2,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  3
+                ],
+                "2": [
+                  3
+                ],
+                "3": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 1,
+          "edge_count": 3,
+          "encoding": "3:4:001101",
+          "internal_degree": 2,
+          "orders": [
+            {
+              "disk_planar": true,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                2
+              ],
+              "witness_face": [
+                0,
+                3,
+                2,
+                1,
+                2,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  2
+                ],
+                "2": [
+                  1,
+                  3
+                ],
+                "3": [
+                  0,
+                  2
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 1,
+          "edge_count": 4,
+          "encoding": "3:4:001111",
+          "internal_degree": 3,
+          "orders": [
+            {
+              "disk_planar": true,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                2
+              ],
+              "witness_face": [
+                0,
+                3,
+                1,
+                2,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  2,
+                  3
+                ],
+                "2": [
+                  1,
+                  3
+                ],
+                "3": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 1,
+          "edge_count": 3,
+          "encoding": "3:4:010101",
+          "internal_degree": 1,
+          "orders": [
+            {
+              "disk_planar": true,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                2
+              ],
+              "witness_face": [
+                0,
+                2,
+                1,
+                2,
+                3,
+                2
+              ],
+              "witness_rotation": {
+                "0": [
+                  2
+                ],
+                "1": [
+                  2
+                ],
+                "2": [
+                  0,
+                  1,
+                  3
+                ],
+                "3": [
+                  2
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 1,
+          "edge_count": 3,
+          "encoding": "3:4:010110",
+          "internal_degree": 1,
+          "orders": [
+            {
+              "disk_planar": true,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                2
+              ],
+              "witness_face": [
+                0,
+                2,
+                1,
+                3,
+                1,
+                2
+              ],
+              "witness_rotation": {
+                "0": [
+                  2
+                ],
+                "1": [
+                  2,
+                  3
+                ],
+                "2": [
+                  0,
+                  1
+                ],
+                "3": [
+                  1
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 1,
+          "edge_count": 4,
+          "encoding": "3:4:010111",
+          "internal_degree": 2,
+          "orders": [
+            {
+              "disk_planar": true,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                2
+              ],
+              "witness_face": [
+                0,
+                2,
+                1,
+                3,
+                2
+              ],
+              "witness_rotation": {
+                "0": [
+                  2
+                ],
+                "1": [
+                  2,
+                  3
+                ],
+                "2": [
+                  0,
+                  1,
+                  3
+                ],
+                "3": [
+                  1,
+                  2
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 1,
+          "edge_count": 4,
+          "encoding": "3:4:011110",
+          "internal_degree": 2,
+          "orders": [
+            {
+              "disk_planar": true,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                2
+              ],
+              "witness_face": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  2,
+                  3
+                ],
+                "1": [
+                  2,
+                  3
+                ],
+                "2": [
+                  0,
+                  1
+                ],
+                "3": [
+                  0,
+                  1
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 1,
+          "edge_count": 5,
+          "encoding": "3:4:011111",
+          "internal_degree": 3,
+          "orders": [
+            {
+              "disk_planar": true,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 2,
+              "terminal_order": [
+                0,
+                1,
+                2
+              ],
+              "witness_face": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  2,
+                  3
+                ],
+                "1": [
+                  2,
+                  3
+                ],
+                "2": [
+                  0,
+                  1,
+                  3
+                ],
+                "3": [
+                  0,
+                  2,
+                  1
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 1,
+          "edge_count": 4,
+          "encoding": "3:4:110101",
+          "internal_degree": 1,
+          "orders": [
+            {
+              "disk_planar": true,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                2
+              ],
+              "witness_face": [
+                0,
+                1,
+                2,
+                3,
+                2
+              ],
+              "witness_rotation": {
+                "0": [
+                  1,
+                  2
+                ],
+                "1": [
+                  0,
+                  2
+                ],
+                "2": [
+                  0,
+                  1,
+                  3
+                ],
+                "3": [
+                  2
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 1,
+          "edge_count": 5,
+          "encoding": "3:4:110111",
+          "internal_degree": 2,
+          "orders": [
+            {
+              "disk_planar": true,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 2,
+              "terminal_order": [
+                0,
+                1,
+                2
+              ],
+              "witness_face": [
+                0,
+                1,
+                2
+              ],
+              "witness_rotation": {
+                "0": [
+                  1,
+                  2
+                ],
+                "1": [
+                  0,
+                  2,
+                  3
+                ],
+                "2": [
+                  0,
+                  3,
+                  1
+                ],
+                "3": [
+                  1,
+                  2
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 1,
+          "edge_count": 6,
+          "encoding": "3:4:111111",
+          "internal_degree": 3,
+          "orders": [
+            {
+              "disk_planar": true,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 6,
+              "terminal_order": [
+                0,
+                1,
+                2
+              ],
+              "witness_face": [
+                0,
+                2,
+                1
+              ],
+              "witness_rotation": {
+                "0": [
+                  1,
+                  2,
+                  3
+                ],
+                "1": [
+                  0,
+                  3,
+                  2
+                ],
+                "2": [
+                  0,
+                  1,
+                  3
+                ],
+                "3": [
+                  0,
+                  2,
+                  1
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "terminal_count": 3
+    },
+    {
+      "connected_orbits": 58,
+      "crossing_edge_subgraphs_checked": 3936,
+      "cyclic_order_classes_per_orbit": 3,
+      "degree_at_least_3": {
+        "disk_planar_orbit_order_pairs": 28,
+        "orbits": 27
+      },
+      "disk_planar_orbit_order_pairs": 79,
+      "disk_planar_order_class_histogram": {
+        "0": 12,
+        "1": 18,
+        "2": 23,
+        "3": 5
+      },
+      "internal_count": 1,
+      "non_disk_orbit_order_pairs": 95,
+      "records": [
+        {
+          "disk_planar_order_classes": 3,
+          "edge_count": 4,
+          "encoding": "4:5:0001001011",
+          "internal_degree": 4,
+          "orders": [
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 16,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": [
+                0,
+                4,
+                1,
+                4,
+                2,
+                4,
+                3,
+                4
+              ],
+              "witness_rotation": {
+                "0": [
+                  4
+                ],
+                "1": [
+                  4
+                ],
+                "2": [
+                  4
+                ],
+                "3": [
+                  4
+                ],
+                "4": [
+                  0,
+                  1,
+                  2,
+                  3
+                ]
+              }
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  3
+                ],
+                [
+                  1,
+                  2
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 16,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 2,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": [
+                0,
+                4,
+                1,
+                4,
+                3,
+                4,
+                2,
+                4
+              ],
+              "witness_rotation": {
+                "0": [
+                  4
+                ],
+                "1": [
+                  4
+                ],
+                "2": [
+                  4
+                ],
+                "3": [
+                  4
+                ],
+                "4": [
+                  0,
+                  1,
+                  3,
+                  2
+                ]
+              }
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 16,
+              "planar_rotation_systems_checked": 3,
+              "rotation_systems_checked": 3,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                4,
+                2,
+                4,
+                1,
+                4,
+                3,
+                4
+              ],
+              "witness_rotation": {
+                "0": [
+                  4
+                ],
+                "1": [
+                  4
+                ],
+                "2": [
+                  4
+                ],
+                "3": [
+                  4
+                ],
+                "4": [
+                  0,
+                  2,
+                  1,
+                  3
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 2,
+          "edge_count": 4,
+          "encoding": "4:5:0001001101",
+          "internal_degree": 3,
+          "orders": [
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 16,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": [
+                0,
+                4,
+                1,
+                4,
+                3,
+                2,
+                3,
+                4
+              ],
+              "witness_rotation": {
+                "0": [
+                  4
+                ],
+                "1": [
+                  4
+                ],
+                "2": [
+                  3
+                ],
+                "3": [
+                  2,
+                  4
+                ],
+                "4": [
+                  0,
+                  1,
+                  3
+                ]
+              }
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  3
+                ],
+                [
+                  1,
+                  2
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 16,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": [
+                0,
+                4,
+                1,
+                4,
+                3,
+                2,
+                3,
+                4
+              ],
+              "witness_rotation": {
+                "0": [
+                  4
+                ],
+                "1": [
+                  4
+                ],
+                "2": [
+                  3
+                ],
+                "3": [
+                  2,
+                  4
+                ],
+                "4": [
+                  0,
+                  1,
+                  3
+                ]
+              }
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 2,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 2,
+          "edge_count": 5,
+          "encoding": "4:5:0001001111",
+          "internal_degree": 4,
+          "orders": [
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 32,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": [
+                0,
+                4,
+                1,
+                4,
+                2,
+                3,
+                4
+              ],
+              "witness_rotation": {
+                "0": [
+                  4
+                ],
+                "1": [
+                  4
+                ],
+                "2": [
+                  3,
+                  4
+                ],
+                "3": [
+                  2,
+                  4
+                ],
+                "4": [
+                  0,
+                  1,
+                  2,
+                  3
+                ]
+              }
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  3
+                ],
+                [
+                  1,
+                  2
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 32,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 2,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": [
+                0,
+                4,
+                1,
+                4,
+                3,
+                2,
+                4
+              ],
+              "witness_rotation": {
+                "0": [
+                  4
+                ],
+                "1": [
+                  4
+                ],
+                "2": [
+                  3,
+                  4
+                ],
+                "3": [
+                  2,
+                  4
+                ],
+                "4": [
+                  0,
+                  1,
+                  3,
+                  2
+                ]
+              }
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 6,
+              "rotation_systems_checked": 6,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 3,
+          "edge_count": 4,
+          "encoding": "4:5:0001010101",
+          "internal_degree": 2,
+          "orders": [
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 16,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": [
+                0,
+                4,
+                3,
+                1,
+                3,
+                2,
+                3,
+                4
+              ],
+              "witness_rotation": {
+                "0": [
+                  4
+                ],
+                "1": [
+                  3
+                ],
+                "2": [
+                  3
+                ],
+                "3": [
+                  1,
+                  2,
+                  4
+                ],
+                "4": [
+                  0,
+                  3
+                ]
+              }
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  3
+                ],
+                [
+                  1,
+                  2
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 16,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": [
+                0,
+                4,
+                3,
+                1,
+                3,
+                2,
+                3,
+                4
+              ],
+              "witness_rotation": {
+                "0": [
+                  4
+                ],
+                "1": [
+                  3
+                ],
+                "2": [
+                  3
+                ],
+                "3": [
+                  1,
+                  2,
+                  4
+                ],
+                "4": [
+                  0,
+                  3
+                ]
+              }
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 16,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                4,
+                3,
+                1,
+                3,
+                2,
+                3,
+                4
+              ],
+              "witness_rotation": {
+                "0": [
+                  4
+                ],
+                "1": [
+                  3
+                ],
+                "2": [
+                  3
+                ],
+                "3": [
+                  1,
+                  2,
+                  4
+                ],
+                "4": [
+                  0,
+                  3
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 2,
+          "edge_count": 4,
+          "encoding": "4:5:0001010110",
+          "internal_degree": 2,
+          "orders": [
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  3
+                ],
+                [
+                  1,
+                  2
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 16,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": [
+                0,
+                4,
+                2,
+                3,
+                1,
+                3,
+                2,
+                4
+              ],
+              "witness_rotation": {
+                "0": [
+                  4
+                ],
+                "1": [
+                  3
+                ],
+                "2": [
+                  3,
+                  4
+                ],
+                "3": [
+                  1,
+                  2
+                ],
+                "4": [
+                  0,
+                  2
+                ]
+              }
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 16,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                4,
+                2,
+                3,
+                1,
+                3,
+                2,
+                4
+              ],
+              "witness_rotation": {
+                "0": [
+                  4
+                ],
+                "1": [
+                  3
+                ],
+                "2": [
+                  3,
+                  4
+                ],
+                "3": [
+                  1,
+                  2
+                ],
+                "4": [
+                  0,
+                  2
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 2,
+          "edge_count": 5,
+          "encoding": "4:5:0001010111",
+          "internal_degree": 3,
+          "orders": [
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 4,
+              "rotation_systems_checked": 4,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  3
+                ],
+                [
+                  1,
+                  2
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 32,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 2,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": [
+                0,
+                4,
+                3,
+                1,
+                3,
+                2,
+                4
+              ],
+              "witness_rotation": {
+                "0": [
+                  4
+                ],
+                "1": [
+                  3
+                ],
+                "2": [
+                  3,
+                  4
+                ],
+                "3": [
+                  1,
+                  2,
+                  4
+                ],
+                "4": [
+                  0,
+                  3,
+                  2
+                ]
+              }
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 32,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 2,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                4,
+                3,
+                1,
+                3,
+                2,
+                4
+              ],
+              "witness_rotation": {
+                "0": [
+                  4
+                ],
+                "1": [
+                  3
+                ],
+                "2": [
+                  3,
+                  4
+                ],
+                "3": [
+                  1,
+                  2,
+                  4
+                ],
+                "4": [
+                  0,
+                  3,
+                  2
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 1,
+          "edge_count": 5,
+          "encoding": "4:5:0001011110",
+          "internal_degree": 3,
+          "orders": [
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 2,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  3
+                ],
+                [
+                  1,
+                  2
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 32,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": [
+                0,
+                4,
+                1,
+                3,
+                2,
+                4
+              ],
+              "witness_rotation": {
+                "0": [
+                  4
+                ],
+                "1": [
+                  3,
+                  4
+                ],
+                "2": [
+                  3,
+                  4
+                ],
+                "3": [
+                  1,
+                  2
+                ],
+                "4": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 2,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 1,
+          "edge_count": 6,
+          "encoding": "4:5:0001011111",
+          "internal_degree": 4,
+          "orders": [
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 6,
+              "rotation_systems_checked": 12,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  3
+                ],
+                [
+                  1,
+                  2
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 64,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 2,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": [
+                0,
+                4,
+                1,
+                3,
+                2,
+                4
+              ],
+              "witness_rotation": {
+                "0": [
+                  4
+                ],
+                "1": [
+                  3,
+                  4
+                ],
+                "2": [
+                  3,
+                  4
+                ],
+                "3": [
+                  1,
+                  2,
+                  4
+                ],
+                "4": [
+                  0,
+                  1,
+                  3,
+                  2
+                ]
+              }
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 6,
+              "rotation_systems_checked": 12,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 2,
+          "edge_count": 5,
+          "encoding": "4:5:0001110101",
+          "internal_degree": 2,
+          "orders": [
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 32,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": [
+                0,
+                4,
+                3,
+                1,
+                2,
+                3,
+                4
+              ],
+              "witness_rotation": {
+                "0": [
+                  4
+                ],
+                "1": [
+                  2,
+                  3
+                ],
+                "2": [
+                  1,
+                  3
+                ],
+                "3": [
+                  1,
+                  2,
+                  4
+                ],
+                "4": [
+                  0,
+                  3
+                ]
+              }
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 2,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 32,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                4,
+                3,
+                1,
+                2,
+                3,
+                4
+              ],
+              "witness_rotation": {
+                "0": [
+                  4
+                ],
+                "1": [
+                  2,
+                  3
+                ],
+                "2": [
+                  1,
+                  3
+                ],
+                "3": [
+                  1,
+                  2,
+                  4
+                ],
+                "4": [
+                  0,
+                  3
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 1,
+          "edge_count": 6,
+          "encoding": "4:5:0001110111",
+          "internal_degree": 3,
+          "orders": [
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 4,
+              "rotation_systems_checked": 8,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 4,
+              "rotation_systems_checked": 8,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 64,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 3,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                4,
+                2,
+                1,
+                3,
+                4
+              ],
+              "witness_rotation": {
+                "0": [
+                  4
+                ],
+                "1": [
+                  2,
+                  3
+                ],
+                "2": [
+                  1,
+                  3,
+                  4
+                ],
+                "3": [
+                  1,
+                  4,
+                  2
+                ],
+                "4": [
+                  0,
+                  2,
+                  3
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 0,
+          "edge_count": 7,
+          "encoding": "4:5:0001111111",
+          "internal_degree": 4,
+          "orders": [
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 6,
+              "rotation_systems_checked": 48,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 6,
+              "rotation_systems_checked": 48,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 6,
+              "rotation_systems_checked": 48,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 3,
+          "edge_count": 4,
+          "encoding": "4:5:0010010101",
+          "internal_degree": 1,
+          "orders": [
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 16,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                1,
+                3,
+                2,
+                3,
+                4,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  3
+                ],
+                "2": [
+                  3
+                ],
+                "3": [
+                  0,
+                  1,
+                  2,
+                  4
+                ],
+                "4": [
+                  3
+                ]
+              }
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  3
+                ],
+                [
+                  1,
+                  2
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 16,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": [
+                0,
+                3,
+                1,
+                3,
+                2,
+                3,
+                4,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  3
+                ],
+                "2": [
+                  3
+                ],
+                "3": [
+                  0,
+                  1,
+                  2,
+                  4
+                ],
+                "4": [
+                  3
+                ]
+              }
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 16,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                1,
+                3,
+                2,
+                3,
+                4,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  3
+                ],
+                "2": [
+                  3
+                ],
+                "3": [
+                  0,
+                  1,
+                  2,
+                  4
+                ],
+                "4": [
+                  3
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 3,
+          "edge_count": 4,
+          "encoding": "4:5:0010010110",
+          "internal_degree": 1,
+          "orders": [
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 16,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                1,
+                3,
+                2,
+                4,
+                2,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  3
+                ],
+                "2": [
+                  3,
+                  4
+                ],
+                "3": [
+                  0,
+                  1,
+                  2
+                ],
+                "4": [
+                  2
+                ]
+              }
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  3
+                ],
+                [
+                  1,
+                  2
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 16,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": [
+                0,
+                3,
+                1,
+                3,
+                2,
+                4,
+                2,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  3
+                ],
+                "2": [
+                  3,
+                  4
+                ],
+                "3": [
+                  0,
+                  1,
+                  2
+                ],
+                "4": [
+                  2
+                ]
+              }
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 16,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                1,
+                3,
+                2,
+                4,
+                2,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  3
+                ],
+                "2": [
+                  3,
+                  4
+                ],
+                "3": [
+                  0,
+                  1,
+                  2
+                ],
+                "4": [
+                  2
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 3,
+          "edge_count": 5,
+          "encoding": "4:5:0010010111",
+          "internal_degree": 2,
+          "orders": [
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 32,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                1,
+                3,
+                2,
+                4,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  3
+                ],
+                "2": [
+                  3,
+                  4
+                ],
+                "3": [
+                  0,
+                  1,
+                  2,
+                  4
+                ],
+                "4": [
+                  2,
+                  3
+                ]
+              }
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  3
+                ],
+                [
+                  1,
+                  2
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 32,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": [
+                0,
+                3,
+                1,
+                3,
+                2,
+                4,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  3
+                ],
+                "2": [
+                  3,
+                  4
+                ],
+                "3": [
+                  0,
+                  1,
+                  2,
+                  4
+                ],
+                "4": [
+                  2,
+                  3
+                ]
+              }
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 32,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                1,
+                3,
+                2,
+                4,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  3
+                ],
+                "2": [
+                  3,
+                  4
+                ],
+                "3": [
+                  0,
+                  1,
+                  2,
+                  4
+                ],
+                "4": [
+                  2,
+                  3
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 2,
+          "edge_count": 5,
+          "encoding": "4:5:0010011110",
+          "internal_degree": 2,
+          "orders": [
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 32,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                1,
+                4,
+                2,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  3,
+                  4
+                ],
+                "2": [
+                  3,
+                  4
+                ],
+                "3": [
+                  0,
+                  1,
+                  2
+                ],
+                "4": [
+                  1,
+                  2
+                ]
+              }
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 2,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 32,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                1,
+                4,
+                2,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  3,
+                  4
+                ],
+                "2": [
+                  3,
+                  4
+                ],
+                "3": [
+                  0,
+                  1,
+                  2
+                ],
+                "4": [
+                  1,
+                  2
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 2,
+          "edge_count": 6,
+          "encoding": "4:5:0010011111",
+          "internal_degree": 3,
+          "orders": [
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 64,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 3,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                1,
+                4,
+                2,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  3,
+                  4
+                ],
+                "2": [
+                  3,
+                  4
+                ],
+                "3": [
+                  0,
+                  1,
+                  4,
+                  2
+                ],
+                "4": [
+                  1,
+                  2,
+                  3
+                ]
+              }
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 6,
+              "rotation_systems_checked": 12,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 64,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 3,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                1,
+                4,
+                2,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  3,
+                  4
+                ],
+                "2": [
+                  3,
+                  4
+                ],
+                "3": [
+                  0,
+                  1,
+                  4,
+                  2
+                ],
+                "4": [
+                  1,
+                  2,
+                  3
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 2,
+          "edge_count": 4,
+          "encoding": "4:5:0010100011",
+          "internal_degree": 2,
+          "orders": [
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 16,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                4,
+                2,
+                1,
+                2,
+                4,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  2
+                ],
+                "2": [
+                  1,
+                  4
+                ],
+                "3": [
+                  0,
+                  4
+                ],
+                "4": [
+                  2,
+                  3
+                ]
+              }
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 16,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                4,
+                2,
+                1,
+                2,
+                4,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  2
+                ],
+                "2": [
+                  1,
+                  4
+                ],
+                "3": [
+                  0,
+                  4
+                ],
+                "4": [
+                  2,
+                  3
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 2,
+          "edge_count": 4,
+          "encoding": "4:5:0010100101",
+          "internal_degree": 1,
+          "orders": [
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 16,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                2,
+                1,
+                2,
+                3,
+                4,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  2
+                ],
+                "2": [
+                  1,
+                  3
+                ],
+                "3": [
+                  0,
+                  2,
+                  4
+                ],
+                "4": [
+                  3
+                ]
+              }
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 2,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 16,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                2,
+                1,
+                2,
+                3,
+                4,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  2
+                ],
+                "2": [
+                  1,
+                  3
+                ],
+                "3": [
+                  0,
+                  2,
+                  4
+                ],
+                "4": [
+                  3
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 2,
+          "edge_count": 5,
+          "encoding": "4:5:0010100111",
+          "internal_degree": 2,
+          "orders": [
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 32,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 2,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                4,
+                2,
+                1,
+                2,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  2
+                ],
+                "2": [
+                  1,
+                  3,
+                  4
+                ],
+                "3": [
+                  0,
+                  4,
+                  2
+                ],
+                "4": [
+                  2,
+                  3
+                ]
+              }
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 4,
+              "rotation_systems_checked": 4,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 32,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 2,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                4,
+                2,
+                1,
+                2,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  2
+                ],
+                "2": [
+                  1,
+                  3,
+                  4
+                ],
+                "3": [
+                  0,
+                  4,
+                  2
+                ],
+                "4": [
+                  2,
+                  3
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 2,
+          "edge_count": 5,
+          "encoding": "4:5:0010101011",
+          "internal_degree": 3,
+          "orders": [
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 32,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                4,
+                1,
+                2,
+                4,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  2,
+                  4
+                ],
+                "2": [
+                  1,
+                  4
+                ],
+                "3": [
+                  0,
+                  4
+                ],
+                "4": [
+                  1,
+                  2,
+                  3
+                ]
+              }
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 2,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 32,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                4,
+                1,
+                2,
+                4,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  2,
+                  4
+                ],
+                "2": [
+                  1,
+                  4
+                ],
+                "3": [
+                  0,
+                  4
+                ],
+                "4": [
+                  1,
+                  2,
+                  3
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 2,
+          "edge_count": 4,
+          "encoding": "4:5:0010101100",
+          "internal_degree": 1,
+          "orders": [
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 16,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                2,
+                1,
+                4,
+                1,
+                2,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  2,
+                  4
+                ],
+                "2": [
+                  1,
+                  3
+                ],
+                "3": [
+                  0,
+                  2
+                ],
+                "4": [
+                  1
+                ]
+              }
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 16,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                2,
+                1,
+                4,
+                1,
+                2,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  2,
+                  4
+                ],
+                "2": [
+                  1,
+                  3
+                ],
+                "3": [
+                  0,
+                  2
+                ],
+                "4": [
+                  1
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 2,
+          "edge_count": 5,
+          "encoding": "4:5:0010101101",
+          "internal_degree": 2,
+          "orders": [
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 32,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                2,
+                1,
+                4,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  2,
+                  4
+                ],
+                "2": [
+                  1,
+                  3
+                ],
+                "3": [
+                  0,
+                  2,
+                  4
+                ],
+                "4": [
+                  1,
+                  3
+                ]
+              }
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 2,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 32,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                2,
+                1,
+                4,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  2,
+                  4
+                ],
+                "2": [
+                  1,
+                  3
+                ],
+                "3": [
+                  0,
+                  2,
+                  4
+                ],
+                "4": [
+                  1,
+                  3
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 2,
+          "edge_count": 5,
+          "encoding": "4:5:0010101110",
+          "internal_degree": 2,
+          "orders": [
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 32,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                2,
+                4,
+                1,
+                2,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  2,
+                  4
+                ],
+                "2": [
+                  1,
+                  3,
+                  4
+                ],
+                "3": [
+                  0,
+                  2
+                ],
+                "4": [
+                  1,
+                  2
+                ]
+              }
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 2,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 32,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                2,
+                4,
+                1,
+                2,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  2,
+                  4
+                ],
+                "2": [
+                  1,
+                  3,
+                  4
+                ],
+                "3": [
+                  0,
+                  2
+                ],
+                "4": [
+                  1,
+                  2
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 2,
+          "edge_count": 6,
+          "encoding": "4:5:0010101111",
+          "internal_degree": 3,
+          "orders": [
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 64,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 3,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                4,
+                1,
+                2,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  2,
+                  4
+                ],
+                "2": [
+                  1,
+                  3,
+                  4
+                ],
+                "3": [
+                  0,
+                  4,
+                  2
+                ],
+                "4": [
+                  1,
+                  2,
+                  3
+                ]
+              }
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 4,
+              "rotation_systems_checked": 8,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 64,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 3,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                4,
+                1,
+                2,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  2,
+                  4
+                ],
+                "2": [
+                  1,
+                  3,
+                  4
+                ],
+                "3": [
+                  0,
+                  4,
+                  2
+                ],
+                "4": [
+                  1,
+                  2,
+                  3
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 2,
+          "edge_count": 5,
+          "encoding": "4:5:0010110101",
+          "internal_degree": 1,
+          "orders": [
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 32,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                1,
+                2,
+                3,
+                4,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  2,
+                  3
+                ],
+                "2": [
+                  1,
+                  3
+                ],
+                "3": [
+                  0,
+                  1,
+                  2,
+                  4
+                ],
+                "4": [
+                  3
+                ]
+              }
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 6,
+              "rotation_systems_checked": 6,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 32,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                1,
+                2,
+                3,
+                4,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  2,
+                  3
+                ],
+                "2": [
+                  1,
+                  3
+                ],
+                "3": [
+                  0,
+                  1,
+                  2,
+                  4
+                ],
+                "4": [
+                  3
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 2,
+          "edge_count": 5,
+          "encoding": "4:5:0010110110",
+          "internal_degree": 1,
+          "orders": [
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 32,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                1,
+                2,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  2,
+                  3
+                ],
+                "2": [
+                  1,
+                  3,
+                  4
+                ],
+                "3": [
+                  0,
+                  1,
+                  2
+                ],
+                "4": [
+                  2
+                ]
+              }
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 4,
+              "rotation_systems_checked": 4,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 32,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                1,
+                2,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  2,
+                  3
+                ],
+                "2": [
+                  1,
+                  3,
+                  4
+                ],
+                "3": [
+                  0,
+                  1,
+                  2
+                ],
+                "4": [
+                  2
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 2,
+          "edge_count": 6,
+          "encoding": "4:5:0010110111",
+          "internal_degree": 2,
+          "orders": [
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 64,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 2,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                1,
+                2,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  2,
+                  3
+                ],
+                "2": [
+                  1,
+                  3,
+                  4
+                ],
+                "3": [
+                  0,
+                  1,
+                  4,
+                  2
+                ],
+                "4": [
+                  2,
+                  3
+                ]
+              }
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 6,
+              "rotation_systems_checked": 12,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 64,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 2,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                1,
+                2,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  2,
+                  3
+                ],
+                "2": [
+                  1,
+                  3,
+                  4
+                ],
+                "3": [
+                  0,
+                  1,
+                  4,
+                  2
+                ],
+                "4": [
+                  2,
+                  3
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 2,
+          "edge_count": 6,
+          "encoding": "4:5:0010111110",
+          "internal_degree": 2,
+          "orders": [
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 64,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 3,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                1,
+                4,
+                2,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  2,
+                  3,
+                  4
+                ],
+                "2": [
+                  1,
+                  4,
+                  3
+                ],
+                "3": [
+                  0,
+                  1,
+                  2
+                ],
+                "4": [
+                  1,
+                  2
+                ]
+              }
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 4,
+              "rotation_systems_checked": 8,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 64,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 3,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                1,
+                4,
+                2,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  2,
+                  3,
+                  4
+                ],
+                "2": [
+                  1,
+                  4,
+                  3
+                ],
+                "3": [
+                  0,
+                  1,
+                  2
+                ],
+                "4": [
+                  1,
+                  2
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 2,
+          "edge_count": 7,
+          "encoding": "4:5:0010111111",
+          "internal_degree": 3,
+          "orders": [
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 128,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 20,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                2,
+                1,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  2,
+                  3,
+                  4
+                ],
+                "2": [
+                  1,
+                  4,
+                  3
+                ],
+                "3": [
+                  0,
+                  2,
+                  4,
+                  1
+                ],
+                "4": [
+                  1,
+                  3,
+                  2
+                ]
+              }
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 6,
+              "rotation_systems_checked": 48,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 128,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 20,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                2,
+                1,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3
+                ],
+                "1": [
+                  2,
+                  3,
+                  4
+                ],
+                "2": [
+                  1,
+                  4,
+                  3
+                ],
+                "3": [
+                  0,
+                  2,
+                  4,
+                  1
+                ],
+                "4": [
+                  1,
+                  3,
+                  2
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 0,
+          "edge_count": 6,
+          "encoding": "4:5:0011011110",
+          "internal_degree": 3,
+          "orders": [
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 4,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 4,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 4,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 0,
+          "edge_count": 7,
+          "encoding": "4:5:0011011111",
+          "internal_degree": 4,
+          "orders": [
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 6,
+              "rotation_systems_checked": 36,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 6,
+              "rotation_systems_checked": 36,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 6,
+              "rotation_systems_checked": 36,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 2,
+          "edge_count": 6,
+          "encoding": "4:5:0011101011",
+          "internal_degree": 4,
+          "orders": [
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 64,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": [
+                0,
+                4,
+                1,
+                2,
+                4,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3,
+                  4
+                ],
+                "1": [
+                  2,
+                  4
+                ],
+                "2": [
+                  1,
+                  4
+                ],
+                "3": [
+                  0,
+                  4
+                ],
+                "4": [
+                  0,
+                  1,
+                  2,
+                  3
+                ]
+              }
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 4,
+              "rotation_systems_checked": 6,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 64,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 3,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                4,
+                2,
+                1,
+                4,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3,
+                  4
+                ],
+                "1": [
+                  2,
+                  4
+                ],
+                "2": [
+                  1,
+                  4
+                ],
+                "3": [
+                  0,
+                  4
+                ],
+                "4": [
+                  0,
+                  2,
+                  1,
+                  3
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 1,
+          "edge_count": 5,
+          "encoding": "4:5:0011101100",
+          "internal_degree": 2,
+          "orders": [
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 32,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                2,
+                1,
+                4
+              ],
+              "witness_rotation": {
+                "0": [
+                  3,
+                  4
+                ],
+                "1": [
+                  2,
+                  4
+                ],
+                "2": [
+                  1,
+                  3
+                ],
+                "3": [
+                  0,
+                  2
+                ],
+                "4": [
+                  0,
+                  1
+                ]
+              }
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 1,
+          "edge_count": 6,
+          "encoding": "4:5:0011101101",
+          "internal_degree": 3,
+          "orders": [
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 64,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 2,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                2,
+                1,
+                4
+              ],
+              "witness_rotation": {
+                "0": [
+                  3,
+                  4
+                ],
+                "1": [
+                  2,
+                  4
+                ],
+                "2": [
+                  1,
+                  3
+                ],
+                "3": [
+                  0,
+                  2,
+                  4
+                ],
+                "4": [
+                  0,
+                  3,
+                  1
+                ]
+              }
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 4,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 4,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 1,
+          "edge_count": 7,
+          "encoding": "4:5:0011101111",
+          "internal_degree": 4,
+          "orders": [
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 128,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 7,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": [
+                0,
+                4,
+                1,
+                2,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3,
+                  4
+                ],
+                "1": [
+                  2,
+                  4
+                ],
+                "2": [
+                  1,
+                  3,
+                  4
+                ],
+                "3": [
+                  0,
+                  4,
+                  2
+                ],
+                "4": [
+                  0,
+                  1,
+                  2,
+                  3
+                ]
+              }
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 4,
+              "rotation_systems_checked": 24,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 4,
+              "rotation_systems_checked": 24,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 2,
+          "edge_count": 5,
+          "encoding": "4:5:0011110100",
+          "internal_degree": 1,
+          "orders": [
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 32,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                1,
+                2,
+                3,
+                0,
+                4
+              ],
+              "witness_rotation": {
+                "0": [
+                  3,
+                  4
+                ],
+                "1": [
+                  2,
+                  3
+                ],
+                "2": [
+                  1,
+                  3
+                ],
+                "3": [
+                  0,
+                  1,
+                  2
+                ],
+                "4": [
+                  0
+                ]
+              }
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 2,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 32,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                1,
+                2,
+                3,
+                0,
+                4
+              ],
+              "witness_rotation": {
+                "0": [
+                  3,
+                  4
+                ],
+                "1": [
+                  2,
+                  3
+                ],
+                "2": [
+                  1,
+                  3
+                ],
+                "3": [
+                  0,
+                  1,
+                  2
+                ],
+                "4": [
+                  0
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 2,
+          "edge_count": 6,
+          "encoding": "4:5:0011110101",
+          "internal_degree": 2,
+          "orders": [
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 64,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                1,
+                2,
+                3,
+                4
+              ],
+              "witness_rotation": {
+                "0": [
+                  3,
+                  4
+                ],
+                "1": [
+                  2,
+                  3
+                ],
+                "2": [
+                  1,
+                  3
+                ],
+                "3": [
+                  0,
+                  1,
+                  2,
+                  4
+                ],
+                "4": [
+                  0,
+                  3
+                ]
+              }
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 4,
+              "rotation_systems_checked": 6,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 64,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                1,
+                2,
+                3,
+                4
+              ],
+              "witness_rotation": {
+                "0": [
+                  3,
+                  4
+                ],
+                "1": [
+                  2,
+                  3
+                ],
+                "2": [
+                  1,
+                  3
+                ],
+                "3": [
+                  0,
+                  1,
+                  2,
+                  4
+                ],
+                "4": [
+                  0,
+                  3
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 1,
+          "edge_count": 6,
+          "encoding": "4:5:0011110110",
+          "internal_degree": 2,
+          "orders": [
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 4,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 4,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 64,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 2,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                4,
+                2,
+                1,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3,
+                  4
+                ],
+                "1": [
+                  2,
+                  3
+                ],
+                "2": [
+                  1,
+                  3,
+                  4
+                ],
+                "3": [
+                  0,
+                  2,
+                  1
+                ],
+                "4": [
+                  0,
+                  2
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 1,
+          "edge_count": 7,
+          "encoding": "4:5:0011110111",
+          "internal_degree": 3,
+          "orders": [
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 4,
+              "rotation_systems_checked": 24,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 4,
+              "rotation_systems_checked": 24,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 128,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 11,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                4,
+                2,
+                1,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  3,
+                  4
+                ],
+                "1": [
+                  2,
+                  3
+                ],
+                "2": [
+                  1,
+                  3,
+                  4
+                ],
+                "3": [
+                  0,
+                  4,
+                  2,
+                  1
+                ],
+                "4": [
+                  0,
+                  2,
+                  3
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 0,
+          "edge_count": 7,
+          "encoding": "4:5:0011111110",
+          "internal_degree": 3,
+          "orders": [
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 16,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 16,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 16,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 0,
+          "edge_count": 8,
+          "encoding": "4:5:0011111111",
+          "internal_degree": 4,
+          "orders": [
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 4,
+              "rotation_systems_checked": 144,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 4,
+              "rotation_systems_checked": 144,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 4,
+              "rotation_systems_checked": 144,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 1,
+          "edge_count": 5,
+          "encoding": "4:5:0110110001",
+          "internal_degree": 1,
+          "orders": [
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 2,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 2,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 32,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 1,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                2,
+                1,
+                3,
+                4,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  2,
+                  3
+                ],
+                "1": [
+                  2,
+                  3
+                ],
+                "2": [
+                  0,
+                  1
+                ],
+                "3": [
+                  0,
+                  1,
+                  4
+                ],
+                "4": [
+                  3
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 1,
+          "edge_count": 6,
+          "encoding": "4:5:0110110011",
+          "internal_degree": 2,
+          "orders": [
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 4,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 4,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 64,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 2,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  2,
+                  3
+                ],
+                "1": [
+                  2,
+                  3
+                ],
+                "2": [
+                  0,
+                  1,
+                  4
+                ],
+                "3": [
+                  0,
+                  4,
+                  1
+                ],
+                "4": [
+                  2,
+                  3
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 1,
+          "edge_count": 6,
+          "encoding": "4:5:0110110101",
+          "internal_degree": 1,
+          "orders": [
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 6,
+              "rotation_systems_checked": 12,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 6,
+              "rotation_systems_checked": 12,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 64,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 3,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                2,
+                1,
+                3,
+                4,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  2,
+                  3
+                ],
+                "1": [
+                  2,
+                  3
+                ],
+                "2": [
+                  0,
+                  1,
+                  3
+                ],
+                "3": [
+                  0,
+                  2,
+                  1,
+                  4
+                ],
+                "4": [
+                  3
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 1,
+          "edge_count": 7,
+          "encoding": "4:5:0110110111",
+          "internal_degree": 2,
+          "orders": [
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 6,
+              "rotation_systems_checked": 36,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 6,
+              "rotation_systems_checked": 36,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 128,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 6,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  2,
+                  3
+                ],
+                "1": [
+                  2,
+                  3
+                ],
+                "2": [
+                  0,
+                  1,
+                  3,
+                  4
+                ],
+                "3": [
+                  0,
+                  4,
+                  2,
+                  1
+                ],
+                "4": [
+                  2,
+                  3
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 1,
+          "edge_count": 6,
+          "encoding": "4:5:0110111001",
+          "internal_degree": 2,
+          "orders": [
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 4,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 4,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 64,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 2,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  2,
+                  3
+                ],
+                "1": [
+                  2,
+                  3,
+                  4
+                ],
+                "2": [
+                  0,
+                  1
+                ],
+                "3": [
+                  0,
+                  4,
+                  1
+                ],
+                "4": [
+                  1,
+                  3
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 1,
+          "edge_count": 7,
+          "encoding": "4:5:0110111011",
+          "internal_degree": 3,
+          "orders": [
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 16,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 16,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 128,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 4,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  2,
+                  3
+                ],
+                "1": [
+                  2,
+                  3,
+                  4
+                ],
+                "2": [
+                  0,
+                  1,
+                  4
+                ],
+                "3": [
+                  0,
+                  4,
+                  1
+                ],
+                "4": [
+                  1,
+                  3,
+                  2
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 1,
+          "edge_count": 6,
+          "encoding": "4:5:0110111100",
+          "internal_degree": 1,
+          "orders": [
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 4,
+              "rotation_systems_checked": 8,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 4,
+              "rotation_systems_checked": 8,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 64,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 2,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  2,
+                  3
+                ],
+                "1": [
+                  2,
+                  3,
+                  4
+                ],
+                "2": [
+                  0,
+                  1,
+                  3
+                ],
+                "3": [
+                  0,
+                  2,
+                  1
+                ],
+                "4": [
+                  1
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 1,
+          "edge_count": 7,
+          "encoding": "4:5:0110111101",
+          "internal_degree": 2,
+          "orders": [
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 4,
+              "rotation_systems_checked": 24,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 4,
+              "rotation_systems_checked": 24,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 128,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 4,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  2,
+                  3
+                ],
+                "1": [
+                  2,
+                  3,
+                  4
+                ],
+                "2": [
+                  0,
+                  1,
+                  3
+                ],
+                "3": [
+                  0,
+                  2,
+                  4,
+                  1
+                ],
+                "4": [
+                  1,
+                  3
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 1,
+          "edge_count": 8,
+          "encoding": "4:5:0110111111",
+          "internal_degree": 3,
+          "orders": [
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 4,
+              "rotation_systems_checked": 144,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 4,
+              "rotation_systems_checked": 144,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 256,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 20,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_rotation": {
+                "0": [
+                  2,
+                  3
+                ],
+                "1": [
+                  2,
+                  3,
+                  4
+                ],
+                "2": [
+                  0,
+                  1,
+                  4,
+                  3
+                ],
+                "3": [
+                  0,
+                  2,
+                  4,
+                  1
+                ],
+                "4": [
+                  1,
+                  3,
+                  2
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 1,
+          "edge_count": 8,
+          "encoding": "4:5:0111111011",
+          "internal_degree": 4,
+          "orders": [
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 96,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 96,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "crossing_partition": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "crossing_subgraphs": 0,
+              "disk_planar": true,
+              "edge_subgraphs_checked": 256,
+              "planar_rotation_systems_checked": 1,
+              "rotation_systems_checked": 41,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": [
+                0,
+                3,
+                1,
+                2
+              ],
+              "witness_rotation": {
+                "0": [
+                  2,
+                  3,
+                  4
+                ],
+                "1": [
+                  2,
+                  4,
+                  3
+                ],
+                "2": [
+                  0,
+                  4,
+                  1
+                ],
+                "3": [
+                  0,
+                  1,
+                  4
+                ],
+                "4": [
+                  0,
+                  3,
+                  1,
+                  2
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 0,
+          "edge_count": 7,
+          "encoding": "4:5:0111111100",
+          "internal_degree": 2,
+          "orders": [
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 16,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 16,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 16,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 0,
+          "edge_count": 8,
+          "encoding": "4:5:0111111101",
+          "internal_degree": 3,
+          "orders": [
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 96,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 96,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 96,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 0,
+          "edge_count": 9,
+          "encoding": "4:5:0111111111",
+          "internal_degree": 4,
+          "orders": [
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 864,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 864,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 864,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 0,
+          "edge_count": 7,
+          "encoding": "4:5:1110110101",
+          "internal_degree": 1,
+          "orders": [
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 6,
+              "rotation_systems_checked": 48,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 6,
+              "rotation_systems_checked": 48,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 6,
+              "rotation_systems_checked": 48,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 0,
+          "edge_count": 8,
+          "encoding": "4:5:1110110111",
+          "internal_degree": 2,
+          "orders": [
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 4,
+              "rotation_systems_checked": 144,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 4,
+              "rotation_systems_checked": 144,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 4,
+              "rotation_systems_checked": 144,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 0,
+          "edge_count": 9,
+          "encoding": "4:5:1110111111",
+          "internal_degree": 3,
+          "orders": [
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 864,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 864,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 2,
+              "rotation_systems_checked": 864,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            }
+          ]
+        },
+        {
+          "disk_planar_order_classes": 0,
+          "edge_count": 10,
+          "encoding": "4:5:1111111111",
+          "internal_degree": 4,
+          "orders": [
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 0,
+              "rotation_systems_checked": 7776,
+              "terminal_order": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 0,
+              "rotation_systems_checked": 7776,
+              "terminal_order": [
+                0,
+                1,
+                3,
+                2
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            },
+            {
+              "disk_planar": false,
+              "planar_rotation_systems_checked": 0,
+              "rotation_systems_checked": 7776,
+              "terminal_order": [
+                0,
+                2,
+                1,
+                3
+              ],
+              "witness_face": null,
+              "witness_rotation": null
+            }
+          ]
+        }
+      ],
+      "terminal_count": 4
+    }
+  ],
+  "schema": "matching-one/bounded-gadget-disk-embedding/v1",
+  "status": "exact_terminal_order_disk_embedding_certificate"
+}
