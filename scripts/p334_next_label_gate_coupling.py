@@ -70,6 +70,7 @@ def batch_vector(blob, delta_by_n):
         raise ValueError("Production header differs from the fixed producer schema")
     batches = np.zeros((2, len(FIELDS)))
     prefix_states, prefix_quartets = {}, {}
+    double_birth = {cell: {"label_draws": 0, "R0_next_rank2": 0} for cell in CELLS}
     identity = None
     for (counter, quartet), group in groupby(reader, key=lambda r: (int(r["counter"]), int(r["quartet"]))):
         rows = [{key: int(value) for key, value in r.items()} for r in group]
@@ -102,11 +103,15 @@ def batch_vector(blob, delta_by_n):
         cell, vector = quartet_vector(prefix[1:], next_ranks, births, identity[0], delta_by_n[identity[0]])
         if cell is not None:
             batches[CELLS.index(cell)] += vector
+            low = 0 if cell == "01" else 1
+            double_birth[cell]["label_draws"] += 2
+            double_birth[cell]["R0_next_rank2"] += int(np.sum(next_ranks[:, low] == 2))
     if identity is None or len(prefix_states) != 1000 or any(q != set(range(8)) for q in prefix_quartets.values()):
         raise ValueError("The full original 1000-prefix by 8-quartet batch is incomplete")
-    return identity, batches.ravel()/8000, {
+    prefix_counts = {
         cell: sum("".join(str(x) for x in state[1:]) == cell for state in prefix_states.values())
         for cell in CELLS}
+    return identity, batches.ravel()/8000, {"prefix_counts": prefix_counts, "R0_direct_double_birth": double_birth}
 
 
 def covariance_of_mean(batches):
@@ -148,7 +153,12 @@ def main():
         low_high = deltas[n]*(raw[:, :len(FIELDS)]-raw[:, len(FIELDS):])[:, x_fields]
         sizes[str(n)] = {"delta_cos4": deltas[n], "batch_ids": list(range(20)),
             "batch_denominators": [1000]*20, "quartets_per_prefix": 8,
-            "cell_counts_by_original_batch": [counts[n, b] for b in range(20)],
+            "cell_counts_by_original_batch": [counts[n, b]["prefix_counts"] for b in range(20)],
+            "R0_direct_double_birth_by_original_batch": [counts[n, b]["R0_direct_double_birth"] for b in range(20)],
+            "R0_direct_double_birth": {cell: {
+                "label_draws": sum(counts[n, b]["R0_direct_double_birth"][cell]["label_draws"] for b in range(20)),
+                "R0_next_rank2": sum(counts[n, b]["R0_direct_double_birth"][cell]["R0_next_rank2"] for b in range(20)),
+                "frequency_denominator": "Two independent next-label draws per quartet, not the duplicated suffix rows; retain repeated U=V as two draws"} for cell in CELLS},
             "labels": labels, "joint_20_batch_means": raw.tolist(),
             "joint_LOO_vectors": ((20*point-raw)/19).tolist(),
             "estimate": point.tolist(), "se": np.sqrt(np.diag(cov)).tolist(),

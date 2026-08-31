@@ -1,0 +1,9 @@
+# P334: shared-position co-promotion is distinct from the global even response
+
+- **Lifecycle:** formula `47d6eb41`, exact-schema reader `874b1025`, completed producer source `e32a85939279b8574278024d647b56d2d1485247`; one thin score. No sampling or DP by this analysis. Source contains8 quartets per original prefix, two common labels and two paired suffixes per label.
+- **Spatial mechanism:** in01/10, label gates are R0-first (`next_rank>=1`, including0->2) and R1-second (`next_rank=2`). The average within-prefix shared-label cross covariance, with full20k denominators, is +0.00038125 +/-0.00009521 forN325 and +0.000059375 +/-0.00007820 forN425. N325 resolves average co-promotion; N425 does not resolve a sign.
+- **Clock alignment:** in the fixed raw low-minus-high A/E coordinates, both gates have negative E covariance while their A signs oppose. N325 gate rows are(+6.92863e-4,-1.49688e-4) and(-3.86043e-4,-4.03269e-4); N425 preserves these directions.
+- **What cancels:** the original first-minus-second/H4 projection has strong01/10 cancellation. All four pooled gate×E entries are unresolved at two shared-batch standard errors; local co-promotion therefore does not establish an explanation of the global E signal. N425 R0×A retains -5.03327e-5 +/-1.18803e-5.
+- **Direct double birth:**0->2 next-label counts are26/38496 and26/39312 inN325;16/40800 and14/38432 inN425. Duplicated suffix rows are not extra label draws.
+- **Dependency / covariance:** original20 batches×1000 prefixes perN, 01/10 prevalence retained, full26-column sufficient vectors and delete-one vectors delivered to the shared covariance coordinator. No product of population gate rates is used in place of conditional covariance.
+- **Boundary:** this is the specified old CRN label coupling, not intrinsic/universal spatial covariance. A/E are nonredundant clock coordinates; no unknown-pi Doob fraction, new harmonic vote, exponent, or independent evidence block is claimed.

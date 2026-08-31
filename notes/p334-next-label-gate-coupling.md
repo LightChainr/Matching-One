@@ -1,10 +1,11 @@
 # P334: shared next-label birth gates and the complete even clock response
 
-Status: fixed thin analysis **before** new quartet counts are read. The exact
-long-CSV schema is supplied by producer `a3249a59`; the producer will separately
-supply the immutable completed source identity. The reader takes only that
-commit and requires all forty gzip batches. It does not consume partial
-production or start sampling.
+Status: completed. Formula freeze `47d6eb41` and exact-schema reader freeze
+`874b1025` preceded target counts. Producer `a3249a59` completed the forty
+gzip batches in immutable source `e32a85939279b8574278024d647b56d2d1485247`.
+The following fixed definitions were scored once on that complete source.
+This analysis started no sampling; it uses the producer's1,280,000 fresh
+conditional tails on the original40,000 paired prefixes.
 
 ## One within-prefix spatial question
 
@@ -96,5 +97,82 @@ The completed-source command is:
 ```sh
 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 \
 /Users/lc/python-envs/research-py311/bin/python scripts/p334_next_label_gate_coupling.py \
-  --source-commit PRODUCER_CONFIRMED_COMPLETE_SHA
+  --source-commit e32a85939279b8574278024d647b56d2d1485247
 ```
+
+## New spatial result: local alignment and transpose cancellation coexist
+
+Every number below retains the full20k denominator. For a cell c, a covariance
+entry estimates `E_prefix[1_c Cov_U(...|prefix)]`; it is not a population-rate
+covariance or a statement about the sign at every individual prefix.
+
+| Joint cell / average conditional gate cross-covariance | N325 | N425 |
+| --- | ---: | ---: |
+| 01 prevalence | 2406/20000=12.030% | 2550/20000=12.750% |
+| 10 prevalence | 2457/20000=12.285% | 2402/20000=12.010% |
+| 01 gate cross-covariance | 0.00020625 +/-0.00007355 | 0.000053125 +/-0.00005503 |
+| 10 gate cross-covariance | 0.00017500 +/-0.00005241 | 0.000006250 +/-0.00004202 |
+| 01+10 gate cross-covariance | **0.00038125 +/-0.00009521** | **0.000059375 +/-0.00007820** |
+
+The N325 selected population shows positive average conditional co-promotion
+at about4 shared-batch standard errors, with positive point estimates in both
+transpose cells. N425's average sign is unresolved. This is evidence about the
+specified shared-label coupling, not proof of a universal geometric alignment
+or an inferred cross-size exponent.
+
+The clearer clock-response structure appears after applying the **previously
+specified** low-minus-high, unscaled projection. Entries are gate-row ×(A,E):
+
+| N / fixed gate role | Cov with low-minus-high integral A | Cov with low-minus-high integral E |
+| --- | ---: | ---: |
+| 325 R0-first | +0.000692863 +/-0.00001209 | -0.000149688 +/-0.00000931 |
+| 325 R1-second | -0.000386043 +/-0.00001226 | -0.000403269 +/-0.00001040 |
+| 425 R0-first | +0.000543358 +/-0.00001357 | -0.000110303 +/-0.00000586 |
+| 425 R1-second | -0.000319876 +/-0.00000998 | -0.000317499 +/-0.00000937 |
+
+**Both gate roles align with a decrease of the low-minus-high E difference,
+while their A directions oppose.** The E magnitude attached to the higher-rank
+second-birth gate is larger. This gives a concrete two-birth response geometry
+using two nonredundant complete clock readouts, not a fitted latent model.
+
+That local alignment does not automatically explain the global E contrast.
+Restoring the original first-minus-second/H4 convention sums opposite-signed
+01 and10 responses. The remaining gate×E entries are
+
+```
+N325: R0 -1.71577e-5 +/-1.03317e-5; R1 +9.83129e-6 +/-1.53318e-5
+N425: R0 +3.79970e-6 +/-1.07966e-5; R1 -1.17893e-6 +/-1.17608e-5.
+```
+
+None resolves the global gate×E alignment at two standard errors. In contrast,
+the N425 R0×A residual is `-5.03327e-5 +/-1.18803e-5`, approximately4.24 standard
+errors. The observed transpose asymmetry is sharper in this A coordinate;
+selecting a new mechanism after these signs is not part of this calculation.
+
+## R0 can jump directly to R2
+
+The prescribed R0-first gate included all `next_rank>=1` from the outset. The
+existing next-rank field also gives the following descriptive counts of direct
+0->2 jumps. A next-label draw is counted once, not once per suffix; independent
+U andV draws remain two draws even if they happen to choose the same label.
+
+| N / cell | R0 next-rank2 / same-cell label draws | Frequency |
+| --- | ---: | ---: |
+| 325 /01 | 26/38496 | 0.0675395% |
+| 325 /10 | 26/39312 | 0.0661376% |
+| 425 /01 | 16/40800 | 0.0392157% |
+| 425 /10 | 14/38432 | 0.0364280% |
+
+These retain the simultaneous-birth support without adding a candidate model
+or another covariance block. They are raw repeated-next-label frequencies on
+the fixed prefix population, not independent trials across all suffix rows.
+
+## Shared handoff
+
+`results/p334-next-label-gate-coupling/batch_vectors.json` contains the fixed
+26-vector for each original batch, its matching delete-one vectors, original
+cell counts, raw0->2 counts, both fixed orientation projections and all40
+input hashes. The covariance coordinator received these vectors directly,
+before a scientific conclusion was independently aggregated elsewhere. The
+displayed standard errors come from those same20 paired batches; no covariance
+inverse or extra evidence block is introduced.
