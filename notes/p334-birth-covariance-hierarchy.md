@@ -1,10 +1,76 @@
 # Where an Euler-invisible control changes the joint birth clock
 
-The new question concerns the *location* of the joint fluctuation response.
-The original prefix law is unchanged by the common-next-label policy. Is its
-covariance response carried by differences between prefixes, by differences
-between next labels inside one prefix, or by the residual uncertainty after
-the next label is already fixed?
+**The dominant response is transport of prefix mean clocks, and most of that
+transport is between the means of the fixed rank cells.** Rank-cell masses
+do not change. A smaller, resolved response remains between prefixes *within
+the same rank cell*, so the response cannot be reduced to rank-cell identity
+alone. Changes in covariance inside a complete fixed prefix are smaller.
+
+The exact-census estimator now uses all eligible score differences, removing
+the old same-class pair mask. It targets the same derivative on the same
+saved data. The original prefix law is unchanged by the common-next-label
+policy; the following layers locate where its joint fluctuation response lives.
+
+## Main numerical decomposition
+
+All entries below are in units of **1e-7**, with original20-batch standard
+errors. Products are computed in each physical geometry before S/D.
+
+| N / source -> output | Total covariance response | Between rank-cell means | Between prefixes within a rank cell | Within a complete prefix |
+|---|---:|---:|---:|---:|
+| 325 plus -> S | +4.4578 +/- .3567 | +3.9947 +/- .2939 | +.3699 +/- .0935 | +.0932 +/- .0641 |
+| 425 plus -> S | +4.2191 +/- .3398 | +3.7760 +/- .2693 | +.3192 +/- .0833 | +.1239 +/- .0822 |
+| 325 minus -> D | -13.0906 +/- .9209 | -11.2591 +/- .7222 | -1.3344 +/- .2759 | -.4971 +/- .2313 |
+| 425 minus -> D | -9.7331 +/- .5824 | -8.2790 +/- .5297 | -1.0643 +/- .2125 | -.3897 +/- .1887 |
+
+The last three columns sum to the first, with their joint covariance retained.
+Between-prefix transport accounts for about96--98% of the total point
+response; between-rank-cell mean transport alone accounts for about85--90%.
+These are **signed response contributions**, not fractions of baseline
+variance explained or independent evidence counts.
+
+The same-rank-cell prefix term is positive for plus -> S and negative for
+minus -> D at both sizes, about3.8--5.0 SE from zero. If each conditional
+mean response depended only on the rank pair G, this term would vanish.
+Its survival therefore localizes a response dependence on information inside
+the rank cell. It does not by itself identify which microscopic mark carries
+that dependence, or show two response directions at each individual prefix.
+
+The fixed-prefix covariance response in minus -> D is only about2.1 SE at
+each size; plus -> S is weaker. Its split into suffix selection and label-mean
+dispersion is:
+
+| N / source -> output | Suffix selection | Label-mean dispersion |
+|---|---:|---:|
+| 325 plus -> S | +1.3710e-8 +/- 1.1148e-8 | -4.3895e-9 +/- 8.7960e-9 |
+| 425 plus -> S | +7.9699e-9 +/- 1.1241e-8 | +4.4217e-9 +/- 7.5385e-9 |
+| 325 minus -> D | -6.6384e-8 +/- 2.8568e-8 | +1.6670e-8 +/- 2.1030e-8 |
+| 425 minus -> D | -4.1659e-8 +/- 1.9199e-8 | +2.6855e-9 +/- 1.2252e-8 |
+
+The large total covariance effect should consequently not be described as
+equally strong evidence for a change in the joint law inside a fixed prefix.
+
+## Lifetime variation can cancel after rank-cell pooling
+
+For plus -> S the total variance response of W=Y-X is weak, but this sum
+contains opposing components:
+
+| Variance-of-W response | N325 +/- SE | N425 +/- SE |
+|---|---:|---:|
+| within rank cells, including prefix and suffix variation | +5.5053e-8 +/- 2.8110e-8 | +7.6234e-8 +/- 2.6345e-8 |
+| between the rank-cell mean lifetimes | -6.3045e-8 +/- 2.0183e-8 | -6.5041e-8 +/- 1.7952e-8 |
+| total | -7.9924e-9 +/- 2.6770e-8 | +1.1193e-8 +/- 3.1780e-8 |
+
+The policy changes the alignment of rank-cell mean lifetimes while their
+masses stay fixed. Positive within-cell variation partly offsets that
+compression. A globally weak lifetime-variance response therefore does not
+justify assuming that lifetime is preserved path by path. Such preservation
+would leave each of these fixed-cell lifetime distributions unchanged.
+The within-cell positive result is about2.0 SE atN325 and2.9 SE atN425;
+this is an exploratory mechanism readout, not a claim of a completed
+microscopic transport identification.
+
+## Exact hierarchy and estimators
 
 Use X=K1/(N+1), Y=K2/(N+1). These are normalized birth ranks, without the
 extra uniform-order-statistic clock. Z denotes the full original ordered
@@ -82,7 +148,30 @@ new prefix, quartet, suffix, cloud job, model fit or matrix inverse is needed.
 ## Result lifecycle
 
 The scorer definition is `f34bcd6f` at
-`scripts/p334_birth_covariance_hierarchy.py`. It consumes exact-score
-prefix/quartet moments; the old matched-mask result is a same-estimand,
-same-data precursor, not a separate confirmation. Quantitative results
-will be attached here once the new source archive is committed.
+`scripts/p334_birth_covariance_hierarchy.py`; its complete new result is
+`44dc9e3396e39105cae85a29d04b39d0afc82d84`,
+`results/p334-birth-covariance-hierarchy/score.json`. Rank-cell transport and
+cell-centered lifetime readouts are at
+`2bc3529468fbcba589182acaf98fa4855eb0a85e`,
+`results/p334-rankcell-covariance-transport/score.json`.
+
+Both consume the [once-extracted exact-score archive](https://github.com/LightChainr/Matching-One/tree/375cd3a12b2b7a87d79148a59f62b95898f9e471/results/p334-exact-score-quartet-moments),
+with baseline/tangent8-moment blocks, integer birth clocks, exact score
+numerators and the original prefix/batch IDs. The source pass took5.04s;
+subsequent decompositions consume its arrays or pooled batch moments, not
+fresh trajectories. The [nested-response identities](https://github.com/LightChainr/Matching-One/blob/03603388e6c0bee5889a64229a124d3f5e89790b/notes/p334-nested-covariance-response.md)
+give the exact translation predictions and the distinction between
+source-population and fixed-empirical-mixture U-products.
+
+The old matched-mask result and new exact-score result share an estimand
+and the original e32a8593/959a7fa2 block; they are not separate confirmations.
+All new raw batch vectors and derived LOO are retained for the common
+covariance coordinator. Results are branch deliveries, not an assertion of
+integration into main. No other team's local-rank or finite-q_t calculation
+was repeated, and no cloud machine was used.
+
+The next mechanism question is which within-rank-cell prefix feature predicts
+the conditional mean response. Rank-cell identity explains the dominant
+organization but leaves a measurable residual; its population share need not
+change to generate either part. Repository notes and Issue/PR handoffs carry
+this result; routine cross-task status messages remain suppressed.
