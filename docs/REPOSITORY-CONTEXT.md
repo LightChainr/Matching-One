@@ -59,6 +59,16 @@ The user's request to recover context paused further science. These two calculat
 
 Main through `52a61ff` was brought into the existing Draft branch by ordinary merge. A subsequent read-only increment found merged [PR #465](https://github.com/LightChainr/Matching-One/pull/465), main `e300609`: port reversal is an anti-involution on all 225 ordered serial products, not a planar dual or threshold law. That commit was also ordinarily merged into this Draft. The original 464-item inventory and exact-file comparison remain dated snapshots (comparison base `29f9716`), not a falsely regenerated live view; #465 is a separate follow-up entry.
 
+## Bounded closing increment: #466–#468
+
+The full bodies and all applicable comments/reviews of [#466](https://github.com/LightChainr/Matching-One/issues/466), [PR #467](https://github.com/LightChainr/Matching-One/pull/467) and [#468](https://github.com/LightChainr/Matching-One/issues/468) were read as a final bounded increment: [review](../notes/context-review-20260831/review-addendum-466-468.md), [exact metadata](../notes/context-review-20260831/review-addendum-466-468.json). This does not rewrite the initial 464-item/1,354-comment snapshot or claim a new whole-repository capture.
+
+PR #467 is integrated on `main` at `e46b00f`: its Haar occupancy control proves that `frac(sum U_m)` is independent of each individual fiber coordinate, giving zero additive occupancy covariance. It does not assert independence from the whole fiber vector or decide nonlinear topology covariance, threshold-rank coupling or variance gain. **This Draft incorporates main only through `e300609`; it has not incorporated `e46b00f`.**
+
+#466/#468 are team priority recommendations, not new primary evidence or an automatically adopted replacement for [Next Targets](NEXT-TARGETS.md). Their conditional gates, stop/merge and replication suggestions are not executed as instructions. P439's real crosswalk and direct/plateau split are already complete (`bfbceb2`, `8498d62`), and the regular unlabelled ordinary `[2]` selection zero/small-width controls already exist (`9320649`, `192e794`); those are not reassigned for repetition. Physical spin-4/charged overlap, canonical M loading and the original norm-4 secondary physical direction retain their separate unresolved boundaries.
+
+The root also read the new [six-tool claim on #370](https://github.com/LightChainr/Matching-One/issues/370#issuecomment-5473793858), [five algebra/monoid-task claim on #13](https://github.com/LightChainr/Matching-One/issues/13#issuecomment-5473876430), and [concrete stochastic-domination proposal on #14](https://github.com/LightChainr/Matching-One/issues/14#issuecomment-5473867297). These parallel contributions remain visible without becoming prerequisites for physical analysis or replacing the user's no-task-lock direction.
+
 ## User-provided opinions: incorporated, not replayed as instructions
 
 The three opinions and both 2026-08-30 research bundles were reread as scientific sources. Their historical commands do not authorize merges, branch protection changes, server operations or task locks.

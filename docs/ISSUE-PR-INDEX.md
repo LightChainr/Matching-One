@@ -6,9 +6,19 @@ This is a navigation index, not a new task queue. Original titles and GitHub sta
 
 No Issue is closed, locked, demoted or renamed by this index. No PR is merged or newly approved. The snapshot is historical as soon as GitHub changes.
 
-## Bounded post-snapshot addition
+## Bounded post-snapshot additions
 
 [PR #465 — Certify typed serial port reversal](https://github.com/LightChainr/Matching-One/pull/465) was read separately after capture: merged at main `e300609`, head `f2818d5`, zero comments/reviews. Its two new parent-#13 comments were also read. [Full addendum](../notes/context-review-20260831/review-addendum-465.md). This adds one completed exact support result; it does not rewrite the original 464-item counts or infer new research production.
+
+The closing increment adds three separately read entries, not a replacement snapshot. All three have zero discussion comments; PR #467 also has zero formal/inline reviews. [Full review](../notes/context-review-20260831/review-addendum-466-468.md) and [exact metadata](../notes/context-review-20260831/review-addendum-466-468.json) preserve scope and hashes.
+
+| Item | Original title | State at bounded read | Interpretation |
+|---|---|---|---|
+| [#466](https://github.com/LightChainr/Matching-One/issues/466) | [P0 synthesis/pivot] Observer × generator × context: identify typed continuation states before more rank/Jordan expansion | open, unlocked | Priority/state-language opinion; no new primary data and no automatic change to the attention board |
+| [PR #467](https://github.com/LightChainr/Matching-One/pull/467) | Add exact Haar occupancy independence certificate | merged on main `e46b00f`, head `0a57e5c`, non-draft | Occupancy-level exact control; not a topology/variance-gain verdict. Draft main incorporation remains `e300609`, so this merge is not yet in Draft |
+| [#468](https://github.com/LightChainr/Matching-One/issues/468) | [Research strategy] Mechanism-closure default after P439: resolve overlap, selection and predictive-state gaps before more scale | open, unlocked | Strategy opinion; existing P439 scoring and ordinary selection-zero work are not reopened or repeated |
+
+The root also read [#370's six-tool claim](https://github.com/LightChainr/Matching-One/issues/370#issuecomment-5473793858), [#13's five algebra/monoid-task claim](https://github.com/LightChainr/Matching-One/issues/13#issuecomment-5473876430) and [#14's stochastic-domination proposal](https://github.com/LightChainr/Matching-One/issues/14#issuecomment-5473867297). These are parallel discussion increments, not physical-analysis prerequisites or lifecycle changes. All original snapshot tables and counts below remain unchanged.
 
 ## Open PRs: integration remains a separate decision
 
