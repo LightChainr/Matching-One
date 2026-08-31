@@ -1,0 +1,16 @@
+{
+  "schema": "matching-one/p267-ordinary-scalar-clock/v1",
+  "source_commit": "7b30648be558df0652a7ff22143cc87ed399d042",
+  "source_directory": "results/etop-n100-three-modulus",
+  "stage": "retrospective archive reuse; landmarks chosen after inspecting mean curves",
+  "hypothesis": "U_j(p)=a_j D_j(phi(p)), j=A,E; independent constant amplitudes; one increasing endpoint-fixed phi; no Jacobian",
+  "primary_necessary_gate": "A alone: its three ordered interior critical heights must be proportional",
+  "landmarks": ["first_peak", "central_valley", "second_peak"],
+  "root_brackets": [[0.2, 0.5], [0.5, 0.67], [0.67, 0.9]],
+  "primary_features": ["central_valley/first_peak", "second_peak/first_peak"],
+  "null": "U features minus D features equal zero",
+  "uncertainty": "leave out one common batch across all shapes/orientations/fields; recompute each landmark and normalization; retain full joint covariance",
+  "reference": "2D Gaussian Wald statistic; exploratory nominal p, not independent validation",
+  "endpoint_rule": "Do not infer population endpoint vanishing orders from sparse empirical tail coefficients",
+  "no_new_sampling": true
+}
