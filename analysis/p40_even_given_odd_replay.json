@@ -1,0 +1,39 @@
+{
+  "schema": "matching-one.p40-even-given-odd-replay.v1",
+  "status": "retrospective reuse of public production configurations; specified before this missing-moment reobservation, not before the original target reveal",
+  "source_analysis_manifest": "analysis/p40_absolute_cluster_reanalysis.json",
+  "source_commit": "291854a518b03eef4293431b89254f0f4429da53",
+  "source_backend_path": "src/gaussian_orientation_mc.cpp",
+  "source_backend_blob": "b3d2047e35a6840cc7236e4a6088a291c734313b",
+  "original_engine_metadata_commit": "1b988f99b9431a3d109a74a45499b8c158a64079",
+  "backend_identity": "original engine metadata commit and archived source commit have the same Git backend blob",
+  "runs": [
+    {"N":65,"first":[8,1],"second":[7,4]},
+    {"N":85,"first":[9,2],"second":[7,6]}
+  ],
+  "samples_per_N": 1000000,
+  "batches_per_N": 100,
+  "samples_per_batch": 10000,
+  "seed": 4020260830,
+  "counter_interval": [40000000,41000000],
+  "p": 0.59274605079,
+  "new_samples": 0,
+  "source": "S=(C_blackNN+C_whiteMatching)/N, the same explicit raw source for every geometry",
+  "readouts": {"q":"rank_black-1","E_top":"q^2=1-I(rank_black=1)"},
+  "primary_response": "C_even_given_odd=Cov(E_top,S)-Cov(E_top,q)*Cov(q,S)/Var(q)",
+  "physical_interpretation": "For P proportional to Bernoulli(p) exp(lambda*S+h(lambda)*q), h'(0)=-Cov(q,S)/Var(q) keeps the matching mean fixed to first order; d P(rank1)/d lambda=-C.",
+  "auxiliary_sources": {
+    "clock": ["K/N","K(K-1)/[N(N-1)]"],
+    "full": ["K/N","K(K-1)/[N(N-1)]","T_NN/(2N)","chi/N"],
+    "meaning": "OLS source compensation with an intercept, separately refit per geometry and aligned delete-one; these are geometry-adapted sources, not one universal operator. Adding h*q to hold q fixed does not also keep all original controls fixed."
+  },
+  "supplement": ["sum(E_top*S_unscaled)","sum(E_top*K)","sum(E_top*K*(K-1))","sum(E_top*T_NN)","sum(E_top*chi)"],
+  "identity_fields": "batch sample count and q,E,S,K,KK,T,chi first moments are retained to match the original saved sufficient statistics during the single analysis",
+  "uncertainty": "100 aligned equal-size delete-one batches per N; remove both directions together and refit all nonlinear projections; save all vectors and full output covariance",
+  "direction": "(first-second)/exact Delta cos(4theta), with no fitted exponent",
+  "joint_zero": "Report nominal two-size zero statistics separately for H4 C and J_E under each declared raw/clock/full source; N-domain-separated PRNG assumption, never independent votes across views",
+  "sector_identity": "E[S|q]=a+b*q+c*q^2; C=c*(Var(E_top)-Cov(E_top,q)^2/Var(q)). Nonzero C rejects a pure q tangent only in this finite topological marginal, not a continuum field theory.",
+  "missing_scope": ["N130/N170 norm-4 children","thermal derivative mixed third moments","an identified microscopic energy operator"],
+  "resources": "one local CPU deterministic reobservation per N, no GPU/server/tunnel or test suite",
+  "report_shape": "Repository technical Markdown with result-first summary, definitions, actual response and direction evidence, method/uncertainty, physical boundary and discriminating next question. A two-size numerical readout needs no scaling chart."
+}
