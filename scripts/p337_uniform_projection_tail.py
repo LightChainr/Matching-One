@@ -156,6 +156,13 @@ def certify(pair, law):
     u_interval = (min(ratios), max(ratios))
     leading = F(-1, 1)/DELTA if law == "star" else F(3, 1)/DELTA
     remainder_bound = max(abs(v-leading) for v in u_interval)
+    extra = 2 if law == "star" else 10
+    assert all(j >= lead+extra for j in angular if j != lead)
+    assert rorder+residual_order-lead >= extra and gap >= extra
+    # Every denominator majorant after its constant400 has nonnegative
+    # coefficients and starts at x^gap. Keep the classical remainder power.
+    g_error = max(400-g_lower, g_upper-400)
+    classical_bound = 2*(error+abs(expected_lead)*g_error/400)/(DELTA*g_lower*x**extra)
     sign_gate = u_interval[1] < 0 if law == "star" else u_interval[0] > 0
     return serial({"certified": denominator_gate and sign_gate,
         "coordinate": "lambda=1/m" if law == "star" else "x=m^(-1/25)",
@@ -173,6 +180,8 @@ def certify(pair, law):
         "lambda_power": str(F(lead, 1 if law == "star" else 25)),
         "leading_coefficient": leading,
         "uniform_absolute_remainder_coefficient_at_same_power": remainder_bound,
+        "classical_remainder_lambda_power": str(F(lead+extra, 1 if law == "star" else 25)),
+        "classical_uniform_remainder_coefficient": classical_bound,
         "remainder_interpretation": "|U/A-leading*lambda^power| <= bound*lambda^power on the entire m>=64 interval"})
 
 
