@@ -1,0 +1,24 @@
+{
+  "schema": "matching-one.colour-specialization-gap.contract.v1",
+  "question": "Does one fixed full-central colour coefficient, divided by dim[Q-2,2], continue unchanged from Q4 to generic Q for physical rank1 closures?",
+  "status": "exact_theory_examples_specified_before_one_algebra_run_not_blind_statistical_predictions",
+  "integer_colours": [4, 5],
+  "character": "chi_[Q-2,2]=X1*(X1-1)/2+X2-X1",
+  "dimension": "Q*(Q-3)/2",
+  "class_function": "Fix(pi^winding)^essential_components",
+  "factored_out": "activity and colour factors from all contractible components, including common rank projection",
+  "candidate": "dimension_only_continuation_m_Q_equals_m_4_for_all_integer_Q_ge4_on_every_fixed_physical_closure",
+  "decision": "one exact m_5_not_equal_m_4 rejects this general candidate, not every possible Q continuation",
+  "cases": [
+    {"id": "two_parallel_clusters", "winding": 1, "essential_components": 2, "geometry": "axis L5; only rows y=0,2 occupied; seam along first period", "generic_multiplicity": 1, "generic_valid_for_integer_Q_at_least": 4},
+    {"id": "three_parallel_clusters", "winding": 1, "essential_components": 3, "geometry": "axis L6; only rows y=0,2,4 occupied; seam along first period", "generic_multiplicity": 6, "generic_valid_for_integer_Q_at_least": 5},
+    {"id": "one_triple_winding_cluster", "winding": 3, "essential_components": 1, "geometry": "axis L7; occupied x=3*y+j mod L, j=0,1,2,3; primitive winding (3,1); seam along first period", "generic_multiplicity": 0, "generic_valid_for_integer_Q_at_least": 5}
+  ],
+  "source_pins": {
+    "finite_torus_closure": {"commit": "4a4390f2aeff3e79855fb11ef1185ba52c80a43a", "path": "notes/closed-source-finite-torus-pair-closure.md", "integration_status": "branch_only"},
+    "completed_Q4_transmission": {"commit": "54352b2eefa651ca482ca84837053c792e82c71e", "path": "results/p337-s4-trace-transmission/score/score.json", "integration_status": "branch_only"},
+    "own_Q4_interface": {"commit": "041257b8c63f98c694397604617edbb58f31ef51", "path": "notes/four-leg-trace-denominator-interface.md", "integration_status": "open_pr", "pr": 267}
+  },
+  "boundary": "exact finite physical connectivity examples; not new Monte Carlo, not an independent statistical vote, not a Q1 sector probability or proof that the N25 packet contains these two counterexample topologies",
+  "scope": "only these three prescribed closures and Q4,Q5; no generic certificate catalogue, colour scan, source fitting or rerun of the completed N25 J22"
+}

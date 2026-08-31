@@ -1,6 +1,6 @@
 {
   "schema": "matching-one.four-leg-trace-interface.v1",
-  "status": "finite_Q4_normalizer_interface_derived_J22_not_yet_evaluated",
+  "status": "completed_J22_positive_by_equivalent_execution_seam_score",
   "source": {
     "commit": "977fea9272c780aea19cc47f8d33324c28a1293e",
     "path": "notes/closed-source-hypergraph-rc-twist-projection.md"
@@ -55,7 +55,12 @@
     "hY": "-P4(E_g*z22_g)",
     "J22": "A_N*(hY_p/D-Y_pp*hM/D^2-Y_p*hM_p/D^2+Y_p*M_pp*hM/D^3)",
     "root": "each geometry normalized before pooling, M=0; do not impose q_g=0 individually",
-    "response_value": null
+    "response_value": 0.000005440121494634842,
+    "result_commit": "54352b2eefa651ca482ca84837053c792e82c71e",
+    "result_path": "results/p337-s4-trace-transmission/score/score.json",
+    "result_integration_status": "branch_only",
+    "reduced_exact_interval": ["582084561188942894896198083834109/10000000000000000000000000000000000000000", "582084561188942894896198083834110/10000000000000000000000000000000000000000"],
+    "correspondence": "Gaussian90degree_rotation_exchanges_first_second_deck_seam_execution_projected_trace_Z22_over2_and_partition_Wstar_give_same_z22_epsilon_equals_xminus1"
   },
   "next_fixed_comparison": {
     "N": 25,
@@ -65,7 +70,9 @@
     "decision": "strict_nonzero_exact_bound_rejects_only_this_finite_J22_null",
     "needed_input": "seam p-jets or rank1 temporal winding modulo6 and essential-component count with K,g",
     "new_source_fit": false,
-    "numerical_result_available": false
+    "numerical_result_available": true,
+    "status": "completed_nonzero_normalization_transmission_null_rejected_no_repeat_score",
+    "successor": "specified_generic_Q_multiplicity_resolved_trace_landing_and_complete_Q1_jet_not_dimension_only_continuation"
   },
   "boundary": "finite_Q4_colour_irrep_not_unique_continuum_four_leg_field_not_Q1_derivative_or_new_independent_statistical_evidence",
   "new_enumerations": 0,

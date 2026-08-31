@@ -1,5 +1,11 @@
 # The finite [22] trace enters original U through its normalizer
 
+**Completion update:** [execution54352b2e](https://github.com/LightChainr/Matching-One/blob/54352b2eefa651ca482ca84837053c792e82c71e/results/p337-s4-trace-transmission/score/score.json)
+has evaluated this interface: **J22=+5.440121494634842e-6**, with a strictly
+positive exact enclosure. The derivation below is retained; its original
+pending calculation is now completed. The seam/parameter correspondence
+and the actual next question are stated at the end.
+
 ## One extra positive seam isolates a definite colour sector
 
 At the already specified m=2, Q=4 local colour law, keep the **same spatial
@@ -165,7 +171,7 @@ root. At a two-geometry pooled root q1+q2=0 need not mean q1=q2=0;
 if z22_1 differs from z22_2, `p_x=mean(q_g z22_g)/D` can be nonzero.
 Dropping this term would change the original U interface.
 
-## The next finite decision is now specified
+## The finite decision originally specified here
 
 For the same N25 pair and m=2, obtain the fixed central component's p-jet
 and evaluate (6) once. A strict nonzero bound would reject complete
@@ -182,3 +188,43 @@ not uniquely the continuum V_(2,2) field. It is not a Q->1 derivative or
 a confluent continuation; those require their own explicit continuation.
 The independent P154/P334/F4 decisions and the fixed weak-Q path control
 remain unchanged.
+
+## Completion: the execution V_beta equals this J22
+
+The execution contract used the first deck coordinate; this note used
+the second. On each Gaussian quotient with P1=(a,b), P2=(-b,a), rotation
+by90 degrees sends `(u,n)` to `(-n,u)`, preserves the period lattice and
+all K,B,C_B,r,g weights, and has `f22(-n,c)=f22(n,c)`. It is a
+configuration bijection **within each geometry**, not a swap of axis
+and tilted data. Thus the two seam choices have identical insertion
+polynomials and all their thermal jets. This does not assert arbitrary
+HNF seam equivalence.
+
+The three thermal activities satisfy `a=y/m^5`, `h=y/m`, `v=y m^3`.
+At m2, `a=h/16`, `v=16h`. Since `g=4K-2B-2C_B+r`,
+`h^K m^(-g)=a^K m^[2(B+C_B)-r]`, exactly our Wstar weight.
+Execution's projected trace is Z22/2 and its partition is Wstar, so its
+fraction equals `2Z22/(T+R)=z22`. With `epsilon=x-1`, the entire
+moving-root/slope response is identical in either thermal chart.
+
+The completed score gives
+
+```text
+J22 = V_beta = +5.440121494634842e-6,
+582084561188942894896198083834109 / 10^40
+ <= J22/A_N <=
+582084561188942894896198083834110 / 10^40.
+```
+
+The three fixed terms are common-thermal −3.145535454562741e-8,
+geometric-thermal +5.531554355406087e-6 and geometric-value
+−5.997750622561810e-8. They sum to one response and are not population
+shares or independent votes. This rejects the specified finite
+normalizer-neutrality null; it does not supply a Q1 derivative.
+
+One new seam-count pass per geometry was delivered by execution at
+`3dbdd91e20faf1c5e9985bcbbe8c26cfe65e70cf`, followed by score54352b2e.
+This correspondence adds no enumeration or numerical verification.
+The [next exact distinction](colour-specialization-gap.md) concerns
+full finite-colour projection versus a specified stable-Q component;
+no repeat Q4 point or seam search is needed.
