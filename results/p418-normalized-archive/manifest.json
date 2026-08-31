@@ -1,0 +1,209 @@
+{
+  "schema": "matching-one/p418-normalized-archive/v1/manifest",
+  "inputs": [
+    {
+      "path": "results/huawei-20260830/P250-projective-leg-bivariate-80k/response_80k.batches.csv",
+      "sha256": "dfbd83d680080939bcae5cad0090af95d82748ed780ce73807d4b002d6a9ca72",
+      "commit": "8704eee790403e14e5ad75d3465ee1496eaa9c0e",
+      "git_blob": "f8e2a75e96be259be83de59f12e06ff3fec3c53e",
+      "radius": "radius4",
+      "batches": 400,
+      "samples_per_batch": [
+        200
+      ],
+      "total_samples": 80000,
+      "stored_unit": "batch_sum",
+      "analysis_unit": "per_sample_mean"
+    },
+    {
+      "path": "results/huawei-20260830/P250-projective-leg-radius5-morphism-1200k/response_1200k.batches.csv",
+      "sha256": "50985e38c9c8afab0c8b0e78113184d33861d928aefaba1e8043e67fc348677e",
+      "commit": "8704eee790403e14e5ad75d3465ee1496eaa9c0e",
+      "git_blob": "ff068991ce92780985e225ab9a646278574cc519",
+      "radius": "radius5",
+      "batches": 400,
+      "samples_per_batch": [
+        3000
+      ],
+      "total_samples": 1200000,
+      "stored_unit": "batch_sum",
+      "analysis_unit": "per_sample_mean"
+    },
+    {
+      "path": "results/huawei-20260830/P250-projective-leg-radius6-flat-1200k/response_1200k.batches.csv",
+      "sha256": "8734a15e61a7358da66019cf26d75a3d4f2deb0185831526204967a0ee5a42cf",
+      "commit": "8704eee790403e14e5ad75d3465ee1496eaa9c0e",
+      "git_blob": "89bb7fa9d277565ef1c176aab0942a1bdbc9fd42",
+      "radius": "radius6",
+      "batches": 400,
+      "samples_per_batch": [
+        3000
+      ],
+      "total_samples": 1200000,
+      "stored_unit": "batch_sum",
+      "analysis_unit": "per_sample_mean"
+    }
+  ],
+  "pinned_module_sources": [
+    {
+      "module": "analyze_threshold_ranks",
+      "path": "scripts/analyze_threshold_ranks.py",
+      "commit": "8704eee790403e14e5ad75d3465ee1496eaa9c0e",
+      "sha256": "29d6a2866117e4d010d060d21af2b287e87c2a4b397b182873394e0ad2e9032a"
+    },
+    {
+      "module": "exact_matching_polynomial",
+      "path": "scripts/exact_matching_polynomial.py",
+      "commit": "8704eee790403e14e5ad75d3465ee1496eaa9c0e",
+      "sha256": "4e292abe1cbca695662d049cb116a841e6f303d77f2261d6b80b217d2e08908c"
+    },
+    {
+      "module": "exact_pivotal_russo",
+      "path": "scripts/exact_pivotal_russo.py",
+      "commit": "8704eee790403e14e5ad75d3465ee1496eaa9c0e",
+      "sha256": "1f2d21a9ea46d68d9c2c3f9f636252454c065a055a4c712b70fe261c201fee77"
+    },
+    {
+      "module": "integer_period_torus",
+      "path": "scripts/integer_period_torus.py",
+      "commit": "8704eee790403e14e5ad75d3465ee1496eaa9c0e",
+      "sha256": "edc3223bf3244e4a8a6957aebe90e03b1f9f52770e2fe186cce867839c22a673"
+    },
+    {
+      "module": "marked_pivotal_h4_reference",
+      "path": "scripts/marked_pivotal_h4_reference.py",
+      "commit": "8704eee790403e14e5ad75d3465ee1496eaa9c0e",
+      "sha256": "dba5c9ec61892ec3ffd8910a94088d4376e51405a776c8c3fc51ec89e98e496a"
+    },
+    {
+      "module": "matched_torus_reference",
+      "path": "scripts/matched_torus_reference.py",
+      "commit": "8704eee790403e14e5ad75d3465ee1496eaa9c0e",
+      "sha256": "835a66893c2cf4d02c24db19c552630ae8caf6495fe27026eeb1315b9f78639f"
+    },
+    {
+      "module": "norm5_chiral_fixedp_mc",
+      "path": "scripts/norm5_chiral_fixedp_mc.py",
+      "commit": "8704eee790403e14e5ad75d3465ee1496eaa9c0e",
+      "sha256": "b10097a8ee067177047febb974527df7b8b925a5711077c0f08d607821921328"
+    },
+    {
+      "module": "norm5_chiral_hecke_phase",
+      "path": "scripts/norm5_chiral_hecke_phase.py",
+      "commit": "8704eee790403e14e5ad75d3465ee1496eaa9c0e",
+      "sha256": "a2a977202629ee0bc006c4f795520989b289630d9c85323122aef3f6dfe1b277"
+    },
+    {
+      "module": "score_p406_spatial_fourier_cone",
+      "path": "scripts/score_p406_spatial_fourier_cone.py",
+      "commit": "8704eee790403e14e5ad75d3465ee1496eaa9c0e",
+      "sha256": "22ab6d987be98af44637aaf5b687bcf40f7b17ee94f28d4a146cf9263af62336"
+    },
+    {
+      "module": "score_p418_crt_degauging",
+      "path": "scripts/score_p418_crt_degauging.py",
+      "commit": "8704eee790403e14e5ad75d3465ee1496eaa9c0e",
+      "sha256": "b63ebe4764bce7e94d7eef39c18977e5d708a7c68e427fbc4d2597529398ea46"
+    },
+    {
+      "module": "score_p418_radius_resolved_elimination",
+      "path": "scripts/score_p418_radius_resolved_elimination.py",
+      "commit": "588ca452dedd47213a424d79fc119ad67f8f77df",
+      "sha256": "5f074d4857c249e3683062ee0a4a4eee163e237dde3d85feb2db22930780b9c2"
+    },
+    {
+      "module": "threshold_rank_nz",
+      "path": "scripts/threshold_rank_nz.py",
+      "commit": "8704eee790403e14e5ad75d3465ee1496eaa9c0e",
+      "sha256": "b8c8826788016026434c419fd9c0d9244803fe06d101b67ac844db7f5ff1f1b0"
+    },
+    {
+      "module": "torus_homology",
+      "path": "scripts/torus_homology.py",
+      "commit": "8704eee790403e14e5ad75d3465ee1496eaa9c0e",
+      "sha256": "02dc76b63158a39acb048822232c7e7706f862baac5cecaae44e94c05467c931"
+    },
+    {
+      "module": "z5_charged_multiseparation_mc",
+      "path": "scripts/z5_charged_multiseparation_mc.py",
+      "commit": "8704eee790403e14e5ad75d3465ee1496eaa9c0e",
+      "sha256": "24c7a90f64fbdb9abb29fd492dd50109ae88d33015c146f9de08476015a2ce69"
+    },
+    {
+      "module": "z5_charged_threepoint_mc",
+      "path": "scripts/z5_charged_threepoint_mc.py",
+      "commit": "8704eee790403e14e5ad75d3465ee1496eaa9c0e",
+      "sha256": "72b7dd25b25a9035fb33d94d1befeeeff6621d30d44550abf4f8412db18dcff1"
+    },
+    {
+      "module": "z5_projective_leg_bivariate_mc",
+      "path": "scripts/z5_projective_leg_bivariate_mc.py",
+      "commit": "8704eee790403e14e5ad75d3465ee1496eaa9c0e",
+      "sha256": "5a772bcfe28edab58d43054dc3c91e3b914ee956d02bbbad30828a3f3541a961"
+    },
+    {
+      "module": "z5_projective_leg_cross_scale_mc",
+      "path": "scripts/z5_projective_leg_cross_scale_mc.py",
+      "commit": "8704eee790403e14e5ad75d3465ee1496eaa9c0e",
+      "sha256": "15b5271a5eb95e9388c1aec2e23d116723609ec2f87abd38b30b72c0b62bdc48"
+    },
+    {
+      "module": "z5_projective_leg_multiseparation_mc",
+      "path": "scripts/z5_projective_leg_multiseparation_mc.py",
+      "commit": "8704eee790403e14e5ad75d3465ee1496eaa9c0e",
+      "sha256": "a42d3498fc37e398af7fd15ab1eee03fc570256b8d2acd9c4e64f706a323b1fd"
+    },
+    {
+      "module": "z5_projective_leg_pair_transfer_mc",
+      "path": "scripts/z5_projective_leg_pair_transfer_mc.py",
+      "commit": "8704eee790403e14e5ad75d3465ee1496eaa9c0e",
+      "sha256": "e8e3c1d3f231c935720a66529ed41bb2aec819d7909b3a3be1dcb42fff6df205"
+    }
+  ],
+  "execution": {
+    "started_utc": "2026-08-31T05:55:34.739398+00:00",
+    "command": [
+      "/Users/lc/python-envs/research-py311/bin/python",
+      "scripts/analyze_p418_normalized_archive.py"
+    ],
+    "python": "3.11.15 (main, Jun 23 2026, 15:46:51) [Clang 22.1.3 ]",
+    "executable": "/Users/lc/python-envs/research-py311/bin/python",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "machine": "arm64",
+    "numpy": "2.3.5",
+    "scipy": "1.16.3",
+    "git_head_at_run": "4846adfdeb0ad92827c8efab57c47b64ad1cce21",
+    "wrapper_sha256": "9164f698e066a3148885cf9810456cfa40179e823d8351240bd0fe49522a8201",
+    "blas_threads_limit": 1,
+    "threadpools": [],
+    "elapsed_seconds": 7.286793707986362,
+    "finished_utc": "2026-08-31T05:55:42.026082+00:00"
+  },
+  "outputs": [
+    {
+      "path": "score.json",
+      "sha256": "133f74fe82748214a25052d9ed3550badab6efdc3fee5b493decc18db2a2d840"
+    },
+    {
+      "path": "normalized-inputs.json",
+      "sha256": "93e69668abed648c60a02ece56f9a9f1541ca745508516a8b3b8f5df6ce9ad0a"
+    },
+    {
+      "path": "REPORT.md",
+      "sha256": "f93ac37fdc93deaedc9a1afe716ef21941fdcb767543b5a759a0bc73471f2489"
+    },
+    {
+      "path": "solver-note.json",
+      "sha256": "bb34e8d1a0a99cbd92adea86d989939ba6aa018204e27c0e144b4884e653aa01"
+    }
+  ],
+  "post_run_changes": {
+    "scope": "reporting text, numerical limitation annotation, and saved-point residual/LS/KKT diagnostic only; no archive-score rerun",
+    "wrapper_sha256_after_reporting_update": "ef6b8cb2a47d07626cefafbdde6bf2b6b72c56a09f261922d2a083e397c89386",
+    "solver_diagnostic_command": [
+      "/Users/lc/python-envs/research-py311/bin/python",
+      "scripts/analyze_p418_normalized_archive.py",
+      "--diagnose-existing"
+    ]
+  }
+}
