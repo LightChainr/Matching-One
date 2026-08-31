@@ -113,6 +113,17 @@ removing that term changes logit(p) by a common amount; root/slope-normalized
 U is unchanged by that reparameterization. The manifestly positive count
 representation avoids having to hide such a shift in the endpoint map.
 
+The [cluster-gas action](decimation-closed-cluster-gas-action.md) gives a
+more physical form using the occupied graph cycle dimension beta1:
+
+`S_star = 2 beta1 - 3K - q + 2N`.
+
+Modulo the common thermal K term and normalization, this is a cycle-weight
+source with the **fixed** rank correction -q. Contractible cycles carry
+weight2 at fixed K/rank; dropping -q would define a different model. This
+action identity gives meaning to the three counts, but does not separate
+their individual contributions to the observed global-U response.
+
 ## Nested saturation is a concrete spatial environment
 
 Repeated steps require the period lattice to remain checkerboard-compatible

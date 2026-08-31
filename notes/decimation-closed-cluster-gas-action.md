@@ -7,6 +7,11 @@ the component/fugacity map in
 [`square-checkerboard-endpoint-homology.md`](square-checkerboard-endpoint-homology.md).
 Here we derive its smallest closed action and its thermal-coordinate gauge.
 
+This companion was derived without reading numerical outcomes. The later
+[exact complete-source calculation](../results/p337-closed-source-n25/REPORT.md)
+does resolve a nonzero N25 global-U response; the distinction in Section5
+states what the action proof alone establishes.
+
 ## 1. Three statistics and a three-dimensional exact closure
 
 On an honest square-cell torus of N sites, write
