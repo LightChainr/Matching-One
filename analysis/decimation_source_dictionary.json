@@ -1,0 +1,209 @@
+{
+  "schema": "matching-one.decimation-source-dictionary.v1",
+  "status": "completed_finite_endpoint_derivation_with_completed_global_u_counterexample",
+  "note_path": "notes/decimation-closed-source-and-global-u.md",
+  "delivery_scope": "repository science note and fixed dictionary only; no new enumeration, tests, production or source fitting in this derivation",
+  "sources": [
+    {
+      "id": "endpoint_original_u",
+      "commit": "207436518db46dd13ef0ec91168cb1c99d52eaea",
+      "path": "notes/p337-checkerboard-decimation-global-u.md",
+      "integration_status": "branch_only"
+    },
+    {
+      "id": "endpoint_homology_and_cluster_dictionary",
+      "commit": "56838d5f068f6f0ba7795926dc9343229bdd28ce",
+      "path": "notes/square-checkerboard-endpoint-homology.md",
+      "integration_status": "branch_only"
+    },
+    {
+      "id": "fixed_n25_contract",
+      "commit": "2bfe9b904bec0a21b244942ffb7c553813e4e740",
+      "path": "analysis/decimation_plaquette_u_contract.json",
+      "integration_status": "open_pr",
+      "pr": 267
+    },
+    {
+      "id": "completed_n25_enumeration_score",
+      "path": "results/decimation-plaquette-u/score/latest.json",
+      "report_path": "results/decimation-plaquette-u/score/REPORT.md",
+      "result_status": "completed_exact_finite_enumeration",
+      "integration_status": "open_pr",
+      "pr": 267,
+      "result_sha256": "61b7dd20330acc76bc06f7acef0b14c37841b7eba25bcb2fd4cf38e11529d6e9",
+      "numerical_reader_commit": "c76b038b2f99b266eb9cfc255219440e04c64c8f",
+      "bundle_commit_pointer": "analysis/research_ledger.yaml: SRC_PR267_DECIMATION_GLOBAL_U_AND_CLOSED_SOURCE; a bundle does not contain its own future commit hash"
+    }
+  ],
+  "geometry": {
+    "parent_area": "N=2M",
+    "child_area": "M",
+    "parent_graph": "ordinary nearest-neighbor square-site graph",
+    "occupied_sublattice": "A even parity, completely occupied",
+    "random_sublattice": "B odd parity, occupied subset O",
+    "child_periods": "Lambda_child=Lambda_parent/(1+i)",
+    "child_occupied_set": "U=(Z[i]/Lambda_child)\\f(O), f(w)=(w-1)/(1+i)",
+    "one_level_condition": "every parent period has even x+y: Lambda_parent subset (1+i)Z[i]",
+    "two_level_condition": "Lambda_parent subset (1+i)^2 Z[i]=2Z[i]; both parent and intermediate periods preserve parity",
+    "r_level_condition": "Lambda_parent subset (1+i)^r Z[i], with the corresponding nested saturation constraints",
+    "area_divisibility_alone_sufficient": false,
+    "incidence_convention": "retain lifted lattice edge and unit-face orbits, parallel-edge multiplicity and nonzero-gain winding loops; a loop has two endpoint incidences",
+    "actual_n25_chain": {
+      "parent_N": 50,
+      "parent_direct_gaussian_generators": [[5, 5], [1, 7]],
+      "child_N": 25,
+      "child_gaussian_generators": [[5, 0], [4, 3]],
+      "child_delta_cos4": "1152/625",
+      "child_smith_groups": ["Z5 x Z5", "Z25"],
+      "child_allows_another_checkerboard_reduction": false
+    },
+    "legal_two_level_extension": {
+      "N100_generators": [[0, 10], [-6, 8]],
+      "N50_generators": [[5, 5], [1, 7]],
+      "N25_generators": [[5, 0], [4, 3]],
+      "status": "exact nested endpoint geometry, not a new enumerated or sampled campaign"
+    }
+  },
+  "basis": ["Ctot", "F4", "T_NN", "K", "constant"],
+  "definitions": {
+    "Ctot": "occupied-NN components plus vacant-matching components",
+    "F4": "number of unit-face orbits with all four lifted corners occupied",
+    "T_NN": "number of occupied undirected NN edge orbits, with incidence multiplicity retained",
+    "K": "number of occupied sites",
+    "constant": "configuration-independent scalar"
+  },
+  "observable_map": {
+    "row_semantics": "row i expresses parent basis observable i in child basis coordinates",
+    "matrix": [
+      [1, 1, 0, 0, 0],
+      [0, 0, 1, -4, "2M"],
+      [0, 0, 0, -4, "4M"],
+      [0, 0, 0, -1, "2M"],
+      [0, 0, 0, 0, 1]
+    ],
+    "identities": {
+      "Ctot_parent": "Ctot_child+F4_child",
+      "F4_parent": "2M-4K_child+T_NN_child",
+      "T_NN_parent": "4(M-K_child)",
+      "K_parent": "2M-K_child"
+    },
+    "face_edge_bijection": "the two occupied-or-vacant B corners of each parent face map to one child NN edge; the two parent face parities map to the two child edge directions, bijectively over 2M orbits",
+    "edge_expansion": "sum_child_edges (1-eta_i)(1-eta_j)=2M-4K_child+T_NN_child"
+  },
+  "coupling_map": {
+    "parent_weight": "exp(c*Ctot+f*F4+tau*T_NN+k*K+a)",
+    "input_order": ["c", "f", "tau", "k"],
+    "output_order": ["c_child", "f_child", "tau_child", "k_child"],
+    "matrix": [
+      [1, 0, 0, 0],
+      [1, 0, 0, 0],
+      [0, 1, 0, 0],
+      [0, -4, -4, -1]
+    ],
+    "constant_output": "a_child=a+M*(2f+4tau+2k)",
+    "parameter_fitting": false
+  },
+  "thermal_quotient": {
+    "quotiented_sources": ["constant", "geometry-common K"],
+    "reason": "constants cancel in normalized measures; a common K tilt reparameterizes Bernoulli odds, whose thermal Jacobian cancels in root-comoving Y_p/Q_p",
+    "remaining_basis": ["Ctot", "F4", "T_NN"],
+    "basis_images": ["Ctot+F4", "T_NN", "0"],
+    "row_image_matrix": [[1, 1, 0], [0, 0, 1], [0, 0, 0]],
+    "two_step_row_image_matrix": [[1, 1, 1], [0, 0, 0], [0, 0, 0]],
+    "two_step_identity": "D^2(a*Ctot+b*F4+c*T_NN)=a*(Ctot+F4+T_NN) modulo constants and common K",
+    "not_a_dynamical_or_lcft_jordan_statement": true
+  },
+  "fixed_source": {
+    "name": "S_star",
+    "coefficients_on_C_F_T_K": [1, 1, 1, -4],
+    "definition": "S_star_N=Ctot_N+F4_N+T_NN_N-4K_N",
+    "one_level_identity": "S_star_parent_2M=S_star_child_M-2M",
+    "constant_completed_name": "S_hat",
+    "constant_completed_definition": "S_hat_N=S_star_N+2N",
+    "constant_completed_identity": "S_hat_parent_2M=S_hat_child_M",
+    "normalized_measure_identity": "exp(t*S_star_parent) maps to exp(t*S_star_child), up to the cancelling factor exp(-2M*t)",
+    "uniqueness_scope": "fixed coupling ray in the declared Ctot,F4,T_NN,K span, up to scale and constants; not uniqueness over all microscopic sources"
+  },
+  "nested_source_closure": {
+    "areas": ["4L", "2L", "L"],
+    "exact_bare_cluster_identity": "Ctot_parent_4L=Ctot_grandchild_L+F4_grandchild_L+T_NN_grandchild_L-4K_grandchild_L+2L=S_hat_grandchild_L",
+    "requires_nested_saturation_not_single_interior_flow": true,
+    "new_n50_or_n100_enumeration_claimed": false
+  },
+  "original_u": {
+    "family": "p_A=s+(1-s)*p, p_B=p",
+    "thermal_direction": "differentiate p at fixed s and source couplings; at s=1 only B varies",
+    "Q": "fixed equal mean across paired geometries of E[q], q=rank-1",
+    "Y": "fixed P4 of E[E], E=q^2",
+    "definition": "U_N=N^(13/8)*Y_p/(2*Q_p), evaluated on a chosen regular pooled Q=0 root branch",
+    "child_probability": "1-p",
+    "endpoint_factor": "2^(13/8)",
+    "sign_rule": "complement reverses the E thermal derivative and the minus-pi/4 period rotation reverses DeltaCos4; the two signs cancel",
+    "coupled_endpoint_identity": "U_parent_2M_end(g)=2^(13/8)*U_child_M(g_child)",
+    "source_response_definition": "V_S=d_t U[normalized exp(t*S)] at t=0; source root and thermal-slope response are included",
+    "source_units": "common bulk coupling t, never S/N",
+    "response_input_order": ["V_Ctot", "V_F4", "V_T_NN", "V_K"],
+    "response_output_order": ["V_Ctot_parent_end", "V_F4_parent_end", "V_T_NN_parent_end", "V_K_parent_end"],
+    "response_matrix_before_thermal_quotient": [
+      [1, 1, 0, 0],
+      [0, 0, 1, -4],
+      [0, 0, 0, -4],
+      [0, 0, 0, -1]
+    ],
+    "response_matrix_multiplier": "2^(13/8)",
+    "common_thermal_response": "V_K=0",
+    "quotiented_responses": {
+      "V_Ctot_parent_end": "2^(13/8)*(V_Ctot_child+V_F4_child)",
+      "V_F4_parent_end": "2^(13/8)*V_T_NN_child",
+      "V_T_NN_parent_end": "0",
+      "V_K_parent_end": "0",
+      "V_S_star_parent_end": "2^(13/8)*V_S_star_child"
+    },
+    "finite_fixed_source_identity": "U_parent_2M_end_Sstar(t)=2^(13/8)*U_child_M_Sstar(t), on corresponding regular root branches",
+    "two_level_bare_cluster_identity": "U_parent_4L_nested_end_Ctot(t)=4^(13/8)*U_grandchild_L_Sstar(t), on corresponding regular root branches",
+    "nested_thermal_convention": "hold both nested saturation constraints fixed and differentiate the remaining Bernoulli probability; not an unconstrained one-level thermal derivative",
+    "root_scope": "local regular continuation exists around homogeneous zero coupling; global root uniqueness at arbitrary couplings is not asserted"
+  },
+  "completed_finite_observer_result": {
+    "source_id": "completed_n25_enumeration_score",
+    "status": "completed_exact_finite_enumeration",
+    "configuration_count": 67108864,
+    "V25_F4": 0.19441468646090693,
+    "missing_N50_endpoint_correction": 0.5996568681566026,
+    "reduced_response_enclosure": {
+      "quantity": "V25_F4/(25^(13/8)/2)",
+      "lower_fraction": "20802069874521977174733465434488623557/10000000000000000000000000000000000000000",
+      "upper_fraction": "2080206987452197717473346543448863911/1000000000000000000000000000000000000000",
+      "excludes_zero": true
+    },
+    "decision": "F4_thermal_alias_and_bare_cluster_endpoint_U_transport_rejected",
+    "uncertainty_type": "exact rational enclosure conditional on exhaustive integer graph counts; not sampling confidence or independent endpoint production",
+    "mechanism_boundary": "finite pair with different Smith classes; not original N65/N85 lineage replication, asymptotic H4 or a CFT field"
+  },
+  "next_theoretical_question": {
+    "status": "specified_open_question_no_execution_requested",
+    "question": "Does a single saturation defect create a nonthermal mixed original-U response in the endpoint-fixed S_hat family?",
+    "epsilon": "1-s",
+    "defect": "remove one saturated A site a, retaining its four-terminal connectivity; Delta_a S_hat=S_hat(X_minus_a)-S_hat(X_plus)",
+    "exact_normalized_insertion": "J_O_epsilon=(1-p)*sum_a E_sat,t[exp(t*Delta_a S_hat)*(O(X_minus_a)-E_sat,t[O(X_plus)])]",
+    "stronger_candidate": "for q and E in both geometries near the mapped root, J_O_epsilon=b(p,t)*partial_p E[O] with one common b",
+    "candidate_prediction": "Xi_N=partial_t partial_epsilon U_N(s=1-epsilon,t) at epsilon=t=0 equals zero",
+    "nonzero_implication": "source-dependent interior transmission beyond the proposed common thermal extension",
+    "zero_boundary": "zero Xi alone does not prove full profile closure",
+    "value_available": false,
+    "new_production_or_feature_search_requested": false
+  },
+  "limits": [
+    "dictionary applies to saturated endpoints and explicitly legal nested endpoint constraints",
+    "no interior decimation semigroup, critical fixed point or continuum operator identity follows",
+    "simple-graph collapse of lifted edge or face incidences is outside the counting proof",
+    "the known positive N25 correction is a completed mechanism result and not a pending first calculation",
+    "prior P154 lag1 and P334 source decisions are unchanged"
+  ],
+  "report_shape": {
+    "audience": "technical",
+    "delivery": "user-specified repository Markdown note plus dictionary JSON; no additional HTML, Sites or rendering surface",
+    "structure": "completed result; incidence definitions and proof; source and U maps; scope; one open theoretical question",
+    "visual_choice": "exact equations and a matrix express the source mapping; no empirical trend chart is implied by one finite pair"
+  }
+}

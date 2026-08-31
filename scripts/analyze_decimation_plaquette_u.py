@@ -323,21 +323,28 @@ the result is a finite-pair mechanism counterexample, not an asymptotic H4 law,
 the N65/N85 production family, a continuum field identity or interior saturation
 curvature. The prior P154/P334 stop decisions remain unchanged.
 
-## Next substantive target and open question
+## Subsequent exact source completion and next question
 
-The bare-source global transport question is now answered on this pair; repeating
-this first F4 calculation is not a new task. A cross-size or interior prediction
-would need the specific coupled cluster/plaquette mechanism, not a freely fitted
-correction. Whether that forced two-source family closes under further decimation
-is a distinct theoretical question; this result does not answer it or launch a
-new production block.
+The accompanying `notes/decimation-closed-source-and-global-u.md` now completes
+the dictionary: F_parent=T_child-4K_child+2M and T_parent=4M-4K_child. Thus
+S_hat=C+F+T-4K+2N is exactly unchanged by this endpoint decimation. This forced
+finite source family closes without a fitted correction or another descriptor.
+The note contains the proof; this numerical calculation establishes its first
+otherwise-missing F4 contribution to the specified global U.
+
+An interior transmission law for this same closed source remains open. The
+endpoint identity alone is not that law, and no V_T value or interior curve is
+claimed here. Repeating this F4 calculation or reopening a failed P154/P334
+parameterization is not the next target. No new production block is launched.
 
 ## Source and reproduction
 
 The dictionary is pinned at execution commit 207436518db46dd13ef0ec91168cb1c99d52eaea,
 `notes/p337-checkerboard-decimation-global-u.md`; the topology proof is
 56838d5f068f6f0ba7795926dc9343229bdd28ce, `notes/square-checkerboard-endpoint-homology.md`.
-The contract and both scripts are pinned by `code_commit` and hashes in `run.json`.
+The contract and both scripts are pinned by `code_commit` in `latest.json` and
+hashes in `run.json`. The stored score predates the subsequent source-completion
+note; that explanatory addition does not change its counts or numerical result.
 The table is used for exact value lookup rather than an inferred trend.
 
 Run `python scripts/analyze_decimation_plaquette_u.py --output-dir NEW_DIRECTORY`.
