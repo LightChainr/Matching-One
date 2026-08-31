@@ -39,3 +39,21 @@ named global observer; no extra contact-descriptor search or fourth fitted
 model is attached to this result. Branch-delivered, not merged; general
 #334 remains open. The3SE rule is a fixed diagnostic, not an anytime or
 mathematical confidence certificate.
+
+## Crosswalk to the separate four-contact experiment
+
+The independently completed [four-contact frozen-predictor experiment](https://github.com/LightChainr/Matching-One/blob/14b2c98ed3a252a2fe79ce5e124d9484b23a264f/experiments/p334-prospective-intervention-20260831/REPORT.md)
+finds new/old loading-residual ratios **.4989** and **.5169** at N325/N425.
+Both its near-zero and old-amplitude forecast bands fail. Those failures
+stand; no half-amplitude replacement is introduced.
+
+These experiments constrain different parts of an exact decomposition:
+`m_F^c=H'b_F+r_F`, with `b_F=G^+E[H m_F]` and `E[H r_F]=0`.
+The four-contact prediction concerns the across-prefix loading of
+`E[H m_F]=G b_F`; the source-normal intervention here reads
+`E[phi m_F]=E[phi r_F]`. Therefore its positive result and the failed
+four-contact amplitude transfer are compatible, not conflicting votes.
+Neither identifies the origin of global U. The [exact projection crosswalk](https://github.com/LightChainr/Matching-One/blob/ccabada3/notes/p334-independent-interventions-crosswalk.md)
+retains rank-deficient source Grams and the distinct source/dependency
+identities. No combined significance, descriptor expansion or new sampling
+is attached to this comparison.
