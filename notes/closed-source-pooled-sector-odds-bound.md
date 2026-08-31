@@ -188,3 +188,8 @@ and a single specified partition cross-ratio. The tilted winding bound
 and the needed fixed-t control of that cross-ratio are not asserted to
 have been proved by this note. Any independently established regime with
 b,d->0 immediately yields kappa->1 through the same formula.
+
+The separate [Poisson double-scaling theorem](closed-source-poisson-double-scaling.md)
+now supplies such a regime for the actual two fixed lattice laws:
+`N/m² -> zeta < infinity` with growing systole gives b,d->0, including
+the oblique companion. The fixed-m problem remains distinct.

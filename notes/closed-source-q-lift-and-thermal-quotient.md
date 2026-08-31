@@ -242,6 +242,34 @@ isolates both quantities. Nor does it identify a full thermodynamic phase
 diagram or justify transporting the real `Q<=4` spectral formula into
 this strong-coupling region.
 
+## 7. Subsequent closure: finite sign separation and a joint-size law
+
+The [uniform two-law calculation](closed-source-uniform-projection-tail.md)
+now proves, from the locked N25 populations, that **every real m>=64** has
+`U_star<0<U_drop`, each at its own original separately normalized pooled
+root. This is a whole-interval result with explicit rational remainders,
+not a further coupling scan. It rules out observer equivalence of the
+projected and unprojected actions even where their bulk pressure densities
+can coincide in a different limit.
+
+The [Poisson coexistence theorem](closed-source-poisson-double-scaling.md)
+also closes the oblique-pair denominator in the controlled simultaneous
+limit `N/m² -> zeta < infinity`, with growing systole. Both fixed laws have
+`Z -> exp(zeta)+exp(s)` in their specified root charts. The rank-zero
+population is a Poisson(zeta) cloud, the rank-two population is full,
+and at the pooled root each geometry has `q ->0`, `kappa ->1` and
+`Cov(q,K)/N ->1/2`. Original pooled U then vanishes faster than any power
+of N, including for the oblique companion. This does not contradict the
+opposite finite-size signs: the limit fixes neither subleading sign.
+
+For the still distinct **fixed-m oblique** limit, the
+[order-25 twist comparison](closed-source-oblique-twist-comparison.md)
+reduces winding suppression to a concrete surface-scale partition ratio.
+The [sharp pooled-odds bound](closed-source-pooled-sector-odds-bound.md)
+identifies the other requirement as a restricted-sector cross-ratio,
+not equality of total pressures. These two fixed-m quantities remain
+open; the simultaneous-limit theorem does not interchange those limits.
+
 ## Scientific card
 
 - **Mechanism changed:** the closed source now has a fully declared Q

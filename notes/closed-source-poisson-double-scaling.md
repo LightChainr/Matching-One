@@ -264,6 +264,13 @@ This resolves the denominator distinction in the controlled joint limit.
 It never substitutes the variance of a mixture of geometries for the
 within-geometry covariance.
 
+Equivalently, the restricted-sector cross-ratio
+`Xi=Z2_f Z0_s/(Z0_f Z2_s)` tends to1 by (11)-(12). Thus this regime
+supplies precisely the previously missing hypothesis of the independent
+[sharp sector-odds bound](closed-source-pooled-sector-odds-bound.md):
+`kappa>=b(1-b)+(1-b)^2 sech^2(|log Xi|/4)`, where b is the pooled
+rank-one mass. Here b tends to0 and log Xi tends to0 together.
+
 There is also a concrete microscopic correction to the naive two-state
 picture. The probability of the single empty configuration tends to
 `exp(-zeta)/2`, while that of the single full configuration tends to1/2.
@@ -318,9 +325,12 @@ root displacement (18).
   with N/m² bounded. They are not simulation results or additional evidence
   votes from the existing N25 population.
 - **Not proved:** fixed-m oblique suppression, a thermodynamic critical
-  line, a continuum field, or a useful finite sampling window for opposite
-  U signs. The exp[O(N/m²)] factor is the precise reason this argument does
-  not settle arbitrary fixed positive t.
+  line or a continuum field. A separate
+  [uniform finite-N calculation](closed-source-uniform-projection-tail.md)
+  proves the opposite U signs for all real m>=64; this theorem does not
+  assert that their tiny magnitudes make a practical sampling window.
+  The exp[O(N/m²)] factor is the precise reason this argument does not
+  settle arbitrary fixed positive t.
 - **Next discriminant:** a fixed-coupling treatment must cancel that bulk
   small-contour partition factor rather than just extend this count or
   reuse the pure-state limit. P154/P334/F4 stop decisions are untouched.
