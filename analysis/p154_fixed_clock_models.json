@@ -1,0 +1,17 @@
+{
+  "schema": "matching-one.p154-fixed-clock-models.v1",
+  "status": "fixed_two_model_comparison_on_discovery_data_not_prospective_confirmation",
+  "sizes": [260, 340],
+  "source": "existing_one_step_early_rank_conditioned_bulk_cluster_source",
+  "models": {
+    "scalar": "w_g=1",
+    "fourfold": "w_g=cos(4 theta_g) exactly from integer period vectors"
+  },
+  "law": "e_g=-(m-delta*w_g/2)*F1_g_prime; x_g=-(m+delta*w_g/2)*F2_g_prime; shifts constant in p near the pooled root",
+  "calibration": "fit only pooled moving-root rank1 response and pooled root response, separately per N; no angular coefficient or offset",
+  "readouts": ["entry orientation contrast", "completion orientation contrast", "original global U source derivative"],
+  "uncertainty": "aligned delete-one original union batch for baseline, conditional source centering, matching root, calibration and all contrasts; full joint covariance",
+  "interpretation": "large residual relative to its paired SE invalidates the specified finite response law on this discovery block; it is not an independent significance certificate",
+  "failure_rule": "do not repair a failed angular law by fitting a new angular gain, changing lag, adding a descriptor or relabeling it a prospective test",
+  "acquisition": {"new_random_samples": 0, "configuration_replays": 0, "server_actions": 0}
+}
