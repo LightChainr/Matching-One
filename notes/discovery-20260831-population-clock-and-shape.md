@@ -37,10 +37,77 @@ the waiting-time fluctuation is divided byN+1. The paired prevalence/clock
 decomposition and four-state risk variance therefore directly test the
 natural explanation for the very small integrated noise reduction.
 
+The completed [paired-risk decomposition](https://github.com/LightChainr/Matching-One/blob/3d760b86/notes/p334-r1-prevalence-clock-loading-result.md)
+now explains **99.84895% and
+99.86380%** of the hybrid integrated-contrast variance by the four states
+`(R_first,R_second)`. For the canonical contrast the corresponding fractions
+are84.2390% and83.0724%. The within-R1 clock is therefore not the dominant
+remaining source of noise in this gated integrated observable.
+
+This suggests a specific next bridge to the global observable: retain all
+checkpoint strata jointly. Their contributions can cancel both mean and
+indicator noise. The present result does not assign99.85% of full A_top's
+variance to rank-one prevalence.
+
+Mean loading has a different decomposition: `D=C+L`, with C the symmetric
+prevalence term and L the conditional-clock term. N325 has canonical
+`L=.00096906 +/- .00039612`, against `C=-.00035908 +/- .00150262`;
+N425 has `L=-.00055355 +/- .00043189`, against
+`C=.00168943 +/- .00102780`. The mean clock contribution can oppose the
+prevalence contribution even when prevalence dominates the variance. The
+two terms remain in one covariance block.
+
 All required orientations in a pair were conditionally replaced together,
 or both original values were kept. There were47/164 whole-pair fallbacks,
 not discarded difficult prefixes. This is a completed archive-derived R1
 contribution, not full F2/A_top or a runtime-speedup claim.
+
+### The micro-source partition is now available on the same population
+
+[32270fa2](https://github.com/LightChainr/Matching-One/commit/32270fa2f8c5dfb19bf534b364fde26e2ac117f6)
+uses monotonicity to obtain the original-singleton-gate birth law directly:
+
+```
+P(T=j, final site in original H2 gates) = S(j-1)*H2/(d-j+1).
+```
+
+Subtracting this from the full birth mass gives collective completion;
+it includes sites that become singleton triggers only after subsequent
+safe insertions. All unsolved whole pairs retain their original value in
+an explicit unclassified channel. The three channels add back to Y.
+
+Direct gates carry about82% of classified positive canonical loading and
+66% of integrated loading. Yet the smaller collective source can determine
+an orientation difference: N325's integrated H4 contributions are
+`direct +.00101609`, `collective -.00156328`, and
+`unclassified -.00004098`. N425's classified integrated contributions
+are both positive, `+.00167889` and `+.00172133`. These are dependent
+archive point estimates, not established population signs. Source signs
+must be read with common batch covariance and the unresolved-source
+allocation envelopes; a small net unclassified contrast need not imply
+small uncertainty in its individual-source allocation.
+
+There is also a new [exact source-competition identity](https://github.com/LightChainr/Matching-One/blob/e41b8e0014e747854000b2512ed36736ab8a98ef/notes/p334-integrated-source-competition-identity.md).
+For each solved prefix, h=H2 and mu=E[T] give
+`I_direct=h*mu/(N+1)` and
+`I_collective=[d+1-(h+1)*mu]/(N+1)`.
+Equivalently, the collective integral is
+`(h+1)*E[T_original_gates_only-T]/(N+1)` on the same permutation.
+Collective completion can therefore raise total loading while pre-empting
+and reducing direct-source loading. Its integrated source information beyond
+prevalence and mean waiting time is exactly the H2-weighted first moment;
+the fixed-p readout, in contrast, still probes the full clock shape.
+
+The [shared source-by-C/L crosswalk](https://github.com/LightChainr/Matching-One/blob/6133b39d20a198a61857dd30ddcf676e2b0a1a65/notes/p334-source-loading-crosswalk.md)
+locates N325's canonical conditional-clock
+term: direct `+.00114380 +/- .00050986`, collective
+`-.00020310 +/- .00018303`, and unclassified
+`+.00002836 +/- .00006657`. For its integrated L, direct
+`+.00152158 +/- .00074444` and collective
+`-.00131605 +/- .00070585` nearly cancel, leaving a much smaller net clock
+contribution. This is exactly why separate source error bars must not be
+combined as independent evidence: all45 derived coordinates share the same
+20 original batches and a rank-at-most19 covariance matrix.
 
 ## 2. A thinning shoulder retains shape leverage
 
