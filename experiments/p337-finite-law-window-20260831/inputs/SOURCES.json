@@ -1,0 +1,26 @@
+{
+  "entries": [
+    {
+      "role": "axis_histogram",
+      "path": "inputs/axis.csv",
+      "sha256": "2d23fecc98d276d9ad15ad1867199cd308f0570cb5040ef94eb6b923b4c53458",
+      "source_commit": "a70eeff09f51ce2fa0fea5ae637e9191efbf2e1f",
+      "source_path": "results/p337-closed-source-finite-coupling/axis.csv"
+    },
+    {
+      "role": "tilted_histogram",
+      "path": "inputs/tilted.csv",
+      "sha256": "225031e612929ed922ba75c55e76703d59990f5283e7ac39b94f022841798da5",
+      "source_commit": "a70eeff09f51ce2fa0fea5ae637e9191efbf2e1f",
+      "source_path": "results/p337-closed-source-finite-coupling/tilted.csv"
+    },
+    {
+      "role": "interval_backend",
+      "path": "vendor/interval_backend.py",
+      "sha256": "001a4ec8d85934c11690c1948f47ea8bdc892ad854ee422882cbaa4053fd09db",
+      "source_commit": "a70eeff09f51ce2fa0fea5ae637e9191efbf2e1f",
+      "source_path": "scripts/p337_closed_source_score.py"
+    }
+  ],
+  "scope": "existing exact finite histogram; no new population"
+}
