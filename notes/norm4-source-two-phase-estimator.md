@@ -1,6 +1,6 @@
 # 用完整 q/E 生产曲线锚定 100k 簇源标记：一个可直接执行的两阶段估计
 
-结论：可以复用旧 1.9B/1B 的无标记曲线，让新的 100k 源读出更有效。最直接的方案是**巨大独立补集的根／斜率／q-only 响应，加上交叉拟合的标记残差**。改善多少要用现有档案实际算一次；完整 q/E 档案不会把未知簇源系数也变成十亿精度。本笔记仅推导，没有重跑分析。
+**计算已完成：这项两阶段方案没有带来稳定降噪。** [实际报告](../results/norm4-source-two-phase/REPORT.md)与[完整协方差](../results/norm4-source-two-phase/latest.json)记录一次2.52秒、零回放的计算：六N原始/两阶段SE比为0.898–1.008，补集基准的方差贡献不足总量的0.002%。旧1.9B/1B的无标记曲线已经足够精确；当前限制在簇源标记本身。下面保留执行前的推导与定义。后续直接增加旧生产端点的源标记，不把此方案再次列为待算任务。
 
 ## 1. 现有字段足够做什么
 
@@ -102,8 +102,8 @@ Var = Var(R)/n + {Var(Cv)+2 Cov(R,Cv)}/M.
 
 一般不能写成独立的 `Var(R)/n+Var(Cv)/M`；只有相应读数的残差与控制正交时交叉项才消失。拟合 S 的最小二乘并不保证最终 Udot 影响函数也正交。因此补集方案更容易直接、诚实地实现。
 
-## 5. 一个真正的下一 compute
+## 5. 已执行的 compute 与后续
 
-只做一次**零回放的两阶段 source 分析**：读取已保存的六 N source CSV 与旧 threshold histograms，建立补集 anchors，按上述固定五折分解，输出六个 `Udot_bulk`、原 q2/Jordan source-extension 残差及 generator-drift determinant 的联合结果。并列报告现有 raw 估计、只锚定 baseline 的估计、完整两阶段估计及它们的共同协方差，直接回答 endpoint 的大 SE 有多少来自 baseline／q-only 标记噪声，有多少留在 R 的真实热源响应。
+已经完成一次**零回放的两阶段 source 分析**：读取六 N source CSV 与旧 threshold histograms，建立补集 anchors，按上述固定五折分解，输出六个 `Udot_bulk`、原 q2/Jordan source-extension 残差及 generator-drift determinant 的联合结果。报告并列保留 raw、只锚定 baseline、完整两阶段估计及共同协方差。仅替换基准打断了原同样本估计中的误差抵消，交叉拟合把误差恢复到原有量级，却没有系统改善。
 
 这三个视图复用同一数据，不合并 p 值。若 R 仍主导 endpoint 不确定性，完整 q/E 档案已无法补上缺失的簇源信息；这一次计算会明确下一项需要的源标记，而不是继续增加准备工具。无需新模拟、服务器、s² 字段或一套新框架。
