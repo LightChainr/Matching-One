@@ -1,0 +1,15 @@
+{
+  "schema": "matching-one.p334-trigger-capacity-allocation-manifest.v1",
+  "status": "post_reveal_exact_arithmetic_on_existing_graphs",
+  "source_commit": "1b5a9dea07e1c62f69798fddbf4899ff986c0b72",
+  "source_path": "results/local-20260831/P334-cooperative-closure/trigger_graph_structure_bounded.json",
+  "source_sha256": "2765a8181051c519be89bf04219239b4d49dd2bc4df788216ae62047d4664300",
+  "background_overlap_commit": "85af4981628541882fd038ef07234b9a2f2f0266",
+  "question": "Does the saved two-sided capacity explanation come from localized support/block structure, bipartition side constraints, or residual degree organization?",
+  "selection": "Use exactly the two saved N425 witnesses and the existing first-five eligible counters in each of four environments; no extension, reselection or new topology enumeration.",
+  "benchmarks": ["G(a,m) on all individually safe sites", "independent G(s_j,m_j) on each observed nonisolated component vertex block", "uniform m_j cross edges on each fixed observed L_j by R_j block"],
+  "benchmark_boundary": "The latter two benchmarks fix observed vertex blocks and edge counts but may disconnect them or create new isolates. They do not condition on connectedness or preservation of the original graph components. The localization increment includes support, block partition and block edge allocation; it is not a causal intervention.",
+  "new_samples": 0,
+  "dependency_groups": ["p334-cooperative-N325-20260831", "p334-cooperative-N425-20260831"],
+  "outputs": {"json": "results/p334-trigger-capacity-allocation/latest.json", "markdown": "results/p334-trigger-capacity-allocation/REPORT.md"}
+}
