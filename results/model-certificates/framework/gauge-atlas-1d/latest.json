@@ -1,0 +1,56 @@
+{
+  "claim_boundary": {
+    "excluded": "matrix gauge construction, multivariate semialgebraic coverage, algebraic boundaries, physical parameter domains, or atlas discovery",
+    "included": "exact union coverage and uncovered-component calculation for supplied rational one-dimensional chart intervals with endpoint semantics",
+    "parent_issue": "remain open"
+  },
+  "claim_level": "exact_control",
+  "dependency_group": "synthetic-exact-gauge-atlas-1d",
+  "descriptor": {
+    "charts": [
+      {
+        "id": "negative-minor",
+        "lower": "-1",
+        "lower_closed": true,
+        "upper": "0",
+        "upper_closed": false
+      },
+      {
+        "id": "boundary",
+        "lower": "0",
+        "lower_closed": true,
+        "upper": "0",
+        "upper_closed": true
+      },
+      {
+        "id": "positive-minor",
+        "lower": "0",
+        "lower_closed": false,
+        "upper": "1",
+        "upper_closed": true
+      }
+    ],
+    "domain": {
+      "lower": "-1",
+      "lower_closed": true,
+      "upper": "1",
+      "upper_closed": true
+    }
+  },
+  "issue": 370,
+  "schema": "matching-one/exact-one-dimensional-gauge-atlas/v1",
+  "verification": {
+    "chart_count": 3,
+    "complete_for_declared_domain": true,
+    "merged_components": [
+      {
+        "lower": "-1",
+        "lower_closed": true,
+        "upper": "1",
+        "upper_closed": true
+      }
+    ],
+    "status": "exact_one_dimensional_gauge_atlas_checked",
+    "uncovered_components": []
+  }
+}
