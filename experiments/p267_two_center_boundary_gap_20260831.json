@@ -1,0 +1,18 @@
+{
+  "schema": "matching-one/p267-two-center-boundary-gap/v1",
+  "stage": "post-reveal named-boundary interpretation; not a new scale preregistration",
+  "source_commit": "54430ea7",
+  "source_paths": [
+    "results/p267-max-gaussian-three-center/score.json",
+    "results/p267-max-gaussian-three-center-n900/score.json"
+  ],
+  "fixed_readout": "Delta2=min_(a,b) E[(C^2-a*C-b)^2]/Var(C)^2=det(H2(C))/Var(C)^3, evaluated on the already stored positive center measure",
+  "equivalent_formula": "Delta2=w0*w1*w2*prod_(i<j)(ci-cj)^2/Var(C)^3; with positions (0,rho,1), Delta2=w0*w1*w2*rho^2*(1-rho)^2/v_a^3",
+  "boundary": "Gaussian plus at most two distinct positive centers in the finite, nonzero-variance closure of the degree-six maximal-Gaussian representation. Affine-coordinate invariant, not invariant under arbitrary nonlinear thermal warps.",
+  "reported_explanatory_identity": "Delta2=w_early*L_early; L_early is the exact ratio Delta2/w_early, describing compensating center leverage, not a second optimized distance",
+  "uncertainty": "Apply this single algebraic readout to stored N100/N400/N900 common-batch LOO parameter vectors; no refitting of Gaussian variance or atoms. Retain covariance with early weight and its leverage ratio. Cross-size blocks are independent; consecutive increments share the middle source.",
+  "no_new_MC": true,
+  "no_old_construction_reruns": true,
+  "no_distance_or_family_scan": true,
+  "comparison_scope": "Read ddf7d564 for the broader arbitrary common-symmetric-kernel two-lobe no-go. It is not the same boundary: a three-atom Gaussian mixture can itself factor as two translates of a non-Gaussian symmetric kernel."
+}
