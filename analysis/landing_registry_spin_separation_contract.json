@@ -1,0 +1,29 @@
+{
+  "schema": "matching-one/landing-registry-spin-separation/v1",
+  "status": "valid_exact_third_registry_separation_certificate",
+  "parent_issue": "remain open",
+  "difference_identity": "cos(4 theta)-cos(12 theta)=2 sin(8 theta) sin(4 theta)",
+  "alias_criterion": "theta is an integer multiple of pi/8",
+  "pi_over_24_grid_alias_numerators_on_0_to_pi_over_2": [0, 3, 6, 9, 12],
+  "original_axis_diagonal": {
+    "angles": ["0", "pi/4"],
+    "columns": ["H4", "H12"],
+    "response_matrix": [["1", "1"], ["-1", "-1"]],
+    "rank": 1
+  },
+  "extended_registry": {
+    "angles": ["0", "pi/4", "pi/12"],
+    "columns": ["H4", "H12"],
+    "response_matrix": [["1", "1"], ["-1", "-1"], ["1/2", "-1"]],
+    "rank": 2,
+    "separating_minor": "-3/2",
+    "conclusion": "the pi/12 cosine sample separates H4 and H12 exactly"
+  },
+  "claim_boundary": {
+    "proves_lattice_registry_feasibility": false,
+    "runs_new_landing_simulation": false,
+    "derives_arm_exponent": false,
+    "derives_ope_coefficient": false,
+    "identifies_x_21_over_4": false
+  }
+}
