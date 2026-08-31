@@ -10,7 +10,7 @@ functions suffice**. The proposed coefficients below are correct.
 The new step is the **local hypergraph realization of the already declared
 closed-source Q-family**, and its fixed-m partition-function readout.
 The annihilator count itself is already proved in `4b179559`:
-[finite-abelian twist tomography](finite-abelian-twist-tomography.md).
+[finite-abelian twist tomography](https://github.com/LightChainr/Matching-One/blob/4b17955946207f39762f836156aa063f64fbf67d/notes/finite-abelian-twist-tomography.md).
 That note reconstructs a fixed underlying rank law from order-2 and
 order-3 constraint averages. Here every T, R and I uses **one fixed m,
 one local interaction and one activity**; neither the source nor its
@@ -28,7 +28,7 @@ Source convention: `85fd492312b597b3fa102ea913e4bcc7aeae2acf`,
 [two-current representation](closed-source-two-current-representation.md).
 The integral input is §4.1 of
 `c1a72e5f0568b1e423ece5d870635030d83f2c7d`:
-[digital Alexander saturation](digital-alexander-unrestricted-degenerate-quotients.md).
+[digital Alexander saturation](https://github.com/LightChainr/Matching-One/blob/c1a72e5f0568b1e423ece5d870635030d83f2c7d/notes/digital-alexander-unrestricted-degenerate-quotients.md).
 
 ## 1. Fixed action, graph and normalization
 
