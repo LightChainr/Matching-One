@@ -1,0 +1,432 @@
+{
+  "schema": "matching-one.local-pair-two-insertion.v1",
+  "kernel_source": {
+    "commit": "9dc3c4269c1c44a0a0a82b15f8cd13f922a8b2d4",
+    "path": "notes/closed-source-local-four-port-pair-kernel.md",
+    "status": "branch_only"
+  },
+  "symbolic_results": {
+    "cross_inner_product": "Q*(Q - 3)*(Q**2 - 3*Q + 4)/(4*(Q - 2)*(Q - 1))",
+    "G_two_copy_closure": "Q*(Q - 3)*(3*Q**2 - 9*Q + 8)/(8*(Q - 2)*(Q - 1))",
+    "Q1_G_residue": "1/2",
+    "Q1_G_finite_part": "0",
+    "relative_fixed_vacant_weight": "(Q - 3)*(3*Q**2 - 9*Q + 8)/(8*Q**3*(Q - 2)*(Q - 1))",
+    "conditional_baseline": "Q**4 + Q*(v_x*v_y + v_x + v_y)",
+    "conditional_connected_mixed_susceptibility": "(Q - 3)*(3*Q**2 - 9*Q + 8)/(8*(Q - 2)*(Q - 1)*(Q**3 + v_x*v_y + v_x + v_y))",
+    "Q1_conditional_susceptibility_residue": "1/(2*(v_x + 1)*(v_y + 1))",
+    "sqrt_Qminus1_rescaled_two_copy_limit": "1/2",
+    "sqrt_Qminus1_rescaled_single_response_limit": "0; the original finite nonzero V is not preserved"
+  },
+  "equality_patterns": [
+    {
+      "equality_pattern": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "colour_count": "Q",
+      "Kbar": "0"
+    },
+    {
+      "equality_pattern": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "colour_count": "Q*(Q - 1)",
+      "Kbar": "0"
+    },
+    {
+      "equality_pattern": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "colour_count": "Q*(Q - 1)",
+      "Kbar": "0"
+    },
+    {
+      "equality_pattern": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "colour_count": "Q*(Q - 1)",
+      "Kbar": "(Q - 3)/(4*(Q - 1))"
+    },
+    {
+      "equality_pattern": [
+        0,
+        0,
+        1,
+        2
+      ],
+      "colour_count": "Q*(Q - 2)*(Q - 1)",
+      "Kbar": "-(Q - 3)/(4*(Q - 2)*(Q - 1))"
+    },
+    {
+      "equality_pattern": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "colour_count": "Q*(Q - 1)",
+      "Kbar": "0"
+    },
+    {
+      "equality_pattern": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "colour_count": "Q*(Q - 1)",
+      "Kbar": "(Q - 3)/(2*(Q - 1))"
+    },
+    {
+      "equality_pattern": [
+        0,
+        1,
+        0,
+        2
+      ],
+      "colour_count": "Q*(Q - 2)*(Q - 1)",
+      "Kbar": "-(Q - 3)/(2*(Q - 2)*(Q - 1))"
+    },
+    {
+      "equality_pattern": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "colour_count": "Q*(Q - 1)",
+      "Kbar": "(Q - 3)/(4*(Q - 1))"
+    },
+    {
+      "equality_pattern": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "colour_count": "Q*(Q - 1)",
+      "Kbar": "0"
+    },
+    {
+      "equality_pattern": [
+        0,
+        1,
+        1,
+        2
+      ],
+      "colour_count": "Q*(Q - 2)*(Q - 1)",
+      "Kbar": "-(Q - 3)/(4*(Q - 2)*(Q - 1))"
+    },
+    {
+      "equality_pattern": [
+        0,
+        1,
+        2,
+        0
+      ],
+      "colour_count": "Q*(Q - 2)*(Q - 1)",
+      "Kbar": "-(Q - 3)/(4*(Q - 2)*(Q - 1))"
+    },
+    {
+      "equality_pattern": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "colour_count": "Q*(Q - 2)*(Q - 1)",
+      "Kbar": "-(Q - 3)/(2*(Q - 2)*(Q - 1))"
+    },
+    {
+      "equality_pattern": [
+        0,
+        1,
+        2,
+        2
+      ],
+      "colour_count": "Q*(Q - 2)*(Q - 1)",
+      "Kbar": "-(Q - 3)/(4*(Q - 2)*(Q - 1))"
+    },
+    {
+      "equality_pattern": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "colour_count": "Q*(Q - 3)*(Q - 2)*(Q - 1)",
+      "Kbar": "1/((Q - 2)*(Q - 1))"
+    }
+  ],
+  "physical_witness": {
+    "L": 17,
+    "N": 289,
+    "holes": [
+      [
+        3,
+        4
+      ],
+      [
+        11,
+        4
+      ]
+    ],
+    "occupied_vertices": [
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        8
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        3,
+        8
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        4,
+        8
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        5,
+        4
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        5,
+        8
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        6,
+        4
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        6,
+        8
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        7,
+        4
+      ],
+      [
+        7,
+        6
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        8,
+        2
+      ],
+      [
+        8,
+        4
+      ],
+      [
+        8,
+        6
+      ],
+      [
+        8,
+        8
+      ],
+      [
+        9,
+        2
+      ],
+      [
+        9,
+        4
+      ],
+      [
+        9,
+        6
+      ],
+      [
+        9,
+        8
+      ],
+      [
+        10,
+        2
+      ],
+      [
+        10,
+        4
+      ],
+      [
+        10,
+        6
+      ],
+      [
+        10,
+        8
+      ],
+      [
+        11,
+        2
+      ],
+      [
+        11,
+        3
+      ],
+      [
+        11,
+        5
+      ],
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        8
+      ],
+      [
+        12,
+        4
+      ],
+      [
+        12,
+        8
+      ],
+      [
+        13,
+        4
+      ],
+      [
+        13,
+        5
+      ],
+      [
+        13,
+        6
+      ],
+      [
+        13,
+        7
+      ],
+      [
+        13,
+        8
+      ]
+    ],
+    "K": 52,
+    "occupied_NN_edges": 48,
+    "component_count": 4,
+    "component_sizes": [
+      23,
+      11,
+      11,
+      7
+    ],
+    "port_component_labels": {
+      "x": {
+        "N": 2,
+        "E": 3,
+        "S": 1,
+        "W": 0
+      },
+      "y": {
+        "N": 2,
+        "E": 0,
+        "S": 1,
+        "W": 3
+      }
+    },
+    "vacant_vacant_edges": 418,
+    "hypergraph_component_count": 422,
+    "spectator_colour_blocks": 418,
+    "rank": 0,
+    "rank_reason": "All paths, and the graph after adding either or both holes, lie in the contractible rectangle [1,13] x [2,8] without seam edges.",
+    "gluing": "xN-yN, xE-yW, xS-yS, xW-yE; reflection of the D4-invariant Kbar"
+  },
+  "decision": "regular_unrenormalized_two_insertion_Q1_conditional_family_excluded",
+  "preserved": "The completed single-insertion original-U response remains finite and nonzero.",
+  "not_claimed": [
+    "a divergence of the fully summed homogeneous partition",
+    "a continuum field identification",
+    "an independent stochastic result"
+  ]
+}
