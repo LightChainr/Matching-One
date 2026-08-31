@@ -182,3 +182,11 @@ is closed. A next field claim needs a named projection and a prediction
 that separates candidate fields; it must not recycle these two points
 into a fitted exponent or a new completion choice. P154/P334/F4 production
 stops and other teams' task priorities are unchanged.
+
+### The distinct global interface has since been calculated
+
+The [canonical joint-U result](regular-pair-joint-transmission-result.md)
+now evaluates the homogeneous all-pair first-Q response on the original
+N25 pair. Total and predeclared nonadjacent contributions are strictly
+negative. That result closes a separate joint-interaction-to-U question;
+it does not reuse or refit these two spatial MC points.
