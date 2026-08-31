@@ -1,0 +1,282 @@
+{
+  "schema": "p337.s4-trace-transmission.score.v1",
+  "decision": "nonzero_normalization_transmission",
+  "freeze_commit": "55fdba789a576d8d4c507372b7834f92cf506c80",
+  "code_commit": "3dbdd91e20faf1c5e9985bcbbe8c26cfe65e70cf",
+  "created_utc": "2026-08-31T14:44:23.305169+00:00",
+  "contract": {
+    "schema": "p337.s4-trace-transmission.v1",
+    "base_commit": "75e8d572",
+    "question": "Does the canonical S4 [2,2] closed-seam trace transmit through normalization to original pooled U at fixed Q=4?",
+    "N": 25,
+    "geometries": [
+      [
+        5,
+        0
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    "period_basis": "(a,b),(-b,a); permutation seam along the first deck coordinate in each geometry",
+    "m": 2,
+    "Q": 4,
+    "source_law": "original Sstar; weight h^K 2^(-g)",
+    "central_trace": {
+      "identity": "1/6",
+      "double_transposition": "1/2",
+      "three_cycle": "-2/3"
+    },
+    "per_configuration_beta": "1/6 + (1/2)*indicator(no component has nontrivial first-deck cycle mod2) - (2/3)*4^(-number_of_components_nontrivial_mod3)",
+    "topological_gate": "beta=0 on ambient rank0 and rank2; q*beta=E*beta=0 exactly",
+    "perturbation": "first-order insertion w(A)*(1+epsilon*beta(A)); no fitted source coefficient",
+    "primary_estimand": "d_epsilon original separately normalized pooled-root U at epsilon=0, including root and slope motion",
+    "null": "the rank1 normalization-only trace route has zero original-U response",
+    "decision": "one exact-rational enclosure at the saved original m2 root; reject zero only if excluded",
+    "root_source": "results/p337-closed-source-finite-coupling/score/score.json, record m=2; do not search a new root",
+    "baseline_source": "locked axis/tilted (K,g,q) histograms; do not rescore old four-coupling experiment",
+    "new_computation": "one exact pass per geometry for missing per-component mod2/mod3 seam constraints; one primary score",
+    "not_authorized_by_this_contract": [
+      "other Q or seam search",
+      "coupling scan",
+      "source fit",
+      "Monte Carlo",
+      "continuum field assignment",
+      "Q1 activation claim"
+    ],
+    "dependency": "same finite N25 exact population, new prescribed character insertion; not independent statistical evidence",
+    "fallback": "retain zero or unresolved answer without changing projector, seam, Q, root or geometry"
+  },
+  "root": {
+    "source": "results/p337-closed-source-finite-coupling/score/score.json",
+    "sha256": "f9af7a7aa9b3ceba574e61771ec462a5abc63f7008eea2efcbb7b30ba206e770",
+    "m": 2,
+    "critical_h": {
+      "lower_fraction": "30642384240361619026023347146830848671/25000000000000000000000000000000000000",
+      "upper_fraction": "612847684807232380520466942936616973423/500000000000000000000000000000000000000",
+      "midpoint_approx": 1.2256953696144648,
+      "width_approx": 6e-39,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "new_root_search": false
+  },
+  "inputs": [
+    {
+      "geometry": "axis",
+      "new_counts": "/private/tmp/matching-p334-paired-loading/results/p337-s4-trace-transmission/axis.csv",
+      "new_sha256": "d589cf29ec770292674e510018d849bf44f10fb08b882d38ad30ba468db06127",
+      "old_counts": "results/p337-closed-source-finite-coupling/axis.csv",
+      "old_sha256": "2d23fecc98d276d9ad15ad1867199cd308f0570cb5040ef94eb6b923b4c53458",
+      "trace_coefficients_h": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "5/1048576",
+        "25/2097152",
+        "25/1048576",
+        "525/16777216",
+        "3475/134217728",
+        "6065/536870912",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "geometry": "tilted",
+      "new_counts": "/private/tmp/matching-p334-paired-loading/results/p337-s4-trace-transmission/tilted.csv",
+      "new_sha256": "107f5081734d9f5d3259303b28a6f71083f5822d297ceed96f73348ac1ec1d5d",
+      "old_counts": "results/p337-closed-source-finite-coupling/tilted.csv",
+      "old_sha256": "225031e612929ed922ba75c55e76703d59990f5283e7ac39b94f022841798da5",
+      "trace_coefficients_h": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "25/67108864",
+        "275/268435456",
+        "1505/1073741824",
+        "125/134217728",
+        "25/134217728",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    }
+  ],
+  "V_beta_over_A": {
+    "lower_fraction": "582084561188942894896198083834109/10000000000000000000000000000000000000000",
+    "upper_fraction": "58208456118894289489619808383411/1000000000000000000000000000000000000000",
+    "midpoint_approx": 5.820845611889429e-08,
+    "width_approx": 1e-40,
+    "excludes_zero": true,
+    "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+  },
+  "V_beta_approx": 5.440121494634842e-06,
+  "terms_over_A": {
+    "common_thermal": {
+      "lower_fraction": "-1682837071358748578565596303319/5000000000000000000000000000000000000000",
+      "upper_fraction": "-3365674142717497157131192606637/10000000000000000000000000000000000000000",
+      "midpoint_approx": -3.365674142717497e-10,
+      "width_approx": 1e-40,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "geometric_thermal": {
+      "lower_fraction": "591867735460467607852251644719667/10000000000000000000000000000000000000000",
+      "upper_fraction": "147966933865116901963062911179917/2500000000000000000000000000000000000000",
+      "midpoint_approx": 5.918677354604676e-08,
+      "width_approx": 1e-40,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "geometric_value": {
+      "lower_fraction": "-160437503220180394973059206973/250000000000000000000000000000000000000",
+      "upper_fraction": "-6417500128807215798922368278919/10000000000000000000000000000000000000000",
+      "midpoint_approx": -6.417500128807215e-10,
+      "width_approx": 1e-40,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    }
+  },
+  "terms_approx": {
+    "common_thermal": -3.145535454562741e-08,
+    "geometric_thermal": 5.531554355406087e-06,
+    "geometric_value": -5.99775062256181e-08
+  },
+  "transmission_coefficients": {
+    "common_thermal": {
+      "lower_fraction": "5262267459428927133265573956686885423/5000000000000000000000000000000000000000",
+      "upper_fraction": "10524534918857854266531147913373771099/10000000000000000000000000000000000000000",
+      "midpoint_approx": 0.0010524534918857854,
+      "width_approx": 2.53e-38,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "geometric_thermal": {
+      "lower_fraction": "-438319851890615141429956140258689252577/2500000000000000000000000000000000000000",
+      "upper_fraction": "-219159925945307570714978070129344626197/1250000000000000000000000000000000000000",
+      "midpoint_approx": -0.17532794075624605,
+      "width_approx": 7.32e-38,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "geometric_value": {
+      "lower_fraction": "-10499620506909868323244960374717613681/5000000000000000000000000000000000000000",
+      "upper_fraction": "-10499620506909868323244960374717610323/5000000000000000000000000000000000000000",
+      "midpoint_approx": -0.0020999241013819735,
+      "width_approx": 6.716e-37,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    }
+  },
+  "trace_arguments": {
+    "common_thermal": {
+      "lower_fraction": "-1598965735144687769064322200720001/5000000000000000000000000000000000000000",
+      "upper_fraction": "-3197931470289375538128644401440001/10000000000000000000000000000000000000000",
+      "midpoint_approx": -3.1979314702893757e-07,
+      "width_approx": 1e-40,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "geometric_thermal": {
+      "lower_fraction": "-1687887660425231807280886637812191/5000000000000000000000000000000000000000",
+      "upper_fraction": "-3375775320850463614561773275624381/10000000000000000000000000000000000000000",
+      "midpoint_approx": -3.3757753208504637e-07,
+      "width_approx": 1e-40,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "geometric_value": {
+      "lower_fraction": "191003930945165391940591938622857/625000000000000000000000000000000000000",
+      "upper_fraction": "3056062895122646271049471017965713/10000000000000000000000000000000000000000",
+      "midpoint_approx": 3.0560628951226465e-07,
+      "width_approx": 1e-40,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    }
+  },
+  "root_h_derivative": {
+    "lower_fraction": "844358501735447881373967452499/5000000000000000000000000000000000000000",
+    "upper_fraction": "1688717003470895762747934904999/10000000000000000000000000000000000000000",
+    "midpoint_approx": 1.6887170034708957e-10,
+    "width_approx": 1e-40,
+    "excludes_zero": true,
+    "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+  },
+  "geometry_trace_fraction": [
+    {
+      "f": {
+        "lower_fraction": "6459778331458176454544121434217751/10000000000000000000000000000000000000000",
+        "upper_fraction": "807472291432272056818015179277219/1250000000000000000000000000000000000000",
+        "midpoint_approx": 6.459778331458177e-07,
+        "width_approx": 1e-40,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "f_h": {
+        "lower_fraction": "-6573706791139839152690417677064383/10000000000000000000000000000000000000000",
+        "upper_fraction": "-3286853395569919576345208838532191/5000000000000000000000000000000000000000",
+        "midpoint_approx": -6.573706791139839e-07,
+        "width_approx": 1e-40,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      }
+    },
+    {
+      "f": {
+        "lower_fraction": "173826270606441956222589699143163/5000000000000000000000000000000000000000",
+        "upper_fraction": "347652541212883912445179398286327/10000000000000000000000000000000000000000",
+        "midpoint_approx": 3.476525412128839e-08,
+        "width_approx": 1e-40,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "f_h": {
+        "lower_fraction": "177843850561088076433128874184379/10000000000000000000000000000000000000000",
+        "upper_fraction": "8892192528054403821656443709219/500000000000000000000000000000000000000",
+        "midpoint_approx": 1.778438505610881e-08,
+        "width_approx": 1e-40,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      }
+    }
+  ],
+  "direct_q_E_numerators": "identically_zero_as_exact_polynomials",
+  "old_population_marginals": "retained_exactly",
+  "source_coordinate": "epsilon coefficient of canonical Q4 [2,2] trace; not t or logQ",
+  "new_random_samples": 0,
+  "Q4_trace_responses_scored": 1,
+  "new_coupling_points": 0,
+  "elapsed_seconds": 0.1409592080162838
+}
