@@ -1,20 +1,29 @@
 # Roadmap: Default Attention, Not Permission
 
-**Current move, 2026-08-31:** the W± bridge is completed in #509 at `fb01c44a`,
-and [occupancy/rank source projection](../results/norm4-global-source-projection/REPORT.md)
-is completed in #267 at `8799dfe1`. Same-time centered spatial sources are
-invisible to global q/E, while occupancy and fixed-K rank components both move
-root and population. Seek an explicit earlier-source/later-rank mechanism;
-do not repeat the angular allocation. P334 finite-source and P398 exact linear
-responses are also delivered. The [fixed block-fugacity prediction](../results/p398-block-count-measure/REPORT.md),
-#267 `7da1eeb0`, now fails with34.27% relative score error and a wrong integrated
-response sign: distinguish size composition from connectivity arrangement on
-the saved finite states. P334's `a6304bad` joint-clock result also completes
-the thermal dipole/plateau analysis; separate within-prefix covariance from
-mixing of prefix means next. [Repository-first handoff](TEAM-COORDINATION.md)
-replaces routine cross-task messages; older stages below are not parallel queues.
+**Current move, 2026-08-31:** compress the default primary queue to two
+[prospective decision experiments](DECISION-EXPERIMENTS.md): #154 temporal
+transmission into original U, and #334 an independent coarse-state-preserving
+contact intervention. Freeze falsifiable predictions and precision before new
+production. Covariance bookkeeping does not remove hypothesis-search reuse.
+Other mechanism lines remain parallel exploration, without task locks.
 
-This roadmap starts with the next scientific outputs, using existing production before commissioning another tool or sample block. Priorities allocate attention; all research lanes remain open in parallel. Reused views keep their shared covariance and are not independent evidence.
+The [one-step norm4 source](../results/norm4-lagged-source/REPORT.md),
+`4daae57e`, now measures future activation and moving-root population effects,
+while global U H4 is unresolved. Its old2.4M permutations are discovery input.
+The [P398 size/arrangement comparison](../results/p398-stationary-arrangement/REPORT.md),
+`58db48dd`, is also done:99.7344% static-score explanation does not give exact
+transition closure (32/60 classes fail). P334 hierarchy/contact/local A-rank
+are complete at `43a30e49`/`7beb99ce`; old-prefix held-out or new-suffix views
+do not substitute for a new population intervention. Execution's later
+`bc0a18c2` already freezes the independent1M-prefix M0/M1 comparison; its
+producer SHA and new result are the next delivery, not another design round.
+[Repository handoff](TEAM-COORDINATION.md)
+records these results without routine cross-task messages.
+
+The dated rationale below preserves how these inputs were obtained; its old
+"next" statements are historical, not additional execution instructions.
+[NEXT-TARGETS](NEXT-TARGETS.md) owns the current two-experiment queue.
+Priorities allocate attention; all research lanes remain open in parallel.
 
 For scientific coordinates use `docs/RESEARCH-MAP.md`; for claim and branch status use `docs/STATUS.md`; for execution contracts use `docs/NEXT-TARGETS.md`; for bold mechanisms and sharp falsifiers use `docs/HYPOTHESIS-BOARD.md`.
 

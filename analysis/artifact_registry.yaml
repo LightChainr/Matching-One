@@ -1,20 +1,24 @@
-version: 35
+version: 36
 updated: 2026-08-31
 latest_scientific_handoff:
   entry: docs/TEAM-COORDINATION.md
-  local_result_commit: 7da1eeb0e51cf430987dbf204d23713c2ab5a46c
-  local_result_report: results/p398-block-count-measure/REPORT.md
-  preceding_local_result_commit: 8799dfe18782ca85ece4b69d508a27d7173bd28d
-  preceding_local_result_report: results/norm4-global-source-projection/REPORT.md
-  execution_synthesis_commit: a6304bad15214cac841b76f41e7b61ac61838786
-  execution_synthesis_report: notes/p334-euler-thermal-dipole.md
-  execution_covariance_commit: e2ef9983f426890a299f5a6e1a2eba8b6d072855
-  execution_covariance_report: results/p334-euler-dipole-connected-clock/REPORT.md
+  local_result_commit: 4daae57eef5c945aa050a95cd3d5d5d77582161b
+  local_result_report: results/norm4-lagged-source/REPORT.md
+  preceding_local_result_commit: 58db48dd7b6257930ee5e704a37e438c0cf2faf1
+  preceding_local_result_report: results/p398-stationary-arrangement/REPORT.md
+  execution_synthesis_commit: bc0a18c207e3b09f49ea6b6af6601471114d654a
+  execution_synthesis_report: notes/p334-prefix-response-projection-scientific-card.md
+  execution_covariance_commit: ce20158a5928e55b67324cba7ed3a18a5c163b39
+  execution_covariance_report: results/p334-birth-covariance-hierarchy-joint/score.json
   execution_integration_status: branch_only
   external_completed_commit: fb01c44aa45e4f8d37d52144e2ad7c4adfe6ce40
   external_pr: 509
-  latest_external_handoff_commit: ac5761ce504c3cd170fa42c86c17d6fb87f0375b
-  boundary: local_finite_measure_and_global_source_reanalyses_are_unmerged_PR267_external_three_packages_open_PR509_joint_clock_branch_only_targeted_local_rank_increment_reported_in_progress_without_final_score
+  latest_external_handoff_commit: 8ad30617b0a3076a5c01a208eb213096d8879b32
+  external_local_rank_result_commit: 7beb99ce86df903ec41ee2ec2a1de59184cf5b6b
+  decision_sheet: docs/DECISION-EXPERIMENTS.md
+  decision_contract: analysis/prospective_mechanism_decisions.yaml
+  execution_freeze_report: notes/p334-independent-intervention-freeze.md
+  boundary: local_results_open_PR267_old_archives_discovery_P334_branch_only_scientific_comparison_frozen_producer_SHA_pending_no_new_production_result_at_cited_pin
 purpose: >
   Lightweight navigation/provenance index. Registry conflicts never block
   science; claim strength lives in STATUS and priority lives in NEXT-TARGETS.
@@ -81,6 +85,8 @@ integration_policy:
 
 canonical_documents:
   - {path: README.md, status: canonical_current, role: external_overview}
+  - {path: docs/DECISION-EXPERIMENTS.md, status: canonical_current, role: two_prospective_model_comparisons_prediction_gaps_and_failure_rules}
+  - {path: analysis/prospective_mechanism_decisions.yaml, status: P154_candidate_P334_scientific_freeze, role: machine_readable_discovery_boundary_and_prospective_decision_design}
   - {path: docs/TEAM-COORDINATION.md, status: canonical_current, role: three_team_result_routing_and_nonexclusive_compute_handoff}
   - {path: analysis/team_coordination.yaml, status: canonical_current, role: timestamped_sources_dependencies_and_reported_execution_states_not_live_monitor}
   - {path: docs/REPOSITORY-CONTEXT.md, status: canonical_current, role: full_discussion_recovery_and_completed_vs_remaining_crosswalk}

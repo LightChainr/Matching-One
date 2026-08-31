@@ -6,7 +6,66 @@
 
 `docs/NEXT-TARGETS.md` owns the single attention order, while `docs/ROADMAP.md` preserves its scientific rationale. Neither locks a task, serializes theory work or treats a lower priority as a scientific rejection.
 
-**P334 joint-clock and plateau analysis is completed, `branch_only`:**
+**New norm4 temporal discovery, `open_pr #267`, `4daae57eef5c945aa050a95cd3d5d5d77582161b`:**
+[The one-step lagged source](../results/norm4-lagged-source/REPORT.md) centers
+cluster count within previous occupancy/rank and measures the next activation.
+Moving-root rank1 responses range from−.008817 to−.002971, at15.5–37.8 SE;
+the N260/N340 original-U H4 source responses remain+.37897±.72219 /
++1.27653±1.18227. Signed T01/T12 and direct0→2 contributions are saved.
+This is a one-step-before-readout protocol for each K, distinct from final-time
+equilibrium fugacity. The first lag measurement is completed, not awaiting implementation.
+
+The replay reuses2.4M old permutations with96-dimensional joint covariance
+and the original three groups. It is discovery, not prospective confirmation.
+The [two highest-attention decision lines](DECISION-EXPERIMENTS.md) are
+#154's candidate prospective temporal-transmission comparison and #334's
+already-frozen independent intervention. Old20-batch P334 held-out
+views, including new64 on the same prefixes, can refine discovery but cannot
+supply independent prefix-population confirmation. Failed parameterizations
+may be retired without closing or locking their research lines.
+
+**Parallel P398 discovery, `open_pr #267`, `58db48dd7b6257930ee5e704a37e438c0cf2faf1`:**
+[Primal/dual size profiles](../results/p398-stationary-arrangement/REPORT.md)
+explain99.7344% of the saved stationary-score variance, yet32/60 classes fail
+exact rate closure, with an integer two-versus-four detach witness.
+The remaining.2656% arrangement variance supplies10.17% of the final+− integral.
+Size-conditioned primal–dual incidence is the next parallel exploratory model,
+not a third default top-priority experiment. This finite generator, norm4's
+site source and P334's loop-score source are distinct; their similarities do
+not constitute independent confirmation of a common field.
+
+**P334 independent intervention is frozen, not yet a result:**
+[`bc0a18c207e3b09f49ea6b6af6601471114d654a`](https://github.com/LightChainr/Matching-One/blob/bc0a18c207e3b09f49ea6b6af6601471114d654a/notes/p334-independent-intervention-freeze.md),
+`branch_only`, specifies500k fresh prefixes per N325/N425,1M total,
+with exact finite paired interventions preserving class masses, immediate
+rank/Euler and both original score means. M0 is complete two-score label
+closure; M1 forecasts transportable source-normal center response.
+The four-coordinate primary mean T has forecast3.6565e−8, practical margin
+δ=1e−8 and fixed T±3SE rule. Producer SHA is to be appended before dispatch;
+this pin contains no new-block result. The execution team's design is already
+available and should be consumed, not redesigned as a missing first plan.
+
+**P334 contact/local-rank discovery is completed:** [the preceding handoff](../notes/p334-contact-and-local-rank-handoff-20260831.md)
+pins earlier `branch_only` execution `43a30e49` and `open_pr #509` `8ad30617`;
+[the current card](https://github.com/LightChainr/Matching-One/blob/bc0a18c207e3b09f49ea6b6af6601471114d654a/notes/p334-prefix-response-projection-scientific-card.md)
+adds completed new64/old8 cross-stream reuse.
+The completed hierarchy (`44dc9e33`/`2bc35294`) places96–98% of joint-birth
+covariance response in prefix-mean transport, with a resolved same-rank-cell
+prefix residual. The historical original8 broader receiver-R0 pool had80–99%
+four-contact loading shares. On the original00 population, new64 responses
+with old8 clocks give80.36±5.66,78.20±5.84,79.49±6.24,79.66±6.17%:
+approximately20% remains, with residuals3.885e−9–5.190e−9 of the same sign.
+These are signed loading shares, not response R² or held-out accuracy; the
+two populations must not be interchanged.
+The completed targeted64 result (`7beb99ce`) gives local A determinant means
+`1.15937e−8±2.14282e−9` / `1.49767e−8±1.97301e−9` at N325/N425.
+It supports a locally two-dimensional conditional-mean component; E/gap and
+the determinant-square targets remain weak. Already-claimed held-out
+`J=B G_score`/contact and cell00 shape work is not delivered at the current card,
+with live execution unobserved. Its old-prefix readouts remain discovery;
+the next independent mechanism comparison is the new-block intervention above.
+
+**Earlier P334 joint-clock and plateau analysis, `branch_only`:**
 [`a6304bad`](https://github.com/LightChainr/Matching-One/blob/a6304bad15214cac841b76f41e7b61ac61838786/notes/p334-euler-thermal-dipole.md)
 connects the thermal dipole, intrinsic joint birth covariance and normalized
 rank1 plateau shape. The
@@ -28,13 +87,16 @@ normalize by the positive baseline lifetime, not a weak signed response:
 plus-source direction-average plateau centers move later and their variances
 increase by `3.17944e−7±1.28394e−7` / `3.62163e−7±1.04955e−7`.
 
-All of these are reanalyses of the same twenty original batches per N,
-forty thousand prefixes total and their saved conditional tails. The new
-17,866-coordinate factor at `e2ef9983` extends and replaces `b582015e`;
-the two factors must not be added as independent evidence. Next distinguish
-within-prefix joint covariance from covariance of prefix-conditional means:
-prefix-dependent timing shifts can change the latter even when a common
-rigid shift cannot. Thermal moments and the final dipole note are delivered.
+These earlier results reuse the same twenty original batches per N,
+forty thousand prefixes total and their saved conditional tails. The common
+factor extends `b582015e`→`e2ef9983`→`ce20158a`, with20,754 coordinates per N
+at that stage; the subsequent contact covariance join is completed at
+`172fbeb1ed28019b04f132859da3ea247942bb1c`. The within-prefix hierarchy and
+contact726-raw/358-derived readout are completed inputs. Targeted64 retains
+its standalone20×1200 factor; no complete new64/global-factor merge is claimed.
+New64 adds781,568 suffixes on3053 old prefixes,
+not new independent prefixes; old8/new64/combined72 retain original-batch
+dependence. Thermal moments and the final dipole note remain completed history.
 
 **Earlier ensemble-rank result:** execution's
 [`a5c39de3`](https://github.com/LightChainr/Matching-One/blob/a5c39de35bc141f68ca1cc5e68ec134158f4bfec/notes/p334-common-label-response-rank.md)
@@ -47,17 +109,17 @@ sources and distinct delivery states; branch results are not integrated main fac
 
 ## Evidence and lifecycle contract
 
-**Latest result, #267 `8799dfe1`:** [global occupancy/rank projection](../results/norm4-global-source-projection/REPORT.md) is completed. Occupancy mixing contributes +.02432–.02478 to root motion; fixed-K rank selection adds +.00409–.00458, resolved at every size. Both reduce root-comoving rank1 probability. The N260/N340 rank-selective H4 tangents −6.3361±4.3464 / +10.9424±8.4926 remain unresolved, as do total and frozen chain contrasts. This empirical first-order decomposition retains150-dimensional covariance and the original three source groups, with zero replay/new samples.
+**Earlier equilibrium-source result, #267 `8799dfe1`:** [global occupancy/rank projection](../results/norm4-global-source-projection/REPORT.md) is completed. Occupancy mixing contributes +.02432–.02478 to root motion; fixed-K rank selection adds +.00409–.00458, resolved at every size. Both reduce root-comoving rank1 probability. The N260/N340 rank-selective H4 tangents −6.3361±4.3464 / +10.9424±8.4926 remain unresolved, as do total and frozen chain contrasts. This empirical first-order decomposition retains150-dimensional covariance and the original three source groups, with zero replay/new samples.
 
-**Three packages are completed in `open_pr #509`, `fb01c44a`:** [angular bridge](https://github.com/LightChainr/Matching-One/blob/fb01c44aa45e4f8d37d52144e2ad7c4adfe6ce40/experiments/p154-spatial-localization-20260831/REPORT.md), [P398 η=0 response](https://github.com/LightChainr/Matching-One/blob/fb01c44aa45e4f8d37d52144e2ad7c4adfe6ce40/experiments/p398-linear-response-20260831/README.md), and [P334 finite source](https://github.com/LightChainr/Matching-One/blob/fb01c44aa45e4f8d37d52144e2ad7c4adfe6ce40/experiments/p334-finite-source-20260831/REPORT.md). They supersede the earlier17:58 in-progress snapshot. P154's same-time centered-source global zero is structural; P334's future-birth response under immediate-rank-preserving intervention is dynamic; P398's linear-response sign reversal separates measure and generator contributions in a different finite model. None is a square-site energy-field assignment. Improved same-prefix P334 rank remains pending at this handoff.
+**Three packages are completed in `open_pr #509`, `fb01c44a`:** [angular bridge](https://github.com/LightChainr/Matching-One/blob/fb01c44aa45e4f8d37d52144e2ad7c4adfe6ce40/experiments/p154-spatial-localization-20260831/REPORT.md), [P398 η=0 response](https://github.com/LightChainr/Matching-One/blob/fb01c44aa45e4f8d37d52144e2ad7c4adfe6ce40/experiments/p398-linear-response-20260831/README.md), and [P334 finite source](https://github.com/LightChainr/Matching-One/blob/fb01c44aa45e4f8d37d52144e2ad7c4adfe6ce40/experiments/p334-finite-source-20260831/REPORT.md). They supersede the earlier17:58 in-progress snapshot. P154's same-time centered-source global zero is structural; P334's future-birth response under immediate-rank-preserving intervention is dynamic; P398's linear-response sign reversal separates measure and generator contributions in a different finite model. None is a square-site energy-field assignment. Improved same-prefix P334 rank is now delivered at `7beb99ce`, as summarized above.
 
-The local [P398 block-count measure result](../results/p398-block-count-measure/REPORT.md) (`7da1eeb0`) finds34.27% relative error for the fixed block-count score and10.99% score variance outside arbitrary functions of block count; block-size composition remains a distinct, unexcluded explanation.
+The preceding [P398 block-count measure result](../results/p398-block-count-measure/REPORT.md) (`7da1eeb0`) found34.27% relative error for the fixed block-count score and10.99% score variance outside arbitrary functions of block count. The completed size/arrangement hierarchy above now quantifies that missing information; the first such comparison is no longer pending.
 
 **New scientific delivery, `open_pr #267`:** [the conditional primitive-line result](../results/norm4-source-line/REPORT.md) completes the named E-plus-clock comparison within rank1, including matching-root transport. The four-real-component residual has chi²/4=3843.85,2596.77,1049.13,1378.11,8479.76,4629.15 at N65,85,130,170,260,340; all six comparisons strongly reject that finite response model. The396-dimensional covariance retains paired geometries and the four cyclic sizes' common random stream. One112.14-second replay supplies line marks on2.4M already-produced permutations;1.31-second aggregation adds no random samples.
 
 The readout `O4=(vx+i vy)^4/(vx²+vy²)^2` uses a physical winding lift, not period-basis coordinates. Post-analysis exact rotation by `exp(-4i theta_period)` gives positive real residuals.088750–.110265 and imaginary magnitudes≤.0001164 across the twelve geometries. Much of the large laboratory-frame angular contrast therefore accompanies the torus frame. This completed conditional spatial observation is distinct from the original global U H4 source derivative and from an energy-field assignment.
 
-**Fixed-K decomposition is also completed**, `open_pr #267`, execution `1b3b65c57cc77546931d6c0f2152a1bfa78e126e`: [the same-mark analysis](../results/norm4-source-line-fixed-k/REPORT.md) takes1.3942 seconds without replay. Its within-K/rank1 spatial covariance is nonzero at all six sizes, joint chi²=22534.76/24, maximum component56.27 SE. This excludes a source response explained solely by any geometry-specific `f_g(K,q,E)` on these conditional readouts; occupancy mixing alone cannot give the observed within term. The decomposition shares the primary experiment's observations and is not independent replication. The next defined, not-yet-run bridge uses soft weights `W±=R(1±Re[exp(-4i theta_period) O4])/2`; existing marks suffice for additive original-U and source-response components. These are not discrete line classes, and the marginal marks do not identify birth versus lifetime selection.
+**Fixed-K decomposition is also completed**, `open_pr #267`, execution `1b3b65c57cc77546931d6c0f2152a1bfa78e126e`: [the same-mark analysis](../results/norm4-source-line-fixed-k/REPORT.md) takes1.3942 seconds without replay. Its within-K/rank1 spatial covariance is nonzero at all six sizes, joint chi²=22534.76/24, maximum component56.27 SE. This excludes a source response explained solely by any geometry-specific `f_g(K,q,E)` on these conditional readouts; occupancy mixing alone cannot give the observed within term. The decomposition shares the primary experiment's observations and is not independent replication. The subsequent soft-weight `W±=R(1±Re[exp(-4i theta_period) O4])/2` bridge is completed at #509 `fb01c44a`, followed by the lagged-source measurement above. These are not discrete line classes; first bridge/lag implementation is no longer a task.
 
 **Completed preceding stage:** [the million-mark endpoint source analysis](../results/norm4-source-endpoint-1m/REPORT.md), execution `6bd46ad30bc8f583c3ca1f1c8a1b95e7d90571bc`, completes the increment from100k to1M source-marked old permutations at N260/N340. N65/N85/N130/N170 remain100k. The common microscopic source is `s=CB+CW`, with `v_N=partial_logQ U_N=N*Udot_density`; it is not an assumed Potts/FK source. Exact full-K Binomial integration and paired dependency groups retain the original U definition and its root/slope motion.
 
@@ -67,7 +129,7 @@ The angular thermal U response is **−5.9723±4.2736 at N260** and **11.8594±9
 
 The [two-phase comparison](../results/norm4-source-two-phase/REPORT.md), execution `634499ce`, is already complete: `SE(raw)/SE(two-phase)=.898–1.008`, with less than2e−5 of the final variance from the unmarked complement. It did not deliver stable variance reduction. The [original100k full-chain report](../results/norm4-source-thermal/REPORT.md), [independent P40 response](../results/p40-source-thermal/REPORT.md) and [source-quotient split](../notes/p40-thermal-clock-source-quotient.md) remain completed historical stages. First two-phase estimation is no longer a next task.
 
-The endpoint increment newly marks900k already-produced permutations per endpoint, adds zero new random counters and uses no GPU/server or repeated test suite. It does not inherit full1.9B/1B source precision. The subsequent conditional-line replay and fixed-K decomposition are now complete, so attention1 first uses saved soft angular weights to split original U and its source response; actual line-class and birth/lifetime resolution are further questions. Earlier wording below introducing the U bridge describes the preceding stage, not a request to repeat it.
+The endpoint increment newly marks900k already-produced permutations per endpoint, adds zero new random counters and uses no GPU/server or repeated test suite. It does not inherit full1.9B/1B source precision. Conditional-line, fixed-K, soft-angular bridge and one-step lagged-source measurements are now completed discovery stages. Attention1 is a candidate prospective temporal-transmission comparison, not yet frozen: winding-contact models should predict signed T01/T12 and P4, whose required contact marks are not supplied by the current kernels alone. Earlier bridge proposals describe history, not requests to repeat those measurements.
 
 The [P40 even-given-odd result](../results/p40-even-given-odd/REPORT.md)
 (`56a6267d`, `open_pr #267`) now supplies the missing E_top/source moments.
