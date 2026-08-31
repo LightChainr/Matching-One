@@ -1,0 +1,54 @@
+{
+  "schema": "p337.s4-seam-counts.receipt.v1",
+  "status": "completed_raw_counts_unscored",
+  "recorded_utc": "2026-08-31T14:42:15Z",
+  "freeze_commit": "55fdba789a576d8d4c507372b7834f92cf506c80",
+  "contract_path": "analysis/p337_s4_trace_transmission_contract.json",
+  "contract_sha256": "fc0df3017081aa8d5f6b64cfe9582d834d5168fa5a82fbecc001274efa1651d9",
+  "code_commit_before_run": "0b2ad6ff9675185789256b0a758f8eb5bc7d02ed",
+  "producer_path": "scripts/p337_s4_trace_exact.cpp",
+  "producer_sha256": "9e72b2c671a9384a7effb3fb2b45532b03a7c01e4d08112cc6cac095ac77ee9a",
+  "original_geometry_topology_traversal": {
+    "path": "scripts/p337_closed_source_finite_exact.cpp",
+    "commit": "55fdba789a576d8d4c507372b7834f92cf506c80",
+    "blob": "2162b1c7f17ec4e61e1f02ce3e17a184d4733eb3"
+  },
+  "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101), arm64-apple-darwin25.5.0",
+  "build_command": "clang++ -std=c++17 -O3 scripts/p337_s4_trace_exact.cpp -o /private/tmp/matching-p337-s4-seam-build/enumerate",
+  "execution": "one local single-thread enumeration per geometry, two processes in parallel",
+  "outputs": [
+    {
+      "geometry": [5, 0],
+      "command": "/private/tmp/matching-p337-s4-seam-build/enumerate 5 0 results/p337-s4-trace-transmission/axis.csv",
+      "path": "results/p337-s4-trace-transmission/axis.csv",
+      "sha256": "d589cf29ec770292674e510018d849bf44f10fb08b882d38ad30ba468db06127",
+      "data_rows": 378,
+      "configurations": 33554432,
+      "elapsed_seconds": 1.835,
+      "exit_code": 0
+    },
+    {
+      "geometry": [4, 3],
+      "command": "/private/tmp/matching-p337-s4-seam-build/enumerate 4 3 results/p337-s4-trace-transmission/tilted.csv",
+      "path": "results/p337-s4-trace-transmission/tilted.csv",
+      "sha256": "107f5081734d9f5d3259303b28a6f71083f5822d297ceed96f73348ac1ec1d5d",
+      "data_rows": 334,
+      "configurations": 33554432,
+      "elapsed_seconds": 1.61768,
+      "exit_code": 0
+    }
+  ],
+  "schema_columns": ["k", "g", "q", "bad2", "n_bad3", "count"],
+  "bad2_semantics": "boolean: at least one occupied NN component has a cycle with nonzero first-deck gain mod2",
+  "n_bad3_semantics": "number of occupied NN components with at least one cycle having nonzero first-deck gain mod3",
+  "first_deck_gain": "[a*(x_v+dx-x_u)+b*(y_v+dy-y_u)]/25, in basis (a,b),(-b,a), accumulated mod6",
+  "source_Q": 4,
+  "source_m": 2,
+  "new_random_samples": 0,
+  "new_enumerations_per_geometry": 1,
+  "old_baseline_rescored": false,
+  "response_score_performed": false,
+  "root_searches": 0,
+  "cloud_jobs": 0,
+  "tests_run": 0
+}
