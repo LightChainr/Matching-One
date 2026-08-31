@@ -102,3 +102,34 @@ change. Neither outcome requires selecting a higher moment order or fitting
 another correction law. H4 normalization and geometry conventions remain
 those of the original archive; this is a new analysis of that source, not
 independent evidence or a continuum-field identification.
+
+## 4. Which birth coupling can the complete observer identify?
+
+Every mean A(p) depends only on the two marginal birth distributions, through
+`E F1(p)+E F2(p)-1`. Even adding `E(p)=1-F1(p)+F2(p)` recovers only the
+two marginals; it does not identify their joint dependence. In second moments,
+
+```
+Var(C)+E[W^2]/4 = [Var(K1)+Var(K2)]/2 + [E K2-E K1]^2/4,
+Cov(K1,K2) = Var(C)-Var(W)/4.
+```
+
+The covariance cancels from the first line. Thus a rearrangement of the birth
+copula at fixed marginals can change center and lifetime contributions while
+leaving every unmarked A/E mean unchanged. The paired birth archive is needed
+for the connected covariance in the second line; a thermal moment ladder of
+mean A alone cannot recover it. Variances, same-path products and marked
+observers are not covered by this mean-only blindness statement.
+
+The complement-even observer also has a simpler lifetime readout than J1:
+
+```
+integral E(p) dp = 1-E[W]/(N+1).
+```
+
+It should be read alongside the W-squared component. A change of mean lifetime
+is already a complete E-integral signal, not merely a component hidden in J1.
+The nine joint checkpoint cells use one shared indicator per paired path;
+within each cell the constants in both A and E cancel before taking means.
+Their large positive/negative orientation contributions can still compensate
+between cells, which the original-batch covariance must retain.
