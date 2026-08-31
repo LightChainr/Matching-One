@@ -15,6 +15,13 @@ observer because its response vanishes at all four declared sizes.
 We do not claim that four sizes exhaust all mechanisms or identify a field.
 No nonzero sign follows from the topology theorem.
 
+The [thermal-quotient derivation](../../notes/plaquette-source-thermal-quotient.md)
+also removes a specific alternative explanation in advance. The single-site
+part of F4 generates `4p^4(1-p)*partial_p`, a common thermal clock annihilated
+by this U. Any resolved nonzero response must therefore involve the
+centered two-, three-, or four-site part; it cannot be explained by that
+common one-site density reparameterization alone.
+
 This source was selected by a configuration identity, without fitting a
 residual. It is an equilibrium plaquette fugacity, not a retimed or rescaled
 version of the stopped P154 lag1 policy. The P154 and P334 decisions remain
