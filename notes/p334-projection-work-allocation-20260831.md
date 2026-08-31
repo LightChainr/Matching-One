@@ -4,6 +4,12 @@ This execution team is consuming existing data locally. No machine, source,
 prefix, suffix, determinant experiment or finite-policy job is requested.
 Coordination is repository-first; one completed receipt per bounded task.
 
+**Completed receipt:** original8 projection `90226598`, exact descriptors
+`1cfa4ae8`, projection theory `a940e65d`, original-block covariance join
+`172fbeb1`, and standalone00 new64 reuse `323de7d5` are pushed. No owned
+compute remains. The original8 Issue334 card5477178424 is updated in place
+with the final result and links, followed by one consolidated PR267 pointer.
+
 Root result `90226598` fixes the original8 low-dimensional analysis. Four
 contact descriptors capture about 80–99% of the own-source, within-rank-cell
 signed covariance loading; source energy alone captures about half. These
