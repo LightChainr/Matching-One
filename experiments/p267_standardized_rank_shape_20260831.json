@@ -1,0 +1,22 @@
+{
+  "schema": "matching-one/p267-standardized-rank-shape/v1",
+  "stage": "fixed auxiliary readout before calculating its N100/N400 comparison and before N900 reveal; the width and unstandardized peaks were already inspected",
+  "sources": {
+    "100": "7b30648be558df0652a7ff22143cc87ed399d042",
+    "400": "3e01b495b5b637b0070705e37b4137a9a0ef0d8b"
+  },
+  "field": "D_A=P4[A_top](4i)-P4[A_top](2i)",
+  "primary": "rank-step signed-profile standardized central moments mu_r/sigma^r for r=3,4,5,6",
+  "rank_step_definition": "S(p)=f_j for j/N<=p<(j+1)/N; unit signed-area normalization; centered at its own mean; sigma=sqrt(central second moment)",
+  "canonical_auxiliary": [
+    "same four standardized central moments, with exact Bernstein integration, to expose finite-N smoothing dependence",
+    "three ordinal interior extrema: first peak, intervening valley, second peak",
+    "positions (p_i-mu_C)/sigma_C; heights sigma_C*C(p_i)/integral C",
+    "valley/first_peak and second_peak/first_peak"
+  ],
+  "shape_null": "All corresponding standardized coordinates agree between independent areas, allowing arbitrary center, positive width, and nonzero total amplitude at each area",
+  "uncertainty": "same-batch leave-one-out jointly across moments and extrema within each source; independent source covariance blocks across areas",
+  "gates": "Do not select moment orders or windows after seeing significance; if a variance is nonpositive or the ordered critical pattern is not three, report that boundary rather than changing normalization or choosing other peaks",
+  "N900_role": "auxiliary mechanism readout only; does not alter the already named rank-variance primary predictions",
+  "new_sampling": false
+}
