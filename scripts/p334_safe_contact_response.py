@@ -98,15 +98,20 @@ def named_readout(raw, names, n):
     out = {}
     for group in GROUPS:
         for feature in FEATURES:
+            # Equal-degree pairs cannot differ in isolation: its response
+            # covariances remain in raw GG/GX, but no 0/0 slope is defined.
+            if group == GROUPS[2] and feature == "isolated_site":
+                continue
             v = d[f"{group}.GG[{feature},{feature}]"]
             for response in RESPONSES:
                 cv = d[f"{group}.GX[{feature},{response}]"]
                 out[f"{group}.cov[{feature},{response}]"] = cv
                 out[f"{group}.pooled_slope[{feature},{response}]"] = cv/v if v > 0 else np.nan
-            for i in (1, 2):
-                cv = -(n+1)*d[f"{group}.GX[{feature},p_integral.F{i}]"]
-                out[f"{group}.cov[{feature},K{i}]"] = cv
-                out[f"{group}.pooled_slope[{feature},K{i}]"] = cv/v if v > 0 else np.nan
+            for clock, weights in {"K1": (1, 0), "K2": (0, 1), "C": (.5, .5), "W": (-1, 1)}.items():
+                cv = -(n+1)*sum(w*d[f"{group}.GX[{feature},p_integral.F{i}]"]
+                               for i, w in enumerate(weights, start=1))
+                out[f"{group}.cov[{feature},{clock}]"] = cv
+                out[f"{group}.pooled_slope[{feature},{clock}]"] = cv/v if v > 0 else np.nan
     return out
 
 
@@ -122,6 +127,7 @@ def main():
     args.output.mkdir(parents=True)
     out = {"source_commit": SOURCE, "contact_commit": contact_commit,
            "p_ref": P_REF, "features": FEATURES, "responses": RESPONSES,
+           "structural_undefined": "Equal-degree isolation slopes are undefined (zero feature variation); all raw covariance entries remain stored.",
            "estimand": "Equal orientation mixture, full original-prefix denominator: E[1_R0 pi_safe^2 Cov_U(g,m|Z,own-rank-safe)]. Equal-degree mask instead sums pi_safe,e^2 Cov_U(g,m|Z,own-rank-safe,e). This is not paired H4 or a causal feature intervention.",
            "source_sha256": {}, "sizes": {}}
     names = labels()
