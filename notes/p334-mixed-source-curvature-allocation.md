@@ -59,3 +59,27 @@ identity. The exponential source parameters commute.
 
 Each agent uses an isolated branch, pushes its bounded result and returns
 one final receipt. Root integrates one scientific card, then one PR267 pointer.
+
+## Bounded covariance readout after the first tensor is available
+
+Root rectangle result is `e7473233`; theory is `a6e7141a`. The exact tensor
+has now shown negative own-center diagonal curvature at both geometries
+and both sizes, with weak mixed components. The coordinator should keep
+the complete tensor and add only the following physically named summaries:
+
+- For each receiving geometry, own-minus-other pure curvature and own-minus-
+  mixed curvature, as paired differences on original00 new64.
+- Original8 finite mixed rectangle minus original8 H_fs(0), retaining its
+  exact pairing; separately retain new64-minus-old8 H_fs, which shares
+  prefixes but changes conditional suffix stream.
+- Read the already saved new64 first-response mean matrices at8ad30617
+  (`prefix_statistics_N{N}.npz`) to give own-source H_oo F / H_o F for
+  F=C and F=A_ref only, whose first responses are resolved. This is local
+  fractional change of response gain per unit natural-source parameter,
+  not a finite extrapolation. A fixed t=1/2 quadratic-to-linear Taylor
+  contribution has ratio(1/4)*H_oo F/H_o F. Do not form ratios for weak
+  cross responses, E or W.
+
+The existing shared block is `172fbeb1`; all new tensors, rectangle and
+first-response rows keep the same original20 deletions. No new fit, source
+weight computation, trajectory or high-dimensional covariance inverse.
