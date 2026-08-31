@@ -144,6 +144,13 @@ trace landing in that same physical family and its orientation-resolved
 thermal derivative. No further Q4 point or seam search is needed to
 establish the finite transmission already decided here.
 
+**Subsequent result:** that specific Q1 continuation and transmission are
+now completed in the [two-kernel landing](closed-source-two-trace-kernels-q1.md)
+and [fixed Q1 score](p337-q1-closed-trace-transmission-result.md). The
+primary response is strictly negative, `-0.001904836180602413`. Its trace
+already has a nonzero Q1 baseline; it is not a first derivative activation
+of the regular endpoint. The old Q4 result alone was not used to infer it.
+
 ## Lifecycle and scientific card
 
 - **Freeze:** `55fdba78`; scorer `0d58d3ab` with the metadata-only change

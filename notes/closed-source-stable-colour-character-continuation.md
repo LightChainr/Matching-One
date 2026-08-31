@@ -13,8 +13,9 @@ Source: `0dda27ba`, in particular
 [the finite torus closure](closed-source-finite-torus-pair-closure.md)
 and [the S4 rank-one filter](closed-source-s4-rank-one-filter.md).
 The seam, primitive deck basis, original q/E, and source Sstar are
-unchanged. The packing statement below is an input to this note,
-not a new proof supplied here.
+unchanged. The packing statement below is proved in the separate
+[N25 winding packing note](n25-winding-packing-and-pair-continuation.md).
+This note supplies its character-theoretic consequence.
 
 ## 1. Finite character coefficient and its stable range
 

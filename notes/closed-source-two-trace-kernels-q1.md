@@ -13,10 +13,13 @@ type B: one essential component, |first winding|=2,
 
 These are actual integer-colour closure coefficients for every Q>=4,
 continued by the stated rational formulas. They are not an interpolation
-of the old Q4 result or an arbitrarily appended factor Q-1. The separate
-N25 packing theorem determines when these two types exhaust the trace.
-The algebra below supplies their complete finite landing once that
-geometry condition holds.
+of the old Q4 result or an arbitrarily appended factor Q-1. The
+[N25 packing theorem](n25-winding-packing-and-pair-continuation.md)
+proves that these types exhaust the trace on both fixed geometries.
+The [stable character derivation](closed-source-stable-colour-character-continuation.md)
+also establishes the all-integer validity range and the finite-Q aliases
+that this packing excludes. The algebra below supplies their complete
+finite landing.
 
 ## 1. Identity versus exchange on the same two-colour carrier
 
@@ -158,6 +161,14 @@ c=N+1/2. Thus J_trace is neither a probability share nor a uniquely
 defined amount of the physical Q response carried by a continuum field.
 It is also not the mixed derivative `partial_Q partial_epsilon U`.
 
+The [completed fixed score](p337-q1-closed-trace-transmission-result.md)
+makes this distinction numerical: `V_trace=-0.001904836180602413` and
+`J_trace=+0.03826094250721058` in (2). Restoring the N25 prefactor gives
+`J_trace+25.5 V_trace approximately -0.010312380098151`, even reversing
+the sign of this component attribution without changing the physical
+Q response. This is just (8) applied to the two published numbers;
+it is not an additional source score.
+
 The two fixed calculations in the
 [contract](../analysis/p337_q1_trace_continuation_contract.json) retain
 these different meanings. They use the saved Q1 root and the existing
@@ -168,9 +179,11 @@ continuation dictated by (1)-(3).
 ## Scientific consequence
 
 The finite trace does not need to be guessed from an isolated Q4 colour
-character. Once its two geometric connection types are certified, both
-its Q1 weight and the required quadratic R jet are fixed. The remaining
-continuum question is the local pair-to-cut intertwiner and its scaling
-content, not an absent finite partition/normalization map. A nonzero
-trace-coefficient response would establish that map's actual Q1
-transmission; it would not identify an activated sqrt(N) field.
+character. The packing and character proofs fix its two geometric
+connection types, Q1 weight and required quadratic R jet. The single
+prescribed Q1 score is now complete and its trace-coefficient response
+is strictly negative, establishing actual transmission to original U.
+The remaining continuum question is the local pair-to-cut intertwiner
+and its scaling content, not an absent finite partition/normalization
+map. This result does not identify an activated sqrt(N) field: the
+closed trace already has a nonzero Q1 value.
