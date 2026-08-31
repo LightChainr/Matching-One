@@ -1,0 +1,10 @@
+{
+  "schema": "matching-one/p334-cooperative-closure-host-override/v1",
+  "recorded_before_production": true,
+  "runner_commit": "6712ec5b00bdf3dc0c6f8733ef85eda58b86cb2f",
+  "planned_hosts": {"N325": "Huawei-CodeBuddy-TgFr7R", "N425": "Huawei-CodeBuddy-XPk2PZ"},
+  "actual_hosts": {"N325": "local-mac-arm64", "N425": "local-mac-arm64"},
+  "reason": "Both Huawei instances were started, but their environment SSH authentication failed after restart. No credential reset was confirmed. A disjoint local N325 100-sample smoke exited zero in 0.18 CPU seconds, so both 20k jobs move to the already working local compiled artifact rather than wait on connectivity.",
+  "unchanged": ["source hash", "base permutation counts", "seeds", "replica counters", "geometries", "k0", "checkpoint cluster definition", "estimands", "alpha", "stop rule"],
+  "execution": "Apple arm64 clang++ -std=c++17 -O2; one thread per size, both sizes concurrently. The source uses independent counter-derived permutations, so scheduling and OpenMP availability do not change the sampling law. No cloud production was launched."
+}
