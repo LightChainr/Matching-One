@@ -1,5 +1,13 @@
 # A specified local pair interaction reaches original U
 
+**Scope update:** this completed value is the **first insertion tangent**.
+The subsequent [actual two-insertion witness](local-pair-two-insertion-geometry.md)
+has a Q1 pole in the uncompleted tensor family. The
+[regular singlet completion](local-pair-two-insertion-algebra.md) is a
+different local family: its direct Q1 response is exactly zero, with
+nontrivial [Q-activated interactions](regular-pair-two-site-q-susceptibility.md).
+These later results do not change the first-tangent value below.
+
 **The frozen local-interaction null is rejected on the original N25
 pair.** The C4-averaged, site-average four-port insertion has
 

@@ -10,7 +10,8 @@ connected correlator or a continuum exponent.
 ## 1. The completed two-insertion kernel
 
 Let `Kreg=K2bar+K0bar` with the singlet coefficient identically one.
-Summing exact colour-equality patterns gives
+The [complete kernel derivation](local-pair-two-insertion-algebra.md),
+summing exact colour-equality patterns, gives
 
 ```
 <K2bar,K2bar> = Q(Q-3)(3Q^2-9Q+8) / [8(Q-1)(Q-2)],

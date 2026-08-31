@@ -8,6 +8,12 @@ what the canonical singlet completion does to the original observer.
 The [contract](../analysis/p337_regular_pair_activation_contract.json)
 fixes the completion and its one numerical question before new counts.
 
+The [full algebra](local-pair-two-insertion-algebra.md) now proves the
+regularity, exact finite-network Q1 zero, and all 15 single-closure rows.
+The [8x8 original-lattice witness](local-pair-two-insertion-geometry.md)
+realizes the uncompleted two-insertion pole. The same physical wiring
+gives a [nonadditive completed Q susceptibility](regular-pair-two-site-q-susceptibility.md).
+
 ## 1. Fix the completion before any observable is scored
 
 On an ordered cut write `Pi_j=i P_j i^dagger` for the same symmetric

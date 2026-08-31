@@ -11,6 +11,11 @@ and [original-lattice topology proof](local-four-port-pair-insertion.md)
 establish the microscopic source below before its numerical response is
 evaluated.
 
+The first-order calculation is now complete. Its extension to two local
+insertions has a [coefficientwise Q1 pole](local-pair-two-insertion-geometry.md).
+The separately specified [regular completion and mixed-response interface](regular-pair-activation-original-u.md)
+therefore has to be distinguished from this original tangent.
+
 ## 1. The perturbation is an actual vertex tensor
 
 The hypergraph colour representation has a colour on each original NN
