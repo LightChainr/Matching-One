@@ -1,0 +1,139 @@
+{
+  "claim_boundary": {
+    "excluded": "SOS search, SDP solving, domain sufficiency, Archimedean completeness, equality multipliers, numerical reconstruction, or physical positivity",
+    "included": "exact polynomial verification of supplied rational square terms and supplied inequality localizers",
+    "parent_issue": "remain open"
+  },
+  "claim_level": "exact",
+  "dependency_group": "synthetic-exact-sos-localizer",
+  "descriptor": {
+    "free_squares": [
+      [
+        {
+          "coefficient": "1",
+          "powers": {
+            "x": 1
+          }
+        },
+        {
+          "coefficient": "1",
+          "powers": {
+            "y": 1
+          }
+        }
+      ]
+    ],
+    "inequalities": [
+      [
+        {
+          "coefficient": "1",
+          "powers": {}
+        },
+        {
+          "coefficient": "-1",
+          "powers": {
+            "x": 2
+          }
+        }
+      ]
+    ],
+    "localizing_squares": [
+      [
+        [
+          {
+            "coefficient": "1",
+            "powers": {}
+          }
+        ]
+      ]
+    ],
+    "target": [
+      {
+        "coefficient": "1",
+        "powers": {}
+      },
+      {
+        "coefficient": "2",
+        "powers": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      {
+        "coefficient": "1",
+        "powers": {
+          "y": 2
+        }
+      }
+    ],
+    "variables": [
+      "x",
+      "y"
+    ]
+  },
+  "issue": 370,
+  "schema": "matching-one/exact-sos-localizing-identity/v1",
+  "solver_invoked": false,
+  "verification": {
+    "free_sos": [
+      {
+        "coefficient": "1",
+        "powers": {
+          "y": 2
+        }
+      },
+      {
+        "coefficient": "2",
+        "powers": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      {
+        "coefficient": "1",
+        "powers": {
+          "x": 2
+        }
+      }
+    ],
+    "inequality_count": 1,
+    "localizing_products": [
+      [
+        {
+          "coefficient": "1",
+          "powers": {}
+        },
+        {
+          "coefficient": "-1",
+          "powers": {
+            "x": 2
+          }
+        }
+      ]
+    ],
+    "result": [
+      {
+        "coefficient": "1",
+        "powers": {}
+      },
+      {
+        "coefficient": "1",
+        "powers": {
+          "y": 2
+        }
+      },
+      {
+        "coefficient": "2",
+        "powers": {
+          "x": 1,
+          "y": 1
+        }
+      }
+    ],
+    "status": "exact_sos_localizing_identity_verified",
+    "variable_order": [
+      "x",
+      "y"
+    ]
+  }
+}
