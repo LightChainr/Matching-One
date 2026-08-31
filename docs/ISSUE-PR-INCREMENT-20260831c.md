@@ -187,4 +187,3 @@ The read-only open-PR listing returned23 entries (one Draft). Original titles an
 | [#84](https://github.com/LightChainr/Matching-One/pull/84) | Research: exact axis L=5 matching polynomial frontier | open | `6a049b764658bc15956ae83f704c85e1d36ff660` |
 
 **Final handoff:** this two-file capture is complete and released. The currently missing physical question is not “whether E_top has ever been tested”; it is how the still-unidentified original norm-4 response relates to the now measured topology/clock/local-source and finite-geometry structures. New finite support results can help that comparison without becoming a new preparation queue. No new experiment is launched by this report.
-
