@@ -141,3 +141,11 @@ The second-score tensor is delivered at
 [`c48fa360`](https://github.com/LightChainr/Matching-One/blob/c48fa360a37a9887ef32ff6d3ce947c4e4601b53/notes/p334-mixed-source-curvature.md).
 The exact policy/Hessian/rectangle identities and symmetry analysis are
 at [`a6e7141a`](https://github.com/LightChainr/Matching-One/blob/a6e7141ac4a7a0b34fca26373963681aa8534de6/notes/p334-fixed-source-mixed-curvature.md).
+The final paired covariance and fixed contrasts are at
+[`621dfbd0`](https://github.com/LightChainr/Matching-One/blob/621dfbd0325c0ccd2e3ed26d9612487d155267f6/notes/p334-mixed-source-curvature-joint.md).
+For resolved own C/A first responses, H2/H1 is approximately -0.018 to
+-0.0285: the quadratic/linear local Taylor contribution at t=1/2 is only
+-0.45% to -0.71%. This is not a bound on higher-order finite-source terms.
+Old8 finite rectangle minus old8 H_fs(0) is unresolved (maximum1.41 paired
+SE across the named readouts). All comparisons retain the original shared
+prefix/batch dependence.

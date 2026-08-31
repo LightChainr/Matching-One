@@ -154,6 +154,20 @@ This finite source-space statement is not spacetime curvature or path memory.
 - Each size keeps all72 scalar coordinates with aligned original20
   deleted-batch LOO/factors; no new prefix, suffix, fork-gzip pass, model
   fit, source-weight experiment, determinant or conditional-shape rerun.
+- The inherited Hessian/rectangle/first-response covariance is delivered at
+  [621dfbd0](https://github.com/LightChainr/Matching-One/blob/621dfbd0325c0ccd2e3ed26d9612487d155267f6/notes/p334-mixed-source-curvature-joint.md).
+  [covariance-link.json](../results/p334-source-normal-curvature/covariance-link.json)
+  appends the48 tangent/normal columns to that common factor by references
+  and aligned deletion rows, without duplicating its large numeric archive.
+
+## Next experiment, not another descriptor search
+
+This archive is now the training/discovery block. The next use of this
+result is an independently seeded, new-prefix intervention with the source
+and response directions frozen before generation. We do not add a fifth
+contact descriptor in this work item. A first-score-orthogonal response
+tests full label-mean closure; it still does not establish the contribution
+of this source to the unperturbed global Matching-One anomaly.
 
 Lifecycle: exploratory finite-size source-normal birth response / paired
 N325,N425 original00 / original source population and already collected

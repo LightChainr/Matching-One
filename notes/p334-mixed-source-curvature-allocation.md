@@ -83,3 +83,17 @@ the complete tensor and add only the following physically named summaries:
 The existing shared block is `172fbeb1`; all new tensors, rectangle and
 first-response rows keep the same original20 deletions. No new fit, source
 weight computation, trajectory or high-dimensional covariance inverse.
+
+## Completed receipt and transition
+
+All bounded lanes above are complete: rectangle e7473233, Hessian
+c48fa360, theory a6e7141a, shared covariance621dfbd0. The root's exact
+source-normal decomposition is2c3a5ca2, interpreted at20a95bf2. It reveals
+positive own-center normal response opposing the larger negative tangent
+part; this is still the same original discovery block.
+
+Following the user's new direction, this work item stops here. The next
+task freezes competing response predictions and generates independent
+prefixes for an actual intervention; it does not extend the contact-feature
+catalogue or repeat PR509 prediction/conditional-shape work. Machine use and
+the frozen protocol will be recorded separately in the repository.
