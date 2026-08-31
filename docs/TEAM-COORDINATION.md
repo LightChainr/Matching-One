@@ -1,17 +1,18 @@
 # Three-team scientific handoff / 三队协作入口
 
-Updated: **2026-08-31**, local projection comparison `fbbaa2aa`, execution negative size law and source head `85fd4923`; prior independent decisions retained. This is a result-routing entry, not a second
+Updated: **2026-08-31**, local weak-Q comparison `e87d5de2`, execution Q-family head `f85e6d6d`; prior independent decisions retained. This is a result-routing entry, not a second
 priority board or a live process monitor. [Next Targets](NEXT-TARGETS.md) remains
 the single attention order; [the machine-readable handoff](../analysis/team_coordination.yaml)
 records source pins and the state reported by each team.
 
-**New scientific handoff:** the [fixed projection-deleted law](../results/projection-drop-tail/REPORT.md)
-has positive leading U/A=625/384*lambda^(42/5), whereas execution's
-[projected law](https://github.com/LightChainr/Matching-One/blob/85fd492312b597b3fa102ea913e4bcc7aeae2acf/notes/closed-source-square-family-leading-law.md)
-has a negative tail. Both have explicit axis-family size predictions, with
-N100/N225 still theory, not new data. The pressure-density difference vanishes
-at fixed coupling and large size, yet these finite topological signs differ.
-The new extraction used only old histograms and took0.0366seconds.
+**New scientific handoff:** [two named Q paths](../results/weak-q-path-comparison/REPORT.md)
+have opposite root-adjusted N25 original-U tangents: tied edge+.063082681707085,
+rank-projected ordinary site-RC−.269828026713487. The fixed B difference
+is+.332910708420572. Saved exact bounds suffice;0.020239seconds, no roots,
+enumeration or new samples. The [regular-endpoint identity](../notes/weak-q-paths-and-regular-selection.md)
+also excludes its regular four-leg Q activation throughout Q. Actual torus
+U may use a different trace/marked/finite-confluence interface; that map
+is the next named result, not an identified alternative contribution.
 
 The prior [operator split](../results/defect-reweight/REPORT.md) is complete.
 Execution's9057325d reports the same reweighting result using U_st=-Xi;
@@ -19,9 +20,10 @@ it is a second implementation on the same exact populations, not independent
 statistical evidence. No team needs to repeat its cross-moment task.
 The separate [80M F4 block](https://github.com/LightChainr/Matching-One/blob/25ca3635ea64655923c32adee4b62d683579cdcd/results/p337-f4-transmission-20260831/scored/REPORT.md)
 is completed and inconclusive; its fixed stop remains in force.
-[Next Targets](NEXT-TARGETS.md) now asks for a controlled finite-coupling/
-size window for the two fixed laws. Their asymptotic signs and first size
-formulas are already delivered. No first Xi or duplicate block remains assigned.
+[Next Targets](NEXT-TARGETS.md) prioritizes the actual U matrix element and
+keeps the fixed B control in parallel weak-Q size work. The Sstar/Sdrop
+finite-coupling window remains an open parallel problem, with its asymptotic
+signs already delivered. No first Xi or duplicate block remains assigned.
 No cloud job, random sample or science test suite was started by this handoff.
 
 **The two previously prioritized comparison routes are delivered.** #154's
@@ -46,14 +48,14 @@ create a second priority queue.
 
 | Team | Delivered / active contribution | Next handoff |
 |---|---|---|
-| **数学研究执行** | `85fd4923` connects the negative tail, winding barrier, projected size law and local-colour counterfactual. The repeated defect split agrees after U_st=-Xi. | The first size formula and sign cycle are delivered; finite-t/uniform-size control remains open. |
-| **数学研究总览** | Draft [PR #267](https://github.com/LightChainr/Matching-One/pull/267): `fbbaa2aa` derives the counterfactual's opposite positive tail and extracts its N25 leading support from saved counts. | Two fixed laws now have incompatible eventual signs; the finite-coupling comparison window is next, without fitted rank fugacity or repeat counting. |
+| **数学研究执行** | `f85e6d6d` fixes the Q family, B control and conditional weak-colour targets; `977fea92` supplies the local hypergraph/twist q/E readout. | Its regular-endpoint activation candidate now has the exact refinement below; the actual trace/confluent U contribution remains to be constructed. |
+| **数学研究总览** | Draft [PR #267](https://github.com/LightChainr/Matching-One/pull/267): `e87d5de2` separates the two named Q tangents using old bounds and proves the whole-family regular endpoint zero. | Route the next work to the actual U interface, retaining B; no new strong-m point, duplicate scorer or new production assignment. |
 | **数学研究俯瞰** | `f4999e29` delivers all 165M P154 permutations, nine shards, 200 batches/N, official six-coordinate decisions and full covariance. B/C fail; W is not excluded; both net intervals meet the frozen weak-transmission band. The separate P334 contact-residual result `14b2c98e` is complete. | The frozen experiment is finished. Retain all delivered data and decisions; no extra samples, replacement lag/source or fourth numerical template. |
 
 The execution result is **branch_only**, on
 `analysis/p334-paired-clock-loading-20260831`, with no corresponding PR in the
 current scoped branch-to-PR query; the current local delivery pin is
-`85fd492312b597b3fa102ea913e4bcc7aeae2acf`. Its earlier [Issue #334 result card](https://github.com/LightChainr/Matching-One/issues/334#issuecomment-5476674429)
+`f85e6d6d8c56afcad27ff73dbf0a3578c2157829`. Its earlier [Issue #334 result card](https://github.com/LightChainr/Matching-One/issues/334#issuecomment-5476674429)
 and [PR #267 pointer](https://github.com/LightChainr/Matching-One/pull/267#issuecomment-5476674567)
 are discussion links, not code integration. PR #509 retains its observed
 open/Draft lifecycle; the current delivery pin is

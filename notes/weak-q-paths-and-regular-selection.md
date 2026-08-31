@@ -20,6 +20,13 @@ V_B = V_Bvac,             Bvac=2N-4K+B.
 
 These are derivatives with respect to log Q at Q=1 (also d/dQ there),
 not derivatives with respect to t; Q=exp(2t) fixes the factor1/2.
+The [completed exact reduction, e87d5de2](../results/weak-q-path-comparison/REPORT.md)
+gives `J_tied=+.06308268170708457`, `J_site=-.2698280267134874` and
+`V_B=+.33291070842057197`, with strict rational signs before the positive
+area factor is evaluated numerically. The fixed local edge contribution
+reverses the Q-path response. This excludes equality of the two named
+finite tangents, without adding a fitted coefficient.
+
 The saved [complete N25 response packet, ec01768f](https://github.com/LightChainr/Matching-One/blob/ec01768f520e85f1acfd9d3fde9bcf855477254e/results/p337-closed-source-n25/latest.json)
 already supplies the two needed rational enclosures. Their prescribed
 linear reduction is [reproducible here](../analysis/weak_q_path_comparison_contract.json).

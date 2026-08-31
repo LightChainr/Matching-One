@@ -1,178 +1,88 @@
-# Next Targets: Two Fixed Laws Now Predict Opposite Global-U Tails
+# Next Targets: Fix the Q Path and Resolve the Actual Operator Interface
 
-**Updated 2026-08-31.** Both requested primary lines have delivered decisions:
-#154's independent165M-permutation transmission experiment and two distinct
-#334 interventions are complete. The #154 secondary interpretation is also
-complete. There is no missing first production or pending official score.
+**Updated 2026-08-31.** This is the single attention board, not a permission
+system. Work may proceed in parallel; no Issue is closed or locked.
+Detailed history belongs in [Decisions](DECISION-EXPERIMENTS.md),
+[Status](STATUS.md) and the [scientific ledger](../analysis/research_ledger.yaml).
 
-**New completed decisions:** the fixed closed source has N25 response
-`V_Sstar=+.126165363414`. [Our exact rank-bias subtraction](../results/decimation-cycle-rank/REPORT.md),
-`5483aa82`, leaves `2*V_beta_null=+.072917828300`, excluding the explicit
-unit-q-only alias. [The completed N50 single-defect result, `f5c4a74a`](https://github.com/LightChainr/Matching-One/blob/f5c4a74a20bad8589c39e1034cfb209462110dbe/results/p337-endpoint-defect/score/REPORT.md),
-gives `Xi=−10.7557184076` and `R=+27.7665635812`: the common thermal-only
-mixed null and source-independent overall-gain extension both fail.
-These finite exact claims do not resolve the larger-N F4 production:
-[its completed80M block, `25ca3635`](https://github.com/LightChainr/Matching-One/blob/25ca3635ea64655923c32adee4b62d683579cdcd/results/p337-f4-transmission-20260831/scored/REPORT.md),
-remains `INCONCLUSIVE_STOP_FIXED_BLOCK_WITHOUT_TOP_UP`, not zero coupling.
+## What just changed the mechanism space
 
-The [prescribed defect split](../results/defect-reweight/REPORT.md) is now
-complete at `e1b968959634b9b3999c727b83ed38d0b730cb20`: reweighting contributes
-**+4.550327123237**, weighted jumps **−15.306045530801**, total **−10.755718407564**.
-The exact nonzero reweighting term rejects jump-only transmission. No missing
-cross-moment or first split remains assigned.
+At the same N25 iid baseline, the [two named Q paths](../results/weak-q-path-comparison/REPORT.md)
+have **opposite original-U derivatives** (`open_pr #267`,
+`e87d5de2d0bc83ac8e5c12af83a337b829c3323b`):
 
-**The size-law step has also been delivered.** Execution's
-[axis-family law, `762dbaf4`](https://github.com/LightChainr/Matching-One/blob/762dbaf4c3afd9925f7e39b27220274312db4dc4/notes/closed-source-square-family-leading-law.md)
-predicts a negative projected tail, and our [fixed projection-deleted
-comparison](../results/projection-drop-tail/REPORT.md), `fbbaa2aa`, predicts
-a positive one. The pressure-equivalent laws are Sstar and Sdrop=Sstar+r;
-the projection is already named, not a newly tuned source coefficient.
+| Fixed root-adjusted log-Q direction at Q=1 | Response |
+|---|---:|
+| Closed source, tied edge eta=log Q | +0.063082681707085 |
+| Rank-projected ordinary site-RC, eta=0 | −0.269828026713487 |
+| Their prescribed local B difference | +0.332910708420572 |
 
-[Final scientific handoff](../notes/independent-decisions-final-20260831.md) ·
-[Frozen decisions](DECISION-EXPERIMENTS.md) · [Claim boundaries](STATUS.md).
-This page owns attention, not permission. No Issue is closed or locked here.
+The identity is `V_Sstar/2=V_(C_B-r/2)+V_B`, with `V_B=V_Bvac`.
+No extra source was fitted: old complete rational bounds were transformed
+in0.0202seconds, without a root search, enumeration or new samples.
+Both paths retain the same rank projection. This finite result prevents
+equating the tied Q response with the ordinary projected site-RC tangent;
+it does not identify either continuum limit.
 
-## Decisions that now change attention
+The [regular endpoint theorem](../notes/weak-q-paths-and-regular-selection.md)
+also removes a specific candidate: `ell P_[2](Q)=0` is a rational identity
+throughout the declared unlabelled one-insertion family. Its regular Q
+derivatives vanish. Thus **regular endpoint Q activation of the four-leg
+field is excluded in that mechanism definition**. A torus trace or a finite
+confluent insertion is different; its actual contribution to U remains
+unestablished, not silently eliminated or installed as a new rescue model.
 
-1. **#154: stop prioritizing this lag1 source as the main H4 explanation.**
-   [The complete `f4999e29` result](https://github.com/LightChainr/Matching-One/blob/f4999e29612da16a3650f24d124fb59137f053d7/experiments/p154-prospective-transmission-20260831/REPORT.md)
-   excludes the entry-dominant and completion-dominant frozen numerical
-   templates at both N85/N340. All four component intervals lie inside±.30;
-   the net intervals[-.071640,.158581] and[-.157394,.278745] lie inside the
-   frozen±.50 band. This is a bounded weak response for the specified policy,
-   not exact zero or rejection of all sources. No top-up, new lag, replacement
-   source or fourth rescue template follows from this experiment.
+## Default attention: one missing interface, one fixed control
 
-2. **#334: both independent comparisons are completed inputs, not new jobs.**
-   [Source-normal result `1164ba91/d0a9daf1`](https://github.com/LightChainr/Matching-One/blob/d0a9daf1132779205f119e9b4470f4eea9cb89c1/notes/p334-independent-normal-intervention-result.md)
-   rejects complete two-score conditional label-mean closure. Its fixed
-   positive forecast is not excluded. [Four-contact result `14b2c98e`](https://github.com/LightChainr/Matching-One/blob/14b2c98ed3a252a2fe79ce5e124d9484b23a264f/experiments/p334-prospective-intervention-20260831/REPORT.md)
-   excludes both near-zero and unchanged-old-amplitude residual forecasts.
-   It does not establish a new half-amplitude law. Do not add a fifth feature
-   or repeat an intervention to rescue the failed parameterizations.
+| Attention | Next result that changes a mechanism | Already available / missing |
+|---|---|---|
+| Highest | Express the actual orientation-resolved, thermal-differentiated torus U through the named trace/endpoint/confluent interface. Determine whether a four-leg residue survives with a finite specified coefficient. | The [hypergraph/twist construction](https://github.com/LightChainr/Matching-One/blob/977fea9272c780aea19cc47f8d33324c28a1293e/notes/closed-source-hypergraph-rc-twist-projection.md), `branch_only`, already reconstructs q/E at integer m. The regular endpoint is zero. The map to the actual U matrix element is missing. |
+| Parallel weak-Q decision | Use the declared Q family and B control in a matched-size response comparison, with the correction allowance specified before scoring. | [The exact Q-path identity and conditional scale law](https://github.com/LightChainr/Matching-One/blob/f85e6d6d8c56afcad27ff73dbf0a3578c2157829/notes/closed-source-q-lift-and-thermal-quotient.md), `branch_only`; N25 path separation is now complete. No new cross-size measurements are claimed. |
+| Parallel finite-law theory | Find a controlled finite-coupling/size window for Sstar versus Sdrop=Sstar+r, or an explicit accessibility bound. | [Opposite tails and size formulas](../results/projection-drop-tail/REPORT.md) are complete; N100/N225 remain unmeasured theory. This is not the weak-Q critical derivative. No finite-m point was added this turn. |
 
-3. **The #154 secondary lines do not reopen its priority.**
-   [M10 and M11 at `612df8ec`](https://github.com/LightChainr/Matching-One/blob/612df8ec1cbe3be3938ee2e1f6183a1aefc6510b/notes/p154-clock-line-secondary-result.md)
-   both remain not_excluded because all four line-residual intervals include
-   zero. Both lines contain zero amplitude; neither clock is identified.
-   The same165M block supplies the primary and secondary covariance, not an
-   extra evidence vote or a revised ten-test primary family.
+For the named regular single-thermal-field hypothesis, the weak-Q target is
+`L_S -> 9 sqrt(3)/(16 pi)` together with **`L_B -> 0`**, assuming the
+specified critical continuation and controlled first-derivative corrections.
+N25 alone cannot score these limits. A constant shifted slope can also arise
+from a source-activated Jordan partner; constancy alone is not identification.
+The generic sqrt(N) shape remains conditional on an explicitly non-regular
+interface or another justified mechanism, not a surviving regular endpoint.
 
-## The finite mechanism comparison is complete
+An actual finite trace/confluent definition would make that branch a
+specified competitor. Without it, adding a fitted sqrt(N) term only gives
+a shape fit. The next work is this missing mathematical map, not another
+generic certificate catalogue or a more favorable source coefficient.
 
-The requested named microscopic family is now concrete: normalized
-`exp(t*S_hat)` under checkerboard decimation. Its endpoint dictionary fixes
-the cluster/plaquette/edge coefficients, and the exact F4 result shows that
-the omitted term is visible in the original U after root and slope motion.
-The C-only closure, full closed-source response and first one-hole gain comparison
-are answered; their first calculation is no longer the next assignment.
+## Completed decisions remain completed
 
-The [fixed one-hole operator, `bc17b81d`](https://github.com/LightChainr/Matching-One/blob/bc17b81d502fb1ca3323f5c20f63c544bb31602d/notes/checkerboard-single-defect-source.md)
-has exactly two terms: `E[w*Delta O] + Cov(w,O_intact)`, with
-`w=exp(t*Delta Sstar)` and `Delta Sstar=3−2*k_null−ell`.
-Only alternating child faces can lose ambient rank, with ell≤1. Yet the
-normalized weight-redistribution term can affect the global observer even
-when the hole leaves rank unchanged. It also includes rank-changing holes;
-it must not be labeled their complement or a measured population share.
+- **P154:** the independent165M primary rejects B/C for the fixed lag1
+  policy; net responses meet its declared weak band. M10/M11 are dependent
+  secondary interpretations, neither identifies a clock or rescues B/C.
+- **P334:** both independent interventions delivered their distinct
+  model decisions. The normal-center estimand and contact-residual loading
+  are not pooled; the latter does not establish a new half-amplitude law.
+- **F4:** the independent80M block remains inconclusive at its fixed
+  budget; small-N exact results do not overrule it or imply automatic top-up.
+- **Finite source:** cycle/rank subtraction, one-hole R/Xi, opposing
+  reweight/jump contributions, turnover, and both strong-coupling size laws
+  are delivered. Execution9057325d and overviewe1b96895 are the same defect
+  result with `U_st=−Xi`, not independent votes or missing cross moments.
+- **Tools already used:** canonical E_top/Phase D, first #370 production
+  analysis, K1/K2 and the completed archive decompositions are inputs;
+  their first execution is not a new assignment.
 
-The fixed weighted-rank-jump-only model predicted zero mixed contribution
-from `Cov(w,O_intact)`. It is now excluded: the positive reweighting contribution
-partially offsets the negative jump contribution. The normalized operator
-already contains both with fixed coefficients; no extra source is needed.
-Only alternating four-neighbor patterns can change q/E, so the missing cross
-moments were reconstructed from a **1/8 exact subset** plus old full marginals.
-Each geometry required2^22 configurations; compilation and scoring took2.036seconds.
+See [the independent decision handoff](../notes/independent-decisions-final-20260831.md)
+and [the decision register](DECISION-EXPERIMENTS.md) for numbers and sources.
+Complex C3, Gaussian/annulus order, triangular invariants, boundary Q and
+connectivity/defect radical remain open parallel exploration. Attention
+changes are not route bans or a demand for sequential approval.
 
-## Highest attention: the finite-coupling window for the two fixed laws
+## Execution and history
 
-Execution's `branch_only` [four-coupling result, `a70eeff0`](https://github.com/LightChainr/Matching-One/blob/a70eeff09f51ce2fa0fea5ae637e9191efbf2e1f/results/p337-closed-source-finite-coupling/score/REPORT.md)
-finds U_t<0 at all fixed m=exp(t)=2,4,8,16, whereas U_t(0)>0.
-At least one local maximum therefore lies before log2. The
-[finite-volume argument, `359bde9b`](https://github.com/LightChainr/Matching-One/blob/359bde9be45d051b961110e03f0bd70f3ff82b91/notes/closed-source-two-state-turnover.md)
-gives an empty/full limiting mixture, rank-one depletion and U=O(exp(-3t))→0.
-The exponent is a bound, not a fitted leading power. The source is attractive
-and its matching root unique/simple; positive association does not order E=q².
-
-The stronger [projected negative-tail result, `e3c8d3a`](https://github.com/LightChainr/Matching-One/blob/e3c8d3a1b0806f170d61cb89b8f3a7ab13b2e648/notes/closed-source-angular-strong-coupling-law.md)
-shows U eventually crosses zero and approaches0 from below. The exact
-winding barrier is2ell1−1; on the axis L×L minimum strips cancel their
-normalized thermal slope, delaying U by two powers. For the fixed family
-(5k,0)/(4k,3k), L=5k and Delta=1152/625, the completed predictions are
-
-```text
-U_star/A = -(L²-6L+6)/Delta * lambda^(2L+1) + ...,
-U_drop/A = +(L-2)/Delta * lambda^(2L-2+2/L) + ...,
-U_drop/U_star ~ -(L-2)/(L²-6L+6) exp[(3-2/L)t].
-```
-
-N25's new positive coefficient625/384 at power42/5 is extracted from the
-old integer histogram; N100/N225 are unmeasured combinatorial predictions.
-The same projection changes pressure density by at most2t/N, so bulk
-pressure equivalence does not preserve this finite topological observer.
-
-**The remaining question is quantitative finite-coupling transmission of
-these two fixed laws as size grows.** The eventual sign comparison is already
-settled. It does not give a finite-t sign threshold, a uniform remainder or
-an affordable independent sampling window. A next proposal should supply
-one such controlled two-law comparison, preserving the original observer
-and showing why its chosen N,t can distinguish the mechanisms. It should
-not fit a rank-fugacity coefficient, extend the old N25 peak grid, or count
-the asymptotic size table as new production. Literal empty/full concentration
-also requires N exp(-2t)→0; failure of that necessary condition does not by
-itself imply nonzero U or identify its large-size mechanism.
-
-This is one specified mechanism question, not a scan over descriptors, sources,
-lags or exponents. Endpoint source invariance alone does not identify a continuum
-field or establish an interior RG law. The current N25 pair has different Smith
-classes; it is a finite counterexample, not the N65/N85 production lineage.
-
-For #334, keep [the exact projection split](https://github.com/LightChainr/Matching-One/blob/ccabada318b1eeb12ae28d53391b13ab44c116d2/notes/p334-independent-interventions-crosswalk.md)
-explicit: first responses see `G b`, normal responses see the orthogonal
-remainder. The four-contact cross-prefix loading and normal center response
-have no conversion identity. A proposed global mechanism must say which of
-these enters its observable, rather than naming both “the20% residual.”
-
-A concrete interior law predicting incompatible unseen outcomes can become the
-next production comparison. There is currently **no automatic new production
-assignment**. Reuse the completed map, exact source dictionary, source engines,
-covariance and certificates; a new adapter is not the missing scientific result.
-No permission is required to explore a new idea. Changing attention after a
-separately justified model is possible; failure is not a permanent route ban.
-
-## Completed discovery and parallel exploration
-
-The earlier [fixed-clock comparison](../results/p154-fixed-clock-models/REPORT.md)
-rejects one pure-cos4 relative-shift law on old data. The surviving scalar
-root-level baseline predicts tiny U effects; [its budget](../results/p154-clock-transmission-budget/REPORT.md)
-neither confirmed scalar dynamics nor vetoed the now-completed165M experiment.
-M10/M11 are different restrictions and provide no post-result rescue.
-
-Canonical E_top/Phase D, the first #370 production adapter, K1/K2, lag1/longer
-lag, P334 hierarchy/contact/local-rank/held-out/shape and P398 arrangement
-are completed inputs. #275/#370 now serve a specific physical model when it
-needs them; no generic certificate/catalog expansion is promoted by default.
-
-Complex C3, Gaussian/annulus order, triangular cross-microscopic invariants,
-boundary Q tangent and connectivity/defect radical remain parallel exploration.
-They do not become prospective confirmation of the newly revealed block by
-being interesting. Unresolved results need not be filled with an immediate
-new fitted model.
-
-## Resources and handoff
-
-All ten Huawei containers are authorized for direct named use through the
-updated Skill, actual cgroup limits and unique run directories. No routine
-team permission messages. The producing team's20:02:29 CST receipt records
-its five P154 machines returned Ready and all ten then observed Ready; this
-is dated delivery metadata, not current availability or an instruction to start.
-
-This overview's latest computation extracted the projection-deleted leading
-term from old integer histograms in0.0366seconds: no enumeration, root search,
-random sample, cloud job or science test suite. The preceding alternating-face
-cross-moment calculation is complete. Execution's9057325d delivers the same
-one-hole contribution using U_st=-Xi; it is a second implementation on the
-same finite populations, not an extra statistical vote or a new pending task.
-PR #267 stays Draft; no merges, history rewrite or
-Issue lifecycle changes. [The preceding queue](https://github.com/LightChainr/Matching-One/blob/f670d26e8056116ec1787e0a2f29009b5db24a7d/docs/NEXT-TARGETS.md)
-and [pre-score handoff](../notes/independent-decisions-handoff-20260831.md)
-retain history, not additional assignments.
+All ten Huawei environments are user-authorized through the updated Skill
+with explicit machine selection and isolated run directories. This turn
+used local saved-bound algebra only; there was no cloud action, coupling
+grid extension or scientific test suite. Current server availability was
+not rechecked. Coordination stays in [the repository handoff](TEAM-COORDINATION.md).
+Draft PR267 remains unmerged. The [preceding longer queue](https://github.com/LightChainr/Matching-One/blob/f405719264c896aa873dd4aae7292795f544ba99/docs/NEXT-TARGETS.md)
+preserves historical detail; it is not a second current task list.

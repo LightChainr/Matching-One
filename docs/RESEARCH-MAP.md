@@ -4,23 +4,32 @@
 
 This map is the repository's scientific coordinate system. It is not a permission system: exact work, reanalysis, pilots, production and independent theory may proceed in parallel. Priority moves attention; it does not lock, close, veto or demote a task. `STATUS` owns claim/lifecycle language, `ROADMAP` preserves rationale, and [NEXT-TARGETS](NEXT-TARGETS.md) owns the single ranked decision queue.
 
-**The independent decisions are complete: #154's165M primary and dependent
-secondary, plus both distinct P334 comparisons.**
-[Decision Experiments](DECISION-EXPERIMENTS.md) and the
-[final decision record](../notes/independent-decisions-final-20260831.md) own these
-states; the earlier handoff is pre-score history. The one-hole comparison
-and its prescribed split are complete: source-independent gain fails
-(`R=27.766563581230237>0`), and nonzero baseline reweighting also rejects
-the jump-only model. The closed-source turnover and cross-size asymptotic
-formulas are now delivered too: deleting its fixed winding projection reverses
-the eventual sign of original U. Attention goes to a finite-coupling/size
-decision window for the same two laws, Sstar and Sdrop=Sstar+r. Their large-t
-formulas do not identify that window. No duplicate calculation, peak refinement,
-new production or source-feature expansion follows automatically.
-The old2.4M norm4 permutations and
-20-batch P334 archive remain discovery data; correct covariance and held-out
-reuse do not make them independent population confirmation. Other lines stay
-open as parallel exploration, without Issue locks or whole-line rejection.
+**Current frontier: the Q path changes the response sign, and a regular
+endpoint zero survives every Q derivative.** The [completed comparison](../results/weak-q-path-comparison/REPORT.md),
+`open_pr #267` at `e87d5de2d0bc83ac8e5c12af83a337b829c3323b`, gives
+`J_tied=+.06308268170708457`, `J_site=−.2698280267134874`, and
+`V_B=+.33291070842057197`. Source: two named Q paths, both retaining the
+same rank projection, distinguished only by tied local-edge coupling.
+Observer: original pooled-root/slope U. Geometry: the same N25 iid pair.
+Acquisition:0.020239-second reduction of saved exact bounds, no new roots,
+enumeration, samples or finite-coupling point; not independent evidence.
+
+The [endpoint identity](../notes/weak-q-paths-and-regular-selection.md),
+`f0e9159f4f8a2f23b9e736e7e02b425e593336f2`, rules out regular-endpoint
+four-leg `sqrt(N)` Q activation because `ell P_[2]=0` throughout Q.
+It does not identify actual torus U with that endpoint or remove trace,
+marked and finite-confluence contributions. The next concrete mechanism
+question is their explicit matrix element into U, using execution's
+`branch_only` [Q-family definition, `f85e6d6d`](https://github.com/LightChainr/Matching-One/blob/f85e6d6d8c56afcad27ff73dbf0a3578c2157829/notes/closed-source-q-lift-and-thermal-quotient.md)
+and [hypergraph/twist realization, `977fea92`](https://github.com/LightChainr/Matching-One/blob/977fea9272c780aea19cc47f8d33324c28a1293e/notes/closed-source-hypergraph-rc-twist-projection.md).
+Any later matched-size weak-Q comparison retains the fixed B control.
+
+The independent #154/P334 decisions and one-hole split remain complete;
+[Decision Experiments](DECISION-EXPERIMENTS.md) owns their unchanged states.
+The Sstar/Sdrop opposite strong-coupling tails remain a parallel fixed-law
+comparison with an unsolved finite-t/size window, not the weak-Q test.
+Discovery-archive reuse is not independent confirmation. Other lines remain
+open without Issue locks, automatic production or source-feature expansion.
 
 **Measured microscopic-to-global separation, Draft #267 `5483aa82047df34c2c9508d4930b6e20961ed9ca`:**
 [the exact cycle/rank split](../results/decimation-cycle-rank/REPORT.md) gives
@@ -79,8 +88,9 @@ identifies the sole change as deleting `m^(−r)`: the bulk pressure-density
 discrepancy is at most2t/N, yet unequal stripe-width costs remove the original
 leading thermal cancellation. N100/N225 are theoretical, unmeasured rows.
 Fixed-N large-t signs do not give an arbitrary finite-t sign or commute the
-size/coupling limits. The next discriminator is that finite-coupling/size
-window or transmission prediction, with both microscopic laws held fixed.
+size/coupling limits. That finite-coupling/size window remains a parallel
+question with both microscopic laws held fixed; no new strong-m point is
+requested ahead of the weak-Q trace/confluent interface.
 
 **Earlier finite-coupling turnover is resolved:** `branch_only`
 [`a70eeff0:REPORT.md`](https://github.com/LightChainr/Matching-One/blob/a70eeff09f51ce2fa0fea5ae637e9191efbf2e1f/results/p337-closed-source-finite-coupling/score/REPORT.md)

@@ -6,24 +6,36 @@
 
 `docs/NEXT-TARGETS.md` owns the single attention order, while `docs/ROADMAP.md` preserves its scientific rationale. Neither locks a task, serializes theory work or treats a lower priority as a scientific rejection.
 
-**Newest completed fixed-law comparison, `open_pr #267`, `fbbaa2aacce9895f0113bfc12a70e37152aec507`:**
-[the saved-histogram result](../results/projection-drop-tail/REPORT.md) gives
-`U_drop/A_N ~ +(625/384) lambda^(42/5)` on N25, against the original
-`U_star/A_N ~ −(625/1152) lambda^11`, lambda=exp(−t).
-`Sdrop=Sstar+r` deletes only the prescribed `m^(−r)` factor; no coefficient
-is fitted. The 36.6-millisecond calculation uses the existing exact `(K,g,q)`
-histograms, with no enumeration, random samples or root search.
+**Newest completed Q-path separation, `open_pr #267`, `e87d5de2d0bc83ac8e5c12af83a337b829c3323b`:**
+[the exact-bound reduction](../results/weak-q-path-comparison/REPORT.md)
+gives tied-Q tangent `+.06308268170708457`, rank-projected ordinary site-RC
+tangent `−.2698280267134874`, and fixed B control `+.33291070842057197`
+at the common N25 iid baseline. Both paths retain the rank projection;
+this is not a comparison with unprojected site-RC. The identity
+`J_tied=V_Sstar/2=J_site+V_B` converts t to Q by `Q=exp(2t)` and retains
+pooled-root/slope motion. Runtime:0.020239 seconds using old exact enclosures,
+with no new root, enumeration, sampling or finite-coupling point.
 
-The [general proof](../notes/topological-projection-reverses-global-u-tail.md),
-`944c364c36cde17d6a0bae1c7d7b77db84e680a3`, combines execution's `branch_only`
-[square-family theorem, `762dbaf4`](https://github.com/LightChainr/Matching-One/blob/762dbaf4c3afd9925f7e39b27220274312db4dc4/notes/closed-source-square-family-leading-law.md)
-with its `branch_only` [colour-gas comparison, `85fd4923`](https://github.com/LightChainr/Matching-One/blob/85fd492312b597b3fa102ea913e4bcc7aeae2acf/notes/closed-source-local-colour-gas.md).
-For axis L×L, L≥5, companion ell1≥L+2 and Delta>0, the two leading terms are
-`−(L²−6L+6) lambda^(2L+1)/Delta` and
-`+(L−2) lambda^(2L−2+2/L)/Delta`. N100/N225 are unmeasured theoretical
-predictions. These fixed-N tails establish eventual opposite signs, not a
-finite-t sign window or a uniform-in-N limit. **Next:** determine such a
-finite-coupling/size window or transmission law for these same two sources.
+The [regular-endpoint theorem](../notes/weak-q-paths-and-regular-selection.md),
+`f0e9159f4f8a2f23b9e736e7e02b425e593336f2`, proves the rational identity
+`ell P_[2]=0` throughout Q, so all regular Q derivatives vanish. It excludes
+the proposed `sqrt(N)` activation **from this regular one-insertion endpoint**.
+It does not prove that actual torus U has only that interface, or exclude
+all four-leg trace/marked/finite-confluence contributions. **Next:** supply
+the explicit finite matrix element connecting any surviving interface to U.
+Execution's `branch_only` [Q family, `f85e6d6d`](https://github.com/LightChainr/Matching-One/blob/f85e6d6d8c56afcad27ff73dbf0a3578c2157829/notes/closed-source-q-lift-and-thermal-quotient.md)
+and [hypergraph/twist construction, `977fea92`](https://github.com/LightChainr/Matching-One/blob/977fea9272c780aea19cc47f8d33324c28a1293e/notes/closed-source-hypergraph-rc-twist-projection.md)
+provide the starting representation, not a completed continuum identification.
+
+**Parallel strong-coupling comparison remains open at finite t:** the
+[delivered tails](../results/projection-drop-tail/REPORT.md), `open_pr #267`
+at `fbbaa2aacce9895f0113bfc12a70e37152aec507`, give N25
+`U_drop/A_N ~ +(625/384) lambda^(42/5)` against
+`U_star/A_N ~ −(625/1152) lambda^11`. The [general proof](../notes/topological-projection-reverses-global-u-tail.md)
+and execution's `branch_only` [square-family theorem, `762dbaf4`](https://github.com/LightChainr/Matching-One/blob/762dbaf4c3afd9925f7e39b27220274312db4dc4/notes/closed-source-square-family-leading-law.md)
+give N100/N225 theory, not measurements. Fixed-N large-t tails do not settle
+a finite-coupling/size window or weak-Q velocity; no additional strong-m
+point is the default next request.
 
 **Completed one-hole mechanism decision:** the [split](../results/defect-reweight/REPORT.md),
 `open_pr #267`, `e1b968959634b9b3999c727b83ed38d0b730cb20`, excludes the
@@ -44,7 +56,7 @@ the two-state limit before the new histogram and scores; the [full proof,
 `5a70f0a0`](https://github.com/LightChainr/Matching-One/blob/5a70f0a02d4ac5ba64db52608421f31e091f8cf5/notes/closed-source-two-state-turnover.md)
 was committed after scoring. Its rank1 depletion and `U→0` bound are now
 sharpened by the leading laws above. The resolved N25 peak does not supply
-the remaining finite-coupling/size discriminator; no peak scan, new descriptor
+the parallel finite-coupling/size discriminator; no peak scan, new descriptor
 or automatic production is implied.
 
 **Completed fixed cycle/rank separation, `open_pr #267`, `5483aa82047df34c2c9508d4930b6e20961ed9ca`, not `main_integrated`:**
@@ -135,8 +147,9 @@ a rescue of B/C. The earlier high gain is unmarked-baseline sensitivity,
 not a measured source amplitude. [The final decision record](../notes/independent-decisions-final-20260831.md)
 now supersedes the [pre-score handoff](../notes/independent-decisions-handoff-20260831.md).
 The cycle/rank split, one-hole R/Xi/reweighting, finite-coupling turnover and
-two fixed-law asymptotic size formulas are completed. The remaining question
-is their finite-coupling/size decision window. Research Issue lifecycles are unchanged.
+two fixed-law asymptotic size formulas are completed. Their finite-coupling/size
+window remains parallel; the primary interface question is stated above.
+Research Issue lifecycles are unchanged.
 
 **Earlier finite-model elimination, `open_pr #267`, `3847a5cfb0a7fe4454a86cc1bfd8ce4ee2e813f4`:**
 [The two-clock comparison](../results/p154-fixed-clock-models/REPORT.md) uses

@@ -1,9 +1,11 @@
-version: 43
+version: 44
 updated: 2026-08-31
 latest_scientific_handoff:
   entry: docs/TEAM-COORDINATION.md
-  local_result_commit: fbbaa2aacce9895f0113bfc12a70e37152aec507
-  local_result_report: results/projection-drop-tail/REPORT.md
+  local_result_commit: e87d5de2d0bc83ac8e5c12af83a337b829c3323b
+  local_result_report: results/weak-q-path-comparison/REPORT.md
+  fixed_Q_lift_commit: f85e6d6d8c56afcad27ff73dbf0a3578c2157829
+  fixed_Q_lift_report: notes/closed-source-q-lift-and-thermal-quotient.md
   projected_size_law_commit: 85fd492312b597b3fa102ea913e4bcc7aeae2acf
   projected_size_law_report: notes/closed-source-square-family-leading-law.md
   finite_source_result_commit: a70eeff09f51ce2fa0fea5ae637e9191efbf2e1f
@@ -14,7 +16,7 @@ latest_scientific_handoff:
   latest_defect_operator_commit: bc17b81d502fb1ca3323f5c20f63c544bb31602d
   latest_closed_source_result_commit: ec01768f520e85f1acfd9d3fde9bcf855477254e
   latest_independent_F4_result_commit: 25ca3635ea64655923c32adee4b62d683579cdcd
-  local_theory_note: notes/decimation-closed-source-and-global-u.md
+  local_theory_note: notes/weak-q-paths-and-regular-selection.md
   local_source_dictionary: analysis/decimation_source_dictionary.json
   local_budget_report: results/p154-clock-transmission-budget/REPORT.md
   local_budget_scope: historical_fixed_clock_candidate_not_current_decimation_budget
@@ -41,8 +43,8 @@ latest_scientific_handoff:
   current_secondary_theory_commit: 83f3eba88d7f1290704f82610c28669dc5e12f3c
   current_secondary_result_commit: 612df8ec1cbe3be3938ee2e1f6183a1aefc6510b
   current_secondary_result_report: notes/p154-clock-line-secondary-result.md
-  current_synthesis_commit: fbbaa2aacce9895f0113bfc12a70e37152aec507
-  current_synthesis_report: results/projection-drop-tail/REPORT.md
+  current_synthesis_commit: e87d5de2d0bc83ac8e5c12af83a337b829c3323b
+  current_synthesis_report: results/weak-q-path-comparison/REPORT.md
   preceding_synthesis_commit: 95d5d662afcef2d9d4b5167f82612a70cb4e83c7
   preceding_synthesis_report: notes/independent-decisions-final-20260831.md
   latest_external_reports: [experiments/p154-prospective-transmission-20260831/REPORT.md, experiments/p334-prospective-intervention-20260831/REPORT.md]
@@ -324,6 +326,19 @@ channel_semantics:
   required_fields: [topology_channel, combination, probability_coordinate, orientation_order, normalization, quantity]
 
 registered_reanalyses:
+  - id: PR267_WEAK_Q_PATH_COMPARISON
+    integration_status: open_pr
+    pr: 267
+    branch: research/navigation-priority-refresh-20260829
+    commit: e87d5de2d0bc83ac8e5c12af83a337b829c3323b
+    definition_commit: f0e9159f4f8a2f23b9e736e7e02b425e593336f2
+    status: named_Q_paths_have_opposite_original_U_tangents
+    outputs: [results/weak-q-path-comparison/REPORT.md, results/weak-q-path-comparison/latest.json, results/weak-q-path-comparison/run.json, notes/weak-q-paths-and-regular-selection.md]
+    scripts: [scripts/analyze_weak_q_path_comparison.py]
+    contracts: [analysis/weak_q_path_comparison_contract.json]
+    dependency_groups: [decimation-N25-exact-configuration-pair]
+    result_summary: fixed_B_control_reverses_Q_tangent_and_regular_endpoint_four_leg_Q_activation_is_zero
+    boundary: same_N25_exact_inputs_both_paths_rank_projected_actual_U_trace_interface_unproved_no_new_data_or_critical_exponent_measurement
   - id: PR267_PROJECTION_DROP_TAIL
     integration_status: open_pr
     pr: 267

@@ -1,16 +1,21 @@
 # Roadmap: Default Attention, Not Permission
 
-**Current move, 2026-08-31:** establish the finite-coupling/size discriminator
-for the two fixed laws `Sstar` and `Sdrop=Sstar+r`. Their [opposite asymptotic
-tails are delivered](../results/projection-drop-tail/REPORT.md), `open_pr #267`,
-`fbbaa2aacce9895f0113bfc12a70e37152aec507`: original U approaches zero from
-below, while deleting only `m^(−r)` makes it approach from above.
-The N25 saved-histogram coefficient is exactly `625/384` at lambda power42/5,
-computed in 36.6 milliseconds without enumeration, randomness or root search.
-Cross-size formulas are proved; N100/N225 remain unmeasured predictions.
-The open question is where these eventual signs become a useful finite-t
-comparison as size changes, or how the fixed source transmits there.
-No new peak points, fitted rank coefficients or automatic production follow.
+**Current move, 2026-08-31:** identify the explicit trace/marked/finite-confluence
+matrix element entering original U. The [new Q-path comparison](../results/weak-q-path-comparison/REPORT.md),
+`open_pr #267` at `e87d5de2d0bc83ac8e5c12af83a337b829c3323b`, gives
+tied Q `+.06308268170708457` versus rank-projected ordinary site-RC
+`−.2698280267134874`, separated by fixed B control `+.33291070842057197`.
+This0.020239-second exact-bound reduction uses no new root, enumeration,
+sampling or finite-coupling point. The [regular-endpoint proof](../notes/weak-q-paths-and-regular-selection.md)
+excludes `sqrt(N)` Q activation within its specified endpoint family;
+actual torus U need not reduce to that interface. Use execution's `branch_only`
+[Q family, `f85e6d6d`](https://github.com/LightChainr/Matching-One/blob/f85e6d6d8c56afcad27ff73dbf0a3578c2157829/notes/closed-source-q-lift-and-thermal-quotient.md)
+and [hypergraph/twist readout, `977fea92`](https://github.com/LightChainr/Matching-One/blob/977fea9272c780aea19cc47f8d33324c28a1293e/notes/closed-source-hypergraph-rc-twist-projection.md)
+to specify any surviving contribution before assigning it a scaling shape.
+Matched-size weak-Q work must retain B and a correction allowance. The
+[Sstar/Sdrop opposite tails](../results/projection-drop-tail/REPORT.md) remain
+parallel: their finite-coupling/size window is unsolved, with N100/N225 still
+theoretical. Another strong-m point is not the default next request.
 
 The [one-hole split](../results/defect-reweight/REPORT.md) is complete:
 reweighting `+4.550327123236791` opposes jump `−15.306045530800864`.
@@ -70,8 +75,8 @@ The `branch_only` [four-coupling result, `a70eeff0`](https://github.com/LightCha
 already rejects monotone U amplification on N25: U_t is negative at each
 frozen m=2,4,8,16 after positive U_t(0). At least one local maximum lies in
 `(0,log2)`; uniqueness remains unproved. Reusing those exact populations for
-the tail is dependent analysis. More N25 peak points do not answer the next
-finite-coupling/size comparison between the two fixed microscopic laws.
+the tail is dependent analysis. More N25 peak points do not settle the
+parallel finite-coupling/size window or the primary weak-Q interface question.
 
 The separate `branch_only` [F4 independent80M result, `25ca3635`](https://github.com/LightChainr/Matching-One/blob/25ca3635ea64655923c32adee4b62d683579cdcd/results/p337-f4-transmission-20260831/scored/REPORT.md)
 uses20M/100 batches per N65/85/130/170. All four simultaneous intervals
