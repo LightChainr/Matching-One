@@ -149,7 +149,7 @@ U_N^end(t) = [N^(13/8)/2] Y_parent,p^end/Q_parent,p^end
 
 Reordering a child pair swaps both projector numerator and angular
 denominator. Reflection preserves the scalar q/E/S_star law and cos4;
-either canonicalization is harmless only when performed consistently.
+These canonicalizations are harmless only when performed consistently.
 The identity holds on all corresponding simple-root branches of this
 specified finite positive family, not just at t=0.
 

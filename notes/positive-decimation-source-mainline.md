@@ -11,7 +11,7 @@ Bv = NN edges whose two endpoints are vacant.
 ```
 
 Saturate one checkerboard sublattice, contract the remaining coset by1+i,
-and complement it to an ordinary square child. The proposed exact dictionary
+and complement it to an ordinary square child. The exact dictionary
 is
 
 ```text
@@ -27,6 +27,8 @@ by complement. The last line holds because every parent NN edge touches
 the saturated sublattice. Use honest nonalias quotients and the same lifted
 winding map; full companion proofs accompany this calculation.
 
+The [finite quotient proof](checkerboard-positive-source-closure.md)
+establishes these identities and their winding/partition-function scope.
 It follows that the **positive count source**
 
 `S_star = C + F + Bv`
@@ -50,6 +52,34 @@ DeltaCos4 projector, and thermal-derivative ratio. This identity holds at
 finite source strength wherever that root branch is defined, not only for
 the source derivative at t=0. It does not assert a homogeneous critical
 renormalization fixed point or a continuum field identity.
+
+## The birth-channel map is fixed too
+
+Let F1(p,t)=P_(p,t)(r>=1) and F2(p,t)=P_(p,t)(r=2). At t=0 these are the
+usual first/second birth CDFs; at nonzero t they denote static rank-event
+probabilities, without asserting a monotone process representation. The
+rank complement gives
+
+```text
+F1_parent(p,t) = 1 - F2_child(1-p,t),
+F2_parent(p,t) = 1 - F1_child(1-p,t).
+```
+
+Write the two readout contributions on their common root as
+`U01=-A P4(F1_p)/D` and `U12=+A P4(F2_p)/D`. The thermal chain rule and
+DeltaCos4 rotation then give
+
+```text
+U01_parent,end(t) = 2^(13/8) U12_child(t),
+U12_parent,end(t) = 2^(13/8) U01_child(t).
+```
+
+This same swap holds for their complete t derivatives including the
+root/slope motion. Two steps return each readout channel to itself.
+These are readout contributions to a common full-source response, not
+separately manipulated event-source interventions. Thus the named model
+has a fixed microscopic source -> rank-event -> original-U map, rather
+than an inferred assignment of entry versus completion after seeing data.
 
 ## The source closure is finite, positive, and coefficient-fixed
 
@@ -115,19 +145,67 @@ inhomogeneous forced hierarchy, **not** a square-site critical threshold.
 There is no assertion of an interpolating U curve between the ordinary
 homogeneous parent and the nested endpoint.
 
-## Direct finite computation specified before its result
+## The fixed source reaches the original global U
 
-The next calculation is restricted to the coefficient-fixed S_star on the
-existing honest N25 pair `(5,0),(4,3)`, at its own pooled root and original U.
-It reports V_Sstar and, separately, V_Bv required by the second line of the
-source dictionary. There is no source search, new lag, Monte Carlo top-up,
-or re-scoring of the completed N65/N85/N130/N170 F4 block.
+The [pre-calculation contract](../analysis/p337_closed_source_n25_contract.json)
+selected only S_star and the dictionary-required Bv companion. Two complete
+2^25 configuration sums on `(5,0),(4,3)`, followed by one rational-interval
+evaluation, give
 
-The per-K counts saved by the preceding exact enumeration did not retain
-Bv. The existing rollback enumerator can directly collect the missing
-statistics from `Bv=2N-4K+Bocc`; no new connectivity engine is needed.
-The entire fixed finite population is summed, so this is deterministic
-coefficient calculation, not another independent statistical evidence vote.
-A nonzero rational enclosure of V_Sstar/A would eliminate a pure common
-thermal-clock description of this named model at this finite observer.
-It would not identify the continuum H4 field or an all-size exponent.
+```text
+p0                  = 0.5926655393282267,
+U25                 = 0.8804661569633677,
+V25(S_star)         = +0.12616536341416915,
+V25(Bv)             = +0.33291070842057197.
+```
+
+Here V=dU/dt at t=0, including per-geometry covariance centering, the
+pooled-root displacement and denominator/slope motion. The exact rational
+enclosure of V25(S_star)/[25^(13/8)/2] is strictly positive: **the closed
+source is not a pure common thermal-clock alias at this finite observer**.
+See the [result and all rational bounds](../results/p337-closed-source-n25/REPORT.md).
+The entire compile/enumerate/score run took3.11seconds locally; no cloud job,
+random sample, source fit or old C/F4 response re-score was used.
+
+The preceding saved per-K profiles lacked occupied-edge sufficient
+statistics, so this one pass collected S_star/Bv using the inherited
+connectivity engine. These are exact finite-population calculations, not
+independent statistical votes for a continuum mechanism.
+
+The identities above now imply the following derivatives without any new
+parent simulation:
+
+| Specified parent endpoint | Original-U source response |
+|---|---:|
+| N50, one saturated level, closed S_star source | +0.389147178497717 |
+| N50, one saturated level, F4-only source | +1.026836996840865 |
+| N100, two nested levels, bare C source | +1.200293982712272 |
+
+The first and third are 2^(13/8)V25(S_star) and4^(13/8)V25(S_star);
+the second is2^(13/8)V25(Bv). This turns the microscopic source ->
+rank-event -> U dictionary into nonzero, parameter-free finite endpoint
+predictions. These forced-endpoint responses are not homogeneous N50/N100
+measurements, nor an extrapolation of the stopped larger-N F4 block.
+
+## Scientific card and next discriminant
+
+- **Mechanism change:** exact three-count closure plus a nonzero original-U
+  response removes common-thermal invisibility of this coefficient-fixed
+  finite model. Bare cluster coupling has no additional count to generate
+  after its second saturated reduction.
+- **Lifecycle:** algebraically specified; contract55988126 before computation;
+  code d2cec6a7; exact result d3d60b44; integrated branch delivery, not main.
+- **Observer/sector/source/geometry:** original pooled-root normalized U,
+  ordinary homology q/E with normalized cos4 projector, bulk exp(t S_star),
+  honest N25 axis Z5xZ5 and tilted Z25 quotients. The Smith classes differ.
+- **Dependency:** exact integer profiles in `p337-closed-source-n25`; the
+  inherited geometry/scoring code is declared in run provenance. The two
+  source responses and all transported endpoints belong to this one finite
+  calculation; none is an independent production confirmation.
+- **Boundary:** no continuum field identity, asymptotic exponent, interior
+  saturation law or universal homogeneous RG fixed point follows. The F4
+  random-block `INCONCLUSIVE_STOP_FIXED_BLOCK_WITHOUT_TOP_UP` is unchanged.
+- **Next discriminant:** derive a prediction for the same U away from the
+  forced endpoint, with S_star fixed. Endpoint identities alone do not
+  choose that interpolation. Do not add another fitted source to manufacture
+  it, or rerun the exact endpoints as new scientific evidence.
