@@ -1,0 +1,495 @@
+{
+  "schema": "matching-one.colour-specialization-gap.result.v1",
+  "definition_commit": "f81f70c8866e9165c2c9a3c0802b270e66133c24",
+  "contract_sha256": "3c634ed7894b1f9122e26325186ebf9e74376c76267ee0f07ef7b4e6f9de1c68",
+  "question": "Does one fixed full-central colour coefficient, divided by dim[Q-2,2], continue unchanged from Q4 to generic Q for physical rank1 closures?",
+  "cases": [
+    {
+      "id": "two_parallel_clusters",
+      "winding": 1,
+      "essential_components": 2,
+      "geometry": "axis L5; only rows y=0,2 occupied; seam along first period",
+      "generic_multiplicity": 1,
+      "generic_valid_for_integer_Q_at_least": 4,
+      "finite": [
+        {
+          "Q": 4,
+          "dimension": 2,
+          "dimension_normalized_coefficient": "1",
+          "full_central_trace_coefficient": "2",
+          "class_terms": [
+            {
+              "cycles": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "class_probability": "1/24",
+              "character": 2,
+              "fixed_colours_of_power": 4,
+              "contribution": "4/3"
+            },
+            {
+              "cycles": [
+                1,
+                1,
+                2
+              ],
+              "class_probability": "1/4",
+              "character": 0,
+              "fixed_colours_of_power": 2,
+              "contribution": "0"
+            },
+            {
+              "cycles": [
+                1,
+                3
+              ],
+              "class_probability": "1/3",
+              "character": -1,
+              "fixed_colours_of_power": 1,
+              "contribution": "-1/3"
+            },
+            {
+              "cycles": [
+                2,
+                2
+              ],
+              "class_probability": "1/8",
+              "character": 2,
+              "fixed_colours_of_power": 0,
+              "contribution": "0"
+            },
+            {
+              "cycles": [
+                4
+              ],
+              "class_probability": "1/4",
+              "character": 0,
+              "fixed_colours_of_power": 0,
+              "contribution": "0"
+            }
+          ]
+        },
+        {
+          "Q": 5,
+          "dimension": 5,
+          "dimension_normalized_coefficient": "1",
+          "full_central_trace_coefficient": "5",
+          "class_terms": [
+            {
+              "cycles": [
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "class_probability": "1/120",
+              "character": 5,
+              "fixed_colours_of_power": 5,
+              "contribution": "25/24"
+            },
+            {
+              "cycles": [
+                1,
+                1,
+                1,
+                2
+              ],
+              "class_probability": "1/12",
+              "character": 1,
+              "fixed_colours_of_power": 3,
+              "contribution": "3/4"
+            },
+            {
+              "cycles": [
+                1,
+                1,
+                3
+              ],
+              "class_probability": "1/6",
+              "character": -1,
+              "fixed_colours_of_power": 2,
+              "contribution": "-2/3"
+            },
+            {
+              "cycles": [
+                1,
+                2,
+                2
+              ],
+              "class_probability": "1/8",
+              "character": 1,
+              "fixed_colours_of_power": 1,
+              "contribution": "1/8"
+            },
+            {
+              "cycles": [
+                1,
+                4
+              ],
+              "class_probability": "1/4",
+              "character": -1,
+              "fixed_colours_of_power": 1,
+              "contribution": "-1/4"
+            },
+            {
+              "cycles": [
+                2,
+                3
+              ],
+              "class_probability": "1/6",
+              "character": 1,
+              "fixed_colours_of_power": 0,
+              "contribution": "0"
+            },
+            {
+              "cycles": [
+                5
+              ],
+              "class_probability": "1/5",
+              "character": 0,
+              "fixed_colours_of_power": 0,
+              "contribution": "0"
+            }
+          ]
+        }
+      ],
+      "finite_Q4_minus_stable_specialization": "0",
+      "dimension_only_prediction_at_Q5": "5",
+      "actual_Q5_minus_dimension_only_prediction": "0",
+      "dimension_only_candidate": "compatible_on_this_case",
+      "formal_generic_Q1_coefficient": "-1"
+    },
+    {
+      "id": "three_parallel_clusters",
+      "winding": 1,
+      "essential_components": 3,
+      "geometry": "axis L6; only rows y=0,2,4 occupied; seam along first period",
+      "generic_multiplicity": 6,
+      "generic_valid_for_integer_Q_at_least": 5,
+      "finite": [
+        {
+          "Q": 4,
+          "dimension": 2,
+          "dimension_normalized_coefficient": "5",
+          "full_central_trace_coefficient": "10",
+          "class_terms": [
+            {
+              "cycles": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "class_probability": "1/24",
+              "character": 2,
+              "fixed_colours_of_power": 4,
+              "contribution": "16/3"
+            },
+            {
+              "cycles": [
+                1,
+                1,
+                2
+              ],
+              "class_probability": "1/4",
+              "character": 0,
+              "fixed_colours_of_power": 2,
+              "contribution": "0"
+            },
+            {
+              "cycles": [
+                1,
+                3
+              ],
+              "class_probability": "1/3",
+              "character": -1,
+              "fixed_colours_of_power": 1,
+              "contribution": "-1/3"
+            },
+            {
+              "cycles": [
+                2,
+                2
+              ],
+              "class_probability": "1/8",
+              "character": 2,
+              "fixed_colours_of_power": 0,
+              "contribution": "0"
+            },
+            {
+              "cycles": [
+                4
+              ],
+              "class_probability": "1/4",
+              "character": 0,
+              "fixed_colours_of_power": 0,
+              "contribution": "0"
+            }
+          ]
+        },
+        {
+          "Q": 5,
+          "dimension": 5,
+          "dimension_normalized_coefficient": "6",
+          "full_central_trace_coefficient": "30",
+          "class_terms": [
+            {
+              "cycles": [
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "class_probability": "1/120",
+              "character": 5,
+              "fixed_colours_of_power": 5,
+              "contribution": "125/24"
+            },
+            {
+              "cycles": [
+                1,
+                1,
+                1,
+                2
+              ],
+              "class_probability": "1/12",
+              "character": 1,
+              "fixed_colours_of_power": 3,
+              "contribution": "9/4"
+            },
+            {
+              "cycles": [
+                1,
+                1,
+                3
+              ],
+              "class_probability": "1/6",
+              "character": -1,
+              "fixed_colours_of_power": 2,
+              "contribution": "-4/3"
+            },
+            {
+              "cycles": [
+                1,
+                2,
+                2
+              ],
+              "class_probability": "1/8",
+              "character": 1,
+              "fixed_colours_of_power": 1,
+              "contribution": "1/8"
+            },
+            {
+              "cycles": [
+                1,
+                4
+              ],
+              "class_probability": "1/4",
+              "character": -1,
+              "fixed_colours_of_power": 1,
+              "contribution": "-1/4"
+            },
+            {
+              "cycles": [
+                2,
+                3
+              ],
+              "class_probability": "1/6",
+              "character": 1,
+              "fixed_colours_of_power": 0,
+              "contribution": "0"
+            },
+            {
+              "cycles": [
+                5
+              ],
+              "class_probability": "1/5",
+              "character": 0,
+              "fixed_colours_of_power": 0,
+              "contribution": "0"
+            }
+          ]
+        }
+      ],
+      "finite_Q4_minus_stable_specialization": "-2",
+      "dimension_only_prediction_at_Q5": "25",
+      "actual_Q5_minus_dimension_only_prediction": "5",
+      "dimension_only_candidate": "rejected",
+      "formal_generic_Q1_coefficient": "-6"
+    },
+    {
+      "id": "one_triple_winding_cluster",
+      "winding": 3,
+      "essential_components": 1,
+      "geometry": "axis L7; occupied x=3*y+j mod L, j=0,1,2,3; primitive winding (3,1); seam along first period",
+      "generic_multiplicity": 0,
+      "generic_valid_for_integer_Q_at_least": 5,
+      "finite": [
+        {
+          "Q": 4,
+          "dimension": 2,
+          "dimension_normalized_coefficient": "-1",
+          "full_central_trace_coefficient": "-2",
+          "class_terms": [
+            {
+              "cycles": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "class_probability": "1/24",
+              "character": 2,
+              "fixed_colours_of_power": 4,
+              "contribution": "1/3"
+            },
+            {
+              "cycles": [
+                1,
+                1,
+                2
+              ],
+              "class_probability": "1/4",
+              "character": 0,
+              "fixed_colours_of_power": 2,
+              "contribution": "0"
+            },
+            {
+              "cycles": [
+                1,
+                3
+              ],
+              "class_probability": "1/3",
+              "character": -1,
+              "fixed_colours_of_power": 4,
+              "contribution": "-4/3"
+            },
+            {
+              "cycles": [
+                2,
+                2
+              ],
+              "class_probability": "1/8",
+              "character": 2,
+              "fixed_colours_of_power": 0,
+              "contribution": "0"
+            },
+            {
+              "cycles": [
+                4
+              ],
+              "class_probability": "1/4",
+              "character": 0,
+              "fixed_colours_of_power": 0,
+              "contribution": "0"
+            }
+          ]
+        },
+        {
+          "Q": 5,
+          "dimension": 5,
+          "dimension_normalized_coefficient": "0",
+          "full_central_trace_coefficient": "0",
+          "class_terms": [
+            {
+              "cycles": [
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "class_probability": "1/120",
+              "character": 5,
+              "fixed_colours_of_power": 5,
+              "contribution": "5/24"
+            },
+            {
+              "cycles": [
+                1,
+                1,
+                1,
+                2
+              ],
+              "class_probability": "1/12",
+              "character": 1,
+              "fixed_colours_of_power": 3,
+              "contribution": "1/4"
+            },
+            {
+              "cycles": [
+                1,
+                1,
+                3
+              ],
+              "class_probability": "1/6",
+              "character": -1,
+              "fixed_colours_of_power": 5,
+              "contribution": "-5/6"
+            },
+            {
+              "cycles": [
+                1,
+                2,
+                2
+              ],
+              "class_probability": "1/8",
+              "character": 1,
+              "fixed_colours_of_power": 1,
+              "contribution": "1/8"
+            },
+            {
+              "cycles": [
+                1,
+                4
+              ],
+              "class_probability": "1/4",
+              "character": -1,
+              "fixed_colours_of_power": 1,
+              "contribution": "-1/4"
+            },
+            {
+              "cycles": [
+                2,
+                3
+              ],
+              "class_probability": "1/6",
+              "character": 1,
+              "fixed_colours_of_power": 3,
+              "contribution": "1/2"
+            },
+            {
+              "cycles": [
+                5
+              ],
+              "class_probability": "1/5",
+              "character": 0,
+              "fixed_colours_of_power": 0,
+              "contribution": "0"
+            }
+          ]
+        }
+      ],
+      "finite_Q4_minus_stable_specialization": "-2",
+      "dimension_only_prediction_at_Q5": "-5",
+      "actual_Q5_minus_dimension_only_prediction": "5",
+      "dimension_only_candidate": "rejected",
+      "formal_generic_Q1_coefficient": "0"
+    }
+  ],
+  "decision": "dimension_only_continuation_rejected_for_the_physical_closure_family",
+  "interpretation": "finite_colour_isotypic_projection_and_stable_sector_specialization_do_not_commute_in_general",
+  "next_required_object": "a specified homology_and_multiplicity_resolved_generic_Q_landing_with_its_complete_Q1_jet_not_only_Q4_label_times_dimension",
+  "boundary": "exact finite physical connectivity examples; not new Monte Carlo, not an independent statistical vote, not a Q1 sector probability or proof that the N25 packet contains these two counterexample topologies",
+  "new_lattice_enumerations": 0,
+  "new_random_samples": 0,
+  "completed_N25_J22_rerun": false,
+  "elapsed_seconds": 0.009301917045377195,
+  "python": "3.11.15",
+  "machine": "arm64"
+}
