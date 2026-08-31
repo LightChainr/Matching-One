@@ -17,6 +17,7 @@
   "batches": 100,
   "samples_per_batch": 200000,
   "seeds": {"65": 2026083120370065, "85": 2026083120370085, "130": 2026083120370130, "170": 2026083120370170},
+  "N_seed_rule": "splitmix64(master_seed XOR splitmix64(N XOR 0x5033333746345631)); passed to unchanged counter_permutation backend",
   "replica_counter": "batch * samples_per_batch + local; batches 0..99, local 0..199999",
   "pairing": "same permutation across both orientations and ordinary/forced modes within each replica; distinct seed domains across N",
   "forced_face": "cyclic site labels {0,a,b,(a+b) mod N}; occupy all four, then activate remaining sites in induced permutation order",
