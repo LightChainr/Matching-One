@@ -1,0 +1,23 @@
+{
+  "schema": "matching-one/p398-width8-geometric-compression-protocol/v1",
+  "parent": "c9dc218f5522502cce8cca539b876ed5faa49b8a",
+  "status": "named_spans_fixed_before_new_projection_outputs",
+  "interpretation": "retrospective mechanistic compression of a known finite generator, not fresh validation",
+  "source": "same A,L and psi-minus/plus; no source or amplitude refit",
+  "projection": "stationary-L2 Galerkin, with all exact named-column relations retained",
+  "stages": [
+    {"id":"source_only", "seeds":["A"]},
+    {"id":"first_force", "seeds":["A","T2"]},
+    {"id":"pair_hierarchy", "seeds":["A","T2","T3","S11","B2"]},
+    {"id":"triplet_incidence", "seeds":["A","T2","T3","S11","B2","T3_r0","T3_r1","T3_r2"]}
+  ],
+  "partners": "each seed is accompanied by its exact Kreweras pullback; never treat dependent partners as free observations",
+  "triplet_incidence": "r counts 0,1,2 nearest neighbors in the same frontier block; T3=T3_r0+T3_r1+T3_r2",
+  "distances": [0.05,0.1,0.25,0.5,1.0,2.0,4.0],
+  "crossing_bracket": [0.05,1.0],
+  "outputs": ["normalized ray correlations","crossing","lowest source-visible mass","mass error","relative tail error at t2 and t4","capture of full lowest left/right modes"],
+  "missing_direction_diagnostic_only": ["T4","Q3","B3"],
+  "missing_direction_rule": "diagnose the next exact GT3=3(T4-T3)+Q3-B3 hierarchy; do not add these columns to a scored model after reveal",
+  "forbidden": ["arbitrary Krylov training span","lag optimization","free decay fit","width extension","new MC","server operation"],
+  "execution": "single-thread local"
+}
