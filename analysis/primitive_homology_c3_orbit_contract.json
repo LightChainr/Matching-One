@@ -1,0 +1,29 @@
+{
+  "basis": "(1, omega), omega=exp(2*pi*i/3)",
+  "character_gram": [[3, 0, 0], [0, 3, 0], [0, 0, 3]],
+  "norm": "a^2-a*b+b^2",
+  "norm_bound": 13,
+  "orbit_count": 6,
+  "orbits": [
+    [[0, 1], [1, 0], [1, 1]],
+    [[1, -3], [4, 1], [3, 4]],
+    [[1, -2], [3, 1], [2, 3]],
+    [[1, -1], [2, 1], [1, 2]],
+    [[1, 3], [2, -1], [3, 2]],
+    [[1, 4], [3, -1], [4, 3]]
+  ],
+  "parent_issue": "remain open",
+  "primitive_line_count": 18,
+  "rotation_cube_on_oriented_vectors": "-I",
+  "rotation_determinant": 1,
+  "rotation_matrix": [[1, -1], [1, 0]],
+  "rotation_order_on_unoriented_lines": 3,
+  "schema": "matching-one/primitive-homology-c3-orbits/v1",
+  "spin_characters": {
+    "H12": {"charge": 0, "projector_exponents": [0, 0, 0]},
+    "H4": {"charge": 2, "projector_exponents": [0, 1, 2]},
+    "H8": {"charge": 1, "projector_exponents": [0, 2, 1]}
+  },
+  "status": "valid_exact_primitive_line_character_certificate",
+  "uses_continuum_baseline_or_production_data": false
+}
