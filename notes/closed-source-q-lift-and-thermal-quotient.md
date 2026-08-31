@@ -215,6 +215,33 @@ regular overlap already excluded by the selection theorem. A source-
 activated Jordan logarithm can also shift a constant slope; slope constancy
 alone is therefore not a field identification.
 
+## 6. A proved fixed-coupling endpoint to this comparison
+
+The [uniform winding theorem](closed-source-fixed-coupling-peierls.md)
+now takes the previously missing limit order: fixed integer m>=256, then
+axis side L growing through multiples of4, L>=16. For every activity h,
+
+```text
+P_star(r=1) <= min(1, 4m^2 L^2 rho_m^L/[3(1-rho_m)]),
+rho_m=3(2m^(-15/16))^(1/4)<1.
+```
+
+At its own single-geometry moving root this gives rank0/rank2 probabilities
+tending to1/2 and an exponentially small thermal slope ratio
+`|E_h/M_h|<=2N P1/(1-P1)`. This excludes a nonzero limiting rank-one weight
+throughout that strong-coupling region of the axis family; no pure-state
+approximation or activity fixed to1 enters the proof. The sufficient bound
+m>=256 is coarse and does not locate a transition.
+
+Thus the local representation already yields a nonperturbative size
+statement, independently of the weak-Q Potts hypothesis. It does not yet
+prove suppression of the original **pooled oblique-pair U**: that requires
+an oblique winding bound and a subexponential lower bound on the average
+within-geometry rank variance at the pooled root. The companion proof
+isolates both quantities. Nor does it identify a full thermodynamic phase
+diagram or justify transporting the real `Q<=4` spectral formula into
+this strong-coupling region.
+
 ## Scientific card
 
 - **Mechanism changed:** the closed source now has a fully declared Q
