@@ -8,12 +8,35 @@ This map is the repository's scientific coordinate system. It is not a permissio
 secondary, plus both distinct P334 comparisons.**
 [Decision Experiments](DECISION-EXPERIMENTS.md) and the
 [final decision record](../notes/independent-decisions-final-20260831.md) own these
-states; the earlier handoff is pre-score history. Attention now goes to a named
-microscopic model's quantitative original-U response, not default new production.
+states; the earlier handoff is pre-score history. Attention now goes to the
+closed checkerboard source's one-hole mixed original-U derivative Xi. A common
+thermal-only interior extension predicts zero, so nonzero would exclude it;
+the forced plaquette response, endpoint closure and insertion formula are complete.
+No new production or source-feature expansion follows automatically.
 The old2.4M norm4 permutations and
 20-batch P334 archive remain discovery data; correct covariance and held-out
 reuse do not make them independent population confirmation. Other lines stay
 open as parallel exploration, without Issue locks or whole-line rejection.
+
+**Concrete microscopic-to-global candidate, local `b8d043fc493ab6d7f808d0c074571d2fdd8fb60f`:**
+[exact N25 enumeration](../results/decimation-plaquette-u/score/REPORT.md)
+gives bulk `V_F4=+.19441468646090693`; the rational enclosure excludes zero.
+The forced N50 endpoint correction is `+.5996568681566026`. Thus bare-C
+decimation failure is visible in original U, not only in component counts.
+State: finite occupied NN/vacant matching topology. Source: equilibrium
+cluster/plaquette/NN-edge family. Observer: the unchanged pooled-root,
+slope-normalized U. Geometry: Gaussian(5,0)/(4,3), different Smith classes;
+acquisition: exhaustive2^25 per geometry, not fresh statistical confirmation.
+
+The [closed-source derivation](../notes/decimation-closed-source-and-global-u.md)
+gives endpoint-invariant `S_hat=C+F4+T_NN−4K+2N`. Its exact coupling map
+takes bare C, modulo thermal K/constants, to the fixed ray C+F4+T_NN after
+two admissible reductions. No fitted extra coupling is introduced; endpoint
+closure is not interior closure or CFT identification. The finite source
+and P154 lag1/P334 interventions are distinct. The local result builds on
+the `branch_only` [20743651 global-U dictionary](https://github.com/LightChainr/Matching-One/blob/207436518db46dd13ef0ec91168cb1c99d52eaea/notes/p337-checkerboard-decimation-global-u.md)
+and [56838d5f homology proof](https://github.com/LightChainr/Matching-One/blob/56838d5f068f6f0ba7795926dc9343229bdd28ce/notes/square-checkerboard-endpoint-homology.md),
+not a `main_integrated` or same-Smith scaling claim.
 
 **P334 source-normal response survives an independent finite intervention:**
 execution `branch_only`, score `1164ba91035bb0ee37bcea52f700312475c257b5`,

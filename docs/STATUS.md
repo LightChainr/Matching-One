@@ -6,6 +6,39 @@
 
 `docs/NEXT-TARGETS.md` owns the single attention order, while `docs/ROADMAP.md` preserves its scientific rationale. Neither locks a task, serializes theory work or treats a lower priority as a scientific rejection.
 
+**New finite global-U result, local `b8d043fc493ab6d7f808d0c074571d2fdd8fb60f`, not `main_integrated`:**
+[the plaquette-source report](../results/decimation-plaquette-u/score/REPORT.md)
+enumerates all2^25 configurations of each N25 quotient(5,0)/(4,3), giving
+`V_F4=+.19441468646090693` in bulk units. Exact rational root/response bounds
+exclude zero; there is no Monte Carlo SE. The forced N50 endpoint correction
+is `2^(13/8)*V_F4=+.5996568681566026`, so bare-cluster endpoint transport
+fails for original U, including its moving root and slope normalization.
+These are theorem-transported parent endpoint derivatives, not N50 endpoint
+simulations. The child pair is Z5×Z5 versus Z25; the result does not establish
+a same-Smith family law, the N65/N85 production mechanism or a continuum field.
+
+The [closed-source note](../notes/decimation-closed-source-and-global-u.md),
+also `open_pr #267`, fixes the endpoint dictionary with parent
+area N=2M and right-hand quantities on the complemented child:
+
+```text
+C_parent=C+F4,       F4_parent=T_NN−4K+2M,
+T_NN,parent=4M−4K,   K_parent=2M−K.
+S_hat(X)=C_X+F4_X+T_NN,X−4K_X+2*area(X).
+S_hat(parent)=S_hat(child)=C+F4+T_NN−4K+2M.
+```
+
+The coupling family closes. Modulo the thermal K and constant directions,
+two admissible checkerboard reductions send bare C to the fixed source ray
+C+F4+T_NN; this does not mean the odd-area N25 pair was decimated twice.
+The measured F4 response and this exact endpoint closure are separate
+completed claims; interior transmission of S_hat has not been calculated.
+Source dictionaries: `branch_only` [207436518db46dd13ef0ec91168cb1c99d52eaea](https://github.com/LightChainr/Matching-One/blob/207436518db46dd13ef0ec91168cb1c99d52eaea/notes/p337-checkerboard-decimation-global-u.md)
+and [56838d5f068f6f0ba7795926dc9343229bdd28ce](https://github.com/LightChainr/Matching-One/blob/56838d5f068f6f0ba7795926dc9343229bdd28ce/notes/square-checkerboard-endpoint-homology.md).
+Their parity-preserving periods, lifted-edge and endpoint thermal conventions
+remain part of the claim. This finite candidate does not reopen the completed
+P154/P334 comparisons or imply a new production campaign.
+
 **Completed independent #154 decision, `open_pr #509` (Draft), `f4999e29612da16a3650f24d124fb59137f053d7`:**
 the [official report](https://github.com/LightChainr/Matching-One/blob/f4999e29612da16a3650f24d124fb59137f053d7/experiments/p154-prospective-transmission-20260831/REPORT.md)
 delivers the full frozen5M N85 plus160M N340 block,200 batches per size.
@@ -39,9 +72,11 @@ independent observations. Neither clock is identified, and neither supplies
 a rescue of B/C. The earlier high gain is unmarked-baseline sensitivity,
 not a measured source amplitude. [The final decision record](../notes/independent-decisions-final-20260831.md)
 now supersedes the [pre-score handoff](../notes/independent-decisions-handoff-20260831.md).
-The next scientific target is a named microscopic model's quantitative
-original-U response, using the completed map. No new production is assigned
-automatically; this overview changes no research Issue lifecycle.
+The named microscopic candidate is now the closed checkerboard source above:
+its forced plaquette contribution reaches original U and its endpoint algebra
+closes. The next fixed readout is the one-hole mixed derivative Xi: a common
+thermal-only interior extension predicts zero; nonzero would reject it,
+without automatic new production or any change to research Issue lifecycle.
 
 **Earlier finite-model elimination, `open_pr #267`, `3847a5cfb0a7fe4454a86cc1bfd8ce4ee2e813f4`:**
 [The two-clock comparison](../results/p154-fixed-clock-models/REPORT.md) uses

@@ -1,13 +1,32 @@
 # Roadmap: Default Attention, Not Permission
 
-**Current move, 2026-08-31:** apply the completed decisions and derive a named
-microscopic model's original-U response. #154's165M primary and its declared secondary,
+**Current move, 2026-08-31:** use the now-explicit closed checkerboard source
+to compute its fixed one-hole mixed original-U derivative Xi. The common
+thermal-only interior extension predicts zero; nonzero would exclude it.
+Its plaquette contribution and exact endpoint closure are completed results,
+not the next first-source task. #154's165M primary and its declared secondary,
 plus both distinct P334 comparisons, are delivered; none remains a production request. The
 [decision register](DECISION-EXPERIMENTS.md) and
 [final decision record](../notes/independent-decisions-final-20260831.md)
 supersede the pre-score handoff. No new production, feature expansion or third
 default P0 follows automatically; other lines remain parallel exploration,
 without task locks or Issue closure.
+
+The [new exact plaquette result](../results/decimation-plaquette-u/score/REPORT.md),
+local `b8d043fc493ab6d7f808d0c074571d2fdd8fb60f`, exhausts2^25 configurations for each N25
+Gaussian quotient(5,0)/(4,3). `V_F4=+.19441468646090693` is nonzero by
+rational bounds, and its forced N50 endpoint correction is
+`+.5996568681566026`. Bare-C transport fails for the actual global U, not
+just configuration closure. The [closed family](../notes/decimation-closed-source-and-global-u.md)
+has the exact endpoint-invariant `C+F4+T_NN−4K+2N`; modulo thermal K and
+constants, bare C reaches the C+F4+T_NN fixed ray in two admissible reductions.
+The source coefficients are forced by the finite dictionary, not fitted to
+the observed correction. Interior transmission is still open; endpoint
+closure and a mixed-Smith finite pair do not identify a continuum operator
+or prove same-Smith scaling. This route neither reopens lag1 nor defaults
+to new production, another source feature or another endpoint enumeration.
+The one-hole insertion formula is already in the note; computing its Xi,
+including root/slope motion, is the next result rather than rederiving the formula.
 
 Execution's `branch_only` [fresh1M source-normal result, `d0a9daf1132779205f119e9b4470f4eea9cb89c1`](https://github.com/LightChainr/Matching-One/blob/d0a9daf1132779205f119e9b4470f4eea9cb89c1/notes/p334-independent-normal-intervention-result.md),
 score `1164ba91035bb0ee37bcea52f700312475c257b5`, gives
@@ -22,8 +41,10 @@ license a fitted half-amplitude replacement. The two experiments have different
 sources and estimands and are not combined into one model decision.
 Their [exact projection crosswalk, `ccabada318b1eeb12ae28d53391b13ab44c116d2`](https://github.com/LightChainr/Matching-One/blob/ccabada318b1eeb12ae28d53391b13ab44c116d2/notes/p334-independent-interventions-crosswalk.md)
 separates first-score coefficients from the orthogonal label-mean remainder.
-The next substantive input is a model predicting which of these source
-components enters original U, not a fifth contact feature or combined score.
+Mapping these P334 components to original U remains a separate model question;
+the new equilibrium checkerboard source is not their intervention or an
+automatic explanation of either result. No fifth contact feature or combined
+score is attached to their completed decisions.
 
 The completed [#154 official report, `open_pr #509` (Draft), `f4999e29612da16a3650f24d124fb59137f053d7`](https://github.com/LightChainr/Matching-One/blob/f4999e29612da16a3650f24d124fb59137f053d7/experiments/p154-prospective-transmission-20260831/REPORT.md)
 contains5M new N85 plus160M new N340 permutations under freeze0820b8d2.

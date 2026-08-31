@@ -1,9 +1,21 @@
 # Three-team scientific handoff / 三队协作入口
 
-Updated: **2026-08-31**, delivered results `f4999e29` / `612df8ec`, branch heads `206b9c7b` / `4bb851cb`. This is a result-routing entry, not a second
+Updated: **2026-08-31**, new exact delivery `b8d043fc493ab6d7f808d0c074571d2fdd8fb60f`, execution theory head `89f4383d`; prior completed results `f4999e29` / `612df8ec` retained. This is a result-routing entry, not a second
 priority board or a live process monitor. [Next Targets](NEXT-TARGETS.md) remains
 the single attention order; [the machine-readable handoff](../analysis/team_coordination.yaml)
 records source pins and the state reported by each team.
+
+**New scientific handoff:** execution's [checkerboard endpoint theory `20743651`](https://github.com/LightChainr/Matching-One/blob/207436518db46dd13ef0ec91168cb1c99d52eaea/notes/p337-checkerboard-decimation-global-u.md)
+forces an F4 source correction. The overview has now [computed its original-U
+response](../results/decimation-plaquette-u/score/REPORT.md): +.19441468646 on
+the complete fixed N25 pair, producing a +.59965686816 missing N50 endpoint
+term. [The completed exact dictionary](../notes/decimation-closed-source-and-global-u.md)
+closes at `S_hat=C+F4+T_NN−4K+2N`, without a new fitted source coefficient.
+The result and fixed one-hole mixed-U derivative Xi are on [Next Targets](NEXT-TARGETS.md);
+the insertion formula is already derived, and a common thermal-only interior
+extension predicts Xi=0. Computing Xi is the next result, not another interface.
+This local exhaustive calculation used no production archive, cloud job, random
+sample or science test suite; no separate team permission message was needed.
 
 **The two previously prioritized comparison routes are delivered.** #154's
 [official result `f4999e29`](https://github.com/LightChainr/Matching-One/blob/f4999e29612da16a3650f24d124fb59137f053d7/experiments/p154-prospective-transmission-20260831/REPORT.md)
@@ -27,14 +39,14 @@ create a second priority queue.
 
 | Team | Delivered / active contribution | Next handoff |
 |---|---|---|
-| **数学研究执行** | P334 source-normal T=(3.08520±.39187)×10⁻⁸ excludes complete two-score conditional mean closure. P154 secondary score/report `612df8ec`, linked at `4bb851cb`, is also complete: all four M10/M11 line intervals include zero. | Both lines remain not excluded; neither identifies a clock or rescues a failed primary prediction. Preserve their covariance with the official response; no repeat scorer or production. |
-| **数学研究总览** | Draft [PR #267](https://github.com/LightChainr/Matching-One/pull/267) receives the completed P154 primary and secondary decisions alongside both P334 experiments. Old `3847a5cf` cos4 rejection and scalar-U budget retain their distinct discovery scope. | Remove the completed lag1 source from the current main-H4 allocation. Keep P334 global-observer transmission open without automatically launching a new experiment; coordination stays repository-first. |
+| **数学研究执行** | `20743651` / `56838d5f`, delivered at `89f4383d`: exact checkerboard original-U endpoint and ambient-homology/source dictionary. P334 independent and P154 secondary decisions remain complete. | Endpoint correspondence is now consumed by the overview's explicit F4 calculation; no duplicate first-source enumeration. Its interior extension remains a distinct physical question. |
+| **数学研究总览** | Draft [PR #267](https://github.com/LightChainr/Matching-One/pull/267): completed exhaustive F4 global-U response and exact closed source, `b8d043fc493ab6d7f808d0c074571d2fdd8fb60f`; all earlier independent decisions retained. | Canonical next question is the same closed source's first A-vacancy q/E transport. No new descriptor search, automatic production or post-result rescue; coordination stays repository-first. |
 | **数学研究俯瞰** | `f4999e29` delivers all 165M P154 permutations, nine shards, 200 batches/N, official six-coordinate decisions and full covariance. B/C fail; W is not excluded; both net intervals meet the frozen weak-transmission band. The separate P334 contact-residual result `14b2c98e` is complete. | The frozen experiment is finished. Retain all delivered data and decisions; no extra samples, replacement lag/source or fourth numerical template. |
 
 The execution result is **branch_only**, on
 `analysis/p334-paired-clock-loading-20260831`, with no corresponding PR in the
 historical 17:58 query; the current local delivery pin is
-`4bb851cb192fc10205a73998f8722ec941ce03c9`. Its [Issue #334 result card](https://github.com/LightChainr/Matching-One/issues/334#issuecomment-5476674429)
+`89f4383d376a53121a14aee725cd9da5d8167674`. Its earlier [Issue #334 result card](https://github.com/LightChainr/Matching-One/issues/334#issuecomment-5476674429)
 and [PR #267 pointer](https://github.com/LightChainr/Matching-One/pull/267#issuecomment-5476674567)
 are discussion links, not code integration. PR #509 retains its observed
 open/Draft lifecycle; the current delivery pin is

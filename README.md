@@ -10,6 +10,30 @@ The repository is organized to expose the next mechanism-changing observation, n
 
 ## Start here
 
+**Current result:** the forced plaquette source reaches the original global U.
+The exact N25 pair gives `V_F4=+.19441468646`; the missing N50 endpoint
+correction is `+.59965686816`. The completed source is
+`S_hat=C+F4+T_NN−4K+2N`, exactly invariant at the checkerboard endpoint.
+See [the calculation](results/decimation-plaquette-u/score/REPORT.md) and
+[the closed-source proof](notes/decimation-closed-source-and-global-u.md),
+Draft #267, result `b8d043fc`. This finite mixed-Smith pair is not a continuum
+field identification or replication of the N65/N85 production lineages.
+
+| Mechanism question | Delivered decision | Attention now |
+|---|---|---|
+| Can bare cluster source alone transport original U through decimation? | No on the fixed N25 pair: the forced F4 contribution is nonzero. The finite source family closes exactly. | Compute the fixed one-hole mixed derivative Xi. A common thermal-only interior extension predicts zero. |
+| Does #154's fixed lag1 source provide strong entry/completion/global transmission? | Independent165M block rejects B/C; both net intervals are inside the declared weak band. | This source leaves primary H4 attention; the completed secondary does not rescue it. |
+| Do #334's frozen closure and residual-amplitude forecasts transfer? | Two distinct new-population experiments eliminate their specified closure/amplitude models. | Preserve their different estimands; no pooled residual, fitted half-law or automatic extra descriptor. |
+
+[Next calculation and priority](docs/NEXT-TARGETS.md) ·
+[Claim boundaries](docs/STATUS.md) · [Scientific map](docs/RESEARCH-MAP.md) ·
+[Repository-only team handoff](docs/TEAM-COORDINATION.md).
+Exploration remains open; priority is not a task lock or permission gate.
+
+<details>
+<summary>Earlier discoveries and full repository navigation</summary>
+
+- **A named microscopic source now reaches original global U:** [the exact N25 plaquette result](results/decimation-plaquette-u/score/REPORT.md), local result `b8d043fc493ab6d7f808d0c074571d2fdd8fb60f`, gives `V_F4=+.19441468646090693` and a forced N50 endpoint correction `+.5996568681566026`. The [closed checkerboard source](notes/decimation-closed-source-and-global-u.md), `S_hat=C+F4+T_NN−4K+2N`, is exactly invariant under each admissible endpoint map; modulo thermal K/constants, two admissible reductions take bare C to the fixed ray C+F4+T_NN. This is a concrete finite mechanism with no fitted extra source coefficient. Next is its interior original-U transmission or a separating prediction, not another first plaquette calculation, added feature or default production. The two N25 quotients have different Smith classes; no continuum or same-Smith-family claim follows.
 - **#334's independent1M intervention is complete:** [the result, `d0a9daf1`](https://github.com/LightChainr/Matching-One/blob/d0a9daf1132779205f119e9b4470f4eea9cb89c1/notes/p334-independent-normal-intervention-result.md), with score `1164ba91`, gives T=(3.08520±.39187)e−8. Its3SE interval lies above the frozen δ=1e−8, eliminating complete two-score conditional-label mean closure; the old3.6565e−8 forecast survives. Separately, [#509's600k experiment, `14b2c98e`](https://github.com/LightChainr/Matching-One/blob/14b2c98ed3a252a2fe79ce5e124d9484b23a264f/experiments/p334-prospective-intervention-20260831/REPORT.md), rejects both frozen residual-projection bands. Different sources and estimands keep these as separate decisions, not pooled votes.
 - **#154's independent165M decision is complete:** [the official result, `f4999e29`, Draft #509](https://github.com/LightChainr/Matching-One/blob/f4999e29612da16a3650f24d124fb59137f053d7/experiments/p154-prospective-transmission-20260831/REPORT.md) excludes both entry-dominant B and completion-dominant C at N85/N340. All four simultaneous channel intervals lie within±.30, and both net intervals within±.50; W remains `not_excluded`, not an identified theory. This lag1 source no longer receives primary H4 attention: no additional samples, changed lag/source or rescue template follows this result. The [completed M10/M11 secondary, `612df8ec`, `branch_only`](https://github.com/LightChainr/Matching-One/blob/612df8ec1cbe3be3938ee2e1f6183a1aefc6510b/notes/p154-clock-line-secondary-result.md) leaves both lines `not_excluded` on the same fresh data and identifies neither clock. The [completed decisions and next microscopic-to-U target](notes/independent-decisions-final-20260831.md) are now recorded, with [Decision Experiments](docs/DECISION-EXPERIMENTS.md) retaining the fixed rules. The [earlier handoff](notes/independent-decisions-handoff-20260831.md) is pre-score history. No new production or third default P0 is implied.
 - **Parallel exploratory result:** [P398 stationary arrangement](results/p398-stationary-arrangement/REPORT.md), Draft #267 `58db48dd`, finds99.7344% static-score compression by primal/dual sizes, yet32/60 profile classes fail exact transition closure. A two-versus-four detach witness motivates incidence predictions; the small arrangement residual supplies10.17% of one integrated response. This finite-model line is not a third default top-priority experiment.
@@ -30,9 +54,24 @@ The repository is organized to expose the next mechanism-changing observation, n
 - [`analysis/research_ledger.yaml`](analysis/research_ledger.yaml) — machine-readable nodes, sectors, sources, experiments and dependency groups.
 - [`results/evidence-ledger/latest.md`](results/evidence-ledger/latest.md) — primary-only predictive evidence view.
 
+</details>
+
 ## The current scientific picture
 
 ### Completed production is not the same as identified mechanism
+
+**New finite mechanism, local result `b8d043fc493ab6d7f808d0c074571d2fdd8fb60f`:** all2^25
+configurations of each Gaussian quotient(5,0)/(4,3) give a nonzero bulk
+plaquette-source response in the unchanged root/slope-normalized U:
+`V_F4=+.19441468646090693`. Exact rational bounds exclude zero. Checkerboard
+decimation forces `C_parent=C_child+F4`; the measured term therefore adds
+`+.5996568681566026` to the N50 endpoint source derivative. Bare-C endpoint
+transport fails at the global observer, not only at configuration level.
+The [closed-source derivation](notes/decimation-closed-source-and-global-u.md)
+supplies the exact endpoint-invariant `C+F4+T_NN−4K+2N`, distinct from the
+completed lag1 and P334 interventions. Its interior transmission remains
+uncomputed. The [enumeration report](results/decimation-plaquette-u/score/REPORT.md)
+is a finite mixed-Smith-pair result, not an asymptotic or CFT identification.
 
 **Newest independent decision, `open_pr #509`, `f4999e29`:** the fixed lag1
 conditional policy has net original-U responses+.043470±.043631 at N85 and
@@ -102,7 +141,7 @@ The [P418 per-sample archive reanalysis](results/p418-normalized-archive/REPORT.
 
 The 2026-08-31 review read **all 464 Issue/PR bodies, 1,354 discussion comments and seven reviews**. It recovered results that old opening bodies and earlier overview updates had left as “next”: real E_top and #370 production analysis, P218 coalescence, P155 local thermal-null, P40 motif covariance, P255 ordered-filtration proxy, P334 trigger-graph structure, F5 source separation, N112 E_top C3 and W5 periodic gluing. [The context crosswalk](docs/REPOSITORY-CONTEXT.md) distinguishes completed positive, completed inconclusive, and genuinely unrun work. It is a dated recovery, not a recurring audit prerequisite.
 
-**Highest attention moves to a named microscopic model's quantitative original-U response; the completed decisions remove this lag1 source from primary H4 attention. P398 remains parallel exploration.** Canonical E_top scores are done, but `E_top=P0+P2` is not an identified energy operator. [Decision Experiments](docs/DECISION-EXPERIMENTS.md) preserves the exact completed comparisons, and [Next Targets](docs/NEXT-TARGETS.md) owns the queue; old “next” paragraphs do not request a fresh campaign, feature search or repeated test suite.
+**Highest attention is the closed checkerboard source's interior original-U transmission or a genuinely separating finite prediction. Its forced plaquette term and endpoint closure are already results.** The completed decisions keep lag1 out of primary H4 attention; P334's distinct estimands and P398's parallel exploration remain separate. Canonical E_top is not an identified energy operator. [Decision Experiments](docs/DECISION-EXPERIMENTS.md) preserves the fixed decisions, and [Next Targets](docs/NEXT-TARGETS.md) owns the queue; no new production or source-feature search follows automatically.
 
 Several positive results now sharpen this choice. P337's F5 even rows separate W_line/JS response vectors at N325/N425 (`chi2/df=149.93/4,246.93/4`), although [P439's matching loading](results/p439-direct-plateau-transport/REPORT.md) remains unresolved. P267's square-bond N112 E_top C3 response is measured and not collinear with the primitive-line readout; it is not a square-site field identification. P437 measures fixed-support high-order topology at 14.97 SE; the earlier noisy estimator is not a general impossibility result. These remain explicitly unmerged source results.
 

@@ -2,12 +2,13 @@ schema: matching-one.prospective-mechanism-decisions.v1
 updated: 2026-08-31
 entry: docs/DECISION-EXPERIMENTS.md
 scientific_handoff: notes/independent-decisions-final-20260831.md
+latest_exact_handoff: notes/decimation-closed-source-and-global-u.md
 purpose: consume_frozen_decisions_not_reopen_descriptor_search
 policy:
   primary_lines: [P154_TEMPORAL_TRANSMISSION, P334_INDEPENDENT_INTERVENTIONS]
   pending_primary_scores: []
   completed_experiments: [P154_TEMPORAL_TRANSMISSION, P334_SOURCE_NORMAL_INTERVENTION, P334_CONTACT_RESIDUAL_FORECAST]
-  next_primary: named_microscopic_model_predicting_original_U_not_post_reveal_refit_or_automatic_production
+  next_primary: compute_fixed_one_hole_mixed_original_U_Xi_common_thermal_only_extension_predicts_zero_no_automatic_production
   issue_locks: false
   automatic_issue_closure_or_PR_merge: false
   parallel_exploration: true
@@ -16,6 +17,20 @@ policy:
   failure_response: retire_specific_failed_prediction_for_this_comparison_no_posthoc_rescue_model
   uncertainty_response: record_unresolved_at_fixed_budget_not_automatic_extension
   routine_communication: repository_only
+completed_exact_comparison:
+  id: DECIMATION_FORCED_PLAQUETTE_GLOBAL_U
+  result: results/decimation-plaquette-u/score/latest.json
+  report: results/decimation-plaquette-u/score/REPORT.md
+  proof: notes/decimation-closed-source-and-global-u.md
+  source_dictionary: analysis/decimation_source_dictionary.json
+  status: F4_thermal_alias_and_bare_cluster_endpoint_U_transport_rejected_on_fixed_N25_pair
+  V_F4: 0.19441468646090693
+  missing_parent_endpoint_correction: 0.5996568681566026
+  configurations: 67108864
+  new_random_samples: 0
+  exact_source_completion: C_plus_F4_plus_T_NN_minus4K_plus2N_is_endpoint_invariant
+  next_named_discriminator: compute_Xi_partial_t_partial_epsilon_U_from_completed_normalized_insertion_nonzero_rejects_common_thermal_only_interior_extension
+  boundary: finite_degree4_square_site_endpoint_different_Smith_classes_no_continuum_or_interior_RG_claim_no_independent_N50_run
 experiments:
   - id: P154_TEMPORAL_TRANSMISSION
     issue_refs: [154, 275]

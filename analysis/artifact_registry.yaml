@@ -1,12 +1,21 @@
-version: 39
+version: 40
 updated: 2026-08-31
 latest_scientific_handoff:
   entry: docs/TEAM-COORDINATION.md
-  local_result_commit: 3847a5cfb0a7fe4454a86cc1bfd8ce4ee2e813f4
-  local_result_report: results/p154-fixed-clock-models/REPORT.md
+  local_result_commit: b8d043fc493ab6d7f808d0c074571d2fdd8fb60f
+  local_result_report: results/decimation-plaquette-u/score/REPORT.md
+  local_theory_note: notes/decimation-closed-source-and-global-u.md
+  local_source_dictionary: analysis/decimation_source_dictionary.json
   local_budget_report: results/p154-clock-transmission-budget/REPORT.md
-  preceding_local_result_commit: 58db48dd7b6257930ee5e704a37e438c0cf2faf1
-  preceding_local_result_report: results/p398-stationary-arrangement/REPORT.md
+  local_budget_scope: historical_fixed_clock_candidate_not_current_decimation_budget
+  preceding_local_result_commit: 3847a5cfb0a7fe4454a86cc1bfd8ce4ee2e813f4
+  preceding_local_result_report: results/p154-fixed-clock-models/REPORT.md
+  earlier_local_result_commit: 58db48dd7b6257930ee5e704a37e438c0cf2faf1
+  earlier_local_result_report: results/p398-stationary-arrangement/REPORT.md
+  execution_decimation_commit: 207436518db46dd13ef0ec91168cb1c99d52eaea
+  execution_decimation_report: notes/p337-checkerboard-decimation-global-u.md
+  execution_homology_commit: 56838d5f068f6f0ba7795926dc9343229bdd28ce
+  execution_homology_report: notes/square-checkerboard-endpoint-homology.md
   execution_synthesis_commit: d0a9daf1132779205f119e9b4470f4eea9cb89c1
   execution_synthesis_report: notes/p334-independent-normal-intervention-result.md
   execution_covariance_commit: ce20158a5928e55b67324cba7ed3a18a5c163b39
@@ -22,14 +31,16 @@ latest_scientific_handoff:
   current_secondary_theory_commit: 83f3eba88d7f1290704f82610c28669dc5e12f3c
   current_secondary_result_commit: 612df8ec1cbe3be3938ee2e1f6183a1aefc6510b
   current_secondary_result_report: notes/p154-clock-line-secondary-result.md
-  current_synthesis_commit: 95d5d662afcef2d9d4b5167f82612a70cb4e83c7
-  current_synthesis_report: notes/independent-decisions-final-20260831.md
+  current_synthesis_commit: b8d043fc493ab6d7f808d0c074571d2fdd8fb60f
+  current_synthesis_report: notes/decimation-closed-source-and-global-u.md
+  preceding_synthesis_commit: 95d5d662afcef2d9d4b5167f82612a70cb4e83c7
+  preceding_synthesis_report: notes/independent-decisions-final-20260831.md
   latest_external_reports: [experiments/p154-prospective-transmission-20260831/REPORT.md, experiments/p334-prospective-intervention-20260831/REPORT.md]
   external_local_rank_result_commit: 7beb99ce86df903ec41ee2ec2a1de59184cf5b6b
   decision_sheet: docs/DECISION-EXPERIMENTS.md
   decision_contract: analysis/prospective_mechanism_decisions.yaml
   execution_freeze_report: notes/p334-independent-intervention-freeze.md
-  boundary: three_independent_decisions_and_correlated_secondary_completed_failed_parameterizations_exit_primary_attention_no_rescoring_or_main_integration
+  boundary: finite_exact_global_U_source_result_and_endpoint_closed_family_not_interior_RG_the_three_previous_independent_decisions_remain_unchanged_no_main_integration
 purpose: >
   Lightweight navigation/provenance index. Registry conflicts never block
   science; claim strength lives in STATUS and priority lives in NEXT-TARGETS.
@@ -95,10 +106,11 @@ integration_policy:
   hard_constraints_source: GOVERNANCE.md
 
 canonical_documents:
+  - {path: notes/decimation-closed-source-and-global-u.md, status: current_scientific_handoff, role: completed_F4_original_U_transmission_and_finite_endpoint_closed_source_with_first_vacancy_next_discriminator}
   - {path: README.md, status: canonical_current, role: external_overview}
   - {path: docs/DECISION-EXPERIMENTS.md, status: canonical_current, role: completed_independent_decisions_and_failed_model_priority_exit}
   - {path: analysis/prospective_mechanism_decisions.yaml, status: three_independent_decisions_and_secondary_completed, role: machine_readable_frozen_definitions_decisions_and_no_automatic_new_production}
-  - {path: notes/independent-decisions-final-20260831.md, status: current_scientific_handoff, role: three_independent_decisions_and_distinct_source_projection_synthesis}
+  - {path: notes/independent-decisions-final-20260831.md, status: completed_decision_handoff, role: three_independent_decisions_and_distinct_source_projection_synthesis}
   - {path: docs/TEAM-COORDINATION.md, status: canonical_current, role: three_team_result_routing_and_nonexclusive_compute_handoff}
   - {path: analysis/team_coordination.yaml, status: canonical_current, role: timestamped_sources_dependencies_and_reported_execution_states_not_live_monitor}
   - {path: docs/REPOSITORY-CONTEXT.md, status: canonical_current, role: full_discussion_recovery_and_completed_vs_remaining_crosswalk}
@@ -302,6 +314,21 @@ channel_semantics:
   required_fields: [topology_channel, combination, probability_coordinate, orientation_order, normalization, quantity]
 
 registered_reanalyses:
+  - id: PR267_DECIMATION_FORCED_PLAQUETTE_GLOBAL_U
+    status: completed_exhaustive_original_U_source_response_and_exact_closed_source_dictionary
+    integration_status: open_pr
+    pr: 267
+    branch: research/navigation-priority-refresh-20260829
+    commit: b8d043fc493ab6d7f808d0c074571d2fdd8fb60f
+    definition_commit: 2bfe9b904bec0a21b244942ffb7c553813e4e740
+    numerical_reader_commit: c76b038b2f99b266eb9cfc255219440e04c64c8f
+    scripts: [scripts/exact_decimation_plaquette_u.cpp, scripts/analyze_decimation_plaquette_u.py]
+    contracts: [analysis/decimation_plaquette_u_contract.json]
+    outputs: [results/decimation-plaquette-u/axis.csv, results/decimation-plaquette-u/tilted.csv, results/decimation-plaquette-u/enumeration.json, results/decimation-plaquette-u/score/REPORT.md, results/decimation-plaquette-u/score/latest.json, results/decimation-plaquette-u/score/run.json, notes/decimation-closed-source-and-global-u.md, analysis/decimation_source_dictionary.json]
+    dependency_groups: [decimation-N25-exact-configuration-pair]
+    result_summary: VF4_0p1944146864609_N50_endpoint_missing0p5996568681566_Shat_C_F_T_minus4K_plus2N_exact_invariant
+    boundary: all2pow25_each_fixed_geometry_different_Smith_classes_not_same_family_asymptotic_H4_or_interior_RG_no_new_random_samples
+    next_output: compute_fixed_one_hole_mixed_original_U_Xi_nonzero_excludes_common_thermal_only_extension_no_repeat_F4_or_descriptor_scan
   - id: PR509_FRESH_P154_TRANSMISSION_RESULT
     status: open_pr
     pr: 509
