@@ -75,13 +75,29 @@ critical collapse with corrections.
 
 The useful next question is no longer whether more N100 precision makes
 the already-visible defect significant. It is which parts of the complete
-birth-clock profile carry the changing width, and whether canonical
-binomial smoothing or the underlying rank clock creates it. The retained
-K1/K2 histograms permit that decomposition without another simulation.
+birth-clock profile carry the changing width.
+
+The direct decomposition is now available in companion commit
+[`fb1a944e`](https://github.com/LightChainr/Matching-One/commit/fb1a944e1ef34e9b9dfcf32c59af25f44ce43d9a).
+Before canonical binomial smoothing, the rank-step centered z variance is
+`1.432585 +/- .016441` at N100 and `2.094751 +/- .074748` at N400.
+**96.895% +/- .507 percentage points** of the canonical variance increase
+remains in this rank-clock profile. Canonicalization is too small to explain
+the broadening: its exact action combines rank-coordinate contraction and
+a conditional-Beta contribution, not just additive binomial noise.
+
+A new, explicitly post-reveal working fingerprint is width proportional
+to `N^(-1/4)`: the two-size effective width exponent is
+`.237960 +/- .013519`. This is not a new critical exponent or a full
+profile collapse. Anchoring to N400, the quarter-power candidate predicts
+N900 rank-step centered z variance `2.565535 +/- .091548`; fixed z-width
+predicts `2.094751 +/- .074748`. These are perfectly correlated shared-anchor
+prediction errors, without target sampling error. N900 has not been acquired.
 
 The ordinary scalar class `U=a D composed with phi`, with **no Jacobian**,
-is a different problem. Its ordered-extrema follow-up is being reported
-separately; the density result cannot settle it.
+is a different problem. Its ordered-extrema follow-up at
+[`162fe94e`](https://github.com/LightChainr/Matching-One/commit/162fe94e)
+is underpowered at N400; the density result cannot settle it.
 
 ## Lifecycle and reproduction
 
