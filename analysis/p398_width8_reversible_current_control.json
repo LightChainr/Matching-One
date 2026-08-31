@@ -1,0 +1,16 @@
+{
+  "schema":"matching-one/p398-width8-reversible-current-control/v1",
+  "parent":"30eef34ae729e00fde0353464aae2ac1be31ccda",
+  "status":"single_counterfactual_defined_before_outputs",
+  "generator_convention":"backward row G=-mass, G 1=0; G^T pi=0",
+  "counterfactual":"G_rev=(G+diag(pi)^(-1) G^T diag(pi))/2",
+  "unchanged":["stationary pi","source functions and variance","real Dirichlet initial slope","total exit rate at each state"],
+  "sources":"fixed psi-minus/plus=(A +/- exp(-i*pi/4)L)/sqrt(2)",
+  "distances":[0.05,0.1,0.25,0.5,1.0,2.0,4.0],
+  "crossing_bracket":[0.05,1.0],
+  "outputs":["normalized correlations","crossing","lowest source-visible masses","initial curvature and circulation norm"],
+  "visibility_relative_numerical_tolerance":1e-10,
+  "interpretation":"deterministic finite-process intervention; reversible generator need not be a local square-bond transfer word",
+  "forbidden":["lambda mixture scan","new MC","new width","source or lag optimization","server use"],
+  "execution":"single-thread local"
+}
