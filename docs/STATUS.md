@@ -8,8 +8,8 @@
 
 | 主实验 | 要消除的不确定性 | 当前状态 | 失败如何改变研究 |
 |---|---|---|---|
-| #154 temporal transmission | 早期隐藏结构的影响是否进入原global U，由哪个birth通道承担？ | 执行队lag=1事件核4daae57e已作为训练/预算输入；冻结两个端点的净U与readout出生通道限制，未冻结、未生成新块 | 采样前限定效应范围；拒绝后停止相应source/channel作为主要解释的优先投入，不能只换lag继续 |
-| #334 independent intervention | 既有contact机制能否预测新的coarse-state保持干预，20%残余是否有可迁移意义？ | [合同与代码已定稿](../experiments/p334-prospective-intervention-20260831/CONTRACT.md)：每N300k全新prefix，主残余比值范围±0.25或0.75–1.25；本次提交冻结，之后运行 | 预测失败即降级所声明的残余loading消失/传递限制；不在同一验证块上增添第五个descriptor |
+| #154 temporal transmission | 早期隐藏结构的影响是否进入原global U，由哪个birth通道承担？ | [合同已定稿](../experiments/p154-prospective-transmission-20260831/CONTRACT.json)：lag=1，N85=5M、N340=160M新路径；六坐标共同区间，净U等效带±0.50；本次提交冻结后运行 | 采样前限定效应范围；拒绝后停止相应source/channel作为主要解释的优先投入，不能只换lag继续 |
+| #334 independent intervention | 既有contact机制能否预测新的coarse-state保持干预，20%残余是否有可迁移意义？ | [合同与代码已定稿](../experiments/p334-prospective-intervention-20260831/CONTRACT.md)：每N300k全新prefix，主残余比值范围±0.25或0.75–1.25；已冻结于4b3c21b7，19:38:29开始两机固定生产，完整结束后一次评分 | 预测失败即降级所声明的残余loading消失/传递限制；不在同一验证块上增添第五个descriptor |
 
 执行队的[一次激活事件核4daae57e](https://github.com/LightChainr/Matching-One/commit/4daae57eef5c945aa050a95cd3d5d5d77582161b)也已完成；当前前瞻#154使用这个固定lag=1接口，不再重复sqrtN-lag或做lag扫描。规范化U的entry/completion读出分解共享完整源的根/分母导数，不能改称源的因果事件归因。
 
@@ -29,7 +29,7 @@
 
 P40实际引擎在随机键中包含N：N65/N85是不同N-domain，通常PRNG独立假设下可作nominal联合统计；同N两方向共享随机数。早期仅凭seed标签判断跨N共流的说法已经更正。
 
-P154的源全链、两阶段及百万端点已经完成。条件line响应进一步拒绝具名E-plus-clock模型，固定K/rank1空间关联也强；这两项在[Draft267固定提交](https://github.com/LightChainr/Matching-One/blob/764595ea5c838c110e416382a3a90e2ecf7297bb/results/norm4-source-line-fixed-k/REPORT.md)。本轮[角权桥](../experiments/p154-spatial-localization-20260831/REPORT.md)用同100k/1M源子集完成六N U±/v±及全部共同协方差。U−中心值均负，原总source链仍未分辨；固定K/rank1内中心化的空间源对原U严格为零，两个角权分配相反。这个精确抵消约束说明，仅加强同层O4关联不能识别原全局H4机制，下一步要触及rank人口或进入退出。源子集误差不替代原高精度普通生产。
+P154的源全链、两阶段及百万端点已经完成。条件line响应进一步拒绝具名E-plus-clock模型，固定K/rank1空间关联也强；这两项在[Draft267固定提交](https://github.com/LightChainr/Matching-One/blob/764595ea5c838c110e416382a3a90e2ecf7297bb/results/norm4-source-line-fixed-k/REPORT.md)。本轮[角权桥](../experiments/p154-spatial-localization-20260831/REPORT.md)用同100k/1M源子集完成六N U±/v±及全部共同协方差。U−中心值均负，原总source链仍未分辨；固定K/rank1内中心化的空间源对原U严格为零，两个角权分配相反。这个精确抵消约束说明，仅加强同层O4关联不能识别原全局H4机制；后续已转入下述rank人口/进入退出及独立传递实验。源子集误差不替代原高精度普通生产。
 
 **新的时序机制读数已经完成。** [单lag路径源](../experiments/p154-temporal-source-20260831/REPORT.md)在原2.4M排列上补出L=max(0,K−ceil√N)的早期簇数与rank。按早期rank中心化后，固定p的一阶直接响应保持早rank分布，但后期进入/退出均明确为负；早rank1不影响首次进入，只影响退出。沿共同matching根，N260的早rank0/1人口贡献为−0.06240±0.00048与+0.04733±0.00027，N340同样部分抵消。这支持rank以外的早期结构改变后期拓扑，但新的原U导数在N260/N340仍为0.843±4.882、12.249±9.922，尚未定位H4来源。这是K依赖的正路径测度源，中心化采用经验条件均值；不是旧同层源的分解，也不是逐路径hazard或有限强度结论。原三组100次共同删批与670维协方差完整保留。
 

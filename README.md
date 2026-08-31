@@ -30,7 +30,7 @@ README负责入口，STATUS负责成果，NEXT-TARGETS负责下一步分析。�
 - **N900完成**：32M共享counter、800批次，两个冻结宽度预测均存活；不要再按旧导航等待首次结果。[报告](https://github.com/LightChainr/Matching-One/blob/5f30397c5ba277fb0799fb2f7491c823de07a13d/results/etop-n900-rank-width/REPORT.md)
 - **P40百万样本偶响应完成**：缺失混合矩已补齐，固定matching均值的q源补偿下，四几何偶响应均明确为正；共同raw源的H4方向差仍未分辨。[报告](https://github.com/LightChainr/Matching-One/blob/56a6267d6a6826a165f93ed3a64a670ca7088180/results/p40-even-given-odd/REPORT.md)
 - **P418共同谱已纠正**：统一每样本单位后四个共同谱相容，旧巨大惩罚不再支持radius flow。[修正](https://github.com/LightChainr/Matching-One/blob/e2b57aa7c5ec5c7db8cbb4f03872435f20966407/results/p418-normalized-archive/REPORT.md)
-- **P154角权桥已完成**：全链、百万端点、条件line/fixed-K之后，六N原U及源导数的软角分配也已交付。固定K/rank1内中心化源对原U严格为零；下一步必须解释rank人口/进入退出，不能继续把更强O4检测当成全局机制。[报告](experiments/p154-spatial-localization-20260831/REPORT.md)
+- **P154角权桥已完成**：全链、百万端点、条件line/fixed-K之后，六N原U及源导数的软角分配也已交付。固定K/rank1内中心化源对原U严格为零；该约束已用于本次独立传递检验；不能继续把更强O4检测当成全局机制。[报告](experiments/p154-spatial-localization-20260831/REPORT.md)
 - **P334有限空间源已完成**：九层、Gamma、接触及共同源全曲线之后，t=±1的既定q_t仍改变未来响应，同时保持即时Euler/rank联合分布。新完整census与定向续接进一步支持同prefix局部A二维成分；结果见[新交付](notes/analysis-delivery-20260831.md)。[有限源报告](experiments/p334-finite-source-20260831/REPORT.md)
 - **P398精确响应完成**：继固定η干预后，η=0一阶反号时刻和零频积分已计算。平稳重加权与动态贡献竞争，16维模型积分误差约0.5%，最低两极不足；本有限模型保留P2。[实验报告](experiments/p398-linear-response-20260831/README.md)
 
