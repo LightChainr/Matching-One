@@ -1,0 +1,55 @@
+{
+  "schema": "matching-one.closed-source-weak-colour-predictions.v1",
+  "source_commit": "85fd492312b597b3fa102ea913e4bcc7aeae2acf",
+  "old_input": "notes/q-velocity-spin4-spectroscopy.md; velocities imported, oracle not rerun",
+  "new_chain_rule": "Q_colour=exp(2t); area derivative exponent -x/2; target=-dx/dQ at Q=1",
+  "statistic": "[V_(cN)/U_(cN)-V_N/U_N]/log(c), t=0, c is area ratio",
+  "conditional_scope": "same critical Potts-Q continuation, nonzero single-field thermal-slope overlap, controlled corrections and projector derivative retained",
+  "models": {
+    "thermal_Q4_epsilon": {
+      "dimension_at_Q1": "21/4",
+      "U_N_exponent_at_Q1": "0",
+      "target_symbolic": "9*sqrt(3)/(16*pi)",
+      "target_decimal": "0.310122503674758027850121155301045310786029895206235367199643",
+      "area_dilations": {
+        "2": {
+          "delta_R_symbolic": "9*sqrt(3)*log(2)/(16*pi)",
+          "delta_R_decimal": "0.214960539050349805464082030980168754754406441688607548491729",
+          "baseline_U_ratio_limit": "1.0"
+        },
+        "4": {
+          "delta_R_symbolic": "9*sqrt(3)*log(4)/(16*pi)",
+          "delta_R_decimal": "0.429921078100699610928164061960337509508812883377215096983458",
+          "baseline_U_ratio_limit": "1.0"
+        }
+      }
+    },
+    "four_leg_V22": {
+      "dimension_at_Q1": "17/4",
+      "U_N_exponent_at_Q1": "1/2",
+      "target_symbolic": "5*sqrt(3)/(16*pi)",
+      "target_decimal": "0.172290279819310015472289530722802950436683275114575203999802",
+      "area_dilations": {
+        "2": {
+          "delta_R_symbolic": "5*sqrt(3)*log(2)/(16*pi)",
+          "delta_R_decimal": "0.119422521694638780813378906100093752641336912049226415828738",
+          "baseline_U_ratio_limit": "1.41421356237309504880168872420969807856967187537694807317668"
+        },
+        "4": {
+          "delta_R_symbolic": "5*sqrt(3)*log(4)/(16*pi)",
+          "delta_R_decimal": "0.238845043389277561626757812200187505282673824098452831657477",
+          "baseline_U_ratio_limit": "2.0"
+        }
+      }
+    }
+  },
+  "target_gap_symbolic": "sqrt(3)/(4*pi)",
+  "target_gap_decimal": "0.137832223855448012377831624578242360349346620091660163199842",
+  "target_ratio": "9/5",
+  "Q4_branch_boundary_t": "log(2)",
+  "new_samples": 0,
+  "new_finite_coupling_scores": 0,
+  "velocity_oracle_calls": 0,
+  "python": "/Users/lc/python-envs/research-py311/bin/python",
+  "script_sha256": "fc9c5759d36055b72347fcad9525c13734cbee285cb8d3482bf96f8655aaf78a"
+}
