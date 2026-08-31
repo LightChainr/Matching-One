@@ -1,125 +1,48 @@
 # Matching One
 
-Matching One is a computational research project on square-lattice site percolation, its matching-lattice identity, and the finite-size structure behind the threshold.
+研究正方晶格点渗流：有限系统为何出现稳定的四重取向修正，这种修正由什么微观结构产生，以及它怎样影响阈值逼近。
 
-The exact structural anchor is
+精确起点是 `p_c(square site) + p_c(NN+NNN site) = 1`。现有研究已经建立同调解释、独立H4数值证据和具名几何传播机制；正方点渗流阈值闭式与连续场身份仍开放。
 
-\[
-p_c^{\mathrm{site}}(\mathbb Z^2)+p_c^{\mathrm{site}}(\mathrm{NN+NNN})=1.
-\]
+## 直接开始
 
-## Current empirical picture
+| 想知道什么 | 入口 |
+|---|---|
+| 已经做成什么，哪些解释已被后续结果改变 | [当前成果](docs/STATUS.md) |
+| 下一项分析具体算什么、用哪份现有数据 | [三个分析问题](docs/NEXT-TARGETS.md) |
 
-The strongest numerical structure is a matching-odd orientation signal on primitive Gaussian tori. Independent same-`N` confirmation and prospective Gaussian lineages are compatible with
+README负责入口，STATUS负责成果，NEXT-TARGETS负责下一步分析。直接进入对应问题即可。
 
-```text
-DeltaM ~ DeltaCos4 * N^(-13/8).
-```
+## 已有成果的主线
 
-The N=185/265 prospective new-geometry block gives
+**同调结构。** 有限matching量为 `M=P₂−P₀=E[r_black]−1`；两次阈值rank分别是两个本质同调方向的出生。一般有限商的有理同调与整数饱和证明稿已经交付，完整出生时间与空间响应已有可计算对象。[证明与推论](https://github.com/LightChainr/Matching-One/issues/269)
 
-```text
-x=21/4 H4-like: chi2 = 3.046 / 2
-zero:            chi2 = 29.409 / 2
-x=17/4:          chi2 = 30.246 / 2
-```
+**独立取向证据。** 同N取向对照、独立随机流和Gaussian lineages支持所测范围内的 `DeltaM ~ DeltaCos4 * N^(-13/8)`。norm-5及prism区分了所测试的H4/H8/H12候选。全曲线与norm-4结果同时要求超出一个标量振幅的结构。[证据汇总](docs/STATUS.md#取向与物理响应)
 
-The completed norm-5 N=325/425 prospective discriminator then resolves the old odd-harmonic alias:
+**真实机制对象。** 已求解147个选定真实prefix的完整birth clocks；空间影响可区分完整均值时钟看不到的几何。正权width8传播已有簇大小、接触和T4的明确路径解释。[过程与传播](docs/STATUS.md#过程与传播)
 
-```text
-H4:  chi2 =  0.4163 / 2
-H12: chi2 = 35.1931 / 2
-H8:  chi2 = 16.0120 / 2
-zero:chi2 =  1.7764 / 2
-```
+## 当前已完成，直接使用
 
-So the frozen H4 transfer strongly outperforms the tested H12/H8 aliases. The child block alone does **not** reject zero effect, so this is a transfer/harmonic discrimination result rather than a new standalone nonzero-effect detection.
+- **N900完成**：32M共享counter、800批次，两个冻结宽度预测均存活；不要再按旧导航等待首次结果。[报告](https://github.com/LightChainr/Matching-One/blob/5f30397c5ba277fb0799fb2f7491c823de07a13d/results/etop-n900-rank-width/REPORT.md)
+- **P40百万样本偶响应完成**：缺失混合矩已补齐，固定matching均值的q源补偿下，四几何偶响应均明确为正；共同raw源的H4方向差仍未分辨。[报告](https://github.com/LightChainr/Matching-One/blob/56a6267d6a6826a165f93ed3a64a670ca7088180/results/p40-even-given-odd/REPORT.md)
+- **P418共同谱已纠正**：统一每样本单位后四个共同谱相容，旧巨大惩罚不再支持radius flow。[修正](https://github.com/LightChainr/Matching-One/blob/e2b57aa7c5ec5c7db8cbb4f03872435f20966407/results/p418-normalized-archive/REPORT.md)
+- **P334总体配对分析完成**：40k配对counter；对checkpoint rank1分层贡献，canonical读数的可移除后缀噪声约50%，integrated不足1%。下一步解释这种差异及其总体方向贡献。[成果与来源](docs/STATUS.md#过程与传播)
 
-The matching-even N=185/265 result is also compatible with its frozen amplitude after the exact channel conversion
+## 分析方式
 
-```text
-DeltaS_cross = -DeltaS_either,
-```
+以一个科学问题和一个可交付读数组织工作：先读对应最新结果，能用现有矩就直接计算；确实缺字段时一次补齐同一问题需要的混合矩。代码、结果和短解释一起交付。
 
-with corrected `chi2 = 0.5700315 / 2` and no refit.
+精确枚举、证书、scorer、terminal algebra都是现成支持。需要它们解决具体问题时使用；它们不构成开始物理分析的前置队列。廉价并行理论仍可继续。
 
-## Derivative/metric problem
+新分析保留源数据、量的定义和原随机块关系。一个块的多种视图共同传播协方差；新的事后分析明确记录为事后分析。其余细节按实际科学风险处理，见[Governance](GOVERNANCE.md)。
 
-The prospective intrinsic-center score remains
+## 背景与沿革
 
-```text
-P4[S]   ~ N^-1        survives
-P4[D]   ~ N^-13/8     survives
-P4[D']  ~ N^-5/8      survives
-P4[S']  ~ N^-5/4      fails
-```
+- [Research Map](docs/RESEARCH-MAP.md)、[旧Roadmap](docs/ROADMAP.md)保留路线沿革，当前顺序由README、STATUS和NEXT-TARGETS承担。
+- [Draft #267](https://github.com/LightChainr/Matching-One/pull/267)保存完整研究交接并仍在更新；本次只提供简洁入口，不改动该分支。阅读具体报告时使用固定commit。
+- [8月31日本轮整理前的入口](https://github.com/LightChainr/Matching-One/blob/8a68cca866d7fbca7463e2167c3ff06128d5851f/README.md)保留旧判断的时间顺序。
+- 数值阈值来源仍按方法保存于[data/literature_threshold_sources.json](data/literature_threshold_sources.json)，不把参考小数当精确常数。
 
-On the norm-5 full-curve derived view, q=2 and rank-2/Jordan remain inconclusive:
+本轮整理在独立分支交付，**不合并、不关闭Issue、不更改其他研究分支**。代码和数据原路径保持可用。
 
-```text
-q2 analytic: chi2 = 10.648 / 6
-Jordan/log:  chi2 =  9.020 / 6
-```
-
-Two simple scalar correction stories have now failed on post-reveal P57 analyses:
-
-- `E[K_plus-K_minus] = A N^(5/8)+B` fails its frozen N325/N425 target with joint `chi2 = 155.22 / 2`;
-- using the observed canonical rank-gap width as a single scalar rescaling does not collapse the higher Krawtchouk/Hermite thermal jet.
-
-This shifts the live mechanism question toward low-rank transfer/operator mixing rather than another scalar correction exponent.
-
-## Highest-value next work
-
-1. **N=145 -> 290 full curve — #50.** This is now the single highest-information new production block. Score the frozen center-slope/root correction first, then reuse the same data for held-out low-rank transfer, Krawtchouk/Hermite, rank-gap and metric-free-ratio tests.
-2. **Use the completed P57 block harder.** The raw 500M N325/N425 histograms and joint moments are canonical and support additional covariance-aware analyses without new simulation.
-3. **Norm-4 dyadic closure — #154.** Ready if the q=2/Jordan or low-rank transfer ambiguity survives N290.
-4. **Independent controls.** Self-matching tangent (#155), pivotal/four-arm, FK/Potts, square-bond duality, and modulus/Pell work can proceed in parallel whenever they add more information per cost.
-
-N=1105 is lower current information per CPU, not prohibited.
-
-## Analysis infrastructure
-
-Threshold-rank production preserves reusable sufficient statistics rather than only final decimals. The same archive now supports:
-
-- roots, center slopes and derivative channels;
-- exact finite Russo/pivotal checks;
-- activation/reliability signatures;
-- Krawtchouk/Hermite full-curve response coordinates;
-- paired rank-gap/neutral-window observables;
-- low-rank matrix/semigroup transfer analysis;
-- metric-free amplitude ratios;
-- primary-only prequential evidence aggregation.
-
-`scripts/run_norm5_analysis_bundle.py` is a thin orchestration entrypoint for six-size norm-5 blocks. It calls existing frozen/typed scorers independently and does not redefine their statistics.
-
-## Research navigation
-
-- `docs/STATUS.md` — authoritative current claim ledger.
-- `docs/RESEARCH-MAP.md` — how scientific tracks and evidence fit together.
-- `notes/SYNTHESIS-20260828.md` — execution-facing synthesis.
-- `docs/ROADMAP.md` — information-gain priorities.
-- `analysis/research_ledger.yaml` — compact machine-readable evidence/work state.
-- `analysis/artifact_registry.yaml` — lightweight artifact/navigation index.
-- `results/evidence-ledger/latest.md` — primary-only predictive evidence view.
-
-Old reports, queues, closed PRs and negative results remain provenance, not competing current-status documents.
-
-## Execution policy
-
-Useful analysis, exact work and pilots are allowed by default. The repository keeps only three hard constraints:
-
-1. do not rewrite frozen predictions or committed result history;
-2. do not silently score incompatible observable semantics;
-3. do not add correlated views of one raw random block as independent primary evidence.
-
-Claim strength is controlled by evidence and chronology, not process ceremony.
-
-```bash
-python3 -m unittest discover -s tests -p 'test_*.py' -v
-```
-
-No closed form for square-site `p_c` is claimed. Published numerical estimates remain method-specific and are tracked in `data/literature_threshold_sources.json`.
-
-## License
-
-MIT. See `LICENSE`.
+MIT，见[LICENSE](LICENSE)。

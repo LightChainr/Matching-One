@@ -1,5 +1,7 @@
 # Roadmap
 
+> **历史路线图（2026-08-29快照）。** 下文的active/ready/action保留当时语境；coalescence、norm-4等已有后续结果。当前成果见[STATUS](STATUS.md)，下一步分析见[NEXT-TARGETS](NEXT-TARGETS.md)。
+
 This roadmap optimizes for **information gained per unit effort**. It is not a permission system. Existing-data analysis, exact work, pilots and exploratory production may proceed whenever useful.
 
 The only hard constraints are chronology, observable-semantic compatibility for claim-bearing scores, and non-duplication of correlated evidence.

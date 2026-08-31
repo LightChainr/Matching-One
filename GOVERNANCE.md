@@ -49,7 +49,7 @@ Every important conclusion should fit one of these levels.
 
 A result can be on `main` at any level. Merging is not a claim upgrade and lack of preregistration is not a reason to discard useful C2 evidence.
 
-The current project-wide summary lives in `docs/STATUS.md`; the execution-facing synthesis lives in the latest `notes/SYNTHESIS-*.md`.
+The current project-wide summary lives in `docs/STATUS.md`; the current analysis sequence lives in `docs/NEXT-TARGETS.md`. Dated `notes/SYNTHESIS-*.md` files and `docs/ROADMAP.md` preserve their historical context.
 
 ## 4. Research execution policy
 
