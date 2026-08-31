@@ -159,6 +159,7 @@ def comoving_score(q, y):
         "U_over_A": f, "U_s_over_A": fs, "U_t_over_A": ft,
         "U_st_over_A": fst, "Xi_U_t_epsilon_over_A": -fst,
         "R_over_A_squared": gain_residual,
+        "gain_residual_over_A": gain_residual/f,
         "d_s_Ut_over_U": gain_residual/(f**2),
         "root_s": ps, "root_t": pt, "root_st": pst,
         "matching_slope": D, "mixed_ratio_terms": fst_terms,
@@ -202,6 +203,8 @@ def main():
         numerical["R"] = approx(score["R_over_A_squared"], A*A)
         numerical["d_s_Ut_over_U"] = approx(score["d_s_Ut_over_U"])
         numerical["source_free_gain_slope"] = numerical["U_s"]/numerical["U"]
+        numerical["gain_predicted_U_st"] = numerical["U_s"]*numerical["U_t"]/numerical["U"]
+        numerical["U_st_minus_gain_prediction"] = approx(score["gain_residual_over_A"], A)
     primary = ("source_independent_endpoint_gain_rejected" if
                enclosures["R_over_A_squared"]["excludes_zero"] else
                "source_independent_endpoint_gain_unresolved")
