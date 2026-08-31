@@ -1,0 +1,274 @@
+{
+  "status": "PASS",
+  "oracle_path": "/Volumes/Mac Data/Research/\u8bba\u6587\u9879\u76ee\u603b\u5e93/Matching-One-worktrees/results-first-synthesis-20260831/experiments/p337-face-kernel-20260831/verify.py",
+  "oracle_sha256": "6a3e1398d9bddae72c0614d061a270ff591136f601591fa36fee423b901b8c13",
+  "abstract_bridge_pairs": 16,
+  "abstract_bridge_in_2core": true,
+  "fixed_N50_B_configurations": 2,
+  "real_graph_checks": [
+    {
+      "name": "bridge_all_A",
+      "K": 29,
+      "q": -1,
+      "E": 1,
+      "S_direct": 18,
+      "S_cycle_identity": 18,
+      "S_clique": 18,
+      "parent": {
+        "V": 29,
+        "edges": 16,
+        "components": 15,
+        "beta": 2,
+        "rank": 0
+      },
+      "clique": {
+        "V": 4,
+        "edges": 5,
+        "components": 1,
+        "beta": 2,
+        "rank": 0
+      },
+      "occupied_faces_by_m": [
+        14,
+        6,
+        5,
+        0,
+        0
+      ],
+      "cycle_correction": 0,
+      "full_faces": 2,
+      "vacant_edges": 0
+    },
+    {
+      "name": "bridge_removed",
+      "K": 28,
+      "q": -1,
+      "E": 1,
+      "S_direct": 21,
+      "S_cycle_identity": 21,
+      "S_clique": 21,
+      "parent": {
+        "V": 28,
+        "edges": 14,
+        "components": 16,
+        "beta": 2,
+        "rank": 0
+      },
+      "clique": {
+        "V": 4,
+        "edges": 4,
+        "components": 2,
+        "beta": 2,
+        "rank": 0
+      },
+      "occupied_faces_by_m": [
+        14,
+        6,
+        4,
+        0,
+        0
+      ],
+      "cycle_correction": 0,
+      "full_faces": 2,
+      "vacant_edges": 2
+    },
+    {
+      "name": "one_cycle_A_removed",
+      "K": 28,
+      "q": -1,
+      "E": 1,
+      "S_direct": 19,
+      "S_cycle_identity": 19,
+      "S_clique": 19,
+      "parent": {
+        "V": 28,
+        "edges": 14,
+        "components": 15,
+        "beta": 1,
+        "rank": 0
+      },
+      "clique": {
+        "V": 4,
+        "edges": 4,
+        "components": 1,
+        "beta": 1,
+        "rank": 0
+      },
+      "occupied_faces_by_m": [
+        14,
+        6,
+        4,
+        0,
+        0
+      ],
+      "cycle_correction": 0,
+      "full_faces": 1,
+      "vacant_edges": 2
+    },
+    {
+      "name": "one_cycle_A_and_bridge_removed",
+      "K": 27,
+      "q": -1,
+      "E": 1,
+      "S_direct": 22,
+      "S_cycle_identity": 22,
+      "S_clique": 22,
+      "parent": {
+        "V": 27,
+        "edges": 12,
+        "components": 16,
+        "beta": 1,
+        "rank": 0
+      },
+      "clique": {
+        "V": 4,
+        "edges": 3,
+        "components": 2,
+        "beta": 1,
+        "rank": 0
+      },
+      "occupied_faces_by_m": [
+        14,
+        6,
+        3,
+        0,
+        0
+      ],
+      "cycle_correction": 0,
+      "full_faces": 1,
+      "vacant_edges": 4
+    },
+    {
+      "name": "all_offcycle_A_integrated_support",
+      "K": 8,
+      "q": -1,
+      "E": 1,
+      "S_direct": 81,
+      "S_cycle_identity": 81,
+      "S_clique": 81,
+      "parent": {
+        "V": 8,
+        "edges": 8,
+        "components": 2,
+        "beta": 2,
+        "rank": 0
+      },
+      "clique": {
+        "V": 4,
+        "edges": 4,
+        "components": 2,
+        "beta": 2,
+        "rank": 0
+      },
+      "occupied_faces_by_m": [
+        0,
+        0,
+        4,
+        0,
+        0
+      ],
+      "cycle_correction": 0,
+      "full_faces": 2,
+      "vacant_edges": 76
+    },
+    {
+      "name": "shared_A_on",
+      "K": 27,
+      "q": -1,
+      "E": 1,
+      "S_direct": 24,
+      "S_cycle_identity": 24,
+      "S_clique": 24,
+      "parent": {
+        "V": 27,
+        "edges": 12,
+        "components": 17,
+        "beta": 2,
+        "rank": 0
+      },
+      "clique": {
+        "V": 4,
+        "edges": 8,
+        "components": 1,
+        "beta": 5,
+        "rank": 0
+      },
+      "occupied_faces_by_m": [
+        16,
+        4,
+        2,
+        0,
+        1
+      ],
+      "cycle_correction": 3,
+      "full_faces": 2,
+      "vacant_edges": 4
+    },
+    {
+      "name": "shared_A_off",
+      "K": 26,
+      "q": -1,
+      "E": 1,
+      "S_direct": 23,
+      "S_cycle_identity": 23,
+      "S_clique": 23,
+      "parent": {
+        "V": 26,
+        "edges": 8,
+        "components": 18,
+        "beta": 0,
+        "rank": 0
+      },
+      "clique": {
+        "V": 4,
+        "edges": 2,
+        "components": 2,
+        "beta": 0,
+        "rank": 0
+      },
+      "occupied_faces_by_m": [
+        16,
+        4,
+        2,
+        0,
+        0
+      ],
+      "cycle_correction": 0,
+      "full_faces": 0,
+      "vacant_edges": 4
+    }
+  ],
+  "bridge_cycle_A_parent_coordinates": [
+    [
+      -4,
+      4
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      2,
+      2
+    ]
+  ],
+  "bridge_offcycle_A_count": 21,
+  "closed_message_example": {
+    "alpha": "2/5",
+    "exp_t": "2",
+    "F": "13/20",
+    "rho": "1/13",
+    "two_A_block": "43/100",
+    "mean_K": "3347/559",
+    "mean_S": "46470/559",
+    "mean_beta": "2/43",
+    "partition_expression": "2^89*(13/20)^21*(43/100)^2"
+  },
+  "new_B_scan": false,
+  "new_random_samples": 0,
+  "cloud_jobs": 0
+}

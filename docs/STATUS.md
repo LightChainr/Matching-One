@@ -1,19 +1,20 @@
 # 当前成果：从取向信号到微观机制
 
-**整理日期：2026-08-31，22时三份意见后复核。** 两个独立决策实验已完成并执行停线；首次Xi、jump/reweight分解和两套固定源的渐近反号也已完成，不再作为待办。[三份意见的核对与实际推进](../notes/reviews-response-20260831.md)记录本轮增量；[下一步](NEXT-TARGETS.md)只保留尚未回答的问题。本任务新增结果交付Draft #509，不合并。
+**整理日期：2026-08-31，23时后续计算与复核。** 两个独立决策实验已完成并执行停线；首次Xi、jump/reweight分解和两套固定源的渐近反号也已完成，不再作为待办。[三份意见的核对与实际推进](../notes/reviews-response-20260831.md)记录本轮增量；[下一步](NEXT-TARGETS.md)只保留尚未回答的问题。本任务新增结果交付Draft #509，不合并。
 
-## 本轮：延续需要连通信息，有限反号不等于可直接采样
+## 本轮：完整齐次 N50 已计算，有限零传递被排除
 
 | 问题 | 已得到的具体答案 | 尚未解决 |
 |---|---|---|
+| 原父图epsilon=1的无条件U/S响应能否直接算出？ | **[完整N50结果](../experiments/p337-homogeneous-n50-20260831/RESULT.md)：U=1.0615603877、V_S=+0.0543457827，严格有理界排除V=0。** 每图精确覆盖2^50配置，共约49.85 CPU秒、峰1.63 GiB；独立p导数核查12项通过。 | 端点正号预测存活，幅度不能原样延续。N50有限传递已完成，不自动扩N100/t/epsilon，也不确认连续H4机制。 |
 | 0/1孔信息加尾概率能否控制齐次U？ | [严格信息不足见证](../experiments/p337-continuation-feasibility-20260831/THEORY.md)：两套保留真实0/1孔表的摘要补全，有相同完整q曲线、唯一root和正斜率，但U约为+10.10358/−10.07432。连符号都不能从所列约束确定。 | 补全不是原图的物理多孔律；需要利用真实连通规则约束未知层的取向热score矩，不能把该见证扩大为一切延续方法无效。 |
-| 能否摆脱小孔概率展开？ | [全epsilon面核](../experiments/p337-face-kernel-20260831/REPORT.md)精确保留端口、位移、平行边及源修正；指定两孔构型的权重交叉比为e^t；固定B整行的全孔密度绕环概率已闭式求和。 | 这是条件连通核，完整B平均、root及U误差仍未求出。已有3dc47674 hypergraph/twist表示不是本次新发现。 |
+| 能否摆脱小孔概率展开？ | [全epsilon面核](../experiments/p337-face-kernel-20260831/REPORT.md)精确保留端口、位移、平行边及源修正；指定两孔构型的权重交叉比为e^t；固定B整行的全孔密度绕环概率已闭式求和。 | 条件核本身不替代总体；当前N50无条件值已由充分状态frontier精确求出，一般N/epsilon及有限t控制仍未完成。已有3dc47674 hypergraph/twist表示不是本次新发现。 |
 | 原U的有限耦合反号 | [固定m=64复核](../experiments/p337-finite-law-window-20260831/RESULT.md)：N25原Ustar≈−5.82495e−19、Udrop≈+1.07107e−13，各在自己的共同root。执行[2690f665](https://github.com/LightChainr/Matching-One/blob/2690f665bc8029cb2370d3f1efcef5eb2853705c/notes/closed-source-uniform-projection-tail.md)并行交付了更强的全m>=64证书，符号不计作本次新增机制排除。 | 本次新增的是下行的采样可达性判断；固定N25半直线不等于N50饱和到齐次的延续。 |
 | 十台机器能否直接测上述反号？ | 同一计数给rank1概率：轴向约1e−15，斜向约2e−20。95%机会至少见一次rank1的必要样本下界为2.28e14至4.47e19，**不启动该点普通无条件采样**。 | 该界不是估U的充分预算；不约束条件、importance或twist partition估计器，也不是墙钟时间预测。 |
 | 看见rank1后，热协方差估计是否就容易？ | [直接计算原U分子的方差](../experiments/p337-estimator-access-20260831/RESULT.md)：即使给真实root、均值和分母，独立iid平均`(K−mu)I1`达到SNR3，star每几何仍需≥1.5180e25次，drop≥2.5247e15次。star/axis的条件K均值差只有约0.000151383。 | 只针对指定估计器，不是95%区间或所有算法下界。该事后可行性分析未添加原冻结合同的判决。 |
 | 非负twist表示是否已解决成本？ | [条件数审查](../notes/p337-twist-estimator-access.md)：独立partition差分病态；自然逐样本抵消恰还原rank1事件。m2才是五个literal partitions，m64为4097个，除非另给聚合算法。 | 改进需要相关估计、条件积分或桥接权重的二阶矩/重叠控制，当前没有可自动运行的高效替代。 |
 
-这些工作均无新MC、孔型全枚举或云作业。m64比较先冻结`375a6f0c`再评分，原四点实验保持不变；后续预算是同一点的事后精确可行性分析，其余是明确数学构造和有界配置核验。它们不提供新的独立统计证据。
+本次N50采用精确状态合并覆盖完整有限总体，未逐叶访问2^50个配置；无新MC或云作业。科学合同10c666b6、最终producer4ae4e710均先冻结后完整运行，合同至此结束。[连通消元和比界](../notes/p337-connectivity-reduction.md)保留可严格积分的开关及不能忽略的外部同调。m64比较先冻结`375a6f0c`再评分，原四点实验保持不变；后续预算是同一点的事后精确可行性分析，其余是明确数学构造和有界配置核验。它们不提供新的独立统计证据。
 
 最新既有结果另已接入：[e1b96895](https://github.com/LightChainr/Matching-One/blob/e1b968959634b9b3999c727b83ed38d0b730cb20/results/defect-reweight/REPORT.md)给Xi_reweight=+4.550327123237、Xi_jump=−15.306045530801，排除jump-only；[f4057192](https://github.com/LightChainr/Matching-One/blob/f405719264c896aa873dd4aae7292795f544ba99/notes/topological-projection-reverses-global-u-tail.md)已给Sstar/Sdrop相反渐近尾。N100/N225仍是理论预测，不是已执行生产。
 
@@ -21,7 +22,7 @@
 
 [固定m相对界复核](../notes/p337-fixed-m-relative-bound.md)给实际局部模型`Delta_k≤50k log m`，改进到对h一致的表面阶，但常数仍大于已有轮廓界允许的阈值。另给完整三态热族反例：即便共同bulk精确消去、rank1对所有h指数小且pooled根唯一，若几何间受限sector odds未控制，仍可有`U/A→2/Delta`。它只否定这些摘要前提的充分性，不是原格点模型的反例。
 
-执行分支另于[0dda27ba](https://github.com/LightChainr/Matching-One/blob/0dda27ba/notes/closed-source-s4-trace-transmission-result.md)完成固定m2/Q4的S4 `[2,2]` seam插入：直接q/E分子恒零，原U仍经归一化与热导数得到`V_beta=+5.440121494634842e−6`。这个有限传递已完成，不再追加Q4点或seam；其epsilon是trace系数，不是孔密度或logQ。Q1的实际carrier/完整有限jet归属仍未建立，不能把该结果当作无条件齐次anomaly已解释或m64已有高效估计器。
+执行分支另于[0dda27ba](https://github.com/LightChainr/Matching-One/blob/0dda27ba/notes/closed-source-s4-trace-transmission-result.md)完成固定m2/Q4的S4 `[2,2]` seam插入：直接q/E分子恒零，原U仍经归一化与热导数得到`V_beta=+5.440121494634842e−6`。这个有限传递已完成，不再追加Q4点或seam；其epsilon是trace系数，不是孔密度或logQ。后续[bea717e8](https://github.com/LightChainr/Matching-One/blob/bea717e826df5a22518774b1725ae7bcbe2cb801/notes/p337-q1-closed-trace-transmission-result.md)已完成指定Q1闭合迹：固定beta1=−1_A−1_B给`V_beta1=−0.001904836180602413`，完整finite landing及有理证书均已交付。剩余是local pair到cut multiplicity的具体intertwiner及尺度内容，不再是缺失Q1有限传递。raw-Q分项依赖归一化规范，不能按其符号认定连续场；上述结果也不提供m64高效估计器。
 
 ## 最新有限机制：端点闭合不能靠两个共同耦合延续
 

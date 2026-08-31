@@ -41,4 +41,13 @@
 - [twist估计审查](p337-twist-estimator-access.md)：独立正partition差分病态，自然共享构型抵消还原稀有rank1指示量。m2的五个partition不能原样当成m64的五个partition；后者字面构造为4097项。缺失的是具体相关估计/桥接重叠/条件积分二阶矩控制，而不是再换一个算法名称。
 - [固定m相对界](p337-fixed-m-relative-bound.md)：实际局部模型已有对h一致的`Delta_k≤50k log m`，常数仍不足；完整三态热族进一步证明共同bulk精确消去、rank1一致指数小、FKG与唯一pooledroot仍不能替代受限sector odds控制。反例针对摘要前提，不否定原格点模型的固定m定理可能成立。
 
-同期[0dda27ba的固定Q4传递](https://github.com/LightChainr/Matching-One/blob/0dda27ba/notes/closed-source-s4-trace-transmission-result.md)已核对并接入STATUS：直接分子零也可经归一化改变原U，这一有限问题不重做；Q1的实际carrier和完整有限jet仍是不同的未解环节。上述后续全部没有新随机块或云任务。
+同期[0dda27ba的固定Q4传递](https://github.com/LightChainr/Matching-One/blob/0dda27ba/notes/closed-source-s4-trace-transmission-result.md)已核对并接入STATUS：直接分子零也可经归一化改变原U，这一有限问题不重做；随后[bea717e8](https://github.com/LightChainr/Matching-One/blob/bea717e826df5a22518774b1725ae7bcbe2cb801/notes/p337-q1-closed-trace-transmission-result.md)又完成指定Q1闭合迹的完整finite landing和`V_beta1=−0.001904836180602413`。已读主结果与两连接核全文，移除这项过期待办；剩余local pair-to-cut归属和尺度内容尚未完成。上述后续全部没有新随机块或云任务。
+
+
+## 完整齐次N50已在本轮真正算完
+
+此前未得到总体值的epsilon=1/t0现已补齐：[固定结果与可复算包](../experiments/p337-homogeneous-n50-20260831/RESULT.md)。两幅原N50父图各覆盖2^50个配置，K边际全部为binomial，合计约49.85 CPU秒、峰1.63 GiB。合同10c666b6、最终producer4ae4e710先冻结，原q/E和S保持；U=1.0615603877、V_S=+0.0543457827。有理界排除有限零传递，正号延续预测没有被否定，未确认机制。直接mixed热源项+2.026626与斜率源项−2.082389大幅抵消；不是四个独立机制实验。
+
+实现只保留活跃黑NN连通性与同调商空间位移，K收在值多项式中。N9/N13及两N25全表交叉核验后才完整运行N50；直接Bernstein p导数的Decimal120/160独立复核12项全部落在主Fraction区间内。[精确连通消元](p337-connectivity-reduction.md)还证明非循环A可同时积分，以及局部Russo界不能定原取向符号。未新开随机块或云任务，十台服务器查询时均Ready。
+
+本合同至此结束；删除“求齐次N50总体”的待办，不自动把资源转到N100、参数网格或新的descriptor。大尺度/有限耦合机制、local pair-to-cut归属、固定m受限扇区控制仍按各自实际边界保留，已完成的Q1有限迹传递也不再重做。

@@ -1,14 +1,14 @@
-# 下一步：用连通结构控制未知孔层，保持原U为目标
+# 下一步：有限传递已补齐，只推进具体机制缺口
 
-**2026-08-31，22时后复核。** 当前结论统一读[STATUS](STATUS.md)。Xi、jump/reweight分解、强源相反尾和共同热/源profile闭合拒绝均已完成。三份意见的滞后部分已去掉，不能再按旧导航启动它们。
+**2026-08-31，23时后续结果复核。** 当前结论统一读[STATUS](STATUS.md)。Xi、jump/reweight分解、强源相反尾和共同热/源profile闭合拒绝均已完成。三份意见的滞后部分已去掉，不能再按旧导航启动它们。
 
-## 当前缺口（#337，P1；一般齐次延续仍未解决）
+## 当前缺口（#337，P1；N50齐次计算已完成）
 
 **仅靠0/1孔表、支持范围和尾概率的方案已被具体反例排除。** [本轮证明](../experiments/p337-continuation-feasibility-20260831/THEORY.md)甚至固定同一q曲线、唯一root和正斜率后，仍允许相反U。不要继续细化同类尾概率来代替连通信息。反例属于摘要松弛类，未否定原图的所有延续路线。
 
-- 下一次只围绕明确缺失量：在覆盖共同root的同一区间，为未知多孔层的取向差`E[O*thermal_score]`给出来自连通结构的消去、符号或幅度控制，并同时控制pooled q斜率。所需完整误差公式已写入上述证明第5节，直接使用，不另造证书框架。
-- [全epsilon面核](../experiments/p337-face-kernel-20260831/REPORT.md)已完成，保留真实端口、位移、平行边和源权重；固定B整行已能不截孔阶地求和。下一步应从这个核到总体score矩，不能把条件B结果当作总体U。
-- 判据仍固定在**齐次点epsilon=1**。现有端点结果尚未解释齐次anomaly；只对极小epsilon的界不改变这一结论。不自动枚举两孔/三孔、不拟合新descriptor、不以经验曲线连接端点。
+- **删除“先求齐次N50无条件U”的待办。** [固定完整计算](../experiments/p337-homogeneous-n50-20260831/RESULT.md)已给U=1.0615603877、V_S=+0.0543457827。有限零传递排除，正号延续存活；合同已经结束，不自动加N100、t/epsilon点或MC。
+- 本次固定分解显示直接项+2.026626与斜率源项−2.082389强抵消。若理论模型只能预测局部非零而不能约束同一个root-normalized净V，就不足以成为下一生产的依据。不得把现成N50结果再拟合成新source或跨尺寸律，然后追认为前瞻预测。
+- [全epsilon面核](../experiments/p337-face-kernel-20260831/REPORT.md)及[循环支撑积分](../notes/p337-connectivity-reduction.md)已完成。非循环A可全部积分，初始潜在块可保留全局span作卷积；当前有限N50也已有完整值。对尚未覆盖的一般N/epsilon，真正剩余是受控连通比较/score矩与pooled斜率，不能再细化支持尾概率或把条件B结果当总体。
 
 共同温度＋同一S耦合的profile模型已退休，不再通过拟合b/c、改变密度项或补一个观测方向救回。额外独立耦合和几何各自的坐标尚未被否定，也不因此自动成为主线。
 
@@ -16,7 +16,7 @@
 
 同一最新分支已解决N/m²有界联合极限的Poisson/full共存和pooled分母。**固定m的剩余理论问题**是控制oblique twist代价及受限扇区odds，并消去粗轮廓上界中的exp[O(N/m²)]体积因子；再引用联合极限或仅证明PSD/有限twist阶数不能完成这一步。上述进展不替代固定S、epsilon=1、多孔连通score矩的另一条延续问题。
 
-[本次相对缝界](../notes/p337-fixed-m-relative-bound.md)已有`Delta_k≤50k log m`，常数不足，不要重复证明“只是表面阶”。同文的完整热族反例说明：即便rank1一致指数小，仍需受限sector odds控制；共同bulk消去或相同pressure不能代替它。执行分支[0dda27ba](https://github.com/LightChainr/Matching-One/blob/0dda27ba/notes/closed-source-s4-trace-transmission-result.md)的固定Q4归一化通道到原U传递也已完成；Q1需要其实际carrier与完整二阶R-jet，不能再以增加Q4点或seam来建立已经得到的有限非零性。
+[本次相对缝界](../notes/p337-fixed-m-relative-bound.md)已有`Delta_k≤50k log m`，常数不足，不要重复证明“只是表面阶”。同文的完整热族反例说明：即便rank1一致指数小，仍需受限sector odds控制；共同bulk消去或相同pressure不能代替它。执行分支[0dda27ba](https://github.com/LightChainr/Matching-One/blob/0dda27ba/notes/closed-source-s4-trace-transmission-result.md)的固定Q4归一化通道到原U传递也已完成；更新的[bea717e8 Q1闭合迹](https://github.com/LightChainr/Matching-One/blob/bea717e826df5a22518774b1725ae7bcbe2cb801/notes/p337-q1-closed-trace-transmission-result.md)已完成两个连接核、完整finite landing及原U严格负响应。删除“补Q1有限传递”的待办；剩余是local pair-to-cut intertwiner及尺度内容，不追加Q/seam点。
 
 **估计器可行性已经进一步收缩。** [精确方差预算](../experiments/p337-estimator-access-20260831/RESULT.md)把原root/均值/分母给定后，m64的star普通独立热协方差平均仍需每几何至少约1.52e25样本才达SNR3。[twist审查](../notes/p337-twist-estimator-access.md)也表明：非负partition恒等式没有自动消除稀有质量、热中心化和取向差的抵消。下一算法只接受具体的相关估计/桥接重叠或条件积分二阶矩控制；仅提出“twist”“Rao–Blackwell”或“在rank1中采样”不再构成启动理由。这里没有否定全部替代算法，也不改开m2/增加参数点来回避当前预算。
 
@@ -40,6 +40,6 @@ Udot  = a*P4(JE_p + E_pp*p0dot)/D - U*Ddot/D
 
 `P4`为两取向差除以冻结的DeltaCos4。对#154，`Jq=T01+2*T02+T12`、`JE=-T01+T12`，再按Bin(N,p)混合；直接0→2不能删掉。对#334，出生中心/间隔的积分响应并不决定这个含p导数、共同根和斜率归一化的泛函，因此“局部响应强”不足以推出`Udot`强。下一计算只代入一个事前指定的机制，给出它与竞争机制在本式上的符号或幅度差，以及失败后要停止的解释；无法产生区分预测时不启动下一块生产。不要从本轮验证块再选一个最显著的kernel、lag或contact特征来充当预测。
 
-用户现已授权十台独立服务器按需直接调用，无需跨团队消息协调；每台仍核实当前任务/进程，不覆盖他人文件或停止不明进程。两个固定预算均已完成，本次精确判别没有云作业。近期任务没有尚未执行的合格生产合同，不为凑满服务器而开新生产。理论执行交付一个余项结论，总览把结论接回STATUS，审查只核查这一个结论及停线动作；通过仓库交接，不增设会议或平行总账。
+用户现已授权十台独立服务器按需直接调用，无需跨团队消息协调；每台仍核实当前任务/进程，不覆盖他人文件或停止不明进程。两个固定预算均已完成，本次精确判别没有云作业。N50的有限精确合同也已执行完毕；近期没有尚未执行的P0随机生产合同，不为凑满服务器而开新生产。理论执行交付一个余项结论，总览把结论接回STATUS，审查只核查这一个结论及停线动作；通过仓库交接，不增设会议或平行总账。
 
 原13项Issue结题见[清理记录](REPOSITORY-TRIAGE-20260831.md)。结果通过Draft #509交付，**不合并、不删除历史数据和分支**。
