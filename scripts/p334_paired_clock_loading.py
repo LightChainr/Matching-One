@@ -97,10 +97,12 @@ def process_batch(task):
                   "source_rows": originals, "X": baseline.tolist(), "Y": baseline.tolist(),
                   "status": "outside_rank_one", "clocks": [None, None]}
         if any(originals):
+            # Decode outside the budget; replacement selection only sees the
+            # common prefix and exogenous computation timing, never the suffix.
+            permutation = archived_permutation(n, metadata["seed"], counter)
             tick = time.monotonic()
             signal.setitimer(signal.ITIMER_REAL, contract["pair_wall_seconds"])
             try:
-                permutation = archived_permutation(n, metadata["seed"], counter)
                 conditional = np.zeros(4)
                 for o, row in enumerate(originals):
                     if row:
