@@ -1,0 +1,3762 @@
+{
+  "schema": "matching-one/p398-width8-memory-motifs/v1",
+  "parent": "39e06607ec3a353b1130acebf770da591acaf340",
+  "projection": "global stationary-L2 P onto both A,L; Q removes both; no independent R/T vote inside a protected ray",
+  "force_motif_convention": "right=(QMA,QML)=-(QR,QT2); left=(QMdagger A,QMdagger L) are stationary time-reversed dual motifs, not the same right force",
+  "source_moment_blocks_re_im": {
+    "k0": [
+      [
+        [
+          1.150073821309531,
+          -2.7755575615628914e-16
+        ],
+        [
+          -0.2387450805180515,
+          -0.23874508051805143
+        ]
+      ],
+      [
+        [
+          -0.2387450805180519,
+          0.23874508051805218
+        ],
+        [
+          1.1500738213095265,
+          5.551115123125783e-16
+        ]
+      ]
+    ],
+    "integrated_memory": [
+      [
+        [
+          0.30352491670632653,
+          -6.245004513516506e-17
+        ],
+        [
+          -0.06780784845138713,
+          -0.06780784845138728
+        ]
+      ],
+      [
+        [
+          -0.06780784845138732,
+          0.06780784845138745
+        ],
+        [
+          0.30352491670632553,
+          1.6653345369377348e-16
+        ]
+      ]
+    ],
+    "first_time_moment": [
+      [
+        [
+          0.0824891610910158,
+          -2.6020852139652106e-17
+        ],
+        [
+          -0.018533328027484003,
+          -0.018533328027484024
+        ]
+      ],
+      [
+        [
+          -0.01853332802748406,
+          0.01853332802748406
+        ],
+        [
+          0.08248916109101548,
+          4.163336342344337e-17
+        ]
+      ]
+    ]
+  },
+  "source_covariance_re_im": [
+    [
+      [
+        1.7797588545702674,
+        0.0
+      ],
+      [
+        -1.0716837342224328,
+        -1.0716837342224326
+      ]
+    ],
+    [
+      [
+        -1.0716837342224328,
+        1.0716837342224326
+      ],
+      [
+        1.7797588545702665,
+        0.0
+      ]
+    ]
+  ],
+  "cancellation_coherence": {
+    "source": 0.8515702380803466,
+    "k0": 0.2935781378225228,
+    "integrated_memory": 0.31593708996244807,
+    "first_time_moment": 0.3177397309624468
+  },
+  "exact_dual_join_detach_class_counts": [
+    {
+      "join_contacts": 1,
+      "dual_detach_block_size": 3,
+      "directed_site_events": 2376
+    },
+    {
+      "join_contacts": 1,
+      "dual_detach_block_size": 4,
+      "directed_site_events": 1320
+    },
+    {
+      "join_contacts": 1,
+      "dual_detach_block_size": 5,
+      "directed_site_events": 600
+    },
+    {
+      "join_contacts": 1,
+      "dual_detach_block_size": 6,
+      "directed_site_events": 216
+    },
+    {
+      "join_contacts": 1,
+      "dual_detach_block_size": 7,
+      "directed_site_events": 56
+    },
+    {
+      "join_contacts": 1,
+      "dual_detach_block_size": 8,
+      "directed_site_events": 8
+    },
+    {
+      "join_contacts": 2,
+      "dual_detach_block_size": 2,
+      "directed_site_events": 3432
+    }
+  ],
+  "next_pair_identity": {
+    "formula": "G T2=2 T3-2 T2+S11-B2",
+    "T3": "sum_j i^j 1{block(j) has size 3}",
+    "S11": "sum_adjacent singleton-singleton edges (i^j+i^(j+1))",
+    "B2": "sum_size2 blocks (sum_{j in block}i^j)*(number of cut boundary edges)",
+    "checked_exactly_on_all_1430_states": true
+  },
+  "rays": [
+    {
+      "sign": -1,
+      "source_variance": 3.2953485260822735,
+      "force_motif_blocks": [
+        {
+          "moment": "k0",
+          "RR_RT_TR_TT_re_im": [
+            [
+              [
+                0.17449957299005545,
+                -4.211326267304806e-17
+              ],
+              [
+                0.05122925968924588,
+                -2.7350621704593943e-18
+              ]
+            ],
+            [
+              [
+                0.05122925968924601,
+                -3.5734288336803115e-17
+              ],
+              [
+                0.1744995729900548,
+                8.675456464895858e-17
+              ]
+            ]
+          ],
+          "normalized_sum": 0.45145766535860216,
+          "raw_sum": 1.487710352128014
+        },
+        {
+          "moment": "integrated_memory",
+          "RR_RT_TR_TT_re_im": [
+            [
+              [
+                0.0460535379344498,
+                -9.475484101435812e-18
+              ],
+              [
+                0.014550020757485283,
+                1.8460681874592636e-17
+              ]
+            ],
+            [
+              [
+                0.014550020757485323,
+                -1.4889286807001298e-17
+              ],
+              [
+                0.046053537934449655,
+                2.6169601154551438e-17
+              ]
+            ]
+          ],
+          "normalized_sum": 0.12120711738387005,
+          "raw_sum": 0.3994196956216173
+        },
+        {
+          "moment": "first_time_moment",
+          "RR_RT_TR_TT_re_im": [
+            [
+              [
+                0.012515999512361793,
+                -3.948118375598255e-18
+              ],
+              [
+                0.003976830317783952,
+                2.8103878837420653e-18
+              ]
+            ],
+            [
+              [
+                0.003976830317783961,
+                -3.7223217017503243e-19
+              ],
+              [
+                0.012515999512361745,
+                6.653712917613132e-18
+              ]
+            ]
+          ],
+          "normalized_sum": 0.03298565966029145,
+          "raw_sum": 0.10869924494339292
+        }
+      ],
+      "primitive_generator_blocks": [
+        {
+          "moment": "k0",
+          "JJ_JD_DJ_DD_re_im": [
+            [
+              [
+                -0.03802135622095062,
+                2.4636258663733115e-16
+              ],
+              [
+                0.2637501889002493,
+                5.558950672842344e-16
+              ]
+            ],
+            [
+              [
+                0.2637501889002519,
+                -1.7687570322680187e-16
+              ],
+              [
+                -0.038021356220948266,
+                -5.895856774226729e-16
+              ]
+            ]
+          ]
+        },
+        {
+          "moment": "integrated_memory",
+          "JJ_JD_DJ_DD_re_im": [
+            [
+              [
+                -0.01747743292629828,
+                -1.7898136636045427e-17
+              ],
+              [
+                0.07808099161823297,
+                1.347624405537538e-16
+              ]
+            ],
+            [
+              [
+                0.07808099161823337,
+                4.421892580670047e-17
+              ],
+              [
+                -0.01747743292629794,
+                -1.5371340875662544e-16
+              ]
+            ]
+          ]
+        },
+        {
+          "moment": "first_time_moment",
+          "JJ_JD_DJ_DD_re_im": [
+            [
+              [
+                -0.007419988158913725,
+                -1.0067701857775552e-17
+              ],
+              [
+                0.023912817989059375,
+                2.8426452304307446e-17
+              ]
+            ],
+            [
+              [
+                0.023912817989059462,
+                2.1583047119937133e-17
+              ],
+              [
+                -0.007419988158913657,
+                -4.2113262673048065e-17
+              ]
+            ]
+          ]
+        }
+      ],
+      "directed_edge_budgets": {
+        "k0": {
+          "coarse": [
+            {
+              "motif": "detach_size_2",
+              "signed_normalized_re_im": [
+                0.13732141695016017,
+                3.5073212773442037e-16
+              ],
+              "signed_raw_re_im": [
+                0.45252192894623966,
+                1.1557846001793219e-15
+              ]
+            },
+            {
+              "motif": "detach_size_3",
+              "signed_normalized_re_im": [
+                -0.19917988171464723,
+                6.250425524378933e-16
+              ],
+              "signed_raw_re_im": [
+                -0.6563671296336043,
+                2.059733053914914e-15
+              ]
+            },
+            {
+              "motif": "detach_size_4plus",
+              "signed_normalized_re_im": [
+                0.28758729744379163,
+                -1.844607366158213e-15
+              ],
+              "signed_raw_re_im": [
+                0.9477003767513831,
+                -6.078624165269971e-15
+              ]
+            },
+            {
+              "motif": "join_contacts_1",
+              "signed_normalized_re_im": [
+                0.08840741572913821,
+                1.984089975648473e-16
+              ],
+              "signed_raw_re_im": [
+                0.29133324711775843,
+                6.53826797686781e-16
+              ]
+            },
+            {
+              "motif": "join_contacts_multiple",
+              "signed_normalized_re_im": [
+                0.13732141695015976,
+                6.981606754255675e-16
+              ],
+              "signed_raw_re_im": [
+                0.45252192894623827,
+                2.3006827527322486e-15
+              ]
+            }
+          ],
+          "fine": [
+            {
+              "motif": "join_size_1_2_contacts_1",
+              "signed_normalized_re_im": [
+                0.25712350066085676,
+                -3.9768535686768303e-16
+              ],
+              "signed_raw_re_im": [
+                0.8473115489238688,
+                -1.3105118545984222e-15
+              ]
+            },
+            {
+              "motif": "detach_size_3_incident_1",
+              "signed_normalized_re_im": [
+                -0.21634033616710815,
+                4.2544093248331194e-16
+              ],
+              "signed_raw_re_im": [
+                -0.7129168079204234,
+                1.40197614979395e-15
+              ]
+            },
+            {
+              "motif": "detach_size_2_incident_1",
+              "signed_normalized_re_im": [
+                0.13447953035623897,
+                3.499531882095219e-16
+              ],
+              "signed_raw_re_im": [
+                0.44315692214766844,
+                1.1532177229640406e-15
+              ]
+            },
+            {
+              "motif": "join_size_1_1_contacts_1",
+              "signed_normalized_re_im": [
+                0.11441721511428203,
+                -1.884587604879507e-16
+              ],
+              "signed_raw_re_im": [
+                0.3770446011852877,
+                -6.210372986012605e-16
+              ]
+            },
+            {
+              "motif": "join_size_1_3_contacts_1",
+              "signed_normalized_re_im": [
+                -0.1078612502758896,
+                2.4448758989548125e-16
+              ],
+              "signed_raw_re_im": [
+                -0.355440412118044,
+                8.056718190074814e-16
+              ]
+            },
+            {
+              "motif": "join_size_1_4_contacts_1",
+              "signed_normalized_re_im": [
+                -0.0816959856843731,
+                8.698011928764959e-17
+              ],
+              "signed_raw_re_im": [
+                -0.2692167460118374,
+                2.866298078930164e-16
+              ]
+            },
+            {
+              "motif": "join_size_1_5_contacts_1",
+              "signed_normalized_re_im": [
+                -0.05897244582444839,
+                -1.0153553345326749e-16
+              ],
+              "signed_raw_re_im": [
+                -0.1943347624270627,
+                -3.3459497051020237e-16
+              ]
+            },
+            {
+              "motif": "detach_size_6_incident_1",
+              "signed_normalized_re_im": [
+                0.05852678501017462,
+                1.3812735677465326e-16
+              ],
+              "signed_raw_re_im": [
+                0.19286615471961305,
+                4.55177781558994e-16
+              ]
+            },
+            {
+              "motif": "detach_size_7_incident_1",
+              "signed_normalized_re_im": [
+                0.05232251736344328,
+                -4.371503159461554e-16
+              ],
+              "signed_raw_re_im": [
+                0.17242093047453697,
+                -1.4405626493295633e-15
+              ]
+            },
+            {
+              "motif": "detach_size_5_incident_1",
+              "signed_normalized_re_im": [
+                0.047066451543801596,
+                -2.83437552942023e-16
+              ],
+              "signed_raw_re_im": [
+                0.15510036172278935,
+                -9.340255223238619e-16
+              ]
+            },
+            {
+              "motif": "join_size_1_6_contacts_1",
+              "signed_normalized_re_im": [
+                -0.040397734761069844,
+                2.231288070975168e-16
+              ],
+              "signed_raw_re_im": [
+                -0.13312461570195414,
+                7.35287185595298e-16
+              ]
+            },
+            {
+              "motif": "detach_size_3_incident_2",
+              "signed_normalized_re_im": [
+                0.036692038874203824,
+                1.40637374395012e-16
+              ],
+              "signed_raw_re_im": [
+                0.12091305622306105,
+                4.634491644246837e-16
+              ]
+            },
+            {
+              "motif": "join_size_1_6_contacts_2",
+              "signed_normalized_re_im": [
+                0.035740361092100124,
+                5.914322850908427e-16
+              ],
+              "signed_raw_re_im": [
+                0.11777694624650038,
+                1.9489755089515794e-15
+              ]
+            },
+            {
+              "motif": "join_size_1_5_contacts_2",
+              "signed_normalized_re_im": [
+                0.035623022048826024,
+                4.868067754459915e-17
+              ],
+              "signed_raw_re_im": [
+                0.11739027320319517,
+                1.6041979899528122e-16
+              ]
+            },
+            {
+              "motif": "detach_size_4_incident_2",
+              "signed_normalized_re_im": [
+                0.02898598549068791,
+                2.2714035513571318e-17
+              ],
+              "signed_raw_re_im": [
+                0.09551892456378057,
+                7.485066345102766e-17
+              ]
+            },
+            {
+              "motif": "join_size_1_4_contacts_2",
+              "signed_normalized_re_im": [
+                0.027226434612393324,
+                2.573353856394345e-16
+              ],
+              "signed_raw_re_im": [
+                0.08972059117042573,
+                8.480097837757239e-16
+              ]
+            },
+            {
+              "motif": "detach_size_4_incident_1",
+              "signed_normalized_re_im": [
+                0.026620666364767412,
+                -2.0383000842727483e-16
+              ],
+              "signed_raw_re_im": [
+                0.08772437366846424,
+                -6.716909178421575e-16
+              ]
+            },
+            {
+              "motif": "join_size_1_7_contacts_2",
+              "signed_normalized_re_im": [
+                0.0237612654135965,
+                -4.330684444434958e-16
+              ],
+              "signed_raw_re_im": [
+                0.07830165095854494,
+                -1.4271114600896167e-15
+              ]
+            },
+            {
+              "motif": "detach_size_3_incident_0",
+              "signed_normalized_re_im": [
+                -0.019531584421742965,
+                5.968532959532702e-17
+              ],
+              "signed_raw_re_im": [
+                -0.06436337793624217,
+                1.9668396291069558e-16
+              ]
+            },
+            {
+              "motif": "detach_size_4_incident_0",
+              "signed_normalized_re_im": [
+                0.01902378851215269,
+                1.5504091066542713e-17
+              ],
+              "signed_raw_re_im": [
+                0.06269001343402326,
+                5.1091383644376873e-17
+              ]
+            },
+            {
+              "motif": "detach_size_5_incident_2",
+              "signed_normalized_re_im": [
+                0.01898837749654245,
+                -1.349831704744453e-16
+              ],
+              "signed_raw_re_im": [
+                0.06257332179592498,
+                -4.448165918688756e-16
+              ]
+            },
+            {
+              "motif": "detach_size_6_incident_2",
+              "signed_normalized_re_im": [
+                0.017870180546051044,
+                9.64939933512099e-18
+              ],
+              "signed_raw_re_im": [
+                0.058888473123253425,
+                3.179813387657022e-17
+              ]
+            },
+            {
+              "motif": "detach_size_7_incident_2",
+              "signed_normalized_re_im": [
+                0.01188063270679916,
+                -1.045515029732644e-15
+              ],
+              "signed_raw_re_im": [
+                0.03915082547927546,
+                -3.4453364122263327e-15
+              ]
+            },
+            {
+              "motif": "join_size_1_3_contacts_2",
+              "signed_normalized_re_im": [
+                0.011787064573118598,
+                8.616696765828546e-17
+              ],
+              "signed_raw_re_im": [
+                0.03884248586786295,
+                2.8395018986970993e-16
+              ]
+            },
+            {
+              "motif": "join_size_3_4_contacts_1",
+              "signed_normalized_re_im": [
+                -0.011477069777067413,
+                3.8272336688738307e-17
+              ],
+              "signed_raw_re_im": [
+                -0.037820944973602506,
+                1.261206882969583e-16
+              ]
+            },
+            {
+              "motif": "join_size_2_2_contacts_1",
+              "signed_normalized_re_im": [
+                0.009984164005068186,
+                1.9888333601530972e-17
+              ],
+              "signed_raw_re_im": [
+                0.03290130013826514,
+                6.553899082003765e-17
+              ]
+            },
+            {
+              "motif": "join_size_2_4_contacts_1",
+              "signed_normalized_re_im": [
+                0.008945198219882466,
+                8.924000319092407e-17
+              ],
+              "signed_raw_re_im": [
+                0.029477545769403462,
+                2.94076912982789e-16
+              ]
+            },
+            {
+              "motif": "detach_size_5_incident_0",
+              "signed_normalized_re_im": [
+                0.006301912409370582,
+                7.600257229123386e-17
+              ],
+              "signed_raw_re_im": [
+                0.020766997769718937,
+                2.5045496457837894e-16
+              ]
+            },
+            {
+              "motif": "join_size_3_3_contacts_1",
+              "signed_normalized_re_im": [
+                -0.005375960832486858,
+                3.956660303214288e-17
+              ],
+              "signed_raw_re_im": [
+                -0.017715664605611598,
+                1.3038574698405444e-16
+              ]
+            },
+            {
+              "motif": "detach_size_2_incident_0",
+              "signed_normalized_re_im": [
+                0.002841886593921394,
+                -6.131715877773559e-20
+              ],
+              "signed_raw_re_im": [
+                0.009365006798571838,
+                -2.0206140880176373e-19
+              ]
+            },
+            {
+              "motif": "join_size_2_3_contacts_1",
+              "signed_normalized_re_im": [
+                0.0028317214889317455,
+                8.268396817917578e-17
+              ],
+              "signed_raw_re_im": [
+                0.00933150923482673,
+                2.724724926698805e-16
+              ]
+            },
+            {
+              "motif": "join_size_3_5_contacts_2",
+              "signed_normalized_re_im": [
+                0.002087548192431443,
+                1.4153763780406187e-17
+              ],
+              "signed_raw_re_im": [
+                0.00687919885905467,
+                4.6641584612278196e-17
+              ]
+            },
+            {
+              "motif": "join_size_4_4_contacts_2",
+              "signed_normalized_re_im": [
+                0.001706530398954263,
+                8.463634379478729e-18
+              ],
+              "signed_raw_re_im": [
+                0.005623612434908525,
+                2.7890625077714484e-17
+              ]
+            },
+            {
+              "motif": "join_size_2_4_contacts_2",
+              "signed_normalized_re_im": [
+                -0.001238010603724019,
+                -6.230782783516595e-18
+              ],
+              "signed_raw_re_im": [
+                -0.004079676418256172,
+                -2.0532600862000216e-17
+              ]
+            },
+            {
+              "motif": "join_size_3_4_contacts_2",
+              "signed_normalized_re_im": [
+                0.0009701971414202925,
+                4.141652298894627e-17
+              ],
+              "signed_raw_re_im": [
+                0.0031971377199885957,
+                1.3648187798707668e-16
+              ]
+            },
+            {
+              "motif": "join_size_2_5_contacts_1",
+              "signed_normalized_re_im": [
+                0.0008860633954519762,
+                5.903480829183572e-17
+              ],
+              "signed_raw_re_im": [
+                0.0029198877042181243,
+                1.945402684920504e-16
+              ]
+            },
+            {
+              "motif": "join_size_2_5_contacts_2",
+              "signed_normalized_re_im": [
+                -0.0008304463411744618,
+                1.3047627933143474e-16
+              ],
+              "signed_raw_re_im": [
+                -0.0027366101263796797,
+                4.299648147835425e-16
+              ]
+            },
+            {
+              "motif": "join_size_1_2_contacts_2",
+              "signed_normalized_re_im": [
+                0.0003413826162044598,
+                -4.187730891225261e-17
+              ],
+              "signed_raw_re_im": [
+                0.001124974701139477,
+                -1.380003282002837e-16
+              ]
+            },
+            {
+              "motif": "join_size_2_3_contacts_2",
+              "signed_normalized_re_im": [
+                0.00019878755639754107,
+                -3.563028238812848e-18
+              ],
+              "signed_raw_re_im": [
+                0.0006550742809781337,
+                -1.1741419855161438e-17
+              ]
+            },
+            {
+              "motif": "join_size_3_3_contacts_2",
+              "signed_normalized_re_im": [
+                -0.00012756766081044958,
+                5.000882520589389e-18
+              ],
+              "signed_raw_re_im": [
+                -0.00042037990302747844,
+                1.6479650843334848e-17
+              ]
+            },
+            {
+              "motif": "join_size_2_2_contacts_2",
+              "signed_normalized_re_im": [
+                7.484791042649266e-05,
+                6.715176460267559e-19
+              ],
+              "signed_raw_re_im": [
+                0.0002466499513042806,
+                2.212884685072508e-18
+              ]
+            },
+            {
+              "motif": "detach_size_8_incident_2",
+              "signed_normalized_re_im": [
+                0.0,
+                0.0
+              ],
+              "signed_raw_re_im": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "motif": "join_size_2_6_contacts_2",
+              "signed_normalized_re_im": [
+                0.0,
+                0.0
+              ],
+              "signed_raw_re_im": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "motif": "detach_size_6_incident_0",
+              "signed_normalized_re_im": [
+                0.0,
+                0.0
+              ],
+              "signed_raw_re_im": [
+                0.0,
+                0.0
+              ]
+            }
+          ]
+        },
+        "integrated_memory": {
+          "coarse": [
+            {
+              "motif": "detach_size_2",
+              "signed_normalized_re_im": [
+                0.033330333706651755,
+                9.812353170732151e-17
+              ],
+              "signed_raw_re_im": [
+                0.10983506605404518,
+                3.2335123558570915e-16
+              ]
+            },
+            {
+              "motif": "detach_size_3",
+              "signed_normalized_re_im": [
+                -0.029699921695206265,
+                7.987859505786954e-17
+              ],
+              "signed_raw_re_im": [
+                -0.0978715931830569,
+                2.6322781048947314e-16
+              ]
+            },
+            {
+              "motif": "detach_size_4plus",
+              "signed_normalized_re_im": [
+                0.05697314668049028,
+                -2.966783719735022e-16
+              ],
+              "signed_raw_re_im": [
+                0.1877463749398228,
+                -9.77658635803369e-16
+              ]
+            },
+            {
+              "motif": "join_contacts_1",
+              "signed_normalized_re_im": [
+                0.02727322498528298,
+                1.126486057212439e-16
+              ],
+              "signed_raw_re_im": [
+                0.0898747817567625,
+                3.712164168287243e-16
+              ]
+            },
+            {
+              "motif": "join_contacts_multiple",
+              "signed_normalized_re_im": [
+                0.0333303337066518,
+                5.22300743075476e-17
+              ],
+              "signed_raw_re_im": [
+                0.10983506605404533,
+                1.721162983865446e-16
+              ]
+            }
+          ],
+          "fine": [
+            {
+              "motif": "join_size_1_2_contacts_1",
+              "signed_normalized_re_im": [
+                0.05541719177735634,
+                -3.371868756429919e-17
+              ],
+              "signed_raw_re_im": [
+                0.1826189612431299,
+                -1.1111482736644202e-16
+              ]
+            },
+            {
+              "motif": "detach_size_3_incident_1",
+              "signed_normalized_re_im": [
+                -0.04089545870753971,
+                4.92227786308419e-17
+              ],
+              "signed_raw_re_im": [
+                -0.13476478957534946,
+                1.622062110108189e-16
+              ]
+            },
+            {
+              "motif": "detach_size_2_incident_1",
+              "signed_normalized_re_im": [
+                0.03234917675225509,
+                9.645251012300756e-17
+              ],
+              "signed_raw_re_im": [
+                0.10660181193051876,
+                3.1784463707078853e-16
+              ]
+            },
+            {
+              "motif": "join_size_1_1_contacts_1",
+              "signed_normalized_re_im": [
+                0.02788033693010934,
+                1.8973538018496328e-19
+              ],
+              "signed_raw_re_im": [
+                0.091875427209313,
+                6.252442054381786e-19
+              ]
+            },
+            {
+              "motif": "join_size_1_4_contacts_1",
+              "signed_normalized_re_im": [
+                -0.019403145872677528,
+                2.2836008257975937e-17
+              ],
+              "signed_raw_re_im": [
+                -0.06394012815288724,
+                7.525260615452362e-17
+              ]
+            },
+            {
+              "motif": "join_size_1_3_contacts_1",
+              "signed_normalized_re_im": [
+                -0.018088534595740627,
+                2.9680034471790684e-17
+              ],
+              "signed_raw_re_im": [
+                -0.059608025819062084,
+                9.78060578506865e-17
+              ]
+            },
+            {
+              "motif": "detach_size_6_incident_1",
+              "signed_normalized_re_im": [
+                0.013658739614891585,
+                -3.9302328752599536e-17
+              ],
+              "signed_raw_re_im": [
+                0.04501030745807454,
+                -1.2951487112647983e-16
+              ]
+            },
+            {
+              "motif": "join_size_1_5_contacts_1",
+              "signed_normalized_re_im": [
+                -0.01350082696284097,
+                1.3227266504323154e-17
+              ],
+              "signed_raw_re_im": [
+                -0.04448993023288981,
+                4.3588453179118734e-17
+              ]
+            },
+            {
+              "motif": "detach_size_3_incident_2",
+              "signed_normalized_re_im": [
+                0.012759701939399801,
+                2.701978345582085e-17
+              ],
+              "signed_raw_re_im": [
+                0.04204766497925026,
+                8.903960358620144e-17
+              ]
+            },
+            {
+              "motif": "detach_size_7_incident_1",
+              "signed_normalized_re_im": [
+                0.011525179366147246,
+                -4.1904413966564746e-17
+              ],
+              "signed_raw_re_im": [
+                0.03797948283706716,
+                -1.3808964880106058e-16
+              ]
+            },
+            {
+              "motif": "detach_size_5_incident_1",
+              "signed_normalized_re_im": [
+                0.01030833680737561,
+                -6.268043809681823e-17
+              ],
+              "signed_raw_re_im": [
+                0.033969562504544866,
+                -2.0655388929654112e-16
+              ]
+            },
+            {
+              "motif": "join_size_1_6_contacts_1",
+              "signed_normalized_re_im": [
+                -0.009130896314905377,
+                1.5395670849294163e-17
+              ],
+              "signed_raw_re_im": [
+                -0.030089485713133496,
+                5.0734101241269345e-17
+              ]
+            },
+            {
+              "motif": "join_size_1_5_contacts_2",
+              "signed_normalized_re_im": [
+                0.007743728762670655,
+                1.622237500581436e-17
+              ],
+              "signed_raw_re_im": [
+                0.02551828516444765,
+                5.345837956496426e-17
+              ]
+            },
+            {
+              "motif": "join_size_1_6_contacts_2",
+              "signed_normalized_re_im": [
+                0.007414753430350955,
+                2.4231918555051024e-17
+              ],
+              "signed_raw_re_im": [
+                0.0244341967879705,
+                7.985261709453309e-17
+              ]
+            },
+            {
+              "motif": "join_size_1_4_contacts_2",
+              "signed_normalized_re_im": [
+                0.007286709095508317,
+                3.3515399656958156e-17
+              ],
+              "signed_raw_re_im": [
+                0.02401224607787363,
+                1.1044492286061539e-16
+              ]
+            },
+            {
+              "motif": "detach_size_4_incident_2",
+              "signed_normalized_re_im": [
+                0.006388432408596051,
+                6.8575787409708155e-18
+              ],
+              "signed_raw_re_im": [
+                0.021052111321643228,
+                2.259811199655131e-17
+              ]
+            },
+            {
+              "motif": "join_size_1_3_contacts_2",
+              "signed_normalized_re_im": [
+                0.005076954731063972,
+                1.2991791344986459e-17
+              ],
+              "signed_raw_re_im": [
+                0.016730335289998087,
+                4.281248045986956e-17
+              ]
+            },
+            {
+              "motif": "join_size_1_7_contacts_2",
+              "signed_normalized_re_im": [
+                0.00476860814587081,
+                -5.356515321030046e-17
+              ],
+              "signed_raw_re_im": [
+                0.015714225824959297,
+                -1.7651584868093477e-16
+              ]
+            },
+            {
+              "motif": "detach_size_4_incident_0",
+              "signed_normalized_re_im": [
+                0.0041681827309464955,
+                5.692061405548898e-19
+              ],
+              "signed_raw_re_im": [
+                0.01373561481886612,
+                1.8757326163145355e-18
+              ]
+            },
+            {
+              "motif": "detach_size_6_incident_2",
+              "signed_normalized_re_im": [
+                0.0033560434484562907,
+                -3.3732240091455257e-17
+              ],
+              "signed_raw_re_im": [
+                0.011059332831338508,
+                -1.1115948766683046e-16
+              ]
+            },
+            {
+              "motif": "detach_size_5_incident_2",
+              "signed_normalized_re_im": [
+                0.0031522558697980483,
+                -1.2549640146519714e-17
+              ],
+              "signed_raw_re_im": [
+                0.010387781734373193,
+                -4.1355438159696664e-17
+              ]
+            },
+            {
+              "motif": "join_size_2_2_contacts_1",
+              "signed_normalized_re_im": [
+                0.0025373893761383836,
+                2.3191762095822743e-18
+              ],
+              "signed_raw_re_im": [
+                0.008361582340754441,
+                7.642493903972021e-18
+              ]
+            },
+            {
+              "motif": "join_size_2_4_contacts_1",
+              "signed_normalized_re_im": [
+                0.002486700193253341,
+                2.1472285212896514e-17
+              ],
+              "signed_raw_re_im": [
+                0.008194543816645902,
+                7.075866342793672e-17
+              ]
+            },
+            {
+              "motif": "detach_size_7_incident_2",
+              "signed_normalized_re_im": [
+                0.0022239032638593963,
+                -9.673793884001913e-17
+              ],
+              "signed_raw_re_im": [
+                0.0073285363427086185,
+                -3.187852241726942e-16
+              ]
+            },
+            {
+              "motif": "join_size_3_4_contacts_1",
+              "signed_normalized_re_im": [
+                -0.002149705602460376,
+                6.981245551269943e-18
+              ],
+              "signed_raw_re_im": [
+                -0.007084029188578605,
+                2.3005637237595838e-17
+              ]
+            },
+            {
+              "motif": "detach_size_3_incident_0",
+              "signed_normalized_re_im": [
+                -0.0015641649270664406,
+                4.0793106739767104e-18
+              ],
+              "signed_raw_re_im": [
+                -0.005154468586957982,
+                1.3442750416920839e-17
+              ]
+            },
+            {
+              "motif": "detach_size_5_incident_0",
+              "signed_normalized_re_im": [
+                0.0014950822201019083,
+                7.209944447028604e-18
+              ],
+              "signed_raw_re_im": [
+                0.004926816990384637,
+                2.3759279806650784e-17
+              ]
+            },
+            {
+              "motif": "join_size_2_3_contacts_1",
+              "signed_normalized_re_im": [
+                0.0013669799005290493,
+                1.533976667477538e-17
+              ],
+              "signed_raw_re_im": [
+                0.004504675200392496,
+                5.054987750216702e-17
+              ]
+            },
+            {
+              "motif": "join_size_3_3_contacts_1",
+              "signed_normalized_re_im": [
+                -0.000994219293470333,
+                9.969577789183115e-18
+              ],
+              "signed_raw_re_im": [
+                -0.0032762990833400214,
+                3.285323347324715e-17
+              ]
+            },
+            {
+              "motif": "detach_size_2_incident_0",
+              "signed_normalized_re_im": [
+                0.0009811569543965182,
+                2.083103113153193e-18
+              ],
+              "signed_raw_re_im": [
+                0.0032332541235259387,
+                6.86455077360677e-18
+              ]
+            },
+            {
+              "motif": "join_size_2_5_contacts_1",
+              "signed_normalized_re_im": [
+                0.0008519554499918057,
+                7.37257477290143e-18
+              ],
+              "signed_raw_re_im": [
+                0.002807490136418257,
+                2.429520341131208e-17
+              ]
+            },
+            {
+              "motif": "detach_size_4_incident_1",
+              "signed_normalized_re_im": [
+                0.0006969909503176204,
+                -2.4123498337802474e-17
+              ],
+              "signed_raw_re_im": [
+                0.0022968281008218534,
+                -7.949533469142556e-17
+              ]
+            },
+            {
+              "motif": "join_size_3_5_contacts_2",
+              "signed_normalized_re_im": [
+                0.00031509766170816935,
+                1.7830447852570976e-18
+              ],
+              "signed_raw_re_im": [
+                0.0010383566150819867,
+                5.8757540050356605e-18
+              ]
+            },
+            {
+              "motif": "join_size_3_4_contacts_2",
+              "signed_normalized_re_im": [
+                0.00030312110516361046,
+                5.852150632579961e-18
+              ],
+              "signed_raw_re_im": [
+                0.0009988896871253336,
+                1.9284875961483818e-17
+              ]
+            },
+            {
+              "motif": "join_size_2_3_contacts_2",
+              "signed_normalized_re_im": [
+                0.0002259905970938395,
+                -3.812271669262415e-19
+              ],
+              "signed_raw_re_im": [
+                0.000744717781041637,
+                -1.2562763826329106e-18
+              ]
+            },
+            {
+              "motif": "join_size_2_2_contacts_2",
+              "signed_normalized_re_im": [
+                0.00019778489048952912,
+                7.346518794157562e-20
+              ],
+              "signed_raw_re_im": [
+                0.0006517701473560137,
+                2.4209339880162843e-19
+              ]
+            },
+            {
+              "motif": "join_size_2_5_contacts_2",
+              "signed_normalized_re_im": [
+                -0.00013581527004426675,
+                1.6864253837375962e-17
+              ],
+              "signed_raw_re_im": [
+                -0.00044755864995984037,
+                5.55735940264742e-17
+              ]
+            },
+            {
+              "motif": "join_size_3_3_contacts_2",
+              "signed_normalized_re_im": [
+                0.00012203994897816808,
+                6.869437202232376e-19
+              ],
+              "signed_raw_re_im": [
+                0.00040216416598836205,
+                2.2637189759391196e-18
+              ]
+            },
+            {
+              "motif": "join_size_2_4_contacts_2",
+              "signed_normalized_re_im": [
+                -0.00011923699819236776,
+                -6.562746948140758e-20
+              ],
+              "signed_raw_re_im": [
+                -0.00039292746624769383,
+                -2.1626538482606587e-19
+              ]
+            },
+            {
+              "motif": "join_size_4_4_contacts_2",
+              "signed_normalized_re_im": [
+                7.217501919980641e-05,
+                1.1077013647123417e-18
+              ],
+              "signed_raw_re_im": [
+                0.00023784184314004184,
+                3.650262059544138e-18
+              ]
+            },
+            {
+              "motif": "join_size_1_2_contacts_2",
+              "signed_normalized_re_im": [
+                5.8422586790513224e-05,
+                -6.898236322439022e-18
+              ],
+              "signed_raw_re_im": [
+                0.00019252278527003147,
+                -2.2732092897716632e-17
+              ]
+            },
+            {
+              "motif": "detach_size_8_incident_2",
+              "signed_normalized_re_im": [
+                0.0,
+                0.0
+              ],
+              "signed_raw_re_im": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "motif": "join_size_2_6_contacts_2",
+              "signed_normalized_re_im": [
+                0.0,
+                0.0
+              ],
+              "signed_raw_re_im": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "motif": "detach_size_6_incident_0",
+              "signed_normalized_re_im": [
+                0.0,
+                0.0
+              ],
+              "signed_raw_re_im": [
+                0.0,
+                0.0
+              ]
+            }
+          ]
+        },
+        "first_time_moment": {
+          "coarse": [
+            {
+              "motif": "detach_size_2",
+              "signed_normalized_re_im": [
+                0.008689746098281678,
+                2.459462208740559e-17
+              ],
+              "signed_raw_re_im": [
+                0.028635741997001713,
+                8.104785164528254e-17
+              ]
+            },
+            {
+              "motif": "detach_size_3",
+              "signed_normalized_re_im": [
+                -0.004855518654645194,
+                8.307699146670178e-18
+              ],
+              "signed_raw_re_im": [
+                -0.016000626241950023,
+                2.737676413811453e-17
+              ]
+            },
+            {
+              "motif": "detach_size_4plus",
+              "signed_normalized_re_im": [
+                0.012658602386509284,
+                -6.151153262960729e-17
+              ],
+              "signed_raw_re_im": [
+                0.04171450671664492,
+                -2.0270193838803807e-16
+              ]
+            },
+            {
+              "motif": "join_contacts_1",
+              "signed_normalized_re_im": [
+                0.007803083731863944,
+                3.470802204669221e-17
+              ],
+              "signed_raw_re_im": [
+                0.025713880474694414,
+                1.1437502929479822e-16
+              ]
+            },
+            {
+              "motif": "join_contacts_multiple",
+              "signed_normalized_re_im": [
+                0.008689746098281744,
+                5.177906278411785e-18
+              ],
+              "signed_raw_re_im": [
+                0.02863574199700193,
+                1.7063005822756426e-17
+              ]
+            }
+          ],
+          "fine": [
+            {
+              "motif": "join_size_1_2_contacts_1",
+              "signed_normalized_re_im": [
+                0.013132185604263737,
+                3.0493186101154812e-18
+              ],
+              "signed_raw_re_im": [
+                0.04327512847524936,
+                1.0048567587399297e-17
+              ]
+            },
+            {
+              "motif": "detach_size_3_incident_1",
+              "signed_normalized_re_im": [
+                -0.008726583743359951,
+                4.6485168145316e-18
+              ],
+              "signed_raw_re_im": [
+                -0.028757134876414743,
+                1.5318483033235374e-17
+              ]
+            },
+            {
+              "motif": "detach_size_2_incident_1",
+              "signed_normalized_re_im": [
+                0.00837757588822415,
+                2.3695721844016645e-17
+              ],
+              "signed_raw_re_im": [
+                0.027607032355401847,
+                7.808566205313578e-17
+              ]
+            },
+            {
+              "motif": "join_size_1_1_contacts_1",
+              "signed_normalized_re_im": [
+                0.006964801611453142,
+                3.564314642046096e-18
+              ],
+              "signed_raw_re_im": [
+                0.022951448724757555,
+                1.1745659002160068e-17
+              ]
+            },
+            {
+              "motif": "join_size_1_4_contacts_1",
+              "signed_normalized_re_im": [
+                -0.004760680701091261,
+                5.519266684309021e-18
+              ],
+              "signed_raw_re_im": [
+                -0.015688102131489412,
+                1.818790733319273e-17
+              ]
+            },
+            {
+              "motif": "detach_size_3_incident_2",
+              "signed_normalized_re_im": [
+                0.003821327065008582,
+                4.15145476685041e-18
+              ],
+              "signed_raw_re_im": [
+                0.01259260451135433,
+                1.3680490347037727e-17
+              ]
+            },
+            {
+              "motif": "join_size_1_3_contacts_1",
+              "signed_normalized_re_im": [
+                -0.0034757949103188654,
+                9.934002405398434e-18
+              ],
+              "signed_raw_re_im": [
+                -0.01145395563468354,
+                3.273600018472749e-17
+              ]
+            },
+            {
+              "motif": "detach_size_6_incident_1",
+              "signed_normalized_re_im": [
+                0.003289402341458585,
+                -6.8575787409708155e-18
+              ],
+              "signed_raw_re_im": [
+                0.010839727157617126,
+                -2.259811199655131e-17
+              ]
+            },
+            {
+              "motif": "join_size_1_5_contacts_1",
+              "signed_normalized_re_im": [
+                -0.0032655064139633437,
+                -1.1350241493207625e-18
+              ],
+              "signed_raw_re_im": [
+                -0.010760981748166315,
+                -3.740300157531961e-18
+              ]
+            },
+            {
+              "motif": "detach_size_7_incident_1",
+              "signed_normalized_re_im": [
+                0.0027590514625379205,
+                -4.052205619664573e-18
+              ],
+              "signed_raw_re_im": [
+                0.009092036170459478,
+                -1.3353429816143955e-17
+              ]
+            },
+            {
+              "motif": "detach_size_5_incident_1",
+              "signed_normalized_re_im": [
+                0.002310652323052883,
+                -2.096914764222746e-17
+              ],
+              "signed_raw_re_im": [
+                0.007614404727060898,
+                -6.910064977601584e-17
+              ]
+            },
+            {
+              "motif": "join_size_1_6_contacts_1",
+              "signed_normalized_re_im": [
+                -0.0022422353417908404,
+                -2.303929616531697e-19
+              ],
+              "signed_raw_re_im": [
+                -0.007388946928700029,
+                -7.592251066035025e-19
+              ]
+            },
+            {
+              "motif": "join_size_1_4_contacts_2",
+              "signed_normalized_re_im": [
+                0.0020726500627369126,
+                5.502326025363935e-18
+              ],
+              "signed_raw_re_im": [
+                0.006830104329324417,
+                1.8132081957707178e-17
+              ]
+            },
+            {
+              "motif": "join_size_1_5_contacts_2",
+              "signed_normalized_re_im": [
+                0.0019419396247548986,
+                1.0570971181733668e-18
+              ],
+              "signed_raw_re_im": [
+                0.006399367880176818,
+                3.4835034302984235e-18
+              ]
+            },
+            {
+              "motif": "join_size_1_6_contacts_2",
+              "signed_normalized_re_im": [
+                0.0017158217544770101,
+                6.403569081242511e-19
+              ],
+              "signed_raw_re_im": [
+                0.005654230689635716,
+                2.1101991933538526e-18
+              ]
+            },
+            {
+              "motif": "join_size_1_3_contacts_2",
+              "signed_normalized_re_im": [
+                0.0016153610530724228,
+                3.40168431617327e-18
+              ],
+              "signed_raw_re_im": [
+                0.005323177665332917,
+                1.1209735397498771e-17
+              ]
+            },
+            {
+              "motif": "detach_size_4_incident_2",
+              "signed_normalized_re_im": [
+                0.0015493362184902167,
+                -2.710505431213761e-19
+              ],
+              "signed_raw_re_im": [
+                0.005105602824007619,
+                -8.932060077688264e-19
+              ]
+            },
+            {
+              "motif": "detach_size_4_incident_0",
+              "signed_normalized_re_im": [
+                0.0010486660984500927,
+                -8.470329472543003e-19
+              ],
+              "signed_raw_re_im": [
+                0.003455720281879961,
+                -2.7912687742775828e-18
+              ]
+            },
+            {
+              "motif": "join_size_1_7_contacts_2",
+              "signed_normalized_re_im": [
+                0.001028731251041078,
+                -8.662266526873222e-18
+              ],
+              "signed_raw_re_im": [
+                0.0033900280118529897,
+                -2.8545187231863485e-17
+              ]
+            },
+            {
+              "motif": "join_size_2_4_contacts_1",
+              "signed_normalized_re_im": [
+                0.0007131210784602324,
+                3.44255365587829e-18
+              ],
+              "signed_raw_re_im": [
+                0.002349982494822128,
+                1.1344414115857666e-17
+              ]
+            },
+            {
+              "motif": "join_size_2_2_contacts_1",
+              "signed_normalized_re_im": [
+                0.0006569580774150369,
+                1.2084777877154713e-18
+              ],
+              "signed_raw_re_im": [
+                0.0021649058321074857,
+                3.982355496551345e-18
+              ]
+            },
+            {
+              "motif": "detach_size_6_incident_2",
+              "signed_normalized_re_im": [
+                0.0006005080637756004,
+                -5.573053276459669e-18
+              ],
+              "signed_raw_re_im": [
+                0.0019788833628634444,
+                -1.8365152900359356e-17
+              ]
+            },
+            {
+              "motif": "detach_size_5_incident_2",
+              "signed_normalized_re_im": [
+                0.0005908804973034086,
+                -2.6359665318553827e-18
+              ],
+              "signed_raw_re_im": [
+                0.0019471571758795485,
+                -8.686428425551837e-18
+              ]
+            },
+            {
+              "motif": "join_size_3_4_contacts_1",
+              "signed_normalized_re_im": [
+                -0.00048094584784122245,
+                1.582257545471033e-18
+              ],
+              "signed_raw_re_im": [
+                -0.0015848841908089617,
+                5.214090070350525e-18
+              ]
+            },
+            {
+              "motif": "join_size_2_3_contacts_1",
+              "signed_normalized_re_im": [
+                0.0004434213583338015,
+                4.244482098691299e-18
+              ],
+              "signed_raw_re_im": [
+                0.0014612279196186924,
+                1.3987047827904967e-17
+              ]
+            },
+            {
+              "motif": "detach_size_7_incident_2",
+              "signed_normalized_re_im": [
+                0.00040274976687540404,
+                -1.349831704744453e-17
+              ],
+              "signed_raw_re_im": [
+                0.001327200850652842,
+                -4.448165918688756e-17
+              ]
+            },
+            {
+              "motif": "detach_size_5_incident_0",
+              "signed_normalized_re_im": [
+                0.0003519097611551439,
+                1.870248747537495e-18
+              ],
+              "signed_raw_re_im": [
+                0.0011596653127365685,
+                6.1631214536049026e-18
+              ]
+            },
+            {
+              "motif": "join_size_2_5_contacts_1",
+              "signed_normalized_re_im": [
+                0.00032140557918539325,
+                1.187540192050529e-18
+              ],
+              "signed_raw_re_im": [
+                0.001059143401643205,
+                3.913358821537171e-18
+              ]
+            },
+            {
+              "motif": "detach_size_2_incident_0",
+              "signed_normalized_re_im": [
+                0.00031217021005752445,
+                9.168996935180987e-19
+              ],
+              "signed_raw_re_im": [
+                0.0010287096415998568,
+                3.0215040536001546e-18
+              ]
+            },
+            {
+              "motif": "detach_size_4_incident_1",
+              "signed_normalized_re_im": [
+                -0.0002445541465899032,
+                -8.992101768051652e-18
+              ],
+              "signed_raw_re_im": [
+                -0.0008058911465123458,
+                -2.963210930773082e-17
+              ]
+            },
+            {
+              "motif": "join_size_3_3_contacts_1",
+              "signed_normalized_re_im": [
+                -0.00020364636224184785,
+                2.268989507457457e-18
+              ],
+              "signed_raw_re_im": [
+                -0.0006710857396556901,
+                7.477111229096075e-18
+              ]
+            },
+            {
+              "motif": "join_size_3_4_contacts_2",
+              "signed_normalized_re_im": [
+                9.250876392909578e-05,
+                8.906551440378968e-19
+              ],
+              "signed_raw_re_im": [
+                0.00030484861886343877,
+                2.9350191161528782e-18
+              ]
+            },
+            {
+              "motif": "join_size_2_3_contacts_2",
+              "signed_normalized_re_im": [
+                8.053765809701356e-05,
+                5.0509237787822223e-20
+              ],
+              "signed_raw_re_im": [
+                0.00026539965290411173,
+                1.6644554229763902e-19
+              ]
+            },
+            {
+              "motif": "join_size_2_2_contacts_2",
+              "signed_normalized_re_im": [
+                7.584667302225063e-05,
+                6.050433720270455e-20
+              ],
+              "signed_raw_re_im": [
+                0.00024994122215211777,
+                1.9938287842251732e-19
+              ]
+            },
+            {
+              "motif": "join_size_3_3_contacts_2",
+              "signed_normalized_re_im": [
+                5.4505144397259755e-05,
+                1.6691843016830056e-19
+              ],
+              "signed_raw_re_im": [
+                0.0001796134472534114,
+                5.500544028310761e-19
+              ]
+            },
+            {
+              "motif": "join_size_3_5_contacts_2",
+              "signed_normalized_re_im": [
+                5.253489740859425e-05,
+                3.810773137014177e-19
+              ],
+              "signed_raw_re_im": [
+                0.00017312079674329452,
+                1.255782564029359e-18
+              ]
+            },
+            {
+              "motif": "detach_size_3_incident_0",
+              "signed_normalized_re_im": [
+                4.9738023706186716e-05,
+                -5.742883382384156e-19
+              ],
+              "signed_raw_re_im": [
+                0.00016390412311042757,
+                -1.8924802289602012e-18
+              ]
+            },
+            {
+              "motif": "join_size_4_4_contacts_2",
+              "signed_normalized_re_im": [
+                -4.061274206828737e-05,
+                1.7245649989533464e-19
+              ],
+              "signed_raw_re_im": [
+                -0.00013383313971489032,
+                5.683042727433987e-19
+              ]
+            },
+            {
+              "motif": "join_size_2_5_contacts_2",
+              "signed_normalized_re_im": [
+                -1.3227816245811122e-05,
+                2.2065422941414534e-18
+              ],
+              "signed_raw_re_im": [
+                -4.359026476892083e-05,
+                7.271325896737237e-18
+              ]
+            },
+            {
+              "motif": "join_size_2_4_contacts_2",
+              "signed_normalized_re_im": [
+                1.007763151740403e-05,
+                1.9040626189657533e-19
+              ],
+              "signed_raw_re_im": [
+                3.320930816727763e-05,
+                6.274549944977149e-19
+              ]
+            },
+            {
+              "motif": "join_size_1_2_contacts_2",
+              "signed_normalized_re_im": [
+                3.072142141871934e-06,
+                -6.488272375967941e-19
+              ],
+              "signed_raw_re_im": [
+                1.0123779079132917e-05,
+                -2.1381118810966283e-18
+              ]
+            },
+            {
+              "motif": "detach_size_8_incident_2",
+              "signed_normalized_re_im": [
+                0.0,
+                0.0
+              ],
+              "signed_raw_re_im": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "motif": "join_size_2_6_contacts_2",
+              "signed_normalized_re_im": [
+                0.0,
+                0.0
+              ],
+              "signed_raw_re_im": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "motif": "detach_size_6_incident_0",
+              "signed_normalized_re_im": [
+                0.0,
+                0.0
+              ],
+              "signed_raw_re_im": [
+                0.0,
+                0.0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sign": 1,
+      "source_variance": 0.26416918305825915,
+      "force_motif_blocks": [
+        {
+          "moment": "k0",
+          "RR_RT_TR_TT_re_im": [
+            [
+              [
+                2.176775140830671,
+                -5.253371209750035e-16
+              ],
+              [
+                -0.6390535923034282,
+                3.411822298053233e-17
+              ]
+            ],
+            [
+              [
+                -0.6390535923034297,
+                4.457633287805312e-16
+              ],
+              [
+                2.176775140830663,
+                1.0822099816381926e-15
+              ]
+            ]
+          ],
+          "normalized_sum": 3.0754430970544755,
+          "raw_sum": 0.8124372904910432
+        },
+        {
+          "moment": "integrated_memory",
+          "RR_RT_TR_TT_re_im": [
+            [
+              [
+                0.5744896380275134,
+                -1.182008522193758e-16
+              ],
+              [
+                -0.18150258445199274,
+                -2.3028568321875886e-16
+              ]
+            ],
+            [
+              [
+                -0.18150258445199324,
+                1.8573472032522134e-16
+              ],
+              [
+                0.5744896380275115,
+                3.264497228421733e-16
+              ]
+            ]
+          ],
+          "normalized_sum": 0.7859741071510389,
+          "raw_sum": 0.2076301377910346
+        },
+        {
+          "moment": "first_time_moment",
+          "RR_RT_TR_TT_re_im": [
+            [
+              [
+                0.15612941701989486,
+                -4.9250355091406573e-17
+              ],
+              [
+                -0.04960851895922506,
+                -3.505786505145248e-17
+              ]
+            ],
+            [
+              [
+                -0.04960851895922518,
+                4.643368008130533e-18
+              ],
+              [
+                0.15612941701989427,
+                8.300098748155439e-17
+              ]
+            ]
+          ],
+          "normalized_sum": 0.2130417961213389,
+          "raw_sum": 0.0562790772386383
+        }
+      ],
+      "primitive_generator_blocks": [
+        {
+          "moment": "k0",
+          "JJ_JD_DJ_DD_re_im": [
+            [
+              [
+                0.1503233988511372,
+                1.602278218973761e-15
+              ],
+              [
+                1.387398149676094,
+                2.153882195997515e-15
+              ]
+            ],
+            [
+              [
+                1.3873981496761,
+                -5.516039770237538e-16
+              ],
+              [
+                0.1503233988511425,
+                -2.5216181806800175e-15
+              ]
+            ]
+          ]
+        },
+        {
+          "moment": "integrated_memory",
+          "JJ_JD_DJ_DD_re_im": [
+            [
+              [
+                0.06945043079663928,
+                1.7073456431687617e-16
+              ],
+              [
+                0.32353662277887957,
+                1.44467708268126e-16
+              ]
+            ],
+            [
+              [
+                0.32353662277887996,
+                1.1163413820718826e-16
+              ],
+              [
+                0.06945043079663976,
+                -2.4461009695398606e-16
+              ]
+            ]
+          ]
+        },
+        {
+          "moment": "first_time_moment",
+          "JJ_JD_DJ_DD_re_im": [
+            [
+              [
+                0.02589059195767022,
+                3.2833570060937724e-17
+              ],
+              [
+                0.0806303061029991,
+                -3.2833570060937725e-18
+              ]
+            ],
+            [
+              [
+                0.08063030610299912,
+                4.9250355091406586e-17
+              ],
+              [
+                0.02589059195767027,
+                -2.9550213054843955e-17
+              ]
+            ]
+          ]
+        }
+      ],
+      "directed_edge_budgets": {
+        "k0": {
+          "coarse": [
+            {
+              "motif": "detach_size_2",
+              "signed_normalized_re_im": [
+                0.4513837384335836,
+                -1.1883076187208813e-17
+              ],
+              "signed_raw_re_im": [
+                0.1192416734277827,
+                -3.139142528594005e-18
+              ]
+            },
+            {
+              "motif": "detach_size_3",
+              "signed_normalized_re_im": [
+                0.08922799479303675,
+                1.2355567957644809e-15
+              ],
+              "signed_raw_re_im": [
+                0.02357128649040312,
+                3.2639602935918325e-16
+              ]
+            },
+            {
+              "motif": "detach_size_4plus",
+              "signed_normalized_re_im": [
+                0.9971098153006204,
+                -5.143021425402239e-15
+              ],
+              "signed_raw_re_im": [
+                0.26340568532733655,
+                -1.358627768399633e-15
+              ]
+            },
+            {
+              "motif": "join_contacts_1",
+              "signed_normalized_re_im": [
+                1.0863378100936483,
+                1.4697444650213498e-15
+              ],
+              "signed_raw_re_im": [
+                0.28697697181773735,
+                3.882611946290881e-16
+              ]
+            },
+            {
+              "motif": "join_contacts_multiple",
+              "signed_normalized_re_im": [
+                0.45138373843358054,
+                2.4628486303298744e-15
+              ],
+              "signed_raw_re_im": [
+                0.1192416734277819,
+                6.506087106703955e-16
+              ]
+            }
+          ],
+          "fine": [
+            {
+              "motif": "join_size_1_1_contacts_1",
+              "signed_normalized_re_im": [
+                0.9292907333619957,
+                -2.289075542402207e-16
+              ],
+              "signed_raw_re_im": [
+                0.24548997385584895,
+                -6.047032159950325e-17
+              ]
+            },
+            {
+              "motif": "join_size_1_2_contacts_1",
+              "signed_normalized_re_im": [
+                0.48346827271409565,
+                3.402226417259513e-16
+              ],
+              "signed_raw_re_im": [
+                0.1277174186374703,
+                8.987633732266735e-17
+              ]
+            },
+            {
+              "motif": "detach_size_2_incident_1",
+              "signed_normalized_re_im": [
+                0.3940990243169584,
+                -4.416331860887925e-16
+              ],
+              "signed_raw_re_im": [
+                0.10410881729786792,
+                -1.1666587798049245e-16
+              ]
+            },
+            {
+              "motif": "detach_size_4_incident_2",
+              "signed_normalized_re_im": [
+                0.3497731533553113,
+                4.98732999343332e-16
+              ],
+              "signed_raw_re_im": [
+                0.09239928817758378,
+                1.3174988900072333e-16
+              ]
+            },
+            {
+              "motif": "detach_size_3_incident_2",
+              "signed_normalized_re_im": [
+                0.25496021040871875,
+                4.477454878457934e-16
+              ],
+              "signed_raw_re_im": [
+                0.06735263049603309,
+                1.1828055974224494e-16
+              ]
+            },
+            {
+              "motif": "detach_size_5_incident_2",
+              "signed_normalized_re_im": [
+                0.18745697779151954,
+                8.933825901280557e-16
+              ],
+              "signed_raw_re_im": [
+                0.049520356681755945,
+                2.3600414899260005e-16
+              ]
+            },
+            {
+              "motif": "detach_size_3_incident_0",
+              "signed_normalized_re_im": [
+                -0.1727854912447011,
+                2.5847379792054426e-16
+              ],
+              "signed_raw_re_im": [
+                -0.04564460206643268,
+                6.828081203863573e-17
+              ]
+            },
+            {
+              "motif": "join_size_1_6_contacts_2",
+              "signed_normalized_re_im": [
+                0.1647019685608662,
+                2.7517051137682103e-15
+              ],
+              "signed_raw_re_im": [
+                0.0435091844828111,
+                7.269156919213821e-16
+              ]
+            },
+            {
+              "motif": "join_size_1_5_contacts_2",
+              "signed_normalized_re_im": [
+                0.15832698633120806,
+                5.80265002714242e-16
+              ],
+              "signed_raw_re_im": [
+                0.0418251106351914,
+                1.5328813172431984e-16
+              ]
+            },
+            {
+              "motif": "detach_size_6_incident_1",
+              "signed_normalized_re_im": [
+                0.14901580101867934,
+                -2.8449465006019636e-16
+              ],
+              "signed_raw_re_im": [
+                0.03936538241787662,
+                -7.515471929084739e-17
+              ]
+            },
+            {
+              "motif": "join_size_1_4_contacts_1",
+              "signed_normalized_re_im": [
+                -0.12367210817887979,
+                -3.920475055707584e-16
+              ],
+              "signed_raw_re_im": [
+                -0.03267035978470732,
+                -1.0356686926665555e-16
+              ]
+            },
+            {
+              "motif": "join_size_1_7_contacts_2",
+              "signed_normalized_re_im": [
+                0.10949881505202869,
+                -1.6195141464558623e-15
+              ],
+              "signed_raw_re_im": [
+                0.028926212518141828,
+                -4.2782572902053903e-16
+              ]
+            },
+            {
+              "motif": "detach_size_5_incident_1",
+              "signed_normalized_re_im": [
+                0.09351289966178535,
+                6.505213034913027e-16
+              ],
+              "signed_raw_re_im": [
+                0.024703226309062794,
+                1.7184768130529128e-16
+              ]
+            },
+            {
+              "motif": "join_size_1_3_contacts_1",
+              "signed_normalized_re_im": [
+                -0.09079166610320015,
+                1.149687983703629e-15
+              ],
+              "signed_raw_re_im": [
+                -0.023984360262980623,
+                3.037121354268848e-16
+              ]
+            },
+            {
+              "motif": "detach_size_7_incident_1",
+              "signed_normalized_re_im": [
+                0.08983725758645952,
+                -1.8832591736073212e-15
+              ],
+              "signed_raw_re_im": [
+                0.023732234944809406,
+                -4.974990373788183e-16
+              ]
+            },
+            {
+              "motif": "detach_size_6_incident_2",
+              "signed_normalized_re_im": [
+                0.08235098428043544,
+                -4.891920202254596e-16
+              ],
+              "signed_raw_re_im": [
+                0.021754592241406173,
+                -1.2922945634157904e-16
+              ]
+            },
+            {
+              "motif": "detach_size_4_incident_1",
+              "signed_normalized_re_im": [
+                -0.07555220493872328,
+                -4.2891037943526555e-16
+              ],
+              "signed_raw_re_im": [
+                -0.0199585642569127,
+                -1.1330490454062205e-16
+              ]
+            },
+            {
+              "motif": "join_size_3_4_contacts_1",
+              "signed_normalized_re_im": [
+                -0.0655906100561684,
+                4.722784663346857e-16
+              ],
+              "signed_raw_re_im": [
+                -0.017327017874830843,
+                1.2476141662764147e-16
+              ]
+            },
+            {
+              "motif": "join_size_1_3_contacts_2",
+              "signed_normalized_re_im": [
+                -0.06324449711024904,
+                6.852157730108388e-17
+              ],
+              "signed_raw_re_im": [
+                -0.016707247134544922,
+                1.8101289097490683e-17
+              ]
+            },
+            {
+              "motif": "detach_size_2_incident_0",
+              "signed_normalized_re_im": [
+                0.057284714116625945,
+                4.228383210519885e-16
+              ],
+              "signed_raw_re_im": [
+                0.015132856129915,
+                1.117008538380297e-16
+              ]
+            },
+            {
+              "motif": "join_size_1_4_contacts_2",
+              "signed_normalized_re_im": [
+                0.056857723743540936,
+                -8.673617379884035e-17
+              ],
+              "signed_raw_re_im": [
+                0.015020058431883393,
+                -2.291302417403884e-17
+              ]
+            },
+            {
+              "motif": "detach_size_7_incident_2",
+              "signed_normalized_re_im": [
+                0.05474940752601929,
+                -4.253591629215936e-15
+              ],
+              "signed_raw_re_im": [
+                0.014463106259072222,
+                -1.1236678257534233e-15
+              ]
+            },
+            {
+              "motif": "detach_size_5_incident_0",
+              "signed_normalized_re_im": [
+                0.04738467869419041,
+                -1.6479873021779667e-17
+              ],
+              "signed_raw_re_im": [
+                0.01251757186012238,
+                -4.353474593067379e-18
+              ]
+            },
+            {
+              "motif": "join_size_1_5_contacts_1",
+              "signed_normalized_re_im": [
+                -0.040187014571735465,
+                9.432558900623889e-16
+              ],
+              "signed_raw_re_im": [
+                -0.010616170808965713,
+                2.4917913789267237e-16
+              ]
+            },
+            {
+              "motif": "join_size_3_3_contacts_1",
+              "signed_normalized_re_im": [
+                -0.0387865145910974,
+                2.2768245622195593e-17
+              ],
+              "signed_raw_re_im": [
+                -0.010246201873207449,
+                6.014668845685195e-18
+              ]
+            },
+            {
+              "motif": "join_size_2_3_contacts_1",
+              "signed_normalized_re_im": [
+                0.03665178926877675,
+                4.87890977618477e-18
+              ],
+              "signed_raw_re_im": [
+                0.009682273228756222,
+                1.2888576097896846e-18
+              ]
+            },
+            {
+              "motif": "join_size_1_6_contacts_1",
+              "signed_normalized_re_im": [
+                0.03504954509693325,
+                -1.0946105133413653e-15
+              ],
+              "signed_raw_re_im": [
+                0.009259009694820469,
+                -2.8916236507637013e-16
+              ]
+            },
+            {
+              "motif": "join_size_2_4_contacts_1",
+              "signed_normalized_re_im": [
+                -0.03451706705627892,
+                2.3505503099485736e-16
+              ],
+              "signed_raw_re_im": [
+                -0.009118345405824351,
+                6.209429551164525e-17
+              ]
+            },
+            {
+              "motif": "join_size_1_2_contacts_2",
+              "signed_normalized_re_im": [
+                -0.03204197226044053,
+                -2.3635607360183997e-17
+              ],
+              "signed_raw_re_im": [
+                -0.008464501635615976,
+                -6.243799087425583e-18
+              ]
+            },
+            {
+              "motif": "join_size_2_5_contacts_1",
+              "signed_normalized_re_im": [
+                -0.020720880856785747,
+                -1.5352302762394743e-16
+              ],
+              "signed_raw_re_im": [
+                -0.005473818168184611,
+                -4.0556052788048747e-17
+              ]
+            },
+            {
+              "motif": "join_size_3_4_contacts_2",
+              "signed_normalized_re_im": [
+                0.01890852112611899,
+                1.6019087098473328e-17
+              ],
+              "signed_raw_re_im": [
+                0.004995048578726688,
+                4.231749152142798e-18
+              ]
+            },
+            {
+              "motif": "detach_size_4_incident_0",
+              "signed_normalized_re_im": [
+                0.018580860324950314,
+                1.691355389077387e-16
+              ],
+              "signed_raw_re_im": [
+                0.004908490692561744,
+                4.4680397139375734e-17
+              ]
+            },
+            {
+              "motif": "join_size_2_2_contacts_1",
+              "signed_normalized_re_im": [
+                0.01614333106599261,
+                1.700029006457271e-16
+              ],
+              "signed_raw_re_im": [
+                0.004264570579542284,
+                4.4909527381116126e-17
+              ]
+            },
+            {
+              "motif": "join_size_3_5_contacts_2",
+              "signed_normalized_re_im": [
+                0.012731426959542467,
+                1.991770119019722e-16
+              ],
+              "signed_raw_re_im": [
+                0.0033632506590682296,
+                5.2616428518129154e-17
+              ]
+            },
+            {
+              "motif": "join_size_4_4_contacts_2",
+              "signed_normalized_re_im": [
+                0.010407696074896049,
+                1.1153606342335102e-16
+              ],
+              "signed_raw_re_im": [
+                0.0027493925696239394,
+                2.946439075608082e-17
+              ]
+            },
+            {
+              "motif": "join_size_3_3_contacts_2",
+              "signed_normalized_re_im": [
+                0.008016191968550468,
+                7.384094420984089e-17
+              ],
+              "signed_raw_re_im": [
+                0.0021176308835701555,
+                1.950650190816416e-17
+              ]
+            },
+            {
+              "motif": "detach_size_3_incident_1",
+              "signed_normalized_re_im": [
+                0.00705327562901811,
+                5.646524914304507e-16
+              ],
+              "signed_raw_re_im": [
+                0.001863258060802443,
+                1.4916378737299283e-16
+              ]
+            },
+            {
+              "motif": "join_size_2_5_contacts_2",
+              "signed_normalized_re_im": [
+                0.002900792998426256,
+                3.733354130521289e-16
+              ],
+              "signed_raw_re_im": [
+                0.000766300116615382,
+                9.862371107269863e-17
+              ]
+            },
+            {
+              "motif": "join_size_2_2_contacts_2",
+              "signed_normalized_re_im": [
+                0.0027466625227113746,
+                1.713612068395618e-17
+              ],
+              "signed_raw_re_im": [
+                0.000725583594761401,
+                4.526835001868441e-18
+              ]
+            },
+            {
+              "motif": "join_size_2_4_contacts_2",
+              "signed_normalized_re_im": [
+                0.0018997656502972146,
+                8.861158472981042e-17
+              ],
+              "signed_raw_re_im": [
+                0.0005018595398411576,
+                2.3408449947571728e-17
+              ]
+            },
+            {
+              "motif": "join_size_2_3_contacts_2",
+              "signed_normalized_re_im": [
+                -0.0003263431839172098,
+                2.869142358864964e-17
+              ],
+              "signed_raw_re_im": [
+                -8.620981229204053e-05,
+                7.579389930192041e-18
+              ]
+            },
+            {
+              "motif": "detach_size_8_incident_2",
+              "signed_normalized_re_im": [
+                0.0,
+                0.0
+              ],
+              "signed_raw_re_im": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "motif": "join_size_2_6_contacts_2",
+              "signed_normalized_re_im": [
+                0.0,
+                0.0
+              ],
+              "signed_raw_re_im": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "motif": "detach_size_6_incident_0",
+              "signed_normalized_re_im": [
+                0.0,
+                0.0
+              ],
+              "signed_raw_re_im": [
+                0.0,
+                0.0
+              ]
+            }
+          ]
+        },
+        "integrated_memory": {
+          "coarse": [
+            {
+              "motif": "detach_size_2",
+              "signed_normalized_re_im": [
+                0.16601777916909616,
+                -3.1193604335885404e-17
+              ],
+              "signed_raw_re_im": [
+                0.043856781096246605,
+                -8.240388974053418e-18
+              ]
+            },
+            {
+              "motif": "detach_size_3",
+              "signed_normalized_re_im": [
+                0.039935857063092994,
+                2.478486166301863e-16
+              ],
+              "signed_raw_re_im": [
+                0.010549822735088685,
+                6.547396657731599e-17
+              ]
+            },
+            {
+              "motif": "detach_size_4plus",
+              "signed_normalized_re_im": [
+                0.18703341734333218,
+                -4.2587461335230614e-16
+              ],
+              "signed_raw_re_im": [
+                0.0494084650641825,
+                -1.125029486945307e-16
+              ]
+            },
+            {
+              "motif": "join_contacts_1",
+              "signed_normalized_re_im": [
+                0.22696927440642323,
+                1.958069123508821e-16
+              ],
+              "signed_raw_re_im": [
+                0.05995828779927067,
+                5.172615207289268e-17
+              ]
+            },
+            {
+              "motif": "join_contacts_multiple",
+              "signed_normalized_re_im": [
+                0.16601777916909605,
+                1.548893993127505e-16
+              ],
+              "signed_raw_re_im": [
+                0.04385678109624658,
+                4.091700608083378e-17
+              ]
+            }
+          ],
+          "fine": [
+            {
+              "motif": "join_size_1_1_contacts_1",
+              "signed_normalized_re_im": [
+                0.17852163513881567,
+                -5.025277069470313e-17
+              ],
+              "signed_raw_re_im": [
+                0.04715991451284554,
+                -1.3275233380833752e-17
+              ]
+            },
+            {
+              "motif": "detach_size_2_incident_1",
+              "signed_normalized_re_im": [
+                0.15082631340895225,
+                -1.262512837321789e-16
+              ],
+              "signed_raw_re_im": [
+                0.03984366399693187,
+                -3.335169848358618e-17
+              ]
+            },
+            {
+              "motif": "join_size_1_2_contacts_1",
+              "signed_normalized_re_im": [
+                0.09590798947439039,
+                -1.3986208025063007e-17
+              ],
+              "signed_raw_re_im": [
+                0.025335935228209826,
+                -3.6947251480637625e-18
+              ]
+            },
+            {
+              "motif": "detach_size_4_incident_2",
+              "signed_normalized_re_im": [
+                0.05914596801431115,
+                9.80118763926896e-17
+              ],
+              "signed_raw_re_im": [
+                0.015624542051530502,
+                2.5891717316663887e-17
+              ]
+            },
+            {
+              "motif": "detach_size_3_incident_2",
+              "signed_normalized_re_im": [
+                0.05227415134258567,
+                4.685023270726956e-17
+              ],
+              "signed_raw_re_im": [
+                0.013809219855234658,
+                1.2376387700368732e-17
+              ]
+            },
+            {
+              "motif": "join_size_1_5_contacts_2",
+              "signed_normalized_re_im": [
+                0.04932409766428948,
+                2.7538735181131813e-17
+              ],
+              "signed_raw_re_im": [
+                0.013029906585061141,
+                7.274885175257332e-18
+              ]
+            },
+            {
+              "motif": "join_size_1_6_contacts_2",
+              "signed_normalized_re_im": [
+                0.0489319021550465,
+                1.8951853975046618e-16
+              ],
+              "signed_raw_re_im": [
+                0.012926300617785305,
+                5.006495782027486e-17
+              ]
+            },
+            {
+              "motif": "join_size_1_7_contacts_2",
+              "signed_normalized_re_im": [
+                0.03366615523912947,
+                -1.632194746689936e-16
+              ],
+              "signed_raw_re_im": [
+                0.008893560726233363,
+                -4.3117555282506265e-17
+              ]
+            },
+            {
+              "motif": "detach_size_6_incident_1",
+              "signed_normalized_re_im": [
+                0.029605594034887123,
+                -1.0310762660337147e-16
+              ],
+              "signed_raw_re_im": [
+                0.007820885590150602,
+                -2.723785748688867e-17
+              ]
+            },
+            {
+              "motif": "detach_size_5_incident_2",
+              "signed_normalized_re_im": [
+                0.02946256275166527,
+                1.0104764247564901e-16
+              ],
+              "signed_raw_re_im": [
+                0.00778310113291011,
+                2.6693673162755247e-17
+              ]
+            },
+            {
+              "motif": "detach_size_3_incident_0",
+              "signed_normalized_re_im": [
+                -0.02941105566637317,
+                6.613633252161577e-17
+              ],
+              "signed_raw_re_im": [
+                -0.0077694945482667845,
+                1.7471180932704613e-17
+              ]
+            },
+            {
+              "motif": "join_size_1_4_contacts_2",
+              "signed_normalized_re_im": [
+                0.028591626269554124,
+                -1.6696713456276768e-17
+              ],
+              "signed_raw_re_im": [
+                0.007553026553935175,
+                -4.410757153502477e-18
+              ]
+            },
+            {
+              "motif": "join_size_1_4_contacts_1",
+              "signed_normalized_re_im": [
+                -0.020095258684918474,
+                2.6020852139652106e-18
+              ],
+              "signed_raw_re_im": [
+                -0.0053085480701393,
+                6.873907252211652e-19
+              ]
+            },
+            {
+              "motif": "detach_size_6_incident_2",
+              "signed_normalized_re_im": [
+                0.019669951211284814,
+                -6.03900610074426e-17
+              ],
+              "signed_raw_re_im": [
+                0.005196194942280925,
+                -1.595319308117454e-17
+              ]
+            },
+            {
+              "motif": "detach_size_7_incident_1",
+              "signed_normalized_re_im": [
+                0.01891843867389987,
+                -1.8323016715005025e-16
+              ],
+              "signed_raw_re_im": [
+                0.004997668489221904,
+                -4.8403763567657047e-17
+              ]
+            },
+            {
+              "motif": "detach_size_4_incident_1",
+              "signed_normalized_re_im": [
+                -0.018016245163241313,
+                6.179952383167375e-17
+              ],
+              "signed_raw_re_im": [
+                -0.00475933676655077,
+                1.6325529724002673e-17
+              ]
+            },
+            {
+              "motif": "detach_size_7_incident_2",
+              "signed_normalized_re_im": [
+                0.01796900181896962,
+                -3.717187148366552e-16
+              ],
+              "signed_raw_re_im": [
+                0.004746856530889577,
+                -9.819662922586519e-17
+              ]
+            },
+            {
+              "motif": "detach_size_3_incident_1",
+              "signed_normalized_re_im": [
+                0.01707276138688028,
+                1.216474837528736e-16
+              ],
+              "signed_raw_re_im": [
+                0.004510097428120755,
+                3.2135516404089473e-17
+              ]
+            },
+            {
+              "motif": "join_size_3_4_contacts_1",
+              "signed_normalized_re_im": [
+                -0.01564438643488676,
+                6.326319676452918e-17
+              ],
+              "signed_raw_re_im": [
+                -0.004132764783951747,
+                1.6712187006939577e-17
+              ]
+            },
+            {
+              "motif": "detach_size_2_incident_0",
+              "signed_normalized_re_im": [
+                0.015191465760143975,
+                9.475952379886e-17
+              ],
+              "signed_raw_re_im": [
+                0.00401311709931475,
+                2.503254598893451e-17
+              ]
+            },
+            {
+              "motif": "join_size_2_3_contacts_1",
+              "signed_normalized_re_im": [
+                0.01514955756052381,
+                1.9759584593548318e-17
+              ],
+              "signed_raw_re_im": [
+                0.004002046244457648,
+                5.2198733196482225e-18
+              ]
+            },
+            {
+              "motif": "detach_size_5_incident_1",
+              "signed_normalized_re_im": [
+                0.012248438482475942,
+                4.7704895589362195e-17
+              ],
+              "signed_raw_re_im": [
+                0.003235659987655013,
+                1.2602163295721362e-17
+              ]
+            },
+            {
+              "motif": "join_size_3_3_contacts_1",
+              "signed_normalized_re_im": [
+                -0.010950946073824866,
+                1.8458541986565713e-17
+              ],
+              "signed_raw_re_im": [
+                -0.0028929024780373655,
+                4.87617795703764e-18
+              ]
+            },
+            {
+              "motif": "join_size_1_5_contacts_1",
+              "signed_normalized_re_im": [
+                -0.010932486929498861,
+                1.242495689668388e-16
+              ],
+              "signed_raw_re_im": [
+                -0.0028880261409608104,
+                3.2822907129310634e-17
+              ]
+            },
+            {
+              "motif": "detach_size_5_incident_0",
+              "signed_normalized_re_im": [
+                0.010741657006945828,
+                -3.0466081046842675e-17
+              ],
+              "signed_raw_re_im": [
+                0.0028376147562169042,
+                -8.048199741131142e-18
+              ]
+            },
+            {
+              "motif": "detach_size_4_incident_0",
+              "signed_normalized_re_im": [
+                0.007288050512132728,
+                1.3010426069826053e-18
+              ],
+              "signed_raw_re_im": [
+                0.0019252783498774299,
+                3.436953626105826e-19
+              ]
+            },
+            {
+              "motif": "join_size_1_3_contacts_1",
+              "signed_normalized_re_im": [
+                -0.0071343409370369475,
+                8.738669510233166e-17
+              ],
+              "signed_raw_re_im": [
+                -0.0018846730169961455,
+                2.308487185534413e-17
+              ]
+            },
+            {
+              "motif": "join_size_1_2_contacts_2",
+              "signed_normalized_re_im": [
+                -0.007051655461654961,
+                -1.3552527156068805e-19
+              ],
+              "signed_raw_re_im": [
+                -0.0018628300625137023,
+                -3.5801600271935684e-20
+              ]
+            },
+            {
+              "motif": "join_size_2_2_contacts_1",
+              "signed_normalized_re_im": [
+                0.005064855142171556,
+                2.4448758989548125e-17
+              ],
+              "signed_raw_re_im": [
+                0.001337978645215883,
+                6.4586086890571975e-18
+              ]
+            },
+            {
+              "motif": "join_size_3_4_contacts_2",
+              "signed_normalized_re_im": [
+                0.004518517111893411,
+                2.233456475320139e-17
+              ],
+              "signed_raw_re_im": [
+                0.001193652974083647,
+                5.900103724815001e-18
+              ]
+            },
+            {
+              "motif": "join_size_2_5_contacts_1",
+              "signed_normalized_re_im": [
+                -0.0038474143782606207,
+                -1.1709383462843448e-17
+              ],
+              "signed_raw_re_im": [
+                -0.0010163683131917082,
+                -3.0932582634952433e-18
+              ]
+            },
+            {
+              "motif": "join_size_3_3_contacts_2",
+              "signed_normalized_re_im": [
+                0.00360645988957108,
+                1.3315357930837601e-17
+              ],
+              "signed_raw_re_im": [
+                0.0009527155627603716,
+                3.517507226717681e-18
+              ]
+            },
+            {
+              "motif": "join_size_4_4_contacts_2",
+              "signed_normalized_re_im": [
+                0.002639003074337536,
+                1.8285956985579062e-17
+              ],
+              "signed_raw_re_im": [
+                0.0006971432862359812,
+                4.830586318318888e-18
+              ]
+            },
+            {
+              "motif": "join_size_1_3_contacts_2",
+              "signed_normalized_re_im": [
+                -0.0026358124574121303,
+                -9.86623976961809e-18
+              ],
+              "signed_raw_re_im": [
+                -0.0006963004235693449,
+                -2.606356499796918e-18
+              ]
+            },
+            {
+              "motif": "join_size_2_3_contacts_2",
+              "signed_normalized_re_im": [
+                0.002446982878809385,
+                9.332151748567672e-18
+              ],
+              "signed_raw_re_im": [
+                0.0006464174680526224,
+                2.4652669035948266e-18
+              ]
+            },
+            {
+              "motif": "join_size_1_6_contacts_1",
+              "signed_normalized_re_im": [
+                0.0020830844919650284,
+                -1.0256552551712872e-16
+              ],
+              "signed_raw_re_im": [
+                0.0005502867284837304,
+                -2.7094651085800927e-17
+              ]
+            },
+            {
+              "motif": "join_size_2_4_contacts_1",
+              "signed_normalized_re_im": [
+                -0.0011530139630177988,
+                4.4208343583096443e-17
+              ],
+              "signed_raw_re_im": [
+                -0.0003045907566651777,
+                1.167848200870542e-17
+              ]
+            },
+            {
+              "motif": "join_size_2_4_contacts_2",
+              "signed_normalized_re_im": [
+                0.0010552706767737972,
+                6.8308897144930945e-18
+              ],
+              "signed_raw_re_im": [
+                0.0002787699925886703,
+                1.804510555438706e-18
+              ]
+            },
+            {
+              "motif": "join_size_3_5_contacts_2",
+              "signed_normalized_re_im": [
+                0.0004288750427799308,
+                2.833515777455004e-17
+              ],
+              "signed_raw_re_im": [
+                0.00011329556968525026,
+                7.485275481129765e-18
+              ]
+            },
+            {
+              "motif": "join_size_2_5_contacts_2",
+              "signed_normalized_re_im": [
+                0.0002562868942505831,
+                2.99477877763551e-17
+              ],
+              "signed_raw_re_im": [
+                6.770309948271499e-05,
+                7.911282631281846e-18
+              ]
+            },
+            {
+              "motif": "join_size_2_2_contacts_2",
+              "signed_normalized_re_im": [
+                0.00024007019172821243,
+                2.4075028396671007e-18
+              ],
+              "signed_raw_re_im": [
+                6.341914642548152e-05,
+                6.359880583652971e-19
+              ]
+            },
+            {
+              "motif": "detach_size_8_incident_2",
+              "signed_normalized_re_im": [
+                0.0,
+                0.0
+              ],
+              "signed_raw_re_im": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "motif": "join_size_2_6_contacts_2",
+              "signed_normalized_re_im": [
+                0.0,
+                0.0
+              ],
+              "signed_raw_re_im": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "motif": "detach_size_6_incident_0",
+              "signed_normalized_re_im": [
+                0.0,
+                0.0
+              ],
+              "signed_raw_re_im": [
+                0.0,
+                0.0
+              ]
+            }
+          ]
+        },
+        "first_time_moment": {
+          "coarse": [
+            {
+              "motif": "detach_size_2",
+              "signed_normalized_re_im": [
+                0.053930371303614916,
+                -2.896326129711067e-17
+              ],
+              "signed_raw_re_im": [
+                0.014246742129304536,
+                -7.651201075560622e-18
+              ]
+            },
+            {
+              "motif": "detach_size_3",
+              "signed_normalized_re_im": [
+                0.01087643990945529,
+                5.128276275856436e-17
+              ],
+              "signed_raw_re_im": [
+                0.00287322024546305,
+                1.3547325542900463e-17
+              ]
+            },
+            {
+              "motif": "detach_size_4plus",
+              "signed_normalized_re_im": [
+                0.04171408684759947,
+                -5.865533753146579e-17
+              ],
+              "signed_raw_re_im": [
+                0.011019576244551623,
+                -1.5494932597693763e-17
+              ]
+            },
+            {
+              "motif": "join_contacts_1",
+              "signed_normalized_re_im": [
+                0.05259052675705443,
+                7.589415207398531e-17
+              ],
+              "signed_raw_re_im": [
+                0.013892796490014589,
+                2.0048896152283983e-17
+              ]
+            },
+            {
+              "motif": "join_contacts_multiple",
+              "signed_normalized_re_im": [
+                0.05393037130361507,
+                1.3891166432781015e-17
+              ],
+              "signed_raw_re_im": [
+                0.014246742129304575,
+                3.669618088274073e-18
+              ]
+            }
+          ],
+          "fine": [
+            {
+              "motif": "detach_size_2_incident_1",
+              "signed_normalized_re_im": [
+                0.049460051992325546,
+                -5.325863917893461e-17
+              ],
+              "signed_raw_re_im": [
+                0.013065821528831663,
+                -1.406929120269375e-17
+              ]
+            },
+            {
+              "motif": "join_size_1_1_contacts_1",
+              "signed_normalized_re_im": [
+                0.03877121658837798,
+                -6.505213034913027e-19
+              ],
+              "signed_raw_re_im": [
+                0.010242160612326637,
+                -1.718476813052913e-19
+              ]
+            },
+            {
+              "motif": "join_size_1_2_contacts_1",
+              "signed_normalized_re_im": [
+                0.022800007955701227,
+                -1.5612511283791264e-17
+              ],
+              "signed_raw_re_im": [
+                0.006023059475379402,
+                -4.124344351326991e-18
+              ]
+            },
+            {
+              "motif": "join_size_1_5_contacts_2",
+              "signed_normalized_re_im": [
+                0.014894946917518272,
+                3.835365185167472e-18
+              ],
+              "signed_raw_re_im": [
+                0.003934785958896937,
+                1.0131852876957798e-18
+              ]
+            },
+            {
+              "motif": "join_size_1_6_contacts_2",
+              "signed_normalized_re_im": [
+                0.014587238371380118,
+                -3.198396408832238e-18
+              ],
+              "signed_raw_re_im": [
+                0.0038534988436435763,
+                -8.449177664176822e-19
+              ]
+            },
+            {
+              "motif": "detach_size_3_incident_2",
+              "signed_normalized_re_im": [
+                0.011675682838526085,
+                -5.590343431915851e-18
+              ],
+              "signed_raw_re_im": [
+                0.003084355597100772,
+                -1.4767964574243152e-18
+              ]
+            },
+            {
+              "motif": "detach_size_4_incident_2",
+              "signed_normalized_re_im": [
+                0.011453428264966169,
+                6.7220534694101275e-18
+              ],
+              "signed_raw_re_im": [
+                0.0030256427879724874,
+                1.77575937348801e-18
+              ]
+            },
+            {
+              "motif": "join_size_1_7_contacts_2",
+              "signed_normalized_re_im": [
+                0.010539579901535496,
+                -1.7768234879302966e-17
+              ],
+              "signed_raw_re_im": [
+                0.0027842322123658794,
+                -4.693820092452731e-18
+              ]
+            },
+            {
+              "motif": "join_size_1_4_contacts_2",
+              "signed_normalized_re_im": [
+                0.010086642444181828,
+                3.0899761915836876e-18
+              ],
+              "signed_raw_re_im": [
+                0.002664580094280276,
+                8.162764862001336e-19
+              ]
+            },
+            {
+              "motif": "detach_size_6_incident_1",
+              "signed_normalized_re_im": [
+                0.0066695969367142425,
+                -4.4777549723651333e-17
+              ],
+              "signed_raw_re_im": [
+                0.0017619019740996692,
+                -1.182884872984755e-17
+              ]
+            },
+            {
+              "motif": "detach_size_7_incident_2",
+              "signed_normalized_re_im": [
+                0.006112155396625542,
+                -2.4353891299455643e-17
+              ],
+              "signed_raw_re_im": [
+                0.0016146430978516992,
+                -6.4335475688668425e-18
+              ]
+            },
+            {
+              "motif": "detach_size_3_incident_0",
+              "signed_normalized_re_im": [
+                -0.0060125660862125835,
+                2.5099280293039428e-17
+              ],
+              "signed_raw_re_im": [
+                -0.0015883346710785728,
+                6.630456370362489e-18
+              ]
+            },
+            {
+              "motif": "detach_size_6_incident_2",
+              "signed_normalized_re_im": [
+                0.005233560202105605,
+                -1.0598076236045806e-17
+              ],
+              "signed_raw_re_im": [
+                0.0013825453230764553,
+                -2.7996851412653704e-18
+              ]
+            },
+            {
+              "motif": "detach_size_3_incident_1",
+              "signed_normalized_re_im": [
+                0.00521332315714174,
+                3.2634485391813683e-17
+              ],
+              "signed_raw_re_im": [
+                0.0013771993194408379,
+                8.621025345482113e-18
+              ]
+            },
+            {
+              "motif": "join_size_2_3_contacts_1",
+              "signed_normalized_re_im": [
+                0.004576326121179904,
+                1.1811027416513964e-17
+              ],
+              "signed_raw_re_im": [
+                0.0012089243328402672,
+                3.120109463699195e-18
+              ]
+            },
+            {
+              "motif": "detach_size_2_incident_0",
+              "signed_normalized_re_im": [
+                0.00447031931128933,
+                2.527963016653343e-17
+              ],
+              "signed_raw_re_im": [
+                0.001180920600472862,
+                6.67809924910806e-18
+              ]
+            },
+            {
+              "motif": "detach_size_7_incident_1",
+              "signed_normalized_re_im": [
+                0.00446513820094864,
+                -2.1304572689340162e-17
+              ],
+              "signed_raw_re_im": [
+                0.0011795519107868273,
+                -5.62801156274829e-18
+              ]
+            },
+            {
+              "motif": "detach_size_5_incident_2",
+              "signed_normalized_re_im": [
+                0.004296389886154714,
+                1.1926223897340549e-18
+              ],
+              "signed_raw_re_im": [
+                0.001134973806325258,
+                3.15054082393034e-19
+              ]
+            },
+            {
+              "motif": "join_size_3_4_contacts_1",
+              "signed_normalized_re_im": [
+                -0.004218148840297085,
+                1.1655173354219173e-17
+              ],
+              "signed_raw_re_im": [
+                -0.0011143049331594243,
+                3.0789376233864688e-18
+              ]
+            },
+            {
+              "motif": "join_size_3_3_contacts_1",
+              "signed_normalized_re_im": [
+                -0.0032916389020176038,
+                6.21044556926853e-18
+              ],
+              "signed_raw_re_im": [
+                -0.0008695495596687756,
+                1.6406083324614527e-18
+              ]
+            },
+            {
+              "motif": "join_size_1_4_contacts_1",
+              "signed_normalized_re_im": [
+                -0.002945477570097563,
+                3.361026734705064e-17
+              ],
+              "signed_raw_re_im": [
+                -0.0007781044034090995,
+                8.87879686744005e-18
+              ]
+            },
+            {
+              "motif": "join_size_1_5_contacts_1",
+              "signed_normalized_re_im": [
+                -0.0028177435307352116,
+                2.699663409488906e-17
+              ],
+              "signed_raw_re_im": [
+                -0.0007443610065820156,
+                7.131678774169588e-18
+              ]
+            },
+            {
+              "motif": "detach_size_4_incident_1",
+              "signed_normalized_re_im": [
+                -0.002698942509842488,
+                3.67544536472586e-17
+              ],
+              "signed_raw_re_im": [
+                -0.0007129774379462976,
+                9.709393993748958e-18
+              ]
+            },
+            {
+              "motif": "detach_size_5_incident_0",
+              "signed_normalized_re_im": [
+                0.002550578896554071,
+                -9.812029660993815e-18
+              ],
+              "signed_raw_re_im": [
+                0.000673784343428325,
+                -2.5920358596881437e-18
+              ]
+            },
+            {
+              "motif": "detach_size_4_incident_0",
+              "signed_normalized_re_im": [
+                0.0023458509501946036,
+                1.0842021724855044e-18
+              ],
+              "signed_raw_re_im": [
+                0.0006197015290893494,
+                2.8641280217548547e-19
+              ]
+            },
+            {
+              "motif": "join_size_1_2_contacts_2",
+              "signed_normalized_re_im": [
+                -0.0017522661160492329,
+                3.3271454168148917e-18
+              ],
+              "signed_raw_re_im": [
+                -0.00046289470837739455,
+                8.78929286676021e-19
+              ]
+            },
+            {
+              "motif": "join_size_2_2_contacts_1",
+              "signed_normalized_re_im": [
+                0.0014760659490685442,
+                5.041540102057596e-18
+              ],
+              "signed_raw_re_im": [
+                0.0003899311359055513,
+                1.3318195301160075e-18
+              ]
+            },
+            {
+              "motif": "join_size_3_4_contacts_2",
+              "signed_normalized_re_im": [
+                0.001320762158768166,
+                6.5187655620690954e-18
+              ],
+              "signed_raw_re_im": [
+                0.00034890466049604916,
+                1.7220569730801065e-18
+              ]
+            },
+            {
+              "motif": "join_size_1_3_contacts_1",
+              "signed_normalized_re_im": [
+                -0.0012975671250789898,
+                4.4181238528784306e-18
+              ],
+              "signed_raw_re_im": [
+                -0.0003427772473953707,
+                1.1671321688651033e-18
+              ]
+            },
+            {
+              "motif": "detach_size_5_incident_1",
+              "signed_normalized_re_im": [
+                0.00128633062317842,
+                2.168404344971009e-18
+              ],
+              "signed_raw_re_im": [
+                0.0003398089098678646,
+                5.728256043509709e-19
+              ]
+            },
+            {
+              "motif": "join_size_3_3_contacts_2",
+              "signed_normalized_re_im": [
+                0.0012029847965576315,
+                3.750661890442042e-18
+              ],
+              "signed_raw_re_im": [
+                0.0003177915109381356,
+                9.9080928752582e-19
+              ]
+            },
+            {
+              "motif": "join_size_1_3_contacts_2",
+              "signed_normalized_re_im": [
+                0.0011039104737591242,
+                5.692061405548898e-19
+              ],
+              "signed_raw_re_im": [
+                0.0002916191280224037,
+                1.5036672114212987e-19
+              ]
+            },
+            {
+              "motif": "join_size_2_4_contacts_1",
+              "signed_normalized_re_im": [
+                0.001056425987151733,
+                7.806255641895632e-18
+              ],
+              "signed_raw_re_im": [
+                0.0002790751899873883,
+                2.0621721756634954e-18
+              ]
+            },
+            {
+              "motif": "join_size_2_3_contacts_2",
+              "signed_normalized_re_im": [
+                0.0009666530725162814,
+                3.467148655037134e-18
+              ],
+              "signed_raw_re_im": [
+                0.00025535995246738223,
+                9.159138277427016e-19
+              ]
+            },
+            {
+              "motif": "join_size_4_4_contacts_2",
+              "signed_normalized_re_im": [
+                0.0008394185654465193,
+                3.3924173593155728e-18
+              ],
+              "signed_raw_re_im": [
+                0.00022174851667794285,
+                8.961721224030516e-19
+              ]
+            },
+            {
+              "motif": "join_size_1_6_contacts_1",
+              "signed_normalized_re_im": [
+                -0.0008037733216491421,
+                -1.1980434005964824e-17
+              ],
+              "signed_raw_re_im": [
+                -0.00021233214174407725,
+                -3.1648614640391146e-18
+              ]
+            },
+            {
+              "motif": "join_size_2_5_contacts_1",
+              "signed_normalized_re_im": [
+                -0.000715166554549406,
+                -2.222614453595284e-18
+              ],
+              "signed_raw_re_im": [
+                -0.0001889249644659065,
+                -5.871462444597452e-19
+              ]
+            },
+            {
+              "motif": "join_size_2_4_contacts_2",
+              "signed_normalized_re_im": [
+                0.0004592406689937749,
+                1.8475501849803564e-18
+              ],
+              "signed_raw_re_im": [
+                0.00012131723235521392,
+                4.880658230253963e-19
+              ]
+            },
+            {
+              "motif": "join_size_3_5_contacts_2",
+              "signed_normalized_re_im": [
+                -0.00020070556330849907,
+                4.758629774269244e-18
+              ],
+              "signed_raw_re_im": [
+                -5.302022469445391e-05,
+                1.2570833399454144e-18
+              ]
+            },
+            {
+              "motif": "join_size_2_5_contacts_2",
+              "signed_normalized_re_im": [
+                -8.780821917051348e-05,
+                4.371951912035951e-18
+              ],
+              "signed_raw_re_im": [
+                -2.3196225524075116e-05,
+                1.1549349649725312e-18
+              ]
+            },
+            {
+              "motif": "join_size_2_2_contacts_2",
+              "signed_normalized_re_im": [
+                -3.0226168514022182e-05,
+                5.762379858353001e-19
+              ],
+              "signed_raw_re_im": [
+                -7.984822243330514e-06,
+                1.5222431796524792e-19
+              ]
+            },
+            {
+              "motif": "detach_size_8_incident_2",
+              "signed_normalized_re_im": [
+                0.0,
+                0.0
+              ],
+              "signed_raw_re_im": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "motif": "join_size_2_6_contacts_2",
+              "signed_normalized_re_im": [
+                0.0,
+                0.0
+              ],
+              "signed_raw_re_im": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "motif": "detach_size_6_incident_0",
+              "signed_normalized_re_im": [
+                0.0,
+                0.0
+              ],
+              "signed_raw_re_im": [
+                0.0,
+                0.0
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "normalization": {
+    "minus_over_plus_source_variance": 12.474386633339916,
+    "plus_over_minus_raw_k0": 0.5460991041226114,
+    "plus_over_minus_normalized_k0": 6.8122513649460075
+  },
+  "directed_budget_formula": "sum_{x->y in class} pi_x conjugate(psi_x)*(v_x-v_y)/Var(psi), where v=Q eta, Q D^-1 eta, or Q D^-2 eta in physical coordinates",
+  "scope": "single-thread deterministic float64 motif decomposition of the existing finite generator; signed response contributions, not independent causal effects or probabilities",
+  "input_sha256": {
+    "scripts/p398_width8_memory_motifs.py": "6cd534bd9f1857db63397b9e54df159cfb73efc03e57b00b2964b13108d79596",
+    "scripts/p398_width8_projected_memory.py": "344c4056f821de139381a97705a093c6c5628b4ce523f351ff4a754eadb7752c",
+    "scripts/p398_width8_source_spectrum.py": "dca50fb233ef98affc27f26e77b6eb0e97da1ae1ca59e1e1117f92252fa0fbcd"
+  }
+}

@@ -1,0 +1,10 @@
+# P398: weak-source amplification, not stronger bare feedback
+
+- **Lifecycle:** branch-only / completed existing-generator mechanism analysis / no new MC or fit.
+- **Headline:** plus bare k(0) is .546099 times minus, but its inverse source variance is 12.474387 times larger; this gives the unchanged 6.812251 normalized-feedback ratio. The fixed plus source cancels 85.16% of its diagonal source variance but only 29.36% of its diagonal initial feedback.
+- **Observer/sector/source:** same width-eight positive Q=1 frontier, character i, fixed AP/landing Kreweras rays, stationary-L2 projection onto both A/L.
+- **Force decomposition:** complete RR/RT/TR/TT budgets are supplied for k(0), integrated memory and first time moment. R/T label right geometric forces and their left adjoint partners, not a reversible force autocorrelation. Within a protected ray the two motifs are dual-equivalent; four independent attribution claims would be false.
+- **Directed mechanism:** mixed join-detach terms contribute 90.22% of plus k(0) and 82.33% of its integrated memory. Size-two detachment and multiple-contact joins are exact Kreweras partners, not independent effects.
+- **New distinguishable geometry:** triplet-detachment budgets change sign between rays. The one-same-block-neighbor triplet contribution to integrated memory is -.04089546 for minus versus +.01707276 for plus; its boundary incidence, not merely R versus T2, is a useful next mark.
+- **New algebraic hierarchy:** for charged size-m blocks, `GT_m=m(T_{m+1}-T_m)+Q_m-B_m`, m>=2, where Q_m creates size m by adjacent-block coagulation and B_m removes it with cut-edge multiplicity. `GT2=2T3-2T2+S11-B2`; `GT1=T2-3T1` and `sum_m T_m=0`.
+- **Dependency/boundary:** deterministic continuation of 552c45d/39e06607. Signed response budgets are not independent causal effects, event probabilities, path-memory evidence, new continuum fields, or a physical Jordan identification. No claim that changing transition rates leaves the stationary projection fixed.
