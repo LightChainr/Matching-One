@@ -44,12 +44,26 @@ def score(directory):
     raw_cpu = run["comparator_classification_cpu_seconds"]
     gradient = np.array([1 / variance, -energy / variance ** 2])
     fraction_se = float(np.sqrt(gradient @ cov[np.ix_([2, 6], [2, 6])] @ gradient))
+    count = run["run"]["samples"]
+    universal_energy_bound = 1 / 9  # F is 0 or a sixth root of unity divided by 3.
+    optimistic_maximum_snr2 = float(universal_energy_bound ** 2 / cov[2, 2])
     return {"schema": "matching-one/p437-high-pass-score/v1", "samples": run["run"]["samples"],
             "coordinate_order": NAMES, "level_point": mean.tolist(), "full_covariance_of_mean": covariance.tolist(),
             "readout_order": names, "readout_covariance": cov.tolist(), "readouts": summaries,
             "high_degree_weighted_energy_fraction": {"point": float(energy / variance), "delta_se": fraction_se,
                 "population_range": [0, 1], "finite_pilot_estimate_not_clipped": True},
             "variance_inflation_vs_unfiltered": float(cov[2, 2] / cov[6, 6]),
+            "primary_p_one_sided_positive_energy": float(norm.sf(summaries["spectral_energy"]["z_vs_target"])),
+            "pilot_variance_power_envelope": {
+                "exact_universal_energy_upper_bound": "1/9",
+                "reason": "|F|<=1/3 and 0<=H<=I imply 0<=<F,HF><=VarF<=1/9",
+                "five_sigma_samples_even_at_universal_maximum": float(count * 25 / optimistic_maximum_snr2),
+                "five_sigma_samples_if_fraction_of_observed_VarF": {
+                    str(fraction): float(count * 25 * cov[2, 2] / (fraction * variance) ** 2)
+                    for fraction in (1, 0.1, 0.01)},
+                "best_case_relative_efficiency_at_universal_maximum": float((optimistic_maximum_snr2 / cpu) / (raw_snr2 / raw_cpu)),
+                "degree5_known_signal_five_sigma_sample_projection": float(count * 25 * cov[5, 5] / (9765 / 32768) ** 2),
+                "boundary": "Fixed estimator and pilot variance extrapolation, not a universal impossibility bound on high-pass acquisition; no production approval."},
             "efficiency": {"highpass_snr_squared": hp_snr2, "unfiltered_snr_squared": raw_snr2,
                 "highpass_cpu_seconds": cpu, "comparator_classification_cpu_seconds": raw_cpu,
                 "highpass_snr_squared_per_cpu_second": hp_snr2 / cpu,
