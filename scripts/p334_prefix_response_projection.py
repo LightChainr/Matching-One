@@ -154,9 +154,8 @@ def main():
                 raise ValueError("Descriptor and fork prefix identities differ")
             # The descriptor extractor provides these four named columns in
             # physical orientation order; no selection on response values.
-            features = np.stack([np.column_stack((f["joint_safe_mass"], f[f"score_energy_{o}"],
-                                                  f[f"safe_degree_{o}"], f[f"safe_loop_{o}"]))
-                                 for o in ORIS], axis=1)
+            features = np.stack((f["features"][:, [0, 6, 2, 4]],
+                                 f["features"][:, [0, 8, 3, 5]]), axis=1)
             a = quartet_variables(z["b"], z["h"], features)
             labels, raw, ids, counts = sufficient_batches(a, z["batch"], z["rankcell"])
         m = len(ids); p = int(counts.sum()); mean = raw.mean(axis=0)
