@@ -16,6 +16,21 @@ N−4, not N. Fresh ordinary streams supply every root/jet; no old anchor is
 pooled. Four Bonferroni95% coordinates test zero projection; a separate
 fixed +/-0.5 band sets the finite-resolution stop. No top-ups or source scans.
 
-Execution lanes:NePnUn/551oUR/TVVfoB/TgFr7R respectively,14 workers each.
-The fixed producer is dispatched; results are pending. The stopped P154
-lag1 and P334 forecast decisions are unchanged. No cross-team direct messages.
+**Completed: unresolved, fixed block stopped.** All80M permutations are
+archived at`f6006b61`; [frozen score/report](https://github.com/LightChainr/Matching-One/blob/25ca3635/results/p337-f4-transmission-20260831/scored/REPORT.md)
+is committed at`25ca3635` with full paired omissions/covariance.
+
+|N|V_F4 ± SE|four-coordinate simultaneous95% interval|
+|---:|---:|---:|
+|65|0.06489 ±0.24307|[-0.54223,0.67201]|
+|85|0.80854 ±0.38152|[-0.14437,1.76145]|
+|130|0.04719 ±1.36826|[-3.37032,3.46469]|
+|170|-0.73527 ±2.23246|[-6.31130,4.84075]|
+
+Zero projection is NOT_EXCLUDED; the +/-0.5 practical band is also
+unresolved. No measured global transmission, negligible-response result,
+or sign is claimed. **No top-up or source/size substitution.**
+
+Execution lanes:NePnUn/551oUR/TVVfoB/TgFr7R respectively,14 workers each;
+all exited0 and outputs are local, with14–35s producer times. The stopped
+P154 lag1 and P334 forecast decisions are unchanged. No cross-team DMs.
