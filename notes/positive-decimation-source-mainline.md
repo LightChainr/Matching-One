@@ -216,7 +216,10 @@ measurements, nor an extrapolation of the stopped larger-N F4 block.
 - **Boundary:** no continuum field identity, asymptotic exponent, interior
   saturation law or universal homogeneous RG fixed point follows. The F4
   random-block `INCONCLUSIVE_STOP_FIXED_BLOCK_WITHOUT_TOP_UP` is unchanged.
-- **Next discriminant:** derive a prediction for the same U away from the
-  forced endpoint, with S_star fixed. Endpoint identities alone do not
-  choose that interpolation. Do not add another fitted source to manufacture
-  it, or rerun the exact endpoints as new scientific evidence.
+- **Subsequent discriminant completed:** the
+  [single-defect calculation](checkerboard-single-defect-global-u-result.md)
+  retains S_star and the same U, and rejects a source-independent geometric
+  gain immediately off saturation: R=U U_st-U_s U_t is strictly positive.
+  The exact saturated identity still holds. An interior theory must now
+  carry the measured source-dependent defect term; neither a fitted extra
+  source nor another endpoint replay supplies that theory.
