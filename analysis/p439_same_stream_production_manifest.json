@@ -1,0 +1,16 @@
+{
+  "schema": "matching-one.p439-same-stream-production-manifest.v1",
+  "lifecycle": "retrospective real-archive scoring; no new samples; not a prospective transfer freeze",
+  "source_commit": "6123955fa1850506d568753ca2d178ab8aeccac8",
+  "source_path": "results/p337-birth-state-current/latest.json",
+  "source_sha256": "7bb3a048b16c0436cf2e28ae6a87eff3c4f388d74f099ea3d7cda579aab8793d",
+  "N": [85, 170, 340, 680],
+  "primary": "fixed p=0.592746050790; (angular_A_top, angular_K_A_activity); adjacent wedges and one common ray",
+  "sensitivity": "same coordinates at per-generation pooled matching roots, recomputed in existing delete-one samples",
+  "generation_dependence": "independent RNG blocks; 20,80,80,80 batches; do not align batch labels between generations",
+  "within_generation_dependence": "paired orientations and both observables share the same raw block; retained jointly",
+  "exploratory": ["angular_A_log_derivative versus K_A", "angular_E_top versus K_A"],
+  "interpretation_gate": "non-rejection of common ray is not evidence for nonzero M loading; report the zero-loading submodel explicitly",
+  "source_semantics": "tau values in raw files are integer activation ranks. Canonical F1,F2 use binomial-tail mixing, not a step at k/N.",
+  "new_samples": 0
+}
