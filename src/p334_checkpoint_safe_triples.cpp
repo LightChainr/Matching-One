@@ -77,7 +77,7 @@ void write_checkpoint(std::ostream& output, std::uint64_t counter,
     }
 
     std::uint64_t triangles = 0, safe_triples = 0;
-    std::vector<std::array<int, 3>> first_nonfaces;
+    std::vector<std::array<int, 3>> first_nonfaces, all_nonfaces;
     for (int i = 0; i < d; ++i) {
         const int v = vacant[i];
         if (!singleton[v]) continue;
@@ -95,7 +95,10 @@ void write_checkpoint(std::ostream& output, std::uint64_t counter,
                 SavedSnapshot three = two;
                 three.insert(z);
                 if (three.rank == 1) ++safe_triples;
-                else if (first_nonfaces.size() < 8) first_nonfaces.push_back({v, w, z});
+                else {
+                    all_nonfaces.push_back({v, w, z});
+                    if (first_nonfaces.size() < 8) first_nonfaces.push_back({v, w, z});
+                }
             }
         }
     }
@@ -115,6 +118,12 @@ void write_checkpoint(std::ostream& output, std::uint64_t counter,
     for (std::size_t i = 0; i < first_nonfaces.size(); ++i) {
         if (i) output << ',';
         const auto triple = first_nonfaces[i];
+        output << '[' << triple[0] << ',' << triple[1] << ',' << triple[2] << ']';
+    }
+    output << "],\"all_minimal_nonfaces\":[";
+    for (std::size_t i = 0; i < all_nonfaces.size(); ++i) {
+        if (i) output << ',';
+        const auto triple = all_nonfaces[i];
         output << '[' << triple[0] << ',' << triple[1] << ',' << triple[2] << ']';
     }
     output << "],\"first_witness_subset_ranks\":[";
@@ -146,7 +155,7 @@ int main(int argc, char** argv) {
     try {
         std::ofstream output(argv[1]);
         if (!output) throw std::runtime_error("cannot open output");
-        output << "{\"schema\":\"matching-one/p334-real-safe-triple-census/v1\","
+        output << "{\"schema\":\"matching-one/p334-real-safe-triple-census/v2\","
                   "\"new_samples\":0,\"source_commit\":\"6147e22f53902a94e5f133739f2c1d423691d0b8\","
                   "\"checkpoints\":[";
         write_checkpoint(output, 43042514269ULL, 5045796);
