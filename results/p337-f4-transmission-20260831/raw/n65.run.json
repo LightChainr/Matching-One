@@ -1,0 +1,181 @@
+{
+  "status": "completed",
+  "N": 65,
+  "started_utc": "2026-08-31T12:37:50.591179+00:00",
+  "freeze_commit": "0f7a083770d31095e7b4d688d544637d8fc09658",
+  "hostname": "1e313eebd1a947b8b38714aeea1404d5",
+  "architecture": "aarch64",
+  "pid": 388,
+  "threads": 14,
+  "source_sha256": {
+    "experiments/p337-f4-transmission-20260831/CONTRACT.json": "451aea2e4381b0668918fcb77868128d59ff704f5f690f4a70e9288709ae6de2",
+    "experiments/p337-f4-transmission-20260831/producer.cpp": "33b8c17291f33d226f1b441401d9ffe55ce1fc3736596b0e53f97e122bf7f724",
+    "experiments/p337-f4-transmission-20260831/score.py": "82d3da94e6aed39e554571188df5d9a9a22f10693567fdf0465cc8edcee66012",
+    "experiments/p337-f4-transmission-20260831/run.py": "6bf4eb7b6c840116f66a902f1c7a3d658e972f4d2539e3bb7843c4a22e10d91f",
+    "src/threshold_rank_orientation_mc.cpp": "c8088dfc0ca0988c48945c6265359f263842ae2506dcc02123cf29cbfbeeb23e"
+  },
+  "contract": {
+    "experiment": "p337-f4-independent-global-u-transmission",
+    "date": "2026-08-31",
+    "status": "frozen_before_production",
+    "theory_commit": "207436518db46dd13ef0ec91168cb1c99d52eaea",
+    "source": "F4 = number of fully occupied elementary square faces",
+    "source_parameter": "equilibrium exp(t F4); t is per full face, no division by N",
+    "observer": "q=rank(H1 image)-1, E=q^2; U=N^(13/8)/2 * P4(E_p)/mean(q_p) at pooled q root",
+    "Ns": [
+      65,
+      85,
+      130,
+      170
+    ],
+    "geometries": {
+      "65": [
+        [
+          8,
+          1
+        ],
+        [
+          7,
+          4
+        ]
+      ],
+      "85": [
+        [
+          9,
+          2
+        ],
+        [
+          7,
+          6
+        ]
+      ],
+      "130": [
+        [
+          11,
+          3
+        ],
+        [
+          9,
+          7
+        ]
+      ],
+      "170": [
+        [
+          13,
+          1
+        ],
+        [
+          11,
+          7
+        ]
+      ]
+    },
+    "samples_per_N": {
+      "65": 20000000,
+      "85": 20000000,
+      "130": 20000000,
+      "170": 20000000
+    },
+    "batches": 100,
+    "samples_per_batch": 200000,
+    "seeds": {
+      "65": 2026083120370065,
+      "85": 2026083120370085,
+      "130": 2026083120370130,
+      "170": 2026083120370170
+    },
+    "N_seed_rule": "splitmix64(master_seed XOR splitmix64(N XOR 0x5033333746345631)); passed to unchanged counter_permutation backend",
+    "replica_counter": "batch * samples_per_batch + local; batches 0..99, local 0..199999",
+    "pairing": "same permutation across both orientations and ordinary/forced modes within each replica; distinct seed domains across N",
+    "forced_face": "cyclic site labels {0,a,b,(a+b) mod N}; occupy all four, then activate remaining sites in induced permutation order",
+    "canonical_degree": {
+      "ordinary": "N",
+      "forced": "N-4"
+    },
+    "source_identity": "J_O=N*p^4*(O_forced-O_ordinary); J_O_p=N*(4*p^3*delta_O+p^4*delta_O_p)",
+    "root_bracket": [
+      0.55,
+      0.65
+    ],
+    "normalization": "P4=(first-second)/(cos4(theta_first)-cos4(theta_second)); exact Gaussian cos4 rational",
+    "primary_labels": [
+      "N65.V_F4",
+      "N85.V_F4",
+      "N130.V_F4",
+      "N170.V_F4"
+    ],
+    "inference": "paired delete-one-batch root/slope-complete jackknife within N; independent covariance groups across N; all baselines from these fresh ordinary streams",
+    "family_alpha": 0.05,
+    "family_size": 4,
+    "normal_quantile": "Phi^-1(1-0.05/8)",
+    "zero_projection_model": "V_F4=0 at all four declared sizes; excludes an observable-level omission of the forced plaquette term",
+    "stop_zero_model": "reject if any simultaneous two-sided normal interval excludes 0; otherwise not excluded, not established",
+    "practical_halfwidth": 0.5,
+    "stop_material_route": "if all four simultaneous intervals lie inside [-0.5,0.5], stop prioritizing this source as a main coupling at this declared finite-scale resolution",
+    "material_coordinate": "a simultaneous interval wholly above +0.5 or below -0.5 resolves a material response in these declared units",
+    "sign_prediction": "none; the exact decimation map forces a term but not its sign",
+    "unresolved_action": "publish unresolved result and stop this fixed block; no sample top-up, no source or size substitution",
+    "old_data_pooled": false,
+    "production_total_permutations": 80000000,
+    "planned_hosts": {
+      "65": "DevEnvC_NePnUn",
+      "85": "DevEnvC_551oUR",
+      "130": "DevEnvC_TVVfoB",
+      "170": "DevEnvC_TgFr7R"
+    },
+    "planned_threads_per_host": 14,
+    "nonclaims": [
+      "continuum field identity",
+      "sign from topology alone",
+      "asymptotic exponent",
+      "rescue of failed P154 lag1 source",
+      "validation of old P334 contact forecasts"
+    ]
+  },
+  "old_data_pooled": false,
+  "cgroup_v1": {
+    "cpu_quota_us": "1450000",
+    "cpu_period_us": "100000",
+    "memory_limit_bytes": "26843545600"
+  },
+  "compiler": "g++ (GCC) 10.3.1",
+  "compile_command": [
+    "g++",
+    "-O3",
+    "-DNDEBUG",
+    "-std=c++17",
+    "-fopenmp",
+    "/workspace/p337-f4-independent-20260831/experiments/p337-f4-transmission-20260831/producer.cpp",
+    "-o",
+    "/workspace/p337-f4-independent-20260831/experiments/p337-f4-transmission-20260831/producer"
+  ],
+  "binary_sha256": "388a7580e66ff03ff3195cc0ce5ece5f70b44be113336d6d79e4ebd97d2b1e95",
+  "command": [
+    "/workspace/p337-f4-independent-20260831/experiments/p337-f4-transmission-20260831/producer",
+    "--n",
+    "65",
+    "--samples-per-batch",
+    "200000",
+    "--batch-begin",
+    "0",
+    "--batch-end",
+    "100",
+    "--seed",
+    "2026083120370065",
+    "--threads",
+    "14",
+    "--output-prefix",
+    "/workspace/p337-f4-independent-20260831/experiments/p337-f4-transmission-20260831/raw/n65",
+    "--freeze-commit",
+    "0f7a083770d31095e7b4d688d544637d8fc09658"
+  ],
+  "exit_code": 0,
+  "samples": 20000000,
+  "batch_begin": 0,
+  "batch_end": 100,
+  "csv_sha256": "8ca855c523fb3e15deaa63ef3231d27acf988ece452193379d34186d68a80312",
+  "gzip_sha256": "f3d2b854d4c0ef7e54bfeabeefbf4b066387385e5d1703fb4dd1a09b09c34531",
+  "producer_metadata_sha256": "15ae967b3ba8a86ad6dce7ffcb66f747371fca1ac4c206b20b45fcebe675329f",
+  "finished_utc": "2026-08-31T12:38:08.121900+00:00",
+  "elapsed_seconds": 17.53002279700013
+}
