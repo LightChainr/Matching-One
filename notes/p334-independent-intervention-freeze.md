@@ -98,3 +98,11 @@ continuum field count, a complete Markov state, or an asymptotic mechanism.
 M0/M1 are operational finite-size hypotheses, not an exhaustive partition
 of all possible physics. The team's research choices elsewhere are not
 locked, closed or reprioritized by this protocol.
+
+## Dispatch freeze
+
+The actual producer, driver, source coupling and two-host allocation are
+recorded in [p334-independent-intervention-dispatch.json](p334-independent-intervention-dispatch.json)
+before generation. The producer uses exact rational common inverse-CDF
+coupling. Its two64-prefix technical smokes used seed17 and one rep, did
+not inspect scientific responses, and are excluded from production.

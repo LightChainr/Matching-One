@@ -1,0 +1,27 @@
+{
+  "schema": "p334.fresh-normal-dispatch.v1",
+  "status_at_commit": "frozen before formal generation",
+  "protocol_commit": "bc0a18c207e3b09f49ea6b6af6601471114d654a",
+  "producer_commit": "513552c77f035526efb99075b54032d288b2f4bb",
+  "producer_integrated_commit": "6928b3d861d2f4ce1ee93446c02e6a44e56832a6",
+  "driver_and_score_commit": "4c533e0d",
+  "theory_commit": "3532d5aa78d8cfa011aeceb7daf255588c563491",
+  "master_seed": 202608311920334,
+  "batches_per_size": 20,
+  "prefixes_per_batch": 25000,
+  "paired_reps_per_own_axis": 8,
+  "label_coupling": "exact rational common inverse-CDF; uniform common remainder, equal-label tails skipped as exact zero",
+  "source_projection": "exact integer rank-aware Moore-Penrose, no prefix filtering",
+  "primary": "equal average of four own C normal responses",
+  "forecast": 3.6565e-8,
+  "delta": 1e-8,
+  "interval": "fresh-batch estimate +/-3SE, independent sizes with paired orientations",
+  "hosts": [
+    {"name": "NePnUn", "id": "1e313eebd1a947b8b38714aeea1404d5", "N": 325, "workers": 14},
+    {"name": "551oUR", "id": "9b3eb563ddc64f2680be17501ec4fe6a", "N": 425, "workers": 14}
+  ],
+  "remote_directory": "/workspace/p334-independent-normal-20260831",
+  "actual_limits_per_host": {"cpu_quota_cores": 14.5, "memory_GiB": 25},
+  "no_old_data_uploaded": true,
+  "stop_at_fixed_budget": true
+}
