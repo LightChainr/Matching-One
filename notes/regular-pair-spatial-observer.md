@@ -98,6 +98,13 @@ decomposition preserves its full joint batch covariance. C32 and the
 fixed ratio C64/C32 are secondary spatial summaries, with an unbounded
 ratio reported honestly when its denominator is unresolved.
 
+The already requested signed sum S and nonzero support count n also give
+an accounting bound without extra statistics. Every nonzero g16 integer
+has absolute value at least one, so the observed fraction canceled from
+the absolute signed mass is at least `max(0,1-|S|/n)` when n>0. This is
+a deterministic lower bound for the collected contributions, not a
+confidence interval or an assumption that the32 pairs are independent.
+
 Neither a scalar two-point function nor C4 lattice symmetry identifies
 a continuum spin-four field. The fixed-cut colour recoupling already
 contains several blocks. No x=17/4 or x=21/4 fit, selected angle, additional

@@ -58,11 +58,16 @@ def read_run(directory, spec, contract):
     se = np.sqrt(np.maximum(np.diag(covariance), 0))
     critical = float(t.ppf(.995, 199))
     ci = np.column_stack((mean-critical*se, mean+critical*se))
+    nonzero_pairs = sum(row["nonzero_pairs"] for row in rows)
+    signed_sum = sum(row["sum_g16"] for row in rows)
+    # An accounting bound on observed signed integers, not a confidence bound.
+    cancellation_floor = max(0., 1-abs(signed_sum)/nonzero_pairs) if nonzero_pairs else None
     return {"L": L, "r": L//4, "mean": mean.tolist(), "mcse": se.tolist(),
             "labels": LABELS, "covariance_of_mean": covariance.tolist(), "ci99": ci.tolist(),
             "observed_zero_variance": (se == 0).tolist(),
             "total_eligible_pairs": sum(row["eligible_pairs"] for row in rows),
-            "total_nonzero_pairs": sum(row["nonzero_pairs"] for row in rows),
+            "total_nonzero_pairs": nonzero_pairs, "total_signed_sum_g16": signed_sum,
+            "observed_absolute_contribution_cancellation_lower_bound": cancellation_floor,
             "eligible_pairs_by_shared": [sum(row[f"pairs_shared{k}"] for row in rows) for k in range(5)],
             "samples": 200000, "pairs_per_configuration": 32,
             "seed": spec["seed"], "source_file": path.name, "source_sha256": sha(path),
