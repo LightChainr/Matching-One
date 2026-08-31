@@ -6,47 +6,22 @@ This roadmap ranks **information gained per unit effort**. It is **not a permiss
 
 The repository is deliberately not opening another framework. `docs/STATUS.md` owns current claim language; this file only answers: **what can most efficiently end the current ambiguity?**
 
-## Active — one decision chain, two P0 entrypoints
+## Current execution — P0 empty
 
-```text
-#334 independent birth-current intervention
-        -> population-level J_grad/contact validation
-        -> #154 prospective source-to-U transmission
-        -> accept / reject the declared nested model
-```
+The requested tests have delivered their decisions. #154/#334/#337 remain open P1 research questions; this roadmap does not close them or authorize a replacement production block.
 
-No third P0 is active this week.
+- **#154, completed at [f4999e29](https://github.com/LightChainr/Matching-One/commit/f4999e29612da16a3650f24d124fb59137f053d7):** 165M new permutations exclude strong B/C transmission and satisfy the weak net-response stop rule. Stop prioritizing this lag1 policy as the main H4 explanation; no top-up or lag/source swap.
+- **#334, completed at [d0a9daf1](https://github.com/LightChainr/Matching-One/commit/d0a9daf1132779205f119e9b4470f4eea9cb89c1) and [14b2c98e](https://github.com/LightChainr/Matching-One/commit/14b2c98ed3a252a2fe79ce5e124d9484b23a264f):** the source-normal intervention rejects complete two-score conditional-mean closure while its positive forecast survives; the separate contact intervention rejects both frozen residual bands. No same-block feature rescue or half-amplitude law.
 
-### 1. #334 — independent population intervention
+## Next attention — #337 fixed-m oblique control and sampling feasibility
 
-The first active step is the already frozen experiment at [`bc0a18c`](https://github.com/LightChainr/Matching-One/commit/bc0a18c207e3b09f49ea6b6af6601471114d654a), `notes/p334-independent-intervention-freeze.md`.
+The [uniform result at 2690f665](https://github.com/LightChainr/Matching-One/blob/2690f665bc8029cb2370d3f1efcef5eb2853705c/notes/closed-source-uniform-projection-tail.md) gives opposite original-U signs for Sstar and Sdrop=Sstar+r at fixed N25 for every real m>=64, including explicit remainder bounds. The separate [Poisson joint-limit theorem](https://github.com/LightChainr/Matching-One/blob/2690f665bc8029cb2370d3f1efcef5eb2853705c/notes/closed-source-poisson-double-scaling.md) makes original U superpolynomially small for both laws when N/m² stays bounded on growing-systole quotients. The [f5aa94c3 profile test](https://github.com/LightChainr/Matching-One/blob/f5aa94c3c1d619da2272f2409623ed52c876463d/experiments/p337-two-coupling-closure-20260831/results/REPORT.md) also rejects common thermal-plus-source one-hole closure. Do not reassign those first calculations.
 
-It uses a fresh 1M-prefix block and a fixed primary `T` to compare the declared lifecycle/current model with one contact/source-normal extension. Existing 40k paths, 147 clocks, cut-network analyses and contact projections may train the hypothesis and estimate variance, but they are not independent validation.
+The unresolved task is fixed-m oblique twist-penalty/restricted-sector-odds control, or an accessible sampling regime for the same original U. The joint-limit proof retains an exp[O(N/m²)] bulk factor and cannot establish fixed-m suppression; the proved N25 half-line does not by itself supply an affordable experiment. The first finite window is complete. No new source coefficient, N25 peak-grid extension or automatic sample budget is selected here.
 
-**Decision:** execute the frozen block once if the producer SHA and frozen budget are intact. If the declared model fails, stop that model; do not add another feature on the same block.
+## Model names retain their frozen meanings
 
-### 2. #154 — freeze and test `J_grad -> U`
-
-The current lagged-source result at [`dd48177`](https://github.com/LightChainr/Matching-One/commit/dd48177340f169c18cd1fc9217101b54090e1e3a), `results/norm4-lagged-source/REPORT.md`, resolves strong temporal entry/exit response on reused historical permutations while the original global `U` source response remains unresolved.
-
-The next action is **not another source observable**. Before reading a fresh target, freeze:
-
-- the source -> ingress/egress -> `J_grad` -> pooled-root/slope-normalized `U` mapping;
-- the M0/M1/M2 numerical predictions that are actually distinguishable;
-- the equivalence band and full covariance budget;
-- a failure action that removes/demotes a model rather than growing it.
-
-If no candidate gives a distinguishable prospective `U` prediction, do not start a new block. If a frozen validation fails, do not perform same-block feature rescue.
-
-## Nested model vocabulary
-
-The current model vocabulary is intentionally capped:
-
-- **M0 lifecycle/current-only**;
-- **M1 contact-regulated current**;
-- **M2 extra transfer coordinate**, only when frozen before target reveal.
-
-A local `J_act=j_in+j_out` signal is diagnostic. The quantity that enters the declared population-gradient chain is `J_grad=j_in-j_out`; neither is automatically an identified continuum operator.
+Historical M0/M1/M2 labels are qualitative planning vocabulary. They are not #154's actual W/B/C numerical templates, nor either #334 experiment's full set of hypotheses. Source-normal conditional-mean closure and the C0/C1 cross-prefix residual forecasts test different restrictions. A local `J_act` response does not replace `J_grad` or the original global U.
 
 ## Parked support — useful, not this week’s execution
 
@@ -84,11 +59,8 @@ Not scientific prohibitions; simply no longer part of current execution:
 - treating a new exact tiny control as a new global mechanism vote;
 - maintaining branch-local NEXT lists as parallel priority systems.
 
-## Weekly end condition
+## Decision already delivered
 
-This week is successful when the repository can record **one of two outcomes**:
-
-1. a frozen population/transmission model survives an independent block and earns a sharper next claim boundary; or
-2. the relevant frozen model fails / cannot make a distinguishable prospective `U` prediction, and the operator-identification route is stopped at the current C3 phenomenology boundary.
+The independent blocks have now removed the specified strong transmission/closure candidates. Preserve that stop and the current C3 phenomenology boundary. A separately justified finite prediction may change later attention; the failed templates do not generate a replacement queue.
 
 A failed discriminator is a successful endpoint when it removes a mechanism or compute loop. Producing another coordinate without changing this decision is not roadmap progress.

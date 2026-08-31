@@ -23,13 +23,20 @@ hard_constraints:
 
 weekly_decision:
   date: 2026-08-31
-  objective: one_prospective_birth_current_to_global_U_transmission_decision
-  keep_live_issues: [334, 154]
-  keep_live_limit: 4
-  model_family:
+  objective: completed_transmission_decisions_and_named_policy_stops
+  keep_live_issues: []
+  broader_open_P1_issues: [154, 334, 337]
+  next_attention: fixed_m_oblique_twist_or_restricted_sector_odds_and_sampling_feasibility
+  frontier_sha: 2690f665bc8029cb2370d3f1efcef5eb2853705c
+  historical_model_vocabulary:
     M0: lifecycle_current_only
     M1: contact_regulated_current
     M2: extra_transfer_coordinate_only_if_frozen_before_validation
+  frozen_decision_families:
+    P154: W_weak_B_entry_dominant_C_completion_dominant
+    P334_normal: complete_two_score_conditional_mean_closure_vs_fixed_positive_forecast
+    P334_contact: C0_near_zero_vs_C1_frozen_old_residual
+  vocabulary_note: historical_M0_M1_M2_are_not_the_actual_shared_frozen_model_family
   transmission_chain:
     - microscopic_source_or_contact
     - ingress_egress_birth_currents
@@ -39,10 +46,9 @@ weekly_decision:
   diagnostic_only:
     - J_act
   stop_rule: >
-    A failed validation demotes or eliminates the frozen model. Do not add a
-    feature on the same validation block. If #154 cannot freeze a
-    distinguishable prospective U prediction before new data, do not run a
-    fresh target block. Do not open a third P0 during this decision.
+    The requested blocks are complete and named failed parameterizations are
+    stopped. No top-up, replacement lag/source, fifth contact feature or
+    same-block rescue follows. P0 is empty; broader P1 questions remain open.
   fallback_boundary: write_current_C3_finite_size_phenomenology_without_operator_identification
 
 research_tracks:
@@ -60,9 +66,9 @@ research_tracks:
     evidence: [E_P57, E_P50_FULLCURVE, E_MATCHING_ODD_SYNTHESIS]
   - id: D
     name: birth_current_to_global_transmission
-    state: active_decision
+    state: completed_decisions_named_policies_stopped
     issues: [334, 154]
-    evidence: [D_P334_FULL_BIRTH_ARCHIVE, D_P334_INTERVENTION_FREEZE, D_P154_LAGGED_SOURCE]
+    evidence: [D_P334_FULL_BIRTH_ARCHIVE, D_P334_NORMAL_RESULT, D_P334_CONTACT_RESULT, D_P154_PROSPECTIVE_RESULT]
   - id: E
     name: pivotal_and_self_matching_RG
     state: parked_support
@@ -77,8 +83,9 @@ research_tracks:
     evidence: [E_PRIMITIVE_GEN2, E_PRIMITIVE_KDV]
   - id: H
     name: exact_finite_algebra_and_negative_controls
-    state: parked_exact_support
-    evidence: [E_N26_BETA_NEGATIVE]
+    state: finite_theory_attention_without_production
+    issues: [337]
+    evidence: [E_N26_BETA_NEGATIVE, D_P337_TWO_COUPLING, D_P337_FINITE_FRONTIER]
   - id: I
     name: threshold_value_and_literature
     state: parked_observed_support
@@ -171,10 +178,12 @@ decision_evidence_blocks:
     score_path: notes/p334-independent-intervention-freeze.md
     sha: bc0a18c207e3b09f49ea6b6af6601471114d654a
     parent_block: D_P334_FULL_BIRTH_ARCHIVE
-    independent_primary: true
+    independent_primary: false
+    status: historical_freeze_completed
+    result_block: D_P334_NORMAL_RESULT
     note: >
-      This is a freeze, not a result. Historical archives may train and
-      estimate variance but may not enter the independent target score.
+      The frozen document contains no target result; its completed independent
+      block is recorded separately below. This protocol is not an evidence vote.
 
   - id: D_P154_LAGGED_SOURCE
     issue: 154
@@ -188,9 +197,9 @@ decision_evidence_blocks:
     parent_block: historical_norm4_archives
     independent_primary: false
     note: >
-      Resolves temporal entry/exit response on reused permutations; the
-      original global U source response remains unresolved. It may inform the
-      prospective mapping and variance budget, not validate it.
+      Historical discovery resolved temporal entry/exit response but not its
+      global U response. The subsequent fresh result is D_P154_PROSPECTIVE_RESULT;
+      this discovery block is not part of that independent validation score.
 
   - id: D_P154_FROZEN_NORM4_PRODUCTION
     issue: 154
@@ -208,17 +217,82 @@ decision_evidence_blocks:
       model family. PR #277 generation 4 is a later target block and does not
       identify the secondary eigenvalue.
 
-active_execution:
-  - rank: 1
+  - id: D_P334_NORMAL_RESULT
     issue: 334
-    name: independent_birth_current_population_intervention
-    state: frozen_waiting_execution
-    freeze_sha: bc0a18c207e3b09f49ea6b6af6601471114d654a
-  - rank: 2
+    claim_level: independent_finite_policy_decision
+    geometry: N325_N425_paired_receivers
+    N: [325, 425]
+    n_samples: 1000000
+    raw_path: results/p334-independent-normal-intervention
+    score_path: notes/p334-independent-normal-intervention-result.md
+    sha: d0a9daf1132779205f119e9b4470f4eea9cb89c1
+    parent_block: null
+    training_block: D_P334_FULL_BIRTH_ARCHIVE
+    raw_data_group: p334_new_normal_intervention_1m
+    independent_primary: true
+    outcome: complete_two_score_conditional_mean_closure_rejected_positive_forecast_not_excluded
+
+  - id: D_P334_CONTACT_RESULT
+    issue: 334
+    claim_level: independent_finite_policy_decision
+    geometry: N325_N425_paired_receivers
+    N: [325, 425]
+    n_samples: 600000
+    raw_path: experiments/p334-prospective-intervention-20260831/results/sufficient_statistics
+    score_path: experiments/p334-prospective-intervention-20260831/REPORT.md
+    sha: 14b2c98ed3a252a2fe79ce5e124d9484b23a264f
+    parent_block: null
+    training_block: D_P334_FULL_BIRTH_ARCHIVE
+    raw_data_group: p334_new_contact_intervention_600k
+    independent_primary: true
+    outcome: both_frozen_residual_bands_excluded
+    note: One signed-loading projection conditional on frozen old points; no half-amplitude law.
+
+  - id: D_P154_PROSPECTIVE_RESULT
     issue: 154
-    name: prospective_J_grad_to_global_U_transmission
-    state: prediction_freeze_required_before_new_data
-    discovery_sha: dd48177340f169c18cd1fc9217101b54090e1e3a
+    claim_level: independent_finite_policy_decision
+    geometry: norm4_N85_N340_paired_orientations
+    N: [85, 340]
+    n_samples: 165000000
+    raw_path: experiments/p154-prospective-transmission-20260831/production
+    score_path: experiments/p154-prospective-transmission-20260831/REPORT.md
+    sha: f4999e29612da16a3650f24d124fb59137f053d7
+    parent_block: null
+    training_block: D_P154_LAGGED_SOURCE
+    raw_data_group: p154_new_lag1_transmission_165m
+    independent_primary: true
+    outcome: B_C_excluded_W_not_excluded_weak_net_stop_satisfied
+    note: Stop prioritizing this lag1 policy as the main H4 explanation; not exact zero or all-source rejection.
+
+  - id: D_P337_TWO_COUPLING
+    issue: 337
+    claim_level: exact_finite_profile_exclusion
+    geometry: parent_N50_pair_from_child_N25_tables
+    N: [50]
+    n_samples: 0
+    raw_path: experiments/p337-two-coupling-closure-20260831/inputs
+    score_path: experiments/p337-two-coupling-closure-20260831/results/REPORT.md
+    sha: f5aa94c3c1d619da2272f2409623ed52c876463d
+    parent_block: published_p337_endpoint_integer_counts
+    independent_primary: false
+    outcome: D3_greater_than_1_over_10000_rejects_common_thermal_plus_source_profile_closure
+
+  - id: D_P337_FINITE_FRONTIER
+    issue: 337
+    claim_level: finite_uniform_bound_and_joint_limit_theorem
+    geometry: fixed_axis_tilted_square_family
+    N: null
+    n_samples: 0
+    raw_path: null
+    score_path: notes/closed-source-uniform-projection-tail.md
+    companion_path: notes/closed-source-poisson-double-scaling.md
+    sha: 2690f665bc8029cb2370d3f1efcef5eb2853705c
+    parent_block: published_p337_finite_source_results
+    independent_primary: false
+    outcome: N25_all_real_m_ge64_opposite_signs_and_Poisson_joint_limit_U_suppression_proved
+    remaining: fixed_m_oblique_twist_penalty_or_restricted_sector_odds_or_accessible_sampling
+
+active_execution: []
 
 parked_support_issues:
   - 1
@@ -255,12 +329,16 @@ completed_analysis_tasks:
   - {issue: 439, name: same_stream_M_projective_current_crosswalk, outcome: common_ray_not_rejected_but_zero_M_loading_also_survives}
 
 completed_production_tasks:
+  - {issue: 154, name: lag1_to_U_165m, outcome: strong_B_C_excluded_weak_net_stop_satisfied, evidence: D_P154_PROSPECTIVE_RESULT}
+  - {issue: 334, name: independent_normal_intervention_1m, outcome: complete_two_score_conditional_mean_closure_rejected, evidence: D_P334_NORMAL_RESULT}
+  - {issue: 334, name: independent_contact_intervention_600k, outcome: both_residual_forecasts_excluded, evidence: D_P334_CONTACT_RESULT}
   - {issue: 50, name: N145_to_N290_full_curve, outcome: corrected_slope_survives_single_multiplier_shape_fails}
   - {issue: 57, name: norm5_H4_H12, outcome: H4_transfer_compatible_H12_H8_disfavored_child_zero_not_rejected}
   - {issue: 156, name: primitive_norm2_two_generations, outcome: negative_rank4_H4_phase_repeats_positive_phase_adversaries_fail}
   - {issue: 205, name: same_N_norm5_coalescence, outcome: completed_or_archived_not_current_execution}
 
 completed_exact_tasks:
+  - {issue: 337, name: two_coupling_endpoint_profile_test, outcome: common_thermal_plus_source_closure_rejected, evidence: D_P337_TWO_COUPLING}
   - {issue: 115, name: N26_self_matching_Beta_falsification, outcome: both_frozen_Beta_laws_fail}
   - {issue: 100, name: finite_Russo_identity, outcome: exact}
   - {issue: 216, name: Q4_Jordan_module_shape_relations, outcome: exact_module_relations_not_lattice_identification}

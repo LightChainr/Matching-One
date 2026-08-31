@@ -16,27 +16,11 @@ exact topology / semantics / cover arithmetic
 
 Failures at a higher layer do not erase lower-layer evidence. Exact finite controls do not automatically promote a large-system mechanism.
 
-## Current decision edge
+## Current decision edge — completed tests, no P0 production
 
-Only one edge is active this week:
+The exact chain `source -> j_in,j_out -> J_grad -> original pooled-root/slope-normalized U` remains the organizing question. Its requested #154 test and both independent #334 interventions are complete; the named failed policies are stopped. #154/#334/#337 remain open P1 questions, not pending production.
 
-```text
-P334 projective birth process
-  d_p A_ell = j_in,ell - j_out,ell
-  J_grad = j_in - j_out
-          |
-          |  fresh held-out population intervention
-          v
-contact/lifecycle model M0/M1(/prospective M2)
-          |
-          |  prospective source-to-U transport
-          v
-P154 original pooled-root / slope-normalized U
-```
-
-`J_act=j_in+j_out` remains a distinct activity coordinate and is not silently substituted for `J_grad` or global `U`.
-
-The current scientific question is not whether another exact/current/source coordinate exists. It is whether a **predeclared transport prediction** survives an independent block. Same-block feature rescue is outside this decision.
+`J_act=j_in+j_out` is an activity coordinate and is not substituted for `J_grad` or U. The earlier M0/M1/M2 plan labels are not a shared frozen model family: retain #154's W/B/C and each #334 contract's distinct targets. Same-block feature rescue is not a new mechanism result.
 
 ## A. Square-site matching-odd finite-size sector
 
@@ -47,7 +31,7 @@ Durable C3 evidence remains:
 - N145->290 rejects a one-multiplier full-curve shape while preserving narrower finite-size relations;
 - pure S-prime and scalar-width shortcuts fail.
 
-This sector is already sufficient for a finite-size phenomenology result. Operator identification requires the current transmission/shape discriminator; another radial exponent fit is not an identification step.
+This sector is already sufficient for a finite-size phenomenology result. Operator identification remains open after the completed transmission decisions; another radial exponent fit is not an identification step.
 
 ## B. Projective birth-current / topology process
 
@@ -59,21 +43,19 @@ Important boundary:
 - selected-checkpoint C5 statements remain finite-scope controls;
 - they do not become independent population evidence by being re-expressed in more coordinates.
 
-The intended independent population test is frozen at `bc0a18c207e3b09f49ea6b6af6601471114d654a`.
+The source-normal 1M-prefix test frozen at `bc0a18c` is completed at [d0a9daf1](https://github.com/LightChainr/Matching-One/commit/d0a9daf1132779205f119e9b4470f4eea9cb89c1): complete two-score conditional-mean closure fails, while the fixed positive forecast remains compatible. The separate 600k-prefix contact test at [14b2c98e](https://github.com/LightChainr/Matching-One/commit/14b2c98ed3a252a2fe79ce5e124d9484b23a264f) rejects both residual forecasts. These distinct new-data targets do not define one interchangeable residual or a new half-amplitude law.
 
 ## C. Norm-4 / source-to-global transport
 
 Frozen q2/Jordan production rejects the declared scalar q2 completion while Jordan remains only a survivor, not an identified module. Generation 4 does not identify its secondary eigenvalue.
 
-Later source reanalyses establish strong local/temporal structure, but they reuse historical random blocks. The latest lagged-source result at `dd48177340f169c18cd1fc9217101b54090e1e3a` resolves entry/exit effects without resolving the original global `U` source response.
-
-Therefore the next step is a prospective `J_grad -> U` prediction, not another source coordinate.
+Later source reanalyses establish strong local/temporal structure, but they reuse historical random blocks. The earlier lagged-source result at `dd48177340f169c18cd1fc9217101b54090e1e3a` was discovery only. The subsequent [165M prospective result, f4999e29](https://github.com/LightChainr/Matching-One/commit/f4999e29612da16a3650f24d124fb59137f053d7) excludes strong entry/completion predictions and satisfies the weak net-response stop rule. This lag1 policy is no longer prioritized as the main H4 explanation; no further sample or lag/source scan follows.
 
 ## D. Pivotal and self-matching RG support
 
 Russo gives an exact pivotal interpretation of the slope; finite local observables remain useful controls. The current N130/N170 rows are near rank-one and more identical replicas are retired as a default.
 
-This line is parked until a new geometry/readout is explicitly needed to decide the current transmission model.
+This line remains support until a new geometry/readout is needed for a separately specified mechanism discriminator.
 
 ## E. Primitive square-bond homology-character sector
 
@@ -89,9 +71,11 @@ A third same-purpose norm-2 sign generation is retired as a default.
 
 Representation-level Q4/Jordan relations and modular/shape assets remain useful because radial log behavior alone cannot identify the module.
 
-They are parked support for the current decision, not a separate active queue. If the transmission chain survives and still leaves q2/Jordan ambiguity, modulus/shape is the next orthogonal identification axis.
+They remain support for a separately specified future discriminator, not an automatic execution queue or a rescue of the failed policies.
 
-## G. Exact finite algebra and threshold side programs
+## G. Exact finite mechanism and threshold side programs
+
+#337's [f5aa94c3 four-profile test](https://github.com/LightChainr/Matching-One/blob/f5aa94c3c1d619da2272f2409623ed52c876463d/experiments/p337-two-coupling-closure-20260831/results/REPORT.md) rejects finite common thermal-plus-S closure. At fixed `2690f665`, the [N25 uniform theorem](https://github.com/LightChainr/Matching-One/blob/2690f665bc8029cb2370d3f1efcef5eb2853705c/notes/closed-source-uniform-projection-tail.md) proves opposite Sstar/Sdrop signs for every real m>=64; the [Poisson joint limit](https://github.com/LightChainr/Matching-One/blob/2690f665bc8029cb2370d3f1efcef5eb2853705c/notes/closed-source-poisson-double-scaling.md) proves original-U suppression when N/m² stays bounded on growing-systole quotients. Fixed-m oblique twist/sector control and sampling feasibility remain unresolved; neither theorem establishes a continuum identity. The first finite-window calculation is complete. This attention point does not open a P0 block.
 
 Exact matching polynomials, Galois certificates, finite Euler/Betti identities, reliability/branching controls, W5 wiring, Boolean-noise controls, energy/log-pair statistics and bounded integer-relation exclusions remain first-class research assets.
 

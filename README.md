@@ -18,10 +18,11 @@ The project does **not** claim a closed form for square-site `p_c` or a uniquely
 
 ## Current decision
 
-Only two issues are live for the 2026-08-31 decision:
+**P0 production is empty.** The requested independent tests are complete; their failed parameterizations are stopped, while the broader #154/#334/#337 questions remain open at P1.
 
-- **#334:** execute the already frozen independent projective birth-current intervention;
-- **#154:** freeze and then test a prospective source -> ingress/egress -> `J_grad` -> original pooled-root/slope-normalized `U` transmission.
+- **#154:** the [165M-permutation result](https://github.com/LightChainr/Matching-One/blob/f4999e29612da16a3650f24d124fb59137f053d7/experiments/p154-prospective-transmission-20260831/REPORT.md) rejects the frozen strong entry/completion predictions and satisfies the weak net-response stop rule. Do not prioritize this lag1 policy as the main H4 explanation or top up its sample.
+- **#334:** the [1M-prefix source-normal intervention](https://github.com/LightChainr/Matching-One/blob/d0a9daf1132779205f119e9b4470f4eea9cb89c1/notes/p334-independent-normal-intervention-result.md) rejects complete two-score conditional-mean closure; the separate [600k-prefix contact intervention](https://github.com/LightChainr/Matching-One/blob/14b2c98ed3a252a2fe79ce5e124d9484b23a264f/experiments/p334-prospective-intervention-20260831/REPORT.md) rejects both frozen residual forecasts. No same-block feature rescue or new half-amplitude law follows.
+- **#337:** [finite two-coupling profile closure is excluded](https://github.com/LightChainr/Matching-One/blob/f5aa94c3c1d619da2272f2409623ed52c876463d/experiments/p337-two-coupling-closure-20260831/results/REPORT.md). The [2690f665 uniform bounds](https://github.com/LightChainr/Matching-One/blob/2690f665bc8029cb2370d3f1efcef5eb2853705c/notes/closed-source-uniform-projection-tail.md) prove opposite original-U signs for Sstar/Sdrop at fixed N25 for every real m>=64; the [Poisson joint limit](https://github.com/LightChainr/Matching-One/blob/2690f665bc8029cb2370d3f1efcef5eb2853705c/notes/closed-source-poisson-double-scaling.md) suppresses U when N/m² stays bounded on growing-systole quotients. The remaining question concerns fixed-m oblique twist/sector control or an accessible sampling window, not the first finite-window proof. These branch-delivered assets are not represented as merged.
 
 The exact birth-current organization is
 

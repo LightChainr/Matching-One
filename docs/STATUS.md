@@ -14,38 +14,15 @@ The repository keeps three claim-bearing constraints:
 
 This cleanup changes navigation and lifecycle only. It does not rewrite a frozen prediction, raw result, historical report, RNG domain or primary evidence block.
 
-## Weekly decision — one transmission question
+## Current decision — completed tests, P0 empty
 
-Signal existence is no longer the bottleneck. This week the project attempts **operator/transmission identification once**, rather than opening more coordinates.
+The #154 165M-permutation test and both distinct #334 independent interventions are complete. The named failed parameterizations are stopped; there is no pending first production, official score or automatic new block. The broader #154/#334/#337 issues remain open at P1; a policy-level stop does not close those mathematical questions.
 
-Only two issues are live:
+The exact transmission chain remains `source -> j_in,j_out -> J_grad=j_in-j_out -> original pooled-root/slope-normalized U`. A strong `J_act=j_in+j_out` response alone does not establish global transmission.
 
-- **#334 — independent birth-current intervention.** Test whether a predeclared current/contact model predicts a fresh population-level response.
-- **#154 — temporal transmission to the original global observable.** Freeze a quantitative source -> ingress/egress -> `J_grad` -> pooled-root/slope-normalized `U` prediction before any fresh target is read.
+The old M0/M1/M2 wording was qualitative planning vocabulary, **not the actual common frozen model family**. #154 tested W/B/C (weak, entry-dominant, completion-dominant); the source-normal #334 test compared complete two-score conditional-mean closure with a fixed positive forecast; the separate four-contact test used C0/C1 residual bands. Those targets and labels are not interchangeable.
 
-The organizing chain is
-
-```text
-microscopic source / contact
-    -> j_in , j_out
-    -> J_grad = j_in - j_out
-    -> d_p E_top
-    -> original pooled-root / slope-normalized U
-```
-
-`J_act = j_in + j_out` is a useful activity diagnostic, but a strong local `J_act` response is **not** evidence that it drives global norm-4 `U`.
-
-The live model family is deliberately nested and small:
-
-- **M0 lifecycle/current-only** — birth/lifetime/current variables are sufficient for the declared target;
-- **M1 contact-regulated current** — one frozen contact/source-normal response is required;
-- **M2 extra transfer coordinate** — allowed only if defined and frozen **before** the validation block, never as a same-block rescue.
-
-### Hard stop
-
-The next fresh block is a decision/validation block, not another discovery archive. If a frozen model fails, demote or eliminate it; **do not add a feature on the same block to rescue it**. If #154 cannot produce a distinguishable prospective `U` prediction before new data, do not launch the block. No third P0 is opened during this decision.
-
-A failed transmission test is an endpoint, not a request for a thirtieth readout: the current paper-level boundary then remains the established C3 finite-size phenomenology below.
+**Stop:** no top-up, new lag/source, fifth contact feature or same-block model rescue follows from these results. #337's existing finite theory is the next attention point, not a P0 production assignment. The established C3 finite-size evidence remains valid without unique operator identification.
 
 ## Strongest current evidence
 
@@ -87,7 +64,7 @@ Beta(7,7): first k=5 difference = +156
 
 Small-quotient exact identities and certificates (including N=7/10/13/16/17 controls) may be C5 within their declared finite scope. They do **not** establish a global H4 mechanism, continuum field count or operator identity.
 
-## #334 — evidence entering the current decision
+## #334 — two completed independent interventions
 
 The valuable exact core is the projective continuity law
 
@@ -106,9 +83,13 @@ Existing discovery is one dependency family, not many independent votes:
 - dual-cycle blocker certificates on the same selected N425 examples: PR #492 head [`0e52dba`](https://github.com/LightChainr/Matching-One/commit/0e52dbaeed53dfffa94592e53e38129c179c5078);
 - same-stream M/projective-current crosswalk did not establish nonzero M loading: PR #451 head [`bfbceb2`](https://github.com/LightChainr/Matching-One/commit/bfbceb24f4072e5fd2025a2cecb344014adbd9d8). It is not a third live experiment.
 
-The next #334 discriminator is already frozen at [`bc0a18c`](https://github.com/LightChainr/Matching-One/commit/bc0a18c207e3b09f49ea6b6af6601471114d654a), `notes/p334-independent-intervention-freeze.md`: a fresh 1M-prefix intervention comparing the declared M0/M1 response with fixed primary `T`, prediction, tolerance and budget. The freeze contains no target result. Historical archives may train and estimate variance but do not enter the independent validation score.
+The `bc0a18c` freeze has been executed. The [source-normal result, d0a9daf1](https://github.com/LightChainr/Matching-One/blob/d0a9daf1132779205f119e9b4470f4eea9cb89c1/notes/p334-independent-normal-intervention-result.md) uses 1M fresh prefixes: `T=(3.08520 +/- 0.391874)e-8`, with the frozen 3SE lower endpoint above `delta=1e-8`. Complete two-score conditional label-mean closure is rejected; the fixed positive forecast remains compatible. This does not reject a restriction limited to the first Jacobian.
 
-## #154 — evidence entering the current decision
+The distinct [four-contact result, 14b2c98e](https://github.com/LightChainr/Matching-One/blob/14b2c98ed3a252a2fe79ce5e124d9484b23a264f/experiments/p334-prospective-intervention-20260831/REPORT.md) uses 300k fresh prefixes per size. The N325/N425 residual ratios are `0.4988857` / `0.5169035`, with intervals `[0.4360616,0.5617098]` / `[0.4506760,0.5831311]`; both exclude C0 and C1. This is one signed-loading projection, conditional on the frozen old predictor/point values, not a full-state sufficiency test. No new half-amplitude model is established.
+
+These are separate new data groups and different targets. They are not two estimates of one “20% residual,” and their related within-block readouts are not additional independent votes. Both blocks are completed branch deliveries; no repeat or extra descriptor is queued.
+
+## #154 — completed lag1-to-U test and policy stop
 
 The established norm-4 result family remains open mechanistically:
 
@@ -116,9 +97,19 @@ The established norm-4 result family remains open mechanistically:
 - generation-4 target: PR #277 head [`3e855ce`](https://github.com/LightChainr/Matching-One/commit/3e855ced4fd98d8979c0b712636b45c2fa54f969);
 - ordinary integrated `J_bulk` is exactly the existing topology-even coordinate, so it is not a second field direction: [`54b3e80`](https://github.com/LightChainr/Matching-One/commit/54b3e80822fa4c407470cd669912c959b9ea4591);
 - strong fixed-p source response does not by itself identify global H4 transport: [`56a6267`](https://github.com/LightChainr/Matching-One/commit/56a6267d6a6826a165f93ed3a64a670ca7088180), `results/p40-even-given-odd/REPORT.md`;
-- latest lagged-source discovery reuses old permutations and resolves temporal entry/exit effects while the original global `U` source response remains unresolved: [`dd48177`](https://github.com/LightChainr/Matching-One/commit/dd48177340f169c18cd1fc9217101b54090e1e3a), `results/norm4-lagged-source/REPORT.md`.
+- the earlier lagged-source discovery reused old permutations and left its original global `U` response unresolved: [`dd48177`](https://github.com/LightChainr/Matching-One/commit/dd48177340f169c18cd1fc9217101b54090e1e3a), `results/norm4-lagged-source/REPORT.md`.
 
-The next #154 output is therefore **not** another source coordinate. Before any fresh block, freeze a quantitative M0/M1/M2 source-to-`J_grad`-to-`U` prediction, equivalence band and joint covariance budget. If the mechanisms cannot make distinguishable `U` predictions, stop rather than sample.
+The subsequent [165M new-permutation result, f4999e29](https://github.com/LightChainr/Matching-One/blob/f4999e29612da16a3650f24d124fb59137f053d7/experiments/p154-prospective-transmission-20260831/REPORT.md) is complete. Both strong B/C templates are excluded at N85/N340; all four component intervals lie inside W's +/-0.30 band. The net intervals `[-0.071640,0.158581]` and `[-0.157394,0.278745]` lie inside the frozen +/-0.50 stop band. W remains `not_excluded`, not an identified physical theory.
+
+Stop prioritizing this particular lag1 policy as the main H4 explanation. This is a bounded weak response, not exact zero or rejection of every temporal source; no sample top-up or replacement lag follows.
+
+## #337 — finite exact frontier, no new production assignment
+
+The [four-profile two-coupling test, f5aa94c3](https://github.com/LightChainr/Matching-One/blob/f5aa94c3c1d619da2272f2409623ed52c876463d/experiments/p337-two-coupling-closure-20260831/results/REPORT.md) has `D3=0.000439154238... > 1/10000`. It rejects common thermal-plus-S profile reparameterization at the fixed N50 root, including p-dependent coefficients. It does not rule out scalar-U-only matching or count continuum fields.
+
+The frontier is now fixed at `2690f665`: [uniform rational bounds](https://github.com/LightChainr/Matching-One/blob/2690f665bc8029cb2370d3f1efcef5eb2853705c/notes/closed-source-uniform-projection-tail.md) prove U_star<0<U_drop for the locked N25 pair throughout every real m>=64, with explicit remainders and positive pooled denominators. The [Poisson coexistence theorem](https://github.com/LightChainr/Matching-One/blob/2690f665bc8029cb2370d3f1efcef5eb2853705c/notes/closed-source-poisson-double-scaling.md) separately proves superpolynomial suppression of original pooled-root U for both laws when N/m² tends to finite zeta on growing-systole quotients, including the oblique companion. Neither is a new sampling block or a uniform-in-size fixed-m result.
+
+The unresolved step is fixed-m oblique twist penalty/restricted-sector odds control or a practically accessible sampling regime. The joint-limit contour bound retains an exp[O(N/m²)] bulk factor and does not settle that fixed-m problem; the tiny N25 m>=64 amplitudes do not establish sampling feasibility. Do not reassign the first finite-window proof, fit another source coefficient or restart the stopped P154/P334/F4 blocks; the larger-N F4 fixed block remains inconclusive without top-up. These branch deliveries do not establish a continuum field or homogeneous H4 mechanism.
 
 ## Work explicitly stopped as a default
 
@@ -133,7 +124,7 @@ The following loops are not current execution work:
 - promoting finite exact controls into global mechanism identification;
 - treating bounded PSLQ/algebraic exclusions under parked #1 as progress toward a closed form by themselves.
 
-Coalescence, modulus, local pivotal, Q4/Jordan theory, threshold algebra and other exact programs remain useful archived/parked support. They are not part of this week’s validation execution.
+Coalescence, modulus, local pivotal, Q4/Jordan theory, threshold algebra and other exact programs remain useful archived/parked support. They do not constitute an automatic new production queue.
 
 ## Explicit non-claims
 

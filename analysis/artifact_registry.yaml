@@ -59,8 +59,9 @@ current_decision_assets:
     issue: 334
     sha: bc0a18c207e3b09f49ea6b6af6601471114d654a
     path: notes/p334-independent-intervention-freeze.md
-    status: frozen_future_validation
-    independent_primary: true
+    status: historical_freeze_completed
+    result_asset: P334_NORMAL_RESULT
+    independent_primary: false
   - id: P154_LAGGED_SOURCE
     issue: 154
     sha: dd48177340f169c18cd1fc9217101b54090e1e3a
@@ -84,6 +85,41 @@ current_decision_assets:
     sha: bfbceb24f4072e5fd2025a2cecb344014adbd9d8
     path: pull/451
     status: completed_existing_data_analysis
+    independent_primary: false
+
+  - id: P334_NORMAL_RESULT
+    issue: 334
+    sha: d0a9daf1132779205f119e9b4470f4eea9cb89c1
+    path: notes/p334-independent-normal-intervention-result.md
+    status: completed_branch_result_named_closure_stopped
+    raw_data_group: p334_new_normal_intervention_1m
+    independent_primary: true
+  - id: P334_CONTACT_RESULT
+    issue: 334
+    sha: 14b2c98ed3a252a2fe79ce5e124d9484b23a264f
+    path: experiments/p334-prospective-intervention-20260831/REPORT.md
+    status: completed_branch_result_both_residual_forecasts_stopped
+    raw_data_group: p334_new_contact_intervention_600k
+    independent_primary: true
+  - id: P154_PROSPECTIVE_RESULT
+    issue: 154
+    sha: f4999e29612da16a3650f24d124fb59137f053d7
+    path: experiments/p154-prospective-transmission-20260831/REPORT.md
+    status: completed_branch_result_lag1_priority_stopped
+    raw_data_group: p154_new_lag1_transmission_165m
+    independent_primary: true
+  - id: P337_TWO_COUPLING
+    issue: 337
+    sha: f5aa94c3c1d619da2272f2409623ed52c876463d
+    path: experiments/p337-two-coupling-closure-20260831/results/REPORT.md
+    status: completed_exact_finite_profile_exclusion
+    independent_primary: false
+  - id: P337_FINITE_FRONTIER
+    issue: 337
+    sha: 2690f665bc8029cb2370d3f1efcef5eb2853705c
+    path: notes/closed-source-uniform-projection-tail.md
+    companion_path: notes/closed-source-poisson-double-scaling.md
+    status: branch_finite_theory_attention_no_production
     independent_primary: false
 
 continuum_controls:
