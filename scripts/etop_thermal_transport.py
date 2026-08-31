@@ -22,15 +22,15 @@ SOURCE = ROOT / "results/etop-n100-three-modulus"
 OUT = ROOT / "results/etop-thermal-transport"
 
 
-def load_fields():
-    source = json.loads((SOURCE / "score.json").read_text())
+def load_fields(source_dir=SOURCE):
+    source = json.loads((source_dir / "score.json").read_text())
     contract = source["contract"]
     n, batches = contract["area"], contract["batches"]
     count = contract["samples_per_shape_pair"] // batches
     fields = np.zeros((batches, 3, 2, n+1))
     for s, shape in enumerate(contract["shapes"]):
         delta = float(Fraction(shape["delta_cos4"]))
-        with (SOURCE / "raw" / (shape["name"] + ".hist.csv")).open() as stream:
+        with (source_dir / "raw" / (shape["name"] + ".hist.csv")).open() as stream:
             for row in csv.DictReader(stream):
                 b, k = int(row["batch"]), int(row["k"])
                 sign = 1 if row["orientation"] == "first" else -1

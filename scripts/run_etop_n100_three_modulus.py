@@ -37,7 +37,7 @@ def digest(path):
 def launch(contract):
     (OUT/"raw").mkdir(parents=True, exist_ok=True)
     (OUT/"logs").mkdir(exist_ok=True)
-    build = ROOT/"build/etop-n100"
+    build = ROOT/f"build/etop-n{contract['area']}"
     build.mkdir(parents=True, exist_ok=True)
     binary = build/"threshold_rank_integer_period_mc"
     source = ROOT/"src/threshold_rank_integer_period_mc.cpp"
