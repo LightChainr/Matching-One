@@ -1,0 +1,252 @@
+{
+  "status": "PASS_INDEPENDENT_EXACT_POWER_BASIS_REPRODUCTION",
+  "reviewed_at_utc": "2026-08-31T13:36:19.053827+00:00",
+  "freeze_commit": "76a070d4aa95866f129572940f591b197cda064d",
+  "original_result_sha256": "b106eca11b531d20a8bc05e90bc7fc8773832dc3586a9d6731d2f4177d2791d2",
+  "frozen_file_and_output_hashes_match": true,
+  "all_inputs_match_their_original_git_blobs": true,
+  "four_tables_each_K_count_binomial25_and_normalizer_exactly_one": true,
+  "method": "Integer power-basis expansion; independent complement composition; exact Fraction Horner evaluation; centered Taylor enclosure with absolute second-derivative bound over the SAME frozen root interval. No scorer/vendor import.",
+  "reference_root_unchanged": {
+    "lower_fraction": "4073344606717732538485743001534530993661/10000000000000000000000000000000000000000",
+    "upper_fraction": "814668921343546507697148600306906198733/2000000000000000000000000000000000000000",
+    "midpoint_approx": 0.40733446067177326,
+    "width_approx": 4e-40,
+    "serialization": "outward_1e_minus50_rational_grid"
+  },
+  "exact_root_endpoint_signs": [
+    -1,
+    1
+  ],
+  "pooled_slope": {
+    "lower_fraction": "589101220924948683381602090393606735452798996428579/100000000000000000000000000000000000000000000000000",
+    "upper_fraction": "589101220924948683381602090393606735452922734369471/100000000000000000000000000000000000000000000000000",
+    "midpoint_approx": 5.891012209249487,
+    "width_approx": 1.23737940892e-39,
+    "serialization": "outward_1e_minus50_rational_grid"
+  },
+  "matrix_4_by_3": [
+    [
+      {
+        "independent_enclosure": {
+          "lower_fraction": "294124785825664125281842841588549747274588245454987/50000000000000000000000000000000000000000000000000",
+          "upper_fraction": "36765598228208015660230355198568718409332129331639/6250000000000000000000000000000000000000000000000",
+          "midpoint_approx": 5.882495716513282,
+          "width_approx": 1.3757839625e-39,
+          "serialization": "outward_1e_minus50_rational_grid"
+        },
+        "exact_midpoint_value_inside_original_enclosure": true,
+        "independent_enclosure_inside_original": true
+      },
+      {
+        "independent_enclosure": {
+          "lower_fraction": "55844506747147050329061993073999017004674951932327/50000000000000000000000000000000000000000000000000",
+          "upper_fraction": "111689013494294100658123986147998034009755338917643/100000000000000000000000000000000000000000000000000",
+          "midpoint_approx": 1.116890134942941,
+          "width_approx": 4.05435052989e-39,
+          "serialization": "outward_1e_minus50_rational_grid"
+        },
+        "exact_midpoint_value_inside_original_enclosure": true,
+        "independent_enclosure_inside_original": true
+      },
+      {
+        "independent_enclosure": {
+          "lower_fraction": "-7212639114466456419074023357057198097773325980149/12500000000000000000000000000000000000000000000000",
+          "upper_fraction": "-57701112915731651352592186856457584782159403444059/100000000000000000000000000000000000000000000000000",
+          "midpoint_approx": -0.5770111291573166,
+          "width_approx": 2.7204397133e-40,
+          "serialization": "outward_1e_minus50_rational_grid"
+        },
+        "exact_midpoint_value_inside_original_enclosure": true,
+        "independent_enclosure_inside_original": true
+      }
+    ],
+    [
+      {
+        "independent_enclosure": {
+          "lower_fraction": "-5648537980359473214022777497402176679412748715401/100000000000000000000000000000000000000000000000000",
+          "upper_fraction": "-706067247544934151752847187175272084817850410051/12500000000000000000000000000000000000000000000000",
+          "midpoint_approx": -0.056485379803594735,
+          "width_approx": 8.69945434993e-39,
+          "serialization": "outward_1e_minus50_rational_grid"
+        },
+        "exact_midpoint_value_inside_original_enclosure": true,
+        "independent_enclosure_inside_original": true
+      },
+      {
+        "independent_enclosure": {
+          "lower_fraction": "818663844944662770883377042716268599332142758719/6250000000000000000000000000000000000000000000000",
+          "upper_fraction": "13098621519114604334134032683460297589475003817797/100000000000000000000000000000000000000000000000000",
+          "midpoint_approx": 0.13098621519114603,
+          "width_approx": 1.60719678293e-39,
+          "serialization": "outward_1e_minus50_rational_grid"
+        },
+        "exact_midpoint_value_inside_original_enclosure": true,
+        "independent_enclosure_inside_original": true
+      },
+      {
+        "independent_enclosure": {
+          "lower_fraction": "87904024079098349687072943519905401767874670249/20000000000000000000000000000000000000000000000000",
+          "upper_fraction": "219760060197745874217682358799763504461293394003/50000000000000000000000000000000000000000000000000",
+          "midpoint_approx": 0.004395201203954918,
+          "width_approx": 8.3213436761e-40,
+          "serialization": "outward_1e_minus50_rational_grid"
+        },
+        "exact_midpoint_value_inside_original_enclosure": true,
+        "independent_enclosure_inside_original": true
+      }
+    ],
+    [
+      {
+        "independent_enclosure": {
+          "lower_fraction": "589952870198569116199518497610113976356421501947183/100000000000000000000000000000000000000000000000000",
+          "upper_fraction": "589952870198569116199518497610113976356531399432719/100000000000000000000000000000000000000000000000000",
+          "midpoint_approx": 5.899528701985691,
+          "width_approx": 1.09897485536e-39,
+          "serialization": "outward_1e_minus50_rational_grid"
+        },
+        "exact_midpoint_value_inside_original_enclosure": true,
+        "independent_enclosure_inside_original": true
+      },
+      {
+        "independent_enclosure": {
+          "lower_fraction": "113433834608362876919991547281685240624678608216351/100000000000000000000000000000000000000000000000000",
+          "upper_fraction": "14179229326045359614998943410210655078136849156021/12500000000000000000000000000000000000000000000000",
+          "midpoint_approx": 1.1343383460836287,
+          "width_approx": 4.16185031817e-39,
+          "serialization": "outward_1e_minus50_rational_grid"
+        },
+        "exact_midpoint_value_inside_original_enclosure": true,
+        "independent_enclosure_inside_original": true
+      },
+      {
+        "independent_enclosure": {
+          "lower_fraction": "-2360126508658517781284915945828701389060556855477/4000000000000000000000000000000000000000000000000",
+          "upper_fraction": "-11800632543292588906424579729143506945298795268803/20000000000000000000000000000000000000000000000000",
+          "midpoint_approx": -0.5900316271646294,
+          "width_approx": 1.994504291e-40,
+          "serialization": "outward_1e_minus50_rational_grid"
+        },
+        "exact_midpoint_value_inside_original_enclosure": true,
+        "independent_enclosure_inside_original": true
+      }
+    ],
+    [
+      {
+        "independent_enclosure": {
+          "lower_fraction": "572614737313988685292454788402811893997636675169/12500000000000000000000000000000000000000000000000",
+          "upper_fraction": "2290458949255954741169819153611247576424430936819/50000000000000000000000000000000000000000000000000",
+          "midpoint_approx": 0.045809178985119096,
+          "width_approx": 8.67768472286e-39,
+          "serialization": "outward_1e_minus50_rational_grid"
+        },
+        "exact_midpoint_value_inside_original_enclosure": true,
+        "independent_enclosure_inside_original": true
+      },
+      {
+        "independent_enclosure": {
+          "lower_fraction": "8167103024199461235929687988810910316054855745087/50000000000000000000000000000000000000000000000000",
+          "upper_fraction": "16334206048398922471859375977621820632278145602011/100000000000000000000000000000000000000000000000000",
+          "midpoint_approx": 0.16334206048398922,
+          "width_approx": 1.68434111837e-39,
+          "serialization": "outward_1e_minus50_rational_grid"
+        },
+        "exact_midpoint_value_inside_original_enclosure": true,
+        "independent_enclosure_inside_original": true
+      },
+      {
+        "independent_enclosure": {
+          "lower_fraction": "-1974510457728008736718327166414282904111599768609/100000000000000000000000000000000000000000000000000",
+          "upper_fraction": "-987255228864004368359163583207141452011605650993/50000000000000000000000000000000000000000000000000",
+          "midpoint_approx": -0.019745104577280088,
+          "width_approx": 8.8388466623e-40,
+          "serialization": "outward_1e_minus50_rational_grid"
+        },
+        "exact_midpoint_value_inside_original_enclosure": true,
+        "independent_enclosure_inside_original": true
+      }
+    ]
+  ],
+  "all_four_minors3": [
+    {
+      "independent_enclosure": {
+        "lower_fraction": "-468276308448447427428038604792983382031600614849/50000000000000000000000000000000000000000000000000",
+        "upper_fraction": "-936552616896894854856077209585966764059460221297/100000000000000000000000000000000000000000000000000",
+        "midpoint_approx": -0.009365526168968949,
+        "width_approx": 3.741008401e-41,
+        "serialization": "outward_1e_minus50_rational_grid"
+      },
+      "exact_midpoint_value_inside_original_enclosure": true,
+      "independent_enclosure_inside_original": true
+    },
+    {
+      "independent_enclosure": {
+        "lower_fraction": "-1167204671479928074643783436643021288766822834561/100000000000000000000000000000000000000000000000000",
+        "upper_fraction": "-1167204671479928074643783436643021288762263789167/100000000000000000000000000000000000000000000000000",
+        "midpoint_approx": -0.01167204671479928,
+        "width_approx": 4.559045394e-41,
+        "serialization": "outward_1e_minus50_rational_grid"
+      },
+      "exact_midpoint_value_inside_original_enclosure": true,
+      "independent_enclosure_inside_original": true
+    },
+    {
+      "independent_enclosure": {
+        "lower_fraction": "904953205923602915236771116850755104340882515141/100000000000000000000000000000000000000000000000000",
+        "upper_fraction": "904953205923602915236771116850755104344198537421/100000000000000000000000000000000000000000000000000",
+        "midpoint_approx": 0.009049532059236028,
+        "width_approx": 3.31602228e-41,
+        "serialization": "outward_1e_minus50_rational_grid"
+      },
+      "exact_midpoint_value_inside_original_enclosure": true,
+      "independent_enclosure_inside_original": true
+    },
+    {
+      "independent_enclosure": {
+        "lower_fraction": "144325182197410449980769205630921211827747329099/12500000000000000000000000000000000000000000000000",
+        "upper_fraction": "2886503643948208999615384112618424236566246541/250000000000000000000000000000000000000000000000",
+        "midpoint_approx": 0.011546014575792836,
+        "width_approx": 4.519983608e-41,
+        "serialization": "outward_1e_minus50_rational_grid"
+      },
+      "exact_midpoint_value_inside_original_enclosure": true,
+      "independent_enclosure_inside_original": true
+    }
+  ],
+  "D3": {
+    "independent_enclosure": {
+      "lower_fraction": "5489427975120752265904437546881363751356602723/12500000000000000000000000000000000000000000000000",
+      "upper_fraction": "43915423800966018127235500375050910011193714083/100000000000000000000000000000000000000000000000000",
+      "midpoint_approx": 0.0004391542380096602,
+      "width_approx": 3.40892299e-42,
+      "serialization": "outward_1e_minus50_rational_grid"
+    },
+    "exact_midpoint_value_inside_original_enclosure": true,
+    "independent_enclosure_inside_original": true
+  },
+  "D3_strictly_positive_independently": true,
+  "D2_auxiliary_endpoint_rank": {
+    "independent_enclosure": {
+      "lower_fraction": "306112271877919421679209401207679884853620889578581/100000000000000000000000000000000000000000000000000",
+      "upper_fraction": "306112271877919421679209401207679884853788183512627/100000000000000000000000000000000000000000000000000",
+      "midpoint_approx": 3.061122718779194,
+      "width_approx": 1.67293934046e-39,
+      "serialization": "outward_1e_minus50_rational_grid"
+    },
+    "exact_midpoint_value_inside_original_enclosure": true,
+    "independent_enclosure_inside_original": true
+  },
+  "root_comoving": {
+    "all_four_minor_identities_verified_as_integer_polynomial_identities": true,
+    "identity": "det[T, Ds*C-T*(Cq1+Cq2), Ds*H-T*(Hq1+Hq2)] = Ds^2*det[T,C,H]; Ds=Tq1+Tq2",
+    "exact_midpoint_entries_inside_original_comoving_enclosures": true,
+    "all_four_exact_midpoint_minors_identical": true
+  },
+  "decision": "finite_root_two_coupling_profile_closure_rejected",
+  "scope": "Correctness reproduction of the one frozen target; not new evidence, point selection, observable selection, model fitting, or an independent experiment.",
+  "new_samples": 0,
+  "new_enumerations": 0,
+  "cloud_jobs": 0,
+  "elapsed_seconds": 0.27155633398797363,
+  "review_code_sha256": "433f9e167eb95e74b9b0f968b18e1b92ce8a71ae168cf67e20b8dfc5decb4ef0"
+}

@@ -1,6 +1,21 @@
 # 当前成果：从取向信号到微观机制
 
-**整理日期：2026-08-31。** 七项较早探索分析已封存于[交付沿革](../notes/analysis-delivery-20260831.md)。随后两个独立决策实验都已完成：#154新增165M路径，#334新增600k prefix；结果按事前规则停止对应预测的优先投入。[下一步](NEXT-TARGETS.md)只保留尚未回答的科学问题；[清理记录](REPOSITORY-TRIAGE-20260831.md)保存Issue操作。本任务新增结果统一交付Draft #509，不合并。
+**整理日期：2026-08-31，21时后复核。** 七项较早探索分析已封存于[交付沿革](../notes/analysis-delivery-20260831.md)。两个独立决策实验都已完成并执行停线；随后其他分支又交付了闭合源、F4全局传递和一孔缺陷的精确结果，见下文。不存在等待首次Xi计算的任务。[下一步](NEXT-TARGETS.md)只保留尚未回答的科学问题；[清理记录](REPOSITORY-TRIAGE-20260831.md)保存Issue操作。本任务新增结果统一交付Draft #509，不合并。
+
+## 最新有限机制：端点闭合不能靠两个共同耦合延续
+
+| 已完成的固定计算/推导 | 结果和真正排除的解释 | 来源 |
+|---|---|---|
+| checkerboard端点的闭合源 | `S=C+F4+Bvac=C+F4+T_NN-4K+2N`在N50→N25端点逐配置保持；其原U响应N25为+0.126165363414169。 | [源字典b8d043fc](https://github.com/LightChainr/Matching-One/blob/b8d043fc/notes/decimation-closed-source-and-global-u.md)、[精确值ec01768f](https://github.com/LightChainr/Matching-One/blob/ec01768f/results/p337-closed-source-n25/REPORT.md) |
+| 被bare-C遗漏的F4 | 固定N25两商全枚举给`V_F4=+0.194414686460907`，对应N50端点遗漏+0.599656868156603；裸簇源端点U传输失败。 | [结果b8d043fc](https://github.com/LightChainr/Matching-One/blob/b8d043fc/results/decimation-plaquette-u/score/REPORT.md) |
+| 一孔缺陷的原U混合响应 | `Xi=U_(t,epsilon)=-10.7557184075641`；`R=U U_st-U_s U_t=+27.7665635812302`有理界严格非零。纯温度内部延伸和源无关单一增益均失败，端点恒等式仍成立。 | [实际计算f5c4a74a](https://github.com/LightChainr/Matching-One/blob/f5c4a74a/results/p337-endpoint-defect/score/REPORT.md)、[解释bc17b81d](https://github.com/LightChainr/Matching-One/blob/bc17b81d/notes/checkerboard-single-defect-global-u-result.md) |
+| **本次：共同温度＋同一源耦合的profile闭合** | 固定四维`f=(q₁,E₁,q₂,E₂)`、`T=∂pf,C=Cov(f,S),H=∂epsilon f`，全部四个三阶minor平方和**D3=0.000439154238009660…>1/10000**，有理界严格为正。不存在共同的`H=bT+cC`，允许b/c任意依赖p/t也不能修复。 | [结果与解释](../experiments/p337-two-coupling-closure-20260831/RESULT.md)、[全部有理界](../experiments/p337-two-coupling-closure-20260831/results/latest.json) |
+
+这些是同一个有限N50/N25链上的相关精确计算，不是独立统计票、渐近H4或连续场身份。N25两商的Smith类不同。Xi已完成，不能从较旧的PR267 NEXT再次启动；共同clock商空间与01/02/12接口也已分别由[1b0ec15a](https://github.com/LightChainr/Matching-One/blob/1b0ec15a/notes/p154-original-u-clock-quotient.md)、[c2828e34](https://github.com/LightChainr/Matching-One/blob/c2828e34/notes/p154-lag1-current-commutator.md)交付。
+
+**停止继续用共同温度和同一S有效耦合解释这两个几何的全部q/E响应。** 这包括任意平滑共同坐标变化，不只是一种选定拟合。共同root运动只给C/H加上T的倍数，不能消除该障碍。允许每个几何各有坐标、只匹配标量U，或引入独立新耦合，均属于此次未检验的其他问题；不能从D3直接声称识别了第三个CFT场。
+
+合同、输入和代码先冻结于`76a070d4`，再作首次评分；只消费已公布的完整整数系数，0新样本、0新枚举、0云作业。已有混合U增益拒绝并不推出此结论：源坐标重标度可令旧R非零而新D3仍零。[计算合同](../experiments/p337-two-coupling-closure-20260831/CONTRACT.md)明确这个区别及失败边界。该结果与此前有限结果共享数据，不追认为前瞻独立确认。
 
 ## 当前决策：独立实验开始淘汰冻结预测
 
