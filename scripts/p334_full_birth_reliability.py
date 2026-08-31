@@ -27,13 +27,17 @@ def canonical(labels):
     return tuple(-1 if a < 0 else mapping.setdefault(a, len(mapping)) for a in labels)
 
 
-def safety_polynomial(network, all_sites):
+def safety_polynomial(network, all_sites, forced_site=None, forced_value=None):
     graph = nx.Graph()
     graph.add_nodes_from(network["vertices"])
     graph.add_edges_from(network["edges"])
     terminals = tuple(network["terminals"])
     random = set(network["vacant_sites"])
     fixed = set(network["fixed_components"]) | set(terminals)
+    absent = set()
+    if forced_site is not None:
+        random.remove(forced_site)
+        (fixed if forced_value else absent).add(forced_site)
     width, tree = nx.approximation.treewidth_min_degree(graph)
     root = min(tree.nodes, key=lambda bag: (-len(bag), tuple(sorted(bag))))
     bits, base = len(all_sites) + 2, 1 << (len(all_sites) + 2)
@@ -82,13 +86,14 @@ def safety_polynomial(network, all_sites):
             position = expanded.index(vertex)
             result = {}
             for state, weight in table.items():
-                if vertex in random:
+                if vertex in random or vertex in absent:
                     labels = list(state)
                     labels.insert(position, -1)
                     result[canonical(labels)] = weight
-                labels = list(state)
-                labels.insert(position, max(state, default=-1) + 1)
-                result[canonical(labels)] = weight
+                if vertex not in absent:
+                    labels = list(state)
+                    labels.insert(position, max(state, default=-1) + 1)
+                    result[canonical(labels)] = weight
             table, bag = result, expanded
         guard(table)
         return table
