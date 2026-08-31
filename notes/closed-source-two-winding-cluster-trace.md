@@ -203,6 +203,8 @@ comes from this configuration's true closure coefficient and the tied
 Q path, in the declared reduced normalization. It is one additive term
 in the full Q response, not a separately measurable positive sector at
 Q=1 or a newly proposed source intervention.
+For the original source parameter `t`, `Q=exp(2t)` makes this Q-derivative
+contribution twice as large at Q=1; the distinction is retained.
 
 For completeness its route into **original pooled-root U** can be written
 without an unproved noncancellation. Let the witness affect geometry a;
