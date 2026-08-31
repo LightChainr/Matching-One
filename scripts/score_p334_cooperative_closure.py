@@ -110,14 +110,41 @@ def score_size(prefix, contract, commit):
                         for j, name in enumerate(METRICS)},
             "relative_excess_over_closure_baseline": float(means[o, 0]/means[o, 2]),
         }
+    # Secondary attribution of the former pooled clone gap. This removes both
+    # the common absorption gate and between-checkpoint safe-hazard mixing.
+    decomposition = []
+    jacobian = np.zeros((8, 2*m))
+    for o in range(2):
+        within, _, baseline, q2, s1, s2 = means[o, :6]
+        decomposition.extend((q2-s2*s2, (1/s1-1)*s2*s2,
+                              baseline-s2*s2/s1, within))
+        j = o*m
+        jacobian[4*o, j+3] = 1
+        jacobian[4*o, j+5] = -2*s2
+        jacobian[4*o+1, j+4] = -s2*s2/s1**2
+        jacobian[4*o+1, j+5] = 2*s2*(1/s1-1)
+        jacobian[4*o+2, j+2] = 1
+        jacobian[4*o+2, j+4] = s2*s2/s1**2
+        jacobian[4*o+2, j+5] = -2*s2/s1
+        jacobian[4*o+3, j] = 1
+    decomposition_cov = jacobian @ cov @ jacobian.T
     return {
         "inputs": {"csv_sha256": sha256(csv_path), "metadata_sha256": sha256(meta_path)},
         "checkpoint_clusters": n, "audit": audit, "environments": environments,
         "vector_order": [f"{o}:{name}" for o in ("first", "second") for name in METRICS],
         "vector": means.reshape(-1).tolist(), "checkpoint_cluster_covariance": cov.tolist(),
+        "secondary_pooled_gap_decomposition": {
+            "vector_order": [f"{o}:{name}" for o in ("first", "second")
+                             for name in ("total_gap", "common_gate",
+                                          "between_checkpoints", "within_checkpoint")],
+            "vector": decomposition,
+            "checkpoint_cluster_covariance": decomposition_cov.tolist(),
+            "definition": "total=common_gate+between_checkpoints+within_checkpoint; the within-checkpoint term is the primary Delta_coop. These use exact conditional means, not clone products as independent data.",
+        },
         "primary": {"delta_vector": delta.tolist(), "covariance": block.tolist(),
                     "wald_chi2_2": chi2,
                     "nominal_chi2_tail": float(np.exp(-chi2/2)),
+                    "nominal_log_chi2_tail": -chi2/2,
                     "both_positive": bool(np.all(delta > 0)),
                     "gate_passed": bool(np.all(delta > 0) and chi2 > 9.210340371976184)},
     }

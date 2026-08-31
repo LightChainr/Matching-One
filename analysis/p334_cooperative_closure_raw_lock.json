@@ -1,0 +1,26 @@
+{
+  "schema": "matching-one/p334-cooperative-closure-raw-lock/v1",
+  "runner_commit": "6712ec5b00bdf3dc0c6f8733ef85eda58b86cb2f",
+  "runner_source_sha256": "242bea6b0abaeff013b6d8601fdd71f8183af236ed2937f81dabdd9f0ecabbf1",
+  "binary_sha256": "df41c72b437f64ade19bafd5762a0290b7871ad0bdcfc30fb04b86fc9523276d",
+  "host_override_commit": "f03e44c",
+  "actual_platform": {"os": "macOS 26.5.2 build 25F84", "architecture": "arm64", "logical_cpus": 10, "memory_bytes": 17179869184},
+  "scoring_environment": {"python": "3.11.15", "numpy": "2.3.5", "path": "/Users/lc/python-envs/research-py311/bin/python"},
+  "runs": {
+    "N325": {
+      "prefix": "results/local-20260831/P334-cooperative-closure/raw/N325",
+      "csv_sha256": "266e6c3c225cb507ba11c45acaa55c5eb5e132692a37ca3baccb82702a459c03",
+      "metadata_sha256": "2ce92bf249c63c322d37ce2e37023bdeaaf92f955a9b9e95b11d0019435ba79a",
+      "samples": 20000, "exit_code": 0, "wall_seconds": 40.75, "user_cpu_seconds": 40.57,
+      "at_risk_rows": 17963
+    },
+    "N425": {
+      "prefix": "results/local-20260831/P334-cooperative-closure/raw/N425",
+      "csv_sha256": "e8120d7c717a28e950ce9d4deb69398c7c3774c5f34e8ce948ab288a988f55b2",
+      "metadata_sha256": "edda44d93d4422916a27446aea40816f7601bd94be0cf2eea528a8a4e0eb5621",
+      "samples": 20000, "exit_code": 0, "wall_seconds": 69.34, "user_cpu_seconds": 69.06,
+      "at_risk_rows": 17991
+    }
+  },
+  "stop_decision": "Both pre-data gates pass strongly; stop at20k, no further samples."
+}
