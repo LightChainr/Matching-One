@@ -1,0 +1,17 @@
+{
+  "source_forks":"e32a85939279b8574278024d647b56d2d1485247",
+  "source_prefixes":"9c495ab13e65f2bc93dc0849ee3b73f88724c4b1",
+  "producer_and_backend":"a3249a598e7af6db940fd602df31533ab5c13d38",
+  "theorem":"e67d9b90:notes/p334-r0-singleton-contact-birth-generators.md",
+  "population":"All original40k prefixes; all16 sampled next-label draws per prefix, with duplicate suffix rows suppressed",
+  "construction":"Only rebuild the exact k0 checkpoint from the original permutation stream; read next labels from immutable fork CSVs; no tail RNG or replay",
+  "wide_key":["N","batch","counter","quartet","group","next_label"],
+  "per_orientation_fields":["oldrank","rank_after","e","c","new_cycles","contact_rank","r0_null_cycle_rank","r0_rank2_arch"],
+  "new_cycles":"e-c, dimension of newly created graph-cycle space",
+  "contact_rank":"R0 only: integer period image of alpha_e-alpha_anchor within the same old occupied component; -1 for R1/R2",
+  "r0_null_cycle_rank":"R0 only: e-c-contact_rank; for a safe R0 insertion all e-c cycles are nullhomologous/contractible",
+  "r0_rank2_arch":"0 for R0 nonrank2;1 for one old component supplying rank2 (at least3 contacts);2 for two independent rank1 old components with2+2 contacts;-1 outsideR0",
+  "R1_R2":"e,c,e-c and recorded old/next rank remain available; no spanning-tree-dependent new-winding label is named",
+  "dependence":"Draw-weighted descriptive marks on the same original prefix/fork block, not independent new evidence",
+  "new_samples":0,"tail_replays":0,"DP_calls":0
+}
