@@ -1,0 +1,23 @@
+{
+  "schema": "p337.local-pair-insertion.v1",
+  "base_commit": "bea717e826df5a22518774b1725ae7bcbe2cb801",
+  "question": "Does a specified C4-averaged local four-port pair projector have nonzero response in the original pooled-root U at Q1?",
+  "N": 25,
+  "geometries": [[5, 0], [4, 3]],
+  "colour_kernel": "At a vacant site replace constant four-port tensor 1 by 1+epsilon*Pi2, where Pi2=i P_[Q-2,2] i^dagger on ordered V tensor V, i is the symmetric unequal-pair embedding, inputs N,E and outputs S,W; average its four C4 rotations.",
+  "source_normalization": "Uniform site average: perturb each local tensor with epsilon/N and take the first derivative at zero. Original occupation, occupied-vertex tensor, rank projection and q/E definitions stay fixed.",
+  "theory_gate": "Prove the exact outside-partition contraction, including zero singleton and incoming-pair contractions, and the resulting weight beta_x(Q)=(Q-3)/(2Q)*t_x. If this formula fails, stop before counting or scoring; do not change the source after reveal.",
+  "mark_t": "Zero unless origin is vacant, all four NN neighbors are occupied, and their occupied NN components form exactly two distinct pairs. t=1 for (N,S)|(E,W), t=1/2 for (N,E)|(S,W) or (N,W)|(E,S).",
+  "primary_source_Q1": "S=-mean_x(t_x). A fixed origin gives all first-source joint moments with translation-invariant K,q,E exactly; it does not replace multi-insertion moments.",
+  "primary_null": "d_epsilon U at the original Q1 pooled root is zero",
+  "root": "Import root_enclosure, matching_slope_enclosure and U25_over_A_enclosure from results/p337-closed-source-n25/latest.json unchanged; no new root search.",
+  "sufficient_statistics": ["count", "sum_q", "sum_e", "sum_s2", "sum_qs2", "sum_es2"],
+  "integer_source": "s2=-2*t_origin; coefficients divide the last three sums by two before exact scoring",
+  "counts": "One complete 2^25 occupation traversal per fixed geometry for the missing local-source crossmoments; preserve the inherited NN/matching graph and Alexander rank evaluation.",
+  "decision": "One exact rational score after the theory and source-code gates. Report nonzero or unresolved; no new support radius, source mixture, Q, geometry or sample extension.",
+  "response": "Full separately normalized q/E source covariances, thermal derivatives, moving pooled root and slope denominator. The source may contribute direct q/E numerators; do not reuse the rank1-only shortcut.",
+  "boundary": "This is an invariant End(pair) local tensor perturbation, not a free-index four-leg primary, not the full isotypic seam trace, and not a regular one-endpoint Q activation.",
+  "dependency": "Same complete exact N25 configuration populations; new prescribed local crossmoments, no independent stochastic evidence.",
+  "new_random_samples": 0,
+  "forbidden": ["rescore old Sstar/Bvac/seam sources", "root search", "post-result source change", "continuum field identification", "new support-radius scan"]
+}
