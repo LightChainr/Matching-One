@@ -1,0 +1,25 @@
+{
+  "analysis_parent": "1c06230b8f7e13be98f128361ad72b23c0c425ae",
+  "source_archive": "results/local-20260831/P334-cooperative-closure/raw/N425.geometry_pilot.csv",
+  "source_metadata": "results/local-20260831/P334-cooperative-closure/raw/N425.metadata.json",
+  "selection_stage": "frozen before any new prefix reliability mapping or clock evaluation",
+  "requested_count": 12,
+  "exclude_counters": [43042514269, 43042505280],
+  "eligibility": {
+    "n": 425,
+    "orientation": "second",
+    "k0": 252,
+    "age_steps": 10,
+    "ell_u": 12,
+    "ell_v": -19,
+    "checkpoint_rank": 1
+  },
+  "ordering": "ascending numeric replica counter; select the first 12 distinct eligible counters",
+  "insufficient_eligible_rule": "do not change filters after scoring; report available eligible count and request an explicit widening before adding any replacement",
+  "not_selection_variables": ["H2", "b2", "degree moments", "clock mean", "clock tail", "treewidth", "runtime", "port shape"],
+  "per_prefix_limits": {"wall_seconds": 20, "maximum_dp_states": 200000},
+  "non_two_port_or_budget_rule": "retain actual gain/port/core structure and an explicit not_solved status; do not replace with a later counter",
+  "marked_birth_control": "not run in this batch; all 12 receive whole-clock analysis only",
+  "execution": {"new_samples": 0, "maximum_heavy_processes": 1, "remote_hosts": false},
+  "dependency": "old P334 cooperative-closure N425 production stream, new deterministic conditional analysis; not independent Monte Carlo replication"
+}
