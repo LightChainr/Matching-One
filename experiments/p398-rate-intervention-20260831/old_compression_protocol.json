@@ -1,0 +1,20 @@
+{
+  "schema":"matching-one/p398-width8-geometric-compression-protocol/v1",
+  "parent":"2385062d",
+  "freeze_commit":null,
+  "status":"post_reveal_named_T4_extension_requested_after_two_sided_diagnostic",
+  "interpretation":"deterministic mechanism exploration, explicitly motivated by the preceding result; not prospective validation",
+  "source":"unchanged A/L and psi-minus/plus",
+  "projection":"same stationary-L2 Galerkin in named geometry columns",
+  "stages":[
+    {"id":"triplet_incidence","seeds":["A","T2","T3","S11","B2","T3_r0","T3_r1","T3_r2"]},
+    {"id":"triplet_incidence_plus_T4","seeds":["A","T2","T3","S11","B2","T3_r0","T3_r1","T3_r2","T4"]}
+  ],
+  "partners":"exact Kreweras pullback of each seed; preserve all exact relations",
+  "distances":[0.05,0.1,0.25,0.5,1.0,2.0,4.0],
+  "crossing_bracket":[0.05,1.0],
+  "missing_direction_diagnostic_only":[],
+  "comparison":"Does this single named extension repair the plus mass/long tail, or merely improve right-mode overlap? Retain both outcomes and left-mode capture.",
+  "forbidden":["further candidate scan","lag or source refit","new MC","width extension","server operation"],
+  "execution":"single-thread local"
+}

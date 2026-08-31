@@ -1,0 +1,50 @@
+{
+  "schema": "matching-one/p398-fixed-attempt-rate-intervention-contract/v1",
+  "status": "fixed_before_width8_intervention_outputs",
+  "frozen_existing_input": "1f19fc1a2d9fc59dce650e95268c716762725985",
+  "width": 8,
+  "eta": [
+    0,
+    0.25,
+    -0.25
+  ],
+  "generator": "G_eta=(1+eta)sum_j(J_j-I)+(1-eta)sum_j(D_j-I), Q=1",
+  "clock": "old attempt-clock units, total attempted event rate16 including self-events; no escape-rate or spectral-gap renormalization",
+  "lags": [
+    0,
+    0.05,
+    0.1,
+    0.25,
+    0.5,
+    1,
+    2,
+    4
+  ],
+  "sources": "old A,L and fixed psi_minus,psi_plus in the old phase convention",
+  "primary": "Complete stationary covariance C_ij(t)=E_pi_eta[psi_i(X0)conj(psi_j(Xt))] for the full1430-state model, propagated in its exact invariant186-dimensional character-i sector; no separate93-ray truncation at eta!=0",
+  "stationary": "solve full stationary law separately at all3 eta values; save full probability vector and raw C",
+  "predictions": "K G_eta K^-1=G_-eta implies same-ray correlations even in eta and cross-ray correlations odd; check complete complex matrices at all fixed lags",
+  "compression": "Only the archived fixed14 and16 named configuration-function spans, with current stationary-L2 metric; preserve original source function, no ray split after intervention, no fitted poles or features",
+  "outputs": [
+    "full raw and C0-scaled 2x2 correlations",
+    "forward generators in integer numerator form",
+    "stationary laws and residuals",
+    "same-even and cross-odd conjugacy residuals",
+    "old eta0 response reproduction",
+    "14 and16-dimensional full-matrix errors",
+    "fixed finite central secant",
+    "finite dynamics versus stationary-weight additive split",
+    "old normalized transfer U_eta(t)=C_eta(0)^-1 C_eta(t), whose cross entries start at0"
+  ],
+  "comparison_boundary": "Finite central secant across +/-1/4 is not the eta0 derivative. Approximation errors, zero and failure are complete results; do not extend the scan or rename a closure after observing them.",
+  "prohibited": [
+    "width extension",
+    "parameter scan",
+    "Monte Carlo",
+    "new source functions",
+    "lag optimization",
+    "changes to existing worktrees",
+    "GitHub mutation"
+  ],
+  "execution": "one authorized remote host, Python3 with NumPy and SciPy; environment BLAS/OMP threads1; width4 is only a small local implementation sanity check, not new science"
+}
