@@ -46,9 +46,9 @@ provide no rescue of the failed primary predictions or the source's main
 H4 priority. An arbitrary two-amplitude mixture would saturate the two
 readout coordinates and is not fitted.
 
-Full result and covariance: `notes/p154-clock-line-secondary-result.md` and
-`results/p154-clock-line-secondary/score.json` on
-`analysis/p334-paired-clock-loading-20260831` (linked below after delivery).
+Full [secondary result](https://github.com/LightChainr/Matching-One/blob/612df8ec1cbe3be3938ee2e1f6183a1aefc6510b/notes/p154-clock-line-secondary-result.md)
+and [saved covariance/score](https://github.com/LightChainr/Matching-One/blob/612df8ec1cbe3be3938ee2e1f6183a1aefc6510b/results/p154-clock-line-secondary/score.json)
+are branch-delivered, not merged.
 The joint10x10 covariance preserves the original six primary coordinates
 and four secondary residuals; all share the same size-specific dependency
 blocks. The official primary scorer was not rerun. No additional sampling,
