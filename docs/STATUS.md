@@ -1,6 +1,6 @@
 # 当前成果：从取向信号到微观机制
 
-**整理日期：2026-08-31；GitHub状态核对至15:51（UTC+8）。** 本页按科学问题汇总，取代8月29日的当前状态入口。[下一步](NEXT-TARGETS.md)只保留三个分析问题；详细结果留在其原报告。下述科学完成度与main/open PR/独立分支位置分别标明，科学引用使用固定提交，之后的分支变化不自动包含在本快照内。
+**整理日期：2026-08-31。** 本轮跟进PR267的42cecee9与P334的9c495ab1等固定版本；[下一步](NEXT-TARGETS.md)给出团队分工，[清理记录](REPOSITORY-TRIAGE-20260831.md)记录实际Issue操作。科学完成度与main/open PR/独立分支位置分别标明；之后的分支变化不自动包含在这些固定引用内。
 
 ## 取向与物理响应
 
@@ -25,7 +25,7 @@ P40实际引擎在随机键中包含N：N65/N85是不同N-domain，通常PRNG独
 | 共同density-map必要条件 | N100 53.914/6拒绝；N400 3.901/6、p=.690 | 精度与尺度都改变，不能把未拒绝写成模型恢复。 |
 | N900冻结宽度预测 | 实测Vz=2.339461729±.120385；quarter-width p=.134967，fixed-z p=.084182 | 两者均存活；比较共享N400锚点和同一N900目标。 |
 | 正三中心低矩表示 | 早侧权重依次.1806、.0654、.0320；N900未用于构造的m7/m8残差3.566/2、p=.168 | 肩部变薄、向中部重分配。三个经验中心不等于三个物理场。 |
-| 两个平移的共同对称正核 | N100/N400所需第六矩为负 | 这整个所声明候选类已有障碍；继续只调权重/间距不能修复。 |
+| 两个平移的共同对称正核 | N100/N400所需第六矩为负；N900也要求−2.142812±.481800 | 所声明候选类在三个有限尺度均有障碍；继续只调权重/间距不能修复。这些探索性矩估计不等于已校准的边界证书。[N900来源](https://github.com/LightChainr/Matching-One/commit/b6db7ba57c3c5bcb6e25558b5274f08aeef1ce63) |
 
 结果在开放[PR484](https://github.com/LightChainr/Matching-One/pull/484)：[N900完整报告](https://github.com/LightChainr/Matching-One/blob/5f30397c5ba277fb0799fb2f7491c823de07a13d/results/etop-n900-rank-width/REPORT.md)、[第三尺度形状](https://github.com/LightChainr/Matching-One/blob/54430ea7/notes/p267-n900-three-center-shape.md)。N900无需重复启动，也没有已选出的渐近宽度指数。
 
@@ -36,10 +36,12 @@ P40实际引擎在随机键中包含N：N65/N85是不同N-domain，通常PRNG独
 | **digital Alexander与整数饱和** | M=P₂−P₀；K_minus/K_plus是两个essential births，rank-one方向固定，iota=1。有限matching根是阈值rank经Bernstein/Beta变换所得连续激活分布的等权混合中位点。 | 规则cell证明已main；一般有理/积分证明稿在[73d4960、c1a72e5讨论](https://github.com/LightChainr/Matching-One/issues/269#issuecomment-5466825850) |
 | **完整birth机制与反事实干预** | 147个固定真实prefix完整law已求解。指定两例的1个/6个middle sites命中所有order≥3最小trigger，屏蔽后完整law一致。 | [147 clocks](https://github.com/LightChainr/Matching-One/blob/87b6ca5b39084c06143f31cafdaba53f90012e27/notes/p334-all147-real-prefix-clocks.md)、[middle干预](https://github.com/LightChainr/Matching-One/blob/0143632db59d867cfb658a6ad4465e5036684fff/notes/p334-middle-bridge-physical-interventions.md)，独立分支 |
 | **均值clock与空间波动可区分** | uniform blockade平均响应由完整clock决定；位点影响浓度和same-mask replica包含额外空间信息。两真实prefix等生存率比较中，较平clock仍有高30.6%的E1。 | [精确噪声桥](https://github.com/LightChainr/Matching-One/blob/614eedb2429d74d6b4de7ebf15d6c8f918b54e3c/notes/p334-isoclock-positive-noise-spectrum.md)、[真实prefix结果](https://github.com/LightChainr/Matching-One/blob/795908fbc9a781a0cda704864c237deaf0327f37/notes/p334-real-prefix-iso-survival-noise-energy.md) |
-| **正权传播已有具名路径** | width4/5/8实际传播已做。width8的T2/T3/T4给出几何记忆；T4在指定7→8投影中的首个自相关增量是第四阶，Schur核明确。删除current仍保留快慢反转。 | [T4传播桥](https://github.com/LightChainr/Matching-One/blob/074a5f537caecac9cbd663dcc76ebd05ff54f302/notes/p398-width8-T4-schur-bridge.md)，独立分支 |
+| **正权传播已有具名路径** | width4/5/8实际传播已做。T4首个自相关增量为第四阶；后续慢极点/权重分解也已完成，尾部修复主要来自慢极点移动，权重变化部分抵消该作用。删除current仍保留快慢反转。 | [T4传播桥](https://github.com/LightChainr/Matching-One/blob/074a5f537caecac9cbd663dcc76ebd05ff54f302/notes/p398-width8-T4-schur-bridge.md)、[极点分解](https://github.com/LightChainr/Matching-One/commit/1f19fc1a2d9fc59dce650e95268c716762725985)，独立分支 |
 | **局部高阶拓扑已有测量** | P437固定五键20k新背景给14.97SE；同块分解约99.8485%局部能量在degree≥6。 | 独立分支：[固定五键实测](https://github.com/LightChainr/Matching-One/blob/386db0a74a44be37403c666b27e1c023b81ea459/results/local-20260831/P437-N112-fixed-S5-20k/REPORT.md)、[同块分解](https://github.com/LightChainr/Matching-One/blob/888af29d58c72f113cf7cb5f80247a81a91b9273/results/p437-fixed-support-coherent-decomposition/REPORT.md)；PR437已合并的是较早的精确filter工具。 |
 
-**P334总体配对分析也已完成。** N325/N425各20k配对counter，共40批。所有counter进入分母，目标为checkpoint rank1分层对F2及其积分的贡献，尚未覆盖rank0/rank2和完整F2。对该贡献的H4方向差，可移除后缀噪声占原个体观察方差的估计比例，canonical为49.15%/50.03%，integrated为0.816%/0.681%；比例定义为mean[(X−Y)²]/sampleVar(X)，并非标准误下降率或运行加速比。两个N的这一H4贡献均未分辨。N325/N425分别47和164个困难配对保留双向原观察，不丢样或单边替换。[完整报告](https://github.com/LightChainr/Matching-One/blob/c3bb43f1b078c5f9f76f71b25cdb3e2e331eb115/results/p334-paired-clock-loading/REPORT.md)，独立分支。下一步拆分群体比例与层内clock贡献。
+**P334总体配对分析也已完成。** N325/N425各20k配对counter，共40批。所有counter进入分母，目标为checkpoint rank1分层对F2及其积分的贡献，尚未覆盖rank0/rank2和完整F2。对该贡献的H4方向差，可移除后缀噪声占原个体观察方差的估计比例，canonical为49.15%/50.03%，integrated为0.816%/0.681%；比例定义为mean[(X−Y)²]/sampleVar(X)，并非标准误下降率或运行加速比。两个N的这一H4贡献均未分辨。N325/N425分别47和164个困难配对保留双向原观察，不丢样或单边替换。[完整报告](https://github.com/LightChainr/Matching-One/blob/c3bb43f1b078c5f9f76f71b25cdb3e2e331eb115/results/p334-paired-clock-loading/REPORT.md)，独立分支；后续已完成的分解见下。
+
+**上述R1问题的后续分解也已完成。** C/L总体分解、direct/collective分解及45坐标crosswalk均已交付；四种R1配对状态解释99.84895%/99.86380%的R1门控积分个体方差，不能当成全局A的解释率。[综合结果](https://github.com/LightChainr/Matching-One/blob/9c495ab13e65f2bc93dc0849ee3b73f88724c4b1/notes/discovery-20260831-population-clock-and-shape.md)。9c495ab1又补齐[全部40k路径的K1/K2与checkpoint ranks](https://github.com/LightChainr/Matching-One/tree/9c495ab13e65f2bc93dc0849ee3b73f88724c4b1/results/p334-full-birth-archive)；当前缺口是完整A/E的九层贡献与联合抵消分析，不能再列“首次R1总体分解”或“补rank0/rank2路径”为待办。全部rank的精确条件空间响应仍未齐全。
 
 147-prefix噪声预算仅适用于固定经验mixture。P398的93维Krylov空间和Boolean谱degree按各自生成过程解释；现有width4/8的i^j权重保持波长4，并非固定模式序号的尺度外推。
 

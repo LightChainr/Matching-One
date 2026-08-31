@@ -13,6 +13,8 @@
 
 README负责入口，STATUS负责成果，NEXT-TARGETS负责下一步分析。直接进入对应问题即可。
 
+**团队当前只保留两个P0：[#154原norm-4源导数](https://github.com/LightChainr/Matching-One/issues/154)、[#334完整A/E总体贡献](https://github.com/LightChainr/Matching-One/issues/334)。** #398做一次有界速率干预，其余P1为储备/主线接口。已关闭13个完成或重复Issue，24个独立成果PR保留未合并；[清理记录与优先级](docs/REPOSITORY-TRIAGE-20260831.md)。
+
 ## 已有成果的主线
 
 **同调结构。** 有限matching量为 `M=P₂−P₀=E[r_black]−1`；两次阈值rank分别是两个本质同调方向的出生。一般有限商的有理同调与整数饱和证明稿已经交付，完整出生时间与空间响应已有可计算对象。[证明与推论](https://github.com/LightChainr/Matching-One/issues/269)
@@ -26,7 +28,7 @@ README负责入口，STATUS负责成果，NEXT-TARGETS负责下一步分析。�
 - **N900完成**：32M共享counter、800批次，两个冻结宽度预测均存活；不要再按旧导航等待首次结果。[报告](https://github.com/LightChainr/Matching-One/blob/5f30397c5ba277fb0799fb2f7491c823de07a13d/results/etop-n900-rank-width/REPORT.md)
 - **P40百万样本偶响应完成**：缺失混合矩已补齐，固定matching均值的q源补偿下，四几何偶响应均明确为正；共同raw源的H4方向差仍未分辨。[报告](https://github.com/LightChainr/Matching-One/blob/56a6267d6a6826a165f93ed3a64a670ca7088180/results/p40-even-given-odd/REPORT.md)
 - **P418共同谱已纠正**：统一每样本单位后四个共同谱相容，旧巨大惩罚不再支持radius flow。[修正](https://github.com/LightChainr/Matching-One/blob/e2b57aa7c5ec5c7db8cbb4f03872435f20966407/results/p418-normalized-archive/REPORT.md)
-- **P334总体配对分析完成**：40k配对counter；对checkpoint rank1分层贡献，canonical读数的可移除后缀噪声约50%，integrated不足1%。下一步解释这种差异及其总体方向贡献。[成果与来源](docs/STATUS.md#过程与传播)
+- **P334已推进到全路径输入**：R1总体C/L与source分解已完成，40k路径的K1/K2及全部checkpoint ranks也已补齐。下一步直接分析完整A/E和九层抵消，避免重做R1分解。[成果与来源](docs/STATUS.md#过程与传播)
 
 ## 分析方式
 
@@ -43,6 +45,6 @@ README负责入口，STATUS负责成果，NEXT-TARGETS负责下一步分析。�
 - [8月31日本轮整理前的入口](https://github.com/LightChainr/Matching-One/blob/8a68cca866d7fbca7463e2167c3ff06128d5851f/README.md)保留旧判断的时间顺序。
 - 数值阈值来源仍按方法保存于[data/literature_threshold_sources.json](data/literature_threshold_sources.json)，不把参考小数当精确常数。
 
-本轮整理在独立分支交付，**不合并、不关闭Issue、不更改其他研究分支**。代码和数据原路径保持可用。
+文档更新在独立Draft分支交付；Issue已按本轮授权结题或调整优先级。**不合并、不删除研究分支**，代码、数据和历史报告原路径保持可用。
 
 MIT，见[LICENSE](LICENSE)。
