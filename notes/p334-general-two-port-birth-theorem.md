@@ -163,6 +163,38 @@ birth attributed to v requires all competing components still to be safe.
 This gives the local-to-global marked-birth bridge without duplicating
 independent propagation paths as evidence.
 
+### Which parallel channel wins the birth race?
+
+There is an aggregate marked law requiring **no extra reliability solves**.
+Let n_i be the number of random vertices assigned to component i, not the
+degree of its safety polynomial, and form
+
+`B_i(z)=n_i F_i(z)-(1+z)F_i'(z)`.
+
+Its coefficient at k is `(n_i-k) f_i,k-(k+1) f_i,k+1`: the number of
+safe-set/next-vertex pairs that cross into connectivity at that step.
+These coefficients are nonnegative. The full-system contribution of
+component i is
+
+\[
+H_i(z)=(1+z)^r B_i(z)\prod_{j\ne i}F_j(z),\qquad
+\boxed{\Pr(T=k+1,\ I_{\rm birth}=i)=
+\frac{[z^k]H_i(z)}{d\binom{d-1}{k}}.}
+\]
+
+The product rule gives `sum_i H_i=dF_B-(1+z)F_B'`, so summing the component
+laws reproduces the entire waiting-time distribution. In the full NN torus,
+where complete occupancy necessarily creates rank two, their integrated
+probabilities sum to one. Long-tail channel shares use the same coefficients
+restricted to k+1 above the declared tail step; no site-by-site force-on/off
+calculation is required.
+
+Equivalently, with Bernoulli safety
+`S_i(p)=(1-p)^(n_i) F_i(p/(1-p))`, the probability that channel i produces
+the first birth is `integral_0^1 [-S_i'(p)] product_(j!=i) S_j(p) dp`.
+This is a competing-channel attribution, not a claim that channel waiting
+times are independent under a fixed total insertion count.
+
 ## What is new here, and what is not
 
 The established torus homology classification is the backdrop, not a new
