@@ -6,23 +6,52 @@
 
 `docs/NEXT-TARGETS.md` owns the single attention order, while `docs/ROADMAP.md` preserves its scientific rationale. Neither locks a task, serializes theory work or treats a lower priority as a scientific rejection.
 
-**Three-team frontier handoff, 2026-08-31 17:58 CST:** execution's
+**P334 joint-clock and plateau analysis is completed, `branch_only`:**
+[`a6304bad`](https://github.com/LightChainr/Matching-One/blob/a6304bad15214cac841b76f41e7b61ac61838786/notes/p334-euler-thermal-dipole.md)
+connects the thermal dipole, intrinsic joint birth covariance and normalized
+rank1 plateau shape. The
+[`e2ef9983` connected-clock result](https://github.com/LightChainr/Matching-One/blob/e2ef9983f426890a299f5a6e1a2eba8b6d072855/results/p334-euler-dipole-connected-clock/REPORT.md)
+subtracts the exact shared uniform-order timing contribution: intrinsic
+`Cov(tau1,tau2)` still responds by `+4.59145e−7±7.51861e−8` /
+`+5.34794e−7±6.33625e−8` in the plus-source direction average at N325/N425,
+and `−1.19492e−6±3.25239e−7` / `−1.08880e−6±1.61897e−7` in the
+minus-source DeltaCos4-normalized direction contrast. These are responses,
+not negative baseline covariances or a full copula identification.
+
+With `C=(tau1+tau2)/2` and `W=tau2−tau1`, `Cov(C,W)` is only
+`(Var(tau2)−Var(tau1))/2`; it does not measure the joint covariance above.
+The N425 minus/direction dipole is small because center and spread terms
+`+5.42584e−7` and `−3.49536e−7` largely cancel, leaving
+`+1.91398e−7±1.17965e−7` after the mean-width term. The completed
+[`1e8549b5` plateau ratios](https://github.com/LightChainr/Matching-One/blob/1e8549b5b43c27fc1f2d6691caed23bf75cf0d15/results/p334-plateau-shape-tangent/score.json)
+normalize by the positive baseline lifetime, not a weak signed response:
+plus-source direction-average plateau centers move later and their variances
+increase by `3.17944e−7±1.28394e−7` / `3.62163e−7±1.04955e−7`.
+
+All of these are reanalyses of the same twenty original batches per N,
+forty thousand prefixes total and their saved conditional tails. The new
+17,866-coordinate factor at `e2ef9983` extends and replaces `b582015e`;
+the two factors must not be added as independent evidence. Next distinguish
+within-prefix joint covariance from covariance of prefix-conditional means:
+prefix-dependent timing shifts can change the latter even when a common
+rigid shift cannot. Thermal moments and the final dipole note are delivered.
+
+**Earlier ensemble-rank result:** execution's
 [`a5c39de3`](https://github.com/LightChainr/Matching-One/blob/a5c39de35bc141f68ca1cc5e68ec134158f4bfec/notes/p334-common-label-response-rank.md)
 is `branch_only` on `analysis/p334-paired-clock-loading-20260831`, with no separate
 PR. Common-label A response supports two ensemble directions (determinants
 `1.22719e−8±4.07190e−9` / `1.55912e−8±4.69216e−9` at N325/N425);
-this is `det(E_prefix J)`, not within-prefix rank. The completed thermal curves
-show opposite-sign N425 E features with a nearly cancelling integral. Those
-readouts and the joint covariance at `b582015e` reuse the same forty thousand
-prefixes total / twenty original batches per N. [The shared handoff](TEAM-COORDINATION.md)
-records exact sources and the four follow-ups reported in progress for Draft #509;
-pending packages are not completed results or integrated main facts.
+this is `det(E_prefix J)`, not within-prefix rank. It shares the prefix/batch
+dependency above. [The shared handoff](TEAM-COORDINATION.md) records exact
+sources and distinct delivery states; branch results are not integrated main facts.
 
 ## Evidence and lifecycle contract
 
 **Latest result, #267 `8799dfe1`:** [global occupancy/rank projection](../results/norm4-global-source-projection/REPORT.md) is completed. Occupancy mixing contributes +.02432–.02478 to root motion; fixed-K rank selection adds +.00409–.00458, resolved at every size. Both reduce root-comoving rank1 probability. The N260/N340 rank-selective H4 tangents −6.3361±4.3464 / +10.9424±8.4926 remain unresolved, as do total and frozen chain contrasts. This empirical first-order decomposition retains150-dimensional covariance and the original three source groups, with zero replay/new samples.
 
-**Three packages are completed in `open_pr #509`, `fb01c44a`:** [angular bridge](https://github.com/LightChainr/Matching-One/blob/fb01c44aa45e4f8d37d52144e2ad7c4adfe6ce40/experiments/p154-spatial-localization-20260831/REPORT.md), [P398 η=0 response](https://github.com/LightChainr/Matching-One/blob/fb01c44aa45e4f8d37d52144e2ad7c4adfe6ce40/experiments/p398-linear-response-20260831/README.md), and [P334 finite source](https://github.com/LightChainr/Matching-One/blob/fb01c44aa45e4f8d37d52144e2ad7c4adfe6ce40/experiments/p334-finite-source-20260831/REPORT.md). They supersede the17:58 in-progress snapshot above. P154's same-time centered-source global zero is structural; P334's future-birth response under immediate-rank-preserving intervention is dynamic; P398's linear-response sign reversal separates measure and generator contributions in a different finite model. None is a square-site energy-field assignment. Improved same-prefix P334 rank remains pending at this handoff.
+**Three packages are completed in `open_pr #509`, `fb01c44a`:** [angular bridge](https://github.com/LightChainr/Matching-One/blob/fb01c44aa45e4f8d37d52144e2ad7c4adfe6ce40/experiments/p154-spatial-localization-20260831/REPORT.md), [P398 η=0 response](https://github.com/LightChainr/Matching-One/blob/fb01c44aa45e4f8d37d52144e2ad7c4adfe6ce40/experiments/p398-linear-response-20260831/README.md), and [P334 finite source](https://github.com/LightChainr/Matching-One/blob/fb01c44aa45e4f8d37d52144e2ad7c4adfe6ce40/experiments/p334-finite-source-20260831/REPORT.md). They supersede the earlier17:58 in-progress snapshot. P154's same-time centered-source global zero is structural; P334's future-birth response under immediate-rank-preserving intervention is dynamic; P398's linear-response sign reversal separates measure and generator contributions in a different finite model. None is a square-site energy-field assignment. Improved same-prefix P334 rank remains pending at this handoff.
+
+The local [P398 block-count measure result](../results/p398-block-count-measure/REPORT.md) (`7da1eeb0`) finds34.27% relative error for the fixed block-count score and10.99% score variance outside arbitrary functions of block count; block-size composition remains a distinct, unexcluded explanation.
 
 **New scientific delivery, `open_pr #267`:** [the conditional primitive-line result](../results/norm4-source-line/REPORT.md) completes the named E-plus-clock comparison within rank1, including matching-root transport. The four-real-component residual has chi²/4=3843.85,2596.77,1049.13,1378.11,8479.76,4629.15 at N65,85,130,170,260,340; all six comparisons strongly reject that finite response model. The396-dimensional covariance retains paired geometries and the four cyclic sizes' common random stream. One112.14-second replay supplies line marks on2.4M already-produced permutations;1.31-second aggregation adds no random samples.
 

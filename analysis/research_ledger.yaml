@@ -1,4 +1,4 @@
-version: 34
+version: 35
 updated: 2026-08-31
 scientific_main_snapshot_commit: e30060995a9eb5c4d93f565ae09af4f54a56270f
 observed_remote_main_snapshot_commit: 2ee16678b64a065d6d235ef69941c8a46f3a3878
@@ -108,6 +108,7 @@ frontier_schema:
     - projector_derivative
     - explicit_operator_derivative
     - rank_birth_geometric_tilt
+    - join_detach_rate_tangent
     - relative_cluster_fugacity
     - absolute_paired_cluster_fugacity
     - deck_charge
@@ -176,6 +177,38 @@ observer_sectors:
     semantic_boundary: exact_zero_conditional_mean_does_not_certify_covariance_gain_causality_or_threshold_origin
 
 branch_sources:
+  - id: SRC_PR267_P398_BLOCK_COUNT_MEASURE
+    integration_status: open_pr
+    pr: 267
+    ref: research/navigation-priority-refresh-20260829
+    commit: 7da1eeb0e51cf430987dbf204d23713c2ab5a46c
+    execution_commit: 7afcbae0260603fb8769ea1b754bae54ebe42234
+    result_status: completed_fixed_prediction_and_statewise_score_reanalysis_without_new_stationary_solve
+    paths: [results/p398-block-count-measure/REPORT.md, results/p398-block-count-measure/latest.json, scripts/analyze_p398_block_count_measure.py, analysis/p398_block_count_measure_contract.json]
+    claim_boundary: fixed_block_count_measure_fails_and_any_block_only_score_is_insufficient_at_width8_not_yet_beyond_block_size_composition_not_a_square_site_operator_identity
+  - id: SRC_P334_JOINT_CLOCK_SYNTHESIS
+    integration_status: branch_only
+    ref: analysis/p334-paired-clock-loading-20260831
+    commit: a6304bad15214cac841b76f41e7b61ac61838786
+    result_status: completed_thermal_dipole_plateau_and_intrinsic_joint_clock_synthesis
+    paths: [notes/p334-euler-thermal-dipole.md]
+    claim_boundary: ensemble_joint_clock_response_after_uniform_order_timing_removal_not_within_prefix_law_or_native_H4_assignment
+  - id: SRC_P334_CONNECTED_CLOCK_COVARIANCE
+    integration_status: branch_only
+    ref: e2ef9983f426890a299f5a6e1a2eba8b6d072855
+    commit: e2ef9983f426890a299f5a6e1a2eba8b6d072855
+    result_status: completed_17866_coordinate_common_factor_per_N_original20_batches
+    paths: [notes/p334-euler-dipole-connected-clock.md, results/p334-euler-dipole-connected-clock/score.json, results/p334-euler-dipole-connected-clock/REPORT.md, results/p334-euler-dipole-connected-clock/N325.complete_common_factor.json.gz, results/p334-euler-dipole-connected-clock/N425.complete_common_factor.json.gz]
+    supersedes_as_covariance_coordinator: SRC_P334_COMMON_LABEL_JOINT_COVARIANCE
+    claim_boundary: accumulated_correlated_views_of_the_same_prefix_samples_not_independent_replications
+  - id: SRC_PR509_P334_TARGETED_INCREMENT_HANDOFF
+    integration_status: open_pr
+    pr: 509
+    ref: research/results-first-synthesis-20260831
+    commit: ac5761ce504c3cd170fa42c86c17d6fb87f0375b
+    result_status: repository_report_of_completed_unresolved_exact_score_base_and_running_targeted_continuation_increment
+    paths: [notes/analysis-delivery-20260831.md]
+    claim_boundary: delivery_note_not_final_increment_result_or_direct_server_process_observation_3053_old_prefixes_times64_new_quartets_original20_batches
   - id: SRC_PR267_GLOBAL_OCCUPANCY_RANK_SOURCE
     integration_status: open_pr
     pr: 267
@@ -3583,6 +3616,53 @@ branch_sources:
     claim_boundary: finite_exact_algebra_support_merged_by_other_workflows_not_new_physical_production_covariance_W5_bound_or_a_reason_to_repeat_readiness_work_the_initial_capture_open_state_for493_to497_is_historical
 
 scientific_nodes:
+  - id: SN_P398_STATIONARY_STRUCTURE_BEYOND_BLOCK_COUNT
+    title: fixed_block_fugacity_failure_and_stationary_score_structure
+    integration_status: open_pr
+    state: low_dimensional_dynamics
+    sources: [join_detach_rate_tangent]
+    observer_sectors: [topology_typed, direction_character]
+    geometries: [finite_transfer_cylinder]
+    acquisition: [existing_data_reuse]
+    source_refs: [SRC_PR267_P398_BLOCK_COUNT_MEASURE, SRC_PR509_P398_LINEAR_RESPONSE]
+    known_result: fixed_score_minus2_times_centered_block_count_has_relative_RMS_error0p342726_equal_block_count_conditional_residual_fraction0p109873_and_wrong_plus_minus_integrated_sign_plus0p01812_vs_minus0p05023
+    boundary: width8_1430_state_float64_computation_replaces_only_stationary_metric_derivative_retaining_true_generator_response_not_a_new_consistent_stochastic_model_or_square_site_field_identification
+    supports: [stationary_response_needs_structure_beyond_block_count, dynamic_compression_with_imported_pi_prime_does_not_predict_the_measure_law]
+    tensions: [correct_Kreweras_parity_as_sufficient_measure_identification, small_static_amplitude_error_as_guarantee_of_integrated_sign]
+    excludes_only: [fixed_block_fugacity_candidate_as_complete_score, any_block_count_only_first_order_score_as_complete_width8_stationary_derivative]
+    reusable_data_refs: [results/p398-block-count-measure/latest.json, experiments/p398-linear-response-20260831/results/latest.json]
+    dependency_group_refs: [p398-width8-eta0-fixed-state-measure]
+    missing_inputs: [score_conditioned_on_block_size_composition_to_separate_it_from_arrangement, explicit_matching_microscopic_source_readout_map]
+    next_discriminator: compare_within_identical_block_size_profiles_on_saved_states_before_proposing_another_measure_law_not_an_automatic_width_or_eta_sweep
+    information_gain: high
+    compute_cost: low
+    decision_experiments: [DX_CONNECTIVITY_RADICAL]
+  - id: SN_P334_INTRINSIC_JOINT_BIRTH_RESPONSE
+    title: intrinsic_joint_birth_covariance_dipole_cancellation_and_plateau_shape
+    integration_status: branch_only
+    state: microscopic_threshold_structure
+    sources: [rank_birth_geometric_tilt, bernoulli_thermal]
+    observer_sectors: [rank_birth_local, global_rank_projector, direction_character]
+    geometries: [gaussian_cover, square_controls]
+    acquisition: [existing_data_reuse]
+    source_refs: [SRC_P334_JOINT_CLOCK_SYNTHESIS, SRC_P334_CONNECTED_CLOCK_COVARIANCE]
+    known_result: intrinsic_birth_covariance_plusS_positive_minusD_negative_after_uniform_order_timing_subtraction_N425_minusD_dipole_center_and_endpoint_spread_cancel_plusS_normalized_rank1_plateau_moves_later_and_broadens
+    intrinsic_covariance_tangent:
+      - {N: 325, channel: plus_to_S, estimate: 4.59145e-7, standard_error: 7.51861e-8}
+      - {N: 425, channel: plus_to_S, estimate: 5.34794e-7, standard_error: 6.33625e-8}
+      - {N: 325, channel: minus_to_D, estimate: -1.19492e-6, standard_error: 3.25239e-7}
+      - {N: 425, channel: minus_to_D, estimate: -1.08880e-6, standard_error: 1.61897e-7}
+    boundary: compute_nonlinear_statistics_within_geometry_then_SD_and_aligned_LOO_Cov_C_W_is_endpoint_variance_difference_not_new_copula_Cov_tau1_tau2_is_joint_but_ensemble_not_within_prefix
+    supports: [intrinsic_joint_clock_response_beyond_uniform_order_noise, small_integral_can_hide_center_spread_cancellation]
+    tensions: [constant_rigid_translation_as_complete_response, treating_total_plateau_variance_as_lifetime_variance]
+    excludes_only: [uniform_order_timing_noise_only_explanation_of_measured_joint_covariance_response, constant_rigid_translation_only_explanation_not_prefix_dependent_shifts]
+    reusable_data_refs: [results/p334-euler-dipole-connected-clock/score.json, notes/p334-euler-thermal-dipole.md]
+    dependency_group_refs: [p334-common-label-e32a8593-shared-prefixes]
+    missing_inputs: [within_prefix_covariance_versus_covariance_of_prefix_conditional_means, final_targeted_distinct_quartet_local_rank_result]
+    next_discriminator: condition_joint_clock_response_on_prefix_and_consume_existing_targeted_increment_no_repeat_first_thermal_moments_or_covariance_assembly
+    information_gain: very_high
+    compute_cost: low
+    decision_experiments: [DX_P429_SUCCESSOR_STATE]
   - id: SN_GLOBAL_SOURCE_OCCUPANCY_RANK_PROJECTION
     title: globally_visible_source_components_and_observation_time
     integration_status: open_pr
@@ -3612,7 +3692,7 @@ scientific_nodes:
     observer_sectors: [global_rank_projector, topology_typed, direction_character]
     geometries: [gaussian_cover, square_controls]
     acquisition: [existing_data_reuse]
-    source_refs: [SRC_P334_COMMON_LABEL_ENSEMBLE_RESPONSE, SRC_P334_COMMON_LABEL_THERMAL_CURVES, SRC_P334_COMMON_LABEL_JOINT_COVARIANCE]
+    source_refs: [SRC_P334_COMMON_LABEL_ENSEMBLE_RESPONSE, SRC_P334_COMMON_LABEL_THERMAL_CURVES, SRC_P334_COMMON_LABEL_JOINT_COVARIANCE, SRC_P334_JOINT_CLOCK_SYNTHESIS, SRC_P334_CONNECTED_CLOCK_COVARIANCE, SRC_PR509_P334_FINITE_COMMON_SOURCE, SRC_PR509_P334_TARGETED_INCREMENT_HANDOFF]
     known_result: plus_to_mean_and_minus_to_direction_responses_are_resolved_mean_orientation_Jacobian_is_near_diagonal_with_positive_resolved_ensemble_A_determinants_and_N425_E_opposite_sign_thermal_lobes_nearly_cancel_in_integral
     ensemble_A_determinants_at_p_ref:
       - {N: 325, estimate: 1.22719e-8, standard_error: 4.07190e-9}
@@ -3623,8 +3703,8 @@ scientific_nodes:
     excludes_only: [common_label_two_control_response_constrained_to_one_fixed_ensemble_vector_in_the_measured_finite_scope]
     reusable_data_refs: [results/p334-common-label-euler-tangent/signed_birth_histograms.json, results/p334-common-label-response-rank/score.json, results/p334-common-label-tangent-joint/score.json, results/p334-paired-euler-thermal-response/thermal_curve.csv]
     dependency_group_refs: [p334-common-label-e32a8593-shared-prefixes]
-    missing_inputs: [within_prefix_distinct_quartet_det_and_det_squared, finite_positive_tilt_response, thermal_dipole_age_moments]
-    next_discriminator: consume_PR509_same_prefix_Ustatistics_and_finite_t_plusminus1_outputs_then_execution_thermal_dipole_not_repeat_ensemble_rank_full_curve_or_first_covariance_assembly
+    missing_inputs: [final_targeted_within_prefix_distinct_quartet_det_and_det_squared, within_prefix_joint_fluctuations_versus_covariance_of_prefix_means]
+    next_discriminator: consume_reported_targeted_quartet_increment_and_condition_intrinsic_joint_birth_response_on_prefix_finite_tilt_and_thermal_dipole_are_complete
     information_gain: very_high
     compute_cost: low
     decision_experiments: [DX_P429_SUCCESSOR_STATE]
@@ -5832,6 +5912,7 @@ scientific_nodes:
     current_deletion_result: same_pi_rays_source_variances_exit_rates_and_real_initial_slopes_preserved_inversion_survives_crossing0p2656573200_to0p2722634760_and_s4_plus_minus_ratio25p41893805_to14p42424134_current_amplifies_but_is_not_required_for_the_finite_ray_inversion
     current_deletion_boundary: reversible_generator_need_not_be_a_local_square_bond_transfer_word_real_self_correlations_do_not_identify_circulation_direction_later9339fe70_content_not_claimed_reviewed
     completed_current_observer_source_refs: [SRC_P398_WIDTH8_CURRENT_SOURCE_GEOMETRY]
+    completed_rate_and_measure_source_refs: [SRC_PR509_P398_LINEAR_RESPONSE, SRC_PR267_P398_BLOCK_COUNT_MEASURE]
     current_observer_result: e_Je_pair_captures_all_instantaneous_current_but_plus_slow_mass3p62846_versus1p95575_and_t4_loss99p7429_percent_remain_missing_initial_curvature_norm_QSe_squared_is0p0602551994_minus_and2p9272489452_plus_for_both_G_and_reversible_S
     boundary: width5_discrete_zeta5_and_width8_continuous_i_are_distinct_models_fixed_J_is_not_lag_selected_the_constructed_slow_null_is_not_new_model_evidence_exact_source_dimensions_are_not_field_count_U_semigroup_defects_do_not_reject_the_full_Markov_process
     supports: [completed_fixed_readout_projection_makes_slow_mode_accuracy_observer_specific, exact_duality_protects_two_rays_without_two_state_closure, completed_left_right_projected_forces_source_variance_and_triplet_motifs_explain_current_state_leakage]
@@ -5839,8 +5920,8 @@ scientific_nodes:
     excludes_only: [exact_width5_two_by_two_linear_closure_and_width8_single_mass_per_protected_ray_the_width8_low_mass_ratio1p441727436_is_below_the_width4_kappa_family_bound1p5_not_all_Jordan_or_Markov_mechanisms]
     reusable_data_refs: [results/p398-rooted-module-closure/latest.json, results/p398-rooted-second-jet/latest.json, results/p398-positive-cylinder/latest.json, results/p398-anisotropic-cylinder/latest.json, results/p398-physical-two-point/latest.json, results/p398-physical-two-point/mode-visibility.json, results/p398-continuous-kernel/latest.json, results/p398-width8-source-spectrum/latest.json, results/p398-fixed-readout/latest.json, results/p398-width8-projected-memory/latest.json, results/p398-width8-memory-motifs/latest.json]
     dependency_group_refs: [p398-coupled-rooted-nine-mark-exact-chain, p398-positive-cylinder-exact-chain]
-    missing_inputs: [explicit_named_hidden_QSe_reversible_force_transport_or_distinct_microscopic_matching_overlap_after_completed_Je_readout]
-    next_discriminator: resolve_named_hidden_QSe_geometry_transport_using_completed_Je_capture_and_reversible_curvature_identity_not_repeat_first_current_observer_or_current_deletion_Q_is_a_projector_not_Potts_fugacity
+    missing_inputs: [stationary_score_size_composition_versus_arrangement_or_distinct_microscopic_matching_overlap_after_completed_eta0_response]
+    next_discriminator: use_completed_rate_response_and_block_count_failure_to_identify_the_missing_measure_structure_or_explicit_matching_map_not_first_current_geometry_or_rate_response_Q_projector_is_not_Potts_fugacity
     information_gain: very_high
     compute_cost: low
     decision_experiments: [DX_CONNECTIVITY_RADICAL]
@@ -6049,13 +6130,27 @@ scientific_nodes:
     decision_experiments: [DX_ETOP_TAU_TOPOLOGY_MAP]
 
 dependency_groups:
+  - id: p398-width8-eta0-fixed-state-measure
+    kind: deterministic_reuse_of_one_fixed_generator_and_saved_stationary_tangent_not_sampling_evidence
+    source_ref: SRC_PR509_P398_LINEAR_RESPONSE
+    derived_source_refs: [SRC_PR267_P398_BLOCK_COUNT_MEASURE]
+    member_widths: [8]
+    states: 1430
+    character_sector_dimension: 186
+    metadata_paths: [experiments/p398-linear-response-20260831/SOURCE_MANIFEST.json, analysis/p398_block_count_measure_contract.json]
+    path_source_refs:
+      experiments/p398-linear-response-20260831/SOURCE_MANIFEST.json: SRC_PR509_P398_LINEAR_RESPONSE
+      experiments/p398-linear-response-20260831/results/latest.json: SRC_PR509_P398_LINEAR_RESPONSE
+      analysis/p398_block_count_measure_contract.json: SRC_PR267_P398_BLOCK_COUNT_MEASURE
+      results/p398-block-count-measure/latest.json: SRC_PR267_P398_BLOCK_COUNT_MEASURE
+    covariance_rule: static_dynamic_and_old_lag_views_share_the_same_deterministic_state_solution_no_independent_evidence_addition
   - id: p334-common-label-e32a8593-shared-prefixes
     kind: same_original_paired_prefix_archive_with_correlated_source_and_thermal_views
     member_sizes: [325, 425]
     source_commit: e32a85939279b8574278024d647b56d2d1485247
     contact_commit: 959a7fa26677c416b874d272f1ba66523fb38f73
     source_ref: SRC_P334_COMMON_LABEL_ENSEMBLE_RESPONSE
-    derived_source_refs: [SRC_P334_COMMON_LABEL_THERMAL_CURVES, SRC_P334_COMMON_LABEL_JOINT_COVARIANCE]
+    derived_source_refs: [SRC_P334_COMMON_LABEL_THERMAL_CURVES, SRC_P334_COMMON_LABEL_JOINT_COVARIANCE, SRC_P334_JOINT_CLOCK_SYNTHESIS, SRC_P334_CONNECTED_CLOCK_COVARIANCE, SRC_PR509_P334_FINITE_COMMON_SOURCE]
     prefixes_per_size: 20000
     original_batches_per_size: 20
     batch_id_range_inclusive: [0, 19]
@@ -6063,7 +6158,10 @@ dependency_groups:
     path_source_refs:
       results/p334-common-label-euler-tangent/score.json: SRC_P334_COMMON_LABEL_ENSEMBLE_RESPONSE
       results/p334-common-label-tangent-joint/score.json: SRC_P334_COMMON_LABEL_JOINT_COVARIANCE
-    covariance_rule: use_b582015e_common_factor_with16948_coordinates_per_N_append_new_same_prefix_and_finite_source_batch_coordinates_without_independent_evidence_addition
+      results/p334-euler-dipole-connected-clock/score.json: SRC_P334_CONNECTED_CLOCK_COVARIANCE
+      notes/p334-euler-thermal-dipole.md: SRC_P334_JOINT_CLOCK_SYNTHESIS
+    covariance_coordinator_source_ref: SRC_P334_CONNECTED_CLOCK_COVARIANCE
+    covariance_rule: use_e2ef9983_common_factor_with17866_coordinates_per_N_superseding_b58216948_as_accumulated_coordinator_append_new_same_prefix_and_finite_source_batch_coordinates_without_independent_evidence_addition
   - id: N100_three_modulus_seed20260831125401_offset267100000000
     kind: open_pr_fresh_three_shape_paired_production_with_same_stream_retrospective_readouts
     member_sizes: [100]
@@ -6935,18 +7033,18 @@ decision_experiments:
     readout_boundary: raw_S_is_common_across_geometries_compensated_S_res_uses_separate_counterterms_report_paired_direction_difference_and_covariance_nonzero_distinguishes_finite_topological_tangent_not_new_field_or_norm4_child_P40_E_edges_is_not_Etop
   - id: DX_CONNECTIVITY_RADICAL
     attention_rank: 2
-    name: stationary_measure_prediction_after_completed_eta0_response_and_geometry_compression
-    status: eta0_Frechet_Poisson_and_frozen16column_response_complete_measure_generator_competition_causes_reversal_integrated_cross_responses_still_negative_compression_imports_full_pi_and_pi_prime
-    completed_followup_source_refs: [SRC_P398_WIDTH8_CURRENT_SOURCE_GEOMETRY, SRC_PR509_P398_LINEAR_RESPONSE]
-    next_specific_hypothesis: unfit_block_count_fugacity_stationary_score_minus2_times_centered_partition_block_count_not_a_proven_measure_law
-    scientific_node_refs: [SN_RELATIVE_SOURCE_SEMISIMPLE_CLOSURE, SN_CONNECTIVITY_RADICAL_HYPOTHESIS, SN_P333_ENDPOINT_IRREP_CLOSURE, SN_RATIONAL_JORDAN_GEOMETRY_ORACLE, SN_P398_COUPLED_NINE_MARK_PHYSICAL_RESPONSE]
+    name: stationary_structure_after_completed_fixed_block_count_measure_prediction
+    status: eta0_response_and_frozen16column_dynamics_complete_fixed_block_fugacity_fails_relative_RMS0p342726_any_block_only_score_misses0p109873_variance
+    completed_followup_source_refs: [SRC_P398_WIDTH8_CURRENT_SOURCE_GEOMETRY, SRC_PR509_P398_LINEAR_RESPONSE, SRC_PR267_P398_BLOCK_COUNT_MEASURE]
+    next_specific_hypothesis: block_size_composition_may_or_may_not_exhaust_the_missing_stationary_score_compare_arrangement_within_identical_profiles_no_fitted_measure_yet
+    scientific_node_refs: [SN_RELATIVE_SOURCE_SEMISIMPLE_CLOSURE, SN_CONNECTIVITY_RADICAL_HYPOTHESIS, SN_P333_ENDPOINT_IRREP_CLOSURE, SN_RATIONAL_JORDAN_GEOMETRY_ORACLE, SN_P398_COUPLED_NINE_MARK_PHYSICAL_RESPONSE, SN_P398_STATIONARY_STRUCTURE_BEYOND_BLOCK_COUNT]
     observer_sector_refs: [topology_typed, boundary, direction_character]
     source_refs: [SRC_RELATIVE_SOURCE_RANK3, SRC_RELATIVE_SOURCE_HH2, SRC_P333_DUAL_NUMBER_GRAM_RADICAL, SRC_P333_GENERIC_Q_DETACH_GATE, SRC_P333_SCALAR_MULTIMARK_OBSTRUCTION, SRC_P333_SOURCE_LANDING_DOUBLET, SRC_P333_CHARGE2_LANDING_RESULT, SRC_P398_COUPLED_ROOTED_NINE_MARK_CLOSURE, SRC_P398_ROOTED_SECOND_JET, SRC_P398_POSITIVE_CYLINDER_PROPAGATION, SRC_P398_ANISOTROPIC_CYLINDER_SPECTRUM, SRC_PR267_P398_WIDTH5_PROPAGATION, SRC_P398_CONTINUOUS_TWO_CHANNEL_KERNEL, SRC_P398_WIDTH8_PROTECTED_RAYS, SRC_PR267_P398_FIXED_READOUT, SRC_P398_WIDTH8_PROJECTED_MEMORY, SRC_P398_WIDTH8_MEMORY_MOTIFS, SRC_P398_WIDTH8_CURRENT_DELETION]
     dependency_group_refs: [p333-dual-number-gram-exact, rational-Jordan-geometry-exact-main, jordan-nonseparation-C4-five-state-exact-PR385, p398-coupled-rooted-nine-mark-exact-chain, p398-positive-cylinder-exact-chain]
     acquisition: exact_construction
     expected_model_space_reduction: high
     compute_cost: low
-    decision_output: test_specified_stationary_measure_law_against_saved_pi_prime_static_cross_and_Poisson_response_or_build_explicit_matching_overlap_no_repeat_first_eta0_derivative_or_confuse_imported_measure_with_predicted_measure
+    decision_output: distinguish_size_composition_from_arrangement_on_saved_state_scores_then_predict_measure_or_explicit_matching_overlap_not_repeat_fixed_block_candidate_or_first_eta0_response
   - id: DX_ETOP_TAU_TOPOLOGY_MAP
     attention_rank: 3
     name: joint_area_center_and_shape_physical_predictions_after_completed_N900
@@ -6963,11 +7061,12 @@ decision_experiments:
     decision_output: require_each_width_mechanism_to_predict_joint_area_center_and_dewidthed_shape_with_shared_covariance_using_saved_moments_histograms_and_completed_shape_results_not_first_N900_first_shape_another_free_exponent_or_automatic_more_samples
   - id: DX_P429_SUCCESSOR_STATE
     attention_rank: 4
-    name: within_prefix_response_dimension_finite_source_and_thermal_redistribution_after_ensemble_rank
-    status: completed_common_label_ensemble_rank_full_thermal_curves_covariance_and_PR509_finite_t_plusminus1_response_improved_same_prefix_rank_still_in_progress
+    name: within_prefix_joint_fluctuations_versus_mixture_after_completed_finite_source_and_joint_clock_response
+    status: finite_source_thermal_dipole_plateau_and_intrinsic_joint_clock_response_complete_local_rank_exact_score_base_reported_unresolved_targeted_quartet_increment_reported_in_progress_final_result_absent
     completed_finite_source_ref: SRC_PR509_P334_FINITE_COMMON_SOURCE
-    completed_followup_source_refs: [SRC_PR484_P334_UNIFORM_BLOCKADE_SEMIGROUP, SRC_P334_COMMON_LABEL_ENSEMBLE_RESPONSE, SRC_P334_COMMON_LABEL_THERMAL_CURVES, SRC_P334_COMMON_LABEL_JOINT_COVARIANCE]
-    completed_followup_scientific_node_refs: [SN_P334_COMMON_LABEL_RESPONSE_DIMENSION]
+    completed_followup_source_refs: [SRC_PR484_P334_UNIFORM_BLOCKADE_SEMIGROUP, SRC_P334_COMMON_LABEL_ENSEMBLE_RESPONSE, SRC_P334_COMMON_LABEL_THERMAL_CURVES, SRC_P334_COMMON_LABEL_JOINT_COVARIANCE, SRC_P334_JOINT_CLOCK_SYNTHESIS, SRC_P334_CONNECTED_CLOCK_COVARIANCE]
+    reported_execution_source_ref: SRC_PR509_P334_TARGETED_INCREMENT_HANDOFF
+    completed_followup_scientific_node_refs: [SN_P334_COMMON_LABEL_RESPONSE_DIMENSION, SN_P334_INTRINSIC_JOINT_BIRTH_RESPONSE]
     completed_followup_dependency_group_refs: [p334-common-label-e32a8593-shared-prefixes]
     execution_handoff: analysis/team_coordination.yaml
     scientific_node_refs: [SN_P334_BRANCHING_CONTINUATION, SN_P334_BIRTH_AGE_COLLISION, SN_P334_COOPERATIVE_CONTINUATION_STATE, SN_P334_REAL_SCALAR_NONCLOSURE_DIRECTIONAL_SPLIT, SN_P334_GENERAL_TWO_PORT_AND_COMPLETION_RACES]
@@ -6977,7 +7076,7 @@ decision_experiments:
     acquisition: existing_data_reuse
     expected_model_space_reduction: very_high
     compute_cost: moderate
-    decision_output: distinguish_local_response_rank_from_ensemble_mixing_via_same_prefix_det_and_det_squared_then_finite_positive_tilt_and_thermal_dipole_age_moments_retain_spatial_response_variance_as_parallel_discriminator_no_repeat_full_curve_ensemble_rank_or_covariance_assembly
+    decision_output: separate_within_prefix_joint_birth_covariance_from_covariance_of_prefix_means_consume_final_targeted_quartet_rank_result_without_duplicate_acquisition_no_repeat_finite_tilt_thermal_moments_or_first_covariance_assembly
   - id: DX_P337_LINE_TYPED_OBSERVER
     attention_rank: 5
     name: cross_geometry_common_matching_loading_of_the_resolved_F5_line_source

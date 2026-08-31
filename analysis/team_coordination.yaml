@@ -1,5 +1,5 @@
 schema: matching-one.team-coordination.v1
-updated_at: '2026-08-31T10:13:04Z'
+updated_at: '2026-08-31T10:30:14Z'
 canonical_entry: docs/TEAM-COORDINATION.md
 attention_board: docs/NEXT-TARGETS.md
 purpose: scientific_result_routing_and_duplicate_compute_avoidance_not_permissions
@@ -16,16 +16,13 @@ policy:
 teams:
   - name: 数学研究执行
     role: finite_mechanism_execution_and_same_source_covariance_handoff
-    completed: [p334_common_label_response_rank_thermal]
-    active: [p334_thermal_dipole_age_moments]
+    completed: [p334_common_label_response_rank_thermal, p334_thermal_dipole_age_moments]
     reported_compute: local_only_no_cloud_job_or_tunnel
   - name: 数学研究总览
     role: shared_scientific_map_next_discriminator_and_cross_team_result_integration
     pr: 267
     branch: research/navigation-priority-refresh-20260829
-    completed: [norm4_conditional_line_fixed_k]
-    completed_followup: norm4_global_source_occupancy_rank_projection
-    active: [absorb_committed_PR509_science]
+    completed: [norm4_conditional_line_fixed_k, norm4_global_source_occupancy_rank_projection, p398_block_count_measure]
     reported_compute: local_only_no_server_operations
   - name: 数学研究俯瞰
     role: complementary_mechanism_analyses_and_compute_delivery
@@ -36,10 +33,30 @@ teams:
 github_snapshot:
   observed_at: '2026-08-31T09:58:32Z'
   pr267: {state: OPEN, is_draft: true, head: 7ebaa4bc8c44bf214b62fd8dc1dc87a2efd47b2a}
-  pr509: {state: OPEN, is_draft: true, head: fb01c44aa45e4f8d37d52144e2ad7c4adfe6ce40, refreshed_at: '2026-08-31T10:13:04Z'}
+  pr509: {state: OPEN, is_draft: true, head: ac5761ce504c3cd170fa42c86c17d6fb87f0375b, refreshed_at: '2026-08-31T10:30:14Z'}
   execution_branch_prs: []
   boundary: historical_pre_delivery_heads_not_a_claim_that_pending_outputs_are_committed
 sources:
+  p398_block_count_measure:
+    integration_status: open_pr
+    pr: 267
+    commit: 7da1eeb0e51cf430987dbf204d23713c2ab5a46c
+    paths: [results/p398-block-count-measure/REPORT.md, results/p398-block-count-measure/latest.json]
+  p334_joint_clock_synthesis:
+    integration_status: branch_only
+    branch: analysis/p334-paired-clock-loading-20260831
+    commit: a6304bad15214cac841b76f41e7b61ac61838786
+    paths: [notes/p334-euler-thermal-dipole.md]
+  p334_connected_covariance:
+    integration_status: branch_only
+    commit: e2ef9983f426890a299f5a6e1a2eba8b6d072855
+    paths: [notes/p334-euler-dipole-connected-clock.md, results/p334-euler-dipole-connected-clock/score.json, results/p334-euler-dipole-connected-clock/N325.complete_common_factor.json.gz, results/p334-euler-dipole-connected-clock/N425.complete_common_factor.json.gz]
+  pr509_targeted_increment_handoff:
+    integration_status: open_pr
+    pr: 509
+    commit: ac5761ce504c3cd170fa42c86c17d6fb87f0375b
+    paths: [notes/analysis-delivery-20260831.md]
+    boundary: repository_report_of_completed_unresolved_exact_score_estimate_and_running_targeted_increment_not_final_increment_score_or_direct_process_observation
   norm4_global_projection:
     integration_status: open_pr
     pr: 267
@@ -88,13 +105,27 @@ dependency_groups:
     prefixes_per_size: 20000
     original_batches_per_size: 20
     batch_id_range_inclusive: [0, 19]
-    covariance_source: p334_covariance
-    coordinates_per_size: 16948
+    covariance_source: p334_connected_covariance
+    coordinates_per_size: 17866
     rule: all_common_label_rank_curves_and_future_old_tail_views_reuse_original_batches_no_independent_evidence_addition
   norm4_source:
     ledger_group_refs: [crn-2026104501-5100000000-7000000000, crn-2026105401-8200000000-9200000000, crn-2026105402-8200000000-9200000000]
     rule: shared_cyclic_sizes_and_paired_geometries_use_aligned_deletion_endpoint_batches_are_original1000_union_increment9000_not_contiguous_rebin
 completed_outputs:
+  - id: p398_block_count_measure
+    team: 数学研究总览
+    source_refs: [p398_block_count_measure]
+    acquisition: deterministic_existing_finite_state_reanalysis
+    result: fixed_block_fugacity_relative_score_RMS_error0p34273_any_block_only_score_misses0p10987_of_score_variance_wrong_plus_minus_integral_sign
+    boundary: beyond_block_count_not_yet_beyond_block_size_profile_no_square_site_operator_identity
+    next_question: block_size_composition_versus_arrangement_conditioned_score
+  - id: p334_thermal_dipole_age_moments
+    team: 数学研究执行
+    source_refs: [p334_joint_clock_synthesis, p334_connected_covariance]
+    dependency_ref: p334_shared_prefix_archive
+    result: intrinsic_joint_birth_covariance_changes_after_uniform_order_timing_removal_dipole_center_spread_cancellation_plateau_later_and_broader
+    boundary: ensemble_joint_moments_not_within_prefix_covariance_or_complete_copula_not_independent_samples
+    next_question: within_prefix_joint_response_versus_covariance_of_conditional_means
   - id: norm4_global_source_occupancy_rank_projection
     team: 数学研究总览
     source_refs: [norm4_global_projection]
@@ -131,7 +162,9 @@ followup_tasks:
     reported_release_state: Ready
   - id: p334_within_prefix_rank
     team: 数学研究俯瞰
-    execution_status: in_progress_team_report
+    execution_status: exact_score_base_estimate_reported_complete_unresolved_targeted_increment_reported_in_progress
+    handoff_source: pr509_targeted_increment_handoff
+    targeted_increment: {original_prefixes: 3053, additional_quartets_per_prefix: 64, conditional_continuations: 781568, new_prefixes: 0, independent_quartet_rng_domain: bit31, final_score_committed_at_observed_head: false}
     delivery_pr: 509
     package_path: experiments/p334-mechanism-response-20260831
     input_commits: [ffb7096922ef12a3282e338e79e1ab041104e5a7, b582015e64e2d8a59e591c4822b14dedaea58b0f]
@@ -162,10 +195,4 @@ followup_tasks:
     new_tails: false
     result_commit: fb01c44aa45e4f8d37d52144e2ad7c4adfe6ce40
     reported_release_state: Ready
-execution_followups:
-  - id: p334_thermal_dipole_age_moments
-    team: 数学研究执行
-    execution_status: partial_commits_reported_final_joint_note_pending
-    dependency_ref: p334_shared_prefix_archive
-    question: extract_thermal_dipole_age_weighted_lifetime_moments_to_resolve_integral_cancellation
 handoff_fields: [scientific_change, source_commit_and_paths, observer_and_sector, dependency_and_batch_ids, result_commit_report_json, covariance_location, execution_and_release_state, next_discriminator]

@@ -6,7 +6,12 @@ is completed in #267 at `8799dfe1`. Same-time centered spatial sources are
 invisible to global q/E, while occupancy and fixed-K rank components both move
 root and population. Seek an explicit earlier-source/later-rank mechanism;
 do not repeat the angular allocation. P334 finite-source and P398 exact linear
-responses are also delivered. [Repository-first handoff](TEAM-COORDINATION.md)
+responses are also delivered. The [fixed block-fugacity prediction](../results/p398-block-count-measure/REPORT.md),
+#267 `7da1eeb0`, now fails with34.27% relative score error and a wrong integrated
+response sign: distinguish size composition from connectivity arrangement on
+the saved finite states. P334's `a6304bad` joint-clock result also completes
+the thermal dipole/plateau analysis; separate within-prefix covariance from
+mixing of prefix means next. [Repository-first handoff](TEAM-COORDINATION.md)
 replaces routine cross-task messages; older stages below are not parallel queues.
 
 This roadmap starts with the next scientific outputs, using existing production before commissioning another tool or sample block. Priorities allocate attention; all research lanes remain open in parallel. Reused views keep their shared covariance and are not independent evidence.
@@ -56,7 +61,7 @@ using saved marks without replay. With `h=Re[exp(-4i theta_period) O4]`, the
 nonnegative soft weights `W±=R(1±h)/2` obey `W++W−=R=1−E`; their negative
 thermal derivatives, with the original root/slope normalization, add exactly
 to U. The same source moments support their source tangents and paired
-delete-one covariance. This bridge is defined but has not been run. The
+delete-one covariance. This bridge was completed at #509 `fb01c44a`; the
 weights are not discrete line classes. Actual axis/diagonal/higher-winding
 classification and birth/lifetime selection are further questions requiring
 their own joint marks. Geometry reweighting and genuine lattice anisotropy
@@ -143,10 +148,12 @@ completes C0-only visibility, `552c45d` supplies width8 fixed-i rays, and
 `39e0660`/`c9dc218` already decomposes memory and directed triplet/contact
 budgets. The normalized6.81225 feedback ratio comes from inverse source
 variance12.4744 times bare feedback.546099, not stronger bare plus coupling.
-The next scientific question is a changed-rate/geometry response or matching
-overlap of these named emissions. A rate intervention changes the stationary
-law and projector as well as transition weights; the completed budget alone
-is not that derivative. First memory, R/T2 and triplet analyses are not pending.
+The changed-rate response has since been completed at #509 `fb01c44a`,
+including stationary and generator contributions. #267 `7da1eeb0` now shows
+that block-count-only stationary scores miss structure with consequences for
+the integrated-response sign. Separate block-size composition from arrangement
+on the saved state scores, or construct a Matching overlap of the named emissions.
+First memory, R/T2, triplet and rate-derivative analyses are completed inputs.
 
 ### P267: use the completed amplitude comparison to define a physical response model
 
@@ -161,12 +168,13 @@ Execution's branch-only `a5c39de3` now resolves source-even mean / source-odd
 direction responses and an almost diagonal rank2 ensemble Jacobian. Its completed
 N425 E curve has opposite-sign thermal lobes with a nearly cancelling integral.
 [The three-team handoff](TEAM-COORDINATION.md) therefore routes attention to
-same-prefix det/det² (俯瞰, improved estimate in progress), after its finite
-positive t=±1 response completed at `fb01c44a`, plus thermal-dipole/age moments
-(执行, partial results committed, final joint note pending). These reuse the paired
-prefixes and common covariance, without repeating the first response matrix or
-full curve. Ensemble rank and imposed source parity do not identify local field
-count or the unperturbed global H4 mechanism.
+same-prefix det/det² (俯瞰, targeted increment reported in progress), after its
+finite positive t=±1 response completed at `fb01c44a`. Execution's joint-clock,
+dipole and plateau synthesis is now completed at `a6304bad`, with the accumulated
+17,866-coordinate factor at `e2ef9983`. It motivates within-prefix covariance
+versus covariance of prefix means. These reuse the original paired batches;
+ensemble rank and imposed source parity do not identify local field count or
+the unperturbed global H4 mechanism.
 
 P429's earlier `2d47d72` cross-fit localized much clone dependence to pre-common H2, but the newer P334 archive changes the next action. Branch-only `6147e22` proves real-checkpoint nonclosure of the specified scalar tuple; saved safe-site counts recover successor H2 exactly, and frozen seed/counter/k0/period matrices reconstruct the microstate. Recording those quantities again would be calibration, not a new mechanism experiment.
 

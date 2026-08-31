@@ -1,6 +1,6 @@
 # Three-team scientific handoff / 三队协作入口
 
-Updated: **2026-08-31 18:13 CST**. This is a result-routing entry, not a second
+Updated: **2026-08-31 18:30 CST**. This is a result-routing entry, not a second
 priority board or a live process monitor. [Next Targets](NEXT-TARGETS.md) remains
 the single attention order; [the machine-readable handoff](../analysis/team_coordination.yaml)
 records source pins and the state reported by each team.
@@ -9,17 +9,17 @@ records source pins and the state reported by each team.
 
 | Team | Delivered / active contribution | Next handoff |
 |---|---|---|
-| **数学研究执行** | Completed P334 common-label responses, ensemble Jacobian rank, full thermal curves and common covariance. Thermal-moment work has advanced to committed partial results; final joint note remains pending at this handoff. Reports no cloud job or tunnel. | Record final thermal-dipole / age-weighted lifetime result with the original20-batch joint statistics in the repository. |
-| **数学研究总览** | Draft [PR #267](https://github.com/LightChainr/Matching-One/pull/267): [global occupancy/rank source decomposition](../results/norm4-global-source-projection/REPORT.md) now completed at `8799dfe1`, following line/fixed-K `d2a3f445`. | Prioritize a lag-resolved source-to-rank/birth bridge or a specific mechanism predicting fixed-K rank reweighting. No repeated soft-weight bridge or server operation. |
-| **数学研究俯瞰** | Draft [PR #509](https://github.com/LightChainr/Matching-One/pull/509) has delivered three packages at `fb01c44a`: angular bridge, exact linear response and finite source. Same-prefix improved response-rank estimate remains in progress. | Publish remaining rank result and actual compute-release state in its repository package; no routine cross-task notification required. |
+| **数学研究执行** | P334 joint thermal/birth result now completed at branch-only `a6304bad`; covariance coordinator `e2ef9983` has17,866 coordinates per N. | Separate within-prefix joint fluctuations from covariance of prefix-specific mean shifts; do not repeat first timing correction or dipole/plateau decomposition. |
+| **数学研究总览** | Draft [PR #267](https://github.com/LightChainr/Matching-One/pull/267): [block-count measure prediction](../results/p398-block-count-measure/REPORT.md) completed at `7da1eeb0`, after [global source projection](../results/norm4-global-source-projection/REPORT.md) `8799dfe1`. | Distinguish block-size composition from arrangement; retain the original norm4 lagged-source bridge as attention1. No server operation. |
+| **数学研究俯瞰** | Three packages delivered at `fb01c44a`; [delivery note at ac5761ce](https://github.com/LightChainr/Matching-One/blob/ac5761ce504c3cd170fa42c86c17d6fb87f0375b/notes/analysis-delivery-20260831.md) reports the exact-score local estimate completed but unresolved, followed by a fixed targeted continuation increment. | Final increment result is not in the observed commit. Record it with original-prefix/independent-quartet dependence and actual release state, without routine notifications. |
 
 The execution result is **branch_only**, on
 `analysis/p334-paired-clock-loading-20260831`, with no corresponding PR in the
 17:58 query. Its [Issue #334 result card](https://github.com/LightChainr/Matching-One/issues/334#issuecomment-5476674429)
 and [PR #267 pointer](https://github.com/LightChainr/Matching-One/pull/267#issuecomment-5476674567)
 are discussion links, not code integration. PR #509 was independently checked
-open and Draft at `fb01c44aa45e4f8d37d52144e2ad7c4adfe6ce40`; three completed
-packages are present there. This supersedes its17:58 runner-only snapshot.
+open and Draft, now at `ac5761ce504c3cd170fa42c86c17d6fb87f0375b`; its three
+completed packages are pinned at `fb01c44a`. This supersedes the17:58 snapshot.
 PR #267 also remains open and Draft; references to #509 do not merge its code.
 
 ## New global-source result and its scientific implication
@@ -41,6 +41,21 @@ same-time centered winding association. Existing marginal profiles alone cannot
 recover that joint two-time kernel.
 
 ## Completed P334 science that changes the next question
+
+**New joint-clock result:** [a6304bad](https://github.com/LightChainr/Matching-One/blob/a6304bad15214cac841b76f41e7b61ac61838786/notes/p334-euler-thermal-dipole.md)
+separates continuous uniform-order timing from intrinsic birth-rank covariance.
+The corrected plus→S covariance derivatives are +4.59145e−7±7.51861e−8 and
++5.34794e−7±6.33625e−8 at N325/N425; minus→D derivatives are negative.
+N425's weak thermal dipole combines a positive center term +5.42584e−7 with
+an opposing endpoint-spread term −3.49536e−7. The normalized rank1 plateau
+also moves later and broadens under plus→S. These are different moment
+coordinates; neither plateau width nor endpoint-spread imbalance identifies
+the complete copula or within-prefix lifetime law.
+
+The [new common factor](https://github.com/LightChainr/Matching-One/blob/e2ef9983f426890a299f5a6e1a2eba8b6d072855/notes/p334-euler-dipole-connected-clock.md)
+supersedes `b582015e` as the accumulated joint-clock/plateau coordinator,
+retaining the same20 batches and17,866 coordinates per N. Earlier factor
+and curve pins below remain reproducibility history, not independent evidence.
 
 The [execution synthesis at a5c39de3](https://github.com/LightChainr/Matching-One/blob/a5c39de35bc141f68ca1cc5e68ec134158f4bfec/notes/p334-common-label-response-rank.md)
 uses one actual common-label policy, preserving the joint immediate rank / NN-graph
@@ -81,7 +96,7 @@ are completed inputs. Add genuinely new coordinates with the same batch IDs.
 | Package (数学研究俯瞰) | Scientific discriminator | Input / reported compute |
 |---|---|---|
 | P154 angular bridge — **completed** | All six U− central values are negative; original total source derivative remains unresolved. Fixed-K/rank-centered spatial source has exactly zero global derivative and opposite soft-component derivatives. | [REPORT](https://github.com/LightChainr/Matching-One/blob/fb01c44aa45e4f8d37d52144e2ad7c4adfe6ce40/experiments/p154-spatial-localization-20260831/REPORT.md), `fb01c44a`, frozen `764595ea`. ZyTrST reported Ready; XPk2PZ spare Ready. |
-| P334 local response rank | Distinct-quartet unbiased det and det² **within the same 00 prefix**. Separates local two-direction response from mixture-generated ensemble rank; det² avoids signed cancellation. | `ffb70969` / `b582015e`; HZsCM6 reported Starting/input preparation. Same original prefixes. |
+| P334 local response rank — **targeted increment reported underway** | Exact-score source Gram rank2 and restored fourth-order support are reported; future-response det/det² remain unresolved. The delivery note specifies64 new quartets at each of3053 old double-R0 prefixes:781,568 conditional continuations, no new prefixes. | `ac5761ce` delivery note; independent bit31 quartet domain, original20 batches. HZsCM6 status is team-reported. Final score package is absent from this observed commit; no process was inspected here. |
 | P398 linear response — **completed** | η=0 response crosses zero at t=1.04798965, from competing stationary-measure and generator terms. Both integrated cross responses remain negative; frozen16-column geometry gives .467%/.551% error but imports full π and π′. | [README](https://github.com/LightChainr/Matching-One/blob/fb01c44aa45e4f8d37d52144e2ad7c4adfe6ce40/experiments/p398-linear-response-20260831/README.md), `fb01c44a`, frozen `9690d7c1`. TgFr7R reported Ready. |
 | P334 finite source — **completed** | Positive t=±1 common policies preserve immediate joint rank/Euler yet change future birth. Main finite responses stay close to the tangent; importance weights .7424–1.3307. Old-tail importance estimates, not new direct-policy samples. | [REPORT](https://github.com/LightChainr/Matching-One/blob/fb01c44aa45e4f8d37d52144e2ad7c4adfe6ce40/experiments/p334-finite-source-20260831/REPORT.md), `fb01c44a`; inputs `0e4db1b8`, `e32a8593`, `959a7fa2`. TV2N0X reported Ready. |
 
@@ -114,6 +129,8 @@ reduce cross-task messages.** No periodic team pings or per-commit notifications
 
 **Near-term synthesis hypothesis:** source parity, prefix mixture and thermal
 redistribution may jointly explain apparently conflicting “one-direction” and
-“two-direction” summaries. The active local-rank, finite-source and dipole
-readouts can separate these possibilities. This is a proposed finite-mechanism
+“two-direction” summaries. Completed finite-source, dipole and joint-clock
+readouts now sharpen this to within-prefix fluctuations versus prefix-mean
+mixtures; the targeted local-rank increment supplies a complementary comparison.
+This is a proposed finite-mechanism
 interpretation, not a settled operator assignment.
