@@ -1,4 +1,4 @@
-version: 30
+version: 31
 updated: 2026-08-31
 scientific_main_snapshot_commit: e30060995a9eb5c4d93f565ae09af4f54a56270f
 observed_remote_main_snapshot_commit: 2ee16678b64a065d6d235ef69941c8a46f3a3878
@@ -3170,7 +3170,19 @@ branch_sources:
       - results/norm4-source-thermal/run.json
       - notes/p40-thermal-clock-source-quotient.md
       - notes/norm4-source-two-phase-estimator.md
-    claim_boundary: zero_new_random_samples_NZ100k_per_N_does_not_inherit_original_1p9B_1B_precision_positive_finite_root_response_is_not_infinite_volume_pc_derivative_standard_Potts_Q_or_energy_identity_source_rigidity_and_generator_drift_remain_unresolved_two_phase_complement_control_estimator_is_derived_not_yet_computed
+    claim_boundary: zero_new_random_samples_NZ100k_per_N_does_not_inherit_original_1p9B_1B_precision_positive_finite_root_response_is_not_infinite_volume_pc_derivative_standard_Potts_Q_or_energy_identity_source_rigidity_and_generator_drift_remain_unresolved_in_this100k_snapshot
+    completed_two_phase_followup: {report: results/norm4-source-two-phase/REPORT.md, execution_commit: 634499ce1b950e276f22f1538d4aab2c47a33ae4, raw_to_two_phase_SE_ratio_range: [0.8976832, 1.0083991], conclusion: no_stable_precision_gain_marked_source_variance_dominates}
+  - id: SRC_PR267_NORM4_SOURCE_PRECISION_AND_COMPOSITION
+    integration_status: open_pr
+    pr: 267
+    ref: research/navigation-priority-refresh-20260829
+    commit: b77f3e2a56df2b033561e6fe9164d09ab4698949
+    input_commits: [29f339faa71064436b4350027f258dcccc43603d, 8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc]
+    result_status: completed_two_phase_precision_comparison_endpoint_1M_old_mark_increment_root_comoving_composition_and_common_source_determinants
+    dependency_group_refs: [crn-2026104501-5100000000-7000000000, crn-2026105401-8200000000-9200000000, crn-2026105402-8200000000-9200000000]
+    execution_commits: {two_phase: 634499ce1b950e276f22f1538d4aab2c47a33ae4, endpoint_reobservation: 6f99f901cb919f488fcd6c2b4f4c357360b17764, endpoint_aggregation: 6bd46ad30bc8f583c3ca1f1c8a1b95e7d90571bc}
+    paths: [analysis/norm4_source_two_phase_contract.json, analysis/norm4_source_endpoint_1m_contract.json, scripts/analyze_norm4_source_two_phase.py, scripts/norm4_source_two_phase_core.py, scripts/norm4_source_two_phase_inputs.py, scripts/replay_norm4_source_endpoint_increment.py, scripts/analyze_norm4_source_endpoint_1m.py, results/norm4-source-two-phase/latest.json, results/norm4-source-two-phase/REPORT.md, results/norm4-source-endpoint-1m/latest.json, results/norm4-source-endpoint-1m/REPORT.md, results/norm4-source-endpoint-1m/run.json, results/norm4-source-endpoint-1m/increment/raw/n260.csv, results/norm4-source-endpoint-1m/increment/raw/n340.csv, notes/norm4-root-comoving-rank1-source.md, notes/norm4-common-source-response-determinants.md]
+    claim_boundary: finite_root_comoving_rank1_source_response_excludes_pure_common_affine_K_clock_not_energy_identity_or_H4_generator_identification_endpoint1M_and_prior100k_are_nested_complement_excludes_all_current_marks_no_new_random_samples
   - id: SRC_PR484_P334_UNIFORM_BLOCKADE_SEMIGROUP
     integration_status: open_pr
     pr: 484
@@ -5432,7 +5444,7 @@ scientific_nodes:
     dependency_group_refs: [p40-motif-N65-N85-shared-counter-1m]
     completed_followup_source_refs: [SRC_PR267_NORM4_CLUSTER_SOURCE_THERMAL_RESPONSE]
     missing_inputs: [executed_two_phase_complement_anchor_source_estimate, resolved_internal_source_response_and_mechanism_specific_transport_prediction]
-    next_discriminator: consume_completed_P40_parent_and_full_six_N_original_U_dot_then_compute_complement_anchor_control_estimate_from_saved_source_CSV_and_old_q_E_histograms_without_replay_not_first_root_slope_or_third_moment_measurement
+    next_discriminator: source_mechanism_response_after_completed_two_phase_estimator_not_another_first_baseline_or_source_interface
     information_gain: very_high
     compute_cost: low
     decision_experiments: [DX_ETOP_PRODUCTION_LOCALIZATION]
@@ -5462,10 +5474,47 @@ scientific_nodes:
     excludes_only: [zero_finite_pooled_root_response_for_the_declared_cluster_source_not_all_thermal_clock_or_generator_extension_models]
     reusable_data_refs: [results/p40-source-thermal/latest.json, results/p40-source-thermal/jet-split.json, results/norm4-source-thermal/latest.json, results/norm4-source-thermal/jet-split.json, analysis/p40_source_thermal_chain_candidates.json, notes/p40-thermal-clock-source-quotient.md, notes/norm4-source-two-phase-estimator.md]
     dependency_group_refs: [p40-motif-N65-N85-shared-counter-1m, crn-2026104501-5100000000-7000000000, crn-2026105401-8200000000-9200000000, crn-2026105402-8200000000-9200000000]
-    missing_inputs: [computed_independent_complement_q_E_anchor_and_cross_fitted_source_residual_estimate, stable_internal_response_or_distinguishing_mechanism_prediction]
-    next_discriminator: one_zero_replay_two_phase_estimate_subtract_marked100k_q_E_from_full_production_use_complement_roots_slopes_q_only_response_and_fixed_five_fold_heldout_R_with_coefficient_and_baseline_covariance_then_compare_joint_raw_anchor_two_phase_results_without_independent_votes
+    completed_two_phase_followup: {report: results/norm4-source-two-phase/REPORT.md, q2_source_nominal_p: 0.4366506, Jordan_source_nominal_p: 0.4854153, precision_result: no_stable_gain_SE_ratio_0p898_to1p008}
+    completed_precision_and_composition_followup: SN_NORM4_ROOT_COMOVING_SOURCE_COMPOSITION
+    missing_inputs: [stable_internal_response_or_distinguishing_mechanism_prediction]
+    next_discriminator: use_completed_endpoint1M_and_root_comoving_composition_in_SN_NORM4_ROOT_COMOVING_SOURCE_COMPOSITION_not_first_source_increment_or_more_unmarked_q_E_precision
     information_gain: very_high
     compute_cost: low
+    decision_experiments: [DX_ETOP_PRODUCTION_LOCALIZATION]
+  - id: SN_NORM4_ROOT_COMOVING_SOURCE_COMPOSITION
+    title: cluster_fugacity_changes_root_comoving_rank_population_while_finer_angular_source_maps_remain_unresolved
+    integration_status: open_pr
+    state: microscopic_threshold_structure
+    sources: [bernoulli_thermal, absolute_paired_cluster_fugacity]
+    observer_sectors: [global_rank_projector, matching_even, direction_character]
+    geometries: [gaussian_cover, square_controls]
+    acquisition: [existing_data_reuse]
+    source_refs: [SRC_PR267_NORM4_SOURCE_PRECISION_AND_COMPOSITION, SRC_PR267_NORM4_CLUSTER_SOURCE_THERMAL_RESPONSE]
+    known_result: after_retuning_common_p_to_keep_pooled_matching_zero_cluster_source_lowers_rank1_probability_at_all_six_sizes_by_about0p093_to0p098_per_unit_bulk_log_fugacity_rank0_and_rank2_gain_equally
+    numerical_readout:
+      rank1_root_response_range: [-0.0978233192, -0.0925025944]
+      rank1_absolute_z_range: [72.99935, 159.93738]
+      N260_Udot_bulk: {value: -5.9722901, se: 4.2736220, old100k_se: 19.9806702}
+      N340_Udot_bulk: {value: 11.8593728, se: 9.1981470, old100k_se: 25.8717660}
+      source_rigidity_q2_nominal_p: 0.4857329
+      source_rigidity_Jordan_nominal_p: 0.5873492
+      common_drift_q2: {value: -3.9349289, se: 3.5467268}
+      common_drift_Jordan: {value: -3.9475645, se: 4.1630864}
+      common_q_two_by_two_max_abs_z: 1.638993
+      common_E_two_by_two_max_abs_z: 1.430866
+      common_q_E_three_by_three_max_abs_z: 1.224013
+      unperturbed_complement_q2_nominal_p: 0.000022820629
+      two_phase_precision_gain: no_stable_gain_original_to_two_phase_SE_ratio0p898_to1p008
+    boundary: pure_common_clock_is_excluded_for_finite_root_comoving_topology_common_q_E_determinants_are_only_necessary_conditions_near_dark_q_column_weakens_discrimination_no_continuum_field_or_global_source_identity_follows_static_activation_root_budget_is_not_birth_local_attribution
+    supports: [root_shift_and_topological_population_change_are_distinct_measured_responses, source_marks_rather_than_ordinary_q_E_precision_drive_current_H4_uncertainty, common_E_plus_clock_as_named_finite_composition_candidate]
+    tensions: [treating_unresolved_common_source_determinants_as_identification, treating_weak_source_tangent_as_rehabilitation_of_rejected_unperturbed_q2, treating_rank1_population_change_as_conditional_winding_line_rearrangement]
+    excludes_only: [pure_pair_common_affine_K_thermal_clock_explanation_of_the_measured_root_comoving_rank_marginal]
+    reusable_data_refs: [results/norm4-source-endpoint-1m/latest.json, results/norm4-source-endpoint-1m/REPORT.md, results/norm4-source-endpoint-1m/run.json, results/norm4-source-two-phase/latest.json, notes/norm4-common-source-response-determinants.md, notes/norm4-root-comoving-rank1-source.md]
+    dependency_group_refs: [crn-2026104501-5100000000-7000000000, crn-2026105401-8200000000-9200000000, crn-2026105402-8200000000-9200000000]
+    missing_inputs: [rank1_conditional_primitive_winding_line_marks_with_common_cluster_source_and_thermal_transport]
+    next_discriminator: common_E_plus_clock_predicts_rank1_conditional_line_O4_response_including_root_thermal_transport_test_its_residual_not_another_equivalent_U_determinant_or_ordinary_baseline_precision_run
+    information_gain: very_high
+    compute_cost: targeted_old_permutation_reobservation_for_missing_line_marks
     decision_experiments: [DX_ETOP_PRODUCTION_LOCALIZATION]
   - id: SN_ETOP_CLOCK_PLANE
     title: Etop_A_C_W_clock_plane_production_elimination
@@ -6329,7 +6378,8 @@ dependency_groups:
     kind: open_PR_reconstructed_P154_aligned_orientation_batches
     member_sizes: [65, 85, 130, 170]
     source_ref: SRC_PR267_NORM4_PHASE_D
-    derived_source_refs: [SRC_P218_PRODUCTION_COALESCENCE, SRC_PR267_NORM4_CLUSTER_SOURCE_THERMAL_RESPONSE]
+    derived_source_refs: [SRC_P218_PRODUCTION_COALESCENCE, SRC_PR267_NORM4_CLUSTER_SOURCE_THERMAL_RESPONSE, SRC_PR267_NORM4_SOURCE_PRECISION_AND_COMPOSITION]
+    precision_followup: {source_marks: 100000, unmarked_complement: 1899900000, output: results/norm4-source-endpoint-1m/latest.json, new_counters: 0}
     marked_source_subset:
       counter_interval: [5100000000, 5100100000]
       samples_per_N: 100000
@@ -6343,7 +6393,16 @@ dependency_groups:
     kind: open_PR_reconstructed_P154_aligned_orientation_batches
     member_sizes: [260]
     source_ref: SRC_PR267_NORM4_PHASE_D
-    derived_source_refs: [SRC_P218_PRODUCTION_COALESCENCE, SRC_PR267_NORM4_CLUSTER_SOURCE_THERMAL_RESPONSE]
+    derived_source_refs: [SRC_P218_PRODUCTION_COALESCENCE, SRC_PR267_NORM4_CLUSTER_SOURCE_THERMAL_RESPONSE, SRC_PR267_NORM4_SOURCE_PRECISION_AND_COMPOSITION]
+    marked_source_extension:
+      counter_interval: [8200000000, 8201000000]
+      increment_interval: [8200100000, 8201000000]
+      source_marks: 1000000
+      unmarked_complement: 999000000
+      analysis_batch_rule: original1000_plus_increment9000_by_batch_id_forms100_equal_disjoint_unions_with_paired_directions
+      output: results/norm4-source-endpoint-1m/latest.json
+      new_counters: 0
+      dependency: nested_prior100k_retained_with_joint_old_new_covariance_not_an_independent_replicate
     marked_source_subset:
       counter_interval: [8200000000, 8200100000]
       samples_per_N: 100000
@@ -6357,7 +6416,16 @@ dependency_groups:
     kind: open_PR_reconstructed_P154_aligned_orientation_batches
     member_sizes: [340]
     source_ref: SRC_PR267_NORM4_PHASE_D
-    derived_source_refs: [SRC_P218_PRODUCTION_COALESCENCE, SRC_PR267_NORM4_CLUSTER_SOURCE_THERMAL_RESPONSE]
+    derived_source_refs: [SRC_P218_PRODUCTION_COALESCENCE, SRC_PR267_NORM4_CLUSTER_SOURCE_THERMAL_RESPONSE, SRC_PR267_NORM4_SOURCE_PRECISION_AND_COMPOSITION]
+    marked_source_extension:
+      counter_interval: [8200000000, 8201000000]
+      increment_interval: [8200100000, 8201000000]
+      source_marks: 1000000
+      unmarked_complement: 999000000
+      analysis_batch_rule: original1000_plus_increment9000_by_batch_id_forms100_equal_disjoint_unions_with_paired_directions
+      output: results/norm4-source-endpoint-1m/latest.json
+      new_counters: 0
+      dependency: nested_prior100k_retained_with_joint_old_new_covariance_distinct_seed_from_N260_not_an_independent_replicate_of_its_own_prior
     marked_source_subset:
       counter_interval: [8200000000, 8200100000]
       samples_per_N: 100000
@@ -6668,19 +6736,19 @@ decision_experiments:
   - id: DX_ETOP_PRODUCTION_LOCALIZATION
     attention_rank: 1
     name: norm4_missing_physical_direction_pair_topology_or_distinct_microscopic_singlet
-    status: P40_parent_and_complete_six_N_original_U_source_tangents_and_thermal_clock_jet_split_completed_positive_finite_root_shift_source_rigidity_and_drift_unresolved_next_complement_control_estimator_not_yet_computed
-    scientific_node_refs: [SN_NORM4_ETOP_PHASE_D, SN_PHASE_E_ALIAS_AND_LOCAL_ENERGY, SN_ETOP_CLOCK_PLANE, SN_P154_ABSOLUTE_CLUSTER_PHYSICAL_RESPONSE, SN_P40_ABSOLUTE_CLUSTER_MATCHING_RESPONSE, SN_NORM4_CLUSTER_SOURCE_THERMAL_RESPONSE]
+    status: endpoint1M_source_marks_and_root_comoving_rank1_composition_completed_pure_common_clock_excluded_finer_angular_source_maps_unresolved
+    scientific_node_refs: [SN_NORM4_ETOP_PHASE_D, SN_PHASE_E_ALIAS_AND_LOCAL_ENERGY, SN_ETOP_CLOCK_PLANE, SN_P154_ABSOLUTE_CLUSTER_PHYSICAL_RESPONSE, SN_P40_ABSOLUTE_CLUSTER_MATCHING_RESPONSE, SN_NORM4_CLUSTER_SOURCE_THERMAL_RESPONSE, SN_NORM4_ROOT_COMOVING_SOURCE_COMPOSITION]
     observer_sector_refs: [global_rank_projector, topology_typed, matching_even, bulk_energy_logpair, direction_character]
     source_refs: [SRC_PR267_NORM4_PHASE_D, SRC_P154_PHASE_E_INTEGRATED_ALIAS, SRC_P154_PHASE_E_LOCAL_SINGLET_PILOT, SRC_ETOP_CLOCK_PLANE, SRC_P154_PHASE_E_MIXED_PLANE, SRC_PR267_P154_FIXED_K_INTERACTION, SRC_PR267_P154_ABSOLUTE_CLUSTER_RESPONSE]
     dependency_group_refs: [p154-phase-e-integrated-alias-existing-archives, p154-phase-e-local-singlet-N65-N130-20k, p154-phase-e-mixed-plane-N65-N130-20k, etop-clock-plane-production-plus-P205]
     acquisition: existing_data_reuse
     expected_model_space_reduction: very_high
     compute_cost: low
-    completed_followup_source_refs: [SRC_PR267_P40_ABSOLUTE_CLUSTER_RESPONSE, SRC_PR267_P40_EVEN_GIVEN_ODD_RESPONSE, SRC_PR267_NORM4_CLUSTER_SOURCE_THERMAL_RESPONSE]
+    completed_followup_source_refs: [SRC_PR267_P40_ABSOLUTE_CLUSTER_RESPONSE, SRC_PR267_P40_EVEN_GIVEN_ODD_RESPONSE, SRC_PR267_NORM4_CLUSTER_SOURCE_THERMAL_RESPONSE, SRC_PR267_NORM4_SOURCE_PRECISION_AND_COMPOSITION]
     completed_followup_dependency_group_refs: [p40-motif-N65-N85-shared-counter-1m, crn-2026104501-5100000000-7000000000, crn-2026105401-8200000000-9200000000, crn-2026105402-8200000000-9200000000]
-    decision_output: zero_replay_two_phase_estimate_using_full_production_q_E_minus_marked100k_complement_anchors_and_fixed_five_fold_source_residuals_with_coefficient_and_baseline_covariance_to_resolve_internal_response_after_completed_all_six_N_root_shift_not_first_U_dot_or_automatic_more_production
+    decision_output: use_measured_rank1_source_loading_to_predict_conditional_primitive_line_O4_under_common_E_plus_clock_including_thermal_root_transport_then_measure_a_spatial_response_residual_with_paired_source_covariance
     current_readout: common_bulk_v_N_equals_N_times_Udot_density_and_its_explicit_source_rigidity_or_one_generator_drift_contrasts_with_joint_baseline_uncertainty
-    next_estimator_status: derived_in_notes_norm4_source_two_phase_estimator_md_not_yet_computed_no_precision_gain_claim
+    two_phase_estimator_status: completed_in2p52_seconds_zero_replay_no_stable_gain_marked_variance_dominates
     original_norm4_contract:
       commit: 2236d36c80c8a466d9317c929bc33e92a7ca9d33
       path: predictions/norm4_two_generator_transfer_20260829.yaml
@@ -6691,7 +6759,7 @@ decision_experiments:
       boundary: N130_N170_are_norm2_intermediate_steps_N260_N340_are_norm4_endpoints_pooled_root_is_refound_inside_each_aligned_delete_one
       source_bridge: notes/p40-even-response-norm4-interface.md
       deformation_boundary: source_law_is_an_additional_mechanism_prediction_not_automatic_preservation_of_q2_Jordan_for_arbitrary_lambda_C_cannot_inherit_U_normalization_or_root_character1_over16
-      immediate_reuse: completed_six_N_all_K_source_CSV_and_old_full_q_E_threshold_histograms_support_the_pending_two_phase_source_estimate_without_new_configuration_replay
+      immediate_reuse: two_phase_analysis_of_source_CSV_and_full_q_E_histograms_is_complete_ordinary_baseline_precision_is_no_longer_the_leading_information_bottleneck
     named_finite_readout: 'C_even_given_odd = Cov(E_top,S) - Cov(E_top,q)/Var(q) * Cov(q,S), S=(CB+CW)/N'
     physical_interpretation: positive_exp_lambda_S_plus_h_q_measure_with_h_prime_minus_Cov_q_S_over_Var_q_keeps_matching_mean_fixed_first_order_rank1_probability_response_equals_minus_C
     readout_boundary: raw_S_is_common_across_geometries_compensated_S_res_uses_separate_counterterms_report_paired_direction_difference_and_covariance_nonzero_distinguishes_finite_topological_tangent_not_new_field_or_norm4_child_P40_E_edges_is_not_Etop

@@ -1,4 +1,4 @@
-version: 30
+version: 31
 updated: 2026-08-31
 purpose: >
   Lightweight navigation/provenance index. Registry conflicts never block
@@ -986,8 +986,22 @@ registered_reanalyses:
     source_coordinates: exp_t_s_with_s_equals_CB_plus_CW_gives_common_bulk_v_N_equals_N_times_Udot_density_pair_common_affine_K_source_has_exact_zero_Udot_after_root_and_slope_transport
     boundary: P40_fixed_p_importance_and_NZ_full_K_binomial_are_distinct_finite_estimators_on_old_streams_NZ100k_subset_does_not_inherit1p9B_1B_precision_root_response_not_infinite_volume_pc_derivative_standard_Potts_Q_or_field_identity_compatible_tangents_do_not_certify_a_rejected_baseline
     dependency_boundary: P40_N65_N85_are_two_N_key_domains_of_the_same_old_million_archives_NZ65_85_130_170_share_seed2026104501_and_first100k_counters_N260_N340_use_separate_seeds_all_jet_components_and_model_views_reuse_their_parent_stream_covariance
-    next_output: one_zero_replay_complement_q_E_anchor_and_fixed_five_fold_residual_source_estimate_using_saved_CSV_and_old_full_histograms_with_refitted_coefficient_and_baseline_uncertainty
-    next_output_status: derived_not_yet_computed_no_assumed_precision_gain
+    completed_followup: {report: results/norm4-source-two-phase/REPORT.md, execution_commit: 634499ce1b950e276f22f1538d4aab2c47a33ae4, raw_to_two_phase_SE_ratio_range: [0.8976832, 1.0083991], result: no_stable_gain}
+    completed_precision_followup: NORM4_SOURCE_PRECISION_AND_ROOT_COMPOSITION
+    next_output: follow_current_common_E_plus_clock_spatial_discriminator_after_completed_endpoint1M_and_root_comoving_composition
+  - id: NORM4_SOURCE_PRECISION_AND_ROOT_COMPOSITION
+    status: completed_two_phase_comparison_1M_endpoint_marks_and_root_comoving_source_response
+    integration_status: open_pr
+    pr: 267
+    branch: research/navigation-priority-refresh-20260829
+    commit: b77f3e2a56df2b033561e6fe9164d09ab4698949
+    contracts: [analysis/norm4_source_two_phase_contract.json, analysis/norm4_source_endpoint_1m_contract.json]
+    outputs: [results/norm4-source-two-phase/REPORT.md, results/norm4-source-two-phase/latest.json, results/norm4-source-endpoint-1m/REPORT.md, results/norm4-source-endpoint-1m/latest.json, results/norm4-source-endpoint-1m/run.json, results/norm4-source-endpoint-1m/increment/raw/n260.csv, results/norm4-source-endpoint-1m/increment/raw/n340.csv, scripts/analyze_norm4_source_endpoint_1m.py, scripts/replay_norm4_source_endpoint_increment.py, notes/norm4-root-comoving-rank1-source.md, notes/norm4-common-source-response-determinants.md]
+    dependency_groups: [crn-2026104501-5100000000-7000000000, crn-2026105401-8200000000-9200000000, crn-2026105402-8200000000-9200000000]
+    result_summary: root_comoving_rank1_response_minus0p093_to_minus0p098_at73_to160_SE_excludes_pure_common_thermal_clock_endpoint_Udot_SE19p98_25p87_to4p27_9p20_source_rigidity_q2_p0p48573_Jordan_p0p58735_and_common_source_determinants_unresolved_two_phase_no_stable_gain
+    boundary: finite_root_composition_not_energy_identity_two_endpoint1M_nested_with_old100k_four_cyclic100k_shared_counters_full_complement_excludes_all_current_marks_348_dimensional_joint_covariance_all_views_correlated
+    actual_compute: {two_phase_seconds: 2.51877, endpoint_reobservation_wall_seconds: 98.77715, endpoint_aggregation_seconds: 1.44086, newly_marked_old_permutations: 1800000, new_random_counters: 0, server_actions: 0}
+    next_output: common_E_plus_clock_predicts_rank1_conditional_primitive_line_O4_including_root_thermal_transport_then_target_missing_line_source_marks_not_an_equivalent_determinant_reexpression
   - id: PR484_P334_UNIFORM_BLOCKADE_SEMIGROUP
     status: completed_uniform_blockade_mean_clock_closure_and_spatial_variance_identity
     integration_status: open_pr

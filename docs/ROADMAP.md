@@ -10,16 +10,29 @@ This Draft incorporates main through `e300609`; later observed main changes are 
 
 The first #370 real-data adapter, P267 amplitude comparison, P334 graph/capacity analysis and first F5/C3 typed observers are completed inputs. No Monte Carlo is launched by this navigation update, and tool/test completion is not an independent scientific milestone.
 
-The [actual original-U source experiment](../results/norm4-source-thermal/REPORT.md)
-now completes both full lineages, following the earlier P40 q/E source results.
-The common microscopic cluster fugacity moves all six pooled roots by about.029
-per unit log Q; source-rigidity and a common moving generator remain unresolved
-at the100k-per-size subset precision. A [thermal-clock source quotient](../notes/p40-thermal-clock-source-quotient.md)
-and an actual topology/within-sector split now identify the physical distinctions
-to pursue. Next extract more information from the new source marks using the
-existing high-precision full-production q/E baselines. First U source derivatives,
-first full-chain source residuals and first source decompositions are completed
-analyses; bare C was never substituted for U. This used no new counters or GPU.
+The [million-mark endpoint source experiment](../results/norm4-source-endpoint-1m/REPORT.md)
+now follows the completed full-chain and [two-phase analyses](../results/norm4-source-two-phase/REPORT.md).
+The common microscopic cluster fugacity moves all six pooled roots by about+.029
+per log Q, yet rank1 probability at the moving root decreases by.09250–.09782
+(73–160 SE). A pure common affine-K thermal-clock explanation is therefore
+insufficient at these finite roots. The spatial H4 source response remains
+unresolved: N260/N340 are−5.9723±4.2736 /11.8594±9.1981, with errors reduced
+from19.98/25.87. Source-rigid q2/Jordan extensions (p=.48573/.58735), generator
+drift and common q/E-plus-clock response determinants remain unresolved too.
+
+The two-phase high-precision q/E baseline strategy was actually run and gave
+no stable source-noise reduction. The endpoint improvement instead comes from
+marking another900k old permutations at each endpoint: endpoints now1M,
+four cyclic sizes still100k, zero new counters/GPU/server use. First U source
+derivatives, complete-chain residuals, source splits and two-phase estimation
+are completed analyses; bare C was never substituted for U.
+
+Next distinguish **rank-population reweighting from conditional spatial
+rearrangement**: compare the [primitive winding-line O4 response conditional on rank1](../notes/norm4-root-comoving-rank1-source.md)
+with a named common E-plus-clock prediction that includes the moving matching
+root. The present q/E/cluster moments lack those line marks. This is a specific
+spatial question following a resolved physical source response, not another
+generic source search or an energy-field claim.
 
 The earlier [Phase-E source replay](../results/p154-absolute-cluster/REPORT.md)
 already measured E_top/source at N65/N13020k. Its unresolved result is not
@@ -67,9 +80,11 @@ it stores `B,B^2,I0*B,I2*B`, yet `J_bulk` is unresolved and changes sign from
 N65 to N130, and A/E/J_bulk improves over A/E/C by only `1.981<4`. That records
 the declared B-row outcome at 20k, not a task lock. The subsequent Q/R/H
 local-edge replay is also complete and unresolved (joint .8173/2, p=.66455).
-Future attention can compare explicitly distinct singlets, scales or
-connectivity emissions against the original residual; neither completed
-measurement settles the norm-4 energy-operator identity question.
+The later absolute-cluster source now resolves a root-comoving rank-population
+response, with million-mark endpoints as summarized above. Attention moves to
+the declared common-source map and a conditional primitive-line response;
+none of these completed finite measurements settles the norm-4 energy-operator
+identity question.
 
 In parallel, join the P337 current split to the P334 continuation state:
 
