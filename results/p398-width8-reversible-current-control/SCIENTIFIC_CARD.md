@@ -1,0 +1,11 @@
+# P398: inversion is geometry-supported, not circulation-dependent
+
+- **Lifecycle:** branch-only / completed deterministic single counterfactual. Definition committed at `5e47bdb6` before computation; no current-strength scan or fitted source.
+- **Intervention:** G -> (G+G*)/2 on the same positive width-eight connectivity process. Stationary pi, AP/landing psi-minus/plus, variances, every state's exit rate and real initial slopes are unchanged; all stationary probability currents are deleted.
+- **Changed mechanism space:** fast-to-slow inversion survives. The normalized crossing moves only .2656573200 -> .2722634760 (+2.49%); reversible minus/plus lowest source-visible masses are 2.54079598/1.83631805, despite initial decays 3.36882024/3.69141527. Positive reversible spectral mixtures suffice; nonreversibility is not necessary.
+- **New paper-and-matrix fingerprint:** deleting current increases initial log curvature by ||J psi||_pi^2/||psi||_pi^2: .3808266892 (minus), .3600854185 (plus). This removes a 45.76% versus 10.48% curvature suppression. The old 6.812 normalized feedback contrast becomes 4.128; the early curvature difference barely changes.
+- **What circulation does:** it amplifies the late ray contrast. The minus-versus-plus mass gap increases 22.63%; at s=4 the normalized plus/minus ratio is 25.419 for G versus 14.424 for S. Real self-correlations cannot identify current direction because they are identical under G <-> G*; directional current requires an allowed anti-Hermitian cross-correlation.
+- **Observer / source / geometry:** fixed charge-i AP and singleton landing, stationary self-correlations, 1430-state width-eight noncrossing connectivity process, same exact Kreweras rays and frozen lag grid.
+- **Dependency:** same generator and source block as `552c45d`, `39e0660`, `c9dc218`, `2385062`, `30eef34`; no independent data or Monte Carlo.
+- **Not proved:** S need not be a local square-bond transfer word. No continuum field count, microscopic universality, morphism history or Jordan identification follows.
+- **Next genuinely distinct question:** which named geometry carries the *difference* in current-induced long-time acceleration? This is not required to establish the reversible inversion and was not scanned here.
