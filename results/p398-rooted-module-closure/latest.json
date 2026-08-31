@@ -1,0 +1,851 @@
+{
+  "active_reference_distinction": {
+    "C4_closure_dimension": 7,
+    "full_cokernel": {
+      "charge1_rational": 2,
+      "charge2": 1,
+      "dimension": 7,
+      "trivial": 4
+    },
+    "initial_dimension": 7,
+    "join_closure_dimension": 13,
+    "join_cokernel": {
+      "charge1_rational": 2,
+      "charge2": 1,
+      "dimension": 6,
+      "trivial": 3
+    },
+    "join_detach_source_closure_dimension": 14,
+    "minimal_witness": {
+      "generator": "J0",
+      "input": "AP_sum",
+      "left_covector": "delta_(0,0,0,1)",
+      "left_on_all_seven_inputs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "left_on_image": 1
+    },
+    "missing_active_coordinates": [
+      "fully_connected",
+      "triple_plus_singleton C4 orbit (four coordinates)",
+      "DP_sum",
+      "all_singleton source"
+    ],
+    "warning": "Separate active-reference semantics, not the retained derivative accumulator lift tested above."
+  },
+  "base_commit": "32a27f9",
+  "candidates": [
+    {
+      "G0_rank": 15,
+      "canonical_checks": {
+        "G0_translation_covariance_rank": 0,
+        "G1_translation_covariance_rank": 0,
+        "endpoint_residual_count": 0,
+        "radical_invariance_rank": 0,
+        "rooted_emission_covariance_ranks": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "source_residual_count": 0
+      },
+      "charge1_obstruction": {
+        "Gram_skew": [
+          [
+            0,
+            -1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "basis": [
+          [
+            0,
+            0
+          ],
+          [
+            "-1/2",
+            0
+          ],
+          [
+            0,
+            "-1/2"
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            "1/2",
+            "1/2"
+          ],
+          [
+            "1/2",
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            "1/2"
+          ],
+          [
+            "1/2",
+            "-1/2"
+          ],
+          [
+            "-1/2",
+            "1/2"
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            "-1/2",
+            "-1/2"
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "dimension": 2,
+        "leading_Gram": [
+          [
+            "-1/2",
+            0
+          ],
+          [
+            0,
+            "-1/2"
+          ]
+        ],
+        "leading_Gram_rank": 2,
+        "projector": "(I-T_bar^2)/2"
+      },
+      "extended_dimension": 21,
+      "first_empty_certificate": {
+        "affine_modulus_coefficient_rank": 0,
+        "augmented_rank": 1,
+        "charge1_projector_columns": [
+          0,
+          1
+        ],
+        "forced_Gram_skew_pairing": -1,
+        "identity": "the unique source-normalized affine point has a nonzero fixed Gram pairing; 0 = 1 after rescaling",
+        "left_vector": [
+          0,
+          "-1/2",
+          0,
+          0,
+          "1/2",
+          "1/2",
+          0,
+          0,
+          0,
+          "1/2",
+          "-1/2",
+          0,
+          "-1/2",
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "right_vector": [
+          0,
+          0,
+          "-1/2",
+          0,
+          "1/2",
+          0,
+          0,
+          0,
+          "1/2",
+          "-1/2",
+          "1/2",
+          0,
+          "-1/2",
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "full_inherited_intersection": "empty",
+      "labels": [
+        "AP_sum",
+        "OP_sum",
+        "AP_0_minus_2",
+        "AP_1_minus_3",
+        "AP_alternating",
+        "OP_difference",
+        "DP_difference"
+      ],
+      "mark_dimension": 7,
+      "name": "rooted7",
+      "ordinary_dimension": 14,
+      "radical_C4_dimensions": {
+        "charge1_rational": 2,
+        "charge2": 1,
+        "trivial": 3
+      },
+      "radical_Gram_skew": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "radical_Gram_skew_rank": 2,
+      "radical_basis": [
+        [
+          -2,
+          1,
+          2,
+          -1,
+          -1,
+          1
+        ],
+        [
+          2,
+          "1/2",
+          0,
+          "3/2",
+          "3/2",
+          1
+        ],
+        [
+          1,
+          0,
+          -1,
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          "-3/2",
+          -1,
+          "-1/2",
+          "-1/2",
+          -1
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          -1,
+          0
+        ],
+        [
+          2,
+          "3/2",
+          0,
+          "3/2",
+          "1/2",
+          1
+        ],
+        [
+          -2,
+          -2,
+          -1,
+          -2,
+          -1,
+          -2
+        ],
+        [
+          -1,
+          "-3/2",
+          -1,
+          "-1/2",
+          "-1/2",
+          -1
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "radical_dimension": 6,
+      "radical_leading_Gram_rank": 6,
+      "response_rank": 7,
+      "source_normalized_affine_jet": {
+        "V": "0",
+        "X0": "diag(T,R)",
+        "unique": true
+      },
+      "unprojected_G0_self_adjoint_residual_rank": 4,
+      "unprojected_G1_self_adjoint_residual_rank": 6
+    },
+    {
+      "G0_rank": 19,
+      "canonical_checks": {
+        "G0_translation_covariance_rank": 0,
+        "G1_translation_covariance_rank": 0,
+        "endpoint_residual_count": 0,
+        "radical_invariance_rank": 0,
+        "rooted_emission_covariance_ranks": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "source_residual_count": 0
+      },
+      "charge1_obstruction": {
+        "Gram_skew": [],
+        "basis": [],
+        "dimension": 0,
+        "leading_Gram": [],
+        "leading_Gram_rank": 0,
+        "projector": "(I-T_bar^2)/2"
+      },
+      "extended_dimension": 23,
+      "first_empty_certificate": null,
+      "full_inherited_intersection": "unique",
+      "labels": [
+        "AP_sum",
+        "OP_sum",
+        "AP_0_minus_2",
+        "AP_1_minus_3",
+        "AP_alternating",
+        "OP_difference",
+        "DP_difference",
+        "existing_landing_0_minus_2",
+        "existing_landing_1_minus_3"
+      ],
+      "mark_dimension": 9,
+      "name": "rooted7_plus_existing_landing_charge1",
+      "ordinary_dimension": 14,
+      "radical_C4_dimensions": {
+        "charge1_rational": 0,
+        "charge2": 1,
+        "trivial": 3
+      },
+      "radical_Gram_skew": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "radical_Gram_skew_rank": 0,
+      "radical_basis": [
+        [
+          -2,
+          -1,
+          2,
+          1
+        ],
+        [
+          2,
+          "3/2",
+          2,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          -1,
+          "-1/2",
+          -3,
+          -1
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          2,
+          "3/2",
+          2,
+          1
+        ],
+        [
+          -2,
+          -2,
+          -4,
+          -2
+        ],
+        [
+          -1,
+          "-1/2",
+          -3,
+          -1
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "radical_dimension": 4,
+      "radical_leading_Gram_rank": 4,
+      "response_rank": 9,
+      "source_normalized_affine_jet": {
+        "V": "0",
+        "X0": "diag(T,R)",
+        "unique": true
+      },
+      "unprojected_G0_self_adjoint_residual_rank": 8,
+      "unprojected_G1_self_adjoint_residual_rank": 6
+    }
+  ],
+  "claim_boundary": [
+    "No new terminal character, Monte Carlo, continuum field or physical Jordan identification.",
+    "The active reference-state span and the retained accumulator lift are distinct constructions; both are reported without conflating their closures.",
+    "Inherited radical-Gram closure is not unprojected Gram self-adjointness, all-Q closure, or a physical transfer-matrix realization."
+  ],
+  "decision": "rooted7_fails_but_rooted7_plus_existing_charge1_is_unique",
+  "input_sha256": {
+    "scripts/p333_one_mark_endpoint_jet.py": "27429ddc40b8e3afcf93878006473af728fcbc1cf49d5256fad5c6d634511b0c",
+    "scripts/p333_source_landing_doublet_width4.py": "a800bcd692ab3fa7fe58643e8ec20b3826bcbe67737ef507d7a7aaadd8f5fff5",
+    "scripts/p398_rooted_gr1_completion.py": "a6263b21529693f3967aed0f752f6ccf2ef343efcb9e1cfb0f83042e25b67820"
+  },
+  "issues": [
+    333,
+    398
+  ],
+  "minimal_coupled_mark": {
+    "additional_rational_dimension": 2,
+    "new_terminal_character": false,
+    "scope": "Count rational C4-covariant mark coordinates within this declared derivative-response accumulator lift. Do not claim minimality among arbitrary extensions or alter the Gram gate.",
+    "type": "already-defined C4 charge-one landing doublet from the triple-plus-singleton rooted orbit",
+    "why_minimal": "The rooted7 residual is a nondegenerate two-dimensional rational C4 charge-one block. A one-dimensional rational C4 mark is trivial or sign and cannot pair with it; the existing two-column landing response removes precisely this residual block."
+  },
+  "ordinary_block_uniqueness": {
+    "T_equation_residual_count": 0,
+    "block_implication": [
+      "Write X0=[[A,0],[B,C]] and V=[[a,0],[b,c]]. Mark transport fixes C=R,c=0.",
+      "The order-zero ordinary affine block has A=alpha*T; fixing the ordinary source sets alpha=1.",
+      "Each row of B is a common left invariant; fixing the ordinary source forces B=0.",
+      "P_(i+1)T=TP_i cancels the inhomogeneous ordinary jet term, so a=beta*T; V(source)=0 sets beta=0.",
+      "R E_i=E_(i+1)T cancels the lower jet term; each row of b is a common left invariant and V(source)=0 forces b=0.",
+      "Thus the source-transport-normalized affine first jet is uniquely X0=diag(T,R), V=0. Endpoint and radical are checked at that point; no surviving modulus can alter its Gram residual."
+    ],
+    "common_left_invariant_dimension": 1,
+    "common_left_invariant_generator": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "common_left_invariant_rank": 13,
+    "ordinary_hom_generator": "T",
+    "ordinary_shifted_hom_dimension": 1,
+    "ordinary_shifted_hom_rank": 195,
+    "ordinary_velocity_covariance_ranks": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "protocol_sha256": "155ec06cad666e9cd44a1f082ded6e4ee8aa5f22029e347686dc991bed3692ad",
+  "schema": "matching-one/p398-rooted-module-closure/v1",
+  "scorer_sha256": "5e777e4fa4e0234c8a89591ae4ce48f1348eefb756635b3047851cd90ea22f1f",
+  "states": [
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      1
+    ],
+    [
+      0,
+      0,
+      1,
+      2
+    ],
+    [
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      2
+    ],
+    [
+      0,
+      1,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      1
+    ],
+    [
+      0,
+      1,
+      1,
+      2
+    ],
+    [
+      0,
+      1,
+      2,
+      0
+    ],
+    [
+      0,
+      1,
+      2,
+      1
+    ],
+    [
+      0,
+      1,
+      2,
+      2
+    ],
+    [
+      0,
+      1,
+      2,
+      3
+    ]
+  ],
+  "status": "exact_rational_full_inherited_intersection_certificate"
+}

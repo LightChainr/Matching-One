@@ -1,0 +1,31 @@
+{
+  "schema": "matching-one/p398-rooted-module-closure-protocol/v1",
+  "status": "exact_algebra_contract_after_structural_audit",
+  "base_commit": "32a27f9",
+  "issues": [333, 398],
+  "question": "Do the seven rooted derivative marks satisfy the existing P333 affine, endpoint, radical-Gram and source-transport intersection; if not, what is the minimum already-defined coupled mark?",
+  "candidates": ["rooted7", "rooted7_plus_existing_landing_charge1"],
+  "module_contract": {
+    "ordinary": "width-four circular noncrossing connectivity V, dimension 14",
+    "mark_semantics": "retained derivative-response accumulators, using the P333 terminal-after-emission filtration; not an active seven-state rooted connectivity submodule",
+    "translation": "diag(T,R), with the exact C4 actions inherited from the response registry",
+    "joins": "diag(J_i,I_marks)",
+    "detach_zero": "diag(D_i(1),I_marks)",
+    "detach_velocity": "[[P_i,0],[C0^T P_i,0]], where P_i is the ordinary singleton projector",
+    "gram_zero": "[[ones,C0],[C0^T,0]], C0 = derivative-Q Gram response columns",
+    "gram_one": "[[G1,C1],[C1^T,0]], C1 = second-Q-derivative response columns",
+    "filtration": "X0 and V have zero ordinary-output/mark-input blocks",
+    "endpoint": "e^T X0=e^T and e^T V=0, e=(ones,0)",
+    "source": "X0 fixes the ordinary all-singleton source and V kills it",
+    "mark_transport": "X0_mark,mark=R and V_mark,mark=0",
+    "radical": "G0 X0 ker(G0)=0",
+    "gram": "B^T(G1 X0-X0^T G1)B=0 for B spanning ker(G0), exactly the inherited P333 gate"
+  },
+  "minimality_contract": "Count rational C4-covariant mark coordinates within this declared derivative-response accumulator lift. Do not claim minimality among arbitrary extensions or alter the Gram gate.",
+  "proof_strategy": "Exact block reduction: ordinary shifted join/detach Hom is the line Q*T; common left invariants are Q*ones. Source plus mark transport therefore force X0=diag(T,R), V=0. The full intersection is nonempty exactly when this forced point passes radical-Gram.",
+  "boundaries": [
+    "No new terminal character, Monte Carlo, continuum field or physical Jordan identification.",
+    "The active reference-state span and the retained accumulator lift are distinct constructions; both are reported without conflating their closures.",
+    "Inherited radical-Gram closure is not unprojected Gram self-adjointness, all-Q closure, or a physical transfer-matrix realization."
+  ]
+}
