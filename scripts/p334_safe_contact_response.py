@@ -17,7 +17,7 @@ FORK_PATH = "results/p334-nested-next-label-forks"
 P_REF = 0.59274605079
 FEATURES = ["contractible_cycles", "component_mergers", "isolated_site"]
 RESPONSES = ["p_ref.F1", "p_ref.F2", "p_integral.F1", "p_integral.F2"]
-GROUPS = ["all_R0_orientations", "01+10_R0_orientations"]
+GROUPS = ["all_R0_orientations", "01+10_R0_orientations", "R0_safe_equal_contact_degree"]
 GTRI = np.triu_indices(3)
 XTRI = np.triu_indices(4)
 
@@ -73,7 +73,12 @@ def score_batch(n, batch, contact_commit, contact_path, tail):
         a, b = obs[:, :, 0, 0]-obs[:, :, 1, 0], obs[:, :, 0, 1]-obs[:, :, 1, 1]
         dm = (a+b)/2
         for name in GROUPS:
-            chosen = active if name == GROUPS[0] else active & np.isin(cell, [1, 3])[:, None]
+            if name == GROUPS[0]:
+                chosen = active
+            elif name == GROUPS[1]:
+                chosen = active & np.isin(cell, [1, 3])[:, None]
+            else:
+                chosen = active & (e[:, :, 0] == e[:, :, 1])
             gg, xx, aa, bb = dg[chosen], dm[chosen], a[chosen], b[chosen]
             # 1/2 for the orientation mixture, 1/2 for the iid-label identity.
             accum[name][0] += chosen.sum()/(2*8000)
@@ -117,7 +122,7 @@ def main():
     args.output.mkdir(parents=True)
     out = {"source_commit": SOURCE, "contact_commit": contact_commit,
            "p_ref": P_REF, "features": FEATURES, "responses": RESPONSES,
-           "estimand": "Equal orientation mixture, full original-prefix denominator: E[1_R0 pi_safe^2 Cov_U(g,m|Z,own-rank-safe)]. This is not paired H4 or a causal feature intervention.",
+           "estimand": "Equal orientation mixture, full original-prefix denominator: E[1_R0 pi_safe^2 Cov_U(g,m|Z,own-rank-safe)]. Equal-degree mask instead sums pi_safe,e^2 Cov_U(g,m|Z,own-rank-safe,e). This is not paired H4 or a causal feature intervention.",
            "source_sha256": {}, "sizes": {}}
     names = labels()
     for n in (325, 425):
@@ -142,7 +147,7 @@ def main():
             "LOO": loo.tolist(), "factor": factor.tolist()}
         print(f"N{n}: complete own-safe contact-response readout", flush=True)
         for name, value, se in zip(pnames, values, np.linalg.norm(factor, axis=0)):
-            if name.startswith(GROUPS[0]) and ".pooled_slope" in name and name.endswith((",K1]", ",K2]")):
+            if name.startswith((GROUPS[0], GROUPS[2])) and ".pooled_slope" in name and name.endswith((",K1]", ",K2]")):
                 print(f"  {name}: {value:.9g} +/- {se:.5g}", flush=True)
     (args.output/"score.json").write_text(json.dumps(out, indent=2)+"\n")
     print(args.output, flush=True)
