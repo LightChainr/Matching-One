@@ -1,0 +1,509 @@
+{
+  "claim_boundary": {
+    "excluded": "inequalities, parameter bounds, gauge-atlas construction, SOS relaxation generation, witness search, SDP solving, noisy data, or physical model validation",
+    "included": "deterministic sparse-rational compilation of affine matrix, product-zero, and typed observation equalities for one bounded model descriptor",
+    "parent_issue": "remain open"
+  },
+  "claim_level": "exact_compilation",
+  "descriptor": {
+    "dimension": 2,
+    "matrix_symbols": [
+      "A",
+      "K"
+    ],
+    "relations": [
+      {
+        "id": "shared_nilpotent_form",
+        "identity_coefficient": "1",
+        "left": "A",
+        "right": "K",
+        "right_coefficient": "1",
+        "type": "matrix_affine_identity"
+      },
+      {
+        "factors": [
+          "K",
+          "K"
+        ],
+        "id": "nilpotent_square",
+        "type": "matrix_product_zero"
+      },
+      {
+        "expected": "1",
+        "id": "moment_0",
+        "readout": [
+          "1",
+          "1"
+        ],
+        "source": [
+          "0",
+          "1"
+        ],
+        "type": "typed_observation",
+        "word": []
+      },
+      {
+        "expected": "2",
+        "id": "moment_1",
+        "readout": [
+          "1",
+          "1"
+        ],
+        "source": [
+          "0",
+          "1"
+        ],
+        "type": "typed_observation",
+        "word": [
+          "A"
+        ]
+      },
+      {
+        "expected": "3",
+        "id": "moment_2",
+        "readout": [
+          "1",
+          "1"
+        ],
+        "source": [
+          "0",
+          "1"
+        ],
+        "type": "typed_observation",
+        "word": [
+          "A",
+          "A"
+        ]
+      }
+    ]
+  },
+  "issue": 370,
+  "problem": {
+    "canonical_order": "relation order, matrix row-major, monomial exponent lexicographic",
+    "coefficient_field": "Q",
+    "equation_count": 10,
+    "equations": [
+      {
+        "label": "shared_nilpotent_form[0,0]",
+        "terms": [
+          {
+            "coefficient": "-1",
+            "exponents": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "coefficient": "-1",
+            "exponents": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "coefficient": "1",
+            "exponents": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "shared_nilpotent_form[0,1]",
+        "terms": [
+          {
+            "coefficient": "-1",
+            "exponents": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "coefficient": "1",
+            "exponents": [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "shared_nilpotent_form[1,0]",
+        "terms": [
+          {
+            "coefficient": "-1",
+            "exponents": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ]
+          },
+          {
+            "coefficient": "1",
+            "exponents": [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "shared_nilpotent_form[1,1]",
+        "terms": [
+          {
+            "coefficient": "-1",
+            "exponents": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "coefficient": "-1",
+            "exponents": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "coefficient": "1",
+            "exponents": [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "nilpotent_square[0,0]",
+        "terms": [
+          {
+            "coefficient": "1",
+            "exponents": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0
+            ]
+          },
+          {
+            "coefficient": "1",
+            "exponents": [
+              0,
+              0,
+              0,
+              0,
+              2,
+              0,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "nilpotent_square[0,1]",
+        "terms": [
+          {
+            "coefficient": "1",
+            "exponents": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1
+            ]
+          },
+          {
+            "coefficient": "1",
+            "exponents": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "nilpotent_square[1,0]",
+        "terms": [
+          {
+            "coefficient": "1",
+            "exponents": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1
+            ]
+          },
+          {
+            "coefficient": "1",
+            "exponents": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "nilpotent_square[1,1]",
+        "terms": [
+          {
+            "coefficient": "1",
+            "exponents": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2
+            ]
+          },
+          {
+            "coefficient": "1",
+            "exponents": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "moment_1",
+        "terms": [
+          {
+            "coefficient": "-2",
+            "exponents": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "coefficient": "1",
+            "exponents": [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "coefficient": "1",
+            "exponents": [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "moment_2",
+        "terms": [
+          {
+            "coefficient": "-3",
+            "exponents": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "coefficient": "1",
+            "exponents": [
+              0,
+              0,
+              0,
+              2,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "coefficient": "1",
+            "exponents": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "coefficient": "1",
+            "exponents": [
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "coefficient": "1",
+            "exponents": [
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "maximum_total_degree": 2,
+    "status": "canonical_sparse_rational_problem_compiled",
+    "variable_order": [
+      "A_0_0",
+      "A_0_1",
+      "A_1_0",
+      "A_1_1",
+      "K_0_0",
+      "K_0_1",
+      "K_1_0",
+      "K_1_1"
+    ]
+  },
+  "schema": "matching-one/canonical-algebraic-model-problem/v1",
+  "source": {
+    "dependency_group": "synthetic-exact-m2d-m2j",
+    "path": "results/model-certificates/synthetic/m2d-vs-m2j/latest.json",
+    "sha256": "edc057047975023a971b2d1c7ff5064bb701439993fad4bc557bcf5a9e81ef09"
+  },
+  "supplied_solution_check": {
+    "all_zero": true,
+    "residuals": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ]
+  }
+}
