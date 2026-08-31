@@ -112,7 +112,9 @@ fixes their relative finite-volume weight.
 Define the comparison law by deleting only the factor m^(-r) in(1).
 Equivalently its occupation source is
 `S_drop=2 beta1-3K+2N+1=S*+r`. It is a specified counterfactual law,
-not a proposed replacement source. Both finite laws have unique simple
+not a proposed replacement source. Its occupation-sum expression defines
+the comparison also for noninteger real m>=1; the finite-colour
+interpretation itself still requires integer m. Both finite laws have unique simple
 homogeneous matching roots for t>=0: the argument using supermodularity
 and a pivotal configuration applies to 2 beta1 as well as to J.
 
