@@ -45,9 +45,14 @@ E_Z[pi_safe(Z)^2 Cov_U(m(U) | Z, safe)].
 
 It is not `E[pi_safe Var(m|safe)]`, an unweighted conditional covariance, or
 the square of a pooled safety rate. No division by an estimated pi is made.
-The mixed mask also contains the response separation between the safe and
-birth-changing label classes; its dominance is not a measurement of within-safe
-heterogeneity or a Markov-memory claim.
+Writing ps,pb for the two prefix-specific probabilities and Bs,Bb for the
+within-class covariances, the mixed target is
+`ps*pb*(Bs+Bb+(mu_s-mu_b)(mu_s-mu_b)^T)`. Thus its dominance does **not**
+identify a pure between-class term. With exact prefix probabilities the true
+within contribution is `B_neither/ps+B_both/pb`, computed before prefix
+averaging; only total minus this contribution is the between-class term.
+Neither the current mixed share nor a pooled safety-rate normalization is a
+measurement of within-safe heterogeneity or a Markov-memory claim.
 
 ## Within-orientation response and common-label cross terms
 
