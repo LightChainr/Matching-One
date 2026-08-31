@@ -1,5 +1,9 @@
 # Real-lattice scalar-state nonclosure: same (age, ell, H2, b2), different branching
 
+The same two N425 checkpoints now also have an exact
+[safe-triangle versus actual-safe-triple census](p334-real-safe-triple-census.md):
+their pair graphs miss 583/509 minimal triple triggers under clique completion.
+
 **The archived production contains exact counterexamples to using
 `(N, orientation, k0, age, ell, H2, b2)` as a state sufficient for
 one-common-update/two-clone survival.** No new Monte Carlo was run. These are
