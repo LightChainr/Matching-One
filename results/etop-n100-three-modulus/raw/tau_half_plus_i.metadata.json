@@ -1,0 +1,29 @@
+{
+  "engine": "general integer-period threshold-rank Newman-Ziff",
+  "generated_utc": "2026-08-31T04:50:15Z",
+  "git_commit": "295ac797d5589fc47c30eaa777a74d4ed4446c90",
+  "command": "/Volumes/Mac Data/Research/论文项目总库/Matching-One-worktrees/etop-modulus-survivors-20260831/build/etop-n100/threshold_rank_integer_period_mc --samples 2000000 --batches 200 --seed 20260831125401 --replica-offset 267100000000 --threads 1 --first-matrix 8 10 -6 5 --second-matrix 10 5 0 10 --git-commit 295ac797d5589fc47c30eaa777a74d4ed4446c90 --output-prefix /Volumes/Mac Data/Research/论文项目总库/Matching-One-worktrees/etop-modulus-survivors-20260831/results/etop-n100-three-modulus/raw/tau_half_plus_i",
+  "compiler": "Apple LLVM 21.0.0 (clang-2100.1.1.101)",
+  "openmp": false,
+  "threads_requested": 1,
+  "samples_per_pair": 2000000,
+  "batches": 200,
+  "seed": 20260831125401,
+  "replica_counter_first": 267100000000,
+  "replica_counter_last_exclusive": 267102000000,
+  "rng": "counter-derived SplitMix64 stream plus unbiased Fisher-Yates",
+  "coupling": "same HNF mixed-radix label permutation shared by the pair",
+  "quotient_coordinates": "column-HNF representatives (rx,ry), label=rx+h11*ry",
+  "period_matrix_convention": "row-major matrix; columns are lifted period vectors",
+  "channel": "rank-2 cross wrapping",
+  "K_plus": "first black primal cross rank, 1-based",
+  "K_minus": "first black rank after white matching cross is lost; N-r+1",
+  "sparse_joint_histogram": false,
+  "per_batch_joint_moments": true,
+  "elapsed_seconds": 19.616889540999999,
+  "designs": [
+    {"id": "custom", "N": 100, "first": [8,-6], "second": [10,0], "first_period_matrix": [[8,10],[-6,5]], "second_period_matrix": [[10,5],[0,10]], "first_HNF": [[100,82],[0,1]], "second_HNF": [[10,5],[0,10]], "first_smith_invariants": [1,100], "second_smith_invariants": [5,20]}
+  ],
+  "histogram_csv": "/Volumes/Mac Data/Research/论文项目总库/Matching-One-worktrees/etop-modulus-survivors-20260831/results/etop-n100-three-modulus/raw/tau_half_plus_i.hist.csv",
+  "moments_csv": "/Volumes/Mac Data/Research/论文项目总库/Matching-One-worktrees/etop-modulus-survivors-20260831/results/etop-n100-three-modulus/raw/tau_half_plus_i.moments.csv"
+}
