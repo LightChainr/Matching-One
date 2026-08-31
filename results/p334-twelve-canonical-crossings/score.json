@@ -1,0 +1,4810 @@
+{
+  "schema": "matching-one/p334-twelve-canonical-clock-crossings/v1",
+  "source_commit": "bd95f2a048d5780568b689bd42e0a684daf74315",
+  "source_path": "results/p334-twelve-prefix-clocks/full_clocks.json",
+  "source_sha256": "1cadf1abac29159b02b0fa3d1fcf618e76b58ff04dff708269d74765538bb4ba",
+  "new_prefixes": 0,
+  "new_MC": 0,
+  "network_or_reliability_reruns": 0,
+  "fixed_parameters": {
+    "N": 425,
+    "k0": 252,
+    "vacant_sites": 173,
+    "p_ref": 0.59274605079
+  },
+  "selected_count": 12,
+  "fixed_pair_count": 66,
+  "summary": {
+    "rank_crossing_pairs": 11,
+    "thermal_crossing_pairs": 11,
+    "disappeared_rank_crossing_pairs": 0,
+    "total_thermal_crossings": 20,
+    "order_cells": 21
+  },
+  "representative_83_minus_1006": {
+    "first_counter": 43042500083,
+    "second_counter": 43042501006,
+    "delta_definition": "F2_first-F2_second",
+    "survival_first_minus_second_sign_runs": [
+      {
+        "first": 0,
+        "last": 0,
+        "sign": 0
+      },
+      {
+        "first": 1,
+        "last": 10,
+        "sign": -1
+      },
+      {
+        "first": 11,
+        "last": 153,
+        "sign": 1
+      },
+      {
+        "first": 154,
+        "last": 173,
+        "sign": 0
+      }
+    ],
+    "rank_sign_variations": 1,
+    "thermal_root_count": 1,
+    "roots": [
+      {
+        "p": 0.5943538976117172,
+        "isolation_interval": [
+          "0",
+          "1"
+        ],
+        "delta_derivative": -0.2007990136229957,
+        "first_F2": 0.1444973884997377,
+        "second_F2": 0.14449738849973764,
+        "first_one_minus_F2": 0.8555026115002633,
+        "second_one_minus_F2": 0.8555026115002633,
+        "delta_sign_below": 1,
+        "delta_sign_above": -1
+      }
+    ],
+    "reduction": {
+      "positive_endpoint_factor": "p^253*(1-p)^20",
+      "remaining_Bernstein_degree": 152,
+      "primitive_integer_coefficient_sha256": "83575a194c1baaf039012f9dbab10e91c0623199d3e7b1070934e242f049412a",
+      "initial_sign_variations": 1,
+      "complete_dyadic_partition": [
+        {
+          "interval": [
+            "0",
+            "1"
+          ],
+          "variations": 1,
+          "first_nonzero_sign": 1,
+          "last_nonzero_sign": -1
+        }
+      ]
+    },
+    "p_ref": {
+      "p": 0.59274605079,
+      "delta": 0.00029790844412369067,
+      "delta_derivative": -0.17009745086195416,
+      "first_F2": 0.13322778136656274,
+      "second_F2": 0.13292987292243907,
+      "first_derivative": 6.837218469606454,
+      "second_derivative": 7.00731592046841
+    },
+    "integrated_delta": {
+      "exact": "-18201264770939272531633063727/6612844331050485844854053716200",
+      "float": -0.0027524108930669327
+    },
+    "initial_delta_sign": 1
+  },
+  "pairs": [
+    {
+      "first_counter": 43042500048,
+      "second_counter": 43042500083,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 153,
+          "sign": -1
+        },
+        {
+          "first": 154,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^20",
+        "remaining_Bernstein_degree": 152,
+        "primitive_integer_coefficient_sha256": "1563d8756bdbc75a0508950b44e97e997e5e4304d4c678544f8053ec7544d233",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.04851438660987474,
+        "delta_derivative": 2.157128671237343,
+        "first_F2": 0.1817421679764375,
+        "second_F2": 0.13322778136656274,
+        "first_derivative": 8.994347140843798,
+        "second_derivative": 6.837218469606454
+      },
+      "integrated_delta": {
+        "exact": "82576759431040234811834709329/7557536378343412394118918532800",
+        "float": 0.010926412430864249
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042500048,
+      "second_counter": 43042500106,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 5,
+          "sign": -1
+        },
+        {
+          "first": 6,
+          "last": 121,
+          "sign": 1
+        },
+        {
+          "first": 122,
+          "last": 151,
+          "sign": -1
+        },
+        {
+          "first": 152,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 2,
+      "thermal_root_count": 2,
+      "roots": [
+        {
+          "p": 0.5459069193131746,
+          "isolation_interval": [
+            "1/2",
+            "3/4"
+          ],
+          "delta_derivative": -0.006712102239083471,
+          "first_F2": 0.004833213346239398,
+          "second_F2": 0.00483321334623941,
+          "first_one_minus_F2": 0.9951667866537607,
+          "second_one_minus_F2": 0.9951667866537607,
+          "delta_sign_below": 1,
+          "delta_sign_above": -1
+        },
+        {
+          "p": 0.9264269389294922,
+          "isolation_interval": [
+            "3/4",
+            "1"
+          ],
+          "delta_derivative": 2.5928968237353655e-14,
+          "first_F2": 0.9999999999999992,
+          "second_F2": 0.9999999999999992,
+          "first_one_minus_F2": 1.1304074811178366e-15,
+          "second_one_minus_F2": 1.1304074811178694e-15,
+          "delta_sign_below": -1,
+          "delta_sign_above": 1
+        }
+      ],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^22",
+        "remaining_Bernstein_degree": 150,
+        "primitive_integer_coefficient_sha256": "72d045ca9653121ffca5c478300a17caae222e78fa802c289f71a924715009bb",
+        "initial_sign_variations": 2,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1/2"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          },
+          {
+            "interval": [
+              "1/2",
+              "3/4"
+            ],
+            "variations": 1,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": -1
+          },
+          {
+            "interval": [
+              "3/4",
+              "1"
+            ],
+            "variations": 1,
+            "first_nonzero_sign": -1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": -0.011284046937229892,
+        "delta_derivative": -0.7444144979990188,
+        "first_F2": 0.1817421679764375,
+        "second_F2": 0.1930262149136674,
+        "first_derivative": 8.994347140843798,
+        "second_derivative": 9.738761638842817
+      },
+      "integrated_delta": {
+        "exact": "-935822191427828010393662446447/251288084579918462104454041215600",
+        "float": -0.0037241009377434434
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042500048,
+      "second_counter": 43042500622,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 148,
+          "sign": 1
+        },
+        {
+          "first": 149,
+          "last": 150,
+          "sign": -1
+        },
+        {
+          "first": 151,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 1,
+      "thermal_root_count": 1,
+      "roots": [
+        {
+          "p": 0.9960045011807955,
+          "isolation_interval": [
+            "0",
+            "1"
+          ],
+          "delta_derivative": 1.632136681176568e-43,
+          "first_F2": 1.0,
+          "second_F2": 1.0,
+          "first_one_minus_F2": 6.706949640903738e-46,
+          "second_one_minus_F2": 6.706949640903818e-46,
+          "delta_sign_below": -1,
+          "delta_sign_above": 1
+        }
+      ],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^23",
+        "remaining_Bernstein_degree": 149,
+        "primitive_integer_coefficient_sha256": "dc85f4aca0f32300ff292ea1ff0a679c09e2c2fbf8ed9bf3eae08651695446be",
+        "initial_sign_variations": 1,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 1,
+            "first_nonzero_sign": -1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": -0.054148224233797344,
+        "delta_derivative": -2.0447740770123204,
+        "first_F2": 0.1817421679764375,
+        "second_F2": 0.23589039221023483,
+        "first_derivative": 8.994347140843798,
+        "second_derivative": 11.039121217856119
+      },
+      "integrated_delta": {
+        "exact": "-8007737845607317157319143775343/1005152338319673848417816164862400",
+        "float": -0.00796669075952602
+      },
+      "initial_delta_sign": -1
+    },
+    {
+      "first_counter": 43042500048,
+      "second_counter": 43042500835,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 153,
+          "sign": -1
+        },
+        {
+          "first": 154,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^20",
+        "remaining_Bernstein_degree": 152,
+        "primitive_integer_coefficient_sha256": "812fddb42dc435eecddf9c9e68b9f2a2d6e2a0a5ae766fb26daa2073260b41e7",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.06836101070886064,
+        "delta_derivative": 2.921653646573342,
+        "first_F2": 0.1817421679764375,
+        "second_F2": 0.11338115726757685,
+        "first_derivative": 8.994347140843798,
+        "second_derivative": 6.072693494270457
+      },
+      "integrated_delta": {
+        "exact": "6878471402946426004303997867197/502576169159836924208908082431200",
+        "float": 0.013686425710246579
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042500048,
+      "second_counter": 43042500881,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 154,
+          "sign": -1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^19",
+        "remaining_Bernstein_degree": 153,
+        "primitive_integer_coefficient_sha256": "6056b197027671ad9d2c5ce1b66bd39f9cdb4927a759f923600b15b0b4599b88",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.10214221098386685,
+        "delta_derivative": 4.29268478471593,
+        "first_F2": 0.1817421679764375,
+        "second_F2": 0.07959995699257064,
+        "first_derivative": 8.994347140843798,
+        "second_derivative": 4.701662356127869
+      },
+      "integrated_delta": {
+        "exact": "42646597526064427704629608870499381755237673791129/2340277645350421400877906335041238107571051170862400",
+        "float": 0.018222879499273575
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042500048,
+      "second_counter": 43042500904,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 149,
+          "sign": 1
+        },
+        {
+          "first": 150,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^24",
+        "remaining_Bernstein_degree": 148,
+        "primitive_integer_coefficient_sha256": "fcebb5207c1e66698f9336aa04974e5f1f322a7024f8b7bf0d530372a811ea05",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": -1,
+            "last_nonzero_sign": -1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": -0.13985989032350205,
+        "delta_derivative": -4.912323530018645,
+        "first_F2": 0.1817421679764375,
+        "second_F2": 0.3216020582999396,
+        "first_derivative": 8.994347140843798,
+        "second_derivative": 13.906670670862443
+      },
+      "integrated_delta": {
+        "exact": "-17814385862048332388327776842803/1005152338319673848417816164862400",
+        "float": -0.01772307060622161
+      },
+      "initial_delta_sign": -1
+    },
+    {
+      "first_counter": 43042500048,
+      "second_counter": 43042501006,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 153,
+          "sign": -1
+        },
+        {
+          "first": 154,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^20",
+        "remaining_Bernstein_degree": 152,
+        "primitive_integer_coefficient_sha256": "a129597cc1e10d1e87cb5883188e00dd38108348d1d60e0bf290df1ab942c59c",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.04881229505399843,
+        "delta_derivative": 1.9870312203753893,
+        "first_F2": 0.1817421679764375,
+        "second_F2": 0.13292987292243907,
+        "first_derivative": 8.994347140843798,
+        "second_derivative": 7.00731592046841
+      },
+      "integrated_delta": {
+        "exact": "432427197849767463429778455487/52902754648403886758832429729600",
+        "float": 0.008174001537797316
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042500048,
+      "second_counter": 43042501010,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 154,
+          "sign": -1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^19",
+        "remaining_Bernstein_degree": 153,
+        "primitive_integer_coefficient_sha256": "5b4725198126ac29d4edaaf3c1152e54f479ff1f89e5076d6c342dc36cc8ee39",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.06053718442797246,
+        "delta_derivative": 2.2758666483378196,
+        "first_F2": 0.1817421679764375,
+        "second_F2": 0.12120498354846504,
+        "first_derivative": 8.994347140843798,
+        "second_derivative": 6.718480492505979
+      },
+      "integrated_delta": {
+        "exact": "14279346679433158008851870206414243853/1759739296590681080228190698331736065600",
+        "float": 0.0081144671299311
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042500048,
+      "second_counter": 43042501013,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 149,
+          "sign": 1
+        },
+        {
+          "first": 150,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^24",
+        "remaining_Bernstein_degree": 148,
+        "primitive_integer_coefficient_sha256": "b192e4551b71caceddda1cbd6f578d8bd52ca317511a4a9bd84eaa0341d7f202",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": -1,
+            "last_nonzero_sign": -1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": -0.10109058936473067,
+        "delta_derivative": -3.708044409611052,
+        "first_F2": 0.1817421679764375,
+        "second_F2": 0.28283275734116814,
+        "first_derivative": 8.994347140843798,
+        "second_derivative": 12.702391550454848
+      },
+      "integrated_delta": {
+        "exact": "-13892091318627140757129181279561/1005152338319673848417816164862400",
+        "float": -0.013820881461461583
+      },
+      "initial_delta_sign": -1
+    },
+    {
+      "first_counter": 43042500048,
+      "second_counter": 43042501043,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 154,
+          "sign": -1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^19",
+        "remaining_Bernstein_degree": 153,
+        "primitive_integer_coefficient_sha256": "54a3b19f62d6b2b42b12c3414a79a9e3ce8bfd78cb420ea2439e98d8892e6149",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.12999609127548015,
+        "delta_derivative": 5.641996424592223,
+        "first_F2": 0.1817421679764375,
+        "second_F2": 0.051746076700957336,
+        "first_derivative": 8.994347140843798,
+        "second_derivative": 3.352350716251575
+      },
+      "integrated_delta": {
+        "exact": "525485728894907965087437052154233181/19337794468029462420090007673975121600",
+        "float": 0.02717402596059629
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042500048,
+      "second_counter": 43042501410,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 154,
+          "sign": -1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^19",
+        "remaining_Bernstein_degree": 153,
+        "primitive_integer_coefficient_sha256": "7748d0ea8c0e274ca9b7b9973691e046fa5d8c7e0de1715edbb4f56be8a58dec",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.08687492077713214,
+        "delta_derivative": 3.555925896133322,
+        "first_F2": 0.1817421679764375,
+        "second_F2": 0.09486724719930534,
+        "first_derivative": 8.994347140843798,
+        "second_derivative": 5.438421244710478
+      },
+      "integrated_delta": {
+        "exact": "986889260467054879810009547260403/65917714136600280200336780728638600",
+        "float": 0.014971533424565349
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042500083,
+      "second_counter": 43042500106,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 153,
+          "sign": 1
+        },
+        {
+          "first": 154,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^20",
+        "remaining_Bernstein_degree": 152,
+        "primitive_integer_coefficient_sha256": "7d4235dc0be82435ccb99b65dc3fee46a86eef54081984d87f3d6b20e3f46070",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": -1,
+            "last_nonzero_sign": -1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": -0.059798433547104624,
+        "delta_derivative": -2.9015431692363625,
+        "first_F2": 0.13322778136656274,
+        "second_F2": 0.1930262149136674,
+        "first_derivative": 6.837218469606454,
+        "second_derivative": 9.738761638842817
+      },
+      "integrated_delta": {
+        "exact": "-4884244699847317834676174503/333383860139195306274565892160",
+        "float": -0.014650513368607692
+      },
+      "initial_delta_sign": -1
+    },
+    {
+      "first_counter": 43042500083,
+      "second_counter": 43042500622,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 153,
+          "sign": 1
+        },
+        {
+          "first": 154,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^20",
+        "remaining_Bernstein_degree": 152,
+        "primitive_integer_coefficient_sha256": "17c4d49290df706024819a8bc336c487b3ea6ceb082de191e948c058fcd7295d",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": -1,
+            "last_nonzero_sign": -1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": -0.10266261084367208,
+        "delta_derivative": -4.201902748249664,
+        "first_F2": 0.13322778136656274,
+        "second_F2": 0.23589039221023483,
+        "first_derivative": 6.837218469606454,
+        "second_derivative": 11.039121217856119
+      },
+      "integrated_delta": {
+        "exact": "-50649605958086738833/2680851602178778300272",
+        "float": -0.018893103190390267
+      },
+      "initial_delta_sign": -1
+    },
+    {
+      "first_counter": 43042500083,
+      "second_counter": 43042500835,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 42,
+          "sign": -1
+        },
+        {
+          "first": 43,
+          "last": 149,
+          "sign": 1
+        },
+        {
+          "first": 150,
+          "last": 153,
+          "sign": -1
+        },
+        {
+          "first": 154,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 2,
+      "thermal_root_count": 2,
+      "roots": [
+        {
+          "p": 0.7164491606758403,
+          "isolation_interval": [
+            "1/2",
+            "3/4"
+          ],
+          "delta_derivative": -0.05904361594259653,
+          "first_F2": 0.9761278766684185,
+          "second_F2": 0.9761278766684186,
+          "first_one_minus_F2": 0.023872123331581514,
+          "second_one_minus_F2": 0.023872123331581514,
+          "delta_sign_below": 1,
+          "delta_sign_above": -1
+        },
+        {
+          "p": 0.9916221250502755,
+          "isolation_interval": [
+            "3/4",
+            "1"
+          ],
+          "delta_derivative": 1.6241670522882558e-31,
+          "first_F2": 1.0000000000000004,
+          "second_F2": 1.0000000000000004,
+          "first_one_minus_F2": 1.365131052598149e-32,
+          "second_one_minus_F2": 1.3651310525981517e-32,
+          "delta_sign_below": -1,
+          "delta_sign_above": 1
+        }
+      ],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^20",
+        "remaining_Bernstein_degree": 152,
+        "primitive_integer_coefficient_sha256": "e32d37e2f43a2184067e2757d1672fd5f82f88a28d829914e9c848cf218bfa73",
+        "initial_sign_variations": 2,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1/2"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          },
+          {
+            "interval": [
+              "1/2",
+              "3/4"
+            ],
+            "variations": 1,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": -1
+          },
+          {
+            "interval": [
+              "3/4",
+              "1"
+            ],
+            "variations": 1,
+            "first_nonzero_sign": -1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.019846624098985903,
+        "delta_derivative": 0.7645249753359987,
+        "first_F2": 0.13322778136656274,
+        "second_F2": 0.11338115726757685,
+        "first_derivative": 6.837218469606454,
+        "second_derivative": 6.072693494270457
+      },
+      "integrated_delta": {
+        "exact": "115781176058341315202293/41949499635832274359473600",
+        "float": 0.0027600132793823306
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042500083,
+      "second_counter": 43042500881,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 40,
+          "sign": -1
+        },
+        {
+          "first": 41,
+          "last": 78,
+          "sign": 1
+        },
+        {
+          "first": 79,
+          "last": 154,
+          "sign": -1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 2,
+      "thermal_root_count": 2,
+      "roots": [
+        {
+          "p": 0.7174239221539441,
+          "isolation_interval": [
+            "1/2",
+            "3/4"
+          ],
+          "delta_derivative": -0.08069672296437858,
+          "first_F2": 0.9772856086777675,
+          "second_F2": 0.9772856086777675,
+          "first_one_minus_F2": 0.022714391322232543,
+          "second_one_minus_F2": 0.02271439132223254,
+          "delta_sign_below": 1,
+          "delta_sign_above": -1
+        },
+        {
+          "p": 0.8091408713452545,
+          "isolation_interval": [
+            "3/4",
+            "1"
+          ],
+          "delta_derivative": 0.00012930583480206794,
+          "first_F2": 0.9999703546013694,
+          "second_F2": 0.9999703546013694,
+          "first_one_minus_F2": 2.9645398630419857e-05,
+          "second_one_minus_F2": 2.964539863041986e-05,
+          "delta_sign_below": -1,
+          "delta_sign_above": 1
+        }
+      ],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^19",
+        "remaining_Bernstein_degree": 153,
+        "primitive_integer_coefficient_sha256": "2b5afa4006a93d3ab51c38cd162f34147ced43f1ad6be8e06b89fee1b630c62c",
+        "initial_sign_variations": 2,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1/2"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          },
+          {
+            "interval": [
+              "1/2",
+              "3/4"
+            ],
+            "variations": 1,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": -1
+          },
+          {
+            "interval": [
+              "3/4",
+              "1"
+            ],
+            "variations": 1,
+            "first_nonzero_sign": -1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.05362782437399212,
+        "delta_derivative": 2.1355561134785868,
+        "first_F2": 0.13322778136656274,
+        "second_F2": 0.07959995699257064,
+        "first_derivative": 6.837218469606454,
+        "second_derivative": 4.701662356127869
+      },
+      "integrated_delta": {
+        "exact": "8537879385116934872184837110220913869749485732061/1170138822675210700438953167520619053785525585431200",
+        "float": 0.007296467068409326
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042500083,
+      "second_counter": 43042500904,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 153,
+          "sign": 1
+        },
+        {
+          "first": 154,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^20",
+        "remaining_Bernstein_degree": 152,
+        "primitive_integer_coefficient_sha256": "c6173976f8e6001a6880fbf719dcec7d6aaeb312dc0bbc7c5fa05e595509b317",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": -1,
+            "last_nonzero_sign": -1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": -0.18837427693337677,
+        "delta_derivative": -7.069452201255988,
+        "first_F2": 0.13322778136656274,
+        "second_F2": 0.3216020582999396,
+        "first_derivative": 6.837218469606454,
+        "second_derivative": 13.906670670862443
+      },
+      "integrated_delta": {
+        "exact": "-576037593761740197751/20106387016340837252040",
+        "float": -0.02864948303708586
+      },
+      "initial_delta_sign": -1
+    },
+    {
+      "first_counter": 43042500083,
+      "second_counter": 43042501006,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 10,
+          "sign": -1
+        },
+        {
+          "first": 11,
+          "last": 153,
+          "sign": 1
+        },
+        {
+          "first": 154,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 1,
+      "thermal_root_count": 1,
+      "roots": [
+        {
+          "p": 0.5943538976117172,
+          "isolation_interval": [
+            "0",
+            "1"
+          ],
+          "delta_derivative": -0.2007990136229957,
+          "first_F2": 0.1444973884997377,
+          "second_F2": 0.14449738849973764,
+          "first_one_minus_F2": 0.8555026115002633,
+          "second_one_minus_F2": 0.8555026115002633,
+          "delta_sign_below": 1,
+          "delta_sign_above": -1
+        }
+      ],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^20",
+        "remaining_Bernstein_degree": 152,
+        "primitive_integer_coefficient_sha256": "83575a194c1baaf039012f9dbab10e91c0623199d3e7b1070934e242f049412a",
+        "initial_sign_variations": 1,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 1,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": -1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.00029790844412369067,
+        "delta_derivative": -0.17009745086195416,
+        "first_F2": 0.13322778136656274,
+        "second_F2": 0.13292987292243907,
+        "first_derivative": 6.837218469606454,
+        "second_derivative": 7.00731592046841
+      },
+      "integrated_delta": {
+        "exact": "-18201264770939272531633063727/6612844331050485844854053716200",
+        "float": -0.0027524108930669327
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042500083,
+      "second_counter": 43042501010,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 13,
+          "sign": -1
+        },
+        {
+          "first": 14,
+          "last": 138,
+          "sign": 1
+        },
+        {
+          "first": 139,
+          "last": 154,
+          "sign": -1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 2,
+      "thermal_root_count": 2,
+      "roots": [
+        {
+          "p": 0.6181331818215855,
+          "isolation_interval": [
+            "1/2",
+            "3/4"
+          ],
+          "delta_derivative": -1.1304129729616472,
+          "first_F2": 0.36410654574470985,
+          "second_F2": 0.3641065457447099,
+          "first_one_minus_F2": 0.6358934542552899,
+          "second_one_minus_F2": 0.63589345425529,
+          "delta_sign_below": 1,
+          "delta_sign_above": -1
+        },
+        {
+          "p": 0.9624629094208275,
+          "isolation_interval": [
+            "3/4",
+            "1"
+          ],
+          "delta_derivative": 6.6445059771151795e-18,
+          "first_F2": 0.9999999999999998,
+          "second_F2": 0.9999999999999998,
+          "first_one_minus_F2": 1.9978148816672706e-19,
+          "second_one_minus_F2": 1.997814881667314e-19,
+          "delta_sign_below": -1,
+          "delta_sign_above": 1
+        }
+      ],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^19",
+        "remaining_Bernstein_degree": 153,
+        "primitive_integer_coefficient_sha256": "0cecaf19406208bf296387d1d3dff4e4db3d52d7c11231817840a201c2cb60cd",
+        "initial_sign_variations": 2,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1/2"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          },
+          {
+            "interval": [
+              "1/2",
+              "3/4"
+            ],
+            "variations": 1,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": -1
+          },
+          {
+            "interval": [
+              "3/4",
+              "1"
+            ],
+            "variations": 1,
+            "first_nonzero_sign": -1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.012022797818097718,
+        "delta_derivative": 0.11873797710047655,
+        "first_F2": 0.13322778136656274,
+        "second_F2": 0.12120498354846504,
+        "first_derivative": 6.837218469606454,
+        "second_derivative": 6.718480492505979
+      },
+      "integrated_delta": {
+        "exact": "-494829064591556872813700970765951043/175973929659068108022819069833173606560",
+        "float": -0.002811945300933148
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042500083,
+      "second_counter": 43042501013,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 153,
+          "sign": 1
+        },
+        {
+          "first": 154,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^20",
+        "remaining_Bernstein_degree": 152,
+        "primitive_integer_coefficient_sha256": "7e76f951cf6943e25d113229c5660fac4fb8f4fddb067965d9025094bb55b169",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": -1,
+            "last_nonzero_sign": -1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": -0.1496049759746054,
+        "delta_derivative": -5.865173080848395,
+        "first_F2": 0.13322778136656274,
+        "second_F2": 0.28283275734116814,
+        "first_derivative": 6.837218469606454,
+        "second_derivative": 12.702391550454848
+      },
+      "integrated_delta": {
+        "exact": "-155306480829698953/6275695496462330400",
+        "float": -0.02474729389232583
+      },
+      "initial_delta_sign": -1
+    },
+    {
+      "first_counter": 43042500083,
+      "second_counter": 43042501043,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 154,
+          "sign": -1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^19",
+        "remaining_Bernstein_degree": 153,
+        "primitive_integer_coefficient_sha256": "d8e30c8528fb2ea18a26ff22460dfe7b8f7e099dc765a317f27fd1d148509ff7",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.08148170466560542,
+        "delta_derivative": 3.48486775335488,
+        "first_F2": 0.13322778136656274,
+        "second_F2": 0.051746076700957336,
+        "first_derivative": 6.837218469606454,
+        "second_derivative": 3.352350716251575
+      },
+      "integrated_delta": {
+        "exact": "1021127285860282074498853279712909471/62847832021095752865292524940419145200",
+        "float": 0.016247613529732044
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042500083,
+      "second_counter": 43042501410,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 30,
+          "sign": -1
+        },
+        {
+          "first": 31,
+          "last": 87,
+          "sign": 1
+        },
+        {
+          "first": 88,
+          "last": 154,
+          "sign": -1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 2,
+      "thermal_root_count": 2,
+      "roots": [
+        {
+          "p": 0.6834000395364155,
+          "isolation_interval": [
+            "1/2",
+            "3/4"
+          ],
+          "delta_derivative": -0.46831252446705557,
+          "first_F2": 0.8959322114595483,
+          "second_F2": 0.8959322114595492,
+          "first_one_minus_F2": 0.10406778854045157,
+          "second_one_minus_F2": 0.10406778854045065,
+          "delta_sign_below": 1,
+          "delta_sign_above": -1
+        },
+        {
+          "p": 0.8336877384384767,
+          "isolation_interval": [
+            "3/4",
+            "1"
+          ],
+          "delta_derivative": 1.734607574857052e-05,
+          "first_F2": 0.9999978283276488,
+          "second_F2": 0.9999978283276489,
+          "first_one_minus_F2": 2.171672351139337e-06,
+          "second_one_minus_F2": 2.171672351139337e-06,
+          "delta_sign_below": -1,
+          "delta_sign_above": 1
+        }
+      ],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^19",
+        "remaining_Bernstein_degree": 153,
+        "primitive_integer_coefficient_sha256": "4341bc9dc75845dd2b01b660db36081fbb264db5cc3793a136e2ed590008df89",
+        "initial_sign_variations": 2,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1/2"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          },
+          {
+            "interval": [
+              "1/2",
+              "3/4"
+            ],
+            "variations": 1,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": -1
+          },
+          {
+            "interval": [
+              "3/4",
+              "1"
+            ],
+            "variations": 1,
+            "first_nonzero_sign": -1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.03836053416725741,
+        "delta_derivative": 1.3987972248959788,
+        "first_F2": 0.13322778136656274,
+        "second_F2": 0.09486724719930534,
+        "first_derivative": 6.837218469606454,
+        "second_derivative": 5.438421244710478
+      },
+      "integrated_delta": {
+        "exact": "1423671674415954066883826991917992841/351947859318136216045638139666347213120",
+        "float": 0.0040451209937011
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042500106,
+      "second_counter": 43042500622,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 151,
+          "sign": 1
+        },
+        {
+          "first": 152,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^22",
+        "remaining_Bernstein_degree": 150,
+        "primitive_integer_coefficient_sha256": "45fef0ed1a21c302ac0dd8e81cc81cd5a6883471fdaf7b19dad662274f9dcd29",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": -1,
+            "last_nonzero_sign": -1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": -0.042864177296567454,
+        "delta_derivative": -1.3003595790133016,
+        "first_F2": 0.1930262149136674,
+        "second_F2": 0.23589039221023483,
+        "first_derivative": 9.738761638842817,
+        "second_derivative": 11.039121217856119
+      },
+      "integrated_delta": {
+        "exact": "-4243232915319408075367655711/1000151580417585918823697676480",
+        "float": -0.004242589821782577
+      },
+      "initial_delta_sign": -1
+    },
+    {
+      "first_counter": 43042500106,
+      "second_counter": 43042500835,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 153,
+          "sign": -1
+        },
+        {
+          "first": 154,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^20",
+        "remaining_Bernstein_degree": 152,
+        "primitive_integer_coefficient_sha256": "e6ed1c46791d869d0907e819d7c0b991b0e6f4716e47e7038ea621b9b7003382",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.07964505764609053,
+        "delta_derivative": 3.666068144572361,
+        "first_F2": 0.1930262149136674,
+        "second_F2": 0.11338115726757685,
+        "first_derivative": 9.738761638842817,
+        "second_derivative": 6.072693494270457
+      },
+      "integrated_delta": {
+        "exact": "3348685719786483744772798607/192336842387997292081480322400",
+        "float": 0.017410526647990022
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042500106,
+      "second_counter": 43042500881,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 154,
+          "sign": -1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^19",
+        "remaining_Bernstein_degree": 153,
+        "primitive_integer_coefficient_sha256": "ba1b9a034dad4fae79011e8adf5b707ce2f9c013d24ccafe09f623249ad1042e",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.11342625792109676,
+        "delta_derivative": 5.03709928271495,
+        "first_F2": 0.1930262149136674,
+        "second_F2": 0.07959995699257064,
+        "first_derivative": 9.738761638842817,
+        "second_derivative": 4.701662356127869
+      },
+      "integrated_delta": {
+        "exact": "199891915125935299248256049447581324075237433/9107946111292207406442159086204803706459457600",
+        "float": 0.021946980437017018
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042500106,
+      "second_counter": 43042500904,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 151,
+          "sign": 1
+        },
+        {
+          "first": 152,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^22",
+        "remaining_Bernstein_degree": 150,
+        "primitive_integer_coefficient_sha256": "291a4acd9d950841e1d4b8c2748a91b97ab2991a351cc351115a168b618c80f9",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": -1,
+            "last_nonzero_sign": -1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": -0.12857584338627215,
+        "delta_derivative": -4.167909032019626,
+        "first_F2": 0.1930262149136674,
+        "second_F2": 0.3216020582999396,
+        "first_derivative": 9.738761638842817,
+        "second_derivative": 13.906670670862443
+      },
+      "integrated_delta": {
+        "exact": "-42003274914438866706725752409/3000454741252757756471093029440",
+        "float": -0.013998969668478169
+      },
+      "initial_delta_sign": -1
+    },
+    {
+      "first_counter": 43042500106,
+      "second_counter": 43042501006,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 153,
+          "sign": -1
+        },
+        {
+          "first": 154,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^20",
+        "remaining_Bernstein_degree": 152,
+        "primitive_integer_coefficient_sha256": "7e707da022b3305fa4d1d98729f840506027211141e0e66c12382598e772f0d6",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.06009634199122832,
+        "delta_derivative": 2.7314457183744083,
+        "first_F2": 0.1930262149136674,
+        "second_F2": 0.13292987292243907,
+        "first_derivative": 9.738761638842817,
+        "second_derivative": 7.00731592046841
+      },
+      "integrated_delta": {
+        "exact": "35071570454125788406863461701/2947660816186726828204739486400",
+        "float": 0.011898102475540758
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042500106,
+      "second_counter": 43042501010,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 154,
+          "sign": -1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^19",
+        "remaining_Bernstein_degree": 153,
+        "primitive_integer_coefficient_sha256": "60d998ffa236125eb4af96892eb152b29cfc4f82722fc81378bd6c8938820859",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.07182123136520234,
+        "delta_derivative": 3.020281146336839,
+        "first_F2": 0.1930262149136674,
+        "second_F2": 0.12120498354846504,
+        "first_derivative": 9.738761638842817,
+        "second_derivative": 6.718480492505979
+      },
+      "integrated_delta": {
+        "exact": "833311737762020020598615980189569017/70389571863627243209127627933269442624",
+        "float": 0.011838568067674544
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042500106,
+      "second_counter": 43042501013,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 151,
+          "sign": 1
+        },
+        {
+          "first": 152,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^22",
+        "remaining_Bernstein_degree": 150,
+        "primitive_integer_coefficient_sha256": "1957907e2904eb7167ce8308c165cc8b365436cf6519bb04c2fdac7c67a070f8",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": -1,
+            "last_nonzero_sign": -1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": -0.08980654242750077,
+        "delta_derivative": -2.9636299116120326,
+        "first_F2": 0.1930262149136674,
+        "second_F2": 0.28283275734116814,
+        "first_derivative": 9.738761638842817,
+        "second_derivative": 12.702391550454848
+      },
+      "integrated_delta": {
+        "exact": "-50491554989630988634599659173/5000757902087929594118488382400",
+        "float": -0.01009678052371814
+      },
+      "initial_delta_sign": -1
+    },
+    {
+      "first_counter": 43042500106,
+      "second_counter": 43042501043,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 154,
+          "sign": -1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^19",
+        "remaining_Bernstein_degree": 153,
+        "primitive_integer_coefficient_sha256": "ff5214125927f65be30a30e86e72c6ceb623c363a39f7de71cfd86c2fa57578d",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.14128013821271004,
+        "delta_derivative": 6.386410922591242,
+        "first_F2": 0.1930262149136674,
+        "second_F2": 0.051746076700957336,
+        "first_derivative": 9.738761638842817,
+        "second_derivative": 3.352350716251575
+      },
+      "integrated_delta": {
+        "exact": "2364028178002346405611752219320008741/76510404199594829575138726014423307200",
+        "float": 0.030898126898339734
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042500106,
+      "second_counter": 43042501410,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 154,
+          "sign": -1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^19",
+        "remaining_Bernstein_degree": 153,
+        "primitive_integer_coefficient_sha256": "1baee347d5e121597f68569673983cb743ce8491f71c393e9b6a4b5044c7b79e",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.09815896771436203,
+        "delta_derivative": 4.30034039413234,
+        "first_F2": 0.1930262149136674,
+        "second_F2": 0.09486724719930534,
+        "first_derivative": 9.738761638842817,
+        "second_derivative": 5.438421244710478
+      },
+      "integrated_delta": {
+        "exact": "1644972123102291978876077208599435003/87986964829534054011409534916586803280",
+        "float": 0.018695634362308793
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042500622,
+      "second_counter": 43042500835,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 153,
+          "sign": -1
+        },
+        {
+          "first": 154,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^20",
+        "remaining_Bernstein_degree": 152,
+        "primitive_integer_coefficient_sha256": "2a590378593e7f0758cb4734f1303da2d555528bc3742a3d7ae6aad764deba13",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.12250923494265797,
+        "delta_derivative": 4.966427723585661,
+        "first_F2": 0.23589039221023483,
+        "second_F2": 0.11338115726757685,
+        "first_derivative": 11.039121217856119,
+        "second_derivative": 6.072693494270457
+      },
+      "integrated_delta": {
+        "exact": "20891760233657267555649439/964838491624142310267892800",
+        "float": 0.0216531164697726
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042500622,
+      "second_counter": 43042500881,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 154,
+          "sign": -1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^19",
+        "remaining_Bernstein_degree": 153,
+        "primitive_integer_coefficient_sha256": "72e7c63a4dac9c935701cba7152a2aa0c68c72f00aae13af2924be614815f65f",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.15629043521766417,
+        "delta_derivative": 6.337458861728251,
+        "first_F2": 0.23589039221023483,
+        "second_F2": 0.07959995699257064,
+        "first_derivative": 11.039121217856119,
+        "second_derivative": 4.701662356127869
+      },
+      "integrated_delta": {
+        "exact": "124070578578953322503811970029958157086346900213/4737404140385468422829769908990360541641803989600",
+        "float": 0.026189570258799595
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042500622,
+      "second_counter": 43042500904,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 150,
+          "sign": 1
+        },
+        {
+          "first": 151,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^23",
+        "remaining_Bernstein_degree": 149,
+        "primitive_integer_coefficient_sha256": "3d147e8e9110bbeca6a0114088d555d4aa629db6ec9d51bd2930b4276e4faa2a",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": -1,
+            "last_nonzero_sign": -1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": -0.0857116660897047,
+        "delta_derivative": -2.867549453006325,
+        "first_F2": 0.23589039221023483,
+        "second_F2": 0.3216020582999396,
+        "first_derivative": 11.039121217856119,
+        "second_derivative": 13.906670670862443
+      },
+      "integrated_delta": {
+        "exact": "-491027657261801393/50328878639151031920",
+        "float": -0.009756379846695591
+      },
+      "initial_delta_sign": -1
+    },
+    {
+      "first_counter": 43042500622,
+      "second_counter": 43042501006,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 153,
+          "sign": -1
+        },
+        {
+          "first": 154,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^20",
+        "remaining_Bernstein_degree": 152,
+        "primitive_integer_coefficient_sha256": "62d2be6421d1e5cd021ecd50bd2a2c9b08490d787f1f25ec5e0fcbdbba11ba21",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.10296051928779576,
+        "delta_derivative": 4.031805297387709,
+        "first_F2": 0.23589039221023483,
+        "second_F2": 0.13292987292243907,
+        "first_derivative": 11.039121217856119,
+        "second_derivative": 7.00731592046841
+      },
+      "integrated_delta": {
+        "exact": "238586097128719102389484329847/14781652034112850712026708306800",
+        "float": 0.016140692297323334
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042500622,
+      "second_counter": 43042501010,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 154,
+          "sign": -1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^19",
+        "remaining_Bernstein_degree": 153,
+        "primitive_integer_coefficient_sha256": "220d6d270918606a2d3e701d40388ec887f0843f033967f483e9c0a80dbdfc21",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.1146854086617698,
+        "delta_derivative": 4.32064072535014,
+        "first_F2": 0.23589039221023483,
+        "second_F2": 0.12120498354846504,
+        "first_derivative": 11.039121217856119,
+        "second_derivative": 6.718480492505979
+      },
+      "integrated_delta": {
+        "exact": "2829864547275695469519648427763896547/175973929659068108022819069833173606560",
+        "float": 0.01608115788945712
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042500622,
+      "second_counter": 43042501013,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 150,
+          "sign": 1
+        },
+        {
+          "first": 151,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^23",
+        "remaining_Bernstein_degree": 149,
+        "primitive_integer_coefficient_sha256": "a75a39bff3aa6db168f5611c5ff1e5f75c86a73f9dd11804e16af7de4cd8cf20",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": -1,
+            "last_nonzero_sign": -1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": -0.04694236513093333,
+        "delta_derivative": -1.663270332598731,
+        "first_F2": 0.23589039221023483,
+        "second_F2": 0.28283275734116814,
+        "first_derivative": 11.039121217856119,
+        "second_derivative": 12.702391550454848
+      },
+      "integrated_delta": {
+        "exact": "-87190091793022555053/14893620012104323890400",
+        "float": -0.005854190701935563
+      },
+      "initial_delta_sign": -1
+    },
+    {
+      "first_counter": 43042500622,
+      "second_counter": 43042501043,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 154,
+          "sign": -1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^19",
+        "remaining_Bernstein_degree": 153,
+        "primitive_integer_coefficient_sha256": "ce086846b26063070ef97489cebc8e97380bc6b51fb2095e21e5d3dc8ba251cc",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.1841443155092775,
+        "delta_derivative": 7.686770501604545,
+        "first_F2": 0.23589039221023483,
+        "second_F2": 0.051746076700957336,
+        "first_derivative": 11.039121217856119,
+        "second_derivative": 3.352350716251575
+      },
+      "integrated_delta": {
+        "exact": "1919019988913866109399869222233737/54609585917039507206684170131943150",
+        "float": 0.03514071672012231
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042500622,
+      "second_counter": 43042501410,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 154,
+          "sign": -1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^19",
+        "remaining_Bernstein_degree": 153,
+        "primitive_integer_coefficient_sha256": "ea3ac1f9f33cf5473197af96e1bcbb66f0fcec50e732d3ba332e732212b38385",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.1410231450109295,
+        "delta_derivative": 5.600699973145643,
+        "first_F2": 0.23589039221023483,
+        "second_F2": 0.09486724719930534,
+        "first_derivative": 11.039121217856119,
+        "second_derivative": 5.438421244710478
+      },
+      "integrated_delta": {
+        "exact": "8073058898150458751550525788977688021/351947859318136216045638139666347213120",
+        "float": 0.022938224184091367
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042500835,
+      "second_counter": 43042500881,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 37,
+          "sign": -1
+        },
+        {
+          "first": 38,
+          "last": 56,
+          "sign": 1
+        },
+        {
+          "first": 57,
+          "last": 154,
+          "sign": -1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 2,
+      "thermal_root_count": 2,
+      "roots": [
+        {
+          "p": 0.7199435794913626,
+          "isolation_interval": [
+            "23/32",
+            "47/64"
+          ],
+          "delta_derivative": -0.01716848653937478,
+          "first_F2": 0.980234415471988,
+          "second_F2": 0.9802344154719882,
+          "first_one_minus_F2": 0.019765584528013004,
+          "second_one_minus_F2": 0.019765584528012994,
+          "delta_sign_below": 1,
+          "delta_sign_above": -1
+        },
+        {
+          "p": 0.7412243719732935,
+          "isolation_interval": [
+            "47/64",
+            "3/4"
+          ],
+          "delta_derivative": 0.005138048583686527,
+          "first_F2": 0.9944151140086093,
+          "second_F2": 0.9944151140086094,
+          "first_one_minus_F2": 0.005584885991390258,
+          "second_one_minus_F2": 0.005584885991390257,
+          "delta_sign_below": -1,
+          "delta_sign_above": 1
+        }
+      ],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^19",
+        "remaining_Bernstein_degree": 153,
+        "primitive_integer_coefficient_sha256": "3f728dea4aaeee876e52641b7b3db7b879ab5e828cc099644bb96cc15ff35a0f",
+        "initial_sign_variations": 2,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1/2"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          },
+          {
+            "interval": [
+              "1/2",
+              "5/8"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          },
+          {
+            "interval": [
+              "5/8",
+              "11/16"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          },
+          {
+            "interval": [
+              "11/16",
+              "23/32"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          },
+          {
+            "interval": [
+              "23/32",
+              "47/64"
+            ],
+            "variations": 1,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": -1
+          },
+          {
+            "interval": [
+              "47/64",
+              "3/4"
+            ],
+            "variations": 1,
+            "first_nonzero_sign": -1,
+            "last_nonzero_sign": 1
+          },
+          {
+            "interval": [
+              "3/4",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.03378120027500621,
+        "delta_derivative": 1.3710311381425884,
+        "first_F2": 0.11338115726757685,
+        "second_F2": 0.07959995699257064,
+        "first_derivative": 6.072693494270457,
+        "second_derivative": 4.701662356127869
+      },
+      "integrated_delta": {
+        "exact": "2123312278325018902979761048960263053968963276847/468055529070084280175581267008247621514210234172480",
+        "float": 0.004536453789026996
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042500835,
+      "second_counter": 43042500904,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 153,
+          "sign": 1
+        },
+        {
+          "first": 154,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^20",
+        "remaining_Bernstein_degree": 152,
+        "primitive_integer_coefficient_sha256": "23cab40cc758bc60179feb150d0e994f42c094a5d3244269e2184fa6696ea76b",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": -1,
+            "last_nonzero_sign": -1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": -0.20822090103236268,
+        "delta_derivative": -7.8339771765919854,
+        "first_F2": 0.11338115726757685,
+        "second_F2": 0.3216020582999396,
+        "first_derivative": 6.072693494270457,
+        "second_derivative": 13.906670670862443
+      },
+      "integrated_delta": {
+        "exact": "-90915273145965669617192177/2894515474872426930803678400",
+        "float": -0.031409496316468194
+      },
+      "initial_delta_sign": -1
+    },
+    {
+      "first_counter": 43042500835,
+      "second_counter": 43042501006,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 153,
+          "sign": 1
+        },
+        {
+          "first": 154,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^20",
+        "remaining_Bernstein_degree": 152,
+        "primitive_integer_coefficient_sha256": "87adb4bfaadf38ca4eea80cf129afe91078f17e7d7b467b8ab709d7344e7a8f4",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": -1,
+            "last_nonzero_sign": -1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": -0.019548715654862214,
+        "delta_derivative": -0.934622426197953,
+        "first_F2": 0.11338115726757685,
+        "second_F2": 0.13292987292243907,
+        "first_derivative": 6.072693494270457,
+        "second_derivative": 7.00731592046841
+      },
+      "integrated_delta": {
+        "exact": "-791546578106752886206029297163/143593191188524835488259452123200",
+        "float": -0.005512424172449263
+      },
+      "initial_delta_sign": -1
+    },
+    {
+      "first_counter": 43042500835,
+      "second_counter": 43042501010,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 7,
+          "sign": -1
+        },
+        {
+          "first": 8,
+          "last": 135,
+          "sign": 1
+        },
+        {
+          "first": 136,
+          "last": 154,
+          "sign": -1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 2,
+      "thermal_root_count": 2,
+      "roots": [
+        {
+          "p": 0.5603724357830219,
+          "isolation_interval": [
+            "1/2",
+            "3/4"
+          ],
+          "delta_derivative": -0.023334674829761384,
+          "first_F2": 0.011186159954667707,
+          "second_F2": 0.011186159954667721,
+          "first_one_minus_F2": 0.9888138400453319,
+          "second_one_minus_F2": 0.988813840045332,
+          "delta_sign_below": 1,
+          "delta_sign_above": -1
+        },
+        {
+          "p": 0.9540825138920561,
+          "isolation_interval": [
+            "3/4",
+            "1"
+          ],
+          "delta_derivative": 2.1832662875478455e-16,
+          "first_F2": 1.0,
+          "second_F2": 1.0,
+          "first_one_minus_F2": 9.322153281285949e-18,
+          "second_one_minus_F2": 9.322153281286134e-18,
+          "delta_sign_below": -1,
+          "delta_sign_above": 1
+        }
+      ],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^19",
+        "remaining_Bernstein_degree": 153,
+        "primitive_integer_coefficient_sha256": "d1545fe2661dbd3d5abe22a882ae3ed7072ee4638b94955cc88f1c6aaa180484",
+        "initial_sign_variations": 2,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1/2"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          },
+          {
+            "interval": [
+              "1/2",
+              "3/4"
+            ],
+            "variations": 1,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": -1
+          },
+          {
+            "interval": [
+              "3/4",
+              "1"
+            ],
+            "variations": 1,
+            "first_nonzero_sign": -1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": -0.007823826280888183,
+        "delta_derivative": -0.6457869982355222,
+        "first_F2": 0.11338115726757685,
+        "second_F2": 0.12120498354846504,
+        "first_derivative": 6.072693494270457,
+        "second_derivative": 6.718480492505979
+      },
+      "integrated_delta": {
+        "exact": "-9805194472756769966806311477708285433/1759739296590681080228190698331736065600",
+        "float": -0.005571958580315478
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042500835,
+      "second_counter": 43042501013,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 153,
+          "sign": 1
+        },
+        {
+          "first": 154,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^20",
+        "remaining_Bernstein_degree": 152,
+        "primitive_integer_coefficient_sha256": "1227ccb13324101910760551e2b41e2ca30fc4ca5c2f172bf2c9fdf40bb8cbc1",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": -1,
+            "last_nonzero_sign": -1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": -0.1694516000735913,
+        "delta_derivative": -6.6296980561843935,
+        "first_F2": 0.11338115726757685,
+        "second_F2": 0.28283275734116814,
+        "first_derivative": 6.072693494270457,
+        "second_derivative": 12.702391550454848
+      },
+      "integrated_delta": {
+        "exact": "-5308021752038570943418577/192967698324828462053578560",
+        "float": -0.027507307171708163
+      },
+      "initial_delta_sign": -1
+    },
+    {
+      "first_counter": 43042500835,
+      "second_counter": 43042501043,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 154,
+          "sign": -1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^19",
+        "remaining_Bernstein_degree": 153,
+        "primitive_integer_coefficient_sha256": "4d4b965f495ec9edb33129225c0a90dc058c86f9c3f210ec4d86c402578da2f2",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.061635080566619524,
+        "delta_derivative": 2.720342778018882,
+        "first_F2": 0.11338115726757685,
+        "second_F2": 0.051746076700957336,
+        "first_derivative": 6.072693494270457,
+        "second_derivative": 3.352350716251575
+      },
+      "integrated_delta": {
+        "exact": "4746932035449339369459718012382538037/351947859318136216045638139666347213120",
+        "float": 0.013487600250349712
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042500835,
+      "second_counter": 43042501410,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 23,
+          "sign": -1
+        },
+        {
+          "first": 24,
+          "last": 72,
+          "sign": 1
+        },
+        {
+          "first": 73,
+          "last": 154,
+          "sign": -1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 2,
+      "thermal_root_count": 2,
+      "roots": [
+        {
+          "p": 0.6612518943037403,
+          "isolation_interval": [
+            "1/2",
+            "3/4"
+          ],
+          "delta_derivative": -0.5944925250896791,
+          "first_F2": 0.7556105111025573,
+          "second_F2": 0.7556105111025573,
+          "first_one_minus_F2": 0.24438948889744289,
+          "second_one_minus_F2": 0.2443894888974429,
+          "delta_sign_below": 1,
+          "delta_sign_above": -1
+        },
+        {
+          "p": 0.7936163633673867,
+          "isolation_interval": [
+            "3/4",
+            "1"
+          ],
+          "delta_derivative": 0.0006096201521637286,
+          "first_F2": 0.9999003968140241,
+          "second_F2": 0.9999003968140241,
+          "first_one_minus_F2": 9.960318597579623e-05,
+          "second_one_minus_F2": 9.960318597579623e-05,
+          "delta_sign_below": -1,
+          "delta_sign_above": 1
+        }
+      ],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^19",
+        "remaining_Bernstein_degree": 153,
+        "primitive_integer_coefficient_sha256": "c294c001ffca60b07bf1456c8b1a6e8bf845891cf6a15aca94e45bb705018bec",
+        "initial_sign_variations": 2,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1/2"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          },
+          {
+            "interval": [
+              "1/2",
+              "3/4"
+            ],
+            "variations": 1,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": -1
+          },
+          {
+            "interval": [
+              "3/4",
+              "1"
+            ],
+            "variations": 1,
+            "first_nonzero_sign": -1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.018513910068271508,
+        "delta_derivative": 0.6342722495599799,
+        "first_F2": 0.11338115726757685,
+        "second_F2": 0.09486724719930534,
+        "first_derivative": 6.072693494270457,
+        "second_derivative": 5.438421244710478
+      },
+      "integrated_delta": {
+        "exact": "1130727272619284547874916594770594601/879869648295340540114095349165868032800",
+        "float": 0.0012851077143187692
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042500881,
+      "second_counter": 43042500904,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 154,
+          "sign": 1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^19",
+        "remaining_Bernstein_degree": 153,
+        "primitive_integer_coefficient_sha256": "59092fe7dac7fdf3a896a087ff4a511f435855477e501787db09268c60d5e7f6",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": -1,
+            "last_nonzero_sign": -1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": -0.2420021013073689,
+        "delta_derivative": -9.205008314734577,
+        "first_F2": 0.07959995699257064,
+        "second_F2": 0.3216020582999396,
+        "first_derivative": 4.701662356127869,
+        "second_derivative": 13.906670670862443
+      },
+      "integrated_delta": {
+        "exact": "-42061751736386003187600459616558593190066303648841/1170138822675210700438953167520619053785525585431200",
+        "float": -0.035945950105495186
+      },
+      "initial_delta_sign": -1
+    },
+    {
+      "first_counter": 43042500881,
+      "second_counter": 43042501006,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 154,
+          "sign": 1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^19",
+        "remaining_Bernstein_degree": 153,
+        "primitive_integer_coefficient_sha256": "2a2604e4d7dabffe3b42b0e7646609568e8181ca5b6e0f1d30208f87d8041712",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": -1,
+            "last_nonzero_sign": -1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": -0.053329915929868424,
+        "delta_derivative": -2.3056535643405414,
+        "first_F2": 0.07959995699257064,
+        "second_F2": 0.13292987292243907,
+        "first_derivative": 4.701662356127869,
+        "second_derivative": 7.00731592046841
+      },
+      "integrated_delta": {
+        "exact": "-1068962020640791004088788236925481564772975825483/106376256606837336403541197047329004889593235039200",
+        "float": -0.01004887796147626
+      },
+      "initial_delta_sign": -1
+    },
+    {
+      "first_counter": 43042500881,
+      "second_counter": 43042501010,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 154,
+          "sign": 1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^19",
+        "remaining_Bernstein_degree": 153,
+        "primitive_integer_coefficient_sha256": "ef25b544dbe4e94833b77b9b84ca3312dd28dd21b56eb69deab9e6175ecde58b",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": -1,
+            "last_nonzero_sign": -1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": -0.041605026555894396,
+        "delta_derivative": -2.016818136378111,
+        "first_F2": 0.07959995699257064,
+        "second_F2": 0.12120498354846504,
+        "first_derivative": 4.701662356127869,
+        "second_derivative": 6.718480492505979
+      },
+      "integrated_delta": {
+        "exact": "-82140595479013469587601703181233822937622916509/8125964046355629864159396996670965651288372121050",
+        "float": -0.010108412369342474
+      },
+      "initial_delta_sign": -1
+    },
+    {
+      "first_counter": 43042500881,
+      "second_counter": 43042501013,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 154,
+          "sign": 1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^19",
+        "remaining_Bernstein_degree": 153,
+        "primitive_integer_coefficient_sha256": "086ac208b4fe80ab278a3e182dfeb7cd170bfe795591d04aced3277689bb88a3",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": -1,
+            "last_nonzero_sign": -1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": -0.2032328003485975,
+        "delta_derivative": -8.000729194326983,
+        "first_F2": 0.07959995699257064,
+        "second_F2": 0.28283275734116814,
+        "first_derivative": 4.701662356127869,
+        "second_derivative": 12.702391550454848
+      },
+      "integrated_delta": {
+        "exact": "-3749564872468051526867944144163066191751701672097/117013882267521070043895316752061905378552558543120",
+        "float": -0.032043760960735156
+      },
+      "initial_delta_sign": -1
+    },
+    {
+      "first_counter": 43042500881,
+      "second_counter": 43042501043,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 154,
+          "sign": -1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^19",
+        "remaining_Bernstein_degree": 153,
+        "primitive_integer_coefficient_sha256": "8641cbe54f770c17d71e4074d84e8afacc0bc12f4541f977e60ffe2bea93c358",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.027853880291613304,
+        "delta_derivative": 1.349311639876293,
+        "first_F2": 0.07959995699257064,
+        "second_F2": 0.051746076700957336,
+        "first_derivative": 4.701662356127869,
+        "second_derivative": 3.352350716251575
+      },
+      "integrated_delta": {
+        "exact": "36751171866124709649820751407901380702772794609/4105750255000739299785800587791645802756230124320",
+        "float": 0.008951146461322716
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042500881,
+      "second_counter": 43042501410,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 1,
+          "sign": 0
+        },
+        {
+          "first": 2,
+          "last": 154,
+          "sign": 1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^254*(1-p)^19",
+        "remaining_Bernstein_degree": 152,
+        "primitive_integer_coefficient_sha256": "02871434ca4417f03e4116eaf8a3c4ca14af95ae95f9effe75d53540ce6da917",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": -1,
+            "last_nonzero_sign": -1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": -0.015267290206734705,
+        "delta_derivative": -0.7367588885826086,
+        "first_F2": 0.07959995699257064,
+        "second_F2": 0.09486724719930534,
+        "first_derivative": 4.701662356127869,
+        "second_derivative": 5.438421244710478
+      },
+      "integrated_delta": {
+        "exact": "-7609052535937502972553653879087371576104578774177/2340277645350421400877906335041238107571051170862400",
+        "float": -0.003251346074708226
+      },
+      "initial_delta_sign": -1
+    },
+    {
+      "first_counter": 43042500904,
+      "second_counter": 43042501006,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 153,
+          "sign": -1
+        },
+        {
+          "first": 154,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^20",
+        "remaining_Bernstein_degree": 152,
+        "primitive_integer_coefficient_sha256": "708ce942c11ec755d25ce31bf413db98107eb46c87f24ea821266d3f605648e2",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.18867218537750047,
+        "delta_derivative": 6.899354750394034,
+        "first_F2": 0.3216020582999396,
+        "second_F2": 0.13292987292243907,
+        "first_derivative": 13.906670670862443,
+        "second_derivative": 7.00731592046841
+      },
+      "integrated_delta": {
+        "exact": "15950062880633525853856352633/615902168088035446334446179450",
+        "float": 0.02589707214401893
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042500904,
+      "second_counter": 43042501010,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 154,
+          "sign": -1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^19",
+        "remaining_Bernstein_degree": 153,
+        "primitive_integer_coefficient_sha256": "c7d992a1c1cf3352b2c3021d6085f370ee8f9d69d82b491f05aa602b237a487b",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.2003970747514745,
+        "delta_derivative": 7.188190178356466,
+        "first_F2": 0.3216020582999396,
+        "second_F2": 0.12120498354846504,
+        "first_derivative": 13.906670670862443,
+        "second_derivative": 6.718480492505979
+      },
+      "integrated_delta": {
+        "exact": "349748696011173480303174518098995917/13536456127620623694063005371782585120",
+        "float": 0.025837537736152712
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042500904,
+      "second_counter": 43042501013,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 143,
+          "sign": -1
+        },
+        {
+          "first": 144,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^30",
+        "remaining_Bernstein_degree": 142,
+        "primitive_integer_coefficient_sha256": "398bfaf6afabc58091ab8f7fc10933537014e5250b5563cf216e065f07a1c9e5",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.038769300958771374,
+        "delta_derivative": 1.2042791204075936,
+        "first_F2": 0.3216020582999396,
+        "second_F2": 0.28283275734116814,
+        "first_derivative": 13.906670670862443,
+        "second_derivative": 12.702391550454848
+      },
+      "integrated_delta": {
+        "exact": "497047356069111227/127376541123476954400",
+        "float": 0.0039021891447600294
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042500904,
+      "second_counter": 43042501043,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 154,
+          "sign": -1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^19",
+        "remaining_Bernstein_degree": 153,
+        "primitive_integer_coefficient_sha256": "55ab2d1bfaae515f2f05e2ee37c9eda38cf31f55dd03a9dd2e4278476d985560",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.26985598159898216,
+        "delta_derivative": 10.554319954610868,
+        "first_F2": 0.3216020582999396,
+        "second_F2": 0.051746076700957336,
+        "first_derivative": 13.906670670862443,
+        "second_derivative": 3.352350716251575
+      },
+      "integrated_delta": {
+        "exact": "1795617843896727710307217929374782837/39994074922515479096095243143903092400",
+        "float": 0.0448970965668179
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042500904,
+      "second_counter": 43042501410,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 154,
+          "sign": -1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^19",
+        "remaining_Bernstein_degree": 153,
+        "primitive_integer_coefficient_sha256": "209f9d492b2a07b42949513b86a5ca8680bff7f65f2e8984ea2ff2383ce0e794",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.2267348111006342,
+        "delta_derivative": 8.468249426151967,
+        "first_F2": 0.3216020582999396,
+        "second_F2": 0.09486724719930534,
+        "first_derivative": 13.906670670862443,
+        "second_derivative": 5.438421244710478
+      },
+      "integrated_delta": {
+        "exact": "11506795899889578300393766404023788769/351947859318136216045638139666347213120",
+        "float": 0.03269460403078696
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042501006,
+      "second_counter": 43042501010,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 16,
+          "sign": -1
+        },
+        {
+          "first": 17,
+          "last": 122,
+          "sign": 1
+        },
+        {
+          "first": 123,
+          "last": 154,
+          "sign": -1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 2,
+      "thermal_root_count": 2,
+      "roots": [
+        {
+          "p": 0.6365169859376364,
+          "isolation_interval": [
+            "1/2",
+            "3/4"
+          ],
+          "delta_derivative": -0.6897952842709073,
+          "first_F2": 0.5846613445991105,
+          "second_F2": 0.5846613445991106,
+          "first_one_minus_F2": 0.4153386554008894,
+          "second_one_minus_F2": 0.4153386554008893,
+          "delta_sign_below": 1,
+          "delta_sign_above": -1
+        },
+        {
+          "p": 0.9219982596095327,
+          "isolation_interval": [
+            "3/4",
+            "1"
+          ],
+          "delta_derivative": 2.217233028468173e-12,
+          "first_F2": 0.999999999999765,
+          "second_F2": 0.999999999999765,
+          "first_one_minus_F2": 2.3620509792889495e-13,
+          "second_one_minus_F2": 2.3620509792889495e-13,
+          "delta_sign_below": -1,
+          "delta_sign_above": 1
+        }
+      ],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^19",
+        "remaining_Bernstein_degree": 153,
+        "primitive_integer_coefficient_sha256": "e18dcb0c8b1fadc1fce9e53b227b25efe2623e25eaf9a78f52ab8a81b3ff3882",
+        "initial_sign_variations": 2,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1/2"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          },
+          {
+            "interval": [
+              "1/2",
+              "3/4"
+            ],
+            "variations": 1,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": -1
+          },
+          {
+            "interval": [
+              "3/4",
+              "1"
+            ],
+            "variations": 1,
+            "first_nonzero_sign": -1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.01172488937397403,
+        "delta_derivative": 0.28883542796243067,
+        "first_F2": 0.13292987292243907,
+        "second_F2": 0.12120498354846504,
+        "first_derivative": 7.00731592046841,
+        "second_derivative": 6.718480492505979
+      },
+      "integrated_delta": {
+        "exact": "-52382518510717911753088821004457027/879869648295340540114095349165868032800",
+        "float": -5.953440786621496e-05
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042501006,
+      "second_counter": 43042501013,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 153,
+          "sign": 1
+        },
+        {
+          "first": 154,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^20",
+        "remaining_Bernstein_degree": 152,
+        "primitive_integer_coefficient_sha256": "467dd3275e05496970e5e550243be1c522d830aeef04af60db6fc94c333c629e",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": -1,
+            "last_nonzero_sign": -1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": -0.1499028844187291,
+        "delta_derivative": -5.695075629986441,
+        "first_F2": 0.13292987292243907,
+        "second_F2": 0.28283275734116814,
+        "first_derivative": 7.00731592046841,
+        "second_derivative": 12.702391550454848
+      },
+      "integrated_delta": {
+        "exact": "-11054104038886361281147485966907/502576169159836924208908082431200",
+        "float": -0.021994882999258898
+      },
+      "initial_delta_sign": -1
+    },
+    {
+      "first_counter": 43042501006,
+      "second_counter": 43042501043,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 154,
+          "sign": -1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^19",
+        "remaining_Bernstein_degree": 153,
+        "primitive_integer_coefficient_sha256": "75cfb176118a98283e0f27a3a39c22319bfb8a7123a835c26e79f4a214e89313",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.08118379622148172,
+        "delta_derivative": 3.654965204216834,
+        "first_F2": 0.13292987292243907,
+        "second_F2": 0.051746076700957336,
+        "first_derivative": 7.00731592046841,
+        "second_derivative": 3.352350716251575
+      },
+      "integrated_delta": {
+        "exact": "8358772403245507747649680974403015391/439934824147670270057047674582934016400",
+        "float": 0.019000024422798977
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042501006,
+      "second_counter": 43042501410,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 154,
+          "sign": -1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^19",
+        "remaining_Bernstein_degree": 153,
+        "primitive_integer_coefficient_sha256": "e38d859d1dd9fa8f67d150e6cbb8452ada250833736120bb7571dea227820068",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.038062625723133715,
+        "delta_derivative": 1.568894675757933,
+        "first_F2": 0.13292987292243907,
+        "second_F2": 0.09486724719930534,
+        "first_derivative": 7.00731592046841,
+        "second_derivative": 5.438421244710478
+      },
+      "integrated_delta": {
+        "exact": "920144921613377172234612848095427737/135364561276206236940630053717825851200",
+        "float": 0.006797531886768033
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042501010,
+      "second_counter": 43042501013,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 154,
+          "sign": 1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^19",
+        "remaining_Bernstein_degree": 153,
+        "primitive_integer_coefficient_sha256": "dd2ebe3ab2744051a095a7ff2729cfbe70e30dc4f969f22af4c4da72d72a8ccb",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": -1,
+            "last_nonzero_sign": -1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": -0.16162777379270313,
+        "delta_derivative": -5.983911057948871,
+        "first_F2": 0.12120498354846504,
+        "second_F2": 0.28283275734116814,
+        "first_derivative": 6.718480492505979,
+        "second_derivative": 12.702391550454848
+      },
+      "integrated_delta": {
+        "exact": "-9650123725172186812008078331746499553/439934824147670270057047674582934016400",
+        "float": -0.02193534859139268
+      },
+      "initial_delta_sign": -1
+    },
+    {
+      "first_counter": 43042501010,
+      "second_counter": 43042501043,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 154,
+          "sign": -1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^19",
+        "remaining_Bernstein_degree": 153,
+        "primitive_integer_coefficient_sha256": "d75eeea28677e626cbe481412f34cec151186f1f250b0c88999d38ddb158ae9b",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.06945890684750769,
+        "delta_derivative": 3.3661297762544033,
+        "first_F2": 0.12120498354846504,
+        "second_F2": 0.051746076700957336,
+        "first_derivative": 6.718480492505979,
+        "second_derivative": 3.352350716251575
+      },
+      "integrated_delta": {
+        "exact": "5589975775000577802350816923270162603/293289882765113513371365116388622677600",
+        "float": 0.01905955883066519
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042501010,
+      "second_counter": 43042501410,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 154,
+          "sign": -1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^19",
+        "remaining_Bernstein_degree": 153,
+        "primitive_integer_coefficient_sha256": "d97d63e4e43278b1dc3d5a358f0223e490cee4082c0dcd85731e201f74ad9880",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.026337736349159688,
+        "delta_derivative": 1.2800592477955022,
+        "first_F2": 0.12120498354846504,
+        "second_F2": 0.09486724719930534,
+        "first_derivative": 6.718480492505979,
+        "second_derivative": 5.438421244710478
+      },
+      "integrated_delta": {
+        "exact": "7077213500290521444314454350292947/1032105159290722041189554661778144320",
+        "float": 0.006857066294634248
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042501013,
+      "second_counter": 43042501043,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 154,
+          "sign": -1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^19",
+        "remaining_Bernstein_degree": 153,
+        "primitive_integer_coefficient_sha256": "091f31e9aad72f41f3200ed1690938d917235a263a7e8983b4c1b0c579672786",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.23108668064021082,
+        "delta_derivative": 9.350040834203273,
+        "first_F2": 0.28283275734116814,
+        "second_F2": 0.051746076700957336,
+        "first_derivative": 12.702391550454848,
+        "second_derivative": 3.352350716251575
+      },
+      "integrated_delta": {
+        "exact": "38577727032455729444993163030271109/941037057000364214025770426915366880",
+        "float": 0.04099490742205787
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042501013,
+      "second_counter": 43042501410,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 154,
+          "sign": -1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^19",
+        "remaining_Bernstein_degree": 153,
+        "primitive_integer_coefficient_sha256": "ee9046a69586ac841d0189efa0c8a7b7243e682960e0ec5bc02bff4b4210b338",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": 1,
+            "last_nonzero_sign": 1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": 0.1879655101418628,
+        "delta_derivative": 7.263970305744374,
+        "first_F2": 0.28283275734116814,
+        "second_F2": 0.09486724719930534,
+        "first_derivative": 12.702391550454848,
+        "second_derivative": 5.438421244710478
+      },
+      "integrated_delta": {
+        "exact": "50667143918684086310588457994235472847/1759739296590681080228190698331736065600",
+        "float": 0.02879241488602693
+      },
+      "initial_delta_sign": 1
+    },
+    {
+      "first_counter": 43042501043,
+      "second_counter": 43042501410,
+      "delta_definition": "F2_first-F2_second",
+      "survival_first_minus_second_sign_runs": [
+        {
+          "first": 0,
+          "last": 0,
+          "sign": 0
+        },
+        {
+          "first": 1,
+          "last": 154,
+          "sign": 1
+        },
+        {
+          "first": 155,
+          "last": 173,
+          "sign": 0
+        }
+      ],
+      "rank_sign_variations": 0,
+      "thermal_root_count": 0,
+      "roots": [],
+      "reduction": {
+        "positive_endpoint_factor": "p^253*(1-p)^19",
+        "remaining_Bernstein_degree": 153,
+        "primitive_integer_coefficient_sha256": "19723a25246eab1f0ce20abad228e1b585056d0de87dca98ce44bb544224c5cc",
+        "initial_sign_variations": 0,
+        "complete_dyadic_partition": [
+          {
+            "interval": [
+              "0",
+              "1"
+            ],
+            "variations": 0,
+            "first_nonzero_sign": -1,
+            "last_nonzero_sign": -1
+          }
+        ]
+      },
+      "p_ref": {
+        "p": 0.59274605079,
+        "delta": -0.043121170498348016,
+        "delta_derivative": -2.0860705284589014,
+        "first_F2": 0.051746076700957336,
+        "second_F2": 0.09486724719930534,
+        "first_derivative": 3.352350716251575,
+        "second_derivative": 5.438421244710478
+      },
+      "integrated_delta": {
+        "exact": "-21473205632008127751548756872371500983/1759739296590681080228190698331736065600",
+        "float": -0.012202492536030942
+      },
+      "initial_delta_sign": -1
+    }
+  ],
+  "canonical_order_cells": [
+    {
+      "p_open_interval": [
+        0.0,
+        0.5459069193131746
+      ],
+      "F2_descending_counters": [
+        43042500904,
+        43042501013,
+        43042500622,
+        43042500048,
+        43042500106,
+        43042500083,
+        43042501006,
+        43042500835,
+        43042501010,
+        43042501410,
+        43042500881,
+        43042501043
+      ]
+    },
+    {
+      "p_open_interval": [
+        0.5459069193131746,
+        0.5603724357830219
+      ],
+      "F2_descending_counters": [
+        43042500904,
+        43042501013,
+        43042500622,
+        43042500106,
+        43042500048,
+        43042500083,
+        43042501006,
+        43042500835,
+        43042501010,
+        43042501410,
+        43042500881,
+        43042501043
+      ]
+    },
+    {
+      "p_open_interval": [
+        0.5603724357830219,
+        0.5943538976117172
+      ],
+      "F2_descending_counters": [
+        43042500904,
+        43042501013,
+        43042500622,
+        43042500106,
+        43042500048,
+        43042500083,
+        43042501006,
+        43042501010,
+        43042500835,
+        43042501410,
+        43042500881,
+        43042501043
+      ]
+    },
+    {
+      "p_open_interval": [
+        0.5943538976117172,
+        0.6181331818215855
+      ],
+      "F2_descending_counters": [
+        43042500904,
+        43042501013,
+        43042500622,
+        43042500106,
+        43042500048,
+        43042501006,
+        43042500083,
+        43042501010,
+        43042500835,
+        43042501410,
+        43042500881,
+        43042501043
+      ]
+    },
+    {
+      "p_open_interval": [
+        0.6181331818215855,
+        0.6365169859376364
+      ],
+      "F2_descending_counters": [
+        43042500904,
+        43042501013,
+        43042500622,
+        43042500106,
+        43042500048,
+        43042501006,
+        43042501010,
+        43042500083,
+        43042500835,
+        43042501410,
+        43042500881,
+        43042501043
+      ]
+    },
+    {
+      "p_open_interval": [
+        0.6365169859376364,
+        0.6612518943037403
+      ],
+      "F2_descending_counters": [
+        43042500904,
+        43042501013,
+        43042500622,
+        43042500106,
+        43042500048,
+        43042501010,
+        43042501006,
+        43042500083,
+        43042500835,
+        43042501410,
+        43042500881,
+        43042501043
+      ]
+    },
+    {
+      "p_open_interval": [
+        0.6612518943037403,
+        0.6834000395364155
+      ],
+      "F2_descending_counters": [
+        43042500904,
+        43042501013,
+        43042500622,
+        43042500106,
+        43042500048,
+        43042501010,
+        43042501006,
+        43042500083,
+        43042501410,
+        43042500835,
+        43042500881,
+        43042501043
+      ]
+    },
+    {
+      "p_open_interval": [
+        0.6834000395364155,
+        0.7164491606758403
+      ],
+      "F2_descending_counters": [
+        43042500904,
+        43042501013,
+        43042500622,
+        43042500106,
+        43042500048,
+        43042501010,
+        43042501006,
+        43042501410,
+        43042500083,
+        43042500835,
+        43042500881,
+        43042501043
+      ]
+    },
+    {
+      "p_open_interval": [
+        0.7164491606758403,
+        0.7174239221539441
+      ],
+      "F2_descending_counters": [
+        43042500904,
+        43042501013,
+        43042500622,
+        43042500106,
+        43042500048,
+        43042501010,
+        43042501006,
+        43042501410,
+        43042500835,
+        43042500083,
+        43042500881,
+        43042501043
+      ]
+    },
+    {
+      "p_open_interval": [
+        0.7174239221539441,
+        0.7199435794913626
+      ],
+      "F2_descending_counters": [
+        43042500904,
+        43042501013,
+        43042500622,
+        43042500106,
+        43042500048,
+        43042501010,
+        43042501006,
+        43042501410,
+        43042500835,
+        43042500881,
+        43042500083,
+        43042501043
+      ]
+    },
+    {
+      "p_open_interval": [
+        0.7199435794913626,
+        0.7412243719732935
+      ],
+      "F2_descending_counters": [
+        43042500904,
+        43042501013,
+        43042500622,
+        43042500106,
+        43042500048,
+        43042501010,
+        43042501006,
+        43042501410,
+        43042500881,
+        43042500835,
+        43042500083,
+        43042501043
+      ]
+    },
+    {
+      "p_open_interval": [
+        0.7412243719732935,
+        0.7936163633673867
+      ],
+      "F2_descending_counters": [
+        43042500904,
+        43042501013,
+        43042500622,
+        43042500106,
+        43042500048,
+        43042501010,
+        43042501006,
+        43042501410,
+        43042500835,
+        43042500881,
+        43042500083,
+        43042501043
+      ]
+    },
+    {
+      "p_open_interval": [
+        0.7936163633673867,
+        0.8091408713452545
+      ],
+      "F2_descending_counters": [
+        43042500904,
+        43042501013,
+        43042500622,
+        43042500106,
+        43042500048,
+        43042501010,
+        43042501006,
+        43042500835,
+        43042501410,
+        43042500881,
+        43042500083,
+        43042501043
+      ]
+    },
+    {
+      "p_open_interval": [
+        0.8091408713452545,
+        0.8336877384384767
+      ],
+      "F2_descending_counters": [
+        43042500904,
+        43042501013,
+        43042500622,
+        43042500106,
+        43042500048,
+        43042501010,
+        43042501006,
+        43042500835,
+        43042501410,
+        43042500083,
+        43042500881,
+        43042501043
+      ]
+    },
+    {
+      "p_open_interval": [
+        0.8336877384384767,
+        0.9219982596095327
+      ],
+      "F2_descending_counters": [
+        43042500904,
+        43042501013,
+        43042500622,
+        43042500106,
+        43042500048,
+        43042501010,
+        43042501006,
+        43042500835,
+        43042500083,
+        43042501410,
+        43042500881,
+        43042501043
+      ]
+    },
+    {
+      "p_open_interval": [
+        0.9219982596095327,
+        0.9264269389294922
+      ],
+      "F2_descending_counters": [
+        43042500904,
+        43042501013,
+        43042500622,
+        43042500106,
+        43042500048,
+        43042501006,
+        43042501010,
+        43042500835,
+        43042500083,
+        43042501410,
+        43042500881,
+        43042501043
+      ]
+    },
+    {
+      "p_open_interval": [
+        0.9264269389294922,
+        0.9540825138920561
+      ],
+      "F2_descending_counters": [
+        43042500904,
+        43042501013,
+        43042500622,
+        43042500048,
+        43042500106,
+        43042501006,
+        43042501010,
+        43042500835,
+        43042500083,
+        43042501410,
+        43042500881,
+        43042501043
+      ]
+    },
+    {
+      "p_open_interval": [
+        0.9540825138920561,
+        0.9624629094208275
+      ],
+      "F2_descending_counters": [
+        43042500904,
+        43042501013,
+        43042500622,
+        43042500048,
+        43042500106,
+        43042501006,
+        43042500835,
+        43042501010,
+        43042500083,
+        43042501410,
+        43042500881,
+        43042501043
+      ]
+    },
+    {
+      "p_open_interval": [
+        0.9624629094208275,
+        0.9916221250502755
+      ],
+      "F2_descending_counters": [
+        43042500904,
+        43042501013,
+        43042500622,
+        43042500048,
+        43042500106,
+        43042501006,
+        43042500835,
+        43042500083,
+        43042501010,
+        43042501410,
+        43042500881,
+        43042501043
+      ]
+    },
+    {
+      "p_open_interval": [
+        0.9916221250502755,
+        0.9960045011807955
+      ],
+      "F2_descending_counters": [
+        43042500904,
+        43042501013,
+        43042500622,
+        43042500048,
+        43042500106,
+        43042501006,
+        43042500083,
+        43042500835,
+        43042501010,
+        43042501410,
+        43042500881,
+        43042501043
+      ]
+    },
+    {
+      "p_open_interval": [
+        0.9960045011807955,
+        1.0
+      ],
+      "F2_descending_counters": [
+        43042500904,
+        43042501013,
+        43042500048,
+        43042500622,
+        43042500106,
+        43042501006,
+        43042500083,
+        43042500835,
+        43042501010,
+        43042501410,
+        43042500881,
+        43042501043
+      ]
+    }
+  ],
+  "boundary": "Twelve fixed old-source prefixes, not a population crossing rate. Exact Bernstein certificates determine root counts; root positions and slopes are numerical evaluations. Very-late crossings can have negligible absolute signal. All p values reuse the same exact conditional laws; no new independent evidence or per-prefix covariance rescore is claimed."
+}
