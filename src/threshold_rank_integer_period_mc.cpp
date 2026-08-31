@@ -388,6 +388,10 @@ struct GeometryPilotRecord {
     int next_site = -1;
     int next_exit = 0;
     int checkpoint_b1_safe_count = -1;
+    std::uint64_t checkpoint_b2_safe_pairs = 0;
+    std::uint64_t checkpoint_sum_child_b1_sq = 0;
+    int branch_q_after_safe_count = 0;
+    int branch_q_after_denominator = 0;
     int branch_common_safe = 0;
     int branch_suffix_site1 = -1;
     int branch_suffix_site2 = -1;
@@ -957,7 +961,8 @@ class ThresholdEngine {
 
     GeometryPilotRecord geometry_pilot(const std::vector<int>& permutation, int k0,
                                         int branch_suffix_offset1 = -1,
-                                        int branch_suffix_offset2 = -1) {
+                                        int branch_suffix_offset2 = -1,
+                                        bool cooperative_closure = false) {
         if (static_cast<int>(permutation.size()) != geometry_.n ||
             k0 <= 0 || k0 >= geometry_.n) {
             throw std::invalid_argument("invalid current-geometry pilot layer");
@@ -1089,6 +1094,34 @@ class ThresholdEngine {
                                branch_suffix_offset2 >= k0 + 1 &&
                                branch_suffix_offset2 < geometry_.n;
         if (branching) {
+            // Enumerate the safe successor degrees once. Each safe unordered
+            // pair occurs in both orders, so their sum is exactly 2*b2.
+            // The squared sum costs no additional topology query and gives the
+            // checkpoint Rao-Blackwell value of the cooperative excess.
+            std::vector<int> safe_child_counts(geometry_.n, 0);
+            if (cooperative_closure) {
+                std::uint64_t ordered_safe_pairs = 0;
+                for (int first = 0; first < geometry_.n; ++first) {
+                    if (active_[first] || one_step_completion(first, plateau_line).crosses) continue;
+                    ThresholdEngine child = *this;
+                    child.insert_occupied(first);
+                    int safe = 0;
+                    for (int second = 0; second < geometry_.n; ++second) {
+                        if (!child.active_[second] &&
+                            !child.one_step_completion(second, plateau_line).crosses) ++safe;
+                    }
+                    safe_child_counts[first] = safe;
+                    ordered_safe_pairs += static_cast<std::uint64_t>(safe);
+                    record.checkpoint_sum_child_b1_sq +=
+                        static_cast<std::uint64_t>(safe) * safe;
+                }
+                if (ordered_safe_pairs % 2 != 0) {
+                    throw std::logic_error("safe two-site pair count is not even");
+                }
+                record.checkpoint_b2_safe_pairs = ordered_safe_pairs / 2;
+                record.branch_q_after_safe_count = safe_child_counts[record.next_site];
+                record.branch_q_after_denominator = geometry_.n - k0 - 1;
+            }
             record.branch_suffix_site1 = permutation[branch_suffix_offset1];
             record.branch_suffix_site2 = permutation[branch_suffix_offset2];
             record.branch_common_safe = 1 - record.next_exit;
@@ -1855,6 +1888,7 @@ struct Options {
     int far_radius = 0;
     int geometry_pilot_k0 = 0;
     bool branching_clones = false;
+    bool cooperative_closure = false;
     bool custom = false;
     Matrix first_matrix;
     Matrix second_matrix;
@@ -1885,6 +1919,7 @@ struct Options {
         << "  --far-radius R       add paired axis/diagonal local-arm observer at distance R\n"
         << "  --geometry-pilot-k0 K  write current rank-one geometry rows after K sites\n"
         << "  --branching-clones   after the common next update, draw two independent suffix sites\n"
+        << "  --cooperative-closure  exact b2 and successor degree squares at each checkpoint\n"
         << "  --self-test          exact tiny and Smith regressions, then exit\n";
     std::exit(status);
 }
@@ -1952,6 +1987,7 @@ Options parse_options(int argc, char** argv) {
             options.geometry_pilot_k0 = parse_number<int>(need(i, arg), arg);
         }
         else if (arg == "--branching-clones") options.branching_clones = true;
+        else if (arg == "--cooperative-closure") options.cooperative_closure = true;
         else if (arg == "--help") usage(argv[0], 0);
         else throw std::invalid_argument("unknown option: " + arg);
     }
@@ -1972,6 +2008,9 @@ Options parse_options(int argc, char** argv) {
     }
     if (options.branching_clones && options.geometry_pilot_k0 <= 0) {
         throw std::invalid_argument("branching-clones requires --geometry-pilot-k0");
+    }
+    if (options.cooperative_closure && !options.branching_clones) {
+        throw std::invalid_argument("cooperative-closure requires --branching-clones");
     }
     if (first_matrix_set != second_matrix_set) {
         throw std::invalid_argument("custom runs require both period matrices");
@@ -2041,10 +2080,12 @@ void run_geometry_pilot_design(const PairDesign& design, const Options& options,
             }
             const GeometryPilotRecord first =
                 first_engine.geometry_pilot(permutation, options.geometry_pilot_k0,
-                                            suffix_offset1, suffix_offset2);
+                                            suffix_offset1, suffix_offset2,
+                                            options.cooperative_closure);
             const GeometryPilotRecord second =
                 second_engine.geometry_pilot(permutation, options.geometry_pilot_k0,
-                                             suffix_offset1, suffix_offset2);
+                                             suffix_offset1, suffix_offset2,
+                                             options.cooperative_closure);
             if (first.at_risk) first_rows[batch].push_back({replica, first});
             if (second.at_risk) second_rows[batch].push_back({replica, second});
         }
@@ -2078,7 +2119,15 @@ void run_geometry_pilot_design(const PairDesign& design, const Options& options,
                    << value.branch_suffix_site2 << ','
                    << value.branch_clone1_survives << ','
                    << value.branch_clone2_survives << ','
-                   << value.branch_both_survive << '\n';
+                   << value.branch_both_survive << ','
+                   << value.checkpoint_b2_safe_pairs << ','
+                   << value.checkpoint_sum_child_b1_sq << ','
+                   << value.branch_q_after_safe_count << ','
+                   << value.branch_q_after_denominator << ',';
+            const long double q_after = value.branch_q_after_denominator > 0
+                ? static_cast<long double>(value.branch_q_after_safe_count) /
+                    value.branch_q_after_denominator : 0.0L;
+            output << std::setprecision(18) << q_after << ',' << q_after * q_after << '\n';
         }
     };
     for (int batch = 0; batch < options.batches; ++batch) {
@@ -2354,7 +2403,10 @@ int run(int argc, char** argv) {
                "H2_direction_negative,H2_direction_mixed,next_site,next_exit,"
                "checkpoint_b1_safe_count,branch_common_safe,branch_suffix_site1,"
                "branch_suffix_site2,branch_clone1_survives,"
-               "branch_clone2_survives,branch_both_survive\n";
+               "branch_clone2_survives,branch_both_survive,"
+               "checkpoint_b2_safe_pairs,checkpoint_sum_child_b1_sq,"
+               "branch_q_after_safe_count,branch_q_after_denominator,"
+               "q_after,q_after2\n";
     }
     histogram << "n,a,b,orientation,batch,samples,kind,k,count\n";
     moments << "n,a,b,orientation,batch,samples,sum_kminus,sum_kplus,sum_kminus2,"
@@ -2445,6 +2497,8 @@ int run(int argc, char** argv) {
              << "  \"geometry_pilot_k0\": " << options.geometry_pilot_k0 << ",\n"
              << "  \"geometry_pilot_semantics\": \"rank-one state after k0 occupied sites; H2 is the exact number of vacant sites whose one-step insertion gives ambient rank two\",\n"
              << "  \"branching_clones\": " << (options.branching_clones ? "true" : "false") << ",\n"
+             << "  \"cooperative_closure\": " << (options.cooperative_closure ? "true" : "false") << ",\n"
+             << "  \"cooperative_semantics\": \"b2 is exact safe unordered vacancy pairs; sum_child_b1_sq sums squared exact safe continuation counts over safe common updates; q_after is exact one-step survival of selected safe successor, zero after common absorption\",\n"
              << "  \"branching_semantics\": \"per rank-one checkpoint: permutation[k0] is one common uniform update; two independently tagged counter streams draw one uniform remaining site each from the identical successor clone; common absorption scores both clone survivals zero\",\n"
              << "  \"branching_suffix_stream_tags\": [\"0x429b2c101\", \"0x429b2c202\"],\n"
              << "  \"marked_birth_semantics\": \"strict 0->1 uses post-line; strict 1->2 uses pre-line; direct 0->2 has null line, D=0, S=2\",\n"

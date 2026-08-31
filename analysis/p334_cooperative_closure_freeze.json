@@ -1,0 +1,44 @@
+{
+  "schema": "matching-one/p334-cooperative-closure-freeze/v1",
+  "status": "frozen_before_fresh_data",
+  "base_commit": "751f8b384883b3ce92e5efa77c35f45a86afa84d",
+  "runner_source_sha256": "242bea6b0abaeff013b6d8601fdd71f8183af236ed2937f81dabdd9f0ecabbf1",
+  "checkpoint": "Rank-one state after fixed k0; d=N-k0, H2 counts unsafe insertions, b1=d-H2, b2 counts safe unordered two-site vacancy sets. These are properties of the identical checkpoint used for the common update and both clones.",
+  "primary_estimand": "Delta_coop=E_C[E[1_common_safe*q_after^2|C]-s2(C)^2/s1(C)]=E_C[s1(C)*Var(q_after|C,common_safe)], conditional on checkpoint rank1. s1=b1/d; s2=b2/C(d,2). The baseline is averaged after taking the checkpoint-specific ratio, never a ratio of pooled means.",
+  "rao_blackwellization": "Exact b2 enumeration supplies safe continuation counts c_v for every safe common site v at no additional topology-query cost. Store sum c_v^2 as well as 2*b2=sum c_v. Primary per checkpoint is [b1*sum c_v^2-(2*b2)^2]/[d*b1*(d-1)^2], with value zero for b1=0. This changes variance but not the estimand.",
+  "sampled_bridge": "A common uniform update is drawn from the same checkpoint. q_after=c_v/(d-1), zero if absorbed. Y1,Y2 use independent remaining-site counter streams from its identical cloned successor; Y1Y2 is retained. q_after-s2, q_after^2-exact_q2, Y1-q_after,Y2-q_after,Y1Y2-q_after^2 are zero-mean calibration rows.",
+  "covariance": "One base permutation/replica is the checkpoint cluster. Both orientations and all exact/common/clone fields stay in one joint influence vector; cluster sandwich covariance of risk-conditioned means. Independent sizes have separate covariance blocks. Never treat the two clones as replicas.",
+  "alpha": 0.01,
+  "primary_gate": "For each size, both orientation Delta estimates positive and nominal 2-df Wald chi2>9.210340371976184. Exact positivity independently disproves exact uniform-safe-successor closure on an observed checkpoint; Wald quantifies ensemble signal strength, not a universal law.",
+  "stop_rule": "Exactly 20k fresh base permutations per size. If both size gates pass, publish and stop. If either fails, publish the unresolved pilot and stop; no automatic extension or post-hoc sample expansion.",
+  "smoke": "100 disjoint base permutations per size may be used for runtime and output checks only; never pooled into production or used to modify the estimand.",
+  "runs": {
+    "N325": {
+      "host": "Huawei-CodeBuddy-TgFr7R",
+      "samples": 20000,
+      "batches": 20,
+      "seed": 20260831430325,
+      "replica_counter_first": 43032500000,
+      "replica_counter_last_exclusive": 43032520000,
+      "k0": 193,
+      "first_matrix": [325,57,0,1],
+      "second_matrix": [325,18,0,1],
+      "first_rep": [17,6],
+      "second_rep": [18,1]
+    },
+    "N425": {
+      "host": "Huawei-CodeBuddy-XPk2PZ",
+      "samples": 20000,
+      "batches": 20,
+      "seed": 20260831430425,
+      "replica_counter_first": 43042500000,
+      "replica_counter_last_exclusive": 43042520000,
+      "k0": 252,
+      "first_matrix": [425,132,0,1],
+      "second_matrix": [425,268,0,1],
+      "first_rep": [16,13],
+      "second_rep": [19,8]
+    }
+  },
+  "claim_boundary": "Tests exact uniform-safe-successor cooperative closure at two fixed finite checkpoints in a one-common-update/one-site-per-clone branching language. A positive result is not path memory, a CFT identity, a scaling exponent, or proof that H2,b2 cannot support some richer nonlinear closure. The earlier pooled clone gap is not reused as independent evidence."
+}
