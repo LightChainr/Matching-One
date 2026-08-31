@@ -1,0 +1,248 @@
+{
+  "status": "ANALYTIC_MAP_WITH_NOMINAL_UNMARKED_BASELINE_GAINS",
+  "baseline_commit": "7da1eeb0e51cf430987dbf204d23713c2ab5a46c",
+  "baseline_path": "results/norm4-source-endpoint-1m/latest.json",
+  "baseline_sha256": "8aa36f48c3229f258981652c7b6da8aba23c75120ffce3b7217cecf2a2f7f867",
+  "source_coefficients_fitted": false,
+  "new_samples": 0,
+  "baseline_uncertainty_propagated": false,
+  "scope": "Exact linear map; numeric gains are old-baseline point calibrations, not prospective intervals or source detections.",
+  "alpha_definition": "alpha_jg=N*J_jg/Fprime_jg=N*p*E_birth_posterior[z_(k-1)/k]",
+  "mode_definition": "alpha_jg=a00+eta_g*a10+tau_j*a01+eta_g*tau_j*a11; eta=(+1,-1),tau=(-1,+1)",
+  "by_N": {
+    "85": {
+      "N": 85,
+      "p0": 0.5927037423295941,
+      "D": 9.250588530987645,
+      "delta_cos4": 1.5944636678200692,
+      "baseline_p_jets": {
+        "first": {
+          "q_p": 9.248938026294558,
+          "E_p": -0.008266007304003445,
+          "q_pp": 4.95189999482946,
+          "E_pp": 55.87677818188539
+        },
+        "second": {
+          "q_p": 9.25223903568073,
+          "E_p": 0.0007601386719143536,
+          "q_pp": 4.5413964776999105,
+          "E_pp": 55.642338040129914
+        }
+      },
+      "gains": {
+        "00_common": {
+          "value": {
+            "entry": 2.0095291042540595e-16,
+            "completion": -3.181672147856916e-16,
+            "net": -1.1721430436028565e-16
+          },
+          "p_derivative": {
+            "entry": -2.3006709933704155e-17,
+            "completion": -1.2153544595413282e-16,
+            "net": -1.4454215588783697e-16
+          },
+          "flat_mode_completion_over_entry": null,
+          "flat_mode_amplitude_for_net_0p5": null
+        },
+        "10_orientation_common_birth": {
+          "value": {
+            "entry": 27.78135012627794,
+            "completion": 32.951422236183696,
+            "net": 60.73277236246163
+          },
+          "p_derivative": {
+            "entry": -5.039858988454008,
+            "completion": 5.0357704604876465,
+            "net": -0.00408852796636161
+          },
+          "flat_mode_completion_over_entry": 1.1860986628225627,
+          "flat_mode_amplitude_for_net_0p5": 0.00823278734940553
+        },
+        "01_relative_birth": {
+          "value": {
+            "entry": 0.057319173844029306,
+            "completion": 0.19592095018375458,
+            "net": 0.2532401240277839
+          },
+          "p_derivative": {
+            "entry": 0.0015583050231397343,
+            "completion": -0.0033580091210852975,
+            "net": -0.0017997040979455632
+          },
+          "flat_mode_completion_over_entry": 3.418070028658706,
+          "flat_mode_amplitude_for_net_0p5": 1.9744106583407894
+        },
+        "11_orientation_relative_birth": {
+          "value": {
+            "entry": -27.78132719233628,
+            "completion": 32.95144517012535,
+            "net": 5.170117977789072
+          },
+          "p_derivative": {
+            "entry": 5.039857949749042,
+            "completion": 5.035769421782679,
+            "net": 10.07562737153172
+          },
+          "flat_mode_completion_over_entry": -1.1861004674828959,
+          "flat_mode_amplitude_for_net_0p5": 0.09670959195670384
+        }
+      }
+    },
+    "260": {
+      "N": 260,
+      "p0": 0.5927187392581019,
+      "D": 14.053892038478907,
+      "delta_cos4": 1.3633136094674556,
+      "baseline_p_jets": {
+        "first": {
+          "q_p": 14.048439202935224,
+          "E_p": 0.0073399473972617585,
+          "q_pp": 7.360361773317681,
+          "E_pp": 130.45512437554044
+        },
+        "second": {
+          "q_p": 14.059344874022589,
+          "E_p": -0.001794672699779084,
+          "q_pp": 7.0982898477551215,
+          "E_pp": 130.19657014407414
+        }
+      },
+      "gains": {
+        "00_common": {
+          "value": {
+            "entry": 4.670193214885684e-16,
+            "completion": 2.236057992872269e-15,
+            "net": 2.703077314360837e-15
+          },
+          "p_derivative": {
+            "entry": 5.85319799394182e-16,
+            "completion": 0.0,
+            "net": 5.85319799394182e-16
+          },
+          "flat_mode_completion_over_entry": null,
+          "flat_mode_amplitude_for_net_0p5": null
+        },
+        "10_orientation_common_birth": {
+          "value": {
+            "entry": 103.79618827132488,
+            "completion": 115.98804726391599,
+            "net": 219.78423553524087
+          },
+          "p_derivative": {
+            "entry": -11.848046985995136,
+            "completion": 11.852725807883946,
+            "net": 0.004678821888809637
+          },
+          "flat_mode_completion_over_entry": 1.1174596022805905,
+          "flat_mode_amplitude_for_net_0p5": 0.002274958432675343
+        },
+        "01_relative_birth": {
+          "value": {
+            "entry": -0.07686666280279364,
+            "completion": 0.22637954183986433,
+            "net": 0.1495128790370707
+          },
+          "p_derivative": {
+            "entry": -0.008450758041773336,
+            "completion": -0.0007465370125361371,
+            "net": -0.009197295054309473
+          },
+          "flat_mode_completion_over_entry": -2.9450939273980916,
+          "flat_mode_amplitude_for_net_0p5": 3.344193511757796
+        },
+        "11_orientation_relative_birth": {
+          "value": {
+            "entry": -103.79634513683305,
+            "completion": 115.9878903984078,
+            "net": 12.191545261574745
+          },
+          "p_derivative": {
+            "entry": 11.848047518366212,
+            "completion": 11.852726340255023,
+            "net": 23.700773858621233
+          },
+          "flat_mode_completion_over_entry": -1.1174564022028215,
+          "flat_mode_amplitude_for_net_0p5": 0.0410120283583655
+        }
+      }
+    },
+    "340": {
+      "N": 340,
+      "p0": 0.5927332037341437,
+      "D": 15.525995588669295,
+      "delta_cos4": 1.5944636678200692,
+      "baseline_p_jets": {
+        "first": {
+          "q_p": 15.526883659498452,
+          "E_p": 0.007075658368042242,
+          "q_pp": 8.233001638627428,
+          "E_pp": 159.9548009349747
+        },
+        "second": {
+          "q_p": 15.525107517840137,
+          "E_p": -0.007311523728289817,
+          "q_pp": 7.735997896156874,
+          "E_pp": 159.30919671667473
+        }
+      },
+      "gains": {
+        "00_common": {
+          "value": {
+            "entry": 3.844268970188865e-15,
+            "completion": -6.1689743946393586e-15,
+            "net": -2.3247054244504936e-15
+          },
+          "p_derivative": {
+            "entry": -9.639022491623998e-17,
+            "completion": -4.606885749673235e-16,
+            "net": -5.570787998835634e-16
+          },
+          "flat_mode_completion_over_entry": null,
+          "flat_mode_amplitude_for_net_0p5": null
+        },
+        "10_orientation_common_birth": {
+          "value": {
+            "entry": 117.0321525853805,
+            "completion": 129.35600261757952,
+            "net": 246.38815520296004
+          },
+          "p_derivative": {
+            "entry": -11.982101901798542,
+            "completion": 11.981919240299545,
+            "net": -0.00018266149899659467
+          },
+          "flat_mode_completion_over_entry": 1.1053031133748326,
+          "flat_mode_amplitude_for_net_0p5": 0.002029318331427619
+        },
+        "01_relative_birth": {
+          "value": {
+            "entry": -0.10737238450350126,
+            "completion": 0.37677508194463627,
+            "net": 0.269402697441135
+          },
+          "p_derivative": {
+            "entry": -0.004866176590752147,
+            "completion": 0.006236978063497763,
+            "net": 0.0013708014727456166
+          },
+          "flat_mode_completion_over_entry": -3.5090501499698945,
+          "flat_mode_amplitude_for_net_0p5": 1.8559576602207222
+        },
+        "11_orientation_relative_birth": {
+          "value": {
+            "entry": -117.03236018997379,
+            "completion": 129.35579501298625,
+            "net": 12.323434823012462
+          },
+          "p_derivative": {
+            "entry": 11.982099368814918,
+            "completion": 11.981916707315921,
+            "net": 23.96401607613084
+          },
+          "flat_mode_completion_over_entry": -1.1052993787616376,
+          "flat_mode_amplitude_for_net_0p5": 0.04057310377998778
+        }
+      }
+    }
+  }
+}

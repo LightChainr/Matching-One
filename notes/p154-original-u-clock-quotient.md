@@ -99,6 +99,11 @@ One scalar v cannot identify the six contrast-jet values separately.
 
 For any one birth CDF F(p), let b(k)=Pr(K=k), k=1..N, and
 S(p)=sum_k b(k) BinomialPMF(N,k;p). A constant event mark a gives J=aS.
+This is an auxiliary response, not an assertion that a nonzero global
+constant mark is realizable by the rank-centered lag-one source. At the
+last possible birth its conditional centered mark must vanish. For that
+real source retain the nonconstant-mark remainder explicitly, as in
+[the transmission map](p154-birth-clock-transmission-map.md).
 The elementary Bernstein identity is
 
 ```

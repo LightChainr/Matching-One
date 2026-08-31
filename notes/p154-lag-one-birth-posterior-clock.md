@@ -105,7 +105,7 @@ ratio as a constant shift. Neither (1) nor its 1/N condition fixes the
 geometry dependence or p-derivative needed for U; no U power law follows
 without those extra assumptions.
 
-## 3. A single next-experiment discriminator
+## 3. An available interpretation of the existing population response
 
 At each N's prescribed pooled root let
 `D=Fbar1'+Fbar2'`, `c=(Fbar2'−Fbar1')/D`, and let R be the existing
@@ -131,7 +131,7 @@ Also exactly, `−N*rootdot` is the slope-weighted mean of Λ1 and Λ2.
 A common nonzero enrichment can therefore move the root while a relative
 enrichment is visible in R. Neither automatically gives angular U.
 
-For the forthcoming same-lineage N85/N340 experiment the single proposed
+For the forthcoming same-lineage N85/N340 experiment an available auxiliary
 comparison is **Xi340−Xi85**, with the source's bulk normalization
 unchanged and original paired-batch omissions propagated through (5).
 Zero is the conditional prediction of a scale-stable birth-enrichment
@@ -144,7 +144,8 @@ For context only, multiplying the **already published** lag-one
 relative-clock planning values by N gives Xi260=−.131115 and
 Xi340=−.130116. These are descriptive centers, with no new uncertainty
 calculation or parameter fitting, and do not freeze a numerical Xi85
-prediction. This auxiliary discriminator needs no new observer or
+prediction. This auxiliary comparison is not added to the current primary
+decision family or sample budget. It needs no new observer or
 simulation: J1/J2, D, c and R are existing scorer outputs. It does not
 change another team's production contract or promote a weak U response
 to a resolved transmission mechanism.
