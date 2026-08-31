@@ -1,0 +1,15 @@
+{
+  "schema":"matching-one/p398-width8-pair-density-current/v1",
+  "parent":"520a9d218a90ce46c34475e2ddd4ef0eb5d97e1a",
+  "pair":"psi_sign=(A+sign*exp(-i*pi/4)*L)/sqrt(2); t_sign=P_sign T2",
+  "T2":"sum over size-two clusters C of sum_{j in C} i^j; same site origin as A and L",
+  "projection":"P_sign is the stationary-L2 orthogonal projector onto the same Kreweras ray",
+  "raw_normalization":"e=psi/sqrt(<psi,psi>); t=t_sign/sqrt(<t_sign,t_sign>)",
+  "orthogonal_normalization":"eta=(t_sign-e<e,t_sign>)/norm(t_sign-e<e,t_sign>); positive real norm, no phase rotation",
+  "cross_convention":"C_fg(s)=<f,exp(sG)g>_pi; anti-Hermitian difference A_fg=C_fg-conj(C_gf), without a factor 1/2",
+  "derivative":"A_e,eta'(0)=2<e,J eta>; J=(G-G*)/2",
+  "capture":"abs(<eta,J e>)^2 / norm(J e)^2",
+  "distances":[0.0,0.05,0.1,0.25,0.5,1.0,2.0,4.0],
+  "controls":"G* gives the negative by algebra; S gives zero by self-adjointness; neither is separately solved",
+  "execution":"one named pair only, deterministic local single thread; no fitting, observable scan, MC, new width or test campaign"
+}
