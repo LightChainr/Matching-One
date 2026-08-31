@@ -1,100 +1,94 @@
 # Roadmap
 
-This roadmap optimizes for **information gained per unit effort**. It is not a permission system. Existing-data analysis, exact work, pilots and exploratory production may proceed whenever useful.
+**Updated:** 2026-08-31
 
-The only hard constraints are chronology, observable-semantic compatibility for claim-bearing scores, and non-duplication of correlated evidence.
+This roadmap ranks **information gained per unit effort**. It is **not a permission system**. The three hard claim constraints remain chronology, observable-semantic compatibility, and non-duplication of correlated evidence.
 
-## Active — highest information now
+The repository is deliberately not opening another framework. `docs/STATUS.md` owns current claim language; this file only answers: **what can most efficiently end the current ambiguity?**
 
-### 1. Same-N norm-5 coalescence control — #205
-
-The N325/N425 coalescence design is already frozen and cheap relative to large production:
+## Active — one decision chain, two P0 entrypoints
 
 ```text
-N325: 5 M_C - 11 M_A + 6 M_B = 0
-N425: 20 M_C + 13 M_A - 33 M_B = 0
+#334 independent birth-current intervention
+        -> population-level J_grad/contact validation
+        -> #154 prospective source-to-U transmission
+        -> accept / reject the declared nested model
 ```
 
-It removes radial exponent, parent amplitude and thermal metric. The new C nodes also change Smith class, so one block tests H4 interpolation, conjugation and quotient sensitivity at once.
+No third P0 is active this week.
 
-**Action:** run/score the fixed 10M common-field block if the C targets are still unrevealed. If it fails specifically at C, move quotient/deck structure ahead of extra RG fields. If it passes, norm-4 becomes a cleaner radial/Jordan test.
+### 1. #334 — independent population intervention
 
-### 2. Thermal Q4/Jordan modulus fingerprint
+The first active step is the already frozen experiment at [`bc0a18c`](https://github.com/LightChainr/Matching-One/commit/bc0a18c207e3b09f49ea6b6af6601471114d654a), `notes/p334-independent-intervention-freeze.md`.
 
-Scale-log behavior is no longer enough to identify the Q4 Jordan module. Use exact shape assets instead:
+It uses a fresh 1M-prefix block and a fixed primary `T` to compare the declared lifecycle/current model with one contact/source-normal extension. Existing 40k paths, 147 clocks, cut-network analyses and contact projections may train the hypothesis and estimate variance, but they are not independent validation.
 
-- `B_logN/A_epsilon = -493/192 * g2(tau)` in the frozen module normalization;
-- rectangular/CM `11/4` relation;
-- hexagonal degree-2 E4 child phase projector `(1,zeta,zeta^2)` which cancels a common scalar mode.
+**Decision:** execute the frozen block once if the producer SHA and frozen budget are intact. If the declared model fails, stop that model; do not add another feature on the same block.
 
-**Action:** freeze the smallest scalar-cancelled two/modulus score that separates ordinary analytic correction, generic log mixing and Q4-Jordan shape. Prefer a geometry ratio/projector over another free radial exponent.
+### 2. #154 — freeze and test `J_grad -> U`
 
-### 3. Norm-4 dyadic closure with deck characters — #154
+The current lagged-source result at [`dd48177`](https://github.com/LightChainr/Matching-One/commit/dd48177340f169c18cd1fc9217101b54090e1e3a), `results/norm4-lagged-source/REPORT.md`, resolves strong temporal entry/exit response on reused historical permutations while the original global `U` source response remains unresolved.
 
-The N260/N340 pilot and production scorer are ready. The existing allocation reaches about three-sigma expected q2/Jordan separation at the tested cost.
+The next action is **not another source observable**. Before reading a fresh target, freeze:
 
-Exact quotient arithmetic adds information rather than a gate: norm-4 `2i` has `Z2 x Z2` deck group and `(1+i)^2=2i` has an exact coarse/detail Hadamard split.
+- the source -> ingress/egress -> `J_grad` -> pooled-root/slope-normalized `U` mapping;
+- the M0/M1/M2 numerical predictions that are actually distinguishable;
+- the equivalence band and full covariance budget;
+- a failure action that removes/demotes a model rather than growing it.
 
-**Action:** production may run whenever compute is available. If cheap, record character-resolved sufficient statistics in the same run; do not postpone production merely to perfect that extension.
+If no candidate gives a distinguishable prospective `U` prediction, do not start a new block. If a frozen validation fails, do not perform same-block feature rescue.
 
-### 4. New local pivotal/RG readout on an injective geometry — #155
+## Nested model vocabulary
 
-The microscopic second direction exists exactly, but N130/N170 response matrices remain nearly rank-one. The multiradius prototype also shows `R=8` is non-injective on those tori and the observed shells do not support a simple constant log-flow.
+The current model vocabulary is intentionally capped:
 
-**Action:** stop adding replicas to the same N130/N170 rows. Choose the smallest larger geometries where `R=2,4,8` are injective, or introduce a genuinely different local/sublattice perturbation. Freeze the observable first, then run a modest covariance pilot.
+- **M0 lifecycle/current-only**;
+- **M1 contact-regulated current**;
+- **M2 extra transfer coordinate**, only when frozen before target reveal.
 
-## Ready — useful parallel work
+A local `J_act=j_in+j_out` signal is diagnostic. The quantity that enters the declared population-gradient chain is `J_grad=j_in-j_out`; neither is automatically an identified continuum operator.
 
-### Primitive square-bond spin-4 sector — #156
+## Parked support — useful, not this week’s execution
 
-Two prospective norm-2 generations already establish repeated negative H4 phase transfer while positive-phase adversaries fail. Vacuum-KdV gives an excellent zero-new-compute geometry ratio.
+These lines remain available through STATUS / artifact-registry pointers, but they do not open additional active tasks:
 
-**Do not run a third same-purpose norm-2 generation just to show another sign flip.** The next useful target must distinguish finite-size corrections or the KdV/identity-family shape, for example an amplitude-free modulus ratio or a new character projector.
+- **modulus / shape controls** for Q4/Jordan identification;
+- **coalescence** and quotient/conjugation controls after their completed blocks;
+- larger-injective **local pivotal** geometry, only if a later STATUS revision makes it decision-relevant;
+- primitive square-bond `x≈4` correction structure;
+- #275 theory support, #370 confidence-set machinery, #398 finite exact dynamics;
+- threshold / algebraic / PSLQ support under parked #1;
+- multi-u, Boolean-noise and energy/log-pair side programs.
 
-### Multi-u / intrinsic coordinate — #119
-
-The N145->290 quantile-center `N^-3/4` transfer passed while the width metric drifts precisely. Multi-u work is useful if it separates coordinate nonlinearity from S-prime/Jordan dynamics; it is not a new independent evidence block when built from the same histograms.
-
-### Boolean/noise and energy-log-pair exact programs — #227/#234
-
-The exact/no-new-compute programs in open PRs #245/#246 can proceed in parallel. Treat them as mechanism-discovery tools. They do not block the active compute choices above.
+Parked means “retain and cite”, not “continue adding handoff text”.
 
 ## Completed high-information blocks
 
-- **#50 N145->290 full curve:** complete. Corrected slope/root structure survives; a single three-level multiplier shape does not.
-- **#57 norm-5 N325/425:** complete. Frozen H4 beats H12/H8; child block alone remains compatible with zero.
-- **#212 independent matching-odd synthesis:** complete. Global zero strongly disfavored; fixed H4 compatible.
-- **#155 current N130/N170 tangent gate:** complete negative decision for these readouts; do not buy more identical samples.
-- **#156 two primitive norm-2 generations:** complete for the sign/phase question.
-
-## Existing-data work — analyze freely
-
-Useful no/low-new-compute work includes low-rank full-curve transfer, covariance-aware thermal-jet mixing, metric-free ratios, standardized profiles, intrinsic/multi-u coordinates, pivotal normalization and exact deck-character projections.
-
-Do not turn multiple derived views of one raw block into extra evidence votes.
+- **#50 N145->290 full curve:** complete. Corrected slope/root structure survives; a single multiplier shape fails.
+- **#57 norm-5 N325/425:** complete. Frozen H4 beats H12/H8; the child block alone remains compatible with zero.
+- **#205 same-N coalescence:** no longer an active queue entry; result/provenance remains available through history/registry.
+- **#155 current N130/N170 tangent gate:** complete negative decision for those readouts; **stop adding replicas** to the same rows.
+- **#156 two primitive norm-2 generations:** complete for the sign/phase question; a **third primitive norm-2** run for another sign flip is not active work.
+- **#439 same-stream M/projective-current crosswalk:** complete as an existing-data analysis; it did not establish nonzero M loading and is absorbed into the unified transmission question.
 
 ## Low-information loops to stop
 
-Not forbidden, simply poor use of time/compute now:
+Not scientific prohibitions; simply no longer part of current execution:
 
 - more N290 replicas repeating completed scores;
-- more N130/N170 replicas with the same two self-matching tangent rows;
-- a third primitive norm-2 generation whose only purpose is another sign flip;
-- another scalar width/boundary correction fit to P57;
-- another free exponent fit before testing shape/modulus information;
-- large production that stores only final scalars instead of reusable sufficient statistics;
-- treating registry/doc synchronization as a prerequisite for science.
+- more N130/N170 replicas with the same tangent rows;
+- another scalar-width rescue for the thermal jet;
+- another **free exponent** fit before the transmission/shape decision;
+- repeated #334 first decomposition / 147 clocks / mean-dose / equivalent current contractions;
+- adding a new observable because it is cheap before asking whether it changes the `J_grad -> U` decision;
+- treating a new exact tiny control as a new global mechanism vote;
+- maintaining branch-local NEXT lists as parallel priority systems.
 
-## Decision logic
+## Weekly end condition
 
-Choose the next experiment by which ambiguity it can kill:
+This week is successful when the repository can record **one of two outcomes**:
 
-```text
-same-N H4 vs quotient/conjugation ambiguity -> coalescence #205
-q2 vs generic log vs Q4-Jordan identity     -> scalar-cancelled modulus shape
-scale composition + deck arithmetic          -> norm-4 #154
-microscopic second RG direction               -> larger injective local pivotal geometry
-primitive x≈4 correction structure            -> new KdV/character shape, not more sign tests
-```
+1. a frozen population/transmission model survives an independent block and earns a sharper next claim boundary; or
+2. the relevant frozen model fails / cannot make a distinguishable prospective `U` prediction, and the operator-identification route is stopped at the current C3 phenomenology boundary.
 
-A failed discriminator is a successful result if it removes a mechanism class.
+A failed discriminator is a successful endpoint when it removes a mechanism or compute loop. Producing another coordinate without changing this decision is not roadmap progress.
