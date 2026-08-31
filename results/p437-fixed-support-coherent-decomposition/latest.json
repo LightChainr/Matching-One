@@ -1,0 +1,257 @@
+{
+  "batches": 100,
+  "dependency_group": "same p437-N112-fixed-S5-lower-bound-fresh20k-20260831, not new evidence block",
+  "energy_decomposition": {
+    "coherent_estimator": "sum_{b!=c} Re(conj(Z_b) Z_c)/(m(m-1)) = |mean Z|\u00b2-tr(Cov(mean Z))",
+    "estimates": [
+      3.2389322916666666e-06,
+      4.908295191498315e-09,
+      3.2340239964751682e-06,
+      0.0015154053093751584
+    ],
+    "fraction_boundary": "ratio is descriptive with delete-one-batch uncertainty, not an exactly unbiased ratio",
+    "higher_order_identity": "B_S-|Fhat(S)|\u00b2=sum_{T strictly contains S}|Fhat(T)|\u00b2",
+    "jackknife_se": [
+      2.163903110830519e-07,
+      1.6161818995681653e-09,
+      2.1640968752480398e-07,
+      0.0005112786233966379
+    ],
+    "joint_jackknife_covariance": [
+      [
+        4.6824766730619976e-14,
+        -2.887040015408028e-18,
+        4.682765377063539e-14,
+        -2.303136531820623e-11
+      ],
+      [
+        -2.887040015408028e-18,
+        2.612043932491763e-18,
+        -5.499083947899212e-18,
+        8.095946782967925e-13
+      ],
+      [
+        4.682765377063539e-14,
+        -5.499083947899212e-18,
+        4.6833152854583294e-14,
+        -2.3840959996502855e-11
+      ],
+      [
+        -2.303136531820623e-11,
+        8.095946782967925e-13,
+        -2.3840959996502855e-11,
+        2.6140583074236114e-07
+      ]
+    ],
+    "mean_variance_bias_removed": 1.4785715225168354e-10,
+    "negative_weight_policy": "keep negative unbiased estimates and label unresolved, never interpret them as negative population energy",
+    "parameter_order": [
+      "B_S",
+      "coherent_degree5_weight",
+      "outside_dependent_degree6plus_weight",
+      "coherent_fraction"
+    ],
+    "plug_in_squared_mean": 5.056152343749998e-09
+  },
+  "fourier_coefficient": {
+    "covariance_of_mean_2x2": [
+      [
+        1.287636291298401e-10,
+        -2.469079446367179e-12
+      ],
+      [
+        -2.469079446367179e-12,
+        1.9093523121843436e-11
+      ]
+    ],
+    "identity": "E[D_SF]=Fhat(S), the exact degree-five coefficient on this one fixed support",
+    "mean_re_im": [
+      -7.109374999999999e-05,
+      1.353164693413186e-06
+    ],
+    "phase_degrees": 178.90959099102514,
+    "phase_delta_se_degrees": 3.5159108214163797,
+    "se_re_im": [
+      1.134740627323443e-05,
+      4.369613612419688e-06
+    ],
+    "z_re_im": [
+      -6.265198256599977,
+      0.30967605226400474
+    ]
+  },
+  "interpretation": "The fifteen-SE localized energy mostly measures outside-dependent higher-degree fluctuations; it must not be relabeled pure fifth-degree energy.",
+  "new_samples": 0,
+  "samples": 20000,
+  "schema": "matching-one/p437-fixed-S-coherent-decomposition/v1",
+  "secondary_refined_population_lower_bound_parameter": {
+    "batch_jackknife_se": 1.2695996772776584e-07,
+    "estimate": 1.898850571244221e-06,
+    "exact_inequality": "A_HP>=h5 |mu|\u00b2+h6 (B_S-|mu|\u00b2)",
+    "h5": "9765/32768",
+    "h6": "615195/1048576",
+    "h6_over_h5": "63/32",
+    "improvement_ratio_delta_se": 0.000495301166415493,
+    "improvement_ratio_estimate": 1.9672819511065425,
+    "inference": "secondary reuse of the original fixed-support block; estimated RHS with uncertainty, not a statistically certain numerical lower bound",
+    "old_h5_B_S_estimate": 9.65215265750885e-07,
+    "reason": "The outside-dependent residual contains only Fourier supports strictly larger than S, hence degree>=6"
+  },
+  "source_batch_sha256": "4e637b4d5d8388d3abfa2b1fca453da7ef39cd1d52dada01c3698d4a5a156063",
+  "source_result_commit": "386db0a",
+  "support": [
+    0,
+    28,
+    56,
+    84,
+    112
+  ],
+  "symmetry": {
+    "allowed_child_coefficient_basis": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        1
+      ]
+    ],
+    "boundary": "marginal Fourier-coefficient relation; not a pointwise common-stream conjugation identity or proof from a nonsignificant p value",
+    "conclusion": "a1=a2 exactly, hence Im Fhat(S)=0 and Re Fhat(S)=(a0-a1)/3 is allowed; no anti-invariant fixed-support map was found",
+    "independent_constraint_on_real_child_coefficients": [
+      [
+        0,
+        1,
+        -1
+      ]
+    ],
+    "relations": [
+      {
+        "coefficient_sign": 1,
+        "dual_complement": false,
+        "first_witness": {
+          "rotation": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "translation": [
+            0,
+            0
+          ]
+        },
+        "number_of_maps": 4,
+        "source_child": 0,
+        "target_child": 0
+      },
+      {
+        "coefficient_sign": 1,
+        "dual_complement": false,
+        "first_witness": {
+          "rotation": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "translation": [
+            0,
+            0
+          ]
+        },
+        "number_of_maps": 2,
+        "source_child": 1,
+        "target_child": 1
+      },
+      {
+        "coefficient_sign": 1,
+        "dual_complement": false,
+        "first_witness": {
+          "rotation": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "translation": [
+            9,
+            0
+          ]
+        },
+        "number_of_maps": 2,
+        "source_child": 1,
+        "target_child": 2
+      },
+      {
+        "coefficient_sign": 1,
+        "dual_complement": false,
+        "first_witness": {
+          "rotation": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "translation": [
+            9,
+            0
+          ]
+        },
+        "number_of_maps": 2,
+        "source_child": 2,
+        "target_child": 1
+      },
+      {
+        "coefficient_sign": 1,
+        "dual_complement": false,
+        "first_witness": {
+          "rotation": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "translation": [
+            0,
+            0
+          ]
+        },
+        "number_of_maps": 2,
+        "source_child": 2,
+        "target_child": 2
+      }
+    ],
+    "scope": "all translations and physical D4 maps between these period lattices, with/without geometric dual complement",
+    "support": [
+      0,
+      28,
+      56,
+      84,
+      112
+    ]
+  }
+}
