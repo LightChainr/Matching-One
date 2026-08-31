@@ -1,44 +1,66 @@
 # Roadmap: Default Attention, Not Permission
 
-**Current move, 2026-08-31:** compress the default primary queue to two
-[prospective decision experiments](DECISION-EXPERIMENTS.md): #154 temporal
-transmission into original U, and #334 an independent coarse-state-preserving
-contact intervention. Freeze falsifiable predictions and precision before new
-production. Covariance bookkeeping does not remove hypothesis-search reuse.
-Other mechanism lines remain parallel exploration, without task locks.
+**Current move, 2026-08-31:** apply the completed decisions and derive a named
+microscopic model's original-U response. #154's165M primary and its declared secondary,
+plus both distinct P334 comparisons, are delivered; none remains a production request. The
+[decision register](DECISION-EXPERIMENTS.md) and
+[final decision record](../notes/independent-decisions-final-20260831.md)
+supersede the pre-score handoff. No new production, feature expansion or third
+default P0 follows automatically; other lines remain parallel exploration,
+without task locks or Issue closure.
 
-The [one-step norm4 source](../results/norm4-lagged-source/REPORT.md),
-`4daae57e`, now measures future activation and moving-root population effects,
-while global U H4 is unresolved. Its old2.4M permutations are discovery input.
-The [P398 size/arrangement comparison](../results/p398-stationary-arrangement/REPORT.md),
-`58db48dd`, is also done:99.7344% static-score explanation does not give exact
-transition closure (32/60 classes fail). P334 hierarchy/contact/local A-rank
-are complete at `43a30e49`/`7beb99ce`; old-prefix held-out or new-suffix views
-do not substitute for a new population intervention. Execution's later
-`bc0a18c2` freezes the independent1M-prefix M0/M1 comparison; `bde1a51c`
-now seals its producer and two-machine dispatch, still pre-generation at that
-pin. #509 `04743caf` completes old-prefix prediction/shape and longer-lag
-source, so none remains a first-readiness task.
+Execution's `branch_only` [fresh1M source-normal result, `d0a9daf1132779205f119e9b4470f4eea9cb89c1`](https://github.com/LightChainr/Matching-One/blob/d0a9daf1132779205f119e9b4470f4eea9cb89c1/notes/p334-independent-normal-intervention-result.md),
+score `1164ba91035bb0ee37bcea52f700312475c257b5`, gives
+T=(3.0852005663±.3918738407)e−8. Its3SE interval
+[1.9095790443,4.2608220883]e−8 exceeds δ=1e−8, eliminating complete
+two-score conditional-label mean closure while retaining the frozen3.6565e−8
+forecast. The separate `open_pr #509` [600k H-source experiment, `14b2c98ed3a252a2fe79ce5e124d9484b23a264f`](https://github.com/LightChainr/Matching-One/blob/14b2c98ed3a252a2fe79ce5e124d9484b23a264f/experiments/p334-prospective-intervention-20260831/REPORT.md),
+gives residual ratios.4988857 [.4360616,.5617098] /.5169035 [.4506760,.5831311]
+and rejects both C0±.25 and C1[.75,1.25]. Those ratios condition on old
+training point values, not a known old population residual. They do not
+license a fitted half-amplitude replacement. The two experiments have different
+sources and estimands and are not combined into one model decision.
+Their [exact projection crosswalk, `ccabada318b1eeb12ae28d53391b13ab44c116d2`](https://github.com/LightChainr/Matching-One/blob/ccabada318b1eeb12ae28d53391b13ab44c116d2/notes/p334-independent-interventions-crosswalk.md)
+separates first-score coefficients from the orthogonal label-mean remainder.
+The next substantive input is a model predicting which of these source
+components enters original U, not a fifth contact feature or combined score.
 
-The new [two-clock comparison](../results/p154-fixed-clock-models/REPORT.md),
-`3847a5cf`, removes the pure-fourfold relative shift before new production.
-The surviving scalar baseline predicts original-U effects around.01/.018;
-[paired calibration uncertainty and budget](../results/p154-clock-transmission-budget/REPORT.md)
-do not support an affordable separation from zero. #154 next needs a
-discriminating U prediction, not a new descriptor or an automatic huge run.
-[Repository handoff](TEAM-COORDINATION.md)
-records these results without routine cross-task messages.
+The completed [#154 official report, `open_pr #509` (Draft), `f4999e29612da16a3650f24d124fb59137f053d7`](https://github.com/LightChainr/Matching-One/blob/f4999e29612da16a3650f24d124fb59137f053d7/experiments/p154-prospective-transmission-20260831/REPORT.md)
+contains5M new N85 plus160M new N340 permutations under freeze0820b8d2.
+All four simultaneous entry/completion intervals lie inside±.30; both net
+intervals lie inside±.50. B and C are excluded, W remains `not_excluded`.
+This specific lag1 conditional source leaves primary H4 attention at the
+declared resolution. The completed block receives no added samples, changed
+lag/source or replacement template. This does not reject all temporal
+transmission or identify an exact zero or continuum field.
+
+The [completed M10/M11 secondary, `branch_only` `612df8ec1cbe3be3938ee2e1f6183a1aefc6510b`](https://github.com/LightChainr/Matching-One/blob/612df8ec1cbe3be3938ee2e1f6183a1aefc6510b/notes/p154-clock-line-secondary-result.md)
+leaves both lines `not_excluded`: four simultaneous residual intervals contain
+zero. Its outcome-blind registration is secondary, and the same fresh blocks
+supply both primary and secondary uncertainty. A large unmarked clock-map gain
+does not mean this source excites that direction. These algebraic maps remain
+available support; weak line compatibility neither identifies a clock nor
+overrides the primary decision or becomes a third P0.
+
+The [one-step norm4 source](../results/norm4-lagged-source/REPORT.md), `4daae57e`,
+and old20-batch P334 hierarchy/contact/held-out results remain discovery inputs;
+covariance bookkeeping does not remove hypothesis-search reuse. The completed
+[P398 size/arrangement comparison](../results/p398-stationary-arrangement/REPORT.md),
+`58db48dd`, gives99.7344% static-score explanation but fails exact transition
+closure in32/60 classes. It remains parallel exploration, not another current
+primary experiment. [Repository handoff](TEAM-COORDINATION.md) records the teams
+and dependencies without routine cross-task messages.
 
 The dated rationale below preserves how these inputs were obtained; its old
 "next" statements are historical, not additional execution instructions.
-[NEXT-TARGETS](NEXT-TARGETS.md) owns the current two-experiment queue.
+[NEXT-TARGETS](NEXT-TARGETS.md) owns the current queue and completed handoffs.
 Priorities allocate attention; all research lanes remain open in parallel.
 
 For scientific coordinates use `docs/RESEARCH-MAP.md`; for claim and branch status use `docs/STATUS.md`; for execution contracts use `docs/NEXT-TARGETS.md`; for bold mechanisms and sharp falsifiers use `docs/HYPOTHESIS-BOARD.md`.
 
 ## One ranked queue; scientific rationale below
 
-This Draft incorporates main through `e300609`; later observed main changes are recorded separately in the context inventory. [NEXT-TARGETS](NEXT-TARGETS.md) owns the single attention order and concrete handoffs; this roadmap preserves the supporting scientific history rather than a second copy of that queue. The leading question is the original norm-4 **second physical direction**: canonical E_top is measured topology, not the energy operator. Physical interpretation of the completed P398 width comparison and a realizable P267 response model follow; all other routes stay open.
+This Draft incorporates main through `e300609`; later observed main changes are recorded separately in the context inventory. [NEXT-TARGETS](NEXT-TARGETS.md) owns the single attention order and concrete handoffs; this roadmap preserves the supporting scientific history rather than a second copy of that queue. The original norm-4 **second physical direction** remains unidentified after the completed lag1 finite exclusion above; canonical E_top remains measured topology, not the energy operator. P398 and P267 interpretations remain parallel exploration, not implicit additional primary requests.
 
 The first #370 real-data adapter, P267 amplitude comparison, P334 graph/capacity analysis and first F5/C3 typed observers are completed inputs. No Monte Carlo is launched by this navigation update, and tool/test completion is not an independent scientific milestone.
 
@@ -133,10 +155,11 @@ the declared B-row outcome at 20k, not a task lock. The subsequent Q/R/H
 local-edge replay is also complete and unresolved (joint .8173/2, p=.66455).
 The later absolute-cluster source resolves a root-comoving rank-population
 response, and the completed conditional-line experiment rejects its common
-E-plus-clock prediction. Attention first moves to the existing-mark soft-angular
-split of original U/source response, then genuine class-resolved loading;
-none of these completed finite measurements settles the norm-4 energy-operator
-identity question.
+E-plus-clock prediction. The subsequent soft-angular split and lag1 temporal
+measurement are also complete. Their independent channel experiment has now
+excluded both dominant lag1 templates at the frozen resolution, without
+selecting a clock in the secondary analysis. None of these finite measurements settles the
+norm-4 energy-operator identity question.
 
 In parallel, join the P337 current split to the P334 continuation state:
 
@@ -181,16 +204,18 @@ Branch `62585f2` rejects one global A/E ray relative to four lineage rays. The N
 
 ### P334: use the completed physical cut network
 
-**Current follow-up has advanced to a common-policy response experiment.**
+**The two independent common-policy comparisons are now completed above.**
+The following paragraph preserves their discovery background, not another
+request for first within-prefix covariance or targeted64 production.
 Execution's branch-only `a5c39de3` now resolves source-even mean / source-odd
 direction responses and an almost diagonal rank2 ensemble Jacobian. Its completed
 N425 E curve has opposite-sign thermal lobes with a nearly cancelling integral.
-[The three-team handoff](TEAM-COORDINATION.md) therefore routes attention to
-same-prefix det/det² (俯瞰, targeted increment reported in progress), after its
-finite positive t=±1 response completed at `fb01c44a`. Execution's joint-clock,
+[The three-team handoff](TEAM-COORDINATION.md) records the later completed
+same-prefix det/det² targeted64 increment and the earlier
+finite positive t=±1 response at `fb01c44a`. Execution's joint-clock,
 dipole and plateau synthesis is now completed at `a6304bad`, with the accumulated
-17,866-coordinate factor at `e2ef9983`. It motivates within-prefix covariance
-versus covariance of prefix means. These reuse the original paired batches;
+17,866-coordinate factor at `e2ef9983`; the later hierarchy already separates
+within-prefix covariance from covariance of prefix means. These reuse the original paired batches;
 ensemble rank and imposed source parity do not identify local field count or
 the unperturbed global H4 mechanism.
 

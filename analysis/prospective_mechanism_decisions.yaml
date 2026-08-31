@@ -1,92 +1,148 @@
 schema: matching-one.prospective-mechanism-decisions.v1
 updated: 2026-08-31
 entry: docs/DECISION-EXPERIMENTS.md
-purpose: two_named_prediction_comparisons_not_generic_certificate_framework
+scientific_handoff: notes/independent-decisions-final-20260831.md
+purpose: consume_frozen_decisions_not_reopen_descriptor_search
 policy:
-  primary_experiments: [P154_TEMPORAL_TRANSMISSION, P334_SOURCE_NORMAL_INTERVENTION]
+  primary_lines: [P154_TEMPORAL_TRANSMISSION, P334_INDEPENDENT_INTERVENTIONS]
+  pending_primary_scores: []
+  completed_experiments: [P154_TEMPORAL_TRANSMISSION, P334_SOURCE_NORMAL_INTERVENTION, P334_CONTACT_RESIDUAL_FORECAST]
+  next_primary: named_microscopic_model_predicting_original_U_not_post_reveal_refit_or_automatic_production
   issue_locks: false
   automatic_issue_closure_or_PR_merge: false
   parallel_exploration: true
   discovery_is_not_confirmation: true
   new_suffix_on_old_prefix_is_new_population: false
-  failure_response: retire_specific_failed_prediction_for_this_comparison_no_posthoc_fourth_rescue_model
+  failure_response: retire_specific_failed_prediction_for_this_comparison_no_posthoc_rescue_model
   uncertainty_response: record_unresolved_at_fixed_budget_not_automatic_extension
   routine_communication: repository_only
 experiments:
   - id: P154_TEMPORAL_TRANSMISSION
     issue_refs: [154, 275]
-    status: fixed_clock_comparison_completed_pure_fourfold_law_incompatible_scalar_U_forecast_not_affordably_separated
-    production_launched: false
-    discovery_commit: 4daae57eef5c945aa050a95cd3d5d5d77582161b
-    discovery_paths: [results/norm4-lagged-source/REPORT.md, results/norm4-lagged-source/latest.json]
-    discovery_samples: old_2p4M_permutations_not_independent_confirmation
-    candidate_sizes: [130, 260]
-    fixed_source_candidate: previous_step_bulk_cluster_count_centered_within_occupancy_rank_geometry
-    source_switches: [early_rank0_entry_including_direct02, early_rank1_completion]
-    primary_readout_candidate: original_U_source_derivative_V_and_additive_V0_V1
-    supporting_readout: moving_root_rank1_response
-    prediction_map: docs/DECISION-EXPERIMENTS.md
+    status: completed_independent_primary_stop_main_H4_priority_for_this_lag1_source
+    production_launched: true
+    duplicate_production_by_PR267: false
+    integration_status: open_pr
+    pr: 509
+    source_commit: 0820b8d203e2dc534bb883d6fdb4d6d1e0acb11f
+    source_paths: [experiments/p154-prospective-transmission-20260831/CONTRACT.json]
+    authorization_commit: 14b2c98ed3a252a2fe79ce5e124d9484b23a264f
+    authorization_paths: [experiments/p154-prospective-transmission-20260831/authorization.json, experiments/p154-prospective-transmission-20260831/RUNTIME_PLAN.json]
+    result_commit: f4999e29612da16a3650f24d124fb59137f053d7
+    result_paths: [experiments/p154-prospective-transmission-20260831/REPORT.md, experiments/p154-prospective-transmission-20260831/PROSPECTIVE_RESULT.json]
+    result_sha256: 2c02bf3214ba4c9b31e8ad7ae65addf6d1ff0a82882518d1151556e7d0ce6821
+    sizes: [85, 340]
+    samples_per_N: {85: 5000000, 340: 160000000}
+    batches_per_N: 200
+    shards: 9
+    source: previous_step_bulk_cluster_count_centered_within_occupancy_rank_geometry
+    thermal_derivative: Binomial_weights_only_fixed_microcanonical_source_definition
+    primary_readout: entry_completion_and_net_original_U_at_two_sizes
+    channel_semantics: readout_split_with_shared_full_source_root_and_denominator_tangent_not_early_rank_source_switch_attribution
+    root_bracket: [0.55, 0.65]
+    inference: six_coordinate_Bonferroni_asymptotic_normal_intervals_alpha0p05_full_joint_covariance
+    critical_value: 2.638257273476751
+    templates:
+      W: entry_and_completion_each_in_minus0p30_to_plus0p30_at_both_sizes
+      B: entry_at_least0p60_completion_in_minus0p30_to_plus0p30_at_both_sizes
+      C: completion_at_least0p60_entry_in_minus0p30_to_plus0p30_at_both_sizes
+    template_rule: reject_if_any_required_interval_disjoint_from_allowed_region_no_forced_winner_or_fourth_template
+    net_equivalence_band: [-0.5, 0.5]
+    net_equivalence_rule: both_size_simultaneous_intervals_inside_band_limits_this_source_as_main_H4_explanation_at_declared_resolution_not_exact_zero
+    net_positive_rule: both_size_lower_bounds_above0p5_retains_finite_positive_transmission_target_not_field_identification
+    random_domain: {tag: P154_PROSPECTIVE_TRANSMISSION_V1_20260831, master_seed_hex: '5031353450524f31', counter_begin: 30000000000}
+    old_data_pooled_into_confirmation: false
+    primary_decision: B_and_C_rejected_W_not_excluded_four_channel_intervals_wholly_inside_weak_band
+    net_decision: both_net_intervals_wholly_inside_declared_band_stop_current_main_H4_priority_for_this_source
+    measured:
+      N85: {entry: 0.0444923098, completion: -0.0010221024, net: 0.0434702074, net_SE: 0.0436313425, net_interval: [-0.0716404994, 0.1585809142]}
+      N340: {entry: -0.0535713427, completion: 0.1142468144, net: 0.0606754717, net_SE: 0.0826567024, net_interval: [-0.1573941746, 0.2787451180]}
+    covariance: official32x32_primary6x6_with200_paired_delete_one_vectors_per_N
+    next_deliverable: none_for_completed_block_no_topup_new_lag_source_or_fourth_template
+    previous_candidate_history: f670d26e8056116ec1787e0a2f29009b5db24a7d
     completed_clock_comparison:
       commit: 3847a5cfb0a7fe4454a86cc1bfd8ce4ee2e813f4
-      paths: [results/p154-fixed-clock-models/REPORT.md, results/p154-fixed-clock-models/latest.json, results/p154-clock-transmission-budget/REPORT.md, results/p154-clock-transmission-budget/latest.json]
-      integration_status: open_pr
-      sizes: [260, 340]
-      rejected_parameterization: pure_cos4_relative_rigid_birth_clock_after_only_pooled_calibration_entry_completion_residuals31to35SE
-      surviving_baseline: scalar_relative_rigid_birth_clock_not_confirmed
-      U_forecasts: [{N: 260, value: 0.0098017095, SE: 0.0232779337}, {N: 340, value: 0.0175267424, SE: 0.0281690266}]
-      reference8M_3SE_resolution: [0.7659938618, 1.2539905237]
-      boundary: discovery_model_elimination_no_new_samples_or_adaptive_search_adjusted_certificate
-    regions:
-      A: abs_V_le_delta_U_and_Rdot_lt_minus_delta_R_at_both_sizes_allows_channel_cancellation
-      B: predicted_sign_V_gt_delta_U_and_predicted_sign_V0_minus_abs_V1_gt_eta_at_both_sizes
-      C: predicted_sign_V_gt_delta_U_and_predicted_sign_V1_minus_abs_V0_gt_eta_at_both_sizes
-    decision_rule: one_joint_confidence_region_entirely_inside_declared_region_else_mixed_incompatible_or_unresolved
-    missing_before_freeze: [microscopic_signed_predictions, delta_U, delta_R, eta, joint_precision_and_fixed_sample_budget, fresh_random_domains, producer_commit]
-    candidate_cost_example:
-      delta_U: 0.5
-      marginal_target_SE: 0.154
-      approximate_new_samples: {N130: 2600000, N260: 22000000}
-      boundary: illustrative_single_N_normal_95percent_interval_80percent_equivalence_probability_at_zero_not_a_joint_budget_or_theory_constant
-    next_deliverable: numerical_prediction_and_affordable_joint_separation_then_new_random_block_not_more_discovery_coordinates
+      paths: [results/p154-fixed-clock-models/REPORT.md, results/p154-clock-transmission-budget/REPORT.md]
+      rejected_parameterization: pure_cos4_relative_rigid_birth_clock_on_old_data
+      surviving_baseline: scalar_root_contrasts_compatible_tiny_U_forecast_not_confirmed
+      boundary: narrow_old8M_budget_does_not_cancel_new165M_larger_response_region_experiment
+    secondary_clock_lines:
+      source_commit: 83f3eba88d7f1290704f82610c28669dc5e12f3c
+      source_path: notes/p154-clock-line-secondary-freeze.md
+      integration_status: branch_only
+      status: completed_both_lines_not_excluded_weak_signal_does_not_select_clock_or_rescue_primary
+      implementation_commit: 4129d47dd364ff4c1d4d1075eed4d94f89c88f7a
+      implementation_path: scripts/p154_clock_line_secondary.py
+      result_commit: 612df8ec1cbe3be3938ee2e1f6183a1aefc6510b
+      result_paths: [notes/p154-clock-line-secondary-result.md, results/p154-clock-line-secondary/score.json]
+      registration_scope: outcome_blind_during_or_after_production_not_second_preproduction_primary
+      hypotheses: [M10_pure_locally_flat_orientation_common_birth, M11_pure_locally_flat_orientation_relative_birth]
+      residual: C_entry_times_v_completion_minus_C_completion_times_v_entry_divided_by_hypot_gains
+      nuisance: reestimate_unmarked_baseline_gains_in_same_delete_one_as_official_source_response
+      family: four_residuals_Bonferroni_alpha0p05_plus_joint_covariance_with_original_six
+      critical_value: 2.4977054744
+      decision: all_four_intervals_contain_zero_M10_and_M11_not_excluded
+      boundary: correlated_secondary_readout_not_new_primary_or_rescue_of_failed_rectangles_both_lines_include_zero
   - id: P334_SOURCE_NORMAL_INTERVENTION
     issue_refs: [334, 429]
-    status: scientific_prediction_budget_and_producer_sealed_dispatch_reports_pre_generation_no_result_at_pin
-    source_commit: bde1a51ca95c74448265b670ba0d9a0d87915479
-    source_path: notes/p334-independent-intervention-freeze.md
+    status: completed_independent_decision_stop_complete_two_score_label_closure
     integration_status: branch_only
     branch: analysis/p334-paired-clock-loading-20260831
-    scientific_freeze_commit: 43079652788ad39236219d2b712e33f1b320a71d
-    projection_clarification_commit: bc0a18c207e3b09f49ea6b6af6601471114d654a
-    dispatch_path: notes/p334-independent-intervention-dispatch.json
+    source_commit: d0a9daf1132779205f119e9b4470f4eea9cb89c1
+    source_path: notes/p334-independent-normal-intervention-result.md
+    score_commit: 1164ba91035bb0ee37bcea52f700312475c257b5
+    score_path: results/p334-independent-normal-intervention/score.json
+    raw_commit: f1b36436acef4ce9935df23b22b1dc53f109bdfb
+    protocol_commit: bc0a18c207e3b09f49ea6b6af6601471114d654a
     producer_commit: 513552c77f035526efb99075b54032d288b2f4bb
-    producer_integrated_commit: 6928b3d861d2f4ce1ee93446c02e6a44e56832a6
-    owner_in_source: mathematics_execution_team
     duplicate_production_by_PR267: false
-    production_observation: no_result_at_fixed_source_pin_not_live_job_monitor
     model_M0: complete_two_score_conditional_label_mean_closure_predicts_zero_source_normal_center_response
-    model_M0_boundary: stronger_than_first_Jacobian_J_equals_B_G
     model_M1: empirical_source_normal_response_transports_to_new_prefix_population
-    four_coordinate_forecast: [4.116e-8, 3.233e-8, 3.300e-8, 3.977e-8]
     primary_target: equal_weight_mean_of_four_own_source_center_responses
     primary_forecast: 3.6565e-8
     practical_zero_margin: 1.0e-8
-    interval: T_plusminus_3SE_fixed_batch_diagnostic_not_exact_or_anytime
-    lower_above_margin: stop_promoting_M0_complete_label_closure
-    upper_below_margin: stop_promoting_material_positive_M1_transport_forecast
-    otherwise: unresolved_fixed_budget_end
-    interpretation: rejecting_M1_does_not_confirm_M0_negative_response_can_reject_both
+    measured: {T: 3.0852005663e-8, SE: 3.9187384066e-9, interval_3SE: [1.9095790443e-8, 4.2608220883e-8]}
+    decision: M0_rejected_M1_positive_forecast_not_excluded
+    boundary: first_Jacobian_BG_not_complete_label_mean_no_global_anomaly_or_continuum_field_identification
+    source: second_density_score_normal_to_both_original_scores
     policy: q_plusminus_equals_one_plusminus_phi_over_max_abs_phi_divided_by_vacant_count
-    estimand: max_abs_phi_times_arm_difference_over_two_exactly_targets_uniform_phi_F_not_unweighted_arm_difference
-    census_projection: exact_source_range_G_pseudoinverse_no_singular_prefix_exclusion
+    estimand: max_abs_phi_times_arm_difference_over_two_inside_population_mean
+    sizes: [325, 425]
     prefixes_per_size: 500000
     batches_per_size: 20
     prefixes_per_batch: 25000
     paired_draws_per_active_prefix_and_source: 8
-    sizes: [325, 425]
-    k0: [193, 252]
     base_seed: 202608311920334
     stream_domains: [N, batch, prefix, source, rep]
     old_data_pooled_into_confirmation: false
-    source_host_plan: {N325: NePnUn, N425: 551oUR}
-    host_plan_is_reservation: false
-    next_deliverable: fixed_new_population_score_and_uncertainty_from_the_existing_sealed_producer
+    completed_hosts: {N325: NePnUn, N425: 551oUR}
+    lifecycle_receipt: completed_retrieved_and_Returned_Ready_at_final_team_handoff_not_live_state
+    next_deliverable: none_for_completed_block_global_transmission_requires_separate_named_model_not_automatic_resampling
+  - id: P334_CONTACT_RESIDUAL_FORECAST
+    issue_refs: [334]
+    status: completed_both_frozen_residual_forecasts_rejected
+    integration_status: open_pr
+    pr: 509
+    branch: research/results-first-synthesis-20260831
+    freeze_commit: 4b3c21b7c8c33a5df7eab7eaa2a9f04af18d1277
+    source_commit: 14b2c98ed3a252a2fe79ce5e124d9484b23a264f
+    source_paths: [experiments/p334-prospective-intervention-20260831/REPORT.md, experiments/p334-prospective-intervention-20260831/results/latest.json]
+    source: original_first_loop_score_H_within_joint_degree_class
+    policy: strictly_positive_q_plusminus_equals_one_plusminus_H_over8_divided_by_vacant_count
+    primary_target: full_population_clock_loading_covariance_of_fixed_four_contact_prediction_residual
+    C0_ratio_band: [-0.25, 0.25]
+    C1_ratio_band: [0.75, 1.25]
+    measured:
+      N325: {R: 2.5359933e-9, SE: 0.1388471e-9, ratio: 0.4988857, interval: [0.4360616, 0.5617098]}
+      N425: {R: 2.2061875e-9, SE: 0.1228952e-9, ratio: 0.5169035, interval: [0.4506760, 0.5831311]}
+    inference: each_N_t59_97p5percent_intervals_Bonferroni_two_size95percent_family_conditional_on_frozen_training_points
+    decision: both_C0_and_C1_excluded_at_both_N
+    boundary: not_unconditional_population_halving_not_full_contact_sufficiency_test_not_same_estimand_as_normal_T
+    sizes: [325, 425]
+    prefixes_per_size: 300000
+    batches_per_size: 60
+    prefixes_per_batch: 5000
+    counter_ranges: {N325: [53032500000, 53032800000], N425: [53042500000, 53042800000]}
+    conditional_stream: bit63
+    old_data_pooled_into_confirmation: false
+    next_deliverable: none_for_completed_block_no_half_amplitude_rescue_or_fifth_descriptor

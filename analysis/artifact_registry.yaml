@@ -1,4 +1,4 @@
-version: 37
+version: 39
 updated: 2026-08-31
 latest_scientific_handoff:
   entry: docs/TEAM-COORDINATION.md
@@ -7,20 +7,29 @@ latest_scientific_handoff:
   local_budget_report: results/p154-clock-transmission-budget/REPORT.md
   preceding_local_result_commit: 58db48dd7b6257930ee5e704a37e438c0cf2faf1
   preceding_local_result_report: results/p398-stationary-arrangement/REPORT.md
-  execution_synthesis_commit: bde1a51ca95c74448265b670ba0d9a0d87915479
-  execution_synthesis_report: notes/p334-prefix-response-projection-scientific-card.md
+  execution_synthesis_commit: d0a9daf1132779205f119e9b4470f4eea9cb89c1
+  execution_synthesis_report: notes/p334-independent-normal-intervention-result.md
   execution_covariance_commit: ce20158a5928e55b67324cba7ed3a18a5c163b39
   execution_covariance_report: results/p334-birth-covariance-hierarchy-joint/score.json
   execution_integration_status: branch_only
   external_completed_commit: fb01c44aa45e4f8d37d52144e2ad7c4adfe6ce40
   external_pr: 509
-  latest_external_handoff_commit: 04743caf1450d5f88cae2747e0dbee36d7cd8ca1
-  latest_external_reports: [experiments/p154-temporal-source-20260831/REPORT.md, experiments/p334-prefix-prediction-20260831/REPORT.md, experiments/p334-conditional-shape-20260831/results/REPORT.md]
+  latest_external_handoff_commit: 206b9c7b7eb909f580d9806351014daafe523c3a
+  completed_independent_report: experiments/p334-prospective-intervention-20260831/REPORT.md
+  current_P154_contract_commit: 0820b8d203e2dc534bb883d6fdb4d6d1e0acb11f
+  current_P154_result_commit: f4999e29612da16a3650f24d124fb59137f053d7
+  current_P154_result_report: experiments/p154-prospective-transmission-20260831/REPORT.md
+  current_secondary_theory_commit: 83f3eba88d7f1290704f82610c28669dc5e12f3c
+  current_secondary_result_commit: 612df8ec1cbe3be3938ee2e1f6183a1aefc6510b
+  current_secondary_result_report: notes/p154-clock-line-secondary-result.md
+  current_synthesis_commit: 95d5d662afcef2d9d4b5167f82612a70cb4e83c7
+  current_synthesis_report: notes/independent-decisions-final-20260831.md
+  latest_external_reports: [experiments/p154-prospective-transmission-20260831/REPORT.md, experiments/p334-prospective-intervention-20260831/REPORT.md]
   external_local_rank_result_commit: 7beb99ce86df903ec41ee2ec2a1de59184cf5b6b
   decision_sheet: docs/DECISION-EXPERIMENTS.md
   decision_contract: analysis/prospective_mechanism_decisions.yaml
   execution_freeze_report: notes/p334-independent-intervention-freeze.md
-  boundary: local_clock_comparison_open_PR267_discovery_P334_producer_sealed_dispatch_reports_pre_generation_no_result_at_cited_pin_PR509_three_new_discovery_reports_completed
+  boundary: three_independent_decisions_and_correlated_secondary_completed_failed_parameterizations_exit_primary_attention_no_rescoring_or_main_integration
 purpose: >
   Lightweight navigation/provenance index. Registry conflicts never block
   science; claim strength lives in STATUS and priority lives in NEXT-TARGETS.
@@ -87,8 +96,9 @@ integration_policy:
 
 canonical_documents:
   - {path: README.md, status: canonical_current, role: external_overview}
-  - {path: docs/DECISION-EXPERIMENTS.md, status: canonical_current, role: two_prospective_model_comparisons_prediction_gaps_and_failure_rules}
-  - {path: analysis/prospective_mechanism_decisions.yaml, status: P154_candidate_P334_scientific_freeze, role: machine_readable_discovery_boundary_and_prospective_decision_design}
+  - {path: docs/DECISION-EXPERIMENTS.md, status: canonical_current, role: completed_independent_decisions_and_failed_model_priority_exit}
+  - {path: analysis/prospective_mechanism_decisions.yaml, status: three_independent_decisions_and_secondary_completed, role: machine_readable_frozen_definitions_decisions_and_no_automatic_new_production}
+  - {path: notes/independent-decisions-final-20260831.md, status: current_scientific_handoff, role: three_independent_decisions_and_distinct_source_projection_synthesis}
   - {path: docs/TEAM-COORDINATION.md, status: canonical_current, role: three_team_result_routing_and_nonexclusive_compute_handoff}
   - {path: analysis/team_coordination.yaml, status: canonical_current, role: timestamped_sources_dependencies_and_reported_execution_states_not_live_monitor}
   - {path: docs/REPOSITORY-CONTEXT.md, status: canonical_current, role: full_discussion_recovery_and_completed_vs_remaining_crosswalk}
@@ -292,6 +302,37 @@ channel_semantics:
   required_fields: [topology_channel, combination, probability_coordinate, orientation_order, normalization, quantity]
 
 registered_reanalyses:
+  - id: PR509_FRESH_P154_TRANSMISSION_RESULT
+    status: open_pr
+    pr: 509
+    commit: f4999e29612da16a3650f24d124fb59137f053d7
+    report: experiments/p154-prospective-transmission-20260831/REPORT.md
+    result: experiments/p154-prospective-transmission-20260831/PROSPECTIVE_RESULT.json
+    role: completed165M_B_C_rejected_net_within0p50_band_stop_source_main_H4_priority_not_exact_zero
+  - id: P154_SECONDARY_CLOCK_LINE_RESULT
+    status: branch_only
+    branch: analysis/p334-paired-clock-loading-20260831
+    commit: 612df8ec1cbe3be3938ee2e1f6183a1aefc6510b
+    report: notes/p154-clock-line-secondary-result.md
+    result: results/p154-clock-line-secondary/score.json
+    role: both_pre_output_lines_not_excluded_same_fresh_block_no_clock_identity_or_primary_rescue
+  - id: P334_FRESH_NORMAL_INTERVENTION_RESULT
+    integration_status: branch_only
+    branch: analysis/p334-paired-clock-loading-20260831
+    commit: d0a9daf1132779205f119e9b4470f4eea9cb89c1
+    status: completed_independent_one_million_prefix_decision
+    outputs: [notes/p334-independent-normal-intervention-result.md, results/p334-independent-normal-intervention/score.json]
+    decision: complete_two_score_label_mean_closure_rejected_empirical_positive_forecast_not_excluded
+    boundary: finite_source_normal_C_response_not_global_anomaly_or_contact_loading_R
+  - id: PR509_FRESH_CONTACT_RESIDUAL_RESULT
+    integration_status: open_pr
+    pr: 509
+    branch: research/results-first-synthesis-20260831
+    commit: 14b2c98ed3a252a2fe79ce5e124d9484b23a264f
+    status: completed_independent600k_prefix_decision
+    outputs: [experiments/p334-prospective-intervention-20260831/REPORT.md, experiments/p334-prospective-intervention-20260831/results/latest.json]
+    decision: both_fixed_zero_and_unit_transfer_bands_rejected
+    boundary: conditional_on_old_training_points_not_unconditional_population_halving_or_half_amplitude_model
   - id: PR267_P154_FIXED_CLOCK_MODELS_AND_BUDGET
     status: completed_two_fixed_laws_pooled_calibration_and_joint_uncertainty
     integration_status: open_pr

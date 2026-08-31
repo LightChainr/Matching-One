@@ -6,7 +6,44 @@
 
 `docs/NEXT-TARGETS.md` owns the single attention order, while `docs/ROADMAP.md` preserves its scientific rationale. Neither locks a task, serializes theory work or treats a lower priority as a scientific rejection.
 
-**New finite-model elimination, `open_pr #267`, `3847a5cfb0a7fe4454a86cc1bfd8ce4ee2e813f4`:**
+**Completed independent #154 decision, `open_pr #509` (Draft), `f4999e29612da16a3650f24d124fb59137f053d7`:**
+the [official report](https://github.com/LightChainr/Matching-One/blob/f4999e29612da16a3650f24d124fb59137f053d7/experiments/p154-prospective-transmission-20260831/REPORT.md)
+delivers the full frozen5M N85 plus160M N340 block,200 batches per size.
+Old discovery samples do not enter its point estimates or covariance.
+The original six-coordinate simultaneous95% intervals are:
+
+| N | Entry contribution | Completion contribution | Net original-U response |
+|---:|---|---|---|
+|85|[−.043502,.132487]|[−.076653,.074609]|[−.071640,.158581]|
+|340|[−.220264,.113122]|[−.048797,.277290]|[−.157394,.278745]|
+
+All four channel intervals lie inside±.30 and both net intervals inside±.50.
+B (entry≥.60 with weak completion) and C (completion≥.60 with weak entry)
+are excluded at both sizes; W remains `not_excluded`, not an identified
+physical theory. This completes the predeclared priority decision: the
+specified lag1 rank-centered CB+CW policy no longer receives primary H4
+attention. No additional sample, changed lag/source or replacement template
+is attached to this result. These finite, asymptotic-normal intervals do not
+prove exact zero, all-size scaling or absence of other temporal transmission.
+Entry/completion are readout contributions sharing the full-source root/slope
+motion; their sum is original U, not an independent event-source attribution.
+
+**Completed dependent secondary, `branch_only`, `612df8ec1cbe3be3938ee2e1f6183a1aefc6510b`:**
+the [M10/M11 result](https://github.com/LightChainr/Matching-One/blob/612df8ec1cbe3be3938ee2e1f6183a1aefc6510b/notes/p154-clock-line-secondary-result.md)
+leaves both pure locally flat restrictions `not_excluded`: all four
+simultaneous line-residual intervals contain zero. This was outcome-blind
+secondary registration during/after production, not a second pre-production
+primary experiment. The joint10x10 covariance combines six official
+coordinates with four residuals on the same new blocks; they are not ten
+independent observations. Neither clock is identified, and neither supplies
+a rescue of B/C. The earlier high gain is unmarked-baseline sensitivity,
+not a measured source amplitude. [The final decision record](../notes/independent-decisions-final-20260831.md)
+now supersedes the [pre-score handoff](../notes/independent-decisions-handoff-20260831.md).
+The next scientific target is a named microscopic model's quantitative
+original-U response, using the completed map. No new production is assigned
+automatically; this overview changes no research Issue lifecycle.
+
+**Earlier finite-model elimination, `open_pr #267`, `3847a5cfb0a7fe4454a86cc1bfd8ce4ee2e813f4`:**
 [The two-clock comparison](../results/p154-fixed-clock-models/REPORT.md) uses
 only pooled root/rank1 responses to calibrate two fixed laws. A pure cos4
 relative shift misses the unchanged entry/completion direction contrasts by
@@ -30,12 +67,12 @@ equilibrium fugacity. The first lag measurement is completed, not awaiting imple
 
 The replay reuses2.4M old permutations with96-dimensional joint covariance
 and the original three groups. It is discovery, not prospective confirmation.
-The [two highest-attention decision lines](DECISION-EXPERIMENTS.md) are
-#154's candidate prospective temporal-transmission comparison and #334's
-already-frozen independent intervention. Old20-batch P334 held-out
-views, including new64 on the same prefixes, can refine discovery but cannot
-supply independent prefix-population confirmation. Failed parameterizations
-may be retired without closing or locking their research lines.
+The [decision register](DECISION-EXPERIMENTS.md) now records both completed
+P334 fresh-block experiments and #154's completed primary and secondary
+decisions. Old20-batch P334 held-out views,
+including new64 on the same prefixes, remain discovery inputs; the independent
+results below have their own new-prefix dependency groups. Failed
+parameterizations may be retired without closing or locking their research lines.
 
 **Parallel P398 discovery, `open_pr #267`, `58db48dd7b6257930ee5e704a37e438c0cf2faf1`:**
 [Primal/dual size profiles](../results/p398-stationary-arrangement/REPORT.md)
@@ -47,18 +84,38 @@ not a third default top-priority experiment. This finite generator, norm4's
 site source and P334's loop-score source are distinct; their similarities do
 not constitute independent confirmation of a common field.
 
-**P334 independent intervention is frozen, not yet a result:**
-[`bc0a18c207e3b09f49ea6b6af6601471114d654a`](https://github.com/LightChainr/Matching-One/blob/bc0a18c207e3b09f49ea6b6af6601471114d654a/notes/p334-independent-intervention-freeze.md),
-`branch_only`, specifies500k fresh prefixes per N325/N425,1M total,
-with exact finite paired interventions preserving class masses, immediate
-rank/Euler and both original score means. M0 is complete two-score label
-closure; M1 forecasts transportable source-normal center response.
-The four-coordinate primary mean T has forecast3.6565e−8, practical margin
-δ=1e−8 and fixed T±3SE rule. The later
-[dispatch, `bde1a51c`](https://github.com/LightChainr/Matching-One/blob/bde1a51ca95c74448265b670ba0d9a0d87915479/notes/p334-independent-intervention-dispatch.json)
-seals producer `513552c7`, integration `6928b3d8`, NePnUn/551oUR and the seed.
-Its status is frozen before formal generation, with no result at this pin;
-this is not a live job observation or a missing producer-freeze task.
+**P334 independent1M source-normal intervention is complete, `branch_only`:**
+score `1164ba91035bb0ee37bcea52f700312475c257b5` and
+[interpretation `d0a9daf1132779205f119e9b4470f4eea9cb89c1`](https://github.com/LightChainr/Matching-One/blob/d0a9daf1132779205f119e9b4470f4eea9cb89c1/notes/p334-independent-normal-intervention-result.md)
+deliver500k fresh prefixes per N325/N425,20 new batches each. The paired
+finite intervention preserves safe-class masses, immediate rank/Euler and
+both original score means. Its correctly weighted primary mean is
+T=(3.0852005663±.3918738407)e−8, with3SE interval
+[1.9095790443,4.2608220883]e−8 wholly above the frozen δ=1e−8.
+The complete conditional-label mean closure, with class intercepts and common
+two-score slopes within a prefix, is eliminated by its predeclared rule.
+The frozen3.6565e−8 forecast survives; a first-Jacobian relation alone is not
+excluded. This completed result supersedes the earlier pre-generation dispatch
+status, without combining old discovery batches into the new primary score.
+
+**Separate P334 first-order H-source experiment is complete, `open_pr #509`:**
+[`14b2c98ed3a252a2fe79ce5e124d9484b23a264f:experiments/p334-prospective-intervention-20260831/REPORT.md`](https://github.com/LightChainr/Matching-One/blob/14b2c98ed3a252a2fe79ce5e124d9484b23a264f/experiments/p334-prospective-intervention-20260831/REPORT.md)
+uses600k other fresh prefixes,300k per N. Its first-order H-source residual
+projection gives Rnew/Rold=.4988857 [.4360616,.5617098] at N325 and
+.5169035 [.4506760,.5831311] at N425, with simultaneous95% coverage under
+the stated two-interval convention. Both frozen bands C0=[−.25,.25] and
+C1=[.75,1.25] are excluded. This conditions on old training point values;
+it is not an unconditional population-halving result or a newly fitted
+half-amplitude model. The H-source residual projection and the source-normal
+T above have different sources, estimands and fresh blocks: their decisions
+are recorded separately, not added as votes on one model.
+
+The [exact projection crosswalk, `branch_only` `ccabada318b1eeb12ae28d53391b13ab44c116d2`](https://github.com/LightChainr/Matching-One/blob/ccabada318b1eeb12ae28d53391b13ab44c116d2/notes/p334-independent-interventions-crosswalk.md)
+explains their coexistence: `m_F^c=H^T b_F+r_F`, `tau_F=G b_F`, and
+`E[phi m_F]=E[phi r_F]`. The600k experiment constrains a cross-prefix loading
+of first-score responses; the1M normal intervention detects the orthogonal
+conditional-mean component. This identity is not a new predictive model,
+independence assertion or field count, and needs no combined significance.
 
 **P334 contact/local-rank discovery is completed:** [the preceding handoff](../notes/p334-contact-and-local-rank-handoff-20260831.md)
 pins earlier `branch_only` execution `43a30e49` and `open_pr #509` `8ad30617`;
@@ -157,7 +214,7 @@ The angular thermal U response is **−5.9723±4.2736 at N260** and **11.8594±9
 
 The [two-phase comparison](../results/norm4-source-two-phase/REPORT.md), execution `634499ce`, is already complete: `SE(raw)/SE(two-phase)=.898–1.008`, with less than2e−5 of the final variance from the unmarked complement. It did not deliver stable variance reduction. The [original100k full-chain report](../results/norm4-source-thermal/REPORT.md), [independent P40 response](../results/p40-source-thermal/REPORT.md) and [source-quotient split](../notes/p40-thermal-clock-source-quotient.md) remain completed historical stages. First two-phase estimation is no longer a next task.
 
-The endpoint increment newly marks900k already-produced permutations per endpoint, adds zero new random counters and uses no GPU/server or repeated test suite. It does not inherit full1.9B/1B source precision. Conditional-line, fixed-K, soft-angular bridge and one-step lagged-source measurements are now completed discovery stages. Attention1 is a candidate prospective temporal-transmission comparison, not yet frozen: winding-contact models should predict signed T01/T12 and P4, whose required contact marks are not supplied by the current kernels alone. Earlier bridge proposals describe history, not requests to repeat those measurements.
+The endpoint increment newly marks900k already-produced permutations per endpoint, adds zero new random counters and uses no GPU/server or repeated test suite. It does not inherit full1.9B/1B source precision. Conditional-line, fixed-K, soft-angular bridge and one-step lagged-source measurements are completed discovery stages. Their subsequent independent165M test now excludes both dominant channel templates and places all channel/net intervals inside the frozen weak bands. The completed M10/M11 secondary does not identify a clock. These readout channels are not a new T01/T12 event-source split. Current attention is the exact decision and finite-model crosswalk, not additional lag1 production or another first-bridge measurement.
 
 The [P40 even-given-odd result](../results/p40-even-given-odd/REPORT.md)
 (`56a6267d`, `open_pr #267`) now supplies the missing E_top/source moments.

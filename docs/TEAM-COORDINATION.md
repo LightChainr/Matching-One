@@ -1,48 +1,91 @@
 # Three-team scientific handoff / 三队协作入口
 
-Updated: **2026-08-31**, pinned handoffs `bde1a51c` / `04743caf` / `3847a5cf`. This is a result-routing entry, not a second
+Updated: **2026-08-31**, delivered results `f4999e29` / `612df8ec`, branch heads `206b9c7b` / `4bb851cb`. This is a result-routing entry, not a second
 priority board or a live process monitor. [Next Targets](NEXT-TARGETS.md) remains
 the single attention order; [the machine-readable handoff](../analysis/team_coordination.yaml)
 records source pins and the state reported by each team.
 
-**Current priority override:** the user's latest direction is two
-[prospective comparisons](DECISION-EXPERIMENTS.md): #154 transmission into
-original U and #334 an independent population contact intervention. Consume
-already-delivered/claimed old-prefix work as discovery; further descriptors,
-Hessians and generic certificates do not automatically enter the primary queue.
-This changes attention, not Issue state or another team's running process.
+**The two previously prioritized comparison routes are delivered.** #154's
+[official result `f4999e29`](https://github.com/LightChainr/Matching-One/blob/f4999e29612da16a3650f24d124fb59137f053d7/experiments/p154-prospective-transmission-20260831/REPORT.md)
+excludes the entry-dominant B and completion-dominant C templates. Both net-U
+intervals lie wholly within the frozen ±0.50 band: **this particular lag1
+source leaves the main-H4 priority allocation at the declared resolution**.
+W is numerically compatible, not an identified physical theory. The completed
+secondary M10/M11 comparison leaves both lines not excluded and does not
+override that decision. No sample extension, lag/source substitution or rescue
+template follows this result; no Issue is locked or closed.
 
-**Only these two comparisons remain P0.** The new [fixed-clock comparison](../results/p154-fixed-clock-models/REPORT.md)
-removes the pure cos(4θ) relative-clock law on old data (31–35-SE paired
-entry/completion residuals). The scalar law is not excluded, but its U
-forecasts `.00980±.02328` / `.01753±.02817` do not support claiming that an8M
-block can distinguish them from zero. [The budget calculation](../results/p154-clock-transmission-budget/REPORT.md)
-includes calibration uncertainty. #334 retains its frozen independent
-population comparison; its dispatch record seals the producer and two hosts,
-but still says **frozen before formal generation**, with no production result
-at the recorded pin. This handoff only reads repository artifacts; it does not
-start, inspect or alter a machine.
+#334's source-normal result `1164ba91` / `d0a9daf1` and distinct four-contact
+residual result `14b2c98e` remain completed independent experiments. They
+eliminate different models and do not combine into one residual or evidence
+tally. The [decision entry](DECISION-EXPERIMENTS.md) and [Next Targets](NEXT-TARGETS.md)
+carry attention forward; the [final synthesis](../notes/independent-decisions-final-20260831.md)
+connects the decisions without reopening completed experiments or
+create a second priority queue.
 
 ## Current complementary work
 
 | Team | Delivered / active contribution | Next handoff |
 |---|---|---|
-| **数学研究执行** | Branch-only `bde1a51c` retains the `bc0a18c2` source-normal M0/M1 freeze and seals producer `513552c7` plus NePnUn/551oUR in the dispatch JSON. Hierarchy, contact and curvature discovery are complete. | The planned1M-fresh-prefix comparison remains frozen before formal generation at this pin; no production result. Publish fixed T±3SE against delta1e−8 when actually delivered; no duplicate #267 launch. |
-| **数学研究总览** | Draft [PR #267](https://github.com/LightChainr/Matching-One/pull/267), `3847a5cf`: fixed scalar/fourfold clock comparison and calibrated U budget are complete. Pure fourfold fails; scalar survives these root-level contrasts without confirmation. | Keep #154 on a measurable original-U transmission prediction. The present tiny scalar forecast does not justify an8M zero-versus-clock production claim. Two P0 comparisons only; repository-only coordination. |
-| **数学研究俯瞰** | `04743caf` completes three further analyses: lag `ceil(sqrt N)` temporal source on old permutations, held-out constant-versus-BG prediction, and cell00 conditional shape on old prefixes. | These are completed discovery inputs, not fresh-prefix confirmation. Carry their model distinctions into the existing #154/#334 comparisons; do not repeat their first analysis or relabel BG as a completed four-contact held-out model. |
+| **数学研究执行** | P334 source-normal T=(3.08520±.39187)×10⁻⁸ excludes complete two-score conditional mean closure. P154 secondary score/report `612df8ec`, linked at `4bb851cb`, is also complete: all four M10/M11 line intervals include zero. | Both lines remain not excluded; neither identifies a clock or rescues a failed primary prediction. Preserve their covariance with the official response; no repeat scorer or production. |
+| **数学研究总览** | Draft [PR #267](https://github.com/LightChainr/Matching-One/pull/267) receives the completed P154 primary and secondary decisions alongside both P334 experiments. Old `3847a5cf` cos4 rejection and scalar-U budget retain their distinct discovery scope. | Remove the completed lag1 source from the current main-H4 allocation. Keep P334 global-observer transmission open without automatically launching a new experiment; coordination stays repository-first. |
+| **数学研究俯瞰** | `f4999e29` delivers all 165M P154 permutations, nine shards, 200 batches/N, official six-coordinate decisions and full covariance. B/C fail; W is not excluded; both net intervals meet the frozen weak-transmission band. The separate P334 contact-residual result `14b2c98e` is complete. | The frozen experiment is finished. Retain all delivered data and decisions; no extra samples, replacement lag/source or fourth numerical template. |
 
 The execution result is **branch_only**, on
 `analysis/p334-paired-clock-loading-20260831`, with no corresponding PR in the
-17:58 query. Its [Issue #334 result card](https://github.com/LightChainr/Matching-One/issues/334#issuecomment-5476674429)
+historical 17:58 query; the current local delivery pin is
+`4bb851cb192fc10205a73998f8722ec941ce03c9`. Its [Issue #334 result card](https://github.com/LightChainr/Matching-One/issues/334#issuecomment-5476674429)
 and [PR #267 pointer](https://github.com/LightChainr/Matching-One/pull/267#issuecomment-5476674567)
 are discussion links, not code integration. PR #509 retains its observed
 open/Draft lifecycle; the current delivery pin is
-`04743caf1450d5f88cae2747e0dbee36d7cd8ca1`. Earlier `8ad30617` includes final targeted64 result
+`206b9c7b7eb909f580d9806351014daafe523c3a`, containing the official result
+`f4999e29612da16a3650f24d124fb59137f053d7`. Earlier `14b2c98e` completes the
+fresh contact-residual comparison; `04743caf` completes temporal/BG/shape work;
+`8ad30617` includes final targeted64 result
 `7beb99ce86df903ec41ee2ec2a1de59184cf5b6b`. The earlier `ac5761ce` running
 report is history, superseded by that completed package; this is not a new live API/process check.
 PR #267 also remains open and Draft; references to #509 do not merge its code.
 
-## Latest completed fixed-clock and prediction handoffs
+## P154 completed primary decision and secondary interpretation
+
+The [formal contract at `0820b8d2`](https://github.com/LightChainr/Matching-One/blob/0820b8d203e2dc534bb883d6fdb4d6d1e0acb11f/experiments/p154-prospective-transmission-20260831/CONTRACT.json)
+uses the lag=1 early-rank-centered bulk CB+CW source and the original normalized
+U, with entry/completion/net readouts at both N85 and N340. Its three frozen
+numerical templates and net-equivalence band are distinct from the preceding
+small scalar forecast below. All nine authorized shards are delivered: N85=5M,
+N340=160M, with 200 paired batches at each N. The official net responses are
+`.043470±.043631` / `.060675±.082657`, with simultaneous intervals
+`[−.071640,.158581]` / `[−.157394,.278745]`. Both intervals are wholly within
+±.50. All four entry/completion intervals also lie within W's ±.30 band;
+B/C's ≥.60 dominant-channel requirements fail at both sizes. These bounded
+finite-size decisions activate the source-specific priority exit, not a claim
+of exact zero or rejection of every H4 source.
+
+The [completed M10/M11 report `612df8ec`](https://github.com/LightChainr/Matching-One/blob/612df8ec1cbe3be3938ee2e1f6183a1aefc6510b/notes/p154-clock-line-secondary-result.md)
+uses the [outcome-blind secondary freeze `83f3eba8`](https://github.com/LightChainr/Matching-One/blob/83f3eba88d7f1290704f82610c28669dc5e12f3c/notes/p154-clock-line-secondary-freeze.md),
+registered during/after production, before outcome inspection. Its four line
+residuals at N85.M10, N85.M11, N340.M10, N340.M11 are respectively
+`−.03462443±.03171942`, `−.03330387±.03124154`,
+`.11639950±.06634273`, `−.03698585±.05853971`; all four simultaneous intervals
+include zero. Both pure, locally flat restrictions remain **not_excluded**.
+Their high baseline gains describe sensitivity, not demonstrated source
+occupancy. The official 32×32/primary 6×6 covariance and secondary joint 10×10
+covariance preserve the same two independent N domains and all within-N pairing.
+These are correlated interpretations of one experiment, not extra evidence or
+the earlier pure cos4 relative-clock law. The secondary result cannot rescue
+the primary templates or identify a surviving clock.
+
+**Dated resource receipt:** [`CLOUD_COMPLETION.json` at `f4999e29`](https://github.com/LightChainr/Matching-One/blob/f4999e29612da16a3650f24d124fb59137f053d7/experiments/p154-prospective-transmission-20260831/CLOUD_COMPLETION.json)
+records all data retrieved, the producing workstream's five machines returned
+Ready and its own tunnels stopped at `2026-08-31T20:02:29+0800`; all ten were
+observed Ready then. This is a source-reported historical receipt, not a new
+live-state assertion. The earlier Zy/XP 3/2 receipts and HZ/TV retrieval checks
+belong to the superseded in-progress snapshot; Tg's concurrent helper-maintenance
+failure did not indicate a scientific job failure. After that scoped read-only
+metadata observation this overview consumed committed artifacts; it made no
+shutdown, new sampling or rescoring action.
+
+## Preceding completed fixed-clock and prediction handoffs
 
 At `3847a5cfb0a7fe4454a86cc1bfd8ce4ee2e813f4`, #267 calibrates exactly two
 clock laws from pooled rank1 response/root motion, leaving direction contrasts
@@ -79,8 +122,9 @@ Exact report paths at that pin are
 `experiments/p154-temporal-source-20260831/REPORT.md`,
 `experiments/p334-prefix-prediction-20260831/REPORT.md`, and
 `experiments/p334-conditional-shape-20260831/results/REPORT.md`.
-BG success and conditional shape do not settle the source-normal center
-question: the `bc0a18c2` M0 zero / M1 T=3.6565e−8 forecasts remain unchanged.
+BG success and conditional shape were discovery inputs to the separately
+frozen `bc0a18c2` source-normal comparison. That comparison is now completed
+below; neither old-prefix result is counted as its independent confirmation.
 
 ## New global-source result and its scientific implication
 
@@ -98,22 +142,45 @@ The decisive distinction is **observation time**. The original-norm4
 the early within-rank spatial source changes future activation and lowers
 moving-root rank1 by15–38 SE across six N. Both activation channels delay the
 same pooled root; original-U H4 remains unresolved. Joint marks were recovered
-from2.4M old permutations, not inferred by pairing marginals. These observations
-motivate a prospective transmission comparison; they are not its confirmation.
+from2.4M old permutations, not inferred by pairing marginals. These were the
+discovery inputs for the now-completed prospective comparison above. Strong
+finite rank/activation response did not establish strong original-U transmission.
 
 ## Completed P334 science that changes the next question
 
-**Current next action:** execute the already-frozen
-[`bc0a18c2` independent intervention](https://github.com/LightChainr/Matching-One/blob/bc0a18c207e3b09f49ea6b6af6601471114d654a/notes/p334-independent-intervention-freeze.md).
-New64/old8 original00 reuse now leaves about20% signed loading outside the
-four-contact span. It is not the earlier broader receiver-R0 pool below.
-The forecast T=3.6565e−8 is a separate source-normal response, not that loading
-residual's numerical value. The `bde1a51ca95c74448265b670ba0d9a0d87915479`
-dispatch record `notes/p334-independent-intervention-dispatch.json` now seals
-producer `513552c77f035526efb99075b54032d288b2f4bb` and planned hosts
-NePnUn/551oUR. Its status remains `frozen before formal generation`, with no
-production result at the pin. #267 routes this existing plan rather than
-commissioning another one; a dispatch filename is not evidence of a completed run.
+**Both fresh-population comparisons are completed.**
+
+- **Score-normal intervention:** [score `1164ba91`](https://github.com/LightChainr/Matching-One/blob/1164ba91035bb0ee37bcea52f700312475c257b5/results/p334-independent-normal-intervention/score.json)
+  and [report `d0a9daf1`](https://github.com/LightChainr/Matching-One/blob/d0a9daf1132779205f119e9b4470f4eea9cb89c1/notes/p334-independent-normal-intervention-result.md)
+  give T=(3.08520±.39187)×10⁻⁸, with T±3SE=[1.90958,4.26082]×10⁻⁸.
+  Its lower endpoint exceeds the frozen delta=10⁻⁸: complete two-score
+  conditional label mean closure fails. The fixed positive forecast
+  3.6565×10⁻⁸ remains compatible. The source removes the original two-score
+  components from a second-density score; class masses and original score
+  means are preserved. This does not reject a limited first-Jacobian J=BG
+  approximation or identify an additional continuum field. Each N has
+  500k new prefixes in 20 paired batches; raw data were committed at
+  `f1b36436acef4ce9935df23b22b1dc53f109bdfb` before scoring.
+- **Fixed four-contact residual:** [report `14b2c98e`](https://github.com/LightChainr/Matching-One/blob/14b2c98ed3a252a2fe79ce5e124d9484b23a264f/experiments/p334-prospective-intervention-20260831/REPORT.md)
+  uses the original first-loop source and a frozen contact predictor.
+  R_new=(2.5359933±.1388471)×10⁻⁹ / (2.2061875±.1228952)×10⁻⁹
+  at N325/N425. Relative to the old fixed point values, the intervals are
+  [.4360616,.5617098] / [.4506760,.5831311]; both avoid the frozen near-zero
+  band [−.25,.25] and unchanged-amplitude band [.75,1.25]. Both forecasts
+  fail. Each N has 300k new prefixes in 60 paired batches. This inference
+  conditions on the old predictor/calibration; it does not establish a new
+  exact half-amplitude law.
+
+The two experiments use four new N-domain random groups, totaling 1.6M
+prefixes, but different sources and primary quantities. They are not two
+estimates of a common residual and are not pooled. Within each experiment/N,
+receivers, sources and auxiliary readouts retain their paired covariance.
+Their next shared question is transmission into the global observer, not
+another first intervention, a fifth contact feature or automatic sample extension.
+The `bde1a51c` dispatch's “frozen before formal generation” is retained as
+history, superseded by the completed source-normal delivery. The earlier
+about20% signed-loading remainder is an old00 discovery statistic, not either
+fresh experiment's primary numerical response.
 
 **Preceding mechanism handoff: [contact and local rank](../notes/p334-contact-and-local-rank-handoff-20260831.md).**
 The hierarchy has already located most covariance response between prefix
@@ -127,9 +194,10 @@ integrated A supports two birth-center responses. It challenges pointwise
 rank≤1 for this conditional-mean Jacobian, not every scalar latent-law model.
 The original prediction claim is recorded in
 [`43a30e49`'s scientific card](https://github.com/LightChainr/Matching-One/blob/43a30e49fdfcd38cdc9e085346c9e7eb49fa7650/notes/p334-prefix-response-projection-scientific-card.md);
-its BG-versus-constant result and conditional-shape companion are now completed
-at `04743caf`, as summarized above. The historical claim also mentioned fixed
-contact prediction; the new BG report does not claim that separate model.
+its BG-versus-constant result and conditional-shape companion are completed
+at `04743caf`, as summarized above. That BG report does not test the four-contact
+model; the separate frozen contact-residual comparison is now completed at
+`14b2c98e`.
 
 **Earlier joint-clock result:** [a6304bad](https://github.com/LightChainr/Matching-One/blob/a6304bad15214cac841b76f41e7b61ac61838786/notes/p334-euler-thermal-dipole.md)
 separates continuous uniform-order timing from intrinsic birth-rank covariance.
@@ -195,7 +263,8 @@ are completed inputs. Add genuinely new coordinates with the same batch IDs.
 Machine entries are **delivery-reported release states**, not current SSH
 observations. The [completed delivery note](https://github.com/LightChainr/Matching-One/blob/8ad30617b0a3076a5c01a208eb213096d8879b32/notes/analysis-delivery-20260831.md)
 reports those jobs/tunnels ended and Ready; this does not establish later machine state.
-No other team's jobs, tunnels or keys were inspected or changed.
+Those historical release entries were not re-probed; the later dated P154
+completion receipt is recorded separately above. No job was changed in this update.
 Current use does not reserve a research question or grant authority to stop a job.
 The local workspace index points here; it need not duplicate this scientific queue.
 
@@ -209,8 +278,10 @@ independent containers Ready. That is a historical observation, not a query
 performed for this repository-only update. The user authorizes
 direct named-machine use without team permission messages. Record unique run
 directories, frozen prediction/code pins and random domains; schedule by actual
-cgroup limits. No startup, SSH, tunnel or cloud job occurred here. Old five-host
-release reports above remain historical observations, not reservations.
+cgroup limits. This update receives committed repository artifacts only; dated
+resource receipts are provenance, not new server observations. No startup,
+shutdown, new sampling, tunnel change or other job stop occurred in this update.
+Old five-host release reports remain historical observations, not reservations.
 
 1. Before a potentially overlapping source replay or cloud job, record a short
    question/source-SHA/dependency/compute note here or in the result package.
@@ -231,9 +302,9 @@ release reports above remain historical observations, not reservations.
    own branches and jobs. No shared-worktree editing, repeated full-repo review,
    automatic merge, Issue lifecycle change or additional permission workflow.
 
-**Near-term synthesis question:** which frozen global-transmission or contact
-intervention prediction would fail on a new population block? The old archive
-may determine a model and precision target. Neither repeated cross-fitting nor
-new tails on its old prefixes removes hypothesis-search dependence. A missing
-prediction is recorded explicitly in the decision sheet; an exploratory result
-is not promoted to prospective confirmation by calling it held-out.
+**Near-term synthesis:** the P154 primary and M10/M11 secondary decisions are
+delivered. Redirect attention from this lag1 source as the main H4 explanation;
+do not turn its weak result into a new fit, lag or sample extension. P334's two
+independent decisions are also completed; their global-observer transmission
+remains open. [Next Targets](NEXT-TARGETS.md) carries the next scientific choice,
+without a task lock, permission gate or automatic production task.

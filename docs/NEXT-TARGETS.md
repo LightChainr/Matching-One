@@ -1,105 +1,91 @@
-# Next Targets: Two Prospective Mechanism Experiments
+# Next Targets: Apply the Decisions Before Opening Another Production Block
 
-**Updated 2026-08-31 after the user's model-compression decision.** The current
-question is how microscopic structure reaches the original Matching-One
-observable. More significant coordinates on the same archive do not by
-themselves reduce this uncertainty.
+**Updated 2026-08-31.** Both requested primary lines have delivered decisions:
+#154's independent165M-permutation transmission experiment and two distinct
+#334 interventions are complete. The #154 secondary interpretation is also
+complete. There is no missing first production or pending official score.
 
-[Decision experiments](DECISION-EXPERIMENTS.md) is the single detailed
-prediction/decision sheet. [Status](STATUS.md) holds measured claims;
-[Research Map](RESEARCH-MAP.md) holds observer distinctions;
-[team handoff](TEAM-COORDINATION.md) holds deliveries. No Issue is locked,
-closed or renamed, no PR is merged, and parallel exploration remains available.
+[Final scientific handoff](../notes/independent-decisions-final-20260831.md) ·
+[Frozen decisions](DECISION-EXPERIMENTS.md) · [Claim boundaries](STATUS.md).
+This page owns attention, not permission. No Issue is closed or locked here.
 
-## Two default primary experiments
+## Decisions that now change attention
 
-| Attention | Concrete experiment | Completed discovery inputs | Next deliverable |
-|---|---|---|---|
-| P0 · 1 — [#154](https://github.com/LightChainr/Matching-One/issues/154) / [#275](https://github.com/LightChainr/Matching-One/issues/275) | **Prospective temporal transmission:** predict how the fixed earlier source reaches original U. | [Two fixed clock laws](../results/p154-fixed-clock-models/REPORT.md), `3847a5cf`: pure cos4 relative shift fails the old entry/completion direction contrasts by31–35 SE; scalar shift survives these readouts but predicts only V≈.01/.018. [Joint budget](../results/p154-clock-transmission-budget/REPORT.md) cannot support a promised8M zero-versus-clock separation. | Provide an affordable original-U prediction beyond this unresolved near-zero baseline, then freeze one independent comparison. Do not re-run the already-incompatible angular law, scan more lags, or treat strong population response as global-U identification. |
-| P0 · 2 — [#334](https://github.com/LightChainr/Matching-One/issues/334) / [#429](https://github.com/LightChainr/Matching-One/issues/429) | **Independent source-normal intervention:** preserve coarse class masses and the two original score means while directly changing label structure. | Contact/local-rank, original00≈20% loading remainder and #509 held-out/shape analyses are completed discovery. [M0/M1 and one million fresh prefixes](https://github.com/LightChainr/Matching-One/blob/bc0a18c207e3b09f49ea6b6af6601471114d654a/notes/p334-independent-intervention-freeze.md) remain frozen. | Producer is sealed and integrated in the execution branch; [dispatch pin `bde1a51c`](https://github.com/LightChainr/Matching-One/blob/bde1a51ca95c74448265b670ba0d9a0d87915479/notes/p334-independent-intervention-dispatch.json) says **frozen before formal generation**, not completed production. Execute the unchanged budget and report T, forecast3.6565e−8, delta1e−8 and fresh-block uncertainty. |
+1. **#154: stop prioritizing this lag1 source as the main H4 explanation.**
+   [The complete `f4999e29` result](https://github.com/LightChainr/Matching-One/blob/f4999e29612da16a3650f24d124fb59137f053d7/experiments/p154-prospective-transmission-20260831/REPORT.md)
+   excludes the entry-dominant and completion-dominant frozen numerical
+   templates at both N85/N340. All four component intervals lie inside±.30;
+   the net intervals[-.071640,.158581] and[-.157394,.278745] lie inside the
+   frozen±.50 band. This is a bounded weak response for the specified policy,
+   not exact zero or rejection of all sources. No top-up, new lag, replacement
+   source or fourth rescue template follows from this experiment.
 
-These are attention choices, not resource reservations. A failed finite
-parameterization loses its explanatory role for these data; an unresolved
-comparison stays unresolved. Neither outcome closes an Issue or bans theory.
+2. **#334: both independent comparisons are completed inputs, not new jobs.**
+   [Source-normal result `1164ba91/d0a9daf1`](https://github.com/LightChainr/Matching-One/blob/d0a9daf1132779205f119e9b4470f4eea9cb89c1/notes/p334-independent-normal-intervention-result.md)
+   rejects complete two-score conditional label-mean closure. Its fixed
+   positive forecast is not excluded. [Four-contact result `14b2c98e`](https://github.com/LightChainr/Matching-One/blob/14b2c98ed3a252a2fe79ce5e124d9484b23a264f/experiments/p334-prospective-intervention-20260831/REPORT.md)
+   excludes both near-zero and unchanged-old-amplitude residual forecasts.
+   It does not establish a new half-amplitude law. Do not add a fifth feature
+   or repeat an intervention to rescue the failed parameterizations.
 
-## What is no longer pending
+3. **The #154 secondary lines do not reopen its priority.**
+   [M10 and M11 at `612df8ec`](https://github.com/LightChainr/Matching-One/blob/612df8ec1cbe3be3938ee2e1f6183a1aefc6510b/notes/p154-clock-line-secondary-result.md)
+   both remain not_excluded because all four line-residual intervals include
+   zero. Both lines contain zero amplitude; neither clock is identified.
+   The same165M block supplies the primary and secondary covariance, not an
+   extra evidence vote or a revised ten-test primary family.
 
-- **Canonical E_top / Phase D and #370's first production adapter:** completed.
-  E_top=P0+P2 is a topological coordinate, not an identified energy operator.
-- **Norm4 source → future activation:** now measured, including separate
-  0→1, 0→2 and 1→2 contributions, original U, moving root and96-coordinate
-  joint covariance. This differs from the same-time centered-source zero;
-  it does not yet identify the global H4 mechanism.
-- **Two concrete clock predictions and their uncertainty:** completed at
-  `3847a5cf`. This old-data comparison actually removes the specified pure
-  fourfold relative-shift law. Scalar-law compatibility is not confirmation;
-  its low-power U comparison is not a reason to spend tens of billions of
-  samples. #509's distinct `ceil(sqrt(N))` lag is also completed at `04743caf`,
-  with strong entry/exit responses and unresolved U; no first-lag task remains.
-- **P334 hierarchy/contact/local A-rank and old-prefix follow-ups:** complete.
-  `open_pr #509` at `04743caf1450d5f88cae2747e0dbee36d7cd8ca1` now delivers
-  [held-out BG prediction](https://github.com/LightChainr/Matching-One/blob/04743caf1450d5f88cae2747e0dbee36d7cd8ca1/experiments/p334-prefix-prediction-20260831/REPORT.md)
-  and [conditional shape](https://github.com/LightChainr/Matching-One/blob/04743caf1450d5f88cae2747e0dbee36d7cd8ca1/experiments/p334-conditional-shape-20260831/results/REPORT.md).
-  BG lowers old-cell00 held-out A risk38–39% and center risk54–59%; shape
-  responses are also measured. Both reuse the original20-batch prefix block,
-  not an independent population or a direct decision on the new normal M0.
-  Producer sealing is complete too; the `bde1a51c` dispatch snapshot is still
-  before formal generation and contains no fresh-block result.
-- **P398 size versus arrangement:** [complete](../results/p398-stationary-arrangement/REPORT.md),
-  `58db48dd`. Paired primal/dual sizes explain99.7344% of stationary-score
-  variance, but32/60 classes fail exact transition closure. The small
-  arrangement remainder changes one integrated response by10.17%.
-- **N900 width production and the #509 angular/finite-source/linear-response
-  packages:** complete; no first-readiness or first-production repeat is needed.
+## The next substantive target
 
-## Parallel exploratory and support lines
+**Derive the original-global-U response of a named microscopic mechanism.**
+The existing exact source→birth-clock→U map already supplies the interface.
+The missing input is a theory predicting which contrast values and thermal
+derivatives its physical source actually excites, with fixed numerical/sign
+predictions on specified geometry. A large baseline gain is not that source
+amplitude; a local nonzero response is not transmission into U.
 
-These retain their scientific value without competing automatically for P0:
-P398 incidence-derived dynamics / a genuine Matching map; N900 joint shape;
-F5-to-M transport; complex C3 character; P250 full-periodogram comparison;
-physical Gaussian/annulus order; triangular cross-microscopic invariants;
-boundary Q tangent; threshold/terminal exact theory. #370 certificates support
-a named physical model comparison on demand.
+For #334, keep [the exact projection split](https://github.com/LightChainr/Matching-One/blob/ccabada318b1eeb12ae28d53391b13ab44c116d2/notes/p334-independent-interventions-crosswalk.md)
+explicit: first responses see `G b`, normal responses see the orthogonal
+remainder. The four-contact cross-prefix loading and normal center response
+have no conversion identity. A proposed global mechanism must say which of
+these enters its observable, rather than naming both “the20% residual.”
 
-For a new analysis to enter the default primary queue, state **before looking
-at its result** which declared model prediction would fail and what outcome
-would leave the comparison unresolved. A useful descriptive result can be
-exploratory without being disguised as confirmation. Failure of all frozen
-models is a legitimate output; do not add a fourth rescue model to the same
-confirmation score.
+A concrete law predicting incompatible unseen outcomes can become the next
+P0. There is currently **no automatic new production assignment**. This is
+not a new tooling phase: reuse the completed map, source engines, covariance
+and certificates; produce a physical prediction, not another generic adapter.
+No permission is required to explore a new idea. Changing attention after a
+separately justified model is possible; failure is not a permanent route ban.
 
-## Discovery versus confirmation
+## Completed discovery and parallel exploration
 
-Covariance accounting addresses uncertainty among measured coordinates.
-It does not undo hypothesis selection trained on the same data.
-The old norm4 streams and P334 original20-batch prefix populations remain
-discovery datasets even after a new observer, cross-fit or conditional suffix.
-Independent production uses new random domains for the target populations,
-frozen analysis and one planned joint readout; old data may set predictions
-and precision budgets but are not pooled as independent confirmation.
+The earlier [fixed-clock comparison](../results/p154-fixed-clock-models/REPORT.md)
+rejects one pure-cos4 relative-shift law on old data. The surviving scalar
+root-level baseline predicts tiny U effects; [its budget](../results/p154-clock-transmission-budget/REPORT.md)
+neither confirmed scalar dynamics nor vetoed the now-completed165M experiment.
+M10/M11 are different restrictions and provide no post-result rescue.
 
-The [decision sheet](DECISION-EXPERIMENTS.md) distinguishes #154's completed
-finite-clock comparison but still-missing affordable confirmation target
-from #334's already-frozen scientific comparison.
-Neither has a new production result in the cited snapshot; #334's producer
-SHA is now sealed, so the remaining handoff is execution/results of that
-unchanged freeze, not another design or producer-freeze round.
+Canonical E_top/Phase D, the first #370 production adapter, K1/K2, lag1/longer
+lag, P334 hierarchy/contact/local-rank/held-out/shape and P398 arrangement
+are completed inputs. #275/#370 now serve a specific physical model when it
+needs them; no generic certificate/catalog expansion is promoted by default.
 
-## Compute and handoff
+Complex C3, Gaussian/annulus order, triangular cross-microscopic invariants,
+boundary Q tangent and connectivity/defect radical remain parallel exploration.
+They do not become prospective confirmation of the newly revealed block by
+being interesting. Unresolved results need not be filled with an immediate
+new fitted model.
 
-The updated Huawei Skill exposes ten independent ARM containers across two
-accounts (eight nominal16vCPU/32GiB and two8vCPU/16GiB). An earlier list
-showed all ten Ready; that is not current availability. The user authorizes direct use
-without team permission messages; record the selected machine, unique
-/workspace run directory, code/prediction SHA and random-domain allocation
-in the repository. Use actual cgroup limits when scheduling. P334's pinned
-dispatch names NePnUn forN325 and551oUR forN425,14 workers each, with master
-seed `202608311920334`. Its status is only **frozen before formal generation**;
-this entry does not infer current process or machine state.
+## Resources and handoff
 
-Routine handoff is repository-only. No repeated tests or broad inventory
-audit is part of this prioritization. PR #267 stays Draft.
+All ten Huawei containers are authorized for direct named use through the
+updated Skill, actual cgroup limits and unique run directories. No routine
+team permission messages. The producing team's20:02:29 CST receipt records
+its five P154 machines returned Ready and all ten then observed Ready; this
+is dated delivery metadata, not current availability or an instruction to start.
 
-The longer preceding evidence narrative is preserved at
-[the pre-compression board, `6eaf5e34`](https://github.com/LightChainr/Matching-One/blob/6eaf5e34a5b82cd7a766fdffea29f4eb8b1710e7/docs/NEXT-TARGETS.md);
-it is provenance, not another live queue.
+This overview consumed completed packages without rerunning production or
+the science test suite. PR #267 stays Draft; no merges, history rewrite or
+Issue lifecycle changes. [The preceding queue](https://github.com/LightChainr/Matching-One/blob/f670d26e8056116ec1787e0a2f29009b5db24a7d/docs/NEXT-TARGETS.md)
+and [pre-score handoff](../notes/independent-decisions-handoff-20260831.md)
+retain history, not additional assignments.

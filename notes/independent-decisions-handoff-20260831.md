@@ -1,5 +1,8 @@
 # Independent experiments now remove specific mechanism predictions
 
+历史记录：本页保留 #154 正式评分前的交接状态；完整生产及主/次级判决现见
+[最终交接](independent-decisions-final-20260831.md)。下文“待交付”不再是当前任务。
+
 ## 两项 #334 决策已完成，#154 承接固定新块
 
 项目已经走到独立数据上的模型淘汰：**完整两-score 条件标签均值闭合失败；
@@ -77,7 +80,7 @@ class质量和即时拓扑，但没有要求同时保持原score均值。
 ## #154 的独立实验已经冻结，不是旧小效应预算的重跑
 
 [正式冻结，`0820b8d2`](https://github.com/LightChainr/Matching-One/blob/0820b8d203e2dc534bb883d6fdb4d6d1e0acb11f/experiments/p154-prospective-transmission-20260831/CONTRACT.json)
-与同提交authorization明确 N85=5M、N340=160M新排列，每N200批、共九分片。
+与后续 `14b2c98e` 的authorization明确 N85=5M、N340=160M新排列，每N200批、共九分片。
 仍为 lag=1 的早期rank内中心化bulk CB+CW源；对每个最终K在K−1注入。
 新块内重估条件均值和根，p微分只作用于Binomial权重，旧数据不合票。
 
