@@ -204,6 +204,17 @@ must state its correction allowance before reveal. This note does not
 launch a block, prescribe adaptive sample increases, or reopen stopped
 P154/P334 experiments.
 
+The [companion weak-source calculation](closed-source-weak-colour-spectroscopy.md)
+retains the later ordinary four-leg selection zero. A nonzero derivative
+of a vanishing four-leg endpoint overlap, if the declared Q continuation
+permits it, instead gives `R_N=alpha+gamma_T log N+beta sqrt(N)+...`, with
+`gamma_T=9 sqrt(3)/(16 pi)`. After removing that known thermal logarithm,
+resolved successive increments at equal area ratio c have ratio sqrt(c).
+This is not the old constant four-leg velocity and does not resurrect a
+regular overlap already excluded by the selection theorem. A source-
+activated Jordan logarithm can also shift a constant slope; slope constancy
+alone is therefore not a field identification.
+
 ## Scientific card
 
 - **Mechanism changed:** the closed source now has a fully declared Q
