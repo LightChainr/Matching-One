@@ -27,7 +27,7 @@ def canonical(labels):
     return tuple(-1 if a < 0 else mapping.setdefault(a, len(mapping)) for a in labels)
 
 
-def safety_polynomial(network, all_sites, forced_site=None, forced_value=None):
+def safety_polynomial(network, all_sites, forced_site=None, forced_value=None, max_states=200_000, wall_seconds=240):
     graph = nx.Graph()
     graph.add_nodes_from(network["vertices"])
     graph.add_edges_from(network["edges"])
@@ -47,7 +47,7 @@ def safety_polynomial(network, all_sites, forced_site=None, forced_value=None):
 
     def guard(table):
         stats["maximum_states"] = max(stats["maximum_states"], len(table))
-        if len(table) > 200_000 or time.monotonic() - started > 240:
+        if len(table) > max_states or time.monotonic() - started > wall_seconds:
             raise RuntimeError("bounded two-network reliability budget exceeded")
 
     def initial(bag):

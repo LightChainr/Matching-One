@@ -3,6 +3,7 @@
 from collections import defaultdict, deque
 import json
 from pathlib import Path
+from math import gcd
 
 import networkx as nx
 
@@ -11,11 +12,22 @@ OUTPUT = ROOT / "results/p334-contracted-full-clock"
 
 
 def build(row):
-    n = 425
+    n = int(row["N"])
+    matrix = row["period_matrix"]
+    if matrix[0][0] != n or matrix[1] != [0, 1]:
+        raise ValueError("requires HNF [[N,shear],[0,1]]")
+    shear = int(matrix[0][1])
+    ell = row["ell"]
+    lx, ly = n * ell[0] + shear * ell[1], ell[1]
+    divisor = gcd(abs(lx), abs(ly))
+    if not divisor:
+        raise ValueError("rank-one line must be nonzero")
+    lx, ly = lx // divisor, ly // divisor
+    tx, ty = -ly, lx
     occupied = set(row["occupied_prefix_labels"])
     vacant = set(range(n)) - occupied
     edges = [(v, (v + 1) % n, 1, 0) for v in range(n)]
-    edges += [(v, (v - 268) % n, 0, 1) for v in range(n)]
+    edges += [(v, (v - shear) % n, 0, 1) for v in range(n)]
     adjacency = defaultdict(list)
     for u, v, dx, dy in edges:
         adjacency[u].append((v, dx, dy))
@@ -39,7 +51,7 @@ def build(row):
                 else:
                     cycle = (proposed[0] - potential[v][0], proposed[1] - potential[v][1])
                     if cycle != (0, 0):
-                        if 19 * cycle[0] + 8 * cycle[1] != 0:
+                        if tx * cycle[0] + ty * cycle[1] != 0:
                             raise ValueError("prefix not on the archived ambient line")
                         cycles.add(cycle)
         occupied_components[start] = sorted(vertices)
@@ -53,7 +65,7 @@ def build(row):
         a, b = root[u], root[v]
         gx = potential[u][0] + dx - potential[v][0]
         gy = potential[u][1] + dy - potential[v][1]
-        gain = 19 * gx + 8 * gy
+        gain = tx * gx + ty * gy
         if a == b:
             if gain:
                 raise ValueError("nonzero fixed loop")
@@ -134,7 +146,7 @@ def build(row):
         components.append(record)
     return {"counter": row["replica_counter"], "seed": row["seed"], "N": n, "k0": row["k0"],
             "period_matrix": row["period_matrix"], "ell": row["ell"],
-            "physical_line": [8, -19], "physical_transverse_covector": [19, 8],
+            "physical_line": [lx, ly], "physical_transverse_covector": [tx, ty],
             "occupied_components": occupied_components, "essential_component_roots": essential,
             "chosen_essential_root": terminal_root, "vacant_sites": sorted(vacant),
             "contracted_edges_with_transverse_gain": sorted(contracted),

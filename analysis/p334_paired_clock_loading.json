@@ -1,0 +1,18 @@
+{
+  "source_commit": "e81dd59ff6be69056e504e0e81cfeccf73dc5e97",
+  "source_directory": "results/local-20260831/P334-cooperative-closure/raw",
+  "sizes": [325, 425],
+  "samples_per_size": 20000,
+  "batches_per_size": 20,
+  "p_ref": 0.59274605079,
+  "estimand": "Unconditional contribution of the rank-one checkpoint stratum to canonical F2(p_ref) and its p integral, by orientation and H4-normalized difference; not full F2 or A_top.",
+  "selection": "Every original counter and original batch; no age/line/H2 cut.",
+  "missing_rows": "Only rank-one checkpoints are emitted. Missing rows are zero for this rank-one contribution; not classified as rank two.",
+  "conditional_replacement": "Replace the whole paired vector only if every at-risk orientation is solved within the prefix-only budget. Otherwise keep both original observations.",
+  "pair_wall_seconds": 1.0,
+  "maximum_dp_states": 12000,
+  "workers": 4,
+  "new_random_samples": 0,
+  "remote_hosts": false,
+  "interpretation": "Archive-derived paired hybrid conditional estimator; not independent production, not universal speedup, and not a completed rank-zero/rank-two contribution."
+}
