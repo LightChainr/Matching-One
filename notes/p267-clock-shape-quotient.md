@@ -107,6 +107,7 @@ first read; its exact bytes are now confirmed at source commit
 `7b30648be558df0652a7ff22143cc87ed399d042`.
 
 ```
+python3 -m pip install -r requirements-p267-clock.txt
 python3 scripts/p267_clock_shape_quotient.py --source results/p267-clock-shape-quotient/input.json --json results/p267-clock-shape-quotient/score.json --report results/p267-clock-shape-quotient/REPORT.md
 python3 -m unittest discover -s tests -p test_p267_clock_shape_quotient.py -v
 ```
@@ -114,3 +115,5 @@ python3 -m unittest discover -s tests -p test_p267_clock_shape_quotient.py -v
 Three new algebra/covariance tests pass. No Monte Carlo or old test suite was
 rerun. The report's scientific card and machine predictions retain the common
 dependency group and source-selection boundary.
+The numeric analysis used NumPy 2.4.6 and SciPy 1.18.0 locally; these optional
+dependencies are isolated from the repository's exact-arithmetic runtime.

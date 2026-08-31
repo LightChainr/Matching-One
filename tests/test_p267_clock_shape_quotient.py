@@ -1,12 +1,19 @@
 from pathlib import Path
 import sys
 import unittest
-import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from p267_clock_shape_quotient import contrasts, parameters, jackknife_parameters
+try:
+    import numpy as np
+    import scipy
+except ImportError:
+    HAS_NUMERIC_DEPENDENCIES = False
+else:
+    HAS_NUMERIC_DEPENDENCIES = True
+    from p267_clock_shape_quotient import contrasts, parameters, jackknife_parameters
 
 
+@unittest.skipUnless(HAS_NUMERIC_DEPENDENCIES, "install requirements-p267-clock.txt for numeric analysis tests")
 class ClockQuotientTests(unittest.TestCase):
     def test_common_offset_and_clock_profile_cancel(self):
         base = np.array([2., -1., 4., 3.])
