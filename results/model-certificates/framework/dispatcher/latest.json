@@ -1,0 +1,99 @@
+{
+  "claim_boundary": {
+    "excluded": "arbitrary plugin loading, unregistered schemas, certificate discovery, SOS solving, statistical calibration, or validation of any physical model class",
+    "included": "fail-closed path, digest, schema whitelist, canonical-location, and type-specific verification of four checked-in exact framework certificates",
+    "parent_issue": "remain open"
+  },
+  "claim_level": "exact_verification_dispatch",
+  "entries": [
+    {
+      "path": "results/model-certificates/framework/finite-recurrence/latest.json",
+      "schema": "matching-one/exact-finite-recurrence-certificate/v1",
+      "sha256": "126db9579265185236ef2962f06132a26ed4c98e1d8af13c8b52ca7bde1bd322"
+    },
+    {
+      "path": "results/model-certificates/framework/hankel-minor/latest.json",
+      "schema": "matching-one/exact-hankel-minor-certificate/v1",
+      "sha256": "ca12948e46f0a0eae9596f31795ec237ee17551b14a5f4745a24235e9a6cd235"
+    },
+    {
+      "path": "results/model-certificates/framework/linear-ideal/latest.json",
+      "schema": "matching-one/exact-linear-ideal-certificate/v1",
+      "sha256": "082a0dc495e8613176cd466234a7fbe49306aff17550bf8f50b92797fff31808"
+    },
+    {
+      "path": "results/model-certificates/framework/rational-realization/latest.json",
+      "schema": "matching-one/exact-rational-realization-certificate/v1",
+      "sha256": "bd2f9d2698047d87b61d30914735585c21daebc1bb6664cef559db024fa3428c"
+    }
+  ],
+  "issue": 370,
+  "schema": "matching-one/model-certificate-dispatcher/v1",
+  "verification": {
+    "all_digests_match": true,
+    "all_registered": true,
+    "all_type_specific_verifiers_pass": true,
+    "certificate_count": 4,
+    "status": "exact_certificate_bundle_verified",
+    "summaries": [
+      {
+        "path": "results/model-certificates/framework/finite-recurrence/latest.json",
+        "schema": "matching-one/exact-finite-recurrence-certificate/v1",
+        "summary": {
+          "discriminant": "0",
+          "lower_orders_rejected": [
+            1
+          ],
+          "schema": "matching-one/exact-finite-recurrence-certificate/v1",
+          "selected_order": 2,
+          "source_sha256": "edc057047975023a971b2d1c7ff5064bb701439993fad4bc557bcf5a9e81ef09",
+          "status": "valid_exact_finite_recurrence_certificate"
+        },
+        "verifier": "exact_recurrence_certificate"
+      },
+      {
+        "path": "results/model-certificates/framework/hankel-minor/latest.json",
+        "schema": "matching-one/exact-hankel-minor-certificate/v1",
+        "summary": {
+          "minor_count": 6,
+          "nonzero_minor_count": 6,
+          "rank_lower_bound": 2,
+          "schema": "matching-one/exact-hankel-minor-certificate/v1",
+          "source_sha256": "edc057047975023a971b2d1c7ff5064bb701439993fad4bc557bcf5a9e81ef09",
+          "status": "valid_exact_hankel_minor_certificate"
+        },
+        "verifier": "exact_hankel_minor_certificate"
+      },
+      {
+        "path": "results/model-certificates/framework/linear-ideal/latest.json",
+        "schema": "matching-one/exact-linear-ideal-certificate/v1",
+        "summary": {
+          "constraint_count": 2,
+          "primitive": true,
+          "result": [
+            "1"
+          ],
+          "schema": "matching-one/exact-linear-ideal-certificate/v1",
+          "solver_invoked": false,
+          "source_sha256": "23eaafc79065f54bc38db4c899ce3e185c25c11164b0052df59b79fe81a3095d",
+          "status": "valid_exact_linear_ideal_certificate"
+        },
+        "verifier": "exact_linear_ideal_certificate"
+      },
+      {
+        "path": "results/model-certificates/framework/rational-realization/latest.json",
+        "schema": "matching-one/exact-rational-realization-certificate/v1",
+        "summary": {
+          "channel_count": 2,
+          "dimension": 3,
+          "observability_rank": 3,
+          "reachability_rank": 3,
+          "schema": "matching-one/exact-rational-realization-certificate/v1",
+          "source_sha256": "4205ac6bc14458b9d1acdea1f6c475308527b1118f084576e8b000670a30c59e",
+          "status": "valid_exact_rational_realization_certificate"
+        },
+        "verifier": "exact_rational_realization_certificate"
+      }
+    ]
+  }
+}
