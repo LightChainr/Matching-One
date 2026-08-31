@@ -1,0 +1,816 @@
+{
+  "schema": "matching-one/p398-continuous-kernel/v1",
+  "parent": "b35e100a3903c706dceba57c4667386eb4510ac3",
+  "limit": "h=epsilon, v=1-kappa*epsilon, s=epsilon*d fixed, kappa>0",
+  "exact_corner_jet": {
+    "a": [
+      1,
+      [
+        -3,
+        -2
+      ]
+    ],
+    "b": [
+      0,
+      [
+        0,
+        -1
+      ]
+    ],
+    "c": [
+      0,
+      [
+        -1,
+        0
+      ]
+    ],
+    "d": [
+      1,
+      [
+        -2,
+        -3
+      ]
+    ]
+  },
+  "mass_matrix": "M=[[3+2*kappa,(1+i)*kappa],[1-i,2+3*kappa]]",
+  "masses": "m_slow,fast=[5*(1+kappa)-/+sqrt(kappa^2+6*kappa+1)]/2",
+  "kernel": "U(s)=C0^-1 C(s)=exp(-conjugate(M)*s)",
+  "hermitian_gauge": "D=diag(1,exp(-i*pi/4)/sqrt(kappa)); D^-1 M D=[[3+2*kappa,sqrt(2*kappa)],[sqrt(2*kappa),2+3*kappa]]",
+  "cross_ratio": "X=U12*U21/(U11*U22)=a*sinh(b*s)^2/[1+a*sinh(b*s)^2], a=8*kappa/(kappa^2+6*kappa+1), b=sqrt(kappa^2+6*kappa+1)/2",
+  "similarity_and_metric_invariant": "2*acosh(tr(U)/(2*sqrt(det(U))))/[-log(det(U))]=sqrt(kappa^2+6*kappa+1)/[5*(1+kappa)]",
+  "diagonal_gauge_and_metric_invariant": "4*U12*U21/[tr(U)^2-4*det(U)]=8*kappa/(kappa^2+6*kappa+1)",
+  "joint_invariant_relation": "25*I_mass^2*(2-I_mix)=2",
+  "signed_channel_axis": "(U11-U22)/sqrt(tr(U)^2-4*det(U))=(kappa-1)/sqrt(kappa^2+6*kappa+1)",
+  "critical_full_kernel": {
+    "C0": "[[6,-4+4i],[-4-4i,6]]/7",
+    "channels": "psi_slow=(A-exp(-i*pi/4)*L)/sqrt(2); psi_fast=(A+exp(-i*pi/4)*L)/sqrt(2)",
+    "covariance_in_channels": "diag((6+4*sqrt(2))/7*exp(-(5-sqrt(2))*s),(6-4*sqrt(2))/7*exp(-(5+sqrt(2))*s))",
+    "normalized_cross_ratio": "tanh(sqrt(2)*s)^2",
+    "raw_cross_ratio": "tanh(sqrt(2)*s+acosh(3))^2"
+  },
+  "dual_exchange": "H(kappa)=kappa*sigma_x*H(1/kappa)*sigma_x for the Hermitian-gauge mass matrix",
+  "samples": [
+    {
+      "kappa": "1/4",
+      "masses_slow_fast": [
+        2.324609470320894,
+        3.925390529679106
+      ],
+      "mass_ratio_fast_slow": 1.688623650465141,
+      "mixing_angle_radians": 0.5415900420398952,
+      "metric_free_mass_split": 0.25612496949731395,
+      "diagonal_gauge_free_mixing": 0.7804878048780488,
+      "stationary_limit": {
+        "stationary_probability": [
+          "4912/8025",
+          "192/2675",
+          "192/2675",
+          "76/8025",
+          "38/2675",
+          "192/2675",
+          "64/8025",
+          "76/8025",
+          "192/2675",
+          "38/2675",
+          "38/2675",
+          "64/8025",
+          "38/2675",
+          "73/8025"
+        ],
+        "C0_complex_re_im": [
+          [
+            [
+              "1688/2675",
+              0
+            ],
+            [
+              "-184/535",
+              "184/535"
+            ]
+          ],
+          [
+            [
+              "-184/535",
+              "-184/535"
+            ],
+            [
+              "1072/2675",
+              0
+            ]
+          ]
+        ],
+        "C0_conjugate_M_offdiagonal_skew": [
+          "8/535",
+          "-8/535"
+        ]
+      },
+      "kernel_samples": [
+        {
+          "distance": 0.1,
+          "U_complex_re_im": [
+            [
+              [
+                0.7064954479154094,
+                0.0
+              ],
+              [
+                -0.018309925782535416,
+                0.018309925782535416
+              ]
+            ],
+            [
+              [
+                -0.07323970313014166,
+                -0.07323970313014166
+              ],
+              [
+                0.7614252252630157,
+                0.0
+              ]
+            ]
+          ],
+          "trace": 1.4679206731784251,
+          "determinant": 0.5352614285189902,
+          "metric_free_mass_split": 0.2561249694973116,
+          "diagonal_gauge_free_mixing": 0.7804878048780547,
+          "signed_channel_axis": -0.46852128566582035,
+          "channel_cross_ratio": 0.00498570440720847
+        },
+        {
+          "distance": 0.5,
+          "U_complex_re_im": [
+            [
+              [
+                0.18626224731044733,
+                0.0
+              ],
+              [
+                -0.026906432309914085,
+                0.026906432309914085
+              ]
+            ],
+            [
+              [
+                -0.10762572923965634,
+                -0.10762572923965634
+              ],
+              [
+                0.2669815442401896,
+                0.0
+              ]
+            ]
+          ],
+          "trace": 0.45324379155063693,
+          "determinant": 0.04393693362340742,
+          "metric_free_mass_split": 0.256124969497314,
+          "diagonal_gauge_free_mixing": 0.7804878048780485,
+          "signed_channel_axis": -0.46852128566581824,
+          "channel_cross_ratio": 0.1164651899424693
+        },
+        {
+          "distance": 1.0,
+          "U_complex_re_im": [
+            [
+              [
+                0.040485273570322146,
+                0.0
+              ],
+              [
+                -0.012195173397246024,
+                0.012195173397246024
+              ]
+            ],
+            [
+              [
+                -0.0487806935889841,
+                -0.0487806935889841
+              ],
+              [
+                0.07707079376206022,
+                0.0
+              ]
+            ]
+          ],
+          "trace": 0.11755606733238236,
+          "determinant": 0.0019304541362277082,
+          "metric_free_mass_split": 0.2561249694973139,
+          "diagonal_gauge_free_mixing": 0.7804878048780489,
+          "signed_channel_axis": -0.4685212856658182,
+          "channel_cross_ratio": 0.38131073868478926
+        }
+      ]
+    },
+    {
+      "kappa": "1/2",
+      "masses_slow_fast": [
+        2.7192235935955846,
+        4.780776406404415
+      ],
+      "mass_ratio_fast_slow": 1.758140234464086,
+      "mixing_angle_radians": 0.6629088318340163,
+      "metric_free_mass_split": 0.2748737083745107,
+      "diagonal_gauge_free_mixing": 0.9411764705882353,
+      "stationary_limit": {
+        "stationary_probability": [
+          "74/193",
+          "50/579",
+          "50/579",
+          "11/579",
+          "22/579",
+          "50/579",
+          "10/579",
+          "11/579",
+          "50/579",
+          "22/579",
+          "22/579",
+          "10/579",
+          "22/579",
+          "9/193"
+        ],
+        "C0_complex_re_im": [
+          [
+            [
+              "488/579",
+              0
+            ],
+            [
+              "-96/193",
+              "96/193"
+            ]
+          ],
+          [
+            [
+              "-96/193",
+              "-96/193"
+            ],
+            [
+              "376/579",
+              0
+            ]
+          ]
+        ],
+        "C0_conjugate_M_offdiagonal_skew": [
+          "4/193",
+          "-4/193"
+        ]
+      },
+      "kernel_samples": [
+        {
+          "distance": 0.1,
+          "U_complex_re_im": [
+            [
+              [
+                0.6737310620773278,
+                0.0
+              ],
+              [
+                -0.03442535001450289,
+                0.03442535001450289
+              ]
+            ],
+            [
+              [
+                -0.06885070002900578,
+                -0.06885070002900578
+              ],
+              [
+                0.7081564120918308,
+                0.0
+              ]
+            ]
+          ],
+          "trace": 1.3818874741691585,
+          "determinant": 0.47236655274101486,
+          "metric_free_mass_split": 0.27487370837450703,
+          "diagonal_gauge_free_mixing": 0.9411764705882559,
+          "signed_channel_axis": -0.2425356250363362,
+          "channel_cross_ratio": 0.00993575691890273
+        },
+        {
+          "distance": 0.5,
+          "U_complex_re_im": [
+            [
+              [
+                0.15414791886011728,
+                0.0
+              ],
+              [
+                -0.04005871495521844,
+                0.04005871495521844
+              ]
+            ],
+            [
+              [
+                -0.08011742991043688,
+                -0.08011742991043688
+              ],
+              [
+                0.19420663381533568,
+                0.0
+              ]
+            ]
+          ],
+          "trace": 0.34835455267545296,
+          "determinant": 0.023517745856009107,
+          "metric_free_mass_split": 0.27487370837451064,
+          "diagonal_gauge_free_mixing": 0.9411764705882356,
+          "signed_channel_axis": -0.24253562503633275,
+          "channel_cross_ratio": 0.21441358178445513
+        },
+        {
+          "distance": 1.0,
+          "U_complex_re_im": [
+            [
+              [
+                0.03018038346435906,
+                0.0
+              ],
+              [
+                -0.013954635728978596,
+                0.013954635728978596
+              ]
+            ],
+            [
+              [
+                -0.027909271457957192,
+                -0.027909271457957192
+              ],
+              [
+                0.044135019193337656,
+                0.0
+              ]
+            ]
+          ],
+          "trace": 0.07431540265769672,
+          "determinant": 0.0005530843701478335,
+          "metric_free_mass_split": 0.2748737083745107,
+          "diagonal_gauge_free_mixing": 0.9411764705882352,
+          "signed_channel_axis": -0.24253562503633297,
+          "channel_cross_ratio": 0.5847751733802827
+        }
+      ]
+    },
+    {
+      "kappa": "1",
+      "masses_slow_fast": [
+        3.585786437626905,
+        6.414213562373095
+      ],
+      "mass_ratio_fast_slow": 1.7887885053796064,
+      "mixing_angle_radians": 0.7853981633974483,
+      "metric_free_mass_split": 0.282842712474619,
+      "diagonal_gauge_free_mixing": 1.0,
+      "stationary_limit": {
+        "stationary_probability": [
+          "1/6",
+          "1/14",
+          "1/14",
+          "1/42",
+          "1/14",
+          "1/14",
+          "1/42",
+          "1/42",
+          "1/14",
+          "1/14",
+          "1/14",
+          "1/42",
+          "1/14",
+          "1/6"
+        ],
+        "C0_complex_re_im": [
+          [
+            [
+              "6/7",
+              0
+            ],
+            [
+              "-4/7",
+              "4/7"
+            ]
+          ],
+          [
+            [
+              "-4/7",
+              "-4/7"
+            ],
+            [
+              "6/7",
+              0
+            ]
+          ]
+        ],
+        "C0_conjugate_M_offdiagonal_skew": [
+          0,
+          0
+        ]
+      },
+      "kernel_samples": [
+        {
+          "distance": 0.1,
+          "U_complex_re_im": [
+            [
+              [
+                0.6126060818957253,
+                0.0
+              ],
+              [
+                -0.06085544513102226,
+                0.06085544513102226
+              ]
+            ],
+            [
+              [
+                -0.06085544513102226,
+                -0.06085544513102226
+              ],
+              [
+                0.6126060818957253,
+                0.0
+              ]
+            ]
+          ],
+          "trace": 1.2252121637914506,
+          "determinant": 0.36787944117144233,
+          "metric_free_mass_split": 0.2828427124746199,
+          "diagonal_gauge_free_mixing": 0.9999999999999969,
+          "signed_channel_axis": 0.0,
+          "channel_cross_ratio": 0.019736324372517006
+        },
+        {
+          "distance": 0.5,
+          "U_complex_re_im": [
+            [
+              [
+                0.10347567916615358,
+                0.0
+              ],
+              [
+                -0.04454923781509221,
+                0.04454923781509221
+              ]
+            ],
+            [
+              [
+                -0.04454923781509221,
+                -0.04454923781509221
+              ],
+              [
+                0.10347567916615358,
+                0.0
+              ]
+            ]
+          ],
+          "trace": 0.20695135833230716,
+          "determinant": 0.006737946999085467,
+          "metric_free_mass_split": 0.282842712474619,
+          "diagonal_gauge_free_mixing": 1.0,
+          "signed_channel_axis": 0.0,
+          "channel_cross_ratio": 0.37070972636514643
+        },
+        {
+          "distance": 1.0,
+          "U_complex_re_im": [
+            [
+              [
+                0.01467648535870803,
+                0.0
+              ],
+              [
+                -0.009219525278502312,
+                0.009219525278502312
+              ]
+            ],
+            [
+              [
+                -0.009219525278502312,
+                -0.009219525278502312
+              ],
+              [
+                0.01467648535870803,
+                0.0
+              ]
+            ]
+          ],
+          "trace": 0.02935297071741606,
+          "determinant": 4.539992976248489e-05,
+          "metric_free_mass_split": 0.28284271247461895,
+          "diagonal_gauge_free_mixing": 1.0,
+          "signed_channel_axis": 0.0,
+          "channel_cross_ratio": 0.7892289060338693
+        }
+      ]
+    },
+    {
+      "kappa": "2",
+      "masses_slow_fast": [
+        5.438447187191169,
+        9.56155281280883
+      ],
+      "mass_ratio_fast_slow": 1.758140234464086,
+      "mixing_angle_radians": 0.9078874949608804,
+      "metric_free_mass_split": 0.2748737083745107,
+      "diagonal_gauge_free_mixing": 0.9411764705882353,
+      "stationary_limit": {
+        "stationary_probability": [
+          "9/193",
+          "22/579",
+          "22/579",
+          "10/579",
+          "50/579",
+          "22/579",
+          "11/579",
+          "10/579",
+          "22/579",
+          "50/579",
+          "50/579",
+          "11/579",
+          "50/579",
+          "74/193"
+        ],
+        "C0_complex_re_im": [
+          [
+            [
+              "376/579",
+              0
+            ],
+            [
+              "-96/193",
+              "96/193"
+            ]
+          ],
+          [
+            [
+              "-96/193",
+              "-96/193"
+            ],
+            [
+              "488/579",
+              0
+            ]
+          ]
+        ],
+        "C0_conjugate_M_offdiagonal_skew": [
+          "-8/193",
+          "8/193"
+        ]
+      },
+      "kernel_samples": [
+        {
+          "distance": 0.1,
+          "U_complex_re_im": [
+            [
+              [
+                0.5062259228812588,
+                0.0
+              ],
+              [
+                -0.09514391995786117,
+                0.09514391995786117
+              ]
+            ],
+            [
+              [
+                -0.047571959978930586,
+                -0.047571959978930586
+              ],
+              [
+                0.45865396290232824,
+                0.0
+              ]
+            ]
+          ],
+          "trace": 0.964879885783587,
+          "determinant": 0.22313016014842985,
+          "metric_free_mass_split": 0.27487370837451,
+          "diagonal_gauge_free_mixing": 0.9411764705882391,
+          "signed_channel_axis": 0.24253562503633322,
+          "channel_cross_ratio": 0.03898814296844222
+        },
+        {
+          "distance": 0.5,
+          "U_complex_re_im": [
+            [
+              [
+                0.044135019193337656,
+                0.0
+              ],
+              [
+                -0.027909271457957192,
+                0.027909271457957192
+              ]
+            ],
+            [
+              [
+                -0.013954635728978596,
+                -0.013954635728978596
+              ],
+              [
+                0.03018038346435906,
+                0.0
+              ]
+            ]
+          ],
+          "trace": 0.07431540265769672,
+          "determinant": 0.0005530843701478335,
+          "metric_free_mass_split": 0.2748737083745107,
+          "diagonal_gauge_free_mixing": 0.9411764705882352,
+          "signed_channel_axis": 0.24253562503633297,
+          "channel_cross_ratio": 0.5847751733802827
+        },
+        {
+          "distance": 1.0,
+          "U_complex_re_im": [
+            [
+              [
+                0.002726827352510228,
+                0.0
+              ],
+              [
+                -0.0020740887462810517,
+                0.0020740887462810517
+              ]
+            ],
+            [
+              [
+                -0.0010370443731405258,
+                -0.0010370443731405258
+              ],
+              [
+                0.0016897829793697018,
+                0.0
+              ]
+            ]
+          ],
+          "trace": 0.004416610331879929,
+          "determinant": 3.059023205018245e-07,
+          "metric_free_mass_split": 0.2748737083745109,
+          "diagonal_gauge_free_mixing": 0.9411764705882355,
+          "signed_channel_axis": 0.24253562503633305,
+          "channel_cross_ratio": 0.9336112948146659
+        }
+      ]
+    },
+    {
+      "kappa": "4",
+      "masses_slow_fast": [
+        9.298437881283576,
+        15.701562118716424
+      ],
+      "mass_ratio_fast_slow": 1.688623650465141,
+      "mixing_angle_radians": 1.0292062847550014,
+      "metric_free_mass_split": 0.25612496949731395,
+      "diagonal_gauge_free_mixing": 0.7804878048780488,
+      "stationary_limit": {
+        "stationary_probability": [
+          "73/8025",
+          "38/2675",
+          "38/2675",
+          "64/8025",
+          "192/2675",
+          "38/2675",
+          "76/8025",
+          "64/8025",
+          "38/2675",
+          "192/2675",
+          "192/2675",
+          "76/8025",
+          "192/2675",
+          "4912/8025"
+        ],
+        "C0_complex_re_im": [
+          [
+            [
+              "1072/2675",
+              0
+            ],
+            [
+              "-184/535",
+              "184/535"
+            ]
+          ],
+          [
+            [
+              "-184/535",
+              "-184/535"
+            ],
+            [
+              "1688/2675",
+              0
+            ]
+          ]
+        ],
+        "C0_conjugate_M_offdiagonal_skew": [
+          "-32/535",
+          "32/535"
+        ]
+      },
+      "kernel_samples": [
+        {
+          "distance": 0.1,
+          "U_complex_re_im": [
+            [
+              [
+                0.34502767734408046,
+                0.0
+              ],
+              [
+                -0.11656975968110456,
+                0.11656975968110456
+              ]
+            ],
+            [
+              [
+                -0.02914243992027614,
+                -0.02914243992027614
+              ],
+              [
+                0.25760035758325206,
+                0.0
+              ]
+            ]
+          ],
+          "trace": 0.6026280349273325,
+          "determinant": 0.08208499862389881,
+          "metric_free_mass_split": 0.2561249694973136,
+          "diagonal_gauge_free_mixing": 0.7804878048780491,
+          "signed_channel_axis": 0.4685212856658182,
+          "channel_cross_ratio": 0.07644364913229107
+        },
+        {
+          "distance": 0.5,
+          "U_complex_re_im": [
+            [
+              [
+                0.007129685284625198,
+                0.0
+              ],
+              [
+                -0.005734466500066926,
+                0.005734466500066926
+              ]
+            ],
+            [
+              [
+                -0.0014336166250167315,
+                -0.0014336166250167315
+              ],
+              [
+                0.002828835409575002,
+                0.0
+              ]
+            ]
+          ],
+          "trace": 0.0099585206942002,
+          "determinant": 3.7266531720786743e-06,
+          "metric_free_mass_split": 0.2561249694973139,
+          "diagonal_gauge_free_mixing": 0.7804878048780487,
+          "signed_channel_axis": 0.46852128566581835,
+          "channel_cross_ratio": 0.8152259675681965
+        },
+        {
+          "distance": 1.0,
+          "U_complex_re_im": [
+            [
+              [
+                6.727446527799599e-05,
+                0.0
+              ],
+              [
+                -5.710680331111428e-05,
+                5.710680331111428e-05
+              ]
+            ],
+            [
+              [
+                -1.427670082777857e-05,
+                -1.427670082777857e-05
+              ],
+              [
+                2.4444362794660282e-05,
+                0.0
+              ]
+            ]
+          ],
+          "trace": 9.171882807265627e-05,
+          "determinant": 1.388794386496374e-11,
+          "metric_free_mass_split": 0.25612496949731456,
+          "diagonal_gauge_free_mixing": 0.7804878048780489,
+          "signed_channel_axis": 0.46852128566581824,
+          "channel_cross_ratio": 0.9915548187043476
+        }
+      ]
+    }
+  ],
+  "input_sha256": {
+    "scripts/p398_continuous_kernel.py": "d8d4bca1165741229e5b5bd03189b4b656a753ab5a8402bd12436f0ef1c2def0",
+    "scripts/p398_anisotropic_cylinder.py": "2f4f03ef29b3c4dd0df43ad0a3930b9652fadc635d5552dd509517c9fa5b2fdd",
+    "scripts/p398_positive_cylinder.py": "42bd6b112c4262d901d973a51facb1d4031c11f369da35d4b363b4790539ea37",
+    "scripts/noncrossing_connectivity_codec.py": "766bd53dca672e9a94cc22d4a1a24e901dcfefdf13d8fd7647962bcde32d3d83",
+    "scripts/p321_homology_trace_certificate.py": "c55abb3d95fce9bfb8cf3c11457b3f3fea9ea5fa84286411488f5f47b97e3dfe",
+    "scripts/p333_generic_q_detach_intertwiner.py": "74adfb8bd832d58ff76b35ffa54bfb1ffab7564be731fbb9b4ef7eced9b2f07d",
+    "scripts/p333_gram_source_intertwiner.py": "d7a5f889ab958e32783f8c60f4fd089a52801576ea06ce689448779f364e6bab",
+    "scripts/p333_source_landing_doublet_width4.py": "a800bcd692ab3fa7fe58643e8ec20b3826bcbe67737ef507d7a7aaadd8f5fff5",
+    "scripts/p398_rooted_gr1_completion.py": "a6263b21529693f3967aed0f752f6ccf2ef343efcb9e1cfb0f83042e25b67820"
+  },
+  "scope": "Exact finite width-four square-bond family. Mass units depend on the common clock rate; kappa is surviving join/detach-rate detuning (only kappa=1 is self-dual). Ratios/invariants depend on kappa and are model-specific, not continuum universal data. Zero MC."
+}
