@@ -1,0 +1,17 @@
+{
+  "schema": "matching-one/p437-fixed-support/v1",
+  "base_commit": "79988f8de14ff739b0a1091b3b468028b3d7687a",
+  "support_source": "7fd8aa0 exact non-low-degree witness; no support scan or post-reveal replacement",
+  "support": [0,28,56,84,112],
+  "measure": "The other 219 bonds are independently Bernoulli(1/2), original N112 square-bond rho-child measure; all 32 states on the fixed five-bond support are enumerated",
+  "observer": "Same complex C3 F=(E0+zeta^-1 E1+zeta^-2 E2)/3, E=1_rank0+1_rank2, same child edge order and matrices",
+  "derivative": "D_SF=2^-5 sum_u (-1)^(5-|u|)F(u,X_outside)",
+  "primary": "B_S=E|D_SF|^2, estimated by a nonnegative per-configuration value",
+  "population_relation": "A_HP>=h5 B_S, h5=9765/32768. B_S=sum_{T contains S}|Fhat(T)|^2 with the normalized Rademacher derivative. No combinatorial factor.",
+  "run": {"samples":20000,"batches":100,"workers":16,"seed":43753111201,"replica_offset":43710000000,"host":"local-Mac-LightChain"},
+  "timing_gate": "Separate seed0/counter100000 smoke of 32 replicas. Proceed with fixed20k if projected summed CPU<3000 seconds; otherwise report smaller timing-only work and do not silently change production size.",
+  "records": ["nonzero count", "exact signed child-difference value classes per batch", "integer energy numerator sums", "mean and full batch covariance of primary plus six child quadratic coordinates", "raw hashes and CPU/wall cost"],
+  "stop": "Fixed20k, no sequential extension or support selection",
+  "dependency_group": "p437-N112-fixed-S5-lower-bound-fresh20k-20260831",
+  "boundary": "A new localized positive endpoint, not an unbiased estimate of total A_HP. h5*estimated B_S has Monte Carlo uncertainty and is not a statistically certain lower bound. The old six-level20k stop conclusion is unchanged."
+}
