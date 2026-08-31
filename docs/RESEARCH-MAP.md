@@ -11,10 +11,11 @@ secondary, plus both distinct P334 comparisons.**
 states; the earlier handoff is pre-score history. The one-hole comparison
 and its prescribed split are complete: source-independent gain fails
 (`R=27.766563581230237>0`), and nonzero baseline reweighting also rejects
-the jump-only model. The same closed source has now produced a predeclared
-finite-coupling turnover. Attention goes to a fixed-source cross-size/order-of-limits
-prediction, distinguishing finite-volume two-state suppression from sector
-transmission persisting as N grows. No duplicate calculation, peak refinement,
+the jump-only model. The closed-source turnover and cross-size asymptotic
+formulas are now delivered too: deleting its fixed winding projection reverses
+the eventual sign of original U. Attention goes to a finite-coupling/size
+decision window for the same two laws, Sstar and Sdrop=Sstar+r. Their large-t
+formulas do not identify that window. No duplicate calculation, peak refinement,
 new production or source-feature expansion follows automatically.
 The old2.4M norm4 permutations and
 20-batch P334 archive remain discovery data; correct covariance and held-out
@@ -53,25 +54,41 @@ prediction fails by exact bounds. Reweighting's covariance can contain both
 rank types; it is not a rank-preserving population share or a new source.
 Acquisition: one-eighth alternating subset (2^22 per geometry),2.036 seconds,
 no random samples or root search. This is a dependent decomposition of
-the N50 one-hole model, not a complete finite-interior law.
+the N50 one-hole model, not a complete finite-interior law. Execution's
+`branch_only` [matching result, `9057325d`](https://github.com/LightChainr/Matching-One/blob/9057325d86d54a8a909ebf4f0d5b15ae7e40f1a5/notes/checkerboard-defect-reweighting-decision.md)
+uses `U_st=−Xi`; it shares the same finite population and is not another vote.
 
-**Finite source law, resolved turnover:** `branch_only`
+**Two fixed microscopic laws, opposite global-U tails:**
+the [new exact readout](../results/projection-drop-tail/REPORT.md), `open_pr #267`,
+`fbbaa2aacce9895f0113bfc12a70e37152aec507`, gives N25
+`U_drop/A_N ~ +(625/384) lambda^(42/5)` against the original negative
+`−(625/1152) lambda^11`. State: minimal winding stripes in the occupied graph.
+Source: `Sstar=C+F4+Bvac` versus the already specified `Sdrop=Sstar+r`.
+Observer: unchanged separately normalized pooled-root/slope U, evaluated
+on each law's own root. Geometry: axis L×L plus same-area companion with
+ell1≥L+2, L≥5, Delta>0. Acquisition: 36.6-millisecond exact reuse of N25
+integer `(K,g,q)` histograms, no enumeration, randomness or root search.
+
+The [proof and size table](../notes/topological-projection-reverses-global-u-tail.md),
+`944c364c36cde17d6a0bae1c7d7b77db84e680a3`, derives
+`U_drop/A_N ~ +(L−2) lambda^(2L−2+2/L)/Delta` from execution's `branch_only`
+[minimal-layer classification, `762dbaf4`](https://github.com/LightChainr/Matching-One/blob/762dbaf4c3afd9925f7e39b27220274312db4dc4/notes/closed-source-square-family-leading-law.md).
+Its original law is `U_star/A_N ~ −(L²−6L+6) lambda^(2L+1)/Delta`.
+The `branch_only` [local-colour representation, `85fd4923`](https://github.com/LightChainr/Matching-One/blob/85fd492312b597b3fa102ea913e4bcc7aeae2acf/notes/closed-source-local-colour-gas.md)
+identifies the sole change as deleting `m^(−r)`: the bulk pressure-density
+discrepancy is at most2t/N, yet unequal stripe-width costs remove the original
+leading thermal cancellation. N100/N225 are theoretical, unmeasured rows.
+Fixed-N large-t signs do not give an arbitrary finite-t sign or commute the
+size/coupling limits. The next discriminator is that finite-coupling/size
+window or transmission prediction, with both microscopic laws held fixed.
+
+**Earlier finite-coupling turnover is resolved:** `branch_only`
 [`a70eeff0:REPORT.md`](https://github.com/LightChainr/Matching-One/blob/a70eeff09f51ce2fa0fea5ae637e9191efbf2e1f/results/p337-closed-source-finite-coupling/score/REPORT.md)
-uses the same N25 populations with a full `(K,g,q)` histogram, where
-`g=2K−(beta1+beta_null)` and weight is `h^K exp(−tg)`.
-Source: the already fixed `Sstar`; observer: original separately normalized
-pooled-root/slope U; geometry: the same mixed-Smith direction pair.
-All prescribed m=2,4,8,16 have negative U_t, excluding all-positive-coupling
-monotone amplification. The fixed source itself survives this prediction.
-
-The `branch_only` [two-state theorem, `5a70f0a0`](https://github.com/LightChainr/Matching-One/blob/5a70f0a02d4ac5ba64db52608421f31e091f8cf5/notes/closed-source-two-state-turnover.md)
-identifies fixed-volume empty/full concentration: intermediate rank1
-disappears, `Q_h→N/2`, and `U=O(exp(−3t))→0`. Attraction orders q but not
-E=q² or its signed projection. The structural prediction was frozen at
-`b70dc4bd` before counting/scoring; the full proof was committed after scoring.
-Its constants can depend on N. Thus the next mechanism question is a
-size/limit-order prediction for this same source, not a fitted decay exponent,
-new field count or a request for more points around the peak.
+finds negative U_t at all prescribed m=2,4,8,16 after positive U_t(0),
+excluding monotone amplification on N25. The same exact populations supply
+the new tail readout; this is not independent evidence. The later winding
+classification sharpens the earlier two-state `U→0` bound. Neither a fitted
+decay exponent nor extra points near the resolved peak are needed next.
 
 **Different acquisition, unresolved larger-N result:** `branch_only`
 [F4 independent80M block, `25ca3635`](https://github.com/LightChainr/Matching-One/blob/25ca3635ea64655923c32adee4b62d683579cdcd/results/p337-f4-transmission-20260831/scored/REPORT.md)

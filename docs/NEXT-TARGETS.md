@@ -1,4 +1,4 @@
-# Next Targets: From Resolved Finite Mechanisms to a Size Prediction
+# Next Targets: Two Fixed Laws Now Predict Opposite Global-U Tails
 
 **Updated 2026-08-31.** Both requested primary lines have delivered decisions:
 #154's independent165M-permutation transmission experiment and two distinct
@@ -20,6 +20,13 @@ complete at `e1b968959634b9b3999c727b83ed38d0b730cb20`: reweighting contributes
 **+4.550327123237**, weighted jumps **−15.306045530801**, total **−10.755718407564**.
 The exact nonzero reweighting term rejects jump-only transmission. No missing
 cross-moment or first split remains assigned.
+
+**The size-law step has also been delivered.** Execution's
+[axis-family law, `762dbaf4`](https://github.com/LightChainr/Matching-One/blob/762dbaf4c3afd9925f7e39b27220274312db4dc4/notes/closed-source-square-family-leading-law.md)
+predicts a negative projected tail, and our [fixed projection-deleted
+comparison](../results/projection-drop-tail/REPORT.md), `fbbaa2aa`, predicts
+a positive one. The pressure-equivalent laws are Sstar and Sdrop=Sstar+r;
+the projection is already named, not a newly tuned source coefficient.
 
 [Final scientific handoff](../notes/independent-decisions-final-20260831.md) ·
 [Frozen decisions](DECISION-EXPERIMENTS.md) · [Claim boundaries](STATUS.md).
@@ -76,7 +83,7 @@ Only alternating four-neighbor patterns can change q/E, so the missing cross
 moments were reconstructed from a **1/8 exact subset** plus old full marginals.
 Each geometry required2^22 configurations; compilation and scoring took2.036seconds.
 
-## Highest attention: a cross-size prediction for the same positive source
+## Highest attention: the finite-coupling window for the two fixed laws
 
 Execution's `branch_only` [four-coupling result, `a70eeff0`](https://github.com/LightChainr/Matching-One/blob/a70eeff09f51ce2fa0fea5ae637e9191efbf2e1f/results/p337-closed-source-finite-coupling/score/REPORT.md)
 finds U_t<0 at all fixed m=exp(t)=2,4,8,16, whereas U_t(0)>0.
@@ -86,15 +93,33 @@ gives an empty/full limiting mixture, rank-one depletion and U=O(exp(-3t))→0.
 The exponent is a bound, not a fitted leading power. The source is attractive
 and its matching root unique/simple; positive association does not order E=q².
 
-**The unresolved distinction is limit order:** fixed N followed by t→∞
-versus increasing N at a fixed positive coupling. Do the finite-volume
-extreme-state mixture and its suppression of rank1 still control the original
-U when the system grows? A next proposal should give one quantitative
-size-ratio, sign or crossover prediction for this same source and observer,
-with a competing finite-volume explanation and a result that separates them.
-No such numerical size forecast is claimed to be delivered here. Use the
-existing exact histogram and topology theory to derive it; extra points near
-the already resolved N25 peak are not the default next calculation.
+The stronger [projected negative-tail result, `e3c8d3a`](https://github.com/LightChainr/Matching-One/blob/e3c8d3a1b0806f170d61cb89b8f3a7ab13b2e648/notes/closed-source-angular-strong-coupling-law.md)
+shows U eventually crosses zero and approaches0 from below. The exact
+winding barrier is2ell1−1; on the axis L×L minimum strips cancel their
+normalized thermal slope, delaying U by two powers. For the fixed family
+(5k,0)/(4k,3k), L=5k and Delta=1152/625, the completed predictions are
+
+```text
+U_star/A = -(L²-6L+6)/Delta * lambda^(2L+1) + ...,
+U_drop/A = +(L-2)/Delta * lambda^(2L-2+2/L) + ...,
+U_drop/U_star ~ -(L-2)/(L²-6L+6) exp[(3-2/L)t].
+```
+
+N25's new positive coefficient625/384 at power42/5 is extracted from the
+old integer histogram; N100/N225 are unmeasured combinatorial predictions.
+The same projection changes pressure density by at most2t/N, so bulk
+pressure equivalence does not preserve this finite topological observer.
+
+**The remaining question is quantitative finite-coupling transmission of
+these two fixed laws as size grows.** The eventual sign comparison is already
+settled. It does not give a finite-t sign threshold, a uniform remainder or
+an affordable independent sampling window. A next proposal should supply
+one such controlled two-law comparison, preserving the original observer
+and showing why its chosen N,t can distinguish the mechanisms. It should
+not fit a rank-fugacity coefficient, extend the old N25 peak grid, or count
+the asymptotic size table as new production. Literal empty/full concentration
+also requires N exp(-2t)→0; failure of that necessary condition does not by
+itself imply nonzero U or identify its large-size mechanism.
 
 This is one specified mechanism question, not a scan over descriptors, sources,
 lags or exponents. Endpoint source invariance alone does not identify a continuum
@@ -141,10 +166,12 @@ team permission messages. The producing team's20:02:29 CST receipt records
 its five P154 machines returned Ready and all ten then observed Ready; this
 is dated delivery metadata, not current availability or an instruction to start.
 
-This overview's latest computation added only the missing alternating-face
-cross moments in2.036seconds, including compilation: no full-population repeat,
-root search, random sample, cloud job or science test suite. The separate
-execution turnover and full single-defect results are cited, not rerun.
+This overview's latest computation extracted the projection-deleted leading
+term from old integer histograms in0.0366seconds: no enumeration, root search,
+random sample, cloud job or science test suite. The preceding alternating-face
+cross-moment calculation is complete. Execution's9057325d delivers the same
+one-hole contribution using U_st=-Xi; it is a second implementation on the
+same finite populations, not an extra statistical vote or a new pending task.
 PR #267 stays Draft; no merges, history rewrite or
 Issue lifecycle changes. [The preceding queue](https://github.com/LightChainr/Matching-One/blob/f670d26e8056116ec1787e0a2f29009b5db24a7d/docs/NEXT-TARGETS.md)
 and [pre-score handoff](../notes/independent-decisions-handoff-20260831.md)

@@ -10,20 +10,20 @@ The repository is organized to expose the next mechanism-changing observation, n
 
 ## Start here
 
-**Current result:** the fixed closed source has two opposing one-hole
-contributions to global U: [baseline reweighting +4.550327123237 and
-weighted jump −15.306045530801](results/defect-reweight/REPORT.md),
-`open_pr #267` at `e1b968959634b9b3999c727b83ed38d0b730cb20`.
-The fixed jump-only prediction fails. On the homogeneous N25 child,
-[four preselected couplings also resolve turnover](https://github.com/LightChainr/Matching-One/blob/a70eeff09f51ce2fa0fea5ae637e9191efbf2e1f/results/p337-closed-source-finite-coupling/score/REPORT.md)
-(`branch_only`): the same attractive source weakly amplifies U, then
-suppresses it. The next question is how this finite-volume mechanism
-competes with increasing size, with the source and observer held fixed.
+**Current result:** [removing the fixed topological projection reverses U's
+strong-coupling tail](results/projection-drop-tail/REPORT.md), `open_pr #267`
+at `fbbaa2aacce9895f0113bfc12a70e37152aec507`. The closed source `Sstar` has
+a negative tail; the specified comparison `Sdrop=Sstar+r` has a positive
+tail. For N25 the latter is exactly `U_drop/A_N ~ (625/384) exp(−42t/5)`.
+This 36.6-millisecond saved-histogram calculation adds no enumeration,
+random samples or root search. Cross-size formulas now exist; N100/N225
+remain unmeasured predictions. The next discriminator is a finite-coupling
+and size window for these same two laws, not more points near the N25 peak.
 
 | Mechanism question | Delivered decision | Attention now |
 |---|---|---|
+| Is deleting the winding projection harmless for global U? | No in the stated axis/companion family: U under `Sstar` approaches zero from below as `exp[−(2L+1)t]`; under `Sdrop=Sstar+r` it approaches from above as `exp[−(2L−2+2/L)t]`. | Determine where these opposite asymptotic signs become a usable finite-coupling/size prediction; N100/N225 are theory, not measurements. |
 | Can a weighted rank jump alone explain the one-hole response? | No: `Xi_reweight=+4.550327123237` offsets jump `−15.306045530801`, giving total `−10.755718407564073`. Source-independent gain also remains excluded by `R=+27.766563581230237`; hard-endpoint closure survives. | Preserve the full normalized defect operator; reweighting contains both rank types, not a fitted extra source or population share. |
-| Does the attractive closed source monotonically amplify U? | No on N25: U_t is negative at every frozen m=2,4,8,16, after positive U_t(0). The fixed-N strong-coupling law loses rank1 and has U→0. | Give a cross-size/order-of-limits prediction distinguishing finite-volume empty/full concentration from sector transmission persisting as N grows. |
 | Is Sstar's global response only its explicit unit q term? | No on the fixed N25 pair: `2V_beta_null=+.07291782829951701`, with zero excluded by exact bounds. | Keep the fixed-coefficient exclusion distinct from arbitrary fitted rank sources and within-K/rank residual claims. |
 | Does the N25 plaquette result establish larger-N F4 transmission? | No: the independent80M block at N65/85/130/170 is `NOT_EXCLUDED`, with all four intervals still inconclusive against±.5. | Preserve `INCONCLUSIVE_STOP_FIXED_BLOCK_WITHOUT_TOP_UP`; no automatic extra sampling. |
 | Does #154's fixed lag1 source provide strong entry/completion/global transmission? | Independent165M block rejects B/C; both net intervals are inside the declared weak band. | This source leaves primary H4 attention; the completed secondary does not rescue it. |
@@ -97,19 +97,26 @@ Its covariance can contain both rank-preserving and rank-changing
 configurations. Only the alternating one-eighth of each old finite
 population was enumerated (2^22 per geometry,2.036 seconds overall), with
 no new random samples, root search, cloud job or test campaign.
+Execution's [same completed split, `9057325d`, `branch_only`](https://github.com/LightChainr/Matching-One/blob/9057325d86d54a8a909ebf4f0d5b15ae7e40f1a5/notes/checkerboard-defect-reweighting-decision.md)
+uses `U_st=−Xi`; it is a common-result source, not an independent vote.
 
-**The same fixed source turns U down:** execution's `branch_only`
+**From observed turnover to opposite fixed-law tails:** execution's `branch_only`
 [four-coupling score, `a70eeff0`](https://github.com/LightChainr/Matching-One/blob/a70eeff09f51ce2fa0fea5ae637e9191efbf2e1f/results/p337-closed-source-finite-coupling/score/REPORT.md)
 finds `U_t(log2)=−1.370778221631` against `U_t(0)=+.126165363414`;
 all four prescribed m=2,4,8,16 derivatives have negative exact enclosures.
 At least one local maximum lies in `0<t<log2`; uniqueness is not established.
-The [fixed-volume proof, `5a70f0a0`](https://github.com/LightChainr/Matching-One/blob/5a70f0a02d4ac5ba64db52608421f31e091f8cf5/notes/closed-source-two-state-turnover.md)
-gives rank-one depletion, `Q_h→N/2` and `U=O(exp(−3t))→0` in an empty/full
-critical mixture. The structural prediction was in freeze `b70dc4bd` before
-counting/scoring; the full proof was committed after the score. This is
-fixed N then large t, not a uniform-in-N estimate, a fitted exponent or
-independent random evidence. The [next question](docs/NEXT-TARGETS.md) is
-whether the suppression persists when size grows at fixed positive coupling.
+The later `branch_only` [square-family theorem, `762dbaf4`](https://github.com/LightChainr/Matching-One/blob/762dbaf4c3afd9925f7e39b27220274312db4dc4/notes/closed-source-square-family-leading-law.md)
+sharpens the old `U→0` bound: `U_star/A_N ~ −(L²−6L+6) lambda^(2L+1)/Delta`.
+The [new fixed-comparison result](results/projection-drop-tail/REPORT.md)
+instead gives `U_drop/A_N ~ +(L−2) lambda^(2L−2+2/L)/Delta`.
+Here lambda=exp(−t), N=L², the companion has ell1≥L+2, and Delta>0.
+Deleting only `m^(−r)` breaks the lowest straight-stripe cancellation;
+no fitted rank coefficient is introduced. The [colour-gas identity,
+`85fd4923`, `branch_only`](https://github.com/LightChainr/Matching-One/blob/85fd492312b597b3fa102ea913e4bcc7aeae2acf/notes/closed-source-local-colour-gas.md)
+bounds the pressure-density difference by2t/N, but that fixed-t bound
+does not preserve this topological observer. The [proof and size table](notes/topological-projection-reverses-global-u-tail.md)
+give N100/N225 predictions without new measurements. Strong-coupling tails
+take fixed N first; finite-t sign thresholds and a useful size window remain open.
 
 **Newest independent decision, `open_pr #509`, `f4999e29`:** the fixed lag1
 conditional policy has net original-U responses+.043470±.043631 at N85 and
@@ -179,7 +186,7 @@ The [P418 per-sample archive reanalysis](results/p418-normalized-archive/REPORT.
 
 The 2026-08-31 review read **all 464 Issue/PR bodies, 1,354 discussion comments and seven reviews**. It recovered results that old opening bodies and earlier overview updates had left as “next”: real E_top and #370 production analysis, P218 coalescence, P155 local thermal-null, P40 motif covariance, P255 ordered-filtration proxy, P334 trigger-graph structure, F5 source separation, N112 E_top C3 and W5 periodic gluing. [The context crosswalk](docs/REPOSITORY-CONTEXT.md) distinguishes completed positive, completed inconclusive, and genuinely unrun work. It is a dated recovery, not a recurring audit prerequisite.
 
-**Highest attention is a cross-size/order-of-limits prediction for the same fixed positive source.** One-hole reweighting and four-coupling turnover are completed decisions; the missing link is whether fixed-volume empty/full suppression governs U as N grows. Hard-endpoint closure remains true, while scalar gain and jump-only extensions fail. Lag1 remains outside primary H4 attention; P334's distinct estimands and P398's parallel exploration remain separate. Canonical E_top is not an identified energy operator. [Decision Experiments](docs/DECISION-EXPERIMENTS.md) preserves the decisions, and [Next Targets](docs/NEXT-TARGETS.md) owns the queue; no peak refinement, new descriptor or automatic production follows.
+**Highest attention is the finite-coupling/size discriminator for fixed Sstar versus Sdrop.** Their opposite tails and cross-size formulas are delivered; the missing quantity is a usable window or transmission prediction with the size/coupling limit order explicit. One-hole reweighting and N25 turnover are complete. Hard-endpoint closure survives; scalar gain and jump-only extensions fail. P154/P334/F4 decisions stay unchanged, and P398 remains parallel exploration. [Next Targets](docs/NEXT-TARGETS.md) owns the queue; no peak refinement, fitted rank scan or automatic production follows.
 
 Several positive results now sharpen this choice. P337's F5 even rows separate W_line/JS response vectors at N325/N425 (`chi2/df=149.93/4,246.93/4`), although [P439's matching loading](results/p439-direct-plateau-transport/REPORT.md) remains unresolved. P267's square-bond N112 E_top C3 response is measured and not collinear with the primitive-line readout; it is not a square-site field identification. P437 measures fixed-support high-order topology at 14.97 SE; the earlier noisy estimator is not a general impossibility result. These remain explicitly unmerged source results.
 

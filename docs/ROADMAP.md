@@ -1,19 +1,23 @@
 # Roadmap: Default Attention, Not Permission
 
-**Current move, 2026-08-31:** derive a cross-size/order-of-limits prediction
-for the same fixed positive closed source. Its finite-volume U turns down,
-and the one-hole weighted-jump-only comparison is now resolved against the model.
-The [completed split](../results/defect-reweight/REPORT.md), `open_pr #267`,
-`e1b968959634b9b3999c727b83ed38d0b730cb20`, has baseline reweighting
-`+4.550327123236791` and weighted jump `−15.306045530800864`.
-Execution's `branch_only` [report, `f5c4a74a`](https://github.com/LightChainr/Matching-One/blob/f5c4a74a20bad8589c39e1034cfb209462110dbe/results/p337-endpoint-defect/score/REPORT.md)
-rejects source-independent gain: `R=27.766563581230237>0`.
-The companion `Xi=−10.755718407564073` rejects the mixed thermal-only null.
-Both share the same coefficients; hard-endpoint closure remains true.
-First Xi, its prescribed reweighting, complete Sstar transmission and the
-cycle/rank split are done. The next prediction must distinguish fixed-volume
-empty/full concentration from sector transmission persisting as N grows;
-no new peak points, descriptors or production tasks follow automatically.
+**Current move, 2026-08-31:** establish the finite-coupling/size discriminator
+for the two fixed laws `Sstar` and `Sdrop=Sstar+r`. Their [opposite asymptotic
+tails are delivered](../results/projection-drop-tail/REPORT.md), `open_pr #267`,
+`fbbaa2aacce9895f0113bfc12a70e37152aec507`: original U approaches zero from
+below, while deleting only `m^(−r)` makes it approach from above.
+The N25 saved-histogram coefficient is exactly `625/384` at lambda power42/5,
+computed in 36.6 milliseconds without enumeration, randomness or root search.
+Cross-size formulas are proved; N100/N225 remain unmeasured predictions.
+The open question is where these eventual signs become a useful finite-t
+comparison as size changes, or how the fixed source transmits there.
+No new peak points, fitted rank coefficients or automatic production follow.
+
+The [one-hole split](../results/defect-reweight/REPORT.md) is complete:
+reweighting `+4.550327123236791` opposes jump `−15.306045530800864`.
+Their sum Xi is `−10.755718407564073`; the jump-only model fails, and
+source-independent gain also fails by `R=27.766563581230237>0`.
+Hard-endpoint closure survives. These, the first complete-source response
+and cycle/rank split are completed inputs, not new requests.
 #154's165M primary and its declared secondary,
 plus both distinct P334 comparisons, are delivered; none remains a production request. The
 [decision register](DECISION-EXPERIMENTS.md) and
@@ -46,20 +50,28 @@ Its exact nonzero enclosure rejects the fixed jump-only prediction,
 without another source or fitted relative coefficient. Only the alternating
 one-eighth of each population was enumerated (2^22 per geometry,2.036 seconds);
 the saved total and root were reused. These dependent coefficients do not
-define a finite-interior curve or independent production effect.
+define a finite-interior curve or independent production effect. Execution's
+`branch_only` [same contribution result, `9057325d`](https://github.com/LightChainr/Matching-One/blob/9057325d86d54a8a909ebf4f0d5b15ae7e40f1a5/notes/checkerboard-defect-reweighting-decision.md)
+uses `U_st=−Xi` and is a shared-result source, not independent evidence.
+
+The `branch_only` [square-family theorem, `762dbaf4`](https://github.com/LightChainr/Matching-One/blob/762dbaf4c3afd9925f7e39b27220274312db4dc4/notes/closed-source-square-family-leading-law.md)
+now sharpens the old `U→0` bound. For axis L×L with L≥5, same-area companion
+ell1≥L+2 and Delta>0, the [two-law comparison](../notes/topological-projection-reverses-global-u-tail.md)
+has original leading `−(L²−6L+6) lambda^(2L+1)/Delta` versus projection-deleted
+`+(L−2) lambda^(2L−2+2/L)/Delta`. N100/N225 are explicit combinatorial
+predictions, not new measured rows. Execution's `branch_only` [colour-gas
+identity, `85fd4923`](https://github.com/LightChainr/Matching-One/blob/85fd492312b597b3fa102ea913e4bcc7aeae2acf/notes/closed-source-local-colour-gas.md)
+shows that the pressure-density difference is at most2t/N, while removing
+the winding factor breaks minimal-stripe thermal cancellation in U.
+The observer comparison takes fixed N before large t; the pressure bound
+takes fixed t before growing N. Neither supplies a finite-t sign threshold.
 
 The `branch_only` [four-coupling result, `a70eeff0`](https://github.com/LightChainr/Matching-One/blob/a70eeff09f51ce2fa0fea5ae637e9191efbf2e1f/results/p337-closed-source-finite-coupling/score/REPORT.md)
-also rejects monotone U amplification for this same source on N25:
-U_t is negative at every fixed m=2,4,8,16, despite positive U_t(0).
-At least one local maximum lies in `(0,log2)`; its uniqueness is unproved.
-The [two-state proof, `5a70f0a0`](https://github.com/LightChainr/Matching-One/blob/5a70f0a02d4ac5ba64db52608421f31e091f8cf5/notes/closed-source-two-state-turnover.md)
-gives `U=O(exp(−3t))→0` as fixed-N rank1 disappears and `Q_h→N/2`.
-The structural prediction appears in freeze `b70dc4bd` before new counting
-and scoring; the full proof was committed after the score. This is not a
-uniform-in-N estimate or a fitted asymptotic exponent. The remaining theory
-must decide how size growth competes with this fixed-volume concentration,
-with source/observer unchanged; refining the resolved N25 peak does not
-answer that question.
+already rejects monotone U amplification on N25: U_t is negative at each
+frozen m=2,4,8,16 after positive U_t(0). At least one local maximum lies in
+`(0,log2)`; uniqueness remains unproved. Reusing those exact populations for
+the tail is dependent analysis. More N25 peak points do not answer the next
+finite-coupling/size comparison between the two fixed microscopic laws.
 
 The separate `branch_only` [F4 independent80M result, `25ca3635`](https://github.com/LightChainr/Matching-One/blob/25ca3635ea64655923c32adee4b62d683579cdcd/results/p337-f4-transmission-20260831/scored/REPORT.md)
 uses20M/100 batches per N65/85/130/170. All four simultaneous intervals

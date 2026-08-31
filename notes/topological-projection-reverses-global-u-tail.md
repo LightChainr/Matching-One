@@ -1,4 +1,4 @@
-# A bulk-invisible rank projection reverses the strong-coupling U tail
+# A rank projection with vanishing pressure cost reverses the strong-coupling U tail
 
 ## Two fixed laws give opposite signs
 
@@ -108,6 +108,18 @@ histogram. N100/N225 here are combinatorial predictions, not new measured
 rows. The pressure-density discrepancy between these laws is at most2t/N;
 its vanishing at fixed t does not imply equality of finite topological
 observers. The two size/coupling limits have not been interchanged.
+
+**Exact histogram extraction completed:** [fbbaa2aa](../results/projection-drop-tail/REPORT.md)
+gives `U_drop/A=+(625/384)lambda^(42/5)+higher terms` at N25. The minimum
+axis support is K=5,g=9,count=10; the centered normalized E_d coefficient
+is75/2, and the pooled limiting slope is25/2. Extraction took0.0366seconds,
+with no enumeration, random samples, root search or coupling-grid extension.
+
+At weak source the earlier [fixed cycle/rank packet](../results/decimation-cycle-rank/REPORT.md)
+already gives `V_drop(0)=V_star(0)+V_q(0)=+.179412898529`, compared with
+`V_star(0)=+.126165363414`. The laws coincide at t=0, initially both raise U,
+yet their eventual signs differ. This is the same fixed source comparison
+across regimes, not a new fitted rank coefficient.
 
 This settles the strong-coupling sign of the already named counterfactual.
 It does not supply a finite-t crossover location, accessible sampling budget,

@@ -1,9 +1,11 @@
-version: 42
+version: 43
 updated: 2026-08-31
 latest_scientific_handoff:
   entry: docs/TEAM-COORDINATION.md
-  local_result_commit: e1b968959634b9b3999c727b83ed38d0b730cb20
-  local_result_report: results/defect-reweight/REPORT.md
+  local_result_commit: fbbaa2aacce9895f0113bfc12a70e37152aec507
+  local_result_report: results/projection-drop-tail/REPORT.md
+  projected_size_law_commit: 85fd492312b597b3fa102ea913e4bcc7aeae2acf
+  projected_size_law_report: notes/closed-source-square-family-leading-law.md
   finite_source_result_commit: a70eeff09f51ce2fa0fea5ae637e9191efbf2e1f
   finite_source_result_report: results/p337-closed-source-finite-coupling/score/REPORT.md
   positive_source_structure_commit: 359bde9be45d051b961110e03f0bd70f3ff82b91
@@ -39,8 +41,8 @@ latest_scientific_handoff:
   current_secondary_theory_commit: 83f3eba88d7f1290704f82610c28669dc5e12f3c
   current_secondary_result_commit: 612df8ec1cbe3be3938ee2e1f6183a1aefc6510b
   current_secondary_result_report: notes/p154-clock-line-secondary-result.md
-  current_synthesis_commit: e1b968959634b9b3999c727b83ed38d0b730cb20
-  current_synthesis_report: results/defect-reweight/REPORT.md
+  current_synthesis_commit: fbbaa2aacce9895f0113bfc12a70e37152aec507
+  current_synthesis_report: results/projection-drop-tail/REPORT.md
   preceding_synthesis_commit: 95d5d662afcef2d9d4b5167f82612a70cb4e83c7
   preceding_synthesis_report: notes/independent-decisions-final-20260831.md
   latest_external_reports: [experiments/p154-prospective-transmission-20260831/REPORT.md, experiments/p334-prospective-intervention-20260831/REPORT.md]
@@ -322,6 +324,27 @@ channel_semantics:
   required_fields: [topology_channel, combination, probability_coordinate, orientation_order, normalization, quantity]
 
 registered_reanalyses:
+  - id: PR267_PROJECTION_DROP_TAIL
+    integration_status: open_pr
+    pr: 267
+    branch: research/navigation-priority-refresh-20260829
+    commit: fbbaa2aacce9895f0113bfc12a70e37152aec507
+    definition_commit: 944c364c36cde17d6a0bae1c7d7b77db84e680a3
+    status: completed_fixed_projection_deleted_positive_tail_opposes_projected_negative_tail
+    outputs: [results/projection-drop-tail/REPORT.md, results/projection-drop-tail/latest.json, results/projection-drop-tail/run.json, notes/topological-projection-reverses-global-u-tail.md]
+    scripts: [scripts/analyze_projection_drop_tail.py]
+    contracts: [analysis/projection_drop_tail_contract.json]
+    dependency_groups: [decimation-N25-exact-configuration-pair]
+    result_summary: N25_Udrop_overA_positive625over384_lambda42over5_versus_Ustar_negative625over1152_lambda11
+    boundary: existing_fixed_Sdrop_equals_Sstar_plus_r_same_bulk_pressure_limit_different_topological_U_larger_size_rows_theory_only
+  - id: P337_PROJECTED_NEGATIVE_SIZE_LAW
+    integration_status: branch_only
+    branch: analysis/p334-paired-clock-loading-20260831
+    commit: 85fd492312b597b3fa102ea913e4bcc7aeae2acf
+    status: completed_negative_tail_and_axis_family_leading_law
+    outputs: [notes/closed-source-winding-barrier.md, notes/closed-source-square-family-leading-law.md, notes/closed-source-angular-strong-coupling-law.md, results/p337-closed-source-asymptotic/series.json]
+    dependency_groups: [decimation-N25-exact-configuration-pair]
+    boundary: N100_N225_formula_predictions_not_new_production_or_uniform_limit
   - id: PR267_DEFECT_REWEIGHT
     integration_status: open_pr
     pr: 267
@@ -389,7 +412,7 @@ registered_reanalyses:
     dependency_groups: [decimation-N25-exact-configuration-pair]
     result_summary: VF4_0p1944146864609_N50_endpoint_missing0p5996568681566_Shat_C_F_T_minus4K_plus2N_exact_invariant
     boundary: all2pow25_each_fixed_geometry_different_Smith_classes_not_same_family_asymptotic_H4_or_interior_RG_no_new_random_samples
-    next_output: Xi_R_and_fixed_operator_split_completed_same_source_cross_size_prediction_remains_open
+    next_output: Xi_R_operator_split_and_size_tails_completed_controlled_finite_coupling_window_remains_open
   - id: PR509_FRESH_P154_TRANSMISSION_RESULT
     status: open_pr
     pr: 509

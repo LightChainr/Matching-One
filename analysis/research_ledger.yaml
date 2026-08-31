@@ -1,4 +1,4 @@
-version: 42
+version: 43
 updated: 2026-08-31
 scientific_main_snapshot_commit: e30060995a9eb5c4d93f565ae09af4f54a56270f
 observed_remote_main_snapshot_commit: 2ee16678b64a065d6d235ef69941c8a46f3a3878
@@ -41,7 +41,7 @@ resource_authorization:
   routing: updated_connect_huawei_codebuddy_skill_explicit_machine_name
   coordination: repository_run_note_without_prior_team_permission_or_routine_messages
   historical_list_result: producing_team_final_receipt_at20h02m29_CST_all_ten_Ready_not_current_availability
-  current_action: completed_exact_alternating_subset_reweighting_split_and_consumed_finite_source_turnover_no_cloud_lifecycle_or_new_random_sampling
+  current_action: completed_saved_histogram_projection_deleted_tail_and_consumed_projected_negative_size_law_no_cloud_lifecycle_or_new_random_sampling
   history_boundary: older_TV2N0X_only_source_provenance_fields_record_their_past_scope_not_the_current_authorization
 
 team_coordination_signals:
@@ -190,6 +190,31 @@ observer_sectors:
     semantic_boundary: exact_zero_conditional_mean_does_not_certify_covariance_gain_causality_or_threshold_origin
 
 branch_sources:
+  - id: SRC_PR267_PROJECTION_DROP_TAIL
+    integration_status: open_pr
+    pr: 267
+    ref: research/navigation-priority-refresh-20260829
+    commit: fbbaa2aacce9895f0113bfc12a70e37152aec507
+    definition_and_code_commit: 944c364c36cde17d6a0bae1c7d7b77db84e680a3
+    paths: [results/projection-drop-tail/REPORT.md, results/projection-drop-tail/latest.json, results/projection-drop-tail/run.json, analysis/projection_drop_tail_contract.json, scripts/analyze_projection_drop_tail.py, notes/topological-projection-reverses-global-u-tail.md]
+    result_status: projection_deleted_positive_tail_opposes_original_negative_tail
+    claim_boundary: fixed_existing_counterfactual_Sdrop_equals_Sstar_plus_r_N25_saved_counts_larger_sizes_theory_not_new_data_no_uniform_N_remainder_or_finite_t_threshold
+  - id: SRC_P337_WINDING_NEGATIVE_SIZE_LAW
+    integration_status: branch_only
+    ref: analysis/p334-paired-clock-loading-20260831
+    commit: 85fd492312b597b3fa102ea913e4bcc7aeae2acf
+    negative_tail_result_commit: e3c8d3a1b0806f170d61cb89b8f3a7ab13b2e648
+    family_proof_commit: 762dbaf4c3afd9925f7e39b27220274312db4dc4
+    paths: [notes/closed-source-winding-barrier.md, notes/closed-source-angular-strong-coupling-law.md, notes/closed-source-square-family-leading-law.md, notes/closed-source-local-colour-gas.md, notes/closed-source-size-sign-and-transmission.md, results/p337-closed-source-asymptotic/series.json]
+    result_status: exact_winding_barrier_negative_projected_tail_and_fixed_square_family_size_law_plus_bulk_projection_counterfactual
+    claim_boundary: fixedN_then_t_to_infinity_N100_N225_are_theory_predictions_Nexp_minus2t_to0_necessary_not_sufficient_for_pure_empty_full_concentration
+  - id: SRC_P337_DEFECT_REWEIGHT_SAME_RESULT
+    integration_status: branch_only
+    ref: analysis/p334-paired-clock-loading-20260831
+    commit: 9057325d86d54a8a909ebf4f0d5b15ae7e40f1a5
+    paths: [notes/checkerboard-defect-reweighting-decision.md, results/p337-defect-reweighting/score.json]
+    result_status: same_completed_reweighting_contribution_with_Ust_minus_Xi_coordinate_conversion
+    claim_boundary: second_implementation_same_exact_finite_populations_not_independent_statistical_evidence_no_repeat_compute_requested
   - id: SRC_PR267_DEFECT_REWEIGHT
     integration_status: open_pr
     pr: 267
@@ -3912,6 +3937,28 @@ branch_sources:
     claim_boundary: finite_exact_algebra_support_merged_by_other_workflows_not_new_physical_production_covariance_W5_bound_or_a_reason_to_repeat_readiness_work_the_initial_capture_open_state_for493_to497_is_historical
 
 scientific_nodes:
+  - id: SN_TOPOLOGICAL_PROJECTION_U_SIGN
+    title: dropping_rank_projection_with_vanishing_pressure_density_cost_reverses_original_global_U_tail
+    integration_status: open_pr
+    state: microscopic_threshold_structure
+    sources: [coupled_cluster_plaquette_edge_source]
+    observer_sectors: [global_rank_projector, matching_even, direction_character]
+    geometries: [gaussian_cover, square_controls]
+    acquisition: [existing_data_reuse, exact_construction]
+    source_refs: [SRC_PR267_PROJECTION_DROP_TAIL, SRC_P337_WINDING_NEGATIVE_SIZE_LAW]
+    known_result: N25_drop_U_over_A_positive625over384_lambda42over5_vs_star_negative625over1152_lambda11
+    boundary: two_fixed_laws_Sstar_and_Sstar_plus_r_each_own_pooled_root_fixedN_large_t_not_finite_t_sign_threshold_or_uniform_size_limit
+    supports: [bulk_pressure_equivalence_does_not_preserve_topological_U, rank_projection_controls_reciprocal_stripe_cancellation]
+    tensions: [treating_bounded_topological_factor_as_harmless_thermal_gauge_for_global_U]
+    excludes_only: [identical_original_U_under_deletion_of_the_specified_rank_projection]
+    reusable_data_refs: [results/projection-drop-tail/latest.json, analysis/projection_drop_tail_contract.json]
+    dependency_group_refs: [decimation-N25-exact-configuration-pair]
+    next_discriminator: controlled_finite_coupling_size_window_for_these_two_fixed_laws_not_a_new_rank_fugacity_fit
+    information_gain: high
+    compute_cost: low
+    completed_compute: 0p0366seconds_saved_integer_histogram_leading_support_no_enumeration_root_search_random_samples_or_tests
+    theoretical_size_predictions: N100_drop8overDelta_lambda91over5_vs_star_minus46overDelta_lambda21_N225_drop13overDelta_lambda422over15_vs_star_minus141overDelta_lambda31
+    decision_experiments: [DX_DECIMATION_CLOSED_SOURCE_TRANSMISSION]
   - id: SN_DEFECT_REWEIGHT_TRANSMISSION
     title: positive_baseline_reweighting_opposes_negative_rank_jump_in_original_U
     integration_status: open_pr
@@ -3928,7 +3975,7 @@ scientific_nodes:
     excludes_only: [Xi_reweight_equals_zero_on_fixed_parent_pair]
     reusable_data_refs: [results/defect-reweight/latest.json, results/defect-reweight/first.csv, results/defect-reweight/second.csv]
     dependency_group_refs: [decimation-N50-single-defect-exact]
-    next_discriminator: completed_no_extra_endpoint_coordinates_same_source_cross_size_limit_order_prediction_remains_open
+    next_discriminator: completed_no_extra_endpoint_coordinates_controlled_two_law_finite_coupling_size_window_remains_open
     information_gain: high
     compute_cost: low
     completed_compute: 2p036seconds_including_compile_2pow22_alternating_subset_each_geometry_no_random_samples_root_search_or_science_tests
@@ -3941,15 +3988,15 @@ scientific_nodes:
     observer_sectors: [global_rank_projector, matching_even, direction_character]
     geometries: [gaussian_cover, square_controls]
     acquisition: [exact_construction]
-    source_refs: [SRC_P337_FINITE_SOURCE_TURNOVER, SRC_P337_POSITIVE_SOURCE_STRUCTURE]
-    known_result: Ut0_positive_Ut_log2_minus1p37077822163_all_m2_4_8_16_negative_fixedN_strong_source_U_to_zero
+    source_refs: [SRC_P337_FINITE_SOURCE_TURNOVER, SRC_P337_POSITIVE_SOURCE_STRUCTURE, SRC_P337_WINDING_NEGATIVE_SIZE_LAW]
+    known_result: Ut0_positive_four_fixed_Ut_negative_then_U_eventually_negative_tail_axis_L_power2Lplus1_min_winding_barrier2ell1minus1
     boundary: N25_mixed_Smith_pair_finite_t_FKG_simple_root_fixedN_limit_not_continuum_or_uniform_size_decay
     supports: [positive_source_turnover_prediction, rank1_depletion_with_nonzero_matching_slope]
     tensions: [positive_association_as_monotone_global_U_amplification]
     excludes_only: [U_monotonically_increasing_for_all_positive_t_on_fixed_N25_pair]
     reusable_data_refs: [results/p337-closed-source-finite-coupling/axis.csv, results/p337-closed-source-finite-coupling/tilted.csv, results/p337-closed-source-finite-coupling/score/score.json]
     dependency_group_refs: [decimation-N25-exact-configuration-pair]
-    next_discriminator: quantitative_fixed_source_cross_size_or_limit_order_prediction_not_extra_peak_grid_points
+    next_discriminator: size_leading_law_delivered_controlled_finite_coupling_two_law_window_not_extra_peak_grid_points
     information_gain: high
     compute_cost: low
     decision_experiments: [DX_DECIMATION_CLOSED_SOURCE_TRANSMISSION]
@@ -4030,7 +4077,7 @@ scientific_nodes:
     excludes_only: [VF4_equals_zero_thermal_alias_on_fixed_N25_pair, omit_F4_from_bulk_cluster_original_U_endpoint_derivative_on_this_pair]
     reusable_data_refs: [results/decimation-plaquette-u/axis.csv, results/decimation-plaquette-u/tilted.csv, results/decimation-plaquette-u/score/latest.json, analysis/decimation_source_dictionary.json]
     dependency_group_refs: [decimation-N25-exact-configuration-pair]
-    next_discriminator: Xi_R_and_operator_split_completed_same_source_cross_size_prediction_remains_open
+    next_discriminator: Xi_R_operator_split_and_size_tails_completed_controlled_finite_coupling_window_remains_open
     information_gain: high
     compute_cost: low
     completed_compute: 67108864_configurations_about1p1_seconds_each_parallel_geometry_and0p278_second_saved_count_reader_no_random_sampling_or_tests
@@ -6751,7 +6798,7 @@ dependency_groups:
     member_sizes: [25]
     geometries: [[5, 0], [4, 3]]
     source_ref: SRC_PR267_DECIMATION_GLOBAL_U_AND_CLOSED_SOURCE
-    derived_source_refs: [SRC_P337_CLOSED_SOURCE_N25, SRC_PR267_DECIMATION_CYCLE_RANK, SRC_P337_FINITE_SOURCE_TURNOVER]
+    derived_source_refs: [SRC_P337_CLOSED_SOURCE_N25, SRC_PR267_DECIMATION_CYCLE_RANK, SRC_P337_FINITE_SOURCE_TURNOVER, SRC_PR267_PROJECTION_DROP_TAIL, SRC_P337_WINDING_NEGATIVE_SIZE_LAW]
     configurations_per_geometry: 33554432
     random_samples: 0
     covariance_rule: not_applicable_exact_coefficients_with_rational_root_enclosures_C_F4_and_transported_N50_values_are_one_finite_comparison_not_independent_votes
@@ -6760,7 +6807,8 @@ dependency_groups:
     kind: exhaustive_single_A_vacancy_configurations_with_saved_intact_endpoint
     member_sizes: [50]
     source_ref: SRC_P337_SINGLE_DEFECT_RESULT
-    derived_source_refs: [SRC_PR267_DEFECT_REWEIGHT]
+    derived_source_refs: [SRC_PR267_DEFECT_REWEIGHT, SRC_P337_DEFECT_REWEIGHT_SAME_RESULT]
+    coordinate_conversion: execution_Ust_reweight_minus4p550327123237_equals_negative_overview_Xi_reweight_same_quantity_not_second_evidence_vote
     additional_subset: exact2pow22_alternating_neighbor_configurations_per_geometry_rest_has_zero_cross_correction_not_new_population
     baseline_dependency_group: decimation-N25-exact-configuration-pair
     configurations_per_geometry: 33554432
@@ -7741,19 +7789,19 @@ decision_experiments:
   - id: DX_DECIMATION_CLOSED_SOURCE_TRANSMISSION
     attention_rank: 1
     attention_class: primary_theory_after_completed_exact_mechanism_decision
-    name: same_positive_source_cross_size_and_limit_order_prediction
-    status: fixed_endpoint_gain_rank_alias_jump_only_and_monotone_amplification_decisions_completed_next_size_prediction
-    current_scientific_node_ref: SN_POSITIVE_SOURCE_FINITE_TURNOVER
-    scientific_node_refs: [SN_DECIMATION_FORCED_SOURCE_GLOBAL_U, SN_DECIMATION_CYCLE_RANK_SPLIT, SN_P337_SINGLE_DEFECT_TRANSMISSION, SN_DEFECT_REWEIGHT_TRANSMISSION, SN_POSITIVE_SOURCE_FINITE_TURNOVER]
+    name: fixed_projected_vs_projection_deleted_law_finite_coupling_size_window
+    status: opposing_sign_size_laws_completed_next_controlled_finite_coupling_window
+    current_scientific_node_ref: SN_TOPOLOGICAL_PROJECTION_U_SIGN
+    scientific_node_refs: [SN_DECIMATION_FORCED_SOURCE_GLOBAL_U, SN_DECIMATION_CYCLE_RANK_SPLIT, SN_P337_SINGLE_DEFECT_TRANSMISSION, SN_DEFECT_REWEIGHT_TRANSMISSION, SN_POSITIVE_SOURCE_FINITE_TURNOVER, SN_TOPOLOGICAL_PROJECTION_U_SIGN]
     observer_sector_refs: [global_rank_projector, matching_even, direction_character]
-    source_refs: [SRC_P337_CHECKERBOARD_GLOBAL_U_THEORY, SRC_PR267_DECIMATION_GLOBAL_U_AND_CLOSED_SOURCE, SRC_P337_CLOSED_SOURCE_N25, SRC_PR267_DECIMATION_CYCLE_RANK, SRC_P337_SINGLE_DEFECT_FREEZE, SRC_P337_SINGLE_DEFECT_RESULT, SRC_P337_SINGLE_DEFECT_OPERATOR, SRC_PR267_DEFECT_REWEIGHT, SRC_P337_FINITE_SOURCE_TURNOVER, SRC_P337_POSITIVE_SOURCE_STRUCTURE]
+    source_refs: [SRC_P337_CHECKERBOARD_GLOBAL_U_THEORY, SRC_PR267_DECIMATION_GLOBAL_U_AND_CLOSED_SOURCE, SRC_P337_CLOSED_SOURCE_N25, SRC_PR267_DECIMATION_CYCLE_RANK, SRC_P337_SINGLE_DEFECT_FREEZE, SRC_P337_SINGLE_DEFECT_RESULT, SRC_P337_SINGLE_DEFECT_OPERATOR, SRC_PR267_DEFECT_REWEIGHT, SRC_P337_FINITE_SOURCE_TURNOVER, SRC_P337_POSITIVE_SOURCE_STRUCTURE, SRC_PR267_PROJECTION_DROP_TAIL, SRC_P337_WINDING_NEGATIVE_SIZE_LAW]
     dependency_group_refs: [decimation-N25-exact-configuration-pair, decimation-N50-single-defect-exact]
     acquisition: exact_construction
-    expected_model_space_reduction: separate_fixed_volume_extreme_state_suppression_from_transport_persisting_as_N_grows_at_fixed_positive_source
-    compute_cost: theory_first_no_automatic_production_budget_or_extra_peak_scan
-    decision_output: one_quantitative_same_source_cross_size_ratio_sign_or_crossover_prediction_not_yet_delivered
-    completed_result: positive_reweighting4p550327_negative_jump_minus15p306046_and_four_point_positive_source_turnover_endpoint_identity_retained
-    unmeasured: [quantitative_cross_size_prediction, finite_epsilon_s_curve, continuum_field_identity]
+    expected_model_space_reduction: establish_when_pressure_density_equivalent_fixed_laws_diverge_in_original_U_at_finite_coupling_without_asymptotic_extrapolation
+    compute_cost: theory_or_existing_data_first_no_automatic_production_budget_or_extra_peak_scan
+    decision_output: controlled_N_t_comparison_window_for_two_fixed_laws_or_explicit_bounds_why_asymptotic_sign_is_not_accessible
+    completed_result: fixed_rank_projection_changes_U_tail_sign_and_power_explicit_N25_100_225_leading_laws_N25_saved_histogram_only
+    unmeasured: [controlled_finite_coupling_sign_window, uniform_in_N_remainder, finite_epsilon_s_curve, continuum_field_identity]
     boundary: endpoint_truth_is_not_interior_RG_prediction_no_P154_lag1_or_P334_failed_template_rescue
   - id: DX_ETOP_PRODUCTION_LOCALIZATION
     attention_rank: 1
