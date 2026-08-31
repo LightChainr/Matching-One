@@ -8,6 +8,13 @@
 
 ## Evidence and lifecycle contract
 
+The newer [research-output update](../notes/research-output-update-20260831b.md)
+consumes PR #484 production and completes fixed thermal windows (`d973a39`)
+and P398 named-readout mode visibility (`4846adf`) in Draft #267. New open
+PR #491 `ab90201` supplies the earlier missing P334 occupied-cut construction.
+The [dated increment](ISSUE-PR-INCREMENT-20260831b.md) preserves exact Issue/PR
+heads; its observed main `694586b` is not the Draft's incorporated main `e300609`.
+
 The latest [physical-analysis continuation](../notes/physical-analysis-progress-20260831.md)
 adds two completed `open_pr #267` results. `c0880c2` measures the missing
 E_top × fixed-K edge interaction on the old Phase-E stream: joint .8173/2,
@@ -31,7 +38,21 @@ Integration location is separate from readiness and evidence. When needed, rows 
 
 ## Current frontier and priority delta
 
-This delta is placed before the main claim ledger because it changes what the team should do next. Rows merged into Draft PR #267 are `open_pr`, not `main_integrated`.
+This delta is placed before the main claim ledger because it changes what the team should do next. Commits included in Draft PR #267 are `open_pr`, not `main_integrated`.
+
+| Latest result | Source / integration | Scientific consequence |
+|---|---|---|
+| N100 three shapes and finite transport | `open_pr` #484 / `894b3d8`; #485 / `b454bb8` is same-stream reuse | Common affine scalar A/E/C/W profile fails; common finite-Jacobian A/E transport gives 53.91436/6. A-only quantile transport exists for the empirical curves. First production and full-p transport are complete, not another preparation target |
+| N100 center/tail decomposition | `open_pr` #267 / `d973a39`, [result](../results/etop-critical-window-n100/REPORT.md) | At fixed finite-N window, A area is −3.46029e−4±4.62677e−5 and E dipole −1.35802e−4±1.16777e−5. Weak A dipole does not mean a silent center. One 2M-counter dependency block; not a scaling limit or norm-4 energy identity |
+| P398 fixed equal-time innovation | `open_pr` #267 / `4846adf`, [result](../results/p398-fixed-readout/REPORT.md) | At d1, J's unit-variance signal is .020216 and two-mode error77.98%, while whole-matrix error is .90%. The observer is chosen from C0 only. Spectrum-null filters are separate constructed exploration, not independent evidence |
+| P398 width8 protected rays | `branch_only` / `552c45d`, [source](https://github.com/LightChainr/Matching-One/blob/552c45d7595ebcb0d04555cec03b2a5bfd8da44a/notes/p398-width8-source-spectrum.md) | Continuous fixed-i model has two Kreweras-protected rays with93 directions each, plus explicit contact/size-two leakage. This is not the width5 discrete C5 model or186 fields |
+| P334 physical cut state | `open_pr` #491 / `ab90201`, [source](https://github.com/LightChainr/Matching-One/blob/ab90201e88409310632812727e0138c56b455644/notes/p487-cut-network-theorem.md) | Embedded rank-one continuation is two-terminal vertex connectivity in the stated scope. The two saved N425 biclique constructions explain W2 difference540=472+68 and c3=583/509; population H4 and canonical cut marks remain open |
+| P418 normalized common spectrum | `open_pr` #267, [result](../results/p418-normalized-archive/REPORT.md); original input/code pins `8704eee` / `588ca45` | Corrected common masked distances70.878/75.692/76.766/68.067 are compatible, with stable saved positive solutions. Old radius-flow inference from huge common penalties loses support. Radius5-only and derived sharing statistics are numerically unreliable; independent P250/CRT evidence is retained |
+
+The rows below retain the preceding input chain. Where they formerly pointed
+to first shape production, first fixed readouts or the physical cut, the
+completed results above now control the next action; [Next Targets](NEXT-TARGETS.md)
+is the current queue.
 
 | Node | Lifecycle | Result boundary | Operational consequence |
 |---|---|---|---|
@@ -48,7 +69,7 @@ This delta is placed before the main claim ledger because it changes what the te
 | P439 matching/source crosswalk and path split | parent `open_pr` #451 / `bfbceb2`; [derived split](../results/p439-direct-plateau-transport/REPORT.md) `open_pr` #267 / `8498d62` | Direct/plateau matching terms retain the total denominator and complete paired covariance; joint zero `4.69005/8`, `p=.79013`. Neither term is resolved, unlike the separate P337 F5 source-response rank | Seek M loading in the existing transported/line-typed basis and cross-geometry transport. More K_A-only sizes or the first line-observer pilot do not answer this question |
 | P437 measured high-pass, representation and fixed support | `branch_only` `1751e1c` / `79988f8`; fixed-support production/decomposition `386db0a` / `888af29` | The six-noise 20k estimator has variance inflation 1,298,313. A later 20k fixed-five-bond contraction gives `B_S=(3.23893+/-.21639)e-6`, 14.97 SE; 99.8485% of support energy lies at degree at least six | Both estimator cost and the new measurable high-order support are completed results. The latter is not the full high-pass, an Euler-energy field or a CFT dimension; do not repeat a first-support pilot |
 
-The [execution board](NEXT-TARGETS.md) is the single ranked queue: original norm-4 second physical direction first, then transport of the completed P398 physical response and an explicit P267 response model. P334 topological cuts, F5 transport/M loading, C3 dual-observer transport, P250 full spectrum, physical AU-UA and the constructed W5 pair remain parallel. Canonical E_top, the P398 width-four response, amplitude comparison and graph/capacity analyses are completed inputs, not default reruns.
+The [execution board](NEXT-TARGETS.md) is the single ranked queue: original norm-4 second physical direction first, then named P398 emission/scale predictions and N100 central/tail thermal transport. P334 now starts after the cut construction; F5 transport/M loading, C3 dual-observer transport, P250 spectrum, physical AU-UA and the constructed W5 pair remain parallel. Completed analyses are inputs, not default reruns.
 
 Additional recovered completed production controls:
 

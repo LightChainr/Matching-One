@@ -211,7 +211,9 @@ def main():
                              f"{row['all_modes_reconstruction_relative_error']:.4g} |" for row in double[1:])
     ap = indexed["AP_auto"]["lag_rows"][1]
     landing = indexed["landing_auto"]["lag_rows"][1]
-    innovation = indexed["equal_time_landing_innovation_auto"]["lag_rows"][1]
+    innovation_channel = indexed["equal_time_landing_innovation_auto"]
+    innovation = innovation_channel["lag_rows"][1]
+    innovation_d4 = innovation_channel["lag_rows"][4]
     null1 = indexed["slow1_biorthogonal_cross"]["lag_rows"][1]
     report = f"""# P398：固定 AP/landing 读出与可见快模
 
@@ -225,6 +227,13 @@ width5 的两慢模近似是**观察者相关**的，而非只由精确传播秩
 **{100 * innovation['two_slowest_relative_error']:.7g}%**，归一绝对信号
 `{innovation['absolute_signal_in_unit_variance_units']:.10g}`。
 这个 J 不读取非零距离或谱来选择系数，是比全矩阵范数更具体的现成物理读出。
+
+J 的第三模（λ≈{eigenvalues[2].real:.12g}）归一 residue 为 {decode_pair(innovation_channel['projected_residues_in_unit_variance_units'][2]).real:.12g}，
+d=1 的实际贡献为 {decode_pair(innovation['individual_mode_contributions'][2]).real:.12g}，而完整信号为 {innovation['absolute_signal_in_unit_variance_units']:.12g}。
+因此近距离快模可见性并非由双端 null 规则强制造成。
+J 也不是精确 slowest-null：其第一模 residue 约 {decode_pair(innovation_channel['projected_residues_in_unit_variance_units'][0]).real:.9g}，足够远时会重新占优。
+d=4 的 {100 * innovation_d4['two_slowest_relative_error']:.4g}% 相对误差发生在抵消后的 {innovation_d4['absolute_signal_in_unit_variance_units']:.3g} 微小信号上，不能当作大绝对效应。
+这说明同一个具名读出的有效模组成还依赖距离。
 
 再按既有谱系数构造 slowest-null 的 source/readout X1→Y1，d=1 的误差为
 **{100 * null1['two_slowest_relative_error']:.7g}%**，绝对信号

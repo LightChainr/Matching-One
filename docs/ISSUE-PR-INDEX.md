@@ -20,6 +20,12 @@ The closing increment adds three separately read entries, not a replacement snap
 
 The root also read [#370's six-tool claim](https://github.com/LightChainr/Matching-One/issues/370#issuecomment-5473793858), [#13's five algebra/monoid-task claim](https://github.com/LightChainr/Matching-One/issues/13#issuecomment-5473876430) and [#14's stochastic-domination proposal](https://github.com/LightChainr/Matching-One/issues/14#issuecomment-5473867297). These are parallel discussion increments, not physical-analysis prerequisites or lifecycle changes. All original snapshot tables and counts below remain unchanged.
 
+### 2026-08-31 13:45 incremental read: #469–490 and #418
+
+The [bounded increment](ISSUE-PR-INCREMENT-20260831b.md) and [exact snapshot](../analysis/github-context-increment-20260831b.json) capture all 22 new items (20 PRs, two Issues), plus #418's complete refreshed discussion, between 13:42:37 and 13:45:09 Asia/Shanghai. They retain original titles, full head commits, paths and states: 15 new PRs are merged, five remain open. Historical counts above and the tables below are unchanged.
+
+Key scientific changes are the N100 production/clock-quotient pair #484/#485, #486/#487's cut-network mechanism and saved-checkpoint explanation, and #418's newly documented batch-sum/mean mismatch with no corrected production score yet. Six merged #370 verifier/compiler PRs are completed infrastructure, not replacements for existing-data analysis. A #487 comment references PR #491; only that comment is retained, and the increment itself stops at #490.
+
 ## Open PRs: integration remains a separate decision
 
 File counts compare the PR file listing with `main@29f9716`: **same / different / absent** by exact Git blob only. Different paths or later independent implementations can carry the same scientific result; these counts are not merge recommendations.

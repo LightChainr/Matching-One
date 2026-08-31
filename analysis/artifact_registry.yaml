@@ -12,6 +12,11 @@ main_snapshot:
   scorer_inventory_scope: historical_record_at_5ac456d_not_a_new_live_count
   boundary: main_through_e300609_includes_ordered_serial_composition_failure_of_the_seven_D4_orbit_quotient_and_typed_port_reversal_as_exact_support_not_new_production_covariance_or_field_assignment
 
+observed_remote_main_snapshot:
+  commit: 694586b6612b4366afd7d3edc6a158806abd790b
+  observed_by: analysis/github-context-increment-20260831b.json
+  boundary: observed_remote_history_only_does_not_rewrite_the_scientific_main_snapshot_or_historical_scorer_counts
+
 draft_pr267_snapshot:
   pr: 267
   state: open_draft
@@ -243,6 +248,78 @@ channel_semantics:
   required_fields: [topology_channel, combination, probability_coordinate, orientation_order, normalization, quantity]
 
 registered_reanalyses:
+  - id: P418_NORMALIZED_ARCHIVE
+    status: completed_zero_sample_unit_corrected_joint_spectrum_analysis
+    integration_status: open_pr
+    pr: 267
+    commit: e2b57aa7c5ec5c7db8cbb4f03872435f20966407
+    source_commit: 8704eee790403e14e5ad75d3465ee1496eaa9c0e
+    family_fitter_commit: 588ca452dedd47213a424d79fc119ad67f8f77df
+    script: scripts/analyze_p418_normalized_archive.py
+    outputs: [results/p418-normalized-archive/score.json, results/p418-normalized-archive/normalized-inputs.json, results/p418-normalized-archive/solver-note.json, results/p418-normalized-archive/manifest.json, results/p418-normalized-archive/REPORT.md]
+    dependency_group: p250-projective-leg-N505-radius6-Level-S-old4-old5-fresh6
+    result_summary: four_corrected_joint_raw_masked_spectra_are_compatible_distances70p878_75p692_76p7658_68p0672_p0p38247_0p183267_0p175299_0p366534_with_LS_floor_gap_below7e_minus11_and_scaled_KKT_below1e_minus14
+    boundary: original_data_mask_covariance_rule250_bootstrap_and_alpha0p01_retained_no_new_MC_radius5_single_shell_and_sharing_penalty_are_not_scoreable_raw_solver_decision_is_trace_only_nonrejection_not_unique_spectrum_or_general_cone_equivalence
+    next_output: consume_corrected_joint_compatibility_for_the_full_terminal_spectrum_versus_adaptive_state_question_not_first_rescore_or_unreliable_sharing_mechanism_votes
+  - id: PR484_ETOP_N100_THERMAL_PRODUCTION
+    status: completed_new_production_and_post_reveal_thermal_profile_analysis
+    integration_status: open_pr
+    pr: 484
+    branch: analysis/etop-modulus-survivors-20260831
+    commit: 894b3d800c5aeaad3dd8b0f893b6f17d85d234c6
+    manifest: experiments/etop_n100_three_modulus_20260831.json
+    outputs: [results/etop-n100-three-modulus/score.json, results/etop-n100-three-modulus/REPORT.md, results/etop-thermal-redistribution/thermal_profiles.json, results/etop-thermal-transport/transport.json, results/etop-finite-transport-invariants/invariants.json, notes/etop-clock-redistribution-n100.md, notes/etop-common-thermal-coordinate-n100.md]
+    dependency_group: N100_three_modulus_seed20260831125401_offset267100000000
+    result_summary: three_shapes_share2m_counters200_batches_fixed_affine_E4_chi2_58p26869_over4_free_secant19p21808_over3_and_joint_A_E_finite_Jacobian_transport53p91436_over6_are_rejected
+    boundary: one_correlated_finite_N100_data_block_not_field_count_frozen_primary_and_retrospective_profiles_are_not_independent_votes_N400_is_a_design_not_acquired_production
+    next_output: homothetic_scale_prediction_for_named_window_and_relative_E_cumulative_moments_after_the_completed_N100_window_analysis
+  - id: PR485_P267_CLOCK_SHAPE_QUOTIENT
+    status: completed_exact_three_shape_design_and_same_stream_clock_reanalysis
+    integration_status: open_pr
+    pr: 485
+    branch: analysis/p267-clock-shape-quotient-20260831
+    commit: b454bb8ec04ad90a2db579efaf6285e59d6ba5aa
+    outputs: [notes/p267-third-geometry-feasibility.md, notes/p267-three-modulus-null.md, notes/p267-clock-shape-quotient.md, predictions/p267-n100-three-modulus-null.json, results/p267-clock-shape-quotient/input.json, results/p267-clock-shape-quotient/score.json, results/p267-clock-shape-quotient/REPORT.md]
+    dependency_group: N100_three_modulus_seed20260831125401_offset267100000000
+    result_summary: rC_minus0p277981748_plusminus0p019377_clock_closure17p8234_over3_and_source_selected_Psi_are_completed
+    boundary: same_PR484_production_not_new_samples_two_profiles_saturate_three_shapes_W_only_survives_alpha0p01_Psi_in_sample_SNR_is_not_independent_evidence
+    next_output: test_the_frozen_direction_and_source_uncertainty_under_an_explicit_homothetic_scale_prediction_not_first_clock_quotient
+  - id: ETOP_N100_CRITICAL_WINDOW
+    status: completed_zero_sample_aligned_window_and_activation_reanalysis
+    integration_status: open_pr
+    pr: 267
+    commit: d973a393398e4e8e6944fa40bcc5d64eee3b9d64
+    source_commit: 894b3d800c5aeaad3dd8b0f893b6f17d85d234c6
+    script: scripts/analyze_etop_critical_window.py
+    outputs: [results/etop-critical-window-n100/latest.json, results/etop-critical-window-n100/REPORT.md]
+    dependency_group: N100_three_modulus_seed20260831125401_offset267100000000
+    result_summary: core_A_area_minus3p46029e_minus4_plusminus4p62677e_minus5_core_A_first_moment_unresolved_minus1p01133e_minus5_plusminus2p24112e_minus5_core_E_first_moment_minus1p358016e_minus4_plusminus1p16777e_minus5
+    boundary: no_zero_core_claim_no_critical_field_identity_all_windows_and_birth_coordinates_reuse_same200_batches_with_clock_refit_and_full_covariance_float64_beta_integrals_not_rigorous_numeric_enclosures
+    next_output: predict_same_named_window_and_relative_E_response_at_homothetic_scale_not_first_window_or_A_only_quantile_transport
+  - id: P398_FIXED_READOUT
+    status: completed_saved_Cd_and_residue_numerical_projection
+    integration_status: open_pr
+    pr: 267
+    commit: 4846adfdeb0ad92827c8efab57c47b64ad1cce21
+    source_commit: 8f7a5875157265e32e9db08c5f3991a9b9ddb86e
+    script: scripts/p398_fixed_readout_analysis.py
+    outputs: [results/p398-fixed-readout/latest.json, results/p398-fixed-readout/REPORT.md]
+    dependency_group: p398-positive-cylinder-exact-chain
+    result_summary: equal_time_only_J_landing_innovation_has_d1_unit_variance_signal0p02021599642_and_two_slow_mode_error77p98237_percent_versus_matrix0p8996_AP0p07698_landing1p97589_percent
+    boundary: unchanged_width5_discrete_zeta5_model_no_transfer_or_spectrum_recomputation_no_lag_selected_J_no_MC_constructed_two_end_slow_null100percent_error_is_not_new_evidence
+    next_output: explicit_same_character_generator_transport_and_duality_prediction_for_named_readouts_and_R_T2_leakage_not_first_projection
+  - id: PR491_P487_CUT_NETWORK_MECHANISM
+    status: completed_exact_cut_network_and_saved_N425_checkpoint_mechanism
+    integration_status: open_pr
+    pr: 491
+    branch: research/p487-cut-network-mechanism-20260831
+    commit: ab90201e88409310632812727e0138c56b455644
+    source_commit: 1b5a9dea07e1c62f69798fddbf4899ff986c0b72
+    outputs: [notes/p487-cut-network-theorem.md, results/p487-cut-network/exact.json, results/p487-cut-network/inputs.json, results/p487-cut-network/metadata.json]
+    dependency_group: p334-cooperative-N425-20260831
+    result_summary: fixed_occupied_essential_cycle_cut_maps_every_future_rank2_event_to_vertex_connectivity_pair_edges_are_component_biclique_union_plus_direct_edges_real_A_B108_edges_each_W2gap540_equals472_plus68_and_c3_583_509_are_reproduced
+    boundary: honest_embedded_NN_rank1_scope_not_crossing_matching_graph_or_field_count_two_saved_checkpoint_reuses_not_new_MC_biclique_allocation_not_population_H4_loading
+    next_output: cut_invariant_or_covariant_component_incidence_and_overlap_population_directional_loading_or_longer_horizon_vertex_reliability_not_first_cut_or_graph_replay
   - id: P267_FIXED_P_RESPONSE_RAY
     status: completed_post_reveal_reanalysis
     integration_status: open_pr
@@ -519,15 +596,16 @@ registered_reanalyses:
     result_summary: complete_uniformly_anchor_averaged_N505_autocorrelation_has_at_least_100_positive_nonzero_spatial_Fourier_modes_for_every_0_less_p_less_1
     boundary: spatial_spectrum_rank_is_not_a_hidden_transfer_state_count_CFT_field_count_or_exclusion_of_Jordan_structure_for_a_distinct_operator
   - id: P406_SPATIAL_FOURIER_CONE_RESULT
-    status: branch_only_production_reanalysis
+    status: historical_production_reanalysis_with_confirmed_cross_archive_exposure_unit_mismatch
     integration_status: branch_only
     branch: analysis/p406-spatial-fourier-cone-20260830
     commit: dbeb29c0e82899524da75abf7f76b37f1169443c
     freeze_commit: df812661dae895d44f2d5f53d1d1e968e509788a
     representative_path: results/huawei-20260830/P406-spatial-fourier-cone/score.json
     dependency_group: p250-projective-leg-N505-radius6-Level-S-old4-old5-fresh6
-    result_summary: four_archived_radius4_radius5_radius6_hand_charge_channels_are_compatible_with_the_nonnegative_101_frequency_cone_with_bootstrap_p_0p163_to_0p378_and_design_rank_69
-    boundary: one_correlated_archived_dependency_family_and_nonrejection_not_a_unique_spectrum_exact_mode_count_hidden_state_count_or_absence_of_intervention_sensitive_order
+    result_summary: historical_p_0p163_to_0p378_and_rank69_are_preserved_as_sum_unit_outputs_the_completed_P418_NORMALIZED_ARCHIVE_replacement_finds_joint_raw_masked_compatibility_without_radius_flow_support
+    boundary: exact_Bochner_CRT_root_translation_and_normalized_P250_Hankel_are_unaffected_corrected_radius5_NNLS_and_dependent_sharing_penalties_are_not_scoreable_even_though_population_free_weight_cones_are_scale_invariant
+    next_output: use_completed_normalized_joint_result_and_its_full_covariance_for_the_next_spatial_baseline_question_not_first_rescore_or_sharing_penalty_interpretation
   - id: P250_ADAPTIVE_SUPPORT_WITNESS
     status: branch_only_exact_witness_and_frozen_pilot_interface
     integration_status: branch_only
@@ -635,7 +713,7 @@ registered_reanalyses:
     dependency_group: p398-positive-cylinder-exact-chain
     result_summary: same_AP_landing_width5_Krylov_2_4_6_8_positive_separation_Hankel_rank8_simple_polynomial_two_slow_mode_matrix_error_percent_0p8996_0p1523_0p00405_at_d1_d2_d4
     boundary: eight_finite_observable_modes_not_eight_fields_numerical_visibility_not_a_new_exact_certificate_7p8838_percent_two_by_two_U_semigroup_defect_not_failure_of_the_full_forty_two_state_Markov_chain
-    next_output: fixed_readout_effective_slow_modes_versus_exact_state_closure_with_projected_residuals_not_first_width5
+    next_output: use_completed_fixed_J_projection_and_width8_protected_rays_for_explicit_character_generator_transport_and_R_T2_leakage_prediction_not_first_fixed_readout
   - id: P250_ADAPTIVE_STATE_INCREMENT
     status: completed_post_reveal_zero_new_sample_reanalysis
     integration_status: open_pr
@@ -695,6 +773,17 @@ registered_reanalyses:
     next_output: same_stream_M_KA_loading_on_a_matching_sensitive_geometry_not_more_KA_only_scales
 
 frontier_branch_assets:
+  - id: P398_WIDTH8_PROTECTED_RAYS
+    status: branch_only
+    branch: theory/p398-width8-source-spectrum-20260831
+    commit: 552c45d7595ebcb0d04555cec03b2a5bfd8da44a
+    parent_commit: dbd408154b4215ca41fbf26c0fd962997074f05d
+    representative_path: notes/p398-width8-source-spectrum.md
+    paths: [notes/p398-width8-source-spectrum.md, results/p398-width8-source-spectrum/latest.json, results/p398-width8-source-spectrum/SCIENTIFIC_CARD.md]
+    role: exact_character_i_dimension186_Kreweras_protected93_plus93_rays_and_current_state_R_T2_leakage_with_numerical_low_mass_order_reversal
+    dependency_group: p398-positive-cylinder-exact-chain
+    dependency_boundary: continuous_width8_i_character_is_not_discrete_width5_zeta5_186_source_directions_are_not_field_count_width4_mass_law_fails_but_Ic1_rays_survive_scalar_finite_lag_crossing_is_not_Jordan
+    next_output: named_duality_ray_and_R_T2_microscopic_leakage_prediction_under_explicit_same_character_scale_transport_not_first_width8_census
   - {id: P334_COOPERATIVE_SCALAR_NONCLOSURE, status: branch_only, branch: experiment/p334-cooperative-closure-pilot-20260830, commit: 6147e22f53902a94e5f133739f2c1d423691d0b8, representative_path: notes/p334-real-checkpoint-scalar-nonclosure.md, role: real_checkpoint_H2_b2_age_line_matched_safe_graph_degree_second_moment_nonclosure_with_replayable_microscopic_identifiers}
   - {id: P398_ROOTED_MODULE_COMPLETED, status: branch_only, branch: theory/p398-rooted-module-closure-20260830, commit: 5389200f6f75262d5327c5c52ba1c19826e177a8, representative_path: results/p398-rooted-module-closure/latest.md, role: coupled_nine_mark_unique_declared_intersection_not_a_physical_transfer}
   - {id: P398_SECOND_JET_COMPLETED, status: branch_only, branch: theory/p398-rooted-second-jet-20260831, commit: afc619c35188af718d450c19935f4d8dd8d39ff1, representative_path: results/p398-rooted-second-jet/latest.md, role: X2_zero_J2_zero_and_higher_fixed_radical_Gram_automatic_not_an_independent_gate_or_all_Gram_realization}
@@ -730,7 +819,7 @@ frontier_branch_assets:
     role: completed_width4_continuous_distance_kernel_with_fixed_amplitudes_and_25_Im_squared_times_2_minus_Ic_equals2
     dependency_group: p398-positive-cylinder-exact-chain
     dependency_boundary: one_nested_width4_limit_not_width5_universality_or_independent_evidence_Ic_is_channel_rescaling_invariant_not_arbitrary_readout_mixing_invariant
-    next_output: use_named_channel_fingerprints_as_a_width4_model_prediction_while_distinguishing_width5_effective_modes_from_exact_state
+    next_output: consume_completed_width8_failure_of_the_width4_mass_law_and_survival_of_duality_rays_to_predict_named_readout_transport_not_first_width8
   - {id: MARKED_BIRTH_CONTACT_CHAIN, status: branch_only, branch: analysis/marked-birth-stream-20260829, commit: 0b3cebf9cd1b536c859d3fad1591345725a068f7, representative_path: results/server-20260829/marked-birth-pilot/REPORT.md, role: common_birth_pilot_mean_source_lead_and_all_order_q_only_contact_closure}
   - {id: P275_GLOBAL_LINE_FIELD_IDENTITY, status: branch_only, branch: research/p275-atop-field-identity-pipeline-20260829, commit: 4d7ecd5202a86d8ec42e9cdf4cf9453f1197f464, representative_path: results/server-20260829/P275-atop-field-identity/REPORT.md, role: nine_geometry_rejection_of_global_line_local_field_map}
   - {id: Q4_SEAM_PREFLIGHT, status: branch_only, branch: analysis/p257-p258-q4-seam-preflight-20260829, commit: 192e7942bbf84c941fbb3b88b6ae39447bd91854, representative_path: results/q4-seam-numerator-preflight/SCIENTIFIC_CARD.md, role: exact_singlet_one_charged_zero_numerator_and_partition_normalization_gate}
