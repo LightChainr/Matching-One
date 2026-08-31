@@ -5,6 +5,10 @@ uses a linear tensor parameter at every vacant vertex. This fixes what
 `J2=d_logQ d_epsilon^2 U` means. There is a sharper, local-coordinate
 description of the same proposed mechanism test.
 
+The full root/slope functional and the three configuration-level
+nonredundancy witnesses are derived in
+[the joint original-U response](regular-pair-joint-original-u-response.md).
+
 ## 1. Keep separate local parameters before taking the uniform path
 
 For a fixed occupation, divide the marked colour weight by the unmarked
