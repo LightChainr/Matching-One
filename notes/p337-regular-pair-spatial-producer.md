@@ -1,10 +1,10 @@
 # Regular-pair spatial producer: prepared, not run
 
-`scripts/p337_regular_pair_spatial_sampler.cpp` is the minimal fresh-iid reader of the prescribed two-site regular-pair Q-jet kernel. It has not sampled configurations. The final exact lookup, `p_ref`, two distinct size seeds, budget and root GO are still required before execution.
+`scripts/p337_regular_pair_spatial_sampler.cpp` is the minimal fresh-iid reader of the prescribed two-site regular-pair Q-jet kernel. It has not sampled configurations. Before any data, the root selected `L=32,64`, `p_ref=0.592746050790` and 200 batches of 1000 configurations per size. The final exact lookup, two distinct size seeds, formal contract and root GO are still required before execution.
 
 ## Fixed geometry and observable
 
-Square periodic tori `L=16,32`; `r=L/4`. The 16 anchors are `(i*r,j*r)` for `i,j=0..3`. Every anchor contributes the horizontal pair `((x,y),(x+r,y))` followed by the vertical pair `((x,y),(x,y+r))`. Their 32 values are averaged within each iid configuration. They are correlated readouts, never 32 independent samples.
+Square periodic tori `L=32,64`; `r=L/4=8,16`. The 16 anchors are `(i*r,j*r)` for `i,j=0..3`. Every anchor contributes the horizontal pair `((x,y),(x+r,y))` followed by the vertical pair `((x,y),(x,y+r))`. Their 32 values are averaged within each iid configuration. They are correlated readouts, never 32 independent samples.
 
 Each configuration builds one occupied NN DSU. Either occupied insertion endpoint forces zero. Otherwise the eight ports are ordered `x:N,E,S,W,y:N,E,S,W`. An occupied neighbor receives its occupied-NN component root; every vacant neighbor's incident edge receives a distinct singleton ID. For these separations all eight physical incident edges are distinct. Canonical restricted-growth labels start at zero, in port order, with key `sum(label[i] << (3*i))`.
 
@@ -21,11 +21,11 @@ SE/covariance will be calculated across the original batches. The kernel lookup 
 ```sh
 clang++ -std=c++17 -O3 scripts/p337_regular_pair_spatial_sampler.cpp -o /private/tmp/p337_regular_pair_spatial_sampler
 /private/tmp/p337_regular_pair_spatial_sampler \
-  --L 16 --p FROZEN_P --seed FROZEN_L16_SEED \
-  --batches FROZEN_BATCHES --samples-per-batch FROZEN_BATCH_SIZE \
+  --L 32 --p 0.592746050790 --seed FROZEN_L32_SEED \
+  --batches 200 --samples-per-batch 1000 \
   --lookup FROZEN_LOOKUP.tsv --output FROZEN_OUTPUT.csv
 ```
 
-The L32 command changes the size and uses its separately frozen seed/output. No defaults silently select the scientific values. Candidate budget is 200 batches of 1000 configurations per size, pending the root's final budget decision.
+The L64 command changes the size and uses its separately frozen seed/output. No defaults silently select the scientific values. The fixed budget is 200 batches of 1000 configurations per size. No L16 sample or benchmark has been run.
 
 The generator is `std::mt19937_64`, one word per site in x-fast row-major order; occupancy is `(word>>11) < floor(p*2^53)`. Thus the exact implemented Bernoulli probability is the recorded integer threshold divided by `2^53` (within `2^-53` of requested p). N/E/S/W are `(0,+1),(+1,0),(0,-1),(-1,0)`. Batches continue the same size-specific stream without reseeding. Existing outputs are refused. Preparing or syntax-checking this code does not authorize a production run.

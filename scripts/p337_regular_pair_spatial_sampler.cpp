@@ -40,9 +40,9 @@ Options parse_options(int argc, char** argv) {
         else if (key == "--output") o.output = value;
         else throw std::invalid_argument("unknown option: " + key);
     }
-    if ((o.L != 16 && o.L != 32) || !(o.p > 0 && o.p < 1) || !o.seed_given ||
+    if ((o.L != 32 && o.L != 64) || !(o.p > 0 && o.p < 1) || !o.seed_given ||
         o.batches <= 0 || o.samples_per_batch <= 0 || o.lookup.empty() || o.output.empty())
-        throw std::invalid_argument("required: --L {16|32} --p P --seed U64 --batches B "
+        throw std::invalid_argument("required: --L {32|64} --p P --seed U64 --batches B "
                                     "--samples-per-batch M --lookup kernel.tsv --output batches.csv");
     return o;
 }
