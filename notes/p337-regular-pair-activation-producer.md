@@ -1,5 +1,11 @@
 # Regular-pair completion: fixed-origin producer staged, not run
 
+**Execution update:** the frozen producer has since completed both
+once-only traversals after the theory gates and GO. See
+[raw receipt](../results/p337-regular-pair-activation/README.md) and
+[completed mixed response](regular-pair-interaction-result.md).
+The remainder records the pre-run interface and its original status.
+
 Base: `7681eedd`. Code: `scripts/p337_regular_pair_activation_exact.cpp`.
 This file prepares the one named Q1 derivative source of the proposed
 regular completion `Kreg=K2bar+K0bar=avg i(I-P1)i†`. Its actual tensor

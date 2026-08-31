@@ -1,0 +1,532 @@
+{
+  "schema": "p337.regular-pair-activation.score.v1",
+  "status": "completed_one_fixed_mixed_response",
+  "decision": "canonical_mixed_response_zero_rejected",
+  "contract": {
+    "schema": "p337.regular-pair-activation.v1",
+    "base_commit": "7681eedd938019d977ede41a7d74ee1b88ffbc50",
+    "question": "Does the canonical coefficientwise-Q1-regular local pair completion have a nonzero mixed logQ/epsilon response in the original pooled-root U?",
+    "motivation": "A finite single-insertion contraction does not establish a regular interacting tensor family. First settle the four-path double-insertion pole and its singlet cancellation; only then score the induced, fixed activation source.",
+    "kernel": "Kreg=average_C4 i(P2+P0)i^dagger=average_C4 i(I-P1)i^dagger, with the same ordered unequal-pair embedding and N,E;S,W cut as the completed local insertion. The singlet coefficient is identically one for every Q, not fitted.",
+    "normalization": "Add epsilon*Kreg/N to the vacant summand at each original vertex. Keep original occupation, rank, q=r-1 and E=q^2. Projector diagrams never change the occupied lattice.",
+    "theory_gates": [
+      "Give an actual finite original-lattice occupation with four distinct paths connecting two vacant insertions; derive its two-insertion contraction and any Q1 pole before drawing a family-level conclusion.",
+      "Prove Kreg is coefficientwise regular at Q1; every nonempty marked contraction on a finite colour network vanishes at Q1.",
+      "Prove the relative single-vertex closure has derivative a_x at Q1 with exactly the table below. If the table fails, do not count or score a revised source in this contract."
+    ],
+    "scheme_boundary": "Within K2+c(Q)K0, regularity forces c(1)=1 but not c'(1). This contract fixes c(Q)=1 identically. It makes no uniqueness claim over other regular local tensors or finite counterterms.",
+    "activation_source": "a_x=d_logQ beta_reg,x at Q1. It is zero if x is occupied. If x is vacant, partition its four incident edge-nodes by exterior hypergraph component, including an independent singleton for each vacant NN neighbour.",
+    "activation_table": {
+      "four_distinct_components": "1",
+      "one_equal_pair_opposite_NS_or_EW": "1",
+      "one_equal_pair_adjacent": "1/2",
+      "two_equal_pairs_opposite_NS_EW": "-1/2",
+      "two_equal_pairs_adjacent": "-1/4",
+      "three_plus_one_or_all_four_equal": "0"
+    },
+    "N": 25,
+    "geometries": [
+      [
+        5,
+        0
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    "primary_quantity": "W=d_logQ d_epsilon U at Q1,epsilon0 along the original common-root family. Since beta_reg(1)=0 identically, this equals the existing complete first-source response functional evaluated on the site-average a; it is not a fixed-gauge raw Q attribution.",
+    "exact_zero": "d_epsilon U at Q1 is identically zero for this completion, at every size and thermal activity with a regular observer denominator. This is a theorem, not the numerical hypothesis.",
+    "numerical_null": "The one specified mixed response W is zero on the fixed original N25 pair.",
+    "root": "Import root_enclosure, matching_slope_enclosure and U25_over_A_enclosure from results/p337-closed-source-n25/latest.json; no new root search.",
+    "statistics": [
+      "count",
+      "sum_q",
+      "sum_e",
+      "sum_a4",
+      "sum_qa4",
+      "sum_ea4"
+    ],
+    "integer_source": "a4=4*a_origin takes 4,2,-2,-1,0. Divide the three new crossmoment sums by four. A fixed-origin first-source moment equals the site-average source moment against translation-invariant K,q,E.",
+    "population": "One complete 2^25 occupation traversal per geometry for missing prescribed crossmoments, after theory and producer-code commits. No change to the old q/E populations. This is the same exact finite population, not independent stochastic evidence.",
+    "decision": "One exact rational mixed-response score. A strictly signed interval rejects the finite zero-transmission null for this completion; an interval containing zero ends this fixed question unresolved. Neither outcome triggers new c, Q, geometry, support radius or precision choices.",
+    "mechanism_stops": [
+      "A proven coefficientwise two-insertion pole rejects the uncompleted K2 local tensor as a coefficientwise-Q1-regular interaction family; the earlier first-tangent result remains correct.",
+      "The completed family has no epsilon effect in the Q1 finite colour law itself. Any proposed explanation by that direct epsilon response is excluded; a nonzero mixed response belongs specifically to Q activation.",
+      "No conclusion here identifies a continuum primary, a Jordan pair, the global seam trace or the asymptotic Matching-One anomaly."
+    ],
+    "forbidden": [
+      "rescore completed old sources",
+      "new root search",
+      "fit a completion coefficient",
+      "choose a new source after scoring",
+      "repeat an old fixed grid",
+      "restart retired P154/P334/F4 production"
+    ],
+    "new_random_samples": 0
+  },
+  "freeze_commit": "25f70f6807a58578208b7c22b98b2e1887728630",
+  "code_commit": "aede8468cfbb9aeca3bd4b84e2b1c92935ec7e56",
+  "accepted_gates": {
+    "algebra": "235f9b0bea70e56298229acf16338aeef6ea5857",
+    "geometry": "05d8151f96205c18912cffe386f105e54c646d04",
+    "producer": "21d901f9b18a681387506c7fb61dd304170e143e"
+  },
+  "created_utc": "2026-08-31T15:39:14.075751+00:00",
+  "inputs": [
+    {
+      "geometry": "axis",
+      "new_source_file": "axis.csv",
+      "new_source_sha256": "8fdf498b7107b1760fd87e69c67555fbef322acfb7417544cd74cd1189092853",
+      "old_population_path": "results/p337-closed-source-finite-coupling/axis.csv",
+      "old_population_sha256": "2d23fecc98d276d9ad15ad1867199cd308f0570cb5040ef94eb6b923b4c53458",
+      "activation_coefficients_y": {
+        "s": [
+          "1",
+          "24",
+          "276",
+          "2022",
+          "10584",
+          "42084",
+          "263847/2",
+          "333930",
+          "1386371/2",
+          "1191094",
+          "3401681/2",
+          "2016029",
+          "3945471/2",
+          "1583110",
+          "1039651",
+          "561006",
+          "248808",
+          "89442",
+          "25393",
+          "5486",
+          "849",
+          "84",
+          "4",
+          "0",
+          "0",
+          "0"
+        ],
+        "qs": [
+          "-1",
+          "-24",
+          "-276",
+          "-2022",
+          "-10584",
+          "-42076",
+          "-263551/2",
+          "-332570",
+          "-1370235/2",
+          "-1157018",
+          "-3186105/2",
+          "-1753989",
+          "-2960887/2",
+          "-876608",
+          "-280470",
+          "40110",
+          "100342",
+          "59602",
+          "21339",
+          "5144",
+          "835",
+          "84",
+          "4",
+          "0",
+          "0",
+          "0"
+        ],
+        "es": [
+          "1",
+          "24",
+          "276",
+          "2022",
+          "10584",
+          "42076",
+          "263551/2",
+          "332570",
+          "1370235/2",
+          "1157046",
+          "3187281/2",
+          "1759409",
+          "3018711/2",
+          "973388",
+          "485464",
+          "232414",
+          "126438",
+          "61136",
+          "21343",
+          "5144",
+          "835",
+          "84",
+          "4",
+          "0",
+          "0",
+          "0"
+        ]
+      },
+      "original_q_E_marginals_retained": true,
+      "configurations": 33554432
+    },
+    {
+      "geometry": "tilted",
+      "new_source_file": "tilted.csv",
+      "new_source_sha256": "cb2a57a4c5b661ff1d940400f49b4286797a54d1618768f285b602205228c01f",
+      "old_population_path": "results/p337-closed-source-finite-coupling/tilted.csv",
+      "old_population_sha256": "225031e612929ed922ba75c55e76703d59990f5283e7ac39b94f022841798da5",
+      "activation_coefficients_y": {
+        "s": [
+          "1",
+          "24",
+          "276",
+          "2022",
+          "10584",
+          "42084",
+          "263831/2",
+          "333808",
+          "1384663/2",
+          "1187496",
+          "1690857",
+          "1997368",
+          "3899211/2",
+          "1565024",
+          "1031595",
+          "559243",
+          "497287/2",
+          "89428",
+          "25393",
+          "5486",
+          "849",
+          "84",
+          "4",
+          "0",
+          "0",
+          "0"
+        ],
+        "qs": [
+          "-1",
+          "-24",
+          "-276",
+          "-2022",
+          "-10584",
+          "-42084",
+          "-263831/2",
+          "-333648",
+          "-1379871/2",
+          "-1170746",
+          "-1618632",
+          "-1784574",
+          "-3003971/2",
+          "-882428",
+          "-277057",
+          "44315",
+          "102358",
+          "60142",
+          "21415",
+          "5148",
+          "835",
+          "84",
+          "4",
+          "0",
+          "0",
+          "0"
+        ],
+        "es": [
+          "1",
+          "24",
+          "276",
+          "2022",
+          "10584",
+          "42084",
+          "263831/2",
+          "333648",
+          "1379871/2",
+          "1170746",
+          "1618828",
+          "1788250",
+          "3055375/2",
+          "977732",
+          "486313",
+          "234877",
+          "128406",
+          "61782",
+          "21439",
+          "5148",
+          "835",
+          "84",
+          "4",
+          "0",
+          "0",
+          "0"
+        ]
+      },
+      "original_q_E_marginals_retained": true,
+      "configurations": 33554432
+    }
+  ],
+  "W_over_A": {
+    "lower_fraction": "-4818794335234287222311009716950115569/10000000000000000000000000000000000000000",
+    "upper_fraction": "-2409397167617143611155504858475047623/5000000000000000000000000000000000000000",
+    "midpoint_approx": -0.00048187943352342874,
+    "width_approx": 2.0323e-36,
+    "excludes_zero": true,
+    "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+  },
+  "numerical_values": {
+    "W": -0.04503611397592696,
+    "terms": {
+      "direct_centered": -0.014619566648382092,
+      "root_motion": -0.04875130947142392,
+      "slope_source": -0.03049360208575359,
+      "slope_root": 0.048828364229632645
+    }
+  },
+  "direct_epsilon_response_at_Q1": "0 exactly on finite graphs wherever original U and its regular pooled root are defined",
+  "terms_over_A": {
+    "direct_centered": {
+      "lower_fraction": "-78213547672497345900610532751933951/500000000000000000000000000000000000000",
+      "upper_fraction": "-78213547672497345900610532751933737/500000000000000000000000000000000000000",
+      "midpoint_approx": -0.0001564270953449947,
+      "width_approx": 4.28e-37,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "root_motion": {
+      "lower_fraction": "-5216314490227194050941550530313928573/10000000000000000000000000000000000000000",
+      "upper_fraction": "-16300982781959981409192345407230977/31250000000000000000000000000000000000",
+      "midpoint_approx": -0.0005216314490227194,
+      "width_approx": 1.5933e-36,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "slope_source": {
+      "lower_fraction": "-652553624277008464184213346355833847/2000000000000000000000000000000000000000",
+      "upper_fraction": "-652553624277008464184213346355833839/2000000000000000000000000000000000000000",
+      "midpoint_approx": -0.00032627681213850425,
+      "width_approx": 4e-39,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "slope_root": {
+      "lower_fraction": "2612279614913948033781909100090830629/5000000000000000000000000000000000000000",
+      "upper_fraction": "5224559229827896067563818200181661331/10000000000000000000000000000000000000000",
+      "midpoint_approx": 0.0005224559229827896,
+      "width_approx": 7.3e-39,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    }
+  },
+  "root_h_mixed_tangent": {
+    "lower_fraction": "381128820772039865326534547486784587391/5000000000000000000000000000000000000000",
+    "upper_fraction": "762257641544079730653069094973569174871/10000000000000000000000000000000000000000",
+    "midpoint_approx": 0.07622576415440797,
+    "width_approx": 8.9e-39,
+    "excludes_zero": true,
+    "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+  },
+  "root_p_mixed_tangent": {
+    "lower_fraction": "126474826728403150634588048452295319893/10000000000000000000000000000000000000000",
+    "upper_fraction": "126474826728403150634588048452295319909/10000000000000000000000000000000000000000",
+    "midpoint_approx": 0.012647482672840315,
+    "width_approx": 1.6e-39,
+    "excludes_zero": true,
+    "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+  },
+  "geometry_source": [
+    {
+      "j_q": {
+        "lower_fraction": "-375253596157620039815929432449182916817/5000000000000000000000000000000000000000",
+        "upper_fraction": "-375253596157620039815929432449182916797/5000000000000000000000000000000000000000",
+        "midpoint_approx": -0.07505071923152401,
+        "width_approx": 4e-39,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "j_q_h": {
+        "lower_fraction": "65715557047608192400588186004941428689/2000000000000000000000000000000000000000",
+        "upper_fraction": "32857778523804096200294093002470714443/1000000000000000000000000000000000000000",
+        "midpoint_approx": 0.032857778523804095,
+        "width_approx": 9.85e-38,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "j_e": {
+        "lower_fraction": "14155019746703774595945102775362592121/5000000000000000000000000000000000000000",
+        "upper_fraction": "28310039493407549191890205550725184431/10000000000000000000000000000000000000000",
+        "midpoint_approx": 0.002831003949340755,
+        "width_approx": 1.89e-38,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "j_e_h": {
+        "lower_fraction": "-56370426648519707798444870961658776431/1250000000000000000000000000000000000000",
+        "upper_fraction": "-56370426648519707798444870961658775949/1250000000000000000000000000000000000000",
+        "midpoint_approx": -0.045096341318815764,
+        "width_approx": 3.856e-37,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "mean_s": {
+        "lower_fraction": "416245566831660427891568075547719437579/2000000000000000000000000000000000000000",
+        "upper_fraction": "260153479269787767432230047217324648499/1250000000000000000000000000000000000000",
+        "midpoint_approx": 0.2081227834158302,
+        "width_approx": 9.7e-39,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "mean_s_h": {
+        "lower_fraction": "-561169913987414773310259796851694311663/2500000000000000000000000000000000000000",
+        "upper_fraction": "-448935931189931818648207837481355448943/2000000000000000000000000000000000000000",
+        "midpoint_approx": -0.2244679655949659,
+        "width_approx": 1.937e-37,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "raw_qs": {
+        "lower_fraction": "-92777127247156535605436151389296081119/1250000000000000000000000000000000000000",
+        "upper_fraction": "-371108508988626142421744605557184324459/5000000000000000000000000000000000000000",
+        "midpoint_approx": -0.07422170179772523,
+        "width_approx": 3.4e-39,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "raw_es": {
+        "lower_fraction": "1354592644230071667432484311594832603163/10000000000000000000000000000000000000000",
+        "upper_fraction": "677296322115035833716242155797416301613/5000000000000000000000000000000000000000",
+        "midpoint_approx": 0.13545926442300715,
+        "width_approx": 6.3e-39,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      }
+    },
+    {
+      "j_q": {
+        "lower_fraction": "-739622304524232503448788028599773420961/10000000000000000000000000000000000000000",
+        "upper_fraction": "-739622304524232503448788028599773420921/10000000000000000000000000000000000000000",
+        "midpoint_approx": -0.07396223045242326,
+        "width_approx": 4e-39,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "j_q_h": {
+        "lower_fraction": "69693677133475412634200183217384429149/2000000000000000000000000000000000000000",
+        "upper_fraction": "348468385667377063171000916086922146727/10000000000000000000000000000000000000000",
+        "midpoint_approx": 0.0348468385667377,
+        "width_approx": 9.82e-38,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "j_e": {
+        "lower_fraction": "46869852077097562224882115121537752631/10000000000000000000000000000000000000000",
+        "upper_fraction": "46869852077097562224882115121537752821/10000000000000000000000000000000000000000",
+        "midpoint_approx": 0.004686985207709756,
+        "width_approx": 1.9e-38,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "j_e_h": {
+        "lower_fraction": "-224072590820970505593795133812396878161/5000000000000000000000000000000000000000",
+        "upper_fraction": "-448145181641941011187590267624793752467/10000000000000000000000000000000000000000",
+        "midpoint_approx": -0.0448145181641941,
+        "width_approx": 3.855e-37,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "mean_s": {
+        "lower_fraction": "413318885754453415312977939843718191417/2000000000000000000000000000000000000000",
+        "upper_fraction": "1033297214386133538282444849609295478591/5000000000000000000000000000000000000000",
+        "midpoint_approx": 0.2066594428772267,
+        "width_approx": 9.7e-39,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "mean_s_h": {
+        "lower_fraction": "-555555102859653655799568489593940093323/2500000000000000000000000000000000000000",
+        "upper_fraction": "-277777551429826827899784244796970046421/1250000000000000000000000000000000000000",
+        "midpoint_approx": -0.22222204114386146,
+        "width_approx": 1.924e-37,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "raw_qs": {
+        "lower_fraction": "-186963547370348844134103125419262417367/2500000000000000000000000000000000000000",
+        "upper_fraction": "-373927094740697688268206250838524834717/5000000000000000000000000000000000000000",
+        "midpoint_approx": -0.07478541894813953,
+        "width_approx": 3.4e-39,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "raw_es": {
+        "lower_fraction": "1368233251284039959825867048684101951023/10000000000000000000000000000000000000000",
+        "upper_fraction": "684116625642019979912933524342050975543/5000000000000000000000000000000000000000",
+        "midpoint_approx": 0.136823325128404,
+        "width_approx": 6.3e-39,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      }
+    }
+  ],
+  "source_covariances": {
+    "jQ": {
+      "lower_fraction": "-745064748419736291540323446749069627297/10000000000000000000000000000000000000000",
+      "upper_fraction": "-372532374209868145770161723374534813629/5000000000000000000000000000000000000000",
+      "midpoint_approx": -0.07450647484197363,
+      "width_approx": 3.9e-39,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "jQ_h": {
+      "lower_fraction": "67704617090541802517394184611162928919/2000000000000000000000000000000000000000",
+      "upper_fraction": "338523085452709012586970923055814645579/10000000000000000000000000000000000000000",
+      "midpoint_approx": 0.0338523085452709,
+      "width_approx": 9.84e-38,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "jY_h": {
+      "lower_fraction": "-1528988469084554687483018700345301097/10000000000000000000000000000000000000000",
+      "upper_fraction": "-1528988469084554687483018700345296913/10000000000000000000000000000000000000000",
+      "midpoint_approx": -0.00015289884690845547,
+      "width_approx": 4.184e-37,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    }
+  },
+  "baseline": {
+    "path": "results/p337-closed-source-n25/latest.json",
+    "sha256": "df4ab225ff499131b744c70ec569ad21b0229f2256e71a585c680faae51bac3a",
+    "root_p": {
+      "lower_fraction": "1185331078656453492302851399693093801267/2000000000000000000000000000000000000000",
+      "upper_fraction": "5926655393282267461514256998465469006339/10000000000000000000000000000000000000000",
+      "midpoint_approx": 0.5926655393282267,
+      "width_approx": 4e-40,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "D_p": {
+      "lower_fraction": "2356404883699794733526408361574426941739/400000000000000000000000000000000000000",
+      "upper_fraction": "58910122092494868338160209039360673547099/10000000000000000000000000000000000000000",
+      "midpoint_approx": 5.891012209249487,
+      "width_approx": 3.624e-37,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "U_over_A": {
+      "lower_fraction": "47104256506328061033501906588386497037/5000000000000000000000000000000000000000",
+      "upper_fraction": "9420851301265612206700381317677299491/1000000000000000000000000000000000000000",
+      "midpoint_approx": 0.009420851301265612,
+      "width_approx": 8.36e-38,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "new_root_search": false
+  },
+  "normalization": "site-average a; coefficientwise beta_reg(1)=0 makes this the full mixed logQ/epsilon derivative",
+  "interval_scope": "exact finite rational bounds, not statistical confidence intervals",
+  "new_random_samples": 0,
+  "old_sources_rescored": false,
+  "response_scores": 1,
+  "boundary": "canonical c(Q)=1 local completion only; no continuum or completion-independence claim",
+  "elapsed_seconds": 0.24405604205094278
+}

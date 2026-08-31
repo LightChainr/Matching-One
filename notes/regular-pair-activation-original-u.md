@@ -154,3 +154,9 @@ There is no new root solve, random block, Q grid or finite-counterterm
 scan. A strictly signed rational interval rejects the zero mixed response
 for this one completion; an interval containing zero ends this question
 unresolved at the already fixed arithmetic budget.
+
+**Completed:** the one prescribed score is strictly negative,
+`W=-0.04503611397592696`; the direct epsilon response remains exactly
+zero. [The result and full receipt](regular-pair-interaction-result.md)
+close this fixed finite question. No completion coefficient or new
+coupling point is selected after this result.
