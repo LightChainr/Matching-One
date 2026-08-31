@@ -1,0 +1,60 @@
+{
+  "schema": "p337.local-four-port.raw-receipt.v1",
+  "status": "completed_once_per_geometry_unscored",
+  "recorded_utc": "2026-08-31T15:15:26Z",
+  "freeze_commit": "d7f15e68d593719e274fe9f0d5c7841a553beade",
+  "contract_path": "analysis/p337_local_pair_insertion_contract.json",
+  "contract_sha256": "b87772a2078d79bb2975a2979299f7e51344d53b34e5f81a79f5ca20cbfba6a9",
+  "accepted_theory_gates": {
+    "topology": "ab402605f54d5aa0f4e2209dbad715cb9fb159da",
+    "kernel": "3c3fe12f4e3b6212797980b2981d0bd5506d2c07",
+    "authorization": "explicit coordinator GO after reading and accepting both gates"
+  },
+  "producer_commit_before_run": "97f3efee905ed2d634d1be5245efe2a9cfe070bd",
+  "producer_path": "scripts/p337_local_four_port_exact.cpp",
+  "producer_sha256": "bb7aec6ac2303c6a2688664ba089bda6655426ab2ce27840a068a8b53a1aa9a0",
+  "inherited_topology_traversal": {
+    "commit": "bea717e826df5a22518774b1725ae7bcbe2cb801",
+    "path": "scripts/p337_closed_source_finite_exact.cpp",
+    "blob": "2162b1c7f17ec4e61e1f02ce3e17a184d4733eb3"
+  },
+  "build": {
+    "command": "clang++ -std=c++17 -O3 scripts/p337_local_four_port_exact.cpp -o /private/tmp/matching-p337-local-four-port-build/enumerate",
+    "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)",
+    "target": "arm64-apple-darwin25.5.0",
+    "exit_code": 0
+  },
+  "execution": "two concurrent local single-thread processes, one full 2^25 traversal per geometry",
+  "outputs": [
+    {
+      "geometry": [5, 0],
+      "command": "/private/tmp/matching-p337-local-four-port-build/enumerate 5 0 results/p337-local-four-port-insertion/axis.csv",
+      "path": "results/p337-local-four-port-insertion/axis.csv",
+      "sha256": "bcee8a767ca3a24577bf853148896c128362736344f7b5a49ea0c96122e9affc",
+      "configurations": 33554432,
+      "elapsed_seconds": 1.10562,
+      "exit_code": 0
+    },
+    {
+      "geometry": [4, 3],
+      "command": "/private/tmp/matching-p337-local-four-port-build/enumerate 4 3 results/p337-local-four-port-insertion/tilted.csv",
+      "path": "results/p337-local-four-port-insertion/tilted.csv",
+      "sha256": "32064cf189fc376487b380302faa23bc34b2ca0129ecd5f54f2fab436f14c26b",
+      "configurations": 33554432,
+      "elapsed_seconds": 1.03976,
+      "exit_code": 0
+    }
+  ],
+  "schema_columns": ["k", "count", "sum_q", "sum_e", "sum_s2", "sum_qs2", "sum_es2"],
+  "integer_source": "s2=-2*t_origin; divide the last three sums by2 once",
+  "source_units": "uniform site average, via exact translation invariance of joint first-source moments with K,q,E",
+  "population": "all occupations; origin vacancy is a source gate, not population conditioning",
+  "tensor_boundary": "C4 average of rotated pair insertions, not asserted to be one fixed-cut idempotent projector",
+  "response_scored": false,
+  "old_Sstar_Bvac_or_seam_scored": false,
+  "root_searches": 0,
+  "extra_source_statistics": 0,
+  "new_random_samples": 0,
+  "cloud_jobs": 0,
+  "tests_run": 0
+}
