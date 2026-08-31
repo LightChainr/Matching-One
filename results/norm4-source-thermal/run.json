@@ -1,0 +1,1410 @@
+{
+  "schema": "matching-one.norm4-source-thermal-run.v1",
+  "status": "completed",
+  "started_utc": "2026-08-31T08:15:40.804298+00:00",
+  "execution_commit": "24973db19c1d97575e9768a6dc187aa0cad5a34b",
+  "manifest": {
+    "schema": "matching-one.p40-source-thermal-chain-candidates.v1",
+    "status": "metadata located; first-100000 existing-production permutation subset selected for source reobservation; no replay run by this manifest author",
+    "source_archive_commit": "8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc",
+    "source_backend_commit": "bfab0330f5f56ca4d746b45d737f1607e3d229a0",
+    "source_metadata_commit": "8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc",
+    "source_archive_branch": "results/p154-norm4-production-reveal-20260829",
+    "source_archive_root": "results/server-20260829/P154-norm4-production",
+    "source_checksums_path": "results/server-20260829/P154-norm4-production/checksums.sha256",
+    "source_commands_path": "results/server-20260829/P154-norm4-production/commands.txt",
+    "original_U_contract_commit": "2236d36c80c8a466d9317c929bc33e92a7ca9d33",
+    "original_U_contract_path": "predictions/norm4_two_generator_transfer_20260829.yaml",
+    "lineages": [
+      [
+        65,
+        130,
+        260
+      ],
+      [
+        85,
+        170,
+        340
+      ]
+    ],
+    "ordered_Ns": [
+      65,
+      85,
+      130,
+      170,
+      260,
+      340
+    ],
+    "root_bracket": [
+      0.58274605079,
+      0.60274605079
+    ],
+    "delta_cos4_definition": "cos(4theta_first)-cos(4theta_second), cos(4theta)=(a^4-6*a^2*b^2+b^4)/(a^2+b^2)^2; exact rational from the archived first/second direction labels",
+    "raw_csv_header": [
+      "n",
+      "a",
+      "b",
+      "orientation",
+      "batch",
+      "k",
+      "samples",
+      "sum_q",
+      "sum_e",
+      "sum_s",
+      "sum_qs",
+      "sum_es"
+    ],
+    "missing_N": [],
+    "selection": {
+      "requested_subset": "First 100000 replica counters of each six-N production-extension/target metadata interval, selected before this source readout is computed",
+      "selected_samples_per_N": 100000,
+      "selected_batches_per_N": 100,
+      "selected_samples_per_batch": 1000,
+      "selected_batch_definition": "For b=0..99, counters [selected_first+1000*b, selected_first+1000*(b+1)); identical counter blocks for both orientations and every N in a shared-seed dependency group",
+      "batch_boundary": "These are 100 new analysis batches inside the old production prefix, not the original 100 production batches of 19M or 10M permutations",
+      "new_random_counters": 0,
+      "precision_boundary": "New source measurements on an old 100k-per-N production subset; do not claim the original 1.9B/1B production precision or the full original archive source derivative"
+    },
+    "sampling_semantics": {
+      "original_measure": "Uniform counter-keyed site permutations, with all occupation prefixes implicitly available; Newman-Ziff microcanonical sampling",
+      "p_ref": null,
+      "p_ref_reason": "No Bernoulli probability is sampled by the original threshold engines; a fixed acquisition p_ref is not defined",
+      "not_the_P40_rng": "Do not use gaussian_orientation_mc.cpp counter_uniform or inherit its N-keyed domain separation for these samples",
+      "stream_key": "splitmix64(seed ^ splitmix64(replica + 0xd1b54a32d192ed03ULL))",
+      "permutation": "iota(0..N-1), SplitMixStream(stream_key), descending Fisher-Yates stop=N-1..1 using the source engine's unbiased below(stop+1), including its rejection rule",
+      "N_in_stream_key": false,
+      "same_N_coupling": "Exactly the same label permutation is used for first and second geometry",
+      "cross_N_coupling": "N65,N85,N130,N170 use the same seed and replica keys. Their Fisher-Yates bounds differ but underlying random streams are shared; preserve their joint batch covariance",
+      "other_groups": "N260 and N340 have different seeds from each other and from the four cyclic sizes; separate dependency groups under the usual different-key PRNG assumption"
+    },
+    "requested_source_statistics": {
+      "per_orientation_batch_and_K": [
+        "samples",
+        "sum_q",
+        "sum_e",
+        "sum_s",
+        "sum_qs",
+        "sum_es"
+      ],
+      "K_range": "Every integer K=0..N; each selected permutation contributes once to each K",
+      "q": "rank_black(K)-1 = -1 + indicator(K>=K_minus) + indicator(K>=K_plus)",
+      "E": "q*q",
+      "s": "CB_NN(K) + CW_matching(N-K), with black forward and white reverse activation on the same permutation",
+      "S": "s/N, the same p-independent raw absolute-cluster source as the parent U_dot analysis",
+      "bulk_source": "s=CB+CW, coupled through one common microscopic fugacity t for every N; Udot_bulk(N)=N*Udot_density(N)",
+      "source_extension_comparisons": "Report density and bulk derivatives separately. For the explicitly considered constant-microscopic-coupling extensions, apply the original q2/Jordan lineage residuals to Udot_bulk, not to the size-dependent density-source derivative; these are mechanism extension hypotheses, not automatic inherited laws",
+      "canonical_transform": "For each batch, sum_K binomial(N,K)*p^K*(1-p)^(N-K) times its conditional-on-K mean; analytically differentiate the binomial weights for thermal/source cumulants",
+      "root": "Solve the pooled first/second mean q=0 separately for each N; refind the pooled root and all source/slope terms inside aligned delete-one replicates",
+      "U": "N^(13/8)*P4_standard[partial_p mean E]/(2*mean partial_p q), at the size-local pooled root",
+      "U_dot": "Common raw-source derivative including direct thermal/source, root-motion, source-slope and root-slope terms; not the fixed-p C statistic alone",
+      "estimator_boundary": "Full-K permutation averages use exact binomial weights. Do not feed their uniform per-K counts into the P40 fixed-p importance-sampling estimator or invent a Bernoulli p_ref",
+      "existing_archive_missing": "The retained threshold histograms and threshold joint moments contain no cluster-count s, qs or Es profile. Exact deterministic old-counter reobservation is needed; the retained histograms alone are insufficient"
+    },
+    "engine_profiles": {
+      "cyclic": {
+        "engine_commit": "bfab0330f5f56ca4d746b45d737f1607e3d229a0",
+        "engine_path": "src/threshold_rank_orientation_mc.cpp",
+        "engine_blob": "c2ecbfe77ee45534954d9f44ec4408c22e2f3b6a",
+        "executable": "threshold_rank_orientation_mc",
+        "label_convention": "Vertices 0..N-1; positive x step adds a mod N, positive y step adds b mod N; matching also has a+b and a-b steps with lifted displacements (1,1) and (1,-1)",
+        "source_interfaces": [
+          "make_geometry(int a,int b)",
+          "counter_permutation(int n,uint64_t seed,uint64_t replica,vector<int>&)",
+          "ThresholdEngine::ranks(permutation)"
+        ],
+        "source_line_references": "make_geometry:203; counter_permutation:300; aligned batch loop:475-497"
+      },
+      "integer_period": {
+        "engine_commit": "bfab0330f5f56ca4d746b45d737f1607e3d229a0",
+        "engine_path": "src/threshold_rank_integer_period_mc.cpp",
+        "engine_blob": "22058703c12b168e844088277c9b61d64b9c1d2c",
+        "executable": "threshold_rank_integer_period_mc",
+        "period_matrix_convention": "Row-major matrix; columns are lifted period vectors",
+        "label_convention": "Column-HNF representatives (rx,ry), label=rx+h11*ry; representative(label)=(label%h11,label/h11); preserve the source QuotientCoordinates reduction and lift",
+        "source_interfaces": [
+          "QuotientCoordinates(Matrix)",
+          "make_geometry(Matrix periods)",
+          "counter_permutation(int n,uint64_t seed,uint64_t replica,vector<int>&)",
+          "ThresholdEngine::ranks(permutation)"
+        ],
+        "source_line_references": "QuotientCoordinates:137-221; make_geometry:354; counter_permutation:444; aligned batch loop:760-782",
+        "incompatible_shortcut": "N260/N340 are noncyclic Smith(2,N/2) quotients; do not replace them with cyclic adjacency by the Gaussian a,b labels"
+      }
+    },
+    "runs": [
+      {
+        "N": 65,
+        "engine_profile": "cyclic",
+        "first": [
+          8,
+          1
+        ],
+        "second": [
+          7,
+          4
+        ],
+        "delta_cos4": "1152/845",
+        "seed": 2026104501,
+        "replica_counter_first": 5100000000,
+        "replay_samples": 100000,
+        "replay_batches": 100,
+        "source_backend_path": "src/threshold_rank_orientation_mc.cpp",
+        "source_metadata_path": "results/server-20260829/P154-norm4-production/raw/n65_1900m.metadata.json",
+        "source_metadata_sha256": "5225dbd31f5eeaf1c0beef362896d79225187d2d57cfd45fb32b99b2aef25916",
+        "original_counter_interval": [
+          5100000000,
+          7000000000
+        ],
+        "original_samples_per_pair": 1900000000,
+        "original_batches": 100,
+        "selected_counter_interval": [
+          5100000000,
+          5100100000
+        ],
+        "p_ref": null,
+        "dependency_group": "norm4-cyclic-seed2026104501-first100k",
+        "metadata_path": "results/server-20260829/P154-norm4-production/raw/n65_1900m.metadata.json",
+        "metadata_git_blob": "19812c9ac5ce6f2c2e5cd613433e2d348c9bb244",
+        "metadata_sha256_from_source_archive": "5225dbd31f5eeaf1c0beef362896d79225187d2d57cfd45fb32b99b2aef25916"
+      },
+      {
+        "N": 130,
+        "engine_profile": "cyclic",
+        "first": [
+          11,
+          3
+        ],
+        "second": [
+          9,
+          7
+        ],
+        "delta_cos4": "1152/845",
+        "seed": 2026104501,
+        "replica_counter_first": 5100000000,
+        "replay_samples": 100000,
+        "replay_batches": 100,
+        "source_backend_path": "src/threshold_rank_orientation_mc.cpp",
+        "source_metadata_path": "results/server-20260829/P154-norm4-production/raw/n130_1900m.metadata.json",
+        "source_metadata_sha256": "92724709b4605626f40160a93bc0cdbe042c31eb981d8dccef101c0f4627f5c3",
+        "original_counter_interval": [
+          5100000000,
+          7000000000
+        ],
+        "original_samples_per_pair": 1900000000,
+        "original_batches": 100,
+        "selected_counter_interval": [
+          5100000000,
+          5100100000
+        ],
+        "p_ref": null,
+        "dependency_group": "norm4-cyclic-seed2026104501-first100k",
+        "metadata_path": "results/server-20260829/P154-norm4-production/raw/n130_1900m.metadata.json",
+        "metadata_git_blob": "6e962b3b48fff58affeee4def9750cd62ac4021c",
+        "metadata_sha256_from_source_archive": "92724709b4605626f40160a93bc0cdbe042c31eb981d8dccef101c0f4627f5c3"
+      },
+      {
+        "N": 260,
+        "engine_profile": "integer_period",
+        "design_id": "N65_to_N260_q4",
+        "first": [
+          16,
+          2
+        ],
+        "second": [
+          14,
+          8
+        ],
+        "delta_cos4": "1152/845",
+        "first_period_matrix": [
+          [
+            16,
+            -2
+          ],
+          [
+            2,
+            16
+          ]
+        ],
+        "second_period_matrix": [
+          [
+            14,
+            -8
+          ],
+          [
+            8,
+            14
+          ]
+        ],
+        "first_HNF": [
+          [
+            130,
+            16
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "second_HNF": [
+          [
+            130,
+            36
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "first_smith_invariants": [
+          2,
+          130
+        ],
+        "second_smith_invariants": [
+          2,
+          130
+        ],
+        "seed": 2026105401,
+        "replica_counter_first": 8200000000,
+        "replay_samples": 100000,
+        "replay_batches": 100,
+        "source_backend_path": "src/threshold_rank_integer_period_mc.cpp",
+        "source_metadata_path": "results/server-20260829/P154-norm4-production/raw/n260_1b.metadata.json",
+        "source_metadata_sha256": "428bd210624bdebed1e1469bde996135f3fa02a145004d46c5792bf22632ef04",
+        "original_counter_interval": [
+          8200000000,
+          9200000000
+        ],
+        "original_samples_per_pair": 1000000000,
+        "original_batches": 100,
+        "selected_counter_interval": [
+          8200000000,
+          8200100000
+        ],
+        "p_ref": null,
+        "dependency_group": "norm4-N260-seed2026105401-first100k",
+        "metadata_path": "results/server-20260829/P154-norm4-production/raw/n260_1b.metadata.json",
+        "metadata_git_blob": "cff77e8c6388c9d9733794e76a6a56876dee0c13",
+        "metadata_sha256_from_source_archive": "428bd210624bdebed1e1469bde996135f3fa02a145004d46c5792bf22632ef04"
+      },
+      {
+        "N": 85,
+        "engine_profile": "cyclic",
+        "first": [
+          9,
+          2
+        ],
+        "second": [
+          7,
+          6
+        ],
+        "delta_cos4": "2304/1445",
+        "seed": 2026104501,
+        "replica_counter_first": 5100000000,
+        "replay_samples": 100000,
+        "replay_batches": 100,
+        "source_backend_path": "src/threshold_rank_orientation_mc.cpp",
+        "source_metadata_path": "results/server-20260829/P154-norm4-production/raw/n85_1900m.metadata.json",
+        "source_metadata_sha256": "526173fcab542e2e983ad5d7acfaacd3a9cb87962461cf9aad858e7ee26430e9",
+        "original_counter_interval": [
+          5100000000,
+          7000000000
+        ],
+        "original_samples_per_pair": 1900000000,
+        "original_batches": 100,
+        "selected_counter_interval": [
+          5100000000,
+          5100100000
+        ],
+        "p_ref": null,
+        "dependency_group": "norm4-cyclic-seed2026104501-first100k",
+        "metadata_path": "results/server-20260829/P154-norm4-production/raw/n85_1900m.metadata.json",
+        "metadata_git_blob": "c6f3ad489b1cadf8b2da8a112d2ee40653801f98",
+        "metadata_sha256_from_source_archive": "526173fcab542e2e983ad5d7acfaacd3a9cb87962461cf9aad858e7ee26430e9"
+      },
+      {
+        "N": 170,
+        "engine_profile": "cyclic",
+        "first": [
+          13,
+          1
+        ],
+        "second": [
+          11,
+          7
+        ],
+        "delta_cos4": "2304/1445",
+        "seed": 2026104501,
+        "replica_counter_first": 5100000000,
+        "replay_samples": 100000,
+        "replay_batches": 100,
+        "source_backend_path": "src/threshold_rank_orientation_mc.cpp",
+        "source_metadata_path": "results/server-20260829/P154-norm4-production/raw/n170_1900m.metadata.json",
+        "source_metadata_sha256": "5c2f632634b431cee5c128f9ba3697653adcfff42a93bc058daa994dbfb19495",
+        "original_counter_interval": [
+          5100000000,
+          7000000000
+        ],
+        "original_samples_per_pair": 1900000000,
+        "original_batches": 100,
+        "selected_counter_interval": [
+          5100000000,
+          5100100000
+        ],
+        "p_ref": null,
+        "dependency_group": "norm4-cyclic-seed2026104501-first100k",
+        "metadata_path": "results/server-20260829/P154-norm4-production/raw/n170_1900m.metadata.json",
+        "metadata_git_blob": "833b7dad3b530fe5d590e3def3afef4948ccb477",
+        "metadata_sha256_from_source_archive": "5c2f632634b431cee5c128f9ba3697653adcfff42a93bc058daa994dbfb19495"
+      },
+      {
+        "N": 340,
+        "engine_profile": "integer_period",
+        "design_id": "N85_to_N340_q4",
+        "first": [
+          18,
+          4
+        ],
+        "second": [
+          14,
+          12
+        ],
+        "delta_cos4": "2304/1445",
+        "first_period_matrix": [
+          [
+            18,
+            -4
+          ],
+          [
+            4,
+            18
+          ]
+        ],
+        "second_period_matrix": [
+          [
+            14,
+            -12
+          ],
+          [
+            12,
+            14
+          ]
+        ],
+        "first_HNF": [
+          [
+            170,
+            94
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "second_HNF": [
+          [
+            170,
+            144
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "first_smith_invariants": [
+          2,
+          170
+        ],
+        "second_smith_invariants": [
+          2,
+          170
+        ],
+        "seed": 2026105402,
+        "replica_counter_first": 8200000000,
+        "replay_samples": 100000,
+        "replay_batches": 100,
+        "source_backend_path": "src/threshold_rank_integer_period_mc.cpp",
+        "source_metadata_path": "results/server-20260829/P154-norm4-production/raw/n340_1b.metadata.json",
+        "source_metadata_sha256": "9813b8ae5b1f34be7411673f084be81b99d2c4f7eb45333ecd051d3c9373c4f3",
+        "original_counter_interval": [
+          8200000000,
+          9200000000
+        ],
+        "original_samples_per_pair": 1000000000,
+        "original_batches": 100,
+        "selected_counter_interval": [
+          8200000000,
+          8200100000
+        ],
+        "p_ref": null,
+        "dependency_group": "norm4-N340-seed2026105402-first100k",
+        "metadata_path": "results/server-20260829/P154-norm4-production/raw/n340_1b.metadata.json",
+        "metadata_git_blob": "9f7a7830f087869cf54dafd935dc95279b181335",
+        "metadata_sha256_from_source_archive": "9813b8ae5b1f34be7411673f084be81b99d2c4f7eb45333ecd051d3c9373c4f3"
+      }
+    ],
+    "dependency_groups": [
+      {
+        "id": "norm4-cyclic-seed2026104501-first100k",
+        "N": [
+          65,
+          85,
+          130,
+          170
+        ],
+        "aligned_delete_one": "Remove the same selected counter batch jointly from all four N and their two directions; retain full cross-N/cross-direction covariance"
+      },
+      {
+        "id": "norm4-N260-seed2026105401-first100k",
+        "N": [
+          260
+        ],
+        "aligned_delete_one": "Remove the same selected counter batch from both directions"
+      },
+      {
+        "id": "norm4-N340-seed2026105402-first100k",
+        "N": [
+          340
+        ],
+        "aligned_delete_one": "Remove the same selected counter batch from both directions"
+      }
+    ],
+    "additional_located_archives_not_selected": {
+      "baseline_100m": {
+        "N": [
+          65,
+          85,
+          130,
+          170
+        ],
+        "seed": 2026104501,
+        "counter_interval": [
+          5000000000,
+          5100000000
+        ],
+        "engine_commit": "6d2d68a62b433e337b97eadaf1870cb58e2f7666",
+        "engine_path": "src/threshold_rank_orientation_mc.cpp",
+        "metadata_paths": [
+          "results/server-20260828/P45-root-amplitude/n65.metadata.json",
+          "results/server-20260828/P45-root-amplitude/n85.metadata.json",
+          "results/server-20260828/P49-fullcurve-doubling-100m/raw/n130.metadata.json",
+          "results/server-20260828/P49-fullcurve-doubling-100m/raw/n170.metadata.json"
+        ],
+        "boundary": "Part of the original scored 2B source totals, but not selected in this first-100k extension replay"
+      },
+      "target_variance_pilots": {
+        "N": [
+          260,
+          340
+        ],
+        "seeds_in_N_order": [
+          2026105401,
+          2026105402
+        ],
+        "one_million_counter_interval": [
+          8100000000,
+          8101000000
+        ],
+        "one_million_engine_commit": "b243d3a930ec637add9ff4f9f92de97af7b97250",
+        "ten_million_counter_interval": [
+          8101000000,
+          8111000000
+        ],
+        "ten_million_engine_commit": "4e0561d4f93451d1e5a6c196ff0bfb77f20e1f8b",
+        "metadata_paths": [
+          "results/server-20260829/P154-norm4-variance-pilot/raw/n260_1m.metadata.json",
+          "results/server-20260829/P154-norm4-variance-pilot/raw/n340_1m.metadata.json",
+          "results/server-20260829/P154-norm4-variance-pilot/raw/n260_10m.metadata.json",
+          "results/server-20260829/P154-norm4-variance-pilot/raw/n340_10m.metadata.json"
+        ],
+        "boundary": "Existing disjoint pilot counters with the same target geometries; not substituted for the selected production-prefix counters"
+      }
+    }
+  },
+  "source_backends": {
+    "primitive": {
+      "commit": "bfab0330f5f56ca4d746b45d737f1607e3d229a0",
+      "path": "src/threshold_rank_orientation_mc.cpp",
+      "git_blob": "c2ecbfe77ee45534954d9f44ec4408c22e2f3b6a",
+      "sha256": "7893216c66802b28eb67eb27ac61976835291c4ad734f94a0d255a3e6d7e179a"
+    },
+    "integer_period": {
+      "commit": "bfab0330f5f56ca4d746b45d737f1607e3d229a0",
+      "path": "src/threshold_rank_integer_period_mc.cpp",
+      "git_blob": "22058703c12b168e844088277c9b61d64b9c1d2c",
+      "sha256": "7df0d9362b31111eab8fc73ab4032eea37458fde0ff2d720bded8e7b530fa94a"
+    }
+  },
+  "source_runs": [
+    {
+      "N": 65,
+      "backend_kind": "primitive",
+      "seed": 2026104501,
+      "first": [
+        8,
+        1
+      ],
+      "second": [
+        7,
+        4
+      ],
+      "geometry": {
+        "N": 65,
+        "first": [
+          8,
+          1
+        ],
+        "second": [
+          7,
+          4
+        ]
+      },
+      "old_counter_interval": [
+        5100000000,
+        7000000000
+      ],
+      "replayed_counter_interval": [
+        5100000000,
+        5100100000
+      ],
+      "old_samples_per_pair": 1900000000,
+      "reobserved_permutations": 100000,
+      "batches": 100,
+      "permutations_per_batch": 1000,
+      "metadata_source": {
+        "commit": "8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc",
+        "path": "results/server-20260829/P154-norm4-production/raw/n65_1900m.metadata.json",
+        "sha256": "5225dbd31f5eeaf1c0beef362896d79225187d2d57cfd45fb32b99b2aef25916",
+        "content": {
+          "engine": "same-N Gaussian threshold-rank Newman-Ziff",
+          "generated_utc": "2026-08-29T10:21:01Z",
+          "git_commit": "bfab0330f5f56ca4d746b45d737f1607e3d229a0",
+          "command": "build/threshold_rank_orientation_mc --n 65 --samples 1900000000 --batches 100 --seed 2026104501 --replica-offset 5100000000 --threads 8 --git-commit bfab0330f5f56ca4d746b45d737f1607e3d229a0 --output-prefix results/server-20260829/P154-norm4-production/raw/n65_1900m",
+          "compiler": "10.3.1",
+          "openmp": true,
+          "threads_requested": 8,
+          "samples_per_pair": 1900000000,
+          "batches": 100,
+          "seed": 2026104501,
+          "replica_counter_first": 5100000000,
+          "replica_counter_last_exclusive": 7000000000,
+          "rng": "counter-derived SplitMix64 stream plus unbiased Fisher-Yates",
+          "coupling": "same cyclic permutation shared by same-N orientations",
+          "channel": "rank-2 cross wrapping",
+          "K_plus": "first black primal cross rank, 1-based",
+          "K_minus": "first black rank after white matching cross is lost; N-r+1",
+          "sparse_joint_histogram": false,
+          "per_batch_joint_moments": true,
+          "elapsed_seconds": 2616.893152217,
+          "designs": [
+            {
+              "N": 65,
+              "first": [
+                8,
+                1
+              ],
+              "second": [
+                7,
+                4
+              ]
+            }
+          ],
+          "histogram_csv": "results/server-20260829/P154-norm4-production/raw/n65_1900m.hist.csv",
+          "moments_csv": "results/server-20260829/P154-norm4-production/raw/n65_1900m.moments.csv"
+        }
+      }
+    },
+    {
+      "N": 85,
+      "backend_kind": "primitive",
+      "seed": 2026104501,
+      "first": [
+        9,
+        2
+      ],
+      "second": [
+        7,
+        6
+      ],
+      "geometry": {
+        "N": 85,
+        "first": [
+          9,
+          2
+        ],
+        "second": [
+          7,
+          6
+        ]
+      },
+      "old_counter_interval": [
+        5100000000,
+        7000000000
+      ],
+      "replayed_counter_interval": [
+        5100000000,
+        5100100000
+      ],
+      "old_samples_per_pair": 1900000000,
+      "reobserved_permutations": 100000,
+      "batches": 100,
+      "permutations_per_batch": 1000,
+      "metadata_source": {
+        "commit": "8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc",
+        "path": "results/server-20260829/P154-norm4-production/raw/n85_1900m.metadata.json",
+        "sha256": "526173fcab542e2e983ad5d7acfaacd3a9cb87962461cf9aad858e7ee26430e9",
+        "content": {
+          "engine": "same-N Gaussian threshold-rank Newman-Ziff",
+          "generated_utc": "2026-08-29T11:18:43Z",
+          "git_commit": "bfab0330f5f56ca4d746b45d737f1607e3d229a0",
+          "command": "/workspace/threshold_rank_orientation_mc-bfab033 --n 85 --samples 1900000000 --batches 100 --seed 2026104501 --replica-offset 5100000000 --threads 8 --git-commit bfab0330f5f56ca4d746b45d737f1607e3d229a0 --output-prefix results/server-20260829/P154-norm4-production/raw/n85_1900m",
+          "compiler": "10.3.1",
+          "openmp": true,
+          "threads_requested": 8,
+          "samples_per_pair": 1900000000,
+          "batches": 100,
+          "seed": 2026104501,
+          "replica_counter_first": 5100000000,
+          "replica_counter_last_exclusive": 7000000000,
+          "rng": "counter-derived SplitMix64 stream plus unbiased Fisher-Yates",
+          "coupling": "same cyclic permutation shared by same-N orientations",
+          "channel": "rank-2 cross wrapping",
+          "K_plus": "first black primal cross rank, 1-based",
+          "K_minus": "first black rank after white matching cross is lost; N-r+1",
+          "sparse_joint_histogram": false,
+          "per_batch_joint_moments": true,
+          "elapsed_seconds": 3269.761138062,
+          "designs": [
+            {
+              "N": 85,
+              "first": [
+                9,
+                2
+              ],
+              "second": [
+                7,
+                6
+              ]
+            }
+          ],
+          "histogram_csv": "results/server-20260829/P154-norm4-production/raw/n85_1900m.hist.csv",
+          "moments_csv": "results/server-20260829/P154-norm4-production/raw/n85_1900m.moments.csv"
+        }
+      }
+    },
+    {
+      "N": 130,
+      "backend_kind": "primitive",
+      "seed": 2026104501,
+      "first": [
+        11,
+        3
+      ],
+      "second": [
+        9,
+        7
+      ],
+      "geometry": {
+        "N": 130,
+        "first": [
+          11,
+          3
+        ],
+        "second": [
+          9,
+          7
+        ]
+      },
+      "old_counter_interval": [
+        5100000000,
+        7000000000
+      ],
+      "replayed_counter_interval": [
+        5100000000,
+        5100100000
+      ],
+      "old_samples_per_pair": 1900000000,
+      "reobserved_permutations": 100000,
+      "batches": 100,
+      "permutations_per_batch": 1000,
+      "metadata_source": {
+        "commit": "8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc",
+        "path": "results/server-20260829/P154-norm4-production/raw/n130_1900m.metadata.json",
+        "sha256": "92724709b4605626f40160a93bc0cdbe042c31eb981d8dccef101c0f4627f5c3",
+        "content": {
+          "engine": "same-N Gaussian threshold-rank Newman-Ziff",
+          "generated_utc": "2026-08-29T10:57:48Z",
+          "git_commit": "bfab0330f5f56ca4d746b45d737f1607e3d229a0",
+          "command": "build/threshold_rank_orientation_mc --n 130 --samples 1900000000 --batches 100 --seed 2026104501 --replica-offset 5100000000 --threads 8 --git-commit bfab0330f5f56ca4d746b45d737f1607e3d229a0 --output-prefix results/server-20260829/P154-norm4-production/raw/n130_1900m",
+          "compiler": "10.3.1",
+          "openmp": true,
+          "threads_requested": 8,
+          "samples_per_pair": 1900000000,
+          "batches": 100,
+          "seed": 2026104501,
+          "replica_counter_first": 5100000000,
+          "replica_counter_last_exclusive": 7000000000,
+          "rng": "counter-derived SplitMix64 stream plus unbiased Fisher-Yates",
+          "coupling": "same cyclic permutation shared by same-N orientations",
+          "channel": "rank-2 cross wrapping",
+          "K_plus": "first black primal cross rank, 1-based",
+          "K_minus": "first black rank after white matching cross is lost; N-r+1",
+          "sparse_joint_histogram": false,
+          "per_batch_joint_moments": true,
+          "elapsed_seconds": 4824.685882401,
+          "designs": [
+            {
+              "N": 130,
+              "first": [
+                11,
+                3
+              ],
+              "second": [
+                9,
+                7
+              ]
+            }
+          ],
+          "histogram_csv": "results/server-20260829/P154-norm4-production/raw/n130_1900m.hist.csv",
+          "moments_csv": "results/server-20260829/P154-norm4-production/raw/n130_1900m.moments.csv"
+        }
+      }
+    },
+    {
+      "N": 170,
+      "backend_kind": "primitive",
+      "seed": 2026104501,
+      "first": [
+        13,
+        1
+      ],
+      "second": [
+        11,
+        7
+      ],
+      "geometry": {
+        "N": 170,
+        "first": [
+          13,
+          1
+        ],
+        "second": [
+          11,
+          7
+        ]
+      },
+      "old_counter_interval": [
+        5100000000,
+        7000000000
+      ],
+      "replayed_counter_interval": [
+        5100000000,
+        5100100000
+      ],
+      "old_samples_per_pair": 1900000000,
+      "reobserved_permutations": 100000,
+      "batches": 100,
+      "permutations_per_batch": 1000,
+      "metadata_source": {
+        "commit": "8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc",
+        "path": "results/server-20260829/P154-norm4-production/raw/n170_1900m.metadata.json",
+        "sha256": "5c2f632634b431cee5c128f9ba3697653adcfff42a93bc058daa994dbfb19495",
+        "content": {
+          "engine": "same-N Gaussian threshold-rank Newman-Ziff",
+          "generated_utc": "2026-08-29T12:07:45Z",
+          "git_commit": "bfab0330f5f56ca4d746b45d737f1607e3d229a0",
+          "command": "/workspace/threshold_rank_orientation_mc-bfab033 --n 170 --samples 1900000000 --batches 100 --seed 2026104501 --replica-offset 5100000000 --threads 8 --git-commit bfab0330f5f56ca4d746b45d737f1607e3d229a0 --output-prefix results/server-20260829/P154-norm4-production/raw/n170_1900m",
+          "compiler": "10.3.1",
+          "openmp": true,
+          "threads_requested": 8,
+          "samples_per_pair": 1900000000,
+          "batches": 100,
+          "seed": 2026104501,
+          "replica_counter_first": 5100000000,
+          "replica_counter_last_exclusive": 7000000000,
+          "rng": "counter-derived SplitMix64 stream plus unbiased Fisher-Yates",
+          "coupling": "same cyclic permutation shared by same-N orientations",
+          "channel": "rank-2 cross wrapping",
+          "K_plus": "first black primal cross rank, 1-based",
+          "K_minus": "first black rank after white matching cross is lost; N-r+1",
+          "sparse_joint_histogram": false,
+          "per_batch_joint_moments": true,
+          "elapsed_seconds": 6212.030425749,
+          "designs": [
+            {
+              "N": 170,
+              "first": [
+                13,
+                1
+              ],
+              "second": [
+                11,
+                7
+              ]
+            }
+          ],
+          "histogram_csv": "results/server-20260829/P154-norm4-production/raw/n170_1900m.hist.csv",
+          "moments_csv": "results/server-20260829/P154-norm4-production/raw/n170_1900m.moments.csv"
+        }
+      }
+    },
+    {
+      "N": 260,
+      "backend_kind": "integer_period",
+      "seed": 2026105401,
+      "first": [
+        16,
+        2
+      ],
+      "second": [
+        14,
+        8
+      ],
+      "geometry": {
+        "id": "N65_to_N260_q4",
+        "N": 260,
+        "first": [
+          16,
+          2
+        ],
+        "second": [
+          14,
+          8
+        ],
+        "first_period_matrix": [
+          [
+            16,
+            -2
+          ],
+          [
+            2,
+            16
+          ]
+        ],
+        "second_period_matrix": [
+          [
+            14,
+            -8
+          ],
+          [
+            8,
+            14
+          ]
+        ],
+        "first_HNF": [
+          [
+            130,
+            16
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "second_HNF": [
+          [
+            130,
+            36
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "first_smith_invariants": [
+          2,
+          130
+        ],
+        "second_smith_invariants": [
+          2,
+          130
+        ]
+      },
+      "old_counter_interval": [
+        8200000000,
+        9200000000
+      ],
+      "replayed_counter_interval": [
+        8200000000,
+        8200100000
+      ],
+      "old_samples_per_pair": 1000000000,
+      "reobserved_permutations": 100000,
+      "batches": 100,
+      "permutations_per_batch": 1000,
+      "metadata_source": {
+        "commit": "8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc",
+        "path": "results/server-20260829/P154-norm4-production/raw/n260_1b.metadata.json",
+        "sha256": "428bd210624bdebed1e1469bde996135f3fa02a145004d46c5792bf22632ef04",
+        "content": {
+          "engine": "general integer-period threshold-rank Newman-Ziff",
+          "generated_utc": "2026-08-29T09:07:29Z",
+          "git_commit": "bfab0330f5f56ca4d746b45d737f1607e3d229a0",
+          "command": "build/threshold_rank_integer_period_mc --n 260 --samples 1000000000 --batches 100 --seed 2026105401 --replica-offset 8200000000 --threads 8 --git-commit bfab0330f5f56ca4d746b45d737f1607e3d229a0 --output-prefix results/server-20260829/P154-norm4-production/raw/n260_1b",
+          "compiler": "10.3.1",
+          "openmp": true,
+          "threads_requested": 8,
+          "samples_per_pair": 1000000000,
+          "batches": 100,
+          "seed": 2026105401,
+          "replica_counter_first": 8200000000,
+          "replica_counter_last_exclusive": 9200000000,
+          "rng": "counter-derived SplitMix64 stream plus unbiased Fisher-Yates",
+          "coupling": "same HNF mixed-radix label permutation shared by the pair",
+          "quotient_coordinates": "column-HNF representatives (rx,ry), label=rx+h11*ry",
+          "period_matrix_convention": "row-major matrix; columns are lifted period vectors",
+          "channel": "rank-2 cross wrapping",
+          "K_plus": "first black primal cross rank, 1-based",
+          "K_minus": "first black rank after white matching cross is lost; N-r+1",
+          "sparse_joint_histogram": false,
+          "per_batch_joint_moments": true,
+          "elapsed_seconds": 6721.813176946,
+          "designs": [
+            {
+              "id": "N65_to_N260_q4",
+              "N": 260,
+              "first": [
+                16,
+                2
+              ],
+              "second": [
+                14,
+                8
+              ],
+              "first_period_matrix": [
+                [
+                  16,
+                  -2
+                ],
+                [
+                  2,
+                  16
+                ]
+              ],
+              "second_period_matrix": [
+                [
+                  14,
+                  -8
+                ],
+                [
+                  8,
+                  14
+                ]
+              ],
+              "first_HNF": [
+                [
+                  130,
+                  16
+                ],
+                [
+                  0,
+                  2
+                ]
+              ],
+              "second_HNF": [
+                [
+                  130,
+                  36
+                ],
+                [
+                  0,
+                  2
+                ]
+              ],
+              "first_smith_invariants": [
+                2,
+                130
+              ],
+              "second_smith_invariants": [
+                2,
+                130
+              ]
+            }
+          ],
+          "histogram_csv": "results/server-20260829/P154-norm4-production/raw/n260_1b.hist.csv",
+          "moments_csv": "results/server-20260829/P154-norm4-production/raw/n260_1b.moments.csv"
+        }
+      }
+    },
+    {
+      "N": 340,
+      "backend_kind": "integer_period",
+      "seed": 2026105402,
+      "first": [
+        18,
+        4
+      ],
+      "second": [
+        14,
+        12
+      ],
+      "geometry": {
+        "id": "N85_to_N340_q4",
+        "N": 340,
+        "first": [
+          18,
+          4
+        ],
+        "second": [
+          14,
+          12
+        ],
+        "first_period_matrix": [
+          [
+            18,
+            -4
+          ],
+          [
+            4,
+            18
+          ]
+        ],
+        "second_period_matrix": [
+          [
+            14,
+            -12
+          ],
+          [
+            12,
+            14
+          ]
+        ],
+        "first_HNF": [
+          [
+            170,
+            94
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "second_HNF": [
+          [
+            170,
+            144
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "first_smith_invariants": [
+          2,
+          170
+        ],
+        "second_smith_invariants": [
+          2,
+          170
+        ]
+      },
+      "old_counter_interval": [
+        8200000000,
+        9200000000
+      ],
+      "replayed_counter_interval": [
+        8200000000,
+        8200100000
+      ],
+      "old_samples_per_pair": 1000000000,
+      "reobserved_permutations": 100000,
+      "batches": 100,
+      "permutations_per_batch": 1000,
+      "metadata_source": {
+        "commit": "8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc",
+        "path": "results/server-20260829/P154-norm4-production/raw/n340_1b.metadata.json",
+        "sha256": "9813b8ae5b1f34be7411673f084be81b99d2c4f7eb45333ecd051d3c9373c4f3",
+        "content": {
+          "engine": "general integer-period threshold-rank Newman-Ziff",
+          "generated_utc": "2026-08-29T09:37:24Z",
+          "git_commit": "bfab0330f5f56ca4d746b45d737f1607e3d229a0",
+          "command": "build/threshold_rank_integer_period_mc --n 340 --samples 1000000000 --batches 100 --seed 2026105402 --replica-offset 8200000000 --threads 8 --git-commit bfab0330f5f56ca4d746b45d737f1607e3d229a0 --output-prefix results/server-20260829/P154-norm4-production/raw/n340_1b",
+          "compiler": "10.3.1",
+          "openmp": true,
+          "threads_requested": 8,
+          "samples_per_pair": 1000000000,
+          "batches": 100,
+          "seed": 2026105402,
+          "replica_counter_first": 8200000000,
+          "replica_counter_last_exclusive": 9200000000,
+          "rng": "counter-derived SplitMix64 stream plus unbiased Fisher-Yates",
+          "coupling": "same HNF mixed-radix label permutation shared by the pair",
+          "quotient_coordinates": "column-HNF representatives (rx,ry), label=rx+h11*ry",
+          "period_matrix_convention": "row-major matrix; columns are lifted period vectors",
+          "channel": "rank-2 cross wrapping",
+          "K_plus": "first black primal cross rank, 1-based",
+          "K_minus": "first black rank after white matching cross is lost; N-r+1",
+          "sparse_joint_histogram": false,
+          "per_batch_joint_moments": true,
+          "elapsed_seconds": 8516.346060886,
+          "designs": [
+            {
+              "id": "N85_to_N340_q4",
+              "N": 340,
+              "first": [
+                18,
+                4
+              ],
+              "second": [
+                14,
+                12
+              ],
+              "first_period_matrix": [
+                [
+                  18,
+                  -4
+                ],
+                [
+                  4,
+                  18
+                ]
+              ],
+              "second_period_matrix": [
+                [
+                  14,
+                  -12
+                ],
+                [
+                  12,
+                  14
+                ]
+              ],
+              "first_HNF": [
+                [
+                  170,
+                  94
+                ],
+                [
+                  0,
+                  2
+                ]
+              ],
+              "second_HNF": [
+                [
+                  170,
+                  144
+                ],
+                [
+                  0,
+                  2
+                ]
+              ],
+              "first_smith_invariants": [
+                2,
+                170
+              ],
+              "second_smith_invariants": [
+                2,
+                170
+              ]
+            }
+          ],
+          "histogram_csv": "results/server-20260829/P154-norm4-production/raw/n340_1b.hist.csv",
+          "moments_csv": "results/server-20260829/P154-norm4-production/raw/n340_1b.moments.csv"
+        }
+      }
+    }
+  ],
+  "code": [
+    {
+      "path": "scripts/replay_norm4_source_thermal.py",
+      "sha256": "e95858bf0e43c5355510a25cf883125021e493d4ccc3b8158bb6dbb3dc212bc8"
+    },
+    {
+      "path": "src/norm4_source_thermal_replay.cpp",
+      "sha256": "8d3a3193d2156eeeb5f2986768295144cbd23c99e2d01b0982888b6a6ef7889e"
+    },
+    {
+      "path": "analysis/p40_source_thermal_chain_candidates.json",
+      "sha256": "66961aa6bb231f36fcdc4c86af9533f5821c9a7369ae8bace881b1edd68b0f7d"
+    }
+  ],
+  "environment": {
+    "python": "3.11.15",
+    "machine": "arm64",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)"
+  },
+  "workers": 6,
+  "new_samples": 0,
+  "old_permutation_reobservations": 600000,
+  "configurations_per_permutation": "all K=0..N in each same-N direction; not independent samples",
+  "sample_boundary": "first 100k old permutations per N, not original 1.9B/1B precision",
+  "batch_boundary": "new 1000-permutation analysis blocks partition the original contiguous first 100k; not the old full-production 19M/10M batches",
+  "dependency": {
+    "shared_four_N": [
+      65,
+      85,
+      130,
+      170
+    ],
+    "shared_four_N_rule": "same seed/counters; original permutation key does not include N, so preserve joint aligned delete-one covariance",
+    "same_N": "first and second share the identical original label permutation",
+    "children": "N260 and N340 retain their distinct original seeds; independent domains under ordinary PRNG assumptions"
+  },
+  "readouts": {
+    "q": "-1 + I[K>=K_minus] + I[K>=K_plus], using the original backend cross-wrapping definition",
+    "E": "q*q",
+    "s": "occupied black NN component count + complementary white matching (NN plus both diagonals) component count; unscaled integer",
+    "downstream": "exact Binomial(N,p) conditional-K summation, not fixed-p importance weighting"
+  },
+  "server_actions": 0,
+  "test_suites": [],
+  "compile": [
+    {
+      "backend_kind": "primitive",
+      "command": [
+        "c++",
+        "-O3",
+        "-std=c++17",
+        "-DMATCHING_NORM4_BACKEND=\"/var/folders/qv/09841bwx4x9b1gqkht0f9nt40000gn/T/matching-norm4-source-thermal-tpgoxx2j/archived_primitive.cpp\"",
+        "/private/tmp/matching-pr267-fix/src/norm4_source_thermal_replay.cpp",
+        "-o",
+        "/var/folders/qv/09841bwx4x9b1gqkht0f9nt40000gn/T/matching-norm4-source-thermal-tpgoxx2j/norm4-source-thermal-primitive"
+      ],
+      "elapsed_seconds": 1.0420035000424832,
+      "binary_sha256": "e02371ca28c28d04bceaf03b94d69f122ff2b0e8147249cdb7d5c7c5e8b943f6",
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "backend_kind": "integer_period",
+      "command": [
+        "c++",
+        "-O3",
+        "-std=c++17",
+        "-DMATCHING_NORM4_BACKEND=\"/var/folders/qv/09841bwx4x9b1gqkht0f9nt40000gn/T/matching-norm4-source-thermal-tpgoxx2j/archived_integer_period.cpp\"",
+        "-DMATCHING_NORM4_INTEGER=1",
+        "/private/tmp/matching-pr267-fix/src/norm4_source_thermal_replay.cpp",
+        "-o",
+        "/var/folders/qv/09841bwx4x9b1gqkht0f9nt40000gn/T/matching-norm4-source-thermal-tpgoxx2j/norm4-source-thermal-integer_period"
+      ],
+      "elapsed_seconds": 0.7457823749864474,
+      "binary_sha256": "b12ef3eba1e9b91139c67d7b0d099afa549305f6c9bdf6619cc13b58a44c5e18",
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "runs": [
+    {
+      "N": 65,
+      "command": [
+        "/var/folders/qv/09841bwx4x9b1gqkht0f9nt40000gn/T/matching-norm4-source-thermal-tpgoxx2j/norm4-source-thermal-primitive",
+        "65",
+        "/private/tmp/matching-pr267-fix/results/norm4-source-thermal/raw/n65.csv"
+      ],
+      "elapsed_seconds": 3.091406457941048,
+      "stdout": "N=65: reobserved 100000 old permutations, 100 aligned batches, every K=0..N; seed=2026104501; counters=[5100000000,5100100000); new samples=0\n",
+      "stderr": "",
+      "output": "results/norm4-source-thermal/raw/n65.csv",
+      "sha256": "b750666e6277cb42e1743057e20637d382e0550a5c0e713424fd85afb4235650",
+      "seed": 2026104501,
+      "replayed_counter_interval": [
+        5100000000,
+        5100100000
+      ],
+      "reobserved_permutations": 100000,
+      "new_samples": 0
+    },
+    {
+      "N": 85,
+      "command": [
+        "/var/folders/qv/09841bwx4x9b1gqkht0f9nt40000gn/T/matching-norm4-source-thermal-tpgoxx2j/norm4-source-thermal-primitive",
+        "85",
+        "/private/tmp/matching-pr267-fix/results/norm4-source-thermal/raw/n85.csv"
+      ],
+      "elapsed_seconds": 3.740120791946538,
+      "stdout": "N=85: reobserved 100000 old permutations, 100 aligned batches, every K=0..N; seed=2026104501; counters=[5100000000,5100100000); new samples=0\n",
+      "stderr": "",
+      "output": "results/norm4-source-thermal/raw/n85.csv",
+      "sha256": "8798bf6ce65f2ee653c397af01bdf0ce6ed70ae24a9620fe9d1f6db9994bcccf",
+      "seed": 2026104501,
+      "replayed_counter_interval": [
+        5100000000,
+        5100100000
+      ],
+      "reobserved_permutations": 100000,
+      "new_samples": 0
+    },
+    {
+      "N": 130,
+      "command": [
+        "/var/folders/qv/09841bwx4x9b1gqkht0f9nt40000gn/T/matching-norm4-source-thermal-tpgoxx2j/norm4-source-thermal-primitive",
+        "130",
+        "/private/tmp/matching-pr267-fix/results/norm4-source-thermal/raw/n130.csv"
+      ],
+      "elapsed_seconds": 5.061759915901348,
+      "stdout": "N=130: reobserved 100000 old permutations, 100 aligned batches, every K=0..N; seed=2026104501; counters=[5100000000,5100100000); new samples=0\n",
+      "stderr": "",
+      "output": "results/norm4-source-thermal/raw/n130.csv",
+      "sha256": "83cfa956726a9aa64ce25a03acc06ea93adb5a7fe8df7cb4c68be0aac1158a4b",
+      "seed": 2026104501,
+      "replayed_counter_interval": [
+        5100000000,
+        5100100000
+      ],
+      "reobserved_permutations": 100000,
+      "new_samples": 0
+    },
+    {
+      "N": 170,
+      "command": [
+        "/var/folders/qv/09841bwx4x9b1gqkht0f9nt40000gn/T/matching-norm4-source-thermal-tpgoxx2j/norm4-source-thermal-primitive",
+        "170",
+        "/private/tmp/matching-pr267-fix/results/norm4-source-thermal/raw/n170.csv"
+      ],
+      "elapsed_seconds": 6.22621416603215,
+      "stdout": "N=170: reobserved 100000 old permutations, 100 aligned batches, every K=0..N; seed=2026104501; counters=[5100000000,5100100000); new samples=0\n",
+      "stderr": "",
+      "output": "results/norm4-source-thermal/raw/n170.csv",
+      "sha256": "4615842843940d823d73300ad5e1ef240d2887dd58496aeba803e17b8e793a4a",
+      "seed": 2026104501,
+      "replayed_counter_interval": [
+        5100000000,
+        5100100000
+      ],
+      "reobserved_permutations": 100000,
+      "new_samples": 0
+    },
+    {
+      "N": 260,
+      "command": [
+        "/var/folders/qv/09841bwx4x9b1gqkht0f9nt40000gn/T/matching-norm4-source-thermal-tpgoxx2j/norm4-source-thermal-integer_period",
+        "260",
+        "/private/tmp/matching-pr267-fix/results/norm4-source-thermal/raw/n260.csv"
+      ],
+      "elapsed_seconds": 9.954741750028916,
+      "stdout": "N=260: reobserved 100000 old permutations, 100 aligned batches, every K=0..N; seed=2026105401; counters=[8200000000,8200100000); new samples=0\n",
+      "stderr": "",
+      "output": "results/norm4-source-thermal/raw/n260.csv",
+      "sha256": "3ae4a686bb1be45c3352aa3adc71e2ef6b51939853fb7a7227909713fb29fb0b",
+      "seed": 2026105401,
+      "replayed_counter_interval": [
+        8200000000,
+        8200100000
+      ],
+      "reobserved_permutations": 100000,
+      "new_samples": 0
+    },
+    {
+      "N": 340,
+      "command": [
+        "/var/folders/qv/09841bwx4x9b1gqkht0f9nt40000gn/T/matching-norm4-source-thermal-tpgoxx2j/norm4-source-thermal-integer_period",
+        "340",
+        "/private/tmp/matching-pr267-fix/results/norm4-source-thermal/raw/n340.csv"
+      ],
+      "elapsed_seconds": 12.47154962492641,
+      "stdout": "N=340: reobserved 100000 old permutations, 100 aligned batches, every K=0..N; seed=2026105402; counters=[8200000000,8200100000); new samples=0\n",
+      "stderr": "",
+      "output": "results/norm4-source-thermal/raw/n340.csv",
+      "sha256": "205e3b8a16e9373e35cb0498f6a96a6d380afebf133fd1a4e7b4128288990dac",
+      "seed": 2026105402,
+      "replayed_counter_interval": [
+        8200000000,
+        8200100000
+      ],
+      "reobserved_permutations": 100000,
+      "new_samples": 0
+    }
+  ],
+  "completed_utc": "2026-08-31T08:15:55.210870+00:00",
+  "elapsed_seconds": 14.266304916003719
+}
