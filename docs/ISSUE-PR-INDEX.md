@@ -6,7 +6,25 @@ This is a navigation index, not a new task queue. Original titles and GitHub sta
 
 No Issue is closed, locked, demoted or renamed by this index. No PR is merged or newly approved. The snapshot is historical as soon as GitHub changes.
 
-## Current grouped entry — 2026-08-31 14:16–14:21 overlay
+## New scientific handoff — 2026-08-31 d
+
+The [d result/source crosswalk](../notes/frontier-increment-20260831d.md)
+adds a bounded read of PR #484 at14:41:26
+(`8b3c4e4b175826805238f2585ca470d746a80610`) and the cross-branch
+handoff in #267, followed by full reading of the identified scientific
+reports. It is not another complete open-PR recount. All147 clocks/noise,
+canonical crossings, current deletion and the symmetric-kernel obstruction
+are complete inputs. N900 was author-reported running without a completed
+artifact; no process was inspected.
+
+Draft #267 also adds the actual [absolute-cluster source result](../results/p154-absolute-cluster/REPORT.md)
+at `eb7ef8c9f13a88d96f32c2da62ba7ef2145cb33e`: the first missing
+E_top/cluster response is now measured, not still a proposed pilot.
+[Next Targets](NEXT-TARGETS.md) and the affected parent Issues carry the
+scientific next steps. The grouped list below retains its own dated heads
+and titles, without claiming that every later branch tip was reread.
+
+## Dated grouped entry — 2026-08-31 14:16–14:21 overlay
 
 先看 [当前科学总览](REPOSITORY-CONTEXT.md) 与 [唯一下一步注意力表](NEXT-TARGETS.md)；下面按用途分组，**不是新增排序、审批或合并建议**。原始464条计数及历史表全部保留在后面。
 

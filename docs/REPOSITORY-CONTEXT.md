@@ -8,7 +8,15 @@ their capture times, complete text and heads. The [new reconciliation](../notes/
 recovers completed N400 production, rank-clock de-smoothing, P398 memory/motifs,
 P334 full physical and canonical birth clocks, and the tiny VJS full Q derivative.
 The counts below remain the original snapshot, not current repository totals.
-N900 has an existing plan/runner, not a verified runtime or completed artifact.
+The [d scientific increment](../notes/frontier-increment-20260831d.md) then
+reads actual reports for all147 clocks, their noise budget, canonical
+crossings, P398 current deletion and the two-lobe obstruction. It also
+records N900 as author-reported running at the captured #484 head, without
+a completion artifact or independent process inspection.
+The new [absolute-cluster source measurement](../results/p154-absolute-cluster/REPORT.md)
+is now complete in Draft #267: an unresolved E_top source response with
+substantial source variance beyond the declared linear controls, not a
+readiness exercise. These additions do not rewrite the original counts.
 Use [Next Targets](NEXT-TARGETS.md) after these completed inputs; do not restart
 their former first-work requests.
 

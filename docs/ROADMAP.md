@@ -10,7 +10,22 @@ This Draft incorporates main through `e300609`; later observed main changes are 
 
 The first #370 real-data adapter, P267 amplitude comparison, P334 graph/capacity analysis and first F5/C3 typed observers are completed inputs. No Monte Carlo is launched by this navigation update, and tool/test completion is not an independent scientific milestone.
 
-The [latest context reconciliation](../notes/context-reconciliation-20260831c.md)
+The [absolute-cluster source](../results/p154-absolute-cluster/REPORT.md)
+has now been measured on the inherited Phase-E counters: the E_top
+directional response remains unresolved despite substantial source variance
+outside the linear clock/Euler span. Next reuse P40's already available
+million-sample q/cluster Gram for its matching response; do not mistake it
+for the absent E_top mixed moment or N130 child. This turns a candidate
+into a completed measurement without commissioning new production.
+
+The [d increment](../notes/frontier-increment-20260831d.md) also removes
+first all147-prefix clocks/noise, first canonical crossings and first P398
+current deletion from the queue. Use their actual outputs for population
+loading or a specified physical-response prediction. N900 is author-reported
+running without a published target at the captured head; consume the existing
+handoff and keep the later two-lobe obstruction separate from its width test.
+
+The [preceding context reconciliation](../notes/context-reconciliation-20260831c.md)
 now supersedes more old first-work requests: N400 production, canonical/rank
 width decomposition, P398 memory/motifs, full physical and canonical birth
 clocks, and tiny VJS's complete finite derivative are all delivered. N900

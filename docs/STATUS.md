@@ -8,14 +8,31 @@
 
 ## Evidence and lifecycle contract
 
-The latest [context reconciliation](../notes/context-reconciliation-20260831c.md)
+The new [absolute-cluster measurement](../results/p154-absolute-cluster/REPORT.md)
+(`eb7ef8c9`, `open_pr #267`) is complete on the inherited20k-per-size
+Phase-E streams. Raw E_top source response has nominal joint p=.57892;
+after the declared linear clock/Euler controls p=.64961. The source retains
+65–70% of its variance, so this is unresolved coupling, not a scalar-alias
+proof. The auxiliary N130 matching residual is2.47SE, N65−.45SE; neither
+is a field assignment. The result includes39×39 paired covariance and all
+delete-one vectors. It adds no independent samples.
+
+The [d frontier increment](../notes/frontier-increment-20260831d.md) pins
+six further completed analyses, including all147 P334 clocks/noise and
+P398 current deletion. The current-deleted finite process retains fast/slow
+inversion; N100/N400 moments obstruct a common symmetric positive two-lobe
+kernel. Each retains its actual `open_pr`/`branch_only` status and original
+data dependency. N900 is author-reported running, with no completed result
+at the captured head and no independent process inspection.
+
+The preceding [context reconciliation](../notes/context-reconciliation-20260831c.md)
 corrects several completed-but-still-listed-as-next items: N400 production and
 rank-clock de-smoothing; width8 memory/motifs; full physical and canonical
 two-prefix clocks; and tiny VJS's three-term Q derivative. The
 [dated #492–497 / active-work capture](ISSUE-PR-INCREMENT-20260831c.md) records
 subsequent PR lifecycle changes without changing the Draft's main incorporation.
 N900 has a frozen plan and runner; runtime is unconfirmed and no completion
-artifact was present at the captured head. No new analysis is run for this update.
+artifact was present at that earlier captured head. That c update ran no new analysis.
 
 The earlier [research-output update](../notes/research-output-update-20260831b.md)
 consumes PR #484 production and completes fixed thermal windows (`d973a39`)

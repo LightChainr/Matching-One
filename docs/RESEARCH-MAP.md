@@ -6,7 +6,23 @@ This map is the repository's scientific coordinate system. It is not a permissio
 
 ## The five axes
 
-The [latest context reconciliation](../notes/context-reconciliation-20260831c.md)
+The [absolute-cluster response](../results/p154-absolute-cluster/REPORT.md)
+now separates **source variation** from **readout coupling**: `cb+cw` is not
+removed by the declared clock/Euler span, yet its E_top H4 response is
+unresolved at20k. The three-state q/E readout still sees this source only
+through `E[S|q]`; nontrivial microscopic variation is not a count of fields.
+This new-mark replay is an `open_pr #267` result using an existing dependency
+block, not new Monte Carlo evidence. Its next available high-statistics
+q-only check is the existing P40 Gram, not another first source pilot.
+
+The [d frontier increment](../notes/frontier-increment-20260831d.md) extends
+the **state** axis to complete147 continuation laws and irreducible triples,
+the **observer** axis to actual conditional-noise and canonical-order results,
+and the **generator** comparison to completed current deletion. The common
+symmetric-kernel obstruction narrows the **rank-clock mechanism**, not the
+frozen N900 width target. These are separately pinned completed results.
+
+The [preceding context reconciliation](../notes/context-reconciliation-20260831c.md)
 recovers completed N400 production and intrinsic rank-clock broadening,
 width8 memory/motif decomposition, full physical/canonical birth clocks,
 and the tiny VJS three-term derivative. These replace several stale first-work
