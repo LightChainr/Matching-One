@@ -1,8 +1,8 @@
 # Research Map
 
-**Updated:** 2026-08-29
+**Updated:** 2026-08-31
 
-This is a navigation layer, not a permission system. `STATUS` owns claim language; `ROADMAP` owns information-gain priorities; `GOVERNANCE` owns the three hard constraints.
+This is a navigation layer, not a permission system. `docs/STATUS.md` owns current claim language; `docs/ROADMAP.md` owns current information-gain ordering; `GOVERNANCE.md` owns the three hard claim constraints.
 
 ## Scientific stack
 
@@ -14,83 +14,106 @@ exact topology / semantics / cover arithmetic
         -> continuum/operator identification
 ```
 
-Failures at a higher layer do not erase lower-layer evidence.
+Failures at a higher layer do not erase lower-layer evidence. Exact finite controls do not automatically promote a large-system mechanism.
 
-## A. Square-site matching-odd thermal sector
+## Current decision edge
 
-Durable evidence: same-N orientation confirmation, held-out radial tests, P43 new geometry, P57 norm-5 harmonic discrimination, and completed N145->290 full curve.
-
-Current summary:
-
-- global zero is strongly disfavored by independent primary blocks;
-- frozen H4 transfer remains compatible and tested H12/H8 aliases are disfavored;
-- N290 rejects a one-multiplier curve shape while retaining the frozen finite-size center-slope/root correction;
-- pure S-prime, scalar width and simple constant rank-gap corrections fail;
-- the live state is low-rank/multicomponent.
-
-The Q4/Jordan bridge is now exact at the representation level, but lattice overlap is unproved. Shape/modulus information is the next identifying axis.
-
-## B. Pivotal and self-matching RG sector
-
-Russo gives an exact pivotal interpretation of the slope. Integrated H4 pivotal ratios are stable and local marked H4 observables are measurable.
-
-N10 has a genuine second microscopic tangent direction. N130/N170 do not resolve it with the current global/local rows, and the multiradius small-torus prototype gives no reason to buy more identical samples. Future work must change geometry/readout.
-
-## C. Primitive square-bond homology-character sector
-
-This is now separate from the square-site thermal-Q4 line.
-
-- primitive C3 character is directly observed with reflection nulls;
-- scalar E4/Pell phase bridge fails;
-- two prospective norm-2 generations select the negative rank-4 H4 phase;
-- vacuum-KdV predicts the N30/N56 C ratio essentially exactly.
-
-Current candidate: distinct `x≈4`, spin-4 identity/vacuum-family response. Next work should test correction/shape structure, not another same-purpose sign generation.
-
-## D. Gaussian covers, deck characters and norm-4
-
-The arbitrary integer-period threshold-rank backend is canonical. Exact cover arithmetic gives
+Only one edge is active this week:
 
 ```text
-norm 2: Z2
-norm 5: Z5
-norm 4 (2i): Z2 x Z2
-norm 10: Z10
+P334 projective birth process
+  d_p A_ell = j_in,ell - j_out,ell
+  J_grad = j_in - j_out
+          |
+          |  fresh held-out population intervention
+          v
+contact/lifecycle model M0/M1(/prospective M2)
+          |
+          |  prospective source-to-U transport
+          v
+P154 original pooled-root / slope-normalized U
 ```
 
-and `(1+i)^2=2i` yields an exact coarse/detail Hadamard split. Norm-4 production can therefore test q2/Jordan scale composition and deck-character structure in one dataset.
+`J_act=j_in+j_out` remains a distinct activity coordinate and is not silently substituted for `J_grad` or global `U`.
 
-## E. Threshold-rank / thermal-jet coordinates
+The current scientific question is not whether another exact/current/source coordinate exists. It is whether a **predeclared transport prediction** survives an independent block. Same-block feature rescue is outside this decision.
 
-Threshold-rank histograms support values, derivatives, Krawtchouk/Hermite modes and joint rank-gap moments. The full Krawtchouk-to-neutral-area covector is exact, but low-order truncation is ill-conditioned. Global rank gap and local thermal jet must not be collapsed into one scalar width coordinate.
+## A. Square-site matching-odd finite-size sector
 
-Intrinsic quantile centers are a useful independent coordinate: the held-out N145->290 `N^-3/4` transfer passed even though the width metric has precise finite-size drift.
+Durable C3 evidence remains:
 
-## F. Continuum/modular identification
+- independent primary blocks disfavor global zero;
+- frozen H4 transfer is compatible and tested H12/H8 aliases are disfavored;
+- N145->290 rejects a one-multiplier full-curve shape while preserving narrower finite-size relations;
+- pure S-prime and scalar-width shortcuts fail.
 
-Exact assets now include Virasoro Q4, inherited Jordan Q4, `g2/E4` Ward fingerprints, rectangular/CM `11/4`, and the hexagonal degree-2 E4 phase projector.
+This sector is already sufficient for a finite-size phenomenology result. Operator identification requires the current transmission/shape discriminator; another radial exponent fit is not an identification step.
 
-Use scalar-cancelled modulus combinations to distinguish generic analytic/log mixing from the specific Q4-Jordan module. Do not infer module identity from a radial log law alone.
+## B. Projective birth-current / topology process
 
-## G. Exact finite algebra and side programs
+The threshold-rank archive supplies the unmarked birth times and, in marked streams, the rank-one projective line. The exact continuity equation separates ingress and egress while retaining one common raw dependency group.
 
-Exact matching polynomials, N26 Beta failure, reliability signatures, square-bond duality, Boolean-noise oracles, defect-polynomial/Galois work and energy/log-pair sufficient statistics are valuable because they can delete mechanisms cheaply. They may run in parallel and do not block the active compute path.
+Important boundary:
 
-## Current high-information work
+- 147 clocks, W2/cut-network, exact blockers, contact descriptors and related projections are valuable discovery/control assets;
+- selected-checkpoint C5 statements remain finite-scope controls;
+- they do not become independent population evidence by being re-expressed in more coordinates.
 
-```text
-cheap same-N coalescence -> H4 vs quotient/conjugation
-scalar-cancelled modulus -> Q4/Jordan identification
-norm-4 + deck characters -> scale composition + quotient structure
-larger injective local geometry -> second RG direction
-primitive new shape target -> x≈4 correction mechanism
-```
+The intended independent population test is frozen at `bc0a18c207e3b09f49ea6b6af6601471114d654a`.
 
-## Work explicitly retired as a default
+## C. Norm-4 / source-to-global transport
 
-- N290 as a future target: completed.
-- more N130/N170 samples with the same tangent rows: low value.
-- third primitive norm-2 run whose sole purpose is another sign flip: low value.
-- scalar-width or free-exponent rescue fitting: low value.
+Frozen q2/Jordan production rejects the declared scalar q2 completion while Jordan remains only a survivor, not an identified module. Generation 4 does not identify its secondary eigenvalue.
 
-Update rule: integrate useful science first, refresh navigation afterward, and close duplicate PR paths aggressively while keeping Git history.
+Later source reanalyses establish strong local/temporal structure, but they reuse historical random blocks. The latest lagged-source result at `dd48177340f169c18cd1fc9217101b54090e1e3a` resolves entry/exit effects without resolving the original global `U` source response.
+
+Therefore the next step is a prospective `J_grad -> U` prediction, not another source coordinate.
+
+## D. Pivotal and self-matching RG support
+
+Russo gives an exact pivotal interpretation of the slope; finite local observables remain useful controls. The current N130/N170 rows are near rank-one and more identical replicas are retired as a default.
+
+This line is parked until a new geometry/readout is explicitly needed to decide the current transmission model.
+
+## E. Primitive square-bond homology-character sector
+
+This remains distinct from the square-site thermal-Q4 candidate:
+
+- primitive character signals and frozen phase tests are retained;
+- the working finite-size description is an `x≈4` spin-4 sector with corrections;
+- it is not folded into the thermal `x=21/4` candidate.
+
+A third same-purpose norm-2 sign generation is retired as a default.
+
+## F. Q4/Jordan and modulus/shape support
+
+Representation-level Q4/Jordan relations and modular/shape assets remain useful because radial log behavior alone cannot identify the module.
+
+They are parked support for the current decision, not a separate active queue. If the transmission chain survives and still leaves q2/Jordan ambiguity, modulus/shape is the next orthogonal identification axis.
+
+## G. Exact finite algebra and threshold side programs
+
+Exact matching polynomials, Galois certificates, finite Euler/Betti identities, reliability/branching controls, W5 wiring, Boolean-noise controls, energy/log-pair statistics and bounded integer-relation exclusions remain first-class research assets.
+
+Their role is bounded:
+
+- exact finite results can be C5 in the declared finite scope;
+- they do not establish a square-site continuum operator or a closed-form `p_c`;
+- parked threshold algebra under #1 is not part of this week’s operator/transmission execution.
+
+## Navigation and provenance
+
+Current authority:
+
+1. `docs/STATUS.md` — current claims and non-claims;
+2. `docs/ROADMAP.md` — current information-gain order;
+3. this file — durable track map.
+
+Supporting indexes:
+
+- `analysis/research_ledger.yaml` — machine-readable decision/evidence state;
+- `analysis/artifact_registry.yaml` — canonical and unmerged-asset pointers;
+- `analysis/evidence_ledger_manifest.yaml` — primary/sensitivity/raw-group chronology;
+- `docs/CLEANUP-20260831.md` — issue/PR cleanup classification and dedup audit.
+
+Branch-local `NEXT-TARGETS`, Draft PR bodies and Issue handoff archives are historical provenance. They are not additional current roadmaps.
