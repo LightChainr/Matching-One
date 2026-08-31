@@ -1,0 +1,113 @@
+{
+  "status": "PASS_FIXED_PROTOCOL_RESULT_CORRECTNESS_REVIEW",
+  "reviewed_at_utc": "2026-08-31T11:51:27.081916+00:00",
+  "reviewer": "independent local_structure subagent",
+  "frozen_commit": "4b3c21b7c8c33a5df7eab7eaa2a9f04af18d1277",
+  "scope": "Read-only correctness review of frozen protocol, training-target identity, delivered data identities/hashes, sufficient statistics, original primary score/LOO/CI, and portable deterministic reproduction. No new sampling, observable, model, fit, tolerance or result selection.",
+  "frozen_files": {
+    "count_including_FREEZE": 19,
+    "all_match_manifest_and_exact_frozen_git_blob": true,
+    "result_sha256": "1a2f569fdf9ab7c3d1a8c886828807f562fa98e458c1db06ef90faba66aa3386",
+    "result_hash_matches_original_SCORE_EXECUTION_receipt": true
+  },
+  "delivery": {
+    "exact_shards": 120,
+    "prefixes_by_N": {
+      "325": 300000,
+      "425": 300000
+    },
+    "cell00_by_N": {
+      "325": 22037,
+      "425": 23687
+    },
+    "all_600000_prefix_counter_identities_verified": true,
+    "receipt_content_hashes_verified": 600,
+    "prediction_timestamp_before_tail_completion_all_shards": true,
+    "freeze_precedes_all_feature_jobs": true,
+    "baseline_and_contrast_counts_match_fixed_budgets_and_zero_sources": true
+  },
+  "training_target_identity": {
+    "old_training_result": "323de7d5ee4a980b3c77e1a972cb6c812a9f88e5:results/p334-new64-feature-loading/score.json",
+    "old_training_reader": "5c4c9b45:scripts/p334_new64_feature_loading.py",
+    "old_New64_reader": "8ad30617b0a3076a5c01a208eb213096d8879b32:experiments/p334-mechanism-response-20260831/analyze_extension.py",
+    "old_New64_reader_sha256_matches_reviewed_local_code": "f94e063a3a495166039684e3475cc1c610c9287bcfaeeb8ee4bc190ee2a6e8a9",
+    "same_H": "On each joint-safe degree class H_s=(n_a*L_s-sum_a L_s)/d; zero outside. Both use physical first/second sources, not half-sum/half-difference coordinates.",
+    "old_expectation": "For iid uniform labels U,V, E[(H(U)-H(V))*(Fbar_U-Fbar_V)/2]=E[H F], because E[H]=0. Tail-replica averages do not add a source factor.",
+    "new_expectation": "W=sum(max(hnum,0))/d^2=E_uniform[H_+]. Same-class positive/negative coupling gives W*E(Fplus-Fminus)=E[H F]=Delta/(2 epsilon). No further factor 2 is required.",
+    "clock_units": "Both use C=(K1+K2)/(2(N+1)), Wclock=(K2-K1)/(N+1). Old New64 integral_A response multiplied by -1/2 is H_C; integral_E response multiplied by -1 is H_W. New tau uses those C/W directly.",
+    "R_units": "Both use pi00*(2 Cov(mu_C,H_C)-0.5 Cov(mu_W,H_W)); same coefficients apply to residuals after the frozen predictor. Both numerator and frozen denominator average the two receivers exactly once.",
+    "conclusion": "No factor-two, physical-source-coordinate, clock-unit, or population-normalization mismatch found.",
+    "training_input_byte_identical_to_323de7d5_git_blob": true,
+    "all_64_exported_beta_entries_and_all_Rold_exactly_match_323de7d5": true,
+    "training_means_match_323de7d5_to_float_summation_roundoff": {
+      "max_feature_mean_error": 6.661338147750939e-16,
+      "max_response_mean_error": 2.710505431213761e-20
+    }
+  },
+  "independent_primary_reconstruction": {
+    "method": "Recomputed covariance from pooled sufficient SUMS with explicit sample count, then all 60 leave-one-batch subsets. Separately centered all saved prefix mu/tau/prediction arrays and computed the identical original R.",
+    "max_absolute_R_point_error": 5.418033012222331e-23,
+    "max_absolute_R_direct_prefix_error": 7.77549775799846e-23,
+    "max_absolute_ratio_LOO_error": 2.0317081350640365e-14,
+    "t59_critical_for_97_5_percent_two_sided": 2.300046899440932,
+    "same_CI_and_decisions": true
+  },
+  "raw_birth_and_census_spotchecks": {
+    "fixed_shards": [
+      "N325.shard000",
+      "N325.shard059",
+      "N425.shard000",
+      "N425.shard059"
+    ],
+    "cell00_prefixes_checked": 1521,
+    "scope": "All census entries and raw baseline/contrast birth-clock rows in these four shards; directly recomputed W, mu_C/W, and tau_C/W without importing frozen scorer.",
+    "max_W_error": 2.7755575615628914e-17,
+    "max_mu_error": 3.3306690738754696e-16,
+    "max_tau_error": 5.149960319306146e-19
+  },
+  "portable_reproduction": {
+    "files": 120,
+    "all_portable_sufficient_files_byte_identical_to_delivery": true,
+    "command": [
+      "/Users/lc/python-envs/research-py311/bin/python",
+      "/Volumes/Mac Data/Research/论文项目总库/Matching-One-worktrees/results-first-synthesis-20260831/experiments/p334-prospective-intervention-20260831/score_prospective.py",
+      "--input",
+      "/Volumes/Mac Data/Research/论文项目总库/Matching-One-worktrees/results-first-synthesis-20260831/experiments/p334-prospective-intervention-20260831/results/sufficient_statistics",
+      "--output",
+      "/var/folders/qv/09841bwx4x9b1gqkht0f9nt40000gn/T/p334-independent-portable-verification-jpd7cz5t/score"
+    ],
+    "temporary_output": "/var/folders/qv/09841bwx4x9b1gqkht0f9nt40000gn/T/p334-independent-portable-verification-jpd7cz5t/score",
+    "exit_code": 0,
+    "reproduced_latest_json_byte_identical": true,
+    "reproduced_sha256": "1a2f569fdf9ab7c3d1a8c886828807f562fa98e458c1db06ef90faba66aa3386",
+    "classification": "deterministic correctness reproduction only; not a second scientific model selection"
+  },
+  "decisions": {
+    "325": {
+      "ratio": 0.4988856959805529,
+      "interval_97_5": [
+        0.4360615747187555,
+        0.5617098172423503
+      ],
+      "candidates": {
+        "C0_residual_projection_near_zero": "excluded_by_primary_interval",
+        "C1_old_point_residual_transfers": "excluded_by_primary_interval"
+      }
+    },
+    "425": {
+      "ratio": 0.5169035355923413,
+      "interval_97_5": [
+        0.4506759698415552,
+        0.5831311013431273
+      ],
+      "candidates": {
+        "C0_residual_projection_near_zero": "excluded_by_primary_interval",
+        "C1_old_point_residual_transfers": "excluded_by_primary_interval"
+      }
+    }
+  },
+  "limits": [
+    "These are conditional tests of the frozen fitted coefficients and archive R_old point forecasts. They are not an unconditional old-versus-new population comparison with training uncertainty propagated.",
+    "The near-one-half values are descriptive only. Both frozen bands are excluded; this does not establish a one-half law, new physical mechanism, or full contact closure."
+  ]
+}

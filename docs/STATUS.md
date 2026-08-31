@@ -2,14 +2,18 @@
 
 **整理日期：2026-08-31。** 四机首轮之后，三机继续完成prefix响应预测、条件形状与滞后簇源分析；[新交付](../notes/analysis-delivery-20260831.md)记录实际结果和运行回执。此前三项完成时原账号五台已返回Ready；新决策实验随后按实际准备状态重新开机。[下一步](NEXT-TARGETS.md)只保留尚未回答的科学问题；[清理记录](REPOSITORY-TRIAGE-20260831.md)保存原Issue操作。本任务新增结果统一交付Draft #509，不合并。
 
-## 当前决策：探索停止扩张，两个前瞻实验准备中
+## 当前决策：独立实验开始淘汰冻结预测
 
 用户在本轮交付期间要求收缩研究自由度。本页是当前科学判断的唯一入口；PR267与Issue评论保存沿革，PR509交付资产，不分别维护竞争的“当前真相”。上面的时间记录和下面既有结论按其证据状态保留。
 
 | 主实验 | 要消除的不确定性 | 当前状态 | 失败如何改变研究 |
 |---|---|---|---|
-| #154 temporal transmission | 早期隐藏结构的影响是否进入原global U，由哪个birth通道承担？ | [合同已定稿](../experiments/p154-prospective-transmission-20260831/CONTRACT.json)：lag=1，N85=5M、N340=160M新路径；六坐标共同区间，净U等效带±0.50；本次提交冻结后运行 | 采样前限定效应范围；拒绝后停止相应source/channel作为主要解释的优先投入，不能只换lag继续 |
-| #334 independent intervention | 既有contact机制能否预测新的coarse-state保持干预，20%残余是否有可迁移意义？ | [合同与代码已定稿](../experiments/p334-prospective-intervention-20260831/CONTRACT.md)：每N300k全新prefix，主残余比值范围±0.25或0.75–1.25；已冻结于4b3c21b7，19:38:29开始两机固定生产，完整结束后一次评分 | 预测失败即降级所声明的残余loading消失/传递限制；不在同一验证块上增添第五个descriptor |
+| #154 temporal transmission | 早期隐藏结构的影响是否进入原global U，由哪个birth通道承担？ | [合同](../experiments/p154-prospective-transmission-20260831/CONTRACT.json)已冻结于`0820b8d2`并授权固定新生产：lag=1，N85=5M、N340=160M；六坐标共同区间，净U等效带±0.50 | 采样前限定效应范围；拒绝后停止相应source/channel作为主要解释的优先投入，不能只换lag继续 |
+| #334 independent intervention | 既有contact机制能否预测新的coarse-state保持干预，20%残余是否有可迁移意义？ | `4b3c21b7`冻结；每N300k新prefix、120/120分片完成。R_new/R_old为N325 **0.4989 [0.4361,0.5617]**、N425 **0.5169 [0.4507,0.5831]**；两个预定范围±0.25及0.75–1.25均被排除。[固定得分](../experiments/p334-prospective-intervention-20260831/results/latest.json) | **停止这两个残余投影预测的优先投入**；新块不重拟合、不加descriptor、不把观测到的约1/2注册为救场模型 |
+
+#334上表区间是每N97.5%渐近Student-t区间，两N按Bonferroni构成95%家族；结论条件于冻结的旧系数、均值和R_old点预测。它拒绝所声明的固定预测，不拒绝未知旧总体参数；单个signed-loading投影也不能证明或否定四feature完整充分性。旧数据只训练，未进入新得分。
+
+执行队另一个[已完成的新群体干预](https://github.com/LightChainr/Matching-One/issues/334#issuecomment-5477517774)使用不同的score-normal源，1M新prefix给T=(3.0852±0.3919)×10⁻⁸，触发其冻结的“停止完整两score标签均值闭合”规则。这个结果与本表的四feature残余检验各有源和目标，不能合并成一次重复验证；它也没有识别未扰动global anomaly的生成机制。两项结果共同要求下一步回到明确global读出的传递关系，不继续扩展contact目录。
 
 执行队的[一次激活事件核4daae57e](https://github.com/LightChainr/Matching-One/commit/4daae57eef5c945aa050a95cd3d5d5d77582161b)也已完成；当前前瞻#154使用这个固定lag=1接口，不再重复sqrtN-lag或做lag扫描。规范化U的entry/completion读出分解共享完整源的根/分母导数，不能改称源的因果事件归因。
 
