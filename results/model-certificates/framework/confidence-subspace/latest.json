@@ -1,0 +1,79 @@
+{
+  "claim_boundary": {
+    "excluded": "confidence-set calibration, covariance estimation, finite-sample coverage, interval enclosure of measured inputs, model acceptance, or physical interpretation",
+    "included": "exact rational verification of a supplied singular covariance, pseudoinverse, range condition, discrepancy, and cutoff comparison",
+    "parent_issue": "remain open"
+  },
+  "claim_level": "exact_control",
+  "dependency_group": "synthetic-exact-covariance-subspace",
+  "descriptor": {
+    "calibration": "supplied_external_not_verified",
+    "covariance": [
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "4",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "covariance_pseudoinverse": [
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1/4",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "cutoff": "3/2",
+    "observed": [
+      "2",
+      "1",
+      "4"
+    ],
+    "predicted": [
+      "1",
+      "2",
+      "4"
+    ]
+  },
+  "issue": 370,
+  "schema": "matching-one/exact-confidence-subspace-certificate/v1",
+  "verification": {
+    "ambient_dimension": 3,
+    "covariance_positive_semidefinite": true,
+    "covariance_rank": 2,
+    "cutoff": "3/2",
+    "moore_penrose_identities": "all_four_exact",
+    "quadratic_discrepancy": "5/4",
+    "range_projection_residual": [
+      "0",
+      "0",
+      "0"
+    ],
+    "relation_to_supplied_outer_set": "inside_or_on",
+    "residual": [
+      "1",
+      "-1",
+      "0"
+    ],
+    "status": "exact_covariance_subspace_discrepancy_verified"
+  }
+}
