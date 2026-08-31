@@ -140,6 +140,7 @@ void write_checkpoint(std::ostream& output, std::uint64_t counter,
     output << "]}";
 }
 
+#ifndef P334_SNAPSHOT_LIBRARY
 int main(int argc, char** argv) {
     if (argc != 2) { std::cerr << "usage: p334_checkpoint_safe_triples OUTPUT.json\n"; return 2; }
     try {
@@ -158,3 +159,4 @@ int main(int argc, char** argv) {
     }
     return 0;
 }
+#endif

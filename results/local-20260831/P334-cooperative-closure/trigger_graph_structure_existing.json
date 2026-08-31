@@ -1,0 +1,622 @@
+{
+  "chain_definition": "Within each connected bipartite component, neighborhoods of every same-side vertex pair must be nested; disjoint 2K2 across different components is allowed.",
+  "claim_boundary": "A fixed small real-checkpoint census, not an all-configuration theorem, universality law, classifier search, or population prevalence estimate. All graphs reuse existing production checkpoints.",
+  "new_samples": 0,
+  "posthoc_two_saved_graph_bipartite_baseline": {
+    "excess_difference_B_minus_A": {
+      "decimal": 86.37125748502994,
+      "denominator": 167,
+      "numerator": 14424,
+      "text": "14424/167"
+    },
+    "expected_difference_B_minus_A": {
+      "decimal": 453.62874251497004,
+      "denominator": 167,
+      "numerator": 75756,
+      "text": "75756/167"
+    },
+    "expected_fraction_of_observed_difference": {
+      "decimal": 0.8400532268795742,
+      "denominator": 7515,
+      "numerator": 6313,
+      "text": "6313/7515"
+    },
+    "interpretation": "Posthoc structural arithmetic on the two already selected graphs, conditional on each component's bipartition sizes and edge count. Not a new independent test or causal attribution.",
+    "observed_difference_B_minus_A": 540,
+    "rows": {
+      "existing_N425_A": {
+        "componentwise_uniform_bipartite_expected": {
+          "decimal": 830.3712574850299,
+          "denominator": 167,
+          "numerator": 138672,
+          "text": "138672/167"
+        },
+        "excess": {
+          "decimal": 95.62874251497006,
+          "denominator": 167,
+          "numerator": 15970,
+          "text": "15970/167"
+        },
+        "observed_wedges": 926
+      },
+      "existing_N425_B": {
+        "componentwise_uniform_bipartite_expected": {
+          "decimal": 1284.0,
+          "denominator": 1,
+          "numerator": 1284,
+          "text": "1284"
+        },
+        "excess": {
+          "decimal": 182.0,
+          "denominator": 1,
+          "numerator": 182,
+          "text": "182"
+        },
+        "observed_wedges": 1466
+      }
+    }
+  },
+  "records": [
+    {
+      "graph_artifact": "results/local-20260831/P334-cooperative-closure/trigger_graph_raw/N425-second-43042514269.json",
+      "selection": "existing_N425_A",
+      "source_row": {
+        "H2": 0,
+        "H2_direction_mixed": 0,
+        "H2_direction_negative": 0,
+        "H2_direction_positive": 0,
+        "H2_figure8": 0,
+        "H2_separate": 0,
+        "H2_theta": 0,
+        "a": 19,
+        "age_steps": 10,
+        "articulation_vertices": 42,
+        "b": 8,
+        "batch": 14,
+        "boundary_axis_imbalance": 14,
+        "boundary_contact_pairs": 189,
+        "boundary_corner_balance": 81,
+        "boundary_cut_edges": 250,
+        "boundary_multicontact_sites": 79,
+        "branch_both_survive": 1,
+        "branch_clone1_survives": 1,
+        "branch_clone2_survives": 1,
+        "branch_common_safe": 1,
+        "branch_q_after_denominator": 172,
+        "branch_q_after_safe_count": 172,
+        "branch_suffix_site1": 174,
+        "branch_suffix_site2": 59,
+        "bridges": 43,
+        "checkpoint_b1_safe_count": 173,
+        "checkpoint_b2_safe_pairs": 14770,
+        "checkpoint_sum_child_b1_sq": 5045796,
+        "core_edges": 164,
+        "core_vertices": 128,
+        "ell_u": 12,
+        "ell_v": -19,
+        "essential_carriers": 1,
+        "essential_size": 161,
+        "frontier_component_sumsq": 401,
+        "frontier_components": 56,
+        "k0": 252,
+        "k1": 242,
+        "k2": 261,
+        "largest_frontier_component": 7,
+        "n": 425,
+        "next_exit": 0,
+        "next_site": 370,
+        "occupied_frontier": 145,
+        "orientation": "second",
+        "q_after": 1.0,
+        "q_after2": 1.0,
+        "replica": 43042514269,
+        "vacant_frontier": 121
+      },
+      "structure": {
+        "bipartite": true,
+        "components_with_edges": [
+          {
+            "bipartite": true,
+            "chain_ferrers": false,
+            "edges": 108,
+            "side_degree_sequences": [
+              [
+                12,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                4,
+                4
+              ],
+              [
+                12,
+                12,
+                12,
+                12,
+                12,
+                12,
+                12,
+                12,
+                3,
+                3,
+                3,
+                3
+              ]
+            ],
+            "sides": [
+              [
+                1,
+                47,
+                91,
+                129,
+                159,
+                200,
+                241,
+                269,
+                286,
+                315,
+                355,
+                356,
+                358,
+                398
+              ],
+              [
+                6,
+                27,
+                50,
+                94,
+                140,
+                162,
+                207,
+                251,
+                274,
+                296,
+                363,
+                409
+              ]
+            ],
+            "vertices": [
+              1,
+              6,
+              27,
+              47,
+              50,
+              91,
+              94,
+              129,
+              140,
+              159,
+              162,
+              200,
+              207,
+              241,
+              251,
+              269,
+              274,
+              286,
+              296,
+              315,
+              355,
+              356,
+              358,
+              363,
+              398,
+              409
+            ]
+          }
+        ],
+        "every_connected_component_chain_ferrers": false,
+        "isolated_vertices": 147,
+        "non_nested_neighborhood_witness": {
+          "component_vertices": [
+            1,
+            6,
+            27,
+            47,
+            50,
+            91,
+            94,
+            129,
+            140,
+            159,
+            162,
+            200,
+            207,
+            241,
+            251,
+            269,
+            274,
+            286,
+            296,
+            315,
+            355,
+            356,
+            358,
+            363,
+            398,
+            409
+          ],
+          "exclusive_neighbors": [
+            6,
+            50
+          ],
+          "minimal_witness_size": 4,
+          "neighborhoods": {
+            "1": [
+              6,
+              27,
+              140,
+              162,
+              251,
+              274,
+              296,
+              409
+            ],
+            "47": [
+              50,
+              94,
+              207,
+              363
+            ]
+          },
+          "safe_cross_pairs": [
+            [
+              1,
+              50
+            ],
+            [
+              47,
+              6
+            ]
+          ],
+          "same_component_shortest_path": [
+            1,
+            6,
+            159,
+            50,
+            47
+          ],
+          "same_side_sites": [
+            1,
+            47
+          ],
+          "trigger_pairs": [
+            [
+              1,
+              6
+            ],
+            [
+              47,
+              50
+            ]
+          ]
+        },
+        "nonisolated_components": 1,
+        "safe_vertices": 173,
+        "shortest_odd_cycle": null,
+        "trigger_edges": 108,
+        "trigger_triangles": 0,
+        "trigger_wedges": 926
+      }
+    },
+    {
+      "graph_artifact": "results/local-20260831/P334-cooperative-closure/trigger_graph_raw/N425-second-43042505280.json",
+      "selection": "existing_N425_B",
+      "source_row": {
+        "H2": 0,
+        "H2_direction_mixed": 0,
+        "H2_direction_negative": 0,
+        "H2_direction_positive": 0,
+        "H2_figure8": 0,
+        "H2_separate": 0,
+        "H2_theta": 0,
+        "a": 19,
+        "age_steps": 10,
+        "articulation_vertices": 32,
+        "b": 8,
+        "batch": 5,
+        "boundary_axis_imbalance": 2,
+        "boundary_contact_pairs": 106,
+        "boundary_corner_balance": 52,
+        "boundary_cut_edges": 162,
+        "boundary_multicontact_sites": 48,
+        "branch_both_survive": 1,
+        "branch_clone1_survives": 1,
+        "branch_clone2_survives": 1,
+        "branch_common_safe": 1,
+        "branch_q_after_denominator": 172,
+        "branch_q_after_safe_count": 172,
+        "branch_suffix_site1": 386,
+        "branch_suffix_site2": 97,
+        "bridges": 34,
+        "checkpoint_b1_safe_count": 173,
+        "checkpoint_b2_safe_pairs": 14770,
+        "checkpoint_sum_child_b1_sq": 5046876,
+        "core_edges": 100,
+        "core_vertices": 78,
+        "ell_u": 12,
+        "ell_v": -19,
+        "essential_carriers": 1,
+        "essential_size": 103,
+        "frontier_component_sumsq": 230,
+        "frontier_components": 51,
+        "k0": 252,
+        "k1": 242,
+        "k2": 278,
+        "largest_frontier_component": 6,
+        "n": 425,
+        "next_exit": 0,
+        "next_site": 146,
+        "occupied_frontier": 90,
+        "orientation": "second",
+        "q_after": 1.0,
+        "q_after2": 1.0,
+        "replica": 43042505280,
+        "vacant_frontier": 88
+      },
+      "structure": {
+        "bipartite": true,
+        "components_with_edges": [
+          {
+            "bipartite": true,
+            "chain_ferrers": false,
+            "edges": 108,
+            "side_degree_sequences": [
+              [
+                29,
+                25,
+                25,
+                25,
+                4
+              ],
+              [
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                2,
+                2,
+                2,
+                2
+              ]
+            ],
+            "sides": [
+              [
+                8,
+                121,
+                166,
+                277,
+                390
+              ],
+              [
+                15,
+                26,
+                29,
+                59,
+                91,
+                94,
+                106,
+                129,
+                135,
+                156,
+                170,
+                182,
+                184,
+                217,
+                242,
+                243,
+                244,
+                245,
+                248,
+                250,
+                264,
+                265,
+                284,
+                291,
+                312,
+                398,
+                403,
+                406,
+                423
+              ]
+            ],
+            "vertices": [
+              8,
+              15,
+              26,
+              29,
+              59,
+              91,
+              94,
+              106,
+              121,
+              129,
+              135,
+              156,
+              166,
+              170,
+              182,
+              184,
+              217,
+              242,
+              243,
+              244,
+              245,
+              248,
+              250,
+              264,
+              265,
+              277,
+              284,
+              291,
+              312,
+              390,
+              398,
+              403,
+              406,
+              423
+            ]
+          }
+        ],
+        "every_connected_component_chain_ferrers": false,
+        "isolated_vertices": 139,
+        "non_nested_neighborhood_witness": {
+          "component_vertices": [
+            8,
+            15,
+            26,
+            29,
+            59,
+            91,
+            94,
+            106,
+            121,
+            129,
+            135,
+            156,
+            166,
+            170,
+            182,
+            184,
+            217,
+            242,
+            243,
+            244,
+            245,
+            248,
+            250,
+            264,
+            265,
+            277,
+            284,
+            291,
+            312,
+            390,
+            398,
+            403,
+            406,
+            423
+          ],
+          "exclusive_neighbors": [
+            15,
+            26
+          ],
+          "minimal_witness_size": 4,
+          "neighborhoods": {
+            "390": [
+              26,
+              29,
+              182,
+              184
+            ],
+            "8": [
+              15,
+              59,
+              91,
+              94,
+              106,
+              129,
+              135,
+              156,
+              170,
+              217,
+              242,
+              243,
+              244,
+              245,
+              248,
+              250,
+              264,
+              265,
+              284,
+              291,
+              312,
+              398,
+              403,
+              406,
+              423
+            ]
+          },
+          "safe_cross_pairs": [
+            [
+              8,
+              26
+            ],
+            [
+              390,
+              15
+            ]
+          ],
+          "same_component_shortest_path": [
+            8,
+            15,
+            121,
+            26,
+            390
+          ],
+          "same_side_sites": [
+            8,
+            390
+          ],
+          "trigger_pairs": [
+            [
+              8,
+              15
+            ],
+            [
+              390,
+              26
+            ]
+          ]
+        },
+        "nonisolated_components": 1,
+        "safe_vertices": 173,
+        "shortest_odd_cycle": null,
+        "trigger_edges": 108,
+        "trigger_triangles": 0,
+        "trigger_wedges": 1466
+      }
+    }
+  ],
+  "schema": "matching-one/p334-trigger-graph-two-class-check/v1",
+  "scope": "existing",
+  "selection_rule": "Two saved N425 witnesses, then (if bounded) the five lowest eligible counters in each of N325/N425 first/second. Eligible means an archived rank-one checkpoint with at least one minimal trigger pair; no graph-property screening.",
+  "summary": {
+    "bipartite_pass": 2,
+    "component_chain_pass": 0,
+    "graphs": 2
+  },
+  "tested_classes_only": [
+    "bipartite",
+    "each connected component is chain/Ferrers"
+  ]
+}

@@ -1,0 +1,5431 @@
+{
+  "chain_definition": "Within each connected bipartite component, neighborhoods of every same-side vertex pair must be nested; disjoint 2K2 across different components is allowed.",
+  "claim_boundary": "A fixed small real-checkpoint census, not an all-configuration theorem, universality law, classifier search, or population prevalence estimate. All graphs reuse existing production checkpoints.",
+  "new_samples": 0,
+  "posthoc_two_saved_graph_bipartite_baseline": {
+    "excess_difference_B_minus_A": {
+      "decimal": 86.37125748502994,
+      "denominator": 167,
+      "numerator": 14424,
+      "text": "14424/167"
+    },
+    "expected_difference_B_minus_A": {
+      "decimal": 453.62874251497004,
+      "denominator": 167,
+      "numerator": 75756,
+      "text": "75756/167"
+    },
+    "expected_fraction_of_observed_difference": {
+      "decimal": 0.8400532268795742,
+      "denominator": 7515,
+      "numerator": 6313,
+      "text": "6313/7515"
+    },
+    "interpretation": "Posthoc structural arithmetic on the two already selected graphs, conditional on each component's bipartition sizes and edge count. Not a new independent test or causal attribution.",
+    "observed_difference_B_minus_A": 540,
+    "rows": {
+      "existing_N425_A": {
+        "componentwise_uniform_bipartite_expected": {
+          "decimal": 830.3712574850299,
+          "denominator": 167,
+          "numerator": 138672,
+          "text": "138672/167"
+        },
+        "excess": {
+          "decimal": 95.62874251497006,
+          "denominator": 167,
+          "numerator": 15970,
+          "text": "15970/167"
+        },
+        "observed_wedges": 926
+      },
+      "existing_N425_B": {
+        "componentwise_uniform_bipartite_expected": {
+          "decimal": 1284.0,
+          "denominator": 1,
+          "numerator": 1284,
+          "text": "1284"
+        },
+        "excess": {
+          "decimal": 182.0,
+          "denominator": 1,
+          "numerator": 182,
+          "text": "182"
+        },
+        "observed_wedges": 1466
+      }
+    }
+  },
+  "records": [
+    {
+      "graph_artifact": "results/local-20260831/P334-cooperative-closure/trigger_graph_raw/N425-second-43042514269.json",
+      "selection": "existing_N425_A",
+      "source_row": {
+        "H2": 0,
+        "H2_direction_mixed": 0,
+        "H2_direction_negative": 0,
+        "H2_direction_positive": 0,
+        "H2_figure8": 0,
+        "H2_separate": 0,
+        "H2_theta": 0,
+        "a": 19,
+        "age_steps": 10,
+        "articulation_vertices": 42,
+        "b": 8,
+        "batch": 14,
+        "boundary_axis_imbalance": 14,
+        "boundary_contact_pairs": 189,
+        "boundary_corner_balance": 81,
+        "boundary_cut_edges": 250,
+        "boundary_multicontact_sites": 79,
+        "branch_both_survive": 1,
+        "branch_clone1_survives": 1,
+        "branch_clone2_survives": 1,
+        "branch_common_safe": 1,
+        "branch_q_after_denominator": 172,
+        "branch_q_after_safe_count": 172,
+        "branch_suffix_site1": 174,
+        "branch_suffix_site2": 59,
+        "bridges": 43,
+        "checkpoint_b1_safe_count": 173,
+        "checkpoint_b2_safe_pairs": 14770,
+        "checkpoint_sum_child_b1_sq": 5045796,
+        "core_edges": 164,
+        "core_vertices": 128,
+        "ell_u": 12,
+        "ell_v": -19,
+        "essential_carriers": 1,
+        "essential_size": 161,
+        "frontier_component_sumsq": 401,
+        "frontier_components": 56,
+        "k0": 252,
+        "k1": 242,
+        "k2": 261,
+        "largest_frontier_component": 7,
+        "n": 425,
+        "next_exit": 0,
+        "next_site": 370,
+        "occupied_frontier": 145,
+        "orientation": "second",
+        "q_after": 1.0,
+        "q_after2": 1.0,
+        "replica": 43042514269,
+        "vacant_frontier": 121
+      },
+      "structure": {
+        "bipartite": true,
+        "components_with_edges": [
+          {
+            "bipartite": true,
+            "chain_ferrers": false,
+            "edges": 108,
+            "side_degree_sequences": [
+              [
+                12,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                8,
+                4,
+                4
+              ],
+              [
+                12,
+                12,
+                12,
+                12,
+                12,
+                12,
+                12,
+                12,
+                3,
+                3,
+                3,
+                3
+              ]
+            ],
+            "sides": [
+              [
+                1,
+                47,
+                91,
+                129,
+                159,
+                200,
+                241,
+                269,
+                286,
+                315,
+                355,
+                356,
+                358,
+                398
+              ],
+              [
+                6,
+                27,
+                50,
+                94,
+                140,
+                162,
+                207,
+                251,
+                274,
+                296,
+                363,
+                409
+              ]
+            ],
+            "vertices": [
+              1,
+              6,
+              27,
+              47,
+              50,
+              91,
+              94,
+              129,
+              140,
+              159,
+              162,
+              200,
+              207,
+              241,
+              251,
+              269,
+              274,
+              286,
+              296,
+              315,
+              355,
+              356,
+              358,
+              363,
+              398,
+              409
+            ]
+          }
+        ],
+        "every_connected_component_chain_ferrers": false,
+        "isolated_vertices": 147,
+        "non_nested_neighborhood_witness": {
+          "component_vertices": [
+            1,
+            6,
+            27,
+            47,
+            50,
+            91,
+            94,
+            129,
+            140,
+            159,
+            162,
+            200,
+            207,
+            241,
+            251,
+            269,
+            274,
+            286,
+            296,
+            315,
+            355,
+            356,
+            358,
+            363,
+            398,
+            409
+          ],
+          "exclusive_neighbors": [
+            6,
+            50
+          ],
+          "minimal_witness_size": 4,
+          "neighborhoods": {
+            "1": [
+              6,
+              27,
+              140,
+              162,
+              251,
+              274,
+              296,
+              409
+            ],
+            "47": [
+              50,
+              94,
+              207,
+              363
+            ]
+          },
+          "safe_cross_pairs": [
+            [
+              1,
+              50
+            ],
+            [
+              47,
+              6
+            ]
+          ],
+          "same_component_shortest_path": [
+            1,
+            6,
+            159,
+            50,
+            47
+          ],
+          "same_side_sites": [
+            1,
+            47
+          ],
+          "trigger_pairs": [
+            [
+              1,
+              6
+            ],
+            [
+              47,
+              50
+            ]
+          ]
+        },
+        "nonisolated_components": 1,
+        "safe_vertices": 173,
+        "shortest_odd_cycle": null,
+        "trigger_edges": 108,
+        "trigger_triangles": 0,
+        "trigger_wedges": 926
+      }
+    },
+    {
+      "graph_artifact": "results/local-20260831/P334-cooperative-closure/trigger_graph_raw/N425-second-43042505280.json",
+      "selection": "existing_N425_B",
+      "source_row": {
+        "H2": 0,
+        "H2_direction_mixed": 0,
+        "H2_direction_negative": 0,
+        "H2_direction_positive": 0,
+        "H2_figure8": 0,
+        "H2_separate": 0,
+        "H2_theta": 0,
+        "a": 19,
+        "age_steps": 10,
+        "articulation_vertices": 32,
+        "b": 8,
+        "batch": 5,
+        "boundary_axis_imbalance": 2,
+        "boundary_contact_pairs": 106,
+        "boundary_corner_balance": 52,
+        "boundary_cut_edges": 162,
+        "boundary_multicontact_sites": 48,
+        "branch_both_survive": 1,
+        "branch_clone1_survives": 1,
+        "branch_clone2_survives": 1,
+        "branch_common_safe": 1,
+        "branch_q_after_denominator": 172,
+        "branch_q_after_safe_count": 172,
+        "branch_suffix_site1": 386,
+        "branch_suffix_site2": 97,
+        "bridges": 34,
+        "checkpoint_b1_safe_count": 173,
+        "checkpoint_b2_safe_pairs": 14770,
+        "checkpoint_sum_child_b1_sq": 5046876,
+        "core_edges": 100,
+        "core_vertices": 78,
+        "ell_u": 12,
+        "ell_v": -19,
+        "essential_carriers": 1,
+        "essential_size": 103,
+        "frontier_component_sumsq": 230,
+        "frontier_components": 51,
+        "k0": 252,
+        "k1": 242,
+        "k2": 278,
+        "largest_frontier_component": 6,
+        "n": 425,
+        "next_exit": 0,
+        "next_site": 146,
+        "occupied_frontier": 90,
+        "orientation": "second",
+        "q_after": 1.0,
+        "q_after2": 1.0,
+        "replica": 43042505280,
+        "vacant_frontier": 88
+      },
+      "structure": {
+        "bipartite": true,
+        "components_with_edges": [
+          {
+            "bipartite": true,
+            "chain_ferrers": false,
+            "edges": 108,
+            "side_degree_sequences": [
+              [
+                29,
+                25,
+                25,
+                25,
+                4
+              ],
+              [
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                2,
+                2,
+                2,
+                2
+              ]
+            ],
+            "sides": [
+              [
+                8,
+                121,
+                166,
+                277,
+                390
+              ],
+              [
+                15,
+                26,
+                29,
+                59,
+                91,
+                94,
+                106,
+                129,
+                135,
+                156,
+                170,
+                182,
+                184,
+                217,
+                242,
+                243,
+                244,
+                245,
+                248,
+                250,
+                264,
+                265,
+                284,
+                291,
+                312,
+                398,
+                403,
+                406,
+                423
+              ]
+            ],
+            "vertices": [
+              8,
+              15,
+              26,
+              29,
+              59,
+              91,
+              94,
+              106,
+              121,
+              129,
+              135,
+              156,
+              166,
+              170,
+              182,
+              184,
+              217,
+              242,
+              243,
+              244,
+              245,
+              248,
+              250,
+              264,
+              265,
+              277,
+              284,
+              291,
+              312,
+              390,
+              398,
+              403,
+              406,
+              423
+            ]
+          }
+        ],
+        "every_connected_component_chain_ferrers": false,
+        "isolated_vertices": 139,
+        "non_nested_neighborhood_witness": {
+          "component_vertices": [
+            8,
+            15,
+            26,
+            29,
+            59,
+            91,
+            94,
+            106,
+            121,
+            129,
+            135,
+            156,
+            166,
+            170,
+            182,
+            184,
+            217,
+            242,
+            243,
+            244,
+            245,
+            248,
+            250,
+            264,
+            265,
+            277,
+            284,
+            291,
+            312,
+            390,
+            398,
+            403,
+            406,
+            423
+          ],
+          "exclusive_neighbors": [
+            15,
+            26
+          ],
+          "minimal_witness_size": 4,
+          "neighborhoods": {
+            "390": [
+              26,
+              29,
+              182,
+              184
+            ],
+            "8": [
+              15,
+              59,
+              91,
+              94,
+              106,
+              129,
+              135,
+              156,
+              170,
+              217,
+              242,
+              243,
+              244,
+              245,
+              248,
+              250,
+              264,
+              265,
+              284,
+              291,
+              312,
+              398,
+              403,
+              406,
+              423
+            ]
+          },
+          "safe_cross_pairs": [
+            [
+              8,
+              26
+            ],
+            [
+              390,
+              15
+            ]
+          ],
+          "same_component_shortest_path": [
+            8,
+            15,
+            121,
+            26,
+            390
+          ],
+          "same_side_sites": [
+            8,
+            390
+          ],
+          "trigger_pairs": [
+            [
+              8,
+              15
+            ],
+            [
+              390,
+              26
+            ]
+          ]
+        },
+        "nonisolated_components": 1,
+        "safe_vertices": 173,
+        "shortest_odd_cycle": null,
+        "trigger_edges": 108,
+        "trigger_triangles": 0,
+        "trigger_wedges": 1466
+      }
+    },
+    {
+      "graph_artifact": "results/local-20260831/P334-cooperative-closure/trigger_graph_raw/N325-first-43032500005.json",
+      "selection": "first5_N325_first_43032500005",
+      "source_row": {
+        "H2": "9",
+        "H2_direction_mixed": "0",
+        "H2_direction_negative": "0",
+        "H2_direction_positive": "9",
+        "H2_figure8": "0",
+        "H2_separate": "0",
+        "H2_theta": "9",
+        "a": "17",
+        "age_steps": "0",
+        "articulation_vertices": "40",
+        "b": "6",
+        "batch": "0",
+        "boundary_axis_imbalance": "-4",
+        "boundary_contact_pairs": "175",
+        "boundary_corner_balance": "59",
+        "boundary_cut_edges": "248",
+        "boundary_multicontact_sites": "88",
+        "branch_both_survive": "1",
+        "branch_clone1_survives": "1",
+        "branch_clone2_survives": "1",
+        "branch_common_safe": "1",
+        "branch_q_after_denominator": "131",
+        "branch_q_after_safe_count": "121",
+        "branch_suffix_site1": "47",
+        "branch_suffix_site2": "258",
+        "bridges": "38",
+        "checkpoint_b1_safe_count": "123",
+        "checkpoint_b2_safe_pairs": "7496",
+        "checkpoint_sum_child_b1_sq": "1827336",
+        "core_edges": "212",
+        "core_vertices": "153",
+        "ell_u": "1",
+        "ell_v": "-6",
+        "essential_carriers": "1",
+        "essential_size": "183",
+        "frontier_component_sumsq": "896",
+        "frontier_components": "30",
+        "k0": "193",
+        "k1": "193",
+        "k2": "203",
+        "largest_frontier_component": "18",
+        "n": "325",
+        "next_exit": "0",
+        "next_site": "71",
+        "occupied_frontier": "152",
+        "orientation": "first",
+        "q_after": "0.923664122137404564",
+        "q_after2": "0.853155410523862234",
+        "replica": "43032500005",
+        "vacant_frontier": "120"
+      },
+      "structure": {
+        "bipartite": true,
+        "components_with_edges": [
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 3,
+            "side_degree_sequences": [
+              [
+                2,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "sides": [
+              [
+                16,
+                285
+              ],
+              [
+                17,
+                73
+              ]
+            ],
+            "vertices": [
+              16,
+              17,
+              73,
+              285
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 1,
+            "side_degree_sequences": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ],
+            "sides": [
+              [
+                27
+              ],
+              [
+                238
+              ]
+            ],
+            "vertices": [
+              27,
+              238
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 1,
+            "side_degree_sequences": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ],
+            "sides": [
+              [
+                71
+              ],
+              [
+                128
+              ]
+            ],
+            "vertices": [
+              71,
+              128
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 2,
+            "side_degree_sequences": [
+              [
+                1,
+                1
+              ],
+              [
+                2
+              ]
+            ],
+            "sides": [
+              [
+                125,
+                181
+              ],
+              [
+                185
+              ]
+            ],
+            "vertices": [
+              125,
+              181,
+              185
+            ]
+          }
+        ],
+        "every_connected_component_chain_ferrers": true,
+        "isolated_vertices": 112,
+        "non_nested_neighborhood_witness": null,
+        "nonisolated_components": 4,
+        "safe_vertices": 123,
+        "shortest_odd_cycle": null,
+        "trigger_edges": 7,
+        "trigger_triangles": 0,
+        "trigger_wedges": 3
+      }
+    },
+    {
+      "graph_artifact": "results/local-20260831/P334-cooperative-closure/trigger_graph_raw/N325-first-43032500012.json",
+      "selection": "first5_N325_first_43032500012",
+      "source_row": {
+        "H2": "7",
+        "H2_direction_mixed": "0",
+        "H2_direction_negative": "0",
+        "H2_direction_positive": "7",
+        "H2_figure8": "0",
+        "H2_separate": "0",
+        "H2_theta": "7",
+        "a": "17",
+        "age_steps": "12",
+        "articulation_vertices": "38",
+        "b": "6",
+        "batch": "0",
+        "boundary_axis_imbalance": "-8",
+        "boundary_contact_pairs": "165",
+        "boundary_corner_balance": "73",
+        "boundary_cut_edges": "240",
+        "boundary_multicontact_sites": "81",
+        "branch_both_survive": "1",
+        "branch_clone1_survives": "1",
+        "branch_clone2_survives": "1",
+        "branch_common_safe": "1",
+        "branch_q_after_denominator": "131",
+        "branch_q_after_safe_count": "124",
+        "branch_suffix_site1": "141",
+        "branch_suffix_site2": "30",
+        "bridges": "36",
+        "checkpoint_b1_safe_count": "125",
+        "checkpoint_b2_safe_pairs": "7718",
+        "checkpoint_sum_child_b1_sq": "1906318",
+        "core_edges": "200",
+        "core_vertices": "149",
+        "ell_u": "1",
+        "ell_v": "-6",
+        "essential_carriers": "1",
+        "essential_size": "171",
+        "frontier_component_sumsq": "485",
+        "frontier_components": "48",
+        "k0": "193",
+        "k1": "181",
+        "k2": "195",
+        "largest_frontier_component": "9",
+        "n": "325",
+        "next_exit": "0",
+        "next_site": "135",
+        "occupied_frontier": "143",
+        "orientation": "first",
+        "q_after": "0.946564885496183228",
+        "q_after2": "0.895985082454402448",
+        "replica": "43032500012",
+        "vacant_frontier": "119"
+      },
+      "structure": {
+        "bipartite": true,
+        "components_with_edges": [
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 16,
+            "side_degree_sequences": [
+              [
+                4,
+                3,
+                3,
+                3,
+                1,
+                1,
+                1
+              ],
+              [
+                7,
+                4,
+                4,
+                1
+              ]
+            ],
+            "sides": [
+              [
+                0,
+                1,
+                95,
+                152,
+                209,
+                267,
+                270
+              ],
+              [
+                38,
+                39,
+                97,
+                155
+              ]
+            ],
+            "vertices": [
+              0,
+              1,
+              38,
+              39,
+              95,
+              97,
+              152,
+              155,
+              209,
+              267,
+              270
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 3,
+            "side_degree_sequences": [
+              [
+                2,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "sides": [
+              [
+                34,
+                303
+              ],
+              [
+                35,
+                91
+              ]
+            ],
+            "vertices": [
+              34,
+              35,
+              91,
+              303
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 6,
+            "side_degree_sequences": [
+              [
+                2,
+                2,
+                1,
+                1
+              ],
+              [
+                4,
+                2
+              ]
+            ],
+            "sides": [
+              [
+                87,
+                143,
+                199,
+                257
+              ],
+              [
+                145,
+                201
+              ]
+            ],
+            "vertices": [
+              87,
+              143,
+              145,
+              199,
+              201,
+              257
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 4,
+            "side_degree_sequences": [
+              [
+                2,
+                2
+              ],
+              [
+                2,
+                2
+              ]
+            ],
+            "sides": [
+              [
+                106,
+                162
+              ],
+              [
+                164,
+                220
+              ]
+            ],
+            "vertices": [
+              106,
+              162,
+              164,
+              220
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 1,
+            "side_degree_sequences": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ],
+            "sides": [
+              [
+                161
+              ],
+              [
+                275
+              ]
+            ],
+            "vertices": [
+              161,
+              275
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 1,
+            "side_degree_sequences": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ],
+            "sides": [
+              [
+                214
+              ],
+              [
+                271
+              ]
+            ],
+            "vertices": [
+              214,
+              271
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 1,
+            "side_degree_sequences": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ],
+            "sides": [
+              [
+                259
+              ],
+              [
+                316
+              ]
+            ],
+            "vertices": [
+              259,
+              316
+            ]
+          }
+        ],
+        "every_connected_component_chain_ferrers": true,
+        "isolated_vertices": 94,
+        "non_nested_neighborhood_witness": null,
+        "nonisolated_components": 7,
+        "safe_vertices": 125,
+        "shortest_odd_cycle": null,
+        "trigger_edges": 32,
+        "trigger_triangles": 0,
+        "trigger_wedges": 63
+      }
+    },
+    {
+      "graph_artifact": "results/local-20260831/P334-cooperative-closure/trigger_graph_raw/N325-first-43032500019.json",
+      "selection": "first5_N325_first_43032500019",
+      "source_row": {
+        "H2": "16",
+        "H2_direction_mixed": "0",
+        "H2_direction_negative": "16",
+        "H2_direction_positive": "0",
+        "H2_figure8": "0",
+        "H2_separate": "0",
+        "H2_theta": "16",
+        "a": "17",
+        "age_steps": "15",
+        "articulation_vertices": "53",
+        "b": "6",
+        "batch": "0",
+        "boundary_axis_imbalance": "-2",
+        "boundary_contact_pairs": "210",
+        "boundary_corner_balance": "76",
+        "boundary_cut_edges": "262",
+        "boundary_multicontact_sites": "90",
+        "branch_both_survive": "1",
+        "branch_clone1_survives": "1",
+        "branch_clone2_survives": "1",
+        "branch_common_safe": "1",
+        "branch_q_after_denominator": "131",
+        "branch_q_after_safe_count": "115",
+        "branch_suffix_site1": "230",
+        "branch_suffix_site2": "298",
+        "bridges": "54",
+        "checkpoint_b1_safe_count": "116",
+        "checkpoint_b2_safe_pairs": "6650",
+        "checkpoint_sum_child_b1_sq": "1525058",
+        "core_edges": "160",
+        "core_vertices": "124",
+        "ell_u": "3",
+        "ell_v": "-17",
+        "essential_carriers": "1",
+        "essential_size": "167",
+        "frontier_component_sumsq": "485",
+        "frontier_components": "48",
+        "k0": "193",
+        "k1": "178",
+        "k2": "197",
+        "largest_frontier_component": "9",
+        "n": "325",
+        "next_exit": "0",
+        "next_site": "259",
+        "occupied_frontier": "147",
+        "orientation": "first",
+        "q_after": "0.877862595419847347",
+        "q_after2": "0.770642736437270548",
+        "replica": "43032500019",
+        "vacant_frontier": "117"
+      },
+      "structure": {
+        "bipartite": true,
+        "components_with_edges": [
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 15,
+            "side_degree_sequences": [
+              [
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                1
+              ],
+              [
+                8,
+                7
+              ]
+            ],
+            "sides": [
+              [
+                3,
+                154,
+                156,
+                210,
+                213,
+                231,
+                267,
+                271
+              ],
+              [
+                172,
+                230
+              ]
+            ],
+            "vertices": [
+              3,
+              154,
+              156,
+              172,
+              210,
+              213,
+              230,
+              231,
+              267,
+              271
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 3,
+            "side_degree_sequences": [
+              [
+                2,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "sides": [
+              [
+                16,
+                17
+              ],
+              [
+                74,
+                130
+              ]
+            ],
+            "vertices": [
+              16,
+              17,
+              74,
+              130
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 2,
+            "side_degree_sequences": [
+              [
+                1,
+                1
+              ],
+              [
+                2
+              ]
+            ],
+            "sides": [
+              [
+                241,
+                299
+              ],
+              [
+                242
+              ]
+            ],
+            "vertices": [
+              241,
+              242,
+              299
+            ]
+          }
+        ],
+        "every_connected_component_chain_ferrers": true,
+        "isolated_vertices": 99,
+        "non_nested_neighborhood_witness": null,
+        "nonisolated_components": 3,
+        "safe_vertices": 116,
+        "shortest_odd_cycle": null,
+        "trigger_edges": 20,
+        "trigger_triangles": 0,
+        "trigger_wedges": 59
+      }
+    },
+    {
+      "graph_artifact": "results/local-20260831/P334-cooperative-closure/trigger_graph_raw/N325-first-43032500020.json",
+      "selection": "first5_N325_first_43032500020",
+      "source_row": {
+        "H2": "6",
+        "H2_direction_mixed": "0",
+        "H2_direction_negative": "0",
+        "H2_direction_positive": "6",
+        "H2_figure8": "0",
+        "H2_separate": "0",
+        "H2_theta": "6",
+        "a": "17",
+        "age_steps": "22",
+        "articulation_vertices": "31",
+        "b": "6",
+        "batch": "0",
+        "boundary_axis_imbalance": "8",
+        "boundary_contact_pairs": "131",
+        "boundary_corner_balance": "53",
+        "boundary_cut_edges": "196",
+        "boundary_multicontact_sites": "63",
+        "branch_both_survive": "1",
+        "branch_clone1_survives": "1",
+        "branch_clone2_survives": "1",
+        "branch_common_safe": "1",
+        "branch_q_after_denominator": "131",
+        "branch_q_after_safe_count": "123",
+        "branch_suffix_site1": "313",
+        "branch_suffix_site2": "292",
+        "bridges": "33",
+        "checkpoint_b1_safe_count": "126",
+        "checkpoint_b2_safe_pairs": "7829",
+        "checkpoint_sum_child_b1_sq": "1946242",
+        "core_edges": "150",
+        "core_vertices": "110",
+        "ell_u": "4",
+        "ell_v": "-23",
+        "essential_carriers": "1",
+        "essential_size": "138",
+        "frontier_component_sumsq": "377",
+        "frontier_components": "43",
+        "k0": "193",
+        "k1": "171",
+        "k2": "207",
+        "largest_frontier_component": "8",
+        "n": "325",
+        "next_exit": "0",
+        "next_site": "102",
+        "occupied_frontier": "120",
+        "orientation": "first",
+        "q_after": "0.938931297709923673",
+        "q_after2": "0.881591981819241366",
+        "replica": "43032500020",
+        "vacant_frontier": "101"
+      },
+      "structure": {
+        "bipartite": true,
+        "components_with_edges": [
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 26,
+            "side_degree_sequences": [
+              [
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2
+              ],
+              [
+                13,
+                13
+              ]
+            ],
+            "sides": [
+              [
+                23,
+                38,
+                39,
+                62,
+                79,
+                120,
+                137,
+                177,
+                234,
+                292,
+                300,
+                301,
+                308
+              ],
+              [
+                129,
+                186
+              ]
+            ],
+            "vertices": [
+              23,
+              38,
+              39,
+              62,
+              79,
+              120,
+              129,
+              137,
+              177,
+              186,
+              234,
+              292,
+              300,
+              301,
+              308
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 6,
+            "side_degree_sequences": [
+              [
+                3,
+                3
+              ],
+              [
+                2,
+                2,
+                2
+              ]
+            ],
+            "sides": [
+              [
+                43,
+                312
+              ],
+              [
+                46,
+                102,
+                313
+              ]
+            ],
+            "vertices": [
+              43,
+              46,
+              102,
+              312,
+              313
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 9,
+            "side_degree_sequences": [
+              [
+                2,
+                2,
+                2,
+                2,
+                1
+              ],
+              [
+                5,
+                4
+              ]
+            ],
+            "sides": [
+              [
+                123,
+                124,
+                125,
+                179,
+                237
+              ],
+              [
+                182,
+                238
+              ]
+            ],
+            "vertices": [
+              123,
+              124,
+              125,
+              179,
+              182,
+              237,
+              238
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 1,
+            "side_degree_sequences": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ],
+            "sides": [
+              [
+                126
+              ],
+              [
+                183
+              ]
+            ],
+            "vertices": [
+              126,
+              183
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 1,
+            "side_degree_sequences": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ],
+            "sides": [
+              [
+                140
+              ],
+              [
+                141
+              ]
+            ],
+            "vertices": [
+              140,
+              141
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 3,
+            "side_degree_sequences": [
+              [
+                2,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "sides": [
+              [
+                157,
+                213
+              ],
+              [
+                158,
+                272
+              ]
+            ],
+            "vertices": [
+              157,
+              158,
+              213,
+              272
+            ]
+          }
+        ],
+        "every_connected_component_chain_ferrers": true,
+        "isolated_vertices": 91,
+        "non_nested_neighborhood_witness": null,
+        "nonisolated_components": 6,
+        "safe_vertices": 126,
+        "shortest_odd_cycle": null,
+        "trigger_edges": 46,
+        "trigger_triangles": 0,
+        "trigger_wedges": 200
+      }
+    },
+    {
+      "graph_artifact": "results/local-20260831/P334-cooperative-closure/trigger_graph_raw/N325-first-43032500023.json",
+      "selection": "first5_N325_first_43032500023",
+      "source_row": {
+        "H2": "7",
+        "H2_direction_mixed": "0",
+        "H2_direction_negative": "0",
+        "H2_direction_positive": "7",
+        "H2_figure8": "0",
+        "H2_separate": "0",
+        "H2_theta": "7",
+        "a": "17",
+        "age_steps": "39",
+        "articulation_vertices": "61",
+        "b": "6",
+        "batch": "0",
+        "boundary_axis_imbalance": "-4",
+        "boundary_contact_pairs": "196",
+        "boundary_corner_balance": "78",
+        "boundary_cut_edges": "256",
+        "boundary_multicontact_sites": "81",
+        "branch_both_survive": "1",
+        "branch_clone1_survives": "1",
+        "branch_clone2_survives": "1",
+        "branch_common_safe": "1",
+        "branch_q_after_denominator": "131",
+        "branch_q_after_safe_count": "124",
+        "branch_suffix_site1": "280",
+        "branch_suffix_site2": "157",
+        "bridges": "59",
+        "checkpoint_b1_safe_count": "125",
+        "checkpoint_b2_safe_pairs": "7726",
+        "checkpoint_sum_child_b1_sq": "1910224",
+        "core_edges": "171",
+        "core_vertices": "127",
+        "ell_u": "1",
+        "ell_v": "-6",
+        "essential_carriers": "1",
+        "essential_size": "172",
+        "frontier_component_sumsq": "580",
+        "frontier_components": "46",
+        "k0": "193",
+        "k1": "154",
+        "k2": "216",
+        "largest_frontier_component": "12",
+        "n": "325",
+        "next_exit": "0",
+        "next_site": "232",
+        "occupied_frontier": "146",
+        "orientation": "first",
+        "q_after": "0.946564885496183228",
+        "q_after2": "0.895985082454402448",
+        "replica": "43032500023",
+        "vacant_frontier": "122"
+      },
+      "structure": {
+        "bipartite": true,
+        "components_with_edges": [
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 10,
+            "side_degree_sequences": [
+              [
+                3,
+                3,
+                3,
+                1
+              ],
+              [
+                4,
+                3,
+                3
+              ]
+            ],
+            "sides": [
+              [
+                35,
+                91,
+                94,
+                148
+              ],
+              [
+                149,
+                151,
+                207
+              ]
+            ],
+            "vertices": [
+              35,
+              91,
+              94,
+              148,
+              149,
+              151,
+              207
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 3,
+            "side_degree_sequences": [
+              [
+                2,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "sides": [
+              [
+                48,
+                106
+              ],
+              [
+                50,
+                163
+              ]
+            ],
+            "vertices": [
+              48,
+              50,
+              106,
+              163
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": false,
+            "edges": 11,
+            "side_degree_sequences": [
+              [
+                3,
+                3,
+                2,
+                2,
+                1
+              ],
+              [
+                4,
+                2,
+                2,
+                2,
+                1
+              ]
+            ],
+            "sides": [
+              [
+                97,
+                99,
+                153,
+                157,
+                158
+              ],
+              [
+                210,
+                213,
+                214,
+                269,
+                272
+              ]
+            ],
+            "vertices": [
+              97,
+              99,
+              153,
+              157,
+              158,
+              210,
+              213,
+              214,
+              269,
+              272
+            ]
+          }
+        ],
+        "every_connected_component_chain_ferrers": false,
+        "isolated_vertices": 104,
+        "non_nested_neighborhood_witness": {
+          "component_vertices": [
+            97,
+            99,
+            153,
+            157,
+            158,
+            210,
+            213,
+            214,
+            269,
+            272
+          ],
+          "exclusive_neighbors": [
+            210,
+            214
+          ],
+          "minimal_witness_size": 4,
+          "neighborhoods": {
+            "157": [
+              213,
+              214
+            ],
+            "97": [
+              210,
+              213,
+              269
+            ]
+          },
+          "safe_cross_pairs": [
+            [
+              97,
+              214
+            ],
+            [
+              157,
+              210
+            ]
+          ],
+          "same_component_shortest_path": [
+            97,
+            213,
+            157
+          ],
+          "same_side_sites": [
+            97,
+            157
+          ],
+          "trigger_pairs": [
+            [
+              97,
+              210
+            ],
+            [
+              157,
+              214
+            ]
+          ]
+        },
+        "nonisolated_components": 3,
+        "safe_vertices": 125,
+        "shortest_odd_cycle": null,
+        "trigger_edges": 24,
+        "trigger_triangles": 0,
+        "trigger_wedges": 40
+      }
+    },
+    {
+      "graph_artifact": "results/local-20260831/P334-cooperative-closure/trigger_graph_raw/N325-second-43032500001.json",
+      "selection": "first5_N325_second_43032500001",
+      "source_row": {
+        "H2": "16",
+        "H2_direction_mixed": "1",
+        "H2_direction_negative": "11",
+        "H2_direction_positive": "4",
+        "H2_figure8": "0",
+        "H2_separate": "0",
+        "H2_theta": "16",
+        "a": "18",
+        "age_steps": "18",
+        "articulation_vertices": "47",
+        "b": "1",
+        "batch": "0",
+        "boundary_axis_imbalance": "16",
+        "boundary_contact_pairs": "235",
+        "boundary_corner_balance": "85",
+        "boundary_cut_edges": "272",
+        "boundary_multicontact_sites": "88",
+        "branch_both_survive": "1",
+        "branch_clone1_survives": "1",
+        "branch_clone2_survives": "1",
+        "branch_common_safe": "1",
+        "branch_q_after_denominator": "131",
+        "branch_q_after_safe_count": "114",
+        "branch_suffix_site1": "196",
+        "branch_suffix_site2": "274",
+        "bridges": "51",
+        "checkpoint_b1_safe_count": "116",
+        "checkpoint_b2_safe_pairs": "6657",
+        "checkpoint_sum_child_b1_sq": "1528166",
+        "core_edges": "176",
+        "core_vertices": "131",
+        "ell_u": "1",
+        "ell_v": "-17",
+        "essential_carriers": "1",
+        "essential_size": "181",
+        "frontier_component_sumsq": "481",
+        "frontier_components": "51",
+        "k0": "193",
+        "k1": "175",
+        "k2": "196",
+        "largest_frontier_component": "10",
+        "n": "325",
+        "next_exit": "0",
+        "next_site": "82",
+        "occupied_frontier": "154",
+        "orientation": "second",
+        "q_after": "0.870229007633587792",
+        "q_after2": "0.757298525726939009",
+        "replica": "43032500001",
+        "vacant_frontier": "117"
+      },
+      "structure": {
+        "bipartite": true,
+        "components_with_edges": [
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 2,
+            "side_degree_sequences": [
+              [
+                1,
+                1
+              ],
+              [
+                2
+              ]
+            ],
+            "sides": [
+              [
+                9,
+                315
+              ],
+              [
+                318
+              ]
+            ],
+            "vertices": [
+              9,
+              315,
+              318
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 1,
+            "side_degree_sequences": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ],
+            "sides": [
+              [
+                28
+              ],
+              [
+                29
+              ]
+            ],
+            "vertices": [
+              28,
+              29
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": false,
+            "edges": 5,
+            "side_degree_sequences": [
+              [
+                3,
+                1,
+                1
+              ],
+              [
+                2,
+                2,
+                1
+              ]
+            ],
+            "sides": [
+              [
+                46,
+                65,
+                82
+              ],
+              [
+                47,
+                66,
+                83
+              ]
+            ],
+            "vertices": [
+              46,
+              47,
+              65,
+              66,
+              82,
+              83
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 4,
+            "side_degree_sequences": [
+              [
+                2,
+                2
+              ],
+              [
+                2,
+                2
+              ]
+            ],
+            "sides": [
+              [
+                137,
+                156
+              ],
+              [
+                174,
+                191
+              ]
+            ],
+            "vertices": [
+              137,
+              156,
+              174,
+              191
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 1,
+            "side_degree_sequences": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ],
+            "sides": [
+              [
+                261
+              ],
+              [
+                263
+              ]
+            ],
+            "vertices": [
+              261,
+              263
+            ]
+          }
+        ],
+        "every_connected_component_chain_ferrers": false,
+        "isolated_vertices": 99,
+        "non_nested_neighborhood_witness": {
+          "component_vertices": [
+            46,
+            47,
+            65,
+            66,
+            82,
+            83
+          ],
+          "exclusive_neighbors": [
+            47,
+            83
+          ],
+          "minimal_witness_size": 4,
+          "neighborhoods": {
+            "46": [
+              47
+            ],
+            "82": [
+              83
+            ]
+          },
+          "safe_cross_pairs": [
+            [
+              46,
+              83
+            ],
+            [
+              82,
+              47
+            ]
+          ],
+          "same_component_shortest_path": [
+            46,
+            47,
+            65,
+            83,
+            82
+          ],
+          "same_side_sites": [
+            46,
+            82
+          ],
+          "trigger_pairs": [
+            [
+              46,
+              47
+            ],
+            [
+              82,
+              83
+            ]
+          ]
+        },
+        "nonisolated_components": 5,
+        "safe_vertices": 116,
+        "shortest_odd_cycle": null,
+        "trigger_edges": 13,
+        "trigger_triangles": 0,
+        "trigger_wedges": 10
+      }
+    },
+    {
+      "graph_artifact": "results/local-20260831/P334-cooperative-closure/trigger_graph_raw/N325-second-43032500003.json",
+      "selection": "first5_N325_second_43032500003",
+      "source_row": {
+        "H2": "17",
+        "H2_direction_mixed": "0",
+        "H2_direction_negative": "17",
+        "H2_direction_positive": "0",
+        "H2_figure8": "0",
+        "H2_separate": "0",
+        "H2_theta": "17",
+        "a": "18",
+        "age_steps": "16",
+        "articulation_vertices": "70",
+        "b": "1",
+        "batch": "0",
+        "boundary_axis_imbalance": "-20",
+        "boundary_contact_pairs": "225",
+        "boundary_corner_balance": "75",
+        "boundary_cut_edges": "288",
+        "boundary_multicontact_sites": "105",
+        "branch_both_survive": "0",
+        "branch_clone1_survives": "1",
+        "branch_clone2_survives": "0",
+        "branch_common_safe": "1",
+        "branch_q_after_denominator": "131",
+        "branch_q_after_safe_count": "114",
+        "branch_suffix_site1": "159",
+        "branch_suffix_site2": "54",
+        "bridges": "68",
+        "checkpoint_b1_safe_count": "115",
+        "checkpoint_b2_safe_pairs": "6549",
+        "checkpoint_sum_child_b1_sq": "1491820",
+        "core_edges": "183",
+        "core_vertices": "141",
+        "ell_u": "0",
+        "ell_v": "1",
+        "essential_carriers": "1",
+        "essential_size": "186",
+        "frontier_component_sumsq": "682",
+        "frontier_components": "38",
+        "k0": "193",
+        "k1": "177",
+        "k2": "195",
+        "largest_frontier_component": "13",
+        "n": "325",
+        "next_exit": "0",
+        "next_site": "55",
+        "occupied_frontier": "165",
+        "orientation": "second",
+        "q_after": "0.870229007633587792",
+        "q_after2": "0.757298525726939009",
+        "replica": "43032500003",
+        "vacant_frontier": "126"
+      },
+      "structure": {
+        "bipartite": true,
+        "components_with_edges": [
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 1,
+            "side_degree_sequences": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ],
+            "sides": [
+              [
+                14
+              ],
+              [
+                15
+              ]
+            ],
+            "vertices": [
+              14,
+              15
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 1,
+            "side_degree_sequences": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ],
+            "sides": [
+              [
+                20
+              ],
+              [
+                21
+              ]
+            ],
+            "vertices": [
+              20,
+              21
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 3,
+            "side_degree_sequences": [
+              [
+                2,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "sides": [
+              [
+                259,
+                276
+              ],
+              [
+                277,
+                294
+              ]
+            ],
+            "vertices": [
+              259,
+              276,
+              277,
+              294
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 1,
+            "side_degree_sequences": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ],
+            "sides": [
+              [
+                301
+              ],
+              [
+                319
+              ]
+            ],
+            "vertices": [
+              301,
+              319
+            ]
+          }
+        ],
+        "every_connected_component_chain_ferrers": true,
+        "isolated_vertices": 105,
+        "non_nested_neighborhood_witness": null,
+        "nonisolated_components": 4,
+        "safe_vertices": 115,
+        "shortest_odd_cycle": null,
+        "trigger_edges": 6,
+        "trigger_triangles": 0,
+        "trigger_wedges": 2
+      }
+    },
+    {
+      "graph_artifact": "results/local-20260831/P334-cooperative-closure/trigger_graph_raw/N325-second-43032500005.json",
+      "selection": "first5_N325_second_43032500005",
+      "source_row": {
+        "H2": "8",
+        "H2_direction_mixed": "0",
+        "H2_direction_negative": "8",
+        "H2_direction_positive": "0",
+        "H2_figure8": "0",
+        "H2_separate": "0",
+        "H2_theta": "8",
+        "a": "18",
+        "age_steps": "11",
+        "articulation_vertices": "50",
+        "b": "1",
+        "batch": "0",
+        "boundary_axis_imbalance": "-22",
+        "boundary_contact_pairs": "176",
+        "boundary_corner_balance": "60",
+        "boundary_cut_edges": "234",
+        "boundary_multicontact_sites": "70",
+        "branch_both_survive": "1",
+        "branch_clone1_survives": "1",
+        "branch_clone2_survives": "1",
+        "branch_common_safe": "1",
+        "branch_q_after_denominator": "131",
+        "branch_q_after_safe_count": "123",
+        "branch_suffix_site1": "47",
+        "branch_suffix_site2": "258",
+        "bridges": "48",
+        "checkpoint_b1_safe_count": "124",
+        "checkpoint_b2_safe_pairs": "7615",
+        "checkpoint_sum_child_b1_sq": "1870634",
+        "core_edges": "179",
+        "core_vertices": "131",
+        "ell_u": "0",
+        "ell_v": "1",
+        "essential_carriers": "1",
+        "essential_size": "165",
+        "frontier_component_sumsq": "615",
+        "frontier_components": "40",
+        "k0": "193",
+        "k1": "182",
+        "k2": "210",
+        "largest_frontier_component": "11",
+        "n": "325",
+        "next_exit": "0",
+        "next_site": "71",
+        "occupied_frontier": "138",
+        "orientation": "second",
+        "q_after": "0.938931297709923673",
+        "q_after2": "0.881591981819241366",
+        "replica": "43032500005",
+        "vacant_frontier": "115"
+      },
+      "structure": {
+        "bipartite": true,
+        "components_with_edges": [
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 4,
+            "side_degree_sequences": [
+              [
+                3,
+                1
+              ],
+              [
+                2,
+                1,
+                1
+              ]
+            ],
+            "sides": [
+              [
+                85,
+                86
+              ],
+              [
+                103,
+                105,
+                122
+              ]
+            ],
+            "vertices": [
+              85,
+              86,
+              103,
+              105,
+              122
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 5,
+            "side_degree_sequences": [
+              [
+                5
+              ],
+              [
+                1,
+                1,
+                1,
+                1,
+                1
+              ]
+            ],
+            "sides": [
+              [
+                92
+              ],
+              [
+                106,
+                125,
+                126,
+                127,
+                128
+              ]
+            ],
+            "vertices": [
+              92,
+              106,
+              125,
+              126,
+              127,
+              128
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 1,
+            "side_degree_sequences": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ],
+            "sides": [
+              [
+                96
+              ],
+              [
+                114
+              ]
+            ],
+            "vertices": [
+              96,
+              114
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 1,
+            "side_degree_sequences": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ],
+            "sides": [
+              [
+                98
+              ],
+              [
+                116
+              ]
+            ],
+            "vertices": [
+              98,
+              116
+            ]
+          }
+        ],
+        "every_connected_component_chain_ferrers": true,
+        "isolated_vertices": 109,
+        "non_nested_neighborhood_witness": null,
+        "nonisolated_components": 4,
+        "safe_vertices": 124,
+        "shortest_odd_cycle": null,
+        "trigger_edges": 11,
+        "trigger_triangles": 0,
+        "trigger_wedges": 14
+      }
+    },
+    {
+      "graph_artifact": "results/local-20260831/P334-cooperative-closure/trigger_graph_raw/N325-second-43032500008.json",
+      "selection": "first5_N325_second_43032500008",
+      "source_row": {
+        "H2": "13",
+        "H2_direction_mixed": "0",
+        "H2_direction_negative": "0",
+        "H2_direction_positive": "13",
+        "H2_figure8": "0",
+        "H2_separate": "0",
+        "H2_theta": "13",
+        "a": "18",
+        "age_steps": "3",
+        "articulation_vertices": "61",
+        "b": "1",
+        "batch": "0",
+        "boundary_axis_imbalance": "4",
+        "boundary_contact_pairs": "232",
+        "boundary_corner_balance": "82",
+        "boundary_cut_edges": "276",
+        "boundary_multicontact_sites": "93",
+        "branch_both_survive": "1",
+        "branch_clone1_survives": "1",
+        "branch_clone2_survives": "1",
+        "branch_common_safe": "1",
+        "branch_q_after_denominator": "131",
+        "branch_q_after_safe_count": "118",
+        "branch_suffix_site1": "51",
+        "branch_suffix_site2": "262",
+        "bridges": "53",
+        "checkpoint_b1_safe_count": "119",
+        "checkpoint_b2_safe_pairs": "7004",
+        "checkpoint_sum_child_b1_sq": "1649062",
+        "core_edges": "184",
+        "core_vertices": "144",
+        "ell_u": "1",
+        "ell_v": "-18",
+        "essential_carriers": "1",
+        "essential_size": "178",
+        "frontier_component_sumsq": "589",
+        "frontier_components": "49",
+        "k0": "193",
+        "k1": "190",
+        "k2": "199",
+        "largest_frontier_component": "12",
+        "n": "325",
+        "next_exit": "0",
+        "next_site": "298",
+        "occupied_frontier": "158",
+        "orientation": "second",
+        "q_after": "0.9007633587786259",
+        "q_after2": "0.811374628518151564",
+        "replica": "43032500008",
+        "vacant_frontier": "121"
+      },
+      "structure": {
+        "bipartite": true,
+        "components_with_edges": [
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 16,
+            "side_degree_sequences": [
+              [
+                4,
+                4,
+                4,
+                4
+              ],
+              [
+                4,
+                4,
+                4,
+                4
+              ]
+            ],
+            "sides": [
+              [
+                198,
+                199,
+                215,
+                234
+              ],
+              [
+                220,
+                239,
+                256,
+                273
+              ]
+            ],
+            "vertices": [
+              198,
+              199,
+              215,
+              220,
+              234,
+              239,
+              256,
+              273
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 1,
+            "side_degree_sequences": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ],
+            "sides": [
+              [
+                269
+              ],
+              [
+                289
+              ]
+            ],
+            "vertices": [
+              269,
+              289
+            ]
+          }
+        ],
+        "every_connected_component_chain_ferrers": true,
+        "isolated_vertices": 109,
+        "non_nested_neighborhood_witness": null,
+        "nonisolated_components": 2,
+        "safe_vertices": 119,
+        "shortest_odd_cycle": null,
+        "trigger_edges": 17,
+        "trigger_triangles": 0,
+        "trigger_wedges": 48
+      }
+    },
+    {
+      "graph_artifact": "results/local-20260831/P334-cooperative-closure/trigger_graph_raw/N325-second-43032500013.json",
+      "selection": "first5_N325_second_43032500013",
+      "source_row": {
+        "H2": "8",
+        "H2_direction_mixed": "0",
+        "H2_direction_negative": "8",
+        "H2_direction_positive": "0",
+        "H2_figure8": "0",
+        "H2_separate": "0",
+        "H2_theta": "8",
+        "a": "18",
+        "age_steps": "15",
+        "articulation_vertices": "57",
+        "b": "1",
+        "batch": "0",
+        "boundary_axis_imbalance": "-4",
+        "boundary_contact_pairs": "218",
+        "boundary_corner_balance": "90",
+        "boundary_cut_edges": "276",
+        "boundary_multicontact_sites": "96",
+        "branch_both_survive": "1",
+        "branch_clone1_survives": "1",
+        "branch_clone2_survives": "1",
+        "branch_common_safe": "1",
+        "branch_q_after_denominator": "131",
+        "branch_q_after_safe_count": "123",
+        "branch_suffix_site1": "159",
+        "branch_suffix_site2": "93",
+        "bridges": "58",
+        "checkpoint_b1_safe_count": "124",
+        "checkpoint_b2_safe_pairs": "7597",
+        "checkpoint_sum_child_b1_sq": "1861898",
+        "core_edges": "186",
+        "core_vertices": "143",
+        "ell_u": "0",
+        "ell_v": "1",
+        "essential_carriers": "1",
+        "essential_size": "181",
+        "frontier_component_sumsq": "573",
+        "frontier_components": "47",
+        "k0": "193",
+        "k1": "178",
+        "k2": "201",
+        "largest_frontier_component": "10",
+        "n": "325",
+        "next_exit": "0",
+        "next_site": "253",
+        "occupied_frontier": "156",
+        "orientation": "second",
+        "q_after": "0.938931297709923673",
+        "q_after2": "0.881591981819241366",
+        "replica": "43032500013",
+        "vacant_frontier": "125"
+      },
+      "structure": {
+        "bipartite": true,
+        "components_with_edges": [
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 1,
+            "side_degree_sequences": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ],
+            "sides": [
+              [
+                164
+              ],
+              [
+                165
+              ]
+            ],
+            "vertices": [
+              164,
+              165
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": false,
+            "edges": 23,
+            "side_degree_sequences": [
+              [
+                4,
+                4,
+                4,
+                3,
+                3,
+                2,
+                2,
+                1
+              ],
+              [
+                5,
+                4,
+                3,
+                3,
+                3,
+                2,
+                2,
+                1
+              ]
+            ],
+            "sides": [
+              [
+                180,
+                197,
+                212,
+                213,
+                214,
+                228,
+                229,
+                245
+              ],
+              [
+                216,
+                232,
+                233,
+                247,
+                249,
+                263,
+                264,
+                266
+              ]
+            ],
+            "vertices": [
+              180,
+              197,
+              212,
+              213,
+              214,
+              216,
+              228,
+              229,
+              232,
+              233,
+              245,
+              247,
+              249,
+              263,
+              264,
+              266
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 3,
+            "side_degree_sequences": [
+              [
+                2,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "sides": [
+              [
+                206,
+                225
+              ],
+              [
+                242,
+                243
+              ]
+            ],
+            "vertices": [
+              206,
+              225,
+              242,
+              243
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 2,
+            "side_degree_sequences": [
+              [
+                1,
+                1
+              ],
+              [
+                2
+              ]
+            ],
+            "sides": [
+              [
+                221,
+                240
+              ],
+              [
+                222
+              ]
+            ],
+            "vertices": [
+              221,
+              222,
+              240
+            ]
+          }
+        ],
+        "every_connected_component_chain_ferrers": false,
+        "isolated_vertices": 99,
+        "non_nested_neighborhood_witness": {
+          "component_vertices": [
+            180,
+            197,
+            212,
+            213,
+            214,
+            216,
+            228,
+            229,
+            232,
+            233,
+            245,
+            247,
+            249,
+            263,
+            264,
+            266
+          ],
+          "exclusive_neighbors": [
+            216,
+            232
+          ],
+          "minimal_witness_size": 4,
+          "neighborhoods": {
+            "180": [
+              216
+            ],
+            "212": [
+              232,
+              247,
+              249,
+              266
+            ]
+          },
+          "safe_cross_pairs": [
+            [
+              180,
+              232
+            ],
+            [
+              212,
+              216
+            ]
+          ],
+          "same_component_shortest_path": [
+            180,
+            216,
+            214,
+            232,
+            212
+          ],
+          "same_side_sites": [
+            180,
+            212
+          ],
+          "trigger_pairs": [
+            [
+              180,
+              216
+            ],
+            [
+              212,
+              232
+            ]
+          ]
+        },
+        "nonisolated_components": 4,
+        "safe_vertices": 124,
+        "shortest_odd_cycle": null,
+        "trigger_edges": 29,
+        "trigger_triangles": 0,
+        "trigger_wedges": 56
+      }
+    },
+    {
+      "graph_artifact": "results/local-20260831/P334-cooperative-closure/trigger_graph_raw/N425-first-43042500001.json",
+      "selection": "first5_N425_first_43042500001",
+      "source_row": {
+        "H2": "9",
+        "H2_direction_mixed": "0",
+        "H2_direction_negative": "0",
+        "H2_direction_positive": "9",
+        "H2_figure8": "0",
+        "H2_separate": "0",
+        "H2_theta": "9",
+        "a": "16",
+        "age_steps": "6",
+        "articulation_vertices": "60",
+        "b": "13",
+        "batch": "0",
+        "boundary_axis_imbalance": "4",
+        "boundary_contact_pairs": "231",
+        "boundary_corner_balance": "91",
+        "boundary_cut_edges": "296",
+        "boundary_multicontact_sites": "102",
+        "branch_both_survive": "1",
+        "branch_clone1_survives": "1",
+        "branch_clone2_survives": "1",
+        "branch_common_safe": "1",
+        "branch_q_after_denominator": "172",
+        "branch_q_after_safe_count": "156",
+        "branch_suffix_site1": "222",
+        "branch_suffix_site2": "264",
+        "bridges": "62",
+        "checkpoint_b1_safe_count": "164",
+        "checkpoint_b2_safe_pairs": "13224",
+        "checkpoint_sum_child_b1_sq": "4267536",
+        "core_edges": "189",
+        "core_vertices": "144",
+        "ell_u": "9",
+        "ell_v": "-29",
+        "essential_carriers": "1",
+        "essential_size": "193",
+        "frontier_component_sumsq": "598",
+        "frontier_components": "59",
+        "k0": "252",
+        "k1": "246",
+        "k2": "254",
+        "largest_frontier_component": "15",
+        "n": "425",
+        "next_exit": "0",
+        "next_site": "167",
+        "occupied_frontier": "174",
+        "orientation": "first",
+        "q_after": "0.906976744186046457",
+        "q_after2": "0.822606814494321159",
+        "replica": "43042500001",
+        "vacant_frontier": "136"
+      },
+      "structure": {
+        "bipartite": true,
+        "components_with_edges": [
+          {
+            "bipartite": true,
+            "chain_ferrers": false,
+            "edges": 140,
+            "side_degree_sequences": [
+              [
+                12,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5
+              ],
+              [
+                15,
+                15,
+                15,
+                15,
+                15,
+                15,
+                15,
+                7,
+                7,
+                7,
+                7,
+                7
+              ]
+            ],
+            "sides": [
+              [
+                21,
+                32,
+                59,
+                93,
+                124,
+                152,
+                165,
+                166,
+                167,
+                182,
+                191,
+                221,
+                222,
+                223,
+                224,
+                255,
+                284,
+                315,
+                324,
+                352,
+                416
+              ],
+              [
+                38,
+                51,
+                53,
+                126,
+                169,
+                186,
+                202,
+                231,
+                332,
+                333,
+                391,
+                420
+              ]
+            ],
+            "vertices": [
+              21,
+              32,
+              38,
+              51,
+              53,
+              59,
+              93,
+              124,
+              126,
+              152,
+              165,
+              166,
+              167,
+              169,
+              182,
+              186,
+              191,
+              202,
+              221,
+              222,
+              223,
+              224,
+              231,
+              255,
+              284,
+              315,
+              324,
+              332,
+              333,
+              352,
+              391,
+              416,
+              420
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 1,
+            "side_degree_sequences": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ],
+            "sides": [
+              [
+                108
+              ],
+              [
+                109
+              ]
+            ],
+            "vertices": [
+              108,
+              109
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 1,
+            "side_degree_sequences": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ],
+            "sides": [
+              [
+                401
+              ],
+              [
+                402
+              ]
+            ],
+            "vertices": [
+              401,
+              402
+            ]
+          }
+        ],
+        "every_connected_component_chain_ferrers": false,
+        "isolated_vertices": 127,
+        "non_nested_neighborhood_witness": {
+          "component_vertices": [
+            21,
+            32,
+            38,
+            51,
+            53,
+            59,
+            93,
+            124,
+            126,
+            152,
+            165,
+            166,
+            167,
+            169,
+            182,
+            186,
+            191,
+            202,
+            221,
+            222,
+            223,
+            224,
+            231,
+            255,
+            284,
+            315,
+            324,
+            332,
+            333,
+            352,
+            391,
+            416,
+            420
+          ],
+          "exclusive_neighbors": [
+            51,
+            38
+          ],
+          "minimal_witness_size": 4,
+          "neighborhoods": {
+            "21": [
+              51,
+              53,
+              126,
+              186,
+              420
+            ],
+            "32": [
+              38,
+              169,
+              202,
+              231,
+              332,
+              333,
+              391
+            ]
+          },
+          "safe_cross_pairs": [
+            [
+              21,
+              38
+            ],
+            [
+              32,
+              51
+            ]
+          ],
+          "same_component_shortest_path": [
+            21,
+            51,
+            124,
+            38,
+            32
+          ],
+          "same_side_sites": [
+            21,
+            32
+          ],
+          "trigger_pairs": [
+            [
+              21,
+              51
+            ],
+            [
+              32,
+              38
+            ]
+          ]
+        },
+        "nonisolated_components": 3,
+        "safe_vertices": 164,
+        "shortest_odd_cycle": null,
+        "trigger_edges": 142,
+        "trigger_triangles": 0,
+        "trigger_wedges": 1260
+      }
+    },
+    {
+      "graph_artifact": "results/local-20260831/P334-cooperative-closure/trigger_graph_raw/N425-first-43042500004.json",
+      "selection": "first5_N425_first_43042500004",
+      "source_row": {
+        "H2": "4",
+        "H2_direction_mixed": "0",
+        "H2_direction_negative": "0",
+        "H2_direction_positive": "4",
+        "H2_figure8": "0",
+        "H2_separate": "0",
+        "H2_theta": "4",
+        "a": "16",
+        "age_steps": "12",
+        "articulation_vertices": "61",
+        "b": "13",
+        "batch": "0",
+        "boundary_axis_imbalance": "-12",
+        "boundary_contact_pairs": "266",
+        "boundary_corner_balance": "92",
+        "boundary_cut_edges": "336",
+        "boundary_multicontact_sites": "110",
+        "branch_both_survive": "1",
+        "branch_clone1_survives": "1",
+        "branch_clone2_survives": "1",
+        "branch_common_safe": "1",
+        "branch_q_after_denominator": "172",
+        "branch_q_after_safe_count": "168",
+        "branch_suffix_site1": "174",
+        "branch_suffix_site2": "154",
+        "bridges": "58",
+        "checkpoint_b1_safe_count": "169",
+        "checkpoint_b2_safe_pairs": "14164",
+        "checkpoint_sum_child_b1_sq": "4748568",
+        "core_edges": "227",
+        "core_vertices": "171",
+        "ell_u": "4",
+        "ell_v": "-13",
+        "essential_carriers": "1",
+        "essential_size": "224",
+        "frontier_component_sumsq": "865",
+        "frontier_components": "57",
+        "k0": "252",
+        "k1": "240",
+        "k2": "296",
+        "largest_frontier_component": "18",
+        "n": "425",
+        "next_exit": "0",
+        "next_site": "296",
+        "occupied_frontier": "195",
+        "orientation": "first",
+        "q_after": "0.976744186046511587",
+        "q_after2": "0.954029204975662459",
+        "replica": "43042500004",
+        "vacant_frontier": "155"
+      },
+      "structure": {
+        "bipartite": true,
+        "components_with_edges": [
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 15,
+            "side_degree_sequences": [
+              [
+                2,
+                2,
+                2,
+                2,
+                2,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              [
+                10,
+                5
+              ]
+            ],
+            "sides": [
+              [
+                18,
+                43,
+                76,
+                79,
+                207,
+                212,
+                337,
+                338,
+                370,
+                371
+              ],
+              [
+                181,
+                312
+              ]
+            ],
+            "vertices": [
+              18,
+              43,
+              76,
+              79,
+              181,
+              207,
+              212,
+              312,
+              337,
+              338,
+              370,
+              371
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 2,
+            "side_degree_sequences": [
+              [
+                2
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "sides": [
+              [
+                55
+              ],
+              [
+                216,
+                349
+              ]
+            ],
+            "vertices": [
+              55,
+              216,
+              349
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 4,
+            "side_degree_sequences": [
+              [
+                2,
+                2
+              ],
+              [
+                2,
+                2
+              ]
+            ],
+            "sides": [
+              [
+                58,
+                191
+              ],
+              [
+                220,
+                351
+              ]
+            ],
+            "vertices": [
+              58,
+              191,
+              220,
+              351
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": false,
+            "edges": 7,
+            "side_degree_sequences": [
+              [
+                3,
+                2,
+                1,
+                1
+              ],
+              [
+                3,
+                2,
+                1,
+                1
+              ]
+            ],
+            "sides": [
+              [
+                90,
+                221,
+                251,
+                382
+              ],
+              [
+                91,
+                222,
+                252,
+                384
+              ]
+            ],
+            "vertices": [
+              90,
+              91,
+              221,
+              222,
+              251,
+              252,
+              382,
+              384
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": false,
+            "edges": 4,
+            "side_degree_sequences": [
+              [
+                2,
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ]
+            ],
+            "sides": [
+              [
+                119,
+                282,
+                413
+              ],
+              [
+                120,
+                414
+              ]
+            ],
+            "vertices": [
+              119,
+              120,
+              282,
+              413,
+              414
+            ]
+          }
+        ],
+        "every_connected_component_chain_ferrers": false,
+        "isolated_vertices": 137,
+        "non_nested_neighborhood_witness": {
+          "component_vertices": [
+            90,
+            91,
+            221,
+            222,
+            251,
+            252,
+            382,
+            384
+          ],
+          "exclusive_neighbors": [
+            91,
+            252
+          ],
+          "minimal_witness_size": 4,
+          "neighborhoods": {
+            "251": [
+              252,
+              384
+            ],
+            "90": [
+              91,
+              222,
+              384
+            ]
+          },
+          "safe_cross_pairs": [
+            [
+              90,
+              252
+            ],
+            [
+              251,
+              91
+            ]
+          ],
+          "same_component_shortest_path": [
+            90,
+            384,
+            251
+          ],
+          "same_side_sites": [
+            90,
+            251
+          ],
+          "trigger_pairs": [
+            [
+              90,
+              91
+            ],
+            [
+              251,
+              252
+            ]
+          ]
+        },
+        "nonisolated_components": 5,
+        "safe_vertices": 169,
+        "shortest_odd_cycle": null,
+        "trigger_edges": 32,
+        "trigger_triangles": 0,
+        "trigger_wedges": 76
+      }
+    },
+    {
+      "graph_artifact": "results/local-20260831/P334-cooperative-closure/trigger_graph_raw/N425-first-43042500006.json",
+      "selection": "first5_N425_first_43042500006",
+      "source_row": {
+        "H2": "10",
+        "H2_direction_mixed": "0",
+        "H2_direction_negative": "10",
+        "H2_direction_positive": "0",
+        "H2_figure8": "0",
+        "H2_separate": "0",
+        "H2_theta": "10",
+        "a": "16",
+        "age_steps": "5",
+        "articulation_vertices": "51",
+        "b": "13",
+        "batch": "0",
+        "boundary_axis_imbalance": "4",
+        "boundary_contact_pairs": "198",
+        "boundary_corner_balance": "82",
+        "boundary_cut_edges": "272",
+        "boundary_multicontact_sites": "85",
+        "branch_both_survive": "1",
+        "branch_clone1_survives": "1",
+        "branch_clone2_survives": "1",
+        "branch_common_safe": "1",
+        "branch_q_after_denominator": "172",
+        "branch_q_after_safe_count": "162",
+        "branch_suffix_site1": "61",
+        "branch_suffix_site2": "391",
+        "bridges": "49",
+        "checkpoint_b1_safe_count": "163",
+        "checkpoint_b2_safe_pairs": "13170",
+        "checkpoint_sum_child_b1_sq": "4256742",
+        "core_edges": "192",
+        "core_vertices": "144",
+        "ell_u": "5",
+        "ell_v": "-16",
+        "essential_carriers": "1",
+        "essential_size": "184",
+        "frontier_component_sumsq": "1025",
+        "frontier_components": "50",
+        "k0": "252",
+        "k1": "247",
+        "k2": "283",
+        "largest_frontier_component": "22",
+        "n": "425",
+        "next_exit": "0",
+        "next_site": "385",
+        "occupied_frontier": "158",
+        "orientation": "first",
+        "q_after": "0.941860465116279078",
+        "q_after2": "0.887101135749053582",
+        "replica": "43042500006",
+        "vacant_frontier": "137"
+      },
+      "structure": {
+        "bipartite": true,
+        "components_with_edges": [
+          {
+            "bipartite": true,
+            "chain_ferrers": false,
+            "edges": 32,
+            "side_degree_sequences": [
+              [
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                4,
+                2,
+                2
+              ],
+              [
+                9,
+                7,
+                7,
+                7,
+                2
+              ]
+            ],
+            "sides": [
+              [
+                6,
+                36,
+                111,
+                117,
+                248,
+                300,
+                330,
+                379,
+                403
+              ],
+              [
+                39,
+                172,
+                175,
+                308,
+                332
+              ]
+            ],
+            "vertices": [
+              6,
+              36,
+              39,
+              111,
+              117,
+              172,
+              175,
+              248,
+              300,
+              308,
+              330,
+              332,
+              379,
+              403
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 1,
+            "side_degree_sequences": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ],
+            "sides": [
+              [
+                223
+              ],
+              [
+                224
+              ]
+            ],
+            "vertices": [
+              223,
+              224
+            ]
+          }
+        ],
+        "every_connected_component_chain_ferrers": false,
+        "isolated_vertices": 147,
+        "non_nested_neighborhood_witness": {
+          "component_vertices": [
+            6,
+            36,
+            39,
+            111,
+            117,
+            172,
+            175,
+            248,
+            300,
+            308,
+            330,
+            332,
+            379,
+            403
+          ],
+          "exclusive_neighbors": [
+            172,
+            332
+          ],
+          "minimal_witness_size": 4,
+          "neighborhoods": {
+            "36": [
+              39,
+              332
+            ],
+            "6": [
+              39,
+              172,
+              175,
+              308
+            ]
+          },
+          "safe_cross_pairs": [
+            [
+              6,
+              332
+            ],
+            [
+              36,
+              172
+            ]
+          ],
+          "same_component_shortest_path": [
+            6,
+            39,
+            36
+          ],
+          "same_side_sites": [
+            6,
+            36
+          ],
+          "trigger_pairs": [
+            [
+              6,
+              172
+            ],
+            [
+              36,
+              332
+            ]
+          ]
+        },
+        "nonisolated_components": 2,
+        "safe_vertices": 163,
+        "shortest_odd_cycle": null,
+        "trigger_edges": 33,
+        "trigger_triangles": 0,
+        "trigger_wedges": 144
+      }
+    },
+    {
+      "graph_artifact": "results/local-20260831/P334-cooperative-closure/trigger_graph_raw/N425-first-43042500009.json",
+      "selection": "first5_N425_first_43042500009",
+      "source_row": {
+        "H2": "2",
+        "H2_direction_mixed": "0",
+        "H2_direction_negative": "0",
+        "H2_direction_positive": "2",
+        "H2_figure8": "0",
+        "H2_separate": "0",
+        "H2_theta": "2",
+        "a": "16",
+        "age_steps": "1",
+        "articulation_vertices": "43",
+        "b": "13",
+        "batch": "0",
+        "boundary_axis_imbalance": "10",
+        "boundary_contact_pairs": "192",
+        "boundary_corner_balance": "68",
+        "boundary_cut_edges": "274",
+        "boundary_multicontact_sites": "93",
+        "branch_both_survive": "1",
+        "branch_clone1_survives": "1",
+        "branch_clone2_survives": "1",
+        "branch_common_safe": "1",
+        "branch_q_after_denominator": "172",
+        "branch_q_after_safe_count": "170",
+        "branch_suffix_site1": "348",
+        "branch_suffix_site2": "269",
+        "bridges": "40",
+        "checkpoint_b1_safe_count": "171",
+        "checkpoint_b2_safe_pairs": "14484",
+        "checkpoint_sum_child_b1_sq": "4907730",
+        "core_edges": "241",
+        "core_vertices": "172",
+        "ell_u": "4",
+        "ell_v": "-13",
+        "essential_carriers": "1",
+        "essential_size": "206",
+        "frontier_component_sumsq": "528",
+        "frontier_components": "60",
+        "k0": "252",
+        "k1": "251",
+        "k2": "260",
+        "largest_frontier_component": "11",
+        "n": "425",
+        "next_exit": "0",
+        "next_site": "46",
+        "occupied_frontier": "169",
+        "orientation": "first",
+        "q_after": "0.988372093023255793",
+        "q_after2": "0.976879394267171408",
+        "replica": "43042500009",
+        "vacant_frontier": "136"
+      },
+      "structure": {
+        "bipartite": true,
+        "components_with_edges": [
+          {
+            "bipartite": true,
+            "chain_ferrers": false,
+            "edges": 42,
+            "side_degree_sequences": [
+              [
+                7,
+                7,
+                7,
+                7,
+                7,
+                2,
+                2,
+                2,
+                1
+              ],
+              [
+                6,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                2,
+                2,
+                2
+              ]
+            ],
+            "sides": [
+              [
+                31,
+                92,
+                162,
+                194,
+                223,
+                320,
+                326,
+                355,
+                386
+              ],
+              [
+                56,
+                85,
+                91,
+                216,
+                218,
+                220,
+                222,
+                348,
+                353,
+                385
+              ]
+            ],
+            "vertices": [
+              31,
+              56,
+              85,
+              91,
+              92,
+              162,
+              194,
+              216,
+              218,
+              220,
+              222,
+              223,
+              320,
+              326,
+              348,
+              353,
+              355,
+              385,
+              386
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 9,
+            "side_degree_sequences": [
+              [
+                3,
+                3,
+                3
+              ],
+              [
+                3,
+                3,
+                3
+              ]
+            ],
+            "sides": [
+              [
+                121,
+                281,
+                413
+              ],
+              [
+                124,
+                255,
+                416
+              ]
+            ],
+            "vertices": [
+              121,
+              124,
+              255,
+              281,
+              413,
+              416
+            ]
+          }
+        ],
+        "every_connected_component_chain_ferrers": false,
+        "isolated_vertices": 146,
+        "non_nested_neighborhood_witness": {
+          "component_vertices": [
+            31,
+            56,
+            85,
+            91,
+            92,
+            162,
+            194,
+            216,
+            218,
+            220,
+            222,
+            223,
+            320,
+            326,
+            348,
+            353,
+            355,
+            385,
+            386
+          ],
+          "exclusive_neighbors": [
+            56,
+            91
+          ],
+          "minimal_witness_size": 4,
+          "neighborhoods": {
+            "31": [
+              56,
+              85,
+              216,
+              218,
+              220,
+              348,
+              353
+            ],
+            "92": [
+              91,
+              385
+            ]
+          },
+          "safe_cross_pairs": [
+            [
+              31,
+              91
+            ],
+            [
+              92,
+              56
+            ]
+          ],
+          "same_component_shortest_path": [
+            31,
+            353,
+            355,
+            222,
+            223,
+            91,
+            92
+          ],
+          "same_side_sites": [
+            31,
+            92
+          ],
+          "trigger_pairs": [
+            [
+              31,
+              56
+            ],
+            [
+              92,
+              91
+            ]
+          ]
+        },
+        "nonisolated_components": 2,
+        "safe_vertices": 171,
+        "shortest_odd_cycle": null,
+        "trigger_edges": 51,
+        "trigger_triangles": 0,
+        "trigger_wedges": 204
+      }
+    },
+    {
+      "graph_artifact": "results/local-20260831/P334-cooperative-closure/trigger_graph_raw/N425-first-43042500013.json",
+      "selection": "first5_N425_first_43042500013",
+      "source_row": {
+        "H2": "12",
+        "H2_direction_mixed": "0",
+        "H2_direction_negative": "8",
+        "H2_direction_positive": "4",
+        "H2_figure8": "0",
+        "H2_separate": "0",
+        "H2_theta": "12",
+        "a": "16",
+        "age_steps": "28",
+        "articulation_vertices": "45",
+        "b": "13",
+        "batch": "0",
+        "boundary_axis_imbalance": "-22",
+        "boundary_contact_pairs": "243",
+        "boundary_corner_balance": "95",
+        "boundary_cut_edges": "306",
+        "boundary_multicontact_sites": "98",
+        "branch_both_survive": "1",
+        "branch_clone1_survives": "1",
+        "branch_clone2_survives": "1",
+        "branch_common_safe": "1",
+        "branch_q_after_denominator": "172",
+        "branch_q_after_safe_count": "160",
+        "branch_suffix_site1": "7",
+        "branch_suffix_site2": "47",
+        "bridges": "46",
+        "checkpoint_b1_safe_count": "161",
+        "checkpoint_b2_safe_pairs": "12840",
+        "checkpoint_sum_child_b1_sq": "4096286",
+        "core_edges": "225",
+        "core_vertices": "168",
+        "ell_u": "9",
+        "ell_v": "-29",
+        "essential_carriers": "1",
+        "essential_size": "210",
+        "frontier_component_sumsq": "728",
+        "frontier_components": "59",
+        "k0": "252",
+        "k1": "224",
+        "k2": "266",
+        "largest_frontier_component": "12",
+        "n": "425",
+        "next_exit": "0",
+        "next_site": "57",
+        "occupied_frontier": "181",
+        "orientation": "first",
+        "q_after": "0.930232558139534871",
+        "q_after2": "0.865332612222823094",
+        "replica": "43042500013",
+        "vacant_frontier": "144"
+      },
+      "structure": {
+        "bipartite": true,
+        "components_with_edges": [
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 6,
+            "side_degree_sequences": [
+              [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              [
+                6
+              ]
+            ],
+            "sides": [
+              [
+                12,
+                87,
+                246,
+                379,
+                381,
+                408
+              ],
+              [
+                149
+              ]
+            ],
+            "vertices": [
+              12,
+              87,
+              149,
+              246,
+              379,
+              381,
+              408
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 12,
+            "side_degree_sequences": [
+              [
+                3,
+                3,
+                3,
+                3
+              ],
+              [
+                4,
+                4,
+                4
+              ]
+            ],
+            "sides": [
+              [
+                41,
+                203,
+                206,
+                334
+              ],
+              [
+                47,
+                178,
+                339
+              ]
+            ],
+            "vertices": [
+              41,
+              47,
+              178,
+              203,
+              206,
+              334,
+              339
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 15,
+            "side_degree_sequences": [
+              [
+                7,
+                7,
+                1
+              ],
+              [
+                3,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2
+              ]
+            ],
+            "sides": [
+              [
+                61,
+                224,
+                355
+              ],
+              [
+                62,
+                66,
+                195,
+                197,
+                225,
+                328,
+                358
+              ]
+            ],
+            "vertices": [
+              61,
+              62,
+              66,
+              195,
+              197,
+              224,
+              225,
+              328,
+              355,
+              358
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 4,
+            "side_degree_sequences": [
+              [
+                4
+              ],
+              [
+                1,
+                1,
+                1,
+                1
+              ]
+            ],
+            "sides": [
+              [
+                104
+              ],
+              [
+                107,
+                238,
+                398,
+                399
+              ]
+            ],
+            "vertices": [
+              104,
+              107,
+              238,
+              398,
+              399
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 2,
+            "side_degree_sequences": [
+              [
+                1,
+                1
+              ],
+              [
+                2
+              ]
+            ],
+            "sides": [
+              [
+                253,
+                386
+              ],
+              [
+                384
+              ]
+            ],
+            "vertices": [
+              253,
+              384,
+              386
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 1,
+            "side_degree_sequences": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ],
+            "sides": [
+              [
+                265
+              ],
+              [
+                396
+              ]
+            ],
+            "vertices": [
+              265,
+              396
+            ]
+          }
+        ],
+        "every_connected_component_chain_ferrers": true,
+        "isolated_vertices": 127,
+        "non_nested_neighborhood_witness": null,
+        "nonisolated_components": 6,
+        "safe_vertices": 161,
+        "shortest_odd_cycle": null,
+        "trigger_edges": 40,
+        "trigger_triangles": 0,
+        "trigger_wedges": 103
+      }
+    },
+    {
+      "graph_artifact": "results/local-20260831/P334-cooperative-closure/trigger_graph_raw/N425-second-43042500000.json",
+      "selection": "first5_N425_second_43042500000",
+      "source_row": {
+        "H2": "13",
+        "H2_direction_mixed": "0",
+        "H2_direction_negative": "0",
+        "H2_direction_positive": "13",
+        "H2_figure8": "0",
+        "H2_separate": "0",
+        "H2_theta": "13",
+        "a": "19",
+        "age_steps": "3",
+        "articulation_vertices": "50",
+        "b": "8",
+        "batch": "0",
+        "boundary_axis_imbalance": "4",
+        "boundary_contact_pairs": "233",
+        "boundary_corner_balance": "83",
+        "boundary_cut_edges": "296",
+        "boundary_multicontact_sites": "97",
+        "branch_both_survive": "1",
+        "branch_clone1_survives": "1",
+        "branch_clone2_survives": "1",
+        "branch_common_safe": "1",
+        "branch_q_after_denominator": "172",
+        "branch_q_after_safe_count": "159",
+        "branch_suffix_site1": "323",
+        "branch_suffix_site2": "222",
+        "bridges": "51",
+        "checkpoint_b1_safe_count": "160",
+        "checkpoint_b2_safe_pairs": "12717",
+        "checkpoint_sum_child_b1_sq": "4043062",
+        "core_edges": "196",
+        "core_vertices": "148",
+        "ell_u": "5",
+        "ell_v": "-8",
+        "essential_carriers": "1",
+        "essential_size": "196",
+        "frontier_component_sumsq": "597",
+        "frontier_components": "53",
+        "k0": "252",
+        "k1": "249",
+        "k2": "275",
+        "largest_frontier_component": "10",
+        "n": "425",
+        "next_exit": "0",
+        "next_site": "249",
+        "occupied_frontier": "175",
+        "orientation": "second",
+        "q_after": "0.924418604651162767",
+        "q_after2": "0.854549756625202717",
+        "replica": "43042500000",
+        "vacant_frontier": "137"
+      },
+      "structure": {
+        "bipartite": true,
+        "components_with_edges": [
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 3,
+            "side_degree_sequences": [
+              [
+                2,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "sides": [
+              [
+                75,
+                233
+              ],
+              [
+                76,
+                343
+              ]
+            ],
+            "vertices": [
+              75,
+              76,
+              233,
+              343
+            ]
+          }
+        ],
+        "every_connected_component_chain_ferrers": true,
+        "isolated_vertices": 156,
+        "non_nested_neighborhood_witness": null,
+        "nonisolated_components": 1,
+        "safe_vertices": 160,
+        "shortest_odd_cycle": null,
+        "trigger_edges": 3,
+        "trigger_triangles": 0,
+        "trigger_wedges": 2
+      }
+    },
+    {
+      "graph_artifact": "results/local-20260831/P334-cooperative-closure/trigger_graph_raw/N425-second-43042500003.json",
+      "selection": "first5_N425_second_43042500003",
+      "source_row": {
+        "H2": "18",
+        "H2_direction_mixed": "0",
+        "H2_direction_negative": "18",
+        "H2_direction_positive": "0",
+        "H2_figure8": "0",
+        "H2_separate": "0",
+        "H2_theta": "18",
+        "a": "19",
+        "age_steps": "1",
+        "articulation_vertices": "74",
+        "b": "8",
+        "batch": "0",
+        "boundary_axis_imbalance": "-12",
+        "boundary_contact_pairs": "327",
+        "boundary_corner_balance": "111",
+        "boundary_cut_edges": "384",
+        "boundary_multicontact_sites": "132",
+        "branch_both_survive": "1",
+        "branch_clone1_survives": "1",
+        "branch_clone2_survives": "1",
+        "branch_common_safe": "1",
+        "branch_q_after_denominator": "172",
+        "branch_q_after_safe_count": "153",
+        "branch_suffix_site1": "201",
+        "branch_suffix_site2": "263",
+        "bridges": "74",
+        "checkpoint_b1_safe_count": "155",
+        "checkpoint_b2_safe_pairs": "11907",
+        "checkpoint_sum_child_b1_sq": "3658862",
+        "core_edges": "233",
+        "core_vertices": "185",
+        "ell_u": "7",
+        "ell_v": "-11",
+        "essential_carriers": "1",
+        "essential_size": "240",
+        "frontier_component_sumsq": "958",
+        "frontier_components": "59",
+        "k0": "252",
+        "k1": "251",
+        "k2": "259",
+        "largest_frontier_component": "13",
+        "n": "425",
+        "next_exit": "0",
+        "next_site": "137",
+        "occupied_frontier": "214",
+        "orientation": "second",
+        "q_after": "0.889534883720930258",
+        "q_after2": "0.791272309356408909",
+        "replica": "43042500003",
+        "vacant_frontier": "164"
+      },
+      "structure": {
+        "bipartite": true,
+        "components_with_edges": [
+          {
+            "bipartite": true,
+            "chain_ferrers": false,
+            "edges": 6,
+            "side_degree_sequences": [
+              [
+                2,
+                2,
+                1,
+                1
+              ],
+              [
+                2,
+                2,
+                2
+              ]
+            ],
+            "sides": [
+              [
+                51,
+                207,
+                320,
+                362
+              ],
+              [
+                52,
+                208,
+                364
+              ]
+            ],
+            "vertices": [
+              51,
+              52,
+              207,
+              208,
+              320,
+              362,
+              364
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 3,
+            "side_degree_sequences": [
+              [
+                2,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "sides": [
+              [
+                54,
+                323
+              ],
+              [
+                55,
+                211
+              ]
+            ],
+            "vertices": [
+              54,
+              55,
+              211,
+              323
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": false,
+            "edges": 11,
+            "side_degree_sequences": [
+              [
+                2,
+                2,
+                2,
+                2,
+                2,
+                1
+              ],
+              [
+                5,
+                5,
+                1
+              ]
+            ],
+            "sides": [
+              [
+                102,
+                215,
+                260,
+                261,
+                262,
+                371
+              ],
+              [
+                105,
+                216,
+                372
+              ]
+            ],
+            "vertices": [
+              102,
+              105,
+              215,
+              216,
+              260,
+              261,
+              262,
+              371,
+              372
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 1,
+            "side_degree_sequences": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ],
+            "sides": [
+              [
+                106
+              ],
+              [
+                263
+              ]
+            ],
+            "vertices": [
+              106,
+              263
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 1,
+            "side_degree_sequences": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ],
+            "sides": [
+              [
+                107
+              ],
+              [
+                264
+              ]
+            ],
+            "vertices": [
+              107,
+              264
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": false,
+            "edges": 5,
+            "side_degree_sequences": [
+              [
+                3,
+                1,
+                1
+              ],
+              [
+                2,
+                2,
+                1
+              ]
+            ],
+            "sides": [
+              [
+                135,
+                136,
+                137
+              ],
+              [
+                247,
+                403,
+                405
+              ]
+            ],
+            "vertices": [
+              135,
+              136,
+              137,
+              247,
+              403,
+              405
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 1,
+            "side_degree_sequences": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ],
+            "sides": [
+              [
+                220
+              ],
+              [
+                221
+              ]
+            ],
+            "vertices": [
+              220,
+              221
+            ]
+          }
+        ],
+        "every_connected_component_chain_ferrers": false,
+        "isolated_vertices": 123,
+        "non_nested_neighborhood_witness": {
+          "component_vertices": [
+            51,
+            52,
+            207,
+            208,
+            320,
+            362,
+            364
+          ],
+          "exclusive_neighbors": [
+            52,
+            364
+          ],
+          "minimal_witness_size": 4,
+          "neighborhoods": {
+            "207": [
+              208,
+              364
+            ],
+            "51": [
+              52,
+              208
+            ]
+          },
+          "safe_cross_pairs": [
+            [
+              51,
+              364
+            ],
+            [
+              207,
+              52
+            ]
+          ],
+          "same_component_shortest_path": [
+            51,
+            208,
+            207
+          ],
+          "same_side_sites": [
+            51,
+            207
+          ],
+          "trigger_pairs": [
+            [
+              51,
+              52
+            ],
+            [
+              207,
+              364
+            ]
+          ]
+        },
+        "nonisolated_components": 7,
+        "safe_vertices": 155,
+        "shortest_odd_cycle": null,
+        "trigger_edges": 28,
+        "trigger_triangles": 0,
+        "trigger_wedges": 37
+      }
+    },
+    {
+      "graph_artifact": "results/local-20260831/P334-cooperative-closure/trigger_graph_raw/N425-second-43042500010.json",
+      "selection": "first5_N425_second_43042500010",
+      "source_row": {
+        "H2": "7",
+        "H2_direction_mixed": "0",
+        "H2_direction_negative": "4",
+        "H2_direction_positive": "3",
+        "H2_figure8": "0",
+        "H2_separate": "0",
+        "H2_theta": "7",
+        "a": "19",
+        "age_steps": "17",
+        "articulation_vertices": "61",
+        "b": "8",
+        "batch": "0",
+        "boundary_axis_imbalance": "-10",
+        "boundary_contact_pairs": "259",
+        "boundary_corner_balance": "101",
+        "boundary_cut_edges": "334",
+        "boundary_multicontact_sites": "113",
+        "branch_both_survive": "0",
+        "branch_clone1_survives": "0",
+        "branch_clone2_survives": "1",
+        "branch_common_safe": "1",
+        "branch_q_after_denominator": "172",
+        "branch_q_after_safe_count": "165",
+        "branch_suffix_site1": "123",
+        "branch_suffix_site2": "155",
+        "bridges": "59",
+        "checkpoint_b1_safe_count": "166",
+        "checkpoint_b2_safe_pairs": "13677",
+        "checkpoint_sum_child_b1_sq": "4507580",
+        "core_edges": "251",
+        "core_vertices": "188",
+        "ell_u": "12",
+        "ell_v": "-19",
+        "essential_carriers": "1",
+        "essential_size": "230",
+        "frontier_component_sumsq": "837",
+        "frontier_components": "59",
+        "k0": "252",
+        "k1": "235",
+        "k2": "266",
+        "largest_frontier_component": "15",
+        "n": "425",
+        "next_exit": "0",
+        "next_site": "242",
+        "occupied_frontier": "198",
+        "orientation": "second",
+        "q_after": "0.959302325581395388",
+        "q_after2": "0.920260951865873533",
+        "replica": "43042500010",
+        "vacant_frontier": "155"
+      },
+      "structure": {
+        "bipartite": true,
+        "components_with_edges": [
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 5,
+            "side_degree_sequences": [
+              [
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              [
+                5
+              ]
+            ],
+            "sides": [
+              [
+                7,
+                120,
+                121,
+                276,
+                323
+              ],
+              [
+                11
+              ]
+            ],
+            "vertices": [
+              7,
+              11,
+              120,
+              121,
+              276,
+              323
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 10,
+            "side_degree_sequences": [
+              [
+                5,
+                5
+              ],
+              [
+                2,
+                2,
+                2,
+                2,
+                2
+              ]
+            ],
+            "sides": [
+              [
+                56,
+                212
+              ],
+              [
+                57,
+                102,
+                103,
+                215,
+                372
+              ]
+            ],
+            "vertices": [
+              56,
+              57,
+              102,
+              103,
+              212,
+              215,
+              372
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 3,
+            "side_degree_sequences": [
+              [
+                2,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            "sides": [
+              [
+                76,
+                344
+              ],
+              [
+                78,
+                345
+              ]
+            ],
+            "vertices": [
+              76,
+              78,
+              344,
+              345
+            ]
+          }
+        ],
+        "every_connected_component_chain_ferrers": true,
+        "isolated_vertices": 149,
+        "non_nested_neighborhood_witness": null,
+        "nonisolated_components": 3,
+        "safe_vertices": 166,
+        "shortest_odd_cycle": null,
+        "trigger_edges": 18,
+        "trigger_triangles": 0,
+        "trigger_wedges": 37
+      }
+    },
+    {
+      "graph_artifact": "results/local-20260831/P334-cooperative-closure/trigger_graph_raw/N425-second-43042500013.json",
+      "selection": "first5_N425_second_43042500013",
+      "source_row": {
+        "H2": "6",
+        "H2_direction_mixed": "0",
+        "H2_direction_negative": "0",
+        "H2_direction_positive": "6",
+        "H2_figure8": "0",
+        "H2_separate": "0",
+        "H2_theta": "6",
+        "a": "19",
+        "age_steps": "36",
+        "articulation_vertices": "58",
+        "b": "8",
+        "batch": "0",
+        "boundary_axis_imbalance": "-16",
+        "boundary_contact_pairs": "203",
+        "boundary_corner_balance": "75",
+        "boundary_cut_edges": "284",
+        "boundary_multicontact_sites": "96",
+        "branch_both_survive": "1",
+        "branch_clone1_survives": "1",
+        "branch_clone2_survives": "1",
+        "branch_common_safe": "1",
+        "branch_q_after_denominator": "172",
+        "branch_q_after_safe_count": "166",
+        "branch_suffix_site1": "7",
+        "branch_suffix_site2": "47",
+        "bridges": "56",
+        "checkpoint_b1_safe_count": "167",
+        "checkpoint_b2_safe_pairs": "13807",
+        "checkpoint_sum_child_b1_sq": "4566594",
+        "core_edges": "223",
+        "core_vertices": "165",
+        "ell_u": "5",
+        "ell_v": "-8",
+        "essential_carriers": "1",
+        "essential_size": "200",
+        "frontier_component_sumsq": "744",
+        "frontier_components": "48",
+        "k0": "252",
+        "k1": "216",
+        "k2": "259",
+        "largest_frontier_component": "12",
+        "n": "425",
+        "next_exit": "0",
+        "next_site": "57",
+        "occupied_frontier": "169",
+        "orientation": "second",
+        "q_after": "0.965116279069767491",
+        "q_after2": "0.931449432125473376",
+        "replica": "43042500013",
+        "vacant_frontier": "138"
+      },
+      "structure": {
+        "bipartite": true,
+        "components_with_edges": [
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 36,
+            "side_degree_sequences": [
+              [
+                6,
+                6,
+                6,
+                6,
+                6,
+                6
+              ],
+              [
+                6,
+                6,
+                6,
+                6,
+                6,
+                6
+              ]
+            ],
+            "sides": [
+              [
+                8,
+                115,
+                166,
+                324,
+                381,
+                384
+              ],
+              [
+                47,
+                97,
+                206,
+                269,
+                314,
+                364
+              ]
+            ],
+            "vertices": [
+              8,
+              47,
+              97,
+              115,
+              166,
+              206,
+              269,
+              314,
+              324,
+              364,
+              381,
+              384
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 16,
+            "side_degree_sequences": [
+              [
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2
+              ],
+              [
+                8,
+                8
+              ]
+            ],
+            "sides": [
+              [
+                37,
+                145,
+                149,
+                261,
+                303,
+                304,
+                306,
+                417
+              ],
+              [
+                104,
+                371
+              ]
+            ],
+            "vertices": [
+              37,
+              104,
+              145,
+              149,
+              261,
+              303,
+              304,
+              306,
+              371,
+              417
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 2,
+            "side_degree_sequences": [
+              [
+                2
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "sides": [
+              [
+                107
+              ],
+              [
+                265,
+                421
+              ]
+            ],
+            "vertices": [
+              107,
+              265,
+              421
+            ]
+          }
+        ],
+        "every_connected_component_chain_ferrers": true,
+        "isolated_vertices": 142,
+        "non_nested_neighborhood_witness": null,
+        "nonisolated_components": 3,
+        "safe_vertices": 167,
+        "shortest_odd_cycle": null,
+        "trigger_edges": 54,
+        "trigger_triangles": 0,
+        "trigger_wedges": 245
+      }
+    },
+    {
+      "graph_artifact": "results/local-20260831/P334-cooperative-closure/trigger_graph_raw/N425-second-43042500015.json",
+      "selection": "first5_N425_second_43042500015",
+      "source_row": {
+        "H2": "13",
+        "H2_direction_mixed": "0",
+        "H2_direction_negative": "0",
+        "H2_direction_positive": "13",
+        "H2_figure8": "0",
+        "H2_separate": "0",
+        "H2_theta": "13",
+        "a": "19",
+        "age_steps": "7",
+        "articulation_vertices": "77",
+        "b": "8",
+        "batch": "0",
+        "boundary_axis_imbalance": "-16",
+        "boundary_contact_pairs": "265",
+        "boundary_corner_balance": "89",
+        "boundary_cut_edges": "336",
+        "boundary_multicontact_sites": "109",
+        "branch_both_survive": "1",
+        "branch_clone1_survives": "1",
+        "branch_clone2_survives": "1",
+        "branch_common_safe": "1",
+        "branch_q_after_denominator": "172",
+        "branch_q_after_safe_count": "157",
+        "branch_suffix_site1": "340",
+        "branch_suffix_site2": "338",
+        "bridges": "82",
+        "checkpoint_b1_safe_count": "160",
+        "checkpoint_b2_safe_pairs": "12667",
+        "checkpoint_sum_child_b1_sq": "4011844",
+        "core_edges": "204",
+        "core_vertices": "156",
+        "ell_u": "5",
+        "ell_v": "-8",
+        "essential_carriers": "1",
+        "essential_size": "216",
+        "frontier_component_sumsq": "872",
+        "frontier_components": "57",
+        "k0": "252",
+        "k1": "245",
+        "k2": "264",
+        "largest_frontier_component": "13",
+        "n": "425",
+        "next_exit": "0",
+        "next_site": "109",
+        "occupied_frontier": "191",
+        "orientation": "second",
+        "q_after": "0.912790697674418561",
+        "q_after2": "0.833186857760951805",
+        "replica": "43042500015",
+        "vacant_frontier": "156"
+      },
+      "structure": {
+        "bipartite": true,
+        "components_with_edges": [
+          {
+            "bipartite": true,
+            "chain_ferrers": false,
+            "edges": 44,
+            "side_degree_sequences": [
+              [
+                7,
+                6,
+                6,
+                6,
+                6,
+                6,
+                6,
+                1
+              ],
+              [
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                2
+              ]
+            ],
+            "sides": [
+              [
+                5,
+                52,
+                54,
+                55,
+                162,
+                210,
+                272,
+                319
+              ],
+              [
+                8,
+                56,
+                166,
+                167,
+                277,
+                325,
+                383
+              ]
+            ],
+            "vertices": [
+              5,
+              8,
+              52,
+              54,
+              55,
+              56,
+              162,
+              166,
+              167,
+              210,
+              272,
+              277,
+              319,
+              325,
+              383
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 2,
+            "side_degree_sequences": [
+              [
+                1,
+                1
+              ],
+              [
+                2
+              ]
+            ],
+            "sides": [
+              [
+                39,
+                306
+              ],
+              [
+                307
+              ]
+            ],
+            "vertices": [
+              39,
+              306,
+              307
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 1,
+            "side_degree_sequences": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ],
+            "sides": [
+              [
+                102
+              ],
+              [
+                103
+              ]
+            ],
+            "vertices": [
+              102,
+              103
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": false,
+            "edges": 5,
+            "side_degree_sequences": [
+              [
+                2,
+                2,
+                1
+              ],
+              [
+                2,
+                2,
+                1
+              ]
+            ],
+            "sides": [
+              [
+                108,
+                221,
+                377
+              ],
+              [
+                109,
+                265,
+                378
+              ]
+            ],
+            "vertices": [
+              108,
+              109,
+              221,
+              265,
+              377,
+              378
+            ]
+          },
+          {
+            "bipartite": true,
+            "chain_ferrers": true,
+            "edges": 1,
+            "side_degree_sequences": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ],
+            "sides": [
+              [
+                270
+              ],
+              [
+                381
+              ]
+            ],
+            "vertices": [
+              270,
+              381
+            ]
+          }
+        ],
+        "every_connected_component_chain_ferrers": false,
+        "isolated_vertices": 132,
+        "non_nested_neighborhood_witness": {
+          "component_vertices": [
+            5,
+            8,
+            52,
+            54,
+            55,
+            56,
+            162,
+            166,
+            167,
+            210,
+            272,
+            277,
+            319,
+            325,
+            383
+          ],
+          "exclusive_neighbors": [
+            52,
+            272
+          ],
+          "minimal_witness_size": 4,
+          "neighborhoods": {
+            "383": [
+              5,
+              272
+            ],
+            "8": [
+              5,
+              52,
+              54,
+              55,
+              162,
+              210,
+              319
+            ]
+          },
+          "safe_cross_pairs": [
+            [
+              8,
+              272
+            ],
+            [
+              383,
+              52
+            ]
+          ],
+          "same_component_shortest_path": [
+            8,
+            5,
+            383
+          ],
+          "same_side_sites": [
+            8,
+            383
+          ],
+          "trigger_pairs": [
+            [
+              8,
+              52
+            ],
+            [
+              383,
+              272
+            ]
+          ]
+        },
+        "nonisolated_components": 5,
+        "safe_vertices": 160,
+        "shortest_odd_cycle": null,
+        "trigger_edges": 53,
+        "trigger_triangles": 0,
+        "trigger_wedges": 243
+      }
+    }
+  ],
+  "schema": "matching-one/p334-trigger-graph-two-class-check/v1",
+  "scope": "bounded",
+  "selection_rule": "Two saved N425 witnesses, then (if bounded) the five lowest eligible counters in each of N325/N425 first/second. Eligible means an archived rank-one checkpoint with at least one minimal trigger pair; no graph-property screening.",
+  "summary": {
+    "bipartite_pass": 22,
+    "component_chain_pass": 11,
+    "graphs": 22
+  },
+  "tested_classes_only": [
+    "bipartite",
+    "each connected component is chain/Ferrers"
+  ]
+}
