@@ -53,6 +53,12 @@ finite source strength wherever that root branch is defined, not only for
 the source derivative at t=0. It does not assert a homogeneous critical
 renormalization fixed point or a continuum field identity.
 
+**Positive-coupling qualification now resolved:** the
+[root-order proof](closed-source-critical-root-order.md) establishes a
+unique simple pooled root for every finite t>=0, including the full
+checkerboard saturation path. The finite positive-source endpoint law
+therefore has no remaining provisional root-existence condition.
+
 ## The birth-channel map is fixed too
 
 Let F1(p,t)=P_(p,t)(r>=1) and F2(p,t)=P_(p,t)(r=2). At t=0 these are the
@@ -199,6 +205,15 @@ predictions. These forced-endpoint responses are not homogeneous N50/N100
 measurements, nor an extrapolation of the stopped larger-N F4 block.
 
 ## Scientific card and next discriminant
+
+**Finite-coupling decision completed:** the
+[closed-source turnover result](closed-source-global-u-turnover-result.md)
+finds U_t(log2)=-1.370778221631, against the earlier U_t(0)>0. Four
+preselected couplings all have negative derivatives. The attractive
+cycle gas has a finite-volume empty/full limit with U->0; its global
+signal cannot be monotonically amplified by increasing the source.
+The strong-coupling proof, two-current representation and all fixed
+coupling values are linked in that result. No coupling scan is pending.
 
 - **Mechanism change:** exact three-count closure plus a nonzero original-U
   response removes common-thermal invisibility of this coefficient-fixed

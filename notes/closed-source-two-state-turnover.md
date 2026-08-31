@@ -179,7 +179,7 @@ There must also be a subsequent interval of decreasing U. This rejects
 monotonic increase of the original U throughout positive coupling, not
 merely a linear-response extrapolation. It does not locate the maximum,
 prove it unique, or require it to fall between any two of the four frozen
-coupling points. Those values remain an independent, already specified
+coupling points. Those values remain a separate, already specified
 finite-coupling readout; the prediction here is not adjusted to them.
 
 The mechanism is finite-volume concentration onto two extremal rank
