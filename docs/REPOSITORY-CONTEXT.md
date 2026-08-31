@@ -16,7 +16,16 @@ a completion artifact or independent process inspection.
 The new [absolute-cluster source measurement](../results/p154-absolute-cluster/REPORT.md)
 is now complete in Draft #267: an unresolved E_top source response with
 substantial source variance beyond the declared linear controls, not a
-readiness exercise. These additions do not rewrite the original counts.
+readiness exercise. The subsequent [P40 million-sample source analysis](../results/p40-absolute-cluster/REPORT.md)
+is also complete (`a4cbf02a`): it resolves the global q/source response,
+while the directional H4 difference remains unresolved. Reading the actual
+engine corrects the earlier dependency inference: N separates random-key
+domains; equal seed/counter labels alone do not create cross-N shared streams.
+The [e increment](../notes/frontier-increment-20260831e.md) fully reads two
+further results: uniform-blockade mean closure (`d53db2f`, open PR #484)
+and complete instantaneous-current observation with still-missing hidden
+reversible propagation (`33c6028f`, branch-only).
+These additions do not rewrite the original counts.
 Use [Next Targets](NEXT-TARGETS.md) after these completed inputs; do not restart
 their former first-work requests.
 

@@ -6,7 +6,22 @@ This is a navigation index, not a new task queue. Original titles and GitHub sta
 
 No Issue is closed, locked, demoted or renamed by this index. No PR is merged or newly approved. The snapshot is historical as soon as GitHub changes.
 
-## New scientific handoff — 2026-08-31 d
+## Latest scientific handoff — 2026-08-31 e
+
+The [million-sample P40 source analysis](../results/p40-absolute-cluster/REPORT.md)
+at `a4cbf02a48c3f78ee8fb3a1e4141bd985c0bf845` completes the previous
+first-q/source task: strong global response, unresolved H4 difference.
+N-domain separation in the actual engine corrects the earlier shared-seed
+inference. [Next Targets](NEXT-TARGETS.md) now asks for the missing even
+response at fixed matching mean, not another first Gram analysis.
+
+The [e source review](../notes/frontier-increment-20260831e.md), captured
+at15:06:55 Asia/Shanghai, adds PR #484's uniform-blockade mean closure and
+the P398 branch's current-defined observer result, with exact commits and
+integration status. Two result sets were read fully; this is not a new
+repository-wide count or a claim to have reread every newer branch.
+
+## Previous scientific handoff — 2026-08-31 d
 
 The [d result/source crosswalk](../notes/frontier-increment-20260831d.md)
 adds a bounded read of PR #484 at14:41:26

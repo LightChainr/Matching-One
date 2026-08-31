@@ -10,13 +10,19 @@ This Draft incorporates main through `e300609`; later observed main changes are 
 
 The first #370 real-data adapter, P267 amplitude comparison, P334 graph/capacity analysis and first F5/C3 typed observers are completed inputs. No Monte Carlo is launched by this navigation update, and tool/test completion is not an independent scientific milestone.
 
-The [absolute-cluster source](../results/p154-absolute-cluster/REPORT.md)
-has now been measured on the inherited Phase-E counters: the E_top
-directional response remains unresolved despite substantial source variance
-outside the linear clock/Euler span. Next reuse P40's already available
-million-sample q/cluster Gram for its matching response; do not mistake it
-for the absent E_top mixed moment or N130 child. This turns a candidate
-into a completed measurement without commissioning new production.
+The [million-sample P40 analysis](../results/p40-absolute-cluster/REPORT.md)
+has completed the previous direct-reuse assignment. Global q/source coupling
+is strong but its orientation difference is unresolved. Next target the
+explicitly absent E_top/source and control products on existing counters,
+then their actual norm-4 child/thermal relation; do not repeat q-only source
+detection. These small sufficient-statistic analyses do not call for a GPU.
+
+The earlier [Phase-E source replay](../results/p154-absolute-cluster/REPORT.md)
+already measured E_top/source at N65/N13020k. Its unresolved result is not
+replaced by P40's q-only result at different scope. The [e increment](../notes/frontier-increment-20260831e.md)
+also completes uniform-blockade mean closure and the instantaneous-current
+observer. Spatial marked variance/collisions and named hidden reversible
+geometry transport remain distinct beyond those completed means.
 
 The [d increment](../notes/frontier-increment-20260831d.md) also removes
 first all147-prefix clocks/noise, first canonical crossings and first P398

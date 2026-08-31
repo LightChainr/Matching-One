@@ -8,7 +8,21 @@
 
 ## Evidence and lifecycle contract
 
-The new [absolute-cluster measurement](../results/p154-absolute-cluster/REPORT.md)
+The [P40 million-sample source result](../results/p40-absolute-cluster/REPORT.md)
+(`a4cbf02a`, `open_pr #267`) now resolves global q/source coupling at each
+orientation but not its H4 difference (full-control z=−.189/1.360,
+nominal joint p=.38964). This is an existing-Gram analysis, not new samples.
+Its coupling-dependent paired allocation is not two independent mechanisms.
+The actual RNG includes N as a domain separator; the earlier warning based
+only on equal seeds/counters is corrected, while same-N views remain paired.
+
+The [e increment](../notes/frontier-increment-20260831e.md) separately pins
+`d53db2f` (`open_pr #484`) uniform-blockade mean closure and `33c6028f`
+(`branch_only`) current-source geometry. Neither first mean-dose analysis
+nor first current observer remains undone; spatial response variance and
+hidden reversible transport are the distinct physical readouts.
+
+The preceding [absolute-cluster measurement](../results/p154-absolute-cluster/REPORT.md)
 (`eb7ef8c9`, `open_pr #267`) is complete on the inherited20k-per-size
 Phase-E streams. Raw E_top source response has nominal joint p=.57892;
 after the declared linear clock/Euler controls p=.64961. The source retains

@@ -1,4 +1,4 @@
-version: 27
+version: 28
 updated: 2026-08-31
 purpose: >
   Lightweight navigation/provenance index. Registry conflicts never block
@@ -19,10 +19,10 @@ observed_remote_main_snapshot:
   boundary: observed_remote_history_only_does_not_rewrite_the_scientific_main_snapshot_or_historical_scorer_counts
 
 latest_lifecycle_overlay:
-  source: notes/frontier-increment-20260831d.md
+  source: notes/frontier-increment-20260831e.md
   previous_snapshot_source: analysis/github-context-increment-20260831c.json
-  captured_pr484_at: '2026-08-31T06:41:26Z'
-  pr484_head: 8b3c4e4b175826805238f2585ca470d746a80610
+  captured_pr484_at: '2026-08-31T07:06:55Z'
+  pr484_head: d53db2f3729c722d5dd20340a8448634c75577a7
   pr484_status: open_pr
   merged_prs: [488, 489, 490, 493, 494, 495, 496, 497]
   open_related_prs: [491, 492]
@@ -74,6 +74,7 @@ canonical_documents:
   - {path: notes/context-reconciliation-20260831c.md, status: dated_handoff, role: current_scientific_context_reconciliation_and_completed_work_recovery}
   - {path: notes/context-reconciliation-p334-20260831c.md, status: dated_handoff, role: general_two_port_full_clock_channel_site_and_canonical_noise_completion_crosswalk}
   - {path: notes/frontier-increment-20260831d.md, status: dated_handoff, role: completed_all147_noise_canonical_current_deletion_symmetric_kernel_and_log_time_results_at_immutable_scientific_pins}
+  - {path: notes/frontier-increment-20260831e.md, status: dated_handoff, role: completed_uniform_blockade_mean_closure_and_Je_source_observer_with_spatial_variance_and_hidden_QSe_transport_boundaries}
   - {path: docs/NEXT-TARGETS.md, status: canonical_current, role: decision_experiment_board}
   - {path: docs/STATUS.md, status: canonical_current, role: claim_ledger}
   - {path: docs/RESEARCH-MAP.md, status: canonical_current, role: research_navigation}
@@ -923,7 +924,42 @@ registered_reanalyses:
     dependency_group: p154-phase-e-mixed-plane-N65-N130-20k
     result_summary: raw_JE_N65_minus0p0000825911_plusminus0p0000814201_N130_minus0p0000134106_plusminus0p0000529152_joint_p0p578915_full_control_joint_p0p649610_source_retains64p5744_to69p7531_percent_variance_N130_auxiliary_JA_z2p4733_not_reproduced_at_N65
     boundary: empirical_linear_clock_Euler_control_not_exact_fixed_K_or_RG_thermal_subtraction_finite_paired_site_cluster_tilt_not_bond_FK_Q_derivative_or_field_identity_full39_by39_covariance_and_delete_one_views_share_old20k_stream
-    next_output: extract_existing_P40_million_sample_q_cluster_Gram_with_full_controls_at_its_N65_N85_geometries_shared_counters_do_not_allow_cross_N_independent_pooling_Etop_moment_is_missing_and_N85_is_not_N130
+    next_output: use_completed_P40_million_sample_q_response_to_target_missing_Etop_source_and_control_moments_actual_norm4_child_or_thermal_mixed_readouts_not_repeat_q_only_detection_N85_is_not_N130
+  - id: P40_ABSOLUTE_CLUSTER_RESPONSE
+    status: completed_zero_replay_million_sample_source_response
+    integration_status: open_pr
+    pr: 267
+    branch: research/navigation-priority-refresh-20260829
+    commit: a4cbf02a48c3f78ee8fb3a1e4141bd985c0bf845
+    input_commit: 291854a518b03eef4293431b89254f0f4429da53
+    contract: analysis/p40_absolute_cluster_reanalysis.json
+    outputs: [results/p40-absolute-cluster/latest.json, results/p40-absolute-cluster/REPORT.md, scripts/analyze_p40_absolute_cluster.py]
+    dependency_group: p40-motif-N65-N85-shared-counter-1m
+    result_summary: orientationwise_full_compensated_Jq_exceeds160_SE_but_H4_N65_minus0p00000213821_plusminus0p00001132698_N85_plus0p00001171787_plusminus0p00000861650_joint_p0p38964_remains_unresolved
+    boundary: raw_and_compensated_sources_are_different_perturbations_cross_direction_cancellation_allocation_depends_on_cyclic_site_coupling_Etop_and_third_moments_missing_N85_not_N130_no_new_field_or_configuration
+    stream_correction: same_seed4020260830_and_counters40000000_to41000000_but_counter_uniform_includes_splitmix64_N_N65_N85_are_domain_separated_and_nominally_independent_under_usual_PRNG_model_within_N_views_remain_paired_old_metadata_only_inference_is_historical
+    next_output: supplement_old_counter_q_squared_source_and_q_squared_control_moments_for_a_coupling_invariant_Etop_given_q_response_not_repeat_strong_q_coupling_N130_child_and_thermal_transport_are_separate_scopes
+  - id: PR484_P334_UNIFORM_BLOCKADE_SEMIGROUP
+    status: completed_uniform_blockade_mean_clock_closure_and_spatial_variance_identity
+    integration_status: open_pr
+    pr: 484
+    branch: analysis/etop-modulus-survivors-20260831
+    commit: d53db2f3729c722d5dd20340a8448634c75577a7
+    scientific_parent_commit: ac9e6a8e06534f4b83bde9eefc4a7ffbf0343ea9
+    outputs: [notes/p334-uniform-blockade-clock-semigroup.md]
+    result_summary: uniform_mean_blockade_Ba_Bb_equals_Bab_closes_on_full_clock_spatial_singleton_response_variance_depends_on_final_site_collision_constructed_equal_clock_variances14_over625_and4_over625
+    boundary: not_closure_of_smaller_H2_b2_state_or_an_observed_equal_clock147_prefix_pair_spatial_response_variance_is_not_suffix_sampling_noise
+    next_output: spatial_conditional_response_variance_or_final_site_collision_not_finer_uniform_mean_dose_curves_or_first_semigroup
+  - id: P398_WIDTH8_CURRENT_SOURCE_GEOMETRY
+    status: completed_current_defined_Je_observer_and_hidden_reversible_force_decomposition
+    integration_status: branch_only
+    branch: theory/p398-width8-reversible-current-control-20260831
+    commit: 33c6028f8722d10122b95a6c02463680cef5df5b
+    outputs: [analysis/p398_width8_current_source_geometry.json, notes/p398-width8-current-source-geometry.md, results/p398-width8-current-source-geometry/SCIENTIFIC_CARD.md, results/p398-width8-current-source-geometry/latest.json]
+    dependency_group: p398-positive-cylinder-exact-chain
+    result_summary: complete_initial_current_capture_still_loses99p7429_percent_plus_t4_correlation_missing_initial_curvature_norm_QSe_squared0p0602551994_minus_and2p9272489452_plus_for_G_and_reversible_S
+    boundary: Cauchy_saturation_is_by_construction_projected_observer_pair_not_autonomous_Markov_chain_Q_is_projector_not_Potts_source_same_generator_not_new_data_or_field_count
+    next_output: named_hidden_QSe_reversible_geometry_transport_not_first_Je_observer_or_current_deletion
   - id: P398_WIDTH5_PHYSICAL_PROPAGATION
     status: completed_exact_width5_propagation_and_numerical_mode_visibility
     integration_status: open_pr

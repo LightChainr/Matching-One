@@ -6,14 +6,29 @@ This map is the repository's scientific coordinate system. It is not a permissio
 
 ## The five axes
 
+The [P40 production readout](../results/p40-absolute-cluster/REPORT.md)
+now distinguishes **global source response** from **directional response**:
+q couples strongly to the raw and separately compensated cluster source,
+but their H4 difference is unresolved. The saved common-label Gram exposes
+cancelling readout/source terms; that allocation depends on the coupling and
+is not a basis-independent field decomposition. E_top/source remains a
+different, missing moment in P40, not a square of the measured q response.
+
+The [e increment](../notes/frontier-increment-20260831e.md) sharpens two
+more coordinates: unmarked uniform blockade means close on the full clock,
+whereas spatial conditional variance sees final-site collisions; complete
+instantaneous current visibility does not close reversible hidden geometry
+transport. These are physical observer distinctions, not new task gates.
+
 The [absolute-cluster response](../results/p154-absolute-cluster/REPORT.md)
 now separates **source variation** from **readout coupling**: `cb+cw` is not
 removed by the declared clock/Euler span, yet its E_top H4 response is
 unresolved at20k. The three-state q/E readout still sees this source only
 through `E[S|q]`; nontrivial microscopic variation is not a count of fields.
 This new-mark replay is an `open_pr #267` result using an existing dependency
-block, not new Monte Carlo evidence. Its next available high-statistics
-q-only check is the existing P40 Gram, not another first source pilot.
+block, not new Monte Carlo evidence. The high-statistics P40 q-only check
+above is now complete; its missing E_top and child/thermal moments are
+different information, not another first source pilot.
 
 The [d frontier increment](../notes/frontier-increment-20260831d.md) extends
 the **state** axis to complete147 continuation laws and irreducible triples,
