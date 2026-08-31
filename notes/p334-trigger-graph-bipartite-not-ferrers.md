@@ -97,6 +97,12 @@ specified distinct edges; their inclusion probability is
 `m*(m-1)/[L*R*(L*R-1)]`. Expectations add across components. The two saved graphs
 each have one nonisolated component.
 
+This weaker benchmark fixes the **observed vertex sets, L/R capacities and m**,
+but permits benchmark graphs to disconnect or acquire isolated vertices. It is
+not additionally conditioned on connectedness, absence of isolates, or preserving
+the full observed component decomposition. Capacity includes both component
+size and side imbalance; no connected-null calculation is being asserted.
+
 | conditional arithmetic | A: 14×12, m=108 | B: 5×29, m=108 |
 |---|---:|---:|
 | observed W2 | 926 | 1466 |

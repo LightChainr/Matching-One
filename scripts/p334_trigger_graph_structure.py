@@ -159,7 +159,7 @@ def saved_bipartite_baseline(records):
             "expected_difference_B_minus_A": fraction_record(expected_difference),
             "excess_difference_B_minus_A": fraction_record(Fraction(difference)-expected_difference),
             "expected_fraction_of_observed_difference": fraction_record(expected_difference/difference),
-            "interpretation": "Posthoc structural arithmetic on the two already selected graphs, conditional on each component's bipartition sizes and edge count. Not a new independent test or causal attribution."}
+            "interpretation": "Posthoc structural arithmetic on the two selected graphs. Fix the observed component vertex sets, L/R capacities and m, but the uniform bipartite benchmark may be disconnected or contain isolates: it is not conditioned on preserving connectedness or the complete component decomposition. Capacity includes both component size and side imbalance. Not a new independent test, population percentage or causal attribution."}
 
 
 def main():
