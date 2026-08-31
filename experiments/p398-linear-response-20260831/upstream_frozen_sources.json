@@ -1,0 +1,68 @@
+{
+  "commit": "1f19fc1a2d9fc59dce650e95268c716762725985",
+  "sources": [
+    {
+      "path": "scripts/noncrossing_connectivity_codec.py",
+      "sha256": "766bd53dca672e9a94cc22d4a1a24e901dcfefdf13d8fd7647962bcde32d3d83",
+      "functions": [
+        "_require",
+        "canonical_rgs",
+        "validate_rgs",
+        "is_noncrossing_rgs",
+        "generate_rgs_partitions",
+        "noncrossing_states"
+      ]
+    },
+    {
+      "path": "scripts/p321_homology_trace_certificate.py",
+      "sha256": "c55abb3d95fce9bfb8cf3c11457b3f3fea9ea5fa84286411488f5f47b97e3dfe",
+      "functions": [
+        "join_adjacent",
+        "rotate_state"
+      ]
+    },
+    {
+      "path": "scripts/p333_generic_q_detach_intertwiner.py",
+      "sha256": "74adfb8bd832d58ff76b35ffa54bfb1ffab7564be731fbb9b4ef7eced9b2f07d",
+      "functions": [
+        "detach_state"
+      ]
+    },
+    {
+      "path": "scripts/p398_width8_source_spectrum.py",
+      "sha256": "dca50fb233ef98affc27f26e77b6eb0e97da1ae1ca59e1e1117f92252fa0fbcd",
+      "functions": [
+        "kreweras"
+      ]
+    },
+    {
+      "path": "scripts/p398_width8_memory_motifs.py",
+      "sha256": "6cd534bd9f1857db63397b9e54df159cfb73efc03e57b00b2964b13108d79596",
+      "functions": [
+        "next_pair_motifs"
+      ]
+    },
+    {
+      "path": "scripts/p398_width8_geometric_compression.py",
+      "sha256": "bdeae53cc56667ef06affad6c8993dbd8a33b3f14650fb5d93a252c4eecec8bc",
+      "functions": [
+        "features"
+      ]
+    },
+    {
+      "path": "results/p398-width8-source-spectrum/latest.json",
+      "artifact": "old_source_spectrum.json",
+      "sha256": "50245a30c79f74a6a94910d050c430580615b8861daf1780c770d92fde7d1b57"
+    },
+    {
+      "path": "results/p398-width8-t4-post-reveal/latest.json",
+      "artifact": "old_t4_compression.json",
+      "sha256": "fcc32b92941b956ba2f3a41a0c80d3ed6a61a71efbc9e62f9c2f568d3657c84d"
+    },
+    {
+      "path": "analysis/p398_width8_t4_post_reveal_protocol.json",
+      "artifact": "old_compression_protocol.json",
+      "sha256": "e0722fb6a1e7f42d76eec0e02448c59c8d4ffcb1d92fbfdeabd6500ad0417560"
+    }
+  ]
+}

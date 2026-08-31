@@ -1,0 +1,34 @@
+{
+  "date": "2026-08-31",
+  "instance": "DevEnvC_TV2N0X",
+  "hostname": "4a8d1d443419434889e49148ed0a7ba6",
+  "remote_directory": "/workspace/matching-one-p334-finite-20260831",
+  "code_and_results_remote_local_sha256_match": {
+    "analyze_finite_source.py": "d7582cc546cd09dfb55b055d225c58a792cf5d1bd80816a616b3bce5c78e9d39",
+    "src/finite_census.cpp": "5b5174cc541d386bdf2f15ab47c97aa6327498cc8701e2209f700d4c99333dbc",
+    "output/latest.json": "b0aeb158914ec2ec3fdc163f37e9d125feb02f9405447386598c2e98b59101cc",
+    "census/N325/census.csv.gz": "76a01f6ee8325a49ec3da68c6332a0e73d5c6c4b2b31d9e27250b1b9f301c58c",
+    "census/N425/census.csv.gz": "23a1e7c49404f2e080c0cd519556494b428095e4a162141f235e7ac78beb782e"
+  },
+  "compiler": "GCC 10.3.1",
+  "numpy": "1.26.4",
+  "scipy": "1.13.1",
+  "python": "3.9.9",
+  "actual_compute_seconds": {
+    "census325": 2.06161,
+    "census425": 2.76299,
+    "score": 6.384076065
+  },
+  "new_prefixes": 0,
+  "new_tails": 0,
+  "notes": [
+    "The exact class census is new acquisition on old prefixes.",
+    "Post-analysis diagnostics use the same20paired batches.",
+    "One SSH-key reset restored authentication under the existing session authorization; no data or VM reset.",
+    "Package setup time is excluded from scientific wall time."
+  ],
+  "independent_review": "local_structure independently reviewed normalization, exact census, iid-label half-difference, CDF/integral axes and20batch estimator; no substantive error found; no additional simulation.",
+  "final_cloud_state": "Ready, verified by hdspace list after stop",
+  "final_tunnel_state": "Only helper-owned TV tunnel stopped",
+  "post_run_process_check": "ps comm/etime table contained only container infrastructure and no scientific process"
+}
