@@ -1,0 +1,22 @@
+{
+  "schema": "matching-one.norm4-lagged-source-contract.v1",
+  "status": "Exploratory one-activation protocol specified before marking and scoring old permutations",
+  "question": "Can a source centered within the previous occupancy/rank layer change the next activation, moving-root rank population and original U?",
+  "definition_note": "notes/norm4-lagged-source-mechanism-20260831.md",
+  "Ns": [65, 85, 130, 170, 260, 340],
+  "lag": 1,
+  "source": "epsilon_(K-1)=CB(K-1)+CW(K-1)-E[CB+CW|K-1,rank_(K-1),geometry], bulk cluster-count units",
+  "protocol": "For each final K>=1 retain the previous K-1 and rank probabilities, exponentially tilt configurations within that layer and add one uniformly chosen vacant site. Final K has unchanged Bin(N,p) weight. At K=0 the tangent is zero.",
+  "protocol_boundary": "A one-step-before-readout injection at each K; not one fixed early injection for every later K, not the original equilibrium bulk fugacity, not an inferred causal identity between the two sources",
+  "joint_marks": ["event_count01", "event_count02", "event_count12", "sum_s_previous01", "sum_s_previous02", "sum_s_previous12"],
+  "kernels": {"Hq": "T01+2*T02+T12", "HE": "-T01+T12", "first_activation": "T01+T02", "second_completion": "T12+T02"},
+  "source_result": "results/norm4-source-endpoint-1m/latest.json",
+  "source_result_sha256": "8aa36f48c3229f258981652c7b6da8aba23c75120ffce3b7217cecf2a2f7f867",
+  "input_scope": "Four cyclic sizes use the same original100k permutations; N260/N340 each use original1M. No new random counters. Endpoint batch is original1000 union later9000, not contiguous10k.",
+  "uncertainty": "Recompute previous-rank conditional source means and event kernels after each aligned original delete-one batch; reuse the matching retained-sample root; keep full covariance across all recorded response components and sizes in the same dependency group.",
+  "primary_readout": "root-comoving rank1 probability response to this lagged source",
+  "companion_readouts": ["new_source_rootdot", "original_U_source_derivative", "exclusive01_02_12_response_contributions", "first_and_second_activation_root_motion_contributions"],
+  "normalization": "same exact DeltaCos4 and N^(13/8) as original U; no additional factor N because source already uses bulk units; no free exponent or q2/Jordan source-extension assumption",
+  "sampling_boundary": "Empirical conditional centering and aligned jackknife; new joint observations of old configurations are not independent replications. Fixed sample budget, no optional continuation by significance.",
+  "outputs": ["results/norm4-lagged-source/run.json", "results/norm4-lagged-source/raw/n{N}.csv.gz", "results/norm4-lagged-source/latest.json", "results/norm4-lagged-source/REPORT.md"]
+}
