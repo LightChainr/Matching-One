@@ -16,6 +16,10 @@
 
 同一最新分支已解决N/m²有界联合极限的Poisson/full共存和pooled分母。**固定m的剩余理论问题**是控制oblique twist代价及受限扇区odds，并消去粗轮廓上界中的exp[O(N/m²)]体积因子；再引用联合极限或仅证明PSD/有限twist阶数不能完成这一步。上述进展不替代固定S、epsilon=1、多孔连通score矩的另一条延续问题。
 
+[本次相对缝界](../notes/p337-fixed-m-relative-bound.md)已有`Delta_k≤50k log m`，常数不足，不要重复证明“只是表面阶”。同文的完整热族反例说明：即便rank1一致指数小，仍需受限sector odds控制；共同bulk消去或相同pressure不能代替它。执行分支[0dda27ba](https://github.com/LightChainr/Matching-One/blob/0dda27ba/notes/closed-source-s4-trace-transmission-result.md)的固定Q4归一化通道到原U传递也已完成；Q1需要其实际carrier与完整二阶R-jet，不能再以增加Q4点或seam来建立已经得到的有限非零性。
+
+**估计器可行性已经进一步收缩。** [精确方差预算](../experiments/p337-estimator-access-20260831/RESULT.md)把原root/均值/分母给定后，m64的star普通独立热协方差平均仍需每几何至少约1.52e25样本才达SNR3。[twist审查](../notes/p337-twist-estimator-access.md)也表明：非负partition恒等式没有自动消除稀有质量、热中心化和取向差的抵消。下一算法只接受具体的相关估计/桥接重叠或条件积分二阶矩控制；仅提出“twist”“Rao–Blackwell”或“在rank1中采样”不再构成启动理由。这里没有否定全部替代算法，也不改开m2/增加参数点来回避当前预算。
+
 ## 已完成并停线的生产
 
 1. **#154：固定新传递实验已完成，执行停线。** [165M新路径](../experiments/p154-prospective-transmission-20260831/REPORT.md)触发净U在两N均处于±0.50内的冻结规则；entry/completion各在±0.30内。停止把这个lag=1簇源列为当前主要H4解释，不接着扫lag、换源单位或补样。本轮没有选出连续场身份。

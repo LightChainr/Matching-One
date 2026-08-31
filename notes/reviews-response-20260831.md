@@ -34,3 +34,11 @@
 意见1/3指出PR528会恢复旧P0计划，核对属实。本次在隔离维护工作树修正其现有导航/账本，保留历史条目和数据，不合并研究Draft。大Draft的审查入口是上表各个具体包、冻结SHA及验证脚本，不要求从完整diff重建历史。
 
 不再追加一个总规划。下一分析从已经明确的缺口出发：把全孔面核的连接约束用于未知多孔层的取向热score矩，或为具名双律给出避免稀有扇区瓶颈的原U估计器及误差证明。它们都未因本轮有限结果自动完成；在形成可区分预测与可行预算前，P0生产队列保持空。支持线不回升为默认主线，也不以新特征补救已失败模型。
+
+## 沿上述缺口继续得到的结果
+
+- [原U估计成本](../experiments/p337-estimator-access-20260831/RESULT.md)：同一m64根区间，直接求`(K−mu)I1`的精确方差。即使给真实root/均值/分母，star的独立iid平均达到SNR3仍需每几何≥1.5180e25次，drop≥2.5247e15次；独立120/160位逐行平方通过420项区间核对。这是指定估计器的事后预算，不是95%区间或全部算法下界。
+- [twist估计审查](p337-twist-estimator-access.md)：独立正partition差分病态，自然共享构型抵消还原稀有rank1指示量。m2的五个partition不能原样当成m64的五个partition；后者字面构造为4097项。缺失的是具体相关估计/桥接重叠/条件积分二阶矩控制，而不是再换一个算法名称。
+- [固定m相对界](p337-fixed-m-relative-bound.md)：实际局部模型已有对h一致的`Delta_k≤50k log m`，常数仍不足；完整三态热族进一步证明共同bulk精确消去、rank1一致指数小、FKG与唯一pooledroot仍不能替代受限sector odds控制。反例针对摘要前提，不否定原格点模型的固定m定理可能成立。
+
+同期[0dda27ba的固定Q4传递](https://github.com/LightChainr/Matching-One/blob/0dda27ba/notes/closed-source-s4-trace-transmission-result.md)已核对并接入STATUS：直接分子零也可经归一化改变原U，这一有限问题不重做；Q1的实际carrier和完整有限jet仍是不同的未解环节。上述后续全部没有新随机块或云任务。
