@@ -30,7 +30,11 @@ E/W and separate K1/K2 are bridge diagnostics, not additional primary tests.
 At each fresh prefix use the exact existing R0 loop source and joint-safe
 degree classes. Let `s=(s_f,s_s)`, `G=E[ss^T]`,
 `T_oo=s_o^2-pi_a^2 Var_a(L_o)`, and
-`phi_oo=T_oo-E[T_oo s]G^-1 s`.
+`phi_oo=T_oo-E[T_oo s]G^+ s`.
+Here G^+ is the inverse on its exact source range (ordinary inverse when
+rank2, Moore-Penrose projection for rank1/0). Fresh prefixes are not
+discarded if their source Gram is singular; exact census rank determines
+the range. The discovery block happened to have full-rank original00 Grams.
 The projection uses the complete label census, not future responses.
 Every class has zero mean phi, and E[phi s]=0. Outside original00 the
 target is defined0, matching the old normal-response estimand.
