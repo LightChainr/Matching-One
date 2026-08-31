@@ -1,0 +1,228 @@
+{
+  "schema": "matching-one/p267-thermal-warp-invariants/v1",
+  "status": "exact theoretical certificates; no production fit or simulation",
+  "scalar_vs_density": {
+    "scalar": "G=D composed with phi; R=v D'",
+    "density": "G=phi' (D composed with phi); R=(vD)'"
+  },
+  "global_tangent_criterion": "H=integral_0^p R; v=H/(alpha D). The reduced denominator must have no roots on [0,1], and v(0)=v(1)=0.",
+  "regular_example": {
+    "mass_residual": "0",
+    "velocity_numerator": [
+      "0",
+      "-1/5",
+      "1/5"
+    ],
+    "velocity_denominator": [
+      "-1"
+    ],
+    "interior_pole_count": 0,
+    "endpoint_poles": [],
+    "velocity_endpoints": [
+      "0",
+      "0"
+    ],
+    "regular_endpoint_fixed_tangent": true,
+    "boundary": "Only a linear-generator statement; cannot reject a finite density warp from this alone."
+  },
+  "zero_area_but_singular_example": {
+    "D": [
+      "0",
+      "-1/3",
+      "4/3",
+      "-1"
+    ],
+    "R": [
+      "0",
+      "-1/2",
+      "3/2",
+      "-1"
+    ],
+    "zero": "1/3",
+    "flux_at_zero": "-1/81",
+    "simple_pole_residue": "-1/18",
+    "gate": {
+      "mass_residual": "0",
+      "velocity_numerator": [
+        "0",
+        "1/4",
+        "-1/4"
+      ],
+      "velocity_denominator": [
+        "1/3",
+        "-1"
+      ],
+      "interior_pole_count": 1,
+      "endpoint_poles": [],
+      "velocity_endpoints": [
+        "0",
+        "0"
+      ],
+      "regular_endpoint_fixed_tangent": false,
+      "boundary": "Only a linear-generator statement; cannot reject a finite density warp from this alone."
+    }
+  },
+  "same_residual_zero_free_source": {
+    "mass_residual": "0",
+    "velocity_numerator": [
+      "0",
+      "1/4",
+      "-1/4"
+    ],
+    "velocity_denominator": [
+      "-1"
+    ],
+    "interior_pole_count": 0,
+    "endpoint_poles": [],
+    "velocity_endpoints": [
+      "0",
+      "0"
+    ],
+    "regular_endpoint_fixed_tangent": true,
+    "boundary": "Only a linear-generator statement; cannot reject a finite density warp from this alone."
+  },
+  "multiple_zero_counterexample": {
+    "D": [
+      "0",
+      "1/4",
+      "-5/4",
+      "2",
+      "-1"
+    ],
+    "H": [
+      "0",
+      "0",
+      "-1/2",
+      "2",
+      "-5/2",
+      "1"
+    ],
+    "gate": {
+      "mass_residual": "0",
+      "velocity_numerator": [
+        "0",
+        "-1",
+        "1"
+      ],
+      "velocity_denominator": [
+        "1/2",
+        "-1"
+      ],
+      "interior_pole_count": 1,
+      "endpoint_poles": [],
+      "velocity_endpoints": [
+        "0",
+        "0"
+      ],
+      "regular_endpoint_fixed_tangent": false,
+      "boundary": "Only a linear-generator statement; cannot reject a finite density warp from this alone."
+    }
+  },
+  "finite_warp_not_linear_generator": {
+    "phi": [
+      "0",
+      "5/4",
+      "-1/4"
+    ],
+    "D": [
+      "0",
+      "-1/3",
+      "4/3",
+      "-1"
+    ],
+    "G": [
+      "0",
+      "-25/48",
+      "35/12",
+      "-1169/256",
+      "2275/768",
+      "-707/768",
+      "35/256",
+      "-1/128"
+    ],
+    "old_zero_flux": "151/419904",
+    "tangent_gate": {
+      "mass_residual": "0",
+      "velocity_numerator": [
+        "0",
+        "3/32",
+        "-125/288",
+        "4217/9216",
+        "-1243/9216",
+        "19/1024",
+        "-1/1024"
+      ],
+      "velocity_denominator": [
+        "1/3",
+        "-1"
+      ],
+      "interior_pole_count": 1,
+      "endpoint_poles": [],
+      "velocity_endpoints": [
+        "0",
+        "0"
+      ],
+      "regular_endpoint_fixed_tangent": false,
+      "boundary": "Only a linear-generator statement; cannot reject a finite density warp from this alone."
+    },
+    "finite_density_warp_verified": true
+  },
+  "finite_TV_obstruction": {
+    "D": [
+      "-1/3",
+      "1"
+    ],
+    "G": [
+      "-5/6",
+      "2"
+    ],
+    "source_signed_lobe_areas": [
+      "-1/18",
+      "2/9"
+    ],
+    "target_signed_lobe_areas": [
+      "-25/144",
+      "49/144"
+    ],
+    "same_total_mass": "1/6",
+    "TV_gap": "17/72"
+  },
+  "common_channel_area": {
+    "definition": "Omega(D)=integral(F_A D_E-F_E D_A)dp",
+    "finite_null": "Omega(U)-r_A*r_E Omega(D)=0; equal amplitudes give alpha^2",
+    "same_phi_gap": "0",
+    "different_individually_valid_phi_gap": "178219/80510976",
+    "source_omega": "-1/210"
+  },
+  "single_sign_clock": {
+    "D_A": [
+      "1",
+      "1"
+    ],
+    "D_E": [
+      "-1/3",
+      "1"
+    ],
+    "phi": [
+      "0",
+      "5/4",
+      "-1/4"
+    ],
+    "r_A": "-2/7",
+    "r_E": "3/5",
+    "independent_amplitude_area_null": "0",
+    "clock_moment_nulls_m0_to_m6": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "relation": "When mass nulls vanish, J1(U)-r_E*J1(D)=(Omega(U)-r_A*r_E*Omega(D))/(2*r_A*M_A)",
+    "completeness": "All moments determine the signed E measure in q=F_A/M_A; finitely many moment nulls are necessary, not sufficient."
+  },
+  "first_variation_area": "delta Omega=2 integral(H_A D_E-H_E D_A)+M_A H_E(1)-M_E H_A(1)",
+  "statistics_boundary": "Exact nonzero polynomials from empirical means are not statistical no-go certificates; use the same-stream covariance or batch jackknife for TV, lobes and Omega."
+}
