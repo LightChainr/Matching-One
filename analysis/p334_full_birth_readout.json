@@ -1,0 +1,15 @@
+{
+  "source_commit": "e81dd59ff6be69056e504e0e81cfeccf73dc5e97",
+  "conditional_source_commit": "0d1e586dafbade5e7d1f9bfc598170d0c881e337",
+  "sizes": [325, 425],
+  "samples_per_size": 20000,
+  "batches_per_size": 20,
+  "new_random_samples": 0,
+  "purpose": "Read missing K1/K2 and all checkpoint ranks on the original counter streams, then complete full F1/F2/A_top with joint stratum covariance.",
+  "p_ref": 0.59274605079,
+  "full_A_top": "F1+F2-1; integrated 1-(K1+K2)/(N+1)",
+  "safe_global_hybrid": "Only when both orientation ranks at checkpoint are >=1 and every R1 clock is exact, replace R1 F2 with its conditional mean; all other complete paired vectors remain original. R2 births are already prefix-measurable.",
+  "no_new_conditional_solve": true,
+  "host": "local Mac CPU; unchanged engine, no GPU or cloud job",
+  "interpretation": "Auxiliary full-observable readout of the same archived random source, not independent production or a revalidation campaign."
+}
