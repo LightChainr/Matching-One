@@ -215,6 +215,12 @@ signal cannot be monotonically amplified by increasing the source.
 The strong-coupling proof, two-current representation and all fixed
 coupling values are linked in that result. No coupling scan is pending.
 
+The subsequent [size/sign result](closed-source-size-sign-and-transmission.md)
+strengthens this to an eventual negative tail, a required zero crossing,
+and a Manhattan winding-size law. The prescribed one-hole reweighting
+contribution is also now nonzero and opposes the weighted-rank-jump term;
+the jump-only mixed-response candidate is excluded.
+
 - **Mechanism change:** exact three-count closure plus a nonzero original-U
   response removes common-thermal invisibility of this coefficient-fixed
   finite model. Bare cluster coupling has no additional count to generate

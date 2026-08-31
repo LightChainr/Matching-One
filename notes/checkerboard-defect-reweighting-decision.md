@@ -115,4 +115,5 @@ asymptotic exponent, replacement source or new production block follows.
 The result folder records all input/source hashes and the rational primary
 enclosure. These are deterministic computational bounds conditional on the
 stated exact graph counts, not confidence intervals. No Monte Carlo, cloud
-job, extra fit or test suite was run. This branch is not pushed by this task.
+job, extra fit or test suite was run. Production commitd7f385b6 was delivered
+from an isolated worktree for integration by the execution team.

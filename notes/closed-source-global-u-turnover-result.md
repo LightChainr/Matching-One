@@ -1,5 +1,11 @@
 # The closed attractive source amplifies U weakly, then suppresses it
 
+**Subsequent result:** the
+[exact strong-coupling series](closed-source-angular-strong-coupling-law.md)
+now fixes the eventual sign: U approaches0 from below. Since the last
+frozen point below is positive, a later zero crossing and negative valley
+are necessary. No extra point was added to this completed four-point grid.
+
 **New finite-model conclusion:** the already selected source
 `S*=C+F+Bv` does not monotonically amplify the original global U.
 The exact N25 pair has `U_t(0)=+0.126165363414`, but
@@ -107,6 +113,8 @@ child. No added source is introduced to rescue either failed candidate.
 - **Boundary:** fixed finite volume; no thermodynamic transition,
   continuum identity, fitted asymptotic power, unique peak or larger-N
   conclusion. The stopped F4 and lag-one blocks remain stopped.
-- **Next useful question:** how rank-sector suppression competes with
-  increasing size in this named model. That requires a new size prediction;
-  extra points around this resolved peak are not the current next task.
+- **Size follow-up:** the
+  [winding-barrier theorem](closed-source-winding-barrier.md) and
+  [size/sign/transmission synthesis](closed-source-size-sign-and-transmission.md)
+  now supply the next size predictions and the separate fixed defect
+  decision. Extra points around this resolved peak remain out of scope.
