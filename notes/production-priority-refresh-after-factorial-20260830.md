@@ -1,7 +1,29 @@
 # Production priority refresh after the completed factorial
 
-**Snapshot:** 2026-08-31 (production inputs acquired on 2026-08-30)
+**Snapshot:** 2026-08-31; main incorporated through `05af691`.
 **Purpose:** move attention when a result lands; do not turn priority into a lock.
+
+## Priority correction: actual results before more preparation
+
+The [single execution board](../docs/NEXT-TARGETS.md) now leads with four outputs:
+
+1. **E_top/model survivors on real data:** compare the existing norm-4/norm-5 and P267 factorial covariance, distinguish amplitude transport from response-direction change, and give a numerical separating-geometry prediction. The first #370 adapter is complete and supports a concrete survivor question; generic fixtures and compilers are not its predecessor.
+2. **P334 microscopic checkpoint replay:** explain safe-insertion degree/2-star structure on saved configurations, without new random samples. Exact b2 is already present, successor H2 is reconstructible, and seed/counter metadata supplies the microscopic state identifier.
+3. **Matching/source coupling:** the same-stream and direct/plateau analyses are completed. The next result is a measurable joint M/K_A loading in a matching-sensitive geometry or an explicit line-relative response, not another K_A-only scale.
+4. **P398 physical response:** use the completed nine-mark rooted/landing module to compute a finite charge-neutral 2x2 connected response matrix under an explicit positive measure. Higher copies of the projected Gram check are not a new discriminator.
+
+Tests remain local implementation support; full-repository audit, repeated testing, synthetic certification and registry completion no longer lead the work block. This is an attention change, not a ban or approval process. No Issue state or server job is changed.
+
+## Newly completed analyses and exact inputs
+
+| Result | Source and status | What it changes |
+|---|---|---|
+| P334 exact real-state nonclosure | `branch_only` `6147e22`, `notes/p334-real-checkpoint-scalar-nonclosure.md` | Same age/line/H2/b2 does not determine the two-clone probability; safe-graph degree second moments differ. Existing seed/counter prefixes can be replayed |
+| [P334 direction allocation](../results/p334-fork-directional-allocation/REPORT.md) | `open_pr` #267 / `2b0844a` | Within-checkpoint direction contrasts are `3.616+/-3.251` and `-1.535+/-2.086` in units 1e-6. This structural coordinate is not yet an identified direction carrier |
+| [P439 direct/plateau response](../results/p439-direct-plateau-transport/REPORT.md) | parent `open_pr` #451 / `bfbceb2`; derived `open_pr` #267 / `8498d62` | Both components are individually unresolved; joint zero p=.79013. No resolved large-term cancellation is exposed. All components share the parent dependency groups |
+| P398 coupled module and second jet | `branch_only` `5389200`, `afc619c`, respective `results/p398-rooted-module-closure/latest.md` and `results/p398-rooted-second-jet/latest.md` | Nine marks complete the declared intersection; X2=0 and J2=0. Repeating the fixed-radical Gram projection is automatic, while a physical all-Q transfer remains open |
+
+These are finite/post-reveal results, not independent confirmation of a continuum operator. The two new numerical reanalyses ran once, without new Monte Carlo, a test suite or server access.
 
 ## What has graduated out of the queue
 
@@ -85,8 +107,10 @@ N425 is not a closure certificate: its directions retain `+.0002342` and
 `-.0002488`, which cancel in the mean. The fractions are model/order-dependent
 predictive allocations, not causal mediation. Reported dispersion is conditional
 on the fitted fold models; nuisance-refit sampling uncertainty was not estimated.
-The existing checkpoint features are pre-common-update, not successor geometry,
-and the stored multicontact proxies are not exact cooperative `b2`.
+Those statements describe the older `751f8b3` feature table. They no longer
+justify new acquisition: P334 `6147e22` supplies exact b2, reconstructible
+successor H2 and replayable microscopic configurations. The new structural
+question is what carries its degree-second-moment variation.
 
 Reproducible outputs:
 
@@ -98,7 +122,7 @@ The P250 `0061e4e` and P429 `751f8b3` inputs remain `branch_only`; their new
 derived results are `open_pr` in #267. A replay needs those pinned input files,
 not just the Draft checkout. No new Monte Carlo samples or server access were used.
 
-## Default attention now
+## Earlier handoff, superseded by the four outputs above
 
 ### 1. Turn the P267 discovery into a held-out prediction
 
@@ -116,13 +140,12 @@ incidence or a landing address relative to the current lifted line. Do not
 upscale the identical observer pair. The new design remains in the shared
 P337/P334 dependency family rather than becoming an independent vote.
 
-### 3. Target P429 successor state at N325
+### 3. Earlier P429 successor-state proposal — completed inputs, redirected
 
-Record common-safe successor `H2`, geometry and exact cooperative `b2` in a
-direction-resolved N325 block. This changes the state observed at the fork and
-can separate a risk-set explanation from missing cooperative successor state.
-It is a sharper default than acquiring generic longer paths or repeating the
-completed checkpoint regressions. N425's cancelling directions remain visible.
+The proposed H2/b2 inputs have arrived in the new P334 archive. The default
+is now deterministic safe-graph replay, keeping both directions visible.
+Given successor H2 the one-step clone expectation is already an exact
+function of its safe count; repeating that identity is calibration.
 
 ### 4. P250 common-k36 and complete endpoint spectrum
 
