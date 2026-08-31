@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """One frozen positive moment model, then unused moments seven and eight."""
+import argparse
 import json
 from math import comb, factorial
 from pathlib import Path
@@ -95,16 +96,31 @@ def realization(moments):
     return t, centers, weights, predictions, certificate
 
 
-def features(f):
-    moments, mean, variance, source_shape = rank_step_moments(f)
+def features_from_moments(moments, mean, variance, n):
+    """Direct same-definition entry: standardized m0..m8, mean_p, var_p, N."""
+    moments = np.asarray(moments, dtype=float)
+    if moments.shape != (9,) or not np.allclose(moments[:3], [1, 0, 1], atol=1e-10):
+        raise ValueError("Require the standardized rank-step moments m0..m8")
     t, centers, weights, predicted, certificate = realization(moments)
-    n = len(f)-1
     vector = np.r_[t, centers, weights, mean, variance, t*variance,
                    mean+np.sqrt(variance)*centers, t*variance*n**.75,
                    t*variance*n**.5, moments[7:9], predicted[7:9],
                    moments[7:9]-predicted[7:9]]
     return vector, {"moments_0_to_8": moments.tolist(),
-                    "source_shape": source_shape, "realization": certificate}
+                    "realization": certificate}
+
+
+def features(f):
+    moments, mean, variance, source_shape = rank_step_moments(f)
+    vector, details = features_from_moments(moments, mean, variance, len(f)-1)
+    details["source_shape"] = source_shape
+    return vector, details
+
+
+def affine_shape_chart(vector):
+    """Four nonredundant shape coordinates on the positive flat-rank3 branch."""
+    t, left, middle, right = vector[:4]
+    return np.array([t, vector[4], vector[6], (middle-left)/(right-left)])
 
 
 def jackknife_covariance(loo):
@@ -114,15 +130,27 @@ def jackknife_covariance(loo):
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--source-commit", help="Score exactly one new completed committed archive")
+    parser.add_argument("--source-directory", help="Git-relative archive path, with the original score.json and raw/*.hist.csv schema")
+    parser.add_argument("--output", type=Path, default=OUT)
+    args = parser.parse_args()
+    if bool(args.source_commit) != bool(args.source_directory):
+        parser.error("--source-commit and --source-directory must be given together")
     protocol = json.loads(PROTOCOL.read_text())
+    inputs = ([(args.source_commit, args.source_directory)] if args.source_commit else
+              [(commit, f"results/etop-n{area}-three-modulus")
+               for area, commit in protocol["source_commits"].items()])
     sources, estimates, covariances = {}, {}, {}
-    for area, commit in protocol["source_commits"].items():
-        n = int(area)
+    for commit, source_directory in inputs:
         contract, hashes, bernstein, _ = load_source({
-            "source_commit": commit, "source_directory": f"results/etop-n{n}-three-modulus"})
+            "source_commit": commit, "source_directory": source_directory})
+        n = contract["area"]
+        area = str(n)
         batches = bernstein[0, :, 0]  # The same D_A as the rank-width and shape analyses.
         b, mean = len(batches), batches.mean(axis=0)
-        row = {"source_commit": commit, "source_sha256": hashes, "source_contract": contract,
+        row = {"source_commit": commit, "source_directory": source_directory,
+               "source_sha256": hashes, "source_contract": contract,
                "common_batches": b, "labels": LABELS}
         try:
             point, details = features(mean)
@@ -151,6 +179,13 @@ def main():
             continue
         loo = np.array(loo)
         cov = jackknife_covariance(loo)
+        chart_loo = np.array([affine_shape_chart(v) for v in loo])
+        chart_cov = jackknife_covariance(chart_loo)
+        row["affine_shape_chart"] = {
+            "labels": ["gaussian_variance_fraction", "left_weight", "right_weight", "relative_middle_gap"],
+            "estimate": affine_shape_chart(point).tolist(),
+            "se": np.sqrt(np.diag(chart_cov)).tolist(), "full_covariance": chart_cov.tolist(),
+            "scope": "A source-defined change of coordinates; not an added omnibus comparison"}
         estimates[n], covariances[n] = point, cov
         delta, residual_cov = point[-2:], cov[-2:, -2:]
         q = float(delta@np.linalg.solve(residual_cov, delta))
@@ -178,6 +213,10 @@ def main():
     result = {"schema": protocol["schema"], "construction_freeze": "191c20e2", "new_MC": 0,
               "protocol": protocol, "sources": sources,
               "boundary": protocol["boundary"]}
+    if args.source_commit:
+        result["application_stage"] = "One completed-source auxiliary application of the N100/N400-defined construction; no model reselection"
+        result["boundary"] = (protocol["boundary"].replace(" N900 is not read.", "")
+                              + " The historical protocol records the construction-stage boundary; only the explicitly supplied completed archive is read in this application. Its original primary target is not changed.")
     if set(estimates) == {100, 400}:
         delta = estimates[400]-estimates[100]
         cov = covariances[400]+covariances[100]
@@ -191,8 +230,8 @@ def main():
         result["quarter_coordinate_width_decomposition_difference"] = {
             "labels": old["labels"], "N400_minus_N100": (np.array(new["estimate"])-old["estimate"]).tolist(),
             "se": np.sqrt(np.diag(width_cov)).tolist(), "full_covariance": width_cov.tolist()}
-    OUT.mkdir(exist_ok=True)
-    (OUT/"score.json").write_text(json.dumps(result, indent=2, allow_nan=False)+"\n")
+    args.output.mkdir(parents=True, exist_ok=True)
+    (args.output/"score.json").write_text(json.dumps(result, indent=2, allow_nan=False)+"\n")
     lines = ["# Maximal common Gaussian variance and three positive centers", "",
              "Post-reveal construction from m0..m6; m7/m8 are unused same-source readouts.", ""]
     for area, row in sources.items():
@@ -207,7 +246,7 @@ def main():
             readout = row["unused_moment_readout"]
             lines += ["", f"Unused-moment residual: chi2={readout['chi2']:.9g}/2; nominal p={readout['nominal_p']:.8g}.", ""]
     lines += [result["boundary"], ""]
-    (OUT/"REPORT.md").write_text("\n".join(lines))
+    (args.output/"REPORT.md").write_text("\n".join(lines))
     print("\n".join(lines))
 
 
