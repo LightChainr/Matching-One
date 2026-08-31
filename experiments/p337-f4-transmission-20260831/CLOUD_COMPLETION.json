@@ -1,0 +1,28 @@
+{
+  "status": "compute_completed_outputs_retrieved_owned_hosts_ready",
+  "last_live_cloud_check_utc": "2026-08-31T12:41:35Z",
+  "freeze_commit": "0f7a083770d31095e7b4d688d544637d8fc09658",
+  "raw_commit": "f6006b61",
+  "score_commit": "25ca3635ea64655923c32adee4b62d683579cdcd",
+  "science_commit": "1e1fb542",
+  "result": "INCONCLUSIVE_STOP_FIXED_BLOCK_WITHOUT_TOP_UP",
+  "total_fresh_permutations": 80000000,
+  "all_outputs_retrieved": true,
+  "all_producers_exit_zero": true,
+  "all_owned_tunnels_stopped": true,
+  "other_research_jobs_at_release": false,
+  "remote_workspace": "/workspace/p337-f4-independent-20260831",
+  "per_host_cpu_quota": 14.5,
+  "per_host_memory_limit_GiB": 25,
+  "per_host_production_threads": 14,
+  "owned_hosts": [
+    {"name": "DevEnvC_NePnUn", "id": "1e313eebd1a947b8b38714aeea1404d5", "N": 65, "driver_pid": 388, "samples": 20000000, "batches": 100, "producer_seconds": 13.9816, "cloud_state": "Ready"},
+    {"name": "DevEnvC_551oUR", "id": "9b3eb563ddc64f2680be17501ec4fe6a", "N": 85, "driver_pid": 378, "samples": 20000000, "batches": 100, "producer_seconds": 17.9216, "cloud_state": "Ready"},
+    {"name": "DevEnvC_TVVfoB", "id": "d12701161b844670bb84ad7f110e2fa0", "N": 130, "driver_pid": 428, "samples": 20000000, "batches": 100, "producer_seconds": 28.3036, "cloud_state": "Ready"},
+    {"name": "DevEnvC_TgFr7R", "id": "83750ac4eae34bbbbc64b894b854dd8c", "N": 170, "driver_pid": 371, "samples": 20000000, "batches": 100, "producer_seconds": 34.5097, "cloud_state": "Ready"}
+  ],
+  "six_other_hosts": "Ready at last live check; not started or changed by this task",
+  "credential_actions": "Three stale local instance-key files retained as mode600 backups; current existing keys re-downloaded through official CLI. TVV first existing-key download. No SSH-key reset or remote authorized_keys edit.",
+  "production_adjustments": "none; original frozen samples, seeds, code, modes and decision rule retained",
+  "next_action": "none for this fixed block; never restart or enlarge its completed scientific production"
+}

@@ -34,3 +34,7 @@ or sign is claimed. **No top-up or source/size substitution.**
 Execution lanes:NePnUn/551oUR/TVVfoB/TgFr7R respectively,14 workers each;
 all exited0 and outputs are local, with14–35s producer times. The stopped
 P154 lag1 and P334 forecast decisions are unchanged. No cross-team DMs.
+
+20:41:35CST live API confirmed all ten machines Ready. Only the four owned
+lanes were stopped, after retrieving outputs and checking that no other
+research process was running. Existing workspaces remain intact.

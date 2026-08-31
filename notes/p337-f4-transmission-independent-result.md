@@ -69,8 +69,9 @@ enters. Full omission vectors and covariance are retained in the
 
 Raw batch statistics and receipts were committed as `f6006b61` before the
 single scoring invocation. Score/report commit: `25ca3635`. No scientific
-replay or repeated test suite was run. The only preproduction runtime smoke
-was40 N170 permutations in a disjoint seed domain, with no scientific fit.
+replay or repeated test suite was run. Preproduction structure checks used
+eight local permutations (two per N) and40 N170 permutations on the ARM
+host, outside the production seed domains, with no scientific fit.
 
 ## Runtime and decision
 
