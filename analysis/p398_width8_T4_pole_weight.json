@@ -1,0 +1,14 @@
+{
+  "schema":"matching-one/p398-width8-T4-pole-weight/v1",
+  "parent":"074a5f537caecac9cbd663dcc76ebd05ff54f302",
+  "input":"only saved original-G seven/eight-dimensional Schur blocks and the saved full-G t=4 reference",
+  "fixed_distance":4.0,
+  "rays":["minus","plus"],
+  "analytic_parameter":"H(lambda)=[[A,b],[lambda*c,d]], lambda=0 or 1 only; source resolvent feedback scales by lambda",
+  "parameter_scope":"a Schur feedback bookkeeping parameter, not a new positive Markov process or best-fit model",
+  "slow_contribution":"L=r*exp(z*t), z=-mass; compare endpoint pole and source residue without refitting",
+  "additive_decomposition":"Delta L = mean(r)*Delta exp(z*t) + mean(exp(z*t))*Delta r; exact symmetric two-factor attribution",
+  "remainder":"Delta total correlation minus Delta slow contribution, retaining all other modes",
+  "derivatives":"analytic spectral-projector derivatives at lambda=0 and 1 only",
+  "forbidden":["full 1430-state reconstruction","new MC","coupling scan or fit","new lag","new span","server operation","new low-order-null campaign"]
+}
