@@ -84,6 +84,14 @@ observed pattern. This is not a count of continuum fields and does not
 exclude a general prefix-dependent scalar latent variable, whose averaging
 can itself produce a full-rank response.
 
+The distinction matters here: within cell00 alone the canonical A
+determinants are `6.53e-10 +/- 5.55e-10` and
+`1.52e-9 +/- 6.45e-10`, weaker than the complete-population result.
+Combining01 and10 can yield rank two even though only one source is
+active within either individual prefix. The demonstrated rank is that
+of the ensemble mean-response map, not two simultaneously resolved
+directions at every prefix.
+
 This exploratory rank calculation was proposed after seeing the fixed
 shared-label response matrix; it is not a preregistered decision test.
 The four determinant readouts are correlated, not four independent
@@ -101,3 +109,10 @@ and angle leave-one-batch values in
 `results/p334-common-label-response-rank/score.json`. The designated
 covariance coordinator can append these LOO columns to the existing
 same-source factors without pretending they are independent observations.
+
+The [exact common-policy theory](https://github.com/LightChainr/Matching-One/blob/cfaae36c8a73d85947547021f5c8c7a271c4367c/notes/p334-common-label-euler-tangent.md)
+adds cross-channel support rules and a source-null theorem: a null direction
+of the joint-class mark covariance is a class-constant source, so its
+finite policy remains uniform and every future response vanishes. It also
+distinguishes raw orientation parity from the normalized D coordinate,
+whose denominator changes sign under exchange.
