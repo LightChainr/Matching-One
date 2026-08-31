@@ -117,5 +117,31 @@ it is a symmetric descriptive decomposition, not causal attribution.
   original batches; no new widths, windows, or fitting families are selected.
 - Per-batch compressed artifacts preserve source rows, original observations,
   exact coefficients when available, pair status and the substituted vector.
-- Results are pending completion of the declared full pool; running output
-  is not a final loading estimate.
+- The declared full pool has completed:40 original batches and40000 paired
+  counters. All outputs are under `results/p334-paired-clock-loading/`.
+
+## First population-level result
+
+For the H4-normalized orientation difference, the estimated fraction of
+individual-observation variance removed by suffix replacement is49.15% at
+N325 and50.03% atN425 for the canonical readout. For the integrated readout
+it is only0.816% and0.681%, respectively. The corresponding hybrid means
+and original-batch standard errors are:
+
+| Size | Canonical contribution | Integrated contribution |
+|---|---:|---:|
+| N325 | 0.00060998 +/- 0.00156001 | -0.00058818 +/- 0.00315435 |
+| N425 | 0.00113588 +/- 0.00118417 | 0.00349118 +/- 0.00220881 |
+
+The full-population noise allocation therefore depends strongly on the
+readout kernel. Averaging the suffix can remove about half the canonical
+noise without materially reducing the integrated noise. The earlier
+equal-weight147-prefix mixture was a different, selected estimand; its
+83.95% integrated conditional-noise fraction cannot be transferred here.
+The prevalence/conditional-clock decomposition above is the next direct
+way to understand what dominates the stratum-weighted integrated signal.
+
+The pair policy produced13907/13803 exact replacements,6046/6033
+both-outside-stratum zero vectors, and47/164 whole-pair fallbacks for
+N325/N425. No unresolved pair was partially substituted. These estimates
+remain archive-derived R1 contributions and do not complete global A_top.
