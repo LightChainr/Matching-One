@@ -1,31 +1,46 @@
-version: 24
+version: 25
 updated: 2026-08-31
 purpose: >
   Lightweight navigation/provenance index. Registry conflicts never block
-  science; claim strength lives in STATUS and priority lives in ROADMAP.
+  science; claim strength lives in STATUS and priority lives in NEXT-TARGETS.
 
 main_snapshot:
-  commit: 05af691cc7d438605c138a2f237a0523fec8ae11
-  latest_integrated_pr: 437
-  highest_integrated_pr_number: 437
+  commit: e30060995a9eb5c4d93f565ae09af4f54a56270f
+  latest_integrated_pr: 465
+  highest_integrated_pr_number: 465
   scorer_inventory: {total: 59, direct_typed: 28, covered_frozen_kernel: 27, migration_required: 3, utility: 1, outside_registered_path: 0}
   scorer_inventory_scope: historical_record_at_5ac456d_not_a_new_live_count
-  boundary: main_through_05af691_adds_partition_incidence_automorphism_C3_deck_selection_and_cover_section_controls_as_completed_support_not_new_production_covariance_or_field_assignment
+  boundary: main_through_e300609_includes_ordered_serial_composition_failure_of_the_seven_D4_orbit_quotient_and_typed_port_reversal_as_exact_support_not_new_production_covariance_or_field_assignment
 
 draft_pr267_snapshot:
   pr: 267
   state: open_draft
   branch: research/navigation-priority-refresh-20260829
-  content_commit: 8498d625c927ec6f2859a7256fd732f35911bf8e
-  content_scope: scientific_outputs_and_latest_main_before_this_navigation_registry_refresh
+  content_commit: 2e32fd06831e4af7276c99705a1ae9da908fec01
+  content_scope: completed_scientific_outputs_before_the_full_context_navigation_commit_not_the_eventual_PR_head_later_main_e300609_was_merged_separately
   integration_status: open_pr_worktree
   scorer_inventory: {total: 65, direct_typed: 28, covered_frozen_kernel: 27, migration_required: 9, utility: 1, outside_registered_path: 0}
   scorer_inventory_scope: historical_six_addition_snapshot_not_the_current_count_after_new_scientific_scorers
-  boundary: completed_P267_P154_P337_P250_P429_and_new_P334_direction_P439_path_split_analyses_are_open_pr_while_their_pinned_raw_input_statuses_remain_explicit_and_no_new_Monte_Carlo_is_requested
+  boundary: completed_P267_response_ray_and_P334_capacity_allocation_are_preserved_after_the_context_review_pause_without_rerunning_science_or_promoting_branch_input_claims_to_main
+
+github_context_snapshot:
+  inventory: analysis/github_context_inventory.json
+  complete_text_archive: analysis/github-context-20260831.tar.gz
+  archive_sha256: e0b7b130836de678e3cb4788ea5c5377fb8e3c1421c232e9a47769dc0646e628
+  captured_at: '2026-08-31T04:03:52.667778+00:00'
+  numbered_items: 464
+  issues: 146
+  pull_requests: 318
+  discussion_comments: 1354
+  formal_reviews: 7
+  open_issues: 109
+  open_pull_requests: 19
+  scope: all_item_bodies_comments_and_reviews_read_selective_report_inspection_not_every_code_file_or_cited_paper
+  boundary: immutable_dated_snapshot_not_live_GitHub_state_or_a_new_mandatory_audit_before_research
 
 integration_policy:
   registry_conflicts_block_science: false
-  default_action: integrate_useful_asset_then_refresh_registry
+  default_action: reference_useful_asset_and_its_actual_integration_status_then_refresh_affected_registry_entries
   claim_strength_source: docs/STATUS.md
   execution_priority_source: docs/NEXT-TARGETS.md
   default_output: scientific_result_or_exact_physical_object_or_numerical_prediction_before_generic_tool_work
@@ -34,12 +49,16 @@ integration_policy:
 
 canonical_documents:
   - {path: README.md, status: canonical_current, role: external_overview}
+  - {path: docs/REPOSITORY-CONTEXT.md, status: canonical_current, role: full_discussion_recovery_and_completed_vs_remaining_crosswalk}
+  - {path: docs/ISSUE-PR-INDEX.md, status: dated_snapshot, role: complete_464_item_navigation_without_task_state_changes}
+  - {path: analysis/github_context_inventory.json, status: dated_snapshot, role: exact_PR_heads_discussion_hashes_and_file_overlap_not_merge_recommendations}
   - {path: docs/NEXT-TARGETS.md, status: canonical_current, role: decision_experiment_board}
   - {path: docs/STATUS.md, status: canonical_current, role: claim_ledger}
   - {path: docs/RESEARCH-MAP.md, status: canonical_current, role: research_navigation}
   - {path: docs/ROADMAP.md, status: canonical_current, role: information_gain_priorities}
   - {path: docs/HYPOTHESIS-BOARD.md, status: canonical_current, role: falsifiable_mechanism_board}
-  - {path: notes/production-priority-refresh-after-factorial-20260830.md, status: canonical_current, role: completed_production_reanalysis_and_next_discriminator_handoff}
+  - {path: notes/production-priority-refresh-after-factorial-20260830.md, status: historical_handoff, role: earlier_production_priority_snapshot_superseded_as_queue_by_current_NEXT_TARGETS}
+  - {path: docs/NEXT-TARGETS-history-20260831.md, status: historical_handoff, role: preserved_detailed_contracts_before_full_context_recovery_not_current_assignments}
   - {path: analysis/research_ledger.yaml, status: canonical_current, role: compact_research_ledger}
   - {path: analysis/artifact_registry.yaml, status: canonical_current, role: artifact_index}
   - {path: analysis/evidence_ledger_manifest.yaml, status: canonical_current, role: predictive_evidence_manifest}
@@ -224,6 +243,29 @@ channel_semantics:
   required_fields: [topology_channel, combination, probability_coordinate, orientation_order, normalization, quantity]
 
 registered_reanalyses:
+  - id: P267_FIXED_P_RESPONSE_RAY
+    status: completed_post_reveal_reanalysis
+    integration_status: open_pr
+    pr: 267
+    commit: a09758e1bd9618bcf2bcbc03a92b888ec4b5deb3
+    manifest: analysis/p267_response_ray_manifest.json
+    script: scripts/analyze_p267_response_ray.py
+    outputs: [results/p267-response-ray/score.json, results/p267-response-ray/REPORT.md]
+    source_commit: ce01e4d10abb03abf1b278192510937ee96db29d
+    source_path: results/p267-etop-tau-topology-factorial/score.json
+    boundary: four_coordinate_amplitude_only_comparison_with_estimated_covariance_not_Etop_alone_rejection_or_finite_sample_certificate_N250_design_unacquired_and_uncalibrated
+  - id: P334_TRIGGER_CAPACITY_ALLOCATION
+    status: completed_exact_archive_reanalysis
+    integration_status: open_pr
+    pr: 267
+    commit: 2e32fd06831e4af7276c99705a1ae9da908fec01
+    original_commit: 52b68b3aba4dc68f382a2dd9b5c4d163c2e6c797
+    manifest: analysis/p334_trigger_capacity_allocation_manifest.json
+    script: scripts/p334_trigger_capacity_allocation.py
+    outputs: [results/p334-trigger-capacity-allocation/latest.json, results/p334-trigger-capacity-allocation/REPORT.md]
+    source_commit: 1b5a9dea07e1c62f69798fddbf4899ff986c0b72
+    source_path: results/local-20260831/P334-cooperative-closure/trigger_graph_structure_bounded.json
+    boundary: fixed_selected_graph_support_side_constraint_and_residual_arithmetic_not_population_prevalence_causal_share_or_a_new_independent_stream
   - id: TWO_ACTIVATION_H4
     status: open_pr_existing_data_reanalysis
     output_integration_status: open_pr
