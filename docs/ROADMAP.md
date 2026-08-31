@@ -1,8 +1,38 @@
 # Roadmap: Default Attention, Not Permission
 
-**Current move, 2026-08-31:** specify local pair ports, spectator contractions
-and a multiplicity intertwiner; decide whether that local insertion equals
-the already scored full stable central trace. The [N25 Q1 result](../results/n25-stable-colour-q1/REPORT.md),
+**Current move, 2026-08-31:** use the completed local transmission to compare
+fixed-source size predictions and define a pole-cancelling local completion.
+Execution's `branch_only` [N25 result, `923f66b9`](https://github.com/LightChainr/Matching-One/blob/923f66b979a6b6132875f783106c041ed3c0c1a9/notes/local-four-port-transmission-result.md)
+gives `V_av=+.0018155512845251097`; local≠full seam is proved. Snapshot
+`7681eedd938019d977ede41a7d74ee1b88ffbc50` remains `branch_only`.
+
+The [two-hole obstruction](../notes/local-pair-two-insertion-obstruction.md),
+`open_pr #267` at `5864de49d19898e505e6aecc316b9cb824712c70`, gives a
+physical L17 four-path conditional mixed-log residue
+`1/[2(1+v_x)(1+v_y)]`, with Gram residue `1/2`. It excludes an
+unrenormalized finite-strength Q1 family regular in all exteriors, without
+negating linear V or proving a homogeneous full-partition pole.
+[Fixed-cut recoupling](../notes/local-pair-crossing-sector-resolution.md)
+activates all four H⊗H irreps: bare singlet/standard cancellation is not
+thermal RG orthogonality. The recorded symbolic calculation took about
+.114 seconds; no new MC, cloud job or N25 rescore was required.
+
+The two focused outputs are:
+
+- **Fixed bounded occupation tangent:** [compare](../notes/local-pair-size-response-predictions.md)
+  `W_N=N V_av(N)` and `R=W_(4N)/W_N`. Nonzero single-field loadings at
+  x=17/4 and x=21/4 conditionally predict 2 and 1. The same tensor,
+  units and homothetic axis/tilted family stay fixed; an order-one W also
+  permits modulation of existing anisotropy and is not a unique field.
+- **Specified finite/confluent completion:** cancel the physical
+  separated-insertion pole while keeping the nonzero linear U response.
+  Multiplying by sqrt(Q−1) kills that response. A covariance of separately
+  closed t marks is not the joint tensor and cannot supply this completion.
+
+<details>
+<summary>Completed seam and source predecessors</summary>
+
+The [N25 Q1 seam result](../results/n25-stable-colour-q1/REPORT.md),
 `open_pr #267` at `5c1f9d3b7971a41d07db3c9fa4ac86529c90c199`, is complete:
 `B1=−.001904836180602413`, `B1_logQ=+.005036496028411871`;
 both exact bounds exclude zero. One 6.759-second rational calculation reused
@@ -19,8 +49,13 @@ The [dimension-only counterexamples](../results/colour-specialization-gap/REPORT
 boundary; N25 packing has removed that obstruction in the scored packet.
 The `branch_only` [finite closure, `4a4390f2`](https://github.com/LightChainr/Matching-One/blob/4a4390f2aeff3e79855fb11ef1185ba52c80a43a/notes/closed-source-finite-torus-pair-closure.md)
 and [removable Q1 interface, `f43b3674`](https://github.com/LightChainr/Matching-One/blob/f43b3674ce29e12629dd790bcbb7370abc5cefbc/notes/closed-source-removable-twist-jet-interface.md)
-are completed inputs, not substitutes for the specified local intertwiner.
-The regular-endpoint zero and fixed B control stand. Execution's `branch_only`
+are completed inputs. The local construction and local/seam separation
+have also since completed; none is an outstanding first-interface request.
+The regular-endpoint zero and fixed B control stand.
+
+</details>
+
+Execution's `branch_only`
 [N25 uniform sign half-line, `85d5e44b`](https://github.com/LightChainr/Matching-One/blob/85d5e44ba8aed471470373f972c670dc7c82bdcf/notes/closed-source-uniform-projection-tail.md)
 is also complete for every real m≥64. Do not request its first finite-m
 witness again; the distinct fixed-m oblique problem remains parallel.
@@ -92,8 +127,9 @@ The `branch_only` [four-coupling result, `a70eeff0`](https://github.com/LightCha
 already rejects monotone U amplification on N25: U_t is negative at each
 frozen m=2,4,8,16 after positive U_t(0). At least one local maximum lies in
 `(0,log2)`; uniqueness remains unproved. Reusing those exact populations for
-the tail is dependent analysis. More N25 peak points do not establish the
-local intertwiner or settle the remaining fixed-m oblique twist/odds estimates.
+the tail is dependent analysis. More N25 peak points do not settle the
+local tangent's size law, its pole-cancelling completion or the remaining
+fixed-m oblique twist/odds estimates.
 
 The separate `branch_only` [F4 independent80M result, `25ca3635`](https://github.com/LightChainr/Matching-One/blob/25ca3635ea64655923c32adee4b62d683579cdcd/results/p337-f4-transmission-20260831/scored/REPORT.md)
 uses20M/100 batches per N65/85/130/170. All four simultaneous intervals

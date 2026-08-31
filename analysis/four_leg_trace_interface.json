@@ -1,6 +1,6 @@
 {
   "schema": "matching-one.four-leg-trace-interface.v1",
-  "status": "completed_J22_positive_by_equivalent_execution_seam_score",
+  "status": "Q4_and_stable_Q1_trace_completed_local_linear_U_completed_conditional_two_insertion_Q1_pole_resolved",
   "source": {
     "commit": "977fea9272c780aea19cc47f8d33324c28a1293e",
     "path": "notes/closed-source-hypergraph-rc-twist-projection.md"
@@ -72,11 +72,56 @@
     "new_source_fit": false,
     "numerical_result_available": true,
     "status": "completed_nonzero_normalization_transmission_null_rejected_no_repeat_score",
-    "successor": "stable_N25_Q1_response_completed_at5c1f9d3b_next_specified_local_pair_ports_spectators_and_multiplicity_identification",
+    "successor": "local_linear_response923f66b9_and_local_not_seam_completed_next_explicit_finite_confluent_completion_preserving_linear_V_and_cancelling_physical_two_site_pole",
     "completed_stable_Q1_result": "results/n25-stable-colour-q1/latest.json",
     "completed_stable_Q1_commit": "5c1f9d3b7971a41d07db3c9fa4ac86529c90c199"
   },
-  "boundary": "finite_Q4_colour_irrep_not_unique_continuum_four_leg_field_not_Q1_derivative_or_new_independent_statistical_evidence",
+  "completed_stable_Q1_trace": {
+    "result_commit": "5c1f9d3b7971a41d07db3c9fa4ac86529c90c199",
+    "result_path": "results/n25-stable-colour-q1/latest.json",
+    "V_trace": -0.001904836180602413,
+    "physical_mixed_logQ_epsilon_response": 0.005036496028411871,
+    "attribution_source_commit": "bea717e826df5a22518774b1725ae7bcbe2cb801",
+    "attribution_source_path": "notes/closed-source-two-trace-kernels-q1.md",
+    "J_trace_reduced_partition_gauge": 0.03826094250721058,
+    "gauge_rule": "Q^c common prefactor leaves V_trace invariant, changes J_trace by c*V_trace; J_trace is not the mixed response or total Q derivative"
+  },
+  "completed_local_pair_interface": {
+    "result_commit": "923f66b979a6b6132875f783106c041ed3c0c1a9",
+    "result_path": "notes/local-four-port-transmission-result.md",
+    "execution_head": "7681eedd938019d977ede41a7d74ee1b88ffbc50",
+    "integration_status": "branch_only",
+    "Vav_N25": 0.0018155512845251097,
+    "source_units": "site-average C4 tensor insertion, S_av=-sum_x t_x/N at Q1",
+    "separation": "local versus full seam inequality proved configurationwise; local direct q/E numerators are retained",
+    "first_score_completed": true,
+    "fixed_cut_resolution_commit": "5864de49d19898e505e6aecc316b9cb824712c70",
+    "fixed_cut_resolution_path": "notes/local-pair-crossing-sector-resolution.md",
+    "fixed_cut_support": "all standard_tensor_standard blocks: singlet, standard, [Q-2,2], [Q-2,1,1]",
+    "thermal_boundary": "bare constant/all-equal orthogonality is not RG scaling-field orthogonality or a proof of zero thermal coupling"
+  },
+  "completed_two_insertion_obstruction": {
+    "result_commit": "5864de49d19898e505e6aecc316b9cb824712c70",
+    "definition_commit": "f393847ecbc018b0ec39c1613c4d7d40d715f95a",
+    "result_path": "results/local-pair-two-insertion/latest.json",
+    "proof_path": "notes/local-pair-two-insertion-obstruction.md",
+    "G": "Tr(Kbar^2)=Q*(Q-3)*(3*Q^2-9*Q+8)/(8*(Q-1)*(Q-2))",
+    "Q1_residue": 0.5,
+    "conditional_connected_residue": "1/(2*(1+v_x)*(1+v_y)) in the four-path52-occupied-site physical exterior with both holes summed",
+    "boundary": "excludes unmodified regular conditional local Q1 family, not the measured first derivative or necessarily homogeneous total Z",
+    "not_joint_tensor": "Cov(t_x,t_y) belongs to the separately closed bounded occupation reweighting, not two jointly contracted local tensors",
+    "simple_rescaling": "sqrt(Q-1)*Kbar makes the Gram limit finite but kills the already finite nonzero linear V",
+    "elapsed_seconds": 0.11422975000459701,
+    "acquisition": "symbolic equality-pattern algebra and physical witness, no occupation enumeration, MC, cloud or tests"
+  },
+  "current_next": {
+    "primary": "explicit finite or confluent combination retaining measured linear V and cancelling the separated-insertion pole",
+    "parallel": "bounded first-response comparison W_N=N*Vav(N), W4N/WN tends2 versus1 under specified x17/4 versus x21/4 nonzero-loading hypotheses",
+    "prediction_path": "notes/local-pair-size-response-predictions.md",
+    "prediction_commit": "5864de49d19898e505e6aecc316b9cb824712c70",
+    "scope": "conditional radial prediction, not new measured sizes, unique continuum field or automatic production request"
+  },
+  "boundary": "finite_Q4_colour_irrep_and_completed_local_linear_response_do_not_identify_a_unique_continuum_four_leg_field_or_establish_a_regular_multi_insertion_Q1_family",
   "new_enumerations": 0,
   "new_random_samples": 0,
   "tests_run": 0,

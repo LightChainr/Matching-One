@@ -4,8 +4,38 @@
 
 This map is the repository's scientific coordinate system. It is not a permission system: exact work, reanalysis, pilots, production and independent theory may proceed in parallel. Priority moves attention; it does not lock, close, veto or demote a task. `STATUS` owns claim/lifecycle language, `ROADMAP` preserves rationale, and [NEXT-TARGETS](NEXT-TARGETS.md) owns the single ranked decision queue.
 
-**Current frontier: the stable N25 full-central trace has a nonzero Q1
-normalization response and mixed Q derivative.** The [completed result](../results/n25-stable-colour-q1/REPORT.md),
+**Current frontier: local first-order transmission is complete; its
+unrenormalized two-insertion family has a physical Q1 obstruction.**
+Execution's `branch_only` [local N25 result, `923f66b9`](https://github.com/LightChainr/Matching-One/blob/923f66b979a6b6132875f783106c041ed3c0c1a9/notes/local-four-port-transmission-result.md)
+gives `V_av=+.0018155512845251097`, with local≠full seam proved.
+Snapshot `7681eedd938019d977ede41a7d74ee1b88ffbc50` remains `branch_only`.
+State: [all four fixed-cut H⊗H colour blocks](../notes/local-pair-crossing-sector-resolution.md)
+are active; bare thermal orthogonality is singlet/standard cancellation,
+not absence of a thermal RG component. Source: the fixed C4 local tensor,
+distinct from its bounded Q1 occupation tangent beyond first order.
+Observer: original moving-root/slope U for one insertion; connected
+conditional mixed-log response for the joint two-insertion question.
+Geometry: N25 axis/tilted for V, a physical L17 four-path exterior for
+the pole. Acquisition: [exact symbolic closure](../notes/local-pair-two-insertion-obstruction.md),
+`open_pr #267` at `5864de49d19898e505e6aecc316b9cb824712c70`, about .114
+seconds, no new MC, cloud job or N25 score.
+
+The joint Gram residue is `1/2`; conditional connected normalization
+leaves `1/[2(1+v_x)(1+v_y)]`. This excludes an unrenormalized regular Q1
+family valid in every exterior. Linear V remains valid; no homogeneous
+full-partition pole is proved. The two next outputs are the unchanged
+occupation tangent's [W=N V_av size ratio](../notes/local-pair-size-response-predictions.md),
+with conditional `W_(4N)/W_N -> 2` versus `1`, and an explicit finite or
+confluent combination canceling the pole while retaining linear V.
+A simple sqrt(Q−1) rescaling loses V; Cov(t_x,t_y) is not the joint
+colour contraction. These are separate mechanism questions, neither a
+pure-H4 certificate nor a uniquely identified local continuum field.
+
+<details>
+<summary>Completed stable seam and weak-Q predecessors</summary>
+
+**The stable N25 full-central trace has a nonzero Q1 normalization
+response and mixed Q derivative.** The [completed result](../results/n25-stable-colour-q1/REPORT.md),
 `open_pr #267` at `5c1f9d3b7971a41d07db3c9fa4ac86529c90c199`, gives
 `B1=−.001904836180602413` and `B1_logQ=+.005036496028411871`,
 both with zero excluded. State: packing restricts essential components and
@@ -28,14 +58,12 @@ continuation fails for the full closure family. The counterexamples use
 N36/N49 patterns, not an assertion about support of the scored N25 packet.
 This is algebraic model elimination, not independent statistical evidence.
 N25 packing excludes those exceptional patterns, so its stable-Q1 score
-above is complete rather than obstructed. Next: specify local pair ports,
-spectator contractions and a multiplicity intertwiner deciding whether
-that local insertion equals the already scored full stable central trace.
+is complete. The subsequent local construction and its separation from
+that full stable central trace are also complete.
 The `branch_only`
 [finite closure, `4a4390f2`](https://github.com/LightChainr/Matching-One/blob/4a4390f2aeff3e79855fb11ef1185ba52c80a43a/notes/closed-source-finite-torus-pair-closure.md)
 and [removable interface, `f43b3674`](https://github.com/LightChainr/Matching-One/blob/f43b3674ce29e12629dd790bcbb7370abc5cefbc/notes/closed-source-removable-twist-jet-interface.md)
-are completed inputs. A generic finite-interface request or another Q scan
-would not replace the specified local-to-full-trace intertwiner.
+are completed inputs, not outstanding first-interface or Q-scan requests.
 
 The [weak-Q path comparison](../results/weak-q-path-comparison/REPORT.md),
 `e87d5de2d0bc83ac8e5c12af83a337b829c3323b`, retains the fixed B control:
@@ -46,11 +74,14 @@ interface used the `branch_only` [hypergraph/twist realization, `977fea92`](http
 the new N25 stable completion supplies its distinct Q1 packet without
 equating either full colour trace with a unique local continuum field.
 
+</details>
+
 The independent #154/P334 decisions and one-hole split remain complete;
 [Decision Experiments](DECISION-EXPERIMENTS.md) owns their unchanged states.
 The Sstar/Sdrop N25 finite-coupling half-line is now complete as well:
 `Ustar<0<Udrop` for all real m≥64. Separate fixed-m and joint-limit results
-are mapped below; the primary next output is the local-to-full-trace intertwiner.
+are mapped below; the current local outputs are the fixed-source size
+comparison and a linear-response-preserving pole cancellation.
 Other lines remain open without Issue locks or automatic feature expansion.
 
 **Measured microscopic-to-global separation, Draft #267 `5483aa82047df34c2c9508d4930b6e20961ed9ca`:**

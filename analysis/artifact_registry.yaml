@@ -1,12 +1,14 @@
-version: 46
+version: 47
 updated: 2026-08-31
 latest_scientific_handoff:
   entry: docs/TEAM-COORDINATION.md
-  local_result_commit: 5c1f9d3b7971a41d07db3c9fa4ac86529c90c199
-  local_result_report: results/n25-stable-colour-q1/REPORT.md
-  local_result_kind: completed_saved_count_exact_stable_Q1_trace_response_and_full_mixed_colour_jet
-  local_definition: analysis/n25_stable_colour_q1_contract.json
-  local_definition_commit: 170394ef65d34d60ecbd8921619dc6a9533190dc
+  local_result_commit: 5864de49d19898e505e6aecc316b9cb824712c70
+  local_result_report: results/local-pair-two-insertion/REPORT.md
+  local_result_kind: exact_crossing_sector_resolution_and_physical_conditional_two_insertion_Q1_pole
+  local_definition: analysis/local_pair_two_insertion_contract.json
+  local_definition_commit: f393847ecbc018b0ec39c1613c4d7d40d715f95a
+  previous_stable_Q1_result_commit: 5c1f9d3b7971a41d07db3c9fa4ac86529c90c199
+  previous_stable_Q1_result_report: results/n25-stable-colour-q1/REPORT.md
   preceding_trace_interface_commit: 041257b8c63f98c694397604617edbb58f31ef51
   preceding_trace_interface_report: notes/four-leg-trace-denominator-interface.md
   completed_Q4_J22_commit: 54352b2eefa651ca482ca84837053c792e82c71e
@@ -15,11 +17,22 @@ latest_scientific_handoff:
   specialization_gap_report: results/colour-specialization-gap/REPORT.md
   previous_weak_Q_result_commit: e87d5de2d0bc83ac8e5c12af83a337b829c3323b
   previous_weak_Q_result_report: results/weak-q-path-comparison/REPORT.md
-  current_execution_head: 0dda27bab3d1b6a749a0a32b3dde666b7fe9a0dd
+  current_execution_head: 7681eedd938019d977ede41a7d74ee1b88ffbc50
   current_execution_branch_prs: []
+  completed_local_interaction_commit: 923f66b979a6b6132875f783106c041ed3c0c1a9
+  completed_local_interaction_report: notes/local-four-port-transmission-result.md
+  completed_local_interaction_result: results/p337-local-four-port-insertion/score/score.json
+  completed_local_interaction_definition: d7f15e68d593719e274fe9f0d5c7841a553beade
+  completed_local_interaction_counts: 15372a22d7395f591ab5e681de1bedf3938eb956
+  completed_local_interaction_kernel: 9dc3c4269c1c44a0a0a82b15f8cd13f922a8b2d4
+  completed_local_interaction_topology: ba7d0632023ff6985182da29df99a5cb908ad6df
+  execution_Q1_trace_attribution_commit: 57960d3eb6c6a7c5b325b12b20bb9b4f384f5b9e
+  execution_Q1_trace_interpretation: notes/closed-source-two-trace-kernels-q1.md
+  attribution_boundary: V_trace_is_same_B1_J_trace0p03826094250721058_is_gauge_dependent_not_invariant_mixed_B1_logQ0p005036496028411871
   finite_torus_closure_commit: 4a4390f2aeff3e79855fb11ef1185ba52c80a43a
   removable_twist_jet_commit: f43b3674ce29e12629dd790bcbb7370abc5cefbc
-  next_primary: specified_local_pair_ports_spectator_and_multiplicity_intertwiner_vs_completed_stable_full_trace_not_first_Q4_or_Q1_score
+  next_primary: specific_finite_or_confluent_completion_cancelling_physical_separated_insertion_pole_while_retaining_nonzero_linear_V
+  parallel_first_source: fixed_ratio_R_equals4Vav4N_overVavN_predicts2_or1_under_declared_single_field_nonzero_loading_not_a_two_insertion_mark_covariance
   uniform_sign_window_commit: 85d5e44ba8aed471470373f972c670dc7c82bdcf
   uniform_sign_window_report: notes/closed-source-uniform-projection-tail.md
   uniform_sign_window_result: results/p337-uniform-projection-tail/score.json
@@ -41,7 +54,9 @@ latest_scientific_handoff:
   latest_defect_operator_commit: bc17b81d502fb1ca3323f5c20f63c544bb31602d
   latest_closed_source_result_commit: ec01768f520e85f1acfd9d3fde9bcf855477254e
   latest_independent_F4_result_commit: 25ca3635ea64655923c32adee4b62d683579cdcd
-  local_theory_note: notes/n25-stable-colour-completion.md
+  local_theory_note: notes/local-pair-two-insertion-obstruction.md
+  local_crossing_note: notes/local-pair-crossing-sector-resolution.md
+  local_size_prediction_note: notes/local-pair-size-response-predictions.md
   local_source_dictionary: analysis/decimation_source_dictionary.json
   local_budget_report: results/p154-clock-transmission-budget/REPORT.md
   local_budget_scope: historical_fixed_clock_candidate_not_current_decimation_budget
@@ -68,8 +83,8 @@ latest_scientific_handoff:
   current_secondary_theory_commit: 83f3eba88d7f1290704f82610c28669dc5e12f3c
   current_secondary_result_commit: 612df8ec1cbe3be3938ee2e1f6183a1aefc6510b
   current_secondary_result_report: notes/p154-clock-line-secondary-result.md
-  current_synthesis_commit: 5c1f9d3b7971a41d07db3c9fa4ac86529c90c199
-  current_synthesis_report: results/n25-stable-colour-q1/REPORT.md
+  current_synthesis_commit: 5864de49d19898e505e6aecc316b9cb824712c70
+  current_synthesis_report: notes/local-pair-two-insertion-obstruction.md
   preceding_synthesis_commit: 95d5d662afcef2d9d4b5167f82612a70cb4e83c7
   preceding_synthesis_report: notes/independent-decisions-final-20260831.md
   latest_external_reports: [experiments/p154-prospective-transmission-20260831/REPORT.md, experiments/p334-prospective-intervention-20260831/REPORT.md]
@@ -77,7 +92,7 @@ latest_scientific_handoff:
   decision_sheet: docs/DECISION-EXPERIMENTS.md
   decision_contract: analysis/prospective_mechanism_decisions.yaml
   execution_freeze_report: notes/p334-independent-intervention-freeze.md
-  boundary: Q4_J22_and_stable_Q1_B1_mixed_jet_completed_B1_not_total_logQ_U_or_local_CFT_identity_same_N25_population_uniform_m_ge64_bounds_and_prior_independent_decisions_unchanged_no_main_integration
+  boundary: conditional_Q1_pole_excludes_unrenormalized_all_exterior_regular_family_preserves_linear_V_does_not_establish_homogeneous_Z_pole_no_new_N25_statistics_prior_decisions_preserved
 purpose: >
   Lightweight navigation/provenance index. Registry conflicts never block
   science; claim strength lives in STATUS and priority lives in NEXT-TARGETS.
@@ -351,6 +366,59 @@ channel_semantics:
   required_fields: [topology_channel, combination, probability_coordinate, orientation_order, normalization, quantity]
 
 registered_reanalyses:
+  - id: PR267_LOCAL_PAIR_TWO_INSERTION
+    integration_status: open_pr
+    pr: 267
+    branch: research/navigation-priority-refresh-20260829
+    commit: 5864de49d19898e505e6aecc316b9cb824712c70
+    definition_commit: f393847ecbc018b0ec39c1613c4d7d40d715f95a
+    status: completed_four_block_fixed_cut_resolution_and_physical_two_hole_conditional_Q1_pole
+    acquisition: exact_construction
+    artifact_kind: exact_symbolic_contraction_and_explicit_graph_theory_not_numerical_occupation_production
+    outputs: [notes/local-pair-two-insertion-obstruction.md, notes/local-pair-crossing-sector-resolution.md, notes/local-pair-size-response-predictions.md, results/local-pair-two-insertion/REPORT.md, results/local-pair-two-insertion/latest.json, results/local-pair-two-insertion/run.json]
+    scripts: [scripts/analyze_local_pair_two_insertion.py]
+    contracts: [analysis/local_pair_two_insertion_contract.json]
+    dependency_groups: []
+    theory_basis_source_refs: [SRC_P337_LOCAL_FOUR_PORT_TRANSMISSION]
+    elapsed_seconds: 0.11422975000459701
+    scope: 15_Bell4_colour_equality_types_and_one_explicit_L17_52site_four_path_exterior_no_occupation_enumeration_MC_root_search_or_tests
+    chronology: reproducible_recorded_calculation_after_symbolic_exploration_not_prospective_statistical_evidence
+    result_summary: 'four fixed-cut blocks nonzero; Gram residue=1/2; connected conditional residue=1/(2*(1+vx)*(1+vy))'
+    next_output: specified_finite_confluent_completion_preserving_linear_V_and_cancelling_pole_parallel_first_source_R2_vs1_size_prediction
+    boundary: unrenormalized_regular_all_exterior_family_excluded_not_homogeneous_Z_divergence_or_refutation_of_linear_V_sqrtQminus1_rescaling_kills_V_mark_covariance_is_not_joint_tensor_response
+  - id: P337_LOCAL_FOUR_PORT_TRANSMISSION
+    integration_status: branch_only
+    branch: analysis/p334-paired-clock-loading-20260831
+    commit: 923f66b979a6b6132875f783106c041ed3c0c1a9
+    definition_commit: d7f15e68d593719e274fe9f0d5c7841a553beade
+    counts_commit: 15372a22d7395f591ab5e681de1bedf3938eb956
+    kernel_proof_commit: 9dc3c4269c1c44a0a0a82b15f8cd13f922a8b2d4
+    topology_proof_commit: ba7d0632023ff6985182da29df99a5cb908ad6df
+    status: completed_actual_local_site_average_original_U_response_positive_zero_rejected
+    acquisition: exact_construction
+    artifact_kind: prescribed_local_source_crossmoments_and_one_exact_rational_original_U_score
+    outputs: [notes/local-four-port-transmission-result.md, notes/local-four-port-original-u-interface.md, notes/closed-source-local-four-port-pair-kernel.md, notes/local-four-port-pair-insertion.md, results/p337-local-four-port-insertion/axis.csv, results/p337-local-four-port-insertion/tilted.csv, results/p337-local-four-port-insertion/run.json, results/p337-local-four-port-insertion/score/score.json]
+    contracts: [analysis/p337_local_pair_insertion_contract.json]
+    dependency_groups: [decimation-N25-exact-configuration-pair]
+    enumeration_seconds_per_geometry: {axis: 1.10562, tilted: 1.03976}
+    score_elapsed_seconds: 0.20906187500804663
+    result_summary: local_V_plus0p0018155512845251097_with_direct_q_E_covariances_pooled_root_and_slope_terms_local_seam_support_differs_in_both_directions
+    next_output: finite_confluent_joint_tensor_completion_primary_fixed_first_source_ratio_R2_vs1_parallel_no_repeat_local_score
+    boundary: site_average_first_response_extensive_units_multiply_by_N_C4_Endpair_not_pure_fixed_cut_projector_or_continuum_primary_same_exact_population_no_MC_or_overview_rescore
+  - id: P337_Q1_TRACE_GAUGE_ATTRIBUTION
+    integration_status: branch_only
+    branch: analysis/p334-paired-clock-loading-20260831
+    commit: 57960d3eb6c6a7c5b325b12b20bb9b4f384f5b9e
+    interpretation_commit: 7681eedd938019d977ede41a7d74ee1b88ffbc50
+    interpretation_path: notes/closed-source-two-trace-kernels-q1.md
+    status: completed_same_B1_response_and_distinct_gauge_dependent_component_attribution
+    acquisition: existing_data_reuse
+    artifact_kind: exact_saved_count_trace_packet_score_not_independent_stochastic_evidence
+    outputs: [notes/p337-q1-closed-trace-transmission-result.md, results/p337-q1-trace-continuation/score.json]
+    dependency_groups: [decimation-N25-exact-configuration-pair]
+    result_summary: V_trace_equals_B1_minus0p001904836180602413_J_trace_plus0p03826094250721058_in_reduced_partition_gauge
+    gauge_rule: 'J_trace -> J_trace+c*V_trace under a common Q^c prefactor; c=25.5 changes the attribution to about -0.010312380098151'
+    boundary: J_trace_is_not_gauge_invariant_mixed_B1_logQ_plus0p005036496028411871_full_physical_Q_response_unchanged_no_duplicate_V_evidence_vote
   - id: PR267_N25_STABLE_COLOUR_Q1
     integration_status: open_pr
     pr: 267
@@ -366,7 +434,7 @@ registered_reanalyses:
     dependency_groups: [decimation-N25-exact-configuration-pair]
     elapsed_seconds: 6.759455249994062
     result_summary: N25_c_absu_le2_stability_beta_Q_fixed_B1_minus0p001904836180602413_B1logQ_plus0p005036496028411871
-    next_output: specify_local_pair_ports_spectators_and_multiplicity_intertwiner_then_decide_equality_with_this_full_stable_trace
+    next_output: local_tensor_linear_response_and_two_insertion_obstruction_completed_specific_completion_or_parallel_fixed_first_source_size_comparison
     boundary: B1_epsilon_response_not_total_Q_derivative_mixed_jet_includes_explicit_beta_measure_root_slope_no_new_enumeration_MC_root_search_or_Q_grid_not_unique_local_field
   - id: PR267_COLOUR_SPECIALIZATION_GAP
     integration_status: open_pr
@@ -437,7 +505,7 @@ registered_reanalyses:
     result_summary: Z22_equals_Tplus3D2minus4C3_over6_rank1_only_raw_q_E_numerators_zero_z22_equals2Z22_over_TplusR_transports_through_four_term_original_U_J22
     response_value: 0.000005440121494634842
     response_artifact_ref: P337_S4_TRACE_TRANSMISSION
-    next_output: Q4_and_stable_Q1_scores_completed_specified_local_pair_spectator_multiplicity_intertwiner_next
+    next_output: all_first_scores_completed_specific_local_two_insertion_completion_with_linear_V_retained_or_parallel_first_source_size_comparison
     boundary: signed_character_component_not_population_share_Q4_value_not_Q1_derivative_or_unique_local_field_response_comes_from_external_score_not_trace_polynomial_alone
   - id: P337_UNIFORM_PROJECTION_TAIL
     integration_status: branch_only

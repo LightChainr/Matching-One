@@ -52,6 +52,26 @@
       "commit": "f5c4a74a20bad8589c39e1034cfb209462110dbe",
       "path": "results/p337-endpoint-defect/score/score.json",
       "integration_status": "branch_only"
+    },
+    {
+      "id": "completed_local_pair_U",
+      "commit": "923f66b979a6b6132875f783106c041ed3c0c1a9",
+      "path": "notes/local-four-port-transmission-result.md",
+      "integration_status": "branch_only"
+    },
+    {
+      "id": "local_pair_two_insertion_obstruction",
+      "commit": "5864de49d19898e505e6aecc316b9cb824712c70",
+      "path": "results/local-pair-two-insertion/latest.json",
+      "definition_commit": "f393847ecbc018b0ec39c1613c4d7d40d715f95a",
+      "integration_status": "open_pr",
+      "pr": 267
+    },
+    {
+      "id": "trace_response_gauge_boundary",
+      "commit": "bea717e826df5a22518774b1725ae7bcbe2cb801",
+      "path": "notes/closed-source-two-trace-kernels-q1.md",
+      "integration_status": "branch_only"
     }
   ],
   "geometry": {
@@ -253,16 +273,56 @@
     "boundary": "saved N25 exact linear consequence, not a new random block or a universality decision"
   },
   "next_theoretical_question": {
-    "status": "Q4_J22_and_stable_Q1_B1_and_mixed_colour_response_completed_local_pair_intertwiner_open",
-    "question": "does a specified local pair insertion with explicit ports and spectators resolve the same full stable colour multiplicity trace?",
-    "source_commit": "5c1f9d3b7971a41d07db3c9fa4ac86529c90c199",
-    "source_path": "results/n25-stable-colour-q1/latest.json",
-    "definition_commit": "170394ef65d34d60ecbd8921619dc6a9533190dc",
-    "definition": "analysis/n25_stable_colour_q1_contract.json",
-    "known": "N25 packing c*abs(u)<=2 fixes beta_Q from existing seam counts; B1=-0.001904836180602413 and B1_logQ=+0.005036496028411871 with zero excluded",
-    "required_output": "explicit homology-aware B,C pair maps and full multiplicity equality or obstruction, not another generic trace formula or repeated Q4/Q1 score",
-    "boundary": "finite full colour-sector completion not total Q tangent or unique local continuum field; general specialization failures do not apply to the stable N25 packet; retain B in weak-Q comparison",
+    "status": "local_linear_U_and_local_not_seam_completed_unrenormalized_conditional_two_site_Q1_family_excluded",
+    "question": "can an explicitly stated finite or confluent combination cancel the separated-insertion pole while retaining the measured nonzero local linear original-U response?",
+    "source_commit": "5864de49d19898e505e6aecc316b9cb824712c70",
+    "source_path": "notes/local-pair-two-insertion-obstruction.md",
+    "definition_commit": "f393847ecbc018b0ec39c1613c4d7d40d715f95a",
+    "definition": "analysis/local_pair_two_insertion_contract.json",
+    "known": "local Vav25=+0.0018155512845251097 completed at923f66b9; Kbar has nonzero singlet standard and both higher pair blocks; its physical two-hole connected conditional response has Q1 pole",
+    "required_output": "a named cancellation retaining the old single-insertion coefficient, not another first local score, bare-orthogonality claim or automatic occupation covariance substitution",
+    "boundary": "Gram residue1/2 is not proof of a homogeneous total-partition pole; sqrt(Q-1) rescaling kills the old linear V; bounded occupation tangent remains defined and is not the joint colour tensor family",
     "new_production_requested": false
+  },
+  "completed_local_pair_route": {
+    "source_id": "completed_local_pair_U",
+    "execution_head": "7681eedd938019d977ede41a7d74ee1b88ffbc50",
+    "integration_status": "branch_only",
+    "Vav_N25": 0.0018155512845251097,
+    "source": "S_av=-sum_x t_x/N, t_x=I_NS_EW+(I_NE_SW+I_NW_ES)/2 with x vacant",
+    "observer": "old q=r-1 and E=q^2 with separate geometric normalization, pooled moving root and both thermal-slope terms",
+    "completed_separation": "local and global seam sources differ configurationwise; local raw q/E moments need not vanish",
+    "nonlinear_boundary": "Cov(t_x,t_y) is the bounded occupation-reweighting response, not the joint two-local-tensor contraction"
+  },
+  "completed_local_pair_two_insertion": {
+    "source_id": "local_pair_two_insertion_obstruction",
+    "G": "Q*(Q-3)*(3*Q^2-9*Q+8)/(8*(Q-1)*(Q-2))",
+    "Q1_residue": 0.5,
+    "physical_exterior": "four contractible NN paths with52 occupied sites on L17; two interior holes summed with v_x,v_y; rank remains0",
+    "conditional_partition": "Q^4+(v_x+v_y+v_x*v_y)*Q+epsilon_x*epsilon_y*G(Q), after removing common exterior factor",
+    "connected_residue": "1/(2*(1+v_x)*(1+v_y))",
+    "scope": "nonremovable conditional two-site response; no assertion that all exteriors summed at homogeneous activity have an uncancelled pole",
+    "elapsed_seconds": 0.11422975000459701,
+    "acquisition": "symbolic Bell4 equality-class calculation and physical witness; no occupation enumeration, MC, root search, tests or cloud"
+  },
+  "parallel_local_pair_size_question": {
+    "source_commit": "5864de49d19898e505e6aecc316b9cb824712c70",
+    "source_path": "notes/local-pair-size-response-predictions.md",
+    "status": "derived_conditional_predictions_not_new_measurements",
+    "exact_units": "W_N=N*Vav(N)",
+    "geometry": "axis(5k,0), tilted(4k,3k), N=25*k^2, fixed local tensor and exact DeltaCos4",
+    "comparison": "W_(4N)/W_N tends2 for x=17/4 or1 for x=21/4 under stated single-field nonzero-U-loading and controlled-window assumptions",
+    "boundary": "order-one W can also reflect modulation of existing anisotropy; ratios do not establish unique thermal Q4, pure spin4 or regular nonlinear Q1 field",
+    "new_production_requested": false
+  },
+  "trace_response_and_attribution_boundary": {
+    "source_id": "trace_response_gauge_boundary",
+    "V_trace": -0.001904836180602413,
+    "physical_mixed_logQ_epsilon_response": 0.005036496028411871,
+    "mixed_response_commit": "5c1f9d3b7971a41d07db3c9fa4ac86529c90c199",
+    "J_trace_reduced_convention": 0.03826094250721058,
+    "gauge_rule": "multiplying common partition and trace by Q^c leaves V_trace invariant but changes J_trace to J_trace+c*V_trace",
+    "boundary": "J_trace is an additive convention-dependent Q-derivative attribution, neither the physical mixed response nor the total Q tangent; it does not identify a local field"
   },
   "parallel_finite_coupling_question": {
     "status": "N25_uniform_m_ge64_window_completed_fixed_m_oblique_twist_and_sector_odds_bounds_open",

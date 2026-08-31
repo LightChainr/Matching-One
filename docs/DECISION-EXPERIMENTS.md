@@ -5,7 +5,32 @@
 研究路线失败。[最终科学交接](../notes/independent-decisions-final-20260831.md)
 给出定义、数据独立性和精确来源。
 
-## 最新完成：稳定 Q1 通道的原 U 传输与完整颜色导数
+## 最新完成：局部传输非零；同一张量的双插入 Q1 正则性被排除
+
+执行[923f66b9](https://github.com/LightChainr/Matching-One/blob/923f66b979a6b6132875f783106c041ed3c0c1a9/notes/local-four-port-transmission-result.md)
+已交付固定局部四端口的site-average响应`V_av(25)=+.0018155512845251097`。
+这是完整原U响应，local与full seam的构型级等同性也已由双向反例排除；
+“首次局部插入接口/评分”移出待办，已有Q1/Q4 trace结果不重算。
+
+本轮[5864de49的精确结果](../notes/local-pair-two-insertion-obstruction.md)
+给出`G(Q)=Tr(Kbar²)=Q(Q−3)(3Q²−9Q+8)/[8(Q−2)(Q−1)]`。
+在17×17方格torus的两孔、四条互不连接占据路径中，它就是实际双插入闭合。
+Q1留数为`1/2`；连通条件响应的留数是`1/[2(1+v_x)(1+v_y)]`，
+公共归一化和单点二次counterterm都不能消掉此混合项。
+
+**被排除的具体机制：** 原Kbar无需额外处理便可在所有物理外部条件中形成
+正则有限强度Q1局部张量族。**仍成立：** 单次插入的有限非零U响应。
+不据此断言对所有外部构型求和后的均匀partition发散。
+新[固定cut分解](../notes/local-pair-crossing-sector-resolution.md)同时显示
+四个colour块非零，裸thermal零overlap来自singlet/standard抵消，不能当RG零耦合。
+
+下一比较已具体化：一条给出能消双插入pole且保留目标linear响应的有限/confluent
+组合；另一条对固定bounded占据tangent比较`W_N=N V_av(N)`，其[预先推导比例](../notes/local-pair-size-response-predictions.md)
+`W_(4N)/W_N`在明确single-field/nonzero-loading假设下分别趋向2（x17/4）
+或1（x21/4）。后者不唯一识别thermal-Q4；`Cov(t_x,t_y)`也不能替代joint tensor。
+本轮0.114秒符号代数与一个显式图，没有新MC、occupation枚举或测试套件。
+
+## 已完成：稳定 Q1 通道的原 U 传输与完整颜色导数
 
 [5c1f9d3b 的结果](../results/n25-stable-colour-q1/REPORT.md)已从既有seam计数
 与已有Q1根算出`B1=∂epsilon U=−.001904836180602413`及
@@ -22,8 +47,8 @@
 
 [更大tori的精确反例](../results/colour-specialization-gap/REPORT.md)仍排除
 “任意closure只乘维数因子便可从Q4延拓”的一般说法；N25的几何证明解除
-本例的这个障碍。下一实际问题是指定局部pair插入到这个full stable trace的
-ports/spectator/multiplicity intertwiner，不再把Q1计算列为待办。
+本例的这个障碍。局部pair的实际构造、正响应及其与full stable trace的
+不同支撑现已完成，下一步见上节；不再把Q1或首次local计算列为待办。
 
 ## 已完成：Q4 有限归一化传输接口及其非零评分
 
@@ -69,7 +94,8 @@ Q路径响应−0.269828026713487。其差是已指定的局部B控制+0.3329107
 [整族选择推导](../notes/weak-q-paths-and-regular-selection.md)给出有理恒等式
 `ell P_[2](Q)=0`，所以此正则未标记一插入端点的所有正则Q导数都为零。
 排除的是这个机制定义下的四腿sqrt(N)激活。上面的Q4 trace/归一化接口
-现已建立；J22仍待计算，Q→1及有限confluent延拓仍需分别定义。
+与J22评分现已完成，指定stable Q1延拓及响应也已完成。有限confluent局部场
+仍需解决上节双插入pole，不能把它写成尚无任何Q1传输结果。
 不能把这些对象等同于正则端点或自动算成一个已经识别的替代模型。
 
 ## 已完成：两套固定微观律给出相反的 U 强耦合尾

@@ -1,17 +1,48 @@
 # Three-team scientific handoff / 三队协作入口
 
-Updated: **2026-08-31**, stable-Q1 result `5c1f9d3b`, execution delivery `0dda27ba`; prior independent decisions retained. This is a result-routing entry, not a second
+Updated: **2026-08-31**, local two-insertion result `5864de49`, execution delivery `7681eedd`; prior independent decisions retained. This is a result-routing entry, not a second
 priority board or a live process monitor. [Next Targets](NEXT-TARGETS.md) remains
 the single attention order; [the machine-readable handoff](../analysis/team_coordination.yaml)
 records source pins and the state reported by each team.
 
-**New scientific handoff:** [stable-Q1 transmission is scored](../results/n25-stable-colour-q1/REPORT.md):
+**New scientific handoff:** the [physical two-hole closure](../notes/local-pair-two-insertion-obstruction.md)
+has `Tr(Kbar²)=Q(Q−3)(3Q²−9Q+8)/[8(Q−1)(Q−2)]`, with Q1 residue1/2.
+Its connected conditional response retains residue
+`1/[2(1+v_x)(1+v_y)]` in a realizable52-occupied-site exterior.
+This excludes the unmodified tensor's regular finite-strength Q1 family
+in every physical conditional context; it does **not** prove a pole in
+the fully summed homogeneous partition.
+
+The [local linear result923f66b9](https://github.com/LightChainr/Matching-One/blob/923f66b979a6b6132875f783106c041ed3c0c1a9/notes/local-four-port-transmission-result.md)
+is already complete: `V_av(25)=+.0018155512845251097`. Local versus
+seam inequality is proved configurationwise, not inferred from two
+different scores. [Crossing-sector resolution](../notes/local-pair-crossing-sector-resolution.md)
+also finds nonzero singlet, standard and both higher pair blocks;
+bare vertex orthogonality is not a thermal scaling-field selection zero.
+
+The next theory target is a **specified finite/confluent combination
+that cancels the separated-insertion pole and preserves this nonzero
+linear response**. Simple `sqrt(Q−1)` rescaling removes the Gram pole
+but kills that response. In parallel the bounded occupation tangent has
+the [fixed linear-size comparison](../notes/local-pair-size-response-predictions.md)
+`W_N=N V_av(N)`, `W_(4N)/W_N→2` versus1 under the respective allowed
+single-field loadings x=17/4 and21/4. These are conditional predictions,
+not measured exponents or unique field identities. `Cov(t_x,t_y)` is
+not the joint two-tensor contraction. The recorded symbolic reduction
+took0.114seconds; no occupation enumeration, MC, cloud job or test was run.
+
+The preceding [stable-Q1 transmission is scored](../results/n25-stable-colour-q1/REPORT.md):
 `B1=−.001904836180602413`, `B1_logQ=+.005036496028411871`, both exact
 enclosures exclude zero. [N25 packing](../notes/n25-stable-colour-completion.md)
 fixes the stable completion from the already delivered seam counts.
 One6.76second rational reduction retains beta(Q), measure, root and slope;
 no enumeration or root search. This is an epsilon response and its colour
 derivative, not the total Q tangent or a local continuum field identity.
+Execution's [fixed-gauge distinction](https://github.com/LightChainr/Matching-One/blob/bea717e826df5a22518774b1725ae7bcbe2cb801/notes/closed-source-two-trace-kernels-q1.md)
+preserves `V_trace=B1`, while `J_trace=+.03826094250721058` is an additive
+Q-derivative attribution in the stated reduced partition convention.
+Under a common factor Q^c, `J_trace→J_trace+c V_trace`; it is neither
+the invariant physical total Q response nor `B1_logQ`.
 
 Execution's [Q4 result54352b2e](https://github.com/LightChainr/Matching-One/blob/54352b2eefa651ca482ca84837053c792e82c71e/results/p337-s4-trace-transmission/score/score.json)
 already gives `J22=+5.440121494634842e-6`. The
@@ -33,9 +64,10 @@ it is a second implementation on the same exact populations, not independent
 statistical evidence. No team needs to repeat its cross-moment task.
 The separate [80M F4 block](https://github.com/LightChainr/Matching-One/blob/25ca3635ea64655923c32adee4b62d683579cdcd/results/p337-f4-transmission-20260831/scored/REPORT.md)
 is completed and inconclusive; its fixed stop remains in force.
-[Next Targets](NEXT-TARGETS.md) now prioritizes the specified local pair
-ports/spectator/multiplicity identification with this completed trace and
-keeps B in parallel weak-Q size work. Execution85d5e44b has completed the
+[Next Targets](NEXT-TARGETS.md) now carries the finite/confluent local
+completion and the bounded-tangent size comparison, not a first local
+intertwiner or duplicate N25 score; B remains in parallel weak-Q work.
+Execution85d5e44b has completed the
 Sstar/Sdrop finite-coupling window: all real m≥64 on N25 have strictly
 opposite original-U signs, with uniform remainders. No new m point is needed
 to establish that window. Axis fixed-m winding and oblique Poisson-limit
@@ -66,14 +98,14 @@ create a second priority queue.
 
 | Team | Delivered / active contribution | Next handoff |
 |---|---|---|
-| **数学研究执行** | `54352b2e` delivers the nonzero Q4 trace response; `4a4390f2` supplies full homology-decorated closure and numerator spectrum; `f43b3674` gives the removable Q1 jet functional. Earlier fixed-m results remain complete. | Local-field identification still needs explicit ports and multiplicity contraction; fixed-m oblique twist/odds bounds remain separate. |
-| **数学研究总览** | Draft [PR #267](https://github.com/LightChainr/Matching-One/pull/267): `5c1f9d3b` scores nonzero stable-Q1 transmission and its full colour derivative; the N25 packing proof makes existing counts sufficient. | Carry the completed finite coefficients into a specified local pair insertion comparison, not another first Q4/Q1 score; retain B for total weak-Q comparisons. |
+| **数学研究执行** | `923f66b9` completes the positive original-U response of the fixed local C4 tensor; `7681eedd` retains its proved distinction from the seam trace. The Q4/Q1 trace and earlier fixed-m results remain complete. | Reuse the completed local source and exact units for bounded first-response size work; any nonlinear colour-field claim needs the finite/confluent cancellation now specified. |
+| **数学研究总览** | Draft [PR #267](https://github.com/LightChainr/Matching-One/pull/267): `5864de49` resolves the fixed-cut sectors and realizable connected two-hole Q1 pole; `5c1f9d3b` retains the stable-Q1 response and physical mixed colour derivative. | Find a stated pole-cancelling combination preserving the measured linear coefficient; in parallel retain the conditional W-ratio discriminator. Do not replace joint tensors by separately closed-mark covariance. |
 | **数学研究俯瞰** | `f4999e29` delivers all 165M P154 permutations, nine shards, 200 batches/N, official six-coordinate decisions and full covariance. B/C fail; W is not excluded; both net intervals meet the frozen weak-transmission band. The separate P334 contact-residual result `14b2c98e` is complete. | The frozen experiment is finished. Retain all delivered data and decisions; no extra samples, replacement lag/source or fourth numerical template. |
 
 The execution result is **branch_only**, on
 `analysis/p334-paired-clock-loading-20260831`, with no corresponding PR in the
 current scoped branch-to-PR query; the current local delivery pin is
-`0dda27bab3d1b6a749a0a32b3dde666b7fe9a0dd`. Its earlier [Issue #334 result card](https://github.com/LightChainr/Matching-One/issues/334#issuecomment-5476674429)
+`7681eedd938019d977ede41a7d74ee1b88ffbc50`. Its earlier [Issue #334 result card](https://github.com/LightChainr/Matching-One/issues/334#issuecomment-5476674429)
 and [PR #267 pointer](https://github.com/LightChainr/Matching-One/pull/267#issuecomment-5476674567)
 are discussion links, not code integration. PR #509 retains its observed
 open/Draft lifecycle; the current delivery pin is

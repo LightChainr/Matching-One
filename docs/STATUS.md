@@ -6,6 +6,39 @@
 
 `docs/NEXT-TARGETS.md` owns the single attention order, while `docs/ROADMAP.md` preserves its scientific rationale. Neither locks a task, serializes theory work or treats a lower priority as a scientific rejection.
 
+**Current completed local response:** execution's `branch_only`
+[`923f66b9`](https://github.com/LightChainr/Matching-One/blob/923f66b979a6b6132875f783106c041ed3c0c1a9/notes/local-four-port-transmission-result.md)
+gives `V_av(25)=+.0018155512845251097` for the fixed C4 local pair
+insertion. Its difference from the full seam trace is proved, not a
+remaining identification task. Execution snapshot
+`7681eedd938019d977ede41a7d74ee1b88ffbc50` remains `branch_only`.
+
+**New mechanism exclusion, `open_pr #267`:**
+[the two-insertion result](../notes/local-pair-two-insertion-obstruction.md)
+at `5864de49d19898e505e6aecc316b9cb824712c70`, definition
+`f393847ecbc018b0ec39c1613c4d7d40d715f95a`, constructs an L17 physical
+four-path exterior with connected mixed-log Q1 residue
+`1/[2(1+v_x)(1+v_y)]`; `Tr(Kbar²)` has residue `1/2`.
+The unrenormalized tensor therefore cannot define a regular finite-strength
+Q1 family in every physical conditional exterior. This does not negate
+linear V or prove a pole in the summed homogeneous partition.
+[The fixed-cut resolution](../notes/local-pair-crossing-sector-resolution.md)
+has nonzero `[Q]`, `[Q−1,1]`, `[Q−2,2]`, `[Q−2,1,1]` blocks in H⊗H.
+The bare all-equal overlap zero cancels singlet against standard; it is
+not an RG thermal-zero theorem. The recorded symbolic run took about
+.114 seconds, with no new MC, cloud operation or N25 rescore.
+
+**Next:** the fixed bounded occupation tangent has exact units
+`W_N=N V_av(N)` and conditional [size alternatives](../notes/local-pair-size-response-predictions.md)
+`W_(4N)/W_N -> 2` versus `1` for nonzero single-field loadings at x=17/4
+versus x=21/4. In parallel, specify a finite/confluent combination that
+cancels the separated-insertion pole while retaining the linear response.
+`sqrt(Q−1) Kbar` kills that response, and `Cov(t_x,t_y)` cannot replace
+the jointly contracted tensor. Neither branch identifies a unique field.
+
+<details>
+<summary>Completed Q1/Q4 seam, specialization and weak-Q source records</summary>
+
 **Completed stable-Q1 response, `open_pr #267`, `5c1f9d3b7971a41d07db3c9fa4ac86529c90c199`:**
 [the exact result](../results/n25-stable-colour-q1/REPORT.md) gives
 `B1=∂epsilon U=−.001904836180602413` and
@@ -38,16 +71,15 @@ rule “continue a Q4 coefficient only by d(Q)/d(4)” fails. Runtime: 0.009302
 seconds of exact algebra, no independent production validation. The
 [proof](../notes/colour-specialization-gap.md) does not refute all
 continuations or assert the latter two topologies occur in the N25 packet.
-**Next:** use the already completed `branch_only` [physical closure,
+The already completed `branch_only` [physical closure,
 `4a4390f2`](https://github.com/LightChainr/Matching-One/blob/4a4390f2aeff3e79855fb11ef1185ba52c80a43a/notes/closed-source-finite-torus-pair-closure.md)
-to specify local pair ports, spectator contractions and the multiplicity
-intertwiner, and decide whether that local insertion equals the full stable
-central trace already scored. N25 packing has removed the general
-specialization obstruction for this packet. The `branch_only`
+is a predecessor of the now specified local insertion, which is proved
+different from the full stable central trace. N25 packing removed the
+general specialization obstruction for the seam packet. The `branch_only`
 [removable interface, `f43b3674`](https://github.com/LightChainr/Matching-One/blob/f43b3674ce29e12629dd790bcbb7370abc5cefbc/notes/closed-source-removable-twist-jet-interface.md)
 remains a completed jet interface, not another first-work request.
-Execution snapshot is
-`0dda27bab3d1b6a749a0a32b3dde666b7fe9a0dd`, still `branch_only`.
+Its earlier execution snapshot was
+`0dda27bab3d1b6a749a0a32b3dde666b7fe9a0dd`, `branch_only`.
 
 The [weak-Q sign separation](../results/weak-q-path-comparison/REPORT.md),
 `open_pr #267` at `e87d5de2d0bc83ac8e5c12af83a337b829c3323b`, remains
@@ -57,6 +89,8 @@ The [regular-endpoint all-Q zero](../notes/weak-q-paths-and-regular-selection.md
 `f0e9159f4f8a2f23b9e736e7e02b425e593336f2`, still excludes activation
 from that endpoint family, not every trace contribution. The new interface
 uses execution's `branch_only` [hypergraph/twist construction, `977fea92`](https://github.com/LightChainr/Matching-One/blob/977fea9272c780aea19cc47f8d33324c28a1293e/notes/closed-source-hypergraph-rc-twist-projection.md).
+
+</details>
 
 **Strong-coupling status now has three distinct regimes**, all new execution
 sources below `branch_only`, not `main_integrated`:

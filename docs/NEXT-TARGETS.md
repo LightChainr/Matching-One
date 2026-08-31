@@ -1,11 +1,56 @@
-# Next Targets: Identify the Local Operator Behind the Completed Trace Response
+# Next Targets: Separate the Finite Local Tangent from Its Field Completion
 
 **Updated 2026-08-31.** This is the single attention board, not a permission
 system. Parallel work remains open; no Issue is closed or locked.
 History and definitions remain in [Decisions](DECISION-EXPERIMENTS.md),
 [Status](STATUS.md) and the [scientific ledger](../analysis/research_ledger.yaml).
 
-## The Q4 and stable-Q1 transmission calculations are completed
+## The local transmission is now completed too
+
+Execution's `branch_only`
+[923f66b9 result](https://github.com/LightChainr/Matching-One/blob/923f66b979a6b6132875f783106c041ed3c0c1a9/notes/local-four-port-transmission-result.md)
+gives **V_av(25)=+0.0018155512845251097** for the specified C4 local
+four-port tensor. The ports, full q/E covariances, pooled-root movement
+and slope terms are delivered. Two-way configuration witnesses prove
+that this insertion is **not** the full seam projector. Neither the first
+local score nor that identification question remains unrun.
+
+The new [two-insertion calculation](../notes/local-pair-two-insertion-obstruction.md),
+`open_pr #267` at `5864de49d19898e505e6aecc316b9cb824712c70`, changes
+the next question. In a physical four-path/two-hole exterior,
+
+```text
+G(Q)=Tr(Kbar²)=Q(Q−3)(3Q²−9Q+8)/[8(Q−2)(Q−1)],
+Res_(Q=1) G=1/2,
+Res_(Q=1) partial_epsilon_x partial_epsilon_y log Z_xy
+  =1/[2(1+v_x)(1+v_y)].
+```
+
+Thus the unrenormalized finite-strength Q1 local tensor family cannot
+be regular in every physical exterior. Its already measured **linear**
+occupation response remains valid. This is not a claim that the fully
+summed homogeneous partition diverges. The [fixed-cut resolution](../notes/local-pair-crossing-sector-resolution.md)
+also shows four active colour blocks; bare thermal overlap zero is a
+singlet/standard cancellation, not a thermal RG selection theorem.
+
+## Default attention: two precise outputs, parallel and non-blocking
+
+| Attention | Next mechanism-changing output | Fixed decision and boundary |
+|---|---|---|
+| Local-field completion | Supply one explicit finite/confluent combination whose physical two-insertion pole cancels while its intended nonzero single-insertion U response is retained. | The unchanged Kbar family is excluded in the all-exterior regular sense. A common partition factor or separate single-site quadratic counterterms cannot remove this mixed pole. Multiplying Kbar by sqrt(Q−1) makes G finite but sends the linear response to zero, so that is a different mechanism. |
+| Fixed occupation-tangent scaling | Use the unchanged first-source mark and units to compare **W_N=N V_av(N)** on `(5k,0)/(4k,3k)` with its k→2k dilation. | [Derived ratio](../notes/local-pair-size-response-predictions.md): R=W_(4N)/W_N=4V_av(4N)/V_av(N). A single allowed x=17/4 loading predicts R→2; x=21/4 predicts R→1. N25 is not an established scaling window. An order-one W also permits modulation of an existing anisotropy amplitude. No free exponent or after-the-fact mixture is implied. |
+| Parallel existing work | Named total weak-Q paths with B control; fixed-m oblique geometric twist penalty and restricted-sector odds. | The new mixed trace derivative is not a total Q-path derivative; the completed finite-m window is not the remaining fixed-m oblique theorem. |
+
+The bounded occupation reweighting and the joint local tensor contraction
+are different nonlinear objects. **Cov(t_x,t_y) is not the tensor's
+two-insertion correlator**: both separate marks vanish in the explicit
+four-path exterior while the joint tensor closure has the pole. The linear
+size comparison does not wait for the nonlinear field completion, and
+neither route requires team permission. No new job is implied by this
+attention table; a numerical ratio decision still needs a stated size
+window, correction allowance and fixed precision/budget before collection.
+
+## The completed Q4 and stable-Q1 trace results remain inputs
 
 The [Q4 score](https://github.com/LightChainr/Matching-One/blob/54352b2eefa651ca482ca84837053c792e82c71e/results/p337-s4-trace-transmission/score/score.json),
 `branch_only`, gives **J22=+5.440121494634842e-6**. Gaussian90° rotation
@@ -35,14 +80,6 @@ The [general specialization counterexamples](../results/colour-specialization-ga
 remain important for larger tori: full finite-colour projection need not
 commute with stable specialization. The N25 bound `c|u|≤2` resolves
 that obstacle **for this packet**. Do not reassign the Q1 landing as missing.
-
-## Default attention: one local-to-global identification
-
-| Attention | Next mechanism-changing output | What is already fixed |
-|---|---|---|
-| Highest | Specify an actual local pair insertion's ports, spectator contractions and homology-aware intertwiners; determine its original-U matrix element and whether it equals the full stable seam trace. | [The physical closure](https://github.com/LightChainr/Matching-One/blob/4a4390f2aeff3e79855fb11ef1185ba52c80a43a/notes/closed-source-finite-torus-pair-closure.md) already gives `Tr(P C T_O B)`. Equality with the full central trace requires the full multiplicity resolution `Σ Bν P Cν=Π`; one arbitrary pair of ports does not establish it. Failure of that equality rejects that local-to-full-trace identification, not the measured trace response. |
-| Parallel weak-Q comparison | Keep the named total Q path and local edge-B control together in matched-size responses. | The total tied/site-RC tangents differ. The stable trace's B1 and mixed derivative are different observables, not replacements for that control or a continuum exponent. |
-| Parallel fixed-m geometry theory | Bound the oblique geometric translation penalty Δ_k and restricted-sector odds mismatch d. | The finite-m window and Poisson joint limit are completed; these two fixed-m bounds remain distinct. |
 
 The [finite-jet U functional](https://github.com/LightChainr/Matching-One/blob/f43b3674ce29e12629dd790bcbb7370abc5cefbc/notes/closed-source-removable-twist-jet-interface.md)
 is already available: a supplied local landing vector must be fully
@@ -91,8 +128,9 @@ strong-coupling tails are delivered inputs, not new first-run assignments.
 
 Complex C3, mixed geometry, triangular invariants, boundary Q and
 connectivity/defect radical remain parallel exploration. This turn completed
-the stable-Q1 response in6.76seconds from existing exact counts; no new
-occupation enumeration, random block or scientific test campaign. All ten Huawei machines
+the fixed two-insertion symbolic reduction in0.114seconds and one explicit
+physical graph construction; no occupation enumeration, random block or
+scientific test campaign. All ten Huawei machines
 are authorized through the updated Skill; no cloud action or live availability
 check was needed. Coordination stays [in the repo](TEAM-COORDINATION.md).
 Draft PR267 remains unmerged. [The older long queue](https://github.com/LightChainr/Matching-One/blob/f405719264c896aa873dd4aae7292795f544ba99/docs/NEXT-TARGETS.md)
