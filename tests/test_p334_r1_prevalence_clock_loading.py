@@ -5,7 +5,8 @@ import unittest
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]/"scripts"))
-from p334_r1_prevalence_clock_loading import decompose, score_batch_means
+from p334_r1_prevalence_clock_loading import (decompose, four_state_variance,
+                                             risk_pair_sums, score_batch_means)
 
 
 class R1SymmetricDecomposition(unittest.TestCase):
@@ -22,6 +23,17 @@ class R1SymmetricDecomposition(unittest.TestCase):
         cov = np.array(result["full_covariance"])
         for start in (6, 13):
             self.assertAlmostEqual(cov[start+2, start+2], cov[start, start]+cov[start+1, start+1]+2*cov[start, start+1])
+
+    def test_four_state_total_covariance_identity(self):
+        risks = np.tile([[0, 0], [0, 1], [1, 0], [1, 1]], (5, 1))
+        perturbation = np.arange(20)*.001
+        y = np.column_stack((risks[:, 0]*(.1+perturbation), risks[:, 1]*(.11-perturbation),
+                             risks[:, 0]*.37, risks[:, 1]*.37))
+        point, details = four_state_variance(risk_pair_sums(risks, y, -.8))
+        contrast = np.column_stack((y[:, 0]-y[:, 1], y[:, 2]-y[:, 3]))/-.8
+        np.testing.assert_allclose(details["total_individual_covariance"], np.cov(contrast, rowvar=False, ddof=0))
+        self.assertAlmostEqual(point[7], 1.)
+        self.assertGreater(point[1], 0.)
 
 
 if __name__ == "__main__":
