@@ -1,0 +1,328 @@
+{
+  "schema": "matching-one.p337-defect-reweighting.score.v1",
+  "status": "completed_exact_fixed_operator_split",
+  "decision": "weighted_rank_jump_only_model_rejected",
+  "contract": {
+    "schema": "matching-one.p337-defect-reweighting.contract.v1",
+    "status": "frozen_before_cross_moment_enumeration",
+    "base_commit": "359bde9be45d051b961110e03f0bd70f3ff82b91",
+    "attention_source": "7132f0c2:docs/NEXT-TARGETS.md; weighted jumps versus baseline reweighting",
+    "source": "Sstar=Ctot+F4+Bvac; bulk exp(t*Sstar), unchanged in intact and defect graphs",
+    "chart": "pA=s+(1-s)*p, pB=p; epsilon=1-s; single-hole dose is 25*(1-p)",
+    "parent_N": 50,
+    "geometries": [
+      [
+        5,
+        5
+      ],
+      [
+        1,
+        7
+      ]
+    ],
+    "free_B_degree": 25,
+    "primary_null": "weighted-rank-jump-only model: the Cov_+(exp(t*DeltaS),O_intact) insertion contributes exactly zero to original U_st at s=1,t=0",
+    "fixed_split": "d_epsilon<O>=(1-p)*25*(E_+[w*DeltaO]+Cov_+(w,O_intact)); w=exp(t*(Sdef-Sint))",
+    "mixed_reweighting_mean": "g_O=partial_st<O>_reweighting=-25*(1-p)*Cov_p(Sdef-Sint,Oint), for O=q,E",
+    "mixed_U_reweighting": "U_st_reweighting/A=gY_p/D-Y_pp*gQ/D^2-Y_p*gQ_p/D^2+Y_p*Q_pp*gQ/D^3; dose differentiated; covariance centered per geometry",
+    "new_cross_moments": [
+      "sum_Sdef_qintact",
+      "sum_Sdef_Eintact"
+    ],
+    "why_new_counting": "existing intact and defect CSVs retain only their own-source products; neither contains these same-configuration cross products",
+    "enumeration": "one complete 2^25 free-B traversal per geometry, paired intact/defect observers on the same B subset; no saturated standalone replay",
+    "root": "reuse complement of the saved exact N25 root enclosure; no new root search",
+    "sources_reused": [
+      "results/p337-closed-source-n25/axis.csv",
+      "results/p337-closed-source-n25/tilted.csv",
+      "results/p337-endpoint-defect/first.csv",
+      "results/p337-endpoint-defect/second.csv"
+    ],
+    "old_full_mixed_response": "read only the already committed U_st/A enclosure for complementary linear bookkeeping; do not recompute Xi or R",
+    "decision": "a rational enclosure of the reweighting mixed-U contribution excluding zero rejects the single fixed null",
+    "boundary": "an operator contribution, not a rank-preserving population fraction or fitted percentage; finite fixed-geometry/source/chart result, no field identification",
+    "workers": 2,
+    "new_random_samples": 0,
+    "cloud_jobs": 0,
+    "tests_run": 0
+  },
+  "contract_freeze_commit": "e6a900d9d644b26278f01c17bdfb6f27f3903b75",
+  "code_commit": "db34834626629d44571edbdf974a2199f535390c",
+  "root_enclosure": {
+    "lower_fraction": "4073344606717732538485743001534530993661/10000000000000000000000000000000000000000",
+    "upper_fraction": "814668921343546507697148600306906198733/2000000000000000000000000000000000000000",
+    "midpoint_approx": 0.40733446067177326,
+    "width_approx": 4e-40,
+    "excludes_zero": true,
+    "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+  },
+  "U_st_reweighting_over_A": {
+    "lower_fraction": "-78925321959944999985336963730411754683/5000000000000000000000000000000000000000",
+    "upper_fraction": "-157850643919889999970673927460821792431/10000000000000000000000000000000000000000",
+    "midpoint_approx": -0.015785064391989,
+    "width_approx": 1.716935e-34,
+    "excludes_zero": true,
+    "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+  },
+  "weighted_rank_jump_component_over_A": {
+    "lower_fraction": "33185377082096530783816402610980863067/625000000000000000000000000000000000000",
+    "upper_fraction": "265483016656772246270531220887850130319/5000000000000000000000000000000000000000",
+    "midpoint_approx": 0.05309660333135445,
+    "width_approx": 6.451566e-34,
+    "excludes_zero": true,
+    "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+  },
+  "imported_previous_full_U_st_over_A": {
+    "lower_fraction": "373115389393654492570388514314872016641/10000000000000000000000000000000000000000",
+    "upper_fraction": "46639423674206811571298564289359593909/1250000000000000000000000000000000000000",
+    "midpoint_approx": 0.03731153893936545,
+    "width_approx": 4.734631e-34,
+    "excludes_zero": true,
+    "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+  },
+  "complete_root_slope_terms_over_A": {
+    "fixed_p_E_mixed_jet": {
+      "lower_fraction": "-19221312236609226588310822898425949883/1000000000000000000000000000000000000000",
+      "upper_fraction": "-6006660073940383308847132155758059701/312500000000000000000000000000000000000",
+      "midpoint_approx": -0.019221312236609226,
+      "width_approx": 1.588398e-34,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "root_motion_E_curvature": {
+      "lower_fraction": "3000664262176973720165575107204594867/625000000000000000000000000000000000000",
+      "upper_fraction": "3000664262176973720165575107204602291/625000000000000000000000000000000000000",
+      "midpoint_approx": 0.004801062819483158,
+      "width_approx": 1.18784e-35,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "slope_mixed_jet": {
+      "lower_fraction": "6747610303005428611057402809719166037/2000000000000000000000000000000000000000",
+      "upper_fraction": "33738051515027143055287014048595837187/10000000000000000000000000000000000000000",
+      "midpoint_approx": 0.003373805151502714,
+      "width_approx": 7.002e-37,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "root_motion_slope": {
+      "lower_fraction": "-9477240252731291333100382848086671719/2000000000000000000000000000000000000000",
+      "upper_fraction": "-47386201263656456665501914240433355841/10000000000000000000000000000000000000000",
+      "midpoint_approx": -0.004738620126365646,
+      "width_approx": 2.754e-37,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    }
+  },
+  "alternative_dose_split_over_A": {
+    "thermal_derivative_of_covariance": {
+      "lower_fraction": "-133003903681190823881088419306357993027/10000000000000000000000000000000000000000",
+      "upper_fraction": "-66501951840595411940544209653178248747/5000000000000000000000000000000000000000",
+      "midpoint_approx": -0.013300390368119083,
+      "width_approx": 1.495533e-34,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "explicit_dose_derivative": {
+      "lower_fraction": "-2547116716987429894673279562930568157/1000000000000000000000000000000000000000",
+      "upper_fraction": "-12735583584937149473366397814652784899/5000000000000000000000000000000000000000",
+      "midpoint_approx": -0.00254711671698743,
+      "width_approx": 1.11772e-35,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "root_motion": {
+      "lower_fraction": "624426931175122857147287474840159277/10000000000000000000000000000000000000000",
+      "upper_fraction": "312213465587561428573643737420140407/5000000000000000000000000000000000000000",
+      "midpoint_approx": 6.244269311751229e-05,
+      "width_approx": 1.21537e-35,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    }
+  },
+  "alternative_covariance_centering_split_over_A": {
+    "uncentered": {
+      "lower_fraction": "7498805938585411338181395851863575593/2500000000000000000000000000000000000000",
+      "upper_fraction": "5999044750868329070545116681491193473/2000000000000000000000000000000000000000",
+      "midpoint_approx": 0.0029995223754341644,
+      "width_approx": 1.664993e-34,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "centering": {
+      "lower_fraction": "-93922933837115822661699755434138961657/5000000000000000000000000000000000000000",
+      "upper_fraction": "-9392293383711582266169975543413882411/500000000000000000000000000000000000000",
+      "midpoint_approx": -0.018784586767423166,
+      "width_approx": 2.75094e-35,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    }
+  },
+  "raw_mixed_mean_jets": {
+    "gQ": {
+      "lower_fraction": "564285249643162941572876821205291382667/100000000000000000000000000000000000000",
+      "upper_fraction": "56428524964316294157287682120529138417579/10000000000000000000000000000000000000000",
+      "midpoint_approx": 5.64285249643163,
+      "width_approx": 1.50879e-35,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "gQp": {
+      "lower_fraction": "-21096954726863429309214086173330186493293/10000000000000000000000000000000000000000",
+      "upper_fraction": "-2637119340857928663651760771666272896881/1250000000000000000000000000000000000000",
+      "midpoint_approx": -2.109695472686343,
+      "width_approx": 3.318245e-34,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "gY": {
+      "lower_fraction": "310267387033120214198897941847837900471/5000000000000000000000000000000000000000",
+      "upper_fraction": "310267387033120214198897941847838081493/5000000000000000000000000000000000000000",
+      "midpoint_approx": 0.06205347740662404,
+      "width_approx": 3.62044e-35,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "gYp": {
+      "lower_fraction": "-1132329850636615149254872495677163532953/10000000000000000000000000000000000000000",
+      "upper_fraction": "-1132329850636615149254872495677154175819/10000000000000000000000000000000000000000",
+      "midpoint_approx": -0.11323298506366151,
+      "width_approx": 9.357134e-34,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    }
+  },
+  "per_geometry_deltaS_covariance_jets": [
+    {
+      "q": [
+        {
+          "lower_fraction": "-47630203051917706649900358864611619421/125000000000000000000000000000000000000",
+          "upper_fraction": "-952604061038354132998007177292232385193/2500000000000000000000000000000000000000",
+          "midpoint_approx": -0.3810416244153417,
+          "width_approx": 1.2908e-36,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        },
+        {
+          "lower_fraction": "-4733777647006534890666409183203153396759/10000000000000000000000000000000000000000",
+          "upper_fraction": "-473377764700653489066640918320315314037/1000000000000000000000000000000000000000",
+          "midpoint_approx": -0.4733777647006535,
+          "width_approx": 2.56389e-35,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        }
+      ],
+      "e": [
+        {
+          "lower_fraction": "-661679337016550612089453893576221417/5000000000000000000000000000000000000000",
+          "upper_fraction": "-661679337016550612089453893576206383/5000000000000000000000000000000000000000",
+          "midpoint_approx": -0.00013233586740331012,
+          "width_approx": 3.0068e-36,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        },
+        {
+          "lower_fraction": "-2771154684757471313158720959655240503783/2000000000000000000000000000000000000000",
+          "upper_fraction": "-13855773423787356565793604798276201788817/10000000000000000000000000000000000000000",
+          "midpoint_approx": -1.3855773423787356,
+          "width_approx": 7.30098e-35,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        }
+      ]
+    },
+    {
+      "q": [
+        {
+          "lower_fraction": "-1903248501082234067941848012429312321193/5000000000000000000000000000000000000000",
+          "upper_fraction": "-3806497002164468135883696024858624634931/10000000000000000000000000000000000000000",
+          "midpoint_approx": -0.38064970021644684,
+          "width_approx": 7.455e-37,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        },
+        {
+          "lower_fraction": "-2635221536152009819453586934354444871573/5000000000000000000000000000000000000000",
+          "upper_fraction": "-5270443072304019638907173868708889585987/10000000000000000000000000000000000000000",
+          "midpoint_approx": -0.527044307230402,
+          "width_approx": 1.57159e-35,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        }
+      ],
+      "e": [
+        {
+          "lower_fraction": "-3925915530483921020809485852290974373/500000000000000000000000000000000000000",
+          "upper_fraction": "-78518310609678420416189717045819472487/10000000000000000000000000000000000000000",
+          "midpoint_approx": -0.007851831060967842,
+          "width_approx": 1.4973e-36,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        },
+        {
+          "lower_fraction": "-6922580630406959812827419316110950326849/5000000000000000000000000000000000000000",
+          "upper_fraction": "-13845161260813919625654838632221900295753/10000000000000000000000000000000000000000",
+          "midpoint_approx": -1.384516126081392,
+          "width_approx": 3.57945e-35,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        }
+      ]
+    }
+  ],
+  "numerical_values": {
+    "endpoint_p0": 0.40733446067177326,
+    "U_st_reweighting": -4.550327123236791,
+    "Xi_reweighting_epsilon": 4.550327123236791,
+    "weighted_rank_jump_component_from_previous_total": 15.306045530800864,
+    "previous_full_U_st_imported_not_recomputed": 10.755718407564073,
+    "uncentered_cross_difference_U_st": 0.8646659704866687,
+    "normalization_centering_U_st": -5.414993093723459,
+    "root_st_reweighting_contribution": -0.9578748602102333,
+    "dose_split_U_st": {
+      "thermal_derivative_of_covariance": -3.8340753980328643,
+      "explicit_dose_derivative": -0.734251948268253,
+      "root_motion": 0.01800022306432701
+    }
+  },
+  "inputs": [
+    {
+      "path": "results/p337-closed-source-n25/axis.csv",
+      "sha256": "29991f11aaa5bea53bc8193fb0990dcb0c4c9fa98af8c0bdea975f4144763189"
+    },
+    {
+      "path": "results/p337-closed-source-n25/tilted.csv",
+      "sha256": "09073ec9ebcf6d8aca804019f57d5141bfa93c58017f2f59df0b7461b217cc25"
+    },
+    {
+      "path": "results/p337-endpoint-defect/first.csv",
+      "sha256": "dfd7cd7ebe9ee6bd0a2f0f97db2f286979301d103bb7809ae7bfafb44ab6e219"
+    },
+    {
+      "path": "results/p337-endpoint-defect/second.csv",
+      "sha256": "4cd38c8da231ea79f3839e98115c6b0234cded17366a65322ae763230b0da8b3"
+    },
+    {
+      "path": "results/p337-defect-reweighting/first.csv",
+      "sha256": "f802fd005ee1d5c59e04e5428e0215c3aa7798dd625e3acdf4037f448a1995b3"
+    },
+    {
+      "path": "results/p337-defect-reweighting/second.csv",
+      "sha256": "7f488832e8dbe0977d50c6a87572fa9cf61b85345852fa6f686301febf8330e2"
+    },
+    {
+      "path": "results/p337-closed-source-n25/latest.json",
+      "sha256": "df4ab225ff499131b744c70ec569ad21b0229f2256e71a585c680faae51bac3a"
+    },
+    {
+      "path": "results/p337-endpoint-defect/score/score.json",
+      "sha256": "dd5aeeea31f2683257463796b3e27c36327c9dbd887bb2e6bf7588778f05c2dd"
+    }
+  ],
+  "scope": "signed operator contribution with exact paired configurations; neither a population share nor a fitted percentage",
+  "uncertainty": "rational computational bounds, no sampling error; conservative arithmetic over the saved root enclosure",
+  "old_Xi_or_R_recomputed": false,
+  "new_random_samples": 0,
+  "cloud_jobs": 0,
+  "tests_run": 0
+}
