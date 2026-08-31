@@ -1,0 +1,111 @@
+{
+  "schema": "matching-one.weak-q-path-comparison.v1",
+  "status": "completed_exact_saved_interval_linear_reduction",
+  "contract": {
+    "schema": "matching-one.weak-q-path-comparison.contract.v1",
+    "N": 25,
+    "geometries": [
+      [
+        5,
+        0
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    "source_commit": "ec01768f520e85f1acfd9d3fde9bcf855477254e",
+    "source_path": "results/p337-closed-source-n25/latest.json",
+    "identity_commit": "f85e6d6d8c56afcad27ff73dbf0a3578c2157829",
+    "identity_path": "notes/closed-source-q-lift-and-thermal-quotient.md",
+    "common_family": "normalized a^K exp(eta B) Q^(C_B-r/2), original q=r-1 and E=q^2, each geometry normalized before pooling",
+    "tied_path": "eta=log Q; root-adjusted dU/dlogQ at Q=1 equals V_Sstar/2",
+    "ordinary_projected_path": "eta=0; root-adjusted dU/dlogQ at Q=1 equals V_Sstar/2-V_Bvac",
+    "control_identity": "Bvac=2N-4K+B and D_1 U=D_K U=0 imply V_B=V_Bvac",
+    "fixed_matrix_rows": [
+      [
+        "1/2",
+        "0"
+      ],
+      [
+        "0",
+        "1"
+      ],
+      [
+        "1/2",
+        "-1"
+      ]
+    ],
+    "output_order": [
+      "tied_Q_path",
+      "local_edge_control",
+      "rank_projected_site_RC_Q_path"
+    ],
+    "decision": "strictly opposite rational signs exclude equality or a common thermal-coordinate alias of the two named Q paths for this finite U",
+    "chronology": "algebraic reuse after both old source responses and the new exact Q-path identity were known; not an outcome-blind independent experiment",
+    "scope": "finite N25 at shared Q=1 baseline and own moving pooled roots; not an asymptotic universality or continuum field decision",
+    "new_enumerations": 0,
+    "new_random_samples": 0,
+    "root_searches": 0,
+    "science_tests": 0,
+    "cloud_jobs": 0
+  },
+  "code_commit": "f0e9159f4f8a2f23b9e736e7e02b425e593336f2",
+  "input": {
+    "commit": "ec01768f520e85f1acfd9d3fde9bcf855477254e",
+    "path": "results/p337-closed-source-n25/latest.json",
+    "sha256": "df4ab225ff499131b744c70ec569ad21b0229f2256e71a585c680faae51bac3a"
+  },
+  "shared_root_enclosure": {
+    "lower_fraction": "1185331078656453492302851399693093801267/2000000000000000000000000000000000000000",
+    "upper_fraction": "5926655393282267461514256998465469006339/10000000000000000000000000000000000000000",
+    "midpoint_approx": 0.5926655393282267,
+    "width_approx": 4e-40,
+    "excludes_zero": true,
+    "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+  },
+  "responses": {
+    "tied_Q_path": {
+      "response_over_A": {
+        "lower_fraction": "1349949817712841424688468168576601063/2000000000000000000000000000000000000000",
+        "upper_fraction": "3374874544282103561721170421441513987/5000000000000000000000000000000000000000",
+        "midpoint_approx": 0.0006749749088564207,
+        "width_approx": 2.2659e-36,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "response_approx": 0.06308268170708457,
+      "sign": "positive"
+    },
+    "local_edge_control": {
+      "response_over_A": {
+        "lower_fraction": "7124185877730879664343172295321553003/2000000000000000000000000000000000000000",
+        "upper_fraction": "35620929388654398321715861476607801183/10000000000000000000000000000000000000000",
+        "midpoint_approx": 0.00356209293886544,
+        "width_approx": 3.6168e-36,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "response_approx": 0.33291070842057197,
+      "sign": "positive"
+    },
+    "rank_projected_site_RC_Q_path": {
+      "response_over_A": {
+        "lower_fraction": "-7217795075022547799568380158431198967/2500000000000000000000000000000000000000",
+        "upper_fraction": "-28871180300090191198273520633724737041/10000000000000000000000000000000000000000",
+        "midpoint_approx": -0.0028871180300090193,
+        "width_approx": 5.8827e-36,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "response_approx": -0.2698280267134874,
+      "sign": "negative"
+    }
+  },
+  "decision": "named_Q_paths_have_opposite_original_U_tangents",
+  "dependence": "same exact N25 populations and root-complete source responses; interval subtraction is enclosing, not statistical independence",
+  "boundary": "rank_projected_ordinary_site_RC_not_unprojected_site_RC_no_cross_size_or_field_identity_claim",
+  "new_random_samples": 0,
+  "new_enumerations": 0,
+  "root_searches": 0
+}
