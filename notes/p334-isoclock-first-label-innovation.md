@@ -137,3 +137,10 @@ the sampled torus process.
 Executable: `scripts/p334_isoclock_first_label_innovation.py`.
 Complete per-label counts, conditional curves, rational Grams and spectra:
 `results/p334-isoclock-first-label-innovation/exact_first_label.json`.
+
+Subsequent interpretation (`31c17d48`): the **full time-resolved** final-site
+law, together with the unmarked clock, determines these first-label profiles
+by an invertible triangular temporal transform. Rank2 versus1 is therefore
+also the response-rank difference of the centered full final-site tables.
+It is a new exact interpretation of the same marked laws, not independent
+evidence. Marginal final-winner probabilities alone do not determine it.
