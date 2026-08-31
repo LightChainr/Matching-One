@@ -130,6 +130,44 @@ and their shared-endpoint concentration. A model that gets H2 and the pair
 count right but assigns partners exchangeably misses most of this cooperative
 component. That is a sharper target than adding another scalar age fit.
 
+## One overlap coordinate connects branching and three-step survival
+
+The separate real-checkpoint census `f86ab1b` makes the connection explicit.
+Let T3 be the number of triangles in the **trigger** graph and c3 the number
+of genuine minimal three-site triggers whose proper subsets are all safe.
+Inclusion–exclusion on the a individually safe vertices gives
+
+```text
+safe_pair_graph_triangles = choose(a,3)-m(a-2)+W2-T3,
+actual_safe_triples = choose(a,3)-m(a-2)+W2-T3-c3.
+```
+
+For the two saved N425 second-orientation checkpoints, a=d=173 and m=108
+are identical. Their trigger two-star counts are **926 and 1466**, their
+trigger triangle counts are both **zero**, and c3 is **583 and 509**.
+Consequently, from A to B:
+
+```text
+Delta W2 = +540,
+Delta T3 = 0,
+Delta c3 = -74,
+Delta actual_safe_triples = 540+74 = 614.
+```
+
+The same +540 overlapping edge pairs increase the double-clone probability
+by `2*540/[173*172^2]=135/639754`, while the complete three-step survival
+increase is `614/choose(173,3)=307/424023`. Exactly `270/307` of that latter
+difference comes from pair overlap and `37/307` from the genuine three-site
+layer. These are identities for this real pair, not population percentages.
+
+This resolves an otherwise misleading intuition: at fixed trigger-edge count,
+more shared-endpoint clustering can **increase branching heterogeneity and
+increase three-step survival simultaneously**. Overlapping triggers cover
+fewer distinct triples than dispersed triggers. This is not a claim that
+three-site effects always have the same sign: here their independent change
+reinforces the pair-overlap contribution. The full three-step predictor still
+needs the c3 layer.
+
 ## Scientific card
 
 - Mechanism changed: fixed-count exchangeable trigger graphs substantially
