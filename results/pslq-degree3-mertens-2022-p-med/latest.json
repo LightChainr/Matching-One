@@ -1,0 +1,56 @@
+{
+  "claim_boundary": {
+    "excluded": "other method intervals, degree 4, library expansion, near-hit promotion, p-values, closed forms, or transcendence",
+    "included": "degree-3 height-100 exclusion on mertens-2022-p-med only",
+    "parent_issue": "remain open"
+  },
+  "contract_sha256": "fbeead4ae587fdc417a08393f27e701aabae45209f2478a24656ed63675ad2ac",
+  "interval_result": {
+    "closest_polynomial": {
+      "coefficients_ascending": [
+        -63,
+        40,
+        65,
+        79
+      ],
+      "height": 79,
+      "independent_sturm_certificate": {
+        "isolation_bits": 80,
+        "nearest_root_separation_lower_bound": "426876181501381066052741/295147905179352825856000000000000",
+        "nearest_root_side": "above",
+        "sturm_open_root_count_in_method_interval": 0,
+        "unit_interval_root_brackets": [
+          [
+            "716586007021911276627445/1208925819614629174706176",
+            "358293003510955638313723/604462909807314587353088"
+          ]
+        ]
+      },
+      "minimum_absolute_residual": "289734678677284869959981793549/1000000000000000000000000000000000000",
+      "polynomial_endpoint_values": [
+        "-290936637283285201752093503727/1000000000000000000000000000000000000",
+        "-289734678677284869959981793549/1000000000000000000000000000000000000"
+      ]
+    },
+    "coefficient_fibers_checked": 4040100,
+    "derivative_stationary_fibers": 0,
+    "excluded": true,
+    "interval_id": "mertens-2022-p-med",
+    "lower": "0.592746050783",
+    "primitive_cubics_checked": 749507743,
+    "root_containing_polynomials": 0,
+    "source_id": "mertens_2022_exact_spanning",
+    "upper": "0.592746050789"
+  },
+  "issue": 1,
+  "provenance_sha256": "95ea5cf00c124652c7347da99a83d464cf176224d81973a10b5e181379bfb1f2",
+  "schema": "matching-one/degree3-interval-exclusion/v1",
+  "search": {
+    "arithmetic": "exact integer-scaled rational endpoint ranges with exact derivative monotonicity",
+    "coefficient_height_max": 100,
+    "degree": 3,
+    "primitive_coefficients_only": true,
+    "sign_normalization": "a3_positive"
+  },
+  "status": "degree3_interval_exact_exclusion_complete"
+}
