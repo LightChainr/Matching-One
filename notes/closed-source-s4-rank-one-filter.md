@@ -98,6 +98,21 @@ representation V, which contains only a singlet and the standard irrep,
 not `[2,2]`. All other component factors are common. This proves the
 second configurationwise zero.
 
+The [general finite closure](closed-source-finite-torus-pair-closure.md)
+also fixes the complete direct-numerator colour spectrum. For any integer
+Q and any one-seam permutation pi, with Z_r the untwisted projected sector
+sums,
+
+```text
+N_q(pi)=-Z0+[Fix(pi)/Q]Z2,
+N_E(pi)= Z0+[Fix(pi)/Q]Z2.
+```
+
+Because `Fix(pi)=1+chi_standard(pi)`, only the singlet and standard
+representations can occur in those raw numerators. Other colour irreps
+can still act through the denominator. This integer-colour identity is
+not a claim that a single continuum field exhausts either representation.
+
 Since q=E=0 on rank1, all configurations now obey
 
 ```text
@@ -156,8 +171,8 @@ delta U/A_N = C_c (f_c)_z + C_dz (f_d)_z + C_d f_d.            (8)
 Every coefficient and input is now defined by the actual lattice closure.
 The unknown is a number, not an unspecified projector-to-observable map.
 The frozen [Q4 calculation](../analysis/p337_s4_trace_transmission_contract.json)
-evaluates (8) once at the saved original m2 pooled root on the N25 pair.
-It adds only the missing per-component modulo2/3 closure information.
+evaluated (8) once at the saved original m2 pooled root on the N25 pair.
+It added only the missing per-component modulo2/3 closure information.
 
 A nonzero answer would establish finite trace-to-U normalization
 transmission despite the exact direct-numerator zero (5). A zero answer

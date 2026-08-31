@@ -177,8 +177,9 @@ instance, not just a possible formal trace landing.
   Colour-[2] and topology rank2 are kept distinct.
 - **Dependency:** finite algebra from the same action and root definition;
   no new samples, histogram scoring or independent evidence vote.
-- **Not shown:** a nonzero full lattice colour-[2] amplitude, its CFT
-  identity, or a nonzero value of (8) for that unidentified full sector.
-- **Next discriminant:** an actual transfer insertion fixes F_f,F_s;
-  evaluate (8) once. A zero value stops that proposed transmission route
-  even if its unnormalized torus trace is nonzero.
+- **Not shown:** a generic-Q1 activated colour-[2] amplitude or a CFT
+  identity. The separately completed fixed-Q4 closure now gives a nonzero
+  value of (8), with the normalization transmission explicitly retained.
+- **Next discriminant:** the actual Q1 trace/confluent landing must fix
+  its finite packet before evaluation. The Q4 score is complete and needs
+  no extra seam or coupling search.
