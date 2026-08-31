@@ -93,6 +93,13 @@ therefore gives positive association:
 subset. This is a statement about the full interacting law, not only its
 linearization at t=0.
 
+The classical implication is Proposition1 of
+[Fortuin, Kasteleyn and Ginibre, *Correlation inequalities on some partially
+ordered sets*, CMP22,89--103(1971)](https://math.bme.hu/~balint/oktatas/perkolacio/percolation_papers/fortuin_kasteleyn_ginibre.pdf),
+DOI10.1007/BF01651330. The cycle-space supermodularity above is the
+model-specific input. The paper's lattice condition is sufficient, not
+necessary, for association; this distinction matters for negative t below.
+
 Conditioning a specified set of sites to be occupied and another specified
 set to be vacant restricts the Boolean lattice to an interval. Its meet
 and join stay in that interval, so (3)--(4) and positive association remain
