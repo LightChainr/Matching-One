@@ -1,0 +1,212 @@
+{
+  "schema": "matching-one.p337-endpoint-defect.score.v1",
+  "status": "completed_exact_finite_one_defect",
+  "decision": "source_independent_endpoint_gain_rejected",
+  "secondary_decision": "interior_thermal_only_mixed_null_rejected",
+  "freeze_commit": "9024fdbf62c0295f2284991c77dbd1fc68f267b3",
+  "execution_commit": "6b5e66bcf00cf6a6e33aa1a99e8e873bcdba7a9c",
+  "model": "bulk exp(t*(C+F+Bvac)), pA=s+(1-s)p, pB=p",
+  "parent_geometries": [
+    [
+      5,
+      5
+    ],
+    [
+      1,
+      7
+    ]
+  ],
+  "parent_N": 50,
+  "free_B_sites": 25,
+  "delta_cos4": "-1152/625",
+  "root_source": "complement of the prior complete N25 root enclosure",
+  "root_enclosure": {
+    "lower_fraction": "4073344606717732538485743001534530993661/10000000000000000000000000000000000000000",
+    "upper_fraction": "814668921343546507697148600306906198733/2000000000000000000000000000000000000000",
+    "midpoint_approx": 0.40733446067177326,
+    "width_approx": 4e-40,
+    "excludes_zero": true,
+    "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+  },
+  "numerical_values": {
+    "p0_endpoint": 0.40733446067177326,
+    "U": 2.715728877348466,
+    "U_s": 3.708240929282322,
+    "U_t": 0.38914717849771724,
+    "U_st": 10.755718407564073,
+    "Xi_U_t_epsilon": -10.755718407564073,
+    "R": 27.766563581230237,
+    "d_s_Ut_over_U": 3.764864182896271,
+    "source_free_gain_slope": 1.3654680186274366,
+    "gain_predicted_U_st": 0.5313680267777353,
+    "U_st_minus_gain_prediction": 10.224350380786337
+  },
+  "rational_enclosures": {
+    "U_over_A": {
+      "lower_fraction": "23552128253164030516750953294193248033/2500000000000000000000000000000000000000",
+      "upper_fraction": "94208513012656122067003813176772996853/10000000000000000000000000000000000000000",
+      "midpoint_approx": 0.009420851301265612,
+      "width_approx": 4.721e-37,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "U_s_over_A": {
+      "lower_fraction": "16079838950153579641418793490690210011/1250000000000000000000000000000000000000",
+      "upper_fraction": "128638711601228637131350347925521822483/10000000000000000000000000000000000000000",
+      "midpoint_approx": 0.012863871160122864,
+      "width_approx": 1.42395e-35,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "U_t_over_A": {
+      "lower_fraction": "105464829508815736303786575670046573/78125000000000000000000000000000000000",
+      "upper_fraction": "6749749088564207123442340842883052617/5000000000000000000000000000000000000000",
+      "midpoint_approx": 0.0013499498177128415,
+      "width_approx": 1.4389e-35,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "U_st_over_A": {
+      "lower_fraction": "373115389393654492570388514314872016641/10000000000000000000000000000000000000000",
+      "upper_fraction": "46639423674206811571298564289359593909/1250000000000000000000000000000000000000",
+      "midpoint_approx": 0.03731153893936545,
+      "width_approx": 4.734631e-34,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "Xi_U_t_epsilon_over_A": {
+      "lower_fraction": "-46639423674206811571298564289359593909/1250000000000000000000000000000000000000",
+      "upper_fraction": "-373115389393654492570388514314872016641/10000000000000000000000000000000000000000",
+      "midpoint_approx": -0.03731153893936545,
+      "width_approx": 4.734631e-34,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "R_over_A_squared": {
+      "lower_fraction": "3341408796414542151288425482229968757/10000000000000000000000000000000000000000",
+      "upper_fraction": "1670704398207271075644212741115007791/5000000000000000000000000000000000000000",
+      "midpoint_approx": 0.0003341408796414542,
+      "width_approx": 4.6825e-36,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "gain_residual_over_A": {
+      "lower_fraction": "354682256365266264008700623264340851983/10000000000000000000000000000000000000000",
+      "upper_fraction": "177341128182633132004350311632172919979/5000000000000000000000000000000000000000",
+      "midpoint_approx": 0.03546822563652663,
+      "width_approx": 4.987975e-34,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "d_s_Ut_over_U": {
+      "lower_fraction": "37648641828962705668040302608231812246543/10000000000000000000000000000000000000000",
+      "upper_fraction": "37648641828962705668040302608232343593791/10000000000000000000000000000000000000000",
+      "midpoint_approx": 3.764864182896271,
+      "width_approx": 5.31347248e-32,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "root_s": {
+      "lower_fraction": "-61908013155700264811601651591991961403/625000000000000000000000000000000000000",
+      "upper_fraction": "-198105642098240847397125285094374276173/2000000000000000000000000000000000000000",
+      "midpoint_approx": -0.09905282104912043,
+      "width_approx": 1.583e-37,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "root_t": {
+      "lower_fraction": "-1910731467753464052402089747693434097177/10000000000000000000000000000000000000000",
+      "upper_fraction": "-1910731467753464052402089747693434095387/10000000000000000000000000000000000000000",
+      "midpoint_approx": -0.1910731467753464,
+      "width_approx": 1.79e-37,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "root_st": {
+      "lower_fraction": "-4269098007931757827534703422018175872081/5000000000000000000000000000000000000000",
+      "upper_fraction": "-8538196015863515655069406844036351686369/10000000000000000000000000000000000000000",
+      "midpoint_approx": -0.8538196015863516,
+      "width_approx": 5.7793e-36,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "matching_slope": {
+      "lower_fraction": "58910122092494868338160209039360673541749/10000000000000000000000000000000000000000",
+      "upper_fraction": "58910122092494868338160209039360673548823/10000000000000000000000000000000000000000",
+      "midpoint_approx": 5.891012209249487,
+      "width_approx": 7.074e-37,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "mixed_ratio_terms": {
+      "numerator_mixed": {
+        "lower_fraction": "325077856428752117943482341561345638349/5000000000000000000000000000000000000000",
+        "upper_fraction": "130031142571500847177392936624539145089/2000000000000000000000000000000000000000",
+        "midpoint_approx": 0.06501557128575042,
+        "width_approx": 4.448747e-34,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "numerator_s_denominator_t": {
+        "lower_fraction": "-228829929364844007185064810090836731717/10000000000000000000000000000000000000000",
+        "upper_fraction": "-45765985872968801437012962018167293943/2000000000000000000000000000000000000000",
+        "midpoint_approx": -0.022882992936484402,
+        "width_approx": 2.62002e-35,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "numerator_t_denominator_s": {
+        "lower_fraction": "2247780175432103858450497511508826261/2500000000000000000000000000000000000000",
+        "upper_fraction": "4495560350864207716900995023017656101/5000000000000000000000000000000000000000",
+        "midpoint_approx": 0.0008991120701728416,
+        "width_approx": 7.158e-37,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "denominator_mixed": {
+        "lower_fraction": "-20258035656152606515394093586071895689/5000000000000000000000000000000000000000",
+        "upper_fraction": "-40516071312305213030788187172143776793/10000000000000000000000000000000000000000",
+        "midpoint_approx": -0.004051607131230522,
+        "width_approx": 1.4585e-36,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "denominator_product": {
+        "lower_fraction": "-16685443488428938534525161590874042007/10000000000000000000000000000000000000000",
+        "upper_fraction": "-3337088697685787706905032318174807973/2000000000000000000000000000000000000000",
+        "midpoint_approx": -0.001668544348842894,
+        "width_approx": 2.142e-37,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      }
+    }
+  },
+  "inputs": [
+    {
+      "path": "/private/tmp/matching-p334-paired-loading/results/p337-closed-source-n25/axis.csv",
+      "sha256": "29991f11aaa5bea53bc8193fb0990dcb0c4c9fa98af8c0bdea975f4144763189"
+    },
+    {
+      "path": "/private/tmp/matching-p334-paired-loading/results/p337-closed-source-n25/tilted.csv",
+      "sha256": "09073ec9ebcf6d8aca804019f57d5141bfa93c58017f2f59df0b7461b217cc25"
+    },
+    {
+      "path": "/private/tmp/matching-p334-paired-loading/results/p337-endpoint-defect/first.csv",
+      "sha256": "dfd7cd7ebe9ee6bd0a2f0f97db2f286979301d103bb7809ae7bfafb44ab6e219"
+    },
+    {
+      "path": "/private/tmp/matching-p334-paired-loading/results/p337-endpoint-defect/second.csv",
+      "sha256": "4cd38c8da231ea79f3839e98115c6b0234cded17366a65322ae763230b0da8b3"
+    },
+    {
+      "path": "/private/tmp/matching-p334-paired-loading/results/p337-closed-source-n25/latest.json",
+      "sha256": "df4ab225ff499131b744c70ec569ad21b0229f2256e71a585c680faae51bac3a"
+    }
+  ],
+  "score_sha256": "1068676cbd0a40f75437c894ad9e7c8f6258eb44ebe823faa84085e57a2ece6e",
+  "normalization": "each geometry first; Z_t and Z_st retained; root and thermal slope comove",
+  "dependence": "one exact N50 single-defect population paired with the fixed N25 endpoint; no independent evidence votes",
+  "boundary": "finite endpoint tangent only, no full interior curve or continuum field; original F4/P154/P334 stops unchanged",
+  "new_random_samples": 0,
+  "tests_run": 0
+}
