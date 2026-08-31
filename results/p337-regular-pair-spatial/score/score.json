@@ -1,0 +1,343 @@
+{
+  "schema": "p337.regular-pair-spatial.score.v1",
+  "status": "completed_fixed_two_block_readout",
+  "decision": "contact_only_zero_rejected_at_L64_r16",
+  "primary_two_sided_p": 1.1328120879027334e-21,
+  "primary_alpha": 0.01,
+  "contract": {
+    "schema": "p337.regular-pair-spatial.v1",
+    "base_commit": "2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb",
+    "question": "Does the canonical regular local colour interaction have a nonzero occupation-averaged Q-activated connected two-point function at separation16, rather than only a contact response?",
+    "model": "Kreg=average_C4 i(I-P1)i^dagger, with the singlet completion coefficient c(Q)=1 identically. Marked-site parameters lambda_x,lambda_y are unaveraged vertex coefficients, not epsilon/N.",
+    "observable": "C_Q(x,y)=partial_lambda_x partial_lambda_y log Z(Q,lambda_x,lambda_y) at zero marks. The measured C(x,y)=partial_logQ C_Q at Q1 is the ordinary iid occupation mean of the exact relative double-insertion kernel g_pi. It is not Cov(a_x,a_y), Cov(t_x,t_y), or the original U.",
+    "theory_gate": "Derive the prescribed two-kernel Q1 contraction for all eight-port exterior component partitions, using exactly the inherited Kreg. Prove zero for no more than one shared exterior component, or stop this contract before sampling. Accept the actual kernel commit before GO.",
+    "kernel_units": "TSV packed_key,g16; g16=16*g_pi. Ports are x:N,E,S,W followed by y:N,E,S,W. Restricted-growth labels are packed as sum(label[i]<<(3*i)). Missing TSV keys mean exactly zero, not unknown.",
+    "pair_rule": "Both marked sites must be vacant; otherwise the source is zero but the sample remains in the denominator. Occupied-neighbour ports use original occupied NN component roots. Each vacant-neighbour incident edge-node is its own singleton. The specified separations make all eight edge-nodes distinct.",
+    "geometry": "Square NN site-percolation torus (Z/LZ)^2, periodic in both directions; no rank, seam or old observable substitution.",
+    "runs": [
+      {
+        "L": 32,
+        "r": 8,
+        "seed": 2026083123593201
+      },
+      {
+        "L": 64,
+        "r": 16,
+        "seed": 2026083123596401
+      }
+    ],
+    "p_ref": "0.592746050790",
+    "p_ref_source": "Inherited numerical reference used in scripts/score_issue43_full_curve.py; treated as the fixed sampling parameter, not a newly certified critical threshold.",
+    "bernoulli_rule": "Independent uint64 outputs, occupied iff output<10934234699625173385. This realizes floor(p_ref*2^64)/2^64, differing from the decimal reference by less than2^-64.",
+    "rng": "One fixed mt19937_64 stream per geometry, seed as above, consumed row-major once per independent occupation configuration. Do not search seeds or reuse old production archives.",
+    "sampling": {
+      "batches": 200,
+      "configurations_per_batch": 1000,
+      "configurations_per_geometry": 200000
+    },
+    "translation_average": "16 anchors (i*L/4,j*L/4), i,j=0..3. At each anchor use displacements (r,0) and (0,r). Average all32 prescribed pairs for each configuration. They are correlated observations within one configuration, not32 independent samples.",
+    "statistics": "Per batch retain sum_g16 over the prescribed samples/pairs, and its exact decomposition by the number0..4 of exterior components shared by the two vertices. Retain sample/pair counts and nonzero-support counts. No new descriptor or adaptive selection is added.",
+    "primary_decision": "Test the finite L64,r16 contact-only null C64=0 using the mean and Monte Carlo standard error across200 independent batch means. A two-sided99% Student-t(df199) interval excluding zero rejects this finite zero-transmission null. Otherwise report unresolved at the fixed budget, without more samples.",
+    "secondary_readout": "Report C32, the fixed ratio C64/C32 with a99% Fieller interval if bounded, and the predeclared shared-component contributions. These describe spatial continuation; do not fit an exponent or classify a continuum field from these two scalar points.",
+    "field_boundary": "The C4-averaged colour interaction is not a pure continuum-spin projection. Neither an x=17/4 nor an x=21/4 law is assumed for this unprojected spatial correlator. Any later field test needs an appropriate named projection.",
+    "budget": "Exactly one complete production block per geometry. Local CPU is sufficient; no cloud startup is required. A failed run is reported and diagnosed from its existing state, not silently restarted to replace a scientific result.",
+    "dependency": "Two new separately seeded occupation blocks, independent of the older exact N25 populations and archived P154/P334/F4 production. Translation/direction contributions share each configuration and retain their joint batch covariance.",
+    "forbidden": [
+      "sampling before the frozen contract and kernel/producer commits",
+      "seed search",
+      "top up an inconclusive result",
+      "change completion after reveal",
+      "fit a radial exponent",
+      "substitute local-mark covariance for the tensor contraction",
+      "restart a retired production line"
+    ]
+  },
+  "contract_sha256": "e559069ac157702efefc4fd64f83a807895e3c95753a278240b2b343dba05496",
+  "freeze_commit": "3210aeb338ca7bb52c799d1de9048232f50ab921",
+  "kernel_commit": "32ff99fa5361ba0fe435fac835be2dbb206e0a6c",
+  "producer_commit": "9f6ff44dd41764fc34a251b202494172e62228b6",
+  "code_commit": "6425bffbe56c4eca42d74410dcf45dba3899e74b",
+  "created_utc": "2026-08-31T15:55:52.605923+00:00",
+  "runs": [
+    {
+      "L": 32,
+      "r": 8,
+      "mean": [
+        3.659179687499996e-05,
+        0.0,
+        0.0,
+        3.659179687499996e-05,
+        0.0,
+        0.0
+      ],
+      "mcse": [
+        1.3775571881236241e-06,
+        0.0,
+        0.0,
+        1.3775571881236241e-06,
+        0.0,
+        0.0
+      ],
+      "labels": [
+        "total",
+        "shared0",
+        "shared1",
+        "shared2",
+        "shared3",
+        "shared4"
+      ],
+      "covariance_of_mean": [
+        [
+          1.8976638065510657e-12,
+          0.0,
+          0.0,
+          1.8976638065510657e-12,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.8976638065510657e-12,
+          0.0,
+          0.0,
+          1.8976638065510657e-12,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "ci99": [
+        [
+          3.3009100944820064e-05,
+          4.017449280517986e-05
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          3.3009100944820064e-05,
+          4.017449280517986e-05
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "observed_zero_variance": [
+        false,
+        true,
+        true,
+        false,
+        true,
+        true
+      ],
+      "total_eligible_pairs": 1060448,
+      "total_nonzero_pairs": 1060,
+      "total_signed_sum_g16": 3747,
+      "observed_absolute_contribution_cancellation_lower_bound": 0.0,
+      "eligible_pairs_by_shared": [
+        347099,
+        710913,
+        2436,
+        0,
+        0
+      ],
+      "samples": 200000,
+      "pairs_per_configuration": 32,
+      "seed": 2026083123593201,
+      "source_file": "L32.csv",
+      "source_sha256": "1d9cb91ff8626954af46d215af2cf1180794e2ae96a17423ca6b86afac66a250",
+      "metadata_file": "L32.csv.metadata.json",
+      "metadata_sha256": "a5a483eb702470795b824d06bab24998e3a46ac557447fd93f25f0be791e3566",
+      "elapsed_production_seconds": 2.134110625
+    },
+    {
+      "L": 64,
+      "r": 16,
+      "mean": [
+        6.855468750000005e-06,
+        0.0,
+        0.0,
+        6.855468750000005e-06,
+        0.0,
+        0.0
+      ],
+      "mcse": [
+        6.352263711239126e-07,
+        0.0,
+        0.0,
+        6.352263711239126e-07,
+        0.0,
+        0.0
+      ],
+      "labels": [
+        "total",
+        "shared0",
+        "shared1",
+        "shared2",
+        "shared3",
+        "shared4"
+      ],
+      "covariance_of_mean": [
+        [
+          4.0351254257125477e-13,
+          0.0,
+          0.0,
+          4.0351254257125477e-13,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          4.0351254257125477e-13,
+          0.0,
+          0.0,
+          4.0351254257125477e-13,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "ci99": [
+        [
+          5.203397275806986e-06,
+          8.507540224193025e-06
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          5.203397275806986e-06,
+          8.507540224193025e-06
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "observed_zero_variance": [
+        false,
+        true,
+        true,
+        false,
+        true,
+        true
+      ],
+      "total_eligible_pairs": 1062314,
+      "total_nonzero_pairs": 209,
+      "total_signed_sum_g16": 702,
+      "observed_absolute_contribution_cancellation_lower_bound": 0.0,
+      "eligible_pairs_by_shared": [
+        441533,
+        620336,
+        445,
+        0,
+        0
+      ],
+      "samples": 200000,
+      "pairs_per_configuration": 32,
+      "seed": 2026083123596401,
+      "source_file": "L64.csv",
+      "source_sha256": "c3d7a92b8fcd48252f2ea655951dad31b3da529d6862c5d73bf1b69a8a73d41a",
+      "metadata_file": "L64.csv.metadata.json",
+      "metadata_sha256": "e22fced0c79d862c4831904d48797eb8e06e47932b00ec8f37aabe7b05be2e9c",
+      "elapsed_production_seconds": 7.974634458
+    }
+  ],
+  "ratio_C64_over_C32": {
+    "point_ratio": 0.18734987990392346,
+    "status": "bounded",
+    "confidence": 0.99,
+    "covariance_between_sizes": 0,
+    "bounded_interval": [
+      0.14016164110332746,
+      0.2381648820438993
+    ]
+  },
+  "uncertainty": "Monte Carlo batch Student-t/Fieller approximations, not exact arithmetic or continuum error bounds",
+  "inference_unit": "iid occupation configuration; 32 correlated translations/directions averaged within configuration",
+  "new_samples_total": 400000,
+  "independent_size_blocks": true,
+  "resampling_performed": false,
+  "field_assignment": null,
+  "exponent_fit_performed": false,
+  "elapsed_score_seconds": 0.04900024994276464
+}

@@ -111,3 +111,11 @@ contains several blocks. No x=17/4 or x=21/4 fit, selected angle, additional
 source, or posterior support class is added to this experiment. The
 kernel and the physically realized sampling rule are committed before
 either production block is revealed.
+
+## Completed readout
+
+The two frozen blocks and their single score are now complete. The
+[spatial transmission result](regular-pair-spatial-transmission-result.md)
+reports positive C64 at distance16 and the fixed size/distance ratio,
+together with the exact shared-component mechanism. No samples or
+completion coefficients were added after readout.

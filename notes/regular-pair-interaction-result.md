@@ -127,3 +127,14 @@ Any next field-level claim needs a prediction about occupation-summed
 spatial correlations or scaling of a specified completed interaction,
 not another same-N25 mixture. Retired P154/P334/F4 production remains
 stopped, and no task priority or merge decision is changed here.
+
+### Spatial continuation now completed
+
+The next fixed question has since been answered using two fresh occupation
+blocks: the [regular-pair spatial transmission result](regular-pair-spatial-transmission-result.md)
+finds positive connected Q activation at L64/r16 and supplies its exact
+two-shared-component mechanism. This fills the finite occupation-averaged
+noncontact gap, not the continuum field-identification or original-anomaly
+gap. A broader [regular-local scalar reduction](q1-regular-local-scalar-reduction.md)
+also excludes direct Q1 U transmission throughout the stated homogeneous
+site-local model class.
