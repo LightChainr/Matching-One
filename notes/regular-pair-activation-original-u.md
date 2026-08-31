@@ -101,6 +101,28 @@ family. All four terms are mandatory. In contrast,
 numerical null being tested. At Q1 the derivatives with respect to Q and
 logQ coincide at this order.
 
+### The pure vacancy part carries exactly zero original-U response
+
+The fixed activation includes an elementary thermal contribution. Write
+`a=(1-K/N)+b`, where for vacant x, `b_x=a_x-1`, and for occupied x,
+`b_x=0`. This is an algebraic decomposition, not a second source choice.
+For any common source `c0+c1*K`,
+
+```
+jM=c1*h*M_h,       jM_h=c1*(M_h+h*M_hh),
+jY_h=c1*(Y_h+h*Y_hh).
+```
+
+Substitution into the four-term formula gives exactly zero. Equivalently,
+this source only reparametrizes the thermal activity and its common root.
+Consequently `W[a]=W[b]` without a second numerical score. The vacancy
+piece has mixed root motion `h/N` and can cause individually large terms;
+it cannot explain a nonzero full W. The nonthermal support of b is exactly
+the one-adjacent-pair and the two-or-fewer-component exterior patterns.
+Four distinct components and a single opposite equal pair contribute
+zero to b. This separates a genuine connectivity response from a mere
+temperature-coordinate shift before the numerical outcome is known.
+
 ## 3. The remaining completion freedom has a named response
 
 For `c(Q)=1+alpha*(Q-1)+...`, the first Q-activated source changes by
