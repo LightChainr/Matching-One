@@ -62,7 +62,7 @@ def normalized_jet(raw, z):
     return [value, first, second]
 
 
-def coefficients(old_rows, new_rows):
+def coefficients(old_rows, new_rows, suffix=""):
     data = {key: [F(0)]*(N+1) for key in ("z", "q", "e", "s", "qs", "es")}
     for row in old_rows:
         k, q, count = (row[key] for key in ("k", "q", "count"))
@@ -82,7 +82,7 @@ def coefficients(old_rows, new_rows):
             if N*row[field] != (N-k)*data[key][k]:
                 raise ValueError("origin-vacant q/E marginal differs from the existing baseline")
         for key, field in (("s", "sum_G16"), ("qs", "sum_G16_q"), ("es", "sum_G16_E")):
-            data[key][k] = F(row[field], 16*N)
+            data[key][k] = F(row[field+suffix], 16*N)
     return data
 
 
@@ -171,12 +171,19 @@ def main():
         with ThreadPoolExecutor(max_workers=2) as pool:
             runs = list(pool.map(run, zip(("axis", "tilted"), contract["geometries"])))
     scored_start = time.perf_counter()
-    pair = [coefficients(old[name], rows((out/(name+".csv")).read_bytes()))
+    new_rows = {name: rows((out/(name+".csv")).read_bytes()) for name in ("axis", "tilted")}
+    pair = [coefficients(old[name], new_rows[name])
             for name in ("axis", "tilted")]
+    contact_pair = [coefficients(old[name], new_rows[name], "_contact")
+                    for name in ("axis", "tilted")]
     scored = response(pair, h, D, ratio)
+    contact = response(contact_pair, h, D, ratio)
+    noncontact = scored["J2_over_A"]-contact["J2_over_A"]
     score_seconds = time.perf_counter()-scored_start
     bound = interval_json(scored["J2_over_A"])
+    noncontact_bound = interval_json(noncontact)
     decision = "global_additive_first_Q_closure_rejected" if bound["excludes_zero"] else "unresolved_at_saved_root_precision"
+    secondary_decision = "global_NN_contact_only_transmission_rejected" if noncontact_bound["excludes_zero"] else "noncontact_global_transmission_unresolved_at_saved_root_precision"
     with localcontext() as context:
         context.prec = 65
         area = Decimal(N)**(Decimal(13)/8)/2
@@ -186,20 +193,29 @@ def main():
             return float(area*Decimal(value.numerator)/Decimal(value.denominator))
 
         values = {"J2": full(scored["J2_over_A"]),
+                  "J2_contact": full(contact["J2_over_A"]), "J2_noncontact": full(noncontact),
                   "terms": {key: full(value) for key, value in scored["terms"].items()}}
     result = {"schema": "matching-one.regular-pair-joint-u.v1", "status": "completed_fixed_exact_joint_response",
               "definition_commit": code_commit, "contract": contract, "decision": decision,
               "J2_over_A": bound, "numerical_values": values,
+              "secondary_decision": secondary_decision,
+              "contact_J2_over_A": interval_json(contact["J2_over_A"]),
+              "noncontact_J2_over_A": noncontact_bound,
+              "contact_terms_over_A": {key: interval_json(value) for key, value in contact["terms"].items()},
+              "noncontact_terms_over_A": {key: interval_json(value-contact["terms"][key]) for key, value in scored["terms"].items()},
               "terms_over_A": {key: interval_json(value) for key, value in scored["terms"].items()},
               "root_p_joint_tangent": interval_json(scored["root_h_joint_tangent"]/(1+h)**2),
               "source_packets": [{key: interval_json(value) for key, value in row.items()} for row in scored["source_packets"]],
               "coefficient_packets": [{"geometry": name, "S2_coefficients_h": {key: [str(v) for v in data[key]] for key in ("s", "qs", "es")}}
                                       for name, data in zip(("axis", "tilted"), pair)],
+              "contact_coefficient_packets": [{"geometry": name, "S2_contact_coefficients_h": {key: [str(v) for v in data[key]] for key in ("s", "qs", "es")}}
+                                              for name, data in zip(("axis", "tilted"), contact_pair)],
               "source_files": source_files, "saved_root_p": saved["root_enclosure"],
               "source_unit_divisor": 16*N, "normalization_population": 2**N,
               "new_origin_vacant_configurations_per_geometry": 2**(N-1),
               "new_random_samples": 0, "new_root_searches": 0, "old_sources_rescored": False,
               "response_scores": 1, "tests_run": 0, "cloud_jobs": 0,
+              "score_vector": ["J2_total", "J2_NN_contact", "J2_noncontact_by_subtraction"],
               "score_seconds": score_seconds, "elapsed_seconds": time.perf_counter()-started,
               "boundary": contract["boundary"]}
     report = ["# The canonical joint Q activation in original U", "",
@@ -211,6 +227,12 @@ def main():
     report += ["", "The first-Q effective logweight of a linear additive model predicts J2=0 exactly.",
                "This is a joint tensor closure, not Cov(a_x,a_y), the conditional 13/8 contraction or the spatial C at fixed separation.",
                "Both adjacent and nonadjacent vertices enter. Adjacent vacant marks share one physical isolated edge ID.", "",
+               "The NN-contact split was specified before counting, in the same fixed-source pass:", "",
+               "| Joint U contribution | Value |", "|---|---:|",
+               f"| Four NN displacements | {values['J2_contact']:+.16g} |",
+               f"| All other nonzero displacements | {values['J2_noncontact']:+.16g} |", "",
+               f"Secondary decision: **{secondary_decision}**. The global NN-contact-only model predicts exactly zero for the second row.",
+               "This finite non-NN contribution does not establish macroscopic-distance or asymptotic field transmission.", "",
                "One exact 2^24 origin-vacant traversal per geometry supplies only the missing joint source moments.",
                "Translation-invariant moments use sum_y g16_0y/(16N) and the full 2^25 baseline, not a conditional probability law.",
                "Old root and q/E populations were imported; no old source score, new root search, Monte Carlo or test campaign.",

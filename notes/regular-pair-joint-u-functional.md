@@ -294,6 +294,17 @@ of (9). The present reduction adds no descriptor, completion parameter
 or substitute covariance; it specifies the one missing joint source
 and its exact original-observer transmission.
 
+Before collecting the new joint moments, the same fixed comparison also
+separates the four nearest-neighbour displacements from all other nonzero
+displacements. Equations (11)--(14) apply to each translation-invariant
+displacement class, and the linear functional (9) gives
+`J2=J2_NN+J2_nonNN`. The identical 16N units apply to both parts. A model
+in which only nearest-neighbour contact interactions transmit to original
+U predicts `J2_nonNN=0`; the already positive spatial C does not decide
+that null. This is one predetermined physical split in the same traversal,
+not a selected support radius, a new source fit or an independent data
+block. Non-NN on N25 does not mean macroscopic separation.
+
 ## Source pins and delivery
 
 - Execution `a237968f1d7a82d26b46e83c58179dbba7f1a908`, `branch_only`:

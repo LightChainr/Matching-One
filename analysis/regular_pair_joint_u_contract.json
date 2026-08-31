@@ -28,9 +28,11 @@
     "use": "Import root_enclosure, matching_slope_enclosure and U25_over_A_enclosure; use only existing full count/q/E marginals. No root search and no old source rescoring."
   },
   "primary_null": "An unchanged Q1 baseline whose first-Q effective log weight is purely linear/additive in epsilon predicts J2=0",
+  "prescore_secondary": "In the same traversal split the ordered origin pairs into the four NN contact displacements and all other nonzero displacements. Report J2_contact and J2_noncontact=J2-J2_contact with identical 16N units and full U functional; no new radius or feature is selected.",
+  "secondary_null": "A global contact-only transmission model predicts J2_noncontact=0 even if the unprojected spatial mean C is nonzero. A strictly signed exact interval excludes this fixed finite global closure. This split is specified before new moments or score are computed.",
   "tensor_sign_prediction": null,
   "decision": "A strictly signed exact interval excludes that finite global additive closure. If the saved-root interval contains zero, report unresolved with no coefficient, geometry, Q or precision search. A conditional positive Gram does not supply the unconditional J2 sign.",
-  "compute": "One compilation, one fixed-origin exact traversal per geometry for the missing joint moments, one rational-interval response score. Local CPU, two independent geometry processes; no Monte Carlo or cloud action.",
+  "compute": "One compilation, one fixed-origin exact traversal per geometry for the missing total/contact joint moments, one rational-interval score invocation for the fixed vector total/contact/noncontact. Local CPU, two independent geometry processes; no Monte Carlo or cloud action.",
   "dependency": "Same complete finite N25 occupation populations as previous local/seam/source calculations, reduced by translation; no independent statistical evidence. Spatial production has different observers and dependency groups.",
   "boundary": "Finite canonical response only, not unique continuum field, asymptotic H4 origin, a spatial C score, or covariance of separate one-mark activation derivatives. No alpha fitted.",
   "new_random_samples": 0,
