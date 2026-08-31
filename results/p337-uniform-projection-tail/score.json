@@ -1,0 +1,274 @@
+{
+  "schema": "p337.uniform-projection-tail.v1",
+  "domain": "all real m>=64 at fixed N25",
+  "N": 25,
+  "delta": "1152/625",
+  "laws": {
+    "star": {
+      "certified": true,
+      "coordinate": "lambda=1/m",
+      "coordinate_upper_bound": {
+        "rational_enclosure": [
+          "1/64",
+          "15625000001/1000000000000"
+        ],
+        "decimal": 0.015625
+      },
+      "root_tube": "1<=h_or_d<=1+2*x^2",
+      "root_existence_uniqueness_gate": true,
+      "F_at_one_leading": -100,
+      "F_at_one_remainder_over_x_gap": {
+        "rational_enclosure": [
+          "288033876933/500000000000",
+          "576067753867/1000000000000"
+        ],
+        "decimal": 0.5760677538669717
+      },
+      "Fh_lower": {
+        "rational_enclosure": [
+          "24838757509783/250000000000",
+          "99355030039133/1000000000000"
+        ],
+        "decimal": 99.35503003913254
+      },
+      "root_approximation": "1+lambda^2",
+      "root_error_order": 6,
+      "root_error_coefficient": {
+        "rational_enclosure": [
+          "254713652003/250000000000",
+          "1018854608013/1000000000000"
+        ],
+        "decimal": 1.0188546080120093
+      },
+      "angular_leading_coefficient": -200,
+      "angular_power": 11,
+      "angular_polynomial_remainder_scaled": {
+        "rational_enclosure": [
+          "13182422598903/500000000000",
+          "26364845197807/1000000000000"
+        ],
+        "decimal": 26.364845197806737
+      },
+      "angular_root_motion_remainder_scaled": {
+        "rational_enclosure": [
+          "22357793201/1000000000000",
+          "11178896601/500000000000"
+        ],
+        "decimal": 0.022357793201136573
+      },
+      "angular_numerator_over_x_power": [
+        {
+          "rational_enclosure": [
+            "-7074600093469/31250000000",
+            "-226387202991007/1000000000000"
+          ],
+          "decimal": -226.38720299100788
+        },
+        {
+          "rational_enclosure": [
+            "-173612797008993/1000000000000",
+            "-5425399906531/31250000000"
+          ],
+          "decimal": -173.61279700899212
+        }
+      ],
+      "positive_denominator_G": [
+        {
+          "rational_enclosure": [
+            "39742012015653/100000000000",
+            "397420120156531/1000000000000"
+          ],
+          "decimal": 397.4201201565302
+        },
+        {
+          "rational_enclosure": [
+            "103706108115639/250000000000",
+            "414824432462557/1000000000000"
+          ],
+          "decimal": 414.8244324625568
+        }
+      ],
+      "U_over_A_over_lambda_power": [
+        {
+          "rational_enclosure": [
+            "-309050579123/500000000000",
+            "-123620231649/200000000000"
+          ],
+          "decimal": -0.6181011582454182
+        },
+        {
+          "rational_enclosure": [
+            "-454124507761/1000000000000",
+            "-5676556347/12500000000"
+          ],
+          "decimal": -0.4541245077602729
+        }
+      ],
+      "lambda_power": "11",
+      "leading_coefficient": {
+        "rational_enclosure": [
+          "-542534722223/1000000000000",
+          "-271267361111/500000000000"
+        ],
+        "decimal": -0.5425347222222222
+      },
+      "uniform_absolute_remainder_coefficient_at_same_power": {
+        "rational_enclosure": [
+          "88410214461/1000000000000",
+          "44205107231/500000000000"
+        ],
+        "decimal": 0.08841021446194929
+      },
+      "classical_remainder_lambda_power": "13",
+      "classical_uniform_remainder_coefficient": {
+        "rational_enclosure": [
+          "377987005108781/1000000000000",
+          "188993502554391/500000000000"
+        ],
+        "decimal": 377.9870051087817
+      },
+      "remainder_interpretation": "|U/A-leading*lambda^power| <= bound*lambda^power on the entire m>=64 interval"
+    },
+    "drop": {
+      "certified": true,
+      "coordinate": "x=m^(-1/25)",
+      "coordinate_upper_bound": {
+        "rational_enclosure": [
+          "17/20",
+          "850000000001/1000000000000"
+        ],
+        "decimal": 0.85
+      },
+      "root_tube": "1<=h_or_d<=1+2*x^52",
+      "root_existence_uniqueness_gate": true,
+      "F_at_one_leading": -100,
+      "F_at_one_remainder_over_x_gap": {
+        "rational_enclosure": [
+          "909443903/1562500000",
+          "582044097921/1000000000000"
+        ],
+        "decimal": 0.5820440979209649
+      },
+      "Fh_lower": {
+        "rational_enclosure": [
+          "99436217925277/1000000000000",
+          "49718108962639/500000000000"
+        ],
+        "decimal": 99.43621792527753
+      },
+      "root_approximation": "1",
+      "root_error_order": 52,
+      "root_error_coefficient": {
+        "rational_enclosure": [
+          "505761613809/500000000000",
+          "1011523227619/1000000000000"
+        ],
+        "decimal": 1.0115232276181751
+      },
+      "angular_leading_coefficient": 600,
+      "angular_power": 210,
+      "angular_polynomial_remainder_scaled": {
+        "rational_enclosure": [
+          "5804359097841/100000000000",
+          "58043590978411/1000000000000"
+        ],
+        "decimal": 58.04359097841082
+      },
+      "angular_root_motion_remainder_scaled": {
+        "rational_enclosure": [
+          "281390823479/15625000000",
+          "18009012702657/1000000000000"
+        ],
+        "decimal": 18.009012702656968
+      },
+      "angular_numerator_over_x_power": [
+        {
+          "rational_enclosure": [
+            "130986849079733/250000000000",
+            "523947396318933/1000000000000"
+          ],
+          "decimal": 523.9473963189322
+        },
+        {
+          "rational_enclosure": [
+            "676052603681067/1000000000000",
+            "169013150920267/250000000000"
+          ],
+          "decimal": 676.0526036810678
+        }
+      ],
+      "positive_denominator_G": [
+        {
+          "rational_enclosure": [
+            "39774487170111/100000000000",
+            "397744871701111/1000000000000"
+          ],
+          "decimal": 397.7448717011101
+        },
+        {
+          "rational_enclosure": [
+            "206473777761633/500000000000",
+            "412947555523267/1000000000000"
+          ],
+          "decimal": 412.94755552326643
+        }
+      ],
+      "U_over_A_over_lambda_power": [
+        {
+          "rational_enclosure": [
+            "1376734896811/1000000000000",
+            "344183724203/250000000000"
+          ],
+          "decimal": 1.376734896811528
+        },
+        {
+          "rational_enclosure": [
+            "184430793527/100000000000",
+            "1844307935271/1000000000000"
+          ],
+          "decimal": 1.844307935270329
+        }
+      ],
+      "lambda_power": "42/5",
+      "leading_coefficient": {
+        "rational_enclosure": [
+          "813802083333/500000000000",
+          "1627604166667/1000000000000"
+        ],
+        "decimal": 1.6276041666666667
+      },
+      "uniform_absolute_remainder_coefficient_at_same_power": {
+        "rational_enclosure": [
+          "50173853971/200000000000",
+          "7839664683/31250000000"
+        ],
+        "decimal": 0.2508692698551387
+      },
+      "classical_remainder_lambda_power": "44/5",
+      "classical_uniform_remainder_coefficient": {
+        "rational_enclosure": [
+          "165370687723/125000000000",
+          "264593100357/200000000000"
+        ],
+        "decimal": 1.3229655017840718
+      },
+      "remainder_interpretation": "|U/A-leading*lambda^power| <= bound*lambda^power on the entire m>=64 interval"
+    }
+  },
+  "sources": [
+    {
+      "path": "results/p337-closed-source-finite-coupling/axis.csv",
+      "sha256": "2d23fecc98d276d9ad15ad1867199cd308f0570cb5040ef94eb6b923b4c53458"
+    },
+    {
+      "path": "results/p337-closed-source-finite-coupling/tilted.csv",
+      "sha256": "225031e612929ed922ba75c55e76703d59990f5283e7ac39b94f022841798da5"
+    }
+  ],
+  "new_enumerations": 0,
+  "new_samples": 0,
+  "coupling_point_evaluations": 0,
+  "minimum_m_search": false,
+  "code_commit": "9f3f7a57cfb49339de323af6b861493cfd06c510",
+  "elapsed_seconds": 0.4448206248925999
+}
