@@ -98,6 +98,11 @@ differentiates the fully occupied sublattice. The endpoint reduction alone
 does not determine that derivative, so the simple identity above must not
 be used for that thermal convention.
 
+The [companion topology proof](square-checkerboard-endpoint-homology.md)
+gives the full integer winding-subgroup statement and alias convention.
+A simple sufficient bound for the ordinary implementation is child
+Gaussian area M>8; all four pairs here satisfy it.
+
 ## Why the linear source is exactly invisible
 
 Translation exchanges A and B while preserving q and E on every supported
@@ -120,6 +125,82 @@ stronger. It predicts U_N(s)=U_N(0) at every s, hence requires
 2^(13/8)U_(N/2)(0)−U_N(0)=0. The endpoint data below are incompatible with
 that requirement at their inherited precision. No alternative curve or
 mixture is fit to manufacture this conclusion.
+
+## The second-order source is fixed by the model
+
+Write K=K_A+K_B, Delta=K_A−K_B, and use the symmetric chart
+p_A=p+h,p_B=p−h. For translation-invariant q,E the exact transverse second
+Bernoulli score at h=0 is
+
+\[
+H=\frac{\Delta^2-(1-2p)K-Np^2}{p^2(1-p)^2},
+\qquad \partial_h^2\langle O\rangle=\langle OH\rangle.
+\]
+
+To express saturation in a thermal chart that removes the common clock,
+set m=(p_A+p_B)/2 and h=s(1−m)/(2−s). The first variation vanishes and the
+second expectation variation is c(m)F_hh, c(m)=(1−m)^2/4. Let
+r(p)=Y_p/Q_p. At the homogeneous root,
+
+\[
+\boxed{U_{ss}(0)=\frac{N^{13/8}}{2D}
+\partial_p\{c(p)[Y_{hh}-r(p)Q_{hh}]\}}.
+\]
+
+Both c and r must be differentiated: cU_hh alone is incorrect. A compact
+direct score and its thermal derivative weight are
+
+\[
+W=cH=\frac{\Delta^2-(1-2p)K-Np^2}{4p^2},\qquad
+Z=W\frac{K-Np}{p(1-p)}+\frac{K-Np}{2p^2}-\frac{2W}{p}.
+\]
+
+Thus j_Q=mean E[qW], j_Y=P4 E[EW], with Z for their p derivatives,
+give the same root/slope-complete response. All coefficients follow from
+the microscopic probabilities; none is learned from an archive. These
+Delta² correlations are not present in ordinary K-only q/E summaries and
+were **not** reconstructed or estimated in the endpoint calculation.
+See the [full second-variation derivation](checkerboard-original-u-second-variation.md).
+
+## Decimation forces a concrete extra term in the cluster source
+
+Let C_tot=CB+CW be the **equilibrium absolute** occupied-NN plus
+vacant-matching component count, distinct from the stopped lag1 policy.
+At the saturated endpoint the topology companion gives the configuration
+identity
+
+\[
+C_{tot,parent}=C_{tot,child}+F_4,
+\]
+
+where F4 counts fully occupied unit plaquettes in the complemented child.
+Each is an isolated occupied A vertex in the parent. Such vertices do not
+change ambient homology, but each contributes one cluster. This is a
+forced local plaquette term, not a fifth contact descriptor chosen to
+explain a residual.
+
+Consequently a parent weight exp(t C_tot) maps exactly to the child weight
+exp[t(C_tot+F4)], not to its unchanged cluster fugacity. At the endpoint,
+the full normalized-U identity therefore extends to
+
+\[
+U_N^{end}(t)=2^{13/8}U_{N/2}^{child}(t_{cl}=t,t_{F4}=t).
+\]
+
+Differentiating at zero yields the same-global-observer source law
+
+\[
+\boxed{V_N^{cl,end}=2^{13/8}
+       [V_{N/2}^{cl}+V_{N/2}^{F4}]}.
+\]
+
+Each V includes its own root and thermal-slope response; linearity of that
+first source differential gives the sum. The dictionary is exact for
+this endpoint and thermal convention. It neither measures V^F4 nor
+identifies F4 with a continuum spin4 descendant. Its scientific content is
+that **bare cluster fugacity is not closed under this exact decimation**;
+the additional term is named before any new measurement. This is not a
+source substitution in the already completed lag1 decision.
 
 ## Numerical endpoint predictions, without new configurations
 
