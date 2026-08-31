@@ -1,0 +1,496 @@
+{
+  "schema": "matching-one.p337-closed-source-finite-coupling.score.v1",
+  "status": "completed_fixed_four_coupling_score",
+  "decision": "positive_source_global_U_turnover_resolved",
+  "contract_freeze_commit": "b70dc4bd2fddd7676e9536b42bf912ee00ad302f",
+  "contract": {
+    "schema": "matching-one.p337-closed-source-finite-coupling.contract.v1",
+    "status": "frozen_before_new_histogram_and_scores",
+    "source": "Sstar=Ctot+F4+Bvac=J-3K+2N+1",
+    "question": "Does the exact positive-coupling global U turn down on a fixed finite grid, as predicted by the two-state strong-coupling limit?",
+    "N": 25,
+    "geometries": [
+      [
+        5,
+        0
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    "histogram_fields": [
+      "k",
+      "g",
+      "q",
+      "count"
+    ],
+    "g_definition": "g=2K-J=2N+1-K-Sstar",
+    "finite_weight": "h^K*m^(-g), m=exp(t), h=p/((1-p)*m)",
+    "multipliers_m": [
+      2,
+      4,
+      8,
+      16
+    ],
+    "workers": 2,
+    "enumerations": "one exhaustive 2^25 pass per geometry with the existing rollback topology backend; no Monte Carlo",
+    "root": "unique zero of mean of separately normalized q means",
+    "root_bisection_steps": 128,
+    "root_bracket": "h_lo=0, h_hi=1, double h_hi until Q>0; FKG implies uniqueness",
+    "thermal_variable": "h at fixed m; its common Jacobian cancels in U",
+    "source_in_h_chart": "-g; common homogeneous density reparametrization preserves the entire U(t) curve",
+    "observer": "U=(25^(13/8)/2)*(d_h meanE_axis - d_h meanE_tilted)/(1152/625)/d_h pooledQ",
+    "outputs": [
+      "critical_h",
+      "critical_p",
+      "U_over_A",
+      "dU_dt_over_A",
+      "root_motion",
+      "four_response_terms"
+    ],
+    "preexisting_reference": "results/p337-closed-source-n25/latest.json; U(0)>0 and dU_dt(0)>0; do not rerun that calculation",
+    "decision": "any dU_dt/A enclosure strictly below zero certifies a downturn; positive initial derivative and smooth positive-t root then imply at least one intervening maximum",
+    "stop": "score the four fixed multipliers once, publish all values; if no negative derivative is resolved, stop without extending the grid",
+    "scope": "finite-volume named-source model; not a continuum exponent, thermodynamic phase transition, or independent random evidence",
+    "new_random_samples": 0
+  },
+  "code_commit": "3ae0d68cdaf4a54420d2b2491f95ffbd16ae09ef",
+  "input_counts": [
+    {
+      "path": "results/p337-closed-source-finite-coupling/axis.csv",
+      "sha256": "2d23fecc98d276d9ad15ad1867199cd308f0570cb5040ef94eb6b923b4c53458"
+    },
+    {
+      "path": "results/p337-closed-source-finite-coupling/tilted.csv",
+      "sha256": "225031e612929ed922ba75c55e76703d59990f5283e7ac39b94f022841798da5"
+    }
+  ],
+  "baseline": {
+    "path": "results/p337-closed-source-n25/latest.json",
+    "sha256": "df4ab225ff499131b744c70ec569ad21b0229f2256e71a585c680faae51bac3a",
+    "used": "published positive U(0),U_t(0) signs only; no baseline rescoring",
+    "numerical_values": {
+      "U25": 0.8804661569633677,
+      "V25_Sstar": 0.12616536341416915
+    }
+  },
+  "downturn_resolved_at_m": [
+    2,
+    4,
+    8,
+    16
+  ],
+  "scores": [
+    {
+      "m": 2,
+      "t_approx": 0.6931471805599453,
+      "critical_h": {
+        "lower_fraction": "30642384240361619026023347146830848671/25000000000000000000000000000000000000",
+        "upper_fraction": "612847684807232380520466942936616973423/500000000000000000000000000000000000000",
+        "midpoint_approx": 1.2256953696144648,
+        "width_approx": 6e-39,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "critical_p": {
+        "lower_fraction": "1420523449498848322013730120303180644017/2000000000000000000000000000000000000000",
+        "upper_fraction": "443913577968390100629290662594743951259/625000000000000000000000000000000000000",
+        "midpoint_approx": 0.7102617247494242,
+        "width_approx": 5.9e-39,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "U_over_A": {
+        "lower_fraction": "25933061170163305635251246745653835769/10000000000000000000000000000000000000000",
+        "upper_fraction": "25933061170163305635251246745653842167/10000000000000000000000000000000000000000",
+        "midpoint_approx": 0.0025933061170163307,
+        "width_approx": 6.398e-37,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "dU_dt_over_A": {
+        "lower_fraction": "-14667114335821389042127868606514933481/1000000000000000000000000000000000000000",
+        "upper_fraction": "-73335571679106945210639343032574515897/5000000000000000000000000000000000000000",
+        "midpoint_approx": -0.014667114335821388,
+        "width_approx": 3.03016e-35,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "D_h": {
+        "lower_fraction": "56132577629869120099790856992594425857117/10000000000000000000000000000000000000000",
+        "upper_fraction": "11226515525973824019958171398518885174491/2000000000000000000000000000000000000000",
+        "midpoint_approx": 5.613257762986912,
+        "width_approx": 1.5338e-36,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "critical_h_tangent": {
+        "lower_fraction": "-1743172136924533303177244520821073515883/5000000000000000000000000000000000000000",
+        "upper_fraction": "-1743172136924533303177244520821073514733/5000000000000000000000000000000000000000",
+        "midpoint_approx": -0.3486344273849067,
+        "width_approx": 2.3e-37,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "critical_logit_velocity": {
+        "lower_fraction": "3577809641662562694657035151266181990891/5000000000000000000000000000000000000000",
+        "upper_fraction": "894452410415640673664258787816545497959/1250000000000000000000000000000000000000",
+        "midpoint_approx": 0.7155619283325125,
+        "width_approx": 1.89e-37,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "terms_over_A": {
+        "direct": {
+          "lower_fraction": "2966406450571059953853494850086716351/10000000000000000000000000000000000000000",
+          "upper_fraction": "1483203225285529976926747425043458689/5000000000000000000000000000000000000000",
+          "midpoint_approx": 0.000296640645057106,
+          "width_approx": 2.01027e-35,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        },
+        "root_motion": {
+          "lower_fraction": "-87135825052135717695724267717482791061/10000000000000000000000000000000000000000",
+          "upper_fraction": "-17427165010427143539144853543496540961/2000000000000000000000000000000000000000",
+          "midpoint_approx": -0.008713582505213572,
+          "width_approx": 8.6256e-36,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        },
+        "slope_source": {
+          "lower_fraction": "-13642240489940181935968657371826466851/2500000000000000000000000000000000000000",
+          "upper_fraction": "-54568961959760727743874629487305853741/10000000000000000000000000000000000000000",
+          "midpoint_approx": -0.005456896195976073,
+          "width_approx": 1.3663e-36,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        },
+        "slope_root": {
+          "lower_fraction": "-3966381398444252467766641855223696349/5000000000000000000000000000000000000000",
+          "upper_fraction": "-507696819000864315874130157468633/640000000000000000000000000000000000",
+          "midpoint_approx": -0.0007932762796888505,
+          "width_approx": 2.073e-37,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        }
+      },
+      "numerical_values": {
+        "h": 1.2256953696144648,
+        "p": 0.7102617247494242,
+        "U": 0.24236857133836912,
+        "dU_dt": -1.3707782216314253
+      },
+      "downturn_resolved": true
+    },
+    {
+      "m": 4,
+      "t_approx": 1.3862943611198906,
+      "critical_h": {
+        "lower_fraction": "10622227476629806499478176679134773053829/10000000000000000000000000000000000000000",
+        "upper_fraction": "10622227476629806499478176679134773053889/10000000000000000000000000000000000000000",
+        "midpoint_approx": 1.0622227476629806,
+        "width_approx": 6e-39,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "critical_p": {
+        "lower_fraction": "4047417824278535807144122452937569212647/5000000000000000000000000000000000000000",
+        "upper_fraction": "252963614017408487946507653308598075793/312500000000000000000000000000000000000",
+        "midpoint_approx": 0.8094835648557072,
+        "width_approx": 8.2e-39,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "U_over_A": {
+        "lower_fraction": "15182309091256898056327786809362791/5000000000000000000000000000000000000000",
+        "upper_fraction": "30364618182513796112655573618730463/10000000000000000000000000000000000000000",
+        "midpoint_approx": 3.0364618182513797e-06,
+        "width_approx": 4.881e-37,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "dU_dt_over_A": {
+        "lower_fraction": "-364009113698156196946869070595403961/10000000000000000000000000000000000000000",
+        "upper_fraction": "-72801822739631239389373814119070129/2000000000000000000000000000000000000000",
+        "midpoint_approx": -3.640091136981562e-05,
+        "width_approx": 5.3316e-36,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "D_h": {
+        "lower_fraction": "109646374202693577675788237726226813663107/10000000000000000000000000000000000000000",
+        "upper_fraction": "54823187101346788837894118863113406847287/5000000000000000000000000000000000000000",
+        "midpoint_approx": 10.964637420269359,
+        "width_approx": 3.1467e-36,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "critical_h_tangent": {
+        "lower_fraction": "-1232638611612856582432791207763701809679/10000000000000000000000000000000000000000",
+        "upper_fraction": "-308159652903214145608197801940925452273/2500000000000000000000000000000000000000",
+        "midpoint_approx": -0.12326386116128565,
+        "width_approx": 5.87e-38,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "critical_logit_velocity": {
+        "lower_fraction": "4419783367318760788154300893148169427669/5000000000000000000000000000000000000000",
+        "upper_fraction": "8839566734637521576308601786296338855897/10000000000000000000000000000000000000000",
+        "midpoint_approx": 0.8839566734637522,
+        "width_approx": 5.59e-38,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "terms_over_A": {
+        "direct": {
+          "lower_fraction": "10000624545810228168686862633319211/250000000000000000000000000000000000000",
+          "upper_fraction": "400024981832409126747474505332792541/10000000000000000000000000000000000000000",
+          "midpoint_approx": 4.000249818324091e-05,
+          "width_approx": 2.4101e-36,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        },
+        "root_motion": {
+          "lower_fraction": "-188882699477022888613045098846331249/2500000000000000000000000000000000000000",
+          "upper_fraction": "-377765398954045777226090197692648573/5000000000000000000000000000000000000000",
+          "midpoint_approx": -7.555307979080916e-05,
+          "width_approx": 2.785e-36,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        },
+        "slope_source": {
+          "lower_fraction": "-238349466307813367059705795208369/500000000000000000000000000000000000000",
+          "upper_fraction": "-1191747331539066835298528976041653/2500000000000000000000000000000000000000",
+          "midpoint_approx": -4.7669893261562674e-07,
+          "width_approx": 7.68e-38,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        },
+        "slope_root": {
+          "lower_fraction": "-934077074079375475242266159670007/2500000000000000000000000000000000000000",
+          "upper_fraction": "-1868154148158750950484532319339713/5000000000000000000000000000000000000000",
+          "midpoint_approx": -3.736308296317502e-07,
+          "width_approx": 6.02e-38,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        }
+      },
+      "numerical_values": {
+        "h": 1.0622227476629806,
+        "p": 0.8094835648557072,
+        "U": 0.0002837855924466857,
+        "dU_dt": -0.003402003653262216
+      },
+      "downturn_resolved": true
+    },
+    {
+      "m": 8,
+      "t_approx": 2.0794415416798357,
+      "critical_h": {
+        "lower_fraction": "1015621063962066373461724146879961290729/1000000000000000000000000000000000000000",
+        "upper_fraction": "203124212792413274692344829375992258147/200000000000000000000000000000000000000",
+        "midpoint_approx": 1.0156210639620664,
+        "width_approx": 6e-39,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "critical_p": {
+        "lower_fraction": "2226026451839755950485167411206689307269/2500000000000000000000000000000000000000",
+        "upper_fraction": "4452052903679511900970334822413378614587/5000000000000000000000000000000000000000",
+        "midpoint_approx": 0.8904105807359024,
+        "width_approx": 9.8e-39,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "U_over_A": {
+        "lower_fraction": "491100884812300244470235560501/1000000000000000000000000000000000000000",
+        "upper_fraction": "4911008848123002444702355609717/10000000000000000000000000000000000000000",
+        "midpoint_approx": 4.911008848123002e-10,
+        "width_approx": 4.707e-37,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "dU_dt_over_A": {
+        "lower_fraction": "-63888237210277579329174061295307/10000000000000000000000000000000000000000",
+        "upper_fraction": "-15972059302569394832293515320721/2500000000000000000000000000000000000000",
+        "midpoint_approx": -6.388823721027758e-09,
+        "width_approx": 1.2423e-36,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "D_h": {
+        "lower_fraction": "121121329127574036991247204753709841489081/10000000000000000000000000000000000000000",
+        "upper_fraction": "121121329127574036991247204753709841523957/10000000000000000000000000000000000000000",
+        "midpoint_approx": 12.112132912757403,
+        "width_approx": 3.4876e-36,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "critical_h_tangent": {
+        "lower_fraction": "-156130683141058967990125869198666743329/5000000000000000000000000000000000000000",
+        "upper_fraction": "-312261366282117935980251738397333486517/10000000000000000000000000000000000000000",
+        "midpoint_approx": -0.031226136628211793,
+        "width_approx": 1.41e-38,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "critical_logit_velocity": {
+        "lower_fraction": "9692541463187119410422432624076591077731/10000000000000000000000000000000000000000",
+        "upper_fraction": "605783841449194963151402039004786942367/625000000000000000000000000000000000000",
+        "midpoint_approx": 0.969254146318712,
+        "width_approx": 1.41e-38,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "terms_over_A": {
+        "direct": {
+          "lower_fraction": "129468806816561191851571080362533/5000000000000000000000000000000000000000",
+          "upper_fraction": "258937613633122383703142160730157/10000000000000000000000000000000000000000",
+          "midpoint_approx": 2.5893761363312237e-08,
+          "width_approx": 5.091e-37,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        },
+        "root_motion": {
+          "lower_fraction": "-322513310798288685512495212994859/10000000000000000000000000000000000000000",
+          "upper_fraction": "-161256655399144342756247606493913/5000000000000000000000000000000000000000",
+          "midpoint_approx": -3.225133107982887e-08,
+          "width_approx": 7.033e-37,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        },
+        "slope_source": {
+          "lower_fraction": "-1592199600975863143069604849/100000000000000000000000000000000000000",
+          "upper_fraction": "-159219960097586314306960484747/10000000000000000000000000000000000000000",
+          "midpoint_approx": -1.592199600975863e-11,
+          "width_approx": 1.53e-38,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        },
+        "slope_root": {
+          "lower_fraction": "-19165010626711400689256067577/1250000000000000000000000000000000000000",
+          "upper_fraction": "-38330021253422801378512135117/2500000000000000000000000000000000000000",
+          "midpoint_approx": -1.533200850136912e-11,
+          "width_approx": 1.48e-38,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        }
+      },
+      "numerical_values": {
+        "h": 1.0156210639620664,
+        "p": 0.8904105807359024,
+        "U": 4.589794434754601e-08,
+        "dU_dt": -5.97094985292255e-07
+      },
+      "downturn_resolved": true
+    },
+    {
+      "m": 16,
+      "t_approx": 2.772588722239781,
+      "critical_h": {
+        "lower_fraction": "1003906189927676258243669565374194467041/1000000000000000000000000000000000000000",
+        "upper_fraction": "1003906189927676258243669565374194467047/1000000000000000000000000000000000000000",
+        "midpoint_approx": 1.0039061899276762,
+        "width_approx": 6e-39,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "critical_p": {
+        "lower_fraction": "1882783876180916102269840091091419364471/2000000000000000000000000000000000000000",
+        "upper_fraction": "9413919380904580511349200455457096822463/10000000000000000000000000000000000000000",
+        "midpoint_approx": 0.9413919380904581,
+        "width_approx": 1.08e-38,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "U_over_A": {
+        "lower_fraction": "42506717345461157272103979/1000000000000000000000000000000000000000",
+        "upper_fraction": "425067173454611572721044459/10000000000000000000000000000000000000000",
+        "midpoint_approx": 4.250671734546116e-14,
+        "width_approx": 4.669e-37,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "dU_dt_over_A": {
+        "lower_fraction": "-6104001732812179628098430953/10000000000000000000000000000000000000000",
+        "upper_fraction": "-763000216601522453512303487/1250000000000000000000000000000000000000",
+        "midpoint_approx": -6.104001732812179e-13,
+        "width_approx": 3.057e-37,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "D_h": {
+        "lower_fraction": "62012649943895328425556382209929496924159/5000000000000000000000000000000000000000",
+        "upper_fraction": "62012649943895328425556382209929496942019/5000000000000000000000000000000000000000",
+        "midpoint_approx": 12.402529988779065,
+        "width_approx": 3.572e-36,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "critical_h_tangent": {
+        "lower_fraction": "-19530346566570944235618936943827184581/2500000000000000000000000000000000000000",
+        "upper_fraction": "-4882586641642736058904734235956796143/625000000000000000000000000000000000000",
+        "midpoint_approx": -0.007812138626628377,
+        "width_approx": 3.6e-39,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "critical_logit_velocity": {
+        "lower_fraction": "2480545645835715032375452456834700515519/2500000000000000000000000000000000000000",
+        "upper_fraction": "310068205729464379046931557104337564441/312500000000000000000000000000000000000",
+        "midpoint_approx": 0.992218258334286,
+        "width_approx": 3.6e-39,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      "terms_over_A": {
+        "direct": {
+          "lower_fraction": "127365477694216800554583671301/10000000000000000000000000000000000000000",
+          "upper_fraction": "63682738847108400277291836263/5000000000000000000000000000000000000000",
+          "midpoint_approx": 1.273654776942168e-11,
+          "width_approx": 1.225e-37,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        },
+        "root_motion": {
+          "lower_fraction": "-133462810777812901326549061169/10000000000000000000000000000000000000000",
+          "upper_fraction": "-13346281077781290132654905941/1000000000000000000000000000000000000000",
+          "midpoint_approx": -1.334628107778129e-11,
+          "width_approx": 1.759e-37,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        },
+        "slope_source": {
+          "lower_fraction": "-83700355888644531280653/250000000000000000000000000000000000000",
+          "upper_fraction": "-1674007117772890625613041/5000000000000000000000000000000000000000",
+          "midpoint_approx": -3.3480142355457813e-16,
+          "width_approx": 3.8e-39,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        },
+        "slope_root": {
+          "lower_fraction": "-1660317490266537440907483/5000000000000000000000000000000000000000",
+          "upper_fraction": "-3320634980533074881814929/10000000000000000000000000000000000000000",
+          "midpoint_approx": -3.320634980533075e-16,
+          "width_approx": 3.7e-39,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        }
+      },
+      "numerical_values": {
+        "h": 1.0039061899276762,
+        "p": 0.9413919380904581,
+        "U": 3.972647998515641e-12,
+        "dU_dt": -5.704757219833069e-11
+      },
+      "downturn_resolved": true
+    }
+  ],
+  "interval_scope": "rational outward enclosures of finite count polynomials, not statistical confidence intervals; positive area factor displayed numerically",
+  "source_chart": "-g at fixed h produces the same full U(t) as Sstar at fixed p, by a common homogeneous thermal reparametrization",
+  "dependency_group": "p337-N25-axis-tilted-exhaustive-configuration-populations; same finite graphs as baseline, no independent random evidence",
+  "new_random_samples": 0,
+  "cloud_jobs": 0,
+  "tests_run": 0
+}
