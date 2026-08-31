@@ -1,6 +1,6 @@
 # 当前成果：从取向信号到微观机制
 
-**整理日期：2026-08-31。** 17:20复核已更新P154全链/两阶段/百万端点和P334九层/共享标签/SS分解；[最新核验](../notes/progress-and-compute-20260831.md)注明本地提交与GitHub同步差异。[下一步](NEXT-TARGETS.md)给出团队分工，[清理记录](REPOSITORY-TRIAGE-20260831.md)记录实际Issue操作。科学完成度与main/open PR/独立分支位置分别标明，之后变化不自动包含。
+**整理日期：2026-08-31，本轮四机计算。** 新增角权桥、有限空间源及精确动态响应已推送；[新交付](../notes/analysis-delivery-20260831.md)记录同prefix局部检验的实际进展及机器状态。[下一步](NEXT-TARGETS.md)只保留尚未回答的科学问题；[清理记录](REPOSITORY-TRIAGE-20260831.md)保存原Issue操作。所有新增结果在Draft #509，不合并。
 
 ## 取向与物理响应
 
@@ -14,7 +14,7 @@
 
 P40实际引擎在随机键中包含N：N65/N85是不同N-domain，通常PRNG独立假设下可作nominal联合统计；同N两方向共享随机数。早期仅凭seed标签判断跨N共流的说法已经更正。
 
-旧百万q/source报告a4cbf02缺E×S，56a6267已补齐；29f339又完成六N的原U源响应。后续两阶段估计没有稳定降噪，N260/N340首1M标记与评分也已在本地b77f3e2a完成。随根移动的rank-1源响应约−.093至−.098，排除有限尺寸纯共同温度换元；原U源q2/Jordan仍未分辨（p=.48573/.58735）。共同E加时钟尚为候选，下一观测应进入rank-1内部方向，不能把已算ΔE改写成新测试。[最新来源与同步状态](../notes/progress-and-compute-20260831.md)。
+P154的源全链、两阶段及百万端点已经完成。条件line响应进一步拒绝具名E-plus-clock模型，固定K/rank1空间关联也强；这两项在[Draft267固定提交](https://github.com/LightChainr/Matching-One/blob/764595ea5c838c110e416382a3a90e2ecf7297bb/results/norm4-source-line-fixed-k/REPORT.md)。本轮[角权桥](../experiments/p154-spatial-localization-20260831/REPORT.md)用同100k/1M源子集完成六N U±/v±及全部共同协方差。U−中心值均负，原总source链仍未分辨；固定K/rank1内中心化的空间源对原U严格为零，两个角权分配相反。这个精确抵消约束说明，仅加强同层O4关联不能识别原全局H4机制，下一步要触及rank人口或进入退出。源子集误差不替代原高精度普通生产。
 
 ## 完整分布：N100、N400、N900均已完成
 
@@ -41,11 +41,11 @@ P40实际引擎在随机键中包含N：N65/N85是不同N-domain，通常PRNG独
 
 **P334总体配对分析也已完成。** N325/N425各20k配对counter，共40批。所有counter进入分母，目标为checkpoint rank1分层对F2及其积分的贡献，尚未覆盖rank0/rank2和完整F2。对该贡献的H4方向差，可移除后缀噪声占原个体观察方差的估计比例，canonical为49.15%/50.03%，integrated为0.816%/0.681%；比例定义为mean[(X−Y)²]/sampleVar(X)，并非标准误下降率或运行加速比。两个N的这一H4贡献均未分辨。N325/N425分别47和164个困难配对保留双向原观察，不丢样或单边替换。[完整报告](https://github.com/LightChainr/Matching-One/blob/c3bb43f1b078c5f9f76f71b25cdb3e2e331eb115/results/p334-paired-clock-loading/REPORT.md)，独立分支；后续已完成的分解见下。
 
-**上述R1之后的全量问题也已推进。** C/L、direct/collective及45坐标crosswalk已完成；四状态解释99.84895%/99.86380%的R1门控积分个体方差，不能当成全局A解释率。随后完整40k路径的A/E九层分析完成，128万条辅助条件续接测到正的跨birth Gamma。30c7ddb0又完成SS/mixed/BB分解：mixed占canonical Gamma约78%，SS约7%–8%，三项按原20批精确重构总量。959a7fa2已补齐接触坐标，接下来连接这些坐标与机制贡献；不再派首次九层、首次Gamma或首次SS分解。[数值、固定提交与解释边界](../notes/progress-and-compute-20260831.md)。全部rank的精确条件空间响应仍未齐全。
+**R1之后的完整P334分析也已推进。** 全A/E九层、128万辅助续接、SS/mixed/BB、接触坐标、共同Euler不可见源和全热曲线均已完成，旧mask总体rank2不等于同prefix rank2。本轮[有限q_t](../experiments/p334-finite-source-20260831/REPORT.md)在t=±1仍有可测future S(A)/D(A)响应，即时两rank与Euler增量的联合分布保持不变；使用原数据的精确importance估计，没有按新策略重采样。完整census恢复了局部检验的抽样支持：全部1502/1551双R0 prefix有两个独立允许源，未来响应是否局部rank2仍需[当前定向分析](../notes/analysis-delivery-20260831.md)回答。
 
 147-prefix噪声预算仅适用于固定经验mixture。P398的93维Krylov空间和Boolean谱degree按各自生成过程解释；现有width4/8的i^j权重保持波长4，并非固定模式序号的尺度外推。
 
-**P398固定速率干预在本轮完成。** η=0,±1/4完整1430态/186维扇区运行1.709秒；旧U在t>0出现cross传播，不能用共同时间换元解释。固定14→16配置函数使最大C0尺度误差改善4.36倍，但弱minus长尾相对误差仍−12.64%。投影借用各η的完整平稳分布，既不是仅用旧η=0矩阵的盲预测，也不证明闭合或square-site映射。此为有限对比，精确η0导数和零频积分未计算。[实验、代码与结果](../experiments/p398-rate-intervention-20260831/README.md)。
+**P398固定干预与解析线性响应均已完成。** 固定η=0,±1/4干预出现cross传播，旧16维几何字典整体近似改善但未闭合；随后[精确η0导数与零频分析](../experiments/p398-linear-response-20260831/README.md)给出U′+−在旧lag括号内的反号时刻t≈1.04798965。负平稳重加权与正动态项竞争，零频两cross仍为负；16维模型积分误差0.467%/0.551%，两源模型不反号。投影借用完整π及π′，不声称盲预测、精确闭合或square-site映射；保持P2。
 
 ## 后续纠错已经改变的解释
 

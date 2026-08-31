@@ -15,7 +15,7 @@
 
 ## 这次实际新增了什么
 
-从原N325/N425各20000个prefix精确枚举所有空位，补齐同时保持两取向rank的joint-degree类 a=(e_first,e_second) 内，(L_first,L_second)的完整整数计数。N325枚举2640000空位，输出470087个非零类/loop计数行；N425枚举3440000空位，输出507735行。没有回放后续序列或调用DP。
+从原N325/N425各20000个prefix精确枚举所有空位，补齐同时保持两取向rank的joint-degree类 a=(e_first,e_second) 内，(L_first,L_second)的完整整数计数。N325枚举2640000空位，输出470087个非零类/loop计数行；N425枚举3460000空位，输出507735行。没有回放后续序列或调用DP。
 
 令d为空位数，π_a=|A_a|/d，L_o=1{old_rank_o=0}(e_o−c_o)，g±=(L_first±L_second)/2。沿用此前已定义的策略：
 
