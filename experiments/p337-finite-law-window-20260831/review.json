@@ -1,0 +1,813 @@
+{
+  "status": "PASS_INDEPENDENT_RAW_ROW_COVARIANCE_REPRODUCTION",
+  "reviewed_at_utc": "2026-08-31T14:29:30.955050+00:00",
+  "freeze_commit": "375a6f0ce67d46871ec97ea338fdf1342ed33e30",
+  "frozen_file_hashes": {
+    "CONTRACT.md": "f306e38fa0bca1631a818198fec7d4a69b7d1ea42d2d2eb2bd6b74b161f29d4d",
+    "score.py": "67a11965cbdc1bf4300a003dcd72819a82892bdeb66192cf458b1666c1abcc11",
+    "inputs/SOURCES.json": "1d99fe0d6b2a0e3b4ba12f749d8fa997e0dd8f0f82ea7e0a2f629d8658b912df",
+    "inputs/axis.csv": "2d23fecc98d276d9ad15ad1867199cd308f0570cb5040ef94eb6b923b4c53458",
+    "inputs/tilted.csv": "225031e612929ed922ba75c55e76703d59990f5283e7ac39b94f022841798da5",
+    "vendor/interval_backend.py": "001a4ec8d85934c11690c1948f47ea8bdc892ad854ee422882cbaa4053fd09db"
+  },
+  "original_result_sha256": "6c055a939dab21d23b18bd2cffffc94a030d1fff123e4bf913a375b803995146",
+  "raw_rows_read": {
+    "axis": 269,
+    "tilted": 247
+  },
+  "counts_each_K_equal_binomial25": true,
+  "all_inputs_match_frozen_and_original_git_blobs": true,
+  "method": "Full raw (K,g,q) row sums for Z,K,q,qK,I1,KI1,E; covariance identity; common 1/h cancels. Only Interval reused, no score functions imported.",
+  "formula": "U/A25=-(Cov(K,I1)_axis-Cov(K,I1)_tilted)/(DeltaCos4*mean_g Cov(K,q))",
+  "laws": {
+    "star": {
+      "root_checks": {
+        "primitive_integer_polynomial_matches_from_raw_row_pairs": true,
+        "degree": 50,
+        "descartes_variations": 1,
+        "exact_endpoint_signs": [
+          -1,
+          1
+        ],
+        "unique_positive_root": true,
+        "same_160_bisection_bracket_verified": true,
+        "common_integer_row_weight_rescaling_power": 32,
+        "lower_fraction": "365464612308200343214368568562460173533457402519/365375409332725729550921208179070754913983135744",
+        "upper_fraction": "730929224616400686428737137124920347066914805039/730750818665451459101842416358141509827966271488"
+      },
+      "normalization": "each full raw Z separately, at this law's own root",
+      "cells": {
+        "axis": {
+          "raw_unnormalized_sums": {
+            "Z": {
+              "lower_fraction": "251530732442937525781952363747838294449657/125000000000000000000000000000000000000000",
+              "upper_fraction": "2012245859543500206255618909982706355597256001/1000000000000000000000000000000000000000000000",
+              "midpoint_approx": 2.0122458595435,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "K": {
+              "lower_fraction": "12579606316037876614507763928344491484319233863/500000000000000000000000000000000000000000000",
+              "upper_fraction": "1572450789504734576813470491043061435539904233/62500000000000000000000000000000000000000000",
+              "midpoint_approx": 25.159212632075754,
+              "width_approx": 2e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "q": {
+              "lower_fraction": "4395292953558818940348057981/1000000000000000000000000000000000000000000000",
+              "upper_fraction": "2197646476779409470174028991/500000000000000000000000000000000000000000000",
+              "midpoint_approx": 4.395292953558819e-18,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "qK": {
+              "lower_fraction": "25146930855833791709670484480760980013352456913/1000000000000000000000000000000000000000000000",
+              "upper_fraction": "5029386171166758341934096896152196002670491383/200000000000000000000000000000000000000000000",
+              "midpoint_approx": 25.14693085583379,
+              "width_approx": 2e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "I1": {
+              "lower_fraction": "1122822417238062936958381718657/500000000000000000000000000000000000000000000",
+              "upper_fraction": "449128966895225174783352687463/200000000000000000000000000000000000000000000",
+              "midpoint_approx": 2.245644834476126e-15,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "KI1": {
+              "lower_fraction": "14038875936806923052211896480589/500000000000000000000000000000000000000000000",
+              "upper_fraction": "28077751873613846104423792961179/1000000000000000000000000000000000000000000000",
+              "midpoint_approx": 2.8077751873613846e-14,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "E": {
+              "lower_fraction": "402449171908699592122156886771366487766763737/200000000000000000000000000000000000000000000",
+              "upper_fraction": "1006122929771748980305392216928416219416909343/500000000000000000000000000000000000000000000",
+              "midpoint_approx": 2.0122458595434978,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            }
+          },
+          "normalized_moments": {
+            "K": {
+              "lower_fraction": "2500610202550834761067743809409841163836014537/200000000000000000000000000000000000000000000",
+              "upper_fraction": "12503051012754173805338719047049205819180072687/1000000000000000000000000000000000000000000000",
+              "midpoint_approx": 12.503051012754174,
+              "width_approx": 2e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "q": {
+              "lower_fraction": "218427233069617984394432927/100000000000000000000000000000000000000000000",
+              "upper_fraction": "2184272330696179843944329271/1000000000000000000000000000000000000000000000",
+              "midpoint_approx": 2.1842723306961797e-18,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "qK": {
+              "lower_fraction": "6248473748018705245105069339982926568141741009/500000000000000000000000000000000000000000000",
+              "upper_fraction": "12496947496037410490210138679965853136283482019/1000000000000000000000000000000000000000000000",
+              "midpoint_approx": 12.49694749603741,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "I1": {
+              "lower_fraction": "1115989293169958245594197429107/1000000000000000000000000000000000000000000000",
+              "upper_fraction": "278997323292489561398549357277/250000000000000000000000000000000000000000000",
+              "midpoint_approx": 1.1159892931699582e-15,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "KI1": {
+              "lower_fraction": "13953440003590609244979389455729/1000000000000000000000000000000000000000000000",
+              "upper_fraction": "1395344000359060924497938945573/100000000000000000000000000000000000000000000",
+              "midpoint_approx": 1.395344000359061e-14,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "E": {
+              "lower_fraction": "249999999999999721002676707510438601450642723/250000000000000000000000000000000000000000000",
+              "upper_fraction": "999999999999998884010706830041754405802570893/1000000000000000000000000000000000000000000000",
+              "midpoint_approx": 0.9999999999999989,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            }
+          },
+          "Cov_K_q": {
+            "lower_fraction": "6248473748018705231450035151762031049192061483/500000000000000000000000000000000000000000000",
+            "upper_fraction": "1562118437004676307862508787940507762298015371/125000000000000000000000000000000000000000000",
+            "midpoint_approx": 12.49694749603741,
+            "width_approx": 2e-45,
+            "serialization": "outward_1e_minus45_rational_grid"
+          },
+          "Cov_K_I1": {
+            "lower_fraction": "6757655965928898314399869/40000000000000000000000000000000000000000000",
+            "upper_fraction": "84470699574111228929998363/500000000000000000000000000000000000000000000",
+            "midpoint_approx": 1.6894139914822246e-19,
+            "width_approx": 1e-45,
+            "serialization": "outward_1e_minus45_rational_grid"
+          },
+          "comparisons": {
+            "q": {
+              "independent_enclosure": {
+                "lower_fraction": "218427233069617984394432927/100000000000000000000000000000000000000000000",
+                "upper_fraction": "2184272330696179843944329271/1000000000000000000000000000000000000000000000",
+                "midpoint_approx": 2.1842723306961797e-18,
+                "width_approx": 1e-45,
+                "serialization": "outward_1e_minus45_rational_grid"
+              },
+              "inside_original_published_enclosure": true
+            },
+            "E": {
+              "independent_enclosure": {
+                "lower_fraction": "249999999999999721002676707510438601450642723/250000000000000000000000000000000000000000000",
+                "upper_fraction": "999999999999998884010706830041754405802570893/1000000000000000000000000000000000000000000000",
+                "midpoint_approx": 0.9999999999999989,
+                "width_approx": 1e-45,
+                "serialization": "outward_1e_minus45_rational_grid"
+              },
+              "inside_original_published_enclosure": true
+            },
+            "P1": {
+              "independent_enclosure": {
+                "lower_fraction": "1115989293169958245594197429107/1000000000000000000000000000000000000000000000",
+                "upper_fraction": "278997323292489561398549357277/250000000000000000000000000000000000000000000",
+                "midpoint_approx": 1.1159892931699582e-15,
+                "width_approx": 1e-45,
+                "serialization": "outward_1e_minus45_rational_grid"
+              },
+              "inside_original_published_enclosure": true
+            },
+            "q_h_from_covariance": {
+              "independent_enclosure": {
+                "lower_fraction": "12493897228341296382758290707090617238918401253/1000000000000000000000000000000000000000000000",
+                "upper_fraction": "2498779445668259276551658141418123447783680251/200000000000000000000000000000000000000000000",
+                "midpoint_approx": 12.493897228341297,
+                "width_approx": 2e-45,
+                "serialization": "outward_1e_minus45_rational_grid"
+              },
+              "inside_original_published_enclosure": true
+            },
+            "E_h_from_negative_rank1_covariance": {
+              "independent_enclosure": {
+                "lower_fraction": "-10556260234946170042415361/62500000000000000000000000000000000000000000",
+                "upper_fraction": "-6756006550365548827145831/40000000000000000000000000000000000000000000",
+                "midpoint_approx": -1.689001637591387e-19,
+                "width_approx": 1e-45,
+                "serialization": "outward_1e_minus45_rational_grid"
+              },
+              "inside_original_published_enclosure": true
+            }
+          },
+          "necessary_draws_using_published_upper": 851262647244163,
+          "published_P1_upper_fraction": "446395717267983298237679/400000000000000000000000000000000000000",
+          "union_bound_ceil_reproduced": true
+        },
+        "tilted": {
+          "raw_unnormalized_sums": {
+            "Z": {
+              "lower_fraction": "402449171908699593893060773084284316492943683/200000000000000000000000000000000000000000000",
+              "upper_fraction": "125765366221468623091581491588838848904044901/62500000000000000000000000000000000000000000",
+              "midpoint_approx": 2.0122458595434978,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "K": {
+              "lower_fraction": "1257960631603786259817728575321126836593399769/50000000000000000000000000000000000000000000",
+              "upper_fraction": "12579606316037862598177285753211268365933997691/500000000000000000000000000000000000000000000",
+              "midpoint_approx": 25.159212632075725,
+              "width_approx": 2e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "q": {
+              "lower_fraction": "-4395292953558814054588863261/1000000000000000000000000000000000000000000000",
+              "upper_fraction": "-219764647677940702729443163/50000000000000000000000000000000000000000000",
+              "midpoint_approx": -4.3952929535588144e-18,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "qK": {
+              "lower_fraction": "25146930855833791665589198090608387608174123523/1000000000000000000000000000000000000000000000",
+              "upper_fraction": "1005877234233351666623567923624335504326964941/40000000000000000000000000000000000000000000",
+              "midpoint_approx": 25.14693085583379,
+              "width_approx": 2e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "I1": {
+              "lower_fraction": "10685610635176195079279173/250000000000000000000000000000000000000000000",
+              "upper_fraction": "42742442540704780317116693/1000000000000000000000000000000000000000000000",
+              "midpoint_approx": 4.274244254070478e-20,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "KI1": {
+              "lower_fraction": "117095250088129444175463859/200000000000000000000000000000000000000000000",
+              "upper_fraction": "4574033206567556413104057/7812500000000000000000000000000000000000000",
+              "midpoint_approx": 5.854762504406472e-19,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "E": {
+              "lower_fraction": "2012245859543497969422561422880716802147601723/1000000000000000000000000000000000000000000000",
+              "upper_fraction": "503061464885874492355640355720179200536900431/250000000000000000000000000000000000000000000",
+              "midpoint_approx": 2.0122458595434978,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            }
+          },
+          "normalized_moments": {
+            "K": {
+              "lower_fraction": "1562881376594271721570080703975685321994674949/125000000000000000000000000000000000000000000",
+              "upper_fraction": "6251525506377086886280322815902741287978699797/500000000000000000000000000000000000000000000",
+              "midpoint_approx": 12.503051012754174,
+              "width_approx": 2e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "q": {
+              "lower_fraction": "-2184272330696179843944329271/1000000000000000000000000000000000000000000000",
+              "upper_fraction": "-218427233069617984394432927/100000000000000000000000000000000000000000000",
+              "midpoint_approx": -2.1842723306961797e-18,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "qK": {
+              "lower_fraction": "499877899841496974390908053094043514811064107/40000000000000000000000000000000000000000000",
+              "upper_fraction": "12496947496037424359772701327351087870276602677/1000000000000000000000000000000000000000000000",
+              "midpoint_approx": 12.496947496037425,
+              "width_approx": 2e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "I1": {
+              "lower_fraction": "21241163120296549852238617/1000000000000000000000000000000000000000000000",
+              "upper_fraction": "10620581560148274926119309/500000000000000000000000000000000000000000000",
+              "midpoint_approx": 2.124116312029655e-20,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "KI1": {
+              "lower_fraction": "290956618279969778603313407/1000000000000000000000000000000000000000000000",
+              "upper_fraction": "1136549290156131947669193/3906250000000000000000000000000000000000000",
+              "midpoint_approx": 2.9095661827996976e-19,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "E": {
+              "lower_fraction": "499999999999999999989379418439851725073880691/500000000000000000000000000000000000000000000",
+              "upper_fraction": "999999999999999999978758836879703450147761383/1000000000000000000000000000000000000000000000",
+              "midpoint_approx": 1.0,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            }
+          },
+          "Cov_K_q": {
+            "lower_fraction": "390529609251169512096336553243527463643116341/31250000000000000000000000000000000000000000",
+            "upper_fraction": "6248473748018712193541384851896439418289861457/500000000000000000000000000000000000000000000",
+            "midpoint_approx": 12.496947496037425,
+            "width_approx": 2e-45,
+            "serialization": "outward_1e_minus45_rational_grid"
+          },
+          "Cov_K_I1": {
+            "lower_fraction": "12688636108334697554581403/500000000000000000000000000000000000000000000",
+            "upper_fraction": "25377272216669395109162807/1000000000000000000000000000000000000000000000",
+            "midpoint_approx": 2.5377272216669394e-20,
+            "width_approx": 1e-45,
+            "serialization": "outward_1e_minus45_rational_grid"
+          },
+          "comparisons": {
+            "q": {
+              "independent_enclosure": {
+                "lower_fraction": "-2184272330696179843944329271/1000000000000000000000000000000000000000000000",
+                "upper_fraction": "-218427233069617984394432927/100000000000000000000000000000000000000000000",
+                "midpoint_approx": -2.1842723306961797e-18,
+                "width_approx": 1e-45,
+                "serialization": "outward_1e_minus45_rational_grid"
+              },
+              "inside_original_published_enclosure": true
+            },
+            "E": {
+              "independent_enclosure": {
+                "lower_fraction": "499999999999999999989379418439851725073880691/500000000000000000000000000000000000000000000",
+                "upper_fraction": "999999999999999999978758836879703450147761383/1000000000000000000000000000000000000000000000",
+                "midpoint_approx": 1.0,
+                "width_approx": 1e-45,
+                "serialization": "outward_1e_minus45_rational_grid"
+              },
+              "inside_original_published_enclosure": true
+            },
+            "P1": {
+              "independent_enclosure": {
+                "lower_fraction": "21241163120296549852238617/1000000000000000000000000000000000000000000000",
+                "upper_fraction": "10620581560148274926119309/500000000000000000000000000000000000000000000",
+                "midpoint_approx": 2.124116312029655e-20,
+                "width_approx": 1e-45,
+                "serialization": "outward_1e_minus45_rational_grid"
+              },
+              "inside_original_published_enclosure": true
+            },
+            "q_h_from_covariance": {
+              "independent_enclosure": {
+                "lower_fraction": "1249389722834131030354236138652672167744367993/100000000000000000000000000000000000000000000",
+                "upper_fraction": "3123474307085327575885590346631680419360919983/250000000000000000000000000000000000000000000",
+                "midpoint_approx": 12.49389722834131,
+                "width_approx": 2e-45,
+                "serialization": "outward_1e_minus45_rational_grid"
+              },
+              "inside_original_published_enclosure": true
+            },
+            "E_h_from_negative_rank1_covariance": {
+              "independent_enclosure": {
+                "lower_fraction": "-25371078106173008313197599/1000000000000000000000000000000000000000000000",
+                "upper_fraction": "-12685539053086504156598799/500000000000000000000000000000000000000000000",
+                "midpoint_approx": -2.537107810617301e-20,
+                "width_approx": 1e-45,
+                "serialization": "outward_1e_minus45_rational_grid"
+              },
+              "inside_original_published_enclosure": true
+            }
+          },
+          "necessary_draws_using_published_upper": 44724481169877526072,
+          "published_P1_upper_fraction": "212411631202965498523/10000000000000000000000000000000000000000",
+          "union_bound_ceil_reproduced": true
+        }
+      },
+      "mean_Cov_K_q": {
+        "lower_fraction": "12496947496037417424991420003658470467481922939/1000000000000000000000000000000000000000000000",
+        "upper_fraction": "12496947496037417424991420003658470467481922941/1000000000000000000000000000000000000000000000",
+        "midpoint_approx": 12.496947496037418,
+        "width_approx": 2e-45,
+        "serialization": "outward_1e_minus45_rational_grid"
+      },
+      "slope_covariance_reproduction": {
+        "independent_enclosure": {
+          "lower_fraction": "780868576771331458946895377925541841136315037/62500000000000000000000000000000000000000000",
+          "upper_fraction": "12493897228341303343150326046808669458181040593/1000000000000000000000000000000000000000000000",
+          "midpoint_approx": 12.493897228341304,
+          "width_approx": 1e-45,
+          "serialization": "outward_1e_minus45_rational_grid"
+        },
+        "inside_original_published_enclosure": true
+      },
+      "thermal_numerator_covariance_reproduction": {
+        "independent_enclosure": {
+          "lower_fraction": "-77869512615541293601046103/1000000000000000000000000000000000000000000000",
+          "upper_fraction": "-38934756307770646800523051/500000000000000000000000000000000000000000000",
+          "midpoint_approx": -7.786951261554129e-20,
+          "width_approx": 1e-45,
+          "serialization": "outward_1e_minus45_rational_grid"
+        },
+        "inside_original_published_enclosure": true
+      },
+      "U_over_A25_covariance_reproduction": {
+        "independent_enclosure": {
+          "lower_fraction": "-3116301950959752406120449/500000000000000000000000000000000000000000000",
+          "upper_fraction": "-6232603901919504812240897/1000000000000000000000000000000000000000000000",
+          "midpoint_approx": -6.232603901919505e-21,
+          "width_approx": 1e-45,
+          "serialization": "outward_1e_minus45_rational_grid"
+        },
+        "inside_original_published_enclosure": true
+      },
+      "sign": "negative"
+    },
+    "drop": {
+      "root_checks": {
+        "primitive_integer_polynomial_matches_from_raw_row_pairs": true,
+        "degree": 50,
+        "descartes_variations": 1,
+        "exact_endpoint_signs": [
+          -1,
+          1
+        ],
+        "unique_positive_root": true,
+        "same_160_bisection_bracket_verified": true,
+        "common_integer_row_weight_rescaling_power": 32,
+        "lower_fraction": "1048047337982522312534188669395795905951669035581/1461501637330902918203684832716283019655932542976",
+        "upper_fraction": "524023668991261156267094334697897952975834517791/730750818665451459101842416358141509827966271488"
+      },
+      "normalization": "each full raw Z separately, at this law's own root",
+      "cells": {
+        "axis": {
+          "raw_unnormalized_sums": {
+            "Z": {
+              "lower_fraction": "251096514406830221951231491069790231828242489/125000000000000000000000000000000000000000000",
+              "upper_fraction": "2008772115254641775609851928558321854625939913/1000000000000000000000000000000000000000000000",
+              "midpoint_approx": 2.008772115254642,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "K": {
+              "lower_fraction": "25114044628664165591936359127423156000643414797/1000000000000000000000000000000000000000000000",
+              "upper_fraction": "25114044628664165591936359127423156000643414799/1000000000000000000000000000000000000000000000",
+              "midpoint_approx": 25.114044628664164,
+              "width_approx": 2e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "q": {
+              "lower_fraction": "25007389579726767054912791/31250000000000000000000000000000000000000000",
+              "upper_fraction": "800236466551256545757209313/1000000000000000000000000000000000000000000000",
+              "midpoint_approx": 8.002364665512565e-19,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "qK": {
+              "lower_fraction": "12552627036423319982288076595093227485919424973/500000000000000000000000000000000000000000000",
+              "upper_fraction": "6276313518211659991144038297546613742959712487/250000000000000000000000000000000000000000000",
+              "midpoint_approx": 25.10525407284664,
+              "width_approx": 2e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "I1": {
+              "lower_fraction": "4176698044515731058310848821039/500000000000000000000000000000000000000000000",
+              "upper_fraction": "8353396089031462116621697642079/1000000000000000000000000000000000000000000000",
+              "midpoint_approx": 8.353396089031461e-15,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "KI1": {
+              "lower_fraction": "51404353659755741575608312957163/1000000000000000000000000000000000000000000000",
+              "upper_fraction": "12851088414938935393902078239291/250000000000000000000000000000000000000000000",
+              "midpoint_approx": 5.140435365975574e-14,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "E": {
+              "lower_fraction": "1004386057627316711106881448548102616464148917/500000000000000000000000000000000000000000000",
+              "upper_fraction": "401754423050926684442752579419241046585659567/200000000000000000000000000000000000000000000",
+              "midpoint_approx": 2.0087721152546334,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            }
+          },
+          "normalized_moments": {
+            "K": {
+              "lower_fraction": "12502187001675193253478320555898901185816377451/1000000000000000000000000000000000000000000000",
+              "upper_fraction": "12502187001675193253478320555898901185816377453/1000000000000000000000000000000000000000000000",
+              "midpoint_approx": 12.502187001675193,
+              "width_approx": 2e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "q": {
+              "lower_fraction": "398370955308593906056902821/1000000000000000000000000000000000000000000000",
+              "upper_fraction": "199185477654296953028451411/500000000000000000000000000000000000000000000",
+              "midpoint_approx": 3.983709553085939e-19,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "qK": {
+              "lower_fraction": "3124452729380925222732610127349085495286365763/250000000000000000000000000000000000000000000",
+              "upper_fraction": "6248905458761850445465220254698170990572731527/500000000000000000000000000000000000000000000",
+              "midpoint_approx": 12.4978109175237,
+              "width_approx": 2e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "I1": {
+              "lower_fraction": "1039614701139524826442122458281/250000000000000000000000000000000000000000000",
+              "upper_fraction": "6653534087292958889229583733/1600000000000000000000000000000000000000000",
+              "midpoint_approx": 4.1584588045580994e-15,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "KI1": {
+              "lower_fraction": "25589937887623193312875173751777/1000000000000000000000000000000000000000000000",
+              "upper_fraction": "12794968943811596656437586875889/500000000000000000000000000000000000000000000",
+              "midpoint_approx": 2.5589937887623192e-14,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "E": {
+              "lower_fraction": "1599999999999993346465912707041110770416267/1600000000000000000000000000000000000000000",
+              "upper_fraction": "249999999999998960385298860475173557877541719/250000000000000000000000000000000000000000000",
+              "midpoint_approx": 0.9999999999999959,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            }
+          },
+          "Cov_K_q": {
+            "lower_fraction": "12497810917523700885949932330092309923846961271/1000000000000000000000000000000000000000000000",
+            "upper_fraction": "12497810917523700885949932330092309923846961273/1000000000000000000000000000000000000000000000",
+            "midpoint_approx": 12.4978109175237,
+            "width_approx": 2e-45,
+            "serialization": "outward_1e_minus45_rational_grid"
+          },
+          "Cov_K_I1": {
+            "lower_fraction": "-527997834514496774133518295603/20000000000000000000000000000000000000000000",
+            "upper_fraction": "-26399891725724838706675914780149/1000000000000000000000000000000000000000000000",
+            "midpoint_approx": -2.639989172572484e-14,
+            "width_approx": 1e-45,
+            "serialization": "outward_1e_minus45_rational_grid"
+          },
+          "comparisons": {
+            "q": {
+              "independent_enclosure": {
+                "lower_fraction": "398370955308593906056902821/1000000000000000000000000000000000000000000000",
+                "upper_fraction": "199185477654296953028451411/500000000000000000000000000000000000000000000",
+                "midpoint_approx": 3.983709553085939e-19,
+                "width_approx": 1e-45,
+                "serialization": "outward_1e_minus45_rational_grid"
+              },
+              "inside_original_published_enclosure": true
+            },
+            "E": {
+              "independent_enclosure": {
+                "lower_fraction": "1599999999999993346465912707041110770416267/1600000000000000000000000000000000000000000",
+                "upper_fraction": "249999999999998960385298860475173557877541719/250000000000000000000000000000000000000000000",
+                "midpoint_approx": 0.9999999999999959,
+                "width_approx": 1e-45,
+                "serialization": "outward_1e_minus45_rational_grid"
+              },
+              "inside_original_published_enclosure": true
+            },
+            "P1": {
+              "independent_enclosure": {
+                "lower_fraction": "1039614701139524826442122458281/250000000000000000000000000000000000000000000",
+                "upper_fraction": "6653534087292958889229583733/1600000000000000000000000000000000000000000",
+                "midpoint_approx": 4.1584588045580994e-15,
+                "width_approx": 1e-45,
+                "serialization": "outward_1e_minus45_rational_grid"
+              },
+              "inside_original_published_enclosure": true
+            },
+            "q_h_from_covariance": {
+              "independent_enclosure": {
+                "lower_fraction": "17428192846874563067257371465624866709219092649/1000000000000000000000000000000000000000000000",
+                "upper_fraction": "17428192846874563067257371465624866709219092651/1000000000000000000000000000000000000000000000",
+                "midpoint_approx": 17.428192846874563,
+                "width_approx": 2e-45,
+                "serialization": "outward_1e_minus45_rational_grid"
+              },
+              "inside_original_published_enclosure": true
+            },
+            "E_h_from_negative_rank1_covariance": {
+              "independent_enclosure": {
+                "lower_fraction": "36814639553188620147946601047093/1000000000000000000000000000000000000000000000",
+                "upper_fraction": "18407319776594310073973300523547/500000000000000000000000000000000000000000000",
+                "midpoint_approx": 3.681463955318862e-14,
+                "width_approx": 1e-45,
+                "serialization": "outward_1e_minus45_rational_grid"
+              },
+              "inside_original_published_enclosure": true
+            }
+          },
+          "necessary_draws_using_published_upper": 228450020704475,
+          "published_P1_upper_fraction": "41584588045580993057684899/10000000000000000000000000000000000000000",
+          "union_bound_ceil_reproduced": true
+        },
+        "tilted": {
+          "raw_unnormalized_sums": {
+            "Z": {
+              "lower_fraction": "50219302881365835599371306641822474977344091/25000000000000000000000000000000000000000000",
+              "upper_fraction": "2008772115254633423974852265672898999093763641/1000000000000000000000000000000000000000000000",
+              "midpoint_approx": 2.0087721152546334,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "K": {
+              "lower_fraction": "78481389464575356867246308535185908194558681/3125000000000000000000000000000000000000000",
+              "upper_fraction": "25114044628664114197518818731259490622258777921/1000000000000000000000000000000000000000000000",
+              "midpoint_approx": 25.114044628664114,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "q": {
+              "lower_fraction": "-200059116637813304677099027/250000000000000000000000000000000000000000000",
+              "upper_fraction": "-800236466551253218708396107/1000000000000000000000000000000000000000000000",
+              "midpoint_approx": -8.002364665512533e-19,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "qK": {
+              "lower_fraction": "25105254072846639957384270458736393902858205753/1000000000000000000000000000000000000000000000",
+              "upper_fraction": "5021050814569327991476854091747278780571641151/200000000000000000000000000000000000000000000",
+              "midpoint_approx": 25.10525407284664,
+              "width_approx": 2e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "I1": {
+              "lower_fraction": "50467139406457548272962413/1000000000000000000000000000000000000000000000",
+              "upper_fraction": "25233569703228774136481207/500000000000000000000000000000000000000000000",
+              "midpoint_approx": 5.0467139406457545e-20,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "KI1": {
+              "lower_fraction": "132861803131063550392184291/250000000000000000000000000000000000000000000",
+              "upper_fraction": "106289442504850840313747433/200000000000000000000000000000000000000000000",
+              "midpoint_approx": 5.314472125242542e-19,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "E": {
+              "lower_fraction": "2008772115254633423924385126266441450820801227/1000000000000000000000000000000000000000000000",
+              "upper_fraction": "502193028813658355981096281566610362705200307/250000000000000000000000000000000000000000000",
+              "midpoint_approx": 2.0087721152546334,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            }
+          },
+          "normalized_moments": {
+            "K": {
+              "lower_fraction": "6251093500837609823677875350665918402331174741/500000000000000000000000000000000000000000000",
+              "upper_fraction": "12502187001675219647355750701331836804662349483/1000000000000000000000000000000000000000000000",
+              "midpoint_approx": 12.50218700167522,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "q": {
+              "lower_fraction": "-199185477654296953028451411/500000000000000000000000000000000000000000000",
+              "upper_fraction": "-398370955308593906056902821/1000000000000000000000000000000000000000000000",
+              "midpoint_approx": -3.983709553085939e-19,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "qK": {
+              "lower_fraction": "6248905458761876424012613122703121713031778689/500000000000000000000000000000000000000000000",
+              "upper_fraction": "12497810917523752848025226245406243426063557379/1000000000000000000000000000000000000000000000",
+              "midpoint_approx": 12.497810917523752,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "I1": {
+              "lower_fraction": "25123377123372850451095847/1000000000000000000000000000000000000000000000",
+              "upper_fraction": "3140422140421606306386981/125000000000000000000000000000000000000000000",
+              "midpoint_approx": 2.512337712337285e-20,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "KI1": {
+              "lower_fraction": "66140804186851175479223601/250000000000000000000000000000000000000000000",
+              "upper_fraction": "52912643349480940383378881/200000000000000000000000000000000000000000000",
+              "midpoint_approx": 2.6456321674740472e-19,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            },
+            "E": {
+              "lower_fraction": "124999999999999999996859577859578393693613019/125000000000000000000000000000000000000000000",
+              "upper_fraction": "999999999999999999974876622876627149548904153/1000000000000000000000000000000000000000000000",
+              "midpoint_approx": 1.0,
+              "width_approx": 1e-45,
+              "serialization": "outward_1e_minus45_rational_grid"
+            }
+          },
+          "Cov_K_q": {
+            "lower_fraction": "1562226364690469106625716803088785749739528163/125000000000000000000000000000000000000000000",
+            "upper_fraction": "2499562183504750570601146884942057199583245061/200000000000000000000000000000000000000000000",
+            "midpoint_approx": 12.497810917523752,
+            "width_approx": 1e-45,
+            "serialization": "outward_1e_minus45_rational_grid"
+          },
+          "Cov_K_I1": {
+            "lower_fraction": "-49533942162611920110742439/1000000000000000000000000000000000000000000000",
+            "upper_fraction": "-24766971081305960055371219/500000000000000000000000000000000000000000000",
+            "midpoint_approx": -4.953394216261192e-20,
+            "width_approx": 1e-45,
+            "serialization": "outward_1e_minus45_rational_grid"
+          },
+          "comparisons": {
+            "q": {
+              "independent_enclosure": {
+                "lower_fraction": "-199185477654296953028451411/500000000000000000000000000000000000000000000",
+                "upper_fraction": "-398370955308593906056902821/1000000000000000000000000000000000000000000000",
+                "midpoint_approx": -3.983709553085939e-19,
+                "width_approx": 1e-45,
+                "serialization": "outward_1e_minus45_rational_grid"
+              },
+              "inside_original_published_enclosure": true
+            },
+            "E": {
+              "independent_enclosure": {
+                "lower_fraction": "124999999999999999996859577859578393693613019/125000000000000000000000000000000000000000000",
+                "upper_fraction": "999999999999999999974876622876627149548904153/1000000000000000000000000000000000000000000000",
+                "midpoint_approx": 1.0,
+                "width_approx": 1e-45,
+                "serialization": "outward_1e_minus45_rational_grid"
+              },
+              "inside_original_published_enclosure": true
+            },
+            "P1": {
+              "independent_enclosure": {
+                "lower_fraction": "25123377123372850451095847/1000000000000000000000000000000000000000000000",
+                "upper_fraction": "3140422140421606306386981/125000000000000000000000000000000000000000000",
+                "midpoint_approx": 2.512337712337285e-20,
+                "width_approx": 1e-45,
+                "serialization": "outward_1e_minus45_rational_grid"
+              },
+              "inside_original_published_enclosure": true
+            },
+            "q_h_from_covariance": {
+              "independent_enclosure": {
+                "lower_fraction": "17428192846874635535298069160003613237477693011/1000000000000000000000000000000000000000000000",
+                "upper_fraction": "17428192846874635535298069160003613237477693013/1000000000000000000000000000000000000000000000",
+                "midpoint_approx": 17.428192846874637,
+                "width_approx": 2e-45,
+                "serialization": "outward_1e_minus45_rational_grid"
+              },
+              "inside_original_published_enclosure": true
+            },
+            "E_h_from_negative_rank1_covariance": {
+              "independent_enclosure": {
+                "lower_fraction": "69075064599151569850224477/1000000000000000000000000000000000000000000000",
+                "upper_fraction": "34537532299575784925112239/500000000000000000000000000000000000000000000",
+                "midpoint_approx": 6.907506459915157e-20,
+                "width_approx": 1e-45,
+                "serialization": "outward_1e_minus45_rational_grid"
+              },
+              "inside_original_published_enclosure": true
+            }
+          },
+          "necessary_draws_using_published_upper": 37813387719925333756,
+          "published_P1_upper_fraction": "251233771233728504511/10000000000000000000000000000000000000000",
+          "union_bound_ceil_reproduced": true
+        }
+      },
+      "mean_Cov_K_q": {
+        "lower_fraction": "1562226364690465858684729172175162245110199161/125000000000000000000000000000000000000000000",
+        "upper_fraction": "12497810917523726869477833377401297960881593289/1000000000000000000000000000000000000000000000",
+        "midpoint_approx": 12.497810917523728,
+        "width_approx": 1e-45,
+        "serialization": "outward_1e_minus45_rational_grid"
+      },
+      "slope_covariance_reproduction": {
+        "independent_enclosure": {
+          "lower_fraction": "1742819284687459930127772031281423997334839283/100000000000000000000000000000000000000000000",
+          "upper_fraction": "136157756616207807041232189943861249791784319/7812500000000000000000000000000000000000000",
+          "midpoint_approx": 17.428192846874598,
+          "width_approx": 2e-45,
+          "serialization": "outward_1e_minus45_rational_grid"
+        },
+        "inside_original_published_enclosure": true
+      },
+      "thermal_numerator_covariance_reproduction": {
+        "independent_enclosure": {
+          "lower_fraction": "3994636553615887694919352302801/200000000000000000000000000000000000000000000",
+          "upper_fraction": "9986591384039719237298380757003/500000000000000000000000000000000000000000000",
+          "midpoint_approx": 1.9973182768079438e-14,
+          "width_approx": 1e-45,
+          "serialization": "outward_1e_minus45_rational_grid"
+        },
+        "inside_original_published_enclosure": true
+      },
+      "U_over_A25_covariance_reproduction": {
+        "independent_enclosure": {
+          "lower_fraction": "573013591930193515037582959389/500000000000000000000000000000000000000000000",
+          "upper_fraction": "1146027183860387030075165918779/1000000000000000000000000000000000000000000000",
+          "midpoint_approx": 1.146027183860387e-15,
+          "width_approx": 1e-45,
+          "serialization": "outward_1e_minus45_rational_grid"
+        },
+        "inside_original_published_enclosure": true
+      },
+      "sign": "positive"
+    }
+  },
+  "primary_decision_reproduced": "certified_Ustar_negative_Udrop_positive_at_fixed_m64",
+  "resource_decision_reproduced": "do_not_promote_ordinary_unconditional_sampling_to_P0_new_estimator_required",
+  "evaluated_multipliers": [
+    64
+  ],
+  "new_samples": 0,
+  "new_enumerations": 0,
+  "cloud_jobs": 0,
+  "scope": "Correctness reproduction at the same fixed point, not new evidence or an efficient-estimator lower bound.",
+  "elapsed_seconds": 0.6721854589413851,
+  "review_code_sha256": "257385f9795dabf4248b59f3a79b3005cb91547a4fe51b28db0bfbe2f3c64544"
+}

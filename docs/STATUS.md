@@ -1,6 +1,21 @@
 # 当前成果：从取向信号到微观机制
 
-**整理日期：2026-08-31，21时后复核。** 七项较早探索分析已封存于[交付沿革](../notes/analysis-delivery-20260831.md)。两个独立决策实验都已完成并执行停线；随后其他分支又交付了闭合源、F4全局传递和一孔缺陷的精确结果，见下文。不存在等待首次Xi计算的任务。[下一步](NEXT-TARGETS.md)只保留尚未回答的科学问题；[清理记录](REPOSITORY-TRIAGE-20260831.md)保存Issue操作。本任务新增结果统一交付Draft #509，不合并。
+**整理日期：2026-08-31，22时三份意见后复核。** 两个独立决策实验已完成并执行停线；首次Xi、jump/reweight分解和两套固定源的渐近反号也已完成，不再作为待办。[三份意见的核对与实际推进](../notes/reviews-response-20260831.md)记录本轮增量；[下一步](NEXT-TARGETS.md)只保留尚未回答的问题。本任务新增结果交付Draft #509，不合并。
+
+## 本轮：延续需要连通信息，有限反号不等于可直接采样
+
+| 问题 | 已得到的具体答案 | 尚未解决 |
+|---|---|---|
+| 0/1孔信息加尾概率能否控制齐次U？ | [严格信息不足见证](../experiments/p337-continuation-feasibility-20260831/THEORY.md)：两套保留真实0/1孔表的摘要补全，有相同完整q曲线、唯一root和正斜率，但U约为+10.10358/−10.07432。连符号都不能从所列约束确定。 | 补全不是原图的物理多孔律；需要利用真实连通规则约束未知层的取向热score矩，不能把该见证扩大为一切延续方法无效。 |
+| 能否摆脱小孔概率展开？ | [全epsilon面核](../experiments/p337-face-kernel-20260831/REPORT.md)精确保留端口、位移、平行边及源修正；指定两孔构型的权重交叉比为e^t；固定B整行的全孔密度绕环概率已闭式求和。 | 这是条件连通核，完整B平均、root及U误差仍未求出。已有3dc47674 hypergraph/twist表示不是本次新发现。 |
+| 原U的有限耦合反号 | [固定m=64复核](../experiments/p337-finite-law-window-20260831/RESULT.md)：N25原Ustar≈−5.82495e−19、Udrop≈+1.07107e−13，各在自己的共同root。执行[2690f665](https://github.com/LightChainr/Matching-One/blob/2690f665bc8029cb2370d3f1efcef5eb2853705c/notes/closed-source-uniform-projection-tail.md)并行交付了更强的全m>=64证书，符号不计作本次新增机制排除。 | 本次新增的是下行的采样可达性判断；固定N25半直线不等于N50饱和到齐次的延续。 |
+| 十台机器能否直接测上述反号？ | 同一计数给rank1概率：轴向约1e−15，斜向约2e−20。95%机会至少见一次rank1的必要样本下界为2.28e14至4.47e19，**不启动该点普通无条件采样**。 | 该界不是估U的充分预算；不约束条件、importance或twist partition估计器，也不是墙钟时间预测。 |
+
+三项均无新MC、孔型全枚举或云作业。m64比较先冻结`375a6f0c`再评分，原四点实验保持不变；其余是明确数学构造和有界配置核验。它们不提供新的独立统计证据。
+
+最新既有结果另已接入：[e1b96895](https://github.com/LightChainr/Matching-One/blob/e1b968959634b9b3999c727b83ed38d0b730cb20/results/defect-reweight/REPORT.md)给Xi_reweight=+4.550327123237、Xi_jump=−15.306045530801，排除jump-only；[f4057192](https://github.com/LightChainr/Matching-One/blob/f405719264c896aa873dd4aae7292795f544ba99/notes/topological-projection-reverses-global-u-tail.md)已给Sstar/Sdrop相反渐近尾。N100/N225仍是理论预测，不是已执行生产。
+
+更新的[2690f665联合极限](https://github.com/LightChainr/Matching-One/blob/2690f665bc8029cb2370d3f1efcef5eb2853705c/notes/closed-source-poisson-double-scaling.md)给N/m²→zeta<∞时的Poisson/full共存、原pooled分母控制和U超多项式衰减；它不是固定m的大N定理。该分支剩余的是固定m的oblique twist代价和受限扇区odds，不再等待首次有限反号或指定联合极限的分母界。
 
 ## 最新有限机制：端点闭合不能靠两个共同耦合延续
 
