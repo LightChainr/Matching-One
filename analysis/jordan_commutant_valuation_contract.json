@@ -1,0 +1,55 @@
+{
+  "schema": "matching-one/jordan-commutant-valuation/v1",
+  "status": "valid_exact_single_block_commutant_certificate",
+  "parent_issue": "remain open",
+  "commutant_theorem": "A commutes with one rank-r Jordan nilpotent iff A=sum_(k=0)^(r-1) a_k N^k",
+  "valuation_rule": "if nu=min{k:a_k!=0}, the image of the top vector has chain rank r-nu; the zero map has rank zero",
+  "rank_five_controls": [
+    {
+      "rank": 5,
+      "coefficients": ["2", "-1", "3", "0", "0"],
+      "valuation": 0,
+      "matrix": [["2", "-1", "3", "0", "0"], ["0", "2", "-1", "3", "0"], ["0", "0", "2", "-1", "3"], ["0", "0", "0", "2", "-1"], ["0", "0", "0", "0", "2"]],
+      "commutant_recovery": ["2", "-1", "3", "0", "0"],
+      "image_chain_rank": 5
+    },
+    {
+      "rank": 5,
+      "coefficients": ["0", "3", "-2", "0", "0"],
+      "valuation": 1,
+      "matrix": [["0", "3", "-2", "0", "0"], ["0", "0", "3", "-2", "0"], ["0", "0", "0", "3", "-2"], ["0", "0", "0", "0", "3"], ["0", "0", "0", "0", "0"]],
+      "commutant_recovery": ["0", "3", "-2", "0", "0"],
+      "image_chain_rank": 4
+    },
+    {
+      "rank": 5,
+      "coefficients": ["0", "0", "0", "5", "1"],
+      "valuation": 3,
+      "matrix": [["0", "0", "0", "5", "1"], ["0", "0", "0", "0", "5"], ["0", "0", "0", "0", "0"], ["0", "0", "0", "0", "0"], ["0", "0", "0", "0", "0"]],
+      "commutant_recovery": ["0", "0", "0", "5", "1"],
+      "image_chain_rank": 2
+    },
+    {
+      "rank": 5,
+      "coefficients": ["0", "0", "0", "0", "0"],
+      "valuation": null,
+      "matrix": [["0", "0", "0", "0", "0"], ["0", "0", "0", "0", "0"], ["0", "0", "0", "0", "0"], ["0", "0", "0", "0", "0"], ["0", "0", "0", "0", "0"]],
+      "commutant_recovery": ["0", "0", "0", "0", "0"],
+      "image_chain_rank": 0
+    }
+  ],
+  "thermal_q4_label_control": {
+    "rank": 2,
+    "coefficients": ["1", "0"],
+    "valuation": 0,
+    "image_chain_rank": 2,
+    "ordinary_q4_gram_norm": 4930
+  },
+  "claim_boundary": {
+    "adds_new_virasoro_quotient_calculation": false,
+    "proves_lattice_overlap": false,
+    "fixes_logarithmic_coefficient": false,
+    "derives_torus_ward_response": false,
+    "identifies_p4_sprime_readout": false
+  }
+}
