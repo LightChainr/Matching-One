@@ -1,0 +1,19 @@
+{
+  "schema":"matching-one/p334-first-step-doob-clock-innovation/v1",
+  "parent":"0d1e586dafbade5e7d1f9bfc598170d0c881e337",
+  "input_directory":"results/p334-paired-clock-loading/batches",
+  "sizes":[325,425],
+  "batches_per_size":20,
+  "p_ref":0.59274605079,
+  "primary_pool":"Every at-risk orientation with a stored complete safe coefficient vector, including completed univariate clocks retained in a whole-pair fallback; report coverage and status, do not substitute a paired estimator",
+  "scores":["integrated clock","same-archive canonical F2 at p_ref"],
+  "direct_event":"D=next inserted label belongs to the current H2 direct absorbing set; p=h/d",
+  "bound":"B=p/(1-p)*(a-m)^2 for 0<p<1; equals Var(E[X|D,prefix]) and lower-bounds full next-label innovation",
+  "integrated_bound":"h/(d-h)*(mu-1)^2/(N+1)^2",
+  "boundary":"h=0 gives B=0; h=d gives T=1, conditional variance=B=0 and no prefix ratio",
+  "aggregation":"sum B / sum conditional suffix variance, not mean of prefix ratios; preserve each original batch and size/orientation",
+  "uncertainty":"delete-one-original-batch jackknife, retaining joint canonical/integrated and orientation covariance within each N",
+  "remaining":"V-B is exactly the weighted within-safe-event variance; it may be explained by safe next-label identity and/or later suffix, not necessarily noise after the whole next label is observed",
+  "paired_boundary":"not an H4 paired lower bound; no addition of orientation bounds without their shared next-label intersection/covariance",
+  "execution":"zero DP, zero network/child solves, zero new samples, existing safe coefficients only"
+}

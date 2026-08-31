@@ -1,0 +1,9 @@
+# P334: the direct-next gate is a modest, kernel-dependent clock-information channel
+
+- **Lifecycle:** independent analysis branch / complete forty-batch, zero-DP readout of `0d1e586d`. No children, network solves, new simulations or validation campaign.
+- **Exact mechanism:** B=h/(d-h)(a-m)^2 is precisely Var(E[X|direct-versus-safe,prefix]), hence a lower bound for full next-label Doob innovation. For integrated clocks, a-m=(mu-1)/(N+1). h=0 gives B0; h=d implies T1,V0,B0 and an undefined prefix fraction.
+- **Actual noise share:** N325 first/second integrated 8.2614%/8.3588%, canonical 22.3434%/22.4428%; N425 integrated 6.9320%/6.8622%, canonical 19.3629%/19.3264%. All are ratios of summed variances, not averages of individual ratios.
+- **What remains:** 91.64%-93.14% of integrated and 77.56%-80.67% of canonical noise lies within the safe event. It requires safe-label identity and/or later suffix information, not necessarily more than one fully observed next step.
+- **Observer / source:** marginal rank-one integrated clock (including the matching readout up to its fixed prefix constant) and the same archive's canonical F2 kernel at p_ref=.59274605079; N325/k0=193, N425/k0=252, both original orientations.
+- **Dependency and uncertainty:** same 40 original batches; full joint orientation/kernel delete-one-batch covariance and all source hashes retained. Complete clocks cover 98.66%-99.73% of each rank-one pool by count, not necessarily by variance mass; fifty individually completed clocks inside paired fallbacks are used only marginally.
+- **Not proved:** no H4 paired lower bound, no cross-size independence or scaling law, no extrapolation to unresolved prefixes or total population variance. Cross-orientation first-step intersection/covariance is still needed for the paired question.
