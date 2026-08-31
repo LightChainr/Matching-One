@@ -1,0 +1,275 @@
+{
+  "B_S": {
+    "batch_se": 2.163903110830519e-07,
+    "mean": 3.2389322916666666e-06,
+    "mean_exact": "199/61440000"
+  },
+  "boundary": "Fixed support chosen by prior exact certificate, no scan. Localized positive energy endpoint, not unbiased total high-pass reconstruction. Mean and SE do not turn the population inequality into a certain numerical bound.",
+  "coordinate_order": [
+    "B_S",
+    "D0_energy",
+    "D1_energy",
+    "D2_energy",
+    "D0D1",
+    "D0D2",
+    "D1D2",
+    "nonzero_rate"
+  ],
+  "decision": "fixed_support_readable",
+  "full_covariance_of_mean": [
+    [
+      4.6824766730619976e-14,
+      2.90977700658385e-13,
+      2.408000890387164e-14,
+      1.063651910133234e-13,
+      0.0,
+      0.0,
+      0.0,
+      1.196097257295174e-10
+    ],
+    [
+      2.90977700658385e-13,
+      2.6973570236051918e-12,
+      -1.2672308719519405e-13,
+      4.816536951546715e-14,
+      0.0,
+      0.0,
+      0.0,
+      9.69756155303031e-10
+    ],
+    [
+      2.408000890387164e-14,
+      -1.2672308719519405e-13,
+      3.807713287045254e-13,
+      -3.7328161374487046e-14,
+      0.0,
+      0.0,
+      0.0,
+      3.274936868686872e-11
+    ],
+    [
+      1.063651910133234e-13,
+      4.816536951546715e-14,
+      -3.7328161374487046e-14,
+      9.4644951097893e-13,
+      0.0,
+      0.0,
+      0.0,
+      7.398200757575755e-11
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      1.196097257295174e-10,
+      9.69756155303031e-10,
+      3.274936868686872e-11,
+      7.398200757575755e-11,
+      0.0,
+      0.0,
+      0.0,
+      7.410101010101002e-07
+    ]
+  ],
+  "h5_B_S_population_lower_bound_parameter": {
+    "batch_se": 6.448521080706793e-08,
+    "estimate": 9.65215265750885e-07,
+    "estimate_exact": "129549/134217728000",
+    "not_a_statistically_certain_lower_bound": true
+  },
+  "nonzero": {
+    "batch_se": 0.0008608194357762261,
+    "batches_with_nonzero": 100,
+    "count": 384,
+    "rate": 0.0192
+  },
+  "point": [
+    3.2389322916666657e-06,
+    2.509765624999998e-05,
+    1.611328125e-06,
+    2.44140625e-06,
+    0.0,
+    0.0,
+    0.0,
+    0.019199999999999995
+  ],
+  "runtime": {
+    "cpu_seconds": 333.139735,
+    "wall_seconds": 36.82341520895716
+  },
+  "samples": 20000,
+  "schema": "matching-one/p437-fixed-support-score/v1",
+  "value_classes": [
+    {
+      "child_difference_numerators": [
+        -2,
+        0,
+        0
+      ],
+      "count": 13,
+      "squared_derivative_exact": "1/2304"
+    },
+    {
+      "child_difference_numerators": [
+        -1,
+        0,
+        0
+      ],
+      "count": 244,
+      "squared_derivative_exact": "1/9216"
+    },
+    {
+      "child_difference_numerators": [
+        0,
+        -3,
+        0
+      ],
+      "count": 1,
+      "squared_derivative_exact": "1/1024"
+    },
+    {
+      "child_difference_numerators": [
+        0,
+        -2,
+        0
+      ],
+      "count": 1,
+      "squared_derivative_exact": "1/2304"
+    },
+    {
+      "child_difference_numerators": [
+        0,
+        -1,
+        0
+      ],
+      "count": 2,
+      "squared_derivative_exact": "1/9216"
+    },
+    {
+      "child_difference_numerators": [
+        0,
+        0,
+        -2
+      ],
+      "count": 3,
+      "squared_derivative_exact": "1/2304"
+    },
+    {
+      "child_difference_numerators": [
+        0,
+        0,
+        -1
+      ],
+      "count": 1,
+      "squared_derivative_exact": "1/9216"
+    },
+    {
+      "child_difference_numerators": [
+        0,
+        0,
+        0
+      ],
+      "count": 19616,
+      "squared_derivative_exact": "0"
+    },
+    {
+      "child_difference_numerators": [
+        0,
+        0,
+        1
+      ],
+      "count": 1,
+      "squared_derivative_exact": "1/9216"
+    },
+    {
+      "child_difference_numerators": [
+        0,
+        0,
+        2
+      ],
+      "count": 5,
+      "squared_derivative_exact": "1/2304"
+    },
+    {
+      "child_difference_numerators": [
+        0,
+        0,
+        4
+      ],
+      "count": 1,
+      "squared_derivative_exact": "1/576"
+    },
+    {
+      "child_difference_numerators": [
+        0,
+        1,
+        0
+      ],
+      "count": 6,
+      "squared_derivative_exact": "1/9216"
+    },
+    {
+      "child_difference_numerators": [
+        0,
+        2,
+        0
+      ],
+      "count": 3,
+      "squared_derivative_exact": "1/2304"
+    },
+    {
+      "child_difference_numerators": [
+        1,
+        0,
+        0
+      ],
+      "count": 68,
+      "squared_derivative_exact": "1/9216"
+    },
+    {
+      "child_difference_numerators": [
+        2,
+        0,
+        0
+      ],
+      "count": 33,
+      "squared_derivative_exact": "1/2304"
+    },
+    {
+      "child_difference_numerators": [
+        3,
+        0,
+        0
+      ],
+      "count": 2,
+      "squared_derivative_exact": "1/1024"
+    }
+  ]
+}
