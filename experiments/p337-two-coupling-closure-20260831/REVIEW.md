@@ -2,7 +2,7 @@
 
 **PASS.** The fixed thermal-plus-S* profile closure is excluded by an independently positive rational lower bound for the original D3.
 
-All frozen inputs and outputs match their hashes and Git blobs. Each of the four coefficient tables has exactly binomial(25,k) configurations in every row. Parent complement/signs, per-geometry source covariance, and the physical 25(1-p) defect dose agree with the contract.
+Frozen inputs/code match their recorded hashes and Git blobs; original result files match the run receipt hashes. Each of the four coefficient tables has exactly binomial(25,k) configurations in every row. Parent complement/signs, per-geometry source covariance, and the physical 25(1-p) defect dose agree with the contract.
 
 The independent reader expands the tables into integer power-basis polynomials, without importing the scorer or its interval class. Exact Fraction evaluation and a Taylor remainder bound use the same frozen root interval. Every 4x3 entry, all four third-order minors, D3 and the existing auxiliary D2 agree with the published rational enclosures; the exact pooled-root signs and positive slope are reproduced.
 
