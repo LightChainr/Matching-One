@@ -152,6 +152,15 @@ At the iid root, B itself has an exact density-free representative. With
 four-regularity gives `B=T_2+4p0 K-2N p0^2`. Hence `D_B U=D_(T_2)U`
 by (6). No assumption about CFT scaling is needed for this local control.
 
+The overview has now evaluated this prescribed reduction from the saved
+N25 rational packet, without a new root or source fit:
+`V_Sstar/2=+0.063082681707085`,
+`V_(C_B-r/2)=-0.269828026713487`, and
+`V_B=+0.332910708420572`. Thus the two named log-Q paths have opposite
+finite original-U tangents. These are the completed
+[e87d5de2 result](https://github.com/LightChainr/Matching-One/blob/e87d5de2/results/weak-q-path-comparison/REPORT.md),
+not a cross-size measurement or a new independent evidence block.
+
 For reference, the fixed-density rank score is already determined by
 the existing q/E state, geometry by geometry:
 
@@ -205,15 +214,25 @@ launch a block, prescribe adaptive sample increases, or reopen stopped
 P154/P334 experiments.
 
 The [companion weak-source calculation](closed-source-weak-colour-spectroscopy.md)
-retains the later ordinary four-leg selection zero. A nonzero derivative
-of a vanishing four-leg endpoint overlap, if the declared Q continuation
-permits it, instead gives `R_N=alpha+gamma_T log N+beta sqrt(N)+...`, with
+retains the later ordinary four-leg selection zero. The overview's
+`f0e9159f` rational-family proof now excludes its **regular endpoint Q
+activation altogether**, not just the value at Q=1. For a different,
+actually specified finite trace/confluent interface, a nonzero derivative
+of a vanishing overlap would give `R_N=alpha+gamma_T log N+beta sqrt(N)+...`, with
 `gamma_T=9 sqrt(3)/(16 pi)`. After removing that known thermal logarithm,
 resolved successive increments at equal area ratio c have ratio sqrt(c).
 This is not the old constant four-leg velocity and does not resurrect a
 regular overlap already excluded by the selection theorem. A source-
 activated Jordan logarithm can also shift a constant slope; slope constancy
 alone is therefore not a field identification.
+
+The [removable twist-jet interface](closed-source-removable-twist-jet-interface.md)
+now specifies the required finite data: `J=R/(sqrt(Q)-1)` needs R through
+quadratic order to obtain a first log-Q response. Its net normalized
+loading must have a nonzero thermal derivative to affect original U.
+The fixed-Q [S4 trace construction](closed-source-s4-rank-one-filter.md)
+supplies a separate concrete lattice insertion, rather than assuming that
+a formal trace character already determines this Q=1 loading.
 
 ## 6. A proved fixed-coupling endpoint to this comparison
 
