@@ -90,10 +90,16 @@ def middle(x):
 
 
 def interval_json(x):
+    # Avoid unwieldy multi-thousand-digit interval endpoints. This is exact
+    # outward rational rounding, never a float truncation or narrowed bound.
+    scale = 10**40
+    lo = F(math.floor(x.lo*scale), scale)
+    hi = F(math.ceil(x.hi*scale), scale)
     return {
-        "lower_fraction": str(x.lo), "upper_fraction": str(x.hi),
-        "midpoint_approx": float(middle(x)), "width_approx": float(x.hi-x.lo),
-        "excludes_zero": x.lo > 0 or x.hi < 0,
+        "lower_fraction": str(lo), "upper_fraction": str(hi),
+        "midpoint_approx": float(middle(x)), "width_approx": float(hi-lo),
+        "excludes_zero": lo > 0 or hi < 0,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid",
     }
 
 
@@ -220,6 +226,7 @@ def main():
 
         with ThreadPoolExecutor(max_workers=contract["workers"]) as pool:
             receipts = list(pool.map(enumerate_one, zip(contract["geometries"], paths)))
+        (out/"enumeration.json").write_text(json.dumps(receipts, indent=2)+"\n")
     pair = [profiles(path) for path in paths]
     root = root_interval(pair, contract["root_bisection_steps"])
     scored = score(pair, root)
@@ -235,7 +242,7 @@ def main():
                        "V25_F4": float(values["f4"]), "V50_endpoint_cluster_bare": float(bare),
                        "V50_endpoint_cluster_complete": float(complete), "V50_endpoint_forced_correction": float(correction)}
     primary = scored["sources"]["f4"]["reduced_V"]
-    excludes_zero = primary.lo > 0 or primary.hi < 0
+    excludes_zero = interval_json(primary)["excludes_zero"]
     result = {
         "schema": "matching-one.decimation-plaquette-u.v1",
         "status": "completed_exact_finite_enumeration",

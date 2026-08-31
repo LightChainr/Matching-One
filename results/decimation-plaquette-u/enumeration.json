@@ -1,0 +1,14 @@
+{
+  "status": "both_exhaustive_counts_completed_reader_serialization_failed_after_arithmetic_before_result_write",
+  "recovery_source": "completed exec session 95106 stdout; counts were not regenerated",
+  "code_commit_prefix": "2bfe9b90",
+  "binary_sha256": "85ee9ccf55886d0cc4bd5814198345756e24be77fdedc365b0bedb5d999bcedc",
+  "receipts": [
+    {"geometry": [5, 0], "configurations": 33554432, "elapsed_seconds": 1.12591, "exit_code": 0, "output": "axis.csv"},
+    {"geometry": [4, 3], "configurations": 33554432, "elapsed_seconds": 1.05785, "exit_code": 0, "output": "tilted.csv"}
+  ],
+  "reader_failure": "Python Fraction integer-to-string conversion exceeded its 4300-digit limit",
+  "repair": "serialize exact outward rational enclosures on the 10^-40 grid; reuse the completed counts",
+  "scientific_definition_changed": false,
+  "new_random_samples": 0
+}
