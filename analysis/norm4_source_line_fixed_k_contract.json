@@ -1,0 +1,34 @@
+{
+  "schema": "matching-one.norm4-source-line-fixed-k-contract.v1",
+  "status": "Specified after the primary conditional-line result was known, before this fixed-K decomposition was computed",
+  "Ns": [65, 85, 130, 170, 260, 340],
+  "batches": 100,
+  "primary_result": "results/norm4-source-line/latest.json",
+  "primary_execution_commit": "91fe30f3ebbe976d65db2538093af5e2c45b11d0",
+  "source_result": "results/norm4-source-endpoint-1m/latest.json",
+  "source_result_sha256": "8aa36f48c3229f258981652c7b6da8aba23c75120ffce3b7217cecf2a2f7f867",
+  "output": "results/norm4-source-line-fixed-k/latest.json",
+  "raw_columns": ["sum_rank1", "sum_rank1_s", "sum_line4_re", "sum_line4_im", "sum_line4_s_re", "sum_line4_s_im"],
+  "definitions": {
+    "A_B_C_D": "At K: a=count R, b=sum R*O4, c=sum R*s, d=sum R*O4*s; s=CB+CW bulk; b,d complex",
+    "weights": "Normalized exact Binomial(N,p0) weights, using the already saved central/aligned-delete-one source root",
+    "within": "sum_k w_k*(d_k-b_k*c_k/a_k) / sum_k w_k*a_k",
+    "between": "sum_k w_k*b_k*c_k/a_k / sum_k w_k*a_k - conditional_mean_O4*conditional_mean_s",
+    "Ctotal": "sum_k w_k*d_k / sum_k w_k*a_k - conditional_mean_O4*conditional_mean_s = within+between",
+    "moving_nu": "Ctotal + rootdot_s*mu_p; moving_nu, mu_p and primary E residual are copied from the same primary central/delete-one vector",
+    "rootclock": "rootdot_s*mu_p; p changes only the K mixture, not the fixed-K conditional distribution",
+    "null": "within=0 for any source f_g(K,q,E), allowed to vary by geometry; q=E=0 in rank one. A nonzero within is a line-associated spatial-configuration coupling at fixed occupancy and topology, not an energy-operator identity"
+  },
+  "small_count_sensitivity": {
+    "primary": "Unmodified plug-in covariance decomposition on all K; no selected analysis window",
+    "zero_count": "a=0 requires b=c=d=0 and contributes zero; empirical zero does not prove population absence",
+    "singleton": "The empirical plug-in within is zero at a=1, not evidence that the population covariance vanishes",
+    "bessel": "For a>1 multiply d-b*c/a by a/(a-1); a<=1 contributes zero only to this sensitivity, with its omitted empirical rank-one mass explicitly reported. Do not replace primary within or combine this sensitivity with unmodified between as an exact identity",
+    "diagnostic_binomial_tail_probability": 0.000001,
+    "counts": "Report all per-K counts, binomial mass and empirical rank-one mass at a<=1, minimum positive count and minimum count in the binomial central quantile range; this range is diagnostic only",
+    "effect_on_research": "A reported sensitivity, not a permission or continuation gate"
+  },
+  "comparisons": "Four-real within vector per N and a jointly covaried 24-real six-N vector; retain covariance-supported rank and nominal p, not independent votes",
+  "dependence": "Inherit primary three source groups, exact old-counter nested endpoint batch unions and 100 aligned omissions. Copy primary/source saved vectors; no complement anchor, root finder, new replay or Monte Carlo sample",
+  "interpretation": "This uses K-resolved information absent from a single Bernoulli aggregate, but shares every observation with the primary E+clock/wedge experiment. O4 is constant within each nonempty filtration rank-one window; a fixed-K coupling does not separately identify birth selection or lifetime selection"
+}
