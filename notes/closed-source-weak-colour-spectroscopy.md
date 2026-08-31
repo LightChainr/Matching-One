@@ -10,11 +10,19 @@ target is
                               = 0.31012250367475802785... .
 ```
 
-There is a sharper live alternative than reopening the ordinary four-leg
-endpoint overlap. If that overlap is zero at Q=1 but its Q derivative is
-nonzero, the source response acquires a **sqrt(N)** term. Three matched
-sizes distinguish its scaling from a regular thermal logarithm and from
-a fixed-rank logarithmic/Jordan mixture without fitting a new exponent.
+If an overlap is zero at Q=1 but its Q derivative is nonzero, the source
+response acquires a **sqrt(N)** term. Three matched sizes distinguish
+that conditional shape from a regular thermal logarithm and from a
+fixed-rank logarithmic/Jordan mixture without fitting a new exponent.
+
+**Subsequent mechanism restriction (`f0e9159f`, overview):** the declared
+regular unlabelled endpoint obeys `ell P_[2](Q)=0` as a rational family,
+so all of its regular Q derivatives vanish. Its activation is therefore
+excluded, not a live alternative. The conditional power law below can
+only apply after a different actual finite trace/confluent interface has
+been specified and shown to couple to original U. See the
+[endpoint proof](https://github.com/LightChainr/Matching-One/blob/f0e9159f/notes/weak-q-paths-and-regular-selection.md)
+and the [rank1 transmission functional](closed-source-rank-one-trace-transmission.md).
 
 This derivation starts from `85fd4923`, imports the existing Q velocities,
 and performs no Monte Carlo, finite-coupling score or velocity-oracle run.
