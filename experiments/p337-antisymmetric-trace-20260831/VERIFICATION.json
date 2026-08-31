@@ -1,0 +1,18 @@
+{
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+  "tests_passed": 16,
+  "test_suite": "test_p337_antisymmetric_trace_review.py",
+  "repository_wide_suite_run": false,
+  "source_histogram_full_git_extraction_run": false,
+  "certificate_reproduced": true,
+  "source_rule": "exact read-only reuse of pinned N25 coefficients",
+  "new_samples": 0,
+  "new_enumerations": 0,
+  "new_root_search": false,
+  "development_notes": [
+    "First test run: all 16 passed, with a ResourceWarning from CSV handle; fixed with context manager.",
+    "Second test run: all 16 passed without that warning; exact certificate verification printed success. A combined command subsequently timed out during compileall; full compileall success is not claimed.",
+    "Python 3.9 grammar parsing checked separately; a Python 3.9 runtime was not run locally."
+  ]
+}

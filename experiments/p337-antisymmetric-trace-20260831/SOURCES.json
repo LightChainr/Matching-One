@@ -1,0 +1,52 @@
+{
+  "repository": "LightChainr/Matching-One",
+  "science_commit": "bea717e826df5a22518774b1725ae7bcbe2cb801",
+  "main_read": "580678a769b1360d701fb708e1f557a2db626f16",
+  "source_histogram_paths": {
+    "axis": "results/p337-s4-trace-transmission/axis.csv",
+    "tilted": "results/p337-s4-trace-transmission/tilted.csv"
+  },
+  "source_histogram_blobs": {
+    "axis": "765fc5c79055ed8c6de175454da3b56893dec4fe",
+    "tilted": "f813cb6b536609bf376e90ac207898e605474cec"
+  },
+  "ordinary_blobs": {
+    "axis": "eceae86d3162e4159b3218ab013b0d3b974f0cb8",
+    "tilted": "b3a3013d3723afd651067e82bfb5d4b624c9d1fb"
+  },
+  "type_rule": {
+    "A": {
+      "q": 0,
+      "bad2": 1,
+      "n_bad3": 2
+    },
+    "B": {
+      "q": 0,
+      "bad2": 0,
+      "n_bad3": 1
+    }
+  },
+  "type_totals": {
+    "axis": {
+      "A": 1810,
+      "B": 10
+    },
+    "tilted": {
+      "A": 850,
+      "B": 55
+    }
+  },
+  "extraction_boundary": "Compact rows transcribed from immutable connector-fetched histograms; not a new configuration enumeration. Source type totals independently match the published Q1 report. --check-source-checkout regenerates the compact rows from source Git objects.",
+  "related_notes": [
+    "notes/closed-source-two-trace-kernels-q1.md",
+    "notes/closed-source-stable-colour-character-continuation.md",
+    "notes/n25-winding-packing-and-pair-continuation.md",
+    "notes/p337-q1-closed-trace-transmission-result.md"
+  ],
+  "input_sha256": {
+    "ordinary_axis.csv": "29991f11aaa5bea53bc8193fb0990dcb0c4c9fa98af8c0bdea975f4144763189",
+    "ordinary_tilted.csv": "09073ec9ebcf6d8aca804019f57d5141bfa93c58017f2f59df0b7461b217cc25",
+    "root_bracket.json": "a32ec766919eac64f164a61db9260dd391fac0983504c9297c58aa2dd9d744fb",
+    "trace_types.csv": "8d91b34f08abf7bb8f249ae22628bf6d87822519109ad4f8a3de8e4dc04fedf4"
+  }
+}
