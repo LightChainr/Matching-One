@@ -3,12 +3,14 @@
 **Snapshot:** 2026-08-31 12:03:52 Asia/Shanghai. This is the user-requested context recovery, not a new prerequisite before every research block.
 
 **Later updates are separate:** the [#469–490 increment](ISSUE-PR-INCREMENT-20260831b.md)
-retains its complete captured text and heads, with an additional bounded PR #491
-scientific read. The [subsequent output note](../notes/research-output-update-20260831b.md)
-records new N100 window and P398 fixed-readout analyses. The counts below remain
-the original snapshot, not current repository totals. First N100 production,
-first width8 propagation and the P334 occupied-cut construction have since
-completed; use [Next Targets](NEXT-TARGETS.md) for the present next action.
+and [#492–497 / active-PR refresh](ISSUE-PR-INCREMENT-20260831c.md) preserve
+their capture times, complete text and heads. The [new reconciliation](../notes/context-reconciliation-20260831c.md)
+recovers completed N400 production, rank-clock de-smoothing, P398 memory/motifs,
+P334 full physical and canonical birth clocks, and the tiny VJS full Q derivative.
+The counts below remain the original snapshot, not current repository totals.
+N900 has an existing plan/runner, not a verified runtime or completed artifact.
+Use [Next Targets](NEXT-TARGETS.md) after these completed inputs; do not restart
+their former first-work requests.
 
 The complete capture contains **146 Issues, 318 PRs and 1,354 discussion comments**. There are **109 open Issues and 19 open PRs**. [Every numbered item is indexed](ISSUE-PR-INDEX.md); [the machine inventory](../analysis/github_context_inventory.json) retains exact PR heads, discussion digests, cross-references and file comparisons. The full bodies, all discussion comments and all seven formal reviews were read in three completed partitions: [#1–150](../notes/context-review-20260831/review-001-150.md), [#151–300](../notes/context-review-20260831/review-151-300.md), [#301–464](../notes/context-review-20260831/review-301-464.md). There were no missing numbered items or comment pages, and no inline review comments. Referenced reports were inspected selectively; this does not claim that every code file or cited paper was reread.
 

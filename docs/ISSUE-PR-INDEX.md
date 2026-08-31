@@ -6,6 +6,86 @@ This is a navigation index, not a new task queue. Original titles and GitHub sta
 
 No Issue is closed, locked, demoted or renamed by this index. No PR is merged or newly approved. The snapshot is historical as soon as GitHub changes.
 
+## Current grouped entry — 2026-08-31 14:16–14:21 overlay
+
+先看 [当前科学总览](REPOSITORY-CONTEXT.md) 与 [唯一下一步注意力表](NEXT-TARGETS.md)；下面按用途分组，**不是新增排序、审批或合并建议**。原始464条计数及历史表全部保留在后面。
+
+本次 [c增量审读](ISSUE-PR-INCREMENT-20260831c.md) / [完整原文与状态快照](../analysis/github-context-increment-20260831c.json) 覆盖 #492–497、#484、#488–490 和 #13，另对活跃父Issue作有限补读。初捕为14:10:41–14:11:54；其后的**14:16全open列表有23个PR，其中1个Draft**。这是 #493–497 已于14:14:16–26合并之后的列表，它们不在下表，不能再从23减去5。早前的open计数只对应各自捕获时间，不混成当前总数。
+
+最后单项状态读止于14:19:59，#484固定在 `705819e95d1146fdedb06e9c7628344f108b80af`（替换14:16列表内的中间head）；14:21:03只读观察GitHub main为 `2ee16678b64a065d6d235ef69941c8a46f3a3878`。这不是对Draft的fetch/merge。下列标题逐字保留；没有因为列入导航就重新审读每个旧PR的全部正文。
+
+本轮最容易被旧待办掩盖的四点：
+
+- **可复用：**N400真实生产、有限A/E secant、跨尺度宽化和binomial去平滑均已完成；N900这里只确认已发布freeze/runner，`artifact_only / runtime_unknown`，不是可重复启动的“空白任务”。
+- **可复用：**P334完整等待律/site归属、P398隐藏几何反馈已有输出；#491/#492是两种互补载体解释，不是两份独立生产证据。
+- **原问题未完：**原norm-4次级物理响应仍未识别。canonical E_top、fixed-K混合row和首次生产证书已做，不再列为第一次检验。
+- **需读新来源：**#484新增 `notes/p334-general-two-port-birth-theorem.md`（d23e3f94→705819e）的普遍定理/winning-channel导数说明应与已有完整条件律对读；本索引的head/path捕获不代替科学推导审读。#370工具与#13有限代数结果可并行服务具体比较，不成为分析准入。
+
+### 总控 Draft：交付与科学总览
+
+当前结果和注意力顺序只维护一个入口；Draft/open 不代表准备合并。
+
+| PR / 原始标题 | 捕获 head（完整 SHA） |
+|---|---|
+| [#267 — docs: recover scientific frontier and score production mechanisms](https://github.com/LightChainr/Matching-One/pull/267)（Draft） | `7cdf1d575f077cebec5cdfb85a25695cc03d1728` |
+
+### 实际生产与档案分析：先消费已有输出
+
+N100/N400、norm-4 reveal 与后续模型比较、same-stream 和 pivotal 数据均是可复用入口。#484/#485 的 N100 派生结果同依赖块；#277 的 base 是 #273 的研究分支。
+
+| PR / 原始标题 | 捕获 head（完整 SHA） |
+|---|---|
+| [#484 — N100 production: shape splitting and zero-area thermal redistribution](https://github.com/LightChainr/Matching-One/pull/484) | `705819e95d1146fdedb06e9c7628344f108b80af` |
+| [#485 — N100 exact shape nulls and clock-orthogonal thermal deformation](https://github.com/LightChainr/Matching-One/pull/485) | `b454bb8ec04ad90a2db579efaf6285e59d6ba5aa` |
+| [#273 — Reveal frozen norm-4 q=2 versus Jordan production score](https://github.com/LightChainr/Matching-One/pull/273) | `8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc` |
+| [#277 — Fit minimal Jordan plus one even-mode transfer after norm-4 reveal](https://github.com/LightChainr/Matching-One/pull/277) | `3e855ced4fd98d8979c0b712636b45c2fa54f969` |
+| [#451 — Score real same-stream P439 crosswalk and unresolved M loading](https://github.com/LightChainr/Matching-One/pull/451) | `bfbceb24f4072e5fd2025a2cecb344014adbd9d8` |
+| [#247 — Run the norm-5 two-cutoff pivotal score](https://github.com/LightChainr/Matching-One/pull/247) | `9d35fa65de5bd4c81321751024dc8007dc329a87` |
+
+### 物理机制与状态：已交付的解释，不重做首次构造
+
+cut-network、双周期载体、trace/branching 区别和空间谱各有自己的适用范围。两 N425 见证上的完整条件律/site归属已在 Draft267 讨论中交接，其制品仍按独立分支 source 引用，不等于已纳入 Draft 工作树或 main；这不是 population H4 加载已完成。
+
+| PR / 原始标题 | 捕获 head（完整 SHA） |
+|---|---|
+| [#491 — Prove the rank-one cut-network theorem and explain the real trigger witnesses](https://github.com/LightChainr/Matching-One/pull/491) | `ab90201e88409310632812727e0138c56b455644` |
+| [#492 — P429: certify dual-cycle blockers on the two real N425 trigger graphs](https://github.com/LightChainr/Matching-One/pull/492) | `0e52dbaeed53dfffa94592e53e38129c179c5078` |
+| [#435 — Exact: full survival laws do not close the topology state (#429)](https://github.com/LightChainr/Matching-One/pull/435) | `ffd91ebd819f7893cbee84aeb3f40da14a700a7b` |
+| [#415 — Certify cooperative homology continuation beyond one-step H2](https://github.com/LightChainr/Matching-One/pull/415) | `d09f9252dd18de497ab88bd30e92101813432a81` |
+| [#416 — Exact: P250 positive spatial spectrum and a ≥100-mode witness](https://github.com/LightChainr/Matching-One/pull/416) | `e105b00636a07cfe5c650f80ffe34f8cfc10ba81` |
+| [#196 — Lift matching identity to configuration Euler/Betti observables](https://github.com/LightChainr/Matching-One/pull/196) | `4ebfc91753e9569983b0a40b8d3eeefdeac0b172` |
+| [#229 — Identify the matching polynomial as a vertex-subset defect generating function](https://github.com/LightChainr/Matching-One/pull/229) | `83a14f3d74295fc9218fdd5be4905980dd40742e` |
+
+### 对照与跨微观接口：可复用但原物理问题仍开放
+
+有限识别对照、generator 对照、已建 W5 周期对象和三角 log-pair 档案不自动给出连续场身份或概率支配；不是新增准入步骤。
+
+| PR / 原始标题 | 捕获 head（完整 SHA） |
+|---|---|
+| [#385 — Exact identifiability controls: Jordan closure and a C4-protected five-state quotient](https://github.com/LightChainr/Matching-One/pull/385) | `b5c761a05019f33b5528ecb9c4aa6a18006e71c1` |
+| [#417 — Exact controls: generator-dependent rank, cooperative birth survival, and typed correction design](https://github.com/LightChainr/Matching-One/pull/417) | `5e047117de37724c8aa1cb56b3818a8018def13f` |
+| [#438 — Exact: close the W5 relative-dual state and periodic gluing (#14)](https://github.com/LightChainr/Matching-One/pull/438) | `bd2561abd889b7360178616467422e31ad91c838` |
+| [#246 — Freeze triangular energy/log-pair sufficient statistics](https://github.com/LightChainr/Matching-One/pull/246) | `7f9dcd88eb14cf89dce499902953ade1c57abcb7` |
+
+### 数学与方法支持：按具体研究问题调用
+
+精确多项式、局部根、Galois、thermal 模板和 noise-semigroup 支持可直接引用；开放状态不等于尚未开展，更不要求排在生产分析之前。
+
+| PR / 原始标题 | 捕获 head（完整 SHA） |
+|---|---|
+| [#84 — Research: exact axis L=5 matching polynomial frontier](https://github.com/LightChainr/Matching-One/pull/84) | `6a049b764658bc15956ae83f704c85e1d36ff660` |
+| [#197 — Reanalyze local matching zeros near the physical root](https://github.com/LightChainr/Matching-One/pull/197) | `bf31f18429f2ef929fdc385e4efe0a2e4a726e42` |
+| [#228 — Certify Galois groups of committed axis matching polynomials](https://github.com/LightChainr/Matching-One/pull/228) | `9ab422978e380d96516760014582ad7bf17a02b5` |
+| [#230 — Freeze multi-u thermal-response templates from the #101 coordinate map](https://github.com/LightChainr/Matching-One/pull/230) | `9858eac23e3c8b568c8661684f22d5ea02704fc8` |
+| [#245 — Add exact Boolean noise-semigroup oracles](https://github.com/LightChainr/Matching-One/pull/245) | `c7eddeb53879182287de4c555fad4312249f5ee9` |
+
+### 已合并支持增量与历史分界
+
+#488–490（congruence / shortlex / endomorphism）及本轮 #493–497（local monoids / powers / idempotents / inverses / stabilizers）均已有明确merge记录；完整head、merge SHA、时间及原始标题见 [c增量的生命周期表](ISSUE-PR-INCREMENT-20260831c.md)。它们不在当前open分组，也不再作为首次待建工具。#13父问题仍open；有限代数完成不等于可靠性/临界方程完成。
+
+以下是**原日期的历史索引与增量记录**。其中“尚无corrected score”“N400尚未采集”“first two-point/cut”等句子若出现在旧正文，应按上面的当前总览及有日期来源理解，不作为新任务重发。
+
+
 ## Bounded post-snapshot additions
 
 [PR #465 — Certify typed serial port reversal](https://github.com/LightChainr/Matching-One/pull/465) was read separately after capture: merged at main `e300609`, head `f2818d5`, zero comments/reviews. Its two new parent-#13 comments were also read. [Full addendum](../notes/context-review-20260831/review-addendum-465.md). This adds one completed exact support result; it does not rewrite the original 464-item counts or infer new research production.

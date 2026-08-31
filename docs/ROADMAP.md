@@ -10,7 +10,14 @@ This Draft incorporates main through `e300609`; later observed main changes are 
 
 The first #370 real-data adapter, P267 amplitude comparison, P334 graph/capacity analysis and first F5/C3 typed observers are completed inputs. No Monte Carlo is launched by this navigation update, and tool/test completion is not an independent scientific milestone.
 
-The [new output block](../notes/research-output-update-20260831b.md) also completes
+The [latest context reconciliation](../notes/context-reconciliation-20260831c.md)
+now supersedes more old first-work requests: N400 production, canonical/rank
+width decomposition, P398 memory/motifs, full physical and canonical birth
+clocks, and tiny VJS's complete finite derivative are all delivered. N900
+already has a published plan/runner in #484; runtime is unconfirmed. This
+roadmap update coordinates those results and does not launch new work.
+
+The [preceding output block](../notes/research-output-update-20260831b.md) also completes
 N100 central/tail moments and P398 fixed-readout errors. Open PR #491 supplies
 the occupied-cut state. These updates supersede the corresponding first-work
 requests in the historical rationale below. The six new #370 framework slices
@@ -63,22 +70,26 @@ Branch-only `5389200` completes the previously requested rooted lift: rooted7 al
 Child [`b35e100`](https://github.com/LightChainr/Matching-One/blob/b35e100a3903c706dceba57c4667386eb4510ac3/notes/p398-anisotropic-cylinder-spectrum.md) derives the same readouts' complete horizontal/vertical probability family. The two modes stay distinct throughout `0<h,v<1`; even the collision boundary is scalar, not Jordan. A fixed fast eigenobservable has correlation `.00711273` at d=8 for `h=.05,v=.95`, an exact finite-model prediction rather than a sample-power claim. **Next scientific output:** compare width or microstructure transport while preserving these microscopic AP/landing definitions and the readout slice. Do not repeat the first matrix or look again for a positive-h/v Jordan point in this solved family. Full-Q realization, site-Matching overlap and continuum interpretation remain separate questions.
 
 The P398 first-width comparison above has also advanced: Draft `4846adf`
-completes C0-only landing-innovation visibility, and branch-only `552c45d`
-completes continuous width8 fixed-i protected rays and explicit T2/R leakage.
-The immediate question is now a common-model prediction for these named
-emissions, not first width5/8 propagation or another filter construction.
+completes C0-only visibility, `552c45d` supplies width8 fixed-i rays, and
+`39e0660`/`c9dc218` already decomposes memory and directed triplet/contact
+budgets. The normalized6.81225 feedback ratio comes from inverse source
+variance12.4744 times bare feedback.546099, not stronger bare plus coupling.
+The next scientific question is a changed-rate/geometry response or matching
+overlap of these named emissions. A rate intervention changes the stationary
+law and projector as well as transition weights; the completed budget alone
+is not that derivative. First memory, R/T2 and triplet analyses are not pending.
 
 ### P267: use the completed amplitude comparison to define a physical response model
 
 Branch `62585f2` rejects one global A/E ray relative to four lineage rays. The N50 factorial resolves interaction at `236.756/4`; Draft `a09758e`, [response-ray report](../results/p267-response-ray/REPORT.md), now completes the amplitude-only comparison: best lambda `3.321708`, full four-coordinate residual `19.87177/3`, nominal p `.00018045`. A/E alone survives (`.19674/1`, p `.6574`), so the result is not a local E_top failure. The subsets are dependent retrospective diagnostics, not additional discoveries.
 
-**This geometry question has advanced:** open PR #484 `894b3d8` has acquired N100 at three moduli and completed both scalar-profile and full-p common finite-Jacobian tests. A alone admits empirical quantile transport, so the shared A/E response is the substantive restriction. Draft `d973a39` now completes the central/tail split with full aligned covariance. The central A area and E dipole are resolved even though the A dipole is not. **Next output:** transport this fixed moment vector across homothetic scale, or compare a separately calibrated core-only secant using existing histograms. The N400 design in #484 is not acquired data. No first N100 production, first window split or low-degree warp rerun is needed; N50's same-Smith impossibility remains a finite geometry fact, not a general block on modulus analysis.
+**This geometry question has advanced again:** PR #484 has acquired both N1002M and independent N4008M at three moduli. N400 common density transport is unresolved (3.90086/6, p=.69009), while its signed clock profile broadens. `fb1a944` shows96.895%±.507pp of that increase remains before canonicalization. The separate ordinary scalar-height target is weak; no recovery or resolved sign reversal follows. N900 has a frozen two-shape width plan/runner at the captured branch, not a verified completion or runtime. **Next handoff:** consume that existing campaign's eventual result with both shared-anchor and target covariance; do not assign another first N400, de-smoothing or N900 launch. The two-size quarter-power fingerprint is conditional, not an identified exponent; a two-shape width comparison does not measure three-shape transport.
 
 ### P334: use the completed physical cut network
 
 P429's earlier `2d47d72` cross-fit localized much clone dependence to pre-common H2, but the newer P334 archive changes the next action. Branch-only `6147e22` proves real-checkpoint nonclosure of the specified scalar tuple; saved safe-site counts recover successor H2 exactly, and frozen seed/counter/k0/period matrices reconstruct the microstate. Recording those quantities again would be calibration, not a new mechanism experiment.
 
-The completed [directional projection](../results/p334-fork-directional-allocation/REPORT.md), Draft `2b0844a`, leaves population direction response unresolved. Graph replay `1b5a9de`, triples and Draft `2e32fd0` capacity allocation are complete. Open PR #491 `ab90201` now explains the two selected N425 witnesses directly from occupied-cut incidence: two overlapping neutral-component bicliques in each case, W2 difference540=472+68 and c3=583/509. It also gives fixed-cut update closure for the stated embedded rank-one scope. **Next output:** a cut-invariant/covariant component-incidence/overlap population statistic or longer-horizon vertex-reliability prediction. Selected witness arithmetic is not a population H4 share, and the first cut construction is no longer missing.
+The completed [directional projection](../results/p334-fork-directional-allocation/REPORT.md), Draft `2b0844a`, leaves population direction response unresolved. PR #491 explains the cut, #492 supplies the complementary blocker, and `6358ba4` solves full physical clocks of the two selected N425 prefixes: pair-only gap10.1448 shrinks to full3.04640 without a hazard crossing. `7401c93` also gives conditional canonical K2 and suffix covariance. The later embedded-graph proof `705819e` supplies general parallel-terminal factorization and winning-channel derivatives, without assuming small treewidth. **Next output:** connect the full law to population directional structure and actual computational information gain, using the [archive and later-prefix crosswalk](../notes/context-reconciliation-p334-20260831c.md). First cuts, selected-witness higher-order clocks and first canonical averaging are completed inputs.
 
 ### P337/P439: transport the resolved F5 rows and identify matching loading
 
@@ -128,7 +139,7 @@ Open PR #438 at `bd2561a` has already constructed 192 labelled/41 D4-enriched st
 
 P334 production shows strong negative birth-age slopes at N325/N425. Recorded strict-birth geometry changes them by at most `7.80e-4`; branch `742a8b0` further finds `iota01=iota12=1` on every risk-set survivor and that the exact birth-site Smith class preserves more than `99.8%` of each slope. These are nested controls on the same paths. They remove recorded birth-local and site-pair explanations but do not distinguish intrinsic temporal memory from unrecorded current configuration.
 
-**Current-geometry status:** cheap-geometry, compact-bottleneck, graph, trigger and capacity analyses are complete. Open PR #491 now supplies physical cut labels and an update-closed vertex network. Population direction loading and longer-horizon continuation remain useful questions; first cut labels, broad proxy fits, replay and `b2` acquisition are not the next output.
+**Current-geometry status:** cheap geometry, bottlenecks, graph/trigger/capacity, the cut representation, full physical two-prefix clocks and canonical suffix averaging are complete. Population direction loading and the distribution of solvable-network cost remain useful questions; the source crosswalk also records later prefix work so that a first feasibility sample is not assigned twice.
 
 **Independent Hall output:** prove mixed corrected-reservoir orbit-Hall saturation for arbitrary HNF or expose its minimum-cut witness and carrier bound. Pure channels, mark-only, base-only and union-preserving switches are resolved failures; BA remains a separate concordance injection. Hall priority never blocks the current-geometry acquisition, and neither line licenses the other.
 
