@@ -1,35 +1,45 @@
-version: 5
-updated: 2026-08-29
+version: 6
+updated: 2026-08-31
 purpose: >
   Lightweight navigation/provenance index. Registry conflicts never block
-  science; claim strength lives in STATUS and priority lives in ROADMAP.
+  science. Current claim strength lives only in docs/STATUS.md and current
+  information-gain priority lives only in docs/ROADMAP.md.
 
 integration_policy:
   registry_conflicts_block_science: false
-  default_action: integrate_useful_asset_then_refresh_registry
+  default_action: preserve_asset_and_add_pointer
   claim_strength_source: docs/STATUS.md
   execution_priority_source: docs/ROADMAP.md
+  research_map_source: docs/RESEARCH-MAP.md
   hard_constraints_source: GOVERNANCE.md
+  cleanup_audit_source: docs/CLEANUP-20260831.md
 
 canonical_documents:
   - {path: README.md, status: canonical_current, role: external_overview}
-  - {path: docs/STATUS.md, status: canonical_current, role: claim_ledger}
-  - {path: docs/RESEARCH-MAP.md, status: canonical_current, role: research_navigation}
-  - {path: notes/SYNTHESIS-20260828.md, status: canonical_current, role: execution_synthesis}
+  - {path: docs/STATUS.md, status: canonical_current, role: sole_current_claim_ledger}
   - {path: docs/ROADMAP.md, status: canonical_current, role: information_gain_priorities}
-  - {path: analysis/research_ledger.yaml, status: canonical_current, role: compact_research_ledger}
+  - {path: docs/RESEARCH-MAP.md, status: canonical_current, role: durable_research_navigation}
+  - {path: docs/CLEANUP-20260831.md, status: canonical_audit, role: issue_pr_cleanup_and_evidence_dedup}
+  - {path: analysis/research_ledger.yaml, status: canonical_current, role: compact_research_decision_ledger}
   - {path: analysis/artifact_registry.yaml, status: canonical_current, role: artifact_index}
   - {path: analysis/evidence_ledger_manifest.yaml, status: canonical_current, role: predictive_evidence_manifest}
   - {path: results/evidence-ledger/latest.md, status: canonical_current, role: primary_only_evidence_view}
   - {path: REPRODUCIBILITY.md, status: canonical_current, role: provenance_contract}
-  - {path: GOVERNANCE.md, status: canonical_current, role: permissive_execution_policy}
+  - {path: GOVERNANCE.md, status: canonical_current, role: exploratory_execution_policy}
+
+historical_navigation:
+  - {path: notes/SYNTHESIS-20260828.md, status: historical_snapshot, role: prior_execution_synthesis}
+  - {pattern: docs/NEXT-TARGETS.md, status: branch_only_historical, role: not_current_authority}
+  - {pr: 527, head_sha: 72fc797a75cd8d6488556a368e7a048529c69759, status: absorbed_decision_doc, role: M0_M1_M2_and_hard_stop_absorbed_into_STATUS_ROADMAP}
+  - {pr: 509, head_sha: 0820b8d203e2dc534bb883d6fdb4d6d1e0acb11f, status: archive_pointer, role: large_discovery_archive_not_merge_unit}
+  - {pr: 267, head_sha: dd48177340f169c18cd1fc9217101b54090e1e3a, status: archive_pointer, role: large_research_archive_not_merge_unit}
 
 frozen_predictions:
   - {path: predictions/two_spin4_heldout_20260828.yaml, status: frozen_prediction, issue: 43, role: N185_N265_targets}
   - {path: predictions/p49_slope_two_sector_145_290_20260828.yaml, status: frozen_prediction, issue: 50, role: completed_N290_slope_root_correction}
   - {path: predictions/gaussian_norm5_harmonic_discrimination_20260828.yaml, status: frozen_prediction, issue: 57, role: completed_norm5_harmonic_targets}
-  - {path: predictions/norm4_two_generator_transfer_20260829.yaml, status: frozen_prediction, issue: 154, role: norm4_q2_Jordan_transfer}
-  - {path: predictions/norm5_conjugate_coalescence_20260829.yaml, status: frozen_prediction, issue: 205, role: same_N_H4_quotient_control}
+  - {path: predictions/norm4_two_generator_transfer_20260829.yaml, status: frozen_prediction, issue: 154, role: historical_norm4_q2_Jordan_transfer}
+  - {path: predictions/norm5_conjugate_coalescence_20260829.yaml, status: frozen_prediction, issue: 205, role: completed_same_N_H4_quotient_control}
   - {path: predictions/q4_jordan_log_slope_shape_20260829.json, status: frozen_prediction, issue: 216, role: Q4_Jordan_shape}
   - {path: predictions/hexagonal_degree2_hecke_20260829.json, status: frozen_prediction, issue: 164, role: scalar_cancelled_modular_projector}
   - {path: predictions/p159_norm2_character_discriminator_20260829.yaml, status: frozen_prediction, issue: 156, role: primitive_norm2_generation1_hierarchy}
@@ -37,6 +47,44 @@ frozen_predictions:
   - {path: predictions/p231_pinson_arguin_kdv_oracles_20260829.json, status: frozen_prediction, issue: 231, role: vacuum_KdV_geometry_oracle}
   - {path: predictions/c4_self_matching_n26_beta_targets_20260828.json, status: frozen_prediction, issue: 115, role: completed_N26_targets}
   - {path: predictions/wrapping_channel_audit_20260828.json, status: frozen_prediction, issue: 146, role: semantic_map_audit}
+
+current_decision_assets:
+  - id: P334_FULL_BIRTH_ARCHIVE
+    issue: 334
+    sha: 9c495ab13e65f2bc93dc0849ee3b73f88724c4b1
+    path: results/p334-full-birth-archive
+    status: discovery_archive
+    independent_primary: false
+  - id: P334_INDEPENDENT_INTERVENTION_FREEZE
+    issue: 334
+    sha: bc0a18c207e3b09f49ea6b6af6601471114d654a
+    path: notes/p334-independent-intervention-freeze.md
+    status: frozen_future_validation
+    independent_primary: true
+  - id: P154_LAGGED_SOURCE
+    issue: 154
+    sha: dd48177340f169c18cd1fc9217101b54090e1e3a
+    path: results/norm4-lagged-source/REPORT.md
+    status: retrospective_discovery
+    independent_primary: false
+  - id: P154_NORM4_FROZEN_RESULT
+    issue: 154
+    sha: 8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc
+    path: pull/273
+    status: frozen_finite_size_result
+    independent_primary: true
+  - id: P154_GENERATION4
+    issue: 154
+    sha: 3e855ced4fd98d8979c0b712636b45c2fa54f969
+    path: results/server-20260829/P154-norm4-generation4-pilot
+    status: frozen_target_result
+    independent_primary: true
+  - id: P439_SAME_STREAM_CROSSWALK
+    issue: 439
+    sha: bfbceb24f4072e5fd2025a2cecb344014adbd9d8
+    path: pull/451
+    status: completed_existing_data_analysis
+    independent_primary: false
 
 continuum_controls:
   - {path: predictions/p156_pinson_arguin_baselines_20260829.json, status: continuum_baseline, issue: 156, role: primitive_homology_sector_values}
@@ -55,19 +103,45 @@ evidence_archives:
   - {id: N26_BETA, path: results/local-20260828/P115-n26-self-matching-exact, status: negative_result, role: exact_Beta_failure}
   - {id: GAUSSIAN_COVER_SELECTION_RULE, path: results/exact-cover-character-oracles/norm2_selection_rule.json, status: immutable_result, role: exact_deck_character_linear_null_and_allowed_channels}
 
-topic_derivations:
-  - {path: notes/pivotal-russo-finite-volume.md, status: topic_derivation, role: pivotal_identity}
-  - {path: notes/post-n290-two-generator-thermal-transfer.md, status: topic_derivation, role: non_scalar_thermal_transfer}
-  - {path: notes/q4-jordan-log-slope-shape.md, status: topic_derivation, role: Q4_Jordan_shape}
-  - {path: notes/hexagonal-degree2-hecke-fingerprint.md, status: topic_derivation, role: modular_phase_projector}
-  - {path: notes/gaussian-cover-fiber-character-rg.md, status: topic_derivation, role: exact_cover_character_selection_rule}
-  - {path: notes/p156-norm2-generation2.md, status: topic_derivation, role: primitive_second_generation}
-  - {path: notes/p231-vacuum-kdv-sector-response.md, status: topic_derivation, role: primitive_vacuum_KdV}
-  - {path: notes/p225-multiradius-pivotal-prototype.md, status: topic_derivation, role: local_multiradius_negative}
+# Every pre-cleanup open status:unmerged-asset is classified here. A pointer
+# preserves provenance without making the branch a current execution queue.
+unmerged_assets:
+  - {pr: 509, head_sha: 0820b8d203e2dc534bb883d6fdb4d6d1e0acb11f, classification: ARCHIVE_POINTER, state_after_cleanup: open, role: discovery_archive}
+  - {pr: 267, head_sha: dd48177340f169c18cd1fc9217101b54090e1e3a, classification: ARCHIVE_POINTER, state_after_cleanup: open, role: research_archive}
+  - {pr: 492, head_sha: 0e52dbaeed53dfffa94592e53e38129c179c5078, classification: ARCHIVE_POINTER, state_after_cleanup: open, role: P334_selected_checkpoint_exact_control}
+  - {pr: 491, head_sha: ab90201e88409310632812727e0138c56b455644, classification: ARCHIVE_POINTER, state_after_cleanup: open, role: P334_cut_network_exact_control}
+  - {pr: 485, head_sha: b454bb8ec04ad90a2db579efaf6285e59d6ba5aa, classification: ARCHIVE_POINTER, state_after_cleanup: open, role: N100_same_raw_shape_analysis}
+  - {pr: 484, head_sha: 5f30397c5ba277fb0799fb2f7491c823de07a13d, classification: ARCHIVE_POINTER, state_after_cleanup: open, role: N100_N400_N900_shape_archive}
+  - {pr: 451, head_sha: bfbceb24f4072e5fd2025a2cecb344014adbd9d8, classification: CLOSE_SUPERSEDED, state_after_cleanup: closed, role: P439_crosswalk_absorbed_into_transmission}
+  - {pr: 438, head_sha: bd2561abd889b7360178616467422e31ad91c838, classification: ARCHIVE_POINTER, state_after_cleanup: open, role: W5_exact_wiring}
+  - {pr: 435, head_sha: ffd91ebd819f7893cbee84aeb3f40da14a700a7b, classification: ARCHIVE_POINTER, state_after_cleanup: open, role: finite_branching_control}
+  - {pr: 417, head_sha: 5e047117de37724c8aa1cb56b3818a8018def13f, classification: ARCHIVE_POINTER, state_after_cleanup: open, role: finite_predictive_state_controls}
+  - {pr: 416, head_sha: e105b00636a07cfe5c650f80ffe34f8cfc10ba81, classification: ARCHIVE_POINTER, state_after_cleanup: open, role: P250_finite_spatial_spectrum}
+  - {pr: 415, head_sha: d09f9252dd18de497ab88bd30e92101813432a81, classification: ARCHIVE_POINTER, state_after_cleanup: open, role: finite_cooperative_continuation}
+  - {pr: 385, head_sha: b5c761a05019f33b5528ecb9c4aa6a18006e71c1, classification: ARCHIVE_POINTER, state_after_cleanup: open, role: conditional_identifiability_controls}
+  - {pr: 277, head_sha: 3e855ced4fd98d8979c0b712636b45c2fa54f969, classification: ARCHIVE_POINTER, state_after_cleanup: open, role: norm4_generation4}
+  - {pr: 273, head_sha: 8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc, classification: ARCHIVE_POINTER, state_after_cleanup: open, role: norm4_frozen_q2_Jordan_result}
+  - {pr: 247, head_sha: 9d35fa65de5bd4c81321751024dc8007dc329a87, classification: ARCHIVE_POINTER, state_after_cleanup: open, role: norm5_multiradius_result}
+  - {pr: 246, head_sha: 7f9dcd88eb14cf89dce499902953ade1c57abcb7, classification: ARCHIVE_POINTER, state_after_cleanup: open, role: triangular_energy_logpair}
+  - {pr: 245, head_sha: c7eddeb53879182287de4c555fad4312249f5ee9, classification: ARCHIVE_POINTER, state_after_cleanup: open, role: Boolean_noise_exact_controls}
+  - {pr: 230, head_sha: 9858eac23e3c8b568c8661684f22d5ea02704fc8, classification: ARCHIVE_POINTER, state_after_cleanup: open, role: multi_u_template}
+  - {pr: 229, head_sha: 83a14f3d74295fc9218fdd5be4905980dd40742e, classification: ARCHIVE_POINTER, state_after_cleanup: open, role: finite_defect_polynomial}
+  - {pr: 228, head_sha: 9ab422978e380d96516760014582ad7bf17a02b5, classification: ARCHIVE_POINTER, state_after_cleanup: open, role: finite_Galois_certificates}
+  - {pr: 197, head_sha: bf31f18429f2ef929fdc385e4efe0a2e4a726e42, classification: ARCHIVE_POINTER, state_after_cleanup: open, role: local_zero_negative_route}
+  - {pr: 196, head_sha: 4ebfc91753e9569983b0a40b8d3eeefdeac0b172, classification: ARCHIVE_POINTER, state_after_cleanup: open, role: finite_Euler_Betti_identity}
+  - {pr: 84, head_sha: 6a049b764658bc15956ae83f704c85e1d36ff660, classification: ARCHIVE_POINTER, state_after_cleanup: open, role: axis_L5_exact_history}
 
-historical_protocols:
-  - {path: experiments/server_compute_queue.yaml, status: historical, role: original_server_queue}
-  - {path: experiments/p50_n145_n290_fullcurve_20260829.yaml, status: historical, role: completed_N290_plan}
+absorbed_docs_prs:
+  - {pr: 527, head_sha: 72fc797a75cd8d6488556a368e7a048529c69759, classification: SQUASH_DOCS, state_after_cleanup: closed, absorbed_into: [docs/STATUS.md, docs/ROADMAP.md, docs/RESEARCH-MAP.md]}
+
+same_day_exact_pipeline_history:
+  - {pr: 520, head_sha: f9fbc388464e94e91b5a6e85ef4022a4b5ca858f, status: merged, role: degree3_Jacobsen_bounded_exclusion}
+  - {pr: 521, head_sha: a161724b950abf6444d72011f0a9d1c050adb735, status: merged, role: degree3_Mertens_pmed_bounded_exclusion}
+  - {pr: 522, head_sha: bc3e6f358c8a1d410550223fbcff862b1a1b8149, status: merged, role: degree3_Mertens_pcell_bounded_exclusion}
+  - {pr: 523, head_sha: 2834c0e67ab77b670e77fcf42665dcc25848fb47, status: merged, role: degree3_YangZhou_bounded_exclusion}
+  - {pr: 524, head_sha: 87bad129cbe6038f814ccd89f04582bce61b7b27, status: merged, role: degree4_Jacobsen_bounded_exclusion}
+  - {pr: 525, head_sha: 6100982f2fe3eaf6a23ae8e7532cc1055e32a9e2, status: merged, role: degree4_Mertens_pmed_census}
+  - {pr: 526, head_sha: b243347fbf5bad7300f22c8278177282e99125b1, status: merged, role: degree4_Mertens_pcell_census}
 
 channel_semantics:
   implementation: scripts/wrapping_channels.py
@@ -76,50 +150,13 @@ channel_semantics:
   fullcurve_norm5_entrypoint: scripts/score_intrinsic_functional_cocycle_typed.py
   required_fields: [topology_channel, combination, probability_coordinate, orientation_order, normalization, quantity]
 
-frontier_open_as_of_2026_08_29:
-  - {pr: 246, state: frontier, classification: parallel_exact_protocol, role: triangular_energy_logpair_statistics}
-  - {pr: 245, state: frontier, classification: parallel_exact_protocol, role: Boolean_noise_semigroup_oracle}
-  - {pr: 230, state: frontier, classification: analysis_template, role: multi_u_response}
-  - {pr: 229, state: frontier, classification: exact_side_result, role: matching_defect_polynomial}
-  - {pr: 228, state: frontier, classification: exact_side_result, role: finite_Galois_certificates}
-  - {pr: 197, state: frontier, classification: negative_result_extract, role: local_matching_zeros}
-  - {pr: 196, state: frontier, classification: exact_side_result, role: Euler_Betti_identity}
-  - {pr: 84, state: frontier, classification: exact_side_result, role: axis_L5_Galois_frontier}
+historical_protocols:
+  - {path: experiments/server_compute_queue.yaml, status: historical, role: original_server_queue}
+  - {path: experiments/p50_n145_n290_fullcurve_20260829.yaml, status: historical, role: completed_N290_plan}
 
-canonical_integration_history:
-  - {pr: 190, role: prospective_norm5_reveal}
-  - {pr: 195, role: P50_execution_repairs}
-  - {pr: 199, role: N145_N290_fullcurve_result}
-  - {pr: 194, role: norm5_thermal_jet_score}
-  - {pr: 221, role: independent_matching_odd_synthesis}
-  - {pr: 204, role: norm4_two_generator_pilot_and_plan}
-  - {pr: 207, role: same_N_norm5_coalescence_freeze}
-  - {pr: 209, role: pivotal_normalization}
-  - {pr: 211, role: local_landing_marked_H4}
-  - {pr: 208, role: self_matching_tangent_rank_test}
-  - {pr: 219, role: local_odd_tangent_oracle}
-  - {pr: 224, role: largeN_local_tangent_stop}
-  - {pr: 210, role: neutral_area_covector}
-  - {pr: 213, role: general_tau_primitive_baseline}
-  - {pr: 222, role: primitive_C3_pilot}
-  - {pr: 235, role: primitive_Pell_phase_gate}
-  - {pr: 238, role: primitive_norm2_generation1}
-  - {pr: 243, role: primitive_norm2_generation2}
-  - {pr: 236, role: intrinsic_quantile_heldout}
-  - {pr: 217, role: Q4_Jordan_inheritance}
-  - {pr: 232, role: Q4_Jordan_shape}
-  - {pr: 240, role: multiradius_small_torus_stop}
-
-manual_integrations:
-  - {pr: 223, role: hexagonal_degree2_Hecke_unique_assets}
-  - {pr: 237, role: prereveal_primitive_norm2_freeze}
-  - {pr: 239, role: Gaussian_cover_character_oracle}
-  - {pr: 241, role: vacuum_KdV_unique_assets}
-
-superseded_active_paths_closed:
-  - {pr: 202, superseded_by: 204}
-  - {pr: 198, superseded_by: 236}
-  - {pr: 223, superseded_by: manual_integrations}
-  - {pr: 237, superseded_by: manual_integrations}
-  - {pr: 239, superseded_by: manual_integrations}
-  - {pr: 241, superseded_by: manual_integrations}
+maintenance_rules:
+  - keep_frozen_prediction_entries_immutable
+  - keep_raw_result_history_immutable
+  - archive_pointer_does_not_mean_current_priority
+  - closed_issue_or_PR_does_not_delete_commit_provenance
+  - branch_local_navigation_does_not_override_STATUS
