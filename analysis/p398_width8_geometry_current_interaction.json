@@ -1,0 +1,16 @@
+{
+  "schema":"matching-one/p398-width8-geometry-current-interaction/v1",
+  "parent":"9339fe7053e7edb9573431eb8dc254be91bfb388",
+  "question":"Does the previously selected T4 geometry improvement survive deletion of stationary current?",
+  "fixed_spans":["pair_hierarchy","triplet_incidence","triplet_incidence_plus_T4"],
+  "exact_dimensions_per_ray":[5,7,8],
+  "basis_rule":"Reuse the archived exact independent named columns; same stationary-L2 orthogonal span for G and S, no rank reselection",
+  "counterfactual_projection":"B=P^* (-G) P in stationary-whitened coordinates; B_rev=(B+B^*)/2=P^* (-S) P",
+  "references":"Each process uses its own full reference from the completed stationary-current deletion score",
+  "distances":[0.05,0.1,0.25,0.5,1.0,2.0,4.0],
+  "primary_tail_distances":[2.0,4.0],
+  "crossing_bracket":[0.05,1.0],
+  "interaction":"For every metric e=compressed/full-1, (e8-e7)_G-(e8-e7)_S; also report abs(e7)-abs(e8) improvement separately for both processes",
+  "not_claimed":"A Galerkin projection is not a new Markov state chain; a nonlinear output difference is not an additive microscopic attribution",
+  "forbidden":["new geometry candidate","lag or source changes","lambda scan","new MC","new width","server operation","broad tests"]
+}
