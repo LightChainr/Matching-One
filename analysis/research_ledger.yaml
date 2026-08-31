@@ -1,4 +1,4 @@
-version: 32
+version: 33
 updated: 2026-08-31
 scientific_main_snapshot_commit: e30060995a9eb5c4d93f565ae09af4f54a56270f
 observed_remote_main_snapshot_commit: 2ee16678b64a065d6d235ef69941c8a46f3a3878
@@ -13,6 +13,8 @@ purpose: >
 canonical_views:
   overview: README.md
   next_targets: docs/NEXT-TARGETS.md
+  team_coordination: docs/TEAM-COORDINATION.md
+  team_handoff: analysis/team_coordination.yaml
   claim_ledger: docs/STATUS.md
   research_map: docs/RESEARCH-MAP.md
   repository_context: docs/REPOSITORY-CONTEXT.md
@@ -174,6 +176,27 @@ observer_sectors:
     semantic_boundary: exact_zero_conditional_mean_does_not_certify_covariance_gain_causality_or_threshold_origin
 
 branch_sources:
+  - id: SRC_P334_COMMON_LABEL_ENSEMBLE_RESPONSE
+    integration_status: branch_only
+    ref: analysis/p334-paired-clock-loading-20260831
+    commit: a5c39de35bc141f68ca1cc5e68ec134158f4bfec
+    result_status: completed_common_label_response_ensemble_rank_and_scientific_synthesis
+    paths: [notes/p334-common-label-response-rank.md, results/p334-common-label-euler-tangent/score.json, results/p334-common-label-euler-tangent/signed_birth_histograms.json, results/p334-common-label-response-rank/score.json]
+    claim_boundary: near_diagonal_two_control_mean_response_not_within_prefix_rank_or_native_H4_field_assignment_discussion_in_PR267_is_not_code_integration
+  - id: SRC_P334_COMMON_LABEL_THERMAL_CURVES
+    integration_status: branch_only
+    ref: dcd63ace69eebbe80591e332a26830ca70560a85
+    commit: dcd63ace69eebbe80591e332a26830ca70560a85
+    result_status: completed_linear_full_p_response_and_descriptive_lobe_areas
+    paths: [notes/p334-paired-euler-thermal-response.md, results/p334-paired-euler-thermal-response/score.json, results/p334-paired-euler-thermal-response/thermal_curve.csv]
+    claim_boundary: N425_E_opposite_sign_thermal_features_can_cancel_in_integral_pointwise_exploratory_errors_no_equally_resolved_N325_early_lobe_or_finite_strength_result
+  - id: SRC_P334_COMMON_LABEL_JOINT_COVARIANCE
+    integration_status: branch_only
+    ref: b582015e64e2d8a59e591c4822b14dedaea58b0f
+    commit: b582015e64e2d8a59e591c4822b14dedaea58b0f
+    result_status: completed_16948_coordinate_common_factor_per_size_original20_batches
+    paths: [notes/p334-common-label-tangent-joint.md, results/p334-common-label-tangent-joint/score.json, results/p334-common-label-tangent-joint/N325.complete_common_factor.json.gz, results/p334-common-label-tangent-joint/N425.complete_common_factor.json.gz]
+    claim_boundary: all_derived_common_policy_thermal_and_rank_views_share_original_prefix_samples_not_independent_evidence
   - id: SRC_MAIN_TERMINAL_SERIAL_REVERSAL_20260831
     integration_status: main_integrated
     pr: 465
@@ -3528,6 +3551,30 @@ branch_sources:
     claim_boundary: finite_exact_algebra_support_merged_by_other_workflows_not_new_physical_production_covariance_W5_bound_or_a_reason_to_repeat_readiness_work_the_initial_capture_open_state_for493_to497_is_historical
 
 scientific_nodes:
+  - id: SN_P334_COMMON_LABEL_RESPONSE_DIMENSION
+    title: common_label_source_parity_ensemble_rank_and_thermal_redistribution
+    integration_status: branch_only
+    state: microscopic_threshold_structure
+    sources: [bernoulli_thermal, rank_birth_geometric_tilt]
+    observer_sectors: [global_rank_projector, topology_typed, direction_character]
+    geometries: [gaussian_cover, square_controls]
+    acquisition: [existing_data_reuse]
+    source_refs: [SRC_P334_COMMON_LABEL_ENSEMBLE_RESPONSE, SRC_P334_COMMON_LABEL_THERMAL_CURVES, SRC_P334_COMMON_LABEL_JOINT_COVARIANCE]
+    known_result: plus_to_mean_and_minus_to_direction_responses_are_resolved_mean_orientation_Jacobian_is_near_diagonal_with_positive_resolved_ensemble_A_determinants_and_N425_E_opposite_sign_thermal_lobes_nearly_cancel_in_integral
+    ensemble_A_determinants_at_p_ref:
+      - {N: 325, estimate: 1.22719e-8, standard_error: 4.07190e-9}
+      - {N: 425, estimate: 1.55912e-8, standard_error: 4.69216e-9}
+    boundary: det_of_mean_J_is_not_mean_of_prefix_det_or_local_rank_input_parity_is_imposed_source_not_unperturbed_H4_and_E_is_a_topological_readout_not_energy_field
+    supports: [two_mean_response_directions_in_instantaneously_rank_Euler_invisible_source_space, finite_thermal_redistribution_hidden_by_small_integral]
+    tensions: [single_fixed_ensemble_response_vector, interpreting_small_integral_as_no_response]
+    excludes_only: [common_label_two_control_response_constrained_to_one_fixed_ensemble_vector_in_the_measured_finite_scope]
+    reusable_data_refs: [results/p334-common-label-euler-tangent/signed_birth_histograms.json, results/p334-common-label-response-rank/score.json, results/p334-common-label-tangent-joint/score.json, results/p334-paired-euler-thermal-response/thermal_curve.csv]
+    dependency_group_refs: [p334-common-label-e32a8593-shared-prefixes]
+    missing_inputs: [within_prefix_distinct_quartet_det_and_det_squared, finite_positive_tilt_response, thermal_dipole_age_moments]
+    next_discriminator: consume_PR509_same_prefix_Ustatistics_and_finite_t_plusminus1_outputs_then_execution_thermal_dipole_not_repeat_ensemble_rank_full_curve_or_first_covariance_assembly
+    information_gain: very_high
+    compute_cost: low
+    decision_experiments: [DX_P429_SUCCESSOR_STATE]
   - id: SN_DIGITAL_ALEXANDER_RANK_BALANCE
     title: digital_Alexander_ambient_rank_balance
     integration_status: main_integrated
@@ -5949,6 +5996,21 @@ scientific_nodes:
     decision_experiments: [DX_ETOP_TAU_TOPOLOGY_MAP]
 
 dependency_groups:
+  - id: p334-common-label-e32a8593-shared-prefixes
+    kind: same_original_paired_prefix_archive_with_correlated_source_and_thermal_views
+    member_sizes: [325, 425]
+    source_commit: e32a85939279b8574278024d647b56d2d1485247
+    contact_commit: 959a7fa26677c416b874d272f1ba66523fb38f73
+    source_ref: SRC_P334_COMMON_LABEL_ENSEMBLE_RESPONSE
+    derived_source_refs: [SRC_P334_COMMON_LABEL_THERMAL_CURVES, SRC_P334_COMMON_LABEL_JOINT_COVARIANCE]
+    prefixes_per_size: 20000
+    original_batches_per_size: 20
+    batch_id_range_inclusive: [0, 19]
+    metadata_paths: [results/p334-common-label-euler-tangent/score.json, results/p334-common-label-tangent-joint/score.json]
+    path_source_refs:
+      results/p334-common-label-euler-tangent/score.json: SRC_P334_COMMON_LABEL_ENSEMBLE_RESPONSE
+      results/p334-common-label-tangent-joint/score.json: SRC_P334_COMMON_LABEL_JOINT_COVARIANCE
+    covariance_rule: use_b582015e_common_factor_with16948_coordinates_per_N_append_new_same_prefix_and_finite_source_batch_coordinates_without_independent_evidence_addition
   - id: N100_three_modulus_seed20260831125401_offset267100000000
     kind: open_pr_fresh_three_shape_paired_production_with_same_stream_retrospective_readouts
     member_sizes: [100]
@@ -6845,9 +6907,12 @@ decision_experiments:
     decision_output: require_each_width_mechanism_to_predict_joint_area_center_and_dewidthed_shape_with_shared_covariance_using_saved_moments_histograms_and_completed_shape_results_not_first_N900_first_shape_another_free_exponent_or_automatic_more_samples
   - id: DX_P429_SUCCESSOR_STATE
     attention_rank: 4
-    name: population_or_geometry_loading_after_completed_full_clock_channel_and_marked_laws
-    status: full_clock_race_all147_canonical_noise_and_uniform_blockade_mean_semigroup_are_completed_mean_blockade_is_clock_closed_spatial_response_variance_and_final_site_collision_remain_geometric_discriminators
-    completed_followup_source_refs: [SRC_PR484_P334_UNIFORM_BLOCKADE_SEMIGROUP]
+    name: within_prefix_response_dimension_finite_source_and_thermal_redistribution_after_ensemble_rank
+    status: completed_common_label_response_near_diagonal_ensemble_rank_full_thermal_curves_and_common_covariance_PR509_reports_local_rank_and_finite_source_in_progress
+    completed_followup_source_refs: [SRC_PR484_P334_UNIFORM_BLOCKADE_SEMIGROUP, SRC_P334_COMMON_LABEL_ENSEMBLE_RESPONSE, SRC_P334_COMMON_LABEL_THERMAL_CURVES, SRC_P334_COMMON_LABEL_JOINT_COVARIANCE]
+    completed_followup_scientific_node_refs: [SN_P334_COMMON_LABEL_RESPONSE_DIMENSION]
+    completed_followup_dependency_group_refs: [p334-common-label-e32a8593-shared-prefixes]
+    execution_handoff: analysis/team_coordination.yaml
     scientific_node_refs: [SN_P334_BRANCHING_CONTINUATION, SN_P334_BIRTH_AGE_COLLISION, SN_P334_COOPERATIVE_CONTINUATION_STATE, SN_P334_REAL_SCALAR_NONCLOSURE_DIRECTIONAL_SPLIT, SN_P334_GENERAL_TWO_PORT_AND_COMPLETION_RACES]
     observer_sector_refs: [rank_birth_local, projective_completion, topology_typed]
     source_refs: [SRC_P429_BRANCHING_CONTINUATION, SRC_PR267_P429_COMMON_SAFE_REANALYSIS, SRC_P401_COOPERATIVE_CONTINUATION_EXACT, SRC_P334_COOPERATIVE_PRODUCTION_SCALAR_NONCLOSURE, SRC_PR267_P334_FORK_DIRECTIONAL_ALLOCATION, SRC_P334_TRIGGER_GRAPH_CAPACITY, SRC_PR267_P334_TRIGGER_CAPACITY_ALLOCATION, SRC_PR491_P487_CUT_NETWORK_MECHANISM, SRC_P334_CONTRACTED_FULL_CLOCK, SRC_P334_CONDITIONAL_THERMAL_AVERAGING, SRC_PR492_P429_DUAL_CYCLE_BLOCKER, SRC_PR484_P334_GENERAL_TWO_PORT_THEOREM, SRC_P334_TWELVE_PREFIX_CLOCKS, SRC_P334_COMPONENT_BIRTH_RACE, SRC_P334_EXACT_MARKED_BIRTH, SRC_P334_ALL147_PREFIX_CLOCKS, SRC_P334_147_PREFIX_NOISE_MIXTURE, SRC_P334_TWELVE_CANONICAL_CROSSINGS, SRC_PR484_P334_LOG_TIME_RACE]
@@ -6855,7 +6920,7 @@ decision_experiments:
     acquisition: existing_data_reuse
     expected_model_space_reduction: very_high
     compute_cost: moderate
-    decision_output: use_spatial_conditional_blockade_response_variance_or_final_site_collision_with_paired_or_stratum_weighted_loading_not_finer_unmarked_mean_dose_curves_first_blockade_semigroup_or_repeated_complete_clock_calculation
+    decision_output: distinguish_local_response_rank_from_ensemble_mixing_via_same_prefix_det_and_det_squared_then_finite_positive_tilt_and_thermal_dipole_age_moments_retain_spatial_response_variance_as_parallel_discriminator_no_repeat_full_curve_ensemble_rank_or_covariance_assembly
   - id: DX_P337_LINE_TYPED_OBSERVER
     attention_rank: 5
     name: cross_geometry_common_matching_loading_of_the_resolved_F5_line_source

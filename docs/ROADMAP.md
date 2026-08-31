@@ -147,6 +147,17 @@ Branch `62585f2` rejects one global A/E ray relative to four lineage rays. The N
 
 ### P334: use the completed physical cut network
 
+**Current follow-up has advanced to a common-policy response experiment.**
+Execution's branch-only `a5c39de3` now resolves source-even mean / source-odd
+direction responses and an almost diagonal rank2 ensemble Jacobian. Its completed
+N425 E curve has opposite-sign thermal lobes with a nearly cancelling integral.
+[The three-team handoff](TEAM-COORDINATION.md) therefore routes attention to
+same-prefix det/det² and finite positive t=±1 responses (俯瞰, in progress), plus
+thermal-dipole/age moments (执行, proposed). These reuse the existing paired
+prefixes and common covariance, without repeating the first response matrix or
+full curve. Ensemble rank and imposed source parity do not identify local field
+count or the unperturbed global H4 mechanism.
+
 P429's earlier `2d47d72` cross-fit localized much clone dependence to pre-common H2, but the newer P334 archive changes the next action. Branch-only `6147e22` proves real-checkpoint nonclosure of the specified scalar tuple; saved safe-site counts recover successor H2 exactly, and frozen seed/counter/k0/period matrices reconstruct the microstate. Recording those quantities again would be calibration, not a new mechanism experiment.
 
 The completed [directional projection](../results/p334-fork-directional-allocation/REPORT.md), Draft `2b0844a`, leaves population direction response unresolved. PR #491 explains the cut, #492 supplies the complementary blocker, and `6358ba4` solves full physical clocks of the two selected N425 prefixes: pair-only gap10.1448 shrinks to full3.04640 without a hazard crossing. `7401c93` also gives conditional canonical K2 and suffix covariance. The later embedded-graph proof `705819e` supplies general parallel-terminal factorization and winning-channel derivatives, without assuming small treewidth. **Next output:** connect the full law to population directional structure and actual computational information gain, using the [archive and later-prefix crosswalk](../notes/context-reconciliation-p334-20260831c.md). First cuts, selected-witness higher-order clocks and first canonical averaging are completed inputs.

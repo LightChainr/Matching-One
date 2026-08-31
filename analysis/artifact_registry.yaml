@@ -1,4 +1,4 @@
-version: 32
+version: 33
 updated: 2026-08-31
 purpose: >
   Lightweight navigation/provenance index. Registry conflicts never block
@@ -66,6 +66,8 @@ integration_policy:
 
 canonical_documents:
   - {path: README.md, status: canonical_current, role: external_overview}
+  - {path: docs/TEAM-COORDINATION.md, status: canonical_current, role: three_team_result_routing_and_nonexclusive_compute_handoff}
+  - {path: analysis/team_coordination.yaml, status: canonical_current, role: timestamped_sources_dependencies_and_reported_execution_states_not_live_monitor}
   - {path: docs/REPOSITORY-CONTEXT.md, status: canonical_current, role: full_discussion_recovery_and_completed_vs_remaining_crosswalk}
   - {path: docs/ISSUE-PR-INDEX.md, status: dated_snapshot, role: complete_464_item_navigation_without_task_state_changes}
   - {path: analysis/github_context_inventory.json, status: dated_snapshot, role: exact_PR_heads_discussion_hashes_and_file_overlap_not_merge_recommendations}

@@ -1,0 +1,148 @@
+schema: matching-one.team-coordination.v1
+updated_at: '2026-08-31T09:58:32Z'
+canonical_entry: docs/TEAM-COORDINATION.md
+attention_board: docs/NEXT-TARGETS.md
+purpose: scientific_result_routing_and_duplicate_compute_avoidance_not_permissions
+status_boundary: team_reported_execution_snapshot_not_live_process_monitor
+policy:
+  parallel_work: true
+  exclusive_task_locks: false
+  prior_approval_required: false
+  issue_lifecycle_changes: false
+  automatic_merge: false
+  shared_worktree_edits: false
+  communication: brief_notice_for_actual_overlap_or_compute_change_and_result_handoff
+teams:
+  - name: 数学研究执行
+    role: finite_mechanism_execution_and_same_source_covariance_handoff
+    completed: [p334_common_label_response_rank_thermal]
+    proposed: [p334_thermal_dipole_age_moments]
+    reported_compute: local_only_no_cloud_job_or_tunnel
+  - name: 数学研究总览
+    role: shared_scientific_map_next_discriminator_and_cross_team_result_integration
+    pr: 267
+    branch: research/navigation-priority-refresh-20260829
+    completed: [norm4_conditional_line_fixed_k]
+    active: [absorb_execution_p334_results_and_publish_shared_handoff]
+    reported_compute: local_only_no_server_operations
+  - name: 数学研究俯瞰
+    role: complementary_mechanism_analyses_and_compute_delivery
+    pr: 509
+    branch: research/results-first-synthesis-20260831
+    active: [p154_soft_angular_bridge, p334_within_prefix_rank, p398_linear_response, p334_finite_source]
+github_snapshot:
+  observed_at: '2026-08-31T09:58:32Z'
+  pr267: {state: OPEN, is_draft: true, head: 7ebaa4bc8c44bf214b62fd8dc1dc87a2efd47b2a}
+  pr509: {state: OPEN, is_draft: true, head: 9690d7c1b9bcb19af3fb67b9c0bf5dc16bd5ef12}
+  execution_branch_prs: []
+  boundary: historical_pre_delivery_heads_not_a_claim_that_pending_outputs_are_committed
+sources:
+  norm4_line_fixed_k:
+    integration_status: open_pr
+    pr: 267
+    commit: d2a3f445abcb99f9a21bc7b5cd70b5a22e6a77c7
+    paths: [results/norm4-source-line/REPORT.md, results/norm4-source-line/latest.json, results/norm4-source-line-fixed-k/REPORT.md, results/norm4-source-line-fixed-k/latest.json]
+  p334_synthesis:
+    integration_status: branch_only
+    branch: analysis/p334-paired-clock-loading-20260831
+    commit: a5c39de35bc141f68ca1cc5e68ec134158f4bfec
+    paths: [notes/p334-common-label-response-rank.md]
+  p334_integer_response:
+    integration_status: branch_only
+    commit: 4db356e1b026853468f94d59d938895a2367ceb7
+    paths: [results/p334-common-label-euler-tangent/score.json, results/p334-common-label-euler-tangent/signed_birth_histograms.json]
+  p334_ensemble_rank:
+    integration_status: branch_only
+    commit: 73608ba9d3eef34c6980cb5a049f726cfebdd72d
+    paths: [results/p334-common-label-response-rank/score.json]
+  p334_covariance:
+    integration_status: branch_only
+    commit: b582015e64e2d8a59e591c4822b14dedaea58b0f
+    paths: [notes/p334-common-label-tangent-joint.md, results/p334-common-label-tangent-joint/score.json, results/p334-common-label-tangent-joint/N325.complete_common_factor.json.gz, results/p334-common-label-tangent-joint/N425.complete_common_factor.json.gz]
+  p334_thermal_curves:
+    integration_status: branch_only
+    commit: dcd63ace69eebbe80591e332a26830ca70560a85
+    paths: [notes/p334-paired-euler-thermal-response.md, results/p334-paired-euler-thermal-response/score.json, results/p334-paired-euler-thermal-response/thermal_curve.csv]
+  p334_common_policy_theory:
+    integration_status: branch_only
+    commit: cfaae36c8a73d85947547021f5c8c7a271c4367c
+    paths: [notes/p334-common-label-euler-tangent.md]
+dependency_groups:
+  p334_shared_prefix_archive:
+    source_commit: e32a85939279b8574278024d647b56d2d1485247
+    contact_commit: 959a7fa26677c416b874d272f1ba66523fb38f73
+    sizes: [325, 425]
+    prefixes_per_size: 20000
+    original_batches_per_size: 20
+    batch_id_range_inclusive: [0, 19]
+    covariance_source: p334_covariance
+    coordinates_per_size: 16948
+    rule: all_common_label_rank_curves_and_future_old_tail_views_reuse_original_batches_no_independent_evidence_addition
+  norm4_source:
+    ledger_group_refs: [crn-2026104501-5100000000-7000000000, crn-2026105401-8200000000-9200000000, crn-2026105402-8200000000-9200000000]
+    rule: shared_cyclic_sizes_and_paired_geometries_use_aligned_deletion_endpoint_batches_are_original1000_union_increment9000_not_contiguous_rebin
+completed_outputs:
+  - id: norm4_conditional_line_fixed_k
+    team: 数学研究总览
+    source_refs: [norm4_line_fixed_k]
+    dependency_ref: norm4_source
+    result: spatial_source_coupling_resolved_within_fixed_occupancy_and_rank1
+    boundary: conditional_winding_observer_is_not_original_global_U_or_an_energy_operator_identity
+    next_task: p154_soft_angular_bridge
+  - id: p334_common_label_response_rank_thermal
+    team: 数学研究执行
+    source_refs: [p334_synthesis, p334_integer_response, p334_ensemble_rank, p334_covariance, p334_thermal_curves, p334_common_policy_theory]
+    dependency_ref: p334_shared_prefix_archive
+    result: strong_plus_to_mean_and_minus_to_direction_mean_Jacobian_rank2_N425_E_thermal_lobes_cancel_in_integral
+    boundary: ensemble_rank_not_within_prefix_rank_not_CFT_field_count_not_unperturbed_H4_attribution
+    completed_first_calculations: [common_policy_response, ensemble_2x2_rank, complete_linear_thermal_curve, cross_geometry_channels, common_covariance_assembly]
+active_tasks:
+  - id: p154_soft_angular_bridge
+    team: 数学研究俯瞰
+    execution_status: in_progress_team_report
+    delivery_pr: 509
+    package_path: experiments/p154-spatial-localization-20260831
+    frozen_input: 764595ea5c838c110e416382a3a90e2ecf7297bb
+    dependency_ref: norm4_source
+    question: soft_Wplus_Wminus_original_U_and_source_tangent_with_exact_addback
+    reported_machine: ZyTrST
+    reported_spare: XPk2PZ
+    result_commit: null
+  - id: p334_within_prefix_rank
+    team: 数学研究俯瞰
+    execution_status: in_progress_team_report
+    delivery_pr: 509
+    package_path: experiments/p334-mechanism-response-20260831
+    input_commits: [ffb7096922ef12a3282e338e79e1ab041104e5a7, b582015e64e2d8a59e591c4822b14dedaea58b0f]
+    dependency_ref: p334_shared_prefix_archive
+    question: same00prefix_distinct_quartet_order2_det_and_order4_det_squared_Ustatistics
+    reported_machine: HZsCM6
+    result_commit: null
+  - id: p398_linear_response
+    team: 数学研究俯瞰
+    execution_status: in_progress_team_report
+    delivery_pr: 509
+    package_path: experiments/p398-linear-response-20260831
+    frozen_input: 9690d7c1b9bcb19af3fb67b9c0bf5dc16bd5ef12
+    question: exact_eta0_Frechet_and_zero_frequency_Poisson_generator_response
+    acquisition: exact_construction
+    reported_machine: TgFr7R
+    result_commit: null
+  - id: p334_finite_source
+    team: 数学研究俯瞰
+    execution_status: in_progress_team_report
+    delivery_pr: 509
+    package_path: experiments/p334-finite-source-20260831
+    input_commits: [0e4db1b8ccae26f2953522ff7428162b12e9e8fa, e32a85939279b8574278024d647b56d2d1485247, 959a7fa26677c416b874d272f1ba66523fb38f73]
+    dependency_ref: p334_shared_prefix_archive
+    question: exact_joint_class_normalization_of_positive_t_plusminus1_policies_and_old_tail_importance_response
+    reported_machine: TV2N0X
+    new_tails: false
+    result_commit: null
+proposed_tasks:
+  - id: p334_thermal_dipole_age_moments
+    team: 数学研究执行
+    execution_status: proposed_not_yet_delivered
+    dependency_ref: p334_shared_prefix_archive
+    question: extract_thermal_dipole_age_weighted_lifetime_moments_to_resolve_integral_cancellation
+handoff_fields: [scientific_change, source_commit_and_paths, observer_and_sector, dependency_and_batch_ids, result_commit_report_json, covariance_location, execution_and_release_state, next_discriminator]

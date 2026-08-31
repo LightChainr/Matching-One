@@ -6,6 +6,18 @@
 
 `docs/NEXT-TARGETS.md` owns the single attention order, while `docs/ROADMAP.md` preserves its scientific rationale. Neither locks a task, serializes theory work or treats a lower priority as a scientific rejection.
 
+**Three-team frontier handoff, 2026-08-31 17:58 CST:** execution's
+[`a5c39de3`](https://github.com/LightChainr/Matching-One/blob/a5c39de35bc141f68ca1cc5e68ec134158f4bfec/notes/p334-common-label-response-rank.md)
+is `branch_only` on `analysis/p334-paired-clock-loading-20260831`, with no separate
+PR. Common-label A response supports two ensemble directions (determinants
+`1.22719e−8±4.07190e−9` / `1.55912e−8±4.69216e−9` at N325/N425);
+this is `det(E_prefix J)`, not within-prefix rank. The completed thermal curves
+show opposite-sign N425 E features with a nearly cancelling integral. Those
+readouts and the joint covariance at `b582015e` reuse the same forty thousand
+prefixes total / twenty original batches per N. [The shared handoff](TEAM-COORDINATION.md)
+records exact sources and the four follow-ups reported in progress for Draft #509;
+pending packages are not completed results or integrated main facts.
+
 ## Evidence and lifecycle contract
 
 **New scientific delivery, `open_pr #267`:** [the conditional primitive-line result](../results/norm4-source-line/REPORT.md) completes the named E-plus-clock comparison within rank1, including matching-root transport. The four-real-component residual has chi²/4=3843.85,2596.77,1049.13,1378.11,8479.76,4629.15 at N65,85,130,170,260,340; all six comparisons strongly reject that finite response model. The396-dimensional covariance retains paired geometries and the four cyclic sizes' common random stream. One112.14-second replay supplies line marks on2.4M already-produced permutations;1.31-second aggregation adds no random samples.
