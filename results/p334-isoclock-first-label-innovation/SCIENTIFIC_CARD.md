@@ -1,0 +1,8 @@
+# P334: an isoclock pair has different exact next-label information ranks
+
+- **Lifecycle:** independent branch / complete exact new first-label readout of the two graphs fixed at `250c5899`. All120 orders each, no MC, real-prefix scan, old noise-semigroup or final-winner recomputation.
+- **New mechanism:** both full clocks and uniform-blockade mean responses agree, and both have h=0 so the binary direct/safe Doob floor is zero. Yet full next-label information explains 89/504=17.6587% of clock variance for the double star and 8/63=12.6984% for C4+inert.
+- **Rank change:** next-label conditional survival covariance has active cuts2,3. Double-star Gram [[1/25,13/600],[13/600,7/450]] has rank2; C4 Gram [[1/25,1/75],[1/75,1/225]] has rank1. The earliest-cut variance is equal; temporal coupling differs.
+- **General link:** m_v=1+E T_child(v), with cemetery wait0 for direct absorption. The whole survival Gram contracts to the variance of every fixed linear clock readout; summing its entries gives Var(E[T|first label]).
+- **First versus final:** the inert C4 vertex never becomes a final winner, yet its first insertion accounts for all of C4's one-dimensional first-label response variation. The earlier final-winner collision is not the same observable.
+- **Source / boundary:** exactly edges01,02,03,14 versus01,12,23,30 plus isolate4; original labels retained. Constructed finite pair-trigger counterexample, not another actual N425 prefix, arbitrary graph identification, continuum-state rank, or intrinsic-memory proof.

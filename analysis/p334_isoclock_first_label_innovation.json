@@ -1,0 +1,17 @@
+{
+  "schema":"matching-one/p334-isoclock-first-label-innovation/v1",
+  "parent":"f3426e11d1c0e67b19b1fa91b631fa9a2300590d",
+  "graph_source_commit":"250c589958fc09c52380feb4c99276c8e9c9455b",
+  "graph_source_file":"scripts/p334_isoclock_marked_counterexample.py",
+  "graphs":{
+    "double_star":{"edges":[[0,1],[0,2],[0,3],[1,4]],"roles":["degree3 hub","degree2 hub","degree3-side leaf","degree3-side leaf","degree2-side leaf"]},
+    "C4_plus_isolate":{"edges":[[0,1],[1,2],[2,3],[3,0]],"roles":["cycle vertex","cycle vertex","cycle vertex","cycle vertex","inert isolate"]}
+  },
+  "vertices":[0,1,2,3,4],
+  "first_label":"V1 is the first label in the insertion permutation; uniform on all five sites, including the inert isolate",
+  "terminal_time":"T is the first insertion completing any edge",
+  "new_readout":"E[T|V1] and the covariance across V1 of the whole conditional survival vector P(T>k|V1), k=0..5",
+  "clock_variance":"Var(T), not variance over vertex means; exact first-label fraction Var(E[T|V1])/Var(T)",
+  "arithmetic":"all 5!=120 permutations per fixed graph, exact integer/Fraction arithmetic; no random samples",
+  "forbidden":["real-prefix scan","graph-family search","new DP","previous noise-semigroup recomputation","final-winner collision recomputation","new PR or comments"]
+}

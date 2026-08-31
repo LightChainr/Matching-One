@@ -1,0 +1,616 @@
+{
+  "schema": "matching-one/p334-isoclock-first-label-innovation/v1",
+  "graph_source_commit": "250c589958fc09c52380feb4c99276c8e9c9455b",
+  "records": [
+    {
+      "name": "double_star",
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "orders_enumerated": 120,
+      "first_labels": [
+        {
+          "first_label": 0,
+          "role": "degree3 hub",
+          "conditional_order_count": 24,
+          "conditional_counts_by_T": [
+            0,
+            0,
+            18,
+            6,
+            0,
+            0
+          ],
+          "conditional_mean_T": {
+            "exact": "9/4",
+            "value": 2.25
+          },
+          "conditional_mean_child_wait": {
+            "exact": "5/4",
+            "value": 1.25
+          },
+          "conditional_variance_T": {
+            "exact": "3/16",
+            "value": 0.1875
+          },
+          "conditional_survival_vector": [
+            "1",
+            "1",
+            "1/4",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "first_label": 1,
+          "role": "degree2 hub",
+          "conditional_order_count": 24,
+          "conditional_counts_by_T": [
+            0,
+            0,
+            12,
+            8,
+            4,
+            0
+          ],
+          "conditional_mean_T": {
+            "exact": "8/3",
+            "value": 2.6666666666666665
+          },
+          "conditional_mean_child_wait": {
+            "exact": "5/3",
+            "value": 1.6666666666666667
+          },
+          "conditional_variance_T": {
+            "exact": "5/9",
+            "value": 0.5555555555555556
+          },
+          "conditional_survival_vector": [
+            "1",
+            "1",
+            "1/2",
+            "1/6",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "first_label": 2,
+          "role": "degree3-side leaf",
+          "conditional_order_count": 24,
+          "conditional_counts_by_T": [
+            0,
+            0,
+            6,
+            10,
+            8,
+            0
+          ],
+          "conditional_mean_T": {
+            "exact": "37/12",
+            "value": 3.0833333333333335
+          },
+          "conditional_mean_child_wait": {
+            "exact": "25/12",
+            "value": 2.0833333333333335
+          },
+          "conditional_variance_T": {
+            "exact": "83/144",
+            "value": 0.5763888888888888
+          },
+          "conditional_survival_vector": [
+            "1",
+            "1",
+            "3/4",
+            "1/3",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "first_label": 3,
+          "role": "degree3-side leaf",
+          "conditional_order_count": 24,
+          "conditional_counts_by_T": [
+            0,
+            0,
+            6,
+            10,
+            8,
+            0
+          ],
+          "conditional_mean_T": {
+            "exact": "37/12",
+            "value": 3.0833333333333335
+          },
+          "conditional_mean_child_wait": {
+            "exact": "25/12",
+            "value": 2.0833333333333335
+          },
+          "conditional_variance_T": {
+            "exact": "83/144",
+            "value": 0.5763888888888888
+          },
+          "conditional_survival_vector": [
+            "1",
+            "1",
+            "3/4",
+            "1/3",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "first_label": 4,
+          "role": "degree2-side leaf",
+          "conditional_order_count": 24,
+          "conditional_counts_by_T": [
+            0,
+            0,
+            6,
+            14,
+            4,
+            0
+          ],
+          "conditional_mean_T": {
+            "exact": "35/12",
+            "value": 2.9166666666666665
+          },
+          "conditional_mean_child_wait": {
+            "exact": "23/12",
+            "value": 1.9166666666666667
+          },
+          "conditional_variance_T": {
+            "exact": "59/144",
+            "value": 0.4097222222222222
+          },
+          "conditional_survival_vector": [
+            "1",
+            "1",
+            "3/4",
+            "1/6",
+            "0",
+            "0"
+          ]
+        }
+      ],
+      "mean_T": {
+        "exact": "14/5",
+        "value": 2.8
+      },
+      "variance_T": {
+        "exact": "14/25",
+        "value": 0.56
+      },
+      "first_label_innovation_variance": {
+        "exact": "89/900",
+        "value": 0.09888888888888889
+      },
+      "first_label_fraction_of_clock_variance": {
+        "exact": "89/504",
+        "value": 0.1765873015873016
+      },
+      "mean_remaining_variance_after_first_label": {
+        "exact": "83/180",
+        "value": 0.46111111111111114
+      },
+      "direct_absorbing_count_at_empty_prefix": 0,
+      "binary_direct_safe_Doob_bound": 0,
+      "mean_survival_vector": [
+        "1",
+        "1",
+        "3/5",
+        "1/5",
+        "0",
+        "0"
+      ],
+      "first_label_survival_covariance_Gram": [
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1/25",
+          "13/600",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "13/600",
+          "7/450",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "nonconstant_survival_cuts": [
+        2,
+        3
+      ],
+      "active_Gram": [
+        [
+          "1/25",
+          "13/600"
+        ],
+        [
+          "13/600",
+          "7/450"
+        ]
+      ],
+      "active_Gram_rank": 2,
+      "active_Gram_determinant": "11/72000",
+      "active_Gram_characteristic_polynomial": "lambda**2 - lambda/18 + 11/72000",
+      "nonzero_Gram_eigenvalues": [
+        {
+          "exact": "1/36 - sqrt(2005)/1800",
+          "value": 0.002901540914179876,
+          "multiplicity": 1
+        },
+        {
+          "exact": "sqrt(2005)/1800 + 1/36",
+          "value": 0.05265401464137568,
+          "multiplicity": 1
+        }
+      ],
+      "full_Gram_zero_eigenvalue_multiplicity": 4,
+      "variance_from_sum_of_Gram_entries": {
+        "exact": "89/900",
+        "value": 0.09888888888888889
+      }
+    },
+    {
+      "name": "C4_plus_isolate",
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "orders_enumerated": 120,
+      "first_labels": [
+        {
+          "first_label": 0,
+          "role": "cycle vertex",
+          "conditional_order_count": 24,
+          "conditional_counts_by_T": [
+            0,
+            0,
+            12,
+            8,
+            4,
+            0
+          ],
+          "conditional_mean_T": {
+            "exact": "8/3",
+            "value": 2.6666666666666665
+          },
+          "conditional_mean_child_wait": {
+            "exact": "5/3",
+            "value": 1.6666666666666667
+          },
+          "conditional_variance_T": {
+            "exact": "5/9",
+            "value": 0.5555555555555556
+          },
+          "conditional_survival_vector": [
+            "1",
+            "1",
+            "1/2",
+            "1/6",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "first_label": 1,
+          "role": "cycle vertex",
+          "conditional_order_count": 24,
+          "conditional_counts_by_T": [
+            0,
+            0,
+            12,
+            8,
+            4,
+            0
+          ],
+          "conditional_mean_T": {
+            "exact": "8/3",
+            "value": 2.6666666666666665
+          },
+          "conditional_mean_child_wait": {
+            "exact": "5/3",
+            "value": 1.6666666666666667
+          },
+          "conditional_variance_T": {
+            "exact": "5/9",
+            "value": 0.5555555555555556
+          },
+          "conditional_survival_vector": [
+            "1",
+            "1",
+            "1/2",
+            "1/6",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "first_label": 2,
+          "role": "cycle vertex",
+          "conditional_order_count": 24,
+          "conditional_counts_by_T": [
+            0,
+            0,
+            12,
+            8,
+            4,
+            0
+          ],
+          "conditional_mean_T": {
+            "exact": "8/3",
+            "value": 2.6666666666666665
+          },
+          "conditional_mean_child_wait": {
+            "exact": "5/3",
+            "value": 1.6666666666666667
+          },
+          "conditional_variance_T": {
+            "exact": "5/9",
+            "value": 0.5555555555555556
+          },
+          "conditional_survival_vector": [
+            "1",
+            "1",
+            "1/2",
+            "1/6",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "first_label": 3,
+          "role": "cycle vertex",
+          "conditional_order_count": 24,
+          "conditional_counts_by_T": [
+            0,
+            0,
+            12,
+            8,
+            4,
+            0
+          ],
+          "conditional_mean_T": {
+            "exact": "8/3",
+            "value": 2.6666666666666665
+          },
+          "conditional_mean_child_wait": {
+            "exact": "5/3",
+            "value": 1.6666666666666667
+          },
+          "conditional_variance_T": {
+            "exact": "5/9",
+            "value": 0.5555555555555556
+          },
+          "conditional_survival_vector": [
+            "1",
+            "1",
+            "1/2",
+            "1/6",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "first_label": 4,
+          "role": "inert isolate",
+          "conditional_order_count": 24,
+          "conditional_counts_by_T": [
+            0,
+            0,
+            0,
+            16,
+            8,
+            0
+          ],
+          "conditional_mean_T": {
+            "exact": "10/3",
+            "value": 3.3333333333333335
+          },
+          "conditional_mean_child_wait": {
+            "exact": "7/3",
+            "value": 2.3333333333333335
+          },
+          "conditional_variance_T": {
+            "exact": "2/9",
+            "value": 0.2222222222222222
+          },
+          "conditional_survival_vector": [
+            "1",
+            "1",
+            "1",
+            "1/3",
+            "0",
+            "0"
+          ]
+        }
+      ],
+      "mean_T": {
+        "exact": "14/5",
+        "value": 2.8
+      },
+      "variance_T": {
+        "exact": "14/25",
+        "value": 0.56
+      },
+      "first_label_innovation_variance": {
+        "exact": "16/225",
+        "value": 0.07111111111111111
+      },
+      "first_label_fraction_of_clock_variance": {
+        "exact": "8/63",
+        "value": 0.12698412698412698
+      },
+      "mean_remaining_variance_after_first_label": {
+        "exact": "22/45",
+        "value": 0.4888888888888889
+      },
+      "direct_absorbing_count_at_empty_prefix": 0,
+      "binary_direct_safe_Doob_bound": 0,
+      "mean_survival_vector": [
+        "1",
+        "1",
+        "3/5",
+        "1/5",
+        "0",
+        "0"
+      ],
+      "first_label_survival_covariance_Gram": [
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1/25",
+          "1/75",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1/75",
+          "1/225",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "nonconstant_survival_cuts": [
+        2,
+        3
+      ],
+      "active_Gram": [
+        [
+          "1/25",
+          "1/75"
+        ],
+        [
+          "1/75",
+          "1/225"
+        ]
+      ],
+      "active_Gram_rank": 1,
+      "active_Gram_determinant": "0",
+      "active_Gram_characteristic_polynomial": "lambda**2 - 2*lambda/45",
+      "nonzero_Gram_eigenvalues": [
+        {
+          "exact": "2/45",
+          "value": 0.044444444444444446,
+          "multiplicity": 1
+        }
+      ],
+      "full_Gram_zero_eigenvalue_multiplicity": 5,
+      "variance_from_sum_of_Gram_entries": {
+        "exact": "16/225",
+        "value": 0.07111111111111111
+      }
+    }
+  ],
+  "exact_difference_in_first_label_variance_fraction": {
+    "exact": "25/504",
+    "value": 0.0496031746031746
+  },
+  "interpretation": "Constructed exact finite pair-trigger example, not a new N425 prefix or a proof of arbitrary graph identification",
+  "input_sha256": {
+    "analysis/p334_isoclock_first_label_innovation.json": "cf6089301ede4ef77ecb1cb1ee6a7537712b9ebd99d8be042a71ae6fdc8cc789",
+    "scripts/p334_isoclock_first_label_innovation.py": "42309d0a84a31096ca4fc754e14843813f5f5c5245ca3f4273b9d8e2ce3d1020"
+  }
+}
