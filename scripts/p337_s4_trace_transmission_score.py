@@ -172,7 +172,8 @@ def main():
               "direct_q_E_numerators": "identically_zero_as_exact_polynomials",
               "old_population_marginals": "retained_exactly",
               "source_coordinate": "epsilon coefficient of canonical Q4 [2,2] trace; not t or logQ",
-              "new_random_samples": 0, "coupling_points_scored": 1,
+              "new_random_samples": 0, "Q4_trace_responses_scored": 1,
+              "new_coupling_points": 0,
               "elapsed_seconds": time.perf_counter()-started}
     (out/"score.json").write_text(json.dumps(record, indent=2)+"\n")
     (out/"REPORT.md").write_text(
