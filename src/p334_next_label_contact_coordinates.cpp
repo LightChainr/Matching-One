@@ -125,6 +125,7 @@ struct Counts {
 };
 }
 
+#ifndef P334_CONTACT_LIBRARY_ONLY
 int main(int argc, char** argv) {
     try {
         if (argc != 4) throw std::runtime_error("usage: contact_coordinates N output_directory code_commit");
@@ -207,3 +208,4 @@ int main(int argc, char** argv) {
         std::cerr << error.what() << '\n'; return 1;
     }
 }
+#endif
