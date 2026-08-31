@@ -109,7 +109,7 @@ collective-survival advantage2.301917, leaving total survival ratio1.753842.
 
 ## Beyond the displayed pair
 
-The readout covers all twelve selected prefixes and their48 two-port factors.
+The readout covers all twelve selected prefixes and their47 two-port factors.
 For example, counter904 has14 competing channels: its largest winning share
 is only17.9230% (23-site factor), rather than a single dominant bottleneck.
 Counter48's67-site factor grows from40.6026% of all births to46.5512% of the
