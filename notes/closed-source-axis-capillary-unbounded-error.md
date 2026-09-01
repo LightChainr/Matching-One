@@ -1,16 +1,19 @@
 # Unbounded capillary control and the first possible crossover
 
 **Subsequent resolution.**  The `O(alpha)` gate below is a valid relaxed
-bound but its proposed local saturator is absent.  A correctly normalized
-physical one-hairpin insertion stays in the antisymmetric Dirichlet sector,
-so its bulk-normalized coefficient tends to zero.  Moreover the shortest
-occupied-corner hairpin is an L-triomino packet of activity `L/m^6`, whose
-complement-paired source mark starts only at `L/m^8`.  The only remaining
-candidate capable of making `alpha` sharp is a delocalized west step which
-borrows vertical sides from a macroscopically rough bridge; see
+bound but is not sharp.  A correctly normalized physical one-hairpin
+insertion stays in the antisymmetric Dirichlet sector, so its bulk-normalized
+coefficient tends to zero.  The shortest occupied-corner hairpin is an
+L-triomino packet of activity `L/m^6`, whose complement-paired source mark
+starts only at `L/m^8`.  Finally, the exact all-reversal relaxed kernel is an
+analytic Catalan--Toeplitz multiplier and also preserves both endpoint
+zeros.  The complete axis theorem therefore needs only `beta=L/m^2 ->0`,
+not `alpha=L^2/m^3 ->0`; see
 [`closed-source-single-hairpin-endpoint-zero.md`](closed-source-single-hairpin-endpoint-zero.md),
 [`closed-source-single-hairpin-ward-identity.md`](closed-source-single-hairpin-ward-identity.md),
-and [`closed-source-axis-short-hairpin-packet.md`](closed-source-axis-short-hairpin-packet.md).
+[`closed-source-axis-short-hairpin-packet.md`](closed-source-axis-short-hairpin-packet.md),
+[`closed-source-delocalized-west-step-kernel.md`](closed-source-delocalized-west-step-kernel.md),
+and [`closed-source-axis-sector-closure-gate.md`](closed-source-axis-sector-closure-gate.md).
 
 ## Result
 
@@ -342,9 +345,9 @@ uniformly summable physical local packet.  The complement-paired Ward
 identity refines this: the raw endpoint current is positive, but placement
 averaging supplies `1/c` and bulk normalization supplies another `1/c`.
 The shortest actual occupied-corner packet is still smaller, with bare
-activity `L/m^6`.  Thus a genuine `alpha` crossover, if present, must come
-from a west step with a non-uniform long-range kernel, not from the local
-operator defined here.
+activity `L/m^6`.  The subsequent exact sum over all west-step numbers
+shows that even borrowed rough-bridge sides induce an analytic gap kernel.
+Hence there is no `alpha` crossover in the physical axis sector.
 
 ## 6. Fixed-m directed roughening
 
@@ -404,11 +407,9 @@ full fixed-m model.
 - **Mechanism isolation:** long vertical runs and repeated narrow
   collisions preserve the determinant; only horizontal reversals can
   currently saturate alpha.
-- **Candidate resolved:** a physical local one-hairpin endpoint kernel keeps
-  both Dirichlet zeros and cannot make alpha sharp.  Only a delocalized
-  bridge-borrowing reversal remains as a possible alpha-scale object.
+- **Candidate resolved:** both local hairpins and the complete delocalized
+  reversal envelope keep the Dirichlet zeros.  Their full gate is beta.
 - **Independent fixed-m result:** the directed positive subfamily changes
   exponential sign at `m=1+sqrt(2)` with prefactor (27)-(28).
-- **Boundary:** no claim is made for `alpha=O(1)` until the delocalized
-  reversal sector is controlled, or for the full fixed-m interface from a
-  directed lower bound alone.
+- **Boundary:** the later axis theorem controls the full specified geometry
+  under `beta->0`; the fixed-m interface remains outside this joint limit.

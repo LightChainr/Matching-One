@@ -207,11 +207,12 @@ alter the determinant ratio.
 
 The next object suggested by this relaxed bound was a single-hairpin
 finite-gap matrix kernel.  The later physical operator and local-word
-classification sharpen that statement: every uniformly summable local
-hairpin retains the Dirichlet zeros, and the shortest digital packet costs
-`m^-6`.  Only a delocalized west step borrowing vertical sides from the
-rough bridge can still saturate the bound.  A scalar renormalization of `c`,
-or one more independent-interface Bessel term, cannot decide that sector.
+classification show that every uniformly summable local hairpin retains the
+Dirichlet zeros, and the shortest digital packet costs `m^-6`.  The exact
+all-west-step generating function then closes the delocalized case as an
+analytic Catalan--Toeplitz multiplier.  Together with the cloud/topology
+closure this improves the final gate to `L/m^2 ->0`; the `alpha` boundary
+identified in this note is therefore a proof artifact, not a crossover.
 
 ## Scientific boundary
 

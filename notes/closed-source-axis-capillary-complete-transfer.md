@@ -462,8 +462,9 @@ factorial and endpoint bounds must be reopened.
 - **Boundary of this note:** its estimates are uniform only on compact
   `c` intervals.  The later
   [unbounded error decomposition](closed-source-axis-capillary-unbounded-error.md)
-  reopens the constants and extends the law to `L^2/m^3 -> 0`; the first
-  remaining crossover object is a single-hairpin endpoint kernel.
+  first extends the law to `L^2/m^3 -> 0`.  The later all-reversal, cloud,
+  and sector closures improve the complete axis gate to `L/m^2 ->0` and
+  remove the proposed single-hairpin crossover.
 - **Scope:** finite-lattice strong-source joint asymptotics.  No continuum
   interface field, fixed-m limit or all-rank-one finite-c enumeration is
   asserted.

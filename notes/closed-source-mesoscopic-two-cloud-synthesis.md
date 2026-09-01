@@ -286,8 +286,11 @@ extend the negative signed law through `m >> L^(2/3)`.  The subsequent
 [physical hairpin zero](closed-source-single-hairpin-endpoint-zero.md),
 [Ward normalization](closed-source-single-hairpin-ward-identity.md), and
 [shortest-packet classification](closed-source-axis-short-hairpin-packet.md)
-exclude every local hairpin as the first crossover; only a delocalized
-west step borrowing rough-bridge vertical sides remains.
+exclude every local hairpin as the first crossover.  The exact
+[all-reversal kernel](closed-source-delocalized-west-step-kernel.md),
+[cloud closure](closed-source-axis-beta-cloud-closure.md), and
+[sector closure](closed-source-axis-sector-closure-gate.md) also eliminate
+the delocalized candidate and give the complete axis gate `L/m^2 ->0`.
 The
 [tilted shortest-winding classification](closed-source-tilted-shortest-winding-class.md)
 shows that its staircase entropy cannot beat the extra `m^-4k` barrier.

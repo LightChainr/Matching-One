@@ -38,16 +38,18 @@ For one essential occupied component the winding barrier is
 
 The primitive `(1,0)` and `(0,1)` directions are co-leading; the latter is
 not an omitted vertical sector.  Their translations and both orientations
-are already in the prefactor of (2).  The complete physical one-carrier
+are already in the prefactor of (2).  Relative to the exact directed
+arbitrary-run endpoint determinant, the complete physical one-carrier
 transfer, including every horizontal reversal, self-avoidance deletion and
 fixed-radius collar, obeys
 
 \[
- {Z_{1c}\over Z_{straight}}
+ {Z_{1c}\over J_{run}}
  =1+O(\beta+m^{-1}+L/m^3)=1+o(1)                 \tag{4}
 \]
 
-uniformly in `c`.  Its endpoint zero is `J(c)>0`, with
+uniformly in `c`.  The directed factor itself contains the full capillary
+entropy and is asymptotic to the Bessel endpoint `J(c)>0`, with
 `J(c)=e^(4c)/(8 pi c^2){1+O(c^-1)}` for large `c`.
 
 ## 2. An extra essential component is automatically suppressed
