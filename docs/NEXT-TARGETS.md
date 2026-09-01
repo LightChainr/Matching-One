@@ -1,6 +1,6 @@
 # 下一步：thermal/pivotal 传递与固定m两相权重
 
-**2026-09-01，已读到 PR #544 `e21f6220`、PR #545 `697fa6fc` 与两份独立审计。** 当前结论从[STATUS](STATUS.md)进入。两个独立生产实验、齐次N50、canonical pair 的有限空间块、完整联合原U响应和 finite rank-one 反例均已完成。下一步不增加同类有限点、距离网格、补全扫描或旧实验救值。
+**2026-09-01，已读到 PR #544 `e8e9c7cf`、PR #545 `e1f19e4c` 与两份独立审计。** 当前结论从[STATUS](STATUS.md)进入。两个独立生产实验、齐次N50、canonical pair 的有限空间块、完整联合原U响应和 finite rank-one 反例均已完成。下一步不增加同类有限点、距离网格、补全扫描或旧实验救值。
 
 ## 1. 当前研究问题：绝对可和的空间核能否经热响应获得尺度增强
 
@@ -18,7 +18,7 @@ tail(d>R) = O(R^-eta)
 
 新的[精确审计](../notes/p337-thermal-pivotal-gate-audit.md)已经证明，下一项不能只研究 `partial_p E[g_xy]`。对 `O=q,E`，完整 `d_p Cov(O,g_xy)` 有 kernel reconnection 与原 rank/readout pivotal 两项；tiny torus上遗漏第二项会把符号判反。普通site flip是八端口组件join，但共享组件数本身也不决定符号。
 
-现在只保留 #537 一个 P0 理论闸门：**检查完整 pooled-root one-defect graph 是否有同时改变两个慢变量的非零 diagonal edge。** [有限判决与范围审计](../notes/p537-finite-rank-one-decision-20260901.md)已把三层有限结果压缩清楚：preflight 排除 provisional clean-two-bridge 的 pure-thermal closure；#544 在显式 N25 radius-one collar coarsening 得到首个严格非零 pooled-root minor；#545 的 all-scale family 排除 broad pointwise common-counterterm identity。两条 Draft 都没有完成 formal ordinary/no-extra/full original-U mixed-Hessian，因此关闭为固定提交资产；项目层面也不再给 finite rank-one rescue 追加合同修改或第三条分支。
+现在只保留 #537 一个 P0 理论闸门：**检查完整 pooled-root one-defect graph 是否有同时改变两个慢变量的非零 diagonal edge。** [有限判决与范围审计](../notes/p537-finite-rank-one-decision-20260901.md)已把有限结果压缩清楚：preflight 排除 provisional clean-two-bridge 的 pure-thermal closure；#544 在显式 N25 radius-one collar coarsening 得到首个严格非零 pooled-root minor；#545 的 all-scale family 排除 broad pointwise common-counterterm identity；#544 的最后 L4→L5 exact broad aggregate与 `chi_perp~L^-4` 相容。两条 Draft 都没有完成 formal ordinary/no-extra/full original-U mixed-Hessian，两个尺寸也不是指数估计，因此关闭为固定提交资产；项目层面不再给 finite rank-one rescue 追加合同修改、L6或第三条分支。
 
 1. 先复用现有 exact fibres；canonical certificate 保存全局 joint component map、outer `C/B/W`、rank 与 source Bell before/after、off-port contact 和 one-defect transition ID。
 2. 从完整两几何总体先固定 pooled-root `beta/R`，再输出 cell-level positive masses `P0/P1` 与 signed mass jets `S0/S1`；用 `S*1=0`、`1^T*S=0` 检查 margins，不在 landing 子块重估 root counterterm。
