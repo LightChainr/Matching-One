@@ -21,6 +21,8 @@ README负责入口，STATUS负责成果，NEXT-TARGETS负责下一步分析。�
 
 **已补齐完整齐次N50传递。** 两几何各精确覆盖2^50配置，合计约49.85 CPU秒、峰1.63 GiB；原U=1.06156039、固定源响应V=+0.05434578，严格排除该有限点零传递。正号预测存活，不等于机制确认，不追加尺寸/源参数。[本轮结果与复核](experiments/p337-homogeneous-n50-20260831/RESULT.md)；旧m64直接采样停线及P154/P334降级保持。
 
+**canonical pair 已从有限传递推进到完整 thermal gate。** 新空间块与 N25 联合响应排除有限零、additive-linear 和 NN-contact-only closure；随后 exact-`p_c` 四臂论证证明 raw pair kernel 绝对可和。最新[双通道审计](notes/p337-thermal-pivotal-gate-audit.md)又证明 `d_p Cov(O,g_xy)` 还含原 rank/readout pivotal 项，单独控制 `partial_p E[g_xy]` 会在tiny exact controls中判错符号。#537因此是唯一P0理论任务；随机生产仍为空，#539仅为P2复现支持。
+
 ## 已有成果的主线
 
 **同调结构。** 有限matching量为 `M=P₂−P₀=E[r_black]−1`；两次阈值rank分别是两个本质同调方向的出生。一般有限商的有理同调与整数饱和证明稿已经交付，完整出生时间与空间响应已有可计算对象。[证明与推论](https://github.com/LightChainr/Matching-One/issues/269)

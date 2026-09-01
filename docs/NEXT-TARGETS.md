@@ -1,6 +1,6 @@
 # 下一步：thermal/pivotal 传递与固定m两相权重
 
-**2026-09-01，已读到执行 `410015f5` 与 Draft PR532 最新评论。** 当前结论从[STATUS](STATUS.md)进入。两个独立生产实验、齐次N50、canonical pair 的有限空间块和完整联合原U响应均已完成。下一步不增加同类有限点、距离网格、补全扫描或旧实验救值。
+**2026-09-01，已读到执行 `410015f5`、临界 raw-kernel 定理与 thermal/pivotal 双通道审计。** 当前结论从[STATUS](STATUS.md)进入。两个独立生产实验、齐次N50、canonical pair 的有限空间块和完整联合原U响应均已完成。下一步不增加同类有限点、距离网格、补全扫描或旧实验救值。
 
 ## 1. 当前研究问题：绝对可和的空间核能否经热响应获得尺度增强
 
@@ -16,15 +16,20 @@ tail(d>R) = O(R^-eta)
 
 其中某个`eta>0`。所以固定normalization的raw canonical susceptibility不能靠宏观远尾产生发散。这个结论不使用方格5/4猜想，也不自动适用于a237的数值`p_ref`或N25 pooled root；没有近临界控制时不作外推。
 
-下一项只保留一个明确的理论闸门：**为固定 signed `g_xy` 写出 `partial_p E[g_xy]` 的site-pivotal支持，并判断其空间和是否一致可求和。** 这正对准410中占主导的热/source项和仍缺的root/slope映射。验收和停止规则为：
+新的[精确审计](../notes/p337-thermal-pivotal-gate-audit.md)已经证明，下一项不能只研究 `partial_p E[g_xy]`。对 `O=q,E`，完整 `d_p Cov(O,g_xy)` 有 kernel reconnection 与原 rank/readout pivotal 两项；tiny torus上遗漏第二项会把符号判反。普通site flip是八端口组件join，但共享组件数本身也不决定符号。
 
-1. 若热导数的空间和仍一致可求和，并能控制共同root/slope分母，则停止把这一local interaction作为原anomaly的尺度放大机制，转为有限局部修正资产。
-2. 若只有一个具名pivotal/landing通道逃过可求和界，必须先给同一原U的符号或尺度预测，才冻结一次新读数；不能从结果中再选bridge irrep。
-3. 在该闸门前不启动新MC、N、距离、动量、三插入、alpha/positivity completion或descriptor。PR532已提交的两桥因式分解与3/2下界保留；其评论中的uniform J2建议已由410完成，八通道与`alpha=3/2`候选没有新提交，均不形成生产授权。
+现在只保留 #537 一个P0理论闸门：**为两个通道写出真实三位置support，并把完整 `T_N=jY_p-R*jM_p-R_p*jM` 控制到 `o(D/A_N)`。** 朴素绝对三臂组计数需要`alpha4>4/3`，严格方格site输入只有某个`alpha4>1`，不能复用raw pair的同一论证。验收和停止规则为：
+
+1. 若完整两通道和root/slope运输给 `T_N=o(D/A_N)`，停止把这一local interaction作为原anomaly的尺度放大机制，转为有限局部修正资产。
+2. 若只有一个具名pivotal/landing通道逃过界，必须先给同一原U的符号或尺度预测，才冻结一次新读数；不能从结果中再选bridge irrep。
+3. 若现有严格臂界不足，交付最小未控joint event或signed cancellation条件即停止；不能用未经证明的5/4替代，也不能把上界发散写成实际发散。
+4. 在该闸门前不启动新MC、N、距离、动量、三插入、alpha/positivity completion或descriptor。#539只是P2可复现支持；重建旧N25 `J2`不算关闭渐近闸门。PR532已提交的两桥因式分解与3/2下界保留，但不形成生产授权。
 
 ## 2. 保留的理论缺口：固定m的真实两相相对权重
 
 [固定m审查](../notes/p337-fixed-m-relative-bound.md)已经给表面界、sector-odds不足反例，并进一步证明：裸组件气体的标准非负KP判据在h=1也无法对大体积统一成立，任意非负控制函数都不能补救。停止继续优化这套裸表示的短轮廓计数常数。
+
+PR533 `a7680426` 的 Bessel determinant `I0(2c)^2-I1(2c)^2>0` 可保留为受限 directed/noncrossing 的 C1 子引理；它的 full-lattice moving-root 负号仍依赖未证的 uniform connected-polymer/root-shift 界，且只覆盖 bounded `L/m`。因此该 Draft 保持P2/C0 overall，不把它的 `m→∞` joint limit改写成fixed-`m`进展，也不启动已被其新head超越的#534。
 
 rank2投影逐配置等于固定唯一绕行组件颜色；若真正的相内簇尾已可求和，等面积torus的小簇贡献可逐项相消，几何差可达 `O(N exp(-c ell))`。但实际共存窗口内的内外相受限partition比和大轮廓尾尚未控制。下一理论交付只应补这个模型特有的归一化控制；仅重复共同pressure、rank1小、正性或已有Poisson联合极限不足以完成它。
 
@@ -44,7 +49,7 @@ rank2投影逐配置等于固定唯一绕行组件颜色；若真正的相内簇
 | #154 temporal transmission | [165M新路径](../experiments/p154-prospective-transmission-20260831/REPORT.md)：两N净U在±0.50内，各entry/completion在±0.30内 | 固定lag=1簇源退出当前主要H4解释；不换lag、不补样、不称精确零 |
 | #334 independent intervention | [新群体得分](../experiments/p334-prospective-intervention-20260831/results/latest.json)：同时排除残余投影接近0和旧残余点预测按±25%迁移 | 两失败预测封存；不追加prefix，不在验证块重拟合，不把约1/2注册成救场模型 |
 
-#154/#334的一般问题保留P1，当前P0生产为空。F4等原停线不变；#275/#419/#370/#398和代数全族筛选保持support，不通过增加archive坐标、descriptor或generic certificate恢复优先级。
+#154/#334的一般问题保留P1；#537是唯一P0理论任务，当前P0随机生产为空。F4等原停线不变；#275/#419/#370/#398、#539和代数全族筛选保持support，不通过增加archive坐标、descriptor或generic certificate恢复优先级。
 
 ## 原U接口直接复用
 
