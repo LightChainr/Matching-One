@@ -44,14 +44,25 @@ arg(z2/z1) = 168.3387 degrees.
 Modulo the sign allowed by the real-gain contract, its angular residual is
 `-10.70 degrees` from the H8 phase and `+77.86 degrees` from the H4 phase.
 
+### Post-reveal alias compression
+
+The frozen contract compared H4 with H8, so its decision is unchanged.  A
+third fixed line, signed-scalar `H0`, gives `chi2=1.32069/1 df`, `p=0.250468`
+and also survives.  This happens because `-8 delta=-180.959 degrees` is almost
+real for this arithmetic pair.  Therefore N65 uniquely rejects H4 within this
+phase family but does not distinguish a local/observer H8 harmonic from an
+embedding-even topological character.  Calling the result a local spin-8 field
+would exceed what the geometry identifies.
+
 ## Scientific meaning
 
 This is a positive sector split, not a reversal of the ordinary global-channel
-H4 evidence.  The phase-calibrated primitive real-C3 observer selects its H8
-alias under a physical equal-modulus rotation, while the quotient-prism/global
-`A_top` channel can still select H4.  Consequently a real-C3 response must not
-be used as another vote for the field already identified in the global
-channel: the observer projection changes the surviving harmonic sector.
+H4 evidence.  The phase-calibrated primitive real-C3 observer selects the
+H8/even branch of the frozen comparison under a physical equal-modulus
+rotation, while the quotient-prism/global `A_top` channel can still select H4.
+Consequently a real-C3 response must not be used as another vote for the field
+already identified in the global channel: the observer projection changes the
+surviving harmonic sector.
 
 The result identifies the frozen finite signed-real transport law.  It does
 not identify a continuum primary, prove an OPE coupling, or apply to E_top,

@@ -50,7 +50,7 @@ the measured harmonic from `+4` to `-8` without creating a new local primary.
    `(11+3i, 9+7i)` has the same `delta=atan2(5,12)` and is a common Gaussian
    dilation/rotation of the N65 pair.  Persistence of the H8 phase there rules
    out a one-size phase accident; an H4 return marks a finite-size crossover.
-2. **Convention-invariant angle test.**  For the N145 pair `(12+i,9+8i)`,
+2. **Convention-invariant three-way angle test.**  For the N145 pair `(12+i,9+8i)`,
    `exp(i delta)=(4+3i)/5`.  With the same complex character define
 
    \[
@@ -60,5 +60,7 @@ the measured harmonic from `+4` to `-8` without creating a new local primary.
    Squaring removes the signed-gain sign, and `X` is invariant under common
    character phase and conjugation.  Passive H4/conjugate-H4 predicts
    `X=+0.42197248`; a true `-8` observer harmonic predicts
-   `X=-0.643878452245`.  Only the existing complex C3 coordinate and its paired
-   covariance are needed.
+   `X=-0.643878452245`; an embedding-even/signed-scalar character predicts
+   `X=+1`.  This is more informative than repeating the N65 angle at N130,
+   because the latter leaves H8 nearly aliased with H0.  Only the existing
+   complex C3 coordinate and its paired covariance are needed.
