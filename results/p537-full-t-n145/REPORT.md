@@ -46,3 +46,32 @@ transport while leaving the four-packet power compatible.
 This is a full-`T` result and is invariant under the common thermal coordinate
 shift.  The separate contact-stage gauge question is handled by the horizontal
 sidecar, not by altering this held-out score.
+
+## Fixed two-power mechanism fit
+
+As a post-reveal mechanism compression, keep both exponents fixed and fit only
+
+\[
+J_N=aN^{-5/4}+bN^{-7/4}
+\]
+
+to exact N25 and the independent N65/N145 estimates.  Treating N25 as the hard
+constraint gives
+
+```text
+a = -0.32892884 +/- 0.06546507
+b = +0.10191621 +/- 0.32732537
+chi2 = 0.511353 / 1 df, p = 0.474554
+```
+
+The correction is only `6.20%`, `3.84%` and `2.57%` of the leading center at
+N25, N65 and N145.  A genuinely prospective version, fixing both amplitudes
+from N25/N65, predicts `J145=-0.000585389516`; the held-out difference is
+`-0.715` combined standard errors.
+
+The N145 center deviation is not explained by the measured contact carrier.
+Extrapolated horizontal contact contributes only `-7.31e-6`, about `6.7%` of
+the observed model residual; after accounting for the contact part already
+absorbed by the N25/N65 fit, its incremental mismatch is only `3.2%`.  Thus the
+center shift is statistically ordinary full-remainder noise, not a contact
+gauge effect or evidence for a large faster-decaying component.
