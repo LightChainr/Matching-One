@@ -1,0 +1,148 @@
+{
+  "schema": "axis matching Galois certificates v1",
+  "excludes_L5": true,
+  "excludes_PR84": true,
+  "pairwise_gcds": {
+    "L2_L3": "1",
+    "L2_L4": "1",
+    "L3_L4": "1"
+  },
+  "certificates": [
+    {
+      "L": 2,
+      "N": 4,
+      "degree": 4,
+      "coefficients_ascending": [
+        -1,
+        0,
+        4,
+        0,
+        -2
+      ],
+      "leading_coefficient": -2,
+      "irreducible_over_Q": true,
+      "irreducible_witness": {
+        "p": 3,
+        "partition": [
+          4
+        ]
+      },
+      "group": "C4",
+      "reason": "biquadratic_splitting_field_degree_4_with_4_cycles",
+      "not_a_statement_about_infinite_pc": true,
+      "splitting_field": {
+        "even_in_p2": true,
+        "quadratic_in_u_discriminant": 8,
+        "quadratic_in_u_disc_is_square": false,
+        "splitting_field_degree": 4,
+        "transitive": true,
+        "has_4_cycles": true,
+        "group": "C4"
+      },
+      "not_Sn": true
+    },
+    {
+      "L": 3,
+      "N": 9,
+      "degree": 9,
+      "coefficients_ascending": [
+        -1,
+        0,
+        0,
+        6,
+        0,
+        0,
+        0,
+        -18,
+        18,
+        -4
+      ],
+      "leading_coefficient": -4,
+      "irreducible_over_Q": true,
+      "irreducible_witness": {
+        "p": 5,
+        "partition": [
+          9
+        ]
+      },
+      "group": "S9",
+      "reason": "primitive_plus_transposition",
+      "not_a_statement_about_infinite_pc": true,
+      "primitive_witness": {
+        "p": 23,
+        "partition": [
+          8,
+          1
+        ],
+        "criterion": "transitive_plus_(n-1)_cycle_is_primitive"
+      },
+      "transposition_witness": {
+        "p": 11,
+        "partition": [
+          5,
+          2,
+          1,
+          1
+        ],
+        "power": 5,
+        "criterion": "odd_power_of_the_2_cycle_factor_is_a_transposition"
+      },
+      "jordan_criterion": "primitive_permutation_group_containing_a_transposition_is_Sn"
+    },
+    {
+      "L": 4,
+      "N": 16,
+      "degree": 16,
+      "coefficients_ascending": [
+        -1,
+        0,
+        0,
+        0,
+        8,
+        0,
+        32,
+        -64,
+        172,
+        -704,
+        1104,
+        -608,
+        -56,
+        128,
+        16,
+        -32,
+        6
+      ],
+      "leading_coefficient": 6,
+      "irreducible_over_Q": true,
+      "irreducible_witness": {
+        "p": 5,
+        "partition": [
+          16
+        ]
+      },
+      "group": "S16",
+      "reason": "primitive_plus_transposition",
+      "not_a_statement_about_infinite_pc": true,
+      "primitive_witness": {
+        "p": 19,
+        "partition": [
+          15,
+          1
+        ],
+        "criterion": "transitive_plus_(n-1)_cycle_is_primitive"
+      },
+      "transposition_witness": {
+        "p": 31,
+        "partition": [
+          11,
+          3,
+          2
+        ],
+        "power": 33,
+        "criterion": "odd_power_of_the_2_cycle_factor_is_a_transposition"
+      },
+      "jordan_criterion": "primitive_permutation_group_containing_a_transposition_is_Sn"
+    }
+  ],
+  "interpretation": "Finite-cell physical roots at L=3,4 are not solvable by radicals. This is silent about the infinite-volume threshold."
+}
