@@ -8,6 +8,9 @@ from functools import lru_cache
 from itertools import combinations
 from pathlib import Path
 
+def popcount(value):
+    return value.bit_count() if hasattr(value, "bit_count") else bin(value).count("1")
+
 @lru_cache(None)
 def parts(n):
     out=[(0,)]
@@ -117,7 +120,7 @@ def family(L,R,p=F(1,2)):
     rows=[]
     for name,m,tr in [('A',A,(0,1)),('B',B,(1,2))]:
         h,o,c=t.landing(m,R); a0=t.source(m);a1=t.source(m|bit)
-        rows.append(dict(name=name,transition=[t.rank(m),t.rank(m|bit)],expected=list(tr),h4=h,k=m.bit_count(),opened=o,closed=c,a0=str(a0),a1=str(a1),amid=str((a0+a1)/2)))
+        rows.append(dict(name=name,transition=[t.rank(m),t.rank(m|bit)],expected=list(tr),h4=h,k=popcount(m),opened=o,closed=c,a0=str(a0),a1=str(a1),amid=str((a0+a1)/2)))
     k=2*L-2; w=p**k*(1-p)**((L-1)**2); S=F(2*k+1,2)-L*L*p; d=F(-2,L**4)
     return dict(L=L,R=R,p=str(p),states=rows,thermal=str(S),source_mid_B_minus_A=str(d),minor=str(w*w*S*d))
 
@@ -133,7 +136,7 @@ def l4():
             A=(t.pair(o,0,4) and t.pair(c,2,6)) or (t.pair(o,2,6) and t.pair(c,0,4));D=(t.pair(o,1,5) and t.pair(c,3,7)) or (t.pair(o,3,7) and t.pair(c,1,5))
             cross['axis']+=int(A);cross['diagonal']+=int(D);cross['both']+=int(A and D);cross['landed']+=int(A or D);cross['h4']+=h
         if tr not in M or h==0:continue
-        k=m.bit_count(); S=F(2*k+1,2)-8; amid=(src[m]+src[on])/2
+        k=popcount(m); S=F(2*k+1,2)-8; amid=(src[m]+src[on])/2
         M[tr][0]+=F(h)*S/2**15;M[tr][1]+=F(h)*(amid-mean)/2**15;states[tr]+=1
     d=M[(0,1)][0]*M[(1,2)][1]-M[(1,2)][0]*M[(0,1)][1]
     return dict(cross=cross,expected=dict(pivotal=3121,axis=892,diagonal=474,both=88,landed=1278,h4=418),shift_violations=shiftbad,state_counts={'0_to_1':states[(0,1)],'1_to_2':states[(1,2)]},positive_control_a_equals_K_det='0',matrix={'T_01':str(M[(0,1)][0]),'T_12':str(M[(1,2)][0]),'A_01':str(M[(0,1)][1]),'A_12':str(M[(1,2)][1]),'det':str(d)})
