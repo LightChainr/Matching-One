@@ -80,12 +80,40 @@ first-birth-dominated four-arm channel with a smaller completion cancellation.
 This is the concrete mechanism that replaces the retired independent-defect
 picture.
 
+## Exact contact support rule
+
+The pre-frozen four-mask decomposition gives an even sharper structural
+result.  Among all 6,846 kernel-changing diagonal row classes, the no-contact
+mask is not merely cancelled: it is absent.
+
+| local contact mask | exact row classes | pair fibres | signed mass |
+|---:|---:|---:|---:|
+| 0, no arm | 0 | 0 | exactly `0` |
+| 1, first arm | 940 | 117,870 | `-4.0937024059e-6` |
+| 2, second arm | 952 | 119,663 | `-4.1126658895e-6` |
+| 3, both arms | 4,954 | 503,417 | `+3.2575283789e-6` |
+
+Thus, on both complete N25 geometries under the radius-one collar semantics,
+
+```text
+kernel-changing diagonal edge  =>  local source-to-thermal-arm contact.
+```
+
+The two one-arm channels agree to about `0.46%`; together they produce
+`-8.20637e-6`, while the both-arm sector cancels about `39.7%` of that
+magnitude.  This is a local collision/OPE selection rule, not evidence for a
+separated two-defect object.  The frozen decision string for an empty mask-0
+residual is `CONTACT_ZERO_RESIDUAL_UNRESOLVED`; the post-output scientific
+content is stronger and simpler: there is no radius-one contact-free edge to
+bound.
+
 ## Consequence
 
 The next theoretical object is no longer a generic six-arm upper bound.  It is
-the signed OPE/contact counterterm carried by NN and diagonal source orbits,
-followed by the separated residual after that local functional is removed.
-Only the residual could still acquire a two-defect annular gain.
+the signed OPE/contact counterterm carried by NN and diagonal source orbits and
+its transmission into full original-`U`.  Only after enlarging the collar can
+one ask whether a genuinely separated residual is created; at radius one that
+residual is exactly empty.
 
 ## Boundary
 
@@ -96,4 +124,3 @@ least one physical edge exists, but does not display one configuration-level
 witness or its annular placement.  A future formal joint-map certificate can
 make the witness constructive; it is not needed to preserve the mechanism
 elimination above.
-
