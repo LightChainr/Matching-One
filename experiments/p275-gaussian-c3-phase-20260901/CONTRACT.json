@@ -1,0 +1,70 @@
+{
+  "schema": "matching-one/p275-gaussian-c3-phase-contract/v1",
+  "issue": 275,
+  "status": "FROZEN_BEFORE_PRODUCTION",
+  "design_source": "review/p275-c3-amplitude-contract-20260901@3f3d670d6904919ecf41860ae47ab478d0c7f606",
+  "question": "Does one phase-calibrated real primitive-C3 response follow spin 4 or its real-C3 spin-8 alias under an equal-area physical rotation?",
+  "model": "square-bond percolation at p=1/2",
+  "observer": {
+    "target_lines_in_period_basis": [[1, 0], [0, 1], [1, -1]],
+    "definition": "z=(P_l0-pi_l0)+omega^2(P_l1-pi_l1)+omega(P_l2-pi_l2), omega=exp(2*pi*i/3)",
+    "normalizer": "probability per paired configuration; the same Pinson-Arguin tau=i baseline is subtracted from both embeddings",
+    "not_allowed_substitutes": ["E_top", "rho-child character", "global threshold-rank contrast", "a second observable"]
+  },
+  "geometries": [
+    {
+      "id": "g1_8_plus_i",
+      "gaussian_generator": [8, 1],
+      "period_matrix_rows": [[8, -1], [1, 8]],
+      "N_vertices": 65,
+      "N_bonds": 130,
+      "tau": "i"
+    },
+    {
+      "id": "g2_7_plus_4i",
+      "gaussian_generator": [7, 4],
+      "period_matrix_rows": [[7, -4], [4, 7]],
+      "N_vertices": 65,
+      "N_bonds": 130,
+      "tau": "i"
+    }
+  ],
+  "physical_rotation": {
+    "exp_i_delta": ["12/13", "5/13"],
+    "delta": "atan2(5,12)",
+    "delta_degrees": 22.61986494804043,
+    "signed_gain_phase_separation_sin2_12delta": 0.9993698986753711
+  },
+  "production": {
+    "paired_samples": 2000000,
+    "batches": 100,
+    "master_seed": 20260901275,
+    "common_field": "the same counter-derived 130-bit Bernoulli vector is applied to both deterministic primal-edge orders for every replica",
+    "retained_batch_coordinates": ["z1_re", "z1_im", "z2_re", "z2_im"],
+    "workers_affect_results": false,
+    "top_up": false
+  },
+  "candidate_models": {
+    "H4": "z2=g4*exp(+4*i*delta)*z1, g4 real and signed",
+    "H8": "z2=g8*exp(-8*i*delta)*z1, g8 real and signed"
+  },
+  "score": {
+    "covariance": "full paired 4x4 covariance of the mean from 100 batches",
+    "fit": "GLS profile over one complex base amplitude and one signed-real gain per candidate",
+    "reference_df": 1,
+    "alpha": 0.01,
+    "decision": {
+      "H4_SELECTED_H8_STOP": "H4 p>=alpha and H8 p<alpha",
+      "H8_SELECTED_H4_STOP": "H8 p>=alpha and H4 p<alpha",
+      "UNRESOLVED_BOTH_SURVIVE_STOP": "both p>=alpha",
+      "SIGNED_REAL_TRANSPORT_FAILED_STOP": "both p<alpha"
+    },
+    "no_top_up_for_any_outcome": true
+  },
+  "boundaries": [
+    "An arbitrary complex gain for each embedding makes H4 and H8 unidentifiable; this production tests the explicitly frozen signed-real transport contract.",
+    "Common random bits provide paired covariance but are not claimed to be a physical edge isomorphism between the two quotients.",
+    "A selected phase law identifies this finite primitive-C3 transport rule, not a continuum field or the original square-site U by itself.",
+    "Smoke runs and cost estimates cannot change the frozen production sample count, seed, batch count, score, or stop rule."
+  ]
+}
