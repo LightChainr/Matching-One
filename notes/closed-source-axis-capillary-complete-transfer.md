@@ -459,8 +459,11 @@ factorial and endpoint bounds must be reopened.
 - **Sign:** under the existing two-cloud contour gate, original U remains
   negative for every fixed finite c.  The black-only zero at
   `3.930888...` is an omitted-white-hole artifact.
-- **Remaining boundary:** a regime with `c` itself diverging; the present
-  estimates are uniform only on compact c intervals.
+- **Boundary of this note:** its estimates are uniform only on compact
+  `c` intervals.  The later
+  [unbounded error decomposition](closed-source-axis-capillary-unbounded-error.md)
+  reopens the constants and extends the law to `L^2/m^3 -> 0`; the first
+  remaining crossover object is a single-hairpin endpoint kernel.
 - **Scope:** finite-lattice strong-source joint asymptotics.  No continuum
   interface field, fixed-m limit or all-rank-one finite-c enumeration is
   asserted.

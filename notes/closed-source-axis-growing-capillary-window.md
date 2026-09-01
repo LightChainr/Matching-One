@@ -32,19 +32,16 @@ The exponent `2/3` is a uniform **endpoint-interaction** threshold, not
 the threshold for ordinary one-boundary SOS corrections.  All local
 changes that merely renormalize the common translation-invariant
 one-boundary kernel cancel coherently in the two-path determinant and
-are smaller.  At `alpha_L=O(1)`, the first unresolved classes are instead
+are smaller.  Bare repeated width-one encounters are already included
+in that determinant.  After the sharper word decomposition of
+[`closed-source-axis-capillary-unbounded-error.md`](closed-source-axis-capillary-unbounded-error.md),
+the first unresolved carrier at `alpha_L=O(1)` is a single horizontal
+reversal / hairpin.  Its finite-gap packet also includes any excess
+black/white cloud-collar contact attached to the same turn or neck.
 
-1. width-one near-osculation packets, where the two resolved boundaries
-   remain disjoint but their one-cell collars overlap at simultaneous
-   turns;
-2. a black exterior singleton or white interior hole whose exclusion
-   collar meets such a turn/neck;
-3. an overhang whose erased horizontal reversal lies in that same
-   width-one interaction packet.
-
-These are two-boundary, gap-sensitive objects.  A height-two vertical
-stack or an isolated one-boundary overhang is not by itself an
-`alpha_L` mechanism.
+A height-two vertical stack, an ordinary directed near-collision, or a
+cloud particle away from that hairpin is not by itself an `alpha_L`
+mechanism.
 
 The note proves sufficiency of (2).  It does not assert that the three
 endpoint classes have a nonzero limiting coefficient at fixed positive
@@ -141,7 +138,7 @@ does not see the other boundary, summing its vertical translations again
 produces a common Toeplitz correction.  Hence isolated overhangs are not
 the obstruction behind (2).
 
-## 3. Bad packets are localized to the width-one endpoint
+## 3. A relaxed bound localizes bad packets to the width-one endpoint
 
 Use the occupied-corner resolution and erase every maximal finite
 one-boundary packet into the common kernel of Section 2.  A remaining
@@ -188,23 +185,19 @@ proved at bounded `c`, establish (3) under (2).
 
 ## 4. What enters when `alpha_L=O(1)`
 
-The proof identifies the first missing state, rather than merely losing
-a remainder estimate.  Let the ordered boundary heights immediately
-before a column be `(y,y+1)`.  The following finite packets are not
-products of two one-boundary kernels:
+The relaxed proof identifies a finite-gap state rather than merely losing
+a remainder estimate.  The sharper contour-word count in the companion
+note shows that a bare directed encounter is already summed by `J_1` and
+cannot saturate the new scale.  The first unsummed carrier is one rooted
+horizontal reversal.  When its hairpin sits at separation one, the other
+boundary and the black/white exclusion collars prevent the packet from
+being translated as an independent one-boundary decoration.  This changes
+the separation-one transfer entry without making the same change to the
+bulk `d>>1` entry, so it evades the Toeplitz cancellation in (9).
 
-* both paths turn toward the common gap in the same or adjacent column;
-  occupied-corner smoothing keeps the cut edges disjoint, but their
-  forbidden collars overlap;
-* one path makes a rooted overhang and the other path occupies the row
-  needed to translate that packet freely;
-* a candidate black singleton outside, or white hole inside, is removed
-  from the product cloud because its NN collar meets one of those turns.
-
-All three modify the separation-one transfer entry without making the
-same modification to the bulk `d>>1` entry.  They therefore evade the
-Toeplitz cancellation in (9).  Their natural total upper scale is (12),
-which becomes comparable with `J_1` precisely at `alpha_L=O(1)`.
+Its relaxed total upper scale is (12), which becomes comparable with
+`J_1` precisely at `alpha_L=O(1)`.  Multiple reversals remain lower order
+there because their endpoint-amplified activity is `O(c(L/m^2)^2)=o(1)`.
 
 By contrast, a height-two run in one column changes every separation by
 the common second harmonic in (8); calling it the first endpoint defect
@@ -212,8 +205,8 @@ would be incorrect.  Likewise a black/white cloud particle far from the
 two collars is already included in the exact common bases and cannot
 alter the determinant ratio.
 
-The next object required at fixed `alpha` is therefore a finite-gap
-matrix kernel on states `(separation, collar occupancy)`.  A scalar
+The next object required at fixed `alpha` is therefore a single-hairpin
+finite-gap matrix kernel on states `(separation, collar occupancy)`.  A scalar
 renormalization of `c`, or one more independent-interface Bessel term,
 cannot decide the correction.
 

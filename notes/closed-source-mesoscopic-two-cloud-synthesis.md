@@ -246,10 +246,12 @@ has generating function
 roughness.  The bulk root theorem remains valid, while the fixed-L U
 amplitude requires capillary resummation whenever `L/m` does not vanish.
 
-The theorem does not identify a continuum H4/Jordan field and does not
-settle fixed m.  It does identify the correct mesoscopic objects, the
-sharp full-purity gate, the first three root coefficients and the first
-shape cancellation.
+The theorem does not identify a continuum H4/Jordan field or settle the
+full fixed-m model.  The later exact directed kernel nevertheless goes
+beyond compact capillary roughness: the determinant law is uniform for
+`L^2/m^3 -> 0`, and its positive subfamily has the separate fixed-m entropy
+threshold `m_dir=1+sqrt(2)`.  This is a sharp statement about that subfamily,
+not a thermodynamic phase claim.
 
 ## Dependency card
 
@@ -278,5 +280,10 @@ sharpens it to `L/m ->0` and closes bounded `L/m` with the positive factor
 `I0(2L/m)^2-I1(2L/m)^2`; the
 [complete transfer](closed-source-axis-capillary-complete-transfer.md)
 also fixes the full unmarked/area generating function.  The
+[uniform kernel tail](closed-source-axis-kernel-uniform-capillary-tail.md)
+and [unbounded error decomposition](closed-source-axis-capillary-unbounded-error.md)
+extend the negative signed law through `m >> L^(2/3)` and identify one
+single-hairpin endpoint matrix element as the first possible crossover.
+The
 [tilted shortest-winding classification](closed-source-tilted-shortest-winding-class.md)
 shows that its staircase entropy cannot beat the extra `m^-4k` barrier.
