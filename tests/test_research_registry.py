@@ -131,9 +131,9 @@ class ResearchRegistryTests(unittest.TestCase):
         self.assertIn(95, analysis_completed)
         self.assertIn(115, exact_completed)
 
-    def test_issue543_is_closed_support_not_active_execution(self) -> None:
-        self.assertEqual(self.ledger["version"], 13)
-        self.assertEqual(self.registry["version"], 13)
+    def test_latest_cleanup_keeps_issue543_closed_and_archives_new_finite_support(self) -> None:
+        self.assertEqual(self.ledger["version"], 14)
+        self.assertEqual(self.registry["version"], 14)
         cleanup = self.ledger["repository_cleanup"]
         self.assertEqual(cleanup["open_issue_count"], 31)
         self.assertEqual(cleanup["closed_issue_count_current_cumulative"], 60)
@@ -143,6 +143,11 @@ class ResearchRegistryTests(unittest.TestCase):
         self.assertEqual(support[543]["archived_vector_scores"], 16)
         self.assertEqual(support[543]["default_displayed_statistics_changed"], 0)
         self.assertEqual(support[543]["new_random_samples"], 0)
+        closed_prs = set(cleanup["closed_prs_this_sync"])
+        self.assertTrue({544, 545}.issubset(closed_prs))
+        unmerged = {int(row["pr"]): row for row in self.registry["unmerged_assets"]}
+        self.assertEqual(unmerged[544]["state_after_cleanup"], "closed")
+        self.assertEqual(unmerged[545]["state_after_cleanup"], "closed")
 
     def test_active_queue_is_explicit_and_has_no_gated_state(self) -> None:
         def walk(value):
@@ -163,11 +168,11 @@ class ResearchRegistryTests(unittest.TestCase):
                     "issue": 537,
                     "parent_issue": 337,
                     "kind": "theory",
-                    "target": "freeze_formal_ordinary_no_extra_landing_contract_then_complete_surviving_signed_rate",
+                    "target": "test_one_defect_diagonal_edge_in_full_pooled_root_signed_mass_graph_then_complete_surviving_signed_rate",
                     "status": "active_no_sampling",
                     "random_sample_budget": 0,
-                    "next_falsifier": "formal_contract_includes_or_excludes_provisional_clean_two_bridge_counterexample",
-                    "stop_rule": "no_N_random_or_five_six_arm_work_before_one_semantic_inclusion_decision",
+                    "next_falsifier": "physical_one_defect_edge_changes_both_landing_rank_and_source_Bell_with_nonzero_full_Schur_weight",
+                    "stop_rule": "diagonal_edge_stops_two_defect_route_only_no_diagonal_edge_plus_separable_annuli_allows_six_arm_work_no_N_or_random_production",
                 }
             ],
         )

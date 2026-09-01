@@ -1,4 +1,4 @@
-version: 13
+version: 14
 updated: 2026-09-01
 purpose: >
   Compact machine-readable map of durable evidence and the current decision.
@@ -23,13 +23,13 @@ hard_constraints:
 
 weekly_decision:
   date: 2026-09-01
-  objective: freeze_formal_ordinary_no_extra_landing_semantics_and_decide_rank_one_route
+  objective: test_whether_one_physical_defect_can_move_both_slow_variables_in_the_full_pooled_root_signed_mass_graph
   keep_live_issues: [537]
   broader_open_P1_issues: [154, 334, 337]
   P2_support_and_candidate_prs: [530, 531, 532, 533]
   P2_support_issues: [539, 542]
-  next_attention: one_clean_two_bridge_inclusion_decision_then_surviving_signed_rate_and_separate_fixed_m_phase_control
-  frontier_sha: e8ac2c97b40dacd20d0dae902ae7f6cdc38c1cc3
+  next_attention: one_defect_diagonal_edge_falsifier_then_surviving_signed_rate_and_separate_fixed_m_phase_control
+  frontier_sha: 8d228aa4f9de73821d1f0f8ad4f1c3b5a5205024
   historical_model_vocabulary:
     M0: lifecycle_current_only
     M1: contact_regulated_current
@@ -49,10 +49,12 @@ weekly_decision:
     - J_act
   stop_rule: >
     The requested random blocks are complete and named failed parameterizations
-    are stopped. Issue 537 is theory-only: freeze whether the formal
-    ordinary/no-extra event includes the provisional clean-two-bridge
-    counterexample before any N expansion, random production, five/six-arm
-    program, replacement lag/source, fifth contact feature or same-block rescue.
+    are stopped. Finite pure-thermal rank-one rescue is retired. Issue 537 is
+    theory-only: test whether one physical defect can change both slow variables
+    with nonzero full pooled-root Schur weight. A diagonal edge stops the
+    two-defect/high-arm route; only its absence plus separable annuli permits a
+    six-arm bound. No N expansion, random production, replacement lag/source,
+    fifth contact feature or same-block rescue comes first.
   fallback_boundary: write_current_C3_finite_size_phenomenology_without_operator_identification
 
 research_tracks:
@@ -90,8 +92,8 @@ research_tracks:
     name: exact_finite_algebra_and_negative_controls
     state: active_exact_theory_gate_without_production
     issues: [337, 537]
-    evidence: [E_N26_BETA_NEGATIVE, D_P337_TWO_COUPLING, D_P337_FINITE_FRONTIER, D_P337_HOMOGENEOUS_N50, D_P337_REGULAR_SPATIAL_MC, D_P337_REGULAR_JOINT_U, D_P337_CRITICAL_SPATIAL_SUMMABILITY, D_P337_THERMAL_GATE_AUDIT]
-    unmerged_candidate_support: [D_P337_ORIGINAL_U_INFLUENCE_SUPPORT, D_P337_SECTOR_QUOTIENT_SUPPORT, D_P337_TWO_BRIDGE_FACTOR_REVIEW, D_P337_MESOSCOPIC_TWO_CLOUD_CANDIDATE]
+    evidence: [E_N26_BETA_NEGATIVE, D_P337_TWO_COUPLING, D_P337_FINITE_FRONTIER, D_P337_HOMOGENEOUS_N50, D_P337_REGULAR_SPATIAL_MC, D_P337_REGULAR_JOINT_U, D_P337_CRITICAL_SPATIAL_SUMMABILITY, D_P337_THERMAL_GATE_AUDIT, D_P537_FINITE_RANK_ONE_SCOPE_DECISION]
+    unmerged_candidate_support: [D_P337_ORIGINAL_U_INFLUENCE_SUPPORT, D_P337_SECTOR_QUOTIENT_SUPPORT, D_P337_TWO_BRIDGE_FACTOR_REVIEW, D_P337_MESOSCOPIC_TWO_CLOUD_CANDIDATE, D_P537_N25_COLLAR_SUPPORT, D_P537_ALL_SCALE_POINTWISE_SUPPORT]
   - id: I
     name: threshold_value_and_literature
     state: parked_observed_support
@@ -409,11 +411,46 @@ decision_evidence_blocks:
     exact_target: T_N_equals_jY_p_minus_R_jM_p_minus_R_p_jM_is_little_o_D_over_A_N
     root_conditioned_identity: partial_u_partial_epsilon_Yhat_equals_T_N_over_D_equals_J_N_over_A_N
     signed_schur_form: T_t_equals_pooled_covariance_H_with_centered_a_times_S_minus_jM_over_M_t_times_B
-    next_falsifier: freeze_formal_ordinary_no_extra_contract_and_test_clean_two_bridge_inclusion_once
-    falsifier_stop: inclusion_retires_rank_one_route_exclusion_allows_one_minimal_z_local_exact_rerun
-    remaining: formal_landing_semantics_then_surviving_signed_functional_and_exact_pc_to_pooled_root_transport
+    next_falsifier: full_pooled_root_one_defect_graph_diagonal_edge_with_nonzero_signed_weight
+    falsifier_stop: diagonal_edge_retires_two_defect_high_arm_route_absence_plus_separable_annuli_permits_six_arm_bound
+    remaining: surviving_signed_functional_and_exact_pc_to_pooled_root_transport
+
+  - id: D_P537_FINITE_RANK_ONE_SCOPE_DECISION
+    issue: 537
+    parent_issue: 337
+    claim_level: audited_finite_exact_scope_and_research_stop_decision
+    n_samples: 0
+    score_path: notes/p537-finite-rank-one-decision-20260901.md
+    sha: 8d228aa4f9de73821d1f0f8ad4f1c3b5a5205024
+    parent_block: D_P337_THERMAL_GATE_AUDIT
+    independent_primary: false
+    outcome: finite_pure_thermal_rank_one_rescue_retired_PR544_and_PR545_preserved_only_as_scope_limited_unmerged_assets
+    next_falsifier: one_physical_defect_diagonal_edge_in_full_pooled_root_signed_mass_graph
+    remaining: aggregate_signed_rate_and_exact_pc_to_pooled_root_transport
 
 unmerged_candidate_support:
+
+  - id: D_P537_N25_COLLAR_SUPPORT
+    issue: 537
+    pr: 544
+    claim_level: closed_unmerged_exact_radius_one_collar_support
+    n_samples: 0
+    sha: e21f6220775d51450d73d4258c3edf2dbdf0a910
+    parent_block: D_P537_FINITE_RANK_ONE_SCOPE_DECISION
+    independent_primary: false
+    outcome: explicit_N25_axis_tilted_pooled_root_collar_coarsening_rank_two_and_global_four_arm_emptiness
+    remaining: no_global_joint_component_identity_or_formal_no_extra_certificate_no_merge_no_followup_compute
+
+  - id: D_P537_ALL_SCALE_POINTWISE_SUPPORT
+    issue: 537
+    pr: 545
+    claim_level: closed_unmerged_broad_pointwise_exact_support
+    n_samples: 0
+    sha: 697fa6fc385484cc1e7e8fe7806a20f60d2228a8
+    parent_block: D_P537_FINITE_RANK_ONE_SCOPE_DECISION
+    independent_primary: false
+    outcome: arbitrary_radius_broad_four_arm_pointwise_common_counterterm_identity_rejected_and_axis_L4_exact_arithmetic
+    remaining: reduced_block_conditioning_is_not_full_original_U_pooled_root_Schur_and_committed_JSON_not_byte_identical
 
   - id: D_P337_TWO_BRIDGE_FACTOR_REVIEW
     issue: 337
@@ -467,14 +504,14 @@ active_execution:
   - issue: 537
     parent_issue: 337
     kind: theory
-    target: freeze_formal_ordinary_no_extra_landing_contract_then_complete_surviving_signed_rate
+    target: test_one_defect_diagonal_edge_in_full_pooled_root_signed_mass_graph_then_complete_surviving_signed_rate
     status: active_no_sampling
     random_sample_budget: 0
-    next_falsifier: formal_contract_includes_or_excludes_provisional_clean_two_bridge_counterexample
-    stop_rule: no_N_random_or_five_six_arm_work_before_one_semantic_inclusion_decision
+    next_falsifier: physical_one_defect_edge_changes_both_landing_rank_and_source_Bell_with_nonzero_full_Schur_weight
+    stop_rule: diagonal_edge_stops_two_defect_route_only_no_diagonal_edge_plus_separable_annuli_allows_six_arm_work_no_N_or_random_production
 
 repository_cleanup:
-  live_verified_at: 2026-09-01T05:30:40Z
+  live_verified_at: 2026-09-01T05:55:00Z
   open_issue_count: 31
   open_issue_partition:
     active_P0_theory: [537]
@@ -491,11 +528,12 @@ repository_cleanup:
   newly_retained_issues_third_sync:
     P2_theory_followup: [542]
   reasserted_P2_pr_labels_third_sync: [530, 531, 532]
-  closed_prs_this_sync: [451, 527]
+  closed_prs_this_sync: [451, 527, 544, 545]
   priority_downgrades_this_sync:
     issues_P1_to_P2: [14, 408]
     new_support_issue_to_P2: [539]
-    draft_prs_to_P2_support_or_candidate: [530, 531, 532, 533]
+    draft_prs_to_P2_support_or_candidate: [530, 531, 532, 533, 544, 545]
+  newly_closed_unmerged_support_prs_seventh_sync: [544, 545]
   merges_this_sync: 0
 
 parked_support_issues:
