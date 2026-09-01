@@ -150,6 +150,13 @@ Choose fixed landing cuts around the marked pair and thermal site.  A label
 scheme is admissible only if it is determined from the two-state fibre, C4
 covariant, and identical in both geometries.
 
+The cut is essential.  Global occupied/matching component IDs cannot replace
+it: for an alternating site the one-site identity
+`Delta q=1-b_z-w_z`, together with monotonicity of homology rank, forbids the
+two global occupied branches and two global vacant separators from both being
+distinct.  See `notes/p537-global-four-arm-emptiness.md`.  The four arms must
+therefore be labelled before their outer-torus reconnection.
+
 * A **source column** `alpha` contains `lambda` (or a symmetry class of
   source indices), the pair convention, the eight source-port landing
   partition, and its `z=0 -> 1` transition.

@@ -35,11 +35,34 @@ H_same/F_same         = +16.3688575644...
 H_reversed/F_reversed =  -1.1835683313...
 ```
 
-Thus the root-conditioned thermal jet resolves a genuine two-dimensional
-cyclic-order response.  A scalar “clean bridge amplitude” cannot absorb both
-orders: the `clean_same` mode starts with a small positive fixed-M response
-and grows in the positive thermal direction, while `clean_reversed` starts
-negative but has a positive thermal derivative.
+Because `H=dF/dM`, this determinant is an exact cyclic-order Wronskian.  Thus
+the root-conditioned thermal jet resolves a genuine two-dimensional
+cyclic-order response.  A locally separable law
+`F_s(M)=c_s phi(M)` cannot absorb both orders: the `clean_same` mode starts
+with a small positive fixed-M response and grows in the positive thermal
+direction, while `clean_reversed` starts negative but has a positive thermal
+derivative.
+
+In the formal order-even/order-odd basis
+
+```text
+F_+ = F_same + F_reversed = F_clean_total,
+F_- = F_same - F_reversed,
+```
+
+the determinant is exactly `-2` times the displayed one and remains nonzero:
+
+```text
+det[(F_+,F_-);(H_+,H_-)] = -6.950122952525508e-12.
+d(F_-/F_+)/dM             = -0.3908014... < 0.
+```
+
+The rank statement and nonvanishing are invariant under every invertible
+change of the two source-mode coordinates.  They are also invariant under a
+common Schur source gauge, because `F=jY-(Y_p/M_p)jM` is gauge invariant.
+The signed odd direction is presently only a formal contrast; calling it a
+physical reflection-parity sector requires a separately frozen dihedral
+action.
 
 ## Scientific use
 
