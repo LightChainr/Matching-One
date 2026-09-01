@@ -1,0 +1,546 @@
+{
+  "counterexamples": {
+    "direction_0_and_both": {
+      "basis_after": [
+        [
+          0,
+          1
+        ]
+      ],
+      "basis_before": [
+        [
+          1,
+          1
+        ]
+      ],
+      "changed_channels": [
+        "both",
+        "direction_0"
+      ],
+      "determinant": 1,
+      "flags_after": {
+        "both": false,
+        "cross": false,
+        "direction_0": false,
+        "direction_1": true,
+        "either": true,
+        "rank": 1
+      },
+      "flags_before": {
+        "both": true,
+        "cross": false,
+        "direction_0": true,
+        "direction_1": true,
+        "either": true,
+        "rank": 1
+      },
+      "matrix": [
+        [
+          1,
+          -1
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    "direction_1_and_both": {
+      "basis_after": [
+        [
+          1,
+          0
+        ]
+      ],
+      "basis_before": [
+        [
+          1,
+          1
+        ]
+      ],
+      "changed_channels": [
+        "both",
+        "direction_1"
+      ],
+      "determinant": 1,
+      "flags_after": {
+        "both": false,
+        "cross": false,
+        "direction_0": true,
+        "direction_1": false,
+        "either": true,
+        "rank": 1
+      },
+      "flags_before": {
+        "both": true,
+        "cross": false,
+        "direction_0": true,
+        "direction_1": true,
+        "either": true,
+        "rank": 1
+      },
+      "matrix": [
+        [
+          1,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ]
+    }
+  },
+  "elliptic_spin_filter": {
+    "candidates": [
+      {
+        "hexagonal_rho_allowed": true,
+        "spin": 0,
+        "square_lattice_and_hexagonal_allowed": true,
+        "square_tau_i_allowed": true
+      },
+      {
+        "hexagonal_rho_allowed": false,
+        "spin": 4,
+        "square_lattice_and_hexagonal_allowed": false,
+        "square_tau_i_allowed": true
+      },
+      {
+        "hexagonal_rho_allowed": false,
+        "spin": 8,
+        "square_lattice_and_hexagonal_allowed": false,
+        "square_tau_i_allowed": true
+      },
+      {
+        "hexagonal_rho_allowed": true,
+        "spin": 12,
+        "square_lattice_and_hexagonal_allowed": true,
+        "square_tau_i_allowed": true
+      },
+      {
+        "hexagonal_rho_allowed": false,
+        "spin": 16,
+        "square_lattice_and_hexagonal_allowed": false,
+        "square_tau_i_allowed": true
+      },
+      {
+        "hexagonal_rho_allowed": false,
+        "spin": 20,
+        "square_lattice_and_hexagonal_allowed": false,
+        "square_tau_i_allowed": true
+      },
+      {
+        "hexagonal_rho_allowed": true,
+        "spin": 24,
+        "square_lattice_and_hexagonal_allowed": true,
+        "square_tau_i_allowed": true
+      }
+    ],
+    "hexagonal_stabilizer_order": 6,
+    "intersection_period": 12,
+    "premise": "homogeneous first-order spin response in a modular-scalar channel",
+    "square_stabilizer_order": 4
+  },
+  "finite_regression": {
+    "all_rank_channels_preserved": true,
+    "case_count": 42,
+    "cases": [
+      {
+        "changed_channels": [],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank0",
+        "transformation": "identity"
+      },
+      {
+        "changed_channels": [],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank0",
+        "transformation": "S"
+      },
+      {
+        "changed_channels": [],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank0",
+        "transformation": "T"
+      },
+      {
+        "changed_channels": [],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank0",
+        "transformation": "T_inverse"
+      },
+      {
+        "changed_channels": [],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank0",
+        "transformation": "lower_shear"
+      },
+      {
+        "changed_channels": [],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank0",
+        "transformation": "lower_shear_inverse"
+      },
+      {
+        "changed_channels": [],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank1_axis0",
+        "transformation": "identity"
+      },
+      {
+        "changed_channels": [
+          "direction_0",
+          "direction_1"
+        ],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank1_axis0",
+        "transformation": "S"
+      },
+      {
+        "changed_channels": [],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank1_axis0",
+        "transformation": "T"
+      },
+      {
+        "changed_channels": [],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank1_axis0",
+        "transformation": "T_inverse"
+      },
+      {
+        "changed_channels": [
+          "both",
+          "direction_1"
+        ],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank1_axis0",
+        "transformation": "lower_shear"
+      },
+      {
+        "changed_channels": [
+          "both",
+          "direction_1"
+        ],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank1_axis0",
+        "transformation": "lower_shear_inverse"
+      },
+      {
+        "changed_channels": [],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank1_axis1",
+        "transformation": "identity"
+      },
+      {
+        "changed_channels": [
+          "direction_0",
+          "direction_1"
+        ],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank1_axis1",
+        "transformation": "S"
+      },
+      {
+        "changed_channels": [
+          "both",
+          "direction_0"
+        ],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank1_axis1",
+        "transformation": "T"
+      },
+      {
+        "changed_channels": [
+          "both",
+          "direction_0"
+        ],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank1_axis1",
+        "transformation": "T_inverse"
+      },
+      {
+        "changed_channels": [],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank1_axis1",
+        "transformation": "lower_shear"
+      },
+      {
+        "changed_channels": [],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank1_axis1",
+        "transformation": "lower_shear_inverse"
+      },
+      {
+        "changed_channels": [],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank1_spiral",
+        "transformation": "identity"
+      },
+      {
+        "changed_channels": [],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank1_spiral",
+        "transformation": "S"
+      },
+      {
+        "changed_channels": [],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank1_spiral",
+        "transformation": "T"
+      },
+      {
+        "changed_channels": [
+          "both",
+          "direction_0"
+        ],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank1_spiral",
+        "transformation": "T_inverse"
+      },
+      {
+        "changed_channels": [],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank1_spiral",
+        "transformation": "lower_shear"
+      },
+      {
+        "changed_channels": [
+          "both",
+          "direction_1"
+        ],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank1_spiral",
+        "transformation": "lower_shear_inverse"
+      },
+      {
+        "changed_channels": [],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank1_oblique",
+        "transformation": "identity"
+      },
+      {
+        "changed_channels": [],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank1_oblique",
+        "transformation": "S"
+      },
+      {
+        "changed_channels": [],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank1_oblique",
+        "transformation": "T"
+      },
+      {
+        "changed_channels": [],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank1_oblique",
+        "transformation": "T_inverse"
+      },
+      {
+        "changed_channels": [],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank1_oblique",
+        "transformation": "lower_shear"
+      },
+      {
+        "changed_channels": [],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank1_oblique",
+        "transformation": "lower_shear_inverse"
+      },
+      {
+        "changed_channels": [],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank2_standard",
+        "transformation": "identity"
+      },
+      {
+        "changed_channels": [],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank2_standard",
+        "transformation": "S"
+      },
+      {
+        "changed_channels": [],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank2_standard",
+        "transformation": "T"
+      },
+      {
+        "changed_channels": [],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank2_standard",
+        "transformation": "T_inverse"
+      },
+      {
+        "changed_channels": [],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank2_standard",
+        "transformation": "lower_shear"
+      },
+      {
+        "changed_channels": [],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank2_standard",
+        "transformation": "lower_shear_inverse"
+      },
+      {
+        "changed_channels": [],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank2_index2",
+        "transformation": "identity"
+      },
+      {
+        "changed_channels": [],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank2_index2",
+        "transformation": "S"
+      },
+      {
+        "changed_channels": [],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank2_index2",
+        "transformation": "T"
+      },
+      {
+        "changed_channels": [],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank2_index2",
+        "transformation": "T_inverse"
+      },
+      {
+        "changed_channels": [],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank2_index2",
+        "transformation": "lower_shear"
+      },
+      {
+        "changed_channels": [],
+        "cross_preserved": true,
+        "either_preserved": true,
+        "rank_preserved": true,
+        "subgroup": "rank2_index2",
+        "transformation": "lower_shear_inverse"
+      }
+    ]
+  },
+  "issue": 114,
+  "schema_version": 1,
+  "scientific_boundary": [
+    "This proves a topological channel-label statement under SL(2,Z) basis change, not an FK-to-CFT matrix element.",
+    "The elliptic zero additionally assumes a homogeneous first-order spin response; logarithmic or mixed-spin terms must be typed separately.",
+    "Primitive winding characters, direction channels, and the repository `both` channel are vector-valued or basis-dependent and do not inherit the scalar zero.",
+    "No overlap or selection rule between thermal Q4 and V_(2,2) is inferred, and Issue 114 remains open."
+  ],
+  "theorem": {
+    "action": "W -> M W for M in SL(2,Z)",
+    "basis_dependent_channels": {
+      "both": "a rank-1 spiral can use both generators and shear to one generator",
+      "direction_0": "depends on the selected homology generator",
+      "direction_1": "depends on the selected homology generator"
+    },
+    "lift_reason": "occupation complement commutes with geometric relabelling; sums and differences of two scalar rank channels remain scalar",
+    "matching_combination_lift": {
+      "cross": {
+        "even": "modular_scalar",
+        "matching": "modular_scalar",
+        "odd": "modular_scalar",
+        "primal": "modular_scalar"
+      },
+      "either": {
+        "even": "modular_scalar",
+        "matching": "modular_scalar",
+        "odd": "modular_scalar",
+        "primal": "modular_scalar"
+      }
+    },
+    "scalar_channels": {
+      "cross": "cross is exactly rank=2",
+      "either": "either is exactly rank>0",
+      "rank": "rank(MW)=rank(W) because M in SL(2,Z) is invertible over Q"
+    }
+  }
+}

@@ -1,142 +1,100 @@
 # Roadmap
 
-This roadmap optimizes for information gain, not issue-count completion. The integrated research view is `notes/SYNTHESIS-20260828.md`.
+This roadmap optimizes for **information gained per unit effort**. It is not a permission system. Existing-data analysis, exact work, pilots and exploratory production may proceed whenever useful.
 
-## Tier A — active discriminators
+The only hard constraints are chronology, observable-semantic compatibility for claim-bearing scores, and non-duplication of correlated evidence.
 
-### A1. Norm-5 H4 versus H12 — #57
+## Active — highest information now
 
-This is now the highest-information dedicated experiment.
+### 1. Same-N norm-5 coalescence control — #205
 
-The current odd central law survives the prospective N=185/265 test, but `1+i` cannot distinguish H4 from H12/H20. Norm 5 does: the frozen N=325/425 children give opposite raw signs for H4 and H12.
-
-Execution:
-
-1. run a small threshold-rank pilot (start at 1M per child, >=100 batches);
-2. estimate actual SE and throughput;
-3. choose final production count from measured H4-vs-H12/zero power;
-4. reuse the same full curves for derivative and root/correction scores.
-
-Do not assume billions of replicas before the pilot.
-
-### A2. Third full-curve lineage — #50
-
-Score `145 -> 290` with the already-frozen correction structure.
-
-Report in order:
+The N325/N425 coalescence design is already frozen and cheap relative to large production:
 
 ```text
-raw DeltaM semigroup law
-bare 2^(3/8) slope baseline
-frozen finite-size slope correction
-raw/corrected root-ratio targets
-derivative channels
+N325: 5 M_C - 11 M_A + 6 M_B = 0
+N425: 20 M_C + 13 M_A - 33 M_B = 0
 ```
 
-This tests whether the small slope correction resolved in the first two clean norm-2 lineages predicts a third lineage.
+It removes radial exponent, parent amplitude and thermal metric. The new C nodes also change Smith class, so one block tests H4 interpolation, conjugation and quotient sensitivity at once.
 
-### A3. Even/derivative correction analysis — #48
+**Action:** run/score the fixed 10M common-field block if the C targets are still unrevealed. If it fails specifically at C, move quotient/deck structure ahead of extra RG fields. If it passes, norm-4 becomes a cleaner radial/Jordan test.
 
-The prospective N=185/265 result falsified the old positive `P4[S] ~ N^-1` sign assignment and the pure `P4[S'] ~ N^-5/4` law.
+### 2. Thermal Q4/Jordan modulus fingerprint
 
-Before new compute, use existing N=65..265 curves to:
+Scale-log behavior is no longer enough to identify the Q4 Jordan module. Use exact shape assets instead:
 
-- reconstruct signed normalized S/D derivative sequences under the corrected P4 convention;
-- verify the S sign reversal directly from raw primal/matching curves;
-- test simple finite-size crossing/correction forms for S;
-- retain q=2 and log/Jordan as the first S-prime correction models;
-- examine cross-channel covariance.
+- `B_logN/A_epsilon = -493/192 * g2(tau)` in the frozen module normalization;
+- rectangular/CM `11/4` relation;
+- hexagonal degree-2 E4 child phase projector `(1,zeta,zeta^2)` which cancels a common scalar mode.
 
-Reuse A1/A2 as fresh data before commissioning a dedicated new run.
+**Action:** freeze the smallest scalar-cancelled two/modulus score that separates ordinary analytic correction, generic log mixing and Q4-Jordan shape. Prefer a geometry ratio/projector over another free radial exponent.
 
-## Completed major prospective gate
+### 3. Norm-4 dyadic closure with deck characters — #154
 
-### N=185/265 — #43
+The N260/N340 pilot and production scorer are ready. The existing allocation reaches about three-sigma expected q2/Jordan separation at the tested cost.
 
-Completed and closed.
+Exact quotient arithmetic adds information rather than a gate: norm-4 `2i` has `Z2 x Z2` deck group and `(1+i)^2=2i` has an exact coarse/detail Hadamard split.
+
+**Action:** production may run whenever compute is available. If cheap, record character-resolved sufficient statistics in the same run; do not postpone production merely to perfect that extension.
+
+### 4. New local pivotal/RG readout on an injective geometry — #155
+
+The microscopic second direction exists exactly, but N130/N170 response matrices remain nearly rank-one. The multiradius prototype also shows `R=8` is non-injective on those tori and the observed shells do not support a simple constant log-flow.
+
+**Action:** stop adding replicas to the same N130/N170 rows. Choose the smallest larger geometries where `R=2,4,8` are injective, or introduce a genuinely different local/sublattice perturbation. Freeze the observable first, then run a modest covariance pilot.
+
+## Ready — useful parallel work
+
+### Primitive square-bond spin-4 sector — #156
+
+Two prospective norm-2 generations already establish repeated negative H4 phase transfer while positive-phase adversaries fail. Vacuum-KdV gives an excellent zero-new-compute geometry ratio.
+
+**Do not run a third same-purpose norm-2 generation just to show another sign flip.** The next useful target must distinguish finite-size corrections or the KdV/identity-family shape, for example an amplitude-free modulus ratio or a new character projector.
+
+### Multi-u / intrinsic coordinate — #119
+
+The N145->290 quantile-center `N^-3/4` transfer passed while the width metric drifts precisely. Multi-u work is useful if it separates coordinate nonlinearity from S-prime/Jordan dynamics; it is not a new independent evidence block when built from the same histograms.
+
+### Boolean/noise and energy-log-pair exact programs — #227/#234
+
+The exact/no-new-compute programs in open PRs #245/#246 can proceed in parallel. Treat them as mechanism-discovery tools. They do not block the active compute choices above.
+
+## Completed high-information blocks
+
+- **#50 N145->290 full curve:** complete. Corrected slope/root structure survives; a single three-level multiplier shape does not.
+- **#57 norm-5 N325/425:** complete. Frozen H4 beats H12/H8; child block alone remains compatible with zero.
+- **#212 independent matching-odd synthesis:** complete. Global zero strongly disfavored; fixed H4 compatible.
+- **#155 current N130/N170 tangent gate:** complete negative decision for these readouts; do not buy more identical samples.
+- **#156 two primitive norm-2 generations:** complete for the sign/phase question.
+
+## Existing-data work — analyze freely
+
+Useful no/low-new-compute work includes low-rank full-curve transfer, covariance-aware thermal-jet mixing, metric-free ratios, standardized profiles, intrinsic/multi-u coordinates, pivotal normalization and exact deck-character projections.
+
+Do not turn multiple derived views of one raw block into extra evidence votes.
+
+## Low-information loops to stop
+
+Not forbidden, simply poor use of time/compute now:
+
+- more N290 replicas repeating completed scores;
+- more N130/N170 replicas with the same two self-matching tangent rows;
+- a third primitive norm-2 generation whose only purpose is another sign flip;
+- another scalar width/boundary correction fit to P57;
+- another free exponent fit before testing shape/modulus information;
+- large production that stores only final scalars instead of reusable sufficient statistics;
+- treating registry/doc synchronization as a prerequisite for science.
+
+## Decision logic
+
+Choose the next experiment by which ambiguity it can kill:
 
 ```text
-DeltaM x=21/4 H4: 3.046 / 2
-DeltaM zero:       29.409 / 2
-DeltaM x=17/4:     30.246 / 2
-
-DeltaS positive N^-1: 240.247 / 2
+same-N H4 vs quotient/conjugation ambiguity -> coalescence #205
+q2 vs generic log vs Q4-Jordan identity     -> scalar-cancelled modulus shape
+scale composition + deck arithmetic          -> norm-4 #154
+microscopic second RG direction               -> larger injective local pivotal geometry
+primitive x≈4 correction structure            -> new KdV/character shape, not more sign tests
 ```
 
-Interpretation: the odd law survives and strengthens; the simple even companion law fails in sign. Do not rerun these sizes merely to rescue the old conjunction.
-
-## Tier B — useful parallel work
-
-### B1. Axis annihilator / q=3 scalar test — #47 / PR #98
-
-Use the axis-specific threshold-rank engine and exact adjacent-size common-random-number coupling to test fixed post-leading corrections `q=2,3,4,6,...` without consuming orientation-program compute.
-
-Pilot first; production only if the coupling actually improves information per wall time.
-
-### B2. Exact complex-zero frontier — #124 / #84
-
-Keep this bounded and exact. The tiny zero map made prospective L=5 predictions; the L=5 result already falsifies the simple imaginary-RMS extrapolation. Treat this as an exact side result, not a new CFT narrative unless a stronger invariant emerges.
-
-### B3. Paired same-N motif controls — #40
-
-Keep only if they materially improve the actual orientation-difference statistic.
-
-### B4. Literature completion — #4
-
-Finish missing primary-source transcription when convenient. It does not block current numerical work.
-
-## Tier C — theory after the next discriminators
-
-### C1. LCFT/operator identification — #37/#61
-
-The `x=21/4` spin-4 candidate remains the leading interpretation of the robust odd central sector. Unique H4 content and matching/OPE parity must be established before upgrading the operator claim.
-
-### C2. Post-leading correction spectrum — #47/#58
-
-Use actual residual/annihilator evidence to distinguish q=2,3,4,6. Do not let a named operator determine the exponent before the data.
-
-### C3. N=1105 four-angle decomposition
-
-The exact H0/H4/H8/H12 projector and minimality result are already on `main`. Run the expensive four-angle campaign only after norm 5 and the third full-curve lineage have clarified the cheaper sectors.
-
-### C4. kappa3 / continuum bridge — #25/#54
-
-Independent universality track; useful but not on the critical path of the orientation mechanism.
-
-## Engineering policy
-
-### Merge useful research quickly
-
-C0-C2 notes/tools/results may live on `main` when they are understandable and tests run. Evidence labels, not branch exile, control claim strength.
-
-### Test proportionally
-
-- important CLI: smoke/import coverage;
-- central transforms: regression tests;
-- topology/RNG/rank engines: exact or independent oracle when practical.
-
-Do not pursue production-service coverage targets.
-
-### Spend compute on leverage
-
-The synthetic red-team shows that new multipliers/sizes are more useful for mechanism selection than simply shrinking old five-size SEs. CPU first; use GPU only for a measured end-to-end information gain.
-
-## Deprioritized
-
-- more N=185/265 replicas for the failed conjunction;
-- another free-exponent fit on N=65..170;
-- N=1105 before norm 5;
-- broad PSLQ;
-- large Pell scans;
-- generalized infrastructure work without an active experiment;
-- theory notes that do not produce a distinct exact test or frozen prediction.
-
-## Milestone after A1/A2
-
-Rewrite the synthesis around whichever branch survives:
-
-1. norm-5 H4 passes and third-lineage correction predicts -> move toward paper-level odd-sector mechanism analysis;
-2. H12 sign wins -> rebuild the angular interpretation while retaining the empirical odd semigroup structure;
-3. odd law survives but slope/root correction fails -> expand the finite-size thermal-metric model;
-4. even-sector sign/correction becomes coherent -> rebuild a corrected multi-sector theory;
-5. no compact even-sector model survives -> present the robust odd sector separately rather than forcing a unified operator story.
+A failed discriminator is a successful result if it removes a mechanism class.

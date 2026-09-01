@@ -1,0 +1,41 @@
+{
+  "schema": "matching-one/c4-selfmatching-orthogonal-holdout/v1",
+  "status": "prospective_N170_score",
+  "primary_channel": "cross",
+  "source_N": 130,
+  "target_N": 170,
+  "source_frozen_c": 0.6740950243296661,
+  "point": {
+    "source_t": 4.7232872,
+    "source_lambda": 3.1839444,
+    "source_c": 0.6740950243296661,
+    "target_t": 5.2219132,
+    "target_lambda": 3.519912,
+    "target_c": 0.6740655896003787,
+    "orthogonal_residual": -0.00015370560140448575,
+    "thermal_scaling_residual": -0.0012541653178956835
+  },
+  "primary_orthogonal_residual": {
+    "value": -0.00015370560140448575,
+    "jackknife_se": 0.006287724458443929,
+    "signed_z": -0.02444534623301932,
+    "chi_square_1df": 0.0005975749524521918
+  },
+  "thermal_scaling_control": {
+    "fixed_ratio": 1.105833108204366,
+    "value": -0.0012541653178956835,
+    "jackknife_se": 0.004404919335233908,
+    "signed_z": -0.28471924737960846,
+    "chi_square_1df": 0.08106504982841069
+  },
+  "ratio_drift_diagnostic": {
+    "target_minus_source": -2.9434729287403094e-05,
+    "jackknife_se": 0.0012040952156835078,
+    "signed_z": -0.02444551635453048
+  },
+  "interpretation_rule": "A compatible orthogonal residual means this wrapping projection does not resolve a separate odd irrelevant tangent. A resolved residual establishes a second coupling in this readout but does not identify its spin.",
+  "inputs": [
+    "results/local-20260829/P155-selfmatching-tangent/n130_10m.responses.csv",
+    "results/local-20260829/P155-selfmatching-tangent/n170_10m.responses.csv"
+  ]
+}

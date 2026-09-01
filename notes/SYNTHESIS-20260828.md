@@ -1,211 +1,61 @@
-# Research Synthesis — 2026-08-28
+# Research Synthesis — 2026-08-29 mechanism split
 
-This is the execution-facing synthesis of Matching One after the N=185/265 prospective reveal and the subsequent cross/either channel-map erratum.
+`docs/STATUS.md` controls claims; `docs/ROADMAP.md` ranks information gain. This note is the execution-facing compression.
+
+## What is no longer the main question
+
+The existence of the square-site matching-odd orientation signal is no longer the principal bottleneck. The independent P43+P57 primary synthesis rejects global zero (`31.186/4`) while fixed H4 predictions remain compatible (`3.462/4`). Norm-5 also strongly removes the frozen H12/H8 aliases.
+
+N145->290 is complete. Its corrected center-slope/root structure survives, but the three-level curve shape is not one scalar multiplier. Norm-5 covariance likewise rejects one scalar width and width-corrected q2 while leaving the fixed Jordan/log alternative compatible. The live square-site problem is therefore a **low-rank/multicomponent finite-size state**, not another scalar correction exponent.
+
+## Square-site thermal H4 line
+
+The compact central law remains
+
+```text
+DeltaM ~ DeltaCos4 * N^-13/8
+```
+
+as an empirical predictive description, not a uniqueness theorem.
+
+Jordan/log now has a precise LCFT origin: the energy Jordan pair lifts through Q4 to an `x=21/4`, spin-4 rank-2 pair. But a log scale law alone cannot identify that module. The next useful evidence is a scalar-cancelled **modulus/shape fingerprint** using the exact `g2/E4`, `-493/192`, `11/4` and hexagonal phase-projector structure.
+
+The cheap same-N norm-5 coalescence test is complementary: it removes radial scaling entirely and asks whether H4 interpolation survives a deliberate quotient-class change.
+
+## Pivotal/local line
+
+Russo normalization makes the slope a pivotal mass and exposes stable H4 ratios. A local landing-marked H4 observable is directly measurable.
+
+However, the N130/N170 self-matching response matrix remains almost rank-one even after adding the exact local row. The multiradius prototype also shows `R=8` is non-injective on those small tori and does not support a simple constant shell-log flow.
+
+Therefore the next local-RG experiment must **change geometry/readout**, not merely increase replicas. Use the smallest tori with injective `R=2,4,8` or a genuinely new local/sublattice perturbation.
+
+## Rank gap is not the local jet
+
+There is an exact covector from the full Krawtchouk expansion to the global neutral-window area, but it is badly conditioned when truncated around the intrinsic center. This explains why scalar width failed: the rank gap and low-order thermal jet are related exactly but are not interchangeable low-dimensional state coordinates.
+
+## Primitive square-bond spin-4 is a separate line
+
+The primitive homology C3 character is real and repeatable, but the scalar thermal-E4 Pell bridge fails. Two prospectively frozen norm-2 generations then select the negative rank-4 H4 phase; positive-phase alternatives are strongly excluded. A vacuum-KdV calculation predicts the N30/N56 geometry ratio essentially exactly.
+
+This supports a distinct `x≈4`, spin-4 identity/vacuum-family response with finite-size drift. Do **not** merge this mechanism with the square-site thermal `x=21/4` H4 candidate merely because both carry spin 4.
+
+A third same-purpose norm-2 generation would add little. Future primitive-sector work should target the correction/shape structure.
+
+## Norm-4 is more informative than a scalar dyadic test
+
+The production backend and covariance plan are ready. Exact cover arithmetic shows `2i` has deck group `Z2 x Z2`; `(1+i)^2=2i` gives a coarse/detail Hadamard character split. Character-resolved sufficient statistics can therefore sharpen the same production run. They are an opportunity, not a new gate.
+
+## Immediate execution
+
+1. Score/run the frozen 10M same-N coalescence block if its C targets remain unrevealed.
+2. Freeze the smallest scalar-cancelled modulus score that distinguishes generic analytic/log mixing from Q4-Jordan shape.
+3. Run norm-4 when compute is convenient; add deck-character readouts if cheap.
+4. For local RG, move to a geometry/readout that can actually resolve a second direction.
+5. For primitive `x≈4`, stop repeating sign tests and design a correction/shape discriminator.
+
+Parallel exact programs such as Boolean-noise and energy/log-pair sufficient-statistic work may proceed freely; they do not block these choices.
 
 ## Current thesis
 
-The strongest current finite-size picture is a **two-parity orientation structure with a corrected derivative spectrum**, not the sign-reversed even-sector interpretation originally written after #108.
-
-```text
-matching-odd central sector
-    -> robust and prospectively reproduced
-    -> compatible with DeltaCos4 * N^-13/8
-    -> local root movement through DeltaRoot ~= -DeltaM/M'
-
-matching-even central sector
-    -> compatible with the frozen N^-1 amplitude after exact either->cross channel conversion
-
-S-prime derivative sector
-    -> decisively nonzero
-    -> pure N^-5/4 fails prospectively
-    -> q=2 and Jordan-log corrections both remain live
-```
-
-The main scientific uncertainty is now operator/correction identification, not existence of the leading orientation signal.
-
-## Strongest evidence
-
-### 1. Same-N orientation signal and Gaussian semigroup
-
-Independent high-statistics N=65,85,130,145,170 data reproduce the signed orientation signal and are compatible with
-
-```text
-DeltaM ~ DeltaCos4 * N^-13/8.
-```
-
-Three prospective `1+i` Gaussian genealogies are compatible with the raw no-fit transformation
-
-```text
-DeltaM(2N)/DeltaM(N) = -2^(-13/8).
-```
-
-The third fixed-coordinate 145->290 child was frozen before its run and passed with residual z about -0.48.
-
-### 2. N=185/265 prospective new geometries support the odd radial law
-
-The 500M-per-size target block gives
-
-```text
-N=185 DeltaM = +1.36830e-4 +/- 3.42352e-5
-N=265 DeltaM = +1.27110e-4 +/- 3.46783e-5
-
-x=21/4 H4-like: chi2 = 3.04598 / 2
-zero:            chi2 = 29.40938 / 2
-x=17/4:          chi2 = 30.24613 / 2
-```
-
-This is the strongest genuinely new-geometry support for the current matching-odd law. H4 itself is still not unique because odd higher harmonics remain possible until norm-5 spectroscopy.
-
-### 3. Matching-even N=185/265 also agrees after the exact channel map
-
-The initially published #108 interpretation said the even sector reversed sign. A post-reveal protocol audit found that the frozen source and target statistics were different wrapping channels:
-
-- frozen amplitude: P31 `either/even`;
-- target threshold rank: `cross/even`.
-
-P31 already showed these channels have opposite orientation contrasts, and complementary torus topology gives
-
-```text
-DeltaS_cross = -DeltaS_either.
-```
-
-The channel-corrected frozen predictions are
-
-```text
-N=185: -6.75216374588e-5
-N=265: -6.89194469703e-5
-```
-
-against observations
-
-```text
-N=185: -6.08153762334e-5 +/- 8.08956556558e-6
-N=265: -7.02495078452e-5 +/- 9.38562007761e-6.
-```
-
-With the unchanged source covariance,
-
-```text
-corrected chi2 = 0.5700315436 / 2
-z = +0.667, -0.119.
-```
-
-No target fit is introduced. PR #134 adds the exact regression and erratum while preserving the original #108 artifacts.
-
-This correction restores empirical consistency of the matching-even `N^-1` amplitude over the new geometries. It does **not** prove the identity-family `x=4` operator assignment or a local OPE automorphism.
-
-### 4. Root movement remains tied to the measured residual
-
-Threshold-rank reconstructions give
-
-```text
--DeltaRoot * mean(M') / DeltaM ~= 1
-```
-
-on the tested systems, and P45 passes an angular-normalized root-amplitude test. The finite matching root therefore moves through the expected local residual/slope mechanism.
-
-### 5. The derivative sector exposes real subleading physics/statistics
-
-Clean 100M full curves resolve that the bare center-slope multiplier is not exactly `2^(3/8)` at current N. The discrepancy is only about 0.2% but statistically decisive, so finite-size thermal-metric corrections are measurable.
-
-On the genuinely new N=185/265 geometries,
-
-```text
-pure P4[S'] ~ N^-5/4: chi2 = 52.71634 / 2
-rank-2/Jordan log:      chi2 =  1.20360 / 2
-analytic 1/N:           chi2 =  0.86221 / 2
-zero:                    chi2 = 1278.55524 / 2
-```
-
-Thus `S'` is real, its pure leading power is insufficient, and both predeclared correction mechanisms survive. This remains a genuine unresolved problem after the channel erratum.
-
-## What is still weak
-
-### H4 versus H12/H20
-
-Norm-2 `1+i` rotation identifies the odd square-harmonic class, not H4 uniquely. Norm-5 N=325/425 predicts different magnitudes and, for raw H4 versus H12, opposite signs. This is the most important expensive next test.
-
-### Unique radial/operator identity
-
-The `13/8` law is now difficult to dismiss over the tested range, but finite-size corrected radial alternatives must be tested with multiplier/new-size leverage, not another free fit on the same five points.
-
-### q=2 versus Jordan correction
-
-The new N=185/265 data rule out the pure S-prime law but do not distinguish the two frozen corrected forms. Further information should come from thermal-coordinate shape, new multipliers/moduli, or joint-channel constraints—not model proliferation.
-
-### Continuum meaning of matching parity
-
-Empirical pair-exchange sectors are established more strongly than any local RG/OPE automorphism. A direct FK/Potts, pivotal/four-arm, or exact topological derivation remains missing.
-
-## Highest-value next work
-
-### 1. Norm-5 Gaussian spectroscopy — #57
-
-The engine supports the frozen children
-
-```text
-N=325: (17,6) - (18,1)
-N=425: (16,13) - (19,8).
-```
-
-Use raw and normalized conventions explicitly. Raw H4 and H12 predictions differ in sign; normalized P4 removes the H4 angular factor and therefore uses positive `Q^-alpha` for pure H4. Do not mix these conventions.
-
-Use a frozen variance/power pilot and consider a predeclared optional-stopping-safe likelihood/e-value rule for any billion-replica production.
-
-### 2. Third full-curve lineage — #50
-
-Score 145->290 in the frozen order:
-
-1. central residual transfer;
-2. bare slope baseline;
-3. already-frozen finite-size slope correction;
-4. induced root prediction;
-5. derivative channels.
-
-This determines whether the small but decisive P49 slope drift has a predictive correction structure.
-
-### 3. Extract more structure from existing full curves
-
-Highest-value zero/low-compute analyses:
-
-- prequential evidence ledger #95;
-- pivotal/Russo bridge #100;
-- intrinsic quantile-center spectroscopy #101;
-- multi-u thermal-response discrimination #119;
-- joint operator-mixing matrix #125;
-- information-optimal Gaussian design #102.
-
-These should reduce the live model space before asking for another large target run.
-
-## Routes we were underusing
-
-The post-P43 frontier program adds several orthogonal ways to test the mechanism:
-
-- derive the observable through FK/Potts torus sectors (#114);
-- connect the `3/4` slope and `21/4` candidate to pivotal/four-arm geometry (#100/#121);
-- vary torus modulus, not only microscopic orientation (#103);
-- build exactly-critical tunable anisotropy controls with isoradial/star-triangle models (#106);
-- derive the matching identity at configuration level using Euler/Betti data (#111);
-- search for universal amplitude ratios across microscopic controls (#118);
-- falsify/extend the exact N=10 `Beta(3,3)` threshold law on N=26 (#115);
-- certify finite-polynomial Galois complexity (#104).
-
-Higher-risk routes—discrete holomorphic defects, correlated hyperedge self-duality, transfer-matrix eigenoperator spectroscopy, rigorous finite-size bounds, local complex zeros and full-distribution collapse—remain gated on cheap theory/control evidence.
-
-## What to stop doing
-
-Do not spend major effort on:
-
-- interpreting a wrapping-channel sign without naming the channel;
-- adding another correction exponent after every residual;
-- broad PSLQ searches;
-- N=1105 before cheaper norm-5/new-geometry tests;
-- transfer-matrix width solely for more decimal digits;
-- GPU runs without a frozen model-discrimination target;
-- treating several derived observables from the same histogram as independent evidence.
-
-## Current project thesis
-
-> Square-site/matching finite-size corrections contain reproducible matching-odd and matching-even orientation sectors once exact wrapping-channel semantics are aligned. The central matching-odd residual is compatible with an odd-square-harmonic `N^-13/8` law across independent seeds, exact Gaussian transformations and prospective new geometries, and it moves the finite root through the expected residual/slope mechanism. The matching-even central amplitude also survives the N=185/265 prospective block after the exact either-to-cross channel conversion. The remaining hard questions are whether the leading harmonic is genuinely H4, whether the `x=21/4` thermal-family interpretation is correct, and which subleading mechanism explains the prospectively failed pure S-prime law and finite-size slope drift.
-
-That is the line to optimize around until norm-5 or the third full-curve lineage breaks it.
+> The project has moved from signal discovery to representation discrimination. Square-site matching-odd data support a thermal H4-like `x=21/4` sector with non-scalar finite-size mixing; primitive square-bond data support a distinct `x≈4` spin-4 vacuum-family sector. Scalar width, constant boundary and same-readout brute-force strategies have been pruned. The highest-value next measurements are those that remove quotient/conjugation, Q4-Jordan shape, deck-character, or microscopic-readout ambiguities with the smallest new block.

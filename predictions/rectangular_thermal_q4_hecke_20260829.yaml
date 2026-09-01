@@ -1,0 +1,73 @@
+version: 1
+frozen_at: 2026-08-29
+claim_level: C0
+status: frozen_before_dedicated_rectangular_square_site_targets
+related_issues: [103, 145, 159, 164]
+purpose: >-
+  Freeze an exact weight-4 Ward/Hecke shape ratio at the square CM point and
+  a conditional lattice score for a typed thermal-Q4 matching observable.
+
+conventions:
+  coordinate_torus: 'periods ell*(1,tau)'
+  area: 'A=ell^2*Im(tau)'
+  area_normalized_weight4_shape: 'E4hat(tau)=(Im tau)^2*E4(tau)'
+  diagonal_modulus: '(1+i)/2'
+
+exact_mathematical_layer:
+  inputs:
+    modular_weight: 4
+    normalized_T2_eigenvalue: '1+2^3=9'
+    hecke_equation_at_i: >-
+      8*E4(2i)+(E4(i/2)+E4((1+i)/2))/2=9*E4(i)
+    modular_transforms:
+      - 'E4(i/2)=16*E4(2i)'
+      - 'E4((1+i)/2)=-4*E4(i)'
+  ratios:
+    E4_2i_over_E4_i: '11/16'
+    E4_i_over_2_over_E4_i: '11'
+    E4_diagonal_over_E4_i: '-4'
+    E4hat_2i_over_E4hat_i: '11/4'
+    E4hat_i_over_2_over_E4hat_i: '11/4'
+    E4hat_diagonal_over_E4hat_i: '-1'
+  scope: >-
+    These are exact modular-form identities. They contain no percolation or
+    lattice-observable identification.
+
+lattice_observable_bridge:
+  status: conditional_hypothesis
+  required_identification: >-
+    A typed H4-projected central matching response D4 must be dominated by
+    the ordinary c=0,h=5/8 thermal Q4 descendant, while the intrinsic center
+    slope K=MbarPrime must supply the same thermal-primary block and metric.
+  candidate_observable:
+    expression: 'W_N(tau)=N^2*D4_N(tau)/K_N(tau)'
+    conditional_limit: 'W_N(tau)->C*E4hat(tau)'
+    unknown_constant: 'C cancels in cross-modulus ratios'
+  required_semantics:
+    - modular_scalar_topology_channel
+    - primal_matching_parity_definition
+    - same_modulus_H4_embedding_projector
+    - fixed_orientation_order
+    - intrinsic_center_recomputed_inside_each_jackknife_replicate
+    - area_and_period_basis_convention
+
+frozen_conditional_scores:
+  primary_rectangular_residual:
+    expression: 'W(2i)-(11/4)*W(i)'
+    target: '0'
+  modular_basis_sign_control:
+    expression: 'W((1+i)/2)+W(i)'
+    target: '0'
+    interpretation: >-
+      This is a modular-basis/spin-phase control, not an independent physical
+      shape experiment when the two tori are modular equivalent.
+  covariance: >-
+    Form centers, slopes, projectors, W, and both residuals inside every
+    synchronized delete-one replicate; score the correlated residual vector.
+
+interpretation_boundary:
+  - passing_the_exact_ratio_supports_but_does_not_prove_the_lattice_Q4_bridge
+  - failing_the_ratio_can_mean_additional_fields_defect_channels_or_wrong_observable_semantics
+  - do_not_promote_the_modular_identity_itself_to_a_percolation_result
+  - do_not_fit_a_shape_ratio_before_reporting_the_fixed_11_over_4_score
+  - do_not_count_modularly_equivalent_basis_views_as_independent_evidence

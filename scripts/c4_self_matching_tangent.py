@@ -107,6 +107,45 @@ def wrapping_polynomial(counts: list[list[int]]) -> Polynomial:
     return output
 
 
+def center_score_function_response(counts: list[list[int]]) -> dict[str, Fraction]:
+    """Return exact center derivatives from Bernoulli likelihood scores.
+
+    At ``t=lambda=0`` every configuration has probability ``2^-N``.  For an
+    indicator observable ``O`` and sublattice occupation counts ``K_e,K_o``,
+
+        S_t      = 4[(K_e-N_e/2) + (K_o-N_o/2)]
+        S_lambda = 4[(K_e-N_e/2) - (K_o-N_o/2)]
+
+    and ``d_u <O> = <O S_u>``.  The input table already counts successful
+    configurations in every ``(K_e,K_o)`` cell, so the identities can be
+    evaluated exactly without finite differences or polynomial coefficients.
+    """
+
+    if not counts or not counts[0]:
+        raise ValueError("score-function response requires a nonempty count table")
+    n_even = len(counts) - 1
+    n_odd = len(counts[0]) - 1
+    if any(len(row) != n_odd + 1 for row in counts):
+        raise ValueError("score-function response requires a rectangular count table")
+
+    d_t = Fraction()
+    d_lambda = Fraction()
+    for k_even, row in enumerate(counts):
+        centered_even = Fraction(2 * k_even - n_even, 2)
+        for k_odd, count in enumerate(row):
+            centered_odd = Fraction(2 * k_odd - n_odd, 2)
+            score_t = 4 * (centered_even + centered_odd)
+            score_lambda = 4 * (centered_even - centered_odd)
+            d_t += count * score_t
+            d_lambda += count * score_lambda
+
+    normalization = Fraction(1, 1 << (n_even + n_odd))
+    return {
+        "d_t": d_t * normalization,
+        "d_lambda": d_lambda * normalization,
+    }
+
+
 def _terms(polynomial: Polynomial) -> list[dict[str, object]]:
     return [
         {"t_power": i, "lambda_power": j, "coefficient": _fraction(value)}
@@ -137,6 +176,11 @@ def exact_tangent_report(a: int = 3, b: int = 1) -> dict[str, object]:
         polynomial = wrapping_polynomial(counts[channel])
         r_t = polynomial.get((1, 0), Fraction())
         r_lambda = polynomial.get((0, 1), Fraction())
+        score_response = center_score_function_response(counts[channel])
+        if score_response != {"d_t": r_t, "d_lambda": r_lambda}:
+            raise AssertionError(
+                f"score-function and polynomial derivatives disagree for {channel}"
+            )
         channels[channel] = {
             "R_polynomial_terms": _terms(polynomial),
             "R_plus_at_t0_lambda_coefficients_ascending": _lambda_coefficients(polynomial, +1),
@@ -145,6 +189,10 @@ def exact_tangent_report(a: int = 3, b: int = 1) -> dict[str, object]:
                 ["0", "0"],
                 [_fraction(r_t), _fraction(r_lambda)],
             ],
+            "score_function_center_response_Rminus": {
+                "d_t": _fraction(score_response["d_t"]),
+                "d_lambda": _fraction(score_response["d_lambda"]),
+            },
         }
 
     expected_odd = ["0", "5/4", "0", "0", "0", "-4"]
@@ -166,6 +214,15 @@ def exact_tangent_report(a: int = 3, b: int = 1) -> dict[str, object]:
         },
         "geometry": {"a": a, "b": b, "N": geometry.n, "even_sites": geometry.n // 2, "odd_sites": geometry.n // 2},
         "selection_rule": "A Taylor monomial t^m lambda^n is exchange-even iff m+n is even, exchange-odd iff m+n is odd.",
+        "score_function_oracle": {
+            "center": "t=lambda=0",
+            "S_t": "4*((K_e-N_e/2)+(K_o-N_o/2))",
+            "S_lambda": "4*((K_e-N_e/2)-(K_o-N_o/2))",
+            "identity": "d_u <O> = <O*S_u>",
+            "center_measure": "uniform over all 2^N configurations",
+            "first_odd_derivative_equals_raw_derivative_at_center": True,
+            "verified_against_bivariate_polynomial": True,
+        },
         "channels": channels,
         "exact_odd_root_gate": {
             "Rminus_all_channels": "(5/4)*lambda - 4*lambda^5",

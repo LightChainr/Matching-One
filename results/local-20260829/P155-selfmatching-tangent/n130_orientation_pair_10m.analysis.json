@@ -1,0 +1,205 @@
+{
+  "schema": "matching-one/c4-selfmatching-orientation-tangent/v1",
+  "N": 130,
+  "first_representation": [
+    11,
+    3
+  ],
+  "second_representation": [
+    9,
+    7
+  ],
+  "delta_cos4": 1.3633136094674556,
+  "primary_channel_frozen_before_second_orientation": "cross",
+  "primary": {
+    "channel": "cross",
+    "rows": [
+      "orientation_mean",
+      "N_times_H4_contrast"
+    ],
+    "columns": [
+      "t",
+      "lambda"
+    ],
+    "matrix": [
+      [
+        4.7280268,
+        3.1873405999999997
+      ],
+      [
+        -0.9038976736111449,
+        -0.6476954340277491
+      ]
+    ],
+    "row_normalized_matrix": [
+      [
+        0.8291801297161523,
+        0.5589814956542882
+      ],
+      [
+        -0.8128588101074816,
+        -0.5824607753580057
+      ]
+    ],
+    "row_angular_condition_number": 69.93566074191158,
+    "determinant": -0.18129161697447937,
+    "determinant_se": 1.8448176986121363,
+    "determinant_z": -0.09827074898016523,
+    "passes_rank_gate": false
+  },
+  "diagnostic_channels": [
+    {
+      "channel": "both",
+      "rows": [
+        "orientation_mean",
+        "N_times_H4_contrast"
+      ],
+      "columns": [
+        "t",
+        "lambda"
+      ],
+      "matrix": [
+        [
+          4.7271304,
+          3.1887436
+        ],
+        [
+          -0.9686634027777683,
+          -0.6298829513889196
+        ]
+      ],
+      "row_normalized_matrix": [
+        [
+          0.8290169306124511,
+          0.5592235051908231
+        ],
+        [
+          -0.8383440475619333,
+          -0.5451415026554802
+        ]
+      ],
+      "row_angular_condition_number": 118.40368399238147,
+      "determinant": 0.11128037820954706,
+      "determinant_se": 1.976296693059744,
+      "determinant_z": 0.05630752639537156,
+      "passes_rank_gate": false
+    },
+    {
+      "channel": "either",
+      "rows": [
+        "orientation_mean",
+        "N_times_H4_contrast"
+      ],
+      "columns": [
+        "t",
+        "lambda"
+      ],
+      "matrix": [
+        [
+          4.7231787999999995,
+          3.1859704
+        ],
+        [
+          -0.3370259027778142,
+          -0.5677109027777569
+        ]
+      ],
+      "row_normalized_matrix": [
+        [
+          0.8290256862806236,
+          0.5592105251932773
+        ],
+        [
+          -0.510480020811245,
+          -0.8598896140508682
+        ]
+      ],
+      "row_angular_condition_number": 4.45493470191501,
+      "determinant": -1.6076455502453684,
+      "determinant_se": 2.1919280160659356,
+      "determinant_z": -0.7334390264926514,
+      "passes_rank_gate": false
+    },
+    {
+      "channel": "direction_0",
+      "rows": [
+        "orientation_mean",
+        "N_times_H4_contrast"
+      ],
+      "columns": [
+        "t",
+        "lambda"
+      ],
+      "matrix": [
+        [
+          4.7252866000000004,
+          3.1898378000000003
+        ],
+        [
+          -1.0040213715277475,
+          -1.015998072916642
+        ]
+      ],
+      "row_normalized_matrix": [
+        [
+          0.8288267656386719,
+          0.5595053105743844
+        ],
+        [
+          -0.7029019884693891,
+          -0.7112867175800338
+        ]
+      ],
+      "row_angular_condition_number": 10.09167581409394,
+      "determinant": -1.5982167566717789,
+      "determinant_se": 2.397466100349185,
+      "determinant_z": -0.666627468241992,
+      "passes_rank_gate": false
+    },
+    {
+      "channel": "direction_1",
+      "rows": [
+        "orientation_mean",
+        "N_times_H4_contrast"
+      ],
+      "columns": [
+        "t",
+        "lambda"
+      ],
+      "matrix": [
+        [
+          4.7250226,
+          3.1848762
+        ],
+        [
+          -0.3016679340278349,
+          -0.18159578124999212
+        ]
+      ],
+      "row_normalized_matrix": [
+        [
+          0.8292158494411677,
+          0.5589285061933795
+        ],
+        [
+          -0.8567464910224243,
+          -0.5157377726333054
+        ]
+      ],
+      "row_angular_condition_number": 39.035279132700246,
+      "determinant": 0.10273085291755268,
+      "determinant_se": 2.163248653833535,
+      "determinant_z": 0.04748915605956871,
+      "passes_rank_gate": false
+    }
+  ],
+  "rank_gate": {
+    "maximum_row_angular_condition_number": 50.0,
+    "minimum_absolute_determinant_z": 3.0
+  },
+  "interpretation_rule": "If the primary cross matrix passes, freeze its two readouts for an N170 matrix-pencil replication. Otherwise the wrapping/H4 family still resolves only one odd direction.",
+  "inputs": [
+    "results/local-20260829/P155-selfmatching-tangent/n130_10m.responses.csv",
+    "results/local-20260829/P155-selfmatching-tangent/n130_9_7_10m.responses.csv"
+  ]
+}
