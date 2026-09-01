@@ -1,0 +1,103 @@
+{
+  "schema": "matching-one/p275-gaussian-c3-phase-n145-contract/v1",
+  "issue": 275,
+  "status": "FROZEN_BEFORE_PRODUCTION",
+  "parent_result": "analysis/p275-gaussian-c3-phase-20260901@0b9e89c9",
+  "post_reveal_reason": "At N65 the signed-real H0 phase also survives (chi2=1.32069, p=0.25047), so a repeated (12+5i)/13 angle cannot distinguish H0 from the selected H8 alias.",
+  "question": "At an independent Gaussian norm and a new angle, which single signed-real transport law, if any, survives among H0, H4, and H8?",
+  "model": "square-bond percolation at p=1/2",
+  "observer": {
+    "target_lines_in_period_basis": [[1, 0], [0, 1], [1, -1]],
+    "definition": "z=(P_l0-pi_l0)+omega^2(P_l1-pi_l1)+omega(P_l2-pi_l2), omega=exp(2*pi*i/3)",
+    "normalizer": "probability per paired configuration; the same Pinson-Arguin tau=i baseline is subtracted from both embeddings",
+    "must_match_n65_semantics": true,
+    "not_allowed_substitutes": ["E_top", "rho-child character", "global threshold-rank contrast", "a second observable"]
+  },
+  "geometries": [
+    {
+      "id": "g1_12_plus_i",
+      "gaussian_generator": [12, 1],
+      "period_matrix_rows": [[12, -1], [1, 12]],
+      "N_vertices": 145,
+      "N_bonds": 290,
+      "tau": "i"
+    },
+    {
+      "id": "g2_9_plus_8i",
+      "gaussian_generator": [9, 8],
+      "period_matrix_rows": [[9, -8], [8, 9]],
+      "N_vertices": 145,
+      "N_bonds": 290,
+      "tau": "i"
+    }
+  ],
+  "physical_rotation": {
+    "exp_i_delta": ["4/5", "3/5"],
+    "delta": "atan2(3,4)",
+    "delta_degrees": 36.86989764584402,
+    "signed_phase_separation": {
+      "H0_vs_H4_sin2": 0.28901376000000006,
+      "H0_vs_H8_sin2": 0.8219392261226497,
+      "H4_vs_H8_sin2": 0.9826852273125106
+    }
+  },
+  "projective_invariant": {
+    "definition": "X=Re[(z2*conj(z1))^2]/(|z2|^2*|z1|^2)=cos(2*arg(z2*conj(z1)))",
+    "signed_gain_independent": true,
+    "predictions": {
+      "H0": 1.0,
+      "H4": 0.42197248,
+      "H8": -0.6438784522452992
+    },
+    "uncertainty": "delete-one-batch jackknife; diagnostic only, the frozen decision uses the three GLS gates"
+  },
+  "frozen_prediction": {
+    "assumptions": ["N65 fitted H8 coordinates transported separately to the two N145 physical frames", "primitive-C3 amplitude proportional to N^-1", "spin -8"],
+    "coordinate_order": ["z1_re", "z1_im", "z2_re", "z2_im"],
+    "mean": [0.0012003794057592805, -0.0008938146961232894, 0.0009700100725901969, 0.000523806063909104],
+    "signed_real_gain": 0.7366043227149186,
+    "covariance_of_mean_at_5m": [
+      [3.496253813131314e-08, 1.4020943851699957e-08, 2.923970202020204e-09, 4.091570261559177e-09],
+      [1.4020943851699957e-08, 2.5730105303035943e-08, 1.6642672616467936e-09, 1.337225757576052e-09],
+      [2.923970202020204e-09, 1.6642672616467936e-09, 3.891613232323233e-08, 1.1571714225768847e-08],
+      [4.091570261559177e-09, 1.337225757576052e-09, 1.1571714225768847e-08, 1.9994845454549867e-08]
+    ],
+    "wrong_H0_noncentrality": 26.755987148219916,
+    "wrong_H4_noncentrality": 26.50463503067416,
+    "wrong_H0_rejection_power_at_alpha_0p01": 0.99529502388085,
+    "wrong_H4_rejection_power_at_alpha_0p01": 0.9949507178804646,
+    "correct_H8_pass_probability": 0.99,
+    "three_gate_success_union_bound": 0.9802457417613146
+  },
+  "production": {
+    "paired_samples": 5000000,
+    "batches": 100,
+    "samples_per_batch": 50000,
+    "master_seed": 20260901277,
+    "independent_of_n65": "fresh seed and counter domain",
+    "common_field_within_n145_pair": "the same counter-derived 290-bit Bernoulli vector is applied to both deterministic primal-edge orders for every replica",
+    "retained_batch_coordinates": ["z1_re", "z1_im", "z2_re", "z2_im"],
+    "workers_affect_results": false,
+    "top_up": false
+  },
+  "candidate_models": {
+    "H0": "z2=g0*z1, g0 real and signed",
+    "H4": "z2=g4*exp(+4*i*delta)*z1, g4 real and signed",
+    "H8": "z2=g8*exp(-8*i*delta)*z1, g8 real and signed"
+  },
+  "score": {
+    "covariance": "full paired 4x4 covariance of the mean from 100 held-out batches",
+    "fit": "GLS profile over one complex base amplitude and one signed-real gain per candidate",
+    "reference_df": 1,
+    "alpha": 0.01,
+    "single_stop_rule": "Exactly one model may be selected: unique H8 pass -> H8_OBSERVER_HARMONIC_SELECTED; unique H0 pass -> H0_EVEN_CHARACTER_SELECTED; unique H4 pass -> H4_SELECTED; zero or multiple passes -> STOP_MIXED_OR_UNRESOLVED",
+    "no_top_up_for_any_outcome": true
+  },
+  "boundaries": [
+    "The N65 H0 test was post-reveal; N145 is the first frozen three-model held-out gate.",
+    "The N^-1 prediction is used for design and power only; held-out scoring profiles all amplitudes.",
+    "The invariant X is a readable phase fingerprint, not a second evidence vote.",
+    "Common random bits are a covariance coupling, not a claimed physical edge isomorphism.",
+    "Smoke runs and cost estimates cannot change the production sample count, seed, batch count, score, or stop rule."
+  ]
+}
