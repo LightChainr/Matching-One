@@ -5,7 +5,60 @@
 研究路线失败。[最终科学交接](../notes/independent-decisions-final-20260831.md)
 给出定义、数据独立性和精确来源。
 
-## 最新判决：正则单点直接传输被整类排除，双点 Q 激活保留
+## 最新完成：联合 Q 激活已传入原 U，且不限于最近邻接触
+
+[实际结果](../notes/regular-pair-joint-u-result.md)，`open_pr #267`
+`f8e30859f05e86ef35d257fc900f97e74f41e21c`，给出固定canonical Kreg的
+`J2=∂logQ∂epsilon²U|1,0 = −.0055194314248394015`。
+预先固定的NN部分为`−.001751074454402799`，非NN部分为
+`−.0037683569704366022`；三个精确有理区间均排除零。
+
+因此，**first-Q线性可加global closure**和**只有四个NN位移传入原U**
+两个具体零模型均被排除。非NN在N25仍可相距很近，这不排除所有有限范围
+contact/OPE机制，也不证明宏观分离场的尺度律。J2已移出待算。
+
+定义/约简`7557da5271f85a69ea5426b61ce7e67b94ee8ff2`，预数据NN分解、
+producer/scorer `99b58fc18666cfa6d35b96b52bb84c78dec43a55`。每几何只枚举
+原点为空的`2^24`构型，三个joint源矩除`16N`，分母仍是旧全`2^25`总体。
+相邻空点共享真实edge ID；完整q/E中心化、移根和斜率项全部保留。
+总耗时4.63秒、一次编译及一次向量评分；没有旧源重算、找根、MC或科学测试。
+这仍是同一N25精确总体，不能增加独立统计票。
+
+执行分支随后在`branch_only`[410015f5](https://github.com/LightChainr/Matching-One/blob/410015f5505dc2d8ca0e9ac904f656a4adc9fe86/notes/regular-pair-joint-transmission-result.md)
+用另一套完整`2^25`遍历实现得到完全相同的total/NN/nonNN，并补齐相邻edge
+kernel与distinct-site坐标不变性。它是同一精确总体上的实现交叉核查，不是
+第二份统计证据；本总览自己的平移约简结果不因此重复计票。
+
+另一个问题也已由新数据完成：execution `branch_only`
+[a237968f](https://github.com/LightChainr/Matching-One/blob/a237968f1d7a82d26b46e83c58179dbba7f1a908/notes/regular-pair-spatial-transmission-result.md)
+给出L64/r16空间均值`C64=6.85546875e−6`，99% MC区间
+`[5.2033972758e−6,8.5075402242e−6]`。L32/L64各200k配置、200batch，
+两尺寸独立；每配置32个pair是相关平均。它排除有限非接触空间零假设，
+不是J2，也不把两个尺寸的ratio变成已识别指数。
+
+PR #509的[baa5d33b选择定理](https://github.com/LightChainr/Matching-One/blob/baa5d33b2f87b2868aa0cb9d3f6518c93dbf3bff/experiments/p337-regular-spatial-support-20260901/RESULT.md)
+进一步证明：非相邻两点至多共享一个外部占据组件时，首阶Q激活精确为零；
+实际两组件外部给`a_xy=1/16`，且
+`|C_xy| <= (43/16) Pr{两端vacant且至少两个共享组件}`。这删除了单组件
+传播模型，却不是global U的数值界或距离指数。
+
+**下一问题转向尺度与投影：** 固定canonical模型和一个宏观位移窗口，令
+`T_N=N^2 J2_macro`。在[已推导的条件模型](../notes/regular-pair-joint-size-decision.md)
+中，`N→4N`时`x=17/4`与`x=21/4`分别预报`2^(-5/4)`与
+`2^(-13/4)`；用预定`D17/D21`而不拟合自由指数。同一次读数可预先分成
+`s=2`与`s>=3`共享组件支持，但二者必须加回总响应，不能当独立证据。
+NN/nonNN这一已完成有限分解不能替代宏观窗口。bilocal窗口投影也不是
+未筛选homogeneous单耦合族的二阶导。再加K3、调alpha或扩展旧N25描述目录
+不自动获得首要注意力。
+其它探索仍可并行；队列见[Next Targets](NEXT-TARGETS.md)。
+
+另一个不同源的有限任务也已结束：PR #509
+[ef3b2c68](https://github.com/LightChainr/Matching-One/blob/ef3b2c68f824e29421747c805ea7a505aca41908/experiments/p337-homogeneous-n50-20260831/RESULT.md)
+以完整状态合并覆盖每几何`2^50`配置，得到齐次N50 `Sstar`的
+`U=1.0615603876876551`、`V_S=+0.0543457826695583`并严格排除有限零传递。
+约49.85 CPU秒；合同结束，不自动追加N100、t/epsilon网格、尺度拟合或场认定。
+
+## 已完成的前一步：正则单点直接传输被整类排除，双点 Q 激活保留
 
 执行的`branch_only`
 [2ba8863f结果](https://github.com/LightChainr/Matching-One/blob/2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb/notes/regular-pair-interaction-result.md)
@@ -27,7 +80,7 @@
   两孔求和后除以`(1+v_x)(1+v_y)`仍正，排除此物理外部条件中的独立可加源。
   不同alpha的交叉配对没有正下界；条件正值也不保证global U为正或非零。
 
-**下一项命名比较：** 固定canonical `Kreg`、原N25方向对、site-average
+**当时命名、现已完成的比较：** 固定canonical `Kreg`、原N25方向对、site-average
 归一化，取得真正联合闭合的`J2=∂logQ∂epsilon²U|1,0`。
 保持Q1基线不变而first-Q有效log weight仅对epsilon线性可加的模型预报`J2=0`。
 非零则排除此global closure；为零则放下“条件双点正值必然进入global U”的
@@ -35,7 +88,7 @@
 不能预填为正。`Cov(a_x,a_y)`不能代替联合tensor，旧V的尺寸比也不能套用。
 这只规定一个可改变判断的输出，不展开新descriptor、source或certificate目录。
 
-本轮仅一次0.168秒有理化简及解析证明，无新occupation枚举、U评分、MC、
+该前一步仅一次0.168秒有理化简及解析证明，无新occupation枚举、U评分、MC、
 根搜索或科学测试套件。旧bounded occupation tangent的固定尺寸比作为
 不同源并行保留，完整口径见[Next Targets](NEXT-TARGETS.md)。
 

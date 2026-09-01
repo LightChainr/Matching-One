@@ -4,9 +4,50 @@
 
 This map is the repository's scientific coordinate system. It is not a permission system: exact work, reanalysis, pilots, production and independent theory may proceed in parallel. Priority moves attention; it does not lock, close, veto or demote a task. `STATUS` owns claim/lifecycle language, `ROADMAP` preserves rationale, and [NEXT-TARGETS](NEXT-TARGETS.md) owns the single ranked decision queue.
 
-**Current frontier: fixed canonical Kreg has a nonzero Q activation,
-while the entire regular homogeneous one-site direct-U class is zero.**
-Execution `2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb`, `branch_only`,
+**Current frontier: canonical joint Q activation reaches original U,
+with a nonzero contribution beyond nearest neighbours.** The
+[completed J2 result](../results/regular-pair-joint-u/REPORT.md),
+`open_pr #267` at `f8e30859f05e86ef35d257fc900f97e74f41e21c`, gives
+total `−.0055194314248394015`, NN `−.001751074454402799` and nonNN
+`−.0037683569704366022`; all exact enclosures exclude zero.
+Source: fixed Kreg=K2+K0, epsilon/N at each vacant vertex, joint physical
+contractions. Observer: original moving-root/slope `∂logQ∂epsilon²U`.
+Geometry: the fixed N25 axis/tilted pair. Acquisition: one 4.63-second
+joint-moment run, 2^24 origin-vacant states per geometry with full 2^25
+normalization; the old exact population is not an independent evidence block.
+Execution `410015f5505dc2d8ca0e9ac904f656a4adc9fe86`, `branch_only`,
+[reproduces total/NN/nonNN exactly](https://github.com/LightChainr/Matching-One/blob/410015f5505dc2d8ca0e9ac904f656a4adc9fe86/notes/regular-pair-joint-transmission-result.md)
+with another complete 2^25 implementation and adds adjacent-kernel plus
+coordinate-invariance arguments. It is an implementation cross-check on
+the same populations, not an independent evidence block.
+Global additive first-Q and NN-only global closures are excluded; all
+finite-range contact mechanisms and unique field identification are not.
+
+**The distinct noncontact spatial decision is also complete.** Execution
+`a237968f1d7a82d26b46e83c58179dbba7f1a908`, `branch_only`,
+[completes the C64/r16 decision](https://github.com/LightChainr/Matching-One/blob/a237968f1d7a82d26b46e83c58179dbba7f1a908/notes/regular-pair-spatial-transmission-result.md):
+`C32/r8=3.6591796875e−5`, `C64/r16=6.85546875e−6`; the latter's
+99% interval `[5.20339728e−6,8.50754022e−6]` excludes zero.
+Source: two fixed canonical vacant-site tensors with per-vertex units.
+Observer: connected joint colour Q susceptibility, not q/E-root U.
+Geometry: L32/r8 and L64/r16 at the prescribed sampling parameter.
+Acquisition: two separately seeded 200k configuration blocks; the 32
+translation/direction pairs inside each configuration are correlated.
+
+The exact [shared-component mechanism](https://github.com/LightChainr/Matching-One/blob/a237968f1d7a82d26b46e83c58179dbba7f1a908/notes/regular-pair-spatial-kernel.md)
+gives g=0 for s<=1 and a signed contrast product at s=2. All observed
+nonzero entries are s=2; rare s=3/4 contributions are not excluded.
+Neither the positive mean nor its size/distance ratio identifies a
+continuum field or turns the conditional Gram bound into a global-U bound.
+The [PR #509 selection rule at `baa5d33b`](https://github.com/LightChainr/Matching-One/blob/baa5d33b2f87b2868aa0cb9d3f6518c93dbf3bff/experiments/p337-regular-spatial-support-20260901/RESULT.md)
+makes the support condition exact
+for nonadjacent pairs: at most one shared exterior occupied component gives
+zero first-Q activation, while
+`|Cxy|≤(43/16)Pr(vacant endpoints and at least two shared components)`.
+An actual s=2 witness has `a=1/16`. This bounds the spatial colour
+susceptibility's support, not original U numerically or a decay exponent.
+
+The earlier execution `2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb`, `branch_only`,
 delivers [W_Q=−.04503611397592696](https://github.com/LightChainr/Matching-One/blob/2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb/results/p337-regular-pair-activation/score/REPORT.md)
 for `∂logQ∂epsilon U`, with direct Q1 epsilon response exactly zero.
 Source: the specified regular K2+K0, not the old pure-K2 occupation tangent.
@@ -26,15 +67,24 @@ and [result](../results/regular-pair-counterterm/REPORT.md) give
 K2+c(Q)K0 family. This is a shared-four-line conditional interaction,
 not an occupation-summed global-U bound or a universal norm.
 
-The primary next output is `J2(N)=∂logQ∂epsilon²U|Q1,0` for this same
-canonical Kreg, beginning with the original N25 pair/root and epsilon/N
-per vacant vertex. It uses the joint physical tensor contraction, not
-covariance of single-mark scores. First-Q effective log weight linearity
-in epsilon predicts J2=0 exactly; nonzero rejects that global closure.
-Zero leaves the positive conditional interaction's transmission to U
-unestablished. No unconditional sign or fitted counterterm is supplied.
+The [next mechanism comparison](../notes/regular-pair-joint-size-decision.md)
+keeps canonical Kreg fixed and projects the bilocal kernel onto one fixed
+macroscopic window. Under its single-field assumptions,
+`T_N=N²J2_macro~N^(29/8−x)`: `N→4N` predicts `2^(−5/4)` for
+`x=17/4` and `2^(−13/4)` for `x=21/4`; J2_macro itself predicts
+`2^(−21/4)` and `2^(−29/4)`. This window projection is not the
+unfiltered second derivative of a homogeneous one-coupling family, and
+the contrast is not an exponent measurement or field identification.
+[Next Targets](NEXT-TARGETS.md) owns acquisition. Its one predeclared
+secondary split may separate `s=2` from `s≥3` support inside the same
+readout; the dependent parts are not new evidence or a descriptor menu. The
+[completed joint-U calculation](../notes/regular-pair-joint-u-result.md)
+uses the physical pair contraction, not covariance of single-mark scores.
+Its negative J2 is neither the positive spatial C64 nor the conditional
+Gram bound. NonNN on N25 can still be microscopically close: no automatic
+K3, alpha search or continuum assignment follows from this result.
 The bounded old occupation tangent's [W_N=N V_av, ratio 2 versus 1](../notes/local-pair-size-response-predictions.md)
-remains a separate conditional comparison, not a scaling law for W_Q.
+remains a separate conditional comparison, not a scaling law for W_Q/J2.
 The no-go does not cover specified singular completions or multi-site
 vertices; these are distinct mechanisms, not a regular one-site rescue.
 
@@ -99,8 +149,10 @@ The independent #154/P334 decisions and one-hole split remain complete;
 [Decision Experiments](DECISION-EXPERIMENTS.md) owns their unchanged states.
 The Sstar/Sdrop N25 finite-coupling half-line is now complete as well:
 `Ustar<0<Udrop` for all real m≥64. Separate fixed-m and joint-limit results
-are mapped below; the primary local target is the fixed canonical
-interaction's occupation-summed J2, with the exact additive zero prediction.
+are mapped below; the canonical interaction's N25 J2 and nonNN response
+are complete. The primary local target now is the fixed-window `T_N`
+comparison above, with source, projection and two conditional predictions
+held fixed before acquisition.
 Other lines remain open without Issue locks or automatic feature expansion.
 
 **Measured microscopic-to-global separation, Draft #267 `5483aa82047df34c2c9508d4930b6e20961ed9ca`:**
@@ -121,6 +173,16 @@ already measures Sstar and `V_Bvac=.33291070842057197`; the earlier
 and [endpoint closure](../notes/decimation-closed-source-and-global-u.md)
 remain completed inputs. The new separation excludes the explicit unit-q
 alias, not arbitrary fitted rank sources or within-K/rank residual closure.
+
+**Homogeneous N50 finite transmission, `open_pr #509`, `ef3b2c68`:**
+[the completed exact result](https://github.com/LightChainr/Matching-One/blob/ef3b2c68f824e29421747c805ea7a505aca41908/experiments/p337-homogeneous-n50-20260831/RESULT.md)
+has `U=1.0615603876876551` and `V=+.0543457826695583`, excluding finite
+`V=0`. State/source/observer: the unchanged homogeneous N50 Sstar and
+original pooled-root/slope U. Geometry: `(5,5)/(1,7)`. Acquisition: full
+merged 2^50 populations for both geometries, about 49.85 CPU seconds.
+This closes its finite contract without an automatic N100 extension,
+scale law or field confirmation.
+
 The distinct `branch_only` [one-hole result, `f5c4a74a`](https://github.com/LightChainr/Matching-One/blob/f5c4a74a20bad8589c39e1034cfb209462110dbe/results/p337-endpoint-defect/score/REPORT.md)
 now measures interior first-jet transport on the N50 parents: actual
 `U_st=10.755718407564073` versus source-independent gain`.5313680267777353`.

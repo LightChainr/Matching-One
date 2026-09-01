@@ -2,13 +2,13 @@ schema: matching-one.prospective-mechanism-decisions.v1
 updated: 2026-09-01
 entry: docs/DECISION-EXPERIMENTS.md
 scientific_handoff: notes/independent-decisions-final-20260831.md
-latest_exact_handoff: notes/regular-pair-counterterm-gram.md
+latest_exact_handoff: notes/regular-pair-joint-u-result.md
 purpose: consume_frozen_decisions_not_reopen_descriptor_search
 policy:
   primary_lines: [P154_TEMPORAL_TRANSMISSION, P334_INDEPENDENT_INTERVENTIONS]
   pending_primary_scores: []
   completed_experiments: [P154_TEMPORAL_TRANSMISSION, P334_SOURCE_NORMAL_INTERVENTION, P334_CONTACT_RESIDUAL_FORECAST]
-  next_primary: fixed_canonical_Kreg_joint_Q_activation_J2_global_additivity_comparison_parallel_separate_bounded_occupation_tangent_size_ratio
+  next_primary: fixed_canonical_macroscopically_separated_projected_joint_scale_comparison_J2_and_spatial_first_transmissions_completed
   issue_locks: false
   automatic_issue_closure_or_PR_merge: false
   parallel_exploration: true
@@ -61,8 +61,16 @@ completed_regular_pair_counterterm_bound:
   new_random_samples: 0
   new_U_scores: 0
   tests_run: 0
-next_canonical_joint_transmission:
-  status: named_comparison_not_yet_scored_or_launched
+completed_canonical_joint_transmission:
+  status: completed_global_additivity_and_NN_contact_only_nulls_excluded
+  result_commit: f8e30859f05e86ef35d257fc900f97e74f41e21c
+  definition_commit: 7557da5271f85a69ea5426b61ce7e67b94ee8ff2
+  final_prescore_commit: 99b58fc18666cfa6d35b96b52bb84c78dec43a55
+  integration_status: open_pr
+  pr: 267
+  report: notes/regular-pair-joint-u-result.md
+  result: results/regular-pair-joint-u/latest.json
+  receipt: results/regular-pair-joint-u/run.json
   fixed_interaction: Kreg_equals_K2_plus_K0_c_identically_one
   geometry: N25_axis5_0_tilt4_3_existing_pooled_root
   units: each_vacant_vertex_has_epsilon_over_N_Kreg_two_distinct_insertions_second_derivative_factor2_over_N_squared
@@ -70,11 +78,74 @@ next_canonical_joint_transmission:
   acquisition: actual_joint_tensor_closures_then_original_q_E_normalization_root_and_slope_functional
   comparison_model: unchanged_Q1_baseline_first_Q_effective_log_weight_only_linear_additive_in_epsilon
   comparison_prediction_J2: 0
-  tensor_model_unconditional_sign: not_yet_derived_conditional_positive_bound_does_not_supply_it
-  if_nonzero: exclude_global_additive_first_Q_closure_for_this_fixed_interaction
-  if_zero: stop_claiming_conditional_positive_pair_activation_necessarily_transmits_to_global_U_no_fitted_counterterm_rescue
+  prior_sign_prediction: none_conditional_positive_bound_did_not_supply_global_sign
+  observed: {J2: -0.0055194314248394015, J2_NN: -0.001751074454402799, J2_nonNN: -0.0037683569704366022}
+  decision: total_and_nonNN_exact_intervals_exclude_zero_global_additive_and_NN_only_global_models_rejected
+  secondary_definition: four_NN_displacements_vs_all_other_nonzero_displacements_fixed_before_new_counts_same16N_units
+  configurations_per_geometry: 16777216
+  normalization_population_per_geometry: 33554432
+  source_moment_rule: sum_origin_vacant_G16_divided_by16N_full_Bernoulli_denominator_no_extra_factor2
+  elapsed_seconds: 4.628810042049736
+  geometry_seconds: {axis: 2.775741917, tilted: 2.65815025}
+  boundary: same_exact_N25_populations_not_independent_statistics_nonNN_not_macroscopic_or_exclusion_of_all_finite_range_contact_OPE_mechanisms
   not_substitutes: [covariance_of_single_closed_activation_marks, conditional_13over8_Gram, old_bounded_occupation_source_size_ratio]
+  execution_crosscheck:
+    commit: 410015f5505dc2d8ca0e9ac904f656a4adc9fe86
+    integration_status: branch_only
+    method: alternate_complete_2pow25_population_traversal_with_adjacent_kernel_and_distinct_site_coordinate_invariance
+    result: identical_total_NN_nonNN_values
+    dependency: same_exact_N25_populations_implementation_crosscheck_not_independent_statistical_evidence
   automatic_production: false
+completed_canonical_spatial_transmission:
+  status: frozen_L64_r16_zero_null_rejected
+  result_commit: a237968f1d7a82d26b46e83c58179dbba7f1a908
+  integration_status: branch_only
+  contract_commit: 3210aeb338ca7bb52c799d1de9048232f50ab921
+  final_size_budget_commit: 581a6e20cd18599535906e868f812bbb2b28f806
+  raw_commit: 6425bffbe56c4eca42d74410dcf45dba3899e74b
+  report: notes/regular-pair-spatial-transmission-result.md
+  result: results/p337-regular-pair-spatial/score/score.json
+  C32_r8: 0.000036591796875
+  C64_r16: 0.00000685546875
+  C64_interval99: [0.0000052033972758, 0.0000085075402242]
+  samples_each_size: 200000
+  batches_each_size: 200
+  correlated_pairs_per_configuration: 32
+  boundary: two_new_independent_configuration_blocks_with_within_size_dependence_actual_connected_spatial_mean_not_original_U_or_fitted_field_exponent
+completed_regular_spatial_support_theorem:
+  status: single_shared_component_first_Q_activation_excluded
+  result_commit: baa5d33b2f87b2868aa0cb9d3f6518c93dbf3bff
+  integration_status: open_pr
+  pr: 509
+  result: experiments/p337-regular-spatial-support-20260901/RESULT.md
+  exact_rule: nonadjacent_marks_with_at_most_one_shared_exterior_occupied_component_have_zero_first_Q_activation
+  population_bound: absolute_Cxy_le_43over16_times_probability_endpoints_vacant_and_at_least_two_shared_components
+  realizable_two_component_witness: a_xy_equals_1over16
+  boundary: support_and_spatial_C_bound_not_original_U_numerical_bound_distance_exponent_or_unique_field
+next_projected_macroscopic_scale_decision:
+  status: derived_conditional_predictions_not_yet_measured
+  commit: dac938a872b2cb2fcbfd59af8372ff07d25e3723
+  integration_status: open_pr
+  pr: 267
+  note: notes/regular-pair-joint-size-decision.md
+  source: unchanged_canonical_Kreg
+  observer: T_N_equals_N_squared_times_J2_macro_with_fixed_physical_displacement_window
+  conditional_N_to_4N_ratios: {x17_over4: "2^(-5/4)", x21_over4: "2^(-13/4)"}
+  denominator_free_contrasts: [D17_equals_T4N_minus_2powminus5over4_TN, D21_equals_T4N_minus_2powminus13over4_TN]
+  fixed_support_split: s_equals2_vs_s_ge3_same_primary_readout_must_sum_to_total
+  boundary: bilocal_kernel_projection_not_unfiltered_homogeneous_single_coupling_second_derivative_single_field_conditional_not_exponent_measurement_or_unique_field_identification
+  automatic_production: false
+completed_homogeneous_N50_Sstar:
+  status: finite_zero_transmission_excluded_contract_complete
+  result_commit: ef3b2c68f824e29421747c805ea7a505aca41908
+  integration_status: open_pr
+  pr: 509
+  result: experiments/p337-homogeneous-n50-20260831/RESULT.md
+  U: 1.0615603876876551
+  V_Sstar: 0.0543457826695583
+  represented_configurations_per_geometry: 1125899906842624
+  acquisition: exact_frontier_state_merging_two_geometries_about49p85_CPU_seconds_no_MC_or_cloud
+  boundary: distinct_source_and_finite_point_not_automatic_N100_grid_scaling_law_or_continuum_field_confirmation
 completed_local_pair_response:
   commit: 923f66b979a6b6132875f783106c041ed3c0c1a9
   integration_status: branch_only
@@ -202,11 +273,14 @@ completed_regular_endpoint_Q_selection:
   excludes_only: ordinary_regular_one_insertion_endpoint_four_leg_Q_activation
   not_excluded: actual_torus_trace_marked_or_finite_confluent_contributions_without_the_endpoint_identification
 next_operator_interface_question:
-  status: canonical_regular_completion_mixed_U_and_counterterm_robust_pair_bound_completed_global_joint_activation_next
-  definition_commit: 170394ef65d34d60ecbd8921619dc6a9533190dc
-  definition_path: analysis/n25_stable_colour_q1_contract.json
-  required_output: J2_of_fixed_canonical_regular_interaction_from_joint_physical_closure_not_product_of_single_marks
-  discriminator: zero_J2_for_linear_additive_first_Q_log_weight_vs_actual_joint_original_U_response_no_unconditional_sign_assumed
+  status: canonical_regular_completion_mixed_U_spatial_and_joint_global_transmissions_completed_projected_macro_scale_next
+  definition_commit: dac938a872b2cb2fcbfd59af8372ff07d25e3723
+  definition_path: notes/regular-pair-joint-size-decision.md
+  required_output: fixed_canonical_macroscopic_window_T_N_equals_N2J2macro_not_first_J2_or_spatial_score
+  discriminator: N_to_4N_2powminus5over4_vs_2powminus13over4_fixed_D17_D21_with_scale_growing_separation_not_N25_nonNN_alone
+  fixed_support_split: s_equals2_vs_s_ge3_correlated_components_of_same_primary_readout
+  selection_rule_source: {commit: baa5d33b2f87b2868aa0cb9d3f6518c93dbf3bff, status: open_pr, pr: 509}
+  completed_joint_global: {commit: f8e30859f05e86ef35d257fc900f97e74f41e21c, J2: -0.0055194314248394015, nonNN: -0.0037683569704366022, integration_status: open_pr}
   retired_request: preserve_old_nonzero_direct_V_in_regular_homogeneous_single_original_site_class_excluded_by_21563da4
   completed_canonical_activation: {commit: 2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb, mixed_logQ_epsilon_U: -0.04503611397592696, integration_status: branch_only}
   completed_uniform_counterterm: {commit: 21563da4b0cf721a2aa512901f6ffc966ffa8384, same_counterterm_pair_lower_bound: 3/2, integration_status: open_pr}

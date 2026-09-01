@@ -10,8 +10,44 @@ The repository is organized to expose the next mechanism-changing observation, n
 
 ## Start here
 
-**Current result: the canonical regular local interaction has a nonzero
-Q activation.** Execution's `branch_only` [completed result](https://github.com/LightChainr/Matching-One/blob/2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb/notes/regular-pair-interaction-result.md)
+**Current result: canonical Kreg's joint Q activation reaches original U beyond nearest neighbours.**
+The [completed exact result](results/regular-pair-joint-u/REPORT.md),
+`open_pr #267` at `f8e30859f05e86ef35d257fc900f97e74f41e21c`, gives
+`J2(25)=∂logQ∂epsilon²U=−.0055194314248394015`, split into
+NN `−.001751074454402799` and nonNN `−.0037683569704366022`.
+All three exact enclosures exclude zero: global additive first-Q closure
+and NN-only global transmission are excluded. This does not exclude all
+finite-range contact mechanisms or identify an asymptotic field.
+One 4.63-second joint-moment calculation used the same exact N25 population,
+with no new independent stochastic evidence.
+Execution `410015f5505dc2d8ca0e9ac904f656a4adc9fe86`, `branch_only`,
+[reproduces all three values](https://github.com/LightChainr/Matching-One/blob/410015f5505dc2d8ca0e9ac904f656a4adc9fe86/notes/regular-pair-joint-transmission-result.md)
+with another complete 2^25-per-geometry implementation and supplies the
+adjacent-kernel and coordinate-invariance arguments. This is an
+implementation cross-check on the same exact populations, not another
+statistical vote.
+
+**The separate noncontact spatial decision is also complete.**
+Execution `a237968f1d7a82d26b46e83c58179dbba7f1a908`, `branch_only`,
+[rejects the frozen C64/r16 zero null](https://github.com/LightChainr/Matching-One/blob/a237968f1d7a82d26b46e83c58179dbba7f1a908/notes/regular-pair-spatial-transmission-result.md):
+`C32/r8=3.6591796875e−5`, `C64/r16=6.85546875e−6`, with the latter's
+99% interval `[5.20339728e−6,8.50754022e−6]`. Each block has 200k fresh
+independent configurations; its 32 pair readouts per configuration are
+correlated. This connected colour contraction and the completed original-U
+J2 have different geometries, observers and acquisition blocks.
+
+The exact kernel has `s<=1 shared components => g=0`; at s=2 it is the
+signed contrast product `d_x(1)d_y(1)`. Every observed nonzero contribution
+in these two blocks has s=2, without excluding rare s=3/4 contributions.
+This production result is distinct from the older conditional Gram bound.
+[PR #509 at `baa5d33b`](https://github.com/LightChainr/Matching-One/blob/baa5d33b2f87b2868aa0cb9d3f6518c93dbf3bff/experiments/p337-regular-spatial-support-20260901/RESULT.md)
+also proves that a nonadjacent pair with at most one
+shared exterior occupied component has exactly zero first-Q activation,
+while `|Cxy|≤(43/16)Pr(vacant endpoints and at least two shared components)`;
+an actual two-component witness has `a=1/16`. This is a support selection
+rule, not a numerical bound on original U or a decay exponent.
+
+The earlier `branch_only` [completed N25 activation](https://github.com/LightChainr/Matching-One/blob/2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb/notes/regular-pair-interaction-result.md)
 and [score report](https://github.com/LightChainr/Matching-One/blob/2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb/results/p337-regular-pair-activation/score/REPORT.md)
 give `W_Q=∂logQ∂epsilon U=−.04503611397592696` for fixed
 `Kreg=K2+K0`, while its direct Q1 epsilon response is exactly zero.
@@ -29,14 +65,22 @@ is `3/2+(alpha−1/2)²/2 ≥ 3/2` for the same real counterterm at both
 marks. This is a conditional four-line bound, not global U or a universal
 field norm.
 
-**Next:** score `J2(N)=∂logQ∂epsilon² U|Q1,0` for fixed canonical Kreg,
-starting with the original N25 pair/root and epsilon/N at each vacant
-vertex. Use joint physical contractions, not covariance of single-mark
-scores. A first-Q effective log weight linear in epsilon predicts J2=0
-exactly; nonzero J2 rejects that global additive closure. A zero does not
-promote the positive conditional two-mark result to global U. No sign is
-presumed or counterterm fitted. The old entry-regular one-site rescue is
-already excluded.
+**Next:** keep canonical Kreg fixed and use the
+[prespecified macroscopic-window comparison](notes/regular-pair-joint-size-decision.md).
+Under its single-field loading assumptions,
+`T_N=N² J2_macro ~ N^(29/8−x)`: dilation `N→4N` predicts
+`T_4N/T_N=2^(−5/4)` for `x=17/4` versus `2^(−13/4)` for `x=21/4`;
+the corresponding J2_macro ratios are `2^(−21/4)` and `2^(−29/4)`.
+This is a fixed windowed projection of the bilocal kernel, not the
+unfiltered second derivative of a homogeneous one-coupling family.
+The ratios are conditional decisions, not exponent measurements or field
+identifications. The same readout may predeclare its `s=2` versus `s≥3`
+support split; those dependent parts are not separate evidence or a new
+descriptor search. The [joint-U result and boundaries](notes/regular-pair-joint-u-result.md)
+close the N25 additive and NN-only questions; [Next Targets](docs/NEXT-TARGETS.md)
+owns acquisition. Further epsilon derivatives or an alpha/counterterm
+search do not follow automatically. Joint physical contractions cannot
+be replaced by covariance of single-mark scores.
 The bounded old occupation tangent retains its separate
 [`W_N=N V_av`, ratio 2 versus 1](notes/local-pair-size-response-predictions.md)
 comparison under its stated assumptions; those predictions do not apply
@@ -50,9 +94,11 @@ half-line is complete; another m point is not pending.
 
 | Mechanism question | Delivered decision | Attention now |
 |---|---|---|
-| Does fixed canonical Kreg activate original U through Q? | Yes: W_Q=−.04503611397592696 at N25; its direct epsilon response at Q1 is exactly zero. | J2=∂logQ∂epsilon²U on the original N25 pair: zero is the exact additive first-Q-logweight prediction; its actual sign is not known. |
+| Does canonical joint Q activation reach original U beyond NN contact? | Yes: J2(25)=−.0055194314248394015 and nonNN=−.0037683569704366022, both exactly separated from zero. | Global additive and NN-only closures are excluded. Compare fixed, explicitly projected macroscopic responses; finite-range contact and asymptotic field identification remain open. |
+| Does canonical Kreg transmit a noncontact Q response after occupation averaging? | Yes: C64/r16=6.85546875e−6 and its 99% interval excludes zero. Two fresh 200k blocks; 32 within-configuration pairs remain correlated. | Completed spatial null, distinct from J2. The s=2 signed contrast carries all observed nonzero entries, without ruling out rare s=3/4 events or identifying a field. |
+| Does fixed canonical Kreg activate original U through Q? | Yes: W_Q=−.04503611397592696 at N25; its direct epsilon response at Q1 is exactly zero. | Completed first mixed response; the completed joint response above uses the same canonical source, not a fitted counterterm. |
 | Can an entry-regular homogeneous one-site completion retain old direct V? | No for the whole original-binary-site class, including both vacant and occupied tensors: only a common Bernoulli parameter survives Q1. | This mechanism is excluded; bounded occupation reweighting, specified singular completions and multi-site vertices are outside the theorem. |
-| Can a common regular singlet counterterm remove the two-mark Q interaction? | No in K2+c(Q)K0 with unit K2: the shared-line activated Gram is at least 3/2. | Test the fixed canonical interaction after occupation summation; the conditional bound is not a global-U lower bound. |
+| Can a common regular singlet counterterm remove the two-mark Q interaction? | No in K2+c(Q)K0 with unit K2: the shared-line activated Gram is at least 3/2. | Canonical occupation-summed J2 is now nonzero; its negative directional response is not a consequence of the positive conditional Gram bound. |
 | Does the old pure-K2 local tangent reach original U? | Yes: V_av(25)=+.0018155512845251097, and local≠full seam is proved. Its unrenormalized tensor has a physical two-insertion pole. | Separate bounded-occupation size ratio 2 versus 1 under the stated assumptions; do not transfer it to W_Q or reopen a regular one-site rescue. |
 | Does the stable colour trace reach original U at Q1? | Yes: B1=−.00190483618 and B1_logQ=+.00503649603, both with zero excluded. | Completed distinct seam response, not an unrun local-to-seam identification or a unique local field. |
 | Does the Q4 coefficient determine its generic-Q component by dimension alone? | No for the full physical closure family: multiplicities change `5→6` and `−1→0` in two exact examples. N25 packing proves its packet is already stable. | Preserve the larger-torus boundary; the completed N25 Q1 result needs no further enumeration or colour scan. |
@@ -60,6 +106,7 @@ half-line is complete; another m point is not pending.
 | Is the strong-coupling comparison still waiting for a finite-m witness? | No: the entire N25 real-m≥64 half-line has opposite signs. Growing-systole `N/m²→ζ<∞` also suppresses pooled U superpolynomially. | The distinct fixed-m oblique problem retains the order-25 twist penalty and sector-odds mismatch, not an unknown first finite-m window. |
 | Can a weighted rank jump alone explain the one-hole response? | No: `Xi_reweight=+4.550327123237` offsets jump `−15.306045530801`, giving total `−10.755718407564073`. Source-independent gain also remains excluded by `R=+27.766563581230237`; hard-endpoint closure survives. | Preserve the full normalized defect operator; reweighting contains both rank types, not a fitted extra source or population share. |
 | Is Sstar's global response only its explicit unit q term? | No on the fixed N25 pair: `2V_beta_null=+.07291782829951701`, with zero excluded by exact bounds. | Keep the fixed-coefficient exclusion distinct from arbitrary fitted rank sources and within-K/rank residual claims. |
+| Does homogeneous Sstar transmit on the exact N50 pair? | Yes: U=1.0615603876876551 and V=+.0543457826695583; the finite V=0 null is excluded on both complete merged 2^50 populations. | Contract complete. Do not infer N100 scaling or a field identity from this finite response. |
 | Does the N25 plaquette result establish larger-N F4 transmission? | No: the independent80M block at N65/85/130/170 is `NOT_EXCLUDED`, with all four intervals still inconclusive against±.5. | Preserve `INCONCLUSIVE_STOP_FIXED_BLOCK_WITHOUT_TOP_UP`; no automatic extra sampling. |
 | Does #154's fixed lag1 source provide strong entry/completion/global transmission? | Independent165M block rejects B/C; both net intervals are inside the declared weak band. | This source leaves primary H4 attention; the completed secondary does not rescue it. |
 | Do #334's frozen closure and residual-amplitude forecasts transfer? | Two distinct new-population experiments eliminate their specified closure/amplitude models. | Preserve their different estimands; no pooled residual, fitted half-law or automatic extra descriptor. |
@@ -72,7 +119,7 @@ Exploration remains open; priority is not a task lock or permission gate.
 <details>
 <summary>Earlier discoveries and full repository navigation</summary>
 
-- **Completed local tangent and two-hole obstruction:** execution's `branch_only` [pure-K2 result, `923f66b9`](https://github.com/LightChainr/Matching-One/blob/923f66b979a6b6132875f783106c041ed3c0c1a9/notes/local-four-port-transmission-result.md) gives `V_av=+.0018155512845251097`, with local≠full seam proved. [The L17 four-path obstruction](notes/local-pair-two-insertion-obstruction.md), `open_pr #267` at `5864de49d19898e505e6aecc316b9cb824712c70`, has connected mixed-log residue `1/[2(1+v_x)(1+v_y)]` and Gram residue `1/2`, excluding all-exterior regularity of unrenormalized K2 without proving a homogeneous partition pole. [Crossing recoupling](notes/local-pair-crossing-sector-resolution.md) activates all four H⊗H irreps; bare thermal overlap zero is singlet/standard cancellation, not an RG selection rule. The recorded symbolic run took about .114 seconds, without MC, cloud work or an old-score rerun. The newer no-go and activated-Gram definitions are pinned at `c4e4a821ab8adfc2d628b4cd65b4ce1d52535b56`; execution now stands at `2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb`, still `branch_only`.
+- **Completed local tangent and two-hole obstruction:** execution's `branch_only` [pure-K2 result, `923f66b9`](https://github.com/LightChainr/Matching-One/blob/923f66b979a6b6132875f783106c041ed3c0c1a9/notes/local-four-port-transmission-result.md) gives `V_av=+.0018155512845251097`, with local≠full seam proved. [The L17 four-path obstruction](notes/local-pair-two-insertion-obstruction.md), `open_pr #267` at `5864de49d19898e505e6aecc316b9cb824712c70`, has connected mixed-log residue `1/[2(1+v_x)(1+v_y)]` and Gram residue `1/2`, excluding all-exterior regularity of unrenormalized K2 without proving a homogeneous partition pole. [Crossing recoupling](notes/local-pair-crossing-sector-resolution.md) activates all four H⊗H irreps; bare thermal overlap zero is singlet/standard cancellation, not an RG selection rule. The recorded symbolic run took about .114 seconds, without MC, cloud work or an old-score rerun. The newer no-go and activated-Gram definitions are pinned at `c4e4a821ab8adfc2d628b4cd65b4ce1d52535b56`; the canonical-activation execution snapshot was `2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb`, `branch_only`.
 - **Completed stable Q1 seam trace:** [the result](results/n25-stable-colour-q1/REPORT.md), `open_pr #267` at `5c1f9d3b7971a41d07db3c9fa4ac86529c90c199`, gives `B1=∂epsilon U=−.001904836180602413` and `B1_logQ=∂logQ∂epsilon U=+.005036496028411871`, both with zero excluded. The 6.759-second old-count/saved-root reduction added no enumeration, samples, root search or tests. [N25 packing](notes/n25-stable-colour-completion.md) fixes this stable central completion; B1_logQ is a mixed response, not total ∂logQ U. The earlier execution `branch_only` [Q4 score, `54352b2e`](https://github.com/LightChainr/Matching-One/blob/54352b2eefa651ca482ca84837053c792e82c71e/results/p337-s4-trace-transmission/score/score.json) remains `J22=+5.440121494634842e−6`. A common regular-root branch between Q1 and Q4 is unproved, so no crossing is claimed. [Dimension-only continuation counterexamples](results/colour-specialization-gap/REPORT.md) remain a larger-torus boundary, removed for this N25 packet by packing. Earlier execution snapshot `7681eedd938019d977ede41a7d74ee1b88ffbc50` was `branch_only`.
 - **Earlier exact endpoint result:** [N25 plaquette transmission](results/decimation-plaquette-u/score/REPORT.md), `b8d043fc493ab6d7f808d0c074571d2fdd8fb60f`, gives `V_F4=+.19441468646090693` and the forced N50 correction `+.5996568681566026`. The [closed checkerboard source](notes/decimation-closed-source-and-global-u.md) is exactly endpoint-invariant. Its complete-source response and fixed cycle/rank split are now completed above; the odd-area, mixed-Smith child pair does not establish a repeated finite decimation or a continuum law.
 - **#334's independent1M intervention is complete:** [the result, `d0a9daf1`](https://github.com/LightChainr/Matching-One/blob/d0a9daf1132779205f119e9b4470f4eea9cb89c1/notes/p334-independent-normal-intervention-result.md), with score `1164ba91`, gives T=(3.08520±.39187)e−8. Its3SE interval lies above the frozen δ=1e−8, eliminating complete two-score conditional-label mean closure; the old3.6565e−8 forecast survives. Separately, [#509's600k experiment, `14b2c98e`](https://github.com/LightChainr/Matching-One/blob/14b2c98ed3a252a2fe79ce5e124d9484b23a264f/experiments/p334-prospective-intervention-20260831/REPORT.md), rejects both frozen residual-projection bands. Different sources and estimands keep these as separate decisions, not pooled votes.
@@ -112,6 +159,13 @@ gives `V_q=+.05324753511465212` and `V_beta_null=+.036458914149758506`.
 The fixed unit-q alias fails by exact bounds; arbitrary fitted rank sources
 and fixed-K/rank conditional-mean mediation remain distinct questions.
 This .281-second reuse adds no enumeration, root search or random samples.
+
+**Homogeneous N50 Sstar transmission is now exact and complete.** PR #509
+at `ef3b2c68` [gives](https://github.com/LightChainr/Matching-One/blob/ef3b2c68f824e29421747c805ea7a505aca41908/experiments/p337-homogeneous-n50-20260831/RESULT.md)
+`U=1.0615603876876551` and `V=+.0543457826695583` from the full merged
+2^50-state population of each geometry, in about 49.85 CPU seconds.
+The finite `V=0` null is excluded. This contract ends here: it does not
+automatically request N100 or establish a scaling law or field identity.
 
 **Larger-N F4 remains unresolved:** the independent80M result
 [`25ca3635`, `branch_only`](https://github.com/LightChainr/Matching-One/blob/25ca3635ea64655923c32adee4b62d683579cdcd/results/p337-f4-transmission-20260831/scored/REPORT.md)
@@ -231,7 +285,7 @@ The [P418 per-sample archive reanalysis](results/p418-normalized-archive/REPORT.
 
 The 2026-08-31 review read **all 464 Issue/PR bodies, 1,354 discussion comments and seven reviews**. It recovered results that old opening bodies and earlier overview updates had left as “next”: real E_top and #370 production analysis, P218 coalescence, P155 local thermal-null, P40 motif covariance, P255 ordered-filtration proxy, P334 trigger-graph structure, F5 source separation, N112 E_top C3 and W5 periodic gluing. [The context crosswalk](docs/REPOSITORY-CONTEXT.md) distinguishes completed positive, completed inconclusive, and genuinely unrun work. It is a dated recovery, not a recurring audit prerequisite.
 
-**Highest attention is fixed canonical Kreg's J2=∂logQ∂epsilon²U on the original N25 pair/root.** Its first mixed U response is complete. Joint physical contractions test the exact J2=0 prediction of an additive first-Q effective log weight; no unconditional sign follows from the conditional Gram bound. The broader one-site no-go eliminates an entry-regular completion preserving old direct V. The old bounded-occupation ratio remains separate and does not supply a mixed-Q scaling law. No counterterm fit, unique CFT field, global Gram bound or Q1-to-Q4 crossing is inferred. P154/P334/F4 decisions stand; fixed-m oblique twist/odds control remains parallel. [Next Targets](docs/NEXT-TARGETS.md) owns the queue.
+**Highest attention moves beyond the completed canonical J2 to its fixed macroscopic-window comparison.** With the same canonical source, the single-field hypotheses predict `T_4N/T_N=2^(−5/4)` for `x=17/4` and `2^(−13/4)` for `x=21/4`, where `T_N=N²J2_macro`; the two J2_macro ratios carry the additional factor 1/16. This windowed bilocal projection is not a homogeneous global-coupling second derivative, an exponent fit or a field identification. J2(25)=−.0055194314248394015 and its nonNN part exclude the declared global additive and NN-only closures; they do not eliminate all finite-range contact mechanisms. Fresh noncontact C64 is a distinct completed spatial decision, and neither its positivity nor the conditional Gram predicts J2's sign. The old bounded-occupation ratio remains separate and supplies no mixed-Q scaling law. No automatic K3, counterterm fit or Q1-to-Q4 crossing follows. P154/P334/F4 decisions stand; fixed-m oblique twist/odds control remains parallel. [Next Targets](docs/NEXT-TARGETS.md) owns the queue.
 
 Several positive results now sharpen this choice. P337's F5 even rows separate W_line/JS response vectors at N325/N425 (`chi2/df=149.93/4,246.93/4`), although [P439's matching loading](results/p439-direct-plateau-transport/REPORT.md) remains unresolved. P267's square-bond N112 E_top C3 response is measured and not collinear with the primitive-line readout; it is not a square-site field identification. P437 measures fixed-support high-order topology at 14.97 SE; the earlier noisy estimator is not a general impossibility result. These remain explicitly unmerged source results.
 

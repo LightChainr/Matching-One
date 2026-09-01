@@ -1,11 +1,64 @@
-# Next Targets: Test the Fixed Regular Interaction's Global Transmission
+# Next Targets: From Delivered Global Transmission to Projected Scale Predictions
 
 **Updated 2026-09-01.** This is the single attention board, not a permission
 system. Parallel work remains open; no Issue is closed or locked.
 History and definitions remain in [Decisions](DECISION-EXPERIMENTS.md),
 [Status](STATUS.md) and the [scientific ledger](../analysis/research_ledger.yaml).
 
-## Three resolved mechanism questions, one global question left
+## Joint global transmission is now complete
+
+[The exact J2 result](../notes/regular-pair-joint-u-result.md), `open_pr #267`
+at `f8e30859f05e86ef35d257fc900f97e74f41e21c`, gives:
+
+| Fixed canonical original-U coefficient | Value |
+|---|---:|
+| Total J2=∂logQ∂epsilon²U | **−.0055194314248394015** |
+| Four nearest-neighbour displacements | −.001751074454402799 |
+| Other nonzero displacements | **−.0037683569704366022** |
+
+Every exact interval excludes zero. The first-Q linear additive global
+closure and the more specific NN-only global transmission model both
+fail. The NN split was fixed before counting in
+`99b58fc18666cfa6d35b96b52bb84c78dec43a55`, and adds no new source fit.
+The two `2^24` origin-vacant traversals and one vector score took4.63seconds,
+reusing the full old N25 q/E population and pooled root. These are not new
+independent statistical votes. Non-NN on N25 is not macroscopic separation
+and does not exclude all finite-range contact/OPE mechanisms.
+
+Execution subsequently supplied a second implementation at `branch_only`
+[`410015f5`](https://github.com/LightChainr/Matching-One/blob/410015f5505dc2d8ca0e9ac904f656a4adc9fe86/notes/regular-pair-joint-transmission-result.md).
+It traverses each complete `2^25` population and returns the identical total,
+NN and non-NN values, while also proving the distinct-site coordinate
+invariance and the adjacent-edge kernel convention. This is an implementation
+cross-check on the same exact populations, not a second statistical vote.
+
+Separately, execution's `branch_only`
+[a237968f fresh spatial result](https://github.com/LightChainr/Matching-One/blob/a237968f1d7a82d26b46e83c58179dbba7f1a908/notes/regular-pair-spatial-transmission-result.md)
+rejects the L64/r16 zero-response null: `C64=6.85546875e−6`, 99% Monte
+Carlo interval `[5.2033972758e−6,8.5075402242e−6]`. Each L32/L64 block
+has200000 new configurations and200 batches;32 pairs/configuration are
+correlated readouts, not independent samples. The exact kernel needs at
+least two shared exterior components and is signed. Its spatial mean C,
+the conditional Gram and original U are three different observers.
+
+PR #509 now proves the support statement for the whole nonadjacent canonical
+kernel at [`baa5d33b`](https://github.com/LightChainr/Matching-One/blob/baa5d33b2f87b2868aa0cb9d3f6518c93dbf3bff/experiments/p337-regular-spatial-support-20260901/RESULT.md):
+zero or one shared exterior occupied component gives exactly zero first-Q
+activation, while a realizable two-component exterior gives `a_xy=1/16`.
+Moreover `|C_xy| <= (43/16) Pr{x,y vacant and at least two shared components}`.
+This is a support/upper-bound theorem for spatial C, not a numerical bound on
+original U or a distance exponent.
+
+A separate source line is also finished rather than pending. PR #509
+[`ef3b2c68`](https://github.com/LightChainr/Matching-One/blob/ef3b2c68f824e29421747c805ea7a505aca41908/experiments/p337-homogeneous-n50-20260831/RESULT.md)
+computes the complete homogeneous N50 `Sstar` response with exact state
+merging: `U=1.0615603876876551` and `V_S=+0.0543457826695583`, with the
+finite `V_S=0` null excluded. Each geometry represents all `2^50`
+configurations; the two runs took about49.85 CPU seconds. That fixed finite
+contract is complete. It is not the canonical Kreg source, an N100 request,
+a measured scaling law or a continuum-field confirmation.
+
+## Completed regularization and one-insertion questions
 
 The canonical regular completion **has been constructed and scored**.
 Execution's `branch_only`
@@ -43,26 +96,34 @@ marks have no such positive lower bound.
 |---|---|
 | An entry-regular homogeneous one-site tensor retains the old direct Q1 U response | Excluded for the stated whole class, not merely one counterterm. |
 | One-site Q activation can be represented by additive independently closed marks in every exterior | Excluded by the uniform positive two-site bound. |
-| The irreducible joint activation survives occupation averaging and transmits into global U | Open. The canonical one-insertion mixed response is complete; it does not answer this two-insertion question. |
+| The irreducible joint activation survives occupation averaging and transmits into global U | Completed: total and non-NN J2 are strictly negative. No macroscopic or unique-field conclusion follows. |
 
-## Default attention: one fixed global discriminator, one separate size comparison
+## Default attention: a projected macroscopic size comparison
 
 | Attention | Next mechanism-changing output | Fixed decision and boundary |
 |---|---|---|
-| Canonical joint transmission | For the unchanged `Kreg=K2+K0`, determine `J2(N)=∂logQ ∂epsilon² U|Q1,epsilon0`, using homogeneous site-average insertion and joint physical contractions. Start with the already defined N25 pair/root; do not scan c'(1). | A model whose first-Q effective log weight is additive and linear in epsilon predicts **J2=0**. Nonzero J2 excludes that global closure. If J2=0, stop claiming that the positive conditional pair interaction necessarily transmits to global U; do not add a fitted counterterm to rescue that claim. The tensor model's unconditional sign is not yet derived. |
+| Canonical projected scale response | Keep Kreg fixed and compare the [prederived macroscopic-window response](../notes/regular-pair-joint-size-decision.md) on a fixed homothetic geometry family. Use `T_N=N^2 J2_macro`; for `N to 4N`, the specified single-field loadings `x=17/4` and `x=21/4` predict `2^(-5/4)` and `2^(-13/4)`. | Freeze one physical displacement window before readout. The denominator-free contrasts are `D17=T_4N-2^(-5/4)T_N` and `D21=T_4N-2^(-13/4)T_N`. The windowed bilocal-kernel projection is not the unfiltered homogeneous one-coupling second derivative. No alpha, free exponent or post-result derivative is the default successor. |
 | Fixed occupation-tangent scaling | Separately compare **W_N=N V_av(N)** for the old bounded occupation source on `(5k,0)/(4k,3k)` with its k→2k dilation. | [Derived ratio](../notes/local-pair-size-response-predictions.md): R=W_(4N)/W_N=4V_av(4N)/V_av(N). Under the stated single-field/nonzero-loading assumptions, x=17/4 predicts R→2; x=21/4 predicts R→1. These predictions do not automatically apply to Kreg's mixed Q response. N25 is not an established scaling window. |
 | Parallel existing work | Named total weak-Q paths with B control; fixed-m oblique geometric twist penalty and restricted-sector odds. | Mixed Q activation is not a total Q-path derivative; the completed finite-m window is not the remaining fixed-m oblique theorem. |
 
-For the primary readout, a site-average tensor at every vacant site has
+For the completed J2 readout, a site-average tensor at every vacant site has
 `epsilon²/N²` times the sum over unordered distinct-site joint closures;
 the second derivative includes the factor two. At Q1 all canonical
 insertion weights vanish, so a product of separately closed marks would
-miss the first-Q joint term. Reuse the original q/E, normalization, pooled
-root and slope functional. **Neither Cov(a_x,a_y) nor the number 13/8 is
-J2.** A spatial/size analysis follows this fixed estimand, not a new
+miss the first-Q joint term. The original q/E, normalization, pooled
+root and slope functional were retained. **Neither Cov(a_x,a_y) nor the number 13/8 is
+J2.** The next spatial/size analysis follows a specified projected estimand, not a new
 descriptor search. No production job is started by this attention table;
 any new block should carry its stated precision/budget and predictions.
 Parallel lines do not require permission from this overview.
+
+The exact support rule permits one fixed secondary decomposition in the same
+future readout: `s=2` versus `s>=3` shared exterior components. It is recorded
+before data and must sum to the primary macro-window response; it is not a new
+evidence block or an invitation to grow a component-descriptor catalogue.
+The two ratios above are conditional model predictions. A failure rejects the
+specified loading on the specified window; a pass does not uniquely identify
+the field, and an unresolved response supports neither nonzero-loading model.
 
 ## The old finite occupation tangent remains a separate valid object
 
@@ -180,9 +241,9 @@ strong-coupling tails are delivered inputs, not new first-run assignments.
 
 Complex C3, mixed geometry, triangular invariants, boundary Q and
 connectivity/defect radical remain parallel exploration. This update absorbed
-the completed canonical mixed-U score and added an exact one-site theorem
-plus one counterterm-family reduction in0.168seconds. The latter used no
-occupation enumeration, random block, new U score or scientific test campaign.
+two completed fresh spatial blocks and scored the missing canonical joint-U
+moments once in4.63seconds. It used no new random samples, old-source rescore,
+root search or scientific test campaign.
 All ten Huawei machines
 are authorized through the updated Skill; no cloud action or live availability
 check was needed. Coordination stays [in the repo](TEAM-COORDINATION.md).

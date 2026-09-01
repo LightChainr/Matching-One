@@ -1,6 +1,6 @@
 {
   "schema": "matching-one.four-leg-trace-interface.v1",
-  "status": "trace_and_pure_local_scores_completed_canonical_regular_Q_activation_scored_regular_one_site_direct_U_class_excluded",
+  "status": "canonical_single_joint_global_and_spatial_Q_transmissions_completed_projected_scale_question_open",
   "source": {
     "commit": "977fea9272c780aea19cc47f8d33324c28a1293e",
     "path": "notes/closed-source-hypergraph-rc-twist-projection.md"
@@ -72,7 +72,7 @@
     "new_source_fit": false,
     "numerical_result_available": true,
     "status": "completed_nonzero_normalization_transmission_null_rejected_no_repeat_score",
-    "successor": "retain_old_V_entry_regular_one_site_class_excluded_next_fixed_canonical_Kreg_occupation_summed_joint_Q_activation_and_size",
+    "successor": "retain_old_V_regular_class_excluded_joint_global_and_spatial_activation_completed_next_fixed_projected_macroscopic_scale",
     "completed_stable_Q1_result": "results/n25-stable-colour-q1/latest.json",
     "completed_stable_Q1_commit": "5c1f9d3b7971a41d07db3c9fa4ac86529c90c199"
   },
@@ -115,17 +115,43 @@
     "acquisition": "symbolic equality-pattern algebra and physical witness, no occupation enumeration, MC, cloud or tests"
   },
   "current_next": {
-    "primary": "J2(N25)=partial_logQ partial_epsilon^2 U at Q1,epsilon0 for fixed canonical Kreg=K2+K0 on the original pair/root with epsilon/N at each vacant site",
+    "primary": "fixed canonical projected macroscopically separated joint size response with competing field-loading predictions; first N25 J2 is complete",
+    "observer": "T_N=N^2*J2_macro for one fixed physical displacement window",
+    "conditional_N_to_4N_ratios": {"x17_over4": "2^(-5/4)", "x21_over4": "2^(-13/4)"},
+    "fixed_contrasts": ["D17=T_4N-2^(-5/4)*T_N", "D21=T_4N-2^(-13/4)*T_N"],
+    "fixed_support_split": "s=2 versus s>=3 within the same primary readout, summing to total",
     "readout_order": "joint physical colour closure before Q continuation, occupation summation, then full original-U normalization and moving-root/slope functional",
-    "null_model": "unchanged Q1 baseline with first-Q effective logweight purely linear/additive in epsilon predicts J2=0",
-    "decision": "nonzero excludes that global closure; zero leaves conditional-two-mark-to-global-U transmission unestablished; no counterterm fit",
+    "completed_null_models": "linear additive first-Q global response and four-NN-only global transmission",
+    "completed_decision": "total J2=-0.0055194314248394015, nonNN=-0.0037683569704366022; exact zero nulls excluded without counterterm fit",
     "unconditional_sign_prediction": null,
     "settled": "all entry-regular homogeneous one-original-binary-site completions are thermal in direct Q1 U, including occupied and vacant tensors; retain-old-V search is finished in this class",
     "not_a_substitute": "Cov(a_x,a_y) of separately closed one-mark activation weights is not the joint two-tensor Q derivative",
     "parallel": "separate old bounded occupation first-response comparison W_N=N*Vav(N), W4N/WN tends2 versus1 conditionally; this W_N is not canonical mixed-Q W_alpha",
-    "prediction_path": "notes/local-pair-size-response-predictions.md",
-    "prediction_commit": "5864de49d19898e505e6aecc316b9cb824712c70",
-    "scope": "no alpha fit, duplicate N25 score or automatic production request; conditional activated Gram and bounded-tangent size predictions do not identify a universal field"
+    "prediction_path": "notes/regular-pair-joint-size-decision.md",
+    "prediction_commit": "dac938a872b2cb2fcbfd59af8372ff07d25e3723",
+    "scope": "bilocal window projection is not the unfiltered homogeneous one-coupling derivative; no alpha fit, free exponent, duplicate N25 score or automatic production request; conditional powers do not identify a universal field"
+  },
+  "completed_joint_global_response": {
+    "source_commit": "f8e30859f05e86ef35d257fc900f97e74f41e21c",
+    "definition_commit": "99b58fc18666cfa6d35b96b52bb84c78dec43a55",
+    "integration_status": "open_pr",
+    "result_path": "results/regular-pair-joint-u/latest.json",
+    "values": {"J2": -0.0055194314248394015, "NN": -0.001751074454402799, "nonNN": -0.0037683569704366022},
+    "elapsed_seconds": 4.628810042049736,
+    "new_fixed_origin_configurations_per_geometry": 16777216,
+    "execution_crosscheck_commit": "410015f5505dc2d8ca0e9ac904f656a4adc9fe86",
+    "execution_crosscheck": "alternate complete 2^25 implementation returns identical total, NN and nonNN values",
+    "boundary": "same complete N25 population and old root; implementation cross-check but not independent statistics, macroscopic separation or a continuum field assignment"
+  },
+  "completed_regular_spatial_support": {
+    "result_commit": "baa5d33b2f87b2868aa0cb9d3f6518c93dbf3bff",
+    "integration_status": "open_pr",
+    "pr": 509,
+    "result_path": "experiments/p337-regular-spatial-support-20260901/RESULT.md",
+    "selection_rule": "at most one shared exterior occupied component gives zero first-Q activation for nonadjacent marks",
+    "canonical_bound": "|Cxy| <= (43/16) P(endpoints vacant and at least two shared components)",
+    "realisable_s2_witness": "a_xy=1/16",
+    "boundary": "spatial support and C bound, not original-U value or scaling exponent"
   },
   "completed_canonical_regular_interaction": {
     "source_commit": "2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb",
