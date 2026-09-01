@@ -1,0 +1,48 @@
+{
+  "schema": "matching-one/p537-aggregate-wedge-l8-contract/v1",
+  "status": "FROZEN_BEFORE_OUTPUT",
+  "geometry": "axis square L8",
+  "L": 8,
+  "N": 64,
+  "samples": 100000000,
+  "batches": 100,
+  "shards": 16,
+  "seed": 20260901845,
+  "proposal_p": 0.5926,
+  "reserved_token": "frozen-L8-G4",
+  "primary": "G4",
+  "fixed_predictions": {
+    "L^-4_from_L6": 0.000727076166899827,
+    "L^-9/2_from_L6": 0.000629666431021465,
+    "L^-5_from_L6": 0.000545307125174870,
+    "L^-9/2_three_size_mean_amplitude": 0.000628458914049713
+  },
+  "decision": {
+    "method": "classify only when the full normal 95 percent G4 interval lies between the geometric midpoint boundaries",
+    "lower_boundary": 0.000585970640322052,
+    "upper_boundary": 0.000676620613854308,
+    "below_lower": "L_MINUS_5_OR_FASTER",
+    "between": "L_MINUS_9_OVER_2_SELECTED",
+    "above_upper": "L_MINUS_4_OR_SLOWER",
+    "crossing": "UNRESOLVED_MODEL_BOUNDARY"
+  },
+  "required_outputs": [
+    "matching_root",
+    "T01",
+    "T12",
+    "A01",
+    "A12",
+    "S",
+    "Psi4",
+    "C4",
+    "G4",
+    "delete_one_batch_standard_error"
+  ],
+  "forbidden_adaptation": [
+    "no source scan",
+    "no collar-radius scan",
+    "no alternate minor",
+    "no geometry change",
+    "no post-output sample extension"
+  ]
+}

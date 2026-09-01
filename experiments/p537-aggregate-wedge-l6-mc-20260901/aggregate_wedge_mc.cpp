@@ -1,5 +1,5 @@
-// Held-out square-L6 Bernoulli production for the P537 root-conditioned G4.
-// The scientific coordinate is frozen to L^4*G4; no radius/source/minor scan.
+// Held-out square-L Bernoulli production for the P537 root-conditioned G4.
+// The scientific coordinate is frozen to G4; no radius/source/minor scan.
 #define P537_LIBRARY_ONLY
 #include "../p537-aggregate-wedge-l5-20260901/aggregate_wedge_exact.cpp"
 
@@ -32,7 +32,7 @@ struct McLandingRow {
 
 void write_mc(const std::string& path, std::uint64_t samples, int shard_index,
               int shard_count, int batches, std::uint64_t seed, double proposal_p,
-              std::uint64_t begin, std::uint64_t end,
+              int L, int N, std::uint64_t begin, std::uint64_t end,
               const std::vector<std::vector<McGlobalRow>>& global,
               const std::array<std::vector<std::vector<McLandingRow>>,2>& landing) {
     std::ifstream probe(path);
@@ -40,7 +40,7 @@ void write_mc(const std::string& path, std::uint64_t samples, int shard_index,
     std::ofstream out(path);
     if (!out) throw std::runtime_error("cannot open output: " + path);
     out << "# schema=matching-one/p537-aggregate-wedge-mc/v1\n"
-        << "# L=6\n# N=36\n# samples=" << samples
+        << "# L=" << L << "\n# N=" << N << "\n# samples=" << samples
         << "\n# shard_index=" << shard_index << "\n# shard_count=" << shard_count
         << "\n# batches=" << batches << "\n# seed=" << seed
         << "\n# proposal_p=" << std::setprecision(17) << proposal_p
@@ -66,26 +66,29 @@ void write_mc(const std::string& path, std::uint64_t samples, int shard_index,
 } // namespace
 
 int main(int argc, char** argv) {
-    if (argc != 10) {
-        std::cerr << "usage: aggregate_wedge_mc KERNEL OUTPUT SAMPLES SHARD_INDEX "
+    if (argc != 11) {
+        std::cerr << "usage: aggregate_wedge_mc KERNEL OUTPUT L SAMPLES SHARD_INDEX "
                      "SHARD_COUNT BATCHES SEED PROPOSAL_P RESERVED\n";
         return 2;
     }
     try {
         const auto kernel = read_kernel(argv[1]);
         const std::string output = argv[2];
-        const std::uint64_t samples = std::stoull(argv[3]);
-        const int shard_index = std::stoi(argv[4]);
-        const int shard_count = std::stoi(argv[5]);
-        const int batches = std::stoi(argv[6]);
-        const std::uint64_t seed = std::stoull(argv[7]);
-        const double proposal_p = std::stod(argv[8]);
-        const std::string reserved = argv[9];
-        if (reserved != "frozen-L6-G4") throw std::invalid_argument("reserved token mismatch");
-        if (!samples || shard_count <= 0 || shard_index < 0 || shard_index >= shard_count ||
+        const int L = std::stoi(argv[3]);
+        const std::uint64_t samples = std::stoull(argv[4]);
+        const int shard_index = std::stoi(argv[5]);
+        const int shard_count = std::stoi(argv[6]);
+        const int batches = std::stoi(argv[7]);
+        const std::uint64_t seed = std::stoull(argv[8]);
+        const double proposal_p = std::stod(argv[9]);
+        const std::string reserved = argv[10];
+        const std::string expected = "frozen-L" + std::to_string(L) + "-G4";
+        if (reserved != expected) throw std::invalid_argument("reserved token mismatch");
+        if (L < 4 || L > 16 || !samples || shard_count <= 0 ||
+            shard_index < 0 || shard_index >= shard_count ||
             batches < 20 || !(proposal_p > 0.5 && proposal_p < 0.7))
             throw std::invalid_argument("invalid production arguments");
-        Torus torus(6,kernel);
+        Torus torus(L,kernel);
         const int N = torus.size();
         const std::uint64_t begin = samples * std::uint64_t(shard_index) / std::uint64_t(shard_count);
         const std::uint64_t end = samples * std::uint64_t(shard_index+1) / std::uint64_t(shard_count);
@@ -140,7 +143,7 @@ int main(int argc, char** argv) {
             }
         }
         write_mc(output,samples,shard_index,shard_count,batches,seed,proposal_p,
-                 begin,end,global,landing);
+                 L,N,begin,end,global,landing);
         std::cerr << "completed samples=" << (end-begin) << " kernel_rows=" << kernel.rows << '\n';
     } catch (const std::exception& error) {
         std::cerr << "error: " << error.what() << '\n';

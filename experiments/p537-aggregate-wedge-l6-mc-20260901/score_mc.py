@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Score the frozen held-out square-L6 root-conditioned G4 production."""
+"""Score a frozen held-out square-L root-conditioned G4 production."""
 from __future__ import annotations
 import argparse,csv,json,math
 from collections import defaultdict
@@ -8,6 +8,15 @@ import mpmath as mp
 
 
 LOCAL_G6_BAND=(mp.mpf("0.0022905"),mp.mpf("0.0027995"))
+L8_PREDICTIONS={
+    "4":mp.mpf("0.000727076166899827"),
+    "4.5":mp.mpf("0.000629666431021465"),
+    "5":mp.mpf("0.000545307125174870"),
+}
+L8_BOUNDARIES=(
+    mp.mpf("0.0005859706403220520239095350224763581"),
+    mp.mpf("0.0006766206138543083816751079201563271"),
+)
 
 
 def read(path):
@@ -108,30 +117,47 @@ def main():
     lo=full["scaled"]-mp.mpf("1.96")*se;hi=full["scaled"]+mp.mpf("1.96")*se
     g_lo=full["G4"]-mp.mpf("1.96")*(se/L**4)
     g_hi=full["G4"]+mp.mpf("1.96")*(se/L**4)
-    if g_lo>=LOCAL_G6_BAND[0] and g_hi<=LOCAL_G6_BAND[1]:decision="LOCAL_L_MINUS_4_CONTINUATION"
-    elif g_hi<LOCAL_G6_BAND[0] or g_lo>LOCAL_G6_BAND[1]:decision="LOCAL_L_MINUS_4_REJECTED"
-    else:decision="UNRESOLVED_OVERLAP"
     g4_L4=mp.mpf("0.014008416865993059839566875264032706578302403993935")
     g4_L5=mp.mpf("0.0052774014587435467246546864566856462110310512070205")
     se_g=se/L**4
-    predictions={str(power):g4_L5*(mp.mpf(5)/6)**mp.mpf(power) for power in (4,mp.mpf("4.5"),5)}
+    if L==6:
+        if g_lo>=LOCAL_G6_BAND[0] and g_hi<=LOCAL_G6_BAND[1]:decision="LOCAL_L_MINUS_4_CONTINUATION"
+        elif g_hi<LOCAL_G6_BAND[0] or g_lo>LOCAL_G6_BAND[1]:decision="LOCAL_L_MINUS_4_REJECTED"
+        else:decision="UNRESOLVED_OVERLAP"
+        predictions={str(power):g4_L5*(mp.mpf(5)/6)**mp.mpf(power) for power in (4,mp.mpf("4.5"),5)}
+        frozen_prediction={"G4_point":"0.0025450","G4_acceptance_band":[],
+                           "basis":"(5/6)^4 continuation with fixed 10 percent tolerance"}
+    elif L==8:
+        lower,upper=L8_BOUNDARIES
+        if g_hi<lower:decision="L_MINUS_5_OR_FASTER"
+        elif g_lo>upper:decision="L_MINUS_4_OR_SLOWER"
+        elif g_lo>=lower and g_hi<=upper:decision="L_MINUS_9_OVER_2_SELECTED"
+        else:decision="UNRESOLVED_MODEL_BOUNDARY"
+        predictions=L8_PREDICTIONS
+        frozen_prediction={"G4_predictions":{k:mp.nstr(v,40) for k,v in predictions.items()},
+                           "geometric_midpoint_boundaries":[mp.nstr(lower,40),mp.nstr(upper,40)],
+                           "basis":"direct L6 continuation; classify only when the full normal 95 percent interval lies in one region"}
+    else:
+        raise ValueError("no frozen decision contract for this L")
     z_power={power:(full["G4"]-value)/se_g for power,value in predictions.items()}
-    effective_56=-mp.log(full["G4"]/g4_L5)/mp.log(mp.mpf(6)/5)
-    effective_46=-mp.log(full["G4"]/g4_L4)/mp.log(mp.mpf(6)/4)
+    effective_5L=-mp.log(full["G4"]/g4_L5)/mp.log(mp.mpf(L)/5)
+    effective_4L=-mp.log(full["G4"]/g4_L4)/mp.log(mp.mpf(L)/4)
     s=lambda x:mp.nstr(x,40)
-    payload={"schema":"matching-one/p537-aggregate-wedge-l6-score/v1","L":L,"N":N,
+    if L==6:
+        frozen_prediction["G4_acceptance_band"]=[s(x) for x in LOCAL_G6_BAND]
+    payload={"schema":f"matching-one/p537-aggregate-wedge-l{L}-score/v1","L":L,"N":N,
       "samples":samples,"batches":B,"proposal_p":s(pstar),
-      "primary":"L^4*G4","decision":decision,
-      "frozen_prediction":{"G4_point":"0.0025450","G4_acceptance_band":[s(x) for x in LOCAL_G6_BAND],"basis":"(5/6)^4 continuation with fixed 10 percent tolerance"},
+      "primary":("G4" if L==8 else "L^4*G4"),"decision":decision,
+      "frozen_prediction":frozen_prediction,
       "score":{k:(v if isinstance(v,int) else s(v)) for k,v in full.items()},
       "jackknife":{"L4G4_estimate":s(full["scaled"]),"L4G4_se":s(se),"L4G4_normal_95":[s(lo),s(hi)],
                     "G4_normal_95":[s(g_lo),s(g_hi)],"L4_chi_perp_se":s(se_chi)},
       "exploratory_fixed_power_comparison":{
-        "predicted_G4_L6_from_L5":{power:s(value) for power,value in predictions.items()},
+        "predicted_G4_target":{power:s(value) for power,value in predictions.items()},
         "z_from_prediction":{power:s(value) for power,value in z_power.items()},
-        "effective_power_L5_to_L6":s(effective_56),"effective_power_L4_to_L6":s(effective_46),
+        "effective_power_L5_to_target":s(effective_5L),"effective_power_L4_to_target":s(effective_4L),
         "L_power_4p5_G4":s(L**mp.mpf("4.5")*full["G4"])},
-      "boundary":"single held-out L6 square-torus Bernoulli production; no radius/source/minor scan"}
+      "boundary":f"single held-out L{L} square-torus Bernoulli production; no radius/source/minor scan"}
     args.output.write_text(json.dumps(payload,indent=2)+"\n");print(json.dumps(payload,indent=2))
 
 
