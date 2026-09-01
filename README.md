@@ -10,19 +10,30 @@ The repository is organized to expose the next mechanism-changing observation, n
 
 ## Start here
 
-**Current decision: #537 has crossed the finite transmission gate and moved
-to P1 theory; #275 is the new P0 attention line.**  Finite pure-thermal rank
-one and the automatic two-independent-defect/six-arm story are retired.  The
-exact N25 survivor is a nonfactorizing `contact fusion x topological
+**Current decision: #275 has delivered its first actual existing-production
+[forward-identifiability score](results/p275-forward-identifiability/latest.md);
+#537 remains P1 theory.**  On the complete
+selected covariance of the two-activation `F1/F2` archive, the fixed ordinary
+q2 transfer `kappa=1/2` is excluded (`chi2=11.7925/4`, `p=.01896`).  The
+Jordan affine-log image is not excluded (`chi2=6.4325/4`, `p=.16909`), but it
+is not thereby identified: with unrestricted amplitudes, the
+`kappa -> 1` closure of the semisimple family contains the full Jordan image.
+The literal classification is `PARTIALLY_IDENTIFIABLE` and non-uniform.  The
+unconstrained optimum `kappa=2.11498` is a relative growing mode, while the
+physical decaying family `0<kappa<1` has no interior optimum and runs to the
+collision boundary.  The next P0 input is therefore one same-source,
+same-observer, same-normalizer rank-0/rank-2 restricted-trace modulus or phase
+transport law, preferably derived first and then scored on existing assets.
+No new Monte Carlo is the default.
+
+The completed #537 chain explains why attention moved.  Finite pure-thermal
+rank one and the automatic two-independent-defect/six-arm story are retired.
+The exact N25 survivor is a nonfactorizing `contact fusion x topological
 completion` tensor, and a frozen 20M held-out N65 block reproduces its four
-signs `-- -+`.  The same sufficient statistics now also give the complete
-canonical response `J65=-.00162250989+/-.00018553008`.  The typed carrier
-share falls from `5.892%` of full `T25` to `2.551%` of full `T65`: it is a real
-transmitted microscopic coordinate, but not the dominant complete response.
-Highest attention therefore returns to the original Matching-One observable:
-state exactly what is traced, how it is normalized, and make at least two
-candidate mechanisms predict distinguishable vectors on existing raw
-coordinates.  No new Monte Carlo is the default.
+signs `-- -+`.  The same sufficient statistics give the complete canonical
+response `J65=-.00162250989+/-.00018553008`.  The typed carrier share falls
+from `5.892%` of full `T25` to `2.551%` of full `T65`: it is a real transmitted
+microscopic coordinate, but not the dominant complete response.
 
 The [frozen N100/N400 pilot](results/regular-pair-macro-joint-u/REPORT.md)
 uses the same `Kreg`, the exact Euclidean window

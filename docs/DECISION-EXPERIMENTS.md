@@ -203,16 +203,22 @@ L8 `G4=.000680204061±.000012697002`，冻结判决为
 L4/L5为`8.00214/7.99820`，L6为`7.72546+/-0.08469`，L8为
 `8.03977+/-0.15006`。它是reduced normalization线索，不是指数。
 
-下一P0只交付一份**#275 finite forward-prediction contract**，默认不新产数据。
+#275第一轮**finite forward-identifiability**已经交付，默认不新产数据。
+[原始观测与normalizer字典](../notes/p275-observable-normalizer-dictionary.md)
+统一了`K1/K2`、`F1/F2`、original `q/E`和pooled moving-root `U`；
+[现有生产数据得分](../results/p275-forward-identifiability/latest.md)使用两条dyadic
+lineage的完整aligned covariance。固定ordinary-q2 `kappa=.5`被排除
+（`chi2=11.792466/4`, `p=.0189631`）；Jordan affine law尚未排除
+（`6.432527/4`, `p=.169092`）。但`kappa->1`时无界semisimple image closure
+包含完整Jordan plane，因此判决是`PARTIALLY_IDENTIFIABLE`、non-uniform，
+不是Jordan识别。
 
-1. 原始观测字典必须区分local charged insertion、torus propagating sector、
-   homology-marked trace、scalar composite和normalized expectation；保留original
-   `q/E`、同一physical normalizer和pooled moving-root `U`。
-2. 至少两个候选机制分别给出带单位的预测向量，覆盖至少两个已有相关raw
-   coordinates。保留每个模型允许的amplitude，报告covariance-weighted design
-   rank与separation。
-3. 若不可识别，证明rank degeneracy并只命名一个缺失的physical rotation或
-   modulus relation；不以新descriptor掩盖退化。
+下一P0输入已经唯一化：先推导same-source、same-observer、same-normalizer的
+rank-0/rank-2 restricted-trace modulus/phase transport law，再用已有rho-child或
+P43/P57资产评分。[C3 phase audit](../notes/p275-c3-amplitude-identifiability.md)
+同时证明：单个real-C3角在arbitrary complex gain下严格不可识别；只有冻结跨角
+gain law后第二旋转才有判别力，`7.5 degrees`最大化signed-real相位分离，
+`15 degrees`严格alias。不新增MC、GPU或描述性坐标。
 
 一个unnormalized numerator character zero不能穿过twist-dependent normalization
 后继续写成零。声称common vacuum/Ward differential operator的候选，必须证明

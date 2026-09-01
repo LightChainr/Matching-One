@@ -1,0 +1,300 @@
+schema: matching-one.p275-observable-dictionary.v1
+status: frozen_existing_data_dictionary_no_new_mc
+updated: '2026-09-01'
+issue: 275
+priority: P0
+priority_semantics: attention_not_permission_or_lock
+
+state_contract:
+  geometry_scope: honest_periodic_square_cell_torus
+  rank: 'r=rank image[H1(black NN)->H1(T2)] in {0,1,2}'
+  q:
+    formula: 'q=r-1'
+    values_by_rank: {rank0: -1, rank1: 0, rank2: 1}
+    units: dimensionless_configuration_scalar
+  E:
+    formula: 'E=q^2'
+    values_by_rank: {rank0: 1, rank1: 0, rank2: 1}
+    units: dimensionless_configuration_scalar
+    not_equivalent_to: [continuum_energy_field, square_of_mean_q]
+  normalized_rank_coordinates:
+    A_top: '<q>=P2-P0'
+    E_top: '<E>=P0+P2=1-P1'
+    units: dimensionless_probability_contrast
+  sources:
+    - commit: 2da58552e261724e3862d214072a19d4a629fab9
+      path: notes/digital-alexander-duality-proof.md
+      integration_status: main_integrated
+
+activation_transform:
+  K1: K_minus
+  K2: K_plus
+  H1: '1[K>=K1]'
+  H2: '1[K>=K2]'
+  F1: 'E[H1]'
+  F2: 'E[H2]'
+  pointwise_q: '-1+H1+H2'
+  pointwise_E: '1-H1+H2'
+  probabilities: {P0: '1-F1', P1: 'F1-F2', P2: F2}
+  expectations: {q: '-1+F1+F2', E: '1-F1+F2'}
+  direction_transform:
+    A_top: 'Delta4_F1+Delta4_F2'
+    E_top: '-Delta4_F1+Delta4_F2'
+  units:
+    K1_K2: site_count
+    F1_F2_A_top_E_top: dimensionless_probability_or_contrast
+  not_equivalent_to:
+    - two_torus_propagating_sectors
+    - two_independent_evidence_rows
+    - continuum_field_decomposition
+  sources:
+    - commit: e5f39c1d14d54fb2097fd047585f532448918f7a
+      paths:
+        - scripts/analyze_two_activation_h4.py
+        - results/norm4-two-activation-h4/latest.json
+        - results/norm4-two-activation-h4/latest.md
+      integration_status: open_pr
+      pr: 267
+
+object_chain:
+  - id: local_charged_insertion
+    object_kind: local_charged_insertion
+    definition: finite_support_tensor_or_source_with_explicit_nontrivial_internal_index_or_projector_before_global_trace_or_neutral_contraction
+    example: 'C4 average of Kbar=i P_[Q-2,2] i^dagger at one vacant four-edge colour vertex'
+    q1_source: 'S_av=-sum_x(t_x)/N'
+    coupling_normalization: epsilon_over_N_site_average
+    units: dimensionless_response_per_unit_site_average_epsilon
+    completed_original_U_response: 0.0018155512845251097
+    artifacts:
+      - commit: 923f66b979a6b6132875f783106c041ed3c0c1a9
+        path: notes/local-four-port-transmission-result.md
+        integration_status: branch_only
+      - path: analysis/four_leg_trace_interface.json
+        integration_status: open_pr
+        pr: 267
+      - commit: 81e27d9ced8b620d2b8f3fa31ee7a40d242f7a06
+        path: notes/c4-local-odd-pivotal-tangent.md
+        integration_status: main_integrated
+        role: unlabelled_local_control_not_explicit_internal_charge
+      - commit: 89b86f428e67453595e02c99a5456c11f4d8d77b
+        path: results/local-20260829/P100-marked-pivotal-h4/REPORT.md
+        integration_status: main_integrated
+        role: unlabelled_local_control_not_explicit_internal_charge
+    not_equivalent_to:
+      - unlabelled_four_arm_geometry
+      - torus_propagating_sector
+      - homology_marked_trace
+      - normalized_one_point
+      - neutral_two_insertion_composite
+
+  - id: torus_propagating_sector
+    object_kind: torus_propagating_sector
+    definition: 'state block H_lambda=P_lambda H with T_lambda=P_lambda T P_lambda, typed separately by internal representation and homology or deck sector'
+    required_context: [transfer_direction, transfer_length, spatial_sector, boundary_or_trace, transfer_normalization]
+    units:
+      projector: dimensionless
+      trace: unnormalized_partition_weight_after_trace_is_chosen
+    issue_only_control:
+      url: https://github.com/LightChainr/Matching-One/issues/275#issuecomment-5490477497
+      statement: 'at Q4, Tr(P2*T^2)=72/25 while the invariant-boundary sandwich is zero'
+      integration_status: issue_only
+    artifacts:
+      - commit: f9bb310a4d4125f8f52ee8fc7f3239ad35fa334b
+        path: notes/modular-homology-channel-classification.md
+        integration_status: main_integrated
+    superseded_overclaim:
+      commit: ddf41aa
+      path: notes/p275-double-projector-selection-staircase.md
+      boundary: ordinary_boundary_sandwich_zero_must_not_be_promoted_to_invariant_trace_exclusion
+    not_equivalent_to:
+      - boundary_sandwich
+      - traced_partition_contribution
+      - local_insertion_with_same_irrep
+      - normalized_probability
+
+  - id: homology_marked_trace
+    object_kind: homology_marked_trace
+    definition: unnormalized_partition_trace_after_fixing_measure_lift_homology_restriction_seam_and_transfer_cycle
+    site_cluster_lift:
+      formula: 'Z_r(sigma)=sum_{A:r(A)=r} p^K (1-p)^(N-K) c_sigma(A)'
+      identity_colour_weight: 'c_id(A)=Q^CB(A)'
+      rank0_identity: 'Z0(sigma)=Z0(id)'
+      rank2_identity: 'Z2(sigma)=fix(sigma)/Q*Z2(id)'
+      q_trace: 'Zq(sigma)=(Z2/Q-Z0)+(Z2/Q)*chi_standard(sigma)'
+      E_trace: 'ZE(sigma)=(Z2/Q+Z0)+(Z2/Q)*chi_standard(sigma)'
+      integration_status: issue_only
+      source_url: https://github.com/LightChainr/Matching-One/issues/275#issuecomment-5490477497
+      attachment: matching_one_trace_reset_20260901
+      attachment_is_not_git_fact: true
+    units: unnormalized_partition_weight_character_coefficients_can_be_signed
+    git_analogues:
+      - commit: 977fea9272c780aea19cc47f8d33324c28a1293e
+        path: notes/closed-source-hypergraph-rc-twist-projection.md
+        integration_status: branch_only
+      - commit: f81f70c8866e9165c2c9a3c0802b270e66133c24
+        path: notes/four-leg-trace-denominator-interface.md
+        integration_status: open_pr
+        pr: 267
+      - commit: b5a0ef976e69f9e0ae639af8475928dff9c0149d
+        path: analysis/four_leg_trace_interface.json
+        integration_status: open_pr
+        pr: 267
+      - commit: 54352b2eefa651ca482ca84837053c792e82c71e
+        path: results/p337-s4-trace-transmission/score/score.json
+        integration_status: branch_only
+        formula: 'Z22=(T+3*D2-4*C3)/6'
+    not_equivalent_to:
+      - local_charged_insertion
+      - propagating_sector_before_trace
+      - positive_rank1_probability
+      - normalized_expectation
+      - another_measure_lift
+
+  - id: scalar_composite
+    object_kind: scalar_composite
+    definition: internal_index_contracted_neutral_product_or_algebraic_scalar_of_original_state
+    original_example: 'E=q^2'
+    charged_control: '[2]x[2]->[] neutral composite'
+    exact_two_insertion:
+      formula: 'G(Q)=Q*(Q-3)*(3*Q^2-9*Q+8)/(8*(Q-1)*(Q-2))'
+      Q1_expansion: '1/(2*(Q-1))+O(1)'
+      units: product_of_constituent_insertion_units_with_N_minus2_for_homogeneous_site_average_pair
+    artifacts:
+      - commit: 16a6548af2bb090d9cec7b8e9236e31c0199a3f0
+        paths:
+          - notes/local-pair-two-insertion-obstruction.md
+          - results/local-pair-two-insertion/REPORT.md
+          - results/local-pair-two-insertion/latest.json
+        integration_status: open_pr
+        pr: 267
+    not_equivalent_to:
+      - one_insertion_response
+      - covariance_of_separately_closed_occupation_marks
+      - propagating_sector_trace
+      - normalized_two_point_without_declared_denominator
+
+  - id: normalized_expectation
+    object_kind: normalized_expectation
+    definition: '<O>_(g,alpha)=Z_(O,g,alpha)/Z_(g,alpha) for one completely specified geometry and measure family'
+    units: dimensionless_when_numerator_and_denominator_share_partition_units
+    normalization_order_counterexample:
+      geometry: L4
+      Q: 4
+      p: 0.5
+      divide_each_twist_then_pair_character:
+        exact: '-1795621993608/8788246642854353'
+        decimal: -0.00020432084653290933
+      project_unnormalized_q_then_divide_common_identity: '0'
+      integration_status: issue_only
+      source_url: https://github.com/LightChainr/Matching-One/issues/275#issuecomment-5490477497
+    normalization_mediated_control:
+      raw_q_E_22_numerators: identically_zero
+      J22_original_U_response: 0.000005440121494634842
+      result_commit: 54352b2eefa651ca482ca84837053c792e82c71e
+      result_path: results/p337-s4-trace-transmission/score/score.json
+      integration_status: branch_only
+    not_equivalent_to:
+      - project_then_divide_when_target_is_divide_then_project
+      - pooled_unnormalized_numerators
+      - configuration_scalar
+      - original_U
+
+  - id: derived_root_conditioned_response
+    object_kind: derived_root_conditioned_response
+    definition: normalized_expectations_followed_by_geometry_projection_pooled_moving_root_thermal_slope_and_fixed_size_prefactor
+    primary_example: original_U
+    units: dimensionless_for_U_inverse_coupling_for_epsilon_response
+    not_equivalent_to:
+      - normalized_expectation_value
+      - raw_character_coefficient
+      - local_response_before_root_and_slope
+      - raw_pair_or_two_point_power
+
+physical_normalizer:
+  partition:
+    rule: normalize_each_geometry_under_its_own_physical_partition_before_pooling_or_direction_projection
+    symbol: Z_g_physical
+  angular:
+    Delta4: 'cos(4*theta_f)-cos(4*theta_s)'
+    P4: '(X_f-X_s)/Delta4'
+    mean: '(X_f+X_s)/2'
+    rule: exact_declared_Gaussian_representatives_no_fitted_phase
+  root_and_slope:
+    m_g: '<q>_g'
+    e_g: '<E>_g'
+    M: 'mean_g(m_g)'
+    Y: 'P4(e_g)'
+    root: 'M(p0)=0'
+    D: 'partial_p M(p0)'
+    rule: pooled_equal_weight_root_not_individual_geometry_roots_recompute_inside_aligned_delete_one
+  size_prefactor:
+    A_N: 'N^(13/8)/2'
+    rule: frozen_convention_not_refitted_exponent
+
+original_U:
+  formula: 'U_N=A_N*Y_p/D at p=p0 = N^(13/8)*P4[partial_p<E>]/(2*partial_p mean_g<q>) at mean_g<q>=0'
+  units: dimensionless_with_frozen_N13over8_scaling_convention
+  epsilon_response:
+    hM: 'partial_epsilon M at fixed p'
+    hY: 'partial_epsilon Y at fixed p'
+    root_shift: 'p0_dot=-hM/D'
+    formula: 'partial_epsilon U_N=A_N*(hY_p/D-Y_pp*hM/D^2-Y_p*hM_p/D^2+Y_p*M_pp*hM/D^3)'
+    units: inverse_coupling
+  artifacts:
+    - commit: 2236d36c80c8a466d9317c929bc33e92a7ca9d33
+      path: predictions/norm4_two_generator_transfer_20260829.yaml
+      integration_status: main_integrated
+    - commit: 24973db19c1d97575e9768a6dc187aa0cad5a34b
+      path: notes/p40-thermal-clock-source-quotient.md
+      integration_status: open_pr
+      pr: 267
+    - commit: 3e6157f237242938e1c1b12415bca256b11896b0
+      path: results/norm4-source-thermal/latest.json
+      integration_status: open_pr
+      pr: 267
+
+type_rejection:
+  reject_comparison_without_explicit_map_when_different:
+    - measure_lift_or_Q_path
+    - internal_representation
+    - homology_or_deck_label
+    - insertion_order_or_support
+    - unnormalized_trace_versus_normalized_expectation
+    - partition_denominator
+    - normalization_before_projection_order
+    - geometry_specific_versus_pooled_root
+    - Delta_cos4_convention
+    - value_versus_p_or_source_or_Q_derivative
+    - raw_threshold_count_versus_probability
+    - size_prefactor_or_source_units
+    - dependency_group
+  exact_Q_path_warning:
+    path: results/weak-q-path-comparison/REPORT.md
+    statement: tied_and_rank_projected_site_RC_paths_share_the_Q1_baseline_but_have_opposite_original_U_tangents
+
+asset_typing:
+  two_activation_h4: normalized_original_q_E_activation_coordinates_not_propagating_sectors
+  rho_child_Etop: normalized_expectation_with_complex_geometry_character_not_energy_field_or_colour_trace
+  primitive_C3: homology_direction_marked_normalized_probabilities_not_automatic_internal_Potts_charge
+  P43_P57_A_E_C_W: physical_normalized_expectations_and_thermal_clocks_shared_H4_label_is_not_shared_operator
+  Z22: homology_colour_marked_trace_entering_U_through_normalization_not_local_insertion
+  local_four_port: local_charged_source_entering_U_through_direct_root_and_slope_terms_not_seam_trace
+  J_top_J_bulk: candidate_mechanism_labels_not_raw_observable_kinds_until_source_units_and_hM_hY_map_exist
+
+current_missing_object:
+  immediate: two_theory_supplied_unit_bearing_forward_maps_from_correctly_typed_objects_to_the_same_correlated_raw_coordinates_and_through_the_same_physical_normalizer
+  candidate_pair:
+    - semisimple_two_activation_completion_plus_distinct_even_bulk_singlet
+    - two_component_Jordan_log_pair_transport
+  required_score: design_rank_nullspace_parameter_gauge_covariance_weighted_image_intersection_and_heldout_prediction
+  if_rank_degenerate_allow_exactly_one:
+    - one_phase_calibrated_second_physical_rotation
+    - one_explicit_modulus_relation
+  rule: rank_audit_names_one_missing_input_no_new_descriptive_observable_or_MC_before_degeneracy_is_shown
+
+global_boundary:
+  - numerator_zero_boundary_sandwich_zero_one_point_charged_zero_trace_zero_normalized_expectation_zero_and_original_U_zero_are_distinct_claims
+  - site_cluster_Kreg_closed_source_and_critical_FK_are_distinct_measure_families
+  - issue_only_attachment_is_not_promoted_to_Git_or_main_fact
+  - priority_is_attention_not_permission_lock_or_lifecycle_change
+  - no_new_monte_carlo_authorized_by_this_dictionary

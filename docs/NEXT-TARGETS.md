@@ -37,10 +37,13 @@ performed by this Draft:
 | NN | −.00085245745 | −.00089978682 | +.00000116982 | −.00175107445 |
 | nonNN | −.00508338450 | +.00131389110 | +.00000113643 | −.00376835697 |
 
-**Highest attention: #275's original-observable, normalization and
-identifiable-prediction decision.**  Contact/OPE-to-original-`U` transmission,
+**Highest attention: #275's restricted rank-0/rank-2 modulus/phase transport
+law.**  Its original-observable dictionary and first forward-identifiability
+score are delivered: fixed q2 is excluded, Jordan remains compatible but is
+not uniquely identified, and the decision is `PARTIALLY_IDENTIFIABLE`.
+Contact/OPE-to-original-`U` transmission,
 #536 Delivery B and the one-defect edge decision are completed provenance.
-The P0 deliverable uses existing algebra and sufficient statistics by default;
+The next P0 deliverable uses existing algebra and sufficient statistics by default;
 it is not a restored random-production line.  The frozen
 [64-counter replay](../results/p337-thermal-pivotal-preflight/REPORT.md) has
 evaluated all 5,242,880 pair/site callbacks from the first 32 counters of each
@@ -153,22 +156,28 @@ response.  `bab37f21`'s commutator and `N^-3/N^-29/8` fingerprint are a
 post-reveal mechanism synthesis on this same dependency block, not a field
 identity or another vote.
 
-**Immediate P0 action: deliver #275's finite forward-prediction contract.**
+**#275's first finite forward-identifiability analysis is delivered.**  The
+[dictionary](../notes/p275-observable-normalizer-dictionary.md) fixes the
+original `K1/K2`, `F1/F2`, `q/E` and pooled-root normalizer, and the
+[existing-production score](../results/p275-forward-identifiability/latest.md)
+uses the complete aligned covariance of the two dyadic activation lineages.
+The fixed ordinary-q2 semisimple law `kappa=.5` is excluded
+(`chi2=11.792466/4`, `p=.0189631`); the Jordan affine law is not excluded
+(`6.432527/4`, `p=.169092`).  That compatibility is not identification:
+as `kappa->1`, the unbounded semisimple image closure contains the full Jordan
+plane.  The result is therefore `PARTIALLY_IDENTIFIABLE` and non-uniform, not a
+Jordan selection.
 
-1. Write the raw-observable dictionary separating local charged insertion,
-   torus propagating sector, homology-marked trace, scalar composite and
-   normalized expectation.  Preserve original `q/E`, the same physical
-   normalizer and pooled moving-root `U`.  An unnormalized numerator character
-   zero does not imply a zero after twist-dependent normalization.
-2. Choose at least two live mechanisms and make each predict a vector, with
-   units, on at least two correlated raw coordinates already present in the
-   square-bond primitive/C3, rho-child `E_top`, P43/P57 or thermal/modulus
-   assets.  Keep every allowed amplitude and calculate covariance-weighted
-   design rank/separation.
-3. If the columns are not identifiable, prove the rank degeneracy and name
-   the single missing physical input: one phase-calibrated second rotation or
-   one explicit modulus relation.  Do not replace a degeneracy proof with a
-   new descriptive observable.
+**Immediate P0 action:** derive one same-source, same-observer, same-normalizer
+rank-0/rank-2 restricted-trace modulus/phase transport law, then score it on
+the existing rho-child or P43/P57 assets.  This is the unique input that can
+separate the colliding images without inventing an amplitude bound.  The C3
+[phase audit](../notes/p275-c3-amplitude-identifiability.md) also proves that
+one real C3 angle with arbitrary complex gain is exactly nonidentifiable.  A
+second rotation becomes decisive only after the cross-angle gain law is
+frozen: `7.5 degrees` maximizes the signed-real phase separation, while
+`15 degrees` is an exact alias.  Theory-first reuse remains the default; no
+new Monte Carlo, GPU run or descriptive coordinate is requested.
 
 The yes/no theory entry is equally concrete: a claimed common vacuum/Ward
 differential operator must act by the same rule on the rank-0/rank-2

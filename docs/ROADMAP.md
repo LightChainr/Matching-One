@@ -10,8 +10,11 @@ The declared `x=17/4` and `x=21/4` contrasts `D17/D21` were therefore not
 evaluated. This route is complete rather than waiting for a top-up, new
 window or fitted exponent.
 
-Default attention moves to **#275's original-observable, normalization and
-identifiable-prediction contract**.  The selected one-defect graph is complete,
+Default attention is now **#275's same-normalizer restricted rank-0/rank-2
+modulus/phase transport law**.  The original-observable dictionary and first
+forward-identifiability score are complete: fixed q2 is excluded, Jordan is
+compatible but not selected, and unrestricted semisimple/Jordan separation is
+non-uniform.  The selected one-defect graph is complete,
 the exact N25 contact-by-completion tensor is nonfactorizing, and a frozen
 held-out N65 production transmits it.  A later same-data full-T reconstruction
 shows that the typed carrier is only `2.551%` of the complete N65 response,
@@ -19,7 +22,7 @@ down from `5.892%` at N25.  The main uncertainty is therefore not whether to
 add a fifth contact descriptor, but which raw trace/expectation is being
 predicted and which mechanisms are distinguishable after the physical
 normalizer is retained.  This P0 uses existing algebra and sufficient
-statistics; no new Monte Carlo is the default.
+statistics; no new Monte Carlo or GPU acquisition is the default.
 PR #509's raw summability theorem (`eed2190c`, current head `ac5f5fe7`;
 root-Hessian commit `ec3941b0`) cannot replace this thermal derivative. Its latest audit instead
 compresses the whole response into the root-conditioned Hessian
@@ -109,17 +112,22 @@ Thus carrier closure is not the default remaining model.  `bab37f21`'s
 commutator and two-scale fingerprint are post-reveal mechanism synthesis on
 the same dependency block, not independent evidence or field identification.
 
-The roadmap now delivers a finite #275 prediction packet.  First type each
-candidate as local charged insertion, torus propagating sector,
-homology-marked trace, scalar composite or normalized expectation.  Keep the
-original `q/E`, one physical normalizer and pooled moving-root `U`; distinguish
-numerator character projection from a separately normalized twist
-expectation.  Then require at least two candidates to predict unit-bearing
-vectors on at least two existing correlated coordinates, retain all allowed
-amplitudes and report covariance-weighted design rank.  If they are
-indistinguishable, prove the degeneracy and name the unique missing physical
-rotation or modulus relation.  Do not manufacture a new descriptor to hide
-rank deficiency.
+The roadmap has now delivered #275's first finite forward-identifiability
+packet.  The observable dictionary fixes the original `K1/K2`, `F1/F2`,
+`q/E` and pooled-root physical normalizer.  On the aligned existing-production
+covariance, fixed ordinary q2 `kappa=.5` is excluded
+(`11.792466/4`, `p=.0189631`); the Jordan affine law is not excluded
+(`6.432527/4`, `p=.169092`).  It is not selected: the unbounded semisimple
+`kappa->1` closure contains the full Jordan plane, so the verdict is
+`PARTIALLY_IDENTIFIABLE` and non-uniform.
+
+The next P0 output is one same-source, same-observer, same-normalizer
+rank-0/rank-2 restricted-trace modulus/phase transport law, preferably derived
+in theory and then scored on existing rho-child or P43/P57 data.  A single
+real C3 angle with arbitrary complex gain is exactly nonidentifiable.  Only a
+frozen cross-angle gain law makes a second rotation useful: `7.5 degrees` is
+the preferred signed-real separator, while `15 degrees` aliases exactly.  No
+new Monte Carlo, GPU acquisition or extra descriptor is on this route.
 
 #537 continues as P1 theory.  Its all-`z` N25 ledger, N85 normalized tensor and
 fresh N130 `F=C+R` partition are conditional tests, not an active production

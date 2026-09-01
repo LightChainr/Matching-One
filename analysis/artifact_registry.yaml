@@ -1,7 +1,19 @@
-version: 58
+version: 59
 updated: 2026-09-01
 latest_scientific_handoff:
   entry: docs/TEAM-COORDINATION.md
+  latest_analysis_status: open_PR267_current_delivery
+  latest_analysis_kind: issue275_existing_archive_forward_identifiability_and_C3_phase_rank
+  latest_analysis_manifest: analysis/p275_forward_identifiability_manifest.yaml
+  latest_analysis_result: results/p275-forward-identifiability/latest.json
+  latest_analysis_report: results/p275-forward-identifiability/latest.md
+  latest_analysis_dictionary: analysis/p275_observable_dictionary.yaml
+  latest_analysis_dictionary_note: notes/p275-observable-normalizer-dictionary.md
+  latest_analysis_C3_note: notes/p275-c3-amplitude-identifiability.md
+  latest_analysis_decision: PARTIALLY_IDENTIFIABLE_nonuniform_fixed_q2_kappa0p5_excluded_Jordan_compatible_not_identified_decaying_semisimple_infimum_at_kappa_to1_collision_boundary
+  latest_analysis_missing_input: restricted_trace_modulus_or_phase_transport
+  latest_analysis_dependency_groups: [crn-2026104501-5100000000-7000000000, crn-2026105401-8200000000-9200000000, crn-2026105402-8200000000-9200000000]
+  latest_analysis_boundary: post_reveal_existing_data_only_all_F1_F2_A_top_E_top_and_model_scores_are_correlated_transforms_no_new_MC_GPU_or_cloud
   current_frontier_result_commit: f9ba1ff690b07beefcc71e669f1f29581d4e264e
   current_frontier_result_report: results/p537-full-t-transport/REPORT.md
   current_frontier_result_kind: complete_N65_full_T_quotient_and_contact_carrier_share_from_existing_sufficient_statistics
@@ -127,12 +139,12 @@ latest_scientific_handoff:
   completed_p337_pivotal_preflight_values: {configurations: 64, pair_site_callbacks: 5242880, kernel_changed_L32: 11, kernel_changed_L64: 7, observed_kernel_preserving_topological: 0}
   completed_p337_pivotal_preflight_boundary: deterministic_subset_replay_descriptive_uncentered_correlated_callbacks_not_population_sign_full_J2_independent_evidence_or_permission_for_more_counters
   P537_relaxed_siteflip_result: {matrix: 15x12, preferred_rows: [rank0_to1, rank1_to2], preferred_columns: [axial2_absent, axial2_present], determinant: -4.039642418513639e-18, exact_zero_excluded: true, strict_global_ordinary_pair_fibres: 0, boundary: relaxed_branch_free_no_extra_near_block_not_finite_collar_ordinary}
-  next_primary: issue275_raw_observable_physical_normalizer_and_identifiable_candidate_prediction_contract_on_existing_assets_no_new_MC
+  next_primary: issue275_restricted_trace_modulus_or_phase_transport_for_the_same_B_source_original_q_E_and_pooled_root_physical_normalizer
   next_decision_interface: https://github.com/LightChainr/Matching-One/issues/275#issuecomment-5490477497
-  next_decision_readout: at_least_two_correlated_unit_matched_raw_coordinates_two_theory_given_prediction_vectors_with_all_allowed_amplitudes_design_rank_and_covariance_weighted_separation_or_nonidentifiability_proof_with_unique_missing_input
+  next_decision_readout: derive_independent_singlet_and_Jordan_top_rank0_rank2_restricted_trace_vectors_then_score_existing_rho_child_or_P43_P57_assets_under_the_same_normalizer
   next_decision_source: open_issue275_priority_P0_owner_comment5490477497_existing_square_bond_primitive_C3_rho_child_Etop_P43_P57_thermal_and_modulus_assets
-  next_decision_dependency_groups: [existing_assets_only_no_new_MC, p537-contact-stage-N65-20m-P45-baseline]
-  next_interface_boundary: observer_dictionary_must_distinguish_local_charged_insertion_torus_propagating_sector_homology_marked_trace_scalar_composite_and_normalized_expectation_one_real_C3_angle_with_unknown_complex_amplitude_does_not_identify_H4_vs_H8_issue537_is_P1_theory_N130_only_conditional_future_test_priority_not_permission_lock
+  next_decision_dependency_groups: [p275-forward-identifiability-existing-archives, p267-rho-C3-Etop-N112-fresh2m]
+  next_interface_boundary: first_forward_audit_is_PARTIALLY_IDENTIFIABLE_one_real_C3_angle_with_unknown_complex_amplitude_is_exactly_NONIDENTIFIABLE_if_gain_law_is_frozen_delta_pi_over24_is_maximal_signed_real_separation_and_pi_over12_aliases_issue537_is_P1_theory_priority_not_permission_lock
   completed_class_elimination: every_homogeneous_entry_regular_one_original_binary_site_tensor_is_common_thermal_at_Q1_and_has_zero_direct_complete_U_response_no_retain_old_V_search_in_this_class
   completed_uniform_counterterm_bound: G1_13over8_minus1over4_minus1over4_1over2_determinant3over4_Halpha_ge3over2_in_identical_shared_four_line_firstQ_pairing_not_global_U
   parallel_first_source: old_pure_K2_tangent_R_equals4Vav4N_overVavN_predicts2_or1_under_declared_single_field_nonzero_loading_not_automatically_canonical_Kreg_mixed_W_or_two_insertion_mark_covariance
@@ -265,6 +277,13 @@ integration_policy:
   hard_constraints_source: GOVERNANCE.md
 
 canonical_documents:
+  - {path: results/p275-forward-identifiability/latest.md, status: open_pr_current_scientific_handoff, role: existing_archive_full_covariance_fixed_q2_Jordan_and_profiled_semisimple_forward_image_decision}
+  - {path: results/p275-forward-identifiability/latest.json, status: open_pr_machine_result, schema: matching-one.p275-forward-identifiability.v1, role: PARTIALLY_IDENTIFIABLE_nonuniform_score_and_unique_missing_input}
+  - {path: analysis/p275_forward_identifiability_manifest.yaml, status: open_pr_frozen_manifest, schema: matching-one.p275-forward-identifiability.manifest.v1, role: six_size_F1_F2_dyadic_lineage_model_and_covariance_contract}
+  - {path: scripts/analyze_p275_forward_identifiability.py, status: open_pr_reproducible_scorer, role: zero_new_MC_existing_covariance_forward_identifiability_analysis}
+  - {path: analysis/p275_observable_dictionary.yaml, status: open_pr_frozen_dictionary, schema: matching-one.p275-observable-dictionary.v1, role: object_kind_units_K1_K2_F1_F2_A_top_E_top_and_original_U_normalizer_contract}
+  - {path: notes/p275-observable-normalizer-dictionary.md, status: open_pr_scientific_note, role: human_readable_observer_and_normalizer_firewall}
+  - {path: notes/p275-c3-amplitude-identifiability.md, status: open_pr_scientific_note, role: exact_one_angle_nonidentifiability_and_frozen_gain_second_rotation_design}
   - {path: results/p537-full-t-transport/REPORT.md, source_commit: f9ba1ff690b07beefcc71e669f1f29581d4e264e, status: branch_only_current_scientific_handoff, role: complete_N65_full_T_quotient_J_ratio_carrier_share_and_root_reference_transport_from_existing_sufficient_statistics}
   - {path: notes/p537-contact-completion-commutator.md, source_commit: bab37f21b061afa9e03286b6e9bf4560f879ecd5, status: branch_only_mechanism_candidate, role: same_data_contact_completion_commutator_and_zero_parameter_split_scaling_not_independent_field_identification}
   - {path: results/p537-contact-stage-n65/REPORT.md, source_commit: f46c38c3088c1a9f4df8ab0f256b88639f0b34a3, status: branch_only_current_scientific_handoff, role: completed_prospective_N65_20M_contact_fusion_completion_transmission_gate}
@@ -325,6 +344,7 @@ continuum_controls:
   - {path: predictions/p156_pinson_arguin_baselines_20260829.json, status: continuum_baseline, issue: 156, role: primitive_homology_sector_values}
 
 evidence_archives:
+  - {id: P275_FORWARD_IDENTIFIABILITY, path: results/p275-forward-identifiability, status: open_pr_post_reveal_existing_data_analysis, role: fixed_q2_exclusion_Jordan_compatibility_nonuniform_partial_identifiability_and_unique_restricted_trace_input}
   - {id: P57, path: results/server-20260829/P57-norm5-500m, status: immutable_result, role: prospective_norm5}
   - {id: P50_FULLCURVE, path: results/server-20260829/P50-n145-n290-fullcurve, status: immutable_result, role: heldout_fullcurve}
   - {id: MATCHING_ODD_SYNTHESIS, path: results/evidence-ledger/issue212-matching-odd-synthesis.json, status: post_reveal_synthesis, role: derived_meta_over_two_distinct_primary_raw_groups_not_a_new_primary_row}

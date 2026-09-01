@@ -47,8 +47,9 @@ did not perform the lifecycle change.  The root-conditioned Hessian,
 contact-stage transmission and full-`T` quotient described below are now
 complete.  The project owner has since moved #537 to open `priority:P1` and
 made open [Issue #275](https://github.com/LightChainr/Matching-One/issues/275)
-the current `priority:P0`: raw-observable semantics, physical normalization
-and identifiable candidate predictions using existing data, with no new MC.
+the current `priority:P0`.  Its first existing-data identifiability score is
+now `PARTIALLY_IDENTIFIABLE`; attention has narrowed to a same-normalizer
+restricted rank-0/rank-2 modulus/phase transport law, with no new MC or GPU.
 This is an attention ordering, not permission, serialization or a task lock.
 PR #530 `0e1917f9`, PR #531 `a5375b5` and PR #532 `2e1c57b4`
 are reusable unmerged interfaces, not `main` facts.
@@ -267,24 +268,25 @@ completion remain a nonseparable pooled-root allocation in a fresh
 population.  The open mechanism question is no longer whether this carrier
 transmits, but whether it exhausts, supplements or screens the full response.
 
-The complete quotient removes the reason to launch N130 by default.  Current
-P0 attention is #275's **raw-observable / normalizer / identifiable-prediction
-contract**, using existing assets and no new random production:
+The complete quotient removes the reason to launch N130 by default.  #275's
+first **raw-observable / normalizer / identifiable-prediction** delivery is now
+complete on existing K1/K2 production.  Its typed dictionary preserves the
+original `q/E`, one physical normalizer and pooled moving-root `U`.  With the
+full aligned covariance, fixed ordinary q2 `kappa=.5` is excluded
+(`11.792466/4`, `p=.0189631`), while the Jordan affine law is not excluded
+(`6.432527/4`, `p=.169092`).  The latter is not uniquely identified: the
+`kappa->1` closure of the unbounded semisimple image contains the complete
+Jordan plane.  The result is `PARTIALLY_IDENTIFIABLE`, with non-uniform
+separation.
 
-1. classify each candidate as local charged insertion, propagating torus
-   sector, homology-marked trace, scalar composite or normalized expectation;
-2. keep the original `q/E` numerators, one physical normalizer and the pooled
-   moving-root `U`, rather than importing dimensions across unlike observers;
-3. on at least two correlated raw coordinates, give two candidate prediction
-   vectors with units, allowed amplitudes, design rank and covariance-weighted
-   separation—or prove them unidentifiable and name the unique missing input.
-
-The first reuse set is the existing square-bond primitive/C3, `rho`-child
-`E_top`, P43/P57 and thermal/modulus assets.  A single real C3 angle cannot
-separate H4 from H8 when each retains an unknown complex amplitude; one
-phase-calibrated second physical rotation or an explicitly different modulus
-relation is the only allowed additional input.  Old-data selection remains
-exploratory.  #537 is now a P1 theory line: derive or falsify the
+The unique P0 input is now a same-source, same-observer, same-normalizer
+rank-0/rank-2 restricted-trace modulus/phase transport law, derived first and
+then scored on existing `rho`-child or P43/P57 assets.  A single real C3 angle
+with arbitrary complex gain is exactly nonidentifiable.  A second rotation is
+informative only after freezing the cross-angle gain law: `7.5 degrees` is the
+preferred signed-real separator and `15 degrees` is an exact alias.  No new
+MC or GPU acquisition follows this result.  #537 remains a P1 theory line:
+derive or falsify the
 fusion/completion commutator and the nonlocal remainder's near-critical
 transport.  N130 is only a conditional future test if that theory first
 supplies a unique observable and prediction and an independently motivated
@@ -873,7 +875,7 @@ This delta is placed before the main claim ledger because it changes what the te
 
 | Latest result | Source / integration | Scientific consequence |
 |---|---|---|
-| Priority reset: observable semantics before acquisition | [Issue #275 comment](https://github.com/LightChainr/Matching-One/issues/275#issuecomment-5490477497), `open_issue priority:P0`; Issue #537 is `open_issue priority:P1` | Current P0 must produce two theory-specified, unit-matched raw-coordinate prediction vectors plus design rank and covariance-weighted identifiability—or one proof of nonidentifiability and its unique missing input. Reuse existing sufficient statistics; no new MC, GPU, L6 or distance grid. N130 is conditional future work, not queued. |
+| #275 first forward-identifiability decision | `open_pr` #267; [dictionary](../notes/p275-observable-normalizer-dictionary.md), [score](../results/p275-forward-identifiability/latest.md), [C3 phase audit](../notes/p275-c3-amplitude-identifiability.md); Issue #275 remains `open_issue priority:P0`, Issue #537 `open_issue priority:P1` | Fixed q2 `kappa=.5` is excluded (`p=.0189631`); Jordan is not excluded (`p=.169092`) but is not selected because the semisimple `kappa->1` closure contains its image. Verdict `PARTIALLY_IDENTIFIABLE`, non-uniform. Next derive one same-source/observer/normalizer restricted rank-0/rank-2 modulus/phase law and score existing rho/P43/P57. One-angle arbitrary-complex C3 is exact nonidentifiable; after freezing cross-angle gain, use 7.5 degrees, not the 15-degree alias. No new MC or GPU. |
 | Contact-fusion × topological-completion transmission and complete quotient | Exact N25 tensor `branch_only` [`df4a64f6`](https://github.com/LightChainr/Matching-One/blob/df4a64f68232eec5aa5b8c8a5d920062aaa7808e/results/p537-one-defect-diagonal-edge/contact-stage-tensor.json); prospective N65 20M result [`f46c38c3`](https://github.com/LightChainr/Matching-One/blob/f46c38c3088c1a9f4df8ab0f256b88639f0b34a3/results/p537-contact-stage-n65/result.json); same-data mechanism candidate [`bab37f21`](https://github.com/LightChainr/Matching-One/blob/bab37f21b061afa9e03286b6e9bf4560f879ecd5/results/p537-contact-stage-n65/scale-fingerprint.json); complete quotient [`f9ba1ff6`](https://github.com/LightChainr/Matching-One/blob/f9ba1ff690b07beefcc71e669f1f29581d4e264e/results/p537-full-t-transport/RESULT.json); PR #509 remains Draft at `ac5f5fe7` | Held-out `CONTACT_FUSION_COMPLETION_TRANSMITS`, but complete `J65=-.00162251+/-.00018553` and carrier share falls `5.892%->2.551%`. Root-to-reference changes only `.0155%`. The split `N^-3/N^-29/8` commutator scaling is a same-data candidate, not an independent field result. #537 becomes P1 nonlocal-remainder/transport theory. |
 | Canonical macro-window joint-U pilot | `open_pr` #267; [report](../results/regular-pair-macro-joint-u/REPORT.md) | N100 `T=+11.877846`, interval `[−2.255616,26.011308]`; N400 `T=−542.503823`, interval `[−1307.642507,222.634861]`. Opposite signs, both include zero, and N400 projects above the 2M ceiling: route stopped, `D17/D21` not evaluated. No macro top-up follows and this is not the current P0. |
 | N25 midpoint split, carrier replay and landing transfer | Split remains closed Issue #536 attachment only; 64-counter replay is `open_pr` #267; provisional N25 clean-two-bridge preflight is `open_pr` #509 at [`ec3941b0`](https://github.com/LightChainr/Matching-One/blob/ec3941b03b2694e827db1cba34766a82e6146a5a/experiments/p537-landing-matrix-preflight-20260901/REPORT.md); corrected canonical transfer is `branch_only` [`a3bc80c8`](https://github.com/LightChainr/Matching-One/blob/a3bc80c86585220f96dfeff022bd575b6c21d29f/notes/p537-finite-landing-transfer-definition.md) | Observable/rank pivot dominates issue-only all-pair J2 negatively. Delivery B found 18 sparse kernel changes. The provisional port contract is non-rank-one, while N9/N16 are supporting controls rather than the complete P4/Schur falsifier. Its transmission question is superseded by the completed `df4a64f6/f46c38c3` gate above. |

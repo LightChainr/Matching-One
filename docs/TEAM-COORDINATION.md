@@ -9,6 +9,7 @@ PR545 head `e1f19e4c`, branch-only joint value completion `c958b30b`, exact
 N25 contact-stage tensor `df4a64f6`, frozen held-out N65 transmission result
 `f46c38c3`, full-covariance/post-hoc shape extension `95a695c7`, same-dependency
 commutator candidate `bab37f21`, complete N65 thermal quotient `f9ba1ff6`,
+the completed first #275 identifiability score (`PARTIALLY_IDENTIFIABLE`),
 open P0 #275, open P1 #537, P2 support #539, PR509 OPEN Draft live head
 `ac5f5fe7` and PR533 head
 `5aa929a6`; prior
@@ -61,16 +62,17 @@ entry-double `N^-29/8`, and triangular `N^3 K_N` limit.  It reuses exactly the
 same N25/N65 dependency.  Those powers and the zero entry are hypotheses,
 not an independent result.
 
-**Next decision:** open #275 is P0.  Before any new Monte Carlo, build one
-explicit observable dictionary covering `K1/K2`, `F1/F2`, `A_top/E_top`,
-`J_top/J_bulk`, tau/topology and direction normalization; state the exact
-normalizer once; then put at least two surviving mechanisms into that common
-basis as forward maps.  Each candidate must publish its design rank,
-nullspace or parameter gauge, pairwise image intersection, and predictions
-for the same held-out rows.  A minimal pair is (i) a semisimple two-activation
-completion plane plus a distinct even bulk singlet and (ii) a two-component
-Jordan/log-pair transport with the same normalizer.  If they are not separated
-by existing rows, record `NONIDENTIFIABLE` and the single missing observable.
+**Next decision:** open #275 remains P0, and its first actual analysis is
+delivered.  The typed observable/normalizer dictionary and aligned K1/K2 score
+exclude fixed q2 `kappa=.5` (`p=.0189631`) but do not exclude the Jordan affine
+law (`p=.169092`).  This is not a Jordan selection: the unbounded semisimple
+`kappa->1` closure contains the full Jordan image, giving
+`PARTIALLY_IDENTIFIABLE` / non-uniform separation.  The one missing input is a
+same-source, same-observer, same-normalizer rank-0/rank-2 restricted-trace
+modulus/phase transport law.  Derive it first, then score existing rho-child or
+P43/P57 assets.  For C3, one angle with arbitrary complex gain is exact
+nonidentifiable; after freezing the gain law, use a `7.5-degree` second
+rotation, not the exact `15-degree` alias.  No new MC or GPU run is assigned.
 
 Open #537 is P1 theory: derive the commutator from the Alexander/birth
 filtration or prove the required uniform near-critical transport.  N130 is
@@ -329,9 +331,9 @@ create a second priority queue.
 
 | Team | Delivered / active contribution | Next handoff |
 |---|---|---|
-| **数学研究执行** | `f9ba1ff6` scores complete N65 `J` from existing sufficient statistics and shows the transmitted carrier contributes only `2.551%`. | Build #275's observable dictionary and exact normalizer; generate no new MC. |
-| **数学研究总览** | Draft [PR #267](https://github.com/LightChainr/Matching-One/pull/267) routes open #275 P0, #537 P1 and branch-only results without promoting them to `main`. | Keep the single attention order on #275 identifiability; priority is not a lock or approval gate. |
-| **数学研究俯瞰** | `bab37f21` gives a same-dependency commutator/scaling candidate, not another vote. | Write at least two common-basis forward maps, their rank/nullspace and held-out predictions; keep #537 analytic work at P1. |
+| **数学研究执行** | #275 dictionary plus existing K1/K2 covariance score: fixed q2 excluded, Jordan compatible but not identified; no new MC/GPU. | Score the theory-derived restricted rank-0/rank-2 transport law on existing rho/P43/P57 assets. |
+| **数学研究总览** | Draft [PR #267](https://github.com/LightChainr/Matching-One/pull/267) routes the `PARTIALLY_IDENTIFIABLE` result without promoting it to `main`. | Keep the single attention order on the one missing transport law; priority is not a lock or approval gate. |
+| **数学研究俯瞰** | Exact image-closure and C3 phase audits explain the present non-uniform identifiability. | Derive the same-normalizer modulus/phase law; retain #537 analytic transmission at P1. |
 
 The current canonical joint-U delivery pin is
 `f8e30859f05e86ef35d257fc900f97e74f41e21c`, integrated in open Draft

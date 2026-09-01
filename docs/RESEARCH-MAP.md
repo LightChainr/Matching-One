@@ -7,8 +7,8 @@ This map is the repository's scientific coordinate system. It is not a permissio
 **Current frontier: the canonical macro-window ratio route is stopped, the
 typed contact-completion carrier has passed a held-out original-`U`
 transmission gate but is only a small share of full N65 response, and P0 has
-moved to the original observable/normalizer/identifiable-prediction problem in
-#275.** The completed N100/N400
+moved to #275's same-normalizer restricted rank-0/rank-2 modulus/phase law
+after its first forward score returned `PARTIALLY_IDENTIFIABLE`.** The completed N100/N400
 [pilot](../results/regular-pair-macro-joint-u/REPORT.md), `open_pr #267`,
 gives `T_N=N²J2_macro=+11.877846` with simultaneous interval
 `[−2.255616,26.011308]` at N100 and `−542.503823` with interval
@@ -184,19 +184,22 @@ attachment—that can decide which block survives the real P4/Schur sum.
 The paired exact result reproduced the coarse aggregate and isolated the
 surviving joint sectors; `22f01e33` found the physical diagonal edge,
 `df4a64f6` isolated contact-completion rank two, `f46c38c3` transmitted it at
-N65, and `f9ba1ff6` showed it carries only `2.551%` of full `T65`.  The next P0
-decision is therefore #275's finite forward-prediction contract, not a larger
-contact block.
+N65, and `f9ba1ff6` showed it carries only `2.551%` of full `T65`.  #275's
+first finite forward-identifiability decision is now complete on the existing
+K1/K2 covariance: fixed ordinary q2 `kappa=.5` is excluded
+(`p=.0189631`), whereas the Jordan affine law is not excluded (`p=.169092`).
+Jordan compatibility is not Jordan identification, because the unbounded
+semisimple `kappa->1` closure contains the full Jordan image.  The scientific
+state is `PARTIALLY_IDENTIFIABLE` with non-uniform separation.
 
-The state/source/observer distinction is now operational.  A candidate must
-be typed as local charged insertion, torus propagating sector,
-homology-marked trace, scalar composite or normalized expectation.  It must
-retain original `q/E`, the physical normalizer and pooled moving-root `U`.
-At least two candidates must give unit-bearing vectors on at least two
-correlated existing coordinates; all allowed amplitudes remain in the design
-rank calculation.  A rank deficiency is a result only if it names the unique
-missing second rotation or modulus relation.  Unnormalized numerator zeros
-cannot be transferred through twist-dependent normalization.
+The state/source/observer distinction is now operational in the
+[dictionary](../notes/p275-observable-normalizer-dictionary.md).  The unique
+mechanism-changing input is a same-source, same-observer, same-normalizer
+rank-0/rank-2 restricted-trace modulus/phase transport law, derived before it
+is scored on existing rho-child or P43/P57 assets.  One real C3 angle with
+arbitrary complex gain is exactly nonidentifiable; after freezing a
+cross-angle gain law, `7.5 degrees` is the preferred signed-real second
+rotation and `15 degrees` is an exact alias.  No new MC/GPU block is required.
 
 #537 remains P1 for the nonlocal remainder and uniform near-critical
 transport.  Its unified exact all-`z` N25 producer, N85 normalized tensor and
@@ -220,8 +223,8 @@ certificate under the saved radius-one semantics.  The same/reversed
 cyclic-order Wronskian is
 exactly nonzero under the provisional port contract, so that order remains a
 candidate slow coordinate; it is not yet a canonical site-flip/parity result.
-Issue #275 is the open P0 attention line for the original observable,
-normalizer and identifiable candidate vectors.  Issue #537 remains open P1;
+Issue #275 remains the open P0 attention line for the restricted-trace
+modulus/phase transport law.  Issue #537 remains open P1;
 transmission and the N65 full-T share are complete, while its asymptotic
 nonlocal remainder is unresolved.  N25/N85/N130 carrier tests are conditional
 support rather than a default queue. #536 is closed
