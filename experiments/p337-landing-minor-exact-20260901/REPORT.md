@@ -48,10 +48,9 @@ registry by `pi/4` negates both columns and also preserves nonzero rank. The
 transition map to `(q,E)` has determinant two, so an invertible change to
 `(q,E-Rq)` does not restore rank one.
 
-## Exact root-Schur interface
+## Exact root-Schur and mixed-Hessian interface
 
-The minor is not merely an abstract rank diagnostic. In the transition basis,
-write
+In the transition basis, write
 
 ```text
 Q(v)=v_01+v_12,
@@ -66,31 +65,52 @@ beta = Q(A)/Q(T)
 ```
 
 whenever `Q(T)!=0`, so the source residual `A-beta T` has zero `q` response.
-A direct two-column calculation gives
+With
+
+```text
+Psi = T_01*A_12-T_12*A_01,
+S   = T_01+T_12,
+```
+
+a direct two-column calculation gives
 
 ```text
 Q(A-beta T)=0,
-(E-R Q)(A-beta T)=E(A-beta T)
-                     = 2*(T_01*A_12-T_12*A_01)/(T_01+T_12).
+C(p):=(E-R Q)(A-beta T)=2*Psi/S,
 ```
 
-Thus the determinant divided by the thermal sum is the finite
-root-conditioned even/H response, independently of `R=Y_p/D`. The Sturm
-certificate proves `T_01+T_12` also has no root in `[0.59,0.60]` and is
-negative at both endpoints. At `p=1/2` the exact residual is
+independently of `R=Y_p/D`. The full root-coordinate derivative of this
+finite landing block is then
 
 ```text
-533831111/1539745775616,
+partial_u C
+ = [1/S] partial_t C
+ = 2*p*(1-p)*(Psi' * S-Psi*S')/S^3.
 ```
 
-and at the matching-root midpoint it is
+Thus the relevant finite mixed Hessian is controlled by the Wronskian
+`Psi' S-Psi S'`, not by the determinant alone. The committed Sturm certificate
+proves that `Psi`, `S`, and this Wronskian all have zero roots in the axis-L4
+matching-root interval `[0.59,0.60]`; all three are negative at both endpoints.
+Consequently both the first Schur residual and its root-coordinate derivative
+are strictly positive throughout that interval.
+
+At `p=1/2`,
 
 ```text
-+0.0001366476693672144.
+C = 533831111/1539745775616,
+partial_u C = 1397902943671/32208917889024.
 ```
 
-So the finite wedge survives the actual matching-root Schur projection; it is
-not created by using an unconditioned source coordinate.
+At the matching-root midpoint,
+
+```text
+C = +0.0001366476693672144,
+partial_u C = +0.01400841686599306.
+```
+
+This directly reaches the finite mixed-Hessian gate in #537. It is not merely
+an unconditioned source correlation or an abstract matrix-rank observation.
 
 ## All-scale physical witness family
 
@@ -191,24 +211,26 @@ reproduces the same four matrix entries and determinant exactly.
 ## Consequence for Issue #537
 
 The proposed exact rank-one cancellation of the ordinary three-packet landing
-block is false. The next object should be retained explicitly as the
-thermal-gauge-invariant birth/completion wedge
+block is false, including after the actual finite matching-root Schur and mixed
+thermal derivative. The surviving coordinate should be retained explicitly as
 
 ```text
-Psi_4 = T_01 A_12 - T_12 A_01.
+Psi_4 = T_01 A_12-T_12 A_01,
+C_4   = 2 Psi_4/(T_01+T_12),
+G_4   = [1/(T_01+T_12)] partial_t C_4.
 ```
 
-The appropriate remaining problem is to control the signed critical/near-
-critical scaling of the **aggregate** `Psi_4`, or equivalently its
-root-conditioned normalization `2 Psi_4/(T_01+T_12)`, including kernel
-reconnection, rank/readout pivotality and the pooled-root Schur term. It is no
-longer appropriate to assume all ordinary landing contributions cancel and
-jump directly to a four-packet absolute remainder.
+The appropriate remaining problem is the signed critical/near-critical
+scaling of the **aggregate** `G_4`, with kernel reconnection, rank/readout
+pivotality and pooled-root Schur terms kept together. It is no longer
+appropriate to assume all ordinary landing contributions cancel and jump
+directly to a four-packet absolute remainder.
 
 The all-scale witnesses have exponentially small individual Bernoulli weight;
 they falsify the exact algebraic cancellation but are not an asymptotic lower
-bound. Any claim that rank one emerges only after critical averaging must now
-state and prove that quantitative suppression separately.
+bound. Any claim that rank one or zero mixed response emerges only after
+critical averaging must now state and prove that quantitative suppression
+separately.
 
 ## Reproduction
 
