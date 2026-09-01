@@ -1,0 +1,45 @@
+version: 1
+issue: 234
+status: executable_first_fixed_delta_line
+branch: research/p234-energy-logpair-sufficient-statistics-20260829
+resource: 16_CPU_32_GiB_no_GPU
+working_directory: /workspace/Matching-One
+protocol: predictions/p234_triangular_energy_logpair_protocol_20260829.yaml
+
+first_fixed_delta:
+  delta: 1/(8*sqrt(2))
+  delta_denominator: 8
+  samples_per_size: 100000
+  batches: 100
+  workers: 16
+  jobs:
+    - L: 64
+      seed: 2026234064
+      output_prefix: results/server-20260829/P234-phaseA/d8-L64-100k
+    - L: 96
+      seed: 2026234096
+      output_prefix: results/server-20260829/P234-phaseA/d8-L96-100k
+    - L: 128
+      seed: 2026234128
+      output_prefix: results/server-20260829/P234-phaseA/d8-L128-100k
+    - L: 192
+      seed: 2026234192
+      output_prefix: results/server-20260829/P234-phaseA/d8-L192-100k
+
+command_template: >
+  python3 scripts/run_triangular_energy_logpair_mc.py run
+  --L {L} --delta-denominator 8 --samples 100000 --batches 100
+  --seed {seed} --workers 16 --output-prefix {output_prefix}
+
+reanalyze_template: >
+  python3 scripts/run_triangular_energy_logpair_mc.py analyze
+  --L {L} --delta-denominator 8 --batches-csv {output_prefix}.batches.csv
+  --output-json {output_prefix}.reanalyzed.json
+
+gate_before_smaller_delta:
+  - all 100 batch ids present at every L
+  - no nonfinite LL_LD_DD_or_covariance
+  - report full 3x3 covariance and rescaling_invariant_J
+  - fit_or_plot_only_across_L_at_this_fixed_delta
+  - do_not_pool_delta_denominators_12_or_16_yet
+

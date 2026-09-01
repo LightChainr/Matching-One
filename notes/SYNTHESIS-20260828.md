@@ -6,7 +6,7 @@
 
 The existence of the square-site matching-odd orientation signal is no longer the principal bottleneck. The independent P43+P57 primary synthesis rejects global zero (`31.186/4`) while fixed H4 predictions remain compatible (`3.462/4`). Norm-5 also strongly removes the frozen H12/H8 aliases.
 
-N145->290 is complete. Its corrected center-slope/root structure survives, but the three-level curve shape is not one scalar multiplier. Norm-5 covariance likewise rejects one scalar width and width-corrected q2 while leaving the fixed Jordan/log alternative compatible. The live square-site problem is therefore a **low-rank/multicomponent finite-size state**, not another scalar correction exponent.
+Issue #50 N145->290 is complete. Its corrected center-slope/root structure survives, but the three-level curve shape is not one scalar multiplier. Norm-5 covariance likewise rejects one scalar width and width-corrected q2 while leaving the fixed Jordan/log alternative compatible. The live square-site problem is therefore a **low-rank/multicomponent finite-size state**, not another scalar correction exponent.
 
 ## Square-site thermal H4 line
 

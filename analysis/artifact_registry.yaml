@@ -25,6 +25,7 @@ canonical_documents:
   - {path: GOVERNANCE.md, status: canonical_current, role: permissive_execution_policy}
 
 frozen_predictions:
+  - {path: predictions/p234_triangular_energy_logpair_protocol_20260829.yaml, status: frozen_prediction, issue: 234, role: periodic_energy_logpair_sufficient_statistics}
   - {path: predictions/two_spin4_heldout_20260828.yaml, status: frozen_prediction, issue: 43, role: N185_N265_targets}
   - {path: predictions/p49_slope_two_sector_145_290_20260828.yaml, status: frozen_prediction, issue: 50, role: completed_N290_slope_root_correction}
   - {path: predictions/gaussian_norm5_harmonic_discrimination_20260828.yaml, status: frozen_prediction, issue: 57, role: completed_norm5_harmonic_targets}
@@ -40,8 +41,14 @@ frozen_predictions:
 
 continuum_controls:
   - {path: predictions/p156_pinson_arguin_baselines_20260829.json, status: continuum_baseline, issue: 156, role: primitive_homology_sector_values}
+  - {path: predictions/p234_triangular_energy_logpair_tiny_oracle_20260829.json, status: exact_algebra_oracle, issue: 234, role: cluster_sign_integration_control}
+  - {path: scripts/score_p234_fixed_delta_continuum.py, status: active_scorer, issue: 234, role: same_stream_relative_pi_normalization_and_parent_pair_limit}
+  - {path: scripts/score_p234_cross_cutoff_shear.py, status: frozen_scorer, issue: 234, role: joint_logarithmic_top_field_cutoff_derivative}
 
 evidence_archives:
+  - {id: P234_CROSS_CUTOFF_SHEAR, path: results/server-20260829/P234-phaseB, status: production_result, role: prospective_three_cutoff_top_partner_shear}
+  - {id: P234_FIXED_DELTA_D8, path: results/server-20260829/P234-phaseA, status: production_result, role: connection_normalized_parent_pair_and_cutoff_shear}
+  - {id: P234_ENERGY_LOGPAIR_SMOKE, path: results/local-20260829/P234-triangular-energy-logpair-smoke, status: pipeline_smoke, role: cluster_sign_integrated_phaseA_runner}
   - {id: P57, path: results/server-20260829/P57-norm5-500m, status: immutable_result, role: prospective_norm5}
   - {id: P50_FULLCURVE, path: results/server-20260829/P50-n145-n290-fullcurve, status: immutable_result, role: heldout_fullcurve}
   - {id: MATCHING_ODD_SYNTHESIS, path: results/evidence-ledger/issue212-matching-odd-synthesis.json, status: post_reveal_synthesis, role: independent_primary_meta}
@@ -56,6 +63,7 @@ evidence_archives:
   - {id: GAUSSIAN_COVER_SELECTION_RULE, path: results/exact-cover-character-oracles/norm2_selection_rule.json, status: immutable_result, role: exact_deck_character_linear_null_and_allowed_channels}
 
 topic_derivations:
+  - {path: notes/p234-triangular-energy-logpair-protocol.md, status: topic_derivation, role: lattice_energy_logpair_protocol}
   - {path: notes/pivotal-russo-finite-volume.md, status: topic_derivation, role: pivotal_identity}
   - {path: notes/post-n290-two-generator-thermal-transfer.md, status: topic_derivation, role: non_scalar_thermal_transfer}
   - {path: notes/q4-jordan-log-slope-shape.md, status: topic_derivation, role: Q4_Jordan_shape}
@@ -64,6 +72,10 @@ topic_derivations:
   - {path: notes/p156-norm2-generation2.md, status: topic_derivation, role: primitive_second_generation}
   - {path: notes/p231-vacuum-kdv-sector-response.md, status: topic_derivation, role: primitive_vacuum_KdV}
   - {path: notes/p225-multiradius-pivotal-prototype.md, status: topic_derivation, role: local_multiradius_negative}
+
+active_execution_protocols:
+  - {path: experiments/p234_phaseA_huawei_20260829.yaml, status: active_execution_plan, issue: 234, role: first_fixed_delta_phaseA_line}
+  - {path: experiments/p234_phaseB_cutoff_derivative_huawei_20260829.yaml, status: frozen_execution_plan, issue: 234, role: two_new_cutoffs_for_top_partner_shear}
 
 historical_protocols:
   - {path: experiments/server_compute_queue.yaml, status: historical, role: original_server_queue}

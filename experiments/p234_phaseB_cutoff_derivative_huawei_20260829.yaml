@@ -1,0 +1,70 @@
+version: 1
+issue: 234
+status: frozen_after_d8_reveal_before_d12_or_d16_execution
+branch: research/p234-energy-logpair-sufficient-statistics-20260829
+resource: 16_CPU_32_GiB_no_GPU
+working_directory: /workspace/Matching-One-p234-L192
+protocol: predictions/p234_triangular_energy_logpair_protocol_20260829.yaml
+
+question: >
+  Does the top-top cutoff derivative reproduce across two genuinely smaller
+  declared cutoffs while the bottom-null and mixed-pairing limits remain stable?
+
+primary_transform:
+  alpha: L^(5/4)/log(L)
+  beta_realized: (2*delta_realized)^(-5/4)/p_connection
+  vector: [alpha^2*LL, alpha*beta_realized*LD, beta_realized^2*DD]
+
+primary_cross_cutoff_quantity:
+  definition: kappa_proxy=-delta*(d DD/d delta)/(2*LD)
+  d8_preview_after_reveal: 2.788 +/- 1.341
+  success_direction: same_nonzero_sign_and_joint_cross_cutoff_compatibility
+  boundary: same-gauge cutoff shear, not yet a universal coefficient
+
+joint_scorer:
+  path: scripts/score_p234_cross_cutoff_shear.py
+  frozen_status: added_after_d12_d16_L64_preview_before_all_L96_L128_L192_results
+  model:
+    LL: c_LL/L
+    LD: B+c_LD/(L*delta_realized)
+    DD: D-2*kappa*B*log(2*delta_realized)+c_DD/(L*delta_realized)
+
+common:
+  samples_per_size: 100000
+  batches: 100
+  workers: 16
+  size_order: [64, 96, 128, 192]
+
+lines:
+  - delta: 1/(12*sqrt(2))
+    delta_denominator: 12
+    jobs:
+      - {L: 64, seed: 2026235264, output_prefix: results/server-20260829/P234-phaseB/d12-L64-100k}
+      - {L: 96, seed: 2026235296, output_prefix: results/server-20260829/P234-phaseB/d12-L96-100k}
+      - {L: 128, seed: 2026235328, output_prefix: results/server-20260829/P234-phaseB/d12-L128-100k}
+      - {L: 192, seed: 2026235392, output_prefix: results/server-20260829/P234-phaseB/d12-L192-100k}
+  - delta: 1/(16*sqrt(2))
+    delta_denominator: 16
+    jobs:
+      - {L: 64, seed: 2026236464, output_prefix: results/server-20260829/P234-phaseB/d16-L64-100k}
+      - {L: 96, seed: 2026236496, output_prefix: results/server-20260829/P234-phaseB/d16-L96-100k}
+      - {L: 128, seed: 2026236528, output_prefix: results/server-20260829/P234-phaseB/d16-L128-100k}
+      - {L: 192, seed: 2026236592, output_prefix: results/server-20260829/P234-phaseB/d16-L192-100k}
+
+command_template: >
+  .venv/bin/python scripts/run_triangular_energy_logpair_mc.py run
+  --L {L} --delta-denominator {delta_denominator}
+  --samples 100000 --batches 100 --seed {seed} --workers 16
+  --output-prefix {output_prefix}
+
+execution_order:
+  - complete all d12 sizes
+  - score d12 without changing the transform
+  - complete all d16 sizes
+  - perform joint cutoff derivative analysis
+
+required_archive:
+  - JSON point estimates and full 3x3 covariance
+  - integer batch sufficient statistics
+  - endpoint connection probability from sum_D1 and sum_D2
+  - exact seeds, geometry, platform, and code commit

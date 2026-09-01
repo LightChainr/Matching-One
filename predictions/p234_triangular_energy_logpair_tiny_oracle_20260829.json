@@ -1,0 +1,104 @@
+{
+  "boundary": "This small quotient has deliberately non-scaling local and bilocal radii; its rational values must not be interpreted as continuum amplitudes.",
+  "centered_moment_order": [
+    "LL",
+    "LD",
+    "DD"
+  ],
+  "exact_centered_moments": [
+    {
+      "float": 0.008505595833412372,
+      "fraction": "584500095/68719476736"
+    },
+    {
+      "float": 0.010393870979896747,
+      "fraction": "714261375/68719476736"
+    },
+    {
+      "float": 0.008505595833412372,
+      "fraction": "584500095/68719476736"
+    }
+  ],
+  "explicit_cluster_sign_checks": 1048576,
+  "four_spin_means": {
+    "D1L2": {
+      "float": 0.0625,
+      "fraction": "1/16"
+    },
+    "DD": {
+      "float": 0.060611724853515625,
+      "fraction": "15889/262144"
+    },
+    "L1D2": {
+      "float": 0.0625,
+      "fraction": "1/16"
+    },
+    "LL": {
+      "float": 0.060611724853515625,
+      "fraction": "15889/262144"
+    }
+  },
+  "geometry": {
+    "configurations": 262144,
+    "edges_after_periodic_deduplication": 54,
+    "height": 3,
+    "neighbor_steps": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        -1
+      ]
+    ],
+    "p": "1/2",
+    "sites": 18,
+    "width": 6
+  },
+  "issue": 234,
+  "pair_connection_means": {
+    "D1": {
+      "float": 0.22826766967773438,
+      "fraction": "59839/262144"
+    },
+    "D2": {
+      "float": 0.22826766967773438,
+      "fraction": "59839/262144"
+    },
+    "L1": {
+      "float": 0.22826766967773438,
+      "fraction": "59839/262144"
+    },
+    "L2": {
+      "float": 0.22826766967773438,
+      "fraction": "59839/262144"
+    }
+  },
+  "pairs": {
+    "D1": [
+      4,
+      2
+    ],
+    "D2": [
+      7,
+      11
+    ],
+    "L1": [
+      5,
+      1
+    ],
+    "L2": [
+      8,
+      10
+    ]
+  },
+  "role": "algebra_and_periodic_geometry_oracle_not_scaling_evidence",
+  "schema": "matching-one/p234-triangular-energy-logpair-tiny-oracle/v1",
+  "sign_integration_passed": true,
+  "u_statistic_identity": "mean(h_AB)-[sum(u_A)sum(u_B)-sum(u_Au_B)]/[n(n-1)] is unbiased for E[h_AB]-E[u_A]E[u_B] under iid configurations"
+}
