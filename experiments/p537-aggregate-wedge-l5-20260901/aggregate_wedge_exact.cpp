@@ -138,7 +138,7 @@ class Torus {
 public:
     Torus(int L, const Kernel& kernel) : L_(L), N_(L * L), kernel_(kernel),
         neighbor_(N_), edge_id_(N_) {
-        if (L < 4 || L > 5) throw std::invalid_argument("this bounded producer supports only L=4 or L=5");
+        if (L < 4 || N_ > 128) throw std::invalid_argument("require L>=4 and L^2<=128");
         const std::array<std::pair<int,int>,4> step{{{0,1},{1,0},{0,-1},{-1,0}}};
         for (int y = 0; y < L_; ++y) for (int x = 0; x < L_; ++x) {
             const int v = vertex(x,y);
@@ -262,6 +262,34 @@ public:
         }
         return 2 * unordered;
     }
+
+    // Ordered contribution from one uniformly sampled first endpoint.  N times
+    // this quantity is an unbiased estimator of source16() for a fixed state.
+    std::int64_t source16_origin(const std::vector<unsigned char>& occupied,
+                                 const State& state, int x) const {
+        if (x < 0 || x >= N_) throw std::out_of_range("source origin");
+        if (occupied[x]) return 0;
+        std::int64_t total = 0;
+        std::array<int,8> ids{}, labels{};
+        for (int y = 0; y < N_; ++y) if (y != x && !occupied[y]) {
+            for (int d = 0; d < 4; ++d) {
+                const int ux = neighbor_[x][d], uy = neighbor_[y][d];
+                ids[d] = occupied[ux] ? state.occupied_root[ux] : N_ + edge_id_[x][d];
+                ids[4+d] = occupied[uy] ? state.occupied_root[uy] : N_ + edge_id_[y][d];
+            }
+            int next = 0;
+            std::uint32_t key = 0;
+            for (int i = 0; i < 8; ++i) {
+                int label = -1;
+                for (int j = 0; j < i; ++j) if (ids[j] == ids[i]) { label = labels[j]; break; }
+                if (label < 0) label = next++;
+                labels[i] = label;
+                key |= std::uint32_t(label) << (3*i);
+            }
+            total += kernel_.g16[key];
+        }
+        return total;
+    }
 };
 
 void write_output(const std::string& path, int L, int shard_index, int shard_count,
@@ -287,6 +315,7 @@ void write_output(const std::string& path, int L, int shard_index, int shard_cou
 
 } // namespace
 
+#ifndef P537_LIBRARY_ONLY
 int main(int argc, char** argv) {
     if (argc != 6) {
         std::cerr << "usage: aggregate_wedge_exact KERNEL OUTPUT L SHARD_INDEX SHARD_COUNT\n";
@@ -300,6 +329,7 @@ int main(int argc, char** argv) {
         const int shard_count = std::stoi(argv[5]);
         Torus torus(L,kernel);
         const int N = torus.size();
+        if (L > 5) throw std::invalid_argument("exact enumeration is bounded to L=4 or L=5");
         if (shard_count <= 0 || shard_index < 0 || shard_index >= shard_count)
             throw std::invalid_argument("invalid shard");
         const std::uint64_t total = 1ULL << (N-1);
@@ -340,3 +370,4 @@ int main(int argc, char** argv) {
         return 1;
     }
 }
+#endif
