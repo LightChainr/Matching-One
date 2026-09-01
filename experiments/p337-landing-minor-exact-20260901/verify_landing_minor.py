@@ -7,6 +7,9 @@ from itertools import combinations
 from pathlib import Path
 import landing_minor as primary
 
+def popcount(value):
+    return value.bit_count() if hasattr(value, "bit_count") else bin(value).count("1")
+
 class PotentialUnionFind:
     def __init__(self,length:int):
         self.length=length;self.n=length*length;self.parent=list(range(self.n));self.size=[1]*self.n;self.dx=[0]*self.n;self.dy=[0]*self.n;self.cycles=[set() for _ in range(self.n)]
@@ -73,7 +76,7 @@ def verify():
         if tr not in M:continue
         h=t.landing(m,1)[0]
         if not h:continue
-        S=F(2*m.bit_count()+1,2)-8;amid=(src[m]+src[m|1])/2
+        S=F(2*popcount(m)+1,2)-8;amid=(src[m]+src[m|1])/2
         M[tr][0]+=F(h)*S/2**15;M[tr][1]+=F(h)*(amid-mean)/2**15
     d=M[(0,1)][0]*M[(1,2)][1]-M[(1,2)][0]*M[(0,1)][1]
     expected=F(-533831111,140737488355328)
