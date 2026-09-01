@@ -205,11 +205,11 @@ A first-order implicit-root expansion gives
 u_root=-mean_g d_g(0)/(1-a+O(a^2)) + O(max_g |d_g|^2).          (18)
 ```
 
-Thus the next term after the universal two-cloud center is explicitly
-model-count dependent: occupied-cycle and adjacent-vacancy polymer
-coefficients, plus any residual geometry-dependent bad sector, enter
-through `d_g`. Three facts do not determine it: equal area, equal total
-pressure, or the existence of the sigmoid.
+Thus the next term after the universal two-cloud center is determined by
+occupied-cycle and adjacent-vacancy polymer counts, plus any residual
+geometry-dependent bad sector, through `d_g`. Equal area, equal total
+pressure, and the existence of the sigmoid do not determine those counts.
+Section 5 now evaluates the first two counts for the square local graph.
 
 ## 3. Mesoscopic conditional laws
 
@@ -288,10 +288,10 @@ There are two different questions.
    at order `N/m^6`, from a black four-cycle or adjacent vacancy pair.
    Consequently `N/m^6->0`, plus the separate bad-contour control, is the
    natural weaker sufficient gate for the clean centered sigmoid and
-   `u_root=o(1)`. It is not claimed here to be a logically necessary gate
-   for every possible observable, since a further exact cancellation of
-   the two connected-polymer coefficients would have to be ruled out to
-   establish necessity.
+   `u_root=o(1)`. Section 5 shows that its first two connected-polymer
+   coefficients do not cancel. Hence this gate is locally sharp for the
+   named root chart as `N/m^6 ->0`; no global necessity statement is made
+   for arbitrary non-small `N/m^6`, where further resummation is required.
 
 The hierarchy is therefore
 
@@ -304,15 +304,114 @@ The first implication contains the second. Neither is a fixed-m
 thermodynamic theorem, and neither assigns the subleading sign of original
 U.
 
+## 5. The first connected-pressure coefficients do not cancel
+
+The `N/m^6` terms can be computed without another polymer family. Work at
+the two-cloud center `h_bar=1+a`, and let
+
+```text
+theta0 = a h_bar/(1+a h_bar),
+theta2 = (a^2/h_bar)/(1+a^2/h_bar)=a^2/(h_bar+a^2).             (25)
+```
+
+These are the product-gas probabilities of an occupied site in the
+rank-zero reference and a vacancy in the rank-two reference.
+
+### Rank zero: one elementary occupied cycle per face
+
+A forest has `beta_1=0` and exactly its reference product weight. The
+smallest departure is all four vertices of one elementary square occupied.
+The occupied NN graph then has `beta_1=1`, so (7) multiplies this event by
+`m^2`. The Mayer increment relative to the forest/product gas is therefore
+
+```text
+(m^2-1) theta0^4.                                              (26)
+```
+
+There are exactly N elementary faces. The `-1` is the necessary forest
+subtraction: it removes the product-gas weight already present in `R0`.
+It is order `N/m^8`, while the rewarded term is order `N/m^6`. Two
+separated plaquettes exponentiate and disappear from the log; overlapping
+cycles first contribute at order `N/m^8`. Consequently
+
+```text
+r0 = N(m^2-1)theta0^4 + O(N/m^8) + o_bad(N/m^6)
+   = N/m^6 + o(N/m^6).                                        (27)
+```
+
+The coefficient is `c0=1`. It is geometry independent once the elementary
+square embeds, as it does on both growing N25 sequences.
+
+### Rank two: two adjacent-vacancy polymers per site
+
+Two independent vacancies have relative product weight
+`h^-2 m^-8`. If they occupy the endpoints of one NN edge, their union has
+six rather than eight mixed boundary edges and exact weight
+`h^-2 m^-6`. Thus each NN edge has Mayer increment
+
+```text
+(m^2-1) theta2^2.                                              (28)
+```
+
+The square torus has exactly `2N` unoriented NN edges. The subtraction by
+one again removes the pair already included in the vacancy product gas.
+Connected triples and overlapping adjacent pairs begin at `N/m^8`, so
+
+```text
+r2 = 2N(m^2-1)theta2^2 + O(N/m^8) + o_bad(N/m^6)
+   = 2N/m^6 + o(N/m^6).                                       (29)
+```
+
+The coefficient is `c2=2`. Therefore the first restricted log-odds
+correction is
+
+```text
+d=r2-r0=N/m^6+o(N/m^6).                                       (30)
+```
+
+It is positive: the vacancy/full sector receives one more unit of
+connected pressure than the occupied/rank-zero sector. Since the slope in
+(13) tends to one, the actual pooled root in the natural chart has the
+parameter-free displacement
+
+```text
+u_root=-N/m^6+o(N/m^6).                                       (31)
+```
+
+Equivalently, refining (5),
+
+```text
+h_root=(1+m^-2) exp[-m^-6+o(m^-6)],
+log h_root=m^-2-(1/2)m^-4-(2/3)m^-6+o(m^-6).                  (32)
+```
+
+In the old chart `h=h_c exp(s/N)`,
+
+```text
+s_root=-N/m^4-N/m^6+o(N/m^6),                                 (33)
+```
+
+because `N log(1-m^-4)` has no `N/m^6` term. Resolving these constants
+requires the restricted bad-sector error to be `o(N/m^6)`; a merely
+vanishing or `O(N/m^6)` error is insufficient. The growing-systole contour
+input supplies that separation here.
+
+The noncancellation `c2-c0=1` makes `N/m^6` the first actual obstruction
+to `u_root=o(1)` in the named square-lattice model. The individual numbers
+1 and 2 are local incidence counts, not universal across a changed lattice
+or completion. Their difference is parameter free only after the model,
+port semantics and source have been fixed.
+
 ## Scientific card
 
 - **Mechanism changed:** the mesoscopic root balances an occupied-site
   gas against a vacancy gas; it is not empty-versus-full at first
   correction order.
-- **New parameter-free prediction:** `h_bar=1+m^-2`, equivalently
-  `s_root/(N/m^4)->-1` under the pure-full gate and rate-resolved errors.
-- **Model-dependent remainder:** the imbalance between occupied-cycle and
-  adjacent-vacancy connected polymers in (18).
+- **New parameter-free predictions:** `h_bar=1+m^-2`,
+  `s_root/(N/m^4)->-1` under the pure-full gate, and the first connected
+  correction `u_root/(N/m^6)->-1` when errors are rate resolved.
+- **First model count:** one elementary face versus two NN edges per site,
+  so `c2-c0=2-1=1`; it does not cancel.
 - **Boundary:** `N/m^4->0` is sharp for full-state purity; the resummed
   root/sigmoid only needs the more natural sufficient gate `N/m^6->0`.
 - **Not claimed:** a fixed-m transition, a continuum field identity, an
