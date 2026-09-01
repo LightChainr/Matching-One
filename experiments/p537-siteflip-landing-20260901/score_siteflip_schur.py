@@ -273,6 +273,11 @@ def source_global_packets(
     a_raw_denominator: int,
 ) -> tuple[dict[tuple[str, str], dict[str, Interval]], dict[str, Interval]]:
     global_rows = [row for row in rows if row["tau"] == GLOBAL_TAU]
+    global_alphas = {str(row["alpha"]) for row in global_rows}
+    if len(global_alphas) != 1:
+        raise ValueError(
+            f"{GLOBAL_TAU!r} rows must use one sentinel alpha, got {sorted(global_alphas)}"
+        )
     components = sorted({str(row["component"]) for row in global_rows})
     if not components:
         raise ValueError(f"no {GLOBAL_TAU!r} source rows")
@@ -285,6 +290,11 @@ def source_global_packets(
             ]
             if not selected:
                 raise ValueError(f"missing global source profile for {(geometry, component)}")
+            if sum(F(row["count"]) for row in selected) == 0:
+                raise ValueError(
+                    f"zero-total global source profile for {(geometry, component)}; "
+                    "do not zero-fill unmatched geometry coordinates"
+                )
             mu_a = Interval.of(0)
             mean_qa = Interval.of(0)
             for row in selected:
