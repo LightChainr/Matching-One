@@ -1,0 +1,37 @@
+version: 1
+frozen_date: 2026-08-29
+status: definition_freeze
+issue: 119
+claim_level: C0
+not_a_target_for_p43_or_issue_57: true
+do_not_add_levels_after_looking: true
+u_grid: [0.0, 0.025, 0.05]
+purpose: >
+  Freeze the multi-u thermal-response templates implied by the issue #101
+  bare-to-thermal reparametrization, before any P43 or Issue #57 coordinate
+  is read. The vector over frozen u is one correlated observation.
+
+templates:
+  coordinate_nonlinearity:
+    odd: "w_u / u ~ N^{-3/8}"
+    even: "(c_u - c_0) / u^2 ~ N^{-3/4}"
+    doubling_odd: "2^{-3/8}"
+    doubling_even: "2^{-3/4}"
+    source: issue_101
+  q2_analytic:
+    odd: polynomial in odd powers of u
+    even: polynomial in even powers of u
+    leading_agrees_with_coordinate_nonlinearity: true
+  jordan_log:
+    multiplies_the_same_u_shape_by_log_N: true
+    changes_the_N_power_of_the_even_piece: true
+
+use_now:
+  - Recompute p_plus and p_minus inside each delete-one replicate.
+  - Treat P49 N=130/170 as development diagnostics, not a doubling pair.
+  - Do not score P43 N=185/265 against this freeze.
+  - A later 145->290 full curve may use the frozen monomials as a joint template.
+
+n10_oracle:
+  family: C4_self_matching_Beta33
+  even_shape: identically_zero
