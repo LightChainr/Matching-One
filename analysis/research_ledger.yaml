@@ -1,16 +1,18 @@
-version: 5
-updated: 2026-08-29
+version: 14
+updated: 2026-09-01
 purpose: >
-  Compact map of durable evidence and next information axes. This ranks work;
-  it does not grant permission.
+  Compact machine-readable map of durable evidence and the current decision.
+  Claim language lives in docs/STATUS.md; this ledger must not become a second
+  prose roadmap.
 
 canonical_views:
   overview: README.md
   claim_ledger: docs/STATUS.md
   research_map: docs/RESEARCH-MAP.md
-  execution_synthesis: notes/SYNTHESIS-20260828.md
   roadmap: docs/ROADMAP.md
+  cleanup_audit: docs/CLEANUP-20260831.md
   artifact_registry: analysis/artifact_registry.yaml
+  predictive_evidence: analysis/evidence_ledger_manifest.yaml
   reproducibility: REPRODUCIBILITY.md
   governance: GOVERNANCE.md
 
@@ -19,44 +21,86 @@ hard_constraints:
   - require_identical_observable_semantics_or_a_registered_exact_map_for_claim_bearing_scores
   - do_not_add_correlated_views_of_one_raw_random_block_as_independent_primary_evidence
 
+weekly_decision:
+  date: 2026-09-01
+  objective: test_whether_one_physical_defect_can_move_both_slow_variables_in_the_full_pooled_root_signed_mass_graph
+  keep_live_issues: [537]
+  broader_open_P1_issues: [154, 334, 337]
+  P2_support_and_candidate_prs: [530, 531, 532, 533]
+  P2_support_issues: [539, 542]
+  next_attention: one_defect_diagonal_edge_falsifier_then_surviving_signed_rate_and_separate_fixed_m_phase_control
+  frontier_sha: 090cdc80c76b9ca1f79309cedbbebae4190ccb12
+  historical_model_vocabulary:
+    M0: lifecycle_current_only
+    M1: contact_regulated_current
+    M2: extra_transfer_coordinate_only_if_frozen_before_validation
+  frozen_decision_families:
+    P154: W_weak_B_entry_dominant_C_completion_dominant
+    P334_normal: complete_two_score_conditional_mean_closure_vs_fixed_positive_forecast
+    P334_contact: C0_near_zero_vs_C1_frozen_old_residual
+  vocabulary_note: historical_M0_M1_M2_are_not_the_actual_shared_frozen_model_family
+  transmission_chain:
+    - microscopic_source_or_contact
+    - ingress_egress_birth_currents
+    - J_grad
+    - d_p_E_top
+    - pooled_root_slope_normalized_U
+  diagnostic_only:
+    - J_act
+  stop_rule: >
+    The requested random blocks are complete and named failed parameterizations
+    are stopped. Finite pure-thermal rank-one rescue is retired. Issue 537 is
+    theory-only: test whether one physical defect can change both slow variables
+    with nonzero full pooled-root Schur weight. A diagonal edge stops the
+    two-defect/high-arm route; only its absence plus separable annuli permits a
+    six-arm bound. No N expansion, random production, replacement lag/source,
+    fifth contact feature or same-block rescue comes first.
+  fallback_boundary: write_current_C3_finite_size_phenomenology_without_operator_identification
+
 research_tracks:
   - id: A
     name: exact_topology_semantics_and_cover_characters
-    state: exact
+    state: durable_exact_support
     evidence: [E_CHANNEL_SEMANTICS, E_RUSSO_PIVOTAL, E_COVER_CHARACTERS]
   - id: B
     name: threshold_rank_and_reusable_statistics
-    state: exact
+    state: durable_exact_support
     evidence: [E_PREQUENTIAL, E_KRAWTCHOUK_MODES, E_NEUTRAL_AREA]
   - id: C
     name: square_site_matching_odd_thermal_H4
-    state: predictive
+    state: C3_finite_size_predictive
     evidence: [E_P57, E_P50_FULLCURVE, E_MATCHING_ODD_SYNTHESIS]
   - id: D
-    name: thermal_derivative_mixing_and_intrinsic_coordinates
-    state: predictive
-    evidence: [E_P50_FULLCURVE, E_NEUTRAL_AREA, E_INTRINSIC_QUANTILE]
+    name: birth_current_to_global_transmission
+    state: completed_decisions_named_policies_stopped
+    issues: [334, 154]
+    evidence: [D_P334_FULL_BIRTH_ARCHIVE, D_P334_NORMAL_RESULT, D_P334_CONTACT_RESULT, D_P154_PROSPECTIVE_RESULT]
   - id: E
     name: pivotal_and_self_matching_RG
-    state: mechanism_candidate
-    evidence: [E_RUSSO_PIVOTAL, E_LOCAL_TANGENT, E_MULTIRADIUS]
+    state: active_theory_gate_without_sampling
+    issues: [537]
+    evidence: [E_RUSSO_PIVOTAL, E_LOCAL_TANGENT, E_MULTIRADIUS, D_P337_THERMAL_GATE_AUDIT]
   - id: F
     name: Q4_Jordan_and_modular_shape
-    state: mechanism_candidate
+    state: parked_support
     evidence: [E_RECTANGULAR_Q4, E_Q4_JORDAN, E_HEX_HECKE]
   - id: G
     name: primitive_square_bond_spin4
-    state: predictive
+    state: parked_distinct_sector
     evidence: [E_PRIMITIVE_GEN2, E_PRIMITIVE_KDV]
   - id: H
     name: exact_finite_algebra_and_negative_controls
-    state: exact
-    evidence: [E_N26_BETA_NEGATIVE]
+    state: active_exact_theory_gate_without_production
+    issues: [337, 537]
+    evidence: [E_N26_BETA_NEGATIVE, D_P337_TWO_COUPLING, D_P337_FINITE_FRONTIER, D_P337_HOMOGENEOUS_N50, D_P337_REGULAR_SPATIAL_MC, D_P337_REGULAR_JOINT_U, D_P337_CRITICAL_SPATIAL_SUMMABILITY, D_P337_THERMAL_GATE_AUDIT, D_P537_FINITE_RANK_ONE_SCOPE_DECISION]
+    unmerged_candidate_support: [D_P337_ORIGINAL_U_INFLUENCE_SUPPORT, D_P337_SECTOR_QUOTIENT_SUPPORT, D_P337_TWO_BRIDGE_FACTOR_REVIEW, D_P337_MESOSCOPIC_TWO_CLOUD_CANDIDATE, D_P537_N25_COLLAR_SUPPORT, D_P537_ALL_SCALE_POINTWISE_SUPPORT]
   - id: I
     name: threshold_value_and_literature
-    state: observed
+    state: parked_observed_support
     evidence: [E_PREQUENTIAL]
 
+# These entries retain the pre-cleanup durable evidence IDs so downstream
+# references do not need a migration merely because priorities changed.
 evidence_blocks:
   - id: E_CHANNEL_SEMANTICS
     status: exact
@@ -113,33 +157,436 @@ evidence_blocks:
     status: mechanism_candidate
     paths: [results/local-20260829/P231-vacuum-kdv-sector-response/score.json]
 
-analysis_queue:
-  - {issue: 119, name: multi_u_coordinate_separation, state: analysis_ready}
-  - {issue: 227, name: Boolean_noise_semigroup, state: analysis_ready}
-  - {issue: 234, name: energy_logpair_sufficient_statistics, state: analysis_ready}
-  - {issue: 180, name: low_rank_fullcurve_transfer, state: analysis_ready}
-  - {issue: 118, name: metric_free_ratios, state: analysis_ready}
+# Every active decision/evidence entry carries the common provenance fields.
+decision_evidence_blocks:
+  - id: D_P334_FULL_BIRTH_ARCHIVE
+    issue: 334
+    claim_level: C2_discovery_with_C5_finite_controls
+    geometry: paired_square_site_birth_paths
+    N: [325, 425]
+    n_samples: 40000
+    raw_path: results/p334-full-birth-archive
+    score_path: null
+    sha: 9c495ab13e65f2bc93dc0849ee3b73f88724c4b1
+    parent_block: null
+    independent_primary: false
+    note: >
+      147 clocks, suffix-noise, contact/risk, W2/cut/blocker and related
+      projections derived from this archive remain one discovery dependency
+      family even when some finite statements are exact.
 
-new_compute_queue:
-  - {rank: 1, issue: 205, name: same_N_norm5_coalescence, state: active}
-  - {rank: 2, issue: 159, name: scalar_cancelled_Q4_Jordan_modulus_fingerprint, state: active}
-  - {rank: 3, issue: 154, name: norm4_dyadic_deck_character_closure, state: ready}
-  - {rank: 4, issue: 155, name: larger_injective_local_pivotal_geometry, state: ready}
-  - {rank: 5, issue: 156, name: primitive_x4_shape_correction_target, state: ready}
-  - {rank: 6, issue: 74, name: N1105_four_angle, state: later}
+  - id: D_P334_INTERVENTION_FREEZE
+    issue: 334
+    claim_level: C0_frozen_validation_protocol
+    geometry: fresh_population_prefix_intervention
+    N: null
+    n_samples: 0
+    planned_samples: 1000000
+    raw_path: null
+    score_path: notes/p334-independent-intervention-freeze.md
+    sha: bc0a18c207e3b09f49ea6b6af6601471114d654a
+    parent_block: D_P334_FULL_BIRTH_ARCHIVE
+    independent_primary: false
+    status: historical_freeze_completed
+    result_block: D_P334_NORMAL_RESULT
+    note: >
+      The frozen document contains no target result; its completed independent
+      block is recorded separately below. This protocol is not an evidence vote.
+
+  - id: D_P154_LAGGED_SOURCE
+    issue: 154
+    claim_level: C2_retrospective_discovery
+    geometry: norm4_two_lineages_reused_permutations
+    N: [65, 85, 130, 170, 260, 340]
+    n_samples: 2400000
+    raw_path: results/norm4-lagged-source
+    score_path: results/norm4-lagged-source/REPORT.md
+    sha: dd48177340f169c18cd1fc9217101b54090e1e3a
+    parent_block: historical_norm4_archives
+    independent_primary: false
+    note: >
+      Historical discovery resolved temporal entry/exit response but not its
+      global U response. The subsequent fresh result is D_P154_PROSPECTIVE_RESULT;
+      this discovery block is not part of that independent validation score.
+
+  - id: D_P154_FROZEN_NORM4_PRODUCTION
+    issue: 154
+    claim_level: C3_frozen_finite_size_result
+    geometry: norm4_two_lineages
+    N: [65, 85, 130, 170, 260, 340]
+    n_samples: null
+    raw_path: null
+    score_path: pull/273
+    sha: 8b26a30a785bc142a9d17bfed99a8d0e98ddc4dc
+    parent_block: historical_norm4_production
+    independent_primary: true
+    note: >
+      Declared scalar q2 completion is rejected; Jordan survives only as a
+      model family. PR #277 generation 4 is a later target block and does not
+      identify the secondary eigenvalue.
+
+  - id: D_P334_NORMAL_RESULT
+    issue: 334
+    claim_level: independent_finite_policy_decision
+    geometry: N325_N425_paired_receivers
+    N: [325, 425]
+    n_samples: 1000000
+    raw_path: results/p334-independent-normal-intervention
+    score_path: notes/p334-independent-normal-intervention-result.md
+    sha: d0a9daf1132779205f119e9b4470f4eea9cb89c1
+    parent_block: null
+    training_block: D_P334_FULL_BIRTH_ARCHIVE
+    raw_data_group: p334_new_normal_intervention_1m
+    independent_primary: true
+    outcome: complete_two_score_conditional_mean_closure_rejected_positive_forecast_not_excluded
+
+  - id: D_P334_CONTACT_RESULT
+    issue: 334
+    claim_level: independent_finite_policy_decision
+    geometry: N325_N425_paired_receivers
+    N: [325, 425]
+    n_samples: 600000
+    raw_path: experiments/p334-prospective-intervention-20260831/results/sufficient_statistics
+    score_path: experiments/p334-prospective-intervention-20260831/REPORT.md
+    sha: 14b2c98ed3a252a2fe79ce5e124d9484b23a264f
+    parent_block: null
+    training_block: D_P334_FULL_BIRTH_ARCHIVE
+    raw_data_group: p334_new_contact_intervention_600k
+    independent_primary: true
+    outcome: both_frozen_residual_bands_excluded
+    note: One signed-loading projection conditional on frozen old points; no half-amplitude law.
+
+  - id: D_P154_PROSPECTIVE_RESULT
+    issue: 154
+    claim_level: independent_finite_policy_decision
+    geometry: norm4_N85_N340_paired_orientations
+    N: [85, 340]
+    n_samples: 165000000
+    raw_path: experiments/p154-prospective-transmission-20260831/production
+    score_path: experiments/p154-prospective-transmission-20260831/REPORT.md
+    sha: f4999e29612da16a3650f24d124fb59137f053d7
+    parent_block: null
+    training_block: D_P154_LAGGED_SOURCE
+    raw_data_group: p154_new_lag1_transmission_165m
+    independent_primary: true
+    outcome: B_C_excluded_W_not_excluded_weak_net_stop_satisfied
+    note: Stop prioritizing this lag1 policy as the main H4 explanation; not exact zero or all-source rejection.
+
+  - id: D_P337_TWO_COUPLING
+    issue: 337
+    claim_level: exact_finite_profile_exclusion
+    geometry: parent_N50_pair_from_child_N25_tables
+    N: [50]
+    n_samples: 0
+    raw_path: experiments/p337-two-coupling-closure-20260831/inputs
+    score_path: experiments/p337-two-coupling-closure-20260831/results/REPORT.md
+    sha: f5aa94c3c1d619da2272f2409623ed52c876463d
+    parent_block: published_p337_endpoint_integer_counts
+    independent_primary: false
+    outcome: D3_greater_than_1_over_10000_rejects_common_thermal_plus_source_profile_closure
+
+  - id: D_P337_FINITE_FRONTIER
+    issue: 337
+    claim_level: finite_uniform_bound_and_joint_limit_theorem
+    geometry: fixed_axis_tilted_square_family
+    N: null
+    n_samples: 0
+    raw_path: null
+    score_path: notes/closed-source-uniform-projection-tail.md
+    companion_path: notes/closed-source-poisson-double-scaling.md
+    sha: 2690f665bc8029cb2370d3f1efcef5eb2853705c
+    parent_block: published_p337_finite_source_results
+    independent_primary: false
+    outcome: N25_all_real_m_ge64_opposite_signs_and_Poisson_joint_limit_U_suppression_proved
+    remaining: fixed_m_oblique_twist_penalty_or_restricted_sector_odds_or_controlled_estimator
+
+  - id: D_P337_HOMOGENEOUS_N50
+    issue: 337
+    claim_level: exact_finite_original_U_response
+    geometry: homogeneous_N50_5_5_and_1_7
+    N: [50]
+    n_samples: 0
+    configurations_per_geometry: 1125899906842624
+    raw_path: experiments/p337-homogeneous-n50-20260831/results
+    score_path: experiments/p337-homogeneous-n50-20260831/RESULT.md
+    sha: ef3b2c68f824e29421747c805ea7a505aca41908
+    parent_block: complete_N50_finite_population
+    independent_primary: false
+    outcome: V_S_strictly_positive_finite_zero_excluded_sign_continuation_survives
+    remaining: general_scale_and_continuum_mechanism_not_finite_N50_score
+
+  - id: D_P337_REGULAR_LOCAL_U
+    issue: 337
+    claim_level: exact_finite_canonical_mixed_original_U_response
+    geometry: original_N25_5_0_and_4_3
+    n_samples: 0
+    score_path: notes/regular-pair-interaction-result.md
+    sha: 2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb
+    parent_block: complete_N25_finite_population
+    independent_primary: false
+    outcome: direct_Q1_all_orders_zero_canonical_mixed_W_negative
+    remaining: finite_spatial_and_joint_responses_completed_thermal_pivotal_asymptotic_map_open
+
+  - id: D_P337_REGULAR_SPATIAL_SUPPORT
+    issue: 337
+    claim_level: exact_spatial_support_and_canonical_probability_bound
+    n_samples: 0
+    abstract_exterior_partitions: 4140
+    score_path: experiments/p337-regular-spatial-support-20260901/RESULT.md
+    companion_path: notes/p337-fixed-m-relative-bound.md
+    sha: baa5d33b2f87b2868aa0cb9d3f6518c93dbf3bff
+    parent_block: fixed_2ba8863f_canonical_kernel
+    independent_primary: false
+    outcome: at_most_one_shared_component_first_Q_transmission_excluded
+    canonical_bound: abs_Cxy_le_43_over_16_times_two_vacant_two_component_event_probability
+    remaining: superseded_by_spatial_MC_joint_U_and_critical_summability_entries_below
+
+  - id: D_P337_REGULAR_SPATIAL_MC
+    issue: 337
+    claim_level: independent_finite_distance_policy_decision
+    geometry: square_L32_r8_and_L64_r16
+    N: [1024, 4096]
+    n_samples: 400000
+    raw_path: results/p337-regular-pair-spatial
+    score_path: notes/regular-pair-spatial-transmission-result.md
+    sha: a237968f1d7a82d26b46e83c58179dbba7f1a908
+    parent_block: null
+    raw_data_groups: [p337_regular_pair_spatial_L32, p337_regular_pair_spatial_L64]
+    independent_primary: true
+    outcome: L64_distance16_zero_transmission_rejected_fixed_two_point_ratio_no_exponent_fit
+
+  - id: D_P337_REGULAR_JOINT_U
+    issue: 337
+    claim_level: exact_finite_joint_original_U_decision
+    geometry: original_N25_5_0_and_4_3
+    N: [25]
+    n_samples: 0
+    configurations_per_geometry: 33554432
+    score_path: notes/regular-pair-joint-transmission-result.md
+    sha: 410015f5505dc2d8ca0e9ac904f656a4adc9fe86
+    parent_block: complete_N25_finite_population
+    independent_primary: false
+    outcome: additive_linear_and_NN_contact_only_global_closures_rejected
+    remaining: finite_joint_to_U_complete_no_distance_or_size_extension
+
+  - id: D_P337_CRITICAL_SPATIAL_SUMMABILITY
+    issue: 337
+    claim_level: exact_square_site_pc_spatial_bound
+    geometry: square_LxL_tori_and_infinite_square_lattice
+    n_samples: 0
+    score_path: notes/p337-critical-spatial-summability.md
+    sha: eed2190c04b67084ab5aef5827e00377853a0bca
+    parent_block: D_P337_REGULAR_SPATIAL_SUPPORT
+    independent_primary: false
+    outcome: raw_canonical_pair_kernel_absolutely_summable_and_IR_divergent_tail_excluded_at_exact_pc
+    remaining: thermal_pivotal_spatial_sum_and_pooled_root_slope_control
+
+  - id: D_P337_THERMAL_GATE_AUDIT
+    issue: 537
+    parent_issue: 337
+    claim_level: exact_finite_semantic_no_go_and_provisional_landing_counterexample
+    geometry: Bell8_partitions_and_square_tori_N9_N10_N13_N25
+    N: [9, 10, 13, 25]
+    n_samples: 0
+    abstract_partitions: 4140
+    allowed_joins: 64954
+    nonzero_joins: 29970
+    positive_joins: 9952
+    negative_joins: 20018
+    max_abs_16_delta_g: 68
+    N13_state_edge_pair_checks: 1198080
+    same_shared_count_sign_flips: 312
+    score_path: notes/p337-thermal-pivotal-gate-audit.md
+    result_path: experiments/p537-landing-matrix-preflight-20260901/result.json
+    sha: ec3941b03b2694e827db1cba34766a82e6146a5a
+    parent_block: D_P337_CRITICAL_SPATIAL_SUMMABILITY
+    independent_primary: false
+    outcome: two_channel_covariance_jet_exact_and_all_provisional_clean_two_bridge_C4_minors_nonzero
+    provisional_clean_total_P4_root_minor: -2.4843232721775393e-5
+    provisional_clean_total_fixed_M_Schur_residual: -4.217141611550048e-6
+    provisional_clean_total_T_p_over_M_p: 5.806332966676667e-6
+    exact_N25_traversals: 8
+    random_samples: 0
+    cloud_jobs: 0
+    exact_target: T_N_equals_jY_p_minus_R_jM_p_minus_R_p_jM_is_little_o_D_over_A_N
+    root_conditioned_identity: partial_u_partial_epsilon_Yhat_equals_T_N_over_D_equals_J_N_over_A_N
+    signed_schur_form: T_t_equals_pooled_covariance_H_with_centered_a_times_S_minus_jM_over_M_t_times_B
+    next_falsifier: full_pooled_root_one_defect_graph_diagonal_edge_with_nonzero_signed_weight
+    falsifier_stop: diagonal_edge_retires_two_defect_high_arm_route_absence_plus_separable_annuli_permits_six_arm_bound
+    remaining: surviving_signed_functional_and_exact_pc_to_pooled_root_transport
+
+  - id: D_P537_FINITE_RANK_ONE_SCOPE_DECISION
+    issue: 537
+    parent_issue: 337
+    claim_level: audited_finite_exact_scope_and_research_stop_decision
+    n_samples: 0
+    score_path: notes/p537-finite-rank-one-decision-20260901.md
+    sha: 090cdc80c76b9ca1f79309cedbbebae4190ccb12
+    parent_block: D_P337_THERMAL_GATE_AUDIT
+    independent_primary: false
+    outcome: finite_pure_thermal_rank_one_rescue_retired_PR544_L4_L5_local_decay_fingerprint_and_PR545_pointwise_witness_preserved_only_as_scope_limited_unmerged_assets
+    next_falsifier: one_physical_defect_diagonal_edge_in_full_pooled_root_signed_mass_graph
+    remaining: aggregate_signed_rate_and_exact_pc_to_pooled_root_transport
+
+unmerged_candidate_support:
+
+  - id: D_P537_N25_COLLAR_SUPPORT
+    issue: 537
+    pr: 544
+    claim_level: closed_unmerged_exact_radius_one_collar_support
+    n_samples: 0
+    sha: e8e9c7cf42b1d8e41da5c93d3780951e1260fdde
+    parent_block: D_P537_FINITE_RANK_ONE_SCOPE_DECISION
+    independent_primary: false
+    outcome: explicit_N25_axis_tilted_pooled_root_collar_coarsening_rank_two_global_four_arm_emptiness_and_exact_broad_L4_L5_local_decay_fingerprint
+    remaining: no_global_joint_component_identity_or_formal_no_extra_certificate_two_sizes_not_exponent_no_merge_no_L6_before_one_defect_gate
+
+  - id: D_P537_ALL_SCALE_POINTWISE_SUPPORT
+    issue: 537
+    pr: 545
+    claim_level: closed_unmerged_broad_pointwise_exact_support
+    n_samples: 0
+    sha: e1f19e4c4a5438857e7a68d72243414972eeea85
+    parent_block: D_P537_FINITE_RANK_ONE_SCOPE_DECISION
+    independent_primary: false
+    outcome: arbitrary_radius_broad_four_arm_pointwise_common_counterterm_identity_rejected_and_axis_L4_exact_arithmetic
+    remaining: reduced_block_conditioning_is_not_full_original_U_pooled_root_Schur_and_committed_JSON_not_byte_identical
+
+  - id: D_P337_TWO_BRIDGE_FACTOR_REVIEW
+    issue: 337
+    pr: 532
+    claim_level: unmerged_exact_finite_algebra_candidate
+    n_samples: 0
+    score_path: notes/P0-p337-two-bridge-and-completion-review-20260901.md
+    sha: 2e1c57b42129c507b45fd1a8111eb32e78b1f80b
+    parent_block: D_P337_REGULAR_SPATIAL_SUPPORT
+    independent_primary: false
+    outcome: two_bridge_endpoint_factorization_and_named_completion_family_four_path_lower_bound
+    remaining: no_production_comment_only_extensions_not_promoted
+
+  - id: D_P337_ORIGINAL_U_INFLUENCE_SUPPORT
+    issue: 337
+    pr: 530
+    claim_level: unmerged_P2_method_support
+    n_samples: 0
+    score_path: experiments/p337-original-u-influence-20260831/README.md
+    sha: 0e1917f983982f411c9c72147cce3f90ce7330fa
+    parent_block: complete_N25_finite_population
+    independent_primary: false
+    outcome: exact_influence_formula_and_oracle_class_bounds_without_executable_budget
+    remaining: no_production_conditional_integration_and_mixing_costs_unproved
+
+  - id: D_P337_SECTOR_QUOTIENT_SUPPORT
+    issue: 337
+    pr: 531
+    claim_level: unmerged_P2_exact_decomposition_support
+    n_samples: 0
+    score_path: notes/p337-p0-sector-quotient-and-sign-aware-estimation.md
+    sha: a5375b5338ebfc29d1c47aa320716903c5f63277
+    parent_block: complete_N25_finite_population
+    independent_primary: false
+    outcome: exact_sector_quotient_response_split_and_oracle_subtraction_target
+    remaining: generated_result_json_missing_and_no_sampler_or_new_production_authorized
+
+  - id: D_P337_MESOSCOPIC_TWO_CLOUD_CANDIDATE
+    issue: 337
+    pr: 533
+    claim_level: C0_theory_candidate_with_C1_relaxed_axis_controls
+    n_samples: 0
+    score_path: notes/closed-source-mesoscopic-two-cloud-synthesis.md
+    sha: 5aa929a6ef4ff92d71f6f36097b763c05ad71ab8
+    parent_block: D_P337_FINITE_FRONTIER
+    independent_primary: false
+    outcome: C1_relaxed_all_w_Catalan_Toeplitz_one_particle_identity_EW_WE_retrace_rule_legal_nonlocal_one_west_counterexample_and_pq_only_conditional_on_exponential_two_gap_kernel
+    remaining: physical_beta_cloud_two_gap_kernel_physical_w_ge_2_endpoint_rank1_common_coordinate_second_thermal_moment_pooled_root_original_U_denominator_uniform_contour_sector_remainder_missing_410_and_2690_ancestry_a_times_s_control_character_and_adjacent_hole_O_N_a3_correction
+
+active_execution:
+  - issue: 537
+    parent_issue: 337
+    kind: theory
+    target: test_one_defect_diagonal_edge_in_full_pooled_root_signed_mass_graph_then_complete_surviving_signed_rate
+    status: active_no_sampling
+    random_sample_budget: 0
+    next_falsifier: physical_one_defect_edge_changes_both_landing_rank_and_source_Bell_with_nonzero_full_Schur_weight
+    stop_rule: diagonal_edge_stops_two_defect_route_only_no_diagonal_edge_plus_separable_annuli_allows_six_arm_work_no_N_or_random_production
+
+repository_cleanup:
+  live_verified_at: 2026-09-01T05:55:00Z
+  open_issue_count: 31
+  open_issue_partition:
+    active_P0_theory: [537]
+    broader_P1: [154, 334, 337]
+    parked_and_support_P2: [1, 5, 8, 11, 13, 14, 27, 31, 52, 100, 103, 112, 119, 155, 156, 159, 227, 234, 275, 276, 321, 370, 398, 408, 419, 539, 542]
+  closed_issue_counts_first_sync: {CLOSE_DONE: 6, CLOSE_DUP: 39, CLOSE_NOISE: 10}
+  additional_closed_new_issues_second_sync: [534, 535, 536, 538]
+  closed_issue_count_two_sync_cumulative: 59
+  newly_closed_issues_sixth_sync: [543]
+  closed_issue_count_current_cumulative: 60
+  newly_retained_issues_second_sync:
+    P0_theory: [537]
+    P2_support: [539]
+  newly_retained_issues_third_sync:
+    P2_theory_followup: [542]
+  reasserted_P2_pr_labels_third_sync: [530, 531, 532]
+  closed_prs_this_sync: [451, 527, 544, 545]
+  priority_downgrades_this_sync:
+    issues_P1_to_P2: [14, 408]
+    new_support_issue_to_P2: [539]
+    draft_prs_to_P2_support_or_candidate: [530, 531, 532, 533, 544, 545]
+  newly_closed_unmerged_support_prs_seventh_sync: [544, 545]
+  merges_this_sync: 0
+
+parked_support_issues:
+  - 1
+  - 5
+  - 8
+  - 11
+  - 13
+  - 14
+  - 27
+  - 31
+  - 52
+  - 100
+  - 103
+  - 112
+  - 119
+  - 155
+  - 156
+  - 159
+  - 227
+  - 234
+  - 275
+  - 276
+  - 321
+  - 370
+  - 398
+  - 408
+  - 419
+  - 539
+  - 542
 
 completed_analysis_tasks:
   - {issue: 95, name: prequential_evidence_ledger, outcome: canonical_primary_only_evidence_aggregation}
   - {issue: 212, name: independent_matching_odd_synthesis, outcome: global_zero_disfavored_fixed_H4_compatible}
   - {issue: 101, name: intrinsic_quantile_N145_N290, outcome: frozen_N_minus_3_over_4_transfer_compatible}
   - {issue: 225, name: small_torus_multiradius_prototype, outcome: do_not_extend_N130_N170_same_design}
+  - {issue: 439, name: same_stream_M_projective_current_crosswalk, outcome: common_ray_not_rejected_but_zero_M_loading_also_survives}
+  - {issue: 543, name: covariance_nullspace_historical_audit, outcome: sixteen_archived_vector_scores_fifteen_unchanged_one_interpretation_changed_zero_new_samples}
 
 completed_production_tasks:
+  - {issue: 154, name: lag1_to_U_165m, outcome: strong_B_C_excluded_weak_net_stop_satisfied, evidence: D_P154_PROSPECTIVE_RESULT}
+  - {issue: 334, name: independent_normal_intervention_1m, outcome: complete_two_score_conditional_mean_closure_rejected, evidence: D_P334_NORMAL_RESULT}
+  - {issue: 334, name: independent_contact_intervention_600k, outcome: both_residual_forecasts_excluded, evidence: D_P334_CONTACT_RESULT}
+  - {issue: 337, name: regular_pair_spatial_L32_L64, outcome: finite_distance_zero_rejected_no_exponent_fit, evidence: D_P337_REGULAR_SPATIAL_MC}
   - {issue: 50, name: N145_to_N290_full_curve, outcome: corrected_slope_survives_single_multiplier_shape_fails}
   - {issue: 57, name: norm5_H4_H12, outcome: H4_transfer_compatible_H12_H8_disfavored_child_zero_not_rejected}
   - {issue: 156, name: primitive_norm2_two_generations, outcome: negative_rank4_H4_phase_repeats_positive_phase_adversaries_fail}
+  - {issue: 205, name: same_N_norm5_coalescence, outcome: completed_or_archived_not_current_execution}
 
 completed_exact_tasks:
+  - {issue: 337, name: two_coupling_endpoint_profile_test, outcome: common_thermal_plus_source_closure_rejected, evidence: D_P337_TWO_COUPLING}
+  - {issue: 337, name: regular_pair_joint_original_U, outcome: additive_linear_and_NN_contact_only_closures_rejected, evidence: D_P337_REGULAR_JOINT_U}
+  - {issue: 337, name: critical_pair_spatial_summability, outcome: raw_pair_IR_divergent_tail_excluded_at_exact_pc, evidence: D_P337_CRITICAL_SPATIAL_SUMMABILITY}
   - {issue: 115, name: N26_self_matching_Beta_falsification, outcome: both_frozen_Beta_laws_fail}
   - {issue: 100, name: finite_Russo_identity, outcome: exact}
   - {issue: 216, name: Q4_Jordan_module_shape_relations, outcome: exact_module_relations_not_lattice_identification}
@@ -153,9 +600,14 @@ negative_results:
   - {id: NR_SELFMATCHING_SAME_ROWS, statement: N130_N170_current_global_local_tangent_rows_resolve_only_one_direction}
   - {id: NR_SMALL_MULTIRADIUS, statement: N130_N170_multiradius_does_not_support_simple_shell_log_flow_and_R8_is_noninjective}
   - {id: NR_PRIMITIVE_SCALAR_E4, statement: scalar_E4_Pell_phase_bridge_fails_for_primitive_character}
+  - {id: NR_P337_PAIR_IR_DIVERGENCE, statement: canonical_raw_pair_kernel_cannot_generate_an_IR_divergent_spatial_susceptibility_at_exact_square_site_pc}
+  - {id: NR_P337_SINGLE_CHANNEL_THERMAL_SHORTCUT, statement: partial_p_mean_g_alone_does_not_control_d_p_Cov_and_can_reverse_the_finite_sign}
 
 maintenance_rules:
-  - Integrate useful science first; refresh navigation afterward.
-  - Existing-data analysis, exact work, pilots and exploratory production are allowed by default.
-  - Prefer a new information axis over another unconstrained fit parameter.
-  - A negative result succeeds when it removes a mechanism or compute loop.
+  - STATUS_is_the_only_current_claim_ledger
+  - no_branch_local_NEXT_file_is_current_authority
+  - parked_issues_do_not_receive_new_handoff_blocks
+  - P2_Draft_titles_do_not_authorize_execution
+  - prefer_eliminating_a_model_over_adding_a_coordinate
+  - a_failed_discriminator_is_a_success_when_it_closes_a_mechanism_loop
+  - active_theory_does_not_imply_random_production

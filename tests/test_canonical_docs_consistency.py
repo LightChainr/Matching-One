@@ -42,6 +42,12 @@ class CanonicalDocsConsistencyTest(unittest.TestCase):
         active_prefix = self.roadmap.split("## Ready", 1)[0]
         self.assertNotIn("### 1. N=145", active_prefix)
 
+    def test_p50_nullspace_amendment_is_visible_without_new_queue(self) -> None:
+        self.assertIn("cutoff-sensitive", self.status)
+        self.assertIn("#543", self.status)
+        self.assertIn("#543", self.roadmap)
+        self.assertIn("complete and closed", self.roadmap)
+
     def test_current_discriminators_are_visible(self) -> None:
         for needle in ("coalescence", "modulus", "Norm-4", "local pivotal"):
             with self.subTest(needle=needle):

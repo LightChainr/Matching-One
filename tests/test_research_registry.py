@@ -33,7 +33,7 @@ class ResearchRegistryTests(unittest.TestCase):
                 self.assertTrue((ROOT / relative).exists(), relative)
         for row in self.registry["canonical_documents"]:
             with self.subTest(path=row["path"]):
-                self.assertEqual(row["status"], "canonical_current")
+                self.assertIn(row["status"], {"canonical_current", "canonical_audit"})
                 self.assertTrue((ROOT / row["path"]).exists(), row["path"])
 
     def test_only_three_hard_constraints_are_registered(self) -> None:
@@ -49,8 +49,13 @@ class ResearchRegistryTests(unittest.TestCase):
         tracks = self.ledger["research_tracks"]
         ids = [row["id"] for row in tracks]
         self.assertEqual(ids, list("ABCDEFGHI"))
-        evidence = {row["id"]: row for row in self.ledger["evidence_blocks"]}
-        self.assertEqual(len(evidence), len(self.ledger["evidence_blocks"]))
+        all_blocks = (
+            self.ledger["evidence_blocks"]
+            + self.ledger["decision_evidence_blocks"]
+            + self.ledger["unmerged_candidate_support"]
+        )
+        evidence = {row["id"]: row for row in all_blocks}
+        self.assertEqual(len(evidence), len(all_blocks))
         required = {
             "E_CHANNEL_SEMANTICS",
             "E_RUSSO_PIVOTAL",
@@ -64,10 +69,28 @@ class ResearchRegistryTests(unittest.TestCase):
             for evidence_id in track.get("evidence", []):
                 with self.subTest(track=track["id"], evidence=evidence_id):
                     self.assertIn(evidence_id, evidence)
-        for block in evidence.values():
+            for candidate_id in track.get("unmerged_candidate_support", []):
+                with self.subTest(track=track["id"], candidate=candidate_id):
+                    self.assertIn(candidate_id, evidence)
+        for block in self.ledger["evidence_blocks"]:
             for relative in block.get("paths", []):
                 with self.subTest(evidence=block["id"], path=relative):
                     self.assertTrue((ROOT / relative).exists(), relative)
+
+        for block in self.ledger["decision_evidence_blocks"]:
+            with self.subTest(decision=block["id"]):
+                self.assertRegex(block["sha"], r"^[0-9a-f]{40}$")
+                self.assertIn("independent_primary", block)
+
+        decision_ids = {row["id"] for row in self.ledger["decision_evidence_blocks"]}
+        candidate_prs = []
+        for block in self.ledger["unmerged_candidate_support"]:
+            with self.subTest(candidate=block["id"]):
+                self.assertNotIn(block["id"], decision_ids)
+                self.assertRegex(block["sha"], r"^[0-9a-f]{40}$")
+                self.assertFalse(block["independent_primary"])
+                candidate_prs.append(int(block["pr"]))
+        self.assertEqual(len(candidate_prs), len(set(candidate_prs)))
 
     def test_frozen_prediction_paths_are_unique_and_real(self) -> None:
         rows = self.registry["frozen_predictions"]
@@ -79,7 +102,7 @@ class ResearchRegistryTests(unittest.TestCase):
                 self.assertTrue((ROOT / row["path"]).is_file(), row["path"])
 
     def test_evidence_and_topic_paths_exist(self) -> None:
-        for section in ("evidence_archives", "topic_derivations", "historical_protocols"):
+        for section in ("evidence_archives", "historical_protocols"):
             for row in self.registry[section]:
                 with self.subTest(section=section, path=row["path"]):
                     self.assertTrue((ROOT / row["path"]).exists(), row["path"])
@@ -91,26 +114,42 @@ class ResearchRegistryTests(unittest.TestCase):
                 self.assertTrue((ROOT / semantics[key]).is_file(), semantics[key])
         self.assertTrue({"orientation_order", "normalization", "quantity"}.issubset(semantics["required_fields"]))
 
-    def test_frontier_is_disjoint_from_integrated_and_closed_history(self) -> None:
-        frontier = [int(row["pr"]) for row in self.registry["frontier_open_as_of_2026_08_29"]]
-        self.assertEqual(len(frontier), len(set(frontier)))
-        canonical = {int(row["pr"]) for row in self.registry["canonical_integration_history"]}
-        manual = {int(row["pr"]) for row in self.registry.get("manual_integrations", [])}
-        closed = {int(row["pr"]) for row in self.registry["superseded_active_paths_closed"]}
-        self.assertFalse(set(frontier) & canonical)
-        self.assertFalse(set(frontier) & manual)
-        self.assertFalse(set(frontier) & closed)
+    def test_unmerged_assets_are_unique_and_not_integrated_history(self) -> None:
+        unmerged = [int(row["pr"]) for row in self.registry["unmerged_assets"]]
+        self.assertEqual(len(unmerged), len(set(unmerged)))
+        absorbed = {int(row["pr"]) for row in self.registry["absorbed_docs_prs"]}
+        merged = {int(row["pr"]) for row in self.registry["same_day_exact_pipeline_history"]}
+        self.assertFalse(set(unmerged) & absorbed)
+        self.assertFalse(set(unmerged) & merged)
 
     def test_completed_work_is_not_still_queued_as_new_compute(self) -> None:
-        new_issues = {int(row["issue"]) for row in self.ledger["new_compute_queue"] if row.get("issue") is not None}
+        active_issues = {int(row["issue"]) for row in self.ledger["active_execution"] if row.get("issue") is not None}
         exact_completed = {int(row["issue"]) for row in self.ledger["completed_exact_tasks"] if row.get("issue") is not None}
         analysis_completed = {int(row["issue"]) for row in self.ledger.get("completed_analysis_tasks", []) if row.get("issue") is not None}
-        self.assertFalse(new_issues & exact_completed)
-        self.assertFalse(new_issues & analysis_completed)
+        self.assertFalse(active_issues & exact_completed)
+        self.assertFalse(active_issues & analysis_completed)
         self.assertIn(95, analysis_completed)
         self.assertIn(115, exact_completed)
 
-    def test_no_gated_state_remains_in_machine_readable_work_queue(self) -> None:
+    def test_latest_cleanup_keeps_issue543_closed_and_archives_new_finite_support(self) -> None:
+        self.assertEqual(self.ledger["version"], 14)
+        self.assertEqual(self.registry["version"], 14)
+        cleanup = self.ledger["repository_cleanup"]
+        self.assertEqual(cleanup["open_issue_count"], 31)
+        self.assertEqual(cleanup["closed_issue_count_current_cumulative"], 60)
+        self.assertEqual(cleanup["newly_closed_issues_sixth_sync"], [543])
+        self.assertNotIn(543, cleanup["open_issue_partition"]["parked_and_support_P2"])
+        support = {int(row["issue"]): row for row in self.registry["completed_branch_support"]}
+        self.assertEqual(support[543]["archived_vector_scores"], 16)
+        self.assertEqual(support[543]["default_displayed_statistics_changed"], 0)
+        self.assertEqual(support[543]["new_random_samples"], 0)
+        closed_prs = set(cleanup["closed_prs_this_sync"])
+        self.assertTrue({544, 545}.issubset(closed_prs))
+        unmerged = {int(row["pr"]): row for row in self.registry["unmerged_assets"]}
+        self.assertEqual(unmerged[544]["state_after_cleanup"], "closed")
+        self.assertEqual(unmerged[545]["state_after_cleanup"], "closed")
+
+    def test_active_queue_is_explicit_and_has_no_gated_state(self) -> None:
         def walk(value):
             if isinstance(value, dict):
                 for key, item in value.items():
@@ -122,8 +161,21 @@ class ResearchRegistryTests(unittest.TestCase):
                     yield from walk(item)
 
         self.assertNotIn("gated", set(walk(self.ledger)))
-        allowed_new_compute_states = {"active", "ready", "later"}
-        self.assertTrue({row["state"] for row in self.ledger["new_compute_queue"]}.issubset(allowed_new_compute_states))
+        self.assertEqual(
+            self.ledger["active_execution"],
+            [
+                {
+                    "issue": 537,
+                    "parent_issue": 337,
+                    "kind": "theory",
+                    "target": "test_one_defect_diagonal_edge_in_full_pooled_root_signed_mass_graph_then_complete_surviving_signed_rate",
+                    "status": "active_no_sampling",
+                    "random_sample_budget": 0,
+                    "next_falsifier": "physical_one_defect_edge_changes_both_landing_rank_and_source_Bell_with_nonzero_full_Schur_weight",
+                    "stop_rule": "diagonal_edge_stops_two_defect_route_only_no_diagonal_edge_plus_separable_annuli_allows_six_arm_work_no_N_or_random_production",
+                }
+            ],
+        )
 
 
 if __name__ == "__main__":
