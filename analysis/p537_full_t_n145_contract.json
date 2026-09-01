@@ -1,0 +1,60 @@
+{
+  "schema": "matching-one/p537-full-t-n145-contract/v1",
+  "status": "FROZEN_BEFORE_PRODUCTION",
+  "issue": 537,
+  "question": "Does the contact-subtracted full canonical response follow J_rem proportional to N^-5/4 at held-out N145?",
+  "geometries": {
+    "first": [12, 1],
+    "second": [9, 8],
+    "P4_delta": "8064/4205"
+  },
+  "external_baseline": {
+    "histogram": "results/server-20260829/P50-n145-n290-fullcurve/raw/n145_100m.hist.csv",
+    "histogram_sha256": "c685dae9bddc005224fe5dd052945482cd3b8c5bb26744dad4e44996a8318b42",
+    "metadata": "results/server-20260829/P50-n145-n290-fullcurve/raw/n145_100m.metadata.json",
+    "metadata_sha256": "596b74853030dfbdb6d225a86b11c2c5124318acb9f7bab2a97fab6556c78257",
+    "pooled_root": 0.5927419914140803,
+    "M_t": 2.72588240453
+  },
+  "source": {
+    "fixed_vacancy": "x=0",
+    "thermal_site": "z=East(x)",
+    "observable": "b16=sum_(y distinct from x,z) 16*g16(x,y), with the omitted y=z NN direction restored by the mean of the other three C4 directions",
+    "output": "one complete canonical T_t and J scalar; no contact, stage, displacement or descriptor cells"
+  },
+  "production": {
+    "samples_total": 200000000,
+    "shards": 16,
+    "batches": 100,
+    "seed": 20260901545,
+    "proposal_p": 0.5927419914140803,
+    "sample_extension": "none",
+    "gpu": false
+  },
+  "frozen_predictions": {
+    "four_packet_contact_subtracted": {
+      "T_rem_145": -9.745752458007742e-7,
+      "J_rem_145": -0.0005814351296198056,
+      "T_contact_145": -1.3799913052790615e-8,
+      "J_contact_145": -8.23307822475885e-6,
+      "T_full_145": -9.883751588535649e-7,
+      "J_full_145": -0.0005896682078445645
+    },
+    "faster_J_decay_competitor": {
+      "power_in_N": "7/4",
+      "approximate_J_full_145": -0.0003965
+    },
+    "midpoint_boundary_J": -0.0004931
+  },
+  "decision": {
+    "FOUR_PACKET_POWER_SELECTED": "the joint 95% interval for J145 lies below -0.0004931",
+    "FASTER_J_DECAY_SELECTED": "the joint 95% interval for J145 lies above -0.0004931",
+    "N145_FULL_T_UNRESOLVED": "otherwise"
+  },
+  "stops": [
+    "no sample top-up",
+    "no contact-stage tensor at N145",
+    "no displacement or radius analysis",
+    "no refit of the N25/N65 exponents after reveal"
+  ]
+}
