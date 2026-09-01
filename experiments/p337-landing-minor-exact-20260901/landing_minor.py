@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Exact finite falsifier for #537's pure-thermal landing rank-one gate."""
 from __future__ import annotations
-import argparse,json,math,time
+import argparse,json,math
 from collections import deque
 from fractions import Fraction as F
 from functools import lru_cache
@@ -130,26 +130,24 @@ def l4():
         shiftbad+=hs!=-h
         piv=int(tr[0]<2 and tr[1]==2);cross['pivotal']+=piv
         if piv:
-            ax=int(h!=0 or (t.pair(o,0,4) and t.pair(c,2,6)) or (t.pair(o,2,6) and t.pair(c,0,4)))
-            # recover exact axis/diagonal from h and both by direct predicates
             A=(t.pair(o,0,4) and t.pair(c,2,6)) or (t.pair(o,2,6) and t.pair(c,0,4));D=(t.pair(o,1,5) and t.pair(c,3,7)) or (t.pair(o,3,7) and t.pair(c,1,5))
             cross['axis']+=int(A);cross['diagonal']+=int(D);cross['both']+=int(A and D);cross['landed']+=int(A or D);cross['h4']+=h
         if tr not in M or h==0:continue
         k=m.bit_count(); S=F(2*k+1,2)-8; amid=(src[m]+src[on])/2
         M[tr][0]+=F(h)*S/2**15;M[tr][1]+=F(h)*(amid-mean)/2**15;states[tr]+=1
     d=M[(0,1)][0]*M[(1,2)][1]-M[(1,2)][0]*M[(0,1)][1]
-    return dict(cross=cross,expected=dict(pivotal=3121,axis=892,diagonal=474,both=88,landed=1278,h4=418),shift_violations=shiftbad,state_counts={'0_to_1':states[(0,1)],'1_to_2':states[(1,2)]},matrix={'T_01':str(M[(0,1)][0]),'T_12':str(M[(1,2)][0]),'A_01':str(M[(0,1)][1]),'A_12':str(M[(1,2)][1]),'det':str(d)})
+    return dict(cross=cross,expected=dict(pivotal=3121,axis=892,diagonal=474,both=88,landed=1278,h4=418),shift_violations=shiftbad,state_counts={'0_to_1':states[(0,1)],'1_to_2':states[(1,2)]},positive_control_a_equals_K_det='0',matrix={'T_01':str(M[(0,1)][0]),'T_12':str(M[(1,2)][0]),'A_01':str(M[(0,1)][1]),'A_12':str(M[(1,2)][1]),'det':str(d)})
 
 def selftest():
     z=l4();assert z['cross']==z['expected'] and z['shift_violations']==0
-    assert z['matrix']['det']=='-533831111/140737488355328'
+    assert z['matrix']['det']=='-533831111/140737488355328' and z['positive_control_a_equals_K_det']=='0'
     for L,R in ((7,1),(9,2),(11,3),(13,4)):
         q=family(L,R);A,B=q['states'];assert A['transition']==[0,1] and B['transition']==[1,2] and A['h4']==B['h4']==1
         assert F(B['amid'])-F(A['amid'])==F(-2,L**4) and F(q['minor'])!=0
     return z
 
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--out',type=Path);a=ap.parse_args();t=time.perf_counter();z=selftest();payload={'schema':'matching-one/p337-landing-minor/v1','decision':'FINITE_PURE_THERMAL_RANK_ONE_REJECTED','boundary':'finite/source-Schur algebra only; no asymptotic lower bound or T_N rate','family':[family(7,1),family(9,2),family(11,3),family(13,4)],'l4':z,'wall_seconds':time.perf_counter()-t};text=json.dumps(payload,indent=2)+'\n';print(text,end='')
+    ap=argparse.ArgumentParser();ap.add_argument('--out',type=Path);a=ap.parse_args();z=selftest();payload={'schema':'matching-one/p337-landing-minor/v1','decision':'FINITE_PURE_THERMAL_RANK_ONE_REJECTED','boundary':'finite/source-Schur algebra only; no asymptotic lower bound or T_N rate','family':[family(7,1),family(9,2),family(11,3),family(13,4)],'l4':z};text=json.dumps(payload,indent=2)+'\n';print(text,end='')
     if a.out:
         if a.out.exists():raise SystemExit('refusing overwrite')
         a.out.write_text(text)
