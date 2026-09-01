@@ -68,7 +68,7 @@ def build():
     for q in trans:
         H=bernstein(hl[q],n-1);HK=bernstein([F(2*k+1,2)*hl[q][k] for k in range(n)],n-1)
         T=sub(HK,mul((F(0),F(n)),H));A=sub(bernstein(hal[q],n-1),mul(mean,H));matrix[q]=T,A
-    T01,A01=matrix[(0,1)];T12,A12=matrix[(1,2)];det=sub(mul(T01,A12),mul(T12,A01));tsum=add(T01,T12)
+    T01,A01=matrix[(0,1)];T12,A12=matrix[(1,2)];det=sub(mul(T01,A12),mul(T12,A01));tsum=add(T01,T12);wron=sub(mul(derivative(det),tsum),mul(det,derivative(tsum)))
     matching=(F(-1),F(0),F(0),F(0),F(8),F(0),F(32),F(-64),F(172),F(-704),F(1104),F(-608),F(-56),F(128),F(16),F(-32),F(6))
     left,right=F(59,100),F(3,5);lo,hi=left,right;sgn=(evaluate(matching,lo)>0)-(evaluate(matching,lo)<0)
     for _ in range(180):
@@ -76,10 +76,10 @@ def build():
         if s==sgn:lo=mid
         else:hi=mid
     p=(lo+hi)/2
-    return {'schema':'matching-one/p337-landing-root-certificate/v1','interval':[str(left),str(right)],'matching_root_count':roots(matching,left,right),'determinant_root_count':roots(det,left,right),'thermal_sum_root_count':roots(tsum,left,right),'matching_signs':[str(evaluate(matching,left)),str(evaluate(matching,right))],'determinant_signs':[str(evaluate(det,left)),str(evaluate(det,right))],'thermal_sum_signs':[str(evaluate(tsum,left)),str(evaluate(tsum,right))],'root_midpoint_decimal':f'{float(p):.16g}','matrix_at_root_midpoint':{'T_01':f'{float(evaluate(T01,p)):.16g}','T_12':f'{float(evaluate(T12,p)):.16g}','A_01':f'{float(evaluate(A01,p)):.16g}','A_12':f'{float(evaluate(A12,p)):.16g}','determinant':f'{float(evaluate(det,p)):.16g}','thermal_sum':f'{float(evaluate(tsum,p)):.16g}','root_schur_even_residual':f'{float(2*evaluate(det,p)/evaluate(tsum,p)):.16g}'},'half_root_schur_even_residual':str(2*evaluate(det,F(1,2))/evaluate(tsum,F(1,2))),'determinant_coefficients':[str(x) for x in det]}
+    return {'schema':'matching-one/p337-landing-root-certificate/v1','interval':[str(left),str(right)],'matching_root_count':roots(matching,left,right),'determinant_root_count':roots(det,left,right),'thermal_sum_root_count':roots(tsum,left,right),'mixed_wronskian_root_count':roots(wron,left,right),'matching_signs':[str(evaluate(matching,left)),str(evaluate(matching,right))],'determinant_signs':[str(evaluate(det,left)),str(evaluate(det,right))],'thermal_sum_signs':[str(evaluate(tsum,left)),str(evaluate(tsum,right))],'mixed_wronskian_signs':[str(evaluate(wron,left)),str(evaluate(wron,right))],'root_midpoint_decimal':f'{float(p):.16g}','matrix_at_root_midpoint':{'T_01':f'{float(evaluate(T01,p)):.16g}','T_12':f'{float(evaluate(T12,p)):.16g}','A_01':f'{float(evaluate(A01,p)):.16g}','A_12':f'{float(evaluate(A12,p)):.16g}','determinant':f'{float(evaluate(det,p)):.16g}','thermal_sum':f'{float(evaluate(tsum,p)):.16g}','root_schur_even_residual':f'{float(2*evaluate(det,p)/evaluate(tsum,p)):.16g}','root_conditioned_mixed_hessian':f'{float(2*p*(1-p)*evaluate(wron,p)/(evaluate(tsum,p)**3)):.16g}'},'half_root_schur_even_residual':str(2*evaluate(det,F(1,2))/evaluate(tsum,F(1,2))),'half_root_conditioned_mixed_hessian':str(F(1,2)*evaluate(wron,F(1,2))/(evaluate(tsum,F(1,2))**3)),'determinant_coefficients':[str(x) for x in det]}
 
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--out',type=Path);a=ap.parse_args();z=build();assert z['matching_root_count']==1 and z['determinant_root_count']==0 and z['thermal_sum_root_count']==0 and all(F(x)<0 for x in z['determinant_signs']+z['thermal_sum_signs']);text=json.dumps(z,indent=2)+'\n';print(text,end='')
+    ap=argparse.ArgumentParser();ap.add_argument('--out',type=Path);a=ap.parse_args();z=build();assert z['matching_root_count']==1 and z['determinant_root_count']==0 and z['thermal_sum_root_count']==0 and z['mixed_wronskian_root_count']==0 and all(F(x)<0 for x in z['determinant_signs']+z['thermal_sum_signs']+z['mixed_wronskian_signs']);text=json.dumps(z,indent=2)+'\n';print(text,end='')
     if a.out:
         if a.out.exists():raise SystemExit('refusing overwrite')
         a.out.write_text(text)
