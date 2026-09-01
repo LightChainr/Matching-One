@@ -1,5 +1,7 @@
 # Research Map
 
+> **历史路线图（2026-08-29快照）。** 下文的current/next/priority保留当时语境；当前成果见[STATUS](STATUS.md)，当前分析顺序见[NEXT-TARGETS](NEXT-TARGETS.md)。旧候选和已完成工作不自动构成待办。
+
 **Updated:** 2026-08-29
 
 This is a navigation layer, not a permission system. `STATUS` owns claim language; `ROADMAP` owns information-gain priorities; `GOVERNANCE` owns the three hard constraints.

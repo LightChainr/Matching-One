@@ -76,6 +76,16 @@ class Norm5ThermalJetScoreTests(unittest.TestCase):
         self.assertEqual(score["degrees_of_freedom"], 2)
         self.assertAlmostEqual(float(score["chi_square_survival"]), math.exp(-1.0))
 
+    def test_generalized_score_reports_discarded_null_violation(self) -> None:
+        score = generalized_chi_square(
+            [mp.mpf(1), mp.mpf(-1)],
+            [[mp.mpf(1), mp.mpf(1)], [mp.mpf(1), mp.mpf(1)]],
+        )
+        self.assertEqual(
+            score["nullspace_status"], "estimated_near_null_incompatibility"
+        )
+        self.assertEqual(len(score["discarded_eigendirections"]), 1)
+
 
 if __name__ == "__main__":
     unittest.main()

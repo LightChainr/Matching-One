@@ -30,6 +30,7 @@ from analyze_p48_retrospective import (
     read_histograms,
     tail_and_derivative,
 )
+from covariance_nullspace import covariance_spectral_diagnostics, serialize_diagnostics
 
 
 SIZES = (65, 85, 130, 170, 325, 425)
@@ -265,27 +266,22 @@ def grouped_covariance(full, deleted, functions):
 
 
 def spectral_quadratic(vector: Sequence[float], covariance: Sequence[Sequence[float]]):
-    matrix = mp.matrix(covariance)
-    eigenvalues, eigenvectors = mp.eigsy(matrix)
-    values = [float(eigenvalues[i]) for i in range(len(vector))]
-    scale = max(values)
-    if scale <= 0.0:
-        raise ValueError("covariance has no positive eigenvalue")
-    tolerance = scale * 1e-10
-    if min(values) < -tolerance:
-        raise ValueError("covariance has a materially negative eigenvalue")
-    kept = [i for i, value in enumerate(values) if value > tolerance]
-    transformed = [
-        math.fsum(float(eigenvectors[row, column]) * vector[row] for row in range(len(vector)))
-        for column in kept
-    ]
-    chi_square = math.fsum(value * value / values[column] for value, column in zip(transformed, kept))
+    diagnostics = serialize_diagnostics(
+        covariance_spectral_diagnostics(
+            vector,
+            covariance,
+            mp.mpf("1e-10"),
+            nullspace_policy="estimated",
+            standardize=False,
+        ),
+        float,
+    )
     return {
-        "chi_square": chi_square,
-        "df_effective": len(kept),
-        "covariance_rank": len(kept),
-        "covariance_condition": max(values[i] for i in kept) / min(values[i] for i in kept),
-        "eigenvalue_cutoff": tolerance,
+        **diagnostics,
+        "df_effective": diagnostics["degrees_of_freedom"],
+        "covariance_rank": diagnostics["numerical_rank"],
+        "covariance_condition": diagnostics["active_condition_number"],
+        "eigenvalue_cutoff": diagnostics["absolute_eigenvalue_cutoff"],
     }
 
 

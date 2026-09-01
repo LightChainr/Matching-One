@@ -17,6 +17,7 @@ from score_intrinsic_functional_cocycle import (  # noqa: E402
     merge_inputs,
     parse_groups,
     residual_function,
+    spectral_quadratic,
 )
 
 
@@ -92,6 +93,13 @@ class IntrinsicFunctionalCocycleTests(unittest.TestCase):
     def test_rejects_nonpartition_groups(self):
         with self.assertRaisesRegex(ValueError, "partition"):
             parse_groups(("65,85,130,170", "325"))
+
+    def test_raw_covariance_score_exposes_nullspace_violation(self):
+        score = spectral_quadratic([1.0, -1.0], [[1.0, 1.0], [1.0, 1.0]])
+        self.assertEqual(score["spectral_basis"], "raw_covariance")
+        self.assertEqual(
+            score["nullspace_status"], "estimated_near_null_incompatibility"
+        )
 
 
 if __name__ == "__main__":

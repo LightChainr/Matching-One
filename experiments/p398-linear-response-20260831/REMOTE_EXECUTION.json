@@ -1,0 +1,52 @@
+{
+  "schema": "matching-one/remote-run-receipt/v1",
+  "completed_utc_date": "2026-08-31",
+  "instance": "DevEnvC_TgFr7R",
+  "hostname_verified": "83750ac4eae34bbbbc64b894b854dd8c",
+  "cpu_count_verified": 16,
+  "memory_gib_fleet_spec": 32,
+  "remote_directory": "/workspace/matching-one-p398-linear-response-20260831",
+  "ssh_actual_hostname_verified": true,
+  "tunnel_port": 10027,
+  "tunnel_pid_during_run": 69406,
+  "environment": {
+    "python": "3.9.9",
+    "numpy": "1.26.4",
+    "scipy": "1.13.1",
+    "machine": "aarch64",
+    "hostname": "83750ac4eae34bbbbc64b894b854dd8c",
+    "threads": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1"
+    }
+  },
+  "dependency_install": "python3 -m venv .venv; .venv/bin/python -m pip install --no-index --find-links wheels numpy==1.26.4 scipy==1.13.1",
+  "dependency_transport": "Existing Mac ARM64 cp39 PyPI wheels copied by SCP, not downloaded by remote pip",
+  "analysis_command": ".venv/bin/python -u run_linear_response.py > run.log 2>&1",
+  "analysis_elapsed_seconds": 4.282643904007273,
+  "main_analysis_successful_runs": 1,
+  "new_eta_points": 0,
+  "new_widths": 0,
+  "new_monte_carlo_samples": 0,
+  "remote_sha256": {
+    "run_linear_response.py": "c47b832acbc77fbcf57a784d5b0bd351f04496a213c0a781913557102f32bd9f",
+    "frozen_model.py": "d916dbcd13d148462301793669cdf50f1d422f1332a75262911336e140a09289",
+    "frozen_rate_model.py": "cf4df4ae3658e3b06c6384511999b1f55d1a1b8740457d4721e77372dc1aa5a6",
+    "results/latest.json": "5cffbf3791d60e3f4d11f9c4ae901a1387af24369707515436dd487f3d7650f7",
+    "results/REPORT.md": "d45bf863dd14063f12006200abf252d5441ec9a32063fae61e8892e023268e9e"
+  },
+  "retrieval_sha256_all_match": true,
+  "process_check": {
+    "time_utc": "2026-08-31T10:00:35Z",
+    "completed_python_analysis_processes_remaining": 0,
+    "method": "After completion, verified process command names showed no Python process; no background analysis was launched."
+  },
+  "shutdown": {
+    "tunnel": "Stopped only the managed tunnel for DevEnvC_TgFr7R",
+    "cloud_stop_return": "Dev environment 83750ac4eae34bbbbc64b894b854dd8c is Stopping",
+    "final_state": "Ready",
+    "final_state_evidence": "Subsequent hdspace devenv list returned DevEnvC_TgFr7R Ready; other instances untouched."
+  },
+  "authentication_note": "VM restart initially rejected publickey. Parent restored official SSH authentication and verified hostname before computation. This analysis reused the existing target tunnel and did not reset keys itself."
+}

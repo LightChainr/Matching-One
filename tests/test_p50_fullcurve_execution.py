@@ -75,6 +75,17 @@ class P50FullcurveExecutionTests(unittest.TestCase):
         )
         self.assertEqual(score["numerical_rank"], 1)
         self.assertAlmostEqual(score["chi_square"], 1.0, places=9)
+        self.assertEqual(score["nullspace_status"], "estimated_near_null_compatible")
+        self.assertTrue(score["nullspace_compatible"])
+
+    def test_generalized_score_exposes_nullspace_violation(self) -> None:
+        score = generalized_covariance_score(
+            [1.0, -1.0], [[1.0, 1.0], [1.0, 1.0]]
+        )
+        self.assertEqual(
+            score["nullspace_status"], "estimated_near_null_incompatibility"
+        )
+        self.assertFalse(score["nullspace_compatible"])
 
     def test_scalar_score_includes_frozen_ratio_uncertainty(self) -> None:
         without = scalar_score(10.0, 13.0, 1.0, 4.0, 1.2)

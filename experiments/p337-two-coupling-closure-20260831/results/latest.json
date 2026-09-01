@@ -1,0 +1,527 @@
+{
+  "schema": "matching-one.p337-two-coupling-closure.v1",
+  "freeze_commit": "76a070d4aa95866f129572940f591b197cda064d",
+  "sources": {
+    "scope": "Existing exhaustive integer coefficients only; no new population, no independent replication, no use of P154/P334 validation blocks",
+    "inputs": [
+      {
+        "commit": "f5c4a74a20bad8589c39e1034cfb209462110dbe",
+        "source_path": "results/p337-closed-source-n25/axis.csv",
+        "local_path": "inputs/endpoint-axis.csv",
+        "sha256": "29991f11aaa5bea53bc8193fb0990dcb0c4c9fa98af8c0bdea975f4144763189"
+      },
+      {
+        "commit": "f5c4a74a20bad8589c39e1034cfb209462110dbe",
+        "source_path": "results/p337-closed-source-n25/tilted.csv",
+        "local_path": "inputs/endpoint-tilted.csv",
+        "sha256": "09073ec9ebcf6d8aca804019f57d5141bfa93c58017f2f59df0b7461b217cc25"
+      },
+      {
+        "commit": "f5c4a74a20bad8589c39e1034cfb209462110dbe",
+        "source_path": "results/p337-closed-source-n25/latest.json",
+        "local_path": "inputs/endpoint-root.json",
+        "sha256": "df4ab225ff499131b744c70ec569ad21b0229f2256e71a585c680faae51bac3a"
+      },
+      {
+        "commit": "f5c4a74a20bad8589c39e1034cfb209462110dbe",
+        "source_path": "results/p337-endpoint-defect/first.csv",
+        "local_path": "inputs/defect-first.csv",
+        "sha256": "dfd7cd7ebe9ee6bd0a2f0f97db2f286979301d103bb7809ae7bfafb44ab6e219"
+      },
+      {
+        "commit": "f5c4a74a20bad8589c39e1034cfb209462110dbe",
+        "source_path": "results/p337-endpoint-defect/second.csv",
+        "local_path": "inputs/defect-second.csv",
+        "sha256": "4cd38c8da231ea79f3839e98115c6b0234cded17366a65322ae763230b0da8b3"
+      },
+      {
+        "commit": "f5c4a74a20bad8589c39e1034cfb209462110dbe",
+        "source_path": "scripts/p337_closed_source_score.py",
+        "local_path": "vendor/p337_closed_source_score.py",
+        "sha256": "001a4ec8d85934c11690c1948f47ea8bdc892ad854ee422882cbaa4053fd09db"
+      }
+    ]
+  },
+  "decision": "finite_root_two_coupling_profile_closure_rejected",
+  "parent_N": 50,
+  "generators": [
+    [
+      5,
+      5
+    ],
+    [
+      1,
+      7
+    ]
+  ],
+  "rows": [
+    "q_first",
+    "E_first",
+    "q_second",
+    "E_second"
+  ],
+  "columns": [
+    "T=partial_p_f",
+    "C=Cov(f,S)",
+    "H=partial_epsilon_f"
+  ],
+  "root": {
+    "lower_fraction": "4073344606717732538485743001534530993661/10000000000000000000000000000000000000000",
+    "upper_fraction": "814668921343546507697148600306906198733/2000000000000000000000000000000000000000",
+    "midpoint_approx": 0.40733446067177326,
+    "width_approx": 4e-40,
+    "excludes_zero": true,
+    "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+  },
+  "pooled_slope": {
+    "lower_fraction": "58910122092494868338160209039360673542819/10000000000000000000000000000000000000000",
+    "upper_fraction": "58910122092494868338160209039360673547753/10000000000000000000000000000000000000000",
+    "midpoint_approx": 5.891012209249487,
+    "width_approx": 4.934e-37,
+    "excludes_zero": true,
+    "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+  },
+  "root_endpoint_checks": {
+    "exact_signs": [
+      -1,
+      1
+    ],
+    "qmean": [
+      {
+        "lower_fraction": "-11/10000000000000000000000000000000000000000",
+        "upper_fraction": "-1/1000000000000000000000000000000000000000",
+        "midpoint_approx": -1.0941114508716457e-39,
+        "width_approx": 1e-40,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      {
+        "lower_fraction": "3/2500000000000000000000000000000000000000",
+        "upper_fraction": "13/10000000000000000000000000000000000000000",
+        "midpoint_approx": 1.2622934328281492e-39,
+        "width_approx": 1e-40,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      }
+    ]
+  },
+  "count_checks": {
+    "each_K": "binomial(25,K)",
+    "table_totals": [
+      33554432,
+      33554432,
+      33554432,
+      33554432
+    ],
+    "normalizer_identically_one": true
+  },
+  "parent_mapping": "child reversed k; q and qS negated; E and S unchanged",
+  "matrix": [
+    [
+      {
+        "lower_fraction": "3676559822820801566023035519856871840779/625000000000000000000000000000000000000",
+        "upper_fraction": "11764991433026565011273713663541989891477/2000000000000000000000000000000000000000",
+        "midpoint_approx": 5.882495716513282,
+        "width_approx": 4.921e-37,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      {
+        "lower_fraction": "11168901349429410065812398614799803399457/10000000000000000000000000000000000000000",
+        "upper_fraction": "11168901349429410065812398614799803402453/10000000000000000000000000000000000000000",
+        "midpoint_approx": 1.116890134942941,
+        "width_approx": 2.996e-37,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      {
+        "lower_fraction": "-5770111291573165135259218685645758479743/10000000000000000000000000000000000000000",
+        "upper_fraction": "-1442527822893291283814804671411439619173/2500000000000000000000000000000000000000",
+        "midpoint_approx": -0.5770111291573166,
+        "width_approx": 3.051e-37,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      }
+    ],
+    [
+      {
+        "lower_fraction": "-564853798035947321402277749740217670957/10000000000000000000000000000000000000000",
+        "upper_fraction": "-564853798035947321402277749740217664839/10000000000000000000000000000000000000000",
+        "midpoint_approx": -0.056485379803594735,
+        "width_approx": 6.118e-37,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      {
+        "lower_fraction": "1309862151911460433413403268346029756203/10000000000000000000000000000000000000000",
+        "upper_fraction": "52394486076458417336536130733841190467/400000000000000000000000000000000000000",
+        "midpoint_approx": 0.13098621519114603,
+        "width_approx": 5.472e-37,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      {
+        "lower_fraction": "43952012039549174843536471759952699/10000000000000000000000000000000000000",
+        "upper_fraction": "5494001504943646855442058969994087847/1250000000000000000000000000000000000000",
+        "midpoint_approx": 0.004395201203954918,
+        "width_approx": 3.776e-37,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      }
+    ],
+    [
+      {
+        "lower_fraction": "29497643509928455809975924880505698816587/5000000000000000000000000000000000000000",
+        "upper_fraction": "58995287019856911619951849761011397638121/10000000000000000000000000000000000000000",
+        "midpoint_approx": 5.899528701985691,
+        "width_approx": 4.947e-37,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      {
+        "lower_fraction": "11343383460836287691999154728168524060981/10000000000000000000000000000000000000000",
+        "upper_fraction": "2835845865209071922999788682042131015999/2500000000000000000000000000000000000000",
+        "midpoint_approx": 1.1343383460836287,
+        "width_approx": 3.015e-37,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      {
+        "lower_fraction": "-295015813582314722660614493228587673709/500000000000000000000000000000000000000",
+        "upper_fraction": "-73753953395578680665153623307146918389/125000000000000000000000000000000000000",
+        "midpoint_approx": -0.5900316271646294,
+        "width_approx": 3.06e-37,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      }
+    ],
+    [
+      {
+        "lower_fraction": "458091789851190948233963830722249512169/10000000000000000000000000000000000000000",
+        "upper_fraction": "229045894925595474116981915361124759157/5000000000000000000000000000000000000000",
+        "midpoint_approx": 0.045809178985119096,
+        "width_approx": 6.145e-37,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      {
+        "lower_fraction": "163342060483989224718593759776218206047/1000000000000000000000000000000000000000",
+        "upper_fraction": "102088787802493265449121099860136379123/625000000000000000000000000000000000000",
+        "midpoint_approx": 0.16334206048398922,
+        "width_approx": 5.498e-37,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      },
+      {
+        "lower_fraction": "-1974510457728008736718327166414282923/100000000000000000000000000000000000000",
+        "upper_fraction": "-98725522886400436835916358320714144257/5000000000000000000000000000000000000000",
+        "midpoint_approx": -0.019745104577280088,
+        "width_approx": 3.786e-37,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      }
+    ]
+  ],
+  "minors3": [
+    {
+      "rows": [
+        "q_first",
+        "E_first",
+        "q_second"
+      ],
+      "determinant": {
+        "lower_fraction": "-46827630844844742742803860479298363657/5000000000000000000000000000000000000000",
+        "upper_fraction": "-93655261689689485485607720958596625499/10000000000000000000000000000000000000000",
+        "midpoint_approx": -0.009365526168968949,
+        "width_approx": 1.01815e-35,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      }
+    },
+    {
+      "rows": [
+        "q_first",
+        "E_first",
+        "E_second"
+      ],
+      "determinant": {
+        "lower_fraction": "-116720467147992807464378343664302133551/10000000000000000000000000000000000000000",
+        "upper_fraction": "-58360233573996403732189171832151062101/5000000000000000000000000000000000000000",
+        "midpoint_approx": -0.01167204671479928,
+        "width_approx": 9.349e-37,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      }
+    },
+    {
+      "rows": [
+        "q_first",
+        "q_second",
+        "E_second"
+      ],
+      "determinant": {
+        "lower_fraction": "11311915074045036440459638960634432331/1250000000000000000000000000000000000000",
+        "upper_fraction": "90495320592360291523677111685075562221/10000000000000000000000000000000000000000",
+        "midpoint_approx": 0.009049532059236028,
+        "width_approx": 1.03573e-35,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      }
+    },
+    {
+      "rows": [
+        "E_first",
+        "q_second",
+        "E_second"
+      ],
+      "determinant": {
+        "lower_fraction": "115460145757928359984615364504736965237/10000000000000000000000000000000000000000",
+        "upper_fraction": "115460145757928359984615364504736973687/10000000000000000000000000000000000000000",
+        "midpoint_approx": 0.011546014575792836,
+        "width_approx": 8.45e-37,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+      }
+    }
+  ],
+  "D3": {
+    "lower_fraction": "4391542380096601812723550037505088903/10000000000000000000000000000000000000000",
+    "upper_fraction": "4391542380096601812723550037505093099/10000000000000000000000000000000000000000",
+    "midpoint_approx": 0.0004391542380096602,
+    "width_approx": 4.196e-37,
+    "excludes_zero": true,
+    "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+  },
+  "D3_positive_rational_witness": "1/10000",
+  "auxiliary_endpoint_rank": {
+    "minors2": [
+      {
+        "rows": [
+          "q_first",
+          "E_first"
+        ],
+        "determinant": {
+          "lower_fraction": "1042017266569179810967378898895662531991/1250000000000000000000000000000000000000",
+          "upper_fraction": "8336138132553438487739031191165300295757/10000000000000000000000000000000000000000",
+          "midpoint_approx": 0.8336138132553439,
+          "width_approx": 3.9829e-36,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        }
+      },
+      {
+        "rows": [
+          "q_first",
+          "q_second"
+        ],
+        "determinant": {
+          "lower_fraction": "836150538531554404619076330466495755849/10000000000000000000000000000000000000000",
+          "upper_fraction": "836150538531554404619076330466495802349/10000000000000000000000000000000000000000",
+          "midpoint_approx": 0.08361505385315544,
+          "width_approx": 4.65e-36,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        }
+      },
+      {
+        "rows": [
+          "q_first",
+          "E_second"
+        ],
+        "determinant": {
+          "lower_fraction": "909695151025205119912247834444226362741/1000000000000000000000000000000000000000",
+          "upper_fraction": "9096951510252051199122478344442263667551/10000000000000000000000000000000000000000",
+          "midpoint_approx": 0.9096951510252052,
+          "width_approx": 4.0141e-36,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        }
+      },
+      {
+        "rows": [
+          "E_first",
+          "q_second"
+        ],
+        "determinant": {
+          "lower_fraction": "-2092076170972388736332406741868653460909/2500000000000000000000000000000000000000",
+          "upper_fraction": "-4184152341944777472664813483737306901801/5000000000000000000000000000000000000000",
+          "midpoint_approx": -0.8368304683889555,
+          "width_approx": 4.0034e-36,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        }
+      },
+      {
+        "rows": [
+          "E_first",
+          "E_second"
+        ],
+        "determinant": {
+          "lower_fraction": "-152268093006144089988737185473228610129/10000000000000000000000000000000000000000",
+          "upper_fraction": "-152268093006144089988737185473228607763/10000000000000000000000000000000000000000",
+          "midpoint_approx": -0.01522680930061441,
+          "width_approx": 2.366e-37,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        }
+      },
+      {
+        "rows": [
+          "q_second",
+          "E_second"
+        ],
+        "determinant": {
+          "lower_fraction": "9116780657413482897116609013715621022749/10000000000000000000000000000000000000000",
+          "upper_fraction": "1139597582176685362139576126714452632887/1250000000000000000000000000000000000000",
+          "midpoint_approx": 0.9116780657413482,
+          "width_approx": 4.0347e-36,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        }
+      }
+    ],
+    "sum_squared_minors": {
+      "lower_fraction": "15305613593895971083960470060383994170723/5000000000000000000000000000000000000000",
+      "upper_fraction": "6122245437558388433584188024153597725859/2000000000000000000000000000000000000000",
+      "midpoint_approx": 3.061122718779194,
+      "width_approx": 2.87849e-35,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "rank_two_certified": true
+  },
+  "root_comoving": {
+    "interpretation": "same matrix under column operations; no extra test",
+    "columns": [
+      "T",
+      "Cbar",
+      "Hbar"
+    ],
+    "alpha_C": {
+      "lower_fraction": "1910731467753464052402089747693434095947/10000000000000000000000000000000000000000",
+      "upper_fraction": "955365733876732026201044873846717048309/5000000000000000000000000000000000000000",
+      "midpoint_approx": 0.1910731467753464,
+      "width_approx": 6.71e-38,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "alpha_H": {
+      "lower_fraction": "-495264105245602118492813212735935690979/5000000000000000000000000000000000000000",
+      "upper_fraction": "-247632052622801059246406606367967845339/2500000000000000000000000000000000000000",
+      "midpoint_approx": -0.09905282104912043,
+      "width_approx": 6.02e-38,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+    },
+    "matrix": [
+      [
+        {
+          "lower_fraction": "3676559822820801566023035519856871840779/625000000000000000000000000000000000000",
+          "upper_fraction": "11764991433026565011273713663541989891477/2000000000000000000000000000000000000000",
+          "midpoint_approx": 5.882495716513282,
+          "width_approx": 4.921e-37,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        },
+        {
+          "lower_fraction": "-35484162518739700985290487808676779069/5000000000000000000000000000000000000000",
+          "upper_fraction": "-70968325037479401970580975617353550261/10000000000000000000000000000000000000000",
+          "midpoint_approx": -0.00709683250374794,
+          "width_approx": 7.877e-37,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        },
+        {
+          "lower_fraction": "28333331863455423137347382454367853701/5000000000000000000000000000000000000000",
+          "upper_fraction": "28333331863455423137347382454367857239/5000000000000000000000000000000000000000",
+          "midpoint_approx": 0.0056666663726910845,
+          "width_approx": 7.076e-37,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        }
+      ],
+      [
+        {
+          "lower_fraction": "-564853798035947321402277749740217670957/10000000000000000000000000000000000000000",
+          "upper_fraction": "-564853798035947321402277749740217664839/10000000000000000000000000000000000000000",
+          "midpoint_approx": -0.056485379803594735,
+          "width_approx": 6.118e-37,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        },
+        {
+          "lower_fraction": "1417790544570194870997460377694114108317/10000000000000000000000000000000000000000",
+          "upper_fraction": "354447636142548717749365094423528528749/2500000000000000000000000000000000000000",
+          "midpoint_approx": 0.1417790544570195,
+          "width_approx": 6.679e-37,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        },
+        {
+          "lower_fraction": "-11998350136221524636020878619151219751/10000000000000000000000000000000000000000",
+          "upper_fraction": "-2399670027244304927204175723830243067/2000000000000000000000000000000000000000",
+          "midpoint_approx": -0.0011998350136221525,
+          "width_approx": 4.416e-37,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        }
+      ],
+      [
+        {
+          "lower_fraction": "29497643509928455809975924880505698816587/5000000000000000000000000000000000000000",
+          "upper_fraction": "58995287019856911619951849761011397638121/10000000000000000000000000000000000000000",
+          "midpoint_approx": 5.899528701985691,
+          "width_approx": 4.947e-37,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        },
+        {
+          "lower_fraction": "17742081259369850492645243904338387561/2500000000000000000000000000000000000000",
+          "upper_fraction": "17742081259369850492645243904338389539/2500000000000000000000000000000000000000",
+          "midpoint_approx": 0.00709683250374794,
+          "width_approx": 7.912e-37,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        },
+        {
+          "lower_fraction": "-56666663726910846274694764908735714489/10000000000000000000000000000000000000000",
+          "upper_fraction": "-56666663726910846274694764908735707391/10000000000000000000000000000000000000000",
+          "midpoint_approx": -0.0056666663726910845,
+          "width_approx": 7.098e-37,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        }
+      ],
+      [
+        {
+          "lower_fraction": "458091789851190948233963830722249512169/10000000000000000000000000000000000000000",
+          "upper_fraction": "229045894925595474116981915361124759157/5000000000000000000000000000000000000000",
+          "midpoint_approx": 0.045809178985119096,
+          "width_approx": 6.145e-37,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        },
+        {
+          "lower_fraction": "1545891565041074498328976838703717347863/10000000000000000000000000000000000000000",
+          "upper_fraction": "772945782520537249164488419351858677283/5000000000000000000000000000000000000000",
+          "midpoint_approx": 0.15458915650410746,
+          "width_approx": 6.703e-37,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        },
+        {
+          "lower_fraction": "-30415152337719915445854042703556186637/2000000000000000000000000000000000000000",
+          "upper_fraction": "-152075761688599577229270213517780928763/10000000000000000000000000000000000000000",
+          "midpoint_approx": -0.015207576168859958,
+          "width_approx": 4.422e-37,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus40_rational_grid"
+        }
+      ]
+    ]
+  },
+  "scope": "exact finite counts; computational enclosures, not confidence intervals; no inference about scalar U alone, continuum fields or independent confirmation",
+  "new_samples": 0,
+  "new_enumerations": 0,
+  "cloud_jobs": 0
+}

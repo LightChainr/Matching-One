@@ -1,0 +1,207 @@
+{
+  "status": "completed",
+  "started_unix": 1788173245.3113275,
+  "contract": {
+    "schema": "p154-temporal-source.v1",
+    "status_at_definition": "frozen before acquisition or inspection of any lagged joint response",
+    "input_commit": "7da1eeb0",
+    "question": "Can early cluster geometry invisible to its immediate rank alter later rank entry/exit and the original U?",
+    "Ns": [
+      65,
+      85,
+      130,
+      170,
+      260,
+      340
+    ],
+    "lag_rule": "ell=ceil(sqrt(N)), integer arithmetic; sole selected lag; no lag scan",
+    "source_time": "L(K)=max(0,K-ell)",
+    "raw_source": "s_L=C_B(L)+C_W(N-L), bulk integer component count on the old permutation",
+    "centered_source": "z_K=s_L-E[s_L|L,r_L,g], separately within each geometry and early rank at each fixed L",
+    "early_rank": "r_L=I[L>=K_minus]+I[L>=K_plus]",
+    "late_readouts": "q_K=-1+I[K>=K_minus]+I[K>=K_plus]; E_K=q_K^2; entry=I[K>=K_minus]; exit=I[K>=K_plus]",
+    "positive_path_measure": "joint (K,permutation) baseline Bin(N,p)*uniform(old-engine order), tilted globally by exp(t*z_K), or by exp(t*s_L) for the raw control",
+    "p_derivative": "ell,L(K), and the microcanonical conditional means are fixed as p changes; differentiate only Bin(N,p) weights. K-indexed source is part of the specified path measure. No extra derivative of L or fitted means.",
+    "immediate_constraint": "E[z_K f(L,r_L,g)|K,g]=0, hence each early rank probability and every K-only observable has zero first response; this does not force late q_K/E_K response to zero",
+    "centered_strata": "report z_K*I[r_L=r] for r=0,1,2; their sum is z_K. r=2 has zero late response by monotonic rank. Within r=1, late entry is already constant and cannot respond; only exit can respond.",
+    "original_U": "N^(13/8)*P4[d_p E_K]/(2*mean_g d_p q_K), at original pooled matching root, exact delta cos4 retained",
+    "inference": "original three source dependence groups, 100 aligned delete-one batches; each omission recomputes all conditional means and uses that omission's previously saved pooled root; full common covariance, signed outputs, no clipping",
+    "old_samples": "N65/85/130/170 first100k; N260/340 first1M, with batch b = first1000 offset1000b union added9000 offset100000+9000b; same two geometry permutation",
+    "seeds": {
+      "65": 2026104501,
+      "85": 2026104501,
+      "130": 2026104501,
+      "170": 2026104501,
+      "260": 2026105401,
+      "340": 2026105402
+    },
+    "counter_begin": {
+      "65": 5100000000,
+      "85": 5100000000,
+      "130": 5100000000,
+      "170": 5100000000,
+      "260": 8200000000,
+      "340": 8200000000
+    },
+    "new_counters": 0,
+    "old_permutations_reobserved": 2400000,
+    "baseline_validation": "exact integer reproduction of every original batch/K q,E,s,qs,Es before scoring; old U, source response, and roots reconstructed on central and retained samples",
+    "scope": "new lagged path-source tangent on the six original finite tori, not decomposition of the old equal-time source derivative; empirical centering is descriptive and re-estimated, not independently frozen physical intervention; no continuum field assignment or asymptotic lag scaling claim",
+    "decision": "resolved late response with exact immediate zero demonstrates a finite predictive geometry channel beyond instantaneous rank; unresolved U response is reported as such; zero late response bounds this one source/lag and is not proof of global rank sufficiency"
+  },
+  "hostname": "f415a4bcbd9a438b85f5f29e4a507ea4",
+  "platform": "Linux-5.10.0-182.0.0.95.r3582_286.hce2.aarch64-aarch64-with-glibc2.34",
+  "python": "3.9.9",
+  "cpu_count": 16,
+  "threads": 16,
+  "new_counters": 0,
+  "input_sha256": {
+    "CONTRACT.json": "e2c15461d91250faaad064e9862157d84b1b9c32069cb271fad7501cb3a466be",
+    "SOURCES.json": "a4aca2a3228cdd61d4a1e4fbbce3ae7bd5f3f785584b323c7bcf77baa9e4aa7a",
+    "analyze.py": "d435c81268766ed656c1a38528a9432a93720c606b063802fa2d3bc5910c3722",
+    "inputs/anchors.json": "3c8802b8ce185d0d9c3095120b69f0ff7115335c074c7abbb1ba3e2ec8b2a4cf",
+    "inputs/old_profiles.npz": "533ae9fec1a15dea1f858e753b41fa138b2396a549e1db0abb1b7c87e57b96b5",
+    "replay.cpp": "cd6d9386db6e23ee04381644cb25b94222f91e2cbdb9b8fad26ccd8195a21a21",
+    "run.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run.py": "88bff4931e2eeb47a39ee512a47662d4f2d27b649c65eb0cd1f29ae1c7fe6861",
+    "vendor/integer_period.cpp": "7df0d9362b31111eab8fc73ab4032eea37458fde0ff2d720bded8e7b530fa94a",
+    "vendor/primitive.cpp": "7893216c66802b28eb67eb27ac61976835291c4ad734f94a0d255a3e6d7e179a"
+  },
+  "runs": [
+    {
+      "N": 65,
+      "command": [
+        "/workspace/p154-temporal-source-20260831/build/primitive",
+        "65",
+        "/workspace/p154-temporal-source-20260831/results/raw/n65.csv",
+        "16"
+      ],
+      "seconds": 0.7417496200014284,
+      "stdout": "N=65 lag=9 old_permutations=100000 paired_geometries=2 batches=100 threads=16 new_counters=0\n",
+      "stderr": "",
+      "raw_sha256": "a08c437d3871c96e321c8a1c22ccf105c8e593e70e66a5b4ac815c043be25da3",
+      "gzip_sha256": "489ba16b3b1c81c11165e4ca80642f89bfb69baa7205eb6b643b55dbc0547ac7",
+      "old_profile_integer_exact": true,
+      "old_permutations_reobserved": 100000
+    },
+    {
+      "N": 85,
+      "command": [
+        "/workspace/p154-temporal-source-20260831/build/primitive",
+        "85",
+        "/workspace/p154-temporal-source-20260831/results/raw/n85.csv",
+        "16"
+      ],
+      "seconds": 0.9818581979998271,
+      "stdout": "N=85 lag=10 old_permutations=100000 paired_geometries=2 batches=100 threads=16 new_counters=0\n",
+      "stderr": "",
+      "raw_sha256": "2ef74af64b59f2868b4723ed88f1a187a68dd5be3a8acf5e242d06ae04358d47",
+      "gzip_sha256": "ac3dfaf3072b3ac5db4d6b72e689fa834d9f6f3aa711987f6569ee6302141d83",
+      "old_profile_integer_exact": true,
+      "old_permutations_reobserved": 100000
+    },
+    {
+      "N": 130,
+      "command": [
+        "/workspace/p154-temporal-source-20260831/build/primitive",
+        "130",
+        "/workspace/p154-temporal-source-20260831/results/raw/n130.csv",
+        "16"
+      ],
+      "seconds": 1.4744182330014155,
+      "stdout": "N=130 lag=12 old_permutations=100000 paired_geometries=2 batches=100 threads=16 new_counters=0\n",
+      "stderr": "",
+      "raw_sha256": "5a1b60ae6c309b2e976dfa7e40cab96ed3c96c3158d5409c340c12ede072672c",
+      "gzip_sha256": "660462c5eca5274acb894dd1a21b8672a3a7b1459e2a69215dc117dfa0f2c634",
+      "old_profile_integer_exact": true,
+      "old_permutations_reobserved": 100000
+    },
+    {
+      "N": 170,
+      "command": [
+        "/workspace/p154-temporal-source-20260831/build/primitive",
+        "170",
+        "/workspace/p154-temporal-source-20260831/results/raw/n170.csv",
+        "16"
+      ],
+      "seconds": 1.9270600079998985,
+      "stdout": "N=170 lag=14 old_permutations=100000 paired_geometries=2 batches=100 threads=16 new_counters=0\n",
+      "stderr": "",
+      "raw_sha256": "4087cea953c75ce0b5b4cd195d42160037e98d9b63ee36cc0afac3ac470783c1",
+      "gzip_sha256": "3be71105d476688ada44cf11a203e256d5e012ba2b312894a51996c78f6d4803",
+      "old_profile_integer_exact": true,
+      "old_permutations_reobserved": 100000
+    },
+    {
+      "N": 260,
+      "command": [
+        "/workspace/p154-temporal-source-20260831/build/integer_period",
+        "260",
+        "/workspace/p154-temporal-source-20260831/results/raw/n260.csv",
+        "16"
+      ],
+      "seconds": 12.871351843999946,
+      "stdout": "N=260 lag=17 old_permutations=1000000 paired_geometries=2 batches=100 threads=16 new_counters=0\n",
+      "stderr": "",
+      "raw_sha256": "72eb2f3dc9653b84fa404d3fe568fbdb468dbd81c62ddd51b254f02ef5aa9c8b",
+      "gzip_sha256": "81652e29f908a5f6d2b18caeecd4741f9a050d16203f22a5e6f0b82292c3cdfd",
+      "old_profile_integer_exact": true,
+      "old_permutations_reobserved": 1000000
+    },
+    {
+      "N": 340,
+      "command": [
+        "/workspace/p154-temporal-source-20260831/build/integer_period",
+        "340",
+        "/workspace/p154-temporal-source-20260831/results/raw/n340.csv",
+        "16"
+      ],
+      "seconds": 17.36029721900013,
+      "stdout": "N=340 lag=19 old_permutations=1000000 paired_geometries=2 batches=100 threads=16 new_counters=0\n",
+      "stderr": "",
+      "raw_sha256": "7cff6a54f0a2ef18c79ecaad49fe7561ae09df587a64988862c1ca23e63f9866",
+      "gzip_sha256": "40f86315e6815c290d91e9bb2f13da9af2594f4df1891d86341c978ef7ab2843",
+      "old_profile_integer_exact": true,
+      "old_permutations_reobserved": 1000000
+    }
+  ],
+  "compile": [
+    {
+      "command": [
+        "g++",
+        "-O3",
+        "-std=c++17",
+        "-fopenmp",
+        "-DMATCHING_NORM4_BACKEND=\"/workspace/p154-temporal-source-20260831/vendor/primitive.cpp\"",
+        "/workspace/p154-temporal-source-20260831/replay.cpp",
+        "-o",
+        "/workspace/p154-temporal-source-20260831/build/primitive"
+      ],
+      "seconds": 3.168646935000652,
+      "stdout": "",
+      "stderr": "",
+      "sha256": "8f601ed0924efc29f485912e3931ddb7be0c57819c2d97f1470a8b77a5d95cb4"
+    },
+    {
+      "command": [
+        "g++",
+        "-O3",
+        "-std=c++17",
+        "-fopenmp",
+        "-DMATCHING_NORM4_BACKEND=\"/workspace/p154-temporal-source-20260831/vendor/integer_period.cpp\"",
+        "-DMATCHING_NORM4_INTEGER=1",
+        "/workspace/p154-temporal-source-20260831/replay.cpp",
+        "-o",
+        "/workspace/p154-temporal-source-20260831/build/integer_period"
+      ],
+      "seconds": 3.0643553669997345,
+      "stdout": "",
+      "stderr": "",
+      "sha256": "503d4ea3139b64e615be8a41ba65f7ddb1c17b3bd604d595105ec7596333820a"
+    }
+  ],
+  "elapsed_seconds": 41.64395410799989,
+  "total_old_permutations_reobserved": 2400000,
+  "total_elapsed_seconds": 50.200439923000886,
+  "finished_unix": 1788173295.5158794
+}

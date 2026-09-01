@@ -1,0 +1,293 @@
+{
+  "edge_weight_C4_orbit_pooled": {
+    "allocation_robust": true,
+    "full": {
+      "excludes_zero": true,
+      "lower": "-1198372111642556051257836402069587307131/12500000000000000000000000000000000000000000000000",
+      "midpoint": -9.586976893140449e-11,
+      "upper": "-4793488446570224205031345608278349227819/50000000000000000000000000000000000000000000000000",
+      "width": 1.41e-47
+    },
+    "reason": "Delta a is nonzero and the beta-free source-midpoint sum already excludes zero",
+    "root_counterterm_part": {
+      "excludes_zero": true,
+      "lower": "133534765517152656036816408054738232713/25000000000000000000000000000000000000000000000000",
+      "midpoint": 5.341390620686106e-12,
+      "upper": "267069531034305312073632816109476465463/50000000000000000000000000000000000000000000000000",
+      "width": 7.4e-49
+    },
+    "source_midpoint_part": {
+      "excludes_zero": true,
+      "lower": "-101211159552090590342099568487756513879/1000000000000000000000000000000000000000000000000",
+      "midpoint": -1.0121115955209059e-10,
+      "upper": "-2530278988802264758552489212193912846641/25000000000000000000000000000000000000000000000000",
+      "width": 1.336e-47
+    }
+  },
+  "global": {
+    "M_t": {
+      "excludes_zero": true,
+      "lower": "28443350134726077866641415194058973737284273470841/20000000000000000000000000000000000000000000000000",
+      "midpoint": 1.422167506736304,
+      "upper": "142216750673630389333207075970294868689781585376501/100000000000000000000000000000000000000000000000000",
+      "width": 3.360218022296e-38
+    },
+    "R": {
+      "excludes_zero": true,
+      "lower": "942085130126561220670038131767729943515290119959/100000000000000000000000000000000000000000000000000",
+      "midpoint": 0.009420851301265612,
+      "upper": "58880320632910076291877383235483121645414254837/6250000000000000000000000000000000000000000000000",
+      "width": 2.811337957433e-38
+    },
+    "Y_t": {
+      "excludes_zero": true,
+      "lower": "1339802860645437984719061313129171465705977792119/100000000000000000000000000000000000000000000000000",
+      "midpoint": 0.013398028606454379,
+      "upper": "669901430322718992359530656564585734836257585653/50000000000000000000000000000000000000000000000000",
+      "width": 3.966537379187e-38
+    },
+    "beta_component": {
+      "excludes_zero": true,
+      "lower": "-11008152662969711901641197313844550424173914821/100000000000000000000000000000000000000000000000000",
+      "midpoint": -0.00011008152662969712,
+      "upper": "-1100815266296971190164119731384455042349181949/10000000000000000000000000000000000000000000000000",
+      "width": 6.82095331e-42
+    },
+    "mu_H_axis": {
+      "excludes_zero": true,
+      "lower": "13828669835950192125736140977078681604498395290871/20000000000000000000000000000000000000000000000000",
+      "midpoint": 0.6914334917975096,
+      "upper": "69143349179750960628680704885393408023895313431563/100000000000000000000000000000000000000000000000000",
+      "width": 1.403336977208e-38
+    },
+    "mu_a_axis_component": {
+      "excludes_zero": true,
+      "lower": "25381075834390419432241591562336924183540659347/100000000000000000000000000000000000000000000000000",
+      "midpoint": 0.0002538107583439042,
+      "upper": "25381075834390419432241591562336924184063636637/100000000000000000000000000000000000000000000000000",
+      "width": 5.2297729e-42
+    },
+    "root_p": {
+      "excludes_zero": true,
+      "lower": "1185331078656453492302851399693093801267/2000000000000000000000000000000000000000",
+      "midpoint": 0.5926655393282267,
+      "upper": "5926655393282267461514256998465469006339/10000000000000000000000000000000000000000",
+      "width": 4e-40
+    }
+  },
+  "graph_contract": {
+    "edge_weight": "W(e)=S_0+S_1; reported both for one fixed direction and its frozen C4 orbit",
+    "global_freeze": "p,R,mu_H,mu_a,beta_lambda are computed before cell disintegration from both complete geometries",
+    "landing_rank_slow_variable": "rank_index=q+1 together with B/W landing labels",
+    "physical_edge": "the Bernoulli pair obtained by changing only X_z from 0 to 1",
+    "positive_mass": "P_i=(1/2) nu_{g,-z}(eta) w_i for one fixed-frame physical edge",
+    "signed_mass": "S_i=P_i Htilde_i[(a_i-mu_a)u_i-beta_lambda b_i]",
+    "source_Bell_slow_variable": "the x4+y4 restriction of the common C_joint map",
+    "vertex": "(geometry,eta,z,state,rank_index,Bell,C_joint,B_outer,W_outer)"
+  },
+  "inputs": {
+    "baseline_axis": {
+      "path": "experiments/p537-landing-matrix-preflight-20260901/baseline-axis.csv",
+      "sha256": "2d23fecc98d276d9ad15ad1867199cd308f0570cb5040ef94eb6b923b4c53458"
+    },
+    "baseline_root": {
+      "path": "experiments/p537-landing-matrix-preflight-20260901/baseline-root.json",
+      "sha256": "df4ab225ff499131b744c70ec569ad21b0229f2256e71a585c680faae51bac3a"
+    },
+    "baseline_tilted": {
+      "path": "experiments/p537-landing-matrix-preflight-20260901/baseline-tilted.csv",
+      "sha256": "225031e612929ed922ba75c55e76703d59990f5283e7ac39b94f022841798da5"
+    },
+    "global_source": {
+      "path": "experiments/p537-one-defect-gate-20260901/global-diag1.csv",
+      "sha256": "eb330d83d4a2535bc688f75a291577fedfff8526f1f73ccaf038d8e8951d8fdd"
+    },
+    "witness": {
+      "path": "results/p537-one-defect-gate-20260901/witness-nonadjacent.json",
+      "sha256": "7631e49dc0a5b1c7683fc299aea66577cb5c55cba99a4cf415a93ba94ae7f1f1"
+    }
+  },
+  "margin_boundary": {
+    "full_graph_zero_margins_checked": false,
+    "reason": "Stop rule A is existential; S*1 and 1^T*S are full-graph checks needed only if no diagonal edge survives"
+  },
+  "schema": "matching-one/p537-one-defect-score/v1",
+  "scope": [
+    "This exact finite N25 edge disproves an automatic two-spatial-defect or six-arm gain for the full physical decomposition.",
+    "All three marked centers have NN distance two, yet joint terminal incidence drops from two to one; metric distance at most one therefore does not define the full contact carrier.",
+    "Distance two on the N5 quotient is not annular separation, so this witness proves neither a separated-sector statement nor an asymptotic lower bound.",
+    "The beta-free source part is nonzero, so the decision does not rely on counterterm allocation across Bell cells."
+  ],
+  "states": [
+    {
+      "full_Si_C4_orbit_pooled": {
+        "excludes_zero": true,
+        "lower": "-317269303176446451451109249243037231837/3125000000000000000000000000000000000000000000000",
+        "midpoint": -1.0152617701646287e-10,
+        "upper": "-406104708065851457857419839031087656697/4000000000000000000000000000000000000000000000000",
+        "width": 1.359e-47
+      },
+      "full_Si_fixed_frame_pooled": {
+        "excludes_zero": true,
+        "lower": "-317269303176446451451109249243037231837/12500000000000000000000000000000000000000000000000",
+        "midpoint": -2.5381544254115716e-11,
+        "upper": "-634538606352892902902218498486074463589/25000000000000000000000000000000000000000000000000",
+        "width": 3.4e-48
+      },
+      "positive_mass_Pi_fixed_frame_pooled": {
+        "excludes_zero": true,
+        "lower": "548520145278733745423909267444674795144249/100000000000000000000000000000000000000000000000000",
+        "midpoint": 5.485201452787338e-09,
+        "upper": "68565018159841718177988658430584349394483/12500000000000000000000000000000000000000000000000",
+        "width": 1.1615e-46
+      },
+      "root_counterterm_Si_C4_orbit_pooled": {
+        "excludes_zero": true,
+        "lower": "196701957119300940392941616263738963443/100000000000000000000000000000000000000000000000000",
+        "midpoint": 1.9670195711930095e-12,
+        "upper": "98350978559650470196470808131869481741/50000000000000000000000000000000000000000000000000",
+        "width": 3.9e-49
+      },
+      "root_counterterm_Si_fixed_frame_pooled": {
+        "excludes_zero": true,
+        "lower": "2458774463991261754911770203296737043/5000000000000000000000000000000000000000000000000",
+        "midpoint": 4.917548927982524e-13,
+        "upper": "49175489279825235098235404065934740871/100000000000000000000000000000000000000000000000000",
+        "width": 1.1e-49
+      },
+      "source_midpoint_Si_C4_orbit_pooled": {
+        "excludes_zero": true,
+        "lower": "-2587329914691396846707109398010232595557/25000000000000000000000000000000000000000000000000",
+        "midpoint": -1.0349319658765588e-10,
+        "upper": "-5174659829382793693414218796020465190453/50000000000000000000000000000000000000000000000000",
+        "width": 1.322e-47
+      },
+      "source_midpoint_Si_fixed_frame_pooled": {
+        "excludes_zero": true,
+        "lower": "-2587329914691396846707109398010232595557/100000000000000000000000000000000000000000000000000",
+        "midpoint": -2.587329914691397e-11,
+        "upper": "-1293664957345698423353554699005116297613/50000000000000000000000000000000000000000000000000",
+        "width": 3.31e-48
+      },
+      "state": 0
+    },
+    {
+      "full_Si_C4_orbit_pooled": {
+        "excludes_zero": true,
+        "lower": "70705101063229754546600594902561620217/12500000000000000000000000000000000000000000000000",
+        "midpoint": 5.65640808505838e-12,
+        "upper": "565640808505838036372804759220492961787/100000000000000000000000000000000000000000000000000",
+        "width": 5.1e-49
+      },
+      "full_Si_fixed_frame_pooled": {
+        "excludes_zero": true,
+        "lower": "70705101063229754546600594902561620217/50000000000000000000000000000000000000000000000000",
+        "midpoint": 1.414102021264595e-12,
+        "upper": "141410202126459509093201189805123240447/100000000000000000000000000000000000000000000000000",
+        "width": 1.3e-49
+      },
+      "positive_mass_Pi_fixed_frame_pooled": {
+        "excludes_zero": true,
+        "lower": "399044297894515786977437095340929185482647/50000000000000000000000000000000000000000000000000",
+        "midpoint": 7.980885957890315e-09,
+        "upper": "798088595789031573954874190681858370981947/100000000000000000000000000000000000000000000000000",
+        "width": 1.6653e-46
+      },
+      "root_counterterm_Si_C4_orbit_pooled": {
+        "excludes_zero": true,
+        "lower": "21089819059331855234645250997200872963/6250000000000000000000000000000000000000000000000",
+        "midpoint": 3.3743710494930967e-12,
+        "upper": "67487420989861936750864803191042793489/20000000000000000000000000000000000000000000000000",
+        "width": 3.7e-49
+      },
+      "root_counterterm_Si_fixed_frame_pooled": {
+        "excludes_zero": true,
+        "lower": "21089819059331855234645250997200872963/25000000000000000000000000000000000000000000000000",
+        "midpoint": 8.435927623732742e-13,
+        "upper": "42179638118663710469290501994401745931/50000000000000000000000000000000000000000000000000",
+        "width": 1e-49
+      },
+      "source_midpoint_Si_C4_orbit_pooled": {
+        "excludes_zero": true,
+        "lower": "228203703556528352618480743265278994327/100000000000000000000000000000000000000000000000000",
+        "midpoint": 2.2820370355652837e-12,
+        "upper": "228203703556528352618480743265278994343/100000000000000000000000000000000000000000000000000",
+        "width": 1.6e-49
+      },
+      "source_midpoint_Si_fixed_frame_pooled": {
+        "excludes_zero": true,
+        "lower": "57050925889132088154620185816319748581/100000000000000000000000000000000000000000000000000",
+        "midpoint": 5.705092588913209e-13,
+        "upper": "28525462944566044077310092908159874293/50000000000000000000000000000000000000000000000000",
+        "width": 5e-50
+      },
+      "state": 1
+    }
+  ],
+  "status": "allocation_robust_physical_diagonal_edge_nonzero",
+  "stop_decision": {
+    "blanket_full_graph_two_independent_defect_route": "falsified",
+    "carrier_classification": "joint-incidence/typed carrier",
+    "distance_at_most_one_contact_split": "insufficient: the distance-two edge still changes joint terminal incidence",
+    "next_object": "the joint-incidence/typed-carrier contribution to the surviving leading signed functional",
+    "no_further_graph_enumeration_required": true,
+    "rule": "fixed physical edge changing both slow variables with nonzero full Schur weight",
+    "separated_sector": "open: pairwise distance two on N5 is not a disjoint-annulus certificate",
+    "triggered": true
+  },
+  "topology": {
+    "bell_before_after": [
+      274568,
+      8256
+    ],
+    "carrier_scope": {
+      "annular_separation_certified": false,
+      "classification": "joint_incidence_typed_carrier",
+      "distance_at_most_one": false,
+      "joint_terminal_incidence_before_after": [
+        2,
+        1
+      ],
+      "reason": "all marked centers are NN-distance two, but the common carrier loses one source/thermal terminal incidence"
+    },
+    "collar": {
+      "alternating_four_arm": false,
+      "arm_mask": 11,
+      "arm_order": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ],
+      "corner_mask_NE_SE_SW_NW": 0,
+      "outer_black_join_J_B": 0,
+      "outer_join_identity_applicable": false,
+      "outer_white_join_J_W": 0
+    },
+    "delta_a_exact": "-1/50",
+    "g16_before_after": [
+      8,
+      0
+    ],
+    "joint_C_before_after": [
+      21990249529872,
+      3298535014656
+    ],
+    "off_port": {
+      "black_landing_component_has_degree3_vertex_outside_z_ports": false,
+      "measured_in_state": 0,
+      "source_touches_global_black_landing_component": true
+    },
+    "pairwise_NN_distances": {
+      "minimum": 2,
+      "x_y": 2,
+      "x_z": 2,
+      "y_z": 2
+    },
+    "rank_before_after": [
+      0,
+      1
+    ]
+  },
+  "transition_id": "axis-N25:row-x0:y6:z2:fixed-nonadjacent:0to1"
+}

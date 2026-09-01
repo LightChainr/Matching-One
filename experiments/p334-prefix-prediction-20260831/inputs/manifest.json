@@ -1,0 +1,93 @@
+{
+  "repository": "https://github.com/LightChainr/Matching-One",
+  "source_commit": "8ad30617b0a3076a5c01a208eb213096d8879b32",
+  "source_package": "experiments/p334-mechanism-response-20260831",
+  "sources": [
+    {
+      "path": "results-extension/prefix_statistics_N325.npz",
+      "sha256": "be9d89e8f2eb7bf8cb9ce2168ac8737dc1466ac89d6540f8250ebf98014ef79e"
+    },
+    {
+      "path": "results-extension/prefix_statistics_N425.npz",
+      "sha256": "fa79cf810c01bca1cf560f0d1c53cf0bd47e665f9acbb1a33dd45a16f39c3154"
+    },
+    {
+      "path": "results-exact-score/prefix_statistics_N325.npz",
+      "sha256": "0a8bd345c603a3583075b84649f5c0c2454af2f055275cb4574dea1a7c085492"
+    },
+    {
+      "path": "results-exact-score/prefix_statistics_N425.npz",
+      "sha256": "65d298c3331ab77a26d34ae19df188608a919074bca5bb462cb6488ef3efe957"
+    }
+  ],
+  "derived_files": [
+    {
+      "path": "N325.npz",
+      "sha256": "9fdf89fbed24597278a2aa78b6af14ebd61334f8789284c55f94594264d708ea",
+      "prefixes": 1502
+    },
+    {
+      "path": "N425.npz",
+      "sha256": "19c61c1418e0703473c4993a0753a7339bb475363f491b6c5a7c302f5a82c5f8",
+      "prefixes": 1551
+    }
+  ],
+  "checks": {
+    "325": {
+      "cell00_prefixes": 1502,
+      "matrix_mean_combination_max_error": 1.734723475976807e-18,
+      "energy_combination_max_error": 1.0164395367051604e-20,
+      "gram_eigenvalue_min": 7.040590213463654e-05,
+      "original_batch_counts": [
+        65,
+        72,
+        56,
+        86,
+        73,
+        83,
+        79,
+        87,
+        86,
+        68,
+        82,
+        78,
+        83,
+        62,
+        69,
+        75,
+        66,
+        71,
+        83,
+        78
+      ]
+    },
+    "425": {
+      "cell00_prefixes": 1551,
+      "matrix_mean_combination_max_error": 2.168404344971009e-18,
+      "energy_combination_max_error": 1.1858461261560205e-20,
+      "gram_eigenvalue_min": 0.00013555211786715952,
+      "original_batch_counts": [
+        56,
+        86,
+        80,
+        77,
+        81,
+        87,
+        86,
+        86,
+        74,
+        72,
+        68,
+        73,
+        80,
+        82,
+        93,
+        85,
+        65,
+        79,
+        78,
+        63
+      ]
+    }
+  }
+}

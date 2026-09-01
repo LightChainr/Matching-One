@@ -1,0 +1,135 @@
+{
+  "schema": "p154.prospective-transmission.contract.v1",
+  "status": "ready_for_freeze; prospective sampling remains forbidden until root supplies the actual immutable freeze commit and explicit authorization",
+  "discovery_commit": "4daae57eef5c945aa050a95cd3d5d5d77582161b",
+  "discovery_only": "All existing lag1 and sqrtN results are discovery/planning inputs, excluded from prospective estimates and covariance",
+  "Ns": [
+    85,
+    340
+  ],
+  "samples_per_N": {
+    "85": 5000000,
+    "340": 160000000
+  },
+  "batches_per_N": 200,
+  "sample_budget_rule": "fixed totals; no significance monitoring, extension, rescue source, fourth numerical template, new lag, or newly selected N after reveal",
+  "lag": 1,
+  "source": "For each final K>=1, retain the early rank probabilities at K-1, tilt configurations within each early rank by exp(t*s_(K-1)), normalize within that layer, and add one uniform vacant site. s=CB+CW in bulk units; the first-order score is s-E[s|K-1,r,g]. K=0 tangent=0.",
+  "same_source_across_models": true,
+  "source_boundary": "one-step-before-readout conditional policy; not equilibrium source s_K or sqrtN-lag source; all models use exactly this same protocol",
+  "nuisance_rule": "The conditional-policy functional is frozen, not numerical discovery estimates of mu. Re-estimate mu(K-1,r,g) and the pooled matching root on the new data and inside each paired delete-one. This is a prespecified estimator, not model-parameter refitting.",
+  "thermal_rule": "Differentiate only Bin(N,p) weights. Hold the lag, per-K source definition and microcanonical conditional mean function fixed when differentiating p.",
+  "root_bracket": [
+    0.55,
+    0.65
+  ],
+  "source_units": "derivative with respect to exp(t*bulk_cluster_count); no extra factor N",
+  "normalization": {
+    "exponent": "13/8",
+    "prefactor": "A=N^(13/8)/2",
+    "delta_cos4": {
+      "85": "2304/1445",
+      "340": "2304/1445"
+    }
+  },
+  "readout_channels": {
+    "F1": "I[K>=K_minus]",
+    "F2": "I[K>=K_plus]",
+    "q": "-1+F1+F2",
+    "E": "1-F1+F2",
+    "U_entry": "-A*P4[d_p F1]/D",
+    "U_completion": "+A*P4[d_p F2]/D",
+    "addback": "U=U_entry+U_completion; v=v_entry+v_completion. Both readout derivatives use the same FULL-source p0dot and Ddot, not separate channel roots.",
+    "interpretation": "A decomposition of a normalized readout under one source, not causal attribution of the source to different events. The distinct event-kernel tangent decomposition must not be substituted. Direct0->2 stays in q and root/slope response."
+  },
+  "models": {
+    "W_double_channel_weak": {
+      "entry_interval": [
+        -0.3,
+        0.3
+      ],
+      "completion_interval": [
+        -0.3,
+        0.3
+      ]
+    },
+    "B_entry_selective": {
+      "entry_interval": [
+        0.6,
+        null
+      ],
+      "completion_interval": [
+        -0.3,
+        0.3
+      ]
+    },
+    "C_completion_selective": {
+      "entry_interval": [
+        -0.3,
+        0.3
+      ],
+      "completion_interval": [
+        0.6,
+        null
+      ]
+    }
+  },
+  "model_scope": "Each model requires its component intervals at BOTH N85 and N340. These are mutually exclusive, nonexhaustive finite-scale numerical predictions, not three physical theories. Thresholds are declared decision resolutions, not natural constants. All three may fail, including values in the gaps or mixed/negative responses.",
+  "net_transmission_primary": {
+    "equivalence_interval": [
+      -0.5,
+      0.5
+    ],
+    "downgrade_rule": "If the simultaneous intervals for net v at BOTH N lie wholly within[-.50,.50], stop treating this lag1 source as the current main H4 explanation at this declared resolution. This is not proof of exact zero or a rejection of every source/field.",
+    "positive_transmission_rule": "If both simultaneous net-v lower bounds exceed+.50, the finite-scale positive net-transmission target survives; no continuum identity or full norm4 scaling is inferred.",
+    "otherwise": "Report negative, inconsistent or unresolved net transmission as observed; do not replace the source, alter thresholds or add samples."
+  },
+  "inference": {
+    "primary_family": "six correlated coordinates: entry,completion,net at N85 and N340",
+    "alpha": 0.05,
+    "critical_value": "Phi^-1(1-alpha/(2*6))",
+    "interval_rule": "marginal estimate +/- critical_value * paired-delete-one SE; full6x6 covariance saved; net is derived from components, not independent evidence",
+    "coverage_boundary": "Bonferroni controls multiplicity conditional on valid marginal asymptotic normal approximations; these are not exact finite-sample confidence certificates",
+    "kill_rule": "A numerical template is contradicted if any required component confidence interval has empty intersection with its declared allowed interval at either N. A remaining template is only not excluded; no forced winner.",
+    "support_rule": "Confidence intervals lying wholly within a template permit a bounded finite-scale numerical compatibility statement, not identification of a physical mechanism.",
+    "dependence": "same permutation paired across the two geometries; all K and channels share the same N-batch; explicit independent N domains, 200 delete-one batches per N; old discovery data never pooled",
+    "variance_gate": "If realized variance exceeds the protected plan, finish the fixed run and report the loss of power. No automatic top-up."
+  },
+  "power_plan": {
+    "variance_inflation": 1.25,
+    "planning_variance_source": "old lag1 canonical channel covariance; scales as old_M/new_M only for planning",
+    "hypothesis_gap": 0.3,
+    "boundary_power_scope": "approximately90.4% for a single worst-channel .30-gap rejection at N340 under the protected variance; not simultaneous probability of selecting a correct model, and not power at every point of a composite set",
+    "old_variances": {
+      "85": {
+        "samples": 100000,
+        "entry": 0.06147074038354964,
+        "completion": 0.03691972531469302,
+        "total": 0.09553577307755046
+      },
+      "340": {
+        "samples": 1000000,
+        "entry": 0.7119534361840487,
+        "completion": 0.741210414363188,
+        "total": 1.3977708743575321
+      }
+    },
+    "critical_value_numeric": 2.638257273476751,
+    "protected_worst_channel_se_N340": 0.07609669087557229,
+    "single_boundary_power_numeric": 0.9038994877598149
+  },
+  "random_domain": {
+    "tag": "P154_PROSPECTIVE_TRANSMISSION_V1_20260831",
+    "master_seed_hex": "5031353450524f31",
+    "N_seed_rule": "splitmix64(master_seed XOR splitmix64(N XOR 0x4e4f524d345631))",
+    "counter_begin": 30000000000,
+    "counter_end_exclusive_by_N": {
+      "85": 30005000000,
+      "340": 30160000000
+    },
+    "batch_rule": "counter=counter_begin+batch_id*(samples_per_N/200)+within_batch_index",
+    "independence_boundary": "The tagged(seed,N,counter) identities are new and disjoint from the reviewed discovery domains. Statistical independence still uses the standard PRNG assumption; no impossible claim of collision-free64-bit state space is made."
+  },
+  "production_gate": "run_production.py refuses sampling without a root-supplied authorization JSON naming the actual40-hex freeze_commit and matching SHA256 of contract, engine, scorer, numerical core, and vendors",
+  "resource_plan": "N340 eight shards of25 batches=20M each; N85 one shard of200 batches=5M.14 workers per assigned machine, BLAS1. Actual resource assignment by root. No new sample exists at draft time."
+}

@@ -1,0 +1,275 @@
+{
+  "edge_weight_C4_orbit_pooled": {
+    "allocation_robust": true,
+    "full": {
+      "excludes_zero": true,
+      "lower": "-165972474569492695251577821634219515559/20000000000000000000000000000000000000000000000000",
+      "midpoint": -8.298623728474635e-12,
+      "upper": "-414931186423731738128944554085548788803/50000000000000000000000000000000000000000000000000",
+      "width": 1.89e-48
+    },
+    "reason": "Delta a is nonzero and the beta-free source-midpoint sum already excludes zero",
+    "root_counterterm_part": {
+      "excludes_zero": true,
+      "lower": "129509592700177730353427316811340555053/50000000000000000000000000000000000000000000000000",
+      "midpoint": 2.5901918540035547e-12,
+      "upper": "259019185400355460706854633622681110143/100000000000000000000000000000000000000000000000000",
+      "width": 3.7e-49
+    },
+    "source_midpoint_part": {
+      "excludes_zero": true,
+      "lower": "-1088881558247818936964743741793778687901/100000000000000000000000000000000000000000000000000",
+      "midpoint": -1.0888815582478189e-11,
+      "upper": "-272220389561954734241185935448444671937/25000000000000000000000000000000000000000000000000",
+      "width": 1.53e-48
+    }
+  },
+  "global": {
+    "M_t": {
+      "excludes_zero": true,
+      "lower": "28443350134726077866641415194058973737284273470841/20000000000000000000000000000000000000000000000000",
+      "midpoint": 1.422167506736304,
+      "upper": "142216750673630389333207075970294868689781585376501/100000000000000000000000000000000000000000000000000",
+      "width": 3.360218022296e-38
+    },
+    "R": {
+      "excludes_zero": true,
+      "lower": "942085130126561220670038131767729943515290119959/100000000000000000000000000000000000000000000000000",
+      "midpoint": 0.009420851301265612,
+      "upper": "58880320632910076291877383235483121645414254837/6250000000000000000000000000000000000000000000000",
+      "width": 2.811337957433e-38
+    },
+    "Y_t": {
+      "excludes_zero": true,
+      "lower": "1339802860645437984719061313129171465705977792119/100000000000000000000000000000000000000000000000000",
+      "midpoint": 0.013398028606454379,
+      "upper": "669901430322718992359530656564585734836257585653/50000000000000000000000000000000000000000000000000",
+      "width": 3.966537379187e-38
+    },
+    "beta_component": {
+      "excludes_zero": true,
+      "lower": "-11008152662969711901641197313844550424173914821/100000000000000000000000000000000000000000000000000",
+      "midpoint": -0.00011008152662969712,
+      "upper": "-1100815266296971190164119731384455042349181949/10000000000000000000000000000000000000000000000000",
+      "width": 6.82095331e-42
+    },
+    "mu_H_axis": {
+      "excludes_zero": true,
+      "lower": "13828669835950192125736140977078681604498395290871/20000000000000000000000000000000000000000000000000",
+      "midpoint": 0.6914334917975096,
+      "upper": "69143349179750960628680704885393408023895313431563/100000000000000000000000000000000000000000000000000",
+      "width": 1.403336977208e-38
+    },
+    "mu_a_axis_component": {
+      "excludes_zero": true,
+      "lower": "25381075834390419432241591562336924183540659347/100000000000000000000000000000000000000000000000000",
+      "midpoint": 0.0002538107583439042,
+      "upper": "25381075834390419432241591562336924184063636637/100000000000000000000000000000000000000000000000000",
+      "width": 5.2297729e-42
+    },
+    "root_p": {
+      "excludes_zero": true,
+      "lower": "1185331078656453492302851399693093801267/2000000000000000000000000000000000000000",
+      "midpoint": 0.5926655393282267,
+      "upper": "5926655393282267461514256998465469006339/10000000000000000000000000000000000000000",
+      "width": 4e-40
+    }
+  },
+  "graph_contract": {
+    "edge_weight": "W(e)=S_0+S_1; reported both for one fixed direction and its frozen C4 orbit",
+    "global_freeze": "p,R,mu_H,mu_a,beta_lambda are computed before cell disintegration from both complete geometries",
+    "landing_rank_slow_variable": "rank_index=q+1 together with B/W landing labels",
+    "physical_edge": "the Bernoulli pair obtained by changing only X_z from 0 to 1",
+    "positive_mass": "P_i=(1/2) nu_{g,-z}(eta) w_i for one fixed-frame physical edge",
+    "signed_mass": "S_i=P_i Htilde_i[(a_i-mu_a)u_i-beta_lambda b_i]",
+    "source_Bell_slow_variable": "the x4+y4 restriction of the common C_joint map",
+    "vertex": "(geometry,eta,z,state,rank_index,Bell,C_joint,B_outer,W_outer)"
+  },
+  "inputs": {
+    "baseline_axis": {
+      "path": "experiments/p537-landing-matrix-preflight-20260901/baseline-axis.csv",
+      "sha256": "2d23fecc98d276d9ad15ad1867199cd308f0570cb5040ef94eb6b923b4c53458"
+    },
+    "baseline_root": {
+      "path": "experiments/p537-landing-matrix-preflight-20260901/baseline-root.json",
+      "sha256": "df4ab225ff499131b744c70ec569ad21b0229f2256e71a585c680faae51bac3a"
+    },
+    "baseline_tilted": {
+      "path": "experiments/p537-landing-matrix-preflight-20260901/baseline-tilted.csv",
+      "sha256": "225031e612929ed922ba75c55e76703d59990f5283e7ac39b94f022841798da5"
+    },
+    "global_source": {
+      "path": "experiments/p537-one-defect-gate-20260901/global-diag1.csv",
+      "sha256": "eb330d83d4a2535bc688f75a291577fedfff8526f1f73ccaf038d8e8951d8fdd"
+    },
+    "witness": {
+      "path": "results/p537-one-defect-gate-20260901/witness.json",
+      "sha256": "0ae910ab9c86ec41dbfc1566fcd6ff9202e0dc4936f0b6e6a2d17880ab701402"
+    }
+  },
+  "margin_boundary": {
+    "full_graph_zero_margins_checked": false,
+    "reason": "Stop rule A is existential; S*1 and 1^T*S are full-graph checks needed only if no diagonal edge survives"
+  },
+  "schema": "matching-one/p537-one-defect-score/v1",
+  "scope": [
+    "This exact finite N25 edge disproves an automatic two-spatial-defect or six-arm gain for the full physical decomposition.",
+    "It is a local contact/collision witness (arm_mask=3), not an ordinary separated four-arm event or an asymptotic lower bound.",
+    "The beta-free source part is nonzero, so the decision does not rely on counterterm allocation across Bell cells."
+  ],
+  "states": [
+    {
+      "full_Si_C4_orbit_pooled": {
+        "excludes_zero": true,
+        "lower": "-130551902789924216545300880247989443713/12500000000000000000000000000000000000000000000000",
+        "midpoint": -1.0444152223193937e-11,
+        "upper": "-1044415222319393732362407041983915549537/100000000000000000000000000000000000000000000000000",
+        "width": 1.67e-48
+      },
+      "full_Si_fixed_frame_pooled": {
+        "excludes_zero": true,
+        "lower": "-130551902789924216545300880247989443713/50000000000000000000000000000000000000000000000000",
+        "midpoint": -2.6110380557984842e-12,
+        "upper": "-32637975697481054136325220061997360923/12500000000000000000000000000000000000000000000000",
+        "width": 4.2e-49
+      },
+      "positive_mass_Pi_fixed_frame_pooled": {
+        "excludes_zero": true,
+        "lower": "122393538740873611349820772840773575169629/100000000000000000000000000000000000000000000000000",
+        "midpoint": 1.2239353874087361e-09,
+        "upper": "30598384685218402837455193210193393793093/25000000000000000000000000000000000000000000000000",
+        "width": 2.743e-47
+      },
+      "root_counterterm_Si_C4_orbit_pooled": {
+        "excludes_zero": true,
+        "lower": "95386359691387750145839954260102576223/100000000000000000000000000000000000000000000000000",
+        "midpoint": 9.538635969138776e-13,
+        "upper": "47693179845693875072919977130051288121/50000000000000000000000000000000000000000000000000",
+        "width": 1.9e-49
+      },
+      "root_counterterm_Si_fixed_frame_pooled": {
+        "excludes_zero": true,
+        "lower": "4769317984569387507291997713005128811/20000000000000000000000000000000000000000000000000",
+        "midpoint": 2.384658992284694e-13,
+        "upper": "23846589922846937536459988565025644061/100000000000000000000000000000000000000000000000000",
+        "width": 6e-50
+      },
+      "source_midpoint_Si_C4_orbit_pooled": {
+        "excludes_zero": true,
+        "lower": "-1139801582010781482508246996244018125927/100000000000000000000000000000000000000000000000000",
+        "midpoint": -1.1398015820107815e-11,
+        "upper": "-569900791005390741254123498122009062889/50000000000000000000000000000000000000000000000000",
+        "width": 1.49e-48
+      },
+      "source_midpoint_Si_fixed_frame_pooled": {
+        "excludes_zero": true,
+        "lower": "-142475197751347685313530874530502265741/50000000000000000000000000000000000000000000000000",
+        "midpoint": -2.8495039550269537e-12,
+        "upper": "-71237598875673842656765437265251132861/25000000000000000000000000000000000000000000000000",
+        "width": 3.8e-49
+      },
+      "state": 0
+    },
+    {
+      "full_Si_C4_orbit_pooled": {
+        "excludes_zero": true,
+        "lower": "214552849471930256104517933812817971909/100000000000000000000000000000000000000000000000000",
+        "midpoint": 2.1455284947193024e-12,
+        "upper": "214552849471930256104517933812817971931/100000000000000000000000000000000000000000000000000",
+        "width": 2.2e-49
+      },
+      "full_Si_fixed_frame_pooled": {
+        "excludes_zero": true,
+        "lower": "53638212367982564026129483453204492977/100000000000000000000000000000000000000000000000000",
+        "midpoint": 5.363821236798256e-13,
+        "upper": "53638212367982564026129483453204492983/100000000000000000000000000000000000000000000000000",
+        "width": 6e-50
+      },
+      "positive_mass_Pi_fixed_frame_pooled": {
+        "excludes_zero": true,
+        "lower": "1424646125516022931274914794369661396637/800000000000000000000000000000000000000000000000",
+        "midpoint": 1.7808076568950286e-09,
+        "upper": "178080765689502866409364349296207674583561/100000000000000000000000000000000000000000000000000",
+        "width": 3.936e-47
+      },
+      "root_counterterm_Si_C4_orbit_pooled": {
+        "excludes_zero": true,
+        "lower": "163632825708967710561014679362578533883/100000000000000000000000000000000000000000000000000",
+        "midpoint": 1.6363282570896771e-12,
+        "upper": "163632825708967710561014679362578533901/100000000000000000000000000000000000000000000000000",
+        "width": 1.8e-49
+      },
+      "root_counterterm_Si_fixed_frame_pooled": {
+        "excludes_zero": true,
+        "lower": "4090820642724192764025366984064463347/10000000000000000000000000000000000000000000000000",
+        "midpoint": 4.090820642724193e-13,
+        "upper": "10227051606810481910063417460161158369/25000000000000000000000000000000000000000000000000",
+        "width": 6e-50
+      },
+      "source_midpoint_Si_C4_orbit_pooled": {
+        "excludes_zero": true,
+        "lower": "25460011881481272771751627225119719013/50000000000000000000000000000000000000000000000000",
+        "midpoint": 5.092002376296254e-13,
+        "upper": "5092002376296254554350325445023943803/10000000000000000000000000000000000000000000000000",
+        "width": 4e-50
+      },
+      "source_midpoint_Si_fixed_frame_pooled": {
+        "excludes_zero": true,
+        "lower": "6365002970370318192937906806279929753/50000000000000000000000000000000000000000000000000",
+        "midpoint": 1.2730005940740636e-13,
+        "upper": "3182501485185159096468953403139964877/25000000000000000000000000000000000000000000000000",
+        "width": 2e-50
+      },
+      "state": 1
+    }
+  ],
+  "status": "allocation_robust_physical_diagonal_edge_nonzero",
+  "stop_decision": {
+    "blanket_full_graph_two_independent_defect_route": "falsified",
+    "contact_collision_sector": "must remain in the leading signed functional",
+    "next_object": "the contact/collision contribution to the surviving leading four-arm signed functional",
+    "no_further_graph_enumeration_required": true,
+    "rule": "first physical edge changing both slow variables with nonzero full Schur weight",
+    "separated_sector": "open after the fixed distance-at-most-one contact split; a six-arm gain still requires disjoint-annulus localization",
+    "triggered": true
+  },
+  "topology": {
+    "bell_before_after": [
+      9240712,
+      6848576
+    ],
+    "collar": {
+      "alternating_four_arm": false,
+      "arm_mask": 3,
+      "arm_order": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ],
+      "corner_mask_NE_SE_SW_NW": 12,
+      "outer_black_join_J_B": 0,
+      "outer_join_identity_applicable": false,
+      "outer_white_join_J_W": 0
+    },
+    "delta_a_exact": "-1/100",
+    "g16_before_after": [
+      4,
+      0
+    ],
+    "joint_C_before_after": [
+      23090870354448,
+      92359816642816
+    ],
+    "off_port": {
+      "black_landing_component_has_degree3_vertex_outside_z_ports": false,
+      "local_black_arm_contact_mask": 3,
+      "source_touches_global_black_landing_component": true
+    },
+    "rank_before_after": [
+      0,
+      1
+    ]
+  },
+  "transition_id": "axis-N25:x0:zE:y(-1,-1):eta12567:0to1"
+}

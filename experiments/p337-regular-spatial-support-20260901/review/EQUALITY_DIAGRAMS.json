@@ -1,0 +1,313 @@
+{
+  "source_commit": "2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb",
+  "source_path": "notes/local-pair-two-insertion-algebra.md",
+  "source_formula": "Section 2 equation (5), then average with quarter turn",
+  "coefficient_basis": "c(Q)=(u+v/(Q-2)+w/(Q*(Q-2)))/4",
+  "c4": "4*c(1)=u-v-w",
+  "dc4": "4*c'(1)=-v",
+  "raw_delta_product_terms": 56,
+  "terms": [
+    {
+      "partition": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "numerator_basis": [
+        -4,
+        -8,
+        0
+      ],
+      "c4": 4,
+      "dc4": 8
+    },
+    {
+      "partition": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "numerator_basis": [
+        0,
+        4,
+        0
+      ],
+      "c4": -4,
+      "dc4": -4
+    },
+    {
+      "partition": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "numerator_basis": [
+        0,
+        4,
+        0
+      ],
+      "c4": -4,
+      "dc4": -4
+    },
+    {
+      "partition": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "numerator_basis": [
+        1,
+        0,
+        4
+      ],
+      "c4": -3,
+      "dc4": 0
+    },
+    {
+      "partition": [
+        0,
+        0,
+        1,
+        2
+      ],
+      "numerator_basis": [
+        0,
+        -1,
+        -4
+      ],
+      "c4": 5,
+      "dc4": 1
+    },
+    {
+      "partition": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "numerator_basis": [
+        0,
+        4,
+        0
+      ],
+      "c4": -4,
+      "dc4": -4
+    },
+    {
+      "partition": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "numerator_basis": [
+        2,
+        0,
+        0
+      ],
+      "c4": 2,
+      "dc4": 0
+    },
+    {
+      "partition": [
+        0,
+        1,
+        0,
+        2
+      ],
+      "numerator_basis": [
+        0,
+        -2,
+        0
+      ],
+      "c4": 2,
+      "dc4": 2
+    },
+    {
+      "partition": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "numerator_basis": [
+        1,
+        0,
+        4
+      ],
+      "c4": -3,
+      "dc4": 0
+    },
+    {
+      "partition": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "numerator_basis": [
+        0,
+        4,
+        0
+      ],
+      "c4": -4,
+      "dc4": -4
+    },
+    {
+      "partition": [
+        0,
+        1,
+        1,
+        2
+      ],
+      "numerator_basis": [
+        0,
+        -1,
+        -4
+      ],
+      "c4": 5,
+      "dc4": 1
+    },
+    {
+      "partition": [
+        0,
+        1,
+        2,
+        0
+      ],
+      "numerator_basis": [
+        0,
+        -1,
+        -4
+      ],
+      "c4": 5,
+      "dc4": 1
+    },
+    {
+      "partition": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "numerator_basis": [
+        0,
+        -2,
+        0
+      ],
+      "c4": 2,
+      "dc4": 2
+    },
+    {
+      "partition": [
+        0,
+        1,
+        2,
+        2
+      ],
+      "numerator_basis": [
+        0,
+        -1,
+        -4
+      ],
+      "c4": 5,
+      "dc4": 1
+    },
+    {
+      "partition": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "numerator_basis": [
+        0,
+        0,
+        8
+      ],
+      "c4": -8,
+      "dc4": 0
+    }
+  ],
+  "single_closure_controls": [
+    {
+      "partition": "0000",
+      "value4": 0,
+      "derivative4": 0
+    },
+    {
+      "partition": "0001",
+      "value4": 0,
+      "derivative4": 0
+    },
+    {
+      "partition": "0010",
+      "value4": 0,
+      "derivative4": 0
+    },
+    {
+      "partition": "0011",
+      "value4": 0,
+      "derivative4": -1
+    },
+    {
+      "partition": "0012",
+      "value4": 0,
+      "derivative4": 2
+    },
+    {
+      "partition": "0100",
+      "value4": 0,
+      "derivative4": 0
+    },
+    {
+      "partition": "0101",
+      "value4": 0,
+      "derivative4": -2
+    },
+    {
+      "partition": "0102",
+      "value4": 0,
+      "derivative4": 4
+    },
+    {
+      "partition": "0110",
+      "value4": 0,
+      "derivative4": -1
+    },
+    {
+      "partition": "0111",
+      "value4": 0,
+      "derivative4": 0
+    },
+    {
+      "partition": "0112",
+      "value4": 0,
+      "derivative4": 2
+    },
+    {
+      "partition": "0120",
+      "value4": 0,
+      "derivative4": 2
+    },
+    {
+      "partition": "0121",
+      "value4": 0,
+      "derivative4": 4
+    },
+    {
+      "partition": "0122",
+      "value4": 0,
+      "derivative4": 2
+    },
+    {
+      "partition": "0123",
+      "value4": 0,
+      "derivative4": 4
+    }
+  ]
+}

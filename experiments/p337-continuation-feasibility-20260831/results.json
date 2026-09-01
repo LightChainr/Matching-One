@@ -1,0 +1,167 @@
+{
+  "decision": "endpoint_0_1_plus_support_and_hole_tail_do_not_determine_homogeneous_U",
+  "scope": "Information-only moment/Bernstein relaxation witness, not two physical graph laws; no new source.",
+  "fixed_chart": "p_A=1-epsilon*(1-p), p_B=p; evaluation at epsilon=1,t=0",
+  "source": "S*=C+F4+Bvac unchanged; t=0 already obstructs a continuation guarantee for a family containing t=0",
+  "N": 50,
+  "delta_cos4": "-1152/625",
+  "inputs": [
+    {
+      "commit": "f5c4a74a20bad8589c39e1034cfb209462110dbe",
+      "source_path": "results/p337-closed-source-n25/axis.csv",
+      "local_path": "inputs/endpoint-axis.csv",
+      "sha256": "29991f11aaa5bea53bc8193fb0990dcb0c4c9fa98af8c0bdea975f4144763189"
+    },
+    {
+      "commit": "f5c4a74a20bad8589c39e1034cfb209462110dbe",
+      "source_path": "results/p337-closed-source-n25/tilted.csv",
+      "local_path": "inputs/endpoint-tilted.csv",
+      "sha256": "09073ec9ebcf6d8aca804019f57d5141bfa93c58017f2f59df0b7461b217cc25"
+    },
+    {
+      "commit": "f5c4a74a20bad8589c39e1034cfb209462110dbe",
+      "source_path": "results/p337-endpoint-defect/first.csv",
+      "local_path": "inputs/defect-first.csv",
+      "sha256": "dfd7cd7ebe9ee6bd0a2f0f97db2f286979301d103bb7809ae7bfafb44ab6e219"
+    },
+    {
+      "commit": "f5c4a74a20bad8589c39e1034cfb209462110dbe",
+      "source_path": "results/p337-endpoint-defect/second.csv",
+      "local_path": "inputs/defect-second.csv",
+      "sha256": "4cd38c8da231ea79f3839e98115c6b0234cded17366a65322ae763230b0da8b3"
+    }
+  ],
+  "readout_rules_on_unknown_hole_layers": {
+    "A": "q=2*B1*B2-1; E=q^2=1",
+    "B": "q=B1*B2+B1*B3-1; E=q^2"
+  },
+  "shared_q_on_every_B_count": true,
+  "all_original_0_1_hole_moments_unchanged": true,
+  "new_hole_layer_counts_enumerated": 0,
+  "new_random_samples": 0,
+  "cloud_jobs": 0,
+  "same_entire_q_profiles_and_common_root_in_both_completions": true,
+  "root_initial_bracket": [
+    "7/10",
+    "71/100"
+  ],
+  "unique_common_root_on_entire_open_unit_interval": true,
+  "root_uniqueness_checks": {
+    "uniform_Q_upper_for_0_p_le_070": {
+      "fraction": "-4599403645183235627487509/250000000000000000000000000",
+      "approx": -0.018397614580732944
+    },
+    "four_original_01_q_Bernstein_mean_sequences_nondecreasing": true,
+    "four_original_01_q_at_071": [
+      {
+        "fraction": "48468237011367081372997546705281639350272015574251/50000000000000000000000000000000000000000000000000",
+        "approx": 0.9693647402273416
+      },
+      {
+        "fraction": "48825565927239479775210906155701983795268730371751/50000000000000000000000000000000000000000000000000",
+        "approx": 0.9765113185447896
+      },
+      {
+        "fraction": "48294111938791361510961657348787238347272550195053/50000000000000000000000000000000000000000000000000",
+        "approx": 0.9658822387758272
+      },
+      {
+        "fraction": "24302036563697696058235923580800204430042891958801/25000000000000000000000000000000000000000000000000",
+        "approx": 0.9720814625479078
+      }
+    ],
+    "gq_at_071": {
+      "fraction": "41/5000",
+      "approx": 0.0082
+    },
+    "reason": "Q<0 on (0,.70]; Q strictly increasing on [.70,.71]; Q>0 on [.71,1). No claim of cross-hole monotonicity."
+  },
+  "whole_initial_bracket_slope_lower_bound": {
+    "fraction": "81859811955889010999424621256722278965212577883771/31250000000000000000000000000000000000000000000000",
+    "approx": 2.6195139825884484
+  },
+  "common_root": {
+    "lower": "14128968820039465416311728302907697/20000000000000000000000000000000000",
+    "upper": "70644844100197327081558641514538487/100000000000000000000000000000000000",
+    "midpoint_approx": 0.7064484410019732,
+    "width_approx": 2e-35
+  },
+  "common_positive_slope": {
+    "lower": "71981646763109065647059974372524561/25000000000000000000000000000000000",
+    "upper": "287926587052436262588239897490098249/100000000000000000000000000000000000",
+    "midpoint_approx": 2.8792658705243626,
+    "width_approx": 5e-35
+  },
+  "epsilon1_tail_at_root": {
+    "lower": "24951981324268983068534919620377693/25000000000000000000000000000000000",
+    "upper": "99807925297075932274139678481510773/100000000000000000000000000000000000",
+    "midpoint_approx": 0.9980792529707593,
+    "width_approx": 1e-35
+  },
+  "raw_Eprime_orientation_differences": [
+    {
+      "lower": "-9300431972173249315596096836827221/50000000000000000000000000000000000",
+      "upper": "-18600863944346498631192193673654437/100000000000000000000000000000000000",
+      "midpoint_approx": -0.186008639443465,
+      "width_approx": 5e-35
+    },
+    {
+      "lower": "18547009800146767322553188629543691/100000000000000000000000000000000000",
+      "upper": "1159188112509172957659574289346481/6250000000000000000000000000000000",
+      "midpoint_approx": 0.1854700980014677,
+      "width_approx": 5e-35
+    }
+  ],
+  "U_A_first_B_second": {
+    "lower": "101035767864596795405034833297067217/10000000000000000000000000000000000",
+    "upper": "505178839322983977025174166485336197/50000000000000000000000000000000000",
+    "midpoint_approx": 10.10357678645968,
+    "width_approx": 2.24e-33
+  },
+  "U_B_first_A_second": {
+    "lower": "-1007432440964433082128289846217986321/100000000000000000000000000000000000",
+    "upper": "-503716220482216541064144923108993049/50000000000000000000000000000000000",
+    "midpoint_approx": -10.074324409644332,
+    "width_approx": 2.23e-33
+  },
+  "necessary_width_of_any_information_only_U_interval": {
+    "lower": "2017790119610401036178638179188658269/100000000000000000000000000000000000",
+    "upper": "1008895059805200518089319089594329357/50000000000000000000000000000000000",
+    "midpoint_approx": 20.17790119610401,
+    "width_approx": 4.45e-33
+  },
+  "derivative_budget_at_p_one_half": {
+    "tau": {
+      "fraction": "16777203/16777216",
+      "approx": 0.9999992251396179
+    },
+    "positive_score_mass": {
+      "fraction": "1580122514142275/281474976710656",
+      "approx": 5.613722870173898
+    },
+    "negative_score_mass": {
+      "fraction": "1580132580471875/281474976710656",
+      "approx": 5.613758632960764
+    },
+    "B1_absolute_score_mass": {
+      "fraction": "1580127547307075/140737488355328",
+      "approx": 11.227481503134662
+    },
+    "known_01_pooled_q_derivative": {
+      "fraction": "1430666125/70368744177664",
+      "approx": 2.033098844833603e-05
+    },
+    "permitted_pooled_slope_envelope": {
+      "lower": "-1122746117214621364155391347594559193/100000000000000000000000000000000000",
+      "upper": "1122750183412311031361241475678980351/100000000000000000000000000000000000",
+      "midpoint_approx": 2.033098844833603e-05,
+      "width_approx": 22.454963006269324
+    },
+    "unscaled_P4_Eprime_remainder_bound": {
+      "fraction": "987579717066921875/162129586585337856",
+      "approx": 6.091298558558302
+    },
+    "normalization_denominator_positive_certified_by_this_budget": false
+  },
+  "readme": "See THEORY.md for the derivative/root/U error budget and the exact limits of the witness."
+}

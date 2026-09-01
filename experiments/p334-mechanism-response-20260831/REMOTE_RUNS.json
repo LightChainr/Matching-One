@@ -1,0 +1,77 @@
+{
+  "machine": "DevEnvC_HZsCM6",
+  "instance_id": "033945d8bf8b47a7acf475c595169e07",
+  "remote_directory": "/workspace/matching-p334-local-rank-20260831",
+  "python_environment": ".venv (Python3.9.9/numpy1.26.4/scipy1.13.1)",
+  "compiler": "GCC10.3.1",
+  "initial_authentication": "SSH denied after startup; parent task restored authentication; this subagent did not reset a key.",
+  "run_attempts": [
+    {
+      "stage": "original pair-difference",
+      "attempt": 1,
+      "status": "numeric calculation complete; JSON int64 serialization failed",
+      "script_sha256": "cb999458850957ff3e227638fe11ab1d9cab085fa6a81cce7ee02765499c9ed4"
+    },
+    {
+      "stage": "original pair-difference",
+      "attempt": 2,
+      "status": "success"
+    },
+    {
+      "stage": "exact census score",
+      "attempt": 1,
+      "status": "success"
+    },
+    {
+      "stage": "fixed cell00 suffix extension",
+      "attempt": 1,
+      "status": "success; preflight counted within781568tail budget"
+    },
+    {
+      "stage": "64/72 analysis",
+      "attempt": 1,
+      "status": "success"
+    }
+  ],
+  "successful_stage_receipts": [
+    {
+      "stage": "results",
+      "receipt_path": "results/run_receipt.json",
+      "receipt_sha256": "711d83bd129584ec5cddecfd423fe534e2648a2c484904fadc39f47c22b76ab1",
+      "elapsed_seconds": 0.5743293762207031,
+      "host": "033945d8bf8b47a7acf475c595169e07"
+    },
+    {
+      "stage": "results-exact-score",
+      "receipt_path": "results-exact-score/run_receipt.json",
+      "receipt_sha256": "5aaf7dce58fbc2fd621d647b69e3e5771c10fcef561c209e30770de746f2d64d",
+      "elapsed_seconds": 3.8493242263793945,
+      "host": "033945d8bf8b47a7acf475c595169e07"
+    },
+    {
+      "stage": "extension",
+      "receipt_path": "extension/run_receipt.json",
+      "receipt_sha256": "f1d470548c3dc64e77b17f3326303c24f538c7b3679d56c169df0b24fd62a5b8",
+      "elapsed_seconds": 4.164147615432739,
+      "host": "033945d8bf8b47a7acf475c595169e07"
+    },
+    {
+      "stage": "results-extension",
+      "receipt_path": "results-extension/run_receipt.json",
+      "receipt_sha256": "e355698abf07efc663b4e4d37a958d5b9907be488462aa78db5e1dfc8bb7e56a",
+      "elapsed_seconds": 2.2196881771087646,
+      "host": "033945d8bf8b47a7acf475c595169e07"
+    }
+  ],
+  "new_tail_paths": 781568,
+  "new_prefix_samples": 0,
+  "scope": "No other task worktree modified; no Git commit/push/GitHub write.",
+  "shutdown": {
+    "verified_at": "2026-08-31T18:26:56.649603+08:00",
+    "target_state": "Ready",
+    "scientific_jobs_at_shutdown": "none observed; only system processes",
+    "canonical_port_10025_listener": "none after helper stop",
+    "fleet_snapshot": "all five Ready",
+    "TV2N0X": "handled by parent; never started or stopped by this subagent"
+  }
+}

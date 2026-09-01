@@ -1,0 +1,1019 @@
+{
+  "scope": "feasibility only; no N50 scientific score; fixed t=0 first source moments",
+  "CPU_hard_limit_seconds": 55,
+  "CPU_soft_limit_seconds": 45,
+  "RSS_stop_mib": 500,
+  "RSS_check_interval_seconds": 0.05,
+  "tiny_controls": [
+    {
+      "geometry": [
+        3,
+        0
+      ],
+      "N": 9,
+      "status": "complete",
+      "state_cap": 50000,
+      "fixed_order": "integer_period_torus quotient-key sorted representatives",
+      "max_frontier_vertices": 8,
+      "frontier_widths_all_layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        0
+      ],
+      "max_states": 256,
+      "layers": [
+        {
+          "processed_vertices": 1,
+          "frontier_vertices": 1,
+          "states_including_K_and_partial_q": 2,
+          "represented_prefix_assignments": 2,
+          "partial_q_min": -1,
+          "partial_q_max": 0,
+          "cpu_seconds": 0.00019900000000006024,
+          "cumulative_process_peak_rss_mib": 39.3125
+        },
+        {
+          "processed_vertices": 2,
+          "frontier_vertices": 2,
+          "states_including_K_and_partial_q": 4,
+          "represented_prefix_assignments": 4,
+          "partial_q_min": -1,
+          "partial_q_max": 0,
+          "cpu_seconds": 0.00021300000000001873,
+          "cumulative_process_peak_rss_mib": 39.3125
+        },
+        {
+          "processed_vertices": 3,
+          "frontier_vertices": 3,
+          "states_including_K_and_partial_q": 8,
+          "represented_prefix_assignments": 8,
+          "partial_q_min": -1,
+          "partial_q_max": 1,
+          "cpu_seconds": 0.00022700000000008824,
+          "cumulative_process_peak_rss_mib": 39.3125
+        },
+        {
+          "processed_vertices": 4,
+          "frontier_vertices": 4,
+          "states_including_K_and_partial_q": 16,
+          "represented_prefix_assignments": 16,
+          "partial_q_min": -1,
+          "partial_q_max": 1,
+          "cpu_seconds": 0.00024900000000005473,
+          "cumulative_process_peak_rss_mib": 39.3125
+        },
+        {
+          "processed_vertices": 5,
+          "frontier_vertices": 5,
+          "states_including_K_and_partial_q": 32,
+          "represented_prefix_assignments": 32,
+          "partial_q_min": -1,
+          "partial_q_max": 1,
+          "cpu_seconds": 0.000300000000000078,
+          "cumulative_process_peak_rss_mib": 39.3125
+        },
+        {
+          "processed_vertices": 6,
+          "frontier_vertices": 6,
+          "states_including_K_and_partial_q": 64,
+          "represented_prefix_assignments": 64,
+          "partial_q_min": -1,
+          "partial_q_max": 1,
+          "cpu_seconds": 0.00040800000000007497,
+          "cumulative_process_peak_rss_mib": 39.3125
+        },
+        {
+          "processed_vertices": 7,
+          "frontier_vertices": 7,
+          "states_including_K_and_partial_q": 128,
+          "represented_prefix_assignments": 128,
+          "partial_q_min": -1,
+          "partial_q_max": 2,
+          "cpu_seconds": 0.0006090000000000817,
+          "cumulative_process_peak_rss_mib": 39.3125
+        },
+        {
+          "processed_vertices": 8,
+          "frontier_vertices": 8,
+          "states_including_K_and_partial_q": 256,
+          "represented_prefix_assignments": 256,
+          "partial_q_min": -1,
+          "partial_q_max": 2,
+          "cpu_seconds": 0.0010930000000000106,
+          "cumulative_process_peak_rss_mib": 39.328125
+        },
+        {
+          "processed_vertices": 9,
+          "frontier_vertices": 0,
+          "states_including_K_and_partial_q": 15,
+          "represented_prefix_assignments": 512,
+          "partial_q_min": -1,
+          "partial_q_max": 1,
+          "cpu_seconds": 0.0018740000000000423,
+          "cumulative_process_peak_rss_mib": 39.328125
+        }
+      ],
+      "cpu_seconds": 0.0018920000000000048,
+      "cumulative_process_peak_rss_mib": 39.328125,
+      "independent_reference": {
+        "existing_entry": "integer_period_torus.classify_configuration",
+        "full_configurations_checked": 512,
+        "cpu_seconds": 0.014094999999999969,
+        "cumulative_process_peak_rss_mib": 39.328125
+      },
+      "exact_K_q_count_and_sumS_equal": true,
+      "histogram": [
+        {
+          "k": 0,
+          "q": -1,
+          "count": 1,
+          "sum_sstar": 19
+        },
+        {
+          "k": 1,
+          "q": -1,
+          "count": 9,
+          "sum_sstar": 144
+        },
+        {
+          "k": 2,
+          "q": -1,
+          "count": 36,
+          "sum_sstar": 468
+        },
+        {
+          "k": 3,
+          "q": -1,
+          "count": 78,
+          "sum_sstar": 780
+        },
+        {
+          "k": 3,
+          "q": 0,
+          "count": 6,
+          "sum_sstar": 66
+        },
+        {
+          "k": 4,
+          "q": -1,
+          "count": 90,
+          "sum_sstar": 648
+        },
+        {
+          "k": 4,
+          "q": 0,
+          "count": 36,
+          "sum_sstar": 288
+        },
+        {
+          "k": 5,
+          "q": -1,
+          "count": 45,
+          "sum_sstar": 198
+        },
+        {
+          "k": 5,
+          "q": 0,
+          "count": 72,
+          "sum_sstar": 432
+        },
+        {
+          "k": 5,
+          "q": 1,
+          "count": 9,
+          "sum_sstar": 54
+        },
+        {
+          "k": 6,
+          "q": 0,
+          "count": 48,
+          "sum_sstar": 204
+        },
+        {
+          "k": 6,
+          "q": 1,
+          "count": 36,
+          "sum_sstar": 180
+        },
+        {
+          "k": 7,
+          "q": 1,
+          "count": 36,
+          "sum_sstar": 180
+        },
+        {
+          "k": 8,
+          "q": 1,
+          "count": 9,
+          "sum_sstar": 63
+        },
+        {
+          "k": 9,
+          "q": 1,
+          "count": 1,
+          "sum_sstar": 10
+        }
+      ]
+    },
+    {
+      "geometry": [
+        3,
+        2
+      ],
+      "N": 13,
+      "status": "complete",
+      "state_cap": 50000,
+      "fixed_order": "integer_period_torus quotient-key sorted representatives",
+      "max_frontier_vertices": 10,
+      "frontier_widths_all_layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        10,
+        8,
+        0
+      ],
+      "max_states": 2048,
+      "layers": [
+        {
+          "processed_vertices": 1,
+          "frontier_vertices": 1,
+          "states_including_K_and_partial_q": 2,
+          "represented_prefix_assignments": 2,
+          "partial_q_min": -1,
+          "partial_q_max": 0,
+          "cpu_seconds": 0.00024100000000004673,
+          "cumulative_process_peak_rss_mib": 39.328125
+        },
+        {
+          "processed_vertices": 2,
+          "frontier_vertices": 2,
+          "states_including_K_and_partial_q": 4,
+          "represented_prefix_assignments": 4,
+          "partial_q_min": -1,
+          "partial_q_max": 0,
+          "cpu_seconds": 0.0002510000000000012,
+          "cumulative_process_peak_rss_mib": 39.328125
+        },
+        {
+          "processed_vertices": 3,
+          "frontier_vertices": 3,
+          "states_including_K_and_partial_q": 8,
+          "represented_prefix_assignments": 8,
+          "partial_q_min": -1,
+          "partial_q_max": 0,
+          "cpu_seconds": 0.0002649999999999597,
+          "cumulative_process_peak_rss_mib": 39.328125
+        },
+        {
+          "processed_vertices": 4,
+          "frontier_vertices": 4,
+          "states_including_K_and_partial_q": 16,
+          "represented_prefix_assignments": 16,
+          "partial_q_min": -1,
+          "partial_q_max": 0,
+          "cpu_seconds": 0.00029000000000001247,
+          "cumulative_process_peak_rss_mib": 39.328125
+        },
+        {
+          "processed_vertices": 5,
+          "frontier_vertices": 5,
+          "states_including_K_and_partial_q": 32,
+          "represented_prefix_assignments": 32,
+          "partial_q_min": -2,
+          "partial_q_max": 1,
+          "cpu_seconds": 0.0003410000000000357,
+          "cumulative_process_peak_rss_mib": 39.328125
+        },
+        {
+          "processed_vertices": 6,
+          "frontier_vertices": 6,
+          "states_including_K_and_partial_q": 64,
+          "represented_prefix_assignments": 64,
+          "partial_q_min": -2,
+          "partial_q_max": 1,
+          "cpu_seconds": 0.0004410000000000247,
+          "cumulative_process_peak_rss_mib": 39.328125
+        },
+        {
+          "processed_vertices": 7,
+          "frontier_vertices": 7,
+          "states_including_K_and_partial_q": 128,
+          "represented_prefix_assignments": 128,
+          "partial_q_min": -2,
+          "partial_q_max": 1,
+          "cpu_seconds": 0.0006509999999999572,
+          "cumulative_process_peak_rss_mib": 39.328125
+        },
+        {
+          "processed_vertices": 8,
+          "frontier_vertices": 8,
+          "states_including_K_and_partial_q": 256,
+          "represented_prefix_assignments": 256,
+          "partial_q_min": -2,
+          "partial_q_max": 1,
+          "cpu_seconds": 0.0011130000000000306,
+          "cumulative_process_peak_rss_mib": 39.328125
+        },
+        {
+          "processed_vertices": 9,
+          "frontier_vertices": 9,
+          "states_including_K_and_partial_q": 512,
+          "represented_prefix_assignments": 512,
+          "partial_q_min": -2,
+          "partial_q_max": 1,
+          "cpu_seconds": 0.002114999999999978,
+          "cumulative_process_peak_rss_mib": 39.328125
+        },
+        {
+          "processed_vertices": 10,
+          "frontier_vertices": 10,
+          "states_including_K_and_partial_q": 1024,
+          "represented_prefix_assignments": 1024,
+          "partial_q_min": -2,
+          "partial_q_max": 1,
+          "cpu_seconds": 0.004350999999999994,
+          "cumulative_process_peak_rss_mib": 39.34375
+        },
+        {
+          "processed_vertices": 11,
+          "frontier_vertices": 10,
+          "states_including_K_and_partial_q": 2048,
+          "represented_prefix_assignments": 2048,
+          "partial_q_min": -2,
+          "partial_q_max": 2,
+          "cpu_seconds": 0.008948999999999985,
+          "cumulative_process_peak_rss_mib": 39.34375
+        },
+        {
+          "processed_vertices": 12,
+          "frontier_vertices": 8,
+          "states_including_K_and_partial_q": 2040,
+          "represented_prefix_assignments": 4096,
+          "partial_q_min": -2,
+          "partial_q_max": 2,
+          "cpu_seconds": 0.01850700000000005,
+          "cumulative_process_peak_rss_mib": 39.34375
+        },
+        {
+          "processed_vertices": 13,
+          "frontier_vertices": 0,
+          "states_including_K_and_partial_q": 22,
+          "represented_prefix_assignments": 8192,
+          "partial_q_min": -1,
+          "partial_q_max": 1,
+          "cpu_seconds": 0.025334999999999996,
+          "cumulative_process_peak_rss_mib": 39.34375
+        }
+      ],
+      "cpu_seconds": 0.025355000000000016,
+      "cumulative_process_peak_rss_mib": 39.34375,
+      "independent_reference": {
+        "existing_entry": "integer_period_torus.classify_configuration",
+        "full_configurations_checked": 8192,
+        "cpu_seconds": 0.29210500000000006,
+        "cumulative_process_peak_rss_mib": 39.34375
+      },
+      "exact_K_q_count_and_sumS_equal": true,
+      "histogram": [
+        {
+          "k": 0,
+          "q": -1,
+          "count": 1,
+          "sum_sstar": 27
+        },
+        {
+          "k": 1,
+          "q": -1,
+          "count": 13,
+          "sum_sstar": 312
+        },
+        {
+          "k": 2,
+          "q": -1,
+          "count": 78,
+          "sum_sstar": 1638
+        },
+        {
+          "k": 3,
+          "q": -1,
+          "count": 286,
+          "sum_sstar": 5148
+        },
+        {
+          "k": 4,
+          "q": -1,
+          "count": 715,
+          "sum_sstar": 10751
+        },
+        {
+          "k": 5,
+          "q": -1,
+          "count": 1235,
+          "sum_sstar": 15054
+        },
+        {
+          "k": 5,
+          "q": 0,
+          "count": 52,
+          "sum_sstar": 676
+        },
+        {
+          "k": 6,
+          "q": -1,
+          "count": 1352,
+          "sum_sstar": 12948
+        },
+        {
+          "k": 6,
+          "q": 0,
+          "count": 364,
+          "sum_sstar": 3796
+        },
+        {
+          "k": 7,
+          "q": -1,
+          "count": 780,
+          "sum_sstar": 5720
+        },
+        {
+          "k": 7,
+          "q": 0,
+          "count": 858,
+          "sum_sstar": 7150
+        },
+        {
+          "k": 7,
+          "q": 1,
+          "count": 78,
+          "sum_sstar": 624
+        },
+        {
+          "k": 8,
+          "q": -1,
+          "count": 169,
+          "sum_sstar": 949
+        },
+        {
+          "k": 8,
+          "q": 0,
+          "count": 780,
+          "sum_sstar": 5408
+        },
+        {
+          "k": 8,
+          "q": 1,
+          "count": 338,
+          "sum_sstar": 2262
+        },
+        {
+          "k": 9,
+          "q": 0,
+          "count": 260,
+          "sum_sstar": 1716
+        },
+        {
+          "k": 9,
+          "q": 1,
+          "count": 455,
+          "sum_sstar": 2860
+        },
+        {
+          "k": 10,
+          "q": 0,
+          "count": 26,
+          "sum_sstar": 208
+        },
+        {
+          "k": 10,
+          "q": 1,
+          "count": 260,
+          "sum_sstar": 1820
+        },
+        {
+          "k": 11,
+          "q": 1,
+          "count": 78,
+          "sum_sstar": 676
+        },
+        {
+          "k": 12,
+          "q": 1,
+          "count": 13,
+          "sum_sstar": 143
+        },
+        {
+          "k": 13,
+          "q": 1,
+          "count": 1,
+          "sum_sstar": 14
+        }
+      ]
+    }
+  ],
+  "N50_prefix_probes": [
+    {
+      "geometry": [
+        5,
+        5
+      ],
+      "N": 50,
+      "status": "declared_state_cap_exceeded_after_complete_layer",
+      "state_cap": 50000,
+      "fixed_order": "integer_period_torus quotient-key sorted representatives",
+      "max_frontier_vertices": 20,
+      "frontier_widths_all_layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        19,
+        16,
+        12,
+        8,
+        0
+      ],
+      "max_states": 65536,
+      "layers": [
+        {
+          "processed_vertices": 1,
+          "frontier_vertices": 1,
+          "states_including_K_and_partial_q": 2,
+          "represented_prefix_assignments": 2,
+          "partial_q_min": -1,
+          "partial_q_max": 0,
+          "cpu_seconds": 0.0008579999999998034,
+          "cumulative_process_peak_rss_mib": 39.34375
+        },
+        {
+          "processed_vertices": 2,
+          "frontier_vertices": 2,
+          "states_including_K_and_partial_q": 4,
+          "represented_prefix_assignments": 4,
+          "partial_q_min": -1,
+          "partial_q_max": 0,
+          "cpu_seconds": 0.0008679999999998689,
+          "cumulative_process_peak_rss_mib": 39.34375
+        },
+        {
+          "processed_vertices": 3,
+          "frontier_vertices": 3,
+          "states_including_K_and_partial_q": 8,
+          "represented_prefix_assignments": 8,
+          "partial_q_min": -2,
+          "partial_q_max": 0,
+          "cpu_seconds": 0.0008799999999999919,
+          "cumulative_process_peak_rss_mib": 39.34375
+        },
+        {
+          "processed_vertices": 4,
+          "frontier_vertices": 4,
+          "states_including_K_and_partial_q": 16,
+          "represented_prefix_assignments": 16,
+          "partial_q_min": -2,
+          "partial_q_max": 0,
+          "cpu_seconds": 0.0008999999999999009,
+          "cumulative_process_peak_rss_mib": 39.34375
+        },
+        {
+          "processed_vertices": 5,
+          "frontier_vertices": 5,
+          "states_including_K_and_partial_q": 32,
+          "represented_prefix_assignments": 32,
+          "partial_q_min": -2,
+          "partial_q_max": 0,
+          "cpu_seconds": 0.0009429999999999161,
+          "cumulative_process_peak_rss_mib": 39.34375
+        },
+        {
+          "processed_vertices": 6,
+          "frontier_vertices": 6,
+          "states_including_K_and_partial_q": 64,
+          "represented_prefix_assignments": 64,
+          "partial_q_min": -3,
+          "partial_q_max": 0,
+          "cpu_seconds": 0.0010369999999999546,
+          "cumulative_process_peak_rss_mib": 39.34375
+        },
+        {
+          "processed_vertices": 7,
+          "frontier_vertices": 7,
+          "states_including_K_and_partial_q": 128,
+          "represented_prefix_assignments": 128,
+          "partial_q_min": -3,
+          "partial_q_max": 0,
+          "cpu_seconds": 0.001250999999999891,
+          "cumulative_process_peak_rss_mib": 39.359375
+        },
+        {
+          "processed_vertices": 8,
+          "frontier_vertices": 8,
+          "states_including_K_and_partial_q": 256,
+          "represented_prefix_assignments": 256,
+          "partial_q_min": -3,
+          "partial_q_max": 0,
+          "cpu_seconds": 0.0016999999999998128,
+          "cumulative_process_peak_rss_mib": 39.359375
+        },
+        {
+          "processed_vertices": 9,
+          "frontier_vertices": 9,
+          "states_including_K_and_partial_q": 512,
+          "represented_prefix_assignments": 512,
+          "partial_q_min": -3,
+          "partial_q_max": 0,
+          "cpu_seconds": 0.002641999999999811,
+          "cumulative_process_peak_rss_mib": 39.359375
+        },
+        {
+          "processed_vertices": 10,
+          "frontier_vertices": 10,
+          "states_including_K_and_partial_q": 1024,
+          "represented_prefix_assignments": 1024,
+          "partial_q_min": -3,
+          "partial_q_max": 1,
+          "cpu_seconds": 0.004726000000000008,
+          "cumulative_process_peak_rss_mib": 39.359375
+        },
+        {
+          "processed_vertices": 11,
+          "frontier_vertices": 11,
+          "states_including_K_and_partial_q": 2048,
+          "represented_prefix_assignments": 2048,
+          "partial_q_min": -4,
+          "partial_q_max": 1,
+          "cpu_seconds": 0.00922999999999985,
+          "cumulative_process_peak_rss_mib": 39.359375
+        },
+        {
+          "processed_vertices": 12,
+          "frontier_vertices": 12,
+          "states_including_K_and_partial_q": 4096,
+          "represented_prefix_assignments": 4096,
+          "partial_q_min": -4,
+          "partial_q_max": 1,
+          "cpu_seconds": 0.019205999999999834,
+          "cumulative_process_peak_rss_mib": 39.359375
+        },
+        {
+          "processed_vertices": 13,
+          "frontier_vertices": 13,
+          "states_including_K_and_partial_q": 8192,
+          "represented_prefix_assignments": 8192,
+          "partial_q_min": -4,
+          "partial_q_max": 1,
+          "cpu_seconds": 0.039335999999999816,
+          "cumulative_process_peak_rss_mib": 40.953125
+        },
+        {
+          "processed_vertices": 14,
+          "frontier_vertices": 14,
+          "states_including_K_and_partial_q": 16384,
+          "represented_prefix_assignments": 16384,
+          "partial_q_min": -4,
+          "partial_q_max": 1,
+          "cpu_seconds": 0.08065599999999984,
+          "cumulative_process_peak_rss_mib": 44.6875
+        },
+        {
+          "processed_vertices": 15,
+          "frontier_vertices": 15,
+          "states_including_K_and_partial_q": 32768,
+          "represented_prefix_assignments": 32768,
+          "partial_q_min": -4,
+          "partial_q_max": 1,
+          "cpu_seconds": 0.16981899999999994,
+          "cumulative_process_peak_rss_mib": 51.875
+        },
+        {
+          "processed_vertices": 16,
+          "frontier_vertices": 16,
+          "states_including_K_and_partial_q": 65536,
+          "represented_prefix_assignments": 65536,
+          "partial_q_min": -5,
+          "partial_q_max": 1,
+          "cpu_seconds": 0.3477379999999999,
+          "cumulative_process_peak_rss_mib": 67.546875
+        }
+      ],
+      "cpu_seconds": 0.3477509999999999,
+      "cumulative_process_peak_rss_mib": 67.546875
+    },
+    {
+      "geometry": [
+        1,
+        7
+      ],
+      "N": 50,
+      "status": "declared_state_cap_exceeded_after_complete_layer",
+      "state_cap": 50000,
+      "fixed_order": "integer_period_torus quotient-key sorted representatives",
+      "max_frontier_vertices": 16,
+      "frontier_widths_all_layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        14,
+        12,
+        10,
+        8,
+        0
+      ],
+      "max_states": 65536,
+      "layers": [
+        {
+          "processed_vertices": 1,
+          "frontier_vertices": 1,
+          "states_including_K_and_partial_q": 2,
+          "represented_prefix_assignments": 2,
+          "partial_q_min": -1,
+          "partial_q_max": 0,
+          "cpu_seconds": 0.0008869999999998601,
+          "cumulative_process_peak_rss_mib": 67.546875
+        },
+        {
+          "processed_vertices": 2,
+          "frontier_vertices": 2,
+          "states_including_K_and_partial_q": 4,
+          "represented_prefix_assignments": 4,
+          "partial_q_min": -1,
+          "partial_q_max": 0,
+          "cpu_seconds": 0.0008979999999998434,
+          "cumulative_process_peak_rss_mib": 67.546875
+        },
+        {
+          "processed_vertices": 3,
+          "frontier_vertices": 3,
+          "states_including_K_and_partial_q": 8,
+          "represented_prefix_assignments": 8,
+          "partial_q_min": -2,
+          "partial_q_max": 0,
+          "cpu_seconds": 0.0009109999999998841,
+          "cumulative_process_peak_rss_mib": 67.546875
+        },
+        {
+          "processed_vertices": 4,
+          "frontier_vertices": 4,
+          "states_including_K_and_partial_q": 16,
+          "represented_prefix_assignments": 16,
+          "partial_q_min": -2,
+          "partial_q_max": 0,
+          "cpu_seconds": 0.0009329999999998506,
+          "cumulative_process_peak_rss_mib": 67.546875
+        },
+        {
+          "processed_vertices": 5,
+          "frontier_vertices": 5,
+          "states_including_K_and_partial_q": 32,
+          "represented_prefix_assignments": 32,
+          "partial_q_min": -3,
+          "partial_q_max": 0,
+          "cpu_seconds": 0.0009749999999999481,
+          "cumulative_process_peak_rss_mib": 67.546875
+        },
+        {
+          "processed_vertices": 6,
+          "frontier_vertices": 6,
+          "states_including_K_and_partial_q": 64,
+          "represented_prefix_assignments": 64,
+          "partial_q_min": -3,
+          "partial_q_max": 0,
+          "cpu_seconds": 0.001062999999999814,
+          "cumulative_process_peak_rss_mib": 67.546875
+        },
+        {
+          "processed_vertices": 7,
+          "frontier_vertices": 7,
+          "states_including_K_and_partial_q": 128,
+          "represented_prefix_assignments": 128,
+          "partial_q_min": -3,
+          "partial_q_max": 0,
+          "cpu_seconds": 0.0012839999999998408,
+          "cumulative_process_peak_rss_mib": 67.546875
+        },
+        {
+          "processed_vertices": 8,
+          "frontier_vertices": 8,
+          "states_including_K_and_partial_q": 256,
+          "represented_prefix_assignments": 256,
+          "partial_q_min": -3,
+          "partial_q_max": 1,
+          "cpu_seconds": 0.0017099999999998783,
+          "cumulative_process_peak_rss_mib": 67.546875
+        },
+        {
+          "processed_vertices": 9,
+          "frontier_vertices": 9,
+          "states_including_K_and_partial_q": 512,
+          "represented_prefix_assignments": 512,
+          "partial_q_min": -3,
+          "partial_q_max": 1,
+          "cpu_seconds": 0.002722999999999809,
+          "cumulative_process_peak_rss_mib": 67.546875
+        },
+        {
+          "processed_vertices": 10,
+          "frontier_vertices": 10,
+          "states_including_K_and_partial_q": 1024,
+          "represented_prefix_assignments": 1024,
+          "partial_q_min": -3,
+          "partial_q_max": 1,
+          "cpu_seconds": 0.004945999999999895,
+          "cumulative_process_peak_rss_mib": 67.546875
+        },
+        {
+          "processed_vertices": 11,
+          "frontier_vertices": 11,
+          "states_including_K_and_partial_q": 2048,
+          "represented_prefix_assignments": 2048,
+          "partial_q_min": -3,
+          "partial_q_max": 1,
+          "cpu_seconds": 0.009563999999999906,
+          "cumulative_process_peak_rss_mib": 67.546875
+        },
+        {
+          "processed_vertices": 12,
+          "frontier_vertices": 12,
+          "states_including_K_and_partial_q": 4096,
+          "represented_prefix_assignments": 4096,
+          "partial_q_min": -3,
+          "partial_q_max": 1,
+          "cpu_seconds": 0.019224999999999826,
+          "cumulative_process_peak_rss_mib": 67.546875
+        },
+        {
+          "processed_vertices": 13,
+          "frontier_vertices": 13,
+          "states_including_K_and_partial_q": 8192,
+          "represented_prefix_assignments": 8192,
+          "partial_q_min": -3,
+          "partial_q_max": 1,
+          "cpu_seconds": 0.03912300000000002,
+          "cumulative_process_peak_rss_mib": 67.546875
+        },
+        {
+          "processed_vertices": 14,
+          "frontier_vertices": 14,
+          "states_including_K_and_partial_q": 16384,
+          "represented_prefix_assignments": 16384,
+          "partial_q_min": -4,
+          "partial_q_max": 1,
+          "cpu_seconds": 0.08059799999999995,
+          "cumulative_process_peak_rss_mib": 67.546875
+        },
+        {
+          "processed_vertices": 15,
+          "frontier_vertices": 15,
+          "states_including_K_and_partial_q": 32768,
+          "represented_prefix_assignments": 32768,
+          "partial_q_min": -4,
+          "partial_q_max": 1,
+          "cpu_seconds": 0.16868899999999987,
+          "cumulative_process_peak_rss_mib": 67.546875
+        },
+        {
+          "processed_vertices": 16,
+          "frontier_vertices": 16,
+          "states_including_K_and_partial_q": 65536,
+          "represented_prefix_assignments": 65536,
+          "partial_q_min": -5,
+          "partial_q_max": 1,
+          "cpu_seconds": 0.3530899999999999,
+          "cumulative_process_peak_rss_mib": 67.546875
+        }
+      ],
+      "cpu_seconds": 0.353105,
+      "cumulative_process_peak_rss_mib": 67.546875
+    }
+  ],
+  "existing_planar_entry": {
+    "entry": "planar_transition_table.build_width_table(8)",
+    "summary": {
+      "width": 8,
+      "states": 1430,
+      "cases_per_operation": 11440,
+      "serialized_records": 22880,
+      "changed_cases": {
+        "detach": 8008,
+        "join_cyclic_adjacent": 8008
+      },
+      "unique_source_target_edges": {
+        "detach": 7631,
+        "join_cyclic_adjacent": 7631
+      },
+      "row_unique_target_degree_histogram": {
+        "8": 8,
+        "9": 438,
+        "10": 816,
+        "11": 168
+      },
+      "canonical_jsonl_sha256": "f1f1121b466e159eaa1855910a1ff8a67749ba208ea0b5f1c9775a1dbfd43abf"
+    },
+    "serialized_bytes": 1977229,
+    "cpu_seconds": 0.605602,
+    "cumulative_process_peak_rss_mib": 39.3125,
+    "boundary": "planar detach/join only; not weighted torus propagation"
+  },
+  "total_cpu_seconds": 1.6445839999999998,
+  "process_peak_rss_mib": 67.546875
+}
