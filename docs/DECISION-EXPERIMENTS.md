@@ -36,21 +36,99 @@ kernel与distinct-site坐标不变性。它是同一精确总体上的实现交�
 两尺寸独立；每配置32个pair是相关平均。它排除有限非接触空间零假设，
 不是J2，也不把两个尺寸的ratio变成已识别指数。
 
-PR #509的[baa5d33b选择定理](https://github.com/LightChainr/Matching-One/blob/baa5d33b2f87b2868aa0cb9d3f6518c93dbf3bff/experiments/p337-regular-spatial-support-20260901/RESULT.md)
+PR #509（当前head `2785e3bba2eb6a70fd4f2d390d3b3c2701a99d85`）的
+[baa5d33b选择定理](https://github.com/LightChainr/Matching-One/blob/baa5d33b2f87b2868aa0cb9d3f6518c93dbf3bff/experiments/p337-regular-spatial-support-20260901/RESULT.md)
 进一步证明：非相邻两点至多共享一个外部占据组件时，首阶Q激活精确为零；
 实际两组件外部给`a_xy=1/16`，且
 `|C_xy| <= (43/16) Pr{两端vacant且至少两个共享组件}`。这删除了单组件
 传播模型，却不是global U的数值界或距离指数。
 
-**下一问题转向尺度与投影：** 固定canonical模型和一个宏观位移窗口，令
-`T_N=N^2 J2_macro`。在[已推导的条件模型](../notes/regular-pair-joint-size-decision.md)
-中，`N→4N`时`x=17/4`与`x=21/4`分别预报`2^(-5/4)`与
-`2^(-13/4)`；用预定`D17/D21`而不拟合自由指数。同一次读数可预先分成
-`s=2`与`s>=3`共享组件支持，但二者必须加回总响应，不能当独立证据。
-NN/nonNN这一已完成有限分解不能替代宏观窗口。bilocal窗口投影也不是
-未筛选homogeneous单耦合族的二阶导。再加K3、调alpha或扩展旧N25描述目录
-不自动获得首要注意力。
-其它探索仍可并行；队列见[Next Targets](NEXT-TARGETS.md)。
+PR #509的后续[eed2190c解析结果](https://github.com/LightChainr/Matching-One/blob/eed2190c04b67084ab5aef5827e00377853a0bca/notes/p337-critical-spatial-summability.md)
+又证明exact `p_c`下raw canonical `g_xy`绝对可和，排除“raw红外尾自身发散”
+这一具体解释。它没有控制`∂p E[g_xy]`、带`q/E`的三点pivotal influence、
+near-critical一致性或原U的baseline thermal jets；因此不能把raw定理误写成
+thermal/original-U尺度机制已经关闭。
+
+## 宏观 window pilot 已完成，并按合同停止
+
+旧“下一问题转向宏观尺度比”已经实际执行，状态统一改为
+`completed_stopped_unresolved`。[冻结合同](../analysis/regular_pair_macro_joint_u_contract.json)、
+[合同说明](../notes/regular-pair-macro-joint-u-contract.md)、
+[producer说明](../notes/regular-pair-macro-joint-u-producer.md)、
+[producer](../scripts/regular_pair_macro_joint_u_sampler.cpp)、
+[scorer](../scripts/analyze_regular_pair_macro_joint_u.py)、
+[结果](../results/regular-pair-macro-joint-u/REPORT.md)、
+[机器结果](../results/regular-pair-macro-joint-u/latest.json)和
+[run receipt](../results/regular-pair-macro-joint-u/run.json)已经齐备；raw `N100/N400.csv`
+及四张固定window表保存在`results/regular-pair-macro-joint-u/raw/`。
+
+同一canonical `Kreg`、Euclidean `1/4–2/5`窗口和完整moving-root U下，
+N100的`T_N=+11.877846`，同时95%区间`[-2.2556162,+26.011308]`；
+N400的`T_N=−542.50382`，区间`[-1307.6425,+222.63486]`。两区间均含零，
+点估计异号，且N400投影需求`2,119,100`超过冻结上限`2,000,000`。
+所以`D17/D21`没有评估；不top-up、不换window、不追加local/GPU/cloud生产。
+这不是对`x=17/4`或`21/4`的否定，而是该固定窗口、该预算下无法进入场比判决。
+
+N100与N400分别属于两个独立依赖组（每个50k paired configurations）；同一N内
+axis/tilted共用occupation与anchor流，`total/s2/s>=3`也是同一源的相关加和，
+不能拆成独立票。100个paired batches才是推断单位。pilot到此停线；其它探索
+仍可并行，优先级不是许可或任务锁。
+
+## 当前前瞻判决：Delivery B已完成，转入q/E-weighted pivotal tail理论
+
+已关闭的Issue #536保留一项**issue-only、非main事实**的N25 midpoint精确分解；
+仓库团队已把唯一canonical P0迁移到开放的
+[#537](https://github.com/LightChainr/Matching-One/issues/537)：
+`observer-pivotal=−0.005935841948386444`、
+`kernel=+0.0004141042799437205`、`root=+0.000002306243603322`，合计
+`−0.005519431424839401`。它说明下一步不是首次发现通道，而是把已有有限分解
+变成空间pivotal支持判决。
+
+冻结的prospective readout已经
+[完成](../results/p337-thermal-pivotal-preflight/REPORT.md)：复放既有L32、
+L64数据块各自前32个counter，总计64个；不换seed、不新采样。5,242,880个
+pair/site callback全部通过结构恒等式。有限子集内只出现18个kernel-changing
+callback（L32 11、L64 7），没有kernel-preserving topological callback；
+L64非零项属于external shell 2/3 shared-transition。这个结果完成语义与成本
+preflight，不估计中心化总体或full J2，也不授权追加counter。
+
+当前prospective输出先做#537的有限判伪器。PR #509 `2785e3bb`给出精确压缩：
+取`u=M`为热坐标，则`partial_u partial_epsilon Yhat=J_N/A_N`。因此在普通
+四臂landing子空间构造经同一C4与Schur投影的source/thermal transfer matrix，
+逐个检查`2x2`minor。一个非零minor即淘汰“leading three-packet只是热坐标”
+路线；若全部为零，再把remainder提升为四packet，其`R^4*pi4(R)^4`由严格
+`alpha4>1`可和。这个判伪器不需要新MC或更大counter。
+
+判伪后才进入Delivery A：用
+[thermal-pivotal接口](../notes/regular-pair-thermal-pivotal-gate.md)和完整
+root-aware U权重，为以下三类carrier分别给absolute dyadic tail，或在每一
+observable/kernel channel内部给signed dyadic tail，而不是再画raw距离网格：
+
+| 预设结果 | carrier与判决条件 | 若另外两类已有预设上界，可排除的“必需机制” |
+|---|---|---|
+| A | `s=2`层由`a_xy=kappa_x kappa_y`承载稳定的带符号`q/E`尾；[PR #532 open-pr support @2e1c57b4](https://github.com/LightChainr/Matching-One/blob/2e1c57b42129c507b45fd1a8111eb32e78b1f80b/notes/P0-p337-two-bridge-and-completion-review-20260901.md)给出有限factorization。 | “必须发生`s`转移/远端merger”与“必须由`g`不变的拓扑q/E pivotal承载”。 |
+| B | 尾由physical component join/rerouting承载，包括shared数改变的remote merger以及shared数不变的signed rerouting；#537给出任意远pivot使`g:1/4->1/2`而rank/shared-count不变的全L族。 | 纯局部creation/deletion模型与`g`不变topological-only。 |
+| C | `g`构型级不变，但rank/`q`/`E`被远处翻转改变，带权项保留；[PR #531 open-pr support @a5375b5](https://github.com/LightChainr/Matching-One/blob/a5375b5338ebfc29d1c47aa320716903c5f63277/notes/p337-p0-sector-quotient-and-sign-aware-estimation.md)给出`eta/xi`商坐标。 | two-bridge-only与kernel-merger-only。 |
+
+[PR #530 open-pr support @0e1917f9](https://github.com/LightChainr/Matching-One/blob/0e1917f983982f411c9c72147cce3f90ce7330fa/experiments/p337-original-u-influence-20260831/README.md)
+提供含共同root、均值和分母响应的中心化`phi`，作为三类共用的原U权重接口。
+这些PR只提供有限代数/估计接口，尚未是main结论。若多类同时留下无界尾、
+都未分辨或没有稳定signed/absolute判别，则结果记为unresolved，不新增seed、
+window或第四个descriptor救场。文献
+[适用边界](../notes/p337-thermal-pivotal-literature-bridge.md)已经说明，三处四臂
+事件的朴素乘积不足以关闭bulk，六臂只接管已证明的fused collision annulus；
+还必须给common-landing增益或signed cross-observable cancellation，并认证
+pooled root处于near-critical窗口。#539只保留P2 exact-N25复现支持，并应优先
+导入#536原附件而非重复生产。这个理论对象是下一attention target，不锁其它任务。
+
+另一个独立前沿也已前移：PR #533当前head
+[`b49e2a21`](https://github.com/LightChainr/Matching-One/blob/b49e2a214c42ee746fb5174acc4028a761882d33/notes/closed-source-mesoscopic-two-cloud-synthesis.md)
+在声明的bounded `c=L/m`轴向two-cloud条件下得到
+`G(c)=I0(2c)^2`、`Phi(c)=[I0(2c)^2−I1(2c)^2]/Delta>0`，从而
+`Ustar/A_N<0`，并把directed determinant延伸到`m≫L^(2/3)`；最短local
+hairpin已被排除为首个crossover，余下nonlocal west-step与fixed-m边界。
+#534/#535现已由仓库团队关闭。该强源解析结果与临界canonical macro pilot分开，
+且保持`open_pr`，不写成main已集成事实。
 
 另一个不同源的有限任务也已结束：PR #509
 [ef3b2c68](https://github.com/LightChainr/Matching-One/blob/ef3b2c68f824e29421747c805ea7a505aca41908/experiments/p337-homogeneous-n50-20260831/RESULT.md)

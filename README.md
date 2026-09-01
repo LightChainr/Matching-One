@@ -10,7 +10,46 @@ The repository is organized to expose the next mechanism-changing observation, n
 
 ## Start here
 
-**Current result: canonical Kreg's joint Q activation reaches original U beyond nearest neighbours.**
+**Current decision: the first canonical macro-window field-ratio route has
+been run and stopped, while the thermal-pivotal mechanism remains open.**
+The [frozen N100/N400 pilot](results/regular-pair-macro-joint-u/REPORT.md)
+uses the same `Kreg`, the exact Euclidean window
+`L/4 <= d_T(x,y) <= 2L/5`, paired occupation/anchor streams, exact
+K-likelihood reweighting and the complete direct/root/source-slope/root-slope
+original-U functional.  It gives
+
+| extensive response | point estimate | simultaneous familywise-95% interval |
+|---|---:|---:|
+| `T100=100^2 J2_macro` | `+11.8778461` | `[-2.2556162,+26.0113084]` |
+| `T400=400^2 J2_macro` | `-542.5038231` | `[-1307.642507,+222.634861]` |
+
+Both intervals contain zero, the point estimates have opposite signs, and
+the frozen N400 production projection is `2,119,100`, above the two-million
+ceiling.  The declared stop rule therefore forbids a top-up or replacement
+window and leaves `D17/D21` unevaluated.  No GPU or cloud job was needed:
+100,000 new paired configurations took about 3.3 producer seconds in total.
+The `s=2` coordinate carries `11.465/11.878` at N100 and
+`-540.463/-542.504` at N400, but it shares every configuration and covariance
+with `s>=3` and is not a second vote.
+
+The route was not stopped because raw interaction vanished.  PR #509
+[`eed2190c`](https://github.com/LightChainr/Matching-One/blob/eed2190c04b67084ab5aef5827e00377853a0bca/notes/p337-critical-spatial-summability.md)
+proves at the exact square-site critical point that the raw canonical kernel
+is absolutely summable, `E|g_xy| <= C d(x,y)^(-2-eta)`.  The
+[thermal-pivotal analysis](notes/regular-pair-thermal-pivotal-gate.md) shows
+why this does not close original U: an arbitrarily remote merger pivotal can
+change `g_xy` from `1/16` to zero, and the direct/source-slope terms require
+q/E-weighted three-point influences. Existing rigorous `alpha4>1` is enough
+for raw summability but not for their position sum; the
+[literature bridge](notes/p337-thermal-pivotal-literature-bridge.md) shows that
+even the triangular-lattice value `alpha4=5/4` leaves the naive three-centre
+absolute account growing like `R^(1/4+o(1))`. The immediate unresolved object
+is now the finite Schur-projected landing-matrix minor test. Its outcome selects
+either a non-rank-one signed tail or a four-packet absolute remainder, both with
+an explicit near-critical root-window certificate—not another raw `C(r)` grid
+or a third macro window.
+
+**Completed finite predecessor: canonical Kreg's joint Q activation reaches original U beyond nearest neighbours.**
 The [completed exact result](results/regular-pair-joint-u/REPORT.md),
 `open_pr #267` at `f8e30859f05e86ef35d257fc900f97e74f41e21c`, gives
 `J2(25)=∂logQ∂epsilon²U=−.0055194314248394015`, split into
@@ -65,22 +104,68 @@ is `3/2+(alpha−1/2)²/2 ≥ 3/2` for the same real counterterm at both
 marks. This is a conditional four-line bound, not global U or a universal
 field norm.
 
-**Next:** keep canonical Kreg fixed and use the
-[prespecified macroscopic-window comparison](notes/regular-pair-joint-size-decision.md).
-Under its single-field loading assumptions,
-`T_N=N² J2_macro ~ N^(29/8−x)`: dilation `N→4N` predicts
-`T_4N/T_N=2^(−5/4)` for `x=17/4` versus `2^(−13/4)` for `x=21/4`;
-the corresponding J2_macro ratios are `2^(−21/4)` and `2^(−29/4)`.
-This is a fixed windowed projection of the bilocal kernel, not the
-unfiltered second derivative of a homogeneous one-coupling family.
-The ratios are conditional decisions, not exponent measurements or field
-identifications. The same readout may predeclare its `s=2` versus `s≥3`
-support split; those dependent parts are not separate evidence or a new
-descriptor search. The [joint-U result and boundaries](notes/regular-pair-joint-u-result.md)
-close the N25 additive and NN-only questions; [Next Targets](docs/NEXT-TARGETS.md)
-owns acquisition. Further epsilon derivatives or an alpha/counterterm
-search do not follow automatically. Joint physical contractions cannot
-be replaced by covariance of single-mark scores.
+**Next:** keep canonical Kreg fixed but change the acquisition axis from
+pair distance to the already defined **thermal/pivotal two-channel
+carrier**. Closed Issue [#536](https://github.com/LightChainr/Matching-One/issues/536)
+preserves an exact N25 midpoint decomposition (currently issue-only, not a Git
+artifact); the repository team has moved the canonical P0 theory entry to
+open [#537](https://github.com/LightChainr/Matching-One/issues/537):
+
+| source support | observable/rank pivot | kernel pivot | root terms | total `J2` |
+|---|---:|---:|---:|---:|
+| all pairs | `-.00593584195` | `+.00041410428` | `+.00000230624` | `-.00551943142` |
+| NN | `-.00085245745` | `-.00089978682` | `+.00000116982` | `-.00175107445` |
+| nonNN | `-.00508338450` | `+.00131389110` | `+.00000113643` | `-.00376835697` |
+
+Thus the first task is no longer to discover whether the q/E and kernel
+channels exist. The [bounded carrier preflight](results/p337-thermal-pivotal-preflight/REPORT.md)
+has now replayed exactly the first 32 existing counters from each frozen
+L32/L64 block: 64 configurations and 5,242,880 pair/site callbacks, with no
+new seed. All midpoint identities pass. Only 18 callbacks changed the kernel:
+11 at L32 and 7 at L64; L64's nonzero primitives are entirely external
+shared-component transitions in shells 2/3, and the finite replay contains no
+kernel-preserving topological event. These are descriptive callbacks, not
+independent samples or a zero-probability result. They support a sparse,
+shell-localized, kernel-change-dominant finite interface, while showing that
+the negative N25 observable/rank total is not explained by a dense population
+of direct local q/E flips in this subset.
+
+The next task is sharper than a generic Delivery-A tail bound. PR #509 at
+`2785e3bb` writes the complete response as the root-conditioned Hessian
+`partial_u partial_epsilon Yhat=J_N/A_N`, with `u=M` the matching mean; kernel,
+readout, root and slope enter one Schur-projected signed covariance. #537's
+first bounded falsifier is to build the projected ordinary four-arm landing
+transfer matrix and test its `2x2` minors. A nonzero minor kills the conjecture
+that the leading three-packet block is only a thermal-coordinate term; if the
+minors vanish, a four-packet remainder becomes the simplest candidate, whose
+`R^4*pi4^4` envelope would be summable once its support reduction is proved.
+#537 also gives an all-`L` remote rerouting example:
+fixed nearby marks, a pivot at distance `Theta(L)`, unchanged rank/shared-count,
+yet `g:1/4 -> 1/2`. This forces a genuine two-scale carrier classification.
+Only after this falsifier should the project prove the carrier-resolved
+signed/absolute dyadic transmission bound; no counters are added. PR #530's
+complete original-U influence, PR #531's eta/xi
+quotient and PR #532's exactly-two-shared-component factorization are inputs,
+not competing new tasks.  The stopped N100/N400 window is not retuned, and
+the old conditional `x=17/4` versus `x=21/4` ratios remain historical
+predictions.  [Next Targets](docs/NEXT-TARGETS.md) owns the full portfolio;
+further epsilon derivatives or an alpha/counterterm search do not follow
+automatically.
+
+In a separate strong-source limit, Draft PR
+[#533](https://github.com/LightChainr/Matching-One/pull/533) at `b49e2a21`
+now separates bulk two-cloud coexistence from capillary roughening and closes
+the bounded axis capillary sign window.  After both the exterior black cloud
+and the forced interior white-hole cloud are retained, the complete leading
+one-carrier partition is `I0(2c)^2` and the signed endpoint kernel is
+`I0(2c)^2-I1(2c)^2>0` for every finite `c=L/m`.  Thus original U stays
+negative on compact finite-c windows; the earlier black-only finite zero is
+an omitted-cloud artefact. Its directed determinant now extends this sign
+through `m >> L^(2/3)` and rules out the shortest local hairpin packet as the
+first crossover. A nonlocal west-step remains in the growing window, and fixed
+`m` remains distinct. This is a valuable parallel strong-source
+theorem, not evidence for the critical macro-window pilot or a substitute
+for the q/E-weighted pivotal gate.
 The bounded old occupation tangent retains its separate
 [`W_N=N V_av`, ratio 2 versus 1](notes/local-pair-size-response-predictions.md)
 comparison under its stated assumptions; those predictions do not apply
@@ -94,7 +179,7 @@ half-line is complete; another m point is not pending.
 
 | Mechanism question | Delivered decision | Attention now |
 |---|---|---|
-| Does canonical joint Q activation reach original U beyond NN contact? | Yes: J2(25)=−.0055194314248394015 and nonNN=−.0037683569704366022, both exactly separated from zero. | Global additive and NN-only closures are excluded. Compare fixed, explicitly projected macroscopic responses; finite-range contact and asymptotic field identification remain open. |
+| Does canonical joint Q activation reach original U beyond NN contact? | Yes: J2(25)=−.0055194314248394015 and nonNN=−.0037683569704366022, both exactly separated from zero. The fixed N100/N400 macro ratio pilot stopped unresolved; #536's 64-counter carrier replay then completed with 18 sparse kernel-changing callbacks. | Global additive and NN-only closures are excluded. #537 is the sole P0: first test the Schur-projected landing matrix minors, then prove the surviving absolute/signed dyadic tail. Do not retune the macro window or add replay counters. |
 | Does canonical Kreg transmit a noncontact Q response after occupation averaging? | Yes: C64/r16=6.85546875e−6 and its 99% interval excludes zero. Two fresh 200k blocks; 32 within-configuration pairs remain correlated. | Completed spatial null, distinct from J2. The s=2 signed contrast carries all observed nonzero entries, without ruling out rare s=3/4 events or identifying a field. |
 | Does fixed canonical Kreg activate original U through Q? | Yes: W_Q=−.04503611397592696 at N25; its direct epsilon response at Q1 is exactly zero. | Completed first mixed response; the completed joint response above uses the same canonical source, not a fitted counterterm. |
 | Can an entry-regular homogeneous one-site completion retain old direct V? | No for the whole original-binary-site class, including both vacant and occupied tensors: only a common Bernoulli parameter survives Q1. | This mechanism is excluded; bounded occupation reweighting, specified singular completions and multi-site vertices are outside the theorem. |
@@ -103,7 +188,7 @@ half-line is complete; another m point is not pending.
 | Does the stable colour trace reach original U at Q1? | Yes: B1=−.00190483618 and B1_logQ=+.00503649603, both with zero excluded. | Completed distinct seam response, not an unrun local-to-seam identification or a unique local field. |
 | Does the Q4 coefficient determine its generic-Q component by dimension alone? | No for the full physical closure family: multiplicities change `5→6` and `−1→0` in two exact examples. N25 packing proves its packet is already stable. | Preserve the larger-torus boundary; the completed N25 Q1 result needs no further enumeration or colour scan. |
 | Does the tied source measure the ordinary site-RC Q tangent? | No at N25: tied Q `+.06308268` versus rank-projected site-RC `−.26982803`, with B control `+.33291071`. | Keep B in matched-size weak-Q work. Regular-endpoint Q activation remains excluded in that endpoint family, not in every torus trace. |
-| Is the strong-coupling comparison still waiting for a finite-m witness? | No: the entire N25 real-m≥64 half-line has opposite signs. Growing-systole `N/m²→ζ<∞` also suppresses pooled U superpolynomially. | The distinct fixed-m oblique problem retains the order-25 twist penalty and sector-odds mismatch, not an unknown first finite-m window. |
+| Is the strong-coupling comparison still waiting for a finite-m witness? | No: the entire N25 real-m≥64 half-line has opposite signs. PR #533 also closes the bounded `L/m` axis capillary sign window with a positive two-gas determinant. | The remaining strong-source boundary is noncompact `L/m`, fixed-m oblique control and wider relative-partition estimates—not another bounded-capillary fit. |
 | Can a weighted rank jump alone explain the one-hole response? | No: `Xi_reweight=+4.550327123237` offsets jump `−15.306045530801`, giving total `−10.755718407564073`. Source-independent gain also remains excluded by `R=+27.766563581230237`; hard-endpoint closure survives. | Preserve the full normalized defect operator; reweighting contains both rank types, not a fitted extra source or population share. |
 | Is Sstar's global response only its explicit unit q term? | No on the fixed N25 pair: `2V_beta_null=+.07291782829951701`, with zero excluded by exact bounds. | Keep the fixed-coefficient exclusion distinct from arbitrary fitted rank sources and within-K/rank residual claims. |
 | Does homogeneous Sstar transmit on the exact N50 pair? | Yes: U=1.0615603876876551 and V=+.0543457826695583; the finite V=0 null is excluded on both complete merged 2^50 populations. | Contract complete. Do not infer N100 scaling or a field identity from this finite response. |

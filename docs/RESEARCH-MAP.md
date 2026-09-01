@@ -4,7 +4,56 @@
 
 This map is the repository's scientific coordinate system. It is not a permission system: exact work, reanalysis, pilots, production and independent theory may proceed in parallel. Priority moves attention; it does not lock, close, veto or demote a task. `STATUS` owns claim/lifecycle language, `ROADMAP` preserves rationale, and [NEXT-TARGETS](NEXT-TARGETS.md) owns the single ranked decision queue.
 
-**Current frontier: canonical joint Q activation reaches original U,
+**Current frontier: the canonical macro-window ratio route is stopped at the
+thermal-pivotal carrier.** The completed N100/N400
+[pilot](../results/regular-pair-macro-joint-u/REPORT.md), `open_pr #267`,
+gives `T_N=N²J2_macro=+11.877846` with simultaneous interval
+`[−2.255616,26.011308]` at N100 and `−542.503823` with interval
+`[−1307.642507,222.634861]` at N400. Both intervals include zero, the
+point estimates have opposite signs, and the N400 production projection
+2,119,100 exceeds the frozen 2M ceiling. The route therefore stops before
+`D17/D21`; its `s=2`-dominant decomposition is correlated and does not rescue
+the unresolved total.
+
+Closed Issue #536 preserves an exact N25 midpoint split as an **issue-only
+attachment, not a Git-integrated result**. All-pair J2 decomposes into
+observable/rank pivot `−.005935841948386444`, kernel pivot
+`+.0004141042799437205`, and combined root `+.0000023062436033220`.
+The kernel term is negative on NN (`−.00089978682`) but positive on nonNN
+(`+.00131389110`), while the observable/rank term remains negative in both.
+This changes the frontier from first channel separation to carrier support.
+The repository-native [Delivery B replay](../results/p337-thermal-pivotal-preflight/REPORT.md)
+then completes the finite interface check: 18 kernel-changing callbacks among
+5,242,880 pair/site evaluations, localized to shell 1 at L32 and external
+shells 2/3 at L64; no topological kernel-preserving event appears in the
+frozen subset. This is a descriptive support map, not an estimate of the
+issue-only N25 channel weights.
+
+State: critical finite torus configurations and their homology sectors.
+Source: fixed canonical `Kreg`. Observer: `q/E`-weighted thermal derivative
+inside the moving-root/slope original-U functional. Geometry: the exact
+N100/N400 axis/tilted pair and `[1/4,2/5]` macro window, plus the existing
+L32/L64 carrier streams. Acquisition: 50k paired configurations per macro
+size, then a deterministic replay of 32 old counters per L32/L64 stream.
+That replay is complete: 5,242,880 callbacks pass, with 18 sparse
+kernel-changing events and no new seed. The next separating intervention is
+#537's projected-landing falsifier and surviving carrier-resolved dyadic
+theorem, not more replay or a larger repetition of the macro ratio.
+
+PR #509 (current head `2785e3bb`) proves at `eed2190c` that the *raw*
+canonical pair susceptibility is absolutely summable at exact criticality;
+it does not control the thermal derivative, root motion or original U. Its
+latest audit supplies the exact root-conditioned Hessian
+`partial_u partial_epsilon Yhat=J_N/A_N` and a bounded rank-one/minor
+falsifier for the leading three-packet landing block. Issue #537 is the open
+canonical P0; #536 is closed provenance and #539 is P2 finite-N25 support.
+PR #533 (current head `b49e2a21`) independently closes a bounded-capillary
+strong-source sign window via its Bessel/two-gas transfer law under stated
+hypotheses and extends its directed determinant to `m >> L^(2/3)`, excluding
+the shortest local hairpin packet. That is a separate strong-source theorem,
+not critical-carrier evidence.
+
+**Completed predecessor: canonical joint Q activation reaches original U,
 with a nonzero contribution beyond nearest neighbours.** The
 [completed J2 result](../results/regular-pair-joint-u/REPORT.md),
 `open_pr #267` at `f8e30859f05e86ef35d257fc900f97e74f41e21c`, gives
@@ -67,17 +116,32 @@ and [result](../results/regular-pair-counterterm/REPORT.md) give
 K2+c(Q)K0 family. This is a shared-four-line conditional interaction,
 not an occupation-summed global-U bound or a universal norm.
 
-The [next mechanism comparison](../notes/regular-pair-joint-size-decision.md)
-keeps canonical Kreg fixed and projects the bilocal kernel onto one fixed
-macroscopic window. Under its single-field assumptions,
-`T_N=N²J2_macro~N^(29/8−x)`: `N→4N` predicts `2^(−5/4)` for
-`x=17/4` and `2^(−13/4)` for `x=21/4`; J2_macro itself predicts
-`2^(−21/4)` and `2^(−29/4)`. This window projection is not the
-unfiltered second derivative of a homogeneous one-coupling family, and
-the contrast is not an exponent measurement or field identification.
-[Next Targets](NEXT-TARGETS.md) owns acquisition. Its one predeclared
-secondary split may separate `s=2` from `s≥3` support inside the same
-readout; the dependent parts are not new evidence or a descriptor menu. The
+The [macro mechanism comparison](../notes/regular-pair-joint-size-decision.md)
+kept canonical Kreg fixed and projected the bilocal kernel onto one fixed
+macroscopic window. Its conditional `x=17/4` versus `x=21/4` contrasts were
+not evaluated because the completed pilot failed the frozen same-sign,
+nonzero-interval and cost gates. [Next Targets](NEXT-TARGETS.md) now routes the
+`q/E`-weighted pivotal carrier intervention. Its three prospective outcomes
+are a factorized two-bridge carrier, a remote-merger transition, and a
+topological carrier for which raw `g` stays fixed while `q/E` changes. Reuse,
+without promoting to `main`, PR #530 `0e1917f9`'s complete original-U
+influence `phi_g` and rank-sector/SNIS boundary, PR #531 `a5375b5`'s correlated
+`eta/xi` thermal quotient coordinates, and PR #532 `2e1c57b4`'s exact
+two-shared-component factorization `a_xy=kappa_x kappa_y`. Keep the
+`s=2/3/4` layers additive in the same dependency block. #536 Delivery B is
+now [complete](../results/p337-thermal-pivotal-preflight/REPORT.md): its 64
+old counters expose a sparse, shell-localized kernel-changing interface but no
+centered population sign. #537 now sharpens Delivery A: first test the
+C4/Schur-projected ordinary four-arm transfer matrix for a nonzero `2x2`
+minor. If it is rank one, pursue the summable four-packet remainder; if not,
+retain the surviving signed landing functional. Its all-L remote rerouting
+also shows that fixed shared-count and rank do not make a carrier local. The
+[literature bridge](../notes/p337-thermal-pivotal-literature-bridge.md) shows
+why three independent four-arm factors are insufficient and why six-arm input
+requires a proved fused collision annulus; pooled-root use also needs a
+near-critical window certificate. Issues #534/#535/#536 were closed by the
+repository team; their scientific specifications remain provenance rather
+than active entrances. The
 [completed joint-U calculation](../notes/regular-pair-joint-u-result.md)
 uses the physical pair contraction, not covariance of single-mark scores.
 Its negative J2 is neither the positive spatial C64 nor the conditional

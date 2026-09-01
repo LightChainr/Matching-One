@@ -2,8 +2,11 @@
 
 `scripts/regular_pair_macro_joint_u_sampler.cpp` implements the raw collector
 specified by [`analysis/regular_pair_macro_joint_u_contract.json`](../analysis/regular_pair_macro_joint_u_contract.json).
-It is a compile-ready prototype; this delivery did not compile it, run the
-pilot, regenerate the kernel, allocate a server, or score a response.
+This note preserves the **pre-run frozen producer specification**. The same
+collector was subsequently compiled and run locally; the completed/stopped
+outcome and immutable receipt are in the
+[report](../results/regular-pair-macro-joint-u/REPORT.md) and
+[`run.json`](../results/regular-pair-macro-joint-u/run.json). No server was used.
 
 ## Fixed invocation and pairing
 

@@ -1,14 +1,53 @@
 # Roadmap: Default Attention, Not Permission
 
-**Current move, 2026-09-01:** advance from the completed canonical J2 to the
-[fixed macroscopic-window decision](../notes/regular-pair-joint-size-decision.md).
-With the same canonical source and its stated single-field assumptions,
-`T_N=N²J2_macro~N^(29/8−x)`. For `N→4N`, the two frozen predictions are
-`2^(−5/4)` at `x=17/4` and `2^(−13/4)` at `x=21/4`; J2_macro predicts
-`2^(−21/4)` and `2^(−29/4)`, respectively. The projected bilocal kernel
-is not the unfiltered second derivative of a homogeneous one-coupling
-family. These are mechanism contrasts, not exponent estimates or field
-identifications. The
+**Current move, 2026-09-01:** the
+[fixed macroscopic-window decision](../results/regular-pair-macro-joint-u/REPORT.md)
+has run and stopped. N100 gives `T_N=N²J2_macro=+11.877846` with simultaneous
+interval `[−2.255616,26.011308]`; N400 gives `−542.503823` with interval
+`[−1307.642507,222.634861]`. Both include zero, their point signs oppose,
+and the N400 production projection 2,119,100 exceeds the frozen 2M ceiling.
+The declared `x=17/4` and `x=21/4` contrasts `D17/D21` were therefore not
+evaluated. This route is complete rather than waiting for a top-up, new
+window or fitted exponent.
+
+Default attention moves to one `q/E`-weighted dyadic pivotal-carrier
+intervention inside the complete original-U root/slope functional. Its
+prospective alternatives are a factorized two-bridge contribution, a remote
+merger transition, and a topology-only carrier with unchanged raw `g` but
+changed `q/E`. PR #509's raw summability theorem (`eed2190c`, current head
+`2785e3bb`) cannot replace this thermal derivative. Its latest audit instead
+compresses the whole response into the root-conditioned Hessian
+`partial_u partial_epsilon Yhat=J_N/A_N`. PR #533's bounded and growing-window
+capillary sign work (current head `b49e2a21`) is a separate strong-source
+theorem, not evidence for the critical carrier.
+
+Closed Issue #536 preserves the first exact midpoint channel split as an
+issue-only attachment; open Issue #537 is now the repository's sole canonical
+P0. The all-pair observable/rank pivot is
+`−.005935841948386444`, kernel pivot `+.0004141042799437205`, combined root
+`+.0000023062436033220`. NN and nonNN kernel terms have opposite signs.
+Therefore the current move is not “split the channels” again. Delivery B has
+now [completed](../results/p337-thermal-pivotal-preflight/REPORT.md): the first
+32 counters from each existing L32/L64 stream give 64 old configurations,
+5,242,880 validated callbacks and 18 sparse kernel-changing events, with no new
+seed. No kernel-preserving topological event appears in this finite subset;
+that is not a zero-probability statement. The next move begins with #537's
+bounded falsifier: test whether the C4/Schur-projected ordinary four-arm
+landing transfer matrix has a nonzero `2x2` minor. A nonzero minor kills the
+three-packet thermal-coordinate cancellation; rank one promotes a four-packet
+candidate whose support reduction still has to be proved. Then prove the surviving carrier-resolved absolute or
+signed dyadic support. The
+[literature bridge](../notes/p337-thermal-pivotal-literature-bridge.md) rules
+out a naive three-four-arm closure and requires either a common-landing gain or
+signed cross-observable cancellation, plus a pooled-root near-critical window
+certificate. The all-L remote rerouting in #537 additionally forces two
+distance scales: rank/shared-count can stay fixed while `g` changes at an
+arbitrarily remote pivot.
+Reuse PR #530's `phi_g`, PR #531's correlated `eta/xi` quotient and PR #532's
+exact two-bridge factorization; retain their unmerged lifecycle labels.
+Issues #534/#535/#536 were closed by the repository team; #539 remains P2
+exact-N25 support. PR #533 now excludes the shortest local hairpin as first
+growing-window crossover, leaving a nonlocal west-step and fixed-m work. The
 [N25 joint-U result](../results/regular-pair-joint-u/REPORT.md),
 `open_pr #267` at `f8e30859f05e86ef35d257fc900f97e74f41e21c`, gives
 `J2=∂logQ∂epsilon²U=−.0055194314248394015`, NN
@@ -67,14 +106,16 @@ The canonical tensor and epsilon/N unit remain fixed. The
 origin-vacant states per geometry, full 2^25 normalization and shared
 physical edge IDs for adjacent holes, retaining the full root/slope
 response. Positive C64 and the conditional Gram did not determine its
-negative directional response. NonNN on N25 is not yet macroscopic; the
-fixed-window comparison above supplies the missing separation while
-preserving the canonical source. [Next Targets](NEXT-TARGETS.md) owns
-acquisition. Freeze `s=2` versus `s≥3` as a support split within that same
-readout if used; do not count it as independent evidence or expand it into
-a descriptor search. Another epsilon derivative or alpha search is not
-the default follow-up. Joint physical contractions cannot be replaced by
-covariance of single-mark activation scores.
+negative directional response. The completed macro-window comparison did not
+resolve a common-sign scale ratio and stops under its frozen rule.
+[Next Targets](NEXT-TARGETS.md) owns open #537 after the completed #536-derived
+Delivery B. First test the Schur-projected landing-matrix minors; only then route
+the surviving rank-one or non-rank-one structure into a tail theorem. Keep
+`s=2/3/4` as an additive support split inside the same dependency block; do not
+count it as independent evidence or expand it into a descriptor search. Another
+epsilon derivative, alpha search or macro top-up is not the default follow-up. Joint
+physical contractions cannot be replaced by covariance of single-mark
+activation scores.
 
 **Separate bounded-occupation line:** the old pure-K2 tangent retains
 [W_N=N V_av and ratio W_(4N)/W_N](../notes/local-pair-size-response-predictions.md).

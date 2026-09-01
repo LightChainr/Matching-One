@@ -6,6 +6,71 @@
 
 `docs/NEXT-TARGETS.md` owns the single attention order, while `docs/ROADMAP.md` preserves its scientific rationale. Neither locks a task, serializes theory work or treats a lower priority as a scientific rejection.
 
+**The canonical macro-window joint-U pilot is completed and its field-ratio
+route is stopped, `open_pr #267`.** The [report](../results/regular-pair-macro-joint-u/REPORT.md)
+and [machine-readable result](../results/regular-pair-macro-joint-u/latest.json)
+retain fixed `Kreg`, the exact torus-distance window, paired axis/tilted
+streams, full `q/E` moments and the moving-root/slope original-U functional.
+
+| Size | `T_N=N²J2_macro` | Familywise simultaneous interval | Frozen decision |
+|---|---:|---:|---|
+| N100 | +11.877846 | [−2.255616, 26.011308] | unresolved |
+| N400 | −542.503823 | [−1307.642507, 222.634861] | unresolved; projected production 2,119,100 > 2M ceiling |
+
+The point estimates have opposite signs and both intervals include zero.
+The frozen rule therefore stops the route before `D17/D21`; no top-up,
+replacement window or free exponent is licensed by this result. The `s=2`
+stratum dominates the point estimates but is a dependent decomposition of
+the same unresolved totals.
+
+**Closed Issue #536 preserves the exact N25 midpoint channel split as an
+issue-only attachment; it is not yet Git-integrated.** For all pairs the
+observable/rank pivot, kernel pivot and combined-root terms are respectively
+`−.005935841948386444`, `+.0004141042799437205` and
+`+.0000023062436033220`, summing to the known
+`−.005519431424839401`. The corresponding NN terms are
+`−.00085245745`, `−.00089978682`, `+.00000116982`; nonNN terms are
+`−.00508338450`, `+.00131389110`, `+.00000113643`. The first channel split
+is therefore reported complete at the issue level but still needs its source
+artifact integrated before it becomes a repository-native result.
+Delivery B is now `open_pr #267`: the frozen
+[64-counter replay](../results/p337-thermal-pivotal-preflight/REPORT.md)
+completed on the first 32 existing counters at each of L32/L64, with no new
+seed. All 5,242,880 pair/site callbacks passed the structural identities. The
+finite subset contains 18 kernel-changing callbacks (11 L32, 7 L64), no
+observed kernel-preserving topological callback, and a shell-localized external
+shared-transition pattern at L64. These callback counts are descriptive and
+correlated, not an ensemble sign or zero-probability statement. The repository
+team closed #536 as duplicate and moved the sole canonical P0 to open
+[Issue #537](https://github.com/LightChainr/Matching-One/issues/537); this Draft
+did not perform the lifecycle change. Highest attention is #537's
+root-conditioned Hessian gate. PR #530 `0e1917f9`, PR #531 `a5375b5` and PR #532 `2e1c57b4`
+are reusable unmerged interfaces, not `main` facts.
+
+PR #509 (current head `2785e3bb`) proves at `eed2190c` that the raw
+canonical pair susceptibility is absolutely summable at exact criticality.
+That theorem does not control the thermal derivative, moving root or original
+U: the open object is the `q/E`-weighted dyadic pivotal influence and its
+remote merger/topological carriers. Its latest audit proves the exact finite
+compression `partial_u partial_epsilon Yhat=J_N/A_N`, so the first bounded
+falsifier is the rank-one condition for the C4/Schur-projected ordinary
+four-arm landing transfer matrix. A nonzero `2x2` minor kills the proposed
+three-packet thermal-coordinate cancellation; vanishing minors promote the
+four-packet remainder as a candidate whose support reduction remains to be
+proved. #537 also gives an all-L remote rerouting with
+fixed near marks, unchanged rank/shared-count and `g:1/4->1/2`, forcing a
+two-scale carrier geometry. The
+[literature bridge](../notes/p337-thermal-pivotal-literature-bridge.md) shows
+that a naive three-four-arm product does not close the bulk absolute sum even
+with triangular `alpha4=5/4`; six-arm input closes only a proved fused
+collision annulus. This is now the primary mechanism-changing target.
+PR #533 (current head `b49e2a21`) separately closes its bounded-capillary
+strong-source sign window and extends the directed negative determinant into
+`m >> L^(2/3)` under its stated hypotheses. The shortest local hairpin packet
+is excluded as first crossover; a nonlocal west-step remains. It is not
+evidence for the critical macro-window carrier. Issues #534/#535 are observed
+closed; #539 remains open P2 exact-N25 support, not a second P0.
+
 **Canonical joint Q activation of original U is completed, including nonNN transmission.**
 The [joint-U result](../results/regular-pair-joint-u/REPORT.md) and
 [interpretation](../notes/regular-pair-joint-u-result.md), `open_pr #267`
@@ -93,18 +158,15 @@ canonical N25 J2 above now measures nonzero global transmission. No
 universal field norm is asserted. The completed relation `W_alpha=W_Q-alpha V_old`
 still makes a single mixed-U coefficient completion-dependent.
 
-**Next:** keep canonical Kreg fixed and execute the
-[specified macroscopic-window comparison](../notes/regular-pair-joint-size-decision.md).
-For `T_N=N²J2_macro`, the declared single-field loading models predict
-`T_4N/T_N=2^(−5/4)` at `x=17/4` and `2^(−13/4)` at `x=21/4`;
-the corresponding J2_macro ratios are `2^(−21/4)` and `2^(−29/4)`.
-The observer is a fixed projection of the bilocal pair kernel, not the
-unfiltered second derivative of a homogeneous one-coupling source.
-These conditional ratios are decision targets, not measured exponents
-or identified fields. The same acquisition may freeze an `s=2` versus
-`s≥3` support split; its parts share the readout and are not separate
-evidence or an expandable descriptor catalogue. [Next Targets](NEXT-TARGETS.md)
-owns acquisition. The
+**Next:** Delivery B has isolated a sparse finite carrier interface and stopped.
+Use #537's exact projected-landing minor test first; conditional on that
+falsifier, prove the surviving four-packet or carrier-resolved signed dyadic
+transmission inside the full root/slope functional. Preserve predeclared
+outcomes for two-bridge rerouting, remote-merger transport and topology-only
+influence. The
+completed field-ratio contrast was not evaluated because the pilot failed its
+simultaneous-sign and cost gates; it is not waiting for more samples.
+[Next Targets](NEXT-TARGETS.md) owns acquisition. The
 N25 global additive and NN-only questions are completed, not requests for
 another score. Joint physical contractions remain essential; covariance
 of single-mark scores is not a substitute. Neither an automatic K3 run nor
@@ -578,6 +640,8 @@ This delta is placed before the main claim ledger because it changes what the te
 
 | Latest result | Source / integration | Scientific consequence |
 |---|---|---|
+| Canonical macro-window joint-U pilot | `open_pr` #267; [report](../results/regular-pair-macro-joint-u/REPORT.md) | N100 `T=+11.877846`, interval `[−2.255616,26.011308]`; N400 `T=−542.503823`, interval `[−1307.642507,222.634861]`. Opposite signs, both include zero, and N400 projects above the 2M ceiling: route stopped, `D17/D21` not evaluated. Next target is the `q/E`-weighted thermal-pivotal carrier, not a macro top-up |
+| N25 midpoint split and finite carrier replay | Exact split remains closed Issue #536 attachment only; 64-counter replay is `open_pr` #267 with [report](../results/p337-thermal-pivotal-preflight/REPORT.md); #537 is open canonical P0 | Observable/rank pivot dominates issue-only all-pair J2 negatively. Delivery B validates 5,242,880 callbacks and finds 18 sparse kernel-changing events, but has no centering/significance. It is complete; next test the projected landing-matrix minors, then the surviving signed/absolute tail—not more counters. |
 | N100 and N400 three-shape production | `open_pr` #484; N400 raw `3e01b49`, captured head `705819e`; #485 is N100 same-stream reuse | N100 necessary common density-map statistic53.91436/6 becomes3.90086/6 at N400, p=.69009. One N1002M block and one independent N4008M block, with shapes paired inside each. Nonrejection is not model recovery; a fitted negative cross-scale amplitude has an interval spanning zero |
 | Intrinsic rank-clock broadening | `branch_only` / `fb1a944`, [source](https://github.com/LightChainr/Matching-One/blob/fb1a944e1ef34e9b9dfcf32c59af25f44ce43d9a/notes/p267-rank-clock-width-decomposition.md); cited by #484, not in its captured tree | Rank-step centered z variance1.432585±.016441→2.094751±.074748;96.895%±.507pp of the canonical increase remains. This is a signed profile, not a threshold probability distribution; the selected two-size .237960±.013519 width fingerprint is not a critical exponent |
 | Ordinary scalar transport at N400 | `branch_only` / `162fe94`, [source](https://github.com/LightChainr/Matching-One/blob/162fe94e7986eaed177e58af42900acfffbf4e4d/notes/p267-ordinary-scalar-clock-n400.md); cited by #484, not in its captured tree | Source-defined ordered height-ratio comparison .0769793/2 is weak, as is its cross-scale change. This no-Jacobian class differs from density transport; no scalar recovery or resolved sign reversal |

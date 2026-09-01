@@ -5,8 +5,10 @@ canonical two-site kernel, after projection to one fixed macroscopic separation
 window, transmit through the **complete original moving-root U functional** at
 both `N=100` and `N=400`? The executable contract is
 [`analysis/regular_pair_macro_joint_u_contract.json`](../analysis/regular_pair_macro_joint_u_contract.json).
-It is ready to implement, but this note does not run it, test it, allocate a
-server, or authorize a production continuation.
+This note is the **pre-run frozen contract**, not a current progress claim.
+It was subsequently implemented and run locally; the valid pilot stopped
+unresolved under its declared rule, before `D17/D21`, with no server or
+production continuation. See the [completed report](../results/regular-pair-macro-joint-u/REPORT.md).
 
 The priority is forced by the exact critical-point summability result in
 [`eed2190c`](https://github.com/LightChainr/Matching-One/blob/eed2190c04b67084ab5aef5827e00377853a0bca/notes/p337-critical-spatial-summability.md):

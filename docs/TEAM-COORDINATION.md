@@ -1,12 +1,40 @@
 # Three-team scientific handoff / 三队协作入口
 
-Updated: **2026-09-01**, exact joint-U decision `f8e30859` reproduced by
-execution `410015f5`, independent spatial-Q result `a237968f`, and PR509
-delivery `baa5d33b`; prior regularization and independent decisions are
-retained. This is a result-routing entry, not a second
+Updated: **2026-09-01**, including the stopped N100/N400 macro joint-U pilot,
+closed Issue #536's issue-only exact midpoint split, completed 64-counter carrier
+preflight, open canonical P0 #537, P2 support #539, PR509 head `2785e3bb` and
+PR533 head `b49e2a21`; prior
+regularization and independent decisions are retained.
+This is a result-routing entry, not a second
 priority board or a live process monitor. [Next Targets](NEXT-TARGETS.md) remains
 the single attention order; [the machine-readable handoff](../analysis/team_coordination.yaml)
 records source pins and the state reported by each team.
+
+**Current handoff:** the [macro pilot](../results/regular-pair-macro-joint-u/REPORT.md)
+gives N100 `T=+11.877846`, interval `[−2.255616,26.011308]`, and N400
+`T=−542.503823`, interval `[−1307.642507,222.634861]`. Opposite signs, two
+zero-containing intervals and an N400 2,119,100 projection above the 2M
+ceiling stop the route before `D17/D21`. Do not top up or replace the window.
+
+Closed Issue #536's exact N25 midpoint decomposition remains an issue-only
+attachment, not a Git artifact: all-pair observable/rank pivot
+`−.005935841948386444`, kernel pivot `+.0004141042799437205`, combined root
+`+.0000023062436033220`. Delivery B is now complete in
+[PR #267's report](../results/p337-thermal-pivotal-preflight/REPORT.md): 64 old
+counters and 5,242,880 callbacks pass, with 18 sparse kernel-changing events
+and no new seed. Open #537 is the repository's sole canonical P0. Its first
+handoff is the root-conditioned, Schur-projected ordinary four-arm landing
+matrix: a nonzero `2x2` minor kills the pure-thermal three-packet model; a
+rank-one result routes the proof to a four-packet `R^4*pi4^4` remainder. Reuse PR #530
+`0e1917f9`, PR #531 `a5375b5` and PR #532 `2e1c57b4`; keep them unmerged.
+PR #509's raw summability theorem does not replace this thermal derivative;
+its current head gives the exact Hessian compression and an all-L same-count
+remote rerouting. PR #533's current extension closes the directed determinant
+through `L^(2/3)<<m<<L` and excludes the shortest local hairpin as first
+crossover; the nonlocal west-step/rough-bridge candidate remains. Issues
+#534/#535/#536 were observed closed by the repository team. Open #539 is P2
+exact-N25 support and should first consume the #536 attachment rather than
+repeat the full enumeration.
 
 **New scientific handoff:** the [exact canonical joint-U result](../results/regular-pair-joint-u/REPORT.md)
 gives `J2=partial_logQ partial_epsilon²U=−.0055194314248394015` at
@@ -56,23 +84,15 @@ After summing the two holes, divide by `(1+v_x)(1+v_y)`. These conditional
 coefficients are neither global U, a CFT norm nor measured size exponents.
 Higher counterterm Taylor coefficients do not enter; no alpha was fitted.
 
-**Next:** keep canonical `Kreg` fixed and use a predeclared macroscopic
-torus-distance window at identical shape and dilation. Project the actual
-bilocal joint kernel into that window, propagate its q/E moments through
-the complete original-U root/slope functional, and define the extensive
-response `T_N=N²J2_macro`. Under the explicitly declared single-field,
-nonzero-intrinsic-U-slope and no-same-order-mixing assumptions,
-`T_N~N^(29/8−x)`. An area dilation N to4N predicts
-`2^(−5/4)` for x=17/4 versus `2^(−13/4)` for x=21/4. This is a fixed
-bilocal-window projection of second functional derivatives, **not** the
-unfiltered second derivative of a homogeneous one-parameter coupling.
-The window, source normalization and finite-size rejection criterion must
-be fixed before readout. The completed unprojected spatial C cannot replace
-this original-U comparison. No K3 source, fitted counterterm or repeat N25
-J2 is next. A predeclared support split `s=2` versus `s>=3` may accompany
-the same macro-window response, but is a correlated decomposition of that
-one readout, not a second decision or a descriptor search. The entry-regular
-retain-old-V search remains settled.
+**Next:** execute #537's projected landing-matrix minor test after the finished
+64-counter preflight. Preserve canonical `Kreg` and the full original-U `q/E`
+root/slope influence. Conditional on the minor outcome, prove the surviving
+signed/absolute dyadic support for two-bridge factorization, remote merger or
+same-count rerouting, and topology-only `q/E` carriers; include the near-critical
+root-window certificate. Keep `s=2/3/4` additive
+inside the shared dependency block. The macro ratio has already stopped; no
+K3 source, fitted counterterm, repeat N25 J2, new seed or macro-window top-up
+is next. The entry-regular retain-old-V search remains settled.
 
 The preceding [physical two-hole closure](../notes/local-pair-two-insertion-obstruction.md)
 has `Tr(Kbar²)=Q(Q−3)(3Q²−9Q+8)/[8(Q−1)(Q−2)]`, with Q1 residue1/2.
@@ -174,9 +194,9 @@ create a second priority queue.
 
 | Team | Delivered / active contribution | Next handoff |
 |---|---|---|
-| **数学研究执行** | `410015f5` gives a full-`2^25` alternate implementation reproducing `f8e30859` total/NN/nonNN J2; it is not a new statistical vote. Earlier `a237968f` independently delivers the fresh L32/L64 spatial-Q blocks and positive C64, a different observer. | Supply only the predeclared canonical macroscopic-window joint-kernel projection needed by original U. The fixed `s=2` versus `s>=3` split is one correlated support decomposition; do not reuse unprojected C or add another spatial descriptor. |
-| **数学研究总览** | Draft [PR #267](https://github.com/LightChainr/Matching-One/pull/267): `f8e30859` delivers exact total/NN/nonNN J2 and rejects additive plus NN-only global transmission. Earlier `21563da4` one-site/Gram boundaries remain in force. | Route the fixed `T_N=N²J2_macro` comparison: N to4N predicts `2^(−5/4)` versus `2^(−13/4)` under the named single-field assumptions. Preserve the bilocal-projection boundary and predeclare finite-size rejection. |
-| **数学研究俯瞰** | PR509 `ef3b2c68` completes exact homogeneous N50 Sstar transmission, `V=+.0543457826695583`; `baa5d33b` proves the `s<=1` spatial-kernel zero rule. Earlier P154/P334 decisions remain complete. | Keep these finite results and the support theorem as inputs to the one macro-window decision. Do not turn the support split into separate evidence, fit a scale from N50, or reopen completed P154/P334 production. |
+| **数学研究执行** | Closed #536 retains the exact midpoint split; the frozen L32/L64 64-counter subset has been replayed and stopped. | Use the finite interface as an oracle; support #539 only by importing the existing exact attachment first. Do not add counters, seeds or duplicate enumeration. |
+| **数学研究总览** | Draft [PR #267](https://github.com/LightChainr/Matching-One/pull/267) contains the stopped macro pilot, completed carrier preflight and literature bridge; N25 total/NN/nonNN J2 remains an input. | Keep #537 as the sole P0, route the landing-minor outcome to exactly one surviving tail proof, and preserve issue-only/open-PR labels. |
+| **数学研究俯瞰** | PR509 `2785e3bb` supplies the raw theorem, root-conditioned Hessian, exact join envelope and all-L rerouting; PR530/531/532 are support interfaces; PR533 `b49e2a21` narrows the remaining noncompact crossover. | Build the Schur-projected landing matrix and test its minors before a full collision-tree or cross-spectral proof. |
 
 The current canonical joint-U delivery pin is
 `f8e30859f05e86ef35d257fc900f97e74f41e21c`, integrated in open Draft
@@ -187,16 +207,18 @@ pin remains `a237968f1d7a82d26b46e83c58179dbba7f1a908`; neither is an
 additional PR in the current scoped branch-to-PR query. Its earlier [Issue #334 result card](https://github.com/LightChainr/Matching-One/issues/334#issuecomment-5476674429)
 and [PR #267 pointer](https://github.com/LightChainr/Matching-One/pull/267#issuecomment-5476674567)
 are discussion links, not code integration. PR #509 retains its observed
-open/Draft lifecycle; the current delivery pin is
-`baa5d33b2f87b2868aa0cb9d3f6518c93dbf3bff`, containing the exact
-N50 result `ef3b2c68f824e29421747c805ea7a505aca41908` and the complete
+open/Draft lifecycle; its current head is `2785e3bb`, containing the raw
+summability theorem at `eed2190c`, the exact N50 result
+`ef3b2c68f824e29421747c805ea7a505aca41908` and the complete
 `s<=1` selection rule. It also retains the official result
 `f4999e29612da16a3650f24d124fb59137f053d7`. Earlier `14b2c98e` completes the
 fresh contact-residual comparison; `04743caf` completes temporal/BG/shape work;
 `8ad30617` includes final targeted64 result
 `7beb99ce86df903ec41ee2ec2a1de59184cf5b6b`. The earlier `ac5761ce` running
 report is history, superseded by that completed package; this is not a new live API/process check.
-PR #267 also remains open and Draft; references to #509 do not merge its code.
+The same head adds the exact root-conditioned Hessian, Bell8 join audit and
+all-L same-count remote rerouting used by #537. PR #267 also remains open and
+Draft; references to #509 do not merge its code.
 
 ## P154 completed primary decision and secondary interpretation
 
