@@ -1,0 +1,80 @@
+{
+  "schema": "matching-one/p537-finite-collar-summary/v1",
+  "status": "first_preferred_minor_exact_nonzero_stop",
+  "collar_contract": {
+    "radius": 1,
+    "metric": "Chebyshev",
+    "vertex_set": "B_inf(z,1)",
+    "fixed_frame": "x=West(z), arm_mask=5",
+    "arm_order": ["B_N", "W_E", "B_S", "W_W"],
+    "corner_bit_order": ["NE", "SE", "SW", "NW"],
+    "outer_attachment": ["J_B", "J_W"],
+    "identity": "rank1-rank0=J_B+J_W-1",
+    "local_ordinary_filter": "local_source_contact_mask=0"
+  },
+  "geometries": {
+    "axis": {
+      "period": [5, 0],
+      "backgrounds": 8388608,
+      "pair_fibres": 192937984,
+      "raw_rows": 1855739,
+      "alternating_pair_fibres": 24117248,
+      "preferred_axial2_pair_fibres": 809454,
+      "identity_failure_pair_fibres": 0,
+      "forbidden_double_distinct_pair_fibres": 0,
+      "elapsed_seconds": 22.209932458000001,
+      "raw_csv_sha256": "b3b4e2f3e17ebdf89b49b0e706cd709dfb21160f9ed3936075c4b1ab9670bff8",
+      "raw_csv_committed": false
+    },
+    "tilted": {
+      "period": [4, 3],
+      "backgrounds": 8388608,
+      "pair_fibres": 192937984,
+      "raw_rows": 1789729,
+      "alternating_pair_fibres": 24117248,
+      "preferred_axial2_pair_fibres": 752894,
+      "identity_failure_pair_fibres": 0,
+      "forbidden_double_distinct_pair_fibres": 0,
+      "elapsed_seconds": 17.353658916000001,
+      "raw_csv_sha256": "b3b85dafc254662bcce22aa6d27c7740ca3e9a6ba3d1ba916c872abd4622860d",
+      "raw_csv_committed": false
+    }
+  },
+  "aggregation": {
+    "global_source_components": ["axial2", "diag1", "far", "knight_a", "knight_b", "nn_other"],
+    "landing_source_component": "axial2",
+    "corner_masks": "summed",
+    "outer_occupied_join": 1,
+    "outer_vacant_join": 1,
+    "local_source_contact_mask": 0,
+    "rows": ["collar_r1_birth:[0,1]", "collar_r1_birth:[1,2]"],
+    "columns": ["axial2:absent", "axial2:present"],
+    "aggregate_rows": 386
+  },
+  "preferred_minor": {
+    "status": "exact_interval_nonzero",
+    "lower": "2690418846144177725678447286445842349/100000000000000000000000000000000000000000000000000",
+    "upper": "2690418846144177725678447286445842359/100000000000000000000000000000000000000000000000000",
+    "midpoint": 2.6904188461441777e-14,
+    "excludes_zero": true,
+    "tested_minors": 1,
+    "total_possible_minors": 1,
+    "stopped_at_first_nonzero": true
+  },
+  "normalization": {
+    "a_raw_denominator": 16,
+    "fixed_x_source_component_denominator": 25,
+    "fixed_z_C4_orbit_multiplier": 4,
+    "source_absent_sentinel": 16777216
+  },
+  "artifacts": {
+    "producer_sha256": "6561ce1249bd80430eebaa6f0f40fb13e34c649e6e13039aaf158463c1cfa64e",
+    "aggregator_sha256": "78c74fc9e5b3ab3585efbd60968bc0ccb0cc6bf45339748cb65aaf5c5da74640",
+    "extractor_sha256": "1332c347e53d1cee8e2b2df5d40881271693a999e250c501246cc6625f8abbb2",
+    "aggregate_sha256": "ff725ed0f222ce5dd5f2cc73cada4b93d618e21d73654df8ee5d2a3d7b319917",
+    "state_counts_sha256": "7700be11692a2bb7d428f24f17a380964ad71fd445593052222bad84a97bc138",
+    "score_sha256": "8217252867f2faac7c6b958b582d9f3943c115458cae9f1e81e048d35835f118",
+    "preferred_minor_sha256": "3fdddc91645ca3631ebed966ea977bdf2c4a04f391fd2e16579e947101f0b81e"
+  },
+  "boundary": "exact finite N25 radius-one collar rank-two certificate; not a macroscopic or asymptotic four-arm theorem"
+}
