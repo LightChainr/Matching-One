@@ -150,11 +150,11 @@ class ResearchRegistryTests(unittest.TestCase):
                     "issue": 537,
                     "parent_issue": 337,
                     "kind": "theory",
-                    "target": "complete_original_U_thermal_pivotal_two_channel_rate_and_pooled_root_transport",
+                    "target": "freeze_formal_ordinary_no_extra_landing_contract_then_complete_surviving_signed_rate",
                     "status": "active_no_sampling",
                     "random_sample_budget": 0,
-                    "next_falsifier": "projected_ordinary_four_arm_landing_matrix_2x2_minors",
-                    "stop_rule": "no_random_block_until_a_signed_support_landing_or_normalization_bound_changes_the_gate",
+                    "next_falsifier": "formal_contract_includes_or_excludes_provisional_clean_two_bridge_counterexample",
+                    "stop_rule": "no_N_random_or_five_six_arm_work_before_one_semantic_inclusion_decision",
                 }
             ],
         )
