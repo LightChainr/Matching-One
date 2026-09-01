@@ -37,6 +37,12 @@ with all normalization weights absorbed into `a^lambda`.  For the canonical
 spatial source, `lambda` may be an ordered pair `(x,y)` carrying its `N^-2`
 weight.
 
+Translation reduction does not change that normalization silently.  If one
+fixes `x=0` and sums over displacements `y`, the physical component is
+`a^y=N^-1 g_0y`; the other factor `N` has already been supplied by the
+translation orbit.  There is no second `N^-1` attached to the thermal site
+`z`.
+
 At the common finite root `p0`, define
 
 \[
@@ -151,6 +157,14 @@ covariant, and identical in both geometries.
   `(rank_0,rank_1)`, and the occupied/matching landing identifications needed
   for `q_i,E_i`.
 
+The source label set includes an explicit absent/endpoint-occupied state.
+Such a fibre can have `a_0^lambda=a_1^lambda=0` and still contributes through
+`-beta_lambda b_i` in (10); dropping it changes the Schur Hessian.  Likewise,
+an `ordinary-four-arm` row name is licensed only when the label records two
+distinct occupied branches and two distinct vacant matching separators at
+the landing cut, together with the off-port extra-contact flag.  Local
+occupied/vacant alternation by itself is only a near-block label.
+
 Let `Omega_g(tau,alpha;z)` contain the ordinary-four-arm off-`z`
 backgrounds with these labels, and let
 
@@ -183,6 +197,12 @@ Canonicalize labels under simultaneous quarter-turns, or form
 
 For spin four the quarter-turn character is `+1`.  This local orbit average
 does not perform the axis-minus-tilted projection.
+
+If an implementation fixes one nearest-neighbour direction for `z`, it has
+computed only one representative of a four-element physical orbit.  It must
+restore the four directions before (15) (equivalently use the correctly
+normalized orbit sum).  This multiplicity is independent of the `N^-1`
+fixed-origin source weight above.
 
 The final matrix is
 
