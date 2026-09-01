@@ -10,6 +10,20 @@ The repository is organized to expose the next mechanism-changing observation, n
 
 ## Start here
 
+**Large compute is now routed by decision value, not by whether target data are
+missing.**  The repository-level review of Draft
+[#546](https://github.com/LightChainr/Matching-One/pull/546) is recorded in the
+[large-scale decision portfolio](notes/large-scale-decision-portfolio-20260901.md)
+and its [machine-readable contract](analysis/large_scale_decision_portfolio_20260901.yaml).
+No run is launched by that review.  The immediate action remains the #275
+candidate-column calculation on existing covariance.  The strongest new
+conditional large design is a stabilizer-free generic-modulus homology-vector
+transport; the most concrete structured control is the Pell/Eisenstein
+square-bond vector jet before any N418/N780 square-site production.  N650/N850
+Gaussian commuting-square brute force remains cost-stopped, and transfer
+matrix/block-confidence work remains behind measured reproduction or power
+gates.  These rankings allocate attention and do not lock parallel work.
+
 **Current decision: the original-`U` mechanism is
 [`UNIDENTIFIABLE_WITH_CURRENT_ASSETS`](notes/p275-current-asset-closure-20260901.md);
 #275 remains the highest theory-attention line and #537 remains P1.**  Existing

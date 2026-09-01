@@ -1,4 +1,4 @@
-version: 60
+version: 61
 updated: 2026-09-01
 scientific_main_snapshot_commit: e30060995a9eb5c4d93f565ae09af4f54a56270f
 observed_remote_main_snapshot_commit: 580678a769b1360d701fb708e1f557a2db626f16
@@ -24,6 +24,8 @@ canonical_views:
   github_context_inventory: analysis/github_context_inventory.json
   historical_synthesis: notes/SYNTHESIS-20260828.md
   roadmap: docs/ROADMAP.md
+  large_scale_decision_portfolio: notes/large-scale-decision-portfolio-20260901.md
+  large_scale_decision_contract: analysis/large_scale_decision_portfolio_20260901.yaml
   hypothesis_board: docs/HYPOTHESIS-BOARD.md
   artifact_registry: analysis/artifact_registry.yaml
   reproducibility: REPRODUCIBILITY.md
@@ -135,6 +137,7 @@ frontier_schema:
     - triangular_control
     - square_controls
     - finite_transfer_cylinder
+    - generic_period_trivial_stabilizer
   acquisitions: [existing_data_reuse, exact_construction, small_pilot, new_production]
   information_gain: [very_high, high, medium]
   compute_cost: [none, low, moderate, high]
@@ -152,6 +155,9 @@ observer_sectors:
   - id: global_rank_projector
     name: global_rank_plane_projector
     semantic_boundary: P0_P1_P2_and_A_top_or_E_top_covector_must_be_declared
+  - id: continuum_subtracted_homology_vector
+    name: complete_homology_probability_vector_after_continuum_modulus_subtraction
+    semantic_boundary: retain_the_full_vector_actual_modulus_baseline_stabilizer_action_signed_tangent_direction_and_shared_covariance_not_a_scalar_H4_vote_or_a_Gaussian_unit_alias
   - id: primitive_homology_real_C3
     name: continuum_subtracted_primitive_homology_real_C3_probability
     semantic_boundary: per_configuration_probability_with_the_same_tau_i_Pinson_Arguin_baseline_and_signed_real_cross_rotation_gain_not_the_ordinary_global_K1_K2_quotient_prism_E_top_rho_child_or_pooled_root_original_q_E_normalizer
@@ -199,6 +205,22 @@ observer_sectors:
     semantic_boundary: exact_zero_conditional_mean_does_not_certify_covariance_gain_causality_or_threshold_origin
 
 branch_sources:
+  - id: SRC_PR546_LARGE_SCALE_QUEUE_REVIEW
+    integration_status: open_pr_reviewed_by_open_pr267
+    reviewed_pr: 546
+    reviewed_pr_draft: true
+    reviewed_ref: research/large-scale-compute-queue-20260901
+    reviewed_head: d85ff6f1c55eb766e0b04a5be556202166970c54
+    review_pr: 267
+    review_ref: research/navigation-priority-refresh-20260829
+    paths: [notes/large-scale-decision-portfolio-20260901.md, analysis/large_scale_decision_portfolio_20260901.yaml]
+    result_status: queue_reclassified_by_prospective_model_reduction_launchability_and_cost_without_starting_compute
+    highest_core_action: issue275_candidate_columns_then_existing_covariance_score
+    highest_new_conditional_large_design: generic_period_trivial_stabilizer_full_homology_vector_transport
+    highest_concrete_conditional_large_control: Pell_Eisenstein_square_bond_vector_jet_before_N418_N780
+    stopped_route: Gaussian_commuting_square_N650_N850_bruteforce_cost_gate_remains_closed
+    acquisition: repository_synthesis_and_design_no_new_samples_tests_server_or_GPU
+    claim_boundary: review_does_not_integrate_PR546_launch_compute_change_issue_lifecycle_or_turn_attention_priority_into_permission
   - id: SRC_PR267_REGULAR_PAIR_MACRO_JOINT_U_PILOT
     integration_status: open_pr
     pr: 267
@@ -4594,6 +4616,26 @@ branch_sources:
     claim_boundary: finite_exact_algebra_support_merged_by_other_workflows_not_new_physical_production_covariance_W5_bound_or_a_reason_to_repeat_readiness_work_the_initial_capture_open_state_for493_to497_is_historical
 
 scientific_nodes:
+  - id: SN_LARGE_SCALE_DECISION_PORTFOLIO
+    title: unacquired_compute_is_reclassified_by_prospective_model_reduction_and_cost
+    integration_status: open_pr
+    pr: 267
+    state: continuum_module
+    sources: [explicit_operator_derivative, bernoulli_thermal]
+    observer_sectors: [global_rank_projector, continuum_subtracted_homology_vector, topology_typed, direction_character]
+    geometries: [generic_period_trivial_stabilizer, moduli_hecke_child, square_controls, finite_transfer_cylinder]
+    acquisition: [existing_data_reuse, exact_construction, small_pilot, new_production]
+    source_refs: [SRC_PR546_LARGE_SCALE_QUEUE_REVIEW, SRC_ISSUE275_ETOP_OPERATOR_IDENTIFIABILITY]
+    known_result: 'PR546 correctly identifies zero-target routes but launch priority must be determined by frozen nuisance-profiled prediction separation per cost rather than acquisition absence'
+    supports: [issue275_candidate_columns_first, generic_modulus_vector_design, conditional_Pell_vector_jet, measured_transfer_and_block_event_gates]
+    excludes_only: [unacquired_implies_priority, scalar_H4_only_Pell_gate, Gaussian_N650_N850_nominal_bruteforce, symmetry_forbidden_Boolean_cross_spectrum_as_a_largeN_target]
+    tensions: [large_computation_can_have_low_mechanism_reduction, a_new_observer_can_be_scientifically_novel_without_being_P0]
+    reusable_data_refs: [notes/large-scale-decision-portfolio-20260901.md, analysis/large_scale_decision_portfolio_20260901.yaml]
+    dependency_group_refs: [large-scale-decision-design-no-random-evidence]
+    next_discriminator: DX_LARGE_SCALE_MAXIMIN_PORTFOLIO
+    information_gain: very_high
+    compute_cost: low
+    decision_experiments: [DX_LARGE_SCALE_MAXIMIN_PORTFOLIO, DX_GENERIC_MODULUS_VECTOR_TRANSPORT, DX_PELL_VECTOR_JET]
   - id: SN_HOMOGENEOUS_N50_SSTAR_ORIGINAL_U_TRANSMISSION
     title: complete_exact_homogeneous_N50_parent_pair_has_positive_fixed_Sstar_response_in_original_U
     integration_status: open_pr
@@ -8125,6 +8167,13 @@ scientific_nodes:
     decision_experiments: [DX_ETOP_TAU_TOPOLOGY_MAP]
 
 dependency_groups:
+  - id: large-scale-decision-design-no-random-evidence
+    kind: repository_queue_review_exact_design_and_power_receipt_synthesis
+    source_refs: [SRC_PR546_LARGE_SCALE_QUEUE_REVIEW, SRC_ISSUE275_ETOP_OPERATOR_IDENTIFIABILITY]
+    random_samples: 0
+    evidence_rule: the_portfolio_and_value_of_information_scores_are_design_objects_not_new_statistical_evidence_and_PR546_routes_remain_separate_future_dependencies
+    scope: issue275_candidate_columns_generic_modulus_vector_transport_Pell_vector_jet_transfer_matrix_block_confidence_and_Boolean_spectral_launch_gates
+    decision_boundary: no_compute_launched_no_issue_or_PR_lifecycle_change_and_no_route_is_locked_by_attention_rank
   - id: regular-pair-macro-joint-U-N100-N400-pilot
     kind: fresh_fixed_window_paired_geometry_iid_pilot_with_full_original_U_delete_one_covariance
     member_sizes: [100, 400]
@@ -9320,6 +9369,61 @@ dependency_groups:
     covariance_rule: two_orientations_F5_X_Y_Wline_JS_complex_determinants_share_twenty_batches_counters35225000000_to35225020000_the_N325_block_is_independent_but_this_F5_readout_is_not_an_independent_filtration_source
 
 decision_experiments:
+  - id: DX_LARGE_SCALE_MAXIMIN_PORTFOLIO
+    attention_rank: 2
+    attention_rank_scope: immediate_design_analysis_not_a_run_permission_or_new_evidence_vote
+    attention_class: prospective_model_reduction_per_cost
+    integration_status: open_pr
+    pr: 267
+    name: cross_route_nuisance_profiled_maximin_decision_value
+    status: contract_defined_route_scores_not_yet_computed
+    scientific_node_refs: [SN_LARGE_SCALE_DECISION_PORTFOLIO]
+    observer_sector_refs: [global_rank_projector, continuum_subtracted_homology_vector, topology_typed, direction_character]
+    source_refs: [SRC_PR546_LARGE_SCALE_QUEUE_REVIEW, SRC_ISSUE275_ETOP_OPERATOR_IDENTIFIABILITY]
+    dependency_group_refs: [large-scale-decision-design-no-random-evidence]
+    acquisition: existing_power_receipts_and_pilot_covariances_only
+    fixed_question: which_not_yet_acquired_route_maximizes_the_minimum_profiled_mechanism_separation_per_CPU_hour
+    decision_score: min_pairwise_profiled_Mahalanobis_squared_divided_by_projected_CPU_hours
+    expected_model_space_reduction: prevents_large_size_or_target_absence_from_substituting_for_a_mechanism_killing_prediction
+    compute_cost: low
+    next_discriminator: compute_one_common_score_after_each_route_supplies_frozen_predictions_covariance_and_cost
+    boundary: design_score_not_evidence_no_frozen_opposing_predictions_means_zero_launch_score
+  - id: DX_GENERIC_MODULUS_VECTOR_TRANSPORT
+    attention_rank: 3
+    attention_rank_scope: conditional_large_design_after_exact_stabilizer_and_power_gates
+    attention_class: new_operator_identification_axis
+    integration_status: open_pr_design
+    pr: 267
+    name: stabilizer_free_generic_modulus_full_homology_vector_transport
+    status: proposed_not_launched
+    scientific_node_refs: [SN_LARGE_SCALE_DECISION_PORTFOLIO]
+    observer_sector_refs: [continuum_subtracted_homology_vector, topology_typed, direction_character]
+    source_refs: [SRC_PR546_LARGE_SCALE_QUEUE_REVIEW]
+    dependency_group_refs: [large-scale-decision-design-no-random-evidence]
+    acquisition: exact_HNF_design_then_small_covariance_pilot_then_conditional_large_CPU
+    fixed_question: whether_the_continuum_subtracted_vector_tangent_follows_weight4_weight8_conjugate_or_embedding_even_quotient_transport_after_Gaussian_unit_alias_is_removed
+    expected_model_space_reduction: separates_universal_modular_transport_from_finite_quotient_symmetry_in_a_new_geometry_class
+    compute_cost: high_only_if_promoted
+    stop_rule: no_large_endpoint_if_profiled_predictions_are_rank_degenerate_or_pilot_power_is_inadequate
+    boundary: primitive_homology_vector_is_not_original_U_and_cannot_by_itself_identify_the_global_matching_H4_mechanism
+  - id: DX_PELL_VECTOR_JET
+    attention_rank: 4
+    attention_rank_scope: conditional_structured_large_control_not_default_queue
+    attention_class: nonGaussian_unit_class_vector_modular_control
+    integration_status: open_pr_design_reviewing_PR546
+    pr: 267
+    name: Pell_Eisenstein_actual_modulus_homology_vector_Taylor_jet
+    status: proposed_gate_revision_not_launched
+    scientific_node_refs: [SN_LARGE_SCALE_DECISION_PORTFOLIO]
+    observer_sector_refs: [continuum_subtracted_homology_vector, topology_typed, direction_character]
+    source_refs: [SRC_PR546_LARGE_SCALE_QUEUE_REVIEW]
+    dependency_group_refs: [large-scale-decision-design-no-random-evidence]
+    acquisition: exact_vector_contract_smaller_power_pilot_square_bond_control_then_conditional_N418_N780
+    fixed_question: whether_both_signed_Pell_sides_follow_the_frozen_C3_vector_jet_after_actual_modulus_continuum_subtraction
+    expected_model_space_reduction: distinguishes_vector_modular_organization_from_scalar_harmonic_or_geometry_label_voting
+    compute_cost: high_only_if_promoted
+    stop_rule: no_N418_N780_or_square_site_promotion_after_failed_vector_control_or_inadequate_power
+    boundary: Eisenstein_unit_symmetry_is_a_structured_control_not_the_trivial_stabilizer_experiment_and_a_character_pass_is_not_original_U_operator_identification
   - id: DX_HOMOGENEOUS_N50_SSTAR_TRANSMISSION
     attention_rank: 1
     attention_rank_scope: completed_exact_finite_decision_not_current_acquisition_queue
@@ -9972,23 +10076,26 @@ attention_order:
   principle: priority_is_attention_not_permission
   parallel: true
   execution_basis: issue275_dictionary_normalizer_and_first_forward_image_audit_are_complete_on_existing_archives_with_PARTIALLY_IDENTIFIABLE_nonuniform_result_no_new_MC
-  primary_decision_refs: [DX_ISSUE275_ETOP_OPERATOR_IDENTIFIABILITY]
+  primary_decision_refs: [DX_ISSUE275_ETOP_OPERATOR_IDENTIFIABILITY, DX_LARGE_SCALE_MAXIMIN_PORTFOLIO]
   completed_independent_decision_refs: [DX_ETOP_PRODUCTION_LOCALIZATION, DX_P429_SUCCESSOR_STATE]
   primary_design_status: issue275_remains_OPEN_P0_fixed_q2_kappa0p5_is_excluded_Jordan_is_compatible_not_identified_and_decaying_semisimple_collides_at_kappa_to1_issue537_remains_OPEN_P1_theory
-  next_scientific_target: derive_one_semantics_matched_rank0_rank2_restricted_trace_modulus_or_phase_transport_relation_for_the_same_B_source_original_q_E_and_pooled_root_normalizer_then_score_existing_assets
-  runnable_now_refs: [DX_ISSUE275_ETOP_OPERATOR_IDENTIFIABILITY, DX_REGULAR_PAIR_QE_WEIGHTED_PIVOTAL_TAIL]
+  next_scientific_target: derive_two_semantics_matched_rank0_rank2_restricted_trace_columns_for_the_same_B_source_original_q_E_and_pooled_root_normalizer_score_existing_assets_then_rank_any_unique_missing_acquisition_by_maximin_decision_value_per_cost
+  runnable_now_refs: [DX_ISSUE275_ETOP_OPERATOR_IDENTIFIABILITY, DX_LARGE_SCALE_MAXIMIN_PORTFOLIO, DX_REGULAR_PAIR_QE_WEIGHTED_PIVOTAL_TAIL]
   conditional_branch_rule: if_the_restricted_trace_transport_leaves_arbitrary_complex_gain_report_NONIDENTIFIABLE_if_it_freezes_shared_complex_or_signed_real_gain_score_existing_assets_and_only_then_consider_a_delta_pi_over24_second_rotation
   runnable_boundary: no_new_MC_N130_carrier_production_generic_fixture_or_posthoc_coordinate_the_current_result_is_post_reveal_and_all_model_views_share_the_existing_covariance_issue537_theory_can_run_in_parallel_not_a_permission_gate
-  future_measurement_option_refs: [DX_P250_BIVARIATE_HANKEL, DX_MIXED_CONTEXT_RECTANGLE]
+  future_measurement_option_refs: [DX_GENERIC_MODULUS_VECTOR_TRANSPORT, DX_PELL_VECTOR_JET, DX_P250_BIVARIATE_HANKEL, DX_MIXED_CONTEXT_RECTANGLE]
   on_demand_support_refs: [DX_PROOF_CARRYING_MODEL_ELIMINATION]
   completed_reference_only_refs: [DX_PROJECTIVE_BIRTH_EXIT_FLUX, DX_P334_BRANCHING_PRODUCTION, DX_EXTERNAL_EULER_GRAM, DX_TWO_OBSERVER_COUPLING, DX_MOTIF_JOINT_GRAM]
   catalog_role: decision_experiment_refs_is_the_ranked_reference_catalog_including_completed_results_not_a_run_queue
-  scientific_attention_refs: [DX_ISSUE275_ETOP_OPERATOR_IDENTIFIABILITY, DX_REGULAR_PAIR_QE_WEIGHTED_PIVOTAL_TAIL, DX_ETOP_PRODUCTION_LOCALIZATION, DX_P429_SUCCESSOR_STATE]
-  parallel_exploratory_refs: [DX_CONNECTIVITY_RADICAL, DX_ETOP_TAU_TOPOLOGY_MAP, DX_P337_LINE_TYPED_OBSERVER, DX_RHO_C3_SECTOR, DX_P250_BIVARIATE_HANKEL, DX_MIXED_CONTEXT_RECTANGLE, DX_REAL_GADGET_CERTIFICATE]
-  default_effort_hint: {issue275_operator_identifiability: 0.80, parallel_issue537_theory: 0.15, targeted_support: 0.05}
+  scientific_attention_refs: [DX_ISSUE275_ETOP_OPERATOR_IDENTIFIABILITY, DX_LARGE_SCALE_MAXIMIN_PORTFOLIO, DX_GENERIC_MODULUS_VECTOR_TRANSPORT, DX_PELL_VECTOR_JET, DX_REGULAR_PAIR_QE_WEIGHTED_PIVOTAL_TAIL, DX_ETOP_PRODUCTION_LOCALIZATION, DX_P429_SUCCESSOR_STATE]
+  parallel_exploratory_refs: [DX_GENERIC_MODULUS_VECTOR_TRANSPORT, DX_PELL_VECTOR_JET, DX_CONNECTIVITY_RADICAL, DX_ETOP_TAU_TOPOLOGY_MAP, DX_P337_LINE_TYPED_OBSERVER, DX_RHO_C3_SECTOR, DX_P250_BIVARIATE_HANKEL, DX_MIXED_CONTEXT_RECTANGLE, DX_REAL_GADGET_CERTIFICATE]
+  default_effort_hint: {issue275_operator_identifiability: 0.65, large_scale_maximin_design: 0.15, parallel_issue537_theory: 0.15, targeted_support: 0.05}
   effort_hint_boundary: coordination_default_not_quota_permission_lock_or_veto
   decision_experiment_refs:
     - DX_ISSUE275_ETOP_OPERATOR_IDENTIFIABILITY
+    - DX_LARGE_SCALE_MAXIMIN_PORTFOLIO
+    - DX_GENERIC_MODULUS_VECTOR_TRANSPORT
+    - DX_PELL_VECTOR_JET
     - DX_REGULAR_PAIR_QE_WEIGHTED_PIVOTAL_TAIL
     - DX_ETOP_PRODUCTION_LOCALIZATION
     - DX_P429_SUCCESSOR_STATE

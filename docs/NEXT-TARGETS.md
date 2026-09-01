@@ -7,6 +7,38 @@ History and definitions remain in [Decisions](DECISION-EXPERIMENTS.md),
 
 ## Default attention after finite rank-one retirement
 
+### Large-compute decision overlay after PR #546
+
+The [full portfolio review](../notes/large-scale-decision-portfolio-20260901.md)
+separates “never acquired” from “worth acquiring.”  Nothing in this overlay
+starts a run.
+
+1. **Complete #275's two candidate columns and score existing covariance.**
+   This remains the only P0 mechanism discriminator.  A fresh block becomes
+   eligible only if the two profiled images differ and the rank audit names one
+   indispensable missing coordinate.
+2. **Score the candidate routes by maximin decision value per CPU-hour.**  A
+   route without frozen opposing prediction vectors has launch score zero,
+   regardless of how large or novel the target size is.
+3. **Design a stabilizer-free generic-modulus vector experiment.**  Exact
+   Gaussian unit symmetry has closed same-character Gaussian angle scans.  A
+   generic period pair with full homology-vector readout is the strongest new
+   conditional large-size operator discriminator.
+4. **Retain #156/#159 as the most concrete conditional large CPU route, but
+   use a Pell/Eisenstein vector jet rather than a scalar H4 vote.**  Run a
+   smaller covariance/power pilot and square-bond control before N418/N780.
+5. **Keep #11/#31 and #112 as long-horizon routes.**  Transfer matrices first
+   reproduce/profile through width 24/25; rigorous block trials first require
+   a scientifically useful, high-power geometry.
+6. **Restrict #227 to a within-irrep Boolean spectral pilot.**  Do not spend a
+   larger run on the exact symmetry-forbidden orientation-difference x
+   matching-odd cross-spectrum.
+
+The N650/N850 Gaussian commuting square is not a default large run: its power
+gate projects 27.21B/55.18B samples and the audited CRN ceiling changes
+variance by at most about 2.34%.  #154, #334 and #537 also do not re-enter the
+queue through another lag, descriptor, top-up or third size.
+
 The frozen canonical `Kreg` N100/N400 joint-U pilot is complete and the
 projected field-ratio route has stopped exactly where its contract said it
 would stop.
