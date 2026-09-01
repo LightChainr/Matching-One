@@ -1,4 +1,4 @@
-# The delocalized one-west word has no endpoint pole
+# All delocalized horizontal reversals preserve the endpoint zero
 
 ## Result
 
@@ -39,6 +39,10 @@ Thus even the fully delocalized relaxed one-west word changes the directed
 endpoint only by relative order beta. It cannot realize an alpha-scale
 packet with `alpha=c beta`. Borrowing a long interval of bridge history is
 not the same as producing a long-range gap operator.
+
+The exact sum over every reversal number `w>=0` closes the same question:
+it is an analytic Catalan-type Toeplitz multiplier, and its complete
+endpoint correction is relative `O(beta)`. Section 6 gives the resummation.
 
 No physical self-avoidance assumption is needed for this conclusion: it is
 already true in the larger relaxed-word family.
@@ -250,6 +254,116 @@ example a jointly scaled collar state whose gap range itself grows like
 `sqrt(c)`, or an operation which opens the noncrossing wall. Neither is
 present in the relaxed one-west word.
 
+## 6. Exact resummation of every reversal number
+
+For exactly w west steps, net horizontal displacement L requires `L+w`
+east steps. Repeating the multinomial sum in Section 1 gives
+
+```text
+W_(L,w)(z)
+ =r^(2w) binom(L+2w,w)
+   g_r(z)^(-(L+2w+1)),       w>=0.                            (24)
+```
+
+Equation (24) includes `W_(L,0)=D_L`. Factor out the no-west kernel and put
+
+```text
+x_r(z)=r^2/g_r(z)^2.
+```
+
+Then the entire relaxed horizontal-reversal sum is
+
+```text
+R_L(z):=sum_(w>=0)W_(L,w)(z)
+       =D_L(z) M_L(x_r(z)),                                  (25)
+
+M_L(x)=sum_(w>=0)binom(L+2w,w)x^w
+      =[1-4x]^-1/2 C(x)^L,
+
+C(x)=[1-sqrt(1-4x)]/(2x)
+    =2/[1+sqrt(1-4x)].                                       (26)
+```
+
+This is an exact identity, not a fixed-w expansion. For sufficiently small
+r, `|x_r(z)|<1/4` throughout an annulus containing the unit circle. Hence
+`M_L(x_r(z))` is an analytic Toeplitz multiplier. Its expansion is
+
+```text
+log M_L(x)=Lx+O(x+Lx^2).                                     (27)
+```
+
+On the unit circle its largest value is at zero momentum, where
+
+```text
+x_0=r^2/(1-2r)^2,
+M_L(x_0)
+ =exp{beta/(1-2r)^2+O(r^2+Lr^4)}
+ =1+O(beta)                                                   (28)
+```
+
+whenever `beta=Lr^2->0`. At the capillary saddle `p=O(c^-1/2)`,
+
+```text
+log M_L(x_r(e^(ip)))-log M_L(x_0)
+ =O(beta r p^2)
+ =O(beta r/c).                                                (29)
+```
+
+Thus the all-w multiplier is not only analytic; it is asymptotically
+constant across the cancellation-sensitive saddle.
+
+Let
+
+```text
+R_n=[z^n]R_L(z),
+J_R=R_0^2-R_1^2,
+J_D=A_0^2-A_1^2.
+```
+
+The same sharpened local-CLT ratio used in (17), now with (28)-(29), gives
+
+```text
+J_R/J_D
+ =M_L(x_0)^2[1+o(beta)]
+ =1+O(beta).                                                   (30)
+```
+
+In particular
+
+```text
+(J_R-J_D)/J_D=O(beta),                                       (31)
+```
+
+with no multiplication by `c`. The leading expansion of (30) is consistent
+with the one-west result (23): either boundary may carry the first reversal,
+so the relative first-order term is `2beta+o(beta)`.
+
+The relaxed sum is larger than the physical self-avoiding word family.
+Deleting crossings or shared edges can make its finite-gap coefficients
+non-Toeplitz, but it does not open the absorbing wall. Moreover (24)-(28)
+give a uniform summable majorant for every w. Combining that majorant with
+the reflection criterion of `closed-source-single-hairpin-endpoint-zero.md`
+shows that the complete physical horizontal-reversal sector also cannot
+acquire an inverse-Vandermonde pole from reversal number alone.
+
+Therefore the horizontal-reversal part of the full error gate sharpens from
+
+```text
+alpha=c beta ->0
+```
+
+to
+
+```text
+beta=L/m^2 ->0.                                               (32)
+```
+
+This sharpening is limited to horizontal reversals. It does not control a
+collar state whose gap range grows with `sqrt(c)`, an additional essential
+component, a nonlocal black/white-cloud interaction, or failure of the
+sector-odds normalization. Those remain separate boundaries of the complete
+rank-one theorem.
+
 ## Scientific card
 
 - **Exact relaxed kernel:** equations (4)-(7) sum all placements of one west
@@ -260,6 +374,10 @@ present in the relaxed one-west word.
   Vandermonde (13) intact; no alpha-producing pole occurs.
 - **Scaling:** `kappa_w(c)~1/c`, with `c kappa_w(c)->1` after summing both
   carrier boundaries.
-- **Boundary:** this is the relaxed one-west envelope. A genuinely nonlocal
-  collar state with range growing as `sqrt(c)` is a different operator and
-  is not ruled out here.
+- **All-w closure:** equations (24)-(31) resum every reversal number into an
+  analytic Toeplitz multiplier and give endpoint-relative `O(beta)`.
+- **Sharpened gate:** horizontal reversals require only `L/m^2->0`, not
+  `L^2/m^3->0`.
+- **Boundary:** a genuinely nonlocal collar state with range growing as
+  `sqrt(c)`, or an extra essential component, is a different operator and is
+  not ruled out here.
