@@ -1,5 +1,17 @@
 # Unbounded capillary control and the first possible crossover
 
+**Subsequent resolution.**  The `O(alpha)` gate below is a valid relaxed
+bound but its proposed local saturator is absent.  A correctly normalized
+physical one-hairpin insertion stays in the antisymmetric Dirichlet sector,
+so its bulk-normalized coefficient tends to zero.  Moreover the shortest
+occupied-corner hairpin is an L-triomino packet of activity `L/m^6`, whose
+complement-paired source mark starts only at `L/m^8`.  The only remaining
+candidate capable of making `alpha` sharp is a delocalized west step which
+borrows vertical sides from a macroscopically rough bridge; see
+[`closed-source-single-hairpin-endpoint-zero.md`](closed-source-single-hairpin-endpoint-zero.md),
+[`closed-source-single-hairpin-ward-identity.md`](closed-source-single-hairpin-ward-identity.md),
+and [`closed-source-axis-short-hairpin-packet.md`](closed-source-axis-short-hairpin-packet.md).
+
 ## Result
 
 Let `r=m^-1`, `c=L/m`, and introduce
@@ -43,12 +55,13 @@ other apparent threats do not saturate it.
 - Narrow-width collision is already exactly the Karlin--McGregor factor
   `J_1=I0^2-I1^2`; vertical wrapping is `exp[-Omega(Lm)]`.
 
-At `alpha=O(1)` the bulk density of horizontal-reversal defects still
+At `alpha=O(1)` the relaxed bulk density of horizontal-reversal words still
 vanishes (`beta=alpha/c`), but one defect is comparable to the endpoint
 survival probability `J_1/I0^2~1/(2c)`.  The new object is consequently a
 single-hairpin contact kernel, not a new bulk capillary gas.  This note
-defines that kernel precisely; its coefficient is not inferred from the
-positive directed subfamily.
+defines the candidate kernel; the later physical classification proves that
+every local realization retains the external Dirichlet zeros, so only a
+nonlocal bridge-borrowing realization remains open.
 
 There is also a separate fixed-m result.  The exact directed positive
 subfamily has exponential base
@@ -270,7 +283,7 @@ O[exp(-kappa L^2/c)]=O[exp(-kappa Lm)].                      (21)
 
 This proves the last error term in (3).
 
-## 5. The alpha=O(1) crossover is a single-hairpin contact kernel
+## 5. The relaxed alpha candidate is a single-hairpin contact kernel
 
 Suppose `c->infinity`, `beta->0`, but `alpha=c beta` has a finite nonzero
 limit.  Two reversal defects have bulk weight `O(beta^2)` and endpoint
@@ -323,13 +336,15 @@ c Z_endpoint/I0(2c)^2
  ->1/2+alpha kappa_hp(infinity).                             (25)
 ```
 
-Equations (23)-(25) are a concrete new kernel, not a fitted scaling
-function.  Its unresolved datum is the signed/positive coefficient of the
-one irreducible physical hairpin.  A proof that the hard noncrossing
-Dirichlet zero forces `kappa_hp(infinity)=0` would show alpha is only a
-crude gate and extend (3) to beta->0.  A nonzero value would give the first
-genuine unbounded-capillary crossover.  No bulk resummation beyond one
-defect is needed at fixed alpha.
+Equations (23)-(25) are a concrete kernel, not a fitted scaling function.
+The later reflection argument proves `kappa_hp(infinity)=0` for every
+uniformly summable physical local packet.  The complement-paired Ward
+identity refines this: the raw endpoint current is positive, but placement
+averaging supplies `1/c` and bulk normalization supplies another `1/c`.
+The shortest actual occupied-corner packet is still smaller, with bare
+activity `L/m^6`.  Thus a genuine `alpha` crossover, if present, must come
+from a west step with a non-uniform long-range kernel, not from the local
+operator defined here.
 
 ## 6. Fixed-m directed roughening
 
@@ -389,10 +404,11 @@ full fixed-m model.
 - **Mechanism isolation:** long vertical runs and repeated narrow
   collisions preserve the determinant; only horizontal reversals can
   currently saturate alpha.
-- **New crossover object:** the one-hairpin endpoint kernel (23)-(25).
-  It decides whether alpha is sharp or merely conservative.
+- **Candidate resolved:** a physical local one-hairpin endpoint kernel keeps
+  both Dirichlet zeros and cannot make alpha sharp.  Only a delocalized
+  bridge-borrowing reversal remains as a possible alpha-scale object.
 - **Independent fixed-m result:** the directed positive subfamily changes
   exponential sign at `m=1+sqrt(2)` with prefactor (27)-(28).
-- **Boundary:** no claim is made for `alpha=O(1)` until the one-hairpin
-  coefficient is evaluated, or for the full fixed-m interface from a
+- **Boundary:** no claim is made for `alpha=O(1)` until the delocalized
+  reversal sector is controlled, or for the full fixed-m interface from a
   directed lower bound alone.

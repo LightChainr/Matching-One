@@ -282,8 +282,12 @@ sharpens it to `L/m ->0` and closes bounded `L/m` with the positive factor
 also fixes the full unmarked/area generating function.  The
 [uniform kernel tail](closed-source-axis-kernel-uniform-capillary-tail.md)
 and [unbounded error decomposition](closed-source-axis-capillary-unbounded-error.md)
-extend the negative signed law through `m >> L^(2/3)` and identify one
-single-hairpin endpoint matrix element as the first possible crossover.
+extend the negative signed law through `m >> L^(2/3)`.  The subsequent
+[physical hairpin zero](closed-source-single-hairpin-endpoint-zero.md),
+[Ward normalization](closed-source-single-hairpin-ward-identity.md), and
+[shortest-packet classification](closed-source-axis-short-hairpin-packet.md)
+exclude every local hairpin as the first crossover; only a delocalized
+west step borrowing rough-bridge vertical sides remains.
 The
 [tilted shortest-winding classification](closed-source-tilted-shortest-winding-class.md)
 shows that its staircase entropy cannot beat the extra `m^-4k` barrier.

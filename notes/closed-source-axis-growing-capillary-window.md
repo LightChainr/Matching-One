@@ -205,10 +205,13 @@ would be incorrect.  Likewise a black/white cloud particle far from the
 two collars is already included in the exact common bases and cannot
 alter the determinant ratio.
 
-The next object required at fixed `alpha` is therefore a single-hairpin
-finite-gap matrix kernel on states `(separation, collar occupancy)`.  A scalar
-renormalization of `c`, or one more independent-interface Bessel term,
-cannot decide the correction.
+The next object suggested by this relaxed bound was a single-hairpin
+finite-gap matrix kernel.  The later physical operator and local-word
+classification sharpen that statement: every uniformly summable local
+hairpin retains the Dirichlet zeros, and the shortest digital packet costs
+`m^-6`.  Only a delocalized west step borrowing vertical sides from the
+rough bridge can still saturate the bound.  A scalar renormalization of `c`,
+or one more independent-interface Bessel term, cannot decide that sector.
 
 ## Scientific boundary
 
