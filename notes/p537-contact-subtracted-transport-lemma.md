@@ -54,6 +54,21 @@ The contact share falls from `5.892%` to `2.551%`.  The noncommuting local
 contact operator is therefore a real, faster-decaying correction rather than
 the leading asymptotic obstruction.
 
+The canonical contact allocation is not itself invariant under the common
+thermal-coordinate change `a -> a+cK+d`.  The displacement-wise horizontal
+representative
+
+\[
+T_{C,d}^{\rm hor}=T_{C,d}-\beta_d C_{C,d}
+\]
+
+removes that ambiguity.  Applying it to the same frozen statistics changes
+the contact term by only `0.3829%` at N25 and `0.1453%` at N65.  The resulting
+remainders give `q_T=2.50090371 +/- 0.12363`, with `N^(5/2)T_rem` differing by
+only `0.0863%`.  Thus the rational fingerprint survives in a gauge-invariant
+representative; equation (1) should be read as subtracting this horizontal
+contact OPE, not an arbitrary carrier allocation.
+
 ## 2. Candidate quotient-reaching bound
 
 After subtracting the explicit contact OPE, the minimal useful bound is
