@@ -60,9 +60,20 @@ cover ratio alone cannot identify H4 unless positivity of the radial gain is
 independently justified.  The global `A_top`/quotient-prism H4 result is not
 altered; the two observers live in different transport sectors.
 
-The next theoretical target is now algebraic rather than another Monte Carlo
-angle: identify the quotient/homology operation that fixes this complex
-character line while allowing its real amplitude to change sign.
+The algebraic operation is in fact exact.  Multiplication by the Gaussian unit
+`i` is an automorphism of every quotient `Z[i]/(g)` and maps period-basis
+homology `(m,n)->(-n,m)`.  It exchanges the unoriented target lines `l0,l1`, so
+`P_l0=P_l1` at every finite size and every bond probability.  Since the
+`tau=i` baseline has the same equality,
+
+```text
+z = omega * [(P_l2-pi_l2) - (P_l0-pi_l0)] in omega R.
+```
+
+The signed-real H0 line is therefore a theorem for this Gaussian family, not a
+new fitted field.  This closes further Gaussian-angle Monte Carlo with the same
+character; local spin can only be tested after leaving this unit-rotation
+symmetry class or changing the observer.
 
 Input/output hashes:
 

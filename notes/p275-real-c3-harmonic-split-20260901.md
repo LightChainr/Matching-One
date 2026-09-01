@@ -70,6 +70,11 @@ X    = 0.999926 +/- 0.007664.
 Thus the primitive signal has a nontrivial `C3` homology character but
 spin-zero embedding transport.  The N65 H8 selection was the accidental
 near-alias of H8 with the real line at that angle.  The local-H8 and passive-H4
-interpretations are both stopped; the surviving theory problem is to identify
-the quotient/homology form factor that fixes the complex character direction
-while permitting a signed real amplitude.
+interpretations are both stopped.
+
+The surviving form factor is exact: multiplication by the Gaussian unit `i`
+acts on period homology as `(m,n)->(-n,m)` and exchanges the unoriented lines
+`l0,l1`.  Hence `P_l0=P_l1` and `z=omega(P_l2-P_l0)` for every Gaussian ideal
+quotient.  The real amplitude may change sign, but the complex character line
+cannot rotate.  The complete proof and stop rule are in
+`notes/p275-gaussian-unit-rotation-character-theorem.md`.
