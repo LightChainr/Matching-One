@@ -48,6 +48,50 @@ registry by `pi/4` negates both columns and also preserves nonzero rank. The
 transition map to `(q,E)` has determinant two, so an invertible change to
 `(q,E-Rq)` does not restore rank one.
 
+## Exact root-Schur interface
+
+The minor is not merely an abstract rank diagnostic. In the transition basis,
+write
+
+```text
+Q(v)=v_01+v_12,
+E(v)=-v_01+v_12.
+```
+
+These are exactly the `q` and `E=q^2` increments for `0->1` and `1->2`.
+Root conditioning chooses
+
+```text
+beta = Q(A)/Q(T)
+```
+
+whenever `Q(T)!=0`, so the source residual `A-beta T` has zero `q` response.
+A direct two-column calculation gives
+
+```text
+Q(A-beta T)=0,
+(E-R Q)(A-beta T)=E(A-beta T)
+                     = 2*(T_01*A_12-T_12*A_01)/(T_01+T_12).
+```
+
+Thus the determinant divided by the thermal sum is the finite
+root-conditioned even/H response, independently of `R=Y_p/D`. The Sturm
+certificate proves `T_01+T_12` also has no root in `[0.59,0.60]` and is
+negative at both endpoints. At `p=1/2` the exact residual is
+
+```text
+533831111/1539745775616,
+```
+
+and at the matching-root midpoint it is
+
+```text
++0.0001366476693672144.
+```
+
+So the finite wedge survives the actual matching-root Schur projection; it is
+not created by using an unconditioned source coordinate.
+
 ## All-scale physical witness family
 
 Fix `R>=1`, `L>=2R+5`, root `(0,0)`, and put `s=R+2`. On the axis `L x L`
@@ -155,10 +199,11 @@ Psi_4 = T_01 A_12 - T_12 A_01.
 ```
 
 The appropriate remaining problem is to control the signed critical/near-
-critical scaling of the **aggregate** `Psi_4`, including kernel reconnection,
-rank/readout pivotality and the pooled-root Schur term. It is no longer
-appropriate to assume all ordinary landing contributions cancel and jump
-directly to a four-packet absolute remainder.
+critical scaling of the **aggregate** `Psi_4`, or equivalently its
+root-conditioned normalization `2 Psi_4/(T_01+T_12)`, including kernel
+reconnection, rank/readout pivotality and the pooled-root Schur term. It is no
+longer appropriate to assume all ordinary landing contributions cancel and
+jump directly to a four-packet absolute remainder.
 
 The all-scale witnesses have exponentially small individual Bernoulli weight;
 they falsify the exact algebraic cancellation but are not an asymptotic lower
