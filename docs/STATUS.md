@@ -1,14 +1,31 @@
 # 当前成果：从取向信号到微观机制
 
-**整理日期：2026-09-01，正则局部 pair 空间传递复核。** 两个独立决策实验已完成并执行停线；首次Xi、jump/reweight分解和两套固定源的渐近反号也已完成，不再作为待办。[三份意见的核对与实际推进](../notes/reviews-response-20260831.md)记录本轮增量；[下一步](NEXT-TARGETS.md)只保留尚未回答的问题。本任务新增结果交付Draft #509，不合并。
+**整理日期：2026-09-01，已读到执行 `410015f5` 与 Draft PR532 最新评论。** 两个独立决策实验、齐次N50、canonical pair 的有限空间块和完整联合原U响应均已完成并停线；首次Xi、jump/reweight分解和两套固定源的渐近反号也不再作为待办。[三份意见的核对与实际推进](../notes/reviews-response-20260831.md)记录本轮增量；[下一步](NEXT-TARGETS.md)只保留尚未回答的问题。本任务新增结果交付Draft #509，不合并。
 
-## 当前机制取舍：局部有限传递已完成，单组件空间传递被排除
+## 压缩后仍须保留的结论账本
+
+以下是已经完成的结论和语义控制，不是重新开放的计算任务：
+
+- P43 even-channel 纠错的精确映射是 `DeltaS_cross = -DeltaS_either`；不重拟合的纠正分数为 `0.5700315436/2`。
+- 独立 P43+P57 primary 合成拒绝 **global zero**；norm-5 冻结比较优先 H4 于 H12/H8，但 **child block alone** 仍与零相容。
+- **N145->290** full curve 已完成，并排除已冻结的三层共同标量倍率描述；它不再是 active compute。
+- 单一 **scalar width** 和其他已测试的低阶标量捷径不足以解释较高 thermal jet；不再用自由指数追加同读出拟合。
+- 有限体 **Russo** / chain-rule 的 **pivotal** 语义仍是精确控制；它本身不是新的机制证据票。
+- N=26 的冻结有限族 `Beta(5,5)` 与 `Beta(7,7)` 均已被精确枚举否定；这不外推为一般代数或连续场结论。
+
+## 当前机制取舍：有限传递已闭合，raw 临界空间尾绝对可和
 
 执行分支 [2ba8863f](https://github.com/LightChainr/Matching-One/blob/2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb/notes/regular-pair-interaction-result.md) 已完成 canonical `Kreg=K2+K0`：所有有限网络的直接 Q1 响应为零，而固定 N25 的 `∂logQ∂epsilon U=-0.04503611398` 严格非零。旧 pure-K2 的一阶传递和固定四路径的13/8也已完成，不再等待“首次局部传入原U”。该数值依赖指定补全，不能称 completion-independent 或连续场确认。
 
-**[本次新增的空间选择规则](../experiments/p337-regular-spatial-support-20260901/RESULT.md)：两个非相邻标记若至多共享一个外部占据组件，首阶Q激活严格为零。** 对 canonical 核，占据总和后的 `Cxy=E[a_xy]` 满足 `|Cxy|≤(43/16)Pr{两点vacant且至少两个不同占据组件接触两处}`。两种独立精确算法的4140项全部一致；实际两组件构型给a=1/16，证明阈值可达到。原U的正确混合接口是完整 `W[a_xy]`，不是 `Cov(a_x,a_y)`。
+**[空间选择规则](../experiments/p337-regular-spatial-support-20260901/RESULT.md)：两个非相邻标记若至多共享一个外部占据组件，首阶Q激活严格为零。** 对 canonical 核，占据总和后的 `Cxy=E[a_xy]` 满足 `|Cxy|≤(43/16)Pr{两点vacant且至少两个不同占据组件接触两处}`。两种独立精确算法的4140项全部一致；实际两组件构型给a=1/16，证明阈值可达到。原U的正确混合接口是完整 `W[a_xy]`，不是 `Cov(a_x,a_y)`。
 
-因此停止该正则Q1零值补全家族的单组件传播解释。剩余是固定核加权的多组件空间概率及其向同一原U的传递；没有测出距离曲线/连续指数，不加新counterterm或重新做N25。规则并未排除rank1 sector整体。当前P0随机生产仍为空。
+执行 [`a237968f`](https://github.com/LightChainr/Matching-One/blob/a237968f1d7a82d26b46e83c58179dbba7f1a908/notes/regular-pair-spatial-transmission-result.md) 已用两个新依赖块拒绝 L64/距离16的有限零传递；L32/距离8到L64/距离16只保留冻结比值，不拟合指数。执行 [`410015f5`](https://github.com/LightChainr/Matching-One/blob/410015f5505dc2d8ca0e9ac904f656a4adc9fe86/notes/regular-pair-joint-transmission-result.md) 又完成 `J2=d_logQ d_epsilon²U=-0.0055194314248394015`，相邻项为−0.0017510744544027990，其余非相邻项为−0.0037683569704366022；additive-linear与NN-contact-only两种global closure均已排除。非相邻类包含短对角，不等于宏观长程尾。
+
+**[本次解析推进](../notes/p337-critical-spatial-summability.md)进一步排除 raw canonical interaction 的红外发散解释。** 两个不同 occupied components 同时到达两个远标记，会在两端各强制一个黑/白交替四臂事件。两个不交环带给四臂概率平方；van den Berg--Nolin 对临界方格 site 的严格 `alpha4>1` 界于是给 `E_pc|g_xy|≤C d^(-2-eta)`（某个`eta>0`）。每行绝对和一致有界，距离R之外的尾为`O(R^-eta)`。不需要方格5/4猜想，不新增距离点；停止距离网格、指数拟合、alpha扫描和“靠远距离累计放大”的解释。
+
+Draft [PR532](https://github.com/LightChainr/Matching-One/pull/532) 的已提交增量是两共享组件端点因式分解和指定补全族的四路径3/2下界；它不给占据平均符号。其后续评论建议的uniform J2生产已被410015f5完成，不能重复启动；评论中的八通道压缩和`alpha=3/2` pair positivity尚无同一PR的新提交，保留为候选代数，不改canonical补全或当前优先级。
+
+当前唯一相邻理论闸门是固定 signed kernel 的 thermal/pivotal support：判断 `partial_p E[g_xy]` 的空间和是否也可求和，并明确它如何进入root/slope分母。没有这个映射，不追加空间样本或桥descriptor。规则并未排除rank1 sector整体；当前P0随机生产为空。
 
 [固定m审查的新增结论](../notes/p337-fixed-m-relative-bound.md#7-2026-09-01实际组件气体的进一步取舍)则排除了裸组件气体在h=1使用标准非负KP判据的路线；任意非负控制函数都不能统一成立。rank2投影精确固定唯一绕行组件颜色，但实际两相内外partition比仍未控制，固定m原U定理没有被宣布完成。
 
