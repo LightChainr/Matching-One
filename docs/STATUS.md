@@ -1,6 +1,6 @@
 # 当前成果：从取向信号到微观机制
 
-**整理日期：2026-09-01，已读到 Draft PR533 `5aa929a6` 与 #537 landing preflight。** 两个独立决策实验、齐次N50、canonical pair 的有限空间块和完整联合原U响应均已完成并停线；首次Xi、jump/reweight分解和两套固定源的渐近反号也不再作为待办。[三份意见的核对与实际推进](../notes/reviews-response-20260831.md)记录本轮增量；[下一步](NEXT-TARGETS.md)只保留尚未回答的问题。本任务新增结果交付Draft #509，不合并。
+**整理日期：2026-09-01，已读到 PR #544 `e21f6220`、PR #545 `697fa6fc` 及其独立审计。** 两个独立决策实验、齐次N50、canonical pair 的有限空间块、完整联合原U响应和 finite rank-one 反例均已完成并停线；首次Xi、jump/reweight分解和两套固定源的渐近反号也不再作为待办。[三份意见的核对与实际推进](../notes/reviews-response-20260831.md)记录生产决策，[有限 rank-one 判决](../notes/p537-finite-rank-one-decision-20260901.md)记录最新范围边界；[下一步](NEXT-TARGETS.md)只保留尚未回答的问题。本任务新增结果交付Draft #509，不合并。
 
 ## 压缩后仍须保留的结论账本
 
@@ -29,11 +29,11 @@ Draft [PR533](https://github.com/LightChainr/Matching-One/pull/533) 的 `5aa929a
 
 **[thermal/pivotal 双通道审计](../notes/p337-thermal-pivotal-gate-audit.md)已经排除一个过度简化。** `d_p Cov(O,g_xy)` 精确分成 kernel reconnection 与原 rank/readout pivotal 两项；只控制 `partial_p E[g_xy]` 会漏掉第二项，并在 N9/N10/N13 的 `O=E` 精确控制中把总符号判反。Bell-8 的64,954个join和N13的1,198,080个state-edge-pair检查全部闭合；共享组件数不变时核也可换号。
 
-当前唯一P0仍是 #537，但第一项有限 falsifier 已经完成。[显式 landing preflight](../experiments/p537-landing-matrix-preflight-20260901/REPORT.md)把 Bell-8 限为 six-block clean-two-bridge：两个共享块各在两标记出现一次，其余四port为singleton，且两端共享位置相邻。两个非零C4轨道及其总和的四行source/thermal矩阵六个minors全部严格非零；总和的P4/root determinant为`-2.4843232721775393e-5`，固定M的Schur residual为`-4.217141611550048e-6`，完整`T_p/M_p=+5.806332966676667e-6`。N13按rank transition聚合也给严格非零minor，并显示`0->2`的readout为零而kernel非零。8次`2^24`精确遍历、0随机、0云任务完成了逐字节复核。
+当前唯一 P0 仍是 #537，有限 pure-thermal rank-one 路线已经按研究停止规则退休。[最初 preflight](../experiments/p537-landing-matrix-preflight-20260901/REPORT.md)在 six-block clean-two-bridge 合同下得到全部非零 minors。其后 PR #544 `e21f6220` 的 N25 radius-one collar、axis/tilted pooled-root Schur 首项 minor 为严格正的 `+2.6904188461441777e-14`；完整 fibres、聚合和 hashes 已独立复现。PR #545 `697fa6fc` 又给出任意 `R>=1,L>=2R+5` 的 broad four-arm pointwise family，以及 axis-L4 的 `Psi=-533831111/140737488355328` 和 matching-root 区间不变号证书。
 
-这已经排除“所有有限landing leading block天然rank one”的强说法，也排除上述最小端口合同下的纯温度重参数化。它尚未裁决仓库未定义的“ordinary four-arm/no-extra-branch”：Bell partition看不到远离端口的全局分支，现有K-profile也没有逐`z`的before/after landing与rank transition。下一步只做一次语义闸门：冻结allowed Bell keys、global branch flag、thermal-site记录、transition row basis与C4 character；若正式定义包含clean-two-bridge，rank-one路线立即退休；若排除，才生成这些最小逐记录字段复测一次。此前不扩N、不加MC、距离、descriptor或五/六臂概率工作。
+[独立范围审计](../notes/p537-finite-rank-one-decision-20260901.md)限制了这些结果的含义。#544 没有保存 `x+y+z` 全局 joint component identity/global no-extra flag，最终又把 Bell transition 汇总成 source absent/present；它证明显式 collar coarsening rank two，不证明 canonical ordinary/no-extra。#545 没有 formal Bell/no-extra 字段，并在 landing 子块内重新估计 `beta` 与 `S`；其 reduced-block 恒等式不是完整两几何总体先定 root counterterm 后的 original-U Schur summand。“JSON byte-identical”声明也未成立。两条 Draft 因此关闭为 unmerged assets，不合并，也不再通过补 schema、N、几何或 minor 救回 rank one。
 
-完整渐近目标仍是把 `T_N=jY_p-R*jM_p-R_p*jM` 控制到 `o(D/A_N)`，其中 `partial_u partial_epsilon Yhat=T_N/D=J_N/A_N`，等价的logit形式为`T_t=<H,(a-Ea)S-(jM/M_t)B>_pool`。有限反例说明不能再把所见signed functional先验压成单一thermal列；正式语义若包含该反例，应直接研究存活的signed functional或寻找不同归一化界。#539只保留P2复现支持；当前P0随机生产和云任务仍为空。
+完整渐近目标仍是把 `T_N=jY_p-R*jM_p-R_p*jM` 控制到 `o(D/A_N)`，其中 `partial_u partial_epsilon Yhat=T_N/D=J_N/A_N`，等价的 logit 形式为 `T_t=<H,(a-Ea)S-(jM/M_t)B>_pool`。下一步只检查一个会删除整类机制的命题：完整 pooled-root signed-mass 的 physical one-defect graph 是否存在同时改变 landing/rank 与 source/Bell 两个慢变量、且 Schur signed weight 非零的 diagonal edge。若存在，立即停止 two-defect/高臂增益路线，转而控制 surviving four-arm functional；只有 exact graph 无 diagonal edge且两缺陷可定位到可分离 annuli，才进入 six-arm 上界。#539只保留P2复现支持；当前P0随机生产和云任务仍为空。
 
 [固定m审查的新增结论](../notes/p337-fixed-m-relative-bound.md#7-2026-09-01实际组件气体的进一步取舍)则排除了裸组件气体在h=1使用标准非负KP判据的路线；任意非负控制函数都不能统一成立。rank2投影精确固定唯一绕行组件颜色，但实际两相内外partition比仍未控制，固定m原U定理没有被宣布完成。
 

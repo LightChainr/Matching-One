@@ -1,6 +1,6 @@
 # 下一步：thermal/pivotal 传递与固定m两相权重
 
-**2026-09-01，已读到执行 `410015f5`、PR533 `5aa929a6` 与 #537 landing preflight。** 当前结论从[STATUS](STATUS.md)进入。两个独立生产实验、齐次N50、canonical pair 的有限空间块、完整联合原U响应和第一项rank-one有限反例均已完成。下一步不增加同类有限点、距离网格、补全扫描或旧实验救值。
+**2026-09-01，已读到 PR #544 `e21f6220`、PR #545 `697fa6fc` 与两份独立审计。** 当前结论从[STATUS](STATUS.md)进入。两个独立生产实验、齐次N50、canonical pair 的有限空间块、完整联合原U响应和 finite rank-one 反例均已完成。下一步不增加同类有限点、距离网格、补全扫描或旧实验救值。
 
 ## 1. 当前研究问题：绝对可和的空间核能否经热响应获得尺度增强
 
@@ -18,14 +18,14 @@ tail(d>R) = O(R^-eta)
 
 新的[精确审计](../notes/p337-thermal-pivotal-gate-audit.md)已经证明，下一项不能只研究 `partial_p E[g_xy]`。对 `O=q,E`，完整 `d_p Cov(O,g_xy)` 有 kernel reconnection 与原 rank/readout pivotal 两项；tiny torus上遗漏第二项会把符号判反。普通site flip是八端口组件join，但共享组件数本身也不决定符号。
 
-现在只保留 #537 一个P0理论闸门：**把未定义的 ordinary four-arm/no-extra-branch 变成一次可判定的有限合同，再决定rank-one路线是否已经死亡。** [现有精确preflight](../experiments/p537-landing-matrix-preflight-20260901/REPORT.md)在six-block clean-two-bridge合同下已给出全部非零minors；总和的P4/root determinant为`-2.4843232721775393e-5`，固定M的Schur residual为`-4.217141611550048e-6`，`T_p/M_p=+5.806332966676667e-6`。因此不能继续把“构造finite matrix”列为未执行，也不能先进入五/六臂概率证明。
+现在只保留 #537 一个 P0 理论闸门：**检查完整 pooled-root one-defect graph 是否有同时改变两个慢变量的非零 diagonal edge。** [有限判决与范围审计](../notes/p537-finite-rank-one-decision-20260901.md)已把三层有限结果压缩清楚：preflight 排除 provisional clean-two-bridge 的 pure-thermal closure；#544 在显式 N25 radius-one collar coarsening 得到首个严格非零 pooled-root minor；#545 的 all-scale family 排除 broad pointwise common-counterterm identity。两条 Draft 都没有完成 formal ordinary/no-extra/full original-U mixed-Hessian，因此关闭为固定提交资产；项目层面也不再给 finite rank-one rescue 追加合同修改或第三条分支。
 
-1. 冻结allowed Bell-8 landings、全局`no-extra-branch`布尔定义、逐`z` before/after landing与rank transition、row basis和C4 character；这是一次语义交付，不是新模型目录。
-2. 若正式定义包含已有clean-two-bridge事件，立刻退休“四臂leading block只是温度重参数化”，转而记录其signed functional，并只在能给原U符号或尺度预测时继续。
-3. 若正式定义排除该事件，给exact producer补上述最小逐记录字段并复测一次；不得同时改变几何、N、source或投影来救rank one。
-4. 结果前不启动新MC、N、距离、动量、三插入、descriptor或五/六臂概率工作。#539只是P2复现支持；PR532的两桥因式分解与3/2下界不形成生产授权。
+1. 先复用现有 exact fibres；canonical certificate 保存全局 joint component map、outer `C/B/W`、rank 与 source Bell before/after、off-port contact 和 one-defect transition ID。
+2. 从完整两几何总体先固定 pooled-root `beta/R`，再输出 cell-level positive masses `P0/P1` 与 signed mass jets `S0/S1`；用 `S*1=0`、`1^T*S=0` 检查 margins，不在 landing 子块重估 root counterterm。
+3. 若首个 physical diagonal edge 同时改变 landing/rank 与 source/Bell，且完整 Schur signed weight 非零，立即否定 two-independent-defect / 自动高臂增益路线，只控制 surviving leading four-arm functional。
+4. 只有 exact graph 无 diagonal edge、且 row/column defects 可定位到可分离 annuli，才进入 two-defect / six-arm 上界。此前不启动新 MC、N、距离、动量、descriptor、自由指数或服务器生产。
 
-渐近验收仍是完整 `T_N=jY_p-R*jM_p-R_p*jM=o(D/A_N)`，等价于root-conditioned mixed Hessian `partial_u partial_epsilon Yhat=T_N/D=J_N/A_N`。朴素三位置绝对计数需要`alpha4>4/3`而严格输入只有某个`alpha4>1`；有限反例说明signed cancellation不能在冻结事件前被当作既有lemma。
+渐近验收仍是完整 `T_N=jY_p-R*jM_p-R_p*jM=o(D/A_N)`，等价于 root-conditioned mixed Hessian `partial_u partial_epsilon Yhat=T_N/D=J_N/A_N`。朴素三位置绝对计数需要`alpha4>4/3`而严格输入只有某个`alpha4>1`；双零 margins 本身也不证明两个空间 defects。#539只是P2复现支持；PR532的两桥因式分解与3/2下界不形成生产授权。
 
 ## 2. 保留的理论缺口：固定m的真实两相相对权重
 

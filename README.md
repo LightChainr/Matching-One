@@ -21,7 +21,7 @@ README负责入口，STATUS负责成果，NEXT-TARGETS负责下一步分析。�
 
 **已补齐完整齐次N50传递。** 两几何各精确覆盖2^50配置，合计约49.85 CPU秒、峰1.63 GiB；原U=1.06156039、固定源响应V=+0.05434578，严格排除该有限点零传递。正号预测存活，不等于机制确认，不追加尺寸/源参数。[本轮结果与复核](experiments/p337-homogeneous-n50-20260831/RESULT.md)；旧m64直接采样停线及P154/P334降级保持。
 
-**canonical pair 已从有限传递推进到可证伪的 thermal gate。** 新空间块与 N25 联合响应排除有限零、additive-linear 和 NN-contact-only closure；exact-`p_c` 论证证明 raw pair kernel 绝对可和，[双通道审计](notes/p337-thermal-pivotal-gate-audit.md)又补回 rank/readout pivotal 项。最新[landing preflight](experiments/p537-landing-matrix-preflight-20260901/REPORT.md)在显式 six-block clean-two-bridge 合同下得到全部非零 minors，排除“有限leading block普遍只是温度重参数化”；仓库尚未形式化 ordinary/no-extra，因此下一步只冻结该事件语义并做一次包含性裁决，不扩N、不采样。#537仍是唯一P0理论任务；#539仅为P2复现支持。
+**canonical pair 的有限 pure-thermal rank-one 默认已经退休。** 新空间块与 N25 联合响应先排除有限零、additive-linear 和 NN-contact-only closure；exact-`p_c` 论证证明 raw pair kernel 绝对可和，[双通道审计](notes/p337-thermal-pivotal-gate-audit.md)补回 rank/readout pivotal 项。随后 #544 的显式 N25 collar minor 与 #545 的 all-scale pointwise family 都给出非零有限楔量；[范围审计与判决](notes/p537-finite-rank-one-decision-20260901.md)同时确认两者都不是完整 formal ordinary/no-extra 或 pooled-root mixed-Hessian 证书，因此两条 Draft 关闭为固定提交资产，不合并、不续算。#537 仍是唯一 P0 理论任务，下一步只查完整 one-defect graph 是否存在同时移动两个慢变量的非零 diagonal edge；不再补 finite minor、N 或描述符。
 
 **协方差零空间QA已经闭合。** [#543回溯](experiments/p543-covariance-nullspace-audit-20260901/REPORT.md)集中修复三个广义卡方实现，并仅用既存 residual/covariance 重算16个归档向量分数。15项不变；P50的默认`9.35200/2`也不变，但其丢弃方向与残差不相容，必须标为cutoff-sensitive，不能再称无害numerical null。该修复不增加证据票、样本或云任务，support线到此停止。
 
