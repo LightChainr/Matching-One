@@ -25,6 +25,14 @@ Only three constraints are treated as hard: preserve frozen predictions/result h
 
 ## Exact semantics and controls
 
+On a square torus, the occupied Euler characteristic satisfies the exact configuration identity
+
+```text
+chi_black = beta0_black - beta0_white - q
+```
+
+This is an algebraic rewrite of P34, exhaustively checked through `N<=9`; the associated Betti control variates reduce to `(V,E,F0,q)` and do not define an independent variance-reduction direction.
+
 The Issue #43 even-sector channel correction remains
 
 ```text

@@ -76,7 +76,7 @@ Use scalar-cancelled modulus combinations to distinguish generic analytic/log mi
 
 ## G. Exact finite algebra and side programs
 
-Exact matching polynomials, N26 Beta failure, reliability signatures, square-bond duality, Boolean-noise oracles, defect-polynomial/Galois work and energy/log-pair sufficient statistics are valuable because they can delete mechanisms cheaply. They may run in parallel and do not block the active compute path.
+Exact matching polynomials, N26 Beta failure, reliability signatures, square-bond duality, Boolean-noise oracles, defect-polynomial/Galois work and energy/log-pair sufficient statistics are valuable because they can delete mechanisms cheaply. The Euler/Betti lift is an exact rewrite of P34; its Betti control variates reduce to `(V,E,F0,q)`, so that variance-reduction branch is closed. These side programs may run in parallel and do not block the active compute path.
 
 ## Current high-information work
 
