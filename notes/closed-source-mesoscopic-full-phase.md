@@ -1,5 +1,8 @@
 # Mesoscopic coexistence: a dilute black gas against a pure full background
 
+The combined theorem and root consequences are summarized in
+[the mesoscopic two-cloud synthesis](closed-source-mesoscopic-two-cloud-synthesis.md).
+
 Let k denote the geometric dilation, so the equal-area pair has
 `N=25 k^2`; keep m for the coupling. Assume
 

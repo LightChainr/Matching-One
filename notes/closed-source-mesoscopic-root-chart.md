@@ -1,5 +1,8 @@
 # The mesoscopic closed-source root is centered at `h=1+m^-2`
 
+The complete pure-window theorem and its two phase proofs are indexed in
+[the mesoscopic two-cloud synthesis](closed-source-mesoscopic-two-cloud-synthesis.md).
+
 ## Result
 
 Put
