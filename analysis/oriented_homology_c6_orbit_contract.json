@@ -1,0 +1,42 @@
+{
+  "schema": "matching-one/oriented-homology-c6-orbits/v1",
+  "status": "valid_exact_oriented_c6_character_certificate",
+  "parent_issue": "remain open",
+  "basis": "(1, omega), omega=exp(2*pi*i/3)",
+  "rotation_matrix": [[1, -1], [1, 0]],
+  "rotation_determinant": 1,
+  "rotation_cube": "-I",
+  "rotation_sixth_power": "I",
+  "norm": "a^2-a*b+b^2",
+  "norm_bound": 13,
+  "oriented_primitive_vector_count": 36,
+  "orbit_count": 6,
+  "orbits": [
+    [[-4, -3], [-1, -4], [3, -1], [4, 3], [1, 4], [-3, 1]],
+    [[-4, -1], [-3, -4], [1, -3], [4, 1], [3, 4], [-1, 3]],
+    [[-3, -2], [-1, -3], [2, -1], [3, 2], [1, 3], [-2, 1]],
+    [[-3, -1], [-2, -3], [1, -2], [3, 1], [2, 3], [-1, 2]],
+    [[-2, -1], [-1, -2], [1, -1], [2, 1], [1, 2], [-1, 1]],
+    [[-1, -1], [0, -1], [1, 0], [1, 1], [0, 1], [-1, 0]]
+  ],
+  "character_gram": [
+    [6, 0, 0, 0, 0, 0],
+    [0, 6, 0, 0, 0, 0],
+    [0, 0, 6, 0, 0, 0],
+    [0, 0, 0, 6, 0, 0],
+    [0, 0, 0, 0, 6, 0],
+    [0, 0, 0, 0, 0, 6]
+  ],
+  "quotient_rule": "C6 charge descends through v~-v iff it is even; quotient charge is charge/2 modulo 3",
+  "spin_characters": {
+    "H4": {"c6_charge": 4, "descends": true, "c3_quotient_charge": 2},
+    "H8": {"c6_charge": 2, "descends": true, "c3_quotient_charge": 1},
+    "H12": {"c6_charge": 0, "descends": true, "c3_quotient_charge": 0}
+  },
+  "odd_spin_controls": {
+    "H1": {"c6_charge": 1, "descends": false},
+    "H3": {"c6_charge": 3, "descends": false},
+    "H5": {"c6_charge": 5, "descends": false}
+  },
+  "uses_continuum_baseline_or_production_data": false
+}

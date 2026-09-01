@@ -1,0 +1,53 @@
+{
+  "claim_boundary": {
+    "excluded": "automatic outward rounding, transcendental constants, general algebraic-number isolation, measured-input enclosure, or statistical coverage",
+    "included": "exact rational verification of supplied interval addition, multiplication, and one positive square-root enclosure",
+    "parent_issue": "remain open"
+  },
+  "claim_level": "exact_control",
+  "dependency_group": "synthetic-exact-rational-intervals",
+  "descriptor": {
+    "declared_product": [
+      "-1/8",
+      "1/3"
+    ],
+    "declared_sum": [
+      "1/12",
+      "7/6"
+    ],
+    "left": [
+      "1/3",
+      "1/2"
+    ],
+    "right": [
+      "-1/4",
+      "2/3"
+    ],
+    "sqrt_interval": [
+      "707/500",
+      "283/200"
+    ],
+    "sqrt_radicand": "2"
+  },
+  "issue": 370,
+  "schema": "matching-one/exact-rational-interval-enclosure/v1",
+  "verification": {
+    "all_checks_exact": true,
+    "product": [
+      "-1/8",
+      "1/3"
+    ],
+    "sqrt_interval": [
+      "707/500",
+      "283/200"
+    ],
+    "sqrt_lower_square": "499849/250000",
+    "sqrt_radicand": "2",
+    "sqrt_upper_square": "80089/40000",
+    "status": "exact_rational_interval_enclosure_verified",
+    "sum": [
+      "1/12",
+      "7/6"
+    ]
+  }
+}

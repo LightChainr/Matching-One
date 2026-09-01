@@ -1,0 +1,166 @@
+{
+  "candidates": [
+    {
+      "candidate_id": "kagome-site",
+      "excluded_by_all_method_intervals": true,
+      "isolating_interval": [
+        "1034250208665230560520867530629/1584563250285286751870879006720",
+        "103425020866523056052086753063/158456325028528675187087900672"
+      ],
+      "isolation_bits": 100,
+      "method_comparisons": [
+        {
+          "intersects": false,
+          "interval_id": "jacobsen-2015-eigenvalue",
+          "separation_lower_bound": "115974853306031766865347347992963702633/1934281311383406679529881600000000000000"
+        },
+        {
+          "intersects": false,
+          "interval_id": "mertens-2022-p-med",
+          "separation_lower_bound": "4638994132482668982274543073323877329/77371252455336267181195264000000000000"
+        },
+        {
+          "intersects": false,
+          "interval_id": "mertens-2022-p-cell",
+          "separation_lower_bound": "927798828183227099981239239214832221/15474250491067253436239052800000000000"
+        },
+        {
+          "intersects": false,
+          "interval_id": "yang-zhou-2024-corrected",
+          "separation_lower_bound": "23194970662142545527779038431485203221/386856262276681335905976320000000000000"
+        }
+      ],
+      "minimal_polynomial_coefficients_ascending": [
+        1,
+        0,
+        -3,
+        1
+      ]
+    },
+    {
+      "candidate_id": "three-twelve-site",
+      "excluded_by_all_method_intervals": true,
+      "isolating_interval": [
+        "640084930351202257866151041693/792281625142643375935439503360",
+        "48006369776340169339961328127/59421121885698253195157962752"
+      ],
+      "isolation_bits": 100,
+      "method_comparisons": [
+        {
+          "intersects": false,
+          "interval_id": "jacobsen-2015-eigenvalue",
+          "separation_lower_bound": "208084870523361315080277771138205484129/967140655691703339764940800000000000000"
+        },
+        {
+          "intersects": false,
+          "interval_id": "mertens-2022-p-med",
+          "separation_lower_bound": "8323394821055151757041435422330883977/38685626227668133590597632000000000000"
+        },
+        {
+          "intersects": false,
+          "interval_id": "mertens-2022-p-cell",
+          "separation_lower_bound": "1664678965054377003171452396741205173/7737125245533626718119526400000000000"
+        },
+        {
+          "intersects": false,
+          "interval_id": "yang-zhou-2024-corrected",
+          "separation_lower_bound": "41616974105140359093410338644087328173/193428131138340667952988160000000000000"
+        }
+      ],
+      "minimal_polynomial_coefficients_ascending": [
+        1,
+        0,
+        0,
+        0,
+        -3,
+        0,
+        1
+      ]
+    },
+    {
+      "candidate_id": "martini-descendant-golden",
+      "excluded_by_all_method_intervals": true,
+      "isolating_interval": [
+        "146897091900047059053836648737/237684487542793012780631851008",
+        "1468970919000470590538366487371/2376844875427930127806318510080"
+      ],
+      "isolation_bits": 100,
+      "method_comparisons": [
+        {
+          "intersects": false,
+          "interval_id": "jacobsen-2015-eigenvalue",
+          "separation_lower_bound": "36685489346360220264406745996248655881/1450710983537555009647411200000000000000"
+        },
+        {
+          "intersects": false,
+          "interval_id": "mertens-2022-p-med",
+          "separation_lower_bound": "1467419574035457541321756705053943153/58028439341502200385896448000000000000"
+        },
+        {
+          "intersects": false,
+          "interval_id": "mertens-2022-p-cell",
+          "separation_lower_bound": "293483916072111485909099309423331197/11605687868300440077179289600000000000"
+        },
+        {
+          "intersects": false,
+          "interval_id": "yang-zhou-2024-corrected",
+          "separation_lower_bound": "7337097869974188168913525823919078197/290142196707511001929482240000000000000"
+        }
+      ],
+      "minimal_polynomial_coefficients_ascending": [
+        -1,
+        1,
+        1
+      ]
+    },
+    {
+      "candidate_id": "martini-descendant-root2",
+      "excluded_by_all_method_intervals": true,
+      "isolating_interval": [
+        "1120455419495722798374638764549/1584563250285286751870879006720",
+        "112045541949572279837463876455/158456325028528675187087900672"
+      ],
+      "isolation_bits": 100,
+      "method_comparisons": [
+        {
+          "intersects": false,
+          "interval_id": "jacobsen-2015-eigenvalue",
+          "separation_lower_bound": "221205823558097486901689186274213702633/1934281311383406679529881600000000000000"
+        },
+        {
+          "intersects": false,
+          "interval_id": "mertens-2022-p-med",
+          "separation_lower_bound": "8848232942565297783728216604573877329/77371252455336267181195264000000000000"
+        },
+        {
+          "intersects": false,
+          "interval_id": "mertens-2022-p-cell",
+          "separation_lower_bound": "1769646590199752860271973945464832221/15474250491067253436239052800000000000"
+        },
+        {
+          "intersects": false,
+          "interval_id": "yang-zhou-2024-corrected",
+          "separation_lower_bound": "44241164712555689535047406087735203221/386856262276681335905976320000000000000"
+        }
+      ],
+      "minimal_polynomial_coefficients_ascending": [
+        -1,
+        0,
+        2
+      ]
+    }
+  ],
+  "claim_boundary": {
+    "excluded": "candidate-library expansion, matching-partner independence, near-hit promotion, closed forms, or transcendence",
+    "included": "exact algebraic isolation and interval intersection for the four frozen candidates",
+    "parent_issue": "remain open"
+  },
+  "conclusion": {
+    "all_four_candidates_excluded": true
+  },
+  "contract_sha256": "fbeead4ae587fdc417a08393f27e701aabae45209f2478a24656ed63675ad2ac",
+  "issue": 1,
+  "provenance_sha256": "95ea5cf00c124652c7347da99a83d464cf176224d81973a10b5e181379bfb1f2",
+  "schema": "matching-one/lattice-native-candidate-comparison/v1",
+  "status": "lattice_native_candidate_comparison_complete"
+}

@@ -1,0 +1,77 @@
+{
+  "claim_boundary": {
+    "excluded": "derivation or exhaustion of physical bounds, unbounded parameters, correlated semialgebraic domains, model feasibility, or statistical uncertainty",
+    "included": "exact verification of supplied rational parameter values, box bounds, provenance strings, slacks, and active faces",
+    "parent_issue": "remain open"
+  },
+  "claim_level": "exact_control",
+  "dependency_group": "synthetic-exact-parameter-box",
+  "issue": 370,
+  "parameters": [
+    {
+      "lower": "-1",
+      "name": "x",
+      "provenance": "synthetic invariant-coordinate normalization",
+      "upper": "1",
+      "value": "1/2"
+    },
+    {
+      "lower": "0",
+      "name": "k",
+      "provenance": "synthetic nonnegative coupling cap",
+      "upper": "2",
+      "value": "0"
+    },
+    {
+      "lower": "1",
+      "name": "lambda",
+      "provenance": "synthetic frozen transfer interval",
+      "upper": "3/2",
+      "value": "3/2"
+    }
+  ],
+  "schema": "matching-one/exact-parameter-box-certificate/v1",
+  "verification": {
+    "active_boundaries": [
+      "k:lower",
+      "lambda:upper"
+    ],
+    "parameter_count": 3,
+    "parameters": [
+      {
+        "active_lower": false,
+        "active_upper": false,
+        "lower": "-1",
+        "lower_slack": "3/2",
+        "name": "x",
+        "provenance": "synthetic invariant-coordinate normalization",
+        "upper": "1",
+        "upper_slack": "1/2",
+        "value": "1/2"
+      },
+      {
+        "active_lower": true,
+        "active_upper": false,
+        "lower": "0",
+        "lower_slack": "0",
+        "name": "k",
+        "provenance": "synthetic nonnegative coupling cap",
+        "upper": "2",
+        "upper_slack": "2",
+        "value": "0"
+      },
+      {
+        "active_lower": false,
+        "active_upper": true,
+        "lower": "1",
+        "lower_slack": "1/2",
+        "name": "lambda",
+        "provenance": "synthetic frozen transfer interval",
+        "upper": "3/2",
+        "upper_slack": "0",
+        "value": "3/2"
+      }
+    ],
+    "status": "exact_parameter_box_verified"
+  }
+}

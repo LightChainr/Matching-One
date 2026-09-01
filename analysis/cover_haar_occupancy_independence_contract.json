@@ -1,0 +1,24 @@
+{
+  "schema": "matching-one/cover-haar-occupancy-independence/v1",
+  "status": "valid_exact_haar_independence_certificate",
+  "parent_issue": "remain open",
+  "degree_domain": "Q>=2",
+  "h0_parent_uniform": "V=frac(sum_m U_m)",
+  "h1_parent_uniform": "1-V",
+  "theorem": "V is independent of every U_i because the modulo-one sum of the other coordinates is Haar uniform",
+  "occupancy_conclusion": "both H0 and H1 parent occupancies have zero covariance with the child fiber occupancy mean",
+  "frozen_cases": [
+    {"cover_degree": 2, "occupancy_probability": "2/5", "product_of_marginals": "4/25", "h0_joint_parent_child": "4/25", "h0_covariance_with_fiber_mean": "0", "h1_joint_parent_child": "4/25", "h1_covariance_with_fiber_mean": "0"},
+    {"cover_degree": 2, "occupancy_probability": "3/5", "product_of_marginals": "9/25", "h0_joint_parent_child": "9/25", "h0_covariance_with_fiber_mean": "0", "h1_joint_parent_child": "9/25", "h1_covariance_with_fiber_mean": "0"},
+    {"cover_degree": 5, "occupancy_probability": "2/5", "product_of_marginals": "4/25", "h0_joint_parent_child": "4/25", "h0_covariance_with_fiber_mean": "0", "h1_joint_parent_child": "4/25", "h1_covariance_with_fiber_mean": "0"},
+    {"cover_degree": 5, "occupancy_probability": "3/5", "product_of_marginals": "9/25", "h0_joint_parent_child": "9/25", "h0_covariance_with_fiber_mean": "0", "h1_joint_parent_child": "9/25", "h1_covariance_with_fiber_mean": "0"}
+  ],
+  "exact_rational_volume_oracle": true,
+  "claim_boundary": {
+    "proves_nonlinear_topological_covariance": false,
+    "covers_threshold_rank_permutations": false,
+    "includes_wall_time_model": false,
+    "proves_residual_variance_gain": false,
+    "makes_production_recommendation": false
+  }
+}

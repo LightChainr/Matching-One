@@ -1,0 +1,612 @@
+{
+  "claim_boundary": {
+    "excluded": "expanded libraries, multi-constant bases, degree-3/4 polynomial exclusions, near-hit promotion, closed forms, or transcendence",
+    "included": "frozen pairwise standard-constant bases at height 100 over each method interval",
+    "parent_issue": "remain open"
+  },
+  "conclusion": {
+    "all_frozen_pairwise_bases_excluded": true,
+    "zero_containing_residual_total": 0
+  },
+  "constant_enclosures": {
+    "e": [
+      "2.71828182845904523536028747135266249775724709369995",
+      "2.71828182845904523536028747135266249775724709369996"
+    ],
+    "log2": [
+      "0.69314718055994530941723212145817656807550013436025",
+      "0.69314718055994530941723212145817656807550013436026"
+    ],
+    "pi": [
+      "3.14159265358979323846264338327950288419716939937510",
+      "3.14159265358979323846264338327950288419716939937511"
+    ],
+    "sqrt2": [
+      "1.41421356237309504880168872420969807856967187537694",
+      "1.41421356237309504880168872420969807856967187537695"
+    ],
+    "sqrt3": [
+      "1.73205080756887729352744634150587236694280525381038",
+      "1.73205080756887729352744634150587236694280525381039"
+    ],
+    "sqrt5": [
+      "2.23606797749978969640917366873127623544061835961152",
+      "2.23606797749978969640917366873127623544061835961153"
+    ]
+  },
+  "constant_enclosures_verified_with_mpmath_iv": true,
+  "contract_sha256": "fbeead4ae587fdc417a08393f27e701aabae45209f2478a24656ed63675ad2ac",
+  "issue": 1,
+  "provenance_sha256": "95ea5cf00c124652c7347da99a83d464cf176224d81973a10b5e181379bfb1f2",
+  "results": [
+    {
+      "closest_relation": {
+        "coefficients_for_1_p_constant": [
+          -54,
+          1,
+          17
+        ],
+        "height": 54,
+        "minimum_absolute_residual": "17883818139494613506248424845096864812021062313/100000000000000000000000000000000000000000000000000",
+        "p_slope_abs": 1,
+        "residual_interval": [
+          "-1788381814349461350624842484509686481202106233/10000000000000000000000000000000000000000000000000",
+          "-17883818139494613506248424845096864812021062313/100000000000000000000000000000000000000000000000000"
+        ],
+        "root_condition_to_additive_residual": "1/1"
+      },
+      "constant_id": "pi",
+      "excluded": true,
+      "interval_id": "jacobsen-2015-eigenvalue",
+      "primitive_relations_checked": 3342946,
+      "source_id": "jacobsen_2015_eigenvalue_identity",
+      "zero_containing_residuals": 0
+    },
+    {
+      "closest_relation": {
+        "coefficients_for_1_p_constant": [
+          -54,
+          1,
+          17
+        ],
+        "height": 54,
+        "minimum_absolute_residual": "17883818451494613506248424845096864812021062313/100000000000000000000000000000000000000000000000000",
+        "p_slope_abs": 1,
+        "residual_interval": [
+          "-1788381905149461350624842484509686481202106233/10000000000000000000000000000000000000000000000000",
+          "-17883818451494613506248424845096864812021062313/100000000000000000000000000000000000000000000000000"
+        ],
+        "root_condition_to_additive_residual": "1/1"
+      },
+      "constant_id": "pi",
+      "excluded": true,
+      "interval_id": "mertens-2022-p-med",
+      "primitive_relations_checked": 3342946,
+      "source_id": "mertens_2022_exact_spanning",
+      "zero_containing_residuals": 0
+    },
+    {
+      "closest_relation": {
+        "coefficients_for_1_p_constant": [
+          -54,
+          1,
+          17
+        ],
+        "height": 54,
+        "minimum_absolute_residual": "17883829351494613506248424845096864812021062313/100000000000000000000000000000000000000000000000000",
+        "p_slope_abs": 1,
+        "residual_interval": [
+          "-1788384535149461350624842484509686481202106233/10000000000000000000000000000000000000000000000000",
+          "-17883829351494613506248424845096864812021062313/100000000000000000000000000000000000000000000000000"
+        ],
+        "root_condition_to_additive_residual": "1/1"
+      },
+      "constant_id": "pi",
+      "excluded": true,
+      "interval_id": "mertens-2022-p-cell",
+      "primitive_relations_checked": 3342946,
+      "source_id": "mertens_2022_exact_spanning",
+      "zero_containing_residuals": 0
+    },
+    {
+      "closest_relation": {
+        "coefficients_for_1_p_constant": [
+          -54,
+          1,
+          17
+        ],
+        "height": 54,
+        "minimum_absolute_residual": "17883818381494613506248424845096864812021062313/100000000000000000000000000000000000000000000000000",
+        "p_slope_abs": 1,
+        "residual_interval": [
+          "-1788381840149461350624842484509686481202106233/10000000000000000000000000000000000000000000000000",
+          "-17883818381494613506248424845096864812021062313/100000000000000000000000000000000000000000000000000"
+        ],
+        "root_condition_to_additive_residual": "1/1"
+      },
+      "constant_id": "pi",
+      "excluded": true,
+      "interval_id": "yang-zhou-2024-corrected",
+      "primitive_relations_checked": 3342946,
+      "source_id": "yang_zhou_2024_comment",
+      "zero_containing_residuals": 0
+    },
+    {
+      "closest_relation": {
+        "coefficients_for_1_p_constant": [
+          -54,
+          59,
+          7
+        ],
+        "height": 59,
+        "minimum_absolute_residual": "255101290083811949692513284062892481758602507/25000000000000000000000000000000000000000000000000",
+        "p_slope_abs": 59,
+        "residual_interval": [
+          "-204081079267049559754010627250313985406882007/20000000000000000000000000000000000000000000000000",
+          "-255101290083811949692513284062892481758602507/25000000000000000000000000000000000000000000000000"
+        ],
+        "root_condition_to_additive_residual": "1/59"
+      },
+      "constant_id": "e",
+      "excluded": true,
+      "interval_id": "jacobsen-2015-eigenvalue",
+      "primitive_relations_checked": 3342946,
+      "source_id": "jacobsen_2015_eigenvalue_identity",
+      "zero_containing_residuals": 0
+    },
+    {
+      "closest_relation": {
+        "coefficients_for_1_p_constant": [
+          -54,
+          59,
+          7
+        ],
+        "height": 59,
+        "minimum_absolute_residual": "255105892083811949692513284062892481758602507/25000000000000000000000000000000000000000000000000",
+        "p_slope_abs": 59,
+        "residual_interval": [
+          "-204091793667049559754010627250313985406882007/20000000000000000000000000000000000000000000000000",
+          "-255105892083811949692513284062892481758602507/25000000000000000000000000000000000000000000000000"
+        ],
+        "root_condition_to_additive_residual": "1/59"
+      },
+      "constant_id": "e",
+      "excluded": true,
+      "interval_id": "mertens-2022-p-med",
+      "primitive_relations_checked": 3342946,
+      "source_id": "mertens_2022_exact_spanning",
+      "zero_containing_residuals": 0
+    },
+    {
+      "closest_relation": {
+        "coefficients_for_1_p_constant": [
+          -54,
+          59,
+          7
+        ],
+        "height": 59,
+        "minimum_absolute_residual": "255266667083811949692513284062892481758602507/25000000000000000000000000000000000000000000000000",
+        "p_slope_abs": 59,
+        "residual_interval": [
+          "-204402133667049559754010627250313985406882007/20000000000000000000000000000000000000000000000000",
+          "-255266667083811949692513284062892481758602507/25000000000000000000000000000000000000000000000000"
+        ],
+        "root_condition_to_additive_residual": "1/59"
+      },
+      "constant_id": "e",
+      "excluded": true,
+      "interval_id": "mertens-2022-p-cell",
+      "primitive_relations_checked": 3342946,
+      "source_id": "mertens_2022_exact_spanning",
+      "zero_containing_residuals": 0
+    },
+    {
+      "closest_relation": {
+        "coefficients_for_1_p_constant": [
+          -54,
+          59,
+          7
+        ],
+        "height": 59,
+        "minimum_absolute_residual": "255104859583811949692513284062892481758602507/25000000000000000000000000000000000000000000000000",
+        "p_slope_abs": 59,
+        "residual_interval": [
+          "-204084123667049559754010627250313985406882007/20000000000000000000000000000000000000000000000000",
+          "-255104859583811949692513284062892481758602507/25000000000000000000000000000000000000000000000000"
+        ],
+        "root_condition_to_additive_residual": "1/59"
+      },
+      "constant_id": "e",
+      "excluded": true,
+      "interval_id": "yang-zhou-2024-corrected",
+      "primitive_relations_checked": 3342946,
+      "source_id": "yang_zhou_2024_comment",
+      "zero_containing_residuals": 0
+    },
+    {
+      "closest_relation": {
+        "coefficients_for_1_p_constant": [
+          -83,
+          57,
+          71
+        ],
+        "height": 83,
+        "minimum_absolute_residual": "1264254652151568825968823473183331974523021077/50000000000000000000000000000000000000000000000000",
+        "p_slope_abs": 57,
+        "residual_interval": [
+          "-101140381292125506077505877854666557961841689/4000000000000000000000000000000000000000000000000",
+          "-1264254652151568825968823473183331974523021077/50000000000000000000000000000000000000000000000000"
+        ],
+        "root_condition_to_additive_residual": "1/57"
+      },
+      "constant_id": "log2",
+      "excluded": true,
+      "interval_id": "jacobsen-2015-eigenvalue",
+      "primitive_relations_checked": 3342946,
+      "source_id": "jacobsen_2015_eigenvalue_identity",
+      "zero_containing_residuals": 0
+    },
+    {
+      "closest_relation": {
+        "coefficients_for_1_p_constant": [
+          -83,
+          57,
+          71
+        ],
+        "height": 83,
+        "minimum_absolute_residual": "1264263544151568825968823473183331974523021077/50000000000000000000000000000000000000000000000000",
+        "p_slope_abs": 57,
+        "residual_interval": [
+          "-101142451532125506077505877854666557961841689/4000000000000000000000000000000000000000000000000",
+          "-1264263544151568825968823473183331974523021077/50000000000000000000000000000000000000000000000000"
+        ],
+        "root_condition_to_additive_residual": "1/57"
+      },
+      "constant_id": "log2",
+      "excluded": true,
+      "interval_id": "mertens-2022-p-med",
+      "primitive_relations_checked": 3342946,
+      "source_id": "mertens_2022_exact_spanning",
+      "zero_containing_residuals": 0
+    },
+    {
+      "closest_relation": {
+        "coefficients_for_1_p_constant": [
+          -83,
+          57,
+          71
+        ],
+        "height": 83,
+        "minimum_absolute_residual": "1264574194151568825968823473183331974523021077/50000000000000000000000000000000000000000000000000",
+        "p_slope_abs": 57,
+        "residual_interval": [
+          "-101202415532125506077505877854666557961841689/4000000000000000000000000000000000000000000000000",
+          "-1264574194151568825968823473183331974523021077/50000000000000000000000000000000000000000000000000"
+        ],
+        "root_condition_to_additive_residual": "1/57"
+      },
+      "constant_id": "log2",
+      "excluded": true,
+      "interval_id": "mertens-2022-p-cell",
+      "primitive_relations_checked": 3342946,
+      "source_id": "mertens_2022_exact_spanning",
+      "zero_containing_residuals": 0
+    },
+    {
+      "closest_relation": {
+        "coefficients_for_1_p_constant": [
+          -83,
+          57,
+          71
+        ],
+        "height": 83,
+        "minimum_absolute_residual": "1264261549151568825968823473183331974523021077/50000000000000000000000000000000000000000000000000",
+        "p_slope_abs": 57,
+        "residual_interval": [
+          "-101140969532125506077505877854666557961841689/4000000000000000000000000000000000000000000000000",
+          "-1264261549151568825968823473183331974523021077/50000000000000000000000000000000000000000000000000"
+        ],
+        "root_condition_to_additive_residual": "1/57"
+      },
+      "constant_id": "log2",
+      "excluded": true,
+      "interval_id": "yang-zhou-2024-corrected",
+      "primitive_relations_checked": 3342946,
+      "source_id": "yang_zhou_2024_comment",
+      "zero_containing_residuals": 0
+    },
+    {
+      "closest_relation": {
+        "coefficients_for_1_p_constant": [
+          -31,
+          69,
+          -7
+        ],
+        "height": 69,
+        "minimum_absolute_residual": "871597769267080591053473394327499385156381929/50000000000000000000000000000000000000000000000000",
+        "p_slope_abs": 69,
+        "residual_interval": [
+          "-348639162906832236421389357730999754062552773/20000000000000000000000000000000000000000000000000",
+          "-871597769267080591053473394327499385156381929/50000000000000000000000000000000000000000000000000"
+        ],
+        "root_condition_to_additive_residual": "1/69"
+      },
+      "constant_id": "sqrt2",
+      "excluded": true,
+      "interval_id": "jacobsen-2015-eigenvalue",
+      "primitive_relations_checked": 3342946,
+      "source_id": "jacobsen_2015_eigenvalue_identity",
+      "zero_containing_residuals": 0
+    },
+    {
+      "closest_relation": {
+        "coefficients_for_1_p_constant": [
+          -31,
+          69,
+          -7
+        ],
+        "height": 69,
+        "minimum_absolute_residual": "871608533267080591053473394327499385156381929/50000000000000000000000000000000000000000000000000",
+        "p_slope_abs": 69,
+        "residual_interval": [
+          "-348651693306832236421389357730999754062552773/20000000000000000000000000000000000000000000000000",
+          "-871608533267080591053473394327499385156381929/50000000000000000000000000000000000000000000000000"
+        ],
+        "root_condition_to_additive_residual": "1/69"
+      },
+      "constant_id": "sqrt2",
+      "excluded": true,
+      "interval_id": "mertens-2022-p-med",
+      "primitive_relations_checked": 3342946,
+      "source_id": "mertens_2022_exact_spanning",
+      "zero_containing_residuals": 0
+    },
+    {
+      "closest_relation": {
+        "coefficients_for_1_p_constant": [
+          -31,
+          69,
+          -7
+        ],
+        "height": 69,
+        "minimum_absolute_residual": "871984583267080591053473394327499385156381929/50000000000000000000000000000000000000000000000000",
+        "p_slope_abs": 69,
+        "residual_interval": [
+          "-349014633306832236421389357730999754062552773/20000000000000000000000000000000000000000000000000",
+          "-871984583267080591053473394327499385156381929/50000000000000000000000000000000000000000000000000"
+        ],
+        "root_condition_to_additive_residual": "1/69"
+      },
+      "constant_id": "sqrt2",
+      "excluded": true,
+      "interval_id": "mertens-2022-p-cell",
+      "primitive_relations_checked": 3342946,
+      "source_id": "mertens_2022_exact_spanning",
+      "zero_containing_residuals": 0
+    },
+    {
+      "closest_relation": {
+        "coefficients_for_1_p_constant": [
+          -31,
+          69,
+          -7
+        ],
+        "height": 69,
+        "minimum_absolute_residual": "871606118267080591053473394327499385156381929/50000000000000000000000000000000000000000000000000",
+        "p_slope_abs": 69,
+        "residual_interval": [
+          "-348642723306832236421389357730999754062552773/20000000000000000000000000000000000000000000000000",
+          "-871606118267080591053473394327499385156381929/50000000000000000000000000000000000000000000000000"
+        ],
+        "root_condition_to_additive_residual": "1/69"
+      },
+      "constant_id": "sqrt2",
+      "excluded": true,
+      "interval_id": "yang-zhou-2024-corrected",
+      "primitive_relations_checked": 3342946,
+      "source_id": "yang_zhou_2024_comment",
+      "zero_containing_residuals": 0
+    },
+    {
+      "closest_relation": {
+        "coefficients_for_1_p_constant": [
+          52,
+          35,
+          -42
+        ],
+        "height": 52,
+        "minimum_absolute_residual": "553504216158203818658581165985289945516500899/25000000000000000000000000000000000000000000000000",
+        "p_slope_abs": 35,
+        "residual_interval": [
+          "-1107008502316407637317162331970579891033001819/50000000000000000000000000000000000000000000000000",
+          "-553504216158203818658581165985289945516500899/25000000000000000000000000000000000000000000000000"
+        ],
+        "root_condition_to_additive_residual": "1/35"
+      },
+      "constant_id": "sqrt3",
+      "excluded": true,
+      "interval_id": "jacobsen-2015-eigenvalue",
+      "primitive_relations_checked": 3342946,
+      "source_id": "jacobsen_2015_eigenvalue_identity",
+      "zero_containing_residuals": 0
+    },
+    {
+      "closest_relation": {
+        "coefficients_for_1_p_constant": [
+          52,
+          35,
+          -42
+        ],
+        "height": 52,
+        "minimum_absolute_residual": "553506946158203818658581165985289945516500899/25000000000000000000000000000000000000000000000000",
+        "p_slope_abs": 35,
+        "residual_interval": [
+          "-1107024392316407637317162331970579891033001819/50000000000000000000000000000000000000000000000000",
+          "-553506946158203818658581165985289945516500899/25000000000000000000000000000000000000000000000000"
+        ],
+        "root_condition_to_additive_residual": "1/35"
+      },
+      "constant_id": "sqrt3",
+      "excluded": true,
+      "interval_id": "mertens-2022-p-med",
+      "primitive_relations_checked": 3342946,
+      "source_id": "mertens_2022_exact_spanning",
+      "zero_containing_residuals": 0
+    },
+    {
+      "closest_relation": {
+        "coefficients_for_1_p_constant": [
+          52,
+          35,
+          -42
+        ],
+        "height": 52,
+        "minimum_absolute_residual": "553602321158203818658581165985289945516500899/25000000000000000000000000000000000000000000000000",
+        "p_slope_abs": 35,
+        "residual_interval": [
+          "-1107484642316407637317162331970579891033001819/50000000000000000000000000000000000000000000000000",
+          "-553602321158203818658581165985289945516500899/25000000000000000000000000000000000000000000000000"
+        ],
+        "root_condition_to_additive_residual": "1/35"
+      },
+      "constant_id": "sqrt3",
+      "excluded": true,
+      "interval_id": "mertens-2022-p-cell",
+      "primitive_relations_checked": 3342946,
+      "source_id": "mertens_2022_exact_spanning",
+      "zero_containing_residuals": 0
+    },
+    {
+      "closest_relation": {
+        "coefficients_for_1_p_constant": [
+          52,
+          35,
+          -42
+        ],
+        "height": 52,
+        "minimum_absolute_residual": "553506333658203818658581165985289945516500899/25000000000000000000000000000000000000000000000000",
+        "p_slope_abs": 35,
+        "residual_interval": [
+          "-1107013017316407637317162331970579891033001819/50000000000000000000000000000000000000000000000000",
+          "-553506333658203818658581165985289945516500899/25000000000000000000000000000000000000000000000000"
+        ],
+        "root_condition_to_additive_residual": "1/35"
+      },
+      "constant_id": "sqrt3",
+      "excluded": true,
+      "interval_id": "yang-zhou-2024-corrected",
+      "primitive_relations_checked": 3342946,
+      "source_id": "yang_zhou_2024_comment",
+      "zero_containing_residuals": 0
+    },
+    {
+      "closest_relation": {
+        "coefficients_for_1_p_constant": [
+          75,
+          47,
+          -46
+        ],
+        "height": 75,
+        "minimum_absolute_residual": "48888875535964704678720030239711147222298539/781250000000000000000000000000000000000000000000",
+        "p_slope_abs": 47,
+        "residual_interval": [
+          "-3128888128301741099438081935341513422227106519/50000000000000000000000000000000000000000000000000",
+          "-48888875535964704678720030239711147222298539/781250000000000000000000000000000000000000000000"
+        ],
+        "root_condition_to_additive_residual": "1/47"
+      },
+      "constant_id": "sqrt5",
+      "excluded": true,
+      "interval_id": "jacobsen-2015-eigenvalue",
+      "primitive_relations_checked": 3342946,
+      "source_id": "jacobsen_2015_eigenvalue_identity",
+      "zero_containing_residuals": 0
+    },
+    {
+      "closest_relation": {
+        "coefficients_for_1_p_constant": [
+          75,
+          47,
+          -46
+        ],
+        "height": 75,
+        "minimum_absolute_residual": "48888990098464704678720030239711147222298539/781250000000000000000000000000000000000000000000",
+        "p_slope_abs": 47,
+        "residual_interval": [
+          "-3128909466301741099438081935341513422227106519/50000000000000000000000000000000000000000000000000",
+          "-48888990098464704678720030239711147222298539/781250000000000000000000000000000000000000000000"
+        ],
+        "root_condition_to_additive_residual": "1/47"
+      },
+      "constant_id": "sqrt5",
+      "excluded": true,
+      "interval_id": "mertens-2022-p-med",
+      "primitive_relations_checked": 3342946,
+      "source_id": "mertens_2022_exact_spanning",
+      "zero_containing_residuals": 0
+    },
+    {
+      "closest_relation": {
+        "coefficients_for_1_p_constant": [
+          75,
+          47,
+          -46
+        ],
+        "height": 75,
+        "minimum_absolute_residual": "48892992442214704678720030239711147222298539/781250000000000000000000000000000000000000000000",
+        "p_slope_abs": 47,
+        "residual_interval": [
+          "-3129527516301741099438081935341513422227106519/50000000000000000000000000000000000000000000000000",
+          "-48892992442214704678720030239711147222298539/781250000000000000000000000000000000000000000000"
+        ],
+        "root_condition_to_additive_residual": "1/47"
+      },
+      "constant_id": "sqrt5",
+      "excluded": true,
+      "interval_id": "mertens-2022-p-cell",
+      "primitive_relations_checked": 3342946,
+      "source_id": "mertens_2022_exact_spanning",
+      "zero_containing_residuals": 0
+    },
+    {
+      "closest_relation": {
+        "coefficients_for_1_p_constant": [
+          75,
+          47,
+          -46
+        ],
+        "height": 75,
+        "minimum_absolute_residual": "48888964395339704678720030239711147222298539/781250000000000000000000000000000000000000000000",
+        "p_slope_abs": 47,
+        "residual_interval": [
+          "-3128894191301741099438081935341513422227106519/50000000000000000000000000000000000000000000000000",
+          "-48888964395339704678720030239711147222298539/781250000000000000000000000000000000000000000000"
+        ],
+        "root_condition_to_additive_residual": "1/47"
+      },
+      "constant_id": "sqrt5",
+      "excluded": true,
+      "interval_id": "yang-zhou-2024-corrected",
+      "primitive_relations_checked": 3342946,
+      "source_id": "yang_zhou_2024_comment",
+      "zero_containing_residuals": 0
+    }
+  ],
+  "schema": "matching-one/standard-constant-pairwise-search/v1",
+  "search": {
+    "arithmetic": "exact Fraction arithmetic over fixed outward decimal enclosures",
+    "basis": [
+      "1",
+      "p_c",
+      "constant"
+    ],
+    "coefficient_height_max": 100,
+    "constant_coefficient_nonzero": true,
+    "constant_count": 6,
+    "method_interval_count": 4,
+    "primitive_only": true,
+    "relations_per_constant_interval": 3342946,
+    "sign_normalization": "p_coefficient_positive"
+  },
+  "status": "standard_constant_pairwise_search_complete"
+}
