@@ -1,6 +1,6 @@
 # 当前成果：从取向信号到微观机制
 
-**整理日期：2026-09-01，已读到 PR #544 `e8e9c7cf`、PR #545 `e1f19e4c` 及其独立审计。** 两个独立决策实验、齐次N50、canonical pair 的有限空间块、完整联合原U响应和 finite rank-one 反例均已完成并停线；首次Xi、jump/reweight分解和两套固定源的渐近反号也不再作为待办。[三份意见的核对与实际推进](../notes/reviews-response-20260831.md)记录生产决策，[有限 rank-one 判决](../notes/p537-finite-rank-one-decision-20260901.md)记录最新范围边界；[下一步](NEXT-TARGETS.md)只保留尚未回答的问题。本任务新增结果交付Draft #509，不合并。
+**整理日期：2026-09-01，已读到 PR #544 `e8e9c7cf`、PR #545 `e1f19e4c`、独立审计与 #537 physical one-defect gate。** 两个独立决策实验、齐次N50、canonical pair 的有限空间块、完整联合原U响应、finite rank-one 反例和 one-defect 存在性判决均已完成并按停止规则收缩；首次Xi、jump/reweight分解和两套固定源的渐近反号也不再作为待办。[三份意见的核对与实际推进](../notes/reviews-response-20260831.md)记录生产决策，[one-defect 精确判决](../notes/p537-one-defect-diagonal-edge-20260901.md)记录最新范围边界；[下一步](NEXT-TARGETS.md)只保留尚未回答的问题。本任务新增结果交付Draft #509，不合并。
 
 ## 压缩后仍须保留的结论账本
 
@@ -33,7 +33,9 @@ Draft [PR533](https://github.com/LightChainr/Matching-One/pull/533) 的 `5aa929a
 
 [独立范围审计](../notes/p537-finite-rank-one-decision-20260901.md)限制了这些结果的含义。#544 没有保存 `x+y+z` 全局 joint component identity/global no-extra flag，最终又把 Bell transition 汇总成 source absent/present；它证明显式 collar coarsening rank two，不证明 canonical ordinary/no-extra。#545 没有 formal Bell/no-extra 字段，并在 landing 子块内重新估计 `beta` 与 `S`；其 reduced-block 恒等式不是完整两几何总体先定 root counterterm 后的 original-U Schur summand。“JSON byte-identical”声明也未成立。L4→L5 的两个尺寸不能升级成指数或 full-U 尺度律。两条 Draft 因此关闭为 unmerged assets，不合并，也不再通过补 schema、L6、N、几何或 minor 救回 rank one。
 
-完整渐近目标仍是把 `T_N=jY_p-R*jM_p-R_p*jM` 控制到 `o(D/A_N)`，其中 `partial_u partial_epsilon Yhat=T_N/D=J_N/A_N`，等价的 logit 形式为 `T_t=<H,(a-Ea)S-(jM/M_t)B>_pool`。下一步只检查一个会删除整类机制的命题：完整 pooled-root signed-mass 的 physical one-defect graph 是否存在同时改变 landing/rank 与 source/Bell 两个慢变量、且 Schur signed weight 非零的 diagonal edge。若存在，立即停止 two-defect/高臂增益路线，转而控制 surviving four-arm functional；只有 exact graph 无 diagonal edge且两缺陷可定位到可分离 annuli，才进入 six-arm 上界。#539只保留P2复现支持；当前P0随机生产和云任务仍为空。
+完整渐近目标仍是把 `T_N=jY_p-R*jM_p-R_p*jM` 控制到 `o(D/A_N)`，其中 `partial_u partial_epsilon Yhat=T_N/D=J_N/A_N`，等价的 logit 形式为 `T_t=<H,(a-Ea)S-(jM/M_t)B>_pool`。[physical one-defect gate](../notes/p537-one-defect-diagonal-edge-20260901.md)已经找到首条 allocation-robust diagonal edge：axis N25 的一个 literal `z` flip 令 rank `0→1`、Bell `9240712→6848576`、`g16 4→0`；完整总体先冻结 root/counterterm 后，source midpoint 为 `-1.0888815582478189e-11`，root counterterm 为 `+2.5901918540035547e-12`，合计 `-8.298623728474635e-12`，三项符号均有严格有理证书。这个结果触发停止规则：blanket full-graph two-independent-defect / 自动 six-arm 路线已经否定，不再枚举完整 graph。
+
+该 witness 同时标记为 contact/collision：`z=East(x)`、`y=(-1,-1)`、`arm_mask=3`，source 接触 global black landing component。它不是 alternating ordinary separated four-arm，也不证明渐近下界。#537 的下一唯一 P0 对象因此改为 contact/collision sector 对 surviving leading four-arm signed functional 的贡献，采用无自由参数分解 `d_NN(z,{x,y})≤1` 与 `d_NN(z,{x,y})≥2`。separated sector 保持开放；只有另行证明 row/column changes 位于不交 annuli 后才可使用 six-arm。#539只保留P2复现支持；当前P0随机生产和云任务仍为空。
 
 [固定m审查的新增结论](../notes/p337-fixed-m-relative-bound.md#7-2026-09-01实际组件气体的进一步取舍)则排除了裸组件气体在h=1使用标准非负KP判据的路线；任意非负控制函数都不能统一成立。rank2投影精确固定唯一绕行组件颜色，但实际两相内外partition比仍未控制，固定m原U定理没有被宣布完成。
 

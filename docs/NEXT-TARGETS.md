@@ -1,8 +1,8 @@
-# 下一步：thermal/pivotal 传递与固定m两相权重
+# 下一步：contact/collision four-arm 控制与固定m两相权重
 
-**2026-09-01，已读到 PR #544 `e8e9c7cf`、PR #545 `e1f19e4c` 与两份独立审计。** 当前结论从[STATUS](STATUS.md)进入。两个独立生产实验、齐次N50、canonical pair 的有限空间块、完整联合原U响应和 finite rank-one 反例均已完成。下一步不增加同类有限点、距离网格、补全扫描或旧实验救值。
+**2026-09-01，已读到 PR #544 `e8e9c7cf`、PR #545 `e1f19e4c`、独立审计与 #537 physical one-defect gate。** 当前结论从[STATUS](STATUS.md)进入。两个独立生产实验、齐次N50、canonical pair 的有限空间块、完整联合原U响应、finite rank-one 反例和 one-defect 存在性判决均已完成。下一步不增加同类有限点、距离网格、补全扫描或旧实验救值。
 
-## 1. 当前研究问题：绝对可和的空间核能否经热响应获得尺度增强
+## 1. 当前研究问题：contact/collision 如何进入 surviving four-arm functional
 
 执行[2ba8863f](https://github.com/LightChainr/Matching-One/blob/2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb/notes/regular-pair-interaction-result.md)已经定义并算完canonical `Kreg=K2+K0`：直接Q1响应恒零，单点混合原U响应严格非零，固定四路径双插入系数13/8。随后 [`a237968f`](https://github.com/LightChainr/Matching-One/blob/a237968f1d7a82d26b46e83c58179dbba7f1a908/notes/regular-pair-spatial-transmission-result.md) 拒绝了L64/距离16的有限零传递；[`410015f5`](https://github.com/LightChainr/Matching-One/blob/410015f5505dc2d8ca0e9ac904f656a4adc9fe86/notes/regular-pair-joint-transmission-result.md) 完成完整 `J2=-0.0055194314248394015`，并以严格负的非相邻分项拒绝NN-contact-only closure。旧“local pair还没有进入有限U”“先计算uniform J2”两个待办全部删除。
 
@@ -18,12 +18,19 @@ tail(d>R) = O(R^-eta)
 
 新的[精确审计](../notes/p337-thermal-pivotal-gate-audit.md)已经证明，下一项不能只研究 `partial_p E[g_xy]`。对 `O=q,E`，完整 `d_p Cov(O,g_xy)` 有 kernel reconnection 与原 rank/readout pivotal 两项；tiny torus上遗漏第二项会把符号判反。普通site flip是八端口组件join，但共享组件数本身也不决定符号。
 
-现在只保留 #537 一个 P0 理论闸门：**检查完整 pooled-root one-defect graph 是否有同时改变两个慢变量的非零 diagonal edge。** [有限判决与范围审计](../notes/p537-finite-rank-one-decision-20260901.md)已把有限结果压缩清楚：preflight 排除 provisional clean-two-bridge 的 pure-thermal closure；#544 在显式 N25 radius-one collar coarsening 得到首个严格非零 pooled-root minor；#545 的 all-scale family 排除 broad pointwise common-counterterm identity；#544 的最后 L4→L5 exact broad aggregate与 `chi_perp~L^-4` 相容。两条 Draft 都没有完成 formal ordinary/no-extra/full original-U mixed-Hessian，两个尺寸也不是指数估计，因此关闭为固定提交资产；项目层面不再给 finite rank-one rescue 追加合同修改、L6或第三条分支。
+[#537 physical one-defect gate](../notes/p537-one-defect-diagonal-edge-20260901.md)已经给出存在性反例。axis N25 的 literal `z` flip 同时使 rank `0→1`、source Bell `9240712→6848576`、`g16 4→0`；完整总体先冻结 pooled root 与 counterterm 后，恢复 geometry pool 和 C4 orbit 的 Eq.(10) source midpoint 为 `-1.0888815582478189e-11`，full Schur weight 为 `-8.298623728474635e-12`，都有严格不含零的有理区间。由此 blanket full-graph two-independent-defect / 自动 six-arm 路线已被否定，完整 graph 枚举立即停止。
 
-1. 先复用现有 exact fibres；canonical certificate 保存全局 joint component map、outer `C/B/W`、rank 与 source Bell before/after、off-port contact 和 one-defect transition ID。
-2. 从完整两几何总体先固定 pooled-root `beta/R`，再输出 cell-level positive masses `P0/P1` 与 signed mass jets `S0/S1`；用 `S*1=0`、`1^T*S=0` 检查 margins，不在 landing 子块重估 root counterterm。
-3. 若首个 physical diagonal edge 同时改变 landing/rank 与 source/Bell，且完整 Schur signed weight 非零，立即否定 two-independent-defect / 自动高臂增益路线，只控制 surviving leading four-arm functional。
-4. 只有 exact graph 无 diagonal edge、且 row/column defects 可定位到可分离 annuli，才进入 two-defect / six-arm 上界。此前不启动新 MC、N、距离、动量、descriptor、自由指数或服务器生产。
+该 witness 位于 contact/collision，而非 ordinary separated sector。执行对象固定为
+
+```text
+contact/collision: d_NN(z,{x,y}) <= 1
+separated:         d_NN(z,{x,y}) >= 2
+```
+
+1. 只对 contact/collision sector 推导其进入 `T_N=<H,(a-Ea)S-(jM/M_t)B>_pool` 的有限体精确分解；保留 global joint `C/B/W`、root/counterterm 和 source/landing identities，不增加 descriptor。
+2. 把接触项归约成可由已证 raw canonical four-arm summability 控制的少数局部事件；明确 cancellation、符号或绝对上界中哪一项能给 `o(D/A_N)`。无法形成该桥时，记录理论缺口，不以更多 N 或回归替代。
+3. separated sector 只保留为条件分支。距离 `d_NN≥2` 本身不是 annular certificate；必须先证明 row/column changes 可定位到两个不交 annuli，才允许调用 two-defect/six-arm bound。
+4. 当前不启动新 MC、L6、N、距离、动量、descriptor、自由指数或服务器生产；首个可验收交付是 contact/collision functional 的精确恒等式或一条会淘汰该控制路线的反例。
 
 渐近验收仍是完整 `T_N=jY_p-R*jM_p-R_p*jM=o(D/A_N)`，等价于 root-conditioned mixed Hessian `partial_u partial_epsilon Yhat=T_N/D=J_N/A_N`。朴素三位置绝对计数需要`alpha4>4/3`而严格输入只有某个`alpha4>1`；双零 margins 本身也不证明两个空间 defects。#539只是P2复现支持；PR532的两桥因式分解与3/2下界不形成生产授权。
 
