@@ -1,0 +1,50 @@
+{
+  "schema": "matching-one/p537-contact-stage-n65-run/v1",
+  "status": "COMPLETED",
+  "base_commit": "76e2d82e4a1faa76cd71d377fa924a50cb0b6033",
+  "branch": "analysis/p537-contact-stage-n65-result-20260901",
+  "contract": "analysis/p537_contact_stage_n65_contract.json",
+  "production": {
+    "samples_total": 20000000,
+    "shards": 4,
+    "samples_per_shard": 5000000,
+    "batches": 100,
+    "seed": 20260901537,
+    "proposal_p": 0.5927311266364432,
+    "wall_seconds": 67.61,
+    "raw_bytes_total": 115014705,
+    "raw_tables_committed": false,
+    "raw_tables_regenerable": true
+  },
+  "scoring": {
+    "wall_seconds": 173.63,
+    "decision": "CONTACT_FUSION_COMPLETION_TRANSMITS",
+    "delta": -8.688216055121765e-14,
+    "delta_se": 1.4139776863031884e-14,
+    "delta_95": [-1.1459612320276013e-13, -5.916819789967515e-14],
+    "theta": -1.0,
+    "observed_cell_signs": [[-1, -1], [-1, 1]]
+  },
+  "environment": {
+    "os": "Darwin 25.5.0 arm64",
+    "python": "3.13.7",
+    "compiler": "Apple clang 21.0.0"
+  },
+  "sha256": {
+    "baseline_histogram": "998ecb82ea8d3d6b8d37a1ddc4aae479b550054a8b4bfe9bf23fe49810e5138f",
+    "kernel_tsv": "36ae069d370b1d7a4398861c928afb41aa76885c8895c696b1bc0c97e9c314fd",
+    "producer_cpp": "59795020797af42ecf0fe39b0a47b9c1f2d2988f431b64a82c00aa2830b96eca",
+    "score_py": "52ea162b265b29a2b1069fb8174cac3763a1fff7c51a5b6b269f3fac4234251a",
+    "result_json": "58a1d95a5bf73890d1398abf1737c5a9f631f1bec2f5da5c4bd0071981e8e73e",
+    "shard_0": "386072dd8c8dd58b9eb3913a720a5301e8583bb58204bbc0b4047f97101cdb24",
+    "shard_1": "472de8bc7676c131d5cee3f511077e789b8d30af2e4aff82fa34cb39cc4c2ab6",
+    "shard_2": "f10e44c94b431634d0e073a2a9cdc2c79ba3ff1efbfe47abe0eb31c4738fa16c",
+    "shard_3": "473e02e2abfe95f63ccfbd1680c4496d283a87f56030d710d4c342d6ec6d0228"
+  },
+  "raw_line_counts_including_headers": {
+    "shard_0": 453786,
+    "shard_1": 454123,
+    "shard_2": 453961,
+    "shard_3": 454310
+  }
+}

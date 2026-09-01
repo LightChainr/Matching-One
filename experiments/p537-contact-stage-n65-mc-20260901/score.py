@@ -80,7 +80,26 @@ def main():
     def primary(v):
         m=v[:6].reshape(2,3);c=np.c_[m[:,0]+m[:,1],m[:,2]];left,right=c[0,0]*c[1,1],c[0,1]*c[1,0];delta=left-right;theta=delta/(abs(left)+abs(right)) if left or right else 0.;return np.r_[c.ravel(),delta,theta]
     pc=primary(central);pp=np.array([primary(v) for v in prod]);pb=np.array([primary(v) for v in base]);fpp=math.sqrt((B-1)/B)*(pp-pp.mean(0));fpb=math.sqrt((B-1)/B)*(pb-pb.mean(0));pse=np.sqrt((fpp*fpp).sum(0)+(fpb*fpb).sum(0));ci=[pc[4]-1.96*pse[4],pc[4]+1.96*pse[4]]
-    smoke=run["samples"]<=10000;decision="SMOKE_ONLY" if smoke else ("N25_NEGATIVE_CONTACT_STAGE_SIGN_REPLICATED" if ci[1]<0 else ("CONTACT_STAGE_SIGN_REVERSED" if ci[0]>0 else "CONTACT_STAGE_NONFACTORING_UNRESOLVED"))
-    payload={"schema":"matching-one/p537-contact-stage-n65-score/v1","status":"SMOKE" if smoke else "COMPLETED","geometry_order":["axis(8,1)","tilted(7,4)"],"stage_order":["01","12"],"contact_mask_order":[1,2,3],"definition":"alternating rank-changing Bell edge with g16_before != g16_after; full pooled-root Schur allocation; beta fixed per common displacement before aggregation","global":detail,"matrix":{"estimate":central[:6].reshape(2,3).tolist(),"se":se[:6].reshape(2,3).tolist()},"primary":{"column_order":["single=mask1+mask2","double=mask3"],"matrix":pc[:4].reshape(2,2).tolist(),"matrix_se":pse[:4].reshape(2,2).tolist(),"Delta":pc[4],"Delta_se":pse[4],"Delta_95":ci,"theta":pc[5],"theta_se":pse[5],"theta_definition":"Delta/(abs(L01_single*L12_double)+abs(L01_double*L12_single))","decision":decision},"independent_covariance_groups":["P45_baseline_100_batches","new_MC_100_batches"],"run":run}
+    cell95=np.c_[pc[:4]-1.96*pse[:4],pc[:4]+1.96*pse[:4]]
+    expected=np.array([-1,-1,-1,1])
+    observed=np.sign(pc[:4]).astype(int)
+    opposite_excluded=np.array([
+        lo>0 if sign<0 else hi<0
+        for sign,(lo,hi) in zip(expected,cell95)
+    ])
+    smoke=run["samples"]<=10000
+    if smoke:
+        decision="SMOKE_ONLY"
+    elif ci[1]<0 and np.array_equal(observed,expected):
+        decision="CONTACT_FUSION_COMPLETION_TRANSMITS"
+    elif ci[0]>0 or np.any(opposite_excluded):
+        decision="SIGN_ROTATION_REJECTED"
+    else:
+        decision="UNRESOLVED_CONTACT_STAGE_GATE"
+    matrix_cov_prod=fp[:,:6].T@fp[:,:6]
+    matrix_cov_base=fb[:,:6].T@fb[:,:6]
+    primary_cov_prod=fpp.T@fpp
+    primary_cov_base=fpb.T@fpb
+    payload={"schema":"matching-one/p537-contact-stage-n65-score/v1","status":"SMOKE" if smoke else "COMPLETED","geometry_order":["axis(8,1)","tilted(7,4)"],"stage_order":["01","12"],"contact_mask_order":[1,2,3],"definition":"alternating rank-changing Bell edge with g16_before != g16_after; full pooled-root Schur allocation; beta fixed per common displacement before aggregation","global":detail,"matrix":{"estimate":central[:6].reshape(2,3).tolist(),"se":se[:6].reshape(2,3).tolist(),"covariance_order":["01_mask1","01_mask2","01_mask3","12_mask1","12_mask2","12_mask3"],"covariance":{"new_MC_100_batches":matrix_cov_prod.tolist(),"P45_baseline_100_batches":matrix_cov_base.tolist(),"combined":(matrix_cov_prod+matrix_cov_base).tolist()}},"primary":{"column_order":["single=mask1+mask2","double=mask3"],"matrix":pc[:4].reshape(2,2).tolist(),"matrix_se":pse[:4].reshape(2,2).tolist(),"matrix_95":cell95.reshape(2,2,2).tolist(),"expected_cell_signs":[[-1,-1],[-1,1]],"observed_cell_signs":observed.reshape(2,2).tolist(),"opposite_sign_excluded_95":opposite_excluded.reshape(2,2).tolist(),"Delta":pc[4],"Delta_se":pse[4],"Delta_95":ci,"theta":pc[5],"theta_se":pse[5],"theta_definition":"Delta/(abs(L01_single*L12_double)+abs(L01_double*L12_single))","covariance_order":["01_single","01_double","12_single","12_double","Delta","theta"],"covariance":{"new_MC_100_batches":primary_cov_prod.tolist(),"P45_baseline_100_batches":primary_cov_base.tolist(),"combined":(primary_cov_prod+primary_cov_base).tolist()},"decision":decision},"independent_covariance_groups":["P45_baseline_100_batches","new_MC_100_batches"],"run":run}
     a.output.parent.mkdir(parents=True,exist_ok=True);a.output.write_text(json.dumps(payload,indent=2)+"\n");print(json.dumps({"status":payload["status"],"p":detail["p"],"matrix":payload["matrix"]}))
 if __name__=="__main__": main()

@@ -16,6 +16,7 @@ support.
 Build and run four shards of a 20M production:
 
 ```bash
+mkdir -p results/p537-contact-stage-n65
 clang++ -std=c++17 -O3 experiments/p537-contact-stage-n65-mc-20260901/producer.cpp -o /tmp/p537-contact-stage-n65
 for shard in 0 1 2 3; do
   /tmp/p537-contact-stage-n65 \
@@ -39,8 +40,13 @@ python3 experiments/p537-contact-stage-n65-mc-20260901/score.py \
 The scorer solves the common matching root, computes `M_t`, `R`, and each
 displacement's pooled `beta_y`, then applies the complete Schur term before
 summing the frozen `2 x 3` matrix.  P45 and new-MC delete-one factors are kept
-as two independent covariance groups.  The primary collapse is
+as two independent covariance groups, with their separate and combined full
+covariance matrices serialized in `result.json`.  The primary collapse is
 `single=mask1+mask2` versus `double=mask3`; `Delta=det(L)` and
 `theta=Delta/(|L11 L22|+|L12 L21|)` are formed inside every replicate before
-the two independent jackknife variances are added.  A 10k smoke is labelled
-`SMOKE`; it is only an execution/schema check, not a scientific readout.
+the two independent jackknife variances are added.  The scorer implements the
+frozen decision literally: transmission requires `Delta_95 < 0` and the four
+central cell signs `-- -+`; rejection requires `Delta_95 > 0` or a 95% cell
+interval wholly opposite one of those signs; all other outcomes are unresolved.
+A 10k smoke is labelled `SMOKE`; it is only an execution/schema check, not a
+scientific readout.
