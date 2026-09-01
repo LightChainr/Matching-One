@@ -94,15 +94,18 @@ Threshold-rank production preserves reusable sufficient statistics rather than o
 
 ## Research navigation
 
-- `docs/STATUS.md` — authoritative current claim ledger.
-- `docs/RESEARCH-MAP.md` — how scientific tracks and evidence fit together.
+The compact `README`/`STATUS` narrative is intentionally not a complete inventory. In particular, **do not infer the scientific frontier from `main` alone**: substantial negative results, semantic corrections, estimator/reachability work and scientifically mature open-PR/branch-only results exist outside the dominant H4/Q4 summary. Read the visibility atlas when preparing an overview.
+
+- `docs/RESEARCH-ATLAS.md` — underexposed science: branch-only/open-PR results, negative results, corrections, predictive-state work, computational reachability, and mature exact side programs.
+- `docs/STATUS.md` — authoritative current claim ledger for its stated snapshot.
+- `docs/RESEARCH-MAP.md` — compact map of how scientific tracks and evidence fit together.
 - `notes/SYNTHESIS-20260828.md` — execution-facing synthesis.
-- `docs/ROADMAP.md` — information-gain priorities.
+- `docs/ROADMAP.md` — information-gain priorities for its stated snapshot.
 - `analysis/research_ledger.yaml` — compact machine-readable evidence/work state.
 - `analysis/artifact_registry.yaml` — lightweight artifact/navigation index.
 - `results/evidence-ledger/latest.md` — primary-only predictive evidence view.
 
-Old reports, queues, closed PRs and negative results remain provenance, not competing current-status documents.
+Old reports, queues, closed PRs and negative results remain provenance, not competing current-status documents. Open/unmerged status likewise does not imply scientific immaturity; integration state and evidence status must be tracked separately.
 
 ## Execution policy
 
