@@ -1,5 +1,5 @@
 {
-  "schema": "matching-one/p537-one-defect-provenance/v1",
+  "schema": "matching-one/p537-one-defect-provenance/v2",
   "issue": 537,
   "base_commit": "090cdc80c76b9ca1f79309cedbbebae4190ccb12",
   "upstream_exact_asset": {
@@ -33,5 +33,23 @@
     "geometry_pool": "one half",
     "fixed_z_C4_orbit_multiplicity": 4,
     "root_and_coefficients": "computed from both complete geometries before edge disintegration"
+  },
+  "fixed_nonadjacent_supplement": {
+    "base_commit": "ca728f04b26b38cedab562617455a2443d86b5ed",
+    "geometry": "axis N25 (5,0)",
+    "row_major_x_y_z": [0, 6, 2],
+    "row_major_occupied_off_z": [1, 3, 4, 5, 7, 9, 10, 12, 15, 16, 17],
+    "internal_x_y_z": [0, 4, 3],
+    "producer": "experiments/p537-one-defect-gate-20260901/produce_nonadjacent_witness.py",
+    "sampling": "none",
+    "search": "none; deterministic reconstruction of the fixed configuration",
+    "independent_recomputation": [
+      "axis quotient and row-major map",
+      "rank and Bell",
+      "joint C/B/W carrier data",
+      "pairwise NN distances and typed-carrier incidence",
+      "g16 lookup and signed sufficient statistics"
+    ],
+    "inheritance_boundary": "does not copy or absorb the larger exploratory fixed-configuration branch"
   }
 }

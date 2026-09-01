@@ -45,3 +45,25 @@ global source/landing contact.  It decides the full-graph stop rule through a
 contact/collision channel.  It does not claim that the ordinary separated
 four-arm sector contains a diagonal edge, nor does it give an asymptotic
 lower bound.
+
+## Fixed nonadjacent supplement
+
+`produce_nonadjacent_witness.py` reconstructs a second, frozen axis-N25
+configuration without sampling or search.  In 5x5 row-major coordinates it
+uses `x=0`, `y=6`, `z=2` and off-z occupied cells
+`{1,3,4,5,7,9,10,12,15,16,17}`.  The independent quotient reconstruction
+maps these centers to internal vertices `(0,4,3)` and gives pairwise NN
+distance two.
+
+Despite that metric separation, the physical z flip changes the common
+source/thermal carrier incidence from two terminals to one, together with
+rank, Bell and `g16`.  It is therefore classified as a
+`joint_incidence_typed_carrier`.  This supplement invalidates the proposed
+rule "contact means distance at most one".  Distance two on the N5 quotient
+does not supply disjoint annuli, so the artifact does not promote the edge to
+the separated sector and does not make an asymptotic claim.
+
+The verifier reproduces both witnesses and both pooled-root scores byte for
+byte.  `score_witness.py` keeps the original `result.json` byte-identical and
+changes the stop-decision prose only when the optional typed-carrier scope is
+present in the nonadjacent witness.

@@ -58,6 +58,8 @@ def main() -> None:
         binary = scratch / "one_defect_witness_exact"
         witness = scratch / "witness.json"
         result = scratch / "result.json"
+        nonadjacent_witness = scratch / "witness-nonadjacent.json"
+        nonadjacent_result = scratch / "result-nonadjacent.json"
         compiler = os.environ.get("CXX", "c++")
         run(
             [
@@ -82,15 +84,38 @@ def main() -> None:
         if result.read_bytes() != (RESULTS / "result.json").read_bytes():
             raise AssertionError("pooled-root scorer did not reproduce result.json byte for byte")
 
+        run(
+            [
+                sys.executable,
+                str(HERE / "produce_nonadjacent_witness.py"),
+                "--output",
+                str(nonadjacent_witness),
+            ]
+        )
+        if nonadjacent_witness.read_bytes() != (RESULTS / "witness-nonadjacent.json").read_bytes():
+            raise AssertionError("Python producer did not reproduce witness-nonadjacent.json byte for byte")
+        run(
+            [
+                sys.executable,
+                str(HERE / "score_witness.py"),
+                "--witness",
+                str(RESULTS / "witness-nonadjacent.json"),
+                "--output",
+                str(nonadjacent_result),
+            ]
+        )
+        if nonadjacent_result.read_bytes() != (RESULTS / "result-nonadjacent.json").read_bytes():
+            raise AssertionError("pooled-root scorer did not reproduce result-nonadjacent.json byte for byte")
+
         oracle = run([sys.executable, str(ROOT / "tests" / "test_p537_one_defect_gate.py"), "-v"])
         manifest_files = verify_manifest()
         print(
             json.dumps(
                 {
                     "status": "verified",
-                    "producer": "byte_identical",
-                    "scorer": "byte_identical",
-                    "topology_tests": 3,
+                    "producers": {"first_scan_cpp": "byte_identical", "fixed_nonadjacent_python": "byte_identical"},
+                    "scorers": {"first_scan": "byte_identical", "fixed_nonadjacent": "byte_identical"},
+                    "topology_tests": 6,
                     "manifest_files": manifest_files,
                     "compiler": compiler,
                     "test_stdout": oracle.stdout.strip(),

@@ -163,7 +163,7 @@ def score(args: argparse.Namespace) -> dict[str, object]:
     if not robust or not excludes_zero(full_total):
         raise AssertionError("frozen edge failed the allocation-robust nonzero stop rule")
 
-    return {
+    payload = {
         "schema": "matching-one/p537-one-defect-score/v1",
         "status": "allocation_robust_physical_diagonal_edge_nonzero",
         "graph_contract": {
@@ -229,6 +229,31 @@ def score(args: argparse.Namespace) -> dict[str, object]:
             "baseline_root": {"path": display_path(args.baseline_root), "sha256": sha256(args.baseline_root)},
         },
     }
+    carrier_scope = witness.get("carrier_scope")
+    if carrier_scope is not None:
+        if carrier_scope.get("classification") != "joint_incidence_typed_carrier":
+            raise ValueError("unexpected nonadjacent carrier classification")
+        if carrier_scope.get("annular_separation_certified") is not False:
+            raise ValueError("fixed N5 witness must not claim annular separation")
+        payload["topology"]["pairwise_NN_distances"] = witness["pairwise_NN_distances"]
+        payload["topology"]["carrier_scope"] = carrier_scope
+        payload["stop_decision"] = {
+            "rule": "fixed physical edge changing both slow variables with nonzero full Schur weight",
+            "triggered": True,
+            "blanket_full_graph_two_independent_defect_route": "falsified",
+            "distance_at_most_one_contact_split": "insufficient: the distance-two edge still changes joint terminal incidence",
+            "carrier_classification": "joint-incidence/typed carrier",
+            "separated_sector": "open: pairwise distance two on N5 is not a disjoint-annulus certificate",
+            "next_object": "the joint-incidence/typed-carrier contribution to the surviving leading signed functional",
+            "no_further_graph_enumeration_required": True,
+        }
+        payload["scope"] = [
+            "This exact finite N25 edge disproves an automatic two-spatial-defect or six-arm gain for the full physical decomposition.",
+            "All three marked centers have NN distance two, yet joint terminal incidence drops from two to one; metric distance at most one therefore does not define the full contact carrier.",
+            "Distance two on the N5 quotient is not annular separation, so this witness proves neither a separated-sector statement nor an asymptotic lower bound.",
+            "The beta-free source part is nonzero, so the decision does not rely on counterterm allocation across Bell cells.",
+        ]
+    return payload
 
 
 def parser() -> argparse.ArgumentParser:
