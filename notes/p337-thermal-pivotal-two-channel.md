@@ -1,14 +1,16 @@
-# P337 thermal-pivotal 双通道：#536 来源卡与 #537 当前闸门
+# P337 thermal-pivotal 双通道：#536 来源卡与 #537 完整份额闸门
 
 **状态（2026-09-01）。** 仓库团队已把
 [Issue #536](https://github.com/LightChainr/Matching-One/issues/536) 关闭为重复项，
-其正文与对话附件仍保留 finite-N25 计算的来源；当前唯一 canonical P0 是开放的
-[Issue #537](https://github.com/LightChainr/Matching-One/issues/537)。本卡没有执行
+其正文与对话附件仍保留 finite-N25 计算的来源。当前P0是开放的
+[Issue #275](https://github.com/LightChainr/Matching-One/issues/275)；
+[Issue #537](https://github.com/LightChainr/Matching-One/issues/537)保持开放P1理论。
+本卡没有执行
 这些生命周期变更。#536 的数值与反例语义仍是 **issue-only**：本轮没有独立导入
 附件脚本/整数表，没有重跑、验证或提升为 `main_integrated` 事实。它们复用已完成
 N25 总体，亦不是新的独立证据。开放的
 [Issue #539](https://github.com/LightChainr/Matching-One/issues/539) 只保留为 P2
-exact-N25 复现支撑，不与 #537 并列为第二个 P0。
+exact-N25 复现支撑，不与 #275 并列为第二个 P0。
 
 上游解析边界见
 [canonical pair thermal-pivotal gate](regular-pair-thermal-pivotal-gate.md)：
@@ -232,7 +234,8 @@ pivotal event 精确命名；不要求先拟合指数。
 
 ### 6.1 先做有限维判伪器，再决定哪一个 tail 值得证明
 
-PR #509 当前 head `ec3941b0` 把完整 original-U 组合压缩为 root-conditioned
+PR #509 OPEN Draft live head `ac5f5fe7` 中，本线科学 commit `ec3941b0` 把完整
+original-U 组合压缩为 root-conditioned
 Hessian。若 `M(p(u,epsilon),epsilon)=u` 且
 `Yhat(u,epsilon)=Y(p(u,epsilon),epsilon)`，则
 
@@ -252,22 +255,75 @@ geometry-specific centering、逐source `beta_lambda`、相同 C4 与 axis/tilte
 first-thermal-jet `2x2` minors。
 
 这里的landing必须是finite collar，而不是global component label。最新
-`branch_only`
-[`7051ad83`](https://github.com/LightChainr/Matching-One/blob/7051ad83a788becb0478de6e0c235376821c22f4/notes/p537-global-four-arm-emptiness.md)
+closed-unmerged PR #544（recorded head `e8e9c7cf`）
+[`139c7e58`](https://github.com/LightChainr/Matching-One/blob/139c7e5850c5be1e8e17c3d58be806080b1e2b73/notes/p537-global-four-arm-emptiness.md)
 精确证明`Delta q=1-b_z-w_z`且`b_z+w_z<=1`，所以两条全局occupied分支与
 两条全局vacant separator同时独立的行为空集。下一producer应把四臂只运输到
 固定collar，另存outer attachment/rank transition；local alternating
 `near_block`只是放宽控制，不能作为canonical ordinary row。
 
-- 任一最终 projected minor 或其 first thermal jet 非零，直接否定 exact
-  pure-thermal factorization；随后检查其尺度，而不是把有限非零自动写成
-  asymptotic leading law。
-- 所有 minors/jet 为零后，还要逐外层 sector 检查 endpoint-landing 与
-  pivot-transition 两个条件边缘。双边缘为零才许可 two-defect extra-arm remainder；
-  任一边缘存活则冻结为最小 leading four-arm carrier。
+这个放宽控制现已在
+[`ddbbad64`](https://github.com/LightChainr/Matching-One/blob/ddbbad6462abb9fcebdaae1f7162e287ed3bebed/results/p537-siteflip-aggregate/summary.json)
+得到exact full-site-flip评分：每几何8,388,608 backgrounds、192,937,984 pair
+fibres，`15 x 12` P4/Schur矩阵的rank`0->1`/`1->2` by axial2
+absent/present minor为`-4.039642418513639e-18`且排除零。它杀掉relaxed
+branch-free near-block的rank one，并成为后续collar评分的冻结witness。
 
-这个有限判伪器比直接从三个 carrier 各自开始做完整渐近证明更先验地缩小机制
-空间；它不新增 production、自由 descriptor 或统计票。
+closed-unmerged #545（recorded head `e1f19e4c`）中的 [`f6b4414a`](https://github.com/LightChainr/Matching-One/blob/f6b4414ace201846f7c164aea0738a9941eb8d75/experiments/p337-landing-minor-exact-20260901/REPORT.md)
+另给单square geometry/local-collar `ell4`的L4 exact det
+`-533831111/140737488355328`、matching-root det `-2.501463041122436e-6`
+和all-scale非零族。它是entry/completion及source
+normalization的强回归，不含paired P4、kernel midpoint、完整Schur、outer margins
+或thermal jet。
+
+closed-unmerged #544 中的 [`e21f6220`](https://github.com/LightChainr/Matching-One/blob/e21f6220775d51450d73d4258c3edf2dbdf0a910/results/p537-finite-collar/REPORT.md)
+已把同一四格评分为exact coarse-marginal collar matrix：det
+`+2.6904188461441777e-14`。其row margins为
+`(+4.3555592e-7,-1.7359553e-7)`，column margins为
+`(+1.0122295e-7,+1.6073744e-7)`；但所有选中local raw `a/qa/Ea` sums为零，
+且producer仍未保存x/y/z joint 12-port component identity、
+terminal incidence/private grade和outer attachment，避免separate Bell-key collision。
+
+branch-only [`c958b30b`](https://github.com/LightChainr/Matching-One/blob/c958b30b/results/p537-finite-collar-joint/REPORT.md)
+已完成共同joint-incidence **value gate**：`1,390` sectors中`118`个exact
+nonzero，`106/106` pooled rectangles和`30/30` complete two-geometry
+rectangles全部exact非零，first full det为`-4.005552609094306e-18`。
+sector sums精确重构coarse result；same-sector determinant sum占`0.2101274%`，
+cross-sector terms占`99.7898726%`。因此coarse幅度以sector mixing为主，
+但rank two不是把不兼容sector加在一起才产生的假象。
+
+- common-sector value非零本身不等于transition adjacency或direct source
+  transmission。
+- branch-only [`22f01e33`](https://github.com/LightChainr/Matching-One/blob/22f01e33c2c386e522b17fc781b3adf70e93548e/results/p537-one-defect-diagonal-edge/REPORT.md)
+  已完成edge gate：`6,846`个kernel-changing row classes、`740,950`个fibres、
+  total signed mass `-4.9488399165e-6`，冻结判决
+  `TWO_INDEPENDENT_DEFECT_GAIN_REJECTED`。
+- 在fixed-anchor、NN thermal-`z`、source-present kernel-changing选择内，
+  mask 0严格没有row/fibre；所有support接触至少一条local thermal arm。
+  first birth给`-5.8210906659e-6`，completion给`+8.7225074943e-7`，故
+  radius-one leading carrier是contact-local、first-birth-dominated signed
+  four-arm/OPE functional，而非自动six-arm。
+- `df4a64f6`的N25 stage×contact tensor有exact nonzero determinant；
+  `f46c38c3`随后用冻结20M N65 held-out block保留`-- -+`并给
+  `Delta_cs=-8.6882161e-14`、95% CI
+  `[-1.1459612e-13,-5.9168198e-14]`，完成
+  `CONTACT_FUSION_COMPLETION_TRANSMITS`。`95a695c7`是同一shards的full-covariance/
+  post-hoc shape重分析，不是第二票。
+- `f9ba1ff6`用同一N65 sufficient statistics重建
+  `J65=-.00162250989+/-.00018553008`；carrier share由N25 `5.892%`降到N65
+  `2.551%`，root displacement只占`|J65|`约`.0155%`。因此carrier传输但不饱和
+  complete response；这些仍是同一dependency。
+- 新P0是#275的original observable/normalizer/identifiable prediction contract，
+  默认不新产数据。all-`z` N25、N85/N130 frozen-cell tests留作#537 P1条件式支持。
+
+PR #544关闭后的同名分支当前branch-only head为`f9ba1ff6`；reduced-L8
+artifact固定于
+[`22f01e33`](https://github.com/LightChainr/Matching-One/blob/22f01e33c2c386e522b17fc781b3adf70e93548e/results/p537-aggregate-wedge-l8-mc/REPORT.md)。
+L8 `G4=.000680204061±.000012697002`，冻结三模型判决为
+`UNRESOLVED_MODEL_BOUNDARY`；`L^-35/8`是post-hoc机制线索，不是已证定律。
+不再增加reduced-`G4`尺寸；existing-data `Xi_L=N^2 G4 sqrt(P_L)`已给
+L4/L5 `8.00214/7.99820`、L6 `7.72546+/-0.08469`、L8
+`8.03977+/-0.15006`。这个有限链不新增自由descriptor或统计票。
 
 ## 7. 交付 B：L32/L64 各前 32 counter 的有界复放（已完成）
 
@@ -310,11 +366,13 @@ shared-transition。没有观察到kernel-preserving topological callback。
 - N25 首次 midpoint 通道拆分由已关闭 #536 保留为来源，不再作为“下一首次任务”。
 - 仓库当前可安全采用的是恒等式、反例语义、#537 的理论目标与已完成 B 的有限
   输出；issue-only 数值必须继续携带未独立导入/验证标签。
-- PR #509 `ec3941b0` 已排除 provisional clean-two-bridge 端口合同；`a3bc80c8`
-  同时把 N9/N16 raw minors 降为 supporting controls。下一高信息增益对象是
-  canonical finite-collar landing matrix 的 value/thermal jet 与两个条件边缘。它决定
-  随后证明 leading signed four-arm sector，还是证明 two-defect remainder；不是
-  更多 counter、再拟合 raw `C(r)` 或扩大 macro ratio。
+- PR #509的本线科学commit `ec3941b0`已排除provisional
+  clean-two-bridge端口合同；`a3bc80c8`把N9/N16 raw minors降为controls；
+  `c958b30b`已完成joint-incidence common-sector value gate，`22f01e33`完成
+  one-defect edge/contact gate，`f46c38c3`完成held-out N65 transmission，
+  `f9ba1ff6`完成full-T share。下一高信息增益对象是#275的observable dictionary、
+  physical normalizer与至少两个可区分预测向量；#537的N25/N85/N130测试保持
+  条件式P1。不要再跑joint refinement、edge census、更多counter或reduced-G4。
 - #539 只做 P2 exact-N25 reproducibility support，且应先导入/消费 #536 已有附件，
   不把完整 `2^25` rest-flip 枚举重复一遍。
 - 本卡不把 midpoint channel 称为场、因果份额或独立 evidence，也不把 remote

@@ -36,7 +36,8 @@ kernel与distinct-site坐标不变性。它是同一精确总体上的实现交�
 两尺寸独立；每配置32个pair是相关平均。它排除有限非接触空间零假设，
 不是J2，也不把两个尺寸的ratio变成已识别指数。
 
-PR #509（当前head `ec3941b03b2694e827db1cba34766a82e6146a5a`）的
+PR #509（OPEN Draft live head `ac5f5fe7`；本线科学
+commit `ec3941b03b2694e827db1cba34766a82e6146a5a`）的
 [baa5d33b选择定理](https://github.com/LightChainr/Matching-One/blob/baa5d33b2f87b2868aa0cb9d3f6518c93dbf3bff/experiments/p337-regular-spatial-support-20260901/RESULT.md)
 进一步证明：非相邻两点至多共享一个外部占据组件时，首阶Q激活精确为零；
 实际两组件外部给`a_xy=1/16`，且
@@ -74,11 +75,12 @@ axis/tilted共用occupation与anchor流，`total/s2/s>=3`也是同一源的相�
 不能拆成独立票。100个paired batches才是推断单位。pilot到此停线；其它探索
 仍可并行，优先级不是许可或任务锁。
 
-## 当前前瞻判决：先完成canonical landing transfer，再选择tail机制
+## 最新完成：contact carrier已传输但只占小份额；P0转向原始观测量
 
-已关闭的Issue #536保留一项**issue-only、非main事实**的N25 midpoint精确分解；
-仓库团队已把唯一canonical P0迁移到开放的
-[#537](https://github.com/LightChainr/Matching-One/issues/537)：
+已关闭的Issue #536保留一项**issue-only、非main事实**的N25 midpoint精确分解。
+仓库团队已把开放的[#275](https://github.com/LightChainr/Matching-One/issues/275)
+调为P0，把[#537](https://github.com/LightChainr/Matching-One/issues/537)
+保留为开放P1理论线。下面的有限分解仍是P1机制来源：
 `observer-pivotal=−0.005935841948386444`、
 `kernel=+0.0004141042799437205`、`root=+0.000002306243603322`，合计
 `−0.005519431424839401`。它说明下一步不是首次发现通道，而是把已有有限分解
@@ -105,38 +107,144 @@ landing falsifier。
 因此Delivery A先执行
 [complete transfer contract](../notes/p537-signed-landing-transport-contract.md)：
 在global root/means/`R`/`beta_lambda`下形成每个`(pair,z)` fibre。最新
-`branch_only`精确定理
-[`7051ad83`](https://github.com/LightChainr/Matching-One/blob/7051ad83a788becb0478de6e0c235376821c22f4/notes/p537-global-four-arm-emptiness.md)
+已关闭但未合并的PR #544（recorded head `e8e9c7cf`）所含精确定理
+[`139c7e58`](https://github.com/LightChainr/Matching-One/blob/139c7e5850c5be1e8e17c3d58be806080b1e2b73/notes/p537-global-four-arm-emptiness.md)
 给出`Delta q=1-b_z-w_z`及`b_z+w_z<=1`：两条全局occupied分支和两条全局
 vacant separator不能同时独立。因此必须先把四臂运输到固定finite collar，再把
 outer reconnection/rank attachment作为独立状态；global-component表不能作为
-canonical矩阵，local alternating `near_block`只是放宽控制。随后运输匿名组件
-C4作用，分别形成axis/tilted law，再检查P4后的value与first-thermal-jet minors。
-同一外层landing sector还要检查两个条件边缘：endpoint-landing与
-pivot-transition。两者都为零，才把以下三类carrier送入双缺陷signed dyadic
-tail；任一边缘非零，则冻结该sector为leading four-arm mechanism，而不是用
-额外臂或新descriptor掩盖它：
+canonical矩阵。`near_block`虽只是放宽控制，但
+[`ddbbad64`](https://github.com/LightChainr/Matching-One/blob/ddbbad6462abb9fcebdaae1f7162e287ed3bebed/results/p537-siteflip-aggregate/preferred-minor.json)
+已经完成它的full-site-flip评分：`15 x 12` P4/Schur矩阵中，rank
+`0->1`/`1->2`行与axial2 source absent/present列的det为
+`-4.039642418513639e-18`，exact interval排除零，且degree-branch与extra-contact
+都为0。已关闭但未合并的[#544](https://github.com/LightChainr/Matching-One/pull/544)
+在科学commit [`e21f6220`](https://github.com/LightChainr/Matching-One/blob/e21f6220775d51450d73d4258c3edf2dbdf0a910/results/p537-finite-collar/REPORT.md)
+完成coarse-marginal collar value test：
+的`B_inf(z,1)`、outer `J_B=J_W=1`、all-corner、full root/Schur与axis/tilted
+P4四格矩阵，在唯一声明的minor给出
+`det=+2.6904188461441777e-14`，exact interval严格为正。这否定该coarse
+signed-mass矩阵的rank one；producer未保留source+z joint 12-port identity，
+而选中landing rows的local raw `a/qa/Ea` sums全部为零，所以不能把它命名为
+直接source transmission或canonical physical closure。
+
+四格的row margins为`(+4.3555592e-7,-1.7359553e-7)`，column margins为
+`(+1.0122295e-7,+1.6073744e-7)`，均非零；这已经停止自动two-defect/extra-arm
+升级。`60.7191%`、`2.24641%`、比值`27.0294`、cross-ratio
+`chi=.0369967`和interaction residual `+9.9275800e-8`仅是endpoint-
+availability下的global-centering/componentwise-beta Schur cell-mass统计。
+branch-only [`c958b30b`](https://github.com/LightChainr/Matching-One/blob/c958b30b/results/p537-finite-collar-joint/REPORT.md)
+已完成exact joint-incidence refinement。`1,390`个12-port sectors中`118`个
+exact nonzero；`106/106`个pooled rectangles和`30/30`个完整two-geometry
+rectangles均exact非零。第一个完整几何sector的
+`det=-4.005552609094306e-18`；所有sectors精确重构coarse matrix及
+`+2.6904188461441777e-14` determinant。same-sector determinants之和只占
+`0.2101274%`，cross-sector bilinear terms占`99.7898726%`。rank two因此在
+共同物理identity内存活，而coarse幅度不可归给单一landing sector。
+
+branch-only
+[`22f01e33`](https://github.com/LightChainr/Matching-One/blob/22f01e33c2c386e522b17fc781b3adf70e93548e/results/p537-one-defect-diagonal-edge/REPORT.md)
+已经完成edge gate。broad Bell/rank图有`135,253`个exact row classes和
+`8,250,462`个physical fibres；kernel-changing+`g16`-changing子图保留
+`6,846`个classes、`740,950`个fibres，总signed mass为
+`-4.9488399165e-6`。冻结判决为`TWO_INDEPENDENT_DEFECT_GAIN_REJECTED`。
+first birth `0->1`给`-5.8210906659e-6`，second birth `1->2`给
+`+8.7225074943e-7`，形成`17.63%`反向抵消。12个rank-stage×source-orbit
+cell全部精确排除零。
+
+在上述fixed-anchor、NN thermal-`z`、source-present kernel-changing选择内，
+contact mask给出更强的结构选择律：mask 0没有任何row class或fibre；mask
+1/2/3承载全部kernel-changing边。radius-one剩余对象因此是contact-local、
+first-birth-dominated的signed four-arm/OPE functional，不是两个分离defect。
+`c958b30b`与`22f01e33`复用同一N25 exact population，前者是value decomposition，
+后者是edge decomposition，不能算两票。
+
+`df4a64f6`进一步把birth stage与single/double contact同时保留，得到exact N25
+矩阵`[-2.88380e-6,-2.93729e-6; -5.32257e-6,+6.19482e-6]`和
+`det=-3.3498535471e-11`。因此幸存对象不是scalar contact loading。
+commit
+[`f46c38c3`](https://github.com/LightChainr/Matching-One/blob/f46c38c3088c1a9f4df8ab0f256b88639f0b34a3/results/p537-contact-stage-n65/REPORT.md)
+随后完成冻结的20M N65 held-out block：四个marginal同时保持`-- -+`，
+`Delta_cs=-8.6882161e-14`，95% CI
+`[-1.1459612e-13,-5.9168198e-14]`，判决
+`CONTACT_FUSION_COMPLETION_TRANSMITS`。这些格子是pooled-root original-U
+allocation；最终`J_N`还包含全局`A_N/M_t`归一，不能把raw格子随意改名为完整
+`J/U`。
+
+branch-only `95a695c7bd05eeb6ce1b24cb5299a13823b40fcb`保存P45与新MC的完整
+协方差，并明确标注post-hoc shape检查：single-amplitude N25→N65模型
+`chi2=10.3371/3`、`p=.01591`。它与`f46c38c3`使用相同seed和byte-identical
+shards，是同一次production的依赖重分析，不是第二票。传输问题到此已完成；
+all-z N25不能再作为它的前置门槛。
+
+branch-only `bab37f21`把finite determinant写成noncommuting completion
+commutator，并给出post-reveal的`N^-3/N^-29/8` fingerprint；这是机制候选，不是
+prospective field identification。current branch head
+[`f9ba1ff6`](https://github.com/LightChainr/Matching-One/blob/f9ba1ff6/results/p537-full-t-transport/REPORT.md)
+用同一N65 sufficient statistics重建complete response：
+`J65=-.00162250989+/-.00018553008`，
+`J65/J25=.29396323+/-.03361398`。typed carrier占full `T`的份额由N25
+`5.892%`降到N65 `2.551%`；pooled-root相对reference-p的位移只改变
+`|J65|`约`.0155%`。carrier真实传输但不饱和原始响应，且这些N65结果仍只有
+一个dependency block。
+
+[#537最新gauge audit](https://github.com/LightChainr/Matching-One/issues/537#issuecomment-5490511026)
+仍是issue-only：它在exact N9控制中证明complete `T_t`对共同thermal-coordinate
+shift不变，而筛选后的contact-stage allocation一般不变；附加N65 sidecar尚未进
+Git。这个结果加强#275的normalizer要求，但不覆盖f46冻结分账或冒充新的N65 score。
+
+已关闭但未合并的[#545](https://github.com/LightChainr/Matching-One/pull/545)
+记录head `e1f19e4c`；其L4 exact det、matching-root det
+`-2.501463041122436e-6`和all-scale族是独立local-collar回归，不是第二个
+canonical vote。PR #544关闭后的同名分支当前branch-only head为
+[`22f01e33`](https://github.com/LightChainr/Matching-One/blob/22f01e33c2c386e522b17fc781b3adf70e93548e/results/p537-aggregate-wedge-l8-mc/REPORT.md)：
+L8 `G4=.000680204061±.000012697002`，冻结判决为
+`UNRESOLVED_MODEL_BOUNDARY`；`L^-35/8`是post-hoc发现，不是prospective证明。
+不再增加reduced-`G4`尺寸；existing-data `Xi_L=N^2 G4 sqrt(P_L)`也已计算：
+L4/L5为`8.00214/7.99820`，L6为`7.72546+/-0.08469`，L8为
+`8.03977+/-0.15006`。它是reduced normalization线索，不是指数。
+
+下一P0只交付一份**#275 finite forward-prediction contract**，默认不新产数据。
+
+1. 原始观测字典必须区分local charged insertion、torus propagating sector、
+   homology-marked trace、scalar composite和normalized expectation；保留original
+   `q/E`、同一physical normalizer和pooled moving-root `U`。
+2. 至少两个候选机制分别给出带单位的预测向量，覆盖至少两个已有相关raw
+   coordinates。保留每个模型允许的amplitude，报告covariance-weighted design
+   rank与separation。
+3. 若不可识别，证明rank degeneracy并只命名一个缺失的physical rotation或
+   modulus relation；不以新descriptor掩盖退化。
+
+一个unnormalized numerator character zero不能穿过twist-dependent normalization
+后继续写成零。声称common vacuum/Ward differential operator的候选，必须证明
+该operator在rank0/rank2 restricted traces上以同一规则作用；否则必须明确给出
+defect/contact/normalization项。Q4/Jordan同样需给restricted-sector预测，而非只
+借用同spin场名。
+
+#537保持P1：非局域remainder和uniform near-critical transport未解。all-`z`
+N25、N85 normalized tensor和N130 `F=C+R`都是条件式后续；只在#275冻结原始
+observable/normalizer与相反预测后再启动。
 
 同一N25 provisional端口合同的same/reversed bridge-order `(F,dF/dM)`
 Wronskian已精确排除零，所以finite-collar列必须保留cyclic order。该signed
 contrast尚未因而成为物理reflection-parity sector，也不是独立数据票。
 
-| 预设结果 | carrier与判决条件 | 若另外两类已有预设上界，可排除的“必需机制” |
+| 预设结果 | 事前判决条件 | 机制更新 |
 |---|---|---|
-| A | `s=2`层由`a_xy=kappa_x kappa_y`承载稳定的带符号`q/E`尾；[PR #532 open-pr support @2e1c57b4](https://github.com/LightChainr/Matching-One/blob/2e1c57b42129c507b45fd1a8111eb32e78b1f80b/notes/P0-p337-two-bridge-and-completion-review-20260901.md)给出有限factorization。 | “必须发生`s`转移/远端merger”与“必须由`g`不变的拓扑q/E pivotal承载”。 |
-| B | 尾由physical component join/rerouting承载，包括shared数改变的remote merger以及shared数不变的signed rerouting；#537给出任意远pivot使`g:1/4->1/2`而rank/shared-count不变的全L族。 | 纯局部creation/deletion模型与`g`不变topological-only。 |
-| C | `g`构型级不变，但rank/`q`/`E`被远处翻转改变，带权项保留；[PR #531 open-pr support @a5375b5](https://github.com/LightChainr/Matching-One/blob/a5375b5338ebfc29d1c47aa320716903c5f63277/notes/p337-p0-sector-quotient-and-sign-aware-estimation.md)给出`eta/xi`商坐标。 | two-bridge-only与kernel-merger-only。 |
+| distinct vectors | 两候选在保留allowed amplitudes后的weighted design rank增加，且分离超过冻结阈值 | 允许在旧数据上消除其中一类；明确标作retrospective model selection，不写成prospective验证。 |
+| rank-degenerate | 合并design不增rank或加权分离为零 | 停止在同一观察上继续拟合；只请求事前命名的第二旋转/modulus relation。 |
+| normalizer-dependent | numerator projection为零但各twist分别归一后非零 | 排除“character zero自动排除完整normalized observable”；在physical normalizer上重写预测。 |
 
 [PR #530 open-pr support @0e1917f9](https://github.com/LightChainr/Matching-One/blob/0e1917f983982f411c9c72147cce3f90ce7330fa/experiments/p337-original-u-influence-20260831/README.md)
-提供含共同root、均值和分母响应的中心化`phi`，作为三类共用的原U权重接口。
-这些PR只提供有限代数/估计接口，尚未是main结论。若多类同时留下无界尾、
-都未分辨或没有稳定signed判别，则结果记为unresolved并交付最小未控landing
-类，不新增seed、window、额外臂或第四个descriptor救场。文献
+提供含共同root、均值和分母响应的中心化`phi`，作为候选共用的原U权重接口。
+这些PR只提供有限代数/估计接口，尚未是main结论。若现有坐标不可识别，则交付
+rank certificate与唯一缺失输入，不新增seed、window、额外臂或第四个descriptor
+救场。文献
 [适用边界](../notes/p337-thermal-pivotal-literature-bridge.md)已经说明，三处四臂
 事件的朴素乘积不足以关闭bulk，六臂只接管已证明的fused collision annulus；
 还必须给common-landing增益或signed cross-observable cancellation，并认证
 pooled root处于near-critical窗口。#539只保留P2 exact-N25复现支持，并应优先
-导入#536原附件而非重复生产。这个理论对象是下一attention target，不锁其它任务。
+导入#536原附件而非重复生产。该tail是#537 P1理论对象；#275的observable/
+normalizer/identifiability是当前attention target。优先级不锁其它任务。
 
 另一个独立前沿也已前移：PR #533当前head
 [`5aa929a6`](https://github.com/LightChainr/Matching-One/blob/5aa929a6ef4ff92d71f6f36097b763c05ad71ab8/notes/closed-source-axis-sector-closure-gate.md)

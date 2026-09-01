@@ -41,13 +41,20 @@ finite subset contains 18 kernel-changing callbacks (11 L32, 7 L64), no
 observed kernel-preserving topological callback, and a shell-localized external
 shared-transition pattern at L64. These callback counts are descriptive and
 correlated, not an ensemble sign or zero-probability statement. The repository
-team closed #536 as duplicate and moved the sole canonical P0 to open
+team closed #536 as duplicate and moved the then-canonical P0 to open
 [Issue #537](https://github.com/LightChainr/Matching-One/issues/537); this Draft
-did not perform the lifecycle change. Highest attention is #537's
-root-conditioned Hessian gate. PR #530 `0e1917f9`, PR #531 `a5375b5` and PR #532 `2e1c57b4`
+did not perform the lifecycle change.  The root-conditioned Hessian,
+contact-stage transmission and full-`T` quotient described below are now
+complete.  The project owner has since moved #537 to open `priority:P1` and
+made open [Issue #275](https://github.com/LightChainr/Matching-One/issues/275)
+the current `priority:P0`: raw-observable semantics, physical normalization
+and identifiable candidate predictions using existing data, with no new MC.
+This is an attention ordering, not permission, serialization or a task lock.
+PR #530 `0e1917f9`, PR #531 `a5375b5` and PR #532 `2e1c57b4`
 are reusable unmerged interfaces, not `main` facts.
 
-PR #509 (current head `ec3941b0`) proves at `eed2190c` that the raw
+PR #509 (live head `ac5f5fe7`; root-Hessian commit `ec3941b0`) proves at
+`eed2190c` that the raw
 canonical pair susceptibility is absolutely summable at exact criticality.
 That theorem does not control the thermal derivative, moving root or original
 U: the open object is the `q/E`-weighted dyadic pivotal influence and its
@@ -61,30 +68,229 @@ head [`a3bc80c8`](https://github.com/LightChainr/Matching-One/blob/a3bc80c865852
 therefore demotes their nonzero raw kernel/readout minors to supporting
 controls: they lack the independent axis/tilted P4 laws and the complete
 bilinear `-beta H B` Schur allocation.
-The newer `branch_only` site-fibre head
-[`7051ad83`](https://github.com/LightChainr/Matching-One/blob/7051ad83a788becb0478de6e0c235376821c22f4/notes/p537-global-four-arm-emptiness.md)
-adds an exact state-space correction.  For an alternating site,
+Closed-unmerged Draft PR #544's site-fibre line proves an exact state-space correction
+at [`139c7e58`](https://github.com/LightChainr/Matching-One/blob/139c7e5850c5be1e8e17c3d58be806080b1e2b73/notes/p537-global-four-arm-emptiness.md).
+For an alternating site,
 `Delta q=1-b_z-w_z` and rank monotonicity gives `b_z+w_z<=1`; the putative
 row with two globally distinct occupied branches and two globally distinct
 vacant matching separators is empty on every finite torus.  Canonical
 ordinary landing must therefore be recorded at a finite collar before outer
 reconnection, with the outer attachment/rank transition retained separately.
 A global-component aggregate is not scoreable as that matrix, and a local
-alternating `near_block` is only a relaxation.  The same branch retains an
-exact nonzero same/reversed cyclic-order Wronskian under the provisional N25
-port contract, identifying a second coordinate there without promoting it to
-a canonical site-flip or physical parity result.
+alternating `near_block` is only a relaxation.  Branch head
+[`ddbbad64`](https://github.com/LightChainr/Matching-One/blob/ddbbad6462abb9fcebdaae1f7162e287ed3bebed/results/p537-siteflip-aggregate/summary.json)
+nevertheless completes that relaxed N25 site-flip score: `8,388,608`
+backgrounds and `192,937,984` pair fibres per geometry produce a `15 x 12`
+P4/Schur matrix.  The preselected rank `0->1`/`1->2` by axial2
+absent/present minor is `-4.039642418513639e-18`; its exact interval excludes
+zero.  This rejects rank one for the branch-free no-extra-contact near block,
+not for the finite-collar ordinary state.  The same branch retains an exact
+nonzero same/reversed cyclic-order Wronskian under the provisional N25 port
+contract, identifying a second coordinate there without promoting it to
+physical parity or a continuum field.
+
+Closed-unmerged Draft [#544](https://github.com/LightChainr/Matching-One/pull/544),
+coarse certificate commit
+[`e21f6220`](https://github.com/LightChainr/Matching-One/blob/e21f6220775d51450d73d4258c3edf2dbdf0a910/results/p537-finite-collar/REPORT.md)
+scores a predeclared **coarse-marginal** `B_inf(z,1)` block with outer
+`J_B=J_W=1`, all corner words aggregated, `local_source_contact_mask=0`, and
+the complete root/Schur plus axis/tilted P4 projection.  Its sole declared
+minor—birth rows `0->1/1->2` by axial2 endpoint unavailable/available—is
+exactly positive, `+2.6904188461441777e-14`.  This rejects rank one for that
+finite coarse signed-mass matrix; by itself it did not close the joint
+physical collar state or an asymptotic rate.
+
+The four cell midpoints are
+`(+2.7100450e-7,+1.6455142e-7; -1.6978155e-7,-3.8139820e-9)`.
+Their row margins are `(+4.3555592e-7,-1.7359553e-7)` and column margins are
+`(+1.0122295e-7,+1.6073744e-7)`, all nonzero.  The reported endpoint-
+availability ratios—`60.7191%`, `2.24641%`, ratio `27.0294`, cross-ratio
+`0.0369967`, interaction residual `+9.9275800e-8`—are exact algebraic
+summaries of this coarse Schur allocation, not transition probabilities or
+causal source transmission.  In fact every selected landing row has
+`sum_a* = sum_qa* = sum_Ea* = 0`; the nonzero cells arise from global
+centering and componentwise `beta` allocation.
+
+The new branch-only
+[`c958b30b`](https://github.com/LightChainr/Matching-One/blob/c958b30b27abbbb0103f7080688ae3a9b58a24cd/results/p537-finite-collar-joint/REPORT.md)
+paired refinement evaluates endpoint off/on on the same
+rest background and keeps the simultaneous source-plus-`z` 12-port map.  It
+exactly reproduces all four cells and the coarse determinant.  Among 1,390
+joint sectors, 118 have exact nonzero determinants; 106/106 pooled complete
+rectangles and 30/30 rectangles complete in both geometries are exact
+nonzero.  The first full-sector determinant is
+`-4.005552609094306e-18` with interval width `1e-50`.  A common physical
+value sector therefore survives: the old determinant is not only an artifact
+of separately canonicalized Bell keys.  Yet same-sector determinants account
+for just `0.2101274%` of the coarse determinant and cross-sector bilinears for
+`99.7898726%`.  This completes the finite value gate while sharply limiting
+its interpretation; by itself it is not an edge-adjacency certificate, local
+source-transmission coefficient or asymptotic rate.
+
+The same post-closure branch first completed the missing edge decision at
+[`22f01e33`](https://github.com/LightChainr/Matching-One/blob/22f01e33c2c386e522b17fc781b3adf70e93548e/results/p537-one-defect-diagonal-edge/REPORT.md).
+The broad full-population-coefficient selected Bell/rank gate has `135,253` exact row classes and
+`8,250,462` physical fibres; the kernel-changing gate retains `6,846` classes
+and `740,950` fibres.  Its total signed mass is `-4.9488399165e-6`, split into
+first birth `-5.8210906659e-6` and completion `+8.7225074943e-7`.
+The frozen verdict is `TWO_INDEPENDENT_DEFECT_GAIN_REJECTED`.  Every one of
+the 12 rank-stage by source-orbit cells excludes zero.  Within the fixed-
+anchor, NN-thermal-`z`, source-present kernel-changing selection, the
+no-contact mask is structurally empty: exactly zero row classes and fibres.
+All selected edges touch one or both local thermal arms.  This identifies an
+exact N25 radius-one contact-local, first-birth-dominated signed four-arm/OPE
+candidate with a smaller completion cancellation.  By itself it does not
+display a single configuration-level joint-map witness, place the edge in an
+annulus or score its transmission into the pooled-root original-`U`
+allocation.  The `c958b30b` value result and this edge result reuse the same
+exact N25 populations and are not independent votes.
+
+The exact follow-up at
+[`df4a64f6`](https://github.com/LightChainr/Matching-One/blob/df4a64f68232eec5aa5b8c8a5d920062aaa7808e/results/p537-one-defect-diagonal-edge/REPORT.md)
+keeps birth stage and contact fusion jointly.  With rows `0->1,1->2` and
+columns single/double contact, its collapsed N25 tensor is
+`(-2.8838028e-6,-2.9372879e-6; -5.3225655e-6,+6.1948162e-6)` and its exact
+determinant is `-3.3498535471e-11`.  The N25 contact and completion operations
+therefore do not factorize.
+
+The prospective branch-only held-out result at
+[`f46c38c3`](https://github.com/LightChainr/Matching-One/blob/f46c38c3088c1a9f4df8ab0f256b88639f0b34a3/results/p537-contact-stage-n65/REPORT.md)
+then carries the frozen tensor to a fresh N65 population: four counter-keyed
+shards, seed `20260901537`, 100 new batches and 20,000,000 samples, with no
+top-up.  Its collapsed allocation matrix is
+`(-1.5785729e-7,-9.2276578e-8; -3.0912985e-7,+3.6968021e-7)` and
+`Delta=-8.6882161e-14`, `SE=1.4139777e-14`, 95% interval
+`[-1.1459612e-13,-5.9168198e-14]`.  The frozen decision is
+`CONTACT_FUSION_COMPLETION_TRANSMITS`: the `--/-+` sign rotation and strict
+negative determinant survive in the held-out population.
+
+These displayed cells are raw pooled-root Schur numerator allocations
+(`T_t`-level cells).  They have not been divided by `M_t` or multiplied by
+`A_N`; they are not, cell by cell, complete `J_N` or `U_N`, and they do not
+measure what fraction of the full response the carrier exhausts.  The
+full-covariance extension and adaptive N25-to-N65 shape check at
+[`95a695c7`](https://github.com/LightChainr/Matching-One/blob/95a695c7bd05eeb6ce1b24cb5299a13823b40fcb/results/p537-contact-shape-transport/latest.md)
+give `a=.05388757+/- .00257086`, `chi2=10.3371/3`, `p=.01591`: rigid
+one-amplitude shape is disfavored, with the first-birth double-contact cell
+driving the largest departure.  This check uses the exact same seed, shard
+hashes and 20M production as `f46c38c3`; it is post-reveal and is neither a
+second experiment nor an independent evidence vote.
+
+The same branch next advanced through the mechanism-candidate synthesis at
+[`bab37f21`](https://github.com/LightChainr/Matching-One/blob/bab37f21b061afa9e03286b6e9bf4560f879ecd5/notes/p537-contact-completion-commutator.md).
+Its split zero-parameter scaling fingerprint—three `N^-3` allocation cells
+and an entry/double cell at candidate `N^-29/8`—fits the N25-to-N65 vector
+with `Q=.6364/4`, `p=.95893`, whereas common `N^-3` gives `p=.01967`.
+The associated noncommuting fusion/completion operator, triangular limit and
+thermal `5/8` interpretation are mechanism hypotheses built from the same
+N25/N65 evidence, not a new field identification or an independent vote.
+
+Most importantly, branch head
+[`f9ba1ff6`](https://github.com/LightChainr/Matching-One/blob/f9ba1ff690b07beefcc71e669f1f29581d4e264e/results/p537-full-t-transport/REPORT.md)
+uses the already-produced N65 sufficient statistics to restore the omitted
+C4-equivalent NN column and score the complete thermal quotient, without new
+configurations or replay:
+
+| Full-`T` quantity | Result |
+|---|---:|
+| `J65=A65*T_t/M_t` | `-.00162250989 +/- .00018553008` |
+| `J65/J25` | `.29396323 +/- .03361398` |
+| contact-completion carrier share | `5.892%` at N25; `2.551%` at N65 |
+| `root -> p_ref` absolute response fraction | `.000154986` (`.0155%`) |
+
+The carrier is genuinely transmitted but does not saturate the measured
+complete response; its finite share contracts rather than grows.  The
+remaining #537 object is the nonlocal complement and a uniform near-critical
+transport theorem, not another local contact label.  The `bab37f21`,
+`f9ba1ff6`, `f46c38c3` and `95a695c7` views all reuse the same N65 source
+shards and P45 baseline and belong to one dependency group.  The prescribed
+`p_ref` is not a rigorous enclosure of mathematical `p_c`, and two sizes do
+not prove an asymptotic exponent or little-o law.
+
+Parallel closed-unmerged Draft [#545](https://github.com/LightChainr/Matching-One/pull/545)
+at [`e1f19e4c`](https://github.com/LightChainr/Matching-One/blob/e1f19e4c4a5438857e7a68d72243414972eeea85/experiments/p337-landing-minor-exact-20260901/REPORT.md)
+uses the full canonical pair source but a single square geometry and local
+axis-minus-diagonal collar character.  Its exhaustive L4 matrix has
+`det=-533831111/140737488355328`, and an explicit family keeps the analogous
+`0->1`/`1->2` midpoint-source minor nonzero at arbitrary declared collar
+radius; a Sturm certificate also keeps it nonzero at the L4 matching root
+(`-2.501463041122436e-6`).  It strengthens the row choice, but it contains only the
+readout-midpoint sector—not the kernel-reconnection term, paired
+axis/tilted P4, complete `-beta H B`, outer attachments, thermal jet or two
+margins.  It is supporting control; it neither repairs nor duplicates #544's
+missing joint-incidence state.
+
+Before closure, #544 recorded head
+[`e8e9c7cf`](https://github.com/LightChainr/Matching-One/blob/e8e9c7cf42b1d8e41da5c93d3780951e1260fdde/results/p537-aggregate-wedge-l5/REPORT.md)
+adds complete axis L4/L5 populations.  `Psi4` is
+`-2.5014630411e-6/-4.0685187142e-7`; `L^4 chi_perp` is
+`-0.6623827/-0.6734050`.  This is compatible with a local `L^-4=N^-2`
+thermal-orthogonal correction, not an exponent estimate or full original-U
+scale law.  #545's `C/G` also uses subblock-reestimated `beta=Q(A)/Q(T)`;
+it is a valid reduced-block identity, not the global pooled-root Schur
+summand.  PR #509 `ac5f5fe7` retires repeated finite rank-one rescue as the P0
+program.  After #544 closed, the same remote branch advanced without a new PR
+through the L8 freeze, N65 held-out transmission and full-`T` quotient; its current
+branch-only head is
+[`f9ba1ff6`](https://github.com/LightChainr/Matching-One/tree/f9ba1ff690b07beefcc71e669f1f29581d4e264e).
+The reduced-L8 artifact itself remains pinned to
+[`22f01e33`](https://github.com/LightChainr/Matching-One/blob/22f01e33c2c386e522b17fc781b3adf70e93548e/results/p537-aggregate-wedge-l8-mc/REPORT.md).
+The L6 100M block suggested `L^-9/2`; a pre-frozen L8 100M block then measured
+`G4=.0006802041±.0000126970`, with its 95% interval crossing the registered
+L^-4/L^-9/2 boundary.  The literal verdict is
+`UNRESOLVED_MODEL_BOUNDARY`, with no top-up.  The post-open `L^-35/8` pattern
+predicts L8 within `0.40` SE from exact L4/L5, but L6 lies `3.13` SE low; it is
+an exploratory inverse-pivotal-normalization hypothesis, not an exponent.
+Reduced-G4 size production stops.  Existing root data have already formed
+`Xi_L=N^2 G4 sqrt(P_L)`: L4/L5 are `8.00214/7.99820`, L8 is
+`8.03977+/-0.15006`, while L6 is `7.72546+/-0.08469`.  This near-eight reduced
+normalization is context, not a new exponent or a reason to add sizes.
+
+Two latest #537 issue-only audits further constrain the producer rather than
+add another observable search.  The D4/private-grade audit isolates a
+rank-one shared-collapse grade-0 candidate and pushes noncollapse joins into
+private-component grades that may become six/eight-arm remainders only after
+a physical annulus lemma.  The joint-incidence audit shows that separately
+canonicalized source and thermal-site Bell keys are insufficient: `93/171`
+N16 groups mix terminal-incidence classes.  The collar producer must preserve
+the joint 12-port component map (or an equivalent transported incidence map)
+and outer attachment before quotienting.
 #537 also gives an all-L remote rerouting with
 fixed near marks, unchanged rank/shared-count and `g:1/4->1/2`, forcing a
 two-scale carrier geometry. The
 [literature bridge](../notes/p337-thermal-pivotal-literature-bridge.md) shows
 that a naive three-four-arm product does not close the bulk absolute sum even
 with triangular `alpha4=5/4`; six-arm input closes only a proved fused
-collision annulus. The primary target is now the
-[complete finite-collar landing matrix, thermal jet and two conditional margins](../notes/p537-signed-landing-transport-contract.md).
-Only two sectorwise zero margins license a two-defect arm remainder; a
-surviving margin identifies the leading signed four-arm carrier.  Spatial
-transport follows that decision rather than preceding it.
+collision annulus.  The exact N25 tensor and held-out N65 run now complete the
+prospective contact/OPE transmission gate: contact fusion and topological
+completion remain a nonseparable pooled-root allocation in a fresh
+population.  The open mechanism question is no longer whether this carrier
+transmits, but whether it exhausts, supplements or screens the full response.
+
+The complete quotient removes the reason to launch N130 by default.  Current
+P0 attention is #275's **raw-observable / normalizer / identifiable-prediction
+contract**, using existing assets and no new random production:
+
+1. classify each candidate as local charged insertion, propagating torus
+   sector, homology-marked trace, scalar composite or normalized expectation;
+2. keep the original `q/E` numerators, one physical normalizer and the pooled
+   moving-root `U`, rather than importing dimensions across unlike observers;
+3. on at least two correlated raw coordinates, give two candidate prediction
+   vectors with units, allowed amplitudes, design rank and covariance-weighted
+   separation—or prove them unidentifiable and name the unique missing input.
+
+The first reuse set is the existing square-bond primitive/C3, `rho`-child
+`E_top`, P43/P57 and thermal/modulus assets.  A single real C3 angle cannot
+separate H4 from H8 when each retains an unknown complex amplitude; one
+phase-calibrated second physical rotation or an explicitly different modulus
+relation is the only allowed additional input.  Old-data selection remains
+exploratory.  #537 is now a P1 theory line: derive or falsify the
+fusion/completion commutator and the nonlocal remainder's near-critical
+transport.  N130 is only a conditional future test if that theory first
+supplies a unique observable and prediction and an independently motivated
+block already contains the four frozen cells; it is not queued or implicitly
+authorized.  Priority allocates attention only and does not lock or close any
+parallel line.
 PR #533 (current head `5aa929a6`) separately closes the complete specified
 axis/tilted strong-source sign law under `beta=L/m^2 -> 0`. Its all-reversal
 kernel, clouds, extra-carrier/topology bounds and sector-odds quotient remove
@@ -180,17 +386,17 @@ canonical N25 J2 above now measures nonzero global transmission. No
 universal field norm is asserted. The completed relation `W_alpha=W_Q-alpha V_old`
 still makes a single mixed-U coefficient completion-dependent.
 
-**Next:** Delivery B has isolated a sparse finite carrier interface and stopped.
-The provisional clean-two-bridge contract is non-rank-one; the canonical
-ordinary-four-arm gate is still open.  Build the complete P4/root-Schur
-landing matrix with global centering and `beta_lambda`, then test its value
-and first-thermal-jet minors together with the endpoint-landing and
-pivot-transition conditional margins. Preserve kernel reconnection and
-rank/readout pivotal inside one signed fibre, and retain the predeclared
-two-bridge, remote-rerouting and topology-only outcomes. If both margins
-vanish, prove the resulting two-defect dyadic transmission jointly in mark
-separation and pivot distance; if one survives, freeze that sector as the
-leading carrier. The
+**Next:** Delivery B, the finite edge gate, held-out N65 transmission and the
+complete N65 quotient have stopped.  Execute #275's finite no-new-MC contract:
+match observer and provenance first, then score the covariance-weighted
+identifiability of two theory-specified prediction columns on at least two
+existing raw coordinates.  A report that only adds another nonzero minor,
+source, character or finite catalogue does not extend P0.  #537 remains open
+P1 theory; N25 all-`z` is optional exact accounting and N130 is conditional
+future acquisition, not the default next run.  The displayed N25/N65
+stage-contact cells remain numerator allocations until the declared `M_t` and
+`A_N` conversion is applied; `f9ba1ff6` supplies the complete quotient that
+must be used for response and carrier-share claims.  The
 completed field-ratio contrast was not evaluated because the pilot failed its
 simultaneous-sign and cost gates; it is not waiting for more samples.
 [Next Targets](NEXT-TARGETS.md) owns acquisition. The
@@ -667,8 +873,10 @@ This delta is placed before the main claim ledger because it changes what the te
 
 | Latest result | Source / integration | Scientific consequence |
 |---|---|---|
-| Canonical macro-window joint-U pilot | `open_pr` #267; [report](../results/regular-pair-macro-joint-u/REPORT.md) | N100 `T=+11.877846`, interval `[−2.255616,26.011308]`; N400 `T=−542.503823`, interval `[−1307.642507,222.634861]`. Opposite signs, both include zero, and N400 projects above the 2M ceiling: route stopped, `D17/D21` not evaluated. Next target is the `q/E`-weighted thermal-pivotal carrier, not a macro top-up |
-| N25 midpoint split, carrier replay and landing transfer | Split remains closed Issue #536 attachment only; 64-counter replay is `open_pr` #267; provisional N25 clean-two-bridge preflight is `open_pr` #509 at [`ec3941b0`](https://github.com/LightChainr/Matching-One/blob/ec3941b03b2694e827db1cba34766a82e6146a5a/experiments/p537-landing-matrix-preflight-20260901/REPORT.md); corrected canonical transfer is `branch_only` [`a3bc80c8`](https://github.com/LightChainr/Matching-One/blob/a3bc80c86585220f96dfeff022bd575b6c21d29f/notes/p537-finite-landing-transfer-definition.md) | Observable/rank pivot dominates issue-only all-pair J2 negatively. Delivery B found 18 sparse kernel changes. The provisional port contract is non-rank-one, while N9/N16 are supporting controls rather than the complete P4/Schur falsifier. #537 now tests the complete value/thermal-jet matrix and two conditional margins before either signed-tail or extra-arm promotion. |
+| Priority reset: observable semantics before acquisition | [Issue #275 comment](https://github.com/LightChainr/Matching-One/issues/275#issuecomment-5490477497), `open_issue priority:P0`; Issue #537 is `open_issue priority:P1` | Current P0 must produce two theory-specified, unit-matched raw-coordinate prediction vectors plus design rank and covariance-weighted identifiability—or one proof of nonidentifiability and its unique missing input. Reuse existing sufficient statistics; no new MC, GPU, L6 or distance grid. N130 is conditional future work, not queued. |
+| Contact-fusion × topological-completion transmission and complete quotient | Exact N25 tensor `branch_only` [`df4a64f6`](https://github.com/LightChainr/Matching-One/blob/df4a64f68232eec5aa5b8c8a5d920062aaa7808e/results/p537-one-defect-diagonal-edge/contact-stage-tensor.json); prospective N65 20M result [`f46c38c3`](https://github.com/LightChainr/Matching-One/blob/f46c38c3088c1a9f4df8ab0f256b88639f0b34a3/results/p537-contact-stage-n65/result.json); same-data mechanism candidate [`bab37f21`](https://github.com/LightChainr/Matching-One/blob/bab37f21b061afa9e03286b6e9bf4560f879ecd5/results/p537-contact-stage-n65/scale-fingerprint.json); complete quotient [`f9ba1ff6`](https://github.com/LightChainr/Matching-One/blob/f9ba1ff690b07beefcc71e669f1f29581d4e264e/results/p537-full-t-transport/RESULT.json); PR #509 remains Draft at `ac5f5fe7` | Held-out `CONTACT_FUSION_COMPLETION_TRANSMITS`, but complete `J65=-.00162251+/-.00018553` and carrier share falls `5.892%->2.551%`. Root-to-reference changes only `.0155%`. The split `N^-3/N^-29/8` commutator scaling is a same-data candidate, not an independent field result. #537 becomes P1 nonlocal-remainder/transport theory. |
+| Canonical macro-window joint-U pilot | `open_pr` #267; [report](../results/regular-pair-macro-joint-u/REPORT.md) | N100 `T=+11.877846`, interval `[−2.255616,26.011308]`; N400 `T=−542.503823`, interval `[−1307.642507,222.634861]`. Opposite signs, both include zero, and N400 projects above the 2M ceiling: route stopped, `D17/D21` not evaluated. No macro top-up follows and this is not the current P0. |
+| N25 midpoint split, carrier replay and landing transfer | Split remains closed Issue #536 attachment only; 64-counter replay is `open_pr` #267; provisional N25 clean-two-bridge preflight is `open_pr` #509 at [`ec3941b0`](https://github.com/LightChainr/Matching-One/blob/ec3941b03b2694e827db1cba34766a82e6146a5a/experiments/p537-landing-matrix-preflight-20260901/REPORT.md); corrected canonical transfer is `branch_only` [`a3bc80c8`](https://github.com/LightChainr/Matching-One/blob/a3bc80c86585220f96dfeff022bd575b6c21d29f/notes/p537-finite-landing-transfer-definition.md) | Observable/rank pivot dominates issue-only all-pair J2 negatively. Delivery B found 18 sparse kernel changes. The provisional port contract is non-rank-one, while N9/N16 are supporting controls rather than the complete P4/Schur falsifier. Its transmission question is superseded by the completed `df4a64f6/f46c38c3` gate above. |
 | N100 and N400 three-shape production | `open_pr` #484; N400 raw `3e01b49`, captured head `705819e`; #485 is N100 same-stream reuse | N100 necessary common density-map statistic53.91436/6 becomes3.90086/6 at N400, p=.69009. One N1002M block and one independent N4008M block, with shapes paired inside each. Nonrejection is not model recovery; a fitted negative cross-scale amplitude has an interval spanning zero |
 | Intrinsic rank-clock broadening | `branch_only` / `fb1a944`, [source](https://github.com/LightChainr/Matching-One/blob/fb1a944e1ef34e9b9dfcf32c59af25f44ce43d9a/notes/p267-rank-clock-width-decomposition.md); cited by #484, not in its captured tree | Rank-step centered z variance1.432585±.016441→2.094751±.074748;96.895%±.507pp of the canonical increase remains. This is a signed profile, not a threshold probability distribution; the selected two-size .237960±.013519 width fingerprint is not a critical exponent |
 | Ordinary scalar transport at N400 | `branch_only` / `162fe94`, [source](https://github.com/LightChainr/Matching-One/blob/162fe94e7986eaed177e58af42900acfffbf4e4d/notes/p267-ordinary-scalar-clock-n400.md); cited by #484, not in its captured tree | Source-defined ordered height-ratio comparison .0769793/2 is weak, as is its cross-scale change. This no-Jacobian class differs from density transport; no scalar recovery or resolved sign reversal |
