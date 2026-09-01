@@ -270,6 +270,8 @@ Detailed proofs are split into the
 [root chart and power gates](closed-source-mesoscopic-root-chart.md).
 The separate [capillary window](closed-source-capillary-window.md) explains
 why the root limit and the fixed-shell U amplitude have different
-uniformity gates.  The
+uniformity gates.  A companion
+[axis uniformity bound](closed-source-axis-capillary-uniformity.md) proves
+the fixed-shell derivative under the sufficient gate `L^2/m -> 0`.  The
 [tilted shortest-winding classification](closed-source-tilted-shortest-winding-class.md)
 shows that its staircase entropy cannot beat the extra `m^-4k` barrier.

@@ -224,3 +224,8 @@ guess its sign.
 The companion [two-cloud synthesis](closed-source-mesoscopic-two-cloud-synthesis.md)
 contains the bulk theorem and root expansion to which this interface
 analysis is attached.
+
+The separate [axis uniformity note](closed-source-axis-capillary-uniformity.md)
+turns the obstruction into a positive theorem: the fixed-shell derivative
+is uniformly protected under the explicit sufficient gate `L^2/m -> 0`,
+while `L << m <= O(L^2)` remains a signed-transfer problem.

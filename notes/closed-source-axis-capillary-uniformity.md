@@ -34,8 +34,9 @@ and for the `(5k,0)/(4k,3k)` pair
 
 \[
  \boxed{\frac{U}{A_N}
- =-\frac{L^2-6L+6}{\Delta}\tau^{2L+1}[1+o(1)].}
+ =-\frac{L^2-6L+6}{\Delta}\tau^{2L+1}[1+o(1)]}.
  \tag{4}
+\]
 
 Condition (2) is sufficient, not claimed optimal. A concrete one-row
 capillary family proves that at least `L/m ->0` is necessary for the
@@ -259,3 +260,7 @@ renormalized by an interface partition; inserting the bare coefficient
 from `762dbaf4` is not justified. This remains a finite-lattice strong-
 source statement, not a continuum exponent or a universal capillary
 theory.
+
+The companion [capillary-window synthesis](closed-source-capillary-window.md)
+places this sufficient uniformity gate beside the exact two-cloud root and
+the tilted shortest-winding comparison.
