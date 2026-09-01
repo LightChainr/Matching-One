@@ -1,0 +1,1466 @@
+{
+  "claim_level": "exact_finite_Boolean_identity",
+  "geometries": [
+    {
+      "N": 5,
+      "autocorrelation_generating_functions": {
+        "matching_complement_cross": {
+          "coefficients": [
+            "0",
+            "279936/1953125",
+            "23328/1953125",
+            "52272/1953125",
+            "11664/1953125",
+            "279936/9765625"
+          ],
+          "derivative_at_rho_1": "1296/3125",
+          "generating_function": "sum_k coefficient[k]*rho^k",
+          "level_order": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "value_at_rho_1": "2115936/9765625"
+        },
+        "matching_complement_direction0": {
+          "coefficients": [
+            "0",
+            "146016/1953125",
+            "83088/1953125",
+            "72792/1953125",
+            "11664/1953125",
+            "7776/9765625"
+          ],
+          "derivative_at_rho_1": "936/3125",
+          "generating_function": "sum_k coefficient[k]*rho^k",
+          "level_order": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "value_at_rho_1": "1575576/9765625"
+        },
+        "matching_complement_direction1": {
+          "coefficients": [
+            "0",
+            "146016/1953125",
+            "83088/1953125",
+            "72792/1953125",
+            "11664/1953125",
+            "7776/9765625"
+          ],
+          "derivative_at_rho_1": "936/3125",
+          "generating_function": "sum_k coefficient[k]*rho^k",
+          "level_order": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "value_at_rho_1": "1575576/9765625"
+        },
+        "matching_odd_cross": {
+          "coefficients": [
+            "0",
+            "584064/1953125",
+            "152352/1953125",
+            "21168/1953125",
+            "46656/1953125",
+            "31104/9765625"
+          ],
+          "derivative_at_rho_1": "1872/3125",
+          "generating_function": "sum_k coefficient[k]*rho^k",
+          "level_order": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "value_at_rho_1": "4052304/9765625"
+        },
+        "orientation_difference": {
+          "coefficients": [
+            "0",
+            "0",
+            "288/3125",
+            "432/3125",
+            "0",
+            "0"
+          ],
+          "derivative_at_rho_1": "1872/3125",
+          "generating_function": "sum_k coefficient[k]*rho^k",
+          "level_order": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "value_at_rho_1": "144/625"
+        },
+        "primal_cross": {
+          "coefficients": [
+            "0",
+            "55296/1953125",
+            "56448/1953125",
+            "6912/1953125",
+            "11664/1953125",
+            "124416/9765625"
+          ],
+          "derivative_at_rho_1": "576/3125",
+          "generating_function": "sum_k coefficient[k]*rho^k",
+          "level_order": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "value_at_rho_1": "776016/9765625"
+        },
+        "primal_direction0": {
+          "coefficients": [
+            "0",
+            "146016/1953125",
+            "83088/1953125",
+            "72792/1953125",
+            "11664/1953125",
+            "7776/9765625"
+          ],
+          "derivative_at_rho_1": "936/3125",
+          "generating_function": "sum_k coefficient[k]*rho^k",
+          "level_order": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "value_at_rho_1": "1575576/9765625"
+        },
+        "primal_direction1": {
+          "coefficients": [
+            "0",
+            "146016/1953125",
+            "83088/1953125",
+            "72792/1953125",
+            "11664/1953125",
+            "7776/9765625"
+          ],
+          "derivative_at_rho_1": "936/3125",
+          "generating_function": "sum_k coefficient[k]*rho^k",
+          "level_order": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "value_at_rho_1": "1575576/9765625"
+        }
+      },
+      "configurations": 32,
+      "cross_spectra": {
+        "H4_matching_odd_cross_spectrum": {
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "derivative_at_rho_1": "0",
+          "generating_function": "sum_k coefficient[k]*rho^k",
+          "level_order": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "observables": [
+            "orientation_difference",
+            "matching_odd_cross"
+          ],
+          "value_at_rho_1": "0"
+        },
+        "matching_cross_spectrum": {
+          "coefficients": [
+            "0",
+            "-124416/1953125",
+            "-36288/1953125",
+            "19008/1953125",
+            "-11664/1953125",
+            "186624/9765625"
+          ],
+          "derivative_at_rho_1": "0",
+          "generating_function": "sum_k coefficient[k]*rho^k",
+          "level_order": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "observables": [
+            "primal_cross",
+            "matching_complement_cross"
+          ],
+          "value_at_rho_1": "-580176/9765625"
+        },
+        "orientation_cross_spectrum": {
+          "coefficients": [
+            "0",
+            "146016/1953125",
+            "-6912/1953125",
+            "-62208/1953125",
+            "11664/1953125",
+            "7776/9765625"
+          ],
+          "derivative_at_rho_1": "0",
+          "generating_function": "sum_k coefficient[k]*rho^k",
+          "level_order": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "observables": [
+            "primal_direction0",
+            "primal_direction1"
+          ],
+          "value_at_rho_1": "450576/9765625"
+        }
+      },
+      "direct_noisy_pair_cross_checks": {
+        "all_exact": true,
+        "pairs": {
+          "auto:matching_complement_cross": [
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "0",
+              "fourier_generating_value": "0",
+              "rho": "0"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "5788719/156250000",
+              "fourier_generating_value": "5788719/156250000",
+              "rho": "1/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "774063/9765625",
+              "fourier_generating_value": "774063/9765625",
+              "rho": "1/2"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "20968227/156250000",
+              "fourier_generating_value": "20968227/156250000",
+              "rho": "3/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "2115936/9765625",
+              "fourier_generating_value": "2115936/9765625",
+              "rho": "1"
+            }
+          ],
+          "auto:matching_complement_direction0": [
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "0",
+              "fourier_generating_value": "0",
+              "rho": "0"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "6861033/312500000",
+              "fourier_generating_value": "6861033/312500000",
+              "rho": "1/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "518283/9765625",
+              "fourier_generating_value": "518283/9765625",
+              "rho": "1/2"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "30562839/312500000",
+              "fourier_generating_value": "30562839/312500000",
+              "rho": "3/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "1575576/9765625",
+              "fourier_generating_value": "1575576/9765625",
+              "rho": "1"
+            }
+          ],
+          "auto:matching_complement_direction1": [
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "0",
+              "fourier_generating_value": "0",
+              "rho": "0"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "6861033/312500000",
+              "fourier_generating_value": "6861033/312500000",
+              "rho": "1/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "518283/9765625",
+              "fourier_generating_value": "518283/9765625",
+              "rho": "1/2"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "30562839/312500000",
+              "fourier_generating_value": "30562839/312500000",
+              "rho": "3/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "1575576/9765625",
+              "fourier_generating_value": "1575576/9765625",
+              "rho": "1"
+            }
+          ],
+          "auto:matching_odd_cross": [
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "0",
+              "fourier_generating_value": "0",
+              "rho": "0"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "6242283/78125000",
+              "fourier_generating_value": "6242283/78125000",
+              "rho": "1/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "1679382/9765625",
+              "fourier_generating_value": "1679382/9765625",
+              "rho": "1/2"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "21956589/78125000",
+              "fourier_generating_value": "21956589/78125000",
+              "rho": "3/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "4052304/9765625",
+              "fourier_generating_value": "4052304/9765625",
+              "rho": "1"
+            }
+          ],
+          "auto:orientation_difference": [
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "0",
+              "fourier_generating_value": "0",
+              "rho": "0"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "99/12500",
+              "fourier_generating_value": "99/12500",
+              "rho": "1/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "126/3125",
+              "fourier_generating_value": "126/3125",
+              "rho": "1/2"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "1377/12500",
+              "fourier_generating_value": "1377/12500",
+              "rho": "3/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "144/625",
+              "fourier_generating_value": "144/625",
+              "rho": "1"
+            }
+          ],
+          "auto:primal_cross": [
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "0",
+              "fourier_generating_value": "0",
+              "rho": "0"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "1402389/156250000",
+              "fourier_generating_value": "1402389/156250000",
+              "rho": "1/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "220653/9765625",
+              "fourier_generating_value": "220653/9765625",
+              "rho": "1/2"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "6858837/156250000",
+              "fourier_generating_value": "6858837/156250000",
+              "rho": "3/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "776016/9765625",
+              "fourier_generating_value": "776016/9765625",
+              "rho": "1"
+            }
+          ],
+          "auto:primal_direction0": [
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "0",
+              "fourier_generating_value": "0",
+              "rho": "0"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "6861033/312500000",
+              "fourier_generating_value": "6861033/312500000",
+              "rho": "1/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "518283/9765625",
+              "fourier_generating_value": "518283/9765625",
+              "rho": "1/2"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "30562839/312500000",
+              "fourier_generating_value": "30562839/312500000",
+              "rho": "3/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "1575576/9765625",
+              "fourier_generating_value": "1575576/9765625",
+              "rho": "1"
+            }
+          ],
+          "auto:primal_direction1": [
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "0",
+              "fourier_generating_value": "0",
+              "rho": "0"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "6861033/312500000",
+              "fourier_generating_value": "6861033/312500000",
+              "rho": "1/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "518283/9765625",
+              "fourier_generating_value": "518283/9765625",
+              "rho": "1/2"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "30562839/312500000",
+              "fourier_generating_value": "30562839/312500000",
+              "rho": "3/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "1575576/9765625",
+              "fourier_generating_value": "1575576/9765625",
+              "rho": "1"
+            }
+          ],
+          "cross:H4_matching_odd_cross_spectrum": [
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "0",
+              "fourier_generating_value": "0",
+              "rho": "0"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "0",
+              "fourier_generating_value": "0",
+              "rho": "1/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "0",
+              "fourier_generating_value": "0",
+              "rho": "1/2"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "0",
+              "fourier_generating_value": "0",
+              "rho": "3/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "0",
+              "fourier_generating_value": "0",
+              "rho": "1"
+            }
+          ],
+          "cross:matching_cross_spectrum": [
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "0",
+              "fourier_generating_value": "0",
+              "rho": "0"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "-2646729/156250000",
+              "fourier_generating_value": "-2646729/156250000",
+              "rho": "1/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "-342333/9765625",
+              "fourier_generating_value": "-342333/9765625",
+              "rho": "1/2"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "-8043057/156250000",
+              "fourier_generating_value": "-8043057/156250000",
+              "rho": "3/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "-580176/9765625",
+              "fourier_generating_value": "-580176/9765625",
+              "rho": "1"
+            }
+          ],
+          "cross:orientation_cross_spectrum": [
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "0",
+              "fourier_generating_value": "0",
+              "rho": "0"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "5623533/312500000",
+              "fourier_generating_value": "5623533/312500000",
+              "rho": "1/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "321408/9765625",
+              "fourier_generating_value": "321408/9765625",
+              "rho": "1/2"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "13350339/312500000",
+              "fourier_generating_value": "13350339/312500000",
+              "rho": "3/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "450576/9765625",
+              "fourier_generating_value": "450576/9765625",
+              "rho": "1"
+            }
+          ]
+        },
+        "rho_grid": [
+          "0",
+          "1/4",
+          "1/2",
+          "3/4",
+          "1"
+        ]
+      },
+      "geometry": "gaussian-2-1",
+      "means": {
+        "matching_complement_cross": "2133/3125",
+        "matching_complement_direction0": "2493/3125",
+        "matching_complement_direction1": "2493/3125",
+        "matching_odd_cross": "-1861/3125",
+        "orientation_difference": "0",
+        "primal_cross": "272/3125",
+        "primal_direction0": "632/3125",
+        "primal_direction1": "632/3125"
+      },
+      "observable_definitions": {
+        "matching_complement": "matching-lattice wrapping of the white complement, represented as a decreasing function of the black field",
+        "matching_odd_cross": "primal_cross-matching_complement_cross",
+        "orientation_difference": "primal_direction0-primal_direction1"
+      },
+      "p": "2/5",
+      "rho_one_pivotal_checks": {
+        "matching_complement_cross": {
+          "derivative_divided_by_p_times_q": "216/125",
+          "exact_identity": "C_f'(1)=p*(1-p)*sum_i P(i pivotal)",
+          "raw_autocorrelation_derivative": "1296/3125",
+          "total_unsigned_pivotal_mass": "216/125"
+        },
+        "matching_complement_direction0": {
+          "derivative_divided_by_p_times_q": "156/125",
+          "exact_identity": "C_f'(1)=p*(1-p)*sum_i P(i pivotal)",
+          "raw_autocorrelation_derivative": "936/3125",
+          "total_unsigned_pivotal_mass": "156/125"
+        },
+        "matching_complement_direction1": {
+          "derivative_divided_by_p_times_q": "156/125",
+          "exact_identity": "C_f'(1)=p*(1-p)*sum_i P(i pivotal)",
+          "raw_autocorrelation_derivative": "936/3125",
+          "total_unsigned_pivotal_mass": "156/125"
+        },
+        "primal_cross": {
+          "derivative_divided_by_p_times_q": "96/125",
+          "exact_identity": "C_f'(1)=p*(1-p)*sum_i P(i pivotal)",
+          "raw_autocorrelation_derivative": "576/3125",
+          "total_unsigned_pivotal_mass": "96/125"
+        },
+        "primal_direction0": {
+          "derivative_divided_by_p_times_q": "156/125",
+          "exact_identity": "C_f'(1)=p*(1-p)*sum_i P(i pivotal)",
+          "raw_autocorrelation_derivative": "936/3125",
+          "total_unsigned_pivotal_mass": "156/125"
+        },
+        "primal_direction1": {
+          "derivative_divided_by_p_times_q": "156/125",
+          "exact_identity": "C_f'(1)=p*(1-p)*sum_i P(i pivotal)",
+          "raw_autocorrelation_derivative": "936/3125",
+          "total_unsigned_pivotal_mass": "156/125"
+        }
+      }
+    },
+    {
+      "N": 10,
+      "autocorrelation_generating_functions": {
+        "matching_complement_cross": {
+          "coefficients": [
+            "0",
+            "7278336/48828125",
+            "46656/9765625",
+            "536544/9765625",
+            "50544/1953125",
+            "93312/9765625",
+            "186624/48828125",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "derivative_at_rho_1": "7776/15625",
+          "generating_function": "sum_k coefficient[k]*rho^k",
+          "level_order": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "value_at_rho_1": "2422224/9765625"
+        },
+        "matching_complement_direction0": {
+          "coefficients": [
+            "0",
+            "202176/1953125",
+            "108864/1953125",
+            "67824/1953125",
+            "34992/1953125",
+            "46656/9765625",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "derivative_at_rho_1": "1296/3125",
+          "generating_function": "sum_k coefficient[k]*rho^k",
+          "level_order": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "value_at_rho_1": "2115936/9765625"
+        },
+        "matching_complement_direction1": {
+          "coefficients": [
+            "0",
+            "202176/1953125",
+            "108864/1953125",
+            "67824/1953125",
+            "34992/1953125",
+            "46656/9765625",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "derivative_at_rho_1": "1296/3125",
+          "generating_function": "sum_k coefficient[k]*rho^k",
+          "level_order": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "value_at_rho_1": "2115936/9765625"
+        },
+        "matching_odd_cross": {
+          "coefficients": [
+            "0",
+            "808704/1953125",
+            "46656/1953125",
+            "249696/1953125",
+            "10368/1953125",
+            "186624/9765625",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "derivative_at_rho_1": "75168/78125",
+          "generating_function": "sum_k coefficient[k]*rho^k",
+          "level_order": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "value_at_rho_1": "5763744/9765625"
+        },
+        "orientation_difference": {
+          "coefficients": [
+            "0",
+            "0",
+            "15552/78125",
+            "864/78125",
+            "5184/78125",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "derivative_at_rho_1": "54432/78125",
+          "generating_function": "sum_k coefficient[k]*rho^k",
+          "level_order": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "value_at_rho_1": "864/3125"
+        },
+        "primal_cross": {
+          "coefficients": [
+            "0",
+            "3234816/48828125",
+            "248832/9765625",
+            "6912/390625",
+            "299376/9765625",
+            "31104/9765625",
+            "186624/48828125",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "derivative_at_rho_1": "5184/15625",
+          "generating_function": "sum_k coefficient[k]*rho^k",
+          "level_order": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "value_at_rho_1": "57456/390625"
+        },
+        "primal_direction0": {
+          "coefficients": [
+            "0",
+            "202176/1953125",
+            "108864/1953125",
+            "67824/1953125",
+            "34992/1953125",
+            "46656/9765625",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "derivative_at_rho_1": "1296/3125",
+          "generating_function": "sum_k coefficient[k]*rho^k",
+          "level_order": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "value_at_rho_1": "2115936/9765625"
+        },
+        "primal_direction1": {
+          "coefficients": [
+            "0",
+            "202176/1953125",
+            "108864/1953125",
+            "67824/1953125",
+            "34992/1953125",
+            "46656/9765625",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "derivative_at_rho_1": "1296/3125",
+          "generating_function": "sum_k coefficient[k]*rho^k",
+          "level_order": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "value_at_rho_1": "2115936/9765625"
+        }
+      },
+      "configurations": 1024,
+      "cross_spectra": {
+        "H4_matching_odd_cross_spectrum": {
+          "coefficients": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "derivative_at_rho_1": "0",
+          "generating_function": "sum_k coefficient[k]*rho^k",
+          "level_order": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "observables": [
+            "orientation_difference",
+            "matching_odd_cross"
+          ],
+          "value_at_rho_1": "0"
+        },
+        "matching_cross_spectrum": {
+          "coefficients": [
+            "0",
+            "-4852224/48828125",
+            "31104/9765625",
+            "-269568/9765625",
+            "250128/9765625",
+            "-31104/9765625",
+            "186624/48828125",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "derivative_at_rho_1": "-5184/78125",
+          "generating_function": "sum_k coefficient[k]*rho^k",
+          "level_order": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "observables": [
+            "primal_cross",
+            "matching_complement_cross"
+          ],
+          "value_at_rho_1": "-190512/1953125"
+        },
+        "orientation_cross_spectrum": {
+          "coefficients": [
+            "0",
+            "202176/1953125",
+            "-85536/1953125",
+            "57024/1953125",
+            "-29808/1953125",
+            "46656/9765625",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "derivative_at_rho_1": "5184/78125",
+          "generating_function": "sum_k coefficient[k]*rho^k",
+          "level_order": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "observables": [
+            "primal_direction0",
+            "primal_direction1"
+          ],
+          "value_at_rho_1": "765936/9765625"
+        }
+      },
+      "direct_noisy_pair_cross_checks": {
+        "all_exact": true,
+        "pairs": {
+          "auto:matching_complement_cross": [
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "0",
+              "fourier_generating_value": "0",
+              "rho": "0"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "15052149/390625000",
+              "fourier_generating_value": "15052149/390625000",
+              "rho": "1/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "4129299/48828125",
+              "fourier_generating_value": "4129299/48828125",
+              "rho": "1/2"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "58123899/390625000",
+              "fourier_generating_value": "58123899/390625000",
+              "rho": "3/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "2422224/9765625",
+              "fourier_generating_value": "2422224/9765625",
+              "rho": "1"
+            }
+          ],
+          "auto:matching_complement_direction0": [
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "0",
+              "fourier_generating_value": "0",
+              "rho": "0"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "1171071/39062500",
+              "fourier_generating_value": "1171071/39062500",
+              "rho": "1/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "696303/9765625",
+              "fourier_generating_value": "696303/9765625",
+              "rho": "1/2"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "10190691/78125000",
+              "fourier_generating_value": "10190691/78125000",
+              "rho": "3/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "2115936/9765625",
+              "fourier_generating_value": "2115936/9765625",
+              "rho": "1"
+            }
+          ],
+          "auto:matching_complement_direction1": [
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "0",
+              "fourier_generating_value": "0",
+              "rho": "0"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "1171071/39062500",
+              "fourier_generating_value": "1171071/39062500",
+              "rho": "1/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "696303/9765625",
+              "fourier_generating_value": "696303/9765625",
+              "rho": "1/2"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "10190691/78125000",
+              "fourier_generating_value": "10190691/78125000",
+              "rho": "3/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "2115936/9765625",
+              "fourier_generating_value": "2115936/9765625",
+              "rho": "1"
+            }
+          ],
+          "auto:matching_odd_cross": [
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "0",
+              "fourier_generating_value": "0",
+              "rho": "0"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "4181409/39062500",
+              "fourier_generating_value": "4181409/39062500",
+              "rho": "1/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "2245212/9765625",
+              "fourier_generating_value": "2245212/9765625",
+              "rho": "1/2"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "15005007/39062500",
+              "fourier_generating_value": "15005007/39062500",
+              "rho": "3/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "5763744/9765625",
+              "fourier_generating_value": "5763744/9765625",
+              "rho": "1"
+            }
+          ],
+          "auto:orientation_difference": [
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "0",
+              "fourier_generating_value": "0",
+              "rho": "0"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "4023/312500",
+              "fourier_generating_value": "4023/312500",
+              "rho": "1/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "864/15625",
+              "fourier_generating_value": "864/15625",
+              "rho": "1/2"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "43011/312500",
+              "fourier_generating_value": "43011/312500",
+              "rho": "3/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "864/3125",
+              "fourier_generating_value": "864/3125",
+              "rho": "1"
+            }
+          ],
+          "auto:primal_cross": [
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "0",
+              "fourier_generating_value": "0",
+              "rho": "0"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "7248069/390625000",
+              "fourier_generating_value": "7248069/390625000",
+              "rho": "1/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "2137779/48828125",
+              "fourier_generating_value": "2137779/48828125",
+              "rho": "1/2"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "32273559/390625000",
+              "fourier_generating_value": "32273559/390625000",
+              "rho": "3/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "57456/390625",
+              "fourier_generating_value": "57456/390625",
+              "rho": "1"
+            }
+          ],
+          "auto:primal_direction0": [
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "0",
+              "fourier_generating_value": "0",
+              "rho": "0"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "1171071/39062500",
+              "fourier_generating_value": "1171071/39062500",
+              "rho": "1/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "696303/9765625",
+              "fourier_generating_value": "696303/9765625",
+              "rho": "1/2"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "10190691/78125000",
+              "fourier_generating_value": "10190691/78125000",
+              "rho": "3/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "2115936/9765625",
+              "fourier_generating_value": "2115936/9765625",
+              "rho": "1"
+            }
+          ],
+          "auto:primal_direction1": [
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "0",
+              "fourier_generating_value": "0",
+              "rho": "0"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "1171071/39062500",
+              "fourier_generating_value": "1171071/39062500",
+              "rho": "1/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "696303/9765625",
+              "fourier_generating_value": "696303/9765625",
+              "rho": "1/2"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "10190691/78125000",
+              "fourier_generating_value": "10190691/78125000",
+              "rho": "3/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "2115936/9765625",
+              "fourier_generating_value": "2115936/9765625",
+              "rho": "1"
+            }
+          ],
+          "cross:H4_matching_odd_cross_spectrum": [
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "0",
+              "fourier_generating_value": "0",
+              "rho": "0"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "0",
+              "fourier_generating_value": "0",
+              "rho": "1/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "0",
+              "fourier_generating_value": "0",
+              "rho": "1/2"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "0",
+              "fourier_generating_value": "0",
+              "rho": "3/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "0",
+              "fourier_generating_value": "0",
+              "rho": "1"
+            }
+          ],
+          "cross:matching_cross_spectrum": [
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "0",
+              "fourier_generating_value": "0",
+              "rho": "0"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "-1219617/48828125",
+              "fourier_generating_value": "-1219617/48828125",
+              "rho": "1/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "-2479491/48828125",
+              "fourier_generating_value": "-2479491/48828125",
+              "rho": "1/2"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "-14913153/195312500",
+              "fourier_generating_value": "-14913153/195312500",
+              "rho": "3/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "-190512/1953125",
+              "fourier_generating_value": "-190512/1953125",
+              "rho": "1"
+            }
+          ],
+          "cross:orientation_cross_spectrum": [
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "0",
+              "fourier_generating_value": "0",
+              "rho": "0"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "1839267/78125000",
+              "fourier_generating_value": "1839267/78125000",
+              "rho": "1/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "426303/9765625",
+              "fourier_generating_value": "426303/9765625",
+              "rho": "1/2"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "1203579/19531250",
+              "fourier_generating_value": "1203579/19531250",
+              "rho": "3/4"
+            },
+            {
+              "difference": "0",
+              "direct_noisy_pair_covariance": "765936/9765625",
+              "fourier_generating_value": "765936/9765625",
+              "rho": "1"
+            }
+          ]
+        },
+        "rho_grid": [
+          "0",
+          "1/4",
+          "1/2",
+          "3/4",
+          "1"
+        ]
+      },
+      "geometry": "c4-self-matching-3-1",
+      "means": {
+        "matching_complement_cross": "1701/3125",
+        "matching_complement_direction0": "2133/3125",
+        "matching_complement_direction1": "2133/3125",
+        "matching_odd_cross": "-1141/3125",
+        "orientation_difference": "0",
+        "primal_cross": "112/625",
+        "primal_direction0": "992/3125",
+        "primal_direction1": "992/3125"
+      },
+      "observable_definitions": {
+        "matching_complement": "matching-lattice wrapping of the white complement, represented as a decreasing function of the black field",
+        "matching_odd_cross": "primal_cross-matching_complement_cross",
+        "orientation_difference": "primal_direction0-primal_direction1"
+      },
+      "p": "2/5",
+      "rho_one_pivotal_checks": {
+        "matching_complement_cross": {
+          "derivative_divided_by_p_times_q": "1296/625",
+          "exact_identity": "C_f'(1)=p*(1-p)*sum_i P(i pivotal)",
+          "raw_autocorrelation_derivative": "7776/15625",
+          "total_unsigned_pivotal_mass": "1296/625"
+        },
+        "matching_complement_direction0": {
+          "derivative_divided_by_p_times_q": "216/125",
+          "exact_identity": "C_f'(1)=p*(1-p)*sum_i P(i pivotal)",
+          "raw_autocorrelation_derivative": "1296/3125",
+          "total_unsigned_pivotal_mass": "216/125"
+        },
+        "matching_complement_direction1": {
+          "derivative_divided_by_p_times_q": "216/125",
+          "exact_identity": "C_f'(1)=p*(1-p)*sum_i P(i pivotal)",
+          "raw_autocorrelation_derivative": "1296/3125",
+          "total_unsigned_pivotal_mass": "216/125"
+        },
+        "primal_cross": {
+          "derivative_divided_by_p_times_q": "864/625",
+          "exact_identity": "C_f'(1)=p*(1-p)*sum_i P(i pivotal)",
+          "raw_autocorrelation_derivative": "5184/15625",
+          "total_unsigned_pivotal_mass": "864/625"
+        },
+        "primal_direction0": {
+          "derivative_divided_by_p_times_q": "216/125",
+          "exact_identity": "C_f'(1)=p*(1-p)*sum_i P(i pivotal)",
+          "raw_autocorrelation_derivative": "1296/3125",
+          "total_unsigned_pivotal_mass": "216/125"
+        },
+        "primal_direction1": {
+          "derivative_divided_by_p_times_q": "216/125",
+          "exact_identity": "C_f'(1)=p*(1-p)*sum_i P(i pivotal)",
+          "raw_autocorrelation_derivative": "1296/3125",
+          "total_unsigned_pivotal_mass": "216/125"
+        }
+      }
+    }
+  ],
+  "interpretation_boundary": [
+    "The rho curve is one generating function; grid points are not independent evidence.",
+    "Krawtchouk occupation-count modes are not the spatial Boolean Fourier spectrum.",
+    "The rho=1 derivative equals p*(1-p) times pivotal mass before normalization.",
+    "Tiny exact spectral organization does not imply a large-N exponent or continuum spectral sample.",
+    "No Jordan or logarithmic mechanism is inferred from these finite identities."
+  ],
+  "issue": 227,
+  "noise_operator": "keep each bit with probability rho; otherwise resample Bernoulli(p)",
+  "p_biased_basis": "chi_S=prod_{i in S}(X_i-p)/sqrt(p*(1-p))",
+  "schema": "matching-one.exact-boolean-noise-semigroup.v1"
+}
