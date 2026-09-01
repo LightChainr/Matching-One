@@ -3,14 +3,16 @@
 
 The input is one CSV with these columns:
 
-    geometry,tau,alpha,k_minus,count,
+    geometry,tau,alpha,source_component,k_minus,count,
     sum_q0,sum_q1,sum_e0,sum_e1,sum_a0,sum_a1,
     sum_q0a0,sum_q1a1,sum_e0a0,sum_e1a1
 
 ``tau=__GLOBAL__`` is reserved for the complete (not landing-filtered)
-source profile for each ``geometry,alpha,k_minus``.  Those rows determine
-``mu_a[geometry,alpha]``, pooled ``jM[alpha]`` and ``beta[alpha]``.  All
-other tau values are disjoint landing cells and are scored with Eq. (10) of
+source profile for each ``geometry,source_component,k_minus``.  Those rows
+determine ``mu_a[geometry,lambda]``, pooled ``jM[lambda]`` and
+``beta[lambda]``.  All other tau values are disjoint landing cells; they may
+refine a fixed component into fibre-dependent ``alpha`` labels, but Eq. (10)
+is evaluated with the parent component's beta before cells are aggregated.
 ``notes/p537-finite-landing-transfer-definition.md``.
 
 The a-fields are raw fixed-source-anchor alpha sums.  Translation fixes the
@@ -52,6 +54,7 @@ REQUIRED_FIELDS = {
     "geometry",
     "tau",
     "alpha",
+    "source_component",
     "k_minus",
     "count",
     "sum_q0",
@@ -202,7 +205,7 @@ def baseline_packet(coefficients: dict[str, list[F]], n: int, p: Interval) -> di
 
 def read_aggregates(path: Path, n: int) -> list[dict[str, object]]:
     rows: list[dict[str, object]] = []
-    seen: set[tuple[str, str, str, int]] = set()
+    seen: set[tuple[str, str, str, str, int]] = set()
     with path.open(newline="") as handle:
         reader = csv.DictReader(handle)
         fields = set(reader.fieldnames or ())
@@ -214,17 +217,26 @@ def read_aggregates(path: Path, n: int) -> list[dict[str, object]]:
             if geometry not in GEOMETRIES:
                 raise ValueError(f"{path}:{line_number}: unknown geometry {geometry!r}")
             tau, alpha = raw["tau"].strip(), raw["alpha"].strip()
-            if not tau or not alpha:
-                raise ValueError(f"{path}:{line_number}: empty tau/alpha")
+            component = raw["source_component"].strip()
+            if not tau or not alpha or not component:
+                raise ValueError(f"{path}:{line_number}: empty tau/alpha/source_component")
             k = int(raw["k_minus"])
             if not 0 <= k < n:
                 raise ValueError(f"{path}:{line_number}: k_minus outside [0,{n - 1}]")
-            key = (geometry, tau, alpha, k)
+            key = (geometry, tau, alpha, component, k)
             if key in seen:
                 raise ValueError(f"{path}:{line_number}: duplicate key {key}")
             seen.add(key)
-            row: dict[str, object] = {"geometry": geometry, "tau": tau, "alpha": alpha, "k": k}
-            for field in REQUIRED_FIELDS - {"geometry", "tau", "alpha", "k_minus"}:
+            row: dict[str, object] = {
+                "geometry": geometry,
+                "tau": tau,
+                "alpha": alpha,
+                "component": component,
+                "k": k,
+            }
+            for field in REQUIRED_FIELDS - {
+                "geometry", "tau", "alpha", "source_component", "k_minus"
+            }:
                 row[field] = parse_fraction(raw[field])
             if row["count"] < 0:
                 raise ValueError(f"{path}:{line_number}: negative count")
@@ -244,12 +256,12 @@ def eq10_state_term(
     b_i: Interval,
     sum_h: Interval,
     sum_ha: Interval,
-    beta_alpha: Interval,
+    beta_component: Interval,
     z_orbit_multiplicity: int,
 ) -> Interval:
     """One i=0/1 term, including the fixed-z physical orbit multiplier."""
     return z_orbit_multiplicity * weight_i * (
-        u_i * sum_ha - beta_alpha * b_i * sum_h
+        u_i * sum_ha - beta_component * b_i * sum_h
     )
 
 
@@ -261,17 +273,18 @@ def source_global_packets(
     a_raw_denominator: int,
 ) -> tuple[dict[tuple[str, str], dict[str, Interval]], dict[str, Interval]]:
     global_rows = [row for row in rows if row["tau"] == GLOBAL_TAU]
-    alphas = sorted({str(row["alpha"]) for row in global_rows})
-    if not alphas:
+    components = sorted({str(row["component"]) for row in global_rows})
+    if not components:
         raise ValueError(f"no {GLOBAL_TAU!r} source rows")
     packets: dict[tuple[str, str], dict[str, Interval]] = {}
     for geometry in GEOMETRIES:
-        for alpha in alphas:
+        for component in components:
             selected = [
-                row for row in global_rows if row["geometry"] == geometry and row["alpha"] == alpha
+                row for row in global_rows
+                if row["geometry"] == geometry and row["component"] == component
             ]
             if not selected:
-                raise ValueError(f"missing global source profile for {(geometry, alpha)}")
+                raise ValueError(f"missing global source profile for {(geometry, component)}")
             mu_a = Interval.of(0)
             mean_qa = Interval.of(0)
             for row in selected:
@@ -284,7 +297,7 @@ def source_global_packets(
                 mu_a += weight * ((1 - p) * a0 + p * a1)
                 mean_qa += weight * ((1 - p) * qa0 + p * qa1)
             mu_q = baseline[geometry]["q"]
-            packets[(geometry, alpha)] = {
+            packets[(geometry, component)] = {
                 "mu_a": mu_a,
                 "cov_q_a": mean_qa - mu_q * mu_a,
             }
@@ -293,15 +306,15 @@ def source_global_packets(
     if mt.lo <= 0 <= mt.hi:
         raise ValueError("pooled matching slope interval contains zero")
     beta: dict[str, Interval] = {}
-    for alpha in alphas:
+    for component in components:
         jm = (
-            packets[("axis", alpha)]["cov_q_a"]
-            + packets[("tilted", alpha)]["cov_q_a"]
+            packets[("axis", component)]["cov_q_a"]
+            + packets[("tilted", component)]["cov_q_a"]
         ) / 2
-        beta[alpha] = jm / mt
+        beta[component] = jm / mt
         for geometry in GEOMETRIES:
-            packets[(geometry, alpha)]["jM_alpha"] = jm
-            packets[(geometry, alpha)]["beta_alpha"] = beta[alpha]
+            packets[(geometry, component)]["jM_component"] = jm
+            packets[(geometry, component)]["beta_component"] = beta[component]
     return packets, beta
 
 
@@ -341,12 +354,15 @@ def score(args: argparse.Namespace) -> dict[str, object]:
             continue
         geometry = str(row["geometry"])
         alpha = str(row["alpha"])
-        if (geometry, alpha) not in source_packets:
-            raise ValueError(f"landing cell {(geometry, tau, alpha)} lacks global source profile")
+        component = str(row["component"])
+        if (geometry, component) not in source_packets:
+            raise ValueError(
+                f"landing cell {(geometry, tau, alpha, component)} lacks global source profile"
+            )
         k = int(row["k"])
         weight = offsite_weight(k, n, p)
-        mu_a = source_packets[(geometry, alpha)]["mu_a"]
-        beta_alpha = beta[alpha]
+        mu_a = source_packets[(geometry, component)]["mu_a"]
+        beta_component = beta[component]
         s_minus = k - (n - 1) * p
         for i in (0, 1):
             wi = (1 - p) if i == 0 else p
@@ -368,7 +384,7 @@ def score(args: argparse.Namespace) -> dict[str, object]:
                 - mu_h[geometry] * (sum_a - mu_a * count)
             )
             geometry_cells[(geometry, tau, alpha)] += weight * eq10_state_term(
-                wi, ui, bi, sum_h, sum_ha, beta_alpha, args.z_orbit_multiplicity
+                wi, ui, bi, sum_h, sum_ha, beta_component, args.z_orbit_multiplicity
             )
 
     taus = sorted({key[1] for key in geometry_cells})
@@ -393,8 +409,11 @@ def score(args: argparse.Namespace) -> dict[str, object]:
         for alpha in alphas
     }
     minors = []
+    tested_minor_count = 0
+    stopped_at_first_nonzero = False
     for tau0, tau1 in combinations(taus, 2):
         for alpha0, alpha1 in combinations(alphas, 2):
+            tested_minor_count += 1
             determinant = (
                 final_cells[(tau0, alpha0)] * final_cells[(tau1, alpha1)]
                 - final_cells[(tau0, alpha1)] * final_cells[(tau1, alpha0)]
@@ -406,6 +425,11 @@ def score(args: argparse.Namespace) -> dict[str, object]:
                     "determinant": interval_record(determinant),
                 }
             )
+            if args.first_nonzero_only and (determinant.lo > 0 or determinant.hi < 0):
+                stopped_at_first_nonzero = True
+                break
+        if stopped_at_first_nonzero:
+            break
 
     return {
         "schema": "matching-one/p537-siteflip-schur-score/v1",
@@ -429,16 +453,20 @@ def score(args: argparse.Namespace) -> dict[str, object]:
             "Y_t": interval_record(yt),
             "R": interval_record(r),
             "mu_H": {geometry: interval_record(mu_h[geometry]) for geometry in GEOMETRIES},
-            "source": {
-                alpha: {
-                    "jM_alpha": interval_record(source_packets[("axis", alpha)]["jM_alpha"]),
-                    "beta_alpha": interval_record(beta[alpha]),
+            "source_components": {
+                component: {
+                    "jM_component": interval_record(
+                        source_packets[("axis", component)]["jM_component"]
+                    ),
+                    "beta_component": interval_record(beta[component]),
                     "mu_a": {
-                        geometry: interval_record(source_packets[(geometry, alpha)]["mu_a"])
+                        geometry: interval_record(
+                            source_packets[(geometry, component)]["mu_a"]
+                        )
                         for geometry in GEOMETRIES
                     },
                 }
-                for alpha in alphas
+                for component in sorted(beta)
             },
         },
         "matrix": {
@@ -457,6 +485,12 @@ def score(args: argparse.Namespace) -> dict[str, object]:
         },
         "minors": minors,
         "nonzero_minor_count": sum(item["determinant"]["excludes_zero"] for item in minors),
+        "minor_search": {
+            "mode": "first_exact_nonzero" if args.first_nonzero_only else "all",
+            "tested": tested_minor_count,
+            "stopped_at_first_nonzero": stopped_at_first_nonzero,
+            "total_possible": math.comb(len(taus), 2) * math.comb(len(alphas), 2),
+        },
         "inputs": {
             "aggregates": {"path": str(args.aggregates), "sha256": sha256(args.aggregates)},
             "baseline_axis": {"path": str(args.baseline_axis), "sha256": sha256(args.baseline_axis)},
@@ -483,6 +517,11 @@ def parser() -> argparse.ArgumentParser:
         type=int,
         default=1,
         help="raw a-field unit denominator; use 16 when the producer stores g16=16*g",
+    )
+    result.add_argument(
+        "--first-nonzero-only",
+        action="store_true",
+        help="stop after the first exact nonzero minor; sufficient for the frozen rank-one stop gate",
     )
     result.add_argument(
         "--z-orbit-multiplicity",
