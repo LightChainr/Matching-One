@@ -1,4 +1,4 @@
-# A directed capillary transfer gives a signed candidate `Phi(c)`
+# Width endpoints overturn the all-positive directed capillary candidate
 
 ## New result
 
@@ -8,13 +8,13 @@ In the capillary window
 L,m -> infinity,       c=L/m in [0,infinity),                  (1)
 ```
 
-the smallest closed transfer model which contains every directed
-axis-boundary height excursion has an explicit original-U scaling
-function
+combining the directed boundary transfer with the exact bulk-singleton/
+width-zero-mode sum gives the restricted scaling function
 
 ```text
-Phi_DSOS(c)
- = I0(2c)^2/Delta * [1+(2c/3) I1(2c)/I0(2c)].                 (2)
+Phi_restricted(c)
+ = I0(2c)^2/Delta
+   *[1-c^2/6+(2c/3) I1(2c)/I0(2c)].                           (2)
 ```
 
 Here `I0,I1` are modified Bessel functions, equivalently
@@ -26,23 +26,24 @@ c I1(2c)/I0(2c)
    /[sum_(j>=0) c^(2j)/(j!)^2].                               (3)
 ```
 
-Every term in (2) is nonnegative and the bracket is strictly positive.
-Therefore this model predicts
+The earlier version omitted `-c^2/6` and incorrectly claimed strict
+positivity. That claim is withdrawn. The corrected bracket is positive
+near zero and negative for sufficiently large c, so this restricted model
+predicts a capillary sign change in
 
 ```text
 Ustar/A_N
- =-L^2 m^(-(2L+1)) Phi_DSOS(c)[1+o(1)] <0,                   (4)
+ =-L^2 m^(-(2L+1)) Phi_restricted(c)[1+o(1)].                 (4)
 ```
 
-with no finite-c zero. It matches the rigid theorem because
-`Phi_DSOS(0)=1/Delta`.
+It matches the rigid theorem because `Phi_restricted(0)=1/Delta`.
 
 This is a real signed transmission result for a controlled capillary
 submodel, not yet a theorem for the complete rank-one sector. Completeness
-requires the explicit interface assumptions in Section 6. The value of
-the exercise is that it identifies both the partition dressing and the
-root-motion area term; multiplying the rigid coefficient by a positive
-partition function alone would miss the second factor in (2).
+requires the explicit interface assumptions in Section 6. The calculation
+now keeps three mechanisms together: partition dressing, bridge-area root
+motion and width-endpoint singleton leverage. Multiplying the rigid
+coefficient by a positive partition function misses the last two.
 
 No configuration, simulation, finite-c fit or source change is used.
 
@@ -101,15 +102,59 @@ tending to one. Their directed transfers therefore factor:
 Z_pair(c)=I0(2c)^2.                                          (10)
 ```
 
-Widths within O(1) of zero or L occupy only `O(1/L)` of the width zero
-mode and do not affect the L^2-normalized response. Boundary collision is
-therefore absent at leading order in this declared model. The orientation,
-translation and width multiplicities remain those of the rigid stripe;
-(10) is their capillary multiplier.
+For bulk widths the two transfers factor as in (10). The earlier version
+then discarded widths within `O(1)` of zero or L because their width-mode
+mass is only `O(1/L)`. That inference is false for the cancellation-sensitive
+response: these endpoints carry an `O(L^2)` occupation leverage. Section 2a
+keeps the exact bulk-singleton/straight-width correction. A separate narrow-
+width interaction of the fluctuating boundaries is not computed here.
 
 This already strengthens the exact two-row obstruction: the smallest
 directed closure predicts `I0(2c)^2`, not merely `cosh(c)` or its square.
-All are positive, so partition dressing alone cannot reverse the sign.
+The partition factor itself is positive; it is not the complete response
+coefficient.
+
+## 2a. Bulk singleton gas and the width endpoint
+
+Put
+
+```text
+a=c^2/L^2=m^-2,       h=1+a,       B=1+a h=h+a^2.              (10a)
+```
+
+For a straight stripe of width w, the available bulk-singleton area in the
+restricted geometry is
+
+```text
+M_w=max{L(L-w-2),0}.
+```
+
+Thus the width sum and its rank-zero/rank-two normalization contain
+
+```text
+S_L(h)=sum_(w=1)^(L-1) h^(Lw) B^(M_w),
+Z1/(Z0+Z2) proportional S_L(h)/B^N.                            (10b)
+```
+
+A direct endpoint expansion at `a=c^2/L^2` gives
+
+```text
+d_h log[S_L(h)/B^N] -> c^2/2-c^4/12.                           (10c)
+```
+
+To see where the two terms come from, first replace `M_w` by the untruncated
+polynomial `L(L-w-2)` for every w. That sum is geometric, and its normalized
+logarithmic response tends to `-c^4/12`. Restoring the physical value
+`M_(L-1)=0` instead of the fictitious value `-L` changes just one endpoint
+term and contributes `+c^2/2`. The endpoint has only `O(1/L)` width weight,
+but its occupation leverage is `O(L^2)`. Thus the endpoint-transfer term is
+not optional in an `L^2`-normalized, cancellation-sensitive derivative.
+
+Relative to the rigid response, (10c) changes the straight-width coefficient
+from `1` to `1-c^2/6`. This is the exact singleton/width-zero-mode correction
+inside the present restricted model. It does not yet include the capillary
+collision of two interfaces at narrow widths, which can contribute at the
+same order.
 
 ## 3. The bridge-area moment is also exact
 
@@ -141,7 +186,8 @@ Var(delta K)/L^2
  =v(c):=c I1(2c)/[3 I0(2c)].                                 (13)
 ```
 
-This positive moment is the extra root-motion term in (2).
+This positive moment supplies the last term in (2). It does not cancel the
+independent endpoint-transfer term in (10c).
 
 ## 4. Propagation through the actual root and denominator
 
@@ -175,11 +221,11 @@ P1,axis,h
  =+(L^4/2)m^(-(2L+1))[1+o(1)]                                (16)
 ```
 
-before capillary dressing. Multiplying all local rigid insertions by
-`Z_pair` gives the first term
+before capillary dressing. Combining the common bulk-width factor `Z_pair`
+with the straight-width singleton response (10c) gives the first term
 
 ```text
-+(L^4/2) m^(-(2L+1)) I0(2c)^2.                               (17)
++(L^4/2) m^(-(2L+1)) I0(2c)^2[1-c^2/6].                     (17)
 ```
 
 There are asymptotically `2L^2 I0(2c)^2` weighted oriented/translated/
@@ -190,11 +236,12 @@ width stripes. Equations (13)-(15), followed by the root displacement
 +L^4 m^(-(2L+1)) I0(2c)^2 v(c).                              (18)
 ```
 
-Therefore the directed-SOS prediction is
+Therefore the corrected restricted prediction is
 
 ```text
 P1,axis,h
- =(L^4/2)m^(-(2L+1)) I0(2c)^2[1+2v(c)+o(1)].                 (19)
+ =(L^4/2)m^(-(2L+1)) I0(2c)^2
+   *[1-c^2/6+2v(c)+o(1)].                                    (19)
 ```
 
 The tilted rank-one sector remains exponentially later. Sector-odds
@@ -205,42 +252,59 @@ D_h=L^2/2[1+o(1)].                                            (20)
 ```
 
 Finally `E=1-P1` and `Delta>0` turn (19) into (2)-(4). Root motion changes
-the amplitude through (18), but not the winding exponent; slope
-normalization divides by a positive quantity and cannot change the sign.
+the amplitude through (18), while the width endpoint changes it through
+(17). Neither changes the winding exponent; slope normalization divides by
+a positive quantity and therefore propagates the corrected sign in (2).
 
 ## 5. Sign, small-c and large-c predictions
 
-The series in (3) make positivity elementary:
+Define the corrected restricted bracket
 
 ```text
-Phi_DSOS(c)>0       for every c>=0.                            (21)
+H(c)=1-c^2/6+(2c/3) I1(2c)/I0(2c).                            (21)
 ```
+
+It is continuous and `H(0)=1`. On the other hand `I1(2c)/I0(2c)<1`, so
+
+```text
+H(c)<1-c^2/6+2c/3<0       when c>2+sqrt(10).                  (22)
+```
+
+Consequently the restricted candidate has at least one finite-c zero. This
+argument does not establish uniqueness, and a missing narrow-width boundary
+interaction can move or remove the zero of the complete rank-one response.
 
 At small c,
 
 ```text
-I0(2c)=1+c^2+O(c^4),
-c I1(2c)/I0(2c)=c^2+O(c^4),
-Delta Phi_DSOS(c)=1+(8/3)c^2+O(c^4).                          (22)
+I0(2c)=1+c^2+c^4/4+O(c^6),
+c I1(2c)/I0(2c)=c^2-c^4/2+O(c^6),
+H(c)=1+c^2/2-c^4/3+O(c^6),
+Delta Phi_restricted(c)=1+(5/2)c^2+(13/6)c^4+O(c^6).         (23)
 ```
 
-Thus the capillary cloud strengthens the magnitude of the negative tail
-in this model; it does not initially bend it toward a zero. At large c,
+Thus the capillary cloud initially strengthens the magnitude of the negative
+tail, but the endpoint term eventually turns the restricted coefficient. At
+large c,
 
 ```text
 I0(2c)=exp(2c)/sqrt(4pi c)[1+O(c^-1)],
-Delta Phi_DSOS(c)=exp(4c)/(6pi)[1+O(c^-1)].                    (23)
+H(c)=-c^2/6+2c/3+O(1),
+Delta Phi_restricted(c)
+ =-c exp(4c)/(24pi)[1+O(c^-1)].                               (24)
 ```
 
 Its log growth is `4L/m+O(log(L/m))`, still negligible relative to the
 topological tension `2L log m`. Therefore the logarithmic exponent remains
 the rigid value even though the amplitude becomes exponentially dressed
-on the capillary scale.
+on the capillary scale. Because (4) contains `-Phi_restricted`, the restricted
+model predicts positive U beyond its candidate zero.
 
 The formula offers two direct prospective failures:
 
-1. a sign change of the fully resummed coefficient at finite c;
-2. a normalized capillary amplitude inconsistent with (2), after the
+1. the candidate zero is shifted or removed by the omitted narrow-width
+   boundary interaction;
+2. the normalized capillary amplitude is inconsistent with (2), after the
    known sector/root factors are removed.
 
 Either failure selects missing interface families rather than a failure
@@ -248,13 +312,16 @@ of the minimum winding barrier.
 
 ## 6. What is complete and what remains a submodel
 
-**Complete inside the directed-SOS model:**
+**Complete in the present restricted calculation:**
 
-- every integer height displacement between successive forward columns;
+- every integer height displacement between successive forward columns at
+  bulk widths;
 - exact closure/net-zero winding via (7);
-- both independent stripe boundaries and the width zero mode;
+- the two independent bulk-width stripe boundaries;
+- the exact bulk-singleton/straight-width zero mode, including endpoint
+  occupation leverage in (10c);
 - the signed bridge-area variance entering root motion;
-- the original E sign and positive within-geometry denominator.
+- the original E sign and positive within-geometry denominator propagation.
 
 **Assumptions needed to identify (2) with the complete rank-one sector:**
 
@@ -263,9 +330,10 @@ of the minimum winding barrier.
 2. multi-essential-component and contractible-contour decorations factor
    into the already removed bulk pressure or are lower order;
 3. the isolated-site/island-hole asymmetry responsible for the rigid
-   coefficient is local and receives the common factor (10);
-4. noncrossing interaction of the two boundaries and narrow widths is
-   lower order after the L^2 normalization;
+   coefficient is local apart from the endpoint term already isolated in
+   (10c);
+4. the narrow-width collision of the two capillary boundaries either
+   vanishes at this order or is computed and added explicitly;
 5. the tilted entropy remains below its extra `m^-4k` winding cost;
 6. restricted sector odds remain aligned so (20) holds.
 
@@ -276,22 +344,27 @@ at fixed c. Similar finite overhang clusters vanish. This does not yet
 exclude all mutually interacting overhang families, so it is evidence for
 directed completeness rather than a completed theorem.
 
-Items 2-4 are the genuine proof boundary. In particular, a capillary-
-dependent island/hole insertion which does not factor through (10) can add
-a signed term comparable to (18). Such a term is the only currently named
-route to a zero of the full `Phi(c)`; the positive partition and area terms
-in (2) cannot create one.
+Items 2-4 are the genuine proof boundary. The old all-positive candidate has
+already failed at the straight-width endpoint: an `O(1/L)` sector can survive
+an `L^2`-normalized derivative. A capillary boundary collision or a
+nonfactorizing island/hole insertion at narrow width can add a signed term
+comparable to (17)-(18), and may shift or remove the restricted zero.
 
 ## Scientific card
 
 - **New analytic object:** the exact directed height transfer (5)-(9),
   whose scaling partition is `I0(2c)` per interface.
-- **New signed candidate:** equation (2), strictly positive for all c, so
-  the original U remains negative with no capillary zero in this model.
-- **Mechanism separated:** ordinary partition dressing `I0^2` and the
-  positive root-motion area response `2v(c)`.
-- **Prospective discriminator:** a full rank-one resummation sign change
-  must come from a nonfactorizing island/hole or coupled-boundary term, not
-  from directed capillary roughness itself.
-- **Boundary:** this is complete directed-SOS rank-one transfer, not yet the
-  complete square-lattice rank-one sector or a continuum interface field.
+- **Corrected signed candidate:** equation (2) contains the exact
+  straight-width factor `1-c^2/6`, is positive near zero and has at least one
+  finite-c candidate zero. The earlier strictly positive formula is
+  withdrawn.
+- **Mechanisms separated:** positive partition dressing `I0^2`, positive
+  bridge-area root motion `2v(c)`, and signed width-endpoint transfer
+  `-c^2/6`.
+- **Next exact target:** compute the narrow-width capillary boundary
+  interaction and determine whether it shifts, removes or reinforces the
+  restricted zero.
+- **Boundary:** the bulk-width transfer and straight-width singleton sum are
+  exact in this family; endpoint capillary coupling is incomplete. This is
+  not yet the complete square-lattice rank-one sector or a continuum
+  interface field.
