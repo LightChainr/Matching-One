@@ -1,0 +1,38 @@
+{
+  "schema": "matching-one.generic-modulus-homology-vector-preflight.v1",
+  "issue_context": [156, 159, 275],
+  "status": "deterministic no-sampling design preflight",
+  "base_period_matrix": [[10, 3], [0, 10]],
+  "base_area": 100,
+  "signed_stencils": {
+    "shear": {
+      "minus": [[10, 2], [0, 10]],
+      "plus": [[10, 4], [0, 10]]
+    },
+    "oblique_aspect": {
+      "minus": [[-10, 0], [-3, -10]],
+      "plus": [[-9, -7], [4, -8]]
+    }
+  },
+  "primitive_cutoff": 3,
+  "tail_cutoff": 7,
+  "decimal_precision": 45,
+  "models": {
+    "mu_KdV": "directional transport of the reflection-even D2 D0 primitive-sector response",
+    "mu_Q4_Jordan": "directional transport of the reflection-even E4 times D2 D0 weight-8 covariant template",
+    "mu_embedding": "zero after subtracting the exact continuum homology-vector tangent"
+  },
+  "cost_proxy": {
+    "source_commit": "295ac797d5589fc47c30eaa777a74d4ed4446c90",
+    "source_receipt": "results/etop-n100-three-modulus/logs/tau_half_plus_i.receipt.json",
+    "samples": 2000000,
+    "one_thread_elapsed_seconds": 20.184325541951694,
+    "planned_stencil_cells": 4,
+    "boundary": "scalar N100 engine timing lower bound; full sparse homology output overhead is not measured"
+  },
+  "execution_boundary": [
+    "No random sample, counter interval, Monte Carlo binary, or PR546 queue is launched.",
+    "The calculation evaluates continuum formulas and exact integer-period geometry only.",
+    "A finite pilot must save every observed primitive rank-1 winding line rather than only the displayed theory cutoff."
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schema": "matching-one.generic-modulus-homology-vector-preflight-run.v1",
+  "completed_utc": "2026-09-01T11:19:26Z",
+  "execution": "local_fallback_after_TV2N0X_publickey_failure",
+  "server_attempt": {
+    "machine": "TV2N0X",
+    "requested_directory": "/workspace/matching-one-generic-modulus-20260901",
+    "remote_command_executed": false,
+    "failure": "Permission denied (publickey)",
+    "key_reset_attempted": false,
+    "owned_tunnel_stopped": true,
+    "final_cloud_state": "Ready"
+  },
+  "source_base": "b23411276c0aa918bea964f7a429a7509ecd6fc8",
+  "included_exact_geometry_commit": "b9e4ea19bc585cbed18ec6ba1d13e85f2b5accc7",
+  "command": [
+    "python3",
+    "scripts/generic_modulus_homology_vector_preflight.py",
+    "analysis/generic_modulus_homology_vector_preflight.json",
+    "--json-output",
+    "results/generic-modulus-homology-vector-preflight/latest.json",
+    "--report-output",
+    "results/generic-modulus-homology-vector-preflight/REPORT.md"
+  ],
+  "elapsed_seconds": 12.68,
+  "exit_code": 0,
+  "random_samples": 0,
+  "environment": {
+    "architecture": "arm64",
+    "macos": "26.6.2",
+    "python": "3.13.7",
+    "mpmath": "1.4.1",
+    "numpy": "2.4.6"
+  },
+  "focused_tests": {
+    "command": "python3 -m unittest discover -s tests -p test_generic_modulus_homology_vector_preflight.py -v",
+    "tests_run": 3,
+    "failures": 0,
+    "errors": 0
+  },
+  "sha256": {
+    "analysis/generic_modulus_homology_vector_preflight.json": "c654f2a79de7d1efe9c00838fd5552517cb0da4444b171f6ac9df6d9fdbfadc8",
+    "scripts/generic_modulus_homology_vector_preflight.py": "fee9d97236067121a0cca460244b264e01d93e39bd9ca39fbc2d471e58496568",
+    "results/generic-modulus-homology-vector-preflight/latest.json": "950197743c200fb1b904407f1ba5bffe9f97c3347519b257b558b8d58958b9c1",
+    "results/generic-modulus-homology-vector-preflight/REPORT.md": "4ed53d316745d6c3b0d2233efffe33ec576fd24697e783b6f86cb6ce1b6926bf"
+  }
+}
