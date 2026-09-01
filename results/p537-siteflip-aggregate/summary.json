@@ -1,0 +1,57 @@
+{
+  "schema": "matching-one/p537-siteflip-landing-summary/v1",
+  "status": "exact_true_site_flip_completed",
+  "geometries": {
+    "axis": {
+      "period": [5, 0],
+      "backgrounds": 8388608,
+      "pair_fibres": 192937984,
+      "elapsed_seconds": 21.263649083000001,
+      "raw_csv_sha256": "aabe3d461ca40631124407b6efeb8e6ab369cac5c471849083d02890da8d7138",
+      "raw_csv_committed": false
+    },
+    "tilted": {
+      "period": [4, 3],
+      "backgrounds": 8388608,
+      "pair_fibres": 192937984,
+      "elapsed_seconds": 17.995058875000002,
+      "raw_csv_sha256": "4aa76e3219acb19145f57485c672c1a9a1828af71e9d3802903cc61e07bd7807",
+      "raw_csv_committed": false
+    }
+  },
+  "normalization": {
+    "a_raw_denominator": 16,
+    "fixed_x_source_component_denominator": 25,
+    "fixed_z_C4_orbit_multiplier": 4,
+    "source_absent_sentinel": 16777216
+  },
+  "strict_global_ordinary_cell": {
+    "pair_fibres": {"axis": 0, "tilted": 0},
+    "reason": "for an alternating site Delta_q=1-b-w and rank monotonicity force b+w<=1",
+    "boundary": "global component IDs cannot stand in for a finite-collar four-arm landing"
+  },
+  "relaxed_near_block": {
+    "source_components": 6,
+    "columns": 12,
+    "rows": 15,
+    "source_component_rule": "GLOBAL beta is computed once per C4 y orbit; Bell transitions are summed only after component scoring",
+    "preferred_branch_free_exact_nonzero_minor": {
+      "rows": [
+        "near_block:[0,1,5,0,0,0,0,0]",
+        "near_block:[1,2,5,0,0,0,0,0]"
+      ],
+      "columns": ["axial2:absent", "axial2:present"],
+      "lower": "-10099106046284097513036189830300418943766367122952068981847899941962900169733316483/2500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "upper": "-8079284837027278010428951864240335150872313704757687185826200897732788023804754307/2000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "midpoint": -4.039642418513639e-18,
+      "scope": "degree-branch=0, extra-contact=0, occupied and vacant global landing IDs both merged"
+    },
+    "interpretation_boundary": "exact finite relaxed rank/arm near-block obstruction; not the empty strict ordinary four-arm block"
+  },
+  "artifacts": {
+    "aggregate_sha256": "b310edc0923d114be79c93b655ae8cb8c92e9dcf6e4659eb7c11e14850fe0860",
+    "cross_tab_sha256": "21b76024a0f302e71ba3e57798b6160ccf11cef8c60226aeb3a2cddfaef3de23",
+    "preferred_minor_sha256": "2891a7c74bbbe14590836a56cb394ba793e1409ef6c5a22c56803554a0d5eb31",
+    "score_sha256": "ca0814d83f65096b63abaac082b0986950f8e0491ddcdf652ac16eb8fb345745"
+  }
+}
