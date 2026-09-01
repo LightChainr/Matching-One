@@ -1,0 +1,37 @@
+{
+  "schema": "matching-one/p537-one-defect-provenance/v1",
+  "issue": 537,
+  "base_commit": "090cdc80c76b9ca1f79309cedbbebae4190ccb12",
+  "upstream_exact_asset": {
+    "commit": "e8e9c7cf42b1d8e41da5c93d3780951e1260fdde",
+    "status": "closed_unmerged_asset",
+    "producer_source": "experiments/p537-finite-collar-20260901/siteflip_collar_exact.cpp",
+    "scorer_source": "experiments/p537-siteflip-landing-20260901/score_siteflip_schur.py",
+    "complete_aggregate": "results/p537-finite-collar/schur-aggregates.csv",
+    "complete_aggregate_sha256": "ff725ed0f222ce5dd5f2cc73cada4b93d618e21d73654df8ee5d2a3d7b319917"
+  },
+  "compact_global_source": {
+    "path": "experiments/p537-one-defect-gate-20260901/global-diag1.csv",
+    "rule": "retain exactly tau=__GLOBAL__ and source_component=diag1",
+    "rows": 48,
+    "axis_backgrounds": 8388608,
+    "tilted_backgrounds": 8388608,
+    "byte_checked_against_upstream_commit": true
+  },
+  "witness_search": {
+    "geometry": "axis N25 (5,0)",
+    "fixed_x": 0,
+    "fixed_z": "East(x)",
+    "background_order": "ascending 23-bit mask",
+    "source_order": "vertex id ascending",
+    "stop_rule": "rank, Bell, and g16 all change",
+    "backgrounds_scanned": 12568,
+    "sampling": "none"
+  },
+  "normalization": {
+    "source": "a^y=g16/(16*N) after translation fixes x",
+    "geometry_pool": "one half",
+    "fixed_z_C4_orbit_multiplicity": 4,
+    "root_and_coefficients": "computed from both complete geometries before edge disintegration"
+  }
+}
