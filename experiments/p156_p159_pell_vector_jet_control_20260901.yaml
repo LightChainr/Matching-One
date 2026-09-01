@@ -1,0 +1,52 @@
+schema: matching-one/pell-homology-vector-jet-control/v1
+issues: [156, 159]
+status: complete
+decision: square_bond_full_vector_control_passed
+base_commit: a9b9bf3be13e6f147f23cb863d4c25da2983b7d4
+model: square_bond_percolation
+geometries:
+  - id: pell_Dminus2_N30
+    period_matrix_rows: [[6, 3], [0, 5]]
+    N_vertices: 30
+    pell_side: -2
+  - id: pell_Dplus1_N56
+    period_matrix_rows: [[8, 4], [0, 7]]
+    N_vertices: 56
+    pell_side: 1
+p_grid: [0.49, 0.50, 0.51]
+finite_difference:
+  first: (P(0.51)-P(0.49))/0.02
+  second: (P(0.51)-2*P(0.50)+P(0.49))/0.0001
+  common_random_numbers: true
+sampling:
+  samples_per_design: 240000
+  batches_per_design: 48
+  seed: 20260901
+  workers: 8
+coordinate_contract:
+  - rank_zero
+  - every_observed_primitive_unoriented_winding_line
+  - rank_two
+  - invariant_failure
+controls:
+  exact_N4_all_256_configurations: passed
+  probability_and_jet_sum_rules: passed
+  count_conservation_all_points: passed
+  invariant_failures: 0
+execution:
+  location: local_mac_fallback
+  reason: >-
+    NePnUn and HZsCM6 both reached Running but rejected their saved SSH keys;
+    key reset was outside this task's authority, so the bounded pilot ran on
+    the local 10-core Apple Silicon host with 8 workers.
+  wall_seconds_internal: 13.898759665999933
+  wall_seconds_shell: 14.05
+  python: 3.13.7
+  platform: macOS-26.6.2-arm64
+excluded:
+  - N418
+  - N780
+  - large_scale_monte_carlo
+  - issue_227
+  - issue_537
+
