@@ -31,6 +31,11 @@ raw q/E coordinates
 amplitude/phase transport 合同，再把现有 C3、rho-child、P43/P57 或 modulus
 资产接入同一 covariance。详见[当前判决与停止树](../notes/p275-observable-identifiability-gate-20260901.md)。
 
+该 conditional design 已被一次冻结的 2M paired N65 primitive-C3 gate 消费：
+pure H4 的 nominal `p=9.37e-18`，H8 alias 的 `p=.292`。按两候选 signed-real
+合同停止 H4 子模型且不补样；因为该 observer 尚未映射到 original square-site
+`U`，结果不完成 #275，也不授权第三角度、混合模型或新随机块。
+
 **Stop rule：** 若保留全部物理允许振幅后两个候选张成同一子空间，登记
 `UNIDENTIFIABLE_WITH_CURRENT_ASSETS`，把该候选对降为 P2；只允许理论指出的一个
 缺失输入。若设计满秩，只做一次冻结评分并降级失败模型；不得新增第三模型、
@@ -53,10 +58,10 @@ selected contact-stage cells 对共同 thermal gauge 一般会改变，不能直
 同一依赖块上的 finite original-`U` secondary；N25/N65 只给描述性收缩，不给
 little-o、指数或独立 evidence vote。
 
-N145 200M 合同/producer 是 P0/P1 重置后出现的分支资产。它依赖 reveal 后的两点
-幂，scorer 还未强制样本数、seed、shards 与 frozen decision，且输出测的是 full-J
-而非直接测 contact-subtracted remainder。该线不得 top-up、不得据此改 priority；
-任何已落盘结果先隔离为 P2 audit asset。
+N145 200M 已在 P0/P1 重置后完成，冻结 95% 区间
+`[-0.00091127,-0.00047746]` 跨过边界 `-0.0004931`，正式 verdict 是
+`N145_FULL_T_UNRESOLVED`，无 top-up。其 fixed-power 比较和 gauge-horizontal
+两点 fingerprint 均为 P2/post-hoc audit assets，不据此改 priority 或继续尺寸拟合。
 
 **Stop rule：** #537 只接受 contractible-collar quotient、bounded normalized
 pivotal domination、near-critical uniform transport 三项的证明或物理反例。任一

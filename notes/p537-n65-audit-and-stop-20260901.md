@@ -89,10 +89,19 @@ carrier 不饱和 full response。由两个尺寸计算的 power 1.281 只是描
 
 - `bab37f21` 的 `N^-3`、`N^-29/8`、commutator/triangular/CFT 解释来自同一
   N25/N65 dependency block，统一列 post-hoc P2 hypothesis。
-- N145 合同与 producer 在 #537 降为 P1、#275 升为 P0 后出现；合同直接输出 full-J，
-  并不直接测 contact-subtracted remainder，scorer 也未强制 frozen samples/seed/
-  shards/decision。任何已运行 raw/result 只作 parked P2 audit asset，不 top-up、不
-  改 priority、不用于再拟合指数。
+- N145 合同与 producer 在 #537 降为 P1、#275 升为 P0 后出现。现已按 200M/16
+  shards 完成：`J145=-0.00069436±0.00011066`，95% 区间跨过冻结边界，正式
+  verdict 为 `N145_FULL_T_UNRESOLVED`，无 top-up。其 fixed-power 比较及随后
+  gauge-horizontal sidecar 的 `q_T=2.50090±0.12363` 只作 parked P2 两点
+  fingerprint；不改 priority、不宣布渐近律。
 - #537 只保留 contractible-collar quotient、bounded normalized pivotal 与
   near-critical uniform transport 三项证明或反例。任一 physical counterexample
   退休 `J_rem~N^-5/4` 路线；三项全闭合并推出 `T_N=o(M_t/A_N)` 才能关闭 #537。
+
+## 6. 收口时保留的复现缺口
+
+N65 四个 raw shards 未提交，只在 manifest 中保存 hashes；fresh clone 需要按冻结
+counter 重跑才能全复核。contact/full-T scorers 尚未把 baseline hash、恰好四个
+shards 与完整 catalog 全部写成硬失败条件；full-T 的 C4 4,140/16,560 项审计也尚无
+独立 committed audit artifact。这些是后续工程 QA，不改变当前 stop rule，也不
+授权再采样。

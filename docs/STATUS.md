@@ -27,6 +27,12 @@ pooled moving-root `U` 也不能因相同 spin 标签而混称同一 observable�
 实际物理候选映射到同一 normalizer 下至少两个 raw 坐标，并用已有 covariance
 做一次冻结 profile-rank 判决；若允许自由度使列空间相同，就登记不可识别并降级。
 
+随后冻结的 2M paired N65 primitive-C3 读数在 signed-real 两候选合同内拒绝
+pure H4（nominal `chi2=73.64/1, p=9.37e-18`），未拒绝 H8 alias
+（`chi2=1.112/1, p=.292`）；100 个 leave-one-batch 判决同向。这个 finite observer
+子门已停止、无 top-up。它没有测试混合谐波或任意复增益，也没有把 original
+square-site `U` 映射到 H8，因此不完成 #275。
+
 ## 当前机制取舍：有限传递已闭合，raw 临界空间尾绝对可和
 
 执行分支 [2ba8863f](https://github.com/LightChainr/Matching-One/blob/2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb/notes/regular-pair-interaction-result.md) 已完成 canonical `Kreg=K2+K0`：所有有限网络的直接 Q1 响应为零，而固定 N25 的 `∂logQ∂epsilon U=-0.04503611398` 严格非零。旧 pure-K2 的一阶传递和固定四路径的13/8也已完成，不再等待“首次局部传入原U”。该数值依赖指定补全，不能称 completion-independent 或连续场确认。
@@ -53,7 +59,7 @@ Draft [PR533](https://github.com/LightChainr/Matching-One/pull/533) 的 `5aa929a
 
 [本分支的 physical one-defect gate](../notes/p537-one-defect-diagonal-edge-20260901.md)补上旧 fibres 缺失的构造性信息。第一条 axis N25 literal `z` flip 保存共同 `x+y+z` map 与单一背景，并令 rank `0→1`、Bell `9240712→6848576`、`g16 4→0`；完整总体先冻结 root/counterterm 后，source midpoint 为 `-1.0888815582478189e-11`，合计 `-8.298623728474635e-12`。第二条固定构型把 row-major `x=0,y=6,z=2` 的三点 NN 距离全部固定为 2，仍有 rank `0→1`、Bell `01203010→00102000`、`g16 8→0`、joint terminal incidence `2→1`；C4 pooled source midpoint 为 `-1.0121115955209059e-10`，full 为 `-9.586976893140449e-11`。两条的 beta-free source part 与 full weight 都有严格非零有理证书。它们说明 metric 非邻接仍可经同一 global carrier 接触；`d_NN≤1/≥2` 不能定义 contact/separated。总体资产与 literal witnesses 共同触发停止规则：blanket full-graph two-independent-defect / 自动 six-arm 路线已经否定，不再枚举完整 graph。
 
-这些都是有限 N25 结论；df4a64f6 的 mask 0 空集只属于固定 `x=West(z)` 的 alternating selected sector。随后 frozen N65 20M block 在 canonical selected-carrier 分账中复现 `[-,-;-,+]` 与严格负 `Delta`；[完整审计](../results/p537-contact-stage-n65/REPORT.md)保留 6×6 covariance、positive exposure 和 selected total。它拒绝该分账内的 scalar/separable law，但 selected cells 在共同 thermal gauge 下通常移动，`theta=-1` 也只是符号象限恒等，不能升级为坐标无关算符或六票独立证据。同块 post-hoc [full-T secondary](../results/p537-full-t-transport/REPORT.md)通过 C4/kernel/归一化审计，给 `J65=-0.00162251±0.00018553`、`J65/J25=0.29396±0.03361` 的有限 original-`U` 收缩；它没有新独立 block，两点 power 仅为描述。真正的 separated residual 至少要排除共同 carrier incidence，并证明 row/column changes 位于不交 annuli。#537 后续只保留 remainder transport 的 proof/counterexample；两点指数、CFT 标签和 N145 外推均不改其 P1 生命周期。#539只保留P2复现支持；当前P0随机生产和云任务为空。
+这些都是有限 N25 结论；df4a64f6 的 mask 0 空集只属于固定 `x=West(z)` 的 alternating selected sector。随后 frozen N65 20M block 在 canonical selected-carrier 分账中复现 `[-,-;-,+]` 与严格负 `Delta`；[完整审计](../results/p537-contact-stage-n65/REPORT.md)保留 6×6 covariance 与 positive exposure，selected total 是同一依赖块的派生诊断。它拒绝该分账内的 scalar/separable law，但 selected cells 在共同 thermal gauge 下通常移动，`theta=-1` 也只是符号象限恒等，不能升级为坐标无关算符或六票独立证据。同块 post-hoc [full-T secondary](../results/p537-full-t-transport/REPORT.md)给 `J65=-0.00162251±0.00018553`、`J65/J25=0.29396±0.03361` 的有限 original-`U` 收缩；它没有新独立 block，两点 power 仅为描述。最新 N145 200M 的冻结 full-T 区间跨过决策边界，结论是 `UNRESOLVED`、无 top-up；fixed-power 比较与 horizontalized remainder 仍只作 P2 两点 fingerprint。#537 后续只保留 remainder transport 的 proof/counterexample；两点指数、CFT 标签和 N145 外推均不改其 P1 生命周期。#539只保留P2复现支持；当前P0随机生产和云任务为空。
 
 [固定m审查的新增结论](../notes/p337-fixed-m-relative-bound.md#7-2026-09-01实际组件气体的进一步取舍)则排除了裸组件气体在h=1使用标准非负KP判据的路线；任意非负控制函数都不能统一成立。rank2投影精确固定唯一绕行组件颜色，但实际两相内外partition比仍未控制，固定m原U定理没有被宣布完成。
 

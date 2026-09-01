@@ -1,6 +1,7 @@
 # Paired Gaussian real-C3 phase gate
 
-Status: `H8_SELECTED_H4_STOP` at the frozen sample count; no top-up.
+Status: frozen label `H8_SELECTED_H4_STOP`; statistically, pure H4 is rejected
+and H8 is not rejected within the signed-real two-candidate model.  No top-up.
 
 The production used two equal-area Gaussian quotients,
 
@@ -24,8 +25,8 @@ H4: chi2 = 73.6412 / 1 df, p = 9.36904e-18, signed gain = +0.76842
 H8: chi2 =  1.1122 / 1 df, p = 0.291603,   signed gain = +0.73660
 ```
 
-At the frozen `alpha=0.01`, H4 fails and H8 survives, so the preregistered
-decision is
+At the frozen `alpha=0.01`, nominal Gaussian/CLT `chi2_1` inference rejects H4
+and does not reject H8, so the frozen programmatic decision is
 
 ```text
 H8_SELECTED_H4_STOP
@@ -46,16 +47,26 @@ Modulo the sign allowed by the real-gain contract, its angular residual is
 
 ## Scientific meaning
 
-This is a positive sector split, not a reversal of the ordinary global-channel
+This is a finite two-model sector split, not a reversal of the ordinary global-channel
 H4 evidence.  The phase-calibrated primitive real-C3 observer selects its H8
 alias under a physical equal-modulus rotation, while the quotient-prism/global
 `A_top` channel can still select H4.  Consequently a real-C3 response must not
 be used as another vote for the field already identified in the global
 channel: the observer projection changes the surviving harmonic sector.
 
-The result identifies the frozen finite signed-real transport law.  It does
-not identify a continuum primary, prove an OPE coupling, or apply to E_top,
+The result rejects pure-H4 signed-real transport and retains H8 as the surviving
+candidate in this frozen comparison.  It does not compare mixtures, other
+harmonics, arbitrary complex gains or additive contamination.  It does not
+identify a continuum primary, prove an OPE coupling, or apply to E_top,
 rho-child characters, or original square-site U without an explicit map.
+
+All 100 leave-one-batch fits retain the same decision (H4 nominal p range
+`6.5e-19` to `3.25e-17`; H8 `0.154` to `0.415`).  The committed scorer replays
+`RESULT.json` byte-for-byte.  Git ancestry places the contract commit before
+the result commit, but no separate production-start receipt was retained.  The
+current scorer does not itself enforce the metadata sample/seed fields; this
+closure audited the committed 100 contiguous equal-size batches and metadata
+separately.
 
 Input/output hashes:
 

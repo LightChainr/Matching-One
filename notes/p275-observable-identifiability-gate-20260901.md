@@ -33,6 +33,20 @@ moving-root quotient 中，哪一项在两个物理几何间共享，哪一项�
 结果出来后不得增加第三种振幅合同挽救失败。有限 character 非零、另一个 source、
 另一个 minor 或两点幂律都不算 P0 完成。
 
+## 已消费的 finite C3 子门
+
+冻结的 2M paired N65 Gaussian gate 在指定 primitive real-C3 observer 与
+signed-real gain 两候选合同内得到 pure H4 nominal `p=9.37e-18`、H8 alias
+`p=.292`；100 次 leave-one-batch 均保留同一程序性判决。因此停止 pure-H4
+子模型且不补样。这里的 p 值使用同一 100 batches 估计 covariance 后的
+Gaussian/CLT `chi2_1` 参考，属于 nominal inference。Git ancestry 固定合同早于
+结果提交，但未保存 production start receipt；当前 scorer 也未自动读取 metadata
+强制 2M/100 batches/seed，所列字段由本次逐项审计确认。这些边界一并保留。
+
+该结果没有比较 H4/H8 混合、其他 harmonics、任意复增益或 additive contamination，
+也没有 original square-site `U` 的 observer/normalizer map。故安全表述是“拒绝
+pure H4、未拒绝 H8 under the frozen finite contract”，不是“H8 场已识别”。
+
 ## #537 的交接边界
 
 N65 的 frozen contact-stage 四符号与 `Delta<0` 是一次真实前瞻结果，但只对

@@ -30,9 +30,10 @@ changes sign only at topological completion.  A scalar contact loading or a
 separable `contact x birth-stage` law cannot produce this rank-two tensor.
 
 This is a rejection of scalar/separable structure for that allocation.  It is
-not yet a coordinate-invariant operator statement: selected cells generally
-move under a common thermal gauge change even though their complete sum does
-not.  Also, `theta=-1` is forced by the open sign cone `[-,-,-,+]`; its zero
+not yet a coordinate-invariant operator statement: selected cells and their
+six-cell selected total generally move under a common thermal gauge change;
+only the full-T quotient after adding the complementary allocation is
+invariant.  Also, `theta=-1` is forced by the open sign cone `[-,-,-,+]`; its zero
 jackknife SE is not an infinite-precision effect size.
 
 The run used the independent 100-batch P45 N65 baseline, four counter-keyed
