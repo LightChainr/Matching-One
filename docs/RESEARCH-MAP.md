@@ -4,6 +4,8 @@
 
 This is a navigation layer, not a permission system. `STATUS` owns claim language; `ROADMAP` owns information-gain priorities; `GOVERNANCE` owns the three hard constraints.
 
+**Visibility rule:** this compact track map is not a complete inventory of scientific work. Read [`RESEARCH-ATLAS.md`](RESEARCH-ATLAS.md) before producing a project overview or inferring maturity from `main`: it explicitly indexes branch-only/open-PR science, negative results, semantic corrections, estimator/reachability work, mature exact side programs, and other substantive results that are easy to miss from the dominant narrative. Integration state and scientific maturity are separate axes.
+
 ## Scientific stack
 
 ```text
