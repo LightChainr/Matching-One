@@ -6,6 +6,9 @@ from fractions import Fraction as F
 from pathlib import Path
 import landing_minor as lm
 
+def popcount(value):
+    return value.bit_count() if hasattr(value, "bit_count") else bin(value).count("1")
+
 def trim(a):
     a=list(a)
     while len(a)>1 and a[-1]==0:a.pop()
@@ -57,13 +60,13 @@ def bernstein(layer,n):
 def build():
     t=lm.Torus(4);n=16;src=[t.source(m) for m in range(1<<n)];rank=[t.rank(m) for m in range(1<<n)]
     sl=[F(0)]*(n+1)
-    for m,a in enumerate(src):sl[m.bit_count()]+=a
+    for m,a in enumerate(src):sl[popcount(m)]+=a
     mean=bernstein(sl,n);trans=((0,1),(1,2));hl={q:[F(0)]*n for q in trans};hal={q:[F(0)]*n for q in trans}
     for m in range(1<<n):
         if m&1:continue
         q=rank[m],rank[m|1];h=t.landing(m,1)[0]
         if q not in hl or not h:continue
-        k=m.bit_count();hl[q][k]+=h;hal[q][k]+=h*(src[m]+src[m|1])/2
+        k=popcount(m);hl[q][k]+=h;hal[q][k]+=h*(src[m]+src[m|1])/2
     matrix={}
     for q in trans:
         H=bernstein(hl[q],n-1);HK=bernstein([F(2*k+1,2)*hl[q][k] for k in range(n)],n-1)
