@@ -239,6 +239,13 @@ Carlo.  The genuinely new continuation would be one of:
 3. connect the exact root coefficients in (3) to the finite-coupling
    polynomial already available, without fitting them.
 
+The first continuation has now exposed a second scaling variable.  The
+exact [two-row capillary subfamily](closed-source-capillary-window.md)
+has generating function
+`[(1+m^-1)^L+(1-m^-1)^L]/2`, so `L/m=sqrt(N/m^2)` controls winding
+roughness.  The bulk root theorem remains valid, while the fixed-L U
+amplitude requires capillary resummation whenever `L/m` does not vanish.
+
 The theorem does not identify a continuum H4/Jordan field and does not
 settle fixed m.  It does identify the correct mesoscopic objects, the
 sharp full-purity gate, the first three root coefficients and the first
@@ -261,3 +268,6 @@ Detailed proofs are split into the
 [rank-zero gas](closed-source-mesoscopic-black-gas.md),
 [rank-two/full phase](closed-source-mesoscopic-full-phase.md), and
 [root chart and power gates](closed-source-mesoscopic-root-chart.md).
+The separate [capillary window](closed-source-capillary-window.md) explains
+why the root limit and the fixed-shell U amplitude have different
+uniformity gates.
