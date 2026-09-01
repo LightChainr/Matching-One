@@ -55,6 +55,31 @@ computed with the existing exact scorer.  Axis and tilted laws were scored
 separately and combined only in the final P4 Schur matrix.  The absent source
 column was retained with its Schur term.
 
+## Stage-selective gate
+
+The four matrix entries are approximately
+
+```text
+                           source absent       source present
+first birth  (0 -> 1)      +2.7100450e-7       +1.6455142e-7
+second birth (1 -> 2)      -1.6978155e-7       -3.8139820e-9
+```
+
+Thus source presence retains `60.7191%` of the first-birth response but only
+`2.24641%` of the second-birth response, a factor `27.0294` difference.  The
+amplitude-free cross-ratio is
+
+```text
+(L_0,absent L_1,present)/(L_0,present L_1,absent)
+= 0.0369967... != 1.
+```
+
+All three ratio intervals are computed from the committed rational cell
+enclosures.  The response is therefore not merely “rank two”: source presence
+acts as a stage-selective gate that almost cancels the second-birth channel
+while leaving most of the first-birth channel.  These are response-amplitude
+ratios, not event probabilities.
+
 ## Interpretation boundary
 
 This is an exact rank-two certificate for the frozen N25 radius-one collar.
@@ -87,4 +112,8 @@ python3 experiments/p537-siteflip-landing-20260901/score_siteflip_schur.py \
   --baseline-root experiments/p537-landing-matrix-preflight-20260901/baseline-root.json \
   --a-raw-denominator 16 --z-orbit-multiplicity 4 --first-nonzero-only \
   --output results/p537-finite-collar/result.json
+
+python3 experiments/p537-finite-collar-20260901/interpret_collar_matrix.py \
+  --score results/p537-finite-collar/result.json \
+  --output results/p537-finite-collar/channel-contrast.json
 ```
