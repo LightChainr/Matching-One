@@ -239,8 +239,9 @@ def main() -> None:
         for row in csv.DictReader((line for line in handle if not line.startswith("#")), delimiter="\t"):
             kernel[int(row.get("key", row.get("packed_key")))] = int(row["g16"])
     if first_bell_record is not None:
-        first_bell_record["g16_0"] = kernel[first_bell_record["bell0"]]
-        first_bell_record["g16_1"] = kernel[first_bell_record["bell1"]]
+        # The canonical kernel TSV is sparse; omitted Bell keys have g16=0.
+        first_bell_record["g16_0"] = kernel.get(first_bell_record["bell0"], 0)
+        first_bell_record["g16_1"] = kernel.get(first_bell_record["bell1"], 0)
 
     transitions = sorted({key[0] for key in matrix})
     components = sorted({key[1] for key in matrix})
