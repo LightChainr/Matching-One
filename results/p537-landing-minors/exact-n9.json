@@ -1,0 +1,231 @@
+{
+  "schema": "matching-one/p537-ordinary-landing-minor/v1",
+  "geometry": {
+    "period": [
+      3,
+      0
+    ],
+    "N": 9
+  },
+  "landing_definition": {
+    "occupied_geometry": "two-site branch-free path closed by the flip into one primitive length-three cycle",
+    "port_condition": "alternating occupied/vacant NESW incident ports",
+    "angular_sum": "four C4 rotations with spin-4 character +1",
+    "source": "canonical Kreg pair kernel g16/16"
+  },
+  "orbit": [
+    {
+      "mask": 3,
+      "site": 3,
+      "pair": [
+        2,
+        6
+      ],
+      "neighbor_occupancy_NESW": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "rank_before_after": [
+        0,
+        1
+      ],
+      "kernel_before_after": [
+        "0",
+        "1/4"
+      ]
+    },
+    {
+      "mask": 5,
+      "site": 5,
+      "pair": [
+        3,
+        8
+      ],
+      "neighbor_occupancy_NESW": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "rank_before_after": [
+        0,
+        1
+      ],
+      "kernel_before_after": [
+        "0",
+        "1/4"
+      ]
+    },
+    {
+      "mask": 9,
+      "site": 1,
+      "pair": [
+        5,
+        7
+      ],
+      "neighbor_occupancy_NESW": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "rank_before_after": [
+        0,
+        1
+      ],
+      "kernel_before_after": [
+        "0",
+        "1/4"
+      ]
+    },
+    {
+      "mask": 33,
+      "site": 2,
+      "pair": [
+        1,
+        4
+      ],
+      "neighbor_occupancy_NESW": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "rank_before_after": [
+        0,
+        1
+      ],
+      "kernel_before_after": [
+        "0",
+        "1/4"
+      ]
+    }
+  ],
+  "matrix_rows": [
+    "q",
+    "E=q^2"
+  ],
+  "matrix_columns": [
+    "kernel_reconnection",
+    "readout_pivotal"
+  ],
+  "matrix_polynomials_ascending": [
+    [
+      [
+        "0",
+        "0",
+        "1/2",
+        "-3",
+        "15/2",
+        "-16",
+        "87/2",
+        "-93",
+        "241/2",
+        "-72",
+        "-90",
+        "376",
+        "-654",
+        "690",
+        "-458",
+        "186",
+        "-42",
+        "4"
+      ],
+      [
+        "0",
+        "0",
+        "1/2",
+        "-3",
+        "11/2",
+        "0",
+        "-5/2",
+        "7",
+        "-647/2",
+        "1740",
+        "-4644",
+        "7716",
+        "-8634",
+        "6674",
+        "-3538",
+        "1234",
+        "-256",
+        "24"
+      ]
+    ],
+    [
+      [
+        "0",
+        "0",
+        "-1/2",
+        "3",
+        "-15/2",
+        "16",
+        "-87/2",
+        "75",
+        "-25/2",
+        "-162",
+        "216",
+        "0",
+        "-216",
+        "162",
+        "12",
+        "-72",
+        "36",
+        "-6"
+      ],
+      [
+        "0",
+        "0",
+        "-1/2",
+        "3",
+        "-11/2",
+        "0",
+        "5/2",
+        "-7",
+        "647/2",
+        "-1740",
+        "4644",
+        "-7716",
+        "8634",
+        "-6674",
+        "3538",
+        "-1234",
+        "256",
+        "-24"
+      ]
+    ]
+  ],
+  "root_polynomial_ascending": [
+    "-1",
+    "0",
+    "0",
+    "6",
+    "0",
+    "0",
+    "0",
+    "-18",
+    "18",
+    "-4"
+  ],
+  "root_polynomial_display": "-4*p^9+18*p^8-18*p^7+6*p^3-1",
+  "root_bracket": [
+    "1173/2000",
+    "2933/5000"
+  ],
+  "root_decimal": 0.5865114551126757,
+  "thermal_ratio_R_decimal": 0.021325579095007968,
+  "canonical_determinant_factorization": "p^9*(1-p)^12*(p^4+9*p^3-18*p^2+9)*(48*p^9-224*p^8+404*p^7-332*p^6+96*p^5+16*p^4-4*p^3-4*p^2+1)",
+  "determinant_at_half": "1001/536870912",
+  "determinant_at_root_decimal": 7.408904314645792e-07,
+  "gcd_root_and_determinant": [
+    "1"
+  ],
+  "schur_projection": {
+    "row_operation": "E -> E-R*q, R=(d_p mean E)/(d_p mean q) at the finite root",
+    "determinant_invariant": true
+  },
+  "decision": "nonzero_exact_root_conditioned_2x2_minor",
+  "scope": "finite physical counterexample to the rank-one ordinary-landing lemma; not an asymptotic amplitude, arm exponent, or field identification"
+}
