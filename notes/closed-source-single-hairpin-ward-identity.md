@@ -1,40 +1,54 @@
-# A single hairpin is a positive Dirichlet boundary current
+# A single hairpin has positive flux but vanishing physical coefficient
 
-## Result
+## Corrected result
 
-The natural telescoping Ward identity does **not** imply
-`kappa_hp(infinity)=0`.  Complement pairing turns the two orientations
-of a rooted single hairpin into a discrete divergence.  On the full
-height line that divergence vanishes, but the noncrossing relative-gap
-transfer lives on the Dirichlet half-line `d=1,2,...`.  The missing
-`d=0` state leaves a positive boundary current.
+Complement pairing turns the two orientations of a rooted single
+hairpin into a discrete divergence.  On the full height line that
+divergence vanishes.  On the noncrossing Dirichlet half-line it leaves
+a positive boundary current.
 
-After factoring the microscopic positive hairpin fugacity and its
-longitudinal embedding count, the normalized coefficient is
+That current is **not** the coefficient `kappa_hp` defined in
+`1163bebe`.  The stripped physical kernel contains the longitudinal
+placement average `(1/L) sum_j`.  In capillary time `s=j/m`,
+
+\[
+ {1\over L}\sum_j\longrightarrow {1\over c}\int ds,
+ \qquad c={L\over m}.                              \tag{1}
+\]
+
+Let
+
+\[
+ \rho(c)=1-\left({I_1(2c)\over I_0(2c)}\right)^2.
+\]
+
+The unaveraged endpoint-relative Ward flux is
+
+\[
+ \eta_{flux}(c)=4{I_2(2c)\over I_1(2c)}>0.         \tag{2}
+\]
+
+After the physical placement average, and then the bulk normalization
+by `I_0(2c)^2` required in `1163bebe`, the exact coefficient is
 
 \[
  \boxed{\kappa_{hp}(c)=
- 2\,{I_1(2c)-I_3(2c)\over I_0(2c)-I_2(2c)}
- =4\,{I_2(2c)\over I_1(2c)}>0,}                   \tag{1}
+ {4\over c}{I_2(2c)\over I_1(2c)}
+ \left[1-\left({I_1(2c)\over I_0(2c)}\right)^2\right]>0.}         \tag{3}
 \]
 
-and therefore
+Consequently
 
 \[
-                         \boxed{\kappa_{hp}(\infty)=4.}            \tag{2}
+ \boxed{\kappa_{hp}(\infty)=0,\qquad
+        c^2\kappa_{hp}(c)\longrightarrow2.}         \tag{4}
 \]
 
-Thus a single endpoint-sensitive hairpin is not killed by signed
-complement pairing.  Its sign is positive in the finite-gap transfer.
-The zero Ward identity survives only after tracing over all separations,
-or for a hairpin packet that never sees the noncrossing boundary.
-
-This resolves one ambiguity left by
-[`closed-source-axis-growing-capillary-window.md`](closed-source-axis-growing-capillary-window.md):
-at `alpha=L^2/m^3=O(1)`, the width-one hairpin can carry a genuine
-first-order coefficient.  Equation (2) does not supply its microscopic
-fugacity; that finite digital-packet count remains a separate local
-input.
+Thus the positive Dirichlet flux is compatible with the physical
+single-hairpin null.  The `alpha=c beta` crossover term proposed in
+`1163bebe` receives no nonzero limiting constant from this packet.
+The value `4` belongs to the unaveraged endpoint-relative flux, not to
+the repository's bulk-normalized `kappa_hp`.
 
 ## 1. Relative-gap Dirichlet transfer
 
@@ -47,128 +61,156 @@ Let `S_+|d>=|d+1>` on `ell^2(N)` and let
 The directed relative-gap generator is
 
 \[
- H_D=S_++S_- .                                     \tag{3}
+ H_D=S_++S_- .                                     \tag{5}
 \]
 
 Its heat kernel is the image kernel
 
 \[
  K_c(d,e)=\langle d|e^{cH_D}|e\rangle
- =I_{d-e}(2c)-I_{d+e}(2c).                         \tag{4}
+ =I_{d-e}(2c)-I_{d+e}(2c).                         \tag{6}
 \]
 
 The subtraction is exactly the noncrossing Dirichlet condition at
 `d=0`.  The centre-of-mass bridge factor is common to the unperturbed
-and hairpin terms and cancels from their ratio, so (4) is the minimal
-finite-gap matrix required here.
+and hairpin terms and cancels from endpoint-relative ratios.
 
-## 2. Complement pairing is a commutator
+## 2. Complement pairing is a boundary commutator
 
-Erase a rooted horizontal reversal from the lower boundary.  Sliding
-its attachment one directed step to the right gives the corresponding
-upper/complement packet with the opposite signed occupation mark.  In
-relative-gap coordinates the two attachments are represented by the
-antisymmetric current
+Erase a rooted horizontal reversal from one boundary.  Sliding its
+attachment by one directed step gives the complement packet with the
+opposite signed occupation mark.  In relative-gap coordinates their
+current is
 
 \[
-                         B=S_+-S_- .                \tag{5}
+                         B=S_+-S_- .                \tag{7}
 \]
 
-Their signed difference is the discrete divergence
+The signed difference is the discrete divergence
 
 \[
-                         V_{hp}=[H_D,B].            \tag{6}
+                         V_{hp}=[H_D,B].            \tag{8}
 \]
 
-On the full line the two shifts commute and (6) is zero.  On the
-Dirichlet half-line,
+On the full line the shifts commute.  On the Dirichlet half-line,
 
 \[
  S_-S_+=1,\qquad S_+S_-=1-P_1,qquad
  P_1=|1\rangle\langle1|,
 \]
 
-so the exact Ward identity is instead
+and hence
 
 \[
-                         \boxed{V_{hp}=2P_1.}       \tag{7}
+                         \boxed{V_{hp}=2P_1.}       \tag{9}
 \]
 
-This is the minimal obstruction to `kappa_hp=0`.  It is not a failure
-of complement pairing: complement pairing is what makes the bulk a
-commutator.  Noncrossing converts that commutator into boundary flux.
+Complement pairing therefore kills the bulk hairpin but localizes a
+strictly positive current at the noncrossing wall.  The two-cloud root
+is needed: at `h=1+m^-2`, black exterior and white interior packet
+weights are equal, so no separate area-tilt operator accompanies (9).
 
-The two-cloud root is needed here.  At `h=1+m^-2`, black exterior and
-white interior packet weights are equal after complement, so no area
-tilt is left in (5).  Without that equality an additional diagonal
-collar operator would accompany (7), and one could not call its
-coefficient the pure single-hairpin response.
+## 3. Ward telescoping before placement normalization
 
-## 3. Telescoping leaves a positive endpoint term
-
-Insert (7) at every possible longitudinal time.  Duhamel's formula and
-(6) give
+Insert (9) over capillary time.  Duhamel's formula gives
 
 \[
  \begin{aligned}
- \mathcal H(c)
+ \mathcal H_{raw}(c)
  &=\int_0^c\langle1|e^{(c-s)H_D}V_{hp}e^{sH_D}|1\rangle ds\\
  &=\langle1|e^{cH_D}B-Be^{cH_D}|1\rangle\\
- &=2K_c(1,2).                                      \tag{8}
+ &=2K_c(1,2).                                      \tag{10}
  \end{aligned}
 \]
 
-Equivalently, using (7),
+Equivalently,
 
 \[
- \mathcal H(c)=2\int_0^cK_{c-s}(1,1)K_s(1,1)ds.   \tag{9}
+ \mathcal H_{raw}(c)=
+ 2\int_0^cK_{c-s}(1,1)K_s(1,1)ds,                 \tag{11}
 \]
 
-Both forms make the sign strict: every term in (9) is positive.  Divide
-by the unperturbed endpoint kernel `K_c(1,1)` to obtain
+which makes positivity explicit.  Relative to the endpoint kernel,
 
 \[
- \kappa_{hp}(c)=2{K_c(1,2)\over K_c(1,1)}.         \tag{10}
+ \eta_{flux}(c)=2{K_c(1,2)\over K_c(1,1)}.         \tag{12}
 \]
 
-Substituting (4) and using
+Substitute (6) and use
 
 \[
  I_0(2c)-I_2(2c)={I_1(2c)\over c},\qquad
  I_1(2c)-I_3(2c)={2I_2(2c)\over c}
 \]
 
-proves (1).  Since `I_2(2c)/I_1(2c)->1`, equation (2) follows.
+to obtain (2).  This is the step at which an unnormalized calculation
+finds the nonzero limit `4`.
 
-## 4. What the zero trace does and does not say
+## 4. Physical placement and bulk normalization
 
-For a finite cutoff `1<=d<=D` with Dirichlet boundaries at both ends,
+The repository definition is
 
 \[
-                         \operatorname {tr}[H_D,B]=0.              \tag{11}
+ \widehat H_c=\beta^{-1}H_c^{phys},\qquad
+ \beta={L\over m^2},
 \]
 
-The lower current `+2P_1` is canceled by the upper cutoff current.
-Sending `D` to infinity before taking an endpoint matrix element removes
-the latter; it does not cancel (7).  Therefore summing the hairpin over
-all stripe widths can telescope to zero while the width-one thermal
-response remains positive.  The original global-U mechanism reads the
-endpoint, not the unweighted trace, so (11) is not the relevant null.
+with the rooted packet averaged over `L` longitudinal positions.  One
+column is capillary time `1/m`, so (1) changes (12) to
 
-Similarly, a one-boundary overhang far from the other interface is a
-translation-invariant Toeplitz renormalization and carries no `P_1`
-term.  Equation (2) concerns only the gap-sensitive hairpin whose erased
-packet reaches the width-one Dirichlet wall.
+\[
+ {\langle1|\widehat H_c|1\rangle\over K_c(1,1)}
+ ={1\over c}\eta_{flux}(c).                       \tag{13}
+\]
+
+The endpoint determinant satisfies
+
+\[
+ {Z_{endpoint}\over I_0(2c)^2}=\rho(c).
+\]
+
+Therefore
+
+\[
+ I_0(2c)^{-2}\langle1|\widehat H_c|1\rangle
+ =\rho(c){\eta_{flux}(c)\over c},                 \tag{14}
+\]
+
+which is exactly (3).  Since
+
+\[
+ \rho(c)={1\over2c}+O(c^{-2}),\qquad
+ {I_2(2c)\over I_1(2c)}=1+O(c^{-1}),
+\]
+
+equation (4) follows.  Restoring the physical fugacity, the actual
+endpoint-relative perturbation is
+
+\[
+ \beta{\eta_{flux}(c)\over c}
+ ={4\beta\over c}\{1+O(c^{-1})\},                 \tag{15}
+\]
+
+not `4 beta`.
+
+## 5. What the trace Ward identity says
+
+For a finite separation cutoff with Dirichlet boundaries at both ends,
+`tr[H_D,B]=0`: the lower current `+2P_1` is canceled by the upper cutoff
+current.  Sending the upper boundary to infinity leaves the positive
+lower flux (9).  This explains why the raw endpoint current is nonzero,
+but it does not supply the physical `1/c` placement normalization.
+
+A one-boundary overhang far from the other interface is a common
+Toeplitz renormalization and carries no `P_1` term.  Equations (3)--(4)
+concern only the gap-sensitive, complement-paired, rooted single
+hairpin.
 
 ## Scientific boundary
 
-The value `4` uses the unit normalization in (6): one complement-paired
-rooted hairpin corresponds to one discrete current difference.  If the
-microscopic digital packet has fugacity `w_hp`, orientation multiplicity
-or an additional collar state, its contribution is `4w_hp` times that
-multiplicity, or the analogous matrix element in the enlarged finite-gap
-kernel.  Signed pairing alone fixes the positive Dirichlet factor; it
-does not determine those microscopic prefactors.
-
-No claim is made about a continuum field, fixed-`m` limit, or the total
-fixed-`alpha` correction after other endpoint packets are added.
+Any fixed orientation multiplicity multiplies (3) but still leaves
+`kappa_hp(infinity)=0`.  An enlarged collar state can evade this result
+only if its stripped placement sum grows faster than the single-current
+Duhamel term.  This note does not determine such a multi-state packet,
+the total fixed-alpha correction, a continuum field, or a fixed-m
+limit.
