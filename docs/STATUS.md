@@ -2,6 +2,17 @@
 
 **整理日期：2026-09-01，已读到执行 `410015f5` 与 Draft PR532 最新评论。** 两个独立决策实验、齐次N50、canonical pair 的有限空间块和完整联合原U响应均已完成并停线；首次Xi、jump/reweight分解和两套固定源的渐近反号也不再作为待办。[三份意见的核对与实际推进](../notes/reviews-response-20260831.md)记录本轮增量；[下一步](NEXT-TARGETS.md)只保留尚未回答的问题。本任务新增结果交付Draft #509，不合并。
 
+## 压缩后仍须保留的结论账本
+
+以下是已经完成的结论和语义控制，不是重新开放的计算任务：
+
+- P43 even-channel 纠错的精确映射是 `DeltaS_cross = -DeltaS_either`；不重拟合的纠正分数为 `0.5700315436/2`。
+- 独立 P43+P57 primary 合成拒绝 **global zero**；norm-5 冻结比较优先 H4 于 H12/H8，但 **child block alone** 仍与零相容。
+- **N145->290** full curve 已完成，并排除已冻结的三层共同标量倍率描述；它不再是 active compute。
+- 单一 **scalar width** 和其他已测试的低阶标量捷径不足以解释较高 thermal jet；不再用自由指数追加同读出拟合。
+- 有限体 **Russo** / chain-rule 的 **pivotal** 语义仍是精确控制；它本身不是新的机制证据票。
+- N=26 的冻结有限族 `Beta(5,5)` 与 `Beta(7,7)` 均已被精确枚举否定；这不外推为一般代数或连续场结论。
+
 ## 当前机制取舍：有限传递已闭合，raw 临界空间尾绝对可和
 
 执行分支 [2ba8863f](https://github.com/LightChainr/Matching-One/blob/2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb/notes/regular-pair-interaction-result.md) 已完成 canonical `Kreg=K2+K0`：所有有限网络的直接 Q1 响应为零，而固定 N25 的 `∂logQ∂epsilon U=-0.04503611398` 严格非零。旧 pure-K2 的一阶传递和固定四路径的13/8也已完成，不再等待“首次局部传入原U”。该数值依赖指定补全，不能称 completion-independent 或连续场确认。
