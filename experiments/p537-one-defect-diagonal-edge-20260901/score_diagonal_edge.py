@@ -85,6 +85,7 @@ def main() -> None:
     ap.add_argument("--kernel", type=Path, required=True)
     ap.add_argument("--schur-module", type=Path, required=True)
     ap.add_argument("--output", type=Path, required=True)
+    ap.add_argument("--require-kernel-change", action="store_true")
     args = ap.parse_args()
     if args.output.exists():
         raise FileExistsError(f"refusing to overwrite {args.output}")
@@ -109,6 +110,17 @@ def main() -> None:
     source_packets, beta = schur.source_global_packets(
         aggregate_rows, baseline, N, p, a_raw_denominator=16
     )
+    kernel = {}
+    with args.kernel.open(newline="") as handle:
+        for row in csv.DictReader((line for line in handle if not line.startswith("#")), delimiter="\t"):
+            kernel[int(row.get("key", row.get("packed_key")))] = int(row["g16"])
+
+    def accept(row: dict[str, str]) -> bool:
+        if not selected(row):
+            return False
+        if not args.require_kernel_change:
+            return True
+        return kernel.get(int(row["bell0"]), 0) != kernel.get(int(row["bell1"]), 0)
 
     def score_rows(geometry: str, component: str, by_k: dict[int, list[int]]):
         signed = [schur.Interval.of(0), schur.Interval.of(0)]
@@ -150,7 +162,7 @@ def main() -> None:
     for geometry, path in sources.items():
         with path.open(newline="") as handle:
             for row in csv.DictReader(handle):
-                if not selected(row):
+                if not accept(row):
                     continue
                 if not (row["outer_occupied_join"] == "1" and row["outer_vacant_join"] == "1"):
                     raise ValueError("rank-changing alternating edge lacks J_B=J_W=1")
@@ -198,7 +210,7 @@ def main() -> None:
                 continue
             with path.open(newline="") as handle:
                 for row in csv.DictReader(handle):
-                    if not selected(row):
+                    if not accept(row):
                         continue
                     base = (
                         geometry, f"{row['rank0']}->{row['rank1']}",
@@ -234,10 +246,6 @@ def main() -> None:
             if first_bell_record is not None else "COARSE_NONZERO_BUT_NO_BELL_CERTIFICATE"
         )
 
-    kernel = {}
-    with args.kernel.open(newline="") as handle:
-        for row in csv.DictReader((line for line in handle if not line.startswith("#")), delimiter="\t"):
-            kernel[int(row.get("key", row.get("packed_key")))] = int(row["g16"])
     if first_bell_record is not None:
         # The canonical kernel TSV is sparse; omitted Bell keys have g16=0.
         first_bell_record["g16_0"] = kernel.get(first_bell_record["bell0"], 0)
@@ -250,7 +258,12 @@ def main() -> None:
     payload = {
         "schema": "matching-one/p537-one-defect-diagonal-edge/v1",
         "status": status,
-        "definition": "alternating site flip changes both rank and canonical source Bell state; full pooled-root Schur coefficients fixed globally",
+        "definition": (
+            "alternating site flip changes rank, canonical source Bell state, and g16"
+            if args.require_kernel_change else
+            "alternating site flip changes both rank and canonical source Bell state"
+        ) + "; full pooled-root Schur coefficients fixed globally",
+        "require_kernel_change": args.require_kernel_change,
         "selected_raw_row_classes": selected_rows,
         "selected_physical_pair_fibres": selected_mass,
         "coarse_class_count": len(coarse_scores),
