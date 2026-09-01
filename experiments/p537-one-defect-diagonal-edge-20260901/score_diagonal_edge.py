@@ -181,6 +181,8 @@ def main() -> None:
     coarse_scores = []
     first_coarse = None
     matrix = defaultdict(lambda: schur.Interval.of(0))
+    matrix_by_contact = defaultdict(lambda: schur.Interval.of(0))
+    corner_sums = defaultdict(lambda: schur.Interval.of(0))
     for base in sorted(coarse_by_base):
         geometry, transition, component, contact, corner = base
         scored = score_rows(geometry, component, coarse_by_base[base])
@@ -195,6 +197,8 @@ def main() -> None:
         }
         coarse_scores.append(record)
         matrix[(transition, component)] += scored["total"]
+        matrix_by_contact[(contact, transition, component)] += scored["total"]
+        corner_sums[corner] += scored["total"]
         if first_coarse is None and record["weight"]["excludes_zero"]:
             first_coarse = (base, record)
     if first_coarse is None:
@@ -255,6 +259,19 @@ def main() -> None:
     components = sorted({key[1] for key in matrix})
     row_sums = {t: sum((matrix[(t, a)] for a in components), schur.Interval.of(0)) for t in transitions}
     column_sums = {a: sum((matrix[(t, a)] for t in transitions), schur.Interval.of(0)) for a in components}
+    contact_masks = sorted({key[0] for key in matrix_by_contact})
+    contact_sums = {
+        contact: sum(
+            (matrix_by_contact[(contact, t, a)] for t in transitions for a in components),
+            schur.Interval.of(0),
+        )
+        for contact in contact_masks
+    }
+    contact0 = contact_sums.get(0, schur.Interval.of(0))
+    contact0_decision = (
+        "RADIUS_ONE_CONTACT_ONLY_CLOSURE_REJECTED"
+        if contact0.lo > 0 or contact0.hi < 0 else "CONTACT_ZERO_RESIDUAL_UNRESOLVED"
+    )
     payload = {
         "schema": "matching-one/p537-one-defect-diagonal-edge/v1",
         "status": status,
@@ -276,6 +293,16 @@ def main() -> None:
             "S_times_1": {t: schur.interval_record(row_sums[t]) for t in transitions},
             "1T_times_S": {a: schur.interval_record(column_sums[a]) for a in components},
         },
+        "contact_decomposition": {
+            "bit_semantics": "bit 0/1: source cut contacts the two local occupied thermal arms; mask 0 is the radius-one no-contact residual",
+            "sums": {str(contact): schur.interval_record(contact_sums[contact]) for contact in contact_masks},
+            "contact0_matrix": [
+                [schur.interval_record(matrix_by_contact[(0, t, a)]) for a in components]
+                for t in transitions
+            ],
+            "decision": contact0_decision,
+        },
+        "corner_word_sums": {str(corner): schur.interval_record(value) for corner, value in sorted(corner_sums.items())},
         "global": {"root": schur.interval_record(p), "M_t": schur.interval_record(mt), "R": schur.interval_record(root_ratio)},
         "logic": "a nonzero aggregate Bell-transition class proves at least one physical diagonal edge has nonzero full Schur signed weight",
         "boundary": "existing exact N25 fibres; transition-class existence certificate, not a retained single-background mask",
