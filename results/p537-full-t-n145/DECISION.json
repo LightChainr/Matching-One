@@ -1,0 +1,38 @@
+{
+  "schema": "matching-one/p537-full-t-n145-decision/v1",
+  "status": "N145_FULL_T_UNRESOLVED",
+  "frozen_boundary_J": -0.0004931,
+  "observed": {
+    "J": -0.0006943644347937496,
+    "se": 0.00011066360758789061,
+    "ci95": [
+      -0.0009112651056660152,
+      -0.0004774637639214839
+    ],
+    "T_t": -1.1638622354253917e-06,
+    "T_t_se": 1.8549136427295774e-07
+  },
+  "frozen_rule_evaluation": {
+    "ci95_is_entirely_below_boundary": false,
+    "ci95_is_entirely_above_boundary": false,
+    "upper_endpoint_minus_boundary": 1.563623607851608e-05,
+    "boundary_distance_from_center_in_se": 1.818704804412801,
+    "sample_top_up": false
+  },
+  "secondary_fixed_power_score_not_used_for_the_frozen_decision": {
+    "N25_exact_J": -0.0055194314248394015,
+    "N25_to_N145_effective_power": {
+      "value": 1.1792950759333187,
+      "se_delta_method": 0.09066373079978059
+    },
+    "power_5_over_4": {
+      "N145_prediction_from_N25": -0.0006132101714053014,
+      "observed_minus_prediction_in_N145_se": -0.7333688550159828
+    },
+    "power_7_over_4": {
+      "N145_prediction_from_N25": -0.00025462166467773696,
+      "observed_minus_prediction_in_N145_se": -3.973778162652788
+    }
+  },
+  "interpretation": "The preregistered interval gate is narrowly unresolved and is not changed after reveal. The independent fixed-power comparison strongly disfavors N^-7/4 decay and leaves N^-5/4 compatible."
+}

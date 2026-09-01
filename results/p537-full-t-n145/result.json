@@ -1,0 +1,190 @@
+{
+  "schema": "matching-one/p537-full-t-n145/v1",
+  "status": "COMPLETED",
+  "N": 145,
+  "geometries": [
+    [
+      12,
+      1
+    ],
+    [
+      9,
+      8
+    ]
+  ],
+  "delta_cos4": "8064/4205",
+  "definition": "complete canonical b16 sum with C4 reconstruction of omitted +e1 NN column",
+  "values": {
+    "p": {
+      "value": 0.5927419914141857,
+      "se": 3.1686614628731538e-06,
+      "ci95": [
+        0.5927357808377185,
+        0.5927482019906529
+      ]
+    },
+    "T_t": {
+      "value": -1.1638622354253917e-06,
+      "se": 1.8549136427295774e-07,
+      "ci95": [
+        -1.5274253094003889e-06,
+        -8.002991614503945e-07
+      ]
+    },
+    "T_t_over_M_t": {
+      "value": -4.269671477726637e-07,
+      "se": 6.80474438585982e-08,
+      "ci95": [
+        -5.603401377355162e-07,
+        -2.9359415780981126e-07
+      ]
+    },
+    "J": {
+      "value": -0.0006943644347937496,
+      "se": 0.00011066360758789061,
+      "ci95": [
+        -0.0009112651056660152,
+        -0.0004774637639214839
+      ]
+    },
+    "M_t": {
+      "value": 2.725882404528893,
+      "se": 9.054659043959492e-05,
+      "ci95": [
+        2.7257049332116314,
+        2.7260598758461545
+      ]
+    },
+    "R": {
+      "value": 0.0008890279362095155,
+      "se": 3.0760261627457685e-05,
+      "ci95": [
+        0.0008287378234196985,
+        0.0009493180489993326
+      ]
+    },
+    "R_t": {
+      "value": 0.0001079954526930395,
+      "se": 0.00018186942419337978,
+      "ci95": [
+        -0.00024846861872598484,
+        0.0004644595241120639
+      ]
+    },
+    "jM": {
+      "value": -0.00017254769247712718,
+      "se": 9.196884815541121e-08,
+      "ci95": [
+        -0.0001727279514195118,
+        -0.00017236743353474257
+      ]
+    },
+    "jM_t": {
+      "value": -0.00010939742778276506,
+      "se": 3.851519458824151e-07,
+      "ci95": [
+        -0.0001101523255966946,
+        -0.00010864252996883552
+      ]
+    },
+    "jY": {
+      "value": -2.563490385486847e-07,
+      "se": 4.2374222472052736e-08,
+      "ci95": [
+        -3.3940251459390805e-07,
+        -1.7329556250346134e-07
+      ]
+    },
+    "jY_t": {
+      "value": -1.2797539710339396e-06,
+      "se": 1.887832748911312e-07,
+      "ci95": [
+        -1.6497691898205566e-06,
+        -9.097387522473224e-07
+      ]
+    }
+  },
+  "jackknife": {
+    "source_batches": 100,
+    "baseline_batches": 100,
+    "groups_independent": true
+  },
+  "run": {
+    "samples": 200000000,
+    "shards": 16,
+    "seed": "20260901545",
+    "proposal_p": 0.5927419914140803
+  },
+  "inputs": {
+    "baseline": {
+      "path": "results/server-20260829/P50-n145-n290-fullcurve/raw/n145_100m.hist.csv",
+      "sha256": "c685dae9bddc005224fe5dd052945482cd3b8c5bb26744dad4e44996a8318b42"
+    },
+    "tables": [
+      {
+        "path": "results/p537-full-t-n145/raw/shard-0.tsv",
+        "sha256": "93635a19f204af4263d9fbf82b0b79803a7a023a6cb9f40c182bc4a4c962a217"
+      },
+      {
+        "path": "results/p537-full-t-n145/raw/shard-1.tsv",
+        "sha256": "26d7a1cad6628bc9e95a501a986c8a82672871222716532214633dda1a93aad1"
+      },
+      {
+        "path": "results/p537-full-t-n145/raw/shard-10.tsv",
+        "sha256": "699f1be8517401fed4c397ecf06df91833e91f4f72cfec168db129245c65ea16"
+      },
+      {
+        "path": "results/p537-full-t-n145/raw/shard-11.tsv",
+        "sha256": "a8a835192527245b9cd0baf76d4f9856c34808770d7b8a30ecca56fcc6191755"
+      },
+      {
+        "path": "results/p537-full-t-n145/raw/shard-12.tsv",
+        "sha256": "9b561461efcb64394c3254c6221a1fe4df39a5bbeeeb654363ba95f94da4ed20"
+      },
+      {
+        "path": "results/p537-full-t-n145/raw/shard-13.tsv",
+        "sha256": "8b6af3652c55a8c617e74f88081bce0db2ba7e79d308bfb4d6573bdeb49d6548"
+      },
+      {
+        "path": "results/p537-full-t-n145/raw/shard-14.tsv",
+        "sha256": "18328654e1d3eea385645a5741c88df71307dcc085ba9d689f07206125062877"
+      },
+      {
+        "path": "results/p537-full-t-n145/raw/shard-15.tsv",
+        "sha256": "bd419f57d948b8e90d09c24c23c9eb0fef7069cc109e1ee6a5e8cb084e10377e"
+      },
+      {
+        "path": "results/p537-full-t-n145/raw/shard-2.tsv",
+        "sha256": "7702077c08fc0621fc508d215091d8eb9f13a511f3b90880313f9270f5433c43"
+      },
+      {
+        "path": "results/p537-full-t-n145/raw/shard-3.tsv",
+        "sha256": "d3bff73dddfd622a1c72fd3d6d3615abbd310cc4c77e401cf9d04d7218b5b645"
+      },
+      {
+        "path": "results/p537-full-t-n145/raw/shard-4.tsv",
+        "sha256": "921bafe8afb5f8d67bef67b21b655e2031c3badc8b50ceca036a7ae80ddcd7e4"
+      },
+      {
+        "path": "results/p537-full-t-n145/raw/shard-5.tsv",
+        "sha256": "a1e0f16b45723d1a74d461da02792a3f41950b4edf549c4bdeb446078bcf2049"
+      },
+      {
+        "path": "results/p537-full-t-n145/raw/shard-6.tsv",
+        "sha256": "dd0574e68ed410005e6addcd12c3a27e4f77bb29d495ef46dd0ab069af306dcc"
+      },
+      {
+        "path": "results/p537-full-t-n145/raw/shard-7.tsv",
+        "sha256": "6eb2af91e8e43123b1c036ca0a1b233b2cced56025a07b40625778707e262946"
+      },
+      {
+        "path": "results/p537-full-t-n145/raw/shard-8.tsv",
+        "sha256": "9aba4612ee99ce176eb696cb530c4c0bede3110be08e9c651dae337146672054"
+      },
+      {
+        "path": "results/p537-full-t-n145/raw/shard-9.tsv",
+        "sha256": "29a58cb601fcd2c7c6a265ae2ce96199ad46a5d2f63dd715ab1c27f6a242db2c"
+      }
+    ]
+  }
+}
