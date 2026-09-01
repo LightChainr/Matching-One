@@ -89,8 +89,16 @@ counterterm 为 `+2.5901918540035547e-12`，full Schur weight 为
 `-8.298623728474635e-12`；三项都有严格不含零的有理区间。
 
 停止规则 A 因而执行：blanket full-graph two-independent-defect / 自动 six-arm gain 路线
-被否定，完整 graph 不再枚举。该 witness 是 `arm_mask=3` 的 contact/collision edge，
-不代表 ordinary separated sector，也不证明渐近下界。后续固定分解为
-`d_NN(z,{x,y})≤1` 的 contact/collision 与 `d_NN(z,{x,y})≥2` 的 separated sector；
-下一 P0 只控制前者对 surviving leading four-arm signed functional 的贡献。separated sector
-必须另行获得不交 annuli localization，才可重新讨论 two-defect/six-arm。
+被否定，完整 graph 不再枚举。第一条 witness 是 `arm_mask=3` 的 contact/collision edge；
+第二条固定 witness 把三对 NN 距离都提高到 2，仍使 joint terminal incidence `2→1`，且
+full Schur weight 严格为负 `-9.586976893140449e-11`。因此 metric 非邻接并不等于
+separated；contact 必须按 joint incidence/typed carrier 定义。
+
+平行固定资产 `df4a64f6` 只在 N25 axis/tilted、`x=West(z)` 的 alternating radius-one
+selected sector 中汇总 740,950 条 kernel-changing fibres，总 signed mass 为
+`-4.948839916450813e-6`，并在该 sector 内得到 contact mask 0 的 0 classes / 0 fibres。
+它把 single-contact aggregate/double-contact 与 birth/completion 联合成一个严格 rank-two
+有限 signed table；这不是完整 graph、完整 `T_N` 或独立证据票。下一 P0 已收缩为
+`typed joint-incidence/contact-fusion × topological completion` 向 full original-`U` 的
+传递、抵消与尺度控制。真正的 separated sector 必须同时排除共同 carrier incidence并取得
+不交 annuli localization，才可重新讨论 two-defect/six-arm。

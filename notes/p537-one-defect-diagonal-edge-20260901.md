@@ -1,4 +1,4 @@
-# #537 full-graph one-defect 判决：contact/collision diagonal edge 存在
+# #537 full-graph one-defect 判决：typed-carrier diagonal edge 存在
 
 日期：2026-09-01
 
@@ -92,21 +92,74 @@ producer 扫描 12,568 个背景后命中并立即停止。Python oracle 用独�
 它不是 alternating ordinary separated four-arm，`J_B+J_W-1` identity 在这里不适用，
 也不证明任何渐近下界。
 
-因此被删除的是 **blanket full-graph two-independent-defect route**。separated sector
-仍可单独研究，但先采用无自由参数的固定分解
+因此被删除的是 **blanket full-graph two-independent-defect route**。最初按 NN 距离切分
+contact/separated 的方案也已被下一条固定见证否定；距离不是 carrier identity。
+
+## 距离二仍是 joint-incidence contact
+
+第二个冻结构型在 N5 row-major 坐标取 `x=0,y=6,z=2`，off-z occupied cells 为
+`{1,3,4,5,7,9,10,12,15,16,17}`。独立 quotient 重建把三点映到 internal
+`(0,4,3)`，三对 NN 距离均为 2，但一次 physical `z` flip 仍给出
 
 ```text
-contact/collision: d_NN(z,{x,y}) <= 1
-separated:         d_NN(z,{x,y}) >= 2.
+rank                         0 -> 1
+Bell                         274568 -> 8256
+joint C                      21990249529872 -> 3298535014656
+joint terminal incidence     2 -> 1
+g16                          8 -> 0
 ```
 
-下一 P0 对象应是 contact/collision sector 对 surviving leading four-arm signed functional
-的贡献。separated sector 只有在进一步证明 row/column changes 可定位到不交 annuli 后，
-才允许使用 two-defect/six-arm bound；距离条件本身还不是 annular certificate。
+该 edge 的 `arm_mask=11`，source 接触 global black landing component，off-state 没有
+non-port degree-3 branch。恢复同一 globally frozen root/counterterm 与 C4 pool 后，source
+midpoint 为 `-1.0121115955209059e-10`，root counterterm 为
+`+5.341390620686106e-12`，full Schur weight 为 `-9.586976893140449e-11`；三项都有
+严格不含零的有理区间。
 
-只读 joint-sector 聚合中的同-sector determinant 是多条 edges/cells 的 rank-two 量，不等于
-单条 physical diagonal edge。本判决不继承该未提交 scorer，而使用 count-one literal
-witness、共同 joint map 和 allocation-robust source part。
+所以 `d_NN<=1` 不能定义完整 contact 类，`d_NN>=2` 也不能认证 separated sector。
+这个 N5 距离二构型仍共享 source/thermal joint carrier，正确有限分类是
+`joint-incidence/typed carrier`。真正的 separated sector 至少要先排除共同 carrier incidence，
+再证明 row/column changes 可定位到两个不交 annuli；本见证不提供该证书或渐近下界。
+
+## 与固定 radius-one selected sector 的关系
+
+平行固定 commit
+[`df4a64f6`](https://github.com/LightChainr/Matching-One/blob/df4a64f68232eec5aa5b8c8a5d920062aaa7808e/results/p537-one-defect-diagonal-edge/REPORT.md)
+在 N25 axis/tilted、`x=West(z)` 的 alternating radius-one **selected sector** 中保留
+6,846 个 kernel-changing row classes、740,950 条 physical fibres，总 Schur signed mass
+为 `-4.948839916450813e-6`。12 个 rank-stage×source-orbit cells、两个 row sums 与六个
+column sums均严格不含零；`0→1` 给 117.63%，`1→2` 给 -17.63% 抵消。它不是完整
+physical graph 或完整 `T_N`，也来自同一个 N25 dependency block。
+
+在同一 selected sector 内，contact mask 0 有精确的 0 classes / 0 fibres；mask 1、2
+分别给约 `-4.09370e-6/-4.11267e-6`，mask 3 给 `+3.25753e-6`。这个空集不能外推到
+更大 collar、其他 endpoint 或完整图。该 branch-only asset 的旧 fibres 没有单一背景或
+canonical joint `x+y+z` map；本分支的两个 literal witnesses 补上构造性 joint-map 信息。
+这些结果互补，但不能当独立渐近 evidence votes。
+
+`df4a64f6` 还联合保留 contact mask、birth stage 与 source orbit。在这个 selected sector
+中，one-arm masks 1/2 只支持 NN source，所有 non-NN source 都落在 mask 3。把两个并不
+完全相同的 one-arm masks 仅作为 single-contact aggregate 合并后，globally frozen
+pooled-root Schur signed table 为
+
+```text
+                 single-contact aggregate    double contact
+0->1                 -2.8838028012e-6       -2.9372878647e-6
+1->2                 -5.3225654942e-6       +6.1948162436e-6
+```
+
+determinant 的严格区间为
+`[-3.3498535471290615e-11,-3.3498535471290614e-11]`。这只证明该有限 selected
+contact×birth signed table 是 rank two；它不证明一个完整 operator 已经识别，也不是 exact
+exchange-even projection。
+
+下一 P0 不再枚举 contact descriptor 或距离层。当前最小理论对象是
+`typed joint-incidence/contact-fusion × topological completion`，目标是证明它怎样投影、
+抵消并缩放到 full original-`U`，最终仍需得到 `T_N=o(D/A_N)`。只有先冻结这样的精确
+传递恒等式，才允许在一个 held-out size 上检查同一 tensor/determinant；不允许用单坐标救场。
+
+selected-sector aggregate determinant 是多条 edges/cells 的 rank-two 量，不等于单条
+physical diagonal edge。两个 literal gates 使用固定单一背景、共同 joint map 和
+allocation-robust source part；它们与 aggregate 回答不同层次的问题。
 
 复现入口：
 
@@ -114,4 +167,5 @@ witness、共同 joint map 和 allocation-robust source part。
 python3 experiments/p537-one-defect-gate-20260901/verify.py
 ```
 
-机器可读结果在 `results/p537-one-defect-gate-20260901/result.json`。
+机器可读结果在 `results/p537-one-defect-gate-20260901/result.json` 与
+`results/p537-one-defect-gate-20260901/result-nonadjacent.json`。

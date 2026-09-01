@@ -1,8 +1,8 @@
-# 下一步：contact/collision four-arm 控制与固定m两相权重
+# 下一步：local OPE/contact 传递与固定m两相权重
 
 **2026-09-01，已读到 PR #544 `e8e9c7cf`、PR #545 `e1f19e4c`、独立审计与 #537 physical one-defect gate。** 当前结论从[STATUS](STATUS.md)进入。两个独立生产实验、齐次N50、canonical pair 的有限空间块、完整联合原U响应、finite rank-one 反例和 one-defect 存在性判决均已完成。下一步不增加同类有限点、距离网格、补全扫描或旧实验救值。
 
-## 1. 当前研究问题：contact/collision 如何进入 surviving four-arm functional
+## 1. 当前研究问题：local OPE/contact functional 如何受 full-U 投影控制
 
 执行[2ba8863f](https://github.com/LightChainr/Matching-One/blob/2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb/notes/regular-pair-interaction-result.md)已经定义并算完canonical `Kreg=K2+K0`：直接Q1响应恒零，单点混合原U响应严格非零，固定四路径双插入系数13/8。随后 [`a237968f`](https://github.com/LightChainr/Matching-One/blob/a237968f1d7a82d26b46e83c58179dbba7f1a908/notes/regular-pair-spatial-transmission-result.md) 拒绝了L64/距离16的有限零传递；[`410015f5`](https://github.com/LightChainr/Matching-One/blob/410015f5505dc2d8ca0e9ac904f656a4adc9fe86/notes/regular-pair-joint-transmission-result.md) 完成完整 `J2=-0.0055194314248394015`，并以严格负的非相邻分项拒绝NN-contact-only closure。旧“local pair还没有进入有限U”“先计算uniform J2”两个待办全部删除。
 
@@ -18,19 +18,18 @@ tail(d>R) = O(R^-eta)
 
 新的[精确审计](../notes/p337-thermal-pivotal-gate-audit.md)已经证明，下一项不能只研究 `partial_p E[g_xy]`。对 `O=q,E`，完整 `d_p Cov(O,g_xy)` 有 kernel reconnection 与原 rank/readout pivotal 两项；tiny torus上遗漏第二项会把符号判反。普通site flip是八端口组件join，但共享组件数本身也不决定符号。
 
-[#537 physical one-defect gate](../notes/p537-one-defect-diagonal-edge-20260901.md)已经给出存在性反例。axis N25 的 literal `z` flip 同时使 rank `0→1`、source Bell `9240712→6848576`、`g16 4→0`；完整总体先冻结 pooled root 与 counterterm 后，恢复 geometry pool 和 C4 orbit 的 Eq.(10) source midpoint 为 `-1.0888815582478189e-11`，full Schur weight 为 `-8.298623728474635e-12`，都有严格不含零的有理区间。由此 blanket full-graph two-independent-defect / 自动 six-arm 路线已被否定，完整 graph 枚举立即停止。
+固定 unmerged asset [`df4a64f6`](https://github.com/LightChainr/Matching-One/blob/df4a64f68232eec5aa5b8c8a5d920062aaa7808e/results/p537-one-defect-diagonal-edge/REPORT.md) 已在 N25 axis/tilted、`x=West(z)` 的 alternating radius-one selected sector 中汇总 6,846 个 kernel-changing row classes、740,950 条 physical fibres；总 Schur signed mass 是 `-4.948839916450813e-6`，所有 12 个 rank-stage×source-orbit cells 与 margins 均严格非零，contact mask 0 在该 selected sector 内有精确的 0 classes / 0 fibres。[本分支 literal certificate](../notes/p537-one-defect-diagonal-edge-20260901.md)再保存共同 joint map 与单一背景，给出 rank `0→1`、Bell `9240712→6848576`、`g16 4→0`、full Schur weight `-8.298623728474635e-12`。两者互补否定 blanket full-graph two-independent-defect / 自动 six-arm 路线，完整 graph 枚举立即停止。
 
-该 witness 位于 contact/collision，而非 ordinary separated sector。执行对象固定为
+df4a64f6 又在同一 selected sector 内把 contact mask 与 birth stage 联合保留。one-arm contact 只支持 NN source，所有 non-NN source 都属于 double contact；把两个 one-arm masks 作为 aggregate 合并后的 `2×2` pooled-root Schur signed table determinant 严格为负 `-3.3498535471290615e-11`。这证明有限 contact×birth table 是 rank two，但不是独立 evidence vote 或完整 `T_N`。
 
-```text
-contact/collision: d_NN(z,{x,y}) <= 1
-separated:         d_NN(z,{x,y}) >= 2
-```
+最新 fixed nonadjacent witness 又删掉了一个错误坐标：row-major `x=0,y=6,z=2` 三点的 NN 距离都等于 2，仍有 joint terminal incidence `2→1`、rank `0→1`、`g16 8→0` 和严格负的 C4 pooled full Schur weight `-9.586976893140449e-11`。所以 contact 是 global joint-carrier incidence，不是 `d_NN≤1`；旧 metric contact/separated split 退休。
 
-1. 只对 contact/collision sector 推导其进入 `T_N=<H,(a-Ea)S-(jM/M_t)B>_pool` 的有限体精确分解；保留 global joint `C/B/W`、root/counterterm 和 source/landing identities，不增加 descriptor。
-2. 把接触项归约成可由已证 raw canonical four-arm summability 控制的少数局部事件；明确 cancellation、符号或绝对上界中哪一项能给 `o(D/A_N)`。无法形成该桥时，记录理论缺口，不以更多 N 或回归替代。
-3. separated sector 只保留为条件分支。距离 `d_NN≥2` 本身不是 annular certificate；必须先证明 row/column changes 可定位到两个不交 annuli，才允许调用 two-defect/six-arm bound。
-4. 当前不启动新 MC、L6、N、距离、动量、descriptor、自由指数或服务器生产；首个可验收交付是 contact/collision functional 的精确恒等式或一条会淘汰该控制路线的反例。
+当前最小理论对象是待闭合的 `typed joint-incidence/contact-fusion × topological completion`，而不是继续寻找 contact descriptor：
+
+1. 以现有 `stage={0→1,1→2} × {single-contact aggregate,double-contact}` 表作为有限诊断，不把它误称 exact exchange-even projection；理论分解保留 global joint `C/B/W`、root/counterterm 和 source/landing identities。
+2. 在完整 original-`U` 与 near-critical root transport 中证明该 typed table 的投影、cancellation、determinant 或绝对尺度；验收仍是 `T_N=o(D/A_N)`。若现有四臂求和不足，明确缺少的概率或表示恒等式，不用更多 N、回归或后选幂替代。
+3. radius-one mask 0 只在 df4a64f6 的 fixed-endpoint alternating selected sector 内为空。更大 collar 或完整图中的 separated residual 仅作条件分支；必须先排除 source/thermal joint incidence，再证明 row/column changes 位于两个不交 annuli，才允许调用 two-defect/six-arm bound。
+4. 当前不启动新 MC、L6、N、距离、动量、descriptor、自由指数或服务器生产；首个可验收交付是 typed joint-incidence table 的精确 full-`U` 传递/抵消恒等式，或一条会淘汰该控制路线的反例。只有该恒等式先冻结后，才考虑一个 held-out size 的同一 tensor 与 determinant；不允许单坐标救场。
 
 渐近验收仍是完整 `T_N=jY_p-R*jM_p-R_p*jM=o(D/A_N)`，等价于 root-conditioned mixed Hessian `partial_u partial_epsilon Yhat=T_N/D=J_N/A_N`。朴素三位置绝对计数需要`alpha4>4/3`而严格输入只有某个`alpha4>1`；双零 margins 本身也不证明两个空间 defects。#539只是P2复现支持；PR532的两桥因式分解与3/2下界不形成生产授权。
 
