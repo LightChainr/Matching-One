@@ -33,7 +33,8 @@ Score against the independent P45 100-batch original-U baseline:
 python3 experiments/p537-contact-stage-n65-mc-20260901/score.py \
   --baseline results/server-20260828/P45-root-amplitude/n65.hist.csv \
   --tables results/p537-contact-stage-n65/shard-*.tsv \
-  --output results/p537-contact-stage-n65/result.json
+  --output results/p537-contact-stage-n65/result.json \
+  --audit-output results/p537-contact-stage-n65/AUDIT.json
 ```
 
 The scorer solves the common matching root, computes `M_t`, `R`, and each
@@ -44,3 +45,7 @@ as two independent covariance groups.  The primary collapse is
 `theta=Delta/(|L11 L22|+|L12 L21|)` are formed inside every replicate before
 the two independent jackknife variances are added.  A 10k smoke is labelled
 `SMOKE`; it is only an execution/schema check, not a scientific readout.
+Every other run must match the frozen 20M sample count, four shard ranges,
+seed and proposal root.  The audit output preserves full production/baseline
+covariance, positive exposure and the selected total while leaving the
+original primary result unchanged.

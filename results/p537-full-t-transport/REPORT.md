@@ -1,6 +1,6 @@
 # P537 full-T transport quotient
 
-Status: `COMPLETE_SIGNED_RESPONSE_CONTRACTS`
+Status: `POST_HOC_SECONDARY__COMPLETE_CANONICAL_QUOTIENT`
 
 The already-produced N65 global sufficient statistics give the complete
 canonical-pair thermal response, after restoring the one C4-equivalent NN
@@ -21,18 +21,16 @@ J_65/J_25 = 0.29396323 +/- 0.03361398
 effective abs(J) power = 1.28130 +/- 0.11967
 ```
 
-This is a substantial contraction of the complete normalized response, not
-only of the contact-stage carrier.  It is consistent with `J_N -> 0` and hence
-with `T_N=o(M_t/A_N)` over this first exact-to-MC size direction.  Two sizes do
-not establish the asymptotic little-o statement.
+This is a substantial finite contraction of the complete normalized response,
+not only of the contact-stage carrier.  The displayed effective power is a
+two-point description.  It is not evidence for a fitted exponent and does not
+establish `J_N -> 0` or the asymptotic little-o statement.
 
-The contact-completion carrier contributes `5.892%` of full `T_25` but only
-`2.551%` of full `T_65`.  It is therefore a genuine transmitted microscopic
-operator but is not saturating the complete response.  Its three leading
-cells scale as the candidate `T_cell~N^-3`, which becomes
-`J_cell~N^(5/4)N^-3=N^-7/4` after original-U normalization.  The remaining
-asymptotic obstruction is the nonlocal remainder and its near-critical
-uniform transport, not another local-contact descriptor.
+The frozen canonical selected-carrier total is `5.892%` of full `T_25` and
+`2.551%` of full `T_65`.  Thus it does not saturate the finite full response.
+The selected cells are not thermal-gauge invariant, so this share is a
+coordinate-dependent diagnostic rather than a physical operator fraction.
+No cell exponent or CFT interpretation is inferred from two sizes.
 
 ## The pooled-root displacement does not generate the finite signal
 
@@ -46,17 +44,25 @@ absolute transport fraction 1.54986e-4
 ```
 
 Thus the observed displacement from this reference to the pooled root changes
-the response by only about `0.0155%` of its magnitude.  This removes finite
-root motion as a numerical explanation of the N65 signal.  The reference is
-not a rigorous enclosure of the mathematical `p_c`; a uniform near-critical
-transport theorem remains the exact-`p_c` gap.
+the response by only about `0.0155%` of its magnitude within this finite
+reweighting calculation.  The reference is not a rigorous enclosure of the
+mathematical `p_c`; a uniform near-critical transport theorem remains the
+exact-`p_c` gap.
 
 ## C4 reconstruction and dependencies
 
 The 63 retained directions alone give `J=-0.00150763301`.  The omitted
-`y=z=+e1` NN column, reconstructed as the mean of `-e1,+e2,-e2`, contributes
+`y=z=+e1` NN column, reconstructed by the C4-unbiased mean of
+`-e1,+e2,-e2`, contributes
 `-0.000114876876`, about `7.08%` of the complete value.  It cannot be silently
 dropped.
+
+The fill is exact at the expectation level under C4, not samplewise.  The
+canonical Bell kernel agrees on all 4,140 partitions and all 16,560 tested
+common 90-degree rotations; both N65 quotient tori have the required graph
+automorphism.  The three retained NN batch estimates are statistically
+compatible with equality (`Q=2.355` on 2 df), and their covariance propagates
+through the mean fill.
 
 Uncertainty combines two independent delete-one groups: the new 20M source
 block and the P45 100M baseline, each with 100 batches.  Baseline omissions
@@ -64,6 +70,8 @@ resolve the pooled root before reweighting the source table.  The root-minus-
 reference contrast is paired within each group before their variance
 contributions are added.
 
-No configurations were generated or replayed.  The scorer, exact formulas,
+No configurations were generated or replayed.  This score was chosen after
+the N65 primary result and reuses the same dependency block, so it is a
+secondary analysis rather than independent evidence.  The scorer, formulas,
 input hashes and complete numerical output are in
 [`RESULT.json`](RESULT.json).

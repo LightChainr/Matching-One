@@ -1,6 +1,6 @@
 # 当前成果：从取向信号到微观机制
 
-**整理日期：2026-09-01，已读到 PR #544 `e8e9c7cf`、PR #545 `e1f19e4c`、独立审计与 #537 physical one-defect gate。** 两个独立决策实验、齐次N50、canonical pair 的有限空间块、完整联合原U响应、finite rank-one 反例和 one-defect 存在性判决均已完成并按停止规则收缩；首次Xi、jump/reweight分解和两套固定源的渐近反号也不再作为待办。[三份意见的核对与实际推进](../notes/reviews-response-20260831.md)记录生产决策，[one-defect 精确判决](../notes/p537-one-defect-diagonal-edge-20260901.md)记录最新范围边界；[下一步](NEXT-TARGETS.md)只保留尚未回答的问题。本任务新增结果交付Draft #509，不合并。
+**整理日期：2026-09-01，已读到 #275 P0 重置、#537 P1 重置、held-out N65 contact-stage 结果与两轮独立审计。** 当前唯一 P0 是原始 observable、normalizer 与候选可识别性；#537 保留完整 thermal/contact 渐近问题但不再自动扩尺寸。两个独立决策实验、齐次N50、canonical pair 有限空间块、finite rank-one/one-defect 判决和 N65 范围受限的前瞻验证均已完成并按 stop rule 收缩。[C3 相位可识别性](../experiments/p275-c3-phase-contract-20260901/REPORT.md)与[#275 判决树](../notes/p275-observable-identifiability-gate-20260901.md)记录新 P0；[下一步](NEXT-TARGETS.md)只列现在允许执行的工作。本任务继续交付 Draft #509，不合并。
 
 ## 压缩后仍须保留的结论账本
 
@@ -12,6 +12,20 @@
 - 单一 **scalar width** 和其他已测试的低阶标量捷径不足以解释较高 thermal jet；不再用自由指数追加同读出拟合。
 - 有限体 **Russo** / chain-rule 的 **pivotal** 语义仍是精确控制；它本身不是新的机制证据票。
 - N=26 的冻结有限族 `Beta(5,5)` 与 `Beta(7,7)` 均已被精确枚举否定；这不外推为一般代数或连续场结论。
+
+## 当前唯一 P0：#275 原始观测量与可识别性
+
+site-cluster colour-lift 的有限控制已经说明：未归一化 `q/E` numerator 的
+pair-character 零规则不能直接传给 normalized expectation；trace、source 与
+pooled moving-root `U` 也不能因相同 spin 标签而混称同一 observable。
+
+[本分支 exact design](../experiments/p275-c3-phase-contract-20260901/REPORT.md)
+完成 66 项符号检查。对同一个 phase-calibrated real C3 读数，H4/H8 在共享复振幅
+或 signed-real gain 合同下可由合适第二旋转区分；任意复增益下所有两旋转设计均
+不可识别。`7.5°` 可处理非零 signed-real gain，`15°` 则有精确符号别名反例。
+这是一项已完成的条件设计结果，不是场身份或采集授权。P0 剩余验收是把两个
+实际物理候选映射到同一 normalizer 下至少两个 raw 坐标，并用已有 covariance
+做一次冻结 profile-rank 判决；若允许自由度使列空间相同，就登记不可识别并降级。
 
 ## 当前机制取舍：有限传递已闭合，raw 临界空间尾绝对可和
 
@@ -29,7 +43,7 @@ Draft [PR533](https://github.com/LightChainr/Matching-One/pull/533) 的 `5aa929a
 
 **[thermal/pivotal 双通道审计](../notes/p337-thermal-pivotal-gate-audit.md)已经排除一个过度简化。** `d_p Cov(O,g_xy)` 精确分成 kernel reconnection 与原 rank/readout pivotal 两项；只控制 `partial_p E[g_xy]` 会漏掉第二项，并在 N9/N10/N13 的 `O=E` 精确控制中把总符号判反。Bell-8 的64,954个join和N13的1,198,080个state-edge-pair检查全部闭合；共享组件数不变时核也可换号。
 
-当前唯一 P0 仍是 #537，有限 pure-thermal rank-one 路线已经按研究停止规则退休。[最初 preflight](../experiments/p537-landing-matrix-preflight-20260901/REPORT.md)在 six-block clean-two-bridge 合同下得到全部非零 minors。其后 PR #544 的 N25 radius-one collar、axis/tilted pooled-root Schur 首项 minor 为严格正的 `+2.6904188461441777e-14`；完整 fibres、聚合和 hashes 已独立复现。PR #545 给出任意 `R>=1,L>=2R+5` 的 broad four-arm pointwise family，以及 axis-L4 的 `Psi=-533831111/140737488355328` 和 matching-root 区间不变号证书。#544 最新 `e8e9c7cf` 又精确复现 axis-L4 并完成 axis-L5：`Psi4=-4.0685187141747587e-7`，而 `L^4 chi_perp` 为 `-0.66238/-0.67340`，与局部 `L^-4=N^-2` 衰减相容。
+#537 当前为 P1；有限 pure-thermal rank-one 路线已经按研究停止规则退休。[最初 preflight](../experiments/p537-landing-matrix-preflight-20260901/REPORT.md)在 six-block clean-two-bridge 合同下得到全部非零 minors。其后 PR #544 的 N25 radius-one collar、axis/tilted pooled-root Schur 首项 minor 为严格正的 `+2.6904188461441777e-14`；完整 fibres、聚合和 hashes 已独立复现。PR #545 给出任意 `R>=1,L>=2R+5` 的 broad four-arm pointwise family，以及 axis-L4 的 `Psi=-533831111/140737488355328` 和 matching-root 区间不变号证书。#544 最新 `e8e9c7cf` 又精确复现 axis-L4 并完成 axis-L5：`Psi4=-4.0685187141747587e-7`，而 `L^4 chi_perp` 为 `-0.66238/-0.67340`，与局部 `L^-4=N^-2` 衰减相容。
 
 [独立范围审计](../notes/p537-finite-rank-one-decision-20260901.md)限制了这些结果的含义。#544 没有保存 `x+y+z` 全局 joint component identity/global no-extra flag，最终又把 Bell transition 汇总成 source absent/present；它证明显式 collar coarsening rank two，不证明 canonical ordinary/no-extra。#545 没有 formal Bell/no-extra 字段，并在 landing 子块内重新估计 `beta` 与 `S`；其 reduced-block 恒等式不是完整两几何总体先定 root counterterm 后的 original-U Schur summand。“JSON byte-identical”声明也未成立。L4→L5 的两个尺寸不能升级成指数或 full-U 尺度律。两条 Draft 因此关闭为 unmerged assets，不合并，也不再通过补 schema、L6、N、几何或 minor 救回 rank one。
 
@@ -39,7 +53,7 @@ Draft [PR533](https://github.com/LightChainr/Matching-One/pull/533) 的 `5aa929a
 
 [本分支的 physical one-defect gate](../notes/p537-one-defect-diagonal-edge-20260901.md)补上旧 fibres 缺失的构造性信息。第一条 axis N25 literal `z` flip 保存共同 `x+y+z` map 与单一背景，并令 rank `0→1`、Bell `9240712→6848576`、`g16 4→0`；完整总体先冻结 root/counterterm 后，source midpoint 为 `-1.0888815582478189e-11`，合计 `-8.298623728474635e-12`。第二条固定构型把 row-major `x=0,y=6,z=2` 的三点 NN 距离全部固定为 2，仍有 rank `0→1`、Bell `01203010→00102000`、`g16 8→0`、joint terminal incidence `2→1`；C4 pooled source midpoint 为 `-1.0121115955209059e-10`，full 为 `-9.586976893140449e-11`。两条的 beta-free source part 与 full weight 都有严格非零有理证书。它们说明 metric 非邻接仍可经同一 global carrier 接触；`d_NN≤1/≥2` 不能定义 contact/separated。总体资产与 literal witnesses 共同触发停止规则：blanket full-graph two-independent-defect / 自动 six-arm 路线已经否定，不再枚举完整 graph。
 
-这些都是有限 N25 结论；df4a64f6 的 mask 0 空集只属于固定 `x=West(z)` 的 alternating selected sector。#537 的下一唯一 P0 对象因此改为 typed joint-incidence/contact-fusion × completion 对 full original-`U` 的传递、抵消与尺度控制。真正的 separated residual 至少要同时排除共同 carrier incidence，并证明 row/column changes 位于不交 annuli；metric 距离本身不够。#539只保留P2复现支持；当前P0随机生产和云任务仍为空。
+这些都是有限 N25 结论；df4a64f6 的 mask 0 空集只属于固定 `x=West(z)` 的 alternating selected sector。随后 frozen N65 20M block 在 canonical selected-carrier 分账中复现 `[-,-;-,+]` 与严格负 `Delta`；[完整审计](../results/p537-contact-stage-n65/REPORT.md)保留 6×6 covariance、positive exposure 和 selected total。它拒绝该分账内的 scalar/separable law，但 selected cells 在共同 thermal gauge 下通常移动，`theta=-1` 也只是符号象限恒等，不能升级为坐标无关算符或六票独立证据。同块 post-hoc [full-T secondary](../results/p537-full-t-transport/REPORT.md)通过 C4/kernel/归一化审计，给 `J65=-0.00162251±0.00018553`、`J65/J25=0.29396±0.03361` 的有限 original-`U` 收缩；它没有新独立 block，两点 power 仅为描述。真正的 separated residual 至少要排除共同 carrier incidence，并证明 row/column changes 位于不交 annuli。#537 后续只保留 remainder transport 的 proof/counterexample；两点指数、CFT 标签和 N145 外推均不改其 P1 生命周期。#539只保留P2复现支持；当前P0随机生产和云任务为空。
 
 [固定m审查的新增结论](../notes/p337-fixed-m-relative-bound.md#7-2026-09-01实际组件气体的进一步取舍)则排除了裸组件气体在h=1使用标准非负KP判据的路线；任意非负控制函数都不能统一成立。rank2投影精确固定唯一绕行组件颜色，但实际两相内外partition比仍未控制，固定m原U定理没有被宣布完成。
 
@@ -99,7 +113,7 @@ Draft [PR533](https://github.com/LightChainr/Matching-One/pull/533) 的 `5aa929a
 
 刚完成的组外prefix预测、条件形状和时序补观测全部归入**探索C2**。即使局部检验正确、训练测试按批分开，问题和模型仍经过同一archive生成；这些结果不充当最终独立确认。contact研究最新`323de7d5`显示原00约80%的signed loading落在四feature span内、约20%残留；它不是response R²或精确充分状态。[来源](https://github.com/LightChainr/Matching-One/blob/323de7d5ee4a980b3c77e1a972cb6c812a9f88e5/notes/p334-new64-feature-loading.md)
 
-支持线#275/#419/#370/#398及#1保留已有产物；#275已由P1调整为P2，保持开放。只有能说明“哪种结果停止哪个候选”的具体任务才进入P0；跨N旧数据回归、进一步projection/Hessian/descriptor及generic certificate目前均属exploratory/support。下一项实际分析从[NEXT中的精确U传递接口](NEXT-TARGETS.md)出发；本轮验证块不再用于选择新模型。
+#275 已调为唯一 P0；#419/#370/#398及#1保留 support 资产。#275 只执行具名 observable/normalizer 的候选预测与可识别性，不恢复旧 C3/E_top 首次检测或任意新坐标。只有能说明“哪种结果停止哪个候选”的具体任务才进入P0；跨N旧数据回归、进一步 projection/Hessian/descriptor 及 generic certificate 仍属 exploratory/support。下一项实际分析按 [NEXT](NEXT-TARGETS.md) 的冻结判决包执行；本轮验证块不再用于选择新模型。
 
 ## 取向与物理响应
 

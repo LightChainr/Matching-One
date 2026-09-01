@@ -8,9 +8,9 @@ carrier.  No random counters are replayed or added.
 The producer fixed one vacant source endpoint `x` and one thermal site
 `z=x+e1`; its global source catalogue contains all `y` except `x,z`.  After
 Bernoulli integration over the two states of `z`, the four nearest-neighbour
-pair directions are C4-equivalent at every `p`.  For each of
+pair directions are C4-equivalent in expectation at every `p`.  For each of
 `a,qa,Ea,aS,qaS,EaS`, the omitted `y=z=+e1` column is therefore reconstructed
-without a new sample as
+without a new sample by the symmetry-unbiased estimator
 
 ```text
 F_full = sum_(retained 63 directions) F_d
@@ -31,6 +31,10 @@ The complete logit jet is
 T_t = jY_t - R*jM_t - R_t*jM,
 J_N = (N^(13/8)/2) * T_t/M_t.
 ```
+
+This is not a samplewise identity: the three retained NN directions fluctuate.
+Their shared batch covariance is retained when their mean fills the omitted
+direction.  Independent kernel/C4 checks verify the symmetry assumption.
 
 The P45 baseline and new source block are independent 100-batch covariance
 groups.  Each delete-one baseline replicate resolves the pooled root and
@@ -54,3 +58,7 @@ python3 experiments/p537-full-t-transport-20260901/score.py \
 ```
 
 The command refuses to overwrite an existing result.
+
+This score was designed after the contact-stage result was revealed.  It is a
+post-hoc secondary use of the same 20M block, not a new independent validation.
+Its two-size power is descriptive only.
