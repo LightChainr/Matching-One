@@ -21,7 +21,7 @@ README负责入口，STATUS负责成果，NEXT-TARGETS负责下一步分析。�
 
 **已补齐完整齐次N50传递。** 两几何各精确覆盖2^50配置，合计约49.85 CPU秒、峰1.63 GiB；原U=1.06156039、固定源响应V=+0.05434578，严格排除该有限点零传递。正号预测存活，不等于机制确认，不追加尺寸/源参数。[本轮结果与复核](experiments/p337-homogeneous-n50-20260831/RESULT.md)；旧m64直接采样停线及P154/P334降级保持。
 
-**canonical pair 已从有限传递推进到完整 thermal gate。** 新空间块与 N25 联合响应排除有限零、additive-linear 和 NN-contact-only closure；随后 exact-`p_c` 四臂论证证明 raw pair kernel 绝对可和。[双通道审计](notes/p337-thermal-pivotal-gate-audit.md)又证明 `d_p Cov(O,g_xy)` 还含原 rank/readout pivotal 项，单独控制 `partial_p E[g_xy]` 会在tiny exact controls中判错符号。现在有限landing闸门也已给出反例：[N9实际matching root上的普通四臂C4轨道](notes/p537-ordinary-landing-minor.md)具有精确非零`2 x 2` minor，root Schur剪切不能把它降为rank one；[N16局部纤维证书](notes/p537-ordinary-four-arm-landing-minor.md)进一步把独立方向写成参数无关的`-chi/2`。因此“三包四臂自动化为纯thermal坐标、首项必需四包”的路线停线；#537剩余对象是这个signed ordinary-landing functional的空间和与root运输，不启动五/六臂替代路线。随机生产仍为空，#539仅为P2复现支持。
+**canonical pair 已从有限传递推进到完整 thermal gate。** 新空间块与 N25 联合响应排除有限零、additive-linear 和 NN-contact-only closure；随后 exact-`p_c` 四臂论证证明 raw pair kernel 绝对可和。[双通道审计](notes/p337-thermal-pivotal-gate-audit.md)又证明 `d_p Cov(O,g_xy)` 还含原 rank/readout pivotal 项，单独控制 `partial_p E[g_xy]` 会在tiny exact controls中判错符号。有限landing已有两个精确raw控制：[N9实际matching root](notes/p537-ordinary-landing-minor.md)证明单几何C4-even的kernel/readout分解非rank one，[N16三纤维](notes/p537-ordinary-four-arm-landing-minor.md)证明ordinary landing可实现两种独立raw jump；但quarter-turn不是axis-vs-tilted `P4`，`-beta H_iB_i`也不能靠共同K直接消掉，因此完整source/thermal Schur-P4 minor仍开放。#537继续只做这个paired finite gate与其后的空间和/root运输，不启动五/六臂替代路线。随机生产仍为空，#539仅为P2复现支持。
 
 ## 已有成果的主线
 

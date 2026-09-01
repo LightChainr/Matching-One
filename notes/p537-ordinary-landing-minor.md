@@ -1,12 +1,27 @@
-# P537: an ordinary landing already has rank two
+# P537 supporting control: a single-geometry kernel/readout minor
 
-## Result
+## Correct status
 
-The proposed rank-one ordinary-landing block fails on the smallest honest
-square quotient on which the relevant ports are unaliased.  On the `3 x 3`
-torus, take the two occupied sites `(0,0),(1,0)` and flip `(2,0)`.  Before the
-flip the occupied component is a branch-free two-site path; after the flip it
-is the primitive horizontal three-cycle.  The four incident ports alternate
+This N9 calculation is an exact **supporting control**, not by itself the
+advertised source/thermal `P4` landing certificate.  It proves that the two
+terms in the covariance-derivative identity can form a rank-two block inside
+one C4-invariant square geometry.  It does not construct the original
+axis-versus-tilted `P4` projector, and its two columns are kernel reconnection
+and readout pivotal rather than two independent source/thermal deformations.
+
+The separate N16 three-fibre calculation in
+`notes/p537-ordinary-four-arm-landing-minor.md` is stronger geometrically but
+has the same final boundary.  Its raw jump coordinates
+`k=D_z g_xy`, `h_R=chi D_zE-RD_zq` give the formal determinant `-chi/2`, yet
+common off-site occupation does not cancel the fibre-dependent bilinear
+`H_i B_i`, and `chi` is not produced by a paired axis/tilted normalization.
+Thus the full projected minor remains open.
+
+The N9 control remains useful because it is at an actual finite matching root
+and retains both exact midpoint terms.  On the `3 x 3` torus, take the two
+occupied sites `(0,0),(1,0)` and flip `(2,0)`.  Before the flip the occupied
+component is a branch-free two-site path; after the flip it is the primitive
+horizontal three-cycle.  The four incident ports alternate
 vacant/occupied/vacant/occupied, the ambient rank changes `0 -> 1`, and no
 extra occupied branch is present.
 
@@ -20,8 +35,10 @@ E    :  1 -> 0.
 ```
 
 Rotate this complete marked state by `0, pi/2, pi, 3pi/2` and sum all four
-copies.  Spin four has character `+1` under this `C4` action, so this is the
-required angular sum, not a post-hoc choice of one orientation.
+copies.  Spin four has character `+1` under this `C4` action, so the sum is a
+valid C4-even local block.  This is **not** the original geometric projector
+`P4[X]=(X_axis-X_tilted)/DeltaCos4`: quarter-turn-related copies have the same
+`cos(4 theta)`, and no tilted second quotient occurs in this calculation.
 
 For `O in {q,E}`, split the exact covariance derivative on this landing orbit
 into its two mandatory pieces,
@@ -85,7 +102,7 @@ Its polynomial gcd with `M(p)` over `Q[p]` is exactly `1`.  Hence it cannot
 vanish at `p_*`; the displayed decimal value `7.4089043146e-7` is merely a
 locator, while nonvanishing is algebraic.
 
-Root conditioning does not rescue rank one.  At `p_*`, put
+The simple root row shear does not remove this raw minor.  At `p_*`, put
 
 ```text
 R=(partial_p E_p E)/(partial_p E_p q)
@@ -94,22 +111,34 @@ R=(partial_p E_p E)/(partial_p E_p q)
 and perform the Schur row operation `E -> E-Rq`.  This left multiplication has
 determinant one, so the same `2 x 2` minor is unchanged.  Numerically
 `R=0.021325579095...`, but no numerical approximation to `R` enters the exact
-nonvanishing certificate.
+nonvanishing certificate.  This row operation is only the `E-Rq` part; it is
+not the complete bilinear Schur contribution `-beta H_iB_i`.
 
-## Consequence and boundary
+## Semantic boundary and consequence
 
-This is a physical finite counterexample to the statement that every
-branch-free ordinary four-arm landing transfer is thermal-only after `C4` and
-root Schur projection.  The four-packet route in the P537 audit therefore
-cannot proceed by claiming that nonzero projected terms require an extra
-branch: an ordinary first-rank landing already supplies two independent
-channels.  The next meaningful object is the surviving signed landing
-functional, including both reconnection and readout terms.
+The matrix above has rows `q,E` and columns equal to the **kernel** and
+**readout** pieces of one derivative `d_p Cov(O,g_xy)`.  Splitting an identity
+into these two terms does not manufacture independent physical sources, so
+its nonzero determinant must not be called the Issue's source/thermal minor.
+Likewise, invariance under the four quarter turns only supplies the correct C4
+representation check; it does not establish a nonzero axis-versus-tilted
+contrast.
 
-The result does **not** prove that the full spatial sum is nonsummable, give an
-arm exponent, identify a continuum field, or establish a nonzero asymptotic
-original-`U` amplitude.  It only closes the proposed rank-one cancellation
-gate at its advertised bounded falsifier.
+What the N9 result does prove is narrower and still useful: the exact midpoint
+decomposition is not internally rank one, and the row shear `E -> E-Rq` does
+not make that raw two-term matrix rank one.  The N16 calculation separately
+proves that three physical ordinary landing fibres realize two raw jump
+symbols.  Neither calculation includes the complete bilinear Schur term and
+separately normalized paired-geometry P4 amplitude, so neither yet retires the
+thermal-only landing lemma.
+
+Neither result proves that the full spatial sum is nonsummable, gives an arm
+exponent, identifies a continuum field, or establishes a nonzero asymptotic
+original-`U` amplitude.  The minimum missing certificate must retain, for two
+paired geometries and at least two landing boundary states, the complete
+midpoint tensor `(q0,q1,E0,E1,a0,a1,K_-z)`, geometry-specific centering,
+`R,beta`, separate normalizations and the final axis-minus-tilted P4.  Before
+that object is nonzero, no ordinary-block stop claim is justified.
 
 ## Reproduction
 

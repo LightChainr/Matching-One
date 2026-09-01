@@ -20,9 +20,9 @@ tail(d>R) = O(R^-eta)
 
 现在只保留 #537 一个P0理论闸门：**为两个通道写出真实三位置support，并把完整 `T_N=jY_p-R*jM_p-R_p*jM` 控制到 `o(D/A_N)`。** 朴素绝对三臂组计数需要`alpha4>4/3`，严格方格site输入只有某个`alpha4>1`，不能复用raw pair的同一论证。验收和停止规则为：
 
-继续使用已经闭合的 root-conditioned 坐标。若 `M(p(u,epsilon),epsilon)=u`、`Yhat(u,epsilon)=Y(p(u,epsilon),epsilon)`，则有限体积精确恒等式为 `partial_u partial_epsilon Yhat=T_N/D=J_N/A_N`。有限landing的第一项可证伪候选已经判决：N9普通四臂、无额外分支的C4轨道在实际finite matching root上给出精确非零`2 x 2` minor；其minor多项式与matching-root多项式在`Q[p]`中互素，`E -> E-Rq`的root Schur剪切保持行列式不变。N16三纤维证书又给出参数无关的`det=-chi/2`。因此“三组四臂leading landing纯属温度坐标”的结构性lemma为假，不能把余项自动提升成`R^4*pi4(R)^4`四包络。
+继续使用已经闭合的 root-conditioned 坐标。若 `M(p(u,epsilon),epsilon)=u`、`Yhat(u,epsilon)=Y(p(u,epsilon),epsilon)`，则有限体积精确恒等式为 `partial_u partial_epsilon Yhat=T_N/D=J_N/A_N`。N9在实际finite matching root上证明单几何C4-even的kernel/readout分解非rank one；N16三纤维又给出raw jump形式的`-chi/2`。二者都没有完成结构性判决：quarter-turn不是axis-vs-tilted `P4`，两项不是独立source/thermal列，共同K也不消掉`-beta H_iB_i`。下一刀是最小paired finite landing matrix，必须保留完整midpoint tensor、两几何各自normalization、root Schur与最终P4后再验minor；在它非零前，不把余项自动升级或降级为四包络。
 
-执行顺序随之改变：停止五/六臂替代证明与扩大N25枚举，直接把两个必需通道组合成已具名的signed ordinary-landing functional——kernel reconnection与rank/readout pivotal，经同一C4和root Schur投影后的空间和。下一交付只应给这个functional的符号抵消规律、尺度界或exact-`p_c`到pooled-root运输；若拿不到足以达到`T_N=o(D/A_N)`的速率，就交付最小未控landing类并停止。有限minor已经完成其停线任务，不再重复扫描更多tiny torus。
+执行顺序保持有界：不扩N25或做大枚举，先补一个真正paired-angular finite certificate。若minor非零，再把两个必需通道组合成signed ordinary-landing functional并研究空间抵消/速率与root运输；若minor为零，才继续检验额外臂的support。N9/N16 raw controls不再重复扫描。
 
 1. 若完整两通道和root/slope运输给 `T_N=o(D/A_N)`，停止把这一local interaction作为原anomaly的尺度放大机制，转为有限局部修正资产。
 2. 若只有一个具名pivotal/landing通道逃过界，必须先给同一原U的符号或尺度预测，才冻结一次新读数；不能从结果中再选bridge irrep。

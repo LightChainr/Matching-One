@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Exact N=9 ordinary-landing minor for Issue #537.
+"""Exact N=9 single-geometry landing control for Issue #537.
 
 The calculation is deliberately bounded.  It reuses the physical torus and
 canonical Kreg pair kernel from the thermal-gate audit, sums one clean landing
@@ -273,7 +273,7 @@ def exact_landing_minor():
     thermal_ratio = evaluate(derivative(mean_energy), root_mid) / evaluate(derivative(mean_q), root_mid)
 
     return {
-        "schema": "matching-one/p537-ordinary-landing-minor/v1",
+        "schema": "matching-one/p537-single-geometry-kernel-readout-minor/v2",
         "geometry": {"period": [3, 0], "N": n},
         "landing_definition": {
             "occupied_geometry": "two-site branch-free path closed by the flip into one primitive length-three cycle",
@@ -303,10 +303,11 @@ def exact_landing_minor():
             "row_operation": "E -> E-R*q, R=(d_p mean E)/(d_p mean q) at the finite root",
             "determinant_invariant": True,
         },
-        "decision": "nonzero_exact_root_conditioned_2x2_minor",
+        "decision": "nonzero_single_geometry_C4_kernel_readout_minor",
         "scope": (
-            "finite physical counterexample to the rank-one ordinary-landing lemma; "
-            "not an asymptotic amplitude, arm exponent, or field identification"
+            "exact supporting control only: quarter-turn C4 is not the original "
+            "axis-versus-tilted P4 projector, and kernel/readout are two terms of "
+            "one covariance derivative rather than independent source/thermal columns"
         ),
     }
 

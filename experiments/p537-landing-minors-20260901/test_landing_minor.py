@@ -21,7 +21,10 @@ class LandingMinorTests(unittest.TestCase):
 
     def test_finite_root_is_not_a_minor_root(self):
         self.assertEqual(self.result["gcd_root_and_determinant"], ["1"])
-        self.assertEqual(self.result["decision"], "nonzero_exact_root_conditioned_2x2_minor")
+        self.assertEqual(
+            self.result["decision"],
+            "nonzero_single_geometry_C4_kernel_readout_minor",
+        )
 
 
 if __name__ == "__main__":

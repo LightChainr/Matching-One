@@ -1,5 +1,5 @@
 {
-  "schema": "matching-one/p537-ordinary-landing-minor/v1",
+  "schema": "matching-one/p537-single-geometry-kernel-readout-minor/v2",
   "geometry": {
     "period": [
       3,
@@ -226,6 +226,6 @@
     "row_operation": "E -> E-R*q, R=(d_p mean E)/(d_p mean q) at the finite root",
     "determinant_invariant": true
   },
-  "decision": "nonzero_exact_root_conditioned_2x2_minor",
-  "scope": "finite physical counterexample to the rank-one ordinary-landing lemma; not an asymptotic amplitude, arm exponent, or field identification"
+  "decision": "nonzero_single_geometry_C4_kernel_readout_minor",
+  "scope": "exact supporting control only: quarter-turn C4 is not the original axis-versus-tilted P4 projector, and kernel/readout are two terms of one covariance derivative rather than independent source/thermal columns"
 }

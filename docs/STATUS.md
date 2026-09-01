@@ -31,9 +31,9 @@ Draft [PR533](https://github.com/LightChainr/Matching-One/pull/533) 的 `a768042
 
 当前唯一P0是 #537 的理论闸门：控制完整 `T_N=jY_p-R*jM_p-R_p*jM` 到 `o(D/A_N)`，并补 exact `p_c` 到 pooled root 的运输。朴素三位置绝对臂界需要`alpha4>4/3`，现有严格输入只给某个`alpha4>1`，所以不能用同一四臂平方论证直接宣布完成；下一刀必须是更强support、signed cancellation/landing identity或不同的归一化界。#539只保留P2可复现支持。没有这个定理，不追加空间样本或桥descriptor；当前P0随机生产和云任务均为空。
 
-该目标的精确坐标形式仍为：令 `M(p(u,epsilon),epsilon)=u` 并把 `Y` 拉回为 `Yhat(u,epsilon)`，则 `partial_u partial_epsilon Yhat=T_N/D=J_N/A_N`。但候选的三组抵消lemma已经被有限代数反例关闭。[N9 ordinary landing证书](../notes/p537-ordinary-landing-minor.md)在实际finite matching root上给出非零`2 x 2` minor：根多项式与minor多项式在`Q[p]`中互素，故不是数值近似；C4轨道求和和`E -> E-Rq`的root Schur剪切都保留非零性。[N16局部纤维证书](../notes/p537-ordinary-four-arm-landing-minor.md)独立给出`det=-chi/2`，与`R`和共同Schur项无关。普通四臂块已非rank one，不能再声称首个非零余项必需四包或额外五/六臂。
+该目标的精确坐标形式仍为：令 `M(p(u,epsilon),epsilon)=u` 并把 `Y` 拉回为 `Yhat(u,epsilon)`，则 `partial_u partial_epsilon Yhat=T_N/D=J_N/A_N`。[N9 control](../notes/p537-ordinary-landing-minor.md)在实际finite matching root上精确证明单几何C4-even的kernel/readout两项不构成rank-one块；[N16局部三纤维](../notes/p537-ordinary-four-arm-landing-minor.md)又证明ordinary landing可实现两个独立raw jump symbols。但quarter-turn orbit不等于原axis-vs-tilted `P4`，kernel/readout也不是独立source/thermal列；共同K不能消掉纤维依赖的`-beta H_iB_i`。因此这些是强预检而非最终minor，完整paired Schur-P4 landing matrix仍开放，尚不能据此停掉普通四臂rank-one路线或宣称必须/不必额外臂。
 
-用logit热坐标，混合Hessian仍精确等于signed Schur covariance：`T_t=<H,(a-Ea)S-(jM/M_t)B>_pool`，其中`H=y-Rm`、`S=K-EK`、`B=S^2-Np(1-p)`。现在留下的具名对象是同一C4/Schur投影下由kernel reconnection与rank/readout pivotal共同组成的signed ordinary-landing functional。有限闸门已完成，不再扩tiny torus或N25；#537的实质缺口转为该functional的空间抵消/速率和exact-`p_c`到pooled-root运输，仍须达到`T_N=o(D/A_N)`才可关闭完整原U门。
+用logit热坐标，混合Hessian仍精确等于signed Schur covariance：`T_t=<H,(a-Ea)S-(jM/M_t)B>_pool`，其中`H=y-Rm`、`S=K-EK`、`B=S^2-Np(1-p)`。下一项先在paired axis/tilted finite landing matrix中保留完整midpoint、geometry-specific normalization与`H_iB_i`，完成真正的source/thermal Schur-P4 minor；只有该minor非零，才转向signed ordinary-landing functional的空间抵消/速率和exact-`p_c`到pooled-root运输。仍须达到`T_N=o(D/A_N)`才可关闭完整原U门。
 
 [固定m审查的新增结论](../notes/p337-fixed-m-relative-bound.md#7-2026-09-01实际组件气体的进一步取舍)则排除了裸组件气体在h=1使用标准非负KP判据的路线；任意非负控制函数都不能统一成立。rank2投影精确固定唯一绕行组件颜色，但实际两相内外partition比仍未控制，固定m原U定理没有被宣布完成。
 
