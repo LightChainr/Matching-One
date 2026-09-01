@@ -1,4 +1,4 @@
-version: 9
+version: 10
 updated: 2026-09-01
 purpose: >
   Lightweight navigation/provenance index. Registry conflicts never block
@@ -31,12 +31,12 @@ historical_navigation:
   - {path: notes/SYNTHESIS-20260828.md, status: historical_snapshot, role: prior_execution_synthesis}
   - {pattern: docs/NEXT-TARGETS.md, status: branch_only_historical, role: not_current_authority}
   - {pr: 527, head_sha: 72fc797a75cd8d6488556a368e7a048529c69759, status: absorbed_decision_doc, role: M0_M1_M2_and_hard_stop_absorbed_into_STATUS_ROADMAP}
-  - {pr: 509, head_sha: 12974db43bfceb0095165b3c2ff9323ca16eb361, status: archive_pointer, role: unmerged_results_first_synthesis_not_merge_unit}
+  - {pr: 509, head_sha: 2785e3bba2eb6a70fd4f2d390d3b3c2701a99d85, status: archive_pointer, role: unmerged_results_first_synthesis_with_thermal_gate_audit_not_merge_unit}
   - {pr: 267, head_sha: ffc2bfa0c931222f1e402f393bbb9ec44482f3a1, status: archive_pointer, role: large_research_archive_not_merge_unit}
   - {pr: 530, head_sha: 0e1917f983982f411c9c72147cce3f90ce7330fa, status: P2_support, role: original_U_influence_and_oracle_sampling_bounds_no_production}
   - {pr: 531, head_sha: a5375b5338ebfc29d1c47aa320716903c5f63277, status: P2_support, role: sector_quotient_decomposition_and_oracle_subtraction_no_production}
   - {pr: 532, head_sha: 2e1c57b42129c507b45fd1a8111eb32e78b1f80b, status: P2_theory_candidate, role: two_bridge_factorization_not_current_production}
-  - {pr: 533, head_sha: df480bb12417fcdc7add7703ce448d8495fc5045, status: P2_theory_candidate_review_blocked, role: mesoscopic_two_cloud_and_capillary_local_algebra_not_current_claim}
+  - {pr: 533, head_sha: a7680426768ca93ead1fca9446ae86ca1fc15ced, status: P2_C0_theory_candidate_with_C1_local_sublemma, role: Bessel_capillary_sign_retained_full_root_theorem_blocked}
 
 frozen_predictions:
   - {path: predictions/two_spin4_heldout_20260828.yaml, status: frozen_prediction, issue: 43, role: N185_N265_targets}
@@ -167,6 +167,15 @@ current_decision_assets:
     status: completed_exact_pc_raw_kernel_summability_no_full_U_claim
     independent_primary: false
 
+  - id: P337_THERMAL_GATE_AUDIT
+    issue: 537
+    parent_issue: 337
+    sha: 2785e3bba2eb6a70fd4f2d390d3b3c2701a99d85
+    path: notes/p337-thermal-pivotal-gate-audit.md
+    status: completed_exact_finite_two_channel_semantic_audit_active_rate_theory_no_sampling
+    role: retires_single_channel_derivative_shortcut_and_defines_full_T_N_gate
+    independent_primary: false
+
 unmerged_candidate_assets:
   - id: P337_TWO_BRIDGE_FACTOR_REVIEW
     issue: 337
@@ -193,9 +202,9 @@ unmerged_candidate_assets:
   - id: P337_MESOSCOPIC_TWO_CLOUD_CANDIDATE
     issue: 337
     pr: 533
-    sha: df480bb12417fcdc7add7703ce448d8495fc5045
+    sha: a7680426768ca93ead1fca9446ae86ca1fc15ced
     path: notes/closed-source-mesoscopic-two-cloud-synthesis.md
-    status: C0_theory_candidate_with_C1_exact_local_sublemmas_pending_dependency_root_chart_and_cluster_remainder
+    status: P2_C0_full_theory_candidate_with_C1_local_conditional_Bessel_capillary_sign_pending_dependency_a_times_s_uniform_remainder_and_O_N_a3_correction
     review_comment: https://github.com/LightChainr/Matching-One/pull/533#issuecomment-5488261845
     independent_primary: false
 
@@ -220,12 +229,12 @@ evidence_archives:
 # support/candidate Draft is classified here. A pointer preserves provenance
 # without making the branch a current execution queue.
 unmerged_assets:
-  - {pr: 509, head_sha: 12974db43bfceb0095165b3c2ff9323ca16eb361, classification: ARCHIVE_POINTER, state_after_cleanup: open, role: results_first_synthesis}
+  - {pr: 509, head_sha: 2785e3bba2eb6a70fd4f2d390d3b3c2701a99d85, classification: ARCHIVE_POINTER, state_after_cleanup: open, role: results_first_synthesis_with_thermal_gate_audit}
   - {pr: 267, head_sha: ffc2bfa0c931222f1e402f393bbb9ec44482f3a1, classification: ARCHIVE_POINTER, state_after_cleanup: open, role: research_archive}
   - {pr: 530, head_sha: 0e1917f983982f411c9c72147cce3f90ce7330fa, classification: P2_SUPPORT, state_after_cleanup: open, role: influence_function_and_oracle_sampling_bounds_no_production}
   - {pr: 531, head_sha: a5375b5338ebfc29d1c47aa320716903c5f63277, classification: P2_SUPPORT, state_after_cleanup: open, role: sector_quotient_and_oracle_subtraction_no_production}
   - {pr: 532, head_sha: 2e1c57b42129c507b45fd1a8111eb32e78b1f80b, classification: CANDIDATE_FINITE_ALGEBRA, state_after_cleanup: open, role: two_bridge_factorization_no_production}
-  - {pr: 533, head_sha: df480bb12417fcdc7add7703ce448d8495fc5045, classification: P2_THEORY_CANDIDATE_REVIEW_BLOCKED, state_after_cleanup: open, role: two_cloud_and_capillary_local_sublemmas_not_current_claim}
+  - {pr: 533, head_sha: a7680426768ca93ead1fca9446ae86ca1fc15ced, classification: P2_C0_THEORY_CANDIDATE_C1_LOCAL_SUBLEMMA, state_after_cleanup: open, role: Bessel_capillary_local_sign_retained_full_root_theorem_not_current_claim}
   - {pr: 492, head_sha: 0e52dbaeed53dfffa94592e53e38129c179c5078, classification: ARCHIVE_POINTER, state_after_cleanup: open, role: P334_selected_checkpoint_exact_control}
   - {pr: 491, head_sha: ab90201e88409310632812727e0138c56b455644, classification: ARCHIVE_POINTER, state_after_cleanup: open, role: P334_cut_network_exact_control}
   - {pr: 485, head_sha: b454bb8ec04ad90a2db579efaf6285e59d6ba5aa, classification: ARCHIVE_POINTER, state_after_cleanup: open, role: N100_same_raw_shape_analysis}

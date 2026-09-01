@@ -1,4 +1,4 @@
-version: 9
+version: 10
 updated: 2026-09-01
 purpose: >
   Compact machine-readable map of durable evidence and the current decision.
@@ -23,12 +23,13 @@ hard_constraints:
 
 weekly_decision:
   date: 2026-09-01
-  objective: completed_transmission_decisions_named_policy_stops_and_critical_pair_IR_exclusion
-  keep_live_issues: []
+  objective: complete_two_channel_thermal_gate_rate_without_new_sampling
+  keep_live_issues: [537]
   broader_open_P1_issues: [154, 334, 337]
   P2_support_and_candidate_prs: [530, 531, 532, 533]
-  next_attention: fixed_canonical_thermal_pivotal_transmission_and_actual_fixed_m_phase_control
-  frontier_sha: eed2190c04b67084ab5aef5827e00377853a0bca
+  P2_support_issues: [539]
+  next_attention: full_two_channel_original_U_thermal_rate_pooled_root_transport_and_separate_fixed_m_phase_control
+  frontier_sha: 2785e3bba2eb6a70fd4f2d390d3b3c2701a99d85
   historical_model_vocabulary:
     M0: lifecycle_current_only
     M1: contact_regulated_current
@@ -47,9 +48,10 @@ weekly_decision:
   diagnostic_only:
     - J_act
   stop_rule: >
-    The requested blocks are complete and named failed parameterizations are
-    stopped. No top-up, replacement lag/source, fifth contact feature or
-    same-block rescue follows. P0 is empty; broader P1 questions remain open.
+    The requested random blocks are complete and named failed parameterizations
+    are stopped. Issue 537 is theory-only: no top-up, replacement lag/source,
+    fifth contact feature, same-block rescue or random production follows until
+    the full two-channel T_N rate and pooled-root transport are controlled.
   fallback_boundary: write_current_C3_finite_size_phenomenology_without_operator_identification
 
 research_tracks:
@@ -72,8 +74,9 @@ research_tracks:
     evidence: [D_P334_FULL_BIRTH_ARCHIVE, D_P334_NORMAL_RESULT, D_P334_CONTACT_RESULT, D_P154_PROSPECTIVE_RESULT]
   - id: E
     name: pivotal_and_self_matching_RG
-    state: parked_support
-    evidence: [E_RUSSO_PIVOTAL, E_LOCAL_TANGENT, E_MULTIRADIUS]
+    state: active_theory_gate_without_sampling
+    issues: [537]
+    evidence: [E_RUSSO_PIVOTAL, E_LOCAL_TANGENT, E_MULTIRADIUS, D_P337_THERMAL_GATE_AUDIT]
   - id: F
     name: Q4_Jordan_and_modular_shape
     state: parked_support
@@ -84,9 +87,9 @@ research_tracks:
     evidence: [E_PRIMITIVE_GEN2, E_PRIMITIVE_KDV]
   - id: H
     name: exact_finite_algebra_and_negative_controls
-    state: finite_theory_attention_without_production
-    issues: [337]
-    evidence: [E_N26_BETA_NEGATIVE, D_P337_TWO_COUPLING, D_P337_FINITE_FRONTIER, D_P337_HOMOGENEOUS_N50, D_P337_REGULAR_SPATIAL_MC, D_P337_REGULAR_JOINT_U, D_P337_CRITICAL_SPATIAL_SUMMABILITY]
+    state: active_exact_theory_gate_without_production
+    issues: [337, 537]
+    evidence: [E_N26_BETA_NEGATIVE, D_P337_TWO_COUPLING, D_P337_FINITE_FRONTIER, D_P337_HOMOGENEOUS_N50, D_P337_REGULAR_SPATIAL_MC, D_P337_REGULAR_JOINT_U, D_P337_CRITICAL_SPATIAL_SUMMABILITY, D_P337_THERMAL_GATE_AUDIT]
     unmerged_candidate_support: [D_P337_ORIGINAL_U_INFLUENCE_SUPPORT, D_P337_SECTOR_QUOTIENT_SUPPORT, D_P337_TWO_BRIDGE_FACTOR_REVIEW, D_P337_MESOSCOPIC_TWO_CLOUD_CANDIDATE]
   - id: I
     name: threshold_value_and_literature
@@ -375,6 +378,33 @@ decision_evidence_blocks:
     outcome: raw_canonical_pair_kernel_absolutely_summable_and_IR_divergent_tail_excluded_at_exact_pc
     remaining: thermal_pivotal_spatial_sum_and_pooled_root_slope_control
 
+  - id: D_P337_THERMAL_GATE_AUDIT
+    issue: 537
+    parent_issue: 337
+    claim_level: exact_finite_semantic_no_go
+    geometry: Bell8_partitions_and_square_tori_N9_N10_N13
+    N: [9, 10, 13]
+    n_samples: 0
+    abstract_partitions: 4140
+    allowed_joins: 64954
+    nonzero_joins: 29970
+    positive_joins: 9952
+    negative_joins: 20018
+    max_abs_16_delta_g: 68
+    N13_state_edge_pair_checks: 1198080
+    same_shared_count_sign_flips: 312
+    score_path: notes/p337-thermal-pivotal-gate-audit.md
+    sha: 2785e3bba2eb6a70fd4f2d390d3b3c2701a99d85
+    parent_block: D_P337_CRITICAL_SPATIAL_SUMMABILITY
+    independent_primary: false
+    outcome: covariance_jet_has_kernel_and_original_rank_readout_channels_single_derivative_shortcut_retired
+    exact_target: T_N_equals_jY_p_minus_R_jM_p_minus_R_p_jM_is_little_o_D_over_A_N
+    root_conditioned_identity: partial_u_partial_epsilon_Yhat_equals_T_N_over_D_equals_J_N_over_A_N
+    signed_schur_form: T_t_equals_pooled_covariance_H_with_centered_a_times_S_minus_jM_over_M_t_times_B
+    next_falsifier: ordinary_four_arm_landing_transfer_matrix_has_rank_one_after_C4_and_Schur_projection
+    falsifier_stop: any_nonzero_projected_2x2_minor_retires_the_four_packet_cancellation_route
+    remaining: projected_landing_rank_test_then_exceptional_arm_bound_and_exact_pc_to_pooled_root_transport
+
 unmerged_candidate_support:
 
   - id: D_P337_TWO_BRIDGE_FACTOR_REVIEW
@@ -419,24 +449,39 @@ unmerged_candidate_support:
     claim_level: C0_theory_candidate_with_C1_exact_local_sublemmas
     n_samples: 0
     score_path: notes/closed-source-mesoscopic-two-cloud-synthesis.md
-    sha: df480bb12417fcdc7add7703ce448d8495fc5045
+    sha: a7680426768ca93ead1fca9446ae86ca1fc15ced
     parent_block: D_P337_FINITE_FRONTIER
     independent_primary: false
-    outcome: local_hbar_c0_c2_and_capillary_sublemmas_with_formal_root_coefficient_candidate
-    remaining: dependency_base_root_chart_error_order_connected_cluster_remainder_axis_encoding_and_control_character_must_be_fixed_before_claim_promotion
+    outcome: C1_local_conditional_Bessel_capillary_sign_with_formal_full_root_candidate
+    remaining: dependency_ancestry_omitted_a_times_s_term_uniform_full_lattice_remainder_and_adjacent_hole_O_N_a3_correction_before_C0_promotion
 
-active_execution: []
+active_execution:
+  - issue: 537
+    parent_issue: 337
+    kind: theory
+    target: complete_original_U_thermal_pivotal_two_channel_rate_and_pooled_root_transport
+    status: active_no_sampling
+    random_sample_budget: 0
+    next_falsifier: projected_ordinary_four_arm_landing_matrix_2x2_minors
+    stop_rule: no_random_block_until_a_signed_support_landing_or_normalization_bound_changes_the_gate
 
 repository_cleanup:
-  live_verified_at: 2026-09-01T03:08:15Z
-  open_issue_count: 28
+  live_verified_at: 2026-09-01T03:37:00Z
+  open_issue_count: 30
   open_issue_partition:
+    active_P0_theory: [537]
     broader_P1: [154, 334, 337]
-    parked_P2: [1, 5, 8, 11, 13, 14, 27, 31, 52, 100, 103, 112, 119, 155, 156, 159, 227, 234, 275, 276, 321, 370, 398, 408, 419]
-  closed_issue_counts_this_sync: {CLOSE_DONE: 6, CLOSE_DUP: 39, CLOSE_NOISE: 10}
+    parked_and_support_P2: [1, 5, 8, 11, 13, 14, 27, 31, 52, 100, 103, 112, 119, 155, 156, 159, 227, 234, 275, 276, 321, 370, 398, 408, 419, 539]
+  closed_issue_counts_first_sync: {CLOSE_DONE: 6, CLOSE_DUP: 39, CLOSE_NOISE: 10}
+  additional_closed_new_issues_second_sync: [534, 535, 536, 538]
+  closed_issue_count_two_sync_cumulative: 59
+  newly_retained_issues_second_sync:
+    P0_theory: [537]
+    P2_support: [539]
   closed_prs_this_sync: [451, 527]
   priority_downgrades_this_sync:
     issues_P1_to_P2: [14, 408]
+    new_support_issue_to_P2: [539]
     draft_prs_to_P2_support_or_candidate: [530, 531, 532, 533]
   merges_this_sync: 0
 
@@ -466,6 +511,7 @@ parked_support_issues:
   - 398
   - 408
   - 419
+  - 539
 
 completed_analysis_tasks:
   - {issue: 95, name: prequential_evidence_ledger, outcome: canonical_primary_only_evidence_aggregation}
@@ -502,6 +548,7 @@ negative_results:
   - {id: NR_SMALL_MULTIRADIUS, statement: N130_N170_multiradius_does_not_support_simple_shell_log_flow_and_R8_is_noninjective}
   - {id: NR_PRIMITIVE_SCALAR_E4, statement: scalar_E4_Pell_phase_bridge_fails_for_primitive_character}
   - {id: NR_P337_PAIR_IR_DIVERGENCE, statement: canonical_raw_pair_kernel_cannot_generate_an_IR_divergent_spatial_susceptibility_at_exact_square_site_pc}
+  - {id: NR_P337_SINGLE_CHANNEL_THERMAL_SHORTCUT, statement: partial_p_mean_g_alone_does_not_control_d_p_Cov_and_can_reverse_the_finite_sign}
 
 maintenance_rules:
   - STATUS_is_the_only_current_claim_ledger
@@ -510,3 +557,4 @@ maintenance_rules:
   - P2_Draft_titles_do_not_authorize_execution
   - prefer_eliminating_a_model_over_adding_a_coordinate
   - a_failed_discriminator_is_a_success_when_it_closes_a_mechanism_loop
+  - active_theory_does_not_imply_random_production

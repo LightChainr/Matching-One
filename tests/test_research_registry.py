@@ -131,7 +131,7 @@ class ResearchRegistryTests(unittest.TestCase):
         self.assertIn(95, analysis_completed)
         self.assertIn(115, exact_completed)
 
-    def test_no_gated_state_remains_in_machine_readable_work_queue(self) -> None:
+    def test_active_queue_is_explicit_and_has_no_gated_state(self) -> None:
         def walk(value):
             if isinstance(value, dict):
                 for key, item in value.items():
@@ -143,7 +143,21 @@ class ResearchRegistryTests(unittest.TestCase):
                     yield from walk(item)
 
         self.assertNotIn("gated", set(walk(self.ledger)))
-        self.assertEqual(self.ledger["active_execution"], [])
+        self.assertEqual(
+            self.ledger["active_execution"],
+            [
+                {
+                    "issue": 537,
+                    "parent_issue": 337,
+                    "kind": "theory",
+                    "target": "complete_original_U_thermal_pivotal_two_channel_rate_and_pooled_root_transport",
+                    "status": "active_no_sampling",
+                    "random_sample_budget": 0,
+                    "next_falsifier": "projected_ordinary_four_arm_landing_matrix_2x2_minors",
+                    "stop_rule": "no_random_block_until_a_signed_support_landing_or_normalization_bound_changes_the_gate",
+                }
+            ],
+        )
 
 
 if __name__ == "__main__":
