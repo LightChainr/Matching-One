@@ -1,0 +1,54 @@
+schema: matching-one.p275-restricted-trace-columns.manifest.v1
+issue: 275
+status: existing_asset_candidate_column_audit
+base_commit: b23411276c0aa918bea964f7a429a7509ecd6fc8
+
+execution:
+  requested_machine: XPk2PZ
+  remote_directory: /workspace/matching-one-p275-20260901
+  remote_status: NOT_EXECUTED
+  remote_failure: SSH_publickey_mismatch_after_Ready_to_Running_start
+  key_reset_attempted: false
+  fallback: local_mac_existing_assets
+
+scope:
+  candidates: [vacuum_Ward, thermal_Q4_Jordan]
+  raw_coordinates: [s0, s1, s2, partial_p_s0, partial_p_s1, partial_p_s2]
+  normalized_coordinates: [eta_B, xi_B, partial_p_eta_B, partial_p_xi_B]
+  acquisition: existing_theory_and_covariance_only
+  new_random_samples: 0
+
+inputs:
+  transport_law: notes/p275-restricted-trace-transport-law-20260901.md
+  current_asset_closure: analysis/p275_current_asset_closure.yaml
+  vacuum_semantic_gate: predictions/p231_vacuum_kdv_sector_semantic_gate_20260830.json
+  vacuum_existing_score: results/local-20260829/P231-vacuum-kdv-sector-response/score.json
+  thermal_q4_shape: predictions/rectangular_thermal_q4_hecke_20260829.yaml
+  thermal_q4_jordan_shape: predictions/q4_jordan_log_slope_shape_20260829.json
+  global_k1_k2_covariance: results/p275-forward-identifiability/latest.json
+  rho_child_covariance: results/p275-rho-observer-models/latest.json
+
+candidate_constraints:
+  vacuum_Ward_critical_surface:
+    exact_relation: s2_equals_s0_at_the_critical_surface
+    thermal_relation: not_fixed_by_current_assets
+  vacuum_Ward_neighbourhood_stronger_case:
+    exact_relations: [s2_equals_s0, partial_p_s2_equals_partial_p_s0]
+  thermal_Q4_Jordan:
+    exact_restricted_sector_relations: []
+    available_downstream_shape: area_normalized_weight4_E4hat_and_Jordan_log_slope_shape
+
+proxy_score:
+  purpose: quantify_existing_K1_K2_power_against_fixed_transfer_families_without_calling_them_physical_source_columns
+  vacuum_semisimple_proxy_kappa: 0.5
+  thermal_Jordan_proxy_kappa: 1.0
+
+output:
+  schema: matching-one.p275-restricted-trace-columns.v1
+  path: results/p275-restricted-trace-columns/latest.json
+
+claim_boundary:
+  - symbolic_or_family_columns_are_not_invented_numeric_source_insertions
+  - proxy_transfer_scores_are_not_candidate_field_identifications
+  - rho_child_and_K1_K2_covariances_are_score_ready_only_after_a_same_source_forward_map_exists
+  - no_new_Monte_Carlo

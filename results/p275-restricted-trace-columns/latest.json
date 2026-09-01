@@ -1,0 +1,279 @@
+{
+  "claim_boundary": [
+    "symbolic_or_family_columns_are_not_invented_numeric_source_insertions",
+    "proxy_transfer_scores_are_not_candidate_field_identifications",
+    "rho_child_and_K1_K2_covariances_are_score_ready_only_after_a_same_source_forward_map_exists",
+    "no_new_Monte_Carlo"
+  ],
+  "decision": {
+    "literal": "UNIDENTIFIABLE_WITH_CURRENT_ASSETS",
+    "next_theory_target": "fix_partial_p_eta_B_and_xi_B_partial_p_xi_B_for_each_named_source_then_apply_the_existing_covariance_once",
+    "smallest_current_gap": "one_candidate_specific_restricted_sector_direction_at_the_critical_surface_plus_the_numeric_source_scale_and_original_U_map",
+    "stronger_new_detail": "the_critical_surface_Ward_family_has_rank3_inside_the_rank4_thermal_envelope_after_common_normalizers_are_removed",
+    "why_covariance_does_not_close_it": "both_existing_covariances_are_full_rank_but_neither_archive_contains_the_same_B_source_six_coordinate_jet"
+  },
+  "execution": {
+    "fallback": "local_mac_existing_assets",
+    "key_reset_attempted": false,
+    "remote_directory": "/workspace/matching-one-p275-20260901",
+    "remote_failure": "SSH_publickey_mismatch_after_Ready_to_Running_start",
+    "remote_status": "NOT_EXECUTED",
+    "requested_machine": "XPk2PZ"
+  },
+  "existing_K1_K2_proxy_score": {
+    "Jordan_kappa_1": {
+      "coefficients": [
+        0.5072939716582158,
+        0.06058157093016514,
+        0.25215778222884405,
+        -0.06811390673059411,
+        0.5271273741196116,
+        0.11261459826231338,
+        0.22962153792948536,
+        -0.06041824458487925
+      ],
+      "design_rank": 8,
+      "mahalanobis_chi_square": 6.4325265528929165,
+      "observation_dimension": 12,
+      "residual_degrees_of_freedom": 4,
+      "whitened_design_singular_values": [
+        306.46282085772464,
+        225.28157680749658,
+        173.7731056742654,
+        112.68044658116358,
+        85.48880814175918,
+        64.53112129046777,
+        51.167480553416475,
+        31.553742739383118
+      ]
+    },
+    "archive_crosscheck": {
+      "Jordan_chi_square": 6.432526552892939,
+      "semisimple_chi_square": 11.79246603782135
+    },
+    "column_spaces": {
+      "Jordan_rank": 8,
+      "covariance_whitened_Jordan_singular_values": [
+        306.46282085772447,
+        225.28157680749703,
+        173.77310567426557,
+        112.68044658116362,
+        85.48880814175925,
+        64.53112129046772,
+        51.1674805534165,
+        31.553742739383104
+      ],
+      "covariance_whitened_principal_cosines": [
+        1.000000000000001,
+        1.0,
+        0.9999999999999999,
+        0.9999999999999994,
+        0.996535537429209,
+        0.9952139820174423,
+        0.9943529285481786,
+        0.9927235048076124
+      ],
+      "covariance_whitened_semisimple_singular_values": [
+        427.5014907853127,
+        307.4855397376006,
+        234.6600377126733,
+        158.13683120501358,
+        30.030269247775074,
+        22.666104327798713,
+        17.798627497547606,
+        10.76998834301104
+      ],
+      "ordinary_combined_rank": 12,
+      "ordinary_intersection_dimension": 4,
+      "semisimple_rank": 8
+    },
+    "coordinate_count": 12,
+    "covariance_rank": 12,
+    "label": "conditional_transfer_proxy_not_physical_candidate_columns",
+    "semisimple_kappa_0p5": {
+      "coefficients": [
+        0.6304019010245859,
+        -0.12296258120369272,
+        0.1153153727360541,
+        0.13678336422328805,
+        0.7498249999135935,
+        -0.22254802771436172,
+        0.10094542406205634,
+        0.12876069280495656
+      ],
+      "design_rank": 8,
+      "mahalanobis_chi_square": 11.792466037821335,
+      "observation_dimension": 12,
+      "residual_degrees_of_freedom": 4,
+      "whitened_design_singular_values": [
+        427.50149078531274,
+        307.4855397376006,
+        234.66003771267322,
+        158.13683120501366,
+        30.030269247775117,
+        22.666104327798703,
+        17.79862749754759,
+        10.769988343011045
+      ]
+    }
+  },
+  "existing_covariance_coverage": {
+    "global_K1_K2": {
+      "candidate_forward_map_rank": 0,
+      "covariance_rank": 12,
+      "direct_candidate_score_status": "UNAVAILABLE",
+      "observation_dimension": 12,
+      "same_source_restricted_trace_coordinates_present": 0
+    },
+    "rho_child": {
+      "candidate_forward_map_rank": 0,
+      "covariance_rank": 9,
+      "direct_candidate_score_status": "UNAVAILABLE",
+      "observation_dimension": 9,
+      "same_source_restricted_trace_coordinates_present": 0
+    }
+  },
+  "inputs": {
+    "current_asset_closure": {
+      "path": "analysis/p275_current_asset_closure.yaml",
+      "sha256": "f59e15aeb29338b668d68b105252dbd49404fe4324a8656c888a13b60133d97a"
+    },
+    "global_k1_k2_covariance": {
+      "path": "results/p275-forward-identifiability/latest.json",
+      "sha256": "b492a642c52f4e9afd3392bb88f8d8fc8933370d236428fc232d8ab60502bb17"
+    },
+    "rho_child_covariance": {
+      "path": "results/p275-rho-observer-models/latest.json",
+      "sha256": "758cc30d9c8789a2a03e85a3c8dcd30294be21e6688775bf51caef552dff803b"
+    },
+    "thermal_q4_jordan_shape": {
+      "path": "predictions/q4_jordan_log_slope_shape_20260829.json",
+      "sha256": "a1dfe3f1c22273d6a3e1c1dba5013a0b10b3373468b39c86d6f4078e4dc07b53"
+    },
+    "thermal_q4_shape": {
+      "path": "predictions/rectangular_thermal_q4_hecke_20260829.yaml",
+      "sha256": "5c6c43ea5fcc3acf8e8b1b0c09b14e946d7cda273a7dccba9d589fb3d7e0b4b7"
+    },
+    "transport_law": {
+      "path": "notes/p275-restricted-trace-transport-law-20260901.md",
+      "sha256": "399ab55f7204b9642ab8ecfd841e2ea83f510b9a91e2c5dda5f12fb8dbc714ee"
+    },
+    "vacuum_existing_score": {
+      "path": "results/local-20260829/P231-vacuum-kdv-sector-response/score.json",
+      "sha256": "97ebbbf3bc3242c41669f51db3d280de7921c9de67e07ada9ad1df34867ba487"
+    },
+    "vacuum_semantic_gate": {
+      "path": "predictions/p231_vacuum_kdv_sector_semantic_gate_20260830.json",
+      "sha256": "06c34d37ff3035cced6456289c44e823ae231afa03757a6d6102955a14a2fcf4"
+    }
+  },
+  "issue": 275,
+  "restricted_trace_jet": {
+    "candidate_families": {
+      "thermal_Q4_Jordan_current_envelope": {
+        "available_only_after_transport": [
+          "E4hat_modulus_shape",
+          "Jordan_logN_slope_shape"
+        ],
+        "fixed_restricted_sector_relations": [],
+        "normalized_image_rank": 4,
+        "raw_family_dimension": 6,
+        "unfixed_coordinates": [
+          "eta_B",
+          "xi_B",
+          "partial_p_eta_B",
+          "partial_p_xi_B"
+        ]
+      },
+      "vacuum_Ward_critical_surface": {
+        "fixed_relation": "eta_B=0_at_p0",
+        "normalized_image_rank": 3,
+        "raw_family_dimension": 5,
+        "unfixed_coordinates": [
+          "xi_B",
+          "partial_p_eta_B",
+          "partial_p_xi_B"
+        ]
+      },
+      "vacuum_Ward_neighbourhood_stronger_case": {
+        "fixed_relations": [
+          "eta_B=0",
+          "partial_p_eta_B=0"
+        ],
+        "normalized_image_rank": 2,
+        "raw_family_dimension": 4,
+        "unfixed_coordinates": [
+          "xi_B",
+          "partial_p_xi_B"
+        ]
+      }
+    },
+    "column_space_comparison": {
+      "critical_Ward_image_is_contained_in_thermal_envelope": true,
+      "critical_Ward_intersection_with_thermal_dimension": 3,
+      "neighbourhood_Ward_intersection_with_thermal_dimension": 2,
+      "thermal_extra_directions_beyond_critical_Ward": 1,
+      "thermal_extra_directions_beyond_neighbourhood_Ward": 2
+    },
+    "common_normalizer_is_annihilated": true,
+    "common_normalizer_kernel_dimension": 2,
+    "normalized_order": [
+      "eta_B",
+      "xi_B",
+      "partial_p_eta_B",
+      "partial_p_xi_B"
+    ],
+    "raw_order": [
+      "s0",
+      "s1",
+      "s2",
+      "partial_p_s0",
+      "partial_p_s1",
+      "partial_p_s2"
+    ],
+    "transport_matrix": [
+      [
+        -0.5,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        -0.5,
+        1.0,
+        -0.5,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        -0.5,
+        0.0,
+        0.5
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        -0.5,
+        1.0,
+        -0.5
+      ]
+    ],
+    "transport_rank": 4
+  },
+  "runtime": {
+    "new_random_samples": 0,
+    "numpy": "2.4.6",
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "python": "3.13.7",
+    "wall_seconds": 0.021660166999936337
+  },
+  "schema": "matching-one.p275-restricted-trace-columns.v1",
+  "status": "PARTIAL_COLUMNS_COMPLETE_EXISTING_COVARIANCES_NOT_DIRECTLY_SCOREABLE"
+}
