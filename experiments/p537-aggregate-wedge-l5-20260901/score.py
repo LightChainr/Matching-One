@@ -63,16 +63,29 @@ def main():
     def bern(k, n, p): return p**k * (1-p)**(n-k)
     def matching(p): return mp.fsum(mp.mpf(row[1]) * bern(k,N,p) for k,row in global_rows.items())
     root = mp.findroot(matching, (mp.mpf("0.58"),mp.mpf("0.61")))
-    mean_a = mp.fsum(mp.mpf(row[2]) * bern(k,N,root) for k,row in global_rows.items()) / (16*N*N)
+    def mean_source(p):
+        return mp.fsum(mp.mpf(row[2]) * bern(k,N,p) for k,row in global_rows.items()) / (16*N*N)
 
-    matrix = {}
-    for tr in ("01","12"):
-        B = mp.fsum(mp.mpf(landing[(tr,k)][0]) * bern(k,N-1,root) for k in range(N))
-        T = mp.fsum(mp.mpf(landing[(tr,k)][0]) * (mp.mpf(k)+mp.mpf("0.5")-N*root) * bern(k,N-1,root) for k in range(N))
-        raw_A = mp.fsum(mp.mpf(landing[(tr,k)][1]) * bern(k,N-1,root) for k in range(N)) / (32*N*N)
+    def cell(tr, p):
+        mean_a = mean_source(p)
+        B = mp.fsum(mp.mpf(landing[(tr,k)][0]) * bern(k,N-1,p) for k in range(N))
+        T = mp.fsum(mp.mpf(landing[(tr,k)][0]) * (mp.mpf(k)+mp.mpf("0.5")-N*p) * bern(k,N-1,p) for k in range(N))
+        raw_A = mp.fsum(mp.mpf(landing[(tr,k)][1]) * bern(k,N-1,p) for k in range(N)) / (32*N*N)
         A = raw_A - mean_a * B
-        matrix[tr] = dict(B=B,T=T,raw_A=raw_A,A=A,unsigned_count=sum(landing[(tr,k)][2] for k in range(N)))
+        return dict(B=B,T=T,raw_A=raw_A,A=A,unsigned_count=sum(landing[(tr,k)][2] for k in range(N)))
+
+    mean_a = mean_source(root)
+    matrix = {tr:cell(tr,root) for tr in ("01","12")}
     psi4 = matrix["01"]["T"]*matrix["12"]["A"] - matrix["12"]["T"]*matrix["01"]["A"]
+    thermal_sum = matrix["01"]["T"] + matrix["12"]["T"]
+    def psi_and_sum(p):
+        c01, c12 = cell("01",p), cell("12",p)
+        return c01["T"]*c12["A"]-c12["T"]*c01["A"], c01["T"]+c12["T"]
+    dpsi_dp = mp.diff(lambda p: psi_and_sum(p)[0], root)
+    dsum_dp = mp.diff(lambda p: psi_and_sum(p)[1], root)
+    wronskian_p = dpsi_dp*thermal_sum - psi4*dsum_dp
+    C4 = 2*psi4/thermal_sum
+    G4 = 2*root*(1-root)*wronskian_p/(thermal_sum**3)
     thermal_norm2 = matrix["01"]["T"]**2 + matrix["12"]["T"]**2
     chi_perp = psi4 / thermal_norm2
     source_perp = psi4 / mp.sqrt(thermal_norm2)
@@ -84,6 +97,12 @@ def main():
         "mean_canonical_source":s(mean_a),
         "matrix":{tr:{k:(v if isinstance(v,int) else s(v)) for k,v in row.items()} for tr,row in matrix.items()},
         "Psi4":s(psi4),"Psi4_sign":int(mp.sign(psi4)),
+        "thermal_sum":s(thermal_sum),
+        "dPsi4_dp":s(dpsi_dp),
+        "dThermalSum_dp":s(dsum_dp),
+        "wronskian_p":s(wronskian_p),
+        "C4":s(C4),
+        "G4":s(G4),
         "thermal_norm2":s(thermal_norm2),
         "chi_perp":s(chi_perp),
         "source_perp":s(source_perp),
@@ -92,6 +111,10 @@ def main():
             "L6_source_perp":s(L**6*source_perp),
             "L8_Psi4":s(L**8*psi4),
             "L2_thermal_norm":s(L**2*mp.sqrt(thermal_norm2)),
+            "L6_C4":s(L**6*C4),
+            "L4_G4":s(L**4*G4),
+            "L10_wronskian_p":s(L**10*wronskian_p),
+            "L2_thermal_sum":s(L**2*thermal_sum),
         },
         "interpretation":"complete finite-population radius-one ell4 aggregate; signed thermal-gauge-invariant birth/completion wedge",
         "boundary":"one finite axis torus; no asymptotic exponent or continuum-field identity",
