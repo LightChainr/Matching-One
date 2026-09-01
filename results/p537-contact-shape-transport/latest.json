@@ -1,0 +1,53 @@
+{
+  "schema": "matching-one/p537-contact-shape-transport-score/v1",
+  "status": "COMPLETED_EXPLORATORY_POSTHOC",
+  "decision": "RIGID_SHAPE_DISFAVORED",
+  "matrix_order": [
+    "01_single",
+    "01_double",
+    "12_single",
+    "12_double"
+  ],
+  "n25": [
+    [
+      -2.8838028012142906e-06,
+      -2.9372878646696404e-06
+    ],
+    [
+      -5.322565494177773e-06,
+      6.194816243610891e-06
+    ]
+  ],
+  "n65": [
+    [
+      -1.5785729079578637e-07,
+      -9.227657800496906e-08
+    ],
+    [
+      -3.0912984613371896e-07,
+      3.696802086023964e-07
+    ]
+  ],
+  "gls_amplitude": 0.053887568802699626,
+  "gls_amplitude_se": 0.002570863413108741,
+  "residual": [
+    [
+      -2.4561689319333686e-09,
+      6.600672389575085e-08
+    ],
+    [
+      -2.23097318593393e-08,
+      3.585662205473324e-08
+    ]
+  ],
+  "chi_square": 10.337081146456294,
+  "degrees_of_freedom": 3,
+  "p_value": 0.015907791534747442,
+  "euclidean_cosine": 0.9889044369444583,
+  "euclidean_relative_residual": 0.14855306994998133,
+  "dependency_groups": [
+    "p537-exact-N25-contact-stage",
+    "p537-N65-contact-stage-20m-plus-P45-baseline"
+  ],
+  "boundary": "The proportional-shape model and threshold were not frozen before opening N65; this is an adaptive mechanism-compression diagnostic, not a second prospective result."
+}

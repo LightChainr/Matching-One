@@ -1,0 +1,24 @@
+{
+  "schema": "matching-one/p537-contact-shape-transport-contract/v1",
+  "status": "EXPLORATORY_POSTHOC",
+  "question": "Is the held-out N65 contact-stage tensor a scalar multiple of the exact N25 tensor?",
+  "n25": {
+    "commit": "df4a64f68232eec5aa5b8c8a5d920062aaa7808e",
+    "matrix": [
+      [-2.8838028012142906e-6, -2.9372878646696404e-6],
+      [-5.3225654941777728e-6, 6.1948162436108913e-6]
+    ],
+    "covariance": "exact_zero"
+  },
+  "n65": {
+    "result": "results/p537-contact-stage-n65/result.json",
+    "matrix_path": ["primary", "matrix"],
+    "covariance_path": ["primary", "covariance", "combined"]
+  },
+  "model": "vec(L65)=amplitude*vec(L25)+noise with one fitted amplitude and the full four-cell N65 covariance",
+  "decision": {
+    "RIGID_SHAPE_DISFAVORED": "chi-square survival probability below 0.05",
+    "RIGID_SHAPE_NOT_REJECTED": "otherwise"
+  },
+  "boundary": "The proportional-shape model and threshold were not frozen before opening N65; this is an adaptive mechanism-compression diagnostic, not a second prospective result."
+}

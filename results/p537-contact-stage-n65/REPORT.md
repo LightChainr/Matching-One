@@ -50,6 +50,14 @@ evidence.  The exact all-`z` N25 census remains useful as a finite total-closure
 decomposition, but it is no longer a prerequisite for transmission: the
 prospective N65 gate has already answered that question.
 
+A secondary [full-covariance shape comparison](../p537-contact-shape-transport/latest.md)
+asks whether the entire N65 tensor is only one scalar times the exact N25
+tensor.  It finds `a=0.0538876+/-0.0025709` and `chi2=10.3371/3`
+(`p=.01591`): the two matrices have the same signs and cosine `.9889`, but the
+one-amplitude shape is nominally disfavoured.  This question was formulated
+after N65 was opened, so it is an adaptive mechanism-compression diagnostic,
+not a second prospective decision or independent evidence.
+
 ## Frozen production and provenance
 
 - freeze/base commit: `76e2d82e4a1faa76cd71d377fa924a50cb0b6033`
