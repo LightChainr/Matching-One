@@ -4,14 +4,23 @@
 
 This map is the repository's scientific coordinate system. It is not a permission system: exact work, reanalysis, pilots, production and independent theory may proceed in parallel. Priority moves attention; it does not lock, close, veto or demote a task. `STATUS` owns claim/lifecycle language, `ROADMAP` preserves rationale, and [NEXT-TARGETS](NEXT-TARGETS.md) owns the single ranked decision queue.
 
-**Current frontier: production data are now eliminating concrete models.**
-The canonical macro-window ratio route is stopped; the typed
+**Current frontier: current production has eliminated concrete models, but the
+named original-`U` mechanisms are not identifiable from current assets.**
+The [closure analysis](../notes/p275-current-asset-closure-20260901.md) records
+`UNIDENTIFIABLE_WITH_CURRENT_ASSETS`: vacuum/KdV and thermal-Q4/Jordan do not
+yet define candidate-specific source--thermal restricted-trace columns through
+the physical normalizer and moving root.  Existing covariance is ready to
+score those columns, but cannot invent them.  The Gaussian primitive-C3 spin
+route is separately closed by the exact `74f55006` unit-rotation theorem:
+the N145 H0 selection is an embedding symmetry and the earlier N65 H8 label
+was an angle alias.  The canonical macro-window ratio route is stopped; the typed
 contact-completion carrier has passed a held-out original-`U` transmission
 gate but is only a small share of full N65 response; and #275's first forward
 score is `PARTIALLY_IDENTIFIABLE`.  The N112 rho-child nine-coordinate archive
 also rejects denominator-only, rank-1-mass-only and real-rescaling mechanisms.
 P0 has therefore narrowed to the candidate-specific same-source three-sector
-source--thermal jet and its original-`q/E/U` transport. The completed N100/N400
+source--thermal jet and its original-`q/E/U` transport, supplied by the named
+candidate rather than fitted from another archive. The completed N100/N400
 [pilot](../results/regular-pair-macro-joint-u/REPORT.md), `open_pr #267`,
 gives `T_N=N²J2_macro=+11.877846` with simultaneous interval
 `[−2.255616,26.011308]` at N100 and `−542.503823` with interval
@@ -221,7 +230,7 @@ rank-one rescue.  The unavailable sentinel still cannot supply a joint key
 after the fact: future transmission must keep endpoint off/on on one rest
 state and one dependency graph.
 
-PR #509 (live head `ac5f5fe7`; root-Hessian commit `ec3941b0`) proves at `eed2190c` that the *raw*
+PR #509 (live head `9798ece6`; root-Hessian commit `ec3941b0`) proves at `eed2190c` that the *raw*
 canonical pair susceptibility is absolutely summable at exact criticality;
 it does not control the thermal derivative, root motion or original U. Its
 latest audit supplies the exact root-conditioned Hessian

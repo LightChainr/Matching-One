@@ -6,6 +6,26 @@
 
 `docs/NEXT-TARGETS.md` owns the single attention order, while `docs/ROADMAP.md` preserves its scientific rationale. Neither locks a task, serializes theory work or treats a lower priority as a scientific rejection.
 
+**The #275 current-asset analysis is now closed as
+`UNIDENTIFIABLE_WITH_CURRENT_ASSETS`, `open_pr #267`.**  Vacuum/KdV has a
+critical sector-shape response and thermal-Q4/Jordan has conditional
+modular/Hecke data, but neither supplies candidate-specific same-source
+`{s_r,partial_p s_r}` through the rank-1 denominator, physical partition
+normalizer and pooled moving root.  The existing rho-child and K1/K2
+covariances can score such columns once supplied; more samples of the current
+coordinates cannot define them.  The exact decision and reopening condition
+are in [the closure note](../notes/p275-current-asset-closure-20260901.md) and
+[machine-readable contract](../analysis/p275_current_asset_closure.yaml).
+
+The branch-only N145 primitive-C3 gate (`016a9d69`) gives H0/H4/H8 nominal
+p-values `.968628`, `.000135506`, `2.67966e-13`.  Commit `74f55006` then proves
+that Gaussian-unit rotation exchanges the first two primitive homology lines,
+forcing the character into `omega*R` exactly.  This is an observer symmetry,
+not a local H0 field; it retires further Gaussian-ideal angle production and
+supersedes the earlier finite H8 label.  Separately, branch-only N145 full-T
+commit `f5ca2849` gives `N145_FULL_T_UNRESOLVED` under its frozen interval gate,
+with no top-up or exponent substitution.
+
 **The canonical macro-window joint-U pilot is completed and its field-ratio
 route is stopped, `open_pr #267`.** The [report](../results/regular-pair-macro-joint-u/REPORT.md)
 and [machine-readable result](../results/regular-pair-macro-joint-u/latest.json)
@@ -60,7 +80,7 @@ This is an attention ordering, not permission, serialization or a task lock.
 PR #530 `0e1917f9`, PR #531 `a5375b5` and PR #532 `2e1c57b4`
 are reusable unmerged interfaces, not `main` facts.
 
-PR #509 (live head `ac5f5fe7`; root-Hessian commit `ec3941b0`) proves at
+PR #509 (live head `9798ece6`; root-Hessian commit `ec3941b0`) proves at
 `eed2190c` that the raw
 canonical pair susceptibility is absolutely summable at exact criticality.
 That theorem does not control the thermal derivative, moving root or original
@@ -238,7 +258,7 @@ adds complete axis L4/L5 populations.  `Psi4` is
 thermal-orthogonal correction, not an exponent estimate or full original-U
 scale law.  #545's `C/G` also uses subblock-reestimated `beta=Q(A)/Q(T)`;
 it is a valid reduced-block identity, not the global pooled-root Schur
-summand.  PR #509 `ac5f5fe7` retires repeated finite rank-one rescue as the P0
+summand.  PR #509 `9798ece6` retires repeated finite rank-one rescue as the P0
 program.  After #544 closed, the same remote branch advanced without a new PR
 through the L8 freeze, N65 held-out transmission and full-`T` quotient; its current
 branch-only head is
@@ -885,7 +905,7 @@ This delta is placed before the main claim ledger because it changes what the te
 | Latest result | Source / integration | Scientific consequence |
 |---|---|---|
 | #275 production model elimination and restricted-trace transport | `open_pr` #267; [dictionary](../notes/p275-observable-normalizer-dictionary.md), [forward score](../results/p275-forward-identifiability/latest.md), [N112 model elimination](../results/p275-rho-observer-models/latest.md), [transport law](../notes/p275-restricted-trace-transport-law-20260901.md); Issue #275 remains `open_issue priority:P0`, Issue #537 `open_issue priority:P1` | Fixed q2 and the naive weight-8 radial transplant are excluded; Jordan is compatible but not identified. The existing N112 covariance rejects normalizer-only, rank-1-mass-only and independent-real-rescaling parameterizations. The next discriminating input is two actual same-source columns in `{s_r,partial_p s_r}`, propagated to original `q/E/root`; no new MC or GPU is required. |
-| Contact-fusion × topological-completion transmission and complete quotient | Exact N25 tensor `branch_only` [`df4a64f6`](https://github.com/LightChainr/Matching-One/blob/df4a64f68232eec5aa5b8c8a5d920062aaa7808e/results/p537-one-defect-diagonal-edge/contact-stage-tensor.json); prospective N65 20M result [`f46c38c3`](https://github.com/LightChainr/Matching-One/blob/f46c38c3088c1a9f4df8ab0f256b88639f0b34a3/results/p537-contact-stage-n65/result.json); complete quotient [`f9ba1ff6`](https://github.com/LightChainr/Matching-One/blob/f9ba1ff690b07beefcc71e669f1f29581d4e264e/results/p537-full-t-transport/RESULT.json); [unit correction](../results/p537-exposure-unit-audit/latest.md); PR #509 remains Draft at `ac5f5fe7` | Held-out `CONTACT_FUSION_COMPLETION_TRANSMITS`, but the historical cross-size exposure comparison mixed `P` and `P/N`, adding factor 65. The `5/8` attribution is withdrawn; the determinant is nonseparability with a possible commutator encoding. The remaining response is `complement_of_selected`, not yet a proven nonlocal mechanism. |
+| Contact-fusion × topological-completion transmission and complete quotient | Exact N25 tensor `branch_only` [`df4a64f6`](https://github.com/LightChainr/Matching-One/blob/df4a64f68232eec5aa5b8c8a5d920062aaa7808e/results/p537-one-defect-diagonal-edge/contact-stage-tensor.json); prospective N65 20M result [`f46c38c3`](https://github.com/LightChainr/Matching-One/blob/f46c38c3088c1a9f4df8ab0f256b88639f0b34a3/results/p537-contact-stage-n65/result.json); complete quotient [`f9ba1ff6`](https://github.com/LightChainr/Matching-One/blob/f9ba1ff690b07beefcc71e669f1f29581d4e264e/results/p537-full-t-transport/RESULT.json); [unit correction](../results/p537-exposure-unit-audit/latest.md); PR #509 remains Draft at `9798ece6` | Held-out `CONTACT_FUSION_COMPLETION_TRANSMITS`, but the historical cross-size exposure comparison mixed `P` and `P/N`, adding factor 65. The `5/8` attribution is withdrawn; the determinant is nonseparability with a possible commutator encoding. The remaining response is `complement_of_selected`, not yet a proven nonlocal mechanism. |
 | Canonical macro-window joint-U pilot | `open_pr` #267; [report](../results/regular-pair-macro-joint-u/REPORT.md) | N100 `T=+11.877846`, interval `[−2.255616,26.011308]`; N400 `T=−542.503823`, interval `[−1307.642507,222.634861]`. Opposite signs, both include zero, and N400 projects above the 2M ceiling: route stopped, `D17/D21` not evaluated. No macro top-up follows and this is not the current P0. |
 | N25 midpoint split, carrier replay and landing transfer | Split remains closed Issue #536 attachment only; 64-counter replay is `open_pr` #267; provisional N25 clean-two-bridge preflight is `open_pr` #509 at [`ec3941b0`](https://github.com/LightChainr/Matching-One/blob/ec3941b03b2694e827db1cba34766a82e6146a5a/experiments/p537-landing-matrix-preflight-20260901/REPORT.md); corrected canonical transfer is `branch_only` [`a3bc80c8`](https://github.com/LightChainr/Matching-One/blob/a3bc80c86585220f96dfeff022bd575b6c21d29f/notes/p537-finite-landing-transfer-definition.md) | Observable/rank pivot dominates issue-only all-pair J2 negatively. Delivery B found 18 sparse kernel changes. The provisional port contract is non-rank-one, while N9/N16 are supporting controls rather than the complete P4/Schur falsifier. Its transmission question is superseded by the completed `df4a64f6/f46c38c3` gate above. |
 | N100 and N400 three-shape production | `open_pr` #484; N400 raw `3e01b49`, captured head `705819e`; #485 is N100 same-stream reuse | N100 necessary common density-map statistic53.91436/6 becomes3.90086/6 at N400, p=.69009. One N1002M block and one independent N4008M block, with shapes paired inside each. Nonrejection is not model recovery; a fitted negative cross-scale amplitude has an interval spanning zero |

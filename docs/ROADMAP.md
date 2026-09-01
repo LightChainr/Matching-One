@@ -10,8 +10,11 @@ The declared `x=17/4` and `x=21/4` contrasts `D17/D21` were therefore not
 evaluated. This route is complete rather than waiting for a top-up, new
 window or fitted exponent.
 
-Default attention is now **#275's candidate-specific same-normalizer
-restricted source--thermal transport law**.  The original-observable dictionary
+Default theory attention is now **#275's candidate-specific same-normalizer
+restricted source--thermal transport law**, while analysis with the present
+assets is closed as
+[`UNIDENTIFIABLE_WITH_CURRENT_ASSETS`](../notes/p275-current-asset-closure-20260901.md).
+The original-observable dictionary
 and first forward-identifiability score are complete: fixed q2 and the naive
 weight-8 radial transplant are excluded, Jordan is compatible but not selected,
 and unrestricted semisimple/Jordan separation is non-uniform.  Reuse of the
@@ -26,8 +29,12 @@ down from `5.892%` at N25.  The main uncertainty is therefore not whether to
 add a fifth contact descriptor, but which raw trace/expectation is being
 predicted and which mechanisms are distinguishable after the physical
 normalizer is retained.  This P0 uses existing algebra and sufficient
-statistics; no new Monte Carlo or GPU acquisition is the default.
-PR #509's raw summability theorem (`eed2190c`, current head `ac5f5fe7`;
+statistics; no new Monte Carlo or GPU acquisition is the default.  The N145
+three-way primitive-C3 gate and exact Gaussian-unit theorem also close further
+Gaussian-ideal angle work: the H0 line is a finite observer symmetry, not a
+local field, and the earlier H8 label was an alias.  N145 full-T separately
+stops as `N145_FULL_T_UNRESOLVED`, so a third-size fit is not the closure route.
+PR #509's raw summability theorem (`eed2190c`, current head `9798ece6`;
 root-Hessian commit `ec3941b0`) cannot replace this thermal derivative. Its latest audit instead
 compresses the whole response into the root-conditioned Hessian
 `partial_u partial_epsilon Yhat=J_N/A_N`. PR #533's complete specified

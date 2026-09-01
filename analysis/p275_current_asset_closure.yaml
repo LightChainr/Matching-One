@@ -1,0 +1,80 @@
+schema: matching-one.p275-current-asset-closure.v1
+updated: '2026-09-01'
+issue: 275
+integration_status: open_pr
+decision: UNIDENTIFIABLE_WITH_CURRENT_ASSETS
+decision_scope: vacuum_or_Ward_vs_thermal_Q4_or_Jordan_as_mechanisms_of_original_square_site_U
+reason: candidate_specific_same_source_restricted_trace_thermal_columns_are_not_defined_in_current_assets
+
+closed_subdecisions:
+  gaussian_primitive_C3_spin_gate:
+    status: CLOSED_BY_EXACT_UNIT_ROTATION_SYMMETRY
+    branch: analysis/p275-gaussian-c3-phase-20260901
+    heldout_commit: 016a9d69207661a3f353422b47007b7823c3b7a0
+    theorem_commit: 74f550060d90163bf0959e559bd268f38e89d757
+    result: {H0_p: 0.9686282631633208, H4_p: 0.00013550583673525106, H8_p: 2.6796551373995975e-13, X: 0.9999260573539829}
+    exact_identity: P_ell0_equals_P_ell1_and_z_lies_in_omega_times_R_for_every_Gaussian_ideal_quotient
+    boundary: does_not_constrain_global_A_top_H4_or_identify_a_local_H0_field
+  rho_N112_probability_models:
+    status: THREE_DECLARED_PARAMETERIZATIONS_EXCLUDED
+    result_path: results/p275-rho-observer-models/latest.json
+    dependency_group: p267-rho-C3-Etop-N112-fresh2m
+  issue537_N145_full_T:
+    status: N145_FULL_T_UNRESOLVED_NO_TOPUP
+    branch: analysis/p537-siteflip-landing-20260901
+    contract_commit: 22aecbfa
+    result_commit: f5ca2849
+    J145: -0.000694364434794
+    standard_error: 0.000110663607588
+    confidence_95: [-0.000911265105666, -0.000477463763921]
+    frozen_boundary: -0.0004931
+
+required_forward_object:
+  coordinates: [s0, s1, s2, partial_p_s0, partial_p_s1, partial_p_s2]
+  definition: s_r_equals_B_r_over_Z_r_for_one_named_same_source
+  downstream_map: restricted_sector_jet_to_original_q_E_to_geometry_projection_to_physical_normalizer_to_pooled_moving_root_U
+
+candidate_readiness:
+  vacuum_KdV:
+    source: predictions/p231_vacuum_kdv_sector_semantic_gate_20260830.json
+    critical_sector_or_shape: available
+    candidate_source_restricted_traces: missing
+    same_source_thermal_jet: missing
+    original_U_column: missing
+  thermal_Q4_or_Jordan:
+    source: predictions/rectangular_thermal_q4_hecke_20260829.yaml
+    exact_modular_shape: available_conditional
+    candidate_source_restricted_traces: missing
+    same_source_thermal_jet: missing
+    original_U_column: missing
+  rho_child_N112:
+    source: results/p275-rho-observer-models/latest.json
+    fixed_p_rank_covariance: available
+    same_source_thermal_jet: missing
+    role: score_supplied_theory_column
+  global_K1_K2:
+    source: results/p275-forward-identifiability/latest.json
+    baseline_p_curves_and_target_covariance: available
+    candidate_source_restricted_traces: missing
+    role: score_supplied_source_image
+
+reopening_rule:
+  required_candidates: 2
+  required_each: [same_named_source, six_coordinate_restricted_trace_thermal_jet, physical_normalizer, rank1_term, cross_geometry_amplitude_and_phase_contract, pooled_root_counterterm, original_U_map]
+  if_column_spaces_equal: retain_UNIDENTIFIABLE_and_name_unique_missing_relation
+  if_column_spaces_differ: one_existing_covariance_score_then_demote_failed_parameterization
+  new_acquisition: only_if_rank_calculation_proves_one_unique_missing_coordinate
+
+not_reopening_inputs:
+  - another_Gaussian_ideal_angle_with_the_same_primitive_character
+  - another_size_fit_or_topup
+  - another_contact_descriptor
+  - another_generic_certificate
+  - another_free_radial_exponent
+
+claim_boundary:
+  - current_assets_do_not_identify_the_original_U_operator
+  - missing_columns_do_not_prove_the_two_continuum_mechanisms_are_physically_equal
+  - H0_line_is_an_exact_finite_observer_symmetry_not_a_local_H0_field
+  - N145_full_T_is_unresolved_under_its_frozen_boundary
+  - priority_is_attention_not_permission_or_lock

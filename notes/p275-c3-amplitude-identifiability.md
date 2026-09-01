@@ -227,24 +227,39 @@ covariance matrix is not a normalizer identity.  In particular, neither the
 norm-4 pooled-root normalization nor the P43/P57 raw matching contrast may be
 used to restrict the complex C3 amplitude post hoc.
 
+## Held-out closure beyond the N65 binary gate
+
+The N65 result above was subsequently superseded as a spin interpretation.
+Fresh branch-only commit `016a9d69` used a held-out N145 angle that separates
+H0, H4 and H8.  It retains H0 (`p=.968628`) and rejects H4 (`p=.000135506`)
+and H8 (`p=2.67966e-13`).  Commit `74f55006` then proves the exact finite
+mechanism: multiplication by the Gaussian unit `i` exchanges the first two
+unoriented primitive homology lines, so the character lies in `omega*R` for
+every Gaussian ideal quotient and every bond probability.
+
+Thus the N65 H8 label was an angle alias within its frozen two-model set.  H0
+is an embedding symmetry of this observer, not an identified local field.  No
+additional Gaussian-ideal angle with the same character can identify spin.
+
 ## Decision and unique missing input
 
 The completed sequence supports the finite statements
 
 ```text
 one angle with arbitrary complex amplitudes is nonidentifying;
-under the frozen binary signed-real transport, primitive real-C3 selects H8 over H4;
-post reveal, a signed-scalar H0 alias also survives;
-the naive canonical weight-8 member's radial transplant into global K1/K2 is excluded.
+the N65 binary signed-real gate rejected H4 but mislabeled the exact H0 line as H8;
+N145 plus the exact Gaussian-unit theorem closes this observer as embedding-even;
+the historical naive weight-8 radial transplant into global K1/K2 is excluded.
 ```
 
-The second physical rotation is no longer the missing input.  The unique next
-physical input is:
+Another physical rotation is not a missing input.  The unique next physical
+input for original-U identification is:
 
-> an explicit observer transport map from the finite primitive-C3 H8 form
-> factor to rank-0/rank-2 restricted traces of the same original `q/E` source
-> and pooled-root physical normalizer.
+> candidate-specific same-source rank-0/rank-1/rank-2 restricted-trace thermal
+> columns for vacuum/Ward and thermal-Q4/Jordan, through the same original
+> `q/E` source and pooled-root physical normalizer.
 
-Without that map, the primitive H8 and global H4 results are a resolved sector
-split, not two votes on one amplitude.  Additional sizes of the primitive
-observer may test persistence but cannot by themselves identify original-U.
+Without those columns, the named mechanisms are
+`UNIDENTIFIABLE_WITH_CURRENT_ASSETS`.  The exact Gaussian theorem already
+removes further sizes or angles of this primitive observer from the spin
+identification route; the distinct global H4 result remains untouched.

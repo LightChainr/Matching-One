@@ -27,18 +27,18 @@ The unconstrained optimum is `kappa=2.114984508`, equivalent to
 relative exponent means that the second mode grows relative to the proposed leading
 `N^-13/8` response; it is not a more-irrelevant bulk singlet.
 
-The frozen binary branch-only paired physical-rotation gate at `0b9e89c9` selects
-the H8 line over H4 for its primitive real-C3 observer.  A post-reveal H0
-signed-real line also survives (`p=.250468`), so the gate identifies an H8/even
-branch rather than a unique local H8 field.  A deliberately generous radial transplant of
-that alias into the global K1/K2 residual takes a canonical weight-8 correction
+The frozen N65 binary gate at `0b9e89c9` selected H8 over H4 only within
+its two-model set.  Held-out N145 commit `016a9d69` later selects H0 and
+rejects both H4 and H8; exact commit `74f55006` proves that Gaussian-unit
+rotation forces this primitive character onto one signed-real line.  The N65
+H8 label was therefore an angle alias.  The historical radial diagnostic took
+that alias into the global K1/K2 residual as a canonical weight-8 correction
 relative to the weight-21/4 Q4 candidate, hence `kappa=2^(-11/8)`.  Even with
 independent leading and subleading amplitudes in all four blocks, this envelope is
 excluded (`chi2=13.360937/4`;
-nominal `p=0.00964044`).  The H8 member of the surviving
-primitive-sector branch therefore cannot be copied into the global residual as one unmixed canonical
-weight-8 radial mode.  This does not reject that branch result or H8-containing
-observer-mixing mechanisms.
+nominal `p=0.00964044`).  This remains a valid exclusion
+of that declared global radial parameterization, but it is no longer evidence
+about a surviving primitive H8 mechanism.
 
 ## Raw coordinates and units
 
@@ -108,7 +108,7 @@ topological coordinate.
 ## Provenance and boundary
 
 - Input: `results/norm4-two-activation-h4/latest.json` (`f29ce76fa5be92abb2a233c7efb6e4d94f37236242656d0dcf17cbfc3fd1e462`).
-- Manifest: `analysis/p275_forward_identifiability_manifest.yaml` (`cfcd34be27872f3d195fd1179f3096dd9d1bc667bf1387cd5a1a37aa2acb9d81`).
+- Manifest: `analysis/p275_forward_identifiability_manifest.yaml` (`3994f2421e2a32fdb1b7a1c33d7b6373da41f5889823504323a7e2a65ee4aece`).
 - All four residual rows are correlated views of the registered dependency groups.
 - Scores are post-reveal existing-data diagnostics, not prospective validation.
 - Jordan compatibility is not continuum-field, lattice-overlap, or normalizer identification.

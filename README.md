@@ -10,8 +10,18 @@ The repository is organized to expose the next mechanism-changing observation, n
 
 ## Start here
 
-**Current decision: #275 has moved from tool preparation into production-data
-model elimination; #537 remains P1 theory.**  The complete two-activation
+**Current decision: the original-`U` mechanism is
+[`UNIDENTIFIABLE_WITH_CURRENT_ASSETS`](notes/p275-current-asset-closure-20260901.md);
+#275 remains the highest theory-attention line and #537 remains P1.**  Existing
+production has already eliminated concrete models, but neither vacuum/Ward nor
+thermal-Q4/Jordan currently supplies a candidate-specific same-source
+`{s_r,partial_p s_r}_{r=0,1,2}` column through the physical normalizer and
+pooled moving root.  Their original-`U` column spaces are therefore undefined,
+so another sample of the existing coordinates cannot produce a valid profile-
+rank decision.  Reopening requires two actual theory columns, not another
+angle, size, descriptor or free exponent.
+
+The complete two-activation
 `F1/F2` covariance excludes fixed ordinary q2 transfer (`kappa=1/2`,
 `chi2=11.7925/4`, `p=.01896`) and the naive canonical weight-8 radial
 transplant (`kappa=2^(-11/8)`, `chi2=13.3609/4`, `p=.00964`).  The Jordan
@@ -26,9 +36,12 @@ independent real-rescaling models are all rejected.  This means the finite
 rho-child correction changes rank-1 directional composition; it is not
 another field-name vote, and `E_top` is not renamed energy.  The same archive
 has a matching-odd `A_top` C3 component compatible with zero while its
-Alexander-even `E_top` component is resolved.  Together with the paired N65
-primitive-C3 H8/even-vs-H4 gate, these results demand typed observer maps, not
-pooled harmonic labels.
+Alexander-even `E_top` component is resolved.  The later branch-only N145
+three-way primitive-C3 gate selects the embedding-even H0 line and rejects H4
+and H8.  Commit `74f55006` proves why: Gaussian-unit rotation forces this
+character into `omega*R` at every finite norm and bond probability.  The N65
+H8 label was an angle alias.  This closes further Gaussian-ideal spin voting
+with that observer and leaves the distinct global `A_top` H4 result untouched.
 
 The exact [restricted-trace transport law](notes/p275-restricted-trace-transport-law-20260901.md)
 now identifies the missing physical object as one aligned same-source
@@ -53,6 +66,10 @@ came specifically from conditional intensity is withdrawn.  The determinant
 is a nonseparability result with a possible commutator encoding, not by itself
 an identified physical commutator; the unselected 97.45% is a
 `complement_of_selected`, not yet a spatially nonlocal remainder.
+The independent N145 200M full-T gate later stopped as
+`N145_FULL_T_UNRESOLVED`: `J145=-.0006943644+/-.0001106636`, with its frozen
+95% interval crossing the declared boundary.  There is no top-up and no
+third-size exponent closure.
 
 The [frozen N100/N400 pilot](results/regular-pair-macro-joint-u/REPORT.md)
 uses the same `Kreg`, the exact Euclidean window

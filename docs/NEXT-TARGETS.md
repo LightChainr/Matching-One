@@ -37,24 +37,32 @@ performed by this Draft:
 | NN | −.00085245745 | −.00089978682 | +.00000116982 | −.00175107445 |
 | nonNN | −.00508338450 | +.00131389110 | +.00000113643 | −.00376835697 |
 
-**Highest attention: #275's candidate-specific restricted-trace transport.**
+**Highest theory attention: #275's candidate-specific restricted-trace
+transport; current-asset analysis is closed.**
 The original-observable dictionary and first forward-identifiability score
 are delivered: fixed q2 and the naive weight-8 radial transplant are excluded,
-Jordan remains compatible but is not uniquely identified, and the decision is
-`PARTIALLY_IDENTIFIABLE`.  Existing N112 production additionally rejects
+Jordan remains compatible but is not uniquely identified.  For the named
+vacuum/Ward versus thermal-Q4/Jordan mechanisms, the stronger current verdict
+is [`UNIDENTIFIABLE_WITH_CURRENT_ASSETS`](../notes/p275-current-asset-closure-20260901.md):
+neither candidate currently supplies its same-source restricted-trace thermal
+column through the original normalizer and root.  Existing N112 production additionally rejects
 common-denominator-only, rank-1-mass-only and independent-real-rescaling
 explanations of its nine-coordinate `(E_top,H)` vector.  The archive therefore
 already eliminates simple models; it does not need another descriptive
 observable or another harmonic vote.
 Contact/OPE-to-original-`U` transmission,
 #536 Delivery B and the one-defect edge decision are completed provenance.
-The next P0 deliverable is two actual source columns in the aligned
+The only mechanism-changing reopening input is two actual source columns in the aligned
 `{s_r,partial_p s_r}` contract, carried through original `q/E`, the physical
 normalizer and the pooled root.  It uses existing algebra and sufficient
 statistics by default; it is not a restored random-production line.  If the
 two candidate images coincide after all allowed nuisance amplitudes, record
 that non-identifiability and lower its attention; if they differ, score the
-existing covariance once.  The frozen
+existing covariance once.  The branch-only N145 three-way primitive-C3 gate
+and exact Gaussian-unit theorem already close further angle work with that
+observer: H0 survives, H4/H8 fail, and the character line is forced into
+`omega*R` by symmetry.  The independent N145 full-T gate is
+`N145_FULL_T_UNRESOLVED`, with no top-up or size-fit substitution.  The frozen
 [64-counter replay](../results/p337-thermal-pivotal-preflight/REPORT.md) has
 evaluated all 5,242,880 pair/site callbacks from the first 32 counters of each
 existing L32/L64 stream, with no new seed. It found 18 kernel-changing
@@ -294,7 +302,7 @@ thermal quotient coordinates; PR #532 `2e1c57b4` proves
 `a_xy=kappa_x kappa_y` in the exactly-two-shared-component sector. Apply
 `phi_RB(G)=E[phi|G]` to the existing full-hole-face kernel and retain the
 `s=2/3/4` layers additively in one dependency block.
-PR #509 (live head `ac5f5fe7`; root-Hessian commit `ec3941b0`) proves at
+PR #509 (live head `9798ece6`; root-Hessian commit `ec3941b0`) proves at
 `eed2190c` that the raw canonical
 pair susceptibility is absolutely summable at exact criticality; that theorem
 does not bound its thermal derivative or original U. Its latest audit supplies
