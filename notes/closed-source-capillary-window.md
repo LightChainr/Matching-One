@@ -184,6 +184,15 @@ another finite local source or another fixed shell.  A useful target must:
 4. differentiate only after inserting the two-cloud moving root;
 5. compare the resulting axis term with the tilted barrier.
 
+The last comparison is now sharp at the leading winding level.  The
+[tilted shortest-class calculation](closed-source-tilted-shortest-winding-class.md)
+finds two primitive classes of length `7k`, thin-cycle degeneracy
+`(50k/7) binomial(7k,3k)`, and total minimum-class entropy at most its
+square.  Its additional `m^-4k` cost beats that entropy for every
+`m -> infinity` path considered here.  Thus the unresolved capillary
+scaling function is an axis-interface problem; the tilted minimum class
+cannot overturn it at leading exponential order.
+
 A natural prospective output is a scaling function
 
 ```text
@@ -209,7 +218,8 @@ guess its sign.
 - **No new evidence block:** this is a constructive subfamily of the same
   analytic model.
 - **Open:** the full capillary scaling function and its sign, plus the
-  tilted comparison after resummation.
+  higher tilted classes after resummation.  The minimum tilted class is
+  already exponentially subordinate.
 
 The companion [two-cloud synthesis](closed-source-mesoscopic-two-cloud-synthesis.md)
 contains the bulk theorem and root expansion to which this interface
