@@ -1,4 +1,4 @@
-version: 6
+version: 8
 updated: 2026-09-01
 purpose: >
   Lightweight navigation/provenance index. Registry conflicts never block
@@ -31,8 +31,12 @@ historical_navigation:
   - {path: notes/SYNTHESIS-20260828.md, status: historical_snapshot, role: prior_execution_synthesis}
   - {pattern: docs/NEXT-TARGETS.md, status: branch_only_historical, role: not_current_authority}
   - {pr: 527, head_sha: 72fc797a75cd8d6488556a368e7a048529c69759, status: absorbed_decision_doc, role: M0_M1_M2_and_hard_stop_absorbed_into_STATUS_ROADMAP}
-  - {pr: 509, head_sha: 0820b8d203e2dc534bb883d6fdb4d6d1e0acb11f, status: archive_pointer, role: large_discovery_archive_not_merge_unit}
-  - {pr: 267, head_sha: dd48177340f169c18cd1fc9217101b54090e1e3a, status: archive_pointer, role: large_research_archive_not_merge_unit}
+  - {pr: 509, head_sha: eed2190c04b67084ab5aef5827e00377853a0bca, status: archive_pointer, role: unmerged_results_first_synthesis_not_merge_unit}
+  - {pr: 267, head_sha: ffc2bfa0c931222f1e402f393bbb9ec44482f3a1, status: archive_pointer, role: large_research_archive_not_merge_unit}
+  - {pr: 530, head_sha: 0e1917f983982f411c9c72147cce3f90ce7330fa, status: P2_support, role: original_U_influence_and_oracle_sampling_bounds_no_production}
+  - {pr: 531, head_sha: a5375b5338ebfc29d1c47aa320716903c5f63277, status: P2_support, role: sector_quotient_decomposition_and_oracle_subtraction_no_production}
+  - {pr: 532, head_sha: 2e1c57b42129c507b45fd1a8111eb32e78b1f80b, status: P2_theory_candidate, role: two_bridge_factorization_not_current_production}
+  - {pr: 533, head_sha: df480bb12417fcdc7add7703ce448d8495fc5045, status: P2_theory_candidate_review_blocked, role: mesoscopic_two_cloud_and_capillary_local_algebra_not_current_claim}
 
 frozen_predictions:
   - {path: predictions/two_spin4_heldout_20260828.yaml, status: frozen_prediction, issue: 43, role: N185_N265_targets}
@@ -143,6 +147,58 @@ current_decision_assets:
     status: completed_single_component_exclusion_and_canonical_probability_bound
     independent_primary: false
 
+  - id: P337_REGULAR_SPATIAL_MC
+    issue: 337
+    sha: a237968f1d7a82d26b46e83c58179dbba7f1a908
+    path: notes/regular-pair-spatial-transmission-result.md
+    status: completed_fresh_finite_distance_zero_rejected_no_exponent_fit
+    raw_data_group: p337_regular_pair_spatial_L32_L64
+    independent_primary: true
+  - id: P337_REGULAR_JOINT_U
+    issue: 337
+    sha: 410015f5505dc2d8ca0e9ac904f656a4adc9fe86
+    path: notes/regular-pair-joint-transmission-result.md
+    status: completed_exact_N25_joint_and_NN_contact_only_closures_rejected
+    independent_primary: false
+  - id: P337_CRITICAL_SPATIAL_SUMMABILITY
+    issue: 337
+    sha: eed2190c04b67084ab5aef5827e00377853a0bca
+    path: notes/p337-critical-spatial-summability.md
+    status: completed_exact_pc_raw_kernel_summability_no_full_U_claim
+    independent_primary: false
+
+unmerged_candidate_assets:
+  - id: P337_TWO_BRIDGE_FACTOR_REVIEW
+    issue: 337
+    pr: 532
+    sha: 2e1c57b42129c507b45fd1a8111eb32e78b1f80b
+    path: notes/P0-p337-two-bridge-and-completion-review-20260901.md
+    status: unmerged_finite_algebra_candidate_no_production_authorization
+    independent_primary: false
+
+  - id: P337_ORIGINAL_U_INFLUENCE_SUPPORT
+    issue: 337
+    pr: 530
+    sha: 0e1917f983982f411c9c72147cce3f90ce7330fa
+    path: experiments/p337-original-u-influence-20260831/README.md
+    status: unmerged_P2_method_support_oracle_bounds_no_production_authorization
+    independent_primary: false
+  - id: P337_SECTOR_QUOTIENT_SUPPORT
+    issue: 337
+    pr: 531
+    sha: a5375b5338ebfc29d1c47aa320716903c5f63277
+    path: notes/p337-p0-sector-quotient-and-sign-aware-estimation.md
+    status: unmerged_P2_exact_decomposition_support_missing_result_json_no_production_authorization
+    independent_primary: false
+  - id: P337_MESOSCOPIC_TWO_CLOUD_CANDIDATE
+    issue: 337
+    pr: 533
+    sha: df480bb12417fcdc7add7703ce448d8495fc5045
+    path: notes/closed-source-mesoscopic-two-cloud-synthesis.md
+    status: C0_theory_candidate_with_C1_exact_local_sublemmas_pending_dependency_root_chart_and_cluster_remainder
+    review_comment: https://github.com/LightChainr/Matching-One/pull/533#issuecomment-5488261845
+    independent_primary: false
+
 continuum_controls:
   - {path: predictions/p156_pinson_arguin_baselines_20260829.json, status: continuum_baseline, issue: 156, role: primitive_homology_sector_values}
 
@@ -160,11 +216,16 @@ evidence_archives:
   - {id: N26_BETA, path: results/local-20260828/P115-n26-self-matching-exact, status: negative_result, role: exact_Beta_failure}
   - {id: GAUSSIAN_COVER_SELECTION_RULE, path: results/exact-cover-character-oracles/norm2_selection_rule.json, status: immutable_result, role: exact_deck_character_linear_null_and_allowed_channels}
 
-# Every pre-cleanup open status:unmerged-asset is classified here. A pointer
-# preserves provenance without making the branch a current execution queue.
+# Every pre-cleanup open status:unmerged-asset and each post-cleanup P337
+# support/candidate Draft is classified here. A pointer preserves provenance
+# without making the branch a current execution queue.
 unmerged_assets:
-  - {pr: 509, head_sha: 0820b8d203e2dc534bb883d6fdb4d6d1e0acb11f, classification: ARCHIVE_POINTER, state_after_cleanup: open, role: discovery_archive}
-  - {pr: 267, head_sha: dd48177340f169c18cd1fc9217101b54090e1e3a, classification: ARCHIVE_POINTER, state_after_cleanup: open, role: research_archive}
+  - {pr: 509, head_sha: eed2190c04b67084ab5aef5827e00377853a0bca, classification: ARCHIVE_POINTER, state_after_cleanup: open, role: results_first_synthesis}
+  - {pr: 267, head_sha: ffc2bfa0c931222f1e402f393bbb9ec44482f3a1, classification: ARCHIVE_POINTER, state_after_cleanup: open, role: research_archive}
+  - {pr: 530, head_sha: 0e1917f983982f411c9c72147cce3f90ce7330fa, classification: P2_SUPPORT, state_after_cleanup: open, role: influence_function_and_oracle_sampling_bounds_no_production}
+  - {pr: 531, head_sha: a5375b5338ebfc29d1c47aa320716903c5f63277, classification: P2_SUPPORT, state_after_cleanup: open, role: sector_quotient_and_oracle_subtraction_no_production}
+  - {pr: 532, head_sha: 2e1c57b42129c507b45fd1a8111eb32e78b1f80b, classification: CANDIDATE_FINITE_ALGEBRA, state_after_cleanup: open, role: two_bridge_factorization_no_production}
+  - {pr: 533, head_sha: df480bb12417fcdc7add7703ce448d8495fc5045, classification: P2_THEORY_CANDIDATE_REVIEW_BLOCKED, state_after_cleanup: open, role: two_cloud_and_capillary_local_sublemmas_not_current_claim}
   - {pr: 492, head_sha: 0e52dbaeed53dfffa94592e53e38129c179c5078, classification: ARCHIVE_POINTER, state_after_cleanup: open, role: P334_selected_checkpoint_exact_control}
   - {pr: 491, head_sha: ab90201e88409310632812727e0138c56b455644, classification: ARCHIVE_POINTER, state_after_cleanup: open, role: P334_cut_network_exact_control}
   - {pr: 485, head_sha: b454bb8ec04ad90a2db579efaf6285e59d6ba5aa, classification: ARCHIVE_POINTER, state_after_cleanup: open, role: N100_same_raw_shape_analysis}
