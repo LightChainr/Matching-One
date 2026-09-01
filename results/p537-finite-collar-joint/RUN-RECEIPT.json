@@ -1,0 +1,54 @@
+{
+  "schema": "matching-one/p537-finite-collar-joint-receipt/v1",
+  "status": "completed_local_exact_no_push",
+  "base_commit": "e21f6220775d51450d73d4258c3edf2dbdf0a910",
+  "branch": "analysis/p537-joint-incidence-refinement-20260901",
+  "environment": {
+    "system": "Darwin 25.5.0 arm64",
+    "compiler": "Apple clang 21.0.0 (clang-2100.1.1.101)",
+    "python": "3.13.7"
+  },
+  "enumeration": {
+    "axis": {
+      "period": [5, 0],
+      "backgrounds": 8388608,
+      "elapsed_seconds": 38.542743958000003,
+      "legacy_raw_sha256": "b3b4e2f3e17ebdf89b49b0e706cd709dfb21160f9ed3936075c4b1ab9670bff8",
+      "joint_raw_sha256": "c33c9248cf3cdf7434ee2925b5794d013781a106233a577f931da06cf78d6655"
+    },
+    "tilted": {
+      "period": [4, 3],
+      "backgrounds": 8388608,
+      "elapsed_seconds": 32.892688499999998,
+      "legacy_raw_sha256": "b3b85dafc254662bcce22aa6d27c7740ca3e9a6ba3d1ba916c872abd4622860d",
+      "joint_raw_sha256": "8a06ba72b834a7703a3159f7df350751ad489ef5a0d03dd26cea180bcb0d69f8"
+    },
+    "execution": "axis and tilted launched concurrently",
+    "raw_csv_committed": false
+  },
+  "scoring": {
+    "arithmetic": "exact rational interval",
+    "elapsed_seconds_approx": 600,
+    "sector_count": 1390,
+    "pooled_four_cell_rectangle_count": 106,
+    "full_axis_tilted_rectangle_count": 30,
+    "exact_nonzero_pooled_rectangle_count": 106,
+    "exact_nonzero_full_rectangle_count": 30
+  },
+  "coarse_reproduction": {
+    "legacy_aggregate_byte_identical": true,
+    "joint_integer_packets_exact": true,
+    "joint_matrix_sum_determinant_interval_identical": true,
+    "coarse_aggregate_sha256": "ff725ed0f222ce5dd5f2cc73cada4b93d618e21d73654df8ee5d2a3d7b319917"
+  },
+  "artifacts": {
+    "producer_sha256": "c42399774934ec1a35744ab31ed9e571b87996b6f7cce3a4d4537f8d02332a9d",
+    "aggregator_sha256": "3d267f1af064ac726c5fd28376d8e8bf9b47e20603e81bd062454f9ca2014a48",
+    "scorer_sha256": "5e76f8cd7c066a8883dd48584662fd14f2eae92fbddfa8f2bd08c366528166f5",
+    "joint_aggregate_sha256": "69f10c3de6c5480c80328bcfef2b9a818098672243c485b9c194a362951062f2",
+    "joint_index_sha256": "9eca3a403464c9705d43326f85a147092036fc768599800c7bef5938d363fc06",
+    "sector_scores_sha256": "6ae57f06be907043e98de12f83988a4938762e9df5bf0a8d400e47b8c362c22e",
+    "result_sha256": "192eeacc8ed460f6da65963023eb382194a2cee774a076597e63695a4b187833"
+  },
+  "boundary": "finite N25 value-level frozen-collar certificate; no thermal jet, quantitative landing margin, cross-size, diagonal-corner edge, or asymptotic claim"
+}

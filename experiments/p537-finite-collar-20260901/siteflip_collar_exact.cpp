@@ -9,6 +9,7 @@
 #include <array>
 #include <chrono>
 #include <cstdint>
+#include <cstdlib>
 #include <fstream>
 #include <iomanip>
 #include <iostream>
@@ -142,6 +143,45 @@ struct Totals {
     std::int64_t sum_q1 = 0, sum_e1 = 0, sum_a16_1 = 0, sum_q1_a16_1 = 0, sum_e1_a16_1 = 0;
 };
 
+struct JointIdentity {
+    std::uint64_t key = 0;             // 12 first-occurrence labels, four bits each.
+    std::uint32_t z_source_roles = 0;  // Four eight-bit source-terminal masks, N/E/S/W.
+    std::uint8_t terminal_incidence = 0;
+};
+
+struct JointRowKey {
+    std::int8_t dx = 0, dy = 0;
+    std::uint8_t k_minus = 0, rank0 = 0, rank1 = 0, corner_mask = 0;
+    std::uint8_t base_arm_mask = 0, source_port_occupied_mask = 0;
+    std::uint8_t source_absent = 0;
+    std::uint8_t terminal_incidence0 = 0, terminal_incidence1 = 0;
+    std::uint32_t z_source_roles0 = 0, z_source_roles1 = 0;
+    std::uint64_t joint0 = 0, joint1 = 0;
+    bool operator==(const JointRowKey& x) const {
+        return std::tie(dx,dy,k_minus,rank0,rank1,corner_mask,base_arm_mask,
+                        source_port_occupied_mask,source_absent,
+                        terminal_incidence0,terminal_incidence1,
+                        z_source_roles0,z_source_roles1,joint0,joint1) ==
+               std::tie(x.dx,x.dy,x.k_minus,x.rank0,x.rank1,x.corner_mask,x.base_arm_mask,
+                        x.source_port_occupied_mask,x.source_absent,
+                        x.terminal_incidence0,x.terminal_incidence1,
+                        x.z_source_roles0,x.z_source_roles1,x.joint0,x.joint1);
+    }
+};
+
+struct JointRowHash {
+    std::size_t operator()(const JointRowKey& x) const {
+        std::uint64_t h = 1469598103934665603ULL;
+        auto mix = [&](std::uint64_t v) { h ^= v; h *= 1099511628211ULL; };
+        mix(std::uint8_t(x.dx)); mix(std::uint8_t(x.dy)); mix(x.k_minus);
+        mix(x.rank0); mix(x.rank1); mix(x.corner_mask); mix(x.base_arm_mask);
+        mix(x.source_port_occupied_mask); mix(x.source_absent);
+        mix(x.terminal_incidence0); mix(x.terminal_incidence1);
+        mix(x.z_source_roles0); mix(x.z_source_roles1); mix(x.joint0); mix(x.joint1);
+        return std::size_t(h);
+    }
+};
+
 class Enumerator {
     int a, b;
     const Kernel& kernel;
@@ -154,6 +194,7 @@ class Enumerator {
     std::array<int,4> z_corner{}; // NE,SE,SW,NW
     std::vector<int> free_sites;
     std::unordered_map<RowKey,Totals,RowHash> rows;
+    std::unordered_map<JointRowKey,Totals,JointRowHash> joint_rows;
 
     static int mod(int x) { x %= N; return x < 0 ? x + N : x; }
     int quotient_key(int x, int y) const { return N*mod(a*x+b*y) + mod(-b*x+a*y); }
@@ -216,6 +257,61 @@ class Enumerator {
             }
         }
         return key;
+    }
+
+    JointIdentity joint_identity(int y, const State& state) const {
+        std::array<int,12> ids{};
+        int at = 0;
+        for (int center : {0,y,z}) for (int direction = 0; direction < 4; ++direction)
+            ids[at++] = outside_id(center,direction,state);
+
+        std::array<int,N+PHYSICAL_EDGES> label;
+        label.fill(-1);
+        int next = 0;
+        JointIdentity result;
+        for (int i = 0; i < 12; ++i) {
+            if (label[ids[i]] < 0) label[ids[i]] = next++;
+            result.key |= std::uint64_t(label[ids[i]]) << (4*i);
+        }
+        if (next > 12) throw std::logic_error("joint label overflow");
+
+        std::array<bool,N+PHYSICAL_EDGES> source_seen{}, counted{};
+        for (int i = 0; i < 8; ++i) source_seen[ids[i]] = true;
+        for (int direction = 0; direction < 4; ++direction) {
+            const int id = ids[8+direction];
+            std::uint32_t roles = 0;
+            for (int source_terminal = 0; source_terminal < 8; ++source_terminal)
+                if (ids[source_terminal] == id) roles |= std::uint32_t(1) << source_terminal;
+            result.z_source_roles |= roles << (8*direction);
+            if (source_seen[id] && !counted[id]) {
+                counted[id] = true;
+                ++result.terminal_incidence;
+            }
+        }
+        return result;
+    }
+
+    static std::uint32_t source_key_from_joint(std::uint64_t key) {
+        std::uint32_t result = 0;
+        for (int i = 0; i < 8; ++i)
+            result |= std::uint32_t((key >> (4*i)) & 15U) << (3*i);
+        return result;
+    }
+
+    bool is_axial2(int y) const {
+        const auto [dx,dy] = coordinate[y];
+        return (std::abs(dx) == 2 && dy == 0) || (dx == 0 && std::abs(dy) == 2);
+    }
+
+    // Port occupation is not recoverable from an uncoloured component
+    // partition: a singleton occupied component and a vacant edge terminal
+    // both receive one fresh canonical label.  Record the eight source-port
+    // colours in the common x=y=z=off counterfactual base.
+    int source_port_occupied_mask(int y) const {
+        int result = 0, bit = 0;
+        for (int center : {0,y}) for (int direction = 0; direction < 4; ++direction)
+            result |= int(occupied[neighbors[center][direction]]) << bit++;
+        return result;
     }
 
     int collar_corner_mask() const {
@@ -289,6 +385,7 @@ class Enumerator {
         for (int y = 1; y < N; ++y) {
             if (y == z) continue;
             const bool absent = occupied[y];
+            const int local_contact = local_source_contact_mask(y,absent);
             std::uint32_t bell0 = SOURCE_ABSENT_SENTINEL, bell1 = SOURCE_ABSENT_SENTINEL;
             std::int64_t a16_0 = 0, a16_1 = 0;
             if (!absent) {
@@ -304,7 +401,7 @@ class Enumerator {
                 std::uint8_t(k_minus),std::uint8_t(state0.q+1),std::uint8_t(state1.q+1),
                 std::uint8_t(arm_mask),std::uint8_t(alternating),std::uint8_t(corner_mask),
                 std::uint8_t(outer_occupied_join),std::uint8_t(outer_vacant_join),
-                std::uint8_t(local_source_contact_mask(y,absent)),std::uint8_t(absent),bell0,bell1
+                std::uint8_t(local_contact),std::uint8_t(absent),bell0,bell1
             };
             auto& total = rows[key];
             ++total.count;
@@ -314,6 +411,107 @@ class Enumerator {
             total.sum_q1 += state1.q; total.sum_e1 += e1;
             total.sum_a16_1 += a16_1; total.sum_q1_a16_1 += state1.q*a16_1;
             total.sum_e1_a16_1 += e1*a16_1;
+
+            // A common joint-incidence sector must not change when y switches
+            // between the ordinary-source and source-absent columns.  Process
+            // each base background exactly once, at X_y=0, and freeze sigma in
+            // the x=y=z=0 counterfactual.  Then evaluate both actual y states
+            // against the original preferred filter.
+            if (!absent && is_axial2(y)) {
+                const int base_arm_mask = arm_mask;
+                const int base_source_ports = source_port_occupied_mask(y);
+                const JointIdentity joint0 = joint_identity(y,state0);
+                occupied[z] = true;
+                const JointIdentity joint1 = joint_identity(y,state1);
+                occupied[z] = false;
+                if (source_key_from_joint(joint0.key) != bell0 ||
+                    source_key_from_joint(joint1.key) != bell1)
+                    throw std::logic_error("joint/source Bell restriction mismatch");
+
+                auto emit_joint = [&](bool source_absent, int actual_k,
+                                      const State& actual0, const State& actual1,
+                                      int actual_arm, int actual_corner,
+                                      int actual_jb, int actual_jw, int actual_contact,
+                                      std::int64_t actual_a16_0,
+                                      std::int64_t actual_a16_1) {
+                    const int actual_rank0 = actual0.q+1, actual_rank1 = actual1.q+1;
+                    const bool birth = (actual_rank0 == 0 && actual_rank1 == 1) ||
+                                       (actual_rank0 == 1 && actual_rank1 == 2);
+                    if (actual_arm != 5 || !actual_jb || !actual_jw ||
+                        actual_contact != 0 || !birth) return;
+                    const JointRowKey joint_key{
+                        std::int8_t(coordinate[y].first),std::int8_t(coordinate[y].second),
+                        std::uint8_t(actual_k),std::uint8_t(actual_rank0),
+                        std::uint8_t(actual_rank1),std::uint8_t(actual_corner),
+                        std::uint8_t(base_arm_mask),std::uint8_t(base_source_ports),
+                        std::uint8_t(source_absent),joint0.terminal_incidence,
+                        joint1.terminal_incidence,joint0.z_source_roles,
+                        joint1.z_source_roles,joint0.key,joint1.key
+                    };
+                    auto& joint_total = joint_rows[joint_key];
+                    ++joint_total.count;
+                    joint_total.sum_q0 += actual0.q;
+                    joint_total.sum_e0 += actual0.q*actual0.q;
+                    joint_total.sum_a16_0 += actual_a16_0;
+                    joint_total.sum_q0_a16_0 += actual0.q*actual_a16_0;
+                    joint_total.sum_e0_a16_0 += actual0.q*actual0.q*actual_a16_0;
+                    joint_total.sum_q1 += actual1.q;
+                    joint_total.sum_e1 += actual1.q*actual1.q;
+                    joint_total.sum_a16_1 += actual_a16_1;
+                    joint_total.sum_q1_a16_1 += actual1.q*actual_a16_1;
+                    joint_total.sum_e1_a16_1 += actual1.q*actual1.q*actual_a16_1;
+                };
+
+                // Actual y=0: the ordinary-source column already evaluated by
+                // the legacy path above.
+                emit_joint(false,k_minus,state0,state1,arm_mask,corner_mask,
+                           outer_occupied_join,outer_vacant_join,local_contact,
+                           a16_0,a16_1);
+
+                // Actual y=1: construct the matched source-absent column on
+                // the same off-{x,y,z} background.  Its a-fields are exactly
+                // zero, while its q/E packet and beta subtraction survive.
+                occupied[y] = true;
+                const State absent0 = evaluate();
+                int absent_arm_mask = 0;
+                for (int direction = 0; direction < 4; ++direction)
+                    absent_arm_mask |= int(occupied[z_cardinal[direction]]) << direction;
+                const int absent_corner_mask = collar_corner_mask();
+                occupied[z] = true;
+                const State absent1 = evaluate();
+                occupied[z] = false;
+
+                int absent_jb = 0, absent_jw = 0;
+                const bool absent_alternating =
+                    absent_arm_mask == 5 || absent_arm_mask == 10;
+                if (absent_alternating) {
+                    std::array<int,2> black_direction{}, white_direction{};
+                    int bi = 0, wi = 0;
+                    for (int direction = 0; direction < 4; ++direction) {
+                        if (occupied[z_cardinal[direction]])
+                            black_direction[bi++] = direction;
+                        else
+                            white_direction[wi++] = direction;
+                    }
+                    if (bi != 2 || wi != 2)
+                        throw std::logic_error("absent alternating collar arm count");
+                    absent_jb =
+                        absent0.occupied_root[z_cardinal[black_direction[0]]] ==
+                        absent0.occupied_root[z_cardinal[black_direction[1]]];
+                    absent_jw =
+                        absent1.vacant_root[z_cardinal[white_direction[0]]] ==
+                        absent1.vacant_root[z_cardinal[white_direction[1]]];
+                    const int predicted = absent_jb + absent_jw - 1;
+                    if (absent1.q-absent0.q != predicted)
+                        throw std::logic_error("absent finite-collar identity failure");
+                    if (!absent_jb && !absent_jw)
+                        throw std::logic_error("absent forbidden double-distinct attachment");
+                }
+                emit_joint(true,k_minus+1,absent0,absent1,absent_arm_mask,
+                           absent_corner_mask,absent_jb,absent_jw,
+                           local_source_contact_mask(y,true),0,0);
+                occupied[y] = false;
+            }
         }
     }
 
@@ -375,10 +573,13 @@ public:
         }
         for (bool ok : found) if (!ok) throw std::logic_error("missing quotient coordinate");
         rows.reserve(1 << 20);
+        joint_rows.reserve(1 << 18);
     }
 
-    void run(const std::string& output) {
+    void run(const std::string& output, const std::string& joint_output) {
         if (std::ifstream(output).good()) throw std::runtime_error("output already exists");
+        if (!joint_output.empty() && std::ifstream(joint_output).good())
+            throw std::runtime_error("joint output already exists");
         for (std::uint64_t mask = 0; mask < BACKGROUNDS; ++mask) consume(mask);
         std::vector<std::pair<RowKey,Totals>> ordered(rows.begin(),rows.end());
         std::sort(ordered.begin(),ordered.end(),[](const auto& lhs, const auto& rhs) {
@@ -411,26 +612,69 @@ public:
                 << total.sum_q1_a16_1 << ',' << total.sum_e1_a16_1 << '\n';
         }
         if (!out) throw std::runtime_error("output write failed");
-        std::cerr << "rows=" << ordered.size() << " pair_fibres=" << total_count << '\n';
+        std::uint64_t joint_total_count = 0;
+        if (!joint_output.empty()) {
+            std::vector<std::pair<JointRowKey,Totals>> joint_ordered(joint_rows.begin(),joint_rows.end());
+            std::sort(joint_ordered.begin(),joint_ordered.end(),[](const auto& lhs, const auto& rhs) {
+                const auto& x = lhs.first; const auto& y = rhs.first;
+                return std::tie(x.k_minus,x.rank0,x.rank1,x.source_absent,x.dx,x.dy,
+                                x.base_arm_mask,x.source_port_occupied_mask,
+                                x.joint0,x.joint1,x.corner_mask,x.terminal_incidence0,
+                                x.terminal_incidence1,x.z_source_roles0,x.z_source_roles1) <
+                       std::tie(y.k_minus,y.rank0,y.rank1,y.source_absent,y.dx,y.dy,
+                                y.base_arm_mask,y.source_port_occupied_mask,
+                                y.joint0,y.joint1,y.corner_mask,y.terminal_incidence0,
+                                y.terminal_incidence1,y.z_source_roles0,y.z_source_roles1);
+            });
+            std::ofstream joint_out(joint_output);
+            if (!joint_out) throw std::runtime_error("cannot create joint output");
+            joint_out << "k_minus,rank0,rank1,collar_corner_mask,base_arm_mask,"
+                         "source_port_occupied_mask,source_absent,y_dx,y_dy,"
+                         "joint0,joint1,terminal_incidence0,terminal_incidence1,"
+                         "z_source_roles0,z_source_roles1,count,"
+                         "sum_q0,sum_E0,sum_a16_0,sum_q0_a16_0,sum_E0_a16_0,"
+                         "sum_q1,sum_E1,sum_a16_1,sum_q1_a16_1,sum_E1_a16_1\n";
+            for (const auto& [key,total] : joint_ordered) {
+                joint_total_count += total.count;
+                joint_out << int(key.k_minus) << ',' << int(key.rank0) << ',' << int(key.rank1) << ','
+                          << int(key.corner_mask) << ',' << int(key.base_arm_mask) << ','
+                          << int(key.source_port_occupied_mask) << ',' << int(key.source_absent) << ','
+                          << int(key.dx) << ',' << int(key.dy) << ',' << key.joint0 << ',' << key.joint1 << ','
+                          << int(key.terminal_incidence0) << ',' << int(key.terminal_incidence1) << ','
+                          << key.z_source_roles0 << ',' << key.z_source_roles1 << ','
+                          << total.count << ',' << total.sum_q0 << ',' << total.sum_e0 << ','
+                          << total.sum_a16_0 << ',' << total.sum_q0_a16_0 << ',' << total.sum_e0_a16_0 << ','
+                          << total.sum_q1 << ',' << total.sum_e1 << ',' << total.sum_a16_1 << ','
+                          << total.sum_q1_a16_1 << ',' << total.sum_e1_a16_1 << '\n';
+            }
+            if (!joint_out) throw std::runtime_error("joint output write failed");
+        }
+        std::cerr << "rows=" << ordered.size() << " pair_fibres=" << total_count
+                  << " joint_rows=" << joint_rows.size()
+                  << " joint_pair_fibres=" << joint_total_count << '\n';
     }
 };
 } // namespace
 
 int main(int argc, char** argv) {
     try {
-        if (argc != 5) throw std::invalid_argument("usage: siteflip_collar_exact a b kernel.tsv output.csv");
+        if (argc != 5 && argc != 6)
+            throw std::invalid_argument(
+                "usage: siteflip_collar_exact a b kernel.tsv output.csv [joint-output.csv]");
         const int a = int(integer(argv[1])), b = int(integer(argv[2]));
         const auto start = std::chrono::steady_clock::now();
         const Kernel kernel = read_kernel(argv[3]);
-        Enumerator(a,b,kernel).run(argv[4]);
+        Enumerator(a,b,kernel).run(argv[4],argc == 6 ? argv[5] : "");
         const double elapsed = std::chrono::duration<double>(std::chrono::steady_clock::now()-start).count();
         std::cout << std::setprecision(17)
-                  << "{\"status\":\"completed\",\"schema\":\"matching-one/p537-finite-collar-producer/v1\","
+                  << "{\"status\":\"completed\",\"schema\":\"matching-one/p537-finite-collar-producer/v2\","
                   << "\"N\":25,\"a\":" << a << ",\"b\":" << b
                   << ",\"fixed_x\":0,\"fixed_z_direction\":\"E\",\"backgrounds\":" << BACKGROUNDS
                   << ",\"kernel_rows\":" << kernel.rows << ",\"collar\":\"B_inf(z,1)\","
                   << "\"a_scale_denominator\":16,\"fixed_x_pair_scale_denominator\":25,"
                   << "\"c4_fixed_z_orbit_multiplier\":4,\"source_absent_sentinel\":" << KEY_SPACE
+                  << ",\"joint_identity\":\"canon_global(x4+y4+z4),N/E/S/W,4bit\""
+                  << ",\"joint_column_pairing\":\"common off-{x,y,z} base; actual y=0/1\""
                   << ",\"elapsed_seconds\":" << elapsed << "}\n";
     } catch (const std::exception& error) {
         std::cerr << error.what() << '\n';
