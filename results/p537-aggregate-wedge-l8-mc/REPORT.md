@@ -64,11 +64,31 @@ fit. The scientific gain is that L8 rejects the previously suggested monotone
 ## Mechanism candidate
 
 `35/8 = 4 + 3/8`. The `4` is the established canonical pair normalization.
-The extra `3/8` is numerically half the square-lattice thermal eigenvalue
-`y_t=3/4` in linear-size units. A possible mechanism is therefore a leading
-`L^-4` collar term whose root-conditioned coefficient cancels, leaving a
-square-root thermal-coordinate mismatch. This square-root step is not yet
-derived; it is the precise theoretical gap exposed by the production.
+For critical percolation, the four-arm exponent and thermal eigenvalue obey
+`alpha_4=5/4` and `y_t=2-alpha_4=3/4`. If the complete root-level pivotal mass
+scales as `P_L~L^y_t`, then the new exponent has the economical factorization
+
+```text
+G4 ~ N^-2 * P_L^-1/2
+   ~ L^-4 * L^-3/8
+   =  L^-35/8.
+```
+
+The new ingredient is the inverse square root: the conjecture is that the
+root-Schur normal channel retains an L2-normalized pivotal fluctuation rather
+than the full pivotal mass. This is not supplied by the arm exponent alone and
+is the precise theoretical gap exposed by the production.
+
+The mechanism has a normalization-free companion coordinate that can be
+formed from the same root data,
+
+```text
+Xi_L = N^2 * G4(L) * sqrt(P_L).
+```
+
+The `35/8` mechanism predicts constant `Xi_L`; the old `9/2` continuation gives
+`Xi_L~L^-1/8`, while pure `L^-4` gives `Xi_L~L^3/8`. This is a sharper next
+analytic check than fitting another free exponent.
 
 ## Boundary
 
