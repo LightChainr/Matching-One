@@ -159,6 +159,8 @@ def main() -> None:
     sources = {"axis": args.axis, "tilted": args.tilted}
     coarse: dict[tuple, list[int]] = {}
     selected_rows = selected_mass = 0
+    support_classes = defaultdict(int)
+    support_fibres = defaultdict(int)
     for geometry, path in sources.items():
         with path.open(newline="") as handle:
             for row in csv.DictReader(handle):
@@ -169,6 +171,13 @@ def main() -> None:
                 selected_rows += 1
                 selected_mass += int(row["count"])
                 component = source_component(row, geometry)
+                support_key = (
+                    int(row["local_source_contact_mask"]),
+                    f"{row['rank0']}->{row['rank1']}",
+                    component,
+                )
+                support_classes[support_key] += 1
+                support_fibres[support_key] += int(row["count"])
                 base = (
                     geometry, f"{row['rank0']}->{row['rank1']}", component,
                     int(row["local_source_contact_mask"]), int(row["collar_corner_mask"]),
@@ -182,6 +191,7 @@ def main() -> None:
     first_coarse = None
     matrix = defaultdict(lambda: schur.Interval.of(0))
     matrix_by_contact = defaultdict(lambda: schur.Interval.of(0))
+    positive_by_contact = defaultdict(lambda: schur.Interval.of(0))
     corner_sums = defaultdict(lambda: schur.Interval.of(0))
     for base in sorted(coarse_by_base):
         geometry, transition, component, contact, corner = base
@@ -198,6 +208,7 @@ def main() -> None:
         coarse_scores.append(record)
         matrix[(transition, component)] += scored["total"]
         matrix_by_contact[(contact, transition, component)] += scored["total"]
+        positive_by_contact[(contact, transition, component)] += scored["P"][0] + scored["P"][1]
         corner_sums[corner] += scored["total"]
         if first_coarse is None and record["weight"]["excludes_zero"]:
             first_coarse = (base, record)
@@ -296,6 +307,35 @@ def main() -> None:
         "contact_decomposition": {
             "bit_semantics": "bit 0/1: source cut contacts the two local occupied thermal arms; mask 0 is the radius-one no-contact residual",
             "sums": {str(contact): schur.interval_record(contact_sums[contact]) for contact in contact_masks},
+            "matrices": {
+                str(contact): {
+                    "row_order": transitions,
+                    "column_order": components,
+                    "cells": [
+                        [
+                            schur.interval_record(matrix_by_contact[(contact, t, a)])
+                            for a in components
+                        ]
+                        for t in transitions
+                    ],
+                    "positive_mass": [
+                        [
+                            schur.interval_record(positive_by_contact[(contact, t, a)])
+                            for a in components
+                        ]
+                        for t in transitions
+                    ],
+                    "raw_row_classes": [
+                        [support_classes[(contact, t, a)] for a in components]
+                        for t in transitions
+                    ],
+                    "physical_pair_fibres": [
+                        [support_fibres[(contact, t, a)] for a in components]
+                        for t in transitions
+                    ],
+                }
+                for contact in contact_masks
+            },
             "contact0_matrix": [
                 [schur.interval_record(matrix_by_contact[(0, t, a)]) for a in components]
                 for t in transitions

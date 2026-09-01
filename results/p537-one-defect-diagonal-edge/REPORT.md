@@ -107,6 +107,67 @@ residual is `CONTACT_ZERO_RESIDUAL_UNRESOLVED`; the post-output scientific
 content is stronger and simpler: there is no radius-one contact-free edge to
 bound.
 
+## Contact fusion and birth stage do not factorize
+
+The exact follow-up tensor keeps contact mask, rank transition and source orbit
+jointly, rather than comparing their marginal sums.  It reveals a sharper
+support rule:
+
+```text
+one-arm contact (masks 1 or 2)  =>  NN source orbit only;
+every non-NN source orbit        =>  both-arm contact (mask 3).
+```
+
+This is literal support, not cancellation.  The two one-arm masks contain
+1,892 raw classes and 237,533 physical fibres, all in `nn_other`.  Mask 3
+contains all six source orbits.
+
+Collapse masks 1 and 2 to the exchange-even single-contact column and retain
+mask 3 as the fused double-contact column.  The signed full-root Schur tensor
+is
+
+\[
+\begin{array}{c|rr}
+ & \text{single contact} & \text{double contact}\\ \hline
+0\mathbin{\to}1 & -2.8838028012142906\,10^{-6}
+                 & -2.9372878646696404\,10^{-6}\\
+1\mathbin{\to}2 & -5.3225654941777728\,10^{-6}
+                 & +6.1948162436108913\,10^{-6}
+\end{array}
+\]
+
+Its determinant has the strict outward enclosure
+
+```text
+-3.3498535471290615e-11 < det < -3.3498535471290614e-11.
+```
+
+The normalized sign determinant is exactly `-1` at displayed precision:
+the two determinant products have opposite signs.  Thus contact fusion and
+birth stage are maximally non-factorizing at N25.  At first birth the fused
+and single-contact masses agree within `1.85%` and have the same negative
+sign.  At second birth the fused sector reverses sign and is `116.39%` of the
+single-contact magnitude, turning the completion sum positive.
+
+The sign reversal is not explained by exposure frequency.  After division by
+the positive state mass, the single-contact conditional Schur densities are
+approximately `-2.00e-4` and `-8.13e-4` at first and second birth, whereas the
+double-contact densities are `-8.98e-5` and `+2.147e-4`.  The conditional
+completion amplitude itself changes sign.
+
+Within mask 3, the NN orbit is positive at both stages.  The combined non-NN
+orbits rotate from `-3.8159420314e-6` at first birth to
+`+2.5723855338e-6` at completion.  The surviving microscopic transmission map
+therefore has two coupled operations:
+
+```text
+contact fusion  x  topological completion,
+```
+
+not one scalar contact counterterm multiplied by one scalar birth amplitude.
+The full tensor, positive masses and exact support counts are retained in
+[`contact-stage-tensor.json`](contact-stage-tensor.json).
+
 ## Consequence
 
 The next theoretical object is no longer a generic six-arm upper bound.  It is
