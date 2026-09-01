@@ -1,5 +1,13 @@
 # Axis winding has a capillary obstruction to the fixed-L coefficient
 
+**Superseded gate.**  The absolute marked estimate below is correct but
+nonsharp.  Complement pairing in the later
+[signed two-cloud interface transfer](closed-source-axis-signed-interface-transfer.md)
+improves the sufficient gate from `L^2/m ->0` to `L/m ->0` and closes
+bounded `L/m` with a positive Bessel determinant.  The earlier open-window
+language is retained to identify exactly what that signed calculation
+resolved.
+
 **Result.** The fixed-L first two winding shells remain exactly those
 classified in `762dbaf4`; they are not reclassified here. Their formal
 coefficients are positive and their powers are correct at every L.
@@ -241,9 +249,8 @@ intermediate window
 
 the capillary obstruction vanishes, but the absolute marked remainder
 above is not small enough to certify the old cancellation-sensitive
-coefficient. A sharper signed/interface transfer calculation may extend
-(3) there. The current theorem does not assume that unproved
-strengthening.
+coefficient.  The later signed complement calculation now certifies (3)
+throughout this window.
 
 ## Scientific boundary
 
@@ -255,6 +262,9 @@ factor (8). What is uniform is:
 * the positive derivative and original-U coefficient under the stronger
   sufficient condition `L²/m->0`.
 
+The superseding signed theorem replaces the second bullet's sufficient
+condition by `L/m->0`.
+
 When `L/m` has a nonzero limit, the fixed-L shell amplitude must be
 renormalized by an interface partition; inserting the bare coefficient
 from `762dbaf4` is not justified. This remains a finite-lattice strong-
@@ -263,4 +273,7 @@ theory.
 
 The companion [capillary-window synthesis](closed-source-capillary-window.md)
 places this sufficient uniformity gate beside the exact two-cloud root and
-the tilted shortest-winding comparison.
+the tilted shortest-winding comparison.  The
+[complete capillary transfer](closed-source-axis-capillary-complete-transfer.md)
+and [signed theorem](closed-source-axis-signed-interface-transfer.md)
+supply the sharp continuation.

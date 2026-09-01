@@ -270,8 +270,13 @@ Detailed proofs are split into the
 [root chart and power gates](closed-source-mesoscopic-root-chart.md).
 The separate [capillary window](closed-source-capillary-window.md) explains
 why the root limit and the fixed-shell U amplitude have different
-uniformity gates.  A companion
-[axis uniformity bound](closed-source-axis-capillary-uniformity.md) proves
-the fixed-shell derivative under the sufficient gate `L^2/m -> 0`.  The
+uniformity gates.  The earlier
+[axis uniformity bound](closed-source-axis-capillary-uniformity.md) gave the
+sufficient gate `L^2/m -> 0`; the later
+[signed two-cloud transfer](closed-source-axis-signed-interface-transfer.md)
+sharpens it to `L/m ->0` and closes bounded `L/m` with the positive factor
+`I0(2L/m)^2-I1(2L/m)^2`; the
+[complete transfer](closed-source-axis-capillary-complete-transfer.md)
+also fixes the full unmarked/area generating function.  The
 [tilted shortest-winding classification](closed-source-tilted-shortest-winding-class.md)
 shows that its staircase entropy cannot beat the extra `m^-4k` barrier.

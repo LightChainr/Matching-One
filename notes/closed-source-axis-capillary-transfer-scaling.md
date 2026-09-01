@@ -1,5 +1,13 @@
 # Matched two-cloud capillary transfer gives a positive Bessel determinant
 
+**Promotion.**  This note derives the determinant inside the matched
+directed model and records the correction chain.  The companion
+[complete transfer](closed-source-axis-capillary-complete-transfer.md) and
+[signed interface theorem](closed-source-axis-signed-interface-transfer.md)
+supply the overhang, endpoint and extra-component estimates that promote
+the same formula to the leading square-lattice axis law for bounded
+`L/m`.
+
 ## New result and correction history
 
 In the capillary window
@@ -268,7 +276,7 @@ create a zero. Its log growth `4L/m+O(log(L/m))` remains negligible beside
 the topological tension `2L log m`, so the rigid logarithmic winding
 exponent is unchanged.
 
-## 6. Exact content and remaining boundary
+## 6. Exact content and promotion boundary
 
 **Complete in the matched noncrossing directed model:**
 
@@ -280,7 +288,7 @@ exponent is unchanged.
 - the d=1 noncrossing two-boundary determinant (17);
 - propagation through the original E sign and positive denominator.
 
-**Still required for a complete square-lattice rank-one theorem:**
+**Required if this note is read alone:**
 
 1. uniform suppression or exact resummation of horizontal reversals and
    overhangs;
@@ -291,10 +299,10 @@ exponent is unchanged.
 4. suppression of the tilted sector at the same joint limit;
 5. uniform alignment of the restricted sector odds used in (22).
 
-Consequently, positivity of (2) rules out a zero only inside this explicit
-matched two-cloud directed family. A zero in the complete rank-one response
-would now diagnose a non-directed or nonlocal family absent from (5)-(18),
-not the exterior-only endpoint effect of the withdrawn formula (4).
+The two companion proofs linked at the top control these items on compact
+`L/m` intervals.  Consequently positivity of (2) rules out a capillary zero
+in the leading axis law there.  The remaining asymptotic boundary is
+unbounded `L/m`, not an omitted exterior-only endpoint effect.
 
 ## Scientific card
 
@@ -308,6 +316,5 @@ not the exterior-only endpoint effect of the withdrawn formula (4).
   matched directed model predicts negative original U with no finite-c zero.
 - **Withdrawn result:** the earlier bracket (4) was a controlled
   exterior-only model, not a complete local two-cloud calculation.
-- **Next discriminator:** any observed capillary zero must be sought in
-  overhang, nonlocal cloud-boundary or additional-component sectors; it is
-  not produced by the matched directed two-cloud transfer.
+- **Next boundary:** unbounded `L/m`; the compact-capillary leading axis
+  law is closed by the companion estimates.

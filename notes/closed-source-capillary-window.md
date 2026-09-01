@@ -193,18 +193,38 @@ square.  Its additional `m^-4k` cost beats that entropy for every
 scaling function is an axis-interface problem; the tilted minimum class
 cannot overturn it at leading exponential order.
 
-A natural prospective output is a scaling function
+The natural output is a scaling function
 
 ```text
 Ustar/A_N
  =-m^(-(2L+1)) L^2 Phi(L/m)[1+o(1)],                          (11)
 ```
 
-with the fixed-L theorem requiring `Phi(0)=1/Delta` after the known
-polynomial normalization is restored.  Positivity or a zero of Phi would
-decide whether the negative tail survives capillary roughening.  Equation
-(1) proves that a nonconstant Phi is structurally required; it does not
-guess its sign.
+with `Phi(0)=1/Delta`.  The
+[signed two-cloud transfer](closed-source-axis-signed-interface-transfer.md)
+now closes this object for bounded `c=L/m`.  The exterior black-singleton
+and interior white-hole activities have the same base at the exact root,
+so the apparent width tilt and bridge-area response cancel.  Occupied-corner
+resolution leaves two strict noncrossing bridges and gives
+
+```text
+Phi(c)=[I0(2c)^2-I1(2c)^2]/Delta.                            (12)
+```
+
+The companion [complete transfer](closed-source-axis-capillary-complete-transfer.md)
+also gives the unmarked and area-refined laws
+
+```text
+G(c)=I0(2c)^2,
+G(c,u)=I0(2c)^2 sinh(u/2)/(u/2).
+```
+
+It is strictly positive for every finite `c>=0`.  Thus capillary roughness
+renormalizes the magnitude but cannot reverse the strong-source sign.  The
+same signed complement pairing sharpens the rigid sufficient gate from
+`L^2/m ->0` to `L/m ->0`, closing the formerly open `L << m <= L^2`
+window.  The detailed [correction history](closed-source-axis-capillary-transfer-scaling.md)
+shows why a black-only resummation spuriously creates a finite zero.
 
 ## Dependency card
 
@@ -217,15 +237,15 @@ guess its sign.
   variable.
 - **No new evidence block:** this is a constructive subfamily of the same
   analytic model.
-- **Open:** the full capillary scaling function and its sign, plus the
-  higher tilted classes after resummation.  The minimum tilted class is
-  already exponentially subordinate.
+- **Closed here:** the entire rigid window `L/m ->0` and the bounded-`L/m`
+  signed axis transfer.
+- **Open:** unbounded `L/m`, fixed-m thermodynamics and higher tilted
+  classes.  The minimum tilted class is already exponentially subordinate.
 
 The companion [two-cloud synthesis](closed-source-mesoscopic-two-cloud-synthesis.md)
 contains the bulk theorem and root expansion to which this interface
 analysis is attached.
 
 The separate [axis uniformity note](closed-source-axis-capillary-uniformity.md)
-turns the obstruction into a positive theorem: the fixed-shell derivative
-is uniformly protected under the explicit sufficient gate `L^2/m -> 0`,
-while `L << m <= O(L^2)` remains a signed-transfer problem.
+records the earlier absolute bound.  The signed transfer improves its
+`L^2/m ->0` gate to `L/m ->0` and then supplies (12) at finite `L/m`.
