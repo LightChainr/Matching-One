@@ -83,11 +83,12 @@ def main():
         "N": 16,
         "background_occupation_each": 6,
         "fibres": rows,
-        "difference_matrix": [
+        "raw_jump_difference_matrix": [
             ["-1/4", "0"],
             ["chi+R", "2*chi"],
         ],
-        "determinant": "-chi/2",
+        "raw_jump_determinant": "-chi/2",
+        "full_schur_p4_minor_status": "not_computed",
         "determinant_coefficient_of_chi": str(determinant_coefficient_of_chi),
     }, indent=2))
 
