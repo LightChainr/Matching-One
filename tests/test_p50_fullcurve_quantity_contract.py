@@ -26,6 +26,18 @@ class P50FullcurveQuantityContractTests(unittest.TestCase):
     def test_repository_blobs_are_frozen(self) -> None:
         payload, _ = contract.load_contract(ROOT)
         contract.validate_repository_files(ROOT, payload)
+        self.assertEqual(
+            payload["frozen_kernel"]["original_pre_qa_git_blob"],
+            "5008449033a85d2c81bf4ea3f025fa61217b6c4a",
+        )
+        self.assertFalse(
+            payload["posthoc_scorer_amendment"][
+                "historical_default_statistic_changed"
+            ]
+        )
+        self.assertTrue(
+            payload["posthoc_scorer_amendment"]["historical_interpretation_changed"]
+        )
 
     def test_four_topology_anchors_are_exact_identities(self) -> None:
         _, validated = contract.load_contract(ROOT)

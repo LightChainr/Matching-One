@@ -33,6 +33,7 @@ from analyze_p48_retrospective import (
     project_size,
     read_histograms,
 )
+from covariance_nullspace import covariance_spectral_diagnostics, serialize_diagnostics
 from score_p49_fullcurve_doubling import (
     LEVELS,
     P48_POWERS,
@@ -262,51 +263,17 @@ def generalized_covariance_score(
     covariance: Sequence[Sequence[float]],
     relative_cutoff: float = 1e-10,
 ) -> dict[str, object]:
-    """Score a correlated vector after removing numerical covariance null modes."""
+    """Score a correlated vector and audit every discarded covariance mode."""
     mp.mp.dps = 80
     values = [mp.mpf(str(value)) for value in residual]
     matrix = [[mp.mpf(str(value)) for value in row] for row in covariance]
-    scales = [mp.sqrt(matrix[i][i]) for i in range(len(values))]
-    if any(scale <= 0 for scale in scales):
-        raise ValueError("residual covariance has nonpositive diagonal")
-    correlation = mp.matrix([
-        [matrix[i][j] / (scales[i] * scales[j]) for j in range(len(values))]
-        for i in range(len(values))
-    ])
-    eigenvalues, eigenvectors = mp.eigsy(correlation)
-    spectrum = [eigenvalues[i] for i in range(len(values))]
-    cutoff = max(spectrum) * mp.mpf(str(relative_cutoff))
-    if min(spectrum) < -cutoff:
-        raise ValueError("residual correlation is materially indefinite")
-    active = [i for i, value in enumerate(spectrum) if value > cutoff]
-    if not active:
-        raise ValueError("residual covariance has zero numerical rank")
-    standardized = mp.matrix([
-        value / scale for value, scale in zip(values, scales)
-    ])
-    contributions = [
-        ((eigenvectors[:, i].T * standardized)[0] ** 2) / spectrum[i]
-        for i in active
-    ]
-    chi_square = mp.fsum(contributions)
-    degrees = len(active)
-    survival = mp.gammainc(
-        mp.mpf(degrees) / 2, chi_square / 2, mp.inf
-    ) / mp.gamma(mp.mpf(degrees) / 2)
-    return {
-        "chi_square": float(chi_square),
-        "degrees_of_freedom": degrees,
-        "chi_square_survival": float(survival),
-        "numerical_rank": degrees,
-        "relative_eigenvalue_cutoff": relative_cutoff,
-        "active_condition_number": float(
-            max(spectrum) / min(spectrum[i] for i in active)
-        ),
-        "correlation_eigenvalues": [float(value) for value in spectrum],
-        "component_standardized_residuals": [
-            float(value / scale) for value, scale in zip(values, scales)
-        ],
-    }
+    diagnostics = covariance_spectral_diagnostics(
+        values,
+        matrix,
+        mp.mpf(str(relative_cutoff)),
+        nullspace_policy="estimated",
+    )
+    return serialize_diagnostics(diagnostics, float)
 
 
 def render(

@@ -8,7 +8,7 @@
 
 - P43 even-channel 纠错的精确映射是 `DeltaS_cross = -DeltaS_either`；不重拟合的纠正分数为 `0.5700315436/2`。
 - 独立 P43+P57 primary 合成拒绝 **global zero**；norm-5 冻结比较优先 H4 于 H12/H8，但 **child block alone** 仍与零相容。
-- **N145->290** full curve 已完成，并排除已冻结的三层共同标量倍率描述；它不再是 active compute。
+- **N145->290** full curve 已完成；冻结`1e-10`分数仍为`9.35200/2`，但[#543零空间回溯](../experiments/p543-covariance-nullspace-audit-20260901/REPORT.md)证明解释依赖截断，故保留“该冻结分数拒绝共同倍率”，不再把被丢方向称作无害numerical null。它不再是 active compute。
 - 单一 **scalar width** 和其他已测试的低阶标量捷径不足以解释较高 thermal jet；不再用自由指数追加同读出拟合。
 - 有限体 **Russo** / chain-rule 的 **pivotal** 语义仍是精确控制；它本身不是新的机制证据票。
 - N=26 的冻结有限族 `Beta(5,5)` 与 `Beta(7,7)` 均已被精确枚举否定；这不外推为一般代数或连续场结论。
@@ -100,7 +100,7 @@ Draft [PR533](https://github.com/LightChainr/Matching-One/pull/533) 的 `5aa929a
 | 已有结果 | 证据与适用范围 | 结果位置 |
 |---|---|---|
 | **方位H4已有独立证据** | P43+P57独立primary合成对零为31.1857/4、p=2.81e−6；固定H4为3.4623/4、p=.484。norm-5区分所测试H8/H12；prism新增独立支持。norm-5子块本身对零仍相容。 | main：[综合报告](../notes/issue212-matching-odd-synthesis.md)；[prism原讨论](https://github.com/LightChainr/Matching-One/issues/205#issuecomment-5462845639) |
-| **单一标量尺度修正已不足** | N145→290全曲线单倍率9.3520/2、p=.0093；S′纯幂律与单一rank-gap宽度均失败。norm-4 q2为20.897/2、p=2.90e−5；Jordan标量p=.067、全jet p=.054。第四代中Jordan加一个even-mode家族存活，但λ=0、1/2、1难区分，未选出次级模身份。 | [已完成的开放PR273](https://github.com/LightChainr/Matching-One/pull/273)；[四代结果PR277](https://github.com/LightChainr/Matching-One/pull/277) |
+| **单一标量尺度修正已不足** | N145→290全曲线冻结单倍率9.3520/2、p=.0093；其零空间回溯显示cutoff-sensitive但默认拒绝不反转。S′纯幂律与单一rank-gap宽度均失败。norm-4 q2为20.897/2、p=2.90e−5；Jordan标量p=.067、全jet p=.054。第四代中Jordan加一个even-mode家族存活，但λ=0、1/2、1难区分，未选出次级模身份。 | [#543回溯](../experiments/p543-covariance-nullspace-audit-20260901/REPORT.md)；[已完成的开放PR273](https://github.com/LightChainr/Matching-One/pull/273)；[四代结果PR277](https://github.com/LightChainr/Matching-One/pull/277) |
 | **微观簇源的偶响应已明确测得** | S=(黑NN簇数+白matching簇数)/N。P40百万N65/N85已补齐E×S及E×controls；q-fugacity补偿下C四几何均为正（110–138SE），共同raw源的H4联合p=.21156仍未分辨。full辅助p=.04911是相关视图，不能认定能量场。此C保持matching均值，但未做真实Bernoulli温度补偿，也不是原norm-4的根/斜率归一化U。 | Draft267：[最新百万偶响应](https://github.com/LightChainr/Matching-One/blob/56a6267d6a6826a165f93ed3a64a670ca7088180/results/p40-even-given-odd/REPORT.md)、[原norm-4接口](https://github.com/LightChainr/Matching-One/blob/56a6267d6a6826a165f93ed3a64a670ca7088180/notes/p40-even-response-norm4-interface.md)；[20k来源](https://github.com/LightChainr/Matching-One/blob/eb7ef8c9f13a88d96f32c2da62ba7ef2145cb33e/results/p154-absolute-cluster/REPORT.md) |
 | **正的源/读出证据与M载荷分开** | 外部Euler源在fixed-K分解后仍有稳定约32%余项；F5已分辨两条源读出。原始matching M的同流载荷零仍相容（p=.58155），连接尚未分辨。 | [外部源](https://github.com/LightChainr/Matching-One/issues/275#issuecomment-5468416605)、[开放PR451](https://github.com/LightChainr/Matching-One/pull/451) |
 | **primitive square-bond另有多character结果** | N112独立生产支持r0+r1；E_top同流方向行列式p=2.49e−5，说明两个拓扑观察方向。纯E4/E6/E4²被拒；这套square-bond观察量与square-site thermal主线分开保存。 | [N112结果](https://github.com/LightChainr/Matching-One/issues/275#issuecomment-5469692921) |

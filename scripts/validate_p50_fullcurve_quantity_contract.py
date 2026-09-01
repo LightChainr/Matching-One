@@ -56,13 +56,32 @@ def git_blob(path: Path) -> str:
 
 def load_contract(root: Path) -> tuple[dict, dict[str, dict[str, object]]]:
     contract = json.loads((root / CONTRACT).read_text(encoding="utf-8"))
-    if contract.get("status") != "quantity_contract_frozen_before_typed_wrapper":
+    if contract.get("status") != (
+        "quantity_contract_frozen_with_posthoc_nullspace_scorer_qa"
+    ):
         raise ValueError("P50 quantity-contract status changed")
     if contract.get("frozen_kernel") != {
         "path": "scripts/score_p50_fullcurve_n290.py",
-        "git_blob": "5008449033a85d2c81bf4ea3f025fa61217b6c4a",
+        "git_blob": "43ad70586cd3408ab2e14cd6b5d1a45761492ace",
+        "original_pre_qa_git_blob": "5008449033a85d2c81bf4ea3f025fa61217b6c4a",
     }:
         raise ValueError("P50 frozen kernel identity changed")
+    if contract.get("posthoc_scorer_amendment") != {
+        "issue": 543,
+        "scope": (
+            "report discarded covariance eigendirections, fail closed for "
+            "structural null violations, and freeze cutoff sensitivity without "
+            "changing the prediction, feature order, covariance estimate, or "
+            "default displayed P50 statistic"
+        ),
+        "audit_result": {
+            "path": "experiments/p543-covariance-nullspace-audit-20260901/RESULT.json",
+            "git_blob": "33dec2119e0f97a704dbc9b68f5449ca8fdf2b33",
+        },
+        "historical_default_statistic_changed": False,
+        "historical_interpretation_changed": True,
+    }:
+        raise ValueError("P50 nullspace scorer amendment changed")
     if contract.get("frozen_prediction") != {
         "path": "predictions/p49_slope_two_sector_145_290_20260828.yaml",
         "git_blob": "df4d2f0c3ca5f3e3380906fd2b6636507574d108",
@@ -110,6 +129,10 @@ def validate_repository_files(root: Path, contract: Mapping[str, object]) -> Non
         path = root / record["path"]
         if git_blob(path) != record["git_blob"]:
             raise ValueError("P50 repository file identity changed: " + str(path))
+    amendment = contract["posthoc_scorer_amendment"]["audit_result"]
+    audit_path = root / amendment["path"]
+    if git_blob(audit_path) != amendment["git_blob"]:
+        raise ValueError("P50 nullspace audit identity changed: " + str(audit_path))
 
 
 def main() -> int:

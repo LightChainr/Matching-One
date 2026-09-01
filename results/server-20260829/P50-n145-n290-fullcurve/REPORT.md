@@ -42,12 +42,17 @@ The residual correlation eigenvalues are
 1.23785e-13, 1.76308e-6, 2.99999824.
 ```
 
-At the frozen relative cutoff `1e-10`, the numerical rank is two.  The common
+At the frozen relative cutoff `1e-10`, the numerical rank is two. The common
 amplitude-like mode contributes about `1.9243` to chi-square, while the active
-shape mode contributes about `7.4277`.  The numerical null mode is excluded.
-Thus the result does not overturn the earlier central/fixed-p H4 evidence; it
-shows that a single multiplier does not transport the local thermal-even curve
-shape.
+shape mode contributes about `7.4277`. A later covariance-nullspace audit found
+that the discarded mode has standardized residual projection
+`-1.774925e-6`; retaining it at cutoff `1e-14` adds `25.45035` to chi-square.
+The frozen `9.35200/2` rejection therefore remains, but it is cutoff-sensitive
+and cannot be interpreted as a whole-space compatibility score. This result
+does not overturn the earlier central/fixed-p H4 evidence; it shows that one
+frozen cutoff rejects single-multiplier transport of the local thermal-even
+curve shape. See the [full historical
+rescore](../../../experiments/p543-covariance-nullspace-audit-20260901/REPORT.md).
 
 ## Correlated P4 diagnostics
 
@@ -98,10 +103,11 @@ Both engines already emit `first - second` in frozen genealogy order.  The
 negative norm-2 character belongs to the frozen target ratio and must not be
 implemented by a second child sign flip.
 
-The three-level covariance is effectively rank deficient.  The scorer uses a
+The three-level covariance is extremely ill-conditioned. The scorer uses a
 correlation eigendecomposition and declares active eigenvalues relative to the
-largest one; direct full-rank inversion would give a numerically meaningless
-larger chi-square.
+largest one. Reporting must include the discarded residual projection and the
+frozen cutoff-sensitivity table; direct inversion and silent truncation are
+both insufficient on their own.
 
 ## Production provenance
 

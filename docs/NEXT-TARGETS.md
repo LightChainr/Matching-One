@@ -43,6 +43,7 @@ rank2投影逐配置等于固定唯一绕行组件颜色；若真正的相内簇
 - Xi、jump/reweight分解、[共同温度加同一S的四profile闭合拒绝](../experiments/p337-two-coupling-closure-20260831/RESULT.md)、全孔面核及非循环开关积分均已完成。不要重做，不用新坐标救回失败闭合。
 - [全m>=64反号](https://github.com/LightChainr/Matching-One/blob/2690f665bc8029cb2370d3f1efcef5eb2853705c/notes/closed-source-uniform-projection-tail.md)、N/m²有界Poisson联合极限、Q4和Q1有限seam传递均已完成；它们不证明固定m大N结论。
 - [普通估计器预算](../experiments/p337-estimator-access-20260831/RESULT.md)：即使给真实root/均值/分母，m64的star独立iid热协方差平均达到SNR3仍需每几何至少约1.52e25样本。[twist恒等式](../notes/p337-twist-estimator-access.md)没有自动解决抵消；当前不把十台机器投入这类采样。
+- [协方差零空间QA](../experiments/p543-covariance-nullspace-audit-20260901/REPORT.md)：三个静默截断实现已统一修复，16个归档向量分数已用既存充分统计回溯；15项不变，P50仅改解释边界。#543不形成新生产或新证据线。
 
 ## 已完成并停线的生产
 

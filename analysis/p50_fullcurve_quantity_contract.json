@@ -1,9 +1,20 @@
 {
   "schema": "matching-one/p50-fullcurve-quantity-contract/v1",
-  "status": "quantity_contract_frozen_before_typed_wrapper",
+  "status": "quantity_contract_frozen_with_posthoc_nullspace_scorer_qa",
   "frozen_kernel": {
     "path": "scripts/score_p50_fullcurve_n290.py",
-    "git_blob": "5008449033a85d2c81bf4ea3f025fa61217b6c4a"
+    "git_blob": "43ad70586cd3408ab2e14cd6b5d1a45761492ace",
+    "original_pre_qa_git_blob": "5008449033a85d2c81bf4ea3f025fa61217b6c4a"
+  },
+  "posthoc_scorer_amendment": {
+    "issue": 543,
+    "scope": "report discarded covariance eigendirections, fail closed for structural null violations, and freeze cutoff sensitivity without changing the prediction, feature order, covariance estimate, or default displayed P50 statistic",
+    "audit_result": {
+      "path": "experiments/p543-covariance-nullspace-audit-20260901/RESULT.json",
+      "git_blob": "33dec2119e0f97a704dbc9b68f5449ca8fdf2b33"
+    },
+    "historical_default_statistic_changed": false,
+    "historical_interpretation_changed": true
   },
   "frozen_prediction": {
     "path": "predictions/p49_slope_two_sector_145_290_20260828.yaml",

@@ -22,6 +22,7 @@ import yaml
 
 from analyze_matching_parity_derivatives_fast import H, combine, read, remove
 from analyze_rank_gap_thermal_window import Run, covariance_groups, pooled_statistics, read_run
+from covariance_nullspace import covariance_spectral_diagnostics, serialize_diagnostics
 from hermite_krawtchouk_scaling_jet import (
     canonical_dimensionless_width,
     cocycle_residual,
@@ -231,45 +232,10 @@ def generalized_chi_square(
     residual: Sequence[mp.mpf], covariance: Sequence[Sequence[mp.mpf]],
     relative_cutoff: mp.mpf = mp.mpf("1e-10"),
 ) -> dict:
-    if not residual:
-        raise ValueError("residual vector is empty")
-    scales = [mp.sqrt(covariance[i][i]) for i in range(len(residual))]
-    if any(scale <= 0 for scale in scales):
-        raise ValueError("residual covariance has nonpositive diagonal")
-    correlation = mp.matrix(
-        [[covariance[i][j] / (scales[i] * scales[j]) for j in range(len(scales))]
-         for i in range(len(scales))]
+    diagnostics = covariance_spectral_diagnostics(
+        residual, covariance, relative_cutoff, nullspace_policy="estimated"
     )
-    eigenvalues, eigenvectors = mp.eigsy(correlation)
-    values = [eigenvalues[index] for index in range(len(scales))]
-    largest = max(values)
-    cutoff = largest * relative_cutoff
-    if min(values) < -cutoff:
-        raise ValueError("residual correlation is materially indefinite")
-    standardized = mp.matrix([value / scale for value, scale in zip(residual, scales)])
-    active = [index for index, value in enumerate(values) if value > cutoff]
-    if not active:
-        raise ValueError("residual covariance has zero numerical rank")
-    chi_square = mp.fsum(
-        ((eigenvectors[:, index].T * standardized)[0] ** 2) / values[index]
-        for index in active
-    )
-    degrees = len(active)
-    survival = mp.gammainc(mp.mpf(degrees) / 2, chi_square / 2, mp.inf) / mp.gamma(
-        mp.mpf(degrees) / 2
-    )
-    return {
-        "chi_square": mp.nstr(chi_square, 20),
-        "degrees_of_freedom": degrees,
-        "chi_square_survival": mp.nstr(survival, 15),
-        "numerical_rank": degrees,
-        "relative_eigenvalue_cutoff": mp.nstr(relative_cutoff, 10),
-        "active_condition_number": mp.nstr(largest / min(values[i] for i in active), 15),
-        "correlation_eigenvalues": [mp.nstr(value, 15) for value in values],
-        "component_standardized_residuals": [
-            mp.nstr(value / scale, 15) for value, scale in zip(residual, scales)
-        ],
-    }
+    return serialize_diagnostics(diagnostics, lambda value: mp.nstr(value, 20))
 
 
 def render_score(
