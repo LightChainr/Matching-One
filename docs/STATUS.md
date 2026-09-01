@@ -31,6 +31,10 @@ Draft [PR533](https://github.com/LightChainr/Matching-One/pull/533) 的 `a768042
 
 当前唯一P0是 #537 的理论闸门：控制完整 `T_N=jY_p-R*jM_p-R_p*jM` 到 `o(D/A_N)`，并补 exact `p_c` 到 pooled root 的运输。朴素三位置绝对臂界需要`alpha4>4/3`，现有严格输入只给某个`alpha4>1`，所以不能用同一四臂平方论证直接宣布完成；下一刀必须是更强support、signed cancellation/landing identity或不同的归一化界。#539只保留P2可复现支持。没有这个定理，不追加空间样本或桥descriptor；当前P0随机生产和云任务均为空。
 
+该目标现在还有一个精确坐标形式：令 `M(p(u,epsilon),epsilon)=u` 并把 `Y` 拉回为 `Yhat(u,epsilon)`，则 `partial_u partial_epsilon Yhat=T_N/D=J_N/A_N`。所以最快的理论刀不是分别放大两个通道的绝对界，而是检验三组分离四臂的leading landing在固定`u`投影后是否严格抵消；若抵消，四组包络`R^4*pi4(R)^4`已落入现有严格`alpha4>1`的可和区。这个三组抵消仍是候选lemma；一个可实现的非零投影landing即令该路线停止。
+
+用logit热坐标，这个混合Hessian还精确等于一个signed Schur covariance：`T_t=<H,(a-Ea)S-(jM/M_t)B>_pool`，其中`H=y-Rm`、`S=K-EK`、`B=S^2-Np(1-p)`。因此下一项有限检查只针对普通四臂landing的source/thermal transfer matrix在C4与Schur投影后是否rank one；任何非零`2 x 2` minor都足以停线，不先扩大N25枚举。
+
 [固定m审查的新增结论](../notes/p337-fixed-m-relative-bound.md#7-2026-09-01实际组件气体的进一步取舍)则排除了裸组件气体在h=1使用标准非负KP判据的路线；任意非负控制函数都不能统一成立。rank2投影精确固定唯一绕行组件颜色，但实际两相内外partition比仍未控制，固定m原U定理没有被宣布完成。
 
 ## 已完成：完整齐次 N50 与有限零传递判决

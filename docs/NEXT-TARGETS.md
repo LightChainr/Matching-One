@@ -20,6 +20,10 @@ tail(d>R) = O(R^-eta)
 
 现在只保留 #537 一个P0理论闸门：**为两个通道写出真实三位置support，并把完整 `T_N=jY_p-R*jM_p-R_p*jM` 控制到 `o(D/A_N)`。** 朴素绝对三臂组计数需要`alpha4>4/3`，严格方格site输入只有某个`alpha4>1`，不能复用raw pair的同一论证。验收和停止规则为：
 
+先使用已经闭合的 root-conditioned 坐标。若 `M(p(u,epsilon),epsilon)=u`、`Yhat(u,epsilon)=Y(p(u,epsilon),epsilon)`，则有限体积精确恒等式为 `partial_u partial_epsilon Yhat=T_N/D=J_N/A_N`。这把readout、根移动和分母项压缩成同一个混合Hessian，并明确第一项可证伪的候选lemma：只有三组分离四臂的leading landing是否纯属温度坐标、因固定`u`投影而抵消。若成立，余项的`R^4*pi4(R)^4`由严格`alpha4>1`即可求和；任何一个可实现的非零投影三组landing都是停止该路线的反例。
+
+执行顺序也已压缩：先在普通四臂、无额外分支的有限landing states上构造source/thermal transfer matrix，并在C4求和与root Schur投影后检查全部`2 x 2` minors。一个非零minor就停止“四臂leading block只是温度重参数化”的路线；只有minors仅在额外arm/branch类非零时，才进入五/六臂概率界和近临界运输。这个检查不需要新MC，也不需要先做完整N25扩展。
+
 1. 若完整两通道和root/slope运输给 `T_N=o(D/A_N)`，停止把这一local interaction作为原anomaly的尺度放大机制，转为有限局部修正资产。
 2. 若只有一个具名pivotal/landing通道逃过界，必须先给同一原U的符号或尺度预测，才冻结一次新读数；不能从结果中再选bridge irrep。
 3. 若现有严格臂界不足，交付最小未控joint event或signed cancellation条件即停止；不能用未经证明的5/4替代，也不能把上界发散写成实际发散。
