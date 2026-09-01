@@ -1,0 +1,72 @@
+{
+  "schema": "matching-one/p537-contact-stage-n65-contract/v1",
+  "status": "FROZEN_BEFORE_PRODUCTION",
+  "issue": 537,
+  "question": "Does the N25 contact-fusion x topological-completion operator survive in held-out N65 full original-U?",
+  "geometries": {
+    "axis_like": [8, 1],
+    "tilted_like": [7, 4],
+    "P4_delta": "5760/4225"
+  },
+  "external_baseline": {
+    "population": "P45 N65 threshold-rank, 100000000 shared-permutation replicas per geometry",
+    "histogram": "results/server-20260828/P45-root-amplitude/n65.hist.csv",
+    "histogram_sha256": "998ecb82ea8d3d6b8d37a1ddc4aae479b550054a8b4bfe9bf23fe49810e5138f",
+    "metadata": "results/server-20260828/P45-root-amplitude/n65.metadata.json",
+    "metadata_sha256": "b126ca2b07bde9fbcc7223d9282a777b3b8c05e8036c1ebbb14d4aef81114b3c",
+    "pooled_root": "0.59273112663644324565719093140175079009839355",
+    "M_p": "8.37915743403900414775384926527603260160573557",
+    "R": "0.00259382655717970199120615527852628733808040175",
+    "R_p": "-0.0011308767301403869670274581462362994183124961"
+  },
+  "carrier": {
+    "fixed_source_endpoint": "x=0 vacant",
+    "fixed_thermal_site": "z=East(x)",
+    "source_partner": "all y distinct from x,z, retained by displacement component",
+    "selection": [
+      "z has the same alternating radius-one collar semantics as N25",
+      "rank changes 0->1 or 1->2",
+      "source is present",
+      "g16(source Bell) changes across the same z flip"
+    ],
+    "contact_mask": "bits record source-cut contact with the two local occupied thermal arms",
+    "source_normalization": "a^y=g16/(16*N) after translation fixes x",
+    "thermal_orbit_multiplicity": 4,
+    "geometry_pool_weight": "1/2"
+  },
+  "production": {
+    "samples_total": 20000000,
+    "shards": 4,
+    "batches": 100,
+    "seed": 20260901537,
+    "proposal_p": "0.59273112663644324565719093140175079009839355",
+    "shared_randomness": "the same counter-derived rest occupation is used for both geometries",
+    "sample_extension": "none",
+    "gpu": false
+  },
+  "primary_tensor": {
+    "rows": ["0->1", "1->2"],
+    "columns": ["single_contact=mask1+mask2", "double_contact=mask3"],
+    "cell_value": "complete pooled-root signed Schur/original-U contribution with displacement-specific beta fixed globally",
+    "also_retain": ["positive exposure", "mask1 and mask2 separately", "jackknife covariance"]
+  },
+  "primary_score": {
+    "Delta_cs": "U_01_single*U_12_double-U_01_double*U_12_single",
+    "theta_cs": "Delta_cs/(abs(U_01_single*U_12_double)+abs(U_01_double*U_12_single))",
+    "N25_anchor": {
+      "Delta_cs": "-3.3498535471290615e-11",
+      "theta_cs": "-1 at displayed precision"
+    }
+  },
+  "decision": {
+    "CONTACT_FUSION_COMPLETION_TRANSMITS": "95% joint interval has Delta_cs<0 and the four cell signs are -- -+ in row-major order",
+    "SIGN_ROTATION_REJECTED": "95% joint interval has Delta_cs>0 or excludes at least one frozen cell sign",
+    "UNRESOLVED_CONTACT_STAGE_GATE": "otherwise"
+  },
+  "stops": [
+    "no extra contact descriptor",
+    "no free source mixture",
+    "no distance or size scan",
+    "no top-up after reading the 20000000-sample result"
+  ]
+}
