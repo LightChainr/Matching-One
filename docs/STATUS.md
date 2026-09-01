@@ -1,6 +1,6 @@
 # 当前成果：从取向信号到微观机制
 
-**整理日期：2026-09-01，已读到 Draft PR533 `a7680426` 与 #537 thermal-gate audit。** 两个独立决策实验、齐次N50、canonical pair 的有限空间块和完整联合原U响应均已完成并停线；首次Xi、jump/reweight分解和两套固定源的渐近反号也不再作为待办。[三份意见的核对与实际推进](../notes/reviews-response-20260831.md)记录本轮增量；[下一步](NEXT-TARGETS.md)只保留尚未回答的问题。本任务新增结果交付Draft #509，不合并。
+**整理日期：2026-09-01，已读到 Draft PR533 `5aa929a6` 与 #537 landing preflight。** 两个独立决策实验、齐次N50、canonical pair 的有限空间块和完整联合原U响应均已完成并停线；首次Xi、jump/reweight分解和两套固定源的渐近反号也不再作为待办。[三份意见的核对与实际推进](../notes/reviews-response-20260831.md)记录本轮增量；[下一步](NEXT-TARGETS.md)只保留尚未回答的问题。本任务新增结果交付Draft #509，不合并。
 
 ## 压缩后仍须保留的结论账本
 
@@ -25,15 +25,15 @@
 
 Draft [PR532](https://github.com/LightChainr/Matching-One/pull/532) 的已提交增量是两共享组件端点因式分解和指定补全族的四路径3/2下界；它不给占据平均符号。其后续评论建议的uniform J2生产已被410015f5完成，不能重复启动；评论中的八通道压缩和`alpha=3/2` pair positivity尚无同一PR的新提交，保留为候选代数，不改canonical补全或当前优先级。
 
-Draft [PR533](https://github.com/LightChainr/Matching-One/pull/533) 的 `a7680426` 新增了可信的 directed/noncrossing 局部子引理：两边界核为 `J1(c)=I0(2c)^2-I1(2c)^2>0`，matched two-gas 的 bounded-`L/m` transfer 在声明的受限模型中自洽。它仍是 **P2/C0 overall**：分支缺关键依赖，bounded-`s` root chart 仍漏 `a*s`，full-lattice moving-root 推广继续假设未证的 uniform connected-polymer/root-shift 余项，且控制字符扫描声明仍与 tree 不符。它不进入 current claim，不解决 `L/m→∞` 或 fixed `m`，也不授权 #534 的重复执行。
+Draft [PR533](https://github.com/LightChainr/Matching-One/pull/533) 的 `5aa929a6` 保留了若干可信 C1 子结果：relaxed all-west Catalan/Toeplitz 单粒子恒等式、立即 `EW/WE` 回边禁制、一个合法 nonlocal one-west 反例，以及“先有指数双gap核则sine transform保留`pq`双零”的条件引理。它仍是 **P2/C0 overall**：真实beta cloud没有构造物理双gap核，rank1与rank0/2共用坐标只是断言，`w>=2`、second thermal/root/original-U和uniform remainder未闭合；`410015f5`、`2690f665`仍不在祖先链，旧`a*s`、CR与`O(Na^4)`/`O(Na^3)`矛盾仍在。Issue #542保持开放，不进入current claim。
 
 **[thermal/pivotal 双通道审计](../notes/p337-thermal-pivotal-gate-audit.md)已经排除一个过度简化。** `d_p Cov(O,g_xy)` 精确分成 kernel reconnection 与原 rank/readout pivotal 两项；只控制 `partial_p E[g_xy]` 会漏掉第二项，并在 N9/N10/N13 的 `O=E` 精确控制中把总符号判反。Bell-8 的64,954个join和N13的1,198,080个state-edge-pair检查全部闭合；共享组件数不变时核也可换号。
 
-当前唯一P0是 #537 的理论闸门：控制完整 `T_N=jY_p-R*jM_p-R_p*jM` 到 `o(D/A_N)`，并补 exact `p_c` 到 pooled root 的运输。朴素三位置绝对臂界需要`alpha4>4/3`，现有严格输入只给某个`alpha4>1`，所以不能用同一四臂平方论证直接宣布完成；下一刀必须是更强support、signed cancellation/landing identity或不同的归一化界。#539只保留P2可复现支持。没有这个定理，不追加空间样本或桥descriptor；当前P0随机生产和云任务均为空。
+当前唯一P0仍是 #537，但第一项有限 falsifier 已经完成。[显式 landing preflight](../experiments/p537-landing-matrix-preflight-20260901/REPORT.md)把 Bell-8 限为 six-block clean-two-bridge：两个共享块各在两标记出现一次，其余四port为singleton，且两端共享位置相邻。两个非零C4轨道及其总和的四行source/thermal矩阵六个minors全部严格非零；总和的P4/root determinant为`-2.4843232721775393e-5`，固定M的Schur residual为`-4.217141611550048e-6`，完整`T_p/M_p=+5.806332966676667e-6`。N13按rank transition聚合也给严格非零minor，并显示`0->2`的readout为零而kernel非零。8次`2^24`精确遍历、0随机、0云任务完成了逐字节复核。
 
-该目标现在还有一个精确坐标形式：令 `M(p(u,epsilon),epsilon)=u` 并把 `Y` 拉回为 `Yhat(u,epsilon)`，则 `partial_u partial_epsilon Yhat=T_N/D=J_N/A_N`。所以最快的理论刀不是分别放大两个通道的绝对界，而是检验三组分离四臂的leading landing在固定`u`投影后是否严格抵消；若抵消，四组包络`R^4*pi4(R)^4`已落入现有严格`alpha4>1`的可和区。这个三组抵消仍是候选lemma；一个可实现的非零投影landing即令该路线停止。
+这已经排除“所有有限landing leading block天然rank one”的强说法，也排除上述最小端口合同下的纯温度重参数化。它尚未裁决仓库未定义的“ordinary four-arm/no-extra-branch”：Bell partition看不到远离端口的全局分支，现有K-profile也没有逐`z`的before/after landing与rank transition。下一步只做一次语义闸门：冻结allowed Bell keys、global branch flag、thermal-site记录、transition row basis与C4 character；若正式定义包含clean-two-bridge，rank-one路线立即退休；若排除，才生成这些最小逐记录字段复测一次。此前不扩N、不加MC、距离、descriptor或五/六臂概率工作。
 
-用logit热坐标，这个混合Hessian还精确等于一个signed Schur covariance：`T_t=<H,(a-Ea)S-(jM/M_t)B>_pool`，其中`H=y-Rm`、`S=K-EK`、`B=S^2-Np(1-p)`。因此下一项有限检查只针对普通四臂landing的source/thermal transfer matrix在C4与Schur投影后是否rank one；任何非零`2 x 2` minor都足以停线，不先扩大N25枚举。
+完整渐近目标仍是把 `T_N=jY_p-R*jM_p-R_p*jM` 控制到 `o(D/A_N)`，其中 `partial_u partial_epsilon Yhat=T_N/D=J_N/A_N`，等价的logit形式为`T_t=<H,(a-Ea)S-(jM/M_t)B>_pool`。有限反例说明不能再把所见signed functional先验压成单一thermal列；正式语义若包含该反例，应直接研究存活的signed functional或寻找不同归一化界。#539只保留P2复现支持；当前P0随机生产和云任务仍为空。
 
 [固定m审查的新增结论](../notes/p337-fixed-m-relative-bound.md#7-2026-09-01实际组件气体的进一步取舍)则排除了裸组件气体在h=1使用标准非负KP判据的路线；任意非负控制函数都不能统一成立。rank2投影精确固定唯一绕行组件颜色，但实际两相内外partition比仍未控制，固定m原U定理没有被宣布完成。
 

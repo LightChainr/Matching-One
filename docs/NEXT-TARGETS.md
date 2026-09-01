@@ -1,6 +1,6 @@
 # 下一步：thermal/pivotal 传递与固定m两相权重
 
-**2026-09-01，已读到执行 `410015f5`、临界 raw-kernel 定理与 thermal/pivotal 双通道审计。** 当前结论从[STATUS](STATUS.md)进入。两个独立生产实验、齐次N50、canonical pair 的有限空间块和完整联合原U响应均已完成。下一步不增加同类有限点、距离网格、补全扫描或旧实验救值。
+**2026-09-01，已读到执行 `410015f5`、PR533 `5aa929a6` 与 #537 landing preflight。** 当前结论从[STATUS](STATUS.md)进入。两个独立生产实验、齐次N50、canonical pair 的有限空间块、完整联合原U响应和第一项rank-one有限反例均已完成。下一步不增加同类有限点、距离网格、补全扫描或旧实验救值。
 
 ## 1. 当前研究问题：绝对可和的空间核能否经热响应获得尺度增强
 
@@ -18,22 +18,20 @@ tail(d>R) = O(R^-eta)
 
 新的[精确审计](../notes/p337-thermal-pivotal-gate-audit.md)已经证明，下一项不能只研究 `partial_p E[g_xy]`。对 `O=q,E`，完整 `d_p Cov(O,g_xy)` 有 kernel reconnection 与原 rank/readout pivotal 两项；tiny torus上遗漏第二项会把符号判反。普通site flip是八端口组件join，但共享组件数本身也不决定符号。
 
-现在只保留 #537 一个P0理论闸门：**为两个通道写出真实三位置support，并把完整 `T_N=jY_p-R*jM_p-R_p*jM` 控制到 `o(D/A_N)`。** 朴素绝对三臂组计数需要`alpha4>4/3`，严格方格site输入只有某个`alpha4>1`，不能复用raw pair的同一论证。验收和停止规则为：
+现在只保留 #537 一个P0理论闸门：**把未定义的 ordinary four-arm/no-extra-branch 变成一次可判定的有限合同，再决定rank-one路线是否已经死亡。** [现有精确preflight](../experiments/p537-landing-matrix-preflight-20260901/REPORT.md)在six-block clean-two-bridge合同下已给出全部非零minors；总和的P4/root determinant为`-2.4843232721775393e-5`，固定M的Schur residual为`-4.217141611550048e-6`，`T_p/M_p=+5.806332966676667e-6`。因此不能继续把“构造finite matrix”列为未执行，也不能先进入五/六臂概率证明。
 
-先使用已经闭合的 root-conditioned 坐标。若 `M(p(u,epsilon),epsilon)=u`、`Yhat(u,epsilon)=Y(p(u,epsilon),epsilon)`，则有限体积精确恒等式为 `partial_u partial_epsilon Yhat=T_N/D=J_N/A_N`。这把readout、根移动和分母项压缩成同一个混合Hessian，并明确第一项可证伪的候选lemma：只有三组分离四臂的leading landing是否纯属温度坐标、因固定`u`投影而抵消。若成立，余项的`R^4*pi4(R)^4`由严格`alpha4>1`即可求和；任何一个可实现的非零投影三组landing都是停止该路线的反例。
+1. 冻结allowed Bell-8 landings、全局`no-extra-branch`布尔定义、逐`z` before/after landing与rank transition、row basis和C4 character；这是一次语义交付，不是新模型目录。
+2. 若正式定义包含已有clean-two-bridge事件，立刻退休“四臂leading block只是温度重参数化”，转而记录其signed functional，并只在能给原U符号或尺度预测时继续。
+3. 若正式定义排除该事件，给exact producer补上述最小逐记录字段并复测一次；不得同时改变几何、N、source或投影来救rank one。
+4. 结果前不启动新MC、N、距离、动量、三插入、descriptor或五/六臂概率工作。#539只是P2复现支持；PR532的两桥因式分解与3/2下界不形成生产授权。
 
-执行顺序也已压缩：先在普通四臂、无额外分支的有限landing states上构造source/thermal transfer matrix，并在C4求和与root Schur投影后检查全部`2 x 2` minors。一个非零minor就停止“四臂leading block只是温度重参数化”的路线；只有minors仅在额外arm/branch类非零时，才进入五/六臂概率界和近临界运输。这个检查不需要新MC，也不需要先做完整N25扩展。
-
-1. 若完整两通道和root/slope运输给 `T_N=o(D/A_N)`，停止把这一local interaction作为原anomaly的尺度放大机制，转为有限局部修正资产。
-2. 若只有一个具名pivotal/landing通道逃过界，必须先给同一原U的符号或尺度预测，才冻结一次新读数；不能从结果中再选bridge irrep。
-3. 若现有严格臂界不足，交付最小未控joint event或signed cancellation条件即停止；不能用未经证明的5/4替代，也不能把上界发散写成实际发散。
-4. 在该闸门前不启动新MC、N、距离、动量、三插入、alpha/positivity completion或descriptor。#539只是P2可复现支持；重建旧N25 `J2`不算关闭渐近闸门。PR532已提交的两桥因式分解与3/2下界保留，但不形成生产授权。
+渐近验收仍是完整 `T_N=jY_p-R*jM_p-R_p*jM=o(D/A_N)`，等价于root-conditioned mixed Hessian `partial_u partial_epsilon Yhat=T_N/D=J_N/A_N`。朴素三位置绝对计数需要`alpha4>4/3`而严格输入只有某个`alpha4>1`；有限反例说明signed cancellation不能在冻结事件前被当作既有lemma。
 
 ## 2. 保留的理论缺口：固定m的真实两相相对权重
 
 [固定m审查](../notes/p337-fixed-m-relative-bound.md)已经给表面界、sector-odds不足反例，并进一步证明：裸组件气体的标准非负KP判据在h=1也无法对大体积统一成立，任意非负控制函数都不能补救。停止继续优化这套裸表示的短轮廓计数常数。
 
-PR533 `a7680426` 的 Bessel determinant `I0(2c)^2-I1(2c)^2>0` 可保留为受限 directed/noncrossing 的 C1 子引理；它的 full-lattice moving-root 负号仍依赖未证的 uniform connected-polymer/root-shift 界，且只覆盖 bounded `L/m`。因此该 Draft 保持P2/C0 overall，不把它的 `m→∞` joint limit改写成fixed-`m`进展，也不启动已被其新head超越的#534。
+PR533 `5aa929a6` 的 relaxed Catalan/Toeplitz identity、立即回边禁制、nonlocal one-west反例与条件`pq`双零可保留为C1子结果。真实beta cloud没有构造物理双gap核，rank1共同坐标、`w>=2`、second thermal/root/original-U和uniform remainder仍未闭合；关键依赖也不在祖先链。因此该Draft保持P2/C0 overall，Issue #542保持开放，不把joint-limit叙述改写成fixed-`m`进展。
 
 rank2投影逐配置等于固定唯一绕行组件颜色；若真正的相内簇尾已可求和，等面积torus的小簇贡献可逐项相消，几何差可达 `O(N exp(-c ell))`。但实际共存窗口内的内外相受限partition比和大轮廓尾尚未控制。下一理论交付只应补这个模型特有的归一化控制；仅重复共同pressure、rank1小、正性或已有Poisson联合极限不足以完成它。
 

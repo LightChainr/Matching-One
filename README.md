@@ -21,7 +21,7 @@ README负责入口，STATUS负责成果，NEXT-TARGETS负责下一步分析。�
 
 **已补齐完整齐次N50传递。** 两几何各精确覆盖2^50配置，合计约49.85 CPU秒、峰1.63 GiB；原U=1.06156039、固定源响应V=+0.05434578，严格排除该有限点零传递。正号预测存活，不等于机制确认，不追加尺寸/源参数。[本轮结果与复核](experiments/p337-homogeneous-n50-20260831/RESULT.md)；旧m64直接采样停线及P154/P334降级保持。
 
-**canonical pair 已从有限传递推进到完整 thermal gate。** 新空间块与 N25 联合响应排除有限零、additive-linear 和 NN-contact-only closure；随后 exact-`p_c` 四臂论证证明 raw pair kernel 绝对可和。最新[双通道审计](notes/p337-thermal-pivotal-gate-audit.md)又证明 `d_p Cov(O,g_xy)` 还含原 rank/readout pivotal 项，单独控制 `partial_p E[g_xy]` 会在tiny exact controls中判错符号。原U响应现已压缩为固定matching-root坐标下的mixed Hessian/signed Schur covariance；下一刀是有限landing transfer matrix的rank-one反例检查。#537因此是唯一P0理论任务；随机生产仍为空，#539仅为P2复现支持。
+**canonical pair 已从有限传递推进到可证伪的 thermal gate。** 新空间块与 N25 联合响应排除有限零、additive-linear 和 NN-contact-only closure；exact-`p_c` 论证证明 raw pair kernel 绝对可和，[双通道审计](notes/p337-thermal-pivotal-gate-audit.md)又补回 rank/readout pivotal 项。最新[landing preflight](experiments/p537-landing-matrix-preflight-20260901/REPORT.md)在显式 six-block clean-two-bridge 合同下得到全部非零 minors，排除“有限leading block普遍只是温度重参数化”；仓库尚未形式化 ordinary/no-extra，因此下一步只冻结该事件语义并做一次包含性裁决，不扩N、不采样。#537仍是唯一P0理论任务；#539仅为P2复现支持。
 
 ## 已有成果的主线
 

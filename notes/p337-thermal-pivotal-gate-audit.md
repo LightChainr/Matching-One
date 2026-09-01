@@ -9,10 +9,12 @@ Controlling only `partial_p E[g_xy]` drops the topology-readout pivotal term
 and can even give the wrong sign on finite controls.
 
 This audit therefore retires the shortcut “prove raw-kernel derivative
-summability, then declare the original-`U` gate closed.”  It does not prove
-that the complete thermal response grows or vanishes.  Issue #537 is the one
-canonical theory task for that remaining question; no new Monte Carlo block is
-authorized.
+summability, then declare the original-`U` gate closed.”  The follow-up finite
+preflight also rejects a universal rank-one cancellation under one explicit
+minimal landing contract.  Neither result proves the asymptotic size of the
+complete thermal response.  Issue #537 remains the one canonical theory task,
+now narrowed to a semantic decision plus the surviving signed functional; no
+new Monte Carlo block is authorized.
 
 ## Exact finite identity
 
@@ -177,6 +179,37 @@ same-shared-count sign flips show that failure is plausible, but do not decide
 this matrix statement because they precede angular summation and thermal
 projection.
 
+That finite preflight has now been executed under a deliberately explicit,
+provisional contract.  Retain a Bell-8 landing exactly when it has six blocks,
+two blocks touch each mark once, the other four ports are singletons, and the
+two shared positions are adjacent at both marks.  Its two nonzero C4 orbits
+both have `g16=4`.  At the saved N25 pooled root, all six minors of the
+four-row `(q_axis,E_axis,q_tilted,E_tilted)` source/thermal matrix are strictly
+nonzero for each orbit and their sum.  For the invariant sum,
+
+```text
+P4/root determinant                  = -2.4843232721775393e-5,
+source after fixed-M Schur removal  = -4.2171416115500480e-6,
+T_p/M_p                              = +5.8063329666766670e-6.
+```
+
+Exact outward intervals fix all three signs.  An independent N13 aggregation
+by rank transitions also gives a nonzero `E` channel minor
+`-3.6534057205476687e-6`; its direct `0->2` readout entry is zero while the
+kernel entry is nonzero.  The N13 result mixes all landing types and the N25
+contract is only a port-level definition, so neither may be relabelled as the
+undefined repository phrase “ordinary four-arm/no-extra-branch.”  They do
+kill the stronger blanket rank-one claim.
+
+The stop rule is therefore concrete.  If “ordinary/no-extra” is intended to
+include this six-block clean-two-bridge event, retire the rank-one route now.
+If it excludes the event, freeze one finite definition recording the allowed
+Bell keys, the global branch flag, the thermal site's before/after landing,
+the rank-transition row basis and the C4 character, then test inclusion once.
+Do not add N, random samples, distances or descriptors while choosing that
+semantics; do not proceed to five/six-arm probability bounds unless the frozen
+definition actually removes the counterexample.
+
 To prove this source disappears from original `U`, one needs
 `T_N=o(D/A_N)`.  Raw summability, thermal summability without a rate, or a
 positive finite `D` does not imply this.  Under the conditional scale
@@ -212,9 +245,11 @@ python3 experiments/p337-thermal-gate-audit-20260901/thermal_gate.py \
   --join-audit --out /tmp/p337-joins.json
 python3 experiments/p337-thermal-gate-audit-20260901/thermal_gate.py \
   --geometry 3 2 --out /tmp/p337-n13.json
+python3 experiments/p537-landing-matrix-preflight-20260901/verify.py
 ```
 
-The 12 focused tests pass.  No new random configuration, distance, exponent
-fit, completion scan, cloud job or GPU task was used.  A full N25
-kernel/readout split can remain P2 reproducibility support, but reproducing the
-already known `J2` does not close this asymptotic gate.
+The 12 focused tests and the self-contained landing verifier pass.  The latter
+performs eight exact `2^24` traversals in scratch space and reproduces every
+profile byte for byte.  No random configuration, distance, exponent fit,
+completion scan, cloud job or GPU task was used.  Reproducing the already
+known full `J2` remains a control and does not close the asymptotic gate.

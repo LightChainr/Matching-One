@@ -1,0 +1,778 @@
+{
+  "schema": "matching-one/p537-provisional-clean-two-bridge-minors/v1",
+  "status": "exact_finite_counterexample_under_explicit_provisional_landing_contract",
+  "landing_contract": {
+    "name": "clean_two_bridge_six_block",
+    "definition": "Bell-8 partition has exactly six blocks; exactly two blocks occur once at each marked four-port group; the other four blocks are singleton ports; the two shared landing positions are adjacent at both marks",
+    "C4_orbits": {
+      "clean_same": "cyclic order of the two shared labels agrees at the two marks",
+      "clean_reversed": "cyclic order is reversed",
+      "clean_total": "sum of both nonzero C4 orbits"
+    },
+    "kernel_check": "every retained physical record has g16=4; program aborts otherwise",
+    "warning": "This is a minimal auditable interpretation introduced by this audit. The repository has not formally equated it with the phrase ordinary four-arm/no-extra-branch."
+  },
+  "N": 25,
+  "geometries": [
+    [
+      5,
+      0
+    ],
+    [
+      4,
+      3
+    ]
+  ],
+  "root_p": {
+    "lower": "1185331078656453492302851399693093801267/2000000000000000000000000000000000000000",
+    "upper": "5926655393282267461514256998465469006339/10000000000000000000000000000000000000000",
+    "midpoint": 0.5926655393282267,
+    "width": 4e-40,
+    "excludes_zero": true,
+    "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+  },
+  "Delta": "1152/625",
+  "modes": [
+    {
+      "mode": "clean_same",
+      "row_order": [
+        "axis_q",
+        "axis_E",
+        "tilted_q",
+        "tilted_E"
+      ],
+      "matrix": {
+        "thermal_column": [
+          {
+            "lower": "58824957165132825056368568317709949452464564792279/10000000000000000000000000000000000000000000000000",
+            "upper": "18382799114104007830115177599284359205432653509169/3125000000000000000000000000000000000000000000000",
+            "midpoint": 5.882495716513282,
+            "width": 4.9199264370618e-37,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          },
+          {
+            "lower": "564853798035947321402277749740217664839447011081/10000000000000000000000000000000000000000000000000",
+            "upper": "5648537980359473214022777497402176709561081884999/100000000000000000000000000000000000000000000000000",
+            "midpoint": 0.056485379803594735,
+            "width": 6.1166611774189e-37,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          },
+          {
+            "lower": "589952870198569116199518497610113976331749737169291/100000000000000000000000000000000000000000000000000",
+            "upper": "589952870198569116199518497610113976381203164210611/100000000000000000000000000000000000000000000000000",
+            "midpoint": 5.899528701985691,
+            "width": 4.945342704132e-37,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          },
+          {
+            "lower": "-2290458949255954741169819153611247591568492193223/50000000000000000000000000000000000000000000000000",
+            "upper": "-143153684328497171323113697100702972552905340267/3125000000000000000000000000000000000000000000000",
+            "midpoint": -0.045809178985119096,
+            "width": 6.1444013497902e-37,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          }
+        ],
+        "source_column": [
+          {
+            "lower": "-974963582705632814699802289406436860055923597/10000000000000000000000000000000000000000000000000",
+            "upper": "-4874817913528164073499011447032184300096994043/50000000000000000000000000000000000000000000000000",
+            "midpoint": -9.749635827056328e-05,
+            "width": 3.65247884e-42,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          },
+          {
+            "lower": "54489190643708370035112156990235159862440999/4000000000000000000000000000000000000000000000000",
+            "upper": "681114883046354625438901962377939498586067639/50000000000000000000000000000000000000000000000000",
+            "midpoint": 1.3622297660927093e-05,
+            "width": 6.11110303e-42,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          },
+          {
+            "lower": "-9310091941246051493527276733367186894067710523/100000000000000000000000000000000000000000000000000",
+            "upper": "-4655045970623025746763638366683593446851661763/50000000000000000000000000000000000000000000000000",
+            "midpoint": -9.310091941246051e-05,
+            "width": 3.64386997e-42,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          },
+          {
+            "lower": "151915219980966288742020367135706271700750063/10000000000000000000000000000000000000000000000000",
+            "upper": "151915219980966288742020367135706271761407749/10000000000000000000000000000000000000000000000000",
+            "midpoint": 1.519152199809663e-05,
+            "width": 6.0657686e-42,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          }
+        ]
+      },
+      "all_six_row_minors": [
+        {
+          "rows": [
+            "axis_q",
+            "axis_E"
+          ],
+          "determinant": {
+            "lower": "4282011323292632037677537583408787211248558009/50000000000000000000000000000000000000000000000000",
+            "upper": "4282011323292632037677537583408787216373164919/50000000000000000000000000000000000000000000000000",
+            "midpoint": 8.564022646585264e-05,
+            "width": 1.024921382e-40,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          }
+        },
+        {
+          "rows": [
+            "axis_q",
+            "tilted_q"
+          ],
+          "determinant": {
+            "lower": "275168043090208118238813255260889746369398589/10000000000000000000000000000000000000000000000000",
+            "upper": "2751680430902081182388132552608897477394306993/100000000000000000000000000000000000000000000000000",
+            "midpoint": 2.7516804309020812e-05,
+            "width": 1.3700321103e-40,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          }
+        },
+        {
+          "rows": [
+            "axis_q",
+            "tilted_E"
+          ],
+          "determinant": {
+            "lower": "8489783495470719225295856991805465794603935261/100000000000000000000000000000000000000000000000000",
+            "upper": "4244891747735359612647928495902732902463416003/50000000000000000000000000000000000000000000000000",
+            "midpoint": 8.489783495470719e-05,
+            "width": 1.0322896745e-40,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          }
+        },
+        {
+          "rows": [
+            "axis_E",
+            "tilted_q"
+          ],
+          "determinant": {
+            "lower": "-1070299710383857810504760444642506677401288451/12500000000000000000000000000000000000000000000000",
+            "upper": "-1712479536614172496807616711428010681843225041/20000000000000000000000000000000000000000000000000",
+            "midpoint": -8.562397683070862e-05,
+            "width": 9.994182403e-41,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          }
+        },
+        {
+          "rows": [
+            "axis_E",
+            "tilted_E"
+          ],
+          "determinant": {
+            "lower": "148212516159513077834893064269240824987259329/100000000000000000000000000000000000000000000000000",
+            "upper": "29642503231902615566978612853848165363147817/20000000000000000000000000000000000000000000000000",
+            "midpoint": 1.4821251615951307e-06,
+            "width": 1.828479756e-41,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          }
+        },
+        {
+          "rows": [
+            "tilted_q",
+            "tilted_E"
+          ],
+          "determinant": {
+            "lower": "2133948584339338144500221766502771812595190361/25000000000000000000000000000000000000000000000000",
+            "upper": "213394858433933814450022176650277181511193457/2500000000000000000000000000000000000000000000000",
+            "midpoint": 8.535794337357353e-05,
+            "width": 1.0066976836e-40,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          }
+        }
+      ],
+      "P4_root_projection": {
+        "rows": [
+          "M=(q_axis+q_tilted)/2",
+          "Y=(E_axis-E_tilted)/Delta"
+        ],
+        "matrix": [
+          [
+            {
+              "lower": "14727530523123717084540052259840168385704942313651/2500000000000000000000000000000000000000000000000",
+              "upper": "58910122092494868338160209039360673547752403825201/10000000000000000000000000000000000000000000000000",
+              "midpoint": 5.891012209249487,
+              "width": 4.932634570597e-37,
+              "excludes_zero": true,
+              "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+            },
+            {
+              "lower": "-9529863884151189820262649813715777747313473247/100000000000000000000000000000000000000000000000000",
+              "upper": "-4764931942075594910131324906857888873474327903/50000000000000000000000000000000000000000000000000",
+              "midpoint": -9.52986388415119e-05,
+              "width": 3.64817441e-42,
+              "excludes_zero": true,
+              "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+            }
+          ],
+          [
+            {
+              "lower": "2774917501863981851226783801167716951521115722481/50000000000000000000000000000000000000000000000000",
+              "upper": "5549835003727963702453567602335433969562752968449/100000000000000000000000000000000000000000000000000",
+              "midpoint": 0.05549835003727964,
+              "width": 6.6520521523487e-37,
+              "excludes_zero": true,
+              "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+            },
+            {
+              "lower": "-17027173797412503965104139171135386398985733/20000000000000000000000000000000000000000000000000",
+              "upper": "-42567934493531259912760347927838465667145549/50000000000000000000000000000000000000000000000000",
+              "midpoint": -8.513586898706252e-07,
+              "width": 6.60637567e-42,
+              "excludes_zero": true,
+              "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+            }
+          ]
+        ],
+        "determinant": {
+          "lower": "27355278002402006319556929834275924393052101/100000000000000000000000000000000000000000000000000",
+          "upper": "6838819500600501579889232458568983671608101/25000000000000000000000000000000000000000000000000",
+          "midpoint": 2.7355278002402004e-07,
+          "width": 1.0293380303e-40,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+        },
+        "source_after_fixed_M_Schur_elimination": {
+          "lower": "145111299588355570288197168553955722639627/3125000000000000000000000000000000000000000000000",
+          "upper": "580445198353422281152788674215823109019921/12500000000000000000000000000000000000000000000000",
+          "midpoint": 4.643561586827378e-08,
+          "width": 1.747691304e-41,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+        },
+        "Schur_invariance": "source_column -> source_column-beta*thermal_column leaves every 2x2 minor unchanged"
+      },
+      "root_conditioned_mixed_hessian_Tp_over_Mp": {
+        "lower": "304039192825746518280732225368622764575067/400000000000000000000000000000000000000000000000",
+        "upper": "9501224775804578696272882042769463297172097/12500000000000000000000000000000000000000000000000",
+        "midpoint": 7.600979820643663e-07,
+        "width": 1.5233610026e-40,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+      },
+      "nonzero_minor_count": 6,
+      "all_row_minors_exclude_zero": true
+    },
+    {
+      "mode": "clean_reversed",
+      "row_order": [
+        "axis_q",
+        "axis_E",
+        "tilted_q",
+        "tilted_E"
+      ],
+      "matrix": {
+        "thermal_column": [
+          {
+            "lower": "58824957165132825056368568317709949452464564792279/10000000000000000000000000000000000000000000000000",
+            "upper": "18382799114104007830115177599284359205432653509169/3125000000000000000000000000000000000000000000000",
+            "midpoint": 5.882495716513282,
+            "width": 4.9199264370618e-37,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          },
+          {
+            "lower": "564853798035947321402277749740217664839447011081/10000000000000000000000000000000000000000000000000",
+            "upper": "5648537980359473214022777497402176709561081884999/100000000000000000000000000000000000000000000000000",
+            "midpoint": 0.056485379803594735,
+            "width": 6.1166611774189e-37,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          },
+          {
+            "lower": "589952870198569116199518497610113976331749737169291/100000000000000000000000000000000000000000000000000",
+            "upper": "589952870198569116199518497610113976381203164210611/100000000000000000000000000000000000000000000000000",
+            "midpoint": 5.899528701985691,
+            "width": 4.945342704132e-37,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          },
+          {
+            "lower": "-2290458949255954741169819153611247591568492193223/50000000000000000000000000000000000000000000000000",
+            "upper": "-143153684328497171323113697100702972552905340267/3125000000000000000000000000000000000000000000000",
+            "midpoint": -0.045809178985119096,
+            "width": 6.1444013497902e-37,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          }
+        ],
+        "source_column": [
+          {
+            "lower": "-44701847354604779364411606370680958421832522969/100000000000000000000000000000000000000000000000000",
+            "upper": "-5587730919325597420551450796335119802528675547/12500000000000000000000000000000000000000000000000",
+            "midpoint": -0.0004470184735460478,
+            "width": 1.603118593e-41,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          },
+          {
+            "lower": "541797123494781552602371018690008105596115187/6250000000000000000000000000000000000000000000000",
+            "upper": "1733750795183300968327587259808025938431019517/20000000000000000000000000000000000000000000000000",
+            "midpoint": 8.668753975916505e-05,
+            "width": 2.617254593e-41,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          },
+          {
+            "lower": "-43175885166570976518460459231226855810261142387/100000000000000000000000000000000000000000000000000",
+            "upper": "-345407081332567812147683673849814846469584661/800000000000000000000000000000000000000000000000",
+            "midpoint": -0.00043175885166570977,
+            "width": 1.563059762e-41,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          },
+          {
+            "lower": "1021759355006792783142120599017431318049991419/10000000000000000000000000000000000000000000000000",
+            "upper": "5108796775033963915710602995087156591514438587/50000000000000000000000000000000000000000000000000",
+            "midpoint": 0.00010217593550067927,
+            "width": 2.528962984e-41,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          }
+        ]
+      },
+      "all_six_row_minors": [
+        {
+          "rows": [
+            "axis_q",
+            "axis_E"
+          ],
+          "determinant": {
+            "lower": "26759454478291747037421726549762099958749043693/50000000000000000000000000000000000000000000000000",
+            "upper": "53518908956583494074843453099524199964592197689/100000000000000000000000000000000000000000000000000",
+            "midpoint": 0.0005351890895658349,
+            "width": 4.7094110303e-40,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          }
+        },
+        {
+          "rows": [
+            "axis_q",
+            "tilted_q"
+          ],
+          "determinant": {
+            "lower": "9737871951250893933243583453604748113281968333/100000000000000000000000000000000000000000000000000",
+            "upper": "9737871951250893933243583453604748175283118193/100000000000000000000000000000000000000000000000000",
+            "midpoint": 9.737871951250894e-05,
+            "width": 6.200114986e-40,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          }
+        },
+        {
+          "rows": [
+            "axis_q",
+            "tilted_E"
+          ],
+          "determinant": {
+            "lower": "58057195364915766135833313057377245019776224857/100000000000000000000000000000000000000000000000000",
+            "upper": "29028597682457883067916656528688622533609933151/50000000000000000000000000000000000000000000000000",
+            "midpoint": 0.0005805719536491577,
+            "width": 4.7443641445e-40,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          }
+        },
+        {
+          "rows": [
+            "axis_E",
+            "tilted_q"
+          ],
+          "determinant": {
+            "lower": "-53580369163362150886813161541324852210360577999/100000000000000000000000000000000000000000000000000",
+            "upper": "-10716073832672430177362632308264970432827099481/20000000000000000000000000000000000000000000000000",
+            "midpoint": -0.0005358036916336215,
+            "width": 4.6225080594e-40,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          }
+        },
+        {
+          "rows": [
+            "axis_E",
+            "tilted_E"
+          ],
+          "determinant": {
+            "lower": "974253154815068684717070159822260492961169591/100000000000000000000000000000000000000000000000000",
+            "upper": "974253154815068684717070159822260504800099453/100000000000000000000000000000000000000000000000000",
+            "midpoint": 9.742531548150687e-06,
+            "width": 1.1838929862e-40,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          }
+        },
+        {
+          "rows": [
+            "tilted_q",
+            "tilted_E"
+          ],
+          "determinant": {
+            "lower": "29150567281206606986883887372738724545507235269/50000000000000000000000000000000000000000000000000",
+            "upper": "58301134562413213973767774745477449137587709607/100000000000000000000000000000000000000000000000000",
+            "midpoint": 0.0005830113456241321,
+            "width": 4.6573239069e-40,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          }
+        }
+      ],
+      "P4_root_projection": {
+        "rows": [
+          "M=(q_axis+q_tilted)/2",
+          "Y=(E_axis-E_tilted)/Delta"
+        ],
+        "matrix": [
+          [
+            {
+              "lower": "14727530523123717084540052259840168385704942313651/2500000000000000000000000000000000000000000000000",
+              "upper": "58910122092494868338160209039360673547752403825201/10000000000000000000000000000000000000000000000000",
+              "midpoint": 5.891012209249487,
+              "width": 4.932634570597e-37,
+              "excludes_zero": true,
+              "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+            },
+            {
+              "lower": "-21969433130293938970718016400476953558023416339/50000000000000000000000000000000000000000000000000",
+              "upper": "-87877732521175755882872065601907814228927487/200000000000000000000000000000000000000000000000",
+              "midpoint": -0.0004393886626058788,
+              "width": 1.583089178e-41,
+              "excludes_zero": true,
+              "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+            }
+          ],
+          [
+            {
+              "lower": "2774917501863981851226783801167716951521115722481/50000000000000000000000000000000000000000000000000",
+              "upper": "5549835003727963702453567602335433969562752968449/100000000000000000000000000000000000000000000000000",
+              "midpoint": 0.05549835003727964,
+              "width": 6.6520521523487e-37,
+              "excludes_zero": true,
+              "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+            },
+            {
+              "lower": "-420149624064513614850062307707840574406205019/50000000000000000000000000000000000000000000000000",
+              "upper": "-420149624064513614850062307707840573010204157/50000000000000000000000000000000000000000000000000",
+              "midpoint": -8.402992481290272e-06,
+              "width": 2.792001724e-41,
+              "excludes_zero": true,
+              "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+            }
+          ]
+        ],
+        "determinant": {
+          "lower": "-313959818772492646889393214314969961026408963/12500000000000000000000000000000000000000000000000",
+          "upper": "-2511678550179941175115145714519759642032844731/100000000000000000000000000000000000000000000000000",
+          "midpoint": -2.5116785501799413e-05,
+          "width": 4.6178426973e-40,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+        },
+        "source_after_fixed_M_Schur_elimination": {
+          "lower": "-426357722741832215543330085828815124921671681/100000000000000000000000000000000000000000000000000",
+          "upper": "-426357722741832215543330085828815117047178807/100000000000000000000000000000000000000000000000000",
+          "midpoint": -4.263577227418322e-06,
+          "width": 7.874492874e-41,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+        },
+        "Schur_invariance": "source_column -> source_column-beta*thermal_column leaves every 2x2 minor unchanged"
+      },
+      "root_conditioned_mixed_hessian_Tp_over_Mp": {
+        "lower": "252311749230615014672681006467291678619495707/50000000000000000000000000000000000000000000000000",
+        "upper": "252311749230615014672681006467291714614957653/50000000000000000000000000000000000000000000000000",
+        "midpoint": 5.0462349846123006e-06,
+        "width": 7.1990923892e-40,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+      },
+      "nonzero_minor_count": 6,
+      "all_row_minors_exclude_zero": true
+    },
+    {
+      "mode": "clean_total",
+      "row_order": [
+        "axis_q",
+        "axis_E",
+        "tilted_q",
+        "tilted_E"
+      ],
+      "matrix": {
+        "thermal_column": [
+          {
+            "lower": "58824957165132825056368568317709949452464564792279/10000000000000000000000000000000000000000000000000",
+            "upper": "18382799114104007830115177599284359205432653509169/3125000000000000000000000000000000000000000000000",
+            "midpoint": 5.882495716513282,
+            "width": 4.9199264370618e-37,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          },
+          {
+            "lower": "564853798035947321402277749740217664839447011081/10000000000000000000000000000000000000000000000000",
+            "upper": "5648537980359473214022777497402176709561081884999/100000000000000000000000000000000000000000000000000",
+            "midpoint": 0.056485379803594735,
+            "width": 6.1166611774189e-37,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          },
+          {
+            "lower": "589952870198569116199518497610113976331749737169291/100000000000000000000000000000000000000000000000000",
+            "upper": "589952870198569116199518497610113976381203164210611/100000000000000000000000000000000000000000000000000",
+            "midpoint": 5.899528701985691,
+            "width": 4.945342704132e-37,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          },
+          {
+            "lower": "-2290458949255954741169819153611247591568492193223/50000000000000000000000000000000000000000000000000",
+            "upper": "-143153684328497171323113697100702972552905340267/3125000000000000000000000000000000000000000000000",
+            "midpoint": -0.045809178985119096,
+            "width": 6.1444013497902e-37,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          }
+        ],
+        "source_column": [
+          {
+            "lower": "-54451483181661107511409629264745327022391758939/100000000000000000000000000000000000000000000000000",
+            "upper": "-54451483181661107511409629264745327020423392463/100000000000000000000000000000000000000000000000000",
+            "midpoint": -0.0005445148318166111,
+            "width": 1.968366476e-41,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          },
+          {
+            "lower": "39183530242223492548889610249203158930073703/390625000000000000000000000000000000000000000000",
+            "upper": "10030983742009214092515740223796008689327232863/100000000000000000000000000000000000000000000000000",
+            "midpoint": 0.00010030983742009214,
+            "width": 3.228364895e-41,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          },
+          {
+            "lower": "-5248597710781702801198773596459404270432885291/10000000000000000000000000000000000000000000000000",
+            "upper": "-52485977107817028011987735964594042702401406151/100000000000000000000000000000000000000000000000000",
+            "midpoint": -0.0005248597710781703,
+            "width": 1.927446759e-41,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          },
+          {
+            "lower": "586837287493879535942070483076568794875370741/5000000000000000000000000000000000000000000000000",
+            "upper": "11736745749877590718841409661531375900642954663/100000000000000000000000000000000000000000000000000",
+            "midpoint": 0.00011736745749877591,
+            "width": 3.135539843e-41,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          }
+        ]
+      },
+      "all_six_row_minors": [
+        {
+          "rows": [
+            "axis_q",
+            "axis_E"
+          ],
+          "determinant": {
+            "lower": "15520732900792189537549632066585443584998800851/25000000000000000000000000000000000000000000000000",
+            "upper": "62082931603168758150198528266341774397338527527/100000000000000000000000000000000000000000000000000",
+            "midpoint": 0.0006208293160316876,
+            "width": 5.7343324123e-40,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          }
+        },
+        {
+          "rows": [
+            "axis_q",
+            "tilted_q"
+          ],
+          "determinant": {
+            "lower": "12489552382152975115631716006213645576975954223/100000000000000000000000000000000000000000000000000",
+            "upper": "2497910476430595023126343201242729130535485037/20000000000000000000000000000000000000000000000000",
+            "midpoint": 0.00012489552382152975,
+            "width": 7.5701470962e-40,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          }
+        },
+        {
+          "rows": [
+            "axis_q",
+            "tilted_E"
+          ],
+          "determinant": {
+            "lower": "66546978860386485361129170049182710814380160119/100000000000000000000000000000000000000000000000000",
+            "upper": "16636744715096621340282292512295677718036674577/25000000000000000000000000000000000000000000000000",
+            "midpoint": 0.0006654697886038648,
+            "width": 5.7766538189e-40,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          }
+        },
+        {
+          "rows": [
+            "axis_E",
+            "tilted_q"
+          ],
+          "determinant": {
+            "lower": "-62142766846433013370851245098464905629570885607/100000000000000000000000000000000000000000000000000",
+            "upper": "-62142766846433013370851245098464905573351622611/100000000000000000000000000000000000000000000000000",
+            "midpoint": -0.0006214276684643301,
+            "width": 5.6219262996e-40,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          }
+        },
+        {
+          "rows": [
+            "axis_E",
+            "tilted_E"
+          ],
+          "determinant": {
+            "lower": "28061641774364544063799080602287532948710723/2500000000000000000000000000000000000000000000000",
+            "upper": "1122465670974581762551963224091501331615838537/100000000000000000000000000000000000000000000000000",
+            "midpoint": 1.1224656709745817e-05,
+            "width": 1.3667409617e-40,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          }
+        },
+        {
+          "rows": [
+            "tilted_q",
+            "tilted_E"
+          ],
+          "determinant": {
+            "lower": "66836928899770566551768661811488536341395231983/100000000000000000000000000000000000000000000000000",
+            "upper": "66836928899770566551768661811488536398035447887/100000000000000000000000000000000000000000000000000",
+            "midpoint": 0.0006683692889977057,
+            "width": 5.6640215904e-40,
+            "excludes_zero": true,
+            "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+          }
+        }
+      ],
+      "P4_root_projection": {
+        "rows": [
+          "M=(q_axis+q_tilted)/2",
+          "Y=(E_axis-E_tilted)/Delta"
+        ],
+        "matrix": [
+          [
+            {
+              "lower": "14727530523123717084540052259840168385704942313651/2500000000000000000000000000000000000000000000000",
+              "upper": "58910122092494868338160209039360673547752403825201/10000000000000000000000000000000000000000000000000",
+              "midpoint": 5.891012209249487,
+              "width": 4.932634570597e-37,
+              "excludes_zero": true,
+              "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+            },
+            {
+              "lower": "-2138749205789562710467947304586787394534412237/4000000000000000000000000000000000000000000000000",
+              "upper": "-53468730144739067761698682614669684861412399307/100000000000000000000000000000000000000000000000000",
+              "midpoint": -0.0005346873014473906,
+              "width": 1.947906618e-41,
+              "excludes_zero": true,
+              "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+            }
+          ],
+          [
+            {
+              "lower": "2774917501863981851226783801167716951521115722481/50000000000000000000000000000000000000000000000000",
+              "upper": "5549835003727963702453567602335433969562752968449/100000000000000000000000000000000000000000000000000",
+              "midpoint": 0.05549835003727964,
+              "width": 6.6520521523487e-37,
+              "excludes_zero": true,
+              "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+            },
+            {
+              "lower": "-462717558558044874762822655635679040403669351/50000000000000000000000000000000000000000000000000",
+              "upper": "-231358779279022437381411327817839519338674853/25000000000000000000000000000000000000000000000000",
+              "midpoint": -9.254351171160898e-06,
+              "width": 3.45263929e-41,
+              "excludes_zero": true,
+              "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+            }
+          ]
+        ],
+        "determinant": {
+          "lower": "-2484323272177539168795588784685483763818219603/100000000000000000000000000000000000000000000000000",
+          "upper": "-2484323272177539168795588784685483707346412327/100000000000000000000000000000000000000000000000000",
+          "midpoint": -2.4843232721775393e-05,
+          "width": 5.6471807276e-40,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+        },
+        "source_after_fixed_M_Schur_elimination": {
+          "lower": "-105428540288751209323526944108772135449203701/25000000000000000000000000000000000000000000000000",
+          "upper": "-105428540288751209323526944108772133043852063/25000000000000000000000000000000000000000000000000",
+          "midpoint": -4.217141611550048e-06,
+          "width": 9.621406552e-41,
+          "excludes_zero": true,
+          "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+        },
+        "Schur_invariance": "source_column -> source_column-beta*thermal_column leaves every 2x2 minor unchanged"
+      },
+      "root_conditioned_mixed_hessian_Tp_over_Mp": {
+        "lower": "116126659333533331783109013855347809676551633/20000000000000000000000000000000000000000000000000",
+        "upper": "290316648333833329457772534638369567803646041/50000000000000000000000000000000000000000000000000",
+        "midpoint": 5.806332966676667e-06,
+        "width": 8.7224533917e-40,
+        "excludes_zero": true,
+        "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+      },
+      "nonzero_minor_count": 6,
+      "all_row_minors_exclude_zero": true
+    }
+  ],
+  "controls": {
+    "configurations_per_geometry_per_mode": 16777216,
+    "six_exact_traversals": true,
+    "clean_total_equals_orbit_sum_per_K_and_moment": true,
+    "all_mode_axis_bitwise_matches_saved": true,
+    "all_mode_tilted_bitwise_matches_saved": true,
+    "all_mode_reproduced_full_J2_over_A": {
+      "lower": "-1476426501737419491722580693386676868822958701/25000000000000000000000000000000000000000000000000",
+      "upper": "-5905706006949677966890322773546707064708633113/100000000000000000000000000000000000000000000000000",
+      "midpoint": -5.905706006949678e-05,
+      "width": 4.10583201691e-39,
+      "excludes_zero": true,
+      "serialization": "exact_outward_rounding_to_1e_minus50_rational_grid"
+    },
+    "published_full_J2_over_A_midpoint": -5.905706006949678e-05,
+    "random_samples": 0,
+    "cloud_jobs": 0,
+    "artifact_is_self_contained": true
+  },
+  "source_files": {
+    "axis-all.csv": "d1369a8b6fdb782be78cbe52ae2923e41f993325717a6f113eea02a0b19bdcce",
+    "axis-clean_reversed.csv": "3ba3d7de397da3be700321e8c862f22f29693c3cb8da597daf6500b47f2ebf30",
+    "axis-clean_same.csv": "1dbeb673869bad517dcd1767e573825707141521c460772929745d2b13e7b8c0",
+    "axis-clean_total.csv": "6842cd955a0d2b3f909bb6cace8b6db9a4014464374c56e6344da890d05ae987",
+    "baseline-axis.csv": "2d23fecc98d276d9ad15ad1867199cd308f0570cb5040ef94eb6b923b4c53458",
+    "baseline-tilted.csv": "225031e612929ed922ba75c55e76703d59990f5283e7ac39b94f022841798da5",
+    "original-axis.csv": "d1369a8b6fdb782be78cbe52ae2923e41f993325717a6f113eea02a0b19bdcce",
+    "original-tilted.csv": "ea464ad416054aefba92a45ba459e64b506257a0c54ea49d17b3a462696c553f",
+    "tilted-all.csv": "ea464ad416054aefba92a45ba459e64b506257a0c54ea49d17b3a462696c553f",
+    "tilted-clean_reversed.csv": "36dfbb42b01c7db958642fefa2f34deea8579edecdcf1237d87feb0c4fc19809",
+    "tilted-clean_same.csv": "7164630acdc12b1ff11577f542ecdb4b9a2f98db9913cba7e10b7bcc117f0279",
+    "tilted-clean_total.csv": "82ffd2447bd70f9b79248682d1d06b106c484aadc8393baf3a77e46f6bcbc415"
+  }
+}

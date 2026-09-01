@@ -1,0 +1,115 @@
+{
+  "schema": "matching-one/p537-n13-transition-preflight/v1",
+  "N": 13,
+  "geometry": [
+    3,
+    2
+  ],
+  "p": "3/5",
+  "source": "a=2*sum_(x<y) g16/(16*N^2)",
+  "transition_counts": {
+    "0->0": {
+      "records": 24986,
+      "source_change_nonzero": 23114
+    },
+    "0->1": {
+      "records": 9412,
+      "source_change_nonzero": 8164
+    },
+    "0->2": {
+      "records": 793,
+      "source_change_nonzero": 520
+    },
+    "1->1": {
+      "records": 7878,
+      "source_change_nonzero": 6630
+    },
+    "1->2": {
+      "records": 5252,
+      "source_change_nonzero": 3588
+    },
+    "2->2": {
+      "records": 4927,
+      "source_change_nonzero": 1976
+    }
+  },
+  "observables": {
+    "q": {
+      "cells": {
+        "0->1": {
+          "kernel": {
+            "fraction": "25848504212340096/3874301910400390625",
+            "decimal": 0.00667178366842061
+          },
+          "readout": {
+            "fraction": "6136340766635088/774860382080078125",
+            "decimal": 0.00791928573011096
+          }
+        },
+        "1->2": {
+          "kernel": {
+            "fraction": "-20302952778468504/3874301910400390625",
+            "decimal": -0.005240415756956404
+          },
+          "readout": {
+            "fraction": "-6747401523319272/774860382080078125",
+            "decimal": -0.00870789329195819
+          }
+        },
+        "0->2": {
+          "kernel": {
+            "fraction": "25277770896192/3874301910400390625",
+            "decimal": 6.524471112675796e-06
+          },
+          "readout": {
+            "fraction": "-1969079529707712/774860382080078125",
+            "decimal": -0.0025412055839295926
+          }
+        }
+      },
+      "minor_rows_kernel_readout_columns_0to1_1to2": {
+        "fraction": "-9964879976056954592968477172352/600408611717284657061100006103515625",
+        "decimal": -1.6596830527722565e-05
+      }
+    },
+    "E": {
+      "cells": {
+        "0->1": {
+          "kernel": {
+            "fraction": "1570761876359808/774860382080078125",
+            "decimal": 0.0020271547141733686
+          },
+          "readout": {
+            "fraction": "-6136340766635088/774860382080078125",
+            "decimal": -0.00791928573011096
+          }
+        },
+        "1->2": {
+          "kernel": {
+            "fraction": "1369712853352008/774860382080078125",
+            "decimal": 0.0017676898768202278
+          },
+          "readout": {
+            "fraction": "-6747401523319272/774860382080078125",
+            "decimal": -0.00870789329195819
+          }
+        },
+        "0->2": {
+          "kernel": {
+            "fraction": "-5066642285568/59604644775390625",
+            "decimal": -8.500415201970802e-05
+          },
+          "readout": {
+            "fraction": "0",
+            "decimal": 0.0
+          }
+        }
+      },
+      "minor_rows_kernel_readout_columns_0to1_1to2": {
+        "fraction": "-2193536256714011846008984563072/600408611717284657061100006103515625",
+        "decimal": -3.6534057205476687e-06
+      }
+    }
+  },
+  "scope_warning": "Transitions aggregate every landing type and have no C4 or root-Schur projection."
+}
