@@ -3,6 +3,8 @@
     "all_scores_are_post_reveal_existing_archive_diagnostics",
     "no_new_Monte_Carlo_configuration_or_counter_is_generated",
     "q2_exclusion_is_only_the_fixed_kappa_1_over_2_parameterization",
+    "the_fixed_H8_alias_radial_transplant_is_a_post_reveal_sector_informed_diagnostic",
+    "its_exclusion_does_not_reject_the_primitive_real_C3_H8_phase_result_or_every_H8_mixture",
     "Jordan_non_exclusion_is_not_Jordan_operator_identification",
     "the_free_kappa_best_fit_is_not_a_free_exponent_claim",
     "priority_is_attention_not_permission_or_a_task_lock"
@@ -156,7 +158,7 @@
       }
     ],
     "manifest_path": "analysis/p275_forward_identifiability_manifest.yaml",
-    "manifest_sha256": "80f027e73ce10da8f8afbce193bb81d448aa1726e62da5c57901c624ff0bc386",
+    "manifest_sha256": "cfcd34be27872f3d195fd1179f3096dd9d1bc667bf1387cd5a1a37aa2acb9d81",
     "path": "results/norm4-two-activation-h4/latest.json",
     "schema": "matching-one.two-activation-h4.v1",
     "sha256": "f29ce76fa5be92abb2a233c7efb6e4d94f37236242656d0dcf17cbfc3fd1e462",
@@ -172,6 +174,7 @@
     "semisimple": {
       "allowed_amplitudes": "independent_a_li_and_b_li_for_each_lineage_l_and_activation_i",
       "equation": "u_li(g)=a_li+b_li*kappa^g_for_g_0_1_2",
+      "fixed_H8_alias_transplant": "kappa=2^(-11/8)_from_transporting_a_canonical_weight8_mode_relative_to_the_weight21/4_global_Q4_candidate",
       "fixed_q2": "kappa=1/2_equivalently_relative_N_minus_1_mode",
       "physical_decaying_range": "0<kappa<1",
       "shared_parameter": "one_common_kappa_across_all_four_blocks"
@@ -823,6 +826,94 @@
         -1.5993320542625442,
         1.6990536502902758,
         0.6504835450126099
+      ]
+    },
+    "fixed_H8_alias_radial_transplant_kappa_2_pow_minus_11_over_8": {
+      "assumptions": [
+        "transport_the_primitive_real_C3_H8_alias_into_the_global_K1_K2_residual",
+        "use_canonical_weight8_radial_scaling",
+        "take_the_global_leading_candidate_to_have_dimension21_over_4",
+        "allow_independent_leading_and_subleading_amplitudes_in_all_four_blocks"
+      ],
+      "chi_square_survival_p": 0.009640444681629579,
+      "claim_boundary": "excludes_only_the_naive_radial_transplant_envelope_not_the_branch_only_primitive_C3_phase_result_or_every_H8_mixed_mechanism",
+      "covariance_spectrum": {
+        "absolute_floor": 1e-30,
+        "applied_cutoff": 1.8728522325646666e-12,
+        "discarded_modes": 0,
+        "eigenvalues_ascending": [
+          0.003841900918118872,
+          0.006006203236993872,
+          0.009283812450460876,
+          0.018728522325646663
+        ],
+        "rank": 4,
+        "relative_cutoff": 1e-10
+      },
+      "decision_alpha": 0.01,
+      "degrees_of_freedom": 4,
+      "excluded_at_alpha": true,
+      "hypothesis_provenance": {
+        "angular_decision": "H8_SELECTED_H4_STOP",
+        "commit": "0b9e89c9528ab283a8175adcd596d9b0ac5047c1",
+        "interpretation_commit": "93e470669e15fcec3eaee24538fcbaa80c510d31",
+        "interpretation_path": "notes/p275-real-c3-harmonic-split-20260901.md",
+        "path": "results/p275-gaussian-c3-phase/RESULT.json",
+        "post_reveal_scalar_alias": "H0_signed_real_chi2_1p32069_over_1_p_0p250468_also_survives",
+        "status": "branch_only"
+      },
+      "kappa": 0.3855527063519852,
+      "mahalanobis_chi_square": 13.360937208155988,
+      "relative_N_exponent": "11/8",
+      "residual": [
+        0.05350377749484436,
+        -0.16279637079929526,
+        0.27345176668517446,
+        0.02767166959677797
+      ],
+      "residual_covariance": [
+        [
+          0.007371684231793598,
+          0.0025999911827238177,
+          0.00010616305416280768,
+          4.80866782167055e-05
+        ],
+        [
+          0.002599991182723818,
+          0.005757241979660974,
+          0.00011888387927577135,
+          7.246924001554008e-05
+        ],
+        [
+          0.00010616305416280767,
+          0.00011888387927577135,
+          0.014518041297617256,
+          0.005984123678092822
+        ],
+        [
+          4.80866782167055e-05,
+          7.246924001554008e-05,
+          0.0059841236780928215,
+          0.010213471422148453
+        ]
+      ],
+      "residual_order": [
+        "N65_to_N130_to_N260.F1",
+        "N65_to_N130_to_N260.F2",
+        "N85_to_N170_to_N340.F1",
+        "N85_to_N170_to_N340.F2"
+      ],
+      "residual_standard_error": [
+        0.08585851286735403,
+        0.07587649161407618,
+        0.12049083491127968,
+        0.1010617208548739
+      ],
+      "residual_z": [
+        0.6231621735343158,
+        -2.1455442566758607,
+        2.269481881227926,
+        0.2738096023173293
       ]
     },
     "fixed_semisimple_q2_kappa_0p5": {

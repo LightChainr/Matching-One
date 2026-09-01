@@ -10,11 +10,15 @@ The declared `x=17/4` and `x=21/4` contrasts `D17/D21` were therefore not
 evaluated. This route is complete rather than waiting for a top-up, new
 window or fitted exponent.
 
-Default attention is now **#275's same-normalizer restricted rank-0/rank-2
-modulus/phase transport law**.  The original-observable dictionary and first
-forward-identifiability score are complete: fixed q2 is excluded, Jordan is
-compatible but not selected, and unrestricted semisimple/Jordan separation is
-non-uniform.  The selected one-defect graph is complete,
+Default attention is now **#275's candidate-specific same-normalizer
+restricted source--thermal transport law**.  The original-observable dictionary
+and first forward-identifiability score are complete: fixed q2 and the naive
+weight-8 radial transplant are excluded, Jordan is compatible but not selected,
+and unrestricted semisimple/Jordan separation is non-uniform.  Reuse of the
+complete N112 nine-coordinate covariance also rejects denominator-only,
+rank-1-mass-only and real-rescaling descriptions, so the project is already
+eliminating models on production data rather than waiting for another tool.
+The selected one-defect graph is complete,
 the exact N25 contact-by-completion tensor is nonfactorizing, and a frozen
 held-out N65 production transmits it.  A later same-data full-T reconstruction
 shows that the typed carrier is only `2.551%` of the complete N65 response,
@@ -32,7 +36,8 @@ strong-source theorem, not evidence for the critical carrier.
 
 Closed Issue #536 preserves the first exact midpoint channel split as an
 issue-only attachment.  Open Issue #275 is now P0; open Issue #537 is P1
-theory for the nonlocal remainder and near-critical transport. The all-pair observable/rank pivot is
+theory for the `complement_of_selected` and near-critical transport.  That
+complement has not yet been proved spatially nonlocal. The all-pair observable/rank pivot is
 `−.005935841948386444`, kernel pivot `+.0004141042799437205`, combined root
 `+.0000023062436033220`. NN and nonNN kernel terms have opposite signs.
 Therefore the current move is not “split the channels” again. Delivery B has
@@ -108,9 +113,13 @@ reconstructs the complete N65 response from the identical sufficient
 statistics: `J65=-.00162250989+/-.00018553008`,
 `J65/J25=.29396323+/-.03361398`.  The carrier share falls from `5.892%` to
 `2.551%`; pooled-root displacement accounts for only `.0155%` of `|J65|`.
-Thus carrier closure is not the default remaining model.  `bab37f21`'s
-commutator and two-scale fingerprint are post-reveal mechanism synthesis on
-the same dependency block, not independent evidence or field identification.
+Thus carrier closure is not the default remaining model.  The refreshed
+cross-size audit finds that N25 stored `P` while N65 stored `P/N`; the old
+exposure comparison therefore carried an extra factor 65 and the `5/8`
+conditional-intensity attribution is withdrawn.  `bab37f21` is retained as a
+possible commutator encoding of finite nonseparability, not an identified
+physical commutator.  The unselected response is `complement_of_selected`,
+not yet a demonstrated nonlocal mechanism.
 
 The roadmap has now delivered #275's first finite forward-identifiability
 packet.  The observable dictionary fixes the original `K1/K2`, `F1/F2`,

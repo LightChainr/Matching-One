@@ -10,21 +10,32 @@ The repository is organized to expose the next mechanism-changing observation, n
 
 ## Start here
 
-**Current decision: #275 has delivered its first actual existing-production
-[forward-identifiability score](results/p275-forward-identifiability/latest.md);
-#537 remains P1 theory.**  On the complete
-selected covariance of the two-activation `F1/F2` archive, the fixed ordinary
-q2 transfer `kappa=1/2` is excluded (`chi2=11.7925/4`, `p=.01896`).  The
-Jordan affine-log image is not excluded (`chi2=6.4325/4`, `p=.16909`), but it
-is not thereby identified: with unrestricted amplitudes, the
-`kappa -> 1` closure of the semisimple family contains the full Jordan image.
-The literal classification is `PARTIALLY_IDENTIFIABLE` and non-uniform.  The
-unconstrained optimum `kappa=2.11498` is a relative growing mode, while the
-physical decaying family `0<kappa<1` has no interior optimum and runs to the
-collision boundary.  The next P0 input is therefore one same-source,
-same-observer, same-normalizer rank-0/rank-2 restricted-trace modulus or phase
-transport law, preferably derived first and then scored on existing assets.
-No new Monte Carlo is the default.
+**Current decision: #275 has moved from tool preparation into production-data
+model elimination; #537 remains P1 theory.**  The complete two-activation
+`F1/F2` covariance excludes fixed ordinary q2 transfer (`kappa=1/2`,
+`chi2=11.7925/4`, `p=.01896`) and the naive canonical weight-8 radial
+transplant (`kappa=2^(-11/8)`, `chi2=13.3609/4`, `p=.00964`).  The Jordan
+affine-log image remains compatible (`chi2=6.4325/4`, `p=.16909`) but is not
+identified: the `kappa -> 1` semisimple closure contains its image, so the
+literal classification remains `PARTIALLY_IDENTIFIABLE` and non-uniform.
+
+The existing N112 square-bond production has now supplied a second concrete
+[elimination block](results/p275-rho-observer-models/latest.md).  With the full
+nine-coordinate covariance, common-denominator-only, rank-1-mass-only and
+independent real-rescaling models are all rejected.  This means the finite
+rho-child correction changes rank-1 directional composition; it is not
+another field-name vote, and `E_top` is not renamed energy.  The same archive
+has a matching-odd `A_top` C3 component compatible with zero while its
+Alexander-even `E_top` component is resolved.  Together with the paired N65
+primitive-C3 H8/even-vs-H4 gate, these results demand typed observer maps, not
+pooled harmonic labels.
+
+The exact [restricted-trace transport law](notes/p275-restricted-trace-transport-law-20260901.md)
+now identifies the missing physical object as one aligned same-source
+three-sector jet `{s_r, partial_p s_r}`.  Actual vacuum/Ward and thermal
+Q4/Jordan columns should be sent through the same original `q/E`, normalizer
+and pooled moving root, then scored on existing covariance.  No new Monte
+Carlo is the default.
 
 The completed #537 chain explains why attention moved.  Finite pure-thermal
 rank one and the automatic two-independent-defect/six-arm story are retired.
@@ -33,7 +44,15 @@ completion` tensor, and a frozen 20M held-out N65 block reproduces its four
 signs `-- -+`.  The same sufficient statistics give the complete canonical
 response `J65=-.00162250989+/-.00018553008`.  The typed carrier share falls
 from `5.892%` of full `T25` to `2.551%` of full `T65`: it is a real transmitted
-microscopic coordinate, but not the dominant complete response.
+microscopic coordinate, but not the dominant complete response.  A new
+[unit audit](results/p537-exposure-unit-audit/latest.md) confirms that the N25
+positive exposure was stored as `P` while N65 stored `P/N`; the old cross-size
+comparison therefore contained an extra factor 65.  The frozen signed tensor,
+determinant and full `J65` remain valid, but the claim that the extra `5/8`
+came specifically from conditional intensity is withdrawn.  The determinant
+is a nonseparability result with a possible commutator encoding, not by itself
+an identified physical commutator; the unselected 97.45% is a
+`complement_of_selected`, not yet a spatially nonlocal remainder.
 
 The [frozen N100/N400 pilot](results/regular-pair-macro-joint-u/REPORT.md)
 uses the same `Kreg`, the exact Euclidean window
@@ -169,16 +188,19 @@ and byte-identical shards.
 
 The same branch then advanced through two dependent reanalyses.  Branch-only
 [`bab37f21`](https://github.com/LightChainr/Matching-One/blob/bab37f21/notes/p537-contact-completion-commutator.md)
-rewrites the negative determinant as a finite noncommuting completion
-commutator and records a zero-parameter two-scale fingerprint.  The fit is
-excellent (`p=.95893`), but its `N^-3/N^-29/8` pattern was synthesized after
-seeing N25/N65 and remains a mechanism candidate, not prospective field
-identification.  Current branch-only head
+encodes the negative determinant in a finite noncommuting-completion model and
+records a zero-parameter two-scale fingerprint.  The fit is numerically high
+(`p=.95893`), but many nearby fixed exponents also fit, and the exposure
+decomposition mixed N25 `P` with N65 `P/N`.  After correcting the factor 65,
+the signed matrix is unchanged but the claimed conditional-intensity origin of
+the extra `5/8` is withdrawn.  The commutator is an encoding/candidate, not an
+identified physical operation.  Current branch-only head
 [`f9ba1ff6`](https://github.com/LightChainr/Matching-One/blob/f9ba1ff6/results/p537-full-t-transport/REPORT.md)
 uses the identical sufficient statistics to reconstruct the complete
 canonical response: `J65=-.00162250989+/-.00018553008`,
 `J65/J25=.29396323+/-.03361398`.  The carrier accounts for `5.892%` of full
-`T25` and `2.551%` of full `T65`; moving from the prescribed reference `p` to
+`T25` and `2.551%` of full `T65`; the remainder is only a
+`complement_of_selected` until separately classified.  Moving from the prescribed reference `p` to
 the pooled root changes only about `.0155%` of `|J65|`.  This retires carrier
 closure as the default explanation.  It does not prove the asymptotic
 little-o law, and all N65 analyses remain one dependency block.
@@ -376,7 +398,7 @@ half-line is complete; another m point is not pending.
 
 | Mechanism question | Delivered decision | Attention now |
 |---|---|---|
-| Does canonical joint Q activation reach original U beyond NN contact? | Yes: J2(25)=−.0055194314248394015 and nonNN=−.0037683569704366022 are exact nonzero; the N25 stage×contact tensor is nonfactorizing, the N65 block transmits its signs, and full-T reconstruction gives `J65=-.00162251+/-.00018553`. | The typed carrier is only `2.551%` of full `T65`, versus `5.892%` at N25, so it is not the default complete mechanism. #537 is P1 theory for the nonlocal remainder/near-critical transport. #275 is P0 for the raw observable, normalizer and distinguishable forward predictions; no new MC by default. |
+| Does canonical joint Q activation reach original U beyond NN contact? | Yes: J2(25)=−.0055194314248394015 and nonNN=−.0037683569704366022 are exact nonzero; the N25 stage×contact tensor is nonfactorizing, the N65 block transmits its signs, and full-T reconstruction gives `J65=-.00162251+/-.00018553`. | The typed carrier is only `2.551%` of full `T65`, versus `5.892%` at N25, so it is not the default complete mechanism. #537 is P1 theory for the `complement_of_selected`/near-critical transport; spatial nonlocality is not yet established. #275 is P0 for the raw observable, normalizer and distinguishable forward predictions; no new MC by default. |
 | Does canonical Kreg transmit a noncontact Q response after occupation averaging? | Yes: C64/r16=6.85546875e−6 and its 99% interval excludes zero. Two fresh 200k blocks; 32 within-configuration pairs remain correlated. | Completed spatial null, distinct from J2. The s=2 signed contrast carries all observed nonzero entries, without ruling out rare s=3/4 events or identifying a field. |
 | Does fixed canonical Kreg activate original U through Q? | Yes: W_Q=−.04503611397592696 at N25; its direct epsilon response at Q1 is exactly zero. | Completed first mixed response; the completed joint response above uses the same canonical source, not a fitted counterterm. |
 | Can an entry-regular homogeneous one-site completion retain old direct V? | No for the whole original-binary-site class, including both vacant and occupied tensors: only a common Bernoulli parameter survives Q1. | This mechanism is excluded; bounded occupation reweighting, specified singular completions and multi-site vertices are outside the theorem. |

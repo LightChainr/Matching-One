@@ -37,14 +37,24 @@ performed by this Draft:
 | NN | −.00085245745 | −.00089978682 | +.00000116982 | −.00175107445 |
 | nonNN | −.00508338450 | +.00131389110 | +.00000113643 | −.00376835697 |
 
-**Highest attention: #275's restricted rank-0/rank-2 modulus/phase transport
-law.**  Its original-observable dictionary and first forward-identifiability
-score are delivered: fixed q2 is excluded, Jordan remains compatible but is
-not uniquely identified, and the decision is `PARTIALLY_IDENTIFIABLE`.
+**Highest attention: #275's candidate-specific restricted-trace transport.**
+The original-observable dictionary and first forward-identifiability score
+are delivered: fixed q2 and the naive weight-8 radial transplant are excluded,
+Jordan remains compatible but is not uniquely identified, and the decision is
+`PARTIALLY_IDENTIFIABLE`.  Existing N112 production additionally rejects
+common-denominator-only, rank-1-mass-only and independent-real-rescaling
+explanations of its nine-coordinate `(E_top,H)` vector.  The archive therefore
+already eliminates simple models; it does not need another descriptive
+observable or another harmonic vote.
 Contact/OPE-to-original-`U` transmission,
 #536 Delivery B and the one-defect edge decision are completed provenance.
-The next P0 deliverable uses existing algebra and sufficient statistics by default;
-it is not a restored random-production line.  The frozen
+The next P0 deliverable is two actual source columns in the aligned
+`{s_r,partial_p s_r}` contract, carried through original `q/E`, the physical
+normalizer and the pooled root.  It uses existing algebra and sufficient
+statistics by default; it is not a restored random-production line.  If the
+two candidate images coincide after all allowed nuisance amplitudes, record
+that non-identifiability and lower its attention; if they differ, score the
+existing covariance once.  The frozen
 [64-counter replay](../results/p337-thermal-pivotal-preflight/REPORT.md) has
 evaluated all 5,242,880 pair/site callbacks from the first 32 counters of each
 existing L32/L64 stream, with no new seed. It found 18 kernel-changing
@@ -152,9 +162,12 @@ statistics: `J65=-.00162250989+/-.00018553008`,
 `J65/J25=.29396323+/-.03361398`.  The typed carrier share drops from `5.892%`
 of full `T25` to `2.551%` of full `T65`; pooled-root displacement changes only
 about `.0155%` of `|J65|`.  Thus the carrier transmits but does not saturate the
-response.  `bab37f21`'s commutator and `N^-3/N^-29/8` fingerprint are a
-post-reveal mechanism synthesis on this same dependency block, not a field
-identity or another vote.
+response.  The refreshed [unit audit](../results/p537-exposure-unit-audit/latest.md)
+shows that the old N25/N65 exposure comparison mixed `P` with `P/N`, adding an
+extra factor 65; the `5/8` conditional-intensity attribution is withdrawn.
+`bab37f21` remains a useful algebraic encoding of nonseparability, not an
+identified physical commutator, and the unselected response is
+`complement_of_selected`, not yet a demonstrated spatially nonlocal mechanism.
 
 **#275's first finite forward-identifiability analysis is delivered.**  The
 [dictionary](../notes/p275-observable-normalizer-dictionary.md) fixes the
@@ -188,7 +201,7 @@ restricted-sector vector rather than borrow an arbitrary field of the same
 spin.  This P0 uses existing data and local algebra; no new Monte Carlo is the
 default.
 
-**Parallel P1 theory:** #537 now owns the nonlocal remainder and uniform
+**Parallel P1 theory:** #537 now owns the `complement_of_selected` and uniform
 near-critical/pooled-root transport.  The exact N25 all-`z` ledger, an N85
 normalized tensor and a fresh N130 `F=C+R` partition are conditional future
 tests, not current production.  Run one only after #275 freezes the relevant

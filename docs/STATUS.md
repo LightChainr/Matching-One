@@ -49,7 +49,13 @@ complete.  The project owner has since moved #537 to open `priority:P1` and
 made open [Issue #275](https://github.com/LightChainr/Matching-One/issues/275)
 the current `priority:P0`.  Its first existing-data identifiability score is
 now `PARTIALLY_IDENTIFIABLE`; attention has narrowed to a same-normalizer
-restricted rank-0/rank-2 modulus/phase transport law, with no new MC or GPU.
+restricted rank-0/rank-2 source--thermal transport law, with no new MC or GPU.
+The current Draft also reuses the complete N112 rho-child production covariance:
+normalizer-only (`215.105/6`), rank-1-mass-only (`334.369/6`) and real-rescaling
+(`19.088/3`) parameterizations are rejected under their declared post-reveal
+Gaussian-batch reference.  The same stream has `A_top` C3 compatible with zero
+and `E_top` C3 resolved; this is a finite rank-parity/observer result, not an
+energy-field identity or original-`U` transfer.
 This is an attention ordering, not permission, serialization or a task lock.
 PR #530 `0e1917f9`, PR #531 `a5375b5` and PR #532 `2e1c57b4`
 are reusable unmerged interfaces, not `main` facts.
@@ -179,12 +185,14 @@ second experiment nor an independent evidence vote.
 
 The same branch next advanced through the mechanism-candidate synthesis at
 [`bab37f21`](https://github.com/LightChainr/Matching-One/blob/bab37f21b061afa9e03286b6e9bf4560f879ecd5/notes/p537-contact-completion-commutator.md).
-Its split zero-parameter scaling fingerprint—three `N^-3` allocation cells
-and an entry/double cell at candidate `N^-29/8`—fits the N25-to-N65 vector
-with `Q=.6364/4`, `p=.95893`, whereas common `N^-3` gives `p=.01967`.
-The associated noncommuting fusion/completion operator, triangular limit and
-thermal `5/8` interpretation are mechanism hypotheses built from the same
-N25/N65 evidence, not a new field identification or an independent vote.
+Its split zero-parameter scaling fingerprint was computed from an N25 column
+stored as `P` and an N65 column stored as `P/N`.  The refreshed
+[unit audit](../results/p537-exposure-unit-audit/latest.md) removes the extra
+factor 65: in common `P` units the exposure, density and signed-mass decay
+exponents are `.640733`, `2.980837` and `3.621570`.  The last value is unit
+invariant, but the `5/8` conditional-intensity attribution is withdrawn.  The
+finite determinant remains a nonseparability result and possible commutator
+encoding, not an identified physical commutator or independent vote.
 
 Most importantly, branch head
 [`f9ba1ff6`](https://github.com/LightChainr/Matching-One/blob/f9ba1ff690b07beefcc71e669f1f29581d4e264e/results/p537-full-t-transport/REPORT.md)
@@ -201,8 +209,9 @@ configurations or replay:
 
 The carrier is genuinely transmitted but does not saturate the measured
 complete response; its finite share contracts rather than grows.  The
-remaining #537 object is the nonlocal complement and a uniform near-critical
-transport theorem, not another local contact label.  The `bab37f21`,
+remaining #537 object is `complement_of_selected` and a uniform near-critical
+transport theorem, not a proven nonlocal mechanism or another local contact
+label.  The `bab37f21`,
 `f9ba1ff6`, `f46c38c3` and `95a695c7` views all reuse the same N65 source
 shards and P45 baseline and belong to one dependency group.  The prescribed
 `p_ref` is not a rigorous enclosure of mathematical `p_c`, and two sizes do
@@ -286,9 +295,9 @@ with arbitrary complex gain is exactly nonidentifiable.  A second rotation is
 informative only after freezing the cross-angle gain law: `7.5 degrees` is the
 preferred signed-real separator and `15 degrees` is an exact alias.  No new
 MC or GPU acquisition follows this result.  #537 remains a P1 theory line:
-derive or falsify the
-fusion/completion commutator and the nonlocal remainder's near-critical
-transport.  N130 is only a conditional future test if that theory first
+independently define and test a physical operator if desired, and control the
+`complement_of_selected` under near-critical transport.  N130 is only a
+conditional future test if that theory first
 supplies a unique observable and prediction and an independently motivated
 block already contains the four frozen cells; it is not queued or implicitly
 authorized.  Priority allocates attention only and does not lock or close any
@@ -875,8 +884,8 @@ This delta is placed before the main claim ledger because it changes what the te
 
 | Latest result | Source / integration | Scientific consequence |
 |---|---|---|
-| #275 first forward-identifiability decision | `open_pr` #267; [dictionary](../notes/p275-observable-normalizer-dictionary.md), [score](../results/p275-forward-identifiability/latest.md), [C3 phase audit](../notes/p275-c3-amplitude-identifiability.md); Issue #275 remains `open_issue priority:P0`, Issue #537 `open_issue priority:P1` | Fixed q2 `kappa=.5` is excluded (`p=.0189631`); Jordan is not excluded (`p=.169092`) but is not selected because the semisimple `kappa->1` closure contains its image. Verdict `PARTIALLY_IDENTIFIABLE`, non-uniform. Next derive one same-source/observer/normalizer restricted rank-0/rank-2 modulus/phase law and score existing rho/P43/P57. One-angle arbitrary-complex C3 is exact nonidentifiable; after freezing cross-angle gain, use 7.5 degrees, not the 15-degree alias. No new MC or GPU. |
-| Contact-fusion × topological-completion transmission and complete quotient | Exact N25 tensor `branch_only` [`df4a64f6`](https://github.com/LightChainr/Matching-One/blob/df4a64f68232eec5aa5b8c8a5d920062aaa7808e/results/p537-one-defect-diagonal-edge/contact-stage-tensor.json); prospective N65 20M result [`f46c38c3`](https://github.com/LightChainr/Matching-One/blob/f46c38c3088c1a9f4df8ab0f256b88639f0b34a3/results/p537-contact-stage-n65/result.json); same-data mechanism candidate [`bab37f21`](https://github.com/LightChainr/Matching-One/blob/bab37f21b061afa9e03286b6e9bf4560f879ecd5/results/p537-contact-stage-n65/scale-fingerprint.json); complete quotient [`f9ba1ff6`](https://github.com/LightChainr/Matching-One/blob/f9ba1ff690b07beefcc71e669f1f29581d4e264e/results/p537-full-t-transport/RESULT.json); PR #509 remains Draft at `ac5f5fe7` | Held-out `CONTACT_FUSION_COMPLETION_TRANSMITS`, but complete `J65=-.00162251+/-.00018553` and carrier share falls `5.892%->2.551%`. Root-to-reference changes only `.0155%`. The split `N^-3/N^-29/8` commutator scaling is a same-data candidate, not an independent field result. #537 becomes P1 nonlocal-remainder/transport theory. |
+| #275 production model elimination and restricted-trace transport | `open_pr` #267; [dictionary](../notes/p275-observable-normalizer-dictionary.md), [forward score](../results/p275-forward-identifiability/latest.md), [N112 model elimination](../results/p275-rho-observer-models/latest.md), [transport law](../notes/p275-restricted-trace-transport-law-20260901.md); Issue #275 remains `open_issue priority:P0`, Issue #537 `open_issue priority:P1` | Fixed q2 and the naive weight-8 radial transplant are excluded; Jordan is compatible but not identified. The existing N112 covariance rejects normalizer-only, rank-1-mass-only and independent-real-rescaling parameterizations. The next discriminating input is two actual same-source columns in `{s_r,partial_p s_r}`, propagated to original `q/E/root`; no new MC or GPU is required. |
+| Contact-fusion × topological-completion transmission and complete quotient | Exact N25 tensor `branch_only` [`df4a64f6`](https://github.com/LightChainr/Matching-One/blob/df4a64f68232eec5aa5b8c8a5d920062aaa7808e/results/p537-one-defect-diagonal-edge/contact-stage-tensor.json); prospective N65 20M result [`f46c38c3`](https://github.com/LightChainr/Matching-One/blob/f46c38c3088c1a9f4df8ab0f256b88639f0b34a3/results/p537-contact-stage-n65/result.json); complete quotient [`f9ba1ff6`](https://github.com/LightChainr/Matching-One/blob/f9ba1ff690b07beefcc71e669f1f29581d4e264e/results/p537-full-t-transport/RESULT.json); [unit correction](../results/p537-exposure-unit-audit/latest.md); PR #509 remains Draft at `ac5f5fe7` | Held-out `CONTACT_FUSION_COMPLETION_TRANSMITS`, but the historical cross-size exposure comparison mixed `P` and `P/N`, adding factor 65. The `5/8` attribution is withdrawn; the determinant is nonseparability with a possible commutator encoding. The remaining response is `complement_of_selected`, not yet a proven nonlocal mechanism. |
 | Canonical macro-window joint-U pilot | `open_pr` #267; [report](../results/regular-pair-macro-joint-u/REPORT.md) | N100 `T=+11.877846`, interval `[−2.255616,26.011308]`; N400 `T=−542.503823`, interval `[−1307.642507,222.634861]`. Opposite signs, both include zero, and N400 projects above the 2M ceiling: route stopped, `D17/D21` not evaluated. No macro top-up follows and this is not the current P0. |
 | N25 midpoint split, carrier replay and landing transfer | Split remains closed Issue #536 attachment only; 64-counter replay is `open_pr` #267; provisional N25 clean-two-bridge preflight is `open_pr` #509 at [`ec3941b0`](https://github.com/LightChainr/Matching-One/blob/ec3941b03b2694e827db1cba34766a82e6146a5a/experiments/p537-landing-matrix-preflight-20260901/REPORT.md); corrected canonical transfer is `branch_only` [`a3bc80c8`](https://github.com/LightChainr/Matching-One/blob/a3bc80c86585220f96dfeff022bd575b6c21d29f/notes/p537-finite-landing-transfer-definition.md) | Observable/rank pivot dominates issue-only all-pair J2 negatively. Delivery B found 18 sparse kernel changes. The provisional port contract is non-rank-one, while N9/N16 are supporting controls rather than the complete P4/Schur falsifier. Its transmission question is superseded by the completed `df4a64f6/f46c38c3` gate above. |
 | N100 and N400 three-shape production | `open_pr` #484; N400 raw `3e01b49`, captured head `705819e`; #485 is N100 same-stream reuse | N100 necessary common density-map statistic53.91436/6 becomes3.90086/6 at N400, p=.69009. One N1002M block and one independent N4008M block, with shapes paired inside each. Nonrejection is not model recovery; a fitted negative cross-scale amplitude has an interval spanning zero |

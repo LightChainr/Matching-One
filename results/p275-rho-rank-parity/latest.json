@@ -1,0 +1,129 @@
+{
+  "boundaries": [
+    "A_top_and_E_top_are_same_stream_correlated_observer_transforms_not_independent_votes",
+    "this_is_fixed_p_square_bond_rho_child_rank_parity_not_a_B_source_response",
+    "no_pooled_root_p_jet_slope_or_original_U_normalizer",
+    "a_zero_A_top_character_does_not_identify_the_nonzero_E_top_character_as_a_continuum_energy_field",
+    "zero_new_Monte_Carlo_GPU_cloud_or_server"
+  ],
+  "decision": "RANK_EVEN_ONLY_C3_CORRECTION_AT_CURRENT_PRECISION",
+  "interpretation": {
+    "next_use": "the_full_rank_six_coordinate_rank0_rank2_archive_is_ready_to_score_a_theory_given_restricted_trace_transport_vector",
+    "not_supported": "a_B_source_response_continuum_energy_identity_or_original_U_transport",
+    "supported": "the_rho_child_complex_C3_correction_is_resolved_on_the_Alexander_even_E_top_axis_while_A_top_is_compatible_with_zero"
+  },
+  "manifest": {
+    "path": "analysis/p275_rho_rank_parity_manifest.yaml",
+    "sha256": "04e6749cccaf6f8464aca3d28fc0052df3bedf090c0509cc2006366a6ae9c84d"
+  },
+  "observable": {
+    "A_top_definition": "P2-P0",
+    "C3_transform": "complex_C3_r1_equals_one_third_sum_j_value_j_times_exp_minus_2pi_i_j_over3",
+    "E_top_definition": "P0+P2",
+    "continuum_A_top": "exactly_zero_for_every_tau_at_Q1_by_Arguin_Z2_equals_Z0",
+    "joint_covariance_of_mean": [
+      [
+        2.5050748807519644e-08,
+        -2.3282955689960524e-09,
+        -1.967576809764368e-09,
+        9.967183326177233e-10
+      ],
+      [
+        -2.3282955689960524e-09,
+        2.5202243055555545e-08,
+        -6.502024693501567e-10,
+        -3.760893728956224e-09
+      ],
+      [
+        -1.967576809764368e-09,
+        -6.502024693501567e-10,
+        2.1421750491021308e-08,
+        -1.862234059558151e-11
+      ],
+      [
+        9.967183326177233e-10,
+        -3.760893728956224e-09,
+        -1.862234059558151e-11,
+        2.1005170664983167e-08
+      ]
+    ],
+    "joint_mean": [
+      4.041666666666666e-05,
+      -3.189860237272828e-05,
+      -0.0017446307362800637,
+      -4.7198384506250046e-05
+    ],
+    "joint_order": [
+      "A_top_r1_re",
+      "A_top_r1_im",
+      "E_top_r1_re",
+      "E_top_r1_im"
+    ],
+    "normalizer": "square_bond_p_half_per_child_probability_not_pooled_root_original_U",
+    "units": "probability"
+  },
+  "schema": "matching-one.p275-rho-rank-parity.v1",
+  "scores": {
+    "A_top_nontrivial_C3_r1": {
+      "chi_square": 0.09690508129949854,
+      "covariance_2x2": [
+        [
+          2.5050748807519644e-08,
+          -2.3282955689960524e-09
+        ],
+        [
+          -2.3282955689960524e-09,
+          2.5202243055555545e-08
+        ]
+      ],
+      "decision": "compatible_with_zero",
+      "decision_alpha": 0.01,
+      "degrees_of_freedom": 2,
+      "p_value": 0.9527025528770648,
+      "value_re_im": [
+        4.041666666666666e-05,
+        -3.189860237272828e-05
+      ]
+    },
+    "E_top_nontrivial_C3_r1": {
+      "chi_square": 142.199239404773,
+      "covariance_2x2": [
+        [
+          2.142175049102127e-08,
+          -1.8622340595521373e-11
+        ],
+        [
+          -1.8622340595521373e-11,
+          2.100517066498321e-08
+        ]
+      ],
+      "decision": "resolved",
+      "decision_alpha": 0.01,
+      "degrees_of_freedom": 2,
+      "p_value": 1.3238156099792117e-31,
+      "source": "frozen_branch_score",
+      "value_re_im": [
+        -0.0017446307362800637,
+        -4.7198384506250046e-05
+      ]
+    }
+  },
+  "source": {
+    "batches": 100,
+    "batches_path": "results/server-20260830/P267-rho-C3-Etop-N112-2M/batches.csv",
+    "batches_sha256": "39f9eebec3ac3ce5d41c8874ecf4482760074e4a9f10ac69026a98201cb7c857",
+    "child_order": [
+      "2omega",
+      "omega_over_2",
+      "omega_plus_1_over_2"
+    ],
+    "commit": "2402a3330b421595d3573337a5723ff3dbdcb7e9",
+    "dependency_group": "p267-rho-C3-Etop-N112-fresh2m",
+    "integration_status": "branch_only",
+    "samples_per_batch": 20000,
+    "score_path": "results/server-20260830/P267-rho-C3-Etop-N112-2M/score.json",
+    "score_sha256": "d05422c368ffeafe227ba9d87dcd1eb804f8e086118b9942a8039700807a56b4",
+    "source_score_schema": "matching-one/p267-rho-child-etop-c3-score/v1"
+  },
+  "status": "completed_branch_batch_reanalysis_zero_new_MC"
+}

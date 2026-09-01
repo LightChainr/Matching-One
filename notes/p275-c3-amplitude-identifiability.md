@@ -2,10 +2,12 @@
 
 ## Status and evidence boundary
 
-This note is a zero-new-sample synthesis of one exact conditional design and
-one completed production block.  It does not rerun either source, fit a
-continuum field, or combine observables that have different physical
-normalizers.
+This note began as a zero-new-sample synthesis of one exact conditional design
+and one completed rho-child production block.  A subsequent prospective paired
+physical-rotation gate has now supplied the previously missing second reading
+for the **primitive real-C3 observer**.  The later result is recorded here as
+`branch_only`; it is not silently transferred to `E_top`, original `q/E`, or
+pooled-root `U`.
 
 Both source results are `branch_only` relative to the current integration
 branch `research/navigation-priority-refresh-20260829` at
@@ -22,6 +24,15 @@ branch `research/navigation-priority-refresh-20260829` at
   `run.json`, `score.json`, and producer/scorer
   `scripts/p267_rho_child_etop_mc.py` and
   `scripts/score_p267_rho_child_etop.py`.
+- frozen paired primitive-C3 contract:
+  `origin/analysis/p275-gaussian-c3-phase-20260901` at
+  `9eeb6700bb59832d21b68993dc9e041ea0ce2e76`, file
+  `experiments/p275-gaussian-c3-phase-20260901/CONTRACT.json`;
+- paired primitive-C3 result and interpretation:
+  `0b9e89c9528ab283a8175adcd596d9b0ac5047c1`, files
+  `results/p275-gaussian-c3-phase/RESULT.json`, `REPORT.md`, and current
+  interpretation head `93e470669e15fcec3eaee24538fcbaa80c510d31`,
+  `notes/p275-real-c3-harmonic-split-20260901.md`.
 
 The exact design is conditional algebra.  Its own boundary is: no existing-C3
 data reanalysis, no choice of a new geometry, and no assertion that an
@@ -150,6 +161,41 @@ both models span all of `C^2` at every `delta`.  No choice of angle then makes
 the spin label identifiable.  A prospective second reading is therefore
 scientifically meaningful only after the cross-rotation gain law is frozen.
 
+## Completed paired primitive-C3 phase gate
+
+The required signed-real gain law was frozen before production.  Two equal-area
+Gaussian quotients, `g1=8+i` and `g2=7+4i`, have `N=65` and physical rotation
+`delta=atan2(5,12)=22.619864948 degrees`, close to the other maximal
+signed-real separator at `22.5 degrees`.  The same counter-derived 130-bit
+field was applied to both edge orders for 2,000,000 paired replicas in 100
+batches; no top-up was allowed.
+
+```text
+mean z1 = +0.00208049662712 - 0.00262405113148 i
+mean z2 = -0.00110625337288 + 0.00219494722788 i
+
+H4: chi2=73.6412/1, p=9.36904e-18, signed gain=+0.76842
+H8: chi2= 1.1122/1, p=0.291603,  signed gain=+0.73660
+```
+
+The frozen binary decision is `H8_SELECTED_H4_STOP`.  It excludes the pure
+`+4 delta` signed-real transport law for this primitive observer and retains
+the `-8 delta` alias.  A post-reveal signed-scalar H0 line also survives
+(`chi2=1.32069/1`, `p=.250468`) because `-8 delta` is almost real for this
+arithmetic pair.  Thus the gate identifies an H8/even branch against H4, not a
+unique local H8 field.  It does not exclude global `A_top` H4, mixed H4/H8
+transport, complex geometry gains, the rho-child `E_top` observer, or
+original-U/Jordan mechanisms.
+
+The same branch notes that a literal local weight-8 insertion should decay no
+slower than `N^-3`.  Transporting that radial law into the global K1/K2
+residual relative to the proposed weight-21/4 Q4 leading term fixes
+`kappa=2^(-11/8)`.  The existing-data forward audit now excludes even the
+four-independent-amplitude envelope of that transplant
+(`chi2=13.360937/4`, nominal `p=.00964044`).  Thus the observed primitive H8
+phase cannot be copied into the global residual as one unmixed canonical
+weight-8 radial mode; an observer form factor or sector-mixing map is required.
+
 ## Normalizer firewall
 
 The following integrated archives are useful controls within their own
@@ -183,20 +229,22 @@ used to restrict the complex C3 amplitude post hoc.
 
 ## Decision and unique missing input
 
-The completed one-angle result supports the finite statement
+The completed sequence supports the finite statements
 
 ```text
-resolved nonzero Etop_r1 + distinct Etop/primitive-H4 observer rays
-does not identify H4 versus H8 under arbitrary complex amplitudes.
+one angle with arbitrary complex amplitudes is nonidentifying;
+under the frozen binary signed-real transport, primitive real-C3 selects H8 over H4;
+post reveal, a signed-scalar H0 alias also survives;
+the naive canonical weight-8 member's radial transplant into global K1/K2 is excluded.
 ```
 
-The unique missing physical input for a positive H4-versus-H8 decision is:
+The second physical rotation is no longer the missing input.  The unique next
+physical input is:
 
-> a phase-calibrated second physical rotation of the same real-C3 observable,
-> at the recommended non-alias angle `delta = pi/24`, retaining the identical
-> physical normalizer and conditioning, with the cross-rotation gain law
-> frozen in advance as shared-complex or nonzero signed-real transport.
+> an explicit observer transport map from the finite primitive-C3 H8 form
+> factor to rank-0/rank-2 restricted traces of the same original `q/E` source
+> and pooled-root physical normalizer.
 
-If that gain remains arbitrary complex, stop at `NONIDENTIFIABLE`; additional
-archive concatenation or a different uncalibrated observer cannot repair the
-rank degeneracy.
+Without that map, the primitive H8 and global H4 results are a resolved sector
+split, not two votes on one amplitude.  Additional sizes of the primitive
+observer may test persistence but cannot by themselves identify original-U.

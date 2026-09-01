@@ -17,6 +17,7 @@ of the pinned cross-size aligned-delete-one covariance.
 | model | kappa | chi-square / df | survival p | reading |
 |:--|--:|--:|--:|:--|
 | fixed ordinary semisimple `q2` | 0.5 | 11.792466 / 4 | 0.0189631 | excluded at .05 |
+| fixed primitive-C3 H8 radial transplant | 0.385553 | 13.360937 / 4 | 0.00964044 | excluded at .01 |
 | Jordan affine log | 1 | 6.432527 / 4 | 0.169092 | not excluded |
 | free kappa, unconstrained | 2.114984508 | 2.156631 / 3 | 0.540541 | descriptive optimum |
 | physical decaying semisimple | `0<kappa<1` | infimum 6.432527 at `kappa -> 1-` | diagnostic df3 p=0.0923618 | collision boundary, no interior winner |
@@ -25,6 +26,19 @@ The unconstrained optimum is `kappa=2.114984508`, equivalent to
 `delta=-log2(kappa)=-1.080647096`.  Its negative
 relative exponent means that the second mode grows relative to the proposed leading
 `N^-13/8` response; it is not a more-irrelevant bulk singlet.
+
+The frozen binary branch-only paired physical-rotation gate at `0b9e89c9` selects
+the H8 line over H4 for its primitive real-C3 observer.  A post-reveal H0
+signed-real line also survives (`p=.250468`), so the gate identifies an H8/even
+branch rather than a unique local H8 field.  A deliberately generous radial transplant of
+that alias into the global K1/K2 residual takes a canonical weight-8 correction
+relative to the weight-21/4 Q4 candidate, hence `kappa=2^(-11/8)`.  Even with
+independent leading and subleading amplitudes in all four blocks, this envelope is
+excluded (`chi2=13.360937/4`;
+nominal `p=0.00964044`).  The H8 member of the surviving
+primitive-sector branch therefore cannot be copied into the global residual as one unmixed canonical
+weight-8 radial mode.  This does not reject that branch result or H8-containing
+observer-mixing mechanisms.
 
 ## Raw coordinates and units
 
@@ -84,10 +98,7 @@ bulk singlet whose transfer eigenvalue is allowed to approach the topological on
 
 ## Unique missing physical input
 
-The missing input is **restricted_trace_modulus_or_phase_transport**: one
-semantics-matched transfer relation on rank-0/rank-2 restricted traces for the
-same `B` source, original `q/E` observables, and pooled-root physical
-normalizer.
+The missing input is **restricted_trace_modulus_or_phase_transport**: one semantics matched transfer relation for the same B source original q E and pooled root physical normalizer on rank0 rank2 restricted traces.
 The preferred route is a theory-derived restricted-trace vector for the independent
 singlet and Jordan top component, scored on existing rho-child or P43/P57 assets.  If
 that relation cannot be derived, the only new acquisition justified by this audit is one
@@ -97,7 +108,7 @@ topological coordinate.
 ## Provenance and boundary
 
 - Input: `results/norm4-two-activation-h4/latest.json` (`f29ce76fa5be92abb2a233c7efb6e4d94f37236242656d0dcf17cbfc3fd1e462`).
-- Manifest: `analysis/p275_forward_identifiability_manifest.yaml` (`80f027e73ce10da8f8afbce193bb81d448aa1726e62da5c57901c624ff0bc386`).
+- Manifest: `analysis/p275_forward_identifiability_manifest.yaml` (`cfcd34be27872f3d195fd1179f3096dd9d1bc667bf1387cd5a1a37aa2acb9d81`).
 - All four residual rows are correlated views of the registered dependency groups.
 - Scores are post-reveal existing-data diagnostics, not prospective validation.
 - Jordan compatibility is not continuum-field, lattice-overlap, or normalizer identification.

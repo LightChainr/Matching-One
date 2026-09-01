@@ -4,11 +4,14 @@
 
 This map is the repository's scientific coordinate system. It is not a permission system: exact work, reanalysis, pilots, production and independent theory may proceed in parallel. Priority moves attention; it does not lock, close, veto or demote a task. `STATUS` owns claim/lifecycle language, `ROADMAP` preserves rationale, and [NEXT-TARGETS](NEXT-TARGETS.md) owns the single ranked decision queue.
 
-**Current frontier: the canonical macro-window ratio route is stopped, the
-typed contact-completion carrier has passed a held-out original-`U`
-transmission gate but is only a small share of full N65 response, and P0 has
-moved to #275's same-normalizer restricted rank-0/rank-2 modulus/phase law
-after its first forward score returned `PARTIALLY_IDENTIFIABLE`.** The completed N100/N400
+**Current frontier: production data are now eliminating concrete models.**
+The canonical macro-window ratio route is stopped; the typed
+contact-completion carrier has passed a held-out original-`U` transmission
+gate but is only a small share of full N65 response; and #275's first forward
+score is `PARTIALLY_IDENTIFIABLE`.  The N112 rho-child nine-coordinate archive
+also rejects denominator-only, rank-1-mass-only and real-rescaling mechanisms.
+P0 has therefore narrowed to the candidate-specific same-source three-sector
+source--thermal jet and its original-`q/E/U` transport. The completed N100/N400
 [pilot](../results/regular-pair-macro-joint-u/REPORT.md), `open_pr #267`,
 gives `T_N=N²J2_macro=+11.877846` with simultaneous interval
 `[−2.255616,26.011308]` at N100 and `−542.503823` with interval
@@ -122,15 +125,21 @@ P45/new-MC covariance and an adaptive shape check: a single-amplitude N25
 tensor gives `chi2=10.3371/3`, `p=.01591`.  The identical shard hashes make
 this one production and a dependent reanalysis, not two evidence votes.
 
-Branch-only `bab37f21` rewrites the finite determinant as a noncommuting
-completion commutator and records a post-reveal `N^-3/N^-29/8` fingerprint;
-this is a mechanism hypothesis, not a prospectively identified field.  Current
+Branch-only `bab37f21` gives a noncommuting-completion **encoding** of the
+finite determinant and records a post-reveal `N^-3/N^-29/8` fingerprint.  A
+nonzero signed-table determinant excludes separability but does not, without
+independently defined microscopic operators and an unused prediction, identify
+a physical commutator.  The exposure comparison in that fingerprint also mixed
+N25 `P` with N65 `P/N`; after the factor-65 correction, the old claim that an
+extra `5/8` came specifically from conditional intensity is withdrawn.  The
+signed tensor, determinant and full `J65` are unchanged.  Current
 branch head
 [`f9ba1ff6`](https://github.com/LightChainr/Matching-One/blob/f9ba1ff6/results/p537-full-t-transport/REPORT.md)
 uses the identical N65 sufficient statistics to reconstruct
 `J65=-.00162250989+/-.00018553008` and
 `J65/J25=.29396323+/-.03361398`.  Carrier share falls from `5.892%` of full
-`T25` to `2.551%` of full `T65`; root displacement contributes only about
+`T25` to `2.551%` of full `T65`; this is a `complement_of_selected` statement,
+not yet a spatially nonlocal classification.  Root displacement contributes only about
 `.0155%` of `|J65|`.  The carrier is real but does not close the original
 response.  All these N65 views remain one dependency group.
 The later
@@ -195,13 +204,15 @@ state is `PARTIALLY_IDENTIFIABLE` with non-uniform separation.
 The state/source/observer distinction is now operational in the
 [dictionary](../notes/p275-observable-normalizer-dictionary.md).  The unique
 mechanism-changing input is a same-source, same-observer, same-normalizer
-rank-0/rank-2 restricted-trace modulus/phase transport law, derived before it
-is scored on existing rho-child or P43/P57 assets.  One real C3 angle with
+rank-0/rank-2 restricted source--thermal transport law, derived before it is
+scored on existing rho-child or P43/P57 assets.  Its minimal aligned data
+object is `{s_r,partial_p s_r}` for `r=0,1,2`; a critical numerator zero alone
+does not determine the rank-1 denominator or transverse jet.  One real C3 angle with
 arbitrary complex gain is exactly nonidentifiable; after freezing a
 cross-angle gain law, `7.5 degrees` is the preferred signed-real second
 rotation and `15 degrees` is an exact alias.  No new MC/GPU block is required.
 
-#537 remains P1 for the nonlocal remainder and uniform near-critical
+#537 remains P1 for the `complement_of_selected` and uniform near-critical
 transport.  Its unified exact all-`z` N25 producer, N85 normalized tensor and
 fresh N130 `F=C+R` partition are conditional support, not current production.
 Sector determinants, edge masses and
@@ -225,8 +236,10 @@ exactly nonzero under the provisional port contract, so that order remains a
 candidate slow coordinate; it is not yet a canonical site-flip/parity result.
 Issue #275 remains the open P0 attention line for the restricted-trace
 modulus/phase transport law.  Issue #537 remains open P1;
-transmission and the N65 full-T share are complete, while its asymptotic
-nonlocal remainder is unresolved.  N25/N85/N130 carrier tests are conditional
+transmission and the N65 full-T share are complete, while uniform transport of
+the `complement_of_selected` is unresolved.  This name records what the
+selected carrier did not span; it is not yet a spatial nonlocality result.
+N25/N85/N130 carrier tests are conditional
 support rather than a default queue. #536 is closed
 provenance and #539 is P2 finite-N25 constructive support.
 PR #533 (current head `5aa929a6`) independently closes the complete specified

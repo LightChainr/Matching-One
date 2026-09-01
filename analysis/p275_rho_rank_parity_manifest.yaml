@@ -1,0 +1,42 @@
+schema: matching-one.p275-rho-rank-parity.manifest.v1
+issue: 275
+status: frozen_existing_branch_batch_reanalysis
+
+source:
+  integration_status: branch_only
+  commit: 2402a3330b421595d3573337a5723ff3dbdcb7e9
+  batches_path: results/server-20260830/P267-rho-C3-Etop-N112-2M/batches.csv
+  batches_sha256: 39f9eebec3ac3ce5d41c8874ecf4482760074e4a9f10ac69026a98201cb7c857
+  score_path: results/server-20260830/P267-rho-C3-Etop-N112-2M/score.json
+  score_sha256: d05422c368ffeafe227ba9d87dcd1eb804f8e086118b9942a8039700807a56b4
+  dependency_group: p267-rho-C3-Etop-N112-fresh2m
+  child_order: [2omega, omega_over_2, omega_plus_1_over_2]
+  samples_per_batch: 20000
+  batches: 100
+
+observable:
+  A_top: P2_minus_P0
+  E_top: P0_plus_P2
+  continuum_A_top: exactly_zero_for_every_tau_at_Q1_by_Arguin_Z2_equals_Z0
+  transform: complex_C3_r1_equals_one_third_sum_j_value_j_times_exp_minus_2pi_i_j_over3
+  units: probability
+  normalizer: square_bond_p_half_per_child_probability_not_pooled_root_original_U
+
+score:
+  covariance: covariance_of_the_mean_over_the_same_100_aligned_batches
+  null: complex_C3_r1_equals_zero
+  degrees_of_freedom: 2
+  p_value: chi_square_survival_equal_exp_minus_chi2_over2
+  alpha: 0.01
+
+claim_boundary:
+  - A_top_and_E_top_are_same_stream_correlated_observer_transforms_not_independent_votes
+  - this_is_fixed_p_square_bond_rho_child_rank_parity_not_a_B_source_response
+  - no_pooled_root_p_jet_slope_or_original_U_normalizer
+  - a_zero_A_top_character_does_not_identify_the_nonzero_E_top_character_as_a_continuum_energy_field
+  - zero_new_Monte_Carlo_GPU_cloud_or_server
+
+outputs:
+  schema: matching-one.p275-rho-rank-parity.v1
+  json: results/p275-rho-rank-parity/latest.json
+  markdown: results/p275-rho-rank-parity/latest.md

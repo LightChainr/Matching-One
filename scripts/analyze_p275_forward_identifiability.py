@@ -391,6 +391,16 @@ def build_report(
         estimate, covariance, numerics, fitted_parameters=0,
         residual_order=residual_order,
     )
+    h8_contract = manifest["models"]["fixed_h8_alias_transplant"]
+    h8_numerics = {
+        **numerics,
+        "decision_alpha": float(h8_contract["decision_alpha"]),
+    }
+    fixed_h8_alias = score_at_kappa(
+        float(h8_contract["kappa"]),
+        estimate, covariance, h8_numerics, fitted_parameters=0,
+        residual_order=residual_order,
+    )
     jordan = score_at_kappa(
         1.0, estimate, covariance, numerics, fitted_parameters=0,
         residual_order=residual_order,
@@ -488,6 +498,7 @@ def build_report(
                 "allowed_amplitudes": "independent_a_li_and_b_li_for_each_lineage_l_and_activation_i",
                 "shared_parameter": "one_common_kappa_across_all_four_blocks",
                 "fixed_q2": "kappa=1/2_equivalently_relative_N_minus_1_mode",
+                "fixed_H8_alias_transplant": "kappa=2^(-11/8)_from_transporting_a_canonical_weight8_mode_relative_to_the_weight21/4_global_Q4_candidate",
                 "physical_decaying_range": "0<kappa<1",
             },
             "Jordan": {
@@ -500,6 +511,26 @@ def build_report(
         "design_audit": design_audit(manifest),
         "scores": {
             "fixed_semisimple_q2_kappa_0p5": fixed_q2,
+            "fixed_H8_alias_radial_transplant_kappa_2_pow_minus_11_over_8": {
+                **fixed_h8_alias,
+                "hypothesis_provenance": {
+                    "status": h8_contract["angular_source_status"],
+                    "commit": h8_contract["angular_source_commit"],
+                    "path": h8_contract["angular_source_path"],
+                    "angular_decision": h8_contract["angular_source_decision"],
+                    "interpretation_commit": h8_contract["interpretation_commit"],
+                    "interpretation_path": h8_contract["interpretation_path"],
+                    "post_reveal_scalar_alias": h8_contract["post_reveal_scalar_alias"],
+                },
+                "relative_N_exponent": h8_contract["relative_N_exponent"],
+                "assumptions": [
+                    "transport_the_primitive_real_C3_H8_alias_into_the_global_K1_K2_residual",
+                    "use_canonical_weight8_radial_scaling",
+                    "take_the_global_leading_candidate_to_have_dimension21_over_4",
+                    "allow_independent_leading_and_subleading_amplitudes_in_all_four_blocks",
+                ],
+                "claim_boundary": "excludes_only_the_naive_radial_transplant_envelope_not_the_branch_only_primitive_C3_phase_result_or_every_H8_mixed_mechanism",
+            },
             "Jordan_kappa_1": jordan,
             "free_kappa_unconstrained": free_profile,
             "physical_decaying_semisimple_0_lt_kappa_lt_1": physical_profile,
@@ -515,6 +546,8 @@ def build_report(
             "all_scores_are_post_reveal_existing_archive_diagnostics",
             "no_new_Monte_Carlo_configuration_or_counter_is_generated",
             "q2_exclusion_is_only_the_fixed_kappa_1_over_2_parameterization",
+            "the_fixed_H8_alias_radial_transplant_is_a_post_reveal_sector_informed_diagnostic",
+            "its_exclusion_does_not_reject_the_primitive_real_C3_H8_phase_result_or_every_H8_mixture",
             "Jordan_non_exclusion_is_not_Jordan_operator_identification",
             "the_free_kappa_best_fit_is_not_a_free_exponent_claim",
             "priority_is_attention_not_permission_or_a_task_lock",
@@ -525,6 +558,7 @@ def build_report(
 def markdown_report(report: Mapping[str, Any]) -> str:
     scores = report["scores"]
     q2 = scores["fixed_semisimple_q2_kappa_0p5"]
+    h8 = scores["fixed_H8_alias_radial_transplant_kappa_2_pow_minus_11_over_8"]
     jordan = scores["Jordan_kappa_1"]
     free = scores["free_kappa_unconstrained"]
     physical = scores["physical_decaying_semisimple_0_lt_kappa_lt_1"]
@@ -551,6 +585,7 @@ def markdown_report(report: Mapping[str, Any]) -> str:
         "| model | kappa | chi-square / df | survival p | reading |",
         "|:--|--:|--:|--:|:--|",
         f"| fixed ordinary semisimple `q2` | {q2['kappa']:.6g} | {q2['mahalanobis_chi_square']:.6f} / {q2['degrees_of_freedom']} | {q2['chi_square_survival_p']:.6g} | {'excluded at .05' if q2['excluded_at_alpha'] else 'not excluded'} |",
+        f"| fixed primitive-C3 H8 radial transplant | {h8['kappa']:.6g} | {h8['mahalanobis_chi_square']:.6f} / {h8['degrees_of_freedom']} | {h8['chi_square_survival_p']:.6g} | {'excluded at .01' if h8['excluded_at_alpha'] else 'not excluded at .01'} |",
         f"| Jordan affine log | {jordan['kappa']:.6g} | {jordan['mahalanobis_chi_square']:.6f} / {jordan['degrees_of_freedom']} | {jordan['chi_square_survival_p']:.6g} | {'excluded at .05' if jordan['excluded_at_alpha'] else 'not excluded'} |",
         f"| free kappa, unconstrained | {free['best_kappa']:.9f} | {free['score_with_one_profiled_parameter']['mahalanobis_chi_square']:.6f} / {free['score_with_one_profiled_parameter']['degrees_of_freedom']} | {free['score_with_one_profiled_parameter']['chi_square_survival_p']:.6g} | descriptive optimum |",
         f"| physical decaying semisimple | `0<kappa<1` | infimum {physical['best_chi_square']:.6f} at `kappa -> 1-` | diagnostic df3 p={physical['score_with_one_profiled_parameter']['chi_square_survival_p']:.6g} | collision boundary, no interior winner |",
@@ -559,6 +594,19 @@ def markdown_report(report: Mapping[str, Any]) -> str:
         f"`delta=-log2(kappa)={free['relative_exponent_delta_minus_log2_kappa']:.9f}`.  Its negative",
         "relative exponent means that the second mode grows relative to the proposed leading",
         "`N^-13/8` response; it is not a more-irrelevant bulk singlet.",
+        "",
+        "The frozen binary branch-only paired physical-rotation gate at `0b9e89c9` selects",
+        "the H8 line over H4 for its primitive real-C3 observer.  A post-reveal H0",
+        "signed-real line also survives (`p=.250468`), so the gate identifies an H8/even",
+        "branch rather than a unique local H8 field.  A deliberately generous radial transplant of",
+        "that alias into the global K1/K2 residual takes a canonical weight-8 correction",
+        "relative to the weight-21/4 Q4 candidate, hence `kappa=2^(-11/8)`.  Even with",
+        "independent leading and subleading amplitudes in all four blocks, this envelope is",
+        f"excluded (`chi2={h8['mahalanobis_chi_square']:.6f}/{h8['degrees_of_freedom']}`;",
+        f"nominal `p={h8['chi_square_survival_p']:.6g}`).  The H8 member of the surviving",
+        "primitive-sector branch therefore cannot be copied into the global residual as one unmixed canonical",
+        "weight-8 radial mode.  This does not reject that branch result or H8-containing",
+        "observer-mixing mechanisms.",
         "",
         "## Raw coordinates and units",
         "",
