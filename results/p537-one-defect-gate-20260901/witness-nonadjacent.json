@@ -1,0 +1,248 @@
+{
+  "N": 25,
+  "carrier_scope": {
+    "annular_separation_certified": false,
+    "classification": "joint_incidence_typed_carrier",
+    "distance_at_most_one": false,
+    "joint_terminal_incidence_before_after": [
+      2,
+      1
+    ],
+    "reason": "all marked centers are NN-distance two, but the common carrier loses one source/thermal terminal incidence"
+  },
+  "collar": {
+    "alternating_four_arm": false,
+    "arm_mask": 11,
+    "arm_order": [
+      "N",
+      "E",
+      "S",
+      "W"
+    ],
+    "corner_mask_NE_SE_SW_NW": 0,
+    "outer_black_join_J_B": 0,
+    "outer_join_identity_applicable": false,
+    "outer_white_join_J_W": 0
+  },
+  "edge": {
+    "changes_joint_component_map": true,
+    "changes_landing_rank": true,
+    "changes_source_Bell": true,
+    "changes_source_value_g16": true,
+    "physical_move": "occupy z with every other site fixed"
+  },
+  "fixed_contract": {
+    "row_major_order": "cell=5*row+column on the 5x5 axis fundamental square",
+    "sampling": "none",
+    "search": "none; reconstruct the frozen row-major configuration"
+  },
+  "geometry": {
+    "a": 5,
+    "b": 0,
+    "id": "axis"
+  },
+  "k_minus": 11,
+  "nodes": [
+    {
+      "E": 1,
+      "bell": 274568,
+      "g16": 8,
+      "joint_C": 21990249529872,
+      "q": -1,
+      "rank_index_q_plus_1": 0,
+      "state": 0
+    },
+    {
+      "E": 0,
+      "bell": 8256,
+      "g16": 0,
+      "joint_C": 3298535014656,
+      "q": 0,
+      "rank_index_q_plus_1": 1,
+      "state": 1
+    }
+  ],
+  "occupied_background_vertices": [
+    1,
+    2,
+    5,
+    6,
+    7,
+    9,
+    10,
+    12,
+    13,
+    15,
+    17
+  ],
+  "off_port": {
+    "black_landing_component_has_degree3_vertex_outside_z_ports": false,
+    "measured_in_state": 0,
+    "source_touches_global_black_landing_component": true
+  },
+  "outer_B": {
+    "after": [
+      0,
+      0,
+      -1,
+      0
+    ],
+    "before": [
+      0,
+      0,
+      -1,
+      1
+    ],
+    "meaning": "global NN-black partition of the four z-cardinal ports; -1 means vacant"
+  },
+  "outer_C": {
+    "after_key": 3298535014656,
+    "after_labels": [
+      0,
+      0,
+      1,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      3,
+      0
+    ],
+    "before_key": 21990249529872,
+    "before_labels": [
+      0,
+      1,
+      2,
+      0,
+      3,
+      0,
+      1,
+      0,
+      0,
+      0,
+      4,
+      1
+    ],
+    "meaning": "global first-occurrence carrier partition on x4+y4+z4 ports",
+    "terminal_incidence_after": 1,
+    "terminal_incidence_before": 2
+  },
+  "outer_W": {
+    "cut_partition": [
+      -1,
+      -1,
+      0,
+      -1
+    ],
+    "meaning": "global matching-white partition in the off-z cut; -1 means occupied"
+  },
+  "pairwise_NN_distances": {
+    "minimum": 2,
+    "x_y": 2,
+    "x_z": 2,
+    "y_z": 2
+  },
+  "positive_signed_statistics": {
+    "normalization": "scorer converts a16 to a=g16/(16*N)",
+    "positive_count_each_state": 1,
+    "signed_fields": [
+      "q",
+      "E=q^2",
+      "a16=g16",
+      "q*a16",
+      "E*a16"
+    ]
+  },
+  "row_major_configuration": {
+    "occupied_off_z": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      9,
+      10,
+      12,
+      15,
+      16,
+      17
+    ],
+    "row_to_internal_vertex": [
+      0,
+      1,
+      3,
+      6,
+      10,
+      2,
+      4,
+      7,
+      11,
+      15,
+      5,
+      8,
+      12,
+      16,
+      19,
+      9,
+      13,
+      17,
+      20,
+      22,
+      14,
+      18,
+      21,
+      23,
+      24
+    ],
+    "x": 0,
+    "y": 6,
+    "z": 2
+  },
+  "schema": "matching-one/p537-one-defect-witness/v1",
+  "source_ports": {
+    "bell_after": 8256,
+    "bell_before": 274568,
+    "bell_from_joint_after": 8256,
+    "bell_from_joint_before": 274568,
+    "g16_after": 0,
+    "g16_before": 8,
+    "occupied_mask_after": 235,
+    "occupied_mask_before": 235,
+    "source_component": "diag1"
+  },
+  "status": "fixed_nonadjacent_typed_carrier_diagonal_edge",
+  "sufficient_statistics": {
+    "count": 1,
+    "sum_E0": 1,
+    "sum_E0_a16_0": 8,
+    "sum_E1": 0,
+    "sum_E1_a16_1": 0,
+    "sum_a16_0": 8,
+    "sum_a16_1": 0,
+    "sum_q0": -1,
+    "sum_q0_a16_0": -8,
+    "sum_q1": 0,
+    "sum_q1_a16_1": 0
+  },
+  "transition_id": "axis-N25:row-x0:y6:z2:fixed-nonadjacent:0to1",
+  "vertices": {
+    "x": 0,
+    "x_coordinate": [
+      0,
+      0
+    ],
+    "y": 4,
+    "y_coordinate": [
+      1,
+      1
+    ],
+    "z": 3,
+    "z_coordinate": [
+      2,
+      0
+    ]
+  }
+}
