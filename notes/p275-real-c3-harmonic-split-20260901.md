@@ -1,7 +1,6 @@
 # Primitive real-C3 harmonic split after the paired Gaussian gate
 
-Status: mechanism interpretation of the frozen N65 result; local field identity
-remains open.
+Status: updated after the held-out N145 three-way gate.
 
 The complex primitive character has one nontrivial `C3` charge.  In the spin
 normalization used by the project it only resolves
@@ -14,53 +13,63 @@ so `s=+4` and `s=-8` lie in the same character tower.  Real probabilities make
 the two nontrivial characters conjugate, which is why a single geometry cannot
 separate the aliases.
 
-The paired physical rotation does separate them.  A global conjugation sends
-`+4` to `-4`, a cyclic relabeling multiplies both geometries by one common
-cube root of unity, and a signed-real gain absorbs only a phase of `0` or
-`pi`.  None changes a continuous `+4 delta` slope into `-8 delta`.  At the
-frozen N65 angle the two model lines are almost orthogonal, and the data select
-the latter.  The result is therefore not a notation or conjugation artifact.
+The first paired physical rotation separated H4 from its H8 alias and selected
+the H8 line within that frozen two-model set.  Post reveal, however, the same
+N65 data also pass a signed-scalar H0 line (`p=0.2505`), because the chosen
+angle puts `-8 delta` within one degree of `pi`.  N65 therefore rejects H4 but
+does not identify H8.
 
 The minimal joint description is
 
 \[
 z_{\rm prim}(\theta)
- =a_4(\tau,N)e^{4i\theta}+b_{-8}(\tau,N)e^{-8i\theta}+\cdots,
+ =a_0(\tau,N)+a_4(\tau,N)e^{4i\theta}
+  +b_{-8}(\tau,N)e^{-8i\theta}+\cdots,
 \qquad
 A_{\rm top}(\theta)=c_4(\tau,N)e^{4i\theta}+\cdots .
 \]
 
-The paired `tau=i`, N65 result says that `b_-8` dominates this primitive
-projection, while the quotient-prism/global result says that `c_4` dominates
-`A_top`.  Earlier norm-2 cover chains selected the negative rank-4 transfer at
-other parent moduli.  The two statements can coexist if the primitive
-coefficients are modulus-dependent and the square point suppresses or
-overwhelms `a_4`; they should not be pooled as votes on one amplitude.
+The held-out `tau=i`, N145 result below shows that `a_0` dominates this
+primitive projection, while the quotient-prism/global result says that `c_4`
+dominates `A_top`.  Earlier norm-2 cover chains selected a negative transfer
+at other parent moduli, but their simultaneous size change made the radial
+gain sign an assumption.  They should not be pooled as H4 votes without an
+independent positivity argument.
 
-This does **not** require a local spin-8 primary.  A local H8 contribution with
-the older empirical `N^-1` radial law conflicts with `x>=|s|`, which would make
-a first-order local spin-8 term decay no slower than `N^-3`.  The economical
-candidate is a topological observer form factor: the same underlying rank-4
-sector dressed by a `C3`-scalar, spin-12 homology/readout tensor.  That changes
-the measured harmonic from `+4` to `-8` without creating a new local primary.
+This stops the local spin-8 interpretation.  It also rules out passive H4
+conjugation as the dominant transport at the square point.  The surviving
+object is instead a nontrivial homology character whose response to physical
+embedding rotation is scalar: topology is carried by the observer label, not
+by local geometric spin.
 
-## Two prospective decisions
+## Held-out resolution
 
-1. **Persistence at fixed modulus and angle.**  The N130 pair
-   `(11+3i, 9+7i)` has the same `delta=atan2(5,12)` and is a common Gaussian
-   dilation/rotation of the N65 pair.  Persistence of the H8 phase there rules
-   out a one-size phase accident; an H4 return marks a finite-size crossover.
-2. **Convention-invariant three-way angle test.**  For the N145 pair `(12+i,9+8i)`,
-   `exp(i delta)=(4+3i)/5`.  With the same complex character define
+The N130 repetition was not run because the original angle leaves H8 almost
+aliased with H0.  The higher-information N145 pair `(12+i,9+8i)` instead used
+`exp(i delta)=(4+3i)/5`.  With the same complex character define
 
-   \[
-   X={\Re[(z_2\bar z_1)^2]\over |z_2z_1|^2}.
-   \]
+\[
+X={\Re[(z_2\bar z_1)^2]\over |z_2z_1|^2}.
+\]
 
-   Squaring removes the signed-gain sign, and `X` is invariant under common
-   character phase and conjugation.  Passive H4/conjugate-H4 predicts
-   `X=+0.42197248`; a true `-8` observer harmonic predicts
-   `X=-0.643878452245`; an embedding-even/signed-scalar character predicts
-   `X=+1`.  This is more informative than repeating the N65 angle at N130,
-   because the latter leaves H8 nearly aliased with H0.  Only the existing
-   complex C3 coordinate and its paired covariance are needed.
+Squaring removes the signed-gain sign, and `X` is invariant under common
+character phase and conjugation.  Passive H4/conjugate-H4 predicts
+`X=+0.42197248`; a true `-8` observer harmonic predicts
+`X=-0.643878452245`; an embedding-even/signed-scalar character predicts
+`X=+1`.
+
+The held-out result is
+
+```text
+p_H0 = 0.968628
+p_H4 = 0.000135506
+p_H8 = 2.67966e-13
+X    = 0.999926 +/- 0.007664.
+```
+
+Thus the primitive signal has a nontrivial `C3` homology character but
+spin-zero embedding transport.  The N65 H8 selection was the accidental
+near-alias of H8 with the real line at that angle.  The local-H8 and passive-H4
+interpretations are both stopped; the surviving theory problem is to identify
+the quotient/homology form factor that fixes the complex character direction
+while permitting a signed real amplitude.
