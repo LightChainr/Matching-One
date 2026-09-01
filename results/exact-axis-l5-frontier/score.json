@@ -1,0 +1,149 @@
+{
+  "schema": "axis L=5 frozen zero prediction score v1",
+  "prediction_source_schema": "tiny exact matching complex-zero map v1",
+  "coefficient_source_schema": "exact axis matching polynomial c++ v1",
+  "enumerated_configurations": 33554432,
+  "root_method": "exact_matching_zero_map.analyze_polynomial at dps and dps+30",
+  "scores": [
+    {
+      "metric": "physical_root_0_1",
+      "model": "a + b/N through the two declared training sizes",
+      "training_L": [
+        3,
+        4
+      ],
+      "training_N": [
+        9,
+        16
+      ],
+      "target_L": 5,
+      "target_N": 25,
+      "frozen_prediction": "0.592597902243522957241895073276321452012786487774120516713216",
+      "observed": "0.591988256518333844610968680211928879047874777197222109205656",
+      "signed_error_observed_minus_prediction": "-0.000609645725189112630926393064392572964911710576898407507559554",
+      "absolute_error": "0.000609645725189112630926393064392572964911710576898407507559554",
+      "relative_error": "-0.00102876794345887511937162593998206816582743324544710182451981"
+    },
+    {
+      "metric": "imaginary_rms",
+      "model": "a + b/N through the two declared training sizes",
+      "training_L": [
+        3,
+        4
+      ],
+      "training_N": [
+        9,
+        16
+      ],
+      "target_L": 5,
+      "target_N": 25,
+      "frozen_prediction": "0.533232886195150913999878192144463970941372893504516808455523",
+      "observed": "0.3401748476358213035077563592427829082242227233011275119695",
+      "signed_error_observed_minus_prediction": "-0.193058038559329610492121832901681062717150170203389296486023",
+      "absolute_error": "0.193058038559329610492121832901681062717150170203389296486023",
+      "relative_error": "-0.362052010589374695299853998885667847170050828101837971471902"
+    },
+    {
+      "metric": "nonreal_fraction",
+      "model": "a + b/N through the two declared training sizes",
+      "training_L": [
+        3,
+        4
+      ],
+      "training_N": [
+        9,
+        16
+      ],
+      "target_L": 5,
+      "target_N": 25,
+      "frozen_prediction": "0.788571428571428571428571428571428571428571428571428571428571",
+      "observed": "0.8",
+      "signed_error_observed_minus_prediction": "0.011428571428571428571428571428571428571428571428571428571429",
+      "absolute_error": "0.011428571428571428571428571428571428571428571428571428571429",
+      "relative_error": "0.0144927536231884057971014492753623188405797101449275362318846"
+    }
+  ],
+  "polynomial": {
+    "geometry": "axis",
+    "L": 5,
+    "status": "OK",
+    "degree": 25,
+    "power_coefficients_ascending": [
+      -1,
+      0,
+      0,
+      0,
+      0,
+      10,
+      0,
+      100,
+      -200,
+      300,
+      240,
+      -3050,
+      2850,
+      1950,
+      6850,
+      -26220,
+      20450,
+      3450,
+      -2100,
+      -18650,
+      22970,
+      -10800,
+      1650,
+      300,
+      -100,
+      2
+    ],
+    "polynomial": "2*p^25 - 100*p^24 + 300*p^23 + 1650*p^22 - 10800*p^21 + 22970*p^20 - 18650*p^19 - 2100*p^18 + 3450*p^17 + 20450*p^16 - 26220*p^15 + 6850*p^14 + 1950*p^13 + 2850*p^12 - 3050*p^11 + 240*p^10 + 300*p^9 - 200*p^8 + 100*p^7 + 10*p^5 - 1",
+    "matching_partner_coefficients_ascending": [
+      -1,
+      0,
+      0,
+      0,
+      0,
+      520,
+      -1400,
+      1600,
+      -9850,
+      37350,
+      -58520,
+      69450,
+      -229650,
+      694550,
+      -1185250,
+      1123780,
+      -403800,
+      -387750,
+      689900,
+      -525950,
+      247720,
+      -75700,
+      14450,
+      -1500,
+      50,
+      2
+    ],
+    "matching_partner_polynomial": "2*p^25 + 50*p^24 - 1500*p^23 + 14450*p^22 - 75700*p^21 + 247720*p^20 - 525950*p^19 + 689900*p^18 - 387750*p^17 - 403800*p^16 + 1123780*p^15 - 1185250*p^14 + 694550*p^13 - 229650*p^12 + 69450*p^11 - 58520*p^10 + 37350*p^9 - 9850*p^8 + 1600*p^7 - 1400*p^6 + 520*p^5 - 1",
+    "metrics": {
+      "degree": 25,
+      "real_root_count": 5,
+      "nonreal_root_count": 20,
+      "nonreal_fraction": "0.8",
+      "physical_root_0_1": "0.591988256518333844610968680211928879047874777197222109205656",
+      "imaginary_rms": "0.3401748476358213035077563592427829082242227233011275119695",
+      "imaginary_mean_absolute": "0.284792819346095978017274462199988614975467479340309199801711"
+    },
+    "audit": {
+      "working_dps": 100,
+      "confirmation_dps": 130,
+      "max_normalized_polynomial_residual": "5.33152599395341104686853195937723199604651749631035144074426e-120",
+      "max_precision_stability_distance": "4.55929768072696226793111670375092217508410333797871980716858e-90",
+      "max_partner_precision_stability_distance": "3.00492168461878830027618213280856683254972860680194430003095e-90",
+      "max_conjugate_pair_distance": "0.0",
+      "max_matching_partner_pair_distance": "5.00000000000754713125486965187776331824234140649304054728153e-120",
+      "max_matching_partner_normalized_residual": "9.2512861996109418913612184918753730052730448732009365429533e-120"
+    }
+  }
+}

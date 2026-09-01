@@ -11,6 +11,8 @@ A non-redundant bulk spin-4 descendant built from chiral quasiprimaries
 at levels (n,m) requires n-m=4 and q(n),q(m)>0.
 """
 
+from __future__ import annotations
+
 from functools import lru_cache
 from fractions import Fraction
 

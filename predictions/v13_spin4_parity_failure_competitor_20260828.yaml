@@ -1,0 +1,31 @@
+version: 2
+frozen_date: 2026-08-28
+invalidated_date: 2026-08-28
+status: INVALIDATED_DO_NOT_SCORE
+purpose: provenance_tombstone_for_wrong_kac_branch_exploration
+original_commit_preserved_in_history: true
+invalid_reason: >-
+  The original artifact used the dual/tricritical Kac polynomial
+  ((3r-2s)^2-1)/24 while labeling R_<1,3> as a field of the critical Potts
+  branch. For critical Potts percolation Q=1, beta^2=2/3 and the correct
+  convention is ((2r-3s)^2-1)/24. Therefore V_<1,3> has h=2, x=4, not h=1/3,
+  x=2/3, and there is no critical-Potts V13 level-4 x=14/3 / N^-4/3 target of
+  the form frozen in version 1.
+scientific_effect: >-
+  None of the N=185/N=265 target data had been produced when this invalidation
+  was committed. The erroneous N^-4/3 model must not enter prospective scoring,
+  model selection, or evidence counts. Repository history retains the exact
+  original prediction and the correction timing.
+corrected_interpretation:
+  thermal_generator: 'V_<1,2>, h=5/8, x=5/4, matching-odd under the working involution'
+  V_1_3: 'h=2, x=4 second-thermal scalar; matching-even from V12 x V12 fusion under the OPE-automorphism assumption'
+  possible_role: >-
+    V_<1,3> can provide the matching-even scalar x=4 sector invoked in the
+    post-leading/composite correction analysis (#58). It is not the discarded
+    N^-4/3 central matching-odd competitor.
+replacement_scoring_order_for_issue_43:
+  - original_x21_H4_N13_8_prediction
+  - fixed_x17_W22_N9_8_adversarial_competitor
+  - zero_effect
+  - then_declared_H12_mixed_log_or_free_models
+reference_note: notes/critical-potts-kac-convention-correction.md
