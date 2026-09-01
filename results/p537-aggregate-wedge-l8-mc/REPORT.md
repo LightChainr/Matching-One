@@ -79,8 +79,10 @@ root-Schur normal channel retains an L2-normalized pivotal fluctuation rather
 than the full pivotal mass. This is not supplied by the arm exponent alone and
 is the precise theoretical gap exposed by the production.
 
-The mechanism has a normalization-free companion coordinate that can be
-formed from the same root data,
+The mechanism has a companion coordinate that can be formed from the same
+root data.  Here `P_L` is fixed to the raw Bernoulli derivative
+`M_L'(p_L*)`, i.e. the Russo total pivotal mass, rather than the logit
+derivative:
 
 ```text
 Xi_L = N^2 * G4(L) * sqrt(P_L).
@@ -89,6 +91,23 @@ Xi_L = N^2 * G4(L) * sqrt(P_L).
 The `35/8` mechanism predicts constant `Xi_L`; the old `9/2` continuation gives
 `Xi_L~L^-1/8`, while pure `L^-4` gives `Xi_L~L^3/8`. This is a sharper next
 analytic check than fitting another free exponent.
+
+That check can already be made without new sampling. Reconstructing the
+matching slope from the exact polynomials and the committed MC sufficient
+statistics gives
+
+| L | `P_L=M_L'(p_L*)` | `Xi_L` |
+|---:|---:|---:|
+| 4 | 4.9791431223 | 8.0021433568 |
+| 5 | 5.8800998234 | 7.9982044172 |
+| 6 | 6.7292836714 | 7.7254586988 +/- 0.0846896 |
+| 8 | 8.3270026415 | 8.0397680547 +/- 0.150057 |
+
+The exact L4/L5 values straddle 8 and differ by only `0.049%`. L8 is `0.26`
+of its joint delete-one standard error above their mean. L6 remains `-3.24`
+joint standard errors below it. Also `P_L/L^(3/4)` drifts smoothly as
+`1.76039, 1.75856, 1.75532, 1.75054`, so the pivotal factor itself behaves as
+expected; the isolated non-monotonicity lives in the projected response.
 
 ## Boundary
 

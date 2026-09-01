@@ -1,0 +1,22 @@
+{
+  "schema": "matching-one/p537-pivotal-normalization/v1",
+  "status": "REANALYSIS_OF_EXISTING_EXACT_AND_MC_SUFFICIENT_STATISTICS",
+  "definition": {
+    "P_L": "dM_L/dp evaluated at the axis-square matching root",
+    "Xi_L": "N^2*G4(L)*sqrt(P_L)",
+    "coordinate_boundary": "raw Bernoulli p derivative; not p(1-p)*dM_L/dp"
+  },
+  "rows": [
+    {"L": 4, "root": 0.5906721123310283, "P_L": 4.979143122348898, "G4": 0.01400841686599306, "Xi_L": 8.002143356822383, "source": "exact"},
+    {"L": 5, "root": 0.5919882565183338, "P_L": 5.880099823416639, "G4": 0.005277401458743547, "Xi_L": 7.998204417151813, "source": "exact"},
+    {"L": 6, "root": 0.5923930092376508, "P_L": 6.729283671355132, "P_L_SE": 0.000945743, "G4": 0.002297919737362416, "Xi_L": 7.725458698788297, "Xi_L_joint_SE": 0.0846896, "source": "100M existing sufficient statistics"},
+    {"L": 8, "root": 0.5926379848582818, "P_L": 8.327002641477531, "P_L_SE": 0.001202173, "G4": 0.0006802040610058551, "Xi_L": 8.039768054707934, "Xi_L_joint_SE": 0.150057, "source": "100M prospective sufficient statistics"}
+  ],
+  "result": {
+    "exact_L4_L5_mean_Xi": 8.000173886987098,
+    "relative_exact_split": 0.000492352769206,
+    "L6_residual_joint_SE": -3.24,
+    "L8_residual_joint_SE": 0.26,
+    "interpretation": "Xi approximately 8 is the direct numerical signature of inverse-square-root pivotal dilution; L6 retains a non-monotone finite-size depression"
+  }
+}

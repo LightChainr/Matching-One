@@ -27,6 +27,14 @@
   },
   "mechanism_candidate": "G4 ~ N^-2 * P_L^-1/2, with P_L the complete root-level pivotal mass scaling as L^y_t and y_t=3/4",
   "companion_coordinate": "Xi_L=N^2*G4(L)*sqrt(P_L)",
+  "pivotal_mass_definition": "P_L=dM_L/dp at the axis-square matching root; raw Bernoulli derivative, not logit derivative",
+  "pivotal_normalization": {
+    "L4": {"P_L": 4.979143122348898, "Xi_L": 8.002143356822383},
+    "L5": {"P_L": 5.880099823416639, "Xi_L": 7.998204417151813},
+    "L6": {"P_L": 6.729283671355132, "P_L_SE": 0.000945743, "Xi_L": 7.725458698788297, "Xi_L_SE": 0.0846896},
+    "L8": {"P_L": 8.327002641477531, "P_L_SE": 0.001202173, "Xi_L": 8.039768054707934, "Xi_L_SE": 0.150057}
+  },
+  "scaled_pivotal_mass_P_L_over_L_power_3_over_4": [1.76039, 1.75856, 1.75532, 1.75054],
   "competing_predictions_for_Xi": {
     "L^-35/8": "constant",
     "L^-9/2": "L^-1/8",
