@@ -61,3 +61,13 @@
 这给一个明确取舍：停止单组件传播解释，下一步约束固定核加权的多组件空间概率及同一原U读出；尚未给空间衰减或连续场确认。它不增加独立统计票，也不重开已失败P154/P334/F4。
 
 [实际固定m审查](p337-fixed-m-relative-bound.md#7-2026-09-01实际组件气体的进一步取舍)还证明裸组件KP判据在h=1也不能统一成立；继续改善旧裸活动度的计数常数不足。rank2固定carrier颜色恒等式和条件下等面积小簇逐项消去已写清，真正的两相归一化控制仍未被解决。本轮没有新增随机块或云作业。
+
+## 2026-09-01：读完最新空间执行后进一步关闭红外累计解释
+
+恢复后已读到执行卡最新的[`a237968f`](https://github.com/LightChainr/Matching-One/blob/a237968f1d7a82d26b46e83c58179dbba7f1a908/notes/regular-pair-spatial-transmission-result.md)与[`410015f5`](https://github.com/LightChainr/Matching-One/blob/410015f5505dc2d8ca0e9ac904f656a4adc9fe86/notes/regular-pair-joint-transmission-result.md)全文。前者已经完成两个新空间块并拒绝L64/距离16零传递；后者已经得到完整`J2=-0.0055194314248394015`及严格负的相邻/非相邻分解，故旧的“先测空间是否非零”“再算joint-to-U”“检验是否全由NN接触承担”全部过期，不再复制执行。
+
+同时读完更晚的Draft [PR532](https://github.com/LightChainr/Matching-One/pull/532)：提交`2e1c57b`的两桥端点因式分解与指定补全族3/2下界可作为有限代数资产；它不决定占据平均符号。其评论所列uniform J2路线已被410015f5完成，不能再当下一任务。评论中的八通道与`alpha=3/2` pair positivity没有同一PR的新提交，先保留为候选，不改变canonical补全或生产队列。
+
+在这些最新结果上，[临界空间可求和定理](p337-critical-spatial-summability.md)完成了新的机制淘汰：两个不同occupied components同时到达两个远标记时，两端各有一个黑/白交替四臂事件；两个不交局部环带给概率平方。van den Berg--Nolin对临界方格site的严格`alpha4>1`界于是给某个`eta>0`使`E_pc|g_xy|≤C d^(-2-eta)`，并给一致绝对行和与`O(R^-eta)`尾。该证明不使用方格5/4猜想，不把有限`p_ref`冒充精确`p_c`，没有新增样本、枚举、距离点或服务器任务。
+
+据此停止raw pair距离网格、指数拟合、completion扫描和远距离发散解释。下一步压缩为固定signed kernel的thermal/pivotal支持：只有证明某个具名pivotal/landing通道逃过可求和界并事前给出原U预测，才允许一次新读数；若热空间和及root/slope均可控制，则正式降级这一局部机制。P154/P334/F4停线不变。

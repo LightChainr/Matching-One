@@ -1,16 +1,26 @@
-# 下一步：固定补全的多组件空间传递
+# 下一步：thermal/pivotal 传递与固定m两相权重
 
-**2026-09-01。** 当前结论从[STATUS](STATUS.md)进入。两个独立生产实验已经按冻结规则停线；齐次N50和局部pair的有限原U传递也已完成。下一步不再增加同类有限点或重开旧实验。
+**2026-09-01，已读到执行 `410015f5` 与 Draft PR532 最新评论。** 当前结论从[STATUS](STATUS.md)进入。两个独立生产实验、齐次N50、canonical pair 的有限空间块和完整联合原U响应均已完成。下一步不增加同类有限点、距离网格、补全扫描或旧实验救值。
 
-## 1. 当前研究问题：多组件空间结构如何进入同一个原U
+## 1. 当前研究问题：绝对可和的空间核能否经热响应获得尺度增强
 
-执行[2ba8863f](https://github.com/LightChainr/Matching-One/blob/2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb/notes/regular-pair-interaction-result.md)已经定义并算完canonical `Kreg=K2+K0`：直接Q1响应恒零，单点混合原U响应严格非零，固定四路径双插入系数13/8。旧“local pair还没有进入有限U”的待办删除。具体cut/连续场归属仍不能从这些有限结果直接推出。
+执行[2ba8863f](https://github.com/LightChainr/Matching-One/blob/2ba8863f75e0ced211b7b5442e8cddbe2fbd3deb/notes/regular-pair-interaction-result.md)已经定义并算完canonical `Kreg=K2+K0`：直接Q1响应恒零，单点混合原U响应严格非零，固定四路径双插入系数13/8。随后 [`a237968f`](https://github.com/LightChainr/Matching-One/blob/a237968f1d7a82d26b46e83c58179dbba7f1a908/notes/regular-pair-spatial-transmission-result.md) 拒绝了L64/距离16的有限零传递；[`410015f5`](https://github.com/LightChainr/Matching-One/blob/410015f5505dc2d8ca0e9ac904f656a4adc9fe86/notes/regular-pair-joint-transmission-result.md) 完成完整 `J2=-0.0055194314248394015`，并以严格负的非相邻分项拒绝NN-contact-only closure。旧“local pair还没有进入有限U”“先计算uniform J2”两个待办全部删除。
 
-**[本次空间结果](../experiments/p337-regular-spatial-support-20260901/RESULT.md)进一步排除了单一共享组件传播。** 首阶Q激活必须由至少两个外部组件连接两个非相邻标记；canonical核给 `Cxy=E[a_xy]` 和 `|Cxy|≤(43/16)Pr{两点vacant且至少两不同占据组件接触两处}`。实际两组件见证表明阈值可达到，但不保证占据平均非零。4140项已全部计算并独立复核，下一次不再扩这一核目录。
+**[临界空间可求和定理](../notes/p337-critical-spatial-summability.md)已经完成下一层淘汰。** 至少两个共享occupied components在每个远端点都强制交替四臂；两个不交环带和方格site严格`alpha4>1`界给
 
-下一项真正需要的结论是：**同一固定核的带符号多组件空间概率，在距离增长时保留哪一项，以及它通过W[a_xy]是否保留在原U。** 先使用已给出的概率支撑和精确系数约束符号抵消；不能把普通连通概率、Cov(a_x,a_y)或单一见证1/16当成答案。若某个近似只允许一个共享组件，它对本响应给零，已应停用；不能事后添加自由系数救回。
+```text
+E_pc |g_xy| <= C d^(-2-eta),
+sup_(L,x) sum_(y!=x) E_pc|g_xy| < infinity,
+tail(d>R) = O(R^-eta)
+```
 
-只有在理论给出可互相区分的空间/原U预测后，才冻结一个新的生产问题。未形成这种预测前，不启动距离网格、counterterm扫描或更大N；也不把“局部相关非零”升级为P0。允许的正则补全共享上述选择规则，但43/16和单点W只属于canonical补全，不能换系数保持原结论。
+其中某个`eta>0`。所以固定normalization的raw canonical susceptibility不能靠宏观远尾产生发散。这个结论不使用方格5/4猜想，也不自动适用于a237的数值`p_ref`或N25 pooled root；没有近临界控制时不作外推。
+
+下一项只保留一个明确的理论闸门：**为固定 signed `g_xy` 写出 `partial_p E[g_xy]` 的site-pivotal支持，并判断其空间和是否一致可求和。** 这正对准410中占主导的热/source项和仍缺的root/slope映射。验收和停止规则为：
+
+1. 若热导数的空间和仍一致可求和，并能控制共同root/slope分母，则停止把这一local interaction作为原anomaly的尺度放大机制，转为有限局部修正资产。
+2. 若只有一个具名pivotal/landing通道逃过可求和界，必须先给同一原U的符号或尺度预测，才冻结一次新读数；不能从结果中再选bridge irrep。
+3. 在该闸门前不启动新MC、N、距离、动量、三插入、alpha/positivity completion或descriptor。PR532已提交的两桥因式分解与3/2下界保留；其评论中的uniform J2建议已由410完成，八通道与`alpha=3/2`候选没有新提交，均不形成生产授权。
 
 ## 2. 保留的理论缺口：固定m的真实两相相对权重
 
