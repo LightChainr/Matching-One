@@ -28,10 +28,12 @@ Durable C3 evidence remains:
 
 - independent primary blocks disfavor global zero;
 - frozen H4 transfer is compatible and tested H12/H8 aliases are disfavored;
-- N145->290 rejects a one-multiplier full-curve shape while preserving narrower finite-size relations;
+- N145->290 rejects a one-multiplier full-curve shape at its frozen cutoff while preserving narrower finite-size relations; the #543 nullspace audit keeps the displayed score but marks the conclusion cutoff-sensitive;
 - pure S-prime and scalar-width shortcuts fail.
 
 This sector is already sufficient for a finite-size phenomenology result. Operator identification remains open after the completed transmission decisions; another radial exponent fit is not an identification step.
+
+The [#543 historical scorer audit](https://github.com/LightChainr/Matching-One/tree/e8ac2c97b40dacd20d0dae902ae7f6cdc38c1cc3/experiments/p543-covariance-nullspace-audit-20260901) centralizes discarded-mode checks across three generalized chi-square paths. It changes no default displayed statistic among 16 archived vector scores, changes only P50's interpretation boundary, and is closed as infrastructure rather than promoted to mechanism evidence.
 
 ## B. Projective birth-current / topology process
 

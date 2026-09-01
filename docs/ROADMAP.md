@@ -8,7 +8,7 @@ The repository is deliberately not opening another framework. `docs/STATUS.md` o
 
 ## Current execution — #537 theory only, random P0 empty
 
-The requested #154/#334 blocks have delivered their decisions. #537 is the sole P0 theory task and has no random-production budget. #154/#334/#337 remain open P1 research questions; #539 and #542 are P2 support/follow-up issues.
+The requested #154/#334 blocks have delivered their decisions. #537 is the sole P0 theory task and has no random-production budget. #154/#334/#337 remain open P1 research questions; #539 and #542 are P2 support/follow-up issues. #543's scorer QA is complete and closed after an existing-statistics-only audit, so it adds no production target.
 
 - **#154 Norm-4, completed at [f4999e29](https://github.com/LightChainr/Matching-One/commit/f4999e29612da16a3650f24d124fb59137f053d7):** 165M new permutations exclude strong B/C transmission and satisfy the weak net-response stop rule. Stop prioritizing this lag1 policy as the main H4 explanation; no top-up or lag/source swap.
 - **#334, completed at [d0a9daf1](https://github.com/LightChainr/Matching-One/commit/d0a9daf1132779205f119e9b4470f4eea9cb89c1) and [14b2c98e](https://github.com/LightChainr/Matching-One/commit/14b2c98ed3a252a2fe79ce5e124d9484b23a264f):** the source-normal intervention rejects complete two-score conditional-mean closure while its positive forecast survives; the separate contact intervention rejects both frozen residual bands. No same-block feature rescue or half-amplitude law.
@@ -47,7 +47,7 @@ Parked means “retain and cite”, not “continue adding handoff text”.
 
 ## Completed high-information blocks
 
-- **#50 N145->290 full curve:** complete. Corrected slope/root structure survives; a single multiplier shape fails.
+- **#50 N145->290 full curve:** complete. Corrected slope/root structure survives; the frozen `1e-10` score rejects a single multiplier, while #543 records that this conclusion is cutoff-sensitive because the discarded covariance direction is residual-incompatible.
 - **#57 norm-5 N325/425:** complete. Frozen H4 beats H12/H8; the child block alone remains compatible with zero.
 - **#205 same-N coalescence:** no longer an active queue entry; result/provenance remains available through history/registry.
 - **#155 current N130/N170 tangent gate:** complete negative decision for those readouts; **stop adding replicas** to the same rows.

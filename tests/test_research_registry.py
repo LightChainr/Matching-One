@@ -131,6 +131,19 @@ class ResearchRegistryTests(unittest.TestCase):
         self.assertIn(95, analysis_completed)
         self.assertIn(115, exact_completed)
 
+    def test_issue543_is_closed_support_not_active_execution(self) -> None:
+        self.assertEqual(self.ledger["version"], 13)
+        self.assertEqual(self.registry["version"], 13)
+        cleanup = self.ledger["repository_cleanup"]
+        self.assertEqual(cleanup["open_issue_count"], 31)
+        self.assertEqual(cleanup["closed_issue_count_current_cumulative"], 60)
+        self.assertEqual(cleanup["newly_closed_issues_sixth_sync"], [543])
+        self.assertNotIn(543, cleanup["open_issue_partition"]["parked_and_support_P2"])
+        support = {int(row["issue"]): row for row in self.registry["completed_branch_support"]}
+        self.assertEqual(support[543]["archived_vector_scores"], 16)
+        self.assertEqual(support[543]["default_displayed_statistics_changed"], 0)
+        self.assertEqual(support[543]["new_random_samples"], 0)
+
     def test_active_queue_is_explicit_and_has_no_gated_state(self) -> None:
         def walk(value):
             if isinstance(value, dict):

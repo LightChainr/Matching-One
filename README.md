@@ -12,13 +12,15 @@ p_c^{\mathrm{site}}(\mathbb Z^2)+p_c^{\mathrm{site}}(\mathrm{NN+NNN})=1.
 
 The strongest numerical result is a reproduced matching-odd orientation signal on square-site Gaussian tori. Independent primary blocks disfavor global zero and remain compatible with the frozen H4 / `N^-13/8` finite-size prediction. The norm-5 child block discriminates H4 from tested H12/H8 aliases but, by itself, remains compatible with zero.
 
-Several simpler stories are already retired: the N145->290 full curve is not one scalar multiplier; pure `P4[S'] ~ N^-5/4` is insufficient; one scalar width does not close the higher thermal jet. q=2/Jordan is not uniquely identified, and primitive square-bond `x≈4` spin-4 behavior remains a distinct sector from the square-site thermal-Q4 `x=21/4` candidate.
+Several simpler stories are already retired: the frozen N145->290 cutoff rejects one scalar multiplier, although this is a cutoff-specific result rather than a whole-space score; pure `P4[S'] ~ N^-5/4` is insufficient; one scalar width does not close the higher thermal jet. q=2/Jordan is not uniquely identified, and primitive square-bond `x≈4` spin-4 behavior remains a distinct sector from the square-site thermal-Q4 `x=21/4` candidate.
 
 The project does **not** claim a closed form for square-site `p_c` or a uniquely identified continuum operator.
 
 ## Current decision
 
 **#537 is the sole P0 theory task; P0 random production remains empty.** The requested independent tests are complete and their failed parameterizations are stopped. The broader #154/#334/#337 questions remain open at P1; #539 and #542 are P2 support/follow-up issues, not execution queues.
+
+Issue #543 is closed at research head [`e8ac2c97`](https://github.com/LightChainr/Matching-One/commit/e8ac2c97b40dacd20d0dae902ae7f6cdc38c1cc3). The shared covariance-nullspace QA re-scores all 16 archived pseudoinverse vectors from existing sufficient statistics: 15 are unchanged and P50 keeps its frozen `9.3520036848/2` rejection, but the discarded residual direction makes that result cutoff-sensitive. This is a correctness amendment with zero new samples and zero new evidence votes.
 
 - **#154:** the [165M-permutation result](https://github.com/LightChainr/Matching-One/blob/f4999e29612da16a3650f24d124fb59137f053d7/experiments/p154-prospective-transmission-20260831/REPORT.md) rejects the frozen strong entry/completion predictions and satisfies the weak net-response stop rule. Do not prioritize this lag1 policy as the main H4 explanation or top up its sample.
 - **#334:** the [1M-prefix source-normal intervention](https://github.com/LightChainr/Matching-One/blob/d0a9daf1132779205f119e9b4470f4eea9cb89c1/notes/p334-independent-normal-intervention-result.md) rejects complete two-score conditional-mean closure; the separate [600k-prefix contact intervention](https://github.com/LightChainr/Matching-One/blob/14b2c98ed3a252a2fe79ce5e124d9484b23a264f/experiments/p334-prospective-intervention-20260831/REPORT.md) rejects both frozen residual forecasts. No same-block feature rescue or new half-amplitude law follows.
