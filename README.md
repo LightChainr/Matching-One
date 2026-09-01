@@ -11,9 +11,11 @@ The repository is organized to expose the next mechanism-changing observation, n
 ## Start here
 
 **Current decision: the first canonical macro-window field-ratio route has
-been run and stopped, and the proposed ordinary-four-arm rank-one cancellation
-has now been falsified; the thermal-pivotal mechanism remains open at a signed
-landing-transport gate.**
+been run and stopped.  A provisional clean-two-bridge landing contract is
+non-rank-one, but the canonical ordinary-four-arm `P4`/root-Schur matrix is
+not yet decided.  An exact obstruction now forces its four arms to be recorded
+on a finite collar before outer reconnection; #537's next gate is that
+finite-collar transfer, its thermal jet and two conditional margins.**
 The [frozen N100/N400 pilot](results/regular-pair-macro-joint-u/REPORT.md)
 uses the same `Kreg`, the exact Euclidean window
 `L/4 <= d_T(x,y) <= 2L/5`, paired occupation/anchor streams, exact
@@ -45,21 +47,29 @@ q/E-weighted three-point influences. Existing rigorous `alpha4>1` is enough
 for raw summability but not for their position sum; the
 [literature bridge](notes/p337-thermal-pivotal-literature-bridge.md) shows that
 even the triangular-lattice value `alpha4=5/4` leaves the naive three-centre
-absolute account growing like `R^(1/4+o(1))`. The immediate unresolved object
-was the finite Schur-projected landing-matrix minor test. A published
-`branch_only` [N9 exact-root certificate at `b38fbb61`](https://github.com/LightChainr/Matching-One/blob/b38fbb61b0b10e2279cc673e78d36b90d402680d/notes/p537-ordinary-landing-minor.md)
-has now produced a nonzero, probability-weighted kernel/readout minor on a
-physical C4 orbit. Its determinant polynomial is coprime over `Q[p]` to the
-finite matching polynomial, hence cannot vanish at the unique matching root
-`p*=0.5865114551...`; the root Schur row operation leaves it invariant. The
-predecessor [N16 three-fibre certificate at `2c4942b4`](https://github.com/LightChainr/Matching-One/blob/2c4942b42825207930b7ec6c37fed5d38d9a020f/notes/p537-ordinary-four-arm-landing-minor.md)
-gives the transparent parameter-independent witness `det=-chi/2`. Together
-they kill the proposed pure-thermal/rank-one three-packet cancellation and
-remove the automatic promotion to a four-packet `R^4*pi4(R)^4` remainder. The
-unresolved object is the resulting signed ordinary-landing functional, with
-both mark separation and pivot distance retained and with an explicit
-near-critical root-window certificate—not another raw `C(r)` grid or a third
-macro window.
+absolute account growing like `R^(1/4+o(1))`.  The first finite rank test has
+now split into a result and a correction.  PR #509
+[`ec3941b0`](https://github.com/LightChainr/Matching-One/blob/ec3941b03b2694e827db1cba34766a82e6146a5a/experiments/p537-landing-matrix-preflight-20260901/REPORT.md)
+finds all projected minors nonzero for an explicit provisional N25
+six-block clean-two-bridge contract.  This kills that port-level rank-one
+model.  The N9/N16 calculations at
+[`b38fbb61`](https://github.com/LightChainr/Matching-One/blob/a3bc80c86585220f96dfeff022bd575b6c21d29f/notes/p537-ordinary-landing-minor.md)
+and `2c4942b4` remain exact raw controls, but the corrected branch head
+[`a3bc80c8`](https://github.com/LightChainr/Matching-One/blob/a3bc80c86585220f96dfeff022bd575b6c21d29f/notes/p537-finite-landing-transfer-definition.md)
+shows why they do not finish the canonical gate: their columns split one
+covariance identity, they do not contain separately normalized axis/tilted
+P4, and the row shear omits the bilinear `-beta H B` allocation.  The next
+branch-only refinement
+[`7051ad83`](https://github.com/LightChainr/Matching-One/blob/7051ad83a788becb0478de6e0c235376821c22f4/notes/p537-global-four-arm-emptiness.md)
+proves `Delta q=1-b_z-w_z` and `b_z+w_z<=1`: two globally distinct occupied
+branches and two globally distinct vacant separators cannot coexist.  Global
+component labels therefore make the intended row empty; local alternation is
+only a relaxed `near_block`.  The next object is the complete **finite-collar**
+landing matrix, outer attachment, value/thermal jet and two conditional
+margins—not another global aggregate, raw `C(r)` grid, tiny torus or third
+macro window.  On the same provisional N25 port contract, the exact
+same/reversed cyclic-order Wronskian is nonzero, so bridge order must remain a
+coordinate; it is not yet a canonical site-flip or reflection-parity result.
 
 **Completed finite predecessor: canonical Kreg's joint Q activation reaches original U beyond nearest neighbours.**
 The [completed exact result](results/regular-pair-joint-u/REPORT.md),
@@ -143,31 +153,25 @@ the negative N25 observable/rank total is not explained by a dense population
 of direct local q/E flips in this subset.
 
 The next task is sharper than a generic Delivery-A tail bound. PR #509 at
-`2785e3bb` writes the complete response as the root-conditioned Hessian
+`ec3941b0` retains the complete response as the root-conditioned Hessian
 `partial_u partial_epsilon Yhat=J_N/A_N`, with `u=M` the matching mean; kernel,
-readout, root and slope enter one Schur-projected signed covariance. #537's
-first bounded falsifier is now complete on the `branch_only`
-[`analysis/p537-landing-minors-20260901` result at `b38fbb61`](https://github.com/LightChainr/Matching-One/tree/b38fbb61b0b10e2279cc673e78d36b90d402680d).
-On the honest `3x3` quotient, one branch-free path-to-cycle landing orbit has
-alternating incident ports and no extra occupied branch. Its exact matrix has
-rows `q,E` and columns kernel reconnection/readout pivotal. At `p=1/2` its
-determinant is `1001/536870912`; at the actual finite matching root the
-determinant polynomial is coprime to
-`M(p)=-4p^9+18p^8-18p^7+6p^3-1`, giving a certified nonzero value. C4 orbit
-summing is explicit and the root Schur row operation has determinant one.
-The N16 predecessor further resolves entry, kernel-only and completion fibres
-into `[[-1/4,0],[chi+R,2chi]]`, with `det=-chi/2` independent of `R`, the
-Schur coefficient and common Bernoulli centering. These are finite algebraic
-counterexamples, not a spatial probability lower bound or a completed
-original-U asymptotic.
+readout, root and slope enter one Schur-projected signed covariance.  The
+[corrected finite-transfer contract](notes/p537-signed-landing-transport-contract.md)
+allocates the full Schur bilinear to each `(pair,z)` fibre, transports
+anonymous component labels under C4, forms axis and tilted laws separately,
+then takes P4 value and thermal-jet minors.  The N9 value
+`1001/536870912` and N16 `-chi/2` are useful negative controls for a pipeline
+that silently drops either midpoint channel; they are not the final
+source/thermal minor.
 
-The surviving task is therefore a **signed ordinary-four-arm landing
-transport theorem**, not a search for an extra arm. It must keep kernel-only
-rerouting distinct from essential-cycle entry/completion, stratify both
-`d(x,y)` and `d(z,{x,y})`, retain the full Schur/root terms, and show the
-resulting signed dyadic sum has the rate required for original U together
-with exact-`p_c` to pooled-root transport. A fifth/sixth-arm collision tree is
-no longer licensed merely by finite landing algebra.
+The immediate mechanism decision is now: for every conserved outer landing
+sector, test whether the complete Schur-P4 weight matrix is conditionally
+centered in both its endpoint-landing and pivot-transition indices.  Two zero
+margins license a two-defect/five-or-six-arm remainder; one surviving margin
+freezes the minimal leading signed four-arm carrier.  Only after this finite
+decision should the selected object be decomposed jointly by `d(x,y)` and
+`d(z,{x,y})` and transported from exact `p_c` to the pooled root.  This keeps
+extra arms as a consequence of a proved cancellation, not an assumption.
 #537 also gives an all-`L` remote rerouting example:
 fixed nearby marks, a pivot at distance `Theta(L)`, unchanged rank/shared-count,
 yet `g:1/4 -> 1/2`. This forces a genuine two-scale carrier classification.
@@ -206,7 +210,7 @@ half-line is complete; another m point is not pending.
 
 | Mechanism question | Delivered decision | Attention now |
 |---|---|---|
-| Does canonical joint Q activation reach original U beyond NN contact? | Yes: J2(25)=−.0055194314248394015 and nonNN=−.0037683569704366022, both exactly separated from zero. The fixed N100/N400 macro ratio pilot stopped unresolved; #536's 64-counter carrier replay completed; `b38fbb61` then proved a probability-weighted ordinary-landing minor nonzero at the exact finite matching root. | Global additive, NN-only and pure-thermal/rank-one ordinary-landing closures are excluded. #537 is the sole P0: prove the surviving two-scale signed landing transport and pooled-root certificate. Do not retune the macro window, add replay counters or promote automatically to an extra-arm remainder. |
+| Does canonical joint Q activation reach original U beyond NN contact? | Yes: J2(25)=−.0055194314248394015 and nonNN=−.0037683569704366022, both exactly separated from zero. The fixed N100/N400 macro ratio pilot stopped unresolved; #536's 64-counter carrier replay completed; `ec3941b0` then rejected the explicit provisional clean-two-bridge rank-one contract. | Global additive and NN-only closures are excluded. The canonical ordinary-four-arm transfer remains open: #537 is the sole P0 for the complete P4/Schur matrix and its two conditional margins. Do not retune the macro window, add replay counters, promote raw N9/N16 minors, or assume an extra-arm remainder before the margins vanish. |
 | Does canonical Kreg transmit a noncontact Q response after occupation averaging? | Yes: C64/r16=6.85546875e−6 and its 99% interval excludes zero. Two fresh 200k blocks; 32 within-configuration pairs remain correlated. | Completed spatial null, distinct from J2. The s=2 signed contrast carries all observed nonzero entries, without ruling out rare s=3/4 events or identifying a field. |
 | Does fixed canonical Kreg activate original U through Q? | Yes: W_Q=−.04503611397592696 at N25; its direct epsilon response at Q1 is exactly zero. | Completed first mixed response; the completed joint response above uses the same canonical source, not a fitted counterterm. |
 | Can an entry-regular homogeneous one-site completion retain old direct V? | No for the whole original-binary-site class, including both vacant and occupied tensors: only a common Bernoulli parameter survives Q1. | This mechanism is excluded; bounded occupation reweighting, specified singular completions and multi-site vertices are outside the theorem. |

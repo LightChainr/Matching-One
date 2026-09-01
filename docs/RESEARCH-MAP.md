@@ -36,23 +36,35 @@ N100/N400 axis/tilted pair and `[1/4,2/5]` macro window, plus the existing
 L32/L64 carrier streams. Acquisition: 50k paired configurations per macro
 size, then a deterministic replay of 32 old counters per L32/L64 stream.
 That replay is complete: 5,242,880 callbacks pass, with 18 sparse
-kernel-changing events and no new seed. #537's projected-landing falsifier is
-also complete: `branch_only` [`b38fbb61`](https://github.com/LightChainr/Matching-One/blob/b38fbb61b0b10e2279cc673e78d36b90d402680d/notes/p537-ordinary-landing-minor.md)
-gives a probability-weighted C4 landing minor that is algebraically nonzero at
-the unique N9 matching root. The next separating intervention is the surviving
-two-scale signed ordinary-landing dyadic theorem, not more replay, tiny-torus
-scans or a larger repetition of the macro ratio.
+kernel-changing events and no new seed. #537's first projected test is also
+complete for one **provisional** six-block clean-two-bridge contract:
+[`ec3941b0`](https://github.com/LightChainr/Matching-One/blob/ec3941b03b2694e827db1cba34766a82e6146a5a/experiments/p537-landing-matrix-preflight-20260901/REPORT.md)
+finds all declared minors nonzero. The corrected N9/N16 branch
+[`a3bc80c8`](https://github.com/LightChainr/Matching-One/blob/a3bc80c86585220f96dfeff022bd575b6c21d29f/notes/p537-finite-landing-transfer-definition.md)
+shows that their raw kernel/readout minors are supporting controls, not the
+complete ordinary P4/Schur matrix. The next separating intervention is that
+complete matrix and its two conditional margins, not more replay, tiny-torus
+scans or a larger repetition of the macro ratio.  The later site-fibre branch
+[`7051ad83`](https://github.com/LightChainr/Matching-One/blob/7051ad83a788becb0478de6e0c235376821c22f4/notes/p537-global-four-arm-emptiness.md)
+sharpens what “complete” means: `Delta q=1-b_z-w_z` and rank monotonicity
+force `b_z+w_z<=1`, so four globally distinct occupied/vacant arms are an
+empty state.  The row must be labelled on a finite collar before outer
+reconnection, with the outer attachment retained separately.  A global
+component aggregate is structurally non-scoreable; local alternation is only
+the relaxed `near_block`.
 
-PR #509 (current head `2785e3bb`) proves at `eed2190c` that the *raw*
+PR #509 (current head `ec3941b0`) proves at `eed2190c` that the *raw*
 canonical pair susceptibility is absolutely summable at exact criticality;
 it does not control the thermal derivative, root motion or original U. Its
 latest audit supplies the exact root-conditioned Hessian
-`partial_u partial_epsilon Yhat=J_N/A_N`. The rank-one/minor falsifier has now
-returned nonzero at `b38fbb61`: kernel reconnection and rank/readout pivotal
-already span two directions on an ordinary branch-free C4 landing orbit, and
-root Schur projection does not collapse them. Issue #537 remains the open
-canonical P0 for their signed spatial transport; #536 is closed provenance
-and #539 is P2 finite-N25 support.
+`partial_u partial_epsilon Yhat=J_N/A_N`. The finite port-level preflight is
+non-rank-one, but the canonical ordinary branch-free matrix still needs
+global centering, `beta_lambda`, both geometry laws, the full C4/P4 action and
+finite-collar arm transport.  Its same/reversed cyclic-order Wronskian is
+exactly nonzero under the provisional port contract, so that order remains a
+candidate slow coordinate; it is not yet a canonical site-flip/parity result.
+Issue #537 remains the open canonical P0 for this finite margin decision;
+#536 is closed provenance and #539 is P2 finite-N25 support.
 PR #533 (current head `5aa929a6`) independently closes the complete specified
 axis/tilted strong-source sign law under `L/m^2 -> 0`, including all reversals,
 clouds, topology and sector odds. The earlier nonlocal west-step crossover is
@@ -137,11 +149,15 @@ two-shared-component factorization `a_xy=kappa_x kappa_y`. Keep the
 `s=2/3/4` layers additive in the same dependency block. #536 Delivery B is
 now [complete](../results/p337-thermal-pivotal-preflight/REPORT.md): its 64
 old counters expose a sparse, shell-localized kernel-changing interface but no
-centered population sign. #537's first Delivery-A falsifier has now returned a
-nonzero C4/root-Schur minor at the exact finite matching root. The rank-one
-route and its automatic summable four-packet replacement are stopped; retain
-the surviving signed ordinary-landing functional and control its two-scale
-spatial sum. Its all-L remote rerouting
+centered population sign. #537's provisional clean-two-bridge falsifier has
+returned nonzero projected minors, while the corrected N9/N16 results remain
+raw controls. The canonical finite gate is now frozen by the
+[complete transfer contract](../notes/p537-signed-landing-transport-contract.md):
+test value and first-thermal-jet minors only after full Schur allocation,
+axis/tilted P4, C4 transport and anonymous-component quotienting. Then test
+the two conditional margins. Two zero margins license a two-defect spatial
+remainder; a surviving margin identifies the minimal leading four-arm sector.
+The all-L remote rerouting
 also shows that fixed shared-count and rank do not make a carrier local. The
 [literature bridge](../notes/p337-thermal-pivotal-literature-bridge.md) shows
 why three independent four-arm factors are insufficient and why six-arm input

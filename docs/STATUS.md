@@ -47,30 +47,44 @@ did not perform the lifecycle change. Highest attention is #537's
 root-conditioned Hessian gate. PR #530 `0e1917f9`, PR #531 `a5375b5` and PR #532 `2e1c57b4`
 are reusable unmerged interfaces, not `main` facts.
 
-PR #509 (current head `2785e3bb`) proves at `eed2190c` that the raw
+PR #509 (current head `ec3941b0`) proves at `eed2190c` that the raw
 canonical pair susceptibility is absolutely summable at exact criticality.
 That theorem does not control the thermal derivative, moving root or original
 U: the open object is the `q/E`-weighted dyadic pivotal influence and its
 remote merger/topological carriers. Its latest audit proves the exact finite
-compression `partial_u partial_epsilon Yhat=J_N/A_N`. The advertised bounded
-rank-one falsifier is now complete on the `branch_only`
-[N9 ordinary-landing result `b38fbb61`](https://github.com/LightChainr/Matching-One/blob/b38fbb61b0b10e2279cc673e78d36b90d402680d/notes/p537-ordinary-landing-minor.md).
-The physical C4 orbit's probability-weighted `q/E` by kernel/readout matrix
-has determinant `1001/536870912` at `p=1/2`; its determinant polynomial is
-coprime to the finite matching polynomial and therefore remains nonzero at
-the unique matching root. Root Schur projection preserves the determinant.
-The N16 predecessor gives the transparent minor `-chi/2`. Thus ordinary
-landing is not forced to rank one: the proposed pure-thermal three-packet
-cancellation and automatic four-packet/extra-arm promotion stop here.
+compression `partial_u partial_epsilon Yhat=J_N/A_N`.  Its N25
+[provisional clean-two-bridge preflight](https://github.com/LightChainr/Matching-One/blob/ec3941b03b2694e827db1cba34766a82e6146a5a/experiments/p537-landing-matrix-preflight-20260901/REPORT.md)
+has six of six nonzero projected minors for both surviving C4 modes and their
+sum, so that explicit port-level rank-one contract fails.  It does not yet
+formalize off-port branch-free ordinary landing.  The corrected N9/N16 branch
+head [`a3bc80c8`](https://github.com/LightChainr/Matching-One/blob/a3bc80c86585220f96dfeff022bd575b6c21d29f/notes/p537-finite-landing-transfer-definition.md)
+therefore demotes their nonzero raw kernel/readout minors to supporting
+controls: they lack the independent axis/tilted P4 laws and the complete
+bilinear `-beta H B` Schur allocation.
+The newer `branch_only` site-fibre head
+[`7051ad83`](https://github.com/LightChainr/Matching-One/blob/7051ad83a788becb0478de6e0c235376821c22f4/notes/p537-global-four-arm-emptiness.md)
+adds an exact state-space correction.  For an alternating site,
+`Delta q=1-b_z-w_z` and rank monotonicity gives `b_z+w_z<=1`; the putative
+row with two globally distinct occupied branches and two globally distinct
+vacant matching separators is empty on every finite torus.  Canonical
+ordinary landing must therefore be recorded at a finite collar before outer
+reconnection, with the outer attachment/rank transition retained separately.
+A global-component aggregate is not scoreable as that matrix, and a local
+alternating `near_block` is only a relaxation.  The same branch retains an
+exact nonzero same/reversed cyclic-order Wronskian under the provisional N25
+port contract, identifying a second coordinate there without promoting it to
+a canonical site-flip or physical parity result.
 #537 also gives an all-L remote rerouting with
 fixed near marks, unchanged rank/shared-count and `g:1/4->1/2`, forcing a
 two-scale carrier geometry. The
 [literature bridge](../notes/p337-thermal-pivotal-literature-bridge.md) shows
 that a naive three-four-arm product does not close the bulk absolute sum even
 with triangular `alpha4=5/4`; six-arm input closes only a proved fused
-collision annulus. The primary target is now the two-scale signed
-ordinary-landing spatial sum and exact-`p_c` to pooled-root transport, not a
-five/six-arm replacement proof.
+collision annulus. The primary target is now the
+[complete finite-collar landing matrix, thermal jet and two conditional margins](../notes/p537-signed-landing-transport-contract.md).
+Only two sectorwise zero margins license a two-defect arm remainder; a
+surviving margin identifies the leading signed four-arm carrier.  Spatial
+transport follows that decision rather than preceding it.
 PR #533 (current head `5aa929a6`) separately closes the complete specified
 axis/tilted strong-source sign law under `beta=L/m^2 -> 0`. Its all-reversal
 kernel, clouds, extra-carrier/topology bounds and sector-odds quotient remove
@@ -166,13 +180,17 @@ canonical N25 J2 above now measures nonzero global transmission. No
 universal field norm is asserted. The completed relation `W_alpha=W_Q-alpha V_old`
 still makes a single mixed-U coefficient completion-dependent.
 
-**Next:** Delivery B has isolated a sparse finite carrier interface and stopped;
-the exact landing-minor falsifier has also returned nonzero and stopped its
-rank-one/four-packet route. Prove the surviving signed ordinary-landing dyadic
-transmission inside the full root/slope functional, stratified jointly by mark
-separation and pivot distance. Preserve kernel reconnection and rank/readout
-pivotal as distinct channels, and retain the predeclared two-bridge,
-remote-rerouting and topology-only outcomes. The
+**Next:** Delivery B has isolated a sparse finite carrier interface and stopped.
+The provisional clean-two-bridge contract is non-rank-one; the canonical
+ordinary-four-arm gate is still open.  Build the complete P4/root-Schur
+landing matrix with global centering and `beta_lambda`, then test its value
+and first-thermal-jet minors together with the endpoint-landing and
+pivot-transition conditional margins. Preserve kernel reconnection and
+rank/readout pivotal inside one signed fibre, and retain the predeclared
+two-bridge, remote-rerouting and topology-only outcomes. If both margins
+vanish, prove the resulting two-defect dyadic transmission jointly in mark
+separation and pivot distance; if one survives, freeze that sector as the
+leading carrier. The
 completed field-ratio contrast was not evaluated because the pilot failed its
 simultaneous-sign and cost gates; it is not waiting for more samples.
 [Next Targets](NEXT-TARGETS.md) owns acquisition. The
@@ -650,7 +668,7 @@ This delta is placed before the main claim ledger because it changes what the te
 | Latest result | Source / integration | Scientific consequence |
 |---|---|---|
 | Canonical macro-window joint-U pilot | `open_pr` #267; [report](../results/regular-pair-macro-joint-u/REPORT.md) | N100 `T=+11.877846`, interval `[−2.255616,26.011308]`; N400 `T=−542.503823`, interval `[−1307.642507,222.634861]`. Opposite signs, both include zero, and N400 projects above the 2M ceiling: route stopped, `D17/D21` not evaluated. Next target is the `q/E`-weighted thermal-pivotal carrier, not a macro top-up |
-| N25 midpoint split, carrier replay and ordinary-landing minor | Split remains closed Issue #536 attachment only; 64-counter replay is `open_pr` #267; exact N9 minor is `branch_only` [`b38fbb61`](https://github.com/LightChainr/Matching-One/blob/b38fbb61b0b10e2279cc673e78d36b90d402680d/results/p537-landing-minors/exact-n9.json); #537 remains open canonical P0 | Observable/rank pivot dominates issue-only all-pair J2 negatively. Delivery B found 18 sparse kernel changes. The probability-weighted C4 landing minor is nonzero at the exact finite root, so pure-thermal rank one and automatic four-packet promotion are excluded. Next prove the two-scale signed ordinary-landing tail—not more counters, tiny tori or extra-arm substitution. |
+| N25 midpoint split, carrier replay and landing transfer | Split remains closed Issue #536 attachment only; 64-counter replay is `open_pr` #267; provisional N25 clean-two-bridge preflight is `open_pr` #509 at [`ec3941b0`](https://github.com/LightChainr/Matching-One/blob/ec3941b03b2694e827db1cba34766a82e6146a5a/experiments/p537-landing-matrix-preflight-20260901/REPORT.md); corrected canonical transfer is `branch_only` [`a3bc80c8`](https://github.com/LightChainr/Matching-One/blob/a3bc80c86585220f96dfeff022bd575b6c21d29f/notes/p537-finite-landing-transfer-definition.md) | Observable/rank pivot dominates issue-only all-pair J2 negatively. Delivery B found 18 sparse kernel changes. The provisional port contract is non-rank-one, while N9/N16 are supporting controls rather than the complete P4/Schur falsifier. #537 now tests the complete value/thermal-jet matrix and two conditional margins before either signed-tail or extra-arm promotion. |
 | N100 and N400 three-shape production | `open_pr` #484; N400 raw `3e01b49`, captured head `705819e`; #485 is N100 same-stream reuse | N100 necessary common density-map statistic53.91436/6 becomes3.90086/6 at N400, p=.69009. One N1002M block and one independent N4008M block, with shapes paired inside each. Nonrejection is not model recovery; a fitted negative cross-scale amplitude has an interval spanning zero |
 | Intrinsic rank-clock broadening | `branch_only` / `fb1a944`, [source](https://github.com/LightChainr/Matching-One/blob/fb1a944e1ef34e9b9dfcf32c59af25f44ce43d9a/notes/p267-rank-clock-width-decomposition.md); cited by #484, not in its captured tree | Rank-step centered z variance1.432585±.016441→2.094751±.074748;96.895%±.507pp of the canonical increase remains. This is a signed profile, not a threshold probability distribution; the selected two-size .237960±.013519 width fingerprint is not a critical exponent |
 | Ordinary scalar transport at N400 | `branch_only` / `162fe94`, [source](https://github.com/LightChainr/Matching-One/blob/162fe94e7986eaed177e58af42900acfffbf4e4d/notes/p267-ordinary-scalar-clock-n400.md); cited by #484, not in its captured tree | Source-defined ordered height-ratio comparison .0769793/2 is weak, as is its cross-scale change. This no-Jacobian class differs from density transport; no scalar recovery or resolved sign reversal |

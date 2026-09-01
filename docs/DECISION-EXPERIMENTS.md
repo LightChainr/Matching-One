@@ -36,7 +36,7 @@ kernel与distinct-site坐标不变性。它是同一精确总体上的实现交�
 两尺寸独立；每配置32个pair是相关平均。它排除有限非接触空间零假设，
 不是J2，也不把两个尺寸的ratio变成已识别指数。
 
-PR #509（当前head `2785e3bba2eb6a70fd4f2d390d3b3c2701a99d85`）的
+PR #509（当前head `ec3941b03b2694e827db1cba34766a82e6146a5a`）的
 [baa5d33b选择定理](https://github.com/LightChainr/Matching-One/blob/baa5d33b2f87b2868aa0cb9d3f6518c93dbf3bff/experiments/p337-regular-spatial-support-20260901/RESULT.md)
 进一步证明：非相邻两点至多共享一个外部占据组件时，首阶Q激活精确为零；
 实际两组件外部给`a_xy=1/16`，且
@@ -74,7 +74,7 @@ axis/tilted共用occupation与anchor流，`total/s2/s>=3`也是同一源的相�
 不能拆成独立票。100个paired batches才是推断单位。pilot到此停线；其它探索
 仍可并行，优先级不是许可或任务锁。
 
-## 当前前瞻判决：有限landing falsifier已非零，转入signed spatial transport
+## 当前前瞻判决：先完成canonical landing transfer，再选择tail机制
 
 已关闭的Issue #536保留一项**issue-only、非main事实**的N25 midpoint精确分解；
 仓库团队已把唯一canonical P0迁移到开放的
@@ -92,20 +92,34 @@ callback（L32 11、L64 7），没有kernel-preserving topological callback；
 L64非零项属于external shell 2/3 shared-transition。这个结果完成语义与成本
 preflight，不估计中心化总体或full J2，也不授权追加counter。
 
-PR #509 `2785e3bb`给出精确压缩：取`u=M`为热坐标，则
-`partial_u partial_epsilon Yhat=J_N/A_N`。#537的有限判伪器已经返回非零。
-`branch_only` [N9证书`b38fbb61`](https://github.com/LightChainr/Matching-One/blob/b38fbb61b0b10e2279cc673e78d36b90d402680d/notes/p537-ordinary-landing-minor.md)
-在无额外占据分支的真实C4 landing轨道上，精确构造以`q,E`为行、kernel
-reconnection/readout pivotal为列的概率加权矩阵；`p=1/2`时det为
-`1001/536870912`，det多项式与有限matching-root多项式在`Q[p]`中互素，
-所以在唯一finite matching root也非零。root Schur行变换保持det不变。
-N16前置证书另给`det=-chi/2`。因此“leading ordinary-four-arm landing只是一维
-热坐标”的结构性路线已被淘汰；不再自动提升到四packet或五/六臂余项。
+PR #509 `ec3941b0`给出精确压缩：取`u=M`为热坐标，则
+`partial_u partial_epsilon Yhat=J_N/A_N`。其显式N25 six-block
+clean-two-bridge临时合同的P4/root minors全部非零，故该端口级rank-one模型被
+排除。修正后的`branch_only`
+[`a3bc80c8`](https://github.com/LightChainr/Matching-One/blob/a3bc80c86585220f96dfeff022bd575b6c21d29f/notes/p537-finite-landing-transfer-definition.md)
+同时明确：N9的`1001/536870912`与N16的`-chi/2`只是raw supporting controls。
+它们把同一covariance derivative拆成kernel/readout两列，缺少独立归一化的
+axis/tilted P4和完整`-beta H B`双线性Schur项，不能冒充canonical ordinary
+landing falsifier。
 
-Delivery A现在直接作用于这个存活的signed ordinary-landing functional：用
-[thermal-pivotal接口](../notes/regular-pair-thermal-pivotal-gate.md)和完整
-root-aware U权重，为以下三类carrier分别给双尺度signed dyadic tail，保留
-`d(x,y)`与`d(z,{x,y})`，而不是再画raw距离网格或搜索更多tiny torus：
+因此Delivery A先执行
+[complete transfer contract](../notes/p537-signed-landing-transport-contract.md)：
+在global root/means/`R`/`beta_lambda`下形成每个`(pair,z)` fibre。最新
+`branch_only`精确定理
+[`7051ad83`](https://github.com/LightChainr/Matching-One/blob/7051ad83a788becb0478de6e0c235376821c22f4/notes/p537-global-four-arm-emptiness.md)
+给出`Delta q=1-b_z-w_z`及`b_z+w_z<=1`：两条全局occupied分支和两条全局
+vacant separator不能同时独立。因此必须先把四臂运输到固定finite collar，再把
+outer reconnection/rank attachment作为独立状态；global-component表不能作为
+canonical矩阵，local alternating `near_block`只是放宽控制。随后运输匿名组件
+C4作用，分别形成axis/tilted law，再检查P4后的value与first-thermal-jet minors。
+同一外层landing sector还要检查两个条件边缘：endpoint-landing与
+pivot-transition。两者都为零，才把以下三类carrier送入双缺陷signed dyadic
+tail；任一边缘非零，则冻结该sector为leading four-arm mechanism，而不是用
+额外臂或新descriptor掩盖它：
+
+同一N25 provisional端口合同的same/reversed bridge-order `(F,dF/dM)`
+Wronskian已精确排除零，所以finite-collar列必须保留cyclic order。该signed
+contrast尚未因而成为物理reflection-parity sector，也不是独立数据票。
 
 | 预设结果 | carrier与判决条件 | 若另外两类已有预设上界，可排除的“必需机制” |
 |---|---|---|

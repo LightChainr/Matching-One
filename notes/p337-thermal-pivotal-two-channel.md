@@ -232,7 +232,7 @@ pivotal event 精确命名；不要求先拟合指数。
 
 ### 6.1 先做有限维判伪器，再决定哪一个 tail 值得证明
 
-PR #509 当前 head `2785e3bb` 把完整 original-U 组合压缩为 root-conditioned
+PR #509 当前 head `ec3941b0` 把完整 original-U 组合压缩为 root-conditioned
 Hessian。若 `M(p(u,epsilon),epsilon)=u` 且
 `Yhat(u,epsilon)=Y(p(u,epsilon),epsilon)`，则
 
@@ -246,16 +246,25 @@ Hessian。若 `M(p(u,epsilon),epsilon)=u` 且
 Schur 投影：`T_t=<H,(a-Ea)S-beta B>_pool`。这意味着“raw kernel 非零”或
 “某个 midpoint 列很大”都可能在完整 Hessian 中结构性抵消。
 
-#537 因此把交付 A 的第一步收紧为一个有界精确判伪器：在相同 `C4` 与 Schur
-投影后，构造 ordinary four-arm landing source/thermal transfer matrix，并检查
-其所有 `2x2` minors。
+#537 因此把交付 A 的第一步收紧为一个有界精确判伪器：在 global root、
+geometry-specific centering、逐source `beta_lambda`、相同 C4 与 axis/tilted P4
+投影后，构造 ordinary four-arm landing transfer matrix，并检查其所有 value 与
+first-thermal-jet `2x2` minors。
 
-- 任一 projected minor 非零，直接否定“leading three-packet 只是一个 pure
-  thermal coordinate”；随后应转向该非秩一 landing functional 的 signed
-  dyadic bound。
-- 所有 minors 为零，只使 four-packet remainder 成为最简存活机制；它仍需
-  把 `R^4*pi4(R)^4` 包络、collision tree 与 near-critical root window 连成
-  定理，不能把有限秩一观察写成证明。
+这里的landing必须是finite collar，而不是global component label。最新
+`branch_only`
+[`7051ad83`](https://github.com/LightChainr/Matching-One/blob/7051ad83a788becb0478de6e0c235376821c22f4/notes/p537-global-four-arm-emptiness.md)
+精确证明`Delta q=1-b_z-w_z`且`b_z+w_z<=1`，所以两条全局occupied分支与
+两条全局vacant separator同时独立的行为空集。下一producer应把四臂只运输到
+固定collar，另存outer attachment/rank transition；local alternating
+`near_block`只是放宽控制，不能作为canonical ordinary row。
+
+- 任一最终 projected minor 或其 first thermal jet 非零，直接否定 exact
+  pure-thermal factorization；随后检查其尺度，而不是把有限非零自动写成
+  asymptotic leading law。
+- 所有 minors/jet 为零后，还要逐外层 sector 检查 endpoint-landing 与
+  pivot-transition 两个条件边缘。双边缘为零才许可 two-defect extra-arm remainder；
+  任一边缘存活则冻结为最小 leading four-arm carrier。
 
 这个有限判伪器比直接从三个 carrier 各自开始做完整渐近证明更先验地缩小机制
 空间；它不新增 production、自由 descriptor 或统计票。
@@ -301,9 +310,11 @@ shared-transition。没有观察到kernel-preserving topological callback。
 - N25 首次 midpoint 通道拆分由已关闭 #536 保留为来源，不再作为“下一首次任务”。
 - 仓库当前可安全采用的是恒等式、反例语义、#537 的理论目标与已完成 B 的有限
   输出；issue-only 数值必须继续携带未独立导入/验证标签。
-- 下一高信息增益对象是 #537 的 projected landing-matrix minor 判伪器。它决定
-  随后证明 non-rank-one signed landing tail，还是证明 rank-one 后的 four-packet
-  absolute remainder；不是更多 counter、再拟合 raw `C(r)` 或扩大 macro ratio。
+- PR #509 `ec3941b0` 已排除 provisional clean-two-bridge 端口合同；`a3bc80c8`
+  同时把 N9/N16 raw minors 降为 supporting controls。下一高信息增益对象是
+  canonical finite-collar landing matrix 的 value/thermal jet 与两个条件边缘。它决定
+  随后证明 leading signed four-arm sector，还是证明 two-defect remainder；不是
+  更多 counter、再拟合 raw `C(r)` 或扩大 macro ratio。
 - #539 只做 P2 exact-N25 reproducibility support，且应先导入/消费 #536 已有附件，
   不把完整 `2^25` rest-flip 枚举重复一遍。
 - 本卡不把 midpoint channel 称为场、因果份额或独立 evidence，也不把 remote

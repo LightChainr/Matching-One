@@ -297,6 +297,14 @@ square-site 文献只证明 `alpha4>1`；更强的是，三角格精确 `alpha4=
 需要从“两条 shared components 必须共同连接三个 landing 区”的几何中再提取一个全局因子，
 或利用 midpoint 中心化得到 signed cancellation。
 
+还要区分“某个 dyadic 衰减”与 original-U 的定量速率。在条件性采用
+`D_N~N^(3/8)`、`A_N~N^(13/8)` 且 `N=L^2` 时，目标是
+`T_N=o(N^(-5/4))`；计入 pair source 的平移归一化后，per-origin 空间和必须达到
+`o(L^(-1/2))`。因此三角格 `alpha4=5/4` 诊断下，balanced block 不是只缺
+`R^(-1/4-epsilon)` 才“开始衰减”，而是至少缺严格超过
+`R^(-3/4)` 的 signed landing gain 才达到这个 original-U 标尺。若不采用这些 baseline
+尺度，就必须把 `D_N,A_N,R_N,R_{p,N}` 的实际界显式留在验收式中。
+
 六臂结果解决的是 `r<<R` 的尺度比求和。它不解决 `r=Theta(R)` 的顶层 bulk，也不控制
 `Delta_zg=0` 但 `Delta_zq/E!=0` 的 topological pivotal。
 
@@ -335,8 +343,9 @@ square-site 文献只证明 `alpha4>1`；更强的是，三角格精确 `alpha4=
 1. endpoint 项用已完成 raw tail 删除；
 2. 把剩余 `(x,y,z)` 分成 well-separated、`x/z` 或 `y/z` fused、`x/y` fused、far merger；
 3. fused tree 用(9)/(15)在尺度比上求和；
-4. well-separated tree 必须证明一个比(20)多出至少 `R^(-1/4-epsilon)` 的共同
-   landing/connection 因子（三角格指数只作为强度诊断）；
+4. well-separated tree 至少要多出共同 landing/connection 因子。若只要求
+   dyadic block 衰减，三角格诊断的门槛是 `R^(-1/4-epsilon)`；若要求上述
+   original-U 速率，门槛提高到严格超过 `R^(-3/4)`；
 5. observable tree 必须先证明 `Delta_zq/E` 的有限 quad-pivotal/homology-arm cover。
 
 现有文献只提供第1和第3步的外部输入，没有第4、5步。因此(23)是**明确待证命题**，不是
@@ -366,8 +375,11 @@ square-site 文献只证明 `alpha4>1`；更强的是，三角格精确 `alpha4=
 式(18)--(19)提示一条新的证明路线：对 dyadic pair source 建立 **adjacent-level
 cross-spectral/revealment inequality**，或用 multi-arm IIC/separation coupling 证明在固定
 landing sigma-field 后 centered midpoint weight 的条件均值多衰减一个幂。为关闭(21)，这个
-额外幂在三角格诊断下至少要超过 `1/4`。当前 GPS/Schramm--Steif 定理只控制单一 crossing
-的平方谱或正 pivotal mass，没有这条 cross-observable signed 估计。
+额外幂在三角格诊断下至少要超过 `1/4`；为达到上述 original-U rate 则需超过 `3/4`。
+当前 GPS/Schramm--Steif 定理只控制单一 crossing 的平方谱或正 pivotal mass，没有这条
+cross-observable signed 估计。最稳的有限目标因而是两个条件边缘都为零，使非零余项支付
+两次 coupling defect；`R^4*pi4(R)*pi5(R)^2` 已在现有定性四臂输入下超过该速率，
+而一次 `pi4->pi6` 升级仍需要额外的定量指数和。
 
 若(23)失败而(24)成立，结论应是“thermal tail 由结构性抵消关闭”，不是“没有 pivotal”。
 若(24)也失败，下一结果必须在预先命名的 three-site carrier（two-bridge factorized、
@@ -392,9 +404,11 @@ landing sigma-field 后 centered midpoint weight 的条件均值多衰减一个�
 
 因此，文献给出的最强仓库判决不是“thermal gate 已关闭”，而是：**raw gate 已闭合；
 fused-scale 技术已具备；唯一未决主门是 bulk/topological 的 signed 或 absolute 三位置传输。**
-PR #509 `2785e3bb` / #537 新给出的 projected landing-matrix minor 是这套文献工具之前的
-有限判伪层：先决定 leading three-packet 是否真是 rank-one thermal coordinate，再只为存活的
-non-rank-one signed functional 或 four-packet remainder 证明相应尾界。
+PR #509 `ec3941b0` 已经排除显式 provisional clean-two-bridge port contract；
+`a3bc80c8` 则纠正 N9/N16 raw minor 的适用范围。文献工具之前的 canonical 有限层现在是：
+按完整 Schur fibre、两几何 P4 与 C4 构造 value/thermal-jet matrix，再检查两个条件边缘。
+双边缘消失才允许把非零余项升级为 two-defect/extra-arm 事件；否则应冻结存活的 leading
+four-arm sector，再为它证明有符号尺度律。
 
 ## 使用的第一手 arXiv 论文
 

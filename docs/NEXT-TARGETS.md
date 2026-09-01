@@ -1,11 +1,11 @@
-# Next Targets: From a Nonzero Landing Minor to Signed Spatial Transport
+# Next Targets: Complete the Landing Transfer, Then Choose the Tail
 
 **Updated 2026-09-01.** This is the single attention board, not a permission
 system. Parallel work remains open; no Issue is closed or locked **by this board**.
 History and definitions remain in [Decisions](DECISION-EXPERIMENTS.md),
 [Status](STATUS.md) and the [scientific ledger](../analysis/research_ledger.yaml).
 
-## Default attention after the completed macro pilot and landing falsifier
+## Default attention after the completed macro pilot and provisional landing falsifier
 
 The frozen canonical `Kreg` N100/N400 joint-U pilot is complete and the
 projected field-ratio route has stopped exactly where its contract said it
@@ -47,30 +47,48 @@ This validates a sparse, shell-localized carrier interface but is neither a
 population sign estimate nor evidence that a missing carrier has zero
 probability. Delivery B therefore stops without more counters.
 
-PR #509's latest audit (`2785e3bb`) compresses the full original-U combination
+PR #509's latest audit (`ec3941b0`) compresses the full original-U combination
 exactly. If `M(p(u,epsilon),epsilon)=u` and
 `Yhat(u,epsilon)=Y(p(u,epsilon),epsilon)`, then
 `partial_u partial_epsilon Yhat=J_N/A_N`: kernel reconnection, readout
 pivotal, root and slope form one Schur-projected signed Hessian. Its first
-bounded falsifier has now been answered by `branch_only`
-[`b38fbb61`](https://github.com/LightChainr/Matching-One/blob/b38fbb61b0b10e2279cc673e78d36b90d402680d/notes/p537-ordinary-landing-minor.md).
-On a physical branch-free N9 C4 landing orbit, the exact probability-weighted
-matrix with rows `q,E` and columns kernel reconnection/readout pivotal has
-determinant `1001/536870912` at `p=1/2`; its determinant polynomial is coprime
-to `M(p)=-4p^9+18p^8-18p^7+6p^3-1`, so it is nonzero at the unique finite
-matching root. The root Schur row operation preserves this determinant. The
-N16 predecessor independently gives `det=-chi/2`. Therefore ordinary landing
-is not structurally rank one, the pure-thermal three-packet route is retired,
-and no automatic four-packet or fifth/sixth-arm remainder follows.
+bounded falsifier is nonzero for the explicit **provisional** N25 six-block
+clean-two-bridge contract at
+[`ec3941b0`](https://github.com/LightChainr/Matching-One/blob/ec3941b03b2694e827db1cba34766a82e6146a5a/experiments/p537-landing-matrix-preflight-20260901/REPORT.md).
+That kills the stated port-level rank-one model. The corrected N9/N16 branch
+[`a3bc80c8`](https://github.com/LightChainr/Matching-One/blob/a3bc80c86585220f96dfeff022bd575b6c21d29f/notes/p537-finite-landing-transfer-definition.md)
+retains `1001/536870912` and `-chi/2` as exact supporting controls while
+withdrawing the canonical claim: their columns split one derivative identity,
+one geometry cannot supply axis-minus-tilted P4, and the row shear omits the
+bilinear `-beta H B` allocation.
 
-The subsequent theorem must expose the **signed ordinary-landing functional**
-itself: kernel reconnection and rank/readout pivotal under the same C4/root
-Schur projection, jointly stratified by `d(x,y)` and `d(z,{x,y})`. Its dyadic
-sum must either reach `T_N=o(D/A_N)` with exact-`p_c` to pooled-root transport,
-or return the smallest landing class that prevents this rate. The existing
-factorized two-bridge, shared-component transition/remote merger and
-`g`-stable topological coordinates remain its prospective decomposition, not
-three new evidence votes. Issue #537 adds
+The next theorem begins with the
+[complete signed fibre and finite-collar transfer](../notes/p537-signed-landing-transport-contract.md).
+The latest `branch_only` exact result
+[`7051ad83`](https://github.com/LightChainr/Matching-One/blob/7051ad83a788becb0478de6e0c235376821c22f4/notes/p537-global-four-arm-emptiness.md)
+proves that a global four-arm label is empty: `Delta q=1-b_z-w_z` and rank
+monotonicity force `b_z+w_z<=1`.  Therefore propagate the four labelled arms
+only to a frozen finite collar, then store outer reconnection/rank attachment
+as a separate state.  Do not zero-fill unmatched geometry profiles or score
+the relaxed local-alternating `near_block` as canonical ordinary landing.
+After global centering and `beta_lambda`, both geometry laws and C4/P4, test
+all value and first-thermal-jet minors. Then, in every conserved outer landing
+sector, test the endpoint-landing and pivot-transition conditional margins.
+
+- Two zero margins license a two-defect remainder and only then a signed
+  dyadic tail theorem.
+- One surviving margin freezes the smallest leading four-arm carrier and
+  redirects attention to its prospective sign/scale prediction.
+- A one-point zero minor without its thermal jet is not a pass.
+
+The provisional N25 same/reversed bridge modes already have an exact nonzero
+`(F,dF/dM)` Wronskian on the same dependency group.  Keep cyclic order as a
+column coordinate in the collar matrix; do not call its signed contrast a
+physical reflection-parity sector before freezing the dihedral action.
+
+The existing factorized two-bridge, shared-component transition/remote merger
+and `g`-stable topological coordinates remain one prospective decomposition,
+not three new evidence votes. Issue #537 adds
 an all-`L>=4` negative control with fixed nearby marks and a pivot at distance
 `Theta(L)`: rank and shared-count stay fixed while `g` changes `1/4 -> 1/2`.
 Thus pivot distance is a second scale and shared-count creation/deletion is
@@ -89,10 +107,11 @@ thermal quotient coordinates; PR #532 `2e1c57b4` proves
 `a_xy=kappa_x kappa_y` in the exactly-two-shared-component sector. Apply
 `phi_RB(G)=E[phi|G]` to the existing full-hole-face kernel and retain the
 `s=2/3/4` layers additively in one dependency block.
-PR #509 (current head `2785e3bb`) proves at `eed2190c` that the raw canonical
+PR #509 (current head `ec3941b0`) proves at `eed2190c` that the raw canonical
 pair susceptibility is absolutely summable at exact criticality; that theorem
 does not bound its thermal derivative or original U. Its latest audit supplies
-the Hessian and bounded-falsifier interface, not the missing decay theorem.
+the Hessian and provisional bounded-falsifier interface, not the missing
+canonical landing matrix or decay theorem.
 
 PR #533 (current head `5aa929a6`) is a separate strong-source theorem. Under
 `beta=L/m^2 -> 0` it now includes the complete one-carrier reversal kernel,

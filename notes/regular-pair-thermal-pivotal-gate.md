@@ -15,8 +15,8 @@
 因此本闸门的结果是 **OPEN_WITH_EXPLICIT_REMOTE_PIVOTAL**，不是解析
 排除。当前 canonical P0 是 #537；#536 只是 issue-only 来源，#539 是 P2
 exact-N25 支撑。本轮没有改变这些 Issue 的生命周期或优先级标签。下一动作先用
-root-conditioned Hessian 的 projected landing-matrix minors 判伪 pure-thermal
-rank-one 机制，再只为存活结构证明带 `q/E` 权的三点 influence tail。未得到它
+root-conditioned Hessian 的完整 projected landing matrix 同时检查 value/thermal
+jet 与两个条件边缘，再只为判决后存活的结构证明带 `q/E` 权的三点 influence tail。未得到它
 之前，不把 raw 距离曲线、另一个 completion、三插入或未冻结的宏观比值当作
 机制判决。
 
@@ -207,7 +207,7 @@ shared-component count 都为 `2`，而 `g_xy:1/4 -> 1/2`。因此 carrier 不�
 按 `s` 是否变化分类；same-count signed rerouting 同样可在远处发生，证明必须
 同时保留 mark separation 与 pivot distance。
 
-PR #509 当前 head `2785e3bb` 还对 Bell8 join 做了完整有限审计：4,140 个
+PR #509 当前 head `ec3941b0` 还对 Bell8 join 做了完整有限审计：4,140 个
 partitions、64,954 个允许的 2/3/4-block joins 中有 29,970 个非零差，其中
 9,952 个为正、20,018 个为负，并给出 `|Delta g|<=17/4` 的抽象有界包络。
 这些计数固定了有限 carrier 的符号复杂性与 envelope；它们不提供临界出现概率
@@ -303,7 +303,7 @@ interaction 降为有限局部修正。
 
 ## 6. 改变下一动作的最终判决
 
-PR #509 `2785e3bb` 给出与式(17)等价但更适合判伪的压缩。令
+PR #509 `ec3941b0` 给出与式(17)等价但更适合判伪的压缩。令
 `M(p(u,epsilon),epsilon)=u`、`Yhat(u,epsilon)=Y(p(u,epsilon),epsilon)`，则
 
 \[
@@ -315,27 +315,36 @@ PR #509 `2785e3bb` 给出与式(17)等价但更适合判伪的压缩。令
 而 `T_t=<H,(a-Ea)S-beta B>_pool` 把 source、readout、root 与 slope 放入同一
 Schur-projected signed covariance。故第一个 prospective discriminator 不是直接
 追求最强 absolute tail，而是在同一 `C4`/Schur 投影后构造 ordinary four-arm
-landing source/thermal transfer matrix并检查全部 `2x2` minors。
+landing source/thermal transfer matrix，检查全部 value/first-thermal-jet minors，
+并检查 endpoint-landing 与 pivot-transition 两个条件边缘。
+
+最新 `branch_only` 有限定理
+[`7051ad83`](https://github.com/LightChainr/Matching-One/blob/7051ad83a788becb0478de6e0c235376821c22f4/notes/p537-global-four-arm-emptiness.md)
+进一步固定了这里的“landing”：交替站点满足`Delta q=1-b_z-w_z`，rank单调性
+强制`b_z+w_z<=1`，所以用global component IDs要求两occupied分支与两vacant
+separator都独立会得到严格空集。四臂必须先落在finite collar/annulus，外部重连与
+rank transition另存；local alternating只可记为`near_block`，不能零填缺失几何
+后冒充canonical矩阵。
 
 1. **不能解析排除。** `alpha_4>1` 完成 raw summability，但 Russo 位置
    积分与 remote merger pivotal 留下真实的 thermal escape。
 2. **不启动描述性 raw 距离网格。** 它已经被 raw theorem 回答，也不能
    测量(20)。
-3. **下一项先做一个有限判伪器：** 任一 projected `2x2` minor 非零即排除
-   leading three-packet 是 pure thermal coordinate，并把后续定理聚焦到该
-   non-rank-one signed landing functional；若全部 minors 为零，才推进
-   four-packet remainder 的 `R^4*pi4(R)^4` absolute 包络。两条分支都还必须
-   结算 bulk common landing、fused collision、far rerouting、`g` 不变的
-   topological pivotal 与 near-critical root window，且不能让两列互相抵消后
-   才报“可和”。若 tail 与 baseline jets 受控，canonical pair 的渐近放大机制
-   应正式降级；若失败，必须给一个具名 carrier 的有符号 lower mechanism 与
-   original-U 尺度预测。
+3. **下一项先做finite-collar完整有限判伪器：** PR #509 `ec3941b0` 已排除显式 provisional
+   clean-two-bridge 端口合同；N9/N16 的 raw minors 则由 `a3bc80c8` 正式降为
+   supporting controls。Canonical 判据必须保留 global centering、逐 source
+   `beta_lambda`、finite-collar arm labels、outer attachment、两几何 P4 与完整
+   `-beta H B`。任一最终 minor 或 thermal jet
+   非零即排除 exact pure-thermal factorization。若它们为零，再检查两个条件边缘：
+   双边缘为零才许可 two-defect/four-packet remainder；任一边缘存活就登记为具名
+   leading four-arm carrier。两条分支仍须结算 bulk、fused、far、topological 与
+   near-critical root window。
 4. **有界语义preflight已经完成并停止。** [64-counter结果](../results/p337-thermal-pivotal-preflight/REPORT.md)
    在既有L32/L64流上验证了5,242,880个pair/site callback、midpoint恒等式与
    carrier实现；有限回放只出现18个kernel-changing事件，呈稀疏、外部、
    shell-localized形态，没有观察到kernel-preserving topological事件。它没有
    finite-L rejection threshold、总体centering或full J2，因而不增加counter、
-   seed或距离window。下一动作回到上述有限 minor 判伪器，不把preflight升级为
+   seed或距离window。下一动作回到上述完整 finite-transfer/margin 判伪器，不把preflight升级为
    物理显著性。
 
 这保留了 N25 非零 J2 的有限事实，也解释了它为什么不能由 raw C 的正号

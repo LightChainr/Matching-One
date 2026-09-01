@@ -10,12 +10,12 @@ The declared `x=17/4` and `x=21/4` contrasts `D17/D21` were therefore not
 evaluated. This route is complete rather than waiting for a top-up, new
 window or fitted exponent.
 
-Default attention moves to one `q/E`-weighted dyadic pivotal-carrier
-intervention inside the complete original-U root/slope functional. Its
-prospective alternatives are a factorized two-bridge contribution, a remote
-merger transition, and a topology-only carrier with unchanged raw `g` but
-changed `q/E`. PR #509's raw summability theorem (`eed2190c`, current head
-`2785e3bb`) cannot replace this thermal derivative. Its latest audit instead
+Default attention moves to one complete finite `q/E`-weighted landing
+transfer inside the original-U root/slope functional. Its prospective
+alternatives are a factorized two-bridge contribution, a remote merger
+transition, and a topology-only carrier with unchanged raw `g` but changed
+`q/E`. PR #509's raw summability theorem (`eed2190c`, current head
+`ec3941b0`) cannot replace this thermal derivative. Its latest audit instead
 compresses the whole response into the root-conditioned Hessian
 `partial_u partial_epsilon Yhat=J_N/A_N`. PR #533's complete specified
 axis/tilted sign law under `L/m^2 -> 0` (current head `5aa929a6`) is a separate
@@ -31,16 +31,29 @@ now [completed](../results/p337-thermal-pivotal-preflight/REPORT.md): the first
 32 counters from each existing L32/L64 stream give 64 old configurations,
 5,242,880 validated callbacks and 18 sparse kernel-changing events, with no new
 seed. No kernel-preserving topological event appears in this finite subset;
-that is not a zero-probability statement. #537's bounded falsifier has now
-returned nonzero on the `branch_only`
-[N9 exact-root landing matrix](https://github.com/LightChainr/Matching-One/blob/b38fbb61b0b10e2279cc673e78d36b90d402680d/notes/p537-ordinary-landing-minor.md).
-Its probability-weighted C4 kernel/readout determinant is algebraically
-nonzero at the unique finite matching root and invariant under the root Schur
-row operation; the N16 predecessor gives `det=-chi/2`. This kills the proposed
-three-packet thermal-coordinate/rank-one lemma and stops automatic promotion
-to a four-packet or extra-arm remainder. The next move is to prove the
-surviving signed ordinary-landing dyadic support with both mark and pivot
-scales retained. The
+that is not a zero-probability statement. #537's bounded preflight has now
+returned nonzero projected minors for the explicit **provisional** N25
+six-block clean-two-bridge contract at
+[`ec3941b0`](https://github.com/LightChainr/Matching-One/blob/ec3941b03b2694e827db1cba34766a82e6146a5a/experiments/p537-landing-matrix-preflight-20260901/REPORT.md).
+This kills that port-level rank-one claim. The corrected N9/N16 branch
+[`a3bc80c8`](https://github.com/LightChainr/Matching-One/blob/a3bc80c86585220f96dfeff022bd575b6c21d29f/notes/p537-finite-landing-transfer-definition.md)
+shows that its raw kernel/readout minors omit the independent axis/tilted P4
+laws and the bilinear `-beta H B` allocation. The next move is therefore the
+[complete finite transfer and two conditional margins](../notes/p537-signed-landing-transport-contract.md).
+The latest `branch_only` site-fibre head
+[`7051ad83`](https://github.com/LightChainr/Matching-One/blob/7051ad83a788becb0478de6e0c235376821c22f4/notes/p537-global-four-arm-emptiness.md)
+adds the missing state-space theorem: `Delta q=1-b_z-w_z` and rank
+monotonicity imply `b_z+w_z<=1`.  The ordinary four-arm row cannot use global
+occupied/matching component IDs; it must land on a finite collar before outer
+reconnection, with outer attachment and rank transition stored separately.
+Consequently the existing global-label aggregate must not be forced into a
+zero-filled score, while its local-alternating `near_block` remains only a
+relaxation.  The same branch's exact nonzero same/reversed cyclic Wronskian
+keeps bridge order as a provisional slow coordinate, not yet a physical
+parity or canonical site-flip result.
+If both margins vanish, prove a two-defect dyadic remainder with both mark and
+pivot scales retained; if one survives, freeze that landing sector as the
+leading four-arm carrier. The
 [literature bridge](../notes/p337-thermal-pivotal-literature-bridge.md) rules
 out a naive three-four-arm closure and requires either a common-landing gain or
 signed cross-observable cancellation, plus a pooled-root near-critical window
@@ -114,9 +127,10 @@ response. Positive C64 and the conditional Gram did not determine its
 negative directional response. The completed macro-window comparison did not
 resolve a common-sign scale ratio and stops under its frozen rule.
 [Next Targets](NEXT-TARGETS.md) owns open #537 after the completed #536-derived
-Delivery B and nonzero exact-root landing minor. Route the surviving
-non-rank-one ordinary-landing structure directly into a signed tail theorem. Keep
-`s=2/3/4` as an additive support split inside the same dependency block; do not
+Delivery B and provisional N25 rank falsifier. Route the full P4/Schur
+landing matrix through the value/thermal-jet and two-margin decision before a
+signed-tail or extra-arm theorem. Keep `s=2/3/4` as an additive support split
+inside the same dependency block; do not
 count it as independent evidence or expand it into a descriptor search. Another
 epsilon derivative, alpha search or macro top-up is not the default follow-up. Joint
 physical contractions cannot be replaced by covariance of single-mark
