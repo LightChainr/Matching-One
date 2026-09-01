@@ -66,6 +66,8 @@ def main() -> None:
     second_retention = second_present / second_absent
     cross_ratio = (first_absent * second_present) / (first_present * second_absent)
     retention_ratio = first_retention / second_retention
+    predicted_second_present = first_retention * second_absent
+    stage_interaction = second_present - predicted_second_present
     payload = {
         "schema": "matching-one/p537-finite-collar-stage-selectivity/v1",
         "status": "exact_stage_selective_source_gate",
@@ -81,6 +83,12 @@ def main() -> None:
         "rank_one_cross_ratio": {
             "value": record(cross_ratio),
             "rank_one_prediction": "1 exactly",
+        },
+        "first_birth_calibrated_rank_one_prediction": {
+            "predicted_second_birth_present": record(predicted_second_present),
+            "actual_second_birth_present": record(second_present),
+            "stage_interaction_residual": record(stage_interaction),
+            "identity": "residual = determinant / first_birth_absent",
         },
         "present_minus_absent_contrast": {
             "first_birth": record(first_present - first_absent),
@@ -102,6 +110,7 @@ def main() -> None:
         "second_birth_retention": payload["present_over_absent_response"]["second_birth"]["midpoint"],
         "retention_ratio": payload["first_over_second_retention_ratio"]["midpoint"],
         "rank_one_cross_ratio": payload["rank_one_cross_ratio"]["value"]["midpoint"],
+        "stage_interaction_residual": payload["first_birth_calibrated_rank_one_prediction"]["stage_interaction_residual"]["midpoint"],
     }, indent=2))
 
 

@@ -80,6 +80,12 @@ acts as a stage-selective gate that almost cancels the second-birth channel
 while leaving most of the first-birth channel.  These are response-amplitude
 ratios, not event probabilities.
 
+Calibrating a rank-one model to the first-birth retention would predict the
+second-birth present entry to be `-1.0308978235e-7`.  The actual entry is
+`-3.8139820372e-9`, leaving a positive stage-interaction residual
+`+9.9275800313e-8` (`det/L_first,absent`).  This residual is the minimal second
+channel that a replacement for the pure-thermal model must carry.
+
 ## Interpretation boundary
 
 This is an exact rank-two certificate for the frozen N25 radius-one collar.
