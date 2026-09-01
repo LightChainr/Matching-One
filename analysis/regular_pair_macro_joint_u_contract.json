@@ -1,0 +1,169 @@
+{
+  "schema": "matching-one.regular-pair-macro-joint-u.contract.v1",
+  "status": "pilot_contract_ready_not_executed",
+  "base_commit": "dac938a872b2cb2fcbfd59af8372ff07d25e3723",
+  "scientific_inputs": {
+    "completed_N25_joint_U_commit": "f8e30859f05e86ef35d257fc900f97e74f41e21c",
+    "completed_N25_result": "results/regular-pair-joint-u/latest.json",
+    "joint_kernel_commit": "c29d8bce07e6381be0f948b2c0dd1f640e42d395",
+    "joint_kernel_path": "analysis/regular_pair_spatial_kernel.tsv",
+    "joint_kernel_sha256": "36ae069d370b1d7a4398861c928afb41aa76885c8895c696b1bc0c97e9c314fd",
+    "two_component_selection_commit": "baa5d33b2f87b2868aa0cb9d3f6518c93dbf3bff",
+    "critical_raw_summability_commit": "eed2190c04b67084ab5aef5827e00377853a0bca",
+    "critical_raw_summability_path": "notes/p337-critical-spatial-summability.md"
+  },
+  "question": "Does the fixed canonical bilocal kernel, after a fixed macroscopic-separation projection, have a resolved thermal/pivotal transmission through the complete original moving-root U functional at N=100 and N=400?",
+  "priority_boundary": "The raw canonical pair susceptibility is already absolutely summable at the true square-lattice critical point. This pilot does not run another raw-C distance grid. Its primary quantities are the thermal p-jets and the complete direct/root/slope transmission of the fixed signed macro-window source into original U.",
+  "model": {
+    "kernel": "Kreg=K2+K0 with c(Q)=1 identically and the pinned signed Bell8 g16=16*g lookup",
+    "site_path": "At each vacant original vertex use T0+(epsilon/N)*Kreg; occupied tensor, original rank, q=r-1 and E=q^2 remain unchanged.",
+    "geometries": [
+      {"N": 100, "k": 2, "axis": [10, 0], "tilted": [8, 6]},
+      {"N": 400, "k": 4, "axis": [20, 0], "tilted": [16, 12]}
+    ],
+    "quotient_basis": "For geometry (a,b), use u=(a,b), v=(-b,a), N=a^2+b^2 and the repository Gaussian-quotient topology conventions.",
+    "delta_cos4": "1152/625",
+    "U_prefactor": "A_N=N^(13/8)/2"
+  },
+  "macroscopic_window": {
+    "name": "euclidean_quarter_to_two_fifths",
+    "lower_fraction_of_L": "1/4",
+    "upper_fraction_of_L": "2/5",
+    "lower_boundary": "included",
+    "upper_boundary": "included",
+    "angular_weight": "1 for every accepted displacement",
+    "distance": "Euclidean shortest displacement on the physical torus",
+    "exact_membership": "For a nonzero quotient displacement z with exact shortest squared length r2, include z iff 16*r2>=N and 25*r2<=4*N.",
+    "shortest_vector_rule": "Because u and v are orthogonal with squared length N, compute the exact minimum over the four floor/ceiling choices for dot(z,u)/N and dot(z,v)/N; ties affect neither r2 nor membership.",
+    "cut_locus_boundary": "The upper radius 2L/5 is strictly below L/2.",
+    "displacement_enumeration": "Enumerate every nonzero quotient class once, retain both z and -z as distinct ordered displacements, sort by (r2,canonical_dx,canonical_dy), and save the complete table and SHA256 for each geometry before occupation generation.",
+    "no_adjustment": "Do not alter either boundary, replace Euclidean distance, add an angle, or select a displacement subset after any response is read."
+  },
+  "source_and_strata": {
+    "full_source": "S2_macro(A)=N^(-2)*sum_(x!=y) W_N(x,y)*g_xy(A), with g_xy=0 unless both endpoints are vacant.",
+    "anchor_estimator": "For A anchors and the full accepted displacement set D_g,N, H(A)=(16*A*N)^(-1)*sum_anchor sum_(z in D_g,N) g16(anchor,anchor+z). This is unbiased for S2_macro against every translation-invariant mark.",
+    "raw_pair_mean": "Cbar(A)=(16*A*|D_g,N|)^(-1)*sum_anchor sum_z g16; H=(|D_g,N|/N)*Cbar exactly.",
+    "shared_component_definition": "For this window the two edge-port groups are disjoint. Count occupied exterior NN components that meet both marked neighbourhoods.",
+    "strata": ["total", "s2_exactly_two_shared_occupied_components", "sge3_at_least_three_shared_occupied_components"],
+    "exact_zero_control": "Every pair with at most one shared occupied component must return g16=0. Any violation invalidates the run.",
+    "additivity": "The total signed source must equal s2+sge3 configurationwise and in every stored batch/K cell.",
+    "inference_boundary": "The two strata are correlated coordinates of the same source and configurations. They are not separate evidence votes or freely selected descriptors."
+  },
+  "pilot_sampling": {
+    "sizes": [100, 400],
+    "batches_per_size": 100,
+    "paired_configurations_per_batch": 500,
+    "paired_configurations_per_size": 50000,
+    "anchors_per_configuration": 16,
+    "pair_sampling": "Use every accepted window displacement at each selected anchor; do not subsample displacements.",
+    "anchor_sampling": "For each configuration draw 16 distinct site indices uniformly without replacement by partial Fisher-Yates with exact uint64 rejection sampling. Reuse the index list across the two same-N geometries.",
+    "geometry_pairing": "At fixed N reuse the same Bernoulli occupation bit vector and anchor-index list for axis and tilted geometries, so their directional difference retains paired covariance. Site indices refer to each geometry's separately saved canonical quotient-representative order.",
+    "size_independence": "N100 and N400 use disjoint occupation and anchor streams and have zero designed cross-size covariance.",
+    "p_reference_decimal": "0.592746050790",
+    "p_reference_uint64_threshold": "10934234699625173385",
+    "p_reference_exact": "10934234699625173385/18446744073709551616",
+    "bernoulli_rule": "For each site consume one mt19937_64 word and declare occupied iff word<p_reference_uint64_threshold.",
+    "rng_streams": {
+      "N100_occupation_seed": 2026090101001001,
+      "N100_anchor_seed": 2026090101001002,
+      "N400_occupation_seed": 2026090101004001,
+      "N400_anchor_seed": 2026090101004002
+    },
+    "consumption_order": "size, batch, configuration, then canonical site index; anchor words come only from the separate same-size anchor stream",
+    "no_restart_or_seed_search": true
+  },
+  "raw_batch_contract": {
+    "unit_of_inference": "paired iid occupation configuration; anchors and all pair readouts are averaged within configuration before batch inference",
+    "row_keys": ["N", "batch", "geometry", "K"],
+    "baseline_integer_columns": ["count", "sum_q", "sum_E"],
+    "per_stratum_columns": ["sum_B16", "sum_qB16", "sum_EB16", "eligible_pair_count", "nonzero_pair_count"],
+    "B16_definition": "sum over the 16 sampled anchors and all accepted ordered displacements of signed g16 in the named stratum",
+    "controls": ["s_le1_pair_count", "s_le1_nonzero_g16_count", "total_minus_s2_minus_sge3_B16"],
+    "metadata": ["geometry", "N", "window_table_path", "window_table_sha256", "window_displacement_count", "kernel_sha256", "seeds", "batches", "configurations_per_batch", "anchors_per_configuration", "compiler", "elapsed_seconds", "peak_RSS_MiB"],
+    "preserve_batches": "Do not collapse the 100 batches before scoring."
+  },
+  "single_p_root_and_p_jet_estimator": {
+    "root_bracket": ["0.590000000000", "0.596000000000"],
+    "importance_reweighting": "Use only the one p_reference occupation stream. For candidate p, reweight each K cell by (p/p_reference)^K*((1-p)/(1-p_reference))^(N-K), normalized within each geometry.",
+    "root": "Solve M(p)=(mean_q_axis(p)+mean_q_tilted(p))/2=0 inside the fixed bracket by deterministic bisection to absolute p tolerance 1e-12. Do not generate another p stream or widen the bracket.",
+    "score1": "l1(K;p)=K/p-(N-K)/(1-p)",
+    "score2": "l2(K;p)=l1(K;p)^2-K/p^2-(N-K)/(1-p)^2",
+    "normalized_first_derivative": "mu_f_prime=Cov_w(f,l1)",
+    "normalized_second_derivative": "mu_f_second=Cov_w(f,l2)-2*mean_w(l1)*Cov_w(f,l1)",
+    "required_baseline_jets": "For q and E in each geometry retain orders 0,1,2 at the fitted root.",
+    "required_source_jets": "For H, qH and EH in total,s2,sge3 retain orders 0,1 at the fitted root.",
+    "required_raw_diagnostics": "For Cbar in each geometry and stratum save E[Cbar] and partial_p E[Cbar] at the fitted root; these diagnose the thermal tail but are not the primary result.",
+    "effective_sample_size": "ESS=(sum w)^2/sum(w^2), evaluated at the fitted root separately for every size and batch-deletion replicate.",
+    "numerical_rule": "Evaluate K-polynomial sums with long-double log-sum-exp or higher precision; all reported response uncertainty comes from batches, not floating-point rounding."
+  },
+  "complete_original_U_estimator": {
+    "definitions": "M=(m_axis+m_tilted)/2; Y=(e_axis-e_tilted)/DeltaCos4; D=M_p; R=Y_p/D at the fitted common root.",
+    "source_covariances": "For each stratum and geometry j_q=<qH>-<q><H>, j_E=<EH>-<E><H>. Form jM=(j_q_axis+j_q_tilted)/2 and jY=(j_E_axis-j_E_tilted)/DeltaCos4, with their p derivatives from the pinned K-score jets.",
+    "direct_centered": "A_N*jY_p/D",
+    "root_motion": "-A_N*Y_pp*jM/D^2",
+    "slope_source": "-A_N*R*jM_p/D",
+    "slope_root": "A_N*R*M_pp*jM/D^2",
+    "J2_macro": "direct_centered+root_motion+slope_source+slope_root",
+    "root_joint_tangent": "-jM/D",
+    "extensive_readout": "T_N=N^2*J2_macro",
+    "linearity_control": "Compute total,s2,sge3 with the same fitted baseline root and require every term and J2_total to equal the sum of its two strata within serialization tolerance.",
+    "observer_boundary": "This bilocal window projection is not the unfiltered homogeneous epsilon derivative, raw E[g], a covariance of closed one-site marks, or a free-energy susceptibility."
+  },
+  "covariance_and_uncertainty": {
+    "within_size": "Delete one paired batch index from both geometries, recompute importance-weighted root, all K-score jets, raw diagnostics, four response terms and all three strata. Use the 100 delete-one vectors for the full jackknife covariance.",
+    "jackknife_formula": "Cov=(B-1)/B*sum_b(theta_minus_b-mean_delete_one)(theta_minus_b-mean_delete_one)^T",
+    "required_vector": ["root_p", "D", "raw_Cbar_and_p_derivative_by_geometry_and_stratum", "jM", "jY", "jM_p", "jY_p", "four_U_terms_by_stratum", "J2_macro_by_stratum", "T_N_by_stratum"],
+    "between_sizes": "Use block-diagonal covariance because the N100 and N400 streams are disjoint.",
+    "pilot_intervals": "For the two total T_N thermal-gate readouts use simultaneous familywise-95% two-sided Student intervals with critical value t_(0.9875,99). Other intervals are descriptive and retain the joint covariance.",
+    "no_pair_pseudoreplication": "Neither anchors nor displacement pairs are inference units."
+  },
+  "conditional_downstream_models": {
+    "admissibility": "Evaluate field contrasts only if both total T100 and T400 simultaneous pilot intervals exclude zero and have the same sign. Otherwise write field_ratio_status=not_evaluated_due_to_unresolved_or_sign_inconsistent_thermal_tail.",
+    "x17over4_ratio": "r17=2^(-5/4)",
+    "x21over4_ratio": "r21=2^(-13/4)",
+    "D17": "T400-r17*T100",
+    "D21": "T400-r21*T100",
+    "contrast_covariance": "Var(Dx)=Var(T400)+rx^2*Var(T100); Cov(D17,D21)=Var(T400)+r17*r21*Var(T100).",
+    "interpretation": "These are conditional fixed-power model contrasts under one fixed macro window and a single dominant field with nonzero N-independent loading. They do not estimate x or uniquely identify a field.",
+    "pilot_boundary": "Even when admissible, the pilot reports D17,D21 without a field-model accept/reject claim; a production contract must first fix a finite-N correction/error criterion and any held-out dilation."
+  },
+  "validity_gates": [
+    "The pinned kernel hash and every saved window-table hash match before occupation generation.",
+    "Every accepted displacement satisfies both exact integer window inequalities and no rejected displacement does.",
+    "The two marks are distinct and their incident edge-port sets are disjoint for every accepted displacement.",
+    "s_le1_nonzero_g16_count is zero and total=s2+sge3 in every configuration accumulator, batch/K row and scored response term.",
+    "The pooled M has opposite signs at the two fixed bracket endpoints in the full estimate and every delete-one replicate.",
+    "The fitted root lies in [0.5905,0.5955], D=M_p has a positive simultaneous pilot interval, and ESS is at least 0.90 times the retained configurations in every geometry and delete-one replicate.",
+    "All four response terms, raw p-jets and the full covariance vector are finite; no batch is silently dropped."
+  ],
+  "pilot_decision_and_stop_rules": {
+    "invalid": "If any validity gate fails, mark INVALID_INTERFACE, stop without widening the p bracket, changing the window, replacing the kernel or launching another stream.",
+    "thermal_tail_resolved": "Both total T100 and T400 simultaneous pilot intervals exclude zero and have the same sign.",
+    "thermal_tail_unresolved": "If either interval contains zero or their resolved signs differ, do not evaluate D17/D21 as field comparisons and do not fit an exponent.",
+    "projected_production_size": "For each size estimate n_required=n_pilot*[t_(0.995,99)*SE(T_N)/(0.25*abs(T_N))]^2, rounded upward to a whole 100-batch design.",
+    "production_upgrade_gate": "A future production contract is eligible only if all validity gates pass, the two point estimates have the same nonzero sign, and n_required is no more than 2000000 paired configurations at each size. Eligibility authorizes writing a new frozen contract only, not starting a job.",
+    "production_stop": "If signs differ, either point estimate is exactly zero, or the projected requirement exceeds 2000000 at either size, stop this fixed-window field-ratio route and report the thermal/pivotal transmission as unresolved at the declared computational ceiling.",
+    "completed_pilot_stop": "Never top up this pilot, change seeds, tune the window, add distances, fit a free exponent, choose a new completion coefficient, or reinterpret s2/sge3 as independent confirmation after readout."
+  },
+  "budget": {
+    "unique_paired_occupation_configurations": 100000,
+    "geometry_evaluations": 200000,
+    "hard_pair_kernel_evaluation_ceiling": 800000000,
+    "expected_execution_shape": "Two size-level producer runs, each evaluating its paired geometries, then one joint scorer.",
+    "compile_count": 1,
+    "wall_clock_gate_seconds": 1800,
+    "peak_RSS_gate_MiB_per_process": 4096,
+    "execution_environment": "local CPU is sufficient by design; no server, GPU or cloud allocation is promised or authorized by this contract",
+    "automatic_production_upgrade": false
+  },
+  "forbidden": [
+    "raw-C distance-grid production or exponent fitting",
+    "changing p_reference or widening the root bracket after data",
+    "window, angle, source, completion, anchor-count or stratum tuning after data",
+    "treating pair or anchor readouts as independent samples",
+    "substituting Cov(a_x,a_y) for the joint g kernel",
+    "dropping root motion or either slope term",
+    "evaluating D17/D21 when the thermal-tail admissibility gate fails",
+    "automatic top-up, server launch or production escalation"
+  ]
+}

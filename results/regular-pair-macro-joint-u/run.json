@@ -1,0 +1,121 @@
+{
+  "schema": "matching-one.regular-pair-macro-joint-u.run.v1",
+  "status": "completed_frozen_local_pilot_and_stopped",
+  "execution_environment": {
+    "location": "local_mac_cpu",
+    "machine": "arm64",
+    "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)",
+    "binary_sha256": "dcc087e4a74eae2536ec5e2e7741203918c76cb4f6b946c4624e8a3c0ae89794",
+    "gpu_jobs": 0,
+    "cloud_jobs": 0
+  },
+  "compile": {
+    "count": 1,
+    "command": [
+      "clang++",
+      "-O3",
+      "-std=c++17",
+      "scripts/regular_pair_macro_joint_u_sampler.cpp",
+      "-o",
+      "/private/tmp/matching-macro-pilot.4k45o0/regular_pair_macro_joint_u_sampler"
+    ]
+  },
+  "sampling": {
+    "new_unique_paired_configurations": 100000,
+    "geometry_evaluations": 200000,
+    "sampler_runs": 2,
+    "N100": {
+      "command": [
+        "/private/tmp/matching-macro-pilot.4k45o0/regular_pair_macro_joint_u_sampler",
+        "100",
+        "2026090101001001",
+        "2026090101001002",
+        "100",
+        "500",
+        "16",
+        "analysis/regular_pair_spatial_kernel.tsv",
+        "/private/tmp/matching-macro-pilot.4k45o0/N100.csv"
+      ],
+      "configurations": 50000,
+      "axis_window_displacements": 28,
+      "tilted_window_displacements": 28,
+      "producer_elapsed_seconds": 0.643217291,
+      "measured_wall_seconds": 1.32,
+      "peak_RSS_bytes": 35454976
+    },
+    "N400": {
+      "command": [
+        "/private/tmp/matching-macro-pilot.4k45o0/regular_pair_macro_joint_u_sampler",
+        "400",
+        "2026090101004001",
+        "2026090101004002",
+        "100",
+        "500",
+        "16",
+        "analysis/regular_pair_spatial_kernel.tsv",
+        "/private/tmp/matching-macro-pilot.4k45o0/N400.csv"
+      ],
+      "configurations": 50000,
+      "axis_window_displacements": 128,
+      "tilted_window_displacements": 128,
+      "producer_elapsed_seconds": 2.66068925,
+      "measured_wall_seconds": 2.66,
+      "peak_RSS_bytes": 36896768
+    }
+  },
+  "scoring": {
+    "command": [
+      "python3",
+      "scripts/analyze_regular_pair_macro_joint_u.py",
+      "--axis-100",
+      "results/regular-pair-macro-joint-u/raw/N100.csv",
+      "--tilted-100",
+      "results/regular-pair-macro-joint-u/raw/N100.csv",
+      "--axis-400",
+      "results/regular-pair-macro-joint-u/raw/N400.csv",
+      "--tilted-400",
+      "results/regular-pair-macro-joint-u/raw/N400.csv",
+      "--output-json",
+      "results/regular-pair-macro-joint-u/latest.json",
+      "--output-md",
+      "results/regular-pair-macro-joint-u/REPORT.md"
+    ],
+    "elapsed_seconds": 2.8824975839816034,
+    "aligned_delete_one_replicates_per_size": 100,
+    "scientific_score_runs": 1
+  },
+  "inputs": {
+    "contract_sha256": "600119d6c5f351bd05220ab968eea50534857c840036334cf53bcc67bd15bf60",
+    "kernel_sha256": "36ae069d370b1d7a4398861c928afb41aa76885c8895c696b1bc0c97e9c314fd",
+    "sampler_sha256": "c2b53b03224db98d5734abbf052a3819a9c107cfa7a08f21defbaf9900613c16",
+    "scorer_sha256": "eb792890a58f9069a926a931df9ee483488448650efb2cc49f3ff493548e1349",
+    "N100_raw_sha256": "a48f2e9502c78498d24779ef87675663942207e63287fc8cf3901d48530fa5fb",
+    "N100_axis_window_sha256": "f0933dd2851f84d8e56375d9485af767f4cc3db9af665160642ae418d4e7eca6",
+    "N100_tilted_window_sha256": "a6b9d27bea0cb7963eba00e247ef24f915beb199c77683149fb39686c94d297c",
+    "N400_raw_sha256": "66f7ecd4efdb2a5508fc58e78330547b4ff01d07c9cf22a7af6bed834bf33c94",
+    "N400_axis_window_sha256": "bc3e6143677f738d8c98a740565abfd231f6bb514f776a3a42a62a37d4cddb5a",
+    "N400_tilted_window_sha256": "c48386974dd1c09d0c779ad084ecbd042bb17376a3a835f9c9d788a7c12d09e8"
+  },
+  "outputs": {
+    "latest_json_sha256": "f325517e90d3a14426a58b3402085535ce1806aad67443c4ef9ca0af6d11075b",
+    "report_md_sha256": "ebeb21ffe86e6f8c966c3c31b9dbf874fcf261353ed71ca243796bb1926e39d6"
+  },
+  "decision": {
+    "name": "fixed_macro_window_field_ratio_route_stopped",
+    "reasons": [
+      "both simultaneous T_N intervals include zero",
+      "T100 and T400 point estimates have opposite signs",
+      "the projected N400 requirement is 2119100 configurations, above the frozen 2000000 ceiling"
+    ],
+    "D17_D21_evaluated": false,
+    "top_up_allowed": false,
+    "replacement_window_allowed": false,
+    "production_launched": false
+  },
+  "verification": {
+    "scientific_test_suites_run": 0,
+    "syntax_checks": 1,
+    "validity_gates": "stored in latest.json",
+    "note": "No old score, extra seed, distance grid, free exponent, cloud run or production top-up was executed."
+  }
+}
