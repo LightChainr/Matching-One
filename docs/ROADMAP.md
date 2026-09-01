@@ -17,9 +17,9 @@ merger transition, and a topology-only carrier with unchanged raw `g` but
 changed `q/E`. PR #509's raw summability theorem (`eed2190c`, current head
 `2785e3bb`) cannot replace this thermal derivative. Its latest audit instead
 compresses the whole response into the root-conditioned Hessian
-`partial_u partial_epsilon Yhat=J_N/A_N`. PR #533's bounded and growing-window
-capillary sign work (current head `b49e2a21`) is a separate strong-source
-theorem, not evidence for the critical carrier.
+`partial_u partial_epsilon Yhat=J_N/A_N`. PR #533's complete specified
+axis/tilted sign law under `L/m^2 -> 0` (current head `5aa929a6`) is a separate
+strong-source theorem, not evidence for the critical carrier.
 
 Closed Issue #536 preserves the first exact midpoint channel split as an
 issue-only attachment; open Issue #537 is now the repository's sole canonical
@@ -31,12 +31,16 @@ now [completed](../results/p337-thermal-pivotal-preflight/REPORT.md): the first
 32 counters from each existing L32/L64 stream give 64 old configurations,
 5,242,880 validated callbacks and 18 sparse kernel-changing events, with no new
 seed. No kernel-preserving topological event appears in this finite subset;
-that is not a zero-probability statement. The next move begins with #537's
-bounded falsifier: test whether the C4/Schur-projected ordinary four-arm
-landing transfer matrix has a nonzero `2x2` minor. A nonzero minor kills the
-three-packet thermal-coordinate cancellation; rank one promotes a four-packet
-candidate whose support reduction still has to be proved. Then prove the surviving carrier-resolved absolute or
-signed dyadic support. The
+that is not a zero-probability statement. #537's bounded falsifier has now
+returned nonzero on the `branch_only`
+[N9 exact-root landing matrix](https://github.com/LightChainr/Matching-One/blob/b38fbb61b0b10e2279cc673e78d36b90d402680d/notes/p537-ordinary-landing-minor.md).
+Its probability-weighted C4 kernel/readout determinant is algebraically
+nonzero at the unique finite matching root and invariant under the root Schur
+row operation; the N16 predecessor gives `det=-chi/2`. This kills the proposed
+three-packet thermal-coordinate/rank-one lemma and stops automatic promotion
+to a four-packet or extra-arm remainder. The next move is to prove the
+surviving signed ordinary-landing dyadic support with both mark and pivot
+scales retained. The
 [literature bridge](../notes/p337-thermal-pivotal-literature-bridge.md) rules
 out a naive three-four-arm closure and requires either a common-landing gain or
 signed cross-observable cancellation, plus a pooled-root near-critical window
@@ -46,8 +50,9 @@ arbitrarily remote pivot.
 Reuse PR #530's `phi_g`, PR #531's correlated `eta/xi` quotient and PR #532's
 exact two-bridge factorization; retain their unmerged lifecycle labels.
 Issues #534/#535/#536 were closed by the repository team; #539 remains P2
-exact-N25 support. PR #533 now excludes the shortest local hairpin as first
-growing-window crossover, leaving a nonlocal west-step and fixed-m work. The
+exact-N25 support. PR #533 now also closes the all-reversal/nonlocal-west-step,
+cloud, topology and sector-odds boundaries at `L/m^2 -> 0`; only fixed-`m`
+thermodynamics lies outside that joint limit. The
 [N25 joint-U result](../results/regular-pair-joint-u/REPORT.md),
 `open_pr #267` at `f8e30859f05e86ef35d257fc900f97e74f41e21c`, gives
 `J2=∂logQ∂epsilon²U=−.0055194314248394015`, NN
@@ -109,8 +114,8 @@ response. Positive C64 and the conditional Gram did not determine its
 negative directional response. The completed macro-window comparison did not
 resolve a common-sign scale ratio and stops under its frozen rule.
 [Next Targets](NEXT-TARGETS.md) owns open #537 after the completed #536-derived
-Delivery B. First test the Schur-projected landing-matrix minors; only then route
-the surviving rank-one or non-rank-one structure into a tail theorem. Keep
+Delivery B and nonzero exact-root landing minor. Route the surviving
+non-rank-one ordinary-landing structure directly into a signed tail theorem. Keep
 `s=2/3/4` as an additive support split inside the same dependency block; do not
 count it as independent evidence or expand it into a descriptor search. Another
 epsilon derivative, alpha search or macro top-up is not the default follow-up. Joint

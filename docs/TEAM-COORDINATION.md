@@ -2,8 +2,9 @@
 
 Updated: **2026-09-01**, including the stopped N100/N400 macro joint-U pilot,
 closed Issue #536's issue-only exact midpoint split, completed 64-counter carrier
-preflight, open canonical P0 #537, P2 support #539, PR509 head `2785e3bb` and
-PR533 head `b49e2a21`; prior
+preflight, nonzero `branch_only` ordinary-landing minor `b38fbb61`, open
+canonical P0 #537, P2 support #539, PR509 head `2785e3bb` and PR533 head
+`5aa929a6`; prior
 regularization and independent decisions are retained.
 This is a result-routing entry, not a second
 priority board or a live process monitor. [Next Targets](NEXT-TARGETS.md) remains
@@ -23,15 +24,18 @@ attachment, not a Git artifact: all-pair observable/rank pivot
 [PR #267's report](../results/p337-thermal-pivotal-preflight/REPORT.md): 64 old
 counters and 5,242,880 callbacks pass, with 18 sparse kernel-changing events
 and no new seed. Open #537 is the repository's sole canonical P0. Its first
-handoff is the root-conditioned, Schur-projected ordinary four-arm landing
-matrix: a nonzero `2x2` minor kills the pure-thermal three-packet model; a
-rank-one result routes the proof to a four-packet `R^4*pi4^4` remainder. Reuse PR #530
+handoff has now returned nonzero: `branch_only`
+[`b38fbb61`](https://github.com/LightChainr/Matching-One/blob/b38fbb61b0b10e2279cc673e78d36b90d402680d/notes/p537-ordinary-landing-minor.md)
+proves that a physical probability-weighted C4 ordinary-landing matrix remains
+rank two at the exact finite matching root after the root Schur projection.
+The pure-thermal three-packet and automatic four-packet/extra-arm routes stop.
+Reuse PR #530
 `0e1917f9`, PR #531 `a5375b5` and PR #532 `2e1c57b4`; keep them unmerged.
 PR #509's raw summability theorem does not replace this thermal derivative;
 its current head gives the exact Hessian compression and an all-L same-count
-remote rerouting. PR #533's current extension closes the directed determinant
-through `L^(2/3)<<m<<L` and excludes the shortest local hairpin as first
-crossover; the nonlocal west-step/rough-bridge candidate remains. Issues
+remote rerouting. PR #533 now closes the complete specified axis/tilted sign
+law under `L/m^2 -> 0`, including reversals, clouds, topology and sector odds;
+fixed-`m` thermodynamics remains outside that joint limit. Issues
 #534/#535/#536 were observed closed by the repository team. Open #539 is P2
 exact-N25 support and should first consume the #536 attachment rather than
 repeat the full enumeration.
@@ -84,12 +88,12 @@ After summing the two holes, divide by `(1+v_x)(1+v_y)`. These conditional
 coefficients are neither global U, a CFT norm nor measured size exponents.
 Higher counterterm Taylor coefficients do not enter; no alpha was fitted.
 
-**Next:** execute #537's projected landing-matrix minor test after the finished
-64-counter preflight. Preserve canonical `Kreg` and the full original-U `q/E`
-root/slope influence. Conditional on the minor outcome, prove the surviving
-signed/absolute dyadic support for two-bridge factorization, remote merger or
-same-count rerouting, and topology-only `q/E` carriers; include the near-critical
-root-window certificate. Keep `s=2/3/4` additive
+**Next:** the projected landing-matrix minor has returned nonzero after the
+finished 64-counter preflight. Preserve canonical `Kreg` and the full
+original-U `q/E` root/slope influence. Prove the surviving signed
+ordinary-landing dyadic support for two-bridge factorization, remote merger or
+same-count rerouting, and topology-only `q/E` carriers, jointly in mark and
+pivot distance; include the near-critical root-window certificate. Keep `s=2/3/4` additive
 inside the shared dependency block. The macro ratio has already stopped; no
 K3 source, fitted counterterm, repeat N25 J2, new seed or macro-window top-up
 is next. The entry-regular retain-old-V search remains settled.
@@ -194,9 +198,9 @@ create a second priority queue.
 
 | Team | Delivered / active contribution | Next handoff |
 |---|---|---|
-| **数学研究执行** | Closed #536 retains the exact midpoint split; the frozen L32/L64 64-counter subset has been replayed and stopped. | Use the finite interface as an oracle; support #539 only by importing the existing exact attachment first. Do not add counters, seeds or duplicate enumeration. |
-| **数学研究总览** | Draft [PR #267](https://github.com/LightChainr/Matching-One/pull/267) contains the stopped macro pilot, completed carrier preflight and literature bridge; N25 total/NN/nonNN J2 remains an input. | Keep #537 as the sole P0, route the landing-minor outcome to exactly one surviving tail proof, and preserve issue-only/open-PR labels. |
-| **数学研究俯瞰** | PR509 `2785e3bb` supplies the raw theorem, root-conditioned Hessian, exact join envelope and all-L rerouting; PR530/531/532 are support interfaces; PR533 `b49e2a21` narrows the remaining noncompact crossover. | Build the Schur-projected landing matrix and test its minors before a full collision-tree or cross-spectral proof. |
+| **数学研究执行** | Closed #536 retains the exact midpoint split; the frozen L32/L64 64-counter subset has been replayed and stopped; `b38fbb61` supplies the exact-root landing counterexample. | Use the finite interface as an oracle; support #539 only by importing the existing exact attachment first. Do not add counters, tiny-torus scans, seeds or duplicate enumeration. |
+| **数学研究总览** | Draft [PR #267](https://github.com/LightChainr/Matching-One/pull/267) contains the stopped macro pilot, completed carrier preflight and literature bridge; the nonzero minor remains correctly marked `branch_only`. | Keep #537 as the sole P0 and route the now-selected non-rank-one ordinary-landing functional to one two-scale signed tail proof; preserve issue-only/open-PR labels. |
+| **数学研究俯瞰** | PR509 `2785e3bb` supplies the raw theorem, root-conditioned Hessian, exact join envelope and all-L rerouting; PR530/531/532 are support interfaces; PR533 `5aa929a6` closes its `L/m^2 -> 0` axis law. | Prove or refute the signed ordinary-landing spatial rate and pooled-root transport; do not reopen the rank-one/four-packet or nonlocal-west-step routes. |
 
 The current canonical joint-U delivery pin is
 `f8e30859f05e86ef35d257fc900f97e74f41e21c`, integrated in open Draft

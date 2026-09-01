@@ -36,22 +36,28 @@ N100/N400 axis/tilted pair and `[1/4,2/5]` macro window, plus the existing
 L32/L64 carrier streams. Acquisition: 50k paired configurations per macro
 size, then a deterministic replay of 32 old counters per L32/L64 stream.
 That replay is complete: 5,242,880 callbacks pass, with 18 sparse
-kernel-changing events and no new seed. The next separating intervention is
-#537's projected-landing falsifier and surviving carrier-resolved dyadic
-theorem, not more replay or a larger repetition of the macro ratio.
+kernel-changing events and no new seed. #537's projected-landing falsifier is
+also complete: `branch_only` [`b38fbb61`](https://github.com/LightChainr/Matching-One/blob/b38fbb61b0b10e2279cc673e78d36b90d402680d/notes/p537-ordinary-landing-minor.md)
+gives a probability-weighted C4 landing minor that is algebraically nonzero at
+the unique N9 matching root. The next separating intervention is the surviving
+two-scale signed ordinary-landing dyadic theorem, not more replay, tiny-torus
+scans or a larger repetition of the macro ratio.
 
 PR #509 (current head `2785e3bb`) proves at `eed2190c` that the *raw*
 canonical pair susceptibility is absolutely summable at exact criticality;
 it does not control the thermal derivative, root motion or original U. Its
 latest audit supplies the exact root-conditioned Hessian
-`partial_u partial_epsilon Yhat=J_N/A_N` and a bounded rank-one/minor
-falsifier for the leading three-packet landing block. Issue #537 is the open
-canonical P0; #536 is closed provenance and #539 is P2 finite-N25 support.
-PR #533 (current head `b49e2a21`) independently closes a bounded-capillary
-strong-source sign window via its Bessel/two-gas transfer law under stated
-hypotheses and extends its directed determinant to `m >> L^(2/3)`, excluding
-the shortest local hairpin packet. That is a separate strong-source theorem,
-not critical-carrier evidence.
+`partial_u partial_epsilon Yhat=J_N/A_N`. The rank-one/minor falsifier has now
+returned nonzero at `b38fbb61`: kernel reconnection and rank/readout pivotal
+already span two directions on an ordinary branch-free C4 landing orbit, and
+root Schur projection does not collapse them. Issue #537 remains the open
+canonical P0 for their signed spatial transport; #536 is closed provenance
+and #539 is P2 finite-N25 support.
+PR #533 (current head `5aa929a6`) independently closes the complete specified
+axis/tilted strong-source sign law under `L/m^2 -> 0`, including all reversals,
+clouds, topology and sector odds. The earlier nonlocal west-step crossover is
+removed; fixed-`m` thermodynamics remains outside the joint limit. That is a
+separate strong-source theorem, not critical-carrier evidence.
 
 **Completed predecessor: canonical joint Q activation reaches original U,
 with a nonzero contribution beyond nearest neighbours.** The
@@ -131,10 +137,11 @@ two-shared-component factorization `a_xy=kappa_x kappa_y`. Keep the
 `s=2/3/4` layers additive in the same dependency block. #536 Delivery B is
 now [complete](../results/p337-thermal-pivotal-preflight/REPORT.md): its 64
 old counters expose a sparse, shell-localized kernel-changing interface but no
-centered population sign. #537 now sharpens Delivery A: first test the
-C4/Schur-projected ordinary four-arm transfer matrix for a nonzero `2x2`
-minor. If it is rank one, pursue the summable four-packet remainder; if not,
-retain the surviving signed landing functional. Its all-L remote rerouting
+centered population sign. #537's first Delivery-A falsifier has now returned a
+nonzero C4/root-Schur minor at the exact finite matching root. The rank-one
+route and its automatic summable four-packet replacement are stopped; retain
+the surviving signed ordinary-landing functional and control its two-scale
+spatial sum. Its all-L remote rerouting
 also shows that fixed shared-count and rank do not make a carrier local. The
 [literature bridge](../notes/p337-thermal-pivotal-literature-bridge.md) shows
 why three independent four-arm factors are insufficient and why six-arm input

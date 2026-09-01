@@ -1,11 +1,11 @@
-# Next Targets: From a Stopped Macro Ratio to the Thermal-Pivotal Carrier
+# Next Targets: From a Nonzero Landing Minor to Signed Spatial Transport
 
 **Updated 2026-09-01.** This is the single attention board, not a permission
 system. Parallel work remains open; no Issue is closed or locked **by this board**.
 History and definitions remain in [Decisions](DECISION-EXPERIMENTS.md),
 [Status](STATUS.md) and the [scientific ledger](../analysis/research_ledger.yaml).
 
-## Default attention after the completed macro-window pilot
+## Default attention after the completed macro pilot and landing falsifier
 
 The frozen canonical `Kreg` N100/N400 joint-U pilot is complete and the
 projected field-ratio route has stopped exactly where its contract said it
@@ -51,18 +51,26 @@ PR #509's latest audit (`2785e3bb`) compresses the full original-U combination
 exactly. If `M(p(u,epsilon),epsilon)=u` and
 `Yhat(u,epsilon)=Y(p(u,epsilon),epsilon)`, then
 `partial_u partial_epsilon Yhat=J_N/A_N`: kernel reconnection, readout
-pivotal, root and slope form one Schur-projected signed Hessian. The first
-bounded falsifier is therefore an exact landing calculation, not a new scale
-run. Construct the ordinary four-arm source/thermal transfer matrix after the
-same C4 and Schur projection and test its `2x2` minors. One nonzero minor
-retires the “leading three-packet block is a pure thermal-coordinate term”
-route. If every minor vanishes, a four-packet remainder becomes the simplest
-candidate; its `R^4*pi4(R)^4` envelope is summable from strict
-`alpha4>1` only after the four-packet support reduction is proved.
+pivotal, root and slope form one Schur-projected signed Hessian. Its first
+bounded falsifier has now been answered by `branch_only`
+[`b38fbb61`](https://github.com/LightChainr/Matching-One/blob/b38fbb61b0b10e2279cc673e78d36b90d402680d/notes/p537-ordinary-landing-minor.md).
+On a physical branch-free N9 C4 landing orbit, the exact probability-weighted
+matrix with rows `q,E` and columns kernel reconnection/readout pivotal has
+determinant `1001/536870912` at `p=1/2`; its determinant polynomial is coprime
+to `M(p)=-4p^9+18p^8-18p^7+6p^3-1`, so it is nonzero at the unique finite
+matching root. The root Schur row operation preserves this determinant. The
+N16 predecessor independently gives `det=-chi/2`. Therefore ordinary landing
+is not structurally rank one, the pure-thermal three-packet route is retired,
+and no automatic four-packet or fifth/sixth-arm remainder follows.
 
-The subsequent theorem must expose a carrier-resolved signed and absolute
-three-site tail for factorized two-bridge rerouting, shared-component
-transition/remote merger and `g`-stable topological channels. Issue #537 adds
+The subsequent theorem must expose the **signed ordinary-landing functional**
+itself: kernel reconnection and rank/readout pivotal under the same C4/root
+Schur projection, jointly stratified by `d(x,y)` and `d(z,{x,y})`. Its dyadic
+sum must either reach `T_N=o(D/A_N)` with exact-`p_c` to pooled-root transport,
+or return the smallest landing class that prevents this rate. The existing
+factorized two-bridge, shared-component transition/remote merger and
+`g`-stable topological coordinates remain its prospective decomposition, not
+three new evidence votes. Issue #537 adds
 an all-`L>=4` negative control with fixed nearby marks and a pivot at distance
 `Theta(L)`: rank and shared-count stay fixed while `g` changes `1/4 -> 1/2`.
 Thus pivot distance is a second scale and shared-count creation/deletion is
@@ -86,13 +94,13 @@ pair susceptibility is absolutely summable at exact criticality; that theorem
 does not bound its thermal derivative or original U. Its latest audit supplies
 the Hessian and bounded-falsifier interface, not the missing decay theorem.
 
-PR #533 (current head `b49e2a21`) is a separate strong-source theorem: under
-its stated transfer and unrestricted-extension hypotheses it closes the
-bounded capillary sign window through `G(c)=I0(2c)^2` and a positive two-gas
-transfer factor. Its directed determinant now extends the negative sign
-through `m >> L^(2/3)` and excludes the shortest local hairpin packet as the
-first crossover; a nonlocal west-step remains the growing-window candidate,
-while fixed `m` is distinct. This does not count as evidence for the critical
+PR #533 (current head `5aa929a6`) is a separate strong-source theorem. Under
+`beta=L/m^2 -> 0` it now includes the complete one-carrier reversal kernel,
+cloud corrections, extra carriers, transverse/companion sectors and
+rank-sector odds, and proves
+`U/A_N=-(L^2/Delta)m^(-(2L+1))[I0(2c)^2-I1(2c)^2](1+o(1))<0`.
+The former `L^2/m^3` crossover and nonlocal west-step candidate are removed;
+fixed `m` remains distinct. This does not count as evidence for the critical
 pivotal carrier. Issues #534/#535 were closed by the repository team, with
 their specifications retained as provenance. Open Issue #539 is P2 exact-N25
 reproducibility support and should first consume the #536 attachment if it
@@ -197,7 +205,7 @@ marks have no such positive lower bound.
 |---|---|---|
 | Canonical projected scale response | Completed with the [prederived macroscopic-window response](../notes/regular-pair-joint-size-decision.md), fixed `Kreg`, the exact `[1/4,2/5]` torus-distance window and the complete original-U functional. | N100 gives `T=+11.877846`, N400 gives `T=−542.503823`; both simultaneous intervals include zero and the signs oppose. N400 projects to 2,119,100 configurations, above the 2M ceiling. The route is stopped and `D17/D21` are not evaluated. |
 | Fixed occupation-tangent scaling | Separately compare **W_N=N V_av(N)** for the old bounded occupation source on `(5k,0)/(4k,3k)` with its k→2k dilation. | [Derived ratio](../notes/local-pair-size-response-predictions.md): R=W_(4N)/W_N=4V_av(4N)/V_av(N). Under the stated single-field/nonzero-loading assumptions, x=17/4 predicts R→2; x=21/4 predicts R→1. These predictions do not automatically apply to Kreg's mixed Q response. N25 is not an established scaling window. |
-| Parallel existing work | Named total weak-Q paths with B control; PR533's remaining nonlocal west-step/rough-bridge and full-oblique questions; #539 exact-N25 reproducibility support. | Mixed Q activation is not a total Q-path derivative. Repository-team closure of #534/#535/#536 leaves #537 as the sole P0; #539 remains P2 and should import existing exact artifacts before recomputation. |
+| Parallel existing work | Named total weak-Q paths with B control; PR533's fixed-`m` thermodynamic boundary after its `L/m^2 -> 0` axis theorem; #539 exact-N25 reproducibility support. | Mixed Q activation is not a total Q-path derivative. Repository-team closure of #534/#535/#536 leaves #537 as the sole P0; #539 remains P2 and should import existing exact artifacts before recomputation. |
 
 For the completed J2 readout, a site-average tensor at every vacant site has
 `epsilon²/N²` times the sum over unordered distinct-site joint closures;

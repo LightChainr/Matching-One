@@ -74,7 +74,7 @@ axis/tilted共用occupation与anchor流，`total/s2/s>=3`也是同一源的相�
 不能拆成独立票。100个paired batches才是推断单位。pilot到此停线；其它探索
 仍可并行，优先级不是许可或任务锁。
 
-## 当前前瞻判决：Delivery B已完成，转入q/E-weighted pivotal tail理论
+## 当前前瞻判决：有限landing falsifier已非零，转入signed spatial transport
 
 已关闭的Issue #536保留一项**issue-only、非main事实**的N25 midpoint精确分解；
 仓库团队已把唯一canonical P0迁移到开放的
@@ -92,17 +92,20 @@ callback（L32 11、L64 7），没有kernel-preserving topological callback；
 L64非零项属于external shell 2/3 shared-transition。这个结果完成语义与成本
 preflight，不估计中心化总体或full J2，也不授权追加counter。
 
-当前prospective输出先做#537的有限判伪器。PR #509 `2785e3bb`给出精确压缩：
-取`u=M`为热坐标，则`partial_u partial_epsilon Yhat=J_N/A_N`。因此在普通
-四臂landing子空间构造经同一C4与Schur投影的source/thermal transfer matrix，
-逐个检查`2x2`minor。一个非零minor即淘汰“leading three-packet只是热坐标”
-路线；若全部为零，再把remainder提升为四packet，其`R^4*pi4(R)^4`由严格
-`alpha4>1`可和。这个判伪器不需要新MC或更大counter。
+PR #509 `2785e3bb`给出精确压缩：取`u=M`为热坐标，则
+`partial_u partial_epsilon Yhat=J_N/A_N`。#537的有限判伪器已经返回非零。
+`branch_only` [N9证书`b38fbb61`](https://github.com/LightChainr/Matching-One/blob/b38fbb61b0b10e2279cc673e78d36b90d402680d/notes/p537-ordinary-landing-minor.md)
+在无额外占据分支的真实C4 landing轨道上，精确构造以`q,E`为行、kernel
+reconnection/readout pivotal为列的概率加权矩阵；`p=1/2`时det为
+`1001/536870912`，det多项式与有限matching-root多项式在`Q[p]`中互素，
+所以在唯一finite matching root也非零。root Schur行变换保持det不变。
+N16前置证书另给`det=-chi/2`。因此“leading ordinary-four-arm landing只是一维
+热坐标”的结构性路线已被淘汰；不再自动提升到四packet或五/六臂余项。
 
-判伪后才进入Delivery A：用
+Delivery A现在直接作用于这个存活的signed ordinary-landing functional：用
 [thermal-pivotal接口](../notes/regular-pair-thermal-pivotal-gate.md)和完整
-root-aware U权重，为以下三类carrier分别给absolute dyadic tail，或在每一
-observable/kernel channel内部给signed dyadic tail，而不是再画raw距离网格：
+root-aware U权重，为以下三类carrier分别给双尺度signed dyadic tail，保留
+`d(x,y)`与`d(z,{x,y})`，而不是再画raw距离网格或搜索更多tiny torus：
 
 | 预设结果 | carrier与判决条件 | 若另外两类已有预设上界，可排除的“必需机制” |
 |---|---|---|
@@ -113,8 +116,8 @@ observable/kernel channel内部给signed dyadic tail，而不是再画raw距离�
 [PR #530 open-pr support @0e1917f9](https://github.com/LightChainr/Matching-One/blob/0e1917f983982f411c9c72147cce3f90ce7330fa/experiments/p337-original-u-influence-20260831/README.md)
 提供含共同root、均值和分母响应的中心化`phi`，作为三类共用的原U权重接口。
 这些PR只提供有限代数/估计接口，尚未是main结论。若多类同时留下无界尾、
-都未分辨或没有稳定signed/absolute判别，则结果记为unresolved，不新增seed、
-window或第四个descriptor救场。文献
+都未分辨或没有稳定signed判别，则结果记为unresolved并交付最小未控landing
+类，不新增seed、window、额外臂或第四个descriptor救场。文献
 [适用边界](../notes/p337-thermal-pivotal-literature-bridge.md)已经说明，三处四臂
 事件的朴素乘积不足以关闭bulk，六臂只接管已证明的fused collision annulus；
 还必须给common-landing增益或signed cross-observable cancellation，并认证
@@ -122,11 +125,11 @@ pooled root处于near-critical窗口。#539只保留P2 exact-N25复现支持，�
 导入#536原附件而非重复生产。这个理论对象是下一attention target，不锁其它任务。
 
 另一个独立前沿也已前移：PR #533当前head
-[`b49e2a21`](https://github.com/LightChainr/Matching-One/blob/b49e2a214c42ee746fb5174acc4028a761882d33/notes/closed-source-mesoscopic-two-cloud-synthesis.md)
-在声明的bounded `c=L/m`轴向two-cloud条件下得到
-`G(c)=I0(2c)^2`、`Phi(c)=[I0(2c)^2−I1(2c)^2]/Delta>0`，从而
-`Ustar/A_N<0`，并把directed determinant延伸到`m≫L^(2/3)`；最短local
-hairpin已被排除为首个crossover，余下nonlocal west-step与fixed-m边界。
+[`5aa929a6`](https://github.com/LightChainr/Matching-One/blob/5aa929a6ef4ff92d71f6f36097b763c05ad71ab8/notes/closed-source-axis-sector-closure-gate.md)
+已经在`beta=L/m^2->0`下闭合声明的完整axis/tilted强源符号律：all-reversal
+kernel、two-cloud压力、额外carrier、transverse/companion winding和sector odds
+都只给`o(1)`余项，`Ustar/A_N<0`。此前`L^2/m^3` crossover与nonlocal
+west-step候选是证明伪影；仅fixed-m热力学仍在该joint limit之外。
 #534/#535现已由仓库团队关闭。该强源解析结果与临界canonical macro pilot分开，
 且保持`open_pr`，不写成main已集成事实。
 
