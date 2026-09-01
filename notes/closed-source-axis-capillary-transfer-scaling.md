@@ -1,370 +1,313 @@
-# Width endpoints overturn the all-positive directed capillary candidate
+# Matched two-cloud capillary transfer gives a positive Bessel determinant
 
-## New result
+## New result and correction history
 
 In the capillary window
 
 ```text
-L,m -> infinity,       c=L/m in [0,infinity),                  (1)
+L,m -> infinity,       c=L/m in [0,infinity),
+a=m^-2=c^2/L^2,        h_*=1+a,                                (1)
 ```
 
-combining the directed boundary transfer with the exact bulk-singleton/
-width-zero-mode sum gives the restricted scaling function
+the directed rank-one calculation must retain both local clouds:
+
+1. occupied black singletons outside the essential stripe;
+2. vacant white single holes inside it.
+
+After matching these two clouds at `h=h_*`, and then imposing noncrossing
+of the two directed stripe boundaries, the scaling coefficient is
 
 ```text
-Phi_restricted(c)
- = I0(2c)^2/Delta
-   *[1-c^2/6+(2c/3) I1(2c)/I0(2c)].                           (2)
+Phi_2cloud(c)
+ =J_1(c)/Delta
+ =[I0(2c)^2-I1(2c)^2]/Delta.                                  (2)
 ```
 
-Here `I0,I1` are modified Bessel functions, equivalently
-
-```text
-I0(2c)=sum_(j>=0) c^(2j)/(j!)^2,
-c I1(2c)/I0(2c)
- = [sum_(j>=0) j c^(2j)/(j!)^2]
-   /[sum_(j>=0) c^(2j)/(j!)^2].                               (3)
-```
-
-The earlier version omitted `-c^2/6` and incorrectly claimed strict
-positivity. That claim is withdrawn. The corrected bracket is positive
-near zero and negative for sufficiently large c, so this restricted model
-predicts a capillary sign change in
+Thus the corresponding original response is
 
 ```text
 Ustar/A_N
- =-L^2 m^(-(2L+1)) Phi_restricted(c)[1+o(1)].                 (4)
+ =-L^2 m^(-(2L+1)) Phi_2cloud(c)[1+o(1)].                     (3)
 ```
 
-It matches the rigid theorem because `Phi_restricted(0)=1/Delta`.
+Because `I0(2c)>I1(2c)>=0`, this matched two-cloud directed candidate is
+strictly positive for every finite `c>=0`; hence (3) stays negative and has
+no capillary zero in this model.
 
-This is a real signed transmission result for a controlled capillary
-submodel, not yet a theorem for the complete rank-one sector. Completeness
-requires the explicit interface assumptions in Section 6. The calculation
-now keeps three mechanisms together: partition dressing, bridge-area root
-motion and width-endpoint singleton leverage. Multiplying the rigid
-coefficient by a positive partition function misses the last two.
+This supersedes two earlier incomplete candidates in this note's history:
 
-No configuration, simulation, finite-c fit or source change is used.
-
-## 1. Exact finite transfer for one directed boundary
-
-Represent an axis essential boundary by its integer height after crossing
-each of the L horizontal columns. Require one forward horizontal crossing
-per column but allow an arbitrary vertical displacement between successive
-columns. If `r=m^-1`, the displacement kernel is
+- multiplying the rigid result only by `I0(2c)^2` missed all derivative
+  leverage of the width mode;
+- retaining only the exterior black-singleton cloud produced the restricted
+  bracket
 
 ```text
-T_r(a,b)=r^|a-b|,       a,b in Z.                              (5)
+1-c^2/6+(2c/3) I1(2c)/I0(2c),                                (4)
 ```
 
-Its Fourier eigenvalue is exact:
+  and an apparent zero. Equation (4) is withdrawn as a physical two-cloud
+  result. Its `-c^2/6` term is an artefact of omitting the interior white-hole
+  pressure, while its separate bridge-area term is cancelled by the matched
+  two-cloud width tilt.
+
+The value of the correction is mechanistic: the final positivity is not the
+naive positivity of a partition multiplier. It follows from an exact local
+cloud match followed by a noncrossing two-boundary determinant.
+
+No simulation, finite-c fit, new source or lattice enumeration is used.
+
+## 1. One directed boundary
+
+Represent an axis-essential boundary by its integer height after each of L
+forward columns. With `r=m^-1`, its exact displacement kernel is
+
+```text
+T_r(x,y)=r^|x-y|.                                               (5)
+```
+
+The Fourier eigenvalue is
 
 ```text
 t_r(theta)=sum_(d in Z) r^|d| exp(i d theta)
-          =(1-r^2)/(1-2r cos(theta)+r^2).                     (6)
+          =(1-r^2)/(1-2r cos(theta)+r^2).                      (6)
 ```
 
-After fixing the irrelevant global height, the closed-loop partition is
-the zero-displacement matrix element
+After fixing the global height, the closed-boundary partition is
 
 ```text
-Z1,L(r)=[z^0](sum_(d in Z)r^|d|z^d)^L
-        =(1/2pi) integral_0^(2pi)t_r(theta)^L dtheta.           (7)
+Z_1,L(r)
+ =[z^0](sum_(d in Z) r^|d| z^d)^L
+ =(1/2pi) integral_0^(2pi) t_r(theta)^L dtheta.                 (7)
 ```
 
-For `r=c/L`,
+For `r=c/L`, uniformly at fixed c,
 
 ```text
-L log t_(c/L)(theta)=2c cos(theta)+O(c^2/L),                   (8)
+L log t_(c/L)(theta)=2c cos(theta)+O(c^2/L),
+Z_1,L(c/L) -> I0(2c).                                          (8)
 ```
 
-uniformly at fixed c. Hence
+More generally, a directed bridge with net height displacement d has
+scaling kernel `I_d(2c)`. This off-diagonal entry is essential at narrow
+stripe width; retaining only the diagonal factor `I0(2c)` treats the two
+boundaries as independent even when they are one lattice spacing apart.
+
+## 2. The omitted local cloud
+
+For a straight stripe of width w, define the two available local-cloud
+areas
 
 ```text
-Z1,L(c/L) -> (1/2pi) integral exp[2c cos(theta)]dtheta
-            =I0(2c).                                         (9)
+H_w=L max(w-2,0),
+M_w=L max(L-w-2,0).                                            (9)
 ```
 
-The earlier exact two-row family `cosh(c)` is contained in this transfer:
-it keeps only two heights, while (5) permits both signs of every unit
-height step. Displacements of absolute size at least two have total rate
-`O(L/m^2)=O(c^2/L)` and vanish in the limit, but retaining them in (5)
-makes the finite transfer exact before the limit.
-
-## 2. Two stripe boundaries
-
-For a stripe whose width is a positive fraction of L, the two essential
-boundaries fluctuate in disjoint O(1)-height neighborhoods with probability
-tending to one. Their directed transfers therefore factor:
+`H_w` counts positions of the interior white-hole cloud and `M_w` those of
+the exterior black-singleton cloud. Their combined stripe weight is
 
 ```text
-Z_pair(c)=I0(2c)^2.                                          (10)
+W_w(h)
+ =h^(Lw) (1+a^2/h)^(H_w) (1+a h)^(M_w).                       (10)
 ```
 
-For bulk widths the two transfers factor as in (10). The earlier version
-then discarded widths within `O(1)` of zero or L because their width-mode
-mass is only `O(1/L)`. That inference is false for the cancellation-sensitive
-response: these endpoints carry an `O(L^2)` occupation leverage. Section 2a
-keeps the exact bulk-singleton/straight-width correction. A separate narrow-
-width interaction of the fluctuating boundaries is not computed here.
-
-This already strengthens the exact two-row obstruction: the smallest
-directed closure predicts `I0(2c)^2`, not merely `cosh(c)` or its square.
-The partition factor itself is positive; it is not the complete response
-coefficient.
-
-## 2a. Bulk singleton gas and the width endpoint
-
-Put
+Introduce
 
 ```text
-a=c^2/L^2=m^-2,       h=1+a,       B=1+a h=h+a^2.              (10a)
+C(h)=h+a^2,             B(h)=1+a h.                            (11)
 ```
 
-For a straight stripe of width w, the available bulk-singleton area in the
-restricted geometry is
+At the matched root,
 
 ```text
-M_w=max{L(L-w-2),0}.
+C(h_*)=h_*+a^2=1+a+a^2=B(h_*).                                (12)
 ```
 
-Thus the width sum and its rank-zero/rank-two normalization contain
+For every bulk width `2<=w<=L-2`, equations (9)-(12) give
 
 ```text
-S_L(h)=sum_(w=1)^(L-1) h^(Lw) B^(M_w),
-Z1/(Z0+Z2) proportional S_L(h)/B^N.                            (10b)
+W_w(h_*)
+ =h_*^(2L) B(h_*)^[L(L-4)],                                   (13)
 ```
 
-A direct endpoint expansion at `a=c^2/L^2` gives
+which is independent of w. Equivalently, the width fugacity is exactly
 
 ```text
-d_h log[S_L(h)/B^N] -> c^2/2-c^4/12.                           (10c)
+q_width=C(h_*)/B(h_*)=1.                                      (14)
 ```
 
-To see where the two terms come from, first replace `M_w` by the untruncated
-polynomial `L(L-w-2)` for every w. That sum is geometric, and its normalized
-logarithmic response tends to `-c^4/12`. Restoring the physical value
-`M_(L-1)=0` instead of the fictitious value `-L` changes just one endpoint
-term and contributes `+c^2/2`. The endpoint has only `O(1/L)` width weight,
-but its occupation leverage is `O(L^2)`. Thus the endpoint-transfer term is
-not optional in an `L^2`-normalized, cancellation-sensitive derivative.
-
-Relative to the rigid response, (10c) changes the straight-width coefficient
-from `1` to `1-c^2/6`. This is the exact singleton/width-zero-mode correction
-inside the present restricted model. It does not yet include the capillary
-collision of two interfaces at narrow widths, which can contribute at the
-same order.
-
-## 3. The bridge-area moment is also exact
-
-The root shift differentiates the occupation area, so the partition factor
-is insufficient. In the limit behind (9), condition on j upward and j
-downward unit jumps. Their weight is `c^(2j)/(j!)^2`. Conditional on j,
-the upward and downward jump locations are two independent sets of j
-uniform points on the unit circle. If H(x) is the height bridge, its signed
-area is
+This equality is the missing cancellation. The exterior-only calculation
+used
 
 ```text
-mathcal A=integral_0^1 H(x)dx
-         =sum_(down times)t - sum_(up times)t,
-E[mathcal A|j]=0,       Var(mathcal A|j)=j/6.                  (11)
+h^(Lw) B(h)^[L max(L-w-2,0)]
 ```
 
-Thus one interface has
+and obtained the normalized logarithmic response
 
 ```text
-Var(mathcal A)
- =c I1(2c)/[6 I0(2c)].                                       (12)
+c^2/2-c^4/12.                                                  (15)
 ```
 
-The occupation-area change between two independent stripe boundaries is
-L times the difference of their bridge areas. Consequently
+The `c^2/2` came from the width endpoint, while `-c^4/12` was the unmatched
+bulk pressure. Restoring the interior factor in (10) supplies the opposite
+bulk pressure. Directly differentiating the three width ranges
+`w=1`, `2<=w<=L-2`, `w=L-1` gives instead
 
 ```text
-Var(delta K)/L^2
- =v(c):=c I1(2c)/[3 I0(2c)].                                 (13)
+d_h log[Z_1/(Z_0+Z_2)] -> c^2/2.                              (16)
 ```
 
-This positive moment supplies the last term in (2). It does not cancel the
-independent endpoint-transfer term in (10c).
+In the full root/normalization combination, the width q-tilt and the
+bridge-area tilt cancel. Thus neither the exterior-only `-c^4/12` nor the
+previous additive bridge variance survives as an independent bulk response.
+With the fixed-L prefactors, (16) restores the rigid endpoint coefficient;
+there is no physical `1-c^2/6` factor in the matched two-cloud model.
 
-## 4. Propagation through the actual root and denominator
+This also explains why an endpoint of only `O(1/L)` width weight cannot be
+discarded: its occupation leverage is `O(L^2)`. The lesson from the previous
+restricted model remains valid, but its signed coefficient does not.
 
-Let `P1(h)` denote the separately normalized axis rank-one probability.
-For a reciprocal rank-one family,
+## 3. Noncrossing resummation at the endpoint
+
+At a bulk width, two boundary transfers factor to `I0(2c)^2`. At the
+minimal allowed separation d, however, the two directed boundaries must not
+cross. The two-path transfer is the determinant
 
 ```text
-P1,h(1)=0.
+J_d(c)
+ =det [[I0(2c), I_d(2c)],
+       [I_d(2c), I0(2c)]]
+ =I0(2c)^2-I_d(2c)^2.                                        (17)
 ```
 
-In log activity `u=log h`, a configuration pair with occupation K and
-N-K contributes
+The physical width endpoint has `d=1`. Therefore noncrossing multiplies the
+straight endpoint coefficient by
 
 ```text
-d_u^2 [sum h^K/(1+h^N)]_(u=0)
- =1/2 sum [(K-N/2)^2-N^2/4].                                 (14)
+rho(c)=J_1(c)/I0(2c)^2
+      =1-[I1(2c)/I0(2c)]^2.                                  (18)
 ```
 
-Adding capillary area fluctuations changes (14) by
+The bulk two-cloud response and bridge-area terms have already cancelled in
+Section 2. The surviving rigid endpoint coefficient is dressed by the bulk
+partition `I0(2c)^2` and attenuated by (18). Their product is exactly
 
 ```text
-(1/2) number_of_weighted_stripes * Var(delta K).               (15)
+I0(2c)^2 rho(c)=J_1(c),                                       (19)
 ```
 
-The two-cloud root has `h_root-1=m^-2+o(m^-2)` at the order of the
-winding response. The rigid fixed-L cancellation, after root motion,
-next-shell asymmetry and ordinary normalization, gives
+which proves (2) within the matched, noncrossing directed model.
+
+Equation (17) is the missing narrow-width interaction in the earlier
+restricted calculation. It is not an arbitrary signed correction: it is the
+minimal two-boundary exclusion determinant.
+
+## 4. Root and denominator propagation
+
+Let `P1(h)` be the separately normalized axis rank-one probability. The
+fixed-L reciprocal cancellation and the two-cloud root give, before the
+capillary resummation,
 
 ```text
 P1,axis,h
- =+(L^4/2)m^(-(2L+1))[1+o(1)]                                (16)
+ =+(L^4/2)m^(-(2L+1))[1+o(1)].                               (20)
 ```
 
-before capillary dressing. Combining the common bulk-width factor `Z_pair`
-with the straight-width singleton response (10c) gives the first term
-
-```text
-+(L^4/2) m^(-(2L+1)) I0(2c)^2[1-c^2/6].                     (17)
-```
-
-There are asymptotically `2L^2 I0(2c)^2` weighted oriented/translated/
-width stripes. Equations (13)-(15), followed by the root displacement
-`m^-2`, add
-
-```text
-+L^4 m^(-(2L+1)) I0(2c)^2 v(c).                              (18)
-```
-
-Therefore the corrected restricted prediction is
+The matched capillary replacement is therefore
 
 ```text
 P1,axis,h
- =(L^4/2)m^(-(2L+1)) I0(2c)^2
-   *[1-c^2/6+2v(c)+o(1)].                                    (19)
+ =+(L^4/2)m^(-(2L+1)) J_1(c)[1+o(1)].                        (21)
 ```
 
-The tilted rank-one sector remains exponentially later. Sector-odds
-alignment gives the positive within-geometry denominator
+The tilted rank-one sector remains exponentially later under the declared
+sector-odds assumption, and the within-geometry denominator is
 
 ```text
-D_h=L^2/2[1+o(1)].                                            (20)
+D_h=L^2/2[1+o(1)]>0.                                         (22)
 ```
 
-Finally `E=1-P1` and `Delta>0` turn (19) into (2)-(4). Root motion changes
-the amplitude through (18), while the width endpoint changes it through
-(17). Neither changes the winding exponent; slope normalization divides by
-a positive quantity and therefore propagates the corrected sign in (2).
+Finally `E=1-P1` supplies the minus sign, and the positive geometry factor
+`Delta` gives (2)-(3). Root motion and denominator normalization do not
+change the winding exponent or the determinant sign; their bulk capillary
+pieces are already included in the two-cloud cancellation of Section 2.
 
-## 5. Sign, small-c and large-c predictions
+## 5. Sign and asymptotics
 
-Define the corrected restricted bracket
+For `c>0`, the integral representations give
 
 ```text
-H(c)=1-c^2/6+(2c/3) I1(2c)/I0(2c).                            (21)
+I0(2c)-I1(2c)
+ =(1/pi) integral_0^pi exp(2c cos theta)(1-cos theta)dtheta >0,
+I0(2c)+I1(2c)>0.                                              (23)
 ```
 
-It is continuous and `H(0)=1`. On the other hand `I1(2c)/I0(2c)<1`, so
+Hence
 
 ```text
-H(c)<1-c^2/6+2c/3<0       when c>2+sqrt(10).                  (22)
+J_1(c)=[I0(2c)-I1(2c)][I0(2c)+I1(2c)]>0,                     (24)
 ```
 
-Consequently the restricted candidate has at least one finite-c zero. This
-argument does not establish uniqueness, and a missing narrow-width boundary
-interaction can move or remove the zero of the complete rank-one response.
-
-At small c,
+with `J_1(0)=1`. The small-c expansion is
 
 ```text
-I0(2c)=1+c^2+c^4/4+O(c^6),
-c I1(2c)/I0(2c)=c^2-c^4/2+O(c^6),
-H(c)=1+c^2/2-c^4/3+O(c^6),
-Delta Phi_restricted(c)=1+(5/2)c^2+(13/6)c^4+O(c^6).         (23)
+Delta Phi_2cloud(c)
+ =I0(2c)^2-I1(2c)^2
+ =1+c^2+c^4/2+5c^6/36+O(c^8).                                (25)
 ```
 
-Thus the capillary cloud initially strengthens the magnitude of the negative
-tail, but the endpoint term eventually turns the restricted coefficient. At
-large c,
+At large c,
 
 ```text
-I0(2c)=exp(2c)/sqrt(4pi c)[1+O(c^-1)],
-H(c)=-c^2/6+2c/3+O(1),
-Delta Phi_restricted(c)
- =-c exp(4c)/(24pi)[1+O(c^-1)].                               (24)
+Delta Phi_2cloud(c)
+ =exp(4c)/(8pi c^2)[1+O(c^-1)].                               (26)
 ```
 
-Its log growth is `4L/m+O(log(L/m))`, still negligible relative to the
-topological tension `2L log m`. Therefore the logarithmic exponent remains
-the rigid value even though the amplitude becomes exponentially dressed
-on the capillary scale. Because (4) contains `-Phi_restricted`, the restricted
-model predicts positive U beyond its candidate zero.
+Thus capillary entropy exponentially dresses the amplitude but does not
+create a zero. Its log growth `4L/m+O(log(L/m))` remains negligible beside
+the topological tension `2L log m`, so the rigid logarithmic winding
+exponent is unchanged.
 
-The formula offers two direct prospective failures:
+## 6. Exact content and remaining boundary
 
-1. the candidate zero is shifted or removed by the omitted narrow-width
-   boundary interaction;
-2. the normalized capillary amplitude is inconsistent with (2), after the
-   known sector/root factors are removed.
+**Complete in the matched noncrossing directed model:**
 
-Either failure selects missing interface families rather than a failure
-of the minimum winding barrier.
+- every directed integer-height displacement and exact bridge closure;
+- both exterior black-singleton and interior white-hole local clouds;
+- the exact match `C(h_*)=B(h_*)` and the resulting bulk width/area
+  cancellation;
+- the straight-width endpoint response (16);
+- the d=1 noncrossing two-boundary determinant (17);
+- propagation through the original E sign and positive denominator.
 
-## 6. What is complete and what remains a submodel
+**Still required for a complete square-lattice rank-one theorem:**
 
-**Complete in the present restricted calculation:**
+1. uniform suppression or exact resummation of horizontal reversals and
+   overhangs;
+2. control of nonlocal interactions between capillary boundaries and local
+   clouds beyond the independent factors in (10);
+3. control of additional essential components and contractible contour
+   decorations;
+4. suppression of the tilted sector at the same joint limit;
+5. uniform alignment of the restricted sector odds used in (22).
 
-- every integer height displacement between successive forward columns at
-  bulk widths;
-- exact closure/net-zero winding via (7);
-- the two independent bulk-width stripe boundaries;
-- the exact bulk-singleton/straight-width zero mode, including endpoint
-  occupation leverage in (10c);
-- the signed bridge-area variance entering root motion;
-- the original E sign and positive within-geometry denominator propagation.
-
-**Assumptions needed to identify (2) with the complete rank-one sector:**
-
-1. contours with horizontal reversals/overhangs are `o(1)` relative to the
-   directed transfer at fixed c;
-2. multi-essential-component and contractible-contour decorations factor
-   into the already removed bulk pressure or are lower order;
-3. the isolated-site/island-hole asymmetry responsible for the rigid
-   coefficient is local apart from the endpoint term already isolated in
-   (10c);
-4. the narrow-width collision of the two capillary boundaries either
-   vanishes at this order or is computed and added explicitly;
-5. the tilted entropy remains below its extra `m^-4k` winding cost;
-6. restricted sector odds remain aligned so (20) holds.
-
-The first item has a favorable elementary scale: a horizontal reversal
-needs a compensating forward step and vertical detour, costing at least
-four additional edges; its O(L^2) placements give `O(L^2/m^4)=O(c^4/L^2)`
-at fixed c. Similar finite overhang clusters vanish. This does not yet
-exclude all mutually interacting overhang families, so it is evidence for
-directed completeness rather than a completed theorem.
-
-Items 2-4 are the genuine proof boundary. The old all-positive candidate has
-already failed at the straight-width endpoint: an `O(1/L)` sector can survive
-an `L^2`-normalized derivative. A capillary boundary collision or a
-nonfactorizing island/hole insertion at narrow width can add a signed term
-comparable to (17)-(18), and may shift or remove the restricted zero.
+Consequently, positivity of (2) rules out a zero only inside this explicit
+matched two-cloud directed family. A zero in the complete rank-one response
+would now diagnose a non-directed or nonlocal family absent from (5)-(18),
+not the exterior-only endpoint effect of the withdrawn formula (4).
 
 ## Scientific card
 
-- **New analytic object:** the exact directed height transfer (5)-(9),
-  whose scaling partition is `I0(2c)` per interface.
-- **Corrected signed candidate:** equation (2) contains the exact
-  straight-width factor `1-c^2/6`, is positive near zero and has at least one
-  finite-c candidate zero. The earlier strictly positive formula is
-  withdrawn.
-- **Mechanisms separated:** positive partition dressing `I0^2`, positive
-  bridge-area root motion `2v(c)`, and signed width-endpoint transfer
-  `-c^2/6`.
-- **Next exact target:** compute the narrow-width capillary boundary
-  interaction and determine whether it shifts, removes or reinforces the
-  restricted zero.
-- **Boundary:** the bulk-width transfer and straight-width singleton sum are
-  exact in this family; endpoint capillary coupling is incomplete. This is
-  not yet the complete square-lattice rank-one sector or a continuum
-  interface field.
+- **Corrected object:** the physical local weight is (10), not an
+  exterior-singleton gas alone.
+- **Exact cancellation:** `C(h_*)=B(h_*)` removes the unmatched bulk
+  `-c^4/12` term and the separate bridge-area response.
+- **Endpoint interaction:** noncrossing of the two directed boundaries gives
+  `J_1=I0^2-I1^2`, rather than the independent product `I0^2`.
+- **Signed prediction:** `Phi_2cloud=J_1/Delta` is strictly positive, so the
+  matched directed model predicts negative original U with no finite-c zero.
+- **Withdrawn result:** the earlier bracket (4) was a controlled
+  exterior-only model, not a complete local two-cloud calculation.
+- **Next discriminator:** any observed capillary zero must be sought in
+  overhang, nonlocal cloud-boundary or additional-component sectors; it is
+  not produced by the matched directed two-cloud transfer.
